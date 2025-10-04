@@ -1,0 +1,37 @@
+---
+import { SITE_TITLE } from '../consts';
+import { useTranslations, type Language } from '../lib/i18n/languages';
+import HeaderLink from './HeaderLink.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+	lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex items-center justify-between h-16">
+			<div class="flex items-center gap-8">
+				<h2 class="text-xl font-bold">
+					<a href={`/${lang}`} class="text-primary hover:text-accent transition-colors">
+						{SITE_TITLE}
+					</a>
+				</h2>
+				<div class="hidden md:flex items-center gap-1">
+					<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
+					<HeaderLink href={`/${lang}/blog`}>{t('nav.blog')}</HeaderLink>
+					<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
+					<HeaderLink href={`/${lang}/contact`}>{t('nav.contact')}</HeaderLink>
+					<HeaderLink href={`/${lang}/social`}>{t('nav.social')}</HeaderLink>
+				</div>
+			</div>
+			<div class="flex items-center gap-4">
+				<LanguageSwitcher currentLang={lang} />
+			</div>
+		</div>
+	</nav>
+</header>

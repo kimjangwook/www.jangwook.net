@@ -1,0 +1,113 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
+import { useTranslations, type Language } from '../../lib/i18n/languages';
+
+export function getStaticPaths() {
+	return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={t('nav.about')} description={t('site.description')} />
+	</head>
+	<body>
+		<Header lang={lang} />
+		<main class="max-w-4xl mx-auto px-4 py-12">
+			<!-- Profile Section -->
+			<section class="mb-16">
+				<h1 class="text-4xl font-bold mb-2">Kim Jangwook</h1>
+				<p class="text-xl text-gray-600 mb-8">Renew day by day!</p>
+				<div class="prose prose-lg max-w-none">
+					{lang === 'ko' ? (
+						<div>
+							<p class="text-lg mb-4">
+								안녕하세요, "EffiFlow"에 오신 것을 환영합니다. 저는 이 블로그의 운영자 Shiu papa입니다. 이곳에서는 최신 기술 트렌드와 혁신적인 아이디어를 소개하고 있습니다.
+							</p>
+							<p class="text-lg mb-4">
+								"EffiFlow"는 기술에 대한 열정과 호기심을 가진 모든 분들을 위한 공간입니다. 복잡하고 어려운 기술 주제를 쉽게 풀어 설명하여 더 많은 사람들이 새로운 기술에 접근할 수 있도록 돕고자 합니다.
+							</p>
+							<p class="text-lg">
+								저와 함께 최신 기술 동향을 따라가며, 미래를 선도할 기술 혁신에 대해 알아보세요. 여러분의 관심과 참여를 기대합니다. 감사합니다!
+							</p>
+						</div>
+					) : lang === 'ja' ? (
+						<div>
+							<p class="text-lg mb-4">
+								こんにちは、「EffiFlow」へようこそ。私はこのブログの運営者、Shiu papaです。ここでは、最新の技術トレンドや革新的なアイデアを紹介しています。
+							</p>
+							<p class="text-lg mb-4">
+								「EffiFlow」は、技術に対する情熱と好奇心を持つすべての人のためのスペースです。複雑で難しい技術トピックを分かりやすく説明し、より多くの人が新しい技術にアクセスできるよう、情報を提供することを目指しています。
+							</p>
+							<p class="text-lg">
+								私と一緒に最新の技術トレンドを追い、未来を導く技術革新について学びましょう。皆さんの関心と参加を楽しみにしています。ありがとうございます！
+							</p>
+						</div>
+					) : (
+						<div>
+							<p class="text-lg mb-4">
+								Hello, welcome to "EffiFlow". I am Shiu papa, the operator of this blog. Here, we introduce the latest technology trends and innovative ideas.
+							</p>
+							<p class="text-lg mb-4">
+								"EffiFlow" is a space for all those who have a passion and curiosity for technology. We aim to explain complex and difficult technology topics in an easy-to-understand manner and provide information so that more people can access new technology.
+							</p>
+							<p class="text-lg">
+								Follow the latest technology trends with me and learn about the technological innovations that will lead the future. I look forward to your interest and participation. Thank you!
+							</p>
+						</div>
+					)}
+				</div>
+			</section>
+
+			<!-- Careers Section -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-6 border-b pb-2">Careers</h2>
+				<div class="space-y-6">
+					<div class="bg-gray-50 p-6 rounded-lg">
+						<h3 class="text-xl font-bold mb-2">SPIKA Inc.</h3>
+					</div>
+					<div class="bg-gray-50 p-6 rounded-lg">
+						<h3 class="text-xl font-bold mb-2">Bravance Technologies Inc.</h3>
+					</div>
+					<div class="bg-gray-50 p-6 rounded-lg">
+						<h3 class="text-xl font-bold mb-2">Connecty Inc.</h3>
+					</div>
+				</div>
+			</section>
+
+			<!-- Portfolio Section -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-6 border-b pb-2">Portfolio</h2>
+
+				<h3 class="text-2xl font-semibold mb-4">My Projects</h3>
+				<ul class="list-disc list-inside space-y-2 mb-8">
+					<li><a href="https://kimjangwook.github.io/svelte-weather/public/" target="_blank" class="text-accent hover:underline">気象情報取得システム (Weather Information System)</a></li>
+					<li><a href="https://kimjangwook.github.io/letsencrypt-domain-checker/public/" target="_blank" class="text-accent hover:underline">Let's Encrypt ドメインチェッカー (Domain Checker)</a></li>
+					<li><a href="https://drone-info.jangwook.net/" target="_blank" class="text-accent hover:underline">ドローン情報まとめ (Drone Information)</a></li>
+					<li><a href="https://libraries.jangwook.net/" target="_blank" class="text-accent hover:underline">仕事に使えるライブラリー (Useful Libraries)</a></li>
+				</ul>
+
+				<h3 class="text-2xl font-semibold mb-4">Works</h3>
+				<ul class="list-disc list-inside space-y-2">
+					<li>請求書管理システム (Invoice Management System)</li>
+					<li>Dashboard</li>
+					<li>体験くん (Experience System)</li>
+					<li>会員・セミナー管理システム (Member & Seminar Management)</li>
+					<li>CDP (Customer Data Platform)</li>
+					<li>EFO (Entry Form Optimization)</li>
+					<li>comeet</li>
+					<li><a href="https://answercoffee.kr/" target="_blank" class="text-accent hover:underline">Answer Coffee</a></li>
+					<li><a href="https://www.remotax.jp/" target="_blank" class="text-accent hover:underline">REMO TAX: 免税電子化</a></li>
+				</ul>
+			</section>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>

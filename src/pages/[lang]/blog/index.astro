@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import { getStaticPaths as getI18nStaticPaths } from '../../../lib/i18n/utils';
+import { useTranslations, type Language } from '../../../lib/i18n/languages';
+
+export async function getStaticPaths() {
+	return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+
+// Filter posts by language based on folder structure:
+// - ko/filename.md -> ko
+// - en/filename.md -> en
+// - ja/filename.md -> ja
+const posts = (await getCollection('blog'))
+	.filter((post) => post.id.startsWith(`${lang}/`))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={t('nav.blog')} description={t('site.description')} />
+	</head>
+	<body>
+		<Header lang={lang} />
+		<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+			<section>
+				<h1 class="text-4xl font-bold mb-8 text-gray-900">{t('nav.blog')}</h1>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{
+						posts.map((post) => (
+							<BlogCard
+								href={`/${lang}/blog/${post.id}/`}
+								title={post.data.title}
+								description={post.data.description}
+								pubDate={post.data.pubDate}
+								heroImage={post.data.heroImage}
+								tags={post.data.tags}
+							/>
+						))
+					}
+				</div>
+			</section>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>

@@ -1,0 +1,6 @@
+---
+import { defaultLang } from '../lib/i18n/languages';
+
+// 루트 페이지는 기본 언어(한국어)로 리다이렉트
+return Astro.redirect(`/${defaultLang}/`);
+---

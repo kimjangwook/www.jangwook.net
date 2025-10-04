@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { useTranslations, type Language } from '../lib/i18n/languages';
+
+type Props = CollectionEntry<'blog'>['data'] & {
+	lang: Language;
+};
+
+const { title, description, pubDate, updatedDate, heroImage, lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<html lang={lang}>
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body class="bg-gray-50">
+		<Header lang={lang} />
+		<main class="py-12">
+			<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				{heroImage && (
+					<div class="mb-8 -mx-4 sm:mx-0">
+						<Image
+							width={1020}
+							height={510}
+							src={heroImage}
+							alt={title}
+							class="w-full h-auto rounded-none sm:rounded-2xl shadow-xl object-cover"
+						/>
+					</div>
+				)}
+
+				<div class="bg-white rounded-2xl shadow-sm p-8 sm:p-12">
+					<!-- Header -->
+					<header class="mb-8 pb-8 border-b border-gray-200">
+						<div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+							<time datetime={pubDate.toISOString()}>
+								{t('blog.publishedOn')}: <FormattedDate date={pubDate} />
+							</time>
+							{updatedDate && (
+								<>
+									<span>•</span>
+									<time datetime={updatedDate.toISOString()} class="italic">
+										{t('blog.updatedOn')}: <FormattedDate date={updatedDate} />
+									</time>
+								</>
+							)}
+						</div>
+						<h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+							{title}
+						</h1>
+						<p class="text-xl text-gray-600">
+							{description}
+						</p>
+					</header>
+
+					<!-- Content -->
+					<div class="prose prose-lg prose-gray max-w-none
+						prose-headings:font-bold prose-headings:text-gray-900
+						prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+						prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+						prose-p:text-gray-700 prose-p:leading-relaxed
+						prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+						prose-strong:text-gray-900 prose-strong:font-semibold
+						prose-code:text-accent prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+						prose-pre:bg-gray-900 prose-pre:text-gray-100
+						prose-blockquote:border-accent prose-blockquote:bg-accent/5 prose-blockquote:py-2
+						prose-img:rounded-lg prose-img:shadow-md
+					">
+						<slot />
+					</div>
+				</div>
+
+				<!-- Back to blog link -->
+				<div class="mt-8 text-center">
+					<a
+						href={`/${lang}/blog`}
+						class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-medium transition-colors"
+					>
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+						</svg>
+						{lang === 'ko' ? '블로그 목록으로' : 'ブログリストへ'}
+					</a>
+				</div>
+			</article>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>
