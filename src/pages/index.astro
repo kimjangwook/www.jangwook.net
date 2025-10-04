@@ -1,0 +1,38 @@
+---
+import { defaultLang } from '../lib/i18n/languages';
+---
+
+<!doctype html>
+<html lang={defaultLang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Redirecting...</title>
+		<script>
+			// 브라우저의 선호 언어를 감지하여 리다이렉트
+			const supportedLangs = ['ko', 'ja', 'en'];
+			const defaultLang = 'en';
+
+			// navigator.languages 또는 navigator.language에서 언어 코드 추출
+			const browserLangs = navigator.languages || [navigator.language || navigator.userLanguage];
+
+			let targetLang = defaultLang;
+			for (const lang of browserLangs) {
+				const langCode = lang.split('-')[0].toLowerCase();
+				if (supportedLangs.includes(langCode)) {
+					targetLang = langCode;
+					break;
+				}
+			}
+
+			// 감지된 언어로 리다이렉트
+			window.location.replace(`/${targetLang}/`);
+		</script>
+		<noscript>
+			<meta http-equiv="refresh" content="0; url=/en/" />
+		</noscript>
+	</head>
+	<body>
+		<p>Redirecting...</p>
+	</body>
+</html>
