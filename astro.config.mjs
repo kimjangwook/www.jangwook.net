@@ -7,6 +7,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://kim.jangwook.github.io',
 	integrations: [mdx(), sitemap(), tailwind()],
 });
