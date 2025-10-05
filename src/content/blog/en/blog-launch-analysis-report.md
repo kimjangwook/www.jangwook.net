@@ -1,7 +1,7 @@
 ---
 title: "jangwook.net Blog Launch Analysis Report: The Beginning of a Data-Driven Technical Blog"
 description: "Blog launch GA4 data analysis, practical MCP query examples, and 3-month growth strategy - transparently sharing the journey of starting a technical blog"
-pubDate: "Oct 06 2025"
+pubDate: '2025-10-06'
 heroImage: "../../../assets/blog/blog-launch-analysis-hero.png"
 tags: ["Analytics", "Blog", "Report"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "jangwook.netブログローンチ分析レポート: データ駆動型技術ブログの始まり"
 description: "ブログローンチ初期のGA4データ分析、実践的なMCPクエリ例、そして3ヶ月成長戦略まで - 透明性を持って共有する技術ブログの旅の始まり"
-pubDate: "Oct 06 2025"
+pubDate: '2025-10-06'
 heroImage: "../../../assets/blog/blog-launch-analysis-hero.png"
 tags: ["Analytics", "Blog", "Report"]
 ---

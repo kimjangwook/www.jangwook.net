@@ -1,7 +1,7 @@
 ---
 title: "Blog Automation with LLM and Claude Code - The Future of Content Creation"
 description: "Complete guide to automating your blog with Claude Code and 11 specialized AI agents. From prompt engineering to MCP integration, multi-language support, and image generation - a practical tutorial anyone can follow."
-pubDate: "2025-10-04"
+pubDate: '2025-10-04'
 heroImage: "../../../assets/blog/2025-10-04-llm-blog-automation.png"
 tags:
   [

@@ -7,6 +7,7 @@ import Header from '../../components/Header.astro';
 import HeroSection from '../../components/HeroSection.astro';
 import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
 import { useTranslations, type Language } from '../../lib/i18n/languages';
+import { filterPostsByDate } from '../../lib/content';
 
 export function getStaticPaths() {
 	return getI18nStaticPaths();
@@ -19,10 +20,9 @@ const t = useTranslations(lang);
 // - ko/filename.md -> ko
 // - en/filename.md -> en
 // - ja/filename.md -> ja
-const now = new Date();
-const posts = (await getCollection('blog'))
+const allPosts = await getCollection('blog');
+const posts = filterPostsByDate(allPosts)
 	.filter((post) => post.id.startsWith(`${lang}/`))
-	.filter((post) => post.data.pubDate <= now) // Exclude future posts
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 6);
 ---

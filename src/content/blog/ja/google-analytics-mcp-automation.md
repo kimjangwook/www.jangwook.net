@@ -1,7 +1,7 @@
 ---
 title: "Google Analytics MCPとAIエージェントでブログ分析を自動化する"
 description: "MCPとAIエージェントを活用してブログ分析を自動化し、データ駆動型の意思決定を行う方法を学びます"
-pubDate: "Oct 05 2025"
+pubDate: '2025-10-05'
 heroImage: "../../../assets/blog/google-analytics-mcp-hero.png"
 tags: ["Analytics", "MCP", "Automation"]
 ---

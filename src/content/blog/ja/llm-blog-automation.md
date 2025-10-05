@@ -1,7 +1,7 @@
 ---
 title: "LLMとClaude Codeを活用したブログ自動化 - 未来のコンテンツ制作"
 description: "Claude Codeと11の専門エージェントでブログを完全自動化する方法。プロンプトエンジニアリングからMCP統合、多言語対応、画像生成まで - 誰でもできる実践ガイド。"
-pubDate: "2025-10-04"
+pubDate: '2025-10-04'
 heroImage: "../../../assets/blog/2025-10-04-llm-blog-automation.png"
 tags:
   [

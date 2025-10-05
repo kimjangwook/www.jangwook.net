@@ -1,7 +1,7 @@
 ---
 title: "jangwook.net 블로그 런칭 분석 리포트: 데이터 기반 기술 블로그의 시작"
 description: "블로그 런칭 초기 GA4 데이터 분석, 실전 MCP 쿼리 예제, 그리고 3개월 성장 전략까지 - 투명하게 공유하는 기술 블로그 여정의 시작"
-pubDate: "Oct 06 2025"
+pubDate: '2025-10-06'
 heroImage: "../../../assets/blog/blog-launch-analysis-hero.png"
 tags: ["Analytics", "Blog", "Report"]
 ---

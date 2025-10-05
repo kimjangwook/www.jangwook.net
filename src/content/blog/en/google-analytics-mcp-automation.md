@@ -1,7 +1,7 @@
 ---
 title: "Automating Blog Analytics with Google Analytics MCP and AI Agents"
 description: "Learn how to automate blog analytics and make data-driven decisions using MCP and AI agents"
-pubDate: "Oct 05 2025"
+pubDate: '2025-10-05'
 heroImage: "../../../assets/blog/google-analytics-mcp-hero.png"
 tags: ["Analytics", "MCP", "Automation"]
 ---

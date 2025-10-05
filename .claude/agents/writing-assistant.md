@@ -63,7 +63,7 @@
 ---
 title: [제목]
 description: [설명 - SEO를 위해 150-160자 권장]
-pubDate: [날짜 - YYYY-MM-DD 또는 MMM DD YYYY]
+pubDate: 'YYYY-MM-DD'  # 필수: YYYY-MM-DD 형식만 사용, 작은따옴표 필수
 heroImage: '../../../assets/blog/[이미지-파일명].jpg'  # src/assets/blog/에서 상대 경로
 tags: [태그1, 태그2, ...]
 lang: 'ko'  # 언어 코드: ko, ja, en
@@ -193,6 +193,11 @@ description: 'Explore the major features added in TypeScript 5.0, including deco
 - 표준 기술 용어 사용
 - 예: "Decorator", "Type Guard"
 
+### 날짜 형식 규칙
+**중요**: pubDate는 반드시 'YYYY-MM-DD' 형식과 작은따옴표를 사용해야 합니다.
+- ✅ 올바른 예: `pubDate: '2025-10-07'`
+- ❌ 잘못된 예: `pubDate: "Oct 07 2025"`, `pubDate: "2025-10-07"`
+
 ### 상호 링크 구현
 각 언어 버전 하단에 다른 언어 버전 링크 추가:
 
@@ -219,7 +224,7 @@ description: 'Explore the major features added in TypeScript 5.0, including deco
 - 각 언어 버전은 번역이 아닌 "현지화"로 접근
 - 문화적 맥락과 예시를 언어권에 맞게 조정
 - 공통 코드 예제는 동일하게, 설명은 언어별로 최적화
-- pubDate는 모든 언어 버전에서 동일하게 유지
+- **pubDate는 모든 언어 버전에서 동일하게 유지** (형식: 'YYYY-MM-DD', 작은따옴표)
 
 ### 이미지 협업
 - 히어로 이미지는 포스트 작성 초기에 요청

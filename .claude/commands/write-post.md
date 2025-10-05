@@ -70,7 +70,7 @@ For each language in `--languages`:
   ---
   title: [Generated Title]
   description: [SEO Description]
-  pubDate: [Current Date]
+  pubDate: 'YYYY-MM-DD'  # Must use single quotes and YYYY-MM-DD format
   heroImage: ../../../assets/blog/[slug]-hero.[ext]
   tags: [tag1, tag2, ...]
   ---
@@ -185,10 +185,10 @@ Requirements:
 ---
 title: string (required, max 60 chars recommended)
 description: string (required, 150-160 chars for SEO)
-pubDate: string (required, format: "YYYY-MM-DD" or "MMM DD YYYY")
+pubDate: string (required, format: 'YYYY-MM-DD' only, single quotes)
 heroImage: string (optional, relative path from content file: ../../../assets/blog/[image])
 tags: array (optional, lowercase, alphanumeric + hyphens)
-updatedDate: string (optional, same format as pubDate)
+updatedDate: string (optional, format: 'YYYY-MM-DD' only, single quotes)
 ---
 ```
 
@@ -354,7 +354,7 @@ Future enhancements may include:
 
 ## Notes
 
-- All dates use ISO 8601 format (YYYY-MM-DD) or Astro-compatible format
+- **All dates MUST use 'YYYY-MM-DD' format with single quotes** (e.g., '2025-10-07')
 - Slug generation removes special characters and uses hyphens
 - Tags are automatically lowercased and sanitized
 - Images in src/assets/ are automatically optimized by Astro (WebP conversion, responsive sizes, etc.)

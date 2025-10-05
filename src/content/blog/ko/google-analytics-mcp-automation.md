@@ -1,7 +1,7 @@
 ---
 title: "Google Analytics MCP와 AI 에이전트로 블로그 분석 자동화하기"
 description: "MCP와 AI 에이전트를 활용하여 블로그 분석을 자동화하고 데이터 기반 의사결정을 하는 방법을 알아봅니다"
-pubDate: "Oct 05 2025"
+pubDate: '2025-10-05'
 heroImage: "../../../assets/blog/google-analytics-mcp-hero.png"
 tags: ["Analytics", "MCP", "Automation"]
 ---
