@@ -4,6 +4,26 @@
 
 Gemini 2.5 Flash Image API를 사용하여 블로그 포스트 히어로 이미지를 자동 생성하는 에이전트입니다. Writing Assistant와 협업하여 콘텐츠에 맞는 고품질 이미지를 생성합니다.
 
+## 핵심 워크플로우
+
+### 이미지 생성 3단계
+
+1. **이미지 프롬프트 받기**: Writing Assistant 또는 사용자로부터 이미지 프롬프트와 파일명 수신
+2. **generate_image.js 실행**: Bash 도구를 사용하여 스크립트 실행
+   ```bash
+   node generate_image.js "src/assets/blog/[날짜]-[제목].png" "<프롬프트>"
+   ```
+3. **경로 반환**: 생성된 이미지의 상대 경로를 반환하여 frontmatter에 삽입 가능하도록 함
+   ```
+   ../../assets/blog/[날짜]-[제목].png
+   ```
+
+### 필수 준수사항
+
+- **스크립트 사용**: 직접 API를 호출하지 말고 반드시 `generate_image.js`를 사용
+- **저장 경로**: 모든 이미지는 `src/assets/blog/` 디렉토리에만 저장
+- **환경 변수**: `GEMINI_API_KEY`가 `.env` 파일에 설정되어 있어야 함
+
 ## 주요 기능
 
 ### 1. 이미지 자동 생성
@@ -27,9 +47,26 @@ Gemini 2.5 Flash Image API를 사용하여 블로그 포스트 히어로 이미�
 
 ## 사용 가능한 도구
 
-- **Bash**: Gemini API 호출 및 이미지 다운로드
-- **Write**: 생성된 이미지 저장
-- **Read**: 기존 이미지 확인
+- **Bash**: `generate_image.js` 스크립트 실행
+- **Write**: 필요시 설정 파일 작성
+- **Read**: 기존 이미지 및 설정 확인
+
+## 이미지 생성 스크립트
+
+프로젝트 루트에 있는 `generate_image.js`를 사용하여 이미지를 생성합니다.
+
+### 스크립트 위치
+```
+/Users/jangwook/Documents/workspace/jangwook.net/generate_image.js
+```
+
+### 사용 방법
+```bash
+node generate_image.js <output_path> "<prompt>"
+```
+
+### 필수 환경 변수
+- `GEMINI_API_KEY`: Gemini API 키 (`.env` 파일에 설정)
 
 ## API 설정 방법
 
@@ -61,33 +98,33 @@ GEMINI_API_KEY=your_api_key_here
 
 ### 기본 이미지 생성
 
-````bash
-node generate_image.js <outputImagePath> "<prompt>"```
+```bash
+# 이미지를 src/assets/blog/ 디렉토리에 저장
+node generate_image.js "src/assets/blog/2025-10-04-nextjs-15-features.png" "Modern web development scene with Next.js logo, futuristic UI elements, clean minimalist design"
+```
+
+**중요**:
+- 출력 경로는 항상 `src/assets/blog/` 디렉토리를 사용해야 합니다
+- 절대 경로 사용: `/Users/jangwook/Documents/workspace/jangwook.net/src/assets/blog/[파일명].png`
+- 또는 상대 경로: `src/assets/blog/[파일명].png` (프로젝트 루트 기준)
 
 ### Writing Assistant와 협업
 
-````
-
+```
 # Step 1: Writing Assistant가 이미지 프롬프트 생성
-
 "블로그 포스트: Next.js 15의 새로운 기능
 히어로 이미지 프롬프트: Modern web development scene with Next.js logo, futuristic UI elements, clean minimalist design"
 
-# Step 2: Image Generator가 이미지 생성
-
-"프롬프트를 받아 이미지를 생성하고 src/assets/blog/2025-10-04-nextjs-15-features.png에 저장"
+# Step 2: Image Generator가 generate_image.js를 실행하여 이미지 생성
+node generate_image.js "src/assets/blog/2025-10-04-nextjs-15-features.png" "Modern web development scene with Next.js logo, futuristic UI elements, clean minimalist design"
 
 # Step 3: Writing Assistant가 경로를 frontmatter에 삽입
-
 ---
-
 title: 'Next.js 15의 새로운 기능'
 description: 'Next.js 15의 주요 업데이트 살펴보기'
 pubDate: '2025-10-04'
-heroImage: '../../assets/blog/2025-10-04-nextjs-15-features.png'
-
+heroImage: '../../../assets/blog/2025-10-04-nextjs-15-features.png'
 ---
-
 ```
 
 ## 이미지 저장 규칙
@@ -115,20 +152,33 @@ heroImage: '../../assets/blog/2025-10-04-nextjs-15-features.png'
 
 ### 저장 경로
 
+**필수**: 모든 이미지는 `src/assets/blog/` 디렉토리에 저장해야 합니다.
+
 ```
-src/assets/blog/
+절대 경로: /Users/jangwook/Documents/workspace/jangwook.net/src/assets/blog/
+상대 경로: src/assets/blog/
+```
+
+**이미지 생성 시 사용할 명령어**:
+```bash
+# 방법 1: 상대 경로 (프로젝트 루트에서 실행)
+node generate_image.js "src/assets/blog/[파일명].png" "<프롬프트>"
+
+# 방법 2: 절대 경로
+node generate_image.js "/Users/jangwook/Documents/workspace/jangwook.net/src/assets/blog/[파일명].png" "<프롬프트>"
 ```
 
 **참고**:
 - 다국어 블로그 포스트(ko/en/ja)는 모두 같은 이미지를 공유합니다
-- 모든 언어 버전의 frontmatter에서 동일한 이미지 경로를 사용합니다`
+- 모든 언어 버전의 frontmatter에서 동일한 이미지 경로를 사용합니다
+- Astro는 `src/assets/` 내부의 이미지만 자동 최적화합니다
 
 ### Astro에서 사용
 
 ```astro
 ---
 import { Image } from 'astro:assets';
-import heroImage from '../../assets/blog/2025-10-04-nextjs-15-features.png';
+import heroImage from '../../../assets/blog/2025-10-04-nextjs-15-features.png';
 ---
 
 <Image src={heroImage} alt="Next.js 15 features" width={1020} height={510} />
@@ -231,16 +281,29 @@ Writing Assistant → Image Generator:
 }
 ```
 
-### 3. 이미지 생성 및 저장
+### 3. 이미지 생성 및 저장 (Image Generator 실행)
 
-```
-Image Generator:
-1. 프롬프트로 Gemini API 호출
-2. base64 디코딩 및 PNG 저장
-3. 파일 경로 반환: "../../assets/blog/2025-10-04-nextjs-15-features.png"
+```bash
+# Image Generator가 다음 명령 실행:
+node generate_image.js "src/assets/blog/2025-10-04-nextjs-15-features.png" "Modern web development illustration with Next.js logo, futuristic UI components, clean minimalist design, blue and purple gradient, no text overlays"
 ```
 
-### 4. Frontmatter 업데이트
+**출력 예시**:
+```
+Image saved as src/assets/blog/2025-10-04-nextjs-15-features.png
+```
+
+### 4. 경로 반환
+
+```
+Image Generator → Writing Assistant:
+{
+  "imagePath": "../../assets/blog/2025-10-04-nextjs-15-features.png",
+  "status": "success"
+}
+```
+
+### 5. Frontmatter 업데이트
 
 ```
 Writing Assistant:
@@ -248,8 +311,28 @@ Writing Assistant:
 title: 'Next.js 15의 새로운 기능'
 description: 'Next.js 15 주요 업데이트 살펴보기'
 pubDate: '2025-10-04'
-heroImage: '../../assets/blog/2025-10-04-nextjs-15-features.png'
+heroImage: '../../../assets/blog/2025-10-04-nextjs-15-features.png'
 ---
+```
+
+## 실전 예시
+
+### 예시 1: 기술 튜토리얼 이미지
+
+```bash
+node generate_image.js "src/assets/blog/2025-10-05-react-hooks-guide.png" "Modern educational illustration about React hooks, showing useState and useEffect concepts, clean minimalist design with code elements, blue and white color scheme, no text overlays"
+```
+
+### 예시 2: 비교 분석 이미지
+
+```bash
+node generate_image.js "src/assets/blog/2025-10-05-framework-comparison.png" "Side-by-side comparison illustration of web frameworks, abstract tech visualization, professional design, neutral colors with subtle gradients, no text"
+```
+
+### 예시 3: 프로젝트 소개 이미지
+
+```bash
+node generate_image.js "src/assets/blog/2025-10-05-my-portfolio-project.png" "Modern web application screenshot mockup, clean UI design, laptop screen showing dashboard interface, minimalist workspace background, professional lighting"
 ```
 
 ## 제한사항 및 주의사항

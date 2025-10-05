@@ -59,7 +59,7 @@ The command delegates to the Writing Assistant agent with the following tasks:
 #### Phase 2: Image Generation
 - Generate hero image prompt based on topic
 - Call Image Generator agent to create hero image
-- Save image to appropriate path: `/public/images/blog/[slug]-hero.[ext]`
+- Save image to appropriate path: `src/assets/blog/[slug]-hero.[ext]`
 - Store image metadata for frontmatter
 
 #### Phase 3: Content Generation
@@ -71,7 +71,7 @@ For each language in `--languages`:
   title: [Generated Title]
   description: [SEO Description]
   pubDate: [Current Date]
-  heroImage: /images/blog/[slug]-hero.[ext]
+  heroImage: ../../../assets/blog/[slug]-hero.[ext]
   tags: [tag1, tag2, ...]
   ---
   ```
@@ -106,7 +106,7 @@ Generated Files:
   - /src/content/blog/[slug].en.md (English)
 
 Hero Image:
-  - /public/images/blog/[slug]-hero.[ext]
+  - src/assets/blog/[slug]-hero.[ext]
 
 Metadata:
   - Title: [Generated Title]
@@ -134,7 +134,8 @@ Requirements:
 2. Generate hero image:
    - Create descriptive image prompt
    - Call Image Generator agent
-   - Use returned image path in frontmatter
+   - Save to src/assets/blog/[slug]-hero.[ext]
+   - Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter
 3. Write complete blog post for each language:
    - Follow Astro Content Collections schema
    - Include frontmatter (title, description, pubDate, heroImage, tags)
@@ -170,7 +171,7 @@ Requirements:
       "title": "[English Title]"
     }
   ],
-  "heroImage": "/images/blog/[slug]-hero.[ext]",
+  "heroImage": "../../../assets/blog/[slug]-hero.[ext]",
   "slug": "[generated-slug]",
   "tags": ["tag1", "tag2"],
   "pubDate": "[YYYY-MM-DD]"
@@ -185,7 +186,7 @@ Requirements:
 title: string (required, max 60 chars recommended)
 description: string (required, 150-160 chars for SEO)
 pubDate: string (required, format: "YYYY-MM-DD" or "MMM DD YYYY")
-heroImage: string (optional, path to image in /public/images/)
+heroImage: string (optional, relative path from content file: ../../../assets/blog/[image])
 tags: array (optional, lowercase, alphanumeric + hyphens)
 updatedDate: string (optional, same format as pubDate)
 ---
@@ -239,7 +240,8 @@ updatedDate: string (optional, same format as pubDate)
 - Dimensions: 1020x510px (2:1 ratio) recommended
 - Format: WebP, AVIF, or JPG
 - File naming: `[slug]-hero.[ext]`
-- Location: `/public/images/blog/`
+- Location: `src/assets/blog/`
+- Frontmatter path: `../../../assets/blog/[slug]-hero.[ext]` (relative to content file)
 
 ### Image Prompt Guidelines
 The Writing Assistant should generate prompts like:
@@ -355,7 +357,7 @@ Future enhancements may include:
 - All dates use ISO 8601 format (YYYY-MM-DD) or Astro-compatible format
 - Slug generation removes special characters and uses hyphens
 - Tags are automatically lowercased and sanitized
-- Images are not optimized by Astro (in /public/), consider moving to /src/assets/ for optimization
+- Images in src/assets/ are automatically optimized by Astro (WebP conversion, responsive sizes, etc.)
 - Generated content should be reviewed before publishing
 - The command respects Astro Content Collections schema defined in `src/content.config.ts`
 
@@ -368,9 +370,10 @@ Future enhancements may include:
 - Ensure file is in correct directory (`src/content/blog/`)
 
 ### Image Not Loading
-- Verify image path starts with `/images/`
-- Check file exists in `/public/images/blog/`
+- Verify image path is relative: `../../../assets/blog/[image]`
+- Check file exists in `src/assets/blog/`
 - Ensure correct file extension
+- Astro will optimize images from src/assets/ automatically
 
 ### Build Errors
 - Validate Content Collections schema compliance

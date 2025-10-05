@@ -64,7 +64,7 @@
 title: [제목]
 description: [설명 - SEO를 위해 150-160자 권장]
 pubDate: [날짜 - YYYY-MM-DD 또는 MMM DD YYYY]
-heroImage: '../../assets/[이미지-파일명].jpg'  # 이미지 생성 에이전트로부터 받은 경로
+heroImage: '../../../assets/blog/[이미지-파일명].jpg'  # src/assets/blog/에서 상대 경로
 tags: [태그1, 태그2, ...]
 lang: 'ko'  # 언어 코드: ko, ja, en
 alternates:  # 다국어 버전 링크
@@ -152,7 +152,7 @@ src/content/blog/
 ### 3. 생성된 이미지 통합
 Image Generator로부터 받은 이미지 경로를 Frontmatter에 추가:
 ```yaml
-heroImage: '../../assets/blog/[slug]-hero.jpg'
+heroImage: '../../../assets/blog/[slug]-hero.jpg'
 ```
 
 ### 4. 다국어 버전 처리
