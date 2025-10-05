@@ -14,26 +14,223 @@ const t = useTranslations(lang);
 
 // TODO: This will be populated by the improvement-tracker agent
 const improvements = [
-  // Example structure (to be populated):
-  // {
-  //   date: '2025-10-18',
-  //   title: { ko: '모바일 UX 최적화', en: 'Mobile UX Optimization', ja: 'モバイルUX最適化' },
-  //   category: 'UX',
-  //   before: { metric: { ko: '모바일 이탈률', en: 'Mobile Bounce Rate', ja: 'モバイル離脱率' }, value: '68%' },
-  //   after: { metric: { ko: '모바일 이탈률', en: 'Mobile Bounce Rate', ja: 'モバイル離脱率' }, value: '47%' },
-  //   impact: '-31%',
-  //   impactType: 'positive',
-  //   effort: { ko: '중간', en: 'Medium', ja: '中程度' },
-  //   roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
-  //   sourceReport: `/blog/${lang}/weekly-analytics-2025-10-12`,
-  //   description: { ko: '상위 3개 포스트의 모바일 경험 개선', en: 'Optimized mobile experience for top 3 posts', ja: 'トップ3投稿のモバイル体験を改善' },
-  //   lessons: {
-  //     ko: ['이미지 최적화가 가장 큰 효과', '실기기 테스트가 중요'],
-  //     en: ['Image optimization had biggest impact', 'Real device testing crucial'],
-  //     ja: ['画像最適化が最大の効果', '実機テストが重要']
-  //   }
-  // }
+  // Completed improvements
+  {
+    date: '2025-10-05',
+    status: 'completed',
+    title: {
+      ko: '이벤트 트래킹 강화',
+      en: 'Event Tracking Enhancement',
+      ja: 'イベントトラッキング強化'
+    },
+    category: 'Technical',
+    before: {
+      metric: { ko: '추적 이벤트', en: 'Tracked Events', ja: '追跡イベント' },
+      value: '기본 페이지뷰만'
+    },
+    after: {
+      metric: { ko: '추적 이벤트', en: 'Tracked Events', ja: '追跡イベント' },
+      value: '4개 추가 완료'
+    },
+    impact: '+400%',
+    impactType: 'positive',
+    effort: { ko: '낮음', en: 'Low', ja: '低' },
+    roi: { ko: '높음', en: 'High', ja: '高' },
+    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
+    description: {
+      ko: '사용자 행동 추적을 위한 커스텀 이벤트 4개 추가 (스크롤 완료, 문의 클릭, 소셜 링크, 외부 링크)',
+      en: 'Add 4 custom events for user behavior tracking (scroll complete, contact click, social links, external links)',
+      ja: 'ユーザー行動追跡のためのカスタムイベント4つを追加（スクロール完了、お問い合わせクリック、ソーシャルリンク、外部リンク）'
+    },
+    lessons: {
+      ko: [
+        'BaseHead.astro에 전역 external_link_click 트래킹 추가',
+        'BlogPost.astro에 스크롤 100% 도달 감지 및 이벤트 발생',
+        'Footer.astro에 소셜 링크별 구분 트래킹 (data-social-platform 속성 활용)',
+        'Contact 페이지 iframe 상호작용 감지 (window blur + activeElement 체크)'
+      ],
+      en: [
+        'Added global external_link_click tracking to BaseHead.astro',
+        'Implemented scroll 100% detection and event firing in BlogPost.astro',
+        'Added platform-specific social link tracking in Footer.astro (using data-social-platform attribute)',
+        'Detected contact form iframe interaction (window blur + activeElement check)'
+      ],
+      ja: [
+        'BaseHead.astroにグローバルexternal_link_clickトラッキングを追加',
+        'BlogPost.astroにスクロール100%到達検出とイベント発火を実装',
+        'Footer.astroにプラットフォーム別ソーシャルリンクトラッキングを追加（data-social-platform属性を活用）',
+        'お問い合わせフォームiframe相互作用を検出（window blur + activeElement チェック）'
+      ]
+    }
+  },
+  // Planned improvements from blog launch analysis report
+  {
+    date: '2025-10-20',
+    status: 'planned',
+    title: {
+      ko: '모바일 UX 최적화',
+      en: 'Mobile UX Optimization',
+      ja: 'モバイルUX最適化'
+    },
+    category: 'UX',
+    target: {
+      metric: { ko: '모바일 이탈률', en: 'Mobile Bounce Rate', ja: 'モバイル離脱率' },
+      value: '<60%'
+    },
+    effort: { ko: '중간', en: 'Medium', ja: '中程度' },
+    roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
+    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
+    description: {
+      ko: '모바일 디바이스에서의 사용자 경험 개선 및 반응형 디자인 검증',
+      en: 'Improve user experience on mobile devices and validate responsive design',
+      ja: 'モバイルデバイスでのユーザー体験を改善し、レスポンシブデザインを検証'
+    },
+    expectedImpact: { ko: '모바일 트래픽 증가 및 이탈률 감소', en: 'Increased mobile traffic and reduced bounce rate', ja: 'モバイルトラフィック増加と離脱率の低下' }
+  },
+  {
+    date: '2025-10-20',
+    status: 'planned',
+    title: {
+      ko: 'Core Web Vitals 최적화',
+      en: 'Core Web Vitals Optimization',
+      ja: 'Core Web Vitals最適化'
+    },
+    category: 'Technical',
+    target: {
+      metric: { ko: 'LCP / CLS', en: 'LCP / CLS', ja: 'LCP / CLS' },
+      value: '<2.5s / <0.1'
+    },
+    effort: { ko: '중간', en: 'Medium', ja: '中程度' },
+    roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
+    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
+    description: {
+      ko: '페이지 로딩 속도 및 시각적 안정성 개선을 통한 Core Web Vitals 최적화',
+      en: 'Optimize Core Web Vitals through page loading speed and visual stability improvements',
+      ja: 'ページ読み込み速度と視覚的安定性の改善によるCore Web Vitals最適化'
+    },
+    expectedImpact: { ko: 'SEO 순위 향상 및 사용자 경험 개선', en: 'Improved SEO ranking and user experience', ja: 'SEO順位向上とユーザー体験の改善' }
+  },
+  {
+    date: '2025-10-20',
+    status: 'planned',
+    title: {
+      ko: '구조화된 데이터 추가',
+      en: 'Add Structured Data',
+      ja: '構造化データの追加'
+    },
+    category: 'SEO',
+    target: {
+      metric: { ko: 'Schema.org', en: 'Schema.org', ja: 'Schema.org' },
+      value: '3 types'
+    },
+    effort: { ko: '낮음', en: 'Low', ja: '低' },
+    roi: { ko: '높음', en: 'High', ja: '高' },
+    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
+    description: {
+      ko: 'Article, BreadcrumbList, WebSite Schema를 추가하여 검색엔진 최적화',
+      en: 'Add Article, BreadcrumbList, and WebSite Schema for search engine optimization',
+      ja: 'Article、BreadcrumbList、WebSite Schemaを追加して検索エンジン最適化'
+    },
+    expectedImpact: { ko: 'Rich Snippets 표시 및 검색 노출 증가', en: 'Rich Snippets display and increased search visibility', ja: 'リッチスニペット表示と検索露出の増加' }
+  },
+  {
+    date: '2025-12-31',
+    status: 'planned',
+    title: {
+      ko: 'SEO 키워드 최적화',
+      en: 'SEO Keyword Optimization',
+      ja: 'SEOキーワード最適化'
+    },
+    category: 'SEO',
+    target: {
+      metric: { ko: 'Organic Search', en: 'Organic Search', ja: 'オーガニック検索' },
+      value: '40%'
+    },
+    effort: { ko: '높음', en: 'High', ja: '高' },
+    roi: { ko: '매우 높음', en: 'Very High', ja: '非常に高い' },
+    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
+    description: {
+      ko: '키워드 리서치 및 콘텐츠 최적화를 통한 자연 검색 트래픽 증대',
+      en: 'Increase organic search traffic through keyword research and content optimization',
+      ja: 'キーワードリサーチとコンテンツ最適化によるオーガニック検索トラフィックの増加'
+    },
+    expectedImpact: { ko: '유입 채널 다변화 및 지속 가능한 트래픽 확보', en: 'Traffic channel diversification and sustainable traffic acquisition', ja: 'トラフィックチャネルの多様化と持続可能なトラフィック確保' }
+  },
+  {
+    date: '2025-12-31',
+    status: 'planned',
+    title: {
+      ko: '소셜 미디어 활성화',
+      en: 'Social Media Activation',
+      ja: 'ソーシャルメディア活性化'
+    },
+    category: 'Traffic',
+    target: {
+      metric: { ko: '활성 채널', en: 'Active Channels', ja: 'アクティブチャネル' },
+      value: '2+'
+    },
+    effort: { ko: '중간', en: 'Medium', ja: '中程度' },
+    roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
+    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
+    description: {
+      ko: 'LinkedIn, Twitter(X) 등 소셜 미디어 채널 활성화 및 콘텐츠 배포',
+      en: 'Activate social media channels like LinkedIn and Twitter(X) for content distribution',
+      ja: 'LinkedInやTwitter(X)などのソーシャルメディアチャネルを活性化してコンテンツ配信'
+    },
+    expectedImpact: { ko: '소셜 트래픽 20% 달성', en: 'Achieve 20% social traffic', ja: 'ソーシャルトラフィック20%達成' }
+  },
+  {
+    date: '2025-12-31',
+    status: 'planned',
+    title: {
+      ko: 'Newsletter CTA 추가',
+      en: 'Add Newsletter CTA',
+      ja: 'ニュースレターCTA追加'
+    },
+    category: 'Content',
+    target: {
+      metric: { ko: '구독 전환율', en: 'Subscription Rate', ja: '購読転換率' },
+      value: '5%'
+    },
+    effort: { ko: '낮음', en: 'Low', ja: '低' },
+    roi: { ko: '높음', en: 'High', ja: '高' },
+    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
+    description: {
+      ko: '블로그 포스트 및 주요 페이지에 Newsletter 구독 CTA 추가',
+      en: 'Add Newsletter subscription CTA to blog posts and key pages',
+      ja: 'ブログ記事と主要ページにニュースレター購読CTAを追加'
+    },
+    expectedImpact: { ko: '독자 유지율 향상 및 재방문 유도', en: 'Improved reader retention and return visits', ja: '読者維持率向上とリピート訪問誘導' }
+  },
+  {
+    date: '2025-12-31',
+    status: 'planned',
+    title: {
+      ko: '콘텐츠 추천 알고리즘',
+      en: 'Content Recommendation Algorithm',
+      ja: 'コンテンツ推薦アルゴリズム'
+    },
+    category: 'Content',
+    target: {
+      metric: { ko: '페이지/세션', en: 'Pages/Session', ja: 'ページ/セッション' },
+      value: '2.5+'
+    },
+    effort: { ko: '높음', en: 'High', ja: '高' },
+    roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
+    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
+    description: {
+      ko: '관련 포스트 자동 추천 알고리즘 구현으로 콘텐츠 탐색 개선',
+      en: 'Implement related post recommendation algorithm to improve content discovery',
+      ja: '関連記事自動推薦アルゴリズムを実装してコンテンツ探索を改善'
+    },
+    expectedImpact: { ko: '사용자 참여도 증가 및 세션 시간 연장', en: 'Increased user engagement and session duration', ja: 'ユーザーエンゲージメント増加とセッション時間延長' }
+  }
 ];
+
+// Split improvements by status
+const plannedImprovements = improvements.filter(i => i.status === 'planned');
+const completedImprovements = improvements.filter(i => i.status === 'completed');
+const inProgressImprovements = improvements.filter(i => i.status === 'in-progress');
 
 const categories = {
   'Traffic': improvements.filter(i => i.category === 'Traffic'),
@@ -44,9 +241,11 @@ const categories = {
 };
 
 const metrics = {
-  totalImprovements: improvements.length,
-  avgImpact: improvements.length > 0
-    ? (improvements.reduce((sum, i) => sum + parseFloat(i.impact), 0) / improvements.length).toFixed(1)
+  totalPlanned: plannedImprovements.length,
+  totalInProgress: inProgressImprovements.length,
+  totalCompleted: completedImprovements.length,
+  avgImpact: completedImprovements.length > 0
+    ? (completedImprovements.reduce((sum, i) => sum + parseFloat(i.impact || 0), 0) / completedImprovements.length).toFixed(1)
     : 0,
   topCategory: Object.entries(categories).sort((a, b) => b[1].length - a[1].length)[0]?.[0] || 'N/A'
 };
@@ -64,9 +263,16 @@ const translations = {
     ja: 'データに基づいた継続的なサイト改善プロセスと成果を透明に共有します'
   },
   stats: {
-    total: { ko: '총 개선 건수', en: 'Total Improvements', ja: '総改善数' },
+    planned: { ko: '계획됨', en: 'Planned', ja: '計画済み' },
+    inProgress: { ko: '진행 중', en: 'In Progress', ja: '進行中' },
+    completed: { ko: '완료됨', en: 'Completed', ja: '完了' },
     avgImpact: { ko: '평균 개선 효과', en: 'Average Impact', ja: '平均改善効果' },
     topCategory: { ko: '최다 개선 카테고리', en: 'Top Category', ja: '最多改善カテゴリ' }
+  },
+  sections: {
+    planned: { ko: '계획된 개선사항', en: 'Planned Improvements', ja: '計画された改善事項' },
+    inProgress: { ko: '진행 중인 개선사항', en: 'In Progress', ja: '進行中の改善事項' },
+    completed: { ko: '완료된 개선사항', en: 'Completed Improvements', ja: '完了した改善事項' }
   },
   emptyState: {
     title: {
@@ -106,12 +312,15 @@ const translations = {
     technical: { ko: '기술', en: 'Technical', ja: '技術' }
   },
   metrics: {
+    target: { ko: '목표', en: 'Target', ja: '目標' },
     before: { ko: '개선 전', en: 'Before', ja: '改善前' },
     after: { ko: '개선 후', en: 'After', ja: '改善後' },
     impact: { ko: '효과', en: 'Impact', ja: '効果' },
+    expectedImpact: { ko: '예상 효과', en: 'Expected Impact', ja: '予想効果' },
     effort: { ko: '투입', en: 'Effort', ja: '投入' },
     roi: { ko: 'ROI', en: 'ROI', ja: 'ROI' },
-    date: { ko: '날짜', en: 'Date', ja: '日付' }
+    date: { ko: '목표일', en: 'Target Date', ja: '目標日' },
+    status: { ko: '상태', en: 'Status', ja: 'ステータス' }
   },
   lessons: {
     title: { ko: '배운 점', en: 'Lessons Learned', ja: '学んだこと' }
@@ -392,12 +601,16 @@ const tt = (key: any) => {
 				<!-- Summary Stats -->
 				<div class="stats-grid">
 					<div class="stat-card">
-						<div class="stat-value">{metrics.totalImprovements}</div>
-						<div class="stat-label">{tt(translations.stats.total)}</div>
+						<div class="stat-value">{metrics.totalPlanned}</div>
+						<div class="stat-label">{tt(translations.stats.planned)}</div>
 					</div>
 					<div class="stat-card">
-						<div class="stat-value">{metrics.avgImpact}%</div>
-						<div class="stat-label">{tt(translations.stats.avgImpact)}</div>
+						<div class="stat-value">{metrics.totalInProgress}</div>
+						<div class="stat-label">{tt(translations.stats.inProgress)}</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-value">{metrics.totalCompleted}</div>
+						<div class="stat-label">{tt(translations.stats.completed)}</div>
 					</div>
 					<div class="stat-card">
 						<div class="stat-value">{metrics.topCategory}</div>
@@ -431,79 +644,171 @@ const tt = (key: any) => {
 							<button class="filter-tab" data-category="Technical">{tt(translations.filters.technical)}</button>
 						</div>
 
-						<!-- Timeline View -->
-						<div class="timeline">
-							{improvements.map((item) => (
-								<div class="timeline-item" data-category={item.category}>
-									<div class="improvement-card">
-										<div class="card-header">
-											<h3 class="card-title">{tt(item.title)}</h3>
-											<span class={`category-badge category-${item.category.toLowerCase()}`}>
-												{item.category}
-											</span>
-										</div>
-
-										<p>{tt(item.description)}</p>
-
-										<div class="before-after">
-											<div class="before">
-												<div class="metric-label">{tt(translations.metrics.before)}</div>
-												<div class="value">{item.before.value}</div>
-												<div class="metric-label">{tt(item.before.metric)}</div>
-											</div>
-											<div class="arrow">→</div>
-											<div class="after">
-												<div class="metric-label">{tt(translations.metrics.after)}</div>
-												<div class={`value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
-													{item.after.value}
+						<!-- Planned Improvements Section -->
+						{plannedImprovements.length > 0 && (
+							<div style="margin-top: 3rem;">
+								<h2 class="text-3xl font-bold mb-4">📋 {tt(translations.sections.planned)}</h2>
+								<div class="timeline">
+									{plannedImprovements.map((item) => (
+										<div class="timeline-item" data-category={item.category}>
+											<div class="improvement-card" style="background: #fefce8; border-color: #facc15;">
+												<div class="card-header">
+													<h3 class="card-title">{tt(item.title)}</h3>
+													<span class={`category-badge category-${item.category.toLowerCase()}`}>
+														{item.category}
+													</span>
 												</div>
-												<div class="metric-label">{tt(item.after.metric)}</div>
+
+												<p>{tt(item.description)}</p>
+
+												<!-- Target (for planned items) -->
+												<div class="before-after" style="background: white;">
+													<div class="before" style="grid-column: 1 / -1; text-align: left;">
+														<div class="metric-label">{tt(translations.metrics.target)}</div>
+														<div class="value" style="color: #0369a1;">{item.target.value}</div>
+														<div class="metric-label">{tt(item.target.metric)}</div>
+													</div>
+												</div>
+
+												<div class="metrics-row">
+													<div class="metric">
+														<span class="metric-label">{tt(translations.metrics.effort)}:</span>
+														<span class="metric-value">{tt(item.effort)}</span>
+													</div>
+													<div class="metric">
+														<span class="metric-label">{tt(translations.metrics.roi)}:</span>
+														<span class="metric-value">{tt(item.roi)}</span>
+													</div>
+													<div class="metric">
+														<span class="metric-label">{tt(translations.metrics.date)}:</span>
+														<span class="metric-value">{item.date}</span>
+													</div>
+												</div>
+
+												{item.expectedImpact && (
+													<div style="margin-top: 1rem; padding: 0.75rem; background: white; border-radius: 6px;">
+														<div style="font-weight: 600; color: #0369a1; margin-bottom: 0.25rem;">
+															{tt(translations.metrics.expectedImpact)}
+														</div>
+														<div style="color: var(--gray-700);">{tt(item.expectedImpact)}</div>
+													</div>
+												)}
+
+												{item.sourceReport && (
+													<div style="margin-top: 1rem;">
+														<a href={item.sourceReport} style="color: var(--accent); text-decoration: none;">
+															📄 {tt(translations.sourceReport)} →
+														</a>
+													</div>
+												)}
 											</div>
 										</div>
-
-										<div class="metrics-row">
-											<div class="metric">
-												<span class="metric-label">{tt(translations.metrics.impact)}:</span>
-												<span class={`metric-value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
-													{item.impact}
-												</span>
-											</div>
-											<div class="metric">
-												<span class="metric-label">{tt(translations.metrics.effort)}:</span>
-												<span class="metric-value">{tt(item.effort)}</span>
-											</div>
-											<div class="metric">
-												<span class="metric-label">{tt(translations.metrics.roi)}:</span>
-												<span class="metric-value">{tt(item.roi)}</span>
-											</div>
-											<div class="metric">
-												<span class="metric-label">{tt(translations.metrics.date)}:</span>
-												<span class="metric-value">{item.date}</span>
-											</div>
-										</div>
-
-										{item.lessons && tt(item.lessons).length > 0 && (
-											<div class="lessons">
-												<div class="lessons-title">💡 {tt(translations.lessons.title)}</div>
-												<ul>
-													{tt(item.lessons).map((lesson: string) => (
-														<li>{lesson}</li>
-													))}
-												</ul>
-											</div>
-										)}
-
-										{item.sourceReport && (
-											<div style="margin-top: 1rem;">
-												<a href={item.sourceReport} style="color: var(--accent); text-decoration: none;">
-													📄 {tt(translations.sourceReport)} →
-												</a>
-											</div>
-										)}
-									</div>
+									))}
 								</div>
-							))}
-						</div>
+							</div>
+						)}
+
+						<!-- In Progress Improvements Section -->
+						{inProgressImprovements.length > 0 && (
+							<div style="margin-top: 3rem;">
+								<h2 class="text-3xl font-bold mb-4">🚧 {tt(translations.sections.inProgress)}</h2>
+								<div class="timeline">
+									{inProgressImprovements.map((item) => (
+										<div class="timeline-item" data-category={item.category}>
+											<div class="improvement-card" style="background: #e0f2fe; border-color: #0369a1;">
+												<div class="card-header">
+													<h3 class="card-title">{tt(item.title)}</h3>
+													<span class={`category-badge category-${item.category.toLowerCase()}`}>
+														{item.category}
+													</span>
+												</div>
+												<p>{tt(item.description)}</p>
+												{/* Add similar structure as planned items */}
+											</div>
+										</div>
+									))}
+								</div>
+							</div>
+						)}
+
+						<!-- Completed Improvements Section -->
+						{completedImprovements.length > 0 && (
+							<div style="margin-top: 3rem;">
+								<h2 class="text-3xl font-bold mb-4">✅ {tt(translations.sections.completed)}</h2>
+								<div class="timeline">
+									{completedImprovements.map((item) => (
+										<div class="timeline-item" data-category={item.category}>
+											<div class="improvement-card">
+												<div class="card-header">
+													<h3 class="card-title">{tt(item.title)}</h3>
+													<span class={`category-badge category-${item.category.toLowerCase()}`}>
+														{item.category}
+													</span>
+												</div>
+
+												<p>{tt(item.description)}</p>
+
+												<div class="before-after">
+													<div class="before">
+														<div class="metric-label">{tt(translations.metrics.before)}</div>
+														<div class="value">{item.before.value}</div>
+														<div class="metric-label">{tt(item.before.metric)}</div>
+													</div>
+													<div class="arrow">→</div>
+													<div class="after">
+														<div class="metric-label">{tt(translations.metrics.after)}</div>
+														<div class={`value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
+															{item.after.value}
+														</div>
+														<div class="metric-label">{tt(item.after.metric)}</div>
+													</div>
+												</div>
+
+												<div class="metrics-row">
+													<div class="metric">
+														<span class="metric-label">{tt(translations.metrics.impact)}:</span>
+														<span class={`metric-value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
+															{item.impact}
+														</span>
+													</div>
+													<div class="metric">
+														<span class="metric-label">{tt(translations.metrics.effort)}:</span>
+														<span class="metric-value">{tt(item.effort)}</span>
+													</div>
+													<div class="metric">
+														<span class="metric-label">{tt(translations.metrics.roi)}:</span>
+														<span class="metric-value">{tt(item.roi)}</span>
+													</div>
+													<div class="metric">
+														<span class="metric-label">{tt(translations.metrics.date)}:</span>
+														<span class="metric-value">{item.date}</span>
+													</div>
+												</div>
+
+												{item.lessons && tt(item.lessons).length > 0 && (
+													<div class="lessons">
+														<div class="lessons-title">💡 {tt(translations.lessons.title)}</div>
+														<ul>
+															{tt(item.lessons).map((lesson: string) => (
+																<li>{lesson}</li>
+															))}
+														</ul>
+													</div>
+												)}
+
+												{item.sourceReport && (
+													<div style="margin-top: 1rem;">
+														<a href={item.sourceReport} style="color: var(--accent); text-decoration: none;">
+															📄 {tt(translations.sourceReport)} →
+														</a>
+													</div>
+												)}
+											</div>
+										</div>
+									))}
+								</div>
+							</div>
+						)}
 					</>
 				)}
 

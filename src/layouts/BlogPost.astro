@@ -116,5 +116,38 @@ const t = useTranslations(lang);
 			</article>
 		</main>
 		<Footer lang={lang} />
+
+		<!-- Blog Post Read Complete Tracking -->
+		<script>
+			let scrollTracked = false;
+
+			function trackScrollComplete() {
+				if (scrollTracked) return;
+
+				const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+				const scrollPosition = window.scrollY;
+				const scrollPercentage = (scrollPosition / scrollHeight) * 100;
+
+				if (scrollPercentage >= 100) {
+					scrollTracked = true;
+
+					// Send GA4 event
+					if (typeof gtag !== 'undefined') {
+						gtag('event', 'blog_post_read_complete', {
+							'page_title': document.title,
+							'page_location': window.location.href,
+							'page_path': window.location.pathname
+						});
+					}
+				}
+			}
+
+			// Throttle scroll events
+			let scrollTimeout: ReturnType<typeof setTimeout>;
+			window.addEventListener('scroll', () => {
+				clearTimeout(scrollTimeout);
+				scrollTimeout = setTimeout(trackScrollComplete, 100);
+			});
+		</script>
 	</body>
 </html>

@@ -60,5 +60,39 @@ const t = useTranslations(lang);
 			</div>
 		</main>
 		<Footer lang={lang} />
+
+		<!-- Contact Form Interaction Tracking -->
+		<script>
+			let contactTracked = false;
+
+			function trackContactInteraction() {
+				if (contactTracked) return;
+				contactTracked = true;
+
+				// Send GA4 event
+				if (typeof gtag !== 'undefined') {
+					gtag('event', 'contact_button_click', {
+						'page_title': document.title,
+						'page_location': window.location.href,
+						'page_path': window.location.pathname,
+						'event_category': 'engagement',
+						'event_label': 'contact_form_interaction'
+					});
+				}
+			}
+
+			// Track when user clicks on the iframe
+			const iframe = document.querySelector('iframe');
+			if (iframe) {
+				iframe.addEventListener('load', () => {
+					// Track iframe focus (user interaction)
+					window.addEventListener('blur', () => {
+						if (document.activeElement === iframe) {
+							trackContactInteraction();
+						}
+					});
+				});
+			}
+		</script>
 	</body>
 </html>

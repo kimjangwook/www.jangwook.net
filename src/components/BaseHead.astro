@@ -65,3 +65,36 @@ const { title, description, image = FallbackImage } = Astro.props;
 
   gtag('config', 'G-PWXG8FFDHW');
 </script>
+
+<!-- External Link Click Tracking -->
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		// Track all external link clicks
+		document.addEventListener('click', (event) => {
+			const target = event.target as HTMLElement;
+			const link = target.closest('a');
+
+			if (link && link.href) {
+				const currentHost = window.location.hostname;
+				const linkUrl = new URL(link.href, window.location.href);
+
+				// Check if link is external (different domain)
+				// Exclude social links (already tracked separately)
+				if (linkUrl.hostname !== currentHost &&
+					!link.classList.contains('social-link')) {
+					// Send GA4 event
+					if (typeof gtag !== 'undefined') {
+						gtag('event', 'external_link_click', {
+							'link_url': link.href,
+							'link_domain': linkUrl.hostname,
+							'link_text': link.textContent?.trim() || '',
+							'page_location': window.location.href,
+							'event_category': 'engagement',
+							'event_label': 'external_link'
+						});
+					}
+				}
+			}
+		});
+	});
+</script>
