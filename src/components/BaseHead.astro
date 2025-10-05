@@ -166,7 +166,7 @@ const articleSchema = articleData ? {
 <!-- Core Web Vitals Tracking -->
 <script>
 	// Import and track Core Web Vitals
-	import { onCLS, onFID, onLCP, onFCP, onTTFB, onINP } from 'web-vitals';
+	import { onCLS, onLCP, onFCP, onTTFB, onINP } from 'web-vitals';
 
 	function sendToGoogleAnalytics({ name, delta, value, id, rating }) {
 		// Send to Google Analytics
@@ -193,9 +193,8 @@ const articleSchema = articleData ? {
 
 	// Track all Core Web Vitals
 	onCLS(sendToGoogleAnalytics);  // Cumulative Layout Shift
-	onFID(sendToGoogleAnalytics);  // First Input Delay (deprecated but still tracked)
 	onLCP(sendToGoogleAnalytics);  // Largest Contentful Paint
 	onFCP(sendToGoogleAnalytics);  // First Contentful Paint
 	onTTFB(sendToGoogleAnalytics); // Time to First Byte
-	onINP(sendToGoogleAnalytics);  // Interaction to Next Paint (new FID replacement)
+	onINP(sendToGoogleAnalytics);  // Interaction to Next Paint (replaces deprecated FID)
 </script>
