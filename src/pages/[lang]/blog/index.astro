@@ -18,8 +18,10 @@ const t = useTranslations(lang);
 // - ko/filename.md -> ko
 // - en/filename.md -> en
 // - ja/filename.md -> ja
+const now = new Date();
 const posts = (await getCollection('blog'))
 	.filter((post) => post.id.startsWith(`${lang}/`))
+	.filter((post) => post.data.pubDate <= now) // Exclude future posts
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 

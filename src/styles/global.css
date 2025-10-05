@@ -52,6 +52,23 @@
 		@apply mb-4;
 	}
 
+	/* Article 내 heading 스타일 - 상단 마진 추가, 하단 마진 축소 */
+	article h1, article h2, article h3, article h4, article h5, article h6 {
+		@apply mt-8 mb-3;
+	}
+
+	article h1 {
+		@apply mt-0;
+	}
+
+	article h2 {
+		@apply mt-12 mb-4;
+	}
+
+	article h3 {
+		@apply mt-10 mb-3;
+	}
+
 	h1 {
 		@apply text-4xl md:text-5xl;
 	}
@@ -148,6 +165,11 @@
 		@apply bg-gray-50;
 	}
 
+	/* Article 내 table 태그 - 하단 마진 추가 */
+	article table {
+		@apply mb-6;
+	}
+
 	img {
 		@apply max-w-full h-auto rounded-lg;
 	}
@@ -163,6 +185,11 @@
 	pre > code {
 		@apply p-0 bg-transparent text-inherit;
 		all: unset;
+	}
+
+	/* Article 내 pre 태그 - 하단 마진 추가 */
+	article pre {
+		@apply mb-6;
 	}
 
 	blockquote {

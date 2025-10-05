@@ -4,7 +4,9 @@ import BlogPost from '../../../layouts/BlogPost.astro';
 import { languages, type Language } from '../../../lib/i18n/languages';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const now = new Date();
+	const posts = (await getCollection('blog'))
+		.filter((post) => post.data.pubDate <= now); // Exclude future posts
 	const langs = Object.keys(languages);
 
 	return posts.flatMap((post) => {

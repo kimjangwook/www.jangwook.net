@@ -13,7 +13,7 @@ const currentRoute = getRouteFromUrl(Astro.url.pathname);
 <div class="language-switcher">
 	{Object.entries(languages).map(([lang, label]) => (
 		<a
-			href={`/${lang}${currentRoute}`}
+			href={`/${lang}${currentRoute.replace(/{LANG}/g, lang)}`}
 			class:list={[
 				'lang-link',
 				{ active: lang === currentLang }
