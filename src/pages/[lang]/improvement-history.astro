@@ -1,0 +1,552 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
+import { useTranslations, type Language } from '../../lib/i18n/languages';
+
+export function getStaticPaths() {
+	return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+
+// TODO: This will be populated by the improvement-tracker agent
+const improvements = [
+  // Example structure (to be populated):
+  // {
+  //   date: '2025-10-18',
+  //   title: { ko: '모바일 UX 최적화', en: 'Mobile UX Optimization', ja: 'モバイルUX最適化' },
+  //   category: 'UX',
+  //   before: { metric: { ko: '모바일 이탈률', en: 'Mobile Bounce Rate', ja: 'モバイル離脱率' }, value: '68%' },
+  //   after: { metric: { ko: '모바일 이탈률', en: 'Mobile Bounce Rate', ja: 'モバイル離脱率' }, value: '47%' },
+  //   impact: '-31%',
+  //   impactType: 'positive',
+  //   effort: { ko: '중간', en: 'Medium', ja: '中程度' },
+  //   roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
+  //   sourceReport: `/blog/${lang}/weekly-analytics-2025-10-12`,
+  //   description: { ko: '상위 3개 포스트의 모바일 경험 개선', en: 'Optimized mobile experience for top 3 posts', ja: 'トップ3投稿のモバイル体験を改善' },
+  //   lessons: {
+  //     ko: ['이미지 최적화가 가장 큰 효과', '실기기 테스트가 중요'],
+  //     en: ['Image optimization had biggest impact', 'Real device testing crucial'],
+  //     ja: ['画像最適化が最大の効果', '実機テストが重要']
+  //   }
+  // }
+];
+
+const categories = {
+  'Traffic': improvements.filter(i => i.category === 'Traffic'),
+  'Content': improvements.filter(i => i.category === 'Content'),
+  'SEO': improvements.filter(i => i.category === 'SEO'),
+  'UX': improvements.filter(i => i.category === 'UX'),
+  'Technical': improvements.filter(i => i.category === 'Technical'),
+};
+
+const metrics = {
+  totalImprovements: improvements.length,
+  avgImpact: improvements.length > 0
+    ? (improvements.reduce((sum, i) => sum + parseFloat(i.impact), 0) / improvements.length).toFixed(1)
+    : 0,
+  topCategory: Object.entries(categories).sort((a, b) => b[1].length - a[1].length)[0]?.[0] || 'N/A'
+};
+
+// Translations
+const translations = {
+  title: {
+    ko: '점진적 사이트 개선 히스토리',
+    en: 'Progressive Site Improvement History',
+    ja: '段階的サイト改善履歴'
+  },
+  description: {
+    ko: '데이터 기반의 지속적인 사이트 개선 과정과 성과를 투명하게 공유합니다',
+    en: 'Transparently sharing data-driven continuous site improvement processes and results',
+    ja: 'データに基づいた継続的なサイト改善プロセスと成果を透明に共有します'
+  },
+  stats: {
+    total: { ko: '총 개선 건수', en: 'Total Improvements', ja: '総改善数' },
+    avgImpact: { ko: '평균 개선 효과', en: 'Average Impact', ja: '平均改善効果' },
+    topCategory: { ko: '최다 개선 카테고리', en: 'Top Category', ja: '最多改善カテゴリ' }
+  },
+  emptyState: {
+    title: {
+      ko: '아직 개선 사항이 기록되지 않았습니다',
+      en: 'No improvements recorded yet',
+      ja: 'まだ改善事項が記録されていません'
+    },
+    subtitle: {
+      ko: '첫 번째 분석 리포트를 생성하고 개선 작업을 시작해보세요!',
+      en: 'Generate your first analytics report and start improvement work!',
+      ja: '最初の分析レポートを生成して改善作業を始めましょう！'
+    },
+    steps: {
+      ko: [
+        '1. analytics-reporter 에이전트로 첫 리포트 생성',
+        '2. improvement-tracker 에이전트로 액션 플랜을 TODO로 변환',
+        '3. 개선 작업 완료 후 결과 기록'
+      ],
+      en: [
+        '1. Generate first report with analytics-reporter agent',
+        '2. Convert action plan to TODOs with improvement-tracker agent',
+        '3. Complete improvements and record results'
+      ],
+      ja: [
+        '1. analytics-reporterエージェントで最初のレポートを生成',
+        '2. improvement-trackerエージェントでアクションプランをTODOに変換',
+        '3. 改善作業完了後、結果を記録'
+      ]
+    }
+  },
+  filters: {
+    all: { ko: '전체', en: 'All', ja: '全て' },
+    traffic: { ko: '트래픽', en: 'Traffic', ja: 'トラフィック' },
+    content: { ko: '콘텐츠', en: 'Content', ja: 'コンテンツ' },
+    seo: { ko: 'SEO', en: 'SEO', ja: 'SEO' },
+    ux: { ko: 'UX', en: 'UX', ja: 'UX' },
+    technical: { ko: '기술', en: 'Technical', ja: '技術' }
+  },
+  metrics: {
+    before: { ko: '개선 전', en: 'Before', ja: '改善前' },
+    after: { ko: '개선 후', en: 'After', ja: '改善後' },
+    impact: { ko: '효과', en: 'Impact', ja: '効果' },
+    effort: { ko: '투입', en: 'Effort', ja: '投入' },
+    roi: { ko: 'ROI', en: 'ROI', ja: 'ROI' },
+    date: { ko: '날짜', en: 'Date', ja: '日付' }
+  },
+  lessons: {
+    title: { ko: '배운 점', en: 'Lessons Learned', ja: '学んだこと' }
+  },
+  sourceReport: {
+    ko: '출처 리포트 보기',
+    en: 'View Source Report',
+    ja: 'ソースレポートを見る'
+  },
+  dataSection: {
+    title: { ko: '데이터 출처 및 관리', en: 'Data Sources & Management', ja: 'データソースと管理' },
+    analytics: { ko: '분석 도구', en: 'Analytics Tool', ja: '分析ツール' },
+    reports: { ko: '리포트', en: 'Reports', ja: 'レポート' },
+    todos: { ko: 'TODO 관리', en: 'TODO Management', ja: 'TODO管理' },
+    autoUpdate: { ko: '자동 업데이트', en: 'Auto Update', ja: '自動更新' },
+    description: {
+      ko: '이 페이지는 블로그의 지속적인 개선 과정을 투명하게 공유하기 위해 만들어졌습니다. 모든 개선사항은 데이터에 기반하며, 실제 측정된 결과를 기록합니다.',
+      en: 'This page was created to transparently share the continuous improvement process of the blog. All improvements are data-driven and record actual measured results.',
+      ja: 'このページはブログの継続的な改善プロセスを透明に共有するために作成されました。すべての改善はデータに基づいており、実際に測定された結果を記録します。'
+    }
+  }
+};
+
+const tt = (key: any) => {
+  if (typeof key === 'object' && key !== null) {
+    return key[lang] || key['en'] || '';
+  }
+  return key;
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead
+			title={`${tt(translations.title)} - ${t('site.title')}`}
+			description={tt(translations.description)}
+		/>
+		<style>
+			.improvement-grid {
+				display: grid;
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+
+			.improvement-card {
+				border: 1px solid var(--gray-200);
+				border-radius: 8px;
+				padding: 1.5rem;
+				background: var(--gray-50);
+				transition: transform 0.2s, box-shadow 0.2s;
+			}
+
+			.improvement-card:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			}
+
+			.card-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: start;
+				margin-bottom: 1rem;
+			}
+
+			.card-title {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin: 0;
+			}
+
+			.category-badge {
+				padding: 0.25rem 0.75rem;
+				border-radius: 12px;
+				font-size: 0.875rem;
+				font-weight: 500;
+			}
+
+			.category-traffic { background: #e0f2fe; color: #0369a1; }
+			.category-content { background: #fce7f3; color: #9f1239; }
+			.category-seo { background: #dcfce7; color: #15803d; }
+			.category-ux { background: #fef3c7; color: #a16207; }
+			.category-technical { background: #e0e7ff; color: #4338ca; }
+
+			.metrics-row {
+				display: flex;
+				gap: 1rem;
+				margin: 1rem 0;
+				flex-wrap: wrap;
+			}
+
+			.metric {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				padding: 0.5rem 1rem;
+				background: white;
+				border-radius: 6px;
+				font-size: 0.875rem;
+			}
+
+			.metric-label {
+				color: var(--gray-600);
+			}
+
+			.metric-value {
+				font-weight: 600;
+			}
+
+			.impact-positive {
+				color: #15803d;
+			}
+
+			.impact-negative {
+				color: #dc2626;
+			}
+
+			.timeline {
+				position: relative;
+				padding-left: 2rem;
+			}
+
+			.timeline::before {
+				content: '';
+				position: absolute;
+				left: 0.5rem;
+				top: 0;
+				bottom: 0;
+				width: 2px;
+				background: var(--gray-300);
+			}
+
+			.timeline-item {
+				position: relative;
+				margin-bottom: 2rem;
+			}
+
+			.timeline-item::before {
+				content: '';
+				position: absolute;
+				left: -1.5rem;
+				top: 0.5rem;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background: var(--accent);
+				border: 2px solid white;
+			}
+
+			.before-after {
+				display: grid;
+				grid-template-columns: 1fr auto 1fr;
+				gap: 1rem;
+				align-items: center;
+				margin: 1rem 0;
+				padding: 1rem;
+				background: white;
+				border-radius: 6px;
+			}
+
+			.before, .after {
+				text-align: center;
+			}
+
+			.arrow {
+				font-size: 1.5rem;
+				color: var(--gray-400);
+			}
+
+			.value {
+				font-size: 1.5rem;
+				font-weight: 700;
+			}
+
+			.lessons {
+				margin-top: 1rem;
+				padding: 1rem;
+				background: #fef9c3;
+				border-left: 3px solid #facc15;
+				border-radius: 4px;
+			}
+
+			.lessons-title {
+				font-weight: 600;
+				margin-bottom: 0.5rem;
+				color: #a16207;
+			}
+
+			.lessons ul {
+				margin: 0;
+				padding-left: 1.5rem;
+			}
+
+			.empty-state {
+				text-align: center;
+				padding: 4rem 2rem;
+				color: var(--gray-500);
+			}
+
+			.empty-state-icon {
+				font-size: 4rem;
+				margin-bottom: 1rem;
+			}
+
+			.stats-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+
+			.stat-card {
+				padding: 1.5rem;
+				background: white;
+				border-radius: 8px;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+			}
+
+			.stat-value {
+				font-size: 2rem;
+				font-weight: 700;
+				color: var(--accent);
+			}
+
+			.stat-label {
+				margin-top: 0.5rem;
+				color: var(--gray-600);
+				font-size: 0.875rem;
+			}
+
+			.filter-tabs {
+				display: flex;
+				gap: 0.5rem;
+				margin: 2rem 0;
+				border-bottom: 2px solid var(--gray-200);
+				padding-bottom: 0;
+				flex-wrap: wrap;
+			}
+
+			.filter-tab {
+				padding: 0.75rem 1.5rem;
+				background: none;
+				border: none;
+				cursor: pointer;
+				color: var(--gray-600);
+				font-weight: 500;
+				border-bottom: 2px solid transparent;
+				margin-bottom: -2px;
+				transition: all 0.2s;
+			}
+
+			.filter-tab:hover {
+				color: var(--accent);
+			}
+
+			.filter-tab.active {
+				color: var(--accent);
+				border-bottom-color: var(--accent);
+			}
+
+			.data-section {
+				margin-top: 4rem;
+				padding: 2rem;
+				background: var(--gray-50);
+				border-radius: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<Header lang={lang} />
+		<main class="max-w-6xl mx-auto px-4 py-12">
+			<section>
+				<div class="mb-8">
+					<h1 class="text-4xl font-bold mb-4">🚀 {tt(translations.title)}</h1>
+					<p class="text-xl text-gray-600">{tt(translations.description)}</p>
+				</div>
+
+				<!-- Summary Stats -->
+				<div class="stats-grid">
+					<div class="stat-card">
+						<div class="stat-value">{metrics.totalImprovements}</div>
+						<div class="stat-label">{tt(translations.stats.total)}</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-value">{metrics.avgImpact}%</div>
+						<div class="stat-label">{tt(translations.stats.avgImpact)}</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-value">{metrics.topCategory}</div>
+						<div class="stat-label">{tt(translations.stats.topCategory)}</div>
+					</div>
+				</div>
+
+				{improvements.length === 0 ? (
+					<div class="empty-state">
+						<div class="empty-state-icon">📊</div>
+						<h2 class="text-2xl font-bold mb-4">{tt(translations.emptyState.title)}</h2>
+						<p class="text-lg mb-6">{tt(translations.emptyState.subtitle)}</p>
+						<div class="text-left max-w-2xl mx-auto">
+							<p class="font-semibold mb-2">{lang === 'ko' ? '다음 단계:' : lang === 'ja' ? '次のステップ:' : 'Next Steps:'}</p>
+							<ul class="list-disc list-inside space-y-2">
+								{tt(translations.emptyState.steps).map((step: string) => (
+									<li>{step}</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				) : (
+					<>
+						<!-- Category Filters -->
+						<div class="filter-tabs">
+							<button class="filter-tab active" data-category="all">{tt(translations.filters.all)}</button>
+							<button class="filter-tab" data-category="Traffic">{tt(translations.filters.traffic)}</button>
+							<button class="filter-tab" data-category="Content">{tt(translations.filters.content)}</button>
+							<button class="filter-tab" data-category="SEO">{tt(translations.filters.seo)}</button>
+							<button class="filter-tab" data-category="UX">{tt(translations.filters.ux)}</button>
+							<button class="filter-tab" data-category="Technical">{tt(translations.filters.technical)}</button>
+						</div>
+
+						<!-- Timeline View -->
+						<div class="timeline">
+							{improvements.map((item) => (
+								<div class="timeline-item" data-category={item.category}>
+									<div class="improvement-card">
+										<div class="card-header">
+											<h3 class="card-title">{tt(item.title)}</h3>
+											<span class={`category-badge category-${item.category.toLowerCase()}`}>
+												{item.category}
+											</span>
+										</div>
+
+										<p>{tt(item.description)}</p>
+
+										<div class="before-after">
+											<div class="before">
+												<div class="metric-label">{tt(translations.metrics.before)}</div>
+												<div class="value">{item.before.value}</div>
+												<div class="metric-label">{tt(item.before.metric)}</div>
+											</div>
+											<div class="arrow">→</div>
+											<div class="after">
+												<div class="metric-label">{tt(translations.metrics.after)}</div>
+												<div class={`value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
+													{item.after.value}
+												</div>
+												<div class="metric-label">{tt(item.after.metric)}</div>
+											</div>
+										</div>
+
+										<div class="metrics-row">
+											<div class="metric">
+												<span class="metric-label">{tt(translations.metrics.impact)}:</span>
+												<span class={`metric-value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
+													{item.impact}
+												</span>
+											</div>
+											<div class="metric">
+												<span class="metric-label">{tt(translations.metrics.effort)}:</span>
+												<span class="metric-value">{tt(item.effort)}</span>
+											</div>
+											<div class="metric">
+												<span class="metric-label">{tt(translations.metrics.roi)}:</span>
+												<span class="metric-value">{tt(item.roi)}</span>
+											</div>
+											<div class="metric">
+												<span class="metric-label">{tt(translations.metrics.date)}:</span>
+												<span class="metric-value">{item.date}</span>
+											</div>
+										</div>
+
+										{item.lessons && tt(item.lessons).length > 0 && (
+											<div class="lessons">
+												<div class="lessons-title">💡 {tt(translations.lessons.title)}</div>
+												<ul>
+													{tt(item.lessons).map((lesson: string) => (
+														<li>{lesson}</li>
+													))}
+												</ul>
+											</div>
+										)}
+
+										{item.sourceReport && (
+											<div style="margin-top: 1rem;">
+												<a href={item.sourceReport} style="color: var(--accent); text-decoration: none;">
+													📄 {tt(translations.sourceReport)} →
+												</a>
+											</div>
+										)}
+									</div>
+								</div>
+							))}
+						</div>
+					</>
+				)}
+
+				<!-- Data Sources & Notes -->
+				<div class="data-section">
+					<h3 class="text-xl font-bold mb-4">📝 {tt(translations.dataSection.title)}</h3>
+					<ul class="space-y-2 mb-4">
+						<li><strong>{tt(translations.dataSection.analytics)}:</strong> Google Analytics 4 (Property ID: 395101361)</li>
+						<li><strong>{tt(translations.dataSection.reports)}:</strong> <a href={`/${lang}/blog`} class="text-accent hover:underline">/{lang}/blog</a></li>
+						<li><strong>{tt(translations.dataSection.todos)}:</strong> <code>/improvement-tracking/</code></li>
+						<li><strong>{tt(translations.dataSection.autoUpdate)}:</strong> improvement-tracker {lang === 'ko' ? '에이전트가 완료된 개선사항을 자동으로 이 페이지에 반영' : lang === 'ja' ? 'エージェントが完了した改善事項を自動的にこのページに反映' : 'agent automatically reflects completed improvements to this page'}</li>
+					</ul>
+					<p class="text-gray-600">
+						{tt(translations.dataSection.description)}
+					</p>
+				</div>
+			</section>
+		</main>
+		<Footer lang={lang} />
+
+		<script>
+			// Category filtering
+			const filterTabs = document.querySelectorAll('.filter-tab');
+			const timelineItems = document.querySelectorAll('.timeline-item');
+
+			filterTabs.forEach(tab => {
+				tab.addEventListener('click', () => {
+					const category = tab.dataset.category;
+
+					// Update active tab
+					filterTabs.forEach(t => t.classList.remove('active'));
+					tab.classList.add('active');
+
+					// Filter items
+					timelineItems.forEach(item => {
+						if (category === 'all' || item.dataset.category === category) {
+							item.style.display = 'block';
+						} else {
+							item.style.display = 'none';
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
