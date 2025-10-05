@@ -1,0 +1,48 @@
+---
+import type { Language } from '../lib/i18n/languages';
+
+interface Props {
+	lang: Language;
+}
+
+const { lang } = Astro.props;
+
+const messages = {
+	ko: {
+		title: '글이 도움이 되셨나요?',
+		description: '더 나은 콘텐츠를 작성하는 데 힘이 됩니다. 커피 한 잔으로 응원해주세요! ☕'
+	},
+	ja: {
+		title: 'この記事は役に立ちましたか？',
+		description: 'より良いコンテンツを作成するための力になります。コーヒー一杯で応援してください！☕'
+	},
+	en: {
+		title: 'Was this helpful?',
+		description: 'Your support helps me create better content. Buy me a coffee! ☕'
+	}
+};
+
+const message = messages[lang];
+---
+
+<div class="mt-12 pt-8 border-t border-gray-200">
+	<div class="text-center">
+		<h3 class="text-2xl font-bold text-gray-900 mb-3">
+			{message.title}
+		</h3>
+		<p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+			{message.description}
+		</p>
+		<div class="flex justify-center">
+			<div id="bmc-button-container"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="kimjangwook" data-color="#5F7FFF" data-emoji="☕"  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
+
+<style>
+	:global(.bmc-btn-container) {
+		text-align: center;
+	}
+</style>
