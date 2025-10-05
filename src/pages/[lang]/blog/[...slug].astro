@@ -24,6 +24,6 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogPost {...post.data} lang={lang}>
+<BlogPost {...post.data} lang={lang} tags={post.data.tags}>
 	<Content />
 </BlogPost>

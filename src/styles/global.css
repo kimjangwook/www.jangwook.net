@@ -6,17 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Google Fonts - Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-/* Google Fonts - Noto Sans KR */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
-
-/* Google Fonts - Noto Sans JP */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
-
-/* Google Fonts - JetBrains Mono */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+/*
+  Google Fonts는 BaseHead.astro에서 preconnect + link로 로딩
+  (렌더링 차단 방지를 위해 CSS @import 제거)
+*/
 
 @layer base {
 	:root {

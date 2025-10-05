@@ -4,17 +4,60 @@
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
 import FallbackImage from '../assets/blog-placeholder-about.jpg';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 interface Props {
 	title: string;
 	description: string;
 	image?: ImageMetadata;
+	articleData?: {
+		publishedTime: string;
+		modifiedTime?: string;
+		author: string;
+		tags?: string[];
+	};
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage } = Astro.props;
+const { title, description, image = FallbackImage, articleData } = Astro.props;
+
+// WebSite Schema (모든 페이지)
+const websiteSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	'name': SITE_TITLE,
+	'description': SITE_DESCRIPTION,
+	'url': Astro.site?.toString(),
+};
+
+// Article Schema (블로그 포스트만)
+const articleSchema = articleData ? {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	'headline': title,
+	'description': description,
+	'image': new URL(image.src, Astro.url).toString(),
+	'datePublished': articleData.publishedTime,
+	'dateModified': articleData.modifiedTime || articleData.publishedTime,
+	'author': {
+		'@type': 'Person',
+		'name': articleData.author,
+	},
+	'publisher': {
+		'@type': 'Organization',
+		'name': SITE_TITLE,
+		'logo': {
+			'@type': 'ImageObject',
+			'url': new URL('/favicon.svg', Astro.site).toString(),
+		},
+	},
+	'mainEntityOfPage': {
+		'@type': 'WebPage',
+		'@id': canonicalURL.toString(),
+	},
+	...(articleData.tags && { 'keywords': articleData.tags.join(', ') }),
+} : null;
 ---
 
 <!-- Global Metadata -->
@@ -30,7 +73,24 @@ const { title, description, image = FallbackImage } = Astro.props;
 />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Font preloads -->
+<!-- Google Fonts Optimization (preconnect + async load) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- 필수 웨이트만 로드: Inter(400,600,700), Noto Sans KR(400,700), Noto Sans JP(400,700), JetBrains Mono(400,600) -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap"
+	rel="stylesheet"
+	media="print"
+	onload="this.media='all'"
+/>
+<noscript>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap"
+		rel="stylesheet"
+	/>
+</noscript>
+
+<!-- Font preloads (local fonts) -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
 
@@ -55,6 +115,10 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+{articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWXG8FFDHW"></script>
@@ -97,4 +161,41 @@ const { title, description, image = FallbackImage } = Astro.props;
 			}
 		});
 	});
+</script>
+
+<!-- Core Web Vitals Tracking -->
+<script>
+	// Import and track Core Web Vitals
+	import { onCLS, onFID, onLCP, onFCP, onTTFB, onINP } from 'web-vitals';
+
+	function sendToGoogleAnalytics({ name, delta, value, id, rating }) {
+		// Send to Google Analytics
+		if (typeof gtag !== 'undefined') {
+			gtag('event', name, {
+				event_category: 'Web Vitals',
+				event_label: id,
+				value: Math.round(name === 'CLS' ? delta * 1000 : delta),
+				metric_value: value,
+				metric_rating: rating,
+				non_interaction: true,
+			});
+		}
+
+		// Log to console in development
+		if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+			console.log(`[Web Vitals] ${name}:`, {
+				value: Math.round(name === 'CLS' ? value * 1000 : value) / (name === 'CLS' ? 1000 : 1),
+				rating: rating,
+				id: id
+			});
+		}
+	}
+
+	// Track all Core Web Vitals
+	onCLS(sendToGoogleAnalytics);  // Cumulative Layout Shift
+	onFID(sendToGoogleAnalytics);  // First Input Delay (deprecated but still tracked)
+	onLCP(sendToGoogleAnalytics);  // Largest Contentful Paint
+	onFCP(sendToGoogleAnalytics);  // First Contentful Paint
+	onTTFB(sendToGoogleAnalytics); // Time to First Byte
+	onINP(sendToGoogleAnalytics);  // Interaction to Next Paint (new FID replacement)
 </script>
