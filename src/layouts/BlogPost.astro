@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import BuyMeACoffee from '../components/BuyMeACoffee.astro';
+import BlogPostLanguageSwitcher from '../components/BlogPostLanguageSwitcher.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
@@ -16,6 +17,9 @@ type Props = CollectionEntry<'blog'>['data'] & {
 
 const { title, description, pubDate, updatedDate, heroImage, lang, tags } = Astro.props;
 const t = useTranslations(lang);
+
+// Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
+const slug = Astro.url.pathname.split('/').filter(Boolean).pop() || '';
 
 // BreadcrumbList Schema
 const breadcrumbSchema = {
@@ -123,6 +127,9 @@ const breadcrumbSchema = {
 					">
 						<slot />
 					</div>
+
+					<!-- Language Switcher -->
+					<BlogPostLanguageSwitcher slug={slug} currentLang={lang} />
 
 					<!-- Buy Me a Coffee -->
 					<BuyMeACoffee lang={lang} />

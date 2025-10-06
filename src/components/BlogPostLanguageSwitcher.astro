@@ -1,0 +1,82 @@
+---
+import type { Language } from '../lib/i18n/languages';
+
+interface Props {
+  slug: string;
+  currentLang: Language;
+}
+
+const { slug, currentLang } = Astro.props;
+
+const languages = {
+  ko: { flag: '🇰🇷', label: '한국어', currentLabel: '한국어 (현재 페이지)' },
+  ja: { flag: '🇯🇵', label: '日本語', currentLabel: '日本語（現在のページ）' },
+  en: { flag: '🇺🇸', label: 'English', currentLabel: 'English (Current Page)' }
+};
+
+const sectionTitles = {
+  ko: '다른 언어로 읽기',
+  ja: '他の言語で読む',
+  en: 'Read in Other Languages'
+};
+---
+
+<div class="blog-post-language-switcher">
+  <h2>{sectionTitles[currentLang]}</h2>
+  <ul>
+    {Object.entries(languages).map(([lang, { flag, label, currentLabel }]) => (
+      <li>
+        {lang === currentLang ? (
+          <span class="current-language">
+            {flag} {currentLabel}
+          </span>
+        ) : (
+          <a href={`/${lang}/blog/${lang}/${slug}`}>
+            {flag} {label}
+          </a>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .blog-post-language-switcher {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .blog-post-language-switcher h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .blog-post-language-switcher ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .blog-post-language-switcher li {
+    margin: 0;
+  }
+
+  .blog-post-language-switcher a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .blog-post-language-switcher a:hover {
+    opacity: 0.7;
+  }
+
+  .current-language {
+    color: var(--gray-600);
+  }
+</style>
