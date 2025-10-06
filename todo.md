@@ -113,6 +113,12 @@
 
 ## 251006
 
+- [x] 다국어 블로그 포스트 언어 전환 컴포넌트 자동화
+  - [x] LanguageSwitcher 컴포넌트 생성 (src/components/LanguageSwitcher.astro)
+  - [x] BlogPost 레이아웃에 통합 (BuyMeACoffee 위)
+  - [x] 기존 15개 블로그 포스트에서 수동 언어 전환 섹션 제거
+  - [x] improvement-history.astro에 완료된 작업 추가
+  - [x] todo.md에 완료된 작업 기록
 - [] 사이트맵 생성 및 제출
 
 ## 251005
