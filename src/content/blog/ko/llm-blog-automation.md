@@ -1,7 +1,7 @@
 ---
 title: "LLM과 Claude Code를 활용한 블로그 자동화 - 미래의 콘텐츠 제작"
 description: "Claude Code와 11개의 전문 에이전트로 블로그를 완전 자동화하는 방법. 프롬프트 엔지니어링부터 MCP 통합, 다국어 지원, 이미지 생성까지 - 누구나 따라할 수 있는 실전 가이드."
-pubDate: '2025-10-04'
+pubDate: "2025-10-04"
 heroImage: "../../../assets/blog/2025-10-04-llm-blog-automation.png"
 tags:
   [
@@ -683,7 +683,7 @@ npm run deploy       # Vercel 배포
 
 ✅ 블로그 포스트 발행 완료!
 📊 성능 스코어: 98/100
-🔗 URL: https://jangwook.net/blog/prompt-engineering-guide
+🔗 URL: https://www.jangwook.net/blog/prompt-engineering-guide
 ```
 
 **총 소요 시간: 3분 30초** ⏱️

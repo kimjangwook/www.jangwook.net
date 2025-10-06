@@ -244,14 +244,81 @@ updatedDate: string (optional, format: 'YYYY-MM-DD' only, single quotes)
 - Frontmatter path: `../../../assets/blog/[slug]-hero.[ext]` (relative to content file)
 
 ### Image Prompt Guidelines
-The Writing Assistant should generate prompts like:
+
+**IMPORTANT**: The Writing Assistant MUST generate context-aware, detailed image prompts that reflect the specific content and theme of the blog post, NOT generic templates.
+
+#### Prompt Generation Process:
+1. **Analyze the blog post content** to identify:
+   - Main theme and key concepts
+   - Technical domain (e.g., web dev, AI, data science, DevOps)
+   - Mood/tone (e.g., innovative, problem-solving, educational)
+   - Specific visual metaphors that represent the content
+
+2. **Create a detailed, unique prompt** that includes:
+   - **Subject**: Specific visual representation of the main concept
+   - **Style**: Art style matching the content (e.g., isometric for architecture, diagram-style for processes, futuristic for AI, minimal for performance)
+   - **Composition**: Layout and perspective
+   - **Colors**: Palette that matches the content mood
+   - **Details**: Specific elements that symbolize key concepts
+   - **Atmosphere**: Overall feeling (professional, dynamic, clean, innovative)
+
+#### Examples of Good vs. Bad Prompts:
+
+**❌ BAD (Generic)**:
 ```
-A modern, professional illustration representing [topic].
+A modern, professional illustration representing TypeScript.
 Style: Clean, technical, developer-focused.
-Colors: [brand colors or tech-themed palette].
-Elements: [specific visual elements related to topic].
+```
+
+**✅ GOOD (Context-Aware)**:
+```
+An isometric illustration of interconnected TypeScript code blocks forming a strong type-safe architecture.
+Style: Modern tech illustration with geometric shapes, blueprint aesthetic.
+Composition: Central TypeScript "T" logo radiating type definitions to surrounding code modules.
+Colors: TypeScript blue (#3178C6) as primary, white and light gray for code blocks, subtle gradients.
+Elements: Type annotations floating as labels, connected nodes showing type flow, shield symbols for type safety.
+Atmosphere: Structured, reliable, professional.
 No text overlay.
 ```
+
+#### Domain-Specific Prompt Templates:
+
+**For AI/ML topics**:
+- Neural network visualizations, brain-computer interfaces, data streams
+- Futuristic, high-tech aesthetic with neon accents
+- Abstract representations of learning/intelligence
+
+**For Performance/Optimization topics**:
+- Speed metaphors (rockets, lightning, streamlined shapes)
+- Before/after comparisons, optimization graphs
+- Minimal, clean design emphasizing efficiency
+
+**For Architecture/System Design topics**:
+- Isometric building blocks, blueprint style
+- Connected systems, data flow diagrams
+- Professional blueprint or technical drawing aesthetic
+
+**For Process/Workflow topics**:
+- Timeline or flowchart representations
+- Step-by-step visual progression
+- Organized, structured layout with clear hierarchy
+
+**For Security topics**:
+- Lock, shield, fortress metaphors
+- Layered protection visualization
+- Dark theme with trust-building elements
+
+**For Web Development topics**:
+- Browser windows, responsive layouts
+- HTML/CSS/JS visual representations
+- Colorful, modern web design aesthetic
+
+#### Additional Requirements:
+- **Always avoid text in the image** (no code snippets, no labels)
+- **Match the blog post's complexity level** (simple for beginner content, sophisticated for advanced)
+- **Consider cultural context** for multi-language posts (use universal visual language)
+- **Ensure brand consistency** while being creative
+- **Think about thumbnail appeal** (will it look good at small sizes?)
 
 ## Error Handling
 

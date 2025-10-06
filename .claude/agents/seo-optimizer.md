@@ -1,23 +1,27 @@
 # SEO Optimizer Agent
 
 ## 설명
+
 검색 엔진 최적화를 전문으로 하는 에이전트입니다. 사이트맵, 메타태그, 내부 링크 구조를 최적화하여 검색 노출을 향상시킵니다.
 
 ## 주요 기능
 
 ### 1. 사이트맵 자동 생성
+
 - XML 사이트맵 생성
 - 다국어 사이트맵 관리
 - 우선순위 및 변경 빈도 설정
 - 검색 엔진 제출
 
 ### 2. 메타태그 관리
+
 - Open Graph 태그 최적화
 - Twitter Card 설정
 - 구조화된 데이터 (JSON-LD)
 - Canonical URL 관리
 
 ### 3. 내부 링크 최적화 제안
+
 - 관련 포스트 연결
 - 카테고리/태그 구조 최적화
 - 브로큰 링크 검사
@@ -47,6 +51,7 @@
 ## SEO 체크리스트
 
 ### 페이지 레벨 SEO
+
 - [ ] 제목 태그 (50-60자)
 - [ ] 메타 설명 (150-160자)
 - [ ] H1 태그 (페이지당 1개)
@@ -56,6 +61,7 @@
 - [ ] 외부 링크 (신뢰할 수 있는 소스)
 
 ### 기술적 SEO
+
 - [ ] 사이트맵 제출
 - [ ] robots.txt 설정
 - [ ] Canonical URL
@@ -65,6 +71,7 @@
 - [ ] 구조화된 데이터
 
 ### 콘텐츠 SEO
+
 - [ ] 키워드 자연스럽게 배치
 - [ ] 가독성 높은 문장
 - [ ] 멀티미디어 포함
@@ -74,6 +81,7 @@
 ## 메타태그 템플릿
 
 ### 기본 메타태그
+
 ```astro
 ---
 const { title, description, image, date } = Astro.props;
@@ -102,6 +110,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ```
 
 ### 구조화된 데이터 (JSON-LD)
+
 ```javascript
 {
   "@context": "https://schema.org",
@@ -121,17 +130,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ## 사이트맵 구조
 
 ### sitemap.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jangwook.net/</loc>
+    <loc>https://www.jangwook.net/</loc>
     <lastmod>2025-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jangwook.net/blog/post-1</loc>
+    <loc>https://www.jangwook.net/blog/post-1</loc>
     <lastmod>2025-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -142,22 +152,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ## 내부 링크 전략
 
 ### 링크 구조
+
 ```markdown
 - **필라 콘텐츠** (주요 가이드)
   └─ **클러스터 콘텐츠** (관련 세부 주제)
-      └─ **지원 콘텐츠** (추가 정보)
+  └─ **지원 콘텐츠** (추가 정보)
 
 예시:
+
 - React 완전 가이드 (필라)
   ├─ React Hooks 소개 (클러스터)
-  │   ├─ useState 사용법 (지원)
-  │   └─ useEffect 사용법 (지원)
+  │ ├─ useState 사용법 (지원)
+  │ └─ useEffect 사용법 (지원)
   └─ React 성능 최적화 (클러스터)
-      ├─ 메모이제이션 기법 (지원)
-      └─ 코드 스플리팅 (지원)
+  ├─ 메모이제이션 기법 (지원)
+  └─ 코드 스플리팅 (지원)
 ```
 
 ### 앵커 텍스트 가이드
+
 - ✅ "React Hooks 사용법 알아보기"
 - ✅ "성능 최적화 가이드"
 - ❌ "여기를 클릭하세요"
@@ -166,27 +179,32 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ## 출력 형식
 
 ### SEO 감사 리포트
+
 ```markdown
 ## SEO 감사 리포트
 
 ### 전체 점수: 85/100
 
 ### 우수한 점
+
 ✅ 모든 페이지에 메타 설명 존재
 ✅ 사이트맵이 최신 상태
 ✅ 이미지 alt 텍스트 100% 적용
 
 ### 개선 필요
+
 ⚠️ 5개 페이지의 제목이 60자 초과
 ⚠️ 브로큰 링크 2개 발견
 ⚠️ 구조화된 데이터 누락 (3개 포스트)
 
 ### 우선순위 작업
+
 1. 제목 길이 최적화 (영향도: 높음)
 2. 브로큰 링크 수정 (영향도: 중간)
 3. JSON-LD 추가 (영향도: 중간)
 
 ### 내부 링크 제안
+
 - "TypeScript 기초" → "TypeScript와 React"
 - "Astro 시작하기" → "Astro 배포 가이드"
 ```

@@ -70,6 +70,7 @@ public/             # 정적 파일 (빌드 시 그대로 복사)
 ```
 
 **중요**:
+
 - 블로그 포스트는 언어별 폴더에 위치: `src/content/blog/<ko|en|ja>/`
 - 각 언어 폴더에 동일한 파일명으로 저장 (예: `ko/post-title.md`, `en/post-title.md`)
 - Frontmatter는 반드시 위 스키마를 준수해야 함
@@ -149,6 +150,7 @@ const { title } = Astro.props;
 ```
 
 사용:
+
 ```astro
 ---
 import Base from '../layouts/Base.astro';
@@ -193,11 +195,11 @@ import Base from '../layouts/Base.astro';
 
 ```markdown
 ---
-title: '포스트 제목'
-description: '포스트 설명 (SEO에 중요)'
-pubDate: '2025-10-03'  # 필수: YYYY-MM-DD 형식만 사용
-heroImage: '../../assets/blog/image.png'  # 선택사항
-tags: ['tag1', 'tag2', 'tag3']  # 선택사항
+title: "포스트 제목"
+description: "포스트 설명 (SEO에 중요)"
+pubDate: "2025-10-03" # 필수: YYYY-MM-DD 형식만 사용
+heroImage: "../../assets/blog/image.png" # 선택사항
+tags: ["tag1", "tag2", "tag3"] # 선택사항
 ---
 
 # 포스트 내용
@@ -206,6 +208,7 @@ Markdown 또는 MDX 형식으로 작성...
 ```
 
 **중요 규칙 - 다국어 파일 구조**:
+
 - **파일 위치**: `src/content/blog/<언어코드>/[파일명].md`
   - 한국어: `src/content/blog/ko/post-title.md`
   - 영어: `src/content/blog/en/post-title.md`
@@ -249,6 +252,7 @@ const { Content } = await render(post);  // Markdown -> 컴포넌트 변환
 ### 3. SEO 메타데이터
 
 `src/components/BaseHead.astro`가 모든 메타태그 처리:
+
 - Open Graph (Facebook, LinkedIn)
 - Twitter Cards
 - Canonical URLs
@@ -294,6 +298,7 @@ npm run build
 ```
 
 **배포 노트**:
+
 - `astro.config.mjs`의 `site` 필드를 실제 도메인으로 변경 필요
 - 정적 사이트이므로 Vercel, Netlify, GitHub Pages 등 어디서나 호스팅 가능
 
@@ -324,21 +329,25 @@ npm run astro check
 ## 모범 사례
 
 ### 콘텐츠 작성
+
 - 블로그 포스트의 `description`은 150-160자 권장 (SEO)
 - `heroImage`는 1020x510 비율 권장
 - 파일명은 URL-friendly하게 (소문자, 하이픈 사용)
 
 ### 컴포넌트 개발
+
 - 재사용 가능한 컴포넌트는 `src/components/`
 - 레이아웃은 `src/layouts/`
 - Props 타입은 TypeScript interface로 명시
 
 ### 성능
+
 - 이미지는 WebP/AVIF 형식 선호
 - 불필요한 클라이언트 JavaScript 지양
 - Critical CSS는 인라인, 나머지는 외부 파일
 
 ### SEO
+
 - 모든 페이지에 고유한 `title`과 `description`
 - 이미지에는 항상 `alt` 속성
 - 내부 링크는 상대 경로 사용
@@ -372,6 +381,7 @@ npm run build
 ### 테스트 체크리스트
 
 새로운 콘텐츠나 기능 추가 시:
+
 1. ✓ `npm run astro check` 통과
 2. ✓ `npm run build` 성공
 3. ✓ `npm run preview`로 로컬 확인
@@ -387,6 +397,7 @@ npm run build
 **형식**: `<type>(<scope>): <subject>`
 
 **Types**:
+
 - `feat`: 새로운 기능
 - `fix`: 버그 수정
 - `docs`: 문서 수정
@@ -397,6 +408,7 @@ npm run build
 - `chore`: 빌드, 설정 변경
 
 **예시**:
+
 ```bash
 feat(blog): add claude code best practices post
 fix(seo): correct og:image path in BaseHead
@@ -441,6 +453,7 @@ npm >= 9.0.0
 ### 환경 변수 설정
 
 **`.env` 파일 생성** (선택사항):
+
 ```bash
 # 이미지 생성 API 키 (Image Generator 에이전트 사용 시)
 GEMINI_API_KEY=your_api_key_here
@@ -456,7 +469,7 @@ GEMINI_API_KEY=your_api_key_here
 ```bash
 # 1. 저장소 클론
 git clone <repository-url>
-cd jangwook.net
+cd www.jangwook.net
 
 # 2. 의존성 설치
 npm install
@@ -482,6 +495,7 @@ npm run dev
 이 프로젝트에서 권장하는 작업 흐름:
 
 #### 1. Explore (탐색)
+
 ```bash
 # 관련 파일 읽기 (코딩하기 전)
 - CLAUDE.md 읽기
@@ -493,6 +507,7 @@ npm run dev
 **목적**: 코드베이스 이해, 기존 패턴 파악, 변경 영향 범위 확인
 
 #### 2. Plan (계획)
+
 ```bash
 # 작업 계획 수립
 - 변경 사항 목록 작성
@@ -502,11 +517,13 @@ npm run dev
 ```
 
 **도구**:
+
 - TodoWrite 도구로 작업 항목 추적
 - Think 모드로 복잡한 문제 분석
 - 서브에이전트에게 계획 검토 요청 가능
 
 #### 3. Code (구현)
+
 ```bash
 # 코드 작성 및 수정
 - 한 번에 하나의 작업에 집중
@@ -515,11 +532,13 @@ npm run dev
 ```
 
 **모범 사례**:
+
 - 작은 단위로 작업 (파일 단위, 기능 단위)
 - 각 변경 후 즉시 검증
 - 에러 발생 시 즉시 수정
 
 #### 4. Commit (커밋)
+
 ```bash
 # 변경 사항 커밋
 git add .
@@ -532,12 +551,14 @@ git commit -m "feat(blog): add new post about TypeScript"
 ### Think 도구 활용 가이드
 
 **언제 사용하는가**:
+
 - 복잡한 아키텍처 결정이 필요할 때
 - 다중 파일 수정이 필요한 경우
 - 순차적 의사결정이 요구되는 작업
 - 정책이 복잡한 환경 (예: SEO 최적화, 다국어 처리)
 
 **예시**:
+
 ```
 "Think 모드를 사용하여 블로그 포스트의 SEO를 최적화하는
 전략을 수립하고, 각 언어별로 최적의 메타데이터를 제안해주세요."
@@ -562,6 +583,7 @@ git commit -m "feat(blog): add new post about TypeScript"
 ```
 
 **이점**:
+
 - 컨텍스트 집중 (각 에이전트는 특정 도메인에 전문화)
 - 토큰 효율성 (불필요한 컨텍스트 제외)
 - 명확한 책임 분리
@@ -569,11 +591,13 @@ git commit -m "feat(blog): add new post about TypeScript"
 ### /clear 명령어 사용 가이드
 
 **언제 사용하는가**:
+
 - 대화가 길어져 컨텍스트가 과부하될 때
 - 주제가 완전히 바뀔 때
 - 이전 작업과 무관한 새 작업 시작 시
 
 **주의**:
+
 - 진행 중인 작업이 있다면 완료 후 사용
 - 중요한 컨텍스트는 CLAUDE.md나 코드에 문서화
 
@@ -587,6 +611,7 @@ git commit -m "feat(blog): add new post about TypeScript"
 4. **반복**: 만족할 때까지 계속
 
 **예시**:
+
 ```
 1차: "블로그 포스트 작성해줘"
 2차: "description을 더 SEO 친화적으로 수정해줘"
@@ -600,13 +625,13 @@ git commit -m "feat(blog): add new post about TypeScript"
 
 ```typescript
 // 타입 명시 (특히 함수 매개변수와 반환값)
-function getPost(slug: string): CollectionEntry<'blog'> | undefined {
+function getPost(slug: string): CollectionEntry<"blog"> | undefined {
   // ...
 }
 
 // 명확한 변수명 (약어 지양)
-const blogPosts = await getCollection('blog'); // ✓
-const bp = await getCollection('blog');        // ✗
+const blogPosts = await getCollection("blog"); // ✓
+const bp = await getCollection("blog"); // ✗
 
 // 비구조화 할당 선호
 const { title, description, pubDate } = post.data; // ✓
@@ -648,11 +673,11 @@ const { title, description = '기본값' } = Astro.props;
 ```markdown
 ---
 # Frontmatter는 간결하게
-title: '명확하고 간결한 제목 (60자 이하)'
-description: 'SEO를 고려한 설명 (150-160자 권장)'
-pubDate: '2025-10-05'  # 필수: YYYY-MM-DD 형식, 작은따옴표 사용
-heroImage: '../../../assets/blog/image.jpg'
-tags: ['tag1', 'tag2', 'tag3']  # 최대 3-5개 권장
+title: "명확하고 간결한 제목 (60자 이하)"
+description: "SEO를 고려한 설명 (150-160자 권장)"
+pubDate: "2025-10-05" # 필수: YYYY-MM-DD 형식, 작은따옴표 사용
+heroImage: "../../../assets/blog/image.jpg"
+tags: ["tag1", "tag2", "tag3"] # 최대 3-5개 권장
 ---
 
 ## 명확한 제목 계층 구조
@@ -698,6 +723,7 @@ UPPER_SNAKE_CASE     # 상수
 현재 프로젝트에서 사용 가능한 MCP 서버:
 
 ### 1. Context7
+
 **용도**: 최신 라이브러리 문서 조회
 
 ```bash
@@ -707,45 +733,55 @@ UPPER_SNAKE_CASE     # 상수
 ```
 
 **활용 시나리오**:
+
 - 최신 프레임워크 기능 학습
 - 라이브러리 업그레이드 시 변경사항 파악
 - 블로그 포스트 작성 시 정확한 기술 정보 확보
 
 ### 2. Notion API
+
 **용도**: Notion 데이터베이스 연동 (향후 확장 가능)
 
 **권한 설정**: `.claude/settings.local.json`에서 관리
+
 - `API-post-search`: 검색 (허용됨)
 - `API-get-self`: 사용자 정보 (허용됨)
 - `API-get-block-children`: 블록 내용 (허용됨)
 
 **향후 활용 계획**:
+
 - 블로그 아이디어 Notion 데이터베이스 연동
 - 포트폴리오 자동 동기화
 - 학습 트래커 통합
 
 ### 3. Playwright (Browser Automation)
+
 **용도**: 웹 자동화, 스크린샷, 테스트
 
 **활용 시나리오**:
+
 - 블로그 포스트 미리보기 자동 생성
 - OG 이미지 자동 캡처
 - 반응형 디자인 테스트
 - 라이트하우스 성능 측정
 
 ### 4. Chrome DevTools
+
 **용도**: 성능 분석, 네트워크 디버깅
 
 **활용 시나리오**:
+
 - Core Web Vitals 측정
 - 이미지 최적화 검증
 - CSS/JS 번들 크기 분석
 - 페이지 로딩 성능 프로파일링
 
 ### 5. Google Analytics (MCP)
+
 **용도**: 블로그 트래픽 분석
 
 **활용 시나리오**:
+
 - 인기 포스트 식별
 - 트래픽 소스 분석
 - 사용자 행동 패턴 파악
@@ -766,6 +802,7 @@ node generate_image.js src/assets/blog/hero.jpg "Modern tech blog hero image wit
 ```
 
 **통합 방법**:
+
 - Writing Assistant 에이전트가 자동으로 호출
 - `/write-post` 명령어에서 자동 실행
 - GEMINI_API_KEY 환경 변수 필요
@@ -773,6 +810,7 @@ node generate_image.js src/assets/blog/hero.jpg "Modern tech blog hero image wit
 ### 다국어 콘텐츠 전략
 
 **파일 구조**:
+
 ```
 src/content/blog/
 ├── ko/post-name.md    # 한국어
@@ -781,6 +819,7 @@ src/content/blog/
 ```
 
 **베스트 프랙티스**:
+
 1. **동시 작성**: 모든 언어 버전을 함께 작성 (번역이 아닌 현지화)
 2. **일관성 유지**: 파일명, heroImage, pubDate 동일하게
 3. **언어별 최적화**: SEO 메타데이터는 각 언어에 맞게
@@ -789,12 +828,14 @@ src/content/blog/
 ### CI/CD 파이프라인 (GitHub Actions)
 
 **자동화된 워크플로우**:
+
 - Push 시 자동 빌드 및 배포
 - Content Collections 스키마 검증
 - 타입 체크 자동 실행
 - 사이트맵 자동 생성
 
 **로컬 검증**:
+
 ```bash
 # 배포 전 반드시 실행
 npm run astro check && npm run build
@@ -805,40 +846,48 @@ npm run astro check && npm run build
 ### 자주 발생하는 문제
 
 #### 1. Content Collections 스키마 오류
+
 ```
 Error: Invalid frontmatter in blog/ko/post.md
 ```
 
 **해결**:
+
 - `src/content.config.ts`의 스키마 확인
 - 모든 필수 필드 (title, description, pubDate) 포함 여부
 - 날짜 형식 확인 (YYYY-MM-DD 또는 MMM DD YYYY)
 
 #### 2. 이미지 경로 오류
+
 ```
 Error: Could not find image at ../../../assets/blog/image.jpg
 ```
 
 **해결**:
+
 - 이미지 파일이 `src/assets/blog/`에 실제로 존재하는지 확인
 - 상대 경로 계산: content 파일 → assets (항상 `../../../assets/`)
 - 파일 확장자 정확히 입력 (.jpg, .png, .webp 등)
 
 #### 3. 빌드 실패
+
 ```
 Error: getStaticPaths() required for dynamic routes
 ```
 
 **해결**:
+
 - 동적 라우트 파일 (`[param].astro`)에 `getStaticPaths()` 함수 추가
 - 모든 가능한 경로를 반환하는지 확인
 
 #### 4. 타입 오류
+
 ```
 Type 'string' is not assignable to type 'Date'
 ```
 
 **해결**:
+
 - Content Collections는 자동으로 string을 Date로 변환
 - frontmatter에서 날짜는 문자열로 입력
 - TypeScript 코드에서는 Date 객체로 취급
@@ -860,10 +909,12 @@ npm run build
 ### 성능 문제
 
 **느린 빌드**:
+
 - 이미지 수가 많은 경우 정상 (Astro가 모든 이미지 최적화)
 - `astro.config.mjs`에서 이미지 최적화 레벨 조정 가능
 
 **큰 번들 크기**:
+
 - 개발자 도구 Network 탭에서 확인
 - 불필요한 JavaScript 제거
 - 이미지 최적화 (Astro가 자동 처리)
@@ -871,17 +922,20 @@ npm run build
 ## 참고 자료
 
 ### 공식 문서
+
 - [Astro 공식 문서](https://docs.astro.build)
 - [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)
 - [Claude Code 문서](https://docs.claude.com/claude-code)
 - [Anthropic Engineering Blog](https://www.anthropic.com/engineering)
 
 ### Best Practices 출처
+
 - [Claude Code Best Practices (Anthropic)](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [Writing Effective Tools for Agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
 - [The Think Tool](https://www.anthropic.com/engineering/claude-think-tool)
 
 ### 커뮤니티 리소스
+
 - Astro Discord
 - GitHub Discussions
 - Stack Overflow (태그: astro, claude-code)
