@@ -1,14 +1,13 @@
 // @ts-check
 
 import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.jangwook.net',
-	integrations: [mdx(), sitemap(), tailwind()],
+	integrations: [mdx(), tailwind()],
 	image: {
 		// 이미지 최적화 설정
 		service: {
