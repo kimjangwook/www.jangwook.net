@@ -26,11 +26,11 @@ const improvements = [
     category: 'UX',
     before: {
       metric: { ko: '언어 전환 UI', en: 'Language Switcher UI', ja: '言語切り替えUI' },
-      value: '수동 추가 필요'
+      value: { ko: '수동 추가 필요', en: 'Manual addition required', ja: '手動追加が必要' }
     },
     after: {
       metric: { ko: '언어 전환 UI', en: 'Language Switcher UI', ja: '言語切り替えUI' },
-      value: '자동 생성'
+      value: { ko: '자동 생성', en: 'Auto-generated', ja: '自動生成' }
     },
     impact: '+100%',
     impactType: 'positive',
@@ -82,11 +82,11 @@ const improvements = [
     category: 'SEO',
     before: {
       metric: { ko: 'Schema 타입', en: 'Schema Types', ja: 'スキーマタイプ' },
-      value: '0'
+      value: { ko: '0개', en: '0', ja: '0個' }
     },
     after: {
       metric: { ko: 'Schema 타입', en: 'Schema Types', ja: 'スキーマタイプ' },
-      value: '3 types'
+      value: { ko: '3개 타입', en: '3 types', ja: '3タイプ' }
     },
     impact: '+300%',
     impactType: 'positive',
@@ -130,11 +130,11 @@ const improvements = [
     category: 'Technical',
     before: {
       metric: { ko: '성능 측정', en: 'Performance Tracking', ja: 'パフォーマンス測定' },
-      value: '없음'
+      value: { ko: '없음', en: 'None', ja: 'なし' }
     },
     after: {
       metric: { ko: '성능 측정', en: 'Performance Tracking', ja: 'パフォーマンス測定' },
-      value: '6개 지표 실시간'
+      value: { ko: '6개 지표 실시간', en: '6 metrics real-time', ja: '6つの指標リアルタイム' }
     },
     impact: '+600%',
     impactType: 'positive',
@@ -181,11 +181,11 @@ const improvements = [
     category: 'Technical',
     before: {
       metric: { ko: '추적 이벤트', en: 'Tracked Events', ja: '追跡イベント' },
-      value: '기본 페이지뷰만'
+      value: { ko: '기본 페이지뷰만', en: 'Basic pageview only', ja: '基本ページビューのみ' }
     },
     after: {
       metric: { ko: '추적 이벤트', en: 'Tracked Events', ja: '追跡イベント' },
-      value: '4개 추가 완료'
+      value: { ko: '4개 추가 완료', en: '4 events added', ja: '4つのイベント追加完了' }
     },
     impact: '+400%',
     impactType: 'positive',
@@ -229,11 +229,11 @@ const improvements = [
     category: 'Technical',
     before: {
       metric: { ko: 'LCP / 페이지 크기', en: 'LCP / Page Size', ja: 'LCP / ページサイズ' },
-      value: '~4s / 3.5MB'
+      value: { ko: '~4초 / 3.5MB', en: '~4s / 3.5MB', ja: '~4秒 / 3.5MB' }
     },
     after: {
       metric: { ko: 'LCP / 페이지 크기', en: 'LCP / Page Size', ja: 'LCP / ページサイズ' },
-      value: '~2s / 1.5MB (예상)'
+      value: { ko: '~2초 / 1.5MB (예상)', en: '~2s / 1.5MB (estimated)', ja: '~2秒 / 1.5MB (予想)' }
     },
     impact: '+133%',
     impactType: 'positive',
@@ -286,11 +286,11 @@ const improvements = [
     category: 'Technical',
     before: {
       metric: { ko: '성능 점수', en: 'Performance Score', ja: 'パフォーマンススコア' },
-      value: '측정 전'
+      value: { ko: '측정 전', en: 'Before measurement', ja: '測定前' }
     },
     after: {
       metric: { ko: '성능 점수 (PC/Mobile)', en: 'Performance Score (PC/Mobile)', ja: 'パフォーマンススコア (PC/Mobile)' },
-      value: '98/72'
+      value: { ko: '98/72점', en: '98/72', ja: '98/72点' }
     },
     impact: '+98%',
     impactType: 'positive',
@@ -346,11 +346,11 @@ const improvements = [
     category: 'UX',
     before: {
       metric: { ko: '테스트 상태', en: 'Test Status', ja: 'テスト状態' },
-      value: '미검증'
+      value: { ko: '미검증', en: 'Not verified', ja: '未検証' }
     },
     after: {
       metric: { ko: '테스트 완료', en: 'Test Completed', ja: 'テスト完了' },
-      value: '모든 디바이스 ✓'
+      value: { ko: '모든 디바이스 ✓', en: 'All devices ✓', ja: '全デバイス ✓' }
     },
     impact: '+100%',
     impactType: 'positive',
@@ -404,7 +404,7 @@ const improvements = [
     category: 'SEO',
     target: {
       metric: { ko: 'Organic Search', en: 'Organic Search', ja: 'オーガニック検索' },
-      value: '40%'
+      value: { ko: '40%', en: '40%', ja: '40%' }
     },
     effort: { ko: '높음', en: 'High', ja: '高' },
     roi: { ko: '매우 높음', en: 'Very High', ja: '非常に高い' },
@@ -427,7 +427,7 @@ const improvements = [
     category: 'Traffic',
     target: {
       metric: { ko: '활성 채널', en: 'Active Channels', ja: 'アクティブチャネル' },
-      value: '2+'
+      value: { ko: '2개 이상', en: '2+', ja: '2つ以上' }
     },
     effort: { ko: '중간', en: 'Medium', ja: '中程度' },
     roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
@@ -450,7 +450,7 @@ const improvements = [
     category: 'Content',
     target: {
       metric: { ko: '구독 전환율', en: 'Subscription Rate', ja: '購読転換率' },
-      value: '5%'
+      value: { ko: '5%', en: '5%', ja: '5%' }
     },
     effort: { ko: '낮음', en: 'Low', ja: '低' },
     roi: { ko: '높음', en: 'High', ja: '高' },
@@ -473,7 +473,7 @@ const improvements = [
     category: 'Content',
     target: {
       metric: { ko: '페이지/세션', en: 'Pages/Session', ja: 'ページ/セッション' },
-      value: '2.5+'
+      value: { ko: '2.5개 이상', en: '2.5+', ja: '2.5以上' }
     },
     effort: { ko: '높음', en: 'High', ja: '高' },
     roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
@@ -925,7 +925,7 @@ const tt = (key: any) => {
 												<div class="before-after" style="background: white;">
 													<div class="before" style="grid-column: 1 / -1; text-align: left;">
 														<div class="metric-label">{tt(translations.metrics.target)}</div>
-														<div class="value" style="color: #0369a1;">{item.target.value}</div>
+														<div class="value" style="color: #0369a1;">{tt(item.target.value)}</div>
 														<div class="metric-label">{tt(item.target.metric)}</div>
 													</div>
 												</div>
@@ -1011,14 +1011,14 @@ const tt = (key: any) => {
 												<div class="before-after">
 													<div class="before">
 														<div class="metric-label">{tt(translations.metrics.before)}</div>
-														<div class="value">{item.before.value}</div>
+														<div class="value">{tt(item.before.value)}</div>
 														<div class="metric-label">{tt(item.before.metric)}</div>
 													</div>
 													<div class="arrow">→</div>
 													<div class="after">
 														<div class="metric-label">{tt(translations.metrics.after)}</div>
 														<div class={`value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
-															{item.after.value}
+															{tt(item.after.value)}
 														</div>
 														<div class="metric-label">{tt(item.after.metric)}</div>
 													</div>
