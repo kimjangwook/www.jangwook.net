@@ -84,6 +84,9 @@ npm run astro check
    - **.mcp.json 에 .env 파일을 활용하여 환경 변수를 설정하는 방법:** `alias='set -a && source .env && set +a && claude'`
    - **리서치를 위한 클로드 코드 설정법**: Brave API - 클로드 코드가 리서치를 실시할 수 있도록 하는 MCP + α
 
+- **Astro 팁**
+   - Astro 에서 `커스텀 이벤트(gtag)`를 설정할 때, `is:inline`이 필요함.
+
 ## 🛠 기술 스택
 
 ### Core

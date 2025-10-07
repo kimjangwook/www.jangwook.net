@@ -217,36 +217,54 @@ const breadcrumbSchema = {
 		</script>
 
 		<!-- Blog Post Read Complete Tracking -->
-		<script>
+		<script is:inline>
 			let scrollTracked = false;
 
+			console.log('[GA Debug] Blog post read tracking initialized');
+
 			function trackScrollComplete() {
-				if (scrollTracked) return;
+				if (scrollTracked) {
+					console.log('[GA Debug] Scroll already tracked, skipping');
+					return;
+				}
 
 				const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
 				const scrollPosition = window.scrollY;
 				const scrollPercentage = (scrollPosition / scrollHeight) * 100;
 
+				console.log('[GA Debug] Scroll position:', {
+					scrollHeight,
+					scrollPosition,
+					scrollPercentage: scrollPercentage.toFixed(2) + '%'
+				});
+
 				if (scrollPercentage >= 100) {
 					scrollTracked = true;
+					console.log('[GA Debug] 100% scroll reached, firing event');
 
 					// Send GA4 event
 					if (typeof gtag !== 'undefined') {
-						gtag('event', 'blog_post_read_complete', {
+						const eventData = {
 							'page_title': document.title,
 							'page_location': window.location.href,
 							'page_path': window.location.pathname
-						});
+						};
+						console.log('[GA Debug] Sending blog_post_read_complete event:', eventData);
+						gtag('event', 'blog_post_read_complete', eventData);
+						console.log('[GA Debug] Event sent successfully');
+					} else {
+						console.warn('[GA Debug] gtag is not defined');
 					}
 				}
 			}
 
 			// Throttle scroll events
-			let scrollTimeout: ReturnType<typeof setTimeout>;
+			let scrollTimeout;
 			window.addEventListener('scroll', () => {
 				clearTimeout(scrollTimeout);
 				scrollTimeout = setTimeout(trackScrollComplete, 100);
 			});
+			console.log('[GA Debug] Scroll listener attached');
 		</script>
 	</body>
 </html>

@@ -80,22 +80,33 @@ const today = new Date();
 </footer>
 
 <!-- Social Link Click Tracking -->
-<script>
+<script is:inline>
 	document.addEventListener('DOMContentLoaded', () => {
 		const socialLinks = document.querySelectorAll('.social-link');
+		console.log('[GA Debug] Social link tracking initialized, found', socialLinks.length, 'links');
 
 		socialLinks.forEach(link => {
 			link.addEventListener('click', (event) => {
-				const platform = (event.currentTarget as HTMLAnchorElement).dataset.socialPlatform;
-				const url = (event.currentTarget as HTMLAnchorElement).href;
+				const platform = event.currentTarget.dataset.socialPlatform;
+				const url = event.currentTarget.href;
+
+				console.log('[GA Debug] Social link clicked:', { platform, url });
 
 				// Send GA4 event
 				if (typeof gtag !== 'undefined' && platform) {
-					gtag('event', 'social_link_click', {
+					const eventData = {
 						'social_platform': platform,
 						'link_url': url,
 						'event_category': 'engagement',
 						'event_label': `social_${platform}`
+					};
+					console.log('[GA Debug] Sending social_link_click event:', eventData);
+					gtag('event', 'social_link_click', eventData);
+					console.log('[GA Debug] Event sent successfully');
+				} else {
+					console.warn('[GA Debug] gtag is not defined or platform is missing:', {
+						gtagExists: typeof gtag !== 'undefined',
+						platform
 					});
 				}
 			});

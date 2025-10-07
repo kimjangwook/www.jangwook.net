@@ -62,36 +62,53 @@ const t = useTranslations(lang);
 		<Footer lang={lang} />
 
 		<!-- Contact Form Interaction Tracking -->
-		<script>
+		<script is:inline>
 			let contactTracked = false;
 
+			console.log('[GA Debug] Contact form tracking initialized');
+
 			function trackContactInteraction() {
-				if (contactTracked) return;
+				if (contactTracked) {
+					console.log('[GA Debug] Contact already tracked, skipping');
+					return;
+				}
 				contactTracked = true;
+
+				console.log('[GA Debug] Contact form interaction detected');
 
 				// Send GA4 event
 				if (typeof gtag !== 'undefined') {
-					gtag('event', 'contact_button_click', {
+					const eventData = {
 						'page_title': document.title,
 						'page_location': window.location.href,
 						'page_path': window.location.pathname,
 						'event_category': 'engagement',
 						'event_label': 'contact_form_interaction'
-					});
+					};
+					console.log('[GA Debug] Sending contact_button_click event:', eventData);
+					gtag('event', 'contact_button_click', eventData);
+					console.log('[GA Debug] Event sent successfully');
+				} else {
+					console.warn('[GA Debug] gtag is not defined');
 				}
 			}
 
 			// Track when user clicks on the iframe
 			const iframe = document.querySelector('iframe');
 			if (iframe) {
+				console.log('[GA Debug] Iframe found, attaching listeners');
 				iframe.addEventListener('load', () => {
+					console.log('[GA Debug] Iframe loaded');
 					// Track iframe focus (user interaction)
 					window.addEventListener('blur', () => {
 						if (document.activeElement === iframe) {
+							console.log('[GA Debug] Iframe focused (user clicked)');
 							trackContactInteraction();
 						}
 					});
 				});
+			} else {
+				console.warn('[GA Debug] Iframe not found');
 			}
 		</script>
 	</body>
