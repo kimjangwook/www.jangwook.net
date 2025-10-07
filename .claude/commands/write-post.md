@@ -67,6 +67,13 @@ The command delegates to the Writing Assistant agent with the following tasks:
 - Store image metadata for frontmatter
 
 #### Phase 3: Content Generation
+
+**IMPORTANT - Publication Date**:
+- Always set `pubDate` to **one day after the latest existing blog post**
+- Find the most recent post in `src/content/blog/` across all languages
+- Add 1 day to that date for the new post
+- Format: 'YYYY-MM-DD' (single quotes required)
+
 For each language in `--languages`:
 - Generate complete blog post in target language
 - Include proper Astro frontmatter:
@@ -74,7 +81,7 @@ For each language in `--languages`:
   ---
   title: [Generated Title]
   description: [SEO Description]
-  pubDate: 'YYYY-MM-DD'  # Must use single quotes and YYYY-MM-DD format
+  pubDate: '[Latest Post Date + 1 day]'  # Must use single quotes and YYYY-MM-DD format
   heroImage: ../../../assets/blog/[slug]-hero.[ext]
   tags: [tag1, tag2, ...]
   ---
@@ -99,7 +106,18 @@ For each language in `--languages`:
 - Validate image path references
 - Ensure proper Markdown formatting
 
-### 4. Output Summary
+### 4. Update README.md
+
+After successfully creating all blog post files:
+- Read `README.md`
+- Update the "블로그 포스트 현황" section:
+  - Increment total post count
+  - Add new post to the top of the list with title, date, and description
+  - Update "최신 포스트 날짜" to the new post's pubDate
+  - Update "Last Updated" timestamp at the bottom
+- If the new post topic was in "향후 콘텐츠 플랜", remove it from that section
+
+### 5. Output Summary
 Display creation results:
 ```
 ✓ Blog post created successfully!
@@ -116,6 +134,11 @@ Metadata:
   - Title: [Generated Title]
   - Tags: [tag1, tag2, ...]
   - Publish Date: [YYYY-MM-DD]
+
+README.md Updated:
+  ✓ Post count updated
+  ✓ New post added to list
+  ✓ Latest post date updated
 
 Next Steps:
   1. Review generated content
@@ -134,28 +157,48 @@ Languages: [language codes]
 Description: [SEO description or "Generate appropriate description"]
 
 Requirements:
-1. Research topic using Web Researcher agent:
+1. **Determine publication date**:
+   - Find the most recent blog post across all language folders in src/content/blog/
+   - Extract the latest pubDate
+   - Add 1 day to get the new post's pubDate
+   - Format as 'YYYY-MM-DD' (single quotes)
+
+2. Research topic using Web Researcher agent:
    - Delegate to Web Researcher for comprehensive research
    - Gather latest information, official documentation, and examples
    - Verify technical accuracy and current best practices
    - Create detailed outline based on research findings
-2. Generate hero image:
+
+3. Generate hero image:
    - Create descriptive image prompt
    - Call Image Generator agent
    - Save to src/assets/blog/[slug]-hero.[ext]
    - Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter
-3. Write complete blog post for each language:
+
+4. Write complete blog post for each language:
    - Follow Astro Content Collections schema
    - Include frontmatter (title, description, pubDate, heroImage, tags)
+   - **Use the calculated pubDate from step 1**
    - Use technical blog tone and style
    - Include code examples where appropriate
    - Add proper headings and structure
-4. Save files:
-   - Korean: /src/content/blog/[slug].md
-   - Japanese: /src/content/blog/[slug].ja.md
-   - English: /src/content/blog/[slug].en.md
-5. Generate URL-friendly slug from topic
-6. Return file paths and metadata
+
+5. Save files to language-specific folders:
+   - Korean: /src/content/blog/ko/[slug].md
+   - Japanese: /src/content/blog/ja/[slug].md
+   - English: /src/content/blog/en/[slug].md
+
+6. Update README.md:
+   - Read current README.md
+   - Update "블로그 포스트 현황" section
+   - Increment post count
+   - Add new post to top of list
+   - Update "최신 포스트 날짜"
+   - Update "Last Updated" timestamp
+   - Remove topic from "향후 콘텐츠 플랜" if present
+
+7. Generate URL-friendly slug from topic
+8. Return file paths and metadata
 ```
 
 ### Expected Agent Response Format

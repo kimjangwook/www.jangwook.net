@@ -43,36 +43,40 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-10-10
-**총 포스트 수**: 7개 (한국어 기준)
+**최신 포스트 날짜**: 2025-10-11
+**총 포스트 수**: 8개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기** (2025-10-10)
+1. **Chrome DevTools MCP로 웹 성능 최적화 자동화하기** (2025-10-11)
+
+   - AI 어시스턴트가 실제 브라우저 데이터로 성능을 측정하고 최적화하는 완벽 가이드
+
+2. **AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기** (2025-10-10)
 
    - Notion API MCP 통합으로 구축하는 엔터프라이즈급 AI 자동화 시스템
 
-2. **AI를 활용한 반기별 발표 자료 작성 자동화** (2025-10-09)
+3. **AI를 활용한 반기별 발표 자료 작성 자동화** (2025-10-09)
 
    - 60시간 업무를 10시간으로 단축한 AI 자동화 프로세스
 
-3. **Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성** (2025-10-08)
+4. **Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성** (2025-10-08)
 
    - 31개 HTML 페이지 자동 생성 사례
 
-4. **Claude Code Best Practices** (2025-10-07)
+5. **Claude Code Best Practices** (2025-10-07)
 
    - Anthropic 공식 가이드 기반 생산성 극대화
 
-5. **블로그 런칭 분석 리포트** (2025-10-06)
+6. **블로그 런칭 분석 리포트** (2025-10-06)
 
    - GA4 데이터 분석 및 3개월 성장 전략
 
-6. **Google Analytics MCP 자동화** (2025-10-05)
+7. **Google Analytics MCP 자동화** (2025-10-05)
 
    - MCP와 AI 에이전트로 블로그 분석 자동화
 
-7. **LLM과 Claude Code를 활용한 블로그 자동화** (2025-10-04)
+8. **LLM과 Claude Code를 활용한 블로그 자동화** (2025-10-04)
    - 11개 전문 에이전트로 블로그 완전 자동화
 
 ---
@@ -95,13 +99,10 @@ npm run astro check
 1. **MCP Server 개발 실전 가이드**
    - 커스텀 MCP Server 개발부터 배포까지
 
-2. **Chrome DevTools MCP로 웹 성능 최적화하기**
-   - Core Web Vitals 측정 및 최적화 자동화
-
-3. **Brave Search MCP로 AI 리서치 자동화**
+2. **Brave Search MCP로 AI 리서치 자동화**
    - 웹 검색 자동화 및 콘텐츠 큐레이션
 
-4. **Playwright MCP로 웹 테스팅 자동화**
+3. **Playwright MCP로 웹 테스팅 자동화**
    - E2E 테스트 및 스크린샷 자동화
 
 ### 실전 프로젝트 시리즈
@@ -176,6 +177,7 @@ npm run astro check
 www.jangwook.net/
 ├── .claude/              # Claude Code 설정
 │   ├── agents/          # 전문 에이전트 정의
+│   │   ├── web-researcher.md
 │   │   ├── content-planner.md
 │   │   ├── writing-assistant.md
 │   │   ├── editor.md
@@ -217,19 +219,20 @@ www.jangwook.net/
 
 ## 🤖 AI 에이전트 시스템
 
-### 전문 에이전트 (11개)
+### 전문 에이전트 (12개)
 
-1. **content-planner**: 콘텐츠 전략 및 주제 계획
-2. **writing-assistant**: 블로그 포스트 작성 지원
-3. **editor**: 문법, 스타일, 메타데이터 검토
-4. **site-manager**: Astro 빌드, 배포, 성능 최적화
-5. **seo-optimizer**: 사이트맵, 메타태그, 내부 링크 최적화
-6. **analytics**: 트래픽 분석 및 성과 측정
-7. **social-media-manager**: 소셜 미디어 공유 자동화
-8. **portfolio-curator**: 프로젝트 포트폴리오 관리
-9. **learning-tracker**: 학습 목표 및 기술 트렌드 추적
-10. **image-generator**: Gemini API 기반 이미지 생성
-11. **technical-writer**: 기술 문서 작성 및 코드 설명
+1. **web-researcher**: Brave Search MCP를 활용한 웹 리서치, 기술 검증, 최신 정보 수집
+2. **content-planner**: 콘텐츠 전략 및 주제 계획
+3. **writing-assistant**: 블로그 포스트 작성 지원
+4. **editor**: 문법, 스타일, 메타데이터 검토
+5. **site-manager**: Astro 빌드, 배포, 성능 최적화
+6. **seo-optimizer**: 사이트맵, 메타태그, 내부 링크 최적화
+7. **analytics**: 트래픽 분석 및 성과 측정
+8. **social-media-manager**: 소셜 미디어 공유 자동화
+9. **portfolio-curator**: 프로젝트 포트폴리오 관리
+10. **learning-tracker**: 학습 목표 및 기술 트렌드 추적
+11. **image-generator**: Gemini API 기반 이미지 생성
+12. **technical-writer**: 기술 문서 작성 및 코드 설명
 
 ### 사용 예시
 
@@ -410,6 +413,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-10-10 (최신 블로그 포스트 기준)
+**Last Updated**: 2025-10-11 (최신 블로그 포스트 기준)
 
 **Built with** ❤️ **using Astro & Claude Code**
