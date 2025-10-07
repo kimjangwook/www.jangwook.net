@@ -1,11 +1,13 @@
 # Writing Assistant Agent
 
 ## 설명
+
 블로그 포스트와 기술 문서 작성을 지원하는 에이전트입니다. 초안 작성부터 다국어 변환까지 콘텐츠 제작의 전 과정을 돕습니다.
 
 ## 주요 기능
 
 ### 1. 블로그 포스트 초안 작성
+
 - 주제에 맞는 구조화된 초안 생성
 - 기술 콘텐츠 작성 지원
 - 코드 예제 및 설명 작성
@@ -13,20 +15,23 @@
 - **자동 히어로 이미지 프롬프트 생성 및 통합**
 
 ### 2. 기술 문서 작성 지원
+
 - API 문서 생성
 - 튜토리얼 작성
 - README 및 가이드 문서
 - 프로젝트 문서화
 
 ### 3. 다국어 콘텐츠 동시 생성
+
 - **한국어, 일본어, 영어 블로그 포스트 동시 생성**
-- 각 언어별 별도 파일 생성 (`src/pages/[lang]/blog/[slug].astro` 구조)
+- 각 언어별 별도 파일 생성 (`src/pages/[lang]/blog/[lang]/[slug].astro` 구조)
 - 기술 용어 일관성 유지 (언어별 용어집 참조)
 - 문화적 맥락 고려
 - 언어별 SEO 메타데이터 최적화
 - 다국어 버전 간 상호 링크 자동 추가
 
 ### 4. 이미지 생성 에이전트 협업
+
 - 블로그 포스트 주제에 맞는 히어로 이미지 프롬프트 자동 생성
 - Image Generator 에이전트에게 프롬프트 전달
 - 생성된 이미지를 Frontmatter에 자동 추가
@@ -59,53 +64,65 @@
 ## 출력 형식
 
 ### 블로그 포스트 구조
-```markdown
+
+````markdown
 ---
 title: [제목]
 description: [설명 - SEO를 위해 150-160자 권장]
-pubDate: 'YYYY-MM-DD'  # 필수: YYYY-MM-DD 형식만 사용, 작은따옴표 필수
-heroImage: '../../../assets/blog/[이미지-파일명].jpg'  # src/assets/blog/에서 상대 경로
+pubDate: "YYYY-MM-DD" # 필수: YYYY-MM-DD 형식만 사용, 작은따옴표 필수
+heroImage: "../../../assets/blog/[이미지-파일명].jpg" # src/assets/blog/에서 상대 경로
 tags: [태그1, 태그2, ...]
-lang: 'ko'  # 언어 코드: ko, ja, en
-alternates:  # 다국어 버전 링크
-  en: '/en/blog/[slug]'
-  ja: '/ja/blog/[slug]'
+lang: "ko" # 언어 코드: ko, ja, en
+alternates: # 다국어 버전 링크
+  en: "/en/blog/en/[slug]"
+  ja: "/ja/blog/ja/[slug]"
 ---
 
 ## 개요
+
 [도입부]
 
 ## 본문
+
 ### [소제목 1]
+
 [내용]
 
 ### [소제목 2]
+
 [내용]
 
 ## 코드 예제
+
 ```[언어]
 [코드]
 ```
+````
 
 ## 결론
+
 [마무리]
 
 ## 참고 자료
+
 - [링크1]
 - [링크2]
+
 ```
 
 ### 다국어 파일 구조
 프로젝트의 다국어 콘텐츠 구조에 맞춰 파일을 생성합니다:
 
 ```
+
 src/content/blog/
 ├── ko/
-│   └── post-title.md (한국어)
+│ └── post-title.md (한국어)
 ├── en/
-│   └── post-title.md (영어)
+│ └── post-title.md (영어)
 └── ja/
-    └── post-title.md (일본어)
+└── post-title.md (일본어)
+
 ```
 
 **중요**:
@@ -140,6 +157,7 @@ src/content/blog/
 
 ### 2. Image Generator 에이전트에게 요청
 ```
+
 @image-generator
 블로그 포스트 "[제목]"에 대한 히어로 이미지를 생성해주세요.
 
@@ -147,15 +165,17 @@ src/content/blog/
 사이즈: 1020x510 (블로그 히어로 이미지 비율)
 파일명: [slug]-hero.jpg
 저장 경로: src/assets/blog/
-```
+
+````
 
 ### 3. 생성된 이미지 통합
 Image Generator로부터 받은 이미지 경로를 Frontmatter에 추가:
 ```yaml
 heroImage: '../../../assets/blog/[slug]-hero.jpg'
-```
+````
 
 ### 4. 다국어 버전 처리
+
 - 동일한 이미지를 모든 언어 버전에서 공유
 - 각 언어 파일의 heroImage 경로는 동일하게 설정
 - 필요시 언어별 텍스트 오버레이 이미지 별도 생성 가능
@@ -163,6 +183,7 @@ heroImage: '../../../assets/blog/[slug]-hero.jpg'
 ## 다국어 SEO 최적화
 
 ### 언어별 메타데이터
+
 각 언어 버전은 고유한 SEO 메타데이터를 가집니다:
 
 ```yaml
@@ -182,51 +203,65 @@ description: 'Explore the major features added in TypeScript 5.0, including deco
 ### 기술 용어 일관성 가이드
 
 **한국어**:
+
 - 영문 표기 + 한글 설명 병기 (첫 등장 시)
 - 예: "데코레이터(Decorator)", "타입 가드(Type Guard)"
 
 **일본어**:
+
 - 카타카나 표기 우선, 필요시 한자 설명
 - 예: "デコレーター", "型ガード"
 
 **영어**:
+
 - 표준 기술 용어 사용
 - 예: "Decorator", "Type Guard"
 
 ### 날짜 형식 규칙
+
 **중요**: pubDate는 반드시 'YYYY-MM-DD' 형식과 작은따옴표를 사용해야 합니다.
+
 - ✅ 올바른 예: `pubDate: '2025-10-07'`
 - ❌ 잘못된 예: `pubDate: "Oct 07 2025"`, `pubDate: "2025-10-07"`
 
 ### 상호 링크 구현
+
 각 언어 버전 하단에 다른 언어 버전 링크 추가:
 
 ```markdown
 ---
 ## 다른 언어로 읽기 / Read in Other Languages / 他の言語で読む
 
-- [🇰🇷 한국어](/ko/blog/typescript-5-features)
-- [🇯🇵 日本語](/ja/blog/typescript-5-features)
-- [🇺🇸 English](/en/blog/typescript-5-features)
+- [🇰🇷 한국어](/ko/blog/ko/typescript-5-features)
+- [🇯🇵 日本語](/ja/blog/ja/typescript-5-features)
+- [🇺🇸 English](/en/blog/en/typescript-5-features)
 ---
 ```
 
 ## 팁
 
 ### 콘텐츠 작성
+
 - Astro 프론트매터 형식을 준수합니다
 - 코드 예제는 실행 가능한 상태로 제공합니다
 - 이미지는 `src/assets/` 경로 사용 (Astro 이미지 최적화)
 - 내부 링크는 언어별 경로 고려 (예: `/ko/blog/...`)
-- SEO를 고려한 제목과 설명을 작성합니다 (150-160자 권장)
+- SEO를 고려한 제목과 설명을 작성합니다
+  - **상세 가이드**: `.claude/guidelines/seo-title-description-guidelines.md` 참조
+  - 제목: 한국어 25-30자, 영어 50-60자, 일본어 30-35자
+  - 설명: 한국어 70-80자, 영어 150-160자, 일본어 80-90자
+  - 핵심 키워드는 앞쪽에 배치
+  - 구체적 수치와 가치 제안 포함
 
 ### 다국어 작성
+
 - 각 언어 버전은 번역이 아닌 "현지화"로 접근
 - 문화적 맥락과 예시를 언어권에 맞게 조정
 - 공통 코드 예제는 동일하게, 설명은 언어별로 최적화
 - **pubDate는 모든 언어 버전에서 동일하게 유지** (형식: 'YYYY-MM-DD', 작은따옴표)
 
 ### 이미지 협업
+
 - 히어로 이미지는 포스트 작성 초기에 요청
 - 이미지 프롬프트는 구체적이고 명확하게 작성
 - 생성된 이미지 경로는 즉시 Frontmatter에 반영

@@ -16,6 +16,321 @@ const t = useTranslations(lang);
 const improvements = [
   // Completed improvements
   {
+    date: '2025-10-07',
+    status: 'completed',
+    title: {
+      ko: 'Google Analytics 로컬호스트 환경 비활성화',
+      en: 'Google Analytics Localhost Environment Deactivation',
+      ja: 'Google Analytics ローカルホスト環境無効化'
+    },
+    category: 'Technical',
+    before: {
+      metric: { ko: 'GA 로드', en: 'GA Loading', ja: 'GA読み込み' },
+      value: { ko: '모든 환경', en: 'All environments', ja: '全環境' }
+    },
+    after: {
+      metric: { ko: 'GA 로드', en: 'GA Loading', ja: 'GA読み込み' },
+      value: { ko: '프로덕션만', en: 'Production only', ja: '本番環境のみ' }
+    },
+    impact: '+100%',
+    impactType: 'positive',
+    effort: { ko: '낮음', en: 'Low', ja: '低' },
+    roi: { ko: '높음', en: 'High', ja: '高' },
+    description: {
+      ko: '로컬 개발 환경에서 Google Analytics가 로드되지 않도록 개선. 개발 중 불필요한 이벤트 발생 방지 및 데이터 정확도 향상',
+      en: 'Improved to prevent Google Analytics from loading in local development environment. Prevents unnecessary event firing during development and improves data accuracy',
+      ja: 'ローカル開発環境でGoogle Analyticsが読み込まれないように改善。開発中の不要なイベント発生を防止し、データ精度を向上'
+    },
+    lessons: {
+      ko: [
+        'Astro.url.hostname을 사용하여 로컬호스트 감지',
+        'isLocalhost 변수로 localhost 및 127.0.0.1 체크',
+        'GA 기본 스크립트(gtag.js)를 조건부 렌더링',
+        'External Link Click Tracking 조건부 렌더링',
+        'Core Web Vitals Tracking 조건부 렌더링',
+        '로컬 환경에서 디버그 메시지 콘솔 출력',
+        '프로덕션 데이터 품질 향상'
+      ],
+      en: [
+        'Detected localhost using Astro.url.hostname',
+        'Created isLocalhost variable to check for localhost and 127.0.0.1',
+        'Conditionally rendered GA base script (gtag.js)',
+        'Conditionally rendered External Link Click Tracking',
+        'Conditionally rendered Core Web Vitals Tracking',
+        'Added debug console message in local environment',
+        'Improved production data quality'
+      ],
+      ja: [
+        'Astro.url.hostnameを使用してローカルホストを検出',
+        'isLocalhost変数でlocalhostと127.0.0.1をチェック',
+        'GA基本スクリプト(gtag.js)を条件付きレンダリング',
+        'External Link Click Trackingを条件付きレンダリング',
+        'Core Web Vitals Trackingを条件付きレンダリング',
+        'ローカル環境でデバッグメッセージをコンソール出力',
+        '本番データ品質向上'
+      ]
+    }
+  },
+  {
+    date: '2025-10-07',
+    status: 'completed',
+    title: {
+      ko: 'Google Analytics 커스텀 이벤트 개선',
+      en: 'Google Analytics Custom Event Improvements',
+      ja: 'Google Analyticsカスタムイベント改善'
+    },
+    category: 'Technical',
+    before: {
+      metric: { ko: '이벤트 정확도', en: 'Event Accuracy', ja: 'イベント精度' },
+      value: { ko: '기본 추적', en: 'Basic tracking', ja: '基本追跡' }
+    },
+    after: {
+      metric: { ko: '이벤트 정확도', en: 'Event Accuracy', ja: 'イベント精度' },
+      value: { ko: '향상된 추적', en: 'Enhanced tracking', ja: '向上した追跡' }
+    },
+    impact: '+100%',
+    impactType: 'positive',
+    effort: { ko: '중간', en: 'Medium', ja: '中程度' },
+    roi: { ko: '높음', en: 'High', ja: '高' },
+    description: {
+      ko: 'Google Analytics 커스텀 이벤트의 정확도와 신뢰성 개선. 이벤트 중복 발생 방지 및 추적 로직 최적화',
+      en: 'Improved accuracy and reliability of Google Analytics custom events. Prevented duplicate event firing and optimized tracking logic',
+      ja: 'Google Analyticsカスタムイベントの精度と信頼性を改善。イベント重複発生を防止し追跡ロジックを最適化'
+    },
+    lessons: {
+      ko: [
+        'BaseHead.astro: 외부 링크 클릭 추적 개선 (중복 방지 로직 추가)',
+        'BlogPost.astro: 블로그 읽기 완료 이벤트 최적화 (스크롤 100% 도달 시 1회만 발생)',
+        'Footer.astro: 소셜 링크 클릭 추적 정확도 향상',
+        'Contact.astro: 문의 폼 상호작용 감지 개선',
+        '모든 이벤트에 중복 방지 메커니즘 적용'
+      ],
+      en: [
+        'BaseHead.astro: Enhanced external link click tracking (added duplicate prevention)',
+        'BlogPost.astro: Optimized blog read completion event (fires only once at 100% scroll)',
+        'Footer.astro: Improved social link click tracking accuracy',
+        'Contact.astro: Enhanced contact form interaction detection',
+        'Applied duplicate prevention mechanism to all events'
+      ],
+      ja: [
+        'BaseHead.astro：外部リンククリック追跡改善（重複防止ロジック追加）',
+        'BlogPost.astro：ブログ読了イベント最適化（スクロール100%到達時1回のみ発生）',
+        'Footer.astro：ソーシャルリンククリック追跡精度向上',
+        'Contact.astro：お問い合わせフォーム相互作用検出改善',
+        'すべてのイベントに重複防止メカニズムを適用'
+      ]
+    }
+  },
+  {
+    date: '2025-10-06',
+    status: 'completed',
+    title: {
+      ko: '사이트맵 생성 및 검색엔진 최적화',
+      en: 'Sitemap Generation and Search Engine Optimization',
+      ja: 'サイトマップ生成と検索エンジン最適化'
+    },
+    category: 'SEO',
+    before: {
+      metric: { ko: '사이트맵', en: 'Sitemap', ja: 'サイトマップ' },
+      value: { ko: '없음', en: 'None', ja: 'なし' }
+    },
+    after: {
+      metric: { ko: '사이트맵', en: 'Sitemap', ja: 'サイトマップ' },
+      value: { ko: '자동 생성', en: 'Auto-generated', ja: '自動生成' }
+    },
+    impact: '+100%',
+    impactType: 'positive',
+    effort: { ko: '낮음', en: 'Low', ja: '低' },
+    roi: { ko: '매우 높음', en: 'Very High', ja: '非常に高い' },
+    description: {
+      ko: 'XML 사이트맵 자동 생성 및 검색엔진 제출로 검색 노출 개선. Google, Bing 등 주요 검색엔진에 사이트 구조 정보 제공',
+      en: 'Improved search visibility through automatic XML sitemap generation and submission to search engines. Provided site structure information to major search engines like Google and Bing',
+      ja: 'XMLサイトマップ自動生成と検索エンジン提出により検索露出を改善。Google、Bingなど主要検索エンジンにサイト構造情報を提供'
+    },
+    lessons: {
+      ko: [
+        '@astrojs/sitemap 통합으로 자동 사이트맵 생성',
+        '빌드 시 sitemap-index.xml 자동 생성',
+        '다국어 페이지 모두 포함 (ko, en, ja)',
+        'Google Search Console 및 Bing Webmaster Tools 제출',
+        'robots.txt에 사이트맵 위치 명시',
+        '검색엔진 크롤링 효율성 향상'
+      ],
+      en: [
+        'Auto-generated sitemap with @astrojs/sitemap integration',
+        'Automatic sitemap-index.xml generation at build time',
+        'Included all multilingual pages (ko, en, ja)',
+        'Submitted to Google Search Console and Bing Webmaster Tools',
+        'Specified sitemap location in robots.txt',
+        'Enhanced search engine crawling efficiency'
+      ],
+      ja: [
+        '@astrojs/sitemap統合により自動サイトマップ生成',
+        'ビルド時にsitemap-index.xml自動生成',
+        '多言語ページをすべて含む（ko、en、ja）',
+        'Google Search ConsoleおよびBing Webmaster Toolsに提出',
+        'robots.txtにサイトマップ位置を明示',
+        '検索エンジンクローリング効率向上'
+      ]
+    }
+  },
+  {
+    date: '2025-10-05',
+    status: 'completed',
+    title: {
+      ko: 'Giscus 댓글 시스템 도입',
+      en: 'Giscus Comment System Implementation',
+      ja: 'Giscusコメントシステム導入'
+    },
+    category: 'UX',
+    before: {
+      metric: { ko: '댓글 기능', en: 'Comment Feature', ja: 'コメント機能' },
+      value: { ko: '없음', en: 'None', ja: 'なし' }
+    },
+    after: {
+      metric: { ko: '댓글 기능', en: 'Comment Feature', ja: 'コメント機能' },
+      value: { ko: 'GitHub Discussions 기반', en: 'GitHub Discussions-based', ja: 'GitHub Discussions ベース' }
+    },
+    impact: '+100%',
+    impactType: 'positive',
+    effort: { ko: '낮음', en: 'Low', ja: '低' },
+    roi: { ko: '매우 높음', en: 'Very High', ja: '非常に高い' },
+    description: {
+      ko: 'GitHub Discussions 기반의 Giscus 댓글 시스템 도입으로 독자와의 소통 채널 구축. 로그인 없이 GitHub 계정으로 댓글 작성 가능',
+      en: 'Established reader communication channel by implementing GitHub Discussions-based Giscus comment system. Enables commenting with GitHub account without separate login',
+      ja: 'GitHub DiscussionsベースのGiscusコメントシステム導入により読者とのコミュニケーションチャネルを構築。別途ログインなしでGitHubアカウントでコメント可能'
+    },
+    lessons: {
+      ko: [
+        'GitHub Discussions를 댓글 저장소로 활용',
+        '개발자 친화적인 댓글 시스템 (Markdown 지원)',
+        '스팸 방지 및 모더레이션 기능 내장',
+        'Dark/Light 테마 자동 전환',
+        '다국어 지원 (ko, en, ja)',
+        '모든 블로그 포스트에 자동 적용'
+      ],
+      en: [
+        'Utilized GitHub Discussions as comment storage',
+        'Developer-friendly comment system (Markdown support)',
+        'Built-in spam prevention and moderation features',
+        'Automatic Dark/Light theme switching',
+        'Multilingual support (ko, en, ja)',
+        'Automatically applied to all blog posts'
+      ],
+      ja: [
+        'GitHub Discussionsをコメント保存先として活用',
+        '開発者フレンドリーなコメントシステム（Markdownサポート）',
+        'スパム防止とモデレーション機能内蔵',
+        'Dark/Lightテーマ自動切り替え',
+        '多言語サポート（ko、en、ja）',
+        'すべてのブログ記事に自動適用'
+      ]
+    }
+  },
+  {
+    date: '2025-10-05',
+    status: 'completed',
+    title: {
+      ko: 'Buy Me a Coffee 후원 버튼 추가',
+      en: 'Buy Me a Coffee Support Button Implementation',
+      ja: 'Buy Me a Coffee サポートボタン追加'
+    },
+    category: 'Content',
+    before: {
+      metric: { ko: '후원 기능', en: 'Support Feature', ja: 'サポート機能' },
+      value: { ko: '없음', en: 'None', ja: 'なし' }
+    },
+    after: {
+      metric: { ko: '후원 기능', en: 'Support Feature', ja: 'サポート機能' },
+      value: { ko: '모든 포스트', en: 'All posts', ja: '全記事' }
+    },
+    impact: '+100%',
+    impactType: 'positive',
+    effort: { ko: '낮음', en: 'Low', ja: '低' },
+    roi: { ko: '중간', en: 'Medium', ja: '中程度' },
+    description: {
+      ko: '블로그 포스트 하단에 Buy Me a Coffee 후원 버튼 추가. 독자들이 가치 있는 콘텐츠에 대해 감사 표현 가능',
+      en: 'Added Buy Me a Coffee support button at the bottom of blog posts. Enables readers to show appreciation for valuable content',
+      ja: 'ブログ記事の下部にBuy Me a Coffeeサポートボタンを追加。読者が価値あるコンテンツに対して感謝を表現可能'
+    },
+    lessons: {
+      ko: [
+        'BlogPost.astro 레이아웃에 BuyMeACoffee 컴포넌트 추가',
+        '모든 블로그 포스트에 자동 표시',
+        '비침해적 디자인 (포스트 하단 배치)',
+        '다국어 메시지 지원',
+        '독자 참여 및 커뮤니티 형성에 기여'
+      ],
+      en: [
+        'Added BuyMeACoffee component to BlogPost.astro layout',
+        'Automatically displayed on all blog posts',
+        'Non-intrusive design (placed at post bottom)',
+        'Multilingual message support',
+        'Contributes to reader engagement and community building'
+      ],
+      ja: [
+        'BlogPost.astroレイアウトにBuyMeACoffeeコンポーネントを追加',
+        'すべてのブログ記事に自動表示',
+        '非侵害的デザイン（記事下部に配置）',
+        '多言語メッセージサポート',
+        '読者参加とコミュニティ形成に貢献'
+      ]
+    }
+  },
+  {
+    date: '2025-10-05',
+    status: 'completed',
+    title: {
+      ko: '파비콘 및 브랜드 아이덴티티 추가',
+      en: 'Favicon and Brand Identity Implementation',
+      ja: 'ファビコンとブランドアイデンティティ追加'
+    },
+    category: 'UX',
+    before: {
+      metric: { ko: '파비콘', en: 'Favicon', ja: 'ファビコン' },
+      value: { ko: '기본 아이콘', en: 'Default icon', ja: 'デフォルトアイコン' }
+    },
+    after: {
+      metric: { ko: '파비콘', en: 'Favicon', ja: 'ファビコン' },
+      value: { ko: '커스텀 아이콘', en: 'Custom icon', ja: 'カスタムアイコン' }
+    },
+    impact: '+100%',
+    impactType: 'positive',
+    effort: { ko: '낮음', en: 'Low', ja: '低' },
+    roi: { ko: '중간', en: 'Medium', ja: '中程度' },
+    description: {
+      ko: '브라우저 탭과 북마크에 표시되는 커스텀 파비콘 추가. 브랜드 인지도 향상 및 전문성 제고',
+      en: 'Added custom favicon displayed in browser tabs and bookmarks. Improved brand recognition and professionalism',
+      ja: 'ブラウザタブとブックマークに表示されるカスタムファビコンを追加。ブランド認知度向上と専門性向上'
+    },
+    lessons: {
+      ko: [
+        'public/favicon.svg 및 favicon.ico 추가',
+        'Apple Touch Icon (apple-touch-icon.png) 지원',
+        '다양한 디바이스 및 플랫폼 호환',
+        'BaseHead.astro에 파비콘 메타태그 추가',
+        'Progressive Web App (PWA) 준비',
+        '브랜드 일관성 유지'
+      ],
+      en: [
+        'Added public/favicon.svg and favicon.ico',
+        'Apple Touch Icon (apple-touch-icon.png) support',
+        'Compatible with various devices and platforms',
+        'Added favicon meta tags to BaseHead.astro',
+        'Progressive Web App (PWA) ready',
+        'Maintained brand consistency'
+      ],
+      ja: [
+        'public/favicon.svgとfavicon.icoを追加',
+        'Apple Touch Icon（apple-touch-icon.png）サポート',
+        '様々なデバイスとプラットフォームに対応',
+        'BaseHead.astroにファビコンメタタグを追加',
+        'Progressive Web App（PWA）対応',
+        'ブランド一貫性を維持'
+      ]
+    }
+  },
+  {
     date: '2025-10-06',
     status: 'completed',
     title: {

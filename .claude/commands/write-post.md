@@ -183,14 +183,26 @@ Requirements:
 ### Frontmatter Schema (Must Follow)
 ```yaml
 ---
-title: string (required, max 60 chars recommended)
-description: string (required, 150-160 chars for SEO)
+title: string (required, see SEO guidelines for optimal length)
+description: string (required, see SEO guidelines for optimal length)
 pubDate: string (required, format: 'YYYY-MM-DD' only, single quotes)
 heroImage: string (optional, relative path from content file: ../../../assets/blog/[image])
 tags: array (optional, lowercase, alphanumeric + hyphens)
 updatedDate: string (optional, format: 'YYYY-MM-DD' only, single quotes)
 ---
 ```
+
+**SEO 최적화 가이드라인**: `.claude/guidelines/seo-title-description-guidelines.md` 참조
+
+**Title 권장 길이**:
+- 한국어: 25-30자
+- 영어: 50-60자
+- 일본어: 30-35자
+
+**Description 권장 길이**:
+- 한국어: 70-80자
+- 영어: 150-160자
+- 일본어: 80-90자
 
 ### Content Structure
 ```markdown

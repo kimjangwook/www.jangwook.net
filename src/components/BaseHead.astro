@@ -22,6 +22,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = FallbackImage, articleData } = Astro.props;
 
+// 로컬호스트 체크 (GA 비활성화용)
+const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
+
 // WebSite Schema (모든 페이지)
 const websiteSchema = {
 	'@context': 'https://schema.org',
@@ -120,18 +123,20 @@ const articleSchema = articleData ? {
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWXG8FFDHW"></script>
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!-- Google Analytics (프로덕션 환경에서만 로드) -->
+{!isLocalhost && (
+	<>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWXG8FFDHW"></script>
+		<script is:inline>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
-  gtag('config', 'G-PWXG8FFDHW');
-</script>
+		  gtag('config', 'G-PWXG8FFDHW');
+		</script>
 
-<!-- External Link Click Tracking -->
-<script is:inline>
+		<!-- External Link Click Tracking -->
+		<script is:inline>
 	document.addEventListener('DOMContentLoaded', () => {
 		console.log('[GA Debug] External link tracking initialized');
 
@@ -178,10 +183,10 @@ const articleSchema = articleData ? {
 			}
 		});
 	});
-</script>
+		</script>
 
-<!-- Core Web Vitals Tracking -->
-<script>
+		<!-- Core Web Vitals Tracking -->
+		<script>
 	// Import and track Core Web Vitals
 	import { onCLS, onLCP, onFCP, onTTFB, onINP } from 'web-vitals';
 
@@ -214,4 +219,13 @@ const articleSchema = articleData ? {
 	onFCP(sendToGoogleAnalytics);  // First Contentful Paint
 	onTTFB(sendToGoogleAnalytics); // Time to First Byte
 	onINP(sendToGoogleAnalytics);  // Interaction to Next Paint (replaces deprecated FID)
-</script>
+		</script>
+	</>
+)}
+
+<!-- 로컬호스트 환경 디버그 메시지 -->
+{isLocalhost && (
+	<script is:inline>
+		console.log('[GA] Google Analytics is disabled in localhost environment');
+	</script>
+)}
