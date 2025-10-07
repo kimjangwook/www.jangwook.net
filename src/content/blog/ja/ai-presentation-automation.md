@@ -524,6 +524,6 @@ AI自動化の核心は技術自体ではなく**プロセス設計**です。
 
 ---
 
-**次回予告**：「AIエージェントシステム構築実践ガイド：Notion API MCPとClaude Codeで自動化パイプラインを作る」
+**次回予告**：[AIエージェントシステム構築実践ガイド：Notion API MCPとClaude Codeで自動化パイプラインを作る](/ja/blog/ja/ai-agent-notion-mcp-automation)
 
 ご質問や追加で知りたい内容があれば、コメントでお知らせください！

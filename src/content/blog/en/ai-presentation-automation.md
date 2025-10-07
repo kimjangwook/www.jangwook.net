@@ -525,6 +525,6 @@ If your work also has repetitive, time-consuming tasks, I recommend trying AI au
 
 ---
 
-**Next Article Preview**: "AI Agent System Construction Practical Guide: Creating Automation Pipelines with Notion API MCP and Claude Code"
+**Next Article Preview**: [AI Agent System Construction Practical Guide: Creating Automation Pipelines with Notion API MCP and Claude Code](/en/blog/en/ai-agent-notion-mcp-automation)
 
 If you have questions or want to know more, please leave a comment!

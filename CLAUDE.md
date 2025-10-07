@@ -209,10 +209,10 @@ Markdown 또는 MDX 형식으로 작성...
 
 **중요 규칙 - 다국어 파일 구조**:
 
-- **파일 위치**: `src/content/blog/<언어코드>/[파일명].md`
-  - 한국어: `src/content/blog/ko/post-title.md`
-  - 영어: `src/content/blog/en/post-title.md`
-  - 일본어: `src/content/blog/ja/post-title.md`
+- **파일 위치**: `src/content/<언어코드>/blog/<언어코드>/[파일명].md`
+  - 한국어: `src/content/ko/blog/ko/post-title.md`
+  - 영어: `src/content/en/blog/en/post-title.md`
+  - 일본어: `src/content/ja/blog/ja/post-title.md`
 - **동일한 파일명**: 모든 언어 버전은 각 언어 폴더에 같은 파일명으로 저장
 - **언어 자동 인식**: 폴더 경로(`ko/`, `en/`, `ja/`)로 언어 자동 식별
 - Frontmatter의 모든 필수 필드 포함 필요

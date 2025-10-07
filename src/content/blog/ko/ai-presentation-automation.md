@@ -524,6 +524,6 @@ AI 자동화의 핵심은 기술 자체가 아니라 **프로세스 설계**입�
 
 ---
 
-**다음 글 예고**: "AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기"
+**다음 글 예고**: [AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기](/ko/blog/ko/ai-agent-notion-mcp-automation)
 
 궁금한 점이나 추가로 알고 싶은 내용이 있다면 댓글로 남겨주세요!
