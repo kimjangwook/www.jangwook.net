@@ -4,6 +4,11 @@
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"]
     },
+    "sequentialthinking": {
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "mcp/sequentialthinking"],
+      "type": "stdio"
+    },
     "automatalabs-playwright-server": {
       "command": "npx",
       "args": ["-y", "@automatalabs/mcp-server-playwright"]
