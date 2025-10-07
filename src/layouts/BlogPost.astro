@@ -9,13 +9,15 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { useTranslations, type Language } from '../lib/i18n/languages';
 import { SITE_TITLE } from '../consts';
+import RelatedPosts from '../components/RelatedPosts.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & {
 	lang: Language;
 	tags?: string[];
+	postId?: string;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, lang, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, lang, tags, postId } = Astro.props;
 const t = useTranslations(lang);
 
 // Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
@@ -133,6 +135,9 @@ const breadcrumbSchema = {
 
 					<!-- Buy Me a Coffee -->
 					<BuyMeACoffee lang={lang} />
+
+					<!-- Related Posts -->
+					{postId && <RelatedPosts currentSlug={postId} />}
 				</div>
 
 				<!-- Comments -->

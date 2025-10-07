@@ -1,0 +1,307 @@
+{
+  "recommendations": {
+    "chrome-devtools-mcp-performance": {
+      "related": [
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.92,
+          "reason": {
+            "ko": "두 글 모두 MCP 서버를 활용한 브라우저 자동화 워크플로우를 다루며, Chrome DevTools와 Playwright의 연계성을 보여줍니다.",
+            "ja": "両記事ともMCPサーバーを活用したブラウザ自動化ワークフローを扱い、Chrome DevToolsとPlaywrightの連携を示しています。",
+            "en": "Both posts cover MCP server-based browser automation workflows and demonstrate the integration between Chrome DevTools and Playwright."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.78,
+          "reason": {
+            "ko": "AI 자동화 워크플로우의 실전 활용 사례로, 성능 측정 후 콘텐츠 최적화 단계로 자연스럽게 연결됩니다.",
+            "ja": "AI自動化ワークフローの実践事例として、パフォーマンス測定後のコンテンツ最適化段階へ自然に繋がります。",
+            "en": "A practical AI automation workflow example that naturally leads to content optimization after performance measurement."
+          },
+          "type": "deep-dive"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.71,
+          "reason": {
+            "ko": "성능 측정 후 분석 단계를 다루어 웹 최적화 전체 파이프라인을 완성합니다.",
+            "ja": "パフォーマンス測定後の分析段階を扱い、Web最適化の全体的なパイプラインを完成させます。",
+            "en": "Covers the analysis phase after performance measurement, completing the full web optimization pipeline."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-12T12:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "ai-agent-notion-mcp-automation": {
+      "related": [
+        {
+          "slug": "ai-presentation-automation",
+          "score": 0.85,
+          "reason": {
+            "ko": "Notion 데이터를 활용한 AI 자동화 시나리오로, 에이전트 시스템 구축 후 실전 활용 단계를 보여줍니다.",
+            "ja": "Notionデータを活用したAI自動化シナリオとして、エージェントシステム構築後の実践活用段階を示します。",
+            "en": "An AI automation scenario using Notion data that demonstrates practical application after building agent systems."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.82,
+          "reason": {
+            "ko": "AI 에이전트를 활용한 자동화 파이프라인 구축의 또 다른 실전 사례입니다.",
+            "ja": "AIエージェントを活用した自動化パイプライン構築の別の実践事例です。",
+            "en": "Another practical example of building automation pipelines using AI agents."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.68,
+          "reason": {
+            "ko": "Claude Code와 에이전트 시스템의 효율적 활용을 위한 기초 지식을 제공합니다.",
+            "ja": "Claude Codeとエージェントシステムの効率的な活用のための基礎知識を提供します。",
+            "en": "Provides foundational knowledge for efficient use of Claude Code and agent systems."
+          },
+          "type": "prerequisite"
+        }
+      ],
+      "generatedAt": "2025-10-12T12:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "ai-content-recommendation-system": {
+      "related": [
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.88,
+          "reason": {
+            "ko": "LLM 기반 블로그 자동화의 심화 기능으로, 콘텐츠 추천은 독자 경험 최적화의 핵심입니다.",
+            "ja": "LLMベースのブログ自動化の高度な機能として、コンテンツ推薦は読者体験最適化の核心です。",
+            "en": "An advanced feature of LLM-based blog automation, where content recommendation is key to optimizing reader experience."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.75,
+          "reason": {
+            "ko": "AI 에이전트를 활용한 자동화 시스템 구축의 실전 예시입니다.",
+            "ja": "AIエージェントを活用した自動化システム構築の実践例です。",
+            "en": "A practical example of building automation systems using AI agents."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.72,
+          "reason": {
+            "ko": "추천 시스템의 효과를 측정하고 개선하기 위한 분석 도구 활용법을 제공합니다.",
+            "ja": "推薦システムの効果を測定し改善するための分析ツールの活用法を提供します。",
+            "en": "Provides analytical tools for measuring and improving recommendation system effectiveness."
+          },
+          "type": "next-step"
+        }
+      ],
+      "generatedAt": "2025-10-12T12:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "claude-code-best-practices": {
+      "related": [
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.82,
+          "reason": {
+            "ko": "Claude Code의 고급 활용법과 에이전트 시스템 구축의 실전 사례입니다.",
+            "ja": "Claude Codeの高度な活用法とエージェントシステム構築の実践事例です。",
+            "en": "Advanced Claude Code usage and practical agent system building examples."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.80,
+          "reason": {
+            "ko": "Claude Code의 또 다른 실전 활용 사례로 웹 자동화를 다룹니다.",
+            "ja": "Claude Codeの別の実践活用事例として、Web自動化を扱います。",
+            "en": "Another practical use case of Claude Code focusing on web automation."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.75,
+          "reason": {
+            "ko": "Claude Code와 MCP를 활용한 고급 자동화 시스템 구축 가이드입니다.",
+            "ja": "Claude CodeとMCPを活用した高度な自動化システム構築ガイドです。",
+            "en": "An advanced automation system building guide using Claude Code and MCP."
+          },
+          "type": "deep-dive"
+        }
+      ],
+      "generatedAt": "2025-10-12T12:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "llm-blog-automation": {
+      "related": [],
+      "generatedAt": "2025-10-12T10:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5",
+      "candidatesEvaluated": 0,
+      "temporalCutoff": "2025-10-12",
+      "note": "First post - no candidates available before publication date (2025-10-04)"
+    },
+    "claude-code-web-automation": {
+      "related": [
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.92,
+          "reason": {
+            "ko": "MCP 기반 브라우저 자동화의 또 다른 실전 사례로, 성능 측정에 특화되어 있습니다.",
+            "ja": "MCPベースのブラウザ自動化の別の実践事例として、パフォーマンス測定に特化しています。",
+            "en": "Another practical example of MCP-based browser automation, specialized in performance measurement."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.80,
+          "reason": {
+            "ko": "Claude Code의 기본 활용법과 Best Practices를 다룹니다.",
+            "ja": "Claude Codeの基本的な活用法とベストプラクティスを扱います。",
+            "en": "Covers basic Claude Code usage and best practices."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.76,
+          "reason": {
+            "ko": "웹 자동화 기술을 블로그 운영에 적용하는 확장된 사례입니다.",
+            "ja": "Web自動化技術をブログ運営に適用する拡張事例です。",
+            "en": "An extended example of applying web automation techniques to blog management."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-12T12:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "google-analytics-mcp-automation": {
+      "related": [
+        {
+          "slug": "blog-launch-analysis-report",
+          "score": 0.90,
+          "reason": {
+            "ko": "GA4 자동화로 수집한 데이터를 실제 분석 리포트로 활용하는 사례입니다.",
+            "ja": "GA4自動化で収集したデータを実際の分析レポートとして活用する事例です。",
+            "en": "A case study of using GA4 automation data for actual analysis reports."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.85,
+          "reason": {
+            "ko": "블로그 자동화 시스템에 분석 기능을 통합하는 확장 사례입니다.",
+            "ja": "ブログ自動化システムに分析機能を統合する拡張事例です。",
+            "en": "An extension case of integrating analytics into blog automation systems."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.71,
+          "reason": {
+            "ko": "웹 성능 측정과 트래픽 분석을 결합한 종합 최적화 전략을 제공합니다.",
+            "ja": "Webパフォーマンス測定とトラフィック分析を組み合わせた総合最適化戦略を提供します。",
+            "en": "Provides comprehensive optimization strategy combining web performance and traffic analysis."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-12T12:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "blog-launch-analysis-report": {
+      "related": [
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.90,
+          "reason": {
+            "ko": "분석 리포트의 자동화 방법과 GA4 MCP 활용법을 다룹니다.",
+            "ja": "分析レポートの自動化方法とGA4 MCPの活用法を扱います。",
+            "en": "Covers analysis report automation methods and GA4 MCP usage."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.73,
+          "reason": {
+            "ko": "블로그 운영 자동화의 전반적인 워크플로우를 제공합니다.",
+            "ja": "ブログ運営自動化の全体的なワークフローを提供します。",
+            "en": "Provides overall workflow for blog operation automation."
+          },
+          "type": "similar-topic"
+        }
+      ],
+      "generatedAt": "2025-10-12T10:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5",
+      "candidatesEvaluated": 2,
+      "temporalCutoff": "2025-10-12"
+    },
+    "ai-presentation-automation": {
+      "related": [
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.85,
+          "reason": {
+            "ko": "Notion 데이터를 활용한 AI 자동화의 또 다른 실전 사례입니다.",
+            "ja": "Notionデータを活用したAI自動化の別の実践事例です。",
+            "en": "Another practical example of AI automation using Notion data."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.72,
+          "reason": {
+            "ko": "AI 자동화를 활용한 콘텐츠 생성의 다양한 활용 사례를 제공합니다.",
+            "ja": "AI自動化を活用したコンテンツ生成の多様な活用事例を提供します。",
+            "en": "Provides various use cases for content generation using AI automation."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.68,
+          "reason": {
+            "ko": "AI 자동화의 효율성을 극대화하기 위한 기본 지식을 다룹니다.",
+            "ja": "AI自動化の効率性を最大化するための基本知識を扱います。",
+            "en": "Covers fundamental knowledge for maximizing AI automation efficiency."
+          },
+          "type": "prerequisite"
+        }
+      ],
+      "generatedAt": "2025-10-12T12:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    }
+  },
+  "metadata": {
+    "totalPosts": 9,
+    "lastGenerated": "2025-10-12T10:00:00Z",
+    "modelVersion": "claude-sonnet-4.5",
+    "minThreshold": 0.3,
+    "maxRecommendations": 5,
+    "generation": {
+      "processedPosts": 9,
+      "skippedPosts": 0,
+      "totalRecommendations": 23,
+      "averageRecommendations": 2.6,
+      "temporalViolationsFixed": 2,
+      "method": "Content Recommender Agent with temporal filtering"
+    }
+  }
+}

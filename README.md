@@ -43,40 +43,44 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-10-11
-**총 포스트 수**: 8개 (한국어 기준)
+**최신 포스트 날짜**: 2025-10-12
+**총 포스트 수**: 9개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Chrome DevTools MCP로 웹 성능 최적화 자동화하기** (2025-10-11)
+1. **Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템** (2025-10-12)
+   - 단순 태그 매칭을 넘어 의미론적 이해로 정교한 추천을 제공하는 AI 기반 블로그 추천 시스템 구축 가이드
+   - **구현 완료**: Claude LLM 기반 의미론적 추천 시스템, RelatedPosts 컴포넌트, 자동 추천 생성
+
+2. **Chrome DevTools MCP로 웹 성능 최적화 자동화하기** (2025-10-11)
 
    - AI 어시스턴트가 실제 브라우저 데이터로 성능을 측정하고 최적화하는 완벽 가이드
 
-2. **AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기** (2025-10-10)
+3. **AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기** (2025-10-10)
 
    - Notion API MCP 통합으로 구축하는 엔터프라이즈급 AI 자동화 시스템
 
-3. **AI를 활용한 반기별 발표 자료 작성 자동화** (2025-10-09)
+4. **AI를 활용한 반기별 발표 자료 작성 자동화** (2025-10-09)
 
    - 60시간 업무를 10시간으로 단축한 AI 자동화 프로세스
 
-4. **Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성** (2025-10-08)
+5. **Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성** (2025-10-08)
 
    - 31개 HTML 페이지 자동 생성 사례
 
-5. **Claude Code Best Practices** (2025-10-07)
+6. **Claude Code Best Practices** (2025-10-07)
 
    - Anthropic 공식 가이드 기반 생산성 극대화
 
-6. **블로그 런칭 분석 리포트** (2025-10-06)
+7. **블로그 런칭 분석 리포트** (2025-10-06)
 
    - GA4 데이터 분석 및 3개월 성장 전략
 
-7. **Google Analytics MCP 자동화** (2025-10-05)
+8. **Google Analytics MCP 자동화** (2025-10-05)
 
    - MCP와 AI 에이전트로 블로그 분석 자동화
 
-8. **LLM과 Claude Code를 활용한 블로그 자동화** (2025-10-04)
+9. **LLM과 Claude Code를 활용한 블로그 자동화** (2025-10-04)
    - 11개 전문 에이전트로 블로그 완전 자동화
 
 ---
@@ -127,8 +131,6 @@ npm run astro check
 2. **Claude Code로 포트폴리오 자동 업데이트**
    - GitHub 프로젝트 자동 분석 및 포트폴리오 반영
 
-3. **AI 기반 콘텐츠 추천 시스템 구축**
-   - 유사 포스트 추천 및 관련 링크 자동 생성
 
 ### 개발 생산성 팁
 
@@ -219,7 +221,7 @@ www.jangwook.net/
 
 ## 🤖 AI 에이전트 시스템
 
-### 전문 에이전트 (12개)
+### 전문 에이전트 (13개)
 
 1. **web-researcher**: Brave Search MCP를 활용한 웹 리서치, 기술 검증, 최신 정보 수집
 2. **content-planner**: 콘텐츠 전략 및 주제 계획
@@ -233,6 +235,7 @@ www.jangwook.net/
 10. **learning-tracker**: 학습 목표 및 기술 트렌드 추적
 11. **image-generator**: Gemini API 기반 이미지 생성
 12. **technical-writer**: 기술 문서 작성 및 코드 설명
+13. **content-recommender**: Claude LLM 기반 의미론적 콘텐츠 추천 시스템
 
 ### 사용 예시
 
@@ -241,6 +244,13 @@ www.jangwook.net/
 @writing-assistant "TypeScript 5.0 기능에 대한 블로그 포스트 작성"
 @seo-optimizer "최근 포스트들의 내부 링크 최적화"
 @analytics "지난 달 블로그 트래픽 분석"
+@content-recommender "모든 블로그 포스트에 대한 의미론적 추천 생성"
+```
+
+### 커스텀 슬래시 커맨드
+
+```bash
+/generate-recommendations  # 모든 포스트에 대한 추천 자동 생성 및 recommendations.json 업데이트
 ```
 
 ## 📝 블로그 포스트 작성 가이드
@@ -413,6 +423,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-10-11 (최신 블로그 포스트 기준)
+**Last Updated**: 2025-10-12 (최신 블로그 포스트 기준)
 
 **Built with** ❤️ **using Astro & Claude Code**

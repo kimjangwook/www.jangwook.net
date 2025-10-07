@@ -707,6 +707,71 @@ const improvements = [
       ]
     }
   },
+  {
+    date: '2025-10-12',
+    status: 'completed',
+    title: {
+      ko: 'AI 기반 콘텐츠 추천 시스템 구축',
+      en: 'AI-based Content Recommendation System Implementation',
+      ja: 'AIベースのコンテンツ推薦システム構築'
+    },
+    category: 'Content',
+    before: {
+      metric: { ko: '관련 포스트 추천', en: 'Related Post Recommendations', ja: '関連記事推薦' },
+      value: { ko: '없음', en: 'None', ja: 'なし' }
+    },
+    after: {
+      metric: { ko: '관련 포스트 추천', en: 'Related Post Recommendations', ja: '関連記事推薦' },
+      value: { ko: 'Claude LLM 기반 의미론적 추천', en: 'Claude LLM semantic recommendations', ja: 'Claude LLM ベースの意味論的推薦' }
+    },
+    impact: '+100%',
+    impactType: 'positive',
+    effort: { ko: '높음', en: 'High', ja: '高' },
+    roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
+    description: {
+      ko: 'Claude LLM을 활용한 의미론적 콘텐츠 추천 시스템 구축. 단순 태그 매칭을 넘어 콘텐츠의 맥락과 의미를 이해하여 정교한 추천 제공',
+      en: 'Built semantic content recommendation system using Claude LLM. Provides sophisticated recommendations by understanding context and meaning beyond simple tag matching',
+      ja: 'Claude LLMを活用した意味論的コンテンツ推薦システムを構築。単純なタグマッチングを超えてコンテンツの文脈と意味を理解し精巧な推薦を提供'
+    },
+    lessons: {
+      ko: [
+        'content-recommender 전문 에이전트 구축 (.claude/agents/)',
+        '/generate-recommendations 커스텀 슬래시 커맨드 생성',
+        'Claude LLM 기반 의미론적 유사도 분석 (TF-IDF 대체)',
+        'recommendations.json 자동 생성 및 빌드 통합',
+        'RelatedPosts.astro 컴포넌트 구현',
+        'BlogPost 레이아웃에 추천 시스템 통합',
+        '다국어 지원 (한국어, 영어, 일본어)',
+        '포스트별 3-5개 관련 포스트 자동 추천',
+        'TF-IDF vs 의미론적 분석 성능 비교 문서화',
+        'working_history/content-recommendation-research.md 리서치 문서 작성'
+      ],
+      en: [
+        'Built content-recommender specialized agent (.claude/agents/)',
+        'Created /generate-recommendations custom slash command',
+        'Claude LLM-based semantic similarity analysis (replacing TF-IDF)',
+        'Automatic recommendations.json generation and build integration',
+        'Implemented RelatedPosts.astro component',
+        'Integrated recommendation system into BlogPost layout',
+        'Multilingual support (Korean, English, Japanese)',
+        'Auto-recommend 3-5 related posts per post',
+        'Documented TF-IDF vs semantic analysis performance comparison',
+        'Created working_history/content-recommendation-research.md research document'
+      ],
+      ja: [
+        'content-recommender専門エージェント構築（.claude/agents/）',
+        '/generate-recommendationsカスタムスラッシュコマンド作成',
+        'Claude LLMベースの意味論的類似度分析（TF-IDF代替）',
+        'recommendations.json自動生成とビルド統合',
+        'RelatedPosts.astroコンポーネント実装',
+        'BlogPostレイアウトに推薦システム統合',
+        '多言語サポート（韓国語、英語、日本語）',
+        '記事ごとに3-5件の関連記事を自動推薦',
+        'TF-IDF vs 意味論的分析パフォーマンス比較文書化',
+        'working_history/content-recommendation-research.mdリサーチドキュメント作成'
+      ]
+    }
+  },
   // Planned improvements from blog launch analysis report
   {
     date: '2025-12-31',
@@ -777,29 +842,6 @@ const improvements = [
     },
     expectedImpact: { ko: '독자 유지율 향상 및 재방문 유도', en: 'Improved reader retention and return visits', ja: '読者維持率向上とリピート訪問誘導' }
   },
-  {
-    date: '2025-12-31',
-    status: 'planned',
-    title: {
-      ko: '콘텐츠 추천 알고리즘',
-      en: 'Content Recommendation Algorithm',
-      ja: 'コンテンツ推薦アルゴリズム'
-    },
-    category: 'Content',
-    target: {
-      metric: { ko: '페이지/세션', en: 'Pages/Session', ja: 'ページ/セッション' },
-      value: { ko: '2.5개 이상', en: '2.5+', ja: '2.5以上' }
-    },
-    effort: { ko: '높음', en: 'High', ja: '高' },
-    roi: { ko: '우수', en: 'Excellent', ja: '優秀' },
-    sourceReport: `/${lang}/blog/${lang}/blog-launch-analysis-report`,
-    description: {
-      ko: '관련 포스트 자동 추천 알고리즘 구현으로 콘텐츠 탐색 개선',
-      en: 'Implement related post recommendation algorithm to improve content discovery',
-      ja: '関連記事自動推薦アルゴリズムを実装してコンテンツ探索を改善'
-    },
-    expectedImpact: { ko: '사용자 참여도 증가 및 세션 시간 연장', en: 'Increased user engagement and session duration', ja: 'ユーザーエンゲージメント増加とセッション時間延長' }
-  }
 ];
 
 // Split improvements by status

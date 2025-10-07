@@ -274,8 +274,33 @@ const { Content } = await render(post);  // Markdown -> 컴포넌트 변환
 - **social-media-manager.md**: 소셜 미디어 공유 자동화
 - **portfolio-curator.md**: 프로젝트 포트폴리오 관리
 - **learning-tracker.md**: 학습 목표 및 기술 트렌드 추적
+- **content-recommender.md**: Claude LLM 기반 의미론적 콘텐츠 추천 시스템 (TF-IDF 대신 딥러닝 활용)
 
 필요한 작업에 맞는 에이전트를 참조하여 컨텍스트를 얻을 것.
+
+### 콘텐츠 추천 시스템
+
+**구현 방식**: Claude LLM 기반 의미론적 분석
+
+**주요 컴포넌트**:
+- `.claude/agents/content-recommender.md`: 추천 알고리즘 로직
+- `.claude/commands/generate-recommendations.md`: `/generate-recommendations` 슬래시 커맨드
+- `src/components/RelatedPosts.astro`: 추천 포스트 표시 컴포넌트
+- `recommendations.json`: 사전 생성된 추천 데이터
+
+**사용법**:
+```bash
+# 모든 포스트에 대한 추천 자동 생성
+/generate-recommendations
+
+# 또는 에이전트 직접 호출
+@content-recommender "모든 블로그 포스트에 대한 의미론적 추천 생성"
+```
+
+**TF-IDF vs Claude LLM**:
+- TF-IDF: 키워드 빈도 기반, 빠르지만 의미 이해 부족
+- Claude LLM: 의미론적 이해, 맥락 고려, 더 정교한 추천 가능
+- 프로젝트는 Claude LLM 방식 채택 (품질 > 속도)
 
 ## 타입 안전성
 
