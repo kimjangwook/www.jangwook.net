@@ -52,9 +52,13 @@ The command delegates to the Writing Assistant agent with the following tasks:
 
 #### Phase 1: Research & Planning
 - Analyze the topic and identify key points
-- Research current information using WebFetch (if needed)
-- Create content structure and outline
-- Identify code examples and technical details needed
+- **Research current information using Web Researcher agent**:
+  - Use Brave Search MCP to gather latest information
+  - Verify technical accuracy from official documentation
+  - Identify trending discussions and best practices
+  - Collect code examples from reliable sources
+- Create content structure and outline based on research findings
+- Identify additional code examples and technical details needed
 
 #### Phase 2: Image Generation
 - Generate hero image prompt based on topic
@@ -130,7 +134,11 @@ Languages: [language codes]
 Description: [SEO description or "Generate appropriate description"]
 
 Requirements:
-1. Research topic and create detailed outline
+1. Research topic using Web Researcher agent:
+   - Delegate to Web Researcher for comprehensive research
+   - Gather latest information, official documentation, and examples
+   - Verify technical accuracy and current best practices
+   - Create detailed outline based on research findings
 2. Generate hero image:
    - Create descriptive image prompt
    - Call Image Generator agent
@@ -382,9 +390,17 @@ No text overlay.
 
 ## Integration with Other Agents
 
+### Web Researcher
+- **Primary research executor** for content accuracy
+- Uses Brave Search MCP to gather latest information
+- Verifies technical details from official sources
+- Provides structured research report to Writing Assistant
+- Identifies trending topics and best practices
+
 ### Writing Assistant
 - Primary executor of content generation
-- Handles research, writing, and multi-language translation
+- Delegates research to Web Researcher agent
+- Handles writing and multi-language translation based on research findings
 
 ### Image Generator
 - Called by Writing Assistant for hero image creation

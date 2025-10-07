@@ -264,6 +264,7 @@ const { Content } = await render(post);  // Markdown -> 컴포넌트 변환
 
 `.claude/agents/` 디렉토리에 블로그 자동화를 위한 전문 에이전트 정의:
 
+- **web-researcher.md**: Brave Search MCP를 활용한 웹 리서치, 기술 검증, 최신 정보 수집
 - **content-planner.md**: 콘텐츠 전략 및 주제 계획
 - **writing-assistant.md**: 블로그 포스트 작성 지원
 - **editor.md**: 문법, 스타일, 메타데이터 검토
