@@ -736,4 +736,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-**Coming Next**: "AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized Agents" will cover orchestrating Architecture Agent, Coding Agent, Testing Agent, Security Agent, and DevOps Agent to build complex applications with real-world case studies.
+**Next Article**: [AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized Agents](/en/blog/en/ai-agent-collaboration-patterns) covers orchestrating Architecture Agent, Coding Agent, Testing Agent, Security Agent, and DevOps Agent to build complex applications with real-world case studies.

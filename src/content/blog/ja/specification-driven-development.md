@@ -736,4 +736,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-**次回予告**: 「AIエージェント協業パターン: 5つの専門エージェントでフルスタックアプリを構築する」では、Architecture Agent、Coding Agent、Testing Agent、Security Agent、DevOps Agentをオーケストレーションして複雑なアプリケーションを構築する実戦事例を扱います。
+**次回記事**: [AIエージェント協業パターン: 5つの専門エージェントでフルスタックアプリを構築する](/ja/blog/ja/ai-agent-collaboration-patterns)では、Architecture Agent、Coding Agent、Testing Agent、Security Agent、DevOps Agentをオーケストレーションして複雑なアプリケーションを構築する実戦事例を扱います。

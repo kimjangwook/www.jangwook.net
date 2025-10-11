@@ -64,34 +64,52 @@ Use Context7 for official library documentation:
 4. Determine appropriate search tools
 
 ### Phase 2: Information Gathering
+
+**CRITICAL REQUIREMENT**: Implement 2-second delay between consecutive search requests to avoid rate limiting.
+
+**Implementation**:
+- Use Bash tool with `sleep 2` command between searches
+- Example: After each brave_web_search, run `sleep 2` before the next search
+- This applies to ALL Brave Search API calls (web, news, video, image searches)
+
 1. **General Overview**:
    ```
    brave_web_search: "[topic] overview 2025"
+   sleep 2
    brave_web_search: "[topic] best practices"
+   sleep 2
    ```
 
 2. **Official Documentation**:
    ```
    brave_web_search: "[framework/library] official documentation"
+   sleep 2
    Context7: get-library-docs for specific libraries
+   sleep 2
    ```
 
 3. **Recent Updates**:
    ```
    brave_news_search: "[topic] latest updates"
+   sleep 2
    brave_web_search: "[topic] migration guide"
+   sleep 2
    ```
 
 4. **Community Insights**:
    ```
    brave_web_search: "[topic] reddit discussion"
+   sleep 2
    brave_web_search: "[topic] stack overflow"
+   sleep 2
    ```
 
 5. **Code Examples**:
    ```
    brave_web_search: "[topic] code examples github"
+   sleep 2
    brave_web_search: "[topic] tutorial with examples"
+   sleep 2
    ```
 
 ### Phase 3: Verification
@@ -260,7 +278,11 @@ For multi-language blog posts (Korean, Japanese, English):
 ## Error Handling
 
 ### Brave Search Limitations
-- **Rate Limits**: Batch queries, prioritize most important searches
+- **Rate Limits**:
+  - **MANDATORY: Implement 2-second delay between consecutive search requests**
+  - Use `sleep 2` bash command after each search API call
+  - Batch queries strategically, prioritize most important searches
+  - Monitor for rate limit errors and increase delay if needed
 - **No Results**: Rephrase query, try alternative keywords
 - **Outdated Results**: Add temporal keywords ("2025", "latest")
 
@@ -296,31 +318,43 @@ Before finalizing research report:
 
 **Steps**:
 1. `brave_web_search`: "Next.js 15 Server Actions official documentation"
-2. `brave_news_search`: "Next.js 15 release announcement"
-3. `brave_web_search`: "Next.js Server Actions examples github"
-4. `brave_web_search`: "Next.js Server Actions best practices 2025"
-5. Context7: get Next.js latest docs
-6. Synthesize into research report
+2. `sleep 2`
+3. `brave_news_search`: "Next.js 15 release announcement"
+4. `sleep 2`
+5. `brave_web_search`: "Next.js Server Actions examples github"
+6. `sleep 2`
+7. `brave_web_search`: "Next.js Server Actions best practices 2025"
+8. `sleep 2`
+9. Context7: get Next.js latest docs
+10. Synthesize into research report
 
 ### Task 2: Comparative Analysis
 **Request**: "Compare React Server Components vs Client Components"
 
 **Steps**:
 1. `brave_web_search`: "React Server Components vs Client Components"
-2. `brave_web_search`: "when to use RSC vs client components"
-3. `brave_web_search`: "React Server Components performance benchmarks"
-4. `brave_video_search`: "React Server Components tutorial"
-5. Create comparison table in research report
+2. `sleep 2`
+3. `brave_web_search`: "when to use RSC vs client components"
+4. `sleep 2`
+5. `brave_web_search`: "React Server Components performance benchmarks"
+6. `sleep 2`
+7. `brave_video_search`: "React Server Components tutorial"
+8. `sleep 2`
+9. Create comparison table in research report
 
 ### Task 3: Migration Guide Research
 **Request**: "Research TypeScript 5.0 migration from 4.x"
 
 **Steps**:
 1. `brave_web_search`: "TypeScript 5.0 migration guide"
-2. `brave_news_search`: "TypeScript 5.0 breaking changes"
-3. `brave_web_search`: "TypeScript 5.0 new features"
-4. `brave_web_search`: "site:stackoverflow.com TypeScript 5 migration issues"
-5. Document migration steps, gotchas, and benefits
+2. `sleep 2`
+3. `brave_news_search`: "TypeScript 5.0 breaking changes"
+4. `sleep 2`
+5. `brave_web_search`: "TypeScript 5.0 new features"
+6. `sleep 2`
+7. `brave_web_search`: "site:stackoverflow.com TypeScript 5 migration issues"
+8. `sleep 2`
+9. Document migration steps, gotchas, and benefits
 
 ## Advanced Techniques
 
@@ -328,27 +362,36 @@ Before finalizing research report:
 Use temporal queries to understand evolution:
 ```
 brave_web_search: "[topic] 2023"
+sleep 2
 brave_web_search: "[topic] 2024"
+sleep 2
 brave_web_search: "[topic] 2025"
 ```
 Compare results to identify trends.
 
 ### Deep Dive Research
-Layer searches from general to specific:
+Layer searches from general to specific (with 2-second delays):
 ```
 1. "[topic] overview"
+   sleep 2
 2. "[topic] architecture"
+   sleep 2
 3. "[topic] implementation details"
+   sleep 2
 4. "[topic] advanced techniques"
+   sleep 2
 5. "[topic] performance optimization"
 ```
 
 ### Multi-Perspective Research
-Gather viewpoints from different sources:
+Gather viewpoints from different sources (with 2-second delays):
 ```
 brave_web_search: "[topic] official guide"
+sleep 2
 brave_web_search: "[topic] reddit discussion"
+sleep 2
 brave_web_search: "[topic] twitter opinions"
+sleep 2
 brave_web_search: "[topic] hacker news"
 ```
 
@@ -391,12 +434,14 @@ brave_web_search: "[topic] hacker news"
 - Make it easy for Writing Assistant to use
 
 ## Notes
+- **CRITICAL: Always implement 2-second delay between consecutive search requests using `sleep 2` bash command**
 - Always specify Brave Search parameters (count, freshness, etc.) based on research needs
 - Prefer recent results: use `freshness: "pm"` (past month) for trending topics
 - For official docs, use Context7 when available for most up-to-date information
 - Provide confidence levels for findings when uncertain
 - If information is outdated, explicitly note newer alternatives
+- The 2-second delay is MANDATORY to avoid rate limiting and ensure stable research operations
 
 ---
 
-**Remember**: Your research directly impacts blog post quality and accuracy. Prioritize reliability over speed, and always provide sources for verification.
+**Remember**: Your research directly impacts blog post quality and accuracy. Prioritize reliability over speed, and always provide sources for verification. The 2-second delay between searches is a small price to pay for stable, uninterrupted research.

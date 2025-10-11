@@ -994,4 +994,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-**다음 글 예고**: "AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기"에서는 Architecture Agent, Coding Agent, Testing Agent, Security Agent, DevOps Agent를 오케스트레이션하여 복잡한 애플리케이션을 구축하는 실전 사례를 다룹니다.
+**다음 글**: [AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기](/ko/blog/ko/ai-agent-collaboration-patterns)에서는 Architecture Agent, Coding Agent, Testing Agent, Security Agent, DevOps Agent를 오케스트레이션하여 복잡한 애플리케이션을 구축하는 실전 사례를 다룹니다.

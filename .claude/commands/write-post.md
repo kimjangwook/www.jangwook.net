@@ -54,6 +54,7 @@ The command delegates to the Writing Assistant agent with the following tasks:
 - Analyze the topic and identify key points
 - **Research current information using Web Researcher agent**:
   - Use Brave Search MCP to gather latest information
+  - **IMPORTANT: Implement 2-second delay between search requests to avoid rate limiting**
   - Verify technical accuracy from official documentation
   - Identify trending discussions and best practices
   - Collect code examples from reliable sources
@@ -117,7 +118,61 @@ After successfully creating all blog post files:
   - Update "Last Updated" timestamp at the bottom
 - If the new post topic was in "향후 콘텐츠 플랜", remove it from that section
 
-### 5. Output Summary
+### 5. Backlink Management
+
+After successfully creating and documenting the new post, manage backlinks:
+
+#### Phase 1: Find Preview References
+- Search all existing blog posts for preview/teaser text mentioning the new post
+- Use Grep to search for common preview patterns:
+  - Korean: `다음.*예고`, `다음 글`, `다음에는`
+  - Japanese: `次回.*予告`, `次回記事`, `次回`
+  - English: `Coming Next`, `Next Article Preview`, `Coming Soon`
+
+#### Phase 2: Convert Previews to Links
+For each found preview:
+- Verify the preview text matches the new post title (70%+ similarity)
+- Convert preview text to actual markdown link
+- Update all language versions consistently
+- Change preview label (e.g., "다음 글 예고" → "다음 글")
+
+**Example conversion**:
+```markdown
+# Before
+**다음 글 예고**: "AI 에이전트 협업 패턴"에서는...
+
+# After
+**다음 글**: [AI 에이전트 협업 패턴](/ko/blog/ko/ai-agent-collaboration-patterns)에서는...
+```
+
+#### Phase 3: Series Management (if applicable)
+If the new post is part of a series:
+1. Add series navigation to the top of the post:
+   ```markdown
+   > **시리즈: [Series Name]** (2/5)
+   >
+   > 1. [First Post](/link/to/first-post)
+   > 2. **[Current Post](/link/to/current-post)** ← 현재 글
+   > 3. [Third Post](/link/to/third-post)
+   > 4. [Fourth Post](/link/to/fourth-post) (예정)
+   > 5. [Fifth Post](/link/to/fifth-post) (예정)
+   ```
+
+2. Update series navigation in all other posts in the series
+3. Apply to all language versions
+
+#### Delegation to Backlink Manager Agent
+```bash
+@backlink-manager "[new-post-slug] 포스트에 대한 백링크를 확인하고 연결해주세요."
+```
+
+The Backlink Manager agent will:
+- Automatically find and convert previews
+- Handle series navigation updates
+- Ensure consistency across all language versions
+- Report all changes made
+
+### 6. Output Summary
 Display creation results:
 ```
 ✓ Blog post created successfully!
@@ -139,6 +194,11 @@ README.md Updated:
   ✓ Post count updated
   ✓ New post added to list
   ✓ Latest post date updated
+
+Backlinks Updated:
+  ✓ Found [N] preview references
+  ✓ Converted to active links
+  ✓ Series navigation updated (if applicable)
 
 Next Steps:
   1. Review generated content
@@ -165,6 +225,7 @@ Requirements:
 
 2. Research topic using Web Researcher agent:
    - Delegate to Web Researcher for comprehensive research
+   - **CRITICAL: Ensure 2-second delay between search requests**
    - Gather latest information, official documentation, and examples
    - Verify technical accuracy and current best practices
    - Create detailed outline based on research findings
@@ -197,8 +258,15 @@ Requirements:
    - Update "Last Updated" timestamp
    - Remove topic from "향후 콘텐츠 플랜" if present
 
-7. Generate URL-friendly slug from topic
-8. Return file paths and metadata
+7. Manage backlinks:
+   - Delegate to Backlink Manager agent
+   - Search existing posts for preview/teaser references
+   - Convert found previews to active links
+   - Update series navigation if post is part of a series
+   - Report all changes made
+
+8. Generate URL-friendly slug from topic
+9. Return file paths and metadata
 ```
 
 ### Expected Agent Response Format
@@ -291,6 +359,139 @@ updatedDate: string (optional, format: 'YYYY-MM-DD' only, single quotes)
 - Keep paragraphs concise (2-4 sentences)
 - Use bullet points for lists
 - Add code comments in target language
+
+### Markdown Formatting Guidelines
+
+**CRITICAL - Nested Code Blocks**:
+When you need to show markdown code blocks that contain triple backticks (```), you MUST use **quadruple backticks (````) for the outer block**. This prevents rendering issues.
+
+**Example**:
+
+❌ **WRONG** (will break rendering):
+````markdown
+```markdown
+## Example
+```javascript
+const code = 'nested';
+```
+```
+````
+
+✅ **CORRECT** (use quadruple backticks):
+`````markdown
+````markdown
+## Example
+```javascript
+const code = 'nested';
+```
+````
+`````
+
+**When to Use Quadruple Backticks**:
+- When documenting markdown syntax that includes code blocks
+- When showing examples of blog post frontmatter with code
+- When demonstrating how to write documentation
+- Any time the content inside contains triple backticks (```)
+
+**Pattern to Follow**:
+1. If your content has NO triple backticks inside → use triple backticks (```)
+2. If your content HAS triple backticks inside → use quadruple backticks (````)
+3. Always close with the same number of backticks you opened with
+
+### Mermaid Diagram Guidelines
+
+**CRITICAL - Use Mermaid for All Flow Diagrams**:
+When creating any type of flow diagram, architecture diagram, sequence diagram, or process flow, you MUST use Mermaid syntax instead of plain text diagrams.
+
+**When to Use Mermaid**:
+- Workflows and process flows
+- System architecture diagrams
+- Hierarchical structures (org charts, component trees)
+- Sequence diagrams (interactions between components)
+- State diagrams
+- Data flow diagrams
+- Any visual representation of relationships or flows
+
+**Common Mermaid Diagram Types**:
+
+1. **Flowcharts** - For workflows and process flows:
+   ```mermaid
+   graph TD
+       A[Start] --> B{Decision}
+       B -->|Yes| C[Process A]
+       B -->|No| D[Process B]
+       C --> E[End]
+       D --> E
+   ```
+   - Use `graph TD` (top-down) or `graph LR` (left-right)
+   - Use `graph TB` for top-bottom flows
+
+2. **Sequence Diagrams** - For interactions and event flows:
+   ```mermaid
+   sequenceDiagram
+       participant User
+       participant API
+       participant DB
+
+       User->>API: Request
+       API->>DB: Query
+       DB->>API: Response
+       API->>User: Result
+   ```
+
+3. **Hierarchical Diagrams** - For tree structures:
+   ```mermaid
+   graph TD
+       Manager[Manager Agent] --> A[Agent A]
+       Manager --> B[Agent B]
+       Manager --> C[Agent C]
+   ```
+
+4. **Parallel Execution Flows**:
+   ```mermaid
+   graph TB
+       Start[Start] --> A[Task A]
+       Start --> B[Task B]
+       A --> End[Merge]
+       B --> End
+   ```
+
+**Mermaid Best Practices**:
+- Always use descriptive node labels
+- Use `<br/>` for line breaks in node labels (e.g., `Node[Line 1<br/>Line 2]`)
+- Keep diagrams simple and readable
+- Use appropriate arrow types:
+  - `-->` for standard flow
+  - `->>` for sequence diagram messages
+  - `-.->` for optional/conditional paths
+- Add text to edges when needed: `A -->|label| B`
+
+**Example - Before vs After**:
+
+❌ **WRONG** (plain text):
+```
+User Request
+    ↓
+API Gateway → Service A → Database
+    ↓
+Response
+```
+
+✅ **CORRECT** (Mermaid):
+```mermaid
+graph TD
+    User[User Request] --> API[API Gateway]
+    API --> Service[Service A]
+    Service --> DB[Database]
+    DB --> Service
+    Service --> API
+    API --> User
+```
+
+**Multi-language Considerations**:
+- Use the target language for node labels and text
+- Keep technical terms in English when appropriate (e.g., "API", "Database")
+- Ensure consistency across all language versions of the same diagram
 
 ### Language-Specific Notes
 - **Korean**: Use 존댓말 (formal polite), mix Korean and English technical terms naturally

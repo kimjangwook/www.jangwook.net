@@ -136,7 +136,101 @@ src/content/blog/
 - **명확성**: 전문 용어는 첫 사용 시 설명
 - **실용성**: 실제 적용 가능한 예제 포함
 - **구조화**: 목차와 소제목으로 정리
-- **시각화**: 코드 블록, 다이어그램 활용
+- **시각화**: 코드 블록, Mermaid 다이어그램 활용
+
+### Mermaid 다이어그램 사용
+
+**필수 규칙**: 모든 플로우 다이어그램, 아키텍처 다이어그램, 프로세스 흐름은 **반드시 Mermaid 문법**을 사용하여 작성해야 합니다.
+
+**Mermaid를 사용해야 하는 경우**:
+- 워크플로우 및 프로세스 흐름
+- 시스템 아키텍처 다이어그램
+- 계층 구조 (조직도, 컴포넌트 트리)
+- 시퀀스 다이어그램 (컴포넌트 간 상호작용)
+- 상태 다이어그램
+- 데이터 플로우 다이어그램
+- 관계 또는 흐름의 시각적 표현
+
+**주요 Mermaid 다이어그램 타입**:
+
+1. **플로우차트** - 워크플로우와 프로세스 흐름:
+   ```mermaid
+   graph TD
+       A[시작] --> B{결정}
+       B -->|예| C[프로세스 A]
+       B -->|아니오| D[프로세스 B]
+       C --> E[종료]
+       D --> E
+   ```
+   - `graph TD` (상단-하단) 또는 `graph LR` (좌측-우측) 사용
+   - `graph TB`는 위에서 아래 흐름에 사용
+
+2. **시퀀스 다이어그램** - 상호작용 및 이벤트 흐름:
+   ```mermaid
+   sequenceDiagram
+       participant 사용자
+       participant API
+       participant DB
+
+       사용자->>API: 요청
+       API->>DB: 쿼리
+       DB->>API: 응답
+       API->>사용자: 결과
+   ```
+
+3. **계층 다이어그램** - 트리 구조:
+   ```mermaid
+   graph TD
+       Manager[Manager Agent] --> A[Agent A]
+       Manager --> B[Agent B]
+       Manager --> C[Agent C]
+   ```
+
+4. **병렬 실행 흐름**:
+   ```mermaid
+   graph TB
+       Start[시작] --> A[Task A]
+       Start --> B[Task B]
+       A --> End[병합]
+       B --> End
+   ```
+
+**Mermaid 작성 모범 사례**:
+- 항상 설명적인 노드 레이블 사용
+- 노드 레이블에 줄바꿈이 필요하면 `<br/>` 사용 (예: `Node[라인 1<br/>라인 2]`)
+- 다이어그램을 간결하고 읽기 쉽게 유지
+- 적절한 화살표 타입 사용:
+  - `-->` 표준 흐름
+  - `->>` 시퀀스 다이어그램 메시지
+  - `-.->` 선택적/조건부 경로
+- 필요시 엣지에 텍스트 추가: `A -->|레이블| B`
+
+**잘못된 예 vs 올바른 예**:
+
+❌ **잘못됨** (일반 텍스트):
+```
+사용자 요청
+    ↓
+API Gateway → Service A → Database
+    ↓
+응답
+```
+
+✅ **올바름** (Mermaid):
+```mermaid
+graph TD
+    User[사용자 요청] --> API[API Gateway]
+    API --> Service[Service A]
+    Service --> DB[Database]
+    DB --> Service
+    Service --> API
+    API --> User
+```
+
+**다국어 고려사항**:
+- 노드 레이블과 텍스트에 대상 언어 사용
+- 필요한 경우 기술 용어는 영어로 유지 (예: "API", "Database")
+- 동일한 다이어그램의 모든 언어 버전에서 일관성 유지
 
 ### 톤앤매너
 - 친근하면서도 전문적인 어조
@@ -252,6 +346,18 @@ description: 'Explore the major features added in TypeScript 5.0, including deco
   - 설명: 한국어 70-80자, 영어 150-160자, 일본어 80-90자
   - 핵심 키워드는 앞쪽에 배치
   - 구체적 수치와 가치 제안 포함
+
+### Web Researcher 협업
+
+- Web Researcher 에이전트에 리서치를 위임할 때 다음을 반드시 명시:
+  - **CRITICAL: "검색 요청 사이에 2초 간격을 두세요"**
+  - Web Researcher는 자동으로 `sleep 2` 명령어를 사용하여 rate limiting 방지
+  - 이는 Brave Search API의 안정적인 사용을 위해 필수적임
+- 리서치 요청 예시:
+  ```
+  @web-researcher "Next.js 15 Server Actions에 대해 조사해주세요.
+  검색 요청 사이에 2초 간격을 두고 진행해주세요."
+  ```
 
 ### 다국어 작성
 
