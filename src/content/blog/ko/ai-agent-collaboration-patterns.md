@@ -1570,4 +1570,4 @@ export OPENAI_API_KEY="your-api-key"
 
 ---
 
-**다음 글 예고**: "자가 치유 AI 시스템: 인간 개입 없이 자동으로 버그를 수정하는 에이전트 구축하기"에서는 2025년 핵심 트렌드인 Self-Healing Systems의 구현 방법을 실전 코드와 함께 다룹니다.
+**다음 글**: [자가 치유 AI 시스템: 인간 개입 없이 자동으로 버그를 수정하는 에이전트 구축하기](/ko/blog/ko/self-healing-ai-systems)에서는 2025년 핵심 트렌드인 Self-Healing Systems의 구현 방법을 실전 코드와 함께 다룹니다.

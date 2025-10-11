@@ -1012,4 +1012,4 @@ export OPENAI_API_KEY="your-api-key"
 
 ---
 
-**次回予告**: 「自己修復AIシステム: 人間介入なしで自動的にバグを修正するエージェント構築」では、2025年のコアトレンドであるSelf-Healing Systemsの実装方法を実践コードと共にご紹介します。
+**次回記事**: [自己修復AIシステム: 人間介入なしで自動的にバグを修正するエージェント構築](/ja/blog/ja/self-healing-ai-systems)では、2025年のコアトレンドであるSelf-Healing Systemsの実装方法を実践コードと共にご紹介します。

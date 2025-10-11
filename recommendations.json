@@ -429,21 +429,170 @@
       "candidatesEvaluated": 0,
       "temporalCutoff": "2025-10-13",
       "note": "First post - no candidates available before publication date (2025-10-04)"
+    },
+    "specification-driven-development": {
+      "related": [
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.89,
+          "reason": {
+            "ko": "Claude Code 워크플로우 최적화와 사양 주도 개발의 체계적 접근법이 상호 보완적입니다",
+            "ja": "Claude Codeのワークフロー最適化と仕様駆動開発の体系的アプローチが相互補完的です",
+            "en": "Claude Code workflow optimization and specification-driven development's systematic approach are complementary"
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.82,
+          "reason": {
+            "ko": "LLM 기반 자동화 시스템 구축 시 사양 주도 접근법의 실전 적용 사례를 보여줍니다",
+            "ja": "LLMベースの自動化システム構築における仕様駆動アプローチの実践例を示します",
+            "en": "Demonstrates practical application of specification-driven approach in LLM-based automation system building"
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "ai-content-recommendation-system",
+          "score": 0.76,
+          "reason": {
+            "ko": "추천 시스템의 명확한 사양 정의가 어떻게 고품질 결과로 이어지는지 보여줍니다",
+            "ja": "推薦システムの明確な仕様定義がどのように高品質な結果につながるかを示します",
+            "en": "Shows how clear specification definition in recommendation systems leads to high-quality results"
+          },
+          "type": "deep-dive"
+        },
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.71,
+          "reason": {
+            "ko": "AI 에이전트 시스템 설계에서 사양 중심 접근의 중요성을 실전 예시로 제공합니다",
+            "ja": "AIエージェントシステム設計における仕様中心アプローチの重要性を実例で提供します",
+            "en": "Provides practical examples of the importance of specification-centric approach in AI agent system design"
+          },
+          "type": "next-step"
+        }
+      ],
+      "generatedAt": "2025-10-16T00:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5",
+      "candidatesEvaluated": 10,
+      "temporalCutoff": "2025-10-15"
+    },
+    "ai-agent-collaboration-patterns": {
+      "related": [
+        {
+          "slug": "specification-driven-development",
+          "score": 0.91,
+          "reason": {
+            "ko": "에이전트 협업 패턴 설계에서 명확한 사양 정의의 중요성을 강조하는 선행 개념입니다",
+            "ja": "エージェント協働パターン設計における明確な仕様定義の重要性を強調する先行概念です",
+            "en": "A prerequisite concept emphasizing the importance of clear specification definition in agent collaboration pattern design"
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.85,
+          "reason": {
+            "ko": "Notion MCP를 활용한 실전 에이전트 협업 구현 사례를 제공합니다",
+            "ja": "Notion MCPを活用した実践的エージェント協働実装事例を提供します",
+            "en": "Provides practical agent collaboration implementation cases using Notion MCP"
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.79,
+          "reason": {
+            "ko": "블로그 자동화에서 다중 에이전트 협업 패턴이 어떻게 적용되는지 보여줍니다",
+            "ja": "ブログ自動化において多重エージェント協働パターンがどのように適用されるかを示します",
+            "en": "Demonstrates how multi-agent collaboration patterns are applied in blog automation"
+          },
+          "type": "deep-dive"
+        },
+        {
+          "slug": "ai-content-recommendation-system",
+          "score": 0.74,
+          "reason": {
+            "ko": "콘텐츠 추천 시스템에서 에이전트 협업의 실전 활용 사례를 제공합니다",
+            "ja": "コンテンツ推薦システムにおけるエージェント協働の実践活用事例を提供します",
+            "en": "Provides practical use cases of agent collaboration in content recommendation systems"
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-17T00:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5",
+      "candidatesEvaluated": 11,
+      "temporalCutoff": "2025-10-16"
+    },
+    "self-healing-ai-systems": {
+      "related": [
+        {
+          "slug": "ai-agent-collaboration-patterns",
+          "score": 0.93,
+          "reason": {
+            "ko": "자가 치유 시스템 구현에 필수적인 에이전트 간 협업 패턴과 통신 메커니즘을 다룹니다",
+            "ja": "自己修復システム実装に不可欠なエージェント間協働パターンと通信メカニズムを扱います",
+            "en": "Covers agent collaboration patterns and communication mechanisms essential for self-healing system implementation"
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.81,
+          "reason": {
+            "ko": "자가 치유 로직의 명확한 사양 정의가 시스템 안정성을 높이는 방법을 보여줍니다",
+            "ja": "自己修復ロジックの明確な仕様定義がシステムの安定性を高める方法を示します",
+            "en": "Shows how clear specification definition of self-healing logic enhances system stability"
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.72,
+          "reason": {
+            "ko": "시스템 성능 모니터링과 자가 치유 트리거 메커니즘을 연결하는 실전 사례입니다",
+            "ja": "システムパフォーマンス監視と自己修復トリガーメカニズムを繋ぐ実践例です",
+            "en": "A practical case connecting system performance monitoring with self-healing trigger mechanisms"
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.68,
+          "reason": {
+            "ko": "자동화 파이프라인에서 오류 복구와 자가 치유 개념의 적용 사례를 제공합니다",
+            "ja": "自動化パイプラインにおけるエラー復旧と自己修復概念の適用事例を提供します",
+            "en": "Provides application examples of error recovery and self-healing concepts in automation pipelines"
+          },
+          "type": "similar-topic"
+        }
+      ],
+      "generatedAt": "2025-10-17T00:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5",
+      "candidatesEvaluated": 12,
+      "temporalCutoff": "2025-10-17"
     }
   },
   "metadata": {
-    "totalPosts": 10,
-    "lastGenerated": "2025-10-13T00:00:00Z",
+    "totalPosts": 13,
+    "lastGenerated": "2025-10-17T00:00:00Z",
     "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
     "generation": {
-      "processedPosts": 10,
+      "processedPosts": 13,
       "skippedPosts": 0,
-      "totalRecommendations": 36,
+      "totalRecommendations": 48,
       "averageRecommendations": 4.0,
       "temporalViolationsFixed": 0,
-      "method": "Content Recommender Agent with temporal filtering (command execution date: 2025-10-13)"
+      "method": "Content Recommender Agent with temporal filtering (incremental update on 2025-10-17)",
+      "lastUpdate": {
+        "date": "2025-10-17T00:00:00Z",
+        "newPosts": 3,
+        "postsUpdated": ["specification-driven-development", "ai-agent-collaboration-patterns", "self-healing-ai-systems"]
+      }
     }
   }
 }
