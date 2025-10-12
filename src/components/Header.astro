@@ -16,10 +16,10 @@ const t = useTranslations(lang);
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex items-center justify-between h-16">
 			<div class="flex items-center gap-8">
-				<!-- Mobile menu button -->
+				<!-- Mobile menu button (shown on mobile and tablet) -->
 				<button
 					id="mobile-menu-button"
-					class="md:hidden p-2 rounded-md text-gray-700 hover:text-accent hover:bg-gray-100 transition-colors"
+					class="lg:hidden p-2 rounded-md text-gray-700 hover:text-accent hover:bg-gray-100 transition-colors"
 					aria-label="Toggle menu"
 				>
 					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@ const t = useTranslations(lang);
 						{SITE_TITLE}
 					</a>
 				</h2>
-				<div class="hidden md:flex items-center gap-1">
+				<div class="hidden lg:flex items-center gap-1">
 					<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
 					<HeaderLink href={`/${lang}/blog`}>{t('nav.blog')}</HeaderLink>
 					<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
@@ -46,8 +46,8 @@ const t = useTranslations(lang);
 			</div>
 		</div>
 
-		<!-- Mobile menu -->
-		<div id="mobile-menu" class="hidden md:hidden pb-4 pt-2 border-t border-gray-200">
+		<!-- Mobile menu (shown on mobile and tablet) -->
+		<div id="mobile-menu" class="hidden lg:hidden pb-4 pt-2 border-t border-gray-200">
 			<div class="flex flex-col gap-2">
 				<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
 				<HeaderLink href={`/${lang}/blog`}>{t('nav.blog')}</HeaderLink>
