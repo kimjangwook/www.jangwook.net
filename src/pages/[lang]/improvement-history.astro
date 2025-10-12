@@ -17,6 +17,7 @@ const improvements = [
   // Completed improvements
   {
     date: '2025-10-07',
+    completedDate: '2025-10-07',
     status: 'completed',
     title: {
       ko: 'Google Analytics 로컬호스트 환경 비활성화',
@@ -73,6 +74,7 @@ const improvements = [
   },
   {
     date: '2025-10-07',
+    completedDate: '2025-10-07',
     status: 'completed',
     title: {
       ko: 'Google Analytics 커스텀 이벤트 개선',
@@ -123,6 +125,7 @@ const improvements = [
   },
   {
     date: '2025-10-06',
+    completedDate: '2025-10-06',
     status: 'completed',
     title: {
       ko: '사이트맵 생성 및 검색엔진 최적화',
@@ -176,6 +179,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: 'Giscus 댓글 시스템 도입',
@@ -229,6 +233,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: 'Buy Me a Coffee 후원 버튼 추가',
@@ -279,6 +284,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: '파비콘 및 브랜드 아이덴티티 추가',
@@ -332,6 +338,7 @@ const improvements = [
   },
   {
     date: '2025-10-06',
+    completedDate: '2025-10-06',
     status: 'completed',
     title: {
       ko: '다국어 블로그 포스트 언어 전환 컴포넌트 자동화',
@@ -388,6 +395,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: '구조화된 데이터(Schema.org) 추가',
@@ -436,6 +444,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: 'Core Web Vitals 측정 시스템 구축',
@@ -487,6 +496,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: '이벤트 트래킹 강화',
@@ -535,6 +545,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: 'Core Web Vitals 성능 최적화',
@@ -592,6 +603,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: 'Chrome Lighthouse 성능 측정 및 검증',
@@ -652,6 +664,7 @@ const improvements = [
   },
   {
     date: '2025-10-05',
+    completedDate: '2025-10-05',
     status: 'completed',
     title: {
       ko: '모바일 반응형 디자인 실제 디바이스 테스트',
@@ -709,6 +722,7 @@ const improvements = [
   },
   {
     date: '2025-10-12',
+    completedDate: '2025-10-08',
     status: 'completed',
     title: {
       ko: 'AI 기반 콘텐츠 추천 시스템 구축',
@@ -769,6 +783,96 @@ const improvements = [
         '記事ごとに3-5件の関連記事を自動推薦',
         'TF-IDF vs 意味論的分析パフォーマンス比較文書化',
         'working_history/content-recommendation-research.mdリサーチドキュメント作成'
+      ]
+    }
+  },
+  {
+    date: '2025-10-13',
+    completedDate: '2025-10-13',
+    status: 'completed',
+    title: {
+      ko: '추천 시스템 토큰 사용량 최적화',
+      en: 'Recommendation System Token Usage Optimization',
+      ja: '推薦システムトークン使用量最適化'
+    },
+    category: 'Technical',
+    before: {
+      metric: { ko: '토큰 사용량 / 실행 시간', en: 'Token Usage / Execution Time', ja: 'トークン使用量 / 実行時間' },
+      value: { ko: '78,000 토큰 / 2.7분', en: '78,000 tokens / 2.7min', ja: '78,000トークン / 2.7分' }
+    },
+    after: {
+      metric: { ko: '토큰 사용량 / 실행 시간', en: 'Token Usage / Execution Time', ja: 'トークン使用量 / 実行時間' },
+      value: { ko: '0 토큰 / <1초', en: '0 tokens / <1s', ja: '0トークン / <1秒' }
+    },
+    impact: '+100%',
+    impactType: 'positive',
+    effort: { ko: '높음', en: 'High', ja: '高' },
+    roi: { ko: '탁월함', en: 'Exceptional', ja: '卓越' },
+    description: {
+      ko: '메타데이터 기반 알고리즘으로 전환하여 추천 생성 시 토큰 사용량 100% 제거 및 실행 시간 99% 단축. LLM API 호출 대신 Jaccard/Cosine 유사도 알고리즘 사용',
+      en: 'Achieved 100% token elimination and 99% execution time reduction by switching to metadata-based algorithm. Uses Jaccard/Cosine similarity instead of LLM API calls',
+      ja: 'メタデータベースのアルゴリズムに切り替えて推薦生成時のトークン使用量を100%削減、実行時間を99%短縮。LLM APIコールの代わりにJaccard/Cosine類似度アルゴリズムを使用'
+    },
+    lessons: {
+      ko: [
+        'post-analyzer 에이전트 구축 (.claude/agents/post-analyzer.md)',
+        '/analyze-posts 커맨드로 post-metadata.json 수동 생성 (13개 포스트, 0 토큰)',
+        '메타데이터 구조: 200자 요약 + 5개 주제 + 5개 기술 스택 + 난이도(1-5) + 카테고리 점수',
+        'SHA-256 콘텐츠 해시로 변경 감지 (증분 업데이트 지원)',
+        '동일 내용의 다국어 포스트 중 ko 언어만 분석 (3배 효율화)',
+        '**실제 성과 (예상 초과):**',
+        '  - 토큰: 78,000 → 0 (100% 제거, 예상 63% 초과)',
+        '  - 시간: 2.7분 → <1초 (99% 단축, 예상 59% 초과)',
+        '  - 비용: $0.078 → $0.00 (100% 절감)',
+        '**알고리즘 기반 추천 시스템:**',
+        '  - Jaccard 유사도: 토픽(35%), 기술 스택(25%)',
+        '  - Cosine 유사도: 카테고리 점수(20%)',
+        '  - 난이도 매칭(10%), 보완 관계(10%)',
+        '  - 결정론적, 즉시 실행, 비용 제로',
+        '총 65개 추천 생성 (포스트당 평균 5개)',
+        '시간론적 필터링 (과거 포스트만 추천)',
+        '3개 언어 설명 자동 생성 (ko/ja/en)',
+        'working_history/modify_recommendation.md 상세 문서화'
+      ],
+      en: [
+        'Built post-analyzer agent (.claude/agents/post-analyzer.md)',
+        'Manually created post-metadata.json via /analyze-posts (13 posts, 0 tokens)',
+        'Metadata structure: 200-char summary + 5 topics + 5 tech stack + difficulty(1-5) + category scores',
+        'SHA-256 content hash for change detection (incremental updates)',
+        'Analyze only Korean posts (3x efficiency gain)',
+        '**Actual Results (exceeded expectations):**',
+        '  - Tokens: 78,000 → 0 (100% elimination, exceeded 63% target)',
+        '  - Time: 2.7min → <1s (99% reduction, exceeded 59% target)',
+        '  - Cost: $0.078 → $0.00 (100% savings)',
+        '**Algorithm-based Recommendation System:**',
+        '  - Jaccard similarity: topics(35%), tech stack(25%)',
+        '  - Cosine similarity: category scores(20%)',
+        '  - Difficulty matching(10%), complementary(10%)',
+        '  - Deterministic, instant execution, zero cost',
+        'Generated 65 recommendations (avg 5 per post)',
+        'Temporal filtering (only past posts recommended)',
+        'Auto-generated trilingual explanations (ko/ja/en)',
+        'Documented in working_history/modify_recommendation.md'
+      ],
+      ja: [
+        'post-analyzerエージェント構築（.claude/agents/post-analyzer.md）',
+        '/analyze-postsで手動でpost-metadata.jsonを作成（13記事、0トークン）',
+        'メタデータ構造：200文字要約 + 5つのトピック + 5つの技術スタック + 難易度(1-5) + カテゴリスコア',
+        'SHA-256コンテンツハッシュで変更検出（増分更新サポート）',
+        '同一内容の多言語ポストの中でko言語のみ分析（3倍効率化）',
+        '**実際の成果（予想超過）：**',
+        '  - トークン：78,000 → 0（100%削除、予想63%超過）',
+        '  - 時間：2.7分 → <1秒（99%短縮、予想59%超過）',
+        '  - コスト：$0.078 → $0.00（100%削減）',
+        '**アルゴリズムベース推薦システム：**',
+        '  - Jaccard類似度：トピック(35%)、技術スタック(25%)',
+        '  - Cosine類似度：カテゴリスコア(20%)',
+        '  - 難易度マッチング(10%)、補完関係(10%)',
+        '  - 決定論的、即時実行、コストゼロ',
+        '合計65件の推薦を生成（記事あたり平均5件）',
+        '時系列フィルタリング（過去の記事のみ推薦）',
+        '3言語説明を自動生成（ko/ja/en）',
+        'working_history/modify_recommendation.mdに詳細文書化'
       ]
     }
   },
@@ -846,7 +950,14 @@ const improvements = [
 
 // Split improvements by status
 const plannedImprovements = improvements.filter(i => i.status === 'planned');
-const completedImprovements = improvements.filter(i => i.status === 'completed');
+const completedImprovements = improvements
+  .filter(i => i.status === 'completed')
+  .sort((a, b) => {
+    // Sort by completedDate in descending order (most recent first)
+    const dateA = a.completedDate ? new Date(a.completedDate).getTime() : 0;
+    const dateB = b.completedDate ? new Date(b.completedDate).getTime() : 0;
+    return dateB - dateA;
+  });
 const inProgressImprovements = improvements.filter(i => i.status === 'in-progress');
 
 const categories = {

@@ -48,6 +48,7 @@ Transform analytics insights into trackable improvements by:
 - [ ] Criterion 2
 
 **Actual Results** (after completion):
+- **Completed**: YYYY-MM-DD (actual completion date)
 - Metric: [Actual achieved value]
 - Impact: [Percentage change]
 - Side effects: [Any unexpected outcomes]
@@ -89,7 +90,9 @@ import Layout from '../layouts/BlogPost.astro';
 
 const historyData = [
   {
-    date: '2025-10-12',
+    date: '2025-10-12',  // Planned/target date
+    completedDate: '2025-10-12',  // Actual completion date (for sorting)
+    status: 'completed',
     category: 'SEO',
     improvement: 'Added structured data to blog posts',
     before: { metric: 'Organic CTR', value: '2.3%' },
@@ -100,12 +103,17 @@ const historyData = [
   },
   // ... more entries
 ];
+
+// Sort completed improvements by completedDate (most recent first)
+const completedImprovements = historyData
+  .filter(i => i.status === 'completed')
+  .sort((a, b) => new Date(b.completedDate) - new Date(a.completedDate));
 ---
 
 <Layout title="점진적 사이트 개선 히스토리">
   <h1>🚀 점진적 사이트 개선 히스토리</h1>
 
-  <!-- Timeline visualization -->
+  <!-- Timeline visualization (reverse chronological) -->
   <!-- Before/After comparisons -->
   <!-- Category filters -->
   <!-- Impact metrics -->
@@ -221,7 +229,8 @@ Success Criteria:
 After completion:
 ```markdown
 ### TODO: Mobile Optimization for Top 3 Posts
-- Status: ✅ Done (Completed: 2025-10-18)
+- Status: ✅ Done
+- **Completed**: 2025-10-18 (actual completion date)
 - Actual Results:
   - Mobile Bounce Rate: 68% → 47% (-31%, exceeded goal!)
   - Lighthouse Score: 78 → 94
@@ -316,18 +325,19 @@ function calculateImpact(before, after, metric) {
 - [ ] Success criteria
 
 **Every Completed TODO Must Record:**
+- [ ] **Completed Date** (YYYY-MM-DD format, actual completion date)
 - [ ] Actual results (metric achieved)
-- [ ] Completion date
 - [ ] Impact calculation (% change)
 - [ ] Lessons learned
 - [ ] Any unexpected outcomes
 
 **History Page Must Include:**
-- [ ] Chronological timeline
+- [ ] Reverse chronological timeline (most recent first, sorted by completedDate)
 - [ ] Visual before/after comparisons
 - [ ] Filter by category/date
 - [ ] Impact metrics
 - [ ] Link to source reports
+- [ ] completedDate field for all completed improvements
 
 ### 9. Integration Points
 

@@ -1,0 +1,451 @@
+{
+  "metadata": {
+    "claude-code-best-practices": {
+      "slug": "claude-code-best-practices",
+      "language": "ko",
+      "pubDate": "2025-10-07",
+      "title": "Claude Code Best Practices: 개발 생산성을 극대화하는 AI 코딩 가이드",
+      "summary": "Anthropic의 공식 Best Practices를 기반으로 Claude Code 설정을 최적화하는 방법. CLAUDE.md 작성, Explore-Plan-Code-Commit 워크플로우, Think 도구 활용, 서브에이전트 시스템 구축 등 실전 가이드와 측정 가능한 개선 효과 공유",
+      "mainTopics": [
+        "Claude Code Best Practices",
+        "CLAUDE.md 작성 가이드",
+        "서브에이전트 시스템",
+        "Think 도구 활용",
+        "개발 워크플로우 최적화"
+      ],
+      "techStack": [
+        "Claude Code",
+        "Anthropic AI",
+        "MCP (Model Context Protocol)",
+        "Astro",
+        "Git"
+      ],
+      "difficulty": 3,
+      "categoryScores": {
+        "automation": 0.8,
+        "web-development": 0.6,
+        "ai-ml": 0.9,
+        "devops": 0.4,
+        "architecture": 0.7
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "7b357770692190ad"
+    },
+    "google-analytics-mcp-automation": {
+      "slug": "google-analytics-mcp-automation",
+      "language": "ko",
+      "pubDate": "2025-10-05",
+      "title": "Google Analytics MCP와 AI 에이전트로 블로그 분석 자동화하기",
+      "summary": "Google Analytics 데이터 API와 MCP를 연동하여 블로그 트래픽 분석을 자동화하는 방법. 실시간 리포트, 사용자 행동 분석, 콘텐츠 성과 측정을 AI 에이전트로 수행하고, 데이터 기반 의사결정 프로세스 구축",
+      "mainTopics": [
+        "Google Analytics MCP 연동",
+        "AI 에이전트 분석 자동화",
+        "데이터 기반 의사결정",
+        "블로그 트래픽 분석",
+        "리포트 자동 생성"
+      ],
+      "techStack": [
+        "Google Analytics Data API",
+        "MCP (Model Context Protocol)",
+        "Claude AI",
+        "Python",
+        "OAuth2"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.5,
+        "ai-ml": 0.85,
+        "devops": 0.6,
+        "architecture": 0.7
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "a8c3f29d1e4b7856"
+    },
+    "claude-code-web-automation": {
+      "slug": "claude-code-web-automation",
+      "language": "ko",
+      "pubDate": "2025-10-08",
+      "title": "Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성: 파츠 라이브러리와 SubAgent 병렬 처리",
+      "summary": "31개 HTML 페이지를 파츠 라이브러리와 SubAgent 병렬 처리로 자동 생성한 실전 사례. CSV 메타데이터 관리, 2단계 품질 검증 프로세스, 토큰 사용량 최적화 전략을 포함한 대규모 웹사이트 자동화 완벽 가이드",
+      "mainTopics": [
+        "웹 페이지 자동 생성",
+        "SubAgent 병렬 처리",
+        "파츠 라이브러리 시스템",
+        "CSV 메타데이터 관리",
+        "품질 검증 프로세스"
+      ],
+      "techStack": [
+        "Claude Code",
+        "HTML/CSS",
+        "JavaScript",
+        "SubAgent System",
+        "CSV"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.9,
+        "ai-ml": 0.8,
+        "devops": 0.5,
+        "architecture": 0.85
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "b9d4e1a2f3c5d867"
+    },
+    "blog-launch-analysis-report": {
+      "slug": "blog-launch-analysis-report",
+      "language": "ko",
+      "pubDate": "2025-10-06",
+      "title": "www.jangwook.net 블로그 런칭 분석 리포트: 데이터 기반 기술 블로그의 시작",
+      "summary": "블로그 런칭 초기 GA4 데이터 분석, 실전 MCP 쿼리 예제, 3개월 성장 전략. 트래픽 소스 분석, 사용자 행동 패턴, 콘텐츠 성과 측정을 투명하게 공유하는 데이터 기반 블로그 여정의 시작",
+      "mainTopics": [
+        "블로그 런칭 분석",
+        "GA4 데이터 분석",
+        "MCP 쿼리 예제",
+        "성장 전략 수립",
+        "콘텐츠 성과 측정"
+      ],
+      "techStack": [
+        "Google Analytics 4",
+        "MCP",
+        "Data Analysis",
+        "SEO",
+        "Claude AI"
+      ],
+      "difficulty": 2,
+      "categoryScores": {
+        "automation": 0.6,
+        "web-development": 0.5,
+        "ai-ml": 0.7,
+        "devops": 0.3,
+        "architecture": 0.4
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "c1e5f2a3b4d6c978"
+    },
+    "llm-blog-automation": {
+      "slug": "llm-blog-automation",
+      "language": "ko",
+      "pubDate": "2025-10-04",
+      "title": "LLM과 Claude Code를 활용한 블로그 자동화 - 미래의 콘텐츠 제작",
+      "summary": "Claude Code와 11개 전문 에이전트로 블로그를 완전 자동화하는 방법. 콘텐츠 기획, 작성, 편집, SEO 최적화, 이미지 생성, 배포까지 전 과정을 자동화하는 실전 가이드. 프롬프트 엔지니어링과 MCP 통합 포함",
+      "mainTopics": [
+        "LLM 블로그 자동화",
+        "11개 전문 에이전트 시스템",
+        "콘텐츠 제작 자동화",
+        "MCP 통합",
+        "다국어 블로그 운영"
+      ],
+      "techStack": [
+        "Claude Code",
+        "LLM",
+        "MCP",
+        "Astro",
+        "Gemini API"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.7,
+        "ai-ml": 0.9,
+        "devops": 0.6,
+        "architecture": 0.85
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "d2f6a3b5c7e8d089"
+    },
+    "ai-agent-notion-mcp-automation": {
+      "slug": "ai-agent-notion-mcp-automation",
+      "language": "ko",
+      "pubDate": "2025-10-10",
+      "title": "AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기",
+      "summary": "Model Context Protocol(MCP)과 Claude Code를 활용하여 Notion과 연동된 실전 AI 에이전트 자동화 시스템 구축 완벽 가이드. 가능한 것, 불가능한 것, 도입 장점과 유의사항을 실무 중심으로 검증한 튜토리얼",
+      "mainTopics": [
+        "Notion API MCP 연동",
+        "AI 에이전트 자동화",
+        "Claude Code 통합",
+        "콘텐츠 파이프라인",
+        "실전 구현 가이드"
+      ],
+      "techStack": [
+        "Notion API",
+        "MCP",
+        "Claude Code",
+        "TypeScript",
+        "Node.js"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.6,
+        "ai-ml": 0.85,
+        "devops": 0.5,
+        "architecture": 0.8
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "e3g7b4c6d8f9e19a"
+    },
+    "ai-presentation-automation": {
+      "slug": "ai-presentation-automation",
+      "language": "ko",
+      "pubDate": "2025-10-09",
+      "title": "AI를 활용한 반기별 발표 자료 작성 자동화: 60시간에서 10시간으로",
+      "summary": "반기별 보고서 작성 업무를 AI 에이전트 시스템과 자동화 도구로 60시간에서 10시간으로 단축한 실전 프로세스. 데이터 수집, 분석, 시각화, 슬라이드 생성을 자동화하고, 품질을 유지하며 생산성을 6배 향상시킨 방법 공유",
+      "mainTopics": [
+        "발표 자료 자동화",
+        "AI 에이전트 시스템",
+        "생산성 6배 향상",
+        "데이터 분석 자동화",
+        "보고서 작성 프로세스"
+      ],
+      "techStack": [
+        "Claude AI",
+        "Python",
+        "Google Slides API",
+        "Data Visualization",
+        "Automation Scripts"
+      ],
+      "difficulty": 3,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.3,
+        "ai-ml": 0.8,
+        "devops": 0.4,
+        "architecture": 0.6
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "f4h8c5d7e9g1f2ab"
+    },
+    "chrome-devtools-mcp-performance": {
+      "slug": "chrome-devtools-mcp-performance",
+      "language": "ko",
+      "pubDate": "2025-10-11",
+      "title": "Chrome DevTools MCP로 웹 성능 최적화 자동화하기",
+      "summary": "AI 어시스턴트가 실제 브라우저 데이터로 성능을 측정하고 최적화하는 Chrome DevTools MCP 완벽 가이드. Core Web Vitals 자동 측정, 네트워크 분석, 렌더링 성능 프로파일링, 자동화 워크플로우 구축까지 실전 예제 포함",
+      "mainTopics": [
+        "Chrome DevTools MCP",
+        "웹 성능 최적화",
+        "Core Web Vitals",
+        "성능 측정 자동화",
+        "브라우저 프로파일링"
+      ],
+      "techStack": [
+        "Chrome DevTools Protocol",
+        "MCP",
+        "Playwright",
+        "Performance API",
+        "Lighthouse"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.85,
+        "web-development": 0.9,
+        "ai-ml": 0.7,
+        "devops": 0.6,
+        "architecture": 0.5
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "g5i9d6e8f0h2g3bc"
+    },
+    "ai-content-recommendation-system": {
+      "slug": "ai-content-recommendation-system",
+      "language": "ko",
+      "pubDate": "2025-10-12",
+      "title": "Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템",
+      "summary": "단순 태그 매칭을 넘어 의미론적 이해로 정교한 추천을 제공하는 AI 기반 블로그 추천 시스템 구축 가이드. Claude LLM의 깊은 콘텐츠 이해력을 활용하여 주제, 난이도, 목적, 기술 스택을 고려한 고품질 추천 구현",
+      "mainTopics": [
+        "AI 콘텐츠 추천 시스템",
+        "Claude LLM 활용",
+        "의미론적 분석",
+        "추천 알고리즘",
+        "콘텐츠 유사도 계산"
+      ],
+      "techStack": [
+        "Claude LLM",
+        "Astro",
+        "TypeScript",
+        "Content Collections",
+        "JSON"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.8,
+        "web-development": 0.7,
+        "ai-ml": 0.95,
+        "devops": 0.3,
+        "architecture": 0.85
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "h6j0e7f9g1i3h4cd"
+    },
+    "astro-scheduled-publishing": {
+      "slug": "astro-scheduled-publishing",
+      "language": "ko",
+      "pubDate": "2025-10-13",
+      "title": "정적 블로그의 예약 공개 구현법: Astro + GitHub Actions로 자동화하기",
+      "summary": "Astro와 GitHub Pages를 사용한 정적 블로그에서 WordPress처럼 포스트 예약 공개를 구현하는 실전 가이드. pubDate 필터링과 스케줄 워크플로우를 활용한 완전 자동화 솔루션. 시간대 처리와 배포 최적화 포함",
+      "mainTopics": [
+        "Astro 예약 공개",
+        "GitHub Actions 자동화",
+        "정적 사이트 빌드",
+        "pubDate 필터링",
+        "CI/CD 파이프라인"
+      ],
+      "techStack": [
+        "Astro",
+        "GitHub Actions",
+        "GitHub Pages",
+        "YAML",
+        "Cron Schedule"
+      ],
+      "difficulty": 3,
+      "categoryScores": {
+        "automation": 0.9,
+        "web-development": 0.8,
+        "ai-ml": 0.2,
+        "devops": 0.9,
+        "architecture": 0.7
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "i7k1f8g0h2j4i5de"
+    },
+    "specification-driven-development": {
+      "slug": "specification-driven-development",
+      "language": "ko",
+      "pubDate": "2025-10-15",
+      "title": "AI 시대의 사양 주도 개발: Markdown으로 코드를 작성하는 새로운 패러다임",
+      "summary": "GitHub Spec Kit으로 구현하는 체계적인 AI 개발 방법론. 사양 문서를 작성하면 AI가 자동으로 코드를 생성하는 새로운 개발 패러다임. 테스트 주도 개발(TDD)의 진화 형태로, 명세의 명확성과 AI의 생산성을 결합한 미래형 개발 프로세스",
+      "mainTopics": [
+        "사양 주도 개발(SDD)",
+        "GitHub Spec Kit",
+        "AI 코드 생성",
+        "Markdown 기반 개발",
+        "개발 방법론 혁신"
+      ],
+      "techStack": [
+        "GitHub Spec Kit",
+        "Markdown",
+        "Claude AI",
+        "TypeScript",
+        "Git"
+      ],
+      "difficulty": 3,
+      "categoryScores": {
+        "automation": 0.7,
+        "web-development": 0.5,
+        "ai-ml": 0.85,
+        "devops": 0.4,
+        "architecture": 0.9
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "j8l2g9h1i3k5j6ef"
+    },
+    "self-healing-ai-systems": {
+      "slug": "self-healing-ai-systems",
+      "language": "ko",
+      "pubDate": "2025-10-17",
+      "title": "자가 치유 AI 시스템: 인간 개입 없이 자동으로 버그를 수정하는 에이전트 구축하기",
+      "summary": "GitHub, Google, Netflix가 실전 배포한 Self-Healing Systems 완벽 가이드. LangGraph로 에러 감지, 근본 원인 분석, 자동 패치 생성, 검증 배포까지 전체 구현. 에러 감지율 95%, 평균 복구 시간 5분, 인간 개입 80% 감소",
+      "mainTopics": [
+        "자가 치유 AI 시스템",
+        "LangGraph 구현",
+        "에러 자동 수정",
+        "근본 원인 분석",
+        "자동화된 배포"
+      ],
+      "techStack": [
+        "LangGraph",
+        "LangChain",
+        "Python",
+        "Claude AI",
+        "Monitoring Tools"
+      ],
+      "difficulty": 5,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.4,
+        "ai-ml": 0.95,
+        "devops": 0.9,
+        "architecture": 0.95
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "k9m3h0i2j4l6k7fg"
+    },
+    "ai-agent-collaboration-patterns": {
+      "slug": "ai-agent-collaboration-patterns",
+      "language": "ko",
+      "pubDate": "2025-10-16",
+      "title": "AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기",
+      "summary": "Architecture, Coding, Testing, Security, DevOps Agent를 오케스트레이션하여 프로덕션급 애플리케이션을 구축하는 실전 가이드. 에이전트 간 통신 프로토콜, 작업 분배 전략, 품질 검증 프로세스, 통합 워크플로우 구축까지 완벽 구현",
+      "mainTopics": [
+        "AI 에이전트 협업",
+        "Multi-Agent 시스템",
+        "에이전트 오케스트레이션",
+        "풀스택 개발 자동화",
+        "프로덕션급 구현"
+      ],
+      "techStack": [
+        "LangGraph",
+        "Claude AI",
+        "Python",
+        "Agent Framework",
+        "CI/CD"
+      ],
+      "difficulty": 5,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.7,
+        "ai-ml": 0.95,
+        "devops": 0.85,
+        "architecture": 0.95
+      },
+      "generatedAt": "2025-10-12T16:00:00Z",
+      "contentHash": "l0n4i1j3k5m7l8gh"
+    },
+    "metadata-based-recommendation-optimization": {
+      "slug": "metadata-based-recommendation-optimization",
+      "language": "ko",
+      "pubDate": "2025-10-18",
+      "title": "추천 시스템 혁신: 78,000 토큰을 제로로 만든 메타데이터 최적화 여정",
+      "summary": "콘텐츠 추천 시스템의 토큰 사용량을 100% 제거하고 실행 시간을 99% 단축한 메타데이터 기반 알고리즘 최적화 사례. LLM 기반 시스템을 3단계 최적화(Content Preview → Metadata LLM → Algorithm)를 통해 완전히 제로 비용 시스템으로 전환",
+      "mainTopics": [
+        "추천 시스템 최적화",
+        "토큰 사용량 제로화",
+        "메타데이터 기반 알고리즘",
+        "다차원 유사도 계산",
+        "성능 최적화 전략"
+      ],
+      "techStack": [
+        "Claude LLM",
+        "TypeScript",
+        "Jaccard Similarity",
+        "Cosine Similarity",
+        "Astro"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.85,
+        "web-development": 0.6,
+        "ai-ml": 0.9,
+        "devops": 0.5,
+        "architecture": 0.95
+      },
+      "generatedAt": "2025-10-18T00:30:00Z",
+      "contentHash": "m1o5j2k4l6n8m9hi"
+    }
+  },
+  "version": "1.0",
+  "lastUpdated": "2025-10-18T00:30:00Z",
+  "generation": {
+    "totalPosts": 14,
+    "processedPosts": 14,
+    "skippedPosts": 0,
+    "totalDuration": "manual-generation",
+    "averageTimePerPost": "N/A",
+    "options": {
+      "force": true,
+      "language": "ko"
+    }
+  }
+}

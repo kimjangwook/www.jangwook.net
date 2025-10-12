@@ -649,6 +649,10 @@ A Claude LLM-based content recommendation system goes beyond simple tag matching
 
 Implementing this system will increase reader engagement time, improve content discoverability, and ultimately maximize your blog's value. You can apply it to your existing blog right away—start building today!
 
+## Next Article
+
+**[Recommendation System Optimization: From 78K Tokens to Zero](/en/blog/metadata-based-recommendation-optimization)** covers how we optimized this LLM-based recommendation system with a metadata-based algorithm, eliminating 100% of token usage and reducing execution time by 99%.
+
 ## References
 
 - [Claude Code Official Documentation](https://docs.claude.com/claude-code)

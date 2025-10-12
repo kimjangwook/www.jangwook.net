@@ -2,31 +2,50 @@
   "mcpServers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
     },
     "sequentialthinking": {
       "command": "docker",
-      "args": ["run", "--rm", "-i", "mcp/sequentialthinking"],
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "mcp/sequentialthinking"
+      ],
       "type": "stdio"
     },
     "automatalabs-playwright-server": {
       "command": "npx",
-      "args": ["-y", "@automatalabs/mcp-server-playwright"]
+      "args": [
+        "-y",
+        "@automatalabs/mcp-server-playwright"
+      ]
     },
     "notionApi": {
       "command": "npx",
-      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "args": [
+        "-y",
+        "@notionhq/notion-mcp-server"
+      ],
       "env": {
         "NOTION_TOKEN": "${NOTION_TOKEN}"
       }
     },
     "chrome-devtools": {
       "command": "npx",
-      "args": ["chrome-devtools-mcp@latest"]
+      "args": [
+        "chrome-devtools-mcp@latest"
+      ]
     },
     "analytics-mcp": {
       "command": "pipx",
-      "args": ["run", "analytics-mcp"],
+      "args": [
+        "run",
+        "analytics-mcp"
+      ],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
         "GOOGLE_PROJECT_ID": "${GOOGLE_PROJECT_ID}"
@@ -45,6 +64,12 @@
       "env": {
         "BRAVE_API_KEY": "${BRAVE_API_KEY}"
       }
+    },
+    "browsermcp": {
+      "command": "npx",
+      "args": [
+        "@browsermcp/mcp@latest"
+      ]
     }
   }
 }
