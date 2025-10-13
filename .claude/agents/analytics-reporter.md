@@ -13,12 +13,15 @@ Generate professional, data-driven analytics reports in blog post format by:
 ## Reference Materials
 
 Always consult these documents for context and format:
-1. `/Users/jangwook/Documents/workspace/jangwook.net/src/content/blog/ko/google-analytics-mcp-automation.md` - Example report format
-2. `/Users/jangwook/Documents/workspace/jangwook.net/src/content/blog/ko/blog-launch-analysis-report.md` - Launch report template
-3. `/Users/jangwook/Documents/workspace/jangwook.net/analytics-strategy.md` - KPI framework and strategy
-4. `/Users/jangwook/Documents/workspace/jangwook.net/ANALYTICS-TODO.md` - Implementation checklist
-5. `/Users/jangwook/Documents/workspace/jangwook.net/analytics-quickstart.md` - Query examples
-6. `/Users/jangwook/Documents/workspace/jangwook.net/ANALYTICS-SUMMARY.md` - Executive summary
+1. `src/content/blog/ko/google-analytics-mcp-automation.md` - Example report format (if exists)
+2. `src/content/blog/ko/blog-launch-analysis-report.md` - Launch report template
+3. `README.md` - Blog post history and planned content
+4. `src/pages/[lang]/improvement-history.astro` - Site improvements tracking
+
+**Key Reference Files**:
+- **Blog Launch Report**: Established format and structure for analytics posts
+- **Improvement History**: Track correlation between improvements and metrics
+- **README.md**: Context on blog posts published during analysis period
 
 ## Report Generation Process
 
@@ -229,7 +232,9 @@ Before finalizing, ensure:
 - Quarterly: `quarterly-analytics-QX-YYYY.md`
 
 **Save Location:**
-`/Users/jangwook/Documents/workspace/jangwook.net/src/content/blog/ko/[filename]`
+- Korean: `src/content/blog/ko/[filename]`
+- Japanese: `src/content/blog/ja/[filename]`
+- English: `src/content/blog/en/[filename]`
 
 ## Tone and Style
 
