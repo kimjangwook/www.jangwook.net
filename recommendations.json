@@ -1273,20 +1273,111 @@
       ],
       "generatedAt": "2025-10-13T00:00:00.000Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "ai-agent-persona-analysis": {
+      "related": [
+        {
+          "slug": "ai-agent-collaboration-patterns",
+          "score": 0.82,
+          "reason": {
+            "ko": "AI 에이전트의 페르소나 설계와 직접적으로 연결되는 실전 구현 가이드입니다. 에이전트 간 협업 패턴은 페르소나 설계가 실제로 어떻게 작동하는지를 보여주는 구체적 사례이며, 설계 원칙을 실무에 적용하는 방법을 제시합니다.",
+            "ja": "AIエージェントのペルソナ設計と直接的に関連する実践実装ガイドです。エージェント間の協業パターンは、ペルソナ設計が実際にどのように機能するかを示す具体的な事例であり、設計原則を実務に適用する方法を提示します。",
+            "en": "A practical implementation guide directly connected to AI agent persona design. Agent collaboration patterns demonstrate concrete examples of how persona design works in practice and show how to apply design principles to real work."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.92,
+            "techStack": 0.75,
+            "category": 0.87,
+            "difficulty": 0.6,
+            "complementary": 0.85
+          }
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.78,
+          "reason": {
+            "ko": "페르소나 설계의 이론적 근거를 실전 워크플로우에 적용하는 방법을 다룹니다. Claude Code 에이전트 설계 시 성별 중립적이고 전문성 중심의 접근이 왜 효과적인지를 실무적 관점에서 보완합니다.",
+            "ja": "ペルソナ設計の理論的根拠を実戦ワークフローに適用する方法を扱います。Claude Codeエージェント設計時に性別中立的で専門性中心のアプローチがなぜ効果的かを実務的観点から補完します。",
+            "en": "Covers how to apply theoretical foundations of persona design to practical workflows. Complements the effectiveness of gender-neutral, expertise-focused approaches in Claude Code agent design from a practical perspective."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.82,
+            "techStack": 0.68,
+            "category": 0.91,
+            "difficulty": 0.8,
+            "complementary": 0.75
+          }
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.71,
+          "reason": {
+            "ko": "AI 에이전트 페르소나 설계에서 강조하는 '전문성 기반 설계'의 실제 적용 사례입니다. 명세 기반 개발은 에이전트가 명확한 역할과 책임을 가지는 것이 왜 중요한지를 시스템 설계 관점에서 보여줍니다.",
+            "ja": "AIエージェントペルソナ設計で強調する「専門性ベース設計」の実際の適用事例です。仕様ベース開発は、エージェントが明確な役割と責任を持つことがなぜ重要かをシステム設計の観点から示します。",
+            "en": "A real application case of 'expertise-based design' emphasized in AI agent persona design. Specification-driven development demonstrates from a system design perspective why it's important for agents to have clear roles and responsibilities."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.68,
+            "techStack": 0.62,
+            "category": 0.85,
+            "difficulty": 0.8,
+            "complementary": 0.72
+          }
+        },
+        {
+          "slug": "self-healing-ai-systems",
+          "score": 0.68,
+          "reason": {
+            "ko": "고도로 전문화된 AI 에이전트 시스템의 사례 연구입니다. 자가 치유 시스템에서 각 에이전트의 역할 분리와 전문성 정의가 시스템 안정성에 미치는 영향을 보여주며, 페르소나 설계의 중요성을 증명합니다.",
+            "ja": "高度に専門化されたAIエージェントシステムの事例研究です。自己修復システムで各エージェントの役割分離と専門性定義がシステムの安定性に与える影響を示し、ペルソナ設計の重要性を証明します。",
+            "en": "A case study of highly specialized AI agent systems. Shows how role separation and expertise definition of each agent in self-healing systems impact system stability, proving the importance of persona design."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.75,
+            "techStack": 0.58,
+            "category": 0.82,
+            "difficulty": 0.6,
+            "complementary": 0.68
+          }
+        },
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.65,
+          "reason": {
+            "ko": "에이전트 페르소나 설계를 실제 자동화 워크플로우에 적용한 사례입니다. Notion MCP 자동화에서 에이전트의 명확한 역할 정의와 작업 경계 설정이 어떻게 효율적인 자동화로 이어지는지를 보여줍니다.",
+            "ja": "エージェントペルソナ設計を実際の自動化ワークフローに適用した事例です。Notion MCP自動化でエージェントの明確な役割定義と作業境界設定がどのように効率的な自動化につながるかを示します。",
+            "en": "A case of applying agent persona design to actual automation workflows. Shows how clear role definition and task boundary setting of agents in Notion MCP automation lead to efficient automation."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.72,
+            "techStack": 0.65,
+            "category": 0.78,
+            "difficulty": 0.6,
+            "complementary": 0.58
+          }
+        }
+      ],
+      "generatedAt": "2025-10-15T00:00:00.000Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
-    "totalPosts": 14,
-    "lastGenerated": "2025-10-13T00:00:00.000Z",
+    "totalPosts": 15,
+    "lastGenerated": "2025-10-15T00:00:00.000Z",
     "modelVersion": "metadata-based-v1.0",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
     "generation": {
-      "processedPosts": 14,
+      "processedPosts": 15,
       "skippedPosts": 0,
       "averageRecommendations": 5,
-      "highQualityMatches": 1,
-      "totalDuration": "3s"
+      "highQualityMatches": 2,
+      "totalDuration": "8s"
     }
   }
 }
