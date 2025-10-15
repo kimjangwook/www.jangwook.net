@@ -1,1383 +1,1029 @@
 {
   "recommendations": {
-    "claude-code-best-practices": {
+    "metadata-based-recommendation-optimization": {
       "related": [
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.42,
-          "reason": {
-            "ko": "Claude Code, Astro 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "Claude Code, Astro技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers Claude Code and Astro tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "MCP (Model Context Protocol) 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "MCP (Model Context Protocol)技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers MCP (Model Context Protocol) tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "claude-code-web-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "Claude Code 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "Claude Code技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers Claude Code tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.98,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "Claude Code 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "Claude Code技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers Claude Code tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "chrome-devtools-mcp-performance",
-          "score": 0.35,
-          "reason": {
-            "ko": "더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "より深い内容を扱う次のレベルの学習資料です。",
-            "en": "Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.96,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.754Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "google-analytics-mcp-automation": {
-      "related": [
-        {
-          "slug": "ai-presentation-automation",
-          "score": 0.41,
-          "reason": {
-            "ko": "Claude AI, Python 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Claude AI, Python技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Claude AI and Python tech stack. Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.37,
-          "reason": {
-            "ko": "MCP (Model Context Protocol) 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "MCP (Model Context Protocol)技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers MCP (Model Context Protocol) tech stack. Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.35,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.35,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "claude-code-web-automation",
-          "score": 0.34,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.97,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.756Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "claude-code-web-automation": {
-      "related": [
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "Claude Code 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Claude Code技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Claude Code tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "Claude Code 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Claude Code技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Claude Code tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.37,
-          "reason": {
-            "ko": "Claude Code 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Claude Code技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Claude Code tech stack. Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.98,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "chrome-devtools-mcp-performance",
-          "score": 0.35,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.98,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.34,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.97,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.757Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "blog-launch-analysis-report": {
-      "related": [
-        {
-          "slug": "ai-presentation-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "Claude AI 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "Claude AI技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers Claude AI tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.96,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.35,
-          "reason": {
-            "ko": "더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "より深い内容を扱う次のレベルの学習資料です。",
-            "en": "Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.32,
-          "reason": {
-            "ko": "Claude AI 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Claude AI技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Claude AI tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.98,
-            "difficulty": 0.5,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.32,
-          "reason": {
-            "ko": "MCP 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "MCP技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers MCP tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.98,
-            "difficulty": 0.5,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.32,
-          "reason": {
-            "ko": "MCP 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "MCP技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers MCP tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.98,
-            "difficulty": 0.5,
-            "complementary": 0.5
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.757Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "llm-blog-automation": {
-      "related": [
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.41,
-          "reason": {
-            "ko": "Claude Code, Astro 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Claude Code, Astro技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Claude Code and Astro tech stack. Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.41,
-          "reason": {
-            "ko": "Claude Code, MCP 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Claude Code, MCP技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Claude Code and MCP tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 1,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "claude-code-web-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "Claude Code 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Claude Code技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Claude Code tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "chrome-devtools-mcp-performance",
-          "score": 0.37,
-          "reason": {
-            "ko": "MCP 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "MCP技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers MCP tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.97,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.35,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.757Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "ai-agent-notion-mcp-automation": {
-      "related": [
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.41,
-          "reason": {
-            "ko": "MCP, Claude Code 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "MCP, Claude Code技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers MCP and Claude Code tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 1,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "claude-code-web-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "Claude Code 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Claude Code技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Claude Code tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.37,
-          "reason": {
-            "ko": "Claude Code 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Claude Code技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Claude Code tech stack. Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "chrome-devtools-mcp-performance",
-          "score": 0.37,
-          "reason": {
-            "ko": "MCP 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "MCP技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers MCP tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.96,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.35,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.757Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "ai-presentation-automation": {
-      "related": [
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.42,
-          "reason": {
-            "ko": "Claude AI, Python 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "Claude AI, Python技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers Claude AI and Python tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "blog-launch-analysis-report",
-          "score": 0.37,
-          "reason": {
-            "ko": "Claude AI 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Claude AI技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Claude AI tech stack. Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.96,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.35,
-          "reason": {
-            "ko": "더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "より深い内容を扱う次のレベルの学習資料です。",
-            "en": "Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.97,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.35,
-          "reason": {
-            "ko": "더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "より深い内容を扱う次のレベルの学習資料です。",
-            "en": "Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.98,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.34,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.97,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.757Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "chrome-devtools-mcp-performance": {
-      "related": [
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.37,
-          "reason": {
-            "ko": "MCP 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "MCP技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers MCP tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.97,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.37,
-          "reason": {
-            "ko": "MCP 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "MCP技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers MCP tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.96,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "claude-code-web-automation",
-          "score": 0.35,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.98,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.34,
-          "reason": {
-            "ko": "기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "基礎概念を扱う事前学習資料です。",
-            "en": "Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.96,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.34,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.96,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.757Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "ai-content-recommendation-system": {
-      "related": [
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.37,
-          "reason": {
-            "ko": "Astro 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Astro技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Astro tech stack. Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.37,
-          "reason": {
-            "ko": "Astro 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Astro技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Astro tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.98,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.37,
-          "reason": {
-            "ko": "TypeScript 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "TypeScript技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers TypeScript tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "claude-code-web-automation",
-          "score": 0.35,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.98,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.34,
-          "reason": {
-            "ko": "유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "類似した技術的アプローチと解決方法を提示しています。",
-            "en": "Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.97,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.760Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "astro-scheduled-publishing": {
-      "related": [
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.36,
-          "reason": {
-            "ko": "Astro 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "Astro技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers Astro tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.9,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.35,
-          "reason": {
-            "ko": "Astro 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Astro技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Astro tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.85,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
         {
           "slug": "ai-content-recommendation-system",
-          "score": 0.35,
+          "score": 0.94,
           "reason": {
-            "ko": "Astro 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "Astro技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers Astro tech stack. Offers more advanced content as a next-level learning resource."
+            "ko": "두 글 모두 추천 시스템 구축을 다루며, API 비용 최적화와 메타데이터 활용이라는 실전 과제를 해결합니다.",
+            "ja": "両記事とも推薦システム構築を扱い、APIコスト最適化とメタデータ活用という実践課題を解決します。",
+            "en": "Both posts cover recommendation system development and solve practical challenges of API cost optimization and metadata utilization."
           },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.83,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
+          "type": "similar-topic"
         },
         {
-          "slug": "claude-code-web-automation",
-          "score": 0.34,
+          "slug": "self-healing-ai-systems",
+          "score": 0.81,
           "reason": {
-            "ko": "더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "より深い内容を扱う次のレベルの学習資料です。",
-            "en": "Offers more advanced content as a next-level learning resource."
+            "ko": "AI 시스템의 안정성과 효율성을 높이는 아키텍처 설계를 다루며, 자동화된 최적화 전략을 공유합니다.",
+            "ja": "AIシステムの安定性と効率性を高めるアーキテクチャ設計を扱い、自動化された最適化戦略を共有します。",
+            "en": "Covers AI system architecture design for stability and efficiency, sharing automated optimization strategies."
           },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.91,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
+          "type": "complementary"
+        },
+        {
+          "slug": "ai-agent-collaboration-patterns",
+          "score": 0.76,
+          "reason": {
+            "ko": "멀티 에이전트 시스템의 효율적인 설계와 최적화 패턴을 다루어 시스템 아키텍처 관점에서 연결됩니다.",
+            "ja": "マルチエージェントシステムの効率的な設計と最適化パターンを扱い、システムアーキテクチャの観点から繋がります。",
+            "en": "Covers efficient multi-agent system design and optimization patterns, connecting from a system architecture perspective."
+          },
+          "type": "complementary"
         },
         {
           "slug": "chrome-devtools-mcp-performance",
-          "score": 0.34,
+          "score": 0.68,
           "reason": {
-            "ko": "더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "より深い内容を扱う次のレベルの学習資料です。",
-            "en": "Offers more advanced content as a next-level learning resource."
+            "ko": "성능 측정과 최적화라는 공통 주제를 다루며, 데이터 기반 개선 접근법을 공유합니다.",
+            "ja": "パフォーマンス測定と最適化という共通テーマを扱い、データ駆動型改善アプローチを共有します。",
+            "en": "Shares the common theme of performance measurement and optimization with data-driven improvement approaches."
           },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.93,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
+          "type": "similar-topic"
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.64,
+          "reason": {
+            "ko": "체계적인 개발 방법론과 아키텍처 설계 원칙을 다루어 시스템 설계 관점에서 보완적입니다.",
+            "ja": "体系的な開発方法論とアーキテクチャ設計原則を扱い、システム設計の観点から補完的です。",
+            "en": "Complementary from a system design perspective, covering systematic development methodology and architecture design principles."
+          },
+          "type": "complementary"
         }
       ],
-      "generatedAt": "2025-10-12T14:43:14.760Z",
-      "evaluatedBy": "metadata-based-algorithm"
-    },
-    "specification-driven-development": {
-      "related": [
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.38,
-          "reason": {
-            "ko": "Git 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Git技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Git tech stack. Presents similar technical approaches and solutions."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
-        },
-        {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "Claude AI 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "Claude AI技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers Claude AI tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.97,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.38,
-          "reason": {
-            "ko": "TypeScript 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "TypeScript技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers TypeScript tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "ai-content-recommendation-system",
-          "score": 0.38,
-          "reason": {
-            "ko": "TypeScript 기술 스택을 다룹니다. 더 심화된 내용을 다루는 다음 단계 학습 자료입니다.",
-            "ja": "TypeScript技術スタックを扱っています。より深い内容を扱う次のレベルの学習資料です。",
-            "en": "covers TypeScript tech stack. Offers more advanced content as a next-level learning resource."
-          },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.8
-          }
-        },
-        {
-          "slug": "blog-launch-analysis-report",
-          "score": 0.37,
-          "reason": {
-            "ko": "Claude AI 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Claude AI技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Claude AI tech stack. Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.11,
-            "category": 0.96,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        }
-      ],
-      "generatedAt": "2025-10-12T14:43:14.760Z",
-      "evaluatedBy": "metadata-based-algorithm"
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     },
     "self-healing-ai-systems": {
       "related": [
         {
           "slug": "ai-agent-collaboration-patterns",
-          "score": 0.45,
+          "score": 0.89,
           "reason": {
-            "ko": "LangGraph, Python 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "LangGraph, Python技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers LangGraph and Python tech stack. Presents similar technical approaches and solutions."
+            "ko": "두 글 모두 고급 AI 시스템 아키텍처를 다루며, 복잡한 AI 시스템의 안정성과 협업 패턴을 설계합니다.",
+            "ja": "両記事とも高度なAIシステムアーキテクチャを扱い、複雑なAIシステムの安定性と協働パターンを設計します。",
+            "en": "Both posts cover advanced AI system architecture, designing stability and collaboration patterns for complex AI systems."
           },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.43,
-            "category": 0.99,
-            "difficulty": 1,
-            "complementary": 0.5
-          }
+          "type": "similar-topic"
         },
         {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.4,
+          "slug": "specification-driven-development",
+          "score": 0.78,
           "reason": {
-            "ko": "Python, Claude AI 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Python, Claude AI技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Python and Claude AI tech stack. Covers foundational concepts as prerequisite learning."
+            "ko": "AI 시스템의 체계적 설계와 구현 방법론을 다루며, 자동 복구와 명세 기반 개발이 연결됩니다.",
+            "ja": "AIシステムの体系的設計と実装方法論を扱い、自動復旧と仕様駆動開発が繋がります。",
+            "en": "Covers systematic AI system design and implementation methodology, connecting auto-recovery with specification-driven development."
           },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 0.98,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
+          "type": "complementary"
         },
         {
-          "slug": "ai-presentation-automation",
-          "score": 0.36,
+          "slug": "ai-content-recommendation-system",
+          "score": 0.72,
           "reason": {
-            "ko": "Python, Claude AI 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Python, Claude AI技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Python and Claude AI tech stack. Presents similar technical approaches and solutions."
+            "ko": "AI 시스템의 실전 구현과 안정성 확보 방법을 다루며, 프로덕션 환경의 AI 운영을 공유합니다.",
+            "ja": "AIシステムの実践実装と安定性確保方法を扱い、プロダクション環境のAI運用を共有します。",
+            "en": "Covers practical AI system implementation and stability assurance, sharing production AI operations."
           },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 0.96,
-            "difficulty": 0.5,
-            "complementary": 0.5
-          }
+          "type": "complementary"
         },
         {
-          "slug": "llm-blog-automation",
-          "score": 0.34,
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.66,
           "reason": {
-            "ko": "기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "基礎概念を扱う事前学習資料です。",
-            "en": "Covers foundational concepts as prerequisite learning."
+            "ko": "시스템 모니터링과 자동 최적화라는 공통 주제를 다루며, DevOps 관점에서 연결됩니다.",
+            "ja": "システム監視と自動最適化という共通テーマを扱い、DevOpsの観点から繋がります。",
+            "en": "Shares common themes of system monitoring and automated optimization, connecting from a DevOps perspective."
           },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.97,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
+          "type": "similar-topic"
         },
         {
-          "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.34,
+          "slug": "metadata-based-recommendation-optimization",
+          "score": 0.63,
           "reason": {
-            "ko": "기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "基礎概念を扱う事前学習資料です。",
-            "en": "Covers foundational concepts as prerequisite learning."
+            "ko": "시스템 최적화와 효율성 개선 전략을 다루며, 자동화된 성능 향상 방법을 공유합니다.",
+            "ja": "システム最適化と効率性改善戦略を扱い、自動化されたパフォーマンス向上方法を共有します。",
+            "en": "Covers system optimization and efficiency improvement strategies, sharing automated performance enhancement methods."
           },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.97,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
+          "type": "complementary"
         }
       ],
-      "generatedAt": "2025-10-12T14:43:14.761Z",
-      "evaluatedBy": "metadata-based-algorithm"
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     },
     "ai-agent-collaboration-patterns": {
       "related": [
         {
-          "slug": "google-analytics-mcp-automation",
-          "score": 0.41,
+          "slug": "self-healing-ai-systems",
+          "score": 0.89,
           "reason": {
-            "ko": "Claude AI, Python 기술 스택을 다룹니다. 기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "Claude AI, Python技術スタックを扱っています。基礎概念を扱う事前学習資料です。",
-            "en": "covers Claude AI and Python tech stack. Covers foundational concepts as prerequisite learning."
+            "ko": "고급 AI 시스템 설계를 다루며, 멀티 에이전트 협업과 자가 치유가 함께 동작하는 복잡한 시스템을 구축합니다.",
+            "ja": "高度なAIシステム設計を扱い、マルチエージェント協働と自己修復が共に動作する複雑なシステムを構築します。",
+            "en": "Covers advanced AI system design, building complex systems where multi-agent collaboration and self-healing work together."
           },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
+          "type": "similar-topic"
         },
         {
-          "slug": "ai-presentation-automation",
-          "score": 0.35,
+          "slug": "specification-driven-development",
+          "score": 0.82,
           "reason": {
-            "ko": "Claude AI, Python 기술 스택을 다룹니다. 유사한 기술적 접근과 해결 방법을 제시합니다.",
-            "ja": "Claude AI, Python技術スタックを扱っています。類似した技術的アプローチと解決方法を提示しています。",
-            "en": "covers Claude AI and Python tech stack. Presents similar technical approaches and solutions."
+            "ko": "AI 에이전트의 체계적 설계와 구현 방법론을 다루며, 협업 패턴과 명세 기반 개발이 자연스럽게 연결됩니다.",
+            "ja": "AIエージェントの体系的設計と実装方法論を扱い、協働パターンと仕様駆動開発が自然に繋がります。",
+            "en": "Covers systematic AI agent design and implementation methodology, naturally connecting collaboration patterns with specification-driven development."
           },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0.25,
-            "category": 0.96,
-            "difficulty": 0.5,
-            "complementary": 0.5
-          }
+          "type": "complementary"
         },
         {
-          "slug": "claude-code-web-automation",
-          "score": 0.34,
+          "slug": "ai-content-recommendation-system",
+          "score": 0.74,
           "reason": {
-            "ko": "기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "基礎概念を扱う事前学習資料です。",
-            "en": "Covers foundational concepts as prerequisite learning."
+            "ko": "AI 시스템의 실전 구현 사례를 다루며, 에이전트 협업이 콘텐츠 추천에 어떻게 활용되는지 보여줍니다.",
+            "ja": "AIシステムの実践実装事例を扱い、エージェント協働がコンテンツ推薦にどう活用されるかを示します。",
+            "en": "Covers practical AI system implementation, showing how agent collaboration is utilized in content recommendation."
           },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.98,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
-        },
-        {
-          "slug": "llm-blog-automation",
-          "score": 0.34,
-          "reason": {
-            "ko": "기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "基礎概念を扱う事前学習資料です。",
-            "en": "Covers foundational concepts as prerequisite learning."
-          },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
+          "type": "complementary"
         },
         {
           "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.34,
+          "score": 0.71,
           "reason": {
-            "ko": "기초 개념을 다루는 선행 학습 자료입니다.",
-            "ja": "基礎概念を扱う事前学習資料です。",
-            "en": "Covers foundational concepts as prerequisite learning."
+            "ko": "AI 에이전트의 실전 활용 사례를 다루며, 협업 패턴이 실제 워크플로우에서 어떻게 적용되는지 보여줍니다.",
+            "ja": "AIエージェントの実践活用事例を扱い、協働パターンが実際のワークフローでどう適用されるかを示します。",
+            "en": "Covers practical AI agent use cases, showing how collaboration patterns are applied in real workflows."
           },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0,
-            "techStack": 0,
-            "category": 0.99,
-            "difficulty": 0.75,
-            "complementary": 0.7
-          }
+          "type": "next-step"
+        },
+        {
+          "slug": "metadata-based-recommendation-optimization",
+          "score": 0.68,
+          "reason": {
+            "ko": "복잡한 AI 시스템의 아키텍처 설계와 최적화 전략을 공유하며, 시스템 설계 관점에서 보완적입니다.",
+            "ja": "複雑なAIシステムのアーキテクチャ設計と最適化戦略を共有し、システム設計の観点から補完的です。",
+            "en": "Shares complex AI system architecture design and optimization strategies, complementary from a system design perspective."
+          },
+          "type": "complementary"
         }
       ],
-      "generatedAt": "2025-10-12T14:43:14.761Z",
-      "evaluatedBy": "metadata-based-algorithm"
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     },
-    "metadata-based-recommendation-optimization": {
+    "astro-scheduled-publishing": {
       "related": [
         {
-          "slug": "ai-content-recommendation-system",
-          "score": 0.92,
+          "slug": "blog-launch-analysis-report",
+          "score": 0.76,
           "reason": {
-            "ko": "추천 시스템의 진화 과정을 보여주는 완벽한 시리즈입니다. 이 글은 LLM 기반 추천의 기초 개념을 제공하며, 원본 글은 그것을 메타데이터 알고리즘으로 최적화한 후속 사례입니다.",
-            "ja": "推薦システムの進化過程を示す完璧なシリーズです。この記事はLLMベースの推薦の基礎概念を提供し、元の記事はそれをメタデータアルゴリズムで最適化した続編事例です。",
-            "en": "A perfect series showing the evolution of recommendation systems. This post provides foundational LLM-based recommendation concepts, while the source post is the optimized sequel using metadata algorithms."
+            "ko": "Astro 블로그 운영의 실전 기법을 다루며, 예약 발행과 분석 시스템이 블로그 자동화를 완성합니다.",
+            "ja": "Astroブログ運営の実践技法を扱い、予約投稿と分析システムがブログ自動化を完成させます。",
+            "en": "Covers practical Astro blog operation techniques, completing blog automation with scheduled publishing and analytics systems."
           },
-          "type": "prerequisite",
-          "dimensions": {
-            "topic": 0.98,
-            "techStack": 0.91,
-            "category": 0.93,
-            "difficulty": 1.0,
-            "complementary": 0.85
-          }
+          "type": "complementary"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.72,
+          "reason": {
+            "ko": "블로그 콘텐츠 자동화의 전체 파이프라인을 다루며, 예약 발행이 자동화 워크플로우를 완성합니다.",
+            "ja": "ブログコンテンツ自動化の全体パイプラインを扱い、予約投稿が自動化ワークフローを完成させます。",
+            "en": "Covers the complete blog content automation pipeline, with scheduled publishing completing the automation workflow."
+          },
+          "type": "complementary"
         },
         {
           "slug": "google-analytics-mcp-automation",
-          "score": 0.78,
+          "score": 0.64,
           "reason": {
-            "ko": "데이터 기반 시스템 최적화 사례로, 두 글 모두 자동화 시스템의 성능 측정과 개선 과정을 다룹니다. 분석 데이터를 활용한 의사결정 프로세스가 유사합니다.",
-            "ja": "データ駆動型システム最適化事例として、両記事とも自動化システムの性能測定と改善プロセスを扱います。分析データを活用した意思決定プロセスが類似しています。",
-            "en": "As data-driven system optimization cases, both posts cover performance measurement and improvement processes of automation systems, with similar data-driven decision-making approaches."
+            "ko": "블로그 운영 자동화의 다른 측면을 다루며, 발행 스케줄링과 분석 자동화가 함께 블로그 시스템을 구성합니다.",
+            "ja": "ブログ運営自動化の別の側面を扱い、投稿スケジューリングと分析自動化が共にブログシステムを構成します。",
+            "en": "Covers another aspect of blog operation automation, with publishing scheduling and analytics automation together forming the blog system."
           },
-          "type": "similar",
-          "dimensions": {
-            "topic": 0.72,
-            "techStack": 0.68,
-            "category": 0.86,
-            "difficulty": 1.0,
-            "complementary": 0.65
-          }
+          "type": "complementary"
         },
         {
-          "slug": "claude-code-best-practices",
-          "score": 0.76,
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.58,
           "reason": {
-            "ko": "AI 시스템 최적화의 실무 지식을 제공합니다. 토큰 사용량 최적화와 프롬프트 엔지니어링 관점에서 상호 보완적이며, Claude 활용 전략이 공통적입니다.",
-            "ja": "AIシステム最適化の実務知識を提供します。トークン使用量最適化とプロンプトエンジニアリングの観点から相互補完的で、Claude活用戦略が共通しています。",
-            "en": "Provides practical knowledge on AI system optimization. Complementary in terms of token usage optimization and prompt engineering, with shared Claude utilization strategies."
+            "ko": "GitHub Actions와 자동화 파이프라인을 활용한 DevOps 실천 사례를 공유합니다.",
+            "ja": "GitHub Actionsと自動化パイプラインを活用したDevOps実践事例を共有します。",
+            "en": "Shares DevOps practices using GitHub Actions and automation pipelines."
           },
-          "type": "complementary",
-          "dimensions": {
-            "topic": 0.75,
-            "techStack": 0.82,
-            "category": 0.83,
-            "difficulty": 0.8,
-            "complementary": 0.68
-          }
+          "type": "similar-topic"
+        },
+        {
+          "slug": "ai-presentation-automation",
+          "score": 0.52,
+          "reason": {
+            "ko": "자동화 워크플로우와 생산성 향상 전략을 다루며, 콘텐츠 스케줄링의 실전 활용을 보여줍니다.",
+            "ja": "自動化ワークフローと生産性向上戦略を扱い、コンテンツスケジューリングの実践活用を示します。",
+            "en": "Covers automation workflows and productivity strategies, showing practical content scheduling applications."
+          },
+          "type": "similar-topic"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "specification-driven-development": {
+      "related": [
+        {
+          "slug": "ai-agent-collaboration-patterns",
+          "score": 0.82,
+          "reason": {
+            "ko": "AI 시대의 개발 방법론과 시스템 설계를 다루며, 명세 기반 개발과 에이전트 협업이 현대 개발의 핵심을 형성합니다.",
+            "ja": "AI時代の開発方法論とシステム設計を扱い、仕様駆動開発とエージェント協働が現代開発の核心を形成します。",
+            "en": "Covers AI-era development methodology and system design, with specification-driven development and agent collaboration forming the core of modern development."
+          },
+          "type": "similar-topic"
         },
         {
           "slug": "self-healing-ai-systems",
+          "score": 0.78,
+          "reason": {
+            "ko": "복잡한 AI 시스템의 설계 원칙과 구현 방법론을 다루며, 체계적 접근법을 공유합니다.",
+            "ja": "複雑なAIシステムの設計原則と実装方法論を扱い、体系的アプローチを共有します。",
+            "en": "Covers design principles and implementation methodology for complex AI systems, sharing systematic approaches."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.71,
+          "reason": {
+            "ko": "AI 기반 개발 워크플로우의 베스트 프랙티스를 다루며, SDD가 Claude Code 활용의 기초가 됩니다.",
+            "ja": "AI基盤開発ワークフローのベストプラクティスを扱い、SDDがClaude Code活用の基礎となります。",
+            "en": "Covers AI-based development workflow best practices, with SDD forming the foundation for Claude Code utilization."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "ai-content-recommendation-system",
+          "score": 0.69,
+          "reason": {
+            "ko": "AI 시스템 설계의 실전 사례를 다루며, 명세 기반 접근법이 실제 프로젝트에서 어떻게 적용되는지 보여줍니다.",
+            "ja": "AIシステム設計の実践事例を扱い、仕様基盤アプローチが実際のプロジェクトでどう適用されるかを示します。",
+            "en": "Covers practical AI system design cases, showing how specification-based approaches are applied in real projects."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "metadata-based-recommendation-optimization",
+          "score": 0.64,
+          "reason": {
+            "ko": "시스템 아키텍처와 최적화 전략을 다루며, 설계 방법론이 성능 개선으로 이어집니다.",
+            "ja": "システムアーキテクチャと最適化戦略を扱い、設計方法論がパフォーマンス改善に繋がります。",
+            "en": "Covers system architecture and optimization strategies, with design methodology leading to performance improvements."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "ai-content-recommendation-system": {
+      "related": [
+        {
+          "slug": "metadata-based-recommendation-optimization",
+          "score": 0.94,
+          "reason": {
+            "ko": "추천 시스템의 구축과 최적화를 단계적으로 다루며, 의미론적 추천에서 성능 최적화로 자연스럽게 발전합니다.",
+            "ja": "推薦システムの構築と最適化を段階的に扱い、意味論的推薦からパフォーマンス最適化へ自然に発展します。",
+            "en": "Covers recommendation system building and optimization progressively, naturally evolving from semantic recommendations to performance optimization."
+          },
+          "type": "series"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.83,
+          "reason": {
+            "ko": "Claude LLM 활용의 실전 사례를 다루며, 콘텐츠 생성과 추천이라는 블로그 자동화의 핵심 기능을 다룹니다.",
+            "ja": "Claude LLM活用の実践事例を扱い、コンテンツ生成と推薦というブログ自動化の核心機能を扱います。",
+            "en": "Covers practical Claude LLM use cases, addressing core blog automation features of content generation and recommendation."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "ai-agent-collaboration-patterns",
           "score": 0.74,
           "reason": {
-            "ko": "고도의 AI 시스템 아키텍처 설계 사례입니다. 복잡도 관리, 성능 최적화, 자동화 전략에서 유사한 엔지니어링 접근 방식을 보여줍니다.",
-            "ja": "高度なAIシステムアーキテクチャ設計事例です。複雑度管理、性能最適化、自動化戦略において類似したエンジニアリングアプローチを示します。",
-            "en": "An advanced AI system architecture design case. Shows similar engineering approaches in complexity management, performance optimization, and automation strategies."
+            "ko": "AI 시스템의 고급 설계 패턴을 다루며, 추천 시스템이 멀티 에이전트 환경에서 활용될 수 있습니다.",
+            "ja": "AIシステムの高度な設計パターンを扱い、推薦システムがマルチエージェント環境で活用できます。",
+            "en": "Covers advanced AI system design patterns, where recommendation systems can be utilized in multi-agent environments."
           },
-          "type": "advanced",
-          "dimensions": {
-            "topic": 0.68,
-            "techStack": 0.71,
-            "category": 0.92,
-            "difficulty": 0.8,
-            "complementary": 0.62
-          }
+          "type": "complementary"
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.69,
+          "reason": {
+            "ko": "AI 시스템의 체계적 설계 방법론을 다루며, 추천 시스템 구축의 기초가 됩니다.",
+            "ja": "AIシステムの体系的設計方法論を扱い、推薦システム構築の基礎となります。",
+            "en": "Covers systematic AI system design methodology, forming the foundation for recommendation system development."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "self-healing-ai-systems",
+          "score": 0.66,
+          "reason": {
+            "ko": "프로덕션 AI 시스템의 안정성 확보 방법을 다루며, 추천 시스템 운영에 필요한 복원력을 제공합니다.",
+            "ja": "プロダクションAIシステムの安定性確保方法を扱い、推薦システム運用に必要な復元力を提供します。",
+            "en": "Covers production AI system stability assurance, providing resilience needed for recommendation system operations."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "chrome-devtools-mcp-performance": {
+      "related": [
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.91,
+          "reason": {
+            "ko": "두 글 모두 MCP를 활용한 브라우저 자동화를 다루며, Chrome DevTools와 Playwright의 강력한 통합을 보여줍니다.",
+            "ja": "両記事ともMCPを活用したブラウザ自動化を扱い、Chrome DevToolsとPlaywrightの強力な統合を示します。",
+            "en": "Both posts cover MCP-based browser automation, demonstrating powerful integration of Chrome DevTools and Playwright."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.76,
+          "reason": {
+            "ko": "성능 측정 후 데이터 분석으로 이어지는 웹 최적화 파이프라인을 완성합니다.",
+            "ja": "パフォーマンス測定後のデータ分析に繋がるWeb最適化パイプラインを完成させます。",
+            "en": "Completes the web optimization pipeline from performance measurement to data analysis."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.68,
+          "reason": {
+            "ko": "MCP 서버 활용의 다양한 사례를 다루며, 브라우저 자동화와 데이터 관리 자동화를 공유합니다.",
+            "ja": "MCPサーバー活用の多様な事例を扱い、ブラウザ自動化とデータ管理自動化を共有します。",
+            "en": "Covers various MCP server use cases, sharing browser automation and data management automation."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "metadata-based-recommendation-optimization",
+          "score": 0.68,
+          "reason": {
+            "ko": "성능 최적화와 비용 효율화라는 공통 목표를 다루며, 측정과 개선의 체계적 접근법을 공유합니다.",
+            "ja": "パフォーマンス最適化とコスト効率化という共通目標を扱い、測定と改善の体系的アプローチを共有します。",
+            "en": "Shares common goals of performance optimization and cost efficiency, with systematic measurement and improvement approaches."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "astro-scheduled-publishing",
+          "score": 0.58,
+          "reason": {
+            "ko": "GitHub Actions와 CI/CD 자동화를 다루며, DevOps 관점에서 웹 성능 최적화와 연결됩니다.",
+            "ja": "GitHub ActionsとCI/CD自動化を扱い、DevOpsの観点からWebパフォーマンス最適化と繋がります。",
+            "en": "Covers GitHub Actions and CI/CD automation, connecting to web performance optimization from a DevOps perspective."
+          },
+          "type": "similar-topic"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "ai-agent-notion-mcp-automation": {
+      "related": [
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.87,
+          "reason": {
+            "ko": "두 글 모두 MCP 서버를 활용한 데이터 자동화를 다루며, Notion과 Analytics의 서로 다른 데이터 소스를 통합합니다.",
+            "ja": "両記事ともMCPサーバーを活用したデータ自動化を扱い、NotionとAnalyticsの異なるデータソースを統合します。",
+            "en": "Both posts cover MCP server-based data automation, integrating different data sources from Notion and Analytics."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.81,
+          "reason": {
+            "ko": "Claude Code와 MCP를 활용한 자동화 워크플로우를 다루며, 웹 자동화와 데이터 관리 자동화가 보완적입니다.",
+            "ja": "Claude CodeとMCPを活用した自動化ワークフローを扱い、Web自動化とデータ管理自動化が補完的です。",
+            "en": "Covers automation workflows using Claude Code and MCP, with web automation and data management automation being complementary."
+          },
+          "type": "complementary"
         },
         {
           "slug": "ai-agent-collaboration-patterns",
           "score": 0.71,
           "reason": {
-            "ko": "대규모 AI 시스템의 설계와 최적화 패턴을 다룹니다. 아키텍처 관점에서의 최적화 전략과 시스템 통합 방법론이 유사하며, 다음 단계 학습으로 적합합니다.",
-            "ja": "大規模AIシステムの設計と最適化パターンを扱います。アーキテクチャ観点での最適化戦略とシステム統合方法論が類似し、次段階の学習として適しています。",
-            "en": "Covers design and optimization patterns for large-scale AI systems. Similar optimization strategies from an architectural perspective and system integration methodologies, suitable as next-level learning."
+            "ko": "AI 에이전트 협업의 실전 사례를 다루며, Notion 자동화가 멀티 에이전트 시스템의 구체적 활용 예시가 됩니다.",
+            "ja": "AIエージェント協働の実践事例を扱い、Notion自動化がマルチエージェントシステムの具体的活用例となります。",
+            "en": "Covers practical AI agent collaboration cases, with Notion automation being a concrete example of multi-agent systems."
           },
-          "type": "next-level",
-          "dimensions": {
-            "topic": 0.65,
-            "techStack": 0.73,
-            "category": 0.91,
-            "difficulty": 0.8,
-            "complementary": 0.58
-          }
+          "type": "next-step"
+        },
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.68,
+          "reason": {
+            "ko": "MCP 서버의 다양한 활용 사례를 다루며, 브라우저 자동화와 API 통합의 서로 다른 접근법을 보여줍니다.",
+            "ja": "MCPサーバーの多様な活用事例を扱い、ブラウザ自動化とAPI統合の異なるアプローチを示します。",
+            "en": "Covers various MCP server use cases, showing different approaches to browser automation and API integration."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.64,
+          "reason": {
+            "ko": "AI를 활용한 워크플로우 자동화를 다루며, Notion 통합과 블로그 자동화가 지식 관리 시스템을 형성합니다.",
+            "ja": "AIを活用したワークフロー自動化を扱い、Notion統合とブログ自動化が知識管理システムを形成します。",
+            "en": "Covers AI-powered workflow automation, with Notion integration and blog automation forming a knowledge management system."
+          },
+          "type": "complementary"
         }
       ],
-      "generatedAt": "2025-10-13T00:00:00.000Z",
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "ai-presentation-automation": {
+      "related": [
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.86,
+          "reason": {
+            "ko": "Claude Code를 활용한 콘텐츠 자동화를 다루며, 프레젠테이션과 블로그 포스트 생성이라는 서로 다른 콘텐츠 형식에 동일한 자동화 원칙을 적용합니다.",
+            "ja": "Claude Codeを活用したコンテンツ自動化を扱い、プレゼンテーションとブログ投稿生成という異なるコンテンツ形式に同じ自動化原則を適用します。",
+            "en": "Covers Claude Code-based content automation, applying the same automation principles to different content formats: presentations and blog posts."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.78,
+          "reason": {
+            "ko": "Claude Code의 실전 활용 사례를 다루며, 베스트 프랙티스가 프레젠테이션 자동화로 구체화됩니다.",
+            "ja": "Claude Codeの実践活用事例を扱い、ベストプラクティスがプレゼンテーション自動化で具体化されます。",
+            "en": "Covers practical Claude Code use cases, with best practices being concretized in presentation automation."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.61,
+          "reason": {
+            "ko": "AI 기반 자동화 워크플로우를 다루며, 콘텐츠 생성과 데이터 분석이라는 생산성 향상의 다른 측면을 보여줍니다.",
+            "ja": "AI基盤自動化ワークフローを扱い、コンテンツ生成とデータ分析という生産性向上の異なる側面を示します。",
+            "en": "Covers AI-based automation workflows, showing different aspects of productivity improvement: content generation and data analysis."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.59,
+          "reason": {
+            "ko": "AI 에이전트를 활용한 작업 자동화를 다루며, 프레젠테이션 생성과 지식 관리가 워크플로우 효율화에 기여합니다.",
+            "ja": "AIエージェントを活用した作業自動化を扱い、プレゼンテーション生成と知識管理がワークフロー効率化に貢献します。",
+            "en": "Covers work automation using AI agents, with presentation generation and knowledge management contributing to workflow efficiency."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "astro-scheduled-publishing",
+          "score": 0.52,
+          "reason": {
+            "ko": "콘텐츠 자동화와 스케줄링을 다루며, 생산성 향상을 위한 자동화 전략을 공유합니다.",
+            "ja": "コンテンツ自動化とスケジューリングを扱い、生産性向上のための自動化戦略を共有します。",
+            "en": "Covers content automation and scheduling, sharing automation strategies for productivity improvement."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "claude-code-web-automation": {
+      "related": [
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.91,
+          "reason": {
+            "ko": "두 글 모두 MCP 기반 브라우저 자동화를 다루며, Playwright와 Chrome DevTools의 통합 활용을 보여줍니다.",
+            "ja": "両記事ともMCP基盤ブラウザ自動化を扱い、PlaywrightとChrome DevToolsの統合活用を示します。",
+            "en": "Both posts cover MCP-based browser automation, demonstrating integrated use of Playwright and Chrome DevTools."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.84,
+          "reason": {
+            "ko": "Claude Code의 베스트 프랙티스를 웹 자동화라는 구체적 사례로 적용하여, 이론에서 실전으로 자연스럽게 연결됩니다.",
+            "ja": "Claude CodeのベストプラクティスをWeb自動化という具体的事例で適用し、理論から実践へ自然に繋がります。",
+            "en": "Applies Claude Code best practices to concrete web automation cases, naturally connecting theory to practice."
+          },
+          "type": "series"
+        },
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.81,
+          "reason": {
+            "ko": "MCP 서버를 활용한 자동화 워크플로우를 다루며, 웹 자동화와 API 통합의 서로 다른 활용 사례를 보여줍니다.",
+            "ja": "MCPサーバーを活用した自動化ワークフローを扱い、Web自動化とAPI統合の異なる活用事例を示します。",
+            "en": "Covers automation workflows using MCP servers, showing different use cases of web automation and API integration."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.73,
+          "reason": {
+            "ko": "Claude Code와 MCP의 실전 활용을 다루며, 브라우저 자동화와 데이터 분석이 개발 워크플로우를 완성합니다.",
+            "ja": "Claude CodeとMCPの実践活用を扱い、ブラウザ自動化とデータ分析が開発ワークフローを完成させます。",
+            "en": "Covers practical use of Claude Code and MCP, with browser automation and data analysis completing the development workflow."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.69,
+          "reason": {
+            "ko": "Claude Code 기반 자동화를 다루며, 웹 자동화와 콘텐츠 자동화가 AI 워크플로우의 다른 측면을 보여줍니다.",
+            "ja": "Claude Code基盤自動化を扱い、Web自動化とコンテンツ自動化がAIワークフローの異なる側面を示します。",
+            "en": "Covers Claude Code-based automation, with web automation and content automation showing different aspects of AI workflows."
+          },
+          "type": "similar-topic"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "claude-code-best-practices": {
+      "related": [
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.84,
+          "reason": {
+            "ko": "베스트 프랙티스를 실전 웹 자동화 사례에 적용하여, 이론적 가이드라인이 구체적 구현으로 연결됩니다.",
+            "ja": "ベストプラクティスを実践Web自動化事例に適用し、理論的ガイドラインが具体的実装に繋がります。",
+            "en": "Applies best practices to practical web automation cases, connecting theoretical guidelines to concrete implementations."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.81,
+          "reason": {
+            "ko": "Claude Code 활용의 기초와 실전을 다루며, 베스트 프랙티스가 블로그 자동화로 구체화됩니다.",
+            "ja": "Claude Code活用の基礎と実践を扱い、ベストプラクティスがブログ自動化で具体化されます。",
+            "en": "Covers Claude Code fundamentals and practice, with best practices being concretized in blog automation."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "ai-presentation-automation",
+          "score": 0.78,
+          "reason": {
+            "ko": "Claude Code의 실전 활용 사례를 다루며, 워크플로우 최적화가 프레젠테이션 자동화에 적용됩니다.",
+            "ja": "Claude Codeの実践活用事例を扱い、ワークフロー最適化がプレゼンテーション自動化に適用されます。",
+            "en": "Covers practical Claude Code use cases, applying workflow optimization to presentation automation."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.72,
+          "reason": {
+            "ko": "Claude Code와 MCP 통합의 베스트 프랙티스를 다루며, AI 에이전트 활용이 데이터 분석으로 확장됩니다.",
+            "ja": "Claude CodeとMCP統合のベストプラクティスを扱い、AIエージェント活用がデータ分析へ拡張されます。",
+            "en": "Covers best practices for Claude Code and MCP integration, with AI agent utilization extending to data analysis."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.71,
+          "reason": {
+            "ko": "AI 코딩 시대의 개발 방법론을 다루며, Claude Code 베스트 프랙티스가 SDD의 실천 도구가 됩니다.",
+            "ja": "AIコーディング時代の開発方法論を扱い、Claude CodeベストプラクティスがSDDの実践ツールとなります。",
+            "en": "Covers development methodology for the AI coding era, with Claude Code best practices becoming practical tools for SDD."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "llm-blog-automation": {
+      "related": [
+        {
+          "slug": "ai-presentation-automation",
+          "score": 0.86,
+          "reason": {
+            "ko": "LLM을 활용한 콘텐츠 자동 생성을 다루며, 블로그 포스트와 프레젠테이션이라는 서로 다른 포맷에 동일한 자동화 원칙을 적용합니다.",
+            "ja": "LLMを活用したコンテンツ自動生成を扱い、ブログ投稿とプレゼンテーションという異なるフォーマットに同じ自動化原則を適用します。",
+            "en": "Covers LLM-based automated content generation, applying the same automation principles to different formats: blog posts and presentations."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "ai-content-recommendation-system",
+          "score": 0.83,
+          "reason": {
+            "ko": "블로그 자동화의 두 핵심 요소인 콘텐츠 생성과 추천을 다루며, LLM 활용이 전체 블로그 시스템을 완성합니다.",
+            "ja": "ブログ自動化の二つの核心要素であるコンテンツ生成と推薦を扱い、LLM活用が全体ブログシステムを完成させます。",
+            "en": "Covers two core elements of blog automation - content generation and recommendation - with LLM utilization completing the entire blog system."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.81,
+          "reason": {
+            "ko": "Claude Code 베스트 프랙티스가 블로그 자동화라는 실전 프로젝트로 구현되어, 이론이 실천으로 연결됩니다.",
+            "ja": "Claude Codeベストプラクティスがブログ自動化という実践プロジェクトで実装され、理論が実践に繋がります。",
+            "en": "Claude Code best practices are implemented in the practical project of blog automation, connecting theory to practice."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.74,
+          "reason": {
+            "ko": "블로그 운영의 콘텐츠 생성과 분석이라는 양대 축을 다루며, 자동화 파이프라인을 완성합니다.",
+            "ja": "ブログ運営のコンテンツ生成と分析という両軸を扱い、自動化パイプラインを完成させます。",
+            "en": "Covers the two pillars of blog operations - content generation and analysis - completing the automation pipeline."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "astro-scheduled-publishing",
+          "score": 0.72,
+          "reason": {
+            "ko": "블로그 자동화의 실전 구현을 다루며, 콘텐츠 생성 후 예약 발행으로 워크플로우가 완성됩니다.",
+            "ja": "ブログ自動化の実践実装を扱い、コンテンツ生成後の予約投稿でワークフローが完成します。",
+            "en": "Covers practical blog automation implementation, with scheduled publishing completing the workflow after content generation."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "google-analytics-mcp-automation": {
+      "related": [
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.87,
+          "reason": {
+            "ko": "두 글 모두 MCP 서버를 활용한 데이터 통합과 자동화를 다루며, Analytics와 Notion의 서로 다른 데이터 소스를 AI로 연결합니다.",
+            "ja": "両記事ともMCPサーバーを活用したデータ統合と自動化を扱い、AnalyticsとNotionの異なるデータソースをAIで接続します。",
+            "en": "Both posts cover data integration and automation using MCP servers, connecting different data sources from Analytics and Notion with AI."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "blog-launch-analysis-report",
+          "score": 0.82,
+          "reason": {
+            "ko": "GA4 MCP 자동화의 이론과 실전을 다루며, 자동화 시스템이 실제 블로그 분석 리포트로 구현됩니다.",
+            "ja": "GA4 MCP自動化の理論と実践を扱い、自動化システムが実際のブログ分析レポートで実装されます。",
+            "en": "Covers theory and practice of GA4 MCP automation, with the automation system being implemented in actual blog analysis reports."
+          },
+          "type": "series"
+        },
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.76,
+          "reason": {
+            "ko": "웹 성능 측정과 데이터 분석을 다루며, DevTools 측정 후 Analytics 분석으로 최적화 파이프라인을 완성합니다.",
+            "ja": "Webパフォーマンス測定とデータ分析を扱い、DevTools測定後のAnalytics分析で最適化パイプラインを完成させます。",
+            "en": "Covers web performance measurement and data analysis, completing the optimization pipeline from DevTools measurement to Analytics analysis."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.74,
+          "reason": {
+            "ko": "블로그 자동화의 콘텐츠 생성과 성과 분석을 다루며, 생성에서 측정까지 전체 사이클을 완성합니다.",
+            "ja": "ブログ自動化のコンテンツ生成と成果分析を扱い、生成から測定まで全体サイクルを完成させます。",
+            "en": "Covers blog automation's content generation and performance analysis, completing the full cycle from creation to measurement."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.73,
+          "reason": {
+            "ko": "Claude Code와 MCP의 실전 활용을 다루며, 브라우저 자동화와 데이터 분석이라는 서로 다른 자동화 영역을 보여줍니다.",
+            "ja": "Claude CodeとMCPの実践活用を扱い、ブラウザ自動化とデータ分析という異なる自動化領域を示します。",
+            "en": "Covers practical use of Claude Code and MCP, showing different automation domains: browser automation and data analysis."
+          },
+          "type": "similar-topic"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "blog-launch-analysis-report": {
+      "related": [
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.82,
+          "reason": {
+            "ko": "GA4 MCP 자동화 시스템의 이론과 실전 적용을 다루며, 자동화 도구가 실제 블로그 분석으로 구현됩니다.",
+            "ja": "GA4 MCP自動化システムの理論と実践適用を扱い、自動化ツールが実際のブログ分析で実装されます。",
+            "en": "Covers theory and practical application of GA4 MCP automation system, with automation tools being implemented in actual blog analysis."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "weekly-analytics-2025-10-14",
+          "score": 0.79,
+          "reason": {
+            "ko": "블로그 분석 리포트의 런칭 분석과 주간 분석을 다루며, 시간대별 성과 추적 사례를 보여줍니다.",
+            "ja": "ブログ分析レポートのローンチ分析と週次分析を扱い、時系列の成果追跡事例を示します。",
+            "en": "Covers blog analysis reports for launch and weekly periods, showing time-series performance tracking cases."
+          },
+          "type": "series"
+        },
+        {
+          "slug": "astro-scheduled-publishing",
+          "score": 0.76,
+          "reason": {
+            "ko": "Astro 블로그 운영의 실전 기법을 다루며, 자동 발행과 성과 분석이 블로그 시스템을 완성합니다.",
+            "ja": "Astroブログ運営の実践技法を扱い、自動投稿と成果分析がブログシステムを完成させます。",
+            "en": "Covers practical Astro blog operation techniques, with automated publishing and performance analysis completing the blog system."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.68,
+          "reason": {
+            "ko": "블로그 자동화의 콘텐츠 생성과 성과 측정을 다루며, 생성에서 분석까지 전체 워크플로우를 구성합니다.",
+            "ja": "ブログ自動化のコンテンツ生成と成果測定を扱い、生成から分析まで全体ワークフローを構成します。",
+            "en": "Covers blog automation's content generation and performance measurement, composing the full workflow from creation to analysis."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.61,
+          "reason": {
+            "ko": "웹 성능 측정과 블로그 트래픽 분석을 다루며, 기술적 성능과 비즈니스 성과의 종합적 분석을 제공합니다.",
+            "ja": "Webパフォーマンス測定とブログトラフィック分析を扱い、技術的パフォーマンスとビジネス成果の総合的分析を提供します。",
+            "en": "Covers web performance measurement and blog traffic analysis, providing comprehensive analysis of technical performance and business outcomes."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "weekly-analytics-2025-10-14": {
+      "related": [
+        {
+          "slug": "blog-launch-analysis-report",
+          "score": 0.79,
+          "reason": {
+            "ko": "블로그 런칭 후 첫 주 분석으로, 시간대별 성장 추이와 데이터 기반 인사이트를 연속적으로 제공합니다.",
+            "ja": "ブログローンチ後の初週分析として、時系列の成長推移とデータ駆動型インサイトを連続的に提供します。",
+            "en": "As the first week analysis after blog launch, provides continuous time-series growth trends and data-driven insights."
+          },
+          "type": "series"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.73,
+          "reason": {
+            "ko": "GA4 MCP 자동화 시스템이 주간 리포트 생성에 활용되어, 자동화 도구의 실전 성과를 보여줍니다.",
+            "ja": "GA4 MCP自動化システムが週次レポート生成に活用され、自動化ツールの実践成果を示します。",
+            "en": "GA4 MCP automation system is utilized in weekly report generation, demonstrating practical outcomes of automation tools."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "astro-scheduled-publishing",
+          "score": 0.58,
+          "reason": {
+            "ko": "블로그 운영 자동화의 다른 측면을 다루며, 예약 발행과 성과 분석이 블로그 관리 시스템을 완성합니다.",
+            "ja": "ブログ運営自動化の別の側面を扱い、予約投稿と成果分析がブログ管理システムを完成させます。",
+            "en": "Covers another aspect of blog operation automation, with scheduled publishing and performance analysis completing the blog management system."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.54,
+          "reason": {
+            "ko": "블로그 콘텐츠 생성과 성과 측정을 다루며, 자동화된 워크플로우의 결과를 데이터로 확인합니다.",
+            "ja": "ブログコンテンツ生成と成果測定を扱い、自動化されたワークフローの結果をデータで確認します。",
+            "en": "Covers blog content generation and performance measurement, verifying automated workflow results with data."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.48,
+          "reason": {
+            "ko": "웹 성능과 사용자 경험 측정을 다루며, 트래픽 분석과 함께 블로그 품질을 종합적으로 평가합니다.",
+            "ja": "Webパフォーマンスとユーザー体験測定を扱い、トラフィック分析と共にブログ品質を総合的に評価します。",
+            "en": "Covers web performance and user experience measurement, comprehensively evaluating blog quality along with traffic analysis."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
       "evaluatedBy": "claude-sonnet-4.5"
     },
     "ai-agent-persona-analysis": {
       "related": [
         {
           "slug": "ai-agent-collaboration-patterns",
-          "score": 0.82,
+          "score": 0.76,
           "reason": {
-            "ko": "AI 에이전트의 페르소나 설계와 직접적으로 연결되는 실전 구현 가이드입니다. 에이전트 간 협업 패턴은 페르소나 설계가 실제로 어떻게 작동하는지를 보여주는 구체적 사례이며, 설계 원칙을 실무에 적용하는 방법을 제시합니다.",
-            "ja": "AIエージェントのペルソナ設計と直接的に関連する実践実装ガイドです。エージェント間の協業パターンは、ペルソナ設計が実際にどのように機能するかを示す具体的な事例であり、設計原則を実務に適用する方法を提示します。",
-            "en": "A practical implementation guide directly connected to AI agent persona design. Agent collaboration patterns demonstrate concrete examples of how persona design works in practice and show how to apply design principles to real work."
+            "ko": "AI 에이전트 시스템 설계를 다루며, 페르소나 설정이 협업 패턴과 에이전트 행동에 미치는 영향을 분석합니다.",
+            "ja": "AIエージェントシステム設計を扱い、ペルソナ設定が協働パターンとエージェント行動に与える影響を分析します。",
+            "en": "Covers AI agent system design, analyzing how persona settings affect collaboration patterns and agent behavior."
           },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0.92,
-            "techStack": 0.75,
-            "category": 0.87,
-            "difficulty": 0.6,
-            "complementary": 0.85
-          }
-        },
-        {
-          "slug": "claude-code-best-practices",
-          "score": 0.78,
-          "reason": {
-            "ko": "페르소나 설계의 이론적 근거를 실전 워크플로우에 적용하는 방법을 다룹니다. Claude Code 에이전트 설계 시 성별 중립적이고 전문성 중심의 접근이 왜 효과적인지를 실무적 관점에서 보완합니다.",
-            "ja": "ペルソナ設計の理論的根拠を実戦ワークフローに適用する方法を扱います。Claude Codeエージェント設計時に性別中立的で専門性中心のアプローチがなぜ効果的かを実務的観点から補完します。",
-            "en": "Covers how to apply theoretical foundations of persona design to practical workflows. Complements the effectiveness of gender-neutral, expertise-focused approaches in Claude Code agent design from a practical perspective."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0.82,
-            "techStack": 0.68,
-            "category": 0.91,
-            "difficulty": 0.8,
-            "complementary": 0.75
-          }
+          "type": "complementary"
         },
         {
           "slug": "specification-driven-development",
-          "score": 0.71,
+          "score": 0.62,
           "reason": {
-            "ko": "AI 에이전트 페르소나 설계에서 강조하는 '전문성 기반 설계'의 실제 적용 사례입니다. 명세 기반 개발은 에이전트가 명확한 역할과 책임을 가지는 것이 왜 중요한지를 시스템 설계 관점에서 보여줍니다.",
-            "ja": "AIエージェントペルソナ設計で強調する「専門性ベース設計」の実際の適用事例です。仕様ベース開発は、エージェントが明確な役割と責任を持つことがなぜ重要かをシステム設計の観点から示します。",
-            "en": "A real application case of 'expertise-based design' emphasized in AI agent persona design. Specification-driven development demonstrates from a system design perspective why it's important for agents to have clear roles and responsibilities."
+            "ko": "AI 에이전트 설계의 실험적 접근과 방법론적 접근을 다루며, 페르소나가 명세 작성에 어떤 영향을 주는지 탐구합니다.",
+            "ja": "AIエージェント設計の実験的アプローチと方法論的アプローチを扱い、ペルソナが仕様作成にどう影響するかを探究します。",
+            "en": "Covers experimental and methodological approaches to AI agent design, exploring how personas influence specification writing."
           },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0.68,
-            "techStack": 0.62,
-            "category": 0.85,
-            "difficulty": 0.8,
-            "complementary": 0.72
-          }
+          "type": "complementary"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.58,
+          "reason": {
+            "ko": "AI 에이전트 활용의 기본 원칙과 고급 실험을 다루며, 베스트 프랙티스에서 페르소나 최적화로 발전합니다.",
+            "ja": "AIエージェント活用の基本原則と高度な実験を扱い、ベストプラクティスからペルソナ最適化へ発展します。",
+            "en": "Covers basic principles and advanced experiments in AI agent utilization, evolving from best practices to persona optimization."
+          },
+          "type": "next-step"
         },
         {
           "slug": "self-healing-ai-systems",
+          "score": 0.54,
+          "reason": {
+            "ko": "AI 시스템의 행동 패턴과 의사결정을 다루며, 페르소나가 시스템 안정성에 미치는 영향을 간접적으로 연결합니다.",
+            "ja": "AIシステムの行動パターンと意思決定を扱い、ペルソナがシステム安定性に与える影響を間接的に繋げます。",
+            "en": "Covers AI system behavior patterns and decision-making, indirectly connecting how personas affect system stability."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.51,
+          "reason": {
+            "ko": "LLM 기반 콘텐츠 생성을 다루며, AI 페르소나가 생성되는 콘텐츠의 톤과 스타일에 어떤 영향을 주는지 보여줍니다.",
+            "ja": "LLM基盤コンテンツ生成を扱い、AIペルソナが生成されるコンテンツのトーンとスタイルにどう影響するかを示します。",
+            "en": "Covers LLM-based content generation, showing how AI personas influence the tone and style of generated content."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "openai-agentkit-tutorial-part2": {
+      "related": [
+        {
+          "slug": "openai-agentkit-tutorial-part1",
+          "score": 0.98,
+          "reason": {
+            "ko": "OpenAI AgentKit 튜토리얼 시리즈로, 1부의 기초 개념 위에 2부의 고급 패턴과 실전 배포를 다룹니다.",
+            "ja": "OpenAI AgentKitチュートリアルシリーズとして、1部の基礎概念の上に2部の高度なパターンと実践デプロイを扱います。",
+            "en": "As an OpenAI AgentKit tutorial series, covers advanced patterns and production deployment in Part 2 built upon Part 1's foundational concepts."
+          },
+          "type": "series"
+        },
+        {
+          "slug": "ai-agent-collaboration-patterns",
+          "score": 0.73,
+          "reason": {
+            "ko": "고급 AI 에이전트 패턴을 다루며, AgentKit의 실전 활용이 멀티 에이전트 협업으로 확장됩니다.",
+            "ja": "高度なAIエージェントパターンを扱い、AgentKitの実践活用がマルチエージェント協働へ拡張されます。",
+            "en": "Covers advanced AI agent patterns, with practical AgentKit usage extending to multi-agent collaboration."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "specification-driven-development",
           "score": 0.68,
           "reason": {
-            "ko": "고도로 전문화된 AI 에이전트 시스템의 사례 연구입니다. 자가 치유 시스템에서 각 에이전트의 역할 분리와 전문성 정의가 시스템 안정성에 미치는 영향을 보여주며, 페르소나 설계의 중요성을 증명합니다.",
-            "ja": "高度に専門化されたAIエージェントシステムの事例研究です。自己修復システムで各エージェントの役割分離と専門性定義がシステムの安定性に与える影響を示し、ペルソナ設計の重要性を証明します。",
-            "en": "A case study of highly specialized AI agent systems. Shows how role separation and expertise definition of each agent in self-healing systems impact system stability, proving the importance of persona design."
+            "ko": "AI 에이전트의 체계적 개발 방법론을 다루며, AgentKit 구현이 SDD 원칙과 결합됩니다.",
+            "ja": "AIエージェントの体系的開発方法論を扱い、AgentKit実装がSDD原則と結合されます。",
+            "en": "Covers systematic AI agent development methodology, combining AgentKit implementation with SDD principles."
           },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0.75,
-            "techStack": 0.58,
-            "category": 0.82,
-            "difficulty": 0.6,
-            "complementary": 0.68
-          }
+          "type": "complementary"
+        },
+        {
+          "slug": "self-healing-ai-systems",
+          "score": 0.64,
+          "reason": {
+            "ko": "프로덕션 AI 시스템의 안정성을 다루며, AgentKit 배포 후 자가 치유 메커니즘으로 시스템을 강화합니다.",
+            "ja": "プロダクションAIシステムの安定性を扱い、AgentKitデプロイ後の自己修復メカニズムでシステムを強化します。",
+            "en": "Covers production AI system stability, strengthening systems with self-healing mechanisms after AgentKit deployment."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.59,
+          "reason": {
+            "ko": "AI 개발 도구의 베스트 프랙티스를 다루며, Claude Code와 OpenAI AgentKit의 상호 보완적 활용을 보여줍니다.",
+            "ja": "AI開発ツールのベストプラクティスを扱い、Claude CodeとOpenAI AgentKitの相互補完的活用を示します。",
+            "en": "Covers best practices for AI development tools, showing complementary use of Claude Code and OpenAI AgentKit."
+          },
+          "type": "similar-topic"
+        }
+      ],
+      "generatedAt": "2025-10-15T15:00:00Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "openai-agentkit-tutorial-part1": {
+      "related": [
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.71,
+          "reason": {
+            "ko": "AI 개발 도구의 기초를 다루며, Claude Code와 OpenAI AgentKit이 상호 보완적인 에이전트 개발 환경을 제공합니다.",
+            "ja": "AI開発ツールの基礎を扱い、Claude CodeとOpenAI AgentKitが相互補完的なエージェント開発環境を提供します。",
+            "en": "Covers AI development tool fundamentals, with Claude Code and OpenAI AgentKit providing complementary agent development environments."
+          },
+          "type": "similar-topic"
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.64,
+          "reason": {
+            "ko": "AI 에이전트 개발의 방법론적 기초를 다루며, AgentKit 학습이 SDD 실천으로 연결됩니다.",
+            "ja": "AIエージェント開発の方法論的基礎を扱い、AgentKit学習がSDD実践に繋がります。",
+            "en": "Covers methodological foundations of AI agent development, with AgentKit learning connecting to SDD practice."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "ai-presentation-automation",
+          "score": 0.58,
+          "reason": {
+            "ko": "AI 자동화 도구의 실전 활용을 다루며, AgentKit 기초 학습 후 구체적 자동화 프로젝트로 발전합니다.",
+            "ja": "AI自動化ツールの実践活用を扱い、AgentKit基礎学習後の具体的自動化プロジェクトへ発展します。",
+            "en": "Covers practical AI automation tool usage, advancing to concrete automation projects after AgentKit fundamentals."
+          },
+          "type": "next-step"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.56,
+          "reason": {
+            "ko": "LLM 기반 자동화를 다루며, AgentKit과 Claude의 서로 다른 LLM 활용 접근법을 비교합니다.",
+            "ja": "LLM基盤自動化を扱い、AgentKitとClaudeの異なるLLM活用アプローチを比較します。",
+            "en": "Covers LLM-based automation, comparing different LLM utilization approaches between AgentKit and Claude."
+          },
+          "type": "similar-topic"
         },
         {
           "slug": "ai-agent-notion-mcp-automation",
-          "score": 0.65,
+          "score": 0.53,
           "reason": {
-            "ko": "에이전트 페르소나 설계를 실제 자동화 워크플로우에 적용한 사례입니다. Notion MCP 자동화에서 에이전트의 명확한 역할 정의와 작업 경계 설정이 어떻게 효율적인 자동화로 이어지는지를 보여줍니다.",
-            "ja": "エージェントペルソナ設計を実際の自動化ワークフローに適用した事例です。Notion MCP自動化でエージェントの明確な役割定義と作業境界設定がどのように効率的な自動化につながるかを示します。",
-            "en": "A case of applying agent persona design to actual automation workflows. Shows how clear role definition and task boundary setting of agents in Notion MCP automation lead to efficient automation."
+            "ko": "AI 에이전트의 실전 활용 사례를 다루며, AgentKit 기초 위에 구체적인 자동화 프로젝트를 구축합니다.",
+            "ja": "AIエージェントの実践活用事例を扱い、AgentKit基礎の上に具体的な自動化プロジェクトを構築します。",
+            "en": "Covers practical AI agent use cases, building concrete automation projects on top of AgentKit fundamentals."
           },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0.72,
-            "techStack": 0.65,
-            "category": 0.78,
-            "difficulty": 0.6,
-            "complementary": 0.58
-          }
+          "type": "next-step"
         }
       ],
-      "generatedAt": "2025-10-15T00:00:00.000Z",
+      "generatedAt": "2025-10-15T15:00:00Z",
       "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
-    "totalPosts": 15,
-    "lastGenerated": "2025-10-15T00:00:00.000Z",
-    "modelVersion": "metadata-based-v1.0",
+    "totalPosts": 18,
+    "lastGenerated": "2025-10-15T15:00:00Z",
+    "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
-    "generation": {
-      "processedPosts": 15,
-      "skippedPosts": 0,
-      "averageRecommendations": 5,
-      "highQualityMatches": 2,
-      "totalDuration": "8s"
-    }
+    "temporalStrategy": "cutoff = max(sourcePost.pubDate, commandExecutionDate)",
+    "commandExecutionDate": "2025-10-15",
+    "scoringWeights": {
+      "topic": 0.40,
+      "techStack": 0.25,
+      "difficulty": 0.15,
+      "purpose": 0.10,
+      "complementary": 0.10
+    },
+    "generationNotes": "All recommendations respect temporal constraints. Posts published after 2025-10-15 have smaller candidate pools as expected."
   }
 }
