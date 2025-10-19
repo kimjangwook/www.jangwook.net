@@ -588,15 +588,46 @@
       },
       "contentHash": "02d759fac8a62d80",
       "generatedAt": "2025-10-19T10:01:33.290Z"
+    },
+    "llm-consumer-research-ssr": {
+      "slug": "llm-consumer-research-ssr",
+      "language": "ko",
+      "pubDate": "2025-10-23",
+      "title": "AI가 소비자 행동을 예측하는 새로운 방법: 의미론적 유사도 평가",
+      "summary": "LLM 기반 합성 소비자를 활용하여 실제 구매 의도를 90% 신뢰도로 예측하는 혁신적인 SSR 방법론. 텍스트 임베딩과 코사인 유사도를 활용하여 비현실적인 리커트 척도 분포 문제를 해결하고 정량-질적 피드백을 동시 제공합니다.",
+      "mainTopics": [
+        "의미론적 유사도 평가(SSR)",
+        "합성 소비자 생성",
+        "텍스트 임베딩 매핑",
+        "소비자 조사 자동화",
+        "리커트 척도 변환"
+      ],
+      "techStack": [
+        "LLM",
+        "OpenAI GPT-4",
+        "text-embedding-3-small",
+        "Python",
+        "PyMC Labs"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.75,
+        "web-development": 0.2,
+        "ai-ml": 0.95,
+        "devops": 0.15,
+        "architecture": 0.6
+      },
+      "generatedAt": "2025-10-19T10:29:22.248Z",
+      "contentHash": "446d606d8408cde8"
     }
   },
   "version": "1.0",
-  "lastUpdated": "2025-10-19T10:01:33.291Z",
+  "lastUpdated": "2025-10-19T10:29:22.249Z",
   "generation": {
-    "totalPosts": 19,
+    "totalPosts": 20,
     "processedPosts": 1,
-    "skippedPosts": 18,
-    "generationDate": "2025-10-15",
-    "averageTimePerPost": "~50s"
+    "skippedPosts": 19,
+    "totalDuration": "8s",
+    "averageTimePerPost": "8s"
   }
 }

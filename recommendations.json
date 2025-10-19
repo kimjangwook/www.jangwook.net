@@ -1063,11 +1063,67 @@
       ],
       "generatedAt": "2025-10-19T10:05:30.756Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "llm-consumer-research-ssr": {
+      "related": [
+        {
+          "slug": "ai-content-recommendation-system",
+          "score": 0.72,
+          "reason": {
+            "ko": "두 글 모두 LLM 기반 의미론적 분석을 활용합니다. SSR은 텍스트 임베딩으로 소비자 의도를 파악하고, 콘텐츠 추천 시스템은 블로그 포스트 유사도를 계산합니다. 임베딩 벡터와 코사인 유사도라는 동일한 핵심 기술을 사용합니다.",
+            "ja": "両記事ともLLMベースの意味論的分析を活用しています。SSRはテキスト埋め込みで消費者意図を把握し、コンテンツ推薦システムはブログポストの類似度を計算します。埋め込みベクトルとコサイン類似度という同じコア技術を使用します。",
+            "en": "Both posts leverage LLM-based semantic analysis. SSR uses text embeddings to understand consumer intent, while the content recommendation system calculates blog post similarity. They share core techniques: embedding vectors and cosine similarity."
+          },
+          "type": "similar-technique"
+        },
+        {
+          "slug": "openai-agentkit-part2",
+          "score": 0.65,
+          "reason": {
+            "ko": "SSR 방법론의 엔터프라이즈 적용을 고려한다면 AgentKit의 프로덕션 배포 패턴이 유용합니다. 멀티 에이전트 시스템으로 합성 소비자 생성, 임베딩 계산, 결과 분석을 분업화할 수 있으며, Evals를 통한 품질 모니터링이 가능합니다.",
+            "ja": "SSR手法のエンタープライズ適用を検討する場合、AgentKitのプロダクション配備パターンが有用です。マルチエージェントシステムで合成消費者生成、埋め込み計算、結果分析を分業化でき、Evalsによる品質モニタリングが可能です。",
+            "en": "For enterprise SSR implementation, AgentKit's production deployment patterns are valuable. Multi-agent systems can distribute synthetic consumer generation, embedding calculation, and analysis, with Evals for quality monitoring."
+          },
+          "type": "complementary-architecture"
+        },
+        {
+          "slug": "ai-agent-persona-analysis",
+          "score": 0.61,
+          "reason": {
+            "ko": "SSR에서 합성 소비자에 인구통계적 특성을 부여할 때, 이 글의 페르소나 설계 원칙이 중요합니다. 성별 레이블이 편향을 강화할 수 있다는 연구 결과는 SSR 프롬프트 설계 시 전문성 기반 접근을 고려하게 합니다.",
+            "ja": "SSRで合成消費者に人口統計的特性を付与する際、この記事のペルソナ設計原則が重要です。性別ラベルがバイアスを強化する可能性があるという研究結果は、SSRプロンプト設計時に専門性ベースのアプローチを考慮させます。",
+            "en": "When assigning demographics to synthetic consumers in SSR, persona design principles from this post are crucial. Research showing gender labels amplify bias suggests using expertise-based approaches in SSR prompt design."
+          },
+          "type": "complementary-concept"
+        },
+        {
+          "slug": "claude-skills-guide",
+          "score": 0.58,
+          "reason": {
+            "ko": "SSR 시스템을 Claude Skills로 구조화하면 효율적입니다. Consumer Generator, Embedding Calculator, Similarity Analyzer를 개별 스킬로 분리하여 Progressive Disclosure로 토큰을 44% 절감할 수 있습니다.",
+            "ja": "SSRシステムをClaude Skillsで構造化すると効率的です。Consumer Generator、Embedding Calculator、Similarity Analyzerを個別スキルに分離してProgressive Disclosureでトークンを44%削減できます。",
+            "en": "Structuring SSR systems with Claude Skills is efficient. Separate Consumer Generator, Embedding Calculator, and Similarity Analyzer as individual skills to achieve 44% token reduction via Progressive Disclosure."
+          },
+          "type": "implementation-tool"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.53,
+          "reason": {
+            "ko": "블로그 자동화에서 배운 11개 전문 에이전트 시스템 설계 원칙을 SSR 시스템에도 적용할 수 있습니다. 특히 Web Researcher 에이전트로 최신 소비자 트렌드를 수집하고, Writing Assistant로 설문 문항을 생성하는 워크플로우가 가능합니다.",
+            "ja": "ブログ自動化で学んだ11個の専門エージェントシステム設計原則をSSRシステムにも適用できます。特にWeb Researcherエージェントで最新消費者トレンドを収集し、Writing Assistantでアンケート項目を生成するワークフローが可能です。",
+            "en": "Design principles from the 11-agent blog automation system apply to SSR. Web Researcher agents can gather consumer trends, while Writing Assistants generate survey items in automated workflows."
+          },
+          "type": "related-automation"
+        }
+      ],
+      "generatedAt": "2025-10-19T10:30:39.316Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
-    "totalPosts": 18,
-    "lastGenerated": "2025-10-15T15:00:00Z",
+    "totalPosts": 20,
+    "lastGenerated": "2025-10-19T10:30:39.318Z",
     "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
