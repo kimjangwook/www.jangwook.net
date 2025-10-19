@@ -43,12 +43,16 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-10-21
-**총 포스트 수**: 18개 (한국어 기준)
+**최신 포스트 날짜**: 2025-10-22
+**총 포스트 수**: 19개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴** (2025-10-21)
+1. **Claude Skills 완벽 가이드: 프로젝트 적용기와 실전 노하우** (2025-10-22)
+   - Claude의 새로운 Agent Skills 기능 도입부터 실제 구현까지, 시행착오와 성과를 담은 실전 가이드. 폴더 기반 모듈화로 AI 에이전트를 전문화하는 방법
+   - **핵심 내용**: Progressive Disclosure 3단계 정보 공개 시스템, SKILL.md 작성법, 실전 Blog Writing Skill 구현 (날짜 자동 계산, Frontmatter 검증, 슬러그 생성), 5가지 주요 시행착오 해결 (description 명확화, YAML 파싱, 스크립트 권한, 경로 오류, Skill 충돌), allowed-tools로 안전성 확보, 토큰 44% 절감 (18,000→10,000), 작업 시간 90% 단축, Git/Plugin을 통한 팀 공유 전략
+
+2. **OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴** (2025-10-21)
    - 엔터프라이즈급 멀티 에이전트 시스템 설계부터 프로덕션 배포까지, AgentKit 실전 마스터 가이드
    - **핵심 내용**: 3개 엔터프라이즈 아키텍처 패턴 (계층형 Manager-Worker, 이벤트 주도형, Graph 기반 LangGraph), 커스텀 MCP 서버 개발 (Slack 통합 전체 구현), 프로덕션 모니터링 with Evals (A/B 테스트, 자동 프롬프트 최적화), 엔터프라이즈 보안 (멀티테넌시, GDPR 준수, 감사 로깅), 3개 실전 케이스 스터디 (SaaS 온보딩 70% 시간 단축, 데이터 파이프라인 자동 복구 82% MTTR 단축, DevOps 수동 리뷰 94% 감소), 성능 최적화 (병렬 처리, 스트리밍, 배치 처리)
 
@@ -492,6 +496,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-10-21 (OpenAI AgentKit 완벽 가이드 2부 발행: /write-post)
+**Last Updated**: 2025-10-22 (Claude Skills 완벽 가이드 발행: /write-post)
 
 **Built with** ❤️ **using Astro & Claude Code**

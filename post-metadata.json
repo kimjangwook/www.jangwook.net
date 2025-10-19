@@ -557,14 +557,45 @@
       },
       "contentHash": "3ea1c280fddb3078",
       "generatedAt": "2025-10-15T14:47:35.865Z"
+    },
+    "claude-skills-implementation-guide": {
+      "slug": "claude-skills-implementation-guide",
+      "language": "ko",
+      "pubDate": "2025-10-22",
+      "title": "Claude Skills 완벽 가이드: 프로젝트 적용기와 실전 노하우",
+      "summary": "Claude Agent Skills의 Progressive Disclosure 아키텍처부터 실전 구현, 5가지 시행착오 해결책, 토큰 44% 절감 성과까지. 폴더 기반 모듈화로 AI 에이전트를 전문화하는 완벽 실무 가이드.",
+      "mainTopics": [
+        "Agent Skills 아키텍처",
+        "Progressive Disclosure 시스템",
+        "SKILL.md 작성법",
+        "시행착오 해결 (YAML, 권한, 경로)",
+        "토큰 최적화 (44% 절감)"
+      ],
+      "techStack": [
+        "Claude Code",
+        "Agent Skills",
+        "Python",
+        "YAML",
+        "Git"
+      ],
+      "difficulty": 3,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.3,
+        "ai-ml": 0.9,
+        "devops": 0.5,
+        "architecture": 0.85
+      },
+      "contentHash": "02d759fac8a62d80",
+      "generatedAt": "2025-10-19T10:01:33.290Z"
     }
   },
   "version": "1.0",
-  "lastUpdated": "2025-10-15T14:50:07.043Z",
+  "lastUpdated": "2025-10-19T10:01:33.291Z",
   "generation": {
-    "totalPosts": 18,
-    "processedPosts": 18,
-    "skippedPosts": 0,
+    "totalPosts": 19,
+    "processedPosts": 1,
+    "skippedPosts": 18,
     "generationDate": "2025-10-15",
     "averageTimePerPost": "~50s"
   }

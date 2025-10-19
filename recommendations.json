@@ -1007,6 +1007,62 @@
       ],
       "generatedAt": "2025-10-15T15:00:00Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "claude-skills-implementation-guide": {
+      "related": [
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.88,
+          "reason": {
+            "ko": "Claude Code의 핵심 기능과 베스트 프랙티스를 다루며, Agent Skills는 이러한 실무 패턴을 구조화하는 발전된 방식입니다.",
+            "ja": "Claude Codeの核心機能とベストプラクティスを扱い、Agent Skillsはこれらの実務パターンを構造化する進化した方法です。",
+            "en": "Covers Claude Code core features and best practices, with Agent Skills being an evolved way to structure these practical patterns."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.85,
+          "reason": {
+            "ko": "11개 전문 에이전트로 블로그 자동화를 구축한 사례로, Skills 도입 전 서브에이전트 방식의 한계와 개선 필요성을 보여줍니다.",
+            "ja": "11個の専門エージェントでブログ自動化を構築した事例で、Skills導入前のサブエージェント方式の限界と改善の必要性を示します。",
+            "en": "Demonstrates blog automation with 11 specialized agents, showing the limitations of pre-Skills subagent approach and need for improvement."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "ai-agent-collaboration-patterns",
+          "score": 0.82,
+          "reason": {
+            "ko": "멀티 에이전트 시스템의 오케스트레이션 패턴을 다루며, Skills는 이러한 협업 패턴을 모듈화하고 재사용 가능하게 만듭니다.",
+            "ja": "マルチエージェントシステムのオーケストレーションパターンを扱い、Skillsはこれらの協業パターンをモジュール化して再利用可能にします。",
+            "en": "Covers multi-agent orchestration patterns, with Skills modularizing and making these collaboration patterns reusable."
+          },
+          "type": "related-concept"
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.76,
+          "reason": {
+            "ko": "Markdown 기반 사양 주도 개발을 다루며, SKILL.md 작성법과 유사한 구조화된 문서 접근 방식을 보여줍니다.",
+            "ja": "Markdownベースの仕様駆動開発を扱い、SKILL.md作成法と類似した構造化されたドキュメントアプローチを示します。",
+            "en": "Covers Markdown-based spec-driven development, showing a structured documentation approach similar to SKILL.md authoring."
+          },
+          "type": "related-concept"
+        },
+        {
+          "slug": "self-healing-ai-systems",
+          "score": 0.71,
+          "reason": {
+            "ko": "자가 치유 AI 시스템의 구현을 다루며, Skills의 코드 실행 기능과 시스템 자동화 역량을 실전에 적용하는 예시입니다.",
+            "ja": "自己修復AIシステムの実装を扱い、Skillsのコード実行機能とシステム自動化能力を実践に適用する例です。",
+            "en": "Covers self-healing AI system implementation, demonstrating practical application of Skills code execution and system automation capabilities."
+          },
+          "type": "next-step"
+        }
+      ],
+      "generatedAt": "2025-10-19T10:05:30.756Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
@@ -1018,11 +1074,11 @@
     "temporalStrategy": "cutoff = max(sourcePost.pubDate, commandExecutionDate)",
     "commandExecutionDate": "2025-10-15",
     "scoringWeights": {
-      "topic": 0.40,
+      "topic": 0.4,
       "techStack": 0.25,
       "difficulty": 0.15,
-      "purpose": 0.10,
-      "complementary": 0.10
+      "purpose": 0.1,
+      "complementary": 0.1
     },
     "generationNotes": "All recommendations respect temporal constraints. Posts published after 2025-10-15 have smaller candidate pools as expected."
   }
