@@ -619,14 +619,45 @@
       },
       "generatedAt": "2025-10-19T10:29:22.248Z",
       "contentHash": "446d606d8408cde8"
+    },
+    "ssr-survey-analysis": {
+      "slug": "ssr-survey-analysis",
+      "language": "ko",
+      "pubDate": "2025-10-24",
+      "title": "SSR 방법론으로 블로그 재방문 의향 분석하기",
+      "summary": "LLM 기반 Semantic Similarity Rating으로 15개 페르소나와 5개 콘텐츠에 대해 225개 평가를 수행. ICC 0.83의 높은 신뢰도를 검증하고, 평가당 $0.009의 비용으로 전통적 설문 대비 95% 절감하는 실험 결과와 통계 분석.",
+      "mainTopics": [
+        "Semantic Similarity Rating (SSR)",
+        "LLM-based Survey Methodology",
+        "Statistical Reliability Analysis",
+        "Content Performance Evaluation",
+        "Embedding-based Similarity Metrics"
+      ],
+      "techStack": [
+        "OpenAI GPT-4o-mini",
+        "text-embedding-3-small",
+        "Python",
+        "NumPy",
+        "SciPy"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.3,
+        "web-development": 0.2,
+        "ai-ml": 0.9,
+        "devops": 0.1,
+        "architecture": 0.4
+      },
+      "contentHash": "41ba8822b60e80ec",
+      "generatedAt": "2025-10-19T13:45:00.000Z"
     }
   },
   "version": "1.0",
-  "lastUpdated": "2025-10-19T10:29:22.249Z",
+  "lastUpdated": "2025-10-19T13:45:00.000Z",
   "generation": {
-    "totalPosts": 20,
+    "totalPosts": 21,
     "processedPosts": 1,
-    "skippedPosts": 19,
+    "skippedPosts": 20,
     "totalDuration": "8s",
     "averageTimePerPost": "8s"
   }

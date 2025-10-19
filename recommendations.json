@@ -1119,11 +1119,67 @@
       ],
       "generatedAt": "2025-10-19T10:30:39.316Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "ssr-survey-analysis": {
+      "related": [
+        {
+          "slug": "llm-consumer-research-ssr",
+          "score": 0.92,
+          "reason": {
+            "ko": "두 글 모두 Semantic Similarity Rating(SSR) 방법론을 핵심으로 다루며, 텍스트 임베딩과 코사인 유사도를 활용한 LLM 기반 평가 시스템을 설명합니다. 동일한 기술 스택(GPT-4, text-embedding-3-small)과 통계적 신뢰도 검증 과정을 공유하며, 전통적 설문 방법론의 한계를 극복하는 혁신적 접근을 제시합니다.",
+            "ja": "両記事ともSemantic Similarity Rating（SSR）手法を核心として扱い、テキスト埋め込みとコサイン類似度を活用したLLMベースの評価システムを説明しています。同じ技術スタック（GPT-4、text-embedding-3-small）と統計的信頼性検証プロセスを共有し、従来の調査手法の限界を克服する革新的アプローチを提示しています。",
+            "en": "Both posts focus on Semantic Similarity Rating (SSR) methodology, explaining LLM-based evaluation systems using text embeddings and cosine similarity. They share the same tech stack (GPT-4, text-embedding-3-small) and statistical reliability validation processes, presenting innovative approaches to overcome traditional survey limitations."
+          },
+          "type": "series"
+        },
+        {
+          "slug": "claude-skills-implementation-guide",
+          "score": 0.68,
+          "reason": {
+            "ko": "LLM 기반 시스템의 실전 적용과 최적화에 초점을 맞춥니다. SSR 분석의 자동화 워크플로우 구축에 필요한 Agent Skills 아키텍처와 토큰 최적화 기법(44% 절감)을 제공하며, 대규모 평가 작업의 효율성을 높이는 실무 노하우를 다룹니다.",
+            "ja": "LLMベースシステムの実践適用と最適化に焦点を当てています。SSR分析の自動化ワークフロー構築に必要なAgent Skillsアーキテクチャとトークン最適化技法（44%削減）を提供し、大規模評価作業の効率性を高める実務ノウハウを扱っています。",
+            "en": "Focuses on practical application and optimization of LLM-based systems. Provides Agent Skills architecture and token optimization techniques (44% reduction) needed for building automated SSR analysis workflows, covering practical know-how for improving efficiency in large-scale evaluation tasks."
+          },
+          "type": "related"
+        },
+        {
+          "slug": "openai-agentkit-tutorial-part2",
+          "score": 0.64,
+          "reason": {
+            "ko": "LLM 기반 자동화 시스템의 프로덕션 배포와 고급 패턴을 다룹니다. 225개 평가를 수행하는 SSR 시스템 구축 시 필요한 에러 핸들링, 성능 최적화, 복잡한 워크플로우 구성 방법을 제공하며, AI/ML 카테고리에서 동일하게 0.9점의 높은 점수를 받았습니다.",
+            "ja": "LLMベースの自動化システムのプロダクション展開と高度なパターンを扱います。225個の評価を実行するSSRシステム構築時に必要なエラーハンドリング、パフォーマンス最適化、複雑なワークフロー構成方法を提供し、AI/MLカテゴリで同じく0.9点の高スコアを獲得しています。",
+            "en": "Covers production deployment and advanced patterns for LLM-based automation systems. Provides error handling, performance optimization, and complex workflow configuration methods needed for building SSR systems that perform 225 evaluations, with the same high AI/ML category score of 0.9."
+          },
+          "type": "related"
+        },
+        {
+          "slug": "ai-agent-persona-analysis",
+          "score": 0.58,
+          "reason": {
+            "ko": "AI 페르소나 설정이 평가 품질에 미치는 영향을 실험적으로 분석합니다. SSR 방법론에서 15개 페르소나를 생성하고 활용하는 과정과 직접적으로 연결되며, LLM 기반 평가 시스템의 페르소나 디자인 원칙을 제공합니다.",
+            "ja": "AIペルソナ設定が評価品質に与える影響を実験的に分析しています。SSR手法で15個のペルソナを生成・活用するプロセスと直接的に関連し、LLMベース評価システムのペルソナデザイン原則を提供しています。",
+            "en": "Experimentally analyzes how AI persona settings impact evaluation quality. Directly connects with the process of creating and utilizing 15 personas in SSR methodology, providing persona design principles for LLM-based evaluation systems."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "google-analytics-mcp-automation",
+          "score": 0.52,
+          "reason": {
+            "ko": "데이터 수집과 자동화 분석 시스템 구축의 실전 사례를 제공합니다. SSR 실험 결과의 통계적 분석과 리포트 자동 생성에 활용할 수 있는 MCP 기반 워크플로우와 실시간 데이터 처리 기법을 다루며, Automation 카테고리에서 높은 점수(0.95)를 받았습니다.",
+            "ja": "データ収集と自動化分析システム構築の実践事例を提供しています。SSR実験結果の統計的分析とレポート自動生成に活用できるMCPベースのワークフローとリアルタイムデータ処理技法を扱い、Automationカテゴリで高スコア（0.95）を獲得しています。",
+            "en": "Provides practical cases of building data collection and automated analysis systems. Covers MCP-based workflows and real-time data processing techniques that can be used for statistical analysis of SSR experiment results and automated report generation, with a high Automation category score (0.95)."
+          },
+          "type": "next_step"
+        }
+      ],
+      "generatedAt": "2025-10-19T13:50:00.000Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
-    "totalPosts": 20,
-    "lastGenerated": "2025-10-19T10:30:39.318Z",
+    "totalPosts": 21,
+    "lastGenerated": "2025-10-19T13:50:00.000Z",
     "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
