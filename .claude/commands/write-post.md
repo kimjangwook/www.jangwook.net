@@ -314,15 +314,32 @@ Requirements:
    - Save to src/assets/blog/[slug]-hero.[ext]
    - Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter
 
-4. Write complete blog post for each language:
+4. Write complete blog post for each language **IN PARALLEL**:
 
+   **CRITICAL - Parallel Execution**:
+   - Create THREE separate general-purpose agents (one per language)
+   - Delegate to all three agents **IN A SINGLE MESSAGE** with multiple Task tool calls
+   - Each agent receives the same research findings, outline, and metadata
+   - Each agent writes independently for their target language
+   - All agents execute simultaneously for maximum efficiency
+
+   **Agent Delegation Pattern**:
+   ```
+   Single message with 3 Task tool calls:
+   - Task 1: Korean writing agent
+   - Task 2: Japanese writing agent
+   - Task 3: English writing agent
+   ```
+
+   **Each language agent must**:
    - Follow Astro Content Collections schema
    - Include frontmatter (title, description, pubDate, heroImage, tags)
    - **Use the calculated pubDate from step 1**
    - Use technical blog tone and style
    - Include code examples where appropriate
    - Add proper headings and structure
-   - Create separate agents for three languages and delegate to them to write posts in parallel
+   - Apply language-specific SEO optimization
+   - Save to correct language folder upon completion
 
 5. Save files to language-specific folders:
 
