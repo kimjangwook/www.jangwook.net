@@ -1175,23 +1175,55 @@
       ],
       "generatedAt": "2025-10-19T13:50:00.000Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "playwright-ai-testing": {
+      "related": [
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.92,
+          "reason": {
+            "ko": "Playwright MCP와 Chrome DevTools를 활용한 웹 자동화의 핵심 개념을 다루는 필수 선행 학습 콘텐츠입니다. 브라우저 제어, 성능 측정, UI 인터랙션의 기초를 이해하면 AI 기반 E2E 테스트 작성에 더 깊이 있게 접근할 수 있습니다.",
+            "ja": "Playwright MCPとChrome DevToolsを活用したウェブ自動化の核心概念を扱う必須の事前学習コンテンツです。ブラウザ制御、パフォーマンス測定、UIインタラクションの基礎を理解すれば、AI基盤のE2Eテスト作成により深くアプローチできます。",
+            "en": "Essential prerequisite content covering core concepts of web automation with Playwright MCP and Chrome DevTools. Understanding browser control, performance measurement, and UI interaction fundamentals enables deeper engagement with AI-powered E2E test creation."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "astro-scheduled-publishing",
+          "score": 0.85,
+          "reason": {
+            "ko": "GitHub Actions를 활용한 CI/CD 자동화의 실전 사례를 제공합니다. Playwright 테스트를 GitHub Actions에 통합할 때 필요한 워크플로우 설정, 자동 실행, 스케줄링 개념을 미리 익힐 수 있습니다.",
+            "ja": "GitHub Actionsを活用したCI/CD自動化の実践事例を提供します。PlaywrightテストをGitHub Actionsに統合する際に必要なワークフロー設定、自動実行、スケジューリング概念を事前に習得できます。",
+            "en": "Provides practical CI/CD automation examples using GitHub Actions. Learn workflow configuration, automatic execution, and scheduling concepts needed for integrating Playwright tests with GitHub Actions."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "chrome-devtools-mcp-performance",
+          "score": 0.84,
+          "reason": {
+            "ko": "Chrome DevTools MCP를 통한 성능 측정 자동화를 다룹니다. Playwright 테스트에서 Core Web Vitals, Lighthouse 스코어를 측정하고 성능 회귀를 감지하는 고급 테스트 전략으로 확장할 수 있습니다.",
+            "ja": "Chrome DevTools MCPを通じたパフォーマンス測定自動化を扱います。PlaywrightテストでCore Web Vitals、Lighthouseスコアを測定し、パフォーマンスリグレッションを検出する高度なテスト戦略に拡張できます。",
+            "en": "Covers performance measurement automation via Chrome DevTools MCP. Expand Playwright tests to advanced strategies measuring Core Web Vitals, Lighthouse scores, and detecting performance regressions."
+          },
+          "type": "next-step"
+        }
+      ],
+      "generatedAt": "2025-10-21T13:37:44.886Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
-    "totalPosts": 21,
-    "lastGenerated": "2025-10-19T13:50:00.000Z",
+    "totalPosts": 22,
+    "lastGenerated": "2025-10-21T13:37:44.887Z",
     "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
-    "temporalStrategy": "cutoff = max(sourcePost.pubDate, commandExecutionDate)",
-    "commandExecutionDate": "2025-10-15",
-    "scoringWeights": {
-      "topic": 0.4,
-      "techStack": 0.25,
-      "difficulty": 0.15,
-      "purpose": 0.1,
-      "complementary": 0.1
-    },
-    "generationNotes": "All recommendations respect temporal constraints. Posts published after 2025-10-15 have smaller candidate pools as expected."
+    "generation": {
+      "processedPosts": 1,
+      "skippedPosts": 21,
+      "averageRecommendations": 3,
+      "totalDuration": "8s"
+    }
   }
 }

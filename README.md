@@ -43,12 +43,16 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-10-24
-**총 포스트 수**: 21개 (한국어 기준)
+**최신 포스트 날짜**: 2025-10-25
+**총 포스트 수**: 22개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **SSR 방법론으로 블로그 재방문 의향 분석하기** (2025-10-24)
+1. **Playwright + AI: 자동화된 E2E 테스트 작성하기** (2025-10-25)
+   - Playwright와 AI Codegen을 활용한 E2E 테스트 자동화. TypeScript 기반 실습, GitHub Actions 통합, 시각적 회귀 테스트까지 실무에서 바로 적용 가능한 완벽 가이드
+   - **핵심 내용**: Playwright 핵심 개념 (Auto-wait, Multi-browser, Network Interception), AI 테스트 생성 (Codegen, MCP 통합), 실전 구현 가이드 (프로젝트 초기화, 설정 최적화, POM 패턴), 25+ TypeScript 코드 예제 (로그인, E-commerce, 파일 업로드, 드래그앤드롭, 무한 스크롤, WebSocket), GitHub Actions CI/CD 완전 자동화, 시각적 회귀 테스트 (스크린샷 비교, Percy 통합), 베스트 프랙티스 (Selector 전략, Async/Await, Test Isolation), 실무 시나리오 및 트러블슈팅
+
+2. **SSR 방법론으로 블로그 재방문 의향 분석하기** (2025-10-24)
    - LLM 기반 Semantic Similarity Rating으로 225개 평가를 수행한 실험 결과와 통계 분석. ICC 0.83의 높은 신뢰도 검증 및 시각화 포함
    - **핵심 내용**: SSR 방법론 소개 (자유 응답 → 임베딩 → 코사인 유사도 → Softmax → 평점), 15 personas × 5 contents × 3 repetitions 실험 설계, OpenAI API 구현 (gpt-4o-mini + text-embedding-3-small), 평균 평점 3.078/5.0 (97.3%가 4점), Claude Code Best Practices 1위 (3.086), Test-Retest 신뢰도 분석 (ICC 0.833 = Good), 4가지 시각화 (히트맵, 분포, 박스플롯, 상관행렬), 비용 효율성 (평가당 $0.009, 95% 절감), 주요 인사이트 및 콘텐츠 전략 제안
 
@@ -504,6 +508,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-10-23 (AI가 소비자 행동을 예측하는 새로운 방법 발행: /write-post)
+**Last Updated**: 2025-10-25 (Playwright + AI 테스트 포스트 발행: /write-post)
 
 **Built with** ❤️ **using Astro & Claude Code**
