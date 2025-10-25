@@ -681,15 +681,46 @@
       },
       "contentHash": "074e71b25bf0fdc8",
       "generatedAt": "2025-10-21T13:36:14.676Z"
+    },
+    "langgraph-multi-agent": {
+      "slug": "langgraph-multi-agent",
+      "language": "ko",
+      "pubDate": "2025-10-26",
+      "title": "LangGraph 멀티 에이전트 시스템 완전 가이드",
+      "summary": "프로덕션 환경에서 LangGraph로 확장 가능한 멀티 에이전트 시스템 구축. 그래프 기반 아키텍처, 상태 관리, 4가지 협업 패턴(수퍼바이저/계층/네트워크/스웜), 실전 Python 코드, 프로덕션 배포 가이드까지 완전 정복",
+      "mainTopics": [
+        "LangGraph 그래프 아키텍처",
+        "멀티 에이전트 협업 패턴",
+        "상태 관리와 체크포인팅",
+        "프로덕션 배포 전략",
+        "CrewAI/AutoGen 비교 분석"
+      ],
+      "techStack": [
+        "LangGraph",
+        "LangChain",
+        "Python",
+        "OpenAI GPT-4",
+        "PostgreSQL"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.85,
+        "web-development": 0.3,
+        "ai-ml": 0.95,
+        "devops": 0.6,
+        "architecture": 0.9
+      },
+      "contentHash": "b59663e7ff0e021c",
+      "generatedAt": "2025-10-25T00:00:00.000Z"
     }
   },
   "version": "1.0",
-  "lastUpdated": "2025-10-21T13:36:14.677Z",
+  "lastUpdated": "2025-10-24T23:07:59.023Z",
   "generation": {
-    "totalPosts": 22,
+    "totalPosts": 23,
     "processedPosts": 1,
-    "skippedPosts": 21,
-    "totalDuration": "8s",
-    "averageTimePerPost": "8s"
+    "skippedPosts": 22,
+    "totalDuration": "N/A",
+    "averageTimePerPost": "N/A"
   }
 }

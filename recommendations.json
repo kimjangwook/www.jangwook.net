@@ -1211,19 +1211,105 @@
       ],
       "generatedAt": "2025-10-21T13:37:44.886Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "langgraph-multi-agent": {
+      "related": [
+        {
+          "slug": "ai-agent-collaboration-patterns",
+          "score": 0.93,
+          "reason": {
+            "ko": "두 글 모두 멀티 에이전트 시스템의 핵심 개념과 협업 패턴을 다룹니다. AI 에이전트 협업 패턴은 이론적 기초를 제공하며, LangGraph는 이를 프로덕션 환경에서 구현하는 구체적인 프레임워크와 코드를 제시합니다.",
+            "ja": "両記事ともマルチエージェントシステムの核心概念と協働パターンを扱います。AIエージェント協働パターンは理論的基礎を提供し、LangGraphはこれをプロダクション環境で実装する具体的なフレームワークとコードを提示しています。",
+            "en": "Both posts cover core concepts and collaboration patterns of multi-agent systems. AI Agent Collaboration Patterns provides theoretical foundations, while LangGraph presents concrete frameworks and code for production implementation."
+          },
+          "type": "prerequisite",
+          "dimensions": {
+            "topic": 0.98,
+            "techStack": 0.72,
+            "purpose": 0.92,
+            "complementary": 0.95
+          }
+        },
+        {
+          "slug": "openai-agentkit-tutorial-part2",
+          "score": 0.88,
+          "reason": {
+            "ko": "멀티 에이전트 시스템의 프로덕션 배포와 고급 패턴을 다룹니다. OpenAI AgentKit과 LangGraph는 서로 다른 접근 방식이지만, 복잡한 워크플로우 구성, 에러 핸들링, 성능 최적화라는 공통 과제를 해결합니다.",
+            "ja": "マルチエージェントシステムのプロダクション配備と高度なパターンを扱います。OpenAI AgentKitとLangGraphは異なるアプローチですが、複雑なワークフロー構成、エラーハンドリング、パフォーマンス最適化という共通課題を解決します。",
+            "en": "Covers production deployment and advanced patterns for multi-agent systems. While OpenAI AgentKit and LangGraph differ in approach, they address common challenges: complex workflow composition, error handling, and performance optimization."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.92,
+            "techStack": 0.78,
+            "purpose": 0.85,
+            "complementary": 0.88
+          }
+        },
+        {
+          "slug": "self-healing-ai-systems",
+          "score": 0.84,
+          "reason": {
+            "ko": "프로덕션 환경의 AI 시스템 안정성을 다룹니다. LangGraph의 상태 관리와 체크포인팅 기능은 자가 치유 시스템 구축의 핵심 요소이며, 멀티 에이전트 시스템의 복원력을 높이는 데 필수적입니다.",
+            "ja": "プロダクション環境のAIシステム安定性を扱います。LangGraphの状態管理とチェックポイント機能は自己修復システム構築の核心要素であり、マルチエージェントシステムの復元力を高めるのに不可欠です。",
+            "en": "Addresses AI system stability in production environments. LangGraph's state management and checkpointing are core elements for building self-healing systems, essential for enhancing multi-agent system resilience."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0.82,
+            "techStack": 0.68,
+            "purpose": 0.88,
+            "complementary": 0.92
+          }
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.76,
+          "reason": {
+            "ko": "AI 시대의 개발 방법론과 시스템 설계 원칙을 다룹니다. LangGraph의 그래프 기반 아키텍처는 명세 주도 개발의 시각적 표현이며, 복잡한 멀티 에이전트 워크플로우를 체계적으로 설계하는 데 도움이 됩니다.",
+            "ja": "AI時代の開発方法論とシステム設計原則を扱います。LangGraphのグラフベースアーキテクチャは仕様駆動開発の視覚的表現であり、複雑なマルチエージェントワークフローを体系的に設計するのに役立ちます。",
+            "en": "Covers AI-era development methodology and system design principles. LangGraph's graph-based architecture is a visual representation of specification-driven development, helping systematically design complex multi-agent workflows."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0.68,
+            "techStack": 0.64,
+            "purpose": 0.82,
+            "complementary": 0.88
+          }
+        },
+        {
+          "slug": "openai-agentkit-tutorial-part1",
+          "score": 0.71,
+          "reason": {
+            "ko": "에이전트 개발의 기초 개념과 환경 설정을 다룹니다. LangGraph를 학습하기 전 OpenAI AgentKit의 기본 개념을 이해하면, 서로 다른 프레임워크의 장단점을 비교하고 프로젝트에 맞는 도구를 선택할 수 있습니다.",
+            "ja": "エージェント開発の基礎概念と環境設定を扱います。LangGraph学習前にOpenAI AgentKitの基本概念を理解すれば、異なるフレームワークの長所短所を比較してプロジェクトに適したツールを選択できます。",
+            "en": "Covers foundational agent development concepts and setup. Understanding OpenAI AgentKit basics before LangGraph allows comparing different frameworks' pros and cons to choose the right tool for your project."
+          },
+          "type": "related-concept",
+          "dimensions": {
+            "topic": 0.78,
+            "techStack": 0.72,
+            "purpose": 0.65,
+            "complementary": 0.68
+          }
+        }
+      ],
+      "generatedAt": "2025-10-24T23:10:56.512Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
-    "totalPosts": 22,
-    "lastGenerated": "2025-10-21T13:37:44.887Z",
+    "totalPosts": 23,
+    "lastGenerated": "2025-10-24T23:10:56.513Z",
     "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
     "generation": {
       "processedPosts": 1,
-      "skippedPosts": 21,
-      "averageRecommendations": 3,
-      "totalDuration": "8s"
+      "skippedPosts": 22,
+      "averageRecommendations": 5,
+      "totalDuration": "~5s"
     }
   }
 }
