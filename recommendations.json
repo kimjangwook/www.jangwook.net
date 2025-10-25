@@ -1077,7 +1077,7 @@
           "type": "similar-technique"
         },
         {
-          "slug": "openai-agentkit-part2",
+          "slug": "openai-agentkit-tutorial-part2",
           "score": 0.65,
           "reason": {
             "ko": "SSR 방법론의 엔터프라이즈 적용을 고려한다면 AgentKit의 프로덕션 배포 패턴이 유용합니다. 멀티 에이전트 시스템으로 합성 소비자 생성, 임베딩 계산, 결과 분석을 분업화할 수 있으며, Evals를 통한 품질 모니터링이 가능합니다.",
@@ -1097,7 +1097,7 @@
           "type": "complementary-concept"
         },
         {
-          "slug": "claude-skills-guide",
+          "slug": "claude-skills-implementation-guide",
           "score": 0.58,
           "reason": {
             "ko": "SSR 시스템을 Claude Skills로 구조화하면 효율적입니다. Consumer Generator, Embedding Calculator, Similarity Analyzer를 개별 스킬로 분리하여 Progressive Disclosure로 토큰을 44% 절감할 수 있습니다.",
@@ -1297,6 +1297,92 @@
       ],
       "generatedAt": "2025-10-24T23:10:56.512Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "jules-autocoding": {
+      "related": [
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.89,
+          "reason": {
+            "ko": "AI 코딩 에이전트의 실전 활용 방법을 다루며, Jules는 Claude Code와 함께 비교 분석할 수 있는 대표적인 자율 코딩 도구입니다.",
+            "ja": "AIコーディングエージェントの実践活用方法を扱い、JulesはClaude Codeと共に比較分析できる代表的な自律コーディングツールです。",
+            "en": "Covers practical AI coding agent usage, with Jules being a representative autonomous coding tool that can be compared with Claude Code."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.92,
+            "techStack": 0.85,
+            "purpose": 0.88,
+            "complementary": 0.9
+          }
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.84,
+          "reason": {
+            "ko": "AI 에이전트가 명세서를 기반으로 자율적으로 코드를 생성하는 방법론을 다루며, Jules의 GitHub 이슈 해결 워크플로우와 직접 연결됩니다.",
+            "ja": "AIエージェントが仕様書を基に自律的にコードを生成する方法論を扱い、JulesのGitHub Issue解決ワークフローと直接繋がります。",
+            "en": "Covers AI agent methodology for autonomous code generation from specs, directly connecting to Jules' GitHub issue resolution workflow."
+          },
+          "type": "prerequisite",
+          "dimensions": {
+            "topic": 0.88,
+            "techStack": 0.75,
+            "purpose": 0.82,
+            "complementary": 0.85
+          }
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.81,
+          "reason": {
+            "ko": "LLM 기반 자동화 시스템 구축을 다루며, Jules의 Gemini 2.5 Pro 활용과 Claude의 콘텐츠 자동화를 비교할 수 있습니다.",
+            "ja": "LLMベースの自動化システム構築を扱い、JulesのGemini 2.5 Pro活用とClaudeのコンテンツ自動化を比較できます。",
+            "en": "Covers LLM-based automation systems, allowing comparison between Jules' Gemini 2.5 Pro usage and Claude's content automation."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.85,
+            "techStack": 0.78,
+            "purpose": 0.8,
+            "complementary": 0.82
+          }
+        },
+        {
+          "slug": "ai-agent-collaboration-patterns",
+          "score": 0.78,
+          "reason": {
+            "ko": "멀티 에이전트 시스템과 협업 패턴을 다루며, Jules의 비동기 백그라운드 작업을 더 큰 에이전트 아키텍처로 확장하는 방법을 제시합니다.",
+            "ja": "マルチエージェントシステムと協働パターンを扱い、Julesの非同期バックグラウンド作業をより大きなエージェントアーキテクチャに拡張する方法を提示します。",
+            "en": "Covers multi-agent systems and collaboration patterns, showing how to scale Jules' async background work into larger agent architectures."
+          },
+          "type": "next-step",
+          "dimensions": {
+            "topic": 0.8,
+            "techStack": 0.72,
+            "purpose": 0.75,
+            "complementary": 0.82
+          }
+        },
+        {
+          "slug": "astro-scheduled-publishing",
+          "score": 0.72,
+          "reason": {
+            "ko": "GitHub Actions를 활용한 자동화 워크플로우를 다루며, Jules의 GitHub 네이티브 통합과 CI/CD 자동화 패턴이 연결됩니다.",
+            "ja": "GitHub Actionsを活用した自動化ワークフローを扱い、JulesのGitHubネイティブ統合とCI/CD自動化パターンが繋がります。",
+            "en": "Covers automation workflows using GitHub Actions, connecting with Jules' GitHub native integration and CI/CD automation patterns."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0.75,
+            "techStack": 0.7,
+            "purpose": 0.72,
+            "complementary": 0.7
+          }
+        }
+      ],
+      "generatedAt": "2025-10-25T00:26:21.433Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
@@ -1311,5 +1397,7 @@
       "averageRecommendations": 5,
       "totalDuration": "~5s"
     }
-  }
+  },
+  "totalPosts": 24,
+  "lastGenerated": "2025-10-25T00:26:21.434Z"
 }

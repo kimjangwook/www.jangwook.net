@@ -43,12 +43,16 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-10-26
-**총 포스트 수**: 23개 (한국어 기준)
+**최신 포스트 날짜**: 2025-10-27
+**총 포스트 수**: 24개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **LangGraph 멀티 에이전트 시스템 완전 가이드** (2025-10-26)
+1. **Jules를 이용한 오토코딩: Google의 자율 AI 코딩 에이전트 완벽 가이드** (2025-10-27)
+   - Google의 혁신적인 AI 코딩 에이전트 Jules로 GitHub 이슈를 자동으로 해결하고 PR을 생성하는 방법을 알아봅니다
+   - **핵심 내용**: Jules 소개 (Gemini 2.5 Pro 기반 비동기 자율 에이전트), 5가지 핵심 기능 (GitHub 통합, VM 기반 실행, 투명한 계획, 자동 PR 생성, 전체 코드베이스 이해), 7단계 워크플로우 (Mermaid 다이어그램), 3가지 통합 방법 (Web, CLI, API), 4가지 실전 활용 사례 (버그 수정, 테스트 커버리지, 의존성 업데이트, 리팩토링), AI 코딩 도구 비교 (Jules vs Claude Code vs Copilot vs Cursor), 가격 정책 (Free 15 tasks, Pro $19.99, Ultra $124.99), 제한사항 및 베스트 프랙티스
+
+2. **LangGraph 멀티 에이전트 시스템 완전 가이드** (2025-10-26)
 
    - 프로덕션 환경에서 입증된 LangGraph로 구축하는 엔터프라이즈급 멀티 에이전트 AI 시스템. LinkedIn, Uber, Replit이 실전 배포한 그래프 기반 오케스트레이션 프레임워크
    - **핵심 내용**: 그래프 기반 아키텍처 (노드와 엣지), 상태 관리 시스템 (Reducer, Checkpointing), 4가지 멀티 에이전트 패턴 (Supervisor, Hierarchical, Network, Swarm), 실전 Python 코드 예제 2개 (기본 시스템 + 계층적 시스템), 프로덕션 배포 가이드 (Persistence, Error Handling, Monitoring), CrewAI/AutoGen 프레임워크 비교, LinkedIn (Text-to-SQL), Uber (Code Generation), Replit (AI Copilot) 사례, LangGraph Platform GA, v1.0 예정 (2025년 10월)
@@ -541,6 +545,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-10-25 (LangGraph 멀티 에이전트 시스템 포스트 발행: /write-post)
+**Last Updated**: 2025-10-27 (Jules 오토코딩 포스트 발행: /write-post)
 
 **Built with** ❤️ **using Astro & Claude Code**

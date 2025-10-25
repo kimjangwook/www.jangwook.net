@@ -712,14 +712,45 @@
       },
       "contentHash": "b59663e7ff0e021c",
       "generatedAt": "2025-10-25T00:00:00.000Z"
+    },
+    "jules-autocoding": {
+      "slug": "jules-autocoding",
+      "language": "ko",
+      "pubDate": "2025-10-27",
+      "title": "Jules를 이용한 오토코딩: Google의 자율 AI 코딩 에이전트 완벽 가이드",
+      "summary": "Google Jules로 GitHub 이슈를 자율적으로 해결하는 완벽 가이드. Gemini 2.5 Pro 기반 비동기 워크플로우, CLI/API 통합, 실전 활용 사례, 다른 AI 도구와의 비교 분석까지 모든 것을 다룹니다",
+      "mainTopics": [
+        "Jules AI 코딩 에이전트",
+        "GitHub 네이티브 통합",
+        "Gemini 2.5 Pro 자율 실행",
+        "비동기 백그라운드 작업",
+        "AI 도구 비교 분석"
+      ],
+      "techStack": [
+        "Jules",
+        "Gemini 2.5 Pro",
+        "GitHub API",
+        "Google Cloud VM",
+        "TypeScript"
+      ],
+      "difficulty": 3,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.4,
+        "ai-ml": 0.9,
+        "devops": 0.6,
+        "architecture": 0.7
+      },
+      "contentHash": "e5fa478fbb067355",
+      "generatedAt": "2025-10-25T00:23:49.604Z"
     }
   },
   "version": "1.0",
-  "lastUpdated": "2025-10-24T23:07:59.023Z",
+  "lastUpdated": "2025-10-25T00:23:49.605Z",
   "generation": {
-    "totalPosts": 23,
+    "totalPosts": 24,
     "processedPosts": 1,
-    "skippedPosts": 22,
+    "skippedPosts": 23,
     "totalDuration": "N/A",
     "averageTimePerPost": "N/A"
   }
