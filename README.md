@@ -43,12 +43,16 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-10-27
-**총 포스트 수**: 24개 (한국어 기준)
+**최신 포스트 날짜**: 2025-10-28
+**총 포스트 수**: 25개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Jules를 이용한 오토코딩: Google의 자율 AI 코딩 에이전트 완벽 가이드** (2025-10-27)
+1. **BigQuery MCP 서버 구축 가이드: Dataset Prefix 필터링으로 효율적인 스키마 분석** (2025-10-28)
+   - TypeScript로 구축하는 프로덕션급 BigQuery MCP 서버. Dataset prefix 필터링으로 조직화된 데이터 접근, AI 에이전트 기반 스키마 분석 및 쿼리 생성 자동화
+   - **핵심 내용**: MCP 서버 아키텍처 (Hosts/Servers/Protocol), BigQuery Node.js 클라이언트 연동 (서비스 계정 인증, API 설정), Dataset Prefix 필터링 구현 (클라이언트 사이드 필터링, 와일드카드 패턴), 4개 MCP 도구 설계 (list_datasets, list_tables, get_schema, execute_query), 완전한 TypeScript 구현 (300+ 줄 프로덕션 코드), 보안 최적화 (읽기 전용 쿼리, 액세스 제어, 입력 검증, 레이트 리미팅), 성능 최적화 (캐싱 전략, 병렬 처리, 페이지네이션), Claude Desktop 통합 설정, 실전 테스트 시나리오
+
+2. **Jules를 이용한 오토코딩: Google의 자율 AI 코딩 에이전트 완벽 가이드** (2025-10-27)
    - Google의 혁신적인 AI 코딩 에이전트 Jules로 GitHub 이슈를 자동으로 해결하고 PR을 생성하는 방법을 알아봅니다
    - **핵심 내용**: Jules 소개 (Gemini 2.5 Pro 기반 비동기 자율 에이전트), 5가지 핵심 기능 (GitHub 통합, VM 기반 실행, 투명한 계획, 자동 PR 생성, 전체 코드베이스 이해), 7단계 워크플로우 (Mermaid 다이어그램), 3가지 통합 방법 (Web, CLI, API), 4가지 실전 활용 사례 (버그 수정, 테스트 커버리지, 의존성 업데이트, 리팩토링), AI 코딩 도구 비교 (Jules vs Claude Code vs Copilot vs Cursor), 가격 정책 (Free 15 tasks, Pro $19.99, Ultra $124.99), 제한사항 및 베스트 프랙티스
 
@@ -545,6 +549,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-10-27 (Jules 오토코딩 포스트 발행: /write-post)
+**Last Updated**: 2025-10-28 (BigQuery MCP 서버 구축 가이드 포스트 발행: /write-post)
 
 **Built with** ❤️ **using Astro & Claude Code**

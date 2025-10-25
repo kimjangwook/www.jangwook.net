@@ -1216,86 +1216,91 @@
       "related": [
         {
           "slug": "ai-agent-collaboration-patterns",
-          "score": 0.93,
+          "score": 0.94,
           "reason": {
-            "ko": "두 글 모두 멀티 에이전트 시스템의 핵심 개념과 협업 패턴을 다룹니다. AI 에이전트 협업 패턴은 이론적 기초를 제공하며, LangGraph는 이를 프로덕션 환경에서 구현하는 구체적인 프레임워크와 코드를 제시합니다.",
-            "ja": "両記事ともマルチエージェントシステムの核心概念と協働パターンを扱います。AIエージェント協働パターンは理論的基礎を提供し、LangGraphはこれをプロダクション環境で実装する具体的なフレームワークとコードを提示しています。",
-            "en": "Both posts cover core concepts and collaboration patterns of multi-agent systems. AI Agent Collaboration Patterns provides theoretical foundations, while LangGraph presents concrete frameworks and code for production implementation."
+            "ko": "두 글 모두 멀티 에이전트 시스템의 협업 패턴, 오케스트레이션, 아키텍처 설계를 다루며, LangGraph의 실전 구현과 이론적 설계 패턴이 상호 보완적입니다.",
+            "ja": "両記事ともマルチエージェントシステムの協働パターン、オーケストレーション、アーキテクチャ設計を扱い、LangGraphの実践的実装と理論的設計パターンが相互補完的です。",
+            "en": "Both posts cover multi-agent system collaboration patterns, orchestration, and architectural design, with LangGraph's practical implementation complementing theoretical design patterns."
           },
           "type": "prerequisite",
           "dimensions": {
             "topic": 0.98,
-            "techStack": 0.72,
-            "purpose": 0.92,
+            "techStack": 0.85,
+            "category": 0.95,
+            "difficulty": 0.9,
             "complementary": 0.95
           }
         },
         {
-          "slug": "openai-agentkit-tutorial-part2",
-          "score": 0.88,
-          "reason": {
-            "ko": "멀티 에이전트 시스템의 프로덕션 배포와 고급 패턴을 다룹니다. OpenAI AgentKit과 LangGraph는 서로 다른 접근 방식이지만, 복잡한 워크플로우 구성, 에러 핸들링, 성능 최적화라는 공통 과제를 해결합니다.",
-            "ja": "マルチエージェントシステムのプロダクション配備と高度なパターンを扱います。OpenAI AgentKitとLangGraphは異なるアプローチですが、複雑なワークフロー構成、エラーハンドリング、パフォーマンス最適化という共通課題を解決します。",
-            "en": "Covers production deployment and advanced patterns for multi-agent systems. While OpenAI AgentKit and LangGraph differ in approach, they address common challenges: complex workflow composition, error handling, and performance optimization."
-          },
-          "type": "similar-topic",
-          "dimensions": {
-            "topic": 0.92,
-            "techStack": 0.78,
-            "purpose": 0.85,
-            "complementary": 0.88
-          }
-        },
-        {
           "slug": "self-healing-ai-systems",
-          "score": 0.84,
+          "score": 0.86,
           "reason": {
-            "ko": "프로덕션 환경의 AI 시스템 안정성을 다룹니다. LangGraph의 상태 관리와 체크포인팅 기능은 자가 치유 시스템 구축의 핵심 요소이며, 멀티 에이전트 시스템의 복원력을 높이는 데 필수적입니다.",
-            "ja": "プロダクション環境のAIシステム安定性を扱います。LangGraphの状態管理とチェックポイント機能は自己修復システム構築の核心要素であり、マルチエージェントシステムの復元力を高めるのに不可欠です。",
-            "en": "Addresses AI system stability in production environments. LangGraph's state management and checkpointing are core elements for building self-healing systems, essential for enhancing multi-agent system resilience."
+            "ko": "LangGraph의 체크포인팅과 상태 관리 메커니즘이 자가 치유 시스템의 오류 복구 전략과 직접적으로 연결되며, 프로덕션 환경의 탄력적 AI 시스템 구축에 필수적인 내용입니다.",
+            "ja": "LangGraphのチェックポイントと状態管理メカニズムが自己修復システムのエラー回復戦略と直接的に結びつき、本番環境の弾力的なAIシステム構築に不可欠な内容です。",
+            "en": "LangGraph's checkpointing and state management mechanisms directly connect to self-healing system error recovery strategies, essential for building resilient AI systems in production."
           },
-          "type": "complementary",
+          "type": "next-step",
           "dimensions": {
             "topic": 0.82,
-            "techStack": 0.68,
-            "purpose": 0.88,
+            "techStack": 0.8,
+            "category": 0.95,
+            "difficulty": 0.9,
             "complementary": 0.92
           }
         },
         {
           "slug": "specification-driven-development",
-          "score": 0.76,
+          "score": 0.78,
           "reason": {
-            "ko": "AI 시대의 개발 방법론과 시스템 설계 원칙을 다룹니다. LangGraph의 그래프 기반 아키텍처는 명세 주도 개발의 시각적 표현이며, 복잡한 멀티 에이전트 워크플로우를 체계적으로 설계하는 데 도움이 됩니다.",
-            "ja": "AI時代の開発方法論とシステム設計原則を扱います。LangGraphのグラフベースアーキテクチャは仕様駆動開発の視覚的表現であり、複雑なマルチエージェントワークフローを体系的に設計するのに役立ちます。",
-            "en": "Covers AI-era development methodology and system design principles. LangGraph's graph-based architecture is a visual representation of specification-driven development, helping systematically design complex multi-agent workflows."
+            "ko": "LangGraph 멀티 에이전트 시스템 구축 시 스펙 주도 개발 방법론을 적용하면 에이전트 간 인터페이스와 워크플로우를 명확히 정의할 수 있으며, AI 시대의 아키텍처 설계 패러다임을 공유합니다.",
+            "ja": "LangGraphマルチエージェントシステム構築時に仕様駆動開発手法を適用すると、エージェント間のインターフェースとワークフローを明確に定義でき、AI時代のアーキテクチャ設計パラダイムを共有します。",
+            "en": "Applying specification-driven development methodology when building LangGraph multi-agent systems enables clear definition of inter-agent interfaces and workflows, sharing the architectural design paradigm of the AI era."
           },
           "type": "complementary",
           "dimensions": {
-            "topic": 0.68,
-            "techStack": 0.64,
-            "purpose": 0.82,
-            "complementary": 0.88
+            "topic": 0.72,
+            "techStack": 0.75,
+            "category": 0.88,
+            "difficulty": 0.9,
+            "complementary": 0.85
           }
         },
         {
-          "slug": "openai-agentkit-tutorial-part1",
-          "score": 0.71,
+          "slug": "openai-agentkit-tutorial-part2",
+          "score": 0.74,
           "reason": {
-            "ko": "에이전트 개발의 기초 개념과 환경 설정을 다룹니다. LangGraph를 학습하기 전 OpenAI AgentKit의 기본 개념을 이해하면, 서로 다른 프레임워크의 장단점을 비교하고 프로젝트에 맞는 도구를 선택할 수 있습니다.",
-            "ja": "エージェント開発の基礎概念と環境設定を扱います。LangGraph学習前にOpenAI AgentKitの基本概念を理解すれば、異なるフレームワークの長所短所を比較してプロジェクトに適したツールを選択できます。",
-            "en": "Covers foundational agent development concepts and setup. Understanding OpenAI AgentKit basics before LangGraph allows comparing different frameworks' pros and cons to choose the right tool for your project."
+            "ko": "OpenAI AgentKit과 LangGraph는 멀티 에이전트 시스템 구축의 대안적 프레임워크로, 워크플로우 구성, 에러 핸들링, 프로덕션 배포 전략에서 공통 패턴과 차별점을 비교할 수 있습니다.",
+            "ja": "OpenAI AgentKitとLangGraphはマルチエージェントシステム構築の代替的フレームワークとして、ワークフロー構成、エラーハンドリング、本番デプロイ戦略で共通パターンと差別点を比較できます。",
+            "en": "OpenAI AgentKit and LangGraph serve as alternative frameworks for building multi-agent systems, enabling comparison of common patterns and differences in workflow composition, error handling, and production deployment strategies."
           },
-          "type": "related-concept",
+          "type": "similar-topic",
           "dimensions": {
-            "topic": 0.78,
-            "techStack": 0.72,
-            "purpose": 0.65,
+            "topic": 0.85,
+            "techStack": 0.7,
+            "category": 0.82,
+            "difficulty": 0.9,
             "complementary": 0.68
+          }
+        },
+        {
+          "slug": "metadata-based-recommendation-optimization",
+          "score": 0.68,
+          "reason": {
+            "ko": "LangGraph의 상태 관리와 메타데이터 기반 최적화는 멀티 에이전트 시스템의 성능 개선과 비용 절감에 직접 적용 가능하며, 효율적인 캐싱 전략과 인덱싱 기법을 공유합니다.",
+            "ja": "LangGraphの状態管理とメタデータベースの最適化は、マルチエージェントシステムのパフォーマンス改善とコスト削減に直接適用可能で、効率的なキャッシング戦略とインデックス技法を共有します。",
+            "en": "LangGraph's state management and metadata-based optimization are directly applicable to performance improvement and cost reduction in multi-agent systems, sharing efficient caching strategies and indexing techniques."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0.58,
+            "techStack": 0.65,
+            "category": 0.78,
+            "difficulty": 0.9,
+            "complementary": 0.75
           }
         }
       ],
-      "generatedAt": "2025-10-24T23:10:56.512Z",
+      "generatedAt": "2025-10-25T10:29:28.511Z",
       "evaluatedBy": "claude-sonnet-4.5"
     },
     "jules-autocoding": {
@@ -1386,18 +1391,18 @@
     }
   },
   "metadata": {
-    "totalPosts": 23,
-    "lastGenerated": "2025-10-24T23:10:56.513Z",
+    "totalPosts": 24,
+    "lastGenerated": "2025-10-25T10:29:28.511Z",
     "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
     "generation": {
       "processedPosts": 1,
-      "skippedPosts": 22,
+      "skippedPosts": 23,
       "averageRecommendations": 5,
       "totalDuration": "~5s"
     }
   },
   "totalPosts": 24,
-  "lastGenerated": "2025-10-25T00:26:21.434Z"
+  "lastGenerated": "2025-10-25T10:29:28.511Z"
 }
