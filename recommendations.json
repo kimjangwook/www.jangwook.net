@@ -1500,19 +1500,166 @@
       ],
       "generatedAt": "2025-10-29T04:10:14.562Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "llm-page-migration-standardization": {
+      "related": [
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.82,
+          "reason": {
+            "ko": "Playwright MCP를 활용한 웹 자동화 테스팅 기법이 페이지 마이그레이션의 테스트 자동화 단계와 직접 연관됩니다. 동일한 Playwright 기술 스택과 높은 자동화 수준을 공유합니다.",
+            "ja": "Playwright MCPを活用したWeb自動化テスト技法がページマイグレーションのテスト自動化段階と直接関連します。同じPlaywright技術スタックと高い自動化レベルを共有します。",
+            "en": "Web automation testing with Playwright MCP directly relates to the test automation phase of page migration. Shares the same Playwright tech stack and high automation levels."
+          },
+          "type": "related-stack",
+          "dimensions": {
+            "topic": 0.75,
+            "techStack": 0.9,
+            "category": 0.87,
+            "difficulty": 1,
+            "complementary": 0.75
+          }
+        },
+        {
+          "slug": "playwright-ai-testing",
+          "score": 0.8,
+          "reason": {
+            "ko": "Playwright 기반 E2E 테스트 자동화 기법이 웹 컴포넌트 마이그레이션의 종합 테스트 단계에 필수적입니다. AI 기반 코드 생성과 자동화 접근 방식이 유사합니다.",
+            "ja": "Playwright基盤E2Eテスト自動化技法がWebコンポーネントマイグレーションの総合テスト段階に必須です。AI基盤コード生成と自動化アプローチが類似しています。",
+            "en": "Playwright-based E2E test automation is essential for the comprehensive testing phase of web component migration. Similar AI-based code generation and automation approaches."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0.7,
+            "techStack": 0.85,
+            "category": 0.9,
+            "difficulty": 0.85,
+            "complementary": 0.8
+          }
+        },
+        {
+          "slug": "specification-driven-development",
+          "score": 0.76,
+          "reason": {
+            "ko": "스펙 주도 개발 방법론이 LLM 기반 마이그레이션의 명세 작성과 자동 구현 단계에 적용되는 핵심 패러다임입니다. AI 코딩 아키텍처 관점이 일치합니다.",
+            "ja": "仕様駆動開発方法論がLLM基盤マイグレーションの仕様書作成と自動実装段階に適用される核心パラダイムです。AIコーディングアーキテクチャの観点が一致します。",
+            "en": "Specification-driven development methodology is the core paradigm applied to the specification writing and auto-implementation phases of LLM-based migration. Aligned AI coding architecture perspectives."
+          },
+          "type": "prerequisite",
+          "dimensions": {
+            "topic": 0.8,
+            "techStack": 0.65,
+            "category": 0.85,
+            "difficulty": 1,
+            "complementary": 0.7
+          }
+        },
+        {
+          "slug": "llm-blog-automation",
+          "score": 0.73,
+          "reason": {
+            "ko": "LLM 기반 콘텐츠 자동화 경험이 페이지 마이그레이션의 콘텐츠 변환 단계에 활용됩니다. Claude Code와 Astro 기술 스택을 공유하며 자동화 수준이 유사합니다.",
+            "ja": "LLM基盤コンテンツ自動化経験がページマイグレーションのコンテンツ変換段階に活用されます。Claude CodeとAstro技術スタックを共有し、自動化レベルが類似しています。",
+            "en": "LLM-based content automation experience is utilized in the content transformation phase of page migration. Shares Claude Code and Astro tech stack with similar automation levels."
+          },
+          "type": "similar-topic",
+          "dimensions": {
+            "topic": 0.85,
+            "techStack": 0.75,
+            "category": 0.82,
+            "difficulty": 0.85,
+            "complementary": 0.55
+          }
+        },
+        {
+          "slug": "claude-code-hooks-workflow",
+          "score": 0.71,
+          "reason": {
+            "ko": "Hook 기반 워크플로우 자동화가 마이그레이션 프로세스의 코드 품질 보장과 CI/CD 통합 단계에 적용됩니다. 높은 자동화와 DevOps 수준을 공유합니다.",
+            "ja": "Hookベースワークフロー自動化がマイグレーションプロセスのコード品質保証とCI/CD統合段階に適用されます。高い自動化とDevOpsレベルを共有します。",
+            "en": "Hook-based workflow automation applies to the code quality assurance and CI/CD integration phases of the migration process. Shares high automation and DevOps levels."
+          },
+          "type": "next-step",
+          "dimensions": {
+            "topic": 0.65,
+            "techStack": 0.7,
+            "category": 0.87,
+            "difficulty": 1,
+            "complementary": 0.65
+          }
+        }
+      ],
+      "generatedAt": "2025-10-29T08:35:17.416Z",
+      "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "claude-code-parallel-testing": {
+      "related": [
+        {
+          "slug": "llm-page-migration-standardization",
+          "score": 0.94,
+          "reason": {
+            "ko": "동일한 웹페이지 마이그레이션 프로젝트의 선행 포스트로, Playwright 자동화 테스팅과 웹 컴포넌트 아키텍처를 다룹니다. 본 포스트에서 구현한 병렬 테스트 시스템의 배경과 전체 마이그레이션 워크플로우를 이해하는 데 필수적이며, Claude Code + Playwright + axe-core 기술 스택이 완벽히 일치합니다. 종합 테스트 자동화 주제에서 '전체 워크플로우(선행) → 병렬 테스트 최적화(본 포스트)'의 자연스러운 학습 경로를 제공합니다.",
+            "ja": "同じウェブページ移行プロジェクトの前編として、Playwright自動テストとWebコンポーネントアーキテクチャを扱います。本記事で実装した並列テストシステムの背景と全体的な移行ワークフローを理解するために必須であり、Claude Code + Playwright + axe-coreの技術スタックが完全に一致します。包括的なテスト自動化というトピックで「全体ワークフロー(前編) → 並列テスト最適化(本記事)」という自然な学習パスを提供します。",
+            "en": "As the prerequisite post from the same webpage migration project, it covers Playwright automated testing and web component architecture. Essential for understanding the background and overall migration workflow of the parallel testing system implemented in this post, with perfect tech stack alignment (Claude Code + Playwright + axe-core). Provides a natural learning path in comprehensive test automation: 'Complete Workflow (prerequisite) → Parallel Test Optimization (this post)'."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "playwright-ai-testing",
+          "score": 0.88,
+          "reason": {
+            "ko": "Playwright + AI 기반 E2E 테스트 자동화의 기초를 다루는 포스트로, 본 포스트에서 구현한 병렬 테스트의 개별 테스트 작성 방법을 상세히 설명합니다. Auto-waiting 메커니즘, GitHub Actions CI/CD 통합, 시각적 회귀 테스트 등 본 포스트의 5가지 테스트 카테고리 중 E2E와 Performance 테스트의 기반 지식을 제공합니다. Playwright + TypeScript + GitHub Actions 기술 스택 공유로 실무 적용 시너지가 높습니다.",
+            "ja": "Playwright + AI ベースのE2Eテスト自動化の基礎を扱う記事で、本記事で実装した並列テストの個別テスト作成方法を詳しく説明します。Auto-waitingメカニズム、GitHub Actions CI/CD統合、ビジュアルリグレッションテストなど、本記事の5つのテストカテゴリのうちE2EとPerformanceテストの基礎知識を提供します。Playwright + TypeScript + GitHub Actionsの技術スタック共有により、実務適用のシナジーが高いです。",
+            "en": "Covers the fundamentals of Playwright + AI-based E2E test automation, providing detailed guidance on writing individual tests used in this post's parallel testing system. Offers foundational knowledge for E2E and Performance testing among the 5 test categories, including auto-waiting mechanisms, GitHub Actions CI/CD integration, and visual regression testing. High practical synergy through shared tech stack (Playwright + TypeScript + GitHub Actions)."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "claude-code-hooks-workflow",
+          "score": 0.82,
+          "reason": {
+            "ko": "Claude Code Hook 시스템을 활용한 자동화 워크플로우 구축 가이드로, 본 포스트의 Task Tool 활용과 상호보완적입니다. Pre/Post Hook을 통한 코드 품질 검증(타입 체크, 린팅, 보안 스캔)과 GitHub Actions 통합이 병렬 테스트 자동화의 전체 CI/CD 파이프라인에 통합될 수 있습니다. 두 포스트 모두 Automation(0.95)과 DevOps(0.8-0.9) 점수가 높아 자동화 중심 워크플로우 설계에 관심 있는 독자에게 완벽한 조합입니다.",
+            "ja": "Claude Code Hookシステムを活用した自動化ワークフロー構築ガイドで、本記事のTask Tool活用と相互補完的です。Pre/Post Hookを通じたコード品質検証(タイプチェック、リンティング、セキュリティスキャン)とGitHub Actions統合が、並列テスト自動化の全体的なCI/CDパイプラインに統合できます。両記事ともAutomation(0.95)とDevOps(0.8-0.9)スコアが高く、自動化中心のワークフロー設計に興味のある読者に完璧な組み合わせです。",
+            "en": "A comprehensive guide on building automated workflows with Claude Code Hook system, complementary to this post's Task Tool usage. Pre/Post Hook-based code quality verification (type checking, linting, security scanning) and GitHub Actions integration can be seamlessly integrated into the parallel testing automation's CI/CD pipeline. Both posts score high in Automation (0.95) and DevOps (0.8-0.9), making them a perfect combination for readers interested in automation-centric workflow design."
+          },
+          "type": "complementary"
+        },
+        {
+          "slug": "claude-code-web-automation",
+          "score": 0.79,
+          "reason": {
+            "ko": "Claude Code와 Playwright MCP를 결합한 웹 자동화의 기초를 다루며, 본 포스트에서 구현한 병렬 테스트 시스템의 기반 기술을 설명합니다. 브라우저 테스트, 스크린샷 캡처, 성능 측정, UI 인터랙션 등 본 포스트의 Component/E2E/Performance 테스트 카테고리와 직접 연결됩니다. Claude Code + Playwright + Chrome DevTools 기술 스택의 공통점으로 자연스러운 학습 곡선을 제공하며, 난이도 3에서 4로의 점진적 발전 경로를 만듭니다.",
+            "ja": "Claude CodeとPlaywright MCPを組み合わせたWeb自動化の基礎を扱い、本記事で実装した並列テストシステムの基盤技術を説明します。ブラウザテスト、スクリーンショットキャプチャ、パフォーマンス測定、UIインタラクションなど、本記事のComponent/E2E/Performanceテストカテゴリと直接つながります。Claude Code + Playwright + Chrome DevToolsの技術スタックの共通点により自然な学習曲線を提供し、難易度3から4への段階的な発展パスを作ります。",
+            "en": "Covers the fundamentals of web automation combining Claude Code and Playwright MCP, explaining the foundational technologies of this post's parallel testing system. Directly connects to Component/E2E/Performance test categories through browser testing, screenshot capture, performance measurement, and UI interactions. Provides a natural learning curve through shared tech stack (Claude Code + Playwright + Chrome DevTools) and creates a progressive development path from difficulty 3 to 4."
+          },
+          "type": "prerequisite"
+        },
+        {
+          "slug": "astro-scheduled-publishing",
+          "score": 0.71,
+          "reason": {
+            "ko": "Astro 정적 사이트의 GitHub Actions 기반 자동화 시스템으로, 본 포스트의 CI/CD 파이프라인 통합과 유사한 워크플로우를 다룹니다. GitHub Actions 스케줄링, 자동 빌드/배포 패턴이 병렬 테스트 자동화의 CI 통합에 직접 적용 가능하며, 두 포스트 모두 Automation(0.85+)과 DevOps(0.8+) 점수가 높습니다. 테스트 자동화와 배포 자동화를 결합하여 완전한 DevOps 파이프라인을 구축하려는 독자에게 유용한 보완 자료입니다.",
+            "ja": "Astro静的サイトのGitHub Actionsベース自動化システムで、本記事のCI/CDパイプライン統合と類似したワークフローを扱います。GitHub Actionsスケジューリング、自動ビルド/デプロイパターンが並列テスト自動化のCI統合に直接適用可能で、両記事ともAutomation(0.85+)とDevOps(0.8+)スコアが高いです。テスト自動化とデプロイ自動化を組み合わせて完全なDevOpsパイプラインを構築したい読者に有用な補完資料です。",
+            "en": "An Astro static site's GitHub Actions-based automation system covering similar workflows to this post's CI/CD pipeline integration. GitHub Actions scheduling and auto build/deploy patterns are directly applicable to parallel test automation CI integration, with both posts scoring high in Automation (0.85+) and DevOps (0.8+). Useful complementary material for readers looking to build a complete DevOps pipeline combining test automation with deployment automation."
+          },
+          "type": "complementary"
+        }
+      ],
+      "generatedAt": "2025-10-29T10:24:33.959Z",
+      "evaluatedBy": "claude-sonnet-4.5"
     }
   },
   "metadata": {
-    "totalPosts": 26,
-    "lastGenerated": "2025-10-29T04:10:14.562Z",
+    "totalPosts": 28,
+    "lastGenerated": "2025-10-29T10:24:33.960Z",
     "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
     "generation": {
-      "processedPosts": 2,
-      "skippedPosts": 24,
-      "averageRecommendations": 5,
-      "totalDuration": "~30s"
+      "processedPosts": 1,
+      "skippedPosts": 27,
+      "averageRecommendations": "4.9",
+      "totalDuration": "~10s"
     }
   }
 }

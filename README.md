@@ -43,130 +43,140 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-10-29
-**총 포스트 수**: 26개 (한국어 기준)
+**최신 포스트 날짜**: 2025-10-31
+**총 포스트 수**: 28개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템** (2025-10-29)
+1. **Claude Code로 대규모 페이지 테스트 병렬 자동화하기** (2025-10-31)
+
+   - Claude Code 에이전트 병렬 실행과 Playwright로 웹페이지 마이그레이션 테스트를 5-8배 빠르게 수행하는 실전 구현 가이드
+   - **핵심 내용**: Claude Code 병렬 실행 아키텍처 (단일 메시지 다중 Task 호출), Playwright 병렬 설정 (fullyParallel + 8 workers), 5가지 테스트 카테고리 동시 실행 (Component, E2E, A11y, Performance, SEO), 실전 TypeScript 코드 예제 (Web Component/E2E/접근성/성능/SEO 테스트), CI/CD 통합 (GitHub Actions 매트릭스 전략), 성능 비교 (순차 41.7시간 → 병렬 5.2시간, 8배 개선), 자동 결과 분석 (data-analyst 에이전트), 베스트 프랙티스 (테스트 격리, 타임아웃 설정, 재시도 전략), 트러블슈팅 가이드
+
+2. **LLM을 활용한 웹페이지 이행 작업의 표준화** (2025-10-30)
+
+   - Claude Code와 웹 컴포넌트를 활용한 페이지 이행(migration) 자동화 완벽 가이드. HTML 추출부터 자동 테스트까지, 프로덕션 환경에서 검증된 표준화 프로세스
+   - **핵심 내용**: LLM 기반 마이그레이션 자동화 (Google, Airbnb, Zalando 사례), 웹 컴포넌트 파츠 라이브러리 (Lit vs Stencil 벤치마크), CMS 템플릿 시스템 통합 (Astro/Hugo/11ty), 종합 테스트 자동화 (Playwright, axe-core, Lighthouse, AEO), 실전 워크플로우 (HTML 추출, DOM 분석, LLM 변환, 점진적 배포), 프로젝트 규모별 기술 스택 추천, 2024-2025 최신 벤치마크 및 베스트 프랙티스
+
+2. **Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템** (2025-10-29)
 
    - Hook 기반 코딩 규칙 설정부터 CI/CD 통합까지, 실무에서 바로 적용 가능한 자동화 리뷰 프로세스 완전 가이드
    - **핵심 내용**: Hook 시스템 핵심 개념 (종료 코드 기반 제어, JSON 입력/출력), 다양한 Hook 타입 (pre/post-file-write, pre/post-commit), 코딩 규칙 자동 검증 (TypeScript 타입 체크, ESLint, Prettier), 종합 코드 리뷰 Hook (보안 스캔, 타입 체크, 린팅, 테스트 커버리지, 문서화), SOX/SOC2 감사 추적 자동화, PR 자동 검증 시스템, GitHub Actions/N8N/Telegram 통합, 3단계 점진적 도입 전략 (비파괴적 → 경고 → 블로킹), 조건부 실행 및 성능 최적화 (병렬 실행, 캐싱), SOLID 원칙 기반 Hook 설계, 엔터프라이즈급 통합 시스템 아키텍처
 
-2. **BigQuery MCP 서버 구축 가이드: Dataset Prefix 필터링으로 효율적인 스키마 분석** (2025-10-28)
+3. **BigQuery MCP 서버 구축 가이드: Dataset Prefix 필터링으로 효율적인 스키마 분석** (2025-10-28)
 
    - TypeScript로 구축하는 프로덕션급 BigQuery MCP 서버. Dataset prefix 필터링으로 조직화된 데이터 접근, AI 에이전트 기반 스키마 분석 및 쿼리 생성 자동화
    - **핵심 내용**: MCP 서버 아키텍처 (Hosts/Servers/Protocol), BigQuery Node.js 클라이언트 연동 (서비스 계정 인증, API 설정), Dataset Prefix 필터링 구현 (클라이언트 사이드 필터링, 와일드카드 패턴), 4개 MCP 도구 설계 (list_datasets, list_tables, get_schema, execute_query), 완전한 TypeScript 구현 (300+ 줄 프로덕션 코드), 보안 최적화 (읽기 전용 쿼리, 액세스 제어, 입력 검증, 레이트 리미팅), 성능 최적화 (캐싱 전략, 병렬 처리, 페이지네이션), Claude Desktop 통합 설정, 실전 테스트 시나리오
 
-3. **Jules를 이용한 오토코딩: Google의 자율 AI 코딩 에이전트 완벽 가이드** (2025-10-27)
+4. **Jules를 이용한 오토코딩: Google의 자율 AI 코딩 에이전트 완벽 가이드** (2025-10-27)
 
    - Google의 혁신적인 AI 코딩 에이전트 Jules로 GitHub 이슈를 자동으로 해결하고 PR을 생성하는 방법을 알아봅니다
    - **핵심 내용**: Jules 소개 (Gemini 2.5 Pro 기반 비동기 자율 에이전트), 5가지 핵심 기능 (GitHub 통합, VM 기반 실행, 투명한 계획, 자동 PR 생성, 전체 코드베이스 이해), 7단계 워크플로우 (Mermaid 다이어그램), 3가지 통합 방법 (Web, CLI, API), 4가지 실전 활용 사례 (버그 수정, 테스트 커버리지, 의존성 업데이트, 리팩토링), AI 코딩 도구 비교 (Jules vs Claude Code vs Copilot vs Cursor), 가격 정책 (Free 15 tasks, Pro $19.99, Ultra $124.99), 제한사항 및 베스트 프랙티스
 
-4. **LangGraph 멀티 에이전트 시스템 완전 가이드** (2025-10-26)
+5. **LangGraph 멀티 에이전트 시스템 완전 가이드** (2025-10-26)
 
    - 프로덕션 환경에서 입증된 LangGraph로 구축하는 엔터프라이즈급 멀티 에이전트 AI 시스템. LinkedIn, Uber, Replit이 실전 배포한 그래프 기반 오케스트레이션 프레임워크
    - **핵심 내용**: 그래프 기반 아키텍처 (노드와 엣지), 상태 관리 시스템 (Reducer, Checkpointing), 4가지 멀티 에이전트 패턴 (Supervisor, Hierarchical, Network, Swarm), 실전 Python 코드 예제 2개 (기본 시스템 + 계층적 시스템), 프로덕션 배포 가이드 (Persistence, Error Handling, Monitoring), CrewAI/AutoGen 프레임워크 비교, LinkedIn (Text-to-SQL), Uber (Code Generation), Replit (AI Copilot) 사례, LangGraph Platform GA, v1.0 예정 (2025년 10월)
 
-5. **Playwright + AI: 자동화된 E2E 테스트 작성하기** (2025-10-25)
+6. **Playwright + AI: 자동화된 E2E 테스트 작성하기** (2025-10-25)
 
    - Playwright와 AI Codegen을 활용한 E2E 테스트 자동화. TypeScript 기반 실습, GitHub Actions 통합, 시각적 회귀 테스트까지 실무에서 바로 적용 가능한 완벽 가이드
    - **핵심 내용**: Playwright 핵심 개념 (Auto-wait, Multi-browser, Network Interception), AI 테스트 생성 (Codegen, MCP 통합), 실전 구현 가이드 (프로젝트 초기화, 설정 최적화, POM 패턴), 25+ TypeScript 코드 예제 (로그인, E-commerce, 파일 업로드, 드래그앤드롭, 무한 스크롤, WebSocket), GitHub Actions CI/CD 완전 자동화, 시각적 회귀 테스트 (스크린샷 비교, Percy 통합), 베스트 프랙티스 (Selector 전략, Async/Await, Test Isolation), 실무 시나리오 및 트러블슈팅
 
-6. **SSR 방법론으로 블로그 재방문 의향 분석하기** (2025-10-24)
+7. **SSR 방법론으로 블로그 재방문 의향 분석하기** (2025-10-24)
 
    - LLM 기반 Semantic Similarity Rating으로 225개 평가를 수행한 실험 결과와 통계 분석. ICC 0.83의 높은 신뢰도 검증 및 시각화 포함
    - **핵심 내용**: SSR 방법론 소개 (자유 응답 → 임베딩 → 코사인 유사도 → Softmax → 평점), 15 personas × 5 contents × 3 repetitions 실험 설계, OpenAI API 구현 (gpt-4o-mini + text-embedding-3-small), 평균 평점 3.078/5.0 (97.3%가 4점), Claude Code Best Practices 1위 (3.086), Test-Retest 신뢰도 분석 (ICC 0.833 = Good), 4가지 시각화 (히트맵, 분포, 박스플롯, 상관행렬), 비용 효율성 (평가당 $0.009, 95% 절감), 주요 인사이트 및 콘텐츠 전략 제안
 
-7. **AI가 소비자 행동을 예측하는 새로운 방법: 의미론적 유사도 평가** (2025-10-23)
+8. **AI가 소비자 행동을 예측하는 새로운 방법: 의미론적 유사도 평가** (2025-10-23)
 
    - LLM을 활용한 합성 소비자 연구의 혁신, SSR 방법론으로 90% 신뢰도 달성
    - **핵심 내용**: 전통적 소비자 조사의 한계 (패널 편향, 높은 비용), SSR 3단계 프로세스 (텍스트 생성 → 의미론적 매핑 → 앵커 유사도 계산), 9,300개 실제 응답 대비 90% 신뢰도 & KS 유사도 >0.85, 정량적 평가 + 질적 피드백 동시 제공, 실전 활용 사례 (신제품 컨셉 테스트, A/B 테스트 시뮬레이션, 세그먼트 분석), 편향성 문제와 완화 방법, PyMC Labs 오픈소스 구현, 디지털 트윈 소비자 전망
 
-8. **Claude Skills 완벽 가이드: 프로젝트 적용기와 실전 노하우** (2025-10-22)
+9. **Claude Skills 완벽 가이드: 프로젝트 적용기와 실전 노하우** (2025-10-22)
 
    - Claude의 새로운 Agent Skills 기능 도입부터 실제 구현까지, 시행착오와 성과를 담은 실전 가이드. 폴더 기반 모듈화로 AI 에이전트를 전문화하는 방법
    - **핵심 내용**: Progressive Disclosure 3단계 정보 공개 시스템, SKILL.md 작성법, 실전 Blog Writing Skill 구현 (날짜 자동 계산, Frontmatter 검증, 슬러그 생성), 5가지 주요 시행착오 해결 (description 명확화, YAML 파싱, 스크립트 권한, 경로 오류, Skill 충돌), allowed-tools로 안전성 확보, 토큰 44% 절감 (18,000→10,000), 작업 시간 90% 단축, Git/Plugin을 통한 팀 공유 전략
 
-9. **OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴** (2025-10-21)
+10. **OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴** (2025-10-21)
 
    - 엔터프라이즈급 멀티 에이전트 시스템 설계부터 프로덕션 배포까지, AgentKit 실전 마스터 가이드
    - **핵심 내용**: 3개 엔터프라이즈 아키텍처 패턴 (계층형 Manager-Worker, 이벤트 주도형, Graph 기반 LangGraph), 커스텀 MCP 서버 개발 (Slack 통합 전체 구현), 프로덕션 모니터링 with Evals (A/B 테스트, 자동 프롬프트 최적화), 엔터프라이즈 보안 (멀티테넌시, GDPR 준수, 감사 로깅), 3개 실전 케이스 스터디 (SaaS 온보딩 70% 시간 단축, 데이터 파이프라인 자동 복구 82% MTTR 단축, DevOps 수동 리뷰 94% 감소), 성능 최적화 (병렬 처리, 스트리밍, 배치 처리)
 
-10. **OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기** (2025-10-20)
+11. **OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기** (2025-10-20)
 
    - 2025년 10월 발표된 OpenAI AgentKit의 핵심 개념부터 실전 튜토리얼까지, AI 에이전트 개발의 모든 것
    - **핵심 내용**: AgentKit 4대 컴포넌트 (Agent Builder, ChatKit, Connector Registry, Evals), Agents/Handoffs/Guardrails 핵심 원칙, 날씨 에이전트 및 멀티 에이전트 고객 지원 시스템 구축 튜토리얼, MCP 프로토콜 통합, 가드레일 설계 패턴, 세션 관리, 비용 최적화 전략, 프로덕션 배포 체크리스트, Clay 10배 성장 사례 등 실전 적용 사례
 
-11. **AI 에이전트에 성별과 페르소나를 부여하면 무슨 일이 일어날까?** (2025-10-19)
+12. **AI 에이전트에 성별과 페르소나를 부여하면 무슨 일이 일어날까?** (2025-10-19)
 
     - 120개 이상의 연구로 밝혀진 AI 에이전트 페르소나 설계의 심리학적 효과와 업무별 최적 설계 전략
     - **핵심 내용**: 성별 부여의 편향 강화 효과 (여성 레이블 +18% 착취, 남성 레이블 +23% 불신), 전문성 기반 페르소나의 우수성 (작업 완료율 15%↑), Salesforce 4대 설계 원칙, 5개 업무 유형별 최적 페르소나, 문화적 차이 (개인주의 vs 집단주의), A/B 테스트 프레임워크, 실전 Claude Code 에이전트 설계 가이드
 
-12. **블로그 첫 주 분석 리포트: 31명의 열정적인 얼리어답터와 함께 시작한 여정** (2025-10-14)
+13. **블로그 첫 주 분석 리포트: 31명의 열정적인 얼리어답터와 함께 시작한 여정** (2025-10-14)
 
     - 블로그 런칭 일주일 후 GA4 데이터 분석, 콘텐츠 성과, 개선 효과 - 투명하게 공유하는 블로그 성장 기록 (2025-10-07~10-14)
     - **핵심 내용**: 31명 방문자 분석, 6명 리피터의 22회 세션 (49%), 4.07 페이지/세션 (136% 달성), 4.3% 오가닉 검색 (SEO 위기), 5가지 핵심 인사이트, 4개 기술 개선 효과 측정, 11개 우선순위별 액션 플랜
 
-13. **추천 시스템 혁신: 78,000 토큰을 제로로 만든 메타데이터 최적화 여정** (2025-10-18)
+14. **추천 시스템 혁신: 78,000 토큰을 제로로 만든 메타데이터 최적화 여정** (2025-10-18)
 
     - 콘텐츠 추천 시스템의 토큰 사용량을 100% 제거하고 실행 시간을 99% 단축한 메타데이터 기반 알고리즘 최적화 사례
     - **핵심 내용**: 3단계 최적화 과정 (Content Preview 78,000 → Metadata LLM 28,600 → Algorithm 0 토큰), 다차원 유사도 계산 (Jaccard + Cosine), 한국어 전용 분석 최적화, 실전 적용 가이드 및 Break-even 분석, LLM vs 알고리즘 선택 프레임워크
 
-14. **자가 치유 AI 시스템: 인간 개입 없이 자동으로 버그를 수정하는 에이전트 구축하기** (2025-10-17)
+15. **자가 치유 AI 시스템: 인간 개입 없이 자동으로 버그를 수정하는 에이전트 구축하기** (2025-10-17)
 
     - GitHub, Google, Netflix가 실전 배포한 Self-Healing Systems 완벽 가이드. LangGraph로 에러 감지부터 자동 패치까지 전체 구현
     - **핵심 내용**: 5단계 자가 치유 사이클 (에러 감지 → 근본 원인 분석 → 패치 생성 → 테스트 → 배포), LangGraph 실전 구현, GitHub/Google/Netflix 사례, Agentless vs Multi-Agent 비교 (50.8% vs 33.6%), SWE-bench 2025 벤치마크, 보안 및 한계점
 
-15. **AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기** (2025-10-16)
+16. **AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기** (2025-10-16)
 
     - Architecture, Coding, Testing, Security, DevOps Agent를 오케스트레이션하여 프로덕션급 애플리케이션을 구축하는 실전 가이드
     - **핵심 내용**: 멀티 에이전트 시스템 아키텍처, 5개 전문 에이전트 역할, 오케스트레이션 패턴 (계층적/이벤트 주도/그래프 기반), MCP & A2A 통신 프로토콜, 에러 처리 및 복원력, 실전 Todo API 구축 예제
 
-16. **AI 시대의 사양 주도 개발: Markdown으로 코드를 작성하는 새로운 패러다임** (2025-10-15)
+17. **AI 시대의 사양 주도 개발: Markdown으로 코드를 작성하는 새로운 패러다임** (2025-10-15)
 
     - GitHub Spec Kit으로 구현하는 체계적인 AI 개발 방법론. Vibe Coding을 넘어 확장 가능하고 유지보수 가능한 프로덕션 코드 작성 가이드
     - **핵심 내용**: 사양 주도 개발 개념, GitHub Spec Kit 실전 활용, constitution.md 작성법, 전통적 개발 vs Vibe Coding 비교, 실전 예제 (인증 시스템)
 
-17. **정적 블로그의 예약 공개 구현법: Astro + GitHub Actions로 자동화하기** (2025-10-13)
+18. **정적 블로그의 예약 공개 구현법: Astro + GitHub Actions로 자동화하기** (2025-10-13)
 
     - Astro와 GitHub Pages를 사용한 정적 블로그에서 WordPress처럼 포스트 예약 공개를 구현하는 실전 가이드
     - **구현 완료**: pubDate 필터링 유틸리티, GitHub Actions 스케줄 워크플로우, JST 시간대 자동 변환
 
-18. **Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템** (2025-10-12)
+19. **Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템** (2025-10-12)
 
     - 단순 태그 매칭을 넘어 의미론적 이해로 정교한 추천을 제공하는 AI 기반 블로그 추천 시스템 구축 가이드
     - **구현 완료**: Claude LLM 기반 의미론적 추천 시스템, RelatedPosts 컴포넌트, 자동 추천 생성
 
-19. **Chrome DevTools MCP로 웹 성능 최적화 자동화하기** (2025-10-11)
+20. **Chrome DevTools MCP로 웹 성능 최적화 자동화하기** (2025-10-11)
 
     - AI 어시스턴트가 실제 브라우저 데이터로 성능을 측정하고 최적화하는 완벽 가이드
 
-20. **AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기** (2025-10-10)
+21. **AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기** (2025-10-10)
 
     - Notion API MCP 통합으로 구축하는 엔터프라이즈급 AI 자동화 시스템
 
-21. **AI를 활용한 반기별 발표 자료 작성 자동화** (2025-10-09)
+22. **AI를 활용한 반기별 발표 자료 작성 자동화** (2025-10-09)
 
     - 60시간 업무를 10시간으로 단축한 AI 자동화 프로세스
 
-22. **Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성** (2025-10-08)
+23. **Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성** (2025-10-08)
 
     - 31개 HTML 페이지 자동 생성 사례
 
-23. **Claude Code Best Practices** (2025-10-07)
+24. **Claude Code Best Practices** (2025-10-07)
 
     - Anthropic 공식 가이드 기반 생산성 극대화
 
-24. **블로그 런칭 분석 리포트** (2025-10-06)
+25. **블로그 런칭 분석 리포트** (2025-10-06)
 
     - GA4 데이터 분석 및 3개월 성장 전략
 
-25. **Google Analytics MCP 자동화** (2025-10-05)
+26. **Google Analytics MCP 자동화** (2025-10-05)
 
     - MCP와 AI 에이전트로 블로그 분석 자동화
 
-26. **LLM과 Claude Code를 활용한 블로그 자동화** (2025-10-04)
+27. **LLM과 Claude Code를 활용한 블로그 자동화** (2025-10-04)
     - 11개 전문 에이전트로 블로그 완전 자동화
 
 ---
@@ -505,6 +515,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-10-29 (Claude Code Hook 자동화 코드 리뷰 시스템 포스트 발행)
+**Last Updated**: 2025-10-30 (LLM을 활용한 웹페이지 이행 작업의 표준화 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

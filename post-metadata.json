@@ -805,15 +805,76 @@
       },
       "contentHash": "001629cc2bc7caa4",
       "generatedAt": "2025-10-29T04:05:16.253Z"
+    },
+    "llm-page-migration-standardization": {
+      "slug": "llm-page-migration-standardization",
+      "language": "ko",
+      "pubDate": "2025-10-30",
+      "title": "LLM을 활용한 웹페이지 이행 작업의 표준화",
+      "summary": "Claude Code와 LLM을 활용해 레거시 웹사이트를 웹 컴포넌트 기반 정적 사이트로 안전하게 마이그레이션하는 완벽 가이드. Google, Airbnb, Zalando 등 글로벌 기업의 프로덕션 검증 사례와 Lit/Stencil 웹 컴포넌트, Astro/Hugo SSG, Playwright 자동화 테스팅을 포함한 종합 워크플로우 제시.",
+      "mainTopics": [
+        "LLM 기반 코드 마이그레이션",
+        "웹 컴포넌트 아키텍처",
+        "정적 사이트 생성기(SSG)",
+        "종합 테스트 자동화",
+        "점진적 배포 전략"
+      ],
+      "techStack": [
+        "Claude Code",
+        "Lit 3.0/Stencil 4.0",
+        "Astro 5.14/Hugo",
+        "Playwright",
+        "axe-core"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.9,
+        "ai-ml": 0.85,
+        "devops": 0.75,
+        "architecture": 0.9
+      },
+      "contentHash": "70b43feb3c1218f3",
+      "generatedAt": "2025-10-29T07:22:28.459Z"
+    },
+    "claude-code-parallel-testing": {
+      "slug": "claude-code-parallel-testing",
+      "language": "ko",
+      "pubDate": "2025-10-31",
+      "title": "Claude Code로 대규모 페이지 테스트 병렬 자동화하기",
+      "summary": "웹페이지 마이그레이션 프로젝트에서 Claude Code 에이전트와 Playwright를 활용해 5가지 테스트 카테고리(Component, E2E, A11y, Performance, SEO)를 동시에 실행하여 순차 테스트 대비 5-8배 빠른 테스트 자동화를 구현하는 실전 가이드. GitHub Actions를 통한 CI/CD 통합까지 다룹니다.",
+      "mainTopics": [
+        "병렬 테스트 자동화",
+        "Claude Code Task Tool 활용",
+        "Playwright 병렬 실행 설정",
+        "5가지 테스트 카테고리 격리",
+        "CI/CD 파이프라인 통합"
+      ],
+      "techStack": [
+        "Claude Code",
+        "Playwright",
+        "TypeScript",
+        "GitHub Actions",
+        "axe-core"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.75,
+        "ai-ml": 0.85,
+        "devops": 0.8,
+        "architecture": 0.7
+      },
+      "contentHash": "02f39c1ab22396f9",
+      "generatedAt": "2025-10-29T10:20:32.136Z"
     }
   },
   "version": "1.0",
-  "lastUpdated": "2025-10-29T04:05:16.253Z",
+  "lastUpdated": "2025-10-29T10:20:32.137Z",
   "generation": {
-    "totalPosts": 26,
-    "processedPosts": 2,
-    "skippedPosts": 24,
-    "totalDuration": "N/A",
-    "averageTimePerPost": "N/A"
+    "totalPosts": 28,
+    "processedPosts": 1,
+    "skippedPosts": 27,
+    "lastUpdated": "2025-10-29T10:20:32.137Z"
   }
 }
