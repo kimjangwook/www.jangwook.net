@@ -743,14 +743,76 @@
       },
       "contentHash": "e5fa478fbb067355",
       "generatedAt": "2025-10-25T00:23:49.604Z"
+    },
+    "bigquery-mcp-prefix-filtering": {
+      "slug": "bigquery-mcp-prefix-filtering",
+      "language": "ko",
+      "pubDate": "2025-10-28",
+      "title": "BigQuery MCP 서버: Dataset Prefix 필터링 구현하기",
+      "summary": "TypeScript 기반 BigQuery MCP 서버 구축과 Dataset Prefix 필터링을 통한 AI 에이전트의 안전한 데이터 접근 제어 방법. GCP 인증, 환경별 분리, 보안 모범 사례, 성능 최적화, CI/CD 통합까지 포괄적인 구현 가이드를 제공합니다.",
+      "mainTopics": [
+        "MCP 서버 아키텍처 설계",
+        "Dataset Prefix 필터링 메커니즘",
+        "GCP 서비스 계정 인증",
+        "AI 에이전트 데이터 접근 제어",
+        "보안 및 성능 최적화"
+      ],
+      "techStack": [
+        "TypeScript",
+        "BigQuery",
+        "Google Cloud Platform",
+        "MCP SDK",
+        "Node.js"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.85,
+        "web-development": 0.15,
+        "ai-ml": 0.9,
+        "devops": 0.7,
+        "architecture": 0.95
+      },
+      "contentHash": "7f3e9d2c8a1b5f4e",
+      "generatedAt": "2025-10-29T04:05:16.252Z"
+    },
+    "claude-code-hooks-workflow": {
+      "slug": "claude-code-hooks-workflow",
+      "language": "ko",
+      "pubDate": "2025-10-29",
+      "title": "Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템",
+      "summary": "Hook 기반 워크플로우 자동화로 코드 품질 보장. Pre/Post Hook 활용한 타입 체크, 린팅, 보안 스캔 자동화부터 GitHub Actions, N8N, Telegram 연동까지 실무 중심 구현 가이드. 점진적 도입 전략과 성능 최적화 패턴 포함.",
+      "mainTopics": [
+        "Hook 시스템 아키텍처",
+        "자동화 코드 리뷰",
+        "코딩 규칙 강제",
+        "CI/CD 파이프라인 통합",
+        "감사 추적 및 알림"
+      ],
+      "techStack": [
+        "Claude Code",
+        "Bash",
+        "Python",
+        "GitHub Actions",
+        "N8N"
+      ],
+      "difficulty": 4,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.15,
+        "ai-ml": 0.65,
+        "devops": 0.9,
+        "architecture": 0.85
+      },
+      "contentHash": "001629cc2bc7caa4",
+      "generatedAt": "2025-10-29T04:05:16.253Z"
     }
   },
   "version": "1.0",
-  "lastUpdated": "2025-10-25T00:23:49.605Z",
+  "lastUpdated": "2025-10-29T04:05:16.253Z",
   "generation": {
-    "totalPosts": 24,
-    "processedPosts": 1,
-    "skippedPosts": 23,
+    "totalPosts": 26,
+    "processedPosts": 2,
+    "skippedPosts": 24,
     "totalDuration": "N/A",
     "averageTimePerPost": "N/A"
   }

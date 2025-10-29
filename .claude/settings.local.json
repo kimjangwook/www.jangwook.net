@@ -3,7 +3,13 @@
     "allow": [
       "mcp__notionApi__API-post-search",
       "mcp__notionApi__API-get-self",
-      "mcp__notionApi__API-get-block-children"
+      "mcp__notionApi__API-get-block-children",
+      "Bash(npm run astro:*)",
+      "Bash(node generate_image.js:*)",
+      "SlashCommand(/analyze-posts)",
+      "Bash(cat:*)",
+      "Bash(shasum:*)",
+      "Bash(node:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
