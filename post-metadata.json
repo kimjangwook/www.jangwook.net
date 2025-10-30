@@ -867,12 +867,43 @@
       },
       "contentHash": "02f39c1ab22396f9",
       "generatedAt": "2025-10-29T10:20:32.136Z"
+    },
+    "llm-pm-workflow-automation": {
+      "slug": "llm-pm-workflow-automation",
+      "language": "ko",
+      "pubDate": "2025-11-01",
+      "title": "LLM을 활용한 프로젝트 매니저 업무 효율화: AI로 생산성 3배 높이기",
+      "summary": "ChatGPT, Claude, Gemini를 활용한 PM 업무 자동화 실전 가이드. 회의 관리 91% 시간 단축, 보고서 작성 87.5% 단축, ROI 10,733% 달성 방법과 4단계 구현 전략, 실전 코드 예제, 성공 사례를 포함한 완벽한 PM 생산성 혁신 가이드",
+      "mainTopics": [
+        "LLM 도구 비교",
+        "PM 업무 자동화",
+        "워크플로우 통합",
+        "ROI 측정",
+        "베스트 프랙티스"
+      ],
+      "techStack": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "n8n",
+        "BigQuery"
+      ],
+      "difficulty": 3,
+      "categoryScores": {
+        "automation": 0.95,
+        "web-development": 0.3,
+        "ai-ml": 0.9,
+        "devops": 0.6,
+        "architecture": 0.5
+      },
+      "generatedAt": "2025-10-30T13:22:33.785Z",
+      "contentHash": "d51acb3407f5dce9"
     }
   },
   "version": "1.0",
-  "lastUpdated": "2025-10-29T10:20:32.137Z",
+  "lastUpdated": "2025-10-30T13:22:33.787Z",
   "generation": {
-    "totalPosts": 28,
+    "totalPosts": 29,
     "processedPosts": 1,
     "skippedPosts": 27,
     "lastUpdated": "2025-10-29T10:20:32.137Z"

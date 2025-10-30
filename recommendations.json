@@ -1647,11 +1647,97 @@
       ],
       "generatedAt": "2025-10-29T10:24:33.959Z",
       "evaluatedBy": "claude-sonnet-4.5"
+    },
+    "llm-pm-workflow-automation": {
+      "related": [
+        {
+          "slug": "ai-agent-notion-mcp-automation",
+          "score": 0.43,
+          "reason": {
+            "ko": "프로젝트 관리 자동화의 다른 측면을 다루며, Notion MCP에 대한 보완적인 인사이트를 제공합니다.",
+            "ja": "プロジェクト管理自動化の別の側面を扱い、Notion MCPに関する補完的なインサイトを提供しています。",
+            "en": "Covers a complementary aspect of project management automation and provides insights on Notion MCP."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0.11,
+            "techStack": 0,
+            "category": 0.97,
+            "difficulty": 1
+          }
+        },
+        {
+          "slug": "claude-code-best-practices",
+          "score": 0.41,
+          "reason": {
+            "ko": "프로젝트 관리 자동화의 다른 측면을 다루며, Claude Code 워크플로우에 대한 보완적인 인사이트를 제공합니다.",
+            "ja": "プロジェクト管理自動化の別の側面を扱い、Claude Code 워크플로우に関する補完的なインサイトを提供しています。",
+            "en": "Covers a complementary aspect of project management automation and provides insights on Claude Code 워크플로우."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0.11,
+            "techStack": 0,
+            "category": 0.96,
+            "difficulty": 0.75
+          }
+        },
+        {
+          "slug": "jules-autocoding",
+          "score": 0.4,
+          "reason": {
+            "ko": "프로젝트 관리 자동화의 다른 측면을 다루며, Jules AI 코딩 에이전트에 대한 보완적인 인사이트를 제공합니다.",
+            "ja": "プロジェクト管理自動化の別の側面を扱い、Jules AI 코딩 에이전트に関する補完的なインサイトを提供しています。",
+            "en": "Covers a complementary aspect of project management automation and provides insights on Jules AI 코딩 에이전트."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0,
+            "techStack": 0,
+            "category": 0.99,
+            "difficulty": 1
+          }
+        },
+        {
+          "slug": "claude-skills-implementation-guide",
+          "score": 0.4,
+          "reason": {
+            "ko": "프로젝트 관리 자동화의 다른 측면을 다루며, Agent Skills 아키텍처에 대한 보완적인 인사이트를 제공합니다.",
+            "ja": "プロジェクト管理自動化の別の側面を扱い、Agent Skills 아키텍처に関する補完的なインサイトを提供しています。",
+            "en": "Covers a complementary aspect of project management automation and provides insights on Agent Skills 아키텍처."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0,
+            "techStack": 0,
+            "category": 0.98,
+            "difficulty": 1
+          }
+        },
+        {
+          "slug": "bigquery-mcp-prefix-filtering",
+          "score": 0.39,
+          "reason": {
+            "ko": "프로젝트 관리 자동화의 다른 측면을 다루며, MCP 서버 아키텍처 설계에 대한 보완적인 인사이트를 제공합니다.",
+            "ja": "プロジェクト管理自動化の別の側面を扱い、MCP 서버 아키텍처 설계に関する補完的なインサイトを提供しています。",
+            "en": "Covers a complementary aspect of project management automation and provides insights on MCP 서버 아키텍처 설계."
+          },
+          "type": "complementary",
+          "dimensions": {
+            "topic": 0,
+            "techStack": 0.11,
+            "category": 0.96,
+            "difficulty": 0.75
+          }
+        }
+      ],
+      "generatedAt": "2025-10-30T13:23:44.046Z",
+      "evaluatedBy": "claude-sonnet-4.5-metadata-algorithm"
     }
   },
   "metadata": {
-    "totalPosts": 28,
-    "lastGenerated": "2025-10-29T10:24:33.960Z",
+    "totalPosts": 29,
+    "lastGenerated": "2025-10-30T13:23:44.047Z",
     "modelVersion": "claude-sonnet-4.5",
     "minThreshold": 0.3,
     "maxRecommendations": 5,
