@@ -1,9 +1,49 @@
 ---
 title: 'LLM을 활용한 프로젝트 매니저 업무 효율화: AI로 생산성 3배 높이기'
-description: 'ChatGPT, Claude, Gemini 등 최신 LLM 도구를 활용하여 프로젝트 관리 업무를 자동화하고 생산성을 극대화하는 실전 가이드를 소개합니다. 일일 업무 자동화부터 ROI 측정까지 단계별로 설명합니다.'
+description: >-
+  ChatGPT, Claude, Gemini 등 최신 LLM 도구를 활용하여 프로젝트 관리 업무를 자동화하고 생산성을 극대화하는 실전 가이드를
+  소개합니다. 일일 업무 자동화부터 ROI 측정까지 단계별로 설명합니다.
 pubDate: '2025-11-01'
-heroImage: '../../../assets/blog/2025-11-01-llm-pm-workflow-automation.png'
-tags: ['llm', 'project-management', 'automation']
+heroImage: ../../../assets/blog/2025-11-01-llm-pm-workflow-automation.png
+tags:
+  - llm
+  - project-management
+  - automation
+relatedPosts:
+  - slug: jules-autocoding
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+  - slug: claude-skills-implementation-guide
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+  - slug: google-analytics-mcp-automation
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps topics.
+  - slug: llm-blog-automation
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
 ---
 
 ## 들어가며

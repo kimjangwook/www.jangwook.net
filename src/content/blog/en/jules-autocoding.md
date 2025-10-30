@@ -1,9 +1,59 @@
 ---
-title: "Auto-Coding with Jules: The Complete Guide to Google's Autonomous AI Coding Agent"
-description: "Learn how to automate GitHub issue resolution and PR creation with Jules, Google's groundbreaking AI coding agent powered by Gemini 2.5 Pro"
-pubDate: "2025-10-27"
-heroImage: "../../../assets/blog/jules-autocoding-hero.jpg"
-tags: ["ai", "automation", "github", "jules", "gemini"]
+title: >-
+  Auto-Coding with Jules: The Complete Guide to Google's Autonomous AI Coding
+  Agent
+description: >-
+  Learn how to automate GitHub issue resolution and PR creation with Jules,
+  Google's groundbreaking AI coding agent powered by Gemini 2.5 Pro
+pubDate: '2025-10-27'
+heroImage: ../../../assets/blog/jules-autocoding-hero.jpg
+tags:
+  - ai
+  - automation
+  - github
+  - jules
+  - gemini
+relatedPosts:
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: claude-skills-implementation-guide
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+  - slug: llm-blog-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
 ---
 
 ## Overview: Enter the Era of Autonomous Coding

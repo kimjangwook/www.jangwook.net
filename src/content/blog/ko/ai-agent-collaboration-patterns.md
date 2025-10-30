@@ -1,9 +1,33 @@
 ---
 title: 'AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기'
-description: 'Architecture, Coding, Testing, Security, DevOps Agent를 오케스트레이션하여 프로덕션급 애플리케이션을 구축하는 실전 가이드'
+description: >-
+  Architecture, Coding, Testing, Security, DevOps Agent를 오케스트레이션하여 프로덕션급 애플리케이션을
+  구축하는 실전 가이드
 pubDate: '2025-10-16'
-heroImage: '../../../assets/blog/ai-agent-collaboration-patterns-hero.jpg'
-tags: ['ai', 'agents', 'architecture', 'devops', 'automation']
+heroImage: ../../../assets/blog/ai-agent-collaboration-patterns-hero.jpg
+tags:
+  - ai
+  - agents
+  - architecture
+  - devops
+  - automation
+relatedPosts:
+  - slug: self-healing-ai-systems
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.89
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML,
+        architecture fundamentals.
 ---
 
 ## 멀티 에이전트 시대의 도래

@@ -1,9 +1,49 @@
 ---
-title: 'Analyzing Blog Revisit Intent with SSR Methodology'
-description: 'Experimental results and statistical analysis of 225 evaluations using LLM-based Semantic Similarity Rating. Validated high reliability with ICC 0.83 and visualizations.'
+title: Analyzing Blog Revisit Intent with SSR Methodology
+description: >-
+  Experimental results and statistical analysis of 225 evaluations using
+  LLM-based Semantic Similarity Rating. Validated high reliability with ICC 0.83
+  and visualizations.
 pubDate: '2025-10-24'
-heroImage: '../../../assets/blog/ssr-survey-analysis-hero.jpg'
-tags: [ssr, llm, research, analytics, openai, data-science]
+heroImage: ../../../assets/blog/ssr-survey-analysis-hero.jpg
+tags:
+  - ssr
+  - llm
+  - research
+  - analytics
+  - openai
+  - data-science
+relatedPosts:
+  - slug: ai-agent-persona-analysis
+    score: 0.91
+    reason:
+      ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
+  - slug: llm-consumer-research-ssr
+    score: 0.91
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+  - slug: ai-content-recommendation-system
+    score: 0.89
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.87
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+  - slug: specification-driven-development
+    score: 0.86
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
 ---
 
 ## Overview

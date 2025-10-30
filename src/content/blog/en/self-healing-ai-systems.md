@@ -1,9 +1,28 @@
 ---
-title: 'Self-Healing AI Systems: Building Agents That Automatically Fix Bugs Without Human Intervention'
-description: 'Complete guide to Self-Healing Systems deployed by GitHub, Google, and Netflix. Full implementation from error detection to automatic patching with LangGraph'
+title: >-
+  Self-Healing AI Systems: Building Agents That Automatically Fix Bugs Without
+  Human Intervention
+description: >-
+  Complete guide to Self-Healing Systems deployed by GitHub, Google, and
+  Netflix. Full implementation from error detection to automatic patching with
+  LangGraph
 pubDate: '2025-10-17'
-heroImage: '../../../assets/blog/self-healing-ai-systems-hero.jpg'
-tags: ['ai', 'automation', 'self-healing', 'langgraph', 'devops']
+heroImage: ../../../assets/blog/self-healing-ai-systems-hero.jpg
+tags:
+  - ai
+  - automation
+  - self-healing
+  - langgraph
+  - devops
+relatedPosts:
+  - slug: metadata-based-recommendation-optimization
+    score: 0.89
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, DevOps, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、DevOps、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML, DevOps,
+        architecture fundamentals.
 ---
 
 ## The Age of Self-Healing

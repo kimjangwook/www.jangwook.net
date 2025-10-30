@@ -1,9 +1,44 @@
 ---
-title: 'Implementing Scheduled Publishing on Static Sites: Automating Astro + GitHub Actions'
-description: 'A practical guide to implementing WordPress-like scheduled post publishing on static blogs using Astro and GitHub Pages. Complete automation with pubDate filtering and scheduled workflows'
+title: >-
+  Implementing Scheduled Publishing on Static Sites: Automating Astro + GitHub
+  Actions
+description: >-
+  A practical guide to implementing WordPress-like scheduled post publishing on
+  static blogs using Astro and GitHub Pages. Complete automation with pubDate
+  filtering and scheduled workflows
 pubDate: '2025-10-13'
-heroImage: '../../../assets/blog/scheduled-publishing-hero.jpg'
-tags: ['astro', 'github-actions', 'automation', 'static-site', 'ci-cd']
+heroImage: ../../../assets/blog/scheduled-publishing-hero.jpg
+tags:
+  - astro
+  - github-actions
+  - automation
+  - static-site
+  - ci-cd
+relatedPosts:
+  - slug: metadata-based-recommendation-optimization
+    score: 0.86
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps, architecture topics.
+  - slug: self-healing-ai-systems
+    score: 0.75
+    reason:
+      ko: '자동화, DevOps, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、DevOps、アーキテクチャの観点から補完的な内容を提供します。
+      en: >-
+        Provides complementary content from automation, DevOps, architecture
+        perspective.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.71
+    reason:
+      ko: '자동화, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、アーキテクチャの観点から補完的な内容を提供します。
+      en: >-
+        Provides complementary content from automation, architecture
+        perspective.
 ---
 
 ## The Static Site Dilemma: Scheduled Publishing

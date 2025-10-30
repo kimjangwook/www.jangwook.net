@@ -1,9 +1,25 @@
 ---
 title: 'セルフヒーリングAIシステム: 人間の介入なしでバグを自動修正するエージェント構築'
-description: 'GitHub、Google、Netflixが本番環境に導入したSelf-Healing Systemsの完全ガイド。LangGraphでエラー検出から自動パッチまで完全実装'
+description: >-
+  GitHub、Google、Netflixが本番環境に導入したSelf-Healing
+  Systemsの完全ガイド。LangGraphでエラー検出から自動パッチまで完全実装
 pubDate: '2025-10-17'
-heroImage: '../../../assets/blog/self-healing-ai-systems-hero.jpg'
-tags: ['ai', 'automation', 'self-healing', 'langgraph', 'devops']
+heroImage: ../../../assets/blog/self-healing-ai-systems-hero.jpg
+tags:
+  - ai
+  - automation
+  - self-healing
+  - langgraph
+  - devops
+relatedPosts:
+  - slug: metadata-based-recommendation-optimization
+    score: 0.89
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, DevOps, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、DevOps、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML, DevOps,
+        architecture fundamentals.
 ---
 
 ## セルフヒーリングの時代

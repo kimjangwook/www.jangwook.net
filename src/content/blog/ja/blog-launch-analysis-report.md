@@ -1,9 +1,53 @@
 ---
-title: "www.jangwook.netブログローンチ分析レポート: データ駆動型技術ブログの始まり"
-description: "ブログローンチ初期のGA4データ分析、実践的なMCPクエリ例、そして3ヶ月成長戦略まで - 透明性を持って共有する技術ブログの旅の始まり"
-pubDate: "2025-10-06"
-heroImage: "../../../assets/blog/blog-launch-analysis-hero.png"
-tags: ["Analytics", "Blog", "Report"]
+title: 'www.jangwook.netブログローンチ分析レポート: データ駆動型技術ブログの始まり'
+description: ブログローンチ初期のGA4データ分析、実践的なMCPクエリ例、そして3ヶ月成長戦略まで - 透明性を持って共有する技術ブログの旅の始まり
+pubDate: '2025-10-06'
+heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
+tags:
+  - Analytics
+  - Blog
+  - Report
+relatedPosts:
+  - slug: chrome-devtools-mcp-performance
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps,
+        architecture with comparable difficulty.
+  - slug: astro-scheduled-publishing
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps,
+        architecture with comparable difficulty.
+  - slug: claude-code-web-automation
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.91
+    reason:
+      ko: '자동화, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, architecture with comparable
+        difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, DevOps, architecture topics.
 ---
 
 # www.jangwook.net ブログローンチ分析レポート

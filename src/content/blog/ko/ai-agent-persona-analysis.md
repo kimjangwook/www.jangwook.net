@@ -1,9 +1,47 @@
 ---
-title: "AI 에이전트에 성별과 페르소나를 부여하면 무슨 일이 일어날까?"
-description: "120개 이상의 연구로 밝혀진 AI 에이전트 페르소나 설계의 심리학적 효과와 업무별 최적 설계 전략"
+title: AI 에이전트에 성별과 페르소나를 부여하면 무슨 일이 일어날까?
+description: 120개 이상의 연구로 밝혀진 AI 에이전트 페르소나 설계의 심리학적 효과와 업무별 최적 설계 전략
 pubDate: '2025-10-19'
-heroImage: "../../../assets/blog/ai-agent-persona-analysis-hero.jpg"
-tags: ["AI Agent", "Persona", "Research"]
+heroImage: ../../../assets/blog/ai-agent-persona-analysis-hero.jpg
+tags:
+  - AI Agent
+  - Persona
+  - Research
+relatedPosts:
+  - slug: ai-content-recommendation-system
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        architecture topics.
+  - slug: llm-blog-automation
+    score: 0.88
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.88
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+  - slug: specification-driven-development
+    score: 0.88
+    reason:
+      ko: '다음 단계 학습으로 적합하며, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        architecture topics.
+  - slug: ai-presentation-automation
+    score: 0.86
+    reason:
+      ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
 ---
 
 # AI 에이전트에 성별과 페르소나를 부여하면 무슨 일이 일어날까?

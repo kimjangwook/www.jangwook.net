@@ -1,9 +1,53 @@
 ---
-title: "Google Analytics MCPとAIエージェントでブログ分析を自動化する"
-description: "MCPとAIエージェントを活用してブログ分析を自動化し、データ駆動型の意思決定を行う方法を学びます"
+title: Google Analytics MCPとAIエージェントでブログ分析を自動化する
+description: MCPとAIエージェントを活用してブログ分析を自動化し、データ駆動型の意思決定を行う方法を学びます
 pubDate: '2025-10-05'
-heroImage: "../../../assets/blog/google-analytics-mcp-hero.png"
-tags: ["Analytics", "MCP", "Automation"]
+heroImage: ../../../assets/blog/google-analytics-mcp-hero.png
+tags:
+  - Analytics
+  - MCP
+  - Automation
+relatedPosts:
+  - slug: specification-driven-development
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: ai-content-recommendation-system
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.92
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML,
+        architecture fundamentals.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: llm-blog-automation
+    score: 0.91
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML,
+        architecture fundamentals.
 ---
 
 # Google Analytics MCP と AI エージェントでブログ分析を自動化する

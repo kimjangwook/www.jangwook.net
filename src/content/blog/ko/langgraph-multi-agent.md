@@ -1,9 +1,55 @@
 ---
-title: 'LangGraph 멀티 에이전트 시스템 완전 가이드'
-description: '프로덕션 환경에서 LangGraph로 확장 가능한 멀티 에이전트 AI 시스템을 구축하는 방법을 상세히 알아봅니다'
+title: LangGraph 멀티 에이전트 시스템 완전 가이드
+description: 프로덕션 환경에서 LangGraph로 확장 가능한 멀티 에이전트 AI 시스템을 구축하는 방법을 상세히 알아봅니다
 pubDate: '2025-10-26'
-heroImage: '../../../assets/blog/langgraph-multi-agent-hero.jpg'
-tags: ['langgraph', 'multi-agent', 'ai-agents', 'langchain', 'orchestration']
+heroImage: ../../../assets/blog/langgraph-multi-agent-hero.jpg
+tags:
+  - langgraph
+  - multi-agent
+  - ai-agents
+  - langchain
+  - orchestration
+relatedPosts:
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: specification-driven-development
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: ai-content-recommendation-system
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
 ---
 
 ## 개요

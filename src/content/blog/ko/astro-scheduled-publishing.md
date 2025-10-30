@@ -1,9 +1,41 @@
 ---
 title: '정적 블로그의 예약 공개 구현법: Astro + GitHub Actions로 자동화하기'
-description: 'Astro와 GitHub Pages를 사용한 정적 블로그에서 WordPress처럼 포스트 예약 공개를 구현하는 실전 가이드. pubDate 필터링과 스케줄 워크플로우를 활용한 완전 자동화 솔루션'
+description: >-
+  Astro와 GitHub Pages를 사용한 정적 블로그에서 WordPress처럼 포스트 예약 공개를 구현하는 실전 가이드. pubDate
+  필터링과 스케줄 워크플로우를 활용한 완전 자동화 솔루션
 pubDate: '2025-10-13'
-heroImage: '../../../assets/blog/scheduled-publishing-hero.jpg'
-tags: ['astro', 'github-actions', 'automation', 'static-site', 'ci-cd']
+heroImage: ../../../assets/blog/scheduled-publishing-hero.jpg
+tags:
+  - astro
+  - github-actions
+  - automation
+  - static-site
+  - ci-cd
+relatedPosts:
+  - slug: metadata-based-recommendation-optimization
+    score: 0.86
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps, architecture topics.
+  - slug: self-healing-ai-systems
+    score: 0.75
+    reason:
+      ko: '자동화, DevOps, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、DevOps、アーキテクチャの観点から補完的な内容を提供します。
+      en: >-
+        Provides complementary content from automation, DevOps, architecture
+        perspective.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.71
+    reason:
+      ko: '자동화, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、アーキテクチャの観点から補完的な内容を提供します。
+      en: >-
+        Provides complementary content from automation, architecture
+        perspective.
 ---
 
 ## 정적 사이트의 딜레마: 예약 공개

@@ -1,9 +1,55 @@
 ---
-title: "LLM을 활용한 웹페이지 이행 작업의 표준화"
-description: "Claude Code와 LLM 기반 자동화로 레거시 웹사이트를 최신 웹 컴포넌트와 정적 사이트로 안전하게 마이그레이션하는 완벽 가이드"
+title: LLM을 활용한 웹페이지 이행 작업의 표준화
+description: Claude Code와 LLM 기반 자동화로 레거시 웹사이트를 최신 웹 컴포넌트와 정적 사이트로 안전하게 마이그레이션하는 완벽 가이드
 pubDate: '2025-10-30'
 heroImage: ../../../assets/blog/llm-page-migration-standardization-hero.jpg
-tags: ["llm", "web-migration", "web-components", "testing", "automation"]
+tags:
+  - llm
+  - web-migration
+  - web-components
+  - testing
+  - automation
+relatedPosts:
+  - slug: google-analytics-mcp-automation
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: specification-driven-development
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+  - slug: ai-content-recommendation-system
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
 ---
 
 ## 개요

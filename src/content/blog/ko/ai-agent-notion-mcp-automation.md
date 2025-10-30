@@ -1,9 +1,57 @@
 ---
 title: 'AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기'
-description: 'Model Context Protocol(MCP)과 Claude Code를 활용하여 Notion과 연동된 실전 AI 에이전트 자동화 시스템을 구축하는 완벽 가이드. 가능한 것, 불가능한 것, 도입 장점과 유의사항을 SEO 전문가와 콘텐츠 매니저 시선으로 검증한 실무 중심 튜토리얼.'
+description: >-
+  Model Context Protocol(MCP)과 Claude Code를 활용하여 Notion과 연동된 실전 AI 에이전트 자동화 시스템을
+  구축하는 완벽 가이드. 가능한 것, 불가능한 것, 도입 장점과 유의사항을 SEO 전문가와 콘텐츠 매니저 시선으로 검증한 실무 중심 튜토리얼.
 pubDate: '2025-10-10'
-heroImage: '../../../assets/blog/ai-agent-notion-mcp-hero.jpg'
-tags: ['ai-agents', 'mcp', 'claude-code', 'automation', 'notion-api']
+heroImage: ../../../assets/blog/ai-agent-notion-mcp-hero.jpg
+tags:
+  - ai-agents
+  - mcp
+  - claude-code
+  - automation
+  - notion-api
+relatedPosts:
+  - slug: chrome-devtools-mcp-performance
+    score: 0.91
+    reason:
+      ko: '자동화, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, architecture with comparable
+        difficulty.
+  - slug: ai-content-recommendation-system
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: specification-driven-development
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.89
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: astro-scheduled-publishing
+    score: 0.87
+    reason:
+      ko: '자동화, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, architecture with comparable
+        difficulty.
 ---
 
 ## 개요

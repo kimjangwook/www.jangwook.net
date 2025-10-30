@@ -1,9 +1,35 @@
 ---
-title: 'AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized Agents'
-description: 'Orchestrate Architecture, Coding, Testing, Security, and DevOps agents to build production-grade applications'
+title: >-
+  AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized
+  Agents
+description: >-
+  Orchestrate Architecture, Coding, Testing, Security, and DevOps agents to
+  build production-grade applications
 pubDate: '2025-10-16'
-heroImage: '../../../assets/blog/ai-agent-collaboration-patterns-hero.jpg'
-tags: ['ai', 'agents', 'architecture', 'devops', 'automation']
+heroImage: ../../../assets/blog/ai-agent-collaboration-patterns-hero.jpg
+tags:
+  - ai
+  - agents
+  - architecture
+  - devops
+  - automation
+relatedPosts:
+  - slug: self-healing-ai-systems
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.89
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML,
+        architecture fundamentals.
 ---
 
 ## The Multi-Agent Era Has Arrived

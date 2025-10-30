@@ -1,9 +1,57 @@
 ---
-title: 'Automate Web Performance Optimization with Chrome DevTools MCP'
-description: 'Complete guide to Chrome DevTools MCP: AI assistants measure and optimize performance with real browser data. From Core Web Vitals automation to practical workflows.'
+title: Automate Web Performance Optimization with Chrome DevTools MCP
+description: >-
+  Complete guide to Chrome DevTools MCP: AI assistants measure and optimize
+  performance with real browser data. From Core Web Vitals automation to
+  practical workflows.
 pubDate: '2025-10-11'
-heroImage: '../../../assets/blog/chrome-devtools-mcp-performance-hero.jpg'
-tags: ['performance', 'chrome-devtools', 'mcp', 'web-optimization']
+heroImage: ../../../assets/blog/chrome-devtools-mcp-performance-hero.jpg
+tags:
+  - performance
+  - chrome-devtools
+  - mcp
+  - web-optimization
+relatedPosts:
+  - slug: astro-scheduled-publishing
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps,
+        architecture with comparable difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps, architecture topics.
+  - slug: specification-driven-development
+    score: 0.88
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, architecture topics.
+  - slug: ai-content-recommendation-system
+    score: 0.87
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, architecture topics.
+  - slug: self-healing-ai-systems
+    score: 0.78
+    reason:
+      ko: '자동화, DevOps, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、DevOps、アーキテクチャの観点から補完的な内容を提供します。
+      en: >-
+        Provides complementary content from automation, DevOps, architecture
+        perspective.
 ---
 
 ## A New Paradigm for Web Performance Optimization

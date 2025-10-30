@@ -1,9 +1,14 @@
 ---
 title: 'レコメンデーションシステム革新：78,000トークンをゼロにしたメタデータ最適化の旅'
-description: 'コンテンツ推薦システムのトークン使用量を100%削減し、実行時間を99%短縮したメタデータベースアルゴリズム最適化事例を紹介します。'
+description: コンテンツ推薦システムのトークン使用量を100%削減し、実行時間を99%短縮したメタデータベースアルゴリズム最適化事例を紹介します。
 pubDate: '2025-10-18'
-heroImage: '../../../assets/blog/metadata-based-recommendation-optimization-hero.jpg'
-tags: ['automation', 'ai-ml', 'performance', 'architecture']
+heroImage: ../../../assets/blog/metadata-based-recommendation-optimization-hero.jpg
+tags:
+  - automation
+  - ai-ml
+  - performance
+  - architecture
+relatedPosts: []
 ---
 
 ## はじめに：コストの雪だるま

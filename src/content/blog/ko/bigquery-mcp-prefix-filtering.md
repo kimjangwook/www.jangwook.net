@@ -1,9 +1,57 @@
 ---
-title: "BigQuery MCP 서버: Dataset Prefix 필터링 구현하기"
-description: "TypeScript로 BigQuery MCP 서버를 구축하고 Dataset Prefix 필터링을 통해 AI 에이전트의 데이터 접근을 제어하는 방법을 알아봅니다."
+title: 'BigQuery MCP 서버: Dataset Prefix 필터링 구현하기'
+description: >-
+  TypeScript로 BigQuery MCP 서버를 구축하고 Dataset Prefix 필터링을 통해 AI 에이전트의 데이터 접근을 제어하는
+  방법을 알아봅니다.
 pubDate: '2025-10-28'
-heroImage: '../../../assets/blog/bigquery-mcp-prefix-filtering-hero.jpg'
-tags: ['mcp', 'bigquery', 'google-cloud', 'typescript', 'ai-agents']
+heroImage: ../../../assets/blog/bigquery-mcp-prefix-filtering-hero.jpg
+tags:
+  - mcp
+  - bigquery
+  - google-cloud
+  - typescript
+  - ai-agents
+relatedPosts:
+  - slug: langgraph-multi-agent
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: specification-driven-development
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
 ---
 
 ## 개요

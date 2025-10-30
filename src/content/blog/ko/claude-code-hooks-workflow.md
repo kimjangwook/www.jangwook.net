@@ -1,9 +1,55 @@
 ---
-title: 'Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템'
+title: Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템
 description: 'Hook 기반 코딩 규칙 설정부터 CI/CD 통합까지, 실무에서 바로 적용 가능한 자동화 리뷰 프로세스 완전 가이드'
 pubDate: '2025-10-29'
-heroImage: '../../../assets/blog/claude-code-hooks-workflow-hero.jpg'
-tags: ['claude-code', 'hooks', 'automation', 'code-review', 'workflow']
+heroImage: ../../../assets/blog/claude-code-hooks-workflow-hero.jpg
+tags:
+  - claude-code
+  - hooks
+  - automation
+  - code-review
+  - workflow
+relatedPosts:
+  - slug: bigquery-mcp-prefix-filtering
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: self-healing-ai-systems
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: langgraph-multi-agent
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
 ---
 
 ## 개요

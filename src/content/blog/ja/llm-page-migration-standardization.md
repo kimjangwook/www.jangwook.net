@@ -1,9 +1,57 @@
 ---
-title: "LLMを活用したページ移行作業の標準化 - 自動化ワークフローの完全ガイド"
-description: "Claude CodeとLLMエージェントを使い、レガシーWebページをWebコンポーネントベースの最新システムに移行する標準化手法を解説します。テスト自動化、SEO最適化、アクセシビリティまで包括的にカバーします。"
+title: LLMを活用したページ移行作業の標準化 - 自動化ワークフローの完全ガイド
+description: >-
+  Claude
+  CodeとLLMエージェントを使い、レガシーWebページをWebコンポーネントベースの最新システムに移行する標準化手法を解説します。テスト自動化、SEO最適化、アクセシビリティまで包括的にカバーします。
 pubDate: '2025-10-30'
 heroImage: ../../../assets/blog/llm-page-migration-standardization-hero.jpg
-tags: ["llm", "web-migration", "web-components", "testing", "automation"]
+tags:
+  - llm
+  - web-migration
+  - web-components
+  - testing
+  - automation
+relatedPosts:
+  - slug: google-analytics-mcp-automation
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: specification-driven-development
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+  - slug: ai-content-recommendation-system
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
 ---
 
 ## 概要: Webページ移行の新しいパラダイム

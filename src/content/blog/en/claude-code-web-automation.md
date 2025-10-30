@@ -1,9 +1,57 @@
 ---
-title: 'Automating Large-Scale Website Page Generation with Claude Code: Parts Library and SubAgent Parallel Processing'
-description: 'A practical case study of auto-generating 31 HTML pages using a parts library-based approach. Complete guide covering CSV metadata management, SubAgent parallel processing, and two-phase quality validation.'
+title: >-
+  Automating Large-Scale Website Page Generation with Claude Code: Parts Library
+  and SubAgent Parallel Processing
+description: >-
+  A practical case study of auto-generating 31 HTML pages using a parts
+  library-based approach. Complete guide covering CSV metadata management,
+  SubAgent parallel processing, and two-phase quality validation.
 pubDate: '2025-10-08'
-heroImage: '../../../assets/blog/claude-code-web-automation-hero.jpg'
-tags: ['claude-code', 'automation', 'web-development', 'ai-agents']
+heroImage: ../../../assets/blog/claude-code-web-automation-hero.jpg
+tags:
+  - claude-code
+  - automation
+  - web-development
+  - ai-agents
+relatedPosts:
+  - slug: chrome-devtools-mcp-performance
+    score: 0.95
+    reason:
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+  - slug: astro-scheduled-publishing
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.92
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.89
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps topics.
+  - slug: specification-driven-development
+    score: 0.88
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
 ---
 
 ## Overview

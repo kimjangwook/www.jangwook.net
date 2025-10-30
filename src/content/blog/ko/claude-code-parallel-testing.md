@@ -1,9 +1,55 @@
 ---
-title: "Claude Code로 대규모 페이지 테스트 병렬 자동화하기"
-description: "웹페이지 마이그레이션 테스트를 Claude Code 에이전트와 Playwright로 5-8배 빠르게 실행하는 실전 가이드"
+title: Claude Code로 대규모 페이지 테스트 병렬 자동화하기
+description: 웹페이지 마이그레이션 테스트를 Claude Code 에이전트와 Playwright로 5-8배 빠르게 실행하는 실전 가이드
 pubDate: '2025-10-31'
 heroImage: ../../../assets/blog/claude-code-parallel-testing-hero.jpg
-tags: ["claude-code", "testing", "playwright", "automation", "parallel-execution"]
+tags:
+  - claude-code
+  - testing
+  - playwright
+  - automation
+  - parallel-execution
+relatedPosts:
+  - slug: llm-page-migration-standardization
+    score: 0.95
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: specification-driven-development
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
 ---
 
 ## 개요

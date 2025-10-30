@@ -1,9 +1,57 @@
 ---
-title: "Playwright + AI: 자동화된 E2E 테스트 작성하기"
-description: "Playwright와 AI Codegen을 활용한 E2E 테스트 자동화. TypeScript 기반 실습, GitHub Actions 통합, 시각적 회귀 테스트까지 실무에서 바로 적용 가능한 완벽 가이드"
-pubDate: "2025-10-25"
-heroImage: "../../../assets/blog/playwright-ai-testing-hero.jpg"
-tags: ["Playwright", "E2E Testing", "Automation", "TypeScript", "AI"]
+title: 'Playwright + AI: 자동화된 E2E 테스트 작성하기'
+description: >-
+  Playwright와 AI Codegen을 활용한 E2E 테스트 자동화. TypeScript 기반 실습, GitHub Actions 통합,
+  시각적 회귀 테스트까지 실무에서 바로 적용 가능한 완벽 가이드
+pubDate: '2025-10-25'
+heroImage: ../../../assets/blog/playwright-ai-testing-hero.jpg
+tags:
+  - Playwright
+  - E2E Testing
+  - Automation
+  - TypeScript
+  - AI
+relatedPosts:
+  - slug: claude-code-web-automation
+    score: 0.95
+    reason:
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+  - slug: chrome-devtools-mcp-performance
+    score: 0.95
+    reason:
+      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps,
+        architecture with comparable difficulty.
+  - slug: blog-launch-analysis-report
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps,
+        architecture with comparable difficulty.
+  - slug: llm-blog-automation
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
 ---
 
 ## 개요

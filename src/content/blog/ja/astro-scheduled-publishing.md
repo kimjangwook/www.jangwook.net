@@ -1,9 +1,41 @@
 ---
 title: '静的ブログで予約投稿を実装する方法: Astro + GitHub Actionsによる完全自動化'
-description: 'AstroとGitHub Pagesを使用した静的ブログでWordPressのような予約投稿機能を実装する実践ガイド。pubDateフィルタリングとスケジュールワークフローを活用した完全自動化ソリューション'
+description: >-
+  AstroとGitHub
+  Pagesを使用した静的ブログでWordPressのような予約投稿機能を実装する実践ガイド。pubDateフィルタリングとスケジュールワークフローを活用した完全自動化ソリューション
 pubDate: '2025-10-13'
-heroImage: '../../../assets/blog/scheduled-publishing-hero.jpg'
-tags: ['astro', 'github-actions', 'automation', 'static-site', 'ci-cd']
+heroImage: ../../../assets/blog/scheduled-publishing-hero.jpg
+tags:
+  - astro
+  - github-actions
+  - automation
+  - static-site
+  - ci-cd
+relatedPosts:
+  - slug: metadata-based-recommendation-optimization
+    score: 0.86
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps, architecture topics.
+  - slug: self-healing-ai-systems
+    score: 0.75
+    reason:
+      ko: '자동화, DevOps, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、DevOps、アーキテクチャの観点から補完的な内容を提供します。
+      en: >-
+        Provides complementary content from automation, DevOps, architecture
+        perspective.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.71
+    reason:
+      ko: '자동화, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、アーキテクチャの観点から補完的な内容を提供します。
+      en: >-
+        Provides complementary content from automation, architecture
+        perspective.
 ---
 
 ## 静的サイトのジレンマ: 予約投稿機能

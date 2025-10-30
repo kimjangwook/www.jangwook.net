@@ -1,9 +1,53 @@
 ---
-title: 'AIが消費者行動を予測する新手法：意味的類似度評価'
-description: 'LLMを活用した合成消費者調査の革新、SSR手法で90%の信頼度を達成'
+title: AIが消費者行動を予測する新手法：意味的類似度評価
+description: LLMを活用した合成消費者調査の革新、SSR手法で90%の信頼度を達成
 pubDate: '2025-10-23'
-heroImage: '../../../assets/blog/llm-consumer-research-hero.jpg'
-tags: ['llm', 'ai', 'consumer-research']
+heroImage: ../../../assets/blog/llm-consumer-research-hero.jpg
+tags:
+  - llm
+  - ai
+  - consumer-research
+relatedPosts:
+  - slug: ai-content-recommendation-system
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.9
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: specification-driven-development
+    score: 0.9
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
 ---
 
 ## 概要

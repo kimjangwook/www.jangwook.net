@@ -1,9 +1,58 @@
 ---
-title: 'Claude Skills Complete Guide: From Project Implementation to Practical Know-How'
-description: 'A practical guide documenting the journey from introducing Claude Agent Skills to real-world implementation, including trials, errors, and achievements. Learn how to specialize AI agents through folder-based modularization.'
+title: >-
+  Claude Skills Complete Guide: From Project Implementation to Practical
+  Know-How
+description: >-
+  A practical guide documenting the journey from introducing Claude Agent Skills
+  to real-world implementation, including trials, errors, and achievements.
+  Learn how to specialize AI agents through folder-based modularization.
 pubDate: '2025-10-22'
-heroImage: '../../../assets/blog/claude-skills-guide-hero.jpg'
-tags: ['claude-code', 'agent-skills', 'ai-automation']
+heroImage: ../../../assets/blog/claude-skills-guide-hero.jpg
+tags:
+  - claude-code
+  - agent-skills
+  - ai-automation
+relatedPosts:
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: google-analytics-mcp-automation
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: llm-blog-automation
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: specification-driven-development
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
 ---
 
 ## Overview

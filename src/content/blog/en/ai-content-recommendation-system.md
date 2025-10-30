@@ -1,9 +1,56 @@
 ---
-title: 'Building an Intelligent Content Recommendation System with Claude LLM'
-description: 'A comprehensive guide to building an AI-powered blog recommendation system that goes beyond simple tag matching with semantic understanding'
+title: Building an Intelligent Content Recommendation System with Claude LLM
+description: >-
+  A comprehensive guide to building an AI-powered blog recommendation system
+  that goes beyond simple tag matching with semantic understanding
 pubDate: '2025-10-12'
-heroImage: '../../../assets/blog/ai-content-recommendation-hero.jpg'
-tags: ['ai', 'claude', 'recommendation-system', 'content-strategy']
+heroImage: ../../../assets/blog/ai-content-recommendation-hero.jpg
+tags:
+  - ai
+  - claude
+  - recommendation-system
+  - content-strategy
+relatedPosts:
+  - slug: specification-driven-development
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: self-healing-ai-systems
+    score: 0.89
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: astro-scheduled-publishing
+    score: 0.8
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, 웹 개발, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、Web開発、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, web development,
+        architecture fundamentals.
 ---
 
 ## A New Paradigm for Content Recommendations

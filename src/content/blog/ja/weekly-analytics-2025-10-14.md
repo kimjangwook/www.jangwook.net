@@ -1,9 +1,51 @@
 ---
-title: "ブログ初週分析レポート：31人の熱心なアーリーアダプターと共に始めた旅"
-description: "ブログローンチ1週間後のGA4データ分析、コンテンツパフォーマンス、改善効果 - 透明に共有するブログ成長記録（2025-10-07〜10-14）"
+title: ブログ初週分析レポート：31人の熱心なアーリーアダプターと共に始めた旅
+description: ブログローンチ1週間後のGA4データ分析、コンテンツパフォーマンス、改善効果 - 透明に共有するブログ成長記録（2025-10-07〜10-14）
 pubDate: '2025-10-14'
-heroImage: "../../../assets/blog/ga-analytics-report-hero.png"
-tags: ["Analytics", "Report", "Data"]
+heroImage: ../../../assets/blog/ga-analytics-report-hero.png
+tags:
+  - Analytics
+  - Report
+  - Data
+relatedPosts:
+  - slug: blog-launch-analysis-report
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
+  - slug: claude-code-web-automation
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
+  - slug: chrome-devtools-mcp-performance
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
+  - slug: claude-code-best-practices
+    score: 0.91
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+  - slug: astro-scheduled-publishing
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
 ---
 
 # ブログ初週分析レポート：31人の熱心なアーリーアダプターと共に始めた旅

@@ -1,9 +1,25 @@
 ---
 title: '자가 치유 AI 시스템: 인간 개입 없이 자동으로 버그를 수정하는 에이전트 구축하기'
-description: 'GitHub, Google, Netflix가 실전 배포한 Self-Healing Systems 완벽 가이드. LangGraph로 에러 감지부터 자동 패치까지 전체 구현'
+description: >-
+  GitHub, Google, Netflix가 실전 배포한 Self-Healing Systems 완벽 가이드. LangGraph로 에러
+  감지부터 자동 패치까지 전체 구현
 pubDate: '2025-10-17'
-heroImage: '../../../assets/blog/self-healing-ai-systems-hero.jpg'
-tags: ['ai', 'automation', 'self-healing', 'langgraph', 'devops']
+heroImage: ../../../assets/blog/self-healing-ai-systems-hero.jpg
+tags:
+  - ai
+  - automation
+  - self-healing
+  - langgraph
+  - devops
+relatedPosts:
+  - slug: metadata-based-recommendation-optimization
+    score: 0.89
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, DevOps, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、DevOps、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML, DevOps,
+        architecture fundamentals.
 ---
 
 ## 자가 치유의 시대

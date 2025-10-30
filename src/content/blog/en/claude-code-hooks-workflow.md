@@ -1,9 +1,57 @@
 ---
-title: 'Building Automated Code Review Systems with Claude Code Hooks'
-description: 'Complete guide from hook-based coding rule configuration to CI/CD integration for production-ready automated review processes'
+title: Building Automated Code Review Systems with Claude Code Hooks
+description: >-
+  Complete guide from hook-based coding rule configuration to CI/CD integration
+  for production-ready automated review processes
 pubDate: '2025-10-29'
-heroImage: '../../../assets/blog/claude-code-hooks-workflow-hero.jpg'
-tags: ['claude-code', 'hooks', 'automation', 'code-review', 'workflow']
+heroImage: ../../../assets/blog/claude-code-hooks-workflow-hero.jpg
+tags:
+  - claude-code
+  - hooks
+  - automation
+  - code-review
+  - workflow
+relatedPosts:
+  - slug: bigquery-mcp-prefix-filtering
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: self-healing-ai-systems
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: langgraph-multi-agent
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
 ---
 
 ## Overview

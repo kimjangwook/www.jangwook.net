@@ -1,9 +1,52 @@
 ---
 title: 'Automating Semi-Annual Presentation Creation with AI: From 60 Hours to 10'
-description: 'Learn how we reduced semi-annual reporting preparation from over 60 hours to just 10 hours using AI agent systems and automation tools in this practical implementation guide.'
+description: >-
+  Learn how we reduced semi-annual reporting preparation from over 60 hours to
+  just 10 hours using AI agent systems and automation tools in this practical
+  implementation guide.
 pubDate: '2025-10-09'
-heroImage: '../../../assets/blog/claude-code-best-practices-hero.jpg'
-tags: ['ai', 'productivity', 'automation']
+heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
+tags:
+  - ai
+  - productivity
+  - automation
+relatedPosts:
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML topics.
+  - slug: chrome-devtools-mcp-performance
+    score: 0.82
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
+  - slug: ai-content-recommendation-system
+    score: 0.8
+    reason:
+      ko: '자동화, AI/ML 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、AI/MLの観点から補完的な内容を提供します。
+      en: 'Provides complementary content from automation, AI/ML perspective.'
+  - slug: specification-driven-development
+    score: 0.8
+    reason:
+      ko: '자동화, AI/ML 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、AI/MLの観点から補完的な内容を提供します。
+      en: 'Provides complementary content from automation, AI/ML perspective.'
+  - slug: astro-scheduled-publishing
+    score: 0.77
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
 ---
 
 ## Introduction: The 60-Hour Burden

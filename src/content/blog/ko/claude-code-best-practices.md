@@ -1,9 +1,51 @@
 ---
 title: 'Claude Code Best Practices: 개발 생산성을 극대화하는 AI 코딩 가이드'
-description: 'Anthropic의 공식 Best Practices를 기반으로 Claude Code 설정을 최적화하고, 실제 프로젝트에 적용한 개선 사례를 공유합니다.'
+description: >-
+  Anthropic의 공식 Best Practices를 기반으로 Claude Code 설정을 최적화하고, 실제 프로젝트에 적용한 개선 사례를
+  공유합니다.
 pubDate: '2025-10-07'
-heroImage: '../../../assets/blog/claude-code-best-practices-hero.jpg'
-tags: ['claude-code', 'ai', 'productivity']
+heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
+tags:
+  - claude-code
+  - ai
+  - productivity
+relatedPosts:
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML topics.
+  - slug: ai-presentation-automation
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+  - slug: claude-code-web-automation
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
+  - slug: chrome-devtools-mcp-performance
+    score: 0.89
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
+  - slug: ai-content-recommendation-system
+    score: 0.84
+    reason:
+      ko: '자동화, AI/ML 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、AI/MLの観点から補完的な内容を提供します。
+      en: 'Provides complementary content from automation, AI/ML perspective.'
 ---
 
 ## 들어가며

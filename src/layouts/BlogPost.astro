@@ -15,9 +15,14 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	lang: Language;
 	tags?: string[];
 	postId?: string;
+	relatedPosts?: Array<{
+		slug: string;
+		score: number;
+		reason: { ko: string; ja: string; en: string };
+	}>;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, lang, tags, postId } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, lang, tags, postId, relatedPosts } = Astro.props;
 const t = useTranslations(lang);
 
 // Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
@@ -136,8 +141,10 @@ const breadcrumbSchema = {
 					<!-- Buy Me a Coffee -->
 					<BuyMeACoffee lang={lang} />
 
-					<!-- Related Posts -->
-					{postId && <RelatedPosts currentSlug={postId} />}
+					<!-- Related Posts (V3) -->
+					{relatedPosts && relatedPosts.length > 0 && (
+						<RelatedPosts items={relatedPosts} language={lang} />
+					)}
 				</div>
 
 				<!-- Comments -->

@@ -1,9 +1,49 @@
 ---
-title: "What Happens When You Assign Gender and Personas to AI Agents?"
-description: "Psychological effects and optimal design strategies for AI agent personas revealed through 120+ research studies and industry best practices"
+title: What Happens When You Assign Gender and Personas to AI Agents?
+description: >-
+  Psychological effects and optimal design strategies for AI agent personas
+  revealed through 120+ research studies and industry best practices
 pubDate: '2025-10-19'
-heroImage: "../../../assets/blog/ai-agent-persona-analysis-hero.jpg"
-tags: ["AI Agent", "Persona", "Research"]
+heroImage: ../../../assets/blog/ai-agent-persona-analysis-hero.jpg
+tags:
+  - AI Agent
+  - Persona
+  - Research
+relatedPosts:
+  - slug: ai-content-recommendation-system
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        architecture topics.
+  - slug: llm-blog-automation
+    score: 0.88
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.88
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+  - slug: specification-driven-development
+    score: 0.88
+    reason:
+      ko: '다음 단계 학습으로 적합하며, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        architecture topics.
+  - slug: ai-presentation-automation
+    score: 0.86
+    reason:
+      ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
 ---
 
 # What Happens When You Assign Gender and Personas to AI Agents?

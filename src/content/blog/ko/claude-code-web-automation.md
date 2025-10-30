@@ -1,9 +1,54 @@
 ---
 title: 'Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성: 파츠 라이브러리와 SubAgent 병렬 처리'
-description: '31개의 HTML 페이지를 파츠 라이브러리 기반으로 자동 생성한 실전 사례를 공유합니다. CSV 메타데이터 관리, SubAgent 병렬 처리, 2단계 품질 검증 프로세스까지 완벽 가이드.'
+description: >-
+  31개의 HTML 페이지를 파츠 라이브러리 기반으로 자동 생성한 실전 사례를 공유합니다. CSV 메타데이터 관리, SubAgent 병렬
+  처리, 2단계 품질 검증 프로세스까지 완벽 가이드.
 pubDate: '2025-10-08'
-heroImage: '../../../assets/blog/claude-code-web-automation-hero.jpg'
-tags: ['claude-code', 'automation', 'web-development', 'ai-agents']
+heroImage: ../../../assets/blog/claude-code-web-automation-hero.jpg
+tags:
+  - claude-code
+  - automation
+  - web-development
+  - ai-agents
+relatedPosts:
+  - slug: chrome-devtools-mcp-performance
+    score: 0.95
+    reason:
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+  - slug: astro-scheduled-publishing
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.92
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.89
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps topics.
+  - slug: specification-driven-development
+    score: 0.88
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
 ---
 
 ## 개요

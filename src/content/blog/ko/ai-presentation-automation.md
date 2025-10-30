@@ -1,9 +1,51 @@
 ---
 title: 'AI를 활용한 반기별 발표 자료 작성 자동화: 60시간에서 10시간으로'
-description: '반기별 보고서 작성에 소요되는 60시간 이상의 업무를 AI 에이전트 시스템과 자동화 도구를 활용해 10시간으로 단축한 실전 프로세스를 공유합니다.'
+description: >-
+  반기별 보고서 작성에 소요되는 60시간 이상의 업무를 AI 에이전트 시스템과 자동화 도구를 활용해 10시간으로 단축한 실전 프로세스를
+  공유합니다.
 pubDate: '2025-10-09'
-heroImage: '../../../assets/blog/claude-code-best-practices-hero.jpg'
-tags: ['ai', 'productivity', 'automation']
+heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
+tags:
+  - ai
+  - productivity
+  - automation
+relatedPosts:
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML topics.
+  - slug: chrome-devtools-mcp-performance
+    score: 0.82
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
+  - slug: ai-content-recommendation-system
+    score: 0.8
+    reason:
+      ko: '자동화, AI/ML 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、AI/MLの観点から補完的な内容を提供します。
+      en: 'Provides complementary content from automation, AI/ML perspective.'
+  - slug: specification-driven-development
+    score: 0.8
+    reason:
+      ko: '자동화, AI/ML 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、AI/MLの観点から補完的な内容を提供します。
+      en: 'Provides complementary content from automation, AI/ML perspective.'
+  - slug: astro-scheduled-publishing
+    score: 0.77
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
 ---
 
 ## 들어가며: 60시간의 고통

@@ -1,9 +1,55 @@
 ---
 title: 'Claude Skills 완벽 가이드: 프로젝트 적용기와 실전 노하우'
-description: 'Claude의 새로운 Agent Skills 기능 도입부터 실제 구현까지, 시행착오와 성과를 담은 실전 가이드. 폴더 기반 모듈화로 AI 에이전트를 전문화하는 방법.'
+description: >-
+  Claude의 새로운 Agent Skills 기능 도입부터 실제 구현까지, 시행착오와 성과를 담은 실전 가이드. 폴더 기반 모듈화로 AI
+  에이전트를 전문화하는 방법.
 pubDate: '2025-10-22'
-heroImage: '../../../assets/blog/claude-skills-guide-hero.jpg'
-tags: ['claude-code', 'agent-skills', 'ai-automation']
+heroImage: ../../../assets/blog/claude-skills-guide-hero.jpg
+tags:
+  - claude-code
+  - agent-skills
+  - ai-automation
+relatedPosts:
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: google-analytics-mcp-automation
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: llm-blog-automation
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: specification-driven-development
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
 ---
 
 ## 개요

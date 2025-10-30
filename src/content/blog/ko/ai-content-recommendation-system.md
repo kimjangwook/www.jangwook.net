@@ -1,9 +1,54 @@
 ---
-title: 'Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템'
-description: '단순 태그 매칭을 넘어 의미론적 이해로 정교한 추천을 제공하는 AI 기반 블로그 추천 시스템 구축 가이드'
+title: Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템
+description: 단순 태그 매칭을 넘어 의미론적 이해로 정교한 추천을 제공하는 AI 기반 블로그 추천 시스템 구축 가이드
 pubDate: '2025-10-12'
-heroImage: '../../../assets/blog/ai-content-recommendation-hero.jpg'
-tags: ['ai', 'claude', 'recommendation-system', 'content-strategy']
+heroImage: ../../../assets/blog/ai-content-recommendation-hero.jpg
+tags:
+  - ai
+  - claude
+  - recommendation-system
+  - content-strategy
+relatedPosts:
+  - slug: specification-driven-development
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: self-healing-ai-systems
+    score: 0.89
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+  - slug: astro-scheduled-publishing
+    score: 0.8
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, 웹 개발, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、Web開発、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, web development,
+        architecture fundamentals.
 ---
 
 ## 콘텐츠 추천의 새로운 패러다임

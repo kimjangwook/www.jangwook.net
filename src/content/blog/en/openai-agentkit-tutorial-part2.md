@@ -1,9 +1,57 @@
 ---
-title: "OpenAI AgentKit Complete Guide Part 2: Production Deployment and Advanced Patterns"
-description: "From enterprise-grade multi-agent system design to production deployment, master AgentKit implementation in real-world scenarios"
+title: >-
+  OpenAI AgentKit Complete Guide Part 2: Production Deployment and Advanced
+  Patterns
+description: >-
+  From enterprise-grade multi-agent system design to production deployment,
+  master AgentKit implementation in real-world scenarios
 pubDate: '2025-10-21'
-heroImage: "../../../assets/blog/openai-agentkit-part2-hero.jpg"
-tags: ["OpenAI", "AgentKit", "AI Agent"]
+heroImage: ../../../assets/blog/openai-agentkit-part2-hero.jpg
+tags:
+  - OpenAI
+  - AgentKit
+  - AI Agent
+relatedPosts:
+  - slug: google-analytics-mcp-automation
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: ai-content-recommendation-system
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: specification-driven-development
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: metadata-based-recommendation-optimization
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: ai-agent-collaboration-patterns
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
 ---
 
 > **Series: Master OpenAI AgentKit** (2/2)

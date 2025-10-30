@@ -1,14 +1,24 @@
 ---
 import { getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
-import { readFileSync } from 'fs';
-import { join } from 'path';
 
-interface Props {
-  currentSlug: string;
+// V3: Props 정의
+interface RelatedPostItem {
+  slug: string;
+  score: number;
+  reason: {
+    ko: string;
+    ja: string;
+    en: string;
+  };
 }
 
-const { currentSlug } = Astro.props;
+interface Props {
+  items: RelatedPostItem[];
+  language: 'ko' | 'ja' | 'en';
+}
+
+const { items, language } = Astro.props;
 
 // Language-specific headings
 const headings = {
@@ -17,78 +27,41 @@ const headings = {
   en: 'Related Articles'
 };
 
-const matchLabels = {
-  ko: '유사도',
-  ja: '類似度',
-  en: 'Match'
-};
+const heading = headings[language];
 
-// Extract language from slug (format: "ko/post-name")
-const language = currentSlug.split('/')[0] as 'ko' | 'ja' | 'en';
-const heading = headings[language] || headings.en;
-const matchLabel = matchLabels[language] || matchLabels.en;
+// V3: Fetch full post data for each recommendation (top 3 only)
+const relatedPosts = await Promise.all(
+  items.slice(0, 3).map(async (item) => {
+    try {
+      const fullPostId = `${language}/${item.slug}`;
+      const post = await getEntry('blog', fullPostId);
 
-// Extract base slug (remove language prefix) for recommendations lookup
-const baseSlug = currentSlug.split('/').slice(1).join('/');
+      if (!post) {
+        console.warn(`[RelatedPosts] Post not found: ${fullPostId}`);
+        return null;
+      }
 
-// Try to load recommendations
-let postRecommendations = null;
-let relatedPosts = [];
+      return {
+        slug: item.slug,
+        score: item.score,
+        title: post.data.title,
+        description: post.data.description,
+        heroImage: post.data.heroImage,
+        url: `/${language}/blog/${language}/${item.slug}`,
+        reason: item.reason[language]
+      };
+    } catch (error) {
+      console.error(`[RelatedPosts] Error fetching post ${item.slug}:`, error);
+      return null;
+    }
+  })
+);
 
-try {
-  const recommendationsPath = join(process.cwd(), 'recommendations.json');
-  const recommendationsData = JSON.parse(readFileSync(recommendationsPath, 'utf-8'));
-
-  // Look up recommendations using base slug (without language prefix)
-  postRecommendations = recommendationsData.recommendations?.[baseSlug];
-
-  if (postRecommendations && postRecommendations.related) {
-    // Fetch full post data for each recommendation (top 3 only)
-    relatedPosts = await Promise.all(
-      postRecommendations.related.slice(0, 3).map(async (rec: any) => {
-        try {
-          // Construct full content ID with language prefix
-          const fullPostId = `${language}/${rec.slug}`;
-          const post = await getEntry('blog', fullPostId);
-
-          if (!post) {
-            console.warn(`[RelatedPosts] Post not found: ${fullPostId}`);
-            return null;
-          }
-
-          // Build URL: /<lang>/blog/<lang>/<slug>
-          const url = `/${language}/blog/${language}/${rec.slug}`;
-
-          // Handle reason: can be string (old format) or object (new multilingual format)
-          const reason = typeof rec.reason === 'object'
-            ? rec.reason[language] || rec.reason.ko || rec.reason.en
-            : rec.reason;
-
-          return {
-            ...rec,
-            title: post.data.title,
-            description: post.data.description,
-            heroImage: post.data.heroImage,
-            url,
-            reason
-          };
-        } catch (error) {
-          console.error(`[RelatedPosts] Error fetching post ${rec.slug}:`, error);
-          return null;
-        }
-      })
-    );
-
-    // Filter out null entries
-    relatedPosts = relatedPosts.filter(post => post !== null);
-  }
-} catch (error) {
-  // Recommendations file doesn't exist or has errors
-  console.warn('[RelatedPosts] Could not load recommendations:', error instanceof Error ? error.message : error);
-}
+// Filter out null entries
+const validPosts = relatedPosts.filter(post => post !== null);
 
 // Don't render if no recommendations
-if (!relatedPosts || relatedPosts.length === 0) {
+if (validPosts.length === 0) {
   return null;
 }
 ---
@@ -96,15 +69,13 @@ if (!relatedPosts || relatedPosts.length === 0) {
 <section class="related-posts">
   <h3 class="section-title">{heading}</h3>
   <ul class="recommendations-list">
-    {relatedPosts.map((post) => (
+    {validPosts.map((post) => (
       <li class="recommendation-item">
         <a
           href={post.url}
           onclick={`gtag('event', 'related_post_click', {
-            'source_post': '${currentSlug}',
             'target_post': '${post.slug}',
-            'similarity_score': ${post.score},
-            'recommendation_type': '${post.type}'
+            'similarity_score': ${post.score}
           })`}
         >
           <div class="item-content">

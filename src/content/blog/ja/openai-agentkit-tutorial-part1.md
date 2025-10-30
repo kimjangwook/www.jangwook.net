@@ -1,9 +1,49 @@
 ---
-title: "OpenAI AgentKit完全ガイド第1部：コアコンセプトとはじめ方"
-description: "2025年10月発表のOpenAI AgentKitのコアコンセプトから実践チュートリアルまで、AIエージェント開発のすべて"
-pubDate: "2025-10-20"
-heroImage: "../../../assets/blog/openai-agentkit-part1-hero.jpg"
-tags: ["OpenAI", "AgentKit", "AI Agent"]
+title: OpenAI AgentKit完全ガイド第1部：コアコンセプトとはじめ方
+description: 2025年10月発表のOpenAI AgentKitのコアコンセプトから実践チュートリアルまで、AIエージェント開発のすべて
+pubDate: '2025-10-20'
+heroImage: ../../../assets/blog/openai-agentkit-part1-hero.jpg
+tags:
+  - OpenAI
+  - AgentKit
+  - AI Agent
+relatedPosts:
+  - slug: claude-code-best-practices
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+  - slug: ai-presentation-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+  - slug: llm-blog-automation
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML topics.
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML topics.
+  - slug: ai-agent-persona-analysis
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML
+        topics.
 ---
 
 > **シリーズ: OpenAI AgentKit マスター** (1/2)
