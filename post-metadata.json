@@ -323,10 +323,21 @@
     "difficulty": 4,
     "categoryScores": {
       "automation": 0.75,
-      "web-development": 0.70,
-      "ai-ml": 0.60,
+      "web-development": 0.7,
+      "ai-ml": 0.6,
       "devops": 0.65,
       "architecture": 0.95
+    }
+  },
+  "notion-backlog-slack-claude-project-management": {
+    "pubDate": "2025-11-03",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.5,
+      "ai-ml": 0.7,
+      "devops": 0.65,
+      "architecture": 0.85
     }
   }
 }
