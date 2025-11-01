@@ -195,41 +195,154 @@ The Backlink Manager agent will:
 - Ensure consistency across all language versions
 - Report all changes made
 
-### 6. Post Metadata Analysis
+### 6. Post Metadata Addition (V3)
 
-After successfully creating the blog post and managing backlinks, analyze the new post to generate structured metadata:
+After successfully creating the blog post and managing backlinks, add post metadata to `post-metadata.json`.
 
-#### Delegation to Content Analyzer
+#### Metadata Structure (V3)
 
-Run the `/analyze-posts` command to generate metadata for the new post:
+**IMPORTANT CHANGE**: In V3, metadata is significantly streamlined to store **only 3 fields**:
 
-- Extract content summary (100-150 characters)
-- Identify main topics (5 key themes)
-- Detect tech stack mentioned
-- Calculate difficulty level (1-5)
-- Generate category scores (automation, web-dev, ai-ml, devops, architecture)
-- Compute content hash for change tracking
+```json
+{
+  "post-slug": {
+    "pubDate": "2025-11-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.5,
+      "architecture": 0.75
+    }
+  }
+}
+```
 
-The metadata is saved to `post-metadata.json` and used for:
-- Token-efficient content recommendations (60-70% reduction)
-- Faster semantic analysis
-- Change detection for incremental updates
+**Field Descriptions**:
 
-### 7. Generate Content Recommendations
+1. **pubDate** (string, required):
 
-After metadata analysis, generate semantic recommendations for the new post:
+   - Format: 'YYYY-MM-DD'
+   - Used for temporal filtering and preventing time-travel in recommendations
 
-#### Delegation to Recommendation Generator
+2. **difficulty** (number 1-5, required):
 
-Run the `/generate-recommendations` command to create contextual recommendations:
+   - 1-2: Beginner (Getting Started, basic concepts)
+   - 3: Intermediate (practical usage, integration guides)
+   - 4-5: Advanced (architecture, optimization, complex systems)
 
-- Analyze semantic similarity with existing posts
-- Identify prerequisite posts (foundational knowledge)
-- Find related concept posts (similar topics)
-- Suggest next-step posts (advanced applications)
-- Generate multi-language reasoning (ko, ja, en)
+3. **categoryScores** (object, required):
+   - automation: Relevance to automation, workflows, CI/CD (0.0-1.0)
+   - web-development: Relevance to web dev, frontend, backend (0.0-1.0)
+   - ai-ml: Relevance to AI, machine learning, LLMs (0.0-1.0)
+   - devops: Relevance to deployment, infrastructure, monitoring (0.0-1.0)
+   - architecture: Relevance to system design, architectural patterns (0.0-1.0)
 
-The recommendations are saved to `recommendations.json` and displayed in the `RelatedPosts` component on each blog post page.
+**Score Guidelines**:
+
+- 0.0-0.3: Barely related
+- 0.4-0.6: Partially related
+- 0.7-0.8: Major topic
+- 0.9-1.0: Core topic
+
+#### How to Add Metadata
+
+Manually edit the `post-metadata.json` file to add metadata for the new post:
+
+```json
+{
+  "existing-post-1": {
+    "pubDate": "2025-11-01",
+    "difficulty": 2,
+    "categoryScores": { ... }
+  },
+  "new-post-slug": {
+    "pubDate": "2025-11-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.5,
+      "architecture": 0.75
+    }
+  }
+}
+```
+
+**Important Notes**:
+
+- Use base slug WITHOUT language prefix (e.g., "slack-mcp-team-communication", not "ko/slack-mcp-team-communication")
+- All language versions share the same metadata
+- pubDate must be latest post + 1 day
+
+### 7. Generate Related Post Recommendations (V3)
+
+After adding metadata, use the V3 recommendation system to generate related posts.
+
+#### V3 System Overview
+
+**Key Changes**:
+
+- ✅ `recommendations.json` file **DEPRECATED** - No more external JSON file needed
+- ✅ Read directly from `post-metadata.json` (uses only 3 fields)
+- ✅ Store `relatedPosts` array **directly in Frontmatter**
+- ✅ Integrated with Content Collections schema
+- ✅ Automatically processed by Astro at build time
+
+**Benefits**:
+
+- 62% file size reduction (800 lines → 300 lines)
+- 100% elimination of build-time file I/O operations
+- 27% code complexity reduction
+- Improved data consistency (single source of truth)
+
+#### Running V3 Recommendation Generation
+
+```bash
+# Run the script
+node scripts/generate-recommendations-v3.js
+
+# Or use npm script (if available)
+npm run generate-recommendations
+```
+
+**Script Behavior**:
+
+1. Read `post-metadata.json`
+2. Calculate similarity for each post:
+   - **Difficulty Similarity** (20%): Prefer similar difficulty levels
+   - **Category Similarity** (80%): Cosine similarity-based
+3. Select top 5 recommendations (score >= 0.3)
+4. Write directly to **Frontmatter of all 3 language versions** of each post:
+
+```yaml
+---
+title: "Post Title"
+description: "Description"
+pubDate: "2025-11-04"
+relatedPosts:
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.92
+    reason:
+      ko: "두 포스트 모두 MCP 서버를 활용한 자동화를 다룹니다."
+      ja: "両記事ともMCPサーバーを活用した自動化を扱います。"
+      en: "Both posts cover MCP server-based automation."
+  - slug: google-analytics-mcp-automation
+    score: 0.85
+    reason:
+      ko: "MCP 통합과 데이터 분석 자동화에서 유사합니다."
+      ja: "MCP統合とデータ分析自動化で類似しています。"
+      en: "Similar in MCP integration and data analysis automation."
+---
+```
+
+**Important Notes**:
+
+- Script modifies **all 3 language files for every post**
+- Not automatically committed to Git - manual commit required
+- Backup recommended before running (`git stash` or `git commit`)
 
 ### 8. Output Summary
 
@@ -239,9 +352,9 @@ Display creation results:
 ✓ Blog post created successfully!
 
 Generated Files:
-  - /src/content/blog/[slug].md (Korean)
-  - /src/content/blog/[slug].ja.md (Japanese)
-  - /src/content/blog/[slug].en.md (English)
+  - /src/content/blog/ko/[slug].md (Korean)
+  - /src/content/blog/ja/[slug].md (Japanese)
+  - /src/content/blog/en/[slug].md (English)
 
 Hero Image:
   - src/assets/blog/[slug]-hero.[ext]
@@ -261,22 +374,23 @@ Backlinks Updated:
   ✓ Converted to active links
   ✓ Series navigation updated (if applicable)
 
-Post Analysis Completed:
-  ✓ Metadata extracted and saved
-  ✓ Content hash generated
-  ✓ Category scores calculated
-  ✓ Tech stack identified
+Post Metadata Added (V3):
+  ✓ Added to post-metadata.json
+  ✓ pubDate: [YYYY-MM-DD]
+  ✓ difficulty: [1-5]
+  ✓ categoryScores: Configured
 
-Recommendations Generated:
+Related Posts Generated (V3):
   ✓ [N] related posts identified
+  ✓ Saved directly to frontmatter
   ✓ Multi-language reasoning created
-  ✓ Semantic similarity scores computed
-  ✓ Saved to recommendations.json
+  ✓ Similarity scores computed
 
 Next Steps:
   1. Review generated content
   2. Run: npm run astro check
   3. Preview: npm run dev
+  4. Run: node scripts/generate-recommendations-v3.js (if not auto-run)
 ```
 
 ## Writing Assistant Delegation
@@ -317,6 +431,7 @@ Requirements:
 4. Write complete blog post for each language **IN PARALLEL**:
 
    **CRITICAL - Parallel Execution**:
+
    - Create THREE separate general-purpose agents (one per language)
    - Delegate to all three agents **IN A SINGLE MESSAGE** with multiple Task tool calls
    - Each agent receives the same research findings, outline, and metadata
@@ -324,66 +439,85 @@ Requirements:
    - All agents execute simultaneously for maximum efficiency
 
    **Agent Delegation Pattern**:
-   ```
-   Single message with 3 Task tool calls:
-   - Task 1: Korean writing agent
-   - Task 2: Japanese writing agent
-   - Task 3: English writing agent
-   ```
+```
 
-   **Each language agent must**:
-   - Follow Astro Content Collections schema
-   - Include frontmatter (title, description, pubDate, heroImage, tags)
-   - **Use the calculated pubDate from step 1**
-   - Use technical blog tone and style
-   - Include code examples where appropriate
-   - Add proper headings and structure
-   - Apply language-specific SEO optimization
-   - Save to correct language folder upon completion
+Single message with 3 Task tool calls:
+
+- Task 1: Korean writing agent
+- Task 2: Japanese writing agent
+- Task 3: English writing agent
+
+````
+
+**Each language agent must**:
+- Follow Astro Content Collections schema
+- Include frontmatter (title, description, pubDate, heroImage, tags)
+- **Use the calculated pubDate from step 1**
+- Use technical blog tone and style
+- Include code examples where appropriate
+- Add proper headings and structure
+- Apply language-specific SEO optimization
+- Save to correct language folder upon completion
 
 5. Save files to language-specific folders:
 
-   - Korean: /src/content/blog/ko/[slug].md
-   - Japanese: /src/content/blog/ja/[slug].md
-   - English: /src/content/blog/en/[slug].md
+- Korean: /src/content/blog/ko/[slug].md
+- Japanese: /src/content/blog/ja/[slug].md
+- English: /src/content/blog/en/[slug].md
 
 6. Update README.md:
 
-   - Read current README.md
-   - Update "블로그 포스트 현황" section
-   - Increment post count
-   - Add new post to top of list
-   - Update "최신 포스트 날짜"
-   - Update "Last Updated" timestamp
-   - Remove topic from "향후 콘텐츠 플랜" if present
+- Read current README.md
+- Update "블로그 포스트 현황" section
+- Increment post count
+- Add new post to top of list
+- Update "최신 포스트 날짜"
+- Update "Last Updated" timestamp
+- Remove topic from "향후 콘텐츠 플랜" if present
 
 7. Manage backlinks:
 
-   - Delegate to Backlink Manager agent
-   - Search existing posts for preview/teaser references
-   - Convert found previews to active links
-   - Update series navigation if post is part of a series
-   - Report all changes made
+- Delegate to Backlink Manager agent
+- Search existing posts for preview/teaser references
+- Convert found previews to active links
+- Update series navigation if post is part of a series
+- Report all changes made
 
-8. Analyze post metadata:
+8. Add post metadata (V3):
 
-   - Run `/analyze-posts` command
-   - Extract content summary, main topics, tech stack
-   - Calculate difficulty level and category scores
-   - Generate content hash for change tracking
-   - Save to post-metadata.json
+- Open post-metadata.json file
+- Add metadata for new post:
+  ```json
+  {
+    "new-post-slug": {
+      "pubDate": "2025-11-04",
+      "difficulty": 3,
+      "categoryScores": {
+        "automation": 0.9,
+        "web-development": 0.3,
+        "ai-ml": 0.85,
+        "devops": 0.5,
+        "architecture": 0.75
+      }
+    }
+  }
+  ```
+- Determine difficulty and categoryScores based on content analysis
+- Save file
 
-9. Generate content recommendations:
+9. Generate related post recommendations (V3):
 
-   - Run `/generate-recommendations` command
-   - Analyze semantic similarity with existing posts
-   - Identify prerequisite, related, and next-step posts
-   - Generate multi-language reasoning (ko, ja, en)
-   - Save to recommendations.json
+- Run `node scripts/generate-recommendations-v3.js`
+- Script will:
+  - Read metadata from post-metadata.json
+  - Calculate similarity scores (difficulty 20% + categories 80%)
+  - Select top 5 related posts
+  - Write relatedPosts array to frontmatter of all 3 language versions
+- Verify results and report
 
 10. Generate URL-friendly slug from topic
 11. Return file paths and metadata
-```
+````
 
 ### Expected Agent Response Format
 
@@ -393,24 +527,34 @@ Requirements:
   "files": [
     {
       "language": "ko",
-      "path": "/src/content/blog/[slug].md",
+      "path": "/src/content/blog/ko/[slug].md",
       "title": "[Korean Title]"
     },
     {
       "language": "ja",
-      "path": "/src/content/blog/[slug].ja.md",
+      "path": "/src/content/blog/ja/[slug].md",
       "title": "[Japanese Title]"
     },
     {
       "language": "en",
-      "path": "/src/content/blog/[slug].en.md",
+      "path": "/src/content/blog/en/[slug].md",
       "title": "[English Title]"
     }
   ],
   "heroImage": "../../../assets/blog/[slug]-hero.[ext]",
   "slug": "[generated-slug]",
   "tags": ["tag1", "tag2"],
-  "pubDate": "[YYYY-MM-DD]"
+  "pubDate": "[YYYY-MM-DD]",
+  "metadata": {
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.5,
+      "architecture": 0.75
+    }
+  }
 }
 ```
 
@@ -897,3 +1041,40 @@ Future enhancements may include:
 - Validate Content Collections schema compliance
 - Check for TypeScript errors in frontmatter
 - Verify all imports and file references
+
+## Related Files
+
+### Agents
+
+- Writing Assistant: `.claude/agents/writing-assistant.md`
+- Web Researcher: `.claude/agents/web-researcher.md`
+- Image Generator: `.claude/agents/image-generator.md`
+- Backlink Manager: `.claude/agents/backlink-manager.md`
+
+### Guidelines
+
+- SEO Optimization: `.claude/guidelines/seo-title-description-guidelines.md`
+
+### Scripts
+
+- V3 Recommendation Generation: `scripts/generate-recommendations-v3.js`
+- Similarity Calculation: `scripts/similarity.js`
+
+### Data Files
+
+- Metadata: `post-metadata.json` (V3: pubDate, difficulty, categoryScores only)
+
+### Components
+
+- Related Posts: `src/components/RelatedPosts.astro`
+- Layout: `src/layouts/BlogPost.astro`
+
+### Configuration
+
+- Content Collections: `src/content.config.ts`
+- Astro Config: `astro.config.mjs`
+
+### Research Documentation
+
+- V3 System Overview: `research/post-recommendation-v3/README.md`
+- Implementation Guide: `research/post-recommendation-v3/01-implementation-guide.md`

@@ -43,16 +43,24 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-03
-**총 포스트 수**: 30개 (한국어 기준)
+**최신 포스트 날짜**: 2025-11-05
+**총 포스트 수**: 32개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Notion+Backlog+Slack+Claude Code를 이용한 신규 프로젝트 매니징 표준화** (2025-11-03)
+1. **데이터 기반 제품 의사결정: PM을 위한 분석 프레임워크** (2025-11-05)
+   - 핵심 지표, 의사결정 프레임워크, A/B 테스트 베스트 프랙티스로 제품 의사결정을 데이터로 무장하는 완벽 가이드. Netflix, Spotify, Airbnb, Amazon의 실전 사례 포함
+   - **핵심 내용**: 제품 타입별 핵심 지표 (B2B SaaS: MRR/NRR/Churn, Marketplace: GMV/Take Rate, Consumer App: DAU/MAU/Retention), 4가지 의사결정 프레임워크 (RICE/ICE/Kano/Value vs Effort 상세 비교), 분석 도구 비교 (Amplitude/Mixpanel/Heap/GA4 기능 및 가격), A/B 테스트 통계 기초 (샘플 사이즈 계산, 통계적 유의성, MDE), SQL 실전 쿼리 6개 (코호트 리텐션, 퍼널 분석, Activation Rate, Stickiness), 4가지 실전 케이스 스터디 (Netflix 개인화 $1B 절감, Spotify Discover Weekly 40M+ 유저, Airbnb OMTM 10M→300M, Amazon 연 10,000+ 실험), 데이터 문화 구축 4요소 (Data Literacy, Infrastructure, Strategy, Collaboration), 흔한 함정 회피법 (상관/인과 혼동, Vanity Metrics, Analysis Paralysis), 주차별 실행 플랜 (4주 로드맵 + 체크리스트)
+
+2. **Slack MCP로 팀 커뮤니케이션 데이터 분석하기** (2025-11-04)
+   - Model Context Protocol을 활용한 Slack 데이터 분석 완벽 가이드. 감성 분석, 참여도 측정, AI 인사이트 생성까지 실전 구현
+   - **핵심 내용**: Slack MCP 아키텍처 및 설치 (3가지 옵션), 8개 핵심 MCP 도구 (conversations_history, post_message, search_messages 등), 5가지 데이터 분석 기법 (메시지 볼륨, 감성 분석, 스레드 분석, 이모지 패턴, 사용자 참여도), 실전 사례 3개 (Salesforce 회의 요약, 스타트업 고객 지원, 글로벌 팀 문화 모니터링), Rate Limit 관리 및 성능 최적화, GDPR 준수 및 보안 모범 사례, 다중 MCP 통합 (Slack + GitHub + Postgres), AI 기반 주간 인사이트 자동 생성
+
+2. **Notion+Backlog+Slack+Claude Code를 이용한 신규 프로젝트 매니징 표준화** (2025-11-03)
    - Notion, Backlog, Slack, Claude Code를 통합한 프로젝트 관리 표준화 방법론. 정해진 프로세스를 준수하면 성공적으로 프로젝트를 완수할 수 있는 실전 가이드
    - **핵심 내용**: 4가지 도구별 핵심 기능 (Notion 데이터베이스 아키텍처, Backlog 애자일 스프린트, Slack 실시간 협업, Claude Code AI 개발 지원), 통합 워크플로우 아키텍처 (프로젝트 생성부터 배포까지 자동화), 6단계 표준화 프로세스 (평가 → 설계 → 구현 → 파일럿 → 배포 → 개선), 실전 코드 예제 7개 (Notion API, Backlog Webhook, Slack Bot, MCP 서버 설정), 성공 지표 측정 (시간 절감 50%, 정시 배포율 80%), 프로젝트 실패 원인 11가지와 해결법, 도구 통합 자동화 시나리오 4가지, ROI 계산 및 비용 효율성 분석, 공통 실수 5가지와 성공 요인 4가지, 국제 표준 프레임워크 비교 (PMBOK, ISO 21500, PRINCE2, Agile)
 
-2. **LLM을 활용한 프로젝트 매니저 업무 효율화: AI로 생산성 3배 높이기** (2025-11-01)
+3. **LLM을 활용한 프로젝트 매니저 업무 효율화: AI로 생산성 3배 높이기** (2025-11-01)
 
    - ChatGPT, Claude, Gemini 등 최신 LLM 도구를 활용하여 프로젝트 관리 업무를 자동화하고 생산성을 극대화하는 실전 가이드
    - **핵심 내용**: 3가지 주요 LLM 도구 비교 (ChatGPT, Claude, Gemini), 자동화 가능한 PM 일일 업무 4가지 (회의 관리 91% 시간 단축, 진행 상황 보고서 87.5% 단축, 이메일 응답 80% 단축, 실시간 리스크 모니터링), 4단계 구현 전략 (파일럿 → 워크플로우 통합 → 고급 자동화 → ROI 측정), 실전 코드 예제 (n8n 워크플로우, Gmail 자동화, BigQuery 리스크 분석), ROI 계산 (연간 78만원 비용으로 780만원 절감, 10,733% ROI), Asana Intelligence 성공 사례 (연간 14,976시간 절감), 베스트 프랙티스 (프롬프트 엔지니어링, 데이터 보안, 팀 교육), 피해야 할 함정 3가지 (과도한 의존, 컨텍스트 부족, 출력 검증 생략), 2025년 트렌드 (Agentic AI, 멀티모달, 실시간 협업), 첫 1주 액션 플랜
@@ -524,6 +532,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-03 (Notion+Backlog+Slack+Claude Code를 이용한 신규 프로젝트 매니징 표준화 포스트 발행)
+**Last Updated**: 2025-11-05 (데이터 기반 제품 의사결정: PM을 위한 분석 프레임워크 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

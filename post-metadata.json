@@ -339,5 +339,27 @@
       "devops": 0.65,
       "architecture": 0.85
     }
+  },
+  "slack-mcp-team-communication": {
+    "pubDate": "2025-11-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.5,
+      "architecture": 0.75
+    }
+  },
+  "data-driven-pm-framework": {
+    "pubDate": "2025-11-05",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.3,
+      "ai-ml": 0.75,
+      "devops": 0.2,
+      "architecture": 0.6
+    }
   }
 }
