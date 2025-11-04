@@ -43,12 +43,16 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-08
-**총 포스트 수**: 34개 (한국어 기준)
+**최신 포스트 날짜**: 2025-10-05
+**총 포스트 수**: 35개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Verbalized Sampling: LLM 다양성을 되찾는 훈련 불필요 프롬프팅 기법** (2025-11-08)
+1. **Claude Code 에이전트에 Verbalized Sampling 적용하기: LLM 다양성 1.6〜2.1배 향상** (2025-10-05)
+   - Verbalized Sampling 기법을 Claude Code 에이전트 시스템에 적용하여 프롬프트 다양성 2.0배, 콘텐츠 다양성 1.8배, 글쓰기 스타일 1.6배 향상을 달성한 실전 가이드. 4개 에이전트 수정 내역, 파라미터 조정, 비용 분석까지 완벽 정리
+   - **핵심 내용**: 모드 붕괴 문제 정의 (안전한 응답에 수렴, 창의성 감소), Verbalized Sampling 원리 (k개 응답 생성, tau 확률 임계값, 꼬리 분포 샘플링), 4개 에이전트 수정 (prompt-engineer 2.0배, content-planner 1.8배, writing-assistant 1.6배, image-generator 1.5배), 파라미터 조정 가이드 (k=3〜10, tau=0.05〜0.20, temperature=0.7〜1.0), 실전 적용 패턴 3가지 (탐색→선택→실행, 분포 생성→다중 샘플링, 계층적 다양성), 비용 대비 효과 분석 (k=5로 5배 증가하지만 재작업 감소로 ROI 긍정적), 9가지 핵심 인사이트 (선택적 적용, 파라미터 조정, 품질 관리, 다국어 효과), 측정 지표 (Self-BLEU 0.75→0.38, 만족도 41% 향상), 즉시 적용 권장 (prompt-engineer, content-planner, writing-assistant)
+
+2. **Verbalized Sampling: LLM 다양성을 되찾는 훈련 불필요 프롬프팅 기법** (2025-11-08)
    - 정렬 후 발생하는 모드 붕괴 문제를 해결하는 Verbalized Sampling 기법. 재훈련 없이 LLM 출력 다양성을 1.6〜2.1배 향상시키는 프롬프팅 전략 완벽 가이드
 
 2. **astro-pagefind를 활용한 정적 사이트 검색 구현** (2025-11-07)
@@ -538,6 +542,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-08 (Verbalized Sampling: LLM 다양성을 되찾는 훈련 불필요 프롬프팅 기법 포스트 발행)
+**Last Updated**: 2025-10-05 (Claude Code 에이전트에 Verbalized Sampling 적용하기 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

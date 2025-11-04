@@ -238,6 +238,178 @@ graph TD
 - 독자에게 직접 말하는 듯한 스타일
 - 불필요한 전문 용어 지양
 
+## Verbalized Sampling으로 글쓰기 다양성 향상
+
+### 핵심 개념
+
+**Verbalized Sampling**은 LLM의 모드 붕괴를 완화하여 글쓰기 접근 방식의 다양성을 1.6배 이상 향상시키는 프롬프팅 기법입니다.
+
+### 언제 사용하는가?
+
+✅ <strong>사용 권장</strong>:
+- 창의적 글쓰기 (시, 스토리텔링, 에세이)
+- 다양한 관점의 기술 문서
+- 브레인스토밍 및 초안 작성
+- 독자층이 다양한 콘텐츠
+
+❌ <strong>사용 지양</strong>:
+- 공식 문서 및 법률 문서
+- 브랜드 톤앤매너가 엄격한 경우
+- 일관된 스타일이 중요한 시리즈물
+
+### 프롬프트 템플릿
+
+```
+<instructions>
+다음 블로그 주제에 대해 5가지 다른 글쓰기 접근 방식을 제안하세요.
+
+각 접근 방식은 <response> 태그로 감싸고, 다음을 포함해야 합니다:
+- <approach_name>: 접근 방식 이름
+- <style>: 글쓰기 스타일 (예: 튜토리얼, 스토리텔링, 비교 분석, 인터뷰)
+- <structure>: 제안 구조 (섹션 목차)
+- <tone>: 톤앤매너 (전문적, 친근함, 기술적, 대화체 등)
+- <target_reader>: 주요 독자층 (초급, 중급, 고급)
+- <unique_angle>: 독특한 접근 각도
+- <probability>: 선택 확률 (0.10 미만)
+
+비전형적이지만 효과적인 접근 방식을 포함하세요.
+일반적인 "소개 → 설명 → 예제 → 결론" 구조를 넘어서세요.
+</instructions>
+
+주제: [블로그 주제]
+키워드: [핵심 키워드]
+타겟: [독자층]
+```
+
+### 파라미터 설정
+
+| 파라미터 | 권장값 | 이유 |
+|---------|--------|------|
+| k | 5 | 다양한 접근 방식 탐색 |
+| tau | 0.10 | 창의성과 품질 균형 |
+| temperature | 0.9 | 높은 창의성 |
+
+### 실전 예시
+
+#### 요청
+"TypeScript 5.0의 데코레이터에 대한 블로그 포스트 작성"
+
+#### Verbalized Sampling 프롬프트
+```
+<instructions>
+TypeScript 5.0 데코레이터에 대한 블로그 포스트를 작성하기 위해,
+5가지 다른 글쓰기 접근 방식을 제안하세요.
+
+각 접근 방식은 <response> 태그로 감싸고:
+- <approach_name>: 접근 방식 이름
+- <style>: 글쓰기 스타일
+- <structure>: 제안 구조
+- <tone>: 톤앤매너
+- <target_reader>: 주요 독자층
+- <unique_angle>: 독특한 접근 각도
+- <probability>: 선택 확률 (0.10 미만)
+
+일반적인 "기능 소개" 스타일을 넘어,
+독자의 관심을 끌 수 있는 독창적 방법을 제시하세요.
+</instructions>
+
+주제: TypeScript 5.0 데코레이터
+키워드: 데코레이터, TypeScript, 메타프로그래밍
+타겟: 중급 TypeScript 개발자
+```
+
+#### 예상 출력
+
+```xml
+<response>
+<approach_name>실패 사례 중심 학습</approach_name>
+<style>문제 해결 스토리텔링</style>
+<structure>
+1. 데코레이터 없이 코드 작성 시 마주한 문제
+2. 각 문제를 데코레이터로 해결하는 과정
+3. 리팩토링 전후 비교
+4. 배운 교훈과 베스트 프랙티스
+</structure>
+<tone>친근하고 공감 가능한, 실전 경험 공유</tone>
+<target_reader>중급 개발자 (실무 경험 있는)</target_reader>
+<unique_angle>성공 사례 대신 실패와 학습 과정 강조</unique_angle>
+<probability>0.08</probability>
+</response>
+
+<response>
+<approach_name>인터랙티브 튜토리얼</approach_name>
+<style>단계별 실습 가이드</style>
+<structure>
+1. 데코레이터 개념 (5분 설명)
+2. 실습 1: 기본 클래스 데코레이터
+3. 실습 2: 메서드 데코레이터
+4. 실습 3: 실전 프로젝트 적용
+5. 도전 과제 및 해답
+</structure>
+<tone>교육적, 격려하는, 단계별 안내</tone>
+<target_reader>초급〜중급 개발자</target_reader>
+<unique_angle>이론보다 실습 중심, 즉시 적용 가능</unique_angle>
+<probability>0.09</probability>
+</response>
+
+<response>
+<approach_name>비교 분석: Python vs TypeScript 데코레이터</approach_name>
+<style>비교 분석 및 마이그레이션 가이드</style>
+<structure>
+1. Python 데코레이터 간단 리뷰
+2. TypeScript 5.0 데코레이터 vs Python
+3. 문법 차이점
+4. 사용 패턴 비교
+5. Python 경험자를 위한 마이그레이션 팁
+</structure>
+<tone>분석적, 객관적, 비교 중심</tone>
+<target_reader>Python 경험 있는 TypeScript 학습자</target_reader>
+<unique_angle>다른 언어 경험 활용, 크로스 플랫폼 관점</unique_angle>
+<probability>0.07</probability>
+</response>
+
+[... 2 more approaches ...]
+```
+
+### 작성 워크플로우
+
+1. <strong>Verbalized Sampling으로 접근 방식 생성</strong>
+   - 5가지 다양한 글쓰기 각도 탐색
+   - 각 접근 방식의 장단점 평가
+
+2. <strong>최적 접근 방식 선택</strong>
+   - 타겟 독자에게 가장 효과적인 방식
+   - 또는 사용자에게 여러 옵션 제시
+
+3. <strong>초안 작성</strong>
+   - 선택된 접근 방식으로 초안 생성
+   - 구조와 톤 일관성 유지
+
+4. <strong>다국어 확장</strong>
+   - 각 언어별로 동일한 접근 방식 적용
+   - 문화적 맥락에 맞게 조정
+
+### 기대 효과
+
+- <strong>다양성 향상</strong>: 1.6배 더 다양한 글쓰기 스타일
+- <strong>독자 참여</strong>: 신선한 접근으로 관심도 증가
+- <strong>콘텐츠 차별화</strong>: 경쟁 블로그와 구별
+- <strong>창의성 증대</strong>: 비전형적 구조 탐색
+
+### 비용 및 시간 고려
+
+- API 비용: k=5인 경우 약 5배 증가
+- 작성 시간: 초기 시간 투자 필요하나 품질 향상
+- 캐싱 활용: 동일 주제는 분포 재사용 가능
+
+### 품질 관리
+
+Verbalized Sampling 사용 시에도 품질 유지:
+- 기술적 정확성 검증
+- 코드 예제 테스트
+- SEO 메타데이터 최적화
+- 다국어 일관성 확인
+
 ## 이미지 생성 에이전트 협업 워크플로우
 
 블로그 포스트 작성 시 히어로 이미지가 필요한 경우:
