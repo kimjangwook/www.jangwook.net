@@ -14,30 +14,127 @@ const t = useTranslations(lang);
 
 // TODO: This will be populated by the improvement-tracker agent
 const improvements = [
-  // Planned improvements
+  // Completed improvements
   {
     date: '2025-11-07',
-    status: 'planned',
+    completedDate: '2025-11-07',
+    status: 'completed',
     title: {
       ko: 'astro-pagefind 페이지 검색 시스템 도입',
       en: 'astro-pagefind Page Search System Implementation',
       ja: 'astro-pagefind ページ検索システム導入'
     },
     category: 'Technical',
-    target: {
+    before: {
+      metric: { ko: '검색 기능', en: 'Search Feature', ja: '検索機能' },
+      value: { ko: '없음', en: 'None', ja: 'なし' }
+    },
+    after: {
       metric: { ko: '검색 기능', en: 'Search Feature', ja: '検索機能' },
       value: { ko: '전체 사이트', en: 'Full site', ja: 'サイト全体' }
     },
+    impact: '+100%',
+    impactType: 'positive',
     effort: { ko: '낮음', en: 'Low', ja: '低' },
     roi: { ko: '매우 높음', en: 'Very High', ja: '非常に高い' },
     description: {
-      ko: 'Pagefind 정적 검색 라이브러리를 Astro에 통합하여 블로그 콘텐츠 검색 기능 구현. 빌드 시 자동 인덱싱으로 서버 없이 클라이언트에서 빠른 검색 제공',
-      en: 'Integrate Pagefind static search library with Astro to implement blog content search feature. Provides fast client-side search without server through automatic indexing during build',
-      ja: 'Pagefind静的検索ライブラリをAstroに統合し、ブログコンテンツ検索機能を実装。ビルド時の自動インデックス化でサーバーなしでクライアントで高速検索を提供'
+      ko: 'Pagefind 정적 검색 라이브러리를 Astro에 통합하여 블로그 콘텐츠 검색 기능 구현. 빌드 시 자동 인덱싱으로 서버 없이 클라이언트에서 빠른 검색 제공. 초기 로드 20KB, 점진적 로딩으로 대역폭 최소화',
+      en: 'Integrated Pagefind static search library with Astro to implement blog content search. Provides fast client-side search without server through automatic indexing during build. Initial load 20KB with progressive loading to minimize bandwidth',
+      ja: 'Pagefind静的検索ライブラリをAstroに統合し、ブログコンテンツ検索機能を実装。ビルド時の自動インデックス化でサーバーなしでクライアントで高速検索を提供。初期ロード20KB、段階的ロードで帯域幅を最小化'
     },
-    expectedImpact: { ko: '사용자 검색 경험 개선, 콘텐츠 접근성 향상, 체류 시간 증가', en: 'Improve search UX, enhance content accessibility, increase dwell time', ja: '検索UX改善、コンテンツアクセシビリティ向上、滞在時間増加' }
+    lessons: {
+      ko: [
+        'astro-pagefind 패키지 설치 및 통합',
+        'astro.config.ts에 build.format: "file" 설정 필수',
+        '검색 컴포넌트를 헤더에 모달 방식으로 통합',
+        'CSS 커스텀 속성으로 UI 스타일 조정',
+        '다국어 지원을 위한 lang 필터 메타태그 추가',
+        'data-pagefind-body 속성으로 인덱싱 범위 제어',
+        '개발 모드가 아닌 빌드 후 preview로 테스트',
+        '점진적 로딩으로 성능 최적화'
+      ],
+      en: [
+        'Installed and integrated astro-pagefind package',
+        'Required build.format: "file" setting in astro.config.ts',
+        'Integrated search component in header with modal approach',
+        'Adjusted UI styles with CSS custom properties',
+        'Added lang filter meta tags for multilingual support',
+        'Controlled indexing scope with data-pagefind-body attribute',
+        'Tested with preview after build, not in dev mode',
+        'Optimized performance with progressive loading'
+      ],
+      ja: [
+        'astro-pagefindパッケージのインストールと統合',
+        'astro.config.tsにbuild.format: "file"設定が必須',
+        '検索コンポーネントをヘッダーにモーダル方式で統合',
+        'CSSカスタムプロパティでUIスタイルを調整',
+        '多言語サポートのためのlangフィルターメタタグ追加',
+        'data-pagefind-body属性でインデックス範囲を制御',
+        '開発モードではなくビルド後のpreviewでテスト',
+        '段階的ロードでパフォーマンス最適化'
+      ]
+    }
   },
-  // Completed improvements
+  {
+    date: '2025-10-24',
+    completedDate: '2025-10-24',
+    status: 'completed',
+    title: {
+      ko: 'SSR 방법론 기반 블로그 재방문 의향 설문 조사',
+      en: 'Blog Revisit Intent Survey Based on SSR Methodology',
+      ja: 'SSR方法論に基づくブログ再訪問意向調査'
+    },
+    category: 'Content',
+    before: {
+      metric: { ko: '독자 피드백', en: 'Reader Feedback', ja: '読者フィードバック' },
+      value: { ko: '정성적', en: 'Qualitative', ja: '定性的' }
+    },
+    after: {
+      metric: { ko: '독자 피드백', en: 'Reader Feedback', ja: '読者フィードバック' },
+      value: { ko: '정량적', en: 'Quantitative', ja: '定量的' }
+    },
+    impact: '+83%',
+    impactType: 'positive',
+    effort: { ko: '중간', en: 'Medium', ja: '中' },
+    roi: { ko: '매우 높음', en: 'Very High', ja: '非常に高い' },
+    description: {
+      ko: 'LLM 기반 Semantic Similarity Rating(SSR) 방법론으로 225개 평가 수행. 15개 페르소나 × 5개 콘텐츠 × 3회 반복으로 재방문 의향 분석. 평균 3.078/5.0, ICC 0.833의 높은 신뢰도 검증. 비용 $3.50, 실행 시간 8분 24초',
+      en: 'Conducted 225 evaluations using LLM-based Semantic Similarity Rating (SSR) methodology. Analyzed revisit intent with 15 personas × 5 contents × 3 repetitions. Average rating 3.078/5.0, validated high reliability with ICC 0.833. Cost $3.50, execution time 8 min 24 sec',
+      ja: 'LLMベースのSemantic Similarity Rating(SSR)方法論で225件の評価を実施。15ペルソナ×5コンテンツ×3回繰り返しで再訪問意向を分析。平均3.078/5.0、ICC 0.833の高い信頼性を検証。コスト$3.50、実行時間8分24秒'
+    },
+    lessons: {
+      ko: [
+        'OpenAI API를 활용한 자유 응답 생성',
+        'text-embedding-3-small로 1536차원 벡터 임베딩',
+        '5단계 앵커와 코사인 유사도 계산',
+        'Softmax로 확률 분포 생성 및 기댓값 계산',
+        'Test-Retest 신뢰도 검증 (ICC 0.833)',
+        'Claude Code가 1위, 평균 3.086점으로 최고 평가',
+        '전체 97.3%가 4점(재방문 의향 높음)',
+        '전통적 설문 대비 95% 비용 절감, 99% 시간 단축'
+      ],
+      en: [
+        'Generated free-form responses using OpenAI API',
+        'Created 1536-dimensional vector embeddings with text-embedding-3-small',
+        'Calculated cosine similarity with 5 anchor points',
+        'Generated probability distribution and expected value using Softmax',
+        'Validated Test-Retest reliability (ICC 0.833)',
+        'Claude Code ranked 1st with average 3.086 rating',
+        'Overall 97.3% rated 4 (high revisit intent)',
+        '95% cost reduction, 99% time savings vs traditional surveys'
+      ],
+      ja: [
+        'OpenAI APIを活用した自由回答生成',
+        'text-embedding-3-smallで1536次元ベクトル埋め込み',
+        '5段階アンカーとコサイン類似度計算',
+        'Softmaxで確率分布と期待値を計算',
+        'Test-Retest信頼性検証(ICC 0.833)',
+        'Claude Codeが1位、平均3.086点で最高評価',
+        '全体の97.3%が4点(再訪問意向高い)',
+        '従来調査比95%コスト削減、99%時間短縮'
+      ]
+    }
+  },
   {
     date: '2025-10-07',
     completedDate: '2025-10-07',
