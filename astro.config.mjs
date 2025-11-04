@@ -3,11 +3,12 @@
 import mdx from '@astrojs/mdx';
 import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
+import pagefind from 'astro-pagefind';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.jangwook.net',
-	integrations: [mdx(), tailwind()],
+	integrations: [mdx(), tailwind(), pagefind()],
 	image: {
 		// 이미지 최적화 설정
 		service: {
@@ -15,6 +16,8 @@ export default defineConfig({
 		},
 	},
 	build: {
+		// Pagefind를 위한 파일 형식 설정
+		format: 'file',
 		// CSS 인라인 임계값 (4KB 이하는 인라인)
 		inlineStylesheets: 'auto',
 	},

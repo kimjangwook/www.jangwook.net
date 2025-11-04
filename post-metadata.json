@@ -361,5 +361,16 @@
       "devops": 0.2,
       "architecture": 0.6
     }
+  },
+  "astro-pagefind-search": {
+    "pubDate": "2025-11-07",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.9,
+      "ai-ml": 0.1,
+      "devops": 0.2,
+      "architecture": 0.4
+    }
   }
 }

@@ -7,13 +7,15 @@ import { filterPostsByDate } from '../../../lib/content';
 export async function getStaticPaths() {
 	const allPosts = await getCollection('blog');
 	const posts = filterPostsByDate(allPosts);
-	const langs = Object.keys(languages);
 
-	return posts.flatMap((post) => {
-		return langs.map((lang) => ({
-			params: { lang, slug: post.id },
+	return posts.map((post) => {
+		// Extract language from post.id (e.g., "ko/post-title" -> "ko")
+		const postLang = post.id.split('/')[0] as Language;
+
+		return {
+			params: { lang: postLang, slug: post.id },
 			props: post,
-		}));
+		};
 	});
 }
 

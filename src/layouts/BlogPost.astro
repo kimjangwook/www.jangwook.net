@@ -1,123 +1,147 @@
 ---
-import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import BuyMeACoffee from '../components/BuyMeACoffee.astro';
-import BlogPostLanguageSwitcher from '../components/BlogPostLanguageSwitcher.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
-import { useTranslations, type Language } from '../lib/i18n/languages';
-import { SITE_TITLE } from '../consts';
-import RelatedPosts from '../components/RelatedPosts.astro';
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import BuyMeACoffee from "../components/BuyMeACoffee.astro";
+import BlogPostLanguageSwitcher from "../components/BlogPostLanguageSwitcher.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Header from "../components/Header.astro";
+import { useTranslations, type Language } from "../lib/i18n/languages";
+import { SITE_TITLE } from "../consts";
+import RelatedPosts from "../components/RelatedPosts.astro";
 
-type Props = CollectionEntry<'blog'>['data'] & {
-	lang: Language;
-	tags?: string[];
-	postId?: string;
-	relatedPosts?: Array<{
-		slug: string;
-		score: number;
-		reason: { ko: string; ja: string; en: string };
-	}>;
+type Props = CollectionEntry<"blog">["data"] & {
+  lang: Language;
+  tags?: string[];
+  postId?: string;
+  relatedPosts?: Array<{
+    slug: string;
+    score: number;
+    reason: { ko: string; ja: string; en: string };
+  }>;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, lang, tags, postId, relatedPosts } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  lang,
+  tags,
+  postId,
+  relatedPosts,
+} = Astro.props;
 const t = useTranslations(lang);
 
 // Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
-const slug = Astro.url.pathname.split('/').filter(Boolean).pop() || '';
+const slug = Astro.url.pathname.split("/").filter(Boolean).pop() || "";
 
 // BreadcrumbList Schema
 const breadcrumbSchema = {
-	'@context': 'https://schema.org',
-	'@type': 'BreadcrumbList',
-	'itemListElement': [
-		{
-			'@type': 'ListItem',
-			'position': 1,
-			'name': t('nav.home'),
-			'item': new URL(`/${lang}`, Astro.site).toString(),
-		},
-		{
-			'@type': 'ListItem',
-			'position': 2,
-			'name': t('nav.blog'),
-			'item': new URL(`/${lang}/blog`, Astro.site).toString(),
-		},
-		{
-			'@type': 'ListItem',
-			'position': 3,
-			'name': title,
-			'item': Astro.url.toString(),
-		},
-	],
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: t("nav.home"),
+      item: new URL(`/${lang}`, Astro.site).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: t("nav.blog"),
+      item: new URL(`/${lang}/blog`, Astro.site).toString(),
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: title,
+      item: Astro.url.toString(),
+    },
+  ],
 };
 ---
 
 <html lang={lang}>
-	<head>
-		<BaseHead
-			title={title}
-			description={description}
-			image={heroImage}
-			articleData={{
-				publishedTime: pubDate.toISOString(),
-				modifiedTime: updatedDate?.toISOString(),
-				author: SITE_TITLE,
-				tags: tags,
-			}}
-		/>
-		<!-- BreadcrumbList Schema -->
-		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-	</head>
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      image={heroImage}
+      articleData={{
+        publishedTime: pubDate.toISOString(),
+        modifiedTime: updatedDate?.toISOString(),
+        author: SITE_TITLE,
+        tags: tags,
+      }}
+    />
+    <meta name="pagefind-filter-lang" content={lang} />
+    <!-- BreadcrumbList Schema -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbSchema)}
+    />
+  </head>
 
-	<body class="bg-gray-50">
-		<Header lang={lang} />
-		<main class="py-12">
-			<article class="max-w-4xl mx-auto px-0 sm:px-6 lg:px-8">
-				{heroImage && (
-					<div class="mb-8 -mx-4 sm:mx-0">
-						<Image
-							width={1020}
-							height={510}
-							src={heroImage}
-							alt={title}
-							class="w-full h-auto rounded-none sm:rounded-2xl shadow-xl object-cover"
-							loading="eager"
-							fetchpriority="high"
-							format="webp"
-							quality={85}
-						/>
-					</div>
-				)}
+  <body class="bg-gray-50">
+    <Header lang={lang} />
+    <main class="py-12">
+      <article class="max-w-4xl mx-auto px-0 sm:px-6 lg:px-8">
+        {
+          heroImage && (
+            <div class="mb-8 -mx-4 sm:mx-0">
+              <Image
+                width={1020}
+                height={510}
+                src={heroImage}
+                alt={title}
+                class="w-full h-auto rounded-none sm:rounded-2xl shadow-xl object-cover"
+                loading="eager"
+                fetchpriority="high"
+                format="webp"
+                quality={85}
+              />
+            </div>
+          )
+        }
 
-				<div class="bg-white rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
-					<!-- Header -->
-					<header class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200">
-						<div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
-							<time datetime={pubDate.toISOString()}>
-								{t('blog.publishedOn')}: <FormattedDate date={pubDate} />
-							</time>
-							{updatedDate && (
-								<>
-									<span>•</span>
-									<time datetime={updatedDate.toISOString()} class="italic">
-										{t('blog.updatedOn')}: <FormattedDate date={updatedDate} />
-									</time>
-								</>
-							)}
-						</div>
-						<h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
-							{title}
-						</h1>
-						<p class="text-base sm:text-lg lg:text-xl text-gray-600">
-							{description}
-						</p>
-					</header>
+        <div class="bg-white rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
+          <!-- Header -->
+          <header class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200">
+            <div
+              class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4"
+            >
+              <time datetime={pubDate.toISOString()}>
+                {t("blog.publishedOn")}: <FormattedDate date={pubDate} />
+              </time>
+              {
+                updatedDate && (
+                  <>
+                    <span>•</span>
+                    <time datetime={updatedDate.toISOString()} class="italic">
+                      {t("blog.updatedOn")}:{" "}
+                      <FormattedDate date={updatedDate} />
+                    </time>
+                  </>
+                )
+              }
+            </div>
+            <h1
+              class="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight"
+            >
+              {title}
+            </h1>
+            <p class="text-base sm:text-lg lg:text-xl text-gray-600">
+              {description}
+            </p>
+          </header>
 
-					<!-- Content -->
-					<div class="prose sm:prose-lg prose-gray max-w-none
+          <!-- Content -->
+          <div
+            class="prose sm:prose-lg prose-gray max-w-none
 						prose-headings:font-bold prose-headings:text-gray-900
 						prose-h2:text-xl sm:prose-h2:text-2xl lg:prose-h2:text-3xl prose-h2:mt-8 sm:prose-h2:mt-12 prose-h2:mb-4 sm:prose-h2:mb-6
 						prose-h3:text-lg sm:prose-h3:text-xl lg:prose-h3:text-2xl prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4
@@ -130,153 +154,171 @@ const breadcrumbSchema = {
 						prose-img:rounded-lg prose-img:shadow-md
 						prose-ul:text-sm sm:prose-ul:text-base
 						prose-ol:text-sm sm:prose-ol:text-base
-						prose-li:text-sm sm:prose-li:text-base
-					">
-						<slot />
-					</div>
+						prose-li:text-sm sm:prose-li:text-base"
+          >
+            <slot />
+          </div>
 
-					<!-- Language Switcher -->
-					<BlogPostLanguageSwitcher slug={slug} currentLang={lang} />
+          <!-- Language Switcher -->
+          <BlogPostLanguageSwitcher slug={slug} currentLang={lang} />
 
-					<!-- Buy Me a Coffee -->
-					<BuyMeACoffee lang={lang} />
+          <!-- Buy Me a Coffee -->
+          <BuyMeACoffee lang={lang} />
 
-					<!-- Related Posts (V3) -->
-					{relatedPosts && relatedPosts.length > 0 && (
-						<RelatedPosts items={relatedPosts} language={lang} />
-					)}
-				</div>
+          <!-- Related Posts (V3) -->
+          {
+            relatedPosts && relatedPosts.length > 0 && (
+              <RelatedPosts items={relatedPosts} language={lang} />
+            )
+          }
+        </div>
 
-				<!-- Comments -->
-				<div class="mt-8 bg-white rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
-					<script src="https://giscus.app/client.js"
-						data-repo="kimjangwook/www.jangwook.net"
-						data-repo-id="R_kgDOP8NyLg"
-						data-category="Announcements"
-						data-category-id="DIC_kwDOP8NyLs4CwRC3"
-						data-mapping="pathname"
-						data-strict="0"
-						data-reactions-enabled="1"
-						data-emit-metadata="0"
-						data-input-position="bottom"
-						data-theme="preferred_color_scheme"
-						data-lang={lang === 'ja' ? 'ja' : lang === 'en' ? 'en' : 'ko'}
-						data-loading="lazy"
-						crossorigin="anonymous"
-						async>
-					</script>
-				</div>
+        <!-- Comments -->
+        <div class="mt-8 bg-white rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="kimjangwook/www.jangwook.net"
+            data-repo-id="R_kgDOP8NyLg"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOP8NyLs4CwRC3"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang={lang === "ja" ? "ja" : lang === "en" ? "en" : "ko"}
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async></script>
+        </div>
 
-				<!-- Back to blog link -->
-				<div class="mt-8 text-center">
-					<a
-						href={`/${lang}/blog`}
-						class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-medium transition-colors"
-					>
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-						</svg>
-						{lang === 'ko' ? '블로그 목록으로' : 'ブログリストへ'}
-					</a>
-				</div>
-			</article>
-		</main>
-		<Footer lang={lang} />
+        <!-- Back to blog link -->
+        <div class="mt-8 text-center">
+          <a
+            href={`/${lang}/blog`}
+            class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-medium transition-colors"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"></path>
+            </svg>
+            {lang === "ko" ? "블로그 목록으로" : "ブログリストへ"}
+          </a>
+        </div>
+      </article>
+    </main>
+    <Footer lang={lang} />
 
-		<!-- Mermaid Diagram Rendering -->
-		<script type="module">
-			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    <!-- Mermaid Diagram Rendering -->
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
 
-			// Initialize Mermaid
-			mermaid.initialize({
-				startOnLoad: false,
-				theme: 'default',
-				securityLevel: 'loose',
-				flowchart: {
-					useMaxWidth: true,
-					htmlLabels: true,
-					curve: 'basis'
-				}
-			});
+      // Initialize Mermaid
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: "default",
+        securityLevel: "loose",
+        flowchart: {
+          useMaxWidth: true,
+          htmlLabels: true,
+          curve: "basis",
+        },
+      });
 
-			// Find all mermaid code blocks and render them
-			document.addEventListener('DOMContentLoaded', async () => {
-				const mermaidBlocks = document.querySelectorAll('pre[data-language="mermaid"] code');
+      // Find all mermaid code blocks and render them
+      document.addEventListener("DOMContentLoaded", async () => {
+        const mermaidBlocks = document.querySelectorAll(
+          'pre[data-language="mermaid"] code'
+        );
 
-				mermaidBlocks.forEach(async (block, index) => {
-					const code = block.textContent;
-					const pre = block.parentElement;
+        mermaidBlocks.forEach(async (block, index) => {
+          const code = block.textContent;
+          const pre = block.parentElement;
 
-					// Create a container for the mermaid diagram
-					const container = document.createElement('div');
-					container.className = 'mermaid-diagram';
-					container.style.cssText = 'background: white; padding: 1rem; border-radius: 0.5rem; overflow-x: auto;';
+          // Create a container for the mermaid diagram
+          const container = document.createElement("div");
+          container.className = "mermaid-diagram";
+          container.style.cssText =
+            "background: white; padding: 1rem; border-radius: 0.5rem; overflow-x: auto;";
 
-					// Create unique ID for this diagram
-					const id = `mermaid-${index}-${Date.now()}`;
+          // Create unique ID for this diagram
+          const id = `mermaid-${index}-${Date.now()}`;
 
-					try {
-						const { svg } = await mermaid.render(id, code);
-						container.innerHTML = svg;
-						pre.replaceWith(container);
-					} catch (error) {
-						console.error('Mermaid rendering error:', error);
-						container.innerHTML = `<div style="color: red; padding: 1rem;">Mermaid diagram rendering failed</div>`;
-						pre.replaceWith(container);
-					}
-				});
-			});
-		</script>
+          try {
+            const { svg } = await mermaid.render(id, code);
+            container.innerHTML = svg;
+            pre.replaceWith(container);
+          } catch (error) {
+            console.error("Mermaid rendering error:", error);
+            container.innerHTML = `<div style="color: red; padding: 1rem;">Mermaid diagram rendering failed</div>`;
+            pre.replaceWith(container);
+          }
+        });
+      });
+    </script>
 
-		<!-- Blog Post Read Complete Tracking -->
-		<script is:inline>
-			let scrollTracked = false;
+    <!-- Blog Post Read Complete Tracking -->
+    <script is:inline>
+      let scrollTracked = false;
 
-			console.log('[GA Debug] Blog post read tracking initialized');
+      console.log("[GA Debug] Blog post read tracking initialized");
 
-			function trackScrollComplete() {
-				if (scrollTracked) {
-					console.log('[GA Debug] Scroll already tracked, skipping');
-					return;
-				}
+      function trackScrollComplete() {
+        if (scrollTracked) {
+          console.log("[GA Debug] Scroll already tracked, skipping");
+          return;
+        }
 
-				const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-				const scrollPosition = window.scrollY;
-				const scrollPercentage = (scrollPosition / scrollHeight) * 100;
+        const scrollHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPosition = window.scrollY;
+        const scrollPercentage = (scrollPosition / scrollHeight) * 100;
 
-				console.log('[GA Debug] Scroll position:', {
-					scrollHeight,
-					scrollPosition,
-					scrollPercentage: scrollPercentage.toFixed(2) + '%'
-				});
+        console.log("[GA Debug] Scroll position:", {
+          scrollHeight,
+          scrollPosition,
+          scrollPercentage: scrollPercentage.toFixed(2) + "%",
+        });
 
-				if (scrollPercentage >= 100) {
-					scrollTracked = true;
-					console.log('[GA Debug] 100% scroll reached, firing event');
+        if (scrollPercentage >= 100) {
+          scrollTracked = true;
+          console.log("[GA Debug] 100% scroll reached, firing event");
 
-					// Send GA4 event
-					if (typeof gtag !== 'undefined') {
-						const eventData = {
-							'page_title': document.title,
-							'page_location': window.location.href,
-							'page_path': window.location.pathname
-						};
-						console.log('[GA Debug] Sending blog_post_read_complete event:', eventData);
-						gtag('event', 'blog_post_read_complete', eventData);
-						console.log('[GA Debug] Event sent successfully');
-					} else {
-						console.warn('[GA Debug] gtag is not defined');
-					}
-				}
-			}
+          // Send GA4 event
+          if (typeof gtag !== "undefined") {
+            const eventData = {
+              page_title: document.title,
+              page_location: window.location.href,
+              page_path: window.location.pathname,
+            };
+            console.log(
+              "[GA Debug] Sending blog_post_read_complete event:",
+              eventData
+            );
+            gtag("event", "blog_post_read_complete", eventData);
+            console.log("[GA Debug] Event sent successfully");
+          } else {
+            console.warn("[GA Debug] gtag is not defined");
+          }
+        }
+      }
 
-			// Throttle scroll events
-			let scrollTimeout;
-			window.addEventListener('scroll', () => {
-				clearTimeout(scrollTimeout);
-				scrollTimeout = setTimeout(trackScrollComplete, 100);
-			});
-			console.log('[GA Debug] Scroll listener attached');
-		</script>
-	</body>
+      // Throttle scroll events
+      let scrollTimeout;
+      window.addEventListener("scroll", () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(trackScrollComplete, 100);
+      });
+      console.log("[GA Debug] Scroll listener attached");
+    </script>
+  </body>
 </html>

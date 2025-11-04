@@ -1,77 +1,211 @@
 ---
-import { SITE_TITLE } from '../consts';
-import { useTranslations, type Language } from '../lib/i18n/languages';
-import HeaderLink from './HeaderLink.astro';
-import LanguageSwitcher from './LanguageSwitcher.astro';
+import { SITE_TITLE } from "../consts";
+import { useTranslations, type Language } from "../lib/i18n/languages";
+import HeaderLink from "./HeaderLink.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import Search from "astro-pagefind/components/Search";
 
 interface Props {
-	lang: Language;
+  lang: Language;
 }
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="flex items-center justify-between h-16">
-			<div class="flex items-center gap-8">
-				<!-- Mobile menu button (shown on mobile and tablet) -->
-				<button
-					id="mobile-menu-button"
-					class="lg:hidden p-2 rounded-md text-gray-700 hover:text-accent hover:bg-gray-100 transition-colors"
-					aria-label="Toggle menu"
-				>
-					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-					</svg>
-				</button>
+<header
+  class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200"
+>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center gap-8">
+        <!-- Mobile menu button (shown on mobile and tablet) -->
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden p-2 rounded-md text-gray-700 hover:text-accent hover:bg-gray-100 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
 
-				<h2 class="text-xl font-bold">
-					<a href={`/${lang}`} class="text-primary hover:text-accent transition-colors">
-						{SITE_TITLE}
-					</a>
-				</h2>
-				<div class="hidden lg:flex items-center gap-1">
-					<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
-					<HeaderLink href={`/${lang}/blog`}>{t('nav.blog')}</HeaderLink>
-					<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
-					<HeaderLink href={`/${lang}/contact`}>{t('nav.contact')}</HeaderLink>
-					<HeaderLink href={`/${lang}/social`}>{t('nav.social')}</HeaderLink>
-					<HeaderLink href={`/${lang}/improvement-history`}>{t('nav.improvementHistory')}</HeaderLink>
-				</div>
-			</div>
-			<div class="flex items-center gap-4">
-				<LanguageSwitcher currentLang={lang} />
-			</div>
-		</div>
+        <h2 class="text-xl font-bold">
+          <a
+            href={`/${lang}`}
+            class="text-primary hover:text-accent transition-colors"
+          >
+            {SITE_TITLE}
+          </a>
+        </h2>
+        <div class="hidden lg:flex items-center gap-1">
+          <HeaderLink href={`/${lang}`}>{t("nav.home")}</HeaderLink>
+          <HeaderLink href={`/${lang}/blog`}>{t("nav.blog")}</HeaderLink>
+          <HeaderLink href={`/${lang}/about`}>{t("nav.about")}</HeaderLink>
+          <HeaderLink href={`/${lang}/contact`}>{t("nav.contact")}</HeaderLink>
+          <HeaderLink href={`/${lang}/social`}>{t("nav.social")}</HeaderLink>
+          <HeaderLink href={`/${lang}/improvement-history`}
+            >{t("nav.improvementHistory")}</HeaderLink
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <!-- Search button -->
+        <button
+          id="search-button"
+          class="p-2 rounded-md text-gray-700 hover:text-accent hover:bg-gray-100 transition-colors"
+          aria-label="Search"
+          title="Search (Ctrl+K)"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
+        <LanguageSwitcher currentLang={lang} />
+      </div>
+    </div>
 
-		<!-- Mobile menu (shown on mobile and tablet) -->
-		<div id="mobile-menu" class="hidden lg:hidden pb-4 pt-2 border-t border-gray-200">
-			<div class="flex flex-col gap-2">
-				<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
-				<HeaderLink href={`/${lang}/blog`}>{t('nav.blog')}</HeaderLink>
-				<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
-				<HeaderLink href={`/${lang}/contact`}>{t('nav.contact')}</HeaderLink>
-				<HeaderLink href={`/${lang}/social`}>{t('nav.social')}</HeaderLink>
-				<HeaderLink href={`/${lang}/improvement-history`}>{t('nav.improvementHistory')}</HeaderLink>
-			</div>
-		</div>
-	</nav>
+    <!-- Mobile menu (shown on mobile and tablet) -->
+    <div
+      id="mobile-menu"
+      class="hidden lg:hidden pb-4 pt-2 border-t border-gray-200"
+    >
+      <div class="flex flex-col gap-2">
+        <HeaderLink href={`/${lang}`}>{t("nav.home")}</HeaderLink>
+        <HeaderLink href={`/${lang}/blog`}>{t("nav.blog")}</HeaderLink>
+        <HeaderLink href={`/${lang}/about`}>{t("nav.about")}</HeaderLink>
+        <HeaderLink href={`/${lang}/contact`}>{t("nav.contact")}</HeaderLink>
+        <HeaderLink href={`/${lang}/social`}>{t("nav.social")}</HeaderLink>
+        <HeaderLink href={`/${lang}/improvement-history`}
+          >{t("nav.improvementHistory")}</HeaderLink
+        >
+      </div>
+    </div>
+  </nav>
 </header>
 
+<!-- Search Modal -->
+<div
+  id="search-modal"
+  class="hidden fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm"
+>
+  <div class="flex items-start justify-center min-h-screen pt-16 px-4 pb-16">
+    <div
+      class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-[85vh] overflow-hidden flex flex-col"
+    >
+      <div
+        class="flex items-center justify-between p-3 border-b border-gray-200 flex-shrink-0"
+      >
+        <h3 class="text-base font-semibold text-gray-900">Search</h3>
+        <button
+          id="close-search"
+          class="p-1.5 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+          aria-label="Close search"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="overflow-y-auto flex-1">
+        <div class="p-4">
+          <Search
+            id="pagefind-search"
+            className="pagefind-ui"
+            uiOptions={{ showImages: false }}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-	const mobileMenuButton = document.getElementById('mobile-menu-button');
-	const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const searchButton = document.getElementById("search-button");
+  const searchModal = document.getElementById("search-modal");
+  const closeSearch = document.getElementById("close-search");
 
-	mobileMenuButton?.addEventListener('click', () => {
-		mobileMenu?.classList.toggle('hidden');
-	});
+  // Mobile menu toggle
+  mobileMenuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
 
-	// Close menu when clicking a link
-	mobileMenu?.querySelectorAll('a').forEach(link => {
-		link.addEventListener('click', () => {
-			mobileMenu.classList.add('hidden');
-		});
-	});
+  // Close menu when clicking a link
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+
+  // Open search modal
+  const openSearchModal = () => {
+    searchModal?.classList.remove("hidden");
+    // Focus on search input after modal opens
+    setTimeout(() => {
+      const searchInput = document.querySelector(
+        ".pagefind-ui__search-input"
+      ) as HTMLInputElement;
+      searchInput?.focus();
+    }, 100);
+  };
+
+  // Close search modal
+  const closeSearchModal = () => {
+    searchModal?.classList.add("hidden");
+  };
+
+  // Search button click
+  searchButton?.addEventListener("click", openSearchModal);
+
+  // Close button click
+  closeSearch?.addEventListener("click", closeSearchModal);
+
+  // Close on backdrop click
+  searchModal?.addEventListener("click", (e) => {
+    if (e.target === searchModal) {
+      closeSearchModal();
+    }
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener("keydown", (e) => {
+    // Ctrl+K or Cmd+K to open search
+    if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+      e.preventDefault();
+      openSearchModal();
+    }
+    // Escape to close search
+    if (e.key === "Escape" && !searchModal?.classList.contains("hidden")) {
+      closeSearchModal();
+    }
+  });
 </script>
