@@ -43,12 +43,19 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-05
-**총 포스트 수**: 32개 (한국어 기준)
+**최신 포스트 날짜**: 2025-11-09
+**총 포스트 수**: 34개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **데이터 기반 제품 의사결정: PM을 위한 분석 프레임워크** (2025-11-05)
+1. **Claude Code 에이전트에 Verbalized Sampling 적용하기: LLM 다양성 1.6〜2.1배 향상** (2025-11-09)
+   - Verbalized Sampling 기법을 Claude Code 에이전트 시스템에 적용하여 프롬프트 다양성 2.0배, 콘텐츠 다양성 1.8배, 글쓰기 스타일 1.6배 향상을 달성한 실전 가이드. 4개 에이전트 수정 내역, 파라미터 조정, 비용 분석까지 완벽 정리
+   - **핵심 내용**: 모드 붕괴 문제 정의 (안전한 응답에 수렴, 창의성 감소), Verbalized Sampling 원리 (k개 응답 생성, tau 확률 임계값, 꼬리 분포 샘플링), 4개 에이전트 수정 (prompt-engineer 2.0배, content-planner 1.8배, writing-assistant 1.6배, image-generator 1.5배), 파라미터 조정 가이드 (k=3〜10, tau=0.05〜0.20, temperature=0.7〜1.0), 실전 적용 패턴 3가지 (탐색→선택→실행, 분포 생성→다중 샘플링, 계층적 다양성), 비용 대비 효과 분석 (k=5로 5배 증가하지만 재작업 감소로 ROI 긍정적), 9가지 핵심 인사이트 (선택적 적용, 파라미터 조정, 품질 관리, 다국어 효과), 측정 지표 (Self-BLEU 0.75→0.38, 만족도 41% 향상), 즉시 적용 권장 (prompt-engineer, content-planner, writing-assistant)
+
+2. **Verbalized Sampling: LLM 다양성을 되찾는 훈련 불필요 프롬프팅 기법** (2025-11-08)
+   - 정렬 후 발생하는 모드 붕괴 문제를 해결하는 Verbalized Sampling 기법. 재훈련 없이 LLM 출력 다양성을 1.6〜2.1배 향상시키는 프롬프팅 전략 완벽 가이드
+
+2. **데이터 기반 제품 의사결정: PM을 위한 분석 프레임워크** (2025-11-05)
    - 핵심 지표, 의사결정 프레임워크, A/B 테스트 베스트 프랙티스로 제품 의사결정을 데이터로 무장하는 완벽 가이드. Netflix, Spotify, Airbnb, Amazon의 실전 사례 포함
    - **핵심 내용**: 제품 타입별 핵심 지표 (B2B SaaS: MRR/NRR/Churn, Marketplace: GMV/Take Rate, Consumer App: DAU/MAU/Retention), 4가지 의사결정 프레임워크 (RICE/ICE/Kano/Value vs Effort 상세 비교), 분석 도구 비교 (Amplitude/Mixpanel/Heap/GA4 기능 및 가격), A/B 테스트 통계 기초 (샘플 사이즈 계산, 통계적 유의성, MDE), SQL 실전 쿼리 6개 (코호트 리텐션, 퍼널 분석, Activation Rate, Stickiness), 4가지 실전 케이스 스터디 (Netflix 개인화 $1B 절감, Spotify Discover Weekly 40M+ 유저, Airbnb OMTM 10M→300M, Amazon 연 10,000+ 실험), 데이터 문화 구축 4요소 (Data Literacy, Infrastructure, Strategy, Collaboration), 흔한 함정 회피법 (상관/인과 혼동, Vanity Metrics, Analysis Paralysis), 주차별 실행 플랜 (4주 로드맵 + 체크리스트)
 
@@ -532,6 +539,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-05 (데이터 기반 제품 의사결정: PM을 위한 분석 프레임워크 포스트 발행)
+**Last Updated**: 2025-10-05 (Claude Code 에이전트에 Verbalized Sampling 적용하기 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
