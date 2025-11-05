@@ -186,6 +186,98 @@ import heroImage from '../../../assets/blog/2025-10-04-nextjs-15-features.png';
 
 ## 이미지 프롬프트 작성 가이드
 
+### Verbalized Sampling for Visual Diversity
+
+히어로 이미지 생성 시 **Verbalized Sampling** 기법을 활용하여 다양한 시각적 스타일을 탐색합니다.
+
+#### 언제 사용하는가?
+
+- 블로그 주제에 여러 시각적 접근이 가능할 때
+- 독창적이고 눈에 띄는 이미지가 필요할 때
+- 브랜드 이미지를 차별화하고 싶을 때
+
+#### 프롬프트 생성 템플릿
+
+```
+<instructions>
+다음 블로그 주제에 대해 5개의 히어로 이미지 프롬프트를 생성하세요.
+
+각 프롬프트는 <response> 태그로 감싸고:
+- <prompt>: 영문 이미지 생성 프롬프트 (Gemini API용)
+- <style>: 시각적 스타일 (minimalist, abstract, illustrative, photorealistic 등)
+- <color_scheme>: 색상 조합
+- <mood>: 분위기 (professional, playful, futuristic, elegant 등)
+- <probability>: 선택 확률 (0.12 미만)
+
+비전형적이지만 매력적인 시각적 접근을 포함하세요.
+일반적인 "tech stock photo" 스타일을 넘어서세요.
+</instructions>
+
+블로그 주제: [주제]
+핵심 개념: [개념]
+타겟 독자: [독자층]
+```
+
+#### 파라미터 설정
+
+| 파라미터 | 권장값 | 이유 |
+|---------|--------|------|
+| k | 5 | 다양한 시각적 스타일 탐색 |
+| tau | 0.12 | 창의성과 적절성 균형 |
+| temperature | 0.95 | 최대 창의성 |
+
+#### 예시
+
+**요청**: "TypeScript 타입 시스템에 대한 블로그 이미지"
+
+**Verbalized Sampling 프롬프트**:
+```
+<instructions>
+TypeScript 타입 시스템에 대한 블로그 히어로 이미지 프롬프트 5개를 생성하세요.
+
+각 프롬프트는 <response> 태그로 감싸고:
+- <prompt>: 영문 이미지 생성 프롬프트
+- <style>: 시각적 스타일
+- <color_scheme>: 색상 조합
+- <mood>: 분위기
+- <probability>: 선택 확률 (0.12 미만)
+
+일반적인 코드 스크린샷 스타일을 피하고,
+독창적인 시각적 메타포를 사용하세요.
+</instructions>
+
+블로그 주제: TypeScript 타입 시스템
+핵심 개념: 타입 안전성, 타입 추론, 제네릭
+타겟 독자: 중급 개발자
+```
+
+**예상 출력**:
+```xml
+<response>
+<prompt>Abstract geometric shapes interlocking precisely like puzzle pieces, representing type safety, modern gradient colors from deep blue to cyan, clean minimalist composition, 3D rendered style, no text overlays</prompt>
+<style>abstract 3D geometric</style>
+<color_scheme>blue-cyan gradient</color_scheme>
+<mood>precise and modern</mood>
+<probability>0.09</probability>
+</response>
+
+<response>
+<prompt>Isometric illustration of building blocks stacking perfectly with safety nets below, symbolizing type safety and error prevention, soft pastel colors with teal accents, playful yet professional aesthetic, vector art style</prompt>
+<style>isometric illustration</style>
+<color_scheme>pastel with teal accents</color_scheme>
+<mood>playful and safe</mood>
+<probability>0.11</probability>
+</response>
+
+[... 3 more diverse prompts ...]
+```
+
+#### 효과
+
+- <strong>시각적 다양성</strong>: 1.5배 더 다양한 이미지 스타일
+- <strong>브랜드 차별화</strong>: 독특한 시각적 정체성
+- <strong>독자 관심</strong>: 눈에 띄는 이미지로 클릭률 향상
+
 ### 효과적인 프롬프트 구조
 
 ```

@@ -361,5 +361,27 @@
       "devops": 0.2,
       "architecture": 0.6
     }
+  },
+  "verbalized-sampling-llm-diversity": {
+    "pubDate": "2025-11-08",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
+  },
+  "claude-code-verbalized-sampling": {
+    "pubDate": "2025-11-09",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.85
+    }
   }
 }
