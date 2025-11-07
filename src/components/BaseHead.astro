@@ -68,12 +68,36 @@ const articleSchema = articleData ? {
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- RSS Feeds (language-specific and global) -->
 <link
 	rel="alternate"
 	type="application/rss+xml"
-	title={SITE_TITLE}
+	title={`${SITE_TITLE} - All Languages`}
 	href={new URL('rss.xml', Astro.site)}
 />
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - 한국어`}
+	href={new URL('rss-ko.xml', Astro.site)}
+	hreflang="ko"
+/>
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - English`}
+	href={new URL('rss-en.xml', Astro.site)}
+	hreflang="en"
+/>
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - 日本語`}
+	href={new URL('rss-ja.xml', Astro.site)}
+	hreflang="ja"
+/>
+
 <meta name="generator" content={Astro.generator} />
 
 <!-- Google AdSense -->
