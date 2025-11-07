@@ -1,0 +1,209 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "hour": 9
+            }
+          ]
+        },
+        "feedUrl": "https://www.jangwook.net/rss-ja.xml"
+      },
+      "type": "n8n-nodes-base.rssFeedReadTrigger",
+      "typeVersion": 1,
+      "position": [
+        16,
+        160
+      ],
+      "id": "719c46a2-67ed-4ca6-9b1d-da5803270d79",
+      "name": "RSS Feed Trigger"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.link }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        224,
+        160
+      ],
+      "id": "d8e3e4e6-882e-4d59-a074-6beae686060b",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=あなたはソーシャルメディアコンテンツの専門家です。ウェブ記事の全文(HTML)に基づいて、X(Twitter)とLinkedInに最適化された投稿を作成してください。\n\n**入力データ:**\n```html\n{{ $json.data }}\n```\n\n**作成ガイドライン:**\n\n記事の全内容を十分に理解した上で、核心的なインサイトと価値を抽出し、各プラットフォームに合わせて作成してください。\n\n**X投稿(280文字制限):**\n- 記事の最も興味深い、または重要なポイント1つを強調\n- 簡潔でインパクトのある内容に作成\n- 読者の好奇心を刺激してクリックを誘導\n- 絵文字を1-2個使用(任意)\n- ハッシュタグを2-3個含める\n- リンクは別途追加されるため、本文に含めないこと\n\n**LinkedIn投稿(推奨200-400文字):**\n- 専門的で信頼感のあるトーン\n- 記事の核心的なインサイトや示唆を説明\n- ビジネスまたは産業の観点からの意味を強調\n- 読者に実質的な価値や学習ポイントを提供\n- 思考を刺激する質問やコメントを含める(任意)\n- リンクは別途追加されるため、本文に含めないこと\n- 絵文字は最小限に使用するか使用しない\n- ハッシュタグを3-5個含める\n\n**出力形式:**\n必ず次のJSON形式でのみ応答してください。他の説明やテキストは含めないでください。\n\n```\n{\n    \"x\": \"X用投稿テキスト(280文字以内、リンク含む)\",\n    \"linked_in\": \"LinkedIn用投稿テキスト(リンク含む)\"\n}\n```\n\n**重要事項:**\n- 記事の全内容に基づいて作成し、表面的な要約ではなく深いインサイトを提供\n- JSON形式のみを出力してください\n- マークダウンコードブロック(```)を使用しないでください\n- 追加の説明や注釈を含めないでください\n- ブログ投稿のリンクを含めてください。({{ $('RSS Feed Trigger').item.json.link }})\n- 必ず、日本語で書いてください。",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        432,
+        160
+      ],
+      "id": "7ca1dc60-9fad-4c1b-8d88-9a112b1d2193",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        304,
+        368
+      ],
+      "id": "7e363dec-0d0f-43be-b651-3e4af94f3591",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "KiZHfoLBEOHm8HzW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"x\": \"x 투고 메시지\",\n    \"linked_in\": \"linked in 투고 메시지\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        368
+      ],
+      "id": "ab549a1a-bffa-4779-9cce-2d2eec038466",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.output.x }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [
+        784,
+        160
+      ],
+      "id": "6d014568-1528-43c6-8e40-d3bc0a80ad66",
+      "name": "Create Tweet",
+      "credentials": {
+        "twitterOAuth2Api": {
+          "id": "OilKmA8B0q1Sgq7c",
+          "name": "X account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "person": "e7xJgbUNtW",
+        "text": "={{ $('AI Agent').item.json.output.linked_in }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [
+        992,
+        160
+      ],
+      "id": "acde1852-78be-4b57-93d5-3a26c7995381",
+      "name": "Create a post",
+      "credentials": {
+        "linkedInOAuth2Api": {
+          "id": "9vxDRQza0cyp0N2d",
+          "name": "LinkedIn account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "RSS Feed Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Create Tweet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Tweet": {
+      "main": [
+        [
+          {
+            "node": "Create a post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "586dd505-e577-416b-88cb-1c50a1ecfbf1",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0680886a3ddb4f3b1c46501d15c839c472ce43f2d27f20e4f51c532620bad01e"
+  },
+  "id": "Uqg4Ka9Q1mDOrawA",
+  "tags": []
+}
