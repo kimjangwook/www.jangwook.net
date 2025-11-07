@@ -1,0 +1,82 @@
+{
+  "date": "2025-10-05",
+  "completedDate": "2025-10-05",
+  "status": "completed",
+  "title": {
+    "ko": "모바일 반응형 디자인 실제 디바이스 테스트",
+    "en": "Mobile Responsive Design Real Device Testing",
+    "ja": "モバイルレスポンシブデザイン実機テスト"
+  },
+  "category": "UX",
+  "before": {
+    "metric": {
+      "ko": "테스트 상태",
+      "en": "Test Status",
+      "ja": "テスト状態"
+    },
+    "value": {
+      "ko": "미검증",
+      "en": "Not verified",
+      "ja": "未検証"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "테스트 완료",
+      "en": "Test Completed",
+      "ja": "テスト完了"
+    },
+    "value": {
+      "ko": "모든 디바이스 ✓",
+      "en": "All devices ✓",
+      "ja": "全デバイス ✓"
+    }
+  },
+  "impact": "+100%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "낮음",
+    "en": "Low",
+    "ja": "低"
+  },
+  "roi": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中程度"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
+  "description": {
+    "ko": "Chrome DevTools Device Mode 및 실제 디바이스에서 반응형 디자인 검증 완료. 모바일, 태블릿, 데스크톱 모든 해상도에서 정상 작동 확인",
+    "en": "Completed responsive design validation using Chrome DevTools Device Mode and real devices. Confirmed proper functionality across mobile, tablet, and desktop resolutions",
+    "ja": "Chrome DevTools Device Modeと実機でレスポンシブデザインの検証完了。モバイル、タブレット、デスクトップのすべての解像度で正常動作を確認"
+  },
+  "lessons": {
+    "ko": [
+      "Chrome DevTools Device Mode로 다양한 해상도 테스트",
+      "실제 모바일 디바이스에서 터치 인터랙션 확인",
+      "태블릿 레이아웃 (768px-1024px) 정상 작동",
+      "모바일 레이아웃 (320px-767px) 정상 작동",
+      "데스크톱 레이아웃 (1024px+) 정상 작동",
+      "모든 해상도에서 레이아웃 깨짐 없음",
+      "반응형 이미지 및 폰트 크기 적절히 조정됨"
+    ],
+    "en": [
+      "Tested various resolutions with Chrome DevTools Device Mode",
+      "Verified touch interactions on real mobile devices",
+      "Tablet layout (768px-1024px) working properly",
+      "Mobile layout (320px-767px) working properly",
+      "Desktop layout (1024px+) working properly",
+      "No layout breaks across all resolutions",
+      "Responsive images and font sizes properly adjusted"
+    ],
+    "ja": [
+      "Chrome DevTools Device Modeで様々な解像度をテスト",
+      "実際のモバイルデバイスでタッチインタラクションを確認",
+      "タブレットレイアウト（768px-1024px）正常動作",
+      "モバイルレイアウト（320px-767px）正常動作",
+      "デスクトップレイアウト（1024px+）正常動作",
+      "すべての解像度でレイアウト崩れなし",
+      "レスポンシブ画像とフォントサイズが適切に調整"
+    ]
+  }
+}

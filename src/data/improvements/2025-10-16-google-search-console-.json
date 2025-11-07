@@ -1,0 +1,73 @@
+{
+  "date": "2025-10-16",
+  "completedDate": "2025-10-19",
+  "status": "completed",
+  "title": {
+    "ko": "Google Search Console 사이트맵 제출",
+    "en": "Google Search Console Sitemap Submission",
+    "ja": "Google Search Consoleサイトマップ提出"
+  },
+  "category": "SEO",
+  "before": {
+    "metric": {
+      "ko": "인덱싱된 페이지",
+      "en": "Indexed Pages",
+      "ja": "インデックスされたページ"
+    },
+    "value": {
+      "ko": "0개",
+      "en": "0",
+      "ja": "0個"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "인덱싱된 페이지",
+      "en": "Indexed Pages",
+      "ja": "インデックスされたページ"
+    },
+    "value": {
+      "ko": "제출 완료",
+      "en": "Submitted",
+      "ja": "提出完了"
+    }
+  },
+  "impact": "+100%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "낮음",
+    "en": "Low",
+    "ja": "低"
+  },
+  "roi": {
+    "ko": "매우 높음",
+    "en": "Very High",
+    "ja": "非常に高い"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
+  "description": {
+    "ko": "Google Search Console과 Bing Webmaster Tools에 사이트맵을 성공적으로 제출하여 검색 엔진 인덱싱 시작",
+    "en": "Successfully submitted sitemap to Google Search Console and Bing Webmaster Tools to initiate search engine indexing",
+    "ja": "Google Search ConsoleとBing Webmaster Toolsにサイトマップを正常に提出して検索エンジンインデックスを開始"
+  },
+  "lessons": {
+    "ko": [
+      "Google Search Console에서 사이트맵 제출 완료 (sitemap-0.xml)",
+      "Bing Webmaster Tools에서 사이트맵 제출 완료",
+      "검색 엔진 인덱싱 프로세스 시작",
+      "7-14일 내 오가닉 검색 트래픽 증가 예상"
+    ],
+    "en": [
+      "Completed sitemap submission to Google Search Console (sitemap-0.xml)",
+      "Completed sitemap submission to Bing Webmaster Tools",
+      "Initiated search engine indexing process",
+      "Expected organic search traffic increase within 7-14 days"
+    ],
+    "ja": [
+      "Google Search Consoleにサイトマップ提出完了（sitemap-0.xml）",
+      "Bing Webmaster Toolsにサイトマップ提出完了",
+      "検索エンジンインデックスプロセス開始",
+      "7-14日以内にオーガニック検索トラフィックの増加を予想"
+    ]
+  }
+}

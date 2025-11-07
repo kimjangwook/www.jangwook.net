@@ -1,0 +1,78 @@
+{
+  "date": "2025-10-05",
+  "completedDate": "2025-10-05",
+  "status": "completed",
+  "title": {
+    "ko": "Giscus 댓글 시스템 도입",
+    "en": "Giscus Comment System Implementation",
+    "ja": "Giscusコメントシステム導入"
+  },
+  "category": "UX",
+  "before": {
+    "metric": {
+      "ko": "댓글 기능",
+      "en": "Comment Feature",
+      "ja": "コメント機能"
+    },
+    "value": {
+      "ko": "없음",
+      "en": "None",
+      "ja": "なし"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "댓글 기능",
+      "en": "Comment Feature",
+      "ja": "コメント機能"
+    },
+    "value": {
+      "ko": "GitHub Discussions 기반",
+      "en": "GitHub Discussions-based",
+      "ja": "GitHub Discussions ベース"
+    }
+  },
+  "impact": "+100%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "낮음",
+    "en": "Low",
+    "ja": "低"
+  },
+  "roi": {
+    "ko": "매우 높음",
+    "en": "Very High",
+    "ja": "非常に高い"
+  },
+  "description": {
+    "ko": "GitHub Discussions 기반의 Giscus 댓글 시스템 도입으로 독자와의 소통 채널 구축. 로그인 없이 GitHub 계정으로 댓글 작성 가능",
+    "en": "Established reader communication channel by implementing GitHub Discussions-based Giscus comment system. Enables commenting with GitHub account without separate login",
+    "ja": "GitHub DiscussionsベースのGiscusコメントシステム導入により読者とのコミュニケーションチャネルを構築。別途ログインなしでGitHubアカウントでコメント可能"
+  },
+  "lessons": {
+    "ko": [
+      "GitHub Discussions를 댓글 저장소로 활용",
+      "개발자 친화적인 댓글 시스템 (Markdown 지원)",
+      "스팸 방지 및 모더레이션 기능 내장",
+      "Dark/Light 테마 자동 전환",
+      "다국어 지원 (ko, en, ja)",
+      "모든 블로그 포스트에 자동 적용"
+    ],
+    "en": [
+      "Utilized GitHub Discussions as comment storage",
+      "Developer-friendly comment system (Markdown support)",
+      "Built-in spam prevention and moderation features",
+      "Automatic Dark/Light theme switching",
+      "Multilingual support (ko, en, ja)",
+      "Automatically applied to all blog posts"
+    ],
+    "ja": [
+      "GitHub Discussionsをコメント保存先として活用",
+      "開発者フレンドリーなコメントシステム（Markdownサポート）",
+      "スパム防止とモデレーション機能内蔵",
+      "Dark/Lightテーマ自動切り替え",
+      "多言語サポート（ko、en、ja）",
+      "すべてのブログ記事に自動適用"
+    ]
+  }
+}

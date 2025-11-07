@@ -1,0 +1,81 @@
+{
+  "date": "2025-10-06",
+  "completedDate": "2025-10-06",
+  "status": "completed",
+  "title": {
+    "ko": "다국어 블로그 포스트 언어 전환 컴포넌트 자동화",
+    "en": "Multilingual Blog Post Language Switcher Component Automation",
+    "ja": "多言語ブログ記事言語切り替えコンポーネント自動化"
+  },
+  "category": "UX",
+  "before": {
+    "metric": {
+      "ko": "언어 전환 UI",
+      "en": "Language Switcher UI",
+      "ja": "言語切り替えUI"
+    },
+    "value": {
+      "ko": "수동 추가 필요",
+      "en": "Manual addition required",
+      "ja": "手動追加が必要"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "언어 전환 UI",
+      "en": "Language Switcher UI",
+      "ja": "言語切り替えUI"
+    },
+    "value": {
+      "ko": "자동 생성",
+      "en": "Auto-generated",
+      "ja": "自動生成"
+    }
+  },
+  "impact": "+100%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "낮음",
+    "en": "Low",
+    "ja": "低"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "description": {
+    "ko": "블로그 포스트에 다른 언어 버전으로 전환할 수 있는 LanguageSwitcher 컴포넌트를 구현하여 모든 포스트에 자동 적용",
+    "en": "Implemented LanguageSwitcher component to allow switching between language versions in blog posts, automatically applied to all posts",
+    "ja": "ブログ記事で他の言語バージョンに切り替えられるLanguageSwitcherコンポーネントを実装し、すべての記事に自動適用"
+  },
+  "lessons": {
+    "ko": [
+      "src/components/LanguageSwitcher.astro 컴포넌트 생성",
+      "slug와 currentLang을 props로 받아 동적 링크 생성",
+      "BlogPost.astro 레이아웃에 통합 (BuyMeACoffee 위)",
+      "기존 15개 블로그 포스트에서 수동 언어 전환 섹션 제거",
+      "현재 언어는 비활성화, 다른 언어는 링크로 표시",
+      "한국어, 일본어, 영어 3개 언어 지원",
+      "URL 형식: /{lang}/blog/{lang}/{slug}"
+    ],
+    "en": [
+      "Created src/components/LanguageSwitcher.astro component",
+      "Accepts slug and currentLang as props for dynamic link generation",
+      "Integrated into BlogPost.astro layout (above BuyMeACoffee)",
+      "Removed manual language switcher sections from 15 existing blog posts",
+      "Current language shown as disabled, other languages as links",
+      "Supports 3 languages: Korean, Japanese, English",
+      "URL format: /{lang}/blog/{lang}/{slug}"
+    ],
+    "ja": [
+      "src/components/LanguageSwitcher.astroコンポーネントを作成",
+      "slugとcurrentLangをpropsとして受け取り動的リンクを生成",
+      "BlogPost.astroレイアウトに統合（BuyMeACoffeeの上）",
+      "既存15件のブログ記事から手動言語切り替えセクションを削除",
+      "現在の言語は無効化、他の言語はリンクとして表示",
+      "韓国語、日本語、英語の3言語をサポート",
+      "URL形式：/{lang}/blog/{lang}/{slug}"
+    ]
+  }
+}

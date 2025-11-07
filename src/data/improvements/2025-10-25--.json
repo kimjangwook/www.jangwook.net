@@ -1,0 +1,79 @@
+{
+  "date": "2025-10-25",
+  "completedDate": "2025-10-19",
+  "status": "completed",
+  "title": {
+    "ko": "내부 링크 전략 실행",
+    "en": "Internal Linking Strategy Implementation",
+    "ja": "内部リンク戦略実行"
+  },
+  "category": "SEO",
+  "before": {
+    "metric": {
+      "ko": "관련 포스트 링크",
+      "en": "Related Post Links",
+      "ja": "関連記事リンク"
+    },
+    "value": {
+      "ko": "없음",
+      "en": "None",
+      "ja": "なし"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "관련 포스트 링크",
+      "en": "Related Post Links",
+      "ja": "関連記事リンク"
+    },
+    "value": {
+      "ko": "Claude LLM 기반 자동 추천",
+      "en": "Claude LLM Auto Recommendations",
+      "ja": "Claude LLM自動推薦"
+    }
+  },
+  "impact": "+100%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中程度"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
+  "description": {
+    "ko": "Claude LLM 기반 의미론적 콘텐츠 추천 시스템을 구축하여 각 블로그 포스트에 관련 글 자동 추천 기능 추가",
+    "en": "Built Claude LLM-based semantic content recommendation system to automatically suggest related posts on each blog post",
+    "ja": "Claude LLMベースの意味論的コンテンツ推薦システムを構築し、各ブログ記事に関連記事の自動推薦機能を追加"
+  },
+  "lessons": {
+    "ko": [
+      "Claude LLM을 활용한 의미론적 콘텐츠 분석",
+      "TF-IDF 대신 딥러닝 기반 추천 시스템 채택",
+      "RelatedPosts.astro 컴포넌트로 UI 구현",
+      "recommendations.json에 사전 생성된 추천 데이터 저장",
+      "/generate-recommendations 슬래시 커맨드로 자동화",
+      "각 포스트에 prerequisite, related, next-step 추천 제공"
+    ],
+    "en": [
+      "Semantic content analysis using Claude LLM",
+      "Adopted deep learning-based recommendation system instead of TF-IDF",
+      "Implemented UI with RelatedPosts.astro component",
+      "Stored pre-generated recommendation data in recommendations.json",
+      "Automated with /generate-recommendations slash command",
+      "Provided prerequisite, related, and next-step recommendations for each post"
+    ],
+    "ja": [
+      "Claude LLMを活用した意味論的コンテンツ分析",
+      "TF-IDFの代わりにディープラーニングベースの推薦システムを採用",
+      "RelatedPosts.astroコンポーネントでUI実装",
+      "recommendations.jsonに事前生成された推薦データを保存",
+      "/generate-recommendationsスラッシュコマンドで自動化",
+      "各記事にprerequisite、related、next-step推薦を提供"
+    ]
+  }
+}

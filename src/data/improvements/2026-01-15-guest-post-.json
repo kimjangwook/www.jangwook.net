@@ -1,0 +1,43 @@
+{
+  "date": "2026-01-15",
+  "status": "planned",
+  "title": {
+    "ko": "Guest Post 전략 수립",
+    "en": "Guest Post Strategy Development",
+    "ja": "ゲストポスト戦略策定"
+  },
+  "category": "SEO",
+  "target": {
+    "metric": {
+      "ko": "백링크",
+      "en": "Backlinks",
+      "ja": "バックリンク"
+    },
+    "value": {
+      "ko": "10개",
+      "en": "10",
+      "ja": "10個"
+    }
+  },
+  "effort": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "roi": {
+    "ko": "매우 높음",
+    "en": "Very High",
+    "ja": "非常に高い"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
+  "description": {
+    "ko": "10개 타겟 기술 블로그 선정 및 아웃리치, 월 1개 guest post 기고",
+    "en": "Select 10 target tech blogs and outreach, publish 1 guest post per month",
+    "ja": "10の対象技術ブログを選定してアウトリーチ、月1件のゲストポスト寄稿"
+  },
+  "expectedImpact": {
+    "ko": "레퍼럴 트래픽 15%, 백링크 10개 확보",
+    "en": "15% referral traffic, acquire 10 backlinks",
+    "ja": "リファラルトラフィック15%、バックリンク10件獲得"
+  }
+}

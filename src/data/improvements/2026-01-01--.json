@@ -1,0 +1,43 @@
+{
+  "date": "2026-01-01",
+  "status": "planned",
+  "title": {
+    "ko": "이메일 뉴스레터 시스템 본격 운영",
+    "en": "Full-scale Email Newsletter System Operation",
+    "ja": "メールニュースレターシステム本格運営"
+  },
+  "category": "Retention",
+  "target": {
+    "metric": {
+      "ko": "구독자 / 오픈율",
+      "en": "Subscribers / Open Rate",
+      "ja": "購読者 / 開封率"
+    },
+    "value": {
+      "ko": "100명 / 30%",
+      "en": "100 / 30%",
+      "ja": "100人 / 30%"
+    }
+  },
+  "effort": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/three-week-analytics-2025-11-04",
+  "description": {
+    "ko": "주 1회 신규 포스트 + 큐레이션 콘텐츠를 담은 이메일 뉴스레터 발송. 구독자 100명, 오픈율 30% 목표로 재방문 독자 확보",
+    "en": "Send weekly email newsletter with new posts + curated content. Target 100 subscribers and 30% open rate to secure returning readers",
+    "ja": "週1回の新規記事 + キュレーションコンテンツを含むメールニュースレターを配信。購読者100人、開封率30%を目標に再訪問読者を確保"
+  },
+  "expectedImpact": {
+    "ko": "구독자 100명, 오픈율 30%, 재방문률 향상",
+    "en": "100 subscribers, 30% open rate, improved return rate",
+    "ja": "購読者100人、開封率30%、再訪問率向上"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "date": "2025-10-05",
+  "completedDate": "2025-10-05",
+  "status": "completed",
+  "title": {
+    "ko": "구조화된 데이터(Schema.org) 추가",
+    "en": "Structured Data (Schema.org) Implementation",
+    "ja": "構造化データ（Schema.org）実装"
+  },
+  "category": "SEO",
+  "before": {
+    "metric": {
+      "ko": "Schema 타입",
+      "en": "Schema Types",
+      "ja": "スキーマタイプ"
+    },
+    "value": {
+      "ko": "0개",
+      "en": "0",
+      "ja": "0個"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "Schema 타입",
+      "en": "Schema Types",
+      "ja": "スキーマタイプ"
+    },
+    "value": {
+      "ko": "3개 타입",
+      "en": "3 types",
+      "ja": "3タイプ"
+    }
+  },
+  "impact": "+300%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "낮음",
+    "en": "Low",
+    "ja": "低"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
+  "description": {
+    "ko": "Article, BreadcrumbList, WebSite Schema를 추가하여 검색엔진 최적화",
+    "en": "Added Article, BreadcrumbList, and WebSite Schema for search engine optimization",
+    "ja": "Article、BreadcrumbList、WebSite Schemaを追加して検索エンジン最適化"
+  },
+  "lessons": {
+    "ko": [
+      "BaseHead.astro에 WebSite Schema 추가 (모든 페이지)",
+      "BaseHead.astro에 Article Schema (BlogPosting) 추가 (블로그 포스트만)",
+      "BlogPost.astro에 BreadcrumbList Schema 추가",
+      "articleData props를 통해 동적으로 메타데이터 전달"
+    ],
+    "en": [
+      "Added WebSite Schema to BaseHead.astro (all pages)",
+      "Added Article Schema (BlogPosting) to BaseHead.astro (blog posts only)",
+      "Added BreadcrumbList Schema to BlogPost.astro",
+      "Dynamically pass metadata through articleData props"
+    ],
+    "ja": [
+      "BaseHead.astroにWebSite Schemaを追加（全ページ）",
+      "BaseHead.astroにArticle Schema（BlogPosting）を追加（ブログ記事のみ）",
+      "BlogPost.astroにBreadcrumbList Schemaを追加",
+      "articleDataプロップスを通じて動的にメタデータを渡す"
+    ]
+  }
+}

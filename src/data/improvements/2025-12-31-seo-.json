@@ -1,0 +1,79 @@
+{
+  "date": "2025-12-31",
+  "completedDate": "2025-10-19",
+  "status": "completed",
+  "title": {
+    "ko": "SEO 키워드 최적화",
+    "en": "SEO Keyword Optimization",
+    "ja": "SEOキーワード最適化"
+  },
+  "category": "SEO",
+  "before": {
+    "metric": {
+      "ko": "SEO 최적화 수준",
+      "en": "SEO Optimization Level",
+      "ja": "SEO最適化レベル"
+    },
+    "value": {
+      "ko": "기본",
+      "en": "Basic",
+      "ja": "基本"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "SEO 최적화 수준",
+      "en": "SEO Optimization Level",
+      "ja": "SEO最適化レベル"
+    },
+    "value": {
+      "ko": "향상됨",
+      "en": "Enhanced",
+      "ja": "向上"
+    }
+  },
+  "impact": "+50%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "roi": {
+    "ko": "매우 높음",
+    "en": "Very High",
+    "ja": "非常に高い"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
+  "description": {
+    "ko": "모든 블로그 포스트에 대해 키워드 리서치 및 메타데이터 최적화를 수행하여 자연 검색 트래픽 증대",
+    "en": "Performed keyword research and metadata optimization for all blog posts to increase organic search traffic",
+    "ja": "すべてのブログ記事に対してキーワードリサーチとメタデータ最適化を実施してオーガニック検索トラフィックを増加"
+  },
+  "lessons": {
+    "ko": [
+      "각 포스트의 title을 SEO 친화적으로 최적화",
+      "description을 150-160자 권장 범위로 조정",
+      "타겟 키워드를 title과 description에 자연스럽게 포함",
+      "heroImage alt 속성 최적화",
+      "구조화된 데이터(Schema.org) 마크업 추가",
+      "Open Graph 및 Twitter Cards 메타태그 완성"
+    ],
+    "en": [
+      "Optimized post titles to be SEO-friendly",
+      "Adjusted descriptions to recommended 150-160 character range",
+      "Naturally included target keywords in titles and descriptions",
+      "Optimized heroImage alt attributes",
+      "Added structured data (Schema.org) markup",
+      "Completed Open Graph and Twitter Cards meta tags"
+    ],
+    "ja": [
+      "記事タイトルをSEOフレンドリーに最適化",
+      "descriptionを推奨範囲の150-160文字に調整",
+      "タイトルとdescriptionにターゲットキーワードを自然に含める",
+      "heroImageのalt属性を最適化",
+      "構造化データ（Schema.org）マークアップを追加",
+      "Open GraphとTwitter Cardsメタタグを完成"
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "date": "2025-10-07",
+  "completedDate": "2025-10-07",
+  "status": "completed",
+  "title": {
+    "ko": "Google Analytics 커스텀 이벤트 개선",
+    "en": "Google Analytics Custom Event Improvements",
+    "ja": "Google Analyticsカスタムイベント改善"
+  },
+  "category": "Technical",
+  "before": {
+    "metric": {
+      "ko": "이벤트 정확도",
+      "en": "Event Accuracy",
+      "ja": "イベント精度"
+    },
+    "value": {
+      "ko": "기본 추적",
+      "en": "Basic tracking",
+      "ja": "基本追跡"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "이벤트 정확도",
+      "en": "Event Accuracy",
+      "ja": "イベント精度"
+    },
+    "value": {
+      "ko": "향상된 추적",
+      "en": "Enhanced tracking",
+      "ja": "向上した追跡"
+    }
+  },
+  "impact": "+100%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中程度"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "description": {
+    "ko": "Google Analytics 커스텀 이벤트의 정확도와 신뢰성 개선. 이벤트 중복 발생 방지 및 추적 로직 최적화",
+    "en": "Improved accuracy and reliability of Google Analytics custom events. Prevented duplicate event firing and optimized tracking logic",
+    "ja": "Google Analyticsカスタムイベントの精度と信頼性を改善。イベント重複発生を防止し追跡ロジックを最適化"
+  },
+  "lessons": {
+    "ko": [
+      "BaseHead.astro: 외부 링크 클릭 추적 개선 (중복 방지 로직 추가)",
+      "BlogPost.astro: 블로그 읽기 완료 이벤트 최적화 (스크롤 100% 도달 시 1회만 발생)",
+      "Footer.astro: 소셜 링크 클릭 추적 정확도 향상",
+      "Contact.astro: 문의 폼 상호작용 감지 개선",
+      "모든 이벤트에 중복 방지 메커니즘 적용"
+    ],
+    "en": [
+      "BaseHead.astro: Enhanced external link click tracking (added duplicate prevention)",
+      "BlogPost.astro: Optimized blog read completion event (fires only once at 100% scroll)",
+      "Footer.astro: Improved social link click tracking accuracy",
+      "Contact.astro: Enhanced contact form interaction detection",
+      "Applied duplicate prevention mechanism to all events"
+    ],
+    "ja": [
+      "BaseHead.astro：外部リンククリック追跡改善（重複防止ロジック追加）",
+      "BlogPost.astro：ブログ読了イベント最適化（スクロール100%到達時1回のみ発生）",
+      "Footer.astro：ソーシャルリンククリック追跡精度向上",
+      "Contact.astro：お問い合わせフォーム相互作用検出改善",
+      "すべてのイベントに重複防止メカニズムを適用"
+    ]
+  }
+}

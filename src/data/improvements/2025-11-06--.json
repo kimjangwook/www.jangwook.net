@@ -1,0 +1,43 @@
+{
+  "date": "2025-11-06",
+  "status": "planned",
+  "title": {
+    "ko": "이메일 뉴스레터 가입 폼 추가",
+    "en": "Email Newsletter Subscription Form Addition",
+    "ja": "メールニュースレター登録フォーム追加"
+  },
+  "category": "Retention",
+  "target": {
+    "metric": {
+      "ko": "가입 전환율",
+      "en": "Subscription Conversion Rate",
+      "ja": "登録転換率"
+    },
+    "value": {
+      "ko": "2%",
+      "en": "2%",
+      "ja": "2%"
+    }
+  },
+  "effort": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中"
+  },
+  "roi": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/three-week-analytics-2025-11-04",
+  "description": {
+    "ko": "Substack, Mailchimp, ConvertKit 중 선택하여 뉴스레터 가입 폼 구현. 블로그 포스트 하단 및 홈페이지 상단 배치. 독자 재방문 유도",
+    "en": "Implement newsletter subscription form using Substack, Mailchimp, or ConvertKit. Place at blog post bottom and homepage top. Encourage reader revisits",
+    "ja": "Substack、Mailchimp、ConvertKitから選択してニュースレター登録フォームを実装。ブログ記事下部とホームページ上部に配置。読者の再訪問を誘導"
+  },
+  "expectedImpact": {
+    "ko": "가입 전환율 2%, 재방문률 향상",
+    "en": "2% subscription conversion, improved return rate",
+    "ja": "登録転換率2%、再訪問率向上"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "date": "2025-10-24",
+  "completedDate": "2025-10-24",
+  "status": "completed",
+  "title": {
+    "ko": "SSR 방법론 기반 블로그 재방문 의향 설문 조사",
+    "en": "Blog Revisit Intent Survey Based on SSR Methodology",
+    "ja": "SSR方法論に基づくブログ再訪問意向調査"
+  },
+  "category": "Content",
+  "before": {
+    "metric": {
+      "ko": "독자 피드백",
+      "en": "Reader Feedback",
+      "ja": "読者フィードバック"
+    },
+    "value": {
+      "ko": "정성적",
+      "en": "Qualitative",
+      "ja": "定性的"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "독자 피드백",
+      "en": "Reader Feedback",
+      "ja": "読者フィードバック"
+    },
+    "value": {
+      "ko": "정량적",
+      "en": "Quantitative",
+      "ja": "定量的"
+    }
+  },
+  "impact": "+83%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中"
+  },
+  "roi": {
+    "ko": "매우 높음",
+    "en": "Very High",
+    "ja": "非常に高い"
+  },
+  "description": {
+    "ko": "LLM 기반 Semantic Similarity Rating(SSR) 방법론으로 225개 평가 수행. 15개 페르소나 × 5개 콘텐츠 × 3회 반복으로 재방문 의향 분석. 평균 3.078/5.0, ICC 0.833의 높은 신뢰도 검증. 비용 $3.50, 실행 시간 8분 24초",
+    "en": "Conducted 225 evaluations using LLM-based Semantic Similarity Rating (SSR) methodology. Analyzed revisit intent with 15 personas × 5 contents × 3 repetitions. Average rating 3.078/5.0, validated high reliability with ICC 0.833. Cost $3.50, execution time 8 min 24 sec",
+    "ja": "LLMベースのSemantic Similarity Rating(SSR)方法論で225件の評価を実施。15ペルソナ×5コンテンツ×3回繰り返しで再訪問意向を分析。平均3.078/5.0、ICC 0.833の高い信頼性を検証。コスト$3.50、実行時間8分24秒"
+  },
+  "lessons": {
+    "ko": [
+      "OpenAI API를 활용한 자유 응답 생성",
+      "text-embedding-3-small로 1536차원 벡터 임베딩",
+      "5단계 앵커와 코사인 유사도 계산",
+      "Softmax로 확률 분포 생성 및 기댓값 계산",
+      "Test-Retest 신뢰도 검증 (ICC 0.833)",
+      "Claude Code가 1위, 평균 3.086점으로 최고 평가",
+      "전체 97.3%가 4점(재방문 의향 높음)",
+      "전통적 설문 대비 95% 비용 절감, 99% 시간 단축"
+    ],
+    "en": [
+      "Generated free-form responses using OpenAI API",
+      "Created 1536-dimensional vector embeddings with text-embedding-3-small",
+      "Calculated cosine similarity with 5 anchor points",
+      "Generated probability distribution and expected value using Softmax",
+      "Validated Test-Retest reliability (ICC 0.833)",
+      "Claude Code ranked 1st with average 3.086 rating",
+      "Overall 97.3% rated 4 (high revisit intent)",
+      "95% cost reduction, 99% time savings vs traditional surveys"
+    ],
+    "ja": [
+      "OpenAI APIを活用した自由回答生成",
+      "text-embedding-3-smallで1536次元ベクトル埋め込み",
+      "5段階アンカーとコサイン類似度計算",
+      "Softmaxで確率分布と期待値を計算",
+      "Test-Retest信頼性検証(ICC 0.833)",
+      "Claude Codeが1位、平均3.086点で最高評価",
+      "全体の97.3%が4点(再訪問意向高い)",
+      "従来調査比95%コスト削減、99%時間短縮"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "date": "2026-02-28",
+  "status": "planned",
+  "title": {
+    "ko": "일본 시장 전략 수립",
+    "en": "Japan Market Strategy Development",
+    "ja": "日本市場戦略策定"
+  },
+  "category": "Traffic",
+  "target": {
+    "metric": {
+      "ko": "일본 트래픽",
+      "en": "Japan Traffic",
+      "ja": "日本トラフィック"
+    },
+    "value": {
+      "ko": "40%",
+      "en": "40%",
+      "ja": "40%"
+    }
+  },
+  "effort": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高"
+  },
+  "roi": {
+    "ko": "우수",
+    "en": "Excellent",
+    "ja": "優秀"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
+  "description": {
+    "ko": "Qiita, Zenn 크로스 포스팅 및 일본 기술 블로거와 파트너십 구축",
+    "en": "Cross-post to Qiita and Zenn, establish partnerships with Japanese tech bloggers",
+    "ja": "QiitaとZennにクロスポスト、日本の技術ブロガーとパートナーシップ構築"
+  },
+  "expectedImpact": {
+    "ko": "일본 트래픽 40% 이상, Qiita followers 100명",
+    "en": "Japan traffic 40%+, 100 Qiita followers",
+    "ja": "日本トラフィック40%以上、Qiitaフォロワー100人"
+  }
+}
