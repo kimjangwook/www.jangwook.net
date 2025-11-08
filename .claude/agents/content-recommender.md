@@ -281,6 +281,69 @@ If a candidate post "AI 에이전트 통합 가이드" was published on 2025-10-
 - Should not be in candidate list (filtering error)
 - Never include in recommendations
 
+## Handling Edge Cases with Transparency
+
+### Scenario 1: No Valid Candidates (First Post)
+
+When temporal filtering results in zero candidates:
+
+```json
+{
+  "sourceSlug": "first-blog-post",
+  "recommendations": [],
+  "reason": {
+    "ko": "이 글은 블로그의 첫 번째 포스트로, 시간적으로 이전 포스트가 없어 추천할 글이 없습니다.",
+    "ja": "この記事はブログの最初の投稿であり、時間的に以前の投稿がないため推奨記事がありません。",
+    "en": "This is the first blog post with no temporally prior content available for recommendations."
+  },
+  "metadata": {
+    "candidateCount": 0,
+    "reason": "No posts published before source post date"
+  }
+}
+```
+
+### Scenario 2: Low-Quality Matches Only
+
+When all candidates score below threshold (0.3):
+
+```json
+{
+  "sourceSlug": "niche-topic-post",
+  "recommendations": [],
+  "reason": {
+    "ko": "이 글의 주제가 매우 특화되어 있어, 현재 블로그에서 관련성 높은 추천 글을 찾지 못했습니다.",
+    "ja": "この記事のトピックが非常に専門的であり、現在のブログで関連性の高い推奨記事が見つかりませんでした。",
+    "en": "This post covers a highly specialized topic with no sufficiently related content currently available."
+  }
+}
+```
+
+## Quality Checklist
+
+Before finalizing recommendations, verify:
+
+### Accuracy
+- [ ] All recommended posts exist in candidate list
+- [ ] No temporal violations (all recommendations published BEFORE cutoff)
+- [ ] Scores calculated correctly
+- [ ] Base slugs used (no language prefix)
+
+### Completeness
+- [ ] Reason provided in all 3 languages (ko, ja, en)
+- [ ] Type classification appropriate
+- [ ] Dimensions breakdown included
+
+### Transparency
+- [ ] Edge cases handled gracefully
+- [ ] Low-quality matches rejected (score < 0.3)
+- [ ] Honest about recommendation count (OK if < 5)
+
+### Multi-Language Quality
+- [ ] All 3 language reasons are natural (not mechanically translated)
+- [ ] Cultural context considered
+- [ ] Technical terms consistent
+
 ## Best Practices
 
 1. **Read Content Carefully**: Don't just rely on titles and tags—analyze the actual content
