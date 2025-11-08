@@ -231,22 +231,98 @@ Before marking any blog post as complete, I verify the following:
 ### 2. web-researcher.md
 
 **파일**: `.claude/agents/web-researcher.md`
-**작업 시간**: 2025-11-08 (예정)
-**상태**: ⏭️ 다음 작업
+**작업 시간**: 2025-11-08
+**상태**: ✅ 완료
 
-#### 계획된 변경사항
+#### 추가된 섹션
 
-(작업 중 업데이트 예정)
+1. **Core Principles 강화**:
+   - "Fact-Based Only", "Uncertainty is Honest" 등 5가지
+   - Rate Limit Compliance 강조
+
+2. **Uncertainty Handling**:
+   - 정보 부족 통지 형식: 【情報不足通知】
+   - 확실성 레벨: High (90-100%), Medium (60-89%), Low (30-59%), Unknown (<30%)
+
+3. **Enhanced Report Format**:
+   - 【結論】【現在のコンテキスト】【確実性レベル】 추가
+   - 지식 컷오프 맥락 제공
+
+**효과**:
+- ✅ 정보 신뢰도 명시
+- ✅ 불확실성 투명하게 처리
+- ✅ 출처 및 검증 가능성 강화
 
 ### 3. content-recommender.md
 
 **파일**: `.claude/agents/content-recommender.md`
-**작업 시간**: 2025-11-08 (예정)
-**상태**: ⏭️ 다음 작업
+**작업 시간**: 2025-11-08
+**상태**: ✅ 완료
 
-#### 계획된 변경사항
+#### 추가된 섹션
 
-(작업 중 업데이트 예정)
+1. **Edge Case Handling**:
+   - Scenario 1: 첫 번째 포스트 (후보 없음)
+   - Scenario 2: 낮은 품질 매치만 존재
+
+2. **Quality Checklist**:
+   - Accuracy, Completeness, Transparency, Multi-Language
+   - 4개 카테고리
+
+**효과**:
+- ✅ 엣지 케이스에 대한 명확한 메시지
+- ✅ 추천이 없을 때 투명한 이유 제공
+- ✅ 다국어 품질 검증
+
+## Phase 2: Medium Priority 에이전트 (7개)
+
+### 4-10. Phase 2 에이전트들
+
+**작업 시간**: 2025-11-08 16:00-17:00
+**상태**: ✅ 전체 완료
+
+| 에이전트 | 추가 섹션 | 비고 |
+|---------|----------|------|
+| editor.md | Role, Core Principles, DO/DON'T | ✅ |
+| seo-optimizer.md | Role, Core Principles | ✅ |
+| content-planner.md | Role, Core Principles | ✅ |
+| analytics.md | Role, Core Principles | ✅ |
+| social-media-manager.md | Role, Core Principles | ✅ |
+| image-generator.md | Role, Core Principles | ✅ |
+| site-manager.md | Role, Core Principles | ✅ |
+
+**적용 내용**:
+- 명시적 페르소나 및 전문 영역
+- 5가지 Core Principles
+- 일부 에이전트에 DO/DON'T 섹션
+
+**효과**:
+- ✅ 모든 에이전트 역할 명확화
+- ✅ 일관된 행동 원칙 수립
+
+## Phase 3: Low Priority 에이전트 (7개)
+
+### 11-16. Phase 3 에이전트들
+
+**작업 시간**: 2025-11-08 17:00-17:30
+**상태**: ✅ 전체 완료
+
+| 에이전트 | 추가 섹션 | 비고 |
+|---------|----------|------|
+| portfolio-curator.md | Role, Core Principles | ✅ |
+| learning-tracker.md | Role, Core Principles | ✅ |
+| backlink-manager.md | Role, Core Principles | ✅ |
+| post-analyzer.md | - | Already has Role ✓ |
+| analytics-reporter.md | - | Already has Role ✓ |
+| improvement-tracker.md | - | Already has Role ✓ |
+| prompt-engineer.md | - | Special format ✓ |
+
+**적용 내용**:
+- 필요한 에이전트에만 Role + Core Principles 추가
+- 이미 최적화된 에이전트는 유지
+
+**효과**:
+- ✅ 전체 에이전트 구조 일관성 확보
 
 ## 발견한 이슈
 
