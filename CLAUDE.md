@@ -66,16 +66,26 @@ public/             # 정적 파일 (빌드 시 그대로 복사)
   updatedDate?: Date     // 선택
   heroImage?: ImageMetadata  // 선택 (Astro 이미지 최적화)
   tags?: string[]        // 선택 (태그 배열)
+  relatedPosts?: Array<{  // 선택 (V3: 관련 포스트 추천)
+    slug: string
+    score: number        // 0~1 사이의 유사도 점수
+    reason: {
+      ko: string
+      ja: string
+      en: string
+    }
+  }>
 }
 ```
 
 **중요**:
 
 - 블로그 포스트는 언어별 폴더에 위치: `src/content/blog/<ko|en|ja>/`
-- 각 언어 폴더에 동일한 파일명으로 저장 (예: `ko/post-title.md`, `en/post-title.md`)
+- 각 언어 폴더에 동일한 파일명으로 저장 (예: `blog/ko/post-title.md`, `blog/en/post-title.md`, `blog/ja/post-title.md`)
 - Frontmatter는 반드시 위 스키마를 준수해야 함
 - `getCollection('blog')`로 모든 포스트 조회, `.filter(post => post.id.startsWith('ko/'))`로 언어별 필터링
 - `render()` 함수로 Markdown/MDX 콘텐츠를 렌더링
+- Astro v5에서는 `glob` loader를 사용하여 콘텐츠를 로드
 
 ## Astro 페이지 작성 시 주의사항
 
@@ -186,8 +196,11 @@ import Base from '../layouts/Base.astro';
 현재 사용 중인 Astro 통합:
 
 1. **@astrojs/mdx**: MDX (JSX in Markdown) 지원
-2. **@astrojs/sitemap**: 자동 사이트맵 생성 (SEO)
-3. **@astrojs/rss**: RSS 피드 생성
+2. **@astrojs/tailwind**: Tailwind CSS 통합
+3. **@astrojs/sitemap**: 자동 사이트맵 생성 (SEO) - 패키지 설치됨
+4. **@astrojs/rss**: RSS 피드 생성 - 패키지 설치됨
+
+**참고**: sitemap과 rss는 패키지가 설치되어 있으나 astro.config.mjs에 명시적으로 추가되지 않았습니다. 필요시 설정 파일에 추가할 수 있습니다.
 
 ## 블로그 포스트 작성 워크플로우
 
@@ -197,8 +210,8 @@ import Base from '../layouts/Base.astro';
 ---
 title: "포스트 제목"
 description: "포스트 설명 (SEO에 중요)"
-pubDate: "2025-10-03" # 필수: YYYY-MM-DD 형식만 사용
-heroImage: "../../assets/blog/image.png" # 선택사항
+pubDate: "2025-11-09" # 필수: YYYY-MM-DD 형식만 사용
+heroImage: "../../../assets/blog/image.png" # 선택사항
 tags: ["tag1", "tag2", "tag3"] # 선택사항
 ---
 
@@ -209,10 +222,10 @@ Markdown 또는 MDX 형식으로 작성...
 
 **중요 규칙 - 다국어 파일 구조**:
 
-- **파일 위치**: `src/content/<언어코드>/blog/<언어코드>/[파일명].md`
-  - 한국어: `src/content/ko/blog/ko/post-title.md`
-  - 영어: `src/content/en/blog/en/post-title.md`
-  - 일본어: `src/content/ja/blog/ja/post-title.md`
+- **파일 위치**: `src/content/blog/<언어코드>/[파일명].md`
+  - 한국어: `src/content/blog/ko/post-title.md`
+  - 영어: `src/content/blog/en/post-title.md`
+  - 일본어: `src/content/blog/ja/post-title.md`
 - **동일한 파일명**: 모든 언어 버전은 각 언어 폴더에 같은 파일명으로 저장
 - **언어 자동 인식**: 폴더 경로(`ko/`, `en/`, `ja/`)로 언어 자동 식별
 - Frontmatter의 모든 필수 필드 포함 필요
@@ -227,20 +240,20 @@ Markdown 또는 MDX 형식으로 작성...
 
 ```astro
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 // 1. 빌드 시 모든 블로그 포스트의 정적 경로 생성
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.id },  // post.id = 파일명 (확장자 제외)
+    params: { slug: post.id },  // post.id = 언어코드/파일명 (예: ko/post-title)
     props: post,
   }));
 }
 
 // 2. 현재 포스트 데이터 가져오기
 const post = Astro.props;
-const { Content } = await render(post);  // Markdown -> 컴포넌트 변환
+const { Content } = await post.render();  // Markdown -> 컴포넌트 변환 (Astro v5)
 ---
 
 <!-- 3. 레이아웃에 포스트 데이터 전달 -->
@@ -248,6 +261,11 @@ const { Content } = await render(post);  // Markdown -> 컴포넌트 변환
   <Content />  <!-- 실제 Markdown 콘텐츠 렌더링 -->
 </BlogPost>
 ```
+
+**Astro v5 변경사항**:
+- `render()` 함수 대신 `post.render()` 메서드 사용
+- glob loader를 통한 더 유연한 콘텐츠 로딩
+- 타입 안전성 개선
 
 ### 3. SEO 메타데이터
 
@@ -264,17 +282,30 @@ const { Content } = await render(post);  // Markdown -> 컴포넌트 변환
 
 `.claude/agents/` 디렉토리에 블로그 자동화를 위한 전문 에이전트 정의:
 
-- **web-researcher.md**: Brave Search MCP를 활용한 웹 리서치, 기술 검증, 최신 정보 수집
+**콘텐츠 관리**:
 - **content-planner.md**: 콘텐츠 전략 및 주제 계획
 - **writing-assistant.md**: 블로그 포스트 작성 지원
 - **editor.md**: 문법, 스타일, 메타데이터 검토
-- **site-manager.md**: Astro 빌드, 배포, 성능 최적화
-- **seo-optimizer.md**: 사이트맵, 메타태그, 내부 링크 최적화
+- **content-recommender.md**: Claude LLM 기반 의미론적 콘텐츠 추천 시스템 (TF-IDF 대신 딥러닝 활용)
+- **image-generator.md**: 블로그 히어로 이미지 생성
+
+**연구 및 분석**:
+- **web-researcher.md**: Brave Search MCP를 활용한 웹 리서치, 기술 검증, 최신 정보 수집
+- **post-analyzer.md**: 블로그 포스트 분석 및 개선 제안
 - **analytics.md**: 트래픽 분석 및 성과 측정
+- **analytics-reporter.md**: 데이터 기반 리포트 생성
+
+**SEO 및 마케팅**:
+- **seo-optimizer.md**: 사이트맵, 메타태그, 내부 링크 최적화
+- **backlink-manager.md**: 백링크 전략 및 관리
 - **social-media-manager.md**: 소셜 미디어 공유 자동화
+
+**운영 및 관리**:
+- **site-manager.md**: Astro 빌드, 배포, 성능 최적화
 - **portfolio-curator.md**: 프로젝트 포트폴리오 관리
 - **learning-tracker.md**: 학습 목표 및 기술 트렌드 추적
-- **content-recommender.md**: Claude LLM 기반 의미론적 콘텐츠 추천 시스템 (TF-IDF 대신 딥러닝 활용)
+- **improvement-tracker.md**: 지속적 개선 사항 추적
+- **prompt-engineer.md**: AI 프롬프트 최적화
 
 필요한 작업에 맞는 에이전트를 참조하여 컨텍스트를 얻을 것.
 
@@ -701,7 +732,7 @@ const { title, description = '기본값' } = Astro.props;
 # Frontmatter는 간결하게
 title: "명확하고 간결한 제목 (60자 이하)"
 description: "SEO를 고려한 설명 (150-160자 권장)"
-pubDate: "2025-10-05" # 필수: YYYY-MM-DD 형식, 작은따옴표 사용
+pubDate: "2025-11-09" # 필수: YYYY-MM-DD 형식, 작은따옴표 사용
 heroImage: "../../../assets/blog/image.jpg"
 tags: ["tag1", "tag2", "tag3"] # 최대 3-5개 권장
 ---
@@ -977,5 +1008,6 @@ npm run build
 
 ---
 
-**마지막 업데이트**: 2025-10-05
+**마지막 업데이트**: 2025-11-09
 **작성자**: Claude Code with Best Practices Integration
+**버전**: v2.0 - 관련 포스트 추천 시스템(V3) 반영

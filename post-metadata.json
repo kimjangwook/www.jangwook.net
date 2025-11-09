@@ -416,5 +416,38 @@
       "devops": 0.4,
       "architecture": 0.9
     }
+  },
+  "effiflow-automation-analysis-part1": {
+    "pubDate": "2025-11-13",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 1.0,
+      "web-development": 0.3,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.9
+    }
+  },
+  "effiflow-automation-analysis-part2": {
+    "pubDate": "2025-11-14",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.4,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.85
+    }
+  },
+  "effiflow-automation-analysis-part3": {
+    "pubDate": "2025-11-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.7,
+      "devops": 0.6,
+      "architecture": 0.75
+    }
   }
 }
