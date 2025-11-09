@@ -394,5 +394,16 @@
       "devops": 0.3,
       "architecture": 0.85
     }
+  },
+  "prompt-engineering-agent-improvements": {
+    "pubDate": "2025-11-12",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.9
+    }
   }
 }
