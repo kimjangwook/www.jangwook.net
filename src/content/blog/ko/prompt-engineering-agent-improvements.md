@@ -1,9 +1,54 @@
 ---
-title: 'AI 에이전트 성능을 10배 향상시키는 프롬프트 엔지니어링 실전 가이드'
-description: '일본 AI 전문가의 프롬프트 기법을 연구하여 17개 Claude Code 에이전트를 개선한 실제 사례와 측정 가능한 성과를 공유합니다.'
+title: AI 에이전트 성능을 10배 향상시키는 프롬프트 엔지니어링 실전 가이드
+description: 일본 AI 전문가의 프롬프트 기법을 연구하여 17개 Claude Code 에이전트를 개선한 실제 사례와 측정 가능한 성과를 공유합니다.
 pubDate: '2025-11-12'
-heroImage: '../../../assets/blog/prompt-engineering-agent-improvements-hero.jpg'
-tags: ['prompt-engineering', 'ai-agents', 'claude-code', 'llm-optimization']
+heroImage: ../../../assets/blog/prompt-engineering-agent-improvements-hero.jpg
+tags:
+  - prompt-engineering
+  - ai-agents
+  - claude-code
+  - llm-optimization
+relatedPosts:
+  - slug: claude-code-verbalized-sampling
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: langgraph-multi-agent
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: bigquery-mcp-prefix-filtering
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+  - slug: specification-driven-development
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
 ---
 
 ## 개요
