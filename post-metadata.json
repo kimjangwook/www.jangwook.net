@@ -1,4 +1,15 @@
 {
+  "google-gemini-file-search-rag-tutorial": {
+    "pubDate": "2025-11-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.4,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.6
+    }
+  },
   "n8n-rss-automation": {
     "pubDate": "2025-11-11",
     "difficulty": 3,

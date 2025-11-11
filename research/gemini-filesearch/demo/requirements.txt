@@ -1,0 +1,12 @@
+# Gemini File Search 데모 애플리케이션 의존성
+
+# Core dependencies
+google-genai>=1.0.0        # Google Generative AI SDK
+python-dotenv>=1.0.0       # 환경 변수 관리
+
+# Optional dependencies for web app
+streamlit>=1.28.0          # 웹 앱 프레임워크 (web_app.py)
+
+# Optional utilities
+tqdm>=4.66.0               # 진행률 표시
+PyPDF2>=3.0.0              # PDF 처리 (파일 분할 등)

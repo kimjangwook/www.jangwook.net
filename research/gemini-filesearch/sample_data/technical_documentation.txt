@@ -1,0 +1,513 @@
+SuperWidget Pro - 기술 문서
+============================
+
+버전: 2.0
+대상: 개발자 및 시스템 관리자
+최종 업데이트: 2025-11-10
+
+목차
+----
+1. 아키텍처 개요
+2. API 레퍼런스
+3. 데이터베이스 스키마
+4. 인증 및 권한
+5. 배포 가이드
+6. 문제 해결
+
+---
+
+1. 아키텍처 개요
+===============
+
+시스템 구조
+----------
+SuperWidget Pro는 다음과 같은 마이크로서비스 아키텍처를 사용합니다:
+
+- API Gateway: nginx (포트 443)
+- 애플리케이션 서버: Node.js Express (포트 3000)
+- 데이터베이스: PostgreSQL 14 (포트 5432)
+- 캐시: Redis 7 (포트 6379)
+- 큐: RabbitMQ (포트 5672)
+- 스토리지: AWS S3
+
+기술 스택
+--------
+프론트엔드:
+- React 18
+- TypeScript 5
+- Tailwind CSS
+- Vite
+
+백엔드:
+- Node.js 20 LTS
+- Express 4
+- TypeORM
+- Passport.js (인증)
+
+DevOps:
+- Docker & Kubernetes
+- GitHub Actions (CI/CD)
+- Terraform (IaC)
+
+
+2. API 레퍼런스
+==============
+
+기본 URL
+--------
+Production: https://api.superwidget.com/v2
+Staging: https://api-staging.superwidget.com/v2
+
+인증
+----
+모든 API 요청에는 Bearer Token이 필요합니다.
+
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+     https://api.superwidget.com/v2/projects
+```
+
+엔드포인트
+---------
+
+### 프로젝트 관리
+
+**모든 프로젝트 조회**
+```
+GET /projects
+
+Response:
+{
+  "projects": [
+    {
+      "id": "proj_123",
+      "name": "My Project",
+      "created_at": "2025-11-01T00:00:00Z",
+      "status": "active"
+    }
+  ]
+}
+```
+
+**프로젝트 생성**
+```
+POST /projects
+Content-Type: application/json
+
+{
+  "name": "New Project",
+  "description": "Project description",
+  "tags": ["important", "client-work"]
+}
+
+Response:
+{
+  "id": "proj_456",
+  "name": "New Project",
+  "created_at": "2025-11-10T10:30:00Z"
+}
+```
+
+**프로젝트 업데이트**
+```
+PATCH /projects/{id}
+Content-Type: application/json
+
+{
+  "name": "Updated Name",
+  "status": "completed"
+}
+```
+
+**프로젝트 삭제**
+```
+DELETE /projects/{id}
+
+Response: 204 No Content
+```
+
+### 작업 관리
+
+**작업 생성**
+```
+POST /projects/{project_id}/tasks
+Content-Type: application/json
+
+{
+  "title": "Implement feature X",
+  "description": "Detailed description",
+  "priority": "high",
+  "due_date": "2025-11-20",
+  "assignee_id": "user_789"
+}
+```
+
+**작업 완료 표시**
+```
+PATCH /tasks/{id}/complete
+
+Response:
+{
+  "id": "task_101",
+  "status": "completed",
+  "completed_at": "2025-11-10T14:20:00Z"
+}
+```
+
+### 사용자 관리
+
+**사용자 정보 조회**
+```
+GET /users/me
+
+Response:
+{
+  "id": "user_789",
+  "email": "user@example.com",
+  "name": "John Doe",
+  "plan": "pro",
+  "created_at": "2025-01-15T00:00:00Z"
+}
+```
+
+**사용자 설정 업데이트**
+```
+PATCH /users/me/settings
+
+{
+  "timezone": "Asia/Seoul",
+  "language": "ko",
+  "notifications": {
+    "email": true,
+    "push": false
+  }
+}
+```
+
+### 팀 관리
+
+**팀원 초대**
+```
+POST /teams/{team_id}/invitations
+
+{
+  "email": "newmember@example.com",
+  "role": "member"
+}
+```
+
+**팀원 역할 변경**
+```
+PATCH /teams/{team_id}/members/{user_id}
+
+{
+  "role": "admin"
+}
+```
+
+에러 코드
+--------
+| 코드 | 설명 | 해결 방법 |
+|------|------|----------|
+| 400 | Bad Request | 요청 파라미터 확인 |
+| 401 | Unauthorized | 토큰 재발급 |
+| 403 | Forbidden | 권한 확인 |
+| 404 | Not Found | 리소스 ID 확인 |
+| 429 | Rate Limited | 요청 빈도 줄이기 |
+| 500 | Server Error | 지원팀 문의 |
+
+
+3. 데이터베이스 스키마
+====================
+
+주요 테이블
+----------
+
+**users**
+```sql
+CREATE TABLE users (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  email VARCHAR(255) UNIQUE NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  plan VARCHAR(50) DEFAULT 'free',
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+**projects**
+```sql
+CREATE TABLE projects (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  owner_id UUID REFERENCES users(id),
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  status VARCHAR(50) DEFAULT 'active',
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+**tasks**
+```sql
+CREATE TABLE tasks (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  project_id UUID REFERENCES projects(id),
+  assignee_id UUID REFERENCES users(id),
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  priority VARCHAR(20) DEFAULT 'medium',
+  status VARCHAR(50) DEFAULT 'todo',
+  due_date DATE,
+  completed_at TIMESTAMP,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+인덱스
+------
+```sql
+CREATE INDEX idx_tasks_project ON tasks(project_id);
+CREATE INDEX idx_tasks_assignee ON tasks(assignee_id);
+CREATE INDEX idx_tasks_status ON tasks(status);
+CREATE INDEX idx_projects_owner ON projects(owner_id);
+```
+
+
+4. 인증 및 권한
+==============
+
+JWT 토큰
+--------
+액세스 토큰은 1시간, 리프레시 토큰은 30일간 유효합니다.
+
+**토큰 발급**
+```bash
+POST /auth/login
+
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+Response:
+{
+  "access_token": "eyJhbGc...",
+  "refresh_token": "eyJhbGc...",
+  "expires_in": 3600
+}
+```
+
+**토큰 갱신**
+```bash
+POST /auth/refresh
+
+{
+  "refresh_token": "eyJhbGc..."
+}
+```
+
+권한 레벨
+--------
+- owner: 프로젝트 소유자 (모든 권한)
+- admin: 관리자 (멤버 관리 제외 모든 권한)
+- member: 일반 멤버 (읽기/쓰기)
+- viewer: 뷰어 (읽기 전용)
+
+
+5. 배포 가이드
+=============
+
+Docker를 사용한 배포
+------------------
+
+**Dockerfile**
+```dockerfile
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+**docker-compose.yml**
+```yaml
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://user:pass@db:5432/superwidget
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=superwidget
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
+```
+
+**실행**
+```bash
+docker-compose up -d
+```
+
+Kubernetes 배포
+--------------
+
+**deployment.yaml**
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: superwidget-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: superwidget-api
+  template:
+    metadata:
+      labels:
+        app: superwidget-api
+    spec:
+      containers:
+      - name: api
+        image: superwidget/api:2.0
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: url
+```
+
+환경 변수
+--------
+필수 환경 변수:
+```bash
+NODE_ENV=production
+DATABASE_URL=postgresql://...
+REDIS_URL=redis://...
+JWT_SECRET=your-secret-key
+AWS_ACCESS_KEY_ID=...
+AWS_SECRET_ACCESS_KEY=...
+```
+
+
+6. 문제 해결
+===========
+
+로그 확인
+--------
+```bash
+# Docker
+docker logs superwidget-api
+
+# Kubernetes
+kubectl logs -f deployment/superwidget-api
+
+# 로컬 개발
+npm run dev
+```
+
+일반적인 문제
+-----------
+
+**데이터베이스 연결 실패**
+```
+Error: connect ECONNREFUSED 127.0.0.1:5432
+```
+해결:
+- PostgreSQL이 실행 중인지 확인
+- DATABASE_URL 환경 변수 확인
+- 방화벽 규칙 확인
+
+**Redis 연결 실패**
+```
+Error: Redis connection failed
+```
+해결:
+- Redis 서버 상태 확인
+- REDIS_URL 환경 변수 확인
+
+**Out of Memory**
+```
+JavaScript heap out of memory
+```
+해결:
+```bash
+NODE_OPTIONS="--max-old-space-size=4096" npm start
+```
+
+**Rate Limiting 문제**
+```
+429 Too Many Requests
+```
+해결:
+- 요청 빈도를 줄이세요 (최대 60 req/min)
+- 배치 API 사용을 고려하세요
+
+성능 최적화
+----------
+
+**데이터베이스 쿼리 최적화**
+```sql
+-- EXPLAIN ANALYZE로 쿼리 분석
+EXPLAIN ANALYZE
+SELECT * FROM tasks WHERE project_id = 'proj_123';
+
+-- 느린 쿼리 로그 활성화
+ALTER DATABASE superwidget SET log_min_duration_statement = 100;
+```
+
+**캐싱 전략**
+```javascript
+// Redis 캐시 사용 예제
+const cached = await redis.get(`project:${id}`);
+if (cached) return JSON.parse(cached);
+
+const project = await db.projects.findOne(id);
+await redis.setex(`project:${id}`, 3600, JSON.stringify(project));
+return project;
+```
+
+**모니터링**
+- Prometheus + Grafana: 메트릭 수집 및 시각화
+- Sentry: 에러 트래킹
+- New Relic: APM (Application Performance Monitoring)
+
+추가 리소스
+----------
+- GitHub: https://github.com/superwidget/api
+- 기술 블로그: https://blog.superwidget.com/engineering
+- 슬랙 커뮤니티: https://superwidget.slack.com
+- 이슈 트래커: https://github.com/superwidget/api/issues
+
+---
+
+© 2025 SuperWidget Inc. Technical Documentation
+라이선스: Apache 2.0

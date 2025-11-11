@@ -1,0 +1,137 @@
+제품 사용 설명서
+=================
+
+제품명: SuperWidget Pro
+버전: 2.0
+발행일: 2025-11-10
+
+목차
+----
+1. 소개
+2. 시스템 요구사항
+3. 설치 방법
+4. 기본 사용법
+5. 고급 기능
+6. 문제 해결
+7. 보증 및 지원
+
+1. 소개
+-------
+SuperWidget Pro는 최신 기술을 적용한 혁신적인 생산성 도구입니다.
+사용자의 업무 효율을 극대화하고, 복잡한 작업을 자동화할 수 있습니다.
+
+주요 특징:
+- 직관적인 사용자 인터페이스
+- 강력한 자동화 기능
+- 클라우드 동기화 지원
+- 다국어 지원 (한국어, 영어, 일본어)
+
+2. 시스템 요구사항
+-----------------
+최소 사양:
+- 운영체제: Windows 10, macOS 12, Ubuntu 20.04 이상
+- 프로세서: Intel Core i3 또는 동급
+- 메모리: 4GB RAM
+- 저장 공간: 500MB
+- 인터넷 연결: 초기 설정 및 업데이트 시 필요
+
+권장 사양:
+- 프로세서: Intel Core i5 또는 동급
+- 메모리: 8GB RAM 이상
+- SSD 저장 장치
+
+3. 설치 방법
+-----------
+Windows:
+1. 다운로드한 설치 파일 (SuperWidget_Setup.exe)을 실행합니다.
+2. 설치 마법사의 지시를 따릅니다.
+3. 라이선스 약관에 동의합니다.
+4. 설치 경로를 선택합니다 (기본: C:\Program Files\SuperWidget).
+5. "설치" 버튼을 클릭합니다.
+6. 설치 완료 후 컴퓨터를 재시작합니다.
+
+macOS:
+1. 다운로드한 DMG 파일을 엽니다.
+2. SuperWidget 아이콘을 Applications 폴더로 드래그합니다.
+3. Launchpad에서 SuperWidget을 실행합니다.
+4. 시스템 권한 요청을 승인합니다.
+
+Linux:
+1. 터미널을 엽니다.
+2. 다음 명령을 실행합니다:
+   $ sudo apt update
+   $ sudo apt install superwidget
+3. 설치 후 다음 명령으로 실행합니다:
+   $ superwidget
+
+4. 기본 사용법
+-------------
+첫 실행:
+1. 애플리케이션을 시작합니다.
+2. 계정을 생성하거나 로그인합니다.
+3. 초기 설정 마법사를 완료합니다.
+4. 작업 공간을 설정합니다.
+
+주요 기능:
+- 프로젝트 생성: File > New Project
+- 작업 추가: 좌측 패널에서 "+" 버튼 클릭
+- 자동화 규칙 설정: Tools > Automation > New Rule
+- 데이터 동기화: Settings > Sync > Enable Cloud Sync
+
+5. 고급 기능
+-----------
+API 통합:
+SuperWidget은 RESTful API를 제공하여 외부 애플리케이션과 통합할 수 있습니다.
+
+API 엔드포인트: https://api.superwidget.com/v2
+인증: Bearer Token 방식
+문서: https://docs.superwidget.com/api
+
+플러그인 시스템:
+커뮤니티가 개발한 플러그인을 설치하여 기능을 확장할 수 있습니다.
+Tools > Plugins > Browse Marketplace
+
+6. 문제 해결
+-----------
+Q: 애플리케이션이 시작되지 않습니다.
+A: 다음을 시도해보세요:
+   - 컴퓨터를 재시작합니다.
+   - 최신 버전으로 업데이트합니다.
+   - 설정 파일을 초기화합니다 (Settings > Advanced > Reset).
+
+Q: 데이터 동기화가 실패합니다.
+A: 인터넷 연결을 확인하고, 계정이 활성화되어 있는지 확인하세요.
+   Settings > Sync > Reconnect를 시도해보세요.
+
+Q: 라이선스 오류가 발생합니다.
+A: Help > License > Validate License를 클릭하여 라이선스를 재인증하세요.
+
+7. 보증 및 지원
+--------------
+보증 정책:
+- 구매일로부터 1년간 무상 보증
+- 소프트웨어 결함 또는 버그에 대한 무료 업데이트 제공
+- 하드웨어 문제는 보증 범위에 포함되지 않습니다
+
+환불 정책:
+- 구매 후 30일 이내 전액 환불 가능
+- 환불 요청: support@superwidget.com
+
+고객 지원:
+- 이메일: support@superwidget.com
+- 전화: 1588-1234 (평일 9:00-18:00 KST)
+- 온라인 채팅: www.superwidget.com/support
+- 커뮤니티 포럼: community.superwidget.com
+
+업데이트:
+- 자동 업데이트가 기본으로 활성화되어 있습니다.
+- 수동 업데이트: Help > Check for Updates
+
+연락처:
+SuperWidget Inc.
+서울특별시 강남구 테헤란로 123
+대표이사: 김철수
+사업자등록번호: 123-45-67890
+
+---
+© 2025 SuperWidget Inc. All rights reserved.
