@@ -5,31 +5,36 @@
   "title": {
     "ko": "내부 링크 전략 실행",
     "en": "Internal Linking Strategy Implementation",
-    "ja": "内部リンク戦略実行"
+    "ja": "内部リンク戦略実行",
+    "zh": "内部链接策略实施"
   },
   "category": "SEO",
   "before": {
     "metric": {
       "ko": "관련 포스트 링크",
       "en": "Related Post Links",
-      "ja": "関連記事リンク"
+      "ja": "関連記事リンク",
+      "zh": "相关文章链接"
     },
     "value": {
       "ko": "없음",
       "en": "None",
-      "ja": "なし"
+      "ja": "なし",
+      "zh": "无"
     }
   },
   "after": {
     "metric": {
       "ko": "관련 포스트 링크",
       "en": "Related Post Links",
-      "ja": "関連記事リンク"
+      "ja": "関連記事リンク",
+      "zh": "相关文章链接"
     },
     "value": {
       "ko": "Claude LLM 기반 자동 추천",
       "en": "Claude LLM Auto Recommendations",
-      "ja": "Claude LLM自動推薦"
+      "ja": "Claude LLM自動推薦",
+      "zh": "基于Claude LLM的自动推荐"
     }
   },
   "impact": "+100%",
@@ -37,18 +42,21 @@
   "effort": {
     "ko": "중간",
     "en": "Medium",
-    "ja": "中程度"
+    "ja": "中程度",
+    "zh": "中等"
   },
   "roi": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
   "description": {
     "ko": "Claude LLM 기반 의미론적 콘텐츠 추천 시스템을 구축하여 각 블로그 포스트에 관련 글 자동 추천 기능 추가",
     "en": "Built Claude LLM-based semantic content recommendation system to automatically suggest related posts on each blog post",
-    "ja": "Claude LLMベースの意味論的コンテンツ推薦システムを構築し、各ブログ記事に関連記事の自動推薦機能を追加"
+    "ja": "Claude LLMベースの意味論的コンテンツ推薦システムを構築し、各ブログ記事に関連記事の自動推薦機能を追加",
+    "zh": "构建基于Claude LLM的语义内容推荐系统，为每篇博客文章自动推荐相关文章"
   },
   "lessons": {
     "ko": [
@@ -74,6 +82,14 @@
       "recommendations.jsonに事前生成された推薦データを保存",
       "/generate-recommendationsスラッシュコマンドで自動化",
       "各記事にprerequisite、related、next-step推薦を提供"
+    ],
+    "zh": [
+      "使用Claude LLM进行语义内容分析",
+      "采用深度学习推荐系统替代TF-IDF",
+      "使用RelatedPosts.astro组件实现UI",
+      "在recommendations.json中存储预生成的推荐数据",
+      "使用/generate-recommendations斜杠命令自动化",
+      "为每篇文章提供prerequisite、related和next-step推荐"
     ]
   }
 }

@@ -19,27 +19,27 @@ Automatically generates blog posts with multi-language support, SEO optimization
 ### Optional
 
 - `--tags` (string): Comma-separated list of tags (e.g., "nextjs,react,typescript")
-- `--languages` (string): Comma-separated language codes (default: "ko,ja,en")
-  - Available: ko (Korean), ja (Japanese), en (English)
+- `--languages` (string): Comma-separated language codes (default: "ko,ja,en,zh")
+  - Available: ko (Korean), ja (Japanese), en (English), zh (Simplified Chinese)
 - `--description` (string): SEO-optimized description (150-160 characters recommended)
 
 ## Examples
 
 ```bash
-# Basic usage (generates Korean, Japanese, and English versions)
+# Basic usage (generates Korean, Japanese, English, and Chinese versions)
 /write-post "Next.js 15의 새로운 기능"
 
 # With tags
 /write-post "React 커스텀 훅 가이드" --tags react,hooks,javascript
 
 # With specific languages
-/write-post "TypeScript 고급 타입 활용법" --tags typescript,types --languages ko,ja
+/write-post "TypeScript 고급 타입 활용법" --tags typescript,types --languages ko,ja,zh
 
 # With custom description
 /write-post "Astro로 블로그 만들기" --tags astro,blog --description "Astro 프레임워크를 사용하여 고성능 블로그를 구축하는 완벽 가이드"
 
 # All options combined
-/write-post "Tailwind CSS 최적화 전략" --tags tailwind,css,performance --languages ko,ja,en --description "Tailwind CSS를 사용한 프로젝트에서 성능을 극대화하는 실전 최적화 기법"
+/write-post "Tailwind CSS 최적화 전략" --tags tailwind,css,performance --languages ko,ja,en,zh --description "Tailwind CSS를 사용한 프로젝트에서 성능을 극대화하는 실전 최적화 기법"
 ```
 
 ## Workflow
@@ -47,7 +47,7 @@ Automatically generates blog posts with multi-language support, SEO optimization
 ### 1. Input Parsing
 
 - Parse topic and all optional parameters
-- Validate language codes (ko, ja, en)
+- Validate language codes (ko, ja, en, zh)
 - Sanitize tags (lowercase, alphanumeric, hyphens only)
 - Generate default description if not provided
 
@@ -105,9 +105,10 @@ For each language in `--languages`:
 
 - Generate URL-friendly slug from topic
 - Save files to appropriate paths:
-  - Korean: `/src/content/blog/[slug].md`
-  - Japanese: `/src/content/blog/[slug].ja.md`
-  - English: `/src/content/blog/[slug].en.md`
+  - Korean: `/src/content/blog/ko/[slug].md`
+  - Japanese: `/src/content/blog/ja/[slug].md`
+  - English: `/src/content/blog/en/[slug].md`
+  - Chinese: `/src/content/blog/zh/[slug].md`
 - Ensure Content Collections schema compliance
 - Validate frontmatter required fields
 
@@ -355,6 +356,7 @@ Generated Files:
   - /src/content/blog/ko/[slug].md (Korean)
   - /src/content/blog/ja/[slug].md (Japanese)
   - /src/content/blog/en/[slug].md (English)
+  - /src/content/blog/zh/[slug].md (Chinese)
 
 Hero Image:
   - src/assets/blog/[slug]-hero.[ext]
@@ -432,8 +434,8 @@ Requirements:
 
    **CRITICAL - Parallel Execution**:
 
-   - Create THREE separate general-purpose agents (one per language)
-   - Delegate to all three agents **IN A SINGLE MESSAGE** with multiple Task tool calls
+   - Create separate general-purpose agents (one per language: ko, ja, en, zh)
+   - Delegate to all agents **IN A SINGLE MESSAGE** with multiple Task tool calls
    - Each agent receives the same research findings, outline, and metadata
    - Each agent writes independently for their target language
    - All agents execute simultaneously for maximum efficiency
@@ -441,11 +443,12 @@ Requirements:
    **Agent Delegation Pattern**:
 ```
 
-Single message with 3 Task tool calls:
+Single message with 4 Task tool calls:
 
 - Task 1: Korean writing agent
 - Task 2: Japanese writing agent
 - Task 3: English writing agent
+- Task 4: Chinese writing agent
 
 ````
 
@@ -464,6 +467,7 @@ Single message with 3 Task tool calls:
 - Korean: /src/content/blog/ko/[slug].md
 - Japanese: /src/content/blog/ja/[slug].md
 - English: /src/content/blog/en/[slug].md
+- Chinese: /src/content/blog/zh/[slug].md
 
 6. Update README.md:
 
@@ -539,6 +543,11 @@ Single message with 3 Task tool calls:
       "language": "en",
       "path": "/src/content/blog/en/[slug].md",
       "title": "[English Title]"
+    },
+    {
+      "language": "zh",
+      "path": "/src/content/blog/zh/[slug].md",
+      "title": "[Chinese Title]"
     }
   ],
   "heroImage": "../../../assets/blog/[slug]-hero.[ext]",
@@ -580,21 +589,23 @@ updatedDate: string (optional, format: 'YYYY-MM-DD' only, single quotes)
 - 한국어: 25-30자
 - 영어: 50-60자
 - 일본어: 30-35자
+- 중국어: 25-30자
 
 **Description 권장 길이**:
 
 - 한국어: 70-80자
 - 영어: 150-160자
 - 일본어: 80-90자
+- 중국어: 70-80자
 
 ### Content Structure
 
 ````markdown
-## 개요 / Overview / 概要
+## 개요 / Overview / 概要 / 概述
 
 [Introduction paragraph - context and problem statement]
 
-## 핵심 내용 / Key Concepts / 主要内容
+## 핵심 내용 / Key Concepts / 主要内容 / 核心内容
 
 ### [Subtopic 1]
 
@@ -604,22 +615,22 @@ updatedDate: string (optional, format: 'YYYY-MM-DD' only, single quotes)
 
 [Detailed explanation]
 
-## 코드 예제 / Code Examples / コード例
+## 코드 예제 / Code Examples / コード例 / 代码示例
 
 ```language
 [Working code example]
 ```
 ````
 
-## 실전 활용 / Practical Application / 実践活用
+## 실전 활용 / Practical Application / 実践活用 / 实践应用
 
 [Real-world use cases]
 
-## 결론 / Conclusion / 結論
+## 결론 / Conclusion / 結論 / 结论
 
 [Summary and key takeaways]
 
-## 참고 자료 / References / 参考資料
+## 참고 자료 / References / 参考資料 / 参考资料
 
 - [Link 1]
 - [Link 2]
@@ -788,6 +799,7 @@ graph TD
 - **Korean**: Use 존댓말 (formal polite), mix Korean and English technical terms naturally
 - **Japanese**: Use です/ます体 (polite form), use katakana for technical terms
 - **English**: Use American English spelling, standard technical documentation style
+- **Chinese**: Use simplified Chinese (简体中文), professional technical writing style, mix Chinese and English technical terms appropriately
 
 ## Image Generation Integration
 
@@ -891,7 +903,7 @@ No text overlay.
 
 ### Common Issues
 
-1. **Invalid language code**: Show available options (ko, ja, en)
+1. **Invalid language code**: Show available options (ko, ja, en, zh)
 2. **Missing topic**: Display usage instructions
 3. **File write failure**: Check directory permissions
 4. **Schema validation error**: Verify frontmatter format
@@ -900,7 +912,7 @@ No text overlay.
 ### Validation Checks
 
 - Topic is not empty
-- Language codes are valid
+- Language codes are valid (ko, ja, en, zh)
 - Tags contain only alphanumeric and hyphens
 - Generated slug is URL-safe
 - All required frontmatter fields present

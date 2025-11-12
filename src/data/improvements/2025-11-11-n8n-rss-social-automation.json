@@ -5,31 +5,36 @@
   "title": {
     "ko": "n8n RSS 기반 소셜 미디어 자동 게시 구축",
     "en": "n8n RSS-based Social Media Auto-posting Implementation",
-    "ja": "n8n RSSベースのソーシャルメディア自動投稿実装"
+    "ja": "n8n RSSベースのソーシャルメディア自動投稿実装",
+    "zh": "n8n RSS 社交媒体自动发布系统实现"
   },
   "category": "Technical",
   "before": {
     "metric": {
       "ko": "소셜 미디어 게시 시간",
       "en": "Social Media Posting Time",
-      "ja": "ソーシャルメディア投稿時間"
+      "ja": "ソーシャルメディア投稿時間",
+      "zh": "社交媒体发布时间"
     },
     "value": {
       "ko": "15-20분/포스트 (수동)",
       "en": "15-20min/post (manual)",
-      "ja": "15〜20分/投稿（手動）"
+      "ja": "15〜20分/投稿（手動）",
+      "zh": "15〜20分钟/帖子（手动）"
     }
   },
   "after": {
     "metric": {
       "ko": "소셜 미디어 게시 시간",
       "en": "Social Media Posting Time",
-      "ja": "ソーシャルメディア投稿時間"
+      "ja": "ソーシャルメディア投稿時間",
+      "zh": "社交媒体发布时间"
     },
     "value": {
       "ko": "30초-1분 (자동)",
       "en": "30sec-1min (automated)",
-      "ja": "30秒〜1分（自動）"
+      "ja": "30秒〜1分（自動）",
+      "zh": "30秒〜1分钟（自动）"
     }
   },
   "impact": "+95%",
@@ -37,17 +42,20 @@
   "effort": {
     "ko": "중간",
     "en": "Medium",
-    "ja": "中"
+    "ja": "中",
+    "zh": "中等"
   },
   "roi": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "description": {
     "ko": "GitHub Actions로 RSS 피드를 생성하고, n8n의 RSS 트리거가 새 포스트를 감지하여, Google Gemini AI가 플랫폼별로 최적화된 콘텐츠를 생성해 X(Twitter)와 LinkedIn에 자동 게시하는 완전 자동화 시스템 구축",
     "en": "Built a complete automation system where GitHub Actions generates RSS feeds, n8n RSS trigger detects new posts, Google Gemini AI generates platform-optimized content, and automatically posts to X (Twitter) and LinkedIn",
-    "ja": "GitHub ActionsでRSSフィードを生成し、n8nのRSSトリガーが新しい投稿を検知、Google Gemini AIがプラットフォーム最適化コンテンツを生成してX（Twitter）とLinkedInに自動投稿する完全自動化システムを構築"
+    "ja": "GitHub ActionsでRSSフィードを生成し、n8nのRSSトリガーが新しい投稿を検知、Google Gemini AIがプラットフォーム最適化コンテンツを生成してX（Twitter）とLinkedInに自動投稿する完全自動化システムを構築",
+    "zh": "构建完整自动化系统：通过 GitHub Actions 生成 RSS 订阅源，n8n RSS 触发器检测新文章，Google Gemini AI 生成平台优化内容，并自动发布到 X（Twitter）和 LinkedIn"
   },
   "lessons": {
     "ko": [
@@ -70,6 +78,13 @@
       "95%の時間削減達成（15〜20分→30秒〜1分）",
       "100%一貫したブランドボイスの維持",
       "新しいプラットフォームの追加が容易（Instagram、Threadsなど）"
+    ],
+    "zh": [
+      "6节点 n8n 工作流程（RSS Trigger → HTTP Request → AI Agent → Output Parser → X/LinkedIn）",
+      "基于 Google Gemini 2.5 Pro 的平台特定优化（X 280字符，LinkedIn 200〜400字符）",
+      "实现95%时间节省（15〜20分钟 → 30秒〜1分钟）",
+      "100%保持一致的品牌语调",
+      "便于添加新平台（Instagram、Threads等）"
     ]
   }
 }

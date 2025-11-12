@@ -50,6 +50,18 @@ const t = useTranslations(lang);
 								私と一緒に最新の技術トレンドを追い、未来を導く技術革新について学びましょう。皆さんの関心と参加を楽しみにしています。ありがとうございます！
 							</p>
 						</div>
+					) : lang === 'zh' ? (
+						<div>
+							<p class="text-lg mb-4">
+								您好，欢迎来到"EffiFlow"。我是这个博客的运营者Kim Jangwook。在这里，我们介绍最新的技术趋势和创新理念。
+							</p>
+							<p class="text-lg mb-4">
+								"EffiFlow"是为所有对技术充满热情和好奇心的人准备的空间。我们旨在以通俗易懂的方式解释复杂的技术主题，帮助更多人接触新技术。
+							</p>
+							<p class="text-lg">
+								与我一起跟随最新的技术趋势，探索引领未来的技术创新。期待您的关注和参与。谢谢！
+							</p>
+						</div>
 					) : (
 						<div>
 							<p class="text-lg mb-4">
@@ -86,12 +98,12 @@ const t = useTranslations(lang);
 			<section class="mb-16">
 				<h2 class="text-3xl font-bold mb-6 border-b pb-2">Portfolio</h2>
 
-				<h3 class="text-2xl font-semibold mb-4">{lang === 'ko' ? '개인 프로젝트' : lang === 'ja' ? '個人プロジェクト' : 'My Projects'}</h3>
+				<h3 class="text-2xl font-semibold mb-4">{lang === 'ko' ? '개인 프로젝트' : lang === 'ja' ? '個人プロジェクト' : lang === 'zh' ? '个人项目' : 'My Projects'}</h3>
 				<div class="space-y-6 mb-8">
 					<div class="bg-gray-50 p-6 rounded-lg">
 						<h4 class="text-xl font-bold mb-2">
 							<a href="https://github.com/kimjangwook/ssr-repeater" target="_blank" class="text-accent hover:underline">
-								{lang === 'ko' ? 'SSR 설문 분석' : lang === 'ja' ? 'SSRアンケート分析' : 'SSR Survey Analysis'}
+								{lang === 'ko' ? 'SSR 설문 분석' : lang === 'ja' ? 'SSRアンケート分析' : lang === 'zh' ? 'SSR 问卷分析' : 'SSR Survey Analysis'}
 							</a>
 						</h4>
 						<p class="text-sm text-gray-600 mb-2">Tech: Python, OpenAI API, LLM, Data Science</p>
@@ -100,6 +112,8 @@ const t = useTranslations(lang);
 								'LLM 기반 의미론적 유사도 평가 방법론을 활용한 블로그 재방문 의향 분석. 15개 페르소나와 5개 콘텐츠 카테고리에 대해 225개 평가를 수행하여 ICC 신뢰도 0.833을 달성. 전통적 설문조사 대비 비용 효율적 대안(평가당 $0.016 vs $1-5).'
 							) : lang === 'ja' ? (
 								'LLMベースの意味的類似性評価手法を用いたブログ再訪問意図分析。15のペルソナと5つのコンテンツカテゴリに対して225件の評価を実施し、ICC信頼性0.833を達成。従来の調査と比較して費用対効果の高い代替手段（評価あたり$0.016 vs $1-5）。'
+							) : lang === 'zh' ? (
+								'基于LLM的语义相似度评估方法论，用于分析博客重访意向。针对15个人物角色和5个内容类别进行了225次评估，实现了ICC信度0.833。相比传统问卷调查更具成本效益（每次评估$0.016 vs $1-5）。'
 							) : (
 								'LLM-based Semantic Similarity Rating methodology for analyzing blog revisit intent. Conducted 225 evaluations with 15 diverse personas across 5 content categories, achieving ICC reliability of 0.833. Cost-efficient alternative to traditional surveys ($0.016 per evaluation vs $1-5).'
 							)}
@@ -109,7 +123,7 @@ const t = useTranslations(lang);
 					<div class="bg-gray-50 p-6 rounded-lg">
 						<h4 class="text-xl font-bold mb-2">
 							<a href="https://kimjangwook.github.io/svelte-weather/public/" target="_blank" class="text-accent hover:underline">
-								{lang === 'ko' ? '날씨 정보 시스템' : '気象情報取得システム'}
+								{lang === 'ko' ? '날씨 정보 시스템' : lang === 'ja' ? '気象情報取得システム' : lang === 'zh' ? '天气信息系统' : 'Weather Information System'}
 							</a>
 						</h4>
 						<p class="text-sm text-gray-600 mb-2">Tech: Svelte</p>
@@ -118,6 +132,8 @@ const t = useTranslations(lang);
 								'Svelte 프레임워크로 구축된 현대적인 날씨 애플리케이션. 반응형 사용자 인터페이스로 실시간 기상 데이터를 제공합니다.'
 							) : lang === 'ja' ? (
 								'Svelteフレームワークで構築された最新の天気アプリケーション。レスポンシブなユーザーインターフェースでリアルタイムの気象データを提供します。'
+							) : lang === 'zh' ? (
+								'基于Svelte框架构建的现代化天气应用程序。通过响应式用户界面提供实时气象数据。'
 							) : (
 								'A modern weather application built with Svelte framework, providing real-time meteorological data with a responsive user interface.'
 							)}
@@ -127,7 +143,7 @@ const t = useTranslations(lang);
 					<div class="bg-gray-50 p-6 rounded-lg">
 						<h4 class="text-xl font-bold mb-2">
 							<a href="https://kimjangwook.github.io/letsencrypt-domain-checker/public/" target="_blank" class="text-accent hover:underline">
-								{lang === 'ko' ? "Let's Encrypt 도메인 체커" : "Let's Encrypt ドメインチェッカー"}
+								{lang === 'ko' ? "Let's Encrypt 도메인 체커" : lang === 'ja' ? "Let's Encrypt ドメインチェッカー" : lang === 'zh' ? "Let's Encrypt 域名检查器" : "Let's Encrypt Domain Checker"}
 							</a>
 						</h4>
 						<p class="text-gray-700">
@@ -135,6 +151,8 @@ const t = useTranslations(lang);
 								"도메인의 Let's Encrypt SSL 인증서를 확인하고 관리하는 도구입니다."
 							) : lang === 'ja' ? (
 								"ドメインのLet's Encrypt SSL証明書を確認および管理するツールです。"
+							) : lang === 'zh' ? (
+								"用于检查和管理域名Let's Encrypt SSL证书的工具。"
 							) : (
 								"A tool for checking and managing Let's Encrypt SSL certificates for domains."
 							)}
@@ -144,7 +162,7 @@ const t = useTranslations(lang);
 					<div class="bg-gray-50 p-6 rounded-lg">
 						<h4 class="text-xl font-bold mb-2">
 							<a href="https://drone-info.jangwook.net/" target="_blank" class="text-accent hover:underline">
-								{lang === 'ko' ? '드론 정보 모음' : 'ドローン情報まとめ'}
+								{lang === 'ko' ? '드론 정보 모음' : lang === 'ja' ? 'ドローン情報まとめ' : lang === 'zh' ? '无人机信息汇总' : 'Drone Information Hub'}
 							</a>
 						</h4>
 						<p class="text-gray-700">
@@ -152,6 +170,8 @@ const t = useTranslations(lang);
 								'드론, 규정, 모범 사례에 대한 종합 정보 리소스입니다.'
 							) : lang === 'ja' ? (
 								'ドローン、規制、ベストプラクティスに関する包括的な情報リソースです。'
+							) : lang === 'zh' ? (
+								'关于无人机、法规和最佳实践的综合信息资源。'
 							) : (
 								'Comprehensive information resource about drones, regulations, and best practices.'
 							)}
@@ -161,7 +181,7 @@ const t = useTranslations(lang);
 					<div class="bg-gray-50 p-6 rounded-lg">
 						<h4 class="text-xl font-bold mb-2">
 							<a href="https://libraries.jangwook.net/" target="_blank" class="text-accent hover:underline">
-								{lang === 'ko' ? '실무에 유용한 라이브러리' : '仕事に使えるライブラリー'}
+								{lang === 'ko' ? '실무에 유용한 라이브러리' : lang === 'ja' ? '仕事に使えるライブラリー' : lang === 'zh' ? '实用开发库集合' : 'Practical Libraries Collection'}
 							</a>
 						</h4>
 						<p class="text-gray-700">
@@ -169,6 +189,8 @@ const t = useTranslations(lang);
 								'전문 개발 작업을 위한 실용적인 라이브러리 및 도구 모음입니다.'
 							) : lang === 'ja' ? (
 								'プロフェッショナル開発作業のための実用的なライブラリとツールの厳選コレクションです。'
+							) : lang === 'zh' ? (
+								'为专业开发工作精选的实用库和工具集合。'
 							) : (
 								'A curated collection of practical libraries and tools for professional development work.'
 							)}
@@ -176,11 +198,11 @@ const t = useTranslations(lang);
 					</div>
 				</div>
 
-				<h3 class="text-2xl font-semibold mb-4">{lang === 'ko' ? '프로젝트 경력' : lang === 'ja' ? '業務経験' : 'Works'}</h3>
+				<h3 class="text-2xl font-semibold mb-4">{lang === 'ko' ? '프로젝트 경력' : lang === 'ja' ? '業務経験' : lang === 'zh' ? '项目经验' : 'Works'}</h3>
 				<div class="space-y-6">
 					<div class="bg-gray-50 p-6 rounded-lg">
 						<h4 class="text-xl font-bold mb-2">
-							{lang === 'ko' ? '청구서 관리 시스템' : lang === 'ja' ? '請求書管理システム' : 'Invoice Management System'}
+							{lang === 'ko' ? '청구서 관리 시스템' : lang === 'ja' ? '請求書管理システム' : lang === 'zh' ? '发票管理系统' : 'Invoice Management System'}
 						</h4>
 						<p class="text-sm text-gray-600 mb-2">Tech: Laravel, Vue.js, AWS</p>
 						<p class="text-gray-700 mb-3">
@@ -188,20 +210,22 @@ const t = useTranslations(lang);
 								'프리랜서의 청구서 관리를 지원하기 위해 만들어진 애플리케이션입니다.'
 							) : lang === 'ja' ? (
 								'フリーランサーの請求書管理を支援するために作成されたアプリケーションです。'
+							) : lang === 'zh' ? (
+								'为协助自由职业者进行发票管理而创建的应用程序。'
 							) : (
 								'An application created to assist freelancers with invoice management.'
 							)}
 						</p>
 						<ul class="list-disc list-inside space-y-1 text-gray-700">
-							<li>{lang === 'ko' ? '프로필 관리' : lang === 'ja' ? 'プロフィール管理' : 'Profile management'}</li>
-							<li>{lang === 'ko' ? '거래처 관리' : lang === 'ja' ? '請求先パートナー管理' : 'Billing partner management'}</li>
-							<li>{lang === 'ko' ? '청구서 관리' : lang === 'ja' ? '請求書管理' : 'Invoice management'}</li>
+							<li>{lang === 'ko' ? '프로필 관리' : lang === 'ja' ? 'プロフィール管理' : lang === 'zh' ? '个人资料管理' : 'Profile management'}</li>
+							<li>{lang === 'ko' ? '거래처 관리' : lang === 'ja' ? '請求先パートナー管理' : lang === 'zh' ? '客户管理' : 'Billing partner management'}</li>
+							<li>{lang === 'ko' ? '청구서 관리' : lang === 'ja' ? '請求書管理' : lang === 'zh' ? '发票管理' : 'Invoice management'}</li>
 						</ul>
 					</div>
 
 					<div class="bg-gray-50 p-6 rounded-lg">
 						<h4 class="text-xl font-bold mb-2">
-							{lang === 'ko' ? '대시보드 시스템' : lang === 'ja' ? 'ダッシュボード' : 'Dashboard'}
+							{lang === 'ko' ? '대시보드 시스템' : lang === 'ja' ? 'ダッシュボード' : lang === 'zh' ? '仪表盘系统' : 'Dashboard'}
 						</h4>
 						<p class="text-sm text-gray-600 mb-2">Tech: Fuel PHP, Laravel, Vue.js, AWS</p>
 						<p class="text-gray-700 mb-3">
@@ -209,52 +233,58 @@ const t = useTranslations(lang);
 								'회사의 직원, 고객, 공수, 매출, 하청 계약을 대시보드 시각화를 통해 관리하는 종합 시스템입니다.'
 							) : lang === 'ja' ? (
 								'会社の従業員、クライアント、工数、売上、下請け契約をダッシュボード可視化で管理する包括的なシステムです。'
+							) : lang === 'zh' ? (
+								'通过仪表盘可视化管理公司员工、客户、工时、销售和分包合同的综合系统。'
 							) : (
 								'A comprehensive system that manages company employees, clients, man-hours, sales, and subcontracts with dashboard visualization.'
 							)}
 						</p>
 						<ul class="list-disc list-inside space-y-1 text-gray-700">
-							<li>{lang === 'ko' ? '내부 정보 관리' : lang === 'ja' ? '社内情報管理' : 'Internal information management'}</li>
-							<li>{lang === 'ko' ? '공수 관리' : lang === 'ja' ? '工数管理' : 'Man-hour management'}</li>
-							<li>{lang === 'ko' ? '청구 관리' : lang === 'ja' ? '請求管理' : 'Billing management'}</li>
-							<li>{lang === 'ko' ? '보고서 관리' : lang === 'ja' ? 'レポート管理' : 'Report management'}</li>
+							<li>{lang === 'ko' ? '내부 정보 관리' : lang === 'ja' ? '社内情報管理' : lang === 'zh' ? '内部信息管理' : 'Internal information management'}</li>
+							<li>{lang === 'ko' ? '공수 관리' : lang === 'ja' ? '工数管理' : lang === 'zh' ? '工时管理' : 'Man-hour management'}</li>
+							<li>{lang === 'ko' ? '청구 관리' : lang === 'ja' ? '請求管理' : lang === 'zh' ? '计费管理' : 'Billing management'}</li>
+							<li>{lang === 'ko' ? '보고서 관리' : lang === 'ja' ? 'レポート管理' : lang === 'zh' ? '报表管理' : 'Report management'}</li>
 						</ul>
 					</div>
 
 					<div class="bg-gray-50 p-6 rounded-lg">
-						<h4 class="text-xl font-bold mb-2">{lang === 'ko' ? '체험 시스템' : '体験くん'}</h4>
+						<h4 class="text-xl font-bold mb-2">{lang === 'ko' ? '체험 시스템' : lang === 'ja' ? '体験くん' : lang === 'zh' ? '试听课程管理系统' : 'Trial Lesson System'}</h4>
 						<p class="text-sm text-gray-600 mb-2">Tech: Fuel PHP, jQuery, AWS</p>
 						<p class="text-gray-700 mb-3">
 							{lang === 'ko' ? (
 								'다양한 체험 수업 및 교실 정보를 관리하고 학생의 후속 조치 상태를 모니터링할 수 있는 시스템입니다.'
 							) : lang === 'ja' ? (
 								'さまざまな体験レッスンや教室の情報を管理し、生徒のフォローアップ状況を監視できるシステムです。'
+							) : lang === 'zh' ? (
+								'管理各种试听课程和教室信息，并监控学生跟进状态的系统。'
 							) : (
 								'A system that manages information on various trial lessons and classrooms, allowing follow-up status monitoring of students.'
 							)}
 						</p>
 						<ul class="list-disc list-inside space-y-1 text-gray-700">
-							<li>{lang === 'ko' ? '체험 수업 및 관련 정보 관리' : lang === 'ja' ? '体験レッスンおよび関連情報管理' : 'Trial lesson and related information management'}</li>
-							<li>{lang === 'ko' ? '시설 관리' : lang === 'ja' ? '施設管理' : 'Facility management'}</li>
+							<li>{lang === 'ko' ? '체험 수업 및 관련 정보 관리' : lang === 'ja' ? '体験レッスンおよび関連情報管理' : lang === 'zh' ? '试听课程及相关信息管理' : 'Trial lesson and related information management'}</li>
+							<li>{lang === 'ko' ? '시설 관리' : lang === 'ja' ? '施設管理' : lang === 'zh' ? '设施管理' : 'Facility management'}</li>
 						</ul>
 					</div>
 
 					<div class="bg-gray-50 p-6 rounded-lg">
-						<h4 class="text-xl font-bold mb-2">{lang === 'ko' ? '회원·세미나 관리 시스템' : '会員・セミナー管理システム'}</h4>
+						<h4 class="text-xl font-bold mb-2">{lang === 'ko' ? '회원·세미나 관리 시스템' : lang === 'ja' ? '会員・セミナー管理システム' : lang === 'zh' ? '会员与研讨会管理系统' : 'Member & Seminar Management System'}</h4>
 						<p class="text-sm text-gray-600 mb-2">Tech: Laravel, React, Marketo, AWS</p>
 						<p class="text-gray-700 mb-3">
 							{lang === 'ko' ? (
 								'일본 전역에서 개최되는 온·오프라인 세미나 및 이벤트를 관리하고, 마케팅 자동화 시스템과 연동하는 시스템입니다.'
 							) : lang === 'ja' ? (
 								'日本全国で開催されるオンライン・オフラインセミナーやイベントを管理し、マーケティングオートメーションシステムと連携するシステムです。'
+							) : lang === 'zh' ? (
+								'管理日本全国举办的线上线下研讨会和活动，并与营销自动化系统集成的系统。'
 							) : (
 								'A system that manages online and offline seminars and events held throughout Japan, with integration to marketing automation systems.'
 							)}
 						</p>
 						<ul class="list-disc list-inside space-y-1 text-gray-700">
-							<li>{lang === 'ko' ? '회원 관리' : lang === 'ja' ? '会員管理' : 'Membership management'}</li>
-							<li>{lang === 'ko' ? '이메일 관리 기능' : lang === 'ja' ? 'メール管理機能' : 'Email management functions'}</li>
-							<li>{lang === 'ko' ? '세미나 관리' : lang === 'ja' ? 'セミナー管理' : 'Seminar management'}</li>
+							<li>{lang === 'ko' ? '회원 관리' : lang === 'ja' ? '会員管理' : lang === 'zh' ? '会员管理' : 'Membership management'}</li>
+							<li>{lang === 'ko' ? '이메일 관리 기능' : lang === 'ja' ? 'メール管理機能' : lang === 'zh' ? '邮件管理功能' : 'Email management functions'}</li>
+							<li>{lang === 'ko' ? '세미나 관리' : lang === 'ja' ? 'セミナー管理' : lang === 'zh' ? '研讨会管理' : 'Seminar management'}</li>
 						</ul>
 					</div>
 
@@ -266,6 +296,8 @@ const t = useTranslations(lang);
 								'고객 데이터를 저장하는 데이터 웨어하우스 구축을 지원하고 웹사이트 개인화를 가능하게 하는 시스템입니다.'
 							) : lang === 'ja' ? (
 								'クライアントデータを保存するデータウェアハウスの構築を支援し、ウェブサイトのパーソナライゼーションを可能にするシステムです。'
+							) : lang === 'zh' ? (
+								'支持构建存储客户数据的数据仓库，并实现网站个性化的系统。'
 							) : (
 								'A system that supports the construction of a data warehouse to store client data and enables website personalization.'
 							)}
@@ -280,6 +312,8 @@ const t = useTranslations(lang);
 								'지능형 폼 작성 지원을 통해 사용자의 폼 작성 스트레스를 줄이고 이탈을 방지하도록 설계된 서비스입니다.'
 							) : lang === 'ja' ? (
 								'インテリジェントなフォーム入力支援により、ユーザーのフォーム入力ストレスを軽減し、離脱を防止するよう設計されたサービスです。'
+							) : lang === 'zh' ? (
+								'通过智能表单填写辅助，旨在减少用户填写表单的压力并防止流失的服务。'
 							) : (
 								'A service designed to reduce form-filling user stress and prevent abandonment through intelligent form-filling support.'
 							)}
@@ -294,6 +328,8 @@ const t = useTranslations(lang);
 								'현대적인 웹 기술로 온라인 세션 및 레슨을 제공하는 서비스입니다.'
 							) : lang === 'ja' ? (
 								'最新のWeb技術でオンラインセッションやレッスンを提供するサービスです。'
+							) : lang === 'zh' ? (
+								'采用现代Web技术提供在线会话和课程的服务。'
 							) : (
 								'A service that provides online sessions and lessons with modern web technologies.'
 							)}
@@ -310,6 +346,8 @@ const t = useTranslations(lang);
 								'Nuxt.js 기반 웹 애플리케이션 서비스입니다.'
 							) : lang === 'ja' ? (
 								'Nuxt.jsベースのWebアプリケーションサービスです。'
+							) : lang === 'zh' ? (
+								'基于Nuxt.js的Web应用服务。'
 							) : (
 								'A Nuxt.js-based web application service.'
 							)}
@@ -319,7 +357,7 @@ const t = useTranslations(lang);
 					<div class="bg-gray-50 p-6 rounded-lg">
 						<h4 class="text-xl font-bold mb-2">
 							<a href="https://www.remotax.jp/" target="_blank" class="text-accent hover:underline">
-								{lang === 'ko' ? 'REMO TAX: 면세 전자화' : 'REMO TAX: 免税電子化'}
+								{lang === 'ko' ? 'REMO TAX: 면세 전자화' : lang === 'ja' ? 'REMO TAX: 免税電子化' : lang === 'zh' ? 'REMO TAX: 免税电子化' : 'REMO TAX: Tax-Free Digitalization'}
 							</a>
 						</h4>
 						<p class="text-gray-700 mb-3">
@@ -327,15 +365,17 @@ const t = useTranslations(lang);
 								'소매점을 위한 면세 절차 대행 서비스. 스마트폰 기반 운영을 통해 복잡한 면세 프로세스를 간소화합니다.'
 							) : lang === 'ja' ? (
 								'小売店向けの免税手続き代行サービス。スマートフォンベースの操作で複雑な免税プロセスを簡素化します。'
+							) : lang === 'zh' ? (
+								'为零售商店提供的免税手续代理服务。通过基于智能手机的操作简化复杂的免税流程。'
 							) : (
 								'A tax-free procedure agency service for retail stores. Simplifies the complex duty-free process through smartphone-based operations.'
 							)}
 						</p>
 						<ul class="list-disc list-inside space-y-1 text-gray-700">
-							<li>{lang === 'ko' ? '간단한 처리: 직원이 여권과 영수증만 촬영하면 됩니다' : lang === 'ja' ? 'シンプルな処理：スタッフがパスポートとレシートを撮影するだけ' : 'Simple processing: Staff only need to photograph passports and receipts'}</li>
-							<li>{lang === 'ko' ? '빠른 처리: 평균 1〜2분 소요' : lang === 'ja' ? '迅速な処理：平均1〜2分' : 'Fast processing: Average 1-2 minutes per transaction'}</li>
-							<li>{lang === 'ko' ? '저렴한 비용: 초기 비용 10,780엔, 월 이용료 무료' : lang === 'ja' ? '低コスト：初期費用10,780円、月額利用料無料' : 'Low cost: Initial fee of 10,780 yen, no monthly fees'}</li>
-							<li>{lang === 'ko' ? '전문 지식 불필요' : lang === 'ja' ? '専門知識不要' : 'No specialized knowledge required'}</li>
+							<li>{lang === 'ko' ? '간단한 처리: 직원이 여권과 영수증만 촬영하면 됩니다' : lang === 'ja' ? 'シンプルな処理：スタッフがパスポートとレシートを撮影するだけ' : lang === 'zh' ? '简单处理：员工只需拍摄护照和收据' : 'Simple processing: Staff only need to photograph passports and receipts'}</li>
+							<li>{lang === 'ko' ? '빠른 처리: 평균 1〜2분 소요' : lang === 'ja' ? '迅速な処理：平均1〜2分' : lang === 'zh' ? '快速处理：平均1〜2分钟' : 'Fast processing: Average 1-2 minutes per transaction'}</li>
+							<li>{lang === 'ko' ? '저렴한 비용: 초기 비용 10,780엔, 월 이용료 무료' : lang === 'ja' ? '低コスト：初期費用10,780円、月額利用料無料' : lang === 'zh' ? '低成本：初始费用10,780日元，月费免费' : 'Low cost: Initial fee of 10,780 yen, no monthly fees'}</li>
+							<li>{lang === 'ko' ? '전문 지식 불필요' : lang === 'ja' ? '専門知識不要' : lang === 'zh' ? '无需专业知识' : 'No specialized knowledge required'}</li>
 						</ul>
 					</div>
 				</div>

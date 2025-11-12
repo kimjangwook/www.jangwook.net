@@ -5,31 +5,36 @@
   "title": {
     "ko": "SSR 방법론 기반 블로그 재방문 의향 설문 조사",
     "en": "Blog Revisit Intent Survey Based on SSR Methodology",
-    "ja": "SSR方法論に基づくブログ再訪問意向調査"
+    "ja": "SSR方法論に基づくブログ再訪問意向調査",
+    "zh": "基于SSR方法论的博客重访意向调查"
   },
   "category": "Content",
   "before": {
     "metric": {
       "ko": "독자 피드백",
       "en": "Reader Feedback",
-      "ja": "読者フィードバック"
+      "ja": "読者フィードバック",
+      "zh": "读者反馈"
     },
     "value": {
       "ko": "정성적",
       "en": "Qualitative",
-      "ja": "定性的"
+      "ja": "定性的",
+      "zh": "定性的"
     }
   },
   "after": {
     "metric": {
       "ko": "독자 피드백",
       "en": "Reader Feedback",
-      "ja": "読者フィードバック"
+      "ja": "読者フィードバック",
+      "zh": "读者反馈"
     },
     "value": {
       "ko": "정량적",
       "en": "Quantitative",
-      "ja": "定量的"
+      "ja": "定量的",
+      "zh": "定量的"
     }
   },
   "impact": "+83%",
@@ -37,17 +42,20 @@
   "effort": {
     "ko": "중간",
     "en": "Medium",
-    "ja": "中"
+    "ja": "中",
+    "zh": "中等"
   },
   "roi": {
     "ko": "매우 높음",
     "en": "Very High",
-    "ja": "非常に高い"
+    "ja": "非常に高い",
+    "zh": "非常高"
   },
   "description": {
     "ko": "LLM 기반 Semantic Similarity Rating(SSR) 방법론으로 225개 평가 수행. 15개 페르소나 × 5개 콘텐츠 × 3회 반복으로 재방문 의향 분석. 평균 3.078/5.0, ICC 0.833의 높은 신뢰도 검증. 비용 $3.50, 실행 시간 8분 24초",
     "en": "Conducted 225 evaluations using LLM-based Semantic Similarity Rating (SSR) methodology. Analyzed revisit intent with 15 personas × 5 contents × 3 repetitions. Average rating 3.078/5.0, validated high reliability with ICC 0.833. Cost $3.50, execution time 8 min 24 sec",
-    "ja": "LLMベースのSemantic Similarity Rating(SSR)方法論で225件の評価を実施。15ペルソナ×5コンテンツ×3回繰り返しで再訪問意向を分析。平均3.078/5.0、ICC 0.833の高い信頼性を検証。コスト$3.50、実行時間8分24秒"
+    "ja": "LLMベースのSemantic Similarity Rating(SSR)方法論で225件の評価を実施。15ペルソナ×5コンテンツ×3回繰り返しで再訪問意向を分析。平均3.078/5.0、ICC 0.833の高い信頼性を検証。コスト$3.50、実行時間8分24秒",
+    "zh": "使用基于LLM的语义相似度评分(SSR)方法论执行225次评估。通过15个用户画像×5个内容×3次重复分析重访意向。平均评分3.078/5.0，ICC 0.833验证高可靠性。成本$3.50，执行时间8分24秒"
   },
   "lessons": {
     "ko": [
@@ -79,6 +87,16 @@
       "Claude Codeが1位、平均3.086点で最高評価",
       "全体の97.3%が4点(再訪問意向高い)",
       "従来調査比95%コスト削減、99%時間短縮"
+    ],
+    "zh": [
+      "利用OpenAI API生成自由回答",
+      "使用text-embedding-3-small创建1536维向量嵌入",
+      "计算5个锚点的余弦相似度",
+      "使用Softmax生成概率分布并计算期望值",
+      "验证测试-再测试可靠性(ICC 0.833)",
+      "Claude Code排名第一，平均评分3.086分最高",
+      "整体97.3%评分为4分(重访意向高)",
+      "与传统调查相比，成本降低95%，时间节省99%"
     ]
   }
 }

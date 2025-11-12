@@ -5,31 +5,36 @@
   "title": {
     "ko": "Chrome Lighthouse 성능 측정 및 검증",
     "en": "Chrome Lighthouse Performance Measurement & Validation",
-    "ja": "Chrome Lighthouseパフォーマンス測定と検証"
+    "ja": "Chrome Lighthouseパフォーマンス測定と検証",
+    "zh": "Chrome Lighthouse 性能测量与验证"
   },
   "category": "Technical",
   "before": {
     "metric": {
       "ko": "성능 점수",
       "en": "Performance Score",
-      "ja": "パフォーマンススコア"
+      "ja": "パフォーマンススコア",
+      "zh": "性能分数"
     },
     "value": {
       "ko": "측정 전",
       "en": "Before measurement",
-      "ja": "測定前"
+      "ja": "測定前",
+      "zh": "测量前"
     }
   },
   "after": {
     "metric": {
       "ko": "성능 점수 (PC/Mobile)",
       "en": "Performance Score (PC/Mobile)",
-      "ja": "パフォーマンススコア (PC/Mobile)"
+      "ja": "パフォーマンススコア (PC/Mobile)",
+      "zh": "性能分数 (PC/Mobile)"
     },
     "value": {
       "ko": "98/72점",
       "en": "98/72",
-      "ja": "98/72点"
+      "ja": "98/72点",
+      "zh": "98/72分"
     }
   },
   "impact": "+98%",
@@ -37,18 +42,21 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
   "description": {
     "ko": "Chrome Lighthouse로 실제 성능 측정 완료. PC는 98점으로 목표 초과 달성, Mobile은 72점으로 네트워크 환경에 따른 개선 필요",
     "en": "Completed performance measurement with Chrome Lighthouse. PC achieved 98 points exceeding target, Mobile at 72 points needs improvement due to network conditions",
-    "ja": "Chrome Lighthouseで実際のパフォーマンス測定完了。PCは98点で目標を超過達成、Mobileは72点でネットワーク環境による改善が必要"
+    "ja": "Chrome Lighthouseで実際のパフォーマンス測定完了。PCは98点で目標を超過達成、Mobileは72点でネットワーク環境による改善が必要",
+    "zh": "使用 Chrome Lighthouse 完成实际性能测量。PC 达到 98 分超额完成目标，Mobile 为 72 分需要根据网络环境进行改善"
   },
   "lessons": {
     "ko": [
@@ -80,6 +88,16 @@
       "すべてのカテゴリで90点以上達成（SEO満点）",
       "PC環境では最適化目標を完全達成",
       "Mobile LCPはネットワークとデバイス性能の影響（追加最適化検討必要）"
+    ],
+    "zh": [
+      "PC：Performance 98/100（超额完成90+目标）",
+      "PC：LCP 0.97s、FCP 0.86s、CLS 0.0017（全部优秀）",
+      "Mobile：Performance 72/100（LCP 4.85s需要改善）",
+      "Mobile：CLS 0.0009（非常优秀，布局稳定性良好）",
+      "SEO 100/100、Accessibility 93/100、Best Practices 93/100",
+      "所有类别都达到90分以上（SEO满分）",
+      "在PC环境下完全达成优化目标",
+      "Mobile LCP受网络和设备性能影响（需要进一步优化）"
     ]
   }
 }

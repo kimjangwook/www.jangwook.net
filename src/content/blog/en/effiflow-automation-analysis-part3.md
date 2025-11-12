@@ -60,8 +60,8 @@ relatedPosts:
 
 > <strong>EffiFlow Automation Architecture Analysis/Evaluation and Improvements Series</strong> (3/3) - Final Chapter
 >
-> 1. [Part 1: 71% Cost Reduction with Metadata](/blog/en/effiflow-automation-analysis-part1)
-> 2. [Part 2: Skills Auto-Discovery and 58% Token Reduction](/blog/en/effiflow-automation-analysis-part2)
+> 1. [Part 1: 71% Cost Reduction with Metadata](/en/blog/en/effiflow-automation-analysis-part1)
+> 2. [Part 2: Skills Auto-Discovery and 58% Token Reduction](/en/blog/en/effiflow-automation-analysis-part2)
 > 3. <strong>Part 3: Real-World Improvement Cases and ROI Analysis</strong> ← Current Article
 
 ## Introduction

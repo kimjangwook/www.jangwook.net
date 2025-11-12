@@ -4,40 +4,47 @@
   "title": {
     "ko": "YouTube 채널 구축",
     "en": "YouTube Channel Launch",
-    "ja": "YouTubeチャネル構築"
+    "ja": "YouTubeチャネル構築",
+    "zh": "YouTube频道建设"
   },
   "category": "Content",
   "target": {
     "metric": {
       "ko": "YouTube → 블로그 유입",
       "en": "YouTube → Blog Traffic",
-      "ja": "YouTube → ブログ流入"
+      "ja": "YouTube → ブログ流入",
+      "zh": "YouTube → 博客流量"
     },
     "value": {
       "ko": "10%",
       "en": "10%",
-      "ja": "10%"
+      "ja": "10%",
+      "zh": "10%"
     }
   },
   "effort": {
     "ko": "매우 높음",
     "en": "Very High",
-    "ja": "非常に高い"
+    "ja": "非常に高い",
+    "zh": "非常高"
   },
   "roi": {
     "ko": "우수",
     "en": "Excellent",
-    "ja": "優秀"
+    "ja": "優秀",
+    "zh": "优秀"
   },
   "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
   "description": {
     "ko": "블로그 포스트 요약 + 데모 영상 (5-10분 튜토리얼 형식) 제작 및 배포",
     "en": "Create and publish blog post summaries + demo videos (5-10 min tutorial format)",
-    "ja": "ブログ記事要約 + デモ動画（5-10分チュートリアル形式）を制作して配信"
+    "ja": "ブログ記事要約 + デモ動画（5-10分チュートリアル形式）を制作して配信",
+    "zh": "制作和发布博客文章摘要 + 演示视频（5-10分钟教程格式）"
   },
   "expectedImpact": {
     "ko": "YouTube → 블로그 유입 10%, 구독자 500명 (첫 해)",
     "en": "YouTube → Blog 10%, 500 subscribers (first year)",
-    "ja": "YouTube → ブログ流入10%、登録者500人（初年度）"
+    "ja": "YouTube → ブログ流入10%、登録者500人（初年度）",
+    "zh": "YouTube → 博客流量10%，订阅者500人（第一年）"
   }
 }

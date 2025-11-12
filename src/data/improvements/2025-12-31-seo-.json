@@ -5,31 +5,36 @@
   "title": {
     "ko": "SEO 키워드 최적화",
     "en": "SEO Keyword Optimization",
-    "ja": "SEOキーワード最適化"
+    "ja": "SEOキーワード最適化",
+    "zh": "SEO关键词优化"
   },
   "category": "SEO",
   "before": {
     "metric": {
       "ko": "SEO 최적화 수준",
       "en": "SEO Optimization Level",
-      "ja": "SEO最適化レベル"
+      "ja": "SEO最適化レベル",
+      "zh": "SEO优化水平"
     },
     "value": {
       "ko": "기본",
       "en": "Basic",
-      "ja": "基本"
+      "ja": "基本",
+      "zh": "基础"
     }
   },
   "after": {
     "metric": {
       "ko": "SEO 최적화 수준",
       "en": "SEO Optimization Level",
-      "ja": "SEO最適化レベル"
+      "ja": "SEO最適化レベル",
+      "zh": "SEO优化水平"
     },
     "value": {
       "ko": "향상됨",
       "en": "Enhanced",
-      "ja": "向上"
+      "ja": "向上",
+      "zh": "提升"
     }
   },
   "impact": "+50%",
@@ -37,18 +42,21 @@
   "effort": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "roi": {
     "ko": "매우 높음",
     "en": "Very High",
-    "ja": "非常に高い"
+    "ja": "非常に高い",
+    "zh": "非常高"
   },
   "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
   "description": {
     "ko": "모든 블로그 포스트에 대해 키워드 리서치 및 메타데이터 최적화를 수행하여 자연 검색 트래픽 증대",
     "en": "Performed keyword research and metadata optimization for all blog posts to increase organic search traffic",
-    "ja": "すべてのブログ記事に対してキーワードリサーチとメタデータ最適化を実施してオーガニック検索トラフィックを増加"
+    "ja": "すべてのブログ記事に対してキーワードリサーチとメタデータ最適化を実施してオーガニック検索トラフィックを増加",
+    "zh": "对所有博客文章进行关键词研究和元数据优化，以增加自然搜索流量"
   },
   "lessons": {
     "ko": [
@@ -74,6 +82,14 @@
       "heroImageのalt属性を最適化",
       "構造化データ（Schema.org）マークアップを追加",
       "Open GraphとTwitter Cardsメタタグを完成"
+    ],
+    "zh": [
+      "将每篇文章的标题优化为SEO友好",
+      "将描述调整到推荐的150-160字符范围",
+      "在标题和描述中自然地包含目标关键词",
+      "优化heroImage的alt属性",
+      "添加结构化数据（Schema.org）标记",
+      "完善Open Graph和Twitter Cards元标签"
     ]
   }
 }

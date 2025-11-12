@@ -9,7 +9,15 @@
       "SlashCommand(/analyze-posts)",
       "Bash(cat:*)",
       "Bash(shasum:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(awk:*)",
+      "SlashCommand(/generate-recommendations)",
+      "Bash(if [ -f recommendations.json ])",
+      "Bash(then)",
+      "Bash(else)",
+      "Bash(fi)",
+      "Read(//tmp/**)",
+      "Bash(npm run preview:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

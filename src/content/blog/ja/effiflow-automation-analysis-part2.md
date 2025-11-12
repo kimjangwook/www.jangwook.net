@@ -56,9 +56,9 @@ relatedPosts:
 
 > <strong>EffiFlow 自動化構造分析/評価および改善シリーズ</strong> (2/3)
 >
-> 1. [Part 1: メタデータで 71%コスト削減](/blog/ja/effiflow-automation-analysis-part1) - 3-Tier アーキテクチャと全体システム概要
+> 1. [Part 1: メタデータで 71%コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1) - 3-Tier アーキテクチャと全体システム概要
 > 2. <strong>Part 2: Skills と Commands の統合戦略</strong> ← 現在の記事
-> 3. [Part 3: 実践改善事例と ROI 分析](/blog/ja/effiflow-automation-analysis-part3)
+> 3. [Part 3: 実践改善事例と ROI 分析](/ja/blog/ja/effiflow-automation-analysis-part3)
 
 ## はじめに
 

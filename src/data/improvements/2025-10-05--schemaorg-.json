@@ -5,31 +5,36 @@
   "title": {
     "ko": "구조화된 데이터(Schema.org) 추가",
     "en": "Structured Data (Schema.org) Implementation",
-    "ja": "構造化データ（Schema.org）実装"
+    "ja": "構造化データ（Schema.org）実装",
+    "zh": "添加结构化数据（Schema.org）"
   },
   "category": "SEO",
   "before": {
     "metric": {
       "ko": "Schema 타입",
       "en": "Schema Types",
-      "ja": "スキーマタイプ"
+      "ja": "スキーマタイプ",
+      "zh": "Schema 类型"
     },
     "value": {
       "ko": "0개",
       "en": "0",
-      "ja": "0個"
+      "ja": "0個",
+      "zh": "0个"
     }
   },
   "after": {
     "metric": {
       "ko": "Schema 타입",
       "en": "Schema Types",
-      "ja": "スキーマタイプ"
+      "ja": "スキーマタイプ",
+      "zh": "Schema 类型"
     },
     "value": {
       "ko": "3개 타입",
       "en": "3 types",
-      "ja": "3タイプ"
+      "ja": "3タイプ",
+      "zh": "3种类型"
     }
   },
   "impact": "+300%",
@@ -37,18 +42,21 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
   "description": {
     "ko": "Article, BreadcrumbList, WebSite Schema를 추가하여 검색엔진 최적화",
     "en": "Added Article, BreadcrumbList, and WebSite Schema for search engine optimization",
-    "ja": "Article、BreadcrumbList、WebSite Schemaを追加して検索エンジン最適化"
+    "ja": "Article、BreadcrumbList、WebSite Schemaを追加して検索エンジン最適化",
+    "zh": "添加 Article、BreadcrumbList 和 WebSite Schema 以优化搜索引擎"
   },
   "lessons": {
     "ko": [
@@ -68,6 +76,12 @@
       "BaseHead.astroにArticle Schema（BlogPosting）を追加（ブログ記事のみ）",
       "BlogPost.astroにBreadcrumbList Schemaを追加",
       "articleDataプロップスを通じて動的にメタデータを渡す"
+    ],
+    "zh": [
+      "在 BaseHead.astro 中添加 WebSite Schema（所有页面）",
+      "在 BaseHead.astro 中添加 Article Schema（BlogPosting）（仅限博客文章）",
+      "在 BlogPost.astro 中添加 BreadcrumbList Schema",
+      "通过 articleData props 动态传递元数据"
     ]
   }
 }

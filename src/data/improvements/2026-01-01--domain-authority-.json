@@ -4,40 +4,47 @@
   "title": {
     "ko": "도메인 권위(Domain Authority) 향상 전략",
     "en": "Domain Authority Enhancement Strategy",
-    "ja": "ドメイン権威（Domain Authority）向上戦略"
+    "ja": "ドメイン権威（Domain Authority）向上戦略",
+    "zh": "域名权威(Domain Authority)提升策略"
   },
   "category": "SEO",
   "target": {
     "metric": {
       "ko": "Domain Authority",
       "en": "Domain Authority",
-      "ja": "Domain Authority"
+      "ja": "Domain Authority",
+      "zh": "Domain Authority"
     },
     "value": {
       "ko": "DA 0 → 20",
       "en": "DA 0 → 20",
-      "ja": "DA 0 → 20"
+      "ja": "DA 0 → 20",
+      "zh": "DA 0 → 20"
     }
   },
   "effort": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "roi": {
     "ko": "매우 높음",
     "en": "Very High",
-    "ja": "非常に高い"
+    "ja": "非常に高い",
+    "zh": "非常高"
   },
   "sourceReport": "/{lang}/blog/${lang}/three-week-analytics-2025-11-04",
   "description": {
     "ko": "백링크 50개 확보, 고품질 외부 사이트 링크 구축으로 도메인 권위 DA 0 → 20 목표. 장기적 SEO 경쟁력 강화",
     "en": "Target Domain Authority increase from 0 to 20 by securing 50 backlinks and building high-quality external site links. Strengthen long-term SEO competitiveness",
-    "ja": "バックリンク50個確保、高品質外部サイトリンク構築でドメイン権威DA 0 → 20を目標。長期的SEO競争力を強化"
+    "ja": "バックリンク50個確保、高品質外部サイトリンク構築でドメイン権威DA 0 → 20を目標。長期的SEO競争力を強化",
+    "zh": "目标获取50个反向链接，建立高质量外部网站链接，将域名权威从DA 0提升至20。增强长期SEO竞争力"
   },
   "expectedImpact": {
     "ko": "DA 20 달성, 검색 순위 향상",
     "en": "Achieve DA 20, improved search rankings",
-    "ja": "DA 20達成、検索順位向上"
+    "ja": "DA 20達成、検索順位向上",
+    "zh": "达成DA 20，提升搜索排名"
   }
 }

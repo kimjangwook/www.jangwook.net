@@ -56,8 +56,8 @@ relatedPosts:
 
 > <strong>EffiFlow自動化構造分析/評価および改善シリーズ</strong> (3/3) - 最終編
 >
-> 1. [Part 1: メタデータで71%コスト削減](/blog/ja/effiflow-automation-analysis-part1)
-> 2. [Part 2: Skills自動発見と58%トークン削減](/blog/ja/effiflow-automation-analysis-part2)
+> 1. [Part 1: メタデータで71%コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1)
+> 2. [Part 2: Skills自動発見と58%トークン削減](/ja/blog/ja/effiflow-automation-analysis-part2)
 > 3. <strong>Part 3: 実践改善事例とROI分析</strong> ← 現在の記事
 
 ## はじめに

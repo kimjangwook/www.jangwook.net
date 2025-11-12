@@ -20,6 +20,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
+      zh: 涵盖自动化、Web 开发、AI/ML、DevOps、架构等类似主题,难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.93
     reason:
@@ -28,6 +29,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 涵盖自动化、AI/ML、DevOps、架构等类似主题,难度相当。
   - slug: specification-driven-development
     score: 0.92
     reason:
@@ -36,6 +38,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 涵盖自动化、AI/ML、架构等类似主题,难度相当。
   - slug: claude-code-web-automation
     score: 0.91
     reason:
@@ -44,6 +47,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, web development,
         DevOps fundamentals.
+      zh: 作为先导知识很有用,涵盖自动化、Web 开发、DevOps 基础。
   - slug: chrome-devtools-mcp-performance
     score: 0.91
     reason:
@@ -52,6 +56,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, web development,
         DevOps, architecture fundamentals.
+      zh: 作为先导知识很有用,涵盖自动化、Web 开发、DevOps、架构基础。
 ---
 
 ## 概要

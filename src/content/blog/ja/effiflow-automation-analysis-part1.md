@@ -54,8 +54,8 @@ relatedPosts:
 
 > <strong>シリーズ案内</strong>: この記事は「EffiFlow自動化構造分析/評価と改善」シリーズのPart 1/3です。
 > - **Part 1** (現在): コアアーキテクチャとメトリクス分析
-> - [Part 2](/blog/ja/effiflow-automation-analysis-part2): SkillsとCommandsの統合戦略
-> - Part 3 (予定): 実践改善事例とROI分析
+> - [Part 2](/ja/blog/ja/effiflow-automation-analysis-part2): SkillsとCommandsの統合戦略
+> - [Part 3](/ja/blog/ja/effiflow-automation-analysis-part3): 実践改善事例とROI分析
 
 ## はじめに
 

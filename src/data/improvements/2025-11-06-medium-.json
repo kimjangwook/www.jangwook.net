@@ -4,40 +4,47 @@
   "title": {
     "ko": "Medium 크로스 포스팅 정기화",
     "en": "Regularize Medium Cross-posting",
-    "ja": "Medium クロスポスティング定期化"
+    "ja": "Medium クロスポスティング定期化",
+    "zh": "定期化 Medium 跨平台发布"
   },
   "category": "SEO",
   "target": {
     "metric": {
       "ko": "Medium 유입",
       "en": "Medium Referral",
-      "ja": "Medium流入"
+      "ja": "Medium流入",
+      "zh": "Medium 引流"
     },
     "value": {
       "ko": "월 50+ 세션",
       "en": "50+ sessions/month",
-      "ja": "月50+セッション"
+      "ja": "月50+セッション",
+      "zh": "每月 50+ 会话"
     }
   },
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "중간",
     "en": "Medium",
-    "ja": "中"
+    "ja": "中",
+    "zh": "中"
   },
   "sourceReport": "/{lang}/blog/${lang}/three-week-analytics-2025-11-04",
   "description": {
     "ko": "주 1-2회 인기 콘텐츠를 Medium에 크로스 포스팅하여 백링크 구축 및 추가 트래픽 확보. 월 50+ 세션 목표",
     "en": "Cross-post popular content to Medium 1-2 times per week for backlink building and additional traffic. Target 50+ sessions/month",
-    "ja": "週1〜2回人気コンテンツをMediumにクロスポスティングしてバックリンク構築と追加トラフィックを確保。月50+セッションを目標"
+    "ja": "週1〜2回人気コンテンツをMediumにクロスポスティングしてバックリンク構築と追加トラフィックを確保。月50+セッションを目標",
+    "zh": "每周 1-2 次将热门内容跨平台发布到 Medium，以构建反向链接并获取额外流量。目标每月 50+ 会话"
   },
   "expectedImpact": {
     "ko": "Medium 유입 월 50+ 세션, 백링크 구축",
     "en": "50+ sessions/month from Medium, backlink building",
-    "ja": "Mediumから月50+セッション、バックリンク構築"
+    "ja": "Mediumから月50+セッション、バックリンク構築",
+    "zh": "来自 Medium 的每月 50+ 会话，构建反向链接"
   }
 }

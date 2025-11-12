@@ -36,10 +36,20 @@ const t = useTranslations(lang);
 						<span class="block text-gray-900">AI로 생산성을</span>
 						<span class="block bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">극대화하세요</span>
 					</>
-				) : (
+				) : lang === 'ja' ? (
 					<>
 						<span class="block text-gray-900">AIで生産性を</span>
 						<span class="block bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">最大化しましょう</span>
+					</>
+				) : lang === 'en' ? (
+					<>
+						<span class="block text-gray-900">Maximize Your</span>
+						<span class="block bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Productivity with AI</span>
+					</>
+				) : (
+					<>
+						<span class="block text-gray-900">用AI</span>
+						<span class="block bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">提升生产力</span>
 					</>
 				)}
 			</h1>
@@ -55,7 +65,7 @@ const t = useTranslations(lang);
 					href={`/${lang}/blog`}
 					class="inline-flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
 				>
-					{lang === 'ko' ? '블로그 보기' : 'ブログを見る'}
+					{lang === 'ko' ? '블로그 보기' : lang === 'ja' ? 'ブログを見る' : lang === 'en' ? 'View Blog' : '查看博客'}
 					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
 					</svg>
@@ -64,7 +74,7 @@ const t = useTranslations(lang);
 					href={`/${lang}/about`}
 					class="inline-flex items-center justify-center px-8 py-3 bg-white hover:bg-gray-50 text-gray-900 font-semibold rounded-lg transition-all border-2 border-gray-200 hover:border-gray-300"
 				>
-					{lang === 'ko' ? '더 알아보기' : '詳しく見る'}
+					{lang === 'ko' ? '더 알아보기' : lang === 'ja' ? '詳しく見る' : lang === 'en' ? 'Learn More' : '了解更多'}
 				</a>
 			</div>
 		</div>
@@ -78,10 +88,10 @@ const t = useTranslations(lang);
 					</svg>
 				</div>
 				<h3 class="text-lg font-semibold mb-2 text-gray-900">
-					{lang === 'ko' ? 'AI 도구 소개' : 'AIツール紹介'}
+					{lang === 'ko' ? 'AI 도구 소개' : lang === 'ja' ? 'AIツール紹介' : lang === 'en' ? 'AI Tools' : 'AI工具介绍'}
 				</h3>
 				<p class="text-gray-600 text-sm">
-					{lang === 'ko' ? '최신 AI 도구와 활용법을 소개합니다' : '最新のAIツールと活用方法を紹介します'}
+					{lang === 'ko' ? '최신 AI 도구와 활용법을 소개합니다' : lang === 'ja' ? '最新のAIツールと活用方法を紹介します' : lang === 'en' ? 'Discover the latest AI tools and how to use them' : '介绍最新的AI工具及其使用方法'}
 				</p>
 			</div>
 
@@ -92,10 +102,10 @@ const t = useTranslations(lang);
 					</svg>
 				</div>
 				<h3 class="text-lg font-semibold mb-2 text-gray-900">
-					{lang === 'ko' ? '생산성 팁' : '生産性のヒント'}
+					{lang === 'ko' ? '생산성 팁' : lang === 'ja' ? '生産性のヒント' : lang === 'en' ? 'Productivity Tips' : '生产力技巧'}
 				</h3>
 				<p class="text-gray-600 text-sm">
-					{lang === 'ko' ? '실무에 바로 적용 가능한 생산성 향상 방법' : '実務にすぐ適用できる生産性向上方法'}
+					{lang === 'ko' ? '실무에 바로 적용 가능한 생산성 향상 방법' : lang === 'ja' ? '実務にすぐ適用できる生産性向上方法' : lang === 'en' ? 'Practical methods to boost your productivity' : '可立即应用于实践的生产力提升方法'}
 				</p>
 			</div>
 
@@ -106,10 +116,10 @@ const t = useTranslations(lang);
 					</svg>
 				</div>
 				<h3 class="text-lg font-semibold mb-2 text-gray-900">
-					{lang === 'ko' ? '튜토리얼' : 'チュートリアル'}
+					{lang === 'ko' ? '튜토리얼' : lang === 'ja' ? 'チュートリアル' : lang === 'en' ? 'Tutorials' : '教程'}
 				</h3>
 				<p class="text-gray-600 text-sm">
-					{lang === 'ko' ? '단계별 가이드로 쉽게 따라하기' : 'ステップバイステップガイドで簡単にフォロー'}
+					{lang === 'ko' ? '단계별 가이드로 쉽게 따라하기' : lang === 'ja' ? 'ステップバイステップガイドで簡単にフォロー' : lang === 'en' ? 'Easy-to-follow step-by-step guides' : '循序渐进，轻松跟随'}
 				</p>
 			</div>
 		</div>

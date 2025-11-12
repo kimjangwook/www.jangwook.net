@@ -7,6 +7,7 @@ const sitemaps = [
   'sitemap-ko.xml',
   'sitemap-en.xml',
   'sitemap-ja.xml',
+  'sitemap-zh.xml',
 ];
 
 function generateSitemapIndexXml(sitemaps: { loc: string; lastmod: string }[]): string {

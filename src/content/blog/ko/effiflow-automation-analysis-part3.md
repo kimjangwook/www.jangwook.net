@@ -56,8 +56,8 @@ relatedPosts:
 
 > <strong>EffiFlow 자동화 구조 분석/평가 및 개선 시리즈</strong> (3/3) - 최종편
 >
-> 1. [Part 1: 메타데이터로 71% 비용 절감](/blog/ko/effiflow-automation-analysis-part1)
-> 2. [Part 2: Skills 자동 발견과 58% 토큰 절감](/blog/ko/effiflow-automation-analysis-part2)
+> 1. [Part 1: 메타데이터로 71% 비용 절감](/ko/blog/ko/effiflow-automation-analysis-part1)
+> 2. [Part 2: Skills 자동 발견과 58% 토큰 절감](/ko/blog/ko/effiflow-automation-analysis-part2)
 > 3. <strong>Part 3: 실전 개선 사례 및 ROI 분석</strong> ← 현재 글
 
 ## 들어가며

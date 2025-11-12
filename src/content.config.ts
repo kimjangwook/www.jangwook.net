@@ -6,9 +6,10 @@ const relatedPostSchema = z.object({
 	slug: z.string(),
 	score: z.number().min(0).max(1),
 	reason: z.object({
-		ko: z.string(),
-		ja: z.string(),
-		en: z.string(),
+		ko: z.string().optional(),
+		ja: z.string().optional(),
+		en: z.string().optional(),
+		zh: z.string().optional(),
 	}),
 });
 

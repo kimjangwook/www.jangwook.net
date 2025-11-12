@@ -4,40 +4,47 @@
   "title": {
     "ko": "Guest Post 전략 수립",
     "en": "Guest Post Strategy Development",
-    "ja": "ゲストポスト戦略策定"
+    "ja": "ゲストポスト戦略策定",
+    "zh": "访客发帖策略制定"
   },
   "category": "SEO",
   "target": {
     "metric": {
       "ko": "백링크",
       "en": "Backlinks",
-      "ja": "バックリンク"
+      "ja": "バックリンク",
+      "zh": "反向链接"
     },
     "value": {
       "ko": "10개",
       "en": "10",
-      "ja": "10個"
+      "ja": "10個",
+      "zh": "10个"
     }
   },
   "effort": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "roi": {
     "ko": "매우 높음",
     "en": "Very High",
-    "ja": "非常に高い"
+    "ja": "非常に高い",
+    "zh": "非常高"
   },
   "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
   "description": {
     "ko": "10개 타겟 기술 블로그 선정 및 아웃리치, 월 1개 guest post 기고",
     "en": "Select 10 target tech blogs and outreach, publish 1 guest post per month",
-    "ja": "10の対象技術ブログを選定してアウトリーチ、月1件のゲストポスト寄稿"
+    "ja": "10の対象技術ブログを選定してアウトリーチ、月1件のゲストポスト寄稿",
+    "zh": "选定10个目标技术博客并进行推广，每月发表1篇访客文章"
   },
   "expectedImpact": {
     "ko": "레퍼럴 트래픽 15%, 백링크 10개 확보",
     "en": "15% referral traffic, acquire 10 backlinks",
-    "ja": "リファラルトラフィック15%、バックリンク10件獲得"
+    "ja": "リファラルトラフィック15%、バックリンク10件獲得",
+    "zh": "推荐流量增加15%，获得10个反向链接"
   }
 }

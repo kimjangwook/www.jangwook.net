@@ -17,5 +17,9 @@ export const SITE_META = {
 	ja: {
 		title: 'EffiFlow - 日本語',
 		description: 'AIと開発についての考察'
+	},
+	zh: {
+		title: 'EffiFlow - 中文',
+		description: '记录关于AI与开发的思考'
 	}
 };

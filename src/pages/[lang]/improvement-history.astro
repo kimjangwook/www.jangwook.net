@@ -65,35 +65,39 @@ const translations = {
   title: {
     ko: '점진적 사이트 개선 히스토리',
     en: 'Progressive Site Improvement History',
-    ja: '段階的サイト改善履歴'
+    ja: '段階的サイト改善履歴',
+    zh: '渐进式网站改进历史'
   },
   description: {
     ko: '데이터 기반의 지속적인 사이트 개선 과정과 성과를 투명하게 공유합니다',
     en: 'Transparently sharing data-driven continuous site improvement processes and results',
-    ja: 'データに基づいた継続的なサイト改善プロセスと成果を透明に共有します'
+    ja: 'データに基づいた継続的なサイト改善プロセスと成果を透明に共有します',
+    zh: '透明分享基于数据的持续网站改进过程和成果'
   },
   stats: {
-    planned: { ko: '계획됨', en: 'Planned', ja: '計画済み' },
-    inProgress: { ko: '진행 중', en: 'In Progress', ja: '進行中' },
-    completed: { ko: '완료됨', en: 'Completed', ja: '完了' },
-    avgImpact: { ko: '평균 개선 효과', en: 'Average Impact', ja: '平均改善効果' },
-    topCategory: { ko: '최다 개선 카테고리', en: 'Top Category', ja: '最多改善カテゴリ' }
+    planned: { ko: '계획됨', en: 'Planned', ja: '計画済み', zh: '已计划' },
+    inProgress: { ko: '진행 중', en: 'In Progress', ja: '進行中', zh: '进行中' },
+    completed: { ko: '완료됨', en: 'Completed', ja: '完了', zh: '已完成' },
+    avgImpact: { ko: '평균 개선 효과', en: 'Average Impact', ja: '平均改善効果', zh: '平均改进效果' },
+    topCategory: { ko: '최다 개선 카테고리', en: 'Top Category', ja: '最多改善カテゴリ', zh: '最多改进类别' }
   },
   sections: {
-    planned: { ko: '계획된 개선사항', en: 'Planned Improvements', ja: '計画された改善事項' },
-    inProgress: { ko: '진행 중인 개선사항', en: 'In Progress', ja: '進行中の改善事項' },
-    completed: { ko: '완료된 개선사항', en: 'Completed Improvements', ja: '完了した改善事項' }
+    planned: { ko: '계획된 개선사항', en: 'Planned Improvements', ja: '計画された改善事項', zh: '计划的改进项' },
+    inProgress: { ko: '진행 중인 개선사항', en: 'In Progress', ja: '進行中の改善事項', zh: '进行中的改进项' },
+    completed: { ko: '완료된 개선사항', en: 'Completed Improvements', ja: '完了した改善事項', zh: '已完成的改进项' }
   },
   emptyState: {
     title: {
       ko: '아직 개선 사항이 기록되지 않았습니다',
       en: 'No improvements recorded yet',
-      ja: 'まだ改善事項が記録されていません'
+      ja: 'まだ改善事項が記録されていません',
+      zh: '尚未记录改进项'
     },
     subtitle: {
       ko: '첫 번째 분석 리포트를 생성하고 개선 작업을 시작해보세요!',
       en: 'Generate your first analytics report and start improvement work!',
-      ja: '最初の分析レポートを生成して改善作業を始めましょう！'
+      ja: '最初の分析レポートを生成して改善作業を始めましょう！',
+      zh: '生成第一份分析报告并开始改进工作！'
     },
     steps: {
       ko: [
@@ -110,46 +114,53 @@ const translations = {
         '1. analytics-reporterエージェントで最初のレポートを生成',
         '2. improvement-trackerエージェントでアクションプランをTODOに変換',
         '3. 改善作業完了後、結果を記録'
+      ],
+      zh: [
+        '1. 使用 analytics-reporter 代理生成第一份报告',
+        '2. 使用 improvement-tracker 代理将行动计划转换为待办事项',
+        '3. 完成改进工作后记录结果'
       ]
     }
   },
   filters: {
-    all: { ko: '전체', en: 'All', ja: '全て' },
-    traffic: { ko: '트래픽', en: 'Traffic', ja: 'トラフィック' },
-    content: { ko: '콘텐츠', en: 'Content', ja: 'コンテンツ' },
-    seo: { ko: 'SEO', en: 'SEO', ja: 'SEO' },
-    ux: { ko: 'UX', en: 'UX', ja: 'UX' },
-    technical: { ko: '기술', en: 'Technical', ja: '技術' }
+    all: { ko: '전체', en: 'All', ja: '全て', zh: '全部' },
+    traffic: { ko: '트래픽', en: 'Traffic', ja: 'トラフィック', zh: '流量' },
+    content: { ko: '콘텐츠', en: 'Content', ja: 'コンテンツ', zh: '内容' },
+    seo: { ko: 'SEO', en: 'SEO', ja: 'SEO', zh: 'SEO' },
+    ux: { ko: 'UX', en: 'UX', ja: 'UX', zh: '用户体验' },
+    technical: { ko: '기술', en: 'Technical', ja: '技術', zh: '技术' }
   },
   metrics: {
-    target: { ko: '목표', en: 'Target', ja: '目標' },
-    before: { ko: '개선 전', en: 'Before', ja: '改善前' },
-    after: { ko: '개선 후', en: 'After', ja: '改善後' },
-    impact: { ko: '효과', en: 'Impact', ja: '効果' },
-    expectedImpact: { ko: '예상 효과', en: 'Expected Impact', ja: '予想効果' },
-    effort: { ko: '투입', en: 'Effort', ja: '投入' },
-    roi: { ko: 'ROI', en: 'ROI', ja: 'ROI' },
-    date: { ko: '목표일', en: 'Target Date', ja: '目標日' },
-    status: { ko: '상태', en: 'Status', ja: 'ステータス' }
+    target: { ko: '목표', en: 'Target', ja: '目標', zh: '目标' },
+    before: { ko: '개선 전', en: 'Before', ja: '改善前', zh: '改进前' },
+    after: { ko: '개선 후', en: 'After', ja: '改善後', zh: '改进后' },
+    impact: { ko: '효과', en: 'Impact', ja: '効果', zh: '效果' },
+    expectedImpact: { ko: '예상 효과', en: 'Expected Impact', ja: '予想効果', zh: '预期效果' },
+    effort: { ko: '투입', en: 'Effort', ja: '投入', zh: '投入' },
+    roi: { ko: 'ROI', en: 'ROI', ja: 'ROI', zh: 'ROI' },
+    date: { ko: '목표일', en: 'Target Date', ja: '目標日', zh: '目标日期' },
+    status: { ko: '상태', en: 'Status', ja: 'ステータス', zh: '状态' }
   },
   lessons: {
-    title: { ko: '배운 점', en: 'Lessons Learned', ja: '学んだこと' }
+    title: { ko: '배운 점', en: 'Lessons Learned', ja: '学んだこと', zh: '经验总结' }
   },
   sourceReport: {
     ko: '출처 리포트 보기',
     en: 'View Source Report',
-    ja: 'ソースレポートを見る'
+    ja: 'ソースレポートを見る',
+    zh: '查看来源报告'
   },
   dataSection: {
-    title: { ko: '데이터 출처 및 관리', en: 'Data Sources & Management', ja: 'データソースと管理' },
-    analytics: { ko: '분석 도구', en: 'Analytics Tool', ja: '分析ツール' },
-    reports: { ko: '리포트', en: 'Reports', ja: 'レポート' },
-    todos: { ko: 'TODO 관리', en: 'TODO Management', ja: 'TODO管理' },
-    autoUpdate: { ko: '자동 업데이트', en: 'Auto Update', ja: '自動更新' },
+    title: { ko: '데이터 출처 및 관리', en: 'Data Sources & Management', ja: 'データソースと管理', zh: '数据来源与管理' },
+    analytics: { ko: '분석 도구', en: 'Analytics Tool', ja: '分析ツール', zh: '分析工具' },
+    reports: { ko: '리포트', en: 'Reports', ja: 'レポート', zh: '报告' },
+    todos: { ko: 'TODO 관리', en: 'TODO Management', ja: 'TODO管理', zh: '待办事项管理' },
+    autoUpdate: { ko: '자동 업데이트', en: 'Auto Update', ja: '自動更新', zh: '自动更新' },
     description: {
       ko: '이 페이지는 블로그의 지속적인 개선 과정을 투명하게 공유하기 위해 만들어졌습니다. 모든 개선사항은 데이터에 기반하며, 실제 측정된 결과를 기록합니다.',
       en: 'This page was created to transparently share the continuous improvement process of the blog. All improvements are data-driven and record actual measured results.',
-      ja: 'このページはブログの継続的な改善プロセスを透明に共有するために作成されました。すべての改善はデータに基づいており、実際に測定された結果を記録します。'
+      ja: 'このページはブログの継続的な改善プロセスを透明に共有するために作成されました。すべての改善はデータに基づいており、実際に測定された結果を記録します。',
+      zh: '本页面旨在透明地分享博客的持续改进过程。所有改进项均基于数据驱动，并记录实际测量结果。'
     }
   }
 };
@@ -434,7 +445,7 @@ const tt = (key: any) => {
 						<h2 class="text-2xl font-bold mb-4">{tt(translations.emptyState.title)}</h2>
 						<p class="text-lg mb-6">{tt(translations.emptyState.subtitle)}</p>
 						<div class="text-left max-w-2xl mx-auto">
-							<p class="font-semibold mb-2">{lang === 'ko' ? '다음 단계:' : lang === 'ja' ? '次のステップ:' : 'Next Steps:'}</p>
+							<p class="font-semibold mb-2">{lang === 'ko' ? '다음 단계:' : lang === 'ja' ? '次のステップ:' : lang === 'zh' ? '下一步:' : 'Next Steps:'}</p>
 							<ul class="list-disc list-inside space-y-2">
 								{tt(translations.emptyState.steps).map((step: string) => (
 									<li>{step}</li>
@@ -629,7 +640,7 @@ const tt = (key: any) => {
 						<li><strong>{tt(translations.dataSection.analytics)}:</strong> Google Analytics 4 (Property ID: 395101361)</li>
 						<li><strong>{tt(translations.dataSection.reports)}:</strong> <a href={`/${lang}/blog`} class="text-accent hover:underline">/{lang}/blog</a></li>
 						<li><strong>{tt(translations.dataSection.todos)}:</strong> <code>/improvement-tracking/</code></li>
-						<li><strong>{tt(translations.dataSection.autoUpdate)}:</strong> improvement-tracker {lang === 'ko' ? '에이전트가 완료된 개선사항을 자동으로 이 페이지에 반영' : lang === 'ja' ? 'エージェントが完了した改善事項を自動的にこのページに反映' : 'agent automatically reflects completed improvements to this page'}</li>
+						<li><strong>{tt(translations.dataSection.autoUpdate)}:</strong> improvement-tracker {lang === 'ko' ? '에이전트가 완료된 개선사항을 자동으로 이 페이지에 반영' : lang === 'ja' ? 'エージェントが完了した改善事項を自動的にこのページに反映' : lang === 'zh' ? '代理自动将已完成的改进项反映到此页面' : 'agent automatically reflects completed improvements to this page'}</li>
 					</ul>
 					<p class="text-gray-600">
 						{tt(translations.dataSection.description)}

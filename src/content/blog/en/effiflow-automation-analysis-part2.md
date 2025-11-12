@@ -58,9 +58,9 @@ relatedPosts:
 
 > <strong>EffiFlow Automation Architecture Analysis/Evaluation and Improvements Series</strong> (2/3)
 >
-> 1. [Part 1: 71% Cost Reduction with Metadata](/blog/en/effiflow-automation-analysis-part1) - 3-Tier Architecture and System Overview
+> 1. [Part 1: 71% Cost Reduction with Metadata](/en/blog/en/effiflow-automation-analysis-part1) - 3-Tier Architecture and System Overview
 > 2. <strong>Part 2: Skills and Commands Integration Strategy</strong> ← Current Article
-> 3. [Part 3: Practical Improvement Cases and ROI Analysis](/blog/en/effiflow-automation-analysis-part3)
+> 3. [Part 3: Practical Improvement Cases and ROI Analysis](/en/blog/en/effiflow-automation-analysis-part3)
 
 ## Introduction
 

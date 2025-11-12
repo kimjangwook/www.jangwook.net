@@ -11,13 +11,15 @@ const { slug, currentLang } = Astro.props;
 const languages = {
   ko: { flag: '🇰🇷', label: '한국어', currentLabel: '한국어 (현재 페이지)' },
   ja: { flag: '🇯🇵', label: '日本語', currentLabel: '日本語（現在のページ）' },
-  en: { flag: '🇺🇸', label: 'English', currentLabel: 'English (Current Page)' }
+  en: { flag: '🇺🇸', label: 'English', currentLabel: 'English (Current Page)' },
+  zh: { flag: '🇨🇳', label: '中文', currentLabel: '中文（当前页面）' }
 };
 
 const sectionTitles = {
   ko: '다른 언어로 읽기',
   ja: '他の言語で読む',
-  en: 'Read in Other Languages'
+  en: 'Read in Other Languages',
+  zh: '阅读其他语言版本'
 };
 ---
 

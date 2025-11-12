@@ -54,8 +54,8 @@ relatedPosts:
 
 > <strong>시리즈 안내</strong>: 이 글은 "EffiFlow 자동화 구조 분석/평가 및 개선" 시리즈의 Part 1/3입니다.
 > - **Part 1** (현재): 핵심 아키텍처와 메트릭 분석
-> - [Part 2](/blog/ko/effiflow-automation-analysis-part2): Skills와 Commands 통합 전략
-> - Part 3 (예정): 실전 개선 사례 및 ROI 분석
+> - [Part 2](/ko/blog/ko/effiflow-automation-analysis-part2): Skills와 Commands 통합 전략
+> - [Part 3](/ko/blog/ko/effiflow-automation-analysis-part3): 실전 개선 사례 및 ROI 분석
 
 ## 들어가며
 

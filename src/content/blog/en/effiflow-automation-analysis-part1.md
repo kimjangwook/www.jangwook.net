@@ -56,8 +56,8 @@ relatedPosts:
 
 > <strong>Series Guide</strong>: This is Part 1/3 of the "EffiFlow Automation Analysis/Evaluation and Improvements" series.
 > - **Part 1** (current): Core Architecture and Metrics Analysis
-> - [Part 2](/blog/en/effiflow-automation-analysis-part2): Skills and Commands Integration Strategy
-> - Part 3 (upcoming): Practical Improvement Cases and ROI Analysis
+> - [Part 2](/en/blog/en/effiflow-automation-analysis-part2): Skills and Commands Integration Strategy
+> - [Part 3](/en/blog/en/effiflow-automation-analysis-part3): Practical Improvement Cases and ROI Analysis
 
 ## Introduction
 

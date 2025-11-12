@@ -10,12 +10,13 @@ interface RelatedPostItem {
     ko: string;
     ja: string;
     en: string;
+    zh: string;
   };
 }
 
 interface Props {
   items: RelatedPostItem[];
-  language: 'ko' | 'ja' | 'en';
+  language: 'ko' | 'ja' | 'en' | 'zh';
 }
 
 const { items, language } = Astro.props;
@@ -24,7 +25,8 @@ const { items, language } = Astro.props;
 const headings = {
   ko: '관련 글',
   ja: '関連記事',
-  en: 'Related Articles'
+  en: 'Related Articles',
+  zh: '相关文章'
 };
 
 const heading = headings[language];

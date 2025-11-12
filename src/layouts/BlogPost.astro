@@ -18,7 +18,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	relatedPosts?: Array<{
 		slug: string;
 		score: number;
-		reason: { ko: string; ja: string; en: string };
+		reason: { ko: string; ja: string; en: string; zh: string };
 	}>;
 };
 
@@ -160,7 +160,7 @@ const breadcrumbSchema = {
 						data-emit-metadata="0"
 						data-input-position="bottom"
 						data-theme="preferred_color_scheme"
-						data-lang={lang === 'ja' ? 'ja' : lang === 'en' ? 'en' : 'ko'}
+						data-lang={lang === 'ja' ? 'ja' : lang === 'en' ? 'en' : lang === 'zh' ? 'zh-CN' : 'ko'}
 						data-loading="lazy"
 						crossorigin="anonymous"
 						async>
@@ -176,7 +176,7 @@ const breadcrumbSchema = {
 						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
 						</svg>
-						{lang === 'ko' ? '블로그 목록으로' : 'ブログリストへ'}
+						{lang === 'ko' ? '블로그 목록으로' : lang === 'ja' ? 'ブログリストへ' : lang === 'zh' ? '返回博客列表' : 'Back to Blog'}
 					</a>
 				</div>
 			</article>

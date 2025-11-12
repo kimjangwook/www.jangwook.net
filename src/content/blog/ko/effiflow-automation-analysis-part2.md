@@ -56,9 +56,9 @@ relatedPosts:
 
 > <strong>EffiFlow 자동화 구조 분석/평가 및 개선 시리즈</strong> (2/3)
 >
-> 1. [Part 1: 메타데이터로 71% 비용 절감](/blog/ko/effiflow-automation-analysis-part1) - 3-Tier 아키텍처와 전체 시스템 개요
+> 1. [Part 1: 메타데이터로 71% 비용 절감](/ko/blog/ko/effiflow-automation-analysis-part1) - 3-Tier 아키텍처와 전체 시스템 개요
 > 2. <strong>Part 2: Skills와 Commands 통합 전략</strong> ← 현재 글
-> 3. [Part 3: 실전 개선 사례 및 ROI 분석](/blog/ko/effiflow-automation-analysis-part3)
+> 3. [Part 3: 실전 개선 사례 및 ROI 분석](/ko/blog/ko/effiflow-automation-analysis-part3)
 
 ## 들어가며
 

@@ -5,31 +5,36 @@
   "title": {
     "ko": "모바일 반응형 디자인 실제 디바이스 테스트",
     "en": "Mobile Responsive Design Real Device Testing",
-    "ja": "モバイルレスポンシブデザイン実機テスト"
+    "ja": "モバイルレスポンシブデザイン実機テスト",
+    "zh": "移动响应式设计真实设备测试"
   },
   "category": "UX",
   "before": {
     "metric": {
       "ko": "테스트 상태",
       "en": "Test Status",
-      "ja": "テスト状態"
+      "ja": "テスト状態",
+      "zh": "测试状态"
     },
     "value": {
       "ko": "미검증",
       "en": "Not verified",
-      "ja": "未検証"
+      "ja": "未検証",
+      "zh": "未验证"
     }
   },
   "after": {
     "metric": {
       "ko": "테스트 완료",
       "en": "Test Completed",
-      "ja": "テスト完了"
+      "ja": "テスト完了",
+      "zh": "测试完成"
     },
     "value": {
       "ko": "모든 디바이스 ✓",
       "en": "All devices ✓",
-      "ja": "全デバイス ✓"
+      "ja": "全デバイス ✓",
+      "zh": "所有设备 ✓"
     }
   },
   "impact": "+100%",
@@ -37,18 +42,21 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "중간",
     "en": "Medium",
-    "ja": "中程度"
+    "ja": "中程度",
+    "zh": "中等"
   },
   "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
   "description": {
     "ko": "Chrome DevTools Device Mode 및 실제 디바이스에서 반응형 디자인 검증 완료. 모바일, 태블릿, 데스크톱 모든 해상도에서 정상 작동 확인",
     "en": "Completed responsive design validation using Chrome DevTools Device Mode and real devices. Confirmed proper functionality across mobile, tablet, and desktop resolutions",
-    "ja": "Chrome DevTools Device Modeと実機でレスポンシブデザインの検証完了。モバイル、タブレット、デスクトップのすべての解像度で正常動作を確認"
+    "ja": "Chrome DevTools Device Modeと実機でレスポンシブデザインの検証完了。モバイル、タブレット、デスクトップのすべての解像度で正常動作を確認",
+    "zh": "使用Chrome DevTools设备模式和真实设备完成响应式设计验证。确认在移动端、平板和桌面所有分辨率下正常运行"
   },
   "lessons": {
     "ko": [
@@ -77,6 +85,15 @@
       "デスクトップレイアウト（1024px+）正常動作",
       "すべての解像度でレイアウト崩れなし",
       "レスポンシブ画像とフォントサイズが適切に調整"
+    ],
+    "zh": [
+      "使用Chrome DevTools设备模式测试各种分辨率",
+      "在真实移动设备上验证触摸交互",
+      "平板布局（768px-1024px）正常运行",
+      "移动端布局（320px-767px）正常运行",
+      "桌面布局（1024px+）正常运行",
+      "所有分辨率下布局无错乱",
+      "响应式图片和字体大小得到适当调整"
     ]
   }
 }

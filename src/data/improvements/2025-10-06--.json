@@ -5,31 +5,36 @@
   "title": {
     "ko": "다국어 블로그 포스트 언어 전환 컴포넌트 자동화",
     "en": "Multilingual Blog Post Language Switcher Component Automation",
-    "ja": "多言語ブログ記事言語切り替えコンポーネント自動化"
+    "ja": "多言語ブログ記事言語切り替えコンポーネント自動化",
+    "zh": "多语言博客文章语言切换组件自动化"
   },
   "category": "UX",
   "before": {
     "metric": {
       "ko": "언어 전환 UI",
       "en": "Language Switcher UI",
-      "ja": "言語切り替えUI"
+      "ja": "言語切り替えUI",
+      "zh": "语言切换界面"
     },
     "value": {
       "ko": "수동 추가 필요",
       "en": "Manual addition required",
-      "ja": "手動追加が必要"
+      "ja": "手動追加が必要",
+      "zh": "需要手动添加"
     }
   },
   "after": {
     "metric": {
       "ko": "언어 전환 UI",
       "en": "Language Switcher UI",
-      "ja": "言語切り替えUI"
+      "ja": "言語切り替えUI",
+      "zh": "语言切换界面"
     },
     "value": {
       "ko": "자동 생성",
       "en": "Auto-generated",
-      "ja": "自動生成"
+      "ja": "自動生成",
+      "zh": "自动生成"
     }
   },
   "impact": "+100%",
@@ -37,17 +42,20 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "description": {
     "ko": "블로그 포스트에 다른 언어 버전으로 전환할 수 있는 LanguageSwitcher 컴포넌트를 구현하여 모든 포스트에 자동 적용",
     "en": "Implemented LanguageSwitcher component to allow switching between language versions in blog posts, automatically applied to all posts",
-    "ja": "ブログ記事で他の言語バージョンに切り替えられるLanguageSwitcherコンポーネントを実装し、すべての記事に自動適用"
+    "ja": "ブログ記事で他の言語バージョンに切り替えられるLanguageSwitcherコンポーネントを実装し、すべての記事に自動適用",
+    "zh": "实现了LanguageSwitcher组件，允许在博客文章中切换不同语言版本，自动应用于所有文章"
   },
   "lessons": {
     "ko": [
@@ -76,6 +84,15 @@
       "現在の言語は無効化、他の言語はリンクとして表示",
       "韓国語、日本語、英語の3言語をサポート",
       "URL形式：/{lang}/blog/{lang}/{slug}"
+    ],
+    "zh": [
+      "创建了src/components/LanguageSwitcher.astro组件",
+      "接收slug和currentLang作为props以生成动态链接",
+      "集成到BlogPost.astro布局中（位于BuyMeACoffee上方）",
+      "从现有15篇博客文章中删除了手动语言切换部分",
+      "当前语言显示为禁用状态，其他语言显示为链接",
+      "支持3种语言：韩语、日语、英语",
+      "URL格式：/{lang}/blog/{lang}/{slug}"
     ]
   }
 }

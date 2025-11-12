@@ -5,31 +5,36 @@
   "title": {
     "ko": "Core Web Vitals 성능 최적화",
     "en": "Core Web Vitals Performance Optimization",
-    "ja": "Core Web Vitals パフォーマンス最適化"
+    "ja": "Core Web Vitals パフォーマンス最適化",
+    "zh": "Core Web Vitals 性能优化"
   },
   "category": "Technical",
   "before": {
     "metric": {
       "ko": "LCP / 페이지 크기",
       "en": "LCP / Page Size",
-      "ja": "LCP / ページサイズ"
+      "ja": "LCP / ページサイズ",
+      "zh": "LCP / 页面大小"
     },
     "value": {
       "ko": "~4초 / 3.5MB",
       "en": "~4s / 3.5MB",
-      "ja": "~4秒 / 3.5MB"
+      "ja": "~4秒 / 3.5MB",
+      "zh": "~4秒 / 3.5MB"
     }
   },
   "after": {
     "metric": {
       "ko": "LCP / 페이지 크기",
       "en": "LCP / Page Size",
-      "ja": "LCP / ページサイズ"
+      "ja": "LCP / ページサイズ",
+      "zh": "LCP / 页面大小"
     },
     "value": {
       "ko": "~2초 / 1.5MB (예상)",
       "en": "~2s / 1.5MB (estimated)",
-      "ja": "~2秒 / 1.5MB (予想)"
+      "ja": "~2秒 / 1.5MB (予想)",
+      "zh": "~2秒 / 1.5MB (预计)"
     }
   },
   "impact": "+133%",
@@ -37,18 +42,21 @@
   "effort": {
     "ko": "중간",
     "en": "Medium",
-    "ja": "中程度"
+    "ja": "中程度",
+    "zh": "中等"
   },
   "roi": {
     "ko": "매우 높음",
     "en": "Very High",
-    "ja": "非常に高い"
+    "ja": "非常に高い",
+    "zh": "非常高"
   },
   "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
   "description": {
     "ko": "Google Fonts 렌더링 차단 제거, 이미지 WebP 변환, lazy loading 적용으로 LCP 2초 개선 및 페이지 크기 57% 감소",
     "en": "Eliminated Google Fonts render-blocking, converted images to WebP, applied lazy loading - improved LCP by 2s and reduced page size by 57%",
-    "ja": "Google Fontsのレンダーブロッキング削除、画像WebP変換、lazy loading適用でLCPを2秒改善、ページサイズを57%削減"
+    "ja": "Google Fontsのレンダーブロッキング削除、画像WebP変換、lazy loading適用でLCPを2秒改善、ページサイズを57%削減",
+    "zh": "消除Google Fonts渲染阻塞，转换图片为WebP格式，应用延迟加载 - 将LCP改善2秒，页面大小减少57%"
   },
   "lessons": {
     "ko": [
@@ -77,6 +85,15 @@
       "Astroイメージサービスを明示的に設定（Sharp）",
       "CSSコード分割とインライン最適化（<4KB）",
       "OPTIMIZATION_RESULTS.mdに文書化"
+    ],
+    "zh": [
+      "移除CSS @import → preconnect + async loading（FCP -1s）",
+      "字体粗细从17个优化到10个（-40%）",
+      "Hero图片：PNG 1.2MB → WebP 300KB（loading=eager, fetchpriority=high）",
+      "BlogCard图片：延迟加载 + WebP转换",
+      "明确配置Astro图片服务（Sharp）",
+      "CSS代码拆分和内联优化（<4KB）",
+      "在OPTIMIZATION_RESULTS.md中记录"
     ]
   }
 }

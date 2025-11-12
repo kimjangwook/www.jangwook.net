@@ -5,31 +5,36 @@
   "title": {
     "ko": "Google Form 기반 Contact 페이지 구축",
     "en": "Google Form-based Contact Page Implementation",
-    "ja": "Google Formベースのお問い合わせページ構築"
+    "ja": "Google Formベースのお問い合わせページ構築",
+    "zh": "基于 Google Form 的联系页面实现"
   },
   "category": "Feature",
   "before": {
     "metric": {
       "ko": "문의 채널",
       "en": "Contact Channel",
-      "ja": "お問い合わせチャンネル"
+      "ja": "お問い合わせチャンネル",
+      "zh": "联系渠道"
     },
     "value": {
       "ko": "없음",
       "en": "None",
-      "ja": "なし"
+      "ja": "なし",
+      "zh": "无"
     }
   },
   "after": {
     "metric": {
       "ko": "문의 채널",
       "en": "Contact Channel",
-      "ja": "お問い合わせチャンネル"
+      "ja": "お問い合わせチャンネル",
+      "zh": "联系渠道"
     },
     "value": {
       "ko": "Google Form",
       "en": "Google Form",
-      "ja": "Google Form"
+      "ja": "Google Form",
+      "zh": "Google Form"
     }
   },
   "impact": "+100%",
@@ -37,17 +42,20 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "description": {
     "ko": "Google Forms를 활용한 피드백 및 문의 수집 시스템 구축. Discord/Slack 대신 간단하고 효율적인 문의 채널 제공. 독자 피드백, 협업 제안, 기술 문의 등 수집 가능",
     "en": "Implemented feedback and inquiry collection system using Google Forms. Provides simple and efficient contact channel instead of Discord/Slack. Collects reader feedback, collaboration proposals, technical inquiries",
-    "ja": "Google Formsを活用したフィードバックおよびお問い合わせ収集システムを構築。Discord/Slackの代わりにシンプルで効率的なお問い合わせチャンネルを提供。読者フィードバック、協業提案、技術問い合わせなどを収集可能"
+    "ja": "Google Formsを活用したフィードバックおよびお問い合わせ収集システムを構築。Discord/Slackの代わりにシンプルで効率的なお問い合わせチャンネルを提供。読者フィードバック、協業提案、技術問い合わせなどを収集可能",
+    "zh": "使用 Google Forms 构建反馈和询问收集系统。提供简单高效的联系渠道，替代 Discord/Slack。可收集读者反馈、合作提案、技术咨询等"
   },
   "lessons": {
     "ko": [
@@ -73,6 +81,14 @@
       "応答の自動メール通知",
       "データがGoogle Sheetsに自動保存",
       "多言語対応(韓国語、英語、日本語)"
+    ],
+    "zh": [
+      "使用 Google Forms 嵌入无需单独后端",
+      "免费解决方案快速实现",
+      "内置垃圾邮件防护功能",
+      "响应自动邮件通知",
+      "数据自动保存到 Google Sheets",
+      "多语言支持（韩语、英语、日语）"
     ]
   }
 }

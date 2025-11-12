@@ -5,31 +5,36 @@
   "title": {
     "ko": "상위 포스트 검색 순위 추적",
     "en": "Top Posts Search Ranking Tracking",
-    "ja": "上位記事検索順位追跡"
+    "ja": "上位記事検索順位追跡",
+    "zh": "热门文章搜索排名追踪"
   },
   "category": "Analytics",
   "before": {
     "metric": {
       "ko": "검색 순위 모니터링",
       "en": "Search Rank Monitoring",
-      "ja": "検索順位モニタリング"
+      "ja": "検索順位モニタリング",
+      "zh": "搜索排名监控"
     },
     "value": {
       "ko": "없음",
       "en": "None",
-      "ja": "なし"
+      "ja": "なし",
+      "zh": "无"
     }
   },
   "after": {
     "metric": {
       "ko": "검색 순위 모니터링",
       "en": "Search Rank Monitoring",
-      "ja": "検索順位モニタリング"
+      "ja": "検索順位モニタリング",
+      "zh": "搜索排名监控"
     },
     "value": {
       "ko": "Google Search Console",
       "en": "Google Search Console",
-      "ja": "Google Search Console"
+      "ja": "Google Search Console",
+      "zh": "Google Search Console"
     }
   },
   "impact": "+100%",
@@ -37,18 +42,21 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "sourceReport": "/{lang}/blog/${lang}/three-week-analytics-2025-11-04",
   "description": {
     "ko": "Google Search Console 연동으로 상위 포스트의 검색 순위, 클릭률, 노출수 추적. 데이터 기반 SEO 개선 가능",
     "en": "Integrated Google Search Console to track search rankings, click-through rates, and impressions of top posts. Enables data-driven SEO improvements",
-    "ja": "Google Search Consoleを連携して上位記事の検索順位、クリック率、インプレッション数を追跡。データに基づくSEO改善が可能"
+    "ja": "Google Search Consoleを連携して上位記事の検索順位、クリック率、インプレッション数を追跡。データに基づくSEO改善が可能",
+    "zh": "通过集成Google Search Console追踪热门文章的搜索排名、点击率和展示次数。实现基于数据的SEO优化"
   },
   "lessons": {
     "ko": [
@@ -74,6 +82,14 @@
       "検索クエリデータを活用したキーワード最適化",
       "記事別の検索パフォーマンス比較分析",
       "SEO戦略策定の基盤データを確保"
+    ],
+    "zh": [
+      "完成Google Search Console集成",
+      "按搜索关键词追踪展示次数和点击率",
+      "Claude Skills指南获得31次页面浏览量（第1名）",
+      "利用搜索查询数据进行关键词优化",
+      "按文章对比分析搜索性能",
+      "为SEO战略建立数据基础"
     ]
   }
 }

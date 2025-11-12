@@ -5,31 +5,36 @@
   "title": {
     "ko": "Google Search Console 사이트맵 제출",
     "en": "Google Search Console Sitemap Submission",
-    "ja": "Google Search Consoleサイトマップ提出"
+    "ja": "Google Search Consoleサイトマップ提出",
+    "zh": "Google Search Console 网站地图提交"
   },
   "category": "SEO",
   "before": {
     "metric": {
       "ko": "인덱싱된 페이지",
       "en": "Indexed Pages",
-      "ja": "インデックスされたページ"
+      "ja": "インデックスされたページ",
+      "zh": "已索引页面"
     },
     "value": {
       "ko": "0개",
       "en": "0",
-      "ja": "0個"
+      "ja": "0個",
+      "zh": "0个"
     }
   },
   "after": {
     "metric": {
       "ko": "인덱싱된 페이지",
       "en": "Indexed Pages",
-      "ja": "インデックスされたページ"
+      "ja": "インデックスされたページ",
+      "zh": "已索引页面"
     },
     "value": {
       "ko": "제출 완료",
       "en": "Submitted",
-      "ja": "提出完了"
+      "ja": "提出完了",
+      "zh": "已提交"
     }
   },
   "impact": "+100%",
@@ -37,18 +42,21 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "매우 높음",
     "en": "Very High",
-    "ja": "非常に高い"
+    "ja": "非常に高い",
+    "zh": "非常高"
   },
   "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
   "description": {
     "ko": "Google Search Console과 Bing Webmaster Tools에 사이트맵을 성공적으로 제출하여 검색 엔진 인덱싱 시작",
     "en": "Successfully submitted sitemap to Google Search Console and Bing Webmaster Tools to initiate search engine indexing",
-    "ja": "Google Search ConsoleとBing Webmaster Toolsにサイトマップを正常に提出して検索エンジンインデックスを開始"
+    "ja": "Google Search ConsoleとBing Webmaster Toolsにサイトマップを正常に提出して検索エンジンインデックスを開始",
+    "zh": "成功向Google Search Console和Bing网站管理员工具提交网站地图以启动搜索引擎索引"
   },
   "lessons": {
     "ko": [
@@ -68,6 +76,12 @@
       "Bing Webmaster Toolsにサイトマップ提出完了",
       "検索エンジンインデックスプロセス開始",
       "7-14日以内にオーガニック検索トラフィックの増加を予想"
+    ],
+    "zh": [
+      "完成向Google Search Console提交网站地图（sitemap-0.xml）",
+      "完成向Bing网站管理员工具提交网站地图",
+      "启动搜索引擎索引流程",
+      "预计7-14天内自然搜索流量增加"
     ]
   }
 }

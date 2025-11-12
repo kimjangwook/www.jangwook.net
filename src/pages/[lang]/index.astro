@@ -40,13 +40,13 @@ const posts = filterPostsByDate(allPosts)
 		<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 			<div class="flex items-center justify-between mb-8">
 				<h2 class="text-3xl font-bold text-gray-900">
-					{lang === 'ko' ? '최신 포스트' : '最新の投稿'}
+					{t('blog.latestPosts')}
 				</h2>
 				<a
 					href={`/${lang}/blog`}
 					class="text-accent hover:text-accent-dark font-medium flex items-center gap-1"
 				>
-					{lang === 'ko' ? '모두 보기' : 'すべて見る'}
+					{t('blog.viewAll')}
 					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
 					</svg>

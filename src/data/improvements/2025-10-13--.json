@@ -5,31 +5,36 @@
   "title": {
     "ko": "추천 시스템 토큰 사용량 최적화",
     "en": "Recommendation System Token Usage Optimization",
-    "ja": "推薦システムトークン使用量最適化"
+    "ja": "推薦システムトークン使用量最適化",
+    "zh": "推荐系统Token使用量优化"
   },
   "category": "Technical",
   "before": {
     "metric": {
       "ko": "토큰 사용량 / 실행 시간",
       "en": "Token Usage / Execution Time",
-      "ja": "トークン使用量 / 実行時間"
+      "ja": "トークン使用量 / 実行時間",
+      "zh": "Token使用量 / 执行时间"
     },
     "value": {
       "ko": "78,000 토큰 / 2.7분",
       "en": "78,000 tokens / 2.7min",
-      "ja": "78,000トークン / 2.7分"
+      "ja": "78,000トークン / 2.7分",
+      "zh": "78,000 Token / 2.7分钟"
     }
   },
   "after": {
     "metric": {
       "ko": "토큰 사용량 / 실행 시간",
       "en": "Token Usage / Execution Time",
-      "ja": "トークン使用量 / 実行時間"
+      "ja": "トークン使用量 / 実行時間",
+      "zh": "Token使用量 / 执行时间"
     },
     "value": {
       "ko": "0 토큰 / <1초",
       "en": "0 tokens / <1s",
-      "ja": "0トークン / <1秒"
+      "ja": "0トークン / <1秒",
+      "zh": "0 Token / <1秒"
     }
   },
   "impact": "+100%",
@@ -37,17 +42,20 @@
   "effort": {
     "ko": "높음",
     "en": "High",
-    "ja": "高"
+    "ja": "高",
+    "zh": "高"
   },
   "roi": {
     "ko": "탁월함",
     "en": "Exceptional",
-    "ja": "卓越"
+    "ja": "卓越",
+    "zh": "卓越"
   },
   "description": {
     "ko": "메타데이터 기반 알고리즘으로 전환하여 추천 생성 시 토큰 사용량 100% 제거 및 실행 시간 99% 단축. LLM API 호출 대신 Jaccard/Cosine 유사도 알고리즘 사용",
     "en": "Achieved 100% token elimination and 99% execution time reduction by switching to metadata-based algorithm. Uses Jaccard/Cosine similarity instead of LLM API calls",
-    "ja": "メタデータベースのアルゴリズムに切り替えて推薦生成時のトークン使用量を100%削減、実行時間を99%短縮。LLM APIコールの代わりにJaccard/Cosine類似度アルゴリズムを使用"
+    "ja": "メタデータベースのアルゴリズムに切り替えて推薦生成時のトークン使用量を100%削減、実行時間を99%短縮。LLM APIコールの代わりにJaccard/Cosine類似度アルゴリズムを使用",
+    "zh": "通过切换到基于元数据的算法，在推荐生成时实现了100%消除Token使用量和99%缩短执行时间。使用Jaccard/Cosine相似度算法代替LLM API调用"
   },
   "lessons": {
     "ko": [
@@ -109,6 +117,26 @@
       "時系列フィルタリング（過去の記事のみ推薦）",
       "3言語説明を自動生成（ko/ja/en）",
       "working_history/modify_recommendation.mdに詳細文書化"
+    ],
+    "zh": [
+      "构建post-analyzer代理（.claude/agents/post-analyzer.md）",
+      "通过/analyze-posts命令手动创建post-metadata.json（13篇文章，0 Token）",
+      "元数据结构：200字摘要 + 5个主题 + 5个技术栈 + 难度(1-5) + 类别评分",
+      "使用SHA-256内容哈希检测变更（支持增量更新）",
+      "仅分析相同内容多语言文章中的ko语言版本（3倍效率提升）",
+      "**实际成果（超出预期）：**",
+      "  - Token：78,000 → 0（100%消除，超出预期63%）",
+      "  - 时间：2.7分钟 → <1秒（99%缩短，超出预期59%）",
+      "  - 成本：$0.078 → $0.00（100%节省）",
+      "**基于算法的推荐系统：**",
+      "  - Jaccard相似度：主题(35%)、技术栈(25%)",
+      "  - Cosine相似度：类别评分(20%)",
+      "  - 难度匹配(10%)、互补关系(10%)",
+      "  - 确定性、即时执行、零成本",
+      "生成65个推荐（每篇文章平均5个）",
+      "时间过滤（仅推荐过去的文章）",
+      "自动生成3语言说明（ko/ja/en）",
+      "在working_history/modify_recommendation.md中详细记录"
     ]
   }
 }

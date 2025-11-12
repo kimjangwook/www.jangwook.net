@@ -5,31 +5,36 @@
   "title": {
     "ko": "Buy Me a Coffee 후원 버튼 추가",
     "en": "Buy Me a Coffee Support Button Implementation",
-    "ja": "Buy Me a Coffee サポートボタン追加"
+    "ja": "Buy Me a Coffee サポートボタン追加",
+    "zh": "添加 Buy Me a Coffee 赞助按钮"
   },
   "category": "Content",
   "before": {
     "metric": {
       "ko": "후원 기능",
       "en": "Support Feature",
-      "ja": "サポート機能"
+      "ja": "サポート機能",
+      "zh": "赞助功能"
     },
     "value": {
       "ko": "없음",
       "en": "None",
-      "ja": "なし"
+      "ja": "なし",
+      "zh": "无"
     }
   },
   "after": {
     "metric": {
       "ko": "후원 기능",
       "en": "Support Feature",
-      "ja": "サポート機能"
+      "ja": "サポート機能",
+      "zh": "赞助功能"
     },
     "value": {
       "ko": "모든 포스트",
       "en": "All posts",
-      "ja": "全記事"
+      "ja": "全記事",
+      "zh": "所有文章"
     }
   },
   "impact": "+100%",
@@ -37,17 +42,20 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "중간",
     "en": "Medium",
-    "ja": "中程度"
+    "ja": "中程度",
+    "zh": "中等"
   },
   "description": {
     "ko": "블로그 포스트 하단에 Buy Me a Coffee 후원 버튼 추가. 독자들이 가치 있는 콘텐츠에 대해 감사 표현 가능",
     "en": "Added Buy Me a Coffee support button at the bottom of blog posts. Enables readers to show appreciation for valuable content",
-    "ja": "ブログ記事の下部にBuy Me a Coffeeサポートボタンを追加。読者が価値あるコンテンツに対して感謝を表現可能"
+    "ja": "ブログ記事の下部にBuy Me a Coffeeサポートボタンを追加。読者が価値あるコンテンツに対して感謝を表現可能",
+    "zh": "在博客文章底部添加 Buy Me a Coffee 赞助按钮。让读者可以对有价值的内容表示感谢"
   },
   "lessons": {
     "ko": [
@@ -70,6 +78,13 @@
       "非侵害的デザイン（記事下部に配置）",
       "多言語メッセージサポート",
       "読者参加とコミュニティ形成に貢献"
+    ],
+    "zh": [
+      "在 BlogPost.astro 布局中添加 BuyMeACoffee 组件",
+      "自动显示在所有博客文章中",
+      "非侵入式设计（放置在文章底部）",
+      "支持多语言消息",
+      "有助于读者参与和社区建设"
     ]
   }
 }

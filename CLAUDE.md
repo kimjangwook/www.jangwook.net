@@ -80,8 +80,8 @@ public/             # 정적 파일 (빌드 시 그대로 복사)
 
 **중요**:
 
-- 블로그 포스트는 언어별 폴더에 위치: `src/content/blog/<ko|en|ja>/`
-- 각 언어 폴더에 동일한 파일명으로 저장 (예: `blog/ko/post-title.md`, `blog/en/post-title.md`, `blog/ja/post-title.md`)
+- 블로그 포스트는 언어별 폴더에 위치: `src/content/blog/<ko|en|ja|zh>/`
+- 각 언어 폴더에 동일한 파일명으로 저장 (예: `ko/post-title.md`, `en/post-title.md`, `zh/post-title.md`)
 - Frontmatter는 반드시 위 스키마를 준수해야 함
 - `getCollection('blog')`로 모든 포스트 조회, `.filter(post => post.id.startsWith('ko/'))`로 언어별 필터링
 - `render()` 함수로 Markdown/MDX 콘텐츠를 렌더링
@@ -226,8 +226,9 @@ Markdown 또는 MDX 형식으로 작성...
   - 한국어: `src/content/blog/ko/post-title.md`
   - 영어: `src/content/blog/en/post-title.md`
   - 일본어: `src/content/blog/ja/post-title.md`
+  - 중국어: `src/content/blog/zh/post-title.md`
 - **동일한 파일명**: 모든 언어 버전은 각 언어 폴더에 같은 파일명으로 저장
-- **언어 자동 인식**: 폴더 경로(`ko/`, `en/`, `ja/`)로 언어 자동 식별
+- **언어 자동 인식**: 폴더 경로(`ko/`, `en/`, `ja/`, `zh/`)로 언어 자동 식별
 - Frontmatter의 모든 필수 필드 포함 필요
 - 이미지는 `src/assets/blog/`에 저장하고 상대 경로로 참조
 - 다국어 포스트는 동일한 이미지를 공유 (모든 언어 버전에서 같은 heroImage 경로 사용)
@@ -881,7 +882,8 @@ node generate_image.js src/assets/blog/hero.jpg "Modern tech blog hero image wit
 src/content/blog/
 ├── ko/post-name.md    # 한국어
 ├── en/post-name.md    # 영어
-└── ja/post-name.md    # 일본어
+├── ja/post-name.md    # 일본어
+└── zh/post-name.md    # 중국어 (간체)
 ```
 
 **베스트 프랙티스**:

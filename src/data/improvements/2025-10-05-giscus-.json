@@ -5,31 +5,36 @@
   "title": {
     "ko": "Giscus 댓글 시스템 도입",
     "en": "Giscus Comment System Implementation",
-    "ja": "Giscusコメントシステム導入"
+    "ja": "Giscusコメントシステム導入",
+    "zh": "Giscus 评论系统实施"
   },
   "category": "UX",
   "before": {
     "metric": {
       "ko": "댓글 기능",
       "en": "Comment Feature",
-      "ja": "コメント機能"
+      "ja": "コメント機能",
+      "zh": "评论功能"
     },
     "value": {
       "ko": "없음",
       "en": "None",
-      "ja": "なし"
+      "ja": "なし",
+      "zh": "无"
     }
   },
   "after": {
     "metric": {
       "ko": "댓글 기능",
       "en": "Comment Feature",
-      "ja": "コメント機能"
+      "ja": "コメント機能",
+      "zh": "评论功能"
     },
     "value": {
       "ko": "GitHub Discussions 기반",
       "en": "GitHub Discussions-based",
-      "ja": "GitHub Discussions ベース"
+      "ja": "GitHub Discussions ベース",
+      "zh": "基于 GitHub Discussions"
     }
   },
   "impact": "+100%",
@@ -37,17 +42,20 @@
   "effort": {
     "ko": "낮음",
     "en": "Low",
-    "ja": "低"
+    "ja": "低",
+    "zh": "低"
   },
   "roi": {
     "ko": "매우 높음",
     "en": "Very High",
-    "ja": "非常に高い"
+    "ja": "非常に高い",
+    "zh": "非常高"
   },
   "description": {
     "ko": "GitHub Discussions 기반의 Giscus 댓글 시스템 도입으로 독자와의 소통 채널 구축. 로그인 없이 GitHub 계정으로 댓글 작성 가능",
     "en": "Established reader communication channel by implementing GitHub Discussions-based Giscus comment system. Enables commenting with GitHub account without separate login",
-    "ja": "GitHub DiscussionsベースのGiscusコメントシステム導入により読者とのコミュニケーションチャネルを構築。別途ログインなしでGitHubアカウントでコメント可能"
+    "ja": "GitHub DiscussionsベースのGiscusコメントシステム導入により読者とのコミュニケーションチャネルを構築。別途ログインなしでGitHubアカウントでコメント可能",
+    "zh": "通过实施基于 GitHub Discussions 的 Giscus 评论系统建立读者沟通渠道。无需单独登录即可使用 GitHub 账户进行评论"
   },
   "lessons": {
     "ko": [
@@ -73,6 +81,14 @@
       "Dark/Lightテーマ自動切り替え",
       "多言語サポート（ko、en、ja）",
       "すべてのブログ記事に自動適用"
+    ],
+    "zh": [
+      "利用 GitHub Discussions 作为评论存储",
+      "开发者友好的评论系统（支持 Markdown）",
+      "内置防垃圾邮件和审核功能",
+      "自动切换深色/浅色主题",
+      "多语言支持（ko、en、ja）",
+      "自动应用于所有博客文章"
     ]
   }
 }
