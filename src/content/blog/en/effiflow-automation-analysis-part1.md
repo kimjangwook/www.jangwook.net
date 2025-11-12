@@ -3,7 +3,7 @@ title: 'EffiFlow Analysis: 71% Cost Reduction with Metadata Architecture'
 description: >-
   Blog automation with 17 Agents and metadata-first architecture. Case study
   achieving 60-70% token reduction and full automation
-pubDate: '2025-11-13'
+pubDate: '2025-11-14'
 heroImage: ../../../assets/blog/effiflow-automation-analysis-hero.jpg
 tags:
   - claude-code

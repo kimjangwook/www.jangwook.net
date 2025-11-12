@@ -3,7 +3,7 @@ title: 'EffiFlow Part 2: Skills Auto-Discovery and 58% Token Reduction Caching'
 description: >-
   Skills auto-discovery mechanism and Commands integration. Achieving 58% token
   reduction through caching strategy
-pubDate: '2025-11-14'
+pubDate: '2025-11-15'
 heroImage: ../../../assets/blog/effiflow-part2-skills-commands-hero.jpg
 tags:
   - claude-code

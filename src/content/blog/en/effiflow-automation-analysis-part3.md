@@ -5,7 +5,7 @@ title: >-
 description: >-
   Practical implementation of Top 3 Quick Wins. Achieving 100% completion and
   99% stability with 38 minutes of investment and ROI analysis
-pubDate: '2025-11-15'
+pubDate: '2025-11-16'
 heroImage: ../../../assets/blog/effiflow-part3-quick-wins-hero.jpg
 tags:
   - claude-code

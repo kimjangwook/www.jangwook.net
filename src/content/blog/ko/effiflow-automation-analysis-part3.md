@@ -1,7 +1,7 @@
 ---
 title: 'EffiFlow Part 3: 38분 만에 달성한 실전 개선 - 안정성 99%와 완성도 100%'
 description: 'Top 3 Quick Wins 실전 구현. 38분 투자로 완성도 100%, 안정성 99% 달성 과정과 ROI'
-pubDate: '2025-11-15'
+pubDate: '2025-11-16'
 heroImage: ../../../assets/blog/effiflow-part3-quick-wins-hero.jpg
 tags:
   - claude-code

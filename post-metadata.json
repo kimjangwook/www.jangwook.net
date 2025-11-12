@@ -418,7 +418,7 @@
     }
   },
   "effiflow-automation-analysis-part1": {
-    "pubDate": "2025-11-13",
+    "pubDate": "2025-11-14",
     "difficulty": 4,
     "categoryScores": {
       "automation": 1.0,
@@ -429,7 +429,7 @@
     }
   },
   "effiflow-automation-analysis-part2": {
-    "pubDate": "2025-11-14",
+    "pubDate": "2025-11-15",
     "difficulty": 4,
     "categoryScores": {
       "automation": 0.95,
@@ -440,7 +440,7 @@
     }
   },
   "effiflow-automation-analysis-part3": {
-    "pubDate": "2025-11-15",
+    "pubDate": "2025-11-16",
     "difficulty": 3,
     "categoryScores": {
       "automation": 0.9,

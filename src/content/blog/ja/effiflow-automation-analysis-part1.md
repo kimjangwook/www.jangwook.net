@@ -1,7 +1,7 @@
 ---
 title: 'EffiFlow構造分析: メタデータで71%コスト削減を達成'
 description: 17個のAgentsとメタデータ優先アーキテクチャでブログ自動化。60〜70%トークン削減と完全自動化達成事例
-pubDate: '2025-11-13'
+pubDate: '2025-11-14'
 heroImage: ../../../assets/blog/effiflow-automation-analysis-hero.jpg
 tags:
   - claude-code

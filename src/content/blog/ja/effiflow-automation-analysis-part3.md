@@ -1,7 +1,7 @@
 ---
 title: 'EffiFlow Part 3: 38分で達成した実践改善 - 安定性99%と完成度100%'
 description: Top 3 Quick Winsの実践実装。38分の投資で完成度100%、安定性99%を達成した過程とROI
-pubDate: '2025-11-15'
+pubDate: '2025-11-16'
 heroImage: ../../../assets/blog/effiflow-part3-quick-wins-hero.jpg
 tags:
   - claude-code

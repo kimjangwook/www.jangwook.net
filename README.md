@@ -43,7 +43,7 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-13
+**최신 포스트 날짜**: 2025-11-16
 
 **총 포스트 수**: 39개 (한국어 기준)
 
@@ -560,6 +560,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-11 (n8n과 RSS로 블로그 발행 자동화하기 포스트 발행)
+**Last Updated**: 2025-11-16 (EffiFlow 자동화 구조 분석 시리즈 완결 - Part 1-3 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
