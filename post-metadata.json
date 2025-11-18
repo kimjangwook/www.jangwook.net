@@ -1,4 +1,15 @@
 {
+  "deep-agents-architecture-optimization": {
+    "pubDate": "2025-11-22",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.95
+    }
+  },
   "claude-code-cli-migration-guide": {
     "pubDate": "2025-11-21",
     "difficulty": 3,

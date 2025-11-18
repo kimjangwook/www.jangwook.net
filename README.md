@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-21
+**최신 포스트 날짜**: 2025-11-18
 
-**총 포스트 수**: 43개 (한국어 기준)
+**총 포스트 수**: 44개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Claude Code CLI 마이그레이션 가이드: Copilot, Gemini, Codex 비교** (2025-11-21)
+1. **Deep Agents 패러다임으로 AI 에이전트 시스템 최적화하기** (2025-11-18)
+
+   - LangChain과 Philipp Schmid의 Deep Agents 개념을 분석하고 에이전트 구조를 최적화한 실전 가이드
+   - **핵심 내용**: Deep Agents vs Shallow Agents (Agent 1.0 vs 2.0), 4대 원칙 (Explicit Planning, Hierarchical Delegation, Persistent Memory, Extreme Context Engineering), 현재 구조 분석 (65% 준수율), Orchestrator 에이전트 도입, 5개 클러스터 구조 (content-creation, research-analysis, seo-marketing, content-discovery, operations), Planning Protocol (계획 생성/추적/재계획), State Management (task-state.json, task-history.json), Recovery Protocol (6가지 실패 유형, 5가지 복구 전략), 예상 효과 (5-15 스텝 → 100+ 스텝, 90%+ 자동 복구율)
+
+2. **Claude Code CLI 마이그레이션 가이드: Copilot, Gemini, Codex 비교** (2025-11-21)
 
    - Claude Code에서 GitHub Copilot CLI, Gemini CLI, Codex CLI로 마이그레이션하는 방법과 상황별 최적의 도구 선택 가이드
    - **핵심 내용**: 4가지 CLI 도구 아키텍처 비교 (모델, 가격, MCP 지원, 에이전트 시스템), GitHub Copilot CLI 마이그레이션 ($10/월, GitHub 네이티브 통합, Multi-vendor 모델), Gemini CLI 마이그레이션 (무료 티어, Google 생태계), Codex CLI 마이그레이션 (오픈소스, TypeScript SDK), 상황별 도구 선택 가이드 (팀 규모, 예산, 기술 스택), 하이브리드 전략 (복수 도구 병행 사용), 점진적 마이그레이션 접근법
