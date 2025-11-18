@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-19
+**최신 포스트 날짜**: 2025-11-21
 
-**총 포스트 수**: 42개 (한국어 기준)
+**총 포스트 수**: 43개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **MCP Code Execution 실전 적용: Claude Code 프로젝트 구조 개선** (2025-11-19)
+1. **Claude Code CLI 마이그레이션 가이드: Copilot, Gemini, Codex 비교** (2025-11-21)
+
+   - Claude Code에서 GitHub Copilot CLI, Gemini CLI, Codex CLI로 마이그레이션하는 방법과 상황별 최적의 도구 선택 가이드
+   - **핵심 내용**: 4가지 CLI 도구 아키텍처 비교 (모델, 가격, MCP 지원, 에이전트 시스템), GitHub Copilot CLI 마이그레이션 ($10/월, GitHub 네이티브 통합, Multi-vendor 모델), Gemini CLI 마이그레이션 (무료 티어, Google 생태계), Codex CLI 마이그레이션 (오픈소스, TypeScript SDK), 상황별 도구 선택 가이드 (팀 규모, 예산, 기술 스택), 하이브리드 전략 (복수 도구 병행 사용), 점진적 마이그레이션 접근법
+
+2. **MCP Code Execution 실전 적용: Claude Code 프로젝트 구조 개선** (2025-11-19)
 
    - Anthropic의 MCP Code Execution 패턴을 실제 프로젝트에 적용하여 .claude/ 디렉토리 구조를 개선한 사례. tools/, patterns/, security/ 디렉토리 추가로 95% 컨텍스트 절감 및 보안 강화
    - **핵심 내용**: 파일시스템 기반 도구 발견 (Progressive Loading), Tool Wrapper 패턴 (표준화된 메타데이터, Zod 스키마 검증), Code Execution 패턴 (98.7% 토큰 절감, 60% 속도 개선), 샌드박스 설정 (프로세스 격리, 파일시스템/네트워크 제한), 입력 검증 (Command Injection 43% 취약점 완화), 실전 적용 효과 (도구 설명 토큰 95% 절감, 워크플로우 토큰 80% 절감), 향후 계획 (Tool Wrapper 변환, 샌드박스 통합, 성능 벤치마크)

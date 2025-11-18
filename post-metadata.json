@@ -1,4 +1,15 @@
 {
+  "claude-code-cli-migration-guide": {
+    "pubDate": "2025-11-21",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.7,
+      "architecture": 0.75
+    }
+  },
   "mcp-code-execution-practical-implementation": {
     "pubDate": "2025-11-19",
     "difficulty": 4,
