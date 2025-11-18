@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-18
+**최신 포스트 날짜**: 2025-11-19
 
-**총 포스트 수**: 41개 (한국어 기준)
+**총 포스트 수**: 42개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Anthropic Code Execution with MCP: AI 에이전트 효율 98.7% 향상** (2025-11-18)
+1. **MCP Code Execution 실전 적용: Claude Code 프로젝트 구조 개선** (2025-11-19)
+
+   - Anthropic의 MCP Code Execution 패턴을 실제 프로젝트에 적용하여 .claude/ 디렉토리 구조를 개선한 사례. tools/, patterns/, security/ 디렉토리 추가로 95% 컨텍스트 절감 및 보안 강화
+   - **핵심 내용**: 파일시스템 기반 도구 발견 (Progressive Loading), Tool Wrapper 패턴 (표준화된 메타데이터, Zod 스키마 검증), Code Execution 패턴 (98.7% 토큰 절감, 60% 속도 개선), 샌드박스 설정 (프로세스 격리, 파일시스템/네트워크 제한), 입력 검증 (Command Injection 43% 취약점 완화), 실전 적용 효과 (도구 설명 토큰 95% 절감, 워크플로우 토큰 80% 절감), 향후 계획 (Tool Wrapper 변환, 샌드박스 통합, 성능 벤치마크)
+
+2. **Anthropic Code Execution with MCP: AI 에이전트 효율 98.7% 향상** (2025-11-18)
 
    - 2025년 11월 발표된 Code Execution with MCP로 토큰 사용량 150,000→2,000 (98.7% 감소), 실행 속도 60% 개선을 달성한 혁신적 AI 에이전트 아키텍처 완벽 가이드
    - **핵심 내용**: 파일시스템 기반 도구 검색 (Progressive Disclosure), 코드 기반 실행 패러다임 (직접 도구 호출 → TypeScript 코드 작성), 샌드박스 보안 (Bubblewrap/Seatbelt 격리, 리소스 제한), 극적인 성능 향상 (98.7% 토큰 절감, 60% 속도 개선, 연간 $9,536 비용 절감), 4가지 핵심 이점 (점진적 도구 로딩, 로컬 제어 흐름, 프라이버시 보호, 상태 유지), 실전 활용 사례 (Zed/Replit/Codeium 개발 도구, Block/Apollo/Cognizant 엔터프라이즈, Google Drive→Salesforce 워크플로우), 보안 고려사항 (Command Injection 43% 취약점율, 컨테이너화, Rate Limiting, 중앙 정책 게이트웨이), TypeScript 구현 가이드 (MCP 서버 설정, 도구 래퍼 생성, 샌드박스 설정), 현재 한계점 (인프라 복잡성, 단순 작업 오버헤드, 보안 취약성, 원격 서버 제한), 2025년 로드맵 (OAuth 2.1, 엔터프라이즈 스케일링, SDK 확장, 10,000+ 커뮤니티 서버)

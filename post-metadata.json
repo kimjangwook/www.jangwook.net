@@ -1,4 +1,15 @@
 {
+  "mcp-code-execution-practical-implementation": {
+    "pubDate": "2025-11-19",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.6,
+      "architecture": 0.95
+    }
+  },
   "anthropic-code-execution-mcp": {
     "pubDate": "2025-11-18",
     "difficulty": 4,

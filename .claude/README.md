@@ -25,6 +25,9 @@
 ├── agents/          # 17개 전문 에이전트
 ├── skills/          # 4개 모듈형 기능 (자동 발견)
 ├── commands/        # 7개 사용자 워크플로우
+├── tools/           # MCP Tool Wrapper (Code Execution 패턴)
+├── patterns/        # MCP Code Execution 구현 패턴
+├── security/        # 보안 가이드라인 (샌드박스, 입력 검증)
 ├── guidelines/      # 가이드라인 문서
 └── settings.local.json  # 로컬 설정
 ```
