@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
+import AuthorBox from '../components/AuthorBox.astro';
 import BuyMeACoffee from '../components/BuyMeACoffee.astro';
 import BlogPostLanguageSwitcher from '../components/BlogPostLanguageSwitcher.astro';
 import Footer from '../components/Footer.astro';
@@ -140,6 +141,9 @@ const breadcrumbSchema = {
 
 					<!-- Buy Me a Coffee -->
 					<BuyMeACoffee lang={lang} />
+
+					<!-- Author Box -->
+					<AuthorBox lang={lang} />
 
 					<!-- Related Posts (V3) -->
 					{relatedPosts && relatedPosts.length > 0 && (

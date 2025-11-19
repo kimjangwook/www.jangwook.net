@@ -34,6 +34,34 @@ const websiteSchema = {
 	'url': Astro.site?.toString(),
 };
 
+// Person Schema (저자 정보 - E-E-A-T 향상)
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	'name': 'Kim Jangwook',
+	'url': new URL('/en/about', Astro.site).toString(),
+	'image': new URL('/favicon.svg', Astro.site).toString(),
+	'jobTitle': 'Full-Stack Developer specializing in AI/LLM',
+	'description': 'Building AI agent systems, LLM applications, and automation solutions with 10+ years of web development experience.',
+	'sameAs': [
+		'https://github.com/kimjangwook',
+		'https://linkedin.com/in/jangwook-kim-2590a1174',
+		'https://x.com/Kim_Jangwook',
+		'https://medium.com/@kim-jangwook',
+		'https://www.youtube.com/@kim-jangwook'
+	],
+	'knowsAbout': [
+		'AI/LLM',
+		'Claude Code',
+		'MCP (Model Context Protocol)',
+		'RAG Systems',
+		'Web Development',
+		'TypeScript',
+		'Python',
+		'Astro'
+	]
+};
+
 // Article Schema (블로그 포스트만)
 const articleSchema = articleData ? {
 	'@context': 'https://schema.org',
@@ -45,7 +73,9 @@ const articleSchema = articleData ? {
 	'dateModified': articleData.modifiedTime || articleData.publishedTime,
 	'author': {
 		'@type': 'Person',
-		'name': articleData.author,
+		'@id': new URL('/en/about', Astro.site).toString(),
+		'name': 'Kim Jangwook',
+		'url': new URL('/en/about', Astro.site).toString(),
 	},
 	'publisher': {
 		'@type': 'Organization',
@@ -102,6 +132,8 @@ const articleSchema = articleData ? {
 
 <!-- Google AdSense -->
 <meta name="google-adsense-account" content="ca-pub-7556938384772610">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7556938384772610"
+     crossorigin="anonymous"></script>
 
 <!-- Google Fonts Optimization (preconnect + async load) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -148,6 +180,7 @@ const articleSchema = articleData ? {
 
 <!-- Schema.org Structured Data -->
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
 
 <!-- Google Analytics (프로덕션 환경에서만 로드) -->
