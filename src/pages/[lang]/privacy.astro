@@ -1,0 +1,405 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
+import { useTranslations, type Language } from '../../lib/i18n/languages';
+
+export function getStaticPaths() {
+	return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+
+const titles = {
+	ko: '개인정보처리방침',
+	en: 'Privacy Policy',
+	ja: 'プライバシーポリシー',
+	zh: '隐私政策',
+};
+
+const descriptions = {
+	ko: 'jangwook.net의 개인정보처리방침입니다.',
+	en: 'Privacy Policy for jangwook.net',
+	ja: 'jangwook.netのプライバシーポリシーです。',
+	zh: 'jangwook.net的隐私政策。',
+};
+
+const title = titles[lang];
+const description = descriptions[lang];
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header lang={lang} />
+		<main class="max-w-4xl mx-auto px-4 py-12">
+			<article class="prose prose-lg max-w-none">
+				<h1 class="text-4xl font-bold mb-8">{title}</h1>
+
+				{lang === 'ko' ? (
+					<div>
+						<p class="text-sm text-gray-500 mb-8">최종 수정일: 2025년 11월 19일</p>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">1. 개요</h2>
+							<p>jangwook.net(이하 "사이트")은 방문자의 개인정보 보호를 중요하게 생각합니다. 본 개인정보처리방침은 사이트가 어떤 정보를 수집하고, 어떻게 사용하며, 어떻게 보호하는지 설명합니다.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">2. 수집하는 정보</h2>
+
+							<h3 class="text-xl font-semibold mb-3">2.1 자동으로 수집되는 정보</h3>
+							<ul class="list-disc list-inside mb-4 space-y-1">
+								<li>IP 주소</li>
+								<li>브라우저 유형 및 버전</li>
+								<li>운영 체제</li>
+								<li>방문 페이지 및 체류 시간</li>
+								<li>참조 URL</li>
+							</ul>
+
+							<h3 class="text-xl font-semibold mb-3">2.2 쿠키 및 유사 기술</h3>
+							<p class="mb-2">본 사이트는 다음 목적으로 쿠키를 사용합니다:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>사용자 경험 향상</li>
+								<li>웹사이트 트래픽 분석</li>
+								<li>맞춤형 광고 제공</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">3. 정보 사용 목적</h2>
+							<p class="mb-2">수집된 정보는 다음 목적으로 사용됩니다:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>웹사이트 운영 및 개선</li>
+								<li>트래픽 분석 및 사용자 행동 이해</li>
+								<li>관련성 있는 콘텐츠 및 광고 제공</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">4. 제3자 서비스</h2>
+
+							<h3 class="text-xl font-semibold mb-3">4.1 Google Analytics</h3>
+							<p class="mb-2">본 사이트는 Google Analytics를 사용하여 웹사이트 트래픽을 분석합니다. Google Analytics는 쿠키를 사용하여 익명의 사용 데이터를 수집합니다.</p>
+							<ul class="list-disc list-inside mb-4 space-y-1">
+								<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Analytics 개인정보처리방침</a></li>
+								<li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Analytics 옵트아웃</a></li>
+							</ul>
+
+							<h3 class="text-xl font-semibold mb-3">4.2 Google AdSense</h3>
+							<p class="mb-2">본 사이트는 Google AdSense를 사용하여 광고를 표시합니다. Google AdSense는 쿠키를 사용하여 맞춤 광고를 제공합니다.</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google 광고 개인정보처리방침</a></li>
+								<li><a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">광고 개인 최적화 설정</a></li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">5. 데이터 보관</h2>
+							<p>수집된 데이터는 필요한 기간 동안만 보관되며, 더 이상 필요하지 않을 경우 안전하게 삭제됩니다.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">6. 사용자 권리</h2>
+							<p class="mb-2">귀하는 다음과 같은 권리를 가집니다:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>수집된 데이터 열람 요청</li>
+								<li>데이터 수정 또는 삭제 요청</li>
+								<li>데이터 처리 제한 요청</li>
+								<li>쿠키 사용 거부 (브라우저 설정을 통해)</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">7. 어린이 개인정보</h2>
+							<p>본 사이트는 만 14세 미만 어린이의 개인정보를 의도적으로 수집하지 않습니다.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">8. 개인정보처리방침 변경</h2>
+							<p>본 방침은 변경될 수 있으며, 변경 시 이 페이지에 업데이트됩니다. 중요한 변경 사항이 있을 경우 사이트를 통해 공지합니다.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">9. 연락처</h2>
+							<p>개인정보 관련 문의사항이 있으시면 <a href={`/${lang}/contact`} class="text-accent hover:underline">연락처 페이지</a>를 통해 문의해 주세요.</p>
+						</section>
+					</div>
+				) : lang === 'ja' ? (
+					<div>
+						<p class="text-sm text-gray-500 mb-8">最終更新日: 2025年11月19日</p>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">1. はじめに</h2>
+							<p>jangwook.net（以下「サイト」）は、訪問者のプライバシーを尊重します。本プライバシーポリシーは、当サイトがどのような情報を収集し、どのように使用し、保護するかについて説明します。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">2. 収集する情報</h2>
+
+							<h3 class="text-xl font-semibold mb-3">2.1 自動的に収集される情報</h3>
+							<ul class="list-disc list-inside mb-4 space-y-1">
+								<li>IPアドレス</li>
+								<li>ブラウザの種類とバージョン</li>
+								<li>オペレーティングシステム</li>
+								<li>閲覧ページと滞在時間</li>
+								<li>参照元URL</li>
+							</ul>
+
+							<h3 class="text-xl font-semibold mb-3">2.2 Cookieおよび類似技術</h3>
+							<p class="mb-2">本サイトは以下の目的でCookieを使用します：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>ユーザーエクスペリエンスの向上</li>
+								<li>ウェブサイトトラフィックの分析</li>
+								<li>パーソナライズされた広告の配信</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">3. 情報の使用目的</h2>
+							<p class="mb-2">収集した情報は以下の目的で使用されます：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>ウェブサイトの運営と改善</li>
+								<li>トラフィック分析とユーザー行動の理解</li>
+								<li>関連性の高いコンテンツと広告の提供</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">4. サードパーティサービス</h2>
+
+							<h3 class="text-xl font-semibold mb-3">4.1 Google Analytics</h3>
+							<p class="mb-2">本サイトはGoogle Analyticsを使用してウェブサイトのトラフィックを分析しています。Google Analyticsは匿名の使用データを収集するためにCookieを使用します。</p>
+							<ul class="list-disc list-inside mb-4 space-y-1">
+								<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Analyticsプライバシーポリシー</a></li>
+								<li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Analyticsオプトアウト</a></li>
+							</ul>
+
+							<h3 class="text-xl font-semibold mb-3">4.2 Google AdSense</h3>
+							<p class="mb-2">本サイトはGoogle AdSenseを使用して広告を表示しています。Google AdSenseはパーソナライズされた広告を配信するためにCookieを使用します。</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google広告プライバシーポリシー</a></li>
+								<li><a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">広告のパーソナライズ設定</a></li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">5. データの保持</h2>
+							<p>収集されたデータは必要な期間のみ保持され、不要になった場合は安全に削除されます。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">6. ユーザーの権利</h2>
+							<p class="mb-2">お客様には以下の権利があります：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>収集されたデータへのアクセス要求</li>
+								<li>データの修正または削除の要求</li>
+								<li>データ処理の制限要求</li>
+								<li>Cookieの使用拒否（ブラウザ設定を通じて）</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">7. 子どものプライバシー</h2>
+							<p>本サイトは14歳未満の子どもの個人情報を意図的に収集しません。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">8. ポリシーの変更</h2>
+							<p>本ポリシーは随時更新される場合があります。変更はこのページに掲載されます。重要な変更がある場合は、サイトを通じてお知らせします。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">9. お問い合わせ</h2>
+							<p>プライバシーに関するお問い合わせは、<a href={`/${lang}/contact`} class="text-accent hover:underline">お問い合わせページ</a>からご連絡ください。</p>
+						</section>
+					</div>
+				) : lang === 'zh' ? (
+					<div>
+						<p class="text-sm text-gray-500 mb-8">最后更新: 2025年11月19日</p>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">1. 简介</h2>
+							<p>jangwook.net（以下称"网站"）尊重您的隐私。本隐私政策说明我们收集什么信息、如何使用以及如何保护这些信息。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">2. 我们收集的信息</h2>
+
+							<h3 class="text-xl font-semibold mb-3">2.1 自动收集的信息</h3>
+							<ul class="list-disc list-inside mb-4 space-y-1">
+								<li>IP地址</li>
+								<li>浏览器类型和版本</li>
+								<li>操作系统</li>
+								<li>访问页面和停留时间</li>
+								<li>引用URL</li>
+							</ul>
+
+							<h3 class="text-xl font-semibold mb-3">2.2 Cookie和类似技术</h3>
+							<p class="mb-2">本网站使用Cookie用于：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>改善用户体验</li>
+								<li>分析网站流量</li>
+								<li>投放个性化广告</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">3. 信息使用目的</h2>
+							<p class="mb-2">收集的信息用于：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>运营和改进网站</li>
+								<li>分析流量和了解用户行为</li>
+								<li>提供相关内容和广告</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">4. 第三方服务</h2>
+
+							<h3 class="text-xl font-semibold mb-3">4.1 Google Analytics</h3>
+							<p class="mb-2">本网站使用Google Analytics分析网站流量。Google Analytics使用Cookie收集匿名使用数据。</p>
+							<ul class="list-disc list-inside mb-4 space-y-1">
+								<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Analytics隐私政策</a></li>
+								<li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Analytics退出</a></li>
+							</ul>
+
+							<h3 class="text-xl font-semibold mb-3">4.2 Google AdSense</h3>
+							<p class="mb-2">本网站使用Google AdSense展示广告。Google AdSense使用Cookie投放个性化广告。</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google广告隐私政策</a></li>
+								<li><a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">广告个性化设置</a></li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">5. 数据保留</h2>
+							<p>收集的数据仅在必要期间保留，不再需要时将安全删除。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">6. 用户权利</h2>
+							<p class="mb-2">您有以下权利：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>请求访问收集的数据</li>
+								<li>请求更正或删除数据</li>
+								<li>请求限制数据处理</li>
+								<li>拒绝Cookie（通过浏览器设置）</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">7. 儿童隐私</h2>
+							<p>本网站不会故意收集14岁以下儿童的个人信息。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">8. 政策变更</h2>
+							<p>本政策可能会不时更新。变更将在本页面发布。重大变更将通过网站公告。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">9. 联系我们</h2>
+							<p>如有隐私相关问题，请通过<a href={`/${lang}/contact`} class="text-accent hover:underline">联系页面</a>与我们联系。</p>
+						</section>
+					</div>
+				) : (
+					<div>
+						<p class="text-sm text-gray-500 mb-8">Last Updated: November 19, 2025</p>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">1. Introduction</h2>
+							<p>jangwook.net ("Site") respects your privacy. This Privacy Policy explains what information we collect, how we use it, and how we protect it.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">2. Information We Collect</h2>
+
+							<h3 class="text-xl font-semibold mb-3">2.1 Automatically Collected Information</h3>
+							<ul class="list-disc list-inside mb-4 space-y-1">
+								<li>IP address</li>
+								<li>Browser type and version</li>
+								<li>Operating system</li>
+								<li>Pages visited and time spent</li>
+								<li>Referring URL</li>
+							</ul>
+
+							<h3 class="text-xl font-semibold mb-3">2.2 Cookies and Similar Technologies</h3>
+							<p class="mb-2">This site uses cookies for:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>Improving user experience</li>
+								<li>Analyzing website traffic</li>
+								<li>Serving personalized advertisements</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">3. How We Use Information</h2>
+							<p class="mb-2">Collected information is used to:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>Operate and improve the website</li>
+								<li>Analyze traffic and understand user behavior</li>
+								<li>Provide relevant content and advertisements</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">4. Third-Party Services</h2>
+
+							<h3 class="text-xl font-semibold mb-3">4.1 Google Analytics</h3>
+							<p class="mb-2">This site uses Google Analytics to analyze website traffic. Google Analytics uses cookies to collect anonymous usage data.</p>
+							<ul class="list-disc list-inside mb-4 space-y-1">
+								<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Analytics Privacy Policy</a></li>
+								<li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Opt-out of Google Analytics</a></li>
+							</ul>
+
+							<h3 class="text-xl font-semibold mb-3">4.2 Google AdSense</h3>
+							<p class="mb-2">This site uses Google AdSense to display advertisements. Google AdSense uses cookies to serve personalized ads.</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Ads Privacy Policy</a></li>
+								<li><a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Ads Personalization Settings</a></li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">5. Data Retention</h2>
+							<p>Collected data is retained only as long as necessary and is securely deleted when no longer needed.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">6. Your Rights</h2>
+							<p class="mb-2">You have the right to:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>Request access to collected data</li>
+								<li>Request correction or deletion of data</li>
+								<li>Request restriction of data processing</li>
+								<li>Refuse cookies (through browser settings)</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">7. Children's Privacy</h2>
+							<p>This site does not knowingly collect personal information from children under 14 years of age.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">8. Changes to This Policy</h2>
+							<p>This policy may be updated from time to time. Changes will be posted on this page. Significant changes will be announced on the site.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">9. Contact Us</h2>
+							<p>For privacy-related inquiries, please contact us through our <a href={`/${lang}/contact`} class="text-accent hover:underline">contact page</a>.</p>
+						</section>
+					</div>
+				)}
+			</article>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>

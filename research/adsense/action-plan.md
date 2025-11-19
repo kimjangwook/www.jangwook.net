@@ -13,8 +13,8 @@
 |--------|------|------|
 | About (소개) | ✅ 있음 | `/[lang]/about` |
 | Contact (연락처) | ✅ 있음 | `/[lang]/contact` |
-| Privacy Policy | ❌ 없음 | **필수 추가 필요** |
-| Terms of Service | ❌ 없음 | 권장 |
+| Privacy Policy | ✅ 있음 | `/[lang]/privacy` (2025-11-19 구현) |
+| Terms of Service | ✅ 있음 | `/[lang]/terms` (2025-11-19 구현) |
 
 ### 강점
 - ✅ 자체 도메인 보유 (jangwook.net)
@@ -25,8 +25,9 @@
 - ✅ Astro 기반 고성능 정적 사이트
 
 ### 개선 필요 사항
-- ❌ Privacy Policy 페이지 없음
-- ❌ Terms of Service 페이지 없음
+- ✅ Privacy Policy 페이지 구현 완료
+- ✅ Terms of Service 페이지 구현 완료
+- ❌ robots.txt 파일 생성 필요
 - ⚠️ 포스트별 단어 수 확인 필요 (최소 1000단어 권장)
 - ⚠️ 트래픽 현황 확인 필요
 
@@ -45,15 +46,15 @@
 #### 1.2 필수 페이지
 - [x] **About 페이지**: 사이트/운영자 소개
 - [x] **Contact 페이지**: 연락처 정보
-- [ ] **Privacy Policy**: 개인정보처리방침 ⚠️ **미구현**
-- [ ] **Terms of Service**: 이용약관 (권장)
+- [x] **Privacy Policy**: 개인정보처리방침 ✅ **구현 완료**
+- [x] **Terms of Service**: 이용약관 ✅ **구현 완료**
 
 #### 1.3 기술적 요건
 - [x] **자체 도메인**: jangwook.net
-- [ ] **SSL 인증서**: HTTPS 적용 확인
+- [ ] **SSL 인증서**: HTTPS 적용 확인 필요
 - [x] **모바일 반응형**: Astro + Tailwind
-- [ ] **사이트맵**: sitemap.xml 제출
-- [ ] **robots.txt**: 크롤링 허용 설정
+- [x] **사이트맵**: sitemap.xml 생성됨 (dist/ 폴더에 존재)
+- [x] **robots.txt**: 크롤링 허용 설정 ✅ **생성 완료**
 
 ### 2. 콘텐츠 정책 준수
 
@@ -72,9 +73,9 @@
 
 ### 3. 추가 권장 사항
 
-- [ ] Google Search Console 등록
-- [ ] Google Analytics 연동
-- [ ] 소셜 미디어 프로필 링크
+- [x] Google Search Console 등록 ✅ **완료**
+- [x] Google Analytics 연동 (GA4 gtag 설정됨)
+- [x] 소셜 미디어 프로필 링크 (Footer에 Twitter, Medium, LinkedIn, YouTube 링크 포함)
 - [ ] 저자 프로필/신뢰도 표시
 
 ---
@@ -218,12 +219,12 @@ AdSense 대시보드에서 자동 광고 활성화
 
 | # | 항목 | 상태 | 우선순위 |
 |---|------|------|----------|
-| 1 | Privacy Policy 페이지 | ❌ | 🔴 Critical |
-| 2 | Terms of Service 페이지 | ❌ | 🟡 High |
-| 3 | robots.txt 확인 | ⏳ | 🟡 High |
-| 4 | 사이트맵 제출 | ⏳ | 🟡 High |
-| 5 | Google Search Console 등록 | ⏳ | 🟡 High |
-| 6 | SSL/HTTPS 확인 | ⏳ | 🟡 High |
+| 1 | Privacy Policy 페이지 | ✅ 완료 | 🔴 Critical |
+| 2 | Terms of Service 페이지 | ✅ 완료 | 🟡 High |
+| 3 | robots.txt 생성 | ✅ 완료 | 🟡 High |
+| 4 | 사이트맵 제출 | ✅ 완료 (Search Console 제출됨) | 🟡 High |
+| 5 | Google Search Console 등록 | ✅ 완료 | 🟡 High |
+| 6 | SSL/HTTPS 확인 | ⏳ 확인 필요 | 🟡 High |
 | 7 | 콘텐츠 품질 검토 | ⏳ | 🟢 Medium |
 | 8 | 단어 수 최적화 | ⏳ | 🟢 Medium |
 
@@ -269,14 +270,28 @@ AdSense 대시보드에서 자동 광고 활성화
 ## 작성 정보
 
 - **작성일**: 2025-11-19
+- **최종 업데이트**: 2025-11-19
 - **연구자**: Claude Code
-- **상태**: 초기 연구 완료
+- **상태**: Phase 1 진행 중 (Privacy Policy, Terms of Service 완료)
 
 ---
 
 ## 다음 단계
 
-1. **즉시 실행**: Privacy Policy 페이지 생성
-2. **1주 이내**: Phase 1, 2 완료
-3. **2주 이내**: Phase 3 완료 및 AdSense 신청
-4. **지속적**: 트래픽 모니터링 및 콘텐츠 발행
+### 완료된 작업
+- ✅ Privacy Policy 페이지 생성 (4개 언어)
+- ✅ Terms of Service 페이지 생성 (4개 언어)
+- ✅ Footer 및 메인 페이지에 링크 추가
+- ✅ Google Analytics 연동 확인
+- ✅ 사이트맵 생성 확인
+- ✅ robots.txt 생성 완료
+- ✅ Google Search Console 등록 완료
+
+### 즉시 실행 필요
+1. **SSL/HTTPS 확인**: 배포 환경에서 HTTPS 작동 확인
+2. **배포**: robots.txt 포함하여 사이트 재배포
+
+### 이후 작업
+3. **콘텐츠 품질 검토**: 포스트별 단어 수 분석
+4. **AdSense 신청**: 위 작업 완료 후 진행
+5. **지속적**: 트래픽 모니터링 및 콘텐츠 발행

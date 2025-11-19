@@ -30,6 +30,8 @@ const today = new Date();
 					<li><a href={`/${lang}/about`} class="hover:text-accent transition-colors">{t('nav.about')}</a></li>
 					<li><a href={`/${lang}/contact`} class="hover:text-accent transition-colors">{t('nav.contact')}</a></li>
 					<li><a href={`/${lang}/social`} class="hover:text-accent transition-colors">{t('nav.social')}</a></li>
+					<li><a href={`/${lang}/privacy`} class="hover:text-accent transition-colors">{lang === 'ko' ? '개인정보처리방침' : lang === 'ja' ? 'プライバシー' : lang === 'zh' ? '隐私政策' : 'Privacy'}</a></li>
+					<li><a href={`/${lang}/terms`} class="hover:text-accent transition-colors">{lang === 'ko' ? '이용약관' : lang === 'ja' ? '利用規約' : lang === 'zh' ? '服务条款' : 'Terms'}</a></li>
 				</ul>
 			</div>
 

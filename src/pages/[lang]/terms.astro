@@ -1,0 +1,329 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
+import { useTranslations, type Language } from '../../lib/i18n/languages';
+
+export function getStaticPaths() {
+	return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+
+const titles = {
+	ko: '이용약관',
+	en: 'Terms of Service',
+	ja: '利用規約',
+	zh: '服务条款',
+};
+
+const descriptions = {
+	ko: 'jangwook.net 이용약관입니다.',
+	en: 'Terms of Service for jangwook.net',
+	ja: 'jangwook.netの利用規約です。',
+	zh: 'jangwook.net的服务条款。',
+};
+
+const title = titles[lang];
+const description = descriptions[lang];
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header lang={lang} />
+		<main class="max-w-4xl mx-auto px-4 py-12">
+			<article class="prose prose-lg max-w-none">
+				<h1 class="text-4xl font-bold mb-8">{title}</h1>
+
+				{lang === 'ko' ? (
+					<div>
+						<p class="text-sm text-gray-500 mb-8">최종 수정일: 2025년 11월 19일</p>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">1. 약관의 적용</h2>
+							<p>본 이용약관은 jangwook.net(이하 "사이트")의 모든 서비스 이용에 적용됩니다. 사이트를 이용함으로써 본 약관에 동의하는 것으로 간주됩니다.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">2. 서비스 내용</h2>
+							<p class="mb-2">본 사이트는 다음과 같은 콘텐츠를 제공합니다:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>기술 블로그 포스트</li>
+								<li>프로젝트 포트폴리오</li>
+								<li>개발 관련 정보 및 튜토리얼</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">3. 지적재산권</h2>
+							<p class="mb-4">본 사이트의 모든 콘텐츠(텍스트, 이미지, 코드 등)는 저작권법에 의해 보호됩니다.</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>개인적, 비상업적 용도로의 열람은 허용됩니다.</li>
+								<li>콘텐츠의 복제, 수정, 배포는 사전 서면 동의 없이 금지됩니다.</li>
+								<li>코드 예제는 학습 목적으로 참고할 수 있으나, 출처를 명시해야 합니다.</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">4. 사용자 의무</h2>
+							<p class="mb-2">사용자는 다음 행위를 하지 않을 것에 동의합니다:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>사이트의 정상적인 운영을 방해하는 행위</li>
+								<li>타인의 개인정보를 침해하는 행위</li>
+								<li>불법적인 목적으로 사이트를 이용하는 행위</li>
+								<li>사이트 콘텐츠를 무단으로 수집하거나 스크래핑하는 행위</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">5. 면책조항</h2>
+							<ul class="list-disc list-inside space-y-1">
+								<li>본 사이트의 콘텐츠는 정보 제공 목적으로만 제공됩니다.</li>
+								<li>콘텐츠의 정확성, 완전성, 적시성을 보장하지 않습니다.</li>
+								<li>사이트 이용으로 인해 발생하는 직접적, 간접적 손해에 대해 책임지지 않습니다.</li>
+								<li>외부 링크로 연결되는 제3자 사이트의 콘텐츠에 대해 책임지지 않습니다.</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">6. 서비스 변경 및 중단</h2>
+							<p>사이트 운영자는 사전 통지 없이 서비스를 변경, 중단하거나 콘텐츠를 수정할 수 있는 권리를 보유합니다.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">7. 약관의 변경</h2>
+							<p>본 약관은 수시로 변경될 수 있으며, 변경된 약관은 이 페이지에 게시됩니다. 계속적인 사이트 이용은 변경된 약관에 대한 동의로 간주됩니다.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">8. 준거법</h2>
+							<p>본 약관의 해석 및 적용에 관해서는 대한민국 법률이 적용됩니다.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">9. 연락처</h2>
+							<p>본 약관에 관한 문의사항이 있으시면 <a href={`/${lang}/contact`} class="text-accent hover:underline">연락처 페이지</a>를 통해 문의해 주세요.</p>
+						</section>
+					</div>
+				) : lang === 'ja' ? (
+					<div>
+						<p class="text-sm text-gray-500 mb-8">最終更新日: 2025年11月19日</p>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">1. 規約の適用</h2>
+							<p>本利用規約は、jangwook.net（以下「サイト」）のすべてのサービス利用に適用されます。サイトを利用することにより、本規約に同意したものとみなされます。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">2. サービス内容</h2>
+							<p class="mb-2">本サイトは以下のコンテンツを提供します：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>技術ブログ記事</li>
+								<li>プロジェクトポートフォリオ</li>
+								<li>開発関連情報およびチュートリアル</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">3. 知的財産権</h2>
+							<p class="mb-4">本サイトのすべてのコンテンツ（テキスト、画像、コードなど）は著作権法により保護されています。</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>個人的、非商用目的での閲覧は許可されます。</li>
+								<li>コンテンツの複製、改変、配布は事前の書面による同意なく禁止されます。</li>
+								<li>コード例は学習目的で参照できますが、出典を明記する必要があります。</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">4. ユーザーの義務</h2>
+							<p class="mb-2">ユーザーは以下の行為を行わないことに同意します：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>サイトの正常な運営を妨害する行為</li>
+								<li>他人の個人情報を侵害する行為</li>
+								<li>違法な目的でサイトを利用する行為</li>
+								<li>サイトコンテンツを無断で収集またはスクレイピングする行為</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">5. 免責事項</h2>
+							<ul class="list-disc list-inside space-y-1">
+								<li>本サイトのコンテンツは情報提供目的のみで提供されます。</li>
+								<li>コンテンツの正確性、完全性、適時性を保証しません。</li>
+								<li>サイト利用により生じる直接的、間接的損害について責任を負いません。</li>
+								<li>外部リンクで接続される第三者サイトのコンテンツについて責任を負いません。</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">6. サービスの変更および中断</h2>
+							<p>サイト運営者は、事前通知なくサービスを変更、中断、またはコンテンツを修正する権利を留保します。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">7. 規約の変更</h2>
+							<p>本規約は随時変更される場合があり、変更された規約はこのページに掲載されます。継続的なサイト利用は、変更された規約への同意とみなされます。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">8. 準拠法</h2>
+							<p>本規約の解釈および適用については、大韓民国の法律が適用されます。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">9. お問い合わせ</h2>
+							<p>本規約に関するお問い合わせは、<a href={`/${lang}/contact`} class="text-accent hover:underline">お問い合わせページ</a>からご連絡ください。</p>
+						</section>
+					</div>
+				) : lang === 'zh' ? (
+					<div>
+						<p class="text-sm text-gray-500 mb-8">最后更新: 2025年11月19日</p>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">1. 条款适用</h2>
+							<p>本服务条款适用于jangwook.net（以下称"网站"）的所有服务使用。使用本网站即表示您同意本条款。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">2. 服务内容</h2>
+							<p class="mb-2">本网站提供以下内容：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>技术博客文章</li>
+								<li>项目作品集</li>
+								<li>开发相关信息和教程</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">3. 知识产权</h2>
+							<p class="mb-4">本网站的所有内容（文本、图片、代码等）受版权法保护。</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>允许个人、非商业目的的浏览。</li>
+								<li>未经事先书面同意，禁止复制、修改、分发内容。</li>
+								<li>代码示例可供学习目的参考，但必须注明出处。</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">4. 用户义务</h2>
+							<p class="mb-2">用户同意不进行以下行为：</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>干扰网站正常运营的行为</li>
+								<li>侵犯他人个人信息的行为</li>
+								<li>以非法目的使用网站的行为</li>
+								<li>未经授权收集或抓取网站内容的行为</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">5. 免责声明</h2>
+							<ul class="list-disc list-inside space-y-1">
+								<li>本网站内容仅供信息参考目的。</li>
+								<li>不保证内容的准确性、完整性和及时性。</li>
+								<li>对因使用网站而产生的直接或间接损害不承担责任。</li>
+								<li>对外部链接连接的第三方网站内容不承担责任。</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">6. 服务变更和中断</h2>
+							<p>网站运营者保留在不事先通知的情况下变更、中断服务或修改内容的权利。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">7. 条款变更</h2>
+							<p>本条款可能随时变更，变更后的条款将在本页面发布。继续使用网站即表示同意变更后的条款。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">8. 适用法律</h2>
+							<p>本条款的解释和适用适用大韩民国法律。</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">9. 联系我们</h2>
+							<p>如有关于本条款的问题，请通过<a href={`/${lang}/contact`} class="text-accent hover:underline">联系页面</a>与我们联系。</p>
+						</section>
+					</div>
+				) : (
+					<div>
+						<p class="text-sm text-gray-500 mb-8">Last Updated: November 19, 2025</p>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
+							<p>These Terms of Service apply to all use of jangwook.net ("Site"). By using the Site, you agree to be bound by these terms.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">2. Service Description</h2>
+							<p class="mb-2">This Site provides the following content:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>Technical blog posts</li>
+								<li>Project portfolio</li>
+								<li>Development-related information and tutorials</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">3. Intellectual Property</h2>
+							<p class="mb-4">All content on this Site (text, images, code, etc.) is protected by copyright law.</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>Viewing for personal, non-commercial purposes is permitted.</li>
+								<li>Reproduction, modification, or distribution of content is prohibited without prior written consent.</li>
+								<li>Code examples may be referenced for learning purposes, but source attribution is required.</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">4. User Obligations</h2>
+							<p class="mb-2">Users agree not to engage in the following activities:</p>
+							<ul class="list-disc list-inside space-y-1">
+								<li>Interfering with the normal operation of the Site</li>
+								<li>Violating others' personal information</li>
+								<li>Using the Site for illegal purposes</li>
+								<li>Unauthorized collection or scraping of Site content</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">5. Disclaimer</h2>
+							<ul class="list-disc list-inside space-y-1">
+								<li>Content on this Site is provided for informational purposes only.</li>
+								<li>We do not guarantee the accuracy, completeness, or timeliness of content.</li>
+								<li>We are not liable for any direct or indirect damages arising from use of the Site.</li>
+								<li>We are not responsible for content on third-party sites linked from this Site.</li>
+							</ul>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">6. Service Changes and Interruption</h2>
+							<p>The Site operator reserves the right to change, suspend services, or modify content without prior notice.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">7. Changes to Terms</h2>
+							<p>These terms may be changed from time to time, and updated terms will be posted on this page. Continued use of the Site constitutes acceptance of the modified terms.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">8. Governing Law</h2>
+							<p>The interpretation and application of these terms shall be governed by the laws of the Republic of Korea.</p>
+						</section>
+
+						<section class="mb-8">
+							<h2 class="text-2xl font-bold mb-4">9. Contact Us</h2>
+							<p>For inquiries about these terms, please contact us through our <a href={`/${lang}/contact`} class="text-accent hover:underline">contact page</a>.</p>
+						</section>
+					</div>
+				)}
+			</article>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>
