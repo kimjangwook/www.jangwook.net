@@ -1,6 +1,6 @@
 ---
-title: 'MCP Code Execution実践適用：プロジェクト構造改善'
-description: 'AnthropicのMCP Code Executionパターンを実際のプロジェクトに適用し、ディレクトリ構造を改善した事例を紹介します'
+title: MCP Code Execution実践適用：プロジェクト構造改善
+description: AnthropicのMCP Code Executionパターンを実際のプロジェクトに適用し、ディレクトリ構造を改善した事例を紹介します
 pubDate: '2025-11-19'
 heroImage: ../../../assets/blog/mcp-code-execution-practical-implementation-hero.jpg
 tags:
@@ -12,33 +12,43 @@ relatedPosts:
   - slug: anthropic-code-execution-mcp
     score: 0.95
     reason:
-      ko: 'MCP Code Execution의 이론적 기반을 다루는 선행 포스트로, 본 실전 적용 가이드의 필수 사전 지식입니다.'
-      ja: MCP Code Executionの理論的基盤を扱う前提記事で、本実践ガイドの必須予備知識です。
-      en: 'Prerequisite post covering theoretical foundations of MCP Code Execution, essential background for this practical guide.'
-  - slug: bigquery-mcp-prefix-filtering
-    score: 0.82
-    reason:
-      ko: 'MCP 서버 패턴과 아키텍처 설계를 다루며, 보안 구성 접근법이 유사합니다.'
-      ja: MCPサーバーパターンとアーキテクチャ設計を扱い、セキュリティ構成アプローチが類似しています。
-      en: 'Covers MCP server patterns and architecture design with similar security configuration approaches.'
-  - slug: claude-code-hooks-workflow
-    score: 0.78
-    reason:
-      ko: 'Claude Code 워크플로우 자동화를 보완하는 내용으로, Code Execution과 함께 활용하면 효과적입니다.'
-      ja: Claude Codeワークフロー自動化を補完する内容で、Code Executionと併用すると効果的です。
-      en: 'Complements Claude Code workflow automation, effective when combined with Code Execution patterns.'
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
   - slug: langgraph-multi-agent
-    score: 0.76
+    score: 0.95
     reason:
-      ko: 'Code Execution 패턴을 익힌 후 멀티 에이전트 시스템으로 확장하는 자연스러운 다음 단계입니다.'
-      ja: Code Executionパターン習得後、マルチエージェントシステムへ拡張する自然な次のステップです。
-      en: 'Natural next step to expand into multi-agent systems after mastering Code Execution patterns.'
-  - slug: prompt-engineering-agent-improvements
-    score: 0.74
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: bigquery-mcp-prefix-filtering
+    score: 0.95
     reason:
-      ko: '에이전트 프롬프트 최적화 기법을 다루며, Code Execution의 코드 생성 품질 향상에 적용 가능합니다.'
-      ja: エージェントプロンプト最適化技法を扱い、Code Executionのコード生成品質向上に適用可能です。
-      en: 'Covers agent prompt optimization techniques applicable to improving Code Execution code generation quality.'
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: google-analytics-mcp-automation
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+  - slug: specification-driven-development
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
 ---
 
 ## 概要

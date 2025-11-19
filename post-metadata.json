@@ -1,4 +1,15 @@
 {
+  "mcp-servers-toolkit-introduction": {
+    "pubDate": "2025-11-23",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.3,
+      "ai-ml": 0.8,
+      "devops": 0.7,
+      "architecture": 0.6
+    }
+  },
   "deep-agents-architecture-optimization": {
     "pubDate": "2025-11-22",
     "difficulty": 4,

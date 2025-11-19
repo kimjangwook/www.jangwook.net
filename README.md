@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-18
+**최신 포스트 날짜**: 2025-11-23
 
-**총 포스트 수**: 44개 (한국어 기준)
+**총 포스트 수**: 45개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Deep Agents 패러다임으로 AI 에이전트 시스템 최적화하기** (2025-11-18)
+1. **내가 사용하는 MCP 서버 도구 모음 완벽 가이드** (2025-11-23)
+
+   - Claude Code 개발 생산성을 극대화하는 7가지 MCP 서버 설정과 활용법. Serena, Context7, Sequential Thinking 등 실전 경험 공유
+   - **핵심 내용**: MCP 프로토콜 개요, 7개 MCP 서버 (Serena 시맨틱 코드 분석, Context7 최신 문서 검색, Sequential Thinking 단계별 문제 해결, Chrome DevTools MCP 성능 분석, Playwright MCP 브라우저 자동화, Gemini CLI MCP AI 검색/분석, Gemini Google Search 웹 검색), 전체 설정 JSON, 조합 활용 사례 (코드 분석+문서 검색, 브라우저 테스트+성능 분석, 복잡한 문제 해결 워크플로우), 추천 시작 서버 (Context7 → Serena → Chrome DevTools)
+
+2. **Deep Agents 패러다임으로 AI 에이전트 시스템 최적화하기** (2025-11-22)
 
    - LangChain과 Philipp Schmid의 Deep Agents 개념을 분석하고 에이전트 구조를 최적화한 실전 가이드
    - **핵심 내용**: Deep Agents vs Shallow Agents (Agent 1.0 vs 2.0), 4대 원칙 (Explicit Planning, Hierarchical Delegation, Persistent Memory, Extreme Context Engineering), 현재 구조 분석 (65% 준수율), Orchestrator 에이전트 도입, 5개 클러스터 구조 (content-creation, research-analysis, seo-marketing, content-discovery, operations), Planning Protocol (계획 생성/추적/재계획), State Management (task-state.json, task-history.json), Recovery Protocol (6가지 실패 유형, 5가지 복구 전략), 예상 효과 (5-15 스텝 → 100+ 스텝, 90%+ 자동 복구율)
@@ -585,6 +590,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-18 (Anthropic Code Execution with MCP 포스트 발행)
+**Last Updated**: 2025-11-23 (MCP 서버 도구 모음 완벽 가이드 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
