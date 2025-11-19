@@ -1,39 +1,235 @@
 ---
-import { defaultLang } from '../lib/i18n/languages';
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_META } from '../consts';
 ---
 
 <!doctype html>
-<html lang={defaultLang}>
+<html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="google-adsense-account" content="ca-pub-7556938384772610">
-		<title>Redirecting...</title>
-		<script>
-			// 브라우저의 선호 언어를 감지하여 리다이렉트
-			const supportedLangs = ['ko', 'ja', 'en'];
-			const defaultLang = 'en';
-
-			// navigator.languages 또는 navigator.language에서 언어 코드 추출
-			const browserLangs = navigator.languages || [navigator.language || navigator.userLanguage];
-
-			let targetLang = defaultLang;
-			for (const lang of browserLangs) {
-				const langCode = lang.split('-')[0].toLowerCase();
-				if (supportedLangs.includes(langCode)) {
-					targetLang = langCode;
-					break;
-				}
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.lang-card {
+				position: relative;
+				overflow: hidden;
 			}
-
-			// 감지된 언어로 리다이렉트
-			window.location.replace(`/${targetLang}/`);
-		</script>
-		<noscript>
-			<meta http-equiv="refresh" content="0; url=/en/" />
-		</noscript>
+			.lang-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(90deg, #667eea, #764ba2);
+				transform: scaleX(0);
+				transition: transform 0.3s ease;
+			}
+			.lang-card:hover::before {
+				transform: scaleX(1);
+			}
+		</style>
 	</head>
-	<body>
-		<p>Redirecting...</p>
+	<body class="bg-gray-50 min-h-screen">
+		<!-- Header -->
+		<header class="bg-white shadow-sm">
+			<div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+				<a href="/" class="text-2xl font-bold gradient-text">{SITE_TITLE}</a>
+				<nav class="flex gap-4">
+					<a href="https://github.com/kimjangwook" target="_blank" class="text-gray-600 hover:text-gray-900">
+						GitHub
+					</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="max-w-6xl mx-auto px-4 py-12">
+			<!-- Hero Section -->
+			<section class="text-center mb-16">
+				<h1 class="text-5xl font-bold mb-4">
+					<span class="gradient-text">Kim Jangwook</span>
+				</h1>
+				<p class="text-xl text-gray-600 mb-2">Renew day by day!</p>
+				<p class="text-lg text-gray-500 max-w-2xl mx-auto">
+					Welcome to my digital space. Explore my projects, read my tech blog in multiple languages, and discover innovative ideas.
+				</p>
+			</section>
+
+			<!-- Blog Languages Section -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 text-center">
+					<span class="gradient-text">Tech Blog</span>
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<a href="/ko/" class="lang-card card-hover bg-white rounded-xl p-6 shadow-md">
+						<div class="text-4xl mb-3">🇰🇷</div>
+						<h3 class="text-xl font-bold mb-2">한국어</h3>
+						<p class="text-gray-600 text-sm">{SITE_META.ko.description}</p>
+					</a>
+					<a href="/en/" class="lang-card card-hover bg-white rounded-xl p-6 shadow-md">
+						<div class="text-4xl mb-3">🇺🇸</div>
+						<h3 class="text-xl font-bold mb-2">English</h3>
+						<p class="text-gray-600 text-sm">{SITE_META.en.description}</p>
+					</a>
+					<a href="/ja/" class="lang-card card-hover bg-white rounded-xl p-6 shadow-md">
+						<div class="text-4xl mb-3">🇯🇵</div>
+						<h3 class="text-xl font-bold mb-2">日本語</h3>
+						<p class="text-gray-600 text-sm">{SITE_META.ja.description}</p>
+					</a>
+					<a href="/zh/" class="lang-card card-hover bg-white rounded-xl p-6 shadow-md">
+						<div class="text-4xl mb-3">🇨🇳</div>
+						<h3 class="text-xl font-bold mb-2">中文</h3>
+						<p class="text-gray-600 text-sm">{SITE_META.zh.description}</p>
+					</a>
+				</div>
+			</section>
+
+			<!-- Personal Projects Section -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 text-center">
+					<span class="gradient-text">My Projects</span>
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<a href="https://github.com/kimjangwook/ssr-repeater" target="_blank" class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">SSR Survey Analysis</h3>
+						<p class="text-sm text-gray-500 mb-3">Python, OpenAI API, LLM, Data Science</p>
+						<p class="text-gray-600 text-sm">
+							LLM-based Semantic Similarity Rating methodology for analyzing blog revisit intent. Achieved ICC reliability of 0.833.
+						</p>
+					</a>
+
+					<a href="https://kimjangwook.github.io/svelte-weather/public/" target="_blank" class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Weather Information System</h3>
+						<p class="text-sm text-gray-500 mb-3">Svelte</p>
+						<p class="text-gray-600 text-sm">
+							A modern weather application built with Svelte framework, providing real-time meteorological data.
+						</p>
+					</a>
+
+					<a href="https://kimjangwook.github.io/letsencrypt-domain-checker/public/" target="_blank" class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Let's Encrypt Domain Checker</h3>
+						<p class="text-sm text-gray-500 mb-3">Web Tool</p>
+						<p class="text-gray-600 text-sm">
+							A tool for checking and managing Let's Encrypt SSL certificates for domains.
+						</p>
+					</a>
+
+					<a href="https://drone-info.jangwook.net/" target="_blank" class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Drone Information Hub</h3>
+						<p class="text-sm text-gray-500 mb-3">Information Resource</p>
+						<p class="text-gray-600 text-sm">
+							Comprehensive information resource about drones, regulations, and best practices.
+						</p>
+					</a>
+
+					<a href="https://libraries.jangwook.net/" target="_blank" class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Practical Libraries Collection</h3>
+						<p class="text-sm text-gray-500 mb-3">Developer Tools</p>
+						<p class="text-gray-600 text-sm">
+							A curated collection of practical libraries and tools for professional development work.
+						</p>
+					</a>
+
+					<a href="https://answercoffee.kr/" target="_blank" class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Answer Coffee</h3>
+						<p class="text-sm text-gray-500 mb-3">Nuxt.js</p>
+						<p class="text-gray-600 text-sm">
+							A Nuxt.js-based web application service.
+						</p>
+					</a>
+				</div>
+			</section>
+
+			<!-- Professional Works Section -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 text-center">
+					<span class="gradient-text">Professional Works</span>
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2">Invoice Management System</h3>
+						<p class="text-sm text-gray-500 mb-3">Laravel, Vue.js, AWS</p>
+						<p class="text-gray-600 text-sm mb-3">
+							An application created to assist freelancers with invoice management.
+						</p>
+						<ul class="text-sm text-gray-600 space-y-1">
+							<li>• Profile management</li>
+							<li>• Billing partner management</li>
+							<li>• Invoice management</li>
+						</ul>
+					</div>
+
+					<div class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2">Dashboard System</h3>
+						<p class="text-sm text-gray-500 mb-3">Fuel PHP, Laravel, Vue.js, AWS</p>
+						<p class="text-gray-600 text-sm mb-3">
+							A comprehensive system that manages company employees, clients, man-hours, sales, and subcontracts.
+						</p>
+						<ul class="text-sm text-gray-600 space-y-1">
+							<li>• Internal information management</li>
+							<li>• Man-hour & billing management</li>
+							<li>• Report management</li>
+						</ul>
+					</div>
+
+					<div class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2">CDP (Customer Data Platform)</h3>
+						<p class="text-sm text-gray-500 mb-3">Python, Nuxt.js, GCP, AWS</p>
+						<p class="text-gray-600 text-sm">
+							A system that supports the construction of a data warehouse to store client data and enables website personalization.
+						</p>
+					</div>
+
+					<div class="card-hover bg-white rounded-xl p-6 shadow-md">
+						<h3 class="text-xl font-bold mb-2">EFO (Entry Form Optimization)</h3>
+						<p class="text-sm text-gray-500 mb-3">TypeScript, GCP</p>
+						<p class="text-gray-600 text-sm">
+							A service designed to reduce form-filling user stress and prevent abandonment through intelligent form-filling support.
+						</p>
+					</div>
+
+					<a href="https://www.remotax.jp/" target="_blank" class="card-hover bg-white rounded-xl p-6 shadow-md md:col-span-2">
+						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">REMO TAX: Tax-Free Digitalization</h3>
+						<p class="text-sm text-gray-500 mb-3">Tax-Free Service</p>
+						<p class="text-gray-600 text-sm mb-3">
+							A tax-free procedure agency service for retail stores. Simplifies the complex duty-free process through smartphone-based operations.
+						</p>
+						<ul class="text-sm text-gray-600 space-y-1">
+							<li>• Simple processing: Staff only need to photograph passports and receipts</li>
+							<li>• Fast processing: Average 1-2 minutes per transaction</li>
+							<li>• Low cost: Initial fee of 10,780 yen, no monthly fees</li>
+						</ul>
+					</a>
+				</div>
+			</section>
+
+			<!-- Career Section -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold mb-8 text-center">
+					<span class="gradient-text">Career</span>
+				</h2>
+				<div class="flex flex-wrap justify-center gap-4">
+					<div class="bg-white rounded-xl px-6 py-4 shadow-md">
+						<span class="font-semibold">SPIKA Inc.</span>
+					</div>
+					<div class="bg-white rounded-xl px-6 py-4 shadow-md">
+						<span class="font-semibold">Bravance Technologies Inc.</span>
+					</div>
+					<div class="bg-white rounded-xl px-6 py-4 shadow-md">
+						<span class="font-semibold">Connecty Inc.</span>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-white border-t">
+			<div class="max-w-6xl mx-auto px-4 py-8 text-center">
+				<p class="text-gray-600">
+					&copy; {new Date().getFullYear()} {SITE_TITLE}. All rights reserved.
+				</p>
+				<p class="text-sm text-gray-500 mt-2">
+					{SITE_DESCRIPTION}
+				</p>
+			</div>
+		</footer>
 	</body>
 </html>
