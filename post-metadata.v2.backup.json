@@ -4,7 +4,7 @@
       "slug": "blog-launch-analysis-report",
       "language": "ko",
       "pubDate": "2025-10-06",
-      "title": "www.jangwook.net 블로그 런칭 분석 리포트: 데이터 기반 기술 블로그의 시작",
+      "title": "jangwook.net 블로그 런칭 분석 리포트: 데이터 기반 기술 블로그의 시작",
       "summary": "Astro 기반 기술 블로그 런칭과 GA4 MCP를 활용한 자동화 분석 시스템 구축. 실시간/역사적 데이터 파이프라인, 실전 쿼리 예제, KPI 프레임워크를 통해 데이터 기반 블로그 운영 방법을 투명하게 공유합니다.",
       "mainTopics": [
         "GA4 MCP 통합",
@@ -75,13 +75,7 @@
         "자동 이미지 생성",
         "메타데이터 관리"
       ],
-      "techStack": [
-        "Claude Code",
-        "LLM",
-        "Astro",
-        "Gemini API",
-        "Markdown"
-      ],
+      "techStack": ["Claude Code", "LLM", "Astro", "Gemini API", "Markdown"],
       "difficulty": 3,
       "categoryScores": {
         "automation": 0.9,
@@ -323,13 +317,7 @@
         "정적 사이트 스케줄링",
         "CI/CD 자동화"
       ],
-      "techStack": [
-        "Astro",
-        "GitHub Actions",
-        "Node.js",
-        "YAML",
-        "Git"
-      ],
+      "techStack": ["Astro", "GitHub Actions", "Node.js", "YAML", "Git"],
       "difficulty": 3,
       "categoryScores": {
         "automation": 0.85,
@@ -571,13 +559,7 @@
         "시행착오 해결 (YAML, 권한, 경로)",
         "토큰 최적화 (44% 절감)"
       ],
-      "techStack": [
-        "Claude Code",
-        "Agent Skills",
-        "Python",
-        "YAML",
-        "Git"
-      ],
+      "techStack": ["Claude Code", "Agent Skills", "Python", "YAML", "Git"],
       "difficulty": 3,
       "categoryScores": {
         "automation": 0.95,
@@ -788,13 +770,7 @@
         "CI/CD 파이프라인 통합",
         "감사 추적 및 알림"
       ],
-      "techStack": [
-        "Claude Code",
-        "Bash",
-        "Python",
-        "GitHub Actions",
-        "N8N"
-      ],
+      "techStack": ["Claude Code", "Bash", "Python", "GitHub Actions", "N8N"],
       "difficulty": 4,
       "categoryScores": {
         "automation": 0.95,
@@ -881,13 +857,7 @@
         "ROI 측정",
         "베스트 프랙티스"
       ],
-      "techStack": [
-        "ChatGPT",
-        "Claude",
-        "Gemini",
-        "n8n",
-        "BigQuery"
-      ],
+      "techStack": ["ChatGPT", "Claude", "Gemini", "n8n", "BigQuery"],
       "difficulty": 3,
       "categoryScores": {
         "automation": 0.95,

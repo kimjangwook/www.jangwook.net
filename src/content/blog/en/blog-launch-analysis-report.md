@@ -1,6 +1,6 @@
 ---
 title: >-
-  www.jangwook.net Blog Launch Analysis Report: The Beginning of a Data-Driven
+  jangwook.net Blog Launch Analysis Report: The Beginning of a Data-Driven
   Technical Blog
 description: >-
   Blog launch GA4 data analysis, practical MCP query examples, and 3-month
@@ -55,7 +55,7 @@ relatedPosts:
         automation, DevOps, architecture topics.
 ---
 
-# www.jangwook.net Blog Launch Analysis Report
+# jangwook.net Blog Launch Analysis Report
 
 > **Transparency Declaration**: This report is an honest record of the early launch stage. Instead of impressive numbers, I'm sharing actual data and the learning process as it is.
 
@@ -63,7 +63,7 @@ relatedPosts:
 
 ### Background of Blog Launch
 
-In October 2025, I officially launched www.jangwook.net, a technical blog based on Astro 5.14. This blog is designed to be more than just a technical blog - it's a **platform that realizes content automation, SEO optimization, and data-driven decision making**.
+In October 2025, I officially launched jangwook.net, a technical blog based on Astro 5.14. This blog is designed to be more than just a technical blog - it's a **platform that realizes content automation, SEO optimization, and data-driven decision making**.
 
 **Key Differentiators**:
 
@@ -75,7 +75,7 @@ In October 2025, I officially launched www.jangwook.net, a technical blog based 
 ### Analysis Environment
 
 - **GA4 Property ID**: 395101361
-- **Property Name**: www.jangwook.net
+- **Property Name**: jangwook.net
 - **Analysis Tools**: Google Analytics 4 (MCP Integration)
 - **Analysis Date**: October 6, 2025
 - **Time Zone**: Asia/Tokyo (JST)
@@ -308,7 +308,7 @@ Typical personal technical blog metrics for the first 3 months:
 - Mobile: 25-35%
 - Tablet: 5-10%
 
-### 4.2 www.jangwook.net Goal Setting
+### 4.2 jangwook.net Goal Setting
 
 **1-month target (November 2025)**:
 
@@ -595,7 +595,7 @@ A: Set **independent benchmarks** for each language. Korean and English content 
 
 ### 10.1 Early Launch Evaluation
 
-www.jangwook.net blog has been successfully launched technically:
+jangwook.net blog has been successfully launched technically:
 
 ✅ **Success Factors**:
 
@@ -646,7 +646,7 @@ What makes this report special is that it shares **a genuine journey, not perfec
 
 Many analysis reports are full of impressive graphs and numbers, but the failures, trial and error, and learning process behind them are not shared.
 
-**www.jangwook.net is different. We:**
+**jangwook.net is different. We:**
 
 - ❌ Don't hide failures → Transparently disclose even data scarcity
 - 📚 Share what we learned → Understanding GA4 pipeline, MCP usage
@@ -665,7 +665,7 @@ In the next report, I'll share deeper insights along with actual data.
 
 ### 📅 Next Report Preview
 
-**Title**: "What a Week of Data Tells Us: www.jangwook.net First Weekly Analysis"
+**Title**: "What a Week of Data Tells Us: jangwook.net First Weekly Analysis"
 **Publication Date**: October 13, 2025 (1 week later)
 **Contents**:
 

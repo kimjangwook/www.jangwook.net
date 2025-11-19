@@ -145,7 +145,7 @@ Output SEO report with specific improvements.
 ### GEMINI.md 구조
 
 ```markdown
-# Project: www.jangwook.net
+# Project: jangwook.net
 
 [General instructions...]
 

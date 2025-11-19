@@ -225,7 +225,7 @@ gemini init
 ```yaml
 # .gemini/config.yaml
 project:
-  name: "www.jangwook.net"
+  name: "jangwook.net"
   type: "astro"
 
 context:

@@ -1,6 +1,6 @@
 # 완전한 마이그레이션 예제
 
-`www.jangwook.net` 프로젝트를 Claude Code에서 GitHub Copilot CLI로 마이그레이션하는 전체 프로세스를 단계별로 설명합니다.
+`jangwook.net` 프로젝트를 Claude Code에서 GitHub Copilot CLI로 마이그레이션하는 전체 프로세스를 단계별로 설명합니다.
 
 ## 목차
 
@@ -220,7 +220,7 @@ mkdir -p .github
 
 # 글로벌 가이드라인 (핵심 내용만)
 cat > .github/copilot-instructions.md << 'EOF'
-# www.jangwook.net - Project Guidelines
+# jangwook.net - Project Guidelines
 
 ## Project Overview
 

@@ -145,9 +145,9 @@ export async function GET(context) {
 ### 确认RSS订阅
 
 构建后可在以下URL确认RSS订阅:
-- 韩语: `https://www.jangwook.net/rss-ko.xml`
-- 英语: `https://www.jangwook.net/rss-en.xml`
-- 日语: `https://www.jangwook.net/rss-ja.xml`
+- 韩语: `https://jangwook.net/rss-ko.xml`
+- 英语: `https://jangwook.net/rss-en.xml`
+- 日语: `https://jangwook.net/rss-ja.xml`
 
 ## 第2步:配置n8n工作流程
 
@@ -171,7 +171,7 @@ n8n是一个无代码/低代码工作流程自动化工具。通过可视化界�
         }
       ]
     },
-    "feedUrl": "https://www.jangwook.net/rss-ko.xml"
+    "feedUrl": "https://jangwook.net/rss-ko.xml"
   },
   "type": "n8n-nodes-base.rssFeedReadTrigger"
 }
@@ -355,7 +355,7 @@ n8n是一个无代码/低代码工作流程自动化工具。通过可视化界�
 
 #ClaudeCode #AI开发 #生产力提升
 
-https://www.jangwook.net/ko/blog/ko/claude-code-best-practices/
+https://jangwook.net/ko/blog/ko/claude-code-best-practices/
 ```
 
 <strong>AI生成的LinkedIn帖子</strong>:
@@ -376,7 +376,7 @@ https://www.jangwook.net/ko/blog/ko/claude-code-best-practices/
 
 #AI开发 #ClaudeCode #开发者生产力 #最佳实践 #软件工程
 
-https://www.jangwook.net/ko/blog/ko/claude-code-best-practices/
+https://jangwook.net/ko/blog/ko/claude-code-best-practices/
 ```
 
 ## 第4步:实战应用技巧

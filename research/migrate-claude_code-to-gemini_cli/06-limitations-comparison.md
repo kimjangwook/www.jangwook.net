@@ -260,7 +260,7 @@ This file provides guidance to Claude Code...
 
 **예시**:
 ```markdown
-# Project: www.jangwook.net
+# Project: jangwook.net
 
 @.gemini/docs/astro-guide.md
 @.gemini/docs/seo-guide.md

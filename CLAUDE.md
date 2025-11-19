@@ -527,7 +527,7 @@ GEMINI_API_KEY=your_api_key_here
 ```bash
 # 1. 저장소 클론
 git clone <repository-url>
-cd www.jangwook.net
+cd jangwook.net
 
 # 2. 의존성 설치
 npm install

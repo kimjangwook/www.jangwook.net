@@ -222,7 +222,7 @@ n8nは視覚的なワークフロー自動化ツールです。以下の6つの�
 ```json
 {
   "parameters": {
-    "url": "https://www.jangwook.net/rss-ja.xml",
+    "url": "https://jangwook.net/rss-ja.xml",
     "pollTimes": {
       "item": [
         {
@@ -535,7 +535,7 @@ GitHub Actions→RSS→n8n→AI（Gemini）→SNS投稿までの
 
 #automation #n8n #rss
 
-https://www.jangwook.net/blog/ja/n8n-rss-automation
+https://jangwook.net/blog/ja/n8n-rss-automation
 ```
 
 <strong>LinkedIn投稿</strong>:
@@ -552,7 +552,7 @@ Google Gemini 2.5 Proがプラットフォームごとにコンテンツを最�
 
 #automation #n8n #rss #github-actions #ai
 
-https://www.jangwook.net/blog/ja/n8n-rss-automation
+https://jangwook.net/blog/ja/n8n-rss-automation
 ```
 
 ## 結論: 自動化で時間を取り戻す

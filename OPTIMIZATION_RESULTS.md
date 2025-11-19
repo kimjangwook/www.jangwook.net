@@ -79,7 +79,7 @@
 ```javascript
 // astro.config.mjs
 export default defineConfig({
-  site: 'https://www.jangwook.net',
+  site: 'https://jangwook.net',
   integrations: [mdx(), sitemap(), tailwind()],
 });
 ```
@@ -88,7 +88,7 @@ export default defineConfig({
 ```javascript
 // astro.config.mjs
 export default defineConfig({
-  site: 'https://www.jangwook.net',
+  site: 'https://jangwook.net',
   integrations: [mdx(), sitemap(), tailwind()],
   image: {
     service: {

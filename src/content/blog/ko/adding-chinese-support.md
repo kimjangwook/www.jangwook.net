@@ -381,7 +381,7 @@ import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 import { filterPostsByDate } from '../lib/content';
 
-const SITE = 'https://www.jangwook.net';
+const SITE = 'https://jangwook.net';
 const LANG = 'zh';
 
 // 중국어 정적 페이지

@@ -67,7 +67,7 @@ Context:
 - Analysis Period: [start-date] to [analysis-date]
 - Report Type: [weekly/monthly/quarterly/custom]
 - Previous Report: [path to last report, if exists]
-- Property ID: 395101361 (www.jangwook.net)
+- Property ID: 395101361 (jangwook.net)
 
 Task:
 1. Collect GA4 data for the period using MCP tools
@@ -691,7 +691,7 @@ January 2026:
 ## Configuration
 
 ### Default Settings
-- Property ID: 395101361 (www.jangwook.net)
+- Property ID: 395101361 (jangwook.net)
 - Default Languages: ko, ja, en
 - Default Period: Since last report (or blog launch date)
 - Default Report Type: Weekly (if <= 14 days), Monthly (if <= 45 days), Quarterly (if > 45 days)

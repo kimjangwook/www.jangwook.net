@@ -140,9 +140,9 @@ export async function GET(context) {
 ### RSS 피드 확인
 
 빌드 후 다음 URL에서 RSS 피드를 확인할 수 있습니다:
-- 한국어: `https://www.jangwook.net/rss-ko.xml`
-- 영어: `https://www.jangwook.net/rss-en.xml`
-- 일본어: `https://www.jangwook.net/rss-ja.xml`
+- 한국어: `https://jangwook.net/rss-ko.xml`
+- 영어: `https://jangwook.net/rss-en.xml`
+- 일본어: `https://jangwook.net/rss-ja.xml`
 
 ## 2단계: n8n 워크플로우 구성
 
@@ -166,7 +166,7 @@ n8n은 노코드/로우코드 워크플로우 자동화 도구입니다. 시각�
         }
       ]
     },
-    "feedUrl": "https://www.jangwook.net/rss-ko.xml"
+    "feedUrl": "https://jangwook.net/rss-ko.xml"
   },
   "type": "n8n-nodes-base.rssFeedReadTrigger"
 }
@@ -350,7 +350,7 @@ Claude Code Best Practices를 실제 프로젝트에 적용한 경험을 바탕�
 
 #ClaudeCode #AI개발 #생산성향상
 
-https://www.jangwook.net/ko/blog/ko/claude-code-best-practices/
+https://jangwook.net/ko/blog/ko/claude-code-best-practices/
 ```
 
 <strong>AI가 생성한 LinkedIn 포스트</strong>:
@@ -371,7 +371,7 @@ Anthropic이 공개한 Claude Code Best Practices를 깊이 분석하고 실제 
 
 #AI개발 #ClaudeCode #개발자생산성 #베스트프랙티스 #소프트웨어엔지니어링
 
-https://www.jangwook.net/ko/blog/ko/claude-code-best-practices/
+https://jangwook.net/ko/blog/ko/claude-code-best-practices/
 ```
 
 ## 4단계: 실전 활용 팁

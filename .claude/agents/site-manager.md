@@ -134,7 +134,7 @@ npm run astro check
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://www.jangwook.net",
+  site: "https://jangwook.net",
   output: "static", // or 'server' for SSR
   image: {
     service: {

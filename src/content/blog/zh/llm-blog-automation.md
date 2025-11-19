@@ -727,7 +727,7 @@ npm run deploy       # Vercel部署
 
 ✅ 博客文章发布完成!
 📊 性能分数: 98/100
-🔗 URL: https://www.jangwook.net/blog/prompt-engineering-guide
+🔗 URL: https://jangwook.net/blog/prompt-engineering-guide
 ```
 
 <strong>总耗时: 3分30秒</strong> ⏱️

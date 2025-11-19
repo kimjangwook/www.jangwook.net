@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-const SITE = 'https://www.jangwook.net';
+const SITE = 'https://jangwook.net';
 
 // List of language-specific sitemaps
 const sitemaps = [

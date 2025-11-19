@@ -973,7 +973,7 @@ Use `/prompts:write-post` for each individual post in the series.
 
 ## 실전 변환 예제
 
-### 현재 프로젝트 (www.jangwook.net) 완전 변환
+### 현재 프로젝트 (jangwook.net) 완전 변환
 
 #### Before (Claude Code)
 

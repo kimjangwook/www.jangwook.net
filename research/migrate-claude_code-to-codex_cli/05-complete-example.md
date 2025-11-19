@@ -11,7 +11,7 @@
 
 ## 프로젝트 개요
 
-### 현재 프로젝트: www.jangwook.net
+### 현재 프로젝트: jangwook.net
 
 **기술 스택**:
 - Framework: Astro 5.14.1
@@ -337,7 +337,7 @@ experimental_instructions_file = "/Users/username/.codex/GLOBAL_INSTRUCTIONS.md"
 # Astro Blog Automation Project
 
 ## Project Overview
-Astro-based blog and career management automation project for www.jangwook.net.
+Astro-based blog and career management automation project for jangwook.net.
 
 **Technology Stack**:
 - Framework: Astro 5.14.1
@@ -722,7 +722,7 @@ description: Technical blog post writing assistant
 argument-hint: TOPIC="<topic>" LANG=<ko|en|ja|zh> [OUTLINE="<outline>"]
 ---
 
-You are an expert technical blog post writing assistant for www.jangwook.net.
+You are an expert technical blog post writing assistant for jangwook.net.
 
 ## Topic
 $TOPIC
@@ -805,7 +805,7 @@ description: SEO audit and optimization
 argument-hint: [POST=<slug>] [--fix]
 ---
 
-You are an SEO optimization specialist for www.jangwook.net.
+You are an SEO optimization specialist for jangwook.net.
 
 ## Target
 $POST (if not specified, audit all posts)

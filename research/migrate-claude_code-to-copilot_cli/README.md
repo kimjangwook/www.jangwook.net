@@ -189,7 +189,7 @@ GitHub의 공식 AI 코딩 어시스턴트 CLI:
 ### 4. [완전한 마이그레이션 예제](./04-complete-example.md)
 
 **내용**:
-- www.jangwook.net 프로젝트 완전 마이그레이션
+- jangwook.net 프로젝트 완전 마이그레이션
 - Step-by-step 실행 가이드
 - Before/After 비교
 - 검증 및 테스트

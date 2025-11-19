@@ -10,14 +10,11 @@
             }
           ]
         },
-        "feedUrl": "https://www.jangwook.net/rss-ja.xml"
+        "feedUrl": "https://jangwook.net/rss-ja.xml"
       },
       "type": "n8n-nodes-base.rssFeedReadTrigger",
       "typeVersion": 1,
-      "position": [
-        16,
-        160
-      ],
+      "position": [16, 160],
       "id": "719c46a2-67ed-4ca6-9b1d-da5803270d79",
       "name": "RSS Feed Trigger"
     },
@@ -28,10 +25,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [
-        224,
-        160
-      ],
+      "position": [224, 160],
       "id": "d8e3e4e6-882e-4d59-a074-6beae686060b",
       "name": "HTTP Request"
     },
@@ -44,10 +38,7 @@
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
-      "position": [
-        432,
-        160
-      ],
+      "position": [432, 160],
       "id": "7ca1dc60-9fad-4c1b-8d88-9a112b1d2193",
       "name": "AI Agent"
     },
@@ -58,10 +49,7 @@
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
-      "position": [
-        304,
-        368
-      ],
+      "position": [304, 368],
       "id": "7e363dec-0d0f-43be-b651-3e4af94f3591",
       "name": "Google Gemini Chat Model",
       "credentials": {
@@ -77,10 +65,7 @@
       },
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
-      "position": [
-        608,
-        368
-      ],
+      "position": [608, 368],
       "id": "ab549a1a-bffa-4779-9cce-2d2eec038466",
       "name": "Structured Output Parser"
     },
@@ -91,10 +76,7 @@
       },
       "type": "n8n-nodes-base.twitter",
       "typeVersion": 2,
-      "position": [
-        784,
-        160
-      ],
+      "position": [784, 160],
       "id": "6d014568-1528-43c6-8e40-d3bc0a80ad66",
       "name": "Create Tweet",
       "credentials": {
@@ -112,10 +94,7 @@
       },
       "type": "n8n-nodes-base.linkedIn",
       "typeVersion": 1,
-      "position": [
-        992,
-        160
-      ],
+      "position": [992, 160],
       "id": "acde1852-78be-4b57-93d5-3a26c7995381",
       "name": "Create a post",
       "credentials": {

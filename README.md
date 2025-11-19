@@ -1,4 +1,4 @@
-# www.jangwook.net
+# jangwook.net
 
 Astro 5.14 기반의 다국어 기술 블로그 및 포트폴리오 사이트
 
@@ -300,7 +300,7 @@ npm run astro check
 ## 📂 프로젝트 구조
 
 ```
-www.jangwook.net/
+jangwook.net/
 ├── .claude/              # Claude Code 설정
 │   ├── agents/          # 전문 에이전트 정의
 │   │   ├── web-researcher.md
@@ -580,7 +580,7 @@ MIT License
 
 **Jangwook**
 
-- Website: [www.jangwook.net](https://www.jangwook.net)
+- Website: [jangwook.net](https://jangwook.net)
 - GitHub: [@jangwook](https://github.com/jangwook)
 
 ---

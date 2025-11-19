@@ -2,7 +2,7 @@
 
 ## 개요
 
-현재 프로젝트(`www.jangwook.net`)의 Claude Code 설정을 Gemini CLI로 완전히 마이그레이션하는 실전 예제입니다.
+현재 프로젝트(`jangwook.net`)의 Claude Code 설정을 Gemini CLI로 완전히 마이그레이션하는 실전 예제입니다.
 
 ## 현재 상태 (Claude Code)
 
@@ -186,7 +186,7 @@ python convert_instructions.py CLAUDE.md GEMINI.md
 
 **GEMINI.md** (변환 후 수동 편집):
 ```markdown
-# Project: www.jangwook.net
+# Project: jangwook.net
 
 ## Overview
 Astro-based technical blog and portfolio automation project

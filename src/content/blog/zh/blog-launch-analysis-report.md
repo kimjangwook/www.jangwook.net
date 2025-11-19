@@ -1,5 +1,5 @@
 ---
-title: 'www.jangwook.net 博客启动分析报告：数据驱动技术博客的开端'
+title: 'jangwook.net 博客启动分析报告：数据驱动技术博客的开端'
 description: '博客启动初期 GA4 数据分析、实战 MCP 查询示例、以及 3 个月增长战略——透明分享技术博客旅程的起点'
 pubDate: '2025-10-06'
 heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
@@ -55,7 +55,7 @@ relatedPosts:
       zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题连接。
 ---
 
-# www.jangwook.net 博客启动分析报告
+# jangwook.net 博客启动分析报告
 
 > <strong>透明度声明</strong>：本报告是博客启动初期的真实记录。与其展示华丽的数字，我们更愿意如实分享实际数据和学习过程。
 
@@ -63,7 +63,7 @@ relatedPosts:
 
 ### 博客启动背景
 
-2025 年 10 月，我们正式启动了基于 Astro 5.14 的技术博客 www.jangwook.net。这个博客不仅仅是一个技术博客，而是被设计为<strong>实现内容自动化、SEO 优化和数据驱动决策的平台</strong>。
+2025 年 10 月，我们正式启动了基于 Astro 5.14 的技术博客 jangwook.net。这个博客不仅仅是一个技术博客，而是被设计为<strong>实现内容自动化、SEO 优化和数据驱动决策的平台</strong>。
 
 <strong>核心差异化特点</strong>：
 
@@ -75,7 +75,7 @@ relatedPosts:
 ### 分析环境
 
 - <strong>GA4 Property ID</strong>：395101361
-- <strong>Property Name</strong>：www.www.jangwook.net
+- <strong>Property Name</strong>：www.jangwook.net
 - <strong>分析工具</strong>：Google Analytics 4（MCP 集成）
 - <strong>分析时点</strong>：2025 年 10 月 6 日
 - <strong>时区</strong>：Asia/Tokyo (JST)
@@ -308,7 +308,7 @@ mcp__analytics -
 - Mobile（移动端）：25〜35%
 - Tablet（平板）：5〜10%
 
-### 4.2 www.jangwook.net 目标设定
+### 4.2 jangwook.net 目标设定
 
 <strong>1 个月目标（2025 年 11 月）</strong>：
 
@@ -595,7 +595,7 @@ A：请按语言设定<strong>独立的基准</strong>。韩语内容和英语�
 
 ### 10.1 启动初期评估
 
-www.jangwook.net 博客在技术上成功启动：
+jangwook.net 博客在技术上成功启动：
 
 ✅ <strong>成功要素</strong>：
 
@@ -646,7 +646,7 @@ www.jangwook.net 博客在技术上成功启动：
 
 许多分析报告充满华丽的图表和数字，但背后的失败、试错、学习过程却不被分享。
 
-<strong>www.jangwook.net 不同。我们：</strong>
+<strong>jangwook.net 不同。我们：</strong>
 
 - ❌ 不隐藏失败 → 数据不足也透明公开
 - 📚 分享学到的东西 → GA4 管道理解、MCP 使用方法
@@ -665,7 +665,7 @@ www.jangwook.net 博客在技术上成功启动：
 
 ### 📅 下一份报告预告
 
-<strong>标题</strong>："一周的数据告诉我们什么：www.jangwook.net 第一周分析"
+<strong>标题</strong>："一周的数据告诉我们什么：jangwook.net 第一周分析"
 <strong>发布日期</strong>：2025 年 10 月 13 日（1 周后）
 <strong>包含内容</strong>：
 

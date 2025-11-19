@@ -1,5 +1,5 @@
 ---
-title: 'www.jangwook.net 블로그 런칭 분석 리포트: 데이터 기반 기술 블로그의 시작'
+title: 'jangwook.net 블로그 런칭 분석 리포트: 데이터 기반 기술 블로그의 시작'
 description: '블로그 런칭 초기 GA4 데이터 분석, 실전 MCP 쿼리 예제, 그리고 3개월 성장 전략까지 - 투명하게 공유하는 기술 블로그 여정의 시작'
 pubDate: '2025-10-06'
 heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
@@ -50,7 +50,7 @@ relatedPosts:
         automation, DevOps, architecture topics.
 ---
 
-# www.jangwook.net 블로그 런칭 분석 리포트
+# jangwook.net 블로그 런칭 분석 리포트
 
 > **투명성 선언**: 이 리포트는 블로그 런칭 초기의 솔직한 기록입니다. 화려한 숫자 대신, 실제 데이터와 학습 과정을 있는 그대로 공유합니다.
 
@@ -58,7 +58,7 @@ relatedPosts:
 
 ### 블로그 런칭 배경
 
-2025년 10월, Astro 5.14 기반의 기술 블로그 www.jangwook.net을 공식 런칭했습니다. 이 블로그는 단순한 기술 블로그를 넘어, **콘텐츠 자동화, SEO 최적화, 그리고 데이터 기반 의사결정을 실현하는 플랫폼**으로 기획되었습니다.
+2025년 10월, Astro 5.14 기반의 기술 블로그 jangwook.net을 공식 런칭했습니다. 이 블로그는 단순한 기술 블로그를 넘어, **콘텐츠 자동화, SEO 최적화, 그리고 데이터 기반 의사결정을 실현하는 플랫폼**으로 기획되었습니다.
 
 **핵심 차별점**:
 
@@ -70,7 +70,7 @@ relatedPosts:
 ### 분석 환경
 
 - **GA4 Property ID**: 395101361
-- **Property Name**: www.www.jangwook.net
+- **Property Name**: www.jangwook.net
 - **분석 도구**: Google Analytics 4 (MCP 통합)
 - **분석 시점**: 2025년 10월 6일
 - **시간대**: Asia/Tokyo (JST)
@@ -303,7 +303,7 @@ mcp__analytics -
 - Mobile: 25-35%
 - Tablet: 5-10%
 
-### 4.2 www.jangwook.net 목표 설정
+### 4.2 jangwook.net 목표 설정
 
 **1개월 목표 (2025년 11월)**:
 
@@ -590,7 +590,7 @@ A: 언어별로 **독립적인 벤치마크**를 설정하세요. 한국어 콘�
 
 ### 10.1 런칭 초기 평가
 
-www.jangwook.net 블로그는 기술적으로 성공적으로 런칭되었습니다:
+jangwook.net 블로그는 기술적으로 성공적으로 런칭되었습니다:
 
 ✅ **성공 요소**:
 
@@ -641,7 +641,7 @@ www.jangwook.net 블로그는 기술적으로 성공적으로 런칭되었습니
 
 많은 분석 리포트가 화려한 그래프와 숫자로 가득 차 있지만, 그 이면의 실패, 시행착오, 학습 과정은 공유되지 않습니다.
 
-**www.jangwook.net은 다릅니다. 우리는:**
+**jangwook.net은 다릅니다. 우리는:**
 
 - ❌ 실패를 숨기지 않습니다 → 데이터 부족도 투명하게 공개
 - 📚 배운 점을 공유합니다 → GA4 파이프라인 이해, MCP 활용법
@@ -660,7 +660,7 @@ www.jangwook.net 블로그는 기술적으로 성공적으로 런칭되었습니
 
 ### 📅 다음 리포트 예고
 
-**제목**: "1주일의 데이터가 말해주는 것: www.jangwook.net 첫 주간 분석"
+**제목**: "1주일의 데이터가 말해주는 것: jangwook.net 첫 주간 분석"
 **발행일**: 2025년 10월 13일 (1주 후)
 **포함 내용**:
 

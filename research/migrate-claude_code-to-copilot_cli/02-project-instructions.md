@@ -440,7 +440,7 @@ Before every commit:
 # Astro Blog Automation Project
 
 ## Project Overview
-Astro-based blog and career management automation project for www.jangwook.net.
+Astro-based blog and career management automation project for jangwook.net.
 
 **Technology Stack**:
 - Framework: Astro 5.14.1

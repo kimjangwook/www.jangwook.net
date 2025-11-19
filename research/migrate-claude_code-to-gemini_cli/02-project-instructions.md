@@ -126,7 +126,7 @@ npm run build
 
 ## 실전 변환 예제
 
-### 현재 프로젝트 (`www.jangwook.net`) 변환
+### 현재 프로젝트 (`jangwook.net`) 변환
 
 **Claude Code (`CLAUDE.md`)** → **Gemini CLI (`GEMINI.md`)**
 
@@ -159,7 +159,7 @@ npm run astro check
 #### After (Gemini CLI)
 
 ```markdown
-# Project: www.jangwook.net
+# Project: jangwook.net
 
 ## Overview
 Astro 기반의 기술 블로그 및 포트폴리오 관리 자동화 프로젝트
@@ -241,7 +241,7 @@ npm run preview
 ```bash
 # 자동 변환 스크립트
 cp CLAUDE.md GEMINI.md
-sed -i '' 's/# CLAUDE.md/# Project: www.jangwook.net/' GEMINI.md
+sed -i '' 's/# CLAUDE.md/# Project: jangwook.net/' GEMINI.md
 ```
 
 ### 단계 2: 구조 재조직
@@ -332,7 +332,7 @@ Gemini CLI는 실행 중에 컨텍스트를 추가할 수 있습니다:
 Gemini CLI는 다른 Markdown 파일을 import 가능:
 
 ```markdown
-# Project: www.jangwook.net
+# Project: jangwook.net
 
 @docs/astro-guide.md
 @docs/content-collections.md

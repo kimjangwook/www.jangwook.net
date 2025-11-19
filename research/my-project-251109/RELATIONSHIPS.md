@@ -428,7 +428,7 @@ graph TD
     SAVE --> Done[✅ Complete]
 ```
 
-**Property ID**: 395101361 (www.jangwook.net)
+**Property ID**: 395101361 (jangwook.net)
 **분석 주기**: 자동 결정 (weekly/monthly/quarterly)
 **생성 파일**: 3개 (ko/ja/en 리포트)
 **통합**: improvement-tracker로 TODO 자동 생성

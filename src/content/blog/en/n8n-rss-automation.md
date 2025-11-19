@@ -253,7 +253,7 @@ This node polls the RSS feed at scheduled intervals:
         }
       ]
     },
-    "feedUrl": "https://www.jangwook.net/rss-en.xml"
+    "feedUrl": "https://jangwook.net/rss-en.xml"
   },
   "type": "n8n-nodes-base.rssFeedReadTrigger",
   "name": "RSS Feed Trigger"
@@ -546,7 +546,7 @@ to real-world projects based on hands-on experience.
 
 #ClaudeCode #AIDevelopment #ProductivityBoost
 
-https://www.jangwook.net/en/blog/en/claude-code-best-practices/
+https://jangwook.net/en/blog/en/claude-code-best-practices/
 ```
 
 <strong>AI-Generated LinkedIn Post</strong>:
@@ -567,7 +567,7 @@ Check out the article for detailed implementation examples and specific best pra
 
 #AIDevelopment #ClaudeCode #DeveloperProductivity #BestPractices #SoftwareEngineering
 
-https://www.jangwook.net/en/blog/en/claude-code-best-practices/
+https://jangwook.net/en/blog/en/claude-code-best-practices/
 ```
 
 ## Part 4: Practical Implementation Tips

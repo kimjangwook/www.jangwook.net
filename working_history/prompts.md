@@ -38,7 +38,7 @@ AIがあなたの貴重な時間を解放し、記事の品質を3倍に高め�
 04:43 まとめと問いかけ: 次はあなたの番です
 
 [🔗 関連リンク]
-ブログ記事原文: https://www.jangwook.net/ja/blog/ja/l...
+ブログ記事原文: https://jangwook.net/ja/blog/ja/l...
 
 #ブログ自動化 #AIオーケストラ #ClaudeCode #AIエージェント #LLM #コンテンツ制作 #生産性向上 #プロンプトエンジニアリング #PromptEngineering #MCP #ModelContextProtocol #Astro #時間短縮 #効率化 #テクニカルライティング #ブログ運営 #未来の働き方 #ワークフロー改善 #NotebookLM #テックブログ #開発者 #エンジニア
 ```

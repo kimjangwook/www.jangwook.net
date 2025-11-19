@@ -113,7 +113,7 @@
 
 ### 현재 프로젝트 마이그레이션
 
-이 프로젝트(`www.jangwook.net`)의 설정을 Codex CLI로 변환:
+이 프로젝트(`jangwook.net`)의 설정을 Codex CLI로 변환:
 
 - **MCP 서버**: 8개 (context7, sequentialthinking, playwright, notion, chrome-devtools, analytics, brave-search, browsermcp)
 - **에이전트**: 17개 (writing-assistant, seo-optimizer, content-planner 등)

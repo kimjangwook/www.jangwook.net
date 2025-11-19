@@ -602,7 +602,7 @@ src/content/blog/en/ga-analysis-{period}-{date}.md
 ```
 
 **GA4 MCP 통합**:
-- **Property ID**: 395101361 (www.jangwook.net)
+- **Property ID**: 395101361 (jangwook.net)
 - **주요 쿼리**:
   - `run_report`: 기본 지표
   - `get_property_details`: 속성 정보
