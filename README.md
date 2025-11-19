@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-23
+**최신 포스트 날짜**: 2025-11-24
 
-**총 포스트 수**: 45개 (한국어 기준)
+**총 포스트 수**: 46개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **내가 사용하는 MCP 서버 도구 모음 완벽 가이드** (2025-11-23)
+1. **Google Code Wiki: AI 기반 코드 문서화 플랫폼 완벽 가이드** (2025-11-24)
+
+   - Google이 발표한 Code Wiki의 기능, 사용법, Gemini 기반 자동 문서화 시스템을 상세히 알아봅니다.
+   - **핵심 내용**: Code Wiki 소개 (2025년 11월 13일 공개 프리뷰), 4가지 핵심 기능 (자동 업데이트 위키, Gemini 채팅 에이전트, 하이퍼링크 코드 참조, 자동 생성 다이어그램), 사용법 가이드 (codewiki.google 접속, 레포지토리 검색, 채팅 활용, 다이어그램 탐색), Gemini CLI 확장 (프라이빗 레포 지원 예정, 대기자 명단), 실제 활용 예시 (Next.js), 장단점 분석
+
+2. **내가 사용하는 MCP 서버 도구 모음 완벽 가이드** (2025-11-23)
 
    - Claude Code 개발 생산성을 극대화하는 7가지 MCP 서버 설정과 활용법. Serena, Context7, Sequential Thinking 등 실전 경험 공유
    - **핵심 내용**: MCP 프로토콜 개요, 7개 MCP 서버 (Serena 시맨틱 코드 분석, Context7 최신 문서 검색, Sequential Thinking 단계별 문제 해결, Chrome DevTools MCP 성능 분석, Playwright MCP 브라우저 자동화, Gemini CLI MCP AI 검색/분석, Gemini Google Search 웹 검색), 전체 설정 JSON, 조합 활용 사례 (코드 분석+문서 검색, 브라우저 테스트+성능 분석, 복잡한 문제 해결 워크플로우), 추천 시작 서버 (Context7 → Serena → Chrome DevTools)
@@ -590,6 +595,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-23 (MCP 서버 도구 모음 완벽 가이드 발행)
+**Last Updated**: 2025-11-24 (Google Code Wiki: AI 기반 코드 문서화 플랫폼 완벽 가이드 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

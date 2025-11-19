@@ -1,4 +1,15 @@
 {
+  "google-code-wiki-guide": {
+    "pubDate": "2025-11-24",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.75,
+      "web-development": 0.6,
+      "ai-ml": 0.85,
+      "devops": 0.65,
+      "architecture": 0.7
+    }
+  },
   "mcp-servers-toolkit-introduction": {
     "pubDate": "2025-11-23",
     "difficulty": 2,
