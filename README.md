@@ -45,7 +45,7 @@ npm run astro check
 
 **최신 포스트 날짜**: 2025-11-24
 
-**총 포스트 수**: 46개 (한국어 기준)
+**총 포스트 수**: 47개 (한국어 기준)
 
 ### 공개된 포스트
 
@@ -54,7 +54,12 @@ npm run astro check
    - Google이 발표한 Code Wiki의 기능, 사용법, Gemini 기반 자동 문서화 시스템을 상세히 알아봅니다.
    - **핵심 내용**: Code Wiki 소개 (2025년 11월 13일 공개 프리뷰), 4가지 핵심 기능 (자동 업데이트 위키, Gemini 채팅 에이전트, 하이퍼링크 코드 참조, 자동 생성 다이어그램), 사용법 가이드 (codewiki.google 접속, 레포지토리 검색, 채팅 활용, 다이어그램 탐색), Gemini CLI 확장 (프라이빗 레포 지원 예정, 대기자 명단), 실제 활용 예시 (Next.js), 장단점 분석
 
-2. **내가 사용하는 MCP 서버 도구 모음 완벽 가이드** (2025-11-23)
+2. **jangwook.net 45일 성장 리포트: 750명 방문과 함께 배운 7가지 인사이트** (2025-11-20)
+
+   - 블로그 런칭 45일 GA4 데이터 전격 분석 - 오가닉 검색 44.3% 달성, SEO 최적화 ROI, 트래픽 급증 원인 분석, 영어 콘텐츠 91% 이탈률 해결 전략
+   - **핵심 내용**: Executive Summary (750명 방문자, 오가닉 검색 44.3%, DAU 16.7명), 3단계 성장 곡선 (Phase 1: 5〜10명/일, Phase 2: 15〜20명/일, Phase 3: 68.5명/일 급증), 트래픽 소스 분석 (Organic 44.3%, Direct 31.5%, AI 도구 추천 3〜5%), 콘텐츠 성과 (Gemini RAG 튜토리얼 127 페이지뷰, 영어 홈페이지 91% 이탈률), 지리적 분포 (한국 24.1%, 중국 19.2% 봇 의심), 개선 Impact 측정 (SEO +1,266% ROI, n8n 자동화 95% 시간 절감), 7가지 핵심 인사이트 (트래픽 급증 미스터리, 영어 UX 재앙, SEO = 최고 ROI, 중국 트래픽 의문, AI 추천 신흥 채널, 한국어 우선 전략, 101명 리피터 = 진짜 자산), 3단계 액션 플랜 (HIGH: 급증 원인 규명/영어 UX 개선/중국 트래픽 검증, MEDIUM: 콘텐츠 확장/토픽 클러스터, STRATEGIC: 언어 전략/뉴스레터/수익화)
+
+3. **내가 사용하는 MCP 서버 도구 모음 완벽 가이드** (2025-11-23)
 
    - Claude Code 개발 생산성을 극대화하는 7가지 MCP 서버 설정과 활용법. Serena, Context7, Sequential Thinking 등 실전 경험 공유
    - **핵심 내용**: MCP 프로토콜 개요, 7개 MCP 서버 (Serena 시맨틱 코드 분석, Context7 최신 문서 검색, Sequential Thinking 단계별 문제 해결, Chrome DevTools MCP 성능 분석, Playwright MCP 브라우저 자동화, Gemini CLI MCP AI 검색/분석, Gemini Google Search 웹 검색), 전체 설정 JSON, 조합 활용 사례 (코드 분석+문서 검색, 브라우저 테스트+성능 분석, 복잡한 문제 해결 워크플로우), 추천 시작 서버 (Context7 → Serena → Chrome DevTools)
@@ -595,6 +600,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-24 (Google Code Wiki: AI 기반 코드 문서화 플랫폼 완벽 가이드 발행)
+**Last Updated**: 2025-11-20 (jangwook.net 45일 성장 리포트: 750명 방문과 함께 배운 7가지 인사이트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
