@@ -484,21 +484,20 @@ Day 4-14 (2주 내):
 **Why:** 125명/월 낭비 (91% 이탈률) - Quick Win 가능
 
 **A/B Test 3 Variants:**
-```
-Variant A: 현재 (Baseline)
-├─ 91% 이탈률
-└─ Control 그룹
 
-Variant B: Featured Posts 추가
-├─ Top 3 한국어 포스트 + 영어 요약
-├─ 명확한 언어 선택기
-└─ 목표 이탈률: 60-70%
+**Variant A: 현재 (Baseline)**
+- 91% 이탈률
+- Control 그룹
 
-Variant C: Auto-Redirect
-├─ 영어 방문자 → 한국어 블로그 (언어 토글 제공)
-├─ "Content available in Korean (15 posts)"
-└─ 목표 이탈률: 40-50%
-```
+**Variant B: Featured Posts 추가**
+- Top 3 한국어 포스트 + 영어 요약
+- 명확한 언어 선택기
+- 목표 이탈률: 60-70%
+
+**Variant C: Auto-Redirect**
+- 영어 방문자 → 한국어 블로그 (언어 토글 제공)
+- "Content available in Korean (15 posts)"
+- 목표 이탈률: 40-50%
 
 **Timeline:**
 - Day 1-2: UX 감사 + A/B 테스트 설계
@@ -541,16 +540,14 @@ Step 4 (1주): 중국 트래픽 제외 재계산
 **Why:** Direct 31.5% (340세션) 중 상당수가 실제로는 소셜/리퍼럴
 
 **UTM 파라미터 템플릿:**
-```
-utm_source={platform}      (twitter, linkedin, reddit 등)
-utm_medium={medium}         (social, referral, email 등)
-utm_campaign={post_title}   (gemini-rag-tutorial 등)
 
-예시:
-https://jangwook.net/ko/blog/ko/gemini-rag/?
-  utm_source=twitter&
-  utm_medium=social&
-  utm_campaign=gemini-rag-tutorial
+- `utm_source={platform}` (twitter, linkedin, reddit 등)
+- `utm_medium={medium}` (social, referral, email 등)
+- `utm_campaign={post_title}` (gemini-rag-tutorial 등)
+
+**예시:**
+```
+https://jangwook.net/ko/blog/ko/gemini-rag/?utm_source=twitter&utm_medium=social&utm_campaign=gemini-rag-tutorial
 ```
 
 **적용 대상:**
@@ -599,26 +596,26 @@ https://jangwook.net/ko/blog/ko/gemini-rag/?
 **Target:** 20-25개 고품질 포스트로 다각화
 
 **Gemini RAG 공식 복제:**
-```
-[최신 LLM 도구] + [실용 튜토리얼] + [코드 예제] + [SEO 최적화]
 
-주제 파이프라인 (4주):
-Week 1-2 (6 포스트):
-├─ Claude Computer Use 심화 가이드
-├─ OpenAI Structured Outputs 활용법
-├─ LangChain vs. LlamaIndex RAG 비교
-├─ Anthropic Prompt Engineering 베스트 프랙티스
-├─ Vertex AI 모델 배포 자동화
-└─ AI 에이전트 아키텍처 설계 패턴
+**[최신 LLM 도구] + [실용 튜토리얼] + [코드 예제] + [SEO 최적화]**
 
-Week 3-4 (6 포스트):
-├─ Vector DB 선택 가이드 (Pinecone vs. Weaviate vs. Qdrant)
-├─ Few-shot Learning 실전 예제
-├─ Chain-of-Thought Prompting 마스터
-├─ Function Calling 심화 (Gemini, GPT-4, Claude)
-├─ RAG 평가 지표 (Precision, Recall, F1)
-└─ LLM 에이전트 디버깅 전략
-```
+**주제 파이프라인 (4주):**
+
+**Week 1〜2 (6 포스트):**
+- Claude Computer Use 심화 가이드
+- OpenAI Structured Outputs 활용법
+- LangChain vs. LlamaIndex RAG 비교
+- Anthropic Prompt Engineering 베스트 프랙티스
+- Vertex AI 모델 배포 자동화
+- AI 에이전트 아키텍처 설계 패턴
+
+**Week 3〜4 (6 포스트):**
+- Vector DB 선택 가이드 (Pinecone vs. Weaviate vs. Qdrant)
+- Few-shot Learning 실전 예제
+- Chain-of-Thought Prompting 마스터
+- Function Calling 심화 (Gemini, GPT-4, Claude)
+- RAG 평가 지표 (Precision, Recall, F1)
+- LLM 에이전트 디버깅 전략
 
 **SEO Focus:**
 - 월간 검색량 500-2,000
@@ -631,31 +628,29 @@ Week 3-4 (6 포스트):
 
 #### #2: 토픽 클러스터 아키텍처 구축
 
-**Strategy:** 3개 Pillar 페이지 + 각 5-8개 Supporting Articles
+**Strategy:** 3개 Pillar 페이지 + 각 5〜8개 Supporting Articles
 
-```
-Pillar 1: "RAG 애플리케이션 완전 가이드" (3,000-5,000단어)
-├─ Google Gemini RAG 튜토리얼 (기존)
-├─ Claude RAG 구현
-├─ LangChain RAG 실전
-├─ Vector DB 비교 분석
-├─ RAG 평가 및 최적화
-└─ 프로덕션 RAG 배포
+**Pillar 1: "RAG 애플리케이션 완전 가이드" (3,000〜5,000단어)**
+- Google Gemini RAG 튜토리얼 (기존)
+- Claude RAG 구현
+- LangChain RAG 실전
+- Vector DB 비교 분석
+- RAG 평가 및 최적화
+- 프로덕션 RAG 배포
 
-Pillar 2: "AI 자동화 워크플로우" (3,000-5,000단어)
-├─ n8n 튜토리얼 시리즈
-├─ Zapier AI 통합
-├─ Make.com 가이드
-├─ API 통합 베스트 프랙티스
-└─ 워크플로우 모니터링
+**Pillar 2: "AI 자동화 워크플로우" (3,000〜5,000단어)**
+- n8n 튜토리얼 시리즈
+- Zapier AI 통합
+- Make.com 가이드
+- API 통합 베스트 프랙티스
+- 워크플로우 모니터링
 
-Pillar 3: "LLM Prompt Engineering" (3,000-5,000단어)
-├─ Claude Prompting 가이드
-├─ GPT-4 프롬프트 최적화
-├─ Few-shot Learning
-├─ Chain-of-Thought 기법
-└─ 프롬프트 버전 관리
-```
+**Pillar 3: "LLM Prompt Engineering" (3,000〜5,000단어)**
+- Claude Prompting 가이드
+- GPT-4 프롬프트 최적화
+- Few-shot Learning
+- Chain-of-Thought 기법
+- 프롬프트 버전 관리
 
 **Internal Linking:**
 - Supporting articles → Pillar pages (권위 전달)
@@ -672,31 +667,18 @@ Pillar 3: "LLM Prompt Engineering" (3,000-5,000단어)
 **Optimization Tactics:**
 
 1. **LLM 친화적 구조:**
-```markdown
-# 포스트 템플릿
 
-## TL;DR (50-100단어)
-- 핵심 요약
-- 선행 요구사항
-- 예상 소요 시간
+**포스트 템플릿 구조:**
+- **TL;DR (50〜100단어)**: 핵심 요약, 선행 요구사항, 예상 소요 시간
+- **Step-by-Step Guide**: 명확한 액션 단계별로 나열
+- **Code Examples**: 주석으로 각 섹션 설명 추가
+- **FAQ**: 자주 묻는 질문과 명확한 답변
+- **Next Steps**: 관련 튜토리얼 링크
 
-## Step-by-Step Guide
-1. 단계 1: [명확한 액션]
-2. 단계 2: [명확한 액션]
-...
-
-## Code Examples
+**코드 예제 형식:**
 ```python
 # 주석으로 각 섹션 설명
 code_here()
-```
-
-## FAQ
-Q: 가장 자주 묻는 질문?
-A: 명확한 답변
-
-## Next Steps
-- 관련 튜토리얼 링크
 ```
 
 2. **Schema.org 구조화 데이터:**
@@ -714,28 +696,27 @@ A: 명확한 답변
 **Goal:** 30일 내 10-20개 고품질 백링크 (DA 30+)
 
 **Tactics:**
-```
-Week 1-2: Guest Posting
-├─ Dev.to에 2-3개 포스트 게시
-├─ Medium에 1-2개 포스트 발행
-└─ jangwook.net 링크 자연스럽게 포함
 
-Week 2-3: Community Participation
-├─ Stack Overflow 답변 (블로그 인용)
-├─ Reddit r/MachineLearning, r/LangChain 질문 답변
-├─ 한국 개발 커뮤니티 (Okky, 44BITS) 활동
-└─ 기술 토론에 블로그 포스트 리소스로 공유
+**Week 1〜2: Guest Posting**
+- Dev.to에 2〜3개 포스트 게시
+- Medium에 1〜2개 포스트 발행
+- jangwook.net 링크 자연스럽게 포함
 
-Week 3-4: Outreach
-├─ Gemini/Claude 공식 문서 인용한 블로거 리스트 작성
-├─ "추가 리소스로 제 튜토리얼도 유용할 것 같습니다" 이메일
-└─ 20-30개 아웃리치 → 5-10개 백링크 예상
+**Week 2〜3: Community Participation**
+- Stack Overflow 답변 (블로그 인용)
+- Reddit r/MachineLearning, r/LangChain 질문 답변
+- 한국 개발 커뮤니티 (Okky, 44BITS) 활동
+- 기술 토론에 블로그 포스트 리소스로 공유
 
-Week 4: Shareable Resources
-├─ "AI 도구 비교표" (다른 블로그가 링크하고 싶어하는)
-├─ "RAG 구현 체크리스트" PDF
-└─ "LLM Prompt 치트시트"
-```
+**Week 3〜4: Outreach**
+- Gemini/Claude 공식 문서 인용한 블로거 리스트 작성
+- "추가 리소스로 제 튜토리얼도 유용할 것 같습니다" 이메일
+- 20〜30개 아웃리치 → 5〜10개 백링크 예상
+
+**Week 4: Shareable Resources**
+- "AI 도구 비교표" (다른 블로그가 링크하고 싶어하는)
+- "RAG 구현 체크리스트" PDF
+- "LLM Prompt 치트시트"
 
 **Expected Impact:**
 - 도메인 권위 (DA) +5-10 포인트 (2개월 내)
@@ -752,44 +733,42 @@ Week 4: Shareable Resources
 **Recommended: 한국어 우선 + 선택적 영어 번역**
 
 **Implementation:**
-```
-Phase 1 (Month 2-3):
-├─ 한국어 콘텐츠 80% 집중
-├─ 주당 2-3개 한국어 포스트 발행
-└─ 영어 콘텐츠 신규 생산 중단
 
-Phase 2 (Month 3-4):
-├─ Top 5 한국어 포스트 (100+ 페이지뷰) 영어 번역
-├─ 고품질 번역 (AI + 원어민 검토)
-└─ 영어 SEO 최적화 별도 적용
+**Phase 1 (Month 2〜3):**
+- 한국어 콘텐츠 80% 집중
+- 주당 2〜3개 한국어 포스트 발행
+- 영어 콘텐츠 신규 생산 중단
 
-Phase 3 (Month 4-6):
-├─ 영어 전용 콘텐츠 1-2개 실험
-├─ 성과 측정 (페이지뷰, 이탈률, 참여도)
-└─ ROI 기반 지속 여부 결정
-```
+**Phase 2 (Month 3〜4):**
+- Top 5 한국어 포스트 (100+ 페이지뷰) 영어 번역
+- 고품질 번역 (AI + 원어민 검토)
+- 영어 SEO 최적화 별도 적용
+
+**Phase 3 (Month 4〜6):**
+- 영어 전용 콘텐츠 1〜2개 실험
+- 성과 측정 (페이지뷰, 이탈률, 참여도)
+- ROI 기반 지속 여부 결정
 
 #### #2: 이메일 뉴스레터 본격 런칭
 
 **Implementation:**
-```
-Month 2:
-├─ Substack 또는 ConvertKit 셋업
-├─ 뉴스레터 템플릿 디자인
-├─ Back-issues 3-5개 작성 (리듬 확립)
-└─ Lead Magnet 제작: "AI 자동화 완전 치트시트" PDF
 
-Month 3:
-├─ Exit-intent 팝업 추가 (Lead Magnet 제공)
-├─ 주간 뉴스레터 시작 (매주 금요일)
-├─ 콘텐츠 믹스: 80% 큐레이션 + 20% 독점
-└─ Top 포스트에 뉴스레터 CTA 프로모션
+**Month 2:**
+- Substack 또는 ConvertKit 셋업
+- 뉴스레터 템플릿 디자인
+- Back-issues 3〜5개 작성 (리듬 확립)
+- Lead Magnet 제작: "AI 자동화 완전 치트시트" PDF
 
-Growth Targets:
-├─ Month 2: 50-100 구독자
-├─ Month 3: 150-250 구독자
-└─ Month 6: 500-1,000 구독자
-```
+**Month 3:**
+- Exit-intent 팝업 추가 (Lead Magnet 제공)
+- 주간 뉴스레터 시작 (매주 금요일)
+- 콘텐츠 믹스: 80% 큐레이션 + 20% 독점
+- Top 포스트에 뉴스레터 CTA 프로모션
+
+**Growth Targets:**
+- Month 2: 50〜100 구독자
+- Month 3: 150〜250 구독자
+- Month 6: 500〜1,000 구독자
 
 **Content Strategy:**
 - 주간 다이제스트: 새 포스트 2-3개
@@ -803,24 +782,23 @@ Growth Targets:
 #### #3: 고급 분석 & 전환 추적
 
 **Metrics to Implement:**
-```
-Engagement Scoring:
-├─ 스크롤 깊이 (25%, 50%, 75%, 100%)
-├─ 페이지 체류 시간 (1분, 3분, 5분)
-└─ 코드 복사 이벤트
 
-Conversion Funnel:
-├─ 블로그 방문
-├─ 뉴스레터 가입
-├─ 이메일 오픈
-├─ 링크 클릭
-└─ 재방문
+**Engagement Scoring:**
+- 스크롤 깊이 (25%, 50%, 75%, 100%)
+- 페이지 체류 시간 (1분, 3분, 5분)
+- 코드 복사 이벤트
 
-Content Quality Signals:
-├─ 소셜 공유 (Twitter, LinkedIn)
-├─ 댓글/토론
-└─ 백링크 생성
-```
+**Conversion Funnel:**
+- 블로그 방문
+- 뉴스레터 가입
+- 이메일 오픈
+- 링크 클릭
+- 재방문
+
+**Content Quality Signals:**
+- 소셜 공유 (Twitter, LinkedIn)
+- 댓글/토론
+- 백링크 생성
 
 **Tools:**
 - GA4 커스텀 이벤트
@@ -859,27 +837,26 @@ Content Quality Signals:
 #### #5: 커뮤니티 구축
 
 **Options:**
-```
-Option A: Discord 서버
-├─ 실시간 Q&A
-├─ 코드 공유
-├─ Effort: High (10-15시간/주)
 
-Option B: GitHub Discussions
-├─ 비동기 Q&A
-├─ 오픈소스 레포 연결
-├─ Effort: Medium (3-5시간/주)
+**Option A: Discord 서버**
+- 실시간 Q&A
+- 코드 공유
+- Effort: High (10〜15시간/주)
 
-Option C: Newsletter-based (권장)
-├─ 이메일 회신 장려
-├─ 독자 질문 뉴스레터에 Featured
-├─ Effort: Low (1-2시간/주)
+**Option B: GitHub Discussions**
+- 비동기 Q&A
+- 오픈소스 레포 연결
+- Effort: Medium (3〜5시간/주)
 
-Option D: Korean Dev Community
-├─ Okky, 44BITS 활동
-├─ Slack/Discord 그룹 참여
-├─ Effort: Medium (5-10시간/주)
-```
+**Option C: Newsletter-based (권장)**
+- 이메일 회신 장려
+- 독자 질문 뉴스레터에 Featured
+- Effort: Low (1〜2시간/주)
+
+**Option D: Korean Dev Community**
+- Okky, 44BITS 활동
+- Slack/Discord 그룹 참여
+- Effort: Medium (5〜10시간/주)
 
 **Recommended:** Option C (Newsletter-based) → Option B (GitHub Discussions) 점진 전환
 

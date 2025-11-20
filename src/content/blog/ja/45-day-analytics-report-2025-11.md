@@ -484,21 +484,20 @@ Day 4〜14(2週間以内):
 <strong>Why:</strong>125人/月浪費(91%離脱率) - Quick Win可能
 
 <strong>A/B Test 3 Variants:</strong>
-```
-Variant A:現在(Baseline)
-├─ 91%離脱率
-└─ Controlグループ
 
-Variant B:Featured Posts追加
-├─ Top 3韓国語投稿 + 英語要約
-├─ 明確な言語選択器
-└─ 目標離脱率:60〜70%
+<strong>Variant A:現在(Baseline)</strong>
+- 91%離脱率
+- Controlグループ
 
-Variant C:Auto-Redirect
-├─ 英語訪問者 → 韓国語ブログ(言語トグル提供)
-├─ "Content available in Korean (15 posts)"
-└─ 目標離脱率:40〜50%
-```
+<strong>Variant B:Featured Posts追加</strong>
+- Top 3韓国語投稿 + 英語要約
+- 明確な言語選択器
+- 目標離脱率:60〜70%
+
+<strong>Variant C:Auto-Redirect</strong>
+- 英語訪問者 → 韓国語ブログ(言語トグル提供)
+- "Content available in Korean (15 posts)"
+- 目標離脱率:40〜50%
 
 <strong>Timeline:</strong>
 - Day 1〜2:UX監査 + A/Bテスト設計
@@ -541,16 +540,14 @@ Step 4(1週間):中国トラフィック除外再計算
 <strong>Why:</strong>Direct 31.5%(340セッション)中相当数が実際にはソーシャル/リファラル
 
 <strong>UTMパラメータテンプレート:</strong>
-```
-utm_source={platform}      (twitter, linkedin, reddit等)
-utm_medium={medium}         (social, referral, email等)
-utm_campaign={post_title}   (gemini-rag-tutorial等)
 
-例:
-https://jangwook.net/ko/blog/ko/gemini-rag/?
-  utm_source=twitter&
-  utm_medium=social&
-  utm_campaign=gemini-rag-tutorial
+- `utm_source={platform}` (twitter, linkedin, reddit等)
+- `utm_medium={medium}` (social, referral, email等)
+- `utm_campaign={post_title}` (gemini-rag-tutorial等)
+
+<strong>例:</strong>
+```
+https://jangwook.net/ko/blog/ko/gemini-rag/?utm_source=twitter&utm_medium=social&utm_campaign=gemini-rag-tutorial
 ```
 
 <strong>適用対象:</strong>
@@ -599,26 +596,26 @@ https://jangwook.net/ko/blog/ko/gemini-rag/?
 <strong>Target:</strong>20〜25高品質投稿で多角化
 
 <strong>Gemini RAG公式複製:</strong>
-```
-[最新LLMツール] + [実用チュートリアル] + [コード例] + [SEO最適化]
 
-トピックパイプライン(4週間):
-Week 1〜2(6投稿):
-├─ Claude Computer Use深化ガイド
-├─ OpenAI Structured Outputs活用法
-├─ LangChain vs. LlamaIndex RAG比較
-├─ Anthropic Prompt Engineeringベストプラクティス
-├─ Vertex AIモデルデプロイ自動化
-└─ AIエージェントアーキテクチャ設計パターン
+<strong>[最新LLMツール] + [実用チュートリアル] + [コード例] + [SEO最適化]</strong>
 
-Week 3〜4(6投稿):
-├─ Vector DB選択ガイド(Pinecone vs. Weaviate vs. Qdrant)
-├─ Few-shot Learning実戦例
-├─ Chain-of-Thought Promptingマスター
-├─ Function Calling深化(Gemini、GPT-4、Claude)
-├─ RAG評価指標(Precision、Recall、F1)
-└─ LLMエージェントデバッグ戦略
-```
+<strong>トピックパイプライン(4週間):</strong>
+
+<strong>Week 1〜2(6投稿):</strong>
+- Claude Computer Use深化ガイド
+- OpenAI Structured Outputs活用法
+- LangChain vs. LlamaIndex RAG比較
+- Anthropic Prompt Engineeringベストプラクティス
+- Vertex AIモデルデプロイ自動化
+- AIエージェントアーキテクチャ設計パターン
+
+<strong>Week 3〜4(6投稿):</strong>
+- Vector DB選択ガイド(Pinecone vs. Weaviate vs. Qdrant)
+- Few-shot Learning実戦例
+- Chain-of-Thought Promptingマスター
+- Function Calling深化(Gemini、GPT-4、Claude)
+- RAG評価指標(Precision、Recall、F1)
+- LLMエージェントデバッグ戦略
 
 <strong>SEO Focus:</strong>
 - 月間検索量500〜2,000
@@ -633,29 +630,27 @@ Week 3〜4(6投稿):
 
 <strong>Strategy:</strong>3 Pillarページ + 各5〜8 Supporting Articles
 
-```
-Pillar 1:"RAGアプリケーション完全ガイド"(3,000〜5,000語)
-├─ Google Gemini RAGチュートリアル(既存)
-├─ Claude RAG実装
-├─ LangChain RAG実戦
-├─ Vector DB比較分析
-├─ RAG評価及び最適化
-└─ プロダクションRAGデプロイ
+<strong>Pillar 1:"RAGアプリケーション完全ガイド"(3,000〜5,000語)</strong>
+- Google Gemini RAGチュートリアル(既存)
+- Claude RAG実装
+- LangChain RAG実戦
+- Vector DB比較分析
+- RAG評価及び最適化
+- プロダクションRAGデプロイ
 
-Pillar 2:"AI自動化ワークフロー"(3,000〜5,000語)
-├─ n8nチュートリアルシリーズ
-├─ Zapier AI統合
-├─ Make.comガイド
-├─ API統合ベストプラクティス
-└─ ワークフローモニタリング
+<strong>Pillar 2:"AI自動化ワークフロー"(3,000〜5,000語)</strong>
+- n8nチュートリアルシリーズ
+- Zapier AI統合
+- Make.comガイド
+- API統合ベストプラクティス
+- ワークフローモニタリング
 
-Pillar 3:"LLM Prompt Engineering"(3,000〜5,000語)
-├─ Claude Promptingガイド
-├─ GPT-4プロンプト最適化
-├─ Few-shot Learning
-├─ Chain-of-Thought技法
-└─ プロンプトバージョン管理
-```
+<strong>Pillar 3:"LLM Prompt Engineering"(3,000〜5,000語)</strong>
+- Claude Promptingガイド
+- GPT-4プロンプト最適化
+- Few-shot Learning
+- Chain-of-Thought技法
+- プロンプトバージョン管理
 
 <strong>Internal Linking:</strong>
 - Supporting articles → Pillarページ(権威伝達)
@@ -672,31 +667,18 @@ Pillar 3:"LLM Prompt Engineering"(3,000〜5,000語)
 <strong>Optimization Tactics:</strong>
 
 1. <strong>LLM親和的構造:</strong>
-```markdown
-# 投稿テンプレート
 
-## TL;DR(50〜100語)
-- 核心要約
-- 前提要件
-- 予想所要時間
+<strong>投稿テンプレート構造:</strong>
+- <strong>TL;DR(50〜100語)</strong>: 核心要約、前提要件、予想所要時間
+- <strong>Step-by-Step Guide</strong>: 明確なアクションをステップ別に列挙
+- <strong>Code Examples</strong>: 注釈で各セクション説明追加
+- <strong>FAQ</strong>: よくある質問と明確な回答
+- <strong>Next Steps</strong>: 関連チュートリアルリンク
 
-## Step-by-Step Guide
-1. ステップ1:[明確なアクション]
-2. ステップ2:[明確なアクション]
-...
-
-## Code Examples
+<strong>コード例形式:</strong>
 ```python
 # 注釈で各セクション説明
 code_here()
-```
-
-## FAQ
-Q:最もよくある質問?
-A:明確な回答
-
-## Next Steps
-- 関連チュートリアルリンク
 ```
 
 2. <strong>Schema.org構造化データ:</strong>
@@ -714,28 +696,27 @@ A:明確な回答
 <strong>Goal:</strong>30日以内10〜20高品質バックリンク(DA 30+)
 
 <strong>Tactics:</strong>
-```
-Week 1〜2:Guest Posting
-├─ Dev.toに2〜3投稿掲載
-├─ Mediumに1〜2投稿発行
-└─ jangwook.netリンク自然に含む
 
-Week 2〜3:Community Participation
-├─ Stack Overflow回答(ブログ引用)
-├─ Reddit r/MachineLearning、r/LangChain質問回答
-├─ 韓国開発コミュニティ(Okky、44BITS)活動
-└─ 技術討論にブログ投稿リソースとして共有
+<strong>Week 1〜2:Guest Posting</strong>
+- Dev.toに2〜3投稿掲載
+- Mediumに1〜2投稿発行
+- jangwook.netリンク自然に含む
 
-Week 3〜4:Outreach
-├─ Gemini/Claude公式ドキュメント引用したブロガーリスト作成
-├─ "追加リソースとして私のチュートリアルも有用と思います"メール
-└─ 20〜30アウトリーチ → 5〜10バックリンク予想
+<strong>Week 2〜3:Community Participation</strong>
+- Stack Overflow回答(ブログ引用)
+- Reddit r/MachineLearning、r/LangChain質問回答
+- 韓国開発コミュニティ(Okky、44BITS)活動
+- 技術討論にブログ投稿リソースとして共有
 
-Week 4:Shareable Resources
-├─ "AIツール比較表"(他ブログがリンクしたい)
-├─ "RAG実装チェックリスト"PDF
-└─ "LLM Promptチートシート"
-```
+<strong>Week 3〜4:Outreach</strong>
+- Gemini/Claude公式ドキュメント引用したブロガーリスト作成
+- "追加リソースとして私のチュートリアルも有用と思います"メール
+- 20〜30アウトリーチ → 5〜10バックリンク予想
+
+<strong>Week 4:Shareable Resources</strong>
+- "AIツール比較表"(他ブログがリンクしたい)
+- "RAG実装チェックリスト"PDF
+- "LLM Promptチートシート"
 
 <strong>Expected Impact:</strong>
 - ドメイン権威(DA) +5〜10ポイント(2ヶ月以内)
@@ -752,44 +733,42 @@ Week 4:Shareable Resources
 <strong>Recommended:韓国語優先 + 選択的英語翻訳</strong>
 
 <strong>Implementation:</strong>
-```
-Phase 1(Month 2〜3):
-├─ 韓国語コンテンツ80%集中
-├─ 週2〜3韓国語投稿発行
-└─ 英語コンテンツ新規生産中止
 
-Phase 2(Month 3〜4):
-├─ Top 5韓国語投稿(100+ページビュー)英語翻訳
-├─ 高品質翻訳(AI + ネイティブレビュー)
-└─ 英語SEO最適化別途適用
+<strong>Phase 1(Month 2〜3):</strong>
+- 韓国語コンテンツ80%集中
+- 週2〜3韓国語投稿発行
+- 英語コンテンツ新規生産中止
 
-Phase 3(Month 4〜6):
-├─ 英語専用コンテンツ1〜2実験
-├─ 成果測定(ページビュー、離脱率、エンゲージメント)
-└─ ROI基盤継続可否決定
-```
+<strong>Phase 2(Month 3〜4):</strong>
+- Top 5韓国語投稿(100+ページビュー)英語翻訳
+- 高品質翻訳(AI + ネイティブレビュー)
+- 英語SEO最適化別途適用
+
+<strong>Phase 3(Month 4〜6):</strong>
+- 英語専用コンテンツ1〜2実験
+- 成果測定(ページビュー、離脱率、エンゲージメント)
+- ROI基盤継続可否決定
 
 #### #2:メールニュースレター本格ローンチ
 
 <strong>Implementation:</strong>
-```
-Month 2:
-├─ SubstackまたはConvertKitセットアップ
-├─ ニュースレターテンプレートデザイン
-├─ Back-issues 3〜5作成(リズム確立)
-└─ Lead Magnet制作:"AI自動化完全チートシート"PDF
 
-Month 3:
-├─ Exit-intentポップアップ追加(Lead Magnet提供)
-├─ 週間ニュースレター開始(毎週金曜日)
-├─ コンテンツミックス:80%キュレーション + 20%独占
-└─ Top投稿にニュースレターCTAプロモーション
+<strong>Month 2:</strong>
+- SubstackまたはConvertKitセットアップ
+- ニュースレターテンプレートデザイン
+- Back-issues 3〜5作成(リズム確立)
+- Lead Magnet制作:"AI自動化完全チートシート"PDF
 
-Growth Targets:
-├─ Month 2:50〜100購読者
-├─ Month 3:150〜250購読者
-└─ Month 6:500〜1,000購読者
-```
+<strong>Month 3:</strong>
+- Exit-intentポップアップ追加(Lead Magnet提供)
+- 週間ニュースレター開始(毎週金曜日)
+- コンテンツミックス:80%キュレーション + 20%独占
+- Top投稿にニュースレターCTAプロモーション
+
+<strong>Growth Targets:</strong>
+- Month 2:50〜100購読者
+- Month 3:150〜250購読者
+- Month 6:500〜1,000購読者
 
 <strong>Content Strategy:</strong>
 - 週間ダイジェスト:新投稿2〜3
@@ -803,24 +782,23 @@ Growth Targets:
 #### #3:高度分析&コンバージョントラッキング
 
 <strong>Metrics to Implement:</strong>
-```
-Engagement Scoring:
-├─ スクロール深度(25%、50%、75%、100%)
-├─ ページ滞在時間(1分、3分、5分)
-└─ コードコピーイベント
 
-Conversion Funnel:
-├─ ブログ訪問
-├─ ニュースレター加入
-├─ メールオープン
-├─ リンククリック
-└─ リピート訪問
+<strong>Engagement Scoring:</strong>
+- スクロール深度(25%、50%、75%、100%)
+- ページ滞在時間(1分、3分、5分)
+- コードコピーイベント
 
-Content Quality Signals:
-├─ ソーシャル共有(Twitter、LinkedIn)
-├─ コメント/討論
-└─ バックリンク生成
-```
+<strong>Conversion Funnel:</strong>
+- ブログ訪問
+- ニュースレター加入
+- メールオープン
+- リンククリック
+- リピート訪問
+
+<strong>Content Quality Signals:</strong>
+- ソーシャル共有(Twitter、LinkedIn)
+- コメント/討論
+- バックリンク生成
 
 <strong>Tools:</strong>
 - GA4カスタムイベント
@@ -859,27 +837,26 @@ Content Quality Signals:
 #### #5:コミュニティ構築
 
 <strong>Options:</strong>
-```
-Option A:Discordサーバー
-├─ リアルタイムQ&A
-├─ コード共有
-├─ Effort:High(10〜15時間/週)
 
-Option B:GitHub Discussions
-├─ 非同期Q&A
-├─ オープンソースレポ接続
-├─ Effort:Medium(3〜5時間/週)
+<strong>Option A:Discordサーバー</strong>
+- リアルタイムQ&A
+- コード共有
+- Effort:High(10〜15時間/週)
 
-Option C:Newsletter-based(推奨)
-├─ メール返信奨励
-├─ 読者質問ニュースレターにFeatured
-├─ Effort:Low(1〜2時間/週)
+<strong>Option B:GitHub Discussions</strong>
+- 非同期Q&A
+- オープンソースレポ接続
+- Effort:Medium(3〜5時間/週)
 
-Option D:Korean Dev Community
-├─ Okky、44BITS活動
-├─ Slack/Discordグループ参加
-├─ Effort:Medium(5〜10時間/週)
-```
+<strong>Option C:Newsletter-based(推奨)</strong>
+- メール返信奨励
+- 読者質問ニュースレターにFeatured
+- Effort:Low(1〜2時間/週)
+
+<strong>Option D:Korean Dev Community</strong>
+- Okky、44BITS活動
+- Slack/Discordグループ参加
+- Effort:Medium(5〜10時間/週)
 
 <strong>Recommended:</strong>Option C(Newsletter-based) → Option B(GitHub Discussions)漸進転換
 

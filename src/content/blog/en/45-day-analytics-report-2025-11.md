@@ -484,21 +484,20 @@ Day 4〜14 (within 2 weeks):
 <strong>Why:</strong> Wasting 125 people/month (91% bounce rate) - Quick Win possible
 
 <strong>A/B Test 3 Variants:</strong>
-```
-Variant A: Current (Baseline)
-├─ 91% bounce rate
-└─ Control group
 
-Variant B: Add Featured Posts
-├─ Top 3 Korean posts + English summaries
-├─ Clear language switcher
-└─ Target bounce rate: 60〜70%
+<strong>Variant A: Current (Baseline)</strong>
+- 91% bounce rate
+- Control group
 
-Variant C: Auto-Redirect
-├─ English visitors → Korean blog (language toggle provided)
-├─ "Content available in Korean (15 posts)"
-└─ Target bounce rate: 40〜50%
-```
+<strong>Variant B: Add Featured Posts</strong>
+- Top 3 Korean posts + English summaries
+- Clear language switcher
+- Target bounce rate: 60〜70%
+
+<strong>Variant C: Auto-Redirect</strong>
+- English visitors → Korean blog (language toggle provided)
+- "Content available in Korean (15 posts)"
+- Target bounce rate: 40〜50%
 
 <strong>Timeline:</strong>
 - Day 1〜2: UX audit + A/B test design
@@ -541,16 +540,14 @@ Step 4 (1 week): Recalculate excluding China traffic
 <strong>Why:</strong> Significant portion of Direct 31.5% (340 sessions) likely social/referral
 
 <strong>UTM Parameter Template:</strong>
-```
-utm_source={platform}      (twitter, linkedin, reddit, etc.)
-utm_medium={medium}         (social, referral, email, etc.)
-utm_campaign={post_title}   (gemini-rag-tutorial, etc.)
 
-Example:
-https://jangwook.net/en/blog/en/gemini-rag/?
-  utm_source=twitter&
-  utm_medium=social&
-  utm_campaign=gemini-rag-tutorial
+- `utm_source={platform}` (twitter, linkedin, reddit, etc.)
+- `utm_medium={medium}` (social, referral, email, etc.)
+- `utm_campaign={post_title}` (gemini-rag-tutorial, etc.)
+
+<strong>Example:</strong>
+```
+https://jangwook.net/en/blog/en/gemini-rag/?utm_source=twitter&utm_medium=social&utm_campaign=gemini-rag-tutorial
 ```
 
 <strong>Application Targets:</strong>
@@ -599,26 +596,26 @@ Blog post footer:
 <strong>Target:</strong> Diversify with 20〜25 high-quality posts
 
 <strong>Replicate Gemini RAG Formula:</strong>
-```
-[Latest LLM Tool] + [Practical Tutorial] + [Code Examples] + [SEO Optimization]
 
-Topic Pipeline (4 weeks):
-Week 1〜2 (6 posts):
-├─ Claude Computer Use in-depth guide
-├─ OpenAI Structured Outputs guide
-├─ LangChain vs. LlamaIndex RAG comparison
-├─ Anthropic Prompt Engineering best practices
-├─ Vertex AI model deployment automation
-└─ AI agent architecture design patterns
+<strong>[Latest LLM Tool] + [Practical Tutorial] + [Code Examples] + [SEO Optimization]</strong>
 
-Week 3〜4 (6 posts):
-├─ Vector DB selection guide (Pinecone vs. Weaviate vs. Qdrant)
-├─ Few-shot learning practical examples
-├─ Chain-of-Thought prompting mastery
-├─ Function calling deep dive (Gemini, GPT-4, Claude)
-├─ RAG evaluation metrics (Precision, Recall, F1)
-└─ LLM agent debugging strategies
-```
+<strong>Topic Pipeline (4 weeks):</strong>
+
+<strong>Week 1〜2 (6 posts):</strong>
+- Claude Computer Use in-depth guide
+- OpenAI Structured Outputs guide
+- LangChain vs. LlamaIndex RAG comparison
+- Anthropic Prompt Engineering best practices
+- Vertex AI model deployment automation
+- AI agent architecture design patterns
+
+<strong>Week 3〜4 (6 posts):</strong>
+- Vector DB selection guide (Pinecone vs. Weaviate vs. Qdrant)
+- Few-shot learning practical examples
+- Chain-of-Thought prompting mastery
+- Function calling deep dive (Gemini, GPT-4, Claude)
+- RAG evaluation metrics (Precision, Recall, F1)
+- LLM agent debugging strategies
 
 <strong>SEO Focus:</strong>
 - Monthly search volume 500〜2,000
@@ -633,29 +630,27 @@ Week 3〜4 (6 posts):
 
 <strong>Strategy:</strong> 3 Pillar Pages + 5〜8 Supporting Articles each
 
-```
-Pillar 1: "Complete RAG Application Guide" (3,000〜5,000 words)
-├─ Google Gemini RAG tutorial (existing)
-├─ Claude RAG implementation
-├─ LangChain RAG hands-on
-├─ Vector DB comparison analysis
-├─ RAG evaluation and optimization
-└─ Production RAG deployment
+<strong>Pillar 1: "Complete RAG Application Guide" (3,000〜5,000 words)</strong>
+- Google Gemini RAG tutorial (existing)
+- Claude RAG implementation
+- LangChain RAG hands-on
+- Vector DB comparison analysis
+- RAG evaluation and optimization
+- Production RAG deployment
 
-Pillar 2: "AI Automation Workflows" (3,000〜5,000 words)
-├─ n8n tutorial series
-├─ Zapier AI integration
-├─ Make.com guide
-├─ API integration best practices
-└─ Workflow monitoring
+<strong>Pillar 2: "AI Automation Workflows" (3,000〜5,000 words)</strong>
+- n8n tutorial series
+- Zapier AI integration
+- Make.com guide
+- API integration best practices
+- Workflow monitoring
 
-Pillar 3: "LLM Prompt Engineering" (3,000〜5,000 words)
-├─ Claude prompting guide
-├─ GPT-4 prompt optimization
-├─ Few-shot learning
-├─ Chain-of-thought techniques
-└─ Prompt version control
-```
+<strong>Pillar 3: "LLM Prompt Engineering" (3,000〜5,000 words)</strong>
+- Claude prompting guide
+- GPT-4 prompt optimization
+- Few-shot learning
+- Chain-of-thought techniques
+- Prompt version control
 
 <strong>Internal Linking:</strong>
 - Supporting articles → Pillar pages (authority transfer)
@@ -672,31 +667,18 @@ Pillar 3: "LLM Prompt Engineering" (3,000〜5,000 words)
 <strong>Optimization Tactics:</strong>
 
 1. <strong>LLM-friendly structure:</strong>
-```markdown
-# Post Template
 
-## TL;DR (50〜100 words)
-- Core summary
-- Prerequisites
-- Estimated time
+<strong>Post Template Structure:</strong>
+- <strong>TL;DR (50〜100 words)</strong>: Core summary, prerequisites, estimated time
+- <strong>Step-by-Step Guide</strong>: Clear action steps listed sequentially
+- <strong>Code Examples</strong>: Add annotations for each section
+- <strong>FAQ</strong>: Common questions with clear answers
+- <strong>Next Steps</strong>: Related tutorial links
 
-## Step-by-Step Guide
-1. Step 1: [Clear action]
-2. Step 2: [Clear action]
-...
-
-## Code Examples
+<strong>Code Example Format:</strong>
 ```python
 # Annotate each section
 code_here()
-```
-
-## FAQ
-Q: Most common question?
-A: Clear answer
-
-## Next Steps
-- Related tutorial links
 ```
 
 2. <strong>Schema.org structured data:</strong>
@@ -714,28 +696,27 @@ A: Clear answer
 <strong>Goal:</strong> 10〜20 high-quality backlinks (DA 30+) within 30 days
 
 <strong>Tactics:</strong>
-```
-Week 1〜2: Guest Posting
-├─ Publish 2〜3 posts on Dev.to
-├─ Publish 1〜2 posts on Medium
-└─ Naturally include jangwook.net links
 
-Week 2〜3: Community Participation
-├─ Stack Overflow answers (cite blog)
-├─ Reddit r/MachineLearning, r/LangChain Q&A
-├─ Korean dev communities (Okky, 44BITS) activity
-└─ Share blog posts as resources in tech discussions
+<strong>Week 1〜2: Guest Posting</strong>
+- Publish 2〜3 posts on Dev.to
+- Publish 1〜2 posts on Medium
+- Naturally include jangwook.net links
 
-Week 3〜4: Outreach
-├─ List bloggers citing Gemini/Claude official docs
-├─ Email "my tutorial might be useful additional resource"
-└─ 20〜30 outreach → 5〜10 backlinks expected
+<strong>Week 2〜3: Community Participation</strong>
+- Stack Overflow answers (cite blog)
+- Reddit r/MachineLearning, r/LangChain Q&A
+- Korean dev communities (Okky, 44BITS) activity
+- Share blog posts as resources in tech discussions
 
-Week 4: Shareable Resources
-├─ "AI Tools Comparison Table" (others want to link)
-├─ "RAG Implementation Checklist" PDF
-└─ "LLM Prompt Cheat Sheet"
-```
+<strong>Week 3〜4: Outreach</strong>
+- List bloggers citing Gemini/Claude official docs
+- Email "my tutorial might be useful additional resource"
+- 20〜30 outreach → 5〜10 backlinks expected
+
+<strong>Week 4: Shareable Resources</strong>
+- "AI Tools Comparison Table" (others want to link)
+- "RAG Implementation Checklist" PDF
+- "LLM Prompt Cheat Sheet"
 
 <strong>Expected Impact:</strong>
 - Domain Authority (DA) +5〜10 points (within 2 months)
@@ -752,44 +733,42 @@ Week 4: Shareable Resources
 <strong>Recommended: Korean-First + Selective English Translation</strong>
 
 <strong>Implementation:</strong>
-```
-Phase 1 (Month 2〜3):
-├─ 80% focus on Korean content
-├─ Publish 2〜3 Korean posts/week
-└─ Stop producing new English content
 
-Phase 2 (Month 3〜4):
-├─ Translate Top 5 Korean posts (100+ pageviews) to English
-├─ High-quality translation (AI + native review)
-└─ Apply separate English SEO optimization
+<strong>Phase 1 (Month 2〜3):</strong>
+- 80% focus on Korean content
+- Publish 2〜3 Korean posts/week
+- Stop producing new English content
 
-Phase 3 (Month 4〜6):
-├─ Experiment with 1〜2 English-only content
-├─ Measure performance (pageviews, bounce rate, engagement)
-└─ Decide continuation based on ROI
-```
+<strong>Phase 2 (Month 3〜4):</strong>
+- Translate Top 5 Korean posts (100+ pageviews) to English
+- High-quality translation (AI + native review)
+- Apply separate English SEO optimization
+
+<strong>Phase 3 (Month 4〜6):</strong>
+- Experiment with 1〜2 English-only content
+- Measure performance (pageviews, bounce rate, engagement)
+- Decide continuation based on ROI
 
 #### #2: Full Email Newsletter Launch
 
 <strong>Implementation:</strong>
-```
-Month 2:
-├─ Setup Substack or ConvertKit
-├─ Design newsletter template
-├─ Write 3〜5 back-issues (establish rhythm)
-└─ Create Lead Magnet: "AI Automation Complete Cheat Sheet" PDF
 
-Month 3:
-├─ Add exit-intent popup (offer Lead Magnet)
-├─ Start weekly newsletter (every Friday)
-├─ Content mix: 80% curation + 20% exclusive
-└─ Promote newsletter CTA in Top posts
+<strong>Month 2:</strong>
+- Setup Substack or ConvertKit
+- Design newsletter template
+- Write 3〜5 back-issues (establish rhythm)
+- Create Lead Magnet: "AI Automation Complete Cheat Sheet" PDF
 
-Growth Targets:
-├─ Month 2: 50〜100 subscribers
-├─ Month 3: 150〜250 subscribers
-└─ Month 6: 500〜1,000 subscribers
-```
+<strong>Month 3:</strong>
+- Add exit-intent popup (offer Lead Magnet)
+- Start weekly newsletter (every Friday)
+- Content mix: 80% curation + 20% exclusive
+- Promote newsletter CTA in Top posts
+
+<strong>Growth Targets:</strong>
+- Month 2: 50〜100 subscribers
+- Month 3: 150〜250 subscribers
+- Month 6: 500〜1,000 subscribers
 
 <strong>Content Strategy:</strong>
 - Weekly digest: 2〜3 new posts
@@ -803,24 +782,23 @@ Growth Targets:
 #### #3: Advanced Analytics & Conversion Tracking
 
 <strong>Metrics to Implement:</strong>
-```
-Engagement Scoring:
-├─ Scroll depth (25%, 50%, 75%, 100%)
-├─ Page dwell time (1 min, 3 min, 5 min)
-└─ Code copy events
 
-Conversion Funnel:
-├─ Blog visit
-├─ Newsletter signup
-├─ Email open
-├─ Link click
-└─ Return visit
+<strong>Engagement Scoring:</strong>
+- Scroll depth (25%, 50%, 75%, 100%)
+- Page dwell time (1 min, 3 min, 5 min)
+- Code copy events
 
-Content Quality Signals:
-├─ Social shares (Twitter, LinkedIn)
-├─ Comments/discussions
-└─ Backlink generation
-```
+<strong>Conversion Funnel:</strong>
+- Blog visit
+- Newsletter signup
+- Email open
+- Link click
+- Return visit
+
+<strong>Content Quality Signals:</strong>
+- Social shares (Twitter, LinkedIn)
+- Comments/discussions
+- Backlink generation
 
 <strong>Tools:</strong>
 - GA4 custom events
@@ -859,27 +837,26 @@ Content Quality Signals:
 #### #5: Community Building
 
 <strong>Options:</strong>
-```
-Option A: Discord Server
-├─ Real-time Q&A
-├─ Code sharing
-├─ Effort: High (10〜15 hours/week)
 
-Option B: GitHub Discussions
-├─ Async Q&A
-├─ Connect to open-source repo
-├─ Effort: Medium (3〜5 hours/week)
+<strong>Option A: Discord Server</strong>
+- Real-time Q&A
+- Code sharing
+- Effort: High (10〜15 hours/week)
 
-Option C: Newsletter-based (Recommended)
-├─ Encourage email replies
-├─ Feature reader questions in newsletter
-├─ Effort: Low (1〜2 hours/week)
+<strong>Option B: GitHub Discussions</strong>
+- Async Q&A
+- Connect to open-source repo
+- Effort: Medium (3〜5 hours/week)
 
-Option D: Korean Dev Community
-├─ Okky, 44BITS activity
-├─ Join Slack/Discord groups
-├─ Effort: Medium (5〜10 hours/week)
-```
+<strong>Option C: Newsletter-based (Recommended)</strong>
+- Encourage email replies
+- Feature reader questions in newsletter
+- Effort: Low (1〜2 hours/week)
+
+<strong>Option D: Korean Dev Community</strong>
+- Okky, 44BITS activity
+- Join Slack/Discord groups
+- Effort: Medium (5〜10 hours/week)
 
 <strong>Recommended:</strong> Option C (Newsletter-based) → Option B (GitHub Discussions) gradual transition
 
