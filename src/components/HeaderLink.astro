@@ -13,8 +13,8 @@ const isActive = pathname === href || pathname.startsWith(href + '/');
 	class:list={[
 		'px-3 py-2 rounded-md text-sm font-medium transition-colors',
 		isActive
-			? 'bg-accent/10 text-accent'
-			: 'text-gray-700 hover:bg-gray-100 hover:text-accent',
+			? 'bg-accent/10 text-accent dark:bg-accent/20'
+			: 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-accent',
 		className
 	]}
 	{...props}

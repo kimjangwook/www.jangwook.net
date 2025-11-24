@@ -45,26 +45,26 @@ const socialLinks = [
 	<head>
 		<BaseHead title={t('nav.social')} description={t('site.description')} />
 	</head>
-	<body>
+	<body class="bg-gray-50 dark:bg-gray-900">
 		<Header lang={lang} />
 		<main class="max-w-4xl mx-auto px-4 py-12">
-			<h1 class="text-4xl font-bold mb-4">{t('nav.social')}</h1>
+			<h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">{t('nav.social')}</h1>
 
-			<div class="prose prose-lg max-w-none mb-12">
+			<div class="prose prose-lg max-w-none mb-12 dark:prose-invert">
 				{lang === 'ko' ? (
-					<p class="text-lg text-gray-600">
+					<p class="text-lg text-gray-600 dark:text-gray-300">
 						다양한 플랫폼에서 저를 팔로우하고 최신 소식과 인사이트를 받아보세요.
 					</p>
 				) : lang === 'ja' ? (
-					<p class="text-lg text-gray-600">
+					<p class="text-lg text-gray-600 dark:text-gray-300">
 						さまざまなプラットフォームでフォローして、最新のニュースとインサイトをお受け取りください。
 					</p>
 				) : lang === 'zh' ? (
-					<p class="text-lg text-gray-600">
+					<p class="text-lg text-gray-600 dark:text-gray-300">
 						在各个平台关注我，获取最新资讯和洞察。
 					</p>
 				) : (
-					<p class="text-lg text-gray-600">
+					<p class="text-lg text-gray-600 dark:text-gray-300">
 						Follow me on various platforms to receive the latest news and insights.
 					</p>
 				)}
@@ -77,22 +77,22 @@ const socialLinks = [
 						href={social.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class={`bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all duration-300 ${social.color}`}
+						class={`bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 shadow-sm transition-all duration-300 hover:shadow-lg ${social.color}`}
 					>
 						<div class="flex items-center gap-4 mb-4">
-							<svg class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
+							<svg class="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="currentColor">
 								<path d={social.icon} />
 							</svg>
-							<h2 class="text-2xl font-bold">{social.name}</h2>
+							<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">{social.name}</h2>
 						</div>
-						<p class="text-sm opacity-80">{social.description}</p>
+						<p class="text-sm opacity-80 text-gray-600 dark:text-gray-300">{social.description}</p>
 					</a>
 				))}
 			</div>
 
 			<!-- Additional Info -->
-			<div class="bg-gray-50 rounded-lg p-8">
-				<h2 class="text-2xl font-bold mb-6">
+			<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 border border-gray-200 dark:border-gray-700">
+				<h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">
 					{lang === 'ko' ? '다른 문의 방법' : lang === 'ja' ? 'その他の接続方法' : lang === 'zh' ? '更多联系方式' : 'More Ways to Connect'}
 				</h2>
 
@@ -102,8 +102,8 @@ const socialLinks = [
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 						</svg>
 						<div>
-							<a href="mailto:kim.jangwook.1029@gmail.com">
-								<h3 class="font-semibold mb-1">Email</h3>
+							<a href="mailto:kim.jangwook.1029@gmail.com" class="text-accent hover:underline">
+								<h3 class="font-semibold mb-1 text-gray-900 dark:text-gray-100">Email</h3>
 							</a>
 						</div>
 					</div>
@@ -113,8 +113,8 @@ const socialLinks = [
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
 						</svg>
 						<div>
-							<a href={`/${lang}/contact`}>
-								<h3 class="font-semibold mb-1">
+							<a href={`/${lang}/contact`} class="text-accent hover:underline">
+								<h3 class="font-semibold mb-1 text-gray-900 dark:text-gray-100">
 									{lang === 'ko' ? '문의하기' : lang === 'ja' ? 'お問い合わせ' : lang === 'zh' ? '联系我们' : 'Contact'}
 								</h3>
 							</a>

@@ -10,12 +10,12 @@ const t = useTranslations(lang);
 const today = new Date();
 ---
 
-<footer class="bg-gray-900 text-gray-300 mt-20">
+<footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 dark:text-gray-400 mt-20">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<!-- About Section -->
 			<div>
-				<h3 class="text-white font-bold text-lg mb-4">{t('site.title')}</h3>
+				<h3 class="text-white dark:text-gray-100 font-bold text-lg mb-4">{t('site.title')}</h3>
 				<p class="text-sm text-gray-400">
 					{t('site.description')}
 				</p>
@@ -23,7 +23,7 @@ const today = new Date();
 
 			<!-- Quick Links -->
 			<div>
-				<h3 class="text-white font-bold text-lg mb-4">Links</h3>
+				<h3 class="text-white dark:text-gray-100 font-bold text-lg mb-4">Links</h3>
 				<ul class="space-y-2 text-sm">
 					<li><a href={`/${lang}`} class="hover:text-accent transition-colors">{t('nav.home')}</a></li>
 					<li><a href={`/${lang}/blog`} class="hover:text-accent transition-colors">{t('nav.blog')}</a></li>
@@ -37,7 +37,7 @@ const today = new Date();
 
 			<!-- Social Links -->
 			<div>
-				<h3 class="text-white font-bold text-lg mb-4">Social</h3>
+				<h3 class="text-white dark:text-gray-100 font-bold text-lg mb-4">Social</h3>
 				<div class="flex gap-4">
 					<a href="https://x.com/Kim_Jangwook" target="_blank"
 					   class="social-link text-gray-400 hover:text-accent transition-colors"
@@ -75,7 +75,7 @@ const today = new Date();
 			</div>
 		</div>
 
-		<div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+		<div class="border-t border-gray-800 dark:border-gray-900 mt-8 pt-8 text-center text-sm text-gray-400 dark:text-gray-500">
 			<p>&copy; {today.getFullYear()} EffiFlow. {t('footer.allRightsReserved')}.</p>
 		</div>
 	</div>

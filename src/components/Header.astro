@@ -3,6 +3,7 @@ import { SITE_TITLE } from '../consts';
 import { useTranslations, type Language } from '../lib/i18n/languages';
 import HeaderLink from './HeaderLink.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
 	lang: Language;
@@ -12,14 +13,14 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
 	<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex items-center justify-between h-16">
 			<div class="flex items-center gap-8">
 				<!-- Mobile menu button (shown on mobile and tablet) -->
 				<button
 					id="mobile-menu-button"
-					class="lg:hidden p-2 rounded-md text-gray-700 hover:text-accent hover:bg-gray-100 transition-colors"
+					class="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
 					aria-label="Toggle menu"
 				>
 					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,33 +29,34 @@ const t = useTranslations(lang);
 				</button>
 
 				<h2 class="text-xl font-bold">
-					<a href="/" class="gradient-text hover:opacity-80 transition-opacity">
+					<a href={`/${lang}/`} class="gradient-text hover:opacity-80 transition-opacity">
 						{SITE_TITLE}
 					</a>
 				</h2>
 				<div class="hidden lg:flex items-center gap-1">
-					<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
-					<HeaderLink href={`/${lang}/blog`}>{t('nav.blog')}</HeaderLink>
-					<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
-					<HeaderLink href={`/${lang}/contact`}>{t('nav.contact')}</HeaderLink>
-					<HeaderLink href={`/${lang}/social`}>{t('nav.social')}</HeaderLink>
-					<HeaderLink href={`/${lang}/improvement-history`}>{t('nav.improvementHistory')}</HeaderLink>
+					<HeaderLink href={`/${lang}/`}>{t('nav.home')}</HeaderLink>
+					<HeaderLink href={`/${lang}/blog/`}>{t('nav.blog')}</HeaderLink>
+					<HeaderLink href={`/${lang}/about/`}>{t('nav.about')}</HeaderLink>
+					<HeaderLink href={`/${lang}/contact/`}>{t('nav.contact')}</HeaderLink>
+					<HeaderLink href={`/${lang}/social/`}>{t('nav.social')}</HeaderLink>
+					<HeaderLink href={`/${lang}/improvement-history/`}>{t('nav.improvementHistory')}</HeaderLink>
 				</div>
 			</div>
-			<div class="flex items-center gap-4">
+			<div class="flex items-center gap-2">
+				<ThemeToggle />
 				<LanguageSwitcher currentLang={lang} />
 			</div>
 		</div>
 
 		<!-- Mobile menu (shown on mobile and tablet) -->
-		<div id="mobile-menu" class="hidden lg:hidden pb-4 pt-2 border-t border-gray-200">
+		<div id="mobile-menu" class="hidden lg:hidden pb-4 pt-2 border-t border-gray-200 dark:border-gray-700">
 			<div class="flex flex-col gap-2">
-				<HeaderLink href={`/${lang}`}>{t('nav.home')}</HeaderLink>
-				<HeaderLink href={`/${lang}/blog`}>{t('nav.blog')}</HeaderLink>
-				<HeaderLink href={`/${lang}/about`}>{t('nav.about')}</HeaderLink>
-				<HeaderLink href={`/${lang}/contact`}>{t('nav.contact')}</HeaderLink>
-				<HeaderLink href={`/${lang}/social`}>{t('nav.social')}</HeaderLink>
-				<HeaderLink href={`/${lang}/improvement-history`}>{t('nav.improvementHistory')}</HeaderLink>
+				<HeaderLink href={`/${lang}/`}>{t('nav.home')}</HeaderLink>
+				<HeaderLink href={`/${lang}/blog/`}>{t('nav.blog')}</HeaderLink>
+				<HeaderLink href={`/${lang}/about/`}>{t('nav.about')}</HeaderLink>
+				<HeaderLink href={`/${lang}/contact/`}>{t('nav.contact')}</HeaderLink>
+				<HeaderLink href={`/${lang}/social/`}>{t('nav.social')}</HeaderLink>
+				<HeaderLink href={`/${lang}/improvement-history/`}>{t('nav.improvementHistory')}</HeaderLink>
 			</div>
 		</div>
 	</nav>

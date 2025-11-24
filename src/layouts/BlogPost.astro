@@ -73,7 +73,7 @@ const breadcrumbSchema = {
 		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 	</head>
 
-	<body class="bg-gray-50">
+	<body class="bg-gray-50 dark:bg-gray-900">
 		<Header lang={lang} />
 		<main class="py-12">
 			<article class="max-w-4xl mx-auto px-0 sm:px-6 lg:px-8">
@@ -93,10 +93,10 @@ const breadcrumbSchema = {
 					</div>
 				)}
 
-				<div class="bg-white rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
+				<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
 					<!-- Header -->
-					<header class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200">
-						<div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
+					<header class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200 dark:border-gray-700">
+						<div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-3 sm:mb-4">
 							<time datetime={pubDate.toISOString()}>
 								{t('blog.publishedOn')}: <FormattedDate date={pubDate} />
 							</time>
@@ -109,29 +109,29 @@ const breadcrumbSchema = {
 								</>
 							)}
 						</div>
-						<h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
+						<h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 leading-tight">
 							{title}
 						</h1>
-						<p class="text-base sm:text-lg lg:text-xl text-gray-600">
+						<p class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
 							{description}
 						</p>
 					</header>
 
 					<!-- Content -->
 					<div class="prose sm:prose-lg prose-gray max-w-none
-						prose-headings:font-bold prose-headings:text-gray-900
+						prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-gray-100
 						prose-h2:text-xl sm:prose-h2:text-2xl lg:prose-h2:text-3xl prose-h2:mt-8 sm:prose-h2:mt-12 prose-h2:mb-4 sm:prose-h2:mb-6
 						prose-h3:text-lg sm:prose-h3:text-xl lg:prose-h3:text-2xl prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4
-						prose-p:text-gray-700 prose-p:leading-relaxed prose-p:text-sm sm:prose-p:text-base
+						prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-p:text-sm sm:prose-p:text-base
 						prose-a:text-accent prose-a:no-underline hover:prose-a:underline
-						prose-strong:text-gray-900 prose-strong:font-semibold
-						prose-code:text-accent prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-xs sm:prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
-						prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:text-xs sm:prose-pre:text-sm
-						prose-blockquote:border-accent prose-blockquote:bg-accent/5 prose-blockquote:py-2
+						prose-strong:text-gray-900 dark:prose-strong:text-gray-100 prose-strong:font-semibold
+						prose-code:text-accent prose-code:bg-gray-100 dark:prose-code:bg-gray-700 dark:prose-code:text-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-xs sm:prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+						prose-pre:bg-gray-900 dark:prose-pre:bg-gray-800 prose-pre:text-gray-100 prose-pre:text-xs sm:prose-pre:text-sm
+						prose-blockquote:border-accent prose-blockquote:bg-accent/5 dark:prose-blockquote:bg-accent/10 prose-blockquote:py-2
 						prose-img:rounded-lg prose-img:shadow-md
 						prose-ul:text-sm sm:prose-ul:text-base
 						prose-ol:text-sm sm:prose-ol:text-base
-						prose-li:text-sm sm:prose-li:text-base
+						prose-li:text-sm sm:prose-li:text-base dark:prose-li:text-gray-300
 					">
 						<slot />
 					</div>
@@ -152,7 +152,7 @@ const breadcrumbSchema = {
 				</div>
 
 				<!-- Comments -->
-				<div class="mt-8 bg-white rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
+				<div class="mt-8 bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
 					<script src="https://giscus.app/client.js"
 						data-repo="kimjangwook/jangwook.net"
 						data-repo-id="R_kgDOP8NyLg"

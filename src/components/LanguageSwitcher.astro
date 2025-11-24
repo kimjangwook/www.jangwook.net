@@ -36,41 +36,88 @@ const currentRoute = getRouteFromUrl(Astro.url.pathname);
 		display: flex;
 		align-items: center;
 		gap: 0.375rem;
+		padding: 0.25rem 0.5rem;
+		border-radius: 0.5rem;
+		background-color: rgba(59, 130, 246, 0.05);
+		transition: all 0.2s ease;
+	}
+
+	.language-selector-wrapper:hover {
+		background-color: rgba(59, 130, 246, 0.1);
 	}
 
 	.language-icon {
 		width: 1.125rem;
 		height: 1.125rem;
-		color: #6B7280;
+		color: #3B82F6;
 		pointer-events: none;
+		flex-shrink: 0;
 	}
 
 	.language-selector {
 		appearance: none;
 		background-color: transparent;
-		border: 1px solid #E5E7EB;
+		border: 1px solid rgba(59, 130, 246, 0.3);
 		border-radius: 0.375rem;
 		padding: 0.375rem 1.75rem 0.375rem 0.625rem;
 		font-size: 0.875rem;
-		font-weight: 500;
-		color: #374151;
+		font-weight: 600;
+		color: #1E40AF;
 		cursor: pointer;
 		transition: all 0.2s ease;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233B82F6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
 		background-repeat: no-repeat;
 		background-position: right 0.375rem center;
 		background-size: 1rem;
 	}
 
 	.language-selector:hover {
-		border-color: #f97316;
-		background-color: #FFF7ED;
+		border-color: #3B82F6;
+		background-color: rgba(59, 130, 246, 0.05);
+		transform: translateY(-1px);
+		box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 	}
 
 	.language-selector:focus {
-		outline: 2px solid #f97316;
+		outline: 2px solid #3B82F6;
 		outline-offset: 2px;
-		border-color: #f97316;
+		border-color: #3B82F6;
+	}
+
+	/* Dark mode styles */
+	:global(.dark) .language-selector-wrapper {
+		background-color: rgba(96, 165, 250, 0.1);
+	}
+
+	:global(.dark) .language-selector-wrapper:hover {
+		background-color: rgba(96, 165, 250, 0.15);
+	}
+
+	:global(.dark) .language-icon {
+		color: #60A5FA;
+	}
+
+	:global(.dark) .language-selector {
+		border-color: rgba(96, 165, 250, 0.4);
+		color: #93C5FD;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2360A5FA'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+	}
+
+	:global(.dark) .language-selector:hover {
+		border-color: #60A5FA;
+		background-color: rgba(96, 165, 250, 0.1);
+		box-shadow: 0 2px 4px rgba(96, 165, 250, 0.3);
+	}
+
+	:global(.dark) .language-selector:focus {
+		outline-color: #60A5FA;
+		border-color: #60A5FA;
+	}
+
+	/* Dark mode option styles */
+	:global(.dark) .language-selector option {
+		background-color: #1F2937;
+		color: #F9FAFB;
 	}
 
 	@media (max-width: 720px) {

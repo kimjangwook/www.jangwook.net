@@ -93,6 +93,20 @@ const articleSchema = articleData ? {
 } : null;
 ---
 
+<!-- Theme initialization script (prevent flicker) -->
+<script is:inline>
+	// This script runs before the page renders to prevent flash of unstyled content
+	(function() {
+		const savedTheme = localStorage.getItem('theme');
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+		if (theme === 'dark') {
+			document.documentElement.classList.add('dark');
+		}
+	})();
+</script>
+
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />

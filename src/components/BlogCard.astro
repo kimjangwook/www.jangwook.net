@@ -15,10 +15,10 @@ interface Props {
 const { href, title, description, pubDate, heroImage, tags } = Astro.props;
 ---
 
-<article class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200">
+<article class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
 	<a href={href} class="block">
 		{heroImage && (
-			<div class="relative h-48 overflow-hidden bg-gray-100">
+			<div class="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-700">
 				<Image
 					src={heroImage}
 					alt={title}
@@ -33,7 +33,7 @@ const { href, title, description, pubDate, heroImage, tags } = Astro.props;
 			</div>
 		)}
 		<div class="p-6">
-			<div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+			<div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-3">
 				<time datetime={pubDate.toISOString()}>
 					<FormattedDate date={pubDate} />
 				</time>
@@ -47,10 +47,10 @@ const { href, title, description, pubDate, heroImage, tags } = Astro.props;
 					))}
 				</div>
 			)}
-			<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors line-clamp-2">
+			<h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-accent transition-colors line-clamp-2">
 				{title}
 			</h3>
-			<p class="text-gray-600 text-sm line-clamp-3">
+			<p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
 				{description}
 			</p>
 			<div class="mt-4 flex items-center text-accent font-medium text-sm">

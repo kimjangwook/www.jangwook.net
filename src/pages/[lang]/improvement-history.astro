@@ -195,6 +195,11 @@ const tt = (key: any) => {
 				transition: transform 0.2s, box-shadow 0.2s;
 			}
 
+			:global(.dark) .improvement-card {
+				background: var(--bg-secondary);
+				border-color: var(--border-color);
+			}
+
 			.improvement-card:hover {
 				transform: translateY(-2px);
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -211,6 +216,7 @@ const tt = (key: any) => {
 				font-size: 1.25rem;
 				font-weight: 600;
 				margin: 0;
+				color: var(--text-primary);
 			}
 
 			.category-badge {
@@ -241,6 +247,11 @@ const tt = (key: any) => {
 				background: white;
 				border-radius: 6px;
 				font-size: 0.875rem;
+			}
+
+			:global(.dark) .metric {
+				background: var(--bg-primary);
+				border: 1px solid var(--border-color);
 			}
 
 			.metric-label {
@@ -302,6 +313,11 @@ const tt = (key: any) => {
 				border-radius: 6px;
 			}
 
+			:global(.dark) .before-after {
+				background: var(--bg-primary);
+				border: 1px solid var(--border-color);
+			}
+
 			.before, .after {
 				text-align: center;
 			}
@@ -324,10 +340,19 @@ const tt = (key: any) => {
 				border-radius: 4px;
 			}
 
+			:global(.dark) .lessons {
+				background: #1e3a5f;
+				border-left-color: #3b82f6;
+			}
+
 			.lessons-title {
 				font-weight: 600;
 				margin-bottom: 0.5rem;
 				color: #a16207;
+			}
+
+			:global(.dark) .lessons-title {
+				color: #93c5fd;
 			}
 
 			.lessons ul {
@@ -339,6 +364,10 @@ const tt = (key: any) => {
 				text-align: center;
 				padding: 4rem 2rem;
 				color: var(--gray-500);
+			}
+
+			:global(.dark) .empty-state {
+				color: var(--text-secondary);
 			}
 
 			.empty-state-icon {
@@ -360,6 +389,11 @@ const tt = (key: any) => {
 				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 			}
 
+			:global(.dark) .stat-card {
+				background: var(--bg-secondary);
+				border: 1px solid var(--border-color);
+			}
+
 			.stat-value {
 				font-size: 2rem;
 				font-weight: 700;
@@ -370,6 +404,10 @@ const tt = (key: any) => {
 				margin-top: 0.5rem;
 				color: var(--gray-600);
 				font-size: 0.875rem;
+			}
+
+			:global(.dark) .stat-label {
+				color: var(--text-secondary);
 			}
 
 			.filter-tabs {
@@ -408,15 +446,20 @@ const tt = (key: any) => {
 				background: var(--gray-50);
 				border-radius: 8px;
 			}
+
+			:global(.dark) .data-section {
+				background: var(--bg-secondary);
+				border: 1px solid var(--border-color);
+			}
 		</style>
 	</head>
-	<body>
+	<body class="bg-gray-50 dark:bg-gray-900">
 		<Header lang={lang} />
 		<main class="max-w-6xl mx-auto px-4 py-12">
 			<section>
 				<div class="mb-8">
-					<h1 class="text-4xl font-bold mb-4">🚀 {tt(translations.title)}</h1>
-					<p class="text-xl text-gray-600">{tt(translations.description)}</p>
+					<h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">🚀 {tt(translations.title)}</h1>
+					<p class="text-xl text-gray-600 dark:text-gray-300">{tt(translations.description)}</p>
 				</div>
 
 				<!-- Summary Stats -->
@@ -467,27 +510,27 @@ const tt = (key: any) => {
 
 						<!-- Planned Improvements Section -->
 						{plannedImprovements.length > 0 && (
-							<div style="margin-top: 3rem;">
-								<h2 class="text-3xl font-bold mb-4">📋 {tt(translations.sections.planned)}</h2>
+							<div class="mt-12">
+								<h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">📋 {tt(translations.sections.planned)}</h2>
 								<div class="timeline">
 									{plannedImprovements.map((item) => (
 										<div class="timeline-item" data-category={item.category}>
-											<div class="improvement-card" style="background: #fefce8; border-color: #facc15;">
+											<div class="improvement-card bg-yellow-50 dark:bg-yellow-900/20 border-yellow-400 dark:border-yellow-600">
 												<div class="card-header">
-													<h3 class="card-title">{tt(item.title)}</h3>
+													<h3 class="card-title text-gray-900 dark:text-gray-100">{tt(item.title)}</h3>
 													<span class={`category-badge category-${item.category.toLowerCase()}`}>
 														{item.category}
 													</span>
 												</div>
 
-												<p>{tt(item.description)}</p>
+												<p class="text-gray-700 dark:text-gray-300">{tt(item.description)}</p>
 
 												<!-- Target (for planned items) -->
-												<div class="before-after" style="background: white;">
-													<div class="before" style="grid-column: 1 / -1; text-align: left;">
-														<div class="metric-label">{tt(translations.metrics.target)}</div>
-														<div class="value" style="color: #0369a1;">{tt(item.target.value)}</div>
-														<div class="metric-label">{tt(item.target.metric)}</div>
+												<div class="before-after bg-white dark:bg-gray-800">
+													<div class="before col-span-full text-left">
+														<div class="metric-label text-gray-600 dark:text-gray-400">{tt(translations.metrics.target)}</div>
+														<div class="value text-blue-700 dark:text-blue-400">{tt(item.target.value)}</div>
+														<div class="metric-label text-gray-600 dark:text-gray-400">{tt(item.target.metric)}</div>
 													</div>
 												</div>
 
@@ -507,17 +550,17 @@ const tt = (key: any) => {
 												</div>
 
 												{item.expectedImpact && (
-													<div style="margin-top: 1rem; padding: 0.75rem; background: white; border-radius: 6px;">
-														<div style="font-weight: 600; color: #0369a1; margin-bottom: 0.25rem;">
+													<div class="mt-4 p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+														<div class="font-semibold text-blue-700 dark:text-blue-400 mb-1">
 															{tt(translations.metrics.expectedImpact)}
 														</div>
-														<div style="color: var(--gray-700);">{tt(item.expectedImpact)}</div>
+														<div class="text-gray-700 dark:text-gray-300">{tt(item.expectedImpact)}</div>
 													</div>
 												)}
 
 												{item.sourceReport && (
-													<div style="margin-top: 1rem;">
-														<a href={item.sourceReport} style="color: var(--accent); text-decoration: none;">
+													<div class="mt-4">
+														<a href={item.sourceReport} class="text-accent hover:underline">
 															📄 {tt(translations.sourceReport)} →
 														</a>
 													</div>
@@ -531,19 +574,19 @@ const tt = (key: any) => {
 
 						<!-- In Progress Improvements Section -->
 						{inProgressImprovements.length > 0 && (
-							<div style="margin-top: 3rem;">
-								<h2 class="text-3xl font-bold mb-4">🚧 {tt(translations.sections.inProgress)}</h2>
+							<div class="mt-12">
+								<h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">🚧 {tt(translations.sections.inProgress)}</h2>
 								<div class="timeline">
 									{inProgressImprovements.map((item) => (
 										<div class="timeline-item" data-category={item.category}>
-											<div class="improvement-card" style="background: #e0f2fe; border-color: #0369a1;">
+											<div class="improvement-card bg-blue-50 dark:bg-blue-900/20 border-blue-600 dark:border-blue-700">
 												<div class="card-header">
-													<h3 class="card-title">{tt(item.title)}</h3>
+													<h3 class="card-title text-gray-900 dark:text-gray-100">{tt(item.title)}</h3>
 													<span class={`category-badge category-${item.category.toLowerCase()}`}>
 														{item.category}
 													</span>
 												</div>
-												<p>{tt(item.description)}</p>
+												<p class="text-gray-700 dark:text-gray-300">{tt(item.description)}</p>
 												{/* Add similar structure as planned items */}
 											</div>
 										</div>
@@ -554,62 +597,62 @@ const tt = (key: any) => {
 
 						<!-- Completed Improvements Section -->
 						{completedImprovements.length > 0 && (
-							<div style="margin-top: 3rem;">
-								<h2 class="text-3xl font-bold mb-4">✅ {tt(translations.sections.completed)}</h2>
+							<div class="mt-12">
+								<h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">✅ {tt(translations.sections.completed)}</h2>
 								<div class="timeline">
 									{completedImprovements.map((item) => (
 										<div class="timeline-item" data-category={item.category}>
-											<div class="improvement-card">
+											<div class="improvement-card bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
 												<div class="card-header">
-													<h3 class="card-title">{tt(item.title)}</h3>
+													<h3 class="card-title text-gray-900 dark:text-gray-100">{tt(item.title)}</h3>
 													<span class={`category-badge category-${item.category.toLowerCase()}`}>
 														{item.category}
 													</span>
 												</div>
 
-												<p>{tt(item.description)}</p>
+												<p class="text-gray-700 dark:text-gray-300">{tt(item.description)}</p>
 
-												<div class="before-after">
+												<div class="before-after bg-white dark:bg-gray-800">
 													<div class="before">
-														<div class="metric-label">{tt(translations.metrics.before)}</div>
-														<div class="value">{tt(item.before.value)}</div>
-														<div class="metric-label">{tt(item.before.metric)}</div>
+														<div class="metric-label text-gray-600 dark:text-gray-400">{tt(translations.metrics.before)}</div>
+														<div class="value text-gray-900 dark:text-gray-100">{tt(item.before.value)}</div>
+														<div class="metric-label text-gray-600 dark:text-gray-400">{tt(item.before.metric)}</div>
 													</div>
-													<div class="arrow">→</div>
+													<div class="arrow text-gray-400 dark:text-gray-500">→</div>
 													<div class="after">
-														<div class="metric-label">{tt(translations.metrics.after)}</div>
+														<div class="metric-label text-gray-600 dark:text-gray-400">{tt(translations.metrics.after)}</div>
 														<div class={`value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
 															{tt(item.after.value)}
 														</div>
-														<div class="metric-label">{tt(item.after.metric)}</div>
+														<div class="metric-label text-gray-600 dark:text-gray-400">{tt(item.after.metric)}</div>
 													</div>
 												</div>
 
 												<div class="metrics-row">
 													<div class="metric">
-														<span class="metric-label">{tt(translations.metrics.impact)}:</span>
+														<span class="metric-label text-gray-600 dark:text-gray-400">{tt(translations.metrics.impact)}:</span>
 														<span class={`metric-value ${item.impactType === 'positive' ? 'impact-positive' : 'impact-negative'}`}>
 															{item.impact}
 														</span>
 													</div>
 													<div class="metric">
-														<span class="metric-label">{tt(translations.metrics.effort)}:</span>
-														<span class="metric-value">{tt(item.effort)}</span>
+														<span class="metric-label text-gray-600 dark:text-gray-400">{tt(translations.metrics.effort)}:</span>
+														<span class="metric-value text-gray-900 dark:text-gray-100">{tt(item.effort)}</span>
 													</div>
 													<div class="metric">
-														<span class="metric-label">{tt(translations.metrics.roi)}:</span>
-														<span class="metric-value">{tt(item.roi)}</span>
+														<span class="metric-label text-gray-600 dark:text-gray-400">{tt(translations.metrics.roi)}:</span>
+														<span class="metric-value text-gray-900 dark:text-gray-100">{tt(item.roi)}</span>
 													</div>
 													<div class="metric">
-														<span class="metric-label">{tt(translations.metrics.date)}:</span>
-														<span class="metric-value">{item.date}</span>
+														<span class="metric-label text-gray-600 dark:text-gray-400">{tt(translations.metrics.date)}:</span>
+														<span class="metric-value text-gray-900 dark:text-gray-100">{item.date}</span>
 													</div>
 												</div>
 
 												{item.lessons && tt(item.lessons).length > 0 && (
-													<div class="lessons">
-														<div class="lessons-title">💡 {tt(translations.lessons.title)}</div>
-														<ul>
+													<div class="lessons bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700">
+														<div class="lessons-title text-gray-900 dark:text-gray-100">💡 {tt(translations.lessons.title)}</div>
+														<ul class="text-gray-700 dark:text-gray-300">
 															{tt(item.lessons).map((lesson: string) => (
 																<li>{lesson}</li>
 															))}
@@ -618,8 +661,8 @@ const tt = (key: any) => {
 												)}
 
 												{item.sourceReport && (
-													<div style="margin-top: 1rem;">
-														<a href={item.sourceReport} style="color: var(--accent); text-decoration: none;">
+													<div class="mt-4">
+														<a href={item.sourceReport} class="text-accent hover:underline">
 															📄 {tt(translations.sourceReport)} →
 														</a>
 													</div>
@@ -635,14 +678,14 @@ const tt = (key: any) => {
 
 				<!-- Data Sources & Notes -->
 				<div class="data-section">
-					<h3 class="text-xl font-bold mb-4">📝 {tt(translations.dataSection.title)}</h3>
-					<ul class="space-y-2 mb-4">
+					<h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">📝 {tt(translations.dataSection.title)}</h3>
+					<ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
 						<li><strong>{tt(translations.dataSection.analytics)}:</strong> Google Analytics 4 (Property ID: 395101361)</li>
 						<li><strong>{tt(translations.dataSection.reports)}:</strong> <a href={`/${lang}/blog`} class="text-accent hover:underline">/{lang}/blog</a></li>
 						<li><strong>{tt(translations.dataSection.todos)}:</strong> <code>/improvement-tracking/</code></li>
 						<li><strong>{tt(translations.dataSection.autoUpdate)}:</strong> improvement-tracker {lang === 'ko' ? '에이전트가 완료된 개선사항을 자동으로 이 페이지에 반영' : lang === 'ja' ? 'エージェントが完了した改善事項を自動的にこのページに反映' : lang === 'zh' ? '代理自动将已完成的改进项反映到此页面' : 'agent automatically reflects completed improvements to this page'}</li>
 					</ul>
-					<p class="text-gray-600">
+					<p class="text-gray-600 dark:text-gray-300">
 						{tt(translations.dataSection.description)}
 					</p>
 				</div>
