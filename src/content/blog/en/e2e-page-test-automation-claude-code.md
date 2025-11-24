@@ -1,40 +1,55 @@
 ---
-title: "Automating Page E2E Testing with Claude Code"
-description: "Build an automated page quality verification system for web publishers. Test 8 quality items with a single command and receive improvement suggestions."
+title: Automating Page E2E Testing with Claude Code
+description: >-
+  Build an automated page quality verification system for web publishers. Test 8
+  quality items with a single command and receive improvement suggestions.
 pubDate: '2025-11-25'
-heroImage: "../../../assets/blog/e2e-page-test-automation-claude-code-hero.png"
-tags: ["claude-code", "e2e-testing", "automation"]
+heroImage: ../../../assets/blog/e2e-page-test-automation-claude-code-hero.png
+tags:
+  - claude-code
+  - e2e-testing
+  - automation
 relatedPosts:
-  - slug: playwright-ai-testing
-    score: 0.95
+  - slug: adding-chinese-support
+    score: 0.94
     reason:
-      ko: 'Playwright를 활용한 테스트 자동화의 심화 내용으로, E2E 테스트의 기초를 다룹니다.'
-      ja: 'Playwrightを活用したテスト自動化の詳細内容で、E2Eテストの基礎を扱います。'
-      en: 'Advanced content on test automation with Playwright, covering E2E testing fundamentals.'
-  - slug: chrome-devtools-mcp-performance
-    score: 0.92
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+  - slug: n8n-rss-automation
+    score: 0.94
     reason:
-      ko: 'Chrome DevTools MCP를 활용한 성능 분석 방법을 다루며, 페이지 테스트와 연계됩니다.'
-      ja: 'Chrome DevTools MCPを活用したパフォーマンス分析方法を扱い、ページテストと連携します。'
-      en: 'Covers performance analysis using Chrome DevTools MCP, complementing page testing.'
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+  - slug: blog-launch-analysis-report
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps,
+        architecture with comparable difficulty.
   - slug: claude-code-web-automation
-    score: 0.91
+    score: 0.94
     reason:
-      ko: 'Claude Code를 활용한 웹 자동화의 기초로, 테스트 자동화의 선행 학습 자료입니다.'
-      ja: 'Claude Codeを活用したWeb自動化の基礎で、テスト自動化の事前学習資料です。'
-      en: 'Foundation for web automation with Claude Code, prerequisite for test automation.'
-  - slug: claude-skills-implementation-guide
-    score: 0.89
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+  - slug: chrome-devtools-mcp-performance
+    score: 0.94
     reason:
-      ko: 'Claude Code 스킬 구현 방법을 다루며, 테스트 스킬 개발에 활용할 수 있습니다.'
-      ja: 'Claude Codeスキル実装方法を扱い、テストスキル開発に活用できます。'
-      en: 'Covers Claude Code skill implementation, applicable to developing test skills.'
-  - slug: claude-code-best-practices
-    score: 0.88
-    reason:
-      ko: 'Claude Code 활용의 모범 사례를 다루며, 자동화 시스템 구축의 기초가 됩니다.'
-      ja: 'Claude Code活用のベストプラクティスを扱い、自動化システム構築の基礎となります。'
-      en: 'Best practices for Claude Code usage, foundational for building automation systems.'
+      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps,
+        architecture with comparable difficulty.
 ---
 
 ## Why Automate Page Testing?

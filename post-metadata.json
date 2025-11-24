@@ -1,4 +1,15 @@
 {
+  "terraform-ai-batch-infrastructure": {
+    "pubDate": "2025-11-26",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.3,
+      "ai-ml": 0.75,
+      "devops": 0.95,
+      "architecture": 0.9
+    }
+  },
   "e2e-page-test-automation-claude-code": {
     "pubDate": "2025-11-25",
     "difficulty": 3,

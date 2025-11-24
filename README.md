@@ -45,11 +45,16 @@ npm run astro check
 
 **최신 포스트 날짜**: 2025-11-25
 
-**총 포스트 수**: 48개 (한국어 기준)
+**총 포스트 수**: 49개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Claude Code와 Playwright로 구현하는 E2E 페이지 테스트 자동화** (2025-11-25)
+1. **Terraform으로 구축하는 서버리스 AI 배치 시스템** (2025-11-26)
+
+   - API Gateway, Lambda, ECS Fargate를 활용한 비용 효율적인 AI 배치 처리 인프라 구축 실전 가이드
+   - **핵심 내용**: 서버리스 AI 배치 아키텍처 (API Gateway → Lambda → SQS FIFO → ECS Fargate → DynamoDB/S3), Terraform HCL과 LLM의 친화성 (선언적 구문, 프로덕션급 코드 생성), 인프라 상태 관리 (State 파일 기반 정합성 보장), 쉘 스크립트 기반 배포 자동화 (deploy.sh, monitor.sh), 비용 최적화 (EC2 대비 85% 절감, Fargate Spot 70% 추가 절감), Slack/Notion 알림 연계, 새로운 AI Worker 확장 가이드, 실전 운영 지표 (배포 30분→5분, State 기반 장애 복구)
+
+2. **Claude Code와 Playwright로 구현하는 E2E 페이지 테스트 자동화** (2025-11-25)
 
    - 웹 페이지 개발 후 필수 테스트 9가지와 Claude Code + Playwright MCP를 활용한 자동화 시스템 구축 가이드
    - **핵심 내용**: 9가지 필수 테스트 카테고리 (크로스 브라우저 호환성, 링크 무결성, UI/UX 품질, 콘텐츠 품질, 인터랙션 테스트, 이미지 최적화, 접근성 a11y, SEO 최적화, 모바일 반응형), Claude Code + Playwright MCP 아키텍처, Test Orchestrator 설계 패턴, 병렬 테스트 실행, 3가지 리포트 형식 (Console/HTML/JSON), axe-core 접근성 검사, Lighthouse SEO/성능 분석, 실전 구현 가이드, CI/CD 통합
