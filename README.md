@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-24
+**최신 포스트 날짜**: 2025-11-25
 
-**총 포스트 수**: 47개 (한국어 기준)
+**총 포스트 수**: 48개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Google Code Wiki: AI 기반 코드 문서화 플랫폼 완벽 가이드** (2025-11-24)
+1. **Claude Code와 Playwright로 구현하는 E2E 페이지 테스트 자동화** (2025-11-25)
+
+   - 웹 페이지 개발 후 필수 테스트 9가지와 Claude Code + Playwright MCP를 활용한 자동화 시스템 구축 가이드
+   - **핵심 내용**: 9가지 필수 테스트 카테고리 (크로스 브라우저 호환성, 링크 무결성, UI/UX 품질, 콘텐츠 품질, 인터랙션 테스트, 이미지 최적화, 접근성 a11y, SEO 최적화, 모바일 반응형), Claude Code + Playwright MCP 아키텍처, Test Orchestrator 설계 패턴, 병렬 테스트 실행, 3가지 리포트 형식 (Console/HTML/JSON), axe-core 접근성 검사, Lighthouse SEO/성능 분석, 실전 구현 가이드, CI/CD 통합
+
+2. **Google Code Wiki: AI 기반 코드 문서화 플랫폼 완벽 가이드** (2025-11-24)
 
    - Google이 발표한 Code Wiki의 기능, 사용법, Gemini 기반 자동 문서화 시스템을 상세히 알아봅니다.
    - **핵심 내용**: Code Wiki 소개 (2025년 11월 13일 공개 프리뷰), 4가지 핵심 기능 (자동 업데이트 위키, Gemini 채팅 에이전트, 하이퍼링크 코드 참조, 자동 생성 다이어그램), 사용법 가이드 (codewiki.google 접속, 레포지토리 검색, 채팅 활용, 다이어그램 탐색), Gemini CLI 확장 (프라이빗 레포 지원 예정, 대기자 명단), 실제 활용 예시 (Next.js), 장단점 분석
@@ -600,6 +605,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-20 (jangwook.net 45일 성장 리포트: 750명 방문과 함께 배운 7가지 인사이트 발행)
+**Last Updated**: 2025-11-25 (Claude Code와 Playwright로 구현하는 E2E 페이지 테스트 자동화 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

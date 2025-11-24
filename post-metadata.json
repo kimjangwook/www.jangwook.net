@@ -1,4 +1,15 @@
 {
+  "e2e-page-test-automation-claude-code": {
+    "pubDate": "2025-11-25",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.7,
+      "ai-ml": 0.6,
+      "devops": 0.8,
+      "architecture": 0.75
+    }
+  },
   "google-code-wiki-guide": {
     "pubDate": "2025-11-24",
     "difficulty": 2,
