@@ -197,28 +197,69 @@ if (validPosts.length === 0) {
     object-fit: cover;
   }
 
-  /* Dark mode support */
+  /* Dark mode support - class toggle */
+  :global(.dark) .related-posts {
+    background: rgba(30, 35, 45, 0.95);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  :global(.dark) .section-title {
+    color: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+  }
+
+  :global(.dark) .recommendation-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  :global(.dark) .item-title {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  :global(.dark) .recommendation-item:hover .item-title {
+    color: rgb(var(--accent-light));
+  }
+
+  :global(.dark) .item-reason {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  :global(.dark) .item-image {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Dark mode support - system preference */
   @media (prefers-color-scheme: dark) {
     .related-posts {
-      background: rgba(255, 255, 255, 0.02);
-      border-color: rgba(var(--gray-light), 0.1);
+      background: rgba(30, 35, 45, 0.95);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
 
     .section-title {
       color: rgba(255, 255, 255, 0.95);
-      border-bottom-color: rgba(var(--gray-light), 0.15);
+      border-bottom-color: rgba(255, 255, 255, 0.15);
     }
 
     .recommendation-item {
-      border-bottom-color: rgba(var(--gray-light), 0.1);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
     }
 
     .item-title {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .recommendation-item:hover .item-title {
       color: rgb(var(--accent-light));
+    }
+
+    .item-reason {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .item-image {
+      background: rgba(255, 255, 255, 0.08);
     }
   }
 
