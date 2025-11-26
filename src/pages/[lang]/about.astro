@@ -100,7 +100,27 @@ const t = useTranslations(lang);
 
 				<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">{lang === 'ko' ? '개인 프로젝트' : lang === 'ja' ? '個人プロジェクト' : lang === 'zh' ? '个人项目' : 'My Projects'}</h3>
 				<div class="space-y-6 mb-8">
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+			<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+					<a href="https://agent-effi-flow.jangwook.net" target="_blank" class="text-accent hover:underline dark:text-accent">
+						Agent Effi Flow
+					</a>
+				</h4>
+				<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: SvelteKit, Supabase, Google Gemini API, Stripe</p>
+				<p class="text-gray-700 dark:text-gray-300">
+					{lang === 'ko' ? (
+						'AI 기반 B2B SaaS OCR 자동화 서비스. 면세처리 OCR과 경리 OCR을 제공하며, 일본 인바운드 관광 비즈니스와 중소기업 경리 팀을 타겟으로 합니다.'
+					) : lang === 'ja' ? (
+						'AIベースのB2B SaaS OCR自動化サービス。免税処理OCRと経理OCRを提供し、日本のインバウンド観光ビジネスと中小企業の経理チームをターゲットにしています。'
+					) : lang === 'zh' ? (
+						'基于AI的B2B SaaS OCR自动化服务。提供免税处理OCR和会计OCR，面向日本入境旅游企业和中小企业会计团队。'
+					) : (
+						'AI-powered B2B SaaS for OCR automation. Provides Receipt OCR for Tax Refund and Accounting OCR services targeting Japanese inbound tourism businesses and SME accounting teams.'
+					)}
+				</p>
+			</div>
+
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							<a href="https://github.com/kimjangwook/ssr-repeater" target="_blank" class="text-accent hover:underline dark:text-accent">
 								{lang === 'ko' ? 'SSR 설문 분석' : lang === 'ja' ? 'SSRアンケート分析' : lang === 'zh' ? 'SSR 问卷分析' : 'SSR Survey Analysis'}
@@ -120,7 +140,7 @@ const t = useTranslations(lang);
 						</p>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							<a href="https://kimjangwook.github.io/svelte-weather/public/" target="_blank" class="text-accent hover:underline dark:text-accent">
 								{lang === 'ko' ? '날씨 정보 시스템' : lang === 'ja' ? '気象情報取得システム' : lang === 'zh' ? '天气信息系统' : 'Weather Information System'}
@@ -140,7 +160,7 @@ const t = useTranslations(lang);
 						</p>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							<a href="https://kimjangwook.github.io/letsencrypt-domain-checker/public/" target="_blank" class="text-accent hover:underline dark:text-accent">
 								{lang === 'ko' ? "Let's Encrypt 도메인 체커" : lang === 'ja' ? "Let's Encrypt ドメインチェッカー" : lang === 'zh' ? "Let's Encrypt 域名检查器" : "Let's Encrypt Domain Checker"}
@@ -159,7 +179,7 @@ const t = useTranslations(lang);
 						</p>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							<a href="https://drone-info.jangwook.net/" target="_blank" class="text-accent hover:underline dark:text-accent">
 								{lang === 'ko' ? '드론 정보 모음' : lang === 'ja' ? 'ドローン情報まとめ' : lang === 'zh' ? '无人机信息汇总' : 'Drone Information Hub'}
@@ -178,7 +198,7 @@ const t = useTranslations(lang);
 						</p>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							<a href="https://libraries.jangwook.net/" target="_blank" class="text-accent hover:underline dark:text-accent">
 								{lang === 'ko' ? '실무에 유용한 라이브러리' : lang === 'ja' ? '仕事に使えるライブラリー' : lang === 'zh' ? '实用开发库集合' : 'Practical Libraries Collection'}
@@ -200,7 +220,7 @@ const t = useTranslations(lang);
 
 				<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">{lang === 'ko' ? '프로젝트 경력' : lang === 'ja' ? '業務経験' : lang === 'zh' ? '项目经验' : 'Works'}</h3>
 				<div class="space-y-6">
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							{lang === 'ko' ? '청구서 관리 시스템' : lang === 'ja' ? '請求書管理システム' : lang === 'zh' ? '发票管理系统' : 'Invoice Management System'}
 						</h4>
@@ -223,7 +243,7 @@ const t = useTranslations(lang);
 						</ul>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							{lang === 'ko' ? '대시보드 시스템' : lang === 'ja' ? 'ダッシュボード' : lang === 'zh' ? '仪表盘系统' : 'Dashboard'}
 						</h4>
@@ -247,7 +267,7 @@ const t = useTranslations(lang);
 						</ul>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{lang === 'ko' ? '체험 시스템' : lang === 'ja' ? '体験くん' : lang === 'zh' ? '试听课程管理系统' : 'Trial Lesson System'}</h4>
 						<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: Fuel PHP, jQuery, AWS</p>
 						<p class="text-gray-700 mb-3">
@@ -267,7 +287,7 @@ const t = useTranslations(lang);
 						</ul>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{lang === 'ko' ? '회원·세미나 관리 시스템' : lang === 'ja' ? '会員・セミナー管理システム' : lang === 'zh' ? '会员与研讨会管理系统' : 'Member & Seminar Management System'}</h4>
 						<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: Laravel, React, Marketo, AWS</p>
 						<p class="text-gray-700 mb-3">
@@ -288,7 +308,7 @@ const t = useTranslations(lang);
 						</ul>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">CDP (Customer Data Platform)</h4>
 						<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: Python, Nuxt.js, GCP, AWS</p>
 						<p class="text-gray-700 dark:text-gray-300">
@@ -304,7 +324,7 @@ const t = useTranslations(lang);
 						</p>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">EFO (Entry Form Optimization)</h4>
 						<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: TypeScript, GCP</p>
 						<p class="text-gray-700 dark:text-gray-300">
@@ -320,7 +340,7 @@ const t = useTranslations(lang);
 						</p>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">comeet</h4>
 						<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: Fuel PHP, Nuxt.js, AWS</p>
 						<p class="text-gray-700 dark:text-gray-300">
@@ -336,7 +356,7 @@ const t = useTranslations(lang);
 						</p>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							<a href="https://answercoffee.kr/" target="_blank" class="text-accent hover:underline dark:text-accent">Answer Coffee</a>
 						</h4>
@@ -354,7 +374,7 @@ const t = useTranslations(lang);
 						</p>
 					</div>
 
-					<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							<a href="https://www.remotax.jp/" target="_blank" class="text-accent hover:underline dark:text-accent">
 								{lang === 'ko' ? 'REMO TAX: 면세 전자화' : lang === 'ja' ? 'REMO TAX: 免税電子化' : lang === 'zh' ? 'REMO TAX: 免税电子化' : 'REMO TAX: Tax-Free Digitalization'}
