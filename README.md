@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-25
+**최신 포스트 날짜**: 2025-11-27
 
-**총 포스트 수**: 49개 (한국어 기준)
+**총 포스트 수**: 50개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Terraform으로 구축하는 서버리스 AI 배치 시스템** (2025-11-26)
+1. **개인 개발자의 AI 활용 SaaS 구축기: 3일 만에 프로덕션 런칭** (2025-11-27)
+
+   - SvelteKit, Supabase, Google Gemini API로 구축한 B2B AI OCR 서비스의 실전 개발기. 기술 선택 이유, 구현 과정, 비즈니스 전략까지 솔로 개발자의 생생한 경험담
+   - **핵심 내용**: Agent Effi Flow 프로젝트 실제 구현 (면세처리 OCR + 경리 OCR), 기술 스택 선정 이유 (SvelteKit 5 + Supabase + Gemini API + Vercel), OCR API with Structured Output (타입 안전한 JSON 응답), Stripe Credit System (¥2,000〜¥40,000 플랜), API Authentication (API 키 검증 + 크레딧 차감), 다국어 지원 (Paraglide i18n: ko/en/ja/zh/es), 토큰 사용량 추적 및 비용 최적화, B2B 타겟 고객 (일본 인바운드 관광, 중소기업 경리, 세무사), SEO/AEO 기반 고객 획득 전략, 3개월 KPI 목표 (500 방문자, 30 회원가입, 5 유료 전환, ¥30,000 MRR), 3일간 개발 타임라인 (2,600 lines of code), Svelte 5 Runes의 혁신적 반응성, Supabase RLS로 멀티테넌트 구현, Gemini API 프롬프트 최적화 (83% 비용 절감), Solo Developer 생산성 팁 (Supabase CLI, Claude Code, Vercel Preview, Notion), 단기/중기 목표 및 다음 스테ップ
+
+2. **Terraform으로 구축하는 서버리스 AI 배치 시스템** (2025-11-26)
 
    - API Gateway, Lambda, ECS Fargate를 활용한 비용 효율적인 AI 배치 처리 인프라 구축 실전 가이드
    - **핵심 내용**: 서버리스 AI 배치 아키텍처 (API Gateway → Lambda → SQS FIFO → ECS Fargate → DynamoDB/S3), Terraform HCL과 LLM의 친화성 (선언적 구문, 프로덕션급 코드 생성), 인프라 상태 관리 (State 파일 기반 정합성 보장), 쉘 스크립트 기반 배포 자동화 (deploy.sh, monitor.sh), 비용 최적화 (EC2 대비 85% 절감, Fargate Spot 70% 추가 절감), Slack/Notion 알림 연계, 새로운 AI Worker 확장 가이드, 실전 운영 지표 (배포 30분→5분, State 기반 장애 복구)
@@ -610,6 +615,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-25 (Claude Code와 Playwright로 구현하는 E2E 페이지 테스트 자동화 발행)
+**Last Updated**: 2025-11-27 (개인 개발자의 AI 활용 SaaS 구축기 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

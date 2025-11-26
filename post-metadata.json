@@ -1,4 +1,15 @@
 {
+  "individual-developer-ai-saas-journey": {
+    "pubDate": "2025-11-27",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.85,
+      "ai-ml": 0.95,
+      "devops": 0.7,
+      "architecture": 0.8
+    }
+  },
   "terraform-ai-batch-infrastructure": {
     "pubDate": "2025-11-26",
     "difficulty": 3,
