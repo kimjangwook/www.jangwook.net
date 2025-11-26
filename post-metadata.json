@@ -1,4 +1,15 @@
 {
+  "llm-seo-aeo-practical-implementation": {
+    "pubDate": "2025-11-28",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.9,
+      "ai-ml": 0.7,
+      "devops": 0.4,
+      "architecture": 0.6
+    }
+  },
   "individual-developer-ai-saas-journey": {
     "pubDate": "2025-11-27",
     "difficulty": 4,

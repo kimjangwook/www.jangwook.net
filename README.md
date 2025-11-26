@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-27
+**최신 포스트 날짜**: 2025-11-28
 
-**총 포스트 수**: 50개 (한국어 기준)
+**총 포스트 수**: 51개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **개인 개발자의 AI 활용 SaaS 구축기: 3일 만에 프로덕션 런칭** (2025-11-27)
+1. **LLM 시대의 SEO/AEO 실전 적용: B2B SaaS 최적화 로드맵** (2025-11-28)
+
+   - Agent Effi Flow 프로젝트를 통해 알아보는 SEO 기반 구축부터 AEO 전략까지, 실제 구현 사례와 측정 가능한 성과
+   - **핵심 내용**: 3일간 Phase 1 SEO 최적화 여정 (조사→구현→측정), 재사용 가능한 SEO 컴포넌트 설계 (SEO.svelte, StructuredData.svelte), 구조화 데이터 구현 (Organization, Product, BreadcrumbList, Offer), 동적 사이트맵 자동 생성 (import.meta.glob으로 페이지 자동 검출), 측정 가능한 성과 (OGP/구조화 데이터 100% 구현, 예상 6개월 후 오가닉 검색 +100-150%), AEO (Answer Engine Optimization) 전략 (SEO vs AEO 차이, AI 검색 엔진 최적화, E-E-A-T 강화), Position Zero 최적화 (Featured Snippet, FAQ Page, 음성 검색 대응), 멀티 플랫폼 최적화 (Google, ChatGPT, Perplexity, Voice), Perplexity 최적화 B2B SaaS 전략 (연구 등급 콘텐츠, 제3자 인용, PR 아웃리치), 4단계 실전 로드맵 (기반 구축→콘텐츠 최적화→AEO 확장→측정/개선), Quick Wins 30-60일 전략 (저자 바이오, 기본 스키마, Featured Snippet, 예상 20-40% CTR 증가), 미래 전망 2026+ (Search Everywhere Optimization, Generative Engine Optimization, AI 모드 기본 50% 예상), 다음 글 예고: AEO 고급 전략 (AI 에이전트 콘텐츠 최적화, Perplexity 인용 추적, 멀티 플랫폼 배포 자동화)
+
+2. **개인 개발자의 AI 활용 SaaS 구축기: 3일 만에 프로덕션 런칭** (2025-11-27)
 
    - SvelteKit, Supabase, Google Gemini API로 구축한 B2B AI OCR 서비스의 실전 개발기. 기술 선택 이유, 구현 과정, 비즈니스 전략까지 솔로 개발자의 생생한 경험담
    - **핵심 내용**: Agent Effi Flow 프로젝트 실제 구현 (면세처리 OCR + 경리 OCR), 기술 스택 선정 이유 (SvelteKit 5 + Supabase + Gemini API + Vercel), OCR API with Structured Output (타입 안전한 JSON 응답), Stripe Credit System (¥2,000〜¥40,000 플랜), API Authentication (API 키 검증 + 크레딧 차감), 다국어 지원 (Paraglide i18n: ko/en/ja/zh/es), 토큰 사용량 추적 및 비용 최적화, B2B 타겟 고객 (일본 인바운드 관광, 중소기업 경리, 세무사), SEO/AEO 기반 고객 획득 전략, 3개월 KPI 목표 (500 방문자, 30 회원가입, 5 유료 전환, ¥30,000 MRR), 3일간 개발 타임라인 (2,600 lines of code), Svelte 5 Runes의 혁신적 반응성, Supabase RLS로 멀티테넌트 구현, Gemini API 프롬프트 최적화 (83% 비용 절감), Solo Developer 생산성 팁 (Supabase CLI, Claude Code, Vercel Preview, Notion), 단기/중기 목표 및 다음 스테ップ
@@ -615,6 +620,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-27 (개인 개발자의 AI 활용 SaaS 구축기 발행)
+**Last Updated**: 2025-11-28 (LLM 시대의 SEO/AEO 실전 적용 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
