@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-11-28
+**최신 포스트 날짜**: 2025-11-30
 
-**총 포스트 수**: 51개 (한국어 기준)
+**총 포스트 수**: 52개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **LLM 시대의 SEO/AEO 실전 적용: B2B SaaS 최적화 로드맵** (2025-11-28)
+1. **Vertex AI Search로 사이트 내 검색 구현하기: Cloud Functions와 자동화 배포** (2025-11-30)
+
+   - Google Vertex AI Search를 활용해 웹사이트에 AI 검색 기능을 구현하는 방법. Cloud Functions API 서버 구축부터 셸 스크립트 자동화 배포까지 단계별 설명
+   - **핵심 내용**: Vertex AI Search 특징 (세맨틱 검색, AI 요약, Discovery Engine API), Cloud Functions API 서버 구현 (Node.js, 환경변수 기반 설정, CORS 도메인 제한), deploy.sh 자동화 스크립트 (환경변수 읽기, gcloud 프로젝트 자동 전환, API 자동 활성화, 테스트 HTML 자동 생성), 다중 환경 관리 (--env-file, --dry-run 옵션), 프론트엔드 연동 (fetch API, AI 요약 표시), 쿼터 초과 시 fallback 처리
+
+2. **LLM 시대의 SEO/AEO 실전 적용: B2B SaaS 최적화 로드맵** (2025-11-28)
 
    - Agent Effi Flow 프로젝트를 통해 알아보는 SEO 기반 구축부터 AEO 전략까지, 실제 구현 사례와 측정 가능한 성과
    - **핵심 내용**: 3일간 Phase 1 SEO 최적화 여정 (조사→구현→측정), 재사용 가능한 SEO 컴포넌트 설계 (SEO.svelte, StructuredData.svelte), 구조화 데이터 구현 (Organization, Product, BreadcrumbList, Offer), 동적 사이트맵 자동 생성 (import.meta.glob으로 페이지 자동 검출), 측정 가능한 성과 (OGP/구조화 데이터 100% 구현, 예상 6개월 후 오가닉 검색 +100-150%), AEO (Answer Engine Optimization) 전략 (SEO vs AEO 차이, AI 검색 엔진 최적화, E-E-A-T 강화), Position Zero 최적화 (Featured Snippet, FAQ Page, 음성 검색 대응), 멀티 플랫폼 최적화 (Google, ChatGPT, Perplexity, Voice), Perplexity 최적화 B2B SaaS 전략 (연구 등급 콘텐츠, 제3자 인용, PR 아웃리치), 4단계 실전 로드맵 (기반 구축→콘텐츠 최적화→AEO 확장→측정/개선), Quick Wins 30-60일 전략 (저자 바이오, 기본 스키마, Featured Snippet, 예상 20-40% CTR 증가), 미래 전망 2026+ (Search Everywhere Optimization, Generative Engine Optimization, AI 모드 기본 50% 예상), 다음 글 예고: AEO 고급 전략 (AI 에이전트 콘텐츠 최적화, Perplexity 인용 추적, 멀티 플랫폼 배포 자동화)
@@ -620,6 +625,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-11-28 (LLM 시대의 SEO/AEO 실전 적용 발행)
+**Last Updated**: 2025-11-30 (Vertex AI Search로 사이트 내 검색 구현하기 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
