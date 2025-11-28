@@ -1,4 +1,15 @@
 {
+  "ai-era-career-advice-for-juniors": {
+    "pubDate": "2025-12-02",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.7,
+      "devops": 0.1,
+      "architecture": 0.2
+    }
+  },
   "enterprise-ai-adoption-topdown": {
     "pubDate": "2025-12-01",
     "difficulty": 3,
