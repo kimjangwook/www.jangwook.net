@@ -1,4 +1,15 @@
 {
+  "enterprise-ai-adoption-topdown": {
+    "pubDate": "2025-12-01",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.2,
+      "ai-ml": 0.8,
+      "devops": 0.3,
+      "architecture": 0.75
+    }
+  },
   "vertex-ai-search-site-implementation": {
     "pubDate": "2025-11-30",
     "difficulty": 3,
