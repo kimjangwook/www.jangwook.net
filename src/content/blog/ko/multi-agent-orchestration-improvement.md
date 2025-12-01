@@ -14,36 +14,41 @@ relatedPosts:
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
   - slug: langgraph-multi-agent
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
   - slug: prompt-engineering-agent-improvements
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
   - slug: effiflow-automation-analysis-part1
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
   - slug: deep-agents-architecture-optimization
     score: 0.94
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
 ---
 
 # 멀티 에이전트 오케스트레이션으로 블로그 자동화 시스템 개선하기

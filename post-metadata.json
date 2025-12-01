@@ -1,4 +1,15 @@
 {
+  "aeo-implementation-experience": {
+    "pubDate": "2025-12-05",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.85,
+      "ai-ml": 0.7,
+      "devops": 0.3,
+      "architecture": 0.75
+    }
+  },
   "multi-agent-orchestration-improvement": {
     "pubDate": "2025-12-04",
     "difficulty": 4,

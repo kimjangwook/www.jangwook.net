@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-12-04
+**최신 포스트 날짜**: 2025-12-05
 
-**총 포스트 수**: 61개 (한국어 기준)
+**총 포스트 수**: 62개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **멀티 에이전트 오케스트레이션으로 블로그 자동화 시스템 개선하기** (2025-12-04)
+1. **AI 검색 시대를 위한 AEO 구현기: Agent Effi Flow 실전 적용** (2025-12-05)
+
+   - ChatGPT, Perplexity 등 AI 검색 엔진에 콘텐츠가 인용되도록 최적화하는 AEO 전략의 실제 구현 경험을 공유합니다.
+   - **핵심 내용**: AEO(Answer Engine Optimization) 개념 및 SEO 차이점, Agent Effi Flow 서비스에 적용한 AEO 요소 (FAQ 페이지, 사용 사례 페이지), 구조화 데이터 구현 (FAQPage, HowTo, Article, BreadcrumbList Schema), PREP 구조 (Point-Reason-Example-Point), E-E-A-T 요소 강화, Svelte 5 + SvelteKit 기술 구현 상세 (SEO.svelte, StructuredData.svelte, $state()), JSON-LD 구현 예시, 가상 고객 후기 삭제 이유 (일본 경품표시법 준수), 향후 계획 (사이트맵, OG 이미지, Search Console 검증), 실제 사이트: https://agent-effi-flow.jangwook.net
+
+2. **멀티 에이전트 오케스트레이션으로 블로그 자동화 시스템 개선하기** (2025-12-04)
 
    - Claude Code의 멀티 에이전트 오케스트레이션 패턴으로 48개 파일을 분석하고 61개 이슈를 수정한 대규모 개선 프로세스 가이드
    - **핵심 내용**: 멀티 에이전트 오케스트레이션 패턴 (분석 → 분해 → 병렬 매니저 위임 → 리뷰/수정 사이클), 4개 영역 61개 이슈 수정 (Agents 4개, Commands 4개, Skills 4개, Guidelines 5개), commit.md 완전 재작성 (12줄→528줄), 4개 언어 표준화 (ko/ja/en/zh), Python 스크립트 버그 수정, implementation-status.md 신규 생성, 문서화 품질 78→92점 개선, 토큰 절감 60-70% 달성, Git SHA: 5523aa0
@@ -645,6 +650,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-12-02 (AI 시대, 후배들에게 전하고 싶은 이야기 발행)
+**Last Updated**: 2025-12-05 (AI 검색 시대를 위한 AEO 구현기 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
