@@ -1,34 +1,55 @@
 ---
-title: 'AdSense挑戦記：AI分析で「価値の低いコンテンツ」拒否を克服する'
-description: 'Google AdSenseで「価値の低いコンテンツ」として拒否された後、ChatGPT、Claude、Geminiの3つのAIを活用して原因を分析し、承認可能性を5.5点から8.5点に改善した実体験を共有します。'
+title: AdSense挑戦記：AI分析で「価値の低いコンテンツ」拒否を克服する
+description: >-
+  Google
+  AdSenseで「価値の低いコンテンツ」として拒否された後、ChatGPT、Claude、Geminiの3つのAIを活用して原因を分析し、承認可能性を5.5点から8.5点に改善した実体験を共有します。
 pubDate: '2025-12-03'
-heroImage: '../../../assets/blog/adsense-rejection-ai-analysis-improvement-hero.png'
-tags: ['adsense', 'seo', 'ai-analysis']
+heroImage: ../../../assets/blog/adsense-rejection-ai-analysis-improvement-hero.png
+tags:
+  - adsense
+  - seo
+  - ai-analysis
 relatedPosts:
   - slug: llm-seo-aeo-practical-implementation
+    score: 0.93
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+  - slug: vertex-ai-search-site-implementation
     score: 0.92
     reason:
-      ko: 'SEO 최적화와 검색엔진 대응 전략에서 직접적으로 연결되는 주제입니다.'
-      ja: SEO最適化と検索エンジン対応戦略で直接つながるトピックです。
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Directly connected topic in SEO optimization and search engine response
-        strategies.
-  - slug: blog-launch-analysis-report
-    score: 0.89
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+  - slug: adding-chinese-support
+    score: 0.92
     reason:
-      ko: '블로그 런칭 후 분석 경험을 다루며 사이트 개선 관점에서 유사합니다.'
-      ja: ブログ立ち上げ後の分析経験を扱い、サイト改善の観点で類似しています。
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Covers blog launch analysis experience, similar from a site improvement
-        perspective.
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
   - slug: llm-blog-automation
-    score: 0.86
+    score: 0.92
     reason:
-      ko: 'AI를 활용한 블로그 운영 자동화라는 공통 주제로 연결됩니다.'
-      ja: AIを活用したブログ運営自動化という共通テーマでつながります。
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Connected through the common theme of blog operation automation using
-        AI.
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+  - slug: individual-developer-ai-saas-journey
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, AI/ML topics.
 ---
 
 Google AdSenseの審査に申請し、「価値の低いコンテンツ」という理由で拒否されました。しかし、私はAI専門家として、この問題を3つのAI（ChatGPT、Claude、Gemini）に同じ質問をして分析することにしました。その結果、驚くべき発見がありました。問題は<strong>AIが生成したコンテンツではなく、サイトの構造と信頼シグナルの欠如</strong>でした。

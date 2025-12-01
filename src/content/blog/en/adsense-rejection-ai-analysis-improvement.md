@@ -1,34 +1,56 @@
 ---
 title: 'AdSense Journey: Overcoming "Low Value Content" with AI-Powered Analysis'
-description: 'After Google AdSense rejected my site for "Low Value Content", I used ChatGPT, Claude, and Gemini to analyze the issues and improved approval probability from 5.5 to 8.5 out of 10. Here is my experience.'
+description: >-
+  After Google AdSense rejected my site for "Low Value Content", I used ChatGPT,
+  Claude, and Gemini to analyze the issues and improved approval probability
+  from 5.5 to 8.5 out of 10. Here is my experience.
 pubDate: '2025-12-03'
-heroImage: '../../../assets/blog/adsense-rejection-ai-analysis-improvement-hero.png'
-tags: ['adsense', 'seo', 'ai-analysis']
+heroImage: ../../../assets/blog/adsense-rejection-ai-analysis-improvement-hero.png
+tags:
+  - adsense
+  - seo
+  - ai-analysis
 relatedPosts:
   - slug: llm-seo-aeo-practical-implementation
+    score: 0.93
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+  - slug: vertex-ai-search-site-implementation
     score: 0.92
     reason:
-      ko: 'SEO 최적화와 검색엔진 대응 전략에서 직접적으로 연결되는 주제입니다.'
-      ja: SEO最適化と検索エンジン対応戦略で直接つながるトピックです。
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Directly connected topic in SEO optimization and search engine response
-        strategies.
-  - slug: blog-launch-analysis-report
-    score: 0.89
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+  - slug: adding-chinese-support
+    score: 0.92
     reason:
-      ko: '블로그 런칭 후 분석 경험을 다루며 사이트 개선 관점에서 유사합니다.'
-      ja: ブログ立ち上げ後の分析経験を扱い、サイト改善の観点で類似しています。
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Covers blog launch analysis experience, similar from a site improvement
-        perspective.
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
   - slug: llm-blog-automation
-    score: 0.86
+    score: 0.92
     reason:
-      ko: 'AI를 활용한 블로그 운영 자동화라는 공통 주제로 연결됩니다.'
-      ja: AIを活用したブログ運営自動化という共通テーマでつながります。
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Connected through the common theme of blog operation automation using
-        AI.
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+  - slug: individual-developer-ai-saas-journey
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, AI/ML topics.
 ---
 
 Getting rejected by Google AdSense is a frustrating experience that many bloggers face. When I received the notification stating <strong>"Your site does not comply with Google AdSense program policies - Low Value Content,"</strong> I was confused. My blog had over 230 high-quality technical articles covering AI, Claude Code, MCP, and cloud infrastructure topics. So what went wrong?

@@ -1,4 +1,15 @@
 {
+  "multi-agent-orchestration-improvement": {
+    "pubDate": "2025-12-04",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.5,
+      "architecture": 0.95
+    }
+  },
   "adsense-rejection-ai-analysis-improvement": {
     "pubDate": "2025-12-03",
     "difficulty": 3,
