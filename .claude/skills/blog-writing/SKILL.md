@@ -35,6 +35,18 @@ Required fields:
 - pubDate (format: 'YYYY-MM-DD', single quotes required)
 - heroImage
 - tags (array, lowercase, hyphens only)
+- relatedPosts (array of related post recommendations with multilingual reasons)
+  ```yaml
+  relatedPosts:
+    - slug: "related-post-slug"
+      score: 0.85  # 0-1 similarity score from content-recommender
+      reason:
+        ko: "한국어 추천 이유"
+        ja: "日本語の推薦理由"
+        en: "English recommendation reason"
+        zh: "中文推荐理由"
+  ```
+  Note: Use @content-recommender skill to generate semantic recommendations
 
 ### 3. Content Structure
 

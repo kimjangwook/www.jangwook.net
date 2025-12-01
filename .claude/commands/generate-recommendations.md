@@ -502,13 +502,173 @@ Track performance to validate LLM approach superiority.
 - **Zero Runtime Cost**: Pre-computed recommendations mean no performance impact on readers
 - **Workflow**: `/analyze-posts` (once or on content change) → `/generate-recommendations` (fast)
 
+## Workflow Dependencies
+
+This command is the **second step** in the V3 content recommendation system. Understanding the dependency chain is critical for proper execution.
+
+### Execution Order
+
+```mermaid
+graph TD
+    A[/analyze-posts] --> B[post-metadata.json]
+    B --> C[/generate-recommendations<br/>THIS COMMAND]
+    C --> D[relatedPosts in Frontmatter]
+    D --> E[Astro Build]
+    E --> F[RelatedPosts.astro Renders]
+```
+
+### Prerequisites
+
+**CRITICAL - Must run /analyze-posts first**:
+
+This command **REQUIRES** `post-metadata.json` to exist and contain valid metadata for all posts.
+
+**Before running /generate-recommendations**:
+```bash
+# 1. Verify post-metadata.json exists
+ls -lh post-metadata.json
+
+# 2. Verify it contains metadata for your post
+cat post-metadata.json | jq '.metadata["your-post-slug"]'
+
+# 3. If missing, run analysis first:
+/analyze-posts
+```
+
+**What /generate-recommendations requires from post-metadata.json**:
+- `pubDate`: Publication date (for temporal filtering)
+- `difficulty`: Difficulty rating 1-5 (20% of similarity score)
+- `categoryScores`: 5 category scores (80% of similarity score)
+
+**Error if prerequisite missing**:
+```
+❌ Error: post-metadata.json not found
+
+This command requires post metadata to be generated first.
+
+Run: /analyze-posts
+Then retry: /generate-recommendations
+```
+
+### Data Flow
+
+**V3 System Architecture**:
+```
+┌─────────────────────┐
+│  /analyze-posts     │ ← ONE-TIME per post (or on content change)
+└──────────┬──────────┘
+           │ Produces
+           ▼
+┌─────────────────────┐
+│ post-metadata.json  │ ← Committed to Git (3 fields per post)
+│ - pubDate           │
+│ - difficulty        │
+│ - categoryScores    │
+└──────────┬──────────┘
+           │ Consumed by
+           ▼
+┌─────────────────────┐
+│/generate-           │ ← FAST (metadata only, no full content)
+│ recommendations     │
+│ (THIS COMMAND)      │
+└──────────┬──────────┘
+           │ Produces
+           ▼
+┌─────────────────────┐
+│ Post Frontmatter    │ ← Directly written to .md files
+│ relatedPosts:       │
+│   - slug            │
+│   - score           │
+│   - reason (ko/ja/en)│
+└──────────┬──────────┘
+           │ Consumed by
+           ▼
+┌─────────────────────┐
+│ Astro Build Process │
+└──────────┬──────────┘
+           │ Renders
+           ▼
+┌─────────────────────┐
+│ RelatedPosts.astro  │ ← Component in blog layout
+└─────────────────────┘
+```
+
+### Workflow Integration
+
+**Complete Workflow for New Post**:
+
+1. **Create Post**: `/write-post "Topic"`
+   - Generates 4 language versions (ko, ja, en, zh)
+   - Creates markdown files with frontmatter
+
+2. **Analyze Post** (first-time setup): `/analyze-posts --post new-post-slug`
+   - Extracts metadata: difficulty, categoryScores, pubDate
+   - Adds to `post-metadata.json`
+   - **Cost**: ~$0.007 per post (one-time)
+
+3. **Generate Recommendations** (this command): `/generate-recommendations`
+   - Reads all metadata from `post-metadata.json`
+   - Calculates similarity scores (difficulty 20% + categories 80%)
+   - Writes `relatedPosts` to frontmatter of **all language versions**
+   - **Cost**: ~$0.02 for all posts (60% cheaper than V2)
+
+4. **Build**: `npm run build`
+   - Astro processes frontmatter
+   - RelatedPosts.astro renders recommendations
+   - Zero runtime cost (pre-computed)
+
+**Incremental Workflow** (daily usage):
+
+```bash
+# Only for new/updated posts
+/analyze-posts                    # Analyzes changed posts only (~2-10s)
+/generate-recommendations         # Updates all related posts (~20-40s)
+npm run build                     # Deploy
+```
+
+### When to Run
+
+**Run /generate-recommendations when**:
+- ✅ After running `/analyze-posts` for new posts
+- ✅ When improving recommendation quality
+- ✅ After changing recommendation algorithm parameters
+- ✅ Weekly/monthly to refresh recommendations with latest posts
+
+**Skip /generate-recommendations when**:
+- ❌ Making non-content changes (CSS, components)
+- ❌ Fixing typos or minor edits (unless they affect topics/categories)
+- ❌ Working on draft posts not yet published
+
+### Performance Characteristics
+
+**V3 vs V2 Comparison**:
+
+| Metric | V2 (Full Content) | V3 (Metadata Only) | Improvement |
+|--------|-------------------|---------------------|-------------|
+| Token usage per run | ~70,000 | ~20,000 | **71% reduction** |
+| Cost per run | $0.07-0.08 | $0.02-0.03 | **60-70% savings** |
+| Execution time | 2-3 minutes | 45-60 seconds | **50% faster** |
+| File I/O operations | High (read all .md) | Low (one JSON) | **100% reduction** |
+
+**When to use --force**:
+- After algorithm improvements
+- Monthly quality refresh
+- Fixing recommendation quality issues
+- After bulk metadata updates
+
+**When to use incremental** (default):
+- Daily operations
+- After new post publish
+- After content updates
+
 ## Related Files
 
+- **Prerequisite Command**: `.claude/commands/analyze-posts.md` ← **MUST RUN FIRST**
 - **Metadata Agent**: `.claude/agents/post-analyzer.md`
-- **Metadata Command**: `.claude/commands/analyze-posts.md`
-- **Metadata File**: `post-metadata.json` (required input)
+- **Metadata File**: `post-metadata.json` ← **REQUIRED INPUT**
 - **Recommender Agent**: `.claude/agents/content-recommender.md`
-- **Output**: `recommendations.json`
+- **V3 Script**: `scripts/generate-recommendations-v3.js`
 - **Component**: `src/components/RelatedPosts.astro`
 - **Integration**: `src/layouts/BlogPost.astro`
 - **Optimization Report**: `working_history/modify_recommendation.md`
+- **V3 Documentation**: `research/post-recommendation-v3/README.md`

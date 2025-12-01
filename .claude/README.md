@@ -18,6 +18,48 @@
 
 ---
 
+## Implementation Status
+
+**Active vs Planned Features**:
+
+| Component | Status | Implementation |
+|-----------|--------|----------------|
+| Agents (17개) | ✅ Active | All agents operational |
+| Skills (4개) | ✅ Active | Auto-discovery working |
+| Commands (7개) | ✅ Active | All commands functional |
+| MCP Integrations | ✅ Active | Brave Search, GA4, Context7, Gemini |
+| Metadata Architecture | ✅ Active | post-metadata.json, frontmatter |
+| Security Sandbox | ⚠️ Partially Implemented | Basic allowlist in settings.local.json |
+| State Management | ⚠️ Theoretical | Documented in guidelines/, not enforced |
+| Planning Protocol | ⚠️ Theoretical | Reference architecture only |
+
+**How Token Savings Are Achieved**:
+
+1. **Metadata-First Architecture (60-70% savings)**:
+   - Generate `post-metadata.json` once with full content analysis
+   - Reuse metadata in subsequent operations instead of re-reading full posts
+   - Example: Recommendations use 30K tokens (metadata) vs 90K (full content)
+
+2. **Incremental Processing (79% savings when no changes)**:
+   - Content hash comparison in `post-metadata.json`
+   - Skip re-analysis if content unchanged
+   - Only process modified posts during `/analyze-posts`
+
+3. **3-Tier Caching (58% savings)**:
+   - Trend data: 24h cache in `.cache/trend-data.json`
+   - Technology data: 7d cache in `.cache/technology-data.json`
+   - Keyword data: 48h cache in `.cache/keyword-data.json`
+   - Example: `/next-post-recommendation` uses 17K tokens (cached) vs 40K+ (fresh)
+
+4. **Language Optimization (3x cost reduction)**:
+   - Analyze Korean posts only in `/analyze-posts`
+   - Avoid analyzing ja/en/zh duplicates
+   - Frontmatter consistency across languages ensures metadata portability
+
+**Total Impact**: $5.72/year (before) → $1.65/year (after) = **71% cost reduction**
+
+---
+
 ## 구조
 
 ```

@@ -76,8 +76,10 @@ Gemini 2.5 Flash Image API를 사용하여 블로그 포스트 히어로 이미�
 
 ### 스크립트 위치
 ```
-/Users/jangwook/Documents/workspace/jangwook.net/generate_image.js
+<project-root>/generate_image.js
 ```
+
+**참고**: `<project-root>`는 프로젝트의 루트 디렉토리를 의미합니다. 절대 경로가 아닌 프로젝트 기준 상대 경로를 사용하세요.
 
 ### 사용 방법
 ```bash
@@ -124,8 +126,8 @@ node generate_image.js "src/assets/blog/2025-10-04-nextjs-15-features.png" "Mode
 
 **중요**:
 - 출력 경로는 항상 `src/assets/blog/` 디렉토리를 사용해야 합니다
-- 절대 경로 사용: `/Users/jangwook/Documents/workspace/jangwook.net/src/assets/blog/[파일명].png`
-- 또는 상대 경로: `src/assets/blog/[파일명].png` (프로젝트 루트 기준)
+- **권장**: 프로젝트 기준 상대 경로 사용: `src/assets/blog/[파일명].png`
+- 절대 경로는 사용하지 마세요 (기기마다 다름)
 
 ### Writing Assistant와 협업
 
@@ -174,18 +176,16 @@ heroImage: '../../../assets/blog/2025-10-04-nextjs-15-features.png'
 **필수**: 모든 이미지는 `src/assets/blog/` 디렉토리에 저장해야 합니다.
 
 ```
-절대 경로: /Users/jangwook/Documents/workspace/jangwook.net/src/assets/blog/
-상대 경로: src/assets/blog/
+프로젝트 기준 상대 경로: src/assets/blog/
 ```
 
 **이미지 생성 시 사용할 명령어**:
 ```bash
-# 방법 1: 상대 경로 (프로젝트 루트에서 실행)
+# 권장 방법: 프로젝트 루트 기준 상대 경로 (프로젝트 루트에서 실행)
 node generate_image.js "src/assets/blog/[파일명].png" "<프롬프트>"
-
-# 방법 2: 절대 경로
-node generate_image.js "/Users/jangwook/Documents/workspace/jangwook.net/src/assets/blog/[파일명].png" "<프롬프트>"
 ```
+
+**중요**: 사용자 특정 절대 경로(예: `/Users/username/...`)는 다른 환경에서 작동하지 않으므로 사용하지 마세요.
 
 **참고**:
 - 다국어 블로그 포스트(ko/en/ja)는 모두 같은 이미지를 공유합니다

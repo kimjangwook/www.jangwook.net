@@ -238,6 +238,118 @@ TypeScript 5.0의 새로운 기능을 소개하는 다국어(ko, ja, en) 블로�
 
 ---
 
+## Integration with Agents
+
+### How Orchestrator Receives Plan
+
+Commands create initial plans and delegate execution:
+
+```markdown
+# In /write-post command
+
+1. Command creates plan:
+   - Define 8 phases
+   - Assign agents to each phase
+   - Set dependencies
+
+2. Command invokes agents sequentially:
+   @web-researcher "Research TypeScript 5.0 features"
+   @image-generator "Create hero image"
+   @writing-assistant "Write Korean version"
+   # ... etc
+```
+
+### How Tasks Are Distributed
+
+**Command-to-Agent Flow**:
+```
+/write-post "topic"
+    ↓ Creates plan (8 phases)
+    ↓ Phase 1: Research
+@web-researcher
+    ↓ Executes research
+    ↓ Returns results
+    ↓ Phase 2: Image
+@image-generator
+    ↓ Generates image
+    ↓ Returns file path
+    ↓ Phase 3-5: Writing
+@writing-assistant (3x)
+    ↓ Writes ko/ja/en versions
+    ↓ Returns markdown files
+```
+
+### Actual Command Examples
+
+**Example 1: Blog Post Creation**
+```bash
+/write-post "Claude Code MCP Integration"
+
+# Internally executes:
+# Phase 1
+@web-researcher "Research Claude Code MCP best practices"
+
+# Phase 2 (parallel)
+@image-generator "Generate hero image for MCP integration post"
+
+# Phase 3
+@writing-assistant "Write Korean blog post: [research results]"
+
+# Phase 4
+@writing-assistant "Translate to Japanese: [ko content]"
+
+# Phase 5
+@writing-assistant "Translate to English: [ko content]"
+
+# Phase 6
+@editor "Review all 3 language versions"
+
+# Phase 7
+@backlink-manager "Add internal links to related posts"
+
+# Phase 8
+@site-manager "Run astro check and build"
+```
+
+**Example 2: Metadata Pipeline**
+```bash
+/analyze-posts
+
+# Internally executes:
+@post-analyzer "Analyze all Korean blog posts"
+# → Generates post-metadata.json
+
+/generate-recommendations
+
+# Internally executes:
+@content-recommender "Generate semantic recommendations using metadata"
+# → Updates frontmatter with relatedPosts
+```
+
+**Example 3: GA Report**
+```bash
+/write-ga-post 2025-11-09
+
+# Internally executes:
+# Phase 1
+@analytics-reporter "Fetch GA4 data for 2025-11-09"
+
+# Phase 2
+@writing-assistant "Write Korean GA report: [data]"
+
+# Phase 3
+@writing-assistant "Translate to Japanese: [ko content]"
+
+# Phase 4
+@writing-assistant "Translate to English: [ko content]"
+
+# Phase 5
+@improvement-tracker "Extract action items from report"
+# → Creates TODO entries
+```
+
+---
+
 ## 베스트 프랙티스
 
 ### DO

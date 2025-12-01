@@ -50,7 +50,12 @@ src/
 
 public/             # 정적 파일 (빌드 시 그대로 복사)
 .claude/
-└── agents/         # Claude Code 서브에이전트 정의
+├── agents/         # Claude Code 서브에이전트 정의 (17개)
+├── commands/       # 슬래시 커맨드 정의 (6개, /commit, /write-post 등)
+├── skills/         # 자동 발견 스킬 (4개: blog-writing, content-analyzer, recommendation-generator, trend-analyzer)
+├── guidelines/     # 가이드라인 (implementation-status.md 포함)
+├── patterns/       # 코드 실행 및 로딩 패턴
+└── security/       # 보안 설정 및 샌드박스 구성
 ```
 
 ### Content Collections 시스템
@@ -66,13 +71,14 @@ public/             # 정적 파일 (빌드 시 그대로 복사)
   updatedDate?: Date     // 선택
   heroImage?: ImageMetadata  // 선택 (Astro 이미지 최적화)
   tags?: string[]        // 선택 (태그 배열)
-  relatedPosts?: Array<{  // 선택 (V3: 관련 포스트 추천)
+  relatedPosts: Array<{   // 필수 (V3: 관련 포스트 추천)
     slug: string
-    score: number        // 0~1 사이의 유사도 점수
+    score: number         // 0~1 사이의 유사도 점수
     reason: {
       ko: string
       ja: string
       en: string
+      zh: string          // 중국어 추천 이유 (v3.0 추가)
     }
   }>
 }
@@ -227,6 +233,9 @@ Markdown 또는 MDX 형식으로 작성...
   - 영어: `src/content/blog/en/post-title.md`
   - 일본어: `src/content/blog/ja/post-title.md`
   - 중국어: `src/content/blog/zh/post-title.md`
+- **블로그 URL 형식**: `/{lang}/blog/{lang}/{slug}`
+  - 예: `/ko/blog/ko/post-title`, `/en/blog/en/post-title`
+  - 언어 코드가 URL에 두 번 포함됨 (라우팅 구조상)
 - **동일한 파일명**: 모든 언어 버전은 각 언어 폴더에 같은 파일명으로 저장
 - **언어 자동 인식**: 폴더 경로(`ko/`, `en/`, `ja/`, `zh/`)로 언어 자동 식별
 - Frontmatter의 모든 필수 필드 포함 필요
@@ -234,6 +243,35 @@ Markdown 또는 MDX 형식으로 작성...
 - 다국어 포스트는 동일한 이미지를 공유 (모든 언어 버전에서 같은 heroImage 경로 사용)
 - **pubDate는 반드시 'YYYY-MM-DD' 형식 사용** (예: '2025-10-07') - 작은따옴표 사용
 - tags는 배열 형태로 작성 (선택사항, 최대 3개가 카드에 표시됨)
+- **relatedPosts는 필수**: 모든 포스트에 관련 포스트 추천 정보 포함 (아래 `/write-post` 커맨드 참조)
+
+### /write-post 커맨드 필수 요구사항
+
+블로그 포스트 작성 시 반드시 다음 사항을 준수:
+
+1. **4개 언어 동시 작성**: 한국어(ko), 일본어(ja), 영어(en), 중국어(zh) 모든 버전 작성
+2. **언어별 포스트 수 일치 확인**: 작성 완료 후 각 언어 폴더의 포스트 수가 동일한지 검증
+   ```bash
+   # 검증 방법
+   ls src/content/blog/ko/*.md | wc -l  # 한국어
+   ls src/content/blog/ja/*.md | wc -l  # 일본어
+   ls src/content/blog/en/*.md | wc -l  # 영어
+   ls src/content/blog/zh/*.md | wc -l  # 중국어
+   ```
+3. **누락된 번역 자동 생성**: 포스트 수가 불일치하면 누락된 언어 버전 자동 생성
+4. **relatedPosts 필수 추가**: 모든 포스트에 `relatedPosts` frontmatter 포함 (v3.0: 4개 언어 필수)
+   ```yaml
+   relatedPosts:
+     - slug: "related-post-slug"
+       score: 0.85  # 0~1 사이 유사도 점수
+       reason:
+         ko: "한국어 추천 이유"
+         ja: "日本語の推薦理由"
+         en: "English recommendation reason"
+         zh: "中文推荐理由"  # v3.0 필수
+   ```
+   > **중요**: v3.0부터 zh(중국어) 추천 이유가 필수입니다. validate_frontmatter.py 스크립트가 자동 검증합니다.
+5. **빌드 검증**: `npm run build` 실행하여 모든 언어 버전이 정상 빌드되는지 확인
 
 ### 2. 렌더링 프로세스
 
@@ -293,8 +331,10 @@ const { Content } = await post.render();  // Markdown -> 컴포넌트 변환 (As
 **연구 및 분석**:
 - **web-researcher.md**: Brave Search MCP를 활용한 웹 리서치, 기술 검증, 최신 정보 수집
 - **post-analyzer.md**: 블로그 포스트 분석 및 개선 제안
-- **analytics.md**: 트래픽 분석 및 성과 측정
-- **analytics-reporter.md**: 데이터 기반 리포트 생성
+- **analytics.md**: 실시간 트래픽 분석, 즉석 인사이트 (비공식, 대화형 응답)
+- **analytics-reporter.md**: 공식 리포트 생성, 발행용 분석 문서 (월간/분기 리포트)
+
+> **역할 구분**: analytics.md는 "오늘 조회수가 가장 높은 포스트?"와 같은 즉석 질문용, analytics-reporter.md는 "지난 달 성과 리포트 작성"과 같은 공식 문서 생성용
 
 **SEO 및 마케팅**:
 - **seo-optimizer.md**: 사이트맵, 메타태그, 내부 링크 최적화
@@ -987,6 +1027,20 @@ npm run build
 - 불필요한 JavaScript 제거
 - 이미지 최적화 (Astro가 자동 처리)
 
+## 구현 상태
+
+구현 상태에 대한 자세한 정보는 `.claude/guidelines/implementation-status.md`를 참조하세요.
+
+**요약**:
+- ✅ **활성**: 17개 에이전트, 4개 스킬, 6개 커맨드, MCP 통합, 메타데이터 아키텍처
+- ⚠️ **부분 구현**: 보안 샌드박스 (기본 허용 목록만 활성)
+- ❌ **이론적/계획**: 상태 관리 시스템, 계획 프로토콜, 복구 프로토콜
+
+**토큰 절감 성과**: 60-70% 비용 절감 달성
+- 메타데이터 우선 아키텍처 (post-metadata.json 재사용)
+- 증분 처리 (콘텐츠 해시 비교)
+- 3계층 캐싱 시스템
+
 ## 참고 자료
 
 ### 공식 문서
@@ -1010,6 +1064,18 @@ npm run build
 
 ---
 
-**마지막 업데이트**: 2025-11-09
+**마지막 업데이트**: 2025-12-01
 **작성자**: Claude Code with Best Practices Integration
-**버전**: v2.0 - 관련 포스트 추천 시스템(V3) 반영
+**버전**: v3.0 - 대규모 멀티 에이전트 개선 (에이전트 역할 명확화, 커맨드 표준화, 스킬 검증 강화, 구현 상태 문서화)
+
+## 변경 로그
+
+### v3.0 (2025-12-01)
+- **Agents**: image-generator.md 경로 이식성 개선, orchestrator.md 실제 예제 3개 추가, analytics/analytics-reporter 역할 경계 명확화, editor.md 워크플로우 통합 문서화
+- **Commands**: commit.md 완전 재작성 (12줄→528줄), write-post.md 4개 언어 표준화, write-post-ko.md 중복 제거, 워크플로우 의존성 문서화
+- **Skills**: relatedPosts 필수 필드 추가, Python 스크립트 버그 수정, 중국어(zh) SEO 가이드라인 추가
+- **Guidelines**: implementation-status.md 신규 생성, 구현 상태 명확화, 토큰 절감 메커니즘 문서화
+
+### v2.1 (2025-11-XX)
+- 다국어 번역 일치 검증 추가
+- relatedPosts 필수화

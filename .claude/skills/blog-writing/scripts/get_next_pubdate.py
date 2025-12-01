@@ -14,6 +14,7 @@ Output:
 """
 import os
 import re
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -30,7 +31,8 @@ def find_latest_pubdate():
     blog_dirs = [
         Path("src/content/blog/ko"),
         Path("src/content/blog/en"),
-        Path("src/content/blog/ja")
+        Path("src/content/blog/ja"),
+        Path("src/content/blog/zh")
     ]
 
     latest_date = None
@@ -65,8 +67,6 @@ def find_latest_pubdate():
 
 
 if __name__ == "__main__":
-    import sys
-
     next_date = find_latest_pubdate()
 
     if next_date:

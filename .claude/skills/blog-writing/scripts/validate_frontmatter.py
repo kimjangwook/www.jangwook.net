@@ -32,12 +32,16 @@ SEO_LIMITS = {
     'ja': {
         'title': {'min': 30, 'max': 35},
         'description': {'min': 80, 'max': 90}
+    },
+    'zh': {
+        'title': {'min': 20, 'max': 25},
+        'description': {'min': 60, 'max': 70}
     }
 }
 
 
 def detect_language(file_path):
-    """Detect language from file path (ko, en, or ja)."""
+    """Detect language from file path (ko, en, ja, or zh)."""
     path_str = str(file_path)
     if '/ko/' in path_str or '\\ko\\' in path_str:
         return 'ko'
@@ -45,6 +49,8 @@ def detect_language(file_path):
         return 'en'
     elif '/ja/' in path_str or '\\ja\\' in path_str:
         return 'ja'
+    elif '/zh/' in path_str or '\\zh\\' in path_str:
+        return 'zh'
     return None
 
 
@@ -113,24 +119,24 @@ def validate_frontmatter(file_path):
     try:
         content = Path(file_path).read_text(encoding='utf-8')
     except Exception as e:
-        return False, [f"❌ Could not read file: {e}"]
+        return False, [f"❌ Could not read file: {e}"], []
 
     # Detect language
     language = detect_language(file_path)
     if not language:
-        warnings.append("⚠️  Could not detect language from path (expected ko/, en/, or ja/)")
+        warnings.append("⚠️  Could not detect language from path (expected ko/, en/, ja/, or zh/)")
 
     # Extract frontmatter
     frontmatter = extract_frontmatter(content)
     if not frontmatter:
-        return False, ["❌ No valid frontmatter found (must start and end with ---)"]
+        return False, ["❌ No valid frontmatter found (must start and end with ---)"], []
 
     # Check for single quotes on pubDate
     if re.search(r'pubDate:\s*"', frontmatter):
         errors.append("❌ pubDate: Must use single quotes, not double quotes")
 
     # Required fields
-    required_fields = ['title', 'description', 'pubDate', 'heroImage']
+    required_fields = ['title', 'description', 'pubDate', 'heroImage', 'relatedPosts']
 
     for field in required_fields:
         value = parse_frontmatter_field(frontmatter, field)
@@ -207,6 +213,25 @@ def validate_frontmatter(file_path):
 
             if len(tag_list) > 5:
                 warnings.append(f"⚠️  tags: Too many tags ({len(tag_list)}, recommended max 5)")
+
+    # Validate relatedPosts
+    related_posts = parse_frontmatter_field(frontmatter, 'relatedPosts')
+    if related_posts:
+        # Check for required language keys in reasons
+        required_langs = ['ko', 'ja', 'en', 'zh']
+        if 'reason:' in related_posts:
+            for lang in required_langs:
+                if f'{lang}:' not in related_posts:
+                    warnings.append(f"⚠️  relatedPosts: Missing '{lang}' in reason field")
+
+        # Check for score field
+        if 'score:' in related_posts:
+            # Extract scores and validate range
+            score_matches = re.findall(r'score:\s*(\d+\.?\d*)', related_posts)
+            for score_str in score_matches:
+                score = float(score_str)
+                if score < 0 or score > 1:
+                    errors.append(f"❌ relatedPosts: Score {score} out of range (must be 0-1)")
 
     return len(errors) == 0, errors, warnings
 

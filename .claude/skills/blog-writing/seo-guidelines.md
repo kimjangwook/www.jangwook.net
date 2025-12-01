@@ -5,22 +5,26 @@
 - **Korean**: 25-30 characters
 - **English**: 50-60 characters
 - **Japanese**: 30-35 characters
+- **Chinese**: 20-25 characters
 
 Google SERP displays approximately:
 - Korean: 30 characters before truncation
 - English: 60 characters before truncation
 - Japanese: 35 characters before truncation
+- Chinese: 25 characters before truncation
 
 ## Optimal Description Length
 
 - **Korean**: 70-80 characters
 - **English**: 150-160 characters
 - **Japanese**: 80-90 characters
+- **Chinese**: 60-70 characters
 
 Google SERP meta description limits:
 - Korean: ~80 characters
 - English: ~160 characters
 - Japanese: ~90 characters
+- Chinese: ~70 characters
 
 ## Keyword Strategy
 
@@ -58,6 +62,13 @@ Google SERP meta description limits:
 - Consider Yahoo Japan SEO
 - Use appropriate keigo level (formal/casual)
 - Include furigana for complex terms when needed
+
+### Chinese (zh)
+- Use simplified Chinese characters
+- Balance technical terms with natural language
+- Consider Baidu SEO (Chinese search engine)
+- Use appropriate punctuation (Chinese-specific)
+- Keep titles concise due to character density
 
 ## Title Best Practices
 

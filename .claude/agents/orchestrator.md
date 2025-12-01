@@ -389,6 +389,259 @@ TypeScript 5.0 기능 소개 다국어 블로그 포스트 완성
 
 ---
 
+---
+
+## Concrete Orchestration Examples
+
+### Example 1: New Blog Post Creation (Multi-Agent Workflow)
+
+**User Request**: "AI 윤리에 대한 블로그 포스트를 작성해주세요"
+
+**Orchestration Plan**:
+
+```markdown
+## Task: AI Ethics Blog Post
+
+### Phase 1: Research & Assets (Parallel)
+- **Agent**: web-researcher
+  - **Task**: Latest AI ethics news, regulations, case studies
+  - **Output**: research-notes.md
+  - **Time**: ~10 min
+
+- **Agent**: content-planner
+  - **Task**: Outline structure, key points, target audience
+  - **Output**: post-outline.md
+  - **Time**: ~5 min
+
+- **Agent**: image-generator
+  - **Task**: Hero image with prompt "AI ethics illustration, balanced scales with AI and human elements"
+  - **Output**: src/assets/blog/2025-12-01-ai-ethics.png
+  - **Time**: ~2 min
+
+**Dependencies**: None (fully parallel)
+
+### Phase 2: Content Creation (Sequential)
+- **Agent**: writing-assistant
+  - **Task**: Write Korean version using research + outline
+  - **Input**: research-notes.md, post-outline.md, hero image path
+  - **Output**: src/content/blog/ko/ai-ethics.md
+  - **Time**: ~15 min
+
+- **Agent**: writing-assistant
+  - **Task**: Write Japanese version (localization, not translation)
+  - **Output**: src/content/blog/ja/ai-ethics.md
+  - **Time**: ~15 min
+
+- **Agent**: writing-assistant
+  - **Task**: Write English version
+  - **Output**: src/content/blog/en/ai-ethics.md
+  - **Time**: ~15 min
+
+- **Agent**: writing-assistant
+  - **Task**: Write Chinese version
+  - **Output**: src/content/blog/zh/ai-ethics.md
+  - **Time**: ~15 min
+
+**Dependencies**: Research + outline must complete before writing starts
+
+### Phase 3: Quality Assurance (Sequential)
+- **Agent**: editor
+  - **Task**: Review all 4 language versions for grammar, style, metadata
+  - **Time**: ~10 min
+
+- **Agent**: content-recommender
+  - **Task**: Generate relatedPosts for all versions
+  - **Time**: ~3 min
+
+- **Agent**: site-manager
+  - **Task**: Run `astro check` and `npm run build`
+  - **Time**: ~2 min
+
+**Dependencies**: Content must exist before QA
+
+### Total Time: ~92 min (parallelization saves ~10 min)
+
+### Success Criteria:
+- [ ] 4 language versions created with identical structure
+- [ ] Hero image generated and linked in frontmatter
+- [ ] All posts have relatedPosts metadata
+- [ ] Build succeeds without errors
+- [ ] SEO metadata optimized (title ≤60 chars, description 150-160 chars)
+```
+
+---
+
+### Example 2: SEO Optimization Initiative
+
+**User Request**: "블로그 전체의 SEO를 점검하고 개선해주세요"
+
+**Orchestration Plan**:
+
+```markdown
+## Task: Comprehensive SEO Audit & Optimization
+
+### Phase 1: Analysis (Parallel)
+- **Agent**: seo-optimizer
+  - **Task**: Audit sitemap, meta tags, internal links
+  - **Output**: seo-audit-report.md
+  - **Time**: ~20 min
+
+- **Agent**: web-researcher
+  - **Task**: Research SEO best practices for 2025, competitor analysis
+  - **Output**: seo-research.md
+  - **Time**: ~15 min
+
+- **Agent**: analytics
+  - **Task**: Identify top traffic pages and underperforming content
+  - **Output**: traffic-analysis.json
+  - **Time**: ~10 min
+
+**Dependencies**: None (fully parallel)
+
+### Phase 2: Strategy & Planning (Sequential)
+- **Agent**: orchestrator (you)
+  - **Task**: Synthesize audit + research + analytics into action plan
+  - **Output**: seo-improvement-plan.md with prioritized tasks
+  - **Time**: ~10 min
+
+**Dependencies**: All Phase 1 tasks must complete
+
+### Phase 3: Implementation (Mixed)
+
+**High Priority (Sequential):**
+1. **Agent**: seo-optimizer
+   - **Task**: Fix critical issues (missing meta tags, broken links)
+   - **Time**: ~30 min
+
+2. **Agent**: seo-optimizer
+   - **Task**: Regenerate sitemap with proper priorities
+   - **Time**: ~5 min
+
+**Medium Priority (Parallel after High Priority):**
+3. **Agent**: writing-assistant
+   - **Task**: Rewrite top 5 underperforming post descriptions
+   - **Time**: ~15 min
+
+4. **Agent**: seo-optimizer
+   - **Task**: Add internal links to top traffic pages
+   - **Time**: ~20 min
+
+5. **Agent**: backlink-manager
+   - **Task**: Identify backlink opportunities from audit
+   - **Time**: ~10 min
+
+### Phase 4: Verification (Sequential)
+- **Agent**: site-manager
+  - **Task**: Run build, verify no errors
+  - **Time**: ~3 min
+
+- **Agent**: seo-optimizer
+  - **Task**: Re-audit to confirm improvements
+  - **Output**: post-optimization-report.md
+  - **Time**: ~10 min
+
+### Total Time: ~148 min (~2.5 hours)
+
+### Success Criteria:
+- [ ] All critical SEO issues resolved
+- [ ] Sitemap updated and validated
+- [ ] Top 10 pages have optimized metadata
+- [ ] Internal link structure improved (5+ new connections)
+- [ ] Post-audit score improved by 20%+
+```
+
+---
+
+### Example 3: Analytics-Driven Content Improvements
+
+**User Request**: "지난 달 GA 데이터를 분석하고, 데이터 기반으로 콘텐츠를 개선해주세요"
+
+**Orchestration Plan**:
+
+```markdown
+## Task: Data-Driven Content Strategy
+
+### Phase 1: Data Collection & Analysis (Sequential)
+- **Agent**: analytics-reporter
+  - **Task**: Generate comprehensive monthly analytics report
+  - **Output**: src/content/blog/ko/monthly-analytics-2025-11.md (publishable)
+  - **Time**: ~60 min
+  - **Includes**: Traffic trends, top content, audience insights, action plan
+
+**Dependencies**: None
+
+### Phase 2: Insight Extraction (Sequential)
+- **Agent**: post-analyzer
+  - **Task**: Deep dive into top 3 performing posts - why did they succeed?
+  - **Output**: success-pattern-analysis.md
+  - **Time**: ~20 min
+
+- **Agent**: post-analyzer
+  - **Task**: Analyze bottom 5 posts - what went wrong?
+  - **Output**: underperformer-analysis.md
+  - **Time**: ~20 min
+
+**Dependencies**: Analytics report must complete first
+
+### Phase 3: Strategy Formulation (Sequential)
+- **Agent**: content-planner
+  - **Task**: Based on insights, plan next month's content topics
+  - **Input**: success patterns, underperformer analysis, analytics report
+  - **Output**: content-calendar-2025-12.md
+  - **Time**: ~30 min
+
+**Dependencies**: Phase 2 must complete
+
+### Phase 4: Content Optimization (Parallel)
+**Based on insights, apply improvements:**
+
+1. **Agent**: writing-assistant
+   - **Task**: Expand top-performing post with related topics (capitalize on success)
+   - **Time**: ~40 min
+
+2. **Agent**: editor
+   - **Task**: Improve metadata for underperforming posts (better titles/descriptions)
+   - **Time**: ~30 min
+
+3. **Agent**: seo-optimizer
+   - **Task**: Add internal links from high-traffic posts to underperformers
+   - **Time**: ~15 min
+
+4. **Agent**: content-recommender
+   - **Task**: Update relatedPosts to boost underperformers
+   - **Time**: ~10 min
+
+**Dependencies**: Strategy must be formulated first
+
+### Phase 5: Deployment & Tracking (Sequential)
+- **Agent**: site-manager
+  - **Task**: Build and deploy changes
+  - **Time**: ~5 min
+
+- **Agent**: improvement-tracker
+  - **Task**: Log all improvements to track impact next month
+  - **Output**: Update .claude/memory/improvements.json
+  - **Time**: ~5 min
+
+**Dependencies**: All optimizations complete
+
+### Total Time: ~235 min (~4 hours)
+
+### Success Criteria:
+- [ ] Monthly analytics report published as blog post
+- [ ] Success pattern identified and documented
+- [ ] Next month's content calendar ready (5+ topics)
+- [ ] Top 3 underperformers improved (metadata + links)
+- [ ] Improvements tracked for next month's comparison
+
+### Expected Outcomes (Next Month):
+- 15% increase in traffic to improved posts
+- 10% reduction in overall bounce rate
+- New content aligned with proven success patterns
+```
+
+---
+
 ## 관련 문서
 
 - [planning-protocol.md](../guidelines/planning-protocol.md): 계획 프로토콜

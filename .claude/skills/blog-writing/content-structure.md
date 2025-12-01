@@ -182,6 +182,18 @@ Example:
 コンポーネントは再利用可能なUIの構成要素です。
 ```
 
+### Chinese (zh)
+- Use simplified Chinese characters (简体中文)
+- Clear and concise technical explanations
+- Balance technical terms with everyday language
+- Use appropriate Chinese punctuation (，。！？)
+- Maintain formal but approachable tone
+
+Example:
+```markdown
+组件是可重用的UI构建块，它封装了逻辑和表现层。
+```
+
 ## Code Block Best Practices
 
 ### Language Specification
@@ -307,6 +319,16 @@ All three language versions should have identical section structure:
 ## 実装手順
 ## 実例
 ## まとめ
+```
+
+**Chinese (zh):**
+```markdown
+## 概述
+## 问题背景
+## 解决方案
+## 实现步骤
+## 实际案例
+## 总结
 ```
 
 ## Quality Checklist

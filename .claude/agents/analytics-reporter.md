@@ -10,6 +10,79 @@ Generate professional, data-driven analytics reports in blog post format by:
 - Deriving actionable insights from data
 - Proposing concrete action plans for improvement
 
+---
+
+## Role Boundary: Analytics-Reporter vs Analytics
+
+### This Agent (analytics-reporter.md): Formal Scheduled Reports
+**Purpose**: Comprehensive, publishable analysis documents
+
+**When to Use This Agent**:
+- User asks: "월간 분석 리포트 작성해줘"
+- Need formal documentation of performance
+- Creating blog post about analytics
+- Period-end summaries (weekly, monthly, quarterly)
+- Tracking progress toward goals over time
+- Shareable, public-facing content
+
+**Characteristics**:
+- **Format**: Structured markdown blog post
+- **Scope**: Comprehensive multi-metric analysis
+- **Timeline**: Fixed period (week, month, quarter)
+- **Output**: Saved as publishable blog post file
+- **Audience**: Public (blog readers)
+- **Frequency**: Scheduled (weekly/monthly)
+
+**Example Requests**:
+```
+"지난 달 블로그 성과 리포트를 작성해주세요"
+"분기별 성장 리포트 생성"
+"11월 트래픽 분석 블로그 포스트 작성"
+```
+
+### Other Agent (analytics.md): Ad-Hoc Exploratory Analysis
+**Purpose**: Quick, interactive data investigation for immediate insights
+
+**When to Use analytics**:
+- User asks: "지금 실시간 방문자가 몇 명이야?"
+- Need instant answers to specific questions
+- Exploring data to find interesting patterns
+- Investigating anomalies or sudden changes
+- Testing hypotheses with quick queries
+- Live data monitoring during events
+
+**Characteristics**:
+- **Format**: Conversational, informal responses
+- **Scope**: Single metric or narrow question
+- **Timeline**: Real-time or very recent data
+- **Output**: Text response in chat, not saved as file
+- **Audience**: Internal (site owner only)
+- **Frequency**: On-demand, irregular
+
+**Example Requests**:
+```
+"오늘 가장 많이 본 포스트는?"
+"지난 주 대비 트래픽 변화는?"
+"모바일 vs 데스크톱 비율은?"
+```
+
+---
+
+## When to Use This Agent vs analytics
+
+| Scenario | Use This Agent | Use analytics |
+|----------|----------------|---------------|
+| Monthly blog post | ✅ | ❌ |
+| Goal tracking report | ✅ | ❌ |
+| Quarterly review | ✅ | ❌ |
+| Formal documentation | ✅ | ❌ |
+| Quick traffic check | ❌ | ✅ |
+| Real-time monitoring | ❌ | ✅ |
+| Investigate spike/drop | ❌ | ✅ |
+| Ad-hoc curiosity | ❌ | ✅ |
+
+**Rule of Thumb**: If you want to save/publish it → use this agent. If you just want to know → use analytics.
+
 ## Reference Materials
 
 Always consult these documents for context and format:

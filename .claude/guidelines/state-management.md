@@ -343,6 +343,299 @@ pending → in_progress → completed
 
 ---
 
+## State Lifecycle Example
+
+### Complete JSON State Changes
+
+**Initial State (Task Start)**:
+```json
+{
+  "version": "1.0",
+  "current_task": {
+    "id": "task-2025-11-18-001",
+    "name": "Write blog post: TypeScript 5.0",
+    "status": "pending",
+    "started_at": "2025-11-18T10:00:00Z",
+    "updated_at": "2025-11-18T10:00:00Z",
+    "orchestrator": "orchestrator",
+    "plan": {
+      "goal": "Create 3-language blog post about TypeScript 5.0",
+      "success_criteria": [
+        "3 language versions completed",
+        "Hero image generated",
+        "astro check passes"
+      ],
+      "steps": [
+        {
+          "id": 1,
+          "name": "Research",
+          "agent": "web-researcher",
+          "cluster": "research",
+          "status": "pending",
+          "dependencies": [],
+          "started_at": null,
+          "completed_at": null,
+          "output": null,
+          "error": null
+        },
+        {
+          "id": 2,
+          "name": "Generate hero image",
+          "agent": "image-generator",
+          "cluster": "content-generation",
+          "status": "pending",
+          "dependencies": [],
+          "started_at": null,
+          "completed_at": null,
+          "output": null,
+          "error": null
+        },
+        {
+          "id": 3,
+          "name": "Write Korean version",
+          "agent": "writing-assistant",
+          "cluster": "content-generation",
+          "status": "pending",
+          "dependencies": [1, 2],
+          "started_at": null,
+          "completed_at": null,
+          "output": null,
+          "error": null
+        }
+      ],
+      "current_step": 1
+    },
+    "context": {
+      "user_request": "Write blog post about TypeScript 5.0 features",
+      "constraints": ["3 languages required", "Hero image needed"],
+      "resources": ["Brave Search API", "Gemini API"]
+    },
+    "artifacts": [],
+    "issues": []
+  },
+  "pending_tasks": [],
+  "last_updated": "2025-11-18T10:00:00Z"
+}
+```
+
+**After Step 1 Starts (Research begins)**:
+```json
+{
+  "current_task": {
+    "status": "in_progress",
+    "updated_at": "2025-11-18T10:00:30Z",
+    "plan": {
+      "steps": [
+        {
+          "id": 1,
+          "status": "in_progress",
+          "started_at": "2025-11-18T10:00:30Z"
+        }
+      ],
+      "current_step": 1
+    }
+  }
+}
+```
+
+**After Step 1 Completes (Research done)**:
+```json
+{
+  "current_task": {
+    "updated_at": "2025-11-18T10:02:15Z",
+    "plan": {
+      "steps": [
+        {
+          "id": 1,
+          "status": "completed",
+          "completed_at": "2025-11-18T10:02:15Z",
+          "output": {
+            "type": "research_data",
+            "summary": "TypeScript 5.0 introduces decorators, const type parameters...",
+            "sources": [
+              "https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/"
+            ]
+          }
+        }
+      ],
+      "current_step": 2
+    },
+    "artifacts": [
+      {
+        "type": "data",
+        "path": ".claude/memory/research-typescript-5.json",
+        "description": "Research results for TypeScript 5.0"
+      }
+    ]
+  }
+}
+```
+
+**After Step 2 Starts (Image generation begins)**:
+```json
+{
+  "current_task": {
+    "updated_at": "2025-11-18T10:02:20Z",
+    "plan": {
+      "steps": [
+        {
+          "id": 2,
+          "status": "in_progress",
+          "started_at": "2025-11-18T10:02:20Z"
+        }
+      ],
+      "current_step": 2
+    }
+  }
+}
+```
+
+**After Step 2 Completes (Image generated)**:
+```json
+{
+  "current_task": {
+    "updated_at": "2025-11-18T10:04:00Z",
+    "plan": {
+      "steps": [
+        {
+          "id": 2,
+          "status": "completed",
+          "completed_at": "2025-11-18T10:04:00Z",
+          "output": {
+            "type": "file",
+            "path": "src/assets/blog/typescript-5-hero.jpg"
+          }
+        }
+      ],
+      "current_step": 3
+    },
+    "artifacts": [
+      {
+        "type": "file",
+        "path": "src/assets/blog/typescript-5-hero.jpg",
+        "description": "Hero image for TypeScript 5.0 post"
+      }
+    ]
+  }
+}
+```
+
+**Final State (All steps completed)**:
+```json
+{
+  "current_task": {
+    "status": "completed",
+    "updated_at": "2025-11-18T10:30:00Z",
+    "completed_at": "2025-11-18T10:30:00Z",
+    "plan": {
+      "steps": [
+        {"id": 1, "status": "completed"},
+        {"id": 2, "status": "completed"},
+        {"id": 3, "status": "completed"},
+        {"id": 4, "status": "completed"},
+        {"id": 5, "status": "completed"}
+      ],
+      "current_step": 5
+    },
+    "artifacts": [
+      {
+        "type": "file",
+        "path": "src/content/blog/ko/typescript-5-features.md",
+        "description": "Korean blog post"
+      },
+      {
+        "type": "file",
+        "path": "src/content/blog/ja/typescript-5-features.md",
+        "description": "Japanese blog post"
+      },
+      {
+        "type": "file",
+        "path": "src/content/blog/en/typescript-5-features.md",
+        "description": "English blog post"
+      },
+      {
+        "type": "file",
+        "path": "src/assets/blog/typescript-5-hero.jpg",
+        "description": "Hero image"
+      }
+    ]
+  }
+}
+```
+
+### Transition Flow (pending → in_progress → completed)
+
+```
+Time: 10:00:00 - Task Created
+  status: "pending"
+  current_step: 1
+  step[1].status: "pending"
+
+Time: 10:00:30 - Research Starts
+  status: "in_progress"
+  current_step: 1
+  step[1].status: "in_progress"
+  step[1].started_at: "2025-11-18T10:00:30Z"
+
+Time: 10:02:15 - Research Completes
+  status: "in_progress"
+  current_step: 2
+  step[1].status: "completed"
+  step[1].completed_at: "2025-11-18T10:02:15Z"
+  step[1].output: {research results}
+
+Time: 10:02:20 - Image Generation Starts
+  status: "in_progress"
+  current_step: 2
+  step[2].status: "in_progress"
+  step[2].started_at: "2025-11-18T10:02:20Z"
+
+Time: 10:04:00 - Image Generation Completes
+  status: "in_progress"
+  current_step: 3
+  step[2].status: "completed"
+  step[2].completed_at: "2025-11-18T10:04:00Z"
+  step[2].output: {file path}
+
+... (steps 3, 4, 5 continue similarly)
+
+Time: 10:30:00 - All Steps Complete
+  status: "completed"
+  completed_at: "2025-11-18T10:30:00Z"
+  current_step: 5
+  ALL step[].status: "completed"
+```
+
+### Real Task Execution Example
+
+**Command**: `/write-post "TypeScript 5.0 Features"`
+
+**Actual Execution Flow**:
+1. Command reads task-state.json (if exists)
+2. Command creates new task with 8 steps
+3. Command writes initial state to task-state.json
+4. Command invokes @web-researcher
+   - Before: Updates step[1].status = "in_progress"
+   - After: Updates step[1].status = "completed", step[1].output = {research}
+5. Command invokes @image-generator
+   - Before: Updates step[2].status = "in_progress"
+   - After: Updates step[2].status = "completed", step[2].output = {image path}
+6. Command invokes @writing-assistant (Korean)
+   - Before: Updates step[3].status = "in_progress"
+   - After: Updates step[3].status = "completed", step[3].output = {file path}
+7. Command invokes @writing-assistant (Japanese)
+   - Before: Updates step[4].status = "in_progress"
+   - After: Updates step[4].status = "completed", step[4].output = {file path}
+8. Command invokes @writing-assistant (English)
+   - Before: Updates step[5].status = "in_progress"
+   - After: Updates step[5].status = "completed", step[5].output = {file path}
+9. Command moves completed task to task-history.json
+10. Command clears current_task in task-state.json
+
+**Note**: Currently, state management is **theoretical** - commands do not actually write to task-state.json. This example shows the intended architecture.
+
+---
+
 ## 베스트 프랙티스
 
 ### DO

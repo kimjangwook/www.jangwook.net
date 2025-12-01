@@ -2,6 +2,26 @@
 
 AI 생성 코드를 안전하게 실행하기 위한 샌드박스 설정 가이드입니다.
 
+## Implementation Status
+
+**Current Status**: 🟡 Partially Implemented
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| File path restrictions | ✅ Active | Via settings.local.json (allow list) |
+| Command allowlist | ✅ Active | npm run commands, node, cat, shasum, awk allowed |
+| Network restrictions | ⚠️ Planned | Not yet implemented (relies on MCP server controls) |
+| Resource limits | ⚠️ Planned | Not yet implemented (OS-level controls needed) |
+| Process isolation | ⚠️ Theoretical | Documented but not enforced |
+
+**Implementation Details**:
+- `.claude/settings.local.json` provides basic command and file path filtering
+- MCP servers (Brave Search, GA4, Gemini) handle their own network access
+- No explicit memory/CPU limits enforced (relies on system defaults)
+- Sandbox runtime configuration is **reference architecture only** (not active)
+
+---
+
 ## 개요
 
 MCP Code Execution에서는 AI가 생성한 코드가 직접 실행됩니다. 보안을 위해 격리된 샌드박스 환경에서 실행하는 것이 필수입니다.

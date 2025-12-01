@@ -436,9 +436,85 @@ After generating metadata:
 - **Caching**: `post-metadata.json` should be committed to Git
 - **Zero Runtime Cost**: Pre-computed metadata means no impact on build time
 
+## Workflow Dependencies
+
+This command is part of the V3 content recommendation system. Understanding the workflow is critical:
+
+### Execution Order
+
+```mermaid
+graph TD
+    A[New Blog Post Created] --> B[/analyze-posts]
+    B --> C[post-metadata.json Updated]
+    C --> D[/generate-recommendations]
+    D --> E[Frontmatter Updated]
+    E --> F[Build & Deploy]
+```
+
+### Prerequisites
+
+**Before running /analyze-posts**:
+- ✅ Blog posts must exist in `src/content/blog/{lang}/`
+- ✅ Posts must have valid frontmatter (title, description, pubDate)
+- ✅ Content must be in markdown format
+
+**What /analyze-posts produces**:
+- `post-metadata.json` containing:
+  - `pubDate`: Publication date (YYYY-MM-DD)
+  - `difficulty`: Difficulty rating 1-5
+  - `categoryScores`: Relevance scores for 5 categories (0.0-1.0)
+
+### Next Step
+
+**After /analyze-posts completes**:
+1. Review `post-metadata.json` for accuracy
+2. Run `/generate-recommendations` to create related post suggestions
+3. The recommendation command will:
+   - Read metadata from `post-metadata.json`
+   - Calculate similarity scores
+   - Write `relatedPosts` array to post frontmatter
+
+### Workflow Integration
+
+**V3 System Architecture**:
+```
+/analyze-posts (this command)
+    ↓ Produces
+post-metadata.json (3 fields per post)
+    ↓ Consumed by
+/generate-recommendations
+    ↓ Produces
+relatedPosts in frontmatter (all language versions)
+    ↓ Consumed by
+Astro build process
+    ↓ Renders
+RelatedPosts.astro component
+```
+
+**Key Relationships**:
+- `/analyze-posts` is a **one-time** operation per post (or on content change)
+- `/generate-recommendations` is **fast** because it uses pre-computed metadata
+- Both commands must be run in sequence for new posts
+- Existing posts only need re-analysis if content changes significantly
+
+### When to Run
+
+**Run /analyze-posts when**:
+- ✅ New blog post is published
+- ✅ Existing post content is updated
+- ✅ Post difficulty or topics change significantly
+- ✅ Adding new category to the system
+
+**Skip /analyze-posts when**:
+- ❌ Only fixing typos or minor edits
+- ❌ Updating frontmatter metadata (title, description)
+- ❌ Changing images or non-content elements
+
 ## Related Files
 
-- Agent: `.claude/agents/post-analyzer.md`
-- Output: `post-metadata.json`
-- Integration: `.claude/commands/generate-recommendations.md`
-- Optimization Report: `working_history/modify_recommendation.md`
+- **Agent**: `.claude/agents/post-analyzer.md`
+- **Output**: `post-metadata.json`
+- **Next Command**: `.claude/commands/generate-recommendations.md`
+- **Consumer**: `scripts/generate-recommendations-v3.js`
+- **Optimization Report**: `working_history/modify_recommendation.md`
+- **V3 Documentation**: `research/post-recommendation-v3/README.md`

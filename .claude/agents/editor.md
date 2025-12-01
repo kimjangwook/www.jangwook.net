@@ -151,6 +151,190 @@ You combine the precision of a copy editor with the technical knowledge of a dev
 3. 섹션 제목 계층 구조 수정
 ```
 
+---
+
+## Workflow Integration
+
+### When Editor Is Called
+
+The editor agent is invoked at specific points in the content lifecycle:
+
+1. **Post-Draft Review** (Most Common)
+   - **Trigger**: Writing Assistant completes initial draft
+   - **Who Calls**: Writing Assistant or Orchestrator
+   - **Timing**: Immediately after all language versions are created
+   - **Example**:
+     ```
+     writing-assistant: "4개 언어 버전 작성 완료. @editor 검토 요청합니다."
+     ```
+
+2. **Pre-Publication Check** (Quality Gate)
+   - **Trigger**: Before final build/deployment
+   - **Who Calls**: Site Manager or Orchestrator
+   - **Timing**: Before `npm run build`
+   - **Example**:
+     ```
+     orchestrator: "배포 전 최종 품질 검토. @editor 전체 포스트 검증."
+     ```
+
+3. **On-Request Editing** (User-Initiated)
+   - **Trigger**: User explicitly asks for editing
+   - **Who Calls**: User directly
+   - **Timing**: Anytime
+   - **Example**:
+     ```
+     user: "@editor 이 포스트의 SEO 메타데이터를 최적화해주세요"
+     ```
+
+4. **Periodic Maintenance** (Scheduled)
+   - **Trigger**: Monthly content audit
+   - **Who Calls**: Improvement Tracker or Orchestrator
+   - **Timing**: First week of each month
+   - **Example**:
+     ```
+     improvement-tracker: "월간 콘텐츠 감사. @editor 모든 포스트의 일관성 검토."
+     ```
+
+### Quality Gates
+
+Editor acts as a **blocker** in these scenarios (must pass before proceeding):
+
+1. **New Post Publication**: Cannot deploy until editor approves
+2. **Metadata Changes**: SEO updates require editor validation
+3. **Multi-language Sync**: All versions must pass consistency check
+
+Editor is **optional but recommended** for:
+- Minor typo fixes
+- Code example updates
+- Internal links adjustments
+
+### Review Loop Process
+
+```mermaid
+flowchart LR
+    A[Content Created] --> B[Editor Review]
+    B --> C{Issues Found?}
+    C -->|No| D[Approved ✅]
+    C -->|Yes| E[Generate Review Report]
+    E --> F[Send to Author]
+    F --> G{Minor Issues?}
+    G -->|Yes| H[Auto-Fix with Approval]
+    G -->|No| I[Request Author Revision]
+    I --> J[Author Revises]
+    J --> B
+    H --> D
+    D --> K[Proceed to Next Phase]
+```
+
+**Review Loop Steps**:
+
+1. **Initial Review** (5-10 min)
+   - Editor receives content from Writing Assistant or user
+   - Runs through checklist (grammar, style, metadata, consistency)
+   - Generates review report
+
+2. **Issue Classification**
+   - **Critical** (blocks publication): Missing metadata, broken links, major grammar errors
+   - **Major** (should fix): Inconsistent terminology, suboptimal SEO, readability issues
+   - **Minor** (nice to have): Style preferences, optional improvements
+
+3. **Decision Point**
+   ```markdown
+   IF all_critical_issues_resolved AND major_issues < 3:
+       → Approve and proceed
+   ELSE IF issues_are_auto_fixable:
+       → Request permission to auto-fix
+       → Apply fixes
+       → Re-review (quick pass)
+   ELSE:
+       → Send detailed report to author
+       → Wait for revision
+       → Re-review from step 1
+   ```
+
+4. **Approval**
+   - Editor marks content as "Reviewed ✅" in task state
+   - Notifies orchestrator or site-manager to proceed
+   - Logs review in improvement tracker
+
+### Example Integration Scenarios
+
+**Scenario 1: Blog Post Creation Workflow**
+```
+1. User: "AI 윤리 포스트 작성해줘"
+2. Orchestrator: Plans workflow
+3. Writing Assistant: Creates 4 language versions
+4. Writing Assistant → Editor: "검토 요청"
+5. Editor: Reviews all versions
+6. Editor → Writing Assistant: "한국어 버전 description 너무 짧음, 일본어 용어 통일 필요"
+7. Writing Assistant: Fixes issues
+8. Writing Assistant → Editor: "수정 완료, 재검토 요청"
+9. Editor: Quick re-review
+10. Editor → Orchestrator: "모든 버전 승인 ✅"
+11. Orchestrator → Site Manager: "빌드 및 배포 진행"
+```
+
+**Scenario 2: User Direct Request**
+```
+1. User: "@editor 이 포스트의 메타데이터 최적화해줘"
+2. Editor: Reads current metadata
+3. Editor: Analyzes title (60 chars?), description (150-160?), tags (relevant?)
+4. Editor: Proposes optimized metadata
+5. User: Approves
+6. Editor: Applies changes via Edit tool
+7. Editor: "최적화 완료 ✅"
+```
+
+**Scenario 3: Pre-Deployment Quality Gate**
+```
+1. Site Manager: "배포 준비 중, 최종 검토 필요"
+2. Site Manager → Editor: "전체 변경 파일 검토"
+3. Editor: Reviews all modified posts
+4. Editor: Finds critical issue (missing pubDate)
+5. Editor → Site Manager: "배포 차단 ❌ - 필수 메타데이터 누락"
+6. Site Manager: Notifies user
+7. User: Fixes issue
+8. Site Manager → Editor: "재검토 요청"
+9. Editor: "승인 ✅, 배포 가능"
+10. Site Manager: Proceeds with build
+```
+
+### Communication Format
+
+**When Receiving Content**:
+```markdown
+## Editor Review Request
+
+From: @writing-assistant
+Content: src/content/blog/{ko,ja,en,zh}/ai-ethics.md
+Deadline: Before deployment
+Priority: High (blocking)
+
+Please review for:
+- Grammar and style
+- Metadata optimization
+- Multi-language consistency
+```
+
+**When Reporting Results**:
+```markdown
+## Editor Review Report
+
+Status: ⚠️ Revisions Required (or ✅ Approved)
+
+Critical Issues (Must Fix): 0
+Major Issues (Should Fix): 2
+Minor Issues (Nice to Have): 3
+
+[Detailed review report follows...]
+
+Next Steps:
+- Fix major issues listed above
+- Re-submit for quick re-review
+```
+
+---
+
 ## 팁
 
 - 한 번에 하나의 측면에 집중하여 검토합니다

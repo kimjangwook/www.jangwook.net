@@ -21,6 +21,7 @@ Automatically generates blog posts with multi-language support, SEO optimization
 - `--tags` (string): Comma-separated list of tags (e.g., "nextjs,react,typescript")
 - `--languages` (string): Comma-separated language codes (default: "ko,ja,en,zh")
   - Available: ko (Korean), ja (Japanese), en (English), zh (Simplified Chinese)
+  - **All 4 languages must be generated for every post**
 - `--description` (string): SEO-optimized description (150-160 characters recommended)
 
 ## Examples
@@ -352,11 +353,18 @@ Display creation results:
 ```
 ✓ Blog post created successfully!
 
-Generated Files:
-  - /src/content/blog/ko/[slug].md (Korean)
-  - /src/content/blog/ja/[slug].md (Japanese)
-  - /src/content/blog/en/[slug].md (English)
-  - /src/content/blog/zh/[slug].md (Chinese)
+Generated Files (ALL 4 languages):
+  - /src/content/blog/ko/[slug].md (Korean) ✓
+  - /src/content/blog/ja/[slug].md (Japanese) ✓
+  - /src/content/blog/en/[slug].md (English) ✓
+  - /src/content/blog/zh/[slug].md (Chinese) ✓
+
+Language Count Verification:
+  ✓ ko: 25 posts
+  ✓ ja: 25 posts
+  ✓ en: 25 posts
+  ✓ zh: 25 posts
+  ✓ All folders have equal counts
 
 Hero Image:
   - src/assets/blog/[slug]-hero.[ext]
@@ -430,25 +438,25 @@ Requirements:
    - Save to src/assets/blog/[slug]-hero.[ext]
    - Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter
 
-4. Write complete blog post for each language **IN PARALLEL**:
+4. Write complete blog post for **ALL 4 LANGUAGES** (ko, ja, en, zh) **IN PARALLEL**:
 
    **CRITICAL - Parallel Execution**:
 
-   - Create separate general-purpose agents (one per language: ko, ja, en, zh)
-   - Delegate to all agents **IN A SINGLE MESSAGE** with multiple Task tool calls
+   - Create separate general-purpose agents (exactly 4 agents: ko, ja, en, zh)
+   - Delegate to **ALL 4 agents** in a single message with 4 Task tool calls
    - Each agent receives the same research findings, outline, and metadata
    - Each agent writes independently for their target language
-   - All agents execute simultaneously for maximum efficiency
+   - All 4 agents execute simultaneously for maximum efficiency
 
    **Agent Delegation Pattern**:
 ```
 
-Single message with 4 Task tool calls:
+Single message with exactly 4 Task tool calls:
 
-- Task 1: Korean writing agent
-- Task 2: Japanese writing agent
-- Task 3: English writing agent
-- Task 4: Chinese writing agent
+- Task 1: Korean writing agent (ko)
+- Task 2: Japanese writing agent (ja)
+- Task 3: English writing agent (en)
+- Task 4: Chinese writing agent (zh)
 
 ````
 
@@ -462,14 +470,19 @@ Single message with 4 Task tool calls:
 - Apply language-specific SEO optimization
 - Save to correct language folder upon completion
 
-5. Save files to language-specific folders:
+5. Save files to **ALL 4 language-specific folders**:
 
 - Korean: /src/content/blog/ko/[slug].md
 - Japanese: /src/content/blog/ja/[slug].md
 - English: /src/content/blog/en/[slug].md
 - Chinese: /src/content/blog/zh/[slug].md
 
-6. Update README.md:
+6. **CRITICAL - Verify language count**:
+   - Count files in each language folder
+   - ALL 4 folders must have equal number of posts
+   - If mismatch detected, generate missing language versions
+
+7. Update README.md:
 
 - Read current README.md
 - Update "블로그 포스트 현황" section
@@ -479,7 +492,7 @@ Single message with 4 Task tool calls:
 - Update "Last Updated" timestamp
 - Remove topic from "향후 콘텐츠 플랜" if present
 
-7. Manage backlinks:
+8. Manage backlinks:
 
 - Delegate to Backlink Manager agent
 - Search existing posts for preview/teaser references
@@ -487,7 +500,7 @@ Single message with 4 Task tool calls:
 - Update series navigation if post is part of a series
 - Report all changes made
 
-8. Add post metadata (V3):
+9. Add post metadata (V3):
 
 - Open post-metadata.json file
 - Add metadata for new post:
@@ -509,7 +522,7 @@ Single message with 4 Task tool calls:
 - Determine difficulty and categoryScores based on content analysis
 - Save file
 
-9. Generate related post recommendations (V3):
+10. Generate related post recommendations (V3):
 
 - Run `node scripts/generate-recommendations-v3.js`
 - Script will:
@@ -519,8 +532,8 @@ Single message with 4 Task tool calls:
   - Write relatedPosts array to frontmatter of all 3 language versions
 - Verify results and report
 
-10. Generate URL-friendly slug from topic
-11. Return file paths and metadata
+11. Generate URL-friendly slug from topic
+12. Return file paths and metadata for ALL 4 languages
 ````
 
 ### Expected Agent Response Format
