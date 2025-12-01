@@ -60,10 +60,18 @@ const hreflangTags: HreflangTag[] = languages.map(lang => {
 		};
 	}
 
+	// 블로그 포스트 경로 처리 (/blog/ko/..., /blog/en/...)
+	// pathWithoutLang이 /blog/ko/... 형태라면 중간의 언어 코드도 변경해야 함
+	let finalPath = pathWithoutLang;
+	if (finalPath.startsWith('/blog/')) {
+		// /blog/ko/slug -> /blog/{lang}/slug 로 변환
+		finalPath = finalPath.replace(/^\/blog\/(ko|en|ja|zh)\//, `/blog/${lang}/`);
+	}
+
 	// 일반 경로는 언어 코드 + 경로
 	return {
 		lang,
-		url: `${siteUrl}/${lang}${pathWithoutLang}`
+		url: `${siteUrl}/${lang}${finalPath}`
 	};
 });
 

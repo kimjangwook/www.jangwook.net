@@ -1,5 +1,6 @@
 ---
 import type { Language } from '../lib/i18n/languages';
+import { getCollection } from 'astro:content';
 
 interface Props {
   slug: string;
@@ -8,37 +9,47 @@ interface Props {
 
 const { slug, currentLang } = Astro.props;
 
-const languages = {
+const languages: Record<string, { flag: string; label: string; currentLabel: string }> = {
   ko: { flag: '🇰🇷', label: '한국어', currentLabel: '한국어 (현재 페이지)' },
   ja: { flag: '🇯🇵', label: '日本語', currentLabel: '日本語（現在のページ）' },
   en: { flag: '🇺🇸', label: 'English', currentLabel: 'English (Current Page)' },
   zh: { flag: '🇨🇳', label: '中文', currentLabel: '中文（当前页面）' }
 };
 
-const sectionTitles = {
+const sectionTitles: Record<Language, string> = {
   ko: '다른 언어로 읽기',
   ja: '他の言語で読む',
   en: 'Read in Other Languages',
   zh: '阅读其他语言版本'
 };
+
+// Get all blog posts and check which language versions exist for this slug
+const allPosts = await getCollection('blog');
+const availableLanguages = Object.keys(languages).filter(lang => {
+  // Check if a post exists for this language and slug
+  return allPosts.some(post => post.id === `${lang}/${slug}.md` || post.id === `${lang}/${slug}`);
+});
 ---
 
 <div class="blog-post-language-switcher">
   <h2>{sectionTitles[currentLang]}</h2>
   <ul>
-    {Object.entries(languages).map(([lang, { flag, label, currentLabel }]) => (
-      <li>
-        {lang === currentLang ? (
-          <span class="current-language">
-            {flag} {currentLabel}
-          </span>
-        ) : (
-          <a href={`/${lang}/blog/${lang}/${slug}`}>
-            {flag} {label}
-          </a>
-        )}
-      </li>
-    ))}
+    {availableLanguages.map((lang) => {
+      const { flag, label, currentLabel } = languages[lang];
+      return (
+        <li>
+          {lang === currentLang ? (
+            <span class="current-language">
+              {flag} {currentLabel}
+            </span>
+          ) : (
+            <a href={`/${lang}/blog/${lang}/${slug}`}>
+              {flag} {label}
+            </a>
+          )}
+        </li>
+      );
+    })}
   </ul>
 </div>
 
