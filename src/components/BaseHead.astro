@@ -25,6 +25,53 @@ const { title, description, image = FallbackImage, articleData } = Astro.props;
 // 로컬호스트 체크 (GA 비활성화용)
 const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
 
+// Hreflang 태그 생성 로직
+const pathname = Astro.url.pathname;
+const langMatch = pathname.match(/^\/(ko|en|ja|zh)(\/|$)/);
+const currentLang = langMatch ? langMatch[1] : null;
+
+// 언어 코드를 제거한 경로 추출
+let pathWithoutLang: string;
+if (currentLang) {
+	// /ko/blog/post-title -> /blog/post-title
+	// /ko/ -> /
+	// /ko -> /
+	pathWithoutLang = pathname.replace(/^\/(ko|en|ja|zh)(\/|$)/, '/');
+} else {
+	// 루트 경로 또는 언어 코드가 없는 경로
+	pathWithoutLang = pathname;
+}
+
+// 각 언어별 대체 URL 생성
+const languages = ['ko', 'en', 'ja', 'zh'] as const;
+const siteUrl = 'https://jangwook.net';
+
+type HreflangTag = {
+	lang: string;
+	url: string;
+};
+
+const hreflangTags: HreflangTag[] = languages.map(lang => {
+	// 루트 경로(/)는 각 언어 홈으로 매핑
+	if (pathWithoutLang === '/' || pathWithoutLang === '') {
+		return {
+			lang,
+			url: `${siteUrl}/${lang}/`
+		};
+	}
+
+	// 일반 경로는 언어 코드 + 경로
+	return {
+		lang,
+		url: `${siteUrl}/${lang}${pathWithoutLang}`
+	};
+});
+
+// x-default는 영어 버전으로 설정
+const xDefaultUrl = pathWithoutLang === '/' || pathWithoutLang === ''
+	? `${siteUrl}/en/`
+	: `${siteUrl}/en${pathWithoutLang}`;
+
 // WebSite Schema (모든 페이지)
 const websiteSchema = {
 	'@context': 'https://schema.org',
@@ -173,6 +220,12 @@ const articleSchema = articleData ? {
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
+<!-- Hreflang Tags for Multilingual SEO -->
+{hreflangTags.map(({ lang, url }) => (
+	<link rel="alternate" hreflang={lang} href={url} />
+))}
+<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
@@ -262,9 +315,18 @@ const articleSchema = articleData ? {
 		<!-- Core Web Vitals Tracking -->
 		<script>
 	// Import and track Core Web Vitals
-	import { onCLS, onLCP, onFCP, onTTFB, onINP } from 'web-vitals';
+	import { onCLS, onLCP, onFCP, onTTFB, onINP, type Metric } from 'web-vitals';
 
-	function sendToGoogleAnalytics({ name, delta, value, id, rating }) {
+	// Declare gtag function type
+	declare function gtag(
+		command: 'event',
+		eventName: string,
+		eventParams: Record<string, string | number | boolean>
+	): void;
+
+	function sendToGoogleAnalytics(metric: Metric): void {
+		const { name, delta, value, id, rating } = metric;
+
 		// Send to Google Analytics
 		if (typeof gtag !== 'undefined') {
 			gtag('event', name, {

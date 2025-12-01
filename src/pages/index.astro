@@ -1,7 +1,147 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_META } from '../consts';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { filterPostsByDate } from '../lib/content';
+import { languages } from '../lib/i18n/languages';
+
+// Get all blog posts and filter by date
+const allPosts = await getCollection('blog');
+const publishedPosts = filterPostsByDate(allPosts);
+
+// Group posts by slug (without language prefix) to find translations
+type PostWithTranslations = {
+	slug: string;
+	posts: Record<string, typeof publishedPosts[0]>;
+	primaryPost: typeof publishedPosts[0];
+};
+
+const postsBySlug = new Map<string, PostWithTranslations>();
+publishedPosts.forEach((post) => {
+	// Extract slug without language prefix (e.g., "ko/post-title" -> "post-title")
+	const slugMatch = post.id.match(/^(ko|en|ja|zh)\/(.+)$/);
+	if (slugMatch) {
+		const [, lang, slug] = slugMatch;
+		if (!postsBySlug.has(slug)) {
+			postsBySlug.set(slug, {
+				slug,
+				posts: {},
+				primaryPost: post,
+			});
+		}
+		const group = postsBySlug.get(slug)!;
+		group.posts[lang] = post;
+	}
+});
+
+// Get latest posts with their translations (sorted by date)
+const latestPostGroups = Array.from(postsBySlug.values())
+	.sort((a, b) => b.primaryPost.data.pubDate.valueOf() - a.primaryPost.data.pubDate.valueOf())
+	.slice(0, 6);
+
+// Get posts per language for featured sections
+const featuredPosts = {
+	ko: publishedPosts
+		.filter((post) => post.id.startsWith('ko/'))
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		.slice(0, 4),
+	en: publishedPosts
+		.filter((post) => post.id.startsWith('en/'))
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		.slice(0, 4),
+	ja: publishedPosts
+		.filter((post) => post.id.startsWith('ja/'))
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		.slice(0, 4),
+	zh: publishedPosts
+		.filter((post) => post.id.startsWith('zh/'))
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		.slice(0, 4),
+};
+
+// Calculate statistics
+const totalPosts = publishedPosts.length;
+const languageCount = Object.keys(languages).length;
+
+// Extract unique tags from all posts
+const allTags = new Set<string>();
+publishedPosts.forEach((post) => {
+	if (post.data.tags) {
+		post.data.tags.forEach((tag) => allTags.add(tag));
+	}
+});
+const topTags = Array.from(allTags).slice(0, 8);
+
+// Language metadata for display
+const langMeta = {
+	ko: { name: '한국어', flag: '🇰🇷', nativeName: 'Korean' },
+	en: { name: 'English', flag: '🇺🇸', nativeName: 'English' },
+	ja: { name: '日本語', flag: '🇯🇵', nativeName: 'Japanese' },
+	zh: { name: '中文', flag: '🇨🇳', nativeName: 'Chinese' },
+};
+
+// UI translations
+const uiText = {
+	ko: {
+		welcome: 'EffiFlow에 오신 것을 환영합니다',
+		description: 'AI, 자동화, 개발자 생산성에 관한 기술 블로그입니다. Claude Code, MCP(Model Context Protocol), 워크플로우 최적화 등 최신 AI 기술에 대한 심층적인 글을 공유합니다.',
+		featuredTitle: '최신 포스트',
+		featuredDesc: 'AI, 자동화, 개발 효율성에 대한 최신 인사이트',
+		viewAll: '전체 보기 →',
+		alsoIn: '다른 언어로 읽기',
+		topics: '인기 토픽',
+		aboutAuthor: '저자 소개',
+		aboutDesc: 'Kim Jangwook는 자동화, 개발자 생산성, 최신 웹 기술을 전문으로 하는 풀스택 개발자이자 AI 애호가입니다.',
+		projects: '주요 프로젝트',
+		experience: '경력',
+		expertise: '전문 분야',
+	},
+	en: {
+		welcome: 'Welcome to EffiFlow',
+		description: 'A comprehensive technical blog dedicated to artificial intelligence, automation, and developer productivity. We explore cutting-edge AI technologies like Claude Code, MCP, and workflow optimization.',
+		featuredTitle: 'Latest Articles',
+		featuredDesc: 'Explore our latest insights on AI, automation, and development efficiency',
+		viewAll: 'View all →',
+		alsoIn: 'Also available in',
+		topics: 'Popular Topics',
+		aboutAuthor: 'About the Author',
+		aboutDesc: 'Kim Jangwook is a full-stack developer and AI enthusiast specializing in automation, developer productivity, and modern web technologies.',
+		projects: 'Featured Projects',
+		experience: 'Professional Experience',
+		expertise: 'Core Expertise',
+	},
+	ja: {
+		welcome: 'EffiFlowへようこそ',
+		description: 'AI、自動化、開発者の生産性に関する技術ブログです。Claude Code、MCP、ワークフロー最適化など、最先端のAI技術について深く掘り下げた記事を共有しています。',
+		featuredTitle: '最新記事',
+		featuredDesc: 'AI、自動化、開発効率に関する最新のインサイト',
+		viewAll: 'すべて見る →',
+		alsoIn: '他の言語で読む',
+		topics: '人気トピック',
+		aboutAuthor: '著者について',
+		aboutDesc: 'Kim Jangwookは、自動化、開発者の生産性、モダンWeb技術を専門とするフルスタック開発者でありAI愛好家です。',
+		projects: '主なプロジェクト',
+		experience: '職務経歴',
+		expertise: '専門分野',
+	},
+	zh: {
+		welcome: '欢迎来到 EffiFlow',
+		description: '这是一个专注于人工智能、自动化和开发者生产力的技术博客。我们深入探讨 Claude Code、MCP 和工作流程优化等前沿 AI 技术。',
+		featuredTitle: '最新文章',
+		featuredDesc: '探索我们关于AI、自动化和开发效率的最新见解',
+		viewAll: '查看全部 →',
+		alsoIn: '其他语言版本',
+		topics: '热门话题',
+		aboutAuthor: '关于作者',
+		aboutDesc: 'Kim Jangwook 是一名全栈开发者和 AI 爱好者，专注于自动化、开发者生产力和现代 Web 技术。',
+		projects: '精选项目',
+		experience: '职业经历',
+		expertise: '核心专长',
+	},
+};
 ---
 
 <!doctype html>
@@ -9,243 +149,934 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_META } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			.lang-card {
-				position: relative;
-				overflow: hidden;
-			}
-			.lang-card::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				height: 4px;
-				background: linear-gradient(90deg, #667eea, #764ba2);
-				transform: scaleX(0);
-				transition: transform 0.3s ease;
-			}
-			.lang-card:hover::before {
-				transform: scaleX(1);
-			}
+			.lang-section { display: none; }
+			.lang-section.active { display: block; }
+			.other-langs { opacity: 0.7; }
+			.other-langs:hover { opacity: 1; }
 		</style>
 	</head>
-	<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
-		<!-- Header -->
-		<header class="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
-			<div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-				<a href="/" class="text-2xl font-bold gradient-text">{SITE_TITLE}</a>
-				<div class="flex items-center gap-4">
-					<ThemeToggle />
-					<a href="https://github.com/kimjangwook" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-						GitHub
-					</a>
-				</div>
-			</div>
-		</header>
+	<body class="bg-gray-50 dark:bg-gray-900">
+		<Header lang="en" />
 
-		<main class="max-w-6xl mx-auto px-4 py-12">
-			<!-- Hero Section -->
-			<section class="text-center mb-16">
-				<h1 class="text-5xl font-bold mb-4">
-					<span class="gradient-text">Kim Jangwook</span>
-				</h1>
-				<p class="text-xl text-gray-600 dark:text-gray-300 mb-2">Renew day by day!</p>
-				<p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-					Welcome to my digital space. Explore my projects, read my tech blog in multiple languages, and discover innovative ideas.
-				</p>
-			</section>
-
-			<!-- Blog Languages Section -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 text-center">
-					<span class="gradient-text">Tech Blog</span>
-				</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-					<a href="/ko/" class="lang-card card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<div class="text-4xl mb-3">🇰🇷</div>
-						<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">한국어</h3>
-						<p class="text-gray-600 dark:text-gray-400 text-sm">{SITE_META.ko.description}</p>
-					</a>
-					<a href="/en/" class="lang-card card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<div class="text-4xl mb-3">🇺🇸</div>
-						<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">English</h3>
-						<p class="text-gray-600 dark:text-gray-400 text-sm">{SITE_META.en.description}</p>
-					</a>
-					<a href="/ja/" class="lang-card card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<div class="text-4xl mb-3">🇯🇵</div>
-						<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">日本語</h3>
-						<p class="text-gray-600 dark:text-gray-400 text-sm">{SITE_META.ja.description}</p>
-					</a>
-					<a href="/zh/" class="lang-card card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<div class="text-4xl mb-3">🇨🇳</div>
-						<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">中文</h3>
-						<p class="text-gray-600 dark:text-gray-400 text-sm">{SITE_META.zh.description}</p>
-					</a>
-				</div>
-			</section>
-
-			<!-- Personal Projects Section -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 text-center">
-					<span class="gradient-text">My Projects</span>
-				</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					<a href="https://agent-effi-flow.jangwook.net" target="_blank" class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Agent Effi Flow</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">SvelteKit, Supabase, Google Gemini API, Stripe</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm">
-							AI-powered B2B SaaS for OCR automation. Provides Receipt OCR for Tax Refund and Accounting OCR services targeting Japanese inbound tourism businesses and SME accounting teams.
+		<main>
+			<!-- Hero Section - Language Adaptive -->
+			<section class="bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+					<div class="text-center">
+						<h1 id="hero-title" class="text-4xl md:text-6xl font-bold mb-6">
+							Welcome to <span class="text-yellow-300">EffiFlow</span>
+						</h1>
+						<p id="hero-description" class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+							A comprehensive technical blog dedicated to artificial intelligence, automation, and developer productivity.
+							We explore cutting-edge AI technologies like Claude Code, MCP, and workflow optimization.
 						</p>
-				</a>
+						<div class="flex flex-wrap justify-center gap-4 mb-8">
+							<a href="/ko/" data-lang="ko" class="lang-btn inline-flex items-center gap-2 bg-white text-purple-700 hover:bg-yellow-300 hover:text-purple-800 px-6 py-3 rounded-full font-semibold transition-colors shadow-md">
+								<span class="text-2xl">🇰🇷</span>
+								<span class="lang-text">한국어</span>
+							</a>
+							<a href="/en/" data-lang="en" class="lang-btn inline-flex items-center gap-2 bg-white/90 text-purple-700 hover:bg-yellow-300 hover:text-purple-800 px-6 py-3 rounded-full font-semibold transition-colors shadow-md">
+								<span class="text-2xl">🇺🇸</span>
+								<span class="lang-text">English</span>
+							</a>
+							<a href="/ja/" data-lang="ja" class="lang-btn inline-flex items-center gap-2 bg-white/90 text-purple-700 hover:bg-yellow-300 hover:text-purple-800 px-6 py-3 rounded-full font-semibold transition-colors shadow-md">
+								<span class="text-2xl">🇯🇵</span>
+								<span class="lang-text">日本語</span>
+							</a>
+							<a href="/zh/" data-lang="zh" class="lang-btn inline-flex items-center gap-2 bg-white/90 text-purple-700 hover:bg-yellow-300 hover:text-purple-800 px-6 py-3 rounded-full font-semibold transition-colors shadow-md">
+								<span class="text-2xl">🇨🇳</span>
+								<span class="lang-text">中文</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
 
-				<a href="https://github.com/kimjangwook/ssr-repeater" target="_blank" class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-					<h3 class="text-xl font-bold mb-2 text-accent hover:underline">SSR Survey Analysis</h3>
-					<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Python, OpenAI API, LLM, Data Science</p>
-					<p class="text-gray-600 dark:text-gray-300 text-sm">
-						LLM-based Semantic Similarity Rating methodology for analyzing blog revisit intent. Achieved ICC reliability of 0.833.
+			<!-- Statistics Section -->
+			<section class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+					<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+						<div>
+							<div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">{totalPosts}+</div>
+							<div class="text-gray-600 dark:text-gray-300 font-medium">Technical Articles</div>
+						</div>
+						<div>
+							<div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">{languageCount}</div>
+							<div class="text-gray-600 dark:text-gray-300 font-medium">Languages Supported</div>
+						</div>
+						<div>
+							<div class="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">{topTags.length}+</div>
+							<div class="text-gray-600 dark:text-gray-300 font-medium">Tech Topics</div>
+						</div>
+						<div>
+							<div class="text-4xl font-bold text-pink-600 dark:text-pink-400 mb-2">2025</div>
+							<div class="text-gray-600 dark:text-gray-300 font-medium">Actively Updated</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Featured Posts Section - Language Adaptive -->
+			<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+				<div class="text-center mb-12">
+					<h2 id="featured-title" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+						Latest Articles
+					</h2>
+					<p id="featured-desc" class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+						Explore our latest insights on AI, automation, and development efficiency
 					</p>
-				</a>
+				</div>
 
-				<a href="https://kimjangwook.github.io/svelte-weather/public/" target="_blank" class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-					<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Weather Information System</h3>
-					<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Svelte</p>
-					<p class="text-gray-600 dark:text-gray-300 text-sm">
-						A modern weather application built with Svelte framework, providing real-time meteorological data.
-					</p>
-					</a>
+				<!-- Korean Posts Section -->
+				<div id="posts-ko" class="lang-section">
+					<div class="flex items-center gap-3 mb-6">
+						<span class="text-3xl">🇰🇷</span>
+						<h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">한국어 (Korean)</h3>
+						<a href="/ko/blog" class="ml-auto text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium view-all-link">
+							전체 보기 →
+						</a>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+						{featuredPosts.ko.map((post) => {
+							const slug = post.id.replace(/^ko\//, '');
+							const translations = postsBySlug.get(slug);
+							const otherLangs = translations ? Object.keys(translations.posts).filter(l => l !== 'ko') : [];
+							return (
+								<div class="relative">
+									<BlogCard
+										href={`/ko/blog/ko/${slug}/`}
+										title={post.data.title}
+										description={post.data.description}
+										pubDate={post.data.pubDate}
+										heroImage={post.data.heroImage}
+										tags={post.data.tags}
+									/>
+									{otherLangs.length > 0 && (
+										<div class="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+											<span class="also-in-label">다른 언어:</span>
+											{otherLangs.map((lang) => (
+												<a
+													href={`/${lang}/blog/${lang}/${slug}/`}
+													class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+												>
+													{langMeta[lang as keyof typeof langMeta].flag}
+													<span class="text-xs">{langMeta[lang as keyof typeof langMeta].name}</span>
+												</a>
+											))}
+										</div>
+									)}
+								</div>
+							);
+						})}
+					</div>
+				</div>
 
-					<a href="https://kimjangwook.github.io/letsencrypt-domain-checker/public/" target="_blank" class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Let's Encrypt Domain Checker</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Web Tool</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm">
-							A tool for checking and managing Let's Encrypt SSL certificates for domains.
-						</p>
-					</a>
+				<!-- English Posts Section -->
+				<div id="posts-en" class="lang-section">
+					<div class="flex items-center gap-3 mb-6">
+						<span class="text-3xl">🇺🇸</span>
+						<h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">English</h3>
+						<a href="/en/blog" class="ml-auto text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium view-all-link">
+							View all →
+						</a>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+						{featuredPosts.en.map((post) => {
+							const slug = post.id.replace(/^en\//, '');
+							const translations = postsBySlug.get(slug);
+							const otherLangs = translations ? Object.keys(translations.posts).filter(l => l !== 'en') : [];
+							return (
+								<div class="relative">
+									<BlogCard
+										href={`/en/blog/en/${slug}/`}
+										title={post.data.title}
+										description={post.data.description}
+										pubDate={post.data.pubDate}
+										heroImage={post.data.heroImage}
+										tags={post.data.tags}
+									/>
+									{otherLangs.length > 0 && (
+										<div class="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+											<span class="also-in-label">Also in:</span>
+											{otherLangs.map((lang) => (
+												<a
+													href={`/${lang}/blog/${lang}/${slug}/`}
+													class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+												>
+													{langMeta[lang as keyof typeof langMeta].flag}
+													<span class="text-xs">{langMeta[lang as keyof typeof langMeta].name}</span>
+												</a>
+											))}
+										</div>
+									)}
+								</div>
+							);
+						})}
+					</div>
+				</div>
 
-					<a href="https://drone-info.jangwook.net/" target="_blank" class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Drone Information Hub</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Information Resource</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm">
-							Comprehensive information resource about drones, regulations, and best practices.
-						</p>
-					</a>
+				<!-- Japanese Posts Section -->
+				<div id="posts-ja" class="lang-section">
+					<div class="flex items-center gap-3 mb-6">
+						<span class="text-3xl">🇯🇵</span>
+						<h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">日本語 (Japanese)</h3>
+						<a href="/ja/blog" class="ml-auto text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium view-all-link">
+							すべて見る →
+						</a>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+						{featuredPosts.ja.map((post) => {
+							const slug = post.id.replace(/^ja\//, '');
+							const translations = postsBySlug.get(slug);
+							const otherLangs = translations ? Object.keys(translations.posts).filter(l => l !== 'ja') : [];
+							return (
+								<div class="relative">
+									<BlogCard
+										href={`/ja/blog/ja/${slug}/`}
+										title={post.data.title}
+										description={post.data.description}
+										pubDate={post.data.pubDate}
+										heroImage={post.data.heroImage}
+										tags={post.data.tags}
+									/>
+									{otherLangs.length > 0 && (
+										<div class="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+											<span class="also-in-label">他の言語:</span>
+											{otherLangs.map((lang) => (
+												<a
+													href={`/${lang}/blog/${lang}/${slug}/`}
+													class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+												>
+													{langMeta[lang as keyof typeof langMeta].flag}
+													<span class="text-xs">{langMeta[lang as keyof typeof langMeta].name}</span>
+												</a>
+											))}
+										</div>
+									)}
+								</div>
+							);
+						})}
+					</div>
+				</div>
 
-					<a href="https://libraries.jangwook.net/" target="_blank" class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Practical Libraries Collection</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Developer Tools</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm">
-							A curated collection of practical libraries and tools for professional development work.
-						</p>
-					</a>
+				<!-- Chinese Posts Section -->
+				<div id="posts-zh" class="lang-section">
+					<div class="flex items-center gap-3 mb-6">
+						<span class="text-3xl">🇨🇳</span>
+						<h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100">中文 (Chinese)</h3>
+						<a href="/zh/blog" class="ml-auto text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium view-all-link">
+							查看全部 →
+						</a>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+						{featuredPosts.zh.map((post) => {
+							const slug = post.id.replace(/^zh\//, '');
+							const translations = postsBySlug.get(slug);
+							const otherLangs = translations ? Object.keys(translations.posts).filter(l => l !== 'zh') : [];
+							return (
+								<div class="relative">
+									<BlogCard
+										href={`/zh/blog/zh/${slug}/`}
+										title={post.data.title}
+										description={post.data.description}
+										pubDate={post.data.pubDate}
+										heroImage={post.data.heroImage}
+										tags={post.data.tags}
+									/>
+									{otherLangs.length > 0 && (
+										<div class="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+											<span class="also-in-label">其他语言:</span>
+											{otherLangs.map((lang) => (
+												<a
+													href={`/${lang}/blog/${lang}/${slug}/`}
+													class="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+												>
+													{langMeta[lang as keyof typeof langMeta].flag}
+													<span class="text-xs">{langMeta[lang as keyof typeof langMeta].name}</span>
+												</a>
+											))}
+										</div>
+									)}
+								</div>
+							);
+						})}
+					</div>
+				</div>
 
-					<a href="https://answercoffee.kr/" target="_blank" class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">Answer Coffee</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Nuxt.js</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm">
-							A Nuxt.js-based web application service.
-						</p>
-					</a>
+				<!-- Other Languages Section (shown below primary) -->
+				<div id="other-languages" class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+					<h3 id="other-langs-title" class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
+						Also available in other languages
+					</h3>
+					<div id="other-langs-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 other-langs">
+						<!-- Populated by JavaScript -->
+					</div>
 				</div>
 			</section>
 
-			<!-- Professional Works Section -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 text-center">
-					<span class="gradient-text">Professional Works</span>
-				</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-					<div class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Invoice Management System</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Laravel, Vue.js, AWS</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">
-							An application created to assist freelancers with invoice management.
-						</p>
-						<ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-							<li>• Profile management</li>
-							<li>• Billing partner management</li>
-							<li>• Invoice management</li>
-						</ul>
+			<!-- Topics Section -->
+			<section class="bg-gray-100 dark:bg-gray-800 py-16">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="text-center mb-12">
+						<h2 id="topics-title" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+							Popular Topics
+						</h2>
 					</div>
-
-					<div class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Dashboard System</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Fuel PHP, Laravel, Vue.js, AWS</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">
-							A comprehensive system that manages company employees, clients, man-hours, sales, and subcontracts.
-						</p>
-						<ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-							<li>• Internal information management</li>
-							<li>• Man-hour & billing management</li>
-							<li>• Report management</li>
-						</ul>
+					<div class="flex flex-wrap justify-center gap-4">
+						{topTags.map((tag) => (
+							<div class="bg-white dark:bg-gray-700 px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-shadow">
+								<span class="text-purple-600 dark:text-purple-400 font-semibold">#{tag}</span>
+							</div>
+						))}
 					</div>
-
-					<div class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">CDP (Customer Data Platform)</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Python, Nuxt.js, GCP, AWS</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm">
-							A system that supports the construction of a data warehouse to store client data and enables website personalization.
-						</p>
-					</div>
-
-					<div class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
-						<h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">EFO (Entry Form Optimization)</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">TypeScript, GCP</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm">
-							A service designed to reduce form-filling user stress and prevent abandonment through intelligent form-filling support.
-						</p>
-					</div>
-
-					<a href="https://www.remotax.jp/" target="_blank" class="card-hover bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md md:col-span-2">
-						<h3 class="text-xl font-bold mb-2 text-accent hover:underline">REMO TAX: Tax-Free Digitalization</h3>
-						<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Tax-Free Service</p>
-						<p class="text-gray-600 dark:text-gray-300 text-sm mb-3">
-							A tax-free procedure agency service for retail stores. Simplifies the complex duty-free process through smartphone-based operations.
-						</p>
-						<ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-							<li>• Simple processing: Staff only need to photograph passports and receipts</li>
-							<li>• Fast processing: Average 1-2 minutes per transaction</li>
-							<li>• Low cost: Initial fee of 10,780 yen, no monthly fees</li>
-						</ul>
-					</a>
 				</div>
 			</section>
 
-			<!-- Career Section -->
-			<section class="mb-16">
-				<h2 class="text-3xl font-bold mb-8 text-center">
-					<span class="gradient-text">Career</span>
-				</h2>
-				<div class="flex flex-wrap justify-center gap-4">
-					<div class="bg-white dark:bg-gray-800 rounded-xl px-6 py-4 shadow-md">
-						<span class="font-semibold text-gray-900 dark:text-gray-100">SPIKA Inc.</span>
+			<!-- About Author Section -->
+			<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+				<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+						<div>
+							<h2 id="about-title" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+								About the Author
+							</h2>
+							<div id="about-desc-container" class="space-y-4 text-gray-600 dark:text-gray-300">
+								<!-- Content will be updated by JavaScript -->
+							</div>
+							<div class="flex gap-4 mt-8">
+								<a href="https://github.com/kimjangwook" target="_blank"
+								   class="inline-flex items-center gap-2 bg-gray-900 dark:bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors font-medium">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+										<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+									</svg>
+									GitHub
+								</a>
+								<a href="https://linkedin.com/in/jangwook-kim-2590a1174" target="_blank"
+								   class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+									</svg>
+									LinkedIn
+								</a>
+							</div>
+						</div>
+						<div class="space-y-6">
+							<div class="bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-xl p-6">
+								<h3 id="experience-title" class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Professional Experience</h3>
+								<ul id="experience-list" class="space-y-3 text-gray-700 dark:text-gray-300">
+									<!-- Content will be updated by JavaScript -->
+								</ul>
+							</div>
+							<div class="bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-xl p-6">
+								<h3 id="expertise-title" class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Core Expertise</h3>
+								<div class="flex flex-wrap gap-2">
+									<span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">AI & LLM</span>
+									<span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">Claude Code</span>
+									<span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">MCP</span>
+									<span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">Automation</span>
+									<span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">SvelteKit</span>
+									<span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">Vue.js</span>
+									<span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">Python</span>
+									<span class="px-3 py-1 bg-white dark:bg-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">Laravel</span>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="bg-white dark:bg-gray-800 rounded-xl px-6 py-4 shadow-md">
-						<span class="font-semibold text-gray-900 dark:text-gray-100">Bravance Technologies Inc.</span>
+				</div>
+			</section>
+
+			<!-- Projects Section -->
+			<section class="bg-gray-100 dark:bg-gray-800 py-16">
+				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="text-center mb-12">
+						<h2 id="projects-title" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+							Featured Projects
+						</h2>
 					</div>
-					<div class="bg-white dark:bg-gray-800 rounded-xl px-6 py-4 shadow-md">
-						<span class="font-semibold text-gray-900 dark:text-gray-100">Connecty Inc.</span>
+
+					<!-- Personal Projects -->
+					<div class="mb-12">
+						<h3 id="personal-projects-title" class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Personal Projects</h3>
+						<div id="personal-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+							<!-- Content will be updated by JavaScript -->
+						</div>
+					</div>
+
+					<!-- Professional Works -->
+					<div>
+						<h3 id="professional-works-title" class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Professional Works</h3>
+						<div id="professional-works-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+							<!-- Content will be updated by JavaScript -->
+						</div>
 					</div>
 				</div>
 			</section>
 		</main>
 
-		<!-- Footer -->
-		<footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 dark:text-gray-400 border-t border-gray-800 dark:border-gray-900">
-			<div class="max-w-6xl mx-auto px-4 py-8 text-center">
-				<p class="text-gray-300 dark:text-gray-400">
-					&copy; {new Date().getFullYear()} {SITE_TITLE}. All rights reserved.
-				</p>
-				<p class="text-sm text-gray-400 dark:text-gray-500 mt-2">
-					{SITE_DESCRIPTION}
-				</p>
-				<p class="text-sm text-gray-400 dark:text-gray-500 mt-2">
-					<a href="/en/privacy" class="hover:text-accent transition-colors">Privacy Policy</a>
-				</p>
-				<p class="text-sm text-gray-400 dark:text-gray-500 mt-2">
-					<a href="/en/terms" class="hover:text-accent transition-colors">Terms of Service</a>
-				</p>
-			</div>
-		</footer>
+		<Footer lang="en" />
+
+		<!-- Language Detection and UI Adaptation Script -->
+		<script>
+			import { getRecommendedLanguage, saveLanguagePreference, type SupportedLanguage } from '../lib/language-detection';
+
+			// UI text translations
+			const uiText: Record<SupportedLanguage, Record<string, string>> = {
+				ko: {
+					heroTitle: 'EffiFlow에 오신 것을 환영합니다',
+					heroDesc: 'AI, 자동화, 개발자 생산성에 관한 기술 블로그입니다. Claude Code, MCP(Model Context Protocol), 워크플로우 최적화 등 최신 AI 기술에 대한 심층적인 글을 공유합니다.',
+					featuredTitle: '최신 포스트',
+					featuredDesc: 'AI, 자동화, 개발 효율성에 대한 최신 인사이트',
+					topics: '인기 토픽',
+					aboutTitle: '저자 소개',
+					experienceTitle: '경력',
+					expertiseTitle: '전문 분야',
+					projectsTitle: '주요 프로젝트',
+					otherLangsTitle: '다른 언어로도 읽기',
+				},
+				en: {
+					heroTitle: 'Welcome to EffiFlow',
+					heroDesc: 'A comprehensive technical blog dedicated to artificial intelligence, automation, and developer productivity. We explore cutting-edge AI technologies like Claude Code, MCP, and workflow optimization.',
+					featuredTitle: 'Latest Articles',
+					featuredDesc: 'Explore our latest insights on AI, automation, and development efficiency',
+					topics: 'Popular Topics',
+					aboutTitle: 'About the Author',
+					experienceTitle: 'Professional Experience',
+					expertiseTitle: 'Core Expertise',
+					projectsTitle: 'Featured Projects',
+					otherLangsTitle: 'Also available in other languages',
+				},
+				ja: {
+					heroTitle: 'EffiFlowへようこそ',
+					heroDesc: 'AI、自動化、開発者の生産性に関する技術ブログです。Claude Code、MCP、ワークフロー最適化など、最先端のAI技術について深く掘り下げた記事を共有しています。',
+					featuredTitle: '最新記事',
+					featuredDesc: 'AI、自動化、開発効率に関する最新のインサイト',
+					topics: '人気トピック',
+					aboutTitle: '著者について',
+					experienceTitle: '職務経歴',
+					expertiseTitle: '専門分野',
+					projectsTitle: '主なプロジェクト',
+					otherLangsTitle: '他の言語でも読む',
+				},
+				zh: {
+					heroTitle: '欢迎来到 EffiFlow',
+					heroDesc: '这是一个专注于人工智能、自动化和开发者生产力的技术博客。我们深入探讨 Claude Code、MCP 和工作流程优化等前沿 AI 技术。',
+					featuredTitle: '最新文章',
+					featuredDesc: '探索我们关于AI、自动化和开发效率的最新见解',
+					topics: '热门话题',
+					aboutTitle: '关于作者',
+					experienceTitle: '职业经历',
+					expertiseTitle: '核心专长',
+					projectsTitle: '精选项目',
+					otherLangsTitle: '其他语言版本',
+				},
+			};
+
+			const langOrder: SupportedLanguage[] = ['ko', 'en', 'ja', 'zh'];
+			const langMeta: Record<SupportedLanguage, { name: string; flag: string; path: string }> = {
+				ko: { name: '한국어', flag: '🇰🇷', path: '/ko/' },
+				en: { name: 'English', flag: '🇺🇸', path: '/en/' },
+				ja: { name: '日本語', flag: '🇯🇵', path: '/ja/' },
+				zh: { name: '中文', flag: '🇨🇳', path: '/zh/' },
+			};
+
+			// Navigation translations
+			const navText: Record<SupportedLanguage, Record<string, string>> = {
+				ko: {
+					home: '홈',
+					blog: '블로그',
+					about: '소개',
+					contact: '연락처',
+					social: '소셜',
+					improvementHistory: '개선 이력',
+					privacy: '개인정보처리방침',
+					terms: '이용약관',
+				},
+				en: {
+					home: 'Home',
+					blog: 'Blog',
+					about: 'About',
+					contact: 'Contact',
+					social: 'Social',
+					improvementHistory: 'Improvement History',
+					privacy: 'Privacy',
+					terms: 'Terms',
+				},
+				ja: {
+					home: 'ホーム',
+					blog: 'ブログ',
+					about: '自己紹介',
+					contact: 'お問い合わせ',
+					social: 'ソーシャル',
+					improvementHistory: '改善履歴',
+					privacy: 'プライバシー',
+					terms: '利用規約',
+				},
+				zh: {
+					home: '首页',
+					blog: '博客',
+					about: '关于',
+					contact: '联系',
+					social: '社交',
+					improvementHistory: '改进历史',
+					privacy: '隐私政策',
+					terms: '服务条款',
+				},
+			};
+
+			// Update header navigation links
+			function updateNavigationLinks(lang: SupportedLanguage) {
+				const nav = navText[lang];
+				const header = document.querySelector('header');
+				if (!header) return;
+
+				// Update logo link
+				const logoLink = header.querySelector('h2 a');
+				if (logoLink) {
+					logoLink.setAttribute('href', `/${lang}/`);
+				}
+
+				// Update desktop navigation links
+				const desktopNav = header.querySelector('.lg\\:flex');
+				if (desktopNav) {
+					const links = desktopNav.querySelectorAll('a');
+					links.forEach((link) => {
+						const href = link.getAttribute('href') || '';
+						const pathMatch = href.match(/^\/[a-z]{2}(\/.*)?$/);
+						if (pathMatch) {
+							const path = pathMatch[1] || '/';
+							link.setAttribute('href', `/${lang}${path}`);
+
+							// Update link text based on path
+							if (path === '/' || path === '') {
+								link.textContent = nav.home;
+							} else if (path.includes('/blog')) {
+								link.textContent = nav.blog;
+							} else if (path.includes('/about')) {
+								link.textContent = nav.about;
+							} else if (path.includes('/contact')) {
+								link.textContent = nav.contact;
+							} else if (path.includes('/social')) {
+								link.textContent = nav.social;
+							} else if (path.includes('/improvement-history')) {
+								link.textContent = nav.improvementHistory;
+							}
+						}
+					});
+				}
+
+				// Update mobile menu links
+				const mobileMenu = document.getElementById('mobile-menu');
+				if (mobileMenu) {
+					const links = mobileMenu.querySelectorAll('a');
+					links.forEach((link) => {
+						const href = link.getAttribute('href') || '';
+						const pathMatch = href.match(/^\/[a-z]{2}(\/.*)?$/);
+						if (pathMatch) {
+							const path = pathMatch[1] || '/';
+							link.setAttribute('href', `/${lang}${path}`);
+
+							// Update link text based on path
+							if (path === '/' || path === '') {
+								link.textContent = nav.home;
+							} else if (path.includes('/blog')) {
+								link.textContent = nav.blog;
+							} else if (path.includes('/about')) {
+								link.textContent = nav.about;
+							} else if (path.includes('/contact')) {
+								link.textContent = nav.contact;
+							} else if (path.includes('/social')) {
+								link.textContent = nav.social;
+							} else if (path.includes('/improvement-history')) {
+								link.textContent = nav.improvementHistory;
+							}
+						}
+					});
+				}
+			}
+
+			// Footer tagline translations
+			const footerText: Record<SupportedLanguage, { siteDescription: string; tagline: string; copyright: string }> = {
+				ko: {
+					siteDescription: 'AI로 만드는 효율의 흐름',
+					tagline: 'AI로 효율의 흐름을 만들다',
+					copyright: '© 2025 EffiFlow. 모든 권리 보유.',
+				},
+				en: {
+					siteDescription: 'Creating the Flow of Efficiency with AI',
+					tagline: 'Creating the Flow of Efficiency with AI',
+					copyright: '© 2025 EffiFlow. All rights reserved.',
+				},
+				ja: {
+					siteDescription: 'AIで創る効率の流れ',
+					tagline: 'AIで効率の流れを創る',
+					copyright: '© 2025 EffiFlow. All rights reserved.',
+				},
+				zh: {
+					siteDescription: '用AI创造效率之流',
+					tagline: '用AI创造效率之流',
+					copyright: '© 2025 EffiFlow. 保留所有权利.',
+				},
+			};
+
+			// Update footer links
+			function updateFooterLinks(lang: SupportedLanguage) {
+				const nav = navText[lang];
+				const footerContent = footerText[lang];
+				const footer = document.querySelector('footer');
+				if (!footer) return;
+
+				// Update Quick Links section
+				const quickLinks = footer.querySelectorAll('ul a');
+				quickLinks.forEach((link) => {
+					const href = link.getAttribute('href') || '';
+					const pathMatch = href.match(/^\/[a-z]{2}(\/.*)?$/);
+					if (pathMatch) {
+						const path = pathMatch[1] || '';
+						link.setAttribute('href', `/${lang}${path}`);
+
+						// Update link text based on path
+						if (path === '' || path === '/') {
+							link.textContent = nav.home;
+						} else if (path.includes('/blog')) {
+							link.textContent = nav.blog;
+						} else if (path.includes('/about')) {
+							link.textContent = nav.about;
+						} else if (path.includes('/contact')) {
+							link.textContent = nav.contact;
+						} else if (path.includes('/social')) {
+							link.textContent = nav.social;
+						} else if (path.includes('/privacy')) {
+							link.textContent = nav.privacy;
+						} else if (path.includes('/terms')) {
+							link.textContent = nav.terms;
+						}
+					}
+				});
+
+				// Update footer site description (About section)
+				const siteDescElement = document.getElementById('footer-site-description');
+				if (siteDescElement) {
+					siteDescElement.textContent = footerContent.siteDescription;
+				}
+
+				// Update footer tagline
+				const taglineElement = document.getElementById('footer-tagline');
+				if (taglineElement) {
+					taglineElement.textContent = footerContent.tagline;
+				}
+
+				// Update copyright text
+				const copyrightElement = document.getElementById('footer-copyright');
+				if (copyrightElement) {
+					copyrightElement.textContent = footerContent.copyright;
+				}
+			}
+
+			// About section content
+			const aboutContent: Record<SupportedLanguage, { desc1: string; desc2: string; inKorea: string; inJapan: string; personalProjects: string; professionalWorks: string }> = {
+				ko: {
+					desc1: '<strong class="text-gray-900 dark:text-gray-100">김장욱</strong>은 자동화, 개발자 생산성, 최신 웹 기술을 전문으로 하는 풀스택 개발자이자 AI 애호가입니다. Laravel, Vue.js, Nuxt.js, SvelteKit, Python 등 다양한 기술 스택에서 광범위한 경험을 바탕으로 효율적인 B2B SaaS 솔루션 구축과 최첨단 AI 애플리케이션 탐구에 집중하고 있습니다.',
+					desc2: '현재 일본 인바운드 관광 사업자와 중소기업 회계팀을 위한 AI 기반 OCR 자동화 플랫폼인 <strong class="text-gray-900 dark:text-gray-100">Agent Effi Flow</strong>의 개발을 주도하고 있습니다.',
+					inKorea: '한국',
+					inJapan: '일본',
+					personalProjects: '개인 프로젝트',
+					professionalWorks: '업무 프로젝트',
+				},
+				en: {
+					desc1: '<strong class="text-gray-900 dark:text-gray-100">Kim Jangwook</strong> is a full-stack developer and AI enthusiast specializing in automation, developer productivity, and modern web technologies. With extensive experience across multiple tech stacks including Laravel, Vue.js, Nuxt.js, SvelteKit, and Python, he focuses on building efficient B2B SaaS solutions and exploring cutting-edge AI applications.',
+					desc2: 'Currently leading the development of <strong class="text-gray-900 dark:text-gray-100">Agent Effi Flow</strong>, an AI-powered OCR automation platform serving Japanese inbound tourism businesses and SME accounting teams.',
+					inKorea: 'In Korea',
+					inJapan: 'In Japan',
+					personalProjects: 'Personal Projects',
+					professionalWorks: 'Professional Works',
+				},
+				ja: {
+					desc1: '<strong class="text-gray-900 dark:text-gray-100">Kim Jangwook</strong>は、自動化、開発者の生産性、モダンWeb技術を専門とするフルスタック開発者でありAI愛好家です。Laravel、Vue.js、Nuxt.js、SvelteKit、Pythonなど、多様な技術スタックでの豊富な経験を活かし、効率的なB2B SaaSソリューションの構築と最先端AIアプリケーションの探求に注力しています。',
+					desc2: '現在、日本のインバウンド観光事業者と中小企業の経理チーム向けのAI搭載OCR自動化プラットフォーム<strong class="text-gray-900 dark:text-gray-100">Agent Effi Flow</strong>の開発をリードしています。',
+					inKorea: '韓国',
+					inJapan: '日本',
+					personalProjects: '個人プロジェクト',
+					professionalWorks: '業務プロジェクト',
+				},
+				zh: {
+					desc1: '<strong class="text-gray-900 dark:text-gray-100">Kim Jangwook</strong> 是一名全栈开发者和 AI 爱好者，专注于自动化、开发者生产力和现代 Web 技术。凭借在 Laravel、Vue.js、Nuxt.js、SvelteKit 和 Python 等多种技术栈的丰富经验，他专注于构建高效的 B2B SaaS 解决方案和探索前沿 AI 应用。',
+					desc2: '目前正在主导开发 <strong class="text-gray-900 dark:text-gray-100">Agent Effi Flow</strong>，这是一个为日本入境旅游企业和中小企业会计团队提供服务的 AI 驱动 OCR 自动化平台。',
+					inKorea: '韩国',
+					inJapan: '日本',
+					personalProjects: '个人项目',
+					professionalWorks: '专业项目',
+				},
+			};
+
+			// Projects content
+			const projectsContent: Record<SupportedLanguage, {
+				agentEffiFlow: string;
+				ssrSurvey: string;
+				librariesCollection: string;
+				cdp: string;
+				efo: string;
+				remotax: string;
+			}> = {
+				ko: {
+					agentEffiFlow: 'OCR 자동화를 위한 AI 기반 B2B SaaS. 면세 영수증 OCR 및 회계 OCR 서비스를 제공합니다.',
+					ssrSurvey: '블로그 재방문 의도를 분석하기 위한 LLM 기반 의미적 유사성 평가 방법론. ICC 신뢰도 0.833 달성.',
+					librariesCollection: '전문적인 개발 작업을 위한 실용적인 라이브러리 및 도구 모음.',
+					cdp: '클라이언트 데이터를 저장하는 데이터 웨어하우스 구축을 지원하고 웹사이트 개인화를 가능하게 하는 시스템.',
+					efo: '지능적인 양식 작성 지원을 통해 사용자의 양식 작성 스트레스를 줄이고 이탈을 방지하도록 설계된 서비스.',
+					remotax: '소매점을 위한 면세 절차 대행 서비스. 스마트폰 기반 운영을 통해 복잡한 면세 프로세스를 간소화합니다.',
+				},
+				en: {
+					agentEffiFlow: 'AI-powered B2B SaaS for OCR automation. Provides Receipt OCR for Tax Refund and Accounting OCR services.',
+					ssrSurvey: 'LLM-based Semantic Similarity Rating methodology for analyzing blog revisit intent. Achieved ICC reliability of 0.833.',
+					librariesCollection: 'A curated collection of practical libraries and tools for professional development work.',
+					cdp: 'A system that supports the construction of a data warehouse to store client data and enables website personalization.',
+					efo: 'A service designed to reduce form-filling user stress and prevent abandonment through intelligent form-filling support.',
+					remotax: 'A tax-free procedure agency service for retail stores. Simplifies the complex duty-free process through smartphone-based operations.',
+				},
+				ja: {
+					agentEffiFlow: 'OCR自動化のためのAI搭載B2B SaaS。免税レシートOCRおよび会計OCRサービスを提供。',
+					ssrSurvey: 'ブログ再訪意図を分析するためのLLMベースの意味的類似性評価手法。ICC信頼性0.833を達成。',
+					librariesCollection: 'プロフェッショナルな開発作業のための実用的なライブラリとツールのコレクション。',
+					cdp: 'クライアントデータを保存するデータウェアハウスの構築を支援し、ウェブサイトのパーソナライゼーションを実現するシステム。',
+					efo: 'インテリジェントなフォーム入力サポートにより、ユーザーのフォーム入力ストレスを軽減し、離脱を防止するサービス。',
+					remotax: '小売店向けの免税手続き代行サービス。スマートフォンベースの操作で複雑な免税プロセスを簡素化。',
+				},
+				zh: {
+					agentEffiFlow: '用于 OCR 自动化的 AI 驱动 B2B SaaS。提供退税收据 OCR 和会计 OCR 服务。',
+					ssrSurvey: '用于分析博客重访意向的基于 LLM 的语义相似性评分方法。达到 ICC 可靠性 0.833。',
+					librariesCollection: '为专业开发工作精选的实用库和工具集合。',
+					cdp: '支持构建数据仓库以存储客户数据并实现网站个性化的系统。',
+					efo: '通过智能表单填写支持减少用户填表压力并防止放弃的服务。',
+					remotax: '零售店免税手续代理服务。通过基于智能手机的操作简化复杂的免税流程。',
+				},
+			};
+
+			// Update Language Switcher in header
+			function updateLanguageSwitcher(lang: SupportedLanguage) {
+				const languageSelector = document.getElementById('language-selector') as HTMLSelectElement;
+				if (languageSelector) {
+					// Find the option that matches the current route for the selected language
+					const options = languageSelector.querySelectorAll('option');
+					options.forEach((option) => {
+						const optionValue = option.value;
+						if (optionValue.startsWith(`/${lang}/`)) {
+							option.selected = true;
+						}
+					});
+				}
+			}
+
+			// Update About section content
+			function updateAboutSection(lang: SupportedLanguage) {
+				const content = aboutContent[lang];
+				const descContainer = document.getElementById('about-desc-container');
+				if (descContainer) {
+					descContainer.innerHTML = `
+						<p class="text-lg leading-relaxed">${content.desc1}</p>
+						<p class="text-lg leading-relaxed">${content.desc2}</p>
+					`;
+				}
+
+				// Update experience list
+				const experienceList = document.getElementById('experience-list');
+				if (experienceList) {
+					experienceList.innerHTML = `
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<div>
+								<strong>Spika Inc.</strong> - QA / iOS Developer (Objective-C)
+								<span class="block text-sm text-gray-500 dark:text-gray-400">${content.inKorea}</span>
+							</div>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<div>
+								<strong>Bravance Technologies Inc.</strong> - QA / Network Engineer
+								<span class="block text-sm text-gray-500 dark:text-gray-400">${content.inJapan}</span>
+							</div>
+						</li>
+						<li class="flex items-start gap-3">
+							<svg class="w-6 h-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+							</svg>
+							<div>
+								<strong>Connecty Inc.</strong> - Full-stack Web Dev, PM, PdM, AI Integration
+								<span class="block text-sm text-gray-500 dark:text-gray-400">${content.inJapan}</span>
+							</div>
+						</li>
+					`;
+				}
+			}
+
+			// Update Projects section content
+			function updateProjectsSection(lang: SupportedLanguage) {
+				const content = aboutContent[lang];
+				const projects = projectsContent[lang];
+
+				// Update section titles
+				const personalProjectsTitle = document.getElementById('personal-projects-title');
+				if (personalProjectsTitle) personalProjectsTitle.textContent = content.personalProjects;
+
+				const professionalWorksTitle = document.getElementById('professional-works-title');
+				if (professionalWorksTitle) professionalWorksTitle.textContent = content.professionalWorks;
+
+				// Update personal projects
+				const personalProjectsContainer = document.getElementById('personal-projects-container');
+				if (personalProjectsContainer) {
+					personalProjectsContainer.innerHTML = `
+						<a href="https://agent-effi-flow.jangwook.net" target="_blank"
+						   class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
+							<h4 class="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2 hover:underline">Agent Effi Flow</h4>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">SvelteKit, Supabase, Google Gemini API, Stripe</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">${projects.agentEffiFlow}</p>
+						</a>
+						<a href="https://github.com/kimjangwook/ssr-repeater" target="_blank"
+						   class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
+							<h4 class="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2 hover:underline">SSR Survey Analysis</h4>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Python, OpenAI API, LLM, Data Science</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">${projects.ssrSurvey}</p>
+						</a>
+						<a href="https://libraries.jangwook.net/" target="_blank"
+						   class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
+							<h4 class="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2 hover:underline">Practical Libraries Collection</h4>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Developer Tools</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">${projects.librariesCollection}</p>
+						</a>
+					`;
+				}
+
+				// Update professional works
+				const professionalWorksContainer = document.getElementById('professional-works-container');
+				if (professionalWorksContainer) {
+					professionalWorksContainer.innerHTML = `
+						<div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
+							<h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">CDP (Customer Data Platform)</h4>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Python, Nuxt.js, GCP, AWS</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">${projects.cdp}</p>
+						</div>
+						<div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
+							<h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">EFO (Entry Form Optimization)</h4>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">TypeScript, GCP</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">${projects.efo}</p>
+						</div>
+						<a href="https://www.remotax.jp/" target="_blank"
+						   class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow md:col-span-2">
+							<h4 class="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2 hover:underline">REMO TAX: Tax-Free Digitalization</h4>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Tax-Free Service</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">${projects.remotax}</p>
+						</a>
+					`;
+				}
+			}
+
+			function updateUI(lang: SupportedLanguage) {
+				const text = uiText[lang];
+
+				// Update hero section
+				const heroTitle = document.getElementById('hero-title');
+				const heroDesc = document.getElementById('hero-description');
+				if (heroTitle) heroTitle.innerHTML = `${text.heroTitle.replace('EffiFlow', '<span class="text-yellow-300">EffiFlow</span>')}`;
+				if (heroDesc) heroDesc.textContent = text.heroDesc;
+
+				// Update featured section
+				const featuredTitle = document.getElementById('featured-title');
+				const featuredDesc = document.getElementById('featured-desc');
+				if (featuredTitle) featuredTitle.textContent = text.featuredTitle;
+				if (featuredDesc) featuredDesc.textContent = text.featuredDesc;
+
+				// Update other section titles
+				const topicsTitle = document.getElementById('topics-title');
+				if (topicsTitle) topicsTitle.textContent = text.topics;
+
+				const aboutTitle = document.getElementById('about-title');
+				if (aboutTitle) aboutTitle.textContent = text.aboutTitle;
+
+				const experienceTitle = document.getElementById('experience-title');
+				if (experienceTitle) experienceTitle.textContent = text.experienceTitle;
+
+				const expertiseTitle = document.getElementById('expertise-title');
+				if (expertiseTitle) expertiseTitle.textContent = text.expertiseTitle;
+
+				const projectsTitle = document.getElementById('projects-title');
+				if (projectsTitle) projectsTitle.textContent = text.projectsTitle;
+
+				const otherLangsTitle = document.getElementById('other-langs-title');
+				if (otherLangsTitle) otherLangsTitle.textContent = text.otherLangsTitle;
+
+				// Show primary language posts, hide others
+				langOrder.forEach((l) => {
+					const section = document.getElementById(`posts-${l}`);
+					if (section) {
+						if (l === lang) {
+							section.classList.add('active');
+						} else {
+							section.classList.remove('active');
+						}
+					}
+				});
+
+				// Update other languages section
+				const otherLangsContainer = document.getElementById('other-langs-container');
+				if (otherLangsContainer) {
+					const otherLangs = langOrder.filter(l => l !== lang);
+					otherLangsContainer.innerHTML = otherLangs.map(l => `
+						<a href="${langMeta[l].path}" class="flex items-center gap-3 p-4 bg-white dark:bg-gray-700 rounded-lg shadow hover:shadow-md transition-shadow">
+							<span class="text-2xl">${langMeta[l].flag}</span>
+							<span class="font-medium text-gray-700 dark:text-gray-300">${langMeta[l].name}</span>
+						</a>
+					`).join('');
+				}
+
+				// Highlight current language button
+				document.querySelectorAll('.lang-btn').forEach((btn) => {
+					const btnLang = btn.getAttribute('data-lang');
+					if (btnLang === lang) {
+						btn.classList.remove('bg-white/90');
+						btn.classList.add('bg-yellow-300', 'ring-2', 'ring-yellow-400');
+					} else {
+						btn.classList.remove('bg-yellow-300', 'ring-2', 'ring-yellow-400');
+						btn.classList.add('bg-white/90');
+					}
+				});
+
+				// Update Header navigation links
+				updateNavigationLinks(lang);
+
+				// Update Language Switcher selection
+				updateLanguageSwitcher(lang);
+
+				// Update Footer links and tagline
+				updateFooterLinks(lang);
+
+				// Update About section content
+				updateAboutSection(lang);
+
+				// Update Projects section content
+				updateProjectsSection(lang);
+
+				// Update HTML lang attribute
+				document.documentElement.lang = lang;
+			}
+
+			// Initialize on page load
+			document.addEventListener('DOMContentLoaded', () => {
+				const recommendedLang = getRecommendedLanguage();
+				updateUI(recommendedLang);
+
+				// Save language button clicks
+				document.querySelectorAll('.lang-btn').forEach((btn) => {
+					btn.addEventListener('click', (e) => {
+						const lang = (e.currentTarget as HTMLElement).getAttribute('data-lang') as SupportedLanguage;
+						if (lang) {
+							saveLanguagePreference(lang);
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

@@ -134,10 +134,22 @@ const currentRoute = getRouteFromUrl(Astro.url.pathname);
 </style>
 
 <script>
+	import { saveLanguagePreference, type SupportedLanguage } from '../lib/language-detection';
+
 	const languageSelector = document.getElementById('language-selector') as HTMLSelectElement;
 
 	languageSelector?.addEventListener('change', (e) => {
 		const target = e.target as HTMLSelectElement;
-		window.location.href = target.value;
+		const newUrl = target.value;
+
+		// Extract language from the URL (e.g., "/ko/blog" -> "ko")
+		const langMatch = newUrl.match(/^\/([a-z]{2})\//);
+		if (langMatch) {
+			const lang = langMatch[1] as SupportedLanguage;
+			// Save language preference to cookie
+			saveLanguagePreference(lang);
+		}
+
+		window.location.href = newUrl;
 	});
 </script>
