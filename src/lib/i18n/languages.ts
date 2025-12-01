@@ -13,6 +13,7 @@ export function isValidLanguage(lang: string): lang is Language {
   return lang in languages;
 }
 
+// AEO Optimized: Title 50~60 chars, Description 150~160 chars for each language
 export const ui = {
   ko: {
     "nav.home": "홈",
@@ -21,8 +22,8 @@ export const ui = {
     "nav.contact": "문의하기",
     "nav.social": "소셜",
     "nav.improvementHistory": "개선 히스토리",
-    "site.title": "EffiFlow",
-    "site.description": "AI로 만드는 효율의 흐름",
+    "site.title": "EffiFlow | AI 자동화 & 개발자 생산성 기술 블로그",
+    "site.description": "Claude Code, MCP, 워크플로우 자동화, AI 기반 개발에 대한 실용적인 가이드와 심층 분석. LLM 통합으로 개발 생산성을 높이는 방법을 공유합니다.",
     "blog.readTime": "분 소요",
     "blog.publishedOn": "게시일",
     "blog.updatedOn": "수정일",
@@ -37,8 +38,8 @@ export const ui = {
     "nav.contact": "Contact",
     "nav.social": "Social",
     "nav.improvementHistory": "Improvement History",
-    "site.title": "EffiFlow",
-    "site.description": "Creating the Flow of Efficiency with AI",
+    "site.title": "EffiFlow | AI Automation & Developer Productivity Tech Blog",
+    "site.description": "Explore Claude Code, MCP (Model Context Protocol), workflow automation, and AI-powered development. Practical guides and deep dives into LLM integration for developers.",
     "blog.readTime": "min read",
     "blog.publishedOn": "Published on",
     "blog.updatedOn": "Updated on",
@@ -53,8 +54,8 @@ export const ui = {
     "nav.contact": "お問い合わせ",
     "nav.social": "ソーシャル",
     "nav.improvementHistory": "改善履歴",
-    "site.title": "EffiFlow",
-    "site.description": "AIで創る効率の流れ",
+    "site.title": "EffiFlow | AI自動化＆開発者生産性技術ブログ",
+    "site.description": "Claude Code、MCP、ワークフロー自動化、AI駆動開発の実践ガイドと深掘り記事。LLM統合で開発生産性を向上させる方法を共有します。",
     "blog.readTime": "分",
     "blog.publishedOn": "公開日",
     "blog.updatedOn": "更新日",
@@ -69,8 +70,8 @@ export const ui = {
     "nav.contact": "联系方式",
     "nav.social": "社交媒体",
     "nav.improvementHistory": "改进历史",
-    "site.title": "EffiFlow",
-    "site.description": "用AI创造效率之流",
+    "site.title": "EffiFlow | AI自动化与开发者生产力技术博客",
+    "site.description": "探索 Claude Code、MCP（模型上下文协议）、工作流自动化和 AI 驱动开发。为开发者提供 LLM 集成的实用指南和深度分析。",
     "blog.readTime": "分钟阅读",
     "blog.publishedOn": "发布日期",
     "blog.updatedOn": "更新日期",

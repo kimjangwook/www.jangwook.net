@@ -1,0 +1,107 @@
+---
+/**
+ * FAQ Component for AEO (Answer Engine Optimization)
+ *
+ * This component renders FAQ sections optimized for:
+ * - Google AI Overview
+ * - ChatGPT / Perplexity / Claude
+ * - Voice Search (Google Assistant, Alexa)
+ * - Featured Snippets
+ *
+ * Usage:
+ * <FAQ items={[{ question: "...", answer: "..." }]} lang="ko" />
+ */
+
+export interface FAQItem {
+	question: string;
+	answer: string;
+}
+
+interface Props {
+	items: FAQItem[];
+	title?: string;
+	lang?: 'ko' | 'en' | 'ja' | 'zh';
+}
+
+const { items, title, lang = 'en' } = Astro.props;
+
+// Default titles by language
+const defaultTitles = {
+	ko: '자주 묻는 질문',
+	en: 'Frequently Asked Questions',
+	ja: 'よくある質問',
+	zh: '常见问题'
+};
+
+const sectionTitle = title || defaultTitles[lang];
+---
+
+<section class="faq-section bg-gray-50 dark:bg-gray-800/50 py-16" aria-labelledby="faq-title">
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+		<h2 id="faq-title" class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">
+			{sectionTitle}
+		</h2>
+
+		<div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
+			{items.map((item, index) => (
+				<details
+					class="faq-item group bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+					itemscope
+					itemprop="mainEntity"
+					itemtype="https://schema.org/Question"
+					open={index === 0}
+				>
+					<summary
+						class="faq-question flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+						itemprop="name"
+					>
+						<span class="text-lg font-semibold text-gray-900 dark:text-gray-100 pr-4">
+							{item.question}
+						</span>
+						<svg
+							class="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 transform group-open:rotate-180 transition-transform"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					</summary>
+					<div
+						class="faq-answer px-6 pb-6 text-gray-600 dark:text-gray-300 leading-relaxed"
+						itemscope
+						itemprop="acceptedAnswer"
+						itemtype="https://schema.org/Answer"
+					>
+						<div itemprop="text" set:html={item.answer} />
+					</div>
+				</details>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.faq-item summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.faq-item summary {
+		list-style: none;
+	}
+
+	.faq-answer {
+		animation: fadeIn 0.3s ease-out;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>
