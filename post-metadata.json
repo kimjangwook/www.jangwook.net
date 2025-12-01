@@ -1,4 +1,15 @@
 {
+  "adsense-rejection-ai-analysis-improvement": {
+    "pubDate": "2025-12-03",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.75,
+      "ai-ml": 0.65,
+      "devops": 0.3,
+      "architecture": 0.5
+    }
+  },
   "ai-era-career-advice-for-juniors": {
     "pubDate": "2025-12-02",
     "difficulty": 2,
