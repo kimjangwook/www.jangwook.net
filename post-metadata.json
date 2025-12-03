@@ -1,4 +1,15 @@
 {
+  "iterative-review-cycle-methodology": {
+    "pubDate": "2025-12-06",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.95
+    }
+  },
   "aeo-implementation-experience": {
     "pubDate": "2025-12-05",
     "difficulty": 3,

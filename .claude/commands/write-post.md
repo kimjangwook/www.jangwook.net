@@ -75,7 +75,7 @@ The command delegates to the Writing Assistant agent with the following tasks:
 - Save image to appropriate path: `src/assets/blog/[slug]-hero.[ext]`
 - Store image metadata for frontmatter
 
-#### Phase 3: Content Generation
+#### Phase 3: Content Generation (Korean-First Approach)
 
 **IMPORTANT - Publication Date**:
 
@@ -84,23 +84,49 @@ The command delegates to the Writing Assistant agent with the following tasks:
 - Add 1 day to that date for the new post
 - Format: 'YYYY-MM-DD' (single quotes required)
 
-For each language in `--languages`:
+**IMPORTANT - Korean-First Workflow**:
 
-- Generate complete blog post in target language
+The content generation follows a **two-stage process**:
+
+**Stage 1: Write Korean Post First**
+
+- Generate the complete Korean blog post with full content
 - Include proper Astro frontmatter:
   ```yaml
   ---
-  title: [Generated Title]
-  description: [SEO Description]
+  title: [Korean Title]
+  description: [Korean SEO Description]
   pubDate: "[Latest Post Date + 1 day]" # Must use single quotes and YYYY-MM-DD format
   heroImage: ../../../assets/blog/[slug]-hero.[ext]
   tags: [tag1, tag2, ...]
   ---
   ```
-- Apply language-specific tone and style
+- This becomes the **source of truth** for all translations
+- Apply Korean technical writing style (존댓말, mix of Korean/English terms)
+- Include all code examples with Korean comments
+
+**Stage 2: Natural Translation to Other Languages**
+
+Based on the completed Korean post:
+
+- **Japanese (ja)**: Naturally translate to Japanese
+  - Use です/ます体 (polite form)
+  - Convert to katakana for technical terms
+  - Maintain code structure, translate comments
+
+- **English (en)**: Naturally translate to English
+  - Use American English spelling
+  - Standard technical documentation style
+  - Professional but accessible tone
+
+- **Chinese (zh)**: Naturally translate to Chinese
+  - Use simplified Chinese (简体中文)
+  - Mix Chinese and English technical terms appropriately
+  - Professional technical writing style
+
+- Preserve all code examples and formatting
 - Maintain technical term consistency across languages
-- Include code examples with syntax highlighting
-- Add proper headings, lists, and formatting
+- Keep Mermaid diagrams but translate labels
 
 #### Phase 4: File Operations
 
@@ -438,35 +464,49 @@ Requirements:
    - Save to src/assets/blog/[slug]-hero.[ext]
    - Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter
 
-4. Write complete blog post for **ALL 4 LANGUAGES** (ko, ja, en, zh) **IN PARALLEL**:
+4. Write complete blog post using **KOREAN-FIRST APPROACH**:
 
-   **CRITICAL - Parallel Execution**:
+   **CRITICAL - Two-Stage Process**:
 
-   - Create separate general-purpose agents (exactly 4 agents: ko, ja, en, zh)
-   - Delegate to **ALL 4 agents** in a single message with 4 Task tool calls
-   - Each agent receives the same research findings, outline, and metadata
-   - Each agent writes independently for their target language
-   - All 4 agents execute simultaneously for maximum efficiency
+   The Korean-First approach ensures consistency and natural translation:
+
+   **Stage 1: Write Korean Post First**
+
+   - Write the complete Korean blog post
+   - This is the **source of truth** for all translations
+   - Include full content, code examples, Mermaid diagrams
+   - Save to `/src/content/blog/ko/[slug].md`
+   - Verify the Korean post is complete before proceeding
+
+   **Stage 2: Natural Translation to Other Languages (IN PARALLEL)**
+
+   After Korean post is complete:
+   - Create 3 separate agents for translation (ja, en, zh)
+   - Delegate to **ALL 3 agents** in a single message with 3 Task tool calls
+   - Each agent receives the completed Korean post as source
+   - Each agent naturally translates to their target language
 
    **Agent Delegation Pattern**:
 ```
 
-Single message with exactly 4 Task tool calls:
+Stage 1 (Sequential):
+- Task: Korean writing agent (ko) - FIRST, write complete post
 
-- Task 1: Korean writing agent (ko)
-- Task 2: Japanese writing agent (ja)
-- Task 3: English writing agent (en)
-- Task 4: Chinese writing agent (zh)
+Stage 2 (Parallel, after Stage 1 completes):
+- Task 1: Japanese translation agent (ja) - translate from Korean
+- Task 2: English translation agent (en) - translate from Korean
+- Task 3: Chinese translation agent (zh) - translate from Korean
 
 ````
 
-**Each language agent must**:
+**Each translation agent must**:
+- Receive the complete Korean post as input
+- Naturally translate content (NOT machine-translate)
 - Follow Astro Content Collections schema
 - Include frontmatter (title, description, pubDate, heroImage, tags)
-- **Use the calculated pubDate from step 1**
-- Use technical blog tone and style
-- Include code examples where appropriate
-- Add proper headings and structure
+- **Use the same pubDate as Korean version**
+- Preserve code examples (translate comments only)
+- Translate Mermaid diagram labels
 - Apply language-specific SEO optimization
 - Save to correct language folder upon completion
 

@@ -1,7 +1,7 @@
 ---
 title: AI検索時代のためのAEO実装記：Agent Effi Flow実践適用
 description: ChatGPT、PerplexityなどのAI検索エンジンにコンテンツが引用されるよう最適化するAEO戦略の実装経験を共有します。
-pubDate: "2025-12-05"
+pubDate: '2025-12-05'
 heroImage: ../../../assets/blog/aeo-implementation-experience-hero.png
 tags:
   - aeo
@@ -12,7 +12,7 @@ relatedPosts:
   - slug: adsense-rejection-ai-analysis-improvement
     score: 0.94
     reason:
-      ko: "웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in web development, AI/ML with comparable
@@ -20,7 +20,7 @@ relatedPosts:
   - slug: llm-seo-aeo-practical-implementation
     score: 0.94
     reason:
-      ko: "자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, web development, AI/ML,
@@ -28,7 +28,7 @@ relatedPosts:
   - slug: adding-chinese-support
     score: 0.93
     reason:
-      ko: "자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, web development, AI/ML,
@@ -36,7 +36,7 @@ relatedPosts:
   - slug: llm-blog-automation
     score: 0.93
     reason:
-      ko: "자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, web development, AI/ML,
@@ -44,7 +44,7 @@ relatedPosts:
   - slug: vertex-ai-search-site-implementation
     score: 0.92
     reason:
-      ko: "자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, web development, AI/ML,
