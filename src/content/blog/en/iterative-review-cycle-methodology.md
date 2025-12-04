@@ -36,7 +36,7 @@ relatedPosts:
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分야で類似したトピックを扱い、同程度の難易度です。
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
@@ -44,7 +44,7 @@ relatedPosts:
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分야で類似したトピックを扱い、同程度の難易度です。
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.

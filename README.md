@@ -43,13 +43,23 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-12-05
+**최신 포스트 날짜**: 2025-12-07
 
-**총 포스트 수**: 62개 (한국어 기준)
+**총 포스트 수**: 63개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **AI 검색 시대를 위한 AEO 구현기: Agent Effi Flow 실전 적용** (2025-12-05)
+1. **Agent Effi Flow의 전략적 피벗: 일본 인바운드 시장을 위한 おもてなしBot 출시** (2025-12-07)
+
+   - AI 효율화 도구에서 일본 인바운드 관광 시장으로의 전략적 전환. 경쟁 치열한 레드오션을 피해 블루오션을 찾아가는 1인 개발자의 시장 분석과 おもてなしBot 서비스 구축 과정
+   - **핵심 내용**: 일본 경리 자동화 시장 분석 (freee, Money Forward, 야요이), 레드오션 vs 블루오션 전략, 인바운드 3천만 시대의 기회, 3 Pillar 전략 (집객/접객/정산), おもてなしBot 주요 기능 (문화적 맥락 번역, 업종별 프리셋, 알레르기 검출), 프롬프트 아키텍처 설계, 언어별 문화 가이드라인, 오번역 방지 테이블, 심각도 기반 검증 시스템, 크레딧 시스템, 경리 OCR 전략적 일시 정지 및 Inbound Tax 리브랜딩 계획
+
+2. **반복 검토 사이클 방법론: AI 에이전트의 품질 관리 체계** (2025-12-06)
+
+   - AI 에이전트가 고품질 결과물을 생성하기 위한 반복 검토 사이클 방법론. 기획-실행-검토-개선의 4단계 프레임워크 설계 및 적용 사례
+   - **핵심 내용**: 반복 검토 사이클 4단계 (Plan-Execute-Review-Improve), Quality Gate 개념, 자동화된 품질 검증, 점진적 개선 패턴, 실제 적용 사례 (블로그 포스트 작성, 코드 리뷰)
+
+3. **AI 검색 시대를 위한 AEO 구현기: Agent Effi Flow 실전 적용** (2025-12-05)
 
    - ChatGPT, Perplexity 등 AI 검색 엔진에 콘텐츠가 인용되도록 최적화하는 AEO 전략의 실제 구현 경험을 공유합니다.
    - **핵심 내용**: AEO(Answer Engine Optimization) 개념 및 SEO 차이점, Agent Effi Flow 서비스에 적용한 AEO 요소 (FAQ 페이지, 사용 사례 페이지), 구조화 데이터 구현 (FAQPage, HowTo, Article, BreadcrumbList Schema), PREP 구조 (Point-Reason-Example-Point), E-E-A-T 요소 강화, Svelte 5 + SvelteKit 기술 구현 상세 (SEO.svelte, StructuredData.svelte, $state()), JSON-LD 구현 예시, 가상 고객 후기 삭제 이유 (일본 경품표시법 준수), 향후 계획 (사이트맵, OG 이미지, Search Console 검증), 실제 사이트: https://agent-effi-flow.jangwook.net
