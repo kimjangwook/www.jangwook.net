@@ -17,6 +17,7 @@ relatedPosts:
       ja: 前回のブログ立ち上げレポートの続編として、45日間の成長過程を詳細に分析します。
       en: >-
         Follow-up to the previous blog launch report, providing detailed analysis of 45 days of growth.
+      zh: 作为之前博客启动报告的续集，详细分析45天的成长过程。
 ---
 
 # jangwook.net 45-Day Growth Report: What the Data Really Says

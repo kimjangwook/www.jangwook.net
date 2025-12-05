@@ -1,7 +1,8 @@
 ---
-title: 'AI智能体系统实战指南：使用Notion API MCP与Claude Code构建自动化流水线'
+title: AI智能体系统实战指南：使用Notion API MCP与Claude Code构建自动化流水线
 description: >-
-  深度解析Model Context Protocol (MCP)与Claude Code的实战应用，手把手教你构建Notion集成的AI智能体自动化系统。从SEO专家和内容管理者视角验证的实用教程，详解可行方案、限制条件、优势与注意事项。
+  深度解析Model Context Protocol (MCP)与Claude
+  Code的实战应用，手把手教你构建Notion集成的AI智能体自动化系统。从SEO专家和内容管理者视角验证的实用教程，详解可行方案、限制条件、优势与注意事项。
 pubDate: '2025-10-10'
 heroImage: ../../../assets/blog/ai-agent-notion-mcp-hero.jpg
 tags:
@@ -28,7 +29,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: specification-driven-development
     score: 0.91
     reason:
@@ -37,7 +38,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: metadata-based-recommendation-optimization
     score: 0.89
     reason:
@@ -46,7 +47,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: astro-scheduled-publishing
     score: 0.87
     reason:

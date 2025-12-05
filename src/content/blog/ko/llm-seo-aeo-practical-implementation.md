@@ -17,6 +17,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
     score: 0.94
     reason:
@@ -25,6 +26,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-web-automation
     score: 0.93
     reason:
@@ -33,6 +35,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development with comparable
         difficulty.
+      zh: 在自动化、Web开发领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.93
     reason:
@@ -41,6 +44,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: chrome-devtools-mcp-performance
     score: 0.93
     reason:
@@ -49,6 +53,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, architecture with
         comparable difficulty.
+      zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 개요

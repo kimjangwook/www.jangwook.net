@@ -1,10 +1,59 @@
 ---
-title: 'AI搜索时代的AEO实施经验：Agent Effi Flow实战案例'
-description: '分享针对ChatGPT、Perplexity等AI搜索引擎优化内容的AEO策略实施经验，包含结构化数据和Schema标记的具体实现方法。'
+title: AI搜索时代的AEO实施经验：Agent Effi Flow实战案例
+description: 分享针对ChatGPT、Perplexity等AI搜索引擎优化内容的AEO策略实施经验，包含结构化数据和Schema标记的具体实现方法。
 pubDate: '2025-12-05'
-heroImage: '../../../assets/blog/aeo-implementation-experience-hero.png'
-tags: ['aeo', 'seo', 'ai-search', 'schema-markup']
-relatedPosts: []
+heroImage: ../../../assets/blog/aeo-implementation-experience-hero.png
+tags:
+  - aeo
+  - seo
+  - ai-search
+  - schema-markup
+relatedPosts:
+  - slug: adsense-rejection-ai-analysis-improvement
+    score: 0.94
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
+  - slug: llm-seo-aeo-practical-implementation
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: adding-chinese-support
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: vertex-ai-search-site-implementation
+    score: 0.92
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 # AI搜索时代的AEO实施经验：Agent Effi Flow实战案例

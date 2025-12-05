@@ -1,31 +1,58 @@
 ---
-title: 'Agent Effi Flow的战略转型：面向日本入境市场推出おもてなしBot'
-description: '从AI效率工具到日本入境旅游市场的战略转型。分享一位独立开发者如何避开竞争激烈的红海，寻找蓝海机会的市场分析和おもてなしBot服务构建过程。'
+title: Agent Effi Flow的战略转型：面向日本入境市场推出おもてなしBot
+description: 从AI效率工具到日本入境旅游市场的战略转型。分享一位独立开发者如何避开竞争激烈的红海，寻找蓝海机会的市场分析和おもてなしBot服务构建过程。
 pubDate: '2025-12-07'
-heroImage: '../../../assets/blog/agent-effi-flow-pivot-omotenashi-bot.png'
-tags: ['AI', 'SaaS', '入境旅游']
+heroImage: ../../../assets/blog/agent-effi-flow-pivot-omotenashi-bot.png
+tags:
+  - AI
+  - SaaS
+  - 入境旅游
 relatedPosts:
-  - slug: 'saas-side-project-lessons-learned'
-    score: 0.92
+  - slug: aeo-implementation-experience
+    score: 0.94
     reason:
-      ko: '동일한 프로젝트의 초기 시행착오와 학습 경험을 다룬 글로, 이번 피벗 결정의 배경을 이해하는 데 도움이 됩니다.'
-      ja: '同じプロジェクトの初期の試行錯誤と学習経験を扱った記事で、今回のピボット決定の背景を理解するのに役立ちます。'
-      en: 'Covers early trials and lessons from the same project, providing context for understanding this pivot decision.'
-      zh: '介绍了同一项目早期的尝试和学习经验，有助于理解此次战略转型的背景。'
-  - slug: 'practical-ai-prompt-engineering-patterns'
-    score: 0.88
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: adding-chinese-support
+    score: 0.94
     reason:
-      ko: 'おもてなしBot의 핵심인 프롬프트 설계 패턴과 기법을 상세히 다룬 글입니다.'
-      ja: 'おもてなしBotの核心であるプロンプト設計のパターンと技法を詳しく解説した記事です。'
-      en: 'Detailed coverage of prompt design patterns and techniques that form the core of OmotenashiBot.'
-      zh: '详细介绍了构成おもてなしBot核心的提示词设计模式和技术。'
-  - slug: 'gemini-image-generation-automation'
-    score: 0.85
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
+    score: 0.94
     reason:
-      ko: 'おもてなしBot의 이미지 출력 기능에 사용된 Gemini 이미지 생성 기술을 다룹니다.'
-      ja: 'おもてなしBotの画像出力機能に使用されたGemini画像生成技術を扱っています。'
-      en: 'Covers the Gemini image generation technology used in OmotenashiBot image output feature.'
-      zh: '介绍了おもてなしBot图像输出功能中使用的Gemini图像生成技术。'
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: adsense-rejection-ai-analysis-improvement
+    score: 0.93
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
+  - slug: vertex-ai-search-site-implementation
+    score: 0.93
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 起点：AI效率工具的梦想

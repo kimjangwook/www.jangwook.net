@@ -1,7 +1,6 @@
 ---
-title: 'AI 时代的规范驱动开发：用 Markdown 编写代码的新范式'
-description: >-
-  通过 GitHub Spec Kit 实现系统化的 AI 开发方法论。超越 "Vibe Coding"，编写可扩展、可维护的生产级代码的完整指南
+title: AI 时代的规范驱动开发：用 Markdown 编写代码的新范式
+description: 通过 GitHub Spec Kit 实现系统化的 AI 开发方法论。超越 "Vibe Coding"，编写可扩展、可维护的生产级代码的完整指南
 pubDate: '2025-10-15'
 heroImage: ../../../assets/blog/specification-driven-development-hero.jpg
 tags:
@@ -19,7 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-collaboration-patterns
     score: 0.92
     reason:
@@ -28,7 +27,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题相连。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: self-healing-ai-systems
     score: 0.91
     reason:
@@ -37,7 +36,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题相连。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: astro-scheduled-publishing
     score: 0.82
     reason:
@@ -46,7 +45,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, architecture
         fundamentals.
-      zh: 作为前置知识很有用，涵盖自动化、架构基础。
+      zh: 作为先修知识很有用，涵盖自动化、架构基础。
 ---
 
 ## AI 编程的新范式

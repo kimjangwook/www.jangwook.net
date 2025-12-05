@@ -1,6 +1,6 @@
 ---
-title: '利用LLM提升项目经理工作效率：AI让生产力提升3倍'
-description: '介绍如何利用ChatGPT、Claude、Gemini等最新LLM工具自动化项目管理工作并最大化生产力的实战指南，从日常业务自动化到ROI测量的分步说明。'
+title: 利用LLM提升项目经理工作效率：AI让生产力提升3倍
+description: 介绍如何利用ChatGPT、Claude、Gemini等最新LLM工具自动化项目管理工作并最大化生产力的实战指南，从日常业务自动化到ROI测量的分步说明。
 pubDate: '2025-11-01'
 heroImage: ../../../assets/blog/2025-11-01-llm-pm-workflow-automation.png
 tags:
@@ -16,21 +16,21 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps with comparable
         difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，具有相当的难度。
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.93
     reason:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，具有相当的难度。
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: claude-skills-implementation-guide
     score: 0.93
     reason:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，具有相当的难度。
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.92
     reason:
@@ -39,14 +39,14 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps主题相互连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps主题进行连接。
   - slug: llm-blog-automation
     score: 0.92
     reason:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，具有相当的难度。
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 ## 引言

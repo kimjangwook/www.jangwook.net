@@ -16,12 +16,14 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
   - slug: openai-agentkit-tutorial-part1
     score: 0.9
     reason:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: google-gemini-file-search-rag-tutorial
     score: 0.89
     reason:
@@ -30,12 +32,14 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
   - slug: ai-presentation-automation
     score: 0.88
     reason:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: data-driven-pm-framework
     score: 0.88
     reason:
@@ -44,6 +48,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
 최근 동문회에서 후배들에게 3분 스피치를 할 기회가 있었습니다. 강단에 서기 전까지만 해도 '내가 무슨 대단한 이야기를 할 수 있을까' 하는 생각뿐이었습니다. 특별히 잘난 사람도 아니고, 화려한 커리어를 가진 것도 아니니까요. 다만 중소기업에서 나름 오랜 시간 일해왔고, 그 과정에서 느낀 것들이 취업을 앞두거나 사회초년생인 후배들에게 조금이나마 도움이 될 수 있지 않을까 하는 마음으로 시작했습니다.

@@ -1,6 +1,6 @@
 ---
 title: 使用 Claude LLM 构建智能内容推荐系统
-description: 超越简单标签匹配,通过语义理解提供精准推荐的 AI 驱动博客推荐系统构建指南
+description: '超越简单标签匹配,通过语义理解提供精准推荐的 AI 驱动博客推荐系统构建指南'
 pubDate: '2025-10-12'
 heroImage: ../../../assets/blog/ai-content-recommendation-hero.jpg
 tags:
@@ -35,7 +35,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: self-healing-ai-systems
     score: 0.89
     reason:
@@ -44,7 +44,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: astro-scheduled-publishing
     score: 0.8
     reason:
@@ -53,7 +53,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, web development,
         architecture fundamentals.
-      zh: 作为先导学习资料很有用，涵盖自动化、Web开发、架构基础。
+      zh: 作为先修知识很有用，涵盖自动化、Web开发、架构基础。
 ---
 
 ## 内容推荐的新范式

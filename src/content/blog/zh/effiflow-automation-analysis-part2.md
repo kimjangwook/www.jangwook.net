@@ -1,5 +1,5 @@
 ---
-title: 'EffiFlow 第二部分：Skills 自动发现与 58% Token 节省缓存'
+title: EffiFlow 第二部分：Skills 自动发现与 58% Token 节省缓存
 description: Skills 自动发现机制和 Commands 集成。通过缓存策略实现 58% Token 节省的过程
 pubDate: '2025-11-15'
 heroImage: ../../../assets/blog/effiflow-part2-skills-commands-hero.jpg
@@ -18,7 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖相似主题,难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.94
     reason:
@@ -27,7 +27,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖相似主题,难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: openai-agentkit-tutorial-part2
     score: 0.94
     reason:
@@ -36,7 +36,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖相似主题,难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.94
     reason:
@@ -45,7 +45,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖相似主题,难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-verbalized-sampling
     score: 0.94
     reason:
@@ -54,7 +54,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖相似主题,难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 系列导读

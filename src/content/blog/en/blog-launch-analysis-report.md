@@ -21,6 +21,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: astro-scheduled-publishing
     score: 0.94
     reason:
@@ -29,6 +30,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-web-automation
     score: 0.93
     reason:
@@ -37,6 +39,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps with
         comparable difficulty.
+      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.91
     reason:
@@ -45,6 +48,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, architecture with comparable
         difficulty.
+      zh: 在自动化、架构领域涵盖类似主题，难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.9
     reason:
@@ -53,6 +57,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题进行连接。
 ---
 
 # jangwook.net Blog Launch Analysis Report

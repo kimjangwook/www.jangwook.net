@@ -19,6 +19,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.95
     reason:
@@ -27,6 +28,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.94
     reason:
@@ -35,6 +37,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.94
     reason:
@@ -43,6 +46,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: bigquery-mcp-prefix-filtering
     score: 0.94
     reason:
@@ -51,6 +55,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## Overview

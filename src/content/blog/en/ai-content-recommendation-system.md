@@ -19,6 +19,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: metadata-based-recommendation-optimization
     score: 0.93
     reason:
@@ -27,6 +28,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-collaboration-patterns
     score: 0.91
     reason:
@@ -35,6 +37,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: self-healing-ai-systems
     score: 0.89
     reason:
@@ -43,6 +46,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: astro-scheduled-publishing
     score: 0.8
     reason:
@@ -51,6 +55,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, web development,
         architecture fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、Web开发、架构基础。
 ---
 
 ## A New Paradigm for Content Recommendations

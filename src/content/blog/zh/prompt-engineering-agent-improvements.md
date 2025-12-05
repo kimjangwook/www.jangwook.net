@@ -1,6 +1,6 @@
 ---
 title: 提升AI代理性能10倍的提示工程实战指南
-description: 研究日本AI专家的提示技巧,改进17个Claude Code代理的实际案例与可量化成果分享。
+description: '研究日本AI专家的提示技巧,改进17个Claude Code代理的实际案例与可量化成果分享。'
 pubDate: '2025-11-12'
 heroImage: ../../../assets/blog/prompt-engineering-agent-improvements-hero.jpg
 tags:
@@ -17,7 +17,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: openai-agentkit-tutorial-part2
     score: 0.94
     reason:
@@ -26,7 +26,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.94
     reason:
@@ -35,7 +35,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: bigquery-mcp-prefix-filtering
     score: 0.94
     reason:
@@ -44,7 +44,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.93
     reason:
@@ -53,7 +53,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

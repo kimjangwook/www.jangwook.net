@@ -1,15 +1,15 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-// V3: Related Post schema
+// V3: Related Post schema (all 4 languages required)
 const relatedPostSchema = z.object({
 	slug: z.string(),
 	score: z.number().min(0).max(1),
 	reason: z.object({
-		ko: z.string().optional(),
-		ja: z.string().optional(),
-		en: z.string().optional(),
-		zh: z.string().optional(),
+		ko: z.string(),
+		ja: z.string(),
+		en: z.string(),
+		zh: z.string(),
 	}),
 });
 

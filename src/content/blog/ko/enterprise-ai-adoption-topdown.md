@@ -16,6 +16,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: slack-mcp-team-communication
     score: 0.94
     reason:
@@ -24,12 +25,14 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: data-driven-pm-framework
     score: 0.94
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: deep-agents-architecture-optimization
     score: 0.93
     reason:
@@ -38,6 +41,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: claude-code-cli-migration-guide
     score: 0.93
     reason:
@@ -46,6 +50,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 서론: AI 도입 열풍 속 높은 실패율의 현실

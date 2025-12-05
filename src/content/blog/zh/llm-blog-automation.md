@@ -1,7 +1,8 @@
 ---
 title: 利用LLM与Claude Code实现博客自动化 - 未来的内容创作
 description: >-
-  使用Claude Code和11个专业代理完全自动化博客的方法。从提示工程(Prompt Engineering)到MCP集成、多语言支持、图像生成 - 人人都能学会的实战指南。
+  使用Claude Code和11个专业代理完全自动化博客的方法。从提示工程(Prompt Engineering)到MCP集成、多语言支持、图像生成 -
+  人人都能学会的实战指南。
 pubDate: '2025-10-04'
 heroImage: ../../../assets/blog/2025-10-04-llm-blog-automation.png
 tags:
@@ -22,7 +23,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等类似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-best-practices
     score: 0.92
     reason:
@@ -31,7 +32,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, AI/ML
         fundamentals.
-      zh: 作为先修知识非常有用，涵盖自动化、AI/ML基础知识。
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML基础。
   - slug: claude-code-web-automation
     score: 0.92
     reason:
@@ -40,7 +41,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development with comparable
         difficulty.
-      zh: 涵盖自动化、Web开发等类似主题，难度相当。
+      zh: 在自动化、Web开发领域涵盖类似主题，难度相当。
   - slug: ai-content-recommendation-system
     score: 0.92
     reason:
@@ -49,7 +50,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, web development, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、AI/ML、架构等主题连接。
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、AI/ML、架构主题进行连接。
   - slug: chrome-devtools-mcp-performance
     score: 0.91
     reason:
@@ -58,7 +59,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, architecture with
         comparable difficulty.
-      zh: 涵盖自动化、Web开发、架构等类似主题，难度相当。
+      zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
 ---
 
 # 利用LLM与Claude Code实现博客自动化

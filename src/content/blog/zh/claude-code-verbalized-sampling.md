@@ -1,7 +1,8 @@
 ---
-title: '在 Claude Code Agent 中应用 Verbalized Sampling：LLM 多样性提升 1.6〜2.1 倍'
+title: 在 Claude Code Agent 中应用 Verbalized Sampling：LLM 多样性提升 1.6〜2.1 倍
 description: >-
-  将 Verbalized Sampling 技术应用于 Claude Code Agent，实现提示词多样性 2.0 倍、内容多样性 1.8 倍、写作风格 1.6 倍提升的实战指南。完整记录 4 个 Agent 修改内容、参数调整和成本分析。
+  将 Verbalized Sampling 技术应用于 Claude Code Agent，实现提示词多样性 2.0 倍、内容多样性 1.8 倍、写作风格
+  1.6 倍提升的实战指南。完整记录 4 个 Agent 修改内容、参数调整和成本分析。
 pubDate: '2025-11-09'
 heroImage: ../../../assets/blog/verbalized-sampling-llm-diversity-hero.png
 tags:
@@ -20,7 +21,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.94
     reason:
@@ -29,7 +30,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.93
     reason:
@@ -38,7 +39,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: openai-agentkit-tutorial-part2
     score: 0.93
     reason:
@@ -47,16 +48,16 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: bigquery-mcp-prefix-filtering
     score: 0.93
     reason:
-      ko: '자동化, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

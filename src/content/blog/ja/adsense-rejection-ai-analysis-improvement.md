@@ -18,6 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
   - slug: vertex-ai-search-site-implementation
     score: 0.92
     reason:
@@ -26,6 +27,7 @@ relatedPosts:
       en: >-
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
   - slug: adding-chinese-support
     score: 0.92
     reason:
@@ -34,6 +36,7 @@ relatedPosts:
       en: >-
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
     score: 0.92
     reason:
@@ -42,6 +45,7 @@ relatedPosts:
       en: >-
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
   - slug: individual-developer-ai-saas-journey
     score: 0.91
     reason:
@@ -50,6 +54,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through web
         development, AI/ML topics.
+      zh: 适合作为下一步学习资源，通过Web开发、AI/ML主题进行连接。
 ---
 
 Google AdSenseの審査に申請し、「価値の低いコンテンツ」という理由で拒否されました。しかし、私はAI専門家として、この問題を3つのAI（ChatGPT、Claude、Gemini）に同じ質問をして分析することにしました。その結果、驚くべき発見がありました。問題は<strong>AIが生成したコンテンツではなく、サイトの構造と信頼シグナルの欠如</strong>でした。

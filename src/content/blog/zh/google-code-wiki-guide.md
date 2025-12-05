@@ -1,9 +1,54 @@
 ---
 title: 'Google Code Wiki: AI驱动的代码文档平台完全指南'
-description: '详细介绍Google发布的Code Wiki的功能、使用方法以及基于Gemini的自动文档化系统。'
+description: 详细介绍Google发布的Code Wiki的功能、使用方法以及基于Gemini的自动文档化系统。
 pubDate: '2025-11-24'
-heroImage: '../../../assets/blog/google-code-wiki-guide-hero.jpg'
-tags: ['google', 'documentation', 'ai']
+heroImage: ../../../assets/blog/google-code-wiki-guide-hero.jpg
+tags:
+  - google
+  - documentation
+  - ai
+relatedPosts:
+  - slug: claude-code-best-practices
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: mcp-servers-toolkit-introduction
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: claude-code-cli-migration-guide
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
+  - slug: adding-chinese-support
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、AI/ML、DevOps、架构主题进行连接。
 ---
 
 ## 引言

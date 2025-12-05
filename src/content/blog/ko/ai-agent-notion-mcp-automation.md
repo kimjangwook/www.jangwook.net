@@ -20,6 +20,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, architecture with comparable
         difficulty.
+      zh: 在自动化、架构领域涵盖类似主题，难度相当。
   - slug: ai-content-recommendation-system
     score: 0.91
     reason:
@@ -28,6 +29,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: specification-driven-development
     score: 0.91
     reason:
@@ -36,6 +38,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: metadata-based-recommendation-optimization
     score: 0.89
     reason:
@@ -44,6 +47,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: astro-scheduled-publishing
     score: 0.87
     reason:
@@ -52,6 +56,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, architecture with comparable
         difficulty.
+      zh: 在自动化、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 개요

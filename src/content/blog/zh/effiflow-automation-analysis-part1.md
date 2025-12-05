@@ -1,5 +1,5 @@
 ---
-title: 'EffiFlow 架构分析：元数据驱动节省 71% 成本'
+title: EffiFlow 架构分析：元数据驱动节省 71% 成本
 description: 17 个 Agents 和元数据优先架构实现博客自动化。节省 60〜70% Token 成本并实现完全自动化
 pubDate: '2025-11-14'
 heroImage: ../../../assets/blog/effiflow-automation-analysis-hero.jpg
@@ -18,7 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: prompt-engineering-agent-improvements
     score: 0.95
     reason:
@@ -27,7 +27,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.94
     reason:
@@ -36,7 +36,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: openai-agentkit-tutorial-part2
     score: 0.94
     reason:
@@ -45,7 +45,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.94
     reason:
@@ -54,7 +54,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 > <strong>系列指南</strong>：本文是"EffiFlow 自动化架构分析/评估与改进"系列的第 1/3 部分。

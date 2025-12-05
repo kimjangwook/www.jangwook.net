@@ -18,6 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-content-recommendation-system
     score: 0.93
     reason:
@@ -26,6 +27,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.92
     reason:
@@ -34,6 +36,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, AI/ML,
         architecture fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、架构基础。
   - slug: metadata-based-recommendation-optimization
     score: 0.92
     reason:
@@ -42,6 +45,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
     score: 0.91
     reason:
@@ -50,6 +54,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, AI/ML,
         architecture fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、架构基础。
 ---
 
 # Automating Blog Analytics with Google Analytics MCP and AI Agents

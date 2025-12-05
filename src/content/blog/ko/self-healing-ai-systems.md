@@ -20,6 +20,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, AI/ML, DevOps,
         architecture fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、DevOps、架构基础。
 ---
 
 ## 자가 치유의 시대

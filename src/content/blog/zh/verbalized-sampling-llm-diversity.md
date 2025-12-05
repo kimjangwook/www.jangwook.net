@@ -1,7 +1,6 @@
 ---
 title: 'Verbalized Sampling: 无需训练的提示技术恢复LLM多样性'
-description: >-
-  解决对齐后模式崩溃问题的Verbalized Sampling技术。无需重新训练即可将LLM输出多样性提升1.6〜2.1倍的提示策略完全指南
+description: 解决对齐后模式崩溃问题的Verbalized Sampling技术。无需重新训练即可将LLM输出多样性提升1.6〜2.1倍的提示策略完全指南
 pubDate: '2025-11-08'
 heroImage: ../../../assets/blog/verbalized-sampling-llm-diversity-hero.jpg
 tags:
@@ -17,7 +16,7 @@ relatedPosts:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 涵盖AI/ML领域的类似主题，难度相当。
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: ai-agent-persona-analysis
     score: 0.92
     reason:
@@ -26,28 +25,28 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering AI/ML, architecture
         fundamentals.
-      zh: 作为先修知识很有用，涵盖AI/ML和架构基础。
+      zh: 作为先修知识很有用，涵盖AI/ML、架构基础。
   - slug: llm-consumer-research-ssr
     score: 0.92
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 涵盖AI/ML和架构领域的类似主题，难度相当。
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.91
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 涵盖AI/ML和架构领域的类似主题，难度相当。
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-content-recommendation-system
     score: 0.9
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 涵盖AI/ML和架构领域的类似主题，难度相当。
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 # Verbalized Sampling: 无需训练的提示技术恢复LLM多样性

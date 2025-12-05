@@ -66,7 +66,7 @@ async function generateRecommendationsV3() {
  * Frontmatter에 추천 데이터 작성
  */
 async function writeFrontmatterRecommendations(recommendations) {
-  const languages = ['ko', 'ja', 'en'];
+  const languages = ['ko', 'ja', 'en', 'zh'];
   let updatedCount = 0;
 
   for (const slug in recommendations) {

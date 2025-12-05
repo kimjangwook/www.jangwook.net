@@ -1,6 +1,6 @@
 ---
-title: '为博客添加中文支持：多语言网站扩展实战指南'
-description: '40篇文章添加中文支持的经验分享。并行智能体处理更新120个文件、SEO优化、自动化策略 - Astro多语言博客扩展的一切'
+title: 为博客添加中文支持：多语言网站扩展实战指南
+description: 40篇文章添加中文支持的经验分享。并行智能体处理更新120个文件、SEO优化、自动化策略 - Astro多语言博客扩展的一切
 pubDate: '2025-11-17'
 heroImage: ../../../assets/blog/adding-chinese-support-hero.jpg
 tags:
@@ -8,27 +8,51 @@ tags:
   - i18n
   - localization
 relatedPosts:
-  - slug: ai-content-recommendation-system
-    score: 0.92
+  - slug: n8n-rss-automation
+    score: 0.94
     reason:
-      ko: '다국어 콘텐츠 추천 시스템 구축 경험을 다루며, 콘텐츠 관리 자동화 측면에서 연결됩니다.'
-      ja: '多言語コンテンツ推薦システム構築経験を扱い、コンテンツ管理自動化の観点で繋がります。'
-      en: 'Covers multilingual content recommendation system construction, connecting through content management automation aspects.'
-      zh: '涵盖多语言内容推荐系统构建经验，通过内容管理自动化方面相连接。'
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
-    score: 0.88
+    score: 0.94
     reason:
-      ko: '블로그 자동화 기술을 다루며, 다국어 콘텐츠 생성과 관리 자동화에서 유사합니다.'
-      ja: 'ブログ自動化技術を扱い、多言語コンテンツ生成と管理自動化で類似しています。'
-      en: 'Covers blog automation technologies, similar in multilingual content generation and management automation.'
-      zh: '涵盖博客自动化技术，在多语言内容生成和管理自动化方面相似。'
-  - slug: ai-agent-collaboration-patterns
-    score: 0.85
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.94
     reason:
-      ko: '병렬 에이전트 협업 패턴을 활용한 대규모 작업 처리 방식에서 공통점이 있습니다.'
-      ja: '並列エージェント協業パターンを活用した大規模作業処理方式で共通点があります。'
-      en: 'Shares commonality in large-scale task processing using parallel agent collaboration patterns.'
-      zh: '在利用并行智能体协作模式处理大规模任务方面具有共同点。'
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: playwright-ai-testing
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: notion-backlog-slack-claude-project-management
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 引言

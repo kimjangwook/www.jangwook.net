@@ -1,6 +1,6 @@
 ---
 title: 'EffiFlow Part 3: 38分钟实现实战改进 - 稳定性99%与完成度100%'
-description: 'Top 3 Quick Wins 实战实施。38分钟投入达成完成度100%、稳定性99%的过程与ROI'
+description: Top 3 Quick Wins 实战实施。38分钟投入达成完成度100%、稳定性99%的过程与ROI
 pubDate: '2025-11-16'
 heroImage: ../../../assets/blog/effiflow-part3-quick-wins-hero.jpg
 tags:
@@ -45,7 +45,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题,难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: n8n-rss-automation
     score: 0.93
     reason:

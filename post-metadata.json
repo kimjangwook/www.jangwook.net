@@ -1,4 +1,37 @@
 {
+  "dena-llm-study-part5-agent-design": {
+    "pubDate": "2025-12-12",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.6,
+      "architecture": 0.85
+    }
+  },
+  "dena-llm-study-part2-structured-output": {
+    "pubDate": "2025-12-09",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.75,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.85
+    }
+  },
+  "dena-llm-study-part3-model-training": {
+    "pubDate": "2025-12-08",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
+  },
   "agent-effi-flow-pivot-omotenashi-bot": {
     "pubDate": "2025-12-07",
     "difficulty": 3,

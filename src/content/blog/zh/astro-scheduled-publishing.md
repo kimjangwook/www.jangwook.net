@@ -1,6 +1,8 @@
 ---
-title: '静态博客的定时发布实现：Astro + GitHub Actions 自动化'
-description: '使用 Astro 和 GitHub Pages 的静态博客中，如何像 WordPress 一样实现文章定时发布。利用 pubDate 过滤和定时工作流的完全自动化解决方案'
+title: 静态博客的定时发布实现：Astro + GitHub Actions 自动化
+description: >-
+  使用 Astro 和 GitHub Pages 的静态博客中，如何像 WordPress 一样实现文章定时发布。利用 pubDate
+  过滤和定时工作流的完全自动化解决方案
 pubDate: '2025-10-13'
 heroImage: ../../../assets/blog/scheduled-publishing-hero.jpg
 tags:
@@ -18,7 +20,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, web development, DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps、架构主题进行关联。
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps、架构主题进行连接。
   - slug: self-healing-ai-systems
     score: 0.75
     reason:

@@ -1,7 +1,6 @@
 ---
-title: 'Claude Skills完全指南：项目应用与实战技巧'
-description: >-
-  从Claude全新Agent Skills功能的引入到实际实现，记录试错与成果的实战指南。通过基于文件夹的模块化让AI代理专业化的方法。
+title: Claude Skills完全指南：项目应用与实战技巧
+description: 从Claude全新Agent Skills功能的引入到实际实现，记录试错与成果的实战指南。通过基于文件夹的模块化让AI代理专业化的方法。
 pubDate: '2025-10-22'
 heroImage: ../../../assets/blog/claude-skills-guide-hero.jpg
 tags:
@@ -17,7 +16,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: openai-agentkit-tutorial-part2
     score: 0.93
     reason:
@@ -26,7 +25,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，在自动化、AI/ML、架构主题中相互关联。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: google-analytics-mcp-automation
     score: 0.92
     reason:
@@ -35,7 +34,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，在自动化、AI/ML、架构主题中相互关联。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
   - slug: llm-blog-automation
     score: 0.92
     reason:
@@ -44,7 +43,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.92
     reason:
@@ -53,7 +52,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，在自动化、AI/ML、架构主题中相互关联。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
 ---
 
 ## 概述

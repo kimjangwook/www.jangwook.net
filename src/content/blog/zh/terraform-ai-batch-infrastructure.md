@@ -1,6 +1,6 @@
 ---
-title: '使用Terraform构建无服务器AI批处理系统'
-description: '利用API Gateway、Lambda、ECS Fargate构建高性价比AI批处理基础设施的实战指南'
+title: 使用Terraform构建无服务器AI批处理系统
+description: 利用API Gateway、Lambda、ECS Fargate构建高性价比AI批处理基础设施的实战指南
 pubDate: '2025-11-26'
 heroImage: ../../../assets/blog/terraform-ai-batch-infrastructure-hero.jpg
 tags:
@@ -16,6 +16,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: effiflow-automation-analysis-part3
     score: 0.94
     reason:
@@ -24,6 +25,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: jules-autocoding
     score: 0.93
     reason:
@@ -32,6 +34,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: notion-backlog-slack-claude-project-management
     score: 0.93
     reason:
@@ -40,6 +43,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: e2e-page-test-automation-claude-code
     score: 0.92
     reason:
@@ -48,6 +52,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

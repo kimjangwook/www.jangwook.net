@@ -1,6 +1,6 @@
 ---
-title: 'jangwook.net 博客启动分析报告：数据驱动技术博客的开端'
-description: '博客启动初期 GA4 数据分析、实战 MCP 查询示例、以及 3 个月增长战略——透明分享技术博客旅程的起点'
+title: jangwook.net 博客启动分析报告：数据驱动技术博客的开端
+description: 博客启动初期 GA4 数据分析、实战 MCP 查询示例、以及 3 个月增长战略——透明分享技术博客旅程的起点
 pubDate: '2025-10-06'
 heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
 tags:
@@ -52,7 +52,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题连接。
+      zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题进行连接。
 ---
 
 # jangwook.net 博客启动分析报告

@@ -23,6 +23,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, web development, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps、架构主题进行连接。
   - slug: self-healing-ai-systems
     score: 0.75
     reason:
@@ -31,6 +32,7 @@ relatedPosts:
       en: >-
         Provides complementary content from automation, DevOps, architecture
         perspective.
+      zh: 从自动化、DevOps、架构角度提供补充内容。
   - slug: ai-agent-collaboration-patterns
     score: 0.71
     reason:
@@ -39,6 +41,7 @@ relatedPosts:
       en: >-
         Provides complementary content from automation, architecture
         perspective.
+      zh: 从自动化、架构角度提供补充内容。
 ---
 
 ## The Static Site Dilemma: Scheduled Publishing

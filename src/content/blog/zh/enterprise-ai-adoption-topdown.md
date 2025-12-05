@@ -1,12 +1,56 @@
 ---
-title: '生成式AI导入，为何需要自上而下：42%失败率背后的真正原因'
-description: '自下而上AI导入的局限与组织变革管理战略。通过业务文档化和标准化实现系统化方法'
+title: 生成式AI导入，为何需要自上而下：42%失败率背后的真正原因
+description: 自下而上AI导入的局限与组织变革管理战略。通过业务文档化和标准化实现系统化方法
 pubDate: '2025-12-01'
 heroImage: ../../../assets/blog/enterprise-ai-adoption-topdown-hero.jpg
 tags:
   - ai-adoption
   - enterprise
   - change-management
+relatedPosts:
+  - slug: claude-skills-implementation-guide
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: slack-mcp-team-communication
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: data-driven-pm-framework
+    score: 0.94
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: deep-agents-architecture-optimization
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
+  - slug: claude-code-cli-migration-guide
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## AI导入热潮下的冷酷现实

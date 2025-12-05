@@ -18,6 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: adding-chinese-support
     score: 0.94
     reason:
@@ -26,6 +27,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
     score: 0.94
     reason:
@@ -34,6 +36,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: adsense-rejection-ai-analysis-improvement
     score: 0.93
     reason:
@@ -42,6 +45,7 @@ relatedPosts:
       en: >-
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
   - slug: vertex-ai-search-site-implementation
     score: 0.93
     reason:
@@ -50,6 +54,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 시작: AI 효율화 도구라는 꿈

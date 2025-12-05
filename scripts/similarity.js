@@ -102,6 +102,13 @@ export function generateReason(source, candidate, score, type) {
       'ai-ml': 'AI/ML',
       'devops': 'DevOps',
       'architecture': 'architecture'
+    },
+    zh: {
+      'automation': '自动化',
+      'web-development': 'Web开发',
+      'ai-ml': 'AI/ML',
+      'devops': 'DevOps',
+      'architecture': '架构'
     }
   };
 
@@ -116,22 +123,26 @@ export function generateReason(source, candidate, score, type) {
     'next-step': {
       ko: (cats) => `다음 단계 학습으로 적합하며, ${cats.map(c => categoryLabels.ko[c]).join(', ')} 주제에서 연결됩니다.`,
       ja: (cats) => `次のステップの学習に適しており、${cats.map(c => categoryLabels.ja[c]).join('、')}のトピックで繋がります。`,
-      en: (cats) => `Suitable as a next-step learning resource, connecting through ${cats.map(c => categoryLabels.en[c]).join(', ')} topics.`
+      en: (cats) => `Suitable as a next-step learning resource, connecting through ${cats.map(c => categoryLabels.en[c]).join(', ')} topics.`,
+      zh: (cats) => `适合作为下一步学习资源，通过${cats.map(c => categoryLabels.zh[c]).join('、')}主题进行连接。`
     },
     'prerequisite': {
       ko: (cats) => `선행 학습 자료로 유용하며, ${cats.map(c => categoryLabels.ko[c]).join(', ')} 기초를 다룹니다.`,
       ja: (cats) => `事前学習資料として有用であり、${cats.map(c => categoryLabels.ja[c]).join('、')}の基礎を扱います。`,
-      en: (cats) => `Useful as prerequisite knowledge, covering ${cats.map(c => categoryLabels.en[c]).join(', ')} fundamentals.`
+      en: (cats) => `Useful as prerequisite knowledge, covering ${cats.map(c => categoryLabels.en[c]).join(', ')} fundamentals.`,
+      zh: (cats) => `作为先修知识很有用，涵盖${cats.map(c => categoryLabels.zh[c]).join('、')}基础。`
     },
     'similar-topic': {
       ko: (cats) => `${cats.map(c => categoryLabels.ko[c]).join(', ')} 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.`,
       ja: (cats) => `${cats.map(c => categoryLabels.ja[c]).join('、')}分野で類似したトピックを扱い、同程度の難易度です。`,
-      en: (cats) => `Covers similar topics in ${cats.map(c => categoryLabels.en[c]).join(', ')} with comparable difficulty.`
+      en: (cats) => `Covers similar topics in ${cats.map(c => categoryLabels.en[c]).join(', ')} with comparable difficulty.`,
+      zh: (cats) => `在${cats.map(c => categoryLabels.zh[c]).join('、')}领域涵盖类似主题，难度相当。`
     },
     'complementary': {
       ko: (cats) => `${cats.map(c => categoryLabels.ko[c]).join(', ')} 관점에서 보완적인 내용을 제공합니다.`,
       ja: (cats) => `${cats.map(c => categoryLabels.ja[c]).join('、')}の観点から補完的な内容を提供します。`,
-      en: (cats) => `Provides complementary content from ${cats.map(c => categoryLabels.en[c]).join(', ')} perspective.`
+      en: (cats) => `Provides complementary content from ${cats.map(c => categoryLabels.en[c]).join(', ')} perspective.`,
+      zh: (cats) => `从${cats.map(c => categoryLabels.zh[c]).join('、')}角度提供补充内容。`
     }
   };
 
@@ -141,6 +152,7 @@ export function generateReason(source, candidate, score, type) {
   return {
     ko: template.ko(cats),
     ja: template.ja(cats),
-    en: template.en(cats)
+    en: template.en(cats),
+    zh: template.zh(cats)
   };
 }

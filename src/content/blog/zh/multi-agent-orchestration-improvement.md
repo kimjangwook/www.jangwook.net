@@ -1,45 +1,59 @@
 ---
-title: '使用多代理编排改进博客自动化系统'
-description: '使用Claude Code的多代理编排模式分析48个文件并修复61个问题的大规模系统改进完整指南'
+title: 使用多代理编排改进博客自动化系统
+description: 使用Claude Code的多代理编排模式分析48个文件并修复61个问题的大规模系统改进完整指南
 pubDate: '2025-12-04'
-heroImage: '../../../assets/blog/multi-agent-orchestration-improvement-hero.jpg'
-tags: ['claude-code', 'multi-agent', 'automation', 'orchestration']
+heroImage: ../../../assets/blog/multi-agent-orchestration-improvement-hero.jpg
+tags:
+  - claude-code
+  - multi-agent
+  - automation
+  - orchestration
 relatedPosts:
   - slug: mcp-code-execution-practical-implementation
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: prompt-engineering-agent-improvements
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: effiflow-automation-analysis-part1
     score: 0.95
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: deep-agents-architecture-optimization
     score: 0.94
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation, AI/ML, architecture with comparable difficulty.
-      zh: 涵盖自动化、AI/ML、架构方面的相似主题，难度相当。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

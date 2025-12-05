@@ -17,7 +17,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
-      zh: 涵盖自动化、Web 开发、DevOps、架构领域的相似主题,难度相当。
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: metadata-based-recommendation-optimization
     score: 0.9
     reason:
@@ -26,7 +26,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, web development, DevOps, architecture topics.
-      zh: 适合作为下一步学习资源,通过自动化、Web 开发、DevOps、架构主题连接。
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps、架构主题进行连接。
   - slug: specification-driven-development
     score: 0.88
     reason:
@@ -35,7 +35,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, architecture topics.
-      zh: 适合作为下一步学习资源,通过自动化、架构主题连接。
+      zh: 适合作为下一步学习资源，通过自动化、架构主题进行连接。
   - slug: ai-content-recommendation-system
     score: 0.87
     reason:
@@ -44,7 +44,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, web development, architecture topics.
-      zh: 适合作为下一步学习资源,通过自动化、Web 开发、架构主题连接。
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、架构主题进行连接。
   - slug: self-healing-ai-systems
     score: 0.78
     reason:

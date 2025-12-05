@@ -1,31 +1,59 @@
 ---
-title: '使用Deep Agents范式优化AI代理系统'
-description: '分析LangChain和Philipp Schmid的Deep Agents概念，优化代理架构的实践指南'
+title: 使用Deep Agents范式优化AI代理系统
+description: 分析LangChain和Philipp Schmid的Deep Agents概念，优化代理架构的实践指南
 pubDate: '2025-11-22'
-heroImage: '../../../assets/blog/deep-agents-architecture-optimization-hero.jpg'
-tags: ['claude-code', 'ai-agents', 'automation', 'architecture']
+heroImage: ../../../assets/blog/deep-agents-architecture-optimization-hero.jpg
+tags:
+  - claude-code
+  - ai-agents
+  - automation
+  - architecture
 relatedPosts:
-  - slug: 'ai-agent-collaboration-patterns'
-    score: 0.92
+  - slug: claude-code-verbalized-sampling
+    score: 0.95
     reason:
-      ko: '멀티에이전트 협업 패턴과 오케스트레이션 전략을 다루는 직접적으로 관련된 글'
-      ja: 'マルチエージェント協調パターンとオーケストレーション戦略を扱う直接関連する記事'
-      en: 'Directly related article covering multi-agent collaboration patterns and orchestration strategies'
-      zh: '直接相关的文章，涵盖多代理协作模式和编排策略'
-  - slug: 'langgraph-multi-agent'
-    score: 0.88
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: prompt-engineering-agent-improvements
+    score: 0.95
     reason:
-      ko: 'LangGraph를 활용한 멀티에이전트 시스템 구현으로 계층적 위임 개념과 연결'
-      ja: 'LangGraphを活用したマルチエージェントシステム実装で階層的委譲の概念と連携'
-      en: 'Multi-agent system implementation using LangGraph, connecting to hierarchical delegation concepts'
-      zh: '使用LangGraph实现多代理系统，与层级委托概念相关联'
-  - slug: 'self-healing-ai-systems'
-    score: 0.85
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.95
     reason:
-      ko: '자가 치유 시스템과 복구 프로토콜 구현으로 Deep Agents의 회복력 원칙과 관련'
-      ja: '自己修復システムと復旧プロトコル実装でDeep Agentsの回復力原則と関連'
-      en: 'Self-healing systems and recovery protocol implementation related to Deep Agents resilience principles'
-      zh: '自愈系统和恢复协议实现，与Deep Agents的弹性原则相关'
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: mcp-code-execution-practical-implementation
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: langgraph-multi-agent
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 从Shallow到Deep：代理架构的演进

@@ -1,5 +1,5 @@
 ---
-title: 'Claude Code 最佳实践：开发生产力革命指南'
+title: Claude Code 最佳实践：开发生产力革命指南
 description: 深入解析 Anthropic 官方最佳实践，从 CLAUDE.md 配置到子代理系统构建，通过实际案例展示如何最大化 AI 驱动的编程效率。
 pubDate: '2025-10-07'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
@@ -16,14 +16,14 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML topics.
-      zh: 适合作为下一步学习资源，在自动化、AI/ML主题方面建立联系。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
   - slug: ai-presentation-automation
     score: 0.92
     reason:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖相似主题，难度相当。
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: claude-code-web-automation
     score: 0.9
     reason:
@@ -32,7 +32,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
-      zh: 适合作为下一步学习资源，在自动化主题方面建立联系。
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
   - slug: chrome-devtools-mcp-performance
     score: 0.89
     reason:
@@ -41,7 +41,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
-      zh: 适合作为下一步学习资源，在自动化主题方面建立联系。
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
   - slug: ai-content-recommendation-system
     score: 0.84
     reason:

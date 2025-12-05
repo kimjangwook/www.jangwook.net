@@ -1,7 +1,6 @@
 ---
-title: '推荐系统V3：Frontmatter嵌入式架构实现100%构建性能提升'
-description: >-
-  移除臃肿的recommendations.json文件，将推荐数据直接嵌入Frontmatter，完全消除运行时文件I/O，分享V3系统的构建过程与成果。
+title: 推荐系统V3：Frontmatter嵌入式架构实现100%构建性能提升
+description: 移除臃肿的recommendations.json文件，将推荐数据直接嵌入Frontmatter，完全消除运行时文件I/O，分享V3系统的构建过程与成果。
 pubDate: '2025-11-02'
 heroImage: ../../../assets/blog/recommendation-system-v3-hero.jpg
 tags:
@@ -18,8 +17,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: >-
-        涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: metadata-based-recommendation-optimization
     score: 0.94
     reason:
@@ -28,8 +26,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
-      zh: >-
-        涵盖自动化、Web开发、AI/ML、DevOps、架构等相似主题，难度相当。
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: llm-page-migration-standardization
     score: 0.94
     reason:
@@ -38,8 +35,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
-      zh: >-
-        涵盖自动化、Web开发、AI/ML、DevOps、架构等相似主题，难度相当。
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.93
     reason:
@@ -48,8 +44,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: >-
-        涵盖自动化、AI/ML、DevOps、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-parallel-testing
     score: 0.93
     reason:
@@ -58,8 +53,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
-      zh: >-
-        涵盖自动化、Web开发、AI/ML、DevOps、架构等相似主题，难度相当。
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 引言

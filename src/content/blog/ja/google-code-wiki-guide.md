@@ -14,6 +14,7 @@ relatedPosts:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: mcp-servers-toolkit-introduction
     score: 0.93
     reason:
@@ -22,12 +23,14 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: openai-agentkit-tutorial-part1
     score: 0.93
     reason:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: claude-code-cli-migration-guide
     score: 0.92
     reason:
@@ -36,6 +39,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
   - slug: adding-chinese-support
     score: 0.92
     reason:
@@ -44,6 +48,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, web development, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、AI/ML、DevOps、架构主题进行连接。
 ---
 
 ## はじめに

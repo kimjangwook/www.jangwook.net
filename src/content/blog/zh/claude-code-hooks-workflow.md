@@ -1,6 +1,6 @@
 ---
 title: 使用 Claude Code Hook 构建自动化代码审查系统
-description: '从基于 Hook 的编码规则设置到 CI/CD 集成，可直接应用于实际工作的自动化审查流程完整指南'
+description: 从基于 Hook 的编码规则设置到 CI/CD 集成，可直接应用于实际工作的自动化审查流程完整指南
 pubDate: '2025-10-29'
 heroImage: ../../../assets/blog/claude-code-hooks-workflow-hero.jpg
 tags:
@@ -13,48 +13,48 @@ relatedPosts:
   - slug: bigquery-mcp-prefix-filtering
     score: 0.94
     reason:
-      ko: '自动化, AI/ML, DevOps, 架构领域涵盖类似主题，难度相当。'
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: '在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。'
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.92
     reason:
-      ko: '自动化, AI/ML, DevOps, 架构领域涵盖类似主题，难度相当。'
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: '在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。'
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: self-healing-ai-systems
     score: 0.92
     reason:
-      ko: '下一步学习适合，与自动化、AI/ML、DevOps、架构主题相连。'
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
       ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, DevOps, architecture topics.
-      zh: '适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题相连。'
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
   - slug: openai-agentkit-tutorial-part2
     score: 0.92
     reason:
-      ko: '自动化, AI/ML, DevOps, 架构领域涵盖类似主题，难度相当。'
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: '在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。'
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.92
     reason:
-      ko: '自动化, AI/ML, DevOps, 架构领域涵盖类似主题，难度相当。'
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: '在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。'
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

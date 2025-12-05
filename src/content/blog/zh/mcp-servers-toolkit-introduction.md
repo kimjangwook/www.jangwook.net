@@ -1,9 +1,54 @@
 ---
-title: '我使用的MCP服务器工具包完整指南'
-description: '通过7个MCP服务器最大化Claude Code开发生产力。分享Serena、Context7、Sequential Thinking等实战经验'
+title: 我使用的MCP服务器工具包完整指南
+description: 通过7个MCP服务器最大化Claude Code开发生产力。分享Serena、Context7、Sequential Thinking等实战经验
 pubDate: '2025-11-23'
 heroImage: ../../../assets/blog/mcp-servers-toolkit-introduction-hero.jpg
-tags: ['mcp', 'claude-code', 'productivity']
+tags:
+  - mcp
+  - claude-code
+  - productivity
+relatedPosts:
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: claude-code-cli-migration-guide
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
+  - slug: jules-autocoding
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
+  - slug: n8n-rss-automation
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
+  - slug: claude-code-best-practices
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

@@ -1,6 +1,6 @@
 ---
-title: 'Claude Code CLI迁移指南：Copilot、Gemini、Codex对比'
-description: '从Claude Code迁移到GitHub Copilot CLI、Gemini CLI或Codex CLI的方法，以及根据不同情况选择最佳工具的指南'
+title: Claude Code CLI迁移指南：Copilot、Gemini、Codex对比
+description: 从Claude Code迁移到GitHub Copilot CLI、Gemini CLI或Codex CLI的方法，以及根据不同情况选择最佳工具的指南
 pubDate: '2025-11-21'
 heroImage: ../../../assets/blog/claude-code-cli-migration-guide-hero.jpg
 tags:
@@ -9,36 +9,51 @@ tags:
   - migration
   - ai-tools
 relatedPosts:
-  - slug: claude-code-hooks-workflow
-    score: 0.85
+  - slug: claude-skills-implementation-guide
+    score: 0.94
     reason:
-      ko: 'Claude Code의 고급 워크플로우 자동화를 다루며, 마이그레이션 전 기존 시스템의 기능을 완전히 이해하는 데 도움이 됩니다.'
-      ja: Claude Codeの高度なワークフロー自動化を扱い、移行前に既存システムの機能を完全に理解するのに役立ちます。
-      en: 'Covers advanced Claude Code workflow automation, helping you fully understand existing system capabilities before migration.'
-  - slug: langgraph-multi-agent
-    score: 0.82
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: jules-autocoding
+    score: 0.94
     reason:
-      ko: '멀티 에이전트 아키텍처를 다루며, 각 CLI 도구의 에이전트 시스템 비교 시 참고할 수 있습니다.'
-      ja: マルチエージェントアーキテクチャを扱い、各CLIツールのエージェントシステム比較時に参考になります。
-      en: 'Covers multi-agent architecture, useful reference when comparing agent systems across different CLI tools.'
-  - slug: claude-code-best-practices
-    score: 0.78
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: llm-pm-workflow-automation
+    score: 0.94
     reason:
-      ko: 'Claude Code 활용 모범 사례로, 마이그레이션 시 보존해야 할 워크플로우 패턴을 파악하는 데 유용합니다.'
-      ja: Claude Code活用のベストプラクティスで、移行時に保持すべきワークフローパターンの把握に有用です。
-      en: 'Claude Code best practices, useful for identifying workflow patterns to preserve during migration.'
-  - slug: prompt-engineering-agent-improvements
-    score: 0.76
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: notion-backlog-slack-claude-project-management
+    score: 0.94
     reason:
-      ko: '에이전트 프롬프트 최적화 기법을 다루며, 새로운 CLI 도구에서 프롬프트를 재구성할 때 적용 가능합니다.'
-      ja: エージェントプロンプト最適化技法を扱い、新しいCLIツールでプロンプトを再構成する際に適用可能です。
-      en: 'Covers agent prompt optimization techniques applicable when restructuring prompts for new CLI tools.'
-  - slug: mcp-code-execution-practical-implementation
-    score: 0.74
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: slack-mcp-team-communication
+    score: 0.94
     reason:
-      ko: 'MCP 실전 적용 사례로, 마이그레이션 시 MCP 설정 이전 방법을 이해하는 데 도움이 됩니다.'
-      ja: MCP実践適用事例で、移行時のMCP設定移行方法の理解に役立ちます。
-      en: 'Practical MCP implementation guide, helpful for understanding MCP configuration migration approaches.'
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

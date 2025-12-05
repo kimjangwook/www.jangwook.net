@@ -1,6 +1,8 @@
 ---
-title: 'Playwright + AI：编写自动化E2E测试'
-description: '利用Playwright与AI Codegen实现E2E测试自动化。基于TypeScript实战、GitHub Actions集成、视觉回归测试，可立即应用于实际工作的完整指南'
+title: Playwright + AI：编写自动化E2E测试
+description: >-
+  利用Playwright与AI Codegen实现E2E测试自动化。基于TypeScript实战、GitHub
+  Actions集成、视觉回归测试，可立即应用于实际工作的完整指南
 pubDate: '2025-10-25'
 heroImage: ../../../assets/blog/playwright-ai-testing-hero.jpg
 tags:
@@ -18,7 +20,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps with
         comparable difficulty.
-      zh: 涵盖自动化、Web开发、DevOps领域的相似主题，难度相当。
+      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
   - slug: chrome-devtools-mcp-performance
     score: 0.95
     reason:
@@ -27,7 +29,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
-      zh: 涵盖自动化、Web开发、DevOps、架构领域的相似主题，难度相当。
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: blog-launch-analysis-report
     score: 0.93
     reason:
@@ -36,7 +38,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
-      zh: 涵盖自动化、Web开发、DevOps、架构领域的相似主题，难度相当。
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
     score: 0.93
     reason:
@@ -45,7 +47,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
-      zh: 涵盖自动化、Web开发、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.93
     reason:
@@ -54,7 +56,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构领域的相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

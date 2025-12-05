@@ -16,12 +16,14 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
   - slug: openai-agentkit-tutorial-part1
     score: 0.9
     reason:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: google-gemini-file-search-rag-tutorial
     score: 0.89
     reason:
@@ -30,12 +32,14 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
   - slug: ai-presentation-automation
     score: 0.88
     reason:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: data-driven-pm-framework
     score: 0.88
     reason:
@@ -44,6 +48,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
 ## はじめに

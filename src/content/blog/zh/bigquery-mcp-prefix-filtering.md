@@ -1,5 +1,5 @@
 ---
-title: 'BigQuery MCP 服务器：实现数据集前缀过滤'
+title: BigQuery MCP 服务器：实现数据集前缀过滤
 description: 使用 TypeScript 构建 BigQuery MCP 服务器，通过数据集前缀过滤控制 AI 代理的数据访问权限。
 pubDate: '2025-10-28'
 heroImage: ../../../assets/blog/bigquery-mcp-prefix-filtering-hero.jpg
@@ -18,7 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖相似主题，难度相当。
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: openai-agentkit-tutorial-part2
     score: 0.94
     reason:
@@ -27,7 +27,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖相似主题，难度相当。
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.93
     reason:
@@ -36,7 +36,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.92
     reason:
@@ -45,7 +45,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖相似主题，难度相当。
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-collaboration-patterns
     score: 0.92
     reason:
@@ -54,7 +54,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题相关联。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
 ---
 
 ## 概述

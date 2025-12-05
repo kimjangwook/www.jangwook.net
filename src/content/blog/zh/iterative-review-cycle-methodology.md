@@ -1,5 +1,5 @@
 ---
-title: '迭代审查循环方法论：在复杂开发中通过多智能体编排最小化错误'
+title: 迭代审查循环方法论：在复杂开发中通过多智能体编排最小化错误
 description: 通过以编排智能体为核心的迭代审查循环，系统性地介绍如何将复杂开发工作的错误率降低40-90%的方法论。
 pubDate: '2025-12-06'
 heroImage: ../../../assets/blog/iterative-review-cycle-methodology-hero.jpg

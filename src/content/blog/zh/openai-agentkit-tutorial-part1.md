@@ -1,6 +1,6 @@
 ---
-title: 'OpenAI AgentKit完全指南第1部分：核心概念与入门'
-description: '从2025年10月发布的OpenAI AgentKit核心概念到实战教程，全面掌握AI智能体开发'
+title: OpenAI AgentKit完全指南第1部分：核心概念与入门
+description: 从2025年10月发布的OpenAI AgentKit核心概念到实战教程，全面掌握AI智能体开发
 pubDate: '2025-10-20'
 heroImage: ../../../assets/blog/openai-agentkit-part1-hero.jpg
 tags:
@@ -14,14 +14,14 @@ relatedPosts:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: '涵盖自动化、AI/ML领域的相似主题，难度相当。'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: ai-presentation-automation
     score: 0.93
     reason:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: '涵盖自动化、AI/ML领域的相似主题，难度相当。'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
     score: 0.91
     reason:
@@ -30,7 +30,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML topics.
-      zh: '适合作为下一步学习资源，通过自动化、AI/ML主题进行关联。'
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
   - slug: ai-agent-notion-mcp-automation
     score: 0.91
     reason:
@@ -39,7 +39,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML topics.
-      zh: '适合作为下一步学习资源，通过自动化、AI/ML主题进行关联。'
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
   - slug: ai-agent-persona-analysis
     score: 0.9
     reason:
@@ -48,7 +48,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
-      zh: '适合作为下一步学习资源，通过AI/ML主题进行关联。'
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
 > **系列：掌握OpenAI AgentKit** (1/2)

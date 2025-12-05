@@ -18,6 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: n8n-rss-automation
     score: 0.94
     reason:
@@ -26,6 +27,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: blog-launch-analysis-report
     score: 0.94
     reason:
@@ -34,6 +36,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-web-automation
     score: 0.94
     reason:
@@ -42,6 +45,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps with
         comparable difficulty.
+      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
   - slug: chrome-devtools-mcp-performance
     score: 0.94
     reason:
@@ -50,6 +54,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 왜 페이지 테스트 자동화가 필요한가?

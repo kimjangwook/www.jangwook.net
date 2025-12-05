@@ -8,34 +8,7 @@ tags:
   - ai-ml
   - performance
   - architecture
-relatedPosts:
-  - slug: ai-content-recommendation-system
-    score: 0.93
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: llm-blog-automation
-    score: 0.88
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-best-practices
-    score: 0.85
-    reason:
-      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML 주제에서 연결됩니다.'
-      ja: 事前学習資料として有用であり、自動化、AI/MLのトピックで繋がります。
-      en: >-
-        Useful as prerequisite knowledge, connecting through automation, AI/ML
-        topics.
-      zh: 作为前置学习资料有用，通过自动化、AI/ML主题相连接。
+relatedPosts: []
 ---
 
 ## 引言：成本如滚雪球

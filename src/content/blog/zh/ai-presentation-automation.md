@@ -1,6 +1,6 @@
 ---
-title: '利用AI实现半年度报告自动化：从60小时缩短至10小时'
-description: '分享如何利用AI代理系统和自动化工具，将半年度报告的60小时工作量缩短至10小时的实战流程。'
+title: 利用AI实现半年度报告自动化：从60小时缩短至10小时
+description: 分享如何利用AI代理系统和自动化工具，将半年度报告的60小时工作量缩短至10小时的实战流程。
 pubDate: '2025-10-09'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
 tags:
@@ -16,7 +16,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
   - slug: chrome-devtools-mcp-performance
     score: 0.82
     reason:
@@ -25,7 +25,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
-      zh: 适合作为下一步学习资源，通过自动化主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
   - slug: ai-content-recommendation-system
     score: 0.8
     reason:
@@ -48,7 +48,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
-      zh: 适合作为下一步学习资源，通过自动化主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
 ---
 
 ## 引言：60小时的痛苦

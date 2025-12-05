@@ -1,7 +1,6 @@
 ---
-title: '自我修复AI系统：构建无需人工干预、自动修复Bug的智能代理'
-description: >-
-  GitHub、Google、Netflix实战部署的自我修复系统完全指南。从错误检测到自动补丁，使用LangGraph完整实现
+title: 自我修复AI系统：构建无需人工干预、自动修复Bug的智能代理
+description: GitHub、Google、Netflix实战部署的自我修复系统完全指南。从错误检测到自动补丁，使用LangGraph完整实现
 pubDate: '2025-10-17'
 heroImage: ../../../assets/blog/self-healing-ai-systems-hero.jpg
 tags:
@@ -19,7 +18,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, AI/ML, DevOps,
         architecture fundamentals.
-      zh: 作为先修知识非常有用，涵盖自动化、AI/ML、DevOps、架构基础知识。
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、DevOps、架构基础。
 ---
 
 ## 自我修复的时代

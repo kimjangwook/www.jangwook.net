@@ -1,6 +1,6 @@
 ---
-title: 'OpenAI AgentKit完全指南第2部：实战应用与高级模式'
-description: '从企业级多智能体系统设计到生产环境部署，AgentKit实战掌握指南'
+title: OpenAI AgentKit完全指南第2部：实战应用与高级模式
+description: 从企业级多智能体系统设计到生产环境部署，AgentKit实战掌握指南
 pubDate: '2025-10-21'
 heroImage: ../../../assets/blog/openai-agentkit-part2-hero.jpg
 tags:
@@ -16,7 +16,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: 涵盖自动化、AI/ML、DevOps、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: ai-content-recommendation-system
     score: 0.94
     reason:
@@ -25,7 +25,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.94
     reason:
@@ -34,7 +34,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题,难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: metadata-based-recommendation-optimization
     score: 0.93
     reason:
@@ -43,7 +43,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: 涵盖自动化、AI/ML、DevOps、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-collaboration-patterns
     score: 0.92
     reason:
@@ -52,7 +52,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构等主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
 ---
 
 > <strong>系列：掌握OpenAI AgentKit</strong> (2/2)

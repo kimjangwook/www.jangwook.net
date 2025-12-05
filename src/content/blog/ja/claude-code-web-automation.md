@@ -18,6 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps with
         comparable difficulty.
+      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
   - slug: astro-scheduled-publishing
     score: 0.93
     reason:
@@ -26,12 +27,14 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps with
         comparable difficulty.
+      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.92
     reason:
       ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
   - slug: metadata-based-recommendation-optimization
     score: 0.89
     reason:
@@ -40,6 +43,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, web development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
   - slug: specification-driven-development
     score: 0.88
     reason:
@@ -48,6 +52,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
 ---
 
 ## 概要

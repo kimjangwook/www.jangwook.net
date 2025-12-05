@@ -1,7 +1,8 @@
 ---
 title: '独立开发者的AI SaaS构建之旅:3天完成生产环境上线'
 description: >-
-  使用SvelteKit、Supabase和Google Gemini API构建的B2B AI OCR服务的实战开发记录。技术选型理由、实现过程、业务战略,独立开发者的真实经验分享。
+  使用SvelteKit、Supabase和Google Gemini API构建的B2B AI
+  OCR服务的实战开发记录。技术选型理由、实现过程、业务战略,独立开发者的真实经验分享。
 pubDate: '2025-11-27'
 heroImage: ../../../assets/blog/individual-developer-ai-saas-journey-hero.png
 tags:
@@ -18,7 +19,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
-      zh: 涵盖自动化、Web开发、AI/ML、DevOps、架构等领域的相似主题,难度相当。
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-parallel-testing
     score: 0.95
     reason:
@@ -27,7 +28,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
-      zh: 涵盖自动化、Web开发、AI/ML、DevOps、架构等领域的相似主题,难度相当。
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.94
     reason:
@@ -36,7 +37,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
-      zh: 涵盖自动化、AI/ML、DevOps、架构等领域的相似主题,难度相当。
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: ai-content-recommendation-system
     score: 0.94
     reason:
@@ -45,7 +46,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
-      zh: 涵盖自动化、Web开发、AI/ML、架构等领域的相似主题,难度相当。
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.94
     reason:
@@ -54,7 +55,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等领域的相似主题,难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

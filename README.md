@@ -43,13 +43,28 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-12-07
+**최신 포스트 날짜**: 2025-12-12
 
-**총 포스트 수**: 63개 (한국어 기준)
+**총 포스트 수**: 68개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Agent Effi Flow의 전략적 피벗: 일본 인바운드 시장을 위한 おもてなしBot 출시** (2025-12-07)
+1. **DeNA LLM 스터디 Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션** (2025-12-12)
+
+   - DeNA LLM 스터디 시리즈 최종회. n8n 워크플로우, 에이전트 설계 원칙, 멀티 에이전트 오케스트레이션 패턴, 메모리 관리 전략을 실무 관점에서 정리
+   - **핵심 내용**: n8n ReAct Agent 구현 (노코드/로우코드 자동화), 2025 트렌드 (오케스트레이션 > 완전 자율), 에이전트 4대 컴포넌트 (Core/Memory/Planning/Tool Use), 함수 호출 신뢰성 문제 (100% 신뢰 불가), Self-Healing 패턴 (자동 오류 복구), 6가지 오케스트레이션 패턴 (Sequential/Parallel/Supervisor/Hierarchical/Network/Custom), LangGraph vs AutoGen vs CrewAI 비교 (그래프 vs 대화 vs 역할), 패턴별 비용 차이 ($0.15〜$2.50), MemGPT 계층적 메모리 (L1/L2/L3), Push vs Pull 하이브리드, A-MEM Zettelkasten 방법론 (동적 지식 그래프), DeNA NOC Alert Agent 실무 사례 (92% 오탐 필터링, 15분→3분 단축), 비용 최적화 4기법 (시맨틱 캐싱 90%, 배칭 50%, SLM 14배, 양자화), 종합 최적화 86% 비용 절감 ($0.014→$0.00196), 실무 베스트 프랙티스 (명시적 오케스트레이션, 메모리 기반 지능, 패턴 선택 가이드, Self-Healing 필수)
+
+2. **DeNA LLM 스터디 Part 2: 구조화 출력과 복수 LLM 조합 패턴** (2025-12-09)
+
+   - DeNA LLM 스터디 자료 Part 2를 기반으로 JSON Schema, Pydantic을 활용한 구조화 출력 기법과 Sequential, Parallel, Cascade, Router, Iterative 등 실무에서 활용 가능한 Multi-LLM 파이프라인 설계 패턴을 심층 분석
+   - **핵심 내용**: 구조화 출력 필요성 (파싱 가능 데이터, 타입 안전성, 필수 필드 보장), JSON Schema 기반 구조화 (OpenAI Structured Outputs API 2024.08), Pydantic 타입 안전 구조화 (Instructor 라이브러리), Constrained Decoding 원리 (스키마 위반 토큰 실시간 차단, 100% 준수), 프로바이더별 구현 (OpenAI Native/Anthropic Tool Use/Google Gemini/Local), 실습 B (B1: 이항 분류, B2: 복수 항목 추출, B3: 네스트 구조), Sequential Pattern (순차 실행, 명확한 분리), Parallel Pattern (병렬 실행, 66% 시간 단축), Cascade Pattern (작은 모델 우선, 78% 비용 절감), Router Pattern (조건부 라우팅, 최적 모델 선택), Iterative Pattern (반복 개선, 평가-수정 루프), 패턴 선택 가이드 (속도/비용/품질 우선), 하이브리드 패턴 (복수 패턴 조합), 실습 C (C1: 병렬 평가, C2: 평가-수정, C3: 반복 루프), 2025년 표준 (OpenAI Structured Outputs 정착), 비용 최적화 전략 (Cascade 70-80%, Caching 50-90%, Batch 20-30%), 품질 보장 체크리스트 (필수 필드, 타입 제약, 오류 처리, 모니터링), 오픈소스 도구 (Instructor/Outlines/LangChain/LlamaIndex), Part 3 예고 (RAG, 벡터 데이터베이스, Chunking, Reranking)
+
+2. **DeNA LLM 스터디 Part 3: 모델 학습 방법론 - 사전학습부터 RLHF/DPO까지** (2025-12-08)
+
+   - DeNA LLM 스터디 자료 Part 3를 기반으로 사전학습, 파인튜닝, 강화학습의 차이와 LoRA, QLoRA, DPO 등 최신 효율적 학습 기법을 심층 분석
+   - **핵심 내용**: 사전학습 vs 파인튜닝 vs 강화학습 레스토랑 비유, PEFT(Parameter-Efficient Fine-Tuning) 등장 배경, LoRA 저랭크 행렬 분해 원리, 하이퍼파라미터 설정 가이드 (r, lora_alpha, target_modules), LoRA 변형 (DoRA, GaLore, LoRA+), QLoRA 4bit 양자화 혁신 (NF4, Double Quantization, Paged Optimizers), 실무 워크플로우 및 메모리 비교 (7B 모델: 80GB→24GB), RLHF 3단계 복잡성 vs DPO 단순성, DPO 손실 함수 및 구현, DPO 변형 (ORPO, IPO, KTO), 태스크별 학습 방법 선택 가이드, 비용-성능 트레이드오프, 메모리 요구사항 비교, 소비자용 GPU 활용 가능성, LLM 파인튜닝의 민주화, 2025년 전망 (소형 모델, 온디바이스 파인튜닝, AutoML, 멀티모달 PEFT)
+
+2. **Agent Effi Flow의 전략적 피벗: 일본 인바운드 시장을 위한 おもてなしBot 출시** (2025-12-07)
 
    - AI 효율화 도구에서 일본 인바운드 관광 시장으로의 전략적 전환. 경쟁 치열한 레드오션을 피해 블루오션을 찾아가는 1인 개발자의 시장 분석과 おもてなしBot 서비스 구축 과정
    - **핵심 내용**: 일본 경리 자동화 시장 분석 (freee, Money Forward, 야요이), 레드오션 vs 블루오션 전략, 인바운드 3천만 시대의 기회, 3 Pillar 전략 (집객/접객/정산), おもてなしBot 주요 기능 (문화적 맥락 번역, 업종별 프리셋, 알레르기 검출), 프롬프트 아키텍처 설계, 언어별 문화 가이드라인, 오번역 방지 테이블, 심각도 기반 검증 시스템, 크레딧 시스템, 경리 OCR 전략적 일시 정지 및 Inbound Tax 리브랜딩 계획
@@ -660,6 +675,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-12-05 (AI 검색 시대를 위한 AEO 구현기 발행)
+**Last Updated**: 2025-12-09 (DeNA LLM 스터디 Part 2: 구조화 출력과 복수 LLM 조합 패턴 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

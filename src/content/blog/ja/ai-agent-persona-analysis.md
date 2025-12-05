@@ -16,18 +16,21 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML,
         architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、架构主题进行连接。
   - slug: llm-blog-automation
     score: 0.88
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.88
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: specification-driven-development
     score: 0.88
     reason:
@@ -36,12 +39,14 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through AI/ML,
         architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、架构主题进行连接。
   - slug: ai-presentation-automation
     score: 0.86
     reason:
       ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
       ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
       en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
+      zh: 作为先修知识很有用，涵盖AI/ML基础。
 ---
 
 # AIエージェントに性別とペルソナを付与すると何が起こるのか?

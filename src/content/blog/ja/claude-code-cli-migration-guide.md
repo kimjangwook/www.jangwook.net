@@ -17,6 +17,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: jules-autocoding
     score: 0.94
     reason:
@@ -25,6 +26,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: llm-pm-workflow-automation
     score: 0.94
     reason:
@@ -33,6 +35,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps with comparable
         difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: notion-backlog-slack-claude-project-management
     score: 0.94
     reason:
@@ -41,6 +44,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: slack-mcp-team-communication
     score: 0.94
     reason:
@@ -49,6 +53,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概要

@@ -23,6 +23,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-best-practices
     score: 0.92
     reason:
@@ -31,6 +32,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, AI/ML
         fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML基础。
   - slug: claude-code-web-automation
     score: 0.92
     reason:
@@ -39,6 +41,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development with comparable
         difficulty.
+      zh: 在自动化、Web开发领域涵盖类似主题，难度相当。
   - slug: ai-content-recommendation-system
     score: 0.92
     reason:
@@ -47,6 +50,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, web development, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、AI/ML、架构主题进行连接。
   - slug: chrome-devtools-mcp-performance
     score: 0.91
     reason:
@@ -55,6 +59,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, architecture with
         comparable difficulty.
+      zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
 ---
 
 # LLM と Claude Code を活用したブログ自動化

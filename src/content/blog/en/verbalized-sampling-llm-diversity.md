@@ -21,6 +21,7 @@ relatedPosts:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: ai-agent-persona-analysis
     score: 0.92
     reason:
@@ -29,24 +30,28 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering AI/ML, architecture
         fundamentals.
+      zh: 作为先修知识很有用，涵盖AI/ML、架构基础。
   - slug: llm-consumer-research-ssr
     score: 0.92
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: langgraph-multi-agent
     score: 0.91
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-content-recommendation-system
     score: 0.9
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 # Verbalized Sampling: A Training-Free Prompting Technique to Restore LLM Diversity

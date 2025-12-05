@@ -19,6 +19,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
   - slug: chrome-devtools-mcp-performance
     score: 0.82
     reason:
@@ -27,18 +28,21 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
   - slug: ai-content-recommendation-system
     score: 0.8
     reason:
       ko: '자동화, AI/ML 관점에서 보완적인 내용을 제공합니다.'
       ja: 自動化、AI/MLの観点から補完的な内容を提供します。
       en: 'Provides complementary content from automation, AI/ML perspective.'
+      zh: 从自动化、AI/ML角度提供补充内容。
   - slug: specification-driven-development
     score: 0.8
     reason:
       ko: '자동화, AI/ML 관점에서 보완적인 내용을 제공합니다.'
       ja: 自動化、AI/MLの観点から補完的な内容を提供します。
       en: 'Provides complementary content from automation, AI/ML perspective.'
+      zh: 从自动化、AI/ML角度提供补充内容。
   - slug: astro-scheduled-publishing
     score: 0.77
     reason:
@@ -47,6 +51,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
 ---
 
 ## Introduction: The 60-Hour Burden

@@ -20,6 +20,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps with
         comparable difficulty.
+      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
   - slug: chrome-devtools-mcp-performance
     score: 0.95
     reason:
@@ -28,6 +29,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: blog-launch-analysis-report
     score: 0.93
     reason:
@@ -36,6 +38,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
     score: 0.93
     reason:
@@ -44,6 +47,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.93
     reason:
@@ -52,6 +56,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概要

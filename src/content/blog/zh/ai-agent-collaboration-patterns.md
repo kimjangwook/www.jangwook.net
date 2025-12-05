@@ -1,5 +1,5 @@
 ---
-title: 'AI智能体协作模式：用5个专业Agent构建全栈应用'
+title: AI智能体协作模式：用5个专业Agent构建全栈应用
 description: 通过协调Architecture、Coding、Testing、Security、DevOps Agent构建生产级应用的实战指南
 pubDate: '2025-10-16'
 heroImage: ../../../assets/blog/ai-agent-collaboration-patterns-hero.jpg
@@ -18,7 +18,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 涵盖自动化、AI/ML、架构等相似主题，难度相当。
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: metadata-based-recommendation-optimization
     score: 0.89
     reason:
@@ -27,7 +27,7 @@ relatedPosts:
       en: >-
         Useful as prerequisite knowledge, covering automation, AI/ML,
         architecture fundamentals.
-      zh: 作为前置学习资料有用，涵盖自动化、AI/ML、架构基础知识。
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、架构基础。
 ---
 
 ## 多智能体时代的到来

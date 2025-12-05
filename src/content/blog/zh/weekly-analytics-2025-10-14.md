@@ -1,8 +1,6 @@
 ---
-title: '博客第一周分析报告：与31位热情早期采用者共同开启的旅程'
-description: >-
-  博客上线一周后的GA4数据分析、内容表现、改进效果 - 透明分享博客成长记录
-  (2025-10-07~10-14)
+title: 博客第一周分析报告：与31位热情早期采用者共同开启的旅程
+description: 博客上线一周后的GA4数据分析、内容表现、改进效果 - 透明分享博客成长记录 (2025-10-07~10-14)
 pubDate: '2025-10-14'
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
@@ -18,7 +16,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
-      zh: 适合作为下一步学习资源，通过自动化主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
   - slug: claude-code-web-automation
     score: 0.92
     reason:
@@ -27,7 +25,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
-      zh: 适合作为下一步学习资源，通过自动化主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
   - slug: chrome-devtools-mcp-performance
     score: 0.92
     reason:
@@ -36,14 +34,14 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
-      zh: 适合作为下一步学习资源，通过自动化主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
   - slug: claude-code-best-practices
     score: 0.91
     reason:
       ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
-      zh: 涵盖自动化领域的类似主题，难度相当。
+      zh: 在自动化领域涵盖类似主题，难度相当。
   - slug: astro-scheduled-publishing
     score: 0.91
     reason:
@@ -52,7 +50,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through automation
         topics.
-      zh: 适合作为下一步学习资源，通过自动化主题相连接。
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
 ---
 
 # 博客第一周分析报告：与31位热情早期采用者共同开启的旅程

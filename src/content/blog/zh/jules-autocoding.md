@@ -1,5 +1,5 @@
 ---
-title: '使用Jules实现自动编码：Google自主AI编程代理完全指南'
+title: 使用Jules实现自动编码：Google自主AI编程代理完全指南
 description: 了解如何使用Google创新的AI编程代理Jules自动解决GitHub问题并生成PR
 pubDate: '2025-10-27'
 heroImage: ../../../assets/blog/jules-autocoding-hero.jpg
@@ -36,7 +36,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
   - slug: llm-blog-automation
     score: 0.93
     reason:
@@ -54,7 +54,7 @@ relatedPosts:
       en: >-
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题连接。
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
 ---
 
 ## 概述

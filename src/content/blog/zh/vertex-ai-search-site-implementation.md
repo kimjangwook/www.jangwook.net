@@ -1,9 +1,61 @@
 ---
-title: '用Vertex AI Search实现站内搜索：Cloud Functions与自动化部署'
-description: '介绍如何利用Google Vertex AI Search在网站上实现AI搜索功能。从Cloud Functions API服务器构建到Shell脚本自动化部署，逐步详细讲解。'
+title: 用Vertex AI Search实现站内搜索：Cloud Functions与自动化部署
+description: >-
+  介绍如何利用Google Vertex AI Search在网站上实现AI搜索功能。从Cloud Functions
+  API服务器构建到Shell脚本自动化部署，逐步详细讲解。
 pubDate: '2025-11-30'
-heroImage: '../../../assets/blog/vertex-ai-search-site-implementation-hero.jpg'
-tags: ['vertex-ai', 'google-cloud', 'cloud-functions', 'search']
+heroImage: ../../../assets/blog/vertex-ai-search-site-implementation-hero.jpg
+tags:
+  - vertex-ai
+  - google-cloud
+  - cloud-functions
+  - search
+relatedPosts:
+  - slug: e2e-page-test-automation-claude-code
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: adding-chinese-support
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: n8n-rss-automation
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: playwright-ai-testing
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: notion-backlog-slack-claude-project-management
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 引言

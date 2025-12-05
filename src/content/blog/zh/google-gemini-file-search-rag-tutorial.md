@@ -1,7 +1,8 @@
 ---
 title: Google Gemini File Search 5分钟构建RAG系统
 description: >-
-  2025年11月发布的Gemini File Search Tool使用指南,无需复杂RAG管道即可构建文档检索与问答系统。完全托管的RAG方案显著缩短开发时间。
+  2025年11月发布的Gemini File Search
+  Tool使用指南,无需复杂RAG管道即可构建文档检索与问答系统。完全托管的RAG方案显著缩短开发时间。
 pubDate: '2025-11-13'
 heroImage: ../../../assets/blog/google-gemini-file-search-rag-tutorial-hero.webp
 tags:
@@ -18,7 +19,7 @@ relatedPosts:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: '涵盖AI/ML、架构领域的类似主题,难度相当。'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: llm-blog-automation
     score: 0.93
     reason:
@@ -27,7 +28,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: '涵盖自动化、AI/ML、架构领域的类似主题,难度相当。'
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-notion-mcp-automation
     score: 0.93
     reason:
@@ -36,14 +37,14 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: '涵盖自动化、AI/ML、架构领域的类似主题,难度相当。'
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-persona-analysis
     score: 0.93
     reason:
       ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: '涵盖AI/ML、架构领域的类似主题,难度相当。'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: claude-skills-implementation-guide
     score: 0.93
     reason:
@@ -52,7 +53,7 @@ relatedPosts:
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: '涵盖自动化、AI/ML、架构领域的类似主题,难度相当。'
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述
