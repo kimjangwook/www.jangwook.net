@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "webp": "node scripts/convert-to-webp.js",
+    "webp:blog": "node scripts/convert-to-webp.js src/assets/blog/"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
@@ -22,6 +24,7 @@
     "web-vitals": "^5.1.0"
   },
   "devDependencies": {
+    "baseline-browser-mapping": "^2.9.5",
     "gray-matter": "^4.0.3"
   }
 }
