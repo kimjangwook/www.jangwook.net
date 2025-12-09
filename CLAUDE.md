@@ -1135,6 +1135,59 @@ npm run build
 - 증분 처리 (콘텐츠 해시 비교)
 - 3계층 캐싱 시스템
 
+## UX 심리학 기반 개선 워크플로우
+
+프론트엔드 디자인이나 UI/UX 개선 작업 시 다음 워크플로우를 따릅니다.
+
+### 워크플로우 단계
+
+```
+분석 (Analysis) → 과제 도출 (Issue Identification) → 요건 정의 (Requirements) → 설계 (Design) → 구현 (Implementation)
+```
+
+### 1. 분석 단계
+
+- `research/ux-psychology/` 폴더의 문서 참조
+- 현재 구현 상태와 UX 심리학 원칙 비교
+- 누락된 원칙 및 개선 가능 영역 식별
+
+### 2. 과제 도출
+
+우선순위별로 개선 항목 분류:
+
+| 우선순위 | 카테고리 | 핵심 원칙 |
+|---------|---------|----------|
+| 1 (필수) | 응답성 | 도허티 임계값, 스켈레톤 로딩, 피드백 |
+| 2 (중요) | 인지 부하 | 밀러의 법칙, 청킹, 단계적 공개 |
+| 3 (중요) | 사용자 심리 | 사회적 증명, 희소성, 앵커 효과 |
+| 4 (권장) | 동기 부여 | 목표 기울기, 자이가르닉, 피크-엔드 |
+| 5 (권장) | 접근성 | WCAG AA, 키보드 내비게이션 |
+
+### 3. 요건 정의
+
+각 과제별로 다음 항목 정의:
+- 필수 구현 사항 (코드 예시 포함)
+- 선택적 구현 사항
+- 측정 가능한 성과 지표
+
+### 4. 설계 & 구현
+
+- `frontend-design` 스킬 활용 (`/skill frontend-design`)
+- 페이지 타입별 체크리스트 확인
+- Review → Revision 사이클 적용
+
+### 관련 리소스
+
+| 파일 | 내용 |
+|------|------|
+| `research/ux-psychology/01-core-concepts.md` | 40개 UX 심리학 핵심 개념 |
+| `research/ux-psychology/02-laws-of-ux.md` | 30개 Laws of UX |
+| `research/ux-psychology/03-practical-applications.md` | 기업별 적용 사례 |
+| `research/ux-psychology/04-implementation-guide.md` | 구현 가이드 |
+| `research/ux-psychology/05-references.md` | 참고 자료 |
+| `research/ux-psychology/06-skill-improvement-plan.md` | 스킬 개선 계획 |
+| `.claude/skills/frontend-design/SKILL.md` | UX 심리학 통합 스킬 |
+
 ## 참고 자료
 
 ### 공식 문서
