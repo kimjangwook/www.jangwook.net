@@ -1,0 +1,94 @@
+---
+/**
+ * Reading Progress Bar Component
+ * UX Psychology: Goal Gradient Effect - Motivation increases as users approach completion
+ *
+ * Features:
+ * - Shows reading progress as a thin bar at the top
+ * - Changes color when near completion (80%+)
+ * - Triggers celebration animation at 100%
+ */
+
+interface Props {
+  showCelebration?: boolean;
+}
+
+const { showCelebration = true } = Astro.props;
+---
+
+<div id="reading-progress-container">
+  <div id="reading-progress" class="reading-progress"></div>
+</div>
+
+{showCelebration && (
+  <div id="reading-complete-celebration" class="hidden fixed inset-0 z-[200] flex items-center justify-center pointer-events-none">
+    <div class="celebration bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 text-center">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+        <svg class="w-10 h-10 text-green-600 dark:text-green-400" viewBox="0 0 52 52">
+          <circle class="stroke-current fill-none" cx="26" cy="26" r="23" stroke-width="2"/>
+          <path class="checkmark-animate stroke-current fill-none" stroke-width="3" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Reading Complete!</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm">Thanks for reading this article</p>
+    </div>
+  </div>
+)}
+
+<script define:vars={{ showCelebration }}>
+  const progressBar = document.getElementById('reading-progress');
+  const celebration = document.getElementById('reading-complete-celebration');
+  let celebrationShown = false;
+
+  if (progressBar) {
+    const updateProgress = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrollTop = window.scrollY;
+      const progress = Math.min((scrollTop / documentHeight) * 100, 100);
+
+      // Update CSS custom property
+      progressBar.style.setProperty('--reading-progress', `${progress}%`);
+      progressBar.style.width = `${progress}%`;
+
+      // Add near-complete class at 80%
+      if (progress >= 80) {
+        progressBar.classList.add('near-complete');
+      } else {
+        progressBar.classList.remove('near-complete');
+      }
+
+      // Show celebration at 100%
+      if (showCelebration && progress >= 99 && !celebrationShown && celebration) {
+        celebrationShown = true;
+        celebration.classList.remove('hidden');
+
+        // Hide after 3 seconds
+        setTimeout(() => {
+          celebration.classList.add('hidden');
+        }, 3000);
+      }
+    };
+
+    // Throttled scroll handler
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateProgress();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initial update
+    updateProgress();
+  }
+</script>
+
+<style>
+  #reading-progress {
+    width: var(--reading-progress, 0%);
+  }
+</style>

@@ -52,3 +52,59 @@ export function filterPostsByDate(
     return postDate <= today;
   });
 }
+
+/**
+ * Calculates estimated reading time from markdown content
+ * Uses different WPM rates for different character types:
+ * - English/Latin: ~200 WPM
+ * - CJK (Chinese, Japanese, Korean): ~400 characters per minute
+ *
+ * @param content Raw markdown content
+ * @returns Estimated reading time in minutes (minimum 1)
+ */
+export function calculateReadingTime(content: string): number {
+  if (!content) return 1;
+
+  // Remove code blocks (```...```)
+  let cleanContent = content.replace(/```[\s\S]*?```/g, "");
+
+  // Remove inline code (`...`)
+  cleanContent = cleanContent.replace(/`[^`]+`/g, "");
+
+  // Remove HTML tags
+  cleanContent = cleanContent.replace(/<[^>]+>/g, "");
+
+  // Remove markdown links [text](url) but keep text
+  cleanContent = cleanContent.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+
+  // Remove markdown images ![alt](url)
+  cleanContent = cleanContent.replace(/!\[[^\]]*\]\([^)]+\)/g, "");
+
+  // Remove markdown formatting (**bold**, *italic*, etc.)
+  cleanContent = cleanContent.replace(/[*_~`#]+/g, "");
+
+  // Remove frontmatter (---...---)
+  cleanContent = cleanContent.replace(/^---[\s\S]*?---/m, "");
+
+  // Count CJK characters (Chinese, Japanese, Korean)
+  const cjkRegex = /[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7af]/g;
+  const cjkMatches = cleanContent.match(cjkRegex) || [];
+  const cjkCount = cjkMatches.length;
+
+  // Remove CJK characters for word count
+  const nonCjkContent = cleanContent.replace(cjkRegex, " ");
+
+  // Count words in non-CJK content
+  const words = nonCjkContent.split(/\s+/).filter((word) => word.length > 0);
+  const wordCount = words.length;
+
+  // Calculate reading time
+  // English: ~200 words per minute
+  // CJK: ~400 characters per minute (reading is faster per character)
+  const englishMinutes = wordCount / 200;
+  const cjkMinutes = cjkCount / 400;
+
+  const totalMinutes = englishMinutes + cjkMinutes;
+
+  return Math.max(1, Math.ceil(totalMinutes));
+}

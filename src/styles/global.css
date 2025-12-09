@@ -265,3 +265,311 @@
 		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 	}
 }
+
+/* ===========================================
+   UX Psychology Enhancements
+   =========================================== */
+
+@layer components {
+	/*
+	 * Focus States (WCAG AA Accessibility)
+	 * Principle: Clear focus indicators for keyboard navigation
+	 */
+	:focus-visible {
+		@apply outline-none ring-2 ring-offset-2 ring-blue-500 dark:ring-blue-400;
+	}
+
+	button:focus-visible,
+	a:focus-visible,
+	input:focus-visible,
+	textarea:focus-visible,
+	select:focus-visible,
+	[tabindex]:focus-visible {
+		@apply outline-none ring-2 ring-offset-2 ring-blue-500 dark:ring-blue-400;
+	}
+
+	/* Remove outline for mouse users */
+	:focus:not(:focus-visible) {
+		@apply outline-none ring-0;
+	}
+
+	/*
+	 * Touch Target Size (Fitts's Law)
+	 * Minimum 44x44px for all interactive elements
+	 */
+	.touch-target {
+		@apply min-w-[44px] min-h-[44px];
+	}
+
+	/*
+	 * Skeleton Loading (Doherty Threshold)
+	 * Show perceived progress for loading states
+	 */
+	.skeleton {
+		@apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+	}
+
+	.skeleton-text {
+		@apply skeleton h-4 w-full;
+	}
+
+	.skeleton-title {
+		@apply skeleton h-6 w-3/4;
+	}
+
+	.skeleton-image {
+		@apply skeleton aspect-video w-full;
+	}
+
+	/*
+	 * Reading Progress Bar (Goal Gradient Effect)
+	 * Motivation increases as users approach completion
+	 */
+	.reading-progress {
+		@apply fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-violet-500 z-[100];
+		width: var(--reading-progress, 0%);
+		transition: width 0.1s ease-out;
+	}
+
+	.reading-progress.near-complete {
+		@apply from-green-400 to-emerald-500;
+	}
+
+	/*
+	 * Button Micro-interactions (Aesthetic-Usability Effect)
+	 * Beautiful interactions feel more usable
+	 */
+	.btn-interactive {
+		@apply transition-all duration-200 ease-out;
+	}
+
+	.btn-interactive:hover:not(:disabled) {
+		@apply -translate-y-0.5 shadow-lg;
+	}
+
+	.btn-interactive:active:not(:disabled) {
+		@apply translate-y-0 shadow-md;
+	}
+
+	/*
+	 * Card Lift Effect (Von Restorff Effect)
+	 * Hovered items stand out from similar elements
+	 */
+	.card-lift {
+		@apply transition-all duration-300 ease-out;
+	}
+
+	.card-lift:hover {
+		@apply -translate-y-2 shadow-xl;
+	}
+
+	/*
+	 * Pulse Animation (Social Proof / Live Activity)
+	 * Indicates real-time activity
+	 */
+	.pulse-dot {
+		@apply relative inline-block w-2 h-2 rounded-full;
+	}
+
+	.pulse-dot::before {
+		content: '';
+		@apply absolute inset-0 rounded-full animate-ping opacity-75;
+		background-color: inherit;
+	}
+
+	/*
+	 * Staggered Animation (Progressive Disclosure)
+	 * Reveal content in digestible chunks
+	 */
+	.stagger-animation > * {
+		@apply opacity-0 translate-y-4;
+		animation: fadeInUp 0.5s ease-out forwards;
+	}
+
+	.stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+	.stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+	.stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+	.stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+	.stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+	.stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+
+	@keyframes fadeInUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/*
+	 * Success Celebration (Peak-End Rule)
+	 * End experiences with positive emotions
+	 */
+	.celebration {
+		animation: celebrate 0.6s ease-out;
+	}
+
+	@keyframes celebrate {
+		0% { transform: scale(0.8); opacity: 0; }
+		50% { transform: scale(1.1); }
+		100% { transform: scale(1); opacity: 1; }
+	}
+
+	/*
+	 * Checkmark Animation (Peak-End Rule)
+	 */
+	.checkmark-animate {
+		stroke-dasharray: 100;
+		stroke-dashoffset: 100;
+		animation: checkmark-draw 0.5s ease-out 0.2s forwards;
+	}
+
+	@keyframes checkmark-draw {
+		to { stroke-dashoffset: 0; }
+	}
+
+	/*
+	 * Smooth Scroll Progress Indicator
+	 */
+	.scroll-progress-container {
+		@apply fixed right-4 bottom-4 z-50;
+	}
+
+	/*
+	 * Back to Top Button (Tesler's Law - reduce complexity)
+	 */
+	.back-to-top {
+		@apply fixed right-6 bottom-6 z-50;
+		@apply w-12 h-12 rounded-full;
+		@apply bg-blue-600 dark:bg-blue-500 text-white;
+		@apply shadow-lg hover:shadow-xl;
+		@apply flex items-center justify-center;
+		@apply transition-all duration-300;
+		@apply opacity-0 translate-y-4 pointer-events-none;
+	}
+
+	.back-to-top.visible {
+		@apply opacity-100 translate-y-0 pointer-events-auto;
+	}
+
+	.back-to-top:hover {
+		@apply -translate-y-1 bg-blue-700 dark:bg-blue-600;
+	}
+
+	/*
+	 * Reading Time Badge (Cognitive Load Reduction)
+	 * Set expectations before commitment
+	 */
+	.reading-time {
+		@apply inline-flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400;
+	}
+
+	.reading-time::before {
+		content: '📖';
+	}
+
+	/*
+	 * Tag Pills (Law of Similarity)
+	 * Similar elements grouped visually
+	 */
+	.tag-pill {
+		@apply inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full;
+		@apply bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300;
+		@apply transition-all duration-200;
+	}
+
+	.tag-pill:hover {
+		@apply bg-blue-200 dark:bg-blue-900/50;
+	}
+
+	/*
+	 * Form Input States (Feedback & Validation)
+	 */
+	.input-field {
+		@apply w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600;
+		@apply bg-white dark:bg-gray-800;
+		@apply text-gray-900 dark:text-gray-100;
+		@apply transition-all duration-200;
+	}
+
+	.input-field:focus {
+		@apply border-blue-500 ring-2 ring-blue-500/20;
+	}
+
+	.input-field.error {
+		@apply border-red-500 ring-2 ring-red-500/20;
+	}
+
+	.input-field.success {
+		@apply border-green-500 ring-2 ring-green-500/20;
+	}
+
+	/*
+	 * Mobile Menu Animation (Smooth Transitions)
+	 */
+	.mobile-menu {
+		@apply overflow-hidden transition-all duration-300 ease-out;
+		max-height: 0;
+		opacity: 0;
+	}
+
+	.mobile-menu.open {
+		max-height: 400px;
+		opacity: 1;
+	}
+
+	/*
+	 * Hero Text Animation (Selective Attention)
+	 * Draw focus to key messaging
+	 */
+	.hero-text-animate {
+		animation: heroFadeIn 0.8s ease-out;
+	}
+
+	@keyframes heroFadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/*
+	 * Stats Counter Animation (Social Proof)
+	 */
+	.stat-number {
+		@apply font-bold text-3xl text-blue-600 dark:text-blue-400;
+		font-variant-numeric: tabular-nums;
+	}
+
+	/*
+	 * Tooltip Styles
+	 */
+	.tooltip {
+		@apply absolute z-50 px-3 py-2 text-sm text-white bg-gray-900 rounded-lg shadow-lg;
+		@apply opacity-0 invisible transition-all duration-200;
+	}
+
+	.tooltip.show {
+		@apply opacity-100 visible;
+	}
+
+	/*
+	 * Link Underline Animation
+	 */
+	.link-underline {
+		@apply relative;
+	}
+
+	.link-underline::after {
+		content: '';
+		@apply absolute bottom-0 left-0 w-0 h-0.5 bg-current;
+		@apply transition-all duration-300;
+	}
+
+	.link-underline:hover::after {
+		@apply w-full;
+	}
+}

@@ -1,7 +1,7 @@
 ---
-title: "DeNA LLM研究Part 3: 模型训练方法论 - 从预训练到RLHF/DPO"
+title: 'DeNA LLM研究Part 3: 模型训练方法论 - 从预训练到RLHF/DPO'
 description: 基于DeNA LLM研究资料Part 3，深入分析预训练、微调和强化学习的差异，以及LoRA、QLoRA、DPO等最新高效学习技术。
-pubDate: "2025-12-10"
+pubDate: '2025-12-10'
 heroImage: ../../../assets/blog/dena-llm-study-part3-model-training-hero.jpg
 tags:
   - LLM
@@ -11,9 +11,9 @@ relatedPosts:
   - slug: verbalized-sampling-llm-diversity
     score: 0.95
     reason:
-      ko: "AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: "Covers similar topics in AI/ML, architecture with comparable difficulty."
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
       zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ssr-survey-analysis
     score: 0.93
@@ -25,7 +25,7 @@ relatedPosts:
   - slug: ai-agent-persona-analysis
     score: 0.91
     reason:
-      ko: "선행 학습 자료로 유용하며, AI/ML, 아키텍처 기초를 다룹니다."
+      ko: '선행 학습 자료로 유용하며, AI/ML, 아키텍처 기초를 다룹니다.'
       ja: 事前学習資料として有用であり、AI/ML、アーキテクチャの基礎を扱います。
       en: >-
         Useful as prerequisite knowledge, covering AI/ML, architecture
@@ -34,16 +34,16 @@ relatedPosts:
   - slug: llm-consumer-research-ssr
     score: 0.91
     reason:
-      ko: "AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: "Covers similar topics in AI/ML, architecture with comparable difficulty."
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
       zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: deep-agents-architecture-optimization
     score: 0.9
     reason:
-      ko: "AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: "Covers similar topics in AI/ML, architecture with comparable difficulty."
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
       zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 

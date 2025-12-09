@@ -20,13 +20,17 @@ const t = useTranslations(lang);
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center gap-8">
         <!-- Mobile menu button (shown on mobile and tablet) -->
+        <!-- UX: Touch target minimum 44x44px (Fitts's Law) -->
         <button
           id="mobile-menu-button"
-          class="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          class="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 touch-target"
           aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <svg
-            class="w-6 h-6"
+            id="menu-icon-open"
+            class="w-6 h-6 transition-transform duration-200"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -37,16 +41,30 @@ const t = useTranslations(lang);
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
+          <svg
+            id="menu-icon-close"
+            class="w-6 h-6 hidden transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
         </button>
 
         <h2 class="text-xl font-bold">
           <a
             href={`/${lang}/`}
-            class="gradient-text hover:opacity-80 transition-opacity"
+            class="gradient-text hover:opacity-80 transition-opacity link-underline"
           >
             {SITE_TITLE.split("|")[0].trim()}
           </a>
         </h2>
+        <!-- UX: Navigation limited to 6 items (Miller's Law - 7±2 rule) -->
         <div class="hidden lg:flex items-center gap-1">
           <HeaderLink href={`/${lang}/`}>{t("nav.home")}</HeaderLink>
           <HeaderLink href={`/${lang}/blog/`}>{t("nav.blog")}</HeaderLink>
@@ -64,12 +82,14 @@ const t = useTranslations(lang);
       </div>
     </div>
 
-    <!-- Mobile menu (shown on mobile and tablet) -->
+    <!-- Mobile menu with smooth animation (shown on mobile and tablet) -->
+    <!-- UX: Smooth transitions (Doherty Threshold - < 400ms feels instant) -->
     <div
       id="mobile-menu"
-      class="hidden lg:hidden pb-4 pt-2 border-t border-gray-200 dark:border-gray-700"
+      class="mobile-menu lg:hidden border-t border-gray-200 dark:border-gray-700"
+      aria-hidden="true"
     >
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 py-4">
         <HeaderLink href={`/${lang}/`}>{t("nav.home")}</HeaderLink>
         <HeaderLink href={`/${lang}/blog/`}>{t("nav.blog")}</HeaderLink>
         <HeaderLink href={`/${lang}/about/`}>{t("nav.about")}</HeaderLink>
@@ -86,15 +106,51 @@ const t = useTranslations(lang);
 <script>
   const mobileMenuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
+  const menuIconOpen = document.getElementById("menu-icon-open");
+  const menuIconClose = document.getElementById("menu-icon-close");
 
-  mobileMenuButton?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-  });
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("open");
 
-  // Close menu when clicking a link
-  mobileMenu?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
+      if (isOpen) {
+        // Close menu
+        mobileMenu.classList.remove("open");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        menuIconOpen?.classList.remove("hidden");
+        menuIconClose?.classList.add("hidden");
+      } else {
+        // Open menu
+        mobileMenu.classList.add("open");
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        menuIconOpen?.classList.add("hidden");
+        menuIconClose?.classList.remove("hidden");
+      }
     });
-  });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        menuIconOpen?.classList.remove("hidden");
+        menuIconClose?.classList.add("hidden");
+      });
+    });
+
+    // Close menu on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
+        mobileMenu.classList.remove("open");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        menuIconOpen?.classList.remove("hidden");
+        menuIconClose?.classList.add("hidden");
+        mobileMenuButton.focus();
+      }
+    });
+  }
 </script>

@@ -6,7 +6,7 @@ import Footer from '../../../components/Footer.astro';
 import Header from '../../../components/Header.astro';
 import { getStaticPaths as getI18nStaticPaths } from '../../../lib/i18n/utils';
 import { useTranslations, type Language } from '../../../lib/i18n/languages';
-import { filterPostsByDate } from '../../../lib/content';
+import { filterPostsByDate, calculateReadingTime } from '../../../lib/content';
 
 export async function getStaticPaths() {
 	return getI18nStaticPaths();
@@ -45,6 +45,7 @@ const posts = filterPostsByDate(allPosts)
 								pubDate={post.data.pubDate}
 								heroImage={post.data.heroImage}
 								tags={post.data.tags}
+								readingTime={calculateReadingTime(post.body || '')}
 							/>
 						))
 					}

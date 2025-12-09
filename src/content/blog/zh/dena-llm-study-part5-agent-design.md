@@ -1,7 +1,7 @@
 ---
 title: DeNA LLM 研究 Part 5：智能体设计与多智能体编排
 description: DeNA LLM 研究系列完结篇。从实务角度整理 n8n 工作流、智能体设计原则、多智能体编排模式和内存管理策略。
-pubDate: "2025-12-12"
+pubDate: '2025-12-12'
 heroImage: ../../../assets/blog/dena-llm-study-part5-agent-design-hero.jpg
 tags:
   - dena
@@ -15,7 +15,7 @@ relatedPosts:
   - slug: multi-agent-orchestration-improvement
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -24,7 +24,7 @@ relatedPosts:
   - slug: mcp-code-execution-practical-implementation
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
@@ -33,7 +33,7 @@ relatedPosts:
   - slug: anthropic-code-execution-mcp
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
@@ -42,7 +42,7 @@ relatedPosts:
   - slug: langgraph-multi-agent
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
@@ -51,7 +51,7 @@ relatedPosts:
   - slug: bigquery-mcp-prefix-filtering
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with

@@ -1,4 +1,26 @@
 {
+  "ux-psychology-implementation-case-study": {
+    "pubDate": "2025-12-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.95,
+      "ai-ml": 0.2,
+      "devops": 0.1,
+      "architecture": 0.6
+    }
+  },
+  "ux-psychology-frontend-design-skill": {
+    "pubDate": "2025-12-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.9,
+      "ai-ml": 0.6,
+      "devops": 0.1,
+      "architecture": 0.4
+    }
+  },
   "dena-llm-study-part5-agent-design": {
     "pubDate": "2025-12-12",
     "difficulty": 4,

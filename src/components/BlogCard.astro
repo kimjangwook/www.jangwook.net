@@ -10,13 +10,15 @@ interface Props {
 	pubDate: Date;
 	heroImage?: ImageMetadata;
 	tags?: string[];
+	readingTime: number; // Calculated from actual post content at build time
 }
 
-const { href, title, description, pubDate, heroImage, tags } = Astro.props;
+const { href, title, description, pubDate, heroImage, tags, readingTime } = Astro.props;
 ---
 
-<article class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
-	<a href={href} class="block">
+<!-- UX: Card Lift Effect (Von Restorff Effect - hovered items stand out) -->
+<article class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm card-lift overflow-hidden border border-gray-200 dark:border-gray-700">
+	<a href={href} class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-xl">
 		{heroImage && (
 			<div class="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-700">
 				<Image
@@ -24,12 +26,19 @@ const { href, title, description, pubDate, heroImage, tags } = Astro.props;
 					alt={title}
 					width={600}
 					height={400}
-					class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+					class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
 					loading="lazy"
 					decoding="async"
 					format="webp"
 					quality={80}
 				/>
+				<!-- UX: Reading time badge (Cognitive Load Reduction - set expectations) -->
+				<div class="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1">
+					<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+					</svg>
+					<span>{readingTime} min</span>
+				</div>
 			</div>
 		)}
 		<div class="p-6">
@@ -39,22 +48,29 @@ const { href, title, description, pubDate, heroImage, tags } = Astro.props;
 				</time>
 			</div>
 			{tags && tags.length > 0 && (
+				<!-- UX: Tag Pills (Law of Similarity - similar elements grouped visually) -->
 				<div class="flex flex-wrap gap-2 mb-3">
 					{tags.slice(0, 3).map((tag) => (
-						<span class="inline-block px-2 py-1 text-xs font-medium text-accent bg-accent/10 rounded-full">
+						<span class="tag-pill">
 							#{tag}
 						</span>
 					))}
 				</div>
 			)}
-			<h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-accent transition-colors line-clamp-2">
+			<h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-accent transition-colors duration-200 line-clamp-2">
 				{title}
 			</h3>
 			<p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
 				{description}
 			</p>
+			<!-- UX: Clear CTA with micro-interaction -->
 			<div class="mt-4 flex items-center text-accent font-medium text-sm">
-				<span class="group-hover:translate-x-1 transition-transform">Read more →</span>
+				<span class="inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+					Read more
+					<svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+					</svg>
+				</span>
 			</div>
 		</div>
 	</a>

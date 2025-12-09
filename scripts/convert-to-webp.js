@@ -86,6 +86,10 @@ function getImageFiles(dirPath, recursive = true) {
   return files;
 }
 
+// 이미지 크기 제한 상수
+const MAX_WIDTH = 1440;
+const MAX_HEIGHT = 7500;
+
 /**
  * 단일 파일 WebP 변환
  */
@@ -121,7 +125,27 @@ async function convertToWebp(inputPath, options) {
   try {
     const inputStats = fs.statSync(inputPath);
 
-    await sharp(inputPath)
+    // 이미지 메타데이터 확인
+    const metadata = await sharp(inputPath).metadata();
+    let sharpInstance = sharp(inputPath);
+
+    // 너비를 1440px로 리사이즈
+    if (metadata.width !== MAX_WIDTH) {
+      sharpInstance = sharpInstance.resize(MAX_WIDTH);
+    }
+
+    // 리사이즈 후 높이 계산 (비율 유지)
+    const scaledHeight = Math.round((metadata.height * MAX_WIDTH) / metadata.width);
+
+    // 높이가 7500px 초과 시 상단부터 7500px만 크롭
+    if (scaledHeight > MAX_HEIGHT) {
+      console.log(`   ✂️  높이 크롭: ${scaledHeight}px → ${MAX_HEIGHT}px (상단 유지)`);
+      sharpInstance = sharpInstance
+        .resize(MAX_WIDTH)
+        .extract({ left: 0, top: 0, width: MAX_WIDTH, height: MAX_HEIGHT });
+    }
+
+    await sharpInstance
       .webp({ quality: options.quality })
       .toFile(outputPath);
 

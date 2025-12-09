@@ -1,9 +1,9 @@
 ---
-title: "DeNA LLM 스터디 Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션"
+title: 'DeNA LLM 스터디 Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션'
 description: >-
   DeNA LLM 스터디 시리즈 최종회. n8n 워크플로우, 에이전트 설계 원칙, 멀티 에이전트 오케스트레이션 패턴, 메모리 관리 전략을 실무
   관점에서 정리합니다.
-pubDate: "2025-12-12"
+pubDate: '2025-12-12'
 heroImage: ../../../assets/blog/dena-llm-study-part5-agent-design-hero.jpg
 tags:
   - dena
@@ -17,7 +17,7 @@ relatedPosts:
   - slug: multi-agent-orchestration-improvement
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -26,7 +26,7 @@ relatedPosts:
   - slug: mcp-code-execution-practical-implementation
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
@@ -35,7 +35,7 @@ relatedPosts:
   - slug: anthropic-code-execution-mcp
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
@@ -44,7 +44,7 @@ relatedPosts:
   - slug: langgraph-multi-agent
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with
@@ -53,7 +53,7 @@ relatedPosts:
   - slug: bigquery-mcp-prefix-filtering
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, DevOps, architecture with

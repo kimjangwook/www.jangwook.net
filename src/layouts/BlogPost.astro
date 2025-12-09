@@ -1,4 +1,11 @@
 ---
+/**
+ * BlogPost Layout
+ * UX Psychology Principles Applied:
+ * - Goal Gradient Effect: Reading progress bar shows completion and motivates readers
+ * - Peak-End Rule: Celebration at 100% creates positive memory
+ * - Cognitive Load Reduction: Clear visual hierarchy and readable typography
+ */
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
@@ -8,6 +15,7 @@ import BlogPostLanguageSwitcher from '../components/BlogPostLanguageSwitcher.ast
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import ReadingProgress from '../components/ReadingProgress.astro';
 import { useTranslations, type Language } from '../lib/i18n/languages';
 import { SITE_TITLE } from '../consts';
 import RelatedPosts from '../components/RelatedPosts.astro';
@@ -74,6 +82,8 @@ const breadcrumbSchema = {
 	</head>
 
 	<body class="bg-gray-50 dark:bg-gray-900">
+		<!-- UX: Reading Progress Bar (Goal Gradient Effect - motivation increases as users approach completion) -->
+		<ReadingProgress showCelebration={true} />
 		<Header lang={lang} />
 		<main class="py-12">
 			<article class="max-w-4xl mx-auto px-0 sm:px-6 lg:px-8">

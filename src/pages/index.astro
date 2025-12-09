@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BlogCard from '../components/BlogCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { filterPostsByDate } from '../lib/content';
+import { filterPostsByDate, calculateReadingTime } from '../lib/content';
 import { languages } from '../lib/i18n/languages';
 
 // Get all blog posts and filter by date
@@ -250,6 +250,7 @@ const uiText = {
 										pubDate={post.data.pubDate}
 										heroImage={post.data.heroImage}
 										tags={post.data.tags}
+										readingTime={calculateReadingTime(post.body || '')}
 									/>
 									{otherLangs.length > 0 && (
 										<div class="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
@@ -294,6 +295,7 @@ const uiText = {
 										pubDate={post.data.pubDate}
 										heroImage={post.data.heroImage}
 										tags={post.data.tags}
+										readingTime={calculateReadingTime(post.body || '')}
 									/>
 									{otherLangs.length > 0 && (
 										<div class="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
@@ -338,6 +340,7 @@ const uiText = {
 										pubDate={post.data.pubDate}
 										heroImage={post.data.heroImage}
 										tags={post.data.tags}
+										readingTime={calculateReadingTime(post.body || '')}
 									/>
 									{otherLangs.length > 0 && (
 										<div class="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
@@ -382,6 +385,7 @@ const uiText = {
 										pubDate={post.data.pubDate}
 										heroImage={post.data.heroImage}
 										tags={post.data.tags}
+										readingTime={calculateReadingTime(post.body || '')}
 									/>
 									{otherLangs.length > 0 && (
 										<div class="mt-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">

@@ -1,24 +1,60 @@
 ---
-title: 'UX 심리학으로 프론트엔드 디자인 스킬 강화하기'
-description: 'Claude Code의 frontend-design 스킬에 UX 심리학 40가지 개념과 Laws of UX 30가지 법칙을 통합하여 아름답고 효과적인 인터페이스를 만드는 방법을 소개합니다.'
+title: UX 심리학으로 프론트엔드 디자인 스킬 강화하기
+description: >-
+  Claude Code의 frontend-design 스킬에 UX 심리학 40가지 개념과 Laws of UX 30가지 법칙을 통합하여 아름답고
+  효과적인 인터페이스를 만드는 방법을 소개합니다.
 pubDate: '2025-12-13'
-heroImage: '../../../assets/blog/ux-psychology-skill.png'
-tags: ['ux', 'claude-code', 'frontend']
+heroImage: ../../../assets/blog/ux-psychology-skill.png
+tags:
+  - ux
+  - claude-code
+  - frontend
 relatedPosts:
-  - slug: "claude-code-custom-slash-commands"
-    score: 0.88
+  - slug: aeo-implementation-experience
+    score: 0.93
     reason:
-      ko: "Claude Code 커스터마이징 방법을 다루는 관련 포스트"
-      ja: "Claude Codeのカスタマイズ方法を扱う関連記事"
-      en: "Related post covering Claude Code customization methods"
-      zh: "介绍Claude Code定制方法的相关文章"
-  - slug: "multi-agent-orchestration-improvement"
-    score: 0.82
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
+  - slug: adsense-rejection-ai-analysis-improvement
+    score: 0.93
     reason:
-      ko: "Claude Code 에이전트 시스템 개선 사례"
-      ja: "Claude Codeエージェントシステム改善事例"
-      en: "Claude Code agent system improvement case study"
-      zh: "Claude Code代理系统改进案例"
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
+  - slug: llm-seo-aeo-practical-implementation
+    score: 0.92
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
+    score: 0.9
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
+  - slug: agent-effi-flow-pivot-omotenashi-bot
+    score: 0.89
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 ## 배경: AI가 만든 UI의 한계

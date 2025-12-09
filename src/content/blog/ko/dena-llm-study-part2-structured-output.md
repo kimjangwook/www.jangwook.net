@@ -1,9 +1,9 @@
 ---
-title: "DeNA LLM 스터디 Part 2: 구조화 출력과 복수 LLM 조합 패턴"
+title: 'DeNA LLM 스터디 Part 2: 구조화 출력과 복수 LLM 조합 패턴'
 description: >-
   JSON Schema, Pydantic을 활용한 구조화 출력부터 Sequential, Parallel, Cascade 등 실무에서 활용
   가능한 Multi-LLM 파이프라인 설계 패턴까지
-pubDate: "2025-12-09"
+pubDate: '2025-12-09'
 heroImage: ../../../assets/blog/dena-llm-study-part2-structured-output-hero.jpg
 tags:
   - llm
@@ -14,7 +14,7 @@ relatedPosts:
   - slug: iterative-review-cycle-methodology
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -23,7 +23,7 @@ relatedPosts:
   - slug: deep-agents-architecture-optimization
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -32,7 +32,7 @@ relatedPosts:
   - slug: claude-code-verbalized-sampling
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -41,7 +41,7 @@ relatedPosts:
   - slug: prompt-engineering-agent-improvements
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -50,7 +50,7 @@ relatedPosts:
   - slug: multi-agent-orchestration-improvement
     score: 0.94
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable

@@ -1,0 +1,67 @@
+---
+/**
+ * Back to Top Button Component
+ * UX Psychology: Tesler's Law - Reduce complexity by providing quick navigation
+ *
+ * Features:
+ * - Appears after scrolling 300px
+ * - Smooth scroll animation
+ * - Keyboard accessible
+ * - Touch-friendly (44x44px minimum)
+ */
+---
+
+<button
+  id="back-to-top"
+  class="back-to-top touch-target"
+  aria-label="Back to top"
+  title="Back to top"
+>
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+</button>
+
+<script>
+  const backToTopButton = document.getElementById('back-to-top');
+
+  if (backToTopButton) {
+    // Show/hide based on scroll position
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    };
+
+    // Throttle scroll events for performance
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+    window.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(toggleVisibility, 10);
+    }, { passive: true });
+
+    // Smooth scroll to top on click
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Keyboard accessibility
+    backToTopButton.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    });
+
+    // Initial check
+    toggleVisibility();
+  }
+</script>

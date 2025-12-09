@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "webp": "node scripts/convert-to-webp.js",
-    "webp:blog": "node scripts/convert-to-webp.js src/assets/blog/"
+    "webp:blog": "node scripts/convert-to-webp.js src/assets/blog/",
+    "disable_toolbar": "astro preferences disable --global devToolbar"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "baseline-browser-mapping": "^2.9.5",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "playwright": "^1.57.0"
   }
 }
