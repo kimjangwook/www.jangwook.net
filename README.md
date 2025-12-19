@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-12-12
+**최신 포스트 날짜**: 2025-12-19
 
-**총 포스트 수**: 68개 (한국어 기준)
+**총 포스트 수**: 69개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **DeNA LLM 스터디 Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션** (2025-12-12)
+1. **Greptile AI 코딩 리포트 2025 리뷰: AI가 정말 생산성을 올렸을까?** (2025-12-19)
+
+   - Greptile의 State of AI Coding 2025 리포트를 분석하고, 실제 개발 현장에서 AI가 가져온 생산성 변화를 개인 경험과 함께 정리
+   - **핵심 내용**: 개발자당 코드 출력량 76% 증가 (4,450줄→7,839줄), PR 크기 33% 증가 (57줄→76줄), Anthropic SDK 8배 성장 (43M 다운로드), CLAUDE.md 채택률 67%, 중형 팀(6〜15명) 89% 생산성 향상, OpenAI:Anthropic 비율 47:1→4.2:1, Claude 모델 응답속도 우위 (<2.5초), 개인 경험: 보일러플레이트 90%, 라이브러리 학습 80%, 디버깅 70% 시간 절감, 사양과 비즈니스 로직에만 집중 가능, Before/After 워크플로우 비교
+
+2. **DeNA LLM 스터디 Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션** (2025-12-12)
 
    - DeNA LLM 스터디 시리즈 최종회. n8n 워크플로우, 에이전트 설계 원칙, 멀티 에이전트 오케스트레이션 패턴, 메모리 관리 전략을 실무 관점에서 정리
    - **핵심 내용**: n8n ReAct Agent 구현 (노코드/로우코드 자동화), 2025 트렌드 (오케스트레이션 > 완전 자율), 에이전트 4대 컴포넌트 (Core/Memory/Planning/Tool Use), 함수 호출 신뢰성 문제 (100% 신뢰 불가), Self-Healing 패턴 (자동 오류 복구), 6가지 오케스트레이션 패턴 (Sequential/Parallel/Supervisor/Hierarchical/Network/Custom), LangGraph vs AutoGen vs CrewAI 비교 (그래프 vs 대화 vs 역할), 패턴별 비용 차이 ($0.15〜$2.50), MemGPT 계층적 메모리 (L1/L2/L3), Push vs Pull 하이브리드, A-MEM Zettelkasten 방법론 (동적 지식 그래프), DeNA NOC Alert Agent 실무 사례 (92% 오탐 필터링, 15분→3분 단축), 비용 최적화 4기법 (시맨틱 캐싱 90%, 배칭 50%, SLM 14배, 양자화), 종합 최적화 86% 비용 절감 ($0.014→$0.00196), 실무 베스트 프랙티스 (명시적 오케스트레이션, 메모리 기반 지능, 패턴 선택 가이드, Self-Healing 필수)
@@ -675,6 +680,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-12-09 (DeNA LLM 스터디 Part 2: 구조화 출력과 복수 LLM 조합 패턴 발행)
+**Last Updated**: 2025-12-19 (Greptile AI 코딩 리포트 2025 리뷰 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

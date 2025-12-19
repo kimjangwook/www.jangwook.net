@@ -1,4 +1,15 @@
 {
+  "greptile-ai-coding-report-2025-review": {
+    "pubDate": "2025-12-19",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.4,
+      "architecture": 0.5
+    }
+  },
   "ux-psychology-implementation-case-study": {
     "pubDate": "2025-12-14",
     "difficulty": 3,
