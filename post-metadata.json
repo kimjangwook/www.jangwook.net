@@ -1,4 +1,15 @@
 {
+  "anthropic-agent-skills-practical-guide": {
+    "pubDate": "2025-12-26",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.4,
+      "ai-ml": 1.0,
+      "devops": 0.6,
+      "architecture": 0.85
+    }
+  },
   "anthropic-agent-skills-standard": {
     "pubDate": "2025-12-25",
     "difficulty": 3,

@@ -43,11 +43,15 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-12-25
+**최신 포스트 날짜**: 2025-12-26
 
-**총 포스트 수**: 70개 (한국어 기준)
+**총 포스트 수**: 71개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **Anthropic Agent Skills 실전 가이드: 구현부터 ROI까지** (2025-12-26)
+
+   - Anthropic Agent Skills의 실제 활용법을 튜토리얼과 코드 예제를 통해 배우고, ROI 분석으로 비즈니스 가치를 확인하며, AI 에이전트의 효율성을 극대화합니다.
 
 1. **Anthropic Agent Skills 표준: AI 에이전트 역량 확장** (2025-12-25)
 
@@ -684,6 +688,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-12-25 (Anthropic Agent Skills 표준 발행)
+**Last Updated**: 2025-12-26 (Anthropic Agent Skills 실전 가이드 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

@@ -1,9 +1,9 @@
 ---
-title: "Anthropic Agent Skills 표준: AI 에이전트 역량 확장"
+title: 'Anthropic Agent Skills 표준: AI 에이전트 역량 확장'
 description: >-
   Anthropic의 Agent Skills 표준은 AI 에이전트가 새로운 기능을 배우고 활용하는 방법을 제시하며, 산업 전반의 AI 개발을
   촉진합니다.
-pubDate: "2025-12-25"
+pubDate: '2025-12-25'
 heroImage: ../../../assets/blog/anthropic-agent-skills-standard-hero.png
 tags:
   - AI
@@ -20,7 +20,7 @@ relatedPosts:
   - slug: enterprise-ai-adoption-topdown
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -29,7 +29,7 @@ relatedPosts:
   - slug: claude-skills-implementation-guide
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -38,7 +38,7 @@ relatedPosts:
   - slug: slack-mcp-team-communication
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -47,7 +47,7 @@ relatedPosts:
   - slug: claude-code-cli-migration-guide
     score: 0.94
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -56,7 +56,7 @@ relatedPosts:
   - slug: google-gemini-file-search-rag-tutorial
     score: 0.94
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable

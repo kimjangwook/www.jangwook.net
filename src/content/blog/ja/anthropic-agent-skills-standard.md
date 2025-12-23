@@ -1,7 +1,7 @@
 ---
 title: Anthropic Agent Skills標準：AIエージェント能力拡張の新しいオープン標準
 description: AnthropicのAgent Skills標準は、AIエージェントが新しい機能を取得し活用する方法を提示し、産業全体のAI開発を促進します。
-pubDate: "2025-12-25"
+pubDate: '2025-12-25'
 heroImage: ../../../assets/blog/anthropic-agent-skills-standard-hero.png
 tags:
   - AI
@@ -18,7 +18,7 @@ relatedPosts:
   - slug: enterprise-ai-adoption-topdown
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -27,7 +27,7 @@ relatedPosts:
   - slug: claude-skills-implementation-guide
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -36,7 +36,7 @@ relatedPosts:
   - slug: slack-mcp-team-communication
     score: 0.95
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -45,7 +45,7 @@ relatedPosts:
   - slug: claude-code-cli-migration-guide
     score: 0.94
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
@@ -54,7 +54,7 @@ relatedPosts:
   - slug: google-gemini-file-search-rag-tutorial
     score: 0.94
     reason:
-      ko: "자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다."
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
         Covers similar topics in automation, AI/ML, architecture with comparable
