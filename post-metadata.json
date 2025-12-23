@@ -1,4 +1,15 @@
 {
+  "anthropic-agent-skills-standard": {
+    "pubDate": "2025-12-25",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 1.0,
+      "devops": 0.5,
+      "architecture": 0.9
+    }
+  },
   "greptile-ai-coding-report-2025-review": {
     "pubDate": "2025-12-19",
     "difficulty": 2,

@@ -1,10 +1,52 @@
 ---
-title: "Greptile AI 코딩 리포트 2025 리뷰: AI가 정말 생산성을 올렸을까?"
-description: "Greptile의 State of AI Coding 2025 리포트를 분석하고, 실제 개발 현장에서 AI가 가져온 생산성 변화를 개인 경험과 함께 정리합니다."
-pubDate: "2025-12-19"
-heroImage: "../../../assets/blog/greptile-ai-coding-report-2025-review-hero.png"
-tags: ["ai-coding", "productivity", "developer-tools"]
-relatedPosts: []
+title: 'Greptile AI 코딩 리포트 2025 리뷰: AI가 정말 생산성을 올렸을까?'
+description: >-
+  Greptile의 State of AI Coding 2025 리포트를 분석하고, 실제 개발 현장에서 AI가 가져온 생산성 변화를 개인 경험과
+  함께 정리합니다.
+pubDate: '2025-12-19'
+heroImage: ../../../assets/blog/greptile-ai-coding-report-2025-review-hero.png
+tags:
+  - ai-coding
+  - productivity
+  - developer-tools
+relatedPosts:
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: google-code-wiki-guide
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: mcp-servers-toolkit-introduction
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: google-gemini-file-search-rag-tutorial
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
+  - slug: claude-code-best-practices
+    score: 0.92
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 ## 개요

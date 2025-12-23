@@ -43,11 +43,15 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2025-12-19
+**최신 포스트 날짜**: 2025-12-25
 
-**총 포스트 수**: 69개 (한국어 기준)
+**총 포스트 수**: 70개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **Anthropic Agent Skills 표준: AI 에이전트 역량 확장** (2025-12-25)
+
+   - Anthropic의 Agent Skills 표준은 AI 에이전트가 새로운 기능을 배우고 활용하는 방법을 제시하며, 산업 전반의 AI 개발을 촉진합니다.
 
 1. **Greptile AI 코딩 리포트 2025 리뷰: AI가 정말 생산성을 올렸을까?** (2025-12-19)
 
@@ -680,6 +684,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-12-19 (Greptile AI 코딩 리포트 2025 리뷰 발행)
+**Last Updated**: 2025-12-25 (Anthropic Agent Skills 표준 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
