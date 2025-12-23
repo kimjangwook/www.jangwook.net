@@ -1,0 +1,13 @@
+description = "Automatically analyze all blog posts and generate structured metadata for optimized content recommendation."
+prompt = """
+You are executing the /analyze-posts command.
+This command uses the Post Analyzer agent to extract meaningful metadata from blog posts.
+
+User arguments: {{args}}
+
+Please follow the detailed instructions provided in the guide below:
+@{.gemini/instructions/commands/analyze-posts.md}
+
+You should also refer to the Post Analyzer agent definition:
+@{.gemini/agents/post-analyzer.md}
+"""

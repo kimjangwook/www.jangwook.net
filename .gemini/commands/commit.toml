@@ -1,0 +1,10 @@
+description = "Automates the Git commit workflow by analyzing staged changes and generating meaningful commit messages."
+prompt = """
+You are executing the /commit command.
+This command streamlines the Git commit process by analyzing changes and generating conventional commit messages.
+
+User arguments: {{args}}
+
+Please follow the detailed instructions provided in the guide below:
+@{.gemini/instructions/commands/commit.md}
+"""

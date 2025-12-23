@@ -1,0 +1,13 @@
+description = "Automatically generate intelligent content recommendations for all blog posts using the Content Recommender agent."
+prompt = """
+You are executing the /generate-recommendations command.
+This command analyzes all blog posts and generates a `recommendations.json` file (or updates frontmatter in V3).
+
+User arguments: {{args}}
+
+Please follow the detailed instructions provided in the guide below:
+@{.gemini/instructions/commands/generate-recommendations.md}
+
+You should also refer to the Content Recommender agent definition:
+@{.gemini/agents/content-recommender.md}
+"""

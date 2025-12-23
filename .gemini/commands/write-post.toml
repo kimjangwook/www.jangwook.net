@@ -1,0 +1,16 @@
+description = "Automatically generates blog posts with multi-language support, SEO optimization, and hero image generation."
+prompt = """
+You are executing the /write-post command.
+This command orchestrates the Writing Assistant agent to create complete, publication-ready blog posts.
+
+User arguments: {{args}}
+
+Please follow the detailed instructions provided in the guide below:
+@{.gemini/instructions/commands/write-post.md}
+
+You should also refer to the Writing Assistant and other relevant agents:
+@{.gemini/agents/writing-assistant.md}
+@{.gemini/agents/web-researcher.md}
+@{.gemini/agents/image-generator.md}
+@{.gemini/agents/seo-optimizer.md}
+"""

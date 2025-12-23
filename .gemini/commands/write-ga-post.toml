@@ -1,0 +1,14 @@
+description = "Automatically generates comprehensive Google Analytics analysis reports as blog posts."
+prompt = """
+You are executing the /write-ga-post command.
+This command orchestrates the Analytics Reporter and Improvement Tracker agents to create data-driven analytics posts.
+
+User arguments: {{args}}
+
+Please follow the detailed instructions provided in the guide below:
+@{.gemini/instructions/commands/write-ga-post.md}
+
+You should also refer to the relevant agents:
+@{.gemini/agents/analytics-reporter.md}
+@{.gemini/agents/improvement-tracker.md}
+"""

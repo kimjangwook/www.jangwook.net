@@ -1,0 +1,374 @@
+# 계획 프로토콜 (Planning Protocol)
+
+## 개요
+
+Deep Agents 패러다임에서 명시적 계획은 복잡한 장기 작업의 성공을 위한 핵심 요소입니다. 이 문서는 에이전트가 계획을 생성, 추적, 수정하는 표준 프로토콜을 정의합니다.
+
+---
+
+## 계획의 목적
+
+1. **목표 명확화**: 작업의 최종 목표와 성공 기준 정의
+2. **작업 분해**: 복잡한 작업을 관리 가능한 단계로 분해
+3. **진행 추적**: 현재 상태와 완료율 파악
+4. **실패 대응**: 문제 발생 시 재계획 기반 마련
+5. **컨텍스트 유지**: 장기 작업에서 목표 이탈 방지
+
+---
+
+## 계획 형식 표준
+
+### 기본 구조
+
+```markdown
+## 작업 계획: [작업명]
+
+### 메타데이터
+- **작업 ID**: task-YYYY-MM-DD-NNN
+- **생성일**: YYYY-MM-DD HH:MM
+- **담당 에이전트**: [orchestrator/에이전트명]
+- **예상 소요 시간**: [시간]
+
+### 목표
+[작업의 최종 목표를 명확하게 기술]
+
+### 성공 기준
+- [ ] [기준 1]
+- [ ] [기준 2]
+- [ ] [기준 3]
+
+### 단계
+| # | 단계명 | 담당 | 상태 | 의존성 | 비고 |
+|---|--------|------|------|--------|------|
+| 1 | [단계 1] | [에이전트] | pending | - | |
+| 2 | [단계 2] | [에이전트] | pending | 1 | |
+| 3 | [단계 3] | [에이전트] | pending | 1,2 | |
+
+### 리스크 및 대안
+| 리스크 | 확률 | 영향 | 대안 계획 |
+|--------|------|------|----------|
+| [리스크 1] | 중 | 높음 | [대안] |
+
+### 산출물
+- [ ] [산출물 1]: [경로/설명]
+- [ ] [산출물 2]: [경로/설명]
+
+### 진행 기록
+| 시간 | 상태 변경 | 비고 |
+|------|----------|------|
+| HH:MM | 작업 시작 | |
+```
+
+---
+
+## 상태 전이 규칙
+
+### 단계 상태
+```
+pending → in_progress → completed
+                     ↘ failed → retry/replanned
+```
+
+### 상태 정의
+- **pending**: 아직 시작되지 않음
+- **in_progress**: 현재 실행 중
+- **completed**: 성공적으로 완료
+- **failed**: 실패 (복구 필요)
+- **retry**: 재시도 중
+- **replanned**: 계획 수정됨
+
+### 전이 규칙
+1. `pending` → `in_progress`: 단계 시작 시
+2. `in_progress` → `completed`: 성공적 완료 시
+3. `in_progress` → `failed`: 실패 감지 시
+4. `failed` → `retry`: 재시도 결정 시 (최대 3회)
+5. `failed` → `replanned`: 재계획 결정 시
+
+---
+
+## 계획 생성 프로토콜
+
+### 1. 요구사항 분석
+- 사용자 요청 파악
+- 암묵적 요구사항 추출
+- 제약 조건 식별
+
+### 2. 목표 정의
+- SMART 원칙 적용 (Specific, Measurable, Achievable, Relevant, Time-bound)
+- 성공 기준 명시
+
+### 3. 작업 분해
+- 최소 실행 단위로 분해
+- 각 단계에 담당 에이전트 할당
+- 의존성 그래프 작성
+
+### 4. 리스크 평가
+- 잠재적 실패 지점 식별
+- 대안 계획 준비
+
+### 5. 계획 문서화
+- 표준 형식으로 작성
+- task-state.json에 저장
+
+---
+
+## 계획 검토 중단점 (Checkpoints)
+
+### 필수 검토 시점
+1. **작업 시작 전**: 계획 완전성 검토
+2. **각 단계 완료 후**: 진행 상황 및 다음 단계 준비
+3. **실패 발생 시**: 복구/재계획 결정
+4. **작업 완료 전**: 성공 기준 충족 확인
+
+### 검토 내용
+```markdown
+## 검토 체크리스트
+
+### 현재 상태
+- [ ] 현재 단계: [N단계]
+- [ ] 완료율: [N%]
+- [ ] 예상 대비 진행: [정상/지연/초과]
+
+### 이슈
+- [ ] 발생한 문제: [있음/없음]
+- [ ] 해결 필요 사항: [내용]
+
+### 다음 단계
+- [ ] 다음 단계 준비 완료: [예/아니오]
+- [ ] 필요 리소스 확보: [예/아니오]
+
+### 계획 수정
+- [ ] 계획 수정 필요: [예/아니오]
+- [ ] 수정 사유: [내용]
+```
+
+---
+
+## 재계획 프로토콜
+
+### 재계획 트리거
+1. 3회 연속 재시도 실패
+2. 예상 시간 2배 초과
+3. 새로운 제약 조건 발생
+4. 의존성 변경
+5. 사용자 요청 변경
+
+### 재계획 절차
+1. **현재 상태 저장**: 완료된 단계, 중간 결과
+2. **실패 원인 분석**: 근본 원인 파악
+3. **대안 평가**: 가능한 대안 목록 작성
+4. **새 계획 수립**: 대안 선택 및 계획 재작성
+5. **계획 업데이트**: task-state.json 수정
+
+### 재계획 시 유지 사항
+- 완료된 단계의 결과
+- 유효한 중간 산출물
+- 학습된 제약 조건
+
+### 재계획 시 변경 사항
+- 실패한 단계의 접근 방식
+- 의존성 그래프
+- 예상 소요 시간
+
+---
+
+## 계획과 TodoWrite 통합
+
+### 계획 → TodoWrite 매핑
+계획의 각 단계를 TodoWrite 항목으로 변환:
+
+```javascript
+// 계획 단계
+{ "id": 1, "name": "리서치", "status": "in_progress", "agent": "web-researcher" }
+
+// TodoWrite 항목
+{ "content": "리서치", "status": "in_progress", "activeForm": "리서치 수행 중" }
+```
+
+### 동기화
+- 계획 상태 변경 시 TodoWrite 업데이트
+- TodoWrite는 사용자에게 진행 상황 표시
+- task-state.json은 영구 저장
+
+---
+
+## 예시: 블로그 포스트 작성 계획
+
+```markdown
+## 작업 계획: TypeScript 5.0 블로그 포스트 작성
+
+### 메타데이터
+- **작업 ID**: task-2025-11-18-001
+- **생성일**: 2025-11-18 10:00
+- **담당 에이전트**: orchestrator
+- **예상 소요 시간**: 30분
+
+### 목표
+TypeScript 5.0의 새로운 기능을 소개하는 다국어(ko, ja, en) 블로그 포스트 작성
+
+### 성공 기준
+- [ ] 3개 언어 버전 완성
+- [ ] 코드 예제 검증 완료
+- [ ] SEO 메타데이터 최적화
+- [ ] astro check 통과
+
+### 단계
+| # | 단계명 | 담당 | 상태 | 의존성 | 비고 |
+|---|--------|------|------|--------|------|
+| 1 | 최신 정보 리서치 | web-researcher | pending | - | Brave Search |
+| 2 | 히어로 이미지 생성 | image-generator | pending | - | 병렬 실행 |
+| 3 | 한국어 버전 작성 | writing-assistant | pending | 1, 2 | |
+| 4 | 일본어 버전 작성 | writing-assistant | pending | 3 | |
+| 5 | 영어 버전 작성 | writing-assistant | pending | 3 | |
+| 6 | 품질 검토 | editor | pending | 3, 4, 5 | |
+| 7 | 빌드 검증 | site-manager | pending | 6 | astro check |
+
+### 리스크 및 대안
+| 리스크 | 확률 | 영향 | 대안 계획 |
+|--------|------|------|----------|
+| API rate limit | 중 | 중 | 2초 지연 적용 |
+| 이미지 생성 실패 | 낮음 | 중 | 기본 이미지 사용 |
+
+### 산출물
+- [ ] src/content/blog/ko/typescript-5-features.md
+- [ ] src/content/blog/ja/typescript-5-features.md
+- [ ] src/content/blog/en/typescript-5-features.md
+- [ ] src/assets/blog/typescript-5-features-hero.jpg
+```
+
+---
+
+## Integration with Agents
+
+### How Orchestrator Receives Plan
+
+Commands create initial plans and delegate execution:
+
+```markdown
+# In /write-post command
+
+1. Command creates plan:
+   - Define 8 phases
+   - Assign agents to each phase
+   - Set dependencies
+
+2. Command invokes agents sequentially:
+   @web-researcher "Research TypeScript 5.0 features"
+   @image-generator "Create hero image"
+   @writing-assistant "Write Korean version"
+   # ... etc
+```
+
+### How Tasks Are Distributed
+
+**Command-to-Agent Flow**:
+```
+/write-post "topic"
+    ↓ Creates plan (8 phases)
+    ↓ Phase 1: Research
+@web-researcher
+    ↓ Executes research
+    ↓ Returns results
+    ↓ Phase 2: Image
+@image-generator
+    ↓ Generates image
+    ↓ Returns file path
+    ↓ Phase 3-5: Writing
+@writing-assistant (3x)
+    ↓ Writes ko/ja/en versions
+    ↓ Returns markdown files
+```
+
+### Actual Command Examples
+
+**Example 1: Blog Post Creation**
+```bash
+/write-post "Claude Code MCP Integration"
+
+# Internally executes:
+# Phase 1
+@web-researcher "Research Claude Code MCP best practices"
+
+# Phase 2 (parallel)
+@image-generator "Generate hero image for MCP integration post"
+
+# Phase 3
+@writing-assistant "Write Korean blog post: [research results]"
+
+# Phase 4
+@writing-assistant "Translate to Japanese: [ko content]"
+
+# Phase 5
+@writing-assistant "Translate to English: [ko content]"
+
+# Phase 6
+@editor "Review all 3 language versions"
+
+# Phase 7
+@backlink-manager "Add internal links to related posts"
+
+# Phase 8
+@site-manager "Run astro check and build"
+```
+
+**Example 2: Metadata Pipeline**
+```bash
+/analyze-posts
+
+# Internally executes:
+@post-analyzer "Analyze all Korean blog posts"
+# → Generates post-metadata.json
+
+/generate-recommendations
+
+# Internally executes:
+@content-recommender "Generate semantic recommendations using metadata"
+# → Updates frontmatter with relatedPosts
+```
+
+**Example 3: GA Report**
+```bash
+/write-ga-post 2025-11-09
+
+# Internally executes:
+# Phase 1
+@analytics-reporter "Fetch GA4 data for 2025-11-09"
+
+# Phase 2
+@writing-assistant "Write Korean GA report: [data]"
+
+# Phase 3
+@writing-assistant "Translate to Japanese: [ko content]"
+
+# Phase 4
+@writing-assistant "Translate to English: [ko content]"
+
+# Phase 5
+@improvement-tracker "Extract action items from report"
+# → Creates TODO entries
+```
+
+---
+
+## 베스트 프랙티스
+
+### DO
+- 항상 명시적 계획으로 시작
+- 각 단계를 작은 단위로 분해
+- 의존성을 명확히 정의
+- 중단점에서 검토 수행
+- 실패 시 재계획 고려
+
+### DON'T
+- 암묵적 계획으로 진행
+- 과도하게 큰 단계 정의
+- 의존성 무시
+- 검토 없이 계속 진행
+- 맹목적 재시도
+
+---
+
+## 관련 문서
+- [state-management.md](./state-management.md): 상태 관리 프로토콜
+- [recovery-protocol.md](./recovery-protocol.md): 복구 프로토콜
+- [agent-clusters.md](./agent-clusters.md): 에이전트 클러스터 정의

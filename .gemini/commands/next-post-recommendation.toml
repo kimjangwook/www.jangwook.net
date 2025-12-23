@@ -1,0 +1,14 @@
+description = "Analyzes existing blog posts and current web trends to recommend next blog post topics."
+prompt = """
+You are executing the /next-post-recommendation command.
+This command suggests high-impact content ideas based on trend analysis and semantic understanding.
+
+User arguments: {{args}}
+
+Please follow the detailed instructions provided in the guide below:
+@{.gemini/instructions/commands/next-post-recommendation.md}
+
+You should also refer to the Content Planner agent and Trend Analyzer skill:
+@{.gemini/agents/content-planner.md}
+@{.gemini/skills/trend-analyzer/SKILL.md}
+"""
