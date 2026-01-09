@@ -1,4 +1,26 @@
 {
+  "tailwind-layoffs-opensource-ai-crisis": {
+    "pubDate": "2026-01-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.7,
+      "ai-ml": 0.8,
+      "devops": 0.2,
+      "architecture": 0.4
+    }
+  },
+  "claude-code-plugins-complete-guide": {
+    "pubDate": "2025-12-27",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.5,
+      "ai-ml": 0.9,
+      "devops": 0.7,
+      "architecture": 0.85
+    }
+  },
   "anthropic-agent-skills-practical-guide": {
     "pubDate": "2025-12-26",
     "difficulty": 3,
