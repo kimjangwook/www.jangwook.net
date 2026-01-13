@@ -1,0 +1,418 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import { Image } from 'astro:assets';
+import { getStaticPaths as getI18nStaticPaths } from '../../../lib/i18n/utils';
+import { useTranslations, type Language } from '../../../lib/i18n/languages';
+
+// Import screenshots
+import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
+import screenshot02 from '../../../assets/portfolio/shadow-dash/shadow-dash-02_iphone.png';
+import screenshot03 from '../../../assets/portfolio/shadow-dash/shadow-dash-03_iphone.png';
+import screenshot04 from '../../../assets/portfolio/shadow-dash/shadow-dash-04_iphone.png';
+import appIcon from '../../../assets/portfolio/shadow-dash/app_icon.jpg';
+
+export function getStaticPaths() {
+	return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+
+// Localized content
+const content = {
+	ko: {
+		title: 'Shadow Dash - 빛과 그림자를 넘나드는 원터치 플랫포머',
+		subtitle: '빛과 그림자를 넘나드는 여정',
+		description: '낮과 밤이 빠르게 전환되는 세계에서 플레이어는 낮에는 그림자 위로, 밤에는 빛 위로 점프하며 생존해야 합니다. 직관적인 원터치 조작과 아름다운 시각적 대비가 특징인 타이밍 기반 러닝 게임입니다.',
+		tagline: '"어둠 속에서 빛을 찾고, 빛 속에서 그림자를 찾아라"',
+		features: {
+			title: '주요 특징',
+			items: [
+				{
+					icon: '🌓',
+					title: '이중 세계 시스템',
+					desc: '4초마다 낮과 밤이 전환됩니다. 낮에는 건물의 그림자가, 밤에는 가로등과 달빛이 발판이 됩니다.'
+				},
+				{
+					icon: '👆',
+					title: '원터치 조작',
+					desc: '화면을 탭하면 점프! 직관적이고 단순하지만, 전환 타이밍을 예측하는 전략적 플레이가 필요합니다.'
+				},
+				{
+					icon: '🎯',
+					title: '8단계 난이도',
+					desc: '초보자부터 레전드까지. 점수가 올라갈수록 속도와 전환 주기가 빨라집니다.'
+				},
+				{
+					icon: '✨',
+					title: '콤보 시스템',
+					desc: '연속 착지로 콤보를 쌓고, 전환 직후 완벽한 착지로 추가 점수를 획득하세요.'
+				}
+			]
+		},
+		techStack: {
+			title: '기술 스택',
+			items: ['Tauri v2', 'SvelteKit', 'PixiJS v8', 'Rust', 'TypeScript']
+		},
+		gameplay: {
+			title: '게임플레이',
+			day: {
+				title: '☀️ 낮 (Day)',
+				desc: '건물과 나무의 그림자가 발판이 됩니다. 빛 영역은 통과합니다.'
+			},
+			night: {
+				title: '🌙 밤 (Night)',
+				desc: '가로등, 달빛, 네온사인의 빛이 발판이 됩니다. 그림자 영역은 통과합니다.'
+			},
+			transition: {
+				title: '⏱️ 전환 중',
+				desc: '양쪽 모두 유효! 자비로운 판정으로 전환 순간을 버틸 수 있습니다.'
+			}
+		},
+		platform: 'iOS',
+		status: '개발 완료',
+		cta: 'App Store에서 다운로드'
+	},
+	ja: {
+		title: 'Shadow Dash - 光と影を駆け抜ける旅',
+		subtitle: '光と影を駆け抜ける旅',
+		description: '昼と夜が素早く切り替わる世界で、プレイヤーは昼は影の上、夜は光の上をジャンプしながら生き残らなければなりません。直感的なワンタッチ操作と美しい視覚的コントラストが特徴の、タイミングベースのランニングゲームです。',
+		tagline: '「闇の中に光を見つけ、光の中に影を見つけよ」',
+		features: {
+			title: '主な特徴',
+			items: [
+				{
+					icon: '🌓',
+					title: 'デュアルワールドシステム',
+					desc: '4秒ごとに昼と夜が切り替わります。昼はビルの影が、夜は街灯や月明かりが足場になります。'
+				},
+				{
+					icon: '👆',
+					title: 'ワンタッチ操作',
+					desc: '画面をタップでジャンプ！直感的でシンプルですが、切り替えタイミングを予測する戦略的なプレイが必要です。'
+				},
+				{
+					icon: '🎯',
+					title: '8段階の難易度',
+					desc: '初心者からレジェンドまで。スコアが上がるにつれて速度と切り替え周期が速くなります。'
+				},
+				{
+					icon: '✨',
+					title: 'コンボシステム',
+					desc: '連続着地でコンボを積み、切り替え直後の完璧な着地で追加スコアを獲得しましょう。'
+				}
+			]
+		},
+		techStack: {
+			title: '技術スタック',
+			items: ['Tauri v2', 'SvelteKit', 'PixiJS v8', 'Rust', 'TypeScript']
+		},
+		gameplay: {
+			title: 'ゲームプレイ',
+			day: {
+				title: '☀️ 昼 (Day)',
+				desc: 'ビルや木の影が足場になります。光エリアは通過します。'
+			},
+			night: {
+				title: '🌙 夜 (Night)',
+				desc: '街灯、月明かり、ネオンサインの光が足場になります。影エリアは通過します。'
+			},
+			transition: {
+				title: '⏱️ 切り替え中',
+				desc: '両方とも有効！寛大な判定で切り替えの瞬間を乗り越えられます。'
+			}
+		},
+		platform: 'iOS',
+		status: '開発完了',
+		cta: 'App Storeでダウンロード'
+	},
+	en: {
+		title: 'Shadow Dash - One-Touch Platformer Between Light and Shadow',
+		subtitle: 'A Journey Through Light and Shadow',
+		description: 'In a world where day and night rapidly switch, players must survive by jumping on shadows during the day and on light during the night. A timing-based running game featuring intuitive one-touch controls and beautiful visual contrast.',
+		tagline: '"Find light in the darkness, find shadow in the light"',
+		features: {
+			title: 'Key Features',
+			items: [
+				{
+					icon: '🌓',
+					title: 'Dual World System',
+					desc: 'Day and night switch every 4 seconds. Building shadows become platforms during the day, streetlights and moonlight during the night.'
+				},
+				{
+					icon: '👆',
+					title: 'One-Touch Controls',
+					desc: 'Tap to jump! Intuitive and simple, but requires strategic play to predict transition timing.'
+				},
+				{
+					icon: '🎯',
+					title: '8 Difficulty Levels',
+					desc: 'From Beginner to Legend. Speed and transition cycles increase as your score rises.'
+				},
+				{
+					icon: '✨',
+					title: 'Combo System',
+					desc: 'Build combos with consecutive landings and earn bonus points for perfect landings right after transitions.'
+				}
+			]
+		},
+		techStack: {
+			title: 'Tech Stack',
+			items: ['Tauri v2', 'SvelteKit', 'PixiJS v8', 'Rust', 'TypeScript']
+		},
+		gameplay: {
+			title: 'Gameplay',
+			day: {
+				title: '☀️ Day',
+				desc: 'Shadows from buildings and trees become platforms. Light areas are passable.'
+			},
+			night: {
+				title: '🌙 Night',
+				desc: 'Light from streetlamps, moonlight, and neon signs become platforms. Shadow areas are passable.'
+			},
+			transition: {
+				title: '⏱️ During Transition',
+				desc: 'Both are valid! Graceful judgment helps you survive the transition moment.'
+			}
+		},
+		platform: 'iOS',
+		status: 'Development Complete',
+		cta: 'Download on App Store'
+	},
+	zh: {
+		title: 'Shadow Dash - 穿越光与影的一触式平台游戏',
+		subtitle: '光与影的旅程',
+		description: '在昼夜快速切换的世界里，玩家必须在白天跳跃在阴影上、夜晚跳跃在光芒上才能生存。这是一款以时机为基础的跑酷游戏，具有直观的一触式操作和美丽的视觉对比。',
+		tagline: '"在黑暗中寻找光明，在光明中寻找阴影"',
+		features: {
+			title: '主要特点',
+			items: [
+				{
+					icon: '🌓',
+					title: '双重世界系统',
+					desc: '每4秒昼夜切换一次。白天建筑物的阴影成为平台，夜晚路灯和月光成为平台。'
+				},
+				{
+					icon: '👆',
+					title: '一触式操作',
+					desc: '点击跳跃！直观简单，但需要策略性地预测切换时机。'
+				},
+				{
+					icon: '🎯',
+					title: '8个难度等级',
+					desc: '从初学者到传奇。分数越高，速度和切换周期越快。'
+				},
+				{
+					icon: '✨',
+					title: '连击系统',
+					desc: '连续着陆积累连击，在切换后完美着陆可获得额外分数。'
+				}
+			]
+		},
+		techStack: {
+			title: '技术栈',
+			items: ['Tauri v2', 'SvelteKit', 'PixiJS v8', 'Rust', 'TypeScript']
+		},
+		gameplay: {
+			title: '游戏玩法',
+			day: {
+				title: '☀️ 白天',
+				desc: '建筑物和树木的阴影成为平台。光区域可以穿过。'
+			},
+			night: {
+				title: '🌙 夜晚',
+				desc: '路灯、月光、霓虹灯的光芒成为平台。阴影区域可以穿过。'
+			},
+			transition: {
+				title: '⏱️ 切换中',
+				desc: '两者都有效！宽容的判定帮助您度过切换的瞬间。'
+			}
+		},
+		platform: 'iOS',
+		status: '开发完成',
+		cta: '在App Store下载'
+	}
+};
+
+const c = content[lang];
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={c.title} description={c.description} />
+	</head>
+	<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+		<Header lang={lang} />
+
+		<main class="max-w-6xl mx-auto px-4 py-12">
+			<!-- Hero Section -->
+			<section class="text-center mb-16">
+				<div class="inline-block mb-6">
+					<Image
+						src={appIcon}
+						alt="Shadow Dash App Icon"
+						width={120}
+						height={120}
+						class="rounded-3xl shadow-2xl"
+					/>
+				</div>
+				<h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-500 via-orange-500 to-purple-600 bg-clip-text text-transparent">
+					Shadow Dash
+				</h1>
+				<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4">{c.subtitle}</p>
+				<p class="text-lg text-gray-500 dark:text-gray-400 italic mb-8">{c.tagline}</p>
+
+				<!-- Status Badge -->
+				<div class="flex justify-center gap-4 flex-wrap">
+					<span class="px-4 py-2 bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-400 rounded-full text-sm font-medium border border-green-200 dark:border-green-500/30">
+						{c.status}
+					</span>
+					<span class="px-4 py-2 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-400 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-500/30">
+						{c.platform}
+					</span>
+				</div>
+			</section>
+
+			<!-- Description -->
+			<section class="mb-16">
+				<p class="text-lg text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
+					{c.description}
+				</p>
+			</section>
+
+			<!-- Screenshots Gallery -->
+			<section class="mb-16">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+					<div class="relative group">
+						<Image
+							src={screenshot01}
+							alt="Shadow Dash - Title Screen"
+							class="rounded-2xl shadow-xl transition-transform group-hover:scale-105"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					</div>
+					<div class="relative group">
+						<Image
+							src={screenshot02}
+							alt="Shadow Dash - Day Gameplay"
+							class="rounded-2xl shadow-xl transition-transform group-hover:scale-105"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					</div>
+					<div class="relative group">
+						<Image
+							src={screenshot03}
+							alt="Shadow Dash - Night Gameplay"
+							class="rounded-2xl shadow-xl transition-transform group-hover:scale-105"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					</div>
+					<div class="relative group">
+						<Image
+							src={screenshot04}
+							alt="Shadow Dash - Game Over"
+							class="rounded-2xl shadow-xl transition-transform group-hover:scale-105"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Features Section -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white">{c.features.title}</h2>
+				<div class="grid md:grid-cols-2 gap-6">
+					{c.features.items.map((feature) => (
+						<div class="bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-700/50 hover:border-blue-300 dark:hover:border-blue-500/50 transition-colors shadow-sm">
+							<div class="text-4xl mb-4">{feature.icon}</div>
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+							<p class="text-gray-600 dark:text-gray-400">{feature.desc}</p>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Gameplay Section -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white">{c.gameplay.title}</h2>
+				<div class="grid md:grid-cols-3 gap-6">
+					<!-- Day -->
+					<div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-500/10 dark:to-orange-500/10 rounded-2xl p-6 border border-yellow-200 dark:border-yellow-500/20">
+						<h3 class="text-xl font-bold text-yellow-600 dark:text-yellow-400 mb-3">{c.gameplay.day.title}</h3>
+						<p class="text-gray-700 dark:text-gray-300">{c.gameplay.day.desc}</p>
+					</div>
+					<!-- Night -->
+					<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-500/10 dark:to-purple-500/10 rounded-2xl p-6 border border-blue-200 dark:border-blue-500/20">
+						<h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">{c.gameplay.night.title}</h3>
+						<p class="text-gray-700 dark:text-gray-300">{c.gameplay.night.desc}</p>
+					</div>
+					<!-- Transition -->
+					<div class="bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-500/10 dark:to-teal-500/10 rounded-2xl p-6 border border-green-200 dark:border-green-500/20">
+						<h3 class="text-xl font-bold text-green-600 dark:text-green-400 mb-3">{c.gameplay.transition.title}</h3>
+						<p class="text-gray-700 dark:text-gray-300">{c.gameplay.transition.desc}</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Tech Stack -->
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white">{c.techStack.title}</h2>
+				<div class="flex flex-wrap justify-center gap-3">
+					{c.techStack.items.map((tech) => (
+						<span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-medium">
+							{tech}
+						</span>
+					))}
+				</div>
+			</section>
+
+			<!-- CTA Section -->
+			<section class="text-center">
+				<div class="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 dark:from-blue-500/20 dark:via-purple-500/20 dark:to-pink-500/20 rounded-3xl p-8 border border-gray-200 dark:border-gray-700/50">
+					<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+						{lang === 'ko' ? '지금 바로 플레이하세요!' :
+						 lang === 'ja' ? '今すぐプレイ！' :
+						 lang === 'zh' ? '立即开始游戏！' :
+						 'Play Now!'}
+					</h2>
+					<a
+						href="#"
+						class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50"
+					>
+						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+						</svg>
+						{c.cta}
+					</a>
+					<p class="text-gray-500 dark:text-gray-500 text-sm mt-4">
+						{lang === 'ko' ? '* 출시 준비 중' :
+						 lang === 'ja' ? '* リリース準備中' :
+						 lang === 'zh' ? '* 准备上线中' :
+						 '* Coming Soon'}
+					</p>
+				</div>
+			</section>
+
+			<!-- Back to Portfolio -->
+			<div class="text-center mt-12">
+				<a
+					href={`/${lang}/about`}
+					class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors inline-flex items-center gap-2"
+				>
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+					</svg>
+					{lang === 'ko' ? '포트폴리오로 돌아가기' :
+					 lang === 'ja' ? 'ポートフォリオに戻る' :
+					 lang === 'zh' ? '返回作品集' :
+					 'Back to Portfolio'}
+				</a>
+			</div>
+		</main>
+
+		<Footer lang={lang} />
+	</body>
+</html>

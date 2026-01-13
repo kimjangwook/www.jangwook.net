@@ -2,8 +2,10 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
+import { Image } from 'astro:assets';
 import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
 import { useTranslations, type Language } from '../../lib/i18n/languages';
+import shadowDashIcon from '../../assets/portfolio/shadow-dash/app_icon.jpg';
 
 export function getStaticPaths() {
 	return getI18nStaticPaths();
@@ -100,6 +102,46 @@ const t = useTranslations(lang);
 
 				<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">{lang === 'ko' ? '개인 프로젝트' : lang === 'ja' ? '個人プロジェクト' : lang === 'zh' ? '个人项目' : 'My Projects'}</h3>
 				<div class="space-y-6 mb-8">
+			<!-- Shadow Dash -->
+			<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+				<div class="flex items-start gap-4">
+					<a href={`/${lang}/portfolio/shadow-dash`} class="flex-shrink-0">
+						<Image
+							src={shadowDashIcon}
+							alt="Shadow Dash"
+							width={64}
+							height={64}
+							class="rounded-xl shadow-md"
+						/>
+					</a>
+					<div class="flex-1">
+						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+							<a href={`/${lang}/portfolio/shadow-dash`} class="text-accent hover:underline dark:text-accent">
+								Shadow Dash
+							</a>
+						</h4>
+						<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: Tauri v2, SvelteKit, PixiJS v8, Rust, TypeScript</p>
+						<p class="text-gray-700 dark:text-gray-300">
+							{lang === 'ko' ? (
+								'빛과 그림자를 넘나드는 원터치 플랫포머 게임. 4초마다 낮과 밤이 전환되며, 낮에는 그림자 위로, 밤에는 빛 위로 점프해야 합니다. iOS 앱으로 출시 예정.'
+							) : lang === 'ja' ? (
+								'光と影を駆け抜けるワンタッチプラットフォーマー。4秒ごとに昼夜が切り替わり、昼は影の上、夜は光の上をジャンプします。iOS向けリリース予定。'
+							) : lang === 'zh' ? (
+								'穿越光与影的一触式平台游戏。每4秒昼夜切换，白天在阴影上跳跃，夜晚在光芒上跳跃。即将在iOS发布。'
+							) : (
+								'One-touch platformer game traversing light and shadow. Day and night switch every 4 seconds - jump on shadows during day, on light during night. Coming to iOS.'
+							)}
+						</p>
+						<div class="mt-3 flex gap-2">
+							<span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-medium">
+								{lang === 'ko' ? '개발 완료' : lang === 'ja' ? '開発完了' : lang === 'zh' ? '开发完成' : 'Development Complete'}
+							</span>
+							<span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded text-xs font-medium">iOS</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 				<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 					<a href="https://agent-effi-flow.jangwook.net" target="_blank" class="text-accent hover:underline dark:text-accent">
