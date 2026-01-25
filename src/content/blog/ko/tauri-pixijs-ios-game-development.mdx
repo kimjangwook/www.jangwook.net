@@ -1,0 +1,610 @@
+---
+title: 'Tauri + PixiJS로 iOS 게임 개발: 웹 기술로 App Store 배포까지'
+description: 'Tauri 2.x와 PixiJS 8을 사용해 웹 기술로 iOS 게임을 개발하고 App Store에 배포하는 전체 과정을 실제 프로젝트 코드와 함께 정리했습니다.'
+pubDate: '2026-01-26'
+heroImage: ../../../assets/portfolio/shadow-dash/app_icon.jpg
+tags:
+  - tauri
+  - pixijs
+  - ios
+relatedPosts:
+  - slug: "individual-developer-ai-saas-journey"
+    score: 0.82
+    reason:
+      ko: "개인 개발자의 AI SaaS 개발 여정으로, 웹 기술 기반 앱 개발 경험을 공유합니다"
+      ja: "個人開発者のAI SaaS開発ジャーニーで、ウェブ技術ベースのアプリ開発経験を共有しています"
+      en: "Personal developer's AI SaaS development journey, sharing web tech-based app development experiences"
+      zh: "个人开发者的AI SaaS开发之旅，分享基于Web技术的应用开发经验"
+  - slug: "claude-code-web-automation"
+    score: 0.75
+    reason:
+      ko: "Claude Code를 활용한 웹 자동화로, 개발 워크플로우 효율화에 도움이 됩니다"
+      ja: "Claude Codeを活用したウェブ自動化で、開発ワークフロー効率化に役立ちます"
+      en: "Web automation with Claude Code helps streamline development workflows"
+      zh: "使用Claude Code进行Web自动化，有助于优化开发工作流程"
+  - slug: "chrome-devtools-mcp-performance"
+    score: 0.73
+    reason:
+      ko: "Chrome DevTools MCP를 활용한 성능 분석으로, 게임 최적화에 활용할 수 있습니다"
+      ja: "Chrome DevTools MCPを活用した性能分析で、ゲーム最適化に活用できます"
+      en: "Performance analysis with Chrome DevTools MCP can be applied to game optimization"
+      zh: "使用Chrome DevTools MCP进行性能分析，可用于游戏优化"
+---
+
+## 개요
+
+웹 개발자가 iOS 앱을 만들고 싶다면 어떤 선택지가 있을까요? React Native, Flutter, 또는 네이티브 Swift를 배워야 할까요?
+
+이 글에서는 **Tauri 2.x + PixiJS + SvelteKit** 조합으로 iOS 게임을 개발하고 App Store에 배포한 경험을 공유합니다. 실제로 개발한 **Shadow Dash** 게임의 코드를 기반으로, 환경 설정부터 심사 제출까지 전체 과정을 다룹니다.
+
+> 🎮 **Shadow Dash** 상세 정보: [포트폴리오 페이지](/ko/portfolio/shadow-dash)에서 게임의 핵심 메커니즘, 기술 스택, 스크린샷을 확인할 수 있습니다.
+
+import { Image } from 'astro:assets';
+import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
+import screenshot03 from '../../../assets/portfolio/shadow-dash/shadow-dash-03_iphone.png';
+import screenshot05 from '../../../assets/portfolio/shadow-dash/shadow-dash-05_iphone.png';
+
+<Image src={screenshot01} alt="Shadow Dash 게임플레이" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+## 기술 스택 선택
+
+### 왜 Tauri + PixiJS인가?
+
+| 기술 | 역할 | 장점 |
+|------|------|------|
+| **PixiJS 8** | 2D 렌더링 엔진 | WebGL 기반 고성능, 가벼움, 유연함 |
+| **SvelteKit** | 프론트엔드 프레임워크 | 빠른 빌드, 작은 번들, Svelte 5 runes |
+| **Tauri 2.x** | 네이티브 래퍼 | Electron보다 가벼움, iOS/Android 지원 |
+| **TypeScript** | 개발 언어 | 타입 안정성, IDE 지원 |
+
+### PixiJS vs Phaser
+
+게임 개발에 자주 비교되는 두 라이브러리입니다.
+
+| 항목 | PixiJS | Phaser |
+|------|--------|--------|
+| 용도 | 순수 렌더링 엔진 | 풀 게임 프레임워크 |
+| 번들 크기 | ~300KB | ~1MB |
+| 유연성 | 높음 (직접 구현) | 중간 (프레임워크 규칙) |
+| 학습 곡선 | 중간 | 낮음 |
+| 추천 | 커스텀 게임 로직 | 빠른 프로토타입 |
+
+**Shadow Dash에서 PixiJS를 선택한 이유:**
+- 낮/밤 전환 같은 커스텀 시각 효과 구현 용이
+- SvelteKit과의 자연스러운 통합
+- 더 작은 번들 사이즈로 모바일 최적화
+
+### AI 개발 친화적인 게임 장르
+
+첫 프로젝트로 추천하는 장르:
+
+| 순위 | 장르 | 개발 난이도 | AI 활용도 | 수익 잠재력 |
+|------|------|-------------|-----------|-------------|
+| 1 | 탭 반응 게임 (Flappy Bird류) | ⭐ | ★★★ | ★★ |
+| 2 | 단어/퀴즈 | ⭐⭐ | ★★★★★ | ★★★ |
+| 3 | 2048 계열 | ⭐⭐ | ★★★★ | ★★ |
+| 4 | 아이들/방치형 | ⭐⭐ | ★★★★ | ★★★★ |
+
+**탭 반응 게임을 추천하는 이유:**
+- 코드량이 적음 (500줄 이내 가능)
+- 게임 로직이 단순하고 명확
+- 스킨/테마 교체로 시리즈화 용이
+- 첫 프로젝트로 전체 파이프라인 학습에 적합
+
+## 개발 환경 설정
+
+### 필수 도구 설치
+
+```bash
+# Node.js (v18+)
+node --version
+
+# Rust 설치
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+
+# iOS 타겟 추가
+rustup target add aarch64-apple-ios
+rustup target add aarch64-apple-ios-sim
+
+# Xcode Command Line Tools
+xcode-select --install
+```
+
+### Homebrew 패키지 (macOS)
+
+```bash
+brew install cocoapods
+```
+
+### 프로젝트 초기화
+
+```bash
+# SvelteKit 프로젝트 생성
+npx sv create my-game
+cd my-game
+
+# PixiJS 설치
+bun add pixi.js
+
+# Tauri 초기화
+bun add -D @tauri-apps/cli
+bunx tauri init
+
+# iOS 초기화
+bunx tauri ios init
+```
+
+### SvelteKit 설정 (Tauri용)
+
+Tauri는 Node.js 서버 없이 동작하므로 정적 어댑터로 SPA 모드 설정이 필요합니다.
+
+`svelte.config.js`:
+```javascript
+import adapter from '@sveltejs/adapter-static';
+
+export default {
+  kit: {
+    adapter: adapter({
+      fallback: 'index.html'
+    }),
+    prerender: {
+      entries: []
+    }
+  }
+};
+```
+
+`src/routes/+layout.ts`:
+```typescript
+export const prerender = true;
+export const ssr = false;
+```
+
+## 게임 아키텍처
+
+Shadow Dash의 핵심 구조를 살펴보겠습니다.
+
+### 프로젝트 구조
+
+```
+src/
+├── lib/
+│   ├── game/
+│   │   ├── core/           # Game, GameLoop, GameState
+│   │   ├── systems/        # TimeCycle, Platform, Collision
+│   │   ├── entities/       # Player, Platform
+│   │   ├── managers/       # Score, Audio, Input
+│   │   ├── rendering/      # Background, Transition, Particle
+│   │   └── config/         # constants, colors
+│   ├── components/         # Svelte 컴포넌트
+│   └── tauri/              # Tauri 커맨드 래퍼
+├── routes/                 # SvelteKit 라우트
+└── app.html
+
+src-tauri/
+├── src/
+│   └── lib.rs              # Tauri 커맨드 (저장, 햅틱)
+└── tauri.conf.json
+```
+
+### 핵심 게임 클래스: Game.ts
+
+게임의 메인 클래스는 PixiJS Application을 초기화하고 모든 시스템을 연결합니다.
+
+```typescript
+import { Application, Container } from 'pixi.js';
+import { EventEmitter } from 'eventemitter3';
+
+export class Game extends EventEmitter<GameEvents> {
+  private app: Application | null = null;
+  private gameLoop: GameLoop | null = null;
+
+  // Core systems
+  public gameState: GameState;
+  public timeCycle: TimeCycleManager;
+  public scoreManager: ScoreManager;
+
+  constructor() {
+    super();
+    this.gameState = new GameState();
+    this.timeCycle = new TimeCycleManager();
+    this.scoreManager = new ScoreManager();
+    this.setupEventListeners();
+  }
+
+  async init(canvas: HTMLCanvasElement): Promise<void> {
+    this.app = new Application();
+
+    await this.app.init({
+      canvas,
+      width: SCREEN.WIDTH,
+      height: SCREEN.HEIGHT,
+      backgroundColor: 0x87CEEB,
+      resolution: window.devicePixelRatio || 1,
+      autoDensity: true,
+      antialias: true,
+    });
+
+    // Create layered containers
+    this.backgroundContainer = new Container();
+    this.gameContainer = new Container();
+    this.effectContainer = new Container();
+    this.uiContainer = new Container();
+
+    this.app.stage.addChild(this.backgroundContainer);
+    this.app.stage.addChild(this.gameContainer);
+    this.app.stage.addChild(this.effectContainer);
+    this.app.stage.addChild(this.uiContainer);
+
+    // Initialize systems...
+    this.emit('ready');
+  }
+}
+```
+
+**핵심 포인트:**
+- **레이어드 컨테이너**: 배경, 게임 오브젝트, 이펙트, UI를 분리하여 렌더링 순서 관리
+- **이벤트 기반**: EventEmitter3으로 컴포넌트 간 느슨한 결합
+- **비동기 초기화**: PixiJS 8은 async init() 패턴 사용
+
+### 낮/밤 전환 시스템: TimeCycleManager.ts
+
+Shadow Dash의 핵심 메커니즘인 낮/밤 전환 시스템입니다.
+
+```typescript
+export type TimeState = 'day' | 'night' | 'toNight' | 'toDay';
+
+export class TimeCycleManager extends EventEmitter<TimeCycleEvents> {
+  private state: TimeState = 'day';
+  private timer: number = 0;
+  private _transitionProgress: number = 0;
+
+  // Shadow is valid during day or transitions
+  isShadowValid(): boolean {
+    return this.state === 'day' || this.isTransitioning;
+  }
+
+  // Light is valid during night or transitions
+  isLightValid(): boolean {
+    return this.state === 'night' || this.isTransitioning;
+  }
+
+  update(deltaMs: number): void {
+    if (this.isPaused) return;
+    this.timer += deltaMs;
+
+    if (this.isTransitioning) {
+      this._transitionProgress = Math.min(
+        this.timer / TIME_CYCLE.TRANSITION_DURATION,
+        1
+      );
+      this.emit('transitionProgress', this._transitionProgress);
+    }
+
+    if (this.timer >= this.currentDuration) {
+      this.advanceState();
+    }
+  }
+
+  private advanceState(): void {
+    this.timer = 0;
+    switch (this.state) {
+      case 'day':
+        this.state = 'toNight';
+        this.emit('transitionStart', 'day', 'night');
+        break;
+      case 'toNight':
+        this.state = 'night';
+        this.emit('transitionEnd', 'night');
+        break;
+      // ... night to day
+    }
+  }
+}
+```
+
+<Image src={screenshot03} alt="낮/밤 전환" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+### 플레이어 시스템: Player.ts
+
+PixiJS Graphics로 절차적 캐릭터를 렌더링합니다.
+
+```typescript
+export class Player {
+  public container: Container;
+  private graphics: Graphics;
+
+  private velocityY: number = 0;
+  private _isGrounded: boolean = false;
+
+  // Squash and stretch animation
+  private scaleX: number = 1;
+  private scaleY: number = 1;
+
+  jump(): void {
+    if (this._isGrounded || this.coyoteTimer > 0) {
+      this.velocityY = PHYSICS.JUMP_FORCE;
+      this._isGrounded = false;
+      this.setState('jump');
+    }
+  }
+
+  update(deltaTime: number): void {
+    // Apply gravity
+    if (!this._isGrounded) {
+      this.velocityY += PHYSICS.GRAVITY * deltaTime;
+      this.velocityY = Math.min(this.velocityY, PHYSICS.MAX_FALL_SPEED);
+      this.y += this.velocityY * deltaTime;
+    }
+
+    // Squash and stretch interpolation
+    this.scaleX += (this.targetScaleX - this.scaleX) * 0.3;
+    this.scaleY += (this.targetScaleY - this.scaleY) * 0.3;
+  }
+}
+```
+
+**게임 피직스 상수:**
+
+```typescript
+export const PHYSICS = {
+  GRAVITY: 0.6,
+  JUMP_FORCE: -14,
+  MAX_FALL_SPEED: 18,
+  COYOTE_TIME: 100,      // ms - 플랫폼 떠난 후 점프 허용 시간
+  JUMP_BUFFER: 100,      // ms - 미리 점프 입력 허용 시간
+} as const;
+```
+
+### 10단계 난이도 시스템
+
+점수에 따라 게임 난이도가 점진적으로 상승합니다.
+
+```typescript
+export const DIFFICULTY = {
+  THRESHOLDS: [
+    // 온보딩 구간 (0-499점)
+    { score: 0, cycleDuration: 5000, speed: 2.8, name: 'tutorial' },
+    { score: 100, cycleDuration: 4500, speed: 3.0, name: 'beginner' },
+    { score: 300, cycleDuration: 4000, speed: 3.3, name: 'novice' },
+
+    // 성장 구간 (500-2999점)
+    { score: 500, cycleDuration: 3700, speed: 3.3, name: 'intermediate' },
+    { score: 1000, cycleDuration: 3400, speed: 3.7, name: 'skilled' },
+    { score: 1500, cycleDuration: 3100, speed: 4.0, name: 'advanced' },
+    { score: 2000, cycleDuration: 2800, speed: 4.5, name: 'expert' },
+
+    // 마스터리 구간 (3000점 이상)
+    { score: 3000, cycleDuration: 2500, speed: 5.0, name: 'master' },
+    { score: 5000, cycleDuration: 2200, speed: 5.5, name: 'grandmaster' },
+    { score: 8000, cycleDuration: 2000, speed: 6.0, name: 'legend' },
+  ],
+} as const;
+```
+
+## 트러블슈팅: 환경 설정 에러
+
+### Bun과 Tauri CLI 호환성 문제
+
+**에러:**
+```
+Cannot find native binding. npm has a bug related to optional dependencies
+```
+
+**원인:** Bun이 Tauri CLI의 optional dependency를 제대로 처리하지 못하는 경우
+
+**해결:**
+```bash
+# npm으로 전환
+rm -rf node_modules bun.lockb
+npm install
+npm run tauri dev
+```
+
+### Rosetta 모드 충돌 (Apple Silicon Mac)
+
+**에러:**
+```
+Error: Cannot install under Rosetta 2 in ARM default prefix (/opt/homebrew)!
+```
+
+**해결:**
+1. 터미널 앱 → 정보 가져오기 → "Rosetta를 사용하여 열기" 체크 해제
+2. 터미널 재시작
+3. 확인: `arch` 명령어 → `arm64` 출력
+
+### Rust/Cargo 설치 에러
+
+**에러:**
+```
+failed to run 'cargo metadata' command: No such file or directory
+```
+
+**해결:**
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+cargo --version
+```
+
+## iOS 개발 빌드
+
+### 시뮬레이터 실행
+
+```bash
+bun tauri ios dev
+```
+
+### Vite 서버 설정
+
+실제 기기 테스트를 위해 모든 IP에서 접근을 허용해야 합니다.
+
+`vite.config.ts`:
+```typescript
+export default defineConfig({
+  server: {
+    host: '0.0.0.0',  // 모든 IP에서 접근 허용
+    port: 1420,
+    strictPort: true,
+  },
+});
+```
+
+### 실제 기기 테스트
+
+**Apple Developer 계정 설정:**
+- Apple Developer 계정 ($99/년) 또는 무료 Apple ID (7일 제한)
+
+**Team ID 설정 (`src-tauri/tauri.conf.json`):**
+```json
+{
+  "bundle": {
+    "iOS": {
+      "developmentTeam": "YOUR_TEAM_ID"
+    }
+  }
+}
+```
+
+**기기에서 실행:**
+```bash
+bun tauri ios dev --device
+```
+
+## App Store 배포
+
+### 프로덕션 빌드
+
+```bash
+bun tauri ios build
+```
+
+### Xcode에서 Archive
+
+```bash
+# Xcode 프로젝트 열기
+open src-tauri/gen/apple/*.xcodeproj
+```
+
+1. **Destination**: Any iOS Device (arm64) 선택
+2. **Product → Archive** 실행
+3. Archive 완료 후 **Organizer** 창에서 **Distribute App** 클릭
+4. **App Store Connect** 선택 → Upload
+
+### Build Rust Code 스크립트 수정
+
+Archive 시 에러 방지를 위해 **Build Phases → Build Rust Code** 스크립트를 수정합니다:
+
+```bash
+export PATH="$HOME/.nvm/versions/node/v22.22.0/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH"
+
+# Archive 모드에서는 스킵
+if [ "$ACTION" = "install" ] || [ "$ACTION" = "archive" ]; then
+    echo "Skipping Rust build for archive"
+    exit 0
+fi
+
+bun run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths "${FRAMEWORK_SEARCH_PATHS:?}" --header-search-paths "${HEADER_SEARCH_PATHS:?}" --gcc-preprocessor-definitions "${GCC_PREPROCESSOR_DEFINITIONS:-}" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}
+```
+
+### App Store Connect 설정
+
+**필수 정보:**
+- 앱 이름, 부제 (각 30자)
+- 설명 (4000자)
+- 키워드 (100자, 쉼표 구분)
+- 스크린샷 (6.7", 6.5", 5.5" 필수)
+- 개인정보 처리방침 URL
+- 지원 URL
+
+### 스크린샷 촬영
+
+```bash
+# 시뮬레이터에서 상태바 정리
+xcrun simctl status_bar booted override --time "9:41"
+xcrun simctl status_bar booted override --batteryLevel 100 --batteryState charged
+```
+
+**필수 스크린샷 크기:**
+
+| 기기 | 해상도 |
+|------|--------|
+| 6.7" (iPhone 16 Pro Max) | 1320 × 2868 |
+| 6.5" (iPhone 15 Plus) | 1290 × 2796 |
+| 5.5" (iPhone 8 Plus) | 1242 × 2208 |
+
+<Image src={screenshot05} alt="App Store 스크린샷" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+## 자주 발생하는 에러와 해결법
+
+| 에러 | 원인 | 해결 |
+|------|------|------|
+| `Cannot find native binding` | Bun 호환성 | npm 사용 |
+| `Cannot install under Rosetta 2` | 터미널 Rosetta 모드 | Rosetta 비활성화 |
+| `cargo: command not found` | Rust 미설치 | Rust 설치 |
+| `Device isn't registered` | 기기 미등록 | Xcode에서 등록 |
+| `Connection refused` | 네트워크 문제 | Vite host 설정, 방화벽 |
+| `npm: command not found` (Xcode) | PATH 문제 | 심볼릭 링크 추가 |
+
+**Xcode에서 npm/cargo 못 찾을 때:**
+
+```bash
+sudo ln -s $(which bun) /usr/local/bin/bun
+sudo ln -s $(which node) /usr/local/bin/node
+sudo ln -s ~/.cargo/bin/cargo /usr/local/bin/cargo
+```
+
+## 명령어 요약
+
+```bash
+# 개발 (시뮬레이터)
+bun tauri ios dev
+
+# 개발 (실제 기기)
+bun tauri ios dev --device
+
+# 프로덕션 빌드
+bun tauri ios build
+
+# Xcode 열기
+open src-tauri/gen/apple/*.xcodeproj
+
+# 시뮬레이터 목록
+xcrun simctl list devices available | grep iPhone
+
+# iOS 타겟 추가
+rustup target add aarch64-apple-ios
+rustup target add aarch64-apple-ios-sim
+```
+
+## 결론
+
+Tauri 2.x + PixiJS + SvelteKit 조합으로 iOS 앱을 개발하는 것은 웹 개발자에게 매우 매력적인 선택입니다.
+
+**핵심 포인트:**
+1. **SvelteKit + PixiJS** - 가볍고 빠른 게임 개발
+2. **Tauri 2.x** - 네이티브 성능과 작은 번들 사이즈
+3. **터미널에서 빌드** - Xcode 직접 빌드보다 안정적
+4. **Build Script 수정** - Archive 시 에러 방지
+
+첫 앱을 성공적으로 배포하면 두 번째부터는 훨씬 수월해집니다!
+
+## Shadow Dash 다운로드
+
+이 글에서 다룬 기술로 개발한 **Shadow Dash**를 직접 플레이해보세요!
+
+<a href="https://apps.apple.com/app/shadow-dash/id6740092498" target="_blank" rel="noopener noreferrer">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;" />
+</a>
+
+**피드백 환영합니다!** 앱을 플레이하시고 개선점이나 버그가 있다면 App Store 리뷰나 이메일로 알려주세요.
+
+> 📱 **Shadow Dash 상세 정보**: [포트폴리오 페이지](/ko/portfolio/shadow-dash)에서 게임의 핵심 메커니즘과 더 많은 스크린샷을 확인하세요.
+
+## 참고 자료
+
+- [Tauri 2.0 공식 문서](https://v2.tauri.app/)
+- [PixiJS 8 문서](https://pixijs.com/8.x/guides)
+- [SvelteKit + Tauri 가이드](https://v2.tauri.app/start/frontend/sveltekit/)
+- [App Store Connect](https://appstoreconnect.apple.com)

@@ -1,0 +1,610 @@
+---
+title: '使用 Tauri + PixiJS 开发 iOS 游戏：从 Web 技术到 App Store 发布'
+description: '使用 Tauri 2.x 和 PixiJS 8，通过 Web 技术开发 iOS 游戏并发布到 App Store 的完整指南，包含实际项目代码示例。'
+pubDate: '2026-01-26'
+heroImage: ../../../assets/portfolio/shadow-dash/app_icon.jpg
+tags:
+  - tauri
+  - pixijs
+  - ios
+relatedPosts:
+  - slug: "individual-developer-ai-saas-journey"
+    score: 0.82
+    reason:
+      ko: "개인 개발자의 AI SaaS 개발 여정으로, 웹 기술 기반 앱 개발 경험을 공유합니다"
+      ja: "個人開発者のAI SaaS開発ジャーニーで、ウェブ技術ベースのアプリ開発経験を共有しています"
+      en: "Personal developer's AI SaaS development journey, sharing web tech-based app development experiences"
+      zh: "个人开发者的AI SaaS开发之旅，分享基于Web技术的应用开发经验"
+  - slug: "claude-code-web-automation"
+    score: 0.75
+    reason:
+      ko: "Claude Code를 활용한 웹 자동화로, 개발 워크플로우 효율화에 도움이 됩니다"
+      ja: "Claude Codeを活用したウェブ自動化で、開発ワークフロー効率化に役立ちます"
+      en: "Web automation with Claude Code helps streamline development workflows"
+      zh: "使用Claude Code进行Web自动化，有助于优化开发工作流程"
+  - slug: "chrome-devtools-mcp-performance"
+    score: 0.73
+    reason:
+      ko: "Chrome DevTools MCP를 활용한 성능 분석으로, 게임 최적화에 활용할 수 있습니다"
+      ja: "Chrome DevTools MCPを活用した性能分析で、ゲーム最適化に活用できます"
+      en: "Performance analysis with Chrome DevTools MCP can be applied to game optimization"
+      zh: "使用Chrome DevTools MCP进行性能分析，可用于游戏优化"
+---
+
+## 概述
+
+当 Web 开发者想要构建 iOS 应用时，有哪些选择？是学习 React Native、Flutter，还是原生 Swift？
+
+本文将分享使用 **Tauri 2.x + PixiJS + SvelteKit** 组合开发 iOS 游戏并发布到 App Store 的经验。基于实际开发的 **Shadow Dash** 游戏代码，涵盖从环境搭建到审核提交的完整流程。
+
+> 🎮 **Shadow Dash** 详情：在[作品集页面](/zh/portfolio/shadow-dash)查看游戏核心机制、技术栈和截图。
+
+import { Image } from 'astro:assets';
+import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
+import screenshot03 from '../../../assets/portfolio/shadow-dash/shadow-dash-03_iphone.png';
+import screenshot05 from '../../../assets/portfolio/shadow-dash/shadow-dash-05_iphone.png';
+
+<Image src={screenshot01} alt="Shadow Dash 游戏画面" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+## 技术栈选择
+
+### 为什么选择 Tauri + PixiJS？
+
+| 技术 | 角色 | 优势 |
+|------|------|------|
+| **PixiJS 8** | 2D 渲染引擎 | 基于 WebGL 的高性能、轻量、灵活 |
+| **SvelteKit** | 前端框架 | 快速构建、小型包体、Svelte 5 runes |
+| **Tauri 2.x** | 原生封装 | 比 Electron 更轻量，支持 iOS/Android |
+| **TypeScript** | 开发语言 | 类型安全、IDE 支持 |
+
+### PixiJS vs Phaser
+
+游戏开发中常被比较的两个库：
+
+| 方面 | PixiJS | Phaser |
+|------|--------|--------|
+| 用途 | 纯渲染引擎 | 完整游戏框架 |
+| 包体大小 | ~300KB | ~1MB |
+| 灵活性 | 高（自行实现） | 中等（框架规则） |
+| 学习曲线 | 中等 | 较低 |
+| 推荐用途 | 自定义游戏逻辑 | 快速原型 |
+
+**Shadow Dash 选择 PixiJS 的原因：**
+- 便于实现昼/夜切换等自定义视觉效果
+- 与 SvelteKit 自然集成
+- 更小的包体大小，优化移动端体验
+
+### AI 友好的游戏类型
+
+首个项目推荐的类型：
+
+| 排名 | 类型 | 开发难度 | AI 可用性 | 收益潜力 |
+|------|------|----------|-----------|----------|
+| 1 | 点击反应游戏 (Flappy Bird 类) | ⭐ | ★★★ | ★★ |
+| 2 | 文字/问答 | ⭐⭐ | ★★★★★ | ★★★ |
+| 3 | 2048 类 | ⭐⭐ | ★★★★ | ★★ |
+| 4 | 放置/挂机类 | ⭐⭐ | ★★★★ | ★★★★ |
+
+**推荐点击反应游戏的原因：**
+- 代码量少（500 行以内可实现）
+- 游戏逻辑简单明确
+- 通过皮肤/主题变化易于系列化
+- 最适合学习完整开发流程
+
+## 开发环境搭建
+
+### 必备工具安装
+
+```bash
+# Node.js (v18+)
+node --version
+
+# 安装 Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+
+# 添加 iOS 目标
+rustup target add aarch64-apple-ios
+rustup target add aarch64-apple-ios-sim
+
+# Xcode 命令行工具
+xcode-select --install
+```
+
+### Homebrew 包（macOS）
+
+```bash
+brew install cocoapods
+```
+
+### 项目初始化
+
+```bash
+# 创建 SvelteKit 项目
+npx sv create my-game
+cd my-game
+
+# 安装 PixiJS
+bun add pixi.js
+
+# 初始化 Tauri
+bun add -D @tauri-apps/cli
+bunx tauri init
+
+# 初始化 iOS
+bunx tauri ios init
+```
+
+### SvelteKit 配置（Tauri 用）
+
+由于 Tauri 无需 Node.js 服务器运行，需要配置静态适配器为 SPA 模式。
+
+`svelte.config.js`:
+```javascript
+import adapter from '@sveltejs/adapter-static';
+
+export default {
+  kit: {
+    adapter: adapter({
+      fallback: 'index.html'
+    }),
+    prerender: {
+      entries: []
+    }
+  }
+};
+```
+
+`src/routes/+layout.ts`:
+```typescript
+export const prerender = true;
+export const ssr = false;
+```
+
+## 游戏架构
+
+让我们看看 Shadow Dash 的核心结构。
+
+### 项目结构
+
+```
+src/
+├── lib/
+│   ├── game/
+│   │   ├── core/           # Game, GameLoop, GameState
+│   │   ├── systems/        # TimeCycle, Platform, Collision
+│   │   ├── entities/       # Player, Platform
+│   │   ├── managers/       # Score, Audio, Input
+│   │   ├── rendering/      # Background, Transition, Particle
+│   │   └── config/         # constants, colors
+│   ├── components/         # Svelte 组件
+│   └── tauri/              # Tauri 命令封装
+├── routes/                 # SvelteKit 路由
+└── app.html
+
+src-tauri/
+├── src/
+│   └── lib.rs              # Tauri 命令（保存、触感反馈）
+└── tauri.conf.json
+```
+
+### 核心游戏类：Game.ts
+
+主游戏类初始化 PixiJS Application 并连接所有系统。
+
+```typescript
+import { Application, Container } from 'pixi.js';
+import { EventEmitter } from 'eventemitter3';
+
+export class Game extends EventEmitter<GameEvents> {
+  private app: Application | null = null;
+  private gameLoop: GameLoop | null = null;
+
+  // 核心系统
+  public gameState: GameState;
+  public timeCycle: TimeCycleManager;
+  public scoreManager: ScoreManager;
+
+  constructor() {
+    super();
+    this.gameState = new GameState();
+    this.timeCycle = new TimeCycleManager();
+    this.scoreManager = new ScoreManager();
+    this.setupEventListeners();
+  }
+
+  async init(canvas: HTMLCanvasElement): Promise<void> {
+    this.app = new Application();
+
+    await this.app.init({
+      canvas,
+      width: SCREEN.WIDTH,
+      height: SCREEN.HEIGHT,
+      backgroundColor: 0x87CEEB,
+      resolution: window.devicePixelRatio || 1,
+      autoDensity: true,
+      antialias: true,
+    });
+
+    // 创建分层容器
+    this.backgroundContainer = new Container();
+    this.gameContainer = new Container();
+    this.effectContainer = new Container();
+    this.uiContainer = new Container();
+
+    this.app.stage.addChild(this.backgroundContainer);
+    this.app.stage.addChild(this.gameContainer);
+    this.app.stage.addChild(this.effectContainer);
+    this.app.stage.addChild(this.uiContainer);
+
+    // 初始化系统...
+    this.emit('ready');
+  }
+}
+```
+
+**关键点：**
+- **分层容器**：分离背景、游戏对象、特效和 UI，管理渲染顺序
+- **事件驱动**：使用 EventEmitter3 实现组件间松耦合
+- **异步初始化**：PixiJS 8 使用 async init() 模式
+
+### 昼夜切换系统：TimeCycleManager.ts
+
+Shadow Dash 的核心机制——昼夜切换系统。
+
+```typescript
+export type TimeState = 'day' | 'night' | 'toNight' | 'toDay';
+
+export class TimeCycleManager extends EventEmitter<TimeCycleEvents> {
+  private state: TimeState = 'day';
+  private timer: number = 0;
+  private _transitionProgress: number = 0;
+
+  // 阴影在白天或过渡期间有效
+  isShadowValid(): boolean {
+    return this.state === 'day' || this.isTransitioning;
+  }
+
+  // 光在夜间或过渡期间有效
+  isLightValid(): boolean {
+    return this.state === 'night' || this.isTransitioning;
+  }
+
+  update(deltaMs: number): void {
+    if (this.isPaused) return;
+    this.timer += deltaMs;
+
+    if (this.isTransitioning) {
+      this._transitionProgress = Math.min(
+        this.timer / TIME_CYCLE.TRANSITION_DURATION,
+        1
+      );
+      this.emit('transitionProgress', this._transitionProgress);
+    }
+
+    if (this.timer >= this.currentDuration) {
+      this.advanceState();
+    }
+  }
+
+  private advanceState(): void {
+    this.timer = 0;
+    switch (this.state) {
+      case 'day':
+        this.state = 'toNight';
+        this.emit('transitionStart', 'day', 'night');
+        break;
+      case 'toNight':
+        this.state = 'night';
+        this.emit('transitionEnd', 'night');
+        break;
+      // ... 夜转昼
+    }
+  }
+}
+```
+
+<Image src={screenshot03} alt="昼夜切换" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+### 玩家系统：Player.ts
+
+使用 PixiJS Graphics 渲染程序化角色。
+
+```typescript
+export class Player {
+  public container: Container;
+  private graphics: Graphics;
+
+  private velocityY: number = 0;
+  private _isGrounded: boolean = false;
+
+  // 挤压拉伸动画
+  private scaleX: number = 1;
+  private scaleY: number = 1;
+
+  jump(): void {
+    if (this._isGrounded || this.coyoteTimer > 0) {
+      this.velocityY = PHYSICS.JUMP_FORCE;
+      this._isGrounded = false;
+      this.setState('jump');
+    }
+  }
+
+  update(deltaTime: number): void {
+    // 应用重力
+    if (!this._isGrounded) {
+      this.velocityY += PHYSICS.GRAVITY * deltaTime;
+      this.velocityY = Math.min(this.velocityY, PHYSICS.MAX_FALL_SPEED);
+      this.y += this.velocityY * deltaTime;
+    }
+
+    // 挤压拉伸插值
+    this.scaleX += (this.targetScaleX - this.scaleX) * 0.3;
+    this.scaleY += (this.targetScaleY - this.scaleY) * 0.3;
+  }
+}
+```
+
+**游戏物理常量：**
+
+```typescript
+export const PHYSICS = {
+  GRAVITY: 0.6,
+  JUMP_FORCE: -14,
+  MAX_FALL_SPEED: 18,
+  COYOTE_TIME: 100,      // ms - 离开平台后允许跳跃的时间
+  JUMP_BUFFER: 100,      // ms - 预输入跳跃缓冲时间
+} as const;
+```
+
+### 10 级难度系统
+
+根据分数逐步提升游戏难度。
+
+```typescript
+export const DIFFICULTY = {
+  THRESHOLDS: [
+    // 新手阶段（0〜499 分）
+    { score: 0, cycleDuration: 5000, speed: 2.8, name: 'tutorial' },
+    { score: 100, cycleDuration: 4500, speed: 3.0, name: 'beginner' },
+    { score: 300, cycleDuration: 4000, speed: 3.3, name: 'novice' },
+
+    // 成长阶段（500〜2999 分）
+    { score: 500, cycleDuration: 3700, speed: 3.3, name: 'intermediate' },
+    { score: 1000, cycleDuration: 3400, speed: 3.7, name: 'skilled' },
+    { score: 1500, cycleDuration: 3100, speed: 4.0, name: 'advanced' },
+    { score: 2000, cycleDuration: 2800, speed: 4.5, name: 'expert' },
+
+    // 精通阶段（3000 分以上）
+    { score: 3000, cycleDuration: 2500, speed: 5.0, name: 'master' },
+    { score: 5000, cycleDuration: 2200, speed: 5.5, name: 'grandmaster' },
+    { score: 8000, cycleDuration: 2000, speed: 6.0, name: 'legend' },
+  ],
+} as const;
+```
+
+## 故障排除：环境配置错误
+
+### Bun 和 Tauri CLI 兼容性问题
+
+**错误：**
+```
+Cannot find native binding. npm has a bug related to optional dependencies
+```
+
+**原因：** Bun 无法正确处理 Tauri CLI 的可选依赖
+
+**解决：**
+```bash
+# 切换到 npm
+rm -rf node_modules bun.lockb
+npm install
+npm run tauri dev
+```
+
+### Rosetta 模式冲突（Apple Silicon Mac）
+
+**错误：**
+```
+Error: Cannot install under Rosetta 2 in ARM default prefix (/opt/homebrew)!
+```
+
+**解决：**
+1. 终端应用 → 显示简介 → 取消勾选"使用 Rosetta 打开"
+2. 重启终端
+3. 验证：`arch` 命令 → 应输出 `arm64`
+
+### Rust/Cargo 安装错误
+
+**错误：**
+```
+failed to run 'cargo metadata' command: No such file or directory
+```
+
+**解决：**
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+cargo --version
+```
+
+## iOS 开发构建
+
+### 运行模拟器
+
+```bash
+bun tauri ios dev
+```
+
+### Vite 服务器配置
+
+真机测试需要允许所有 IP 访问。
+
+`vite.config.ts`:
+```typescript
+export default defineConfig({
+  server: {
+    host: '0.0.0.0',  // 允许所有 IP 访问
+    port: 1420,
+    strictPort: true,
+  },
+});
+```
+
+### 真机测试
+
+**Apple Developer 账户设置：**
+- Apple Developer 账户（$99/年）或免费 Apple ID（7 天限制）
+
+**Team ID 配置（`src-tauri/tauri.conf.json`）：**
+```json
+{
+  "bundle": {
+    "iOS": {
+      "developmentTeam": "YOUR_TEAM_ID"
+    }
+  }
+}
+```
+
+**在设备上运行：**
+```bash
+bun tauri ios dev --device
+```
+
+## App Store 发布
+
+### 生产构建
+
+```bash
+bun tauri ios build
+```
+
+### 在 Xcode 中 Archive
+
+```bash
+# 打开 Xcode 项目
+open src-tauri/gen/apple/*.xcodeproj
+```
+
+1. **Destination**：选择 Any iOS Device (arm64)
+2. **Product → Archive**
+3. Archive 完成后，在 **Organizer** 窗口点击 **Distribute App**
+4. 选择 **App Store Connect** → Upload
+
+### 修改 Build Rust Code 脚本
+
+修改 **Build Phases → Build Rust Code** 脚本以防止 Archive 错误：
+
+```bash
+export PATH="$HOME/.nvm/versions/node/v22.22.0/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH"
+
+# Archive 模式跳过
+if [ "$ACTION" = "install" ] || [ "$ACTION" = "archive" ]; then
+    echo "Skipping Rust build for archive"
+    exit 0
+fi
+
+bun run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths "${FRAMEWORK_SEARCH_PATHS:?}" --header-search-paths "${HEADER_SEARCH_PATHS:?}" --gcc-preprocessor-definitions "${GCC_PREPROCESSOR_DEFINITIONS:-}" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}
+```
+
+### App Store Connect 配置
+
+**必需信息：**
+- 应用名称、副标题（各 30 字符）
+- 描述（4000 字符）
+- 关键词（100 字符，逗号分隔）
+- 截图（6.7"、6.5"、5.5" 必需）
+- 隐私政策 URL
+- 支持 URL
+
+### 截图拍摄
+
+```bash
+# 在模拟器中清理状态栏
+xcrun simctl status_bar booted override --time "9:41"
+xcrun simctl status_bar booted override --batteryLevel 100 --batteryState charged
+```
+
+**必需截图尺寸：**
+
+| 设备 | 分辨率 |
+|------|--------|
+| 6.7" (iPhone 16 Pro Max) | 1320 × 2868 |
+| 6.5" (iPhone 15 Plus) | 1290 × 2796 |
+| 5.5" (iPhone 8 Plus) | 1242 × 2208 |
+
+<Image src={screenshot05} alt="App Store 截图" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+## 常见错误和解决方案
+
+| 错误 | 原因 | 解决 |
+|------|------|------|
+| `Cannot find native binding` | Bun 兼容性 | 使用 npm |
+| `Cannot install under Rosetta 2` | 终端 Rosetta 模式 | 禁用 Rosetta |
+| `cargo: command not found` | Rust 未安装 | 安装 Rust |
+| `Device isn't registered` | 设备未注册 | 在 Xcode 中注册 |
+| `Connection refused` | 网络问题 | 设置 Vite host，检查防火墙 |
+| `npm: command not found` (Xcode) | PATH 问题 | 添加符号链接 |
+
+**当 Xcode 找不到 npm/cargo 时：**
+
+```bash
+sudo ln -s $(which bun) /usr/local/bin/bun
+sudo ln -s $(which node) /usr/local/bin/node
+sudo ln -s ~/.cargo/bin/cargo /usr/local/bin/cargo
+```
+
+## 命令汇总
+
+```bash
+# 开发（模拟器）
+bun tauri ios dev
+
+# 开发（真机）
+bun tauri ios dev --device
+
+# 生产构建
+bun tauri ios build
+
+# 打开 Xcode
+open src-tauri/gen/apple/*.xcodeproj
+
+# 列出模拟器
+xcrun simctl list devices available | grep iPhone
+
+# 添加 iOS 目标
+rustup target add aarch64-apple-ios
+rustup target add aarch64-apple-ios-sim
+```
+
+## 总结
+
+使用 Tauri 2.x + PixiJS + SvelteKit 组合开发 iOS 应用，对于 Web 开发者来说是一个非常有吸引力的选择。
+
+**关键要点：**
+1. **SvelteKit + PixiJS** - 轻量且快速的游戏开发
+2. **Tauri 2.x** - 原生性能与小型包体
+3. **终端构建** - 比直接 Xcode 构建更稳定
+4. **Build Script 修改** - 防止 Archive 错误
+
+一旦成功发布第一个应用，第二个就会轻松很多！
+
+## 下载 Shadow Dash
+
+体验本文介绍技术开发的 **Shadow Dash** 游戏！
+
+<a href="https://apps.apple.com/app/shadow-dash/id6740092498" target="_blank" rel="noopener noreferrer">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;" />
+</a>
+
+**欢迎反馈！** 如果您在游戏中发现任何问题或有改进建议，请通过 App Store 评论或邮件告知我们。
+
+> 📱 **Shadow Dash 详情**：在[作品集页面](/zh/portfolio/shadow-dash)查看游戏核心机制和更多截图。
+
+## 参考资料
+
+- [Tauri 2.0 官方文档](https://v2.tauri.app/)
+- [PixiJS 8 文档](https://pixijs.com/8.x/guides)
+- [SvelteKit + Tauri 指南](https://v2.tauri.app/start/frontend/sveltekit/)
+- [App Store Connect](https://appstoreconnect.apple.com)

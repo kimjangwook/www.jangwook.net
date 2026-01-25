@@ -1,0 +1,610 @@
+---
+title: 'Tauri + PixiJSでiOSゲーム開発：Web技術からApp Store公開まで'
+description: 'Tauri 2.xとPixiJS 8を使用してWeb技術でiOSゲームを開発し、App Storeに公開するまでの全過程を実際のプロジェクトコードと共に解説します。'
+pubDate: '2026-01-26'
+heroImage: ../../../assets/portfolio/shadow-dash/app_icon.jpg
+tags:
+  - tauri
+  - pixijs
+  - ios
+relatedPosts:
+  - slug: "individual-developer-ai-saas-journey"
+    score: 0.82
+    reason:
+      ko: "개인 개발자의 AI SaaS 개발 여정으로, 웹 기술 기반 앱 개발 경험을 공유합니다"
+      ja: "個人開発者のAI SaaS開発ジャーニーで、ウェブ技術ベースのアプリ開発経験を共有しています"
+      en: "Personal developer's AI SaaS development journey, sharing web tech-based app development experiences"
+      zh: "个人开发者的AI SaaS开发之旅，分享基于Web技术的应用开发经验"
+  - slug: "claude-code-web-automation"
+    score: 0.75
+    reason:
+      ko: "Claude Code를 활용한 웹 자동화로, 개발 워크플로우 효율화에 도움이 됩니다"
+      ja: "Claude Codeを活用したウェブ自動化で、開発ワークフロー効率化に役立ちます"
+      en: "Web automation with Claude Code helps streamline development workflows"
+      zh: "使用Claude Code进行Web自动化，有助于优化开发工作流程"
+  - slug: "chrome-devtools-mcp-performance"
+    score: 0.73
+    reason:
+      ko: "Chrome DevTools MCP를 활용한 성능 분석으로, 게임 최적화에 활용할 수 있습니다"
+      ja: "Chrome DevTools MCPを活用した性能分析で、ゲーム最適化に活用できます"
+      en: "Performance analysis with Chrome DevTools MCP can be applied to game optimization"
+      zh: "使用Chrome DevTools MCP进行性能分析，可用于游戏优化"
+---
+
+## 概要
+
+Web開発者がiOSアプリを作りたい場合、どのような選択肢があるでしょうか？React Native、Flutter、あるいはネイティブのSwiftを学ぶべきでしょうか？
+
+この記事では、**Tauri 2.x + PixiJS + SvelteKit**の組み合わせでiOSゲームを開発し、App Storeに公開した経験を共有します。実際に開発した**Shadow Dash**のコードをベースに、環境構築から審査提出までの全過程を解説します。
+
+> 🎮 **Shadow Dash**の詳細：[ポートフォリオページ](/ja/portfolio/shadow-dash)でゲームのコアメカニズム、技術スタック、スクリーンショットをご覧いただけます。
+
+import { Image } from 'astro:assets';
+import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
+import screenshot03 from '../../../assets/portfolio/shadow-dash/shadow-dash-03_iphone.png';
+import screenshot05 from '../../../assets/portfolio/shadow-dash/shadow-dash-05_iphone.png';
+
+<Image src={screenshot01} alt="Shadow Dash ゲームプレイ" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+## 技術スタック選定
+
+### なぜTauri + PixiJSなのか？
+
+| 技術 | 役割 | メリット |
+|------|------|----------|
+| **PixiJS 8** | 2Dレンダリングエンジン | WebGLベースの高性能、軽量、柔軟性 |
+| **SvelteKit** | フロントエンドフレームワーク | 高速ビルド、小さなバンドル、Svelte 5 runes |
+| **Tauri 2.x** | ネイティブラッパー | Electronより軽量、iOS/Androidサポート |
+| **TypeScript** | 開発言語 | 型安全性、IDE支援 |
+
+### PixiJS vs Phaser
+
+ゲーム開発でよく比較される2つのライブラリです。
+
+| 項目 | PixiJS | Phaser |
+|------|--------|--------|
+| 用途 | 純粋なレンダリングエンジン | フルゲームフレームワーク |
+| バンドルサイズ | ~300KB | ~1MB |
+| 柔軟性 | 高い（自前実装） | 中程度（フレームワークのルール） |
+| 学習曲線 | 中程度 | 低い |
+| 推奨用途 | カスタムゲームロジック | 高速プロトタイピング |
+
+**Shadow DashでPixiJSを選んだ理由：**
+- 昼/夜の切り替えなどカスタムビジュアルエフェクトの実装が容易
+- SvelteKitとの自然な統合
+- 小さなバンドルサイズでモバイル最適化
+
+### AI開発に適したゲームジャンル
+
+初めてのプロジェクトにおすすめのジャンル：
+
+| 順位 | ジャンル | 開発難易度 | AI活用度 | 収益可能性 |
+|------|---------|------------|----------|------------|
+| 1 | タップ反応ゲーム (Flappy Bird系) | ⭐ | ★★★ | ★★ |
+| 2 | ワード/クイズ | ⭐⭐ | ★★★★★ | ★★★ |
+| 3 | 2048系 | ⭐⭐ | ★★★★ | ★★ |
+| 4 | アイドル/放置系 | ⭐⭐ | ★★★★ | ★★★★ |
+
+**タップ反応ゲームをおすすめする理由：**
+- コード量が少ない（500行以内で可能）
+- ゲームロジックがシンプルで明確
+- スキン/テーマ変更でシリーズ化が容易
+- 完全な開発パイプライン学習に最適
+
+## 開発環境構築
+
+### 必須ツールのインストール
+
+```bash
+# Node.js (v18+)
+node --version
+
+# Rustのインストール
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+
+# iOSターゲットの追加
+rustup target add aarch64-apple-ios
+rustup target add aarch64-apple-ios-sim
+
+# Xcode Command Line Tools
+xcode-select --install
+```
+
+### Homebrewパッケージ（macOS）
+
+```bash
+brew install cocoapods
+```
+
+### プロジェクト初期化
+
+```bash
+# SvelteKitプロジェクト作成
+npx sv create my-game
+cd my-game
+
+# PixiJSインストール
+bun add pixi.js
+
+# Tauri初期化
+bun add -D @tauri-apps/cli
+bunx tauri init
+
+# iOS初期化
+bunx tauri ios init
+```
+
+### SvelteKit設定（Tauri用）
+
+TauriはNode.jsサーバーなしで動作するため、静的アダプターでSPAモードを設定する必要があります。
+
+`svelte.config.js`:
+```javascript
+import adapter from '@sveltejs/adapter-static';
+
+export default {
+  kit: {
+    adapter: adapter({
+      fallback: 'index.html'
+    }),
+    prerender: {
+      entries: []
+    }
+  }
+};
+```
+
+`src/routes/+layout.ts`:
+```typescript
+export const prerender = true;
+export const ssr = false;
+```
+
+## ゲームアーキテクチャ
+
+Shadow Dashのコア構造を見ていきましょう。
+
+### プロジェクト構造
+
+```
+src/
+├── lib/
+│   ├── game/
+│   │   ├── core/           # Game, GameLoop, GameState
+│   │   ├── systems/        # TimeCycle, Platform, Collision
+│   │   ├── entities/       # Player, Platform
+│   │   ├── managers/       # Score, Audio, Input
+│   │   ├── rendering/      # Background, Transition, Particle
+│   │   └── config/         # constants, colors
+│   ├── components/         # Svelteコンポーネント
+│   └── tauri/              # Tauriコマンドラッパー
+├── routes/                 # SvelteKitルート
+└── app.html
+
+src-tauri/
+├── src/
+│   └── lib.rs              # Tauriコマンド（保存、ハプティクス）
+└── tauri.conf.json
+```
+
+### コアゲームクラス：Game.ts
+
+メインゲームクラスはPixiJS Applicationを初期化し、すべてのシステムを接続します。
+
+```typescript
+import { Application, Container } from 'pixi.js';
+import { EventEmitter } from 'eventemitter3';
+
+export class Game extends EventEmitter<GameEvents> {
+  private app: Application | null = null;
+  private gameLoop: GameLoop | null = null;
+
+  // コアシステム
+  public gameState: GameState;
+  public timeCycle: TimeCycleManager;
+  public scoreManager: ScoreManager;
+
+  constructor() {
+    super();
+    this.gameState = new GameState();
+    this.timeCycle = new TimeCycleManager();
+    this.scoreManager = new ScoreManager();
+    this.setupEventListeners();
+  }
+
+  async init(canvas: HTMLCanvasElement): Promise<void> {
+    this.app = new Application();
+
+    await this.app.init({
+      canvas,
+      width: SCREEN.WIDTH,
+      height: SCREEN.HEIGHT,
+      backgroundColor: 0x87CEEB,
+      resolution: window.devicePixelRatio || 1,
+      autoDensity: true,
+      antialias: true,
+    });
+
+    // レイヤードコンテナの作成
+    this.backgroundContainer = new Container();
+    this.gameContainer = new Container();
+    this.effectContainer = new Container();
+    this.uiContainer = new Container();
+
+    this.app.stage.addChild(this.backgroundContainer);
+    this.app.stage.addChild(this.gameContainer);
+    this.app.stage.addChild(this.effectContainer);
+    this.app.stage.addChild(this.uiContainer);
+
+    // システム初期化...
+    this.emit('ready');
+  }
+}
+```
+
+**ポイント：**
+- **レイヤードコンテナ**：背景、ゲームオブジェクト、エフェクト、UIを分離してレンダリング順序を管理
+- **イベントベース**：EventEmitter3でコンポーネント間の疎結合を実現
+- **非同期初期化**：PixiJS 8はasync init()パターンを使用
+
+### 昼/夜切り替えシステム：TimeCycleManager.ts
+
+Shadow Dashのコアメカニズムである昼/夜切り替えシステムです。
+
+```typescript
+export type TimeState = 'day' | 'night' | 'toNight' | 'toDay';
+
+export class TimeCycleManager extends EventEmitter<TimeCycleEvents> {
+  private state: TimeState = 'day';
+  private timer: number = 0;
+  private _transitionProgress: number = 0;
+
+  // 影は昼間またはトランジション中に有効
+  isShadowValid(): boolean {
+    return this.state === 'day' || this.isTransitioning;
+  }
+
+  // 光は夜間またはトランジション中に有効
+  isLightValid(): boolean {
+    return this.state === 'night' || this.isTransitioning;
+  }
+
+  update(deltaMs: number): void {
+    if (this.isPaused) return;
+    this.timer += deltaMs;
+
+    if (this.isTransitioning) {
+      this._transitionProgress = Math.min(
+        this.timer / TIME_CYCLE.TRANSITION_DURATION,
+        1
+      );
+      this.emit('transitionProgress', this._transitionProgress);
+    }
+
+    if (this.timer >= this.currentDuration) {
+      this.advanceState();
+    }
+  }
+
+  private advanceState(): void {
+    this.timer = 0;
+    switch (this.state) {
+      case 'day':
+        this.state = 'toNight';
+        this.emit('transitionStart', 'day', 'night');
+        break;
+      case 'toNight':
+        this.state = 'night';
+        this.emit('transitionEnd', 'night');
+        break;
+      // ... 夜から昼へ
+    }
+  }
+}
+```
+
+<Image src={screenshot03} alt="昼/夜切り替え" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+### プレイヤーシステム：Player.ts
+
+PixiJS Graphicsでプロシージャルなキャラクターをレンダリングします。
+
+```typescript
+export class Player {
+  public container: Container;
+  private graphics: Graphics;
+
+  private velocityY: number = 0;
+  private _isGrounded: boolean = false;
+
+  // スカッシュ＆ストレッチアニメーション
+  private scaleX: number = 1;
+  private scaleY: number = 1;
+
+  jump(): void {
+    if (this._isGrounded || this.coyoteTimer > 0) {
+      this.velocityY = PHYSICS.JUMP_FORCE;
+      this._isGrounded = false;
+      this.setState('jump');
+    }
+  }
+
+  update(deltaTime: number): void {
+    // 重力を適用
+    if (!this._isGrounded) {
+      this.velocityY += PHYSICS.GRAVITY * deltaTime;
+      this.velocityY = Math.min(this.velocityY, PHYSICS.MAX_FALL_SPEED);
+      this.y += this.velocityY * deltaTime;
+    }
+
+    // スカッシュ＆ストレッチの補間
+    this.scaleX += (this.targetScaleX - this.scaleX) * 0.3;
+    this.scaleY += (this.targetScaleY - this.scaleY) * 0.3;
+  }
+}
+```
+
+**ゲーム物理定数：**
+
+```typescript
+export const PHYSICS = {
+  GRAVITY: 0.6,
+  JUMP_FORCE: -14,
+  MAX_FALL_SPEED: 18,
+  COYOTE_TIME: 100,      // ms - プラットフォームを離れた後のジャンプ許容時間
+  JUMP_BUFFER: 100,      // ms - 先行ジャンプ入力バッファ時間
+} as const;
+```
+
+### 10段階難易度システム
+
+スコアに応じてゲーム難易度が段階的に上昇します。
+
+```typescript
+export const DIFFICULTY = {
+  THRESHOLDS: [
+    // オンボーディング区間（0〜499点）
+    { score: 0, cycleDuration: 5000, speed: 2.8, name: 'tutorial' },
+    { score: 100, cycleDuration: 4500, speed: 3.0, name: 'beginner' },
+    { score: 300, cycleDuration: 4000, speed: 3.3, name: 'novice' },
+
+    // 成長区間（500〜2999点）
+    { score: 500, cycleDuration: 3700, speed: 3.3, name: 'intermediate' },
+    { score: 1000, cycleDuration: 3400, speed: 3.7, name: 'skilled' },
+    { score: 1500, cycleDuration: 3100, speed: 4.0, name: 'advanced' },
+    { score: 2000, cycleDuration: 2800, speed: 4.5, name: 'expert' },
+
+    // マスタリー区間（3000点以上）
+    { score: 3000, cycleDuration: 2500, speed: 5.0, name: 'master' },
+    { score: 5000, cycleDuration: 2200, speed: 5.5, name: 'grandmaster' },
+    { score: 8000, cycleDuration: 2000, speed: 6.0, name: 'legend' },
+  ],
+} as const;
+```
+
+## トラブルシューティング：環境構築エラー
+
+### BunとTauri CLIの互換性問題
+
+**エラー：**
+```
+Cannot find native binding. npm has a bug related to optional dependencies
+```
+
+**原因：** BunがTauri CLIのoptional dependencyを正しく処理できない場合
+
+**解決：**
+```bash
+# npmに切り替え
+rm -rf node_modules bun.lockb
+npm install
+npm run tauri dev
+```
+
+### Rosettaモード競合（Apple Silicon Mac）
+
+**エラー：**
+```
+Error: Cannot install under Rosetta 2 in ARM default prefix (/opt/homebrew)!
+```
+
+**解決：**
+1. ターミナルアプリ → 情報を見る → 「Rosettaを使用して開く」のチェックを外す
+2. ターミナルを再起動
+3. 確認：`arch`コマンド → `arm64`と出力されること
+
+### Rust/Cargoインストールエラー
+
+**エラー：**
+```
+failed to run 'cargo metadata' command: No such file or directory
+```
+
+**解決：**
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+cargo --version
+```
+
+## iOS開発ビルド
+
+### シミュレーター実行
+
+```bash
+bun tauri ios dev
+```
+
+### Viteサーバー設定
+
+実機テストのために、すべてのIPからのアクセスを許可する必要があります。
+
+`vite.config.ts`:
+```typescript
+export default defineConfig({
+  server: {
+    host: '0.0.0.0',  // すべてのIPからのアクセスを許可
+    port: 1420,
+    strictPort: true,
+  },
+});
+```
+
+### 実機テスト
+
+**Apple Developer アカウント設定：**
+- Apple Developer アカウント（$99/年）または無料Apple ID（7日制限）
+
+**Team ID設定（`src-tauri/tauri.conf.json`）：**
+```json
+{
+  "bundle": {
+    "iOS": {
+      "developmentTeam": "YOUR_TEAM_ID"
+    }
+  }
+}
+```
+
+**実機で実行：**
+```bash
+bun tauri ios dev --device
+```
+
+## App Store公開
+
+### プロダクションビルド
+
+```bash
+bun tauri ios build
+```
+
+### XcodeでArchive
+
+```bash
+# Xcodeプロジェクトを開く
+open src-tauri/gen/apple/*.xcodeproj
+```
+
+1. **Destination**：Any iOS Device (arm64)を選択
+2. **Product → Archive**を実行
+3. Archive完了後、**Organizer**ウィンドウで**Distribute App**をクリック
+4. **App Store Connect**を選択 → Upload
+
+### Build Rust Codeスクリプトの修正
+
+Archiveエラーを防ぐため、**Build Phases → Build Rust Code**スクリプトを修正します：
+
+```bash
+export PATH="$HOME/.nvm/versions/node/v22.22.0/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH"
+
+# Archiveモードではスキップ
+if [ "$ACTION" = "install" ] || [ "$ACTION" = "archive" ]; then
+    echo "Skipping Rust build for archive"
+    exit 0
+fi
+
+bun run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths "${FRAMEWORK_SEARCH_PATHS:?}" --header-search-paths "${HEADER_SEARCH_PATHS:?}" --gcc-preprocessor-definitions "${GCC_PREPROCESSOR_DEFINITIONS:-}" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}
+```
+
+### App Store Connect設定
+
+**必須情報：**
+- アプリ名、サブタイトル（各30文字）
+- 説明（4000文字）
+- キーワード（100文字、カンマ区切り）
+- スクリーンショット（6.7"、6.5"、5.5"必須）
+- プライバシーポリシーURL
+- サポートURL
+
+### スクリーンショット撮影
+
+```bash
+# シミュレーターでステータスバーを整理
+xcrun simctl status_bar booted override --time "9:41"
+xcrun simctl status_bar booted override --batteryLevel 100 --batteryState charged
+```
+
+**必須スクリーンショットサイズ：**
+
+| デバイス | 解像度 |
+|----------|--------|
+| 6.7" (iPhone 16 Pro Max) | 1320 × 2868 |
+| 6.5" (iPhone 15 Plus) | 1290 × 2796 |
+| 5.5" (iPhone 8 Plus) | 1242 × 2208 |
+
+<Image src={screenshot05} alt="App Storeスクリーンショット" width={400} class="mx-auto rounded-lg shadow-lg" />
+
+## よくあるエラーと解決法
+
+| エラー | 原因 | 解決 |
+|--------|------|------|
+| `Cannot find native binding` | Bun互換性 | npmを使用 |
+| `Cannot install under Rosetta 2` | ターミナルRosettaモード | Rosettaを無効化 |
+| `cargo: command not found` | Rust未インストール | Rustをインストール |
+| `Device isn't registered` | デバイス未登録 | Xcodeで登録 |
+| `Connection refused` | ネットワーク問題 | Vite host設定、ファイアウォール |
+| `npm: command not found` (Xcode) | PATH問題 | シンボリックリンクを追加 |
+
+**Xcodeでnpm/cargoが見つからない場合：**
+
+```bash
+sudo ln -s $(which bun) /usr/local/bin/bun
+sudo ln -s $(which node) /usr/local/bin/node
+sudo ln -s ~/.cargo/bin/cargo /usr/local/bin/cargo
+```
+
+## コマンド一覧
+
+```bash
+# 開発（シミュレーター）
+bun tauri ios dev
+
+# 開発（実機）
+bun tauri ios dev --device
+
+# プロダクションビルド
+bun tauri ios build
+
+# Xcodeを開く
+open src-tauri/gen/apple/*.xcodeproj
+
+# シミュレーター一覧
+xcrun simctl list devices available | grep iPhone
+
+# iOSターゲット追加
+rustup target add aarch64-apple-ios
+rustup target add aarch64-apple-ios-sim
+```
+
+## まとめ
+
+Tauri 2.x + PixiJS + SvelteKitの組み合わせでiOSアプリを開発することは、Web開発者にとって非常に魅力的な選択肢です。
+
+**重要なポイント：**
+1. **SvelteKit + PixiJS** - 軽量で高速なゲーム開発
+2. **Tauri 2.x** - ネイティブ性能と小さなバンドルサイズ
+3. **ターミナルでビルド** - Xcode直接ビルドより安定
+4. **Build Script修正** - Archiveエラー防止
+
+最初のアプリを成功裏に公開すれば、2つ目からはずっと楽になります！
+
+## Shadow Dashをダウンロード
+
+この記事で紹介した技術で開発した**Shadow Dash**をぜひプレイしてみてください！
+
+<a href="https://apps.apple.com/app/shadow-dash/id6740092498" target="_blank" rel="noopener noreferrer">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;" />
+</a>
+
+**フィードバック歓迎です！** プレイ後にバグや改善点があれば、App Storeのレビューやメールでお知らせください。
+
+> 📱 **Shadow Dashの詳細**：[ポートフォリオページ](/ja/portfolio/shadow-dash)でゲームのコアメカニズムやスクリーンショットをご覧いただけます。
+
+## 参考資料
+
+- [Tauri 2.0公式ドキュメント](https://v2.tauri.app/)
+- [PixiJS 8ドキュメント](https://pixijs.com/8.x/guides)
+- [SvelteKit + Tauriガイド](https://v2.tauri.app/start/frontend/sveltekit/)
+- [App Store Connect](https://appstoreconnect.apple.com)
