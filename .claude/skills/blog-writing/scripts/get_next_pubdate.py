@@ -60,10 +60,14 @@ def find_latest_pubdate():
                 continue
 
     if latest_date:
-        next_date = latest_date + timedelta(days=1)
+        next_from_latest = latest_date + timedelta(days=1)
+        next_from_today = datetime.now() + timedelta(days=1)
+        # Use whichever is later: latest post + 1 day OR today + 1 day
+        next_date = max(next_from_latest, next_from_today)
         return next_date.strftime("%Y-%m-%d")
 
-    return None
+    # No existing posts: use tomorrow
+    return (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
 
 
 if __name__ == "__main__":

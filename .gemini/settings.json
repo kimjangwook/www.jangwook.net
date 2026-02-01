@@ -27,7 +27,37 @@
     "automatalabs-playwright-server",
     "notionApi",
     "chrome-devtools",
+    "gemini-google-search",
     "analytics-mcp",
+    "serena",
     "brave-search"
-  ]
+  ],
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest"]
+    },
+    "gemini-google-search": {
+      "command": "npx",
+      "args": ["mcp-gemini-google-search"]
+    },
+    "analytics-mcp": {
+      "command": "C:\\Users\\kimja\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\analytics-mcp.exe",
+      "args": [],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "credentials/gcp.json"
+      }
+    },
+    "serena": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "ide-assistant"]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "BSA38Ug47o1F9LY3s0JtoVB-KtGDCyc"
+      }
+    }
+  }
 }

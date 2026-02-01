@@ -68,20 +68,39 @@ The command delegates to the Writing Assistant agent with the following tasks:
 - Create content structure and outline based on research findings
 - Identify additional code examples and technical details needed
 
-#### Phase 2: Image Generation
+#### Phase 2: Image Generation (Hero + In-Content Images)
 
-- Generate hero image prompt based on topic
+**Hero Image**:
+- Generate a **context-specific, detailed** hero image prompt (see Image Prompt Guidelines below)
 - Call Image Generator agent to create hero image
 - Save image to appropriate path: `src/assets/blog/[slug]-hero.[ext]`
 - Store image metadata for frontmatter
+
+**In-Content Images** (screenshots, diagrams, illustrations):
+- Identify sections in the content that benefit from visual explanation (architecture diagrams, UI screenshots, workflow illustrations, comparison charts)
+- For each identified section, either:
+  - **Generate**: Create additional images via Image Generator for conceptual illustrations
+    - Save to `src/assets/blog/[slug]-[section-name].[ext]`
+    - Reference in markdown: `![alt text](../../../assets/blog/[slug]-[section-name].[ext])`
+  - **Download from official sources**: When the blog references official documentation, tools, or services that have relevant screenshots/diagrams:
+    - Download the image directly from the official source URL
+    - Save to `src/assets/blog/[slug]-[descriptive-name].[ext]`
+    - Add proper attribution in alt text or caption (e.g., `![Next.js App Router structure (출처: Next.js 공식 문서)](...)`)
+    - Prefer official docs images for: UI screenshots, architecture diagrams from docs, official logos/badges, configuration panels
+    - Use `curl` or `node` to download: `curl -o src/assets/blog/[slug]-[name].png "https://docs.example.com/image.png"`
+- **Goal**: Every blog post should have **at least 2-3 images** (hero + 1~2 in-content) for better readability and SEO
 
 #### Phase 3: Content Generation (Korean-First Approach)
 
 **IMPORTANT - Publication Date**:
 
-- Always set `pubDate` to **one day after the latest existing blog post**
-- Find the most recent post in `src/content/blog/` across all languages
-- Add 1 day to that date for the new post
+- Find the most recent post's `pubDate` in `src/content/blog/` across all languages
+- Calculate two candidates:
+  - **Candidate A**: Latest existing post's pubDate + 1 day
+  - **Candidate B**: Today's date + 1 day
+- Set `pubDate` to **whichever is later** (max of A and B)
+- This ensures no past-dated posts are created even if there's a publishing gap
+- Use `python .claude/skills/blog-writing/scripts/get_next_pubdate.py` to auto-calculate
 - Format: 'YYYY-MM-DD' (single quotes required)
 
 **IMPORTANT - Korean-First Workflow**:
@@ -145,6 +164,14 @@ Based on the completed Korean post:
 - Check frontmatter format (title, description, pubDate required)
 - Validate image path references
 - Ensure proper Markdown formatting
+- **Verify `relatedPosts` is present in ALL language versions**:
+  - Each file MUST have `relatedPosts` array with 3-5 entries
+  - Each entry must have: `slug`, `score` (0-1), `reason` (with ko, ja, en, zh)
+  - If missing after recommendation generation, manually add based on `post-metadata.json` analysis
+  - **NEVER skip this check** — relatedPosts is mandatory for all posts
+- **Verify in-content images exist** (at least 1 besides hero image):
+  - Check that `src/assets/blog/[slug]-*` files exist
+  - Check that image references in markdown point to valid files
 
 ### 4. Update README.md
 
@@ -444,9 +471,11 @@ Requirements:
 
 1. **Determine publication date**:
 
-   - Find the most recent blog post across all language folders in src/content/blog/
-   - Extract the latest pubDate
-   - Add 1 day to get the new post's pubDate
+   - Run `python .claude/skills/blog-writing/scripts/get_next_pubdate.py` to auto-calculate
+   - OR manually: Find the latest pubDate across all language folders, then pick the **later** of:
+     - Latest post's pubDate + 1 day
+     - Today's date + 1 day
+   - This prevents past-dated posts when there's a publishing gap
    - Format as 'YYYY-MM-DD' (single quotes)
 
 2. Research topic using Web Researcher agent:
@@ -457,12 +486,14 @@ Requirements:
    - Verify technical accuracy and current best practices
    - Create detailed outline based on research findings
 
-3. Generate hero image:
+3. Generate images (hero + in-content):
 
-   - Create descriptive image prompt
-   - Call Image Generator agent
-   - Save to src/assets/blog/[slug]-hero.[ext]
-   - Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter
+   - **Hero image**: Create a detailed, content-specific image prompt (use 6-part structure: Subject, Style, Composition, Colors, Elements, Constraints). Call Image Generator agent. Save to src/assets/blog/[slug]-hero.[ext]. Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter.
+   - **In-content images**: Identify 1-3 sections that benefit from visual explanation. For each:
+     - If conceptual/illustrative → Generate via Image Generator, save as src/assets/blog/[slug]-[section].[ext]
+     - If official docs screenshot/diagram → Download directly from source URL using curl/node, save as src/assets/blog/[slug]-[name].[ext], add source attribution
+   - Reference in-content images in markdown: `![descriptive alt text](../../../assets/blog/[slug]-[name].[ext])`
+   - **Minimum**: Every post must have hero image + at least 1 in-content image
 
 4. Write complete blog post using **KOREAN-FIRST APPROACH**:
 
@@ -569,8 +600,14 @@ Stage 2 (Parallel, after Stage 1 completes):
   - Read metadata from post-metadata.json
   - Calculate similarity scores (difficulty 20% + categories 80%)
   - Select top 5 related posts
-  - Write relatedPosts array to frontmatter of all 3 language versions
-- Verify results and report
+  - Write relatedPosts array to frontmatter of all language versions
+- **CRITICAL VERIFICATION after running the script**:
+  - Open each generated language file (ko, ja, en, zh) and check that `relatedPosts` exists in frontmatter
+  - If `relatedPosts` is missing or empty in ANY file:
+    1. Manually analyze post-metadata.json to find the 3-5 most similar posts
+    2. Add relatedPosts array directly to the frontmatter with proper slug, score, and multilingual reason
+    3. Ensure all 4 language versions have identical relatedPosts entries
+  - **This step is NOT optional** — every published post MUST have relatedPosts
 
 11. Generate URL-friendly slug from topic
 12. Return file paths and metadata for ALL 4 languages
@@ -866,44 +903,54 @@ graph TD
 
 ### Image Prompt Guidelines
 
-**IMPORTANT**: The Writing Assistant MUST generate context-aware, detailed image prompts that reflect the specific content and theme of the blog post, NOT generic templates.
+**IMPORTANT**: The Writing Assistant MUST generate context-aware, detailed image prompts that reflect the specific content and theme of the blog post, NOT generic templates. **Every prompt must be unique to the specific post content.**
 
 #### Prompt Generation Process:
 
-1. **Analyze the blog post content** to identify:
+1. **Read the completed blog post content first**, then identify:
 
-   - Main theme and key concepts
-   - Technical domain (e.g., web dev, AI, data science, DevOps)
-   - Mood/tone (e.g., innovative, problem-solving, educational)
-   - Specific visual metaphors that represent the content
+   - The **specific problem** the post solves (not just the general topic)
+   - **Key visual elements** mentioned in the content (tools, APIs, workflows, code patterns)
+   - Technical domain and its visual language (e.g., web dev → browser windows, AI → neural nets)
+   - The **emotional arc** (problem → solution → result)
 
-2. **Create a detailed, unique prompt** that includes:
-   - **Subject**: Specific visual representation of the main concept
-   - **Style**: Art style matching the content (e.g., isometric for architecture, diagram-style for processes, futuristic for AI, minimal for performance)
-   - **Composition**: Layout and perspective
-   - **Colors**: Palette that matches the content mood
-   - **Details**: Specific elements that symbolize key concepts
-   - **Atmosphere**: Overall feeling (professional, dynamic, clean, innovative)
+2. **Create a detailed, unique prompt** using the **6-part structure**:
+   - **Subject (WHAT)**: The specific visual scene representing the post's core message
+   - **Style (HOW)**: Art style matching the content (isometric, flat illustration, 3D render, watercolor, blueprint, etc.)
+   - **Composition (WHERE)**: Layout, perspective, focal point, visual hierarchy
+   - **Colors (PALETTE)**: Specific hex codes or named palettes matching the technology/mood
+   - **Details (ELEMENTS)**: 3-5 specific visual elements that symbolize key concepts from the post
+   - **Constraints**: "No text overlay. No watermarks. Suitable for 2:1 aspect ratio thumbnail."
+
+3. **Self-check before generating**: Ask yourself:
+   - "Could this prompt be used for a completely different blog post?" → If yes, it's too generic. Rewrite.
+   - "Does this prompt mention at least 2 specific concepts from the actual post content?" → If no, add them.
 
 #### Examples of Good vs. Bad Prompts:
 
-**❌ BAD (Generic)**:
+**❌ BAD (Generic — could be any TypeScript post)**:
 
 ```
 A modern, professional illustration representing TypeScript.
 Style: Clean, technical, developer-focused.
 ```
 
-**✅ GOOD (Context-Aware)**:
+**❌ MEDIOCRE (Topic-aware but still vague)**:
+
+```
+An illustration about TypeScript type system with code elements and blue colors.
+```
+
+**✅ GOOD (Content-specific — clearly about THIS post)**:
 
 ```
 An isometric illustration of interconnected TypeScript code blocks forming a strong type-safe architecture.
 Style: Modern tech illustration with geometric shapes, blueprint aesthetic.
-Composition: Central TypeScript "T" logo radiating type definitions to surrounding code modules.
-Colors: TypeScript blue (#3178C6) as primary, white and light gray for code blocks, subtle gradients.
-Elements: Type annotations floating as labels, connected nodes showing type flow, shield symbols for type safety.
+Composition: Central TypeScript "T" logo radiating type definitions to surrounding code modules, with arrows showing type inference flow from left to right.
+Colors: TypeScript blue (#3178C6) as primary, white and light gray for code blocks, subtle cyan-to-blue gradients for depth.
+Elements: Generic type parameter "<T>" floating as glowing labels, connected nodes showing type narrowing flow, shield symbols for type safety, a broken chain (representing runtime errors) being replaced by solid links (compile-time checks).
 Atmosphere: Structured, reliable, professional.
-No text overlay.
+No text overlay. No watermarks. Suitable for 2:1 aspect ratio thumbnail.
 ```
 
 #### Domain-Specific Prompt Templates:
