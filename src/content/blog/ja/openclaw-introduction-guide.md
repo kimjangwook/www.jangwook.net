@@ -1,4 +1,4 @@
----
+﻿---
 title: 'OpenClaw 完全ガイド — 自分だけのAIアシスタントを作ろう'
 description: 'オープンソースAIアシスタントプラットフォーム OpenClaw の主要機能とアーキテクチャを紹介。マルチチャネル、マルチモデル、ノードシステムまで完全ガイド。'
 pubDate: '2026-02-03'
@@ -13,8 +13,8 @@ relatedPosts: []
 
 > 📚 **シリーズ：OpenClaw 完全攻略**
 > - **第1回：紹介編（この記事）** — OpenClawとは？なぜ特別なのか？
-> - [第2回：チュートリアル編](/ja/blog/openclaw-installation-tutorial/) — インストールから最初の会話まで
-> - [第3回：実践活用編](/ja/blog/openclaw-practical-usage/) — スキル、自動化、上級ワークフロー
+> - [第2回：チュートリアル編](/ja/blog/ja/openclaw-installation-tutorial/) — インストールから最初の会話まで
+> - [第3回：実践活用編](/ja/blog/ja/openclaw-practical-usage/) — スキル、自動化、上級ワークフロー
 
 ---
 
@@ -254,7 +254,7 @@ OpenClawは単独プロジェクトではなく、複数のコンポーネント
 
 今回の記事ではOpenClawとは何か、なぜ特別なのかを紹介しました。
 
-**[第2回：チュートリアル編](/ja/blog/openclaw-installation-tutorial/)**では、実際にOpenClawを**インストールして設定するプロセス**をステップバイステップで一緒に進めていきます！
+**[第2回：チュートリアル編](/ja/blog/ja/openclaw-installation-tutorial/)**では、実際にOpenClawを**インストールして設定するプロセス**をステップバイステップで一緒に進めていきます！
 
 - Node.jsインストール & Gatewayオンボーディング
 - Telegramチャネル接続とペアリング

@@ -1,4 +1,4 @@
----
+﻿---
 title: 'The Complete Guide to OpenClaw — Build Your Own AI Assistant'
 description: 'Discover OpenClaw, the open-source AI assistant platform. Multi-channel, multi-model, node system, and more — your complete guide to self-hosted AI.'
 pubDate: '2026-02-03'
@@ -13,8 +13,8 @@ relatedPosts: []
 
 > 📚 **Series: Mastering OpenClaw**
 > - **Part 1: Introduction (this post)** — What is OpenClaw and why is it special?
-> - [Part 2: Tutorial](/en/blog/openclaw-installation-tutorial/) — From installation to your first conversation
-> - [Part 3: Practical Usage](/en/blog/openclaw-practical-usage/) — Skills, automation, and advanced workflows
+> - [Part 2: Tutorial](/en/blog/en/openclaw-installation-tutorial/) — From installation to your first conversation
+> - [Part 3: Practical Usage](/en/blog/en/openclaw-practical-usage/) — Skills, automation, and advanced workflows
 
 ---
 
@@ -254,7 +254,7 @@ OpenClaw isn't a standalone project — it's an **ecosystem** composed of multip
 
 In this post, we explored what OpenClaw is and what makes it special.
 
-In **[Part 2: Tutorial](/en/blog/openclaw-installation-tutorial/)**, we'll walk through **installing and configuring OpenClaw** step by step!
+In **[Part 2: Tutorial](/en/blog/en/openclaw-installation-tutorial/)**, we'll walk through **installing and configuring OpenClaw** step by step!
 
 - Installing Node.js & Gateway onboarding
 - Connecting and pairing a Telegram channel

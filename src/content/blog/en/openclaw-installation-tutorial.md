@@ -1,4 +1,4 @@
----
+﻿---
 title: 'OpenClaw Installation to First Conversation — Complete Tutorial'
 description: 'Step-by-step guide to installing OpenClaw, connecting Telegram, and having your first AI conversation. From Node.js setup to workspace configuration.'
 pubDate: '2026-02-04'
@@ -12,9 +12,9 @@ relatedPosts: []
 ---
 
 > **Series: Mastering OpenClaw** (2/3)
-> 1. [Introduction](/en/blog/openclaw-introduction-guide/)
+> 1. [Introduction](/en/blog/en/openclaw-introduction-guide/)
 > 2. **Tutorial** ← You are here
-> 3. [Advanced Usage](/en/blog/openclaw-advanced-usage/)
+> 3. [Advanced Usage](/en/blog/en/openclaw-advanced-usage/)
 
 In the previous post, we explored what OpenClaw is. This time, we'll go through **installing it and having your first conversation** — all in one go. Open your terminal and follow along! 🚀
 
@@ -504,7 +504,7 @@ Now that the basics are set up, it's time for the really fun stuff:
 
 ### What's Coming in Part 3
 
-**[Part 3 (Advanced Usage)](/en/blog/openclaw-advanced-usage/)** covers advanced real-world use cases for leveraging OpenClaw as a **powerful automation tool**:
+**[Part 3 (Advanced Usage)](/en/blog/en/openclaw-advanced-usage/)** covers advanced real-world use cases for leveraging OpenClaw as a **powerful automation tool**:
 
 - Webhook workflows with n8n/Make integration
 - MCP server integration

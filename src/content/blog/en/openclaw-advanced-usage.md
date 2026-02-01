@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Supercharge OpenClaw — 8 Advanced Real-World Use Cases'
 description: 'Cron automation, webhook integration, MCP servers, multi-agent systems, browser automation, and more — 8 production-level OpenClaw use cases.'
 pubDate: '2026-02-05'
@@ -12,8 +12,8 @@ relatedPosts: []
 ---
 
 > **Series: Mastering OpenClaw** (3/3)
-> 1. [Introduction](/en/blog/openclaw-introduction-guide/)
-> 2. [Tutorial](/en/blog/openclaw-installation-tutorial/)
+> 1. [Introduction](/en/blog/en/openclaw-introduction-guide/)
+> 2. [Tutorial](/en/blog/en/openclaw-installation-tutorial/)
 > 3. **Advanced Usage** ← You are here
 
 # Supercharge OpenClaw — 8 Advanced Real-World Use Cases 🚀
@@ -1075,6 +1075,6 @@ If you have questions, come find us on the [OpenClaw Discord](https://discord.gg
 ---
 
 *Mastering OpenClaw Series*
-- [Part 1: What Is OpenClaw?](/en/blog/openclaw-introduction-guide/)
-- [Part 2: From Installation to Your First Chat](/en/blog/openclaw-installation-tutorial/)
+- [Part 1: What Is OpenClaw?](/en/blog/en/openclaw-introduction-guide/)
+- [Part 2: From Installation to Your First Chat](/en/blog/en/openclaw-installation-tutorial/)
 - **Part 3: Advanced Real-World Use Cases** ← You just read this

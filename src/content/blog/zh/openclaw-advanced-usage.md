@@ -1,4 +1,4 @@
----
+﻿---
 title: 'OpenClaw 200% 活用术 — 8个实战高级用例'
 description: 'Cron自动化、Webhook集成、MCP服务器、多代理系统、浏览器自动化等OpenClaw实战高级用法8种。'
 pubDate: '2026-02-05'
@@ -12,8 +12,8 @@ relatedPosts: []
 ---
 
 > **系列: 精通 OpenClaw** (3/3)
-> 1. [介绍篇](/zh/blog/openclaw-introduction-guide/)
-> 2. [教程篇](/zh/blog/openclaw-installation-tutorial/)
+> 1. [介绍篇](/zh/blog/zh/openclaw-introduction-guide/)
+> 2. [教程篇](/zh/blog/zh/openclaw-installation-tutorial/)
 > 3. **高级用法篇** ← 当前文章
 
 # OpenClaw 200% 活用术 — 实战高级用例合集 🚀
@@ -1075,6 +1075,6 @@ openclaw status --all
 ---
 
 *精通 OpenClaw 系列*
-- [第1篇：OpenClaw 是什么？](/zh/blog/openclaw-introduction-guide/)
-- [第2篇：从安装到第一次对话](/zh/blog/openclaw-installation-tutorial/)
+- [第1篇：OpenClaw 是什么？](/zh/blog/zh/openclaw-introduction-guide/)
+- [第2篇：从安装到第一次对话](/zh/blog/zh/openclaw-installation-tutorial/)
 - **第3篇：实战高级用法** ← 当前文章

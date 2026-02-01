@@ -1,4 +1,4 @@
----
+﻿---
 title: 'OpenClaw 200%活用術 — 実践アドバンスド・ユースケース集'
 description: 'Cron自動化、Webhook連携、MCPサーバー、マルチエージェント、ブラウザ自動化などOpenClaw実践活用法8選。'
 pubDate: '2026-02-05'
@@ -12,8 +12,8 @@ relatedPosts: []
 ---
 
 > **シリーズ: OpenClaw 完全攻略** (3/3)
-> 1. [紹介編](/ja/blog/openclaw-introduction-guide/)
-> 2. [チュートリアル編](/ja/blog/openclaw-installation-tutorial/)
+> 1. [紹介編](/ja/blog/ja/openclaw-introduction-guide/)
+> 2. [チュートリアル編](/ja/blog/ja/openclaw-installation-tutorial/)
 > 3. **活用編** ← この記事
 
 # OpenClaw 200%活用術 — 実践アドバンスド・ユースケース集 🚀
@@ -1075,6 +1075,6 @@ macOSアプリでVoice Wake + Talk Modeを有効化すると、キーボード�
 ---
 
 *OpenClaw 完全攻略シリーズ*
-- [第1編: OpenClawとは？](/ja/blog/openclaw-introduction-guide/)
-- [第2編: インストールから初対話まで](/ja/blog/openclaw-installation-tutorial/)
+- [第1編: OpenClawとは？](/ja/blog/ja/openclaw-introduction-guide/)
+- [第2編: インストールから初対話まで](/ja/blog/ja/openclaw-installation-tutorial/)
 - **第3編: 実践アドバンスド活用法** ← この記事

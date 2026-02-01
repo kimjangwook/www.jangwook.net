@@ -1,4 +1,4 @@
----
+﻿---
 title: 'OpenClaw インストールから初めての会話まで — 完全チュートリアル'
 description: 'OpenClawのインストール、Telegram連携、初めてのAI会話までをステップバイステップで解説。Node.js設定からワークスペース構成まで。'
 pubDate: '2026-02-04'
@@ -12,9 +12,9 @@ relatedPosts: []
 ---
 
 > **シリーズ: OpenClaw 完全攻略** (2/3)
-> 1. [紹介編](/ja/blog/openclaw-introduction-guide/)
+> 1. [紹介編](/ja/blog/ja/openclaw-introduction-guide/)
 > 2. **チュートリアル編** ← 現在の記事
-> 3. [活用法編](/ja/blog/openclaw-advanced-usage/)
+> 3. [活用法編](/ja/blog/ja/openclaw-advanced-usage/)
 
 前回の記事ではOpenClawとは何かを紹介しました。今回は**実際にインストールして、初めての会話を交わす**ところまで一気にやってみましょう。ターミナルを開いてついてきてください！🚀
 
@@ -504,7 +504,7 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ### 第3回で扱う内容
 
-**[第3回（活用法編）](/ja/blog/openclaw-advanced-usage/)**では、実際にOpenClawを**強力な自動化ツール**として活用する上級事例を紹介します：
+**[第3回（活用法編）](/ja/blog/ja/openclaw-advanced-usage/)**では、実際にOpenClawを**強力な自動化ツール**として活用する上級事例を紹介します：
 
 - n8n/Make連携Webhookワークフロー
 - MCPサーバー連携

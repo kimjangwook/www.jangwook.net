@@ -12,10 +12,9 @@ relatedPosts: []
 ---
 
 > **시리즈: OpenClaw 완전 정복** (3/3)
-> 1. [소개편](/ko/blog/openclaw-introduction-guide/)
-> 2. [튜토리얼편](/ko/blog/openclaw-installation-tutorial/)
+> 1. [소개편](/ko/blog/ko/openclaw-introduction-guide/)
+> 2. [튜토리얼편](/ko/blog/ko/openclaw-installation-tutorial/)
 > 3. **활용법편** ← 현재 글
-
 # OpenClaw 200% 활용하기 — 실전 고급 사용 사례 모음 🚀
 
 설치를 마치셨나요? 축하합니다! 🎉 이제 진짜 재미있는 파트입니다.
@@ -1075,6 +1074,6 @@ macOS 앱에서 Voice Wake + Talk Mode를 활성화하면 키보드 없이 대�
 ---
 
 *OpenClaw 완전 정복 시리즈*
-- [1편: OpenClaw이 뭔가요?](/ko/blog/openclaw-introduction-guide/)
-- [2편: 설치부터 첫 대화까지](/ko/blog/openclaw-installation-tutorial/)
+- [1편: OpenClaw이 뭔가요?](/ko/blog/ko/openclaw-introduction-guide/)
+- [2편: 설치부터 첫 대화까지](/ko/blog/ko/openclaw-installation-tutorial/)
 - **3편: 실전 고급 활용법** ← 지금 읽은 글

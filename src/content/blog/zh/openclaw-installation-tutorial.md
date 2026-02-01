@@ -1,4 +1,4 @@
----
+﻿---
 title: '从安装 OpenClaw 到首次对话 — 完整教程'
 description: '手把手教你安装 OpenClaw、连接 Telegram、完成首次 AI 对话。涵盖 Node.js 配置到工作区结构的全流程。'
 pubDate: '2026-02-04'
@@ -12,9 +12,9 @@ relatedPosts: []
 ---
 
 > **系列：OpenClaw 完全攻略** (2/3)
-> 1. [介绍篇](/zh/blog/openclaw-introduction-guide/)
+> 1. [介绍篇](/zh/blog/zh/openclaw-introduction-guide/)
 > 2. **教程篇** ← 当前文章
-> 3. [实战篇](/zh/blog/openclaw-advanced-usage/)
+> 3. [实战篇](/zh/blog/zh/openclaw-advanced-usage/)
 
 上一篇文章中，我们了解了 OpenClaw 是什么。这次，我们将**从安装到完成第一次对话**，一步到位。打开终端，跟我来吧！🚀
 
@@ -504,7 +504,7 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ### 第三篇将涵盖的内容
 
-**[第三篇（实战篇）](/zh/blog/openclaw-advanced-usage/)**将介绍如何将 OpenClaw 作为**强大的自动化工具**运用到实际场景中：
+**[第三篇（实战篇）](/zh/blog/zh/openclaw-advanced-usage/)**将介绍如何将 OpenClaw 作为**强大的自动化工具**运用到实际场景中：
 
 - n8n/Make 集成 Webhook 工作流
 - MCP 服务器集成

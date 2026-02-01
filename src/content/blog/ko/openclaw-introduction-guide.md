@@ -1,4 +1,4 @@
----
+﻿---
 title: 'OpenClaw 완전 소개 — 나만의 AI 비서를 만들자'
 description: '오픈소스 AI 비서 플랫폼 OpenClaw의 주요 기능과 아키텍처를 소개합니다. 멀티채널, 멀티모델, 노드 시스템까지 완전 가이드.'
 pubDate: '2026-02-03'
@@ -13,8 +13,8 @@ relatedPosts: []
 
 > 📚 **시리즈: OpenClaw 완전 정복**
 > - **1편: 소개편 (현재 글)** — OpenClaw이 뭔지, 왜 특별한지
-> - [2편: 튜토리얼편](/ko/blog/openclaw-installation-tutorial/) — 설치부터 첫 대화까지
-> - [3편: 실전 활용편](/ko/blog/openclaw-practical-usage/) — 스킬, 자동화, 고급 워크플로우
+> - [2편: 튜토리얼편](/ko/blog/ko/openclaw-installation-tutorial/) — 설치부터 첫 대화까지
+> - [3편: 실전 활용편](/ko/blog/ko/openclaw-practical-usage/) — 스킬, 자동화, 고급 워크플로우
 
 ---
 
@@ -254,7 +254,7 @@ OpenClaw은 단독 프로젝트가 아니라, 여러 컴포넌트로 이루어�
 
 이번 글에서는 OpenClaw이 무엇이고, 왜 특별한지 알아봤습니다.
 
-**[2편: 튜토리얼편](/ko/blog/openclaw-installation-tutorial/)**에서는 실제로 OpenClaw을 **설치하고 설정하는 과정**을 단계별로 함께 해볼 예정이에요!
+**[2편: 튜토리얼편](/ko/blog/ko/openclaw-installation-tutorial/)**에서는 실제로 OpenClaw을 **설치하고 설정하는 과정**을 단계별로 함께 해볼 예정이에요!
 
 - Node.js 설치 & Gateway 온보딩
 - Telegram 채널 연결 및 페어링

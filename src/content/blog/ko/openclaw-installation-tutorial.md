@@ -1,4 +1,4 @@
----
+﻿---
 title: 'OpenClaw 설치부터 첫 대화까지 — 완벽 튜토리얼'
 description: 'OpenClaw 설치, Telegram 연결, 첫 AI 대화까지 단계별로 안내합니다. Node.js 설정부터 워크스페이스 구조까지.'
 pubDate: '2026-02-04'
@@ -12,9 +12,9 @@ relatedPosts: []
 ---
 
 > **시리즈: OpenClaw 완전 정복** (2/3)
-> 1. [소개편](/ko/blog/openclaw-introduction-guide/)
+> 1. [소개편](/ko/blog/ko/openclaw-introduction-guide/)
 > 2. **튜토리얼편** ← 현재 글
-> 3. [활용법편](/ko/blog/openclaw-advanced-usage/)
+> 3. [활용법편](/ko/blog/ko/openclaw-advanced-usage/)
 
 지난 글에서 OpenClaw이 무엇인지 살펴봤습니다. 이번에는 **직접 설치하고, 첫 대화를 나누는 것**까지 한 번에 해보겠습니다. 터미널을 열고 따라오세요! 🚀
 
@@ -504,7 +504,7 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ### 3편에서 다룰 내용
 
-**[3편 (활용법편)](/ko/blog/openclaw-advanced-usage/)** 에서는 실제로 OpenClaw을 **강력한 자동화 도구**로 활용하는 고급 사례를 다룹니다:
+**[3편 (활용법편)](/ko/blog/ko/openclaw-advanced-usage/)** 에서는 실제로 OpenClaw을 **강력한 자동화 도구**로 활용하는 고급 사례를 다룹니다:
 
 - n8n/Make 연동 웹훅 워크플로우
 - MCP 서버 연동

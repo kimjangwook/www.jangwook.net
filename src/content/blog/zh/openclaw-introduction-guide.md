@@ -1,4 +1,4 @@
----
+﻿---
 title: 'OpenClaw 完全指南 — 打造你的专属 AI 助手'
 description: '介绍开源 AI 助手平台 OpenClaw 的核心功能与架构。多渠道、多模型、节点系统一网打尽的完全指南。'
 pubDate: '2026-02-03'
@@ -13,8 +13,8 @@ relatedPosts: []
 
 > 📚 **系列：OpenClaw 完全攻略**
 > - **第1篇：介绍篇（本文）** — OpenClaw 是什么？为什么特别？
-> - [第2篇：教程篇](/zh/blog/openclaw-installation-tutorial/) — 从安装到第一次对话
-> - [第3篇：实战篇](/zh/blog/openclaw-practical-usage/) — 技能、自动化与高级工作流
+> - [第2篇：教程篇](/zh/blog/zh/openclaw-installation-tutorial/) — 从安装到第一次对话
+> - [第3篇：实战篇](/zh/blog/zh/openclaw-practical-usage/) — 技能、自动化与高级工作流
 
 ---
 
@@ -254,7 +254,7 @@ OpenClaw 不是一个独立项目，而是由多个组件构成的**生态系统
 
 本文介绍了 OpenClaw 是什么以及它为什么特别。
 
-在**[第2篇：教程篇](/zh/blog/openclaw-installation-tutorial/)**中，我们将一步步**安装和配置 OpenClaw**！
+在**[第2篇：教程篇](/zh/blog/zh/openclaw-installation-tutorial/)**中，我们将一步步**安装和配置 OpenClaw**！
 
 - 安装 Node.js & Gateway 引导
 - 连接并配对 Telegram 渠道
