@@ -903,54 +903,67 @@ graph TD
 
 ### Image Prompt Guidelines
 
-**IMPORTANT**: The Writing Assistant MUST generate context-aware, detailed image prompts that reflect the specific content and theme of the blog post, NOT generic templates. **Every prompt must be unique to the specific post content.**
+**IMPORTANT**: The Writing Assistant MUST generate context-aware, detailed image prompts following the **YAML 7-Part Structure** defined in `.claude/guidelines/image-prompt-guidelines.md`. Every prompt must be unique to the specific post content.
 
-#### Prompt Generation Process:
+**📋 MANDATORY**: Before writing any image prompt, read `.claude/guidelines/image-prompt-guidelines.md` for the full YAML structure, domain-specific templates, high-scoring patterns, and the self-check process.
 
-1. **Read the completed blog post content first**, then identify:
+#### Prompt Generation Process (YAML 7-Part Structure):
 
-   - The **specific problem** the post solves (not just the general topic)
-   - **Key visual elements** mentioned in the content (tools, APIs, workflows, code patterns)
-   - Technical domain and its visual language (e.g., web dev → browser windows, AI → neural nets)
-   - The **emotional arc** (problem → solution → result)
+1. **Design in YAML first** with all 7 parts:
+   - **Tone**: 5 mood keywords (e.g., `"知的, 計画的, 精密, エンジニアリング, 設計図"`)
+   - **Visual Identity**: Background/Text/Accent colors with HEX codes + names
+   - **Image Style**: Features, Shapes, Texture, Composition, Effects
+   - **Typography**: Heading style + application method
+   - **Content Connection**: Core Concept, Visual Metaphor, Key Elements from the post
+   - **Constraints**: No text overlay, no watermarks, 2:1 ratio
+   - **Self-Check**: 3-point verification (uniqueness, specificity, consistency)
 
-2. **Create a detailed, unique prompt** using the **6-part structure**:
-   - **Subject (WHAT)**: The specific visual scene representing the post's core message
-   - **Style (HOW)**: Art style matching the content (isometric, flat illustration, 3D render, watercolor, blueprint, etc.)
-   - **Composition (WHERE)**: Layout, perspective, focal point, visual hierarchy
-   - **Colors (PALETTE)**: Specific hex codes or named palettes matching the technology/mood
-   - **Details (ELEMENTS)**: 3-5 specific visual elements that symbolize key concepts from the post
-   - **Constraints**: "No text overlay. No watermarks. Suitable for 2:1 aspect ratio thumbnail."
+2. **Convert YAML to English prompt** for `generate_image.js`:
+   ```
+   A [Tone keywords] illustration of [Features description].
+   [Shapes] arranged in [Composition]. [Texture] with [Effects].
+   Color palette: [Background], [Accent colors].
+   [Content Connection: Visual Metaphor].
+   No text overlay. No watermarks. 2:1 aspect ratio.
+   ```
 
-3. **Self-check before generating**: Ask yourself:
-   - "Could this prompt be used for a completely different blog post?" → If yes, it's too generic. Rewrite.
-   - "Does this prompt mention at least 2 specific concepts from the actual post content?" → If no, add them.
+3. **Self-check before generating** (must pass all 3):
+   - "Could this prompt be used for a completely different blog post?" → If yes, Content Connection is missing. Rewrite.
+   - "Can two people read this prompt and produce similar images?" → If no, Shapes/Texture/Composition is too vague. Add detail.
+   - "Do the Tone keywords align with the Color Palette and Image Style?" → If contradiction exists, fix it.
 
-#### Examples of Good vs. Bad Prompts:
+#### Examples:
 
-**❌ BAD (Generic — could be any TypeScript post)**:
-
+**❌ BAD (No YAML structure, generic)**:
 ```
 A modern, professional illustration representing TypeScript.
-Style: Clean, technical, developer-focused.
 ```
 
-**❌ MEDIOCRE (Topic-aware but still vague)**:
+**✅ GOOD (Full YAML design → converted to English prompt)**:
 
-```
-An illustration about TypeScript type system with code elements and blue colors.
+YAML Design:
+```yaml
+Tone: "構築的, 型安全, 堅牢, 精密, アーキテクチャ"
+Visual Identity:
+  Background: "#FFFFFF (White)"
+  Text Color: "#3178C6 (TypeScript Blue)"
+  Accent Colors:
+    - "#E8E8E8 (Light Gray) — コードブロック"
+    - "#00C853 (Green) — 型安全を示す盾"
+Image Style:
+  Features: "TypeScriptの型定義がビルディングブロックとして積み重なる設計図"
+  Shapes: "接続されたノード, <T>のジェネリック型パラメータ, 盾のシンボル"
+  Texture: "方眼グリッドの背景, クリーンなベクター"
+  Composition: "中央のTSロゴから放射状に型定義が広がり、左から右へ推論フローが流れる"
+Content Connection:
+  Core Concept: "TypeScript型システムによるコンパイル時エラー防止"
+  Visual Metaphor: "壊れた鎖(ランタイムエラー)が堅固なリンク(コンパイル時チェック)に置き換わる"
+  Key Elements: "ジェネリック型<T>, 型ガード, 型推論の矢印"
 ```
 
-**✅ GOOD (Content-specific — clearly about THIS post)**:
-
+English Prompt:
 ```
-An isometric illustration of interconnected TypeScript code blocks forming a strong type-safe architecture.
-Style: Modern tech illustration with geometric shapes, blueprint aesthetic.
-Composition: Central TypeScript "T" logo radiating type definitions to surrounding code modules, with arrows showing type inference flow from left to right.
-Colors: TypeScript blue (#3178C6) as primary, white and light gray for code blocks, subtle cyan-to-blue gradients for depth.
-Elements: Generic type parameter "<T>" floating as glowing labels, connected nodes showing type narrowing flow, shield symbols for type safety, a broken chain (representing runtime errors) being replaced by solid links (compile-time checks).
-Atmosphere: Structured, reliable, professional.
-No text overlay. No watermarks. Suitable for 2:1 aspect ratio thumbnail.
+A structured, type-safe, architectural blueprint illustration of TypeScript type definitions stacking as building blocks. Connected nodes with generic type parameter "<T>" symbols radiating from a central TypeScript logo, with arrows showing type inference flow left to right. Shield symbols representing type safety, broken chains being replaced by solid links. Grid paper background in white, TypeScript blue (#3178C6) as primary, light gray (#E8E8E8) for code blocks, green (#00C853) for safety shields. Clean vector texture. No text overlay. No watermarks. 2:1 aspect ratio blog hero image.
 ```
 
 #### Domain-Specific Prompt Templates:
@@ -1166,6 +1179,7 @@ Future enhancements may include:
 ### Guidelines
 
 - SEO Optimization: `.claude/guidelines/seo-title-description-guidelines.md`
+- **Image Prompt Guidelines**: `.claude/guidelines/image-prompt-guidelines.md` ← YAML 7-Part Structure, domain templates, high-scoring patterns
 
 ### Scripts
 
