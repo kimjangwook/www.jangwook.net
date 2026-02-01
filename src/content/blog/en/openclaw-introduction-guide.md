@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'The Complete Guide to OpenClaw — Build Your Own AI Assistant'
 description: 'Discover OpenClaw, the open-source AI assistant platform. Multi-channel, multi-model, node system, and more — your complete guide to self-hosted AI.'
 pubDate: '2026-02-03'
@@ -88,8 +88,6 @@ Virtually all major platforms are supported.
 
 The heart of OpenClaw is the **Gateway**. It operates as a single control plane, connecting all channels and tools through `ws://127.0.0.1:18789`.
 
-![OpenClaw official docs — Gateway architecture and feature overview](../../../assets/blog/docs-main.png)
-
 The Gateway's core responsibilities:
 - **Channel connection management** — Owns WebSocket connections for all messenger channels
 - **Agent bridge** — RPC communication with the Pi coding agent
@@ -161,8 +159,6 @@ Nodes connect via Gateway WebSocket and must go through **pairing approval** bef
 ### 🤖 Multi-Agent System
 
 OpenClaw can run **multiple agents simultaneously** from a single Gateway.
-
-![OpenClaw multi-agent routing docs — per-agent sandboxes, tool restrictions, and routing rules](../../../assets/blog/docs-multi-agent.png)
 
 - **Per-agent workspaces** — Each agent gets its own isolated workspace
 - **Per-agent sandboxes** — Docker-based isolated execution environments

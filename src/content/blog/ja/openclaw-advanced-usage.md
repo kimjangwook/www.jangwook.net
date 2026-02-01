@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'OpenClaw 200%活用術 — 実践アドバンスド・ユースケース集'
 description: 'Cron自動化、Webhook連携、MCPサーバー、マルチエージェント、ブラウザ自動化などOpenClaw実践活用法8選。'
 pubDate: '2026-02-05'
@@ -40,8 +40,6 @@ OpenClawは単なるチャットボットではありません。あなたのデ
 ## 活用法 1: Cronベース日次レポート自動化 📊
 
 毎朝目覚めたら、今日の予定・天気・ニュースヘッドラインをまとめて送ってくれる秘書を作りましょう。
-
-![OpenClaw Cronジョブドキュメント — スケジュール、実行モード、配信設定の詳細ガイド](../../../assets/blog/docs-cron.png)
 
 ### 完全な設定サンプル
 
@@ -170,8 +168,6 @@ CronとHeartbeatを組み合わせると、より柔軟な自動化が実現で�
 ## 活用法 2: WebhookでN8n/Make連携 🔗
 
 外部自動化ツールとOpenClawを接続すると、可能性が無限に広がります。
-
-![OpenClaw Webhookドキュメント — wake、agent、カスタムマッピング等のWebhookエンドポイント設定](../../../assets/blog/docs-webhook.png)
 
 ### Webhookの有効化
 
@@ -426,8 +422,6 @@ execツールで `notion-mcp-server` を実行し、結果を処理します。
 
 1つのGatewayで異なる役割の複数エージェントを運用する実践パターンです。
 
-![OpenClaw マルチエージェントドキュメント — エージェントルーティング、バインディング、サンドボックス設定](../../../assets/blog/docs-multi-agent.png)
-
 ### 完全なマルチエージェント設定
 
 ```json5
@@ -638,8 +632,6 @@ AIの内部処理ステップ：
 
 OpenClawのNodeシステムを活用してスマート防犯システムを構築しましょう。
 
-![OpenClaw Nodeドキュメント — カメラ、位置情報、画面録画、コマンド実行等のNode機能](../../../assets/blog/docs-nodes.png)
-
 ### 構成要素
 
 ```mermaid
@@ -712,8 +704,6 @@ openclaw cron add \
 ## 活用法 7: カスタムスキル開発完全ガイド 🛠️
 
 オリジナルのスキルを作ってOpenClawを拡張しましょう。
-
-![OpenClaw スキルドキュメント — スキルフォーマット、ゲーティング、環境変数注入、ClawHub等](../../../assets/blog/docs-skills.png)
 
 ### スキル構造
 

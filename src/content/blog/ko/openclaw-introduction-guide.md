@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'OpenClaw 완전 소개 — 나만의 AI 비서를 만들자'
 description: '오픈소스 AI 비서 플랫폼 OpenClaw의 주요 기능과 아키텍처를 소개합니다. 멀티채널, 멀티모델, 노드 시스템까지 완전 가이드.'
 pubDate: '2026-02-03'
@@ -88,8 +88,6 @@ OpenClaw의 가장 큰 매력 중 하나는 **채널의 다양성**입니다.
 
 OpenClaw의 심장은 **Gateway**입니다. 단일 제어 평면(Control Plane)으로 동작하며, `ws://127.0.0.1:18789`를 통해 모든 채널과 도구를 하나로 연결합니다.
 
-![OpenClaw 공식 문서 — Gateway 아키텍처와 전체 기능 설명](../../../assets/blog/docs-main.png)
-
 Gateway의 핵심 역할은:
 - **채널 연결 관리** — 모든 메신저 채널의 WebSocket 연결을 소유
 - **에이전트 브릿지** — Pi 코딩 에이전트와 RPC 통신
@@ -161,8 +159,6 @@ iOS, Android, macOS 디바이스를 **노드**로 연결하면 AI가 물리적 �
 ### 🤖 멀티 에이전트 시스템
 
 OpenClaw은 하나의 Gateway에서 **여러 에이전트를 동시에 운영**할 수 있습니다.
-
-![OpenClaw 멀티 에이전트 라우팅 문서 — 에이전트별 샌드박스, 도구 제한, 라우팅 규칙 설정](../../../assets/blog/docs-multi-agent.png)
 
 - **에이전트별 워크스페이스** — 각자 독립된 작업 공간
 - **에이전트별 샌드박스** — Docker 기반 격리 실행 환경

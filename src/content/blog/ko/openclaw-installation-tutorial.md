@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'OpenClaw 설치부터 첫 대화까지 — 완벽 튜토리얼'
 description: 'OpenClaw 설치, Telegram 연결, 첫 AI 대화까지 단계별로 안내합니다. Node.js 설정부터 워크스페이스 구조까지.'
 pubDate: '2026-02-04'
@@ -110,8 +110,6 @@ openclaw onboard --install-daemon
 openclaw onboard --install-daemon
 ```
 
-![OpenClaw Getting Started 문서 — 설치부터 첫 메시지까지의 전체 가이드](../../../assets/blog/docs-getting-started.png)
-
 대화형 프롬프트를 따라가며 아래 항목들을 설정합니다:
 
 | 설정 항목 | 설명 |
@@ -167,8 +165,6 @@ openclaw onboard --install-daemon
 ## 4. Telegram 봇 연동 — 가장 쉬운 채널
 
 여러 채널 중 진입 장벽이 가장 낮은 **Telegram**으로 시작해 보겠습니다.
-
-![OpenClaw Telegram 채널 문서 — 봇 설정, 그룹 지원, 스트리밍 등 상세 가이드](../../../assets/blog/docs-telegram.png)
 
 ### 4-1. 봇 생성
 

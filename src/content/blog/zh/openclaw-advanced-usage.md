@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'OpenClaw 200% 活用术 — 8个实战高级用例'
 description: 'Cron自动化、Webhook集成、MCP服务器、多代理系统、浏览器自动化等OpenClaw实战高级用法8种。'
 pubDate: '2026-02-05'
@@ -40,8 +40,6 @@ OpenClaw 不仅仅是聊天机器人。它是在你的设备上活生生运行�
 ## 活用法 1：基于 Cron 的每日报告自动化 📊
 
 来打造一个每天早上一睁眼就把今天的日程、天气、新闻头条整理好发送给你的秘书吧。
-
-![OpenClaw Cron 任务文档 — 计划、执行模式、投递设置等详细指南](../../../assets/blog/docs-cron.png)
 
 ### 完整配置示例
 
@@ -170,8 +168,6 @@ openclaw cron remove <jobId>
 ## 活用法 2：通过 Webhook 集成 n8n/Make 🔗
 
 将外部自动化工具与 OpenClaw 连接，可能性将无限扩展。
-
-![OpenClaw Webhook 文档 — wake、agent、自定义映射等 Webhook 端点设置](../../../assets/blog/docs-webhook.png)
 
 ### 启用 Webhook
 
@@ -426,8 +422,6 @@ metadata: {"openclaw":{"requires":{"env":["NOTION_API_KEY"]},"primaryEnv":"NOTIO
 
 在单个 Gateway 上运行多个不同角色代理的实战模式。
 
-![OpenClaw 多代理文档 — 代理路由、绑定、沙盒设置](../../../assets/blog/docs-multi-agent.png)
-
 ### 完整的多代理配置
 
 ```json5
@@ -638,8 +632,6 @@ AI 内部执行步骤：
 
 利用 OpenClaw 的节点系统构建智能安防系统。
 
-![OpenClaw 节点文档 — 摄像头、位置、屏幕录制、命令执行等节点功能](../../../assets/blog/docs-nodes.png)
-
 ### 组成部分
 
 ```mermaid
@@ -712,8 +704,6 @@ openclaw cron add \
 ## 活用法 7：自定义 Skill 开发完全指南 🛠️
 
 来创建自己的 Skill 扩展 OpenClaw 吧。
-
-![OpenClaw Skill 文档 — Skill 格式、门控、环境变量注入、ClawHub 等](../../../assets/blog/docs-skills.png)
 
 ### Skill 结构
 

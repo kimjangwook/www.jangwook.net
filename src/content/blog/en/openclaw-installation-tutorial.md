@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'OpenClaw Installation to First Conversation — Complete Tutorial'
 description: 'Step-by-step guide to installing OpenClaw, connecting Telegram, and having your first AI conversation. From Node.js setup to workspace configuration.'
 pubDate: '2026-02-04'
@@ -110,8 +110,6 @@ After installation, the onboarding wizard guides you through core settings on fi
 openclaw onboard --install-daemon
 ```
 
-![OpenClaw Getting Started docs — Complete guide from installation to first message](../../../assets/blog/docs-getting-started.png)
-
 Follow the interactive prompts to configure these items:
 
 | Setting | Description |
@@ -167,8 +165,6 @@ You can also directly edit `~/.openclaw/openclaw.json` instead of using the wiza
 ## 4. Telegram Bot Integration — The Easiest Channel
 
 Among all available channels, **Telegram** has the lowest barrier to entry. Let's start there.
-
-![OpenClaw Telegram channel docs — Detailed guide on bot setup, group support, streaming, and more](../../../assets/blog/docs-telegram.png)
 
 ### 4-1. Create a Bot
 

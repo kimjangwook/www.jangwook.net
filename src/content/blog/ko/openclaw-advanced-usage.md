@@ -40,8 +40,6 @@ OpenClaw는 단순한 챗봇이 아닙니다. 여러분의 디바이스에서 �
 
 매일 아침 눈 뜨면 오늘의 일정, 날씨, 뉴스 헤드라인을 정리해서 보내주는 비서를 만들어 봅시다.
 
-![OpenClaw 크론 작업 문서 — 스케줄, 실행 모드, 전달 설정 등 상세 가이드](../../../assets/blog/docs-cron.png)
-
 ### 완전한 설정 예제
 
 #### 1단계: openclaw.json에 크론 활성화
@@ -169,8 +167,6 @@ openclaw cron remove <jobId>
 ## 활용법 2: 웹훅으로 n8n/Make 연동 🔗
 
 외부 자동화 도구와 OpenClaw을 연결하면 가능성이 무한히 확장됩니다.
-
-![OpenClaw 웹훅 문서 — wake, agent, 커스텀 매핑 등 웹훅 엔드포인트 설정](../../../assets/blog/docs-webhook.png)
 
 ### 웹훅 활성화
 
@@ -425,8 +421,6 @@ exec 도구로 `notion-mcp-server` 실행 후 결과를 처리합니다.
 
 하나의 Gateway에서 역할이 다른 여러 에이전트를 운영하는 실전 패턴입니다.
 
-![OpenClaw 멀티 에이전트 문서 — 에이전트 라우팅, 바인딩, 샌드박스 설정](../../../assets/blog/docs-multi-agent.png)
-
 ### 완전한 멀티 에이전트 설정
 
 ```json5
@@ -637,8 +631,6 @@ AI의 내부 수행 단계:
 
 OpenClaw의 노드 시스템을 활용해 스마트 보안 시스템을 구축해 봅시다.
 
-![OpenClaw 노드 문서 — 카메라, 위치, 화면 녹화, 명령 실행 등 노드 기능](../../../assets/blog/docs-nodes.png)
-
 ### 구성 요소
 
 ```mermaid
@@ -711,8 +703,6 @@ openclaw cron add \
 ## 활용법 7: 커스텀 스킬 개발 완전 가이드 🛠️
 
 나만의 스킬을 만들어서 OpenClaw을 확장해 봅시다.
-
-![OpenClaw 스킬 문서 — 스킬 포맷, 게이팅, 환경변수 주입, ClawHub 등](../../../assets/blog/docs-skills.png)
 
 ### 스킬 구조
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'OpenClaw 完全指南 — 打造你的专属 AI 助手'
 description: '介绍开源 AI 助手平台 OpenClaw 的核心功能与架构。多渠道、多模型、节点系统一网打尽的完全指南。'
 pubDate: '2026-02-03'
@@ -88,8 +88,6 @@ OpenClaw 最大的魅力之一就是**渠道的多样性**。
 
 OpenClaw 的核心是 **Gateway**。它作为单一控制平面运行，通过 `ws://127.0.0.1:18789` 将所有渠道和工具连接在一起。
 
-![OpenClaw 官方文档 — Gateway 架构与完整功能说明](../../../assets/blog/docs-main.png)
-
 Gateway 的核心职责：
 - **渠道连接管理** — 拥有所有通讯渠道的 WebSocket 连接
 - **代理桥接** — 与 Pi 编码代理进行 RPC 通信
@@ -161,8 +159,6 @@ npx clawhub@latest install <技能名称>
 ### 🤖 多代理系统
 
 OpenClaw 可以在一个 Gateway 上**同时运行多个代理**。
-
-![OpenClaw 多代理路由文档 — 每个代理的沙箱、工具限制和路由规则设置](../../../assets/blog/docs-multi-agent.png)
 
 - **独立工作区** — 每个代理拥有自己独立的工作空间
 - **独立沙箱** — 基于 Docker 的隔离执行环境

@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'Supercharge OpenClaw — 8 Advanced Real-World Use Cases'
 description: 'Cron automation, webhook integration, MCP servers, multi-agent systems, browser automation, and more — 8 production-level OpenClaw use cases.'
 pubDate: '2026-02-05'
@@ -40,8 +40,6 @@ OpenClaw is not just a chatbot. It's a **personal AI agent** that lives and brea
 ## Use Case 1: Cron-Based Daily Report Automation 📊
 
 Let's build a personal assistant that greets you every morning with a summary of today's schedule, weather, and news headlines.
-
-![OpenClaw cron job documentation — schedule, execution mode, delivery settings, and more](../../../assets/blog/docs-cron.png)
 
 ### Complete Configuration Example
 
@@ -170,8 +168,6 @@ Combining cron with heartbeats enables even more flexible automation:
 ## Use Case 2: Webhook Integration with n8n/Make 🔗
 
 Connecting external automation tools with OpenClaw unlocks unlimited possibilities.
-
-![OpenClaw webhook documentation — wake, agent, custom mappings, and webhook endpoint configuration](../../../assets/blog/docs-webhook.png)
 
 ### Enabling Webhooks
 
@@ -426,8 +422,6 @@ Run `notion-mcp-server` with the exec tool, then process the results.
 
 Here's a practical pattern for running multiple agents with different roles on a single Gateway.
 
-![OpenClaw multi-agent documentation — agent routing, bindings, and sandbox configuration](../../../assets/blog/docs-multi-agent.png)
-
 ### Complete Multi-Agent Configuration
 
 ```json5
@@ -638,8 +632,6 @@ The AI's internal execution steps:
 
 Let's build a smart security system using OpenClaw's node system.
 
-![OpenClaw node documentation — camera, location, screen recording, command execution, and more](../../../assets/blog/docs-nodes.png)
-
 ### Components
 
 ```mermaid
@@ -712,8 +704,6 @@ When the user says "turn on away mode":
 ## Use Case 7: Complete Guide to Custom Skill Development 🛠️
 
 Let's extend OpenClaw by creating your own custom skills.
-
-![OpenClaw skill documentation — skill format, gating, environment variable injection, ClawHub, and more](../../../assets/blog/docs-skills.png)
 
 ### Skill Structure
 

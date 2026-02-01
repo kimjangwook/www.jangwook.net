@@ -1,4 +1,4 @@
-﻿---
+---
 title: '从安装 OpenClaw 到首次对话 — 完整教程'
 description: '手把手教你安装 OpenClaw、连接 Telegram、完成首次 AI 对话。涵盖 Node.js 配置到工作区结构的全流程。'
 pubDate: '2026-02-04'
@@ -110,8 +110,6 @@ openclaw onboard --install-daemon
 openclaw onboard --install-daemon
 ```
 
-![OpenClaw Getting Started 文档 — 从安装到首条消息的完整指南](../../../assets/blog/docs-getting-started.png)
-
 按照交互式提示逐步配置以下项目：
 
 | 配置项 | 说明 |
@@ -167,8 +165,6 @@ openclaw onboard --install-daemon
 ## 4. Telegram 机器人集成 — 最简单的频道
 
 在所有频道中，**Telegram** 的入门门槛最低。让我们从这里开始。
-
-![OpenClaw Telegram 频道文档 — 机器人设置、群组支持、流式传输等详细指南](../../../assets/blog/docs-telegram.png)
 
 ### 4-1. 创建机器人
 
