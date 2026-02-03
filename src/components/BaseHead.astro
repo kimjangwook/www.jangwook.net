@@ -212,7 +212,7 @@ const articleSchema = articleData ? {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="sitemap" href="/sitemap.xml" />
 
 <!-- RSS Feeds (language-specific and global) -->
 <link
@@ -241,6 +241,13 @@ const articleSchema = articleData ? {
 	title={`${SITE_TITLE} - 日本語`}
 	href={new URL('rss-ja.xml', Astro.site)}
 	hreflang="ja"
+/>
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - 中文`}
+	href={new URL('rss-zh.xml', Astro.site)}
+	hreflang="zh"
 />
 
 <meta name="generator" content={Astro.generator} />
@@ -286,7 +293,7 @@ const articleSchema = articleData ? {
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={articleData ? "article" : "website"} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
