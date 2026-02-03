@@ -28,6 +28,7 @@ const blog = defineCollection({
 			tags: z.array(z.string()).optional(),
 			// V3: Related posts (optional)
 			relatedPosts: z.array(relatedPostSchema).optional(),
+			noindex: z.boolean().optional(),
 		}),
 });
 

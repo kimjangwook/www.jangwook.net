@@ -4,6 +4,7 @@ title: >-
 description: >-
   블로그 런칭 75일 GA4 데이터 분석 - 일일 평균 85명 방문, 오가닉 검색 56.5% 달성, Google Code Wiki 가이드 신규 인기 포스트 등극, 중국 시장 급성장
 pubDate: '2025-12-24'
+noindex: true
 heroImage: ../../../assets/blog/monthly-analytics-2025-12-hero.png
 tags:
   - Analytics

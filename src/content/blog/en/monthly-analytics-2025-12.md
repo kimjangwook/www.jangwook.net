@@ -4,6 +4,7 @@ title: >-
 description: >-
   75 days post-launch GA4 analysis - 85 daily visitors, 56.5% organic search, Google Code Wiki Guide as new top performer, China market surge
 pubDate: '2025-12-24'
+noindex: true
 heroImage: ../../../assets/blog/monthly-analytics-2025-12-hero.png
 tags:
   - Analytics

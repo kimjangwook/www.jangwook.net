@@ -4,6 +4,7 @@ title: >-
 description: >-
   ブログ開設75日目のGA4データ分析 - 1日平均85人訪問、オーガニック検索56.5%達成、Google Code Wikiガイドが新人気記事に、中国市場急成長
 pubDate: '2025-12-24'
+noindex: true
 heroImage: ../../../assets/blog/monthly-analytics-2025-12-hero.png
 tags:
   - Analytics

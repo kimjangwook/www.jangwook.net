@@ -4,6 +4,7 @@ description: >-
   블로그 런칭 일주일 후 GA4 데이터 분석, 콘텐츠 성과, 개선 효과 - 투명하게 공유하는 블로그 성장 기록
   (2025-10-07~10-14)
 pubDate: '2025-10-14'
+noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics

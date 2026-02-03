@@ -4,6 +4,7 @@ title: >-
 description: >-
   博客启动45天GA4数据深度分析 - 自然搜索占比44.3%达成、SEO优化ROI、流量激增原因分析、英文内容91%跳出率解决方案
 pubDate: '2025-11-20'
+noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
 tags:
   - Analytics

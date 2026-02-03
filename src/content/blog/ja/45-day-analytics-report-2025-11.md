@@ -4,6 +4,7 @@ title: >-
 description: >-
   ブログ開設45日間のGA4データ徹底分析 - オーガニック検索44.3%達成、SEO最適化ROI、トラフィック急増原因分析、英語コンテンツ91%離脱率改善戦略
 pubDate: '2025-11-20'
+noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
 tags:
   - Analytics

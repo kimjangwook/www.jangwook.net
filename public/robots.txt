@@ -1,4 +1,18 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jangwook.net/sitemap-index.xml
+# Block cross-language content mismatch URLs (safety net)
+Disallow: /ko/blog/en/
+Disallow: /ko/blog/ja/
+Disallow: /ko/blog/zh/
+Disallow: /en/blog/ko/
+Disallow: /en/blog/ja/
+Disallow: /en/blog/zh/
+Disallow: /ja/blog/ko/
+Disallow: /ja/blog/en/
+Disallow: /ja/blog/zh/
+Disallow: /zh/blog/ko/
+Disallow: /zh/blog/en/
+Disallow: /zh/blog/ja/
+
+Sitemap: https://jangwook.net/sitemap.xml

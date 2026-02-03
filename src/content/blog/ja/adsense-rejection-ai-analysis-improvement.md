@@ -4,6 +4,7 @@ description: >-
   Google
   AdSenseで「価値の低いコンテンツ」として拒否された後、ChatGPT、Claude、Geminiの3つのAIを活用して原因を分析し、承認可能性を5.5点から8.5点に改善した実体験を共有します。
 pubDate: '2025-12-03'
+noindex: true
 heroImage: ../../../assets/blog/adsense-rejection-ai-analysis-improvement-hero.png
 tags:
   - adsense

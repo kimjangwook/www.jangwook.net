@@ -3,6 +3,7 @@ title: '3주 분석 리포트: 오가닉 검색 1266% 폭발 성장, 그리고 2
 description: >-
   2025-10-15〜11-04 GA4 데이터 분석, 오가닉 검색 4.3%→54.4% 도약, 20개 신규 포스트 발행, 한국이 1위 국가로 부상 - 투명하게 공유하는 블로그 성장 기록
 pubDate: '2025-11-06'
+noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics

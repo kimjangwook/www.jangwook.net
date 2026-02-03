@@ -2,6 +2,7 @@
 title: '三周分析报告：自然搜索爆炸增长1266%，以及发布20篇文章的旅程'
 description: 2025年10月15日〜11月4日GA4数据分析，自然搜索从4.3%飙升至54.4%，发布20篇新文章，韩国成为第一访问国家 - 透明分享博客增长记录
 pubDate: '2025-11-06'
+noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics

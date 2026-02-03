@@ -4,6 +4,7 @@ description: >-
   Google AdSense "가치가 별로 없는 콘텐츠" 거절 후 ChatGPT, Claude, Gemini 3개 AI를 활용해 원인을
   분석하고 승인 가능성을 5.5점에서 8.5점으로 개선한 실제 경험을 공유합니다.
 pubDate: '2025-12-03'
+noindex: true
 heroImage: ../../../assets/blog/adsense-rejection-ai-analysis-improvement-hero.png
 tags:
   - adsense

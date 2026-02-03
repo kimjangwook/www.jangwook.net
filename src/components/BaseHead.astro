@@ -83,9 +83,13 @@ const hreflangTags: HreflangTag[] = languages.map(lang => {
 });
 
 // x-default는 영어 버전으로 설정
+let xDefaultPath = pathWithoutLang;
+if (xDefaultPath.startsWith('/blog/')) {
+	xDefaultPath = xDefaultPath.replace(/^\/blog\/(ko|en|ja|zh)\//, '/blog/en/');
+}
 const xDefaultUrl = pathWithoutLang === '/' || pathWithoutLang === ''
 	? `${siteUrl}/en/`
-	: `${siteUrl}/en${pathWithoutLang}`;
+	: `${siteUrl}/en${xDefaultPath}`;
 
 // WebSite Schema (모든 페이지)
 const websiteSchema = {

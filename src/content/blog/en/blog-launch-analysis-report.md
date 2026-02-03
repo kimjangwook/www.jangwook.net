@@ -7,6 +7,7 @@ description: >-
   growth strategy - transparently sharing the journey of starting a technical
   blog
 pubDate: '2025-10-06'
+noindex: true
 heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
 tags:
   - Analytics

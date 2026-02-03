@@ -4,6 +4,7 @@ description: >-
   GA4 data analysis, content performance, and improvement impact one week after
   blog launch - transparently sharing our blog growth journey (2025-10-07~10-14)
 pubDate: '2025-10-14'
+noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics

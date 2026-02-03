@@ -24,6 +24,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	lang: Language;
 	tags?: string[];
 	postId?: string;
+	noindex?: boolean;
 	relatedPosts?: Array<{
 		slug: string;
 		score: number;
@@ -31,7 +32,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	}>;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, lang, tags, postId, relatedPosts } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, lang, tags, postId, noindex, relatedPosts } = Astro.props;
 const t = useTranslations(lang);
 
 // Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
@@ -77,6 +78,7 @@ const breadcrumbSchema = {
 				tags: tags,
 			}}
 		/>
+		{noindex && <meta name="robots" content="noindex, follow" />}
 		<!-- BreadcrumbList Schema -->
 		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 	</head>

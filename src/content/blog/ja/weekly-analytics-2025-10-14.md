@@ -2,6 +2,7 @@
 title: ブログ初週分析レポート：31人の熱心なアーリーアダプターと共に始めた旅
 description: ブログローンチ1週間後のGA4データ分析、コンテンツパフォーマンス、改善効果 - 透明に共有するブログ成長記録（2025-10-07〜10-14）
 pubDate: '2025-10-14'
+noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics

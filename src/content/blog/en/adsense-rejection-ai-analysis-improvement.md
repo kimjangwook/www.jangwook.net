@@ -5,6 +5,7 @@ description: >-
   Claude, and Gemini to analyze the issues and improved approval probability
   from 5.5 to 8.5 out of 10. Here is my experience.
 pubDate: '2025-12-03'
+noindex: true
 heroImage: ../../../assets/blog/adsense-rejection-ai-analysis-improvement-hero.png
 tags:
   - adsense

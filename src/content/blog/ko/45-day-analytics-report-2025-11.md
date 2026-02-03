@@ -4,6 +4,7 @@ title: >-
 description: >-
   블로그 런칭 45일 GA4 데이터 전격 분석 - 오가닉 검색 44.3% 달성, SEO 최적화 ROI, 트래픽 급증 원인 분석, 영어 콘텐츠 91% 이탈률 해결 전략
 pubDate: '2025-11-20'
+noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
 tags:
   - Analytics

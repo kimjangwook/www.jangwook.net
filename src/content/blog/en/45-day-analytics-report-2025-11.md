@@ -4,6 +4,7 @@ title: >-
 description: >-
   Comprehensive GA4 analysis of blog's first 45 days - 44.3% organic search achieved, SEO optimization ROI proven, traffic spike investigation, 91% bounce rate crisis on English homepage
 pubDate: '2025-11-20'
+noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
 tags:
   - Analytics

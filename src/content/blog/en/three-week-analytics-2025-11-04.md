@@ -3,6 +3,7 @@ title: '3-Week Analytics Report: 1266% Organic Search Explosion & 20-Post Publis
 description: >-
   2025-10-15〜11-04 GA4 analysis, organic search leap from 4.3% to 54.4%, 20 new posts published, South Korea emerges as #1 country - transparently sharing blog growth journey
 pubDate: '2025-11-06'
+noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics

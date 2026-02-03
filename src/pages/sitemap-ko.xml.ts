@@ -43,10 +43,8 @@ export const GET: APIRoute = async () => {
     })),
     // Blog posts
     ...langPosts.map(post => {
-      // Remove language prefix from post.id (e.g., 'ko/post-name' -> 'post-name')
-      const slug = post.id.replace(`${LANG}/`, '');
       return {
-        loc: `${SITE}/${LANG}/blog/${slug}/`,
+        loc: `${SITE}/${LANG}/blog/${post.id}/`,
         lastmod: (post.data.updatedDate || post.data.pubDate).toISOString().split('T')[0],
         changefreq: 'monthly' as const,
         priority: 0.7,
