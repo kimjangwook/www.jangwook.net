@@ -43,11 +43,16 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-01-12
+**최신 포스트 날짜**: 2026-02-07
 
-**총 포스트 수**: 77개 (한국어 기준)
+**총 포스트 수**: 78개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **AdSense "가치가 별로 없는 콘텐츠" 거절 극복기: 기술적 분석과 해결** (2026-02-07)
+
+   - Astro 기반 다국어 블로그에서 AdSense 반복 거절의 원인을 기술적으로 분석하고, ads.txt 충돌·996개 유령 페이지·사이트맵 전체 404 등 핵심 문제를 해결한 실전 가이드입니다.
+   - **핵심 내용**: Ezoic ads.txt 충돌로 AdSense pub ID 누락, URL 라우팅 결함으로 996개 유령 페이지 생성 (빌드 1,365→370), 사이트맵 전체 404 수정, 기계번역 구조 동일성 대응 (hreflang), Contact 페이지 크롤러 접근성, hreflang x-default 오류, 자기 참조 포스트 noindex, 커스텀 404·og:type 분기·robots.txt 교차 언어 차단
 
 1. **Tailwind CSS 75% 인원 감축: AI 시대 오픈소스 수익화의 위기** (2026-01-12)
 
@@ -697,6 +702,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2025-12-26 (Anthropic Agent Skills 실전 가이드 발행)
+**Last Updated**: 2026-02-07 (AdSense Low Value Content 기술적 분석 가이드 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

@@ -790,5 +790,16 @@
       "devops": 0.6,
       "architecture": 0.75
     }
+  },
+  "adsense-low-value-content-technical-fix": {
+    "pubDate": "2026-02-07",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.9,
+      "ai-ml": 0.2,
+      "devops": 0.7,
+      "architecture": 0.5
+    }
   }
 }
