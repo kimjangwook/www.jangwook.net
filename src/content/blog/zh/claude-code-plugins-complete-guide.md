@@ -1,6 +1,8 @@
 ---
 title: Claude Code 插件完全指南：从官方插件到社区市场
-description: 深入解析 Claude Code 13个官方插件和社区市场。涵盖 feature-dev 7阶段工作流、code-review 4个并行代理、hookify 自然语言钩子等核心功能的详细介绍。
+description: >-
+  深入解析 Claude Code 13个官方插件和社区市场。涵盖 feature-dev 7阶段工作流、code-review 4个并行代理、hookify
+  自然语言钩子等核心功能的详细介绍。
 pubDate: '2026-01-11'
 heroImage: ../../../assets/blog/claude-code-plugins-complete-guide-hero.jpg
 tags:

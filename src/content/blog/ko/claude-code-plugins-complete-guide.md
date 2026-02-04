@@ -1,8 +1,8 @@
 ---
 title: 'Claude Code 플러그인 완전 가이드: 공식 플러그인부터 커뮤니티 마켓플레이스까지'
 description: >-
-  Claude Code 플러그인 시스템을 심층 분석합니다. 공식 13개 플러그인의 상세 기능, 커뮤니티 마켓플레이스 100+개 플러그인,
-  실제 plugin.json 구조와 설치 방법을 실전 예제와 함께 소개합니다.
+  Claude Code 플러그인 시스템을 심층 분석합니다. 공식 13개 플러그인의 상세 기능, 커뮤니티 마켓플레이스 100+개 플러그인, 실제
+  plugin.json 구조와 설치 방법을 실전 예제와 함께 소개합니다.
 pubDate: '2026-01-11'
 heroImage: ../../../assets/blog/claude-code-plugins-complete-guide-hero.jpg
 tags:

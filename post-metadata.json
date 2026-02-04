@@ -801,5 +801,16 @@
       "devops": 0.7,
       "architecture": 0.5
     }
+  },
+  "openclaw-e2e-test-automation-guide": {
+    "pubDate": "2026-02-08",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.6,
+      "ai-ml": 0.8,
+      "devops": 0.85,
+      "architecture": 0.75
+    }
   }
 }

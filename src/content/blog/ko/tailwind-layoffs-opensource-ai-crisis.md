@@ -1,10 +1,60 @@
 ---
 title: 'Tailwind CSS 75% 인원 감축: AI 시대 오픈소스 수익화의 위기'
-description: 'Tailwind Labs의 대규모 인원 감축 사태를 통해 AI가 문서 기반 수익 모델을 어떻게 파괴하는지, 오픈소스 기여자들의 무급 노동 심화 문제와 지속 가능한 수익화 방안을 분석합니다.'
+description: >-
+  Tailwind Labs의 대규모 인원 감축 사태를 통해 AI가 문서 기반 수익 모델을 어떻게 파괴하는지, 오픈소스 기여자들의 무급 노동
+  심화 문제와 지속 가능한 수익화 방안을 분석합니다.
 pubDate: '2026-01-12'
-heroImage: '../../../assets/blog/tailwind-layoffs-opensource-ai-crisis-hero.jpg'
-tags: ['opensource', 'ai', 'business-model']
-relatedPosts: []
+heroImage: ../../../assets/blog/tailwind-layoffs-opensource-ai-crisis-hero.jpg
+tags:
+  - opensource
+  - ai
+  - business-model
+relatedPosts:
+  - slug: adsense-rejection-ai-analysis-improvement
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, AI/ML topics.
+      zh: 适合作为下一步学习资源，通过Web开发、AI/ML主题进行连接。
+  - slug: ux-psychology-frontend-design-skill
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, AI/ML topics.
+      zh: 适合作为下一步学习资源，通过Web开发、AI/ML主题进行连接。
+  - slug: aeo-implementation-experience
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, AI/ML topics.
+      zh: 适合作为下一步学习资源，通过Web开发、AI/ML主题进行连接。
+  - slug: agent-effi-flow-pivot-omotenashi-bot
+    score: 0.89
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, AI/ML topics.
+      zh: 适合作为下一步学习资源，通过Web开发、AI/ML主题进行连接。
+  - slug: google-code-wiki-guide
+    score: 0.89
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 ## 개요

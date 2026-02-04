@@ -1,6 +1,6 @@
 ---
-title: '攻克AdSense"低价值内容"拒绝：技术分析与解决方案实战指南'
-description: '在基于Astro的多语言博客中，技术性分析AdSense反复拒绝的根因，并解决ads.txt冲突、996个幽灵页面、站点地图全404等核心问题的实战指南。'
+title: 攻克AdSense"低价值内容"拒绝：技术分析与解决方案实战指南
+description: 在基于Astro的多语言博客中，技术性分析AdSense反复拒绝的根因，并解决ads.txt冲突、996个幽灵页面、站点地图全404等核心问题的实战指南。
 pubDate: '2026-02-07'
 heroImage: ../../../assets/blog/adsense-low-value-content-technical-fix-hero.png
 tags:
@@ -9,6 +9,52 @@ tags:
   - web-optimization
   - multilingual
   - astro
+relatedPosts:
+  - slug: tauri-pixijs-ios-game-development
+    score: 0.94
+    reason:
+      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, DevOps with comparable
+        difficulty.
+      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
+  - slug: tauri-ios-admob-rewarded-ads
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 웹 개발 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development topics.
+      zh: 适合作为下一步学习资源，通过Web开发主题进行连接。
+  - slug: chrome-devtools-mcp-performance
+    score: 0.9
+    reason:
+      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, DevOps with comparable
+        difficulty.
+      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
+  - slug: astro-scheduled-publishing
+    score: 0.9
+    reason:
+      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, DevOps with comparable
+        difficulty.
+      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
+  - slug: claude-code-web-automation
+    score: 0.88
+    reason:
+      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, DevOps with comparable
+        difficulty.
+      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
 ---
 
 ## 概述
