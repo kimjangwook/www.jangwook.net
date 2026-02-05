@@ -3,7 +3,7 @@ title: 'OpenClaw로 E2E 테스트 자동화하기: 브라우저·디바이스·�
 description: >-
   AI 에이전트 플랫폼 OpenClaw의 브라우저 자동화, 노드 디바이스 관리, 크론 스케줄링을 조합하여 자연어 기반 E2E 테스트를 구축하는
   실전 가이드입니다.
-pubDate: '2026-02-05'
+pubDate: '2026-02-08'
 heroImage: ../../../assets/blog/openclaw-e2e-test-automation-guide-hero.png
 tags:
   - openclaw
