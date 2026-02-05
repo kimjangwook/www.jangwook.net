@@ -4,7 +4,7 @@ description: >-
   A hands-on guide to building natural-language E2E tests using OpenClaw's
   browser automation, node device management, cron scheduling, and multi-agent
   orchestration.
-pubDate: '2026-02-08'
+pubDate: '2026-02-05'
 heroImage: ../../../assets/blog/openclaw-e2e-test-automation-guide-hero.png
 tags:
   - openclaw

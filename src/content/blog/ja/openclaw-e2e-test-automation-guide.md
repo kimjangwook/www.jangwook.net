@@ -2,7 +2,7 @@
 title: OpenClawでE2Eテスト自動化：ブラウザ・デバイス・クロン統合ガイド
 description: >-
   AIエージェントプラットフォームOpenClawのブラウザ自動化、ノードデバイス管理、クロンスケジューリングを組み合わせた自然言語ベースE2Eテスト構築の実践ガイドです。
-pubDate: '2026-02-08'
+pubDate: '2026-02-05'
 heroImage: ../../../assets/blog/openclaw-e2e-test-automation-guide-hero.png
 tags:
   - openclaw

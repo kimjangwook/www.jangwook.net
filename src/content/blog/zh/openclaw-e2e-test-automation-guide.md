@@ -1,7 +1,7 @@
 ---
 title: OpenClaw E2E测试自动化：浏览器·设备·定时任务集成指南
 description: 利用AI代理平台OpenClaw的浏览器自动化、节点设备管理和定时调度，构建基于自然语言的E2E测试实战指南。
-pubDate: '2026-02-08'
+pubDate: '2026-02-05'
 heroImage: ../../../assets/blog/openclaw-e2e-test-automation-guide-hero.png
 tags:
   - openclaw
