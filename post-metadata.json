@@ -1,4 +1,15 @@
 {
+  "claude-code-insights-usage-analysis": {
+    "pubDate": "2026-02-05",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.6
+    }
+  },
   "tauri-ios-admob-rewarded-ads": {
     "pubDate": "2026-01-30",
     "difficulty": 4,
