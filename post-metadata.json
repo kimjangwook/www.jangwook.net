@@ -823,5 +823,16 @@
       "devops": 0.85,
       "architecture": 0.75
     }
+  },
+  "openclaw-opus-4-6-setup-guide": {
+    "pubDate": "2026-02-06",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.6,
+      "architecture": 0.5
+    }
   }
 }

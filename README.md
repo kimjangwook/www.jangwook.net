@@ -45,9 +45,14 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-08
 
-**총 포스트 수**: 84개 (한국어 기준)
+**총 포스트 수**: 85개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **【긴급】OpenClaw에 Claude Opus 4.6 설정하기** (2026-02-06)
+
+   - Claude Opus 4.6을 OpenClaw에서 사용하기 위한 설정 방법. 100만 토큰 컨텍스트, 128K 출력을 활용하는 설정을 그대로 복사해서 쓸 수 있습니다.
+   - **핵심 내용**: openclaw.json의 models/agents 설정, 모델 정의(contextWindow/maxTokens/reasoning), 폴백 설정, gateway 재시작 및 세션 초기화
 
 1. **OpenClaw로 E2E 테스트 자동화하기: 브라우저·디바이스·크론 통합 가이드** (2026-02-08)
 

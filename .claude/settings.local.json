@@ -22,12 +22,10 @@
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "context7",
-    "sequentialthinking",
-    "automatalabs-playwright-server",
-    "notionApi",
     "chrome-devtools",
+    "gemini-google-search",
     "analytics-mcp",
+    "serena",
     "brave-search"
   ]
 }
