@@ -834,5 +834,16 @@
       "devops": 0.6,
       "architecture": 0.5
     }
+  },
+  "openclaw-cron-fix-guide": {
+    "pubDate": "2026-02-06",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.1,
+      "devops": 0.8,
+      "architecture": 0.6
+    }
   }
 }
