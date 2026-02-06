@@ -1,4 +1,15 @@
 {
+  "claude-agent-teams-guide": {
+    "pubDate": "2026-02-07",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.7,
+      "architecture": 0.85
+    }
+  },
   "claude-code-insights-usage-analysis": {
     "pubDate": "2026-02-05",
     "difficulty": 2,
