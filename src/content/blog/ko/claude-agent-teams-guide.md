@@ -1,24 +1,63 @@
 ---
-title: "Claude Code Agent Teams 완벽 가이드 — OpenClaw 에이전트 팀 구축부터 실전 운용까지"
-description: "Claude Code의 Agent Teams 기능을 OpenClaw 환경에서 활성화하고, 5개 전문 팀을 구성해 실전 운용한 경험을 바탕으로 한 실용 가이드입니다."
+title: Claude Code Agent Teams 완벽 가이드 — OpenClaw 에이전트 팀 구축부터 실전 운용까지
+description: >-
+  Claude Code의 Agent Teams 기능을 OpenClaw 환경에서 활성화하고, 5개 전문 팀을 구성해 실전 운용한 경험을 바탕으로
+  한 실용 가이드입니다.
 pubDate: '2026-02-07'
 heroImage: ../../../assets/blog/claude-agent-teams-guide-hero.png
-tags: [claude-code, agent-teams, openclaw, multi-agent, tmux, automation]
+tags:
+  - claude-code
+  - agent-teams
+  - openclaw
+  - multi-agent
+  - tmux
+  - automation
 relatedPosts:
-  - slug: openclaw-cron-fix-guide
+  - slug: claude-code-cli-migration-guide
     score: 0.95
     reason:
-      ko: "OpenClaw dev 채널 전환 과정을 다루며, Agent Teams 설정의 전제 조건입니다."
-      ja: "OpenClaw devチャネル切り替え手順を扱い、Agent Teams設定の前提条件です。"
-      en: "Covers OpenClaw dev channel migration, a prerequisite for Agent Teams setup."
-      zh: "介绍OpenClaw dev频道切换过程，是Agent Teams设置的前提条件。"
-  - slug: openclaw-opus-4-6-setup-guide
-    score: 0.85
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: effiflow-automation-analysis-part3
+    score: 0.95
     reason:
-      ko: "OpenClaw 모델 설정 가이드로, Agent Teams에서 사용할 모델 구성에 참고됩니다."
-      ja: "OpenClawモデル設定ガイドで、Agent Teamsで使用するモデル構成の参考になります。"
-      en: "OpenClaw model setup guide, useful for configuring models in Agent Teams."
-      zh: "OpenClaw模型设置指南，对Agent Teams中使用的模型配置有参考价值。"
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-plugins-complete-guide
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-agent-skills-practical-guide
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-agent-skills-standard
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## Agent Teams란 무엇인가

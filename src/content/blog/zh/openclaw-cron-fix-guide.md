@@ -1,24 +1,60 @@
 ---
-title: "[紧急] OpenClaw Cron 任务未执行问题修复指南 (dev v2026.2.4)"
-description: "OpenClaw stable/beta (2026.2.3-1) Cron 任务失败和提醒丢失问题的紧急修复指南。"
+title: '[紧急] OpenClaw Cron 任务未执行问题修复指南 (dev v2026.2.4)'
+description: OpenClaw stable/beta (2026.2.3-1) Cron 任务失败和提醒丢失问题的紧急修复指南。
 pubDate: '2026-02-06'
 heroImage: ../../../assets/blog/openclaw-cron-fix-guide-hero.png
-tags: [openclaw, bugfix, cron, dev-channel, maintenance]
+tags:
+  - openclaw
+  - bugfix
+  - cron
+  - dev-channel
+  - maintenance
 relatedPosts:
-  - slug: openclaw-installation-tutorial
-    score: 0.8
+  - slug: blog-launch-analysis-report
+    score: 0.91
     reason:
-      ko: "OpenClaw 설치 및 기본 설정에 대한 가이드입니다."
-      ja: "OpenClawのインストールと基本設定に関するガイドです。"
-      en: "Guide on OpenClaw installation and basic setup."
-      zh: "OpenClaw 安装和基本设置指南。"
-  - slug: openclaw-advanced-usage
-    score: 0.7
+      ko: '자동화, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: astro-scheduled-publishing
+    score: 0.9
     reason:
-      ko: "OpenClaw의 고급 기능 활용법입니다."
-      ja: "OpenClawの高度な機能活用法です。"
-      en: "Advanced usage of OpenClaw features."
-      zh: "OpenClaw 高级功能使用指南。"
+      ko: '자동화, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: terraform-ai-batch-infrastructure
+    score: 0.89
+    reason:
+      ko: '자동화, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: e2e-page-test-automation-claude-code
+    score: 0.89
+    reason:
+      ko: '자동화, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-hooks-workflow
+    score: 0.89
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题进行连接。
 ---
 
 ## 概述

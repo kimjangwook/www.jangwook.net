@@ -856,5 +856,16 @@
       "devops": 0.8,
       "architecture": 0.6
     }
+  },
+  "ai-agent-cost-reality": {
+    "pubDate": "2026-02-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.6
+    }
   }
 }
