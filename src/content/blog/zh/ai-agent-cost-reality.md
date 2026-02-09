@@ -1,7 +1,7 @@
 ---
 title: AI Agent成本 vs 人工成本的现实：8体运营者的真实分析
 description: AI Agent自主审核成本可能比人工更高的现实。8体AI Agent实际运营者用数据分析成本结构的权衡取舍。
-pubDate: '2026-02-10'
+pubDate: '2026-02-09'
 heroImage: ../../../assets/blog/ai-agent-cost-reality-hero.png
 tags:
   - ai-agent

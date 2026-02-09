@@ -1,7 +1,7 @@
 ---
 title: AIエージェントのコスト vs 人件費の現実：8体運用者のリアルな分析
 description: AIエージェント自律モデレーションのコストが人間より高くなり得る現実。8体のAIエージェント実運用者がデータで分析するコスト構造のトレードオフ。
-pubDate: '2026-02-10'
+pubDate: '2026-02-09'
 heroImage: ../../../assets/blog/ai-agent-cost-reality-hero.png
 tags:
   - ai-agent

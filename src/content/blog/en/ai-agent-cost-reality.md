@@ -4,7 +4,7 @@ description: >-
   AI agent autonomous moderation can cost more than human moderators. A
   data-driven cost structure analysis from someone actually running 8 AI agents
   in production.
-pubDate: '2026-02-10'
+pubDate: '2026-02-09'
 heroImage: ../../../assets/blog/ai-agent-cost-reality-hero.png
 tags:
   - ai-agent
