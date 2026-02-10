@@ -900,5 +900,27 @@
       "devops": 0.4,
       "architecture": 0.7
     }
+  },
+  "meta-ai-agent-platform-sierra-avocado": {
+    "pubDate": "2026-02-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.8
+    }
+  },
+  "accounting-ai-transformation-real-data": {
+    "pubDate": "2026-02-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.1,
+      "ai-ml": 0.85,
+      "devops": 0.2,
+      "architecture": 0.6
+    }
   }
 }
