@@ -1,8 +1,8 @@
 ---
 title: CCC vs GCC — AI가 만든 C 컴파일러의 실력과 한계
 description: >-
-  Claude Opus 4.6이 16개 에이전트를 병렬 투입해 Rust 기반 C 컴파일러를 자동 생성. Linux 커널 빌드에 성공했지만, GCC와의 성능
-  차이는 여전합니다. 80% 품질을 초고속으로 달성하는 AI의 가능성을 분석합니다.
+  Claude Opus 4.6이 16개 에이전트를 병렬 투입해 Rust 기반 C 컴파일러를 자동 생성. Linux 커널 빌드에 성공했지만,
+  GCC와의 성능 차이는 여전합니다. 80% 품질을 초고속으로 달성하는 AI의 가능성을 분석합니다.
 pubDate: '2026-02-09'
 heroImage: ../../../assets/blog/ccc-vs-gcc-ai-compiled-c-compiler-hero.png
 tags:

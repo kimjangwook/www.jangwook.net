@@ -889,5 +889,16 @@
       "devops": 0.3,
       "architecture": 0.8
     }
+  },
+  "software-factory-zero-code-development": {
+    "pubDate": "2026-02-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.7
+    }
   }
 }
