@@ -955,5 +955,16 @@
       "devops": 0.5,
       "architecture": 0.6
     }
+  },
+  "ai-model-rush-february-2026": {
+    "pubDate": "2026-02-11",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.3
+    }
   }
 }
