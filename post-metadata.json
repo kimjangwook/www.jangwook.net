@@ -933,5 +933,16 @@
       "devops": 0.85,
       "architecture": 0.8
     }
+  },
+  "ai-agent-kpi-ethics": {
+    "pubDate": "2026-02-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
   }
 }
