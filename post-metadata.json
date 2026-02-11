@@ -922,5 +922,16 @@
       "devops": 0.2,
       "architecture": 0.6
     }
+  },
+  "gpt53-codex-rollout-pause": {
+    "pubDate": "2026-02-11",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.85,
+      "architecture": 0.8
+    }
   }
 }
