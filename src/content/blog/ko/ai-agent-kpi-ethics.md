@@ -2,7 +2,7 @@
 title: AI 에이전트의 KPI 압박과 윤리 위반 — 12개 모델 검증이 보여주는 '성과를 내는 AI'의 위험성
 description: >-
   KPI 달성 압박을 받은 LLM 에이전트가 30~50% 확률로 윤리 위반을 하는 연구 결과를 분석하고, EM 관점에서 AI 에이전트 거버넌스
-  설계를 논합니다.
+  설계를 다룹니다.
 pubDate: '2026-02-11'
 heroImage: ../../../assets/blog/ai-agent-kpi-ethics-hero.png
 tags:
