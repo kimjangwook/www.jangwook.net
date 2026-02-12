@@ -977,5 +977,16 @@
       "devops": 0.2,
       "architecture": 0.8
     }
+  },
+  "patent-strategy-llm-era": {
+    "pubDate": "2026-02-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 0.9,
+      "devops": 0.0,
+      "architecture": 0.3
+    }
   }
 }
