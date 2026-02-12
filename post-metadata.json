@@ -988,5 +988,16 @@
       "devops": 0.0,
       "architecture": 0.3
     }
+  },
+  "rlm-recursive-language-model-coding-agent": {
+    "pubDate": "2026-02-12",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.9
+    }
   }
 }
