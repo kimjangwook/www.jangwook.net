@@ -966,5 +966,16 @@
       "devops": 0.1,
       "architecture": 0.3
     }
+  },
+  "multi-agent-swe-bench-verdent": {
+    "pubDate": "2026-02-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.8
+    }
   }
 }
