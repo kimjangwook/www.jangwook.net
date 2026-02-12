@@ -65,9 +65,9 @@ Manually creating dozens of pages for large-scale website renewal projects is in
 
 ### Project Background
 
-- **Scale**: 31 HTML pages (C-8 through C-40)
-- **Goal**: Automation based on consistent design system and parts library
-- **Key Technologies**: Claude Code SubAgent, Parts Library, CSV Metadata Management
+- <strong>Scale</strong>: 31 HTML pages (C-8 through C-40)
+- <strong>Goal</strong>: Automation based on consistent design system and parts library
+- <strong>Key Technologies</strong>: Claude Code SubAgent, Parts Library, CSV Metadata Management
 
 ## Project Architecture
 
@@ -75,11 +75,11 @@ Manually creating dozens of pages for large-scale website renewal projects is in
 
 The parts library is a document defining reusable UI components and design systems, containing 976 lines of detailed specifications.
 
-**Core Components**:
-- **Font & Color System**: Noto Sans, Open Sans fonts, brand color palette
-- **Component Library**: Buttons, forms, tables, navigation, etc.
-- **Layout Rules**: Margin, spacing, content width settings
-- **Responsive Images**: Dynamic ratio settings and optimization
+<strong>Core Components</strong>:
+- <strong>Font & Color System</strong>: Noto Sans, Open Sans fonts, brand color palette
+- <strong>Component Library</strong>: Buttons, forms, tables, navigation, etc.
+- <strong>Layout Rules</strong>: Margin, spacing, content width settings
+- <strong>Responsive Images</strong>: Dynamic ratio settings and optimization
 
 ```markdown
 # Parts Library Example
@@ -101,13 +101,13 @@ The parts library is a document defining reusable UI components and design syste
 
 Managed metadata for 31 pages collectively in a CSV file to maximize efficiency.
 
-**CSV Structure**:
+<strong>CSV Structure</strong>:
 ```csv
 ID,URL,Breadcrumb,MetaTitle,MetaDescription,H1,og:type,og:title
 C-8,/contract/ds/dscard.html,HOME>Customer>Service Card,Service Card Guide,Card services...,Card Info,article,Service Card
 ```
 
-**Benefits of CSV Management**:
+<strong>Benefits of CSV Management</strong>:
 - Manage all page information in one place
 - Easy editing with Excel/Google Sheets
 - Bulk SEO metadata review
@@ -117,12 +117,12 @@ C-8,/contract/ds/dscard.html,HOME>Customer>Service Card,Service Card Guide,Card 
 
 Configured two core agents for the project:
 
-**1) context-manager**: Orchestrates entire workflow
+<strong>1) context-manager</strong>: Orchestrates entire workflow
 - Manages task sequence
 - Shares context between SubAgents
 - Tracks progress
 
-**2) mcp-expert**: MCP protocol integration
+<strong>2) mcp-expert</strong>: MCP protocol integration
 - External tool integration
 - Data source access
 - API communication management
@@ -148,7 +148,7 @@ CLAUDE.md                      # Claude Code directives
 working_history/c/01_directory_map.csv  # 31 page info
 ```
 
-**CLAUDE.md Initialization**:
+<strong>CLAUDE.md Initialization</strong>:
 ```bash
 # Execute Claude Code's /init command
 /init
@@ -175,7 +175,7 @@ When executing the `/run` command, the following workflow proceeds automatically
 5. Save and validate HTML files
 ```
 
-**Actual Execution Log**:
+<strong>Actual Execution Log</strong>:
 ```sh
 > /run is running…
 
@@ -200,7 +200,7 @@ When executing the `/run` command, the following workflow proceeds automatically
 
 ### Phase 3: SubAgent Parallel Processing Strategy
 
-**Batch Processing Structure**:
+<strong>Batch Processing Structure</strong>:
 ```python
 # Pseudo code
 pages = parse_csv("01_directory_map.csv")  # 31 pages
@@ -218,12 +218,12 @@ for i in range(0, len(pages), batch_size):
     # Validate results and proceed to next batch
 ```
 
-**Benefits of Parallel Processing**:
-- **Speed**: 5x faster than sequential processing
-- **Resource Optimization**: Efficient token usage
-- **Independence**: Each page generated independently with error isolation
+<strong>Benefits of Parallel Processing</strong>:
+- <strong>Speed</strong>: 5x faster than sequential processing
+- <strong>Resource Optimization</strong>: Efficient token usage
+- <strong>Independence</strong>: Each page generated independently with error isolation
 
-**Actual Performance Metrics**:
+<strong>Actual Performance Metrics</strong>:
 - Average generation time per page: 2-3 minutes
 - Tool usage count: 9-17 times (image download, HTML writing, etc.)
 - Processing time per batch: ~3-4 minutes (5 pages)
@@ -232,7 +232,7 @@ for i in range(0, len(pages), batch_size):
 
 After completing the first generation, we discovered that some pages had not properly applied the parts library. To address this, we introduced a two-phase validation process.
 
-**Validation Command Creation** (`apply-parts.md`):
+<strong>Validation Command Creation</strong> (`apply-parts.md`):
 ```markdown
 # Role
 Verify parts library application status and fix missing parts.
@@ -245,7 +245,7 @@ Verify parts library application status and fix missing parts.
 3. Auto-fix problematic files
 ```
 
-**Validation Execution Log**:
+<strong>Validation Execution Log</strong>:
 ```sh
 /apply-parts is running…
 
@@ -262,7 +262,7 @@ Verify parts library application status and fix missing parts.
 ⎿ Session limit reached
 ```
 
-**Handling Session Limits**:
+<strong>Handling Session Limits</strong>:
 - Claude Code has per-session token limits
 - Divide work into chunks across multiple sessions
 - Save progress with Git commits for continuation
@@ -271,7 +271,7 @@ Verify parts library application status and fix missing parts.
 
 ### 1. SubAgent Parallel Orchestration
 
-**fullstack-developer SubAgent Role**:
+<strong>fullstack-developer SubAgent Role</strong>:
 ```markdown
 # Context passed to SubAgent
 
@@ -289,7 +289,7 @@ Requirements:
 4. Apply responsive layout
 ```
 
-**SubAgent Execution Pattern**:
+<strong>SubAgent Execution Pattern</strong>:
 ```bash
 # Execute 5 SubAgents simultaneously
 fullstack-developer(Create page C-8)  # 2m 41s
@@ -333,9 +333,9 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 1. Session Limit Management
 
-**Challenge**: Claude Code has per-session token limits
+<strong>Challenge</strong>: Claude Code has per-session token limits
 
-**Solution**:
+<strong>Solution</strong>:
 ```markdown
 # Divide work into chunks
 - Batch size: 5-7 pages
@@ -346,7 +346,7 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 2. Parts Library Documentation
 
-**Core Principles**:
+<strong>Core Principles</strong>:
 ```markdown
 1. Assign clear class names to all components
    e.g., .btn-primary, .card-container
@@ -368,20 +368,20 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 3. CSV Metadata Design
 
-**Effective CSV Structure**:
+<strong>Effective CSV Structure</strong>:
 ```csv
 ID,URL,Breadcrumb,MetaTitle,MetaDescription,H1,OGType,OGImage
 C-8,/page,HOME>Sub,Title,Description,Heading,article,/img.jpg
 ```
 
-**Considerations**:
+<strong>Considerations</strong>:
 - Wrap CSV cells containing commas in quotes
 - Clearly distinguish absolute vs. relative URLs
 - Be careful with whitespace handling (trimming needed)
 
 ### 4. SubAgent Prompt Optimization
 
-**Effective SubAgent Instructions**:
+<strong>Effective SubAgent Instructions</strong>:
 ```markdown
 Task: Create responsive HTML page
 
@@ -408,22 +408,22 @@ Output:
 
 | Metric | Manual | Automated | Improvement |
 |--------|--------|-----------|-------------|
-| Total work time | ~31 hours | ~3 hours | **90% reduction** |
-| Avg per page | 60 min | 6 min | **90% reduction** |
-| Error rate | 15% | 3% | **80% decrease** |
-| Consistency score | 75/100 | 98/100 | **30% increase** |
+| Total work time | ~31 hours | ~3 hours | <strong>90% reduction</strong> |
+| Avg per page | 60 min | 6 min | <strong>90% reduction</strong> |
+| Error rate | 15% | 3% | <strong>80% decrease</strong> |
+| Consistency score | 75/100 | 98/100 | <strong>30% increase</strong> |
 
 ### Qualitative Results
 
-**1. Design Consistency**
+<strong>1. Design Consistency</strong>
 - Same parts library applied to all pages
 - 100% adherence to brand colors, fonts, layout rules
 
-**2. SEO Optimization Automation**
+<strong>2. SEO Optimization Automation</strong>
 - Bulk setup based on CSV metadata
 - Auto-generation of OG tags, meta descriptions
 
-**3. Improved Maintainability**
+<strong>3. Improved Maintainability</strong>
 - Parts library modification → bulk update via re-execution
 - Git-based version control enables easy change tracking
 
@@ -467,39 +467,39 @@ Leveraging Claude Code's SubAgent system enables dramatic automation of large-sc
 
 ### Success Factors
 
-1. **Clear Parts Library Documentation**
+1. <strong>Clear Parts Library Documentation</strong>
    - Define reusable components
    - Consistent naming conventions
    - Include specific usage examples
 
-2. **Systematic Metadata Management**
+2. <strong>Systematic Metadata Management</strong>
    - CSV-based centralized management
    - Bulk SEO element configuration
    - Easy version control
 
-3. **Efficient Parallel Processing**
+3. <strong>Efficient Parallel Processing</strong>
    - Process in 5-7 page batches
    - Independent SubAgent execution
    - Chunk division considering session limits
 
-4. **Two-Phase Quality Validation**
+4. <strong>Two-Phase Quality Validation</strong>
    - Phase 1: Auto-generation
    - Phase 2: Parts application verification and correction
    - Git-based change tracking
 
 ### Future Improvements
 
-1. **Enhanced AI-Based Quality Validation**
+1. <strong>Enhanced AI-Based Quality Validation</strong>
    - Automated accessibility checks
    - Automated performance metric measurement
    - Automated cross-browser testing
 
-2. **CMS Integration**
+2. <strong>CMS Integration</strong>
    - Automated deployment of generated pages
    - Content update workflow
    - Automated preview environment setup
 
-3. **Design System Evolution**
+3. <strong>Design System Evolution</strong>
    - Figma → Parts Library auto-conversion
    - Real-time component synchronization
    - Automated design token application

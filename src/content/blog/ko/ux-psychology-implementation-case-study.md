@@ -55,13 +55,13 @@ relatedPosts:
 
 ## 개요
 
-UX 심리학 원칙을 실제 웹사이트에 적용하여 사용자 경험을 개선한 사례를 소개합니다. 이번 개선에서는 **Goal Gradient Effect**, **Von Restorff Effect**, **Fitts's Law**, **Doherty Threshold** 등 10가지 핵심 UX 심리학 원칙을 기반으로 컴포넌트를 개선했습니다.
+UX 심리학 원칙을 실제 웹사이트에 적용하여 사용자 경험을 개선한 사례를 소개합니다. 이번 개선에서는 <strong>Goal Gradient Effect</strong>, <strong>Von Restorff Effect</strong>, <strong>Fitts's Law</strong>, <strong>Doherty Threshold</strong> 등 10가지 핵심 UX 심리학 원칙을 기반으로 컴포넌트를 개선했습니다.
 
 ## 구현된 UX 개선 사항
 
 ### 1. BlogCard 읽기 시간 계산 개선
 
-기존에는 description 텍스트 길이를 기반으로 읽기 시간을 추정했으나, 이번 개선에서는 **실제 포스트 본문의 단어 수를 빌드 타임에 계산**하여 정확한 읽기 시간을 표시합니다.
+기존에는 description 텍스트 길이를 기반으로 읽기 시간을 추정했으나, 이번 개선에서는 <strong>실제 포스트 본문의 단어 수를 빌드 타임에 계산</strong>하여 정확한 읽기 시간을 표시합니다.
 
 ```typescript
 // src/lib/content.ts
@@ -93,13 +93,13 @@ export function calculateReadingTime(content: string): number {
 }
 ```
 
-**적용된 UX 원칙**: Cognitive Load Reduction - 사용자가 콘텐츠 소비에 필요한 시간을 미리 파악하여 의사결정을 돕습니다.
+<strong>적용된 UX 원칙</strong>: Cognitive Load Reduction - 사용자가 콘텐츠 소비에 필요한 시간을 미리 파악하여 의사결정을 돕습니다.
 
 ![BlogCard with reading time badge](../../../assets/blog/en-blog-list.webp)
 
 ### 2. 카드 호버 효과 (Card Lift)
 
-BlogCard에 호버 시 **살짝 떠오르는 효과**를 적용하여 현재 상호작용 중인 요소를 명확히 합니다.
+BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하여 현재 상호작용 중인 요소를 명확히 합니다.
 
 ```css
 /* src/styles/global.css */
@@ -114,7 +114,7 @@ BlogCard에 호버 시 **살짝 떠오르는 효과**를 적용하여 현재 상
 }
 ```
 
-**적용된 UX 원칙**: Von Restorff Effect - 호버된 카드가 다른 카드들 사이에서 시각적으로 두드러지게 표시됩니다.
+<strong>적용된 UX 원칙</strong>: Von Restorff Effect - 호버된 카드가 다른 카드들 사이에서 시각적으로 두드러지게 표시됩니다.
 
 ### 3. 태그 필 (Tag Pills)
 
@@ -132,7 +132,7 @@ BlogCard에 호버 시 **살짝 떠오르는 효과**를 적용하여 현재 상
 }
 ```
 
-**적용된 UX 원칙**: Law of Similarity - 유사한 스타일의 태그들이 시각적으로 그룹화되어 인식됩니다.
+<strong>적용된 UX 원칙</strong>: Law of Similarity - 유사한 스타일의 태그들이 시각적으로 그룹화되어 인식됩니다.
 
 ### 4. 읽기 진행 표시줄 (Reading Progress)
 
@@ -166,9 +166,9 @@ BlogCard에 호버 시 **살짝 떠오르는 효과**를 적용하여 현재 상
 
 ![Reading progress bar in blog post](../../../assets/blog/en-blog-post.webp)
 
-**적용된 UX 원칙**:
-- **Goal Gradient Effect**: 목표(완독)에 가까워질수록 동기 부여 증가
-- **Peak-End Rule**: 100% 도달 시 축하 메시지로 긍정적인 기억 형성
+<strong>적용된 UX 원칙</strong>:
+- <strong>Goal Gradient Effect</strong>: 목표(완독)에 가까워질수록 동기 부여 증가
+- <strong>Peak-End Rule</strong>: 100% 도달 시 축하 메시지로 긍정적인 기억 형성
 
 ### 5. Back to Top 버튼
 
@@ -206,9 +206,9 @@ BlogCard에 호버 시 **살짝 떠오르는 효과**를 적용하여 현재 상
 
 ![Back to Top button in footer](../../../assets/blog/en-footer.webp)
 
-**적용된 UX 원칙**:
-- **Tesler's Law**: 복잡성을 줄여 빠른 네비게이션 제공
-- **Fitts's Law**: 48x48px 크기로 쉬운 터치/클릭
+<strong>적용된 UX 원칙</strong>:
+- <strong>Tesler's Law</strong>: 복잡성을 줄여 빠른 네비게이션 제공
+- <strong>Fitts's Law</strong>: 48x48px 크기로 쉬운 터치/클릭
 
 ### 6. 터치 타겟 최적화
 
@@ -221,7 +221,7 @@ BlogCard에 호버 시 **살짝 떠오르는 효과**를 적용하여 현재 상
 }
 ```
 
-**적용된 UX 원칙**: Fitts's Law - 큰 타겟은 더 빠르고 정확하게 클릭/터치할 수 있습니다.
+<strong>적용된 UX 원칙</strong>: Fitts's Law - 큰 타겟은 더 빠르고 정확하게 클릭/터치할 수 있습니다.
 
 ## 구현 결과 스크린샷
 
@@ -247,16 +247,16 @@ BlogCard에 읽기 시간 뱃지와 태그 필이 적용된 모습입니다. 카
 
 | 원칙 | 적용 컴포넌트 | 효과 |
 |------|-------------|------|
-| **Goal Gradient Effect** | ReadingProgress | 완독률 증가 |
-| **Von Restorff Effect** | BlogCard (card-lift) | 포커스 명확화 |
-| **Fitts's Law** | TouchTarget, BackToTop | 터치 정확도 향상 |
-| **Doherty Threshold** | 애니메이션 (<400ms) | 반응성 체감 |
-| **Peak-End Rule** | 완독 축하 메시지 | 긍정적 기억 |
-| **Tesler's Law** | BackToTop | 네비게이션 단순화 |
-| **Cognitive Load** | 읽기 시간 뱃지 | 의사결정 지원 |
-| **Law of Similarity** | Tag Pills | 시각적 그룹화 |
-| **WCAG AA** | focus-visible | 접근성 보장 |
-| **Progressive Disclosure** | Stagger Animation | 순차적 정보 노출 |
+| <strong>Goal Gradient Effect</strong> | ReadingProgress | 완독률 증가 |
+| <strong>Von Restorff Effect</strong> | BlogCard (card-lift) | 포커스 명확화 |
+| <strong>Fitts's Law</strong> | TouchTarget, BackToTop | 터치 정확도 향상 |
+| <strong>Doherty Threshold</strong> | 애니메이션 (<400ms) | 반응성 체감 |
+| <strong>Peak-End Rule</strong> | 완독 축하 메시지 | 긍정적 기억 |
+| <strong>Tesler's Law</strong> | BackToTop | 네비게이션 단순화 |
+| <strong>Cognitive Load</strong> | 읽기 시간 뱃지 | 의사결정 지원 |
+| <strong>Law of Similarity</strong> | Tag Pills | 시각적 그룹화 |
+| <strong>WCAG AA</strong> | focus-visible | 접근성 보장 |
+| <strong>Progressive Disclosure</strong> | Stagger Animation | 순차적 정보 노출 |
 
 ## 빌드 검증
 
@@ -268,7 +268,7 @@ npm run build
 
 ## 결론
 
-UX 심리학 원칙을 실제 코드로 구현함으로써 사용자 경험을 체계적으로 개선할 수 있습니다. 특히 **읽기 시간 정확도 개선**, **카드 호버 효과**, **진행 표시줄** 등은 비교적 간단한 구현으로 큰 UX 향상을 가져옵니다.
+UX 심리학 원칙을 실제 코드로 구현함으로써 사용자 경험을 체계적으로 개선할 수 있습니다. 특히 <strong>읽기 시간 정확도 개선</strong>, <strong>카드 호버 효과</strong>, <strong>진행 표시줄</strong> 등은 비교적 간단한 구현으로 큰 UX 향상을 가져옵니다.
 
 다음 단계로는 실제 사용자 데이터(체류 시간, 완독률, 클릭률)를 분석하여 개선 효과를 정량적으로 측정할 예정입니다.
 

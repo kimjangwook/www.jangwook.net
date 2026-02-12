@@ -67,29 +67,29 @@ In this post, I'll share the complete results from running `/insights` on a real
 
 `/insights` is a usage pattern analysis feature introduced in Claude Code v2.1. It analyzes locally stored usage data to provide:
 
-- **Usage statistics**: Message counts, session counts, file modification history
-- **What's working**: Features and patterns you're using effectively
-- **What's hindering**: Bottlenecks reducing your productivity
-- **Improvement suggestions**: Practical tips you can apply immediately
-- **Project area analysis**: How you're using the tool across different tasks
+- <strong>Usage statistics</strong>: Message counts, session counts, file modification history
+- <strong>What's working</strong>: Features and patterns you're using effectively
+- <strong>What's hindering</strong>: Bottlenecks reducing your productivity
+- <strong>Improvement suggestions</strong>: Practical tips you can apply immediately
+- <strong>Project area analysis</strong>: How you're using the tool across different tasks
 
 Think of it as a "health checkup for your AI coding workflow." Running it is simple — just type `/insights` in Claude Code.
 
 ## My Results: Core Metrics
 
-> **Analysis period**: 2025-12-31 to 2026-02-03 (~35 days)
-> **Environment**: Claude Code v2.1.31
+> <strong>Analysis period</strong>: 2025-12-31 to 2026-02-03 (~35 days)
+> <strong>Environment</strong>: Claude Code v2.1.31
 
 ### Usage at a Glance
 
 | Metric | Value |
 |--------|-------|
-| Total messages | **4,516** |
-| Total sessions | **1,042** |
-| Files modified | **6,267** |
-| Code changes | **+1,046,046 / -109,155 lines** |
-| Active days | **15** |
-| Daily average messages | **301.1** |
+| Total messages | <strong>4,516</strong> |
+| Total sessions | <strong>1,042</strong> |
+| Files modified | <strong>6,267</strong> |
+| Code changes | <strong>+1,046,046 / -109,155 lines</strong> |
+| Active days | <strong>15</strong> |
+| Daily average messages | <strong>301.1</strong> |
 
 The numbers alone are impressive. Exchanging an average of 301 messages per day with Claude Code essentially means full-time AI pair programming. The 1M+ lines of code additions include novel projects and blog content generation.
 
@@ -134,9 +134,9 @@ Total: 4,751 times (TodoWrite + TaskCreate + TaskUpdate)
 For large-scale tasks, I always create a task list first, then distribute it to parallel agents. `/insights` evaluated this as a "sophisticated workflow."
 
 Real-world examples:
-- **Novel project**: Comprehensive review → issue identification → parallel multi-file fixes
-- **Blog generation**: Korean writing → parallel translation to Japanese/English/Chinese
-- **Code refactoring**: Issue analysis → task distribution → simultaneous fixes
+- <strong>Novel project</strong>: Comprehensive review → issue identification → parallel multi-file fixes
+- <strong>Blog generation</strong>: Korean writing → parallel translation to Japanese/English/Chinese
+- <strong>Code refactoring</strong>: Issue analysis → task distribution → simultaneous fixes
 
 The core principle is "plan first, execute in parallel."
 
@@ -171,11 +171,11 @@ It's not all good news. `/insights` also points out problems with clear-eyed obj
 
 This was the biggest issue, occurring frequently in these tasks:
 
-- **Novel reviews**: Interrupted during multi-volume comprehensive reviews
-- **Translation work**: Cut off mid-execution during large-scale translations
-- **Blog content generation**: Terminated during initial read/setup phases
+- <strong>Novel reviews</strong>: Interrupted during multi-volume comprehensive reviews
+- <strong>Translation work</strong>: Cut off mid-execution during large-scale translations
+- <strong>Blog content generation</strong>: Terminated during initial read/setup phases
 
-The root cause was **"assigning too-large tasks to a single session."** The desire to solve everything at once was actually creating inefficiency.
+The root cause was <strong>"assigning too-large tasks to a single session."</strong> The desire to solve everything at once was actually creating inefficiency.
 
 ### Error Pattern Analysis
 
@@ -304,39 +304,39 @@ Here are the lessons learned through `/insights`.
 
 ### What You Can Apply Right Now
 
-1. **Always break large tasks into smaller ones**: Don't cram everything into a single session. Split by chapter, section, or module.
+1. <strong>Always break large tasks into smaller ones</strong>: Don't cram everything into a single session. Split by chapter, section, or module.
 
-2. **Save checkpoints to files**: Create a file like `task-status.md` to record progress. Even if a session drops, you can continue from where you left off.
+2. <strong>Save checkpoints to files</strong>: Create a file like `task-status.md` to record progress. Even if a session drops, you can continue from where you left off.
 
-3. **Create custom slash commands**: If you have repetitive tasks, encode them as commands like `/write-post`. Build once, reuse forever.
+3. <strong>Create custom slash commands</strong>: If you have repetitive tasks, encode them as commands like `/write-post`. Build once, reuse forever.
 
-4. **Actively use parallel agents**: The `TodoWrite` → `TaskCreate` pattern for distributing work dramatically improves efficiency.
+4. <strong>Actively use parallel agents</strong>: The `TodoWrite` → `TaskCreate` pattern for distributing work dramatically improves efficiency.
 
 ### Getting the Most Out of /insights
 
-1. **Run it regularly**: Running `/insights` about once a month lets you track changes in your work patterns.
+1. <strong>Run it regularly</strong>: Running `/insights` about once a month lets you track changes in your work patterns.
 
-2. **Reflect improvements in CLAUDE.md**: Recording improvements suggested by `/insights` in CLAUDE.md means Claude Code will automatically follow those rules.
+2. <strong>Reflect improvements in CLAUDE.md</strong>: Recording improvements suggested by `/insights` in CLAUDE.md means Claude Code will automatically follow those rules.
 
-3. **Watch for error patterns**: If you see many "File Too Large" or "Command Failed" errors, your workflow needs adjustment.
+3. <strong>Watch for error patterns</strong>: If you see many "File Too Large" or "Command Failed" errors, your workflow needs adjustment.
 
-4. **Use the HTML report**: `/insights` also generates a detailed HTML report. Visualized data enables deeper analysis.
+4. <strong>Use the HTML report</strong>: `/insights` also generates a detailed HTML report. Visualized data enables deeper analysis.
 
 ## Why I Recommend This to Other Developers
 
-The biggest takeaway from running `/insights` was realizing that **"I didn't know how I was using AI, yet assumed I was using it well."**
+The biggest takeaway from running `/insights` was realizing that <strong>"I didn't know how I was using AI, yet assumed I was using it well."</strong>
 
 Data-based objective diagnosis delivers these values:
 
-- **Discovering hidden bottlenecks**: Without recognizing the context limit issue, I would have repeated the same mistakes.
-- **Reinforcing effective patterns**: Confirmation that parallel agent usage is genuinely effective builds confidence.
-- **Concrete improvement directions**: Instead of "use it better," you get specific action items like "introduce checkpointing."
+- <strong>Discovering hidden bottlenecks</strong>: Without recognizing the context limit issue, I would have repeated the same mistakes.
+- <strong>Reinforcing effective patterns</strong>: Confirmation that parallel agent usage is genuinely effective builds confidence.
+- <strong>Concrete improvement directions</strong>: Instead of "use it better," you get specific action items like "introduce checkpointing."
 
 I recommend running `/insights` to every developer using AI coding tools. It takes 5 minutes to run, but the insights you gain can fundamentally transform your future workflows.
 
 ## Conclusion
 
-Claude Code `/insights` is not just a statistics feature. It's an **AI workflow coach** that shows your collaboration methods with AI coding tools through data and presents concrete improvement directions.
+Claude Code `/insights` is not just a statistics feature. It's an <strong>AI workflow coach</strong> that shows your collaboration methods with AI coding tools through data and presents concrete improvement directions.
 
 4,516 messages, 1,042 sessions, 6,267 file modifications — what these numbers tell us isn't simply "I used it a lot," but "how I'm using it and where improvements can make it even better."
 

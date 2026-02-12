@@ -1671,7 +1671,7 @@ graph TD
 
 ---
 
-**项目信息**:
+<strong>项目信息</strong>:
 - Git Commit: 5523aa0d8fc4203ca0398a78be36c9967488ed57
 - 改进日期: 2025-12-01
 - 文件分析: 48个
@@ -1680,7 +1680,7 @@ graph TD
 - 令牌节省: 60-70%
 - 质量提升: 78 → 92分
 
-**相关资源**:
+<strong>相关资源</strong>:
 - [Claude Code文档](https://docs.claude.com/claude-code)
 - [多代理最佳实践](https://www.anthropic.com/engineering/multi-agent-best-practices)
 - [项目仓库](https://github.com/yourusername/blog-automation)

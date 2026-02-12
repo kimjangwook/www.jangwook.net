@@ -344,6 +344,6 @@ AI翻訳サービスは多いですが、<strong>文化的文脈</strong>を理�
 
 ---
 
-**サービスはこちら**：[Agent Effi Flow](https://agent-effi-flow.jangwook.net/)
+<strong>サービスはこちら</strong>：[Agent Effi Flow](https://agent-effi-flow.jangwook.net/)
 
 フィードバックやご質問があればいつでもご連絡ください。一緒により良いサービスを作っていきたいです。

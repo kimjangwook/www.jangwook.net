@@ -67,11 +67,11 @@ OpenClaw stable/beta (v2026.2.3-1) 用户报告了 Cron 任务未执行和提醒
 
 解决的主要问题：
 
-*   **Cron 任务失败**: 任务未触发 (#9788 `recomputeNextRuns`)
-*   **交付回退**: 消息发送失败 (#9733)
-*   **48小时空白**: 意外延迟 (#10025)
-*   **网关重启 Bug**: 调度加载问题 (#10045)
-*   **仅更新 NextRunAtMs**: 无执行 (#10201)
+*   <strong>Cron 任务失败</strong>: 任务未触发 (#9788 `recomputeNextRuns`)
+*   <strong>交付回退</strong>: 消息发送失败 (#9733)
+*   <strong>48小时空白</strong>: 意外延迟 (#10025)
+*   <strong>网关重启 Bug</strong>: 调度加载问题 (#10045)
+*   <strong>仅更新 NextRunAtMs</strong>: 无执行 (#10201)
 
 ## 解决方案：更新至 Dev 频道
 
@@ -105,7 +105,7 @@ pnpm install && pnpm build && npm install -g .
 
 #### 4. 重启网关（必须）
 
-**关键步骤：**
+<strong>关键步骤：</strong>
 
 ```bash
 openclaw gateway restart

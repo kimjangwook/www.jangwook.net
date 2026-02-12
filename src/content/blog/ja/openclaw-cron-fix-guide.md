@@ -71,11 +71,11 @@ relatedPosts:
 
 確認されている主な症状と関連するIssueは以下の通りです。
 
-*   **Cronジョブの未実行**: 設定したスケジュール通りにジョブがトリガーされない (#9788 `recomputeNextRuns`)
-*   **配信の回帰バグ**: メッセージや通知の配信が失敗する (#9733 `delivery regression`)
-*   **48時間のギャップ**: 特定の条件下で次の実行まで48時間の空白が生じる (#10025 `48h gap`)
-*   **Gateway再起動のバグ**: ゲートウェイ再起動時にスケジュールが正しくロードされない (#10045 `gateway restart bug`)
-*   **実行時刻の計算エラー**: `nextRunAtMs`のみが更新され、実際の実行がスキップされる (#10201)
+*   <strong>Cronジョブの未実行</strong>: 設定したスケジュール通りにジョブがトリガーされない (#9788 `recomputeNextRuns`)
+*   <strong>配信の回帰バグ</strong>: メッセージや通知の配信が失敗する (#9733 `delivery regression`)
+*   <strong>48時間のギャップ</strong>: 特定の条件下で次の実行まで48時間の空白が生じる (#10025 `48h gap`)
+*   <strong>Gateway再起動のバグ</strong>: ゲートウェイ再起動時にスケジュールが正しくロードされない (#10045 `gateway restart bug`)
+*   <strong>実行時刻の計算エラー</strong>: `nextRunAtMs`のみが更新され、実際の実行がスキップされる (#10201)
 
 これらの問題に対処するため、コアロジックの修正が行われました。
 
@@ -117,7 +117,7 @@ npm install -g .
 
 #### 4. Gatewayの再起動（重要）
 
-アップデート後は、必ずGatewayサービスを再起動して変更を適用してください。**これを忘れると修正が反映されません。**
+アップデート後は、必ずGatewayサービスを再起動して変更を適用してください。<strong>これを忘れると修正が反映されません。</strong>
 
 ```bash
 openclaw gateway restart

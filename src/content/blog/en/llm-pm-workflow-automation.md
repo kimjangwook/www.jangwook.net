@@ -358,13 +358,13 @@ def analyze_project_risks(task_data):
 
 <strong>Goal</strong>: Validate LLM tool effectiveness and assess team acceptance
 
-**Steps**:
+<strong>Steps</strong>:
 1. <strong>Tool Selection</strong>: Subscribe to ChatGPT Plus or Claude Pro
 2. <strong>Use Case Selection</strong>: Start with meeting note summarization (most time-consuming task)
 3. <strong>Prompt Template Development</strong>: Create 3-5 standard prompts
 4. <strong>Measurement</strong>: Evaluate time savings and quality
 
-**Success Metrics**:
+<strong>Success Metrics</strong>:
 - 50%+ reduction in meeting note creation time
 - Team satisfaction rating of 4/5 or higher
 - Zero action item miss rate
@@ -373,7 +373,7 @@ def analyze_project_risks(task_data):
 
 <strong>Goal</strong>: Integrate LLM with existing PM tools
 
-**Tool Stack Example**:
+<strong>Tool Stack Example</strong>:
 ```mermaid
 graph LR
     A[Jira/Asana] --> B[n8n/Zapier]
@@ -386,7 +386,7 @@ graph LR
     F --> D
 ```
 
-**Integration Scenarios**:
+<strong>Integration Scenarios</strong>:
 1. <strong>Jira → Claude → Slack</strong>
    - Auto-analyze context when Jira issue created
    - Send priority and impact analysis to Slack
@@ -403,7 +403,7 @@ graph LR
 
 <strong>Goal</strong>: Build AI agent-based autonomous workflows
 
-**Claude Skills Utilization**:
+<strong>Claude Skills Utilization</strong>:
 ```markdown
 # Skill: Sprint Retrospective Analyzer
 
@@ -441,7 +441,7 @@ Analyze sprint retro data to derive team productivity improvement insights
 | Risk identification | Weekly manual | Real-time auto | 100% ↑ |
 | PM strategic work | 20% | 60% | 200% ↑ |
 
-**ROI Calculation**:
+<strong>ROI Calculation</strong>:
 ```python
 # Assuming PM hourly rate of $100
 hourly_rate = 100  # USD
@@ -504,7 +504,7 @@ Constraints:
 - ✅ Use enterprise LLM APIs (Azure OpenAI, Anthropic Enterprise)
 - ✅ Check data retention policies (Claude default: 30 days)
 
-**Data Masking Example**:
+<strong>Data Masking Example</strong>:
 ```python
 import re
 
@@ -550,7 +550,7 @@ graph LR
     D --> A
 ```
 
-**Improvement Methods**:
+<strong>Improvement Methods</strong>:
 - Add effective prompts to team library
 - Share weekly LLM tips (Slack channel)
 - Discover new use cases (team brainstorming)
@@ -571,7 +571,7 @@ graph LR
 "
 ```
 
-**Principle**: LLMs are <strong>assistive tools</strong>, not replacements.
+<strong>Principle</strong>: LLMs are <strong>assistive tools</strong>, not replacements.
 
 ### 2. Lack of Context
 
@@ -648,7 +648,7 @@ graph LR
 - Connects multiple tools to execute complex workflows
 - Takes real actions with human approval
 
-**Example**: Claude Computer Use
+<strong>Example</strong>: Claude Computer Use
 ```markdown
 PM: "Create next week's sprint plan in Jira and notify the team"
 

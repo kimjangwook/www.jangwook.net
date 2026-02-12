@@ -61,7 +61,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
-> **시리즈: DeNA LLM 스터디** (5/5 - 최종회)
+> <strong>시리즈: DeNA LLM 스터디</strong> (5/5 - 최종회)
 >
 > 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)
 > 2. [Part 2: 구조화 출력과 멀티 LLM 파이프라인](/ko/blog/ko/dena-llm-study-part2-structured-output)
@@ -90,7 +90,7 @@ DeNA LLM 스터디 시리즈의 마지막 편입니다. 이번 Part 5에서는 L
 
 [n8n](https://n8n.io/)은 <strong>노코드/로우코드 워크플로우 자동화 플랫폼</strong>입니다. 2025년 기준으로 422개 이상의 통합을 지원하며, LLM 에이전트 구축에 특화된 기능을 제공합니다.
 
-**핵심 특징**:
+<strong>핵심 특징</strong>:
 
 - 시각적 워크플로우 빌더
 - LangChain, Ollama 등 주요 LLM 프레임워크 통합
@@ -118,7 +118,7 @@ n8n에서 ReAct (Reasoning and Acting) 패턴을 구현하는 예제입니다:
 }
 ```
 
-**ReAct 패턴의 장점**:
+<strong>ReAct 패턴의 장점</strong>:
 
 - <strong>추론 과정 추적</strong>: "왜 이 도구를 선택했는가" 명시적 표현
 - <strong>동적 도구 선택</strong>: 상황에 따라 적절한 도구 호출
@@ -163,7 +163,7 @@ graph TD
     style C fill:#0066CC,color:#fff
 ```
 
-**이유**:
+<strong>이유</strong>:
 
 1. <strong>비용 폭발</strong>: 자율 에이전트의 무제한 API 호출
 2. <strong>예측 불가능성</strong>: 에이전트 행동 통제 어려움
@@ -207,13 +207,13 @@ graph LR
 
 에이전트의 중심 엔진입니다.
 
-**구성 요소**:
+<strong>구성 요소</strong>:
 
 - <strong>Prompt Template</strong>: 시스템 메시지, 페르소나 정의
 - <strong>LLM Engine</strong>: Claude, GPT-4, Gemini 등
 - <strong>Output Parser</strong>: LLM 출력을 구조화된 데이터로 변환
 
-**예제**:
+<strong>예제</strong>:
 
 ````typescript
 // Core 구현 예제
@@ -246,13 +246,13 @@ const agent = {
 
 에이전트의 기억 시스템입니다.
 
-**Short-term Memory**:
+<strong>Short-term Memory</strong>:
 
 - 현재 대화 세션의 히스토리
 - 일반적으로 마지막 N개 메시지 (N=5〜10)
 - Context Window에 직접 포함
 
-**Long-term Memory**:
+<strong>Long-term Memory</strong>:
 
 - 영구 저장 지식 베이스
 - Vector Database (Pinecone, Weaviate 등)
@@ -262,7 +262,7 @@ const agent = {
 
 에이전트가 복잡한 작업을 수행하는 전략입니다.
 
-**ReAct 패턴**:
+<strong>ReAct 패턴</strong>:
 
 ```
 Thought: 사용자가 회사 매출 데이터를 요청했다.
@@ -280,7 +280,7 @@ Observation: 25%
 Final Answer: 2024년 매출은 $1.5M으로, 전년 대비 25% 증가했습니다.
 ```
 
-**Plan-and-Execute 패턴**:
+<strong>Plan-and-Execute 패턴</strong>:
 
 ```
 Plan:
@@ -297,7 +297,7 @@ Execute:
 
 LLM이 외부 도구와 상호작용하는 메커니즘입니다.
 
-**Function Calling 예제**:
+<strong>Function Calling 예제</strong>:
 
 ```typescript
 // Function Calling 정의
@@ -335,13 +335,13 @@ if (response.stop_reason === "tool_use") {
 
 DeNA 스터디 자료에서 지적한 중요한 문제입니다: <strong>LLM의 함수 호출은 100% 신뢰할 수 없습니다</strong>.
 
-**문제 사례**:
+<strong>문제 사례</strong>:
 
 1. <strong>잘못된 파라미터</strong>: 필수 필드 누락, 타입 불일치
 2. <strong>환각(Hallucination)</strong>: 존재하지 않는 도구 호출
 3. <strong>무한 루프</strong>: 같은 도구 반복 호출
 
-**해결 방법**:
+<strong>해결 방법</strong>:
 
 ```typescript
 // 함수 호출 검증 레이어
@@ -373,7 +373,7 @@ class ToolValidator {
 
 에이전트가 오류를 자동 복구하는 메커니즘입니다.
 
-**구현 예제**:
+<strong>구현 예제</strong>:
 
 ```typescript
 class SelfHealingAgent {
@@ -419,7 +419,7 @@ class SelfHealingAgent {
 }
 ```
 
-**Self-Healing의 이점**:
+<strong>Self-Healing의 이점</strong>:
 
 - <strong>견고성 향상</strong>: 일시적 오류 자동 복구
 - <strong>사용자 경험 개선</strong>: 수동 개입 불필요
@@ -447,18 +447,18 @@ graph LR
     style A3 fill:#00A896,color:#fff
 ```
 
-**사용 사례**:
+<strong>사용 사례</strong>:
 
 - 블로그 포스트 작성: 연구 → 초안 → 편집 → 발행
 - 데이터 파이프라인: 수집 → 정제 → 분석 → 시각화
 
-**장점**:
+<strong>장점</strong>:
 
 - 구현 단순
 - 디버깅 용이
 - 비용 예측 가능
 
-**단점**:
+<strong>단점</strong>:
 
 - 병목 지점 발생
 - 전체 처리 시간 = 각 단계 시간의 합
@@ -484,17 +484,17 @@ graph TD
     style A3 fill:#00A896,color:#fff
 ```
 
-**사용 사례**:
+<strong>사용 사례</strong>:
 
 - 콘텐츠 검수: 품질 검사 + 법률 검토 + 사실 확인 동시 수행
 - 멀티모달 분석: 텍스트 + 이미지 + 오디오 병렬 처리
 
-**장점**:
+<strong>장점</strong>:
 
 - 처리 속도 향상 (최대 N배, N=에이전트 수)
 - 독립적 실패 격리
 
-**단점**:
+<strong>단점</strong>:
 
 - 비용 증가 (동시 API 호출)
 - 결과 병합 복잡성
@@ -523,18 +523,18 @@ graph TD
     style Worker3 fill:#00A896,color:#fff
 ```
 
-**사용 사례**:
+<strong>사용 사례</strong>:
 
 - 복잡한 리서치: 감독자가 하위 주제를 여러 워커에 분배
 - 코드 생성: 감독자가 모듈별 구현을 워커에 할당
 
-**장점**:
+<strong>장점</strong>:
 
 - 동적 작업 분배
 - 로드 밸런싱 가능
 - 중앙 집중식 모니터링
 
-**단점**:
+<strong>단점</strong>:
 
 - 감독자가 단일 실패 지점(SPOF)
 - 감독자의 의사결정 품질에 의존
@@ -561,17 +561,17 @@ graph TD
     style M2 fill:#E9C46A,color:#000
 ```
 
-**사용 사례**:
+<strong>사용 사례</strong>:
 
 - 대규모 프로젝트 관리: PM → 팀 리더 → 개발자
 - 복잡한 시스템 설계: 아키텍트 → 모듈 설계자 → 구현자
 
-**장점**:
+<strong>장점</strong>:
 
 - 매우 복잡한 작업 처리 가능
 - 명확한 책임 분리
 
-**단점**:
+<strong>단점</strong>:
 
 - 높은 구현 복잡도
 - 오버헤드 증가
@@ -595,17 +595,17 @@ graph TD
     style A4 fill:#F77F00,color:#fff
 ```
 
-**사용 사례**:
+<strong>사용 사례</strong>:
 
 - 창의적 협업: 아이디어 브레인스토밍
 - 민주적 의사결정: 투표 기반 합의
 
-**장점**:
+<strong>장점</strong>:
 
 - 높은 유연성
 - 창발적 행동 가능
 
-**단점**:
+<strong>단점</strong>:
 
 - 예측 불가능
 - 디버깅 매우 어려움
@@ -615,7 +615,7 @@ graph TD
 
 특정 문제에 최적화된 독자적 패턴입니다.
 
-**예제: State Machine 기반**
+<strong>예제: State Machine 기반</strong>
 
 ```typescript
 // 유한 상태 기계(FSM) 기반 에이전트 오케스트레이션
@@ -669,7 +669,7 @@ const workflow = {
 
 #### LangGraph
 
-**철학**: <strong>그래프로 모든 것을 표현</strong>
+<strong>철학</strong>: <strong>그래프로 모든 것을 표현</strong>
 
 ```python
 from langgraph.graph import StateGraph, END
@@ -702,20 +702,20 @@ workflow.add_conditional_edges(
 app = workflow.compile()
 ```
 
-**장점**:
+<strong>장점</strong>:
 
 - <strong>명확한 제어 흐름</strong>: 모든 경로가 그래프에 명시
 - <strong>디버깅 용이</strong>: 상태 추적 가능
 - <strong>프로덕션 안정성</strong>: 예측 가능한 동작
 
-**단점**:
+<strong>단점</strong>:
 
 - 초기 설정 복잡
 - 그래프 설계 필요
 
 #### AutoGen
 
-**철학**: <strong>에이전트 간 대화로 문제 해결</strong>
+<strong>철학</strong>: <strong>에이전트 간 대화로 문제 해결</strong>
 
 ```python
 from autogen import AssistantAgent, UserProxyAgent
@@ -740,13 +740,13 @@ researcher.initiate_chat(
 )
 ```
 
-**장점**:
+<strong>장점</strong>:
 
 - <strong>자연스러운 협업</strong>: 인간 팀의 대화 방식 모방
 - <strong>유연성</strong>: 동적 대화 흐름
 - <strong>창발적 행동</strong>: 예상치 못한 문제 해결
 
-**단점**:
+<strong>단점</strong>:
 
 - 비용 폭발 위험 (무제한 대화)
 - 예측 불가능
@@ -754,7 +754,7 @@ researcher.initiate_chat(
 
 #### CrewAI
 
-**철학**: <strong>역할 기반 팀 구성</strong>
+<strong>철학</strong>: <strong>역할 기반 팀 구성</strong>
 
 ```python
 from crewai import Agent, Task, Crew
@@ -795,13 +795,13 @@ crew = Crew(
 result = crew.kickoff()
 ```
 
-**장점**:
+<strong>장점</strong>:
 
 - <strong>직관적</strong>: 역할 개념이 이해하기 쉬움
 - <strong>빠른 프로토타입</strong>: 적은 코드로 구현
 - <strong>내장 메모리</strong>: 자동 컨텍스트 관리
 
-**단점**:
+<strong>단점</strong>:
 
 - 로깅 부족 (디버깅 어려움)
 - 복잡한 워크플로우에서 한계
@@ -811,7 +811,7 @@ result = crew.kickoff()
 
 실제 프로젝트에서 패턴 선택이 비용에 미치는 영향을 분석합니다.
 
-**시나리오**: 블로그 포스트 생성 (연구 + 작성 + 편집)
+<strong>시나리오</strong>: 블로그 포스트 생성 (연구 + 작성 + 편집)
 
 | 패턴              | API 호출 수                      | 예상 비용    | 처리 시간  |
 | ----------------- | -------------------------------- | ------------ | ---------- |
@@ -826,7 +826,7 @@ result = crew.kickoff()
 - Supervisor: 예측 가능 (감독자 로직에 의존)
 - Network: <strong>예측 불가능</strong> (에이전트 대화 길이에 따라 변동)
 
-**실무 권장사항**:
+<strong>실무 권장사항</strong>:
 
 1. <strong>명확한 워크플로우</strong>가 있다면 → Sequential 또는 Parallel
 2. <strong>동적 작업 분배</strong>가 필요하다면 → Supervisor
@@ -838,7 +838,7 @@ result = crew.kickoff()
 
 [MemGPT](https://arxiv.org/abs/2310.08560)는 운영체제의 가상 메모리 개념을 LLM에 적용한 혁신적 접근입니다.
 
-**핵심 아이디어**:
+<strong>핵심 아이디어</strong>:
 
 - <strong>Main Context (주 메모리)</strong>: LLM의 Context Window
 - <strong>External Storage (외부 저장소)</strong>: 벡터 DB, 관계형 DB
@@ -867,7 +867,7 @@ graph TD
 
 MemGPT는 두 가지 메모리 전략을 결합합니다.
 
-**Push (능동적)**:
+<strong>Push (능동적)</strong>:
 
 - LLM이 중요하다고 판단한 정보를 자동 저장
 - 예: "이 사용자는 TypeScript를 선호함" → 저장
@@ -884,7 +884,7 @@ const memoryPushInstruction = `
 `;
 ```
 
-**Pull (수동적)**:
+<strong>Pull (수동적)</strong>:
 
 - 필요할 때 외부 저장소에서 검색
 - 예: 사용자가 "내 선호도를 고려해서"라고 하면 → 검색
@@ -917,7 +917,7 @@ L3: Long-term Memory (장기 저장)
     └─ 누적된 학습 데이터
 ```
 
-**구현 예제**:
+<strong>구현 예제</strong>:
 
 ```typescript
 class HierarchicalMemory {
@@ -968,7 +968,7 @@ class HierarchicalMemory {
 
 [A-MEM](https://arxiv.org/abs/2502.12110)은 2025년 Rutgers 대학에서 제안한 혁신적 메모리 시스템입니다. Zettelkasten(독일어로 "메모 상자") 방법론을 LLM 에이전트에 적용했습니다.
 
-**Zettelkasten이란?**
+<strong>Zettelkasten이란?</strong>
 
 - 니클라스 루만(사회학자)이 개발한 메모 정리법
 - 각 메모에 고유 ID 부여
@@ -1007,7 +1007,7 @@ graph TD
 
 A-MEM의 핵심은 <strong>에이전트가 스스로 메모리를 조직</strong>한다는 점입니다.
 
-**예제 시나리오**:
+<strong>예제 시나리오</strong>:
 
 ```
 [초기 상태]
@@ -1033,7 +1033,7 @@ Note-003: "RAG는 검색 증강 생성이다."
 → 창발적 통찰
 ```
 
-**구현 예제**:
+<strong>구현 예제</strong>:
 
 ```typescript
 class AMem {
@@ -1108,7 +1108,7 @@ class AMem {
 }
 ```
 
-**A-MEM의 이점**:
+<strong>A-MEM의 이점</strong>:
 
 1. <strong>동적 조직화</strong>: 수동 구조화 불필요
 2. <strong>연관성 기반 검색</strong>: 직접적 매칭 + 간접적 연결
@@ -1119,7 +1119,7 @@ class AMem {
 
 실무에서 메모리 시스템을 구현할 때 고려사항입니다.
 
-**1. 메모리 계층 선택**
+<strong>1. 메모리 계층 선택</strong>
 
 ```typescript
 // 사용 패턴에 따른 메모리 전략
@@ -1147,7 +1147,7 @@ const memoryStrategy = {
 };
 ```
 
-**2. 중요도 판단**
+<strong>2. 중요도 판단</strong>
 
 ```typescript
 // 메모리 중요도 점수 계산
@@ -1171,7 +1171,7 @@ function calculateImportance(memory: Memory): number {
 }
 ```
 
-**3. 메모리 압축**
+<strong>3. 메모리 압축</strong>
 
 Context Window가 부족할 때 메모리 압축이 필요합니다.
 
@@ -1205,13 +1205,13 @@ DeNA에서 실제 프로덕션에 적용한 <strong>NOC (Network Operations Cent
 
 ### 문제 정의
 
-**배경**:
+<strong>배경</strong>:
 
 - 운영팀에 하루 100〜200건의 알림 도착
 - 알림의 70%는 오탐(false positive)
 - 엔지니어가 수동으로 알림 분류 및 대응
 
-**목표**:
+<strong>목표</strong>:
 
 - 알림 자동 분류 및 우선순위 지정
 - 오탐 필터링
@@ -1245,7 +1245,7 @@ graph TD
 
 DeNA 스터디 자료에서 강조하는 핵심 개념입니다: <strong>"워크플로우를 자연어로 설명하면 에이전트가 이해하고 실행할 수 있다"</strong>.
 
-**예제**:
+<strong>예제</strong>:
 
 ```typescript
 const workflowDescription = `
@@ -1292,9 +1292,9 @@ const result = await agent.run(alert);
 
 #### 1. 환각(Hallucination) 문제
 
-**문제**: LLM이 존재하지 않는 로그나 메트릭을 언급
+<strong>문제</strong>: LLM이 존재하지 않는 로그나 메트릭을 언급
 
-**해결**:
+<strong>해결</strong>:
 
 ```typescript
 // 도구 호출 결과 검증
@@ -1328,9 +1328,9 @@ class ToolExecutor {
 
 #### 2. 레이턴시 문제
 
-**문제**: 알림 → 대응까지 평균 45초 소요 (목표: 10초)
+<strong>문제</strong>: 알림 → 대응까지 평균 45초 소요 (목표: 10초)
 
-**해결**:
+<strong>해결</strong>:
 
 - <strong>병렬 처리</strong>: 로그/메트릭/이력을 동시 수집
 - <strong>캐싱</strong>: 자주 사용되는 쿼리 결과 캐싱
@@ -1353,9 +1353,9 @@ for await (const chunk of agent.stream(alert)) {
 
 #### 3. 비용 문제
 
-**문제**: 하루 200건 × $0.20 = $40 (월 $1,200)
+<strong>문제</strong>: 하루 200건 × $0.20 = $40 (월 $1,200)
 
-**해결**:
+<strong>해결</strong>:
 
 - <strong>오탐 프리필터</strong>: 명확한 오탐은 규칙 기반으로 먼저 걸러냄
 - <strong>배칭</strong>: 유사한 알림은 묶어서 처리
@@ -1444,7 +1444,7 @@ LLM 에이전트 시스템의 최대 과제는 <strong>비용</strong>과 <stron
 
 ### 1. 시맨틱 캐싱 (90% 비용 감소)
 
-**개념**: 의미론적으로 유사한 쿼리는 캐시된 응답을 재사용
+<strong>개념</strong>: 의미론적으로 유사한 쿼리는 캐시된 응답을 재사용
 
 ```typescript
 // 시맨틱 캐싱 구현
@@ -1499,19 +1499,19 @@ async function queryWithCache(query: string): Promise<string> {
 }
 ```
 
-**효과**:
+<strong>효과</strong>:
 
 - 캐시 히트율 60% 달성 시 → 비용 60% 절감
 - 레이턴시 95% 감소 (네트워크 지연 제거)
 
-**주의사항**:
+<strong>주의사항</strong>:
 
 - 임베딩 모델 비용 고려 (하지만 LLM보다 100배 저렴)
 - 캐시 만료 정책 필요 (오래된 정보 제거)
 
 ### 2. 배칭 (50% 절감)
 
-**개념**: 여러 요청을 묶어서 한 번에 처리
+<strong>개념</strong>: 여러 요청을 묶어서 한 번에 처리
 
 ```typescript
 // 배칭 구현
@@ -1571,19 +1571,19 @@ const responses = await Promise.all([
 // → 1회 API 호출 (3회 대신)
 ```
 
-**효과**:
+<strong>효과</strong>:
 
 - 배치 크기 10일 때 → 비용 약 50% 절감
 - 단, 레이턴시는 약간 증가 (대기 시간)
 
-**적합한 사용 사례**:
+<strong>적합한 사용 사례</strong>:
 
 - 백그라운드 작업 (실시간 응답 불필요)
 - 대량 데이터 처리 (로그 분석, 리포트 생성)
 
 ### 3. SLM (Small Language Model, 14배 절감)
 
-**개념**: 간단한 작업은 작은 모델 사용
+<strong>개념</strong>: 간단한 작업은 작은 모델 사용
 
 ```typescript
 // 모델 라우팅
@@ -1643,21 +1643,21 @@ const analysis = await router.route({
 // → Large Model 사용 ($0.014)
 ```
 
-**효과**:
+<strong>효과</strong>:
 
 - 작업의 70%가 SLM으로 처리 가능하다면
 - 비용: 70% × $0.001 + 30% × $0.014 = $0.0049 (평균)
 - Large Model만 사용 시: $0.014
 - <strong>절감률: 65%</strong> (약 14배 저렴, SLM 단독 사용 시)
 
-**SLM 적합 작업**:
+<strong>SLM 적합 작업</strong>:
 
 - 텍스트 분류 (감정, 주제, 언어)
 - 간단한 요약
 - 데이터 추출 (정규식으로 안 되는 경우)
 - 번역 (일반적 문장)
 
-**Large Model 필요 작업**:
+<strong>Large Model 필요 작업</strong>:
 
 - 복잡한 추론 (multi-hop reasoning)
 - 창의적 생성 (스토리, 코드)
@@ -1666,7 +1666,7 @@ const analysis = await router.route({
 
 ### 4. 양자화 (Quantization)
 
-**개념**: 모델 가중치의 정밀도를 낮춰 크기와 비용 절감
+<strong>개념</strong>: 모델 가중치의 정밀도를 낮춰 크기와 비용 절감
 
 ```bash
 # Llama 3.2 8B 양자화 예제
@@ -1686,7 +1686,7 @@ ollama run llama3.2:8b-instruct-q8_0
 | 4bit        | 4GB       | ~3%         | 2x        | 로컬 실행, 실험        |
 | 2bit        | 2GB       | ~10%        | 3x        | 프로토타입, 데모       |
 
-**실무 권장**:
+<strong>실무 권장</strong>:
 
 - 클라우드 API: 양자화 불필요 (제공업체가 최적화)
 - 로컬 실행 (Ollama): 4bit 양자화가 최적 균형
@@ -1696,7 +1696,7 @@ ollama run llama3.2:8b-instruct-q8_0
 
 4가지 기법을 결합한 실제 사례입니다.
 
-**Before (최적화 전)**:
+<strong>Before (최적화 전)</strong>:
 
 ```typescript
 // 모든 요청을 Claude 3.5 Sonnet으로 처리
@@ -1705,7 +1705,7 @@ const response = await claude.generate(query);
 // 레이턴시: 2초
 ```
 
-**After (최적화 후)**:
+<strong>After (최적화 후)</strong>:
 
 ```typescript
 async function optimizedQuery(query: string): Promise<string> {
@@ -1735,7 +1735,7 @@ async function optimizedQuery(query: string): Promise<string> {
 }
 ```
 
-**비용 계산**:
+<strong>비용 계산</strong>:
 
 ```
 캐시 히트 (60%): $0 × 0.6 = $0
@@ -1747,7 +1747,7 @@ async function optimizedQuery(query: string): Promise<string> {
 절감률: 86% (Before $0.014 → After $0.00196)
 ```
 
-**레이턴시**:
+<strong>레이턴시</strong>:
 
 ```
 평균: 60% × 50ms + 28% × 500ms + 12% × 2000ms
@@ -1765,13 +1765,13 @@ DeNA LLM 스터디 Part 5를 정리하며 얻은 핵심 인사이트입니다.
 
 2025년 트렌드의 핵심입니다. 에이전트가 모든 것을 스스로 결정하게 하는 것보다, <strong>명확한 워크플로우 안에서 자율성을 발휘하게 하는 것</strong>이 실무에서 더 효과적입니다.
 
-**이유**:
+<strong>이유</strong>:
 
 - <strong>비용 예측 가능</strong>: 무제한 API 호출 방지
 - <strong>신뢰성</strong>: 예상 밖의 행동 통제
 - <strong>디버깅</strong>: 명확한 실패 지점 파악
 
-**실천 방법**:
+<strong>실천 방법</strong>:
 
 - n8n, LangGraph 같은 워크플로우 도구 활용
 - 에이전트의 "자율 범위"를 명시적으로 정의
@@ -1781,13 +1781,13 @@ DeNA LLM 스터디 Part 5를 정리하며 얻은 핵심 인사이트입니다.
 
 MemGPT, A-MEM 같은 고급 메모리 시스템은 에이전트를 단순한 "프롬프트 실행기"에서 <strong>"학습하고 진화하는 시스템"</strong>으로 변화시킵니다.
 
-**특히 인상 깊었던 점**:
+<strong>특히 인상 깊었던 점</strong>:
 
 - <strong>Zettelkasten 메타포</strong>: 노트 간 연결로 창발적 통찰 생성
 - <strong>계층적 메모리</strong>: OS의 가상 메모리 개념 차용
 - <strong>동적 조직화</strong>: 에이전트가 스스로 지식을 구조화
 
-**실무 적용 가능성**:
+<strong>실무 적용 가능성</strong>:
 
 - 장기 실행 에이전트 (고객 지원, 개인 비서)
 - 누적 학습이 중요한 도메인 (법률, 의료 상담)
@@ -1797,7 +1797,7 @@ MemGPT, A-MEM 같은 고급 메모리 시스템은 에이전트를 단순한 "�
 
 6가지 패턴 중 "만능"은 없습니다. 각 패턴은 명확한 장단점이 있습니다.
 
-**실무 의사결정 프레임워크**:
+<strong>실무 의사결정 프레임워크</strong>:
 
 ```
 명확한 단계 있음?
@@ -1811,7 +1811,7 @@ MemGPT, A-MEM 같은 고급 메모리 시스템은 에이전트를 단순한 "�
             └─ No → Custom (상태 기계 등)
 ```
 
-**프레임워크 선택 가이드**:
+<strong>프레임워크 선택 가이드</strong>:
 
 - <strong>LangGraph</strong>: 복잡한 워크플로우, 명확한 제어 필요 → 프로덕션 1순위
 - <strong>AutoGen</strong>: 연구, 실험, 창의적 협업 → 비용 주의
@@ -1821,14 +1821,14 @@ MemGPT, A-MEM 같은 고급 메모리 시스템은 에이전트를 단순한 "�
 
 실무에서 LLM 에이전트 시스템의 최대 장애물은 <strong>비용</strong>입니다.
 
-**핵심 전략**:
+<strong>핵심 전략</strong>:
 
 1. <strong>시맨틱 캐싱</strong> - 모든 시스템에 적용 (60% 히트율만으로도 큰 효과)
 2. <strong>SLM 라우팅</strong> - 간단한 작업(70%)은 작은 모델로
 3. <strong>배칭</strong> - 실시간 불필요한 작업은 묶어서 처리
 4. <strong>프리필터</strong> - 명확한 케이스는 규칙 기반으로 걸러내기
 
-**비용 추적 필수**:
+<strong>비용 추적 필수</strong>:
 
 ```typescript
 // 모든 LLM 호출에 비용 로깅
@@ -1845,7 +1845,7 @@ logger.info({
 
 LLM은 확률적 시스템입니다. 100% 정확한 응답은 불가능합니다.
 
-**실무 필수 요소**:
+<strong>실무 필수 요소</strong>:
 
 - <strong>Tool Use 검증</strong>: 함수 호출 파라미터 검증
 - <strong>재시도 메커니즘</strong>: 오류 시 자동 복구 시도
@@ -1880,7 +1880,7 @@ DeNA LLM 스터디 Part 1〜5를 모두 마쳤습니다. 전체 학습 여정을
 - Claude, GPT-4, Gemini 비교
 - 토큰화, Context Window의 중요성
 
-**핵심 교훈**: LLM은 "다음 토큰 예측"이라는 단순한 원리로 놀라운 능력을 발휘한다.
+<strong>핵심 교훈</strong>: LLM은 "다음 토큰 예측"이라는 단순한 원리로 놀라운 능력을 발휘한다.
 
 ### Part 2: 프롬프트 엔지니어링과 RAG
 
@@ -1888,7 +1888,7 @@ DeNA LLM 스터디 Part 1〜5를 모두 마쳤습니다. 전체 학습 여정을
 - RAG (Retrieval-Augmented Generation)
 - 프롬프트 최적화 전략
 
-**핵심 교훈**: 올바른 프롬프트는 모델 성능을 10배 향상시킬 수 있다.
+<strong>핵심 교훈</strong>: 올바른 프롬프트는 모델 성능을 10배 향상시킬 수 있다.
 
 ### Part 3: LLM 파인튜닝 기법
 
@@ -1896,7 +1896,7 @@ DeNA LLM 스터디 Part 1〜5를 모두 마쳤습니다. 전체 학습 여정을
 - Instruction Tuning, RLHF
 - 파인튜닝 시 과적합 문제
 
-**핵심 교훈**: 파인튜닝은 강력하지만, 대부분의 경우 프롬프트 엔지니어링 + RAG로 충분하다.
+<strong>핵심 교훈</strong>: 파인튜닝은 강력하지만, 대부분의 경우 프롬프트 엔지니어링 + RAG로 충분하다.
 
 ### Part 4: 임베딩과 벡터 데이터베이스
 
@@ -1904,7 +1904,7 @@ DeNA LLM 스터디 Part 1〜5를 모두 마쳤습니다. 전체 학습 여정을
 - Pinecone, Weaviate, Chroma 비교
 - 하이브리드 검색 (키워드 + 시맨틱)
 
-**핵심 교훈**: 임베딩은 "의미의 좌표"다. 벡터 공간에서 가까운 점들은 의미도 유사하다.
+<strong>핵심 교훈</strong>: 임베딩은 "의미의 좌표"다. 벡터 공간에서 가까운 점들은 의미도 유사하다.
 
 ### Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션 (현재 글)
 
@@ -1913,7 +1913,7 @@ DeNA LLM 스터디 Part 1〜5를 모두 마쳤습니다. 전체 학습 여정을
 - MemGPT, A-MEM 메모리 시스템
 - 비용 최적화 (시맨틱 캐싱, SLM, 배칭)
 
-**핵심 교훈**: 에이전트 시스템은 "오케스트레이션"과 "메모리"가 핵심이다. 완전 자율보다 명확한 제어가 실무에서 더 효과적이다.
+<strong>핵심 교훈</strong>: 에이전트 시스템은 "오케스트레이션"과 "메모리"가 핵심이다. 완전 자율보다 명확한 제어가 실무에서 더 효과적이다.
 
 ### 전체 시리즈에서 얻은 통찰
 

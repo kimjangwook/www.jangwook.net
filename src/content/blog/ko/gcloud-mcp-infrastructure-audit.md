@@ -232,26 +232,26 @@ async def run_infrastructure_audit():
 
 <strong>보안 취약점 (중대)</strong>
 
-1. **환경 변수에 노출된 API 키**
+1. <strong>환경 변수에 노출된 API 키</strong>
    - 위치: Cloud Run/Functions 서비스 다수
    - 위험: 자격 증명 탈취 시 서비스 남용 가능
    - 조치: Secret Manager로 즉시 마이그레이션
 
-2. **RDP 포트 전체 개방**
+2. <strong>RDP 포트 전체 개방</strong>
    - 위치: default VPC 방화벽 규칙
    - 위험: 브루트 포스 공격에 노출
    - 조치: 특정 IP 대역으로 제한
 
-3. **지원 종료 OS**
+3. <strong>지원 종료 OS</strong>
    - 위치: cdp-sftp-prod VM (CentOS 7)
    - 위험: 보안 패치 부재
    - 조치: Rocky Linux 또는 Ubuntu LTS로 마이그레이션
 
 <strong>비용 최적화 기회</strong>
 
-1. **정지된 MySQL 인스턴스**: 스토리지 비용만 발생 중
-2. **80개 이상의 App Engine 버전**: 미사용 버전 정리 필요
-3. **빈 BigQuery 데이터셋**: 10개 데이터셋 삭제 가능
+1. <strong>정지된 MySQL 인스턴스</strong>: 스토리지 비용만 발생 중
+2. <strong>80개 이상의 App Engine 버전</strong>: 미사용 버전 정리 필요
+3. <strong>빈 BigQuery 데이터셋</strong>: 10개 데이터셋 삭제 가능
 
 ### 자동 생성된 Mermaid 다이어그램
 
@@ -370,9 +370,9 @@ gcloud MCP와 병렬 에이전트 아키텍처를 결합하면:
 
 ### 다음 단계
 
-1. **gcloud MCP 설치**: [GitHub 저장소](https://github.com/anthropics/gcloud-mcp)에서 시작
-2. **분석 에이전트 커스터마이징**: 조직의 보안 정책과 컴플라이언스 요구사항에 맞게 조정
-3. **정기 스캔 설정**: Cloud Scheduler로 주간/월간 자동 감사 구성
-4. **알림 통합**: Slack, Email, PagerDuty 등과 연동하여 즉시 대응
+1. <strong>gcloud MCP 설치</strong>: [GitHub 저장소](https://github.com/anthropics/gcloud-mcp)에서 시작
+2. <strong>분석 에이전트 커스터마이징</strong>: 조직의 보안 정책과 컴플라이언스 요구사항에 맞게 조정
+3. <strong>정기 스캔 설정</strong>: Cloud Scheduler로 주간/월간 자동 감사 구성
+4. <strong>알림 통합</strong>: Slack, Email, PagerDuty 등과 연동하여 즉시 대응
 
 클라우드 인프라 관리의 새로운 패러다임, AI 에이전트와 함께 시작해보세요.

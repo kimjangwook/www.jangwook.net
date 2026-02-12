@@ -655,31 +655,31 @@ streamlit run web_app.py
 
 ### 실제 구현 화면
 
-**1. 메인 화면 및 Store 생성**
+<strong>1. 메인 화면 및 Store 생성</strong>
 
 ![Gemini File Search 메인 화면](../../../assets/gemini-file-search/gemini-file-search-1.png)
 
 왼쪽 사이드바에서 Gemini API 키를 입력하고, Store를 생성할 수 있습니다. Store 이름을 입력하고 "generation" 버튼을 클릭하면 새로운 File Search Store가 생성됩니다.
 
-**2. 파일 업로드 인터페이스**
+<strong>2. 파일 업로드 인터페이스</strong>
 
 ![파일 업로드 화면](../../../assets/gemini-file-search/gemini-file-search-2.png)
 
 "File Upload" 탭에서 여러 파일을 동시에 선택하여 업로드할 수 있습니다. PDF, TXT, DOCX, Markdown, CSV 등 다양한 형식을 지원합니다.
 
-**3. 질의응답 인터페이스**
+<strong>3. 질의응답 인터페이스</strong>
 
 ![질의응답 화면](../../../assets/gemini-file-search/gemini-file-search-3.png)
 
 "Q&A" 탭에서 업로드한 문서에 대해 자연어로 질문할 수 있습니다. 채팅 형식으로 대화가 진행되며, 인용 출처도 함께 표시됩니다.
 
-**4. Store 관리 및 파일 목록**
+<strong>4. Store 관리 및 파일 목록</strong>
 
 ![Store 관리](../../../assets/gemini-file-search/gemini-file-search-4.png)
 
 현재 선택된 Store의 정보와 업로드된 파일 목록을 확인할 수 있습니다.
 
-**5. 질의응답 결과 예시**
+<strong>5. 질의응답 결과 예시</strong>
 
 ![질의응답 결과](../../../assets/gemini-file-search/gemini-file-search-5.png)
 

@@ -356,19 +356,19 @@ GitHub PR 审查自动化专用工具包。
 
 ccplugins/awesome-claude-code-plugins 按以下 `<strong>`13 个类别`</strong>`提供插件：
 
-1. **Git & Version Control** - Git 扩展工作流
-2. **Code Quality** - 代码检查、格式化
-3. **Testing** - 测试自动化
-4. **Documentation** - 文档生成
-5. **DevOps & CI/CD** - 部署自动化
-6. **Database** - 数据库工具
-7. **API Development** - API 开发辅助
-8. **Frontend** - 前端专用工具
-9. **Backend** - 后端框架集成
-10. **Mobile** - 移动应用开发
-11. **Security** - 安全扫描
-12. **AI/ML** - 机器学习工具
-13. **Productivity** - 生产力提升
+1. <strong>Git & Version Control</strong> - Git 扩展工作流
+2. <strong>Code Quality</strong> - 代码检查、格式化
+3. <strong>Testing</strong> - 测试自动化
+4. <strong>Documentation</strong> - 文档生成
+5. <strong>DevOps & CI/CD</strong> - 部署自动化
+6. <strong>Database</strong> - 数据库工具
+7. <strong>API Development</strong> - API 开发辅助
+8. <strong>Frontend</strong> - 前端专用工具
+9. <strong>Backend</strong> - 后端框架集成
+10. <strong>Mobile</strong> - 移动应用开发
+11. <strong>Security</strong> - 安全扫描
+12. <strong>AI/ML</strong> - 机器学习工具
+13. <strong>Productivity</strong> - 生产力提升
 
 ## 插件结构详解
 
@@ -444,7 +444,7 @@ my-plugin/
 /plugin install code-review
 ```
 
-**工作流**：
+<strong>工作流</strong>：
 
 1. `feature-dev` - 从想法到实现自动化
 2. `code-review` - 提交前自动审查
@@ -461,7 +461,7 @@ my-plugin/
 /plugin install security-guidance
 ```
 
-**工作流**：
+<strong>工作流</strong>：
 
 1. `hookify` - 标准化团队规则
 2. `pr-review-toolkit` - PR 自动审查
@@ -478,7 +478,7 @@ my-plugin/
 /plugin install hookify
 ```
 
-**工作流**：
+<strong>工作流</strong>：
 
 1. `plugin-dev` - 根据 8 阶段向导开发插件
 2. `agent-sdk-dev` - 创建自定义代理
@@ -494,7 +494,7 @@ my-plugin/
 /plugin install commit-commands
 ```
 
-**工作流**：
+<strong>工作流</strong>：
 
 1. `frontend-design` - 应用 UX 心理学原则开发
 2. `code-review` - 代码质量检查
@@ -578,9 +578,9 @@ Claude Code 插件系统将开发工作流的`<strong>`自动化和标准化`</s
 
 `<strong>`建议策略`</strong>`：
 
-1. **初学者**：从 `commit-commands` 和 `feature-dev` 开始
-2. **团队**：添加 `pr-review-toolkit` 和 `hookify`
-3. **高级用户**：探索 `plugin-dev` 和社区市场
+1. <strong>初学者</strong>：从 `commit-commands` 和 `feature-dev` 开始
+2. <strong>团队</strong>：添加 `pr-review-toolkit` 和 `hookify`
+3. <strong>高级用户</strong>：探索 `plugin-dev` 和社区市场
 
 ## 参考资料
 

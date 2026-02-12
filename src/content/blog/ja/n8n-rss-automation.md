@@ -378,9 +378,9 @@ Google Gemini 2.5 Proは記事のHTMLコンテンツ全体を解析し、各プ�
 
 ### 実際のAI出力例
 
-**入力**: ブログ記事のHTMLコンテンツ（この記事自体）
+<strong>入力</strong>: ブログ記事のHTMLコンテンツ（この記事自体）
 
-**AI出力**:
+<strong>AI出力</strong>:
 
 ```json
 {

@@ -82,21 +82,21 @@ graph TD
     C1[Customer Feedback<br/>Taste Improvement] --> C
 ```
 
-**Pre-training**
+<strong>Pre-training</strong>
 
 - <strong>Purpose</strong>: Acquire general language understanding capabilities
 - <strong>Data</strong>: Tens to hundreds of TBs of web data
 - <strong>Cost</strong>: Hundreds of millions to billions of dollars (GPT-4 estimated $100B+)
 - <strong>Analogy</strong>: Learning all cooking techniques in culinary school
 
-**Fine-tuning**
+<strong>Fine-tuning</strong>
 
 - <strong>Purpose</strong>: Specialize for specific tasks/domains
 - <strong>Data</strong>: Thousands to tens of thousands of task-specific examples
 - <strong>Cost</strong>: Hundreds to thousands of dollars
 - <strong>Analogy</strong>: Becoming a pasta specialist at an Italian restaurant
 
-**Reinforcement Learning**
+<strong>Reinforcement Learning</strong>
 
 - <strong>Purpose</strong>: Generate responses aligned with human preferences
 - <strong>Data</strong>: Thousands to tens of thousands of preference pairs
@@ -204,7 +204,7 @@ lora_config:
 
 ### LoRA Variants
 
-**DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)**
+<strong>DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)</strong>
 
 ```python
 # DoRA: Decompose weights into magnitude and direction
@@ -215,7 +215,7 @@ W = m * (V + B @ A)
 - <strong>Advantage</strong>: Performance closer to Full Fine-tuning
 - <strong>Disadvantage</strong>: Slightly slower than LoRA
 
-**GaLore (Gradient Low-Rank Projection, 2024)**
+<strong>GaLore (Gradient Low-Rank Projection, 2024)</strong>
 
 ```python
 # Project gradient to low-rank space to save memory
@@ -226,7 +226,7 @@ optimizer.step(gradient_lowrank)
 - <strong>Advantage</strong>: Compress optimizer states too → 50% additional memory savings
 - <strong>Disadvantage</strong>: High implementation complexity
 
-**LoRA+ (2024)**
+<strong>LoRA+ (2024)</strong>
 
 ```python
 # Apply different learning rates to matrices A and B
@@ -407,18 +407,18 @@ preference_dataset = [
 
 ### DPO Variants
 
-**ORPO (Odds Ratio Preference Optimization, 2024)**
+<strong>ORPO (Odds Ratio Preference Optimization, 2024)</strong>
 
 - Performs SFT and preference learning <strong>simultaneously</strong>
 - No separate SFT stage needed
 - Further training time reduction
 
-**IPO (Identity Preference Optimization, 2024)**
+<strong>IPO (Identity Preference Optimization, 2024)</strong>
 
 - Can train without reference model
 - Further memory reduction
 
-**KTO (Kahneman-Tversky Optimization, 2024)**
+<strong>KTO (Kahneman-Tversky Optimization, 2024)</strong>
 
 - Uses <strong>individual feedback</strong> (good/bad) instead of pairwise comparisons
 - Drastically reduced data collection costs
@@ -444,7 +444,7 @@ graph TD
 
 ### Practical Recommendations
 
-**1. Chatbots/Conversational Systems**
+<strong>1. Chatbots/Conversational Systems</strong>
 
 ```
 Prompt → SFT (LoRA) → DPO
@@ -453,7 +453,7 @@ Prompt → SFT (LoRA) → DPO
 - Domain knowledge injection: Efficient fine-tuning with LoRA
 - Dialogue quality improvement: Preference alignment with DPO
 
-**2. Document Classification/Tagging**
+<strong>2. Document Classification/Tagging</strong>
 
 ```
 Prompt → LoRA (Optional)
@@ -462,7 +462,7 @@ Prompt → LoRA (Optional)
 - Usually sufficient with prompts
 - Add LoRA for extreme performance needs
 
-**3. Code Generation**
+<strong>3. Code Generation</strong>
 
 ```
 Prompt → SFT (QLoRA) → RLHF/DPO
@@ -471,7 +471,7 @@ Prompt → SFT (QLoRA) → RLHF/DPO
 - Code style learning: Train on large code corpus with QLoRA
 - Executability improvement: Penalize compilation errors with RLHF
 
-**4. Summarization/Translation**
+<strong>4. Summarization/Translation</strong>
 
 ```
 Prompt → DPO

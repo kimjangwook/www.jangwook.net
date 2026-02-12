@@ -52,11 +52,11 @@ relatedPosts:
 
 ## 为什么是"紧急"
 
-2026年2月5日，Anthropic发布了Claude Opus 4.6。**100万token上下文**、**128K token输出**、增强的规划能力和自我修正能力。
+2026年2月5日，Anthropic发布了Claude Opus 4.6。<strong>100万token上下文</strong>、<strong>128K token输出</strong>、增强的规划能力和自我修正能力。
 
 如果你是OpenClaw用户，你一定想立刻配置并开始使用。
 
-这篇文章提供**可以直接复制粘贴就能运行的**最短路径。
+这篇文章提供<strong>可以直接复制粘贴就能运行的</strong>最短路径。
 
 ## 前提条件
 
@@ -93,8 +93,8 @@ relatedPosts:
 }
 ```
 
-**要点**:
-- `mode: "merge"` — **追加**到OpenClaw内置模型目录（不是替换）
+<strong>要点</strong>:
+- `mode: "merge"` — <strong>追加</strong>到OpenClaw内置模型目录（不是替换）
 - `reasoning: true` — 启用Opus 4.6推理模式
 - `contextWindow: 1000000` — 100万token完整上下文
 - `maxTokens: 128000` — 128K token长输出
@@ -115,14 +115,14 @@ relatedPosts:
 }
 ```
 
-**要点**:
+<strong>要点</strong>:
 - `primary` — 所有会话默认使用Opus 4.6
 - `fallbacks` — Opus 4.6不可用时回退到Opus 4.5
 - `contextTokens: 1000000` — 让代理充分利用100万token上下文
 
 ## 应用配置
 
-保存后，需要**两个步骤**。
+保存后，需要<strong>两个步骤</strong>。
 
 ### Step 1: 重启Gateway
 
@@ -140,7 +140,7 @@ openclaw gateway restart
 /new
 ```
 
-或者 `/reset` 也可以。**不开始新会话，新模型不会生效。**
+或者 `/reset` 也可以。<strong>不开始新会话，新模型不会生效。</strong>
 
 ## 验证配置
 

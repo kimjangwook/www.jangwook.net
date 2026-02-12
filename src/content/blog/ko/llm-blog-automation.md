@@ -74,15 +74,15 @@ relatedPosts:
 
 전통적인 블로그 워크플로우는 비효율적입니다:
 
-1. **아이디어 구상** (30분)
-2. **자료 조사** (1-2시간)
-3. **초안 작성** (2-3시간)
-4. **편집 및 교정** (1시간)
-5. **SEO 최적화** (30분)
-6. **이미지 제작** (1시간)
-7. **다국어 번역** (포기하거나 추가 비용)
+1. <strong>아이디어 구상</strong> (30분)
+2. <strong>자료 조사</strong> (1-2시간)
+3. <strong>초안 작성</strong> (2-3시간)
+4. <strong>편집 및 교정</strong> (1시간)
+5. <strong>SEO 최적화</strong> (30분)
+6. <strong>이미지 제작</strong> (1시간)
+7. <strong>다국어 번역</strong> (포기하거나 추가 비용)
 
-평균 **6-8시간**이 소요되고, 일관성 유지도 어렵습니다. 하지만 LLM을 활용하면 이 모든 과정을 **1시간 이내로 단축**하고, **품질은 오히려 향상**시킬 수 있습니다.
+평균 <strong>6-8시간</strong>이 소요되고, 일관성 유지도 어렵습니다. 하지만 LLM을 활용하면 이 모든 과정을 <strong>1시간 이내로 단축</strong>하고, <strong>품질은 오히려 향상</strong>시킬 수 있습니다.
 
 ## 시스템 아키텍처: Claude Code + 11 Agents + MCP + Astro
 
@@ -122,11 +122,11 @@ relatedPosts:
 
 ### 핵심 기술 스택
 
-- **Claude Code**: Anthropic의 CLI 기반 AI 개발 환경
-- **Astro 5**: Islands Architecture 기반 정적 사이트 생성기
-- **MCP (Model Context Protocol)**: AI와 외부 시스템 연결
-- **TypeScript**: 타입 안전한 코드
-- **Markdown/MDX**: LLM 친화적인 콘텐츠 포맷
+- <strong>Claude Code</strong>: Anthropic의 CLI 기반 AI 개발 환경
+- <strong>Astro 5</strong>: Islands Architecture 기반 정적 사이트 생성기
+- <strong>MCP (Model Context Protocol)</strong>: AI와 외부 시스템 연결
+- <strong>TypeScript</strong>: 타입 안전한 코드
+- <strong>Markdown/MDX</strong>: LLM 친화적인 콘텐츠 포맷
 
 ## Astro를 선택한 이유: Markdown = LLM의 최고의 친구
 
@@ -169,7 +169,7 @@ pubDate: "2025-10-04"
 LLM은 Markdown을 매우 잘 이해하고 생성합니다.
 ```
 
-Markdown은 LLM의 학습 데이터에 풍부하게 포함되어 있어, **가장 높은 품질의 출력**을 보장합니다.
+Markdown은 LLM의 학습 데이터에 풍부하게 포함되어 있어, <strong>가장 높은 품질의 출력</strong>을 보장합니다.
 
 ### 3. Islands Architecture - 성능 최적화
 
@@ -195,7 +195,7 @@ const { Content } = await post.render();
 </BlogPost>
 ```
 
-**빌드 타임에 모든 페이지를 HTML로 렌더링**하여, 사용자는 초고속 로딩을 경험합니다.
+<strong>빌드 타임에 모든 페이지를 HTML로 렌더링</strong>하여, 사용자는 초고속 로딩을 경험합니다.
 
 ## 11개 에이전트 시스템: 각자의 전문성
 
@@ -222,7 +222,7 @@ const { Content } = await post.render();
 3. 3개월 콘텐츠 로드맵 제안
 ```
 
-**실제 사용 예시:**
+<strong>실제 사용 예시:</strong>
 
 ```bash
 # 에이전트 호출
@@ -273,7 +273,7 @@ flat design style, vibrant colors (#3B82F6, #10B981),
 high contrast, technical aesthetic, 4K quality"
 ```
 
-**Playwright MCP를 활용한 자동 생성:**
+<strong>Playwright MCP를 활용한 자동 생성:</strong>
 
 ```typescript
 // 이미지 생성 자동화
@@ -339,7 +339,7 @@ const generateHeroImage = async (topic: string) => {
 - Canonical URL 설정
 ```
 
-**실제 구현:**
+<strong>실제 구현:</strong>
 
 ```astro
 ---
@@ -403,7 +403,7 @@ const { title, description, image = '/default-og.jpg' } = Astro.props;
 
 ### Case 1: 글쓰기 프롬프트
 
-**Before (나쁜 예):**
+<strong>Before (나쁜 예):</strong>
 
 ```
 블로그 글을 써줘. 주제는 AI야.
@@ -415,7 +415,7 @@ const { title, description, image = '/default-og.jpg' } = Astro.props;
 - 톤, 길이, 구조가 불명확
 - 타겟 독자 미정의
 
-**After (좋은 예):**
+<strong>After (좋은 예):</strong>
 
 ````markdown
 당신은 10년 경력의 기술 블로거입니다.
@@ -478,7 +478,7 @@ tags: [5-8개]
 
 Create a hero image for a technical blog post about "Prompt Engineering".
 
-**Style Requirements**:
+<strong>Style Requirements</strong>:
 
 - Aesthetic: Modern, minimalist, flat design
 - Color Palette:
@@ -487,20 +487,20 @@ Create a hero image for a technical blog post about "Prompt Engineering".
   - Background: #F3F4F6 (Light Gray)
 - Composition: Center-focused with geometric elements
 
-**Key Elements**:
+<strong>Key Elements</strong>:
 
 1. Central icon representing AI/Brain
 2. Surrounding elements: Code snippets, chat bubbles
 3. Clean typography for title overlay area
 4. High contrast for readability
 
-**Technical Specs**:
+<strong>Technical Specs</strong>:
 
 - Resolution: 1920x1080 (16:9)
 - Format: PNG with transparency
 - File size: < 500KB
 
-**Mood**: Professional, innovative, approachable
+<strong>Mood</strong>: Professional, innovative, approachable
 
 Example: Similar to Vercel, Stripe design aesthetics
 
@@ -606,9 +606,9 @@ if (metrics.loadTime > 3000) {
 ```markdown
 # /write-post 명령
 
-**사용법**: `/write-post "주제" [옵션]`
+<strong>사용법</strong>: `/write-post "주제" [옵션]`
 
-**프로세스**:
+<strong>프로세스</strong>:
 
 1. Content Planner: 주제 분석 및 개요 생성
 2. Writing Assistant: 초안 작성
@@ -617,7 +617,7 @@ if (metrics.loadTime > 3000) {
 5. SEO Optimizer: 메타데이터 최적화
 6. Site Manager: 빌드 및 배포
 
-**옵션**:
+<strong>옵션</strong>:
 
 - `--lang`: 언어 (ko, en, ja)
 - `--length`: 길이 (short: 1500, medium: 2500, long: 4000)
@@ -743,17 +743,17 @@ npm run deploy       # Vercel 배포
 const researchPrompt = `
 최신 프롬프트 엔지니어링 트렌드를 조사하세요.
 
-**조사 항목**:
+<strong>조사 항목</strong>:
 1. 2025년 새로운 기법
 2. 주요 LLM 업데이트 (GPT-4, Claude 3.5 등)
 3. 실무 사례 연구 3개
 
-**정보 출처**:
+<strong>정보 출처</strong>:
 - Context7: OpenAI, Anthropic 공식 문서
 - WebSearch: 최근 3개월 블로그 포스트
 - GitHub: 인기 프롬프트 라이브러리
 
-**출력 형식**:
+<strong>출력 형식</strong>:
 - 핵심 발견사항 (3-5개)
 - 각 발견사항에 대한 예시 코드
 - 참고 링크
@@ -919,16 +919,16 @@ tags: [태그들]
 
 # /write-blog 명령
 
-**역할**: 주제를 받아 완전한 블로그 포스트를 생성합니다.
+<strong>역할</strong>: 주제를 받아 완전한 블로그 포스트를 생성합니다.
 
-**단계**:
+<strong>단계</strong>:
 
 1. 사용자로부터 주제 입력 받기
 2. Writing Assistant 에이전트 호출
 3. 생성된 내용을 `/src/content/blog/[slug].md`에 저장
 4. 빌드 및 미리보기 실행
 
-**사용 예**:
+<strong>사용 예</strong>:
 \`/write-blog "AI 프롬프트 엔지니어링"\`
 ```
 

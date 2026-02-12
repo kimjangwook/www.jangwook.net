@@ -46,11 +46,11 @@ relatedPosts:
 
 ## The Static Site Dilemma: Scheduled Publishing
 
-Running a blog with Astro + GitHub Pages offers clear advantages: blazing-fast page loads, zero server costs, and excellent SEO optimization. However, one feature I missed from WordPress and other CMSs was **scheduled post publishing**.
+Running a blog with Astro + GitHub Pages offers clear advantages: blazing-fast page loads, zero server costs, and excellent SEO optimization. However, one feature I missed from WordPress and other CMSs was <strong>scheduled post publishing</strong>.
 
 I wanted to write multiple posts during my free time and have them automatically publish at 9 AM every day. But static site generators only deploy files that exist at build time. Posts with future dates? They get generated as HTML during the build and publish immediately.
 
-In this post, I'll show you how to combine **Astro's Content Collections with GitHub Actions' scheduled workflows** to implement a complete scheduled publishing system for static sites. The code examples are based on what I actually use on my blog, so you can apply them immediately.
+In this post, I'll show you how to combine <strong>Astro's Content Collections with GitHub Actions' scheduled workflows</strong> to implement a complete scheduled publishing system for static sites. The code examples are based on what I actually use on my blog, so you can apply them immediately.
 
 ## Solution Overview: Three Core Components
 
@@ -129,10 +129,10 @@ export function filterPostsByDate(
 }
 ```
 
-**Key Points**:
-- **Timezone consistency**: GitHub Actions runs in UTC, so we explicitly convert to JST (UTC+9)
-- **Date comparison**: Comparing times is complex, so we simplify to YYYY-MM-DD format
-- **Development exception**: Setting `TEST_FLG=true` allows previewing future posts
+<strong>Key Points</strong>:
+- <strong>Timezone consistency</strong>: GitHub Actions runs in UTC, so we explicitly convert to JST (UTC+9)
+- <strong>Date comparison</strong>: Comparing times is complex, so we simplify to YYYY-MM-DD format
+- <strong>Development exception</strong>: Setting `TEST_FLG=true` allows previewing future posts
 
 ### 3. GitHub Actions Scheduled Workflow
 
@@ -181,10 +181,10 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-**Workflow Explanation**:
-- **push trigger**: Deploys immediately when committing to `main` branch
-- **workflow_dispatch**: Allows manual execution from GitHub UI
-- **schedule trigger**: Runs automatically daily at UTC 15:00 (JST midnight next day)
+<strong>Workflow Explanation</strong>:
+- <strong>push trigger</strong>: Deploys immediately when committing to `main` branch
+- <strong>workflow_dispatch</strong>: Allows manual execution from GitHub UI
+- <strong>schedule trigger</strong>: Runs automatically daily at UTC 15:00 (JST midnight next day)
 
 ## Practical Implementation: Step-by-Step Guide
 
@@ -360,7 +360,7 @@ const { Content } = await render(post);
 </BlogPost>
 ```
 
-**Important**: If you don't filter in `getStaticPaths()`, paths for future posts will be generated and accessible via direct URL. Always filter here too.
+<strong>Important</strong>: If you don't filter in `getStaticPaths()`, paths for future posts will be generated and accessible via direct URL. Always filter here too.
 
 ### Step 5: Configure GitHub Actions Workflow
 
@@ -412,7 +412,7 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-**Cron Syntax Explained**:
+<strong>Cron Syntax Explained</strong>:
 ```
 "0 15 * * *"
  │  │  │ │ │
@@ -446,27 +446,27 @@ npm run preview
 # 4. Verify: Future post should not be visible
 ```
 
-**Expected Behavior**:
+<strong>Expected Behavior</strong>:
 - `TEST_FLG=true`: Future post visible ✓
 - Production build: Future post hidden ✓
 
 ### Step 7: GitHub Pages Setup
 
-1. **GitHub Repository Settings**:
+1. <strong>GitHub Repository Settings</strong>:
    - Settings → Pages → Change Source to "GitHub Actions"
 
-2. **First Deployment**:
+2. <strong>First Deployment</strong>:
    ```bash
    git add .
    git commit -m "feat: add scheduled publishing"
    git push origin main
    ```
 
-3. **Verify Deployment in Actions Tab**:
+3. <strong>Verify Deployment in Actions Tab</strong>:
    - Check "Deploy to GitHub Pages" workflow execution
    - After success, visit site and confirm future posts aren't visible
 
-4. **Verify Schedule**:
+4. <strong>Verify Schedule</strong>:
    - Actions tab → "Deploy to GitHub Pages" → Right menu → "View workflow runs"
    - Check next execution time
 
@@ -474,19 +474,19 @@ npm run preview
 
 ### Timezone-Specific Configuration
 
-**Korea Time (KST = UTC+9)**:
+<strong>Korea Time (KST = UTC+9)</strong>:
 ```yaml
 schedule:
   - cron: "0 15 * * *" # Daily at KST 00:00
 ```
 
-**US Eastern Time (EST = UTC-5)**:
+<strong>US Eastern Time (EST = UTC-5)</strong>:
 ```yaml
 schedule:
   - cron: "0 14 * * *" # Daily at EST 09:00
 ```
 
-**Central European Time (CET = UTC+1)**:
+<strong>Central European Time (CET = UTC+1)</strong>:
 ```yaml
 schedule:
   - cron: "0 8 * * *" # Daily at CET 09:00
@@ -503,7 +503,7 @@ schedule:
   - cron: "0 12 * * *"  # JST 21:00 (evening)
 ```
 
-**Note**: GitHub Actions free tier has a 2,000 minutes/month limit. If builds take 5 minutes, 3 daily builds = 450 minutes/month (plenty of room).
+<strong>Note</strong>: GitHub Actions free tier has a 2,000 minutes/month limit. If builds take 5 minutes, 3 daily builds = 450 minutes/month (plenty of room).
 
 ### RSS Feed Filtering
 
@@ -556,9 +556,9 @@ export default defineConfig({
 
 ### Issue 1: Future Posts Publish Immediately
 
-**Cause**: Filtering not applied
+<strong>Cause</strong>: Filtering not applied
 
-**Solution**:
+<strong>Solution</strong>:
 1. Verify `filterPostsByDate()` applied to both `getStaticPaths()` and `getCollection()` calls
 2. Check build logs:
    ```bash
@@ -568,26 +568,26 @@ export default defineConfig({
 
 ### Issue 2: Schedule Doesn't Run
 
-**Cause**: GitHub Actions configuration issue
+<strong>Cause</strong>: GitHub Actions configuration issue
 
-**Solution**:
-1. **Verify repository activation**: Is Actions tab enabled?
-2. **Validate cron syntax**: Check on [Crontab.guru](https://crontab.guru)
-3. **Check last commit date**: Schedules auto-pause after 60 days of no commits
+<strong>Solution</strong>:
+1. <strong>Verify repository activation</strong>: Is Actions tab enabled?
+2. <strong>Validate cron syntax</strong>: Check on [Crontab.guru](https://crontab.guru)
+3. <strong>Check last commit date</strong>: Schedules auto-pause after 60 days of no commits
    - Fix: Push a dummy commit or manually trigger
 
 ### Issue 3: Wrong Timezone
 
-**Cause**: UTC and local timezone confusion
+<strong>Cause</strong>: UTC and local timezone confusion
 
-**Solution**:
+<strong>Solution</strong>:
 1. **Check workflow `env.TZ`**:
    ```yaml
    env:
      TZ: 'Asia/Tokyo'
    ```
 
-2. **Check filtering function timezone**:
+2. <strong>Check filtering function timezone</strong>:
    ```typescript
    function getJSTDate(): Date {
      const now = new Date();
@@ -596,7 +596,7 @@ export default defineConfig({
    }
    ```
 
-3. **Test**:
+3. <strong>Test</strong>:
    ```bash
    # Check build time in GitHub Actions logs
    date (verify execution time is in correct timezone)
@@ -604,9 +604,9 @@ export default defineConfig({
 
 ### Issue 4: Future Posts Not Visible in Development
 
-**Cause**: `TEST_FLG` environment variable not set
+<strong>Cause</strong>: `TEST_FLG` environment variable not set
 
-**Solution**:
+<strong>Solution</strong>:
 ```bash
 # Create .env file
 echo "TEST_FLG=true" > .env
@@ -619,13 +619,13 @@ TEST_FLG=true npm run dev
 
 ### GitHub Actions Cost
 
-**Free Tier**:
+<strong>Free Tier</strong>:
 - 2,000 minutes/month free
 - Build time: ~2-5 minutes (depends on project size)
 - Daily builds: 60-150 minutes/month used
-- **Conclusion**: Free tier is sufficient ✓
+- <strong>Conclusion</strong>: Free tier is sufficient ✓
 
-**Paid Plans**:
+<strong>Paid Plans</strong>:
 - Team: $4/month, 3,000 minutes/month
 - Enterprise: Custom pricing
 
@@ -650,9 +650,9 @@ export default defineConfig({
 });
 ```
 
-**Additional Optimizations**:
-- **Dependency caching**: Use `actions/cache`
-- **Incremental builds**: Supported in Astro 4.0+
+<strong>Additional Optimizations</strong>:
+- <strong>Dependency caching</strong>: Use `actions/cache`
+- <strong>Incremental builds</strong>: Supported in Astro 4.0+
 
 ```yaml
 # Dependency caching example
@@ -667,56 +667,56 @@ export default defineConfig({
 
 ### Approach 1: Netlify/Vercel Scheduled Builds
 
-**Pros**:
+<strong>Pros</strong>:
 - Configurable via GUI
 - Platform-integrated caching
 
-**Cons**:
+<strong>Cons</strong>:
 - Platform lock-in
 - Free tier limits (Netlify: 300 minutes/month)
 
 ### Approach 2: External Cron Service (e.g., cron-job.org)
 
-**Pros**:
+<strong>Pros</strong>:
 - Doesn't consume GitHub Actions quota
 
-**Cons**:
+<strong>Cons</strong>:
 - Requires webhook setup
 - Security token management
 - Additional service dependency
 
 ### Approach 3: Serverless Functions (e.g., Cloudflare Workers)
 
-**Pros**:
+<strong>Pros</strong>:
 - Real-time filtering possible
 
-**Cons**:
+<strong>Cons</strong>:
 - No longer a static site
 - Increased complexity
 - Additional service required
 
-**Recommendation**: **GitHub Actions approach is simplest, free, and perfectly integrated with GitHub Pages**
+<strong>Recommendation</strong>: <strong>GitHub Actions approach is simplest, free, and perfectly integrated with GitHub Pages</strong>
 
 ## Conclusion
 
-By combining Astro and GitHub Actions, you can build a **fully automated scheduled publishing system** for static blogs, just like WordPress.
+By combining Astro and GitHub Actions, you can build a <strong>fully automated scheduled publishing system</strong> for static blogs, just like WordPress.
 
 ### Key Takeaways
 
-✅ **Define pubDate in Content Collections schema**
-✅ **Create date filtering utility** (explicit JST timezone)
-✅ **Apply filtering to all pages** (index, dynamic pages, RSS)
-✅ **Configure GitHub Actions scheduled workflow** (cron expressions)
-✅ **Local testing** (TEST_FLG=true)
-✅ **Production deployment and verification**
+✅ <strong>Define pubDate in Content Collections schema</strong>
+✅ <strong>Create date filtering utility</strong> (explicit JST timezone)
+✅ <strong>Apply filtering to all pages</strong> (index, dynamic pages, RSS)
+✅ <strong>Configure GitHub Actions scheduled workflow</strong> (cron expressions)
+✅ <strong>Local testing</strong> (TEST_FLG=true)
+✅ <strong>Production deployment and verification</strong>
 
 ### Benefits of This Approach
 
-1. **Zero Cost**: GitHub Actions free tier is sufficient
-2. **Fully Automated**: Set it once, works forever
-3. **Timezone Control**: Precise publishing in your desired timezone
-4. **Developer-Friendly**: Test mode for previewing
-5. **Platform-Independent**: Works anywhere beyond GitHub Pages—Netlify, Vercel, etc.
+1. <strong>Zero Cost</strong>: GitHub Actions free tier is sufficient
+2. <strong>Fully Automated</strong>: Set it once, works forever
+3. <strong>Timezone Control</strong>: Precise publishing in your desired timezone
+4. <strong>Developer-Friendly</strong>: Test mode for previewing
+5. <strong>Platform-Independent</strong>: Works anywhere beyond GitHub Pages—Netlify, Vercel, etc.
 
 Now you can write posts ahead of time and automatically deliver fresh content to readers every morning. Enjoy the speed of static sites with the convenience of WordPress!
 

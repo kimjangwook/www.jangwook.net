@@ -63,7 +63,7 @@ relatedPosts:
 
 ## Overview
 
-Migrating large-scale legacy code to modern languages is a challenge every organization recognizes as important but keeps pushing down the priority list. DeNA solved this problem dramatically using AI agents. When migrating a server asset management API written in 6,000 lines of Perl to Go, they deployed two types of AI agents — a **conversion agent** and a **verification agent** — in parallel, completing what would normally take six months in **just one month**.
+Migrating large-scale legacy code to modern languages is a challenge every organization recognizes as important but keeps pushing down the priority list. DeNA solved this problem dramatically using AI agents. When migrating a server asset management API written in 6,000 lines of Perl to Go, they deployed two types of AI agents — a <strong>conversion agent</strong> and a <strong>verification agent</strong> — in parallel, completing what would normally take six months in <strong>just one month</strong>.
 
 ## Background: Why Migration Was Necessary
 
@@ -71,21 +71,21 @@ DeNA's server asset management API was built in Perl in 2018, managing informati
 
 While the system had no major defects, the switch to a modern language was necessary for several reasons:
 
-- **Perl's future outlook**: Concerns about the language's longevity and shrinking community
-- **Maintainability**: Difficulty recruiting developers with Perl experience
-- **Resource constraints**: Despite recognizing the need, the migration kept being deprioritized due to the significant effort required
+- <strong>Perl's future outlook</strong>: Concerns about the language's longevity and shrinking community
+- <strong>Maintainability</strong>: Difficulty recruiting developers with Perl experience
+- <strong>Resource constraints</strong>: Despite recognizing the need, the migration kept being deprioritized due to the significant effort required
 
 Keisuke Koike, Deputy Director of the IT Infrastructure Division at DeNA, explained: "It was clear the project would require significant effort, so we just couldn't prioritize it."
 
 ## DeNA's "AI All-In" Strategy
 
-In February 2025, DeNA founder and chairperson Tomoko Namba announced the company's **"AI All-In" declaration** — a commitment to leveraging AI extensively to boost productivity and build an organization capable of running existing businesses with half the workforce.
+In February 2025, DeNA founder and chairperson Tomoko Namba announced the company's <strong>"AI All-In" declaration</strong> — a commitment to leveraging AI extensively to boost productivity and build an organization capable of running existing businesses with half the workforce.
 
 As part of this strategy, the server asset management API modernization was selected as one of several AI-powered pilot projects.
 
 ## Core Strategy: Two-Agent Division of Labor
 
-The most innovative aspect of this project was the decision to **deploy two types of AI agents with distinct specializations**.
+The most innovative aspect of this project was the decision to <strong>deploy two types of AI agents with distinct specializations</strong>.
 
 ```mermaid
 graph LR
@@ -98,17 +98,17 @@ graph LR
 
 ### 1. Conversion AI Agent
 
-- **Role**: Transform Perl code into Go code
-- **Specialization**: Optimized for code generation
-- **Output**: ~6,000 lines of Perl → ~10,000 lines of Go
+- <strong>Role</strong>: Transform Perl code into Go code
+- <strong>Specialization</strong>: Optimized for code generation
+- <strong>Output</strong>: ~6,000 lines of Perl → ~10,000 lines of Go
 
 ### 2. Verification AI Agent
 
-- **Role**: Validate the accuracy of converted Go code
-- **Specialization**: Optimized for testing and quality verification
-- **Process**: Feeds issues back to the conversion agent when problems are found
+- <strong>Role</strong>: Validate the accuracy of converted Go code
+- <strong>Specialization</strong>: Optimized for testing and quality verification
+- <strong>Process</strong>: Feeds issues back to the conversion agent when problems are found
 
-This two-agent system enabled rapid iteration of the **conversion → verification → correction** cycle, compressing what would take over six months manually into a single month.
+This two-agent system enabled rapid iteration of the <strong>conversion → verification → correction</strong> cycle, compressing what would take over six months manually into a single month.
 
 ## Project Timeline
 
@@ -122,7 +122,7 @@ This two-agent system enabled rapid iteration of the **conversion → verificati
 
 ### The Power of Agent Specialization
 
-Rather than asking a single AI to "convert and verify," the key was **clearly separating roles** to maximize each agent's strengths.
+Rather than asking a single AI to "convert and verify," the key was <strong>clearly separating roles</strong> to maximize each agent's strengths.
 
 ```mermaid
 graph TD
@@ -146,22 +146,22 @@ graph TD
 
 This case study is particularly relevant for:
 
-1. **Legacy-to-modern language migrations**: COBOL→Java, PHP→Go, Ruby→Rust, etc.
-2. **Large-scale codebase transformations**: Projects involving thousands to tens of thousands of lines
-3. **Resolving technical debt blocked by resource constraints**: AI dramatically improves the cost-benefit equation
+1. <strong>Legacy-to-modern language migrations</strong>: COBOL→Java, PHP→Go, Ruby→Rust, etc.
+2. <strong>Large-scale codebase transformations</strong>: Projects involving thousands to tens of thousands of lines
+3. <strong>Resolving technical debt blocked by resource constraints</strong>: AI dramatically improves the cost-benefit equation
 
 ### Important Considerations
 
-- Note that DeNA allocated a **separate 2-month verification period**. Even AI-converted code requires thorough validation before production deployment.
+- Note that DeNA allocated a <strong>separate 2-month verification period</strong>. Even AI-converted code requires thorough validation before production deployment.
 - The design of agent role assignments was critical to success — carefully architect your agent configuration to match project requirements.
 
 ## Conclusion
 
-DeNA's case demonstrates that AI agents can serve not just as coding assistants but as **strategic project-level resources**. Three key takeaways:
+DeNA's case demonstrates that AI agents can serve not just as coding assistants but as <strong>strategic project-level resources</strong>. Three key takeaways:
 
-1. **Agent role separation**: Splitting conversion and verification maximizes quality in both areas
-2. **Automated iteration cycles**: AI handles the conversion → verification → correction loop automatically
-3. **Adequate validation periods**: Human final verification of AI-converted results remains essential
+1. <strong>Agent role separation</strong>: Splitting conversion and verification maximizes quality in both areas
+2. <strong>Automated iteration cycles</strong>: AI handles the conversion → verification → correction loop automatically
+3. <strong>Adequate validation periods</strong>: Human final verification of AI-converted results remains essential
 
 As Deputy Director Koike put it: "If AI can deliver this level of efficiency, we can start tackling projects that were previously impossible due to resource constraints." AI agents represent a genuine breakthrough for resolving technical debt.
 

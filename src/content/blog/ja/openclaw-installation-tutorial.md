@@ -11,12 +11,12 @@ tags:
 relatedPosts: []
 ---
 
-> **シリーズ: OpenClaw 完全攻略** (2/3)
+> <strong>シリーズ: OpenClaw 完全攻略</strong> (2/3)
 > 1. [紹介編](/ja/blog/ja/openclaw-introduction-guide/)
-> 2. **チュートリアル編** ← 現在の記事
+> 2. <strong>チュートリアル編</strong> ← 現在の記事
 > 3. [活用法編](/ja/blog/ja/openclaw-advanced-usage/)
 
-前回の記事ではOpenClawとは何かを紹介しました。今回は**実際にインストールして、初めての会話を交わす**ところまで一気にやってみましょう。ターミナルを開いてついてきてください！🚀
+前回の記事ではOpenClawとは何かを紹介しました。今回は<strong>実際にインストールして、初めての会話を交わす</strong>ところまで一気にやってみましょう。ターミナルを開いてついてきてください！🚀
 
 ---
 
@@ -26,11 +26,11 @@ OpenClawはNode.jsランタイム上で動作します。
 
 | 項目 | 要件 |
 |------|------|
-| **Node.js** | v22以上（`node -v`で確認） |
-| **OS** | Windows・macOS・Linux すべて対応 |
+| <strong>Node.js</strong> | v22以上（`node -v`で確認） |
+| <strong>OS</strong> | Windows・macOS・Linux すべて対応 |
 
-- **macOS / Linux** — 特別な準備なしですぐ始められます。
-- **Windows** — ネイティブ環境でも動作します。WSL2も対応していますが必須ではありません。
+- <strong>macOS / Linux</strong> — 特別な準備なしですぐ始められます。
+- <strong>Windows</strong> — ネイティブ環境でも動作します。WSL2も対応していますが必須ではありません。
 
 Node.jsがない場合は[公式サイト](https://nodejs.org/)からLTS版（22+）をダウンロードするか、バージョンマネージャーを使ってください：
 
@@ -50,9 +50,9 @@ fnm use 22
 
 ### オプション（でもおすすめ！）
 
-- **Brave Search APIキー** — Web検索機能に必要。[Brave Search API](https://brave.com/search/api/)から無料で取得
-- **AIモデルAPIキー** — Anthropic、OpenAI、Googleのうち1つ以上。`ANTHROPIC_API_KEY`または`OPENAI_API_KEY`環境変数で設定
-- **Git** — ソースビルド時に必要
+- <strong>Brave Search APIキー</strong> — Web検索機能に必要。[Brave Search API](https://brave.com/search/api/)から無料で取得
+- <strong>AIモデルAPIキー</strong> — Anthropic、OpenAI、Googleのうち1つ以上。`ANTHROPIC_API_KEY`または`OPENAI_API_KEY`環境変数で設定
+- <strong>Git</strong> — ソースビルド時に必要
 
 ---
 
@@ -98,7 +98,7 @@ pnpm build
 openclaw onboard --install-daemon
 ```
 
-> **Tip:** ソースビルドはコントリビューションを考えている方や、最新機能を先取りしたい方におすすめです。npmとソースビルドの切り替えも簡単です — `openclaw doctor`がGatewayサービスのエントリポイントを自動更新します。
+> <strong>Tip:</strong> ソースビルドはコントリビューションを考えている方や、最新機能を先取りしたい方におすすめです。npmとソースビルドの切り替えも簡単です — `openclaw doctor`がGatewayサービスのエントリポイントを自動更新します。
 
 ---
 
@@ -114,16 +114,16 @@ openclaw onboard --install-daemon
 
 | 設定項目 | 説明 |
 |---|---|
-| **Gateway** | AIエージェントが常駐する常時実行デーモン |
-| **認証** | AIモデルAPIキー（Anthropic、OpenAIなど） |
-| **チャンネル** | Telegram、Discordなどメッセージプラットフォーム |
-| **ワークスペース** | エージェントのファイル作業空間パス |
-| **Gatewayトークン** | ウィザードがデフォルトで生成（loopbackでも） |
+| <strong>Gateway</strong> | AIエージェントが常駐する常時実行デーモン |
+| <strong>認証</strong> | AIモデルAPIキー（Anthropic、OpenAIなど） |
+| <strong>チャンネル</strong> | Telegram、Discordなどメッセージプラットフォーム |
+| <strong>ワークスペース</strong> | エージェントのファイル作業空間パス |
+| <strong>Gatewayトークン</strong> | ウィザードがデフォルトで生成（loopbackでも） |
 
 `--install-daemon`フラグを付けるとGatewayがOSサービスとして登録されます：
-- **macOS**: launchd
-- **Linux**: systemdユーザーサービス
-- **Windows**: Windowsサービス
+- <strong>macOS</strong>: launchd
+- <strong>Linux</strong>: systemdユーザーサービス
+- <strong>Windows</strong>: Windowsサービス
 
 再起動後も自動実行されるのでご安心ください。
 
@@ -164,12 +164,12 @@ openclaw onboard --install-daemon
 
 ## 4. Telegramボット連携 — 最も簡単なチャンネル
 
-複数のチャンネルの中で最も敷居が低い**Telegram**から始めましょう。
+複数のチャンネルの中で最も敷居が低い<strong>Telegram</strong>から始めましょう。
 
 ### 4-1. ボット作成
 
 1. Telegramで[@BotFather](https://t.me/BotFather)に`/newbot`コマンドを送信します。
-2. ボット名とusernameを決めると**APIトークン**が発行されます。
+2. ボット名とusernameを決めると<strong>APIトークン</strong>が発行されます。
 3. このトークンをコピーしておいてください。
 
 ### 4-2. 設定ファイルにトークンを登録
@@ -191,13 +191,13 @@ openclaw onboard --install-daemon
 
 | ポリシー | 動作 |
 |---|---|
-| `pairing` | ペアリング承認が必要（セキュリティ上**強く推奨** ⭐） |
+| `pairing` | ペアリング承認が必要（セキュリティ上<strong>強く推奨</strong> ⭐） |
 | `open` | 誰でもDM可能（テスト用） |
 | `deny` | DMをブロック |
 
 ### 4-3. ペアリング承認
 
-ボットに初めてDMを送ると**ペアリングリクエスト**が発生します。ターミナルで承認：
+ボットに初めてDMを送ると<strong>ペアリングリクエスト</strong>が発生します。ターミナルで承認：
 
 ```bash
 # 待機中のペアリング一覧を確認
@@ -211,7 +211,7 @@ openclaw pairing approve <リクエストID>
 
 ### 4-4. Telegramグループでも使う
 
-グループにボットを招待すると**メンション方式**で動作します：
+グループにボットを招待すると<strong>メンション方式</strong>で動作します：
 
 ```json5
 {
@@ -284,7 +284,7 @@ openclaw gateway --port 18789 --verbose
 openclaw gateway --bind tailnet --token <トークン>
 ```
 
-トークンは非ローカルバインド時に**必須**です。
+トークンは非ローカルバインド時に<strong>必須</strong>です。
 
 ### ステータス確認
 
@@ -299,7 +299,7 @@ openclaw doctor
 openclaw health
 ```
 
-ブラウザで**http://127.0.0.1:18789/**にアクセスすると、ダッシュボードから実行状態、チャンネル接続、最近の会話などを視覚的に確認できます。
+ブラウザで<strong>http://127.0.0.1:18789/</strong>にアクセスすると、ダッシュボードから実行状態、チャンネル接続、最近の会話などを視覚的に確認できます。
 
 ---
 
@@ -338,7 +338,7 @@ Telegramチャットですぐ使える基本コマンド：
 
 ## 7. ワークスペース設定 — エージェントの頭脳を構成する
 
-動作確認ができたら、次は**自分に合ったエージェント**にカスタマイズしましょう。
+動作確認ができたら、次は<strong>自分に合ったエージェント</strong>にカスタマイズしましょう。
 
 ### ワークスペースのファイル構成
 
@@ -445,7 +445,7 @@ npx clawhub@latest install trello
 ls ~/.openclaw/workspace/skills/
 ```
 
-インストールされたスキルは自動的に認識されます。Gatewayの再起動なしに**ホットリロード**されます。
+インストールされたスキルは自動的に認識されます。Gatewayの再起動なしに<strong>ホットリロード</strong>されます。
 
 ---
 
@@ -493,14 +493,14 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ### すぐに試せること
 
-1. **SOUL.mdを編集** — エージェントに自分だけの性格を付与
-2. **HEARTBEAT.mdを作成** — 自動チェックリストの設定
-3. **ClawHubでスキルを探索** — [clawhub.com](https://clawhub.com)
-4. **Cronジョブを1つ登録** — 毎朝のブリーフィング
+1. <strong>SOUL.mdを編集</strong> — エージェントに自分だけの性格を付与
+2. <strong>HEARTBEAT.mdを作成</strong> — 自動チェックリストの設定
+3. <strong>ClawHubでスキルを探索</strong> — [clawhub.com](https://clawhub.com)
+4. <strong>Cronジョブを1つ登録</strong> — 毎朝のブリーフィング
 
 ### 第3回で扱う内容
 
-**[第3回（活用法編）](/ja/blog/ja/openclaw-advanced-usage/)**では、実際にOpenClawを**強力な自動化ツール**として活用する上級事例を紹介します：
+<strong>[第3回（活用法編）](/ja/blog/ja/openclaw-advanced-usage/)</strong>では、実際にOpenClawを<strong>強力な自動化ツール</strong>として活用する上級事例を紹介します：
 
 - n8n/Make連携Webhookワークフロー
 - MCPサーバー連携

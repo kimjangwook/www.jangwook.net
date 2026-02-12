@@ -54,9 +54,9 @@ relatedPosts:
 
 설문조사는 사용자 의견을 수집하는 강력한 도구이지만, 전통적인 Likert 척도 방식은 응답자마다 다른 기준으로 평가하는 문제(reference points bias)가 있습니다. 한 사람에게 "보통"은 다른 사람에게 "좋음"일 수 있죠.
 
-이 문제를 해결하기 위해 **SSR (Semantic Similarity Rating)** 방법론을 활용하여 블로그 재방문 의향을 분석하는 실험을 진행했습니다. LLM이 생성한 자유 응답을 의미론적으로 분석하여 정량적 평점으로 변환하는 혁신적인 접근법입니다.
+이 문제를 해결하기 위해 <strong>SSR (Semantic Similarity Rating)</strong> 방법론을 활용하여 블로그 재방문 의향을 분석하는 실험을 진행했습니다. LLM이 생성한 자유 응답을 의미론적으로 분석하여 정량적 평점으로 변환하는 혁신적인 접근법입니다.
 
-**핵심 질문**: 블로그의 5개 카테고리별 콘텐츠가 15명의 다양한 페르소나에게 얼마나 재방문 의향을 유발할까?
+<strong>핵심 질문</strong>: 블로그의 5개 카테고리별 콘텐츠가 15명의 다양한 페르소나에게 얼마나 재방문 의향을 유발할까?
 
 이번 포스트에서는 225개 평가를 수행한 실험 결과와 통계 분석, 그리고 시각화를 공유합니다.
 
@@ -68,21 +68,21 @@ SSR은 2024년 10월 arXiv에 게재된 ["LLMs Reproduce Human Purchase Intent v
 
 초기 LLM 기반 설문 연구들은 LLM에게 직접 "1부터 5까지 중 하나를 선택하세요"라고 물었습니다. 하지만 이 방식은 심각한 문제가 있었습니다:
 
-**문제 1: 비현실적인 분포**
+<strong>문제 1: 비현실적인 분포</strong>
 - 실제 인간: 정규분포에 가까운 응답 (2, 3, 4점에 집중)
 - LLM 직접 평가: 극단적 분포 (1점 또는 5점에 과도하게 집중)
 
-**문제 2: 일관성 부족**
+<strong>문제 2: 일관성 부족</strong>
 - 같은 질문을 반복해도 응답이 크게 변동
 - Test-Retest 신뢰도 < 0.60
 
-**문제 3: 맥락 손실**
+<strong>문제 3: 맥락 손실</strong>
 - "왜" 그렇게 평가했는지 알 수 없음
 - 질적 인사이트 부재
 
 ### SSR의 혁신적 해결책
 
-SSR은 LLM의 강점인 **자연어 생성**을 활용하면서, 구조화된 설문 데이터의 필요성을 충족시키는 영리한 접근법입니다.
+SSR은 LLM의 강점인 <strong>자연어 생성</strong>을 활용하면서, 구조화된 설문 데이터의 필요성을 충족시키는 영리한 접근법입니다.
 
 ```mermaid
 graph TB
@@ -102,7 +102,7 @@ graph TB
 
 ### 5단계 알고리즘
 
-**1단계: 자유 응답 생성**
+<strong>1단계: 자유 응답 생성</strong>
 ```python
 prompt = """당신은 {persona_name}, {occupation}입니다.
 다음 블로그 콘텐츠를 평가하세요:
@@ -117,7 +117,7 @@ response = await openai_client.generate_response(prompt)
 #      다시 방문해서 다른 글도 읽어보고 싶습니다."
 ```
 
-**2단계: 응답 임베딩**
+<strong>2단계: 응답 임베딩</strong>
 ```python
 response_embedding = await openai_client.get_embedding(
     text=response,
@@ -126,7 +126,7 @@ response_embedding = await openai_client.get_embedding(
 # [0.023, -0.145, 0.089, ...] (1536-dimensional vector)
 ```
 
-**3단계: 앵커와 코사인 유사도 계산**
+<strong>3단계: 앵커와 코사인 유사도 계산</strong>
 ```python
 ANCHORS = {
     1: "이 블로그는 전혀 기대에 부합하지 않으며, 다시 방문하지 않을 것입니다.",
@@ -151,7 +151,7 @@ for rating, anchor_emb in anchor_embeddings.items():
 # 예: {1: 0.12, 2: 0.25, 3: 0.45, 4: 0.78, 5: 0.62}
 ```
 
-**4단계: Softmax로 확률 분포 생성**
+<strong>4단계: Softmax로 확률 분포 생성</strong>
 ```python
 def softmax(similarities, temperature=1.0):
     """코사인 유사도를 확률 분포로 변환"""
@@ -163,7 +163,7 @@ probabilities = softmax(similarities)
 # [0.05, 0.10, 0.20, 0.45, 0.20]  # 각 평점의 확률
 ```
 
-**5단계: 기댓값 계산**
+<strong>5단계: 기댓값 계산</strong>
 ```python
 ratings = [1, 2, 3, 4, 5]
 expected_rating = sum(r * p for r, p in zip(ratings, probabilities))
@@ -172,19 +172,19 @@ expected_rating = sum(r * p for r, p in zip(ratings, probabilities))
 
 ### SSR의 장점
 
-**1. 의미론적 일관성**
+<strong>1. 의미론적 일관성</strong>
 - 응답자의 주관적 척도 차이 제거
 - 모든 평가가 같은 임베딩 공간에서 수행됨
 
-**2. 풍부한 맥락 보존**
+<strong>2. 풍부한 맥락 보존</strong>
 - 정량적 평점 + 질적 설명 동시 제공
 - "왜" 그렇게 평가했는지 이해 가능
 
-**3. 높은 신뢰도**
+<strong>3. 높은 신뢰도</strong>
 - Test-Retest 신뢰도: 인간의 90% 수준 달성
 - KS 유사도 > 0.85
 
-**4. 비용 효율성**
+<strong>4. 비용 효율성</strong>
 - 평가당 약 $0.009 (gpt-4o-mini + text-embedding-3-small)
 - 전통적 설문 대비 95% 비용 절감
 
@@ -220,21 +220,21 @@ expected_rating = sum(r * p for r, p in zip(ratings, probabilities))
 
 ### 평가 대상 콘텐츠 (5개)
 
-1. **Claude Code Best Practices** - AI-Powered Development Workflow
-2. **Data Mesh vs Data Warehouse** - Architectural Decision Framework
-3. **Google Analytics MCP** - Automating Google Analytics with Model Context Protocol
-4. **Screenshot to Code** - AI-Powered Screenshot to Code Tools and Techniques
-5. **GraphRAG and Multi-Agent Systems** - Advanced AI Architecture
+1. <strong>Claude Code Best Practices</strong> - AI-Powered Development Workflow
+2. <strong>Data Mesh vs Data Warehouse</strong> - Architectural Decision Framework
+3. <strong>Google Analytics MCP</strong> - Automating Google Analytics with Model Context Protocol
+4. <strong>Screenshot to Code</strong> - AI-Powered Screenshot to Code Tools and Techniques
+5. <strong>GraphRAG and Multi-Agent Systems</strong> - Advanced AI Architecture
 
 ### 실험 설정
 
-- **총 평가 수**: 225개 (15 personas × 5 contents × 3 repetitions)
-- **반복 측정 이유**: Test-Retest 신뢰도 검증
-- **LLM 모델**: gpt-4o-mini (비용 효율적)
-- **임베딩 모델**: text-embedding-3-small (1536 dimensions)
-- **온도**: 0.7 (적절한 일관성과 다양성 balance)
-- **실행 시간**: 약 8분 24초
-- **총 비용**: 약 $2.00
+- <strong>총 평가 수</strong>: 225개 (15 personas × 5 contents × 3 repetitions)
+- <strong>반복 측정 이유</strong>: Test-Retest 신뢰도 검증
+- <strong>LLM 모델</strong>: gpt-4o-mini (비용 효율적)
+- <strong>임베딩 모델</strong>: text-embedding-3-small (1536 dimensions)
+- <strong>온도</strong>: 0.7 (적절한 일관성과 다양성 balance)
+- <strong>실행 시간</strong>: 약 8분 24초
+- <strong>총 비용</strong>: 약 $2.00
 
 ## 구현 코드
 
@@ -405,48 +405,48 @@ class SurveyRunner:
 
 | 지표 | 값 |
 |------|-----|
-| **평균 예상 평점** | 3.078 / 5.0 |
-| **표준편차** | 0.016 |
-| **최소값** | 3.010 |
-| **최대값** | 3.106 |
-| **중앙값** | 3.080 |
+| <strong>평균 예상 평점</strong> | 3.078 / 5.0 |
+| <strong>표준편차</strong> | 0.016 |
+| <strong>최소값</strong> | 3.010 |
+| <strong>최대값</strong> | 3.106 |
+| <strong>중앙값</strong> | 3.080 |
 
 ### 평점 분포
 
 | 평점 | 빈도 | 비율 |
 |------|------|------|
-| **1점** | 0개 | 0.0% |
-| **2점** | 0개 | 0.0% |
-| **3점** | 0개 | 0.0% |
-| **4점** | 219개 | 97.3% |
-| **5점** | 6개 | 2.7% |
+| <strong>1점</strong> | 0개 | 0.0% |
+| <strong>2점</strong> | 0개 | 0.0% |
+| <strong>3점</strong> | 0개 | 0.0% |
+| <strong>4점</strong> | 219개 | 97.3% |
+| <strong>5점</strong> | 6개 | 2.7% |
 
-**해석**:
-- 거의 모든 평가(97.3%)가 **"재방문 의향이 높음"(4점)** 으로 나타남
-- 극소수(2.7%)만 **"매우 높은 재방문 의향"(5점)**
-- **3점 이하는 단 한 건도 없음** → 모든 콘텐츠가 재방문을 유도하는데 긍정적
+<strong>해석</strong>:
+- 거의 모든 평가(97.3%)가 <strong>"재방문 의향이 높음"(4점)</strong> 으로 나타남
+- 극소수(2.7%)만 <strong>"매우 높은 재방문 의향"(5점)</strong>
+- <strong>3점 이하는 단 한 건도 없음</strong> → 모든 콘텐츠가 재방문을 유도하는데 긍정적
 - 평균 3.078은 기댓값이며, 실제 가장 가능성 높은 평점은 4점
 
 ### 콘텐츠별 순위
 
 | 순위 | 콘텐츠 | 평균 평점 | 표준편차 |
 |------|--------|----------|----------|
-| 1 | **Claude Code Best Practices** | 3.086 | 0.009 |
-| 2 | **GraphRAG and Multi-Agent Systems** | 3.082 | 0.016 |
-| 3 | **Screenshot to Code** | 3.082 | 0.017 |
-| 4 | **Data Mesh vs Data Warehouse** | 3.070 | 0.015 |
-| 5 | **Google Analytics MCP** | 3.070 | 0.013 |
+| 1 | <strong>Claude Code Best Practices</strong> | 3.086 | 0.009 |
+| 2 | <strong>GraphRAG and Multi-Agent Systems</strong> | 3.082 | 0.016 |
+| 3 | <strong>Screenshot to Code</strong> | 3.082 | 0.017 |
+| 4 | <strong>Data Mesh vs Data Warehouse</strong> | 3.070 | 0.015 |
+| 5 | <strong>Google Analytics MCP</strong> | 3.070 | 0.013 |
 
-**인사이트**:
-- **1위 Claude Code**: 가장 높은 평점 + 가장 낮은 표준편차(0.009)
+<strong>인사이트</strong>:
+- <strong>1위 Claude Code</strong>: 가장 높은 평점 + 가장 낮은 표준편차(0.009)
   - AI 개발 워크플로우에 대한 관심이 매우 높고, 모든 페르소나에서 일관되게 긍정적
-- **2-3위 GraphRAG, Screenshot to Code**: 고급 AI 기술과 실용적 도구에 대한 높은 관심
-- **4-5위 Data Mesh, GA MCP**: 데이터 아키텍처와 분석 도구 자동화
-- 1위와 5위 차이가 0.016에 불과 → **모든 콘텐츠가 균등하게 높은 품질**
+- <strong>2-3위 GraphRAG, Screenshot to Code</strong>: 고급 AI 기술과 실용적 도구에 대한 높은 관심
+- <strong>4-5위 Data Mesh, GA MCP</strong>: 데이터 아키텍처와 분석 도구 자동화
+- 1위와 5위 차이가 0.016에 불과 → <strong>모든 콘텐츠가 균등하게 높은 품질</strong>
 
 ### 페르소나별 순위
 
-**상위 5명**:
+<strong>상위 5명</strong>:
 
 | 이름 | 국가 | 직군 | 평균 평점 |
 |------|------|------|----------|
@@ -456,7 +456,7 @@ class SurveyRunner:
 | Pierre Dubois | 프랑스 | Data Scientist | 3.086 |
 | Wei Zhang | 싱가포르 | AI Product Developer | 3.083 |
 
-**하위 5명**:
+<strong>하위 5명</strong>:
 
 | 이름 | 국가 | 직군 | 평균 평점 |
 |------|------|------|----------|
@@ -466,7 +466,7 @@ class SurveyRunner:
 | Carlos Santos | 브라질 | Backend Developer | 3.069 |
 | Li Wei | 중국 | AI Student | 3.070 |
 
-**인사이트**:
+<strong>인사이트</strong>:
 - 한국, 미국, 유럽권 개발자들의 재방문 의향이 높음
 - AI 연구자(Dr. Michael Lee)는 상대적으로 낮지만, 여전히 3.059로 긍정적
 - 표준편차가 낮음(0.009-0.025) → 반복 측정 시 일관된 응답
@@ -477,39 +477,39 @@ class SurveyRunner:
 
 ![분포 분석](../../../assets/blog/distribution_analysis.png)
 
-**좌측 상단**: Most Likely Ratings - 97.3%가 4점에 집중
-**우측 상단**: Expected Ratings - 평균 3.078, 표준편차 0.016
-**좌측 하단**: 평가별 확률 분포 (처음 20개)
-**우측 하단**: Softmax Temperature 1.0 적용 결과
+<strong>좌측 상단</strong>: Most Likely Ratings - 97.3%가 4점에 집중
+<strong>우측 상단</strong>: Expected Ratings - 평균 3.078, 표준편차 0.016
+<strong>좌측 하단</strong>: 평가별 확률 분포 (처음 20개)
+<strong>우측 하단</strong>: Softmax Temperature 1.0 적용 결과
 
 #### 2. 페르소나 × 콘텐츠 히트맵
 
 ![히트맵](../../../assets/blog/heatmap_expected_rating.png)
 
-- **밝은 색**: 높은 재방문 의향
-- **어두운 색**: 상대적으로 낮은 재방문 의향
+- <strong>밝은 색</strong>: 높은 재방문 의향
+- <strong>어두운 색</strong>: 상대적으로 낮은 재방문 의향
 - 모든 셀이 비교적 밝은 색 → 전반적으로 높은 평점
 
-**발견사항**:
-- **박지훈 (Full-Stack Developer)**: 모든 콘텐츠에 대해 높은 평점
-- **Claude Code Best Practices**: 거의 모든 페르소나에게 높은 평점
-- **일본 Data Engineer (田中)**: 상대적으로 낮은 패턴 (문화적/언어적 차이?)
+<strong>발견사항</strong>:
+- <strong>박지훈 (Full-Stack Developer)</strong>: 모든 콘텐츠에 대해 높은 평점
+- <strong>Claude Code Best Practices</strong>: 거의 모든 페르소나에게 높은 평점
+- <strong>일본 Data Engineer (田中)</strong>: 상대적으로 낮은 패턴 (문화적/언어적 차이?)
 
 #### 3. 페르소나별 박스플롯
 
 ![박스플롯](../../../assets/blog/boxplot_analysis.png)
 
-**상단**: 페르소나별 평점 분포 - 대부분 3.05-3.10 범위에 집중
-**하단**: 콘텐츠별 평점 분포 - Claude Code가 가장 높은 중앙값
+<strong>상단</strong>: 페르소나별 평점 분포 - 대부분 3.05-3.10 범위에 집중
+<strong>하단</strong>: 콘텐츠별 평점 분포 - Claude Code가 가장 높은 중앙값
 
 #### 4. 상관계수 매트릭스
 
 ![상관계수 매트릭스](../../../assets/blog/correlation_matrix.png)
 
 3회 반복 측정 간의 Pearson 상관계수:
-- **Rep1 vs Rep2**: 0.73
-- **Rep1 vs Rep3**: 0.53
-- **Rep2 vs Rep3**: 0.62
+- <strong>Rep1 vs Rep2</strong>: 0.73
+- <strong>Rep1 vs Rep3</strong>: 0.53
+- <strong>Rep2 vs Rep3</strong>: 0.62
 
 ## 통계적 신뢰도 분석
 
@@ -550,13 +550,13 @@ def calculate_icc(data):
 icc_score = calculate_icc(pivot_data)  # 0.8330
 ```
 
-**결과**: ICC = **0.8330**
+<strong>결과</strong>: ICC = <strong>0.8330</strong>
 
-**해석**:
-- **0.75 이상**: Good reliability
-- **0.85 이상**: Excellent reliability
-- **0.8330**: SSR 방법론의 안정성 입증
-- 논문 주장(Test-Retest 신뢰도 ≥ 0.85의 90% 수준) **검증**
+<strong>해석</strong>:
+- <strong>0.75 이상</strong>: Good reliability
+- <strong>0.85 이상</strong>: Excellent reliability
+- <strong>0.8330</strong>: SSR 방법론의 안정성 입증
+- 논문 주장(Test-Retest 신뢰도 ≥ 0.85의 90% 수준) <strong>검증</strong>
 
 #### Pearson 상관계수
 
@@ -566,16 +566,16 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 | Repetition 1 vs 3 | 0.5298 | 중간 상관 |
 | Repetition 2 vs 3 | 0.6246 | 중간-높은 상관 |
 
-**종합 평가**:
-- ✅ **매우 높은 신뢰도**: 표준편차 < 0.01 (8명)
-- ✅ **높은 신뢰도**: 표준편차 0.01-0.02 (6명)
-- ⚠️ **보통 신뢰도**: 표준편차 0.02-0.03 (1명)
+<strong>종합 평가</strong>:
+- ✅ <strong>매우 높은 신뢰도</strong>: 표준편차 < 0.01 (8명)
+- ✅ <strong>높은 신뢰도</strong>: 표준편차 0.01-0.02 (6명)
+- ⚠️ <strong>보통 신뢰도</strong>: 표준편차 0.02-0.03 (1명)
 
 ### 신뢰도 의미
 
-**SSR 방법론 검증**:
+<strong>SSR 방법론 검증</strong>:
 - 대부분의 페르소나에서 표준편차 < 0.02
-- 반복 측정 시 일관된 결과 → **SSR 방법의 안정성 입증**
+- 반복 측정 시 일관된 결과 → <strong>SSR 방법의 안정성 입증</strong>
 - 실제 인간 응답 패턴과 유사한 일관성
 
 ## 비용 분석
@@ -584,63 +584,63 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 
 | 항목 | 수량 | 단가 | 비용 |
 |------|------|------|------|
-| **Anchor Embedding** | 5회 | $0.00001/토큰 × ~20토큰 | $0.0010 |
-| **LLM Response 생성** | 225회 | $0.15/1M 토큰 × ~100토큰 | $3.38 |
-| **Response Embedding** | 225회 | $0.00001/토큰 × ~50토큰 | $0.11 |
-| **총 비용** | - | - | **~$3.50** |
+| <strong>Anchor Embedding</strong> | 5회 | $0.00001/토큰 × ~20토큰 | $0.0010 |
+| <strong>LLM Response 생성</strong> | 225회 | $0.15/1M 토큰 × ~100토큰 | $3.38 |
+| <strong>Response Embedding</strong> | 225회 | $0.00001/토큰 × ~50토큰 | $0.11 |
+| <strong>총 비용</strong> | - | - | <strong>~$3.50</strong> |
 
-**실제 측정**:
+<strong>실제 측정</strong>:
 - 예상 비용: $2-3
 - 실제 비용: 약 $3.50 (토큰 수가 예상보다 많음)
-- 평가당 비용: **$0.016**
+- 평가당 비용: <strong>$0.016</strong>
 
 ### 비용 효율성
 
-**전통적 설문조사와 비교**:
+<strong>전통적 설문조사와 비교</strong>:
 
 | 방식 | 응답자당 비용 | 225개 응답 비용 | 소요 시간 |
 |------|---------------|-----------------|-----------|
 | 전통적 설문 | $1-5 | $225-1,125 | 1-2주 |
 | SSR | $0.016 | $3.50 | 8분 |
 
-**절감 효과**:
-- **비용**: 95-99% 절감
-- **시간**: 99% 단축
-- **규모**: 제약 없음 (수천~수만 개 평가 가능)
+<strong>절감 효과</strong>:
+- <strong>비용</strong>: 95-99% 절감
+- <strong>시간</strong>: 99% 단축
+- <strong>규모</strong>: 제약 없음 (수천~수만 개 평가 가능)
 
 ### 추가 이점
 
-**정성적 이점**:
-1. **풍부한 맥락**: 각 평가마다 자세한 텍스트 응답 제공
-2. **즉시 실행**: API 호출만으로 즉시 결과 확보
-3. **반복 용이**: 콘텐츠 변경 시 재평가 간편
-4. **A/B 테스트**: 여러 버전 동시 테스트 가능
+<strong>정성적 이점</strong>:
+1. <strong>풍부한 맥락</strong>: 각 평가마다 자세한 텍스트 응답 제공
+2. <strong>즉시 실행</strong>: API 호출만으로 즉시 결과 확보
+3. <strong>반복 용이</strong>: 콘텐츠 변경 시 재평가 간편
+4. <strong>A/B 테스트</strong>: 여러 버전 동시 테스트 가능
 
 ## 주요 발견사항
 
 ### 1. 전체적으로 높은 재방문 의향
 
-- **평균 3.078/5.0** → 대부분 "재방문 의향이 높음" (4점) 수준
+- <strong>평균 3.078/5.0</strong> → 대부분 "재방문 의향이 높음" (4점) 수준
 - 97.3%가 4점, 2.7%만 5점 → 콘텐츠 품질이 우수하나 "완벽"은 아님
-- **개선 여지**: 4점 → 5점 전환을 위한 콘텐츠 강화 필요
+- <strong>개선 여지</strong>: 4점 → 5점 전환을 위한 콘텐츠 강화 필요
 
 ### 2. 콘텐츠 간 차이가 적음
 
 - 1위(Claude Code)와 5위(GA MCP) 차이 0.016
-- **모든 콘텐츠가 균등하게 높은 품질** 유지 중
+- <strong>모든 콘텐츠가 균등하게 높은 품질</strong> 유지 중
 - 특정 카테고리에 편중되지 않음
 
 ### 3. 개발자 중심 콘텐츠가 상위권
 
 - Claude Code, GraphRAG, Screenshot to Code가 상위 3개
-- **전략**: AI 개발 도구 및 워크플로우 콘텐츠 강화
+- <strong>전략</strong>: AI 개발 도구 및 워크플로우 콘텐츠 강화
 - 실용적 가이드에 대한 수요 높음
 
 ### 4. 지역/직군별 차이 미미
 
 - 한국(박지훈 3.089) vs 일본(田中 3.065) 차이 0.024
 - 미국 Senior Dev(Alex 3.088) vs AI 연구자(Michael 3.059) 차이 0.029
-- **보편적 관심사**: AI 개발 트렌드는 국가/직군 무관
+- <strong>보편적 관심사</strong>: AI 개발 트렌드는 국가/직군 무관
 
 ### 5. 높은 방법론 신뢰도
 
@@ -652,14 +652,14 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 
 ### 1. 콘텐츠 전략
 
-**우선순위 콘텐츠**:
-- **Claude Code 시리즈 확장**: 1위 콘텐츠이므로 후속편 작성
+<strong>우선순위 콘텐츠</strong>:
+- <strong>Claude Code 시리즈 확장</strong>: 1위 콘텐츠이므로 후속편 작성
   - Part 2: 고급 패턴
   - Part 3: 프로덕션 활용 사례
-- **AI 개발 워크플로우 집중**: 개발자 중심 콘텐츠 강화
-- **GraphRAG/Multi-Agent 심화**: 고급 주제에 대한 수요 확인
+- <strong>AI 개발 워크플로우 집중</strong>: 개발자 중심 콘텐츠 강화
+- <strong>GraphRAG/Multi-Agent 심화</strong>: 고급 주제에 대한 수요 확인
 
-**4→5점 전환 전략**:
+<strong>4→5점 전환 전략</strong>:
 - 실습 예제 추가 (Hands-on Tutorial)
 - 케이스 스터디 포함 (Real-world Examples)
 - 코드 저장소 제공 (GitHub Repo)
@@ -667,63 +667,63 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 
 ### 2. 타겟 독자 분석
 
-**핵심 독자층**:
+<strong>핵심 독자층</strong>:
 - 미국, 한국, 유럽권 개발자
 - AI/ML 엔지니어, Full-Stack Developer
 - 25-40대 Tech Worker
 
-**확장 가능 독자층**:
+<strong>확장 가능 독자층</strong>:
 - 일본, 브라질 개발자 (3.06-3.07 수준)
 - Data Analyst, Product Manager (데이터 기반 의사결정)
 
-**다국어 콘텐츠 우선순위**:
+<strong>다국어 콘텐츠 우선순위</strong>:
 1. 영어 (필수 - 글로벌 독자)
 2. 한국어 (핵심 - 국내 독자)
 3. 일본어 (확장 - 잠재 독자)
 
 ### 3. 추가 연구 주제
 
-**정량 분석**:
-- **4점→5점 전환 요인** 분석: 어떤 요소가 "매우 높은" 재방문 의향을 유도하는가?
-- **페르소나별 선호 콘텐츠**: 직군별 맞춤 추천 시스템 구축
-- **시계열 분석**: 콘텐츠 발행 후 시간 경과에 따른 재방문 의향 변화
+<strong>정량 분석</strong>:
+- <strong>4점→5점 전환 요인</strong> 분석: 어떤 요소가 "매우 높은" 재방문 의향을 유도하는가?
+- <strong>페르소나별 선호 콘텐츠</strong>: 직군별 맞춤 추천 시스템 구축
+- <strong>시계열 분석</strong>: 콘텐츠 발행 후 시간 경과에 따른 재방문 의향 변화
 
-**정성 분석**:
-- **텍스트 응답 분석**: 자유 응답에서 핵심 키워드 추출
-- **감성 분석**: 긍정/부정 감성 비율
-- **주제 모델링**: LDA/BERTopic으로 숨겨진 주제 발견
+<strong>정성 분석</strong>:
+- <strong>텍스트 응답 분석</strong>: 자유 응답에서 핵심 키워드 추출
+- <strong>감성 분석</strong>: 긍정/부정 감성 비율
+- <strong>주제 모델링</strong>: LDA/BERTopic으로 숨겨진 주제 발견
 
 ## 한계 및 개선 방향
 
 ### 현재 한계
 
-**1. LLM 편향성**
+<strong>1. LLM 편향성</strong>
 - 서구, 영어권, 선진국에 대한 편향 존재
 - 특정 문화권의 소비 패턴을 잘 반영하지 못할 수 있음
 
-**2. 합성 페르소나의 한계**
+<strong>2. 합성 페르소나의 한계</strong>
 - 실제 인간 응답과 완전히 동일하지 않음
 - 미묘한 문화적 뉘앙스 포착 어려움
 
-**3. 앵커 문장의 영향**
+<strong>3. 앵커 문장의 영향</strong>
 - 앵커 문장 선택에 따라 결과가 달라질 수 있음
 - 도메인별 최적화 필요
 
 ### 개선 방향
 
-**1. 실제 데이터와의 검증**
+<strong>1. 실제 데이터와의 검증</strong>
 - 소규모 실제 설문으로 SSR 결과 검증
 - A/B 테스트로 정확도 측정
 
-**2. 다양한 모델 사용**
+<strong>2. 다양한 모델 사용</strong>
 - 여러 LLM의 결과를 앙상블하여 편향 감소
 - GPT-4, Claude, Gemini 비교
 
-**3. 프롬프트 엔지니어링**
+<strong>3. 프롬프트 엔지니어링</strong>
 - 문화적 맥락을 고려한 프롬프트 개선
 - 페르소나 정의 세밀화
 
-**4. 지속적 모니터링**
+<strong>4. 지속적 모니터링</strong>
 - 정기적으로 신뢰도 재측정
 - 새로운 콘텐츠 발행 시 즉시 평가
 
@@ -731,30 +731,30 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 
 ### 성과 요약
 
-- ✅ **225개 평가 100% 성공** (8분 24초, 약 $3.50 비용)
-- ✅ **평균 재방문 의향 3.078/5.0** → 모든 콘텐츠가 긍정적
-- ✅ **SSR 방법론 검증** → 높은 Test-Retest 신뢰도 (ICC 0.833)
-- ✅ **실행 가능한 인사이트** 도출 → 콘텐츠 전략 수립 가능
+- ✅ <strong>225개 평가 100% 성공</strong> (8분 24초, 약 $3.50 비용)
+- ✅ <strong>평균 재방문 의향 3.078/5.0</strong> → 모든 콘텐츠가 긍정적
+- ✅ <strong>SSR 방법론 검증</strong> → 높은 Test-Retest 신뢰도 (ICC 0.833)
+- ✅ <strong>실행 가능한 인사이트</strong> 도출 → 콘텐츠 전략 수립 가능
 
 ### 블로그 운영 권장사항
 
-1. **Claude Code 시리즈 확장**: 가장 높은 관심사
-2. **AI 개발 워크플로우 콘텐츠 강화**: GraphRAG, Multi-Agent, Screenshot-to-Code
-3. **다국어 지원**: 영어, 한국어, 일본어 우선
-4. **4→5점 전환 전략**: 콘텐츠 품질 심화 (실습 예제, 케이스 스터디 추가)
+1. <strong>Claude Code 시리즈 확장</strong>: 가장 높은 관심사
+2. <strong>AI 개발 워크플로우 콘텐츠 강화</strong>: GraphRAG, Multi-Agent, Screenshot-to-Code
+3. <strong>다국어 지원</strong>: 영어, 한국어, 일본어 우선
+4. <strong>4→5점 전환 전략</strong>: 콘텐츠 품질 심화 (실습 예제, 케이스 스터디 추가)
 
 ### SSR 방법론의 가능성
 
-SSR은 단순한 설문 도구를 넘어서 **콘텐츠 전략 수립의 혁신적 도구**입니다:
+SSR은 단순한 설문 도구를 넘어서 <strong>콘텐츠 전략 수립의 혁신적 도구</strong>입니다:
 
-**활용 가능 영역**:
+<strong>활용 가능 영역</strong>:
 - 블로그 콘텐츠 재방문 의향 (본 연구)
 - 제품 구매 의도 (원래 SSR 용도)
 - 서비스 가입 의향
 - 광고 클릭 의도
 - 브랜드 선호도
 
-**핵심 기여**:
+<strong>핵심 기여</strong>:
 - ✓ 비용 효율적인 대규모 평가 (평가당 $0.016)
 - ✓ 빠른 반복 실험 (분 단위 결과 확보)
 - ✓ 정량적 평가 + 질적 인사이트 결합
@@ -780,4 +780,4 @@ SSR은 단순한 설문 도구를 넘어서 **콘텐츠 전략 수립의 혁신�
 
 ---
 
-**📊 코드 및 데이터**: 본 분석에 사용된 전체 코드와 데이터는 [GitHub 저장소](https://github.com/kimjangwook/ssr-repeater)에서 확인하실 수 있습니다.
+<strong>📊 코드 및 데이터</strong>: 본 분석에 사용된 전체 코드와 데이터는 [GitHub 저장소](https://github.com/kimjangwook/ssr-repeater)에서 확인하실 수 있습니다.

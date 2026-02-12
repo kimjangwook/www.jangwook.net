@@ -82,7 +82,7 @@ relatedPosts:
 
 Next.js 대신 SvelteKit을 선택한 이유:
 
-**1. Svelte 5의 혁신적인 반응성 시스템**
+<strong>1. Svelte 5의 혁신적인 반응성 시스템</strong>
 
 ```typescript
 // Svelte 5 Runes: $state와 $derived
@@ -92,13 +92,13 @@ let doubled = $derived(count * 2);
 // React hooks보다 직관적이고 보일러플레이트 코드 감소
 ```
 
-**2. 번들 크기와 성능**
+<strong>2. 번들 크기와 성능</strong>
 
 - Svelte는 컴파일 시점에 프레임워크 코드를 제거
 - 클라이언트 번들이 React 대비 40% 작음
 - Time to Interactive가 눈에 띄게 빠름
 
-**3. 개발자 경험**
+<strong>3. 개발자 경험</strong>
 
 - 학습 곡선이 낮고 코드가 읽기 쉬움
 - TypeScript 지원 우수
@@ -108,7 +108,7 @@ let doubled = $derived(count * 2);
 
 Firebase 대신 Supabase:
 
-**1. PostgreSQL의 강력함**
+<strong>1. PostgreSQL의 강력함</strong>
 
 ```sql
 -- Row Level Security로 멀티테넌트 구현
@@ -117,14 +117,14 @@ ON credits FOR SELECT
 USING (auth.uid() = user_id);
 ```
 
-**2. 통합된 기능**
+<strong>2. 통합된 기능</strong>
 
 - Auth: 이메일/소셜 로그인 즉시 사용
 - Database: PostgreSQL with real-time subscriptions
 - Storage: 파일 업로드 및 CDN
 - Edge Functions: Serverless 함수 (Deno 기반)
 
-**3. 오픈소스와 가격**
+<strong>3. 오픈소스와 가격</strong>
 
 - 완전 오픈소스 (self-hosting 가능)
 - 무료 티어가 관대 (50,000 MAU, 500MB DB)
@@ -134,7 +134,7 @@ USING (auth.uid() = user_id);
 
 OpenAI GPT 대신 Gemini:
 
-**1. 비용 효율성**
+<strong>1. 비용 효율성</strong>
 
 ```
 Gemini 2.5 Flash:
@@ -148,7 +148,7 @@ GPT-4 Turbo:
 → 약 100배 저렴
 ```
 
-**2. Structured Output 지원**
+<strong>2. Structured Output 지원</strong>
 
 ```typescript
 const responseSchema = {
@@ -182,20 +182,20 @@ const result = await model.generateContent({
 });
 ```
 
-**3. 멀티모달 성능**
+<strong>3. 멀티모달 성능</strong>
 
 - 이미지 OCR 품질이 우수 (OmniDocBench 벤치마크 1위)
 - 여권, 영수증 같은 복잡한 레이아웃 처리 강점
 
 ### Vercel을 배포 플랫폼으로 선택한 이유
 
-**1. SvelteKit 최적화**
+<strong>1. SvelteKit 최적화</strong>
 
 - SvelteKit을 만든 Vercel이 직접 지원
 - 자동 SSR/Edge Function 배포
 - 빌드 캐싱으로 배포 속도 빠름
 
-**2. Serverless 아키텍처**
+<strong>2. Serverless 아키텍처</strong>
 
 - API 라우트가 자동으로 serverless function으로 배포
 - 사용량 기반 과금 (트래픽 없으면 비용 거의 없음)
@@ -205,7 +205,7 @@ const result = await model.generateContent({
 
 ### 1. OCR API with Structured Output
 
-**실제 코드** (`src/routes/api/receipt-ocr/+server.ts`):
+<strong>실제 코드</strong> (`src/routes/api/receipt-ocr/+server.ts`):
 
 ```typescript
 import { GoogleGenerativeAI, SchemaType as Type } from '@google/generative-ai';
@@ -283,7 +283,7 @@ const parsedData = JSON.parse(result.response.text());
 // parsedData는 이미 스키마를 준수하는 타입 안전 객체
 ```
 
-**핵심 장점**:
+<strong>핵심 장점</strong>:
 
 - <strong>타입 안전성</strong>: 스키마로 응답 구조 강제
 - <strong>파싱 오류 제거</strong>: JSON 파싱 실패 거의 없음
@@ -291,7 +291,7 @@ const parsedData = JSON.parse(result.response.text());
 
 ### 2. Credit System (크레딧 시스템)
 
-**Stripe Checkout 통합**:
+<strong>Stripe Checkout 통합</strong>:
 
 ```typescript
 // src/routes/agents/credits/+page.server.ts
@@ -342,7 +342,7 @@ export const actions = {
 };
 ```
 
-**Webhook으로 크레딧 부여**:
+<strong>Webhook으로 크레딧 부여</strong>:
 
 ```typescript
 // src/routes/api/webhooks/stripe/+server.ts
@@ -378,7 +378,7 @@ export const POST = async ({ request }) => {
 
 ### 3. API Authentication (API 인증)
 
-**API 키 발급 및 검증**:
+<strong>API 키 발급 및 검증</strong>:
 
 ```typescript
 // API 키 생성
@@ -441,7 +441,7 @@ async function checkAndDeductCredits(userId: string, amount: number) {
 
 ### 4. Multi-language Support (다국어 지원)
 
-**Paraglide를 사용한 i18n**:
+<strong>Paraglide를 사용한 i18n</strong>:
 
 ```typescript
 // src/lib/i18n.ts
@@ -456,7 +456,7 @@ export const i18n = paraglide({
 // 지원 언어: ko, en, ja, zh, es
 ```
 
-**언어별 라우팅**:
+<strong>언어별 라우팅</strong>:
 
 ```typescript
 // src/routes/[lang]/+layout.server.ts
@@ -472,7 +472,7 @@ export const load = async ({ params }) => {
 
 ## 토큰 사용량 추적 및 비용 최적화
 
-**실시간 토큰 모니터링**:
+<strong>실시간 토큰 모니터링</strong>:
 
 ```typescript
 const result = await model.generateContent({...});
@@ -519,7 +519,7 @@ function calculateCost(usage) {
 
 ### SEO/AEO-Driven Acquisition (검색 기반 고객 획득)
 
-**콘텐츠 마케팅 전략**:
+<strong>콘텐츠 마케팅 전략</strong>:
 
 1. <strong>jangwook.net 블로그 활용</strong>
    - 기술 블로그를 통한 브랜드 신뢰도 구축
@@ -538,7 +538,7 @@ function calculateCost(usage) {
 
 ### 3-Month KPI Targets (3개월 KPI 목표)
 
-**현실적인 솔로 개발자 목표**:
+<strong>현실적인 솔로 개발자 목표</strong>:
 
 | 지표 | 목표 | 측정 방법 |
 |-----|-----|---------|
@@ -548,7 +548,7 @@ function calculateCost(usage) {
 | MRR | ¥30,000 | Stripe 구독 합계 |
 | OCR API 호출 | 1,000회 | api_usage 테이블 |
 
-**Why These Numbers?**
+<strong>Why These Numbers?</strong>
 
 - 500 방문자 → SEO로 달성 가능한 현실적 수치
 - 6% 전환율 (30/500) → B2B SaaS 평균
@@ -559,18 +559,18 @@ function calculateCost(usage) {
 
 ### Day 1 (2025-11-24): Foundation
 
-**완료 항목**:
+<strong>완료 항목</strong>:
 - 프로젝트 초기화 (SvelteKit + TypeScript)
 - Supabase 연동 (Auth + Database)
 - 첫 서비스 구현: Receipt OCR for Tax Refund
 - 여권 + 면세 서류 자동 인식
 - Structured Output 스키마 검증
 
-**코드 작성량**: ~800 lines
+<strong>코드 작성량</strong>: ~800 lines
 
 ### Day 2 (2025-11-25): Payment & Second Service
 
-**완료 항목**:
+<strong>완료 항목</strong>:
 - Accounting OCR 서비스 추가
 - Stripe Checkout 통합
 - 크레딧 시스템 구현
@@ -581,26 +581,26 @@ function calculateCost(usage) {
   - 이용약관
 - Google Analytics 연동
 
-**코드 작성량**: ~1,200 lines
+<strong>코드 작성량</strong>: ~1,200 lines
 
 ### Day 3 (2025-11-26): Polish & Launch
 
-**완료 항목**:
+<strong>완료 항목</strong>:
 - 서비스 설명 페이지
 - API 문서 작성
 - 랜딩 페이지 최적화
 - 프로덕션 배포 (Vercel)
 - DNS 설정
 
-**코드 작성량**: ~600 lines
+<strong>코드 작성량</strong>: ~600 lines
 
-**총계**: 3일, ~2,600 lines of code
+<strong>총계</strong>: 3일, ~2,600 lines of code
 
 ## 배운 점
 
 ### 1. SvelteKit 5의 Reactivity는 게임 체인저
 
-**Before (React hooks)**:
+<strong>Before (React hooks)</strong>:
 
 ```typescript
 const [credits, setCredits] = useState(0);
@@ -611,7 +611,7 @@ useEffect(() => {
 }, [credits]);
 ```
 
-**After (Svelte 5 runes)**:
+<strong>After (Svelte 5 runes)</strong>:
 
 ```typescript
 let credits = $state(0);
@@ -619,14 +619,14 @@ let doubled = $derived(credits * 2);
 // 자동으로 반응성 처리, useEffect 불필요
 ```
 
-**실감한 이점**:
+<strong>실감한 이점</strong>:
 - 보일러플레이트 코드 70% 감소
 - 디버깅이 쉬워짐 (명시적 의존성 불필요)
 - 성능 향상 (불필요한 리렌더링 없음)
 
 ### 2. Supabase RLS로 멀티테넌트가 쉬워짐
 
-**Row Level Security 정책**:
+<strong>Row Level Security 정책</strong>:
 
 ```sql
 -- 각 사용자는 자신의 크레딧만 조회 가능
@@ -640,14 +640,14 @@ ON credits FOR INSERT
 USING (auth.role() = 'service_role');
 ```
 
-**이점**:
+<strong>이점</strong>:
 - 애플리케이션 코드에서 권한 검사 불필요
 - SQL 레벨에서 데이터 격리 보장
 - 보안 취약점 원천 차단
 
 ### 3. Gemini API 비용 최적화
 
-**프롬프트 최적화**:
+<strong>프롬프트 최적화</strong>:
 
 ```typescript
 // Before: 긴 프롬프트
@@ -666,7 +666,7 @@ const prompt = `Extract receipt data as JSON:
 // 비용 절감: 83%
 ```
 
-**이미지 크기 최적화**:
+<strong>이미지 크기 최적화</strong>:
 
 ```typescript
 // 이미지를 1024px 이내로 리사이즈
@@ -682,7 +682,7 @@ const optimized = await sharp(imageBuffer)
 
 ### 4. Solo Developer Productivity Tips
 
-**생산성을 극대화한 방법**:
+<strong>생산성을 극대화한 방법</strong>:
 
 1. <strong>Supabase CLI로 로컬 개발</strong>
    ```bash

@@ -752,7 +752,7 @@ Error: Could not find image at ../../../assets/blog/image.jpg
 
 ---
 
-**相关资源**：
+<strong>相关资源</strong>：
 - [Astro Content Collections官方文档](https://docs.astro.build/en/guides/content-collections/)
 - [Astro i18n指南](https://docs.astro.build/en/recipes/i18n/)
 - [Google多语言网站SEO](https://developers.google.com/search/docs/specialty/international)

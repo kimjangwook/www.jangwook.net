@@ -62,23 +62,23 @@ relatedPosts:
 
 ## Overview
 
-Have you ever applied to Google AdSense only to be rejected for **"Low Value Content"**—again and again? That's exactly what happened to me. And this was on a blog with 83 posts in 4 languages (Korean, English, Japanese, Chinese), totaling over 316 technical articles.
+Have you ever applied to Google AdSense only to be rejected for <strong>"Low Value Content"</strong>—again and again? That's exactly what happened to me. And this was on a blog with 83 posts in 4 languages (Korean, English, Japanese, Chinese), totaling over 316 technical articles.
 
-The problem wasn't the content itself. **Technical defects in the site were making Google see it as a "low-quality site."** In this post, I'll share the 8 issues I discovered and fixed. I hope this serves as a practical guide for other developers facing the same challenge.
+The problem wasn't the content itself. <strong>Technical defects in the site were making Google see it as a "low-quality site."</strong> In this post, I'll share the 8 issues I discovered and fixed. I hope this serves as a practical guide for other developers facing the same challenge.
 
 ## Background: Why Was I Rejected?
 
 This blog is a multilingual technical blog built with [Astro](https://astro.build).
 
-- **Content**: 83 posts × 4 languages = 316+ technical articles
-- **Required pages**: Privacy policy, terms of service, and contact page—all in place
-- **Tech stack**: Astro SSG, Cloudflare Pages, Content Collections
+- <strong>Content</strong>: 83 posts × 4 languages = 316+ technical articles
+- <strong>Required pages</strong>: Privacy policy, terms of service, and contact page—all in place
+- <strong>Tech stack</strong>: Astro SSG, Cloudflare Pages, Content Collections
 
 On the surface, all the requirements for AdSense approval were met. But every application returned the same response:
 
-> **"Low Value Content"** — Your site does not have enough useful content.
+> <strong>"Low Value Content"</strong> — Your site does not have enough useful content.
 
-After conducting a full technical audit, I found that **3 critical technical defects**, not the content quality, were the root cause. I also discovered 5 additional issues.
+After conducting a full technical audit, I found that <strong>3 critical technical defects</strong>, not the content quality, were the root cause. I also discovered 5 additional issues.
 
 ## Critical Issue 1: Ezoic ads.txt Conflict (The Most Direct Cause)
 
@@ -105,7 +105,7 @@ There was this line in the GitHub Actions `deploy.yml`:
     curl -L https://srv.adstxtmanager.com/19390/jangwook.net > public/ads.txt
 ```
 
-On every build, Ezoic's `adstxtmanager` downloaded and **overwrote** the `ads.txt`. The local `public/ads.txt` had the correct Google AdSense entry, but it was completely replaced during deployment.
+On every build, Ezoic's `adstxtmanager` downloaded and <strong>overwrote</strong> the `ads.txt`. The local `public/ads.txt` had the correct Google AdSense entry, but it was completely replaced during deployment.
 
 ```
 # Local public/ads.txt (correct content)
@@ -116,7 +116,7 @@ google.com, pub-7556938384772610, DIRECT, f08c47fec0942fa0
 # → pub-7556938384772610 not present!
 ```
 
-**Additionally**, three Ezoic CMP/ad scripts were loading on every page via `BaseHead.astro`:
+<strong>Additionally</strong>, three Ezoic CMP/ad scripts were loading on every page via `BaseHead.astro`:
 
 ```astro
 <!-- BaseHead.astro (problematic scripts) -->
@@ -140,7 +140,7 @@ graph TD
     G --> H["❌ AdSense application rejected"]
 ```
 
-If AdSense doesn't find its pub ID in the site's `ads.txt`, it assumes the site either has **no intention to use AdSense or is already managed by another service**.
+If AdSense doesn't find its pub ID in the site's `ads.txt`, it assumes the site either has <strong>no intention to use AdSense or is already managed by another service</strong>.
 
 ### Fix
 
@@ -165,7 +165,7 @@ google.com, pub-7556938384772610, DIRECT, f08c47fec0942fa0
 
 ### Discovery
 
-Analyzing the build logs revealed **1,365 pages** being generated. With 83 posts × 4 languages = 332, the static page count was abnormally high.
+Analyzing the build logs revealed <strong>1,365 pages</strong> being generated. With 83 posts × 4 languages = 332, the static page count was abnormally high.
 
 ### Root Cause
 
@@ -186,7 +186,7 @@ export async function getStaticPaths() {
 }
 ```
 
-The problem: this code **maps every post to every language route**. Since `post.slug` already includes a language prefix (e.g., `ko/`, `en/`), mapping it across all 4 language routes created massive **cross-language URLs**.
+The problem: this code <strong>maps every post to every language route</strong>. Since `post.slug` already includes a language prefix (e.g., `ko/`, `en/`), mapping it across all 4 language routes created massive <strong>cross-language URLs</strong>.
 
 ```
 # Valid URLs (332)
@@ -210,7 +210,7 @@ graph LR
     D --> E["❌ Entire site classified as<br/>Low Value Content"]
 ```
 
-Google evaluates the overall content quality of a site. When **~73% of all pages are language-mismatched duplicates**, classifying the entire site as "low value content" is the expected outcome.
+Google evaluates the overall content quality of a site. When <strong>~73% of all pages are language-mismatched duplicates</strong>, classifying the entire site as "low value content" is the expected outcome.
 
 ### Fix
 
@@ -228,13 +228,13 @@ export async function getStaticPaths() {
 }
 ```
 
-**Result**: Build pages reduced from **1,365 → 370** (995 ghost pages eliminated)
+<strong>Result</strong>: Build pages reduced from <strong>1,365 → 370</strong> (995 ghost pages eliminated)
 
 ## Critical Issue 3: Sitemap-Wide 404s
 
 ### Discovery
 
-After submitting the sitemap in Google Search Console, very few pages were being indexed. Manually visiting the sitemap URLs in a browser confirmed they **all returned 404**.
+After submitting the sitemap in Google Search Console, very few pages were being indexed. Manually visiting the sitemap URLs in a browser confirmed they <strong>all returned 404</strong>.
 
 ### Root Cause
 
@@ -248,7 +248,7 @@ https://jangwook.net/ko/blog/my-post-title/
 https://jangwook.net/ko/blog/ko/my-post-title/
 ```
 
-The sitemap generated URLs as `/{lang}/blog/{slug}/`, but since `slug` already contained a language prefix like `ko/`, the actual URLs were `/{lang}/blog/{lang}/{slug}/`. **All 332 blog URLs in the sitemap returned 404.**
+The sitemap generated URLs as `/{lang}/blog/{slug}/`, but since `slug` already contained a language prefix like `ko/`, the actual URLs were `/{lang}/blog/{lang}/{slug}/`. <strong>All 332 blog URLs in the sitemap returned 404.</strong>
 
 ```mermaid
 graph TD
@@ -274,11 +274,11 @@ const url = `/${lang}/blog/${post.slug}/`;
 
 ### Problem
 
-**39%** of the 83 posts (~32 posts) had perfectly identical H2/H3 heading counts and code block counts across all 4 language versions. Google can interpret this as **automatically generated content through machine translation**.
+<strong>39%</strong> of the 83 posts (~32 posts) had perfectly identical H2/H3 heading counts and code block counts across all 4 language versions. Google can interpret this as <strong>automatically generated content through machine translation</strong>.
 
 ### Fix
 
-Rather than rewriting all content, the effective approach was explicitly telling Google **"these are official translations of the same content"**:
+Rather than rewriting all content, the effective approach was explicitly telling Google <strong>"these are official translations of the same content"</strong>:
 
 ```html
 <!-- Properly configured hreflang -->
@@ -289,13 +289,13 @@ Rather than rewriting all content, the effective approach was explicitly telling
 <link rel="alternate" hreflang="x-default" href="https://jangwook.net/en/blog/en/my-post/" />
 ```
 
-Properly configured hreflang tags tell Google to treat each language page as an **independent translation**, avoiding duplicate content penalties.
+Properly configured hreflang tags tell Google to treat each language page as an <strong>independent translation</strong>, avoiding duplicate content penalties.
 
 ## Secondary Issue 5: Contact Page Invisible to Crawlers
 
 ### Problem
 
-The contact page consisted solely of a Google Form `<iframe>`. Since crawlers can't read iframe content, this page was **effectively empty**.
+The contact page consisted solely of a Google Form `<iframe>`. Since crawlers can't read iframe content, this page was <strong>effectively empty</strong>.
 
 ```html
 <!-- Original contact page (empty to crawlers) -->
@@ -337,7 +337,7 @@ Added structured, crawler-readable content:
 
 ### Problem
 
-Blog posts' `x-default` pointed to incorrect URLs. While English was set as the default language, the URL conversion didn't transform the language code within the blog path, resulting in **English URLs linking to Korean content**.
+Blog posts' `x-default` pointed to incorrect URLs. While English was set as the default language, the URL conversion didn't transform the language code within the blog path, resulting in <strong>English URLs linking to Korean content</strong>.
 
 ```html
 <!-- Incorrect x-default -->
@@ -365,7 +365,7 @@ function getAlternateUrl(currentUrl: string, targetLang: string): string {
 
 ### Problem
 
-Six blog operations reports (weekly analytics, monthly analytics, AdSense rejection analysis, etc.) existed on the site. These posts are **self-referential analysis of the blog itself**, offering no value to external visitors and qualifying as "self-referential low-value content."
+Six blog operations reports (weekly analytics, monthly analytics, AdSense rejection analysis, etc.) existed on the site. These posts are <strong>self-referential analysis of the blog itself</strong>, offering no value to external visitors and qualifying as "self-referential low-value content."
 
 ### Fix
 
@@ -508,14 +508,14 @@ Based on this experience, here's a technical checklist to review before applying
 
 ## Conclusion
 
-AdSense "Low Value Content" rejections are often **caused by technical defects, not content quality**. Multilingual sites are especially prone to these issues due to the complexity of URL routing, sitemaps, and hreflang configuration.
+AdSense "Low Value Content" rejections are often <strong>caused by technical defects, not content quality</strong>. Multilingual sites are especially prone to these issues due to the complexity of URL routing, sitemaps, and hreflang configuration.
 
 Key takeaways:
 
-1. **Always check your ads.txt on the live site.** CI/CD pipelines can overwrite it silently.
-2. **Monitor your build page count regularly.** If it's higher than expected, ghost pages may be generated.
-3. **Actually visit your sitemap URLs.** Sitemap-to-routing mismatches are a common problem.
-4. **View your site from Google's perspective.** What's obvious to a developer may look completely different to a crawler.
+1. <strong>Always check your ads.txt on the live site.</strong> CI/CD pipelines can overwrite it silently.
+2. <strong>Monitor your build page count regularly.</strong> If it's higher than expected, ghost pages may be generated.
+3. <strong>Actually visit your sitemap URLs.</strong> Sitemap-to-routing mismatches are a common problem.
+4. <strong>View your site from Google's perspective.</strong> What's obvious to a developer may look completely different to a crawler.
 
 I hope this guide helps other developers facing the same challenge.
 

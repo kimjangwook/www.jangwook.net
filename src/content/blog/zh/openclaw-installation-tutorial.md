@@ -11,12 +11,12 @@ tags:
 relatedPosts: []
 ---
 
-> **系列：OpenClaw 完全攻略** (2/3)
+> <strong>系列：OpenClaw 完全攻略</strong> (2/3)
 > 1. [介绍篇](/zh/blog/zh/openclaw-introduction-guide/)
-> 2. **教程篇** ← 当前文章
+> 2. <strong>教程篇</strong> ← 当前文章
 > 3. [实战篇](/zh/blog/zh/openclaw-advanced-usage/)
 
-上一篇文章中，我们了解了 OpenClaw 是什么。这次，我们将**从安装到完成第一次对话**，一步到位。打开终端，跟我来吧！🚀
+上一篇文章中，我们了解了 OpenClaw 是什么。这次，我们将<strong>从安装到完成第一次对话</strong>，一步到位。打开终端，跟我来吧！🚀
 
 ---
 
@@ -26,11 +26,11 @@ OpenClaw 运行在 Node.js 运行时之上。
 
 | 项目 | 要求 |
 |------|------|
-| **Node.js** | v22 或更高（用 `node -v` 确认） |
-| **操作系统** | Windows · macOS · Linux 全部支持 |
+| <strong>Node.js</strong> | v22 或更高（用 `node -v` 确认） |
+| <strong>操作系统</strong> | Windows · macOS · Linux 全部支持 |
 
-- **macOS / Linux** — 无需额外准备，可以直接开始。
-- **Windows** — 原生环境即可运行。也支持 WSL2，但不是必需的。
+- <strong>macOS / Linux</strong> — 无需额外准备，可以直接开始。
+- <strong>Windows</strong> — 原生环境即可运行。也支持 WSL2，但不是必需的。
 
 如果还没有 Node.js，请从[官方网站](https://nodejs.org/)下载 LTS 版本（22+），或使用版本管理器：
 
@@ -50,9 +50,9 @@ fnm use 22
 
 ### 可选项（但强烈推荐！）
 
-- **Brave Search API 密钥** — 使用网络搜索功能时需要。在 [Brave Search API](https://brave.com/search/api/) 免费获取
-- **AI 模型 API 密钥** — Anthropic、OpenAI、Google 中至少一个。通过 `ANTHROPIC_API_KEY` 或 `OPENAI_API_KEY` 环境变量设置
-- **Git** — 源码构建时需要
+- <strong>Brave Search API 密钥</strong> — 使用网络搜索功能时需要。在 [Brave Search API](https://brave.com/search/api/) 免费获取
+- <strong>AI 模型 API 密钥</strong> — Anthropic、OpenAI、Google 中至少一个。通过 `ANTHROPIC_API_KEY` 或 `OPENAI_API_KEY` 环境变量设置
+- <strong>Git</strong> — 源码构建时需要
 
 ---
 
@@ -98,7 +98,7 @@ pnpm build
 openclaw onboard --install-daemon
 ```
 
-> **小贴士：** 如果你考虑贡献代码或想提前体验最新功能，推荐源码构建。在 npm 和源码构建之间切换也很简单 — `openclaw doctor` 会自动更新 Gateway 服务入口。
+> <strong>小贴士：</strong> 如果你考虑贡献代码或想提前体验最新功能，推荐源码构建。在 npm 和源码构建之间切换也很简单 — `openclaw doctor` 会自动更新 Gateway 服务入口。
 
 ---
 
@@ -114,16 +114,16 @@ openclaw onboard --install-daemon
 
 | 配置项 | 说明 |
 |---|---|
-| **Gateway** | AI 代理常驻的常驻守护进程 |
-| **认证** | AI 模型 API 密钥（Anthropic、OpenAI 等） |
-| **频道** | Telegram、Discord 等消息平台 |
-| **工作区** | 代理的文件工作空间路径 |
-| **Gateway 令牌** | 向导默认生成（即使是 loopback） |
+| <strong>Gateway</strong> | AI 代理常驻的常驻守护进程 |
+| <strong>认证</strong> | AI 模型 API 密钥（Anthropic、OpenAI 等） |
+| <strong>频道</strong> | Telegram、Discord 等消息平台 |
+| <strong>工作区</strong> | 代理的文件工作空间路径 |
+| <strong>Gateway 令牌</strong> | 向导默认生成（即使是 loopback） |
 
 添加 `--install-daemon` 参数后，Gateway 将注册为操作系统服务：
-- **macOS**：launchd
-- **Linux**：systemd 用户服务
-- **Windows**：Windows 服务
+- <strong>macOS</strong>：launchd
+- <strong>Linux</strong>：systemd 用户服务
+- <strong>Windows</strong>：Windows 服务
 
 重启后也会自动运行，完全不用担心。
 
@@ -164,12 +164,12 @@ openclaw onboard --install-daemon
 
 ## 4. Telegram 机器人集成 — 最简单的频道
 
-在所有频道中，**Telegram** 的入门门槛最低。让我们从这里开始。
+在所有频道中，<strong>Telegram</strong> 的入门门槛最低。让我们从这里开始。
 
 ### 4-1. 创建机器人
 
 1. 在 Telegram 中向 [@BotFather](https://t.me/BotFather) 发送 `/newbot` 命令。
-2. 设定机器人名称和 username，获得 **API 令牌**。
+2. 设定机器人名称和 username，获得 <strong>API 令牌</strong>。
 3. 复制并保存这个令牌。
 
 ### 4-2. 在配置文件中注册令牌
@@ -191,13 +191,13 @@ openclaw onboard --install-daemon
 
 | 策略 | 行为 |
 |---|---|
-| `pairing` | 需要配对审批（安全起见**强烈推荐** ⭐） |
+| `pairing` | 需要配对审批（安全起见<strong>强烈推荐</strong> ⭐） |
 | `open` | 任何人都可以私信（仅供测试） |
 | `deny` | 屏蔽私信 |
 
 ### 4-3. 配对审批
 
-首次向机器人发送私信时，会产生**配对请求**。在终端中审批：
+首次向机器人发送私信时，会产生<strong>配对请求</strong>。在终端中审批：
 
 ```bash
 # 查看待处理的配对列表
@@ -211,7 +211,7 @@ openclaw pairing approve <请求ID>
 
 ### 4-4. 在 Telegram 群组中使用
 
-将机器人邀请到群组后，以**@提及**方式工作：
+将机器人邀请到群组后，以<strong>@提及</strong>方式工作：
 
 ```json5
 {
@@ -284,7 +284,7 @@ openclaw gateway --port 18789 --verbose
 openclaw gateway --bind tailnet --token <令牌>
 ```
 
-非本地绑定时，令牌是**必需**的。
+非本地绑定时，令牌是<strong>必需</strong>的。
 
 ### 状态检查
 
@@ -299,7 +299,7 @@ openclaw doctor
 openclaw health
 ```
 
-在浏览器中访问 **http://127.0.0.1:18789/**，可以通过仪表板可视化查看运行状态、频道连接、最近对话等信息。
+在浏览器中访问 <strong>http://127.0.0.1:18789/</strong>，可以通过仪表板可视化查看运行状态、频道连接、最近对话等信息。
 
 ---
 
@@ -338,7 +338,7 @@ openclaw message send --target telegram:<聊天ID> --message "你好，OpenClaw�
 
 ## 7. 工作区配置 — 构建代理的大脑
 
-确认一切正常后，现在来把它定制成**专属于你的代理**。
+确认一切正常后，现在来把它定制成<strong>专属于你的代理</strong>。
 
 ### 工作区文件结构
 
@@ -445,7 +445,7 @@ npx clawhub@latest install trello
 ls ~/.openclaw/workspace/skills/
 ```
 
-安装的技能会被自动识别。无需重启 Gateway，支持**热重载**。
+安装的技能会被自动识别。无需重启 Gateway，支持<strong>热重载</strong>。
 
 ---
 
@@ -493,14 +493,14 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ### 马上可以尝试的事情
 
-1. **编辑 SOUL.md** — 给代理赋予独特的人设
-2. **创建 HEARTBEAT.md** — 设置自动检查清单
-3. **在 ClawHub 探索技能** — [clawhub.com](https://clawhub.com)
-4. **注册一个定时任务** — 每天早晨简报
+1. <strong>编辑 SOUL.md</strong> — 给代理赋予独特的人设
+2. <strong>创建 HEARTBEAT.md</strong> — 设置自动检查清单
+3. <strong>在 ClawHub 探索技能</strong> — [clawhub.com](https://clawhub.com)
+4. <strong>注册一个定时任务</strong> — 每天早晨简报
 
 ### 第三篇将涵盖的内容
 
-**[第三篇（实战篇）](/zh/blog/zh/openclaw-advanced-usage/)**将介绍如何将 OpenClaw 作为**强大的自动化工具**运用到实际场景中：
+<strong>[第三篇（实战篇）](/zh/blog/zh/openclaw-advanced-usage/)</strong>将介绍如何将 OpenClaw 作为<strong>强大的自动化工具</strong>运用到实际场景中：
 
 - n8n/Make 集成 Webhook 工作流
 - MCP 服务器集成

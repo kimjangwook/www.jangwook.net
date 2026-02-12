@@ -61,7 +61,7 @@ relatedPosts:
 
 One of the biggest challenges when deploying AI systems to production is <strong>infrastructure cost</strong>. Batch processing AI workloads don't need always-on servers, but they require sufficient computing resources when tasks execute.
 
-This article analyzes the architecture of a **serverless AI batch system** built in a real project and explores the advantages of infrastructure management with Terraform.
+This article analyzes the architecture of a <strong>serverless AI batch system</strong> built in a real project and explores the advantages of infrastructure management with Terraform.
 
 ## Architecture Design
 
@@ -94,7 +94,7 @@ graph TD
 
 ### 1. Excellent LLM Compatibility
 
-Terraform's HCL (HashiCorp Configuration Language) has a **declarative and structured syntax** that makes it very easy for LLMs to generate and understand code.
+Terraform's HCL (HashiCorp Configuration Language) has a <strong>declarative and structured syntax</strong> that makes it very easy for LLMs to generate and understand code.
 
 ```hcl
 # Clear structure that's easy for LLMs to generate
@@ -114,11 +114,11 @@ resource "aws_lambda_function" "api_handler" {
 }
 ```
 
-As of 2025, LLMs like Claude and GPT-4 can produce **near production-level** Terraform code. Describe your requirements in natural language and get high-quality IaC configurations.
+As of 2025, LLMs like Claude and GPT-4 can produce <strong>near production-level</strong> Terraform code. Describe your requirements in natural language and get high-quality IaC configurations.
 
 ### 2. Infrastructure State Management
 
-Terraform's State file **guarantees consistency** between actual infrastructure and code.
+Terraform's State file <strong>guarantees consistency</strong> between actual infrastructure and code.
 
 ```bash
 # Check current infrastructure state
@@ -133,7 +133,7 @@ terraform apply
 
 ### 3. Reproducible Environments
 
-Build **dev/staging/production** environments consistently with the same Terraform code.
+Build <strong>dev/staging/production</strong> environments consistently with the same Terraform code.
 
 ```hcl
 # variables.tf
@@ -213,7 +213,7 @@ aws dynamodb scan --table-name ai-batch-jobs \
 | 1,000 tasks/month | ~$150 | ~$5 |
 | 100 tasks/month | ~$150 | ~$1 |
 
-For batch processing workloads, the **pay-per-use** serverless model is overwhelmingly advantageous.
+For batch processing workloads, the <strong>pay-per-use</strong> serverless model is overwhelmingly advantageous.
 
 ### Leveraging Fargate Spot
 
@@ -229,7 +229,7 @@ resource "aws_ecs_service" "worker" {
 }
 ```
 
-Using Fargate Spot can achieve **up to 70% cost reduction**. AI batch tasks are mostly retryable, making them suitable for Spot instances.
+Using Fargate Spot can achieve <strong>up to 70% cost reduction</strong>. AI batch tasks are mostly retryable, making them suitable for Spot instances.
 
 ## Notifications and Notion Integration
 
@@ -272,7 +272,7 @@ def notify_job_completion(job_id, status, result_url=None):
 
 ### Notion Database Integration
 
-Automatically log task results to a Notion database for **project management integration**.
+Automatically log task results to a Notion database for <strong>project management integration</strong>.
 
 ```python
 from notion_client import Client
@@ -310,34 +310,34 @@ When adding a new Worker:
 4. Update Lambda queue mapping
 5. Run `./deploy.sh`
 
-Thanks to Terraform's modularization, **adding new services is very straightforward**.
+Thanks to Terraform's modularization, <strong>adding new services is very straightforward</strong>.
 
 ## Production Results
 
 ### Operational Metrics
 
-- **Deployment time**: Manual 30min → Automated 5min
-- **Infrastructure cost**: 85% reduction compared to EC2
-- **Disaster recovery**: Immediate rebuild possible with State file
-- **Code review**: PR reviews for infrastructure changes via IaC
+- <strong>Deployment time</strong>: Manual 30min → Automated 5min
+- <strong>Infrastructure cost</strong>: 85% reduction compared to EC2
+- <strong>Disaster recovery</strong>: Immediate rebuild possible with State file
+- <strong>Code review</strong>: PR reviews for infrastructure changes via IaC
 
 ### Lessons Learned
 
-1. **HCL has a low learning curve**: Better readability than JSON/YAML
-2. **LLM utilization is key**: Complex resource configurations requestable in natural language
-3. **Abstract with shell scripts**: Simplify complex commands
-4. **State management is critical**: S3 + DynamoDB Lock essential
+1. <strong>HCL has a low learning curve</strong>: Better readability than JSON/YAML
+2. <strong>LLM utilization is key</strong>: Complex resource configurations requestable in natural language
+3. <strong>Abstract with shell scripts</strong>: Simplify complex commands
+4. <strong>State management is critical</strong>: S3 + DynamoDB Lock essential
 
 ## Conclusion
 
 Serverless AI batch systems with Terraform offer these benefits:
 
-- **Cost efficiency**: Usage-based billing optimal for batch processing
-- **LLM-friendly**: Easy infrastructure code generation and management with AI tools
-- **Operational convenience**: Automate complex tasks with shell scripts
-- **Scalability**: Modular structure makes adding new services simple
+- <strong>Cost efficiency</strong>: Usage-based billing optimal for batch processing
+- <strong>LLM-friendly</strong>: Easy infrastructure code generation and management with AI tools
+- <strong>Operational convenience</strong>: Automate complex tasks with shell scripts
+- <strong>Scalability</strong>: Modular structure makes adding new services simple
 
-Adopting IaC from the beginning when building AI systems can significantly improve **long-term operational efficiency**.
+Adopting IaC from the beginning when building AI systems can significantly improve <strong>long-term operational efficiency</strong>.
 
 ## References
 

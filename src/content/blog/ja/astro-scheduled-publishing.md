@@ -43,11 +43,11 @@ relatedPosts:
 
 ## 静的サイトのジレンマ: 予約投稿機能
 
-Astro + GitHub Pagesでブログを運営すると、多くのメリットがあります。高速なページ読み込み、サーバーコストゼロ、優れたSEO最適化。しかし、WordPressのようなCMSで当たり前に使っていた**投稿の予約公開機能**がないことが不便でした。
+Astro + GitHub Pagesでブログを運営すると、多くのメリットがあります。高速なページ読み込み、サーバーコストゼロ、優れたSEO最適化。しかし、WordPressのようなCMSで当たり前に使っていた<strong>投稿の予約公開機能</strong>がないことが不便でした。
 
 時間がある時に複数の記事を事前に書いて、毎朝9時に自動で公開したい。しかし、静的サイトジェネレーターはビルド時点のファイルのみをデプロイします。未来の日付の投稿は？ビルド時点ですでにHTMLとして生成され、即座に公開されてしまいます。
 
-この記事では、**AstroのContent CollectionsとGitHub Actionsのスケジュールワークフローを組み合わせて**、静的サイトで完全な予約投稿システムを実装する方法を解説します。実際に私のブログに適用したコードをベースに説明するので、すぐに適用できます。
+この記事では、<strong>AstroのContent CollectionsとGitHub Actionsのスケジュールワークフローを組み合わせて</strong>、静的サイトで完全な予約投稿システムを実装する方法を解説します。実際に私のブログに適用したコードをベースに説明するので、すぐに適用できます。
 
 ## ソリューション概要: 3つの核心要素
 
@@ -126,10 +126,10 @@ export function filterPostsByDate(
 }
 ```
 
-**ポイント**:
-- **タイムゾーンの一貫性**: GitHub ActionsはUTCで実行されるため、JST(UTC+9)に明示的に変換
-- **日付比較**: 時刻まで比較すると複雑になるため、YYYY-MM-DD形式で簡素化
-- **開発モード例外**: `TEST_FLG=true`に設定すると未来の投稿もプレビュー可能
+<strong>ポイント</strong>:
+- <strong>タイムゾーンの一貫性</strong>: GitHub ActionsはUTCで実行されるため、JST(UTC+9)に明示的に変換
+- <strong>日付比較</strong>: 時刻まで比較すると複雑になるため、YYYY-MM-DD形式で簡素化
+- <strong>開発モード例外</strong>: `TEST_FLG=true`に設定すると未来の投稿もプレビュー可能
 
 ### 3. GitHub Actionsスケジュールワークフロー
 
@@ -178,10 +178,10 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-**ワークフロー説明**:
-- **pushトリガー**: `main`ブランチへのコミット時に即座にデプロイ
-- **workflow_dispatch**: GitHub UIから手動実行可能
-- **scheduleトリガー**: 毎日UTC 15:00 (JST翌日00:00)に自動実行
+<strong>ワークフロー説明</strong>:
+- <strong>pushトリガー</strong>: `main`ブランチへのコミット時に即座にデプロイ
+- <strong>workflow_dispatch</strong>: GitHub UIから手動実行可能
+- <strong>scheduleトリガー</strong>: 毎日UTC 15:00 (JST翌日00:00)に自動実行
 
 ## 実践実装: ステップバイステップガイド
 
@@ -357,7 +357,7 @@ const { Content } = await render(post);
 </BlogPost>
 ```
 
-**重要**: `getStaticPaths()`でフィルタリングしないと、未来の投稿のパスも生成され、直接URLでアクセス可能になります。必ずここでもフィルタリングする必要があります。
+<strong>重要</strong>: `getStaticPaths()`でフィルタリングしないと、未来の投稿のパスも生成され、直接URLでアクセス可能になります。必ずここでもフィルタリングする必要があります。
 
 ### ステップ5: GitHub Actionsワークフロー設定
 
@@ -409,7 +409,7 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-**Cron構文説明**:
+<strong>Cron構文説明</strong>:
 ```
 "0 15 * * *"
  │  │  │ │ │
@@ -443,27 +443,27 @@ npm run preview
 # 4. ビルド結果を確認: 未来の投稿が表示されないことをチェック
 ```
 
-**期待される動作**:
+<strong>期待される動作</strong>:
 - `TEST_FLG=true`: 未来の投稿が表示される ✓
 - 本番ビルド: 未来の投稿が非表示 ✓
 
 ### ステップ7: GitHub Pages設定
 
-1. **GitHubリポジトリ設定**:
+1. <strong>GitHubリポジトリ設定</strong>:
    - Settings → Pages → Sourceを「GitHub Actions」に変更
 
-2. **初回デプロイ**:
+2. <strong>初回デプロイ</strong>:
    ```bash
    git add .
    git commit -m "feat: add scheduled publishing"
    git push origin main
    ```
 
-3. **Actionsタブでデプロイ確認**:
+3. <strong>Actionsタブでデプロイ確認</strong>:
    - "Deploy to GitHub Pages"ワークフローの実行を確認
    - 成功後、サイトにアクセスして未来の投稿が表示されないことを確認
 
-4. **スケジュール確認**:
+4. <strong>スケジュール確認</strong>:
    - Actionsタブ → "Deploy to GitHub Pages" → 右メニュー → "View workflow runs"
    - 次回実行時刻を確認
 
@@ -471,19 +471,19 @@ npm run preview
 
 ### タイムゾーン別のカスタム設定
 
-**韓国時間基準 (KST = UTC+9)**:
+<strong>韓国時間基準 (KST = UTC+9)</strong>:
 ```yaml
 schedule:
   - cron: "0 15 * * *" # 毎日KST 00:00
 ```
 
-**米国東部時間基準 (EST = UTC-5)**:
+<strong>米国東部時間基準 (EST = UTC-5)</strong>:
 ```yaml
 schedule:
   - cron: "0 14 * * *" # 毎日EST 09:00
 ```
 
-**ヨーロッパ中部時間基準 (CET = UTC+1)**:
+<strong>ヨーロッパ中部時間基準 (CET = UTC+1)</strong>:
 ```yaml
 schedule:
   - cron: "0 8 * * *" # 毎日CET 09:00
@@ -500,7 +500,7 @@ schedule:
   - cron: "0 12 * * *"  # JST 21:00 (夕方)
 ```
 
-**注意**: GitHub Actions無料プランは月2,000分の制限があります。ビルド時間が5分の場合、1日3回ビルドで月450分使用(余裕あり)。
+<strong>注意</strong>: GitHub Actions無料プランは月2,000分の制限があります。ビルド時間が5分の場合、1日3回ビルドで月450分使用(余裕あり)。
 
 ### RSSフィードのフィルタリング
 
@@ -553,9 +553,9 @@ export default defineConfig({
 
 ### 問題1: 未来の投稿がすぐに公開される
 
-**原因**: フィルタリングが適用されていない
+<strong>原因</strong>: フィルタリングが適用されていない
 
-**解決策**:
+<strong>解決策</strong>:
 1. `getStaticPaths()`と`getCollection()`呼び出しの両方に`filterPostsByDate()`を適用していることを確認
 2. ビルドログを確認:
    ```bash
@@ -565,26 +565,26 @@ export default defineConfig({
 
 ### 問題2: スケジュールが実行されない
 
-**原因**: GitHub Actions設定の問題
+<strong>原因</strong>: GitHub Actions設定の問題
 
-**解決策**:
-1. **リポジトリの有効化確認**: Actionsタブが有効になっているか
-2. **Cron構文検証**: [Crontab.guru](https://crontab.guru)で確認
-3. **最終コミット日**: 60日以上コミットがないとスケジュールが自動停止
+<strong>解決策</strong>:
+1. <strong>リポジトリの有効化確認</strong>: Actionsタブが有効になっているか
+2. <strong>Cron構文検証</strong>: [Crontab.guru](https://crontab.guru)で確認
+3. <strong>最終コミット日</strong>: 60日以上コミットがないとスケジュールが自動停止
    - 解決策: ダミーコミットをプッシュまたは手動実行
 
 ### 問題3: タイムゾーンが合わない
 
-**原因**: UTCとローカルタイムゾーンの混同
+<strong>原因</strong>: UTCとローカルタイムゾーンの混同
 
-**解決策**:
+<strong>解決策</strong>:
 1. **ワークフロー`env.TZ`の確認**:
    ```yaml
    env:
      TZ: 'Asia/Tokyo'
    ```
 
-2. **フィルタリング関数のタイムゾーン確認**:
+2. <strong>フィルタリング関数のタイムゾーン確認</strong>:
    ```typescript
    function getJSTDate(): Date {
      const now = new Date();
@@ -593,7 +593,7 @@ export default defineConfig({
    }
    ```
 
-3. **テスト**:
+3. <strong>テスト</strong>:
    ```bash
    # GitHub Actionsログでビルド時刻を確認
    date (実行時刻が正しいタイムゾーンか)
@@ -601,9 +601,9 @@ export default defineConfig({
 
 ### 問題4: 開発モードで未来の投稿が表示されない
 
-**原因**: `TEST_FLG`環境変数が未設定
+<strong>原因</strong>: `TEST_FLG`環境変数が未設定
 
-**解決策**:
+<strong>解決策</strong>:
 ```bash
 # .envファイルを作成
 echo "TEST_FLG=true" > .env
@@ -616,13 +616,13 @@ TEST_FLG=true npm run dev
 
 ### GitHub Actionsのコスト
 
-**無料プラン**:
+<strong>無料プラン</strong>:
 - 月2,000分無料
 - ビルド時間: 約2-5分(プロジェクトサイズによる)
 - 1日1回ビルド: 月60-150分使用
-- **結論**: 無料プランで十分 ✓
+- <strong>結論</strong>: 無料プランで十分 ✓
 
-**有料プラン**:
+<strong>有料プラン</strong>:
 - Team: 月$4、3,000分/月
 - Enterprise: カスタム料金
 
@@ -647,9 +647,9 @@ export default defineConfig({
 });
 ```
 
-**追加最適化**:
-- **依存関係のキャッシング**: `actions/cache`を使用
-- **インクリメンタルビルド**: Astro 4.0+でサポート
+<strong>追加最適化</strong>:
+- <strong>依存関係のキャッシング</strong>: `actions/cache`を使用
+- <strong>インクリメンタルビルド</strong>: Astro 4.0+でサポート
 
 ```yaml
 # 依存関係キャッシングの例
@@ -664,56 +664,56 @@ export default defineConfig({
 
 ### 方法1: Netlify/Vercelスケジュールビルド
 
-**メリット**:
+<strong>メリット</strong>:
 - GUIで設定可能
 - プラットフォーム統合キャッシング
 
-**デメリット**:
+<strong>デメリット</strong>:
 - プラットフォーム依存
 - 無料プラン制限(Netlify: 月300分)
 
 ### 方法2: 外部Cronサービス (例: cron-job.org)
 
-**メリット**:
+<strong>メリット</strong>:
 - GitHub Actionsの制限を消費しない
 
-**デメリット**:
+<strong>デメリット</strong>:
 - Webhook設定が必要
 - セキュリティトークン管理
 - 追加サービスへの依存
 
 ### 方法3: サーバーレス関数 (例: Cloudflare Workers)
 
-**メリット**:
+<strong>メリット</strong>:
 - リアルタイムフィルタリング可能
 
-**デメリット**:
+<strong>デメリット</strong>:
 - 静的サイトではなくなる
 - 複雑度の増加
 - 追加サービスが必要
 
-**推奨**: **GitHub Actions方式が最もシンプルで無料、GitHub Pagesと完璧に統合**
+<strong>推奨</strong>: <strong>GitHub Actions方式が最もシンプルで無料、GitHub Pagesと完璧に統合</strong>
 
 ## まとめ
 
-AstroとGitHub Actionsを組み合わせることで、静的ブログでもWordPressのように**完全自動化された予約投稿システム**を構築できます。
+AstroとGitHub Actionsを組み合わせることで、静的ブログでもWordPressのように<strong>完全自動化された予約投稿システム</strong>を構築できます。
 
 ### 重要ポイントのまとめ
 
-✅ **Content CollectionsスキーマにpubDateを定義**
-✅ **日付フィルタリングユーティリティを作成** (JSTタイムゾーンを明示)
-✅ **すべてのページにフィルタリングを適用** (インデックス、動的ページ、RSS)
-✅ **GitHub Actionsスケジュールワークフローを設定** (cron式)
-✅ **ローカルテスト** (TEST_FLG=true)
-✅ **本番デプロイと検証**
+✅ <strong>Content CollectionsスキーマにpubDateを定義</strong>
+✅ <strong>日付フィルタリングユーティリティを作成</strong> (JSTタイムゾーンを明示)
+✅ <strong>すべてのページにフィルタリングを適用</strong> (インデックス、動的ページ、RSS)
+✅ <strong>GitHub Actionsスケジュールワークフローを設定</strong> (cron式)
+✅ <strong>ローカルテスト</strong> (TEST_FLG=true)
+✅ <strong>本番デプロイと検証</strong>
 
 ### この方式のメリット
 
-1. **ゼロコスト**: GitHub Actions無料プランで十分
-2. **完全自動化**: 一度設定すれば永続的に動作
-3. **タイムゾーン制御**: 任意のタイムゾーンで正確な公開
-4. **開発者フレンドリー**: テストモードでプレビュー可能
-5. **プラットフォーム独立**: GitHub Pages以外でもNetlify、Vercelなどどこでも動作
+1. <strong>ゼロコスト</strong>: GitHub Actions無料プランで十分
+2. <strong>完全自動化</strong>: 一度設定すれば永続的に動作
+3. <strong>タイムゾーン制御</strong>: 任意のタイムゾーンで正確な公開
+4. <strong>開発者フレンドリー</strong>: テストモードでプレビュー可能
+5. <strong>プラットフォーム独立</strong>: GitHub Pages以外でもNetlify、Vercelなどどこでも動作
 
 これで、時間がある時に事前に記事を書いて、毎朝自動的に読者に新しい記事を届けることができます。静的サイトの速度とWordPressの利便性を同時に享受しましょう!
 

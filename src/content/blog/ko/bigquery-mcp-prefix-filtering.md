@@ -885,9 +885,9 @@ npm start
 
 MCP 서버를 Claude Desktop에 연결하려면 설정 파일을 수정합니다:
 
-**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+<strong>macOS</strong>: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
-**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+<strong>Windows</strong>: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ````json
 {
@@ -1001,10 +1001,10 @@ Dataset Prefix 필터링이 적용된 BigQuery MCP 서버를 구현함으로써 
 
 ### 다음 단계
 
-1. **프로덕션 배포**: Docker 컨테이너화 및 Kubernetes 배포
-2. **모니터링 설정**: Prometheus/Grafana로 성능 메트릭 수집
-3. **통합 테스트**: 다양한 시나리오에 대한 자동화된 테스트 작성
-4. **문서화**: API 문서 및 사용자 가이드 작성
+1. <strong>프로덕션 배포</strong>: Docker 컨테이너화 및 Kubernetes 배포
+2. <strong>모니터링 설정</strong>: Prometheus/Grafana로 성능 메트릭 수집
+3. <strong>통합 테스트</strong>: 다양한 시나리오에 대한 자동화된 테스트 작성
+4. <strong>문서화</strong>: API 문서 및 사용자 가이드 작성
 
 MCP를 활용한 BigQuery 통합은 AI 에이전트가 안전하고 효율적으로 데이터를 분석할 수 있는 기반을 제공합니다. Dataset Prefix 필터링은 이러한 통합의 보안과 성능을 크게 향상시키는 핵심 기능입니다.
 

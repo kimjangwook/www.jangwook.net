@@ -82,7 +82,7 @@ relatedPosts:
 
 Next.jsではなくSvelteKitを選んだ理由:
 
-**1. Svelte 5の革新的なリアクティビティシステム**
+<strong>1. Svelte 5の革新的なリアクティビティシステム</strong>
 
 ```typescript
 // Svelte 5 Runes: $stateと$derived
@@ -92,13 +92,13 @@ let doubled = $derived(count * 2);
 // React hooksより直感的でボイラープレートコード削減
 ```
 
-**2. バンドルサイズとパフォーマンス**
+<strong>2. バンドルサイズとパフォーマンス</strong>
 
 - Svelteはコンパイル時にフレームワークコードを削除
 - クライアントバンドルがReact比40%小さい
 - Time to Interactiveが目に見えて速い
 
-**3. 開発者体験**
+<strong>3. 開発者体験</strong>
 
 - 学習曲線が低くコードが読みやすい
 - TypeScriptサポート優秀
@@ -108,7 +108,7 @@ let doubled = $derived(count * 2);
 
 FirebaseではなくSupabase:
 
-**1. PostgreSQLの強力さ**
+<strong>1. PostgreSQLの強力さ</strong>
 
 ```sql
 -- Row Level Securityでマルチテナント実装
@@ -117,14 +117,14 @@ ON credits FOR SELECT
 USING (auth.uid() = user_id);
 ```
 
-**2. 統合された機能**
+<strong>2. 統合された機能</strong>
 
 - Auth: メール/ソーシャルログイン即座に使用
 - Database: PostgreSQL with real-time subscriptions
 - Storage: ファイルアップロードとCDN
 - Edge Functions: Serverless関数 (Denoベース)
 
-**3. オープンソースと価格**
+<strong>3. オープンソースと価格</strong>
 
 - 完全オープンソース (self-hosting可能)
 - 無料ティアが寛容 (50,000 MAU、500MB DB)
@@ -134,7 +134,7 @@ USING (auth.uid() = user_id);
 
 OpenAI GPTではなくGemini:
 
-**1. コスト効率**
+<strong>1. コスト効率</strong>
 
 ```
 Gemini 2.5 Flash:
@@ -148,7 +148,7 @@ GPT-4 Turbo:
 → 約100倍安い
 ```
 
-**2. Structured Output対応**
+<strong>2. Structured Output対応</strong>
 
 ```typescript
 const responseSchema = {
@@ -182,20 +182,20 @@ const result = await model.generateContent({
 });
 ```
 
-**3. マルチモーダル性能**
+<strong>3. マルチモーダル性能</strong>
 
 - 画像OCR品質が優秀 (OmniDocBenchベンチマーク1位)
 - パスポート、レシートのような複雑なレイアウト処理に強み
 
 ### Vercelをデプロイプラットフォームに選んだ理由
 
-**1. SvelteKit最適化**
+<strong>1. SvelteKit最適化</strong>
 
 - SvelteKitを作ったVercelが直接サポート
 - 自動SSR/Edge Functionデプロイ
 - ビルドキャッシングでデプロイ速度速い
 
-**2. Serverlessアーキテクチャ**
+<strong>2. Serverlessアーキテクチャ</strong>
 
 - APIルートが自動でserverless functionとしてデプロイ
 - 使用量ベース課金 (トラフィックなければコストほぼなし)
@@ -205,7 +205,7 @@ const result = await model.generateContent({
 
 ### 1. OCR API with Structured Output
 
-**実際のコード** (`src/routes/api/receipt-ocr/+server.ts`):
+<strong>実際のコード</strong> (`src/routes/api/receipt-ocr/+server.ts`):
 
 ```typescript
 import { GoogleGenerativeAI, SchemaType as Type } from '@google/generative-ai';
@@ -283,7 +283,7 @@ const parsedData = JSON.parse(result.response.text());
 // parsedDataは既にスキーマに準拠する型安全オブジェクト
 ```
 
-**核心メリット**:
+<strong>核心メリット</strong>:
 
 - <strong>型安全性</strong>: スキーマでレスポンス構造強制
 - <strong>パースエラー除去</strong>: JSONパース失敗ほぼなし
@@ -291,7 +291,7 @@ const parsedData = JSON.parse(result.response.text());
 
 ### 2. Credit System (クレジットシステム)
 
-**Stripe Checkout統合**:
+<strong>Stripe Checkout統合</strong>:
 
 ```typescript
 // src/routes/agents/credits/+page.server.ts
@@ -342,7 +342,7 @@ export const actions = {
 };
 ```
 
-**Webhookでクレジット付与**:
+<strong>Webhookでクレジット付与</strong>:
 
 ```typescript
 // src/routes/api/webhooks/stripe/+server.ts
@@ -378,7 +378,7 @@ export const POST = async ({ request }) => {
 
 ### 3. API Authentication (API認証)
 
-**APIキー発行と検証**:
+<strong>APIキー発行と検証</strong>:
 
 ```typescript
 // APIキー生成
@@ -441,7 +441,7 @@ async function checkAndDeductCredits(userId: string, amount: number) {
 
 ### 4. Multi-language Support (多言語対応)
 
-**Paraglideを使ったi18n**:
+<strong>Paraglideを使ったi18n</strong>:
 
 ```typescript
 // src/lib/i18n.ts
@@ -456,7 +456,7 @@ export const i18n = paraglide({
 // サポート言語: ko, en, ja, zh, es
 ```
 
-**言語別ルーティング**:
+<strong>言語別ルーティング</strong>:
 
 ```typescript
 // src/routes/[lang]/+layout.server.ts
@@ -472,7 +472,7 @@ export const load = async ({ params }) => {
 
 ## トークン使用量追跡とコスト最適化
 
-**リアルタイムトークンモニタリング**:
+<strong>リアルタイムトークンモニタリング</strong>:
 
 ```typescript
 const result = await model.generateContent({...});
@@ -519,7 +519,7 @@ function calculateCost(usage) {
 
 ### SEO/AEO-Driven Acquisition (検索ベース顧客獲得)
 
-**コンテンツマーケティング戦略**:
+<strong>コンテンツマーケティング戦略</strong>:
 
 1. <strong>jangwook.netブログ活用</strong>
    - 技術ブログを通じたブランド信頼度構築
@@ -538,7 +538,7 @@ function calculateCost(usage) {
 
 ### 3-Month KPI Targets (3ヶ月KPI目標)
 
-**現実的なソロ開発者目標**:
+<strong>現実的なソロ開発者目標</strong>:
 
 | 指標 | 目標 | 測定方法 |
 |-----|-----|---------|
@@ -548,7 +548,7 @@ function calculateCost(usage) {
 | MRR | ¥30,000 | Stripe購読合計 |
 | OCR API呼び出し | 1,000回 | api_usageテーブル |
 
-**Why These Numbers?**
+<strong>Why These Numbers?</strong>
 
 - 500訪問者 → SEOで達成可能な現実的数値
 - 6% 転換率 (30/500) → B2B SaaS平均
@@ -559,18 +559,18 @@ function calculateCost(usage) {
 
 ### Day 1 (2025-11-24): Foundation
 
-**完了項目**:
+<strong>完了項目</strong>:
 - プロジェクト初期化 (SvelteKit + TypeScript)
 - Supabase連携 (Auth + Database)
 - 最初のサービス実装: Receipt OCR for Tax Refund
 - パスポート + 免税書類自動認識
 - Structured Outputスキーマ検証
 
-**コード作成量**: 〜800 lines
+<strong>コード作成量</strong>: 〜800 lines
 
 ### Day 2 (2025-11-25): Payment & Second Service
 
-**完了項目**:
+<strong>完了項目</strong>:
 - Accounting OCRサービス追加
 - Stripe Checkout統合
 - クレジットシステム実装
@@ -581,26 +581,26 @@ function calculateCost(usage) {
   - 利用規約
 - Google Analytics連携
 
-**コード作成量**: 〜1,200 lines
+<strong>コード作成量</strong>: 〜1,200 lines
 
 ### Day 3 (2025-11-26): Polish & Launch
 
-**完了項目**:
+<strong>完了項目</strong>:
 - サービス説明ページ
 - APIドキュメント作成
 - ランディングページ最適化
 - プロダクションデプロイ (Vercel)
 - DNS設定
 
-**コード作成量**: 〜600 lines
+<strong>コード作成量</strong>: 〜600 lines
 
-**合計**: 3日、〜2,600 lines of code
+<strong>合計</strong>: 3日、〜2,600 lines of code
 
 ## 学んだこと
 
 ### 1. SvelteKit 5のReactivityはゲームチェンジャー
 
-**Before (React hooks)**:
+<strong>Before (React hooks)</strong>:
 
 ```typescript
 const [credits, setCredits] = useState(0);
@@ -611,7 +611,7 @@ useEffect(() => {
 }, [credits]);
 ```
 
-**After (Svelte 5 runes)**:
+<strong>After (Svelte 5 runes)</strong>:
 
 ```typescript
 let credits = $state(0);
@@ -619,14 +619,14 @@ let doubled = $derived(credits * 2);
 // 自動でリアクティビティ処理、useEffect不要
 ```
 
-**実感したメリット**:
+<strong>実感したメリット</strong>:
 - ボイラープレートコード70%削減
 - デバッグが簡単 (明示的依存性不要)
 - パフォーマンス向上 (不要な再レンダリングなし)
 
 ### 2. Supabase RLSでマルチテナントが簡単に
 
-**Row Level Securityポリシー**:
+<strong>Row Level Securityポリシー</strong>:
 
 ```sql
 -- 各ユーザーは自分のクレジットのみ照会可能
@@ -640,14 +640,14 @@ ON credits FOR INSERT
 USING (auth.role() = 'service_role');
 ```
 
-**メリット**:
+<strong>メリット</strong>:
 - アプリケーションコードで権限チェック不要
 - SQLレベルでデータ隔離保証
 - セキュリティ脆弱性根本遮断
 
 ### 3. Gemini APIコスト最適化
 
-**プロンプト最適化**:
+<strong>プロンプト最適化</strong>:
 
 ```typescript
 // Before: 長いプロンプト
@@ -666,7 +666,7 @@ const prompt = `Extract receipt data as JSON:
 // コスト削減: 83%
 ```
 
-**画像サイズ最適化**:
+<strong>画像サイズ最適化</strong>:
 
 ```typescript
 // 画像を1024px以内にリサイズ
@@ -682,7 +682,7 @@ const optimized = await sharp(imageBuffer)
 
 ### 4. Solo Developer Productivity Tips
 
-**生産性を最大化した方法**:
+<strong>生産性を最大化した方法</strong>:
 
 1. <strong>Supabase CLIでローカル開発</strong>
    ```bash

@@ -56,13 +56,13 @@ relatedPosts:
 
 ## Overview
 
-Anthropic's **CCC (Claude's C Compiler)**, released on February 5, 2026, is an impressive project that simultaneously demonstrates both the potential and limitations of AI-built compilers. Built entirely by Claude Opus 4.6 in Rust, this C compiler can **build Linux 6.9 on x86, ARM, and RISC-V**.
+Anthropic's <strong>CCC (Claude's C Compiler)</strong>, released on February 5, 2026, is an impressive project that simultaneously demonstrates both the potential and limitations of AI-built compilers. Built entirely by Claude Opus 4.6 in Rust, this C compiler can <strong>build Linux 6.9 on x86, ARM, and RISC-V</strong>.
 
 Nearly 2,000 Claude Code sessions, $20,000 in API costs, and 100,000 lines of code — that's everything it took for AI to create a "working compiler."
 
 ## What Is CCC?
 
-CCC was developed using an **agent teams** approach designed by Nicholas Carlini from Anthropic's Safeguards team. The core idea is simple:
+CCC was developed using an <strong>agent teams</strong> approach designed by Nicholas Carlini from Anthropic's Safeguards team. The core idea is simple:
 
 > 16 Claude instances work in parallel on a shared codebase without active human intervention to build a complete compiler.
 
@@ -115,18 +115,18 @@ done
 
 ### Test Suite Results
 
-- **GCC torture test suite**: 99% pass rate
-- **Major compiler test suites**: 99% pass rate
+- <strong>GCC torture test suite</strong>: 99% pass rate
+- <strong>Major compiler test suites</strong>: 99% pass rate
 
 ## CCC vs GCC — A Realistic Comparison
 
-GCC is a production compiler with over 40 years of history. Comparing it with CCC shows **where AI stands today**.
+GCC is a production compiler with over 40 years of history. Comparing it with CCC shows <strong>where AI stands today</strong>.
 
 ### Performance
 
 > "Even with all optimizations enabled, CCC outputs less efficient code than GCC with all optimizations disabled (-O0)."
 
-This is CCC's biggest weakness. In **code optimization** — the core value proposition of a compiler — it still falls far behind GCC.
+This is CCC's biggest weakness. In <strong>code optimization</strong> — the core value proposition of a compiler — it still falls far behind GCC.
 
 ### Feature Gap
 
@@ -140,7 +140,7 @@ This is CCC's biggest weakness. In **code optimization** — the core value prop
 
 ### But Here's What Matters
 
-GCC was built by thousands of developers over 40 years. CCC was **built by AI in 2 weeks for $20,000**.
+GCC was built by thousands of developers over 40 years. CCC was <strong>built by AI in 2 weeks for $20,000</strong>.
 
 ## 80% Quality at Lightning Speed — The Essence of AI Coding
 
@@ -148,11 +148,11 @@ The true significance of the CCC project isn't "it beat GCC." It lies in these f
 
 ### 1. From Zero to Working Compiler
 
-A human compiler developer would need **months to years** to build a 100,000-line Rust compiler. AI did it in 2 weeks. It's not perfect, but **it works**.
+A human compiler developer would need <strong>months to years</strong> to build a 100,000-line Rust compiler. AI did it in 2 weeks. It's not perfect, but <strong>it works</strong>.
 
 ### 2. The Power of Parallelism
 
-Running 16 agents in parallel isn't just about speed. Each agent takes on a **specialized role**:
+Running 16 agents in parallel isn't just about speed. Each agent takes on a <strong>specialized role</strong>:
 
 - Feature implementation agents
 - Duplicate code consolidation agent
@@ -162,7 +162,7 @@ Running 16 agents in parallel isn't just about speed. Each agent takes on a **sp
 
 ### 3. The Importance of Test-Driven Development
 
-The most effort in this project went into **designing the test environment, not writing code**:
+The most effort in this project went into <strong>designing the test environment, not writing code</strong>:
 
 - Using GCC as a "ground truth oracle" for output comparison
 - Minimizing output to prevent context window pollution
@@ -173,7 +173,7 @@ The most effort in this project went into **designing the test environment, not 
 
 ### Clean-Room Implementation
 
-CCC was developed **without internet access**. It's a complete clean-room implementation using only the Rust standard library. This proves AI can build a compiler from learned knowledge alone.
+CCC was developed <strong>without internet access</strong>. It's a complete clean-room implementation using only the Rust standard library. This proves AI can build a compiler from learned knowledge alone.
 
 ### SSA IR-Based Design
 
@@ -192,9 +192,9 @@ The compiler uses SSA (Static Single Assignment) intermediate representation to 
 
 ### Limits of Parallel Agents
 
-An interesting problem arose during the Linux kernel compilation phase. Unlike a test suite with hundreds of independent tests, kernel compilation is **one giant task**. Every agent hit the same bug, eliminating the advantage of having 16 agents.
+An interesting problem arose during the Linux kernel compilation phase. Unlike a test suite with hundreds of independent tests, kernel compilation is <strong>one giant task</strong>. Every agent hit the same bug, eliminating the advantage of having 16 agents.
 
-The fix: use GCC as an online oracle to **randomly distribute kernel files**, letting each agent fix bugs in different files.
+The fix: use GCC as an online oracle to <strong>randomly distribute kernel files</strong>, letting each agent fix bugs in different files.
 
 ## Future Outlook
 
@@ -210,14 +210,14 @@ Capabilities are improving dramatically with each generation. Opus 4.7 or 5.0 mi
 
 ### Implications for Developers
 
-1. **Testing is key**: AI agent quality directly correlates with test environment quality
-2. **Architecture design is still human work**: High-level decisions like SSA IR were made by humans
-3. **The value of 80% solutions**: Don't underestimate working results that aren't perfect
-4. **The era of parallel agents**: AI working as teams, not individuals
+1. <strong>Testing is key</strong>: AI agent quality directly correlates with test environment quality
+2. <strong>Architecture design is still human work</strong>: High-level decisions like SSA IR were made by humans
+3. <strong>The value of 80% solutions</strong>: Don't underestimate working results that aren't perfect
+4. <strong>The era of parallel agents</strong>: AI working as teams, not individuals
 
 ## Conclusion
 
-CCC isn't a GCC replacement. It's a **milestone showing how far AI has come in software development**.
+CCC isn't a GCC replacement. It's a <strong>milestone showing how far AI has come in software development</strong>.
 
 - 100,000 lines of working compiler generated in 2 weeks
 - Builds a bootable Linux kernel

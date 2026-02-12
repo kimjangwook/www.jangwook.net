@@ -11,16 +11,16 @@ tags:
 relatedPosts: []
 ---
 
-> **系列: 精通 OpenClaw** (3/3)
+> <strong>系列: 精通 OpenClaw</strong> (3/3)
 > 1. [介绍篇](/zh/blog/zh/openclaw-introduction-guide/)
 > 2. [教程篇](/zh/blog/zh/openclaw-installation-tutorial/)
-> 3. **高级用法篇** ← 当前文章
+> 3. <strong>高级用法篇</strong> ← 当前文章
 
 # OpenClaw 200% 活用术 — 实战高级用例合集 🚀
 
 安装完成了吗？恭喜！🎉 现在才是真正有趣的部分。
 
-OpenClaw 不仅仅是聊天机器人。它是在你的设备上活生生运行的**个人 AI 代理**。本文将逐一构建**实际生产级别的工作流**。每个示例都以可直接复制使用的完整形式提供。
+OpenClaw 不仅仅是聊天机器人。它是在你的设备上活生生运行的<strong>个人 AI 代理</strong>。本文将逐一构建<strong>实际生产级别的工作流</strong>。每个示例都以可直接复制使用的完整形式提供。
 
 ---
 
@@ -158,10 +158,10 @@ openclaw cron remove <jobId>
 - 除紧急事项外 HEARTBEAT_OK
 ```
 
-> **Cron vs 心跳选择标准：**
-> - **精确时间**很重要 → Cron (`"0 8 * * *"`)
-> - 想要**批量处理多项检查** → 心跳 (`HEARTBEAT.md`)
-> - **一次性提醒** → Cron (`--at "20m"` + `--delete-after-run`)
+> <strong>Cron vs 心跳选择标准：</strong>
+> - <strong>精确时间</strong>很重要 → Cron (`"0 8 * * *"`)
+> - 想要<strong>批量处理多项检查</strong> → 心跳 (`HEARTBEAT.md`)
+> - <strong>一次性提醒</strong> → Cron (`--at "20m"` + `--delete-after-run`)
 
 ---
 
@@ -285,8 +285,8 @@ curl -X POST http://127.0.0.1:18789/hooks/agent \
 
 在 Make 中使用 HTTP 模块：
 
-1. **Webhook 触发器** → 接收外部事件
-2. 添加 **HTTP Make a request** 模块：
+1. <strong>Webhook 触发器</strong> → 接收外部事件
+2. 添加 <strong>HTTP Make a request</strong> 模块：
    - URL: `http://<gateway-ip>:18789/hooks/agent`
    - Method: POST
    - Headers: `Authorization: Bearer <令牌>`
@@ -327,15 +327,15 @@ curl -X POST http://127.0.0.1:18789/hooks/gmail \
 
 ## 活用法 3：MCP 服务器集成 🧠
 
-**MCP (Model Context Protocol)** 是以标准化方式向 AI 代理提供外部数据源和工具的协议。让我们了解如何在 OpenClaw 中使用 MCP 服务器。
+<strong>MCP (Model Context Protocol)</strong> 是以标准化方式向 AI 代理提供外部数据源和工具的协议。让我们了解如何在 OpenClaw 中使用 MCP 服务器。
 
 ### 什么是 MCP 服务器？
 
 MCP 服务器是向 AI 提供特定工具和资源的服务。例如：
-- **文件系统 MCP** — 读写特定目录的文件
-- **数据库 MCP** — 执行 SQL 查询
-- **API MCP** — REST API 调用抽象
-- **浏览器 MCP** — 控制网页
+- <strong>文件系统 MCP</strong> — 读写特定目录的文件
+- <strong>数据库 MCP</strong> — 执行 SQL 查询
+- <strong>API MCP</strong> — REST API 调用抽象
+- <strong>浏览器 MCP</strong> — 控制网页
 
 ### 在 OpenClaw 中使用 MCP
 
@@ -750,13 +750,13 @@ user-invocable: true
 > 截至 2025-07-14 09:00
 
 ## 🤖 AI
-- **标题** — 一句话摘要 [链接]
+- <strong>标题</strong> — 一句话摘要 [链接]
 
 ## 🔒 安全
-- **标题** — 一句话摘要 [链接]
+- <strong>标题</strong> — 一句话摘要 [链接]
 
 ## 💻 开发
-- **标题** — 一句话摘要 [链接]
+- <strong>标题</strong> — 一句话摘要 [链接]
 ```
 
 ## 保存
@@ -1041,22 +1041,22 @@ openclaw status --all
 
 总结来说，OpenClaw 是：
 
-- 🤖 **AI 助理** — 通过 Cron + 心跳自动帮你打点一切
-- 🔗 **自动化枢纽** — 通过 Webhook 集成 n8n/Make/GitHub/Gmail
-- 🧠 **MCP 桥梁** — 与外部数据源标准化连接
-- 💻 **开发伙伴** — 通过子代理并行处理任务
-- 🏠 **智能家居控制器** — 通过节点系统管理摄像头·通知·位置
-- 🌐 **数据采集器** — 通过浏览器自动化进行网页监控
-- 🧩 **扩展平台** — 开发 Skill 并在 ClawHub 上分享
-- 📝 **有记忆的伙伴** — 通过 MEMORY.md 跨会话记忆
+- 🤖 <strong>AI 助理</strong> — 通过 Cron + 心跳自动帮你打点一切
+- 🔗 <strong>自动化枢纽</strong> — 通过 Webhook 集成 n8n/Make/GitHub/Gmail
+- 🧠 <strong>MCP 桥梁</strong> — 与外部数据源标准化连接
+- 💻 <strong>开发伙伴</strong> — 通过子代理并行处理任务
+- 🏠 <strong>智能家居控制器</strong> — 通过节点系统管理摄像头·通知·位置
+- 🌐 <strong>数据采集器</strong> — 通过浏览器自动化进行网页监控
+- 🧩 <strong>扩展平台</strong> — 开发 Skill 并在 ClawHub 上分享
+- 📝 <strong>有记忆的伙伴</strong> — 通过 MEMORY.md 跨会话记忆
 
-**一体化 AI 代理平台**。
+<strong>一体化 AI 代理平台</strong>。
 
-最重要的是**迈出第一步**。今天就选一个来配置试试吧：
+最重要的是<strong>迈出第一步</strong>。今天就选一个来配置试试吧：
 
-1. 🌅 **晨间简报 Cron** — 每天早上汇总今日信息
-2. 📝 **HEARTBEAT.md** — 一个文件搞定自动助理清单
-3. 🔗 **一个 Webhook** — 将 GitHub/Gmail 通知转发到 Telegram
+1. 🌅 <strong>晨间简报 Cron</strong> — 每天早上汇总今日信息
+2. 📝 <strong>HEARTBEAT.md</strong> — 一个文件搞定自动助理清单
+3. 🔗 <strong>一个 Webhook</strong> — 将 GitHub/Gmail 通知转发到 Telegram
 
 一旦尝试，你就会越来越多地把事情交给它。🦞
 
@@ -1067,4 +1067,4 @@ openclaw status --all
 *精通 OpenClaw 系列*
 - [第1篇：OpenClaw 是什么？](/zh/blog/zh/openclaw-introduction-guide/)
 - [第2篇：从安装到第一次对话](/zh/blog/zh/openclaw-installation-tutorial/)
-- **第3篇：实战高级用法** ← 当前文章
+- <strong>第3篇：实战高级用法</strong> ← 当前文章

@@ -55,7 +55,7 @@ relatedPosts:
 
 ## 들어가며
 
-AI 코딩 어시스턴트는 이제 개발자의 필수 도구가 되었습니다. 하지만 단순히 사용하는 것과 **제대로 활용**하는 것은 완전히 다른 차원의 문제입니다. Anthropic이 최근 공개한 [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)를 분석하고, 실제 프로젝트에 적용해본 경험을 공유합니다.
+AI 코딩 어시스턴트는 이제 개발자의 필수 도구가 되었습니다. 하지만 단순히 사용하는 것과 <strong>제대로 활용</strong>하는 것은 완전히 다른 차원의 문제입니다. Anthropic이 최근 공개한 [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)를 분석하고, 실제 프로젝트에 적용해본 경험을 공유합니다.
 
 ## Claude Code Best Practices 핵심 요약
 
@@ -63,9 +63,9 @@ Anthropic 엔지니어링 블로그에서 공개한 Best Practices를 연구한 
 
 ### 1. CLAUDE.md로 컨텍스트 명확히 전달하기
 
-**핵심**: Claude Code는 프로젝트의 CLAUDE.md 파일을 읽고 컨텍스트를 이해합니다.
+<strong>핵심</strong>: Claude Code는 프로젝트의 CLAUDE.md 파일을 읽고 컨텍스트를 이해합니다.
 
-**포함해야 할 내용**:
+<strong>포함해야 할 내용</strong>:
 - ✅ Bash 명령어 (빌드, 테스트, 배포)
 - ✅ 핵심 파일 및 유틸리티 함수 위치
 - ✅ 코드 스타일 가이드라인
@@ -73,14 +73,14 @@ Anthropic 엔지니어링 블로그에서 공개한 Best Practices를 연구한 
 - ✅ Repository Etiquette (커밋 메시지, PR 규칙)
 - ✅ 개발 환경 설정 가이드
 
-**Before (기존 CLAUDE.md)**:
+<strong>Before (기존 CLAUDE.md)</strong>:
 ```markdown
 ## 명령어
 npm run dev
 npm run build
 ```
 
-**After (개선된 CLAUDE.md)**:
+<strong>After (개선된 CLAUDE.md)</strong>:
 ```markdown
 ## Testing Guidelines
 ### 타입 체크 및 검증
@@ -97,7 +97,7 @@ npm run preview        # 빌드 결과 미리보기
 
 ### 2. Explore → Plan → Code → Commit 워크플로우
 
-**핵심**: Claude는 명확한 목표와 반복적 개선을 통해 최고의 결과를 도출합니다.
+<strong>핵심</strong>: Claude는 명확한 목표와 반복적 개선을 통해 최고의 결과를 도출합니다.
 
 #### Explore (탐색)
 코딩하기 전에 관련 파일을 먼저 읽어 컨텍스트를 파악합니다.
@@ -125,27 +125,27 @@ TodoWrite 도구와 Think 모드를 활용해 작업 계획을 수립합니다.
 
 ### 3. Think 도구 활용
 
-**언제 사용하는가**:
+<strong>언제 사용하는가</strong>:
 - 복잡한 아키텍처 결정
 - 다중 파일 수정이 필요한 경우
 - 순차적 의사결정이 요구되는 작업
 
-**실제 적용 예시**:
+<strong>실제 적용 예시</strong>:
 ```
 "Think 모드를 사용하여 블로그의 다국어 SEO 전략을 수립하고,
 각 언어별 최적의 메타데이터를 제안해주세요."
 ```
 
-**성능 개선**:
+<strong>성능 개선</strong>:
 - Airline 도메인 테스트: 54% 상대적 성능 향상
 - Retail 도메인: 0.812 (베이스라인 0.783)
 - SWE-bench: 평균 1.6% 개선
 
 ### 4. 서브에이전트 시스템 구축
 
-**핵심**: 전문화된 에이전트에게 특정 작업을 위임하면 컨텍스트 집중도와 토큰 효율성이 향상됩니다.
+<strong>핵심</strong>: 전문화된 에이전트에게 특정 작업을 위임하면 컨텍스트 집중도와 토큰 효율성이 향상됩니다.
 
-**이 프로젝트의 서브에이전트 구조**:
+<strong>이 프로젝트의 서브에이전트 구조</strong>:
 ```
 .claude/agents/
 ├── content-planner.md        # 콘텐츠 전략
@@ -156,7 +156,7 @@ TodoWrite 도구와 Think 모드를 활용해 작업 계획을 수립합니다.
 └── analytics-reporter.md     # 트래픽 분석
 ```
 
-**사용 예시**:
+<strong>사용 예시</strong>:
 ```bash
 @writing-assistant "TypeScript 5.0 기능 블로그 작성"
 @seo-optimizer "최근 포스트 내부 링크 최적화"
@@ -167,9 +167,9 @@ TodoWrite 도구와 Think 모드를 활용해 작업 계획을 수립합니다.
 
 ### 개선 1: 테스트 가이드라인 추가
 
-**문제점**: Claude가 변경 후 검증 방법을 몰라 에러를 놓침
+<strong>문제점</strong>: Claude가 변경 후 검증 방법을 몰라 에러를 놓침
 
-**해결책**: Testing Guidelines 섹션 추가
+<strong>해결책</strong>: Testing Guidelines 섹션 추가
 ```markdown
 ## Testing Guidelines
 
@@ -181,13 +181,13 @@ TodoWrite 도구와 Think 모드를 활용해 작업 계획을 수립합니다.
 npm run build
 ```
 
-**결과**: Claude가 자동으로 변경 후 `npm run astro check`를 실행하여 검증
+<strong>결과</strong>: Claude가 자동으로 변경 후 `npm run astro check`를 실행하여 검증
 
 ### 개선 2: Repository Etiquette 명시
 
-**문제점**: 일관성 없는 커밋 메시지
+<strong>문제점</strong>: 일관성 없는 커밋 메시지
 
-**해결책**: Git Commit Message 규칙 문서화
+<strong>해결책</strong>: Git Commit Message 규칙 문서화
 ```markdown
 ## Repository Etiquette
 
@@ -201,7 +201,7 @@ npm run build
 - refactor: 코드 리팩토링
 ```
 
-**결과**: Claude가 자동으로 규칙을 준수하는 커밋 메시지 생성
+<strong>결과</strong>: Claude가 자동으로 규칙을 준수하는 커밋 메시지 생성
 ```bash
 feat(blog): add claude code best practices post
 docs(claude): update workflow guidelines
@@ -209,9 +209,9 @@ docs(claude): update workflow guidelines
 
 ### 개선 3: 환경 설정 가이드 추가
 
-**문제점**: 환경 변수 설정 방법을 매번 설명해야 함
+<strong>문제점</strong>: 환경 변수 설정 방법을 매번 설명해야 함
 
-**해결책**: Environment Setup 섹션 추가
+<strong>해결책</strong>: Environment Setup 섹션 추가
 ```markdown
 ## Environment Setup
 
@@ -220,18 +220,18 @@ docs(claude): update workflow guidelines
 GEMINI_API_KEY=your_api_key_here
 ```
 
-**결과**: 새로운 작업 시 Claude가 자동으로 필요한 환경 변수를 확인
+<strong>결과</strong>: 새로운 작업 시 Claude가 자동으로 필요한 환경 변수를 확인
 
 ### 개선 4: Claude Code 워크플로우 최적화
 
-**추가된 섹션**:
+<strong>추가된 섹션</strong>:
 - Explore → Plan → Code → Commit 워크플로우
 - Think 도구 활용 가이드
 - 서브에이전트 활용 전략
 - /clear 명령어 사용 가이드
 - 반복적 개선 (Iteration) 전략
 
-**실제 효과**:
+<strong>실제 효과</strong>:
 ```bash
 # 이전: 직접 작업 지시
 "블로그 포스트 작성해줘"
@@ -245,13 +245,13 @@ GEMINI_API_KEY=your_api_key_here
 
 ### 개선 5: MCP Server Integration 문서화
 
-**추가 내용**:
+<strong>추가 내용</strong>:
 - Context7: 최신 라이브러리 문서 조회
 - Playwright: 웹 자동화 및 테스트
 - Chrome DevTools: 성능 분석
 - Google Analytics: 트래픽 분석
 
-**활용 예시**:
+<strong>활용 예시</strong>:
 ```bash
 "Context7를 사용해서 Astro 5.0의 최신 이미지 최적화 기능을 조회해줘"
 ```
@@ -259,18 +259,18 @@ GEMINI_API_KEY=your_api_key_here
 ## 측정 가능한 개선 효과
 
 ### 1. 작업 효율성
-- **에러 발생률**: 40% 감소 (사전 검증 체크리스트 도입)
-- **재작업 횟수**: 60% 감소 (명확한 워크플로우)
-- **평균 작업 완료 시간**: 30% 단축
+- <strong>에러 발생률</strong>: 40% 감소 (사전 검증 체크리스트 도입)
+- <strong>재작업 횟수</strong>: 60% 감소 (명확한 워크플로우)
+- <strong>평균 작업 완료 시간</strong>: 30% 단축
 
 ### 2. 코드 품질
-- **타입 체크 통과율**: 95% → 100%
-- **일관된 코드 스타일**: 수동 수정 거의 불필요
-- **SEO 메타데이터 완성도**: 80% → 100%
+- <strong>타입 체크 통과율</strong>: 95% → 100%
+- <strong>일관된 코드 스타일</strong>: 수동 수정 거의 불필요
+- <strong>SEO 메타데이터 완성도</strong>: 80% → 100%
 
 ### 3. 컨텍스트 효율성
-- **토큰 사용량**: 평균 25% 절감 (서브에이전트 활용)
-- **불필요한 설명**: 70% 감소 (문서화된 가이드라인)
+- <strong>토큰 사용량</strong>: 평균 25% 절감 (서브에이전트 활용)
+- <strong>불필요한 설명</strong>: 70% 감소 (문서화된 가이드라인)
 
 ## Best Practices 체크리스트
 
@@ -377,14 +377,14 @@ CLAUDE.md에 투자한 시간은 매 작업마다 배로 돌아옵니다. 한 �
 
 Claude Code Best Practices를 적용한 결과, 단순히 "AI가 코드를 작성해주는 도구"에서 "개발 워크플로우 전체를 최적화하는 플랫폼"으로 인식이 바뀌었습니다.
 
-**핵심 교훈**:
-1. **문서화에 투자하라**: CLAUDE.md는 프로젝트의 두뇌
-2. **워크플로우를 정의하라**: Explore → Plan → Code → Commit
-3. **전문화하라**: 서브에이전트 시스템 활용
-4. **반복하라**: 첫 시도가 완벽할 필요 없음
-5. **측정하라**: 개선 효과를 정량적으로 추적
+<strong>핵심 교훈</strong>:
+1. <strong>문서화에 투자하라</strong>: CLAUDE.md는 프로젝트의 두뇌
+2. <strong>워크플로우를 정의하라</strong>: Explore → Plan → Code → Commit
+3. <strong>전문화하라</strong>: 서브에이전트 시스템 활용
+4. <strong>반복하라</strong>: 첫 시도가 완벽할 필요 없음
+5. <strong>측정하라</strong>: 개선 효과를 정량적으로 추적
 
-Claude Code는 단순한 코딩 어시스턴트가 아니라, **개발 생산성을 혁신하는 파트너**입니다. Best Practices를 따르면 그 잠재력을 100% 끌어낼 수 있습니다.
+Claude Code는 단순한 코딩 어시스턴트가 아니라, <strong>개발 생산성을 혁신하는 파트너</strong>입니다. Best Practices를 따르면 그 잠재력을 100% 끌어낼 수 있습니다.
 
 ## 참고 자료
 
@@ -396,4 +396,4 @@ Claude Code는 단순한 코딩 어시스턴트가 아니라, **개발 생산성
 
 ---
 
-**이 포스트가 도움이 되었다면**, 여러분의 프로젝트에도 Claude Code Best Practices를 적용해보세요. 개발 생산성이 눈에 띄게 향상될 것입니다.
+<strong>이 포스트가 도움이 되었다면</strong>, 여러분의 프로젝트에도 Claude Code Best Practices를 적용해보세요. 개발 생산성이 눈에 띄게 향상될 것입니다.

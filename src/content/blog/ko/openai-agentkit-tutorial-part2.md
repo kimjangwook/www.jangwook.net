@@ -55,31 +55,31 @@ relatedPosts:
       zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
 ---
 
-> **시리즈: OpenAI AgentKit 마스터하기** (2/2)
+> <strong>시리즈: OpenAI AgentKit 마스터하기</strong> (2/2)
 >
 > 1. [OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기](/ko/blog/ko/openai-agentkit-tutorial-part1)
-> 2. **OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴** ← 현재 글
+> 2. <strong>OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴</strong> ← 현재 글
 
 # OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴
 
-[1부](/ko/blog/ko/openai-agentkit-tutorial-part1)에서 AgentKit의 핵심 개념과 기본 사용법을 배웠습니다. 이제 실제 프로덕션 환경에서 사용할 수 있는 **고급 아키텍처 패턴**과 **엔터프라이즈급 시스템 설계**를 다룹니다.
+[1부](/ko/blog/ko/openai-agentkit-tutorial-part1)에서 AgentKit의 핵심 개념과 기본 사용법을 배웠습니다. 이제 실제 프로덕션 환경에서 사용할 수 있는 <strong>고급 아키텍처 패턴</strong>과 <strong>엔터프라이즈급 시스템 설계</strong>를 다룹니다.
 
-이 글에서는 실제 기업들이 어떻게 AgentKit을 활용하여 복잡한 문제를 해결하는지, 그리고 여러분이 직접 구현할 수 있는 **완전한 코드 예제**를 제공합니다.
+이 글에서는 실제 기업들이 어떻게 AgentKit을 활용하여 복잡한 문제를 해결하는지, 그리고 여러분이 직접 구현할 수 있는 <strong>완전한 코드 예제</strong>를 제공합니다.
 
 ## 핵심 요약 (TL;DR)
 
-- 🏗️ **3가지 엔터프라이즈 아키텍처 패턴**: 계층적, 이벤트 주도, 그래프 기반 오케스트레이션
-- 🔧 **커스텀 MCP 서버 구축**: 직접 만들어 AgentKit에 통합
-- 📊 **프로덕션 모니터링**: Evals를 활용한 성능 최적화 및 A/B 테스트
-- 🛡️ **엔터프라이즈 보안**: 데이터 격리, 감사 로그, 컴플라이언스
-- 💼 **3가지 실전 케이스**: SaaS 자동화, 데이터 파이프라인, DevOps 워크플로우
-- ⚡ **성능 최적화**: 병렬 처리, 캐싱, 스트리밍 응답
+- 🏗️ <strong>3가지 엔터프라이즈 아키텍처 패턴</strong>: 계층적, 이벤트 주도, 그래프 기반 오케스트레이션
+- 🔧 <strong>커스텀 MCP 서버 구축</strong>: 직접 만들어 AgentKit에 통합
+- 📊 <strong>프로덕션 모니터링</strong>: Evals를 활용한 성능 최적화 및 A/B 테스트
+- 🛡️ <strong>엔터프라이즈 보안</strong>: 데이터 격리, 감사 로그, 컴플라이언스
+- 💼 <strong>3가지 실전 케이스</strong>: SaaS 자동화, 데이터 파이프라인, DevOps 워크플로우
+- ⚡ <strong>성능 최적화</strong>: 병렬 처리, 캐싱, 스트리밍 응답
 
 ## 엔터프라이즈 아키텍처 패턴
 
 ### 패턴 1: 계층적 관리자-작업자 (Hierarchical Manager-Worker)
 
-**사용 시나리오**: 복잡한 의사결정 트리, 명확한 책임 분리가 필요한 경우
+<strong>사용 시나리오</strong>: 복잡한 의사결정 트리, 명확한 책임 분리가 필요한 경우
 
 ```mermaid
 graph TD
@@ -253,13 +253,13 @@ result = Runner.run_sync(
 # 9. Manager → User: 프로젝트 완료 리포트
 ```
 
-**장점**:
+<strong>장점</strong>:
 - 명확한 책임 분리
 - 확장 가능 (새 전문가 추가 용이)
 - 디버깅 용이 (계층별 추적)
 - 리소스 효율적 (필요한 전문가만 호출)
 
-**단점**:
+<strong>단점</strong>:
 - 매니저가 병목점이 될 수 있음
 - 계층이 깊으면 지연 증가
 - 매니저의 의사결정 품질에 의존
@@ -268,7 +268,7 @@ result = Runner.run_sync(
 
 ### 패턴 2: 이벤트 주도 오케스트레이션 (Event-Driven Orchestration)
 
-**사용 시나리오**: 비동기 작업, 느슨한 결합, 동적 워크플로우
+<strong>사용 시나리오</strong>: 비동기 작업, 느슨한 결합, 동적 워크플로우
 
 ```mermaid
 graph LR
@@ -397,13 +397,13 @@ async def create_new_user(user_data: dict):
     # 이메일, 프로필, 분석 로그 동시 처리됨
 ```
 
-**장점**:
+<strong>장점</strong>:
 - 에이전트 간 느슨한 결합
 - 병렬 처리로 성능 향상
 - 새 기능 추가 용이 (새 구독자 추가만)
 - 장애 격리 (하나 실패해도 다른 것 영향 없음)
 
-**단점**:
+<strong>단점</strong>:
 - 디버깅 어려움 (비동기 흐름)
 - 이벤트 순서 보장 어려움
 - 복잡도 증가
@@ -412,7 +412,7 @@ async def create_new_user(user_data: dict):
 
 ### 패턴 3: 그래프 기반 워크플로우 (Graph-Based Workflow)
 
-**사용 시나리오**: 복잡한 조건부 흐름, 루프, 동적 의사결정
+<strong>사용 시나리오</strong>: 복잡한 조건부 흐름, 루프, 동적 의사결정
 
 ```mermaid
 graph TD
@@ -581,13 +581,13 @@ initial_state = {
 final_state = await app.ainvoke(initial_state)
 ```
 
-**장점**:
+<strong>장점</strong>:
 - 복잡한 조건부 로직 표현
 - 루프 및 재시도 지원
 - 시각화 가능 (그래프로 표현)
 - 동적 워크플로우 변경
 
-**단점**:
+<strong>단점</strong>:
 - 초기 설정 복잡
 - 상태 관리 필요
 - LangGraph 의존성
@@ -600,7 +600,7 @@ MCP(Model Context Protocol)를 사용하면 AgentKit을 외부 시스템과 표�
 
 ### 실전 예제: Slack MCP 서버 구축
 
-**목표**: AgentKit 에이전트가 Slack에 메시지를 보내고, 채널을 관리하고, 반응을 추가할 수 있도록 하기
+<strong>목표</strong>: AgentKit 에이전트가 Slack에 메시지를 보내고, 채널을 관리하고, 반응을 추가할 수 있도록 하기
 
 #### 1. MCP 서버 구조
 
@@ -1137,8 +1137,8 @@ anomalies = audit_logger.detect_anomalies(
 
 ### 케이스 1: SaaS 고객 온보딩 자동화
 
-**기업**: B2B SaaS (프로젝트 관리 도구)
-**목표**: 신규 고객 온보딩 시간 70% 단축
+<strong>기업</strong>: B2B SaaS (프로젝트 관리 도구)
+<strong>목표</strong>: 신규 고객 온보딩 시간 70% 단축
 
 #### 시스템 아키텍처
 
@@ -1298,8 +1298,8 @@ await onboard_customer(customer)
 
 ### 케이스 2: 데이터 파이프라인 자동화
 
-**기업**: E-commerce 플랫폼
-**목표**: ETL 파이프라인 장애 자동 복구
+<strong>기업</strong>: E-commerce 플랫폼
+<strong>목표</strong>: ETL 파이프라인 장애 자동 복구
 
 #### 구현 코드
 
@@ -1399,8 +1399,8 @@ asyncio.run(monitor_pipeline())
 
 ### 케이스 3: DevOps 워크플로우 자동화
 
-**기업**: 핀테크 스타트업
-**목표**: 배포 프로세스 완전 자동화, 수동 작업 제로
+<strong>기업</strong>: 핀테크 스타트업
+<strong>목표</strong>: 배포 프로세스 완전 자동화, 수동 작업 제로
 
 #### 완전 자동화된 배포 파이프라인
 
@@ -1571,22 +1571,22 @@ AgentKit을 마스터했습니다! 이제 여러분만의 프로덕션 시스템
 
 ### 추천 학습 경로
 
-1. **작게 시작**: 1-2개 에이전트로 단순한 워크플로우 구축
-2. **측정**: Evals로 성능 추적
-3. **반복**: A/B 테스트로 지속적 개선
-4. **확장**: 더 많은 에이전트와 복잡한 패턴 추가
-5. **최적화**: 병렬 처리, 캐싱, 스트리밍 적용
+1. <strong>작게 시작</strong>: 1-2개 에이전트로 단순한 워크플로우 구축
+2. <strong>측정</strong>: Evals로 성능 추적
+3. <strong>반복</strong>: A/B 테스트로 지속적 개선
+4. <strong>확장</strong>: 더 많은 에이전트와 복잡한 패턴 추가
+5. <strong>최적화</strong>: 병렬 처리, 캐싱, 스트리밍 적용
 
 ### 커뮤니티 및 리소스
 
-- **OpenAI DevDay 2025 영상**: 실전 데모 확인
-- **AgentKit GitHub**: 커뮤니티 예제 및 템플릿
-- **MCP Hub**: 다양한 MCP 서버 탐색
-- **r/OpenAI**: 다른 개발자들과 경험 공유
+- <strong>OpenAI DevDay 2025 영상</strong>: 실전 데모 확인
+- <strong>AgentKit GitHub</strong>: 커뮤니티 예제 및 템플릿
+- <strong>MCP Hub</strong>: 다양한 MCP 서버 탐색
+- <strong>r/OpenAI</strong>: 다른 개발자들과 경험 공유
 
 ---
 
-**시리즈 완료!** 🎉
+<strong>시리즈 완료!</strong> 🎉
 
 이제 AgentKit의 모든 것을 알게 되었습니다. [1부](/ko/blog/ko/openai-agentkit-tutorial-part1)에서 기초를, 2부에서 실전 마스터를 배웠습니다.
 

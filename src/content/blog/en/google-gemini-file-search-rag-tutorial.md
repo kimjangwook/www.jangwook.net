@@ -624,31 +624,31 @@ Access `http://localhost:8501` in your browser to see the interface.
 
 ### Actual Implementation Screens
 
-**1. Main Screen and Store Creation**
+<strong>1. Main Screen and Store Creation</strong>
 
 ![Gemini File Search Main Screen](../../../assets/gemini-file-search/gemini-file-search-1.png)
 
 In the left sidebar, you can enter your Gemini API key and create a Store. Enter a Store name and click the "generation" button to create a new File Search Store.
 
-**2. File Upload Interface**
+<strong>2. File Upload Interface</strong>
 
 ![File Upload Screen](../../../assets/gemini-file-search/gemini-file-search-2.png)
 
 In the "File Upload" tab, you can select and upload multiple files simultaneously. Supports various formats including PDF, TXT, DOCX, Markdown, and CSV.
 
-**3. Q&A Interface**
+<strong>3. Q&A Interface</strong>
 
 ![Q&A Screen](../../../assets/gemini-file-search/gemini-file-search-3.png)
 
 In the "Q&A" tab, you can ask questions about uploaded documents in natural language. The conversation proceeds in chat format, with citations displayed alongside answers.
 
-**4. Store Management and File List**
+<strong>4. Store Management and File List</strong>
 
 ![Store Management](../../../assets/gemini-file-search/gemini-file-search-4.png)
 
 You can check the information of the currently selected Store and the list of uploaded files.
 
-**5. Q&A Result Example**
+<strong>5. Q&A Result Example</strong>
 
 ![Q&A Result](../../../assets/gemini-file-search/gemini-file-search-5.png)
 

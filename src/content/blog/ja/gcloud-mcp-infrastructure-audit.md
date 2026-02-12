@@ -232,26 +232,26 @@ async def run_infrastructure_audit():
 
 <strong>セキュリティ脆弱性（重大）</strong>
 
-1. **環境変数に露出したAPIキー**
+1. <strong>環境変数に露出したAPIキー</strong>
    - 場所：複数のCloud Run/Functionsサービス
    - リスク：認証情報漏洩時のサービス悪用
    - 対応：Secret Managerへ即座に移行
 
-2. **RDPポート全開放**
+2. <strong>RDPポート全開放</strong>
    - 場所：default VPCファイアウォールルール
    - リスク：ブルートフォース攻撃への露出
    - 対応：特定IP範囲に制限
 
-3. **サポート終了OS**
+3. <strong>サポート終了OS</strong>
    - 場所：cdp-sftp-prod VM（CentOS 7）
    - リスク：セキュリティパッチなし
    - 対応：Rocky LinuxまたはUbuntu LTSへ移行
 
 <strong>コスト最適化の機会</strong>
 
-1. **停止中のMySQLインスタンス**：ストレージコストのみ発生中
-2. **80以上のApp Engineバージョン**：未使用バージョンのクリーンアップ必要
-3. **空のBigQueryデータセット**：10データセット削除可能
+1. <strong>停止中のMySQLインスタンス</strong>：ストレージコストのみ発生中
+2. <strong>80以上のApp Engineバージョン</strong>：未使用バージョンのクリーンアップ必要
+3. <strong>空のBigQueryデータセット</strong>：10データセット削除可能
 
 ### 自動生成されたMermaidダイアグラム
 
@@ -370,9 +370,9 @@ gcloud MCPと並列エージェントアーキテクチャを組み合わせる�
 
 ### 次のステップ
 
-1. **gcloud MCPのインストール**：[GitHubリポジトリ](https://github.com/anthropics/gcloud-mcp)から開始
-2. **分析エージェントのカスタマイズ**：組織のセキュリティポリシーとコンプライアンス要件に合わせて調整
-3. **定期スキャンの設定**：Cloud Schedulerで週次/月次自動監査を構成
-4. **通知の統合**：Slack、Email、PagerDutyと連携して即座に対応
+1. <strong>gcloud MCPのインストール</strong>：[GitHubリポジトリ](https://github.com/anthropics/gcloud-mcp)から開始
+2. <strong>分析エージェントのカスタマイズ</strong>：組織のセキュリティポリシーとコンプライアンス要件に合わせて調整
+3. <strong>定期スキャンの設定</strong>：Cloud Schedulerで週次/月次自動監査を構成
+4. <strong>通知の統合</strong>：Slack、Email、PagerDutyと連携して即座に対応
 
 クラウドインフラ管理の新しいパラダイム、AIエージェントと共に始めましょう。

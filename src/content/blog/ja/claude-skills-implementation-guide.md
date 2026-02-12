@@ -59,15 +59,15 @@ relatedPosts:
 
 ## 概要
 
-2025年10月16日、Anthropicは**Agent Skills**という革新的な機能を発表しました。これは単純なプロンプトエンジニアリングを超えて、**ファイルとフォルダでAIエージェントの専門性を構造化**する新しいパラダイムです。
+2025年10月16日、Anthropicは<strong>Agent Skills</strong>という革新的な機能を発表しました。これは単純なプロンプトエンジニアリングを超えて、<strong>ファイルとフォルダでAIエージェントの専門性を構造化</strong>する新しいパラダイムです。
 
-この記事では、Claude Skillsを私のブログ自動化プロジェクトに適用した際の**試行錯誤、解決プロセス、そして実践的なノウハウ**を共有します。単なる機能紹介ではなく、**実際のコードと共に学んだ教訓**をまとめました。
+この記事では、Claude Skillsを私のブログ自動化プロジェクトに適用した際の<strong>試行錯誤、解決プロセス、そして実践的なノウハウ</strong>を共有します。単なる機能紹介ではなく、<strong>実際のコードと共に学んだ教訓</strong>をまとめました。
 
 ## Agent Skillsとは何か?
 
 ### 核心概念
 
-Agent Skillsは**専門知識をファイルシステムでパッケージング**する方法です。従来はシステムプロンプトに全ての指示を含めていましたが、現在は:
+Agent Skillsは<strong>専門知識をファイルシステムでパッケージング</strong>する方法です。従来はシステムプロンプトに全ての指示を含めていましたが、現在は:
 
 ```
 my-skill/
@@ -80,11 +80,11 @@ my-skill/
     └── template.txt
 ```
 
-このように**組織化されたフォルダ**で管理します。
+このように<strong>組織化されたフォルダ</strong>で管理します。
 
 ### 従来の方式との違い
 
-**従来の方式（システムプロンプト）**:
+<strong>従来の方式（システムプロンプト）</strong>:
 ```markdown
 あなたはブログ執筆の専門家です。
 1. SEO最適化されたタイトル生成
@@ -94,7 +94,7 @@ my-skill/
 （全ての指示が一箇所に集中）
 ```
 
-**Skillsの方式**:
+<strong>Skillsの方式</strong>:
 ````markdown
 ---
 name: Blog Writing Assistant
@@ -115,14 +115,14 @@ python scripts/validate_frontmatter.py post.md
 ````
 
 主な違い:
-- **モジュール化**: 関心事別にファイル分離
-- **段階的ロード**: 必要なファイルのみコンテキストにロード
-- **コード実行**: Python/Bashスクリプトの直接実行が可能
-- **再利用性**: チーム全体で共有可能
+- <strong>モジュール化</strong>: 関心事別にファイル分離
+- <strong>段階的ロード</strong>: 必要なファイルのみコンテキストにロード
+- <strong>コード実行</strong>: Python/Bashスクリプトの直接実行が可能
+- <strong>再利用性</strong>: チーム全体で共有可能
 
 ### Progressive Disclosure（段階的開示）
 
-Skillsの核心哲学は**3段階の情報開示**です:
+Skillsの核心哲学は<strong>3段階の情報開示</strong>です:
 
 ```mermaid
 graph TD
@@ -135,13 +135,13 @@ graph TD
     F --> G
 ```
 
-**Level 1 - メタデータ（起動時にロード）**:
+<strong>Level 1 - メタデータ（起動時にロード）</strong>:
 ```yaml
 name: PDF Processing
 description: Extract text, fill forms, merge PDFs...
 ```
 
-**Level 2 - SKILL.md（必要時にロード）**:
+<strong>Level 2 - SKILL.md（必要時にロード）</strong>:
 ```markdown
 ## Quick Start
 Extract text:
@@ -149,13 +149,13 @@ Extract text:
 フォーム入力については[FORMS.md](FORMS.md)を参照
 ```
 
-**Level 3 - 追加ファイル（詳細作業時にロード）**:
+<strong>Level 3 - 追加ファイル（詳細作業時にロード）</strong>:
 ```markdown
 # FORMS.md
 詳細なフォーム入力手順...
 ```
 
-この構造のおかげで**コンテキストウィンドウを効率的に活用**しながら、実質無制限の情報を提供できます。
+この構造のおかげで<strong>コンテキストウィンドウを効率的に活用</strong>しながら、実質無制限の情報を提供できます。
 
 ## プロジェクト背景: なぜSkillsが必要だったのか?
 
@@ -171,11 +171,11 @@ Extract text:
 └── seo-optimizer.md
 ```
 
-**問題点**:
-1. **エージェント間の重複**: SEOガイドラインを複数のエージェントが繰り返し参照
-2. **コンテキストの無駄**: エージェントファイル全体がシステムプロンプトにロード
-3. **保守の困難**: ガイドライン変更時に複数ファイルを修正
-4. **コード再利用不可**: Pythonスクリプトを直接実行する方法がない
+<strong>問題点</strong>:
+1. <strong>エージェント間の重複</strong>: SEOガイドラインを複数のエージェントが繰り返し参照
+2. <strong>コンテキストの無駄</strong>: エージェントファイル全体がシステムプロンプトにロード
+3. <strong>保守の困難</strong>: ガイドライン変更時に複数ファイルを修正
+4. <strong>コード再利用不可</strong>: Pythonスクリプトを直接実行する方法がない
 
 ### Skillsで解決
 
@@ -195,11 +195,11 @@ Skillsを導入することで:
     └── analyze_similarity.py
 ```
 
-**改善点**:
-1. **単一の真実のソース**: SEOガイドラインは一箇所のみ
-2. **効率的なロード**: 必要なファイルのみロード
-3. **コード実行**: 日付検証、slug生成をPythonで自動化
-4. **チーム共有**: gitでチームメンバーに配布可能
+<strong>改善点</strong>:
+1. <strong>単一の真実のソース</strong>: SEOガイドラインは一箇所のみ
+2. <strong>効率的なロード</strong>: 必要なファイルのみロード
+3. <strong>コード実行</strong>: 日付検証、slug生成をPythonで自動化
+4. <strong>チーム共有</strong>: gitでチームメンバーに配布可能
 
 ## 最初のSkill作成: Blog Writing Skill
 
@@ -265,7 +265,7 @@ python scripts/validate_frontmatter.py ja/my-post.md
 
 ### Step 3: サポートファイル追加
 
-**seo-guidelines.md**:
+<strong>seo-guidelines.md</strong>:
 ```markdown
 # SEO Guidelines
 
@@ -283,7 +283,7 @@ python scripts/validate_frontmatter.py ja/my-post.md
 ...
 ```
 
-**scripts/get_next_pubdate.py**:
+<strong>scripts/get_next_pubdate.py</strong>:
 ```python
 #!/usr/bin/env python3
 """
@@ -333,86 +333,86 @@ chmod +x scripts/*.py
 
 ### 問題1: ClaudeがSkillを使用しない
 
-**症状**:
+<strong>症状</strong>:
 ```
 User: ブログ投稿を書いて
 Claude: （Skillを使わず通常の応答）
 ```
 
-**原因**: descriptionが曖昧すぎた
+<strong>原因</strong>: descriptionが曖昧すぎた
 ```yaml
 description: Helps with blog posts
 ```
 
-**解決**:
+<strong>解決</strong>:
 ```yaml
 description: Create SEO-optimized multi-language blog posts with proper frontmatter, hero images, and content structure. Use when writing blog posts, creating content, or managing blog metadata.
 ```
 
-**教訓**: descriptionに**何をするか + いつ使うか**の両方を明記すべき
+<strong>教訓</strong>: descriptionに<strong>何をするか + いつ使うか</strong>の両方を明記すべき
 
 ### 問題2: YAMLパースエラー
 
-**症状**:
+<strong>症状</strong>:
 ```
 Error: Invalid frontmatter in SKILL.md
 ```
 
-**原因**: コロン(:)の後に引用符なしで特殊文字を使用
+<strong>原因</strong>: コロン(:)の後に引用符なしで特殊文字を使用
 ```yaml
 description: Use when: creating posts  # ❌ 2番目のコロンが問題
 ```
 
-**解決**:
+<strong>解決</strong>:
 ```yaml
 description: "Use when: creating posts"  # ✅ 引用符で囲む
 ```
 
-**教訓**: YAMLで特殊文字を含む場合は常に引用符を使用
+<strong>教訓</strong>: YAMLで特殊文字を含む場合は常に引用符を使用
 
 ### 問題3: スクリプト実行失敗
 
-**症状**:
+<strong>症状</strong>:
 ```
 PermissionError: [Errno 13] Permission denied: 'scripts/validate.py'
 ```
 
-**原因**: 実行権限が付与されていない
+<strong>原因</strong>: 実行権限が付与されていない
 
-**解決**:
+<strong>解決</strong>:
 ```bash
 chmod +x .claude/skills/blog-writing/scripts/*.py
 ```
 
-**追加ヒント**: Windowsでも動作するようにshebangを追加
+<strong>追加ヒント</strong>: Windowsでも動作するようにshebangを追加
 ```python
 #!/usr/bin/env python3
 ```
 
 ### 問題4: ファイルパスエラー
 
-**症状**:
+<strong>症状</strong>:
 ```
 FileNotFoundError: [Errno 2] No such file or directory: 'reference.md'
 ```
 
-**原因**: SKILL.mdから相対パスを誤って指定
+<strong>原因</strong>: SKILL.mdから相対パスを誤って指定
 ```markdown
 See [reference.md](../reference.md)  # ❌
 ```
 
-**解決**:
+<strong>解決</strong>:
 ```markdown
 See [reference.md](reference.md)     # ✅ 同じディレクトリ
 ```
 
-**教訓**: 全てのパスはSKILL.md基準の相対パス
+<strong>教訓</strong>: 全てのパスはSKILL.md基準の相対パス
 
 ### 問題5: 重複Skillの競合
 
-**症状**: Claudeが複数のSkillの中から誤ったものを選択
+<strong>症状</strong>: Claudeが複数のSkillの中から誤ったものを選択
 
-**原因**: 類似したdescriptionを持つ2つのSkill
+<strong>原因</strong>: 類似したdescriptionを持つ2つのSkill
 ```yaml
 # Skill 1
 description: For data analysis
@@ -421,7 +421,7 @@ description: For data analysis
 description: For analyzing data
 ```
 
-**解決**: 明確なトリガーキーワードで区別
+<strong>解決</strong>: 明確なトリガーキーワードで区別
 ```yaml
 # Skill 1
 description: Analyze sales data in Excel files and CRM exports. Use for sales reports, pipeline analysis, revenue tracking.
@@ -430,7 +430,7 @@ description: Analyze sales data in Excel files and CRM exports. Use for sales re
 description: Analyze log files and system metrics data. Use for performance monitoring, debugging, system diagnostics.
 ```
 
-**教訓**: Skill間の明確なドメイン分離が必要
+<strong>教訓</strong>: Skill間の明確なドメイン分離が必要
 
 ## 実践成果: Before & After
 
@@ -447,7 +447,7 @@ description: Analyze log files and system metrics data. Use for performance moni
 ...
 ```
 
-**問題点**:
+<strong>問題点</strong>:
 - ユーザーが`/write-post`コマンドを明示的に入力する必要がある
 - 段階別の指示を毎回読む必要がある
 - コード再利用不可
@@ -468,23 +468,23 @@ def find_latest_pubdate():
     # 自動化ロジック
 ```
 
-**User**: "TypeScriptについてのブログ投稿を書いて"
+<strong>User</strong>: "TypeScriptについてのブログ投稿を書いて"
 
-**Claude**: （自動的にblog-writing Skillを起動）
+<strong>Claude</strong>: （自動的にblog-writing Skillを起動）
 1. `get_next_pubdate.py`実行 → `'2025-10-22'`
 2. frontmatter生成
 3. seo-guidelines.md参照してタイトル最適化
 4. コンテンツ作成
 
-**改善点**:
-- ✅ **自動発見**: `/write-post`タイピング不要
-- ✅ **コード実行**: Pythonで日付計算を自動化
-- ✅ **コンテキスト効率**: 必要なファイルのみロード
-- ✅ **再利用性**: 他のプロジェクトにも適用可能
+<strong>改善点</strong>:
+- ✅ <strong>自動発見</strong>: `/write-post`タイピング不要
+- ✅ <strong>コード実行</strong>: Pythonで日付計算を自動化
+- ✅ <strong>コンテキスト効率</strong>: 必要なファイルのみロード
+- ✅ <strong>再利用性</strong>: 他のプロジェクトにも適用可能
 
 ### 成果測定
 
-**トークン使用量比較**（ブログ投稿1件作成基準）:
+<strong>トークン使用量比較</strong>（ブログ投稿1件作成基準）:
 
 | 項目 | Before | After | 削減率 |
 |------|--------|-------|--------|
@@ -492,7 +492,7 @@ def find_latest_pubdate():
 | 指示の繰り返し読み | 5回 | 1回 | 80% ↓ |
 | 総トークン | ~18,000 | ~10,000 | 44% ↓ |
 
-**作業時間比較**:
+<strong>作業時間比較</strong>:
 
 | 作業 | Before | After | 改善 |
 |------|--------|-------|------|
@@ -512,8 +512,8 @@ allowed-tools: Read, Grep, Glob
 ---
 ```
 
-**効果**:
-- Skill起動時に**Write、Editツールが使用不可**
+<strong>効果</strong>:
+- Skill起動時に<strong>Write、Editツールが使用不可</strong>
 - 読み取り専用作業で誤ってファイルを変更するのを防止
 - 最小権限の原則（Principle of Least Privilege）
 
@@ -543,7 +543,7 @@ allowed-tools: Read, Grep, Glob
 **ファイルの変更不可** - 読み取り専用アクセスのみ。
 ````
 
-**使用例**:
+<strong>使用例</strong>:
 ```
 User: PR #123をレビューして
 Claude: （Code Review Skill起動、Read/Grep/Globのみ使用可能）
@@ -553,19 +553,19 @@ Claude: （Code Review Skill起動、Read/Grep/Globのみ使用可能）
 
 ### 方法1: Gitで共有（推奨）
 
-**プロジェクトSkill作成**:
+<strong>プロジェクトSkill作成</strong>:
 ```bash
 mkdir -p .claude/skills/team-conventions
 ```
 
-**コミット＆プッシュ**:
+<strong>コミット＆プッシュ</strong>:
 ```bash
 git add .claude/skills/
 git commit -m "Add team coding conventions Skill"
 git push
 ```
 
-**チームメンバー**:
+<strong>チームメンバー</strong>:
 ```bash
 git pull
 # Skillが自動的に利用可能に!
@@ -588,13 +588,13 @@ my-plugin/
 
 ### 1. Skillは一つの役割に集中
 
-**❌ 悪い例**:
+<strong>❌ 悪い例</strong>:
 ```yaml
 name: All-Purpose Helper
 description: Does everything - documents, data, deployment, testing...
 ```
 
-**✅ 良い例**:
+<strong>✅ 良い例</strong>:
 ```yaml
 name: PDF Form Filler
 description: Fill out PDF forms programmatically. Use when working with PDF forms or form data.
@@ -602,19 +602,19 @@ description: Fill out PDF forms programmatically. Use when working with PDF form
 
 ### 2. Descriptionにトリガーキーワードを含める
 
-**❌ 悪い例**:
+<strong>❌ 悪い例</strong>:
 ```yaml
 description: Helps with Excel
 ```
 
-**✅ 良い例**:
+<strong>✅ 良い例</strong>:
 ```yaml
 description: Analyze Excel spreadsheets, create pivot tables, generate charts. Use when working with Excel files, spreadsheets, .xlsx files, or tabular data analysis.
 ```
 
 ### 3. Progressive Disclosure活用
 
-**核心情報はSKILL.mdに**:
+<strong>核心情報はSKILL.mdに</strong>:
 ```markdown
 ## Quick Start
 PDFからテキストを抽出:
@@ -623,7 +623,7 @@ PDFからテキストを抽出:
 高度なフォーム入力については[forms.md](forms.md)を参照
 ```
 
-**詳細情報は別ファイルに**:
+<strong>詳細情報は別ファイルに</strong>:
 ```markdown
 # forms.md
 詳細な10ページのフォーム入力ガイド...
@@ -631,13 +631,13 @@ PDFからテキストを抽出:
 
 ### 4. コードとドキュメントの明確な区別
 
-**実行用スクリプト**:
+<strong>実行用スクリプト</strong>:
 ```python
 # scripts/process.py
 # Claudeが直接実行
 ```
 
-**参照用コード**:
+<strong>参照用コード</strong>:
 ```markdown
 # examples.md
 Claudeが読んで参照するコード例
@@ -695,29 +695,29 @@ Anthropic Engineering Blogによると:
 
 > Looking further ahead, we hope to enable agents to create, edit, and evaluate Skills on their own, letting them codify their own patterns of behavior into reusable capabilities.
 
-**可能になること**:
-1. **AIがSkillを自動生成**: 作業パターンを学習してSkillに自動変換
-2. **Skillの自己評価**: パフォーマンス測定と自動改善
-3. **MCPとの統合**: Skills + MCPでより強力なエージェント構築
+<strong>可能になること</strong>:
+1. <strong>AIがSkillを自動生成</strong>: 作業パターンを学習してSkillに自動変換
+2. <strong>Skillの自己評価</strong>: パフォーマンス測定と自動改善
+3. <strong>MCPとの統合</strong>: Skills + MCPでより強力なエージェント構築
 
 ## 結論
 
-Claude Skillsは**AIエージェント開発の新しい標準**となる可能性を持っています。
+Claude Skillsは<strong>AIエージェント開発の新しい標準</strong>となる可能性を持っています。
 
-**核心的な利点**:
+<strong>核心的な利点</strong>:
 - ✅ フォルダベースの直感的な構造
 - ✅ Progressive Disclosureで無制限のコンテキスト
 - ✅ コード実行で決定論的な作業処理
 - ✅ Gitでチーム共有可能
 - ✅ 既存システムと比べてトークン44%削減
 
-**始め方**:
+<strong>始め方</strong>:
 1. 簡単なSkill一つで開始（例: コミットメッセージ生成）
 2. 段階的に複雑度を上げる
 3. チームと共有してフィードバック収集
 4. 反復改善
 
-**学習リソース**:
+<strong>学習リソース</strong>:
 - [公式ドキュメント](https://docs.claude.com/en/docs/claude-code/skills)
 - [Engineering Blog](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
 - [Skills Cookbook](https://github.com/anthropics/claude-cookbooks/tree/main/skills)

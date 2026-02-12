@@ -353,13 +353,13 @@ def analyze_project_risks(task_data):
 
 <strong>目标</strong>：验证LLM工具效果并确认团队接受度
 
-**步骤**：
+<strong>步骤</strong>：
 1. <strong>工具选择</strong>：订阅ChatGPT Plus或Claude Pro
 2. <strong>用例选定</strong>：从会议记录总结开始（最耗时的任务）
 3. <strong>开发提示词模板</strong>：编写3〜5个标准提示词
 4. <strong>测量</strong>：评估节省时间和质量
 
-**成功指标**：
+<strong>成功指标</strong>：
 - 会议记录编写时间减少50%以上
 - 团队成员满意度4/5以上
 - 行动项遗漏率0%
@@ -368,7 +368,7 @@ def analyze_project_risks(task_data):
 
 <strong>目标</strong>：将现有PM工具与LLM集成
 
-**工具栈示例**：
+<strong>工具栈示例</strong>：
 ```mermaid
 graph LR
     A[Jira/Asana] --> B[n8n/Zapier]
@@ -381,7 +381,7 @@ graph LR
     F --> D
 ```
 
-**集成场景**：
+<strong>集成场景</strong>：
 1. <strong>Jira → Claude → Slack</strong>
    - 创建Jira问题时自动分析上下文
    - 将优先级和影响度分析结果发送到Slack
@@ -398,7 +398,7 @@ graph LR
 
 <strong>目标</strong>：构建基于AI代理的自主工作流
 
-**利用Claude Skills**：
+<strong>利用Claude Skills</strong>：
 ```markdown
 # Skill：Sprint回顾分析器
 
@@ -436,7 +436,7 @@ graph LR
 | 风险识别速度 | 每周1次手动 | 实时自动 | 100% ↑ |
 | PM战略工作时间 | 20% | 60% | 200% ↑ |
 
-**ROI计算**：
+<strong>ROI计算</strong>：
 ```python
 # 假设PM每小时人力成本为100,000韩元（约500元人民币）
 hourly_rate = 100000  # 韩元
@@ -499,7 +499,7 @@ roi = (annual_savings - total_cost) / total_cost * 100
 - ✅ 使用企业级LLM API（Azure OpenAI、Anthropic Enterprise）
 - ✅ 确认数据保留政策（Claude默认保留30天）
 
-**数据掩码示例**：
+<strong>数据掩码示例</strong>：
 ```python
 import re
 
@@ -545,7 +545,7 @@ graph LR
     D --> A
 ```
 
-**改进方法**：
+<strong>改进方法</strong>：
 - 将效果好的提示词添加到团队库
 - 每周分享LLM技巧（利用Slack频道）
 - 发现新用例（团队头脑风暴）
@@ -566,7 +566,7 @@ graph LR
 "
 ```
 
-**原则**：LLM是<strong>辅助工具</strong>，不是替代品。
+<strong>原则</strong>：LLM是<strong>辅助工具</strong>，不是替代品。
 
 ### 2. 缺乏上下文
 
@@ -643,7 +643,7 @@ graph LR
 - 连接多个工具执行复杂工作流
 - 获得人类批准后执行实际操作
 
-**示例**：Claude Computer Use
+<strong>示例</strong>：Claude Computer Use
 ```markdown
 PM："在Jira中创建下周的Sprint计划并通知团队"
 

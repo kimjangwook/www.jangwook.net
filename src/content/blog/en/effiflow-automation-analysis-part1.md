@@ -60,7 +60,7 @@ relatedPosts:
 ---
 
 > <strong>Series Guide</strong>: This is Part 1/3 of the "EffiFlow Automation Analysis/Evaluation and Improvements" series.
-> - **Part 1** (current): Core Architecture and Metrics Analysis
+> - <strong>Part 1</strong> (current): Core Architecture and Metrics Analysis
 > - [Part 2](/en/blog/en/effiflow-automation-analysis-part2): Skills and Commands Integration Strategy
 > - [Part 3](/en/blog/en/effiflow-automation-analysis-part3): Practical Improvement Cases and ROI Analysis
 
@@ -130,17 +130,17 @@ graph TB
 
 ### Layer Responsibilities
 
-**Commands (7)**: User-invoked workflow orchestrators
+<strong>Commands (7)</strong>: User-invoked workflow orchestrators
 - Manage complex multi-step tasks
 - Delegate work to Agents
 - Final validation and output
 
-**Agents (17)**: Independently executable specialists
+<strong>Agents (17)</strong>: Independently executable specialists
 - Possess domain-specific knowledge
 - Utilize Skills and Tools
 - Support parallel execution
 
-**Skills (4)**: Auto-discovered modular functions
+<strong>Skills (4)</strong>: Auto-discovered modular functions
 - SKILL.md + support files
 - Reusable logic
 - Configurable tool access
@@ -208,7 +208,7 @@ graph LR
     style Total fill:#10b981
 ```
 
-**ROI Analysis**:
+<strong>ROI Analysis</strong>:
 - Break-even Point: 3 executions
 - Annual savings: <strong>$4.07 (71%)</strong>
 - Investment recovery: Immediate (within 3 weeks)
@@ -228,7 +228,7 @@ if (existingMeta[slug]?.contentHash === newHash) {
 }
 ```
 
-**Impact**:
+<strong>Impact</strong>:
 - Full analysis of 13 posts: 2 minutes, $0.09
 - Only 2-3 new posts: 20 seconds, ~$0.02
 - <strong>79% additional savings</strong>
@@ -241,8 +241,8 @@ Traditional recommendation systems rely on <strong>keyword frequency (TF-IDF)</s
 
 | Approach | Advantages | Disadvantages |
 |----------|------------|---------------|
-| **TF-IDF** | Fast, cheap | No semantic understanding, misses synonyms |
-| **Claude LLM** | Semantic understanding, context-aware | Slow, costly |
+| <strong>TF-IDF</strong> | Fast, cheap | No semantic understanding, misses synonyms |
+| <strong>Claude LLM</strong> | Semantic understanding, context-aware | Slow, costly |
 
 EffiFlow chose <strong>Claude LLM</strong> but solved the cost problem with metadata-first architecture.
 
@@ -274,7 +274,7 @@ const similarityDimensions = {
 }
 ```
 
-**Key to multilingual reasoning**: LLM generates <strong>independent reasons</strong> for each language (not simple translation).
+<strong>Key to multilingual reasoning</strong>: LLM generates <strong>independent reasons</strong> for each language (not simple translation).
 
 ### Performance Metrics
 
@@ -335,24 +335,24 @@ each post frontmatter       (relatedPosts, V3)
 
 ### Automation Impact
 
-**Manual work time** (traditional):
+<strong>Manual work time</strong> (traditional):
 - Research: 30 minutes
 - Writing: 2 hours
 - Image creation: 20 minutes
 - Translation: 1 hour
 - Metadata: 10 minutes
 - SEO optimization: 20 minutes
-- **Total 4 hours 40 minutes/post**
+- <strong>Total 4 hours 40 minutes/post</strong>
 
-**After automation**:
+<strong>After automation</strong>:
 - Command input: 5 seconds
 - Waiting: 5-8 minutes
 - Review and editing: 10-20 minutes
-- **Total 30 minutes/post**
+- <strong>Total 30 minutes/post</strong>
 
-**Savings**: <strong>4 hours 10 minutes/post (90%)</strong>
+<strong>Savings</strong>: <strong>4 hours 10 minutes/post (90%)</strong>
 
-**Annual impact** (2 posts per week):
+<strong>Annual impact</strong> (2 posts per week):
 - 104 posts × 4.17 hours = <strong>433 hours saved</strong>
 - At $50/hour: <strong>$21,650 value</strong>
 
@@ -383,7 +383,7 @@ Savings: 66% (3,091,400 tokens)
 
 ### Cost Analysis
 
-**Current operating costs** (annual):
+<strong>Current operating costs</strong> (annual):
 
 ```
 Metadata generation:    $0.09  (once)
@@ -394,7 +394,7 @@ GA reports:           $1.20  (monthly × 12 months)
 Total annual cost:     $10.65
 ```
 
-**ROI**:
+<strong>ROI</strong>:
 - Time savings: 433 hours/year × $50/hour = $21,650
 - Operating cost: $10.65
 - <strong>Net profit: $21,639</strong>
@@ -414,7 +414,7 @@ Comparison with Claude Code official best practices:
 | Tool list | Recommended | ✅ Provided | 100% | 10/10 |
 | File conciseness | <100 lines | ⚠️ Some exceed | 47% | 7/10 |
 
-**Average**: 9.2/10 ⭐⭐⭐⭐⭐
+<strong>Average</strong>: 9.2/10 ⭐⭐⭐⭐⭐
 
 ### Skills (4 implemented)
 
@@ -426,7 +426,7 @@ Comparison with Claude Code official best practices:
 | Description specificity | "Use when..." | ✅ Specified | 100% | 10/10 |
 | allowed-tools | Recommended | ✅ All specified | 100% | 10/10 |
 
-**Average**: 10/10 ⭐⭐⭐⭐⭐
+<strong>Average</strong>: 10/10 ⭐⭐⭐⭐⭐
 
 ### Commands (7)
 
@@ -437,7 +437,7 @@ Comparison with Claude Code official best practices:
 | $ARGUMENTS | Utilize | ✅ 6/7 use | 86% | 9/10 |
 | Agent integration | Clear | ✅ Explicit | 100% | 10/10 |
 
-**Average**: 9.7/10 ⭐⭐⭐⭐⭐
+<strong>Average</strong>: 9.7/10 ⭐⭐⭐⭐⭐
 
 ### Overall Score: A Grade (8.98/10)
 
@@ -457,7 +457,7 @@ Total: 8.98/10 (A grade)
 
 ### 1. Remove Empty Skills
 
-**Problem**: 4 empty directories exist (50% unimplemented)
+<strong>Problem</strong>: 4 empty directories exist (50% unimplemented)
 
 ```bash
 .claude/skills/
@@ -467,20 +467,20 @@ Total: 8.98/10 (A grade)
 └── web-automation/       (empty directory)
 ```
 
-**Action**:
+<strong>Action</strong>:
 ```bash
 rm -rf .claude/skills/{blog-automation,content-analysis,git-automation,web-automation}
 ```
 
-**Impact**: Codebase cleanup, confusion removal
-**Time required**: 5 minutes
-**Priority**: Critical
+<strong>Impact</strong>: Codebase cleanup, confusion removal
+<strong>Time required</strong>: 5 minutes
+<strong>Priority</strong>: Critical
 
 ### 2. Implement Parallel Processing
 
-**Problem**: Sequential processing wastes time
+<strong>Problem</strong>: Sequential processing wastes time
 
-**Current**:
+<strong>Current</strong>:
 ```javascript
 for (const post of posts) {
   await analyzePost(post);  // sequential
@@ -488,21 +488,21 @@ for (const post of posts) {
 // Processing time: 2 minutes
 ```
 
-**Improved**:
+<strong>Improved</strong>:
 ```javascript
 await Promise.all(posts.map(analyzePost));  // parallel
 // Processing time: 30-40 seconds (70% reduction)
 ```
 
-**Impact**: 70% processing time reduction
-**Time required**: 4-6 hours
-**Priority**: High
+<strong>Impact</strong>: 70% processing time reduction
+<strong>Time required</strong>: 4-6 hours
+<strong>Priority</strong>: High
 
 ### 3. Add Automated Tests
 
-**Problem**: Current test coverage 0%
+<strong>Problem</strong>: Current test coverage 0%
 
-**Needed**:
+<strong>Needed</strong>:
 ```python
 # tests/test_blog_writing.py
 def test_validate_frontmatter():
@@ -513,15 +513,15 @@ def test_generate_slug():
     assert generate_slug('Claude Code') == 'claude-code'
 ```
 
-**Impact**: Quality assurance, regression prevention
-**Time required**: 8-12 hours
-**Priority**: High
+<strong>Impact</strong>: Quality assurance, regression prevention
+<strong>Time required</strong>: 8-12 hours
+<strong>Priority</strong>: High
 
 ## Practical Application Guide
 
 ### Concrete Steps for Readers
 
-**Step 1: Apply Metadata-First Architecture**
+<strong>Step 1: Apply Metadata-First Architecture</strong>
 
 ```bash
 # Analyze current posts
@@ -531,11 +531,11 @@ def test_generate_slug():
 cat post-metadata.json
 ```
 
-**Expected result**:
+<strong>Expected result</strong>:
 - 13 posts: 2 minutes, $0.09
 - Metadata file generated
 
-**Step 2: Generate V3 Recommendations**
+<strong>Step 2: Generate V3 Recommendations</strong>
 
 ```bash
 # Metadata-based recommendations
@@ -545,7 +545,7 @@ cat post-metadata.json
 # Cost: $0.03
 ```
 
-**Step 3: Automated Post Creation**
+<strong>Step 3: Automated Post Creation</strong>
 
 ```bash
 # Execute full workflow
@@ -573,16 +573,16 @@ cat post-metadata.json
 
 ### Expected Results and Metrics
 
-**Immediate effects**:
+<strong>Immediate effects</strong>:
 - Post creation time: 4h 40min → 30min (90% reduction)
 - Token cost: $0.11/run → $0.03/run (73% reduction)
 
-**After 3 months**:
+<strong>After 3 months</strong>:
 - Cumulative time saved: ~100 hours
 - Cumulative cost saved: ~$10
 - Break-even achieved
 
-**After 1 year**:
+<strong>After 1 year</strong>:
 - Time saved: 433 hours ($21,650 value)
 - Cost saved: $4.07 (71%)
 - ROI: 2,032x
@@ -591,26 +591,26 @@ cat post-metadata.json
 
 ### Part 2: Skills and Commands Integration Strategy (Next)
 
-**Content covered**:
+<strong>Content covered</strong>:
 - Detailed workflows of 4 implemented Skills
 - Commands' Agent delegation patterns
 - Caching strategies (24h/7d/48h)
 - Rate Limiting handling (Brave Search 2s delay)
 
-**Reader benefits**:
+<strong>Reader benefits</strong>:
 - Reusable Skill design methods
 - Command chaining implementation guide
 - Actual code examples and templates
 
 ### Part 3: Practical Improvement Cases and ROI Analysis (After Next)
 
-**Content covered**:
+<strong>Content covered</strong>:
 - Parallel processing implementation (70% time reduction)
 - Automated test addition (quality assurance)
 - Performance dashboard construction
 - Cost tracking and optimization
 
-**Reader benefits**:
+<strong>Reader benefits</strong>:
 - Immediately applicable optimization techniques
 - Cost savings calculation methods
 - Long-term ROI analysis framework
@@ -627,12 +627,12 @@ The EffiFlow blog automation system achieved industry-leading performance throug
 
 ### Practical Application Value
 
-**Immediately applicable**:
+<strong>Immediately applicable</strong>:
 - Metadata extraction and reuse patterns
 - Incremental processing (Content Hash)
 - Korean-only analysis (3x cost reduction)
 
-**Investment vs. Returns**:
+<strong>Investment vs. Returns</strong>:
 - Break-even: 3 executions (within 3 weeks)
 - ROI: 2,032x (1-year basis)
 - Long-term value: Continuous cost savings + time savings
@@ -641,13 +641,13 @@ The EffiFlow blog automation system achieved industry-leading performance throug
 
 Part 2 will deeply cover <strong>detailed workflows of the 4 implemented Skills</strong> and <strong>Commands' Agent delegation patterns</strong>. Specifically, we'll share <strong>caching strategies</strong> (24h/7d/48h) and <strong>Rate Limiting handling</strong> methods with actual code.
 
-**Reader questions welcome**:
+<strong>Reader questions welcome</strong>:
 - Please leave comments if you have questions
 - We'll address them in detail in the next part
 
 ---
 
-**Series Navigation**:
-- **Part 1** (current): Core Architecture and Metrics Analysis
+<strong>Series Navigation</strong>:
+- <strong>Part 1</strong> (current): Core Architecture and Metrics Analysis
 - Part 2 (upcoming): Skills and Commands Integration Strategy
 - Part 3 (upcoming): Practical Improvement Cases and ROI Analysis

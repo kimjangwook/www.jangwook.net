@@ -70,7 +70,7 @@ relatedPosts:
 
 <strong>Model Context Protocol(MCP,模型上下文协议)</strong>是 Anthropic 开发的开放标准,允许 AI 代理连接外部工具和数据源。Figma 的 MCP 实现使 AI 代理能够直接访问 Figma 文件的设计上下文。
 
-**官方说明:**
+<strong>官方说明:</strong>
 > "MCP 是一个开源标准,定义了不同 AI 代理和应用程序如何相互通信或与 Figma 等外部系统通信。"
 
 ```mermaid
@@ -126,7 +126,7 @@ Figma MCP 可以通过两种方式使用:
 
 ### 认证方法
 
-**Personal Access Token(推荐):**
+<strong>Personal Access Token(推荐):</strong>
 
 ```bash
 # 设置环境变量
@@ -136,7 +136,7 @@ export FIGMA_API_KEY="your-personal-access-token"
 --figma-api-key "your-token"
 ```
 
-**令牌发放方法:**
+<strong>令牌发放方法:</strong>
 1. 进入 Figma 账户设置
 2. 选择 "Personal Access Tokens" 菜单
 3. 使用所需权限创建新令牌
@@ -188,7 +188,7 @@ Design System File
     └── Modals(模态框)
 ```
 
-**核心原则:**
+<strong>核心原则:</strong>
 > "在 Figma 文件中为不同类别的组件创建单独的页面。例如:'Atoms'、'Molecules'、'Organisms'"
 
 ### 命名规范(Slash Notation,斜杠表示法)
@@ -217,7 +217,7 @@ Component/Variant/State
 
 ### 组件属性和 Variants
 
-**现代方法(2021 年后):**
+<strong>现代方法(2021 年后):</strong>
 
 ```
 Properties:
@@ -227,21 +227,21 @@ Properties:
 └── Icon: [Boolean]
 ```
 
-**Variants vs Properties:**
+<strong>Variants vs Properties:</strong>
 - <strong>Variants:</strong> 视觉差异(Primary vs Secondary)
 - <strong>Properties:</strong> 行为切换(Icon: Yes/No)
 - <strong>最佳实践:</strong> 结合两者实现灵活组件
 
 ### 库组织策略
 
-**单库方法(小型团队):**
+<strong>单库方法(小型团队):</strong>
 
 ```
 Design-System.fig
 └── 所有组件、样式、变量
 ```
 
-**多库方法(大型团队):**
+<strong>多库方法(大型团队):</strong>
 
 ```
 Design-System-Foundations.fig
@@ -250,14 +250,14 @@ Design-System-Patterns.fig
 Design-System-Icons.fig
 ```
 
-**Figma 的建议:**
+<strong>Figma 的建议:</strong>
 > "Figma 通常建议团队在可管理范围内保持文件尽可能具体和集中。"
 
 ## 原生 JavaScript Web 组件
 
 ### 2025 年浏览器支持现状
 
-**重要消息:不再需要 polyfill!**
+<strong>重要消息:不再需要 polyfill!</strong>
 
 截至 2025 年,所有主流浏览器都完全支持 Web Components 标准:
 
@@ -266,7 +266,7 @@ Design-System-Icons.fig
 - ✅ Safari: 100% 支持
 - ✅ Edge: 100% 支持
 
-**官方声明:**
+<strong>官方声明:</strong>
 > "截至 2025 年,所有主流浏览器(Chrome、Firefox、Safari、Edge)都完全支持 Web Components 标准,无需 polyfill。"
 
 ### Custom Elements API
@@ -312,7 +312,7 @@ class MyButton extends HTMLElement {
 customElements.define('my-button', MyButton);
 ```
 
-**使用方法:**
+<strong>使用方法:</strong>
 
 ```html
 <my-button variant="primary" size="large">
@@ -360,7 +360,7 @@ class MyCard extends HTMLElement {
 customElements.define('my-card', MyCard);
 ```
 
-**Shadow DOM 的优缺点:**
+<strong>Shadow DOM 的优缺点:</strong>
 
 <strong>优点:</strong>
 - 完美的 CSS 封装
@@ -455,7 +455,7 @@ class MyButton extends HTMLElement {
 - Status: ✓ Synced
 ```
 
-**映射文件的优点:**
+<strong>映射文件的优点:</strong>
 - 作为单一真实来源跟踪所有组件
 - 通过版本哈希检测变更
 - 记录最后同步时间戳
@@ -1413,7 +1413,7 @@ npm install --save-dev axios crypto
 /sync-components
 ```
 
-**预期输出:**
+<strong>预期输出:</strong>
 
 ```
 ✓ Figma Sync Agent activated
@@ -1539,7 +1539,7 @@ if (!customElements.get('ds-card')) {
 export default DSCard;
 ```
 
-**使用示例:**
+<strong>使用示例:</strong>
 
 ```html
 <!DOCTYPE html>
@@ -1743,7 +1743,7 @@ class DSButton extends HTMLElement {
 customElements.define('ds-button', DSButton);
 ```
 
-**使用示例:**
+<strong>使用示例:</strong>
 
 ```html
 <!DOCTYPE html>
@@ -1803,7 +1803,7 @@ customElements.define('ds-button', DSButton);
 
 ### Case Study 1: IBM Carbon Design System
 
-**来源:** Carbon and Figma Code Connect
+<strong>来源:</strong> Carbon and Figma Code Connect
 
 <strong>方法:</strong>
 - 官方 Code Connect 集成
@@ -1833,7 +1833,7 @@ Carbon Design System
 
 ### Case Study 2: Uber Design System
 
-**来源:** YouTube - Deep Dive into Uber's Design Systems
+<strong>来源:</strong> YouTube - Deep Dive into Uber's Design Systems
 
 <strong>规模:</strong>
 - 200+ 组件
@@ -1859,7 +1859,7 @@ Uber Design System
 
 ### Case Study 3: Wealthsimple Design System
 
-**来源:** Medium - From messy Figma files to a coded design system
+<strong>来源:</strong> Medium - From messy Figma files to a coded design system
 
 <strong>挑战:</strong>
 - 产品中 Figma 文件不一致
@@ -1885,7 +1885,7 @@ Uber Design System
 
 ### 安全考虑
 
-**API 密钥管理:**
+<strong>API 密钥管理:</strong>
 
 ```bash
 # ❌ 绝对不要这样做
@@ -1900,7 +1900,7 @@ echo ".env" >> .gitignore
 # Settings → Secrets → Actions → New repository secret
 ```
 
-**保护环境变量:**
+<strong>保护环境变量:</strong>
 
 ```yaml
 # 在 GitHub Actions 中
@@ -1909,7 +1909,7 @@ env:
   # 绝不硬编码
 ```
 
-**验证 Webhook:**
+<strong>验证 Webhook:</strong>
 
 ```javascript
 // 使用 Passcode 验证 Webhook
@@ -1923,19 +1923,19 @@ if (req.body.passcode !== process.env.FIGMA_WEBHOOK_SECRET) {
 
 ### 性能优化
 
-**设计层:**
+<strong>设计层:</strong>
 - 保持 Figma 文件在 50MB 以下
 - 使用组件而非帧
 - 限制插件使用
 - 定期文件清理
 
-**代码层:**
+<strong>代码层:</strong>
 - 组件懒加载
 - JavaScript 最小化
 - 使用纯 CSS 动画
 - 优化打包大小
 
-**同步层:**
+<strong>同步层:</strong>
 - Webhook 调用防抖
 - 实现速率限制
 - 缓存 API 响应
@@ -1943,7 +1943,7 @@ if (req.body.passcode !== process.env.FIGMA_WEBHOOK_SECRET) {
 
 ### 常见问题和解决方案
 
-**问题 1: Webhook 未触发**
+<strong>问题 1: Webhook 未触发</strong>
 
 ```javascript
 // 解决方案:检查 Webhook 状态
@@ -1961,7 +1961,7 @@ async function checkWebhookStatus() {
 }
 ```
 
-**问题 2: 令牌转换失败**
+<strong>问题 2: 令牌转换失败</strong>
 
 ```javascript
 // 解决方案:转换前验证模式
@@ -1978,7 +1978,7 @@ function validateTokenSchema(tokens) {
 }
 ```
 
-**问题 3: 组件冲突**
+<strong>问题 3: 组件冲突</strong>
 
 ```javascript
 // 解决方案:注册前检查组件
@@ -1996,10 +1996,10 @@ if (customElements.get('ds-button')) {
 截至 2025 年,Figma MCP 与 Web 组件的集成是成熟且生产就绪的方法:
 
 <strong>核心成果:</strong>
-- **Figma MCP** 获得官方支持且正在积极开发
-- **Web 组件**在所有主流浏览器中无需 polyfill 即可支持
-- **设计令牌**正在进行 W3C 标准化
-- **自动化工具**(Webhook、GitHub Actions)稳定且文档完善
+- <strong>Figma MCP</strong> 获得官方支持且正在积极开发
+- <strong>Web 组件</strong>在所有主流浏览器中无需 polyfill 即可支持
+- <strong>设计令牌</strong>正在进行 W3C 标准化
+- <strong>自动化工具</strong>(Webhook、GitHub Actions)稳定且文档完善
 
 <strong>采用的收益:</strong>
 - 弥合设计-代码鸿沟
@@ -2010,31 +2010,31 @@ if (customElements.get('ds-button')) {
 
 ### 入门路线图
 
-**第 1 阶段:构建基础(1〜2 周)**
+<strong>第 1 阶段:构建基础(1〜2 周)</strong>
 - 设置 Figma 组件库
 - 创建 `components-map.md` 映射文件
 - 定义设计令牌结构
 - 建立命名规范
 
-**第 2 阶段:Claude Code 设置(1 周)**
+<strong>第 2 阶段:Claude Code 设置(1 周)</strong>
 - 定义 `.claude/agents/figma-sync.md` 代理
 - 创建 `.claude/commands/sync-components.md` 斜杠命令
 - 实现 `.claude/skills/component-comparison.md` 技能
 - 连接和测试 Figma MCP
 
-**第 3 阶段:自动化脚本(2〜3 周)**
+<strong>第 3 阶段:自动化脚本(2〜3 周)</strong>
 - 组件元数据提取脚本
 - 基于哈希的变更检测逻辑
 - Web 组件代码生成器
 - 映射文件更新逻辑
 
-**第 4 阶段:集成和测试(1〜2 周)**
+<strong>第 4 阶段:集成和测试(1〜2 周)</strong>
 - 使用 `/sync-components` 命令测试完整工作流
 - 验证选择性更新
 - 错误处理和恢复机制
 - 改进同步报告
 
-**第 5 阶段:高级功能(可选,2〜3 周)**
+<strong>第 5 阶段:高级功能(可选,2〜3 周)</strong>
 - 通过 Webhook 实现实时同步
 - 构建 GitHub Actions 流水线
 - 自动 PR 创建
@@ -2042,7 +2042,7 @@ if (customElements.get('ds-button')) {
 
 ### 未来展望
 
-**预期发展(2025〜2026):**
+<strong>预期发展(2025〜2026):</strong>
 
 1. <strong>增强的 AI 集成</strong>
    - 更复杂的 MCP 工具
@@ -2072,14 +2072,14 @@ if (customElements.get('ds-button')) {
 
 构建设计系统是马拉松,不是短跑。<strong>从小处开始,频繁迭代,与团队沟通。</strong>
 
-**成功的关键:**
+<strong>成功的关键:</strong>
 - <strong>单一真实来源:</strong> 使用 `components-map.md` 文件集中管理所有组件
 - <strong>智能自动化:</strong> 使用 Claude Code 代理进行变更检测和选择性更新
 - <strong>基于哈希的验证:</strong> 最小化不必要的更新以最大化效率
 - <strong>渐进式采用:</strong> 不要一次转换所有组件,从核心开始
 - <strong>团队协作:</strong> 设计师和开发者共同管理映射文件
 
-**实战技巧:**
+<strong>实战技巧:</strong>
 
 1. <strong>从第一个组件开始:</strong> 使用 Button 或 Card 等简单组件验证工作流
 2. <strong>定期同步:</strong> 将 `/sync-components` 命令纳入每周例行工作
@@ -2087,7 +2087,7 @@ if (customElements.get('ds-button')) {
 4. <strong>版本控制:</strong> 使用 Git 跟踪映射文件和生成的组件
 5. <strong>文档化:</strong> 在 README 中记录每个组件的用法和约束
 
-**应避免的错误:**
+<strong>应避免的错误:</strong>
 
 - ✗ 没有映射文件手动创建组件(失去一致性)
 - ✗ 强制更新所有组件(增加不必要的工作)

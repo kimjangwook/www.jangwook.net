@@ -52,7 +52,7 @@ relatedPosts:
 
 2025年初頭、Andrej Karpathyが「Vibe Coding」という用語を作りました。AIにプロンプトを投げて、生成されたコードをコピーして、動作することを祈る方式。プロトタイプには効果的ですが、大規模プロジェクトでは急速に崩壊します。
 
-今、**仕様駆動開発(Specification-Driven Development, SDD)**が登場しました。Markdownで明確な仕様を書けば、AIコーディングエージェントがそれを実行可能なコードに「コンパイル」します。単なる方法論の変化ではなく、AIと一緒にソフトウェアを構築する方法の根本的な転換です。
+今、<strong>仕様駆動開発(Specification-Driven Development, SDD)</strong>が登場しました。Markdownで明確な仕様を書けば、AIコーディングエージェントがそれを実行可能なコードに「コンパイル」します。単なる方法論の変化ではなく、AIと一緒にソフトウェアを構築する方法の根本的な転換です。
 
 ### Vibe Codingの限界
 
@@ -75,7 +75,7 @@ function login(username: string, password: string) {
 // また再生成... ますます複雑になり一貫性がなくなる
 ```
 
-**問題点**:
+<strong>問題点</strong>:
 - プロンプトするたびにAIが全体のコンテキストを失う
 - 以前の決定事項が無視されたり上書きされたりする
 - コード品質が一貫性がなく予測不可能
@@ -83,19 +83,19 @@ function login(username: string, password: string) {
 
 ## 仕様駆動開発とは?
 
-仕様駆動開発は**「何を(What)」構築するかを明確に定義した後、AIが「どのように(How)」を実装する**手法です。
+仕様駆動開発は<strong>「何を(What)」構築するかを明確に定義した後、AIが「どのように(How)」を実装する</strong>手法です。
 
 ### 核心原則
 
-1. **仕様が真実の源泉(Single Source of Truth)**
+1. <strong>仕様が真実の源泉(Single Source of Truth)</strong>
    - コードではなく仕様がプロジェクトの定義
    - すべての変更は仕様の更新から開始
 
-2. **構造化されたワークフロー**
+2. <strong>構造化されたワークフロー</strong>
    - 仕様作成(Specify) → 計画策定(Plan) → 作業分解(Task) → 実装(Implement)
    - 各段階が明確に分離され追跡可能
 
-3. **AIをツールとして、開発者を設計者として**
+3. <strong>AIをツールとして、開発者を設計者として</strong>
    - 開発者は「何を」決定 (アーキテクチャ、ビジネスロジック)
    - AIは「どのように」を実行 (コード生成、テスト、最適化)
 
@@ -103,12 +103,12 @@ function login(username: string, password: string) {
 
 | 側面 | 従来の開発 | Vibe Coding | 仕様駆動開発 |
 |------|------------|-------------|--------------|
-| **開始点** | 要件文書 | 即興的なプロンプト | 構造化された仕様書 |
-| **AIの役割** | なしまたは補助ツール | 全体のコード生成 | 仕様ベースのコード生成 |
-| **一貫性** | 開発者の経験に依存 | 低い (プロンプトごとに変動) | 高い (仕様が保証) |
-| **スケーリング** | 可能だが遅い | 不可能 (複雑度↑ 品質↓) | 優秀 (仕様のみ管理) |
-| **保守性** | コード修正必要 | 全体再生成のリスク | 仕様更新後再生成 |
-| **協業** | コードレビュー | 困難 | 仕様レビュー (より明確) |
+| <strong>開始点</strong> | 要件文書 | 即興的なプロンプト | 構造化された仕様書 |
+| <strong>AIの役割</strong> | なしまたは補助ツール | 全体のコード生成 | 仕様ベースのコード生成 |
+| <strong>一貫性</strong> | 開発者の経験に依存 | 低い (プロンプトごとに変動) | 高い (仕様が保証) |
+| <strong>スケーリング</strong> | 可能だが遅い | 不可能 (複雑度↑ 品質↓) | 優秀 (仕様のみ管理) |
+| <strong>保守性</strong> | コード修正必要 | 全体再生成のリスク | 仕様更新後再生成 |
+| <strong>協業</strong> | コードレビュー | 困難 | 仕様レビュー (より明確) |
 
 ## 実戦例: 仕様駆動で認証システムを構築する
 
@@ -357,7 +357,7 @@ export class PasswordHasher {
          テストも一緒に作成し、coverage 90%以上を確保してください。"
 ```
 
-**AIが生成したコード例**:
+<strong>AIが生成したコード例</strong>:
 
 ```typescript
 // src/utils/password-hasher.ts
@@ -469,7 +469,7 @@ describe('PasswordHasher', () => {
 });
 ```
 
-**核心ポイント**:
+<strong>核心ポイント</strong>:
 - AIが仕様書のすべての要件を正確に反映 (NFR-1セキュリティ要件)
 - エラー処理、エッジケース、パフォーマンステストすべて含む
 - コードが一貫性があり文書化されている
@@ -587,7 +587,7 @@ spec-kit tasks plan/user-profile-plan.md --output tasks/user-profile-tasks.md
 
 ### 1. 良い仕様書の書き方
 
-**明確な入出力定義**:
+<strong>明確な入出力定義</strong>:
 
 ```markdown
 ❌ 悪い例:
@@ -620,7 +620,7 @@ Create a new user account.
 | Password too weak | "Password does not meet requirements" | 400 |
 ```
 
-**測定可能な非機能要件**:
+<strong>測定可能な非機能要件</strong>:
 
 ```markdown
 ❌ 悪い例:
@@ -649,22 +649,22 @@ The system should be fast.
 
 | ツール | 用途 | 強み | 弱み |
 |------|------|------|------|
-| **GitHub Spec Kit** | 仕様 → 計画 → 作業 | 公式サポート、統合ワークフロー | 初期バージョン (実験的) |
-| **Kiro** | AI仕様検証 | 仕様品質分析 | Spec Kit依存性 |
-| **BMAD-Method** | エンタープライズ仕様管理 | 大規模チーム協業 | 商用 (有料) |
-| **Claude Code** | AIコーディングエージェント | 高いコード品質 | APIコスト |
-| **GitHub Copilot** | AIコーディング補助 | IDE統合優秀 | コンテキスト制限 |
+| <strong>GitHub Spec Kit</strong> | 仕様 → 計画 → 作業 | 公式サポート、統合ワークフロー | 初期バージョン (実験的) |
+| <strong>Kiro</strong> | AI仕様検証 | 仕様品質分析 | Spec Kit依存性 |
+| <strong>BMAD-Method</strong> | エンタープライズ仕様管理 | 大規模チーム協業 | 商用 (有料) |
+| <strong>Claude Code</strong> | AIコーディングエージェント | 高いコード品質 | APIコスト |
+| <strong>GitHub Copilot</strong> | AIコーディング補助 | IDE統合優秀 | コンテキスト制限 |
 
 ### 推奨ツールチェーン
 
-**スタートアップ/小規模チーム**:
+<strong>スタートアップ/小規模チーム</strong>:
 ```bash
 ├── GitHub Spec Kit (無料)
 ├── GitHub Copilot (個人: $10/月)
 └── GitHub Actions (CI/CD, 無料)
 ```
 
-**中大型企業**:
+<strong>中大型企業</strong>:
 ```bash
 ├── BMAD-Method (エンタープライズ)
 ├── Claude Code (チームライセンス)
@@ -676,19 +676,19 @@ The system should be fast.
 
 ### 実際のプロジェクト事例
 
-**プロジェクト**: E-commerce API (50エンドポイント、3名開発チーム)
+<strong>プロジェクト</strong>: E-commerce API (50エンドポイント、3名開発チーム)
 
 | 指標 | 従来の開発 | Vibe Coding | 仕様駆動開発 |
 |------|-------------|-------------|--------------|
-| **開発期間** | 12週 | 8週 (初期は速い) | 10週 |
-| **バグ発見** | スプリント中平均45個 | スプリント中平均80個 | スプリント中平均15個 |
-| **リファクタリング時間** | 全体の20% | 全体の40% | 全体の5% |
-| **コードレビュー時間** | PR当たり平均2時間 | PR当たり平均3時間 | PR当たり平均30分 |
-| **テストカバレッジ** | 75% | 45% | 92% |
-| **技術的負債** | 中間 | 高い | 低い |
-| **チーム満足度** | 7/10 | 6/10 | 9/10 |
+| <strong>開発期間</strong> | 12週 | 8週 (初期は速い) | 10週 |
+| <strong>バグ発見</strong> | スプリント中平均45個 | スプリント中平均80個 | スプリント中平均15個 |
+| <strong>リファクタリング時間</strong> | 全体の20% | 全体の40% | 全体の5% |
+| <strong>コードレビュー時間</strong> | PR当たり平均2時間 | PR当たり平均3時間 | PR当たり平均30分 |
+| <strong>テストカバレッジ</strong> | 75% | 45% | 92% |
+| <strong>技術的負債</strong> | 中間 | 高い | 低い |
+| <strong>チーム満足度</strong> | 7/10 | 6/10 | 9/10 |
 
-**核心インサイト**:
+<strong>核心インサイト</strong>:
 - 仕様駆動開発は初期の仕様作成時間が追加されるが、全体プロジェクトでは時間節約
 - バグが70%減少 (仕様が明確ならAIが正確なコード生成)
 - リファクタリング時間75%減少 (最初から構造が明確)
@@ -698,28 +698,28 @@ The system should be fast.
 
 ### 仕様駆動開発が適していない場合
 
-1. **迅速なプロトタイピング**
+1. <strong>迅速なプロトタイピング</strong>
    - MVPやPoCはVibe Codingがより速い
    - 仕様作成のオーバーヘッドが不要
 
-2. **明確でない要件**
+2. <strong>明確でない要件</strong>
    - 探索的プロジェクトはアジャイルアプローチがより適切
    - 仕様を頻繁に変更すると逆に非効率
 
-3. **1人開発者 + 小規模プロジェクト**
+3. <strong>1人開発者 + 小規模プロジェクト</strong>
    - 協業の利点がなければ過度なプロセス
    - 簡単なスクリプトやツールは直接コーディングがより速い
 
 ## 結論: 開発者の役割再定義
 
-仕様駆動開発は単なる方法論ではなく、**AI時代の開発者の役割の根本的な変化**を意味します。
+仕様駆動開発は単なる方法論ではなく、<strong>AI時代の開発者の役割の根本的な変化</strong>を意味します。
 
 ### 変化する開発者の役割
 
-**Before (従来の開発)**:
+<strong>Before (従来の開発)</strong>:
 - コード作成70% + 設計20% + テスト10%
 
-**After (仕様駆動開発)**:
+<strong>After (仕様駆動開発)</strong>:
 - 仕様作成40% + AI管理30% + 検証20% + 最適化10%
 
 ### 核心スキルの変化
@@ -734,7 +734,7 @@ The system should be fast.
 
 ### 始める
 
-**1週目: 学習**
+<strong>1週目: 学習</strong>
 ```bash
 # GitHub Spec Kitチュートリアル
 npx @github/spec-kit tutorial
@@ -744,17 +744,17 @@ git clone https://github.com/github/spec-kit-examples
 cd spec-kit-examples/todo-api
 ```
 
-**2週目: 小規模適用**
+<strong>2週目: 小規模適用</strong>
 - 既存プロジェクトの1つの機能を仕様駆動でリファクタリング
 - constitution.md作成 (チームコーディング原則)
 - 簡単なAPIエンドポイント1-2個を仕様 → コードで実装
 
-**3週目: チーム導入**
+<strong>3週目: チーム導入</strong>
 - チームメンバーに概念を共有
 - 次のスプリントの1つのストーリーを仕様駆動で試行
 - 振り返りで改善点を議論
 
-**1ヶ月後: 全面導入決定**
+<strong>1ヶ月後: 全面導入決定</strong>
 - 成果測定 (バグ減少率、開発速度、チーム満足度)
 - ツール選択 (Spec Kit vs 商用ツール)
 - 長期ロードマップ策定
@@ -778,4 +778,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-**次回記事**: [AIエージェント協業パターン: 5つの専門エージェントでフルスタックアプリを構築する](/ja/blog/ja/ai-agent-collaboration-patterns)では、Architecture Agent、Coding Agent、Testing Agent、Security Agent、DevOps Agentをオーケストレーションして複雑なアプリケーションを構築する実戦事例を扱います。
+<strong>次回記事</strong>: [AIエージェント協業パターン: 5つの専門エージェントでフルスタックアプリを構築する](/ja/blog/ja/ai-agent-collaboration-patterns)では、Architecture Agent、Coding Agent、Testing Agent、Security Agent、DevOps Agentをオーケストレーションして複雑なアプリケーションを構築する実戦事例を扱います。

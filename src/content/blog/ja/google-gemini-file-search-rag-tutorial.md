@@ -623,31 +623,31 @@ streamlit run web_app.py
 
 ### 実際の実装画面
 
-**1. メイン画面とStore作成**
+<strong>1. メイン画面とStore作成</strong>
 
 ![Gemini File Searchメイン画面](../../../assets/gemini-file-search/gemini-file-search-1.png)
 
 左サイドバーでGemini API キーを入力し、Storeを作成できます。Store名を入力して「generation」ボタンをクリックすると、新しいFile Search Storeが作成されます。
 
-**2. ファイルアップロードインターフェース**
+<strong>2. ファイルアップロードインターフェース</strong>
 
 ![ファイルアップロード画面](../../../assets/gemini-file-search/gemini-file-search-2.png)
 
 「File Upload」タブで複数のファイルを同時に選択してアップロードできます。PDF、TXT、DOCX、Markdown、CSVなど、さまざまな形式に対応しています。
 
-**3. Q&Aインターフェース**
+<strong>3. Q&Aインターフェース</strong>
 
 ![Q&A画面](../../../assets/gemini-file-search/gemini-file-search-3.png)
 
 「Q&A」タブでアップロードした文書について自然言語で質問できます。チャット形式で会話が進み、引用元も一緒に表示されます。
 
-**4. Store管理とファイルリスト**
+<strong>4. Store管理とファイルリスト</strong>
 
 ![Store管理](../../../assets/gemini-file-search/gemini-file-search-4.png)
 
 現在選択されているStoreの情報とアップロードされたファイルリストを確認できます。
 
-**5. Q&A結果の例**
+<strong>5. Q&A結果の例</strong>
 
 ![Q&A結果](../../../assets/gemini-file-search/gemini-file-search-5.png)
 

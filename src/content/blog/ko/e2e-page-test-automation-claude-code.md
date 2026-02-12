@@ -76,14 +76,14 @@ relatedPosts:
 
 | 우선순위 | 테스트 항목 | 설명 |
 |---------|------------|------|
-| **P0** | 크로스 브라우저 | Chromium, Firefox, WebKit 동시 테스트 |
-| **P0** | 링크 무결성 | 모든 링크의 HTTP 상태 코드 검증 |
-| **P0** | 접근성 (a11y) | WCAG 2.1 AA 레벨 준수 확인 |
-| **P0** | 모바일 반응형 | 다양한 뷰포트에서 레이아웃 검증 |
-| **P1** | 이미지 최적화 | 렌더링 vs 원본 사이즈 비교 |
-| **P1** | SEO 검증 | 메타태그, OG, 구조화 데이터 확인 |
-| **P1** | UI/UX | 폰트 크기, 터치 타겟 검증 |
-| **P2** | 콘텐츠 품질 | 언어 설정, 헤딩 구조 확인 |
+| <strong>P0</strong> | 크로스 브라우저 | Chromium, Firefox, WebKit 동시 테스트 |
+| <strong>P0</strong> | 링크 무결성 | 모든 링크의 HTTP 상태 코드 검증 |
+| <strong>P0</strong> | 접근성 (a11y) | WCAG 2.1 AA 레벨 준수 확인 |
+| <strong>P0</strong> | 모바일 반응형 | 다양한 뷰포트에서 레이아웃 검증 |
+| <strong>P1</strong> | 이미지 최적화 | 렌더링 vs 원본 사이즈 비교 |
+| <strong>P1</strong> | SEO 검증 | 메타태그, OG, 구조화 데이터 확인 |
+| <strong>P1</strong> | UI/UX | 폰트 크기, 터치 타겟 검증 |
+| <strong>P2</strong> | 콘텐츠 품질 | 언어 설정, 헤딩 구조 확인 |
 
 ## 아키텍처
 
@@ -266,9 +266,9 @@ const screenshot = await mcp_chrome_devtools_take_screenshot({
 <summary><strong>전체 테스트 리포트 보기</strong></summary>
 
 ### 테스트 환경
-- **테스트 시간**: 2024-11-24 09:56:25
-- **대상 URL**: https://jangwook.net/en/
-- **브라우저**: Chromium (Playwright)
+- <strong>테스트 시간</strong>: 2024-11-24 09:56:25
+- <strong>대상 URL</strong>: https://jangwook.net/en/
+- <strong>브라우저</strong>: Chromium (Playwright)
 
 ### 1. 크로스 브라우저 테스트 ✅
 
@@ -282,7 +282,7 @@ Chromium 환경에서 페이지가 정상적으로 로드되었습니다. 주요
 
 ### 3. 접근성 (a11y) 검사 ⚠️
 
-**터치 타겟 크기 미달 (20개)**
+<strong>터치 타겟 크기 미달 (20개)</strong>
 
 WCAG 권장 최소 사이즈 44×44px 미달 요소:
 - 네비게이션 링크들 (현재 높이: 36px)
@@ -297,7 +297,7 @@ WCAG 권장 최소 사이즈 44×44px 미달 요소:
 
 ### 5. 이미지 최적화 검사 ⚠️
 
-**과대 이미지 6개 발견**
+<strong>과대 이미지 6개 발견</strong>
 
 | 이미지 | 원본 크기 | 렌더링 크기 | 절감 가능 |
 |--------|----------|------------|----------|
@@ -326,13 +326,13 @@ WCAG 권장 최소 사이즈 44×44px 미달 요소:
 
 ### 발견된 주요 이슈
 
-**1. 이미지 최적화 문제**
+<strong>1. 이미지 최적화 문제</strong>
 
 ```
 hero-image.webp: 600×600px → 382×192px (약 75% 절감 가능)
 ```
 
-**개선 방안:**
+<strong>개선 방안:</strong>
 ```html
 <img
   srcset="hero-400w.webp 400w, hero-800w.webp 800w"
@@ -342,7 +342,7 @@ hero-image.webp: 600×600px → 382×192px (약 75% 절감 가능)
   loading="lazy">
 ```
 
-**2. 터치 타겟 크기 미달**
+<strong>2. 터치 타겟 크기 미달</strong>
 
 WCAG 권장 최소 사이즈는 44×44px입니다. 현재 네비게이션 링크 높이가 36px로 부족합니다.
 

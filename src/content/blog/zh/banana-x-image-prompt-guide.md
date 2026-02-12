@@ -15,19 +15,19 @@ relatedPosts: []
 
 你有没有在AI图像生成工具里输入过"modern clean blog hero image"？结果大概是一张哪里都见过的、毫无特色的图片。提示词越模糊，AI生成的图片就越模糊。
 
-为了解决这个问题，我们分析了**Banana X项目中300多个信息图设计的5维度评估数据**。结果发现，高分设计有着明确的共同规律，我们将这些规律整理成了系统化的提示词框架——**YAML 7-Part Structure**。
+为了解决这个问题，我们分析了<strong>Banana X项目中300多个信息图设计的5维度评估数据</strong>。结果发现，高分设计有着明确的共同规律，我们将这些规律整理成了系统化的提示词框架——<strong>YAML 7-Part Structure</strong>。
 
 ### 5项评估标准（满分50分）
 
 | 标准 | 分值 | 说明 |
 |------|------|------|
-| **Legibility**（可读性） | 10分 | 信息是否能清晰识读 |
-| **Hierarchy**（视觉层次） | 10分 | 信息优先级是否有视觉区分 |
-| **Consistency**（一致性） | 10分 | 设计元素是否遵循统一语法 |
-| **Atmosphere**（氛围感） | 10分 | 风格是否强化了内容含义 |
-| **Theme Fit**（主题契合） | 10分 | 视觉是否与文章主题匹配 |
+| <strong>Legibility</strong>（可读性） | 10分 | 信息是否能清晰识读 |
+| <strong>Hierarchy</strong>（视觉层次） | 10分 | 信息优先级是否有视觉区分 |
+| <strong>Consistency</strong>（一致性） | 10分 | 设计元素是否遵循统一语法 |
+| <strong>Atmosphere</strong>（氛围感） | 10分 | 风格是否强化了内容含义 |
+| <strong>Theme Fit</strong>（主题契合） | 10分 | 视觉是否与文章主题匹配 |
 
-通过提取45分以上设计的共同特征，我们构建了一套**任何人都能上手的提示词写作框架**。
+通过提取45分以上设计的共同特征，我们构建了一套<strong>任何人都能上手的提示词写作框架</strong>。
 
 ---
 
@@ -41,21 +41,21 @@ relatedPosts: []
 Tone: "关键词1, 关键词2, 关键词3, 关键词4, 关键词5"
 ```
 
-用5个形容词或名词定义图像的整体世界观。**越具体越好。**
+用5个形容词或名词定义图像的整体世界观。<strong>越具体越好。</strong>
 
-**❌ BAD：**
+<strong>❌ BAD：</strong>
 ```yaml
 Tone: "modern, clean, professional"
 ```
 → 适用于所有设计的关键词，AI没有任何方向参考。
 
-**✅ GOOD：**
+<strong>✅ GOOD：</strong>
 ```yaml
 Tone: "知性, 规划, 精密, 工程, 蓝图"
 ```
 → "知性而精密的工程蓝图"——清晰的世界观立刻浮现。
 
-**高分（45+）Tone模式汇总：**
+<strong>高分（45+）Tone模式汇总：</strong>
 
 | 风格 | Tone关键词 |
 |------|-----------|
@@ -77,9 +77,9 @@ Visual Identity:
     - "#HEX (Name) — 用途"
 ```
 
-指定颜色时，**必须同时写上HEX代码和颜色名称**，确保AI准确理解。
+指定颜色时，<strong>必须同时写上HEX代码和颜色名称</strong>，确保AI准确理解。
 
-**❌ BAD：**
+<strong>❌ BAD：</strong>
 ```yaml
 Visual Identity:
   Background: "blue"
@@ -88,7 +88,7 @@ Visual Identity:
 ```
 → "blue"可以是深蓝、天蓝、钴蓝……AI只能靠猜。
 
-**✅ GOOD：**
+<strong>✅ GOOD：</strong>
 ```yaml
 Visual Identity:
   Background: "#0047AB (Cobalt Blue) — 蓝图背景"
@@ -99,7 +99,7 @@ Visual Identity:
 ```
 → 精确的色彩代码+用途说明，让AI保持一致的配色体系。
 
-**高分色彩组合模式：**
+<strong>高分色彩组合模式：</strong>
 
 | 风格 | 背景 | 文字 | 强调色 |
 |------|------|------|--------|
@@ -125,22 +125,22 @@ Image Style:
 
 各字段的BAD vs GOOD：
 
-**Features（特征）** — 最重要的一句话：
+<strong>Features（特征）</strong> — 最重要的一句话：
 
 - ❌ `"Clean modern design"` → 适用于一切设计
 - ✅ `"由PCB电路板图案构成的布局"` → 仅属于该设计的独特特征
 
-**Shapes（形状）** — 重复使用的视觉元素：
+<strong>Shapes（形状）</strong> — 重复使用的视觉元素：
 
 - ❌ `"Various shapes"` → 零信息
 - ✅ `"直线和45度角的走线、节点、连接器"` → 具体的视觉词汇
 
-**Texture（质感）** — 触觉般的表达：
+<strong>Texture（质感）</strong> — 触觉般的表达：
 
 - ❌ `"Smooth"` → 太笼统
 - ✅ `"和纸纤维感、木版纹理、墨的浓淡"` → 物理存在感
 
-**Composition（构图）** — 视觉层次策略：
+<strong>Composition（构图）</strong> — 视觉层次策略：
 
 - ❌ `"Centered layout"` → 过于简单
 - ✅ `"大量留白中央的几条细线"` → 包含空间运用策略
@@ -154,20 +154,20 @@ Typography:
   Style: "字体应用方式"
 ```
 
-**❌ BAD：**
+<strong>❌ BAD：</strong>
 ```yaml
 Typography:
   Heading: "Sans-serif"
 ```
 
-**✅ GOOD：**
+<strong>✅ GOOD：</strong>
 ```yaml
 Typography:
   Heading: "制图模板字体"
   Style: "手写块体，像尺寸线和标注标签般排布"
 ```
 
-**高分字体模式：**
+<strong>高分字体模式：</strong>
 
 | 风格 | Heading | Style |
 |------|---------|-------|
@@ -186,12 +186,12 @@ Content Connection:
   Key Elements: "从文章中提取的2-3个关键视觉元素"
 ```
 
-**这是最重要的差异化要素。** 没有这个部分，生成的就是任何文章都能用的通用图片。
+<strong>这是最重要的差异化要素。</strong> 没有这个部分，生成的就是任何文章都能用的通用图片。
 
-**❌ BAD（没有Content Connection）：**
+<strong>❌ BAD（没有Content Connection）：</strong>
 → "React"文章的封面图也能用在"Vue"文章上——毫无区分度
 
-**✅ GOOD：**
+<strong>✅ GOOD：</strong>
 ```yaml
 Content Connection:
   Core Concept: "服务端与客户端组件分离以减小包体积"
@@ -206,7 +206,7 @@ Content Connection:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealistic human faces."
 ```
 
-**4项必须约束：**
+<strong>4项必须约束：</strong>
 
 | 约束 | 原因 |
 |------|------|
@@ -219,9 +219,9 @@ Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealisti
 
 提示词写完后，务必确认以下3点：
 
-1. **唯一性测试**："这个提示词能用在完全不同的文章上吗？"→ **能**的话说明Content Connection不足
-2. **视觉具体性测试**："两个人读完这个提示词画出来的图会相似吗？"→ **不会**的话说明Shapes/Texture/Composition不足
-3. **一致性测试**："Tone的5个关键词和Color Palette + Image Style矛盾吗？"→ 有矛盾就需要修改
+1. <strong>唯一性测试</strong>："这个提示词能用在完全不同的文章上吗？"→ <strong>能</strong>的话说明Content Connection不足
+2. <strong>视觉具体性测试</strong>："两个人读完这个提示词画出来的图会相似吗？"→ <strong>不会</strong>的话说明Shapes/Texture/Composition不足
+3. <strong>一致性测试</strong>："Tone的5个关键词和Color Palette + Image Style矛盾吗？"→ 有矛盾就需要修改
 
 ---
 
@@ -231,7 +231,7 @@ Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealisti
 
 ### Consistency 10/10的秘诀：统一的"设计语法"
 
-获得满分一致性的设计，**所有元素都遵循同一套设计语法**：
+获得满分一致性的设计，<strong>所有元素都遵循同一套设计语法</strong>：
 
 - 线条粗细全局统一
 - 图标抽象化程度一致
@@ -254,7 +254,7 @@ Image Style:
 
 ### Atmosphere 10/10的秘诀：风格作为"信息的容器"
 
-不是简单的装饰，而是**强化内容含义的视觉**才能拿满分。关键在于设计能改变读者的情感状态。
+不是简单的装饰，而是<strong>强化内容含义的视觉</strong>才能拿满分。关键在于设计能改变读者的情感状态。
 
 | 得分 | 模式 | 为什么高分 |
 |------|------|-----------|
@@ -267,18 +267,18 @@ Image Style:
 
 理解风格的本质，然后将其转用于信息表达：
 
-- **蓝图** → 用"设计/规划"隐喻来表达信息的构建过程
-- **报纸** → 用"新闻报道"格式来强调信息的重要性
-- **浮世绘** → 用"雅致"美学来提升信息的品格
+- <strong>蓝图</strong> → 用"设计/规划"隐喻来表达信息的构建过程
+- <strong>报纸</strong> → 用"新闻报道"格式来强调信息的重要性
+- <strong>浮世绘</strong> → 用"雅致"美学来提升信息的品格
 
 ### 满分（50/50）设计的模式分析
 
 50分满分设计的共同点：
 
-1. **100%专注于一种风格** — 不混搭多种风格
-2. **Content Connection具体** — 与文章内容一一对应
-3. **严格遵守约束条件** — 无文字叠加、比例精准
-4. **Tone ↔ Style ↔ Color三角一致性** — 三个要素指向同一个视觉世界
+1. <strong>100%专注于一种风格</strong> — 不混搭多种风格
+2. <strong>Content Connection具体</strong> — 与文章内容一一对应
+3. <strong>严格遵守约束条件</strong> — 无文字叠加、比例精准
+4. <strong>Tone ↔ Style ↔ Color三角一致性</strong> — 三个要素指向同一个视觉世界
 
 ---
 
@@ -307,7 +307,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**要点：** 组件块的堆叠式建筑构图，表达前端"组装"的本质特征。
+<strong>要点：</strong> 组件块的堆叠式建筑构图，表达前端"组装"的本质特征。
 
 ### 3.2 AI / 机器学习
 
@@ -331,7 +331,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**要点：** 深空蓝背景下的发光节点网络——视觉化AI/ML"连接与学习"的本质。
+<strong>要点：</strong> 深空蓝背景下的发光节点网络——视觉化AI/ML"连接与学习"的本质。
 
 ### 3.3 DevOps / 基础设施
 
@@ -354,7 +354,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**要点：** 蓝图美学。用建筑图纸表达DevOps"基础设施设计"的本质。
+<strong>要点：</strong> 蓝图美学。用建筑图纸表达DevOps"基础设施设计"的本质。
 
 ### 3.4 性能 / 优化
 
@@ -377,7 +377,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**要点：** 极致极简主义——用留白来表达"优化=去除不必要的东西"这一本质。
+<strong>要点：</strong> 极致极简主义——用留白来表达"优化=去除不必要的东西"这一本质。
 
 ### 3.5 安全
 
@@ -401,24 +401,24 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**要点：** 暗色背景+终端绿。用同心圆层层叠加来表达安全的"纵深防御"本质。
+<strong>要点：</strong> 暗色背景+终端绿。用同心圆层层叠加来表达安全的"纵深防御"本质。
 
 ---
 
 ## 4. YAML → 英文提示词转换
 
-用YAML结构设计好的提示词，要实际输入AI图像生成API时，需要**转换为英文自然语言提示词**。
+用YAML结构设计好的提示词，要实际输入AI图像生成API时，需要<strong>转换为英文自然语言提示词</strong>。
 
 ### 转换规则
 
 | YAML部分 | 英文提示词位置 | 转换方法 |
 |---------|--------------|---------|
-| **Tone** | 开头 | `"A [tone1], [tone2] illustration..."` |
-| **Visual Identity** | 色彩指定 | `"...in [color1] (#HEX) and [color2] (#HEX)..."` |
-| **Image Style** | 核心描述 | 将Features + Shapes + Texture压缩为1~2句 |
-| **Composition** | 构图指示 | `"...with [layout description]..."` |
-| **Content Connection** | 比喻描述 | Visual Metaphor作为核心句 |
-| **Constraints** | 末尾 | `"No text overlay. No watermarks. 2:1 aspect ratio."` |
+| <strong>Tone</strong> | 开头 | `"A [tone1], [tone2] illustration..."` |
+| <strong>Visual Identity</strong> | 色彩指定 | `"...in [color1] (#HEX) and [color2] (#HEX)..."` |
+| <strong>Image Style</strong> | 核心描述 | 将Features + Shapes + Texture压缩为1~2句 |
+| <strong>Composition</strong> | 构图指示 | `"...with [layout description]..."` |
+| <strong>Content Connection</strong> | 比喻描述 | Visual Metaphor作为核心句 |
+| <strong>Constraints</strong> | 末尾 | `"No text overlay. No watermarks. 2:1 aspect ratio."` |
 
 ### 转换模板
 
@@ -434,7 +434,7 @@ No text overlay. No watermarks. Suitable for 2:1 aspect ratio blog hero image.
 
 ### 完整示例：Next.js App Router迁移
 
-**YAML设计：**
+<strong>YAML设计：</strong>
 
 ```yaml
 Tone: "构建性, 现代, 迁移, 进化, 架构"
@@ -462,7 +462,7 @@ Content Connection:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. Blueprint aesthetic."
 ```
 
-**转换后的英文提示词：**
+<strong>转换后的英文提示词：</strong>
 
 ```
 An architectural blueprint illustration showing migration from old to new
@@ -484,21 +484,21 @@ precise. No text overlay. No watermarks. 2:1 aspect ratio.
 
 将本指南应用于实际博客封面图生成后：
 
-- **Before**：提示词"modern tech blog hero" → 到处都能见到的渐变图片
-- **After**：应用YAML 7-Part Structure → 与文章内容完美契合的独一无二图片
+- <strong>Before</strong>：提示词"modern tech blog hero" → 到处都能见到的渐变图片
+- <strong>After</strong>：应用YAML 7-Part Structure → 与文章内容完美契合的独一无二图片
 
-特别是引入**Content Connection**后，Theme Fit得分从平均6分跃升至9分。
+特别是引入<strong>Content Connection</strong>后，Theme Fit得分从平均6分跃升至9分。
 
 ### 最终检查清单
 
 完成提示词后，请用以下清单做最终确认：
 
-- [ ] **Tone**：5个关键词是否具体且彼此一致？
-- [ ] **Visual Identity**：HEX代码+颜色名+用途是否全部明确？
-- [ ] **Image Style**：Features/Shapes/Texture/Composition是否各自具体？
-- [ ] **Typography**：是否指定了与风格匹配的字体？
-- [ ] **Content Connection**：视觉隐喻是否只对本文有意义？
-- [ ] **Constraints**：是否包含4项必须约束（文字、水印、比例、面孔）？
-- [ ] **Self-Check 3项**：是否通过了唯一性/视觉具体性/一致性测试？
+- [ ] <strong>Tone</strong>：5个关键词是否具体且彼此一致？
+- [ ] <strong>Visual Identity</strong>：HEX代码+颜色名+用途是否全部明确？
+- [ ] <strong>Image Style</strong>：Features/Shapes/Texture/Composition是否各自具体？
+- [ ] <strong>Typography</strong>：是否指定了与风格匹配的字体？
+- [ ] <strong>Content Connection</strong>：视觉隐喻是否只对本文有意义？
+- [ ] <strong>Constraints</strong>：是否包含4项必须约束（文字、水印、比例、面孔）？
+- [ ] <strong>Self-Check 3项</strong>：是否通过了唯一性/视觉具体性/一致性测试？
 
-遵循这个结构，AI就能为你的博客文章生成完美契合的高质量封面图。不要再满足于"看起来还行"的图片了。用**数据验证的高分模式**，创造精准而有意义的图像吧。
+遵循这个结构，AI就能为你的博客文章生成完美契合的高质量封面图。不要再满足于"看起来还行"的图片了。用<strong>数据验证的高分模式</strong>，创造精准而有意义的图像吧。

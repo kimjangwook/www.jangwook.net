@@ -54,7 +54,7 @@ relatedPosts:
 
 2025년 초, Andrej Karpathy가 "Vibe Coding"이라는 용어를 만들었습니다. AI에게 프롬프트를 던지고, 생성된 코드를 복사하고, 작동하길 바라는 방식. 프로토타입에는 효과적이지만, 대규모 프로젝트에서는 빠르게 무너집니다.
 
-이제 **사양 주도 개발(Specification-Driven Development, SDD)**이 등장했습니다. Markdown으로 명확한 사양을 작성하면, AI 코딩 에이전트가 그것을 실행 가능한 코드로 "컴파일"합니다. 단순한 방법론의 변화가 아니라, AI와 함께 소프트웨어를 구축하는 방식의 근본적인 전환입니다.
+이제 <strong>사양 주도 개발(Specification-Driven Development, SDD)</strong>이 등장했습니다. Markdown으로 명확한 사양을 작성하면, AI 코딩 에이전트가 그것을 실행 가능한 코드로 "컴파일"합니다. 단순한 방법론의 변화가 아니라, AI와 함께 소프트웨어를 구축하는 방식의 근본적인 전환입니다.
 
 ### Vibe Coding의 한계
 
@@ -77,7 +77,7 @@ function login(username: string, password: string) {
 // 또 재생성... 점점 더 복잡해지고 일관성 없어짐
 ```
 
-**문제점**:
+<strong>문제점</strong>:
 - 매번 프롬프트할 때마다 AI가 전체 컨텍스트를 잃음
 - 이전 결정사항이 무시되거나 덮어씌워짐
 - 코드 품질이 일관성 없고 예측 불가능
@@ -85,19 +85,19 @@ function login(username: string, password: string) {
 
 ## 사양 주도 개발이란?
 
-사양 주도 개발은 **"무엇을(What)" 구축할지를 명확히 정의한 뒤, AI가 "어떻게(How)"를 구현하도록** 하는 방법론입니다.
+사양 주도 개발은 <strong>"무엇을(What)" 구축할지를 명확히 정의한 뒤, AI가 "어떻게(How)"를 구현하도록</strong> 하는 방법론입니다.
 
 ### 핵심 원칙
 
-1. **명세서가 진실의 원천(Single Source of Truth)**
+1. <strong>명세서가 진실의 원천(Single Source of Truth)</strong>
    - 코드가 아닌 명세서가 프로젝트의 정의
    - 모든 변경은 명세서 업데이트로 시작
 
-2. **구조화된 워크플로우**
+2. <strong>구조화된 워크플로우</strong>
    - 사양 작성(Specify) → 계획 수립(Plan) → 작업 분해(Task) → 구현(Implement)
    - 각 단계가 명확히 분리되어 추적 가능
 
-3. **AI를 도구로, 개발자를 설계자로**
+3. <strong>AI를 도구로, 개발자를 설계자로</strong>
    - 개발자는 "무엇을" 결정 (아키텍처, 비즈니스 로직)
    - AI는 "어떻게"를 실행 (코드 생성, 테스트, 최적화)
 
@@ -105,12 +105,12 @@ function login(username: string, password: string) {
 
 | 측면 | 전통적 개발 | Vibe Coding | 사양 주도 개발 |
 |------|------------|-------------|----------------|
-| **시작점** | 요구사항 문서 | 즉흥적 프롬프트 | 구조화된 사양서 |
-| **AI 역할** | 없음 또는 보조 도구 | 전체 코드 생성 | 사양 기반 코드 생성 |
-| **일관성** | 개발자 경험에 의존 | 낮음 (매 프롬프트마다 변동) | 높음 (사양이 보장) |
-| **스케일링** | 가능하지만 느림 | 불가능 (복잡도↑ 품질↓) | 우수 (사양만 관리) |
-| **유지보수** | 코드 수정 필요 | 전체 재생성 위험 | 사양 업데이트 후 재생성 |
-| **협업** | 코드 리뷰 | 어려움 | 사양 리뷰 (더 명확) |
+| <strong>시작점</strong> | 요구사항 문서 | 즉흥적 프롬프트 | 구조화된 사양서 |
+| <strong>AI 역할</strong> | 없음 또는 보조 도구 | 전체 코드 생성 | 사양 기반 코드 생성 |
+| <strong>일관성</strong> | 개발자 경험에 의존 | 낮음 (매 프롬프트마다 변동) | 높음 (사양이 보장) |
+| <strong>스케일링</strong> | 가능하지만 느림 | 불가능 (복잡도↑ 품질↓) | 우수 (사양만 관리) |
+| <strong>유지보수</strong> | 코드 수정 필요 | 전체 재생성 위험 | 사양 업데이트 후 재생성 |
+| <strong>협업</strong> | 코드 리뷰 | 어려움 | 사양 리뷰 (더 명확) |
 
 ## 실전 예제: 사양 주도로 인증 시스템 구축하기
 
@@ -359,7 +359,7 @@ export class PasswordHasher {
          테스트도 함께 작성하고 coverage 90% 이상 확보해줘."
 ```
 
-**AI가 생성한 코드 예시**:
+<strong>AI가 생성한 코드 예시</strong>:
 
 ```typescript
 // src/utils/password-hasher.ts
@@ -471,7 +471,7 @@ describe('PasswordHasher', () => {
 });
 ```
 
-**핵심 포인트**:
+<strong>핵심 포인트</strong>:
 - AI가 사양서의 모든 요구사항을 정확히 반영 (NFR-1 보안 요구사항)
 - 에러 처리, 엣지 케이스, 성능 테스트 모두 포함
 - 코드가 일관성 있고 문서화됨
@@ -587,7 +587,7 @@ spec-kit tasks plan/user-profile-plan.md --output tasks/user-profile-tasks.md
 
 ### 실시간 사양 업데이트
 
-사양 주도 개발의 강력한 점은 **변경이 쉽다**는 것입니다:
+사양 주도 개발의 강력한 점은 <strong>변경이 쉽다</strong>는 것입니다:
 
 ```markdown
 <!-- spec/features/auth.md 수정 -->
@@ -649,7 +649,7 @@ describe('login with rememberMe', () => {
 
 ### 1. 좋은 사양서 작성법
 
-**명확한 입출력 정의**:
+<strong>명확한 입출력 정의</strong>:
 
 ````markdown
 ❌ 나쁜 예:
@@ -682,7 +682,7 @@ Create a new user account.
 | 약한 비밀번호 | "Password does not meet requirements" | 400 |
 ````
 
-**측정 가능한 비기능 요구사항**:
+<strong>측정 가능한 비기능 요구사항</strong>:
 
 ````markdown
 ❌ 나쁜 예:
@@ -784,7 +784,7 @@ try {
 
 ### 3. AI 에이전트 효과적으로 활용하기
 
-**명확한 컨텍스트 제공**:
+<strong>명확한 컨텍스트 제공</strong>:
 
 ```bash
 # ❌ 나쁜 프롬프트
@@ -797,7 +797,7 @@ try {
          테스트는 auth.service.test.ts의 기존 패턴을 따라 작성해줘."
 ```
 
-**반복적 개선**:
+<strong>반복적 개선</strong>:
 
 ```bash
 # 1차 구현
@@ -817,7 +817,7 @@ try {
 
 ### 4. 협업 워크플로우
 
-**팀 단위 사양 주도 개발**:
+<strong>팀 단위 사양 주도 개발</strong>:
 
 ```markdown
 ## 협업 프로세스
@@ -867,22 +867,22 @@ try {
 
 | 도구 | 용도 | 강점 | 약점 |
 |------|------|------|------|
-| **GitHub Spec Kit** | 사양 → 계획 → 작업 | 공식 지원, 통합 워크플로우 | 초기 버전 (실험적) |
-| **Kiro** | AI 사양 검증 | 사양 품질 분석 | Spec Kit 의존성 |
-| **BMAD-Method** | 엔터프라이즈 사양 관리 | 대규모 팀 협업 | 상업용 (유료) |
-| **Claude Code** | AI 코딩 에이전트 | 높은 코드 품질 | API 비용 |
-| **GitHub Copilot** | AI 코딩 보조 | IDE 통합 우수 | 컨텍스트 제한 |
+| <strong>GitHub Spec Kit</strong> | 사양 → 계획 → 작업 | 공식 지원, 통합 워크플로우 | 초기 버전 (실험적) |
+| <strong>Kiro</strong> | AI 사양 검증 | 사양 품질 분석 | Spec Kit 의존성 |
+| <strong>BMAD-Method</strong> | 엔터프라이즈 사양 관리 | 대규모 팀 협업 | 상업용 (유료) |
+| <strong>Claude Code</strong> | AI 코딩 에이전트 | 높은 코드 품질 | API 비용 |
+| <strong>GitHub Copilot</strong> | AI 코딩 보조 | IDE 통합 우수 | 컨텍스트 제한 |
 
 ### 추천 툴체인
 
-**스타트업/소규모 팀**:
+<strong>스타트업/소규모 팀</strong>:
 ```bash
 ├── GitHub Spec Kit (무료)
 ├── GitHub Copilot (개인: $10/월)
 └── GitHub Actions (CI/CD, 무료)
 ```
 
-**중대형 기업**:
+<strong>중대형 기업</strong>:
 ```bash
 ├── BMAD-Method (엔터프라이즈)
 ├── Claude Code (팀 라이선스)
@@ -894,19 +894,19 @@ try {
 
 ### 실제 프로젝트 사례
 
-**프로젝트**: E-commerce API (50개 엔드포인트, 3명 개발팀)
+<strong>프로젝트</strong>: E-commerce API (50개 엔드포인트, 3명 개발팀)
 
 | 지표 | 전통적 개발 | Vibe Coding | 사양 주도 개발 |
 |------|-------------|-------------|----------------|
-| **개발 기간** | 12주 | 8주 (초기 빠름) | 10주 |
-| **버그 발견** | Sprint 중 평균 45개 | Sprint 중 평균 80개 | Sprint 중 평균 15개 |
-| **리팩토링 시간** | 전체의 20% | 전체의 40% | 전체의 5% |
-| **코드 리뷰 시간** | PR당 평균 2시간 | PR당 평균 3시간 | PR당 평균 30분 |
-| **테스트 커버리지** | 75% | 45% | 92% |
-| **기술 부채** | 중간 | 높음 | 낮음 |
-| **팀 만족도** | 7/10 | 6/10 | 9/10 |
+| <strong>개발 기간</strong> | 12주 | 8주 (초기 빠름) | 10주 |
+| <strong>버그 발견</strong> | Sprint 중 평균 45개 | Sprint 중 평균 80개 | Sprint 중 평균 15개 |
+| <strong>리팩토링 시간</strong> | 전체의 20% | 전체의 40% | 전체의 5% |
+| <strong>코드 리뷰 시간</strong> | PR당 평균 2시간 | PR당 평균 3시간 | PR당 평균 30분 |
+| <strong>테스트 커버리지</strong> | 75% | 45% | 92% |
+| <strong>기술 부채</strong> | 중간 | 높음 | 낮음 |
+| <strong>팀 만족도</strong> | 7/10 | 6/10 | 9/10 |
 
-**핵심 인사이트**:
+<strong>핵심 인사이트</strong>:
 - 사양 주도 개발은 초기 사양 작성 시간이 추가되지만, 전체 프로젝트에서는 시간 절약
 - 버그가 70% 감소 (사양이 명확하면 AI가 정확한 코드 생성)
 - 리팩토링 시간 75% 감소 (처음부터 구조가 명확)
@@ -916,15 +916,15 @@ try {
 
 ### 사양 주도 개발이 적합하지 않은 경우
 
-1. **빠른 프로토타이핑**
+1. <strong>빠른 프로토타이핑</strong>
    - MVP나 PoC는 Vibe Coding이 더 빠름
    - 사양 작성 오버헤드가 불필요
 
-2. **명확하지 않은 요구사항**
+2. <strong>명확하지 않은 요구사항</strong>
    - 탐색적 프로젝트는 애자일 접근이 더 적합
    - 사양을 너무 자주 변경하면 오히려 비효율
 
-3. **1인 개발자 + 소규모 프로젝트**
+3. <strong>1인 개발자 + 소규모 프로젝트</strong>
    - 협업 이점이 없으면 과도한 프로세스
    - 간단한 스크립트나 도구는 직접 코딩이 더 빠름
 
@@ -954,32 +954,32 @@ try {
 
 ### 2025년 이후 트렌드
 
-1. **실행 가능한 사양서(Executable Specifications)**
+1. <strong>실행 가능한 사양서(Executable Specifications)</strong>
    - Markdown 사양서를 직접 "컴파일"하여 실행 가능한 코드로 변환
    - 테스트, 문서, 코드가 하나의 소스에서 자동 생성
 
-2. **AI 에이전트 협업**
+2. <strong>AI 에이전트 협업</strong>
    - 한 명의 개발자가 여러 AI 에이전트 오케스트레이션
    - 예: "Architecture AI + Coding AI + Testing AI + Security AI"
 
-3. **자율 코드 유지보수**
+3. <strong>자율 코드 유지보수</strong>
    - AI가 사양서를 기반으로 자동으로 보안 패치, 성능 최적화 적용
    - 개발자는 승인만 하는 역할
 
-4. **자연어 사양서**
+4. <strong>자연어 사양서</strong>
    - 더 이상 Markdown 구조 필요 없음
    - 일반 언어로 요구사항 설명하면 AI가 구조화
 
 ## 결론: 개발자의 역할 재정의
 
-사양 주도 개발은 단순한 방법론이 아니라, **AI 시대 개발자 역할의 근본적 변화**를 의미합니다.
+사양 주도 개발은 단순한 방법론이 아니라, <strong>AI 시대 개발자 역할의 근본적 변화</strong>를 의미합니다.
 
 ### 변화하는 개발자의 역할
 
-**Before (전통적 개발)**:
+<strong>Before (전통적 개발)</strong>:
 - 코드 작성 70% + 설계 20% + 테스트 10%
 
-**After (사양 주도 개발)**:
+<strong>After (사양 주도 개발)</strong>:
 - 사양 작성 40% + AI 관리 30% + 검증 20% + 최적화 10%
 
 ### 핵심 스킬의 변화
@@ -994,7 +994,7 @@ try {
 
 ### 시작하기
 
-**1주차: 학습**
+<strong>1주차: 학습</strong>
 ```bash
 # GitHub Spec Kit 튜토리얼
 npx @github/spec-kit tutorial
@@ -1004,17 +1004,17 @@ git clone https://github.com/github/spec-kit-examples
 cd spec-kit-examples/todo-api
 ```
 
-**2주차: 소규모 적용**
+<strong>2주차: 소규모 적용</strong>
 - 기존 프로젝트의 한 기능을 사양 주도로 리팩토링
 - constitution.md 작성 (팀 코딩 원칙)
 - 간단한 API 엔드포인트 1-2개를 사양 → 코드로 구현
 
-**3주차: 팀 도입**
+<strong>3주차: 팀 도입</strong>
 - 팀원들에게 개념 공유
 - 다음 스프린트의 한 스토리를 사양 주도로 시도
 - 회고에서 개선점 논의
 
-**1개월 후: 전면 도입 결정**
+<strong>1개월 후: 전면 도입 결정</strong>
 - 성과 측정 (버그 감소율, 개발 속도, 팀 만족도)
 - 도구 선택 (Spec Kit vs 상업 도구)
 - 장기 로드맵 수립
@@ -1038,4 +1038,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-**다음 글**: [AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기](/ko/blog/ko/ai-agent-collaboration-patterns)에서는 Architecture Agent, Coding Agent, Testing Agent, Security Agent, DevOps Agent를 오케스트레이션하여 복잡한 애플리케이션을 구축하는 실전 사례를 다룹니다.
+<strong>다음 글</strong>: [AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기](/ko/blog/ko/ai-agent-collaboration-patterns)에서는 Architecture Agent, Coding Agent, Testing Agent, Security Agent, DevOps Agent를 오케스트레이션하여 복잡한 애플리케이션을 구축하는 실전 사례를 다룹니다.

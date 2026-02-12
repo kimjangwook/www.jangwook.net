@@ -6,7 +6,7 @@ heroImage: "../../../assets/blog/dena-llm-study-part4-rag-hero.jpg"
 tags: ["rag", "llm", "ai", "dena", "embedding"]
 ---
 
-> **시리즈: DeNA LLM 스터디** (4/5)
+> <strong>시리즈: DeNA LLM 스터디</strong> (4/5)
 >
 > 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)
 > 2. [Part 2: 구조화 출력과 멀티 LLM 파이프라인](/ko/blog/ko/dena-llm-study-part2-structured-output)
@@ -22,7 +22,7 @@ DeNA의 LLM 스터디 시리즈 Part 4에서는 RAG(Retrieval-Augmented Generati
 
 ## 컨텍스트 엔지니어링: LLM은 인터페이스
 
-DeNA 스터디에서 강조하는 핵심 개념은 **"LLM은 인터페이스일 뿐, 검색 시스템이 진짜 핵심"**이라는 점입니다.
+DeNA 스터디에서 강조하는 핵심 개념은 <strong>"LLM은 인터페이스일 뿐, 검색 시스템이 진짜 핵심"</strong>이라는 점입니다.
 
 ### 프롬프트 엔지니어링을 넘어서
 

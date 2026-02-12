@@ -88,7 +88,7 @@ relatedPosts:
 
 [n8n](https://n8n.io/) 是一个<strong>无代码/低代码工作流自动化平台</strong>。截至 2025 年，支持 422+ 集成，并提供专门用于构建 LLM 智能体的功能。
 
-**主要特点**:
+<strong>主要特点</strong>:
 
 - 可视化工作流构建器
 - LangChain、Ollama 等主要 LLM 框架集成
@@ -120,7 +120,7 @@ relatedPosts:
 
 根据 DeNA 研究资料和最新研究，2025 年智能体系统的核心趋势是<strong>从"完全自主"向"编排"转变</strong>。
 
-**原因**:
+<strong>原因</strong>:
 
 1. <strong>成本爆炸</strong>：自主智能体的无限 API 调用
 2. <strong>不可预测性</strong>：难以控制智能体行为
@@ -164,7 +164,7 @@ graph LR
 
 智能体的中央引擎。
 
-**组成部分**:
+<strong>组成部分</strong>:
 
 - <strong>Prompt Template</strong>：系统消息、角色定义
 - <strong>LLM Engine</strong>：Claude、GPT-4、Gemini 等
@@ -174,13 +174,13 @@ graph LR
 
 智能体的记忆系统。
 
-**Short-term Memory**:
+<strong>Short-term Memory</strong>:
 
 - 当前对话会话的历史
 - 通常是最后 N 条消息（N=5〜10）
 - 直接包含在 Context Window 中
 
-**Long-term Memory**:
+<strong>Long-term Memory</strong>:
 
 - 持久化知识库
 - Vector Database（Pinecone、Weaviate 等）
@@ -190,7 +190,7 @@ graph LR
 
 智能体执行复杂任务的策略。
 
-**ReAct 模式**:
+<strong>ReAct 模式</strong>:
 
 ```
 Thought: 用户请求公司收入数据。
@@ -216,7 +216,7 @@ LLM 与外部工具交互的机制。
 
 DeNA 研究资料中指出的重要问题：<strong>LLM 的函数调用不是 100% 可靠的</strong>。
 
-**问题案例**:
+<strong>问题案例</strong>:
 
 1. <strong>错误参数</strong>：缺少必填字段、类型不匹配
 2. <strong>幻觉</strong>：调用不存在的工具
@@ -267,12 +267,12 @@ class SelfHealingAgent {
 
 一个智能体的输出成为下一个智能体输入的线性结构。
 
-**用例**:
+<strong>用例</strong>:
 
 - 博客文章创建：研究 → 草稿 → 编辑 → 发布
 - 数据管道：收集 → 清洗 → 分析 → 可视化
 
-**优点**:
+<strong>优点</strong>:
 
 - 实现简单
 - 易于调试
@@ -282,7 +282,7 @@ class SelfHealingAgent {
 
 多个智能体同时独立工作的结构。
 
-**用例**:
+<strong>用例</strong>:
 
 - 内容审核：质量检查 + 法律审查 + 事实核查并行执行
 - 多模态分析：文本 + 图像 + 音频并行处理
@@ -291,7 +291,7 @@ class SelfHealingAgent {
 
 中央监督者分配任务并整合结果的结构。
 
-**用例**:
+<strong>用例</strong>:
 
 - 复杂研究：监督者将子主题分配给多个工作者
 - 代码生成：监督者将模块实现分配给工作者
@@ -300,7 +300,7 @@ class SelfHealingAgent {
 
 多级监督者-工作者关系形成树结构的方式。
 
-**用例**:
+<strong>用例</strong>:
 
 - 大规模项目管理：PM → 团队负责人 → 开发者
 - 复杂系统设计：架构师 → 模块设计者 → 实现者
@@ -309,7 +309,7 @@ class SelfHealingAgent {
 
 智能体以 P2P 方式自由通信的结构。
 
-**用例**:
+<strong>用例</strong>:
 
 - 创意协作：想法头脑风暴
 - 民主决策：基于投票的共识
@@ -331,9 +331,9 @@ class SelfHealingAgent {
 
 #### LangGraph
 
-**理念**：<strong>用图表达一切</strong>
+<strong>理念</strong>：<strong>用图表达一切</strong>
 
-**优点**:
+<strong>优点</strong>:
 
 - <strong>清晰的控制流</strong>：所有路径在图中明确定义
 - <strong>易于调试</strong>：可以追踪状态
@@ -341,15 +341,15 @@ class SelfHealingAgent {
 
 #### AutoGen
 
-**理念**：<strong>通过智能体对话解决问题</strong>
+<strong>理念</strong>：<strong>通过智能体对话解决问题</strong>
 
-**优点**:
+<strong>优点</strong>:
 
 - <strong>自然协作</strong>：模仿人类团队对话
 - <strong>灵活性</strong>：动态对话流
 - <strong>涌现行为</strong>：意外的问题解决
 
-**缺点**:
+<strong>缺点</strong>:
 
 - 成本爆炸风险（无限对话）
 - 不可预测
@@ -357,15 +357,15 @@ class SelfHealingAgent {
 
 #### CrewAI
 
-**理念**：<strong>基于角色的团队组成</strong>
+<strong>理念</strong>：<strong>基于角色的团队组成</strong>
 
-**优点**:
+<strong>优点</strong>:
 
 - <strong>直观</strong>：角色概念易于理解
 - <strong>快速原型</strong>：用最少代码实现
 - <strong>内置内存</strong>：自动上下文管理
 
-**缺点**:
+<strong>缺点</strong>:
 
 - 日志不足（调试困难）
 - 复杂工作流的限制
@@ -375,7 +375,7 @@ class SelfHealingAgent {
 
 分析实际项目中模式选择如何影响成本。
 
-**场景**：博客文章生成（研究 + 撰写 + 编辑）
+<strong>场景</strong>：博客文章生成（研究 + 撰写 + 编辑）
 
 | 模式               | API 调用次数                         | 预期成本     | 处理时间    |
 | ------------------ | ------------------------------------ | ------------ | ----------- |
@@ -384,7 +384,7 @@ class SelfHealingAgent {
 | Supervisor         | 7 次（监督者 2 + 工作者 3 + 整合 2） | $0.35        | 60 秒       |
 | Network（AutoGen） | 15〜50 次（对话）                    | $0.75〜$2.50 | 120〜300 秒 |
 
-**生产建议**:
+<strong>生产建议</strong>:
 
 1. 存在<strong>明确工作流</strong> → Sequential 或 Parallel
 2. 需要<strong>动态任务分配</strong> → Supervisor
@@ -396,7 +396,7 @@ class SelfHealingAgent {
 
 [MemGPT](https://arxiv.org/abs/2310.08560) 是将操作系统虚拟内存概念应用于 LLM 的创新方法。
 
-**核心思想**:
+<strong>核心思想</strong>:
 
 - <strong>Main Context（主内存）</strong>：LLM 的 Context Window
 - <strong>External Storage（外部存储）</strong>：向量数据库、关系型数据库
@@ -406,12 +406,12 @@ class SelfHealingAgent {
 
 MemGPT 结合两种内存策略。
 
-**Push（主动）**:
+<strong>Push（主动）</strong>:
 
 - LLM 自动保存它认为重要的信息
 - 例如："此用户偏好 TypeScript" → 保存
 
-**Pull（被动）**:
+<strong>Pull（被动）</strong>:
 
 - 需要时从外部存储检索
 - 例如：用户说"考虑我的偏好" → 检索
@@ -441,7 +441,7 @@ L3: Long-term Memory（长期存储）
 
 [A-MEM](https://arxiv.org/abs/2502.12110) 是 Rutgers 大学在 2025 年提出的创新内存系统。它将 Zettelkasten（德语"笔记盒"）方法论应用于 LLM 智能体。
 
-**什么是 Zettelkasten？**
+<strong>什么是 Zettelkasten？</strong>
 
 - 社会学家 Niklas Luhmann 开发的笔记整理方法
 - 为每个笔记分配唯一 ID
@@ -452,7 +452,7 @@ L3: Long-term Memory（长期存储）
 
 A-MEM 的核心是<strong>智能体自己组织内存</strong>。
 
-**实现示例**:
+<strong>实现示例</strong>:
 
 ```typescript
 class AMem {
@@ -486,7 +486,7 @@ class AMem {
 }
 ```
 
-**A-MEM 的优势**:
+<strong>A-MEM 的优势</strong>:
 
 1. <strong>动态组织</strong>：无需手动结构化
 2. <strong>基于相关性的搜索</strong>：直接匹配 + 间接连接
@@ -499,13 +499,13 @@ DeNA 在生产环境中实际部署的<strong>NOC（网络运营中心）Alert A
 
 ### 问题定义
 
-**背景**:
+<strong>背景</strong>:
 
 - 运营团队每天收到 100〜200 个警报
 - 70% 的警报是误报
 - 工程师手动分类和响应警报
 
-**目标**:
+<strong>目标</strong>:
 
 - 自动警报分类和优先级排序
 - 误报过滤
@@ -541,9 +541,9 @@ graph TD
 
 #### 1. 幻觉问题
 
-**问题**：LLM 提到不存在的日志或指标
+<strong>问题</strong>：LLM 提到不存在的日志或指标
 
-**解决方案**:
+<strong>解决方案</strong>:
 
 ```typescript
 // 工具调用结果验证
@@ -577,9 +577,9 @@ class ToolExecutor {
 
 #### 2. 延迟问题
 
-**问题**：警报 → 响应平均需要 45 秒（目标：10 秒）
+<strong>问题</strong>：警报 → 响应平均需要 45 秒（目标：10 秒）
 
-**解决方案**:
+<strong>解决方案</strong>:
 
 - <strong>并行处理</strong>：同时收集日志/指标/历史
 - <strong>缓存</strong>：缓存常用查询结果
@@ -587,9 +587,9 @@ class ToolExecutor {
 
 #### 3. 成本问题
 
-**问题**：200 个警报/天 × $0.20 = $40/天（$1,200/月）
+<strong>问题</strong>：200 个警报/天 × $0.20 = $40/天（$1,200/月）
 
-**解决方案**:
+<strong>解决方案</strong>:
 
 - <strong>误报预过滤</strong>：首先用规则过滤明显的误报
 - <strong>批处理</strong>：将类似警报批量处理
@@ -610,7 +610,7 @@ LLM 智能体系统的最大挑战是<strong>成本</strong>和<strong>延迟</s
 
 ### 1. 语义缓存（90% 成本降低）
 
-**概念**：对语义相似的查询重用缓存响应
+<strong>概念</strong>：对语义相似的查询重用缓存响应
 
 ```typescript
 // 语义缓存实现
@@ -638,23 +638,23 @@ class SemanticCache {
 }
 ```
 
-**效果**:
+<strong>效果</strong>:
 
 - 60% 缓存命中率 → 60% 成本降低
 - 95% 延迟降低（消除网络延迟）
 
 ### 2. 批处理（50% 降低）
 
-**概念**：将多个请求捆绑在一起处理
+<strong>概念</strong>：将多个请求捆绑在一起处理
 
-**效果**:
+<strong>效果</strong>:
 
 - 批量大小为 10 → 大约 50% 成本降低
 - 但延迟略有增加（等待时间）
 
 ### 3. SLM（小型语言模型，14 倍降低）
 
-**概念**：简单任务使用较小模型
+<strong>概念</strong>：简单任务使用较小模型
 
 ```typescript
 // 模型路由
@@ -676,7 +676,7 @@ class ModelRouter {
 }
 ```
 
-**效果**:
+<strong>效果</strong>:
 
 - 如果 70% 的任务可以由 SLM 处理
 - 成本：70% × $0.001 + 30% × $0.014 = $0.0049（平均）
@@ -685,7 +685,7 @@ class ModelRouter {
 
 ### 4. 量化
 
-**概念**：降低模型权重精度以减小大小和成本
+<strong>概念</strong>：降低模型权重精度以减小大小和成本
 
 | 量化级别     | 模型大小 | 精度损失 | 推理速度 | 用例             |
 | ------------ | -------- | -------- | -------- | ---------------- |
@@ -698,7 +698,7 @@ class ModelRouter {
 
 结合所有四种技术的实际案例。
 
-**优化前**:
+<strong>优化前</strong>:
 
 ```typescript
 // 使用 Claude Sonnet 4 处理所有请求
@@ -707,7 +707,7 @@ const response = await claude.generate(query);
 // 延迟：2 秒
 ```
 
-**优化后**:
+<strong>优化后</strong>:
 
 ```typescript
 async function optimizedQuery(query: string): Promise<string> {
@@ -737,7 +737,7 @@ async function optimizedQuery(query: string): Promise<string> {
 }
 ```
 
-**成本计算**:
+<strong>成本计算</strong>:
 
 ```
 缓存命中（60%）：$0 × 0.6 = $0
@@ -769,7 +769,7 @@ MemGPT、A-MEM 等高级内存系统将智能体从简单的"提示执行器"转
 
 生产中 LLM 智能体系统的最大障碍是<strong>成本</strong>。
 
-**核心策略**:
+<strong>核心策略</strong>:
 
 1. <strong>语义缓存</strong> - 应用于所有系统（仅 60% 命中率就有显著效果）
 2. <strong>SLM 路由</strong> - 简单任务（70%）使用小模型

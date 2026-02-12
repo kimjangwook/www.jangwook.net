@@ -62,7 +62,7 @@ relatedPosts:
 
 ## AI Agents Are Not Magic
 
-Expectations for AI agents are exploding. Stories about "letting agents handle things to cut labor costs" are everywhere. But speaking as someone who actually runs 8 AI agents in production, **reality is far more nuanced**.
+Expectations for AI agents are exploding. Stories about "letting agents handle things to cut labor costs" are everywhere. But speaking as someone who actually runs 8 AI agents in production, <strong>reality is far more nuanced</strong>.
 
 In this article, I'll analyze the real operational costs of AI agents with data and share honest experiences from the perspective that "AI agents aren't magic—they're tradeoffs."
 
@@ -72,13 +72,13 @@ A recent English-language analysis has been making waves. It calculated the cost
 
 | Item | AI Agent Moderation | Human Moderator |
 |------|-------------------|-----------------|
-| **Monthly Cost** | $1,350 – $2,250 | ~$1,200 |
-| **24/7 Operation** | ✅ Possible | ❌ Requires shifts |
-| **Judgment Consistency** | High (prompt-dependent) | Variable |
-| **Context Understanding** | Limited | High |
-| **Initial Setup Cost** | High | Low |
+| <strong>Monthly Cost</strong> | $1,350 – $2,250 | ~$1,200 |
+| <strong>24/7 Operation</strong> | ✅ Possible | ❌ Requires shifts |
+| <strong>Judgment Consistency</strong> | High (prompt-dependent) | Variable |
+| <strong>Context Understanding</strong> | Limited | High |
+| <strong>Initial Setup Cost</strong> | High | Low |
 
-The key takeaway: **API call costs alone can exceed human moderator salaries**. When you need 24/7 autonomous operation, high-volume processing, and complex decision-making, costs climb even higher.
+The key takeaway: <strong>API call costs alone can exceed human moderator salaries</strong>. When you need 24/7 autonomous operation, high-volume processing, and complex decision-making, costs climb even higher.
 
 ## The Reality of Running 8 AI Agents: Cost Structure Dissection
 
@@ -126,15 +126,15 @@ The real cost structure looks like this:
 |-----------|-----------------|-------|
 | API Costs | $270-550 | Scales with usage |
 | Infrastructure (servers, DB) | $50-100 | Fixed costs |
-| Engineering Time | **$500-2,000+** | Largest cost |
+| Engineering Time | <strong>$500-2,000+</strong> | Largest cost |
 | Incident Response/Debugging | $200-500 | Unpredictable |
-| **Total** | **$1,020-3,150+** | |
+| <strong>Total</strong> | <strong>$1,020-3,150+</strong> | |
 
-**Engineering time is overwhelmingly the largest cost.** Miss this, and your cost calculations are completely off.
+<strong>Engineering time is overwhelmingly the largest cost.</strong> Miss this, and your cost calculations are completely off.
 
 ## The Routing Layer: The Biggest Challenge
 
-The most difficult and expensive part of running 8 AI agents is the **routing layer**.
+The most difficult and expensive part of running 8 AI agents is the <strong>routing layer</strong>.
 
 ```mermaid
 graph LR
@@ -152,10 +152,10 @@ graph LR
 
 Problems the routing layer must solve:
 
-- **Intent Classification**: Which agent should handle this user request?
-- **Context Passing**: How do agents share state with each other?
-- **Error Handling**: How do you recover when an agent fails?
-- **Cost Optimization**: How do you mix expensive and cheap models effectively?
+- <strong>Intent Classification</strong>: Which agent should handle this user request?
+- <strong>Context Passing</strong>: How do agents share state with each other?
+- <strong>Error Handling</strong>: How do you recover when an agent fails?
+- <strong>Cost Optimization</strong>: How do you mix expensive and cheap models effectively?
 
 The time spent building and stabilizing this routing layer exceeds all other costs combined.
 
@@ -163,7 +163,7 @@ The time spent building and stabilizing this routing layer exceeds all other cos
 
 The most painful lesson from AI agent development:
 
-> **Spent 40 hours building a complex agent pipeline that failed. Solved it with a single well-crafted prompt.**
+> <strong>Spent 40 hours building a complex agent pipeline that failed. Solved it with a single well-crafted prompt.</strong>
 
 This isn't just my experience. It's a pattern repeatedly reported in AI agent communities:
 
@@ -190,7 +190,7 @@ If you see these signs, step back:
 - ✅ You're using an LLM for a problem that a simple if-else could solve
 - ✅ You're designing architecture before testing with a single prompt
 
-**Rule of Thumb**: Try a single prompt first. Only split into agents when that fails.
+<strong>Rule of Thumb</strong>: Try a single prompt first. Only split into agents when that fails.
 
 ## So When Are AI Agents Actually Useful?
 
@@ -204,7 +204,7 @@ Looking at costs alone, you might conclude "just hire a person." But there are a
 | Consistent criteria application | Exception handling |
 | Personal productivity scaling (solo teams) | Team collaboration/communication |
 
-AI agents are overwhelmingly effective for **scaling personal productivity as a solo developer or small team**. My 8 agents serve exactly this purpose—the key mindset is not "replacing humans" but "expanding what one person can accomplish."
+AI agents are overwhelmingly effective for <strong>scaling personal productivity as a solo developer or small team</strong>. My 8 agents serve exactly this purpose—the key mindset is not "replacing humans" but "expanding what one person can accomplish."
 
 ## Practical Cost Optimization Tips
 
@@ -219,7 +219,7 @@ Model allocation by task complexity:
 └── Low complexity (60%): Claude Haiku / GPT-4o-mini → Classification, summarization, formatting
 ```
 
-This strategy alone can reduce API costs by **40-60%**.
+This strategy alone can reduce API costs by <strong>40-60%</strong>.
 
 ### 2. Caching and Batch Processing
 
@@ -235,16 +235,16 @@ This strategy alone can reduce API costs by **40-60%**.
 
 ## Conclusion: Recognize the Tradeoffs
 
-AI agents aren't magic. They're **engineering tools with clear tradeoffs**.
+AI agents aren't magic. They're <strong>engineering tools with clear tradeoffs</strong>.
 
 Key lessons:
 
-1. **API costs are only part of the total cost.** You must include engineering time, maintenance, and incident response.
-2. **The routing layer is the biggest technical challenge.** The real difficulty in multi-agent systems isn't individual agents—it's orchestration.
-3. **Beware over-engineering.** A single well-crafted prompt can beat 40 hours of complex pipeline work.
-4. **Use them for the right purpose.** Excellent for personal productivity scaling, but may cost more than humans for simple labor replacement.
+1. <strong>API costs are only part of the total cost.</strong> You must include engineering time, maintenance, and incident response.
+2. <strong>The routing layer is the biggest technical challenge.</strong> The real difficulty in multi-agent systems isn't individual agents—it's orchestration.
+3. <strong>Beware over-engineering.</strong> A single well-crafted prompt can beat 40 hours of complex pipeline work.
+4. <strong>Use them for the right purpose.</strong> Excellent for personal productivity scaling, but may cost more than humans for simple labor replacement.
 
-For those considering AI agent adoption: **Start with a small prompt and only scale to agents when needed.** That's the most valuable lesson from running 8 agents.
+For those considering AI agent adoption: <strong>Start with a small prompt and only scale to agents when needed.</strong> That's the most valuable lesson from running 8 agents.
 
 ## References
 

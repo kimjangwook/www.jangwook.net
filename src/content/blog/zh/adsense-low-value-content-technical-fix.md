@@ -59,23 +59,23 @@ relatedPosts:
 
 ## 概述
 
-你是否曾多次向Google AdSense提交申请，却反复收到**"低价值内容（Low Value Content）"**的拒绝通知？我就是这样。而且这还是一个拥有83篇文章、4种语言（韩语、英语、日语、中文）、总计316+技术文章的博客。
+你是否曾多次向Google AdSense提交申请，却反复收到<strong>"低价值内容（Low Value Content）"</strong>的拒绝通知？我就是这样。而且这还是一个拥有83篇文章、4种语言（韩语、英语、日语、中文）、总计316+技术文章的博客。
 
-问题不在内容本身。**网站的技术缺陷让Google将其视为"低质量网站"。**本文将分享我实际发现和修复的8个问题。希望能为遇到同样困扰的开发者提供实用指南。
+问题不在内容本身。<strong>网站的技术缺陷让Google将其视为"低质量网站"。</strong>本文将分享我实际发现和修复的8个问题。希望能为遇到同样困扰的开发者提供实用指南。
 
 ## 背景：为什么被拒绝
 
 本博客是基于[Astro](https://astro.build)框架的多语言技术博客。
 
-- **内容**：83篇文章 × 4种语言 = 316+技术文章
-- **必要页面**：隐私政策、使用条款、联系页面一应俱全
-- **技术栈**：Astro SSG、Cloudflare Pages、Content Collections
+- <strong>内容</strong>：83篇文章 × 4种语言 = 316+技术文章
+- <strong>必要页面</strong>：隐私政策、使用条款、联系页面一应俱全
+- <strong>技术栈</strong>：Astro SSG、Cloudflare Pages、Content Collections
 
 从表面看，完全满足AdSense的审批条件。但每次申请得到的回复都一样：
 
-> **"低价值内容"** — 您的网站没有足够的有用内容。
+> <strong>"低价值内容"</strong> — 您的网站没有足够的有用内容。
 
-对整个网站进行技术审计后发现，**根本原因是3个关键技术缺陷**，而非内容质量问题。此外还发现了5个附加问题。
+对整个网站进行技术审计后发现，<strong>根本原因是3个关键技术缺陷</strong>，而非内容质量问题。此外还发现了5个附加问题。
 
 ## 关键问题1：Ezoic ads.txt冲突（最直接的原因）
 
@@ -102,7 +102,7 @@ GitHub Actions的`deploy.yml`中有这样一段代码：
     curl -L https://srv.adstxtmanager.com/19390/jangwook.net > public/ads.txt
 ```
 
-每次构建时都从Ezoic的`adstxtmanager`下载并覆盖`ads.txt`。本地的`public/ads.txt`中有正确的Google AdSense条目，但在**部署时被完全替换**了。
+每次构建时都从Ezoic的`adstxtmanager`下载并覆盖`ads.txt`。本地的`public/ads.txt`中有正确的Google AdSense条目，但在<strong>部署时被完全替换</strong>了。
 
 ```
 # 本地 public/ads.txt（正确内容）
@@ -113,7 +113,7 @@ google.com, pub-7556938384772610, DIRECT, f08c47fec0942fa0
 # → pub-7556938384772610条目不存在！
 ```
 
-**此外**，`BaseHead.astro`中有3个Ezoic CMP（同意管理平台）及广告脚本在所有页面加载：
+<strong>此外</strong>，`BaseHead.astro`中有3个Ezoic CMP（同意管理平台）及广告脚本在所有页面加载：
 
 ```astro
 <!-- BaseHead.astro（问题脚本） -->
@@ -137,7 +137,7 @@ graph TD
     G --> H["❌ AdSense申请被拒"]
 ```
 
-如果AdSense在网站的`ads.txt`中找不到自己的pub ID，就会判定**该网站无意使用AdSense，或已被其他服务管理**。
+如果AdSense在网站的`ads.txt`中找不到自己的pub ID，就会判定<strong>该网站无意使用AdSense，或已被其他服务管理</strong>。
 
 ### 解决方法
 
@@ -162,7 +162,7 @@ google.com, pub-7556938384772610, DIRECT, f08c47fec0942fa0
 
 ### 发现过程
 
-分析构建日志发现生成了**1,365个页面**。83篇文章 × 4种语言 = 332页，静态页面数量异常偏高。
+分析构建日志发现生成了<strong>1,365个页面</strong>。83篇文章 × 4种语言 = 332页，静态页面数量异常偏高。
 
 ### 原因分析
 
@@ -183,7 +183,7 @@ export async function getStaticPaths() {
 }
 ```
 
-问题在于：这段代码将**所有文章映射到所有语言路由**。由于`post.slug`已经包含语言前缀（如`ko/`、`en/`），将其放入4种语言的路由中就会产生大量**跨语言URL**。
+问题在于：这段代码将<strong>所有文章映射到所有语言路由</strong>。由于`post.slug`已经包含语言前缀（如`ko/`、`en/`），将其放入4种语言的路由中就会产生大量<strong>跨语言URL</strong>。
 
 ```
 # 正常URL（332个）
@@ -207,7 +207,7 @@ graph LR
     D --> E["❌ 整个网站被归类为<br/>低价值内容"]
 ```
 
-Google会评估网站整体的内容质量。当全部页面中**约73%是语言不匹配的重复内容**时，整个网站被判定为"低价值内容"是必然结果。
+Google会评估网站整体的内容质量。当全部页面中<strong>约73%是语言不匹配的重复内容</strong>时，整个网站被判定为"低价值内容"是必然结果。
 
 ### 解决方法
 
@@ -225,13 +225,13 @@ export async function getStaticPaths() {
 }
 ```
 
-**结果**：构建页面数从**1,365降至370**（消除995个幽灵页面）
+<strong>结果</strong>：构建页面数从<strong>1,365降至370</strong>（消除995个幽灵页面）
 
 ## 关键问题3：站点地图全404
 
 ### 发现过程
 
-在Google Search Console中提交站点地图后，被索引的页面极少。在浏览器中实际访问站点地图的URL，发现**全部返回404**。
+在Google Search Console中提交站点地图后，被索引的页面极少。在浏览器中实际访问站点地图的URL，发现<strong>全部返回404</strong>。
 
 ### 原因分析
 
@@ -245,7 +245,7 @@ https://jangwook.net/ko/blog/my-post-title/
 https://jangwook.net/ko/blog/ko/my-post-title/
 ```
 
-站点地图以`/{lang}/blog/{slug}/`格式生成URL，但由于`slug`中已包含`ko/`等语言前缀，实际URL为`/{lang}/blog/{lang}/{slug}/`。**站点地图中的332个博客URL全部返回404。**
+站点地图以`/{lang}/blog/{slug}/`格式生成URL，但由于`slug`中已包含`ko/`等语言前缀，实际URL为`/{lang}/blog/{lang}/{slug}/`。<strong>站点地图中的332个博客URL全部返回404。</strong>
 
 ```mermaid
 graph TD
@@ -271,11 +271,11 @@ const url = `/${lang}/blog/${post.slug}/`;
 
 ### 问题
 
-83篇文章中**39%**（约32篇）在4种语言版本中H2、H3标题数和代码块数完全一致。Google可能将其识别为**通过机器翻译自动生成的内容**。
+83篇文章中<strong>39%</strong>（约32篇）在4种语言版本中H2、H3标题数和代码块数完全一致。Google可能将其识别为<strong>通过机器翻译自动生成的内容</strong>。
 
 ### 解决方法
 
-与其重写所有内容，不如明确告诉Google**"这些是同一内容的官方翻译版本"**更为有效。
+与其重写所有内容，不如明确告诉Google<strong>"这些是同一内容的官方翻译版本"</strong>更为有效。
 
 ```html
 <!-- 正确配置hreflang -->
@@ -286,13 +286,13 @@ const url = `/${lang}/blog/${post.slug}/`;
 <link rel="alternate" hreflang="x-default" href="https://jangwook.net/en/blog/en/my-post/" />
 ```
 
-正确设置hreflang后，Google会将各语言页面视为**独立的翻译版本**，从而避免重复内容处罚。
+正确设置hreflang后，Google会将各语言页面视为<strong>独立的翻译版本</strong>，从而避免重复内容处罚。
 
 ## 附加问题5：联系页面对爬虫不可见
 
 ### 问题
 
-联系页面仅由Google Form的`<iframe>`组成。爬虫无法读取iframe内容，因此该页面**实际上是空白页面**。
+联系页面仅由Google Form的`<iframe>`组成。爬虫无法读取iframe内容，因此该页面<strong>实际上是空白页面</strong>。
 
 ```html
 <!-- 原联系页面（对爬虫为空页面） -->
@@ -334,7 +334,7 @@ const url = `/${lang}/blog/${post.slug}/`;
 
 ### 问题
 
-博客文章的`x-default`指向了错误的URL。虽然将英语设为默认语言，但URL转换时未转换博客路径内的语言代码，导致**英语URL链接到韩语内容**。
+博客文章的`x-default`指向了错误的URL。虽然将英语设为默认语言，但URL转换时未转换博客路径内的语言代码，导致<strong>英语URL链接到韩语内容</strong>。
 
 ```html
 <!-- 错误的x-default -->
@@ -362,7 +362,7 @@ function getAlternateUrl(currentUrl: string, targetLang: string): string {
 
 ### 问题
 
-存在6篇博客运营报告（周分析、月分析、AdSense拒绝分析等）。这类文章是**对博客自身的分析**，对外部访问者没有价值，可能被归类为"自我引用的低价值内容"。
+存在6篇博客运营报告（周分析、月分析、AdSense拒绝分析等）。这类文章是<strong>对博客自身的分析</strong>，对外部访问者没有价值，可能被归类为"自我引用的低价值内容"。
 
 ### 解决方法
 
@@ -503,14 +503,14 @@ graph LR
 
 ## 总结
 
-AdSense"低价值内容"拒绝**往往不是内容问题，而是技术缺陷导致的**。多语言网站尤其容易出现此类问题，因为URL路由、站点地图、hreflang配置的复杂度较高。
+AdSense"低价值内容"拒绝<strong>往往不是内容问题，而是技术缺陷导致的</strong>。多语言网站尤其容易出现此类问题，因为URL路由、站点地图、hreflang配置的复杂度较高。
 
 核心经验总结：
 
-1. **务必在线上网站直接检查ads.txt。** CI/CD流水线可能在静默覆盖它。
-2. **定期监控构建页面数。** 如果超出预期，可能正在生成幽灵页面。
-3. **实际访问站点地图中的URL。** 站点地图与路由之间的不一致是常见问题。
-4. **从Google的角度审视你的网站。** 对开发者来说理所当然的事情，对爬虫来说可能完全不同。
+1. <strong>务必在线上网站直接检查ads.txt。</strong> CI/CD流水线可能在静默覆盖它。
+2. <strong>定期监控构建页面数。</strong> 如果超出预期，可能正在生成幽灵页面。
+3. <strong>实际访问站点地图中的URL。</strong> 站点地图与路由之间的不一致是常见问题。
+4. <strong>从Google的角度审视你的网站。</strong> 对开发者来说理所当然的事情，对爬虫来说可能完全不同。
 
 希望本指南能帮助到遇到同样问题的开发者。
 

@@ -70,19 +70,19 @@ Understanding the distinction between these paradigms is crucial for building pr
 
 ### Shallow Agents (Agent 1.0)
 
-**Characteristics**:
+<strong>Characteristics</strong>:
 - Single LLM call with tools
 - 5〜15 steps maximum
 - No persistent memory
 - Manual error recovery
 - Flat architecture
 
-**Typical Workflow**:
+<strong>Typical Workflow</strong>:
 ```
 User Request → LLM → Tool Call → Response
 ```
 
-**Limitations**:
+<strong>Limitations</strong>:
 - Context window constraints
 - No inter-step learning
 - Cascading failures
@@ -90,23 +90,23 @@ User Request → LLM → Tool Call → Response
 
 ### Deep Agents (Agent 2.0)
 
-**Characteristics**:
+<strong>Characteristics</strong>:
 - Hierarchical orchestration
 - 100+ step capability
 - Persistent state management
 - Autonomous recovery
 - Explicit planning systems
 
-**Typical Workflow**:
+<strong>Typical Workflow</strong>:
 ```
 User Request → Planner → Orchestrator → Specialized Agents → State Manager → Recovery → Response
 ```
 
-**Key Innovations**:
-- **Explicit Planning**: Structured approach to task decomposition
-- **Memory Persistence**: State survives across sessions
-- **Self-Healing**: Automatic error detection and recovery
-- **Hierarchical Delegation**: Specialized agents for specific domains
+<strong>Key Innovations</strong>:
+- <strong>Explicit Planning</strong>: Structured approach to task decomposition
+- <strong>Memory Persistence</strong>: State survives across sessions
+- <strong>Self-Healing</strong>: Automatic error detection and recovery
+- <strong>Hierarchical Delegation</strong>: Specialized agents for specific domains
 
 ## The Four Pillars of Deep Agents
 
@@ -114,9 +114,9 @@ Based on analysis of LangChain documentation and Philipp Schmid's Agents 2.0 con
 
 ### 1. Explicit Planning
 
-**Core Concept**: Replace implicit reasoning with structured planning protocols.
+<strong>Core Concept</strong>: Replace implicit reasoning with structured planning protocols.
 
-**Implementation**:
+<strong>Implementation</strong>:
 ```yaml
 # planning-protocol.md
 planning_phases:
@@ -139,7 +139,7 @@ planning_phases:
       - set_checkpoints
 ```
 
-**Benefits**:
+<strong>Benefits</strong>:
 - Transparent decision-making
 - Reproducible workflows
 - Better error diagnosis
@@ -147,9 +147,9 @@ planning_phases:
 
 ### 2. Hierarchical Delegation
 
-**Core Concept**: Organize agents into specialized clusters with clear communication protocols.
+<strong>Core Concept</strong>: Organize agents into specialized clusters with clear communication protocols.
 
-**Orchestrator → Clusters:**
+<strong>Orchestrator → Clusters:</strong>
 
 ```mermaid
 graph LR
@@ -160,7 +160,7 @@ graph LR
     O --> F[Research]
 ```
 
-**Cluster → Agents (e.g., Content Cluster):**
+<strong>Cluster → Agents (e.g., Content Cluster):</strong>
 
 ```mermaid
 graph LR
@@ -170,7 +170,7 @@ graph LR
     B --> B4[Image Generator]
 ```
 
-**Communication Protocol**:
+<strong>Communication Protocol</strong>:
 ```typescript
 interface AgentMessage {
   from: string;
@@ -192,9 +192,9 @@ interface AgentMessage {
 
 ### 3. Persistent Memory
 
-**Core Concept**: Maintain state across sessions and steps for continuous learning.
+<strong>Core Concept</strong>: Maintain state across sessions and steps for continuous learning.
 
-**State Architecture**:
+<strong>State Architecture</strong>:
 ```typescript
 interface AgentState {
   // Session State
@@ -230,7 +230,7 @@ interface AgentState {
 }
 ```
 
-**Persistence Strategy**:
+<strong>Persistence Strategy</strong>:
 ```yaml
 persistence:
   storage:
@@ -250,16 +250,16 @@ persistence:
 
 ### 4. Extreme Context Engineering
 
-**Core Concept**: Optimize every token of context for maximum agent effectiveness.
+<strong>Core Concept</strong>: Optimize every token of context for maximum agent effectiveness.
 
-**Techniques**:
+<strong>Techniques</strong>:
 
-1. **Dynamic Context Loading**: Load only relevant context per task
-2. **Context Compression**: Summarize long histories
-3. **Priority Injection**: Critical information first
-4. **Format Optimization**: Structured data over prose
+1. <strong>Dynamic Context Loading</strong>: Load only relevant context per task
+2. <strong>Context Compression</strong>: Summarize long histories
+3. <strong>Priority Injection</strong>: Critical information first
+4. <strong>Format Optimization</strong>: Structured data over prose
 
-**Example Implementation**:
+<strong>Example Implementation</strong>:
 ```markdown
 <!-- Instead of this -->
 The user wants to write a blog post about TypeScript. They previously
@@ -301,21 +301,21 @@ Before optimization, we analyzed our existing `.claude/` directory against Deep 
 | Specialized Agents | 90% | Excellent |
 | Clear Responsibilities | 85% | Good |
 | Task Decomposition | 70% | Moderate |
-| **Explicit Planning** | **40%** | **Needs Work** |
-| **Hierarchical Orchestration** | **45%** | **Needs Work** |
-| **Persistent State** | **30%** | **Critical** |
-| **Recovery Protocols** | **35%** | **Critical** |
+| <strong>Explicit Planning</strong> | <strong>40%</strong> | <strong>Needs Work</strong> |
+| <strong>Hierarchical Orchestration</strong> | <strong>45%</strong> | <strong>Needs Work</strong> |
+| <strong>Persistent State</strong> | <strong>30%</strong> | <strong>Critical</strong> |
+| <strong>Recovery Protocols</strong> | <strong>35%</strong> | <strong>Critical</strong> |
 | Context Engineering | 75% | Good |
 
-**Overall Score: 65%**
+<strong>Overall Score: 65%</strong>
 
 ### Identified Gaps
 
-1. **No Central Orchestrator**: Agents operate independently without coordination
-2. **Missing Planning Protocol**: Tasks executed without structured planning
-3. **No State Persistence**: State lost between sessions
-4. **No Recovery System**: Failures require manual intervention
-5. **Flat Hierarchy**: No cluster organization for specialized domains
+1. <strong>No Central Orchestrator</strong>: Agents operate independently without coordination
+2. <strong>Missing Planning Protocol</strong>: Tasks executed without structured planning
+3. <strong>No State Persistence</strong>: State lost between sessions
+4. <strong>No Recovery System</strong>: Failures require manual intervention
+5. <strong>Flat Hierarchy</strong>: No cluster organization for specialized domains
 
 ## Implementation: The Optimized Architecture
 
@@ -422,13 +422,13 @@ Organizing agents into domain-specific clusters improves coordination and effici
 
 | Cluster | Lead Agent | Members |
 |---------|------------|---------|
-| **Content** | Writing Assistant | Editor, Content Recommender, Image Generator |
-| **Analytics** | Analytics | Analytics Reporter, Post Analyzer |
-| **SEO** | SEO Optimizer | Backlink Manager |
-| **Operations** | Site Manager | Portfolio Curator |
-| **Research** | Web Researcher | Trend Analyzer |
+| <strong>Content</strong> | Writing Assistant | Editor, Content Recommender, Image Generator |
+| <strong>Analytics</strong> | Analytics | Analytics Reporter, Post Analyzer |
+| <strong>SEO</strong> | SEO Optimizer | Backlink Manager |
+| <strong>Operations</strong> | Site Manager | Portfolio Curator |
+| <strong>Research</strong> | Web Researcher | Trend Analyzer |
 
-**Cluster Benefits**:
+<strong>Cluster Benefits</strong>:
 - Clear ownership of domains
 - Reduced context switching
 - Parallel execution within clusters
@@ -679,7 +679,7 @@ interface Learning {
 }
 ```
 
-**State File Structure**:
+<strong>State File Structure</strong>:
 ```
 .claude/state/
 ├── sessions/
@@ -913,7 +913,7 @@ Let's trace through a real-world workflow with the optimized architecture.
 
 ### Scenario: Create Multilingual Technical Blog Post
 
-**Request**: "Write a comprehensive blog post about TypeScript 5.0 features in Korean, English, and Japanese"
+<strong>Request</strong>: "Write a comprehensive blog post about TypeScript 5.0 features in Korean, English, and Japanese"
 
 ### Step 1: Orchestrator Receives Request
 
@@ -1040,60 +1040,60 @@ For teams looking to adopt the Deep Agents paradigm, here's a phased approach.
 
 ### Phase 1: Foundation (Week 1〜2)
 
-**Tasks**:
+<strong>Tasks</strong>:
 - [ ] Create orchestrator agent
 - [ ] Define cluster structure
 - [ ] Implement basic routing
 
-**Deliverables**:
+<strong>Deliverables</strong>:
 - `orchestrator.md` agent definition
 - Cluster assignment documentation
 - Basic routing rules
 
 ### Phase 2: Planning (Week 3〜4)
 
-**Tasks**:
+<strong>Tasks</strong>:
 - [ ] Implement planning protocol
 - [ ] Add task decomposition
 - [ ] Create execution templates
 
-**Deliverables**:
+<strong>Deliverables</strong>:
 - `planning-protocol.md`
 - Task graph generator
 - Execution plan templates
 
 ### Phase 3: State Management (Week 5〜6)
 
-**Tasks**:
+<strong>Tasks</strong>:
 - [ ] Design state schema
 - [ ] Implement persistence layer
 - [ ] Add checkpoint system
 
-**Deliverables**:
+<strong>Deliverables</strong>:
 - State management module
 - Checkpoint utilities
 - State migration tools
 
 ### Phase 4: Recovery (Week 7〜8)
 
-**Tasks**:
+<strong>Tasks</strong>:
 - [ ] Implement error classification
 - [ ] Add recovery strategies
 - [ ] Create recovery monitoring
 
-**Deliverables**:
+<strong>Deliverables</strong>:
 - `recovery-protocol.md`
 - Error handler implementations
 - Recovery dashboard
 
 ### Phase 5: Optimization (Week 9〜10)
 
-**Tasks**:
+<strong>Tasks</strong>:
 - [ ] Add knowledge capture
 - [ ] Implement learning system
 - [ ] Optimize context engineering
 
-**Deliverables**:
+<strong>Deliverables</strong>:
 - Knowledge base schema
 - Learning algorithms
 - Context optimization rules
@@ -1104,13 +1104,13 @@ The Deep Agents paradigm represents a significant evolution in AI agent architec
 
 Our analysis showed 65% compliance with Deep Agents principles in the existing structure—a solid foundation but with critical gaps in planning, state management, and recovery. The proposed optimizations address these gaps while preserving the strengths of the current specialized agent system.
 
-**Key Takeaways**:
+<strong>Key Takeaways</strong>:
 
-1. **Explicit Planning** transforms ad-hoc execution into predictable, optimizable workflows
-2. **Hierarchical Clusters** improve coordination and enable parallel execution
-3. **Persistent State** enables cross-session continuity and learning
-4. **Recovery Protocols** automate error handling for >90% recovery rate
-5. **Expected Results**: 5〜15 steps to 100+ steps, with autonomous recovery
+1. <strong>Explicit Planning</strong> transforms ad-hoc execution into predictable, optimizable workflows
+2. <strong>Hierarchical Clusters</strong> improve coordination and enable parallel execution
+3. <strong>Persistent State</strong> enables cross-session continuity and learning
+4. <strong>Recovery Protocols</strong> automate error handling for >90% recovery rate
+5. <strong>Expected Results</strong>: 5〜15 steps to 100+ steps, with autonomous recovery
 
 The Deep Agents architecture isn't just an incremental improvement—it's a fundamental shift that enables AI agent systems to tackle production-scale complexity with reliability and efficiency.
 

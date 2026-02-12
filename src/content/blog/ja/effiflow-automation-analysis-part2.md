@@ -206,13 +206,13 @@ sleep 2
 
 <strong>パフォーマンス比較</strong>:
 
-**Before (キャッシング前)**:
+<strong>Before (キャッシング前)</strong>:
 
 - 毎回 Brave Search 呼び出し
 - 40,000+トークン
 - コスト: ~$0.05/run
 
-**After (キャッシング後)**:
+<strong>After (キャッシング後)</strong>:
 
 - 24 時間以内のキャッシュ再利用
 - 17,000 トークン
@@ -313,50 +313,50 @@ sequenceDiagram
 
 <strong>Phase 詳細内容</strong>:
 
-**Phase 1: Research & Planning**
+<strong>Phase 1: Research & Planning</strong>
 
 - Web Researcher エージェント呼び出し
 - Trend Analyzer Skill 自動検出
 - Brave Search MCP で最新情報収集
 - 2 秒遅延で Rate Limit 遵守
 
-**Phase 2: Image Generation**
+<strong>Phase 2: Image Generation</strong>
 
 - Image Generator エージェント
 - Gemini API 使用 (GEMINI_API_KEY 必要)
 - トピックベースのヒーロー画像生成
 
-**Phase 3: Content Writing**
+<strong>Phase 3: Content Writing</strong>
 
 - Writing Assistant エージェント
 - Blog Writing Skill 自動検出
 - 韓国語、日本語、英語版同時作成
 - ローカライゼーション (翻訳ではない)
 
-**Phase 4: Frontmatter & Metadata**
+<strong>Phase 4: Frontmatter & Metadata</strong>
 
 - Blog Writing Skill で Frontmatter 検証
 - pubDate: 'YYYY-MM-DD'形式 (シングルクォート)
 - heroImage: 相対パス検証
 
-**Phase 5: Metadata Generation**
+<strong>Phase 5: Metadata Generation</strong>
 
 - Post Analyzer エージェント
 - Content Analyzer Skill 自動活性化
 - difficulty (1-5)および categoryScores 計算
 
-**Phase 6: V3 Recommendations**
+<strong>Phase 6: V3 Recommendations</strong>
 
 - scripts/generate-recommendations-v3.js 実行
 - メタデータベースの類似度計算
 - 上位 5 つの関連投稿選定
 
-**Phase 7: Backlink Updates**
+<strong>Phase 7: Backlink Updates</strong>
 
 - Backlink Manager エージェント (オプション)
 - 関連投稿相互連結
 
-**Phase 8: Validation & Build**
+<strong>Phase 8: Validation & Build</strong>
 
 - npm run astro check
 - npm run build
@@ -432,7 +432,7 @@ async function getTrendData(topic: string) {
 
 ### キャッシュ効果シナリオ
 
-**シナリオ 1: 同日の複数トピック検索**
+<strong>シナリオ 1: 同日の複数トピック検索</strong>
 
 ```bash
 # 最初のトピック (キャッシュミス)
@@ -448,7 +448,7 @@ async function getTrendData(topic: string) {
 # → トークン: 17,000 (58%削減)
 ```
 
-**シナリオ 2: 翌日同じトピック**
+<strong>シナリオ 2: 翌日同じトピック</strong>
 
 ```bash
 # 24時間経過 (キャッシュ失効)

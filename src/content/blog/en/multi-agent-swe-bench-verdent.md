@@ -62,7 +62,7 @@ relatedPosts:
 
 ## Overview
 
-In February 2026, an intriguing name appeared on the SWE-bench Verified leaderboard. **Verdent AI** recorded a **76.1%** resolution rate, entering the top ranks. What's remarkable is that this achievement was accomplished not with a single large model, but with a **multi-agent parallel execution architecture**.
+In February 2026, an intriguing name appeared on the SWE-bench Verified leaderboard. <strong>Verdent AI</strong> recorded a <strong>76.1%</strong> resolution rate, entering the top ranks. What's remarkable is that this achievement was accomplished not with a single large model, but with a <strong>multi-agent parallel execution architecture</strong>.
 
 This signals an important turning point in software engineering automation. It demonstrates that "better collaboration structures" rather than "bigger models" can be the key to superior performance.
 
@@ -80,13 +80,13 @@ Until now, the top positions on SWE-bench have been dominated by single large mo
 |------|--------|----------------|----------|
 | - | Claude Opus 4 series | ~70%+ | Single model + tool use |
 | - | GPT-5 series | ~70%+ | Single model + tool use |
-| - | **Verdent AI** | **76.1%** | **Multi-agent parallel execution** |
+| - | <strong>Verdent AI</strong> | <strong>76.1%</strong> | <strong>Multi-agent parallel execution</strong> |
 
 The single-model approach depends on the model's size and capability. Better performance required bigger models and more compute. But this approach has fundamental limitations:
 
-- **Single perspective constraint**: One model follows one interpretation path
-- **Difficulty in error recovery**: Hard to backtrack once heading in the wrong direction
-- **Context window limitations**: Difficult to grasp an entire complex codebase
+- <strong>Single perspective constraint</strong>: One model follows one interpretation path
+- <strong>Difficulty in error recovery</strong>: Hard to backtrack once heading in the wrong direction
+- <strong>Context window limitations</strong>: Difficult to grasp an entire complex codebase
 
 ## The New Paradigm: Multi-Agent Parallel Execution
 
@@ -108,19 +108,19 @@ graph TD
 
 ### Core Mechanisms
 
-1. **Parallel Analysis**: Multiple agents analyze the same problem simultaneously. Each agent can approach with different strategies.
+1. <strong>Parallel Analysis</strong>: Multiple agents analyze the same problem simultaneously. Each agent can approach with different strategies.
 
-2. **Diverse Solution Paths**: Even if one agent fails, another can find the correct path. This removes the "must get it right in one shot" pressure of single models.
+2. <strong>Diverse Solution Paths</strong>: Even if one agent fails, another can find the correct path. This removes the "must get it right in one shot" pressure of single models.
 
-3. **Optimal Result Selection**: The best solution that passes tests is selected from multiple candidates.
+3. <strong>Optimal Result Selection</strong>: The best solution that passes tests is selected from multiple candidates.
 
-4. **Collective Intelligence**: The system's overall capability exceeds the sum of individual agent capabilities.
+4. <strong>Collective Intelligence</strong>: The system's overall capability exceeds the sum of individual agent capabilities.
 
 ## Engineering Manager's Perspective: Team vs Individual
 
 This result connects with a familiar debate in software engineering.
 
-> **One exceptional individual vs a team of five average developers — which is more productive?**
+> <strong>One exceptional individual vs a team of five average developers — which is more productive?</strong>
 
 The same question applies in the AI world.
 
@@ -131,13 +131,13 @@ The same question applies in the AI world.
 | Scalability | Depends on model size | Scales with agent count |
 | Cost Efficiency | Large model = high cost | Multiple small models = flexible cost |
 
-Just as code reviews, pair programming, and mob programming in real software teams transcend individual limitations, **collaborative architectures in the AI agent world are producing results that surpass individual capabilities**.
+Just as code reviews, pair programming, and mob programming in real software teams transcend individual limitations, <strong>collaborative architectures in the AI agent world are producing results that surpass individual capabilities</strong>.
 
 ## Practical Implications
 
 ### 1. Changing Criteria for AI Tool Selection
 
-If "which model to use" was the key question until now, going forward **"how to architect and combine agents"** becomes the more important question.
+If "which model to use" was the key question until now, going forward <strong>"how to architect and combine agents"</strong> becomes the more important question.
 
 ### 2. Cost-Performance Optimization
 
@@ -145,21 +145,21 @@ You don't necessarily need the most expensive large model. Running multiple mid-
 
 ### 3. Fault-Tolerant System Design
 
-Multi-agent architecture is inherently **fault-tolerant**. Even if one agent fails, the overall system can still find the correct answer.
+Multi-agent architecture is inherently <strong>fault-tolerant</strong>. Even if one agent fails, the overall system can still find the correct answer.
 
 ## Looking Ahead
 
 Verdent AI's 76.1% achievement is just the beginning. As multi-agent architectures evolve, we can expect:
 
-- **Specialized agent ecosystems**: Role-specific agents for debugging, refactoring, test writing, etc.
-- **Dynamic team composition**: Automatically determining optimal agent combinations based on problem characteristics
-- **Learning orchestrators**: Improving agent placement by learning from past success and failure patterns
+- <strong>Specialized agent ecosystems</strong>: Role-specific agents for debugging, refactoring, test writing, etc.
+- <strong>Dynamic team composition</strong>: Automatically determining optimal agent combinations based on problem characteristics
+- <strong>Learning orchestrators</strong>: Improving agent placement by learning from past success and failure patterns
 
 ## Conclusion
 
 From single-model size competitions to multi-agent architecture competitions — the paradigm of software engineering automation is shifting. Verdent AI's 76.1% on SWE-bench Verified is concrete evidence of this transition.
 
-As developers and engineering leaders, we've arrived at the point where we need to think beyond "which AI model to use" and consider **"what AI team to assemble."**
+As developers and engineering leaders, we've arrived at the point where we need to think beyond "which AI model to use" and consider <strong>"what AI team to assemble."</strong>
 
 ## References
 

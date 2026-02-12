@@ -179,7 +179,7 @@ RICEは、機能の優先順位を決定するための定量的なフレーム�
 RICE Score = (Reach × Impact × Confidence) / Effort
 ```
 
-**計算例**：
+<strong>計算例</strong>：
 
 | 機能 | Reach (月間ユーザー数) | Impact (1-3) | Confidence (%) | Effort (人日) | RICE Score |
 |------|---------------------|-------------|---------------|--------------|------------|
@@ -257,12 +257,12 @@ quadrantChart
 
 ### データウェアハウスとBIツール
 
-**データウェアハウス**：
+<strong>データウェアハウス</strong>：
 - <strong>BigQuery</strong>（Google Cloud）：最もスケーラブル、SQL標準
 - <strong>Snowflake</strong>：マルチクラウド、高速
 - <strong>Redshift</strong>（AWS）：AWSエコシステムとの統合
 
-**BIツール**：
+<strong>BIツール</strong>：
 - <strong>Looker</strong>：LookMLによるデータモデリング
 - <strong>Tableau</strong>：強力なビジュアライゼーション
 - <strong>Metabase</strong>：オープンソース、使いやすい
@@ -653,17 +653,17 @@ graph TD
 
 <strong>重要な考慮事項</strong>：
 
-1. **データ品質管理**
+1. <strong>データ品質管理</strong>
    - スキーマ検証
    - データリネージ追跡
    - 異常検知
 
-2. **プライバシーとコンプライアンス**
+2. <strong>プライバシーとコンプライアンス</strong>
    - GDPR、CCPA対応
    - PII（個人識別情報）の適切な管理
    - 同意管理
 
-3. **アクセス制御**
+3. <strong>アクセス制御</strong>
    - ロールベースアクセス制御（RBAC）
    - データマスキング
    - 監査ログ
@@ -703,11 +703,11 @@ graph TD
 
 ### 今日から始められるアクションステップ
 
-1. **主要指標の定義**：プロダクトのNorth Star Metricと支援指標を明確にする
-2. **ダッシュボード構築**：日々追跡すべき指標の可視化
-3. **小さな実験から開始**：シンプルなA/Bテストで実験文化を醸成
-4. **SQLスキルの習得**：基本的なクエリから始める
-5. **データチームとの関係構築**：定期的なコラボレーションの機会を作る
+1. <strong>主要指標の定義</strong>：プロダクトのNorth Star Metricと支援指標を明確にする
+2. <strong>ダッシュボード構築</strong>：日々追跡すべき指標の可視化
+3. <strong>小さな実験から開始</strong>：シンプルなA/Bテストで実験文化を醸成
+4. <strong>SQLスキルの習得</strong>：基本的なクエリから始める
+5. <strong>データチームとの関係構築</strong>：定期的なコラボレーションの機会を作る
 
 ### 長期的な目標
 
@@ -722,7 +722,7 @@ graph TD
 
 ---
 
-**参考リソース**：
+<strong>参考リソース</strong>：
 
 - [Amplitude's North Star Playbook](https://amplitude.com/north-star)
 - [Reforge Product Strategy Course](https://www.reforge.com/product-strategy)

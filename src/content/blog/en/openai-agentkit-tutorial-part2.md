@@ -59,10 +59,10 @@ relatedPosts:
       zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
 ---
 
-> **Series: Master OpenAI AgentKit** (2/2)
+> <strong>Series: Master OpenAI AgentKit</strong> (2/2)
 >
 > 1. [OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started](/en/blog/en/openai-agentkit-tutorial-part1)
-> 2. **OpenAI AgentKit Complete Guide Part 2: Production Deployment and Advanced Patterns** ← Current Article
+> 2. <strong>OpenAI AgentKit Complete Guide Part 2: Production Deployment and Advanced Patterns</strong> ← Current Article
 
 In Part 1, we learned AgentKit's basic concepts and foundational tutorials. In Part 2, we'll explore how to build enterprise-grade systems in actual production environments.
 
@@ -72,7 +72,7 @@ In Part 1, we learned AgentKit's basic concepts and foundational tutorials. In P
 
 In large-scale projects, a single agent cannot handle all tasks. A hierarchical structure where a manager agent formulates overall strategy and delegates work to specialized worker agents is effective.
 
-**Architecture Diagram**:
+<strong>Architecture Diagram</strong>:
 
 ```mermaid
 graph TD
@@ -93,7 +93,7 @@ graph TD
     style DevOps fill:#F5A623,color:#fff
 ```
 
-**Implementation Example**:
+<strong>Implementation Example</strong>:
 
 ```python
 from openai_agents import Agent, Runner
@@ -180,22 +180,22 @@ result = runner.run(
 )
 ```
 
-**Execution Flow**:
+<strong>Execution Flow</strong>:
 
-1. **Manager Analysis**: Breaks requirement into 3 subtasks
+1. <strong>Manager Analysis</strong>: Breaks requirement into 3 subtasks
    - Frontend: Product listing UI, shopping cart UI
    - Backend: Product API, payment processing logic
    - DevOps: Kubernetes deployment configuration
 
-2. **Parallel Execution**: 3 specialists work simultaneously
+2. <strong>Parallel Execution</strong>: 3 specialists work simultaneously
 
-3. **Integration**: Manager consolidates all deliverables into final report
+3. <strong>Integration</strong>: Manager consolidates all deliverables into final report
 
 ### 1.2 Event-Driven Orchestration
 
 For real-time systems, a pattern that reacts to events and activates appropriate agents is effective.
 
-**Architecture Diagram**:
+<strong>Architecture Diagram</strong>:
 
 ```mermaid
 graph LR
@@ -215,7 +215,7 @@ graph LR
     style Router fill:#10A37F,color:#fff
 ```
 
-**Implementation Example**:
+<strong>Implementation Example</strong>:
 
 ```python
 from openai_agents import Agent, Runner
@@ -319,7 +319,7 @@ asyncio.run(main())
 
 For complex decision flows, a graph structure with conditional branching and dynamic routing is suitable.
 
-**Workflow Diagram**:
+<strong>Workflow Diagram</strong>:
 
 ```mermaid
 graph TD
@@ -346,7 +346,7 @@ graph TD
     style End fill:#10A37F,color:#fff
 ```
 
-**Implementation Example (using LangGraph)**:
+<strong>Implementation Example (using LangGraph)</strong>:
 
 ```python
 from langgraph.graph import Graph, StateGraph
@@ -499,9 +499,9 @@ AgentKit's true power lies in building custom tools through the MCP protocol. Le
 
 ### 2.1 Slack Integration MCP Server
 
-**Use Case**: Enable agents to send Slack messages, read channel history, and add reactions.
+<strong>Use Case</strong>: Enable agents to send Slack messages, read channel history, and add reactions.
 
-**Implementation**:
+<strong>Implementation</strong>:
 
 ```python
 from mcp import Server, Tool, Context
@@ -640,7 +640,7 @@ if __name__ == "__main__":
     server.run(transport="stdio")  # stdio or websocket
 ```
 
-**Using in Agent**:
+<strong>Using in Agent</strong>:
 
 ```python
 from openai_agents import Agent, Runner
@@ -686,22 +686,22 @@ print(result.output)
 
 ### 2.2 MCP Server Best Practices
 
-1. **Error Handling**: Wrap all tool calls with `try-except`
-2. **Authentication**: Manage API keys via environment variables (`.env` file)
-3. **Rate Limiting**: Consider API rate limits (implement backoff strategy)
-4. **Logging**: Detailed logs for debugging
-5. **Type Safety**: Validate parameters with Pydantic
-6. **Documentation**: Clear descriptions for each tool
+1. <strong>Error Handling</strong>: Wrap all tool calls with `try-except`
+2. <strong>Authentication</strong>: Manage API keys via environment variables (`.env` file)
+3. <strong>Rate Limiting</strong>: Consider API rate limits (implement backoff strategy)
+4. <strong>Logging</strong>: Detailed logs for debugging
+5. <strong>Type Safety</strong>: Validate parameters with Pydantic
+6. <strong>Documentation</strong>: Clear descriptions for each tool
 
 ---
 
 ## 3. Production Monitoring (Using Evals)
 
-AgentKit's **Evals** feature continuously monitors and optimizes agent performance.
+AgentKit's <strong>Evals</strong> feature continuously monitors and optimizes agent performance.
 
 ### 3.1 A/B Testing for Prompt Optimization
 
-**Scenario**: Compare two prompt versions for a customer support agent
+<strong>Scenario</strong>: Compare two prompt versions for a customer support agent
 
 ```python
 from openai_agents import Agent, Runner
@@ -830,7 +830,7 @@ print(f"Improvement: +{optimizer.improvement} (satisfaction 3.8 → 4.0)")
 
 ### 4.1 Multi-Tenancy Implementation
 
-**Scenario**: SaaS platform where multiple customers share agents, but data is strictly isolated
+<strong>Scenario</strong>: SaaS platform where multiple customers share agents, but data is strictly isolated
 
 ```python
 from openai_agents import Agent, Runner, Session
@@ -913,7 +913,7 @@ result_b = assistant.query_with_isolation(
 
 ### 4.2 GDPR/CCPA Compliance
 
-**Data Deletion Request Handling**:
+<strong>Data Deletion Request Handling</strong>:
 
 ```python
 from openai_agents import Agent, Runner
@@ -1011,11 +1011,11 @@ print(f"Audit log:\n{audit_trail}")
 
 ### Case Study 1: SaaS Onboarding Automation
 
-**Company**: ProjectManage Pro (fictional project management SaaS)
+<strong>Company</strong>: ProjectManage Pro (fictional project management SaaS)
 
-**Challenge**: Slow new user onboarding process (average 7 days), high churn rate (40% leave within 30 days)
+<strong>Challenge</strong>: Slow new user onboarding process (average 7 days), high churn rate (40% leave within 30 days)
 
-**AgentKit Implementation**:
+<strong>AgentKit Implementation</strong>:
 
 ```python
 from openai_agents import Agent, Runner
@@ -1072,20 +1072,20 @@ result = runner.run(
 )
 ```
 
-**Results**:
+<strong>Results</strong>:
 
-- **Onboarding Time**: 7 days → 2 days (70% reduction)
-- **30-Day Churn Rate**: 40% → 12% (28-point improvement)
-- **Activation Rate**: 45% → 78% (73% increase)
-- **Customer Support Tickets**: 50% reduction
+- <strong>Onboarding Time</strong>: 7 days → 2 days (70% reduction)
+- <strong>30-Day Churn Rate</strong>: 40% → 12% (28-point improvement)
+- <strong>Activation Rate</strong>: 45% → 78% (73% increase)
+- <strong>Customer Support Tickets</strong>: 50% reduction
 
 ### Case Study 2: Data Pipeline Auto-Recovery
 
-**Company**: DataFlow Analytics (big data analytics platform)
+<strong>Company</strong>: DataFlow Analytics (big data analytics platform)
 
-**Challenge**: Frequent ETL pipeline failures (5-10 times/week), manual recovery takes average 2 hours
+<strong>Challenge</strong>: Frequent ETL pipeline failures (5-10 times/week), manual recovery takes average 2 hours
 
-**AgentKit Implementation**:
+<strong>AgentKit Implementation</strong>:
 
 ```python
 from openai_agents import Agent, Runner
@@ -1155,20 +1155,20 @@ async def monitor_pipeline():
 asyncio.run(monitor_pipeline())
 ```
 
-**Results**:
+<strong>Results</strong>:
 
-- **MTTR (Mean Time To Recovery)**: 2 hours → 22 minutes (82% reduction)
-- **Auto-Recovery Success Rate**: 0% → 73%
-- **On-Call Engineer Load**: 40 hours/week → 8 hours/week (80% reduction)
-- **Pipeline Uptime**: 92% → 99.2%
+- <strong>MTTR (Mean Time To Recovery)</strong>: 2 hours → 22 minutes (82% reduction)
+- <strong>Auto-Recovery Success Rate</strong>: 0% → 73%
+- <strong>On-Call Engineer Load</strong>: 40 hours/week → 8 hours/week (80% reduction)
+- <strong>Pipeline Uptime</strong>: 92% → 99.2%
 
 ### Case Study 3: DevOps Workflow Automation
 
-**Company**: MicroServices Corp (microservices architecture company)
+<strong>Company</strong>: MicroServices Corp (microservices architecture company)
 
-**Challenge**: 50+ daily deployments, manual review is bottleneck (average 3-hour deployment wait)
+<strong>Challenge</strong>: 50+ daily deployments, manual review is bottleneck (average 3-hour deployment wait)
 
-**AgentKit Implementation**:
+<strong>AgentKit Implementation</strong>:
 
 ```python
 from openai_agents import Agent, Runner
@@ -1230,12 +1230,12 @@ def on_pull_request_opened(pr_data):
         print(f"Deploy blocked: {result.output}")
 ```
 
-**Results**:
+<strong>Results</strong>:
 
-- **Deployment Wait Time**: 3 hours → 8 minutes (96% reduction)
-- **Manual Review Burden**: 8 hours/day → 30 minutes/day (94% reduction)
-- **Deployment Frequency**: 50/day → 200/day (300% increase)
-- **Production Incidents**: 3/week → 1/month (92% reduction)
+- <strong>Deployment Wait Time</strong>: 3 hours → 8 minutes (96% reduction)
+- <strong>Manual Review Burden</strong>: 8 hours/day → 30 minutes/day (94% reduction)
+- <strong>Deployment Frequency</strong>: 50/day → 200/day (300% increase)
+- <strong>Production Incidents</strong>: 3/week → 1/month (92% reduction)
 
 ---
 
@@ -1322,16 +1322,16 @@ results = runner.run_batch(
 
 In Part 2, we explored AgentKit's advanced features:
 
-1. **Enterprise Architecture Patterns**: Hierarchical, event-driven, and graph-based patterns
-2. **Custom MCP Servers**: How to develop custom tools like Slack integration
-3. **Production Monitoring**: A/B testing and auto-prompt optimization with Evals
-4. **Security and Compliance**: Multi-tenancy, GDPR compliance
-5. **Real-World Case Studies**: SaaS onboarding 70% time reduction, data pipeline auto-recovery 82% MTTR reduction, DevOps manual review 94% reduction
-6. **Performance Optimization**: Parallel processing, streaming, batch processing
+1. <strong>Enterprise Architecture Patterns</strong>: Hierarchical, event-driven, and graph-based patterns
+2. <strong>Custom MCP Servers</strong>: How to develop custom tools like Slack integration
+3. <strong>Production Monitoring</strong>: A/B testing and auto-prompt optimization with Evals
+4. <strong>Security and Compliance</strong>: Multi-tenancy, GDPR compliance
+5. <strong>Real-World Case Studies</strong>: SaaS onboarding 70% time reduction, data pipeline auto-recovery 82% MTTR reduction, DevOps manual review 94% reduction
+6. <strong>Performance Optimization</strong>: Parallel processing, streaming, batch processing
 
 AgentKit is a powerful platform for building AI agent systems at any scale, from theory to practice.
 
-**Next Steps**:
+<strong>Next Steps</strong>:
 
 - [OpenAI AgentKit Official Docs](https://platform.openai.com/docs/agents)
 - [MCP Protocol Specification](https://modelcontextprotocol.io)

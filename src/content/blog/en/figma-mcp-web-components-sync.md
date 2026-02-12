@@ -1321,28 +1321,28 @@ You have access to:
 
 ## Capabilities
 
-1. **Read Component Mapping**
+1. <strong>Read Component Mapping</strong>
    - Parse `docs/components-map.md`
    - Extract Figma URLs and component metadata
    - Identify components that need syncing
 
-2. **Fetch Figma State**
+2. <strong>Fetch Figma State</strong>
    - Use `mcp__figma__get_node` to fetch component data
    - Extract properties, variants, and styles
    - Generate version hash for comparison
 
-3. **Compare States**
+3. <strong>Compare States</strong>
    - Read local web component files
    - Compare Figma hash with local hash
    - Determine if update is needed
 
-4. **Generate Components**
+4. <strong>Generate Components</strong>
    - Create production-ready web component code
    - Apply design tokens appropriately
    - Include accessibility features
    - Follow web component best practices
 
-5. **Update Mapping**
+5. <strong>Update Mapping</strong>
    - Update sync timestamp
    - Update version hash
    - Maintain component metadata

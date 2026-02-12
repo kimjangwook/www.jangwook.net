@@ -56,13 +56,13 @@ relatedPosts:
 
 ## Overview
 
-This article presents a case study of applying UX psychology principles to improve user experience on a real website. We implemented improvements based on 10 core UX psychology principles including **Goal Gradient Effect**, **Von Restorff Effect**, **Fitts's Law**, and **Doherty Threshold**.
+This article presents a case study of applying UX psychology principles to improve user experience on a real website. We implemented improvements based on 10 core UX psychology principles including <strong>Goal Gradient Effect</strong>, <strong>Von Restorff Effect</strong>, <strong>Fitts's Law</strong>, and <strong>Doherty Threshold</strong>.
 
 ## Implemented UX Improvements
 
 ### 1. BlogCard Reading Time Calculation Enhancement
 
-Previously, reading time was estimated based on description text length. In this improvement, we calculate **actual word count from the post body at build time** to display accurate reading time.
+Previously, reading time was estimated based on description text length. In this improvement, we calculate <strong>actual word count from the post body at build time</strong> to display accurate reading time.
 
 ```typescript
 // src/lib/content.ts
@@ -94,13 +94,13 @@ export function calculateReadingTime(content: string): number {
 }
 ```
 
-**Applied UX Principle**: Cognitive Load Reduction - Helps users understand time commitment before engaging with content.
+<strong>Applied UX Principle</strong>: Cognitive Load Reduction - Helps users understand time commitment before engaging with content.
 
 ![BlogCard with reading time badge](../../../assets/blog/en-blog-list.webp)
 
 ### 2. Card Hover Effect (Card Lift)
 
-Added a **subtle lift effect** on hover to BlogCard, clearly indicating the currently interacted element.
+Added a <strong>subtle lift effect</strong> on hover to BlogCard, clearly indicating the currently interacted element.
 
 ```css
 /* src/styles/global.css */
@@ -115,7 +115,7 @@ Added a **subtle lift effect** on hover to BlogCard, clearly indicating the curr
 }
 ```
 
-**Applied UX Principle**: Von Restorff Effect - The hovered card visually stands out from other cards.
+<strong>Applied UX Principle</strong>: Von Restorff Effect - The hovered card visually stands out from other cards.
 
 ### 3. Tag Pills
 
@@ -133,7 +133,7 @@ Tags on blog cards are visually grouped for better recognition.
 }
 ```
 
-**Applied UX Principle**: Law of Similarity - Tags with similar styling are perceived as a group.
+<strong>Applied UX Principle</strong>: Law of Similarity - Tags with similar styling are perceived as a group.
 
 ### 4. Reading Progress Bar
 
@@ -167,9 +167,9 @@ A fixed progress bar at the top of blog posts showing current reading progress.
 
 ![Reading progress bar in blog post](../../../assets/blog/en-blog-post.webp)
 
-**Applied UX Principles**:
-- **Goal Gradient Effect**: Motivation increases as users approach completion
-- **Peak-End Rule**: Celebration message at 100% creates positive memory
+<strong>Applied UX Principles</strong>:
+- <strong>Goal Gradient Effect</strong>: Motivation increases as users approach completion
+- <strong>Peak-End Rule</strong>: Celebration message at 100% creates positive memory
 
 ### 5. Back to Top Button
 
@@ -207,9 +207,9 @@ A button for quick navigation to the top on long pages.
 
 ![Back to Top button in footer](../../../assets/blog/en-footer.webp)
 
-**Applied UX Principles**:
-- **Tesler's Law**: Reduces complexity for quick navigation
-- **Fitts's Law**: 48x48px size for easy touch/click
+<strong>Applied UX Principles</strong>:
+- <strong>Tesler's Law</strong>: Reduces complexity for quick navigation
+- <strong>Fitts's Law</strong>: 48x48px size for easy touch/click
 
 ### 6. Touch Target Optimization
 
@@ -222,7 +222,7 @@ Ensured all interactive elements have minimum 44x44px touch areas for mobile use
 }
 ```
 
-**Applied UX Principle**: Fitts's Law - Larger targets are faster and more accurate to click/touch.
+<strong>Applied UX Principle</strong>: Fitts's Law - Larger targets are faster and more accurate to click/touch.
 
 ## Implementation Screenshots
 
@@ -248,16 +248,16 @@ Progress bar turns green when post is fully read, and Back to Top button appears
 
 | Principle | Applied Component | Effect |
 |-----------|------------------|--------|
-| **Goal Gradient Effect** | ReadingProgress | Increased completion rate |
-| **Von Restorff Effect** | BlogCard (card-lift) | Clear focus indication |
-| **Fitts's Law** | TouchTarget, BackToTop | Improved touch accuracy |
-| **Doherty Threshold** | Animations (<400ms) | Better responsiveness |
-| **Peak-End Rule** | Completion celebration | Positive memory |
-| **Tesler's Law** | BackToTop | Simplified navigation |
-| **Cognitive Load** | Reading time badge | Decision support |
-| **Law of Similarity** | Tag Pills | Visual grouping |
-| **WCAG AA** | focus-visible | Accessibility |
-| **Progressive Disclosure** | Stagger Animation | Sequential information |
+| <strong>Goal Gradient Effect</strong> | ReadingProgress | Increased completion rate |
+| <strong>Von Restorff Effect</strong> | BlogCard (card-lift) | Clear focus indication |
+| <strong>Fitts's Law</strong> | TouchTarget, BackToTop | Improved touch accuracy |
+| <strong>Doherty Threshold</strong> | Animations (<400ms) | Better responsiveness |
+| <strong>Peak-End Rule</strong> | Completion celebration | Positive memory |
+| <strong>Tesler's Law</strong> | BackToTop | Simplified navigation |
+| <strong>Cognitive Load</strong> | Reading time badge | Decision support |
+| <strong>Law of Similarity</strong> | Tag Pills | Visual grouping |
+| <strong>WCAG AA</strong> | focus-visible | Accessibility |
+| <strong>Progressive Disclosure</strong> | Stagger Animation | Sequential information |
 
 ## Build Verification
 
@@ -269,7 +269,7 @@ npm run build
 
 ## Conclusion
 
-By implementing UX psychology principles into actual code, we can systematically improve user experience. Features like **accurate reading time**, **card hover effects**, and **progress bars** provide significant UX improvements with relatively simple implementations.
+By implementing UX psychology principles into actual code, we can systematically improve user experience. Features like <strong>accurate reading time</strong>, <strong>card hover effects</strong>, and <strong>progress bars</strong> provide significant UX improvements with relatively simple implementations.
 
 Next steps include analyzing actual user data (time on page, completion rate, click-through rate) to quantitatively measure improvement effects.
 

@@ -754,7 +754,7 @@ Astro 기반 블로그에 중국어 지원을 추가하는 작업은 <strong>체
 
 ---
 
-**관련 리소스**:
+<strong>관련 리소스</strong>:
 - [Astro Content Collections 공식 문서](https://docs.astro.build/en/guides/content-collections/)
 - [Astro i18n 가이드](https://docs.astro.build/en/recipes/i18n/)
 - [Google 다국어 사이트 SEO](https://developers.google.com/search/docs/specialty/international)

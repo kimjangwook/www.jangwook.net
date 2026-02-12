@@ -69,7 +69,7 @@ relatedPosts:
 
 ## Overview
 
-On December 18, 2025, Anthropic officially announced the **Agent Skills standard**, a revolutionary open standard aimed at significantly expanding the capabilities of AI agents. This standard introduces a universal method for AI agents to acquire and utilize new functionalities, continuing Anthropic's strategy of building foundational industry infrastructure, similar to their Model Context Protocol (MCP). All relevant specifications and SDKs are publicly available at `agentskills.io`.
+On December 18, 2025, Anthropic officially announced the <strong>Agent Skills standard</strong>, a revolutionary open standard aimed at significantly expanding the capabilities of AI agents. This standard introduces a universal method for AI agents to acquire and utilize new functionalities, continuing Anthropic's strategy of building foundational industry infrastructure, similar to their Model Context Protocol (MCP). All relevant specifications and SDKs are publicly available at `agentskills.io`.
 
 This standard defines modular capabilities that enable agents to interact with specific tools, autonomously perform complex tasks, and understand repetitive workflows. It is expected to enhance the utility of AI agents and accelerate their development.
 
@@ -81,10 +81,10 @@ The Anthropic Agent Skills standard defines a collection of modular "skills" tha
 
 ### 2. Key Features and Benefits
 
-- **Open Standard**: Designed as a platform-agnostic open specification, this standard allows any AI platform to freely adopt and integrate it. This will significantly improve interoperability within the AI agent ecosystem.
-- **Widespread Industry Adoption**: Leading technology companies such as Microsoft, OpenAI, Atlassian, Figma, Cursor, and GitHub have already adopted this standard. Furthermore, partners like Canva, Stripe, Notion, and Zapier have developed various pre-built skills based on this standard, expanding the range of agent applications.
-- **Powerful Functionality**: Skills empower AI agents to perform specialized tasks, understand repeatable workflows, and even effectively interact with new software. Skills are designed to be shareable, simple to implement, powerful, and portable across diverse environments.
-- **Intelligent Context Management (Progressive Disclosure)**: To address the limitations of LLM context windows, this standard adopts an innovative approach called "Progressive Disclosure." Agents first pre-load metadata for all installed skills. Then, only when a user's current request aligns with a specific skill's domain, the agent loads the full `SKILL.md` file for that skill. This minimizes context window constraints by efficiently using only necessary information.
+- <strong>Open Standard</strong>: Designed as a platform-agnostic open specification, this standard allows any AI platform to freely adopt and integrate it. This will significantly improve interoperability within the AI agent ecosystem.
+- <strong>Widespread Industry Adoption</strong>: Leading technology companies such as Microsoft, OpenAI, Atlassian, Figma, Cursor, and GitHub have already adopted this standard. Furthermore, partners like Canva, Stripe, Notion, and Zapier have developed various pre-built skills based on this standard, expanding the range of agent applications.
+- <strong>Powerful Functionality</strong>: Skills empower AI agents to perform specialized tasks, understand repeatable workflows, and even effectively interact with new software. Skills are designed to be shareable, simple to implement, powerful, and portable across diverse environments.
+- <strong>Intelligent Context Management (Progressive Disclosure)</strong>: To address the limitations of LLM context windows, this standard adopts an innovative approach called "Progressive Disclosure." Agents first pre-load metadata for all installed skills. Then, only when a user's current request aligns with a specific skill's domain, the agent loads the full `SKILL.md` file for that skill. This minimizes context window constraints by efficiently using only necessary information.
 
 ### 3. Enterprise Features
 

@@ -64,7 +64,7 @@ relatedPosts:
 
 ## What Are Agent Teams?
 
-On February 5, 2026, Anthropic announced **Agent Teams** — a new experimental feature for Claude Code. While subagents run within a single session and can only report results back to the caller, Agent Teams consist of fully independent Claude Code instances that **communicate directly with each other**.
+On February 5, 2026, Anthropic announced <strong>Agent Teams</strong> — a new experimental feature for Claude Code. While subagents run within a single session and can only report results back to the caller, Agent Teams consist of fully independent Claude Code instances that <strong>communicate directly with each other</strong>.
 
 Here's the key difference:
 
@@ -149,13 +149,13 @@ I went with the settings.json approach. Environment variables vanish between ses
 
 Agent Teams supports three display modes:
 
-- **in-process**: All teammates run inside the main terminal. Use `Shift+↑/↓` to select teammates.
-- **tmux**: Each teammate gets its own tmux split pane. See everyone's output at once.
-- **iTerm2**: Auto-splits when running in iTerm2.
+- <strong>in-process</strong>: All teammates run inside the main terminal. Use `Shift+↑/↓` to select teammates.
+- <strong>tmux</strong>: Each teammate gets its own tmux split pane. See everyone's output at once.
+- <strong>iTerm2</strong>: Auto-splits when running in iTerm2.
 
 The default is `auto` — split panes if you're already in tmux, in-process otherwise.
 
-I explicitly set **tmux mode**:
+I explicitly set <strong>tmux mode</strong>:
 
 ```json
 {
@@ -163,7 +163,7 @@ I explicitly set **tmux mode**:
 }
 ```
 
-The reasoning is straightforward: when running 5 teams simultaneously, you need to see each teammate's progress **in real time on one screen** to catch bottlenecks quickly.
+The reasoning is straightforward: when running 5 teams simultaneously, you need to see each teammate's progress <strong>in real time on one screen</strong> to catch bottlenecks quickly.
 
 If tmux isn't installed:
 
@@ -209,13 +209,13 @@ Assign 2 teammates to each team using the Sonnet model.
 
 ## Task Lists and Dependency Management
 
-One of Agent Teams' core mechanisms is the **shared task list**. The team lead creates tasks, and teammates autonomously claim and process them.
+One of Agent Teams' core mechanisms is the <strong>shared task list</strong>. The team lead creates tasks, and teammates autonomously claim and process them.
 
 ### Task states
 
-- **pending**: Waiting to be picked up
-- **in progress**: Currently being worked on
-- **completed**: Done
+- <strong>pending</strong>: Waiting to be picked up
+- <strong>in progress</strong>: Currently being worked on
+- <strong>completed</strong>: Done
 
 ### Dependencies
 
@@ -240,7 +240,7 @@ Task claiming uses file locking to prevent race conditions when multiple teammat
 
 ### Delegate mode
 
-By default, the team lead can do work directly. **Delegate mode** restricts the lead to coordination only:
+By default, the team lead can do work directly. <strong>Delegate mode</strong> restricts the lead to coordination only:
 
 - Spawning/shutting down teammates
 - Relaying messages
@@ -254,8 +254,8 @@ For large teams, delegate mode is strongly recommended. When the lead starts cod
 
 You can bypass the lead and message any teammate:
 
-- **in-process**: `Shift+↑/↓` to select, then type
-- **tmux**: Click into the teammate's pane
+- <strong>in-process</strong>: `Shift+↑/↓` to select, then type
+- <strong>tmux</strong>: Click into the teammate's pane
 
 ### Plan approval
 
@@ -270,17 +270,17 @@ The lead reviews and approves or rejects with feedback.
 
 ## OpenClaw × Agent Teams — The Synergy
 
-Here's what makes this interesting: OpenClaw's multi-agent capabilities and Agent Teams operate at **different layers**.
+Here's what makes this interesting: OpenClaw's multi-agent capabilities and Agent Teams operate at <strong>different layers</strong>.
 
 ### OpenClaw Multi-Agent
 
-- Manages agents at the **channel level** (Telegram, Discord, etc.)
+- Manages agents at the <strong>channel level</strong> (Telegram, Discord, etc.)
 - Each agent has its own persona and configuration
-- Supports **automated scheduling** via cron jobs and heartbeats
+- Supports <strong>automated scheduling</strong> via cron jobs and heartbeats
 
 ### Claude Code Agent Teams
 
-- Collaboration at the **session level** across multiple Claude Code instances
+- Collaboration at the <strong>session level</strong> across multiple Claude Code instances
 - Shared task list and messaging system
 - Optimized for parallel code work
 
@@ -301,7 +301,7 @@ The pipeline: OpenClaw's main agent receives a Telegram message, spawns a subage
 
 ### 1. Prevent file conflicts
 
-The biggest pitfall is **multiple teammates editing the same file**.
+The biggest pitfall is <strong>multiple teammates editing the same file</strong>.
 
 - Clearly separate directory/file ownership per teammate
 - Use task dependencies to ensure shared files have a single writer
@@ -309,7 +309,7 @@ The biggest pitfall is **multiple teammates editing the same file**.
 
 ### 2. Context handoff
 
-Teammates auto-load CLAUDE.md, MCP servers, and skills, but they **don't inherit the lead's conversation history**. So:
+Teammates auto-load CLAUDE.md, MCP servers, and skills, but they <strong>don't inherit the lead's conversation history</strong>. So:
 
 - Include sufficient context in spawn prompts
 - Explicitly reference relevant file paths
@@ -320,7 +320,7 @@ Teammates auto-load CLAUDE.md, MCP servers, and skills, but they **don't inherit
 Each teammate uses its own context window, so token consumption spikes fast.
 
 - Use subagents for simple tasks
-- Reserve Agent Teams for **discussion, review, and parallel exploration**
+- Reserve Agent Teams for <strong>discussion, review, and parallel exploration</strong>
 - Minimize broadcast messages — cost scales with team size
 
 ### 4. Permission management
@@ -329,22 +329,22 @@ Teammates inherit the lead's permission settings. If the lead runs with `--dange
 
 ## Limitations and Caveats
 
-1. **Experimental feature**: The `EXPERIMENTAL` in the env var name says it all. The API may change.
+1. <strong>Experimental feature</strong>: The `EXPERIMENTAL` in the env var name says it all. The API may change.
 
-2. **Token cost**: A 5-person team means at least 5x token consumption. Calculate your ROI.
+2. <strong>Token cost</strong>: A 5-person team means at least 5x token consumption. Calculate your ROI.
 
-3. **Debugging complexity**: Multiple teammates working simultaneously makes root cause analysis harder.
+3. <strong>Debugging complexity</strong>: Multiple teammates working simultaneously makes root cause analysis harder.
 
-4. **Inefficient for sequential work**: Tasks with heavy dependencies end up running serially anyway — no point using teams.
+4. <strong>Inefficient for sequential work</strong>: Tasks with heavy dependencies end up running serially anyway — no point using teams.
 
-5. **Same-file editing risk**: There's no file-level locking yet. You have to work around this through task design.
+5. <strong>Same-file editing risk</strong>: There's no file-level locking yet. You have to work around this through task design.
 
-6. **tmux is practically required**: Monitoring 5 teams in in-process mode is painful. tmux is the way to go.
+6. <strong>tmux is practically required</strong>: Monitoring 5 teams in in-process mode is painful. tmux is the way to go.
 
 ## Wrapping Up
 
 Agent Teams are still experimental, but the potential is clear. Combined with OpenClaw's multi-agent architecture, you get a dual-layer system: channel-level automation plus session-level parallel collaboration.
 
-That said, applying Agent Teams to every task right now would be wasteful. Focus on scenarios where **parallel exploration, code review, and competing hypothesis testing** thrive — where independent work and inter-teammate discussion genuinely create value.
+That said, applying Agent Teams to every task right now would be wasteful. Focus on scenarios where <strong>parallel exploration, code review, and competing hypothesis testing</strong> thrive — where independent work and inter-teammate discussion genuinely create value.
 
-The setup takes 30 minutes. The hard part is **deciding what to team up and how to decompose tasks**. That intuition only comes from hands-on experience.
+The setup takes 30 minutes. The hard part is <strong>deciding what to team up and how to decompose tasks</strong>. That intuition only comes from hands-on experience.

@@ -345,6 +345,6 @@ AI 번역 서비스는 많지만, <strong>문화적 맥락</strong>을 이해하
 
 ---
 
-**서비스 바로가기**: [Agent Effi Flow](https://agent-effi-flow.jangwook.net/)
+<strong>서비스 바로가기</strong>: [Agent Effi Flow](https://agent-effi-flow.jangwook.net/)
 
 피드백이나 질문이 있으시면 언제든 연락 주세요. 함께 더 나은 서비스를 만들어 나가고 싶습니다.

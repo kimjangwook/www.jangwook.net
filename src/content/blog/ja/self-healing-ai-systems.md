@@ -25,13 +25,13 @@ relatedPosts:
 
 ## セルフヒーリングの時代
 
-2025年10月、GitHubが公開したAIエージェントは、開発者なしでコードベースをスキャンし、バグを発見し、修正をPull Requestとして提出します。Google DeepMindのCodeMenderは、過去6ヶ月間に**72件のセキュリティパッチをオープンソースプロジェクトに自動貢献**しました。
+2025年10月、GitHubが公開したAIエージェントは、開発者なしでコードベースをスキャンし、バグを発見し、修正をPull Requestとして提出します。Google DeepMindのCodeMenderは、過去6ヶ月間に<strong>72件のセキュリティパッチをオープンソースプロジェクトに自動貢献</strong>しました。
 
-これはもはやSFではありません。**セルフヒーリングAIシステム(Self-Healing AI Systems)**の時代が到来しました。
+これはもはやSFではありません。<strong>セルフヒーリングAIシステム(Self-Healing AI Systems)</strong>の時代が到来しました。
 
 ### セルフヒーリングシステムとは?
 
-セルフヒーリングシステムは、次のサイクルを**完全自律的に**実行します:
+セルフヒーリングシステムは、次のサイクルを<strong>完全自律的に</strong>実行します:
 
 ```mermaid
 graph LR
@@ -44,29 +44,29 @@ graph LR
     F --> G[学習と改善]
 ```
 
-**主な特徴**:
-- **人間の介入なし**: 24/7自律運用
-- **リアルタイム復旧**: 障害発生即座に対応
-- **継続的学習**: 過去の修正から学習
-- **本番環境デプロイ**: 理論ではなく実戦検証済みシステム
+<strong>主な特徴</strong>:
+- <strong>人間の介入なし</strong>: 24/7自律運用
+- <strong>リアルタイム復旧</strong>: 障害発生即座に対応
+- <strong>継続的学習</strong>: 過去の修正から学習
+- <strong>本番環境デプロイ</strong>: 理論ではなく実戦検証済みシステム
 
 ## なぜ今セルフヒーリングシステムなのか?
 
 ### 業界の現状
 
-**市場規模**:
-- AI市場: 2030年までに**$826.70B**予想
-- AIOpsプラットフォーム: 2023年$11.7B → 2028年**$32.4B**(3倍成長)
+<strong>市場規模</strong>:
+- AI市場: 2030年までに<strong>$826.70B</strong>予想
+- AIOpsプラットフォーム: 2023年$11.7B → 2028年<strong>$32.4B</strong>(3倍成長)
 
-**採用状況**(2025年時点):
-- **GitHub**: 1日4千万タスクでセルフヒーリングエージェント運用
-- **Google**: DeepMind CodeMenderが自動セキュリティパッチを貢献
-- **Netflix**: 270Mユーザーに対して99.99%稼働率維持
-- **Meta**: AutoPatchBenchベンチマークで標準化を主導
+<strong>採用状況</strong>(2025年時点):
+- <strong>GitHub</strong>: 1日4千万タスクでセルフヒーリングエージェント運用
+- <strong>Google</strong>: DeepMind CodeMenderが自動セキュリティパッチを貢献
+- <strong>Netflix</strong>: 270Mユーザーに対して99.99%稼働率維持
+- <strong>Meta</strong>: AutoPatchBenchベンチマークで標準化を主導
 
 ### 従来のアプローチの限界
 
-**従来の監視システム**:
+<strong>従来の監視システム</strong>:
 ```python
 # ❌ 従来の方式: 検出のみで手動修正
 def monitor_system():
@@ -75,13 +75,13 @@ def monitor_system():
         wait_for_fix()            # ダウンタイム発生
 ```
 
-**問題点**:
+<strong>問題点</strong>:
 - 平均復旧時間(MTTR): 数時間〜数日
 - 夜間/週末障害時の対応遅延
 - 同じ問題への反復的な手動対応
 - 人材依存性によるスケーラビリティ不足
 
-**セルフヒーリングシステム**:
+<strong>セルフヒーリングシステム</strong>:
 ```python
 # ✅ セルフヒーリング: 検出 → 分析 → 修正 → デプロイ (自動)
 async def self_healing_monitor():
@@ -97,8 +97,8 @@ async def self_healing_monitor():
                 await retry_with_different_approach()
 ```
 
-**利点**:
-- MTTR: **数分以内**
+<strong>利点</strong>:
+- MTTR: <strong>数分以内</strong>
 - 24/7自律運用(人材不要)
 - 同じ問題再発時に即座に解決
 - 無限スケール可能(エージェント追加)
@@ -107,7 +107,7 @@ async def self_healing_monitor():
 
 ### 1. エラー検出 (Error Detection)
 
-**方法論**:
+<strong>方法論</strong>:
 
 #### A. 異常検出 (Anomaly Detection)
 ```python
@@ -160,7 +160,7 @@ select query_call, "SQL injection vulnerability detected"
 
 ### 2. 根本原因分析 (Root Cause Analysis)
 
-**LLMベースの診断**:
+<strong>LLMベースの診断</strong>:
 
 ```python
 from openai import OpenAI
@@ -193,7 +193,7 @@ class RootCauseAnalyzer:
         return response.choices[0].message.content
 ```
 
-**結果例**:
+<strong>結果例</strong>:
 ```markdown
 1. 根本原因:
    - データベース接続プールが枯渇
@@ -258,7 +258,7 @@ class FixGenerationWorkflow:
         return {"test_result": result}
 ```
 
-#### Agentless方式 (SWE-bench 50.8% - **より高い成功率!**)
+#### Agentless方式 (SWE-bench 50.8% - <strong>より高い成功率!</strong>)
 
 ```python
 class AgentlessFixGenerator:
@@ -281,9 +281,9 @@ class AgentlessFixGenerator:
         return fix
 ```
 
-**結果比較**:
-- **Agentless**: より速く(1回呼び出し)、成功率高い(50.8%)
-- **Multi-Agent**: より複雑だが、大規模システムで柔軟
+<strong>結果比較</strong>:
+- <strong>Agentless</strong>: より速く(1回呼び出し)、成功率高い(50.8%)
+- <strong>Multi-Agent</strong>: より複雑だが、大規模システムで柔軟
 
 ### 4. テストと検証 (Testing & Validation)
 
@@ -317,7 +317,7 @@ class SelfHealingTester:
         return await llm.generate(prompt)
 ```
 
-**Self-Correction Loop**:
+<strong>Self-Correction Loop</strong>:
 ```mermaid
 graph TB
     A[パッチ生成] --> B[テスト実行]
@@ -540,9 +540,9 @@ asyncio.run(continuous_monitoring())
 ## 実践事例: NetflixのChaos Engineering
 
 ### Netflixの規模
-- **270M+グローバルユーザー**
-- **99.99%稼働率**(年間ダウンタイム < 1時間)
-- **AWS全体トラフィックの37%**を占める
+- <strong>270M+グローバルユーザー</strong>
+- <strong>99.99%稼働率</strong>(年間ダウンタイム < 1時間)
+- <strong>AWS全体トラフィックの37%</strong>を占める
 
 ### セルフヒーリングメカニズム
 
@@ -616,9 +616,9 @@ class ChaosMonkey:
 ```
 
 ### 成果
-- **AWS AZ障害時**: 30秒以内に自動復旧
-- **全リージョン障害時**: 5分以内に別リージョンへトラフィック転換
-- **個別サービス障害**: ユーザー影響0%(即座に復旧)
+- <strong>AWS AZ障害時</strong>: 30秒以内に自動復旧
+- <strong>全リージョン障害時</strong>: 5分以内に別リージョンへトラフィック転換
+- <strong>個別サービス障害</strong>: ユーザー影響0%(即座に復旧)
 
 ## ベンチマークと評価
 
@@ -626,16 +626,16 @@ class ChaosMonkey:
 
 | 順位 | システム | 成功率 | アプローチ |
 |------|--------|--------|-----------|
-| 🥇 1位 | **TRAE** | 70.4% | o1 + Claude 3.7 + Gemini 2.5 Proアンサンブル |
-| 🥈 2位 | **Mini-SWE-agent** | 65% | 100行Python(超軽量) |
-| 🥉 3位 | **AgentScope** | 63.4% | Qwen2.5 + Claude 3.5 Sonnet |
+| 🥇 1位 | <strong>TRAE</strong> | 70.4% | o1 + Claude 3.7 + Gemini 2.5 Proアンサンブル |
+| 🥈 2位 | <strong>Mini-SWE-agent</strong> | 65% | 100行Python(超軽量) |
+| 🥉 3位 | <strong>AgentScope</strong> | 63.4% | Qwen2.5 + Claude 3.5 Sonnet |
 | 4位 | Agentless | 50.8% | 単一LLM(非エージェント) |
 | 5位 | SWE-Agent | 33.6% | マルチエージェント |
 
-**主な洞察**:
-- **アンサンブル > 単一モデル**: TRAEは3つの最高モデル組み合わせで70.4%達成
-- **シンプル > 複雑**: Mini-SWE-agentは100行で65%(SWE-Agent 33.6%の2倍)
-- **Agentless優秀**: エージェントなしアプローチがマルチエージェントより高成功率
+<strong>主な洞察</strong>:
+- <strong>アンサンブル > 単一モデル</strong>: TRAEは3つの最高モデル組み合わせで70.4%達成
+- <strong>シンプル > 複雑</strong>: Mini-SWE-agentは100行で65%(SWE-Agent 33.6%の2倍)
+- <strong>Agentless優秀</strong>: エージェントなしアプローチがマルチエージェントより高成功率
 
 ## 限界と課題
 
@@ -656,7 +656,7 @@ class AccuracyMonitor:
         # 解決: Human-in-the-Loop検証
 ```
 
-**緩和戦略**:
+<strong>緩和戦略</strong>:
 ```python
 async def human_in_the_loop_validation(self, fix):
     """人間検証ステップ追加"""
@@ -696,7 +696,7 @@ class SecurityRisk:
         fix = await ai_agent.generate_fix(error_msg)
 ```
 
-**防御戦略**:
+<strong>防御戦略</strong>:
 ```python
 class SecureAIAgent:
     def sanitize_input(self, error_msg):
@@ -808,51 +808,51 @@ class ObservabilityStack:
 
 ## 結論
 
-セルフヒーリングAIシステムは、**ソフトウェア開発のパラダイムを根本的に変革**しています。
+セルフヒーリングAIシステムは、<strong>ソフトウェア開発のパラダイムを根本的に変革</strong>しています。
 
 ### 主な要約
 
-**5段階サイクル**:
-1. **エラー検出**: 異常検出、セマンティック分析(CodeQL)
-2. **根本原因分析**: LLMベース診断
-3. **パッチ生成**: Agentless(50.8%) > Multi-Agent(33.6%)
-4. **テストと検証**: Self-Correction Loop(最大3回リトライ)
-5. **学習とデプロイ**: 継続的学習、自動PR生成
+<strong>5段階サイクル</strong>:
+1. <strong>エラー検出</strong>: 異常検出、セマンティック分析(CodeQL)
+2. <strong>根本原因分析</strong>: LLMベース診断
+3. <strong>パッチ生成</strong>: Agentless(50.8%) > Multi-Agent(33.6%)
+4. <strong>テストと検証</strong>: Self-Correction Loop(最大3回リトライ)
+5. <strong>学習とデプロイ</strong>: 継続的学習、自動PR生成
 
-**実践成果**:
-- **GitHub**: 1日4千万タスク、平均15分修正(人間2-3時間)
-- **Google**: 6ヶ月で72件セキュリティパッチ、94%コミュニティ受容
-- **Netflix**: 270Mユーザー、99.99%稼働率、AWS障害30秒復旧
+<strong>実践成果</strong>:
+- <strong>GitHub</strong>: 1日4千万タスク、平均15分修正(人間2-3時間)
+- <strong>Google</strong>: 6ヶ月で72件セキュリティパッチ、94%コミュニティ受容
+- <strong>Netflix</strong>: 270Mユーザー、99.99%稼働率、AWS障害30秒復旧
 
-**2025年ベンチマーク**:
-- **TRAE**: 70.4%(アンサンブルアプローチ)
-- **Mini-SWE-agent**: 65%(100行Python)
-- **Agentless**: 50.8%(シンプルが勝つ)
+<strong>2025年ベンチマーク</strong>:
+- <strong>TRAE</strong>: 70.4%(アンサンブルアプローチ)
+- <strong>Mini-SWE-agent</strong>: 65%(100行Python)
+- <strong>Agentless</strong>: 50.8%(シンプルが勝つ)
 
 ### はじめに
 
-**1週目**: LangGraphチュートリアル完走
+<strong>1週目</strong>: LangGraphチュートリアル完走
 ```bash
 pip install langgraph langchain-openai
 python examples/self_healing_demo.py
 ```
 
-**2週目**: 小規模プロジェクトに適用
+<strong>2週目</strong>: 小規模プロジェクトに適用
 - 単一サービス監視
 - 簡単なエラー自動修正(例: 環境変数欠落)
 
-**3週目**: 本番環境パイロット
+<strong>3週目</strong>: 本番環境パイロット
 - カナリアデプロイ(5% → 50% → 100%)
 - Human-in-the-Loop検証
 - 成果測定(MTTR、成功率)
 
-**1ヶ月後**: 全面導入決定
+<strong>1ヶ月後</strong>: 全面導入決定
 
 ---
 
-**次のステップ**: あなたのシステムにセルフヒーリングメカニズムを追加する番です。エラーが発生したら人を起こさず、AIエージェントが自動修正するようにしましょう。
+<strong>次のステップ</strong>: あなたのシステムにセルフヒーリングメカニズムを追加する番です。エラーが発生したら人を起こさず、AIエージェントが自動修正するようにしましょう。
 
-**未来は自律的で、適応的で、セルフヒーリングするシステムです。**
+<strong>未来は自律的で、適応的で、セルフヒーリングするシステムです。</strong>
 
 ## 参考資料
 

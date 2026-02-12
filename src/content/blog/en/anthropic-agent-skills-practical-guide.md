@@ -76,25 +76,25 @@ Following the announcement of the Anthropic Agent Skills standard, many develope
 
 Anthropic Agent Skills modularize the capabilities of AI agents, allowing them to dynamically load necessary functions. This mechanism revolutionizes how AI agents perform complex tasks and interact with various tools.
 
--   **Modularity**: Each skill represents an independent functional unit, containing all components (instructions, scripts, resources) necessary to perform a specific task. This enhances code reusability and manageability.
--   **Progressive Disclosure**: A key feature of Agent Skills is its context management through "Progressive Disclosure." Agents pre-load metadata for all skills but only load the full content of a skill when it is actually needed for a task. This efficiently uses the limited context window of LLMs, reducing costs and improving response times.
+-   <strong>Modularity</strong>: Each skill represents an independent functional unit, containing all components (instructions, scripts, resources) necessary to perform a specific task. This enhances code reusability and manageability.
+-   <strong>Progressive Disclosure</strong>: A key feature of Agent Skills is its context management through "Progressive Disclosure." Agents pre-load metadata for all skills but only load the full content of a skill when it is actually needed for a task. This efficiently uses the limited context window of LLMs, reducing costs and improving response times.
 -   **Role of `SKILL.md`**: Each skill directory includes a `SKILL.md` file. This file combines YAML-formatted metadata (skill name, description, available tools, etc.) with Markdown-formatted detailed instructions and usage examples, clearly defining the skill's purpose and how to use it.
 
 ### 2. Utilizing the Anthropic Agent SDK
 
 The Anthropic Agent SDK empowers developers to grant AI models like Claude direct tool execution rights, enabling AI agents to autonomously write, execute, and iterate on code.
 
--   **Agent SDK (TypeScript/Python)**: This SDK is designed to allow Claude direct access to a "computer" environment where it can read and write files, execute commands, and iterate on its own work. Unlike client SDKs that require manual tool execution, this enables agents to engage in more complex and intelligent interactions.
--   **Development Flow with the SDK**:
+-   <strong>Agent SDK (TypeScript/Python)</strong>: This SDK is designed to allow Claude direct access to a "computer" environment where it can read and write files, execute commands, and iterate on its own work. Unlike client SDKs that require manual tool execution, this enables agents to engage in more complex and intelligent interactions.
+-   <strong>Development Flow with the SDK</strong>:
     1.  **Define Skills (`SKILL.md`)**: First, define the skills for the desired tasks in a `SKILL.md` file.
-    2.  **Implement Skills (Python/TypeScript Code)**: Implement the actual logic of the defined skills using Python or TypeScript. This code includes functions or classes that the agent can execute.
-    3.  **Register and Invoke Skills in Agent**: Register the implemented skills with the agent via the SDK, allowing the agent to invoke appropriate skills based on user requests.
+    2.  <strong>Implement Skills (Python/TypeScript Code)</strong>: Implement the actual logic of the defined skills using Python or TypeScript. This code includes functions or classes that the agent can execute.
+    3.  <strong>Register and Invoke Skills in Agent</strong>: Register the implemented skills with the agent via the SDK, allowing the agent to invoke appropriate skills based on user requests.
 
 ## Practical Examples: Implementing and Executing Agent Skills
 
 ### Example 1: Document Summarization and Information Extraction Skill
 
-**Scenario**: A need to find answers to specific questions or quickly summarize key information from vast amounts of text, such as customer inquiry emails, technical documents, or research papers.
+<strong>Scenario</strong>: A need to find answers to specific questions or quickly summarize key information from vast amounts of text, such as customer inquiry emails, technical documents, or research papers.
 
 #### `SKILL.md` Definition (Conceptual Example)
 
@@ -198,7 +198,7 @@ User: "Summarize the financial_report.pdf file and extract key performance indic
 
 ### Example 2: Data Analysis and Visualization Skill
 
-**Scenario**: A need to analyze monthly sales data from a CSV file and visualize sales trends for a specific period.
+<strong>Scenario</strong>: A need to analyze monthly sales data from a CSV file and visualize sales trends for a specific period.
 
 #### `SKILL.md` Definition (Conceptual Example)
 
@@ -315,48 +315,48 @@ Implementing Anthropic Agent Skills can yield significant business value and ROI
 
 Agent Skills automate repetitive and manual tasks, drastically reducing the time required for work processes.
 
--   **Case Study**: Rakuten in Japan reduced a complex accounting workflow from one day to one hour using a custom skill. This represents a **90% time saving**.
--   **ROI Calculation Example**:
-    -   **Existing Manual Work Time**: 8 hours/day
-    -   **Automated Work Time with Skills**: 1 hour/day
-    -   **Time Saved**: 7 hours/day
-    -   **Monthly Time Saved**: 7 hours/day × 20 days/month = 140 hours
-    -   **Annual Time Saved**: 140 hours/month × 12 months = 1,680 hours
-    -   **Labor Cost/Hour**: $50 (assumption)
-    -   **Annual ROI**: 1,680 hours × $50/hour = **$84,000** (approx. 110 million KRW annually)
+-   <strong>Case Study</strong>: Rakuten in Japan reduced a complex accounting workflow from one day to one hour using a custom skill. This represents a <strong>90% time saving</strong>.
+-   <strong>ROI Calculation Example</strong>:
+    -   <strong>Existing Manual Work Time</strong>: 8 hours/day
+    -   <strong>Automated Work Time with Skills</strong>: 1 hour/day
+    -   <strong>Time Saved</strong>: 7 hours/day
+    -   <strong>Monthly Time Saved</strong>: 7 hours/day × 20 days/month = 140 hours
+    -   <strong>Annual Time Saved</strong>: 140 hours/month × 12 months = 1,680 hours
+    -   <strong>Labor Cost/Hour</strong>: $50 (assumption)
+    -   <strong>Annual ROI</strong>: 1,680 hours × $50/hour = <strong>$84,000</strong> (approx. 110 million KRW annually)
 
 ### 2. Cost Reduction (Token Usage Optimization)
 
 The "Progressive Disclosure" architecture efficiently manages LLM context windows, reducing unnecessary token usage and API costs.
 
--   **Effect**: By loading only the necessary skill information, it prevents context window saturation and improves the efficiency of LLM calls.
--   **ROI Calculation Example**:
-    -   **Existing Token Cost per Task**: $0.1
-    -   **Optimized Token Cost with Skills**: $0.01 (90% reduction)
-    -   **Daily Task Count**: 1,000 tasks
-    -   **Monthly Total Cost Savings**: ($0.1 - $0.01) × 1,000 tasks/day × 20 days/month = $1,800
-    -   **Annual Total Cost Savings**: $1,800/month × 12 months = **$21,600** (approx. 28 million KRW annually)
+-   <strong>Effect</strong>: By loading only the necessary skill information, it prevents context window saturation and improves the efficiency of LLM calls.
+-   <strong>ROI Calculation Example</strong>:
+    -   <strong>Existing Token Cost per Task</strong>: $0.1
+    -   <strong>Optimized Token Cost with Skills</strong>: $0.01 (90% reduction)
+    -   <strong>Daily Task Count</strong>: 1,000 tasks
+    -   <strong>Monthly Total Cost Savings</strong>: ($0.1 - $0.01) × 1,000 tasks/day × 20 days/month = $1,800
+    -   <strong>Annual Total Cost Savings</strong>: $1,800/month × 12 months = <strong>$21,600</strong> (approx. 28 million KRW annually)
 
 ### 3. Enhanced Specialization and Consistency
 
 Agent Skills encapsulate an organization's specific workflows, best practices, and accumulated knowledge into skills, injecting them into Claude.
 
--   **Effect**: Claude can perform tasks more consistently and accurately based on domain-specific expertise, leading to reduced errors and improved service quality.
--   **Indirect ROI**: Cost savings from reduced rework due to errors, increased customer satisfaction, and enhanced brand image.
+-   <strong>Effect</strong>: Claude can perform tasks more consistently and accurately based on domain-specific expertise, leading to reduced errors and improved service quality.
+-   <strong>Indirect ROI</strong>: Cost savings from reduced rework due to errors, increased customer satisfaction, and enhanced brand image.
 
 ### 4. Scalability and Portability
 
 Agent Skills, once developed, can be reused and deployed across various Claude applications, Claude Code environments, and APIs.
 
--   **Effect**: New requirements can be addressed quickly by leveraging existing skills, saving development time and resources. This leads to faster time-to-market and provides a long-term competitive advantage.
--   **Long-term ROI**: Increased development efficiency, rapid adaptation to market changes, reduced technical debt.
+-   <strong>Effect</strong>: New requirements can be addressed quickly by leveraging existing skills, saving development time and resources. This leads to faster time-to-market and provides a long-term competitive advantage.
+-   <strong>Long-term ROI</strong>: Increased development efficiency, rapid adaptation to market changes, reduced technical debt.
 
 ### 5. Democratization of Expertise
 
 Agent Skills tools, such as Code Execution, enable even non-specialists to perform complex data analysis or specialized programming tasks through AI agents.
 
--   **Effect**: This increases access to specialized knowledge, such as obtaining data analysis insights without a data scientist or generating simple scripts without a programmer, thereby improving the productivity of all employees.
--   **Increased Productivity**: Flexibility in workforce allocation, identification of new business opportunities.
+-   <strong>Effect</strong>: This increases access to specialized knowledge, such as obtaining data analysis insights without a data scientist or generating simple scripts without a programmer, thereby improving the productivity of all employees.
+-   <strong>Increased Productivity</strong>: Flexibility in workforce allocation, identification of new business opportunities.
 
 ## Conclusion
 

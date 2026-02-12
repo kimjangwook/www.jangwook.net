@@ -73,12 +73,12 @@ Netflix、Spotify、Amazon等全球企业通过数据驱动文化引领市场的
 DAU/MAU Ratio = (日活跃用户数 / 月活跃用户数) × 100%
 ```
 
-**基准值**：
+<strong>基准值</strong>：
 - 20%以上：优秀的参与度（例如：Facebook、Instagram）
 - 10〜20%：良好水平（大多数社交应用）
 - 10%以下：需要改进（实用工具类应用除外）
 
-**实务应用**：
+<strong>实务应用</strong>：
 - 测量产品的"习惯养成力"
 - 追踪新功能发布后的参与度变化
 - 与竞争对手进行基准比较
@@ -87,12 +87,12 @@ DAU/MAU Ratio = (日活跃用户数 / 月活跃用户数) × 100%
 
 衡量用户使用产品的持续时间。
 
-**按测量时间点分类**：
+<strong>按测量时间点分类</strong>：
 - <strong>Day 1 Retention</strong>：注册次日留存率（目标30〜40%以上）
 - <strong>Day 7 Retention</strong>：一周后（20〜30%）
 - <strong>Day 30 Retention</strong>：一个月后（10〜20%）
 
-**Cohort Retention分析SQL**：
+<strong>Cohort Retention分析SQL</strong>：
 
 ```sql
 -- 按队列分析留存率
@@ -136,12 +136,12 @@ ORDER BY cohort_month, activity_month;
 NPS = (推荐客户比例) - (不推荐客户比例)
 ```
 
-**分数解读**：
+<strong>分数解读</strong>：
 - 9〜10分：Promoters（推荐者）
 - 7〜8分：Passives（中立者）
 - 0〜6分：Detractors（批评者）
 
-**按行业基准值**：
+<strong>按行业基准值</strong>：
 - SaaS：30〜40
 - 电商：30〜50
 - 消费类应用：20〜40
@@ -150,13 +150,13 @@ NPS = (推荐客户比例) - (不推荐客户比例)
 
 衡量用户旅程各阶段的转化率。
 
-**电商漏斗示例**：
+<strong>电商漏斗示例</strong>：
 ```
 访问 → 商品浏览 → 加入购物车 → 结账 → 完成购买
 100% →   60%    →    25%    →  15%  →   12%
 ```
 
-**Funnel分析SQL**：
+<strong>Funnel分析SQL</strong>：
 
 ```sql
 -- 用户旅程漏斗分析
@@ -209,7 +209,7 @@ RICE是<strong>Reach</strong>（覆盖面）、<strong>Impact</strong>（影响�
 RICE Score = (Reach × Impact × Confidence) / Effort
 ```
 
-**各要素说明**：
+<strong>各要素说明</strong>：
 
 | 要素 | 测量方法 | 示例 |
 |-----|----------|------|
@@ -218,7 +218,7 @@ RICE Score = (Reach × Impact × Confidence) / Effort
 | <strong>Confidence</strong> | 信心度（0〜100%） | 80% |
 | <strong>Effort</strong> | 开发工时（人月） | 2个月 |
 
-**实战示例**：
+<strong>实战示例</strong>：
 
 ```mermaid
 graph TD
@@ -232,7 +232,7 @@ graph TD
     G -->|No| I[搁置或重新评估]
 ```
 
-**实际计算示例**：
+<strong>实际计算示例</strong>：
 
 | 功能 | Reach | Impact | Confidence | Effort | RICE Score |
 |-----|-------|--------|------------|--------|-----------|
@@ -254,7 +254,7 @@ ICE Score = (Impact + Confidence + Ease) / 3
 - <strong>Confidence</strong>：信心度（1〜10）
 - <strong>Ease</strong>：实现容易度（1〜10）
 
-**应用场景**：冲刺规划、初创公司早期阶段、快速实验评估
+<strong>应用场景</strong>：冲刺规划、初创公司早期阶段、快速实验评估
 
 ### 3. Kano Model（用户满意度分析模型）
 
@@ -275,7 +275,7 @@ graph LR
     F --> K[反而降低满意度]
 ```
 
-**实务应用**：
+<strong>实务应用</strong>：
 1. <strong>Must-have优先满足</strong>：登录、搜索、支付等
 2. <strong>Performance持续改进</strong>：速度、准确度、用户体验
 3. <strong>Delighters选择性投资</strong>：差异化要点
@@ -329,12 +329,12 @@ graph TD
 
 许多企业青睐<strong>数据仓库 + SQL + BI工具</strong>组合。
 
-**优势**：
+<strong>优势</strong>：
 - 完全的数据控制权
 - 成本效益（大规模时）
 - 定制化自由度
 
-**架构示例**：
+<strong>架构示例</strong>：
 ```
 数据收集: Segment / RudderStack
     ↓
@@ -364,7 +364,7 @@ graph LR
 
 ### 样本量计算
 
-**所需样本数公式**（简化版）：
+<strong>所需样本数公式</strong>（简化版）：
 
 ```
 n = (Z² × p × (1-p)) / E²
@@ -375,9 +375,9 @@ p: 预期转化率
 E: 容许误差
 ```
 
-**实用计算器**：[Evan Miller's Sample Size Calculator](https://www.evanmiller.org/ab-testing/sample-size.html)
+<strong>实用计算器</strong>：[Evan Miller's Sample Size Calculator](https://www.evanmiller.org/ab-testing/sample-size.html)
 
-**示例**：
+<strong>示例</strong>：
 - 当前转化率：10%
 - 最小可检测效应：2%（绝对值）
 - 置信水平：95%
@@ -408,8 +408,8 @@ E: 容许误差
 
 #### 3. 足够的测试周期
 
-**最短周期**：1〜2周（消除星期效应）
-**注意**：太短会受"新鲜感效应"影响
+<strong>最短周期</strong>：1〜2周（消除星期效应）
+<strong>注意</strong>：太短会受"新鲜感效应"影响
 
 #### 4. 按细分群体分析
 
@@ -429,7 +429,7 @@ GROUP BY user_segment, experiment_group
 ORDER BY user_segment, experiment_group;
 ```
 
-**结果示例**：
+<strong>结果示例</strong>：
 
 | Segment | Group | Users | Conversions | Conv. Rate |
 |---------|-------|-------|-------------|-----------|
@@ -438,7 +438,7 @@ ORDER BY user_segment, experiment_group;
 | Returning | Control | 3,000 | 600 | 20.0% |
 | Returning | Treatment | 3,000 | 585 | 19.5% |
 
-**洞察**：新用户反应积极但回访用户反应消极 → <strong>考虑只针对新用户</strong>
+<strong>洞察</strong>：新用户反应积极但回访用户反应消极 → <strong>考虑只针对新用户</strong>
 
 ### 常见A/B测试错误
 
@@ -446,13 +446,13 @@ ORDER BY user_segment, experiment_group;
 
 实验中途查看结果并提前结束会增加<strong>假阳性（False Positive）</strong>概率。
 
-**解决方案**：顺序测试或严格遵守预定结束时间
+<strong>解决方案</strong>：顺序测试或严格遵守预定结束时间
 
 #### 2. Simpson's Paradox（辛普森悖论）
 
 整体上A占优，但按细分群体B占优的情况。
 
-**示例**：
+<strong>示例</strong>：
 ```
 整体：Treatment胜利（12% vs 11%）
 移动端：Control胜利（8% vs 7%）
@@ -465,7 +465,7 @@ ORDER BY user_segment, experiment_group;
 
 即使达到p < 0.05，<strong>效果量小可能没有执行价值</strong>。
 
-**判断标准**：
+<strong>判断标准</strong>：
 - 绝对值：转化率提高0.1%（10.0% → 10.1%）
 - 相对值：提高1%
 - 业务影响：月收入增加$500
@@ -476,70 +476,70 @@ ORDER BY user_segment, experiment_group;
 
 ### 1. Netflix：个性化推荐系统
 
-**挑战**：如何让用户在数千万内容中找到想看的内容？
+<strong>挑战</strong>：如何让用户在数千万内容中找到想看的内容？
 
-**数据驱动解决方案**：
+<strong>数据驱动解决方案</strong>：
 - <strong>75%的观看来自推荐</strong>
 - 通过A/B测试优化缩略图
 - 针对每个用户显示不同缩略图（个性化）
 
-**核心指标**：
+<strong>核心指标</strong>：
 - Effective Catalog Size：实际被观看的内容比例
 - Take Rate：推荐点击后观看转化率
 
-**结果**：推荐算法创造年度<strong>超过10亿美元价值</strong>（防止流失）
+<strong>结果</strong>：推荐算法创造年度<strong>超过10亿美元价值</strong>（防止流失）
 
 ### 2. Spotify：Discover Weekly（每周发现）
 
-**挑战**：引导用户发现新音乐
+<strong>挑战</strong>：引导用户发现新音乐
 
-**数据应用**：
+<strong>数据应用</strong>：
 - 协同过滤 + NLP（歌词分析）
 - 利用收听历史、跳过模式、播放列表保存数据
 
-**A/B测试结果**：
+<strong>A/B测试结果</strong>：
 - <strong>播放时间增加9%</strong>
 - 高级会员转化率提高5%
 
-**核心洞察**："新鲜感vs熟悉感"平衡（70%熟悉类型 + 30%新类型）
+<strong>核心洞察</strong>："新鲜感vs熟悉感"平衡（70%熟悉类型 + 30%新类型）
 
 ### 3. Airbnb：动态定价（智能定价）
 
-**挑战**：帮助房东设定最优价格
+<strong>挑战</strong>：帮助房东设定最优价格
 
-**数据模型**：
+<strong>数据模型</strong>：
 - 需求预测：地区活动、季节性、搜索趋势
 - 供给分析：周边房源价格、便利设施
 - 机器学习推荐最优价格
 
-**结果**：
+<strong>结果</strong>：
 - 房东收入<strong>平均增加4%</strong>
 - 预订率提升8%
 
 ### 4. Amazon：一键下单
 
-**假设**：支付步骤越多流失率越高
+<strong>假设</strong>：支付步骤越多流失率越高
 
-**实验**：
+<strong>实验</strong>：
 - Control：原有3步支付
 - Treatment：一键支付
 
-**结果**：
+<strong>结果</strong>：
 - 转化率<strong>提高20%以上</strong>
 - 获得专利并确保竞争优势
 
-**教训**：<strong>消除摩擦是关键</strong>
+<strong>教训</strong>：<strong>消除摩擦是关键</strong>
 
 ## 避免数据陷阱：常见错误
 
 ### 1. Correlation ≠ Causation（相关性 ≠ 因果关系）
 
-**示例**：
+<strong>示例</strong>：
 - 观察："收到更多应用推送通知的用户回访率更高"
 - 错误结论："发送更多推送通知会提高回访率"
 - 实际原因：活跃用户本来就收到更多推送
 
-**解决方案**：<strong>随机对照试验（RCT）</strong> = A/B测试
+<strong>解决方案</strong>：<strong>随机对照试验（RCT）</strong> = A/B测试
 
 ### 2. Vanity Metrics（虚荣指标）
 
@@ -554,10 +554,10 @@ ORDER BY user_segment, experiment_group;
 
 ### 3. Survivorship Bias（幸存者偏差）
 
-**示例**："成功用户都完成了教程"
+<strong>示例</strong>："成功用户都完成了教程"
 → 但教程中流失的用户被排除在分析之外
 
-**解决方案**：<strong>包含流失用户分析</strong>
+<strong>解决方案</strong>：<strong>包含流失用户分析</strong>
 
 ```sql
 -- 比较流失用户vs留存用户的行为
@@ -577,13 +577,13 @@ GROUP BY user_status;
 
 看到数据后再建立假设 = <strong>违反科学方法</strong>
 
-**正确顺序**：
+<strong>正确顺序</strong>：
 1. 建立假设
 2. 设计实验
 3. 收集数据
 4. 分析并得出结论
 
-**错误顺序**：
+<strong>错误顺序</strong>：
 1. 收集数据
 2. 发现模式
 3. 事后添加假设（事后合理化）
@@ -592,7 +592,7 @@ GROUP BY user_status;
 
 同时进行20个A/B测试，偶然会有1个出现p < 0.05。
 
-**解决方案**：应用<strong>Bonferroni校正</strong>
+<strong>解决方案</strong>：应用<strong>Bonferroni校正</strong>
 ```
 校正显著性水平 = 0.05 / 测试数量
 ```
@@ -605,12 +605,12 @@ GROUP BY user_status;
 
 <strong>所有团队成员都应该能够阅读和解释数据。</strong>
 
-**教育计划**：
+<strong>教育计划</strong>：
 - 基础SQL培训（2周课程）
 - 统计学101：p值、置信区间、样本量
 - 如何阅读仪表板（理解关键指标）
 
-**推荐资源**：
+<strong>推荐资源</strong>：
 - Mode Analytics SQL Tutorial
 - Khan Academy Statistics
 - Amplitude's Product Analytics Playbook
@@ -619,25 +619,25 @@ GROUP BY user_status;
 
 PM应该能够在不依赖数据团队的情况下直接进行分析。
 
-**构建要素**：
+<strong>构建要素</strong>：
 - 标准化数据仓库
 - 预定义指标（指标层）
 - 仪表板模板
 - SQL查询库
 
-**工具示例**：
+<strong>工具示例</strong>：
 - dbt（数据转换和文档化）
 - Looker / Tableau（自助BI）
 - Metabase（开源替代方案）
 
 ### 3. 数据治理
 
-**需要定义的内容**：
+<strong>需要定义的内容</strong>：
 - <strong>北极星指标</strong>：公司整体最优先指标
 - 指标定义文档（DAU的确切定义是什么？）
 - 数据质量SLA（准确性、新鲜度、完整性）
 
-**示例：北极星指标**：
+<strong>示例：北极星指标</strong>：
 - Spotify：Time Spent Listening（收听时长）
 - Airbnb：Nights Booked（预订夜数）
 - Facebook：Daily Active Users（日活跃用户数）
@@ -646,18 +646,18 @@ PM应该能够在不依赖数据团队的情况下直接进行分析。
 
 <strong>用"数据"而非"意见"解决争论。</strong>
 
-**实践方法**：
+<strong>实践方法</strong>：
 - 所有功能发布前强制A/B测试
 - 分享失败的实验（学习文化）
 - 定期实验结果审查会议
 
-**Amazon的"Disagree and Commit"**：
+<strong>Amazon的"Disagree and Commit"</strong>：
 - 意见不同时用数据验证
 - 根据实验结果快速转向
 
 ### 5. PM与数据分析师协作
 
-**有效协作结构**：
+<strong>有效协作结构</strong>：
 
 ```mermaid
 graph LR
@@ -668,7 +668,7 @@ graph LR
     E --> F[共同: 结果测量]
 ```
 
-**推荐每周数据同步会**：
+<strong>推荐每周数据同步会</strong>：
 - 回顾上周实验结果
 - 确认本周优先指标
 - 讨论数据问题及解决方案
@@ -707,17 +707,17 @@ graph LR
 
 ### 推荐学习资源
 
-**书籍**：
+<strong>书籍</strong>：
 - "Lean Analytics" by Alistair Croll & Benjamin Yoskovitz
 - "Trustworthy Online Controlled Experiments" by Ron Kohavi et al.
 - "How to Measure Anything" by Douglas W. Hubbard
 
-**在线课程**：
+<strong>在线课程</strong>：
 - Reforge: [Product Analytics](https://www.reforge.com/product-analytics)
 - Udacity: [A/B Testing by Google](https://www.udacity.com/course/ab-testing--ud257)
 - Amplitude Academy：免费产品分析课程
 
-**社区**：
+<strong>社区</strong>：
 - [Lenny's Newsletter](https://www.lennysnewsletter.com/) - PM洞察
 - [Reforge Community](https://www.reforge.com/community) - 数据驱动PM网络
 - [Product School](https://productschool.com/) - 活动与工作坊

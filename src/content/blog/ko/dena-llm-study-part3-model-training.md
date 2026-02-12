@@ -49,7 +49,7 @@ relatedPosts:
       zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-> **시리즈: DeNA LLM 스터디** (3/5)
+> <strong>시리즈: DeNA LLM 스터디</strong> (3/5)
 >
 > 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)
 > 2. [Part 2: 구조화 출력과 멀티 LLM 파이프라인](/ko/blog/ko/dena-llm-study-part2-structured-output)
@@ -79,21 +79,21 @@ graph TD
     C1[고객 피드백으로<br/>맛 개선] --> C
 ```
 
-**사전학습 (Pre-training)**
+<strong>사전학습 (Pre-training)</strong>
 
 - <strong>목적</strong>: 범용적인 언어 이해 능력 획득
 - <strong>데이터</strong>: 수십〜수백 TB의 웹 데이터
 - <strong>비용</strong>: 수억〜수천억 원 (GPT-4 추정 1000억 원 이상)
 - <strong>비유</strong>: 요리학교에서 모든 요리 기법을 배우는 과정
 
-**파인튜닝 (Fine-tuning)**
+<strong>파인튜닝 (Fine-tuning)</strong>
 
 - <strong>목적</strong>: 특정 태스크/도메인에 특화
 - <strong>데이터</strong>: 수천〜수만 개의 태스크별 데이터
 - <strong>비용</strong>: 수십만〜수백만 원
 - <strong>비유</strong>: 이탈리안 레스토랑의 파스타 전문가가 되는 과정
 
-**강화학습 (Reinforcement Learning)**
+<strong>강화학습 (Reinforcement Learning)</strong>
 
 - <strong>목적</strong>: 인간의 선호도에 맞춘 응답 생성
 - <strong>데이터</strong>: 수천〜수만 개의 선호도 데이터
@@ -201,7 +201,7 @@ lora_config:
 
 ### LoRA 변형들
 
-**DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)**
+<strong>DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)</strong>
 
 ```python
 # DoRA: 가중치를 크기(magnitude)와 방향(direction)으로 분해
@@ -212,7 +212,7 @@ W = m * (V + B @ A)
 - <strong>장점</strong>: Full Fine-tuning에 더 가까운 성능
 - <strong>단점</strong>: LoRA보다 약간 느림
 
-**GaLore (Gradient Low-Rank Projection, 2024)**
+<strong>GaLore (Gradient Low-Rank Projection, 2024)</strong>
 
 ```python
 # Gradient를 저랭크 공간에 투영하여 메모리 절약
@@ -223,7 +223,7 @@ optimizer.step(gradient_lowrank)
 - <strong>장점</strong>: 옵티마이저 상태도 저랭크로 압축 → 메모리 50% 추가 절감
 - <strong>단점</strong>: 구현 복잡도 높음
 
-**LoRA+ (2024)**
+<strong>LoRA+ (2024)</strong>
 
 ```python
 # 학습률을 행렬 A, B에 다르게 적용
@@ -404,18 +404,18 @@ preference_dataset = [
 
 ### DPO 변형들
 
-**ORPO (Odds Ratio Preference Optimization, 2024)**
+<strong>ORPO (Odds Ratio Preference Optimization, 2024)</strong>
 
 - SFT와 선호도 학습을 <strong>동시에</strong> 수행
 - 별도의 SFT 단계 불필요
 - 학습 시간 추가 단축
 
-**IPO (Identity Preference Optimization, 2024)**
+<strong>IPO (Identity Preference Optimization, 2024)</strong>
 
 - Reference 모델 없이 학습 가능
 - 메모리 사용량 더 절감
 
-**KTO (Kahneman-Tversky Optimization, 2024)**
+<strong>KTO (Kahneman-Tversky Optimization, 2024)</strong>
 
 - 쌍 비교 데이터 대신 <strong>개별 피드백</strong> 사용 (좋음/나쁨)
 - 데이터 수집 비용 대폭 감소
@@ -441,7 +441,7 @@ graph TD
 
 ### 실무 권장 사항
 
-**1. 챗봇/대화형 시스템**
+<strong>1. 챗봇/대화형 시스템</strong>
 
 ```
 프롬프트 → SFT (LoRA) → DPO
@@ -450,7 +450,7 @@ graph TD
 - 도메인 지식 주입: LoRA로 효율적 파인튜닝
 - 대화 품질 개선: DPO로 선호도 정렬
 
-**2. 문서 분류/태깅**
+<strong>2. 문서 분류/태깅</strong>
 
 ```
 프롬프트 → LoRA (선택적)
@@ -459,7 +459,7 @@ graph TD
 - 대부분 프롬프트로 충분
 - 극한 성능 필요 시 LoRA 추가
 
-**3. 코드 생성**
+<strong>3. 코드 생성</strong>
 
 ```
 프롬프트 → SFT (QLoRA) → RLHF/DPO
@@ -468,7 +468,7 @@ graph TD
 - 코드 스타일 학습: QLoRA로 대량 코드 학습
 - 실행 가능성 개선: RLHF로 컴파일 오류 페널티
 
-**4. 요약/번역**
+<strong>4. 요약/번역</strong>
 
 ```
 프롬프트 → DPO

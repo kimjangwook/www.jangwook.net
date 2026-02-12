@@ -735,6 +735,7 @@ updatedDate: string (optional, format: 'YYYY-MM-DD' only, single quotes)
 - Keep paragraphs concise (2-4 sentences)
 - Use bullet points for lists
 - Add code comments in target language
+- **블로그 본문에서 볼드 텍스트는 마크다운 `**text**` 대신 HTML `<strong>text</strong>` 태그를 사용할 것. 이는 특수문자와의 충돌을 방지하기 위함.**
 
 ### Markdown Formatting Guidelines
 

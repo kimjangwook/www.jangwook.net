@@ -63,7 +63,7 @@ Error management in complex software development projects has always been one of
 
 The core of the methodology introduced in this post is simple:
 
-> **"By designing interfaces first and having all agents adhere to these interface contracts, errors are minimized despite individual agents' memory limitations."**
+> <strong>"By designing interfaces first and having all agents adhere to these interface contracts, errors are minimized despite individual agents' memory limitations."</strong>
 
 LLM-based agents have an inherent constraint: <strong>context window (memory) limitations</strong>. In complex projects, it's difficult for a single agent to grasp the entire context. However, by establishing <strong>interfaces as a North Star</strong> first:
 
@@ -192,9 +192,9 @@ graph TD
 
 ### Stage 2: Interface Structure Design (Core Stage)
 
-> **🎯 This stage is the heart of the entire methodology.**
+> <strong>🎯 This stage is the heart of the entire methodology.</strong>
 
-Once agents are established, the next stage is designing the <strong>optimal interface structure</strong> between them. **Thoroughly completing this stage before development is the most important principle of this methodology.**
+Once agents are established, the next stage is designing the <strong>optimal interface structure</strong> between them. <strong>Thoroughly completing this stage before development is the most important principle of this methodology.</strong>
 
 #### Why Interface First?
 
@@ -228,7 +228,7 @@ graph TD
     style D fill:#fff3e0,stroke:#f57c00
 ```
 
-**Each agent only needs to adhere to its input/output contract, even without knowing the full context.** This is the core mechanism for overcoming memory limitations.
+<strong>Each agent only needs to adhere to its input/output contract, even without knowing the full context.</strong> This is the core mechanism for overcoming memory limitations.
 
 #### Interface Design Principles
 
@@ -608,16 +608,16 @@ Microsoft's multi-agent system:
 
 Once again, we emphasize the most important insight of this methodology:
 
-> **"By designing interfaces first and having all agents adhere to these interface contracts, errors are minimized despite individual agents' memory limitations."**
+> <strong>"By designing interfaces first and having all agents adhere to these interface contracts, errors are minimized despite individual agents' memory limitations."</strong>
 
 This is the fundamental difference between existing AI development approaches (unstructured prompting) and this methodology:
 
 | Aspect | Unstructured AI Usage | Interface-First Methodology |
 |:---|:---:|:---:|
-| Memory Limit Response | No response (context loss) | **Consistency maintained via interfaces** |
-| Inter-Agent Integration | Manual coordination required | **Automatic integration possible** |
-| Error Rate | High | **40-90% reduction** |
-| Scalability | Limited | **Infinitely scalable** |
+| Memory Limit Response | No response (context loss) | <strong>Consistency maintained via interfaces</strong> |
+| Inter-Agent Integration | Manual coordination required | <strong>Automatic integration possible</strong> |
+| Error Rate | High | <strong>40-90% reduction</strong> |
+| Scalability | Limited | <strong>Infinitely scalable</strong> |
 
 ### Core Value of the Methodology
 

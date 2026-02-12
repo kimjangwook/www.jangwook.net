@@ -55,7 +55,7 @@ relatedPosts:
 
 ## 概述
 
-Meta正在从一家社交媒体公司向**AI Agent平台企业**进行重大转型。这一自2025年末开始加速的战略可以用三个关键词来概括：代表外部Agent合作伙伴关系的**Sierra**、下一代前沿模型内部代号**Avocado**、以及代表高级推理能力的**Big Brain**。
+Meta正在从一家社交媒体公司向<strong>AI Agent平台企业</strong>进行重大转型。这一自2025年末开始加速的战略可以用三个关键词来概括：代表外部Agent合作伙伴关系的<strong>Sierra</strong>、下一代前沿模型内部代号<strong>Avocado</strong>、以及代表高级推理能力的<strong>Big Brain</strong>。
 
 本文分析Meta的AI战略如何变化，以及这对开发者和企业意味着什么。
 
@@ -63,17 +63,17 @@ Meta正在从一家社交媒体公司向**AI Agent平台企业**进行重大转�
 
 ### 从开源到专有
 
-Meta长期以来通过Llama模型系列将自己定位为**开源AI**的领导者。2024年，Mark Zuckerberg预测Llama将成为"行业中最先进的模型"。
+Meta长期以来通过Llama模型系列将自己定位为<strong>开源AI</strong>的领导者。2024年，Mark Zuckerberg预测Llama将成为"行业中最先进的模型"。
 
 然而，2025年4月Llama 4的发布未能达到开发者社区的期望，成为战略转型的导火索。Zuckerberg在2025年7月表示"我们需要对选择开源的内容保持谨慎"，暗示了方向的转变。
 
 ### Avocado — 下一代前沿模型
 
-**Avocado**是Meta下一代前沿AI模型的代号。据CNBC报道，该模型具有以下特征：
+<strong>Avocado</strong>是Meta下一代前沿AI模型的代号。据CNBC报道，该模型具有以下特征：
 
-- **专有模型**：与之前的Llama不同，权重可能不会公开
-- **在TBD Lab开发**：由前Scale AI的Alexandr Wang领导的精英研究组织
-- **计划2026年第一季度发布**：与OpenAI、Google、Anthropic的竞争进一步加剧
+- <strong>专有模型</strong>：与之前的Llama不同，权重可能不会公开
+- <strong>在TBD Lab开发</strong>：由前Scale AI的Alexandr Wang领导的精英研究组织
+- <strong>计划2026年第一季度发布</strong>：与OpenAI、Google、Anthropic的竞争进一步加剧
 
 ```mermaid
 graph LR
@@ -87,7 +87,7 @@ graph LR
 
 ### 什么是Sierra AI？
 
-Sierra AI是由前Salesforce联合CEO、OpenAI董事会主席**Bret Taylor**创立的AI Agent初创公司。它提供企业级AI Agent平台，具有可扩展性，使复杂的受监管企业也能快速部署Agent。
+Sierra AI是由前Salesforce联合CEO、OpenAI董事会主席<strong>Bret Taylor</strong>创立的AI Agent初创公司。它提供企业级AI Agent平台，具有可扩展性，使复杂的受监管企业也能快速部署Agent。
 
 ### Meta × Sierra的协同效应
 
@@ -95,25 +95,25 @@ Meta推动与Sierra的合作伙伴关系具有重大战略意义：
 
 | 领域 | Meta的优势 | Sierra的优势 |
 |------|-----------|-------------|
-| **用户基础** | 30亿+日活用户 | 企业客户网络 |
-| **AI模型** | Avocado/Llama | Agent编排 |
-| **渠道** | WhatsApp、Messenger、Instagram | B2B通信 |
-| **数据** | 社交图谱 | 业务流程 |
+| <strong>用户基础</strong> | 30亿+日活用户 | 企业客户网络 |
+| <strong>AI模型</strong> | Avocado/Llama | Agent编排 |
+| <strong>渠道</strong> | WhatsApp、Messenger、Instagram | B2B通信 |
+| <strong>数据</strong> | 社交图谱 | 业务流程 |
 
-Meta已通过WhatsApp的**Business AI**每周处理超过100万次对话，并计划进一步扩展。
+Meta已通过WhatsApp的<strong>Business AI</strong>每周处理超过100万次对话，并计划进一步扩展。
 
 ## Big Brain — 高级推理引擎
 
 ### 推理能力的重要性
 
-**Big Brain**据报道指的是Meta AI的高级推理功能。正如OpenAI的o1/o3系列和Google的Gemini 3所展示的，超越简单文本生成的**深度推理**能力是AI Agent的核心竞争力。
+<strong>Big Brain</strong>据报道指的是Meta AI的高级推理功能。正如OpenAI的o1/o3系列和Google的Gemini 3所展示的，超越简单文本生成的<strong>深度推理</strong>能力是AI Agent的核心竞争力。
 
 Agent要执行复杂的业务任务，需要以下能力：
 
-1. **多步骤规划**：将复杂请求分解为阶段
-2. **工具使用**：调用外部API和服务
-3. **情境判断**：在异常情况下做出适当决策
-4. **自我验证**：确认结果的准确性
+1. <strong>多步骤规划</strong>：将复杂请求分解为阶段
+2. <strong>工具使用</strong>：调用外部API和服务
+3. <strong>情境判断</strong>：在异常情况下做出适当决策
+4. <strong>自我验证</strong>：确认结果的准确性
 
 Big Brain将这些推理能力内置于Avocado模型中，将Meta的Agent生态系统提升到新的高度。
 
@@ -147,9 +147,9 @@ Meta的AI Agent平台战略由三个层次构成：
 
 ### 3. 应用层
 
-- **广告优化**：基于AI的广告创意生成（2025年Q4视频生成工具收入达到100亿美元）
-- **内容推荐**：有机信息流浏览量提升7%
-- **商业消息**：点击消息广告收入在美国增长超过50%
+- <strong>广告优化</strong>：基于AI的广告创意生成（2025年Q4视频生成工具收入达到100亿美元）
+- <strong>内容推荐</strong>：有机信息流浏览量提升7%
+- <strong>商业消息</strong>：点击消息广告收入在美国增长超过50%
 
 ```mermaid
 graph TB
@@ -182,26 +182,26 @@ graph TB
 
 ### 需要关注的要点
 
-1. **Agent API生态系统**：Meta如果发布Agent SDK，将开启面向30亿用户的Agent开发
-2. **WhatsApp Business Agent**：已在墨西哥和菲律宾启动的Business AI即将全球扩展
-3. **Avocado模型的性能**：转向专有后，基于API的访问将成为主要集成方式
-4. **Sierra平台集成**：企业级Agent开发可以利用Sierra的编排层
+1. <strong>Agent API生态系统</strong>：Meta如果发布Agent SDK，将开启面向30亿用户的Agent开发
+2. <strong>WhatsApp Business Agent</strong>：已在墨西哥和菲律宾启动的Business AI即将全球扩展
+3. <strong>Avocado模型的性能</strong>：转向专有后，基于API的访问将成为主要集成方式
+4. <strong>Sierra平台集成</strong>：企业级Agent开发可以利用Sierra的编排层
 
 ### 竞争格局变化
 
 | 企业 | Agent战略 | 核心模型 |
 |------|----------|---------|
-| **Meta** | 基于社交平台的Agent | Avocado |
-| **OpenAI** | ChatGPT + Operator | o3/GPT-5 |
-| **Google** | Gemini + Android集成 | Gemini 3 |
-| **Anthropic** | Claude + Agent Teams | Opus 4.6 |
-| **Salesforce** | Agentforce + CRM | Einstein |
+| <strong>Meta</strong> | 基于社交平台的Agent | Avocado |
+| <strong>OpenAI</strong> | ChatGPT + Operator | o3/GPT-5 |
+| <strong>Google</strong> | Gemini + Android集成 | Gemini 3 |
+| <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
+| <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
 
 ## 结论
 
-Meta的AI Agent平台化不仅仅是技术转型，更是**商业模式的根本性重构**。在广告收入这一坚实基础之上，将拥有30亿用户的平台转化为Agent基础设施，这一尝试有潜力改变AI行业格局。
+Meta的AI Agent平台化不仅仅是技术转型，更是<strong>商业模式的根本性重构</strong>。在广告收入这一坚实基础之上，将拥有30亿用户的平台转化为Agent基础设施，这一尝试有潜力改变AI行业格局。
 
-如果这一三角战略成功——通过Sierra增强企业Agent能力，通过Avocado确保模型竞争力，通过Big Brain提升推理能力——Meta将从社交媒体公司转变为**AI Agent平台的强者**。
+如果这一三角战略成功——通过Sierra增强企业Agent能力，通过Avocado确保模型竞争力，通过Big Brain提升推理能力——Meta将从社交媒体公司转变为<strong>AI Agent平台的强者</strong>。
 
 2026年第一季度Avocado模型的发布和Business AI的全球扩展，将成为这一愿景的首次考验。
 

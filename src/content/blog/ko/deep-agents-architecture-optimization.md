@@ -76,14 +76,14 @@ relatedPosts:
 - 지속적 상태 관리
 - 자동 복구 및 적응
 
-**Shallow Agents (1.0) 워크플로우:**
+<strong>Shallow Agents (1.0) 워크플로우:</strong>
 
 ```mermaid
 graph LR
     A[요청] --> B[도구 호출] --> C[결과] --> D[완료/실패]
 ```
 
-**Deep Agents (2.0) 워크플로우:**
+<strong>Deep Agents (2.0) 워크플로우:</strong>
 
 ```mermaid
 graph TD
@@ -137,7 +137,7 @@ TypeScript 5.0 심층 분석 다국어 블로그 포스트 완성
 
 복잡한 작업은 <strong>계층 구조를 통해 적합한 전문 에이전트에게 위임</strong>됩니다.
 
-**오케스트레이터 → 클러스터:**
+<strong>오케스트레이터 → 클러스터:</strong>
 
 ```mermaid
 graph LR
@@ -149,7 +149,7 @@ graph LR
     O --> OP[Operations]
 ```
 
-**클러스터 → 에이전트 (예: Content Creation):**
+<strong>클러스터 → 에이전트 (예: Content Creation):</strong>
 
 ```mermaid
 graph LR

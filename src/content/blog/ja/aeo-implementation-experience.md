@@ -62,7 +62,7 @@ relatedPosts:
 
 AEO（Answer Engine Optimization）は、AI検索エンジンやAnswer Engineに最適化されたコンテンツ戦略です。従来のSEOがGoogleなどの検索エンジンでの<strong>ランキング向上</strong>を目指すのに対し、AEOは<strong>AIによる回答生成時の引用元</strong>として選ばれることを目標とします。
 
-**SEOとAEOの主な違い：**
+<strong>SEOとAEOの主な違い：</strong>
 
 | 項目         | SEO                              | AEO                                       |
 | ------------ | -------------------------------- | ----------------------------------------- |
@@ -75,10 +75,10 @@ AEO（Answer Engine Optimization）は、AI検索エンジンやAnswer Engineに
 
 2024年現在、検索環境は急速に変化しています：
 
-- **ChatGPT**：月間アクティブユーザー1.8億人（2024年11月時点）
-- **Perplexity AI**：月間クエリ数3億件超（2024年9月時点）
-- **Google AI Overview**：検索結果の約30%でAI要約表示（2024年データ）
-- **ゼロクリック検索**：Google検索の約60%がクリックなしで終了（2024年SparkToro調査）
+- <strong>ChatGPT</strong>：月間アクティブユーザー1.8億人（2024年11月時点）
+- <strong>Perplexity AI</strong>：月間クエリ数3億件超（2024年9月時点）
+- <strong>Google AI Overview</strong>：検索結果の約30%でAI要約表示（2024年データ）
+- <strong>ゼロクリック検索</strong>：Google検索の約60%がクリックなしで終了（2024年SparkToro調査）
 
 ```mermaid
 graph TD
@@ -101,10 +101,10 @@ graph TD
 
 AI検索エンジンの普及により、<strong>引用されないコンテンツは存在しないも同然</strong>になりつつあります。特にB2B SaaSサービスにとって、AIによる回答生成時の引用元として選ばれることは、以下の理由で極めて重要です：
 
-1. **信頼性の向上**：AIが引用することで、第三者の推薦効果
-2. **トラフィック獲得**：AI回答からのクリックは、従来検索より意図が明確
-3. **ブランド認知**：複数のAIプラットフォームで引用されることで、ブランド露出増加
-4. **購買決定への影響**：B2B購買プロセスの初期段階で認知される機会
+1. <strong>信頼性の向上</strong>：AIが引用することで、第三者の推薦効果
+2. <strong>トラフィック獲得</strong>：AI回答からのクリックは、従来検索より意図が明確
+3. <strong>ブランド認知</strong>：複数のAIプラットフォームで引用されることで、ブランド露出増加
+4. <strong>購買決定への影響</strong>：B2B購買プロセスの初期段階で認知される機会
 
 ## Agent Effi Flowサービス紹介
 
@@ -112,24 +112,24 @@ AI検索エンジンの普及により、<strong>引用されないコンテン�
 
 [Agent Effi Flow](https://agent-effi-flow.jangwook.net)は、AI駆動の業務効率化プラットフォームです。従来は人手で時間がかかっていた業務を、AI技術により自動化・効率化します。
 
-**提供サービス：**
+<strong>提供サービス：</strong>
 
-1. **免税処理OCR**：外国人観光客の免税書類（レシート、パスポート）を自動読み取り
-2. **経理OCR**：請求書、領収書、経費精算書類を自動データ化
-3. **SEOアナライザー**：Webサイトの技術的SEO問題を自動検出
-4. **消費者リサーチ**：AIによる市場調査・ユーザーインサイト分析
+1. <strong>免税処理OCR</strong>：外国人観光客の免税書類（レシート、パスポート）を自動読み取り
+2. <strong>経理OCR</strong>：請求書、領収書、経費精算書類を自動データ化
+3. <strong>SEOアナライザー</strong>：Webサイトの技術的SEO問題を自動検出
+4. <strong>消費者リサーチ</strong>：AIによる市場調査・ユーザーインサイト分析
 
 ### なぜAgent Effi FlowにAEOが必要なのか
 
 B2B SaaSサービスとして、AEOは以下の理由で必須戦略です：
 
-**購買プロセスとの親和性：**
+<strong>購買プロセスとの親和性：</strong>
 
 - B2B購買者の67%が、ベンダーに接触する前にオンラインで自己調査（Gartner調査）
 - 「免税処理OCR おすすめ」「経理自動化ツール 比較」などの検索が増加
 - AIが回答する際に引用されれば、<strong>購買検討リストの初期段階で選ばれる</strong>
 
-**ロングテール戦略：**
+<strong>ロングテール戦略：</strong>
 
 - 「免税処理 効率化 方法」「経理業務 時間削減 ツール」など、具体的な質問に対応
 - 従来SEOでは上位表示困難だったクエリでも、AIが適切な回答として引用可能
@@ -140,7 +140,7 @@ B2B SaaSサービスとして、AEOは以下の理由で必須戦略です：
 
 Agent Effi FlowのFAQページは、AEO最適化の中核として設計しました。
 
-**5カテゴリー構成：**
+<strong>5カテゴリー構成：</strong>
 
 ```mermaid
 graph TD
@@ -169,13 +169,13 @@ graph TD
     style F fill:#ffe4e1
 ```
 
-**実装の特徴：**
+<strong>実装の特徴：</strong>
 
-1. **FAQPage Schema実装**：すべての質問と回答にJSON-LD構造化データを付与
-2. **アコーディオンUI**：Svelte 5の`$state()`を活用した状態管理
-3. **AEO最適化サマリーボックス**：各カテゴリーの冒頭に要約を配置
+1. <strong>FAQPage Schema実装</strong>：すべての質問と回答にJSON-LD構造化データを付与
+2. <strong>アコーディオンUI</strong>：Svelte 5の`$state()`を活用した状態管理
+3. <strong>AEO最適化サマリーボックス</strong>：各カテゴリーの冒頭に要約を配置
 
-**アコーディオンUI実装例（Svelte 5）：**
+<strong>アコーディオンUI実装例（Svelte 5）：</strong>
 
 ```svelte
 <script lang="ts">
@@ -251,9 +251,9 @@ graph TD
 
 #### 免税処理OCR使用事例（/use-cases/receipt-ocr-tax-refund）
 
-**3つの顧客セグメント：**
+<strong>3つの顧客セグメント：</strong>
 
-1. **免税処理代行事業者**
+1. <strong>免税処理代行事業者</strong>
    - <strong>課題</strong>：1日500〜1,000件の免税書類を手作業で入力
    - <strong>導入効果</strong>：年間540万円のコスト削減
    - <strong>計算根拠</strong>：
@@ -266,31 +266,31 @@ graph TD
      実質削減額（API費用控除後）：540万円/年
      ```
 
-2. **空港・商業施設の免税カウンター**
+2. <strong>空港・商業施設の免税カウンター</strong>
    - <strong>課題</strong>：ピーク時の顧客待ち時間が30分以上
    - <strong>導入効果</strong>：待ち時間75%短縮（30分→7.5分）
    - <strong>顧客満足度</strong>：4.2 → 4.8（5段階評価）
 
-3. **多店舗展開の免税店**
+3. <strong>多店舗展開の免税店</strong>
    - <strong>課題</strong>：新人スタッフの免税処理トレーニングに1週間必要
    - <strong>導入効果</strong>：教育コスト80%削減（1週間→1日）
    - <strong>オペレーション改善</strong>：店舗間の処理品質の標準化
 
 #### 経理OCR使用事例（/use-cases/accounting-ocr）
 
-**3つの顧客セグメント：**
+<strong>3つの顧客セグメント：</strong>
 
-1. **中小企業の経理担当者**
+1. <strong>中小企業の経理担当者</strong>
    - <strong>課題</strong>：月間300件の請求書・領収書を手入力
    - <strong>導入効果</strong>：処理時間90%削減（75時間→7.5時間/月）
    - <strong>ROI</strong>：導入3ヶ月で初期投資回収
 
-2. **会計事務所・税理士事務所**
+2. <strong>会計事務所・税理士事務所</strong>
    - <strong>課題</strong>：顧問先20社の月次決算資料作成に1週間
    - <strong>導入効果</strong>：月次決算50%高速化（7日→3.5日）
    - <strong>ビジネス拡大</strong>：空いた時間で5社の新規顧客獲得
 
-3. **経費精算システム開発会社**
+3. <strong>経費精算システム開発会社</strong>
    - <strong>課題</strong>：OCR機能の自社開発に1,500万円と6ヶ月必要
    - <strong>導入効果</strong>：開発コスト83%削減（1,500万円→250万円）
    - <strong>市場投入期間</strong>：6ヶ月→1ヶ月に短縮
@@ -440,7 +440,7 @@ export function generateBreadcrumbSchema(path: string) {
 
 AI検索エンジンは、明確な構造を持つコンテンツを好みます。Agent Effi Flowでは、すべての主要コンテンツにPREP構造を適用しました。
 
-**PREP構造の例（免税処理OCR）：**
+<strong>PREP構造の例（免税処理OCR）：</strong>
 
 ```
 【ポイント】
@@ -463,7 +463,7 @@ AI-OCRにより、1枚あたり2〜5分の手入力が約30秒に短縮されま
 大幅に向上させることができます。
 ```
 
-**PREP構造のAEO効果：**
+<strong>PREP構造のAEO効果：</strong>
 
 ```mermaid
 graph TD
@@ -490,7 +490,7 @@ graph TD
 
 ユーザーの自然な検索クエリに対応するため、すべてのFAQとサブヘッダーを質問形式で構成しました。
 
-**質問形式の例：**
+<strong>質問形式の例：</strong>
 
 - 「免税処理OCRとは何ですか？」
 - 「なぜ免税処理の自動化が必要なのか？」
@@ -498,11 +498,11 @@ graph TD
 - 「経理OCRは既存システムと連携できますか？」
 - 「どのように導入を始めればよいですか？」
 
-**質問形式のメリット：**
+<strong>質問形式のメリット：</strong>
 
-1. **音声検索対応**：「OK Google、免税処理OCRとは？」に直接回答
-2. **AI回答の引用**：ChatGPTが「免税処理OCRは〜」と引用しやすい
-3. **ユーザー意図の明確化**：検索意図と回答の一致度が高い
+1. <strong>音声検索対応</strong>：「OK Google、免税処理OCRとは？」に直接回答
+2. <strong>AI回答の引用</strong>：ChatGPTが「免税処理OCRは〜」と引用しやすい
+3. <strong>ユーザー意図の明確化</strong>：検索意図と回答の一致度が高い
 
 ### E-E-A-T要素強化
 
@@ -510,7 +510,7 @@ Googleが重視するE-E-A-T（Experience, Expertise, Authoritativeness, Trustwo
 
 #### 経験（Experience）
 
-**実際の導入効果を数値で示す：**
+<strong>実際の導入効果を数値で示す：</strong>
 
 - 「年間540万円のコスト削減」（免税処理代行事業者）
 - 「待ち時間75%短縮」（空港免税カウンター）
@@ -518,7 +518,7 @@ Googleが重視するE-E-A-T（Experience, Expertise, Authoritativeness, Trustwo
 
 #### 専門性（Expertise）
 
-**業界統計と具体的な数値：**
+<strong>業界統計と具体的な数値：</strong>
 
 - 日本商工会議所「免税店数の推移」（2019年：5万店舗 → 2024年：5.6万店舗）
 - Sansan調査「経理部門の業務時間分析」（書類入力：月間50〜80時間）
@@ -526,7 +526,7 @@ Googleが重視するE-E-A-T（Experience, Expertise, Authoritativeness, Trustwo
 
 #### 権威性（Authoritativeness）
 
-**出典の明記：**
+<strong>出典の明記：</strong>
 
 ```markdown
 > 日本の免税店舗数は2024年時点で約5.6万店舗に達し、
@@ -536,7 +536,7 @@ Googleが重視するE-E-A-T（Experience, Expertise, Authoritativeness, Trustwo
 
 #### 信頼性（Trustworthiness）
 
-**透明性の確保：**
+<strong>透明性の確保：</strong>
 
 - 料金プランの明示（会員登録時50無料クレジット、プロプラン月額2.5万円〜）
 - 導入手順の詳細説明（5ステップ）
@@ -675,12 +675,12 @@ Svelte 5の新しいリアクティブシステム`$state()`を活用するこ�
 </script>
 ```
 
-**$state()の利点：**
+<strong>$state()の利点：</strong>
 
-1. **自動トラッキング**：値の変更を自動検知
-2. **型推論**：TypeScriptとの統合が改善
-3. **パフォーマンス**：不要な再レンダリングを削減
-4. **シンプルさ**：`$:`ラベルや`writable()`不要
+1. <strong>自動トラッキング</strong>：値の変更を自動検知
+2. <strong>型推論</strong>：TypeScriptとの統合が改善
+3. <strong>パフォーマンス</strong>：不要な再レンダリングを削減
+4. <strong>シンプルさ</strong>：`$:`ラベルや`writable()`不要
 
 ### JSON-LD実装例
 
@@ -818,13 +818,13 @@ Agent Effi Flowの初期実装では、<strong>架空のTestimonial（お客様�
 
 ### 法的リスク
 
-**日本の景品表示法違反の可能性：**
+<strong>日本の景品表示法違反の可能性：</strong>
 
-- **優良誤認表示**：実際の顧客が存在しない場合、虚偽の効果をうたったとみなされる
-- **有利誤認表示**：架空の事例で競合より優れているとアピールする行為
-- **罰則**：措置命令、課徴金（最大売上の3%）、ブランドイメージの毀損
+- <strong>優良誤認表示</strong>：実際の顧客が存在しない場合、虚偽の効果をうたったとみなされる
+- <strong>有利誤認表示</strong>：架空の事例で競合より優れているとアピールする行為
+- <strong>罰則</strong>：措置命令、課徴金（最大売上の3%）、ブランドイメージの毀損
 
-**事例：**
+<strong>事例：</strong>
 
 ```
 ❌ 削除した架空のTestimonial：
@@ -841,13 +841,13 @@ Agent Effi Flowの初期実装では、<strong>架空のTestimonial（お客様�
 
 Googleおよびai検索エンジンは、<strong>検証可能な情報</strong>を重視します。架空のTestimonialは：
 
-1. **経験（Experience）の欠如**：実際の使用経験に基づいていない
-2. **信頼性（Trustworthiness）の損失**：虚偽と判明した場合、サイト全体の信頼性が低下
-3. **権威性（Authoritativeness）の欠如**：出典や連絡先が提供できない
+1. <strong>経験（Experience）の欠如</strong>：実際の使用経験に基づいていない
+2. <strong>信頼性（Trustworthiness）の損失</strong>：虚偽と判明した場合、サイト全体の信頼性が低下
+3. <strong>権威性（Authoritativeness）の欠如</strong>：出典や連絡先が提供できない
 
 ### 正しいアプローチ
 
-**「想定値」として明記：**
+<strong>「想定値」として明記：</strong>
 
 ```markdown
 ## 想定される導入効果
@@ -863,12 +863,12 @@ Googleおよびai検索エンジンは、<strong>検証可能な情報</strong>�
 - **想定削減コスト**: 年間540万円
 ```
 
-**実際の顧客フィードバック収集計画：**
+<strong>実際の顧客フィードバック収集計画：</strong>
 
-1. **ベータテスター募集**：無料トライアルの代わりに長期利用権提供
-2. **NDA締結**：匿名でのフィードバック公開許可
-3. **第三者検証**：会計事務所による効果測定
-4. **ケーススタディ作成**：実名での事例公開（許可を得た顧客のみ）
+1. <strong>ベータテスター募集</strong>：無料トライアルの代わりに長期利用権提供
+2. <strong>NDA締結</strong>：匿名でのフィードバック公開許可
+3. <strong>第三者検証</strong>：会計事務所による効果測定
+4. <strong>ケーススタディ作成</strong>：実名での事例公開（許可を得た顧客のみ）
 
 ## 今後の計画
 
@@ -876,7 +876,7 @@ Agent Effi FlowのAEO戦略は、継続的な改善が必要です。以下の�
 
 ### サイトマップ更新
 
-**XML Sitemap生成：**
+<strong>XML Sitemap生成：</strong>
 
 ```typescript
 // src/routes/sitemap.xml/+server.ts
@@ -923,7 +923,7 @@ export const GET: RequestHandler = async () => {
 
 ### OG画像作成
 
-**Vercel OG Image Generation活用：**
+<strong>Vercel OG Image Generation活用：</strong>
 
 ```typescript
 // src/routes/og/+server.ts
@@ -976,7 +976,7 @@ export const GET: RequestHandler = async ({ url }) => {
 
 ### Google Search Consoleでの構造化データ検証
 
-**検証手順：**
+<strong>検証手順：</strong>
 
 ```mermaid
 graph TD
@@ -996,38 +996,38 @@ graph TD
     style H fill:#f0fff0
 ```
 
-**確認項目：**
+<strong>確認項目：</strong>
 
-1. **FAQPage Schema**：質問と回答が正しく認識されているか
-2. **HowTo Schema**：ステップが正しく表示されるか
-3. **BreadcrumbList Schema**：パンくずリストがリッチリザルトに表示されるか
-4. **Article Schema**：記事情報が正しく抽出されているか
+1. <strong>FAQPage Schema</strong>：質問と回答が正しく認識されているか
+2. <strong>HowTo Schema</strong>：ステップが正しく表示されるか
+3. <strong>BreadcrumbList Schema</strong>：パンくずリストがリッチリザルトに表示されるか
+4. <strong>Article Schema</strong>：記事情報が正しく抽出されているか
 
 ### 追加サービスの使用事例追加
 
-**SEO Analyzerの使用事例（計画中）：**
+<strong>SEO Analyzerの使用事例（計画中）：</strong>
 
-1. **ECサイト運営者**
+1. <strong>ECサイト運営者</strong>
    - 課題：技術的SEO問題の特定に専門知識が必要
    - 導入効果：自動診断により、外部コンサルタント費用60%削減
 
-2. **Webマーケティング代理店**
+2. <strong>Webマーケティング代理店</strong>
    - 課題：顧客サイトのSEO監査に1サイトあたり5時間
    - 導入効果：監査時間80%短縮、より多くの顧客対応が可能に
 
-**Consumer Researchの使用事例（計画中）：**
+<strong>Consumer Researchの使用事例（計画中）：</strong>
 
-1. **スタートアップ企業**
+1. <strong>スタートアップ企業</strong>
    - 課題：限られた予算で市場調査を実施したい
    - 導入効果：従来の調査会社費用（50万円〜）と比べ、90%削減
 
-2. **プロダクトマネージャー**
+2. <strong>プロダクトマネージャー</strong>
    - 課題：ユーザーインサイトの収集に時間とコストがかかる
    - 導入効果：24時間以内に調査結果取得、意思決定スピード向上
 
 ### 実際の顧客フィードバック収集
 
-**段階的なTestimonial収集プロセス：**
+<strong>段階的なTestimonial収集プロセス：</strong>
 
 ```mermaid
 graph TD
@@ -1048,19 +1048,19 @@ graph TD
     style H fill:#fffacd
 ```
 
-**フィードバック項目：**
+<strong>フィードバック項目：</strong>
 
-1. **定量的データ**
+1. <strong>定量的データ</strong>
    - 処理時間の削減率（測定可能な数値）
    - コスト削減額（実際の金額）
    - エラー率の変化（導入前後の比較）
 
-2. **定性的データ**
+2. <strong>定性的データ</strong>
    - ユーザビリティの評価
    - サポート対応の満足度
    - 改善要望
 
-3. **ビジネスインパクト**
+3. <strong>ビジネスインパクト</strong>
    - ROIの達成期間
    - 業務プロセスの変化
    - 新規ビジネス機会の創出
@@ -1101,18 +1101,18 @@ graph LR
 
 本記事で紹介した戦略を実装した結果、Agent Effi Flowは以下を達成しました：
 
-1. **構造化データの完全実装**：4種類のJSON-LD Schema（FAQPage, HowTo, Article, BreadcrumbList）
-2. **コンテンツの最適化**：すべての主要ページにPREP構造と質問形式を適用
-3. **E-E-A-Tの強化**：実データ、業界統計、出典明記、透明性の確保
-4. **技術的基盤の確立**：Svelte 5とSvelteKitによる保守性の高い実装
+1. <strong>構造化データの完全実装</strong>：4種類のJSON-LD Schema（FAQPage, HowTo, Article, BreadcrumbList）
+2. <strong>コンテンツの最適化</strong>：すべての主要ページにPREP構造と質問形式を適用
+3. <strong>E-E-A-Tの強化</strong>：実データ、業界統計、出典明記、透明性の確保
+4. <strong>技術的基盤の確立</strong>：Svelte 5とSvelteKitによる保守性の高い実装
 
 ### 実際のサイトで確認
 
 本記事で紹介したすべてのAEO施策は、実際のAgent Effi Flowサイトで確認できます：
 
-- **FAQページ**：https://agent-effi-flow.jangwook.net/faq
-- **免税処理OCR使用事例**：https://agent-effi-flow.jangwook.net/use-cases/receipt-ocr-tax-refund
-- **経理OCR使用事例**：https://agent-effi-flow.jangwook.net/use-cases/accounting-ocr
+- <strong>FAQページ</strong>：https://agent-effi-flow.jangwook.net/faq
+- <strong>免税処理OCR使用事例</strong>：https://agent-effi-flow.jangwook.net/use-cases/receipt-ocr-tax-refund
+- <strong>経理OCR使用事例</strong>：https://agent-effi-flow.jangwook.net/use-cases/accounting-ocr
 
 ### 最後に
 

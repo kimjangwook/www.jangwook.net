@@ -232,26 +232,26 @@ async def run_infrastructure_audit():
 
 <strong>安全漏洞（严重）</strong>
 
-1. **环境变量中暴露的 API 密钥**
+1. <strong>环境变量中暴露的 API 密钥</strong>
    - 位置：多个 Cloud Run/Functions 服务
    - 风险：凭证被盗可能导致服务滥用
    - 操作：立即迁移到 Secret Manager
 
-2. **RDP 端口完全开放**
+2. <strong>RDP 端口完全开放</strong>
    - 位置：default VPC 防火墙规则
    - 风险：暴露于暴力破解攻击
    - 操作：限制到特定 IP 范围
 
-3. **已停止支持的操作系统**
+3. <strong>已停止支持的操作系统</strong>
    - 位置：cdp-sftp-prod 虚拟机（CentOS 7）
    - 风险：没有安全补丁
    - 操作：迁移到 Rocky Linux 或 Ubuntu LTS
 
 <strong>成本优化机会</strong>
 
-1. **停止的 MySQL 实例**：只产生存储费用
-2. **80+ 个 App Engine 版本**：未使用的版本需要清理
-3. **空的 BigQuery 数据集**：10 个数据集可以删除
+1. <strong>停止的 MySQL 实例</strong>：只产生存储费用
+2. <strong>80+ 个 App Engine 版本</strong>：未使用的版本需要清理
+3. <strong>空的 BigQuery 数据集</strong>：10 个数据集可以删除
 
 ### 自动生成的 Mermaid 图表
 
@@ -370,9 +370,9 @@ gcloud compute firewall-rules create allow-rdp-office \
 
 ### 下一步
 
-1. **安装 gcloud MCP**：从 [GitHub 仓库](https://github.com/anthropics/gcloud-mcp) 开始
-2. **自定义分析代理**：根据您组织的安全策略和合规要求进行调整
-3. **设置定期扫描**：使用 Cloud Scheduler 配置每周/每月自动审计
-4. **集成通知**：连接 Slack、Email、PagerDuty 以便即时响应
+1. <strong>安装 gcloud MCP</strong>：从 [GitHub 仓库](https://github.com/anthropics/gcloud-mcp) 开始
+2. <strong>自定义分析代理</strong>：根据您组织的安全策略和合规要求进行调整
+3. <strong>设置定期扫描</strong>：使用 Cloud Scheduler 配置每周/每月自动审计
+4. <strong>集成通知</strong>：连接 Slack、Email、PagerDuty 以便即时响应
 
 用 AI 代理开启云基础设施管理的新范式。

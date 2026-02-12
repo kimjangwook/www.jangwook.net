@@ -62,7 +62,7 @@ relatedPosts:
 
 웹 성능 최적화는 항상 중요했지만, 일관성 있게 측정하고 개선하기는 어려웠습니다. Chrome DevTools를 수동으로 열어 프로파일링하고, 스크린샷을 찍고, 지표를 비교하는 작업은 시간이 많이 걸리고 반복적입니다. 더 큰 문제는 AI 코드 제너레이터들이 실제 브라우저에서 어떻게 동작하는지 확인할 수 없다는 점이었습니다.
 
-2025년 9월 22일, Google Chrome DevTools 팀은 이 문제를 해결할 **Chrome DevTools MCP**를 공개했습니다. 이제 Claude, Cursor, Copilot 같은 AI 어시스턴트가 실제 Chrome 브라우저를 직접 제어하고, 성능을 측정하며, 데이터 기반으로 최적화를 검증할 수 있습니다.
+2025년 9월 22일, Google Chrome DevTools 팀은 이 문제를 해결할 <strong>Chrome DevTools MCP</strong>를 공개했습니다. 이제 Claude, Cursor, Copilot 같은 AI 어시스턴트가 실제 Chrome 브라우저를 직접 제어하고, 성능을 측정하며, 데이터 기반으로 최적화를 검증할 수 있습니다.
 
 ## Chrome DevTools MCP란?
 
@@ -70,11 +70,11 @@ Chrome DevTools MCP는 AI 코딩 어시스턴트에게 Chrome 브라우저를 �
 
 ### 핵심 기능
 
-- **실시간 성능 측정**: Core Web Vitals (LCP, CLS, INP) 자동 측정
-- **네트워크 모니터링**: 모든 HTTP 요청의 타이밍, 헤더, 페이로드 분석
-- **디바이스 에뮬레이션**: CPU 스로틀링, 네트워크 제한으로 모바일 환경 시뮬레이션
-- **자동화된 디버깅**: 콘솔 메시지, 에러 로그 수집 및 분석
-- **성능 인사이트**: 렌더 블로킹 리소스, 긴 작업, 레이아웃 시프트 자동 식별
+- <strong>실시간 성능 측정</strong>: Core Web Vitals (LCP, CLS, INP) 자동 측정
+- <strong>네트워크 모니터링</strong>: 모든 HTTP 요청의 타이밍, 헤더, 페이로드 분석
+- <strong>디바이스 에뮬레이션</strong>: CPU 스로틀링, 네트워크 제한으로 모바일 환경 시뮬레이션
+- <strong>자동화된 디버깅</strong>: 콘솔 메시지, 에러 로그 수집 및 분석
+- <strong>성능 인사이트</strong>: 렌더 블로킹 리소스, 긴 작업, 레이아웃 시프트 자동 식별
 
 ### 작동 원리
 
@@ -158,11 +158,11 @@ performance_start_trace(reload=true, autoStop=true)
 
 추적을 중지하고 포괄적인 성능 인사이트를 반환합니다:
 
-- **Core Web Vitals**: LCP, CLS, INP, TBT, TTFB
-- **가장 긴 메인 스레드 태스크**
-- **렌더 블로킹 리소스**
-- **JavaScript 실행 타이밍**
-- **네트워크 워터폴 분석**
+- <strong>Core Web Vitals</strong>: LCP, CLS, INP, TBT, TTFB
+- <strong>가장 긴 메인 스레드 태스크</strong>
+- <strong>렌더 블로킹 리소스</strong>
+- <strong>JavaScript 실행 타이밍</strong>
+- <strong>네트워크 워터폴 분석</strong>
 
 **`performance_analyze_insight(insightName)`**
 
@@ -182,17 +182,17 @@ performance_analyze_insight("RenderBlocking")
 
 Chrome DevTools MCP는 모든 Core Web Vitals를 자동으로 측정합니다:
 
-- **LCP (Largest Contentful Paint)**: 2.5초 이하 = Good
-- **CLS (Cumulative Layout Shift)**: 0.1 이하 = Good
-- **INP (Interaction to Next Paint)**: 200ms 이하 = Good
-- **TBT (Total Blocking Time)**: 300ms 이하 = Good
-- **TTFB (Time to First Byte)**: 600ms 이하 = Good
+- <strong>LCP (Largest Contentful Paint)</strong>: 2.5초 이하 = Good
+- <strong>CLS (Cumulative Layout Shift)</strong>: 0.1 이하 = Good
+- <strong>INP (Interaction to Next Paint)</strong>: 200ms 이하 = Good
+- <strong>TBT (Total Blocking Time)</strong>: 300ms 이하 = Good
+- <strong>TTFB (Time to First Byte)</strong>: 600ms 이하 = Good
 
 AI는 이 지표들을 분석하고 어떤 것이 임계값을 초과하는지 즉시 알려줍니다.
 
 ### 3. 디바이스 에뮬레이션
 
-**CPU 스로틀링**
+<strong>CPU 스로틀링</strong>
 
 ```typescript
 // 4배 느린 CPU 시뮬레이션 (저사양 모바일)
@@ -202,7 +202,7 @@ emulate_cpu(4)
 performance_start_trace(reload=true)
 ```
 
-**네트워크 스로틀링**
+<strong>네트워크 스로틀링</strong>
 
 ```typescript
 // Slow 4G 네트워크 시뮬레이션
@@ -213,7 +213,7 @@ emulate_network("Slow 4G")
 
 ### 4. 네트워크 요청 모니터링
 
-**모든 요청 조회**
+<strong>모든 요청 조회</strong>
 
 ```typescript
 list_network_requests(
@@ -228,7 +228,7 @@ list_network_requests(
 // - 파일 크기 및 압축 여부
 ```
 
-**특정 요청 상세 조회**
+<strong>특정 요청 상세 조회</strong>
 
 ```typescript
 get_network_request("https://example.com/main.js")
@@ -459,10 +459,10 @@ AI 응답:
 
 ### 보안 고려사항
 
-- **격리된 세션 사용**: `--isolated=true` 옵션으로 임시 브라우저 세션 사용
-- **민감한 데이터 주의**: 개인정보가 있는 브라우저 프로필에서 사용 금지
-- **프로덕션 테스트**: 접근 제어 구현, 읽기 전용 모드 권장
-- **AI 생성 스크립트 검토**: 실행 전 항상 확인
+- <strong>격리된 세션 사용</strong>: `--isolated=true` 옵션으로 임시 브라우저 세션 사용
+- <strong>민감한 데이터 주의</strong>: 개인정보가 있는 브라우저 프로필에서 사용 금지
+- <strong>프로덕션 테스트</strong>: 접근 제어 구현, 읽기 전용 모드 권장
+- <strong>AI 생성 스크립트 검토</strong>: 실행 전 항상 확인
 
 ### 다른 MCP와 결합
 
@@ -504,7 +504,7 @@ Chrome DevTools MCP는 다른 MCP 서버와 함께 사용하면 더욱 강력합
   - LCP: 3.8초 → 1.9초 (50% 개선)
   - Lighthouse Score: 62 → 94
 
-**시간 절감: 75%**
+<strong>시간 절감: 75%</strong>
 
 ## 미래 전망
 
@@ -517,10 +517,10 @@ Chrome DevTools MCP는 웹 개발 워크플로우를 근본적으로 변화시�
 
 ### 예측 가능한 발전 방향
 
-1. **예측적 최적화**: AI가 성능 저하를 사전에 예측하고 방지
-2. **자동 수정**: 간단한 성능 문제는 AI가 직접 수정 (승인 후)
-3. **연속적 모니터링**: 프로덕션 환경에서 실시간 성능 추적
-4. **성능 예산 자동화**: 임계값 설정하면 CI/CD에서 자동 검증
+1. <strong>예측적 최적화</strong>: AI가 성능 저하를 사전에 예측하고 방지
+2. <strong>자동 수정</strong>: 간단한 성능 문제는 AI가 직접 수정 (승인 후)
+3. <strong>연속적 모니터링</strong>: 프로덕션 환경에서 실시간 성능 추적
+4. <strong>성능 예산 자동화</strong>: 임계값 설정하면 CI/CD에서 자동 검증
 
 ## 시작해보세요
 
@@ -528,11 +528,11 @@ Chrome DevTools MCP는 웹 성능 최적화를 추측에서 데이터 기반 과
 
 ### 첫 단계
 
-1. **설치**: `npx chrome-devtools-mcp@latest`
-2. **Claude Desktop 설정**: MCP 서버 추가
-3. **첫 측정**: "내 사이트 성능 측정해줘"
-4. **최적화 시작**: AI의 제안을 하나씩 적용
-5. **결과 검증**: 개선 사항을 데이터로 확인
+1. <strong>설치</strong>: `npx chrome-devtools-mcp@latest`
+2. <strong>Claude Desktop 설정</strong>: MCP 서버 추가
+3. <strong>첫 측정</strong>: "내 사이트 성능 측정해줘"
+4. <strong>최적화 시작</strong>: AI의 제안을 하나씩 적용
+5. <strong>결과 검증</strong>: 개선 사항을 데이터로 확인
 
 성능 최적화는 더 이상 시간이 많이 걸리는 수동 작업이 아닙니다. AI와 함께라면 빠르고, 정확하며, 반복 가능한 프로세스가 됩니다.
 

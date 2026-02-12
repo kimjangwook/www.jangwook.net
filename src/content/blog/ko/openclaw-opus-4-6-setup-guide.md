@@ -54,11 +54,11 @@ relatedPosts:
 
 ## 왜 「긴급」인가
 
-2026년 2월 5일, Anthropic이 Claude Opus 4.6을 출시했습니다. **100만 토큰 컨텍스트**, **128K 토큰 출력**, 강화된 계획 능력과 자기 수정 능력.
+2026년 2월 5일, Anthropic이 Claude Opus 4.6을 출시했습니다. <strong>100만 토큰 컨텍스트</strong>, <strong>128K 토큰 출력</strong>, 강화된 계획 능력과 자기 수정 능력.
 
 OpenClaw 사용자라면 지금 바로 설정해서 쓰고 싶을 겁니다.
 
-이 글에서는 **설정 파일을 그대로 복붙해서 바로 실행할 수 있는** 최단 경로를 소개합니다.
+이 글에서는 <strong>설정 파일을 그대로 복붙해서 바로 실행할 수 있는</strong> 최단 경로를 소개합니다.
 
 ## 사전 조건
 
@@ -95,8 +95,8 @@ OpenClaw 사용자라면 지금 바로 설정해서 쓰고 싶을 겁니다.
 }
 ```
 
-**포인트**:
-- `mode: "merge"` — OpenClaw 내장 모델 카탈로그에 **추가**하는 방식 (덮어쓰기 아님)
+<strong>포인트</strong>:
+- `mode: "merge"` — OpenClaw 내장 모델 카탈로그에 <strong>추가</strong>하는 방식 (덮어쓰기 아님)
 - `reasoning: true` — Opus 4.6의 추론 모드 활성화
 - `contextWindow: 1000000` — 100만 토큰 풀 컨텍스트
 - `maxTokens: 128000` — 128K 토큰 롱 출력
@@ -117,14 +117,14 @@ OpenClaw 사용자라면 지금 바로 설정해서 쓰고 싶을 겁니다.
 }
 ```
 
-**포인트**:
+<strong>포인트</strong>:
 - `primary` — 모든 세션에서 Opus 4.6을 기본 사용
 - `fallbacks` — Opus 4.6 사용 불가 시 Opus 4.5로 폴백
 - `contextTokens: 1000000` — 에이전트가 100만 토큰 컨텍스트를 풀 활용
 
 ## 설정 적용
 
-설정을 저장한 후, **2단계**가 필요합니다.
+설정을 저장한 후, <strong>2단계</strong>가 필요합니다.
 
 ### Step 1: Gateway 재시작
 
@@ -142,7 +142,7 @@ openclaw gateway restart
 /new
 ```
 
-`/reset`도 가능합니다. **새 세션을 시작하지 않으면 새 모델이 적용되지 않습니다.**
+`/reset`도 가능합니다. <strong>새 세션을 시작하지 않으면 새 모델이 적용되지 않습니다.</strong>
 
 ## 설정 확인
 

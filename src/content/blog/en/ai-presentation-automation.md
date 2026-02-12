@@ -58,7 +58,7 @@ relatedPosts:
 
 As a team leader, I'm required to present semi-annual performance reports to the entire company twice a year. This means synthesizing everything—release history, R&D achievements, roadmap vs. actual delivery, team communication status—into a PowerPoint presentation and delivering it effectively.
 
-**The traditional process consumed over 60 hours**:
+<strong>The traditional process consumed over 60 hours</strong>:
 - Release analysis: 4-5 hours
 - R&D documentation: 20-30 hours
 - Roadmap review: 4-5 hours
@@ -68,7 +68,7 @@ As a team leader, I'm required to present semi-annual performance reports to the
 - Review and improvements: 6-11 hours
 - Presentation practice: 5-10 hours
 
-However, after implementing AI and automation tools, **we've reduced this to approximately 10 hours**. This article shares the practical process of achieving this transformative change.
+However, after implementing AI and automation tools, <strong>we've reduced this to approximately 10 hours</strong>. This article shares the practical process of achieving this transformative change.
 
 ## Benefits Achieved
 
@@ -94,7 +94,7 @@ Let's first examine the inefficient traditional process in detail.
 Manually extracting deployed features by digging through Git history and release notes. When commit messages are unclear or release notes insufficient, we had to open the code directly to verify.
 
 ### 2. R&D Documentation (20-30 hours)
-Organizing research and development activities (new technology evaluation, POCs, performance optimization, etc.) conducted within the team. This meant finding and integrating Notion documents written by each engineer, Slack conversations, and code comments. **The most time-consuming step**.
+Organizing research and development activities (new technology evaluation, POCs, performance optimization, etc.) conducted within the team. This meant finding and integrating Notion documents written by each engineer, Slack conversations, and code comments. <strong>The most time-consuming step</strong>.
 
 ### 3. Development Roadmap Review (4-5 hours)
 Comparing the development plan established at year-start with actual achievements. Gap analysis is key: "Why was Feature A completed but Feature B delayed?"
@@ -106,7 +106,7 @@ Reading through weekly team meetings, bi-weekly business-side meetings, etc., to
 Organizing how our team's achievements align with company-wide goals. Referencing CEO presentation materials and departmental OKR documents.
 
 ### 6. PPT Creation (20-30 hours)
-Building stories from all collected materials, designing slides, and creating graphs and tables. **The second most time-consuming step**.
+Building stories from all collected materials, designing slides, and creating graphs and tables. <strong>The second most time-consuming step</strong>.
 
 ### 7. Review and Improvements (6-11 hours)
 Getting feedback from colleagues or supervisors and incorporating changes. Typically requires 2-3 iterations.
@@ -121,7 +121,7 @@ Before full-scale automation, we first introduced AI and productivity tools into
 ### 1. Automated Meeting Notes with Notion AI
 Leveraging [Notion AI's meeting notes feature](https://www.notion.so/help/guides/using-notions-meeting-notes-feature) to convert voice to text in real-time during meetings and generate summaries.
 
-**Benefits**:
+<strong>Benefits</strong>:
 - Zero time spent on post-meeting note writing
 - No missing meeting content
 - Structured, searchable data for future reference
@@ -129,13 +129,13 @@ Leveraging [Notion AI's meeting notes feature](https://www.notion.so/help/guides
 ### 2. Automated Documentation with Notion API MCP
 Using [Notion API MCP (Model Context Protocol)](https://modelcontextprotocol.io/introduction) to automatically extract documentation from the codebase and organize it in Notion.
 
-**Automated Items**:
+<strong>Automated Items</strong>:
 - Development progress status
 - Problems encountered and solutions
 - Technical research findings
 - Specifications and API documentation
 
-**Implementation Example**:
+<strong>Implementation Example</strong>:
 ```typescript
 // Automatically convert code comments to Notion pages via Notion API MCP
 // Code with specific tags automatically becomes documentation
@@ -156,7 +156,7 @@ export class CacheService {
 ### 3. AI Code Review and Infrastructure Troubleshooting
 Actively using various AI tools like Claude Code, ChatGPT, and Gemini for code review and infrastructure problem-solving.
 
-**Benefits**:
+<strong>Benefits</strong>:
 - Reduced code review time
 - Faster error log analysis
 - Quick resolution of infrastructure configuration issues
@@ -202,14 +202,14 @@ graph TB
 
 ### 1. Release Manager Agent
 
-**Role**: Analyze Git history and release notes to automatically compile all deployment records for the half-year period
+<strong>Role</strong>: Analyze Git history and release notes to automatically compile all deployment records for the half-year period
 
-**Input Data**:
+<strong>Input Data</strong>:
 - Git commit history (specific date range)
 - GitHub/GitLab Release Notes
 - JIRA/Linear ticket information
 
-**Output Format**:
+<strong>Output Format</strong>:
 ```markdown
 # Release Summary (2024-04 ~ 2024-09)
 
@@ -232,20 +232,20 @@ graph TB
 - Bug fixes: 47
 ```
 
-**Implementation Tip**:
+<strong>Implementation Tip</strong>:
 Use Claude Code's MCP to directly access Git API, or periodically collect release data via GitHub Actions and store in Notion.
 
 ### 2. R&D Configuration Agent
 
-**Role**: Automatically categorize and summarize research and development materials created in Notion
+<strong>Role</strong>: Automatically categorize and summarize research and development materials created in Notion
 
-**Input Data**:
+<strong>Input Data</strong>:
 - Notion pages (filtered from specific databases)
 - Technical research documents
 - POC result reports
 - Performance measurement data
 
-**Output Format**:
+<strong>Output Format</strong>:
 ```markdown
 # Research & Development Activity Summary
 
@@ -269,19 +269,19 @@ Use Claude Code's MCP to directly access Git API, or periodically collect releas
 - Actually implemented: 3
 ```
 
-**Implementation Tip**:
+<strong>Implementation Tip</strong>:
 Filter pages for specific periods via Notion API, and have AI summarize core content of each page. Auto-categorize using tags or properties.
 
 ### 3. Product Manager Agent
 
-**Role**: Analyze actual achievement vs. roadmap and identify gaps between goals and reality
+<strong>Role</strong>: Analyze actual achievement vs. roadmap and identify gaps between goals and reality
 
-**Input Data**:
+<strong>Input Data</strong>:
 - Year-start product roadmap (Excel/Notion/JIRA)
 - Release Manager's release data
 - R&D Agent's research and development data
 
-**Output Format**:
+<strong>Output Format</strong>:
 ```markdown
 # Roadmap Achievement Analysis
 
@@ -305,19 +305,19 @@ Filter pages for specific periods via Notion API, and have AI summarize core con
 Additional work caused 1-month delay in multi-language support.
 ```
 
-**Implementation Tip**:
+<strong>Implementation Tip</strong>:
 Product Manager Agent receives output from Release Manager and R&D Agent as input, comparing with roadmap Excel. Use Claude's structured output to generate gap analysis results in JSON format.
 
 ### 4. Team Manager Agent
 
-**Role**: Analyze AI meeting notes to organize task progress and company goal alignment
+<strong>Role</strong>: Analyze AI meeting notes to organize task progress and company goal alignment
 
-**Input Data**:
+<strong>Input Data</strong>:
 - Notion AI meeting notes (all meetings during half-year)
 - Company-wide OKR documents
 - Departmental goal documents
 
-**Output Format**:
+<strong>Output Format</strong>:
 ```markdown
 # Team Communication and Goal Alignment
 
@@ -342,7 +342,7 @@ Product Manager Agent receives output from Release Manager and R&D Agent as inpu
   - CI/CD improvements doubled deployment frequency
 ```
 
-**Implementation Tip**:
+<strong>Implementation Tip</strong>:
 Since Notion AI meeting notes are already structured, write simple scripts to extract specific keywords (action items, decisions, issues, etc.). Have AI match with company goal documents to auto-calculate contribution.
 
 ## Automated PPT Generation Process
@@ -369,7 +369,7 @@ Each section should follow these principles:
 4. Leverage visuals (graphs, tables) actively
 ```
 
-**Output Example**:
+<strong>Output Example</strong>:
 ```markdown
 # Slide 1: Overview
 ## 2024 H1 Development Team Achievement Summary
@@ -411,10 +411,10 @@ Please suggest improvements from these perspectives:
 5. Is there content that would benefit from visual representation?
 ```
 
-**AI Feedback Examples**:
-- **Claude**: "The business impact in Slide 2 is well quantified. However, Slide 3's R&D activities may be difficult for non-technical executives to understand due to technical jargon. 'User wait time reduced to 1/10' is more intuitive than '90% performance improvement'."
-- **Gemini**: "Mentioning delayed features in Overview is good, but including solutions would be more positive."
-- **ChatGPT**: "Adding a graph to Slide 3 would be beneficial. Example: R&D time investment vs. business impact correlation"
+<strong>AI Feedback Examples</strong>:
+- <strong>Claude</strong>: "The business impact in Slide 2 is well quantified. However, Slide 3's R&D activities may be difficult for non-technical executives to understand due to technical jargon. 'User wait time reduced to 1/10' is more intuitive than '90% performance improvement'."
+- <strong>Gemini</strong>: "Mentioning delayed features in Overview is good, but including solutions would be more positive."
+- <strong>ChatGPT</strong>: "Adding a graph to Slide 3 would be beneficial. Example: R&D time investment vs. business impact correlation"
 
 ### Step 3: Manual Review and Corrections
 
@@ -474,7 +474,7 @@ Write a script for presenting the attached PPT in 10 minutes.
 - Include anticipated questions and answers
 ```
 
-**Output Example**:
+<strong>Output Example</strong>:
 ```markdown
 ## Slide 1: Introduction (30 seconds)
 "Good morning, I'm John Doe, Development Team Leader. Today I'll share
@@ -506,25 +506,25 @@ we've set it as top priority for H2, with guaranteed Q4 completion."
 
 | Stage | Manual (Original) | AI Automation | Reduction |
 |-------|------------------|---------------|-----------|
-| Data Collection | 18-23 hours | 2 hours | **90%** |
-| Material Organization | 20-30 hours | 1 hour | **96%** |
-| PPT Creation | 20-30 hours | 4 hours | **85%** |
-| Review & Improvements | 6-11 hours | 2 hours | **75%** |
-| Presentation Practice | 5-10 hours | 1 hour | **87%** |
-| **Total** | **60+ hours** | **~10 hours** | **83%** |
+| Data Collection | 18-23 hours | 2 hours | <strong>90%</strong> |
+| Material Organization | 20-30 hours | 1 hour | <strong>96%</strong> |
+| PPT Creation | 20-30 hours | 4 hours | <strong>85%</strong> |
+| Review & Improvements | 6-11 hours | 2 hours | <strong>75%</strong> |
+| Presentation Practice | 5-10 hours | 1 hour | <strong>87%</strong> |
+| <strong>Total</strong> | <strong>60+ hours</strong> | <strong>~10 hours</strong> | <strong>83%</strong> |
 
 ### Qualitative Benefits
 
-**1. Improved Job Satisfaction**
+<strong>1. Improved Job Satisfaction</strong>
 Freed from repetitive data collection tasks, we could focus on creative storytelling.
 
-**2. Enhanced Credibility**
+<strong>2. Enhanced Credibility</strong>
 Thanks to AI's systematic data organization, we receive fewer questions like "Is this number correct?"
 
-**3. Reusable System Construction**
+<strong>3. Reusable System Construction</strong>
 The agent system built once can continue to be used in the next half-year, next year. Improvements are also easy.
 
-**4. Team-Wide Productivity Boost**
+<strong>4. Team-Wide Productivity Boost</strong>
 As the entire team utilizes the infrastructure built (Notion AI meeting notes, automated documentation), efficiency in other work has also improved.
 
 ## Implementation Considerations
@@ -532,47 +532,47 @@ As the entire team utilizes the infrastructure built (Notion AI meeting notes, a
 ### 1. Data Quality is Key
 "Garbage in, garbage out." AI depends entirely on input data quality. If Notion documents are inadequate or Git commit messages unclear, AI cannot organize properly.
 
-**Solution**: Establish documentation and commit message writing standards within the team.
+<strong>Solution</strong>: Establish documentation and commit message writing standards within the team.
 
 ### 2. AI Requires Verification
 Content generated by AI must be reviewed by humans. Numbers, dates, and causal relationships in particular can be incorrect.
 
-**Solution**: Never skip Step 3 (manual review).
+<strong>Solution</strong>: Never skip Step 3 (manual review).
 
 ### 3. Initial Construction Costs
 Building the agent system initially requires trial and error. The first semi-annual report might actually take longer.
 
-**Solution**: Invest from a long-term perspective. From the second time onward, 10 hours is truly sufficient.
+<strong>Solution</strong>: Invest from a long-term perspective. From the second time onward, 10 hours is truly sufficient.
 
 ### 4. Security and Sensitive Information
 When inputting company internal data to AI, security policies must be followed.
 
-**Solution**: Use on-premise LLMs (e.g., Llama, GPT-4 Azure Enterprise), or mask sensitive information.
+<strong>Solution</strong>: Use on-premise LLMs (e.g., Llama, GPT-4 Azure Enterprise), or mask sensitive information.
 
 ## Scalability
 
 This system can be utilized beyond semi-annual reports:
 
-- **Monthly Team Reports**: Adjust agent input period to 1 month
-- **Project Retrospectives**: Filter only specific project timeline and data
-- **Annual Performance Reviews**: Synthesize year's data for individual/team evaluation materials
-- **External Presentations**: Convert to conference or recruitment presentation materials
+- <strong>Monthly Team Reports</strong>: Adjust agent input period to 1 month
+- <strong>Project Retrospectives</strong>: Filter only specific project timeline and data
+- <strong>Annual Performance Reviews</strong>: Synthesize year's data for individual/team evaluation materials
+- <strong>External Presentations</strong>: Convert to conference or recruitment presentation materials
 
 ## Conclusion: AI is a Tool, Process is Key
 
-The core of AI automation isn't the technology itself but **process design**.
+The core of AI automation isn't the technology itself but <strong>process design</strong>.
 - What data is needed?
 - In what order should it be organized?
 - What is the form of the final deliverable?
 
 After answering these questions first, AI should be utilized as a "tool" to execute that process.
 
-Reducing 60 hours to 10 wasn't about using a "fast tool"—it was about **systematizing repetitive work**. AI is simply the best means to implement that system.
+Reducing 60 hours to 10 wasn't about using a "fast tool"—it was about <strong>systematizing repetitive work</strong>. AI is simply the best means to implement that system.
 
 If your work also has repetitive, time-consuming tasks, I recommend trying AI automation. The first attempt is challenging, but once the system is built, the effects exceed imagination.
 
 ---
 
-**Next Article Preview**: [AI Agent System Construction Practical Guide: Creating Automation Pipelines with Notion API MCP and Claude Code](/en/blog/en/ai-agent-notion-mcp-automation)
+<strong>Next Article Preview</strong>: [AI Agent System Construction Practical Guide: Creating Automation Pipelines with Notion API MCP and Claude Code](/en/blog/en/ai-agent-notion-mcp-automation)
 
 If you have questions or want to know more, please leave a comment!

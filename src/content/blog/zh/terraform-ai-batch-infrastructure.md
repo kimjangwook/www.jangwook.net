@@ -59,7 +59,7 @@ relatedPosts:
 
 将AI系统部署到生产环境时，最大的挑战之一是<strong>基础设施成本</strong>。批处理特性的AI工作负载不需要常驻服务器，但在任务执行时需要足够的计算资源。
 
-本文分析了在实际项目中构建的**无服务器AI批处理系统**架构，并探讨使用Terraform进行基础设施管理的优势。
+本文分析了在实际项目中构建的<strong>无服务器AI批处理系统</strong>架构，并探讨使用Terraform进行基础设施管理的优势。
 
 ## 架构设计
 
@@ -92,7 +92,7 @@ graph TD
 
 ### 1. 与LLM的优秀兼容性
 
-Terraform的HCL（HashiCorp配置语言）具有**声明式和结构化的语法**，使LLM非常容易生成和理解代码。
+Terraform的HCL（HashiCorp配置语言）具有<strong>声明式和结构化的语法</strong>，使LLM非常容易生成和理解代码。
 
 ```hcl
 # LLM容易生成的清晰结构
@@ -112,11 +112,11 @@ resource "aws_lambda_function" "api_handler" {
 }
 ```
 
-截至2025年，Claude和GPT-4等LLM在Terraform代码生成方面已经能够产出**接近生产级别**的成果。用自然语言描述需求，即可获得高完成度的IaC配置。
+截至2025年，Claude和GPT-4等LLM在Terraform代码生成方面已经能够产出<strong>接近生产级别</strong>的成果。用自然语言描述需求，即可获得高完成度的IaC配置。
 
 ### 2. 基础设施状态管理
 
-Terraform的State文件**保证**实际基础设施与代码之间的一致性。
+Terraform的State文件<strong>保证</strong>实际基础设施与代码之间的一致性。
 
 ```bash
 # 查看当前基础设施状态
@@ -131,7 +131,7 @@ terraform apply
 
 ### 3. 可重现的环境
 
-使用相同的Terraform代码可以一致地构建**开发/预发布/生产**环境。
+使用相同的Terraform代码可以一致地构建<strong>开发/预发布/生产</strong>环境。
 
 ```hcl
 # variables.tf
@@ -211,7 +211,7 @@ aws dynamodb scan --table-name ai-batch-jobs \
 | 月1,000任务 | ~$150 | ~$5 |
 | 月100任务 | ~$150 | ~$1 |
 
-对于批处理工作负载，**按使用量计费**的无服务器模式具有压倒性优势。
+对于批处理工作负载，<strong>按使用量计费</strong>的无服务器模式具有压倒性优势。
 
 ### 利用Fargate Spot
 
@@ -227,7 +227,7 @@ resource "aws_ecs_service" "worker" {
 }
 ```
 
-使用Fargate Spot可以实现**最高70%的成本节省**。AI批处理任务大多可以重试，非常适合Spot实例。
+使用Fargate Spot可以实现<strong>最高70%的成本节省</strong>。AI批处理任务大多可以重试，非常适合Spot实例。
 
 ## 通知与Notion集成
 
@@ -270,7 +270,7 @@ def notify_job_completion(job_id, status, result_url=None):
 
 ### Notion数据库集成
 
-将任务结果自动记录到Notion数据库，实现**项目管理集成**。
+将任务结果自动记录到Notion数据库，实现<strong>项目管理集成</strong>。
 
 ```python
 from notion_client import Client
@@ -308,34 +308,34 @@ workers/
 4. 更新Lambda队列映射
 5. 运行`./deploy.sh`
 
-得益于Terraform的模块化，**添加新服务非常简单**。
+得益于Terraform的模块化，<strong>添加新服务非常简单</strong>。
 
 ## 实践应用成果
 
 ### 运营指标
 
-- **部署时间**：手动30分钟 → 自动5分钟
-- **基础设施成本**：相比EC2降低85%
-- **故障恢复**：基于State文件可立即重建
-- **代码审查**：通过IaC对基础设施变更进行PR审查
+- <strong>部署时间</strong>：手动30分钟 → 自动5分钟
+- <strong>基础设施成本</strong>：相比EC2降低85%
+- <strong>故障恢复</strong>：基于State文件可立即重建
+- <strong>代码审查</strong>：通过IaC对基础设施变更进行PR审查
 
 ### 经验教训
 
-1. **HCL学习曲线低**：相比JSON/YAML可读性更好
-2. **LLM活用是关键**：复杂的资源配置也可用自然语言请求
-3. **用Shell脚本抽象**：简化复杂命令
-4. **State管理很重要**：S3 + DynamoDB Lock必不可少
+1. <strong>HCL学习曲线低</strong>：相比JSON/YAML可读性更好
+2. <strong>LLM活用是关键</strong>：复杂的资源配置也可用自然语言请求
+3. <strong>用Shell脚本抽象</strong>：简化复杂命令
+4. <strong>State管理很重要</strong>：S3 + DynamoDB Lock必不可少
 
 ## 总结
 
 使用Terraform的无服务器AI批处理系统提供以下优势：
 
-- **成本效率**：基于使用量计费，最适合批处理
-- **LLM友好**：AI工具轻松生成和管理基础设施代码
-- **运维便利**：Shell脚本自动化复杂任务
-- **可扩展性**：模块化结构使添加新服务变得简单
+- <strong>成本效率</strong>：基于使用量计费，最适合批处理
+- <strong>LLM友好</strong>：AI工具轻松生成和管理基础设施代码
+- <strong>运维便利</strong>：Shell脚本自动化复杂任务
+- <strong>可扩展性</strong>：模块化结构使添加新服务变得简单
 
-在构建AI系统时从一开始就采用IaC，可以显著提高**长期运营效率**。
+在构建AI系统时从一开始就采用IaC，可以显著提高<strong>长期运营效率</strong>。
 
 ## 参考资料
 

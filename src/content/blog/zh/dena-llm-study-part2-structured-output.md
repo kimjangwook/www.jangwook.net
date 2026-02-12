@@ -58,7 +58,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-> **系列: DeNA LLM 研究** (2/5)
+> <strong>系列: DeNA LLM 研究</strong> (2/5)
 >
 > 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)
 > 2. <strong>Part 2: 结构化输出与多LLM管道</strong> ← 当前文章
@@ -74,17 +74,17 @@ relatedPosts:
 
 ### 本文涵盖内容
 
-1. **结构化输出技术**
+1. <strong>结构化输出技术</strong>
    - JSON Schema和Pydantic的使用
    - Constrained Decoding原理
    - 各提供商的实现方式 (OpenAI、Anthropic、Google)
 
-2. **多LLM组合模式**
+2. <strong>多LLM组合模式</strong>
    - Sequential、Parallel、Cascade、Router、Iterative
    - 每种模式的应用场景与权衡
    - 实践实现示例
 
-3. **实习B & C内容**
+3. <strong>实习B & C内容</strong>
    - B1: 二元分类 (评论分类)
    - B2: 多项提取与评分
    - B3: 嵌套结构化输出
@@ -98,10 +98,10 @@ relatedPosts:
 
 LLM本质上生成自由格式的文本。但生产应用需要:
 
-- **可解析数据**: JSON、YAML等标准格式
-- **类型安全**: 字段类型验证 (string、number、boolean等)
-- **必填字段保证**: 防止遗漏
-- **嵌套结构支持**: 复杂数据模型
+- <strong>可解析数据</strong>: JSON、YAML等标准格式
+- <strong>类型安全</strong>: 字段类型验证 (string、number、boolean等)
+- <strong>必填字段保证</strong>: 防止遗漏
+- <strong>嵌套结构支持</strong>: 复杂数据模型
 
 自由文本输出的问题:
 
@@ -190,7 +190,7 @@ data = json.loads(response.choices[0].message.content)
 # {"name": "John", "age": 30, "email": "john@example.com"}
 ```
 
-**主要特点**:
+<strong>主要特点</strong>:
 
 - `strict: True`选项保证100%符合schema
 - 基于Constrained Decoding,不可能生成无效JSON
@@ -242,7 +242,7 @@ print(user.age)   # 30
 print(user.email) # "john@example.com"
 ```
 
-**优势**:
+<strong>优势</strong>:
 
 - Python原生类型检查
 - IDE自动补全支持
@@ -343,7 +343,7 @@ graph TD
 # 最终输出: {"name": "John", "age": 30}
 ```
 
-**要点**:
+<strong>要点</strong>:
 
 - 每一步只<strong>允许符合schema的token</strong>
 - 生成无效JSON的可能性<strong>0%</strong>
@@ -353,11 +353,11 @@ graph TD
 
 | 提供商                | 实现方式                                | 备注                   |
 | --------------------- | --------------------------------------- | ---------------------- |
-| **OpenAI**            | Native Structured Outputs API           | 最便捷 (2024.08起)     |
-| **Anthropic**         | Tool Use变通方式                        | 使用`tools`参数        |
-| **Google Gemini**     | `response_mime_type="application/json"` | JSON Schema支持 (Beta) |
-| **Local (llama.cpp)** | Grammar-based decoding                  | 需要GBNF语法定义       |
-| **Outlines**          | FSM-based decoding                      | 开源,支持所有模型      |
+| <strong>OpenAI</strong>            | Native Structured Outputs API           | 最便捷 (2024.08起)     |
+| <strong>Anthropic</strong>         | Tool Use变通方式                        | 使用`tools`参数        |
+| <strong>Google Gemini</strong>     | `response_mime_type="application/json"` | JSON Schema支持 (Beta) |
+| <strong>Local (llama.cpp)</strong> | Grammar-based decoding                  | 需要GBNF语法定义       |
+| <strong>Outlines</strong>          | FSM-based decoding                      | 开源,支持所有模型      |
 
 #### Anthropic Claude Tool Use方式
 
@@ -491,9 +491,9 @@ graph TD
 
 ### 2.2 Sequential Pattern (顺序执行)
 
-**概念**: 将前一个LLM的输出作为下一个LLM的输入
+<strong>概念</strong>: 将前一个LLM的输出作为下一个LLM的输入
 
-**应用场景**:
+<strong>应用场景</strong>:
 
 - 逐步数据转换 (翻译 → 摘要 → 情感分析)
 - 渐进精炼 (草稿 → 语法校正 → 风格改进)
@@ -519,7 +519,7 @@ async def sequential_pipeline(text: str) -> str:
 result = await sequential_pipeline("中文长文档...")
 ```
 
-**权衡**:
+<strong>权衡</strong>:
 
 - ✅ 各步骤清晰分离
 - ✅ 易于调试
@@ -528,9 +528,9 @@ result = await sequential_pipeline("中文长文档...")
 
 ### 2.3 Parallel Pattern (并行执行)
 
-**概念**: 同时执行多个LLM并聚合结果
+<strong>概念</strong>: 同时执行多个LLM并聚合结果
 
-**应用场景**:
+<strong>应用场景</strong>:
 
 - 多角度评估 (同时评估语法、风格、内容)
 - 集成推理 (对多个模型结果投票/平均)
@@ -569,7 +569,7 @@ async def evaluate_grammar(text: str) -> float:
 # 其他评估函数遵循相同模式...
 ```
 
-**执行时间对比**:
+<strong>执行时间对比</strong>:
 
 ```python
 # Sequential: 3秒 × 3 = 9秒
@@ -577,7 +577,7 @@ async def evaluate_grammar(text: str) -> float:
 # → 66%时间缩短!
 ```
 
-**权衡**:
+<strong>权衡</strong>:
 
 - ✅ 最大速度 (并行执行)
 - ✅ 可独立评估
@@ -586,9 +586,9 @@ async def evaluate_grammar(text: str) -> float:
 
 ### 2.4 Cascade Pattern (渐进扩展)
 
-**概念**: 从小模型开始,需要时扩展到大模型
+<strong>概念</strong>: 从小模型开始,需要时扩展到大模型
 
-**应用场景**:
+<strong>应用场景</strong>:
 
 - 成本优化 (简单查询使用小模型)
 - 质量保证 (仅复杂查询使用大模型)
@@ -626,7 +626,7 @@ async def cascade_routing(query: str) -> str:
 # → 平均成本: 0.15 × 0.8 + 5 × 0.2 = $1.12 (节省78%)
 ```
 
-**权衡**:
+<strong>权衡</strong>:
 
 - ✅ 最大化成本效率
 - ✅ 保持平均质量
@@ -635,9 +635,9 @@ async def cascade_routing(query: str) -> str:
 
 ### 2.5 Router Pattern (条件路由)
 
-**概念**: 根据输入特性路由到最佳模型
+<strong>概念</strong>: 根据输入特性路由到最佳模型
 
-**应用场景**:
+<strong>应用场景</strong>:
 
 - 领域特定专家模型 (医疗、法律、技术)
 - 语言特定模型 (中文特化、英文特化)
@@ -674,7 +674,7 @@ async def router_pattern(query: str) -> str:
     return response
 ```
 
-**权衡**:
+<strong>权衡</strong>:
 
 - ✅ 最优模型选择
 - ✅ 成本-质量优化
@@ -683,9 +683,9 @@ async def router_pattern(query: str) -> str:
 
 ### 2.6 Iterative Pattern (迭代改进)
 
-**概念**: 重复评估 → 修正以提高质量
+<strong>概念</strong>: 重复评估 → 修正以提高质量
 
-**应用场景**:
+<strong>应用场景</strong>:
 
 - 写作改进 (草稿 → 反馈 → 修正 → 重新评估)
 - 代码重构 (代码 → 审查 → 修正 → 重新审查)
@@ -738,7 +738,7 @@ improved = await iterative_improvement(
 )
 ```
 
-**权衡**:
+<strong>权衡</strong>:
 
 - ✅ 渐进式质量改进
 - ✅ 清晰的反馈循环
@@ -810,13 +810,13 @@ async def hybrid_pipeline(text: str) -> str:
 
 ### 4.1 2025年结构化输出标准
 
-**OpenAI Structured Outputs**已成为事实标准:
+<strong>OpenAI Structured Outputs</strong>已成为事实标准:
 
-- **基于Constrained Decoding**: 100%符合schema
-- **无额外成本**: 与现有API相同价格
-- **Pydantic集成**: Instructor等库支持
+- <strong>基于Constrained Decoding</strong>: 100%符合schema
+- <strong>无额外成本</strong>: 与现有API相同价格
+- <strong>Pydantic集成</strong>: Instructor等库支持
 
-**竞品**:
+<strong>竞品</strong>:
 
 - Anthropic: Tool Use方式 (间接)
 - Google: `response_mime_type` (Beta)
@@ -843,7 +843,7 @@ async def cost_optimized_pipeline(query: str) -> str:
     return result
 ```
 
-**成本节省效果**:
+<strong>成本节省效果</strong>:
 
 - Cascade: 70-80%
 - Caching: 50-90% (取决于重复查询比例)
@@ -851,14 +851,14 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 ### 4.3 质量保证清单
 
-**结构化输出**:
+<strong>结构化输出</strong>:
 
 - ✅ 定义必填字段 (`required`数组)
 - ✅ 类型约束 (`minimum`、`maximum`、`pattern`)
 - ✅ 添加描述 (`description`字段指导LLM)
 - ✅ 验证逻辑 (`Pydantic validator`)
 
-**管道设计**:
+<strong>管道设计</strong>:
 
 - ✅ 错误处理 (每步try-catch)
 - ✅ 超时设置 (防止无限等待)
@@ -869,11 +869,11 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 | 工具           | 用途                        | 推荐度     |
 | -------------- | --------------------------- | ---------- |
-| **Instructor** | Pydantic ↔ LLM集成          | ⭐⭐⭐⭐⭐ |
-| **Outlines**   | Constrained Decoding (本地) | ⭐⭐⭐⭐   |
-| **LangChain**  | 管道编排                    | ⭐⭐⭐     |
-| **LlamaIndex** | RAG + Structured Outputs    | ⭐⭐⭐⭐   |
-| **Guidance**   | 基于模板的输出控制          | ⭐⭐⭐     |
+| <strong>Instructor</strong> | Pydantic ↔ LLM集成          | ⭐⭐⭐⭐⭐ |
+| <strong>Outlines</strong>   | Constrained Decoding (本地) | ⭐⭐⭐⭐   |
+| <strong>LangChain</strong>  | 管道编排                    | ⭐⭐⭐     |
+| <strong>LlamaIndex</strong> | RAG + Structured Outputs    | ⭐⭐⭐⭐   |
+| <strong>Guidance</strong>   | 基于模板的输出控制          | ⭐⭐⭐     |
 
 ## 5. 下一步
 
@@ -881,33 +881,33 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 下一篇文章将介绍使用RAG(检索增强生成)<strong>向LLM注入外部知识</strong>:
 
-1. **向量数据库基础**
+1. <strong>向量数据库基础</strong>
    - Embedding模型选择
    - FAISS、Pinecone、Weaviate对比
 
-2. **RAG管道构建**
+2. <strong>RAG管道构建</strong>
    - Chunking策略
    - Retrieval优化
    - Reranking技术
 
-3. **高级RAG模式**
+3. <strong>高级RAG模式</strong>
    - Hybrid Search (关键词 + 向量)
    - Multi-hop Retrieval
    - Self-Query
 
 ### 建议实践项目
 
-1. **文档处理系统**
+1. <strong>文档处理系统</strong>
    - PDF → 结构化数据提取
    - Parallel Pattern并行处理
    - Pydantic验证
 
-2. **自动评估管道**
+2. <strong>自动评估管道</strong>
    - Iterative Pattern质量改进
    - 多评估轴 (语法、风格、内容)
    - 迭代至达到目标分数
 
-3. **成本优化系统**
+3. <strong>成本优化系统</strong>
    - Cascade Pattern模型选择
    - 查询分类 → 路由
    - 缓存 + 批处理
@@ -916,17 +916,17 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 在DeNA LLM研究Part 2中,我们学习了生产LLM应用的两个核心技术:
 
-1. **结构化输出**
+1. <strong>结构化输出</strong>
    - JSON Schema和Pydantic确保类型安全输出
    - Constrained Decoding保证100%符合schema
    - OpenAI Structured Outputs API是目前最佳选择
 
-2. **多LLM组合模式**
+2. <strong>多LLM组合模式</strong>
    - Sequential、Parallel、Cascade、Router、Iterative
    - 理解每种模式的权衡
    - 实践中使用混合组合
 
-**核心要点**:
+<strong>核心要点</strong>:
 
 - 结构化输出是<strong>生产LLM应用的必备组件</strong>
 - <strong>多LLM组合比单个LLM更强大</strong>

@@ -774,7 +774,7 @@ Jules는 강력하지만, 다음과 같은 제한사항이 있습니다.
 - ❌ Swift / Objective-C
 - ❌ Kotlin
 
-**대응 방법**:
+<strong>대응 방법</strong>:
 - 다국어 프로젝트의 경우, Python/TypeScript 부분만 Jules 활용
 - 다른 언어는 Claude Code나 Copilot 사용
 
@@ -1142,12 +1142,12 @@ Jules는 현재도 강력하지만, Google은 다음 기능들을 개발 중입�
 
 Jules를 시작하려면:
 
-1. **Google AI Studio** 방문 (ai.google.dev)
-2. **GitHub 계정 연결**
-3. **레포지토리에 Jules 설치**
-4. **첫 번째 이슈 생성 및 @jules-agent 멘션**
-5. **계획 검토 후 승인**
-6. **PR 리뷰 및 병합**
+1. <strong>Google AI Studio</strong> 방문 (ai.google.dev)
+2. <strong>GitHub 계정 연결</strong>
+3. <strong>레포지토리에 Jules 설치</strong>
+4. <strong>첫 번째 이슈 생성 및 @jules-agent 멘션</strong>
+5. <strong>계획 검토 후 승인</strong>
+6. <strong>PR 리뷰 및 병합</strong>
 
 무료 플랜으로 시작하여, 팀의 워크플로우에 맞는지 테스트한 후 업그레이드하는 것을 권장합니다.
 

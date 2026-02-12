@@ -232,26 +232,26 @@ Running the parallel agent system produces reports like this:
 
 <strong>Security Vulnerabilities (Critical)</strong>
 
-1. **API Keys Exposed in Environment Variables**
+1. <strong>API Keys Exposed in Environment Variables</strong>
    - Location: Multiple Cloud Run/Functions services
    - Risk: Service abuse if credentials are stolen
    - Action: Migrate to Secret Manager immediately
 
-2. **RDP Port Fully Open**
+2. <strong>RDP Port Fully Open</strong>
    - Location: default VPC firewall rule
    - Risk: Exposure to brute force attacks
    - Action: Restrict to specific IP ranges
 
-3. **End-of-Life OS**
+3. <strong>End-of-Life OS</strong>
    - Location: cdp-sftp-prod VM (CentOS 7)
    - Risk: No security patches
    - Action: Migrate to Rocky Linux or Ubuntu LTS
 
 <strong>Cost Optimization Opportunities</strong>
 
-1. **Stopped MySQL Instance**: Only incurring storage costs
-2. **80+ App Engine Versions**: Unused versions need cleanup
-3. **Empty BigQuery Datasets**: 10 datasets can be deleted
+1. <strong>Stopped MySQL Instance</strong>: Only incurring storage costs
+2. <strong>80+ App Engine Versions</strong>: Unused versions need cleanup
+3. <strong>Empty BigQuery Datasets</strong>: 10 datasets can be deleted
 
 ### Auto-Generated Mermaid Diagrams
 
@@ -370,9 +370,9 @@ Infrastructure administrators are freed from repetitive inspection tasks and can
 
 ### Next Steps
 
-1. **Install gcloud MCP**: Start from the [GitHub repository](https://github.com/anthropics/gcloud-mcp)
-2. **Customize analysis agents**: Adjust to your organization's security policies and compliance requirements
-3. **Set up regular scans**: Configure weekly/monthly automated audits with Cloud Scheduler
-4. **Integrate notifications**: Connect with Slack, Email, PagerDuty for immediate response
+1. <strong>Install gcloud MCP</strong>: Start from the [GitHub repository](https://github.com/anthropics/gcloud-mcp)
+2. <strong>Customize analysis agents</strong>: Adjust to your organization's security policies and compliance requirements
+3. <strong>Set up regular scans</strong>: Configure weekly/monthly automated audits with Cloud Scheduler
+4. <strong>Integrate notifications</strong>: Connect with Slack, Email, PagerDuty for immediate response
 
 Start the new paradigm of cloud infrastructure management with AI agents.

@@ -55,7 +55,7 @@ relatedPosts:
 
 ## Introduction
 
-AI coding assistants have become essential tools for modern developers. However, there's a significant difference between simply **using** them and **leveraging them effectively**. This post analyzes [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) recently published by Anthropic and shares practical implementation insights from a real-world project.
+AI coding assistants have become essential tools for modern developers. However, there's a significant difference between simply <strong>using</strong> them and <strong>leveraging them effectively</strong>. This post analyzes [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) recently published by Anthropic and shares practical implementation insights from a real-world project.
 
 ## Core Principles from Claude Code Best Practices
 
@@ -63,9 +63,9 @@ After studying the best practices from Anthropic's engineering blog, I've identi
 
 ### 1. Establish Clear Context with CLAUDE.md
 
-**Key Insight**: Claude Code reads your project's CLAUDE.md file to understand context.
+<strong>Key Insight</strong>: Claude Code reads your project's CLAUDE.md file to understand context.
 
-**Essential Contents**:
+<strong>Essential Contents</strong>:
 - ✅ Bash commands (build, test, deploy)
 - ✅ Core files and utility function locations
 - ✅ Code style guidelines
@@ -73,14 +73,14 @@ After studying the best practices from Anthropic's engineering blog, I've identi
 - ✅ Repository etiquette (commit messages, PR rules)
 - ✅ Development environment setup
 
-**Before (Original CLAUDE.md)**:
+<strong>Before (Original CLAUDE.md)</strong>:
 ```markdown
 ## Commands
 npm run dev
 npm run build
 ```
 
-**After (Improved CLAUDE.md)**:
+<strong>After (Improved CLAUDE.md)</strong>:
 ```markdown
 ## Testing Guidelines
 ### Type Checking and Validation
@@ -97,7 +97,7 @@ npm run preview        # Preview build results
 
 ### 2. Explore → Plan → Code → Commit Workflow
 
-**Key Insight**: Claude achieves optimal results through clear objectives and iterative improvement.
+<strong>Key Insight</strong>: Claude achieves optimal results through clear objectives and iterative improvement.
 
 #### Explore
 Read relevant files before coding to understand context.
@@ -125,27 +125,27 @@ Commit in meaningful units with clear messages.
 
 ### 3. Leveraging the Think Tool
 
-**When to Use**:
+<strong>When to Use</strong>:
 - Complex architectural decisions
 - Multi-file modifications
 - Sequential decision-making tasks
 
-**Real-World Example**:
+<strong>Real-World Example</strong>:
 ```
 "Use Think mode to develop a multilingual SEO strategy for the blog
 and propose optimal metadata for each language."
 ```
 
-**Performance Improvements**:
+<strong>Performance Improvements</strong>:
 - Airline domain test: 54% relative performance gain
 - Retail domain: 0.812 (baseline 0.783)
 - SWE-bench: 1.6% average improvement
 
 ### 4. Building a Subagent System
 
-**Key Insight**: Delegating specific tasks to specialized agents improves context focus and token efficiency.
+<strong>Key Insight</strong>: Delegating specific tasks to specialized agents improves context focus and token efficiency.
 
-**This Project's Subagent Structure**:
+<strong>This Project's Subagent Structure</strong>:
 ```
 .claude/agents/
 ├── content-planner.md        # Content strategy
@@ -156,7 +156,7 @@ and propose optimal metadata for each language."
 └── analytics-reporter.md     # Traffic analysis
 ```
 
-**Usage Examples**:
+<strong>Usage Examples</strong>:
 ```bash
 @writing-assistant "Write blog about TypeScript 5.0 features"
 @seo-optimizer "Optimize internal links in recent posts"
@@ -167,9 +167,9 @@ and propose optimal metadata for each language."
 
 ### Improvement 1: Adding Testing Guidelines
 
-**Problem**: Claude didn't know how to validate changes, missing errors
+<strong>Problem</strong>: Claude didn't know how to validate changes, missing errors
 
-**Solution**: Added Testing Guidelines section
+<strong>Solution</strong>: Added Testing Guidelines section
 ```markdown
 ## Testing Guidelines
 
@@ -181,13 +181,13 @@ and propose optimal metadata for each language."
 npm run build
 ```
 
-**Result**: Claude automatically runs `npm run astro check` for validation after changes
+<strong>Result</strong>: Claude automatically runs `npm run astro check` for validation after changes
 
 ### Improvement 2: Specifying Repository Etiquette
 
-**Problem**: Inconsistent commit messages
+<strong>Problem</strong>: Inconsistent commit messages
 
-**Solution**: Documented Git Commit Message rules
+<strong>Solution</strong>: Documented Git Commit Message rules
 ```markdown
 ## Repository Etiquette
 
@@ -201,7 +201,7 @@ npm run build
 - refactor: Code refactoring
 ```
 
-**Result**: Claude automatically generates rule-compliant commit messages
+<strong>Result</strong>: Claude automatically generates rule-compliant commit messages
 ```bash
 feat(blog): add claude code best practices post
 docs(claude): update workflow guidelines
@@ -209,9 +209,9 @@ docs(claude): update workflow guidelines
 
 ### Improvement 3: Adding Environment Setup Guide
 
-**Problem**: Had to explain environment variable setup every time
+<strong>Problem</strong>: Had to explain environment variable setup every time
 
-**Solution**: Added Environment Setup section
+<strong>Solution</strong>: Added Environment Setup section
 ```markdown
 ## Environment Setup
 
@@ -220,18 +220,18 @@ Create `.env` file:
 GEMINI_API_KEY=your_api_key_here
 ```
 
-**Result**: Claude automatically checks required environment variables for new tasks
+<strong>Result</strong>: Claude automatically checks required environment variables for new tasks
 
 ### Improvement 4: Claude Code Workflow Optimization
 
-**Added Sections**:
+<strong>Added Sections</strong>:
 - Explore → Plan → Code → Commit workflow
 - Think tool utilization guide
 - Subagent utilization strategy
 - /clear command usage guide
 - Iterative improvement strategy
 
-**Practical Impact**:
+<strong>Practical Impact</strong>:
 ```bash
 # Before: Direct task instruction
 "Write a blog post"
@@ -245,13 +245,13 @@ GEMINI_API_KEY=your_api_key_here
 
 ### Improvement 5: Documenting MCP Server Integration
 
-**Added Content**:
+<strong>Added Content</strong>:
 - Context7: Latest library documentation lookup
 - Playwright: Web automation and testing
 - Chrome DevTools: Performance analysis
 - Google Analytics: Traffic analysis
 
-**Usage Example**:
+<strong>Usage Example</strong>:
 ```bash
 "Use Context7 to fetch the latest image optimization features in Astro 5.0"
 ```
@@ -259,18 +259,18 @@ GEMINI_API_KEY=your_api_key_here
 ## Measurable Improvement Results
 
 ### 1. Work Efficiency
-- **Error Rate**: 40% reduction (introduced pre-validation checklist)
-- **Rework Count**: 60% reduction (clear workflow)
-- **Average Task Completion Time**: 30% faster
+- <strong>Error Rate</strong>: 40% reduction (introduced pre-validation checklist)
+- <strong>Rework Count</strong>: 60% reduction (clear workflow)
+- <strong>Average Task Completion Time</strong>: 30% faster
 
 ### 2. Code Quality
-- **Type Check Pass Rate**: 95% → 100%
-- **Consistent Code Style**: Manual corrections almost unnecessary
-- **SEO Metadata Completeness**: 80% → 100%
+- <strong>Type Check Pass Rate</strong>: 95% → 100%
+- <strong>Consistent Code Style</strong>: Manual corrections almost unnecessary
+- <strong>SEO Metadata Completeness</strong>: 80% → 100%
 
 ### 3. Context Efficiency
-- **Token Usage**: 25% average reduction (subagent utilization)
-- **Unnecessary Explanations**: 70% reduction (documented guidelines)
+- <strong>Token Usage</strong>: 25% average reduction (subagent utilization)
+- <strong>Unnecessary Explanations</strong>: 70% reduction (documented guidelines)
 
 ## Best Practices Checklist
 
@@ -377,14 +377,14 @@ Time invested in CLAUDE.md returns multiplied with every task. It's a knowledge 
 
 Applying Claude Code Best Practices transformed my perception from "a tool where AI writes code" to "a platform that optimizes the entire development workflow."
 
-**Core Lessons**:
-1. **Invest in Documentation**: CLAUDE.md is your project's brain
-2. **Define Workflow**: Explore → Plan → Code → Commit
-3. **Specialize**: Leverage subagent systems
-4. **Iterate**: First attempts don't need to be perfect
-5. **Measure**: Track improvement effects quantitatively
+<strong>Core Lessons</strong>:
+1. <strong>Invest in Documentation</strong>: CLAUDE.md is your project's brain
+2. <strong>Define Workflow</strong>: Explore → Plan → Code → Commit
+3. <strong>Specialize</strong>: Leverage subagent systems
+4. <strong>Iterate</strong>: First attempts don't need to be perfect
+5. <strong>Measure</strong>: Track improvement effects quantitatively
 
-Claude Code isn't just a coding assistant—it's **a partner that revolutionizes development productivity**. Following best practices unlocks its full potential.
+Claude Code isn't just a coding assistant—it's <strong>a partner that revolutionizes development productivity</strong>. Following best practices unlocks its full potential.
 
 ## References
 
@@ -396,4 +396,4 @@ Claude Code isn't just a coding assistant—it's **a partner that revolutionizes
 
 ---
 
-**If this post was helpful**, try applying Claude Code Best Practices to your project. You'll see noticeable improvements in development productivity.
+<strong>If this post was helpful</strong>, try applying Claude Code Best Practices to your project. You'll see noticeable improvements in development productivity.

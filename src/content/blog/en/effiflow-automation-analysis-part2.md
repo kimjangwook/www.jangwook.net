@@ -208,13 +208,13 @@ sleep 2
 
 <strong>Performance Comparison</strong>:
 
-**Before (Pre-caching)**:
+<strong>Before (Pre-caching)</strong>:
 
 - Every Brave Search call
 - 40,000+ tokens
 - Cost: ~$0.05/run
 
-**After (Post-caching)**:
+<strong>After (Post-caching)</strong>:
 
 - Cache reuse within 24 hours
 - 17,000 tokens
@@ -315,50 +315,50 @@ sequenceDiagram
 
 <strong>Phase Details</strong>:
 
-**Phase 1: Research & Planning**
+<strong>Phase 1: Research & Planning</strong>
 
 - Web Researcher agent invocation
 - Trend Analyzer Skill auto-discovery
 - Latest information gathering via Brave Search MCP
 - 2-second delay for Rate Limit compliance
 
-**Phase 2: Image Generation**
+<strong>Phase 2: Image Generation</strong>
 
 - Image Generator agent
 - Gemini API usage (requires GEMINI_API_KEY)
 - Topic-based hero image generation
 
-**Phase 3: Content Writing**
+<strong>Phase 3: Content Writing</strong>
 
 - Writing Assistant agent
 - Blog Writing Skill auto-discovery
 - Simultaneous creation in Korean, Japanese, English
 - Localization (not translation)
 
-**Phase 4: Frontmatter & Metadata**
+<strong>Phase 4: Frontmatter & Metadata</strong>
 
 - Frontmatter validation via Blog Writing Skill
 - pubDate: 'YYYY-MM-DD' format (single quotes)
 - heroImage: Relative path validation
 
-**Phase 5: Metadata Generation**
+<strong>Phase 5: Metadata Generation</strong>
 
 - Post Analyzer agent
 - Content Analyzer Skill auto-activation
 - difficulty (1-5) and categoryScores calculation
 
-**Phase 6: V3 Recommendations**
+<strong>Phase 6: V3 Recommendations</strong>
 
 - scripts/generate-recommendations-v3.js execution
 - Metadata-based similarity calculation
 - Top 5 related posts selection
 
-**Phase 7: Backlink Updates**
+<strong>Phase 7: Backlink Updates</strong>
 
 - Backlink Manager agent (optional)
 - Related posts cross-linking
 
-**Phase 8: Validation & Build**
+<strong>Phase 8: Validation & Build</strong>
 
 - npm run astro check
 - npm run build
@@ -434,7 +434,7 @@ async function getTrendData(topic: string) {
 
 ### Cache Effect Scenarios
 
-**Scenario 1: Multiple Topic Searches Same Day**
+<strong>Scenario 1: Multiple Topic Searches Same Day</strong>
 
 ```bash
 # First topic (cache miss)
@@ -450,7 +450,7 @@ async function getTrendData(topic: string) {
 # → Tokens: 17,000 (58% reduction)
 ```
 
-**Scenario 2: Same Topic Next Day**
+<strong>Scenario 2: Same Topic Next Day</strong>
 
 ```bash
 # 24 hours passed (cache expired)

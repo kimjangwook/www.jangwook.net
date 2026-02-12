@@ -62,15 +62,15 @@ relatedPosts:
 
 ## Overview
 
-On October 16, 2025, Anthropic announced **Agent Skills**, a revolutionary feature that goes beyond simple prompt engineering by **structuring AI agent expertise through files and folders** - a completely new paradigm.
+On October 16, 2025, Anthropic announced <strong>Agent Skills</strong>, a revolutionary feature that goes beyond simple prompt engineering by <strong>structuring AI agent expertise through files and folders</strong> - a completely new paradigm.
 
-In this article, I share the **trials, errors, solutions, and practical know-how** from applying Claude Skills to my blog automation project. This isn't just a feature overview, but **lessons learned with actual code**.
+In this article, I share the <strong>trials, errors, solutions, and practical know-how</strong> from applying Claude Skills to my blog automation project. This isn't just a feature overview, but <strong>lessons learned with actual code</strong>.
 
 ## What are Agent Skills?
 
 ### Core Concept
 
-Agent Skills are a way to **package expertise using the file system**. Instead of putting all instructions in a system prompt, you now organize them as:
+Agent Skills are a way to <strong>package expertise using the file system</strong>. Instead of putting all instructions in a system prompt, you now organize them as:
 
 ```
 my-skill/
@@ -83,11 +83,11 @@ my-skill/
     └── template.txt
 ```
 
-This **organized folder structure** makes management much easier.
+This <strong>organized folder structure</strong> makes management much easier.
 
 ### Difference from Traditional Approach
 
-**Traditional Approach (System Prompt)**:
+<strong>Traditional Approach (System Prompt)</strong>:
 ```markdown
 You are a blog writing expert.
 1. Generate SEO-optimized titles
@@ -97,7 +97,7 @@ You are a blog writing expert.
 (All instructions concentrated in one place)
 ```
 
-**Skills Approach**:
+<strong>Skills Approach</strong>:
 ````markdown
 ---
 name: Blog Writing Assistant
@@ -118,14 +118,14 @@ python scripts/validate_frontmatter.py post.md
 ````
 
 Key Differences:
-- **Modularization**: Files separated by concern
-- **Progressive Loading**: Only necessary files loaded into context
-- **Code Execution**: Direct Python/Bash script execution
-- **Reusability**: Shareable across the entire team
+- <strong>Modularization</strong>: Files separated by concern
+- <strong>Progressive Loading</strong>: Only necessary files loaded into context
+- <strong>Code Execution</strong>: Direct Python/Bash script execution
+- <strong>Reusability</strong>: Shareable across the entire team
 
 ### Progressive Disclosure
 
-The core philosophy of Skills is **3-level information disclosure**:
+The core philosophy of Skills is <strong>3-level information disclosure</strong>:
 
 ```mermaid
 graph TD
@@ -138,13 +138,13 @@ graph TD
     F --> G
 ```
 
-**Level 1 - Metadata (Loaded at Startup)**:
+<strong>Level 1 - Metadata (Loaded at Startup)</strong>:
 ```yaml
 name: PDF Processing
 description: Extract text, fill forms, merge PDFs...
 ```
 
-**Level 2 - SKILL.md (Loaded When Needed)**:
+<strong>Level 2 - SKILL.md (Loaded When Needed)</strong>:
 ```markdown
 ## Quick Start
 Extract text:
@@ -152,13 +152,13 @@ Extract text:
 For form filling, see [FORMS.md](FORMS.md)
 ```
 
-**Level 3 - Additional Files (Loaded for Detailed Work)**:
+<strong>Level 3 - Additional Files (Loaded for Detailed Work)</strong>:
 ```markdown
 # FORMS.md
 Detailed form filling instructions...
 ```
 
-This structure allows **efficient context window usage** while providing virtually unlimited information.
+This structure allows <strong>efficient context window usage</strong> while providing virtually unlimited information.
 
 ## Project Background: Why Skills Were Needed
 
@@ -174,11 +174,11 @@ My blog automation system used multiple subagents in the `.claude/agents/` direc
 └── seo-optimizer.md
 ```
 
-**Problems**:
-1. **Duplication Across Agents**: Multiple agents repeatedly referencing SEO guidelines
-2. **Context Waste**: Entire agent files loaded into system prompt
-3. **Maintenance Difficulty**: Guideline changes require modifying multiple files
-4. **No Code Reuse**: No way to directly execute Python scripts
+<strong>Problems</strong>:
+1. <strong>Duplication Across Agents</strong>: Multiple agents repeatedly referencing SEO guidelines
+2. <strong>Context Waste</strong>: Entire agent files loaded into system prompt
+3. <strong>Maintenance Difficulty</strong>: Guideline changes require modifying multiple files
+4. <strong>No Code Reuse</strong>: No way to directly execute Python scripts
 
 ### Solving with Skills
 
@@ -198,11 +198,11 @@ After introducing Skills:
     └── analyze_similarity.py
 ```
 
-**Improvements**:
-1. **Single Source of Truth**: SEO guidelines in one place only
-2. **Efficient Loading**: Only necessary files loaded
-3. **Code Execution**: Date validation, slug generation automated with Python
-4. **Team Sharing**: Distributable to team members via git
+<strong>Improvements</strong>:
+1. <strong>Single Source of Truth</strong>: SEO guidelines in one place only
+2. <strong>Efficient Loading</strong>: Only necessary files loaded
+3. <strong>Code Execution</strong>: Date validation, slug generation automated with Python
+4. <strong>Team Sharing</strong>: Distributable to team members via git
 
 ## Creating the First Skill: Blog Writing Skill
 
@@ -268,7 +268,7 @@ python scripts/validate_frontmatter.py en/my-post.md
 
 ### Step 3: Add Supporting Files
 
-**seo-guidelines.md**:
+<strong>seo-guidelines.md</strong>:
 ```markdown
 # SEO Guidelines
 
@@ -286,7 +286,7 @@ python scripts/validate_frontmatter.py en/my-post.md
 ...
 ```
 
-**scripts/get_next_pubdate.py**:
+<strong>scripts/get_next_pubdate.py</strong>:
 ```python
 #!/usr/bin/env python3
 """
@@ -336,86 +336,86 @@ chmod +x scripts/*.py
 
 ### Problem 1: Claude Not Using the Skill
 
-**Symptom**:
+<strong>Symptom</strong>:
 ```
 User: Write a blog post
 Claude: (Responds normally without using Skill)
 ```
 
-**Cause**: Description was too vague
+<strong>Cause</strong>: Description was too vague
 ```yaml
 description: Helps with blog posts
 ```
 
-**Solution**:
+<strong>Solution</strong>:
 ```yaml
 description: Create SEO-optimized multi-language blog posts with proper frontmatter, hero images, and content structure. Use when writing blog posts, creating content, or managing blog metadata.
 ```
 
-**Lesson**: Description must specify both **what it does + when to use it**
+<strong>Lesson</strong>: Description must specify both <strong>what it does + when to use it</strong>
 
 ### Problem 2: YAML Parsing Error
 
-**Symptom**:
+<strong>Symptom</strong>:
 ```
 Error: Invalid frontmatter in SKILL.md
 ```
 
-**Cause**: Special characters after colon without quotes
+<strong>Cause</strong>: Special characters after colon without quotes
 ```yaml
 description: Use when: creating posts  # ❌ Second colon is the issue
 ```
 
-**Solution**:
+<strong>Solution</strong>:
 ```yaml
 description: "Use when: creating posts"  # ✅ Wrap in quotes
 ```
 
-**Lesson**: Always use quotes in YAML when including special characters
+<strong>Lesson</strong>: Always use quotes in YAML when including special characters
 
 ### Problem 3: Script Execution Failure
 
-**Symptom**:
+<strong>Symptom</strong>:
 ```
 PermissionError: [Errno 13] Permission denied: 'scripts/validate.py'
 ```
 
-**Cause**: Execute permission not granted
+<strong>Cause</strong>: Execute permission not granted
 
-**Solution**:
+<strong>Solution</strong>:
 ```bash
 chmod +x .claude/skills/blog-writing/scripts/*.py
 ```
 
-**Additional Tip**: Add shebang for Windows compatibility
+<strong>Additional Tip</strong>: Add shebang for Windows compatibility
 ```python
 #!/usr/bin/env python3
 ```
 
 ### Problem 4: File Path Error
 
-**Symptom**:
+<strong>Symptom</strong>:
 ```
 FileNotFoundError: [Errno 2] No such file or directory: 'reference.md'
 ```
 
-**Cause**: Incorrect relative path specification in SKILL.md
+<strong>Cause</strong>: Incorrect relative path specification in SKILL.md
 ```markdown
 See [reference.md](../reference.md)  # ❌
 ```
 
-**Solution**:
+<strong>Solution</strong>:
 ```markdown
 See [reference.md](reference.md)     # ✅ Same directory
 ```
 
-**Lesson**: All paths are relative to SKILL.md
+<strong>Lesson</strong>: All paths are relative to SKILL.md
 
 ### Problem 5: Duplicate Skill Conflict
 
-**Symptom**: Claude selects the wrong Skill among multiple options
+<strong>Symptom</strong>: Claude selects the wrong Skill among multiple options
 
-**Cause**: Two Skills with similar descriptions
+<strong>Cause</strong>: Two Skills with similar descriptions
 ```yaml
 # Skill 1
 description: For data analysis
@@ -424,7 +424,7 @@ description: For data analysis
 description: For analyzing data
 ```
 
-**Solution**: Differentiate with clear trigger keywords
+<strong>Solution</strong>: Differentiate with clear trigger keywords
 ```yaml
 # Skill 1
 description: Analyze sales data in Excel files and CRM exports. Use for sales reports, pipeline analysis, revenue tracking.
@@ -433,7 +433,7 @@ description: Analyze sales data in Excel files and CRM exports. Use for sales re
 description: Analyze log files and system metrics data. Use for performance monitoring, debugging, system diagnostics.
 ```
 
-**Lesson**: Clear domain separation between Skills is necessary
+<strong>Lesson</strong>: Clear domain separation between Skills is necessary
 
 ## Real Results: Before & After
 
@@ -450,7 +450,7 @@ Write a blog post.
 ...
 ```
 
-**Problems**:
+<strong>Problems</strong>:
 - User must explicitly type `/write-post` command
 - Step-by-step instructions read every time
 - No code reuse
@@ -471,23 +471,23 @@ def find_latest_pubdate():
     # Automated logic
 ```
 
-**User**: "Write a blog post about TypeScript"
+<strong>User</strong>: "Write a blog post about TypeScript"
 
-**Claude**: (Automatically activates blog-writing Skill)
+<strong>Claude</strong>: (Automatically activates blog-writing Skill)
 1. Executes `get_next_pubdate.py` → `'2025-10-22'`
 2. Generates frontmatter
 3. Optimizes title referencing seo-guidelines.md
 4. Writes content
 
-**Improvements**:
-- ✅ **Auto-discovery**: No `/write-post` typing needed
-- ✅ **Code Execution**: Python automates date calculation
-- ✅ **Context Efficiency**: Only necessary files loaded
-- ✅ **Reusability**: Applicable to other projects
+<strong>Improvements</strong>:
+- ✅ <strong>Auto-discovery</strong>: No `/write-post` typing needed
+- ✅ <strong>Code Execution</strong>: Python automates date calculation
+- ✅ <strong>Context Efficiency</strong>: Only necessary files loaded
+- ✅ <strong>Reusability</strong>: Applicable to other projects
 
 ### Performance Metrics
 
-**Token Usage Comparison** (per blog post):
+<strong>Token Usage Comparison</strong> (per blog post):
 
 | Item | Before | After | Reduction |
 |------|--------|-------|-----------|
@@ -495,7 +495,7 @@ def find_latest_pubdate():
 | Repeated Instruction Reading | 5 times | 1 time | 80% ↓ |
 | Total Tokens | ~18,000 | ~10,000 | 44% ↓ |
 
-**Time Comparison**:
+<strong>Time Comparison</strong>:
 
 | Task | Before | After | Improvement |
 |------|--------|-------|-------------|
@@ -515,8 +515,8 @@ allowed-tools: Read, Grep, Glob
 ---
 ```
 
-**Effects**:
-- **Write and Edit tools unavailable** when Skill is active
+<strong>Effects</strong>:
+- <strong>Write and Edit tools unavailable</strong> when Skill is active
 - Prevents accidental file modifications during read-only operations
 - Follows Principle of Least Privilege
 
@@ -546,7 +546,7 @@ allowed-tools: Read, Grep, Glob
 **Cannot modify files** - read-only access only.
 ````
 
-**Use Case**:
+<strong>Use Case</strong>:
 ```
 User: Review PR #123
 Claude: (Code Reviewer Skill activates, only Read/Grep/Glob available)
@@ -556,19 +556,19 @@ Claude: (Code Reviewer Skill activates, only Read/Grep/Glob available)
 
 ### Method 1: Share via Git (Recommended)
 
-**Create Project Skill**:
+<strong>Create Project Skill</strong>:
 ```bash
 mkdir -p .claude/skills/team-conventions
 ```
 
-**Commit & Push**:
+<strong>Commit & Push</strong>:
 ```bash
 git add .claude/skills/
 git commit -m "Add team coding conventions Skill"
 git push
 ```
 
-**Team Members**:
+<strong>Team Members</strong>:
 ```bash
 git pull
 # Skills automatically available!
@@ -591,13 +591,13 @@ my-plugin/
 
 ### 1. Keep Skills Focused
 
-**❌ Bad Example**:
+<strong>❌ Bad Example</strong>:
 ```yaml
 name: All-Purpose Helper
 description: Does everything - documents, data, deployment, testing...
 ```
 
-**✅ Good Example**:
+<strong>✅ Good Example</strong>:
 ```yaml
 name: PDF Form Filler
 description: Fill out PDF forms programmatically. Use when working with PDF forms or form data.
@@ -605,19 +605,19 @@ description: Fill out PDF forms programmatically. Use when working with PDF form
 
 ### 2. Include Trigger Keywords in Description
 
-**❌ Bad Example**:
+<strong>❌ Bad Example</strong>:
 ```yaml
 description: Helps with Excel
 ```
 
-**✅ Good Example**:
+<strong>✅ Good Example</strong>:
 ```yaml
 description: Analyze Excel spreadsheets, create pivot tables, generate charts. Use when working with Excel files, spreadsheets, .xlsx files, or tabular data analysis.
 ```
 
 ### 3. Leverage Progressive Disclosure
 
-**Core info in SKILL.md**:
+<strong>Core info in SKILL.md</strong>:
 ```markdown
 ## Quick Start
 Extract text from PDF:
@@ -626,7 +626,7 @@ Extract text from PDF:
 For advanced form filling, see [forms.md](forms.md)
 ```
 
-**Detailed info in separate file**:
+<strong>Detailed info in separate file</strong>:
 ```markdown
 # forms.md
 Detailed 10-page form filling guide...
@@ -634,13 +634,13 @@ Detailed 10-page form filling guide...
 
 ### 4. Clear Separation of Code and Documentation
 
-**Executable Scripts**:
+<strong>Executable Scripts</strong>:
 ```python
 # scripts/process.py
 # Claude executes directly
 ```
 
-**Reference Code**:
+<strong>Reference Code</strong>:
 ```markdown
 # examples.md
 Code examples Claude reads and references
@@ -698,29 +698,29 @@ According to the Anthropic Engineering Blog:
 
 > Looking further ahead, we hope to enable agents to create, edit, and evaluate Skills on their own, letting them codify their own patterns of behavior into reusable capabilities.
 
-**What's Coming**:
-1. **AI Auto-generates Skills**: Learn work patterns and auto-convert to Skills
-2. **Self-evaluating Skills**: Performance measurement and auto-improvement
-3. **MCP Integration**: Skills + MCP for more powerful agents
+<strong>What's Coming</strong>:
+1. <strong>AI Auto-generates Skills</strong>: Learn work patterns and auto-convert to Skills
+2. <strong>Self-evaluating Skills</strong>: Performance measurement and auto-improvement
+3. <strong>MCP Integration</strong>: Skills + MCP for more powerful agents
 
 ## Conclusion
 
-Claude Skills has the potential to become **the new standard for AI agent development**.
+Claude Skills has the potential to become <strong>the new standard for AI agent development</strong>.
 
-**Core Advantages**:
+<strong>Core Advantages</strong>:
 - ✅ Intuitive folder-based structure
 - ✅ Unlimited context through Progressive Disclosure
 - ✅ Deterministic task handling via code execution
 - ✅ Team sharing via Git
 - ✅ 44% token reduction vs. existing systems
 
-**Getting Started**:
+<strong>Getting Started</strong>:
 1. Begin with one simple Skill (e.g., commit message generation)
 2. Gradually increase complexity
 3. Share with team and collect feedback
 4. Iterate and improve
 
-**Learning Resources**:
+<strong>Learning Resources</strong>:
 - [Official Documentation](https://docs.claude.com/en/docs/claude-code/skills)
 - [Engineering Blog](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
 - [Skills Cookbook](https://github.com/anthropics/claude-cookbooks/tree/main/skills)

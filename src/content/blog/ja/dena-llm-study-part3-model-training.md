@@ -79,21 +79,21 @@ graph TD
     C1[顧客フィードバックで<br/>味を改善] --> C
 ```
 
-**事前学習 (Pre-training)**
+<strong>事前学習 (Pre-training)</strong>
 
 - <strong>目的</strong>: 汎用的な言語理解能力の獲得
 - <strong>データ</strong>: 数十〜数百TBのWebデータ
 - <strong>コスト</strong>: 数億〜数千億円 (GPT-4推定1000億円以上)
 - <strong>比喩</strong>: 料理学校ですべての調理技法を学ぶ過程
 
-**ファインチューニング (Fine-tuning)**
+<strong>ファインチューニング (Fine-tuning)</strong>
 
 - <strong>目的</strong>: 特定タスク/ドメインへの特化
 - <strong>データ</strong>: 数千〜数万個のタスク別データ
 - <strong>コスト</strong>: 数十万〜数百万円
 - <strong>比喩</strong>: イタリアンレストランのパスタ専門家になる過程
 
-**強化学習 (Reinforcement Learning)**
+<strong>強化学習 (Reinforcement Learning)</strong>
 
 - <strong>目的</strong>: 人間の好みに合わせた応答生成
 - <strong>データ</strong>: 数千〜数万個の好みデータ
@@ -201,7 +201,7 @@ lora_config:
 
 ### LoRAの変形
 
-**DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)**
+<strong>DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)</strong>
 
 ```python
 # DoRA: 重みを大きさ(magnitude)と方向(direction)に分解
@@ -212,7 +212,7 @@ W = m * (V + B @ A)
 - <strong>利点</strong>: Full Fine-tuningに近い性能
 - <strong>欠点</strong>: LoRAより若干遅い
 
-**GaLore (Gradient Low-Rank Projection, 2024)**
+<strong>GaLore (Gradient Low-Rank Projection, 2024)</strong>
 
 ```python
 # Gradientを低ランク空間に投影してメモリ節約
@@ -223,7 +223,7 @@ optimizer.step(gradient_lowrank)
 - <strong>利点</strong>: オプティマイザの状態も低ランクで圧縮 → メモリ50%追加削減
 - <strong>欠点</strong>: 実装の複雑度が高い
 
-**LoRA+ (2024)**
+<strong>LoRA+ (2024)</strong>
 
 ```python
 # 学習率を行列A、Bに異なって適用
@@ -404,18 +404,18 @@ preference_dataset = [
 
 ### DPOの変形
 
-**ORPO (Odds Ratio Preference Optimization, 2024)**
+<strong>ORPO (Odds Ratio Preference Optimization, 2024)</strong>
 
 - SFTと好み学習を<strong>同時に</strong>実行
 - 別途のSFT段階不要
 - 学習時間さらに短縮
 
-**IPO (Identity Preference Optimization, 2024)**
+<strong>IPO (Identity Preference Optimization, 2024)</strong>
 
 - Referenceモデルなしで学習可能
 - メモリ使用量さらに削減
 
-**KTO (Kahneman-Tversky Optimization, 2024)**
+<strong>KTO (Kahneman-Tversky Optimization, 2024)</strong>
 
 - ペア比較データの代わりに<strong>個別フィードバック</strong>使用 (良い/悪い)
 - データ収集コスト大幅削減
@@ -441,7 +441,7 @@ graph TD
 
 ### 実務推奨事項
 
-**1. チャットボット/対話型システム**
+<strong>1. チャットボット/対話型システム</strong>
 
 ```
 プロンプト → SFT (LoRA) → DPO
@@ -450,7 +450,7 @@ graph TD
 - ドメイン知識注入: LoRAで効率的ファインチューニング
 - 対話品質改善: DPOで好み整列
 
-**2. 文書分類/タグ付け**
+<strong>2. 文書分類/タグ付け</strong>
 
 ```
 プロンプト → LoRA (選択的)
@@ -459,7 +459,7 @@ graph TD
 - ほとんどプロンプトで十分
 - 極限性能必要時LoRA追加
 
-**3. コード生成**
+<strong>3. コード生成</strong>
 
 ```
 プロンプト → SFT (QLoRA) → RLHF/DPO
@@ -468,7 +468,7 @@ graph TD
 - コードスタイル学習: QLoRAで大量コード学習
 - 実行可能性改善: RLHFでコンパイルエラーペナルティ
 
-**4. 要約/翻訳**
+<strong>4. 要約/翻訳</strong>
 
 ```
 プロンプト → DPO

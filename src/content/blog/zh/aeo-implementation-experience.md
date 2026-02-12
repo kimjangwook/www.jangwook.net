@@ -632,18 +632,18 @@ PREP是日本商务沟通中广泛使用的结构化表达方法，非常适合A
 
 在Agent Effi Flow的各个页面中，我大量使用了问题格式：
 
-**首页（Homepage）**：
+<strong>首页（Homepage）</strong>：
 - "什么是Agent Effi Flow？"
 - "为什么选择我们？"
 - "如何开始使用？"
 
-**服务页面（Service Pages）**：
+<strong>服务页面（Service Pages）</strong>：
 - "免税处理OCR如何工作？"
 - "支持哪些收据格式？"
 - "识别准确率是多少？"
 - "可以与现有系统集成吗？"
 
-**定价页面（Pricing Page）**：
+<strong>定价页面（Pricing Page）</strong>：
 - "费用如何计算？"
 - "有免费试用吗？"
 - "可以随时取消吗？"

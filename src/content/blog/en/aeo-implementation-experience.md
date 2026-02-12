@@ -71,7 +71,7 @@ This isn't the death of search engine optimization—it's the birth of <strong>A
 
 <strong>AEO (Answer Engine Optimization)</strong> optimizes content to be cited by AI systems that synthesize answers from multiple sources. Success metrics include citation rate, answer accuracy, and source credibility.
 
-**Key Differences**:
+<strong>Key Differences</strong>:
 
 | Aspect | SEO | AEO |
 |--------|-----|-----|
@@ -85,14 +85,14 @@ This isn't the death of search engine optimization—it's the birth of <strong>A
 
 The rise of AI search engines has fundamentally changed user behavior:
 
-**Before (Keyword-Based Search)**:
+<strong>Before (Keyword-Based Search)</strong>:
 ```
 User: "best receipt OCR API"
 Google: Shows 10 blue links
 User: Clicks 3-5 links, compares options
 ```
 
-**Now (Question-Based Search)**:
+<strong>Now (Question-Based Search)</strong>:
 ```
 User: "How can I automate tax-free receipt processing for my Japanese shop?"
 ChatGPT: [Synthesizes answer from multiple sources, suggests specific solutions]
@@ -133,7 +133,7 @@ This post shares real-world implementation experience from <a href="https://agen
 
 B2B buyers research extensively before purchasing. According to Gartner, <strong>B2B buyers spend 27% of their purchase journey researching online independently</strong>. When they ask AI assistants "What's the best tool for [specific use case]?", you want to be the cited answer.
 
-**Our AEO Implementation Goals**:
+<strong>Our AEO Implementation Goals</strong>:
 1. Be cited by ChatGPT, Perplexity, and Google AI Overview
 2. Rank for long-tail question-based queries
 3. Convert AI-driven traffic to free trial signups
@@ -144,7 +144,7 @@ B2B buyers research extensively before purchasing. According to Gartner, <strong
 
 We created a comprehensive FAQ page at `/faq` with <strong>5 categories and 25+ questions</strong>:
 
-**Categories**:
+<strong>Categories</strong>:
 - General (product overview, features)
 - Pricing (plans, credits, payment)
 - Account & Security (authentication, data privacy)
@@ -168,7 +168,7 @@ graph TD
 
 #### Technical Implementation
 
-**Svelte 5 Component with Reactive State**:
+<strong>Svelte 5 Component with Reactive State</strong>:
 
 ````typescript
 <!-- src/components/FAQ.svelte -->
@@ -264,7 +264,7 @@ graph TD
 </style>
 ````
 
-**FAQPage Schema Implementation**:
+<strong>FAQPage Schema Implementation</strong>:
 
 ````typescript
 <!-- src/components/StructuredData.svelte -->
@@ -315,7 +315,7 @@ At the top of the FAQ page, we added a <strong>summary box</strong> that LLMs ca
 </div>
 ```
 
-**Why This Works for AEO**:
+<strong>Why This Works for AEO</strong>:
 - Direct answers to most common questions
 - Structured as question-answer pairs
 - Includes specific numbers and details
@@ -327,9 +327,9 @@ We created dedicated use case pages demonstrating <strong>real-world ROI with sp
 
 #### Tax-Free Receipt OCR Use Cases
 
-**Page**: `/use-cases/receipt-ocr-tax-refund`
+<strong>Page</strong>: `/use-cases/receipt-ocr-tax-refund`
 
-**Target Audiences**:
+<strong>Target Audiences</strong>:
 
 1. <strong>Tax-Free Processing Agencies</strong>
    - <strong>Problem</strong>: Manual processing of 200+ receipts/day
@@ -350,9 +350,9 @@ We created dedicated use case pages demonstrating <strong>real-world ROI with sp
 
 #### Accounting OCR Use Cases
 
-**Page**: `/use-cases/accounting-ocr`
+<strong>Page</strong>: `/use-cases/accounting-ocr`
 
-**Target Audiences**:
+<strong>Target Audiences</strong>:
 
 1. <strong>SME Accountants</strong>
    - <strong>Problem</strong>: 45 minutes per client for receipt entry
@@ -425,7 +425,7 @@ We added structured data showing the <strong>5-step onboarding process</strong>:
 </script>
 ````
 
-**Why HowTo Schema Matters for AEO**:
+<strong>Why HowTo Schema Matters for AEO</strong>:
 - LLMs can extract step-by-step instructions
 - Google may show rich results with step numbers
 - Reduces bounce rate by providing clear guidance
@@ -534,7 +534,7 @@ const productSchema = {
 };
 ````
 
-**Structured Data Implementation Flow**:
+<strong>Structured Data Implementation Flow</strong>:
 
 ```mermaid
 graph TD
@@ -560,7 +560,7 @@ graph TD
 
 We use the <strong>PREP (Point-Reason-Example-Point) framework</strong> for all use case descriptions:
 
-**Example: Tax-Free OCR Value Proposition**
+<strong>Example: Tax-Free OCR Value Proposition</strong>
 
 ```
 [Point] Tax-free OCR reduces receipt entry work by up to 90%.
@@ -585,7 +585,7 @@ AI-OCR with Google Gemini 2.5 Flash cuts this to ~30 seconds per receipt by:
 inbound tourism demand without proportionally increasing staff costs.
 ```
 
-**Why PREP Works for AEO**:
+<strong>Why PREP Works for AEO</strong>:
 - Clear logical structure for LLMs to parse
 - Concrete numbers and examples (citation-worthy)
 - Addresses "why" (reason) and "how" (example)
@@ -595,24 +595,24 @@ inbound tourism demand without proportionally increasing staff costs.
 
 All major sections use <strong>question-based headings</strong> that match natural user queries:
 
-**Instead of**:
+<strong>Instead of</strong>:
 ```markdown
 ## Tax-Free Receipt Processing Features
 ```
 
-**We write**:
+<strong>We write</strong>:
 ```markdown
 ## How Does Tax-Free Receipt OCR Work?
 ## What Makes Our OCR 97% Accurate?
 ## Why Choose Agent Effi Flow Over Traditional Data Entry?
 ```
 
-**Impact**:
+<strong>Impact</strong>:
 - Matches voice search queries ("Hey ChatGPT, how does tax-free receipt OCR work?")
 - LLMs can directly extract answers
 - Higher relevance for featured snippets
 
-**Question Types We Cover**:
+<strong>Question Types We Cover</strong>:
 1. <strong>What</strong> (definition, overview)
 2. <strong>How</strong> (process, implementation)
 3. <strong>Why</strong> (benefits, reasons)
@@ -626,12 +626,12 @@ Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworth
 
 #### Experience: Real Implementation Results
 
-**Instead of vague claims**:
+<strong>Instead of vague claims</strong>:
 ```
 "Our OCR is highly accurate and fast."
 ```
 
-**We provide specific metrics**:
+<strong>We provide specific metrics</strong>:
 ```
 Accuracy based on 1,000+ test samples:
 - Japanese receipts: 97.2% (vertical text, kanji/hiragana mix)
@@ -644,7 +644,7 @@ Processing speed: Average 1.2 seconds per receipt
 
 #### Expertise: Technical Depth with Code
 
-**Example API Usage**:
+<strong>Example API Usage</strong>:
 
 ````typescript
 // Real SDK implementation (not marketing copy)
@@ -696,7 +696,7 @@ async function processReceipt(imagePath: string) {
 }
 ````
 
-**Why Code Examples Boost E-E-A-T**:
+<strong>Why Code Examples Boost E-E-A-T</strong>:
 - Demonstrates technical expertise
 - Developers can test immediately (builds trust)
 - LLMs extract this for code generation tasks
@@ -706,7 +706,7 @@ async function processReceipt(imagePath: string) {
 
 We cite authoritative sources for all claims:
 
-**Example**:
+<strong>Example</strong>:
 ```
 According to the Japan National Tourism Organization (JNTO),
 inbound visitors reached 25.07 million in the first 10 months
@@ -716,7 +716,7 @@ Source: JNTO Monthly Tourism Statistics (October 2024)
 https://www.jnto.go.jp/statistics/
 ```
 
-**Citation Best Practices**:
+<strong>Citation Best Practices</strong>:
 - Link to original sources (government data, research papers)
 - Include publication date
 - Use official organization names
@@ -735,13 +735,13 @@ https://www.jnto.go.jp/statistics/
    - LLMs can detect inconsistent or fabricated content
    - Damages long-term trust and citation rate
 
-**Our Solution**:
+<strong>Our Solution</strong>:
 - Mark all ROI claims as "estimated values based on industry benchmarks"
 - Remove fictional company testimonials
 - Add real customer feedback after collecting genuine reviews
 - Focus on transparent pricing and clear limitations
 
-**Example Disclaimer**:
+<strong>Example Disclaimer</strong>:
 ```
 Note: ROI calculations are estimates based on:
 - Industry average hourly wages (¥2,000 for data entry staff)
@@ -851,7 +851,7 @@ src/
 </svelte:head>
 ````
 
-**Key Features**:
+<strong>Key Features</strong>:
 - Reactive props with Svelte 5 `$props()` rune
 - Derived state with `$derived()` for computed values
 - Canonical URLs to prevent duplicate content
@@ -952,7 +952,7 @@ src/
 </svelte:head>
 ````
 
-**Usage Example**:
+<strong>Usage Example</strong>:
 
 ````typescript
 <!-- src/routes/faq/+page.svelte -->
@@ -983,7 +983,7 @@ src/
 
 The FAQ accordion uses Svelte 5's new reactive state primitives:
 
-**Before (Svelte 4)**:
+<strong>Before (Svelte 4)</strong>:
 ```typescript
 let openItems: Set<string> = new Set();
 
@@ -993,7 +993,7 @@ function toggleItem(id: string) {
 }
 ```
 
-**After (Svelte 5)**:
+<strong>After (Svelte 5)</strong>:
 ```typescript
 let openItems = $state<Set<string>>(new Set());
 
@@ -1008,7 +1008,7 @@ function toggleItem(id: string) {
 }
 ```
 
-**Benefits**:
+<strong>Benefits</strong>:
 - More explicit reactivity model
 - Better TypeScript inference
 - Easier to understand for beginners
@@ -1029,7 +1029,7 @@ Initially, our use case pages included fictional customer testimonials:
 – Suzuki-san, Accounting Firm Partner
 ```
 
-**Problems**:
+<strong>Problems</strong>:
 1. <strong>No real customers yet</strong> (product just launched)
 2. <strong>Japanese advertising law</strong> prohibits misleading claims (景品表示法)
 3. <strong>E-E-A-T violation</strong>: Fabricated experience damages trust
@@ -1037,7 +1037,7 @@ Initially, our use case pages included fictional customer testimonials:
 
 ### What We Did Instead
 
-**1. Use Industry Benchmarks with Clear Attribution**:
+<strong>1. Use Industry Benchmarks with Clear Attribution</strong>:
 
 ```
 ✓ CURRENT APPROACH:
@@ -1049,7 +1049,7 @@ Based on this benchmark and our measured OCR processing time of
 3–8 hours of manual labor."
 ```
 
-**2. Mark All Claims as Estimates**:
+<strong>2. Mark All Claims as Estimates</strong>:
 
 ```
 <div class="roi-disclaimer">
@@ -1060,7 +1060,7 @@ Based on this benchmark and our measured OCR processing time of
 </div>
 ```
 
-**3. Be Transparent About Product Stage**:
+<strong>3. Be Transparent About Product Stage</strong>:
 
 ```
 "Agent Effi Flow launched in November 2024. We're actively collecting
@@ -1068,7 +1068,7 @@ user feedback to improve accuracy and add requested features.
 Sign up and get 50 free credits to test the service risk-free."
 ```
 
-**4. Focus on Technical Specifications**:
+<strong>4. Focus on Technical Specifications</strong>:
 
 Instead of testimonials, we provide <strong>verifiable technical details</strong>:
 
@@ -1096,40 +1096,40 @@ Unlike traditional SEO where you can track clicks from Google Search Console, <s
 
 #### 1. Direct Traffic Growth
 
-**Hypothesis**: If LLMs cite our content with URLs, direct traffic should increase.
+<strong>Hypothesis</strong>: If LLMs cite our content with URLs, direct traffic should increase.
 
-**Measurement**:
+<strong>Measurement</strong>:
 - Google Analytics 4: Direct traffic trend
 - Filter out known direct sources (bookmarks, email)
 - Monitor correlation with content publishing
 
-**Our 30-Day Result**:
+<strong>Our 30-Day Result</strong>:
 - Direct traffic increased by 127% (42 → 95 visits/week)
 - Notable spike after publishing comprehensive FAQ page
 
 #### 2. Brand Search Volume
 
-**Hypothesis**: Being cited by AI increases brand awareness.
+<strong>Hypothesis</strong>: Being cited by AI increases brand awareness.
 
-**Measurement**:
+<strong>Measurement</strong>:
 - Google Search Console: Queries containing "Agent Effi Flow"
 - Track month-over-month growth
 - Monitor question-based brand queries ("How does Agent Effi Flow work?")
 
-**Our 30-Day Result**:
+<strong>Our 30-Day Result</strong>:
 - Brand searches: 23 queries (from 0)
 - Question-based queries: 8/23 (35%)
 
 #### 3. Zero-Click Query Performance
 
-**Hypothesis**: Our content appears in AI Overviews and featured snippets.
+<strong>Hypothesis</strong>: Our content appears in AI Overviews and featured snippets.
 
-**Measurement**:
+<strong>Measurement</strong>:
 - Google Search Console: Impressions without clicks
 - High impressions + low clicks = featured in zero-click results
 - This is actually <strong>good for AEO</strong> (we're being cited)
 
-**Our 30-Day Result**:
+<strong>Our 30-Day Result</strong>:
 - Total impressions: 1,847
 - Clicks: 94
 - Zero-click rate: 94.9%
@@ -1137,12 +1137,12 @@ Unlike traditional SEO where you can track clicks from Google Search Console, <s
 
 #### 4. Structured Data Performance
 
-**Measurement**:
+<strong>Measurement</strong>:
 - Google Search Console → Enhancements → Structured Data
 - Check for errors and valid items
 - Monitor rich result impressions
 
-**Our Status**:
+<strong>Our Status</strong>:
 - FAQPage: 23 valid items
 - HowTo: 2 valid items
 - Article: 5 valid items
@@ -1150,14 +1150,14 @@ Unlike traditional SEO where you can track clicks from Google Search Console, <s
 
 #### 5. Content Depth Metrics
 
-**Hypothesis**: Comprehensive content gets cited more.
+<strong>Hypothesis</strong>: Comprehensive content gets cited more.
 
-**Measurement**:
+<strong>Measurement</strong>:
 - Avg. session duration by landing page
 - Pages per session
 - Scroll depth (via GA4 custom events)
 
-**Our 30-Day Result**:
+<strong>Our 30-Day Result</strong>:
 
 | Page Type | Avg. Duration | Pages/Session | Scroll Depth |
 |-----------|--------------|---------------|--------------|
@@ -1166,15 +1166,15 @@ Unlike traditional SEO where you can track clicks from Google Search Console, <s
 | FAQ | 3:12 | 1.4 | 62% |
 | Blog Post | 5:31 | 2.7 | 81% |
 
-**Insight**: Long-form content keeps users engaged, signaling quality to both search engines and LLMs.
+<strong>Insight</strong>: Long-form content keeps users engaged, signaling quality to both search engines and LLMs.
 
 ## Future AEO Plans
 
 ### 1. Sitemap Enhancement
 
-**Current State**: Basic sitemap with all pages
+<strong>Current State</strong>: Basic sitemap with all pages
 
-**Planned Improvements**:
+<strong>Planned Improvements</strong>:
 - Priority weighting (1.0 for use cases, 0.8 for blog, 0.6 for other)
 - Change frequency hints
 - Image sitemap for OG images
@@ -1199,9 +1199,9 @@ Unlike traditional SEO where you can track clicks from Google Search Console, <s
 
 ### 2. OG Image Generation Automation
 
-**Challenge**: Manually creating 1200×630px OG images for every page is time-consuming.
+<strong>Challenge</strong>: Manually creating 1200×630px OG images for every page is time-consuming.
 
-**Solution**: Automated OG image generation with Vercel's @vercel/og:
+<strong>Solution</strong>: Automated OG image generation with Vercel's @vercel/og:
 
 ````typescript
 // src/routes/og/[type]/[slug]/+server.ts
@@ -1246,27 +1246,27 @@ export async function GET({ params }) {
 }
 ````
 
-**Benefits**:
+<strong>Benefits</strong>:
 - Consistent branding across all pages
 - Automatic updates when content changes
 - Optimized for social media platforms
 
 ### 3. Google Search Console Structured Data Verification
 
-**Next Steps**:
+<strong>Next Steps</strong>:
 1. Submit sitemap to GSC
 2. Monitor "Enhancements" section for structured data errors
 3. Use <strong>Rich Results Test</strong> tool for validation
 4. Track impression/click data for rich results
 
-**Target**:
+<strong>Target</strong>:
 - 0 structured data errors
 - 50+ valid FAQ items (expand FAQ page)
 - 5+ valid HowTo guides
 
 ### 4. Additional Service Use Cases
 
-**Planned Content**:
+<strong>Planned Content</strong>:
 
 1. <strong>SEO Analyzer Use Cases</strong>:
    - Digital marketing agencies
@@ -1278,7 +1278,7 @@ export async function GET({ params }) {
    - Market researchers
    - Startup founders
 
-**Content Format**:
+<strong>Content Format</strong>:
 - PREP structure (Point-Reason-Example-Point)
 - Specific ROI calculations with industry benchmarks
 - HowTo Schema for implementation guides
@@ -1286,7 +1286,7 @@ export async function GET({ params }) {
 
 ### 5. Real Customer Testimonials
 
-**Once we have 10+ paying customers**:
+<strong>Once we have 10+ paying customers</strong>:
 
 1. Conduct structured interviews:
    - What problem did you face?
@@ -1370,7 +1370,7 @@ As we transition from <strong>traditional search to AI-powered answer engines</s
 
 B2B buyers increasingly use AI assistants to research solutions:
 
-**Typical B2B Research Journey**:
+<strong>Typical B2B Research Journey</strong>:
 ```
 1. ChatGPT: "What tools can automate receipt processing for Japanese tax-free shops?"
    → LLM synthesizes answer from multiple sources
@@ -1395,14 +1395,14 @@ AEO isn't about gaming algorithms—it's about <strong>creating genuinely useful
 
 The same principles that make content valuable for users (accuracy, comprehensiveness, clarity) make it valuable for LLMs. The difference is presentation: <strong>structure, schema, and semantic markup</strong>.
 
-**Start small**:
+<strong>Start small</strong>:
 1. Add FAQ Schema to your most-visited pages
 2. Convert key blog posts to question-based headings
 3. Include code samples with real implementation examples
 4. Cite sources for all claims
 5. Monitor direct traffic and brand searches
 
-**See it live**: <a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">agent-effi-flow.jangwook.net</a>
+<strong>See it live</strong>: <a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">agent-effi-flow.jangwook.net</a>
 
 Let's build content that thrives in the AI search era.
 
@@ -1412,11 +1412,11 @@ Let's build content that thrives in the AI search era.
 
 ### Tools & Services
 
-- **Google Search Console** – SEO monitoring and structured data validation
-- **Google Analytics 4** – Traffic analytics and user behavior tracking
-- **Schema Markup Generator** – Tool for creating JSON-LD structured data
-- **Rich Results Test** – Validate structured data for Google
-- **Vercel OG Image Generation** – Automated social media image creation
+- <strong>Google Search Console</strong> – SEO monitoring and structured data validation
+- <strong>Google Analytics 4</strong> – Traffic analytics and user behavior tracking
+- <strong>Schema Markup Generator</strong> – Tool for creating JSON-LD structured data
+- <strong>Rich Results Test</strong> – Validate structured data for Google
+- <strong>Vercel OG Image Generation</strong> – Automated social media image creation
 
 ### Technical Documentation
 
@@ -1427,15 +1427,15 @@ Let's build content that thrives in the AI search era.
 
 ### Related Articles
 
-- **SEO/AEO in the LLM Era** – Comprehensive roadmap for B2B SaaS optimization
-- **Specification-Driven Development** – Building SaaS with Claude Code
-- **LLM Blog Automation** – AI-powered content generation workflows
+- <strong>SEO/AEO in the LLM Era</strong> – Comprehensive roadmap for B2B SaaS optimization
+- <strong>Specification-Driven Development</strong> – Building SaaS with Claude Code
+- <strong>LLM Blog Automation</strong> – AI-powered content generation workflows
 
 ### Reference Studies
 
-- **JNTO Tourism Statistics** – Inbound tourism data for Japan
-- **Gartner B2B Buyer Journey** – Research on B2B purchasing behavior
-- **Google Zero-Click Study** – Analysis of search result click behavior
+- <strong>JNTO Tourism Statistics</strong> – Inbound tourism data for Japan
+- <strong>Gartner B2B Buyer Journey</strong> – Research on B2B purchasing behavior
+- <strong>Google Zero-Click Study</strong> – Analysis of search result click behavior
 
 ---
 
@@ -1443,4 +1443,4 @@ Let's build content that thrives in the AI search era.
 
 Agent Effi Flow is an AI-powered business efficiency platform specializing in OCR automation, accounting integration, and business intelligence tools. Built with modern web technologies (SvelteKit, Gemini API) and optimized for the AI search era.
 
-**Try it free**: <a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">50 free credits on signup, no credit card required</a>
+<strong>Try it free</strong>: <a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">50 free credits on signup, no credit card required</a>

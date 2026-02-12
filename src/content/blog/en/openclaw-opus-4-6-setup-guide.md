@@ -54,11 +54,11 @@ relatedPosts:
 
 ## Why "URGENT"
 
-On February 5, 2026, Anthropic released Claude Opus 4.6. **1 million token context**, **128K token output**, enhanced planning and self-correction capabilities.
+On February 5, 2026, Anthropic released Claude Opus 4.6. <strong>1 million token context</strong>, <strong>128K token output</strong>, enhanced planning and self-correction capabilities.
 
 If you're an OpenClaw user, you want to set this up right now.
 
-This post gives you the **shortest path to a working setup — copy, paste, and go.**
+This post gives you the <strong>shortest path to a working setup — copy, paste, and go.</strong>
 
 ## Prerequisites
 
@@ -95,8 +95,8 @@ Open `~/.openclaw/openclaw.json` and add or modify these two sections.
 }
 ```
 
-**Key points**:
-- `mode: "merge"` — **adds** to OpenClaw's built-in model catalog (doesn't replace it)
+<strong>Key points</strong>:
+- `mode: "merge"` — <strong>adds</strong> to OpenClaw's built-in model catalog (doesn't replace it)
 - `reasoning: true` — enables Opus 4.6 reasoning mode
 - `contextWindow: 1000000` — full 1M token context
 - `maxTokens: 128000` — 128K token long output
@@ -117,14 +117,14 @@ Open `~/.openclaw/openclaw.json` and add or modify these two sections.
 }
 ```
 
-**Key points**:
+<strong>Key points</strong>:
 - `primary` — uses Opus 4.6 as default for all sessions
 - `fallbacks` — falls back to Opus 4.5 when Opus 4.6 is unavailable
 - `contextTokens: 1000000` — lets the agent use the full 1M context
 
 ## Applying the Config
 
-After saving, **two steps** are required.
+After saving, <strong>two steps</strong> are required.
 
 ### Step 1: Restart the Gateway
 
@@ -142,7 +142,7 @@ Existing sessions retain the old model config. Send this in chat:
 /new
 ```
 
-Or `/reset`. **The new model won't apply until you start a new session.**
+Or `/reset`. <strong>The new model won't apply until you start a new session.</strong>
 
 ## Verify the Setup
 

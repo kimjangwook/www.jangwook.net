@@ -15,19 +15,19 @@ relatedPosts: []
 
 Ever typed "modern clean blog hero image" into an AI image generator? The result was probably a bland, generic image you've seen a thousand times. When your prompt is vague, the AI produces vague images.
 
-To solve this, we analyzed **300+ infographic designs evaluated across 5 criteria in the Banana X project**. The result? High-scoring designs share clear, consistent patterns — and we distilled those patterns into a systematic prompt framework called the **YAML 7-Part Structure**.
+To solve this, we analyzed <strong>300+ infographic designs evaluated across 5 criteria in the Banana X project</strong>. The result? High-scoring designs share clear, consistent patterns — and we distilled those patterns into a systematic prompt framework called the <strong>YAML 7-Part Structure</strong>.
 
 ### The 5 Evaluation Criteria (50 Points Total)
 
 | Criterion | Points | Description |
 |-----------|--------|-------------|
-| **Legibility** | 10 | Can the information be clearly read? |
-| **Hierarchy** | 10 | Is the visual priority of information distinguishable? |
-| **Consistency** | 10 | Do all design elements follow a unified grammar? |
-| **Atmosphere** | 10 | Does the style reinforce the content's meaning? |
-| **Theme Fit** | 10 | Does the visual match the post's topic? |
+| <strong>Legibility</strong> | 10 | Can the information be clearly read? |
+| <strong>Hierarchy</strong> | 10 | Is the visual priority of information distinguishable? |
+| <strong>Consistency</strong> | 10 | Do all design elements follow a unified grammar? |
+| <strong>Atmosphere</strong> | 10 | Does the style reinforce the content's meaning? |
+| <strong>Theme Fit</strong> | 10 | Does the visual match the post's topic? |
 
-By extracting the common traits of designs scoring 45+ out of 50, we created a **prompt writing framework anyone can follow**.
+By extracting the common traits of designs scoring 45+ out of 50, we created a <strong>prompt writing framework anyone can follow</strong>.
 
 ---
 
@@ -41,21 +41,21 @@ Every image prompt must include these 7 elements. Let's walk through each part w
 Tone: "keyword1, keyword2, keyword3, keyword4, keyword5"
 ```
 
-Define the entire world of your image with 5 adjectives or nouns. **The more specific, the better.**
+Define the entire world of your image with 5 adjectives or nouns. <strong>The more specific, the better.</strong>
 
-**❌ BAD:**
+<strong>❌ BAD:</strong>
 ```yaml
 Tone: "modern, clean, professional"
 ```
 → Applies to literally every design. Zero directional guidance for the AI.
 
-**✅ GOOD:**
+<strong>✅ GOOD:</strong>
 ```yaml
 Tone: "intellectual, planned, precise, engineering, blueprint"
 ```
 → "An intellectual, precisely engineered blueprint" — a clear visual world emerges.
 
-**High-Scoring (45+) Tone Patterns:**
+<strong>High-Scoring (45+) Tone Patterns:</strong>
 
 | Style | Tone Keywords |
 |-------|--------------|
@@ -77,9 +77,9 @@ Visual Identity:
     - "#HEX (Name) — purpose"
 ```
 
-When specifying colors, **always include both the HEX code and the color name**. This ensures the AI interprets colors accurately.
+When specifying colors, <strong>always include both the HEX code and the color name</strong>. This ensures the AI interprets colors accurately.
 
-**❌ BAD:**
+<strong>❌ BAD:</strong>
 ```yaml
 Visual Identity:
   Background: "blue"
@@ -88,7 +88,7 @@ Visual Identity:
 ```
 → "Blue" could mean anything from navy to sky blue. The AI has to guess.
 
-**✅ GOOD:**
+<strong>✅ GOOD:</strong>
 ```yaml
 Visual Identity:
   Background: "#0047AB (Cobalt Blue) — blueprint background"
@@ -99,7 +99,7 @@ Visual Identity:
 ```
 → Precise color codes + roles keep the AI's color scheme consistent.
 
-**High-Scoring Color Combinations:**
+<strong>High-Scoring Color Combinations:</strong>
 
 | Style | Background | Text | Accent |
 |-------|-----------|------|--------|
@@ -125,22 +125,22 @@ Image Style:
 
 BAD vs GOOD for each field:
 
-**Features** — The most important single sentence:
+<strong>Features</strong> — The most important single sentence:
 
 - ❌ `"Clean modern design"` → Matches every design ever
 - ✅ `"Layout composed of PCB circuit board patterns"` → Unique to this design
 
-**Shapes** — Recurring visual elements:
+<strong>Shapes</strong> — Recurring visual elements:
 
 - ❌ `"Various shapes"` → Zero information
 - ✅ `"Straight lines and 45-degree traces, nodes, connectors"` → Concrete visual vocabulary
 
-**Texture** — Tactile expression:
+<strong>Texture</strong> — Tactile expression:
 
 - ❌ `"Smooth"` → Insufficient
 - ✅ `"Washi paper fibers, woodblock grain, ink gradations"` → Physical presence
 
-**Composition** — Visual hierarchy strategy:
+<strong>Composition</strong> — Visual hierarchy strategy:
 
 - ❌ `"Centered layout"` → Too simple
 - ✅ `"A few thin lines in the center of overwhelming white space"` → Includes spatial strategy
@@ -154,20 +154,20 @@ Typography:
   Style: "How the font is applied"
 ```
 
-**❌ BAD:**
+<strong>❌ BAD:</strong>
 ```yaml
 Typography:
   Heading: "Sans-serif"
 ```
 
-**✅ GOOD:**
+<strong>✅ GOOD:</strong>
 ```yaml
 Typography:
   Heading: "Drafting stencil font"
   Style: "Hand-drawn block letters, placed like dimension lines and annotation labels"
 ```
 
-**High-Scoring Typography Patterns:**
+<strong>High-Scoring Typography Patterns:</strong>
 
 | Style | Heading | Style |
 |-------|---------|-------|
@@ -186,12 +186,12 @@ Content Connection:
   Key Elements: "2-3 core visual elements extracted from the post"
 ```
 
-**This is the most important differentiator.** Without this section, you'll get a generic image that could belong to any post.
+<strong>This is the most important differentiator.</strong> Without this section, you'll get a generic image that could belong to any post.
 
-**❌ BAD (No Content Connection):**
+<strong>❌ BAD (No Content Connection):</strong>
 → A "React" post's hero image could just as easily be used for a "Vue" post
 
-**✅ GOOD:**
+<strong>✅ GOOD:</strong>
 ```yaml
 Content Connection:
   Core Concept: "Component separation between server and client to reduce bundle size"
@@ -206,7 +206,7 @@ Content Connection:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealistic human faces."
 ```
 
-**4 mandatory constraints** you must always include:
+<strong>4 mandatory constraints</strong> you must always include:
 
 | Constraint | Reason |
 |-----------|--------|
@@ -219,9 +219,9 @@ Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealisti
 
 After writing your prompt, verify these 3 things:
 
-1. **Uniqueness Test**: "Could this prompt be used for a completely different post?" → If **yes**, Content Connection is lacking
-2. **Visual Specificity Test**: "Would two people reading this prompt draw similar images?" → If **no**, Shapes/Texture/Composition need work
-3. **Consistency Test**: "Do the 5 Tone keywords conflict with the Color Palette + Image Style?" → If there's a conflict, revise
+1. <strong>Uniqueness Test</strong>: "Could this prompt be used for a completely different post?" → If <strong>yes</strong>, Content Connection is lacking
+2. <strong>Visual Specificity Test</strong>: "Would two people reading this prompt draw similar images?" → If <strong>no</strong>, Shapes/Texture/Composition need work
+3. <strong>Consistency Test</strong>: "Do the 5 Tone keywords conflict with the Color Palette + Image Style?" → If there's a conflict, revise
 
 ---
 
@@ -231,7 +231,7 @@ Here are the shared traits of designs scoring 45+ out of 50 across 300 evaluatio
 
 ### The Secret to Consistency 10/10: Unified "Design Grammar"
 
-Designs that achieved perfect consistency scores **apply the same design grammar to every element**:
+Designs that achieved perfect consistency scores <strong>apply the same design grammar to every element</strong>:
 
 - Line weight is uniform throughout
 - Icon abstraction levels are consistent
@@ -254,7 +254,7 @@ Image Style:
 
 ### The Secret to Atmosphere 10/10: Style as "Container for Information"
 
-Perfect atmosphere scores go to designs where the style isn't mere decoration — it **reinforces the content's meaning**. The design should shift the reader's emotional state.
+Perfect atmosphere scores go to designs where the style isn't mere decoration — it <strong>reinforces the content's meaning</strong>. The design should shift the reader's emotional state.
 
 | Score | Pattern | Why It Scores High |
 |-------|---------|--------------------|
@@ -267,18 +267,18 @@ Perfect atmosphere scores go to designs where the style isn't mere decoration �
 
 The key is understanding a style's core essence and applying it to information expression:
 
-- **Blueprint** → Uses the "design/planning" metaphor to express the information construction process
-- **Newspaper** → Uses the "journalism" format to emphasize information gravity
-- **Ukiyo-e** → Uses the aesthetic of "refined elegance" to elevate information dignity
+- <strong>Blueprint</strong> → Uses the "design/planning" metaphor to express the information construction process
+- <strong>Newspaper</strong> → Uses the "journalism" format to emphasize information gravity
+- <strong>Ukiyo-e</strong> → Uses the aesthetic of "refined elegance" to elevate information dignity
 
 ### Analyzing Perfect Score (50/50) Designs
 
 What all 50/50 designs have in common:
 
-1. **100% commitment to one style** — No style mixing
-2. **Specific Content Connection** — 1:1 correspondence with the post content
-3. **Strict constraint compliance** — No text overlay, exact ratio
-4. **Tone ↔ Style ↔ Color triangular consistency** — All three point to the same visual world
+1. <strong>100% commitment to one style</strong> — No style mixing
+2. <strong>Specific Content Connection</strong> — 1:1 correspondence with the post content
+3. <strong>Strict constraint compliance</strong> — No text overlay, exact ratio
+4. <strong>Tone ↔ Style ↔ Color triangular consistency</strong> — All three point to the same visual world
 
 ---
 
@@ -307,7 +307,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**Key idea:** Stacking component blocks in an architectural composition to express frontend's "assembly" nature.
+<strong>Key idea:</strong> Stacking component blocks in an architectural composition to express frontend's "assembly" nature.
 
 ### 3.2 AI / Machine Learning
 
@@ -331,7 +331,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**Key idea:** Glowing node networks against deep space blue — visualizing AI/ML's essence of "connection and learning."
+<strong>Key idea:</strong> Glowing node networks against deep space blue — visualizing AI/ML's essence of "connection and learning."
 
 ### 3.3 DevOps / Infrastructure
 
@@ -354,7 +354,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**Key idea:** Blueprint aesthetic — expressing DevOps' "infrastructure design" essence through architectural drawings.
+<strong>Key idea:</strong> Blueprint aesthetic — expressing DevOps' "infrastructure design" essence through architectural drawings.
 
 ### 3.4 Performance / Optimization
 
@@ -377,7 +377,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**Key idea:** Extreme minimalism — expressing "optimization = removing the unnecessary" through whitespace.
+<strong>Key idea:</strong> Extreme minimalism — expressing "optimization = removing the unnecessary" through whitespace.
 
 ### 3.5 Security
 
@@ -401,24 +401,24 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**Key idea:** Dark background + terminal green — expressing security's "defense in depth" essence with concentric layers.
+<strong>Key idea:</strong> Dark background + terminal green — expressing security's "defense in depth" essence with concentric layers.
 
 ---
 
 ## 4. Converting YAML → English Prompts
 
-To feed your YAML-structured prompt into an AI image generation API, you need to **convert it into an English natural language prompt**.
+To feed your YAML-structured prompt into an AI image generation API, you need to <strong>convert it into an English natural language prompt</strong>.
 
 ### Conversion Rules
 
 | YAML Part | Position in English Prompt | Conversion Method |
 |-----------|--------------------------|-------------------|
-| **Tone** | Opening phrase | `"A [tone1], [tone2] illustration..."` |
-| **Visual Identity** | Color specification | `"...in [color1] (#HEX) and [color2] (#HEX)..."` |
-| **Image Style** | Core description | Compress Features + Shapes + Texture into 1–2 sentences |
-| **Composition** | Layout direction | `"...with [layout description]..."` |
-| **Content Connection** | Metaphor description | Visual Metaphor as the key sentence |
-| **Constraints** | End of prompt | `"No text overlay. No watermarks. 2:1 aspect ratio."` |
+| <strong>Tone</strong> | Opening phrase | `"A [tone1], [tone2] illustration..."` |
+| <strong>Visual Identity</strong> | Color specification | `"...in [color1] (#HEX) and [color2] (#HEX)..."` |
+| <strong>Image Style</strong> | Core description | Compress Features + Shapes + Texture into 1–2 sentences |
+| <strong>Composition</strong> | Layout direction | `"...with [layout description]..."` |
+| <strong>Content Connection</strong> | Metaphor description | Visual Metaphor as the key sentence |
+| <strong>Constraints</strong> | End of prompt | `"No text overlay. No watermarks. 2:1 aspect ratio."` |
 
 ### Conversion Template
 
@@ -434,7 +434,7 @@ No text overlay. No watermarks. Suitable for 2:1 aspect ratio blog hero image.
 
 ### Full Example: Next.js App Router Migration
 
-**YAML Design:**
+<strong>YAML Design:</strong>
 
 ```yaml
 Tone: "constructive, modern, migration, evolution, architecture"
@@ -462,7 +462,7 @@ Content Connection:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. Blueprint aesthetic."
 ```
 
-**Converted English Prompt:**
+<strong>Converted English Prompt:</strong>
 
 ```
 An architectural blueprint illustration showing migration from old to new
@@ -484,21 +484,21 @@ The key is compressing everything from your YAML structure into natural language
 
 After applying this guideline to actual blog hero image generation:
 
-- **Before**: Prompt "modern tech blog hero" → generic gradient image seen everywhere
-- **After**: YAML 7-Part Structure applied → a unique image perfectly aligned with the post content
+- <strong>Before</strong>: Prompt "modern tech blog hero" → generic gradient image seen everywhere
+- <strong>After</strong>: YAML 7-Part Structure applied → a unique image perfectly aligned with the post content
 
-The **Content Connection** part alone boosted Theme Fit scores from an average of 6 to 9 out of 10.
+The <strong>Content Connection</strong> part alone boosted Theme Fit scores from an average of 6 to 9 out of 10.
 
 ### Final Checklist
 
 After completing your prompt, run through this checklist:
 
-- [ ] **Tone**: Are the 5 keywords specific and mutually consistent?
-- [ ] **Visual Identity**: Are HEX codes + color names + purposes all specified?
-- [ ] **Image Style**: Are Features/Shapes/Texture/Composition each specific enough?
-- [ ] **Typography**: Is a style-appropriate font specified?
-- [ ] **Content Connection**: Is the visual metaphor meaningful only for this specific post?
-- [ ] **Constraints**: Are the 4 mandatory constraints (text, watermarks, ratio, faces) included?
-- [ ] **Self-Check 3 Points**: Did it pass the uniqueness / visual specificity / consistency tests?
+- [ ] <strong>Tone</strong>: Are the 5 keywords specific and mutually consistent?
+- [ ] <strong>Visual Identity</strong>: Are HEX codes + color names + purposes all specified?
+- [ ] <strong>Image Style</strong>: Are Features/Shapes/Texture/Composition each specific enough?
+- [ ] <strong>Typography</strong>: Is a style-appropriate font specified?
+- [ ] <strong>Content Connection</strong>: Is the visual metaphor meaningful only for this specific post?
+- [ ] <strong>Constraints</strong>: Are the 4 mandatory constraints (text, watermarks, ratio, faces) included?
+- [ ] <strong>Self-Check 3 Points</strong>: Did it pass the uniqueness / visual specificity / consistency tests?
 
-Follow this structure, and AI will generate high-quality hero images that perfectly match your blog posts. Stop settling for "just pretty." Use **data-proven high-scoring patterns** to create precise, meaningful images.
+Follow this structure, and AI will generate high-quality hero images that perfectly match your blog posts. Stop settling for "just pretty." Use <strong>data-proven high-scoring patterns</strong> to create precise, meaningful images.

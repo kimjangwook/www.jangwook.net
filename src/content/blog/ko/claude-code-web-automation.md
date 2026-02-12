@@ -62,9 +62,9 @@ relatedPosts:
 
 ### 프로젝트 배경
 
-- **규모**: 31개 HTML 페이지 (C-8 ~ C-40)
-- **목표**: 일관된 디자인 시스템과 파츠 라이브러리 기반 자동화
-- **주요 기술**: Claude Code SubAgent, 파츠 라이브러리, CSV 메타데이터 관리
+- <strong>규모</strong>: 31개 HTML 페이지 (C-8 ~ C-40)
+- <strong>목표</strong>: 일관된 디자인 시스템과 파츠 라이브러리 기반 자동화
+- <strong>주요 기술</strong>: Claude Code SubAgent, 파츠 라이브러리, CSV 메타데이터 관리
 
 ## 프로젝트 아키텍처
 
@@ -72,11 +72,11 @@ relatedPosts:
 
 파츠 라이브러리는 재사용 가능한 UI 컴포넌트와 디자인 시스템을 정의한 문서로, 976줄의 상세한 스펙을 포함합니다.
 
-**주요 구성 요소**:
-- **폰트 & 컬러 시스템**: Noto Sans, Open Sans 폰트, 브랜드 컬러 팔레트
-- **컴포넌트 라이브러리**: 버튼, 폼, 테이블, 네비게이션 등
-- **레이아웃 규칙**: 마진, 여백, 콘텐츠 너비 설정
-- **반응형 이미지**: 동적 비율 설정 및 최적화
+<strong>주요 구성 요소</strong>:
+- <strong>폰트 & 컬러 시스템</strong>: Noto Sans, Open Sans 폰트, 브랜드 컬러 팔레트
+- <strong>컴포넌트 라이브러리</strong>: 버튼, 폼, 테이블, 네비게이션 등
+- <strong>레이아웃 규칙</strong>: 마진, 여백, 콘텐츠 너비 설정
+- <strong>반응형 이미지</strong>: 동적 비율 설정 및 최적화
 
 ```markdown
 # 파츠 라이브러리 예시 구조
@@ -98,13 +98,13 @@ relatedPosts:
 
 31개 페이지의 메타데이터를 CSV 파일로 일괄 관리하여 효율성을 극대화했습니다.
 
-**CSV 구조**:
+<strong>CSV 구조</strong>:
 ```csv
 ID,URL,패스크러비,메타타이틀,메타·디스크립션,H1태그,og:type,og:title
 C-8,/contract/ds/dscard.html,HOME>계약자>서비스카드,서비스카드 안내,카드 관련 서비스...,카드 정보,article,서비스카드
 ```
 
-**CSV 관리의 장점**:
+<strong>CSV 관리의 장점</strong>:
 - 한 곳에서 모든 페이지 정보 관리
 - Excel/Google Sheets로 쉽게 편집 가능
 - SEO 메타데이터 일괄 검토 가능
@@ -114,12 +114,12 @@ C-8,/contract/ds/dscard.html,HOME>계약자>서비스카드,서비스카드 안�
 
 프로젝트에 두 가지 핵심 에이전트를 설정했습니다:
 
-**1) context-manager**: 워크플로우 전체 조율
+<strong>1) context-manager</strong>: 워크플로우 전체 조율
 - 작업 순서 관리
 - SubAgent 간 컨텍스트 공유
 - 진행 상황 추적
 
-**2) mcp-expert**: MCP 프로토콜 통합
+<strong>2) mcp-expert</strong>: MCP 프로토콜 통합
 - 외부 도구 연동
 - 데이터 소스 접근
 - API 통신 관리
@@ -145,7 +145,7 @@ CLAUDE.md                      # Claude Code 지침서
 working_history/c/01_directory_map.csv  # 31개 페이지 정보
 ```
 
-**CLAUDE.md 초기화**:
+<strong>CLAUDE.md 초기화</strong>:
 ```bash
 # Claude Code의 /init 커맨드 실행
 /init
@@ -172,7 +172,7 @@ working_history/c/01_directory_map.csv  # 31개 페이지 정보
 5. HTML 파일 저장 및 검증
 ```
 
-**실제 실행 로그**:
+<strong>실제 실행 로그</strong>:
 ```sh
 > /run is running…
 
@@ -197,7 +197,7 @@ working_history/c/01_directory_map.csv  # 31개 페이지 정보
 
 ### Phase 3: SubAgent 병렬 처리 전략
 
-**배치 처리 구조**:
+<strong>배치 처리 구조</strong>:
 ```python
 # 의사 코드
 pages = parse_csv("01_directory_map.csv")  # 31개 페이지
@@ -215,12 +215,12 @@ for i in range(0, len(pages), batch_size):
     # 결과 검증 및 다음 배치로
 ```
 
-**병렬 처리의 이점**:
-- **속도**: 순차 처리 대비 5배 빠름
-- **리소스 최적화**: 토큰 사용 효율화
-- **독립성**: 각 페이지가 독립적으로 생성되어 오류 격리
+<strong>병렬 처리의 이점</strong>:
+- <strong>속도</strong>: 순차 처리 대비 5배 빠름
+- <strong>리소스 최적화</strong>: 토큰 사용 효율화
+- <strong>독립성</strong>: 각 페이지가 독립적으로 생성되어 오류 격리
 
-**실제 성능 지표**:
+<strong>실제 성능 지표</strong>:
 - 페이지당 평균 생성 시간: 2-3분
 - 도구 사용 횟수: 9-17회 (이미지 다운로드, HTML 작성 등)
 - 배치당 처리 시간: 약 3-4분 (5개 페이지)
@@ -229,7 +229,7 @@ for i in range(0, len(pages), batch_size):
 
 1차 생성 완료 후, 일부 페이지에서 파츠 라이브러리가 제대로 적용되지 않은 것을 발견했습니다. 이를 해결하기 위해 2단계 검증 프로세스를 도입했습니다.
 
-**검증 커맨드 생성** (`apply-parts.md`):
+<strong>검증 커맨드 생성</strong> (`apply-parts.md`):
 ```markdown
 # 역할
 파츠 라이브러리 적용 상태를 확인하고 누락된 부분을 수정합니다.
@@ -242,7 +242,7 @@ for i in range(0, len(pages), batch_size):
 3. 문제가 있는 파일 자동 수정
 ```
 
-**검증 실행 로그**:
+<strong>검증 실행 로그</strong>:
 ```sh
 /apply-parts is running…
 
@@ -259,7 +259,7 @@ for i in range(0, len(pages), batch_size):
 ⎿ Session limit reached
 ```
 
-**세션 제한 대응**:
+<strong>세션 제한 대응</strong>:
 - Claude Code는 세션당 토큰 제한 존재
 - 작업을 청크로 나누어 여러 세션에 걸쳐 처리
 - 진행 상황을 Git 커밋으로 저장하여 이어서 작업
@@ -268,7 +268,7 @@ for i in range(0, len(pages), batch_size):
 
 ### 1. SubAgent 병렬 오케스트레이션
 
-**fullstack-developer SubAgent 역할**:
+<strong>fullstack-developer SubAgent 역할</strong>:
 ```markdown
 # SubAgent에게 전달되는 컨텍스트
 
@@ -286,7 +286,7 @@ Requirements:
 4. 반응형 레이아웃 적용
 ```
 
-**SubAgent 실행 패턴**:
+<strong>SubAgent 실행 패턴</strong>:
 ```bash
 # 동시에 5개 SubAgent 실행
 fullstack-developer(Create page C-8)  # 2m 41s
@@ -330,9 +330,9 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 1. 세션 제한 관리
 
-**문제**: Claude Code는 세션당 토큰 제한이 있음
+<strong>문제</strong>: Claude Code는 세션당 토큰 제한이 있음
 
-**해결책**:
+<strong>해결책</strong>:
 ```markdown
 # 작업을 청크로 분할
 - 배치 크기: 5-7개 페이지
@@ -343,7 +343,7 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 2. 파츠 라이브러리 문서화
 
-**핵심 원칙**:
+<strong>핵심 원칙</strong>:
 ```markdown
 1. 모든 컴포넌트에 명확한 클래스명 부여
    예: .btn-primary, .card-container
@@ -365,20 +365,20 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 3. CSV 메타데이터 설계
 
-**효과적인 CSV 구조**:
+<strong>효과적인 CSV 구조</strong>:
 ```csv
 ID,URL,Breadcrumb,MetaTitle,MetaDescription,H1,OGType,OGImage
 C-8,/page,HOME>Sub,Title,Description,Heading,article,/img.jpg
 ```
 
-**주의사항**:
+<strong>주의사항</strong>:
 - CSV 셀에 쉼표 포함 시 따옴표로 감싸기
 - URL은 절대 경로 또는 상대 경로 명확히 구분
 - 공백 문자 처리 주의 (trim 필요)
 
 ### 4. SubAgent 프롬프트 최적화
 
-**효과적인 SubAgent 지시**:
+<strong>효과적인 SubAgent 지시</strong>:
 ```markdown
 Task: Create responsive HTML page
 
@@ -405,22 +405,22 @@ Output:
 
 | 지표 | 수작업 | 자동화 | 개선율 |
 |------|--------|--------|--------|
-| 총 작업 시간 | ~31시간 | ~3시간 | **90% 단축** |
-| 페이지당 평균 | 60분 | 6분 | **90% 단축** |
-| 오류 발생률 | 15% | 3% | **80% 감소** |
-| 일관성 점수 | 75/100 | 98/100 | **30% 향상** |
+| 총 작업 시간 | ~31시간 | ~3시간 | <strong>90% 단축</strong> |
+| 페이지당 평균 | 60분 | 6분 | <strong>90% 단축</strong> |
+| 오류 발생률 | 15% | 3% | <strong>80% 감소</strong> |
+| 일관성 점수 | 75/100 | 98/100 | <strong>30% 향상</strong> |
 
 ### 정성적 성과
 
-**1. 디자인 일관성 확보**
+<strong>1. 디자인 일관성 확보</strong>
 - 모든 페이지에 동일한 파츠 라이브러리 적용
 - 브랜드 컬러, 폰트, 레이아웃 규칙 100% 준수
 
-**2. SEO 최적화 자동화**
+<strong>2. SEO 최적화 자동화</strong>
 - CSV 메타데이터 기반 일괄 설정
 - OG 태그, 메타 설명 자동 생성
 
-**3. 유지보수성 향상**
+<strong>3. 유지보수성 향상</strong>
 - 파츠 라이브러리 수정 → 재실행으로 일괄 업데이트 가능
 - Git 기반 버전 관리로 변경 추적 용이
 
@@ -464,39 +464,39 @@ Claude Code의 SubAgent 시스템을 활용하면 대규모 웹사이트 페이�
 
 ### 성공 요인
 
-1. **명확한 파츠 라이브러리 문서화**
+1. <strong>명확한 파츠 라이브러리 문서화</strong>
    - 재사용 가능한 컴포넌트 정의
    - 일관된 네이밍 규칙
    - 구체적인 사용 예시 포함
 
-2. **체계적인 메타데이터 관리**
+2. <strong>체계적인 메타데이터 관리</strong>
    - CSV 기반 중앙 집중식 관리
    - SEO 요소 일괄 설정
    - 버전 관리 용이성
 
-3. **효율적인 병렬 처리**
+3. <strong>효율적인 병렬 처리</strong>
    - 5-7개 배치 단위 처리
    - 독립적인 SubAgent 실행
    - 세션 제한 고려한 청크 분할
 
-4. **2단계 품질 검증**
+4. <strong>2단계 품질 검증</strong>
    - 1차: 자동 생성
    - 2차: 파츠 적용 검증 및 수정
    - Git 기반 변경 추적
 
 ### 향후 개선 방향
 
-1. **AI 기반 품질 검증 강화**
+1. <strong>AI 기반 품질 검증 강화</strong>
    - 접근성 자동 체크
    - 성능 지표 자동 측정
    - 크로스 브라우저 테스트 자동화
 
-2. **CMS 통합**
+2. <strong>CMS 통합</strong>
    - 생성된 페이지 자동 배포
    - 콘텐츠 업데이트 워크플로우
    - 미리보기 환경 자동 구축
 
-3. **디자인 시스템 진화**
+3. <strong>디자인 시스템 진화</strong>
    - Figma → Parts Library 자동 변환
    - 실시간 컴포넌트 동기화
    - 디자인 토큰 자동 적용

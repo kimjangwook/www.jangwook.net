@@ -354,13 +354,13 @@ def analyze_project_risks(task_data):
 
 <strong>目標</strong>: LLMツールの効果を検証し、チームの受容度を確認
 
-**ステップ**:
+<strong>ステップ</strong>:
 1. <strong>ツール選択</strong>: ChatGPT PlusまたはClaude Proのサブスクリプション開始
 2. <strong>ユースケース選定</strong>: 議事録要約から開始 (最も時間がかかる作業)
 3. <strong>プロンプトテンプレート開発</strong>: 標準プロンプト3〜5個を作成
 4. <strong>測定</strong>: 時間削減と品質を評価
 
-**成功指標**:
+<strong>成功指標</strong>:
 - 議事録作成時間が50%以上削減
 - チームメンバーの満足度が4/5以上
 - アクションアイテムの漏れ率0%
@@ -369,7 +369,7 @@ def analyze_project_risks(task_data):
 
 <strong>目標</strong>: 既存PMツールとLLMを統合
 
-**ツールスタック例**:
+<strong>ツールスタック例</strong>:
 ```mermaid
 graph LR
     A[Jira/Asana] --> B[n8n/Zapier]
@@ -382,7 +382,7 @@ graph LR
     F --> D
 ```
 
-**統合シナリオ**:
+<strong>統合シナリオ</strong>:
 1. <strong>Jira → Claude → Slack</strong>
    - Jira課題作成時に自動でコンテキスト分析
    - Slackに優先度と影響度の分析結果を送信
@@ -399,7 +399,7 @@ graph LR
 
 <strong>目標</strong>: AIエージェントベースの自律ワークフローを構築
 
-**Claude Skills活用**:
+<strong>Claude Skills活用</strong>:
 ```markdown
 # Skill: スプリントレトロスペクティブアナライザー
 
@@ -437,7 +437,7 @@ graph LR
 | リスク識別速度 | 週1回手動 | リアルタイム自動 | 100% ↑ |
 | PM戦略業務時間 | 20% | 60% | 200% ↑ |
 
-**ROI計算**:
+<strong>ROI計算</strong>:
 ```python
 # PMの時給を1万円と仮定
 hourly_rate = 10000  # 円
@@ -500,7 +500,7 @@ roi = (annual_savings - total_cost) / total_cost * 100
 - ✅ 企業向けLLM API (Azure OpenAI、Anthropic Enterprise) を使用
 - ✅ データ保持ポリシーを確認 (Claudeはデフォルト30日保管)
 
-**データマスキング例**:
+<strong>データマスキング例</strong>:
 ```python
 import re
 
@@ -546,7 +546,7 @@ graph LR
     D --> A
 ```
 
-**改善方法**:
+<strong>改善方法</strong>:
 - 効果の高いプロンプトはチームライブラリに追加
 - 週次LLMティップス共有 (Slackチャンネル活用)
 - 新しいユースケースの発掘 (チームブレインストーミング)
@@ -567,7 +567,7 @@ graph LR
 "
 ```
 
-**原則**: LLMは<strong>補助ツール</strong>であり、代替品ではありません。
+<strong>原則</strong>: LLMは<strong>補助ツール</strong>であり、代替品ではありません。
 
 ### 2. コンテキスト不足
 
@@ -644,7 +644,7 @@ graph LR
 - 複数のツールを接続して複雑なワークフローを実行
 - 人の承認を得て実際のアクションを実行
 
-**例**: Claude Computer Use
+<strong>例</strong>: Claude Computer Use
 ```markdown
 PM: "来週のスプリント計画をJiraに作成してチームに通知して"
 

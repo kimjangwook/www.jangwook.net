@@ -582,7 +582,7 @@ class MyComponent extends HTMLElement {
 | Padding        | padding       | string  |
 ```
 
-**マッピングファイルの利点:**
+<strong>マッピングファイルの利点:</strong>
 - 単一の真実の源として機能
 - 同期履歴の追跡
 - バージョン管理が容易
@@ -833,7 +833,7 @@ sequenceDiagram
     end
 ```
 
-**ワークフローの利点:**
+<strong>ワークフローの利点:</strong>
 - 不要な更新を回避 (リソース節約)
 - Git履歴がクリーンに保たれる
 - 変更追跡が容易
@@ -1122,7 +1122,7 @@ figma.connect('my-button', 'https://figma.com/file/YOUR_FILE_KEY?node-id=123', {
 
 ### 5.1 従来のWebhook方式との比較
 
-**従来のアプローチ (Webhook + GitHub Actions):**
+<strong>従来のアプローチ (Webhook + GitHub Actions):</strong>
 
 ```
 Figma → Webhook → サーバー → GitHub Actions → コード生成 → コミット
@@ -1135,7 +1135,7 @@ Figma → Webhook → サーバー → GitHub Actions → コード生成 → �
 - 誤検知による不要な更新
 - デバッグが困難
 
-**新しいアプローチ (Claude Code + マッピングファイル):**
+<strong>新しいアプローチ (Claude Code + マッピングファイル):</strong>
 
 ```
 開発者 → Claude Code → Figma MCP → 差分検出 → 選択的更新 → コミット
@@ -1239,7 +1239,7 @@ module.exports = {
 
 ### 5.3 実際の使用例
 
-**例1: 同期状態の確認**
+<strong>例1: 同期状態の確認</strong>
 
 ```bash
 # Claude Codeで実行
@@ -1261,7 +1261,7 @@ module.exports = {
 #   Status: ✅ 同期済み
 ```
 
-**例2: 特定のコンポーネントのみ更新**
+<strong>例2: 特定のコンポーネントのみ更新</strong>
 
 ```bash
 # Claude Codeで実行
@@ -1284,7 +1284,7 @@ module.exports = {
 #   ❌ 失敗: 0個
 ```
 
-**例3: 全コンポーネントの一括同期**
+<strong>例3: 全コンポーネントの一括同期</strong>
 
 ```bash
 # Claude Codeで実行
@@ -1314,7 +1314,7 @@ module.exports = {
 #   ❌ 失敗: 0個
 ```
 
-**例4: エージェントとの対話的な同期**
+<strong>例4: エージェントとの対話的な同期</strong>
 
 ```
 ユーザー: @figma-sync-agent Figmaコンポーネントの状態を確認して
@@ -1361,7 +1361,7 @@ Webコンポーネントを更新し、マッピングファイルを更新し�
 
 Claude Code方式は手動同期を基本としますが、チームのニーズに応じて自動化も可能です:
 
-**シンプルなGitHub Actions統合:**
+<strong>シンプルなGitHub Actions統合:</strong>
 
 ```yaml
 # .github/workflows/scheduled-sync.yml
@@ -1418,7 +1418,7 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
 ```
 
-**チェックスクリプト:**
+<strong>チェックスクリプト:</strong>
 
 ```javascript
 // scripts/check-sync-status.js
@@ -1449,7 +1449,7 @@ async function main() {
 main().catch(console.error);
 ```
 
-**利点:**
+<strong>利点:</strong>
 - 完全自動化ではなく通知のみ
 - 人間による判断とレビュー
 - 不要な自動コミットなし

@@ -588,7 +588,7 @@ graph TD
     C2[セキュリティスキャン強制] --> C
 ```
 
-**Phase 1 実装:**
+<strong>Phase 1 実装:</strong>
 
 ```bash
 #!/bin/bash
@@ -603,7 +603,7 @@ echo "ℹ️  Audit trail recorded"
 exit 0
 ```
 
-**Phase 2 実装:**
+<strong>Phase 2 実装:</strong>
 
 ```bash
 #!/bin/bash
@@ -619,7 +619,7 @@ npx eslint "$file_path" || echo "⚠️  Linting issues found"
 exit 2
 ```
 
-**Phase 3 実装:**
+<strong>Phase 3 実装:</strong>
 
 ```bash
 #!/bin/bash

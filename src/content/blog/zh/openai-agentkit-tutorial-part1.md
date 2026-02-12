@@ -51,9 +51,9 @@ relatedPosts:
       zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
-> **系列：掌握OpenAI AgentKit** (1/2)
+> <strong>系列：掌握OpenAI AgentKit</strong> (1/2)
 >
-> 1. **OpenAI AgentKit完全指南第1部分：核心概念与入门** ← 当前文章
+> 1. <strong>OpenAI AgentKit完全指南第1部分：核心概念与入门</strong> ← 当前文章
 > 2. [OpenAI AgentKit完全指南第2部分：实战应用与高级模式](/zh/blog/zh/openai-agentkit-tutorial-part2)
 
 # OpenAI AgentKit完全指南第1部分：核心概念与入门

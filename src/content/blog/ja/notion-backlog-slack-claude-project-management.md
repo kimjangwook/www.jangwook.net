@@ -735,7 +735,7 @@ sequenceDiagram
     C->>S: 完了報告
 ```
 
-**実装例：Notion → Backlog 自動連携**
+<strong>実装例：Notion → Backlog 自動連携</strong>
 
 ```javascript
 // Notion Database 監視とBacklog同期

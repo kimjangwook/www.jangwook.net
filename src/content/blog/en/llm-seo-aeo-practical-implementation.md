@@ -68,12 +68,12 @@ This post shares real implementation experience from <a href="https://agent-effi
 
 ### Traditional SEO vs AEO
 
-**Traditional SEO**:
+<strong>Traditional SEO</strong>:
 - Optimize for ranking in search results
 - Target: Human users clicking links
 - Key metrics: CTR, bounce rate, session duration
 
-**AEO (Answer Engine Optimization)**:
+<strong>AEO (Answer Engine Optimization)</strong>:
 - Optimize for being cited by LLMs
 - Target: AI systems extracting information
 - Key metrics: Citation rate, accuracy, source credibility
@@ -98,7 +98,7 @@ Before optimizing for AI, traditional SEO fundamentals remain critical.
 
 ### 1. Technical SEO: Site Health Check
 
-**Meta Tags Implementation**:
+<strong>Meta Tags Implementation</strong>:
 
 ```typescript
 // src/components/BaseHead.astro (simplified)
@@ -133,7 +133,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 </head>
 ```
 
-**Key Implementation Points**:
+<strong>Key Implementation Points</strong>:
 - Unique title/description per page
 - Open Graph images (1200×630px)
 - Canonical URLs to avoid duplicates
@@ -141,7 +141,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 ### 2. Sitemap & Robots.txt
 
-**Auto-Generated Sitemap** (Astro):
+<strong>Auto-Generated Sitemap</strong> (Astro):
 
 ```typescript
 // astro.config.mjs
@@ -159,7 +159,7 @@ export default defineConfig({
 });
 ```
 
-**Robots.txt**:
+<strong>Robots.txt</strong>:
 
 ```
 User-agent: *
@@ -173,7 +173,7 @@ Sitemap: https://agent-effi-flow.jangwook.net/sitemap-index.xml
 
 ### 3. Performance Optimization
 
-**Core Web Vitals Matter for SEO**:
+<strong>Core Web Vitals Matter for SEO</strong>:
 
 | Metric | Target | Our Result |
 |--------|--------|-----------|
@@ -181,7 +181,7 @@ Sitemap: https://agent-effi-flow.jangwook.net/sitemap-index.xml
 | FID (First Input Delay) | < 100ms | 45ms |
 | CLS (Cumulative Layout Shift) | < 0.1 | 0.05 |
 
-**How We Achieved This**:
+<strong>How We Achieved This</strong>:
 
 1. <strong>Image Optimization</strong>:
    ```typescript
@@ -208,12 +208,12 @@ Sitemap: https://agent-effi-flow.jangwook.net/sitemap-index.xml
 
 ### 1. Structured Content Format
 
-**Why Structure Matters**:
+<strong>Why Structure Matters</strong>:
 - LLMs parse headings to understand hierarchy
 - Lists and tables are easily extractable
 - Code blocks demonstrate technical expertise
 
-**Example: FAQ Page for AEO**:
+<strong>Example: FAQ Page for AEO</strong>:
 
 ```markdown
 ## Frequently Asked Questions
@@ -250,7 +250,7 @@ Our OCR uses Google Gemini 2.5 Flash with custom prompts optimized for structure
 Enterprise customers can request custom limits.
 ```
 
-**AEO-Friendly Elements**:
+<strong>AEO-Friendly Elements</strong>:
 - Direct answers to common questions
 - Data in table format (easy to parse)
 - Technical specifics (file sizes, formats)
@@ -258,7 +258,7 @@ Enterprise customers can request custom limits.
 
 ### 2. Schema.org Markup
 
-**Structured Data for Rich Snippets**:
+<strong>Structured Data for Rich Snippets</strong>:
 
 ```html
 <!-- FAQPage Schema -->
@@ -308,16 +308,16 @@ Enterprise customers can request custom limits.
 </script>
 ```
 
-**Benefits**:
+<strong>Benefits</strong>:
 - Google shows rich snippets in search results
 - LLMs can extract pricing/rating information
 - Increased click-through rate
 
 ### 3. Content Depth: The Wikipedia Effect
 
-**LLMs prefer comprehensive sources**. A 3,000-word guide outperforms 10 thin 300-word pages.
+<strong>LLMs prefer comprehensive sources</strong>. A 3,000-word guide outperforms 10 thin 300-word pages.
 
-**Our Approach**:
+<strong>Our Approach</strong>:
 
 <strong>Instead of</strong>:
 - Page 1: "What is OCR?" (300 words)
@@ -333,7 +333,7 @@ Enterprise customers can request custom limits.
   - API documentation (code samples)
   - FAQ (structured Q&A)
 
-**Result**: Single comprehensive page ranks for 20+ long-tail keywords.
+<strong>Result</strong>: Single comprehensive page ranks for 20+ long-tail keywords.
 
 ## Keyword Strategy for B2B SaaS
 
@@ -348,7 +348,7 @@ Our primary target market is Japan, requiring Japanese keyword optimization:
 | 領収書 AI | Receipt AI | 890 | Low |
 | レシート OCR API | Receipt OCR API | 210 | Low |
 
-**How We Found These**:
+<strong>How We Found These</strong>:
 1. Google Keyword Planner (Japan region)
 2. Competitor analysis (what they rank for)
 3. Google Search Console (queries users type)
@@ -356,17 +356,17 @@ Our primary target market is Japan, requiring Japanese keyword optimization:
 
 ### 2. Long-Tail Keywords
 
-**Generic keywords are competitive**. Long-tail keywords drive qualified traffic.
+<strong>Generic keywords are competitive</strong>. Long-tail keywords drive qualified traffic.
 
-**Example**:
+<strong>Example</strong>:
 - Generic: "OCR API" (10,000/month, very high competition)
 - Long-tail: "免税店向けOCR API 日本語対応" (50/month, low competition)
 
-**Long-tail conversion rate is 3× higher** because searchers have specific intent.
+<strong>Long-tail conversion rate is 3× higher</strong> because searchers have specific intent.
 
 ### 3. Multi-Language SEO
 
-**File Structure**:
+<strong>File Structure</strong>:
 ```
 src/content/blog/
 ├── ja/receipt-ocr-guide.md
@@ -375,7 +375,7 @@ src/content/blog/
 └── zh/receipt-ocr-guide.md
 ```
 
-**Implementation**:
+<strong>Implementation</strong>:
 ```typescript
 // src/pages/[lang]/blog/[...slug].astro
 export async function getStaticPaths() {
@@ -391,7 +391,7 @@ export async function getStaticPaths() {
 }
 ```
 
-**Hreflang Tags**:
+<strong>Hreflang Tags</strong>:
 ```html
 <link rel="alternate" hreflang="ja" href="https://example.com/ja/blog/post" />
 <link rel="alternate" hreflang="en" href="https://example.com/en/blog/post" />
@@ -402,7 +402,7 @@ export async function getStaticPaths() {
 
 ## Internal Linking Strategy
 
-**Why Internal Links Matter**:
+<strong>Why Internal Links Matter</strong>:
 1. Help search engines discover pages
 2. Distribute page authority (PageRank)
 3. Improve user navigation
@@ -410,14 +410,14 @@ export async function getStaticPaths() {
 
 ### 1. Hub-and-Spoke Model
 
-**Hub Page**: Comprehensive guide (e.g., "Ultimate OCR Guide")
+<strong>Hub Page</strong>: Comprehensive guide (e.g., "Ultimate OCR Guide")
 
-**Spoke Pages**: Specific topics linking back to hub
+<strong>Spoke Pages</strong>: Specific topics linking back to hub
 - "How to integrate OCR API" → links to hub
 - "OCR accuracy comparison" → links to hub
 - "OCR pricing guide" → links to hub
 
-**Implementation**:
+<strong>Implementation</strong>:
 ```astro
 ---
 // src/components/RelatedPosts.astro
@@ -445,9 +445,9 @@ const relatedPosts = await Promise.all(
 
 ### 2. Contextual Links
 
-**Natural links within content perform better** than footer link blocks.
+<strong>Natural links within content perform better</strong> than footer link blocks.
 
-**Example**:
+<strong>Example</strong>:
 ```markdown
 Our [receipt OCR API](/api-docs/receipt-ocr) uses Google Gemini 2.5 Flash
 for structured data extraction. Unlike traditional OCR that returns plain text,
@@ -457,7 +457,7 @@ For accounting workflows, combine this with our [batch processing feature](/feat
 to handle hundreds of receipts simultaneously.
 ```
 
-**Benefits**:
+<strong>Benefits</strong>:
 - High contextual relevance
 - Users click because content is related
 - Search engines value semantic connections
@@ -466,20 +466,20 @@ to handle hundreds of receipts simultaneously.
 
 ### 1. Google Search Console Setup
 
-**Track SEO Performance**:
+<strong>Track SEO Performance</strong>:
 
 ```typescript
 // Add verification meta tag to BaseHead.astro
 <meta name="google-site-verification" content="your-verification-code" />
 ```
 
-**Key Metrics to Monitor**:
+<strong>Key Metrics to Monitor</strong>:
 1. <strong>Impressions</strong>: How often your site appears in search
 2. <strong>Clicks</strong>: How many users click through
 3. <strong>CTR (Click-Through Rate)</strong>: Clicks / Impressions
 4. <strong>Average Position</strong>: Your average ranking
 
-**Our 30-Day Results** (Agent Effi Flow):
+<strong>Our 30-Day Results</strong> (Agent Effi Flow):
 - Impressions: 1,240
 - Clicks: 87
 - CTR: 7.0% (above 5% is good)
@@ -487,7 +487,7 @@ to handle hundreds of receipts simultaneously.
 
 ### 2. Google Analytics 4 Integration
 
-**Track User Behavior**:
+<strong>Track User Behavior</strong>:
 
 ```typescript
 // src/layouts/BaseLayout.astro
@@ -506,7 +506,7 @@ const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_ID;
 </head>
 ```
 
-**Custom Events for SaaS**:
+<strong>Custom Events for SaaS</strong>:
 
 ```typescript
 // Track credit purchases
@@ -532,7 +532,7 @@ gtag('event', 'api_call', {
 
 ### 3. AEO Success Metrics
 
-**How to measure AEO performance** (since LLMs don't report referrers):
+<strong>How to measure AEO performance</strong> (since LLMs don't report referrers):
 
 1. <strong>Direct Traffic Increase</strong>:
    - Users copy/paste URLs from ChatGPT responses
@@ -561,7 +561,7 @@ gtag('event', 'api_call', {
 
 ### Actions Taken
 
-**Week 1: Foundation**
+<strong>Week 1: Foundation</strong>
 1. Submit sitemap to Google Search Console
 2. Add meta tags & Open Graph
 3. Create 5 core content pages:
@@ -571,7 +571,7 @@ gtag('event', 'api_call', {
    - Pricing
    - Legal pages
 
-**Week 2: Content Creation**
+<strong>Week 2: Content Creation</strong>
 1. Publish 3 blog posts:
    - "Receipt OCR Implementation Guide" (2,800 words)
    - "Tax-Free Processing Automation" (2,200 words)
@@ -579,13 +579,13 @@ gtag('event', 'api_call', {
 2. Add Schema.org markup (FAQPage, Product)
 3. Internal linking between posts
 
-**Week 3: Optimization**
+<strong>Week 3: Optimization</strong>
 1. Image optimization (WebP conversion)
 2. Improve Core Web Vitals (achieve green scores)
 3. Add multi-language support (ja, en, ko)
 4. Create FAQ page with 20 Q&As
 
-**Week 4: Outreach & Distribution**
+<strong>Week 4: Outreach & Distribution</strong>
 1. Share blog posts on X (Twitter)
 2. Submit to relevant directories
 3. Cross-post on jangwook.net (my tech blog)
@@ -602,13 +602,13 @@ gtag('event', 'api_call', {
 | Backlinks | 7 | Quality over quantity |
 | CTR from Search | 7.2% | Above industry average |
 
-**Top Traffic Sources**:
+<strong>Top Traffic Sources</strong>:
 1. Google Organic: 62%
 2. Direct: 23%
 3. jangwook.net referral: 12%
 4. Social: 3%
 
-**Top Landing Pages**:
+<strong>Top Landing Pages</strong>:
 1. Homepage: 45%
 2. Receipt OCR Guide: 28%
 3. API Documentation: 18%
@@ -637,7 +637,7 @@ gtag('event', 'api_call', {
 
 ### 1. Optimize for Citation-Worthy Content
 
-**What makes content citation-worthy for LLMs?**
+<strong>What makes content citation-worthy for LLMs?</strong>
 
 1. <strong>Factual Accuracy</strong>:
    - Cite sources (research papers, official docs)
@@ -659,9 +659,9 @@ gtag('event', 'api_call', {
 
 ### 2. Answer the Next Question
 
-**Users ask follow-up questions**. Anticipate them.
+<strong>Users ask follow-up questions</strong>. Anticipate them.
 
-**Example: Receipt OCR Guide**
+<strong>Example: Receipt OCR Guide</strong>
 
 Main question: "How does receipt OCR work?"
 
@@ -672,18 +672,18 @@ Anticipated follow-ups:
 - "What languages are supported?" → List languages
 - "How do I integrate the API?" → Code examples
 
-**Result**: Single page answers entire user journey, reducing bounce rate.
+<strong>Result</strong>: Single page answers entire user journey, reducing bounce rate.
 
 ### 3. Code Samples for Technical SEO
 
-**Developers search differently**. They want copy-paste code.
+<strong>Developers search differently</strong>. They want copy-paste code.
 
-**Bad Example**:
+<strong>Bad Example</strong>:
 ```
 Our API is easy to integrate. Just send a POST request with your image.
 ```
 
-**Good Example**:
+<strong>Good Example</strong>:
 ```typescript
 // Install SDK
 npm install @agent-effi-flow/sdk
@@ -724,7 +724,7 @@ async function processReceipt(imagePath: string) {
 }
 ```
 
-**Why This Works**:
+<strong>Why This Works</strong>:
 - Developers can test immediately
 - Shows real output format
 - Demonstrates error handling
@@ -829,15 +829,15 @@ Stay tuned!
 
 ### Related Reading from jangwook.net
 
-- **AI Content Recommendation System** - LLM-based semantic matching
-- **Specification-Driven Development** - Building with Claude Code
-- **Individual Developer AI SaaS Journey** - 3-day MVP to production
+- <strong>AI Content Recommendation System</strong> - LLM-based semantic matching
+- <strong>Specification-Driven Development</strong> - Building with Claude Code
+- <strong>Individual Developer AI SaaS Journey</strong> - 3-day MVP to production
 
 ## Conclusion
 
 SEO is not dead—it's evolving. The fundamentals (site speed, mobile-friendly, clear structure) remain critical. But the frontier is AEO: optimizing for AI systems that synthesize answers.
 
-**Key Takeaways**:
+<strong>Key Takeaways</strong>:
 
 1. <strong>Start with SEO basics</strong>: You can't optimize for AI if humans can't find you
 2. <strong>Comprehensive > Thin</strong>: One 3,000-word guide beats 10 shallow pages
@@ -850,6 +850,6 @@ For B2B SaaS specifically:
 - Multi-language support expands reach
 - FAQ pages convert better than marketing copy
 
-**3-Month Goal**: Position 3 for primary keyword ("免税 OCR"), 500+ monthly organic visits, 10% conversion to free trial.
+<strong>3-Month Goal</strong>: Position 3 for primary keyword ("免税 OCR"), 500+ monthly organic visits, 10% conversion to free trial.
 
 Let's build discoverable products in the AI era.

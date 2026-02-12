@@ -71,7 +71,7 @@ relatedPosts:
 
 <strong>Model Context Protocol(MCP)</strong>은 Anthropic이 개발한 오픈 표준으로, AI 에이전트가 외부 도구 및 데이터 소스와 연결할 수 있게 해주는 프로토콜입니다. Figma의 MCP 구현은 AI 에이전트가 Figma 파일의 디자인 컨텍스트에 직접 접근할 수 있게 합니다.
 
-**공식 설명:**
+<strong>공식 설명:</strong>
 > "MCP는 다양한 AI 에이전트와 애플리케이션이 서로 또는 Figma와 같은 외부 시스템과 통신하는 방법에 대한 오픈소스 표준입니다."
 
 ```mermaid
@@ -127,7 +127,7 @@ Figma MCP는 두 가지 방식으로 사용할 수 있습니다:
 
 ### 인증 방법
 
-**Personal Access Token (권장):**
+<strong>Personal Access Token (권장):</strong>
 
 ```bash
 # 환경 변수 설정
@@ -137,7 +137,7 @@ export FIGMA_API_KEY="your-personal-access-token"
 --figma-api-key "your-token"
 ```
 
-**토큰 발급 방법:**
+<strong>토큰 발급 방법:</strong>
 1. Figma 계정 설정으로 이동
 2. "Personal Access Tokens" 메뉴 선택
 3. 필요한 권한으로 새 토큰 생성
@@ -189,7 +189,7 @@ Design System File
     └── Modals (모달)
 ```
 
-**핵심 원칙:**
+<strong>핵심 원칙:</strong>
 > "Figma 파일에서 컴포넌트의 다양한 카테고리별로 별도 페이지를 만드세요. 예: 'Atoms', 'Molecules', 'Organisms'"
 
 ### 명명 규칙 (Slash Notation)
@@ -218,7 +218,7 @@ Component/Variant/State
 
 ### 컴포넌트 속성과 Variants
 
-**현대적 접근법 (2021년 이후):**
+<strong>현대적 접근법 (2021년 이후):</strong>
 
 ```
 Properties:
@@ -228,21 +228,21 @@ Properties:
 └── Icon: [Boolean]
 ```
 
-**Variants vs Properties:**
+<strong>Variants vs Properties:</strong>
 - <strong>Variants:</strong> 시각적 차이 (Primary vs Secondary)
 - <strong>Properties:</strong> 행동적 토글 (Icon: Yes/No)
 - <strong>베스트 프랙티스:</strong> 유연한 컴포넌트를 위해 둘 다 결합
 
 ### 라이브러리 조직 전략
 
-**단일 라이브러리 접근법 (소규모 팀):**
+<strong>단일 라이브러리 접근법 (소규모 팀):</strong>
 
 ```
 Design-System.fig
 └── 모든 컴포넌트, 스타일, 변수
 ```
 
-**멀티 라이브러리 접근법 (대규모 팀):**
+<strong>멀티 라이브러리 접근법 (대규모 팀):</strong>
 
 ```
 Design-System-Foundations.fig
@@ -251,14 +251,14 @@ Design-System-Patterns.fig
 Design-System-Icons.fig
 ```
 
-**Figma의 권장사항:**
+<strong>Figma의 권장사항:</strong>
 > "Figma는 일반적으로 팀이 관리할 수 있는 만큼 구체적이고 집중된 파일을 유지할 것을 권장합니다."
 
 ## 바닐라 자바스크립트 웹 컴포넌트
 
 ### 2025년 브라우저 지원 현황
 
-**주요 소식: 폴리필이 더 이상 필요 없습니다!**
+<strong>주요 소식: 폴리필이 더 이상 필요 없습니다!</strong>
 
 2025년 현재, 모든 주요 브라우저가 Web Components 표준을 완전히 지원합니다:
 
@@ -267,7 +267,7 @@ Design-System-Icons.fig
 - ✅ Safari: 100% 지원
 - ✅ Edge: 100% 지원
 
-**공식 성명:**
+<strong>공식 성명:</strong>
 > "2025년 기준, 모든 주요 브라우저(Chrome, Firefox, Safari, Edge)가 폴리필 없이 Web Components 표준을 완전히 지원합니다."
 
 ### Custom Elements API
@@ -313,7 +313,7 @@ class MyButton extends HTMLElement {
 customElements.define('my-button', MyButton);
 ```
 
-**사용법:**
+<strong>사용법:</strong>
 
 ```html
 <my-button variant="primary" size="large">
@@ -361,7 +361,7 @@ class MyCard extends HTMLElement {
 customElements.define('my-card', MyCard);
 ```
 
-**Shadow DOM의 장단점:**
+<strong>Shadow DOM의 장단점:</strong>
 
 <strong>장점:</strong>
 - 완벽한 CSS 캡슐화
@@ -456,7 +456,7 @@ class MyButton extends HTMLElement {
 - Status: ✓ Synced
 ```
 
-**매핑 파일의 장점:**
+<strong>매핑 파일의 장점:</strong>
 - 단일 진실의 원천으로 모든 컴포넌트 추적
 - 버전 해시로 변경 감지
 - 마지막 동기화 타임스탬프 기록
@@ -1414,7 +1414,7 @@ npm install --save-dev axios crypto
 /sync-components
 ```
 
-**예상 출력:**
+<strong>예상 출력:</strong>
 
 ```
 ✓ Figma Sync Agent activated
@@ -1540,7 +1540,7 @@ if (!customElements.get('ds-card')) {
 export default DSCard;
 ```
 
-**사용 예시:**
+<strong>사용 예시:</strong>
 
 ```html
 <!DOCTYPE html>
@@ -1744,7 +1744,7 @@ class DSButton extends HTMLElement {
 customElements.define('ds-button', DSButton);
 ```
 
-**사용 예시:**
+<strong>사용 예시:</strong>
 
 ```html
 <!DOCTYPE html>
@@ -1804,7 +1804,7 @@ customElements.define('ds-button', DSButton);
 
 ### Case Study 1: IBM Carbon Design System
 
-**출처:** Carbon and Figma Code Connect
+<strong>출처:</strong> Carbon and Figma Code Connect
 
 <strong>접근법:</strong>
 - 공식 Code Connect 통합
@@ -1834,7 +1834,7 @@ Carbon Design System
 
 ### Case Study 2: Uber Design System
 
-**출처:** YouTube - Deep Dive into Uber's Design Systems
+<strong>출처:</strong> YouTube - Deep Dive into Uber's Design Systems
 
 <strong>규모:</strong>
 - 200개 이상 컴포넌트
@@ -1860,7 +1860,7 @@ Uber Design System
 
 ### Case Study 3: Wealthsimple Design System
 
-**출처:** Medium - From messy Figma files to a coded design system
+<strong>출처:</strong> Medium - From messy Figma files to a coded design system
 
 <strong>과제:</strong>
 - 제품 전반에 걸쳐 일관성 없는 Figma 파일
@@ -1886,7 +1886,7 @@ Uber Design System
 
 ### 보안 고려사항
 
-**API 키 관리:**
+<strong>API 키 관리:</strong>
 
 ```bash
 # ❌ 절대 하지 말 것
@@ -1901,7 +1901,7 @@ echo ".env" >> .gitignore
 # Settings → Secrets → Actions → New repository secret
 ```
 
-**환경 변수 보호:**
+<strong>환경 변수 보호:</strong>
 
 ```yaml
 # GitHub Actions에서
@@ -1910,7 +1910,7 @@ env:
   # 절대 하드코딩하지 않기
 ```
 
-**웹훅 검증:**
+<strong>웹훅 검증:</strong>
 
 ```javascript
 // Passcode로 웹훅 검증
@@ -1924,19 +1924,19 @@ if (req.body.passcode !== process.env.FIGMA_WEBHOOK_SECRET) {
 
 ### 성능 최적화
 
-**디자인 레이어:**
+<strong>디자인 레이어:</strong>
 - Figma 파일을 50MB 이하로 유지
 - 프레임보다 컴포넌트 사용
 - 플러그인 사용 제한
 - 정기적인 파일 정리
 
-**코드 레이어:**
+<strong>코드 레이어:</strong>
 - 컴포넌트 지연 로딩
 - JavaScript 최소화
 - CSS 전용 애니메이션 사용
 - 번들 크기 최적화
 
-**동기화 레이어:**
+<strong>동기화 레이어:</strong>
 - 웹훅 호출 디바운스
 - Rate limiting 구현
 - API 응답 캐싱
@@ -1944,7 +1944,7 @@ if (req.body.passcode !== process.env.FIGMA_WEBHOOK_SECRET) {
 
 ### 일반적인 문제 및 해결책
 
-**문제 1: 웹훅이 트리거되지 않음**
+<strong>문제 1: 웹훅이 트리거되지 않음</strong>
 
 ```javascript
 // 해결책: 웹훅 상태 확인
@@ -1962,7 +1962,7 @@ async function checkWebhookStatus() {
 }
 ```
 
-**문제 2: 토큰 변환 실패**
+<strong>문제 2: 토큰 변환 실패</strong>
 
 ```javascript
 // 해결책: 변환 전 스키마 검증
@@ -1979,7 +1979,7 @@ function validateTokenSchema(tokens) {
 }
 ```
 
-**문제 3: 컴포넌트 충돌**
+<strong>문제 3: 컴포넌트 충돌</strong>
 
 ```javascript
 // 해결책: 컴포넌트 등록 전 확인
@@ -1997,10 +1997,10 @@ if (customElements.get('ds-button')) {
 Figma MCP와 웹 컴포넌트의 통합은 2025년 현재 성숙하고 프로덕션 레디한 접근법입니다:
 
 <strong>핵심 성과:</strong>
-- **Figma MCP**는 공식 지원되며 활발히 개발 중
-- **웹 컴포넌트**는 폴리필 없이 모든 주요 브라우저에서 지원
-- **디자인 토큰**은 W3C 표준화 진행 중
-- **자동화 도구**(웹훅, GitHub Actions)는 안정적이고 잘 문서화됨
+- <strong>Figma MCP</strong>는 공식 지원되며 활발히 개발 중
+- <strong>웹 컴포넌트</strong>는 폴리필 없이 모든 주요 브라우저에서 지원
+- <strong>디자인 토큰</strong>은 W3C 표준화 진행 중
+- <strong>자동화 도구</strong>(웹훅, GitHub Actions)는 안정적이고 잘 문서화됨
 
 <strong>도입 시 얻는 것:</strong>
 - 디자인-코드 간극 해소
@@ -2011,31 +2011,31 @@ Figma MCP와 웹 컴포넌트의 통합은 2025년 현재 성숙하고 프로덕
 
 ### 시작하기 위한 로드맵
 
-**1단계: 기초 구축 (1〜2주)**
+<strong>1단계: 기초 구축 (1〜2주)</strong>
 - Figma 컴포넌트 라이브러리 설정
 - `components-map.md` 매핑 파일 생성
 - 디자인 토큰 구조 정의
 - 명명 규칙 확립
 
-**2단계: Claude Code 설정 (1주)**
+<strong>2단계: Claude Code 설정 (1주)</strong>
 - `.claude/agents/figma-sync.md` 에이전트 정의
 - `.claude/commands/sync-components.md` 슬래시 커맨드 생성
 - `.claude/skills/component-comparison.md` 스킬 구현
 - Figma MCP 연결 및 테스트
 
-**3단계: 자동화 스크립트 (2〜3주)**
+<strong>3단계: 자동화 스크립트 (2〜3주)</strong>
 - 컴포넌트 메타데이터 추출 스크립트
 - 해시 기반 변경 감지 로직
 - 웹 컴포넌트 코드 생성기
 - 매핑 파일 업데이트 로직
 
-**4단계: 통합 및 테스트 (1〜2주)**
+<strong>4단계: 통합 및 테스트 (1〜2주)</strong>
 - `/sync-components` 명령어로 전체 워크플로우 테스트
 - 선택적 업데이트 검증
 - 오류 처리 및 복구 메커니즘
 - 동기화 보고서 개선
 
-**5단계: 고급 기능 (선택 사항, 2〜3주)**
+<strong>5단계: 고급 기능 (선택 사항, 2〜3주)</strong>
 - Webhook 연동으로 실시간 동기화
 - GitHub Actions 파이프라인 구축
 - 자동 PR 생성
@@ -2043,7 +2043,7 @@ Figma MCP와 웹 컴포넌트의 통합은 2025년 현재 성숙하고 프로덕
 
 ### 향후 전망
 
-**예상되는 발전사항 (2025〜2026):**
+<strong>예상되는 발전사항 (2025〜2026):</strong>
 
 1. <strong>향상된 AI 통합</strong>
    - 더 정교한 MCP 도구
@@ -2073,14 +2073,14 @@ Figma MCP와 웹 컴포넌트의 통합은 2025년 현재 성숙하고 프로덕
 
 디자인 시스템 구축은 마라톤이지 단거리 달리기가 아닙니다. <strong>작게 시작하고, 자주 반복하고, 팀과 소통하세요.</strong>
 
-**성공의 핵심:**
+<strong>성공의 핵심:</strong>
 - <strong>단일 진실의 원천:</strong> `components-map.md` 파일로 모든 컴포넌트를 중앙 관리
 - <strong>지능적 자동화:</strong> Claude Code 에이전트로 변경 감지 및 선택적 업데이트
 - <strong>해시 기반 검증:</strong> 불필요한 업데이트 최소화로 효율성 극대화
 - <strong>점진적 도입:</strong> 한 번에 모든 컴포넌트를 변환하지 말고, 핵심부터 시작
 - <strong>팀 협업:</strong> 디자이너와 개발자가 매핑 파일을 함께 관리
 
-**실전 팁:**
+<strong>실전 팁:</strong>
 
 1. <strong>첫 번째 컴포넌트부터 시작:</strong> Button이나 Card 같은 단순한 컴포넌트로 워크플로우 검증
 2. <strong>정기적 동기화:</strong> `/sync-components` 명령어를 주간 루틴에 포함
@@ -2088,7 +2088,7 @@ Figma MCP와 웹 컴포넌트의 통합은 2025년 현재 성숙하고 프로덕
 4. <strong>버전 관리:</strong> 매핑 파일과 생성된 컴포넌트를 Git으로 추적
 5. <strong>문서화:</strong> 각 컴포넌트의 사용법과 제약사항을 README에 기록
 
-**피해야 할 실수:**
+<strong>피해야 할 실수:</strong>
 
 - ✗ 매핑 파일 없이 수동으로 컴포넌트 생성 (일관성 손실)
 - ✗ 모든 컴포넌트를 강제로 업데이트 (불필요한 작업 증가)

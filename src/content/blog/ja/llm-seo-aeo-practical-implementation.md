@@ -1237,11 +1237,11 @@ Agent Effi Flowプロジェクトの6ヶ月の旅は、これらの原則を証�
 
 ---
 
-**次回予告**: "AEO Advanced Strategies: LLM Citation Maximization" - LLM引用を最大化するための高度戦略を詳しく扱います。
+<strong>次回予告</strong>: "AEO Advanced Strategies: LLM Citation Maximization" - LLM引用を最大化するための高度戦略を詳しく扱います。
 
-**質問やフィードバック**: [GitHub Issues](https://github.com/your-repo/agents-effi-flow/issues) または [Email](mailto:contact@jangwook.net)でお気軽にご連絡ください。
+<strong>質問やフィードバック</strong>: [GitHub Issues](https://github.com/your-repo/agents-effi-flow/issues) または [Email](mailto:contact@jangwook.net)でお気軽にご連絡ください。
 
-**関連リソース**:
+<strong>関連リソース</strong>:
 - [Agent Effi Flow GitHub](https://github.com/your-repo/agents-effi-flow)
 - [SEO Optimizer Agent](https://github.com/your-repo/agents-effi-flow/.claude/agents/seo-optimizer.md)
 - [Weekly Analytics Report](https://www.jangwook.net/ja/blog/weekly-analytics-2025-10-14)

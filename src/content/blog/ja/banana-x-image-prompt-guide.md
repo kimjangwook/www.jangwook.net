@@ -15,19 +15,19 @@ relatedPosts: []
 
 AI画像生成ツールに「modern clean blog hero image」と入力したことはありませんか？ 結果はどこかで見たような、特徴のない画像だったはずです。プロンプトが曖昧だと、AIも曖昧な画像を生成します。
 
-この問題を解決するために、**Banana Xプロジェクトで300件以上のインフォグラフィックデザインを5つの基準で評価したデータ**を分析しました。その結果、高得点デザインには明確な共通パターンがあり、それを体系的なプロンプト構造にまとめたのが**YAML 7-Part Structure**です。
+この問題を解決するために、<strong>Banana Xプロジェクトで300件以上のインフォグラフィックデザインを5つの基準で評価したデータ</strong>を分析しました。その結果、高得点デザインには明確な共通パターンがあり、それを体系的なプロンプト構造にまとめたのが<strong>YAML 7-Part Structure</strong>です。
 
 ### 5つの評価基準（合計50点満点）
 
 | 基準 | 配点 | 説明 |
 |------|------|------|
-| **Legibility**（可読性） | 10点 | 情報を明確に読み取れるか |
-| **Hierarchy**（視覚階層） | 10点 | 情報の優先順位が視覚的に区別されるか |
-| **Consistency**（一貫性） | 10点 | デザイン要素が統一された文法に従っているか |
-| **Atmosphere**（雰囲気） | 10点 | スタイルがコンテンツの意味を強化しているか |
-| **Theme Fit**（テーマ適合） | 10点 | 投稿テーマとビジュアルが一致しているか |
+| <strong>Legibility</strong>（可読性） | 10点 | 情報を明確に読み取れるか |
+| <strong>Hierarchy</strong>（視覚階層） | 10点 | 情報の優先順位が視覚的に区別されるか |
+| <strong>Consistency</strong>（一貫性） | 10点 | デザイン要素が統一された文法に従っているか |
+| <strong>Atmosphere</strong>（雰囲気） | 10点 | スタイルがコンテンツの意味を強化しているか |
+| <strong>Theme Fit</strong>（テーマ適合） | 10点 | 投稿テーマとビジュアルが一致しているか |
 
-45点以上を獲得したデザインの共通点を抽出し、**誰でも実践できるプロンプト作成フレームワーク**を構築しました。
+45点以上を獲得したデザインの共通点を抽出し、<strong>誰でも実践できるプロンプト作成フレームワーク</strong>を構築しました。
 
 ---
 
@@ -41,21 +41,21 @@ AI画像生成ツールに「modern clean blog hero image」と入力したこ�
 Tone: "キーワード1, キーワード2, キーワード3, キーワード4, キーワード5"
 ```
 
-5つの形容詞・名詞で画像全体の世界観を定義します。**具体的であるほど**良いです。
+5つの形容詞・名詞で画像全体の世界観を定義します。<strong>具体的であるほど</strong>良いです。
 
-**❌ BAD:**
+<strong>❌ BAD:</strong>
 ```yaml
 Tone: "modern, clean, professional"
 ```
 → あらゆるデザインに当てはまるキーワード。AIが参考にする方向性がありません。
 
-**✅ GOOD:**
+<strong>✅ GOOD:</strong>
 ```yaml
 Tone: "知的, 計画的, 精密, エンジニアリング, 設計図"
 ```
 → 「知的で計画的なエンジニアリングの設計図」— 明確な世界観が固まります。
 
-**高得点（45点以上）Toneパターン集：**
+<strong>高得点（45点以上）Toneパターン集：</strong>
 
 | スタイル | Toneキーワード |
 |---------|--------------|
@@ -77,9 +77,9 @@ Visual Identity:
     - "#HEX (Name) — 用途"
 ```
 
-色を指定する際は**必ずHEXコード＋色名**を併記します。AIが色を正確に解釈できるようにするためです。
+色を指定する際は<strong>必ずHEXコード＋色名</strong>を併記します。AIが色を正確に解釈できるようにするためです。
 
-**❌ BAD:**
+<strong>❌ BAD:</strong>
 ```yaml
 Visual Identity:
   Background: "blue"
@@ -88,7 +88,7 @@ Visual Identity:
 ```
 → 「blue」がどのblueなのか、AIには判断できません。
 
-**✅ GOOD:**
+<strong>✅ GOOD:</strong>
 ```yaml
 Visual Identity:
   Background: "#0047AB (Cobalt Blue) — ブループリント背景"
@@ -99,7 +99,7 @@ Visual Identity:
 ```
 → 正確な色コード＋役割まで明示し、AIが一貫したカラースキームを維持します。
 
-**高得点カラー組み合わせパターン：**
+<strong>高得点カラー組み合わせパターン：</strong>
 
 | スタイル | 背景 | テキスト | アクセント |
 |---------|------|---------|----------|
@@ -125,22 +125,22 @@ Image Style:
 
 各フィールドのBAD vs GOOD：
 
-**Features（特徴）** — 最も重要な1文：
+<strong>Features（特徴）</strong> — 最も重要な1文：
 
 - ❌ `"Clean modern design"` → あらゆるデザインに該当
 - ✅ `"電子回路基板のパターンで構成されたレイアウト"` → このデザイン固有の特徴
 
-**Shapes（形状）** — 繰り返し使う視覚要素：
+<strong>Shapes（形状）</strong> — 繰り返し使う視覚要素：
 
 - ❌ `"Various shapes"` → 情報なし
 - ✅ `"直線と45度の角度で走る配線、ノード、コネクタ"` → 具体的な視覚語彙
 
-**Texture（質感）** — 触覚的な表現：
+<strong>Texture（質感）</strong> — 触覚的な表現：
 
 - ❌ `"Smooth"` → 不十分
 - ✅ `"和紙の繊維感、版木の木目、墨の濃淡"` → 物理的な実在感
 
-**Composition（構図）** — 視覚的階層戦略：
+<strong>Composition（構図）</strong> — 視覚的階層戦略：
 
 - ❌ `"Centered layout"` → 単純すぎる
 - ✅ `"圧倒的な余白の中央にわずかな線"` → 空間活用戦略まで含む
@@ -154,20 +154,20 @@ Typography:
   Style: "フォント適用方法"
 ```
 
-**❌ BAD:**
+<strong>❌ BAD:</strong>
 ```yaml
 Typography:
   Heading: "Sans-serif"
 ```
 
-**✅ GOOD:**
+<strong>✅ GOOD:</strong>
 ```yaml
 Typography:
   Heading: "製図用ステンシルフォント"
   Style: "手書きのブロック体、寸法線と注釈ラベルのような配置"
 ```
 
-**高得点タイポグラフィパターン：**
+<strong>高得点タイポグラフィパターン：</strong>
 
 | スタイル | Heading | Style |
 |---------|---------|-------|
@@ -186,12 +186,12 @@ Content Connection:
   Key Elements: "記事から抽出した2-3個の核心視覚要素"
 ```
 
-**これが最も重要な差別化ポイントです。** このセクションがないと、どの記事にも使えるgenericな画像になってしまいます。
+<strong>これが最も重要な差別化ポイントです。</strong> このセクションがないと、どの記事にも使えるgenericな画像になってしまいます。
 
-**❌ BAD（Content Connectionなし）：**
+<strong>❌ BAD（Content Connectionなし）：</strong>
 → 「React」記事のヒーロー画像が「Vue」記事にも使える汎用デザイン
 
-**✅ GOOD：**
+<strong>✅ GOOD：</strong>
 ```yaml
 Content Connection:
   Core Concept: "サーバーとクライアントのコンポーネント分離でバンドルサイズ削減"
@@ -206,7 +206,7 @@ Content Connection:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealistic human faces."
 ```
 
-必ず含めるべき**必須制約4つ**：
+必ず含めるべき<strong>必須制約4つ</strong>：
 
 | 制約 | 理由 |
 |------|------|
@@ -219,9 +219,9 @@ Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealisti
 
 プロンプト作成後、必ず以下の3つを確認してください：
 
-1. **唯一性テスト**：「このプロンプトがまったく別の記事にも使えるか？」→ **Yes**ならContent Connectionが不足
-2. **視覚具体性テスト**：「このプロンプトを読んで二人が描いたら似た画像になるか？」→ **No**ならShapes/Texture/Compositionが不足
-3. **一貫性テスト**：「Toneの5キーワードがColor Palette＋Image Styleと矛盾しないか？」→ 矛盾があれば修正
+1. <strong>唯一性テスト</strong>：「このプロンプトがまったく別の記事にも使えるか？」→ <strong>Yes</strong>ならContent Connectionが不足
+2. <strong>視覚具体性テスト</strong>：「このプロンプトを読んで二人が描いたら似た画像になるか？」→ <strong>No</strong>ならShapes/Texture/Compositionが不足
+3. <strong>一貫性テスト</strong>：「Toneの5キーワードがColor Palette＋Image Styleと矛盾しないか？」→ 矛盾があれば修正
 
 ---
 
@@ -231,7 +231,7 @@ Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealisti
 
 ### Consistency 10/10の秘訣：「デザイン文法」の統一
 
-満点の一貫性を達成したデザインは、**すべての要素に同じデザイン文法を適用**しています：
+満点の一貫性を達成したデザインは、<strong>すべての要素に同じデザイン文法を適用</strong>しています：
 
 - 線の太さが全域で統一されている
 - アイコンの抽象化レベルが揃っている
@@ -254,7 +254,7 @@ Image Style:
 
 ### Atmosphere 10/10の秘訣：「情報の器」としてのスタイル
 
-単なる装飾ではなく、**コンテンツの意味を強化するビジュアル**が満点を獲得します。読者の感情状態を変化させるデザインが鍵です。
+単なる装飾ではなく、<strong>コンテンツの意味を強化するビジュアル</strong>が満点を獲得します。読者の感情状態を変化させるデザインが鍵です。
 
 | 得点 | パターン | なぜ高得点か |
 |------|---------|-------------|
@@ -267,18 +267,18 @@ Image Style:
 
 スタイルの本質を理解し、情報表現に転用することが鍵です：
 
-- **Blueprint** → 「設計」のメタファーで情報の構築プロセスを表現
-- **Newspaper** → 「報道」の形式で情報の重大性を強調
-- **Ukiyo-e** → 「粋」の美学で情報の品格を演出
+- <strong>Blueprint</strong> → 「設計」のメタファーで情報の構築プロセスを表現
+- <strong>Newspaper</strong> → 「報道」の形式で情報の重大性を強調
+- <strong>Ukiyo-e</strong> → 「粋」の美学で情報の品格を演出
 
 ### 満点（50/50）デザインのパターン分析
 
 50点満点を獲得したデザインの共通点：
 
-1. **一つのスタイルに100%コミット** — 複数スタイルを混ぜない
-2. **Content Connectionが具体的** — 記事内容と1:1対応
-3. **制約条件を徹底遵守** — テキストオーバーレイなし、比率正確
-4. **Tone ↔ Style ↔ Color三角一貫性** — 3要素が同じ世界観を指す
+1. <strong>一つのスタイルに100%コミット</strong> — 複数スタイルを混ぜない
+2. <strong>Content Connectionが具体的</strong> — 記事内容と1:1対応
+3. <strong>制約条件を徹底遵守</strong> — テキストオーバーレイなし、比率正確
+4. <strong>Tone ↔ Style ↔ Color三角一貫性</strong> — 3要素が同じ世界観を指す
 
 ---
 
@@ -307,7 +307,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**ポイント：** コンポーネントブロックの積み重ねによる建築的構成で、フロントエンドの「組み立て」特性を表現。
+<strong>ポイント：</strong> コンポーネントブロックの積み重ねによる建築的構成で、フロントエンドの「組み立て」特性を表現。
 
 ### 3.2 AI / Machine Learning
 
@@ -331,7 +331,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**ポイント：** ディープスペースブルー背景に発光するノードネットワーク。AI/MLの「接続と学習」の本質を視覚化。
+<strong>ポイント：</strong> ディープスペースブルー背景に発光するノードネットワーク。AI/MLの「接続と学習」の本質を視覚化。
 
 ### 3.3 DevOps / Infrastructure
 
@@ -354,7 +354,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**ポイント：** ブループリント美学。DevOpsの「インフラ設計」の本質を建築図面で表現。
+<strong>ポイント：</strong> ブループリント美学。DevOpsの「インフラ設計」の本質を建築図面で表現。
 
 ### 3.4 Performance / Optimization
 
@@ -377,7 +377,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**ポイント：** 究極のミニマリズム。「最適化＝不要なものを削除」という本質を余白で表現。
+<strong>ポイント：</strong> 究極のミニマリズム。「最適化＝不要なものを削除」という本質を余白で表現。
 
 ### 3.5 Security
 
@@ -401,24 +401,24 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-**ポイント：** ダーク背景＋ターミナルグリーン。セキュリティの「多層防御」の本質を同心円レイヤーで表現。
+<strong>ポイント：</strong> ダーク背景＋ターミナルグリーン。セキュリティの「多層防御」の本質を同心円レイヤーで表現。
 
 ---
 
 ## 4. YAML → 英語プロンプト変換
 
-YAML構造で設計したプロンプトを実際のAI画像生成APIに投入するには、**英語の自然言語プロンプト**に変換する必要があります。
+YAML構造で設計したプロンプトを実際のAI画像生成APIに投入するには、<strong>英語の自然言語プロンプト</strong>に変換する必要があります。
 
 ### 変換ルール
 
 | YAMLパート | 英語プロンプト位置 | 変換方法 |
 |-----------|-------------------|---------|
-| **Tone** | 文頭 | `"A [tone1], [tone2] illustration..."` |
-| **Visual Identity** | 色指定部 | `"...in [color1] (#HEX) and [color2] (#HEX)..."` |
-| **Image Style** | 核心描写部 | Features + Shapes + Textureを1～2文に凝縮 |
-| **Composition** | 構図指示部 | `"...with [layout description]..."` |
-| **Content Connection** | 比喩描写部 | Visual Metaphorを核心文に |
-| **Constraints** | 文末 | `"No text overlay. No watermarks. 2:1 aspect ratio."` |
+| <strong>Tone</strong> | 文頭 | `"A [tone1], [tone2] illustration..."` |
+| <strong>Visual Identity</strong> | 色指定部 | `"...in [color1] (#HEX) and [color2] (#HEX)..."` |
+| <strong>Image Style</strong> | 核心描写部 | Features + Shapes + Textureを1～2文に凝縮 |
+| <strong>Composition</strong> | 構図指示部 | `"...with [layout description]..."` |
+| <strong>Content Connection</strong> | 比喩描写部 | Visual Metaphorを核心文に |
+| <strong>Constraints</strong> | 文末 | `"No text overlay. No watermarks. 2:1 aspect ratio."` |
 
 ### 変換テンプレート
 
@@ -434,7 +434,7 @@ No text overlay. No watermarks. Suitable for 2:1 aspect ratio blog hero image.
 
 ### 完成例：Next.js App Routerマイグレーション
 
-**YAML設計：**
+<strong>YAML設計：</strong>
 
 ```yaml
 Tone: "構築的, モダン, 移行, 進化, アーキテクチャ"
@@ -462,7 +462,7 @@ Content Connection:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. Blueprint aesthetic."
 ```
 
-**変換後の英語プロンプト：**
+<strong>変換後の英語プロンプト：</strong>
 
 ```
 An architectural blueprint illustration showing migration from old to new
@@ -484,21 +484,21 @@ YAML構造で設計した内容を漏れなく自然言語に圧縮するのが�
 
 このガイドラインを実際のブログヒーロー画像生成に適用した結果：
 
-- **Before**：プロンプト「modern tech blog hero」→ どこにでもあるグラデーション画像
-- **After**：YAML 7-Part Structure適用 → 記事内容と整合する唯一無二の画像
+- <strong>Before</strong>：プロンプト「modern tech blog hero」→ どこにでもあるグラデーション画像
+- <strong>After</strong>：YAML 7-Part Structure適用 → 記事内容と整合する唯一無二の画像
 
-特に**Content Connection**パートの導入後、Theme Fitスコアが平均6点から9点へ大幅に向上しました。
+特に<strong>Content Connection</strong>パートの導入後、Theme Fitスコアが平均6点から9点へ大幅に向上しました。
 
 ### 最終チェックリスト
 
 プロンプト完成後、以下のチェックリストで最終確認してください：
 
-- [ ] **Tone**：5つのキーワードが具体的で互いに一貫しているか？
-- [ ] **Visual Identity**：HEXコード＋色名＋用途がすべて明示されているか？
-- [ ] **Image Style**：Features/Shapes/Texture/Compositionがそれぞれ具体的か？
-- [ ] **Typography**：スタイルに合ったフォントが指定されているか？
-- [ ] **Content Connection**：この記事でしか意味をなさないビジュアルメタファーか？
-- [ ] **Constraints**：4つの必須制約（テキスト、透かし、比率、顔）が含まれているか？
-- [ ] **Self-Check 3点**：唯一性／視覚具体性／一貫性テストをパスしたか？
+- [ ] <strong>Tone</strong>：5つのキーワードが具体的で互いに一貫しているか？
+- [ ] <strong>Visual Identity</strong>：HEXコード＋色名＋用途がすべて明示されているか？
+- [ ] <strong>Image Style</strong>：Features/Shapes/Texture/Compositionがそれぞれ具体的か？
+- [ ] <strong>Typography</strong>：スタイルに合ったフォントが指定されているか？
+- [ ] <strong>Content Connection</strong>：この記事でしか意味をなさないビジュアルメタファーか？
+- [ ] <strong>Constraints</strong>：4つの必須制約（テキスト、透かし、比率、顔）が含まれているか？
+- [ ] <strong>Self-Check 3点</strong>：唯一性／視覚具体性／一貫性テストをパスしたか？
 
-この構造に従えば、AIがあなたのブログ記事と完璧に整合する高品質なヒーロー画像を生成してくれます。もう「なんとなく綺麗な画像」で妥協しないでください。**データが証明した高得点パターン**で、正確で意味のある画像を作りましょう。
+この構造に従えば、AIがあなたのブログ記事と完璧に整合する高品質なヒーロー画像を生成してくれます。もう「なんとなく綺麗な画像」で妥協しないでください。<strong>データが証明した高得点パターン</strong>で、正確で意味のある画像を作りましょう。

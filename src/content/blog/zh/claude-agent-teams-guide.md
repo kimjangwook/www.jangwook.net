@@ -60,7 +60,7 @@ relatedPosts:
 
 ## 什么是 Agent Teams
 
-2026 年 2 月 5 日，Anthropic 发布了 Claude Code 的全新实验性功能 **Agent Teams**。与此前只能在单一会话内返回结果的子代理（subagent）不同，Agent Teams 由多个完全独立的 Claude Code 实例组成，它们能够**直接相互通信、协同工作**。
+2026 年 2 月 5 日，Anthropic 发布了 Claude Code 的全新实验性功能 <strong>Agent Teams</strong>。与此前只能在单一会话内返回结果的子代理（subagent）不同，Agent Teams 由多个完全独立的 Claude Code 实例组成，它们能够<strong>直接相互通信、协同工作</strong>。
 
 核心区别如下：
 
@@ -145,13 +145,13 @@ export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 
 Agent Teams 支持三种显示模式：
 
-- **in-process**：所有队友在主终端内运行，用 `Shift+↑/↓` 选择队友。
-- **tmux**：每个队友在独立的 tmux 分屏窗格中运行，一屏总览所有输出。
-- **iTerm2**：使用 iTerm2 时自动分屏。
+- <strong>in-process</strong>：所有队友在主终端内运行，用 `Shift+↑/↓` 选择队友。
+- <strong>tmux</strong>：每个队友在独立的 tmux 分屏窗格中运行，一屏总览所有输出。
+- <strong>iTerm2</strong>：使用 iTerm2 时自动分屏。
 
 默认为 `auto`——在 tmux 会话内自动使用分屏，否则使用 in-process。
 
-我显式设置了 **tmux 模式**：
+我显式设置了 <strong>tmux 模式</strong>：
 
 ```json
 {
@@ -159,7 +159,7 @@ Agent Teams 支持三种显示模式：
 }
 ```
 
-理由很简单：同时运营 5 个团队时，必须在**同一屏幕上实时**看到每个队友的工作状态，才能快速发现瓶颈。
+理由很简单：同时运营 5 个团队时，必须在<strong>同一屏幕上实时</strong>看到每个队友的工作状态，才能快速发现瓶颈。
 
 如果尚未安装 tmux：
 
@@ -205,13 +205,13 @@ brew install tmux
 
 ## 任务列表与依赖管理
 
-Agent Teams 的核心机制之一是**共享任务列表**。团队主管创建任务，队友自主认领（claim）并执行。
+Agent Teams 的核心机制之一是<strong>共享任务列表</strong>。团队主管创建任务，队友自主认领（claim）并执行。
 
 ### 任务状态
 
-- **pending**：等待认领
-- **in progress**：执行中
-- **completed**：已完成
+- <strong>pending</strong>：等待认领
+- <strong>in progress</strong>：执行中
+- <strong>completed</strong>：已完成
 
 ### 依赖关系
 
@@ -236,7 +236,7 @@ Agent Teams 的核心机制之一是**共享任务列表**。团队主管创建�
 
 ### Delegate 模式
 
-默认情况下团队主管也可以直接执行任务，但启用 **Delegate 模式**后，主管只负责协调：
+默认情况下团队主管也可以直接执行任务，但启用 <strong>Delegate 模式</strong>后，主管只负责协调：
 
 - 创建/关闭队友
 - 转发消息
@@ -250,8 +250,8 @@ Agent Teams 的核心机制之一是**共享任务列表**。团队主管创建�
 
 可以绕过主管，直接向某个队友发送指令：
 
-- **in-process**：`Shift+↑/↓` 选择队友后输入消息
-- **tmux**：点击对应窗格直接交互
+- <strong>in-process</strong>：`Shift+↑/↓` 选择队友后输入消息
+- <strong>tmux</strong>：点击对应窗格直接交互
 
 ### 计划审批
 
@@ -266,17 +266,17 @@ Agent Teams 的核心机制之一是**共享任务列表**。团队主管创建�
 
 ## OpenClaw × Agent Teams — 协同效应
 
-有趣的是，OpenClaw 自身的多代理能力与 Agent Teams 运行在**不同层级**。
+有趣的是，OpenClaw 自身的多代理能力与 Agent Teams 运行在<strong>不同层级</strong>。
 
 ### OpenClaw 多代理
 
-- 在 **频道层级**（Telegram、Discord 等）管理代理
+- 在 <strong>频道层级</strong>（Telegram、Discord 等）管理代理
 - 每个代理拥有独立的人设和配置
-- 支持 cron 任务、心跳等**自动化调度**
+- 支持 cron 任务、心跳等<strong>自动化调度</strong>
 
 ### Claude Code Agent Teams
 
-- 在**会话层级**实现多个 Claude Code 实例的协作
+- 在<strong>会话层级</strong>实现多个 Claude Code 实例的协作
 - 共享任务列表和消息系统
 - 专为代码工作优化的并行处理
 
@@ -297,7 +297,7 @@ OpenClaw 代理（频道层级）
 
 ### 1. 防止文件冲突
 
-最大的坑是**多个队友同时修改同一文件**。
+最大的坑是<strong>多个队友同时修改同一文件</strong>。
 
 - 明确划分每个队友的目录/文件职责
 - 通过任务依赖确保共享文件只有一个写入者
@@ -305,7 +305,7 @@ OpenClaw 代理（频道层级）
 
 ### 2. 上下文传递
 
-队友会自动加载 CLAUDE.md、MCP 服务器和技能，但**不会继承主管的对话历史**。因此：
+队友会自动加载 CLAUDE.md、MCP 服务器和技能，但<strong>不会继承主管的对话历史</strong>。因此：
 
 - 在 spawn 提示中包含充足的上下文
 - 明确指定相关文件路径
@@ -316,7 +316,7 @@ OpenClaw 代理（频道层级）
 每个队友使用独立的上下文窗口，Token 消耗会急剧增加。
 
 - 简单任务用子代理就够了
-- Agent Teams 应聚焦于**讨论、审查和并行探索**
+- Agent Teams 应聚焦于<strong>讨论、审查和并行探索</strong>
 - 广播消息的成本与团队规模成正比 → 尽量少用
 
 ### 4. 权限管理
@@ -325,22 +325,22 @@ OpenClaw 代理（频道层级）
 
 ## 局限与注意事项
 
-1. **实验性功能**：环境变量名中的 `EXPERIMENTAL` 说明一切。API 随时可能变更。
+1. <strong>实验性功能</strong>：环境变量名中的 `EXPERIMENTAL` 说明一切。API 随时可能变更。
 
-2. **Token 成本**：5 人团队意味着至少 5 倍的 Token 消耗。需要评估投入产出比。
+2. <strong>Token 成本</strong>：5 人团队意味着至少 5 倍的 Token 消耗。需要评估投入产出比。
 
-3. **调试困难**：多个队友同时工作时，问题定位变得复杂。
+3. <strong>调试困难</strong>：多个队友同时工作时，问题定位变得复杂。
 
-4. **顺序任务效率低**：依赖关系密集的工作最终还是串行执行，没必要动用团队。
+4. <strong>顺序任务效率低</strong>：依赖关系密集的工作最终还是串行执行，没必要动用团队。
 
-5. **同文件编辑风险**：目前不支持文件级锁定，只能通过任务设计来规避。
+5. <strong>同文件编辑风险</strong>：目前不支持文件级锁定，只能通过任务设计来规避。
 
-6. **tmux 几乎是必需的**：用 in-process 模式监控 5 个团队非常吃力，tmux 才是正解。
+6. <strong>tmux 几乎是必需的</strong>：用 in-process 模式监控 5 个团队非常吃力，tmux 才是正解。
 
 ## 总结
 
 Agent Teams 虽然还在实验阶段，但潜力已经显而易见。与 OpenClaw 的多代理架构结合后，能实现频道层级自动化 + 会话层级并行协作的双层体系。
 
-但现阶段将 Agent Teams 应用于所有任务并不划算。应聚焦于**并行探索、代码审查、竞争假设验证**等场景——独立工作居多、队友间讨论能创造实际价值的场景。
+但现阶段将 Agent Teams 应用于所有任务并不划算。应聚焦于<strong>并行探索、代码审查、竞争假设验证</strong>等场景——独立工作居多、队友间讨论能创造实际价值的场景。
 
-环境搭建 30 分钟就能搞定。真正的难点在于**如何划分团队、如何拆解任务**这个设计问题。这种直觉，只能在实践中打磨。
+环境搭建 30 分钟就能搞定。真正的难点在于<strong>如何划分团队、如何拆解任务</strong>这个设计问题。这种直觉，只能在实践中打磨。

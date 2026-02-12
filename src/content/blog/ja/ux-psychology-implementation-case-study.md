@@ -55,13 +55,13 @@ relatedPosts:
 
 ## 概要
 
-UX心理学の原則を実際のウェブサイトに適用してユーザー体験を改善した事例を紹介します。今回の改善では、**Goal Gradient Effect**、**Von Restorff Effect**、**Fitts's Law**、**Doherty Threshold**など10の主要なUX心理学原則に基づいてコンポーネントを改善しました。
+UX心理学の原則を実際のウェブサイトに適用してユーザー体験を改善した事例を紹介します。今回の改善では、<strong>Goal Gradient Effect</strong>、<strong>Von Restorff Effect</strong>、<strong>Fitts's Law</strong>、<strong>Doherty Threshold</strong>など10の主要なUX心理学原則に基づいてコンポーネントを改善しました。
 
 ## 実装されたUX改善事項
 
 ### 1. BlogCard読了時間計算の改善
 
-従来はdescriptionテキストの長さを基に読了時間を推定していましたが、今回の改善では**ビルド時に実際の記事本文の単語数を計算**して正確な読了時間を表示します。
+従来はdescriptionテキストの長さを基に読了時間を推定していましたが、今回の改善では<strong>ビルド時に実際の記事本文の単語数を計算</strong>して正確な読了時間を表示します。
 
 ```typescript
 // src/lib/content.ts
@@ -93,13 +93,13 @@ export function calculateReadingTime(content: string): number {
 }
 ```
 
-**適用されたUX原則**: Cognitive Load Reduction - ユーザーがコンテンツ消費に必要な時間を事前に把握し、意思決定をサポートします。
+<strong>適用されたUX原則</strong>: Cognitive Load Reduction - ユーザーがコンテンツ消費に必要な時間を事前に把握し、意思決定をサポートします。
 
 ![読了時間バッジ付きBlogCard](../../../assets/blog/en-blog-list.webp)
 
 ### 2. カードホバー効果（Card Lift）
 
-BlogCardにホバー時**わずかに浮き上がる効果**を適用し、現在インタラクション中の要素を明確にします。
+BlogCardにホバー時<strong>わずかに浮き上がる効果</strong>を適用し、現在インタラクション中の要素を明確にします。
 
 ```css
 /* src/styles/global.css */
@@ -114,7 +114,7 @@ BlogCardにホバー時**わずかに浮き上がる効果**を適用し、現�
 }
 ```
 
-**適用されたUX原則**: Von Restorff Effect - ホバーされたカードが他のカードの中で視覚的に目立ちます。
+<strong>適用されたUX原則</strong>: Von Restorff Effect - ホバーされたカードが他のカードの中で視覚的に目立ちます。
 
 ### 3. タグピル（Tag Pills）
 
@@ -132,7 +132,7 @@ BlogCardにホバー時**わずかに浮き上がる効果**を適用し、現�
 }
 ```
 
-**適用されたUX原則**: Law of Similarity - 類似したスタイルのタグが視覚的にグループとして認識されます。
+<strong>適用されたUX原則</strong>: Law of Similarity - 類似したスタイルのタグが視覚的にグループとして認識されます。
 
 ### 4. 読書進捗バー（Reading Progress）
 
@@ -166,9 +166,9 @@ BlogCardにホバー時**わずかに浮き上がる効果**を適用し、現�
 
 ![ブログ記事の読書進捗バー](../../../assets/blog/en-blog-post.webp)
 
-**適用されたUX原則**:
-- **Goal Gradient Effect**: 目標（完読）に近づくほどモチベーションが向上
-- **Peak-End Rule**: 100%達成時のお祝いメッセージでポジティブな記憶を形成
+<strong>適用されたUX原則</strong>:
+- <strong>Goal Gradient Effect</strong>: 目標（完読）に近づくほどモチベーションが向上
+- <strong>Peak-End Rule</strong>: 100%達成時のお祝いメッセージでポジティブな記憶を形成
 
 ### 5. Back to Topボタン
 
@@ -206,9 +206,9 @@ BlogCardにホバー時**わずかに浮き上がる効果**を適用し、現�
 
 ![フッターのBack to Topボタン](../../../assets/blog/en-footer.webp)
 
-**適用されたUX原則**:
-- **Tesler's Law**: 複雑さを減らして素早いナビゲーションを提供
-- **Fitts's Law**: 48x48pxサイズで簡単なタッチ/クリック
+<strong>適用されたUX原則</strong>:
+- <strong>Tesler's Law</strong>: 複雑さを減らして素早いナビゲーションを提供
+- <strong>Fitts's Law</strong>: 48x48pxサイズで簡単なタッチ/クリック
 
 ### 6. タッチターゲット最適化
 
@@ -221,7 +221,7 @@ BlogCardにホバー時**わずかに浮き上がる効果**を適用し、現�
 }
 ```
 
-**適用されたUX原則**: Fitts's Law - 大きなターゲットはより速く正確にクリック/タッチできます。
+<strong>適用されたUX原則</strong>: Fitts's Law - 大きなターゲットはより速く正確にクリック/タッチできます。
 
 ## 実装結果のスクリーンショット
 
@@ -247,16 +247,16 @@ BlogCardに読了時間バッジとタグピルが適用された様子。カー
 
 | 原則 | 適用コンポーネント | 効果 |
 |------|-----------------|------|
-| **Goal Gradient Effect** | ReadingProgress | 完読率向上 |
-| **Von Restorff Effect** | BlogCard (card-lift) | フォーカス明確化 |
-| **Fitts's Law** | TouchTarget, BackToTop | タッチ精度向上 |
-| **Doherty Threshold** | アニメーション (<400ms) | 応答性向上 |
-| **Peak-End Rule** | 完読お祝いメッセージ | ポジティブな記憶 |
-| **Tesler's Law** | BackToTop | ナビゲーション簡素化 |
-| **Cognitive Load** | 読了時間バッジ | 意思決定サポート |
-| **Law of Similarity** | Tag Pills | 視覚的グループ化 |
-| **WCAG AA** | focus-visible | アクセシビリティ |
-| **Progressive Disclosure** | Stagger Animation | 段階的情報提示 |
+| <strong>Goal Gradient Effect</strong> | ReadingProgress | 完読率向上 |
+| <strong>Von Restorff Effect</strong> | BlogCard (card-lift) | フォーカス明確化 |
+| <strong>Fitts's Law</strong> | TouchTarget, BackToTop | タッチ精度向上 |
+| <strong>Doherty Threshold</strong> | アニメーション (<400ms) | 応答性向上 |
+| <strong>Peak-End Rule</strong> | 完読お祝いメッセージ | ポジティブな記憶 |
+| <strong>Tesler's Law</strong> | BackToTop | ナビゲーション簡素化 |
+| <strong>Cognitive Load</strong> | 読了時間バッジ | 意思決定サポート |
+| <strong>Law of Similarity</strong> | Tag Pills | 視覚的グループ化 |
+| <strong>WCAG AA</strong> | focus-visible | アクセシビリティ |
+| <strong>Progressive Disclosure</strong> | Stagger Animation | 段階的情報提示 |
 
 ## ビルド検証
 
@@ -268,7 +268,7 @@ npm run build
 
 ## 結論
 
-UX心理学原則を実際のコードとして実装することで、ユーザー体験を体系的に改善できます。特に**読了時間の精度向上**、**カードホバー効果**、**進捗バー**などは、比較的シンプルな実装で大きなUX向上をもたらします。
+UX心理学原則を実際のコードとして実装することで、ユーザー体験を体系的に改善できます。特に<strong>読了時間の精度向上</strong>、<strong>カードホバー効果</strong>、<strong>進捗バー</strong>などは、比較的シンプルな実装で大きなUX向上をもたらします。
 
 次のステップとして、実際のユーザーデータ（滞在時間、完読率、クリック率）を分析して改善効果を定量的に測定する予定です。
 

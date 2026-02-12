@@ -58,7 +58,7 @@ relatedPosts:
 ---
 
 > <strong>シリーズ案内</strong>: この記事は「EffiFlow自動化構造分析/評価と改善」シリーズのPart 1/3です。
-> - **Part 1** (現在): コアアーキテクチャとメトリクス分析
+> - <strong>Part 1</strong> (現在): コアアーキテクチャとメトリクス分析
 > - [Part 2](/ja/blog/ja/effiflow-automation-analysis-part2): SkillsとCommandsの統合戦略
 > - [Part 3](/ja/blog/ja/effiflow-automation-analysis-part3): 実践改善事例とROI分析
 
@@ -128,17 +128,17 @@ graph TB
 
 ### 層別の役割
 
-**Commands (7個)**: ユーザーが直接呼び出すワークフローオーケストレーター
+<strong>Commands (7個)</strong>: ユーザーが直接呼び出すワークフローオーケストレーター
 - 複雑な多段階タスク管理
 - Agentsへのタスク委任
 - 最終検証と出力
 
-**Agents (17個)**: 独立実行可能な専門家
+<strong>Agents (17個)</strong>: 独立実行可能な専門家
 - 特定ドメイン知識保有
 - SkillsとToolsの活用
 - 並列実行サポート
 
-**Skills (4個)**: 自動発見されるモジュラー機能
+<strong>Skills (4個)</strong>: 自動発見されるモジュラー機能
 - SKILL.md + サポートファイル
 - 再利用可能なロジック
 - ツールアクセス制御可能
@@ -206,7 +206,7 @@ graph LR
     style Total fill:#10b981
 ```
 
-**ROI分析**:
+<strong>ROI分析</strong>:
 - Break-even Point: 3回実行
 - 年間削減: <strong>$4.07 (71%)</strong>
 - 投資回収: 即座 (3週間以内)
@@ -226,7 +226,7 @@ if (existingMeta[slug]?.contentHash === newHash) {
 }
 ```
 
-**効果**:
+<strong>効果</strong>:
 - 13投稿全体分析: 2分、$0.09
 - 新規2〜3投稿のみ分析: 20秒、~$0.02
 - <strong>79%追加削減</strong>
@@ -239,8 +239,8 @@ if (existingMeta[slug]?.contentHash === newHash) {
 
 | 方式 | 利点 | 欠点 |
 |------|------|------|
-| **TF-IDF** | 高速、低コスト | 意味理解不足、同義語未処理 |
-| **Claude LLM** | 意味理解、文脈考慮 | 低速、コスト発生 |
+| <strong>TF-IDF</strong> | 高速、低コスト | 意味理解不足、同義語未処理 |
+| <strong>Claude LLM</strong> | 意味理解、文脈考慮 | 低速、コスト発生 |
 
 EffiFlowは<strong>Claude LLM</strong>を選択しましたが、メタデータ優先アーキテクチャでコスト問題を解決しました。
 
@@ -272,7 +272,7 @@ const similarityDimensions = {
 }
 ```
 
-**多言語推論**の核心: LLMは各言語で<strong>独立した理由</strong>を生成します(単純翻訳ではない)。
+<strong>多言語推論</strong>の核心: LLMは各言語で<strong>独立した理由</strong>を生成します(単純翻訳ではない)。
 
 ### 成果指標
 
@@ -333,24 +333,24 @@ recommendations.json        (レコメンデーション更新、V2)
 
 ### 自動化効果
 
-**手動作業時間** (従来):
+<strong>手動作業時間</strong> (従来):
 - リサーチ: 30分
 - 執筆: 2時間
 - 画像制作: 20分
 - 翻訳: 1時間
 - メタデータ: 10分
 - SEO最適化: 20分
-- **合計4時間40分/投稿**
+- <strong>合計4時間40分/投稿</strong>
 
-**自動化後**:
+<strong>自動化後</strong>:
 - コマンド入力: 5秒
 - 待機: 5〜8分
 - レビューと修正: 10〜20分
-- **合計30分/投稿**
+- <strong>合計30分/投稿</strong>
 
-**削減**: <strong>4時間10分/投稿 (90%)</strong>
+<strong>削減</strong>: <strong>4時間10分/投稿 (90%)</strong>
 
-**年間効果** (週2回投稿):
+<strong>年間効果</strong> (週2回投稿):
 - 104投稿 × 4.17時間 = <strong>433時間削減</strong>
 - 時給$50基準: <strong>$21,650相当</strong>
 
@@ -381,7 +381,7 @@ After (メタデータ優先):
 
 ### コスト分析
 
-**現在の運用コスト** (年間):
+<strong>現在の運用コスト</strong> (年間):
 
 ```
 メタデータ生成:    $0.09  (1回)
@@ -392,7 +392,7 @@ GAレポート:       $1.20  (月1回 × 12ヶ月)
 年間総コスト:      $10.65
 ```
 
-**ROI**:
+<strong>ROI</strong>:
 - 時間削減: 433時間/年 × $50/時間 = $21,650
 - 運用コスト: $10.65
 - <strong>純利益: $21,639</strong>
@@ -412,7 +412,7 @@ Claude Code公式ベストプラクティスとの比較結果:
 | ツールリスト | 推奨 | ✅ 提供済み | 100% | 10/10 |
 | ファイル簡潔性 | 100行以下 | ⚠️ 一部超過 | 47% | 7/10 |
 
-**平均**: 9.2/10 ⭐⭐⭐⭐⭐
+<strong>平均</strong>: 9.2/10 ⭐⭐⭐⭐⭐
 
 ### Skills (4個実装)
 
@@ -424,7 +424,7 @@ Claude Code公式ベストプラクティスとの比較結果:
 | 説明具体性 | "Use when..." | ✅ 明示 | 100% | 10/10 |
 | allowed-tools | 推奨 | ✅ 全て明示 | 100% | 10/10 |
 
-**平均**: 10/10 ⭐⭐⭐⭐⭐
+<strong>平均</strong>: 10/10 ⭐⭐⭐⭐⭐
 
 ### Commands (7個)
 
@@ -435,7 +435,7 @@ Claude Code公式ベストプラクティスとの比較結果:
 | $ARGUMENTS | 活用 | ✅ 6/7使用 | 86% | 9/10 |
 | Agent統合 | 明確 | ✅ 明示的 | 100% | 10/10 |
 
-**平均**: 9.7/10 ⭐⭐⭐⭐⭐
+<strong>平均</strong>: 9.7/10 ⭐⭐⭐⭐⭐
 
 ### 総合スコア: Aグレード (8.98/10)
 
@@ -455,7 +455,7 @@ Claude Code公式ベストプラクティスとの比較結果:
 
 ### 1. 空Skillsの削除
 
-**問題**: 4個の空ディレクトリ存在 (50%未実装)
+<strong>問題</strong>: 4個の空ディレクトリ存在 (50%未実装)
 
 ```bash
 .claude/skills/
@@ -465,20 +465,20 @@ Claude Code公式ベストプラクティスとの比較結果:
 └── web-automation/       (空ディレクトリ)
 ```
 
-**対策**:
+<strong>対策</strong>:
 ```bash
 rm -rf .claude/skills/{blog-automation,content-analysis,git-automation,web-automation}
 ```
 
-**効果**: コードベース整理、混乱解消
-**所要時間**: 5分
-**優先度**: Critical
+<strong>効果</strong>: コードベース整理、混乱解消
+<strong>所要時間</strong>: 5分
+<strong>優先度</strong>: Critical
 
 ### 2. 並列処理実装
 
-**問題**: 逐次処理による時間消費
+<strong>問題</strong>: 逐次処理による時間消費
 
-**現在**:
+<strong>現在</strong>:
 ```javascript
 for (const post of posts) {
   await analyzePost(post);  // 逐次
@@ -486,21 +486,21 @@ for (const post of posts) {
 // 処理時間: 2分
 ```
 
-**改善**:
+<strong>改善</strong>:
 ```javascript
 await Promise.all(posts.map(analyzePost));  // 並列
 // 処理時間: 30〜40秒 (70%短縮)
 ```
 
-**効果**: 処理時間70%短縮
-**所要時間**: 4〜6時間
-**優先度**: High
+<strong>効果</strong>: 処理時間70%短縮
+<strong>所要時間</strong>: 4〜6時間
+<strong>優先度</strong>: High
 
 ### 3. 自動テスト追加
 
-**問題**: 現在のテストカバレッジ0%
+<strong>問題</strong>: 現在のテストカバレッジ0%
 
-**必要**:
+<strong>必要</strong>:
 ```python
 # tests/test_blog_writing.py
 def test_validate_frontmatter():
@@ -511,15 +511,15 @@ def test_generate_slug():
     assert generate_slug('Claude Code') == 'claude-code'
 ```
 
-**効果**: 品質保証、回帰防止
-**所要時間**: 8〜12時間
-**優先度**: High
+<strong>効果</strong>: 品質保証、回帰防止
+<strong>所要時間</strong>: 8〜12時間
+<strong>優先度</strong>: High
 
 ## 実践適用ガイド
 
 ### 読者が実践できる具体的ステップ
 
-**ステップ1: メタデータ優先アーキテクチャ適用**
+<strong>ステップ1: メタデータ優先アーキテクチャ適用</strong>
 
 ```bash
 # 現在の投稿分析
@@ -529,11 +529,11 @@ def test_generate_slug():
 cat post-metadata.json
 ```
 
-**予想結果**:
+<strong>予想結果</strong>:
 - 13投稿: 2分、$0.09
 - メタデータファイル生成完了
 
-**ステップ2: V3レコメンデーション生成**
+<strong>ステップ2: V3レコメンデーション生成</strong>
 
 ```bash
 # メタデータベースレコメンデーション
@@ -543,7 +543,7 @@ cat post-metadata.json
 # コスト: $0.03
 ```
 
-**ステップ3: 自動化された投稿作成**
+<strong>ステップ3: 自動化された投稿作成</strong>
 
 ```bash
 # 全ワークフロー実行
@@ -571,16 +571,16 @@ cat post-metadata.json
 
 ### 予想結果とメトリクス
 
-**即時効果**:
+<strong>即時効果</strong>:
 - 投稿作成時間: 4時間40分 → 30分 (90%削減)
 - トークンコスト: $0.11/回 → $0.03/回 (73%削減)
 
-**3ヶ月後**:
+<strong>3ヶ月後</strong>:
 - 累積時間削減: ~100時間
 - 累積コスト削減: ~$10
 - Break-even達成
 
-**1年後**:
+<strong>1年後</strong>:
 - 時間削減: 433時間 ($21,650相当)
 - コスト削減: $4.07 (71%)
 - ROI: 2,032倍
@@ -589,26 +589,26 @@ cat post-metadata.json
 
 ### Part 2: SkillsとCommandsの統合戦略 (次回)
 
-**取り上げる内容**:
+<strong>取り上げる内容</strong>:
 - 4個実装Skillの詳細ワークフロー
 - Commandsのエージェント委任パターン
 - キャッシング戦略 (24h/7d/48h)
 - Rate Limiting処理 (Brave Search 2秒遅延)
 
-**読者メリット**:
+<strong>読者メリット</strong>:
 - 再利用可能なSkill設計方法
 - Commandチェーニング実装ガイド
 - 実際のコード例とテンプレート
 
 ### Part 3: 実践改善事例とROI分析 (次々回)
 
-**取り上げる内容**:
+<strong>取り上げる内容</strong>:
 - 並列処理実装 (70%時間短縮)
 - 自動テスト追加 (品質保証)
 - パフォーマンスダッシュボード構築
 - コスト追跡と最適化
 
-**読者メリット**:
+<strong>読者メリット</strong>:
 - 即座に適用可能な最適化技法
 - コスト削減計算方法
 - 長期ROI分析フレームワーク
@@ -625,12 +625,12 @@ EffiFlowブログ自動化システムは<strong>3つのコアイノベーショ
 
 ### 実務適用価値
 
-**即座に適用可能**:
+<strong>即座に適用可能</strong>:
 - メタデータ抽出と再利用パターン
 - 増分処理 (Content Hash)
 - 韓国語のみ分析 (3倍コスト削減)
 
-**投資対効果**:
+<strong>投資対効果</strong>:
 - Break-even: 3回実行 (3週間以内)
 - ROI: 2,032倍 (1年基準)
 - 長期価値: 継続的コスト削減 + 時間節約
@@ -639,13 +639,13 @@ EffiFlowブログ自動化システムは<strong>3つのコアイノベーショ
 
 Part 2では<strong>4個実装Skillの詳細ワークフロー</strong>と<strong>Commandsのエージェント委任パターン</strong>を深く掘り下げます。特に<strong>キャッシング戦略</strong>(24h/7d/48h)と<strong>Rate Limiting処理</strong>方法を実際のコードとともに共有する予定です。
 
-**読者からの質問歓迎**:
+<strong>読者からの質問歓迎</strong>:
 - 疑問点があればコメントで残してください
 - 次回で詳しく取り上げます
 
 ---
 
-**シリーズナビゲーション**:
-- **Part 1** (現在): コアアーキテクチャとメトリクス分析
+<strong>シリーズナビゲーション</strong>:
+- <strong>Part 1</strong> (現在): コアアーキテクチャとメトリクス分析
 - Part 2 (予定): SkillsとCommandsの統合戦略
 - Part 3 (予定): 実践改善事例とROI分析

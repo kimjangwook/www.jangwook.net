@@ -757,7 +757,7 @@ I hope this article provides practical help for your multilingual projects. Ques
 
 ---
 
-**Related Resources**:
+<strong>Related Resources</strong>:
 - [Astro Content Collections Official Docs](https://docs.astro.build/en/guides/content-collections/)
 - [Astro i18n Guide](https://docs.astro.build/en/recipes/i18n/)
 - [Google Multilingual Site SEO](https://developers.google.com/search/docs/specialty/international)

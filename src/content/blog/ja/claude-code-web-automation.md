@@ -61,9 +61,9 @@ relatedPosts:
 
 ### プロジェクト背景
 
-- **規模**: 31個のHTMLページ（C-8〜C-40）
-- **目標**: 一貫したデザインシステムとパーツライブラリベースの自動化
-- **主要技術**: Claude Code SubAgent、パーツライブラリ、CSVメタデータ管理
+- <strong>規模</strong>: 31個のHTMLページ（C-8〜C-40）
+- <strong>目標</strong>: 一貫したデザインシステムとパーツライブラリベースの自動化
+- <strong>主要技術</strong>: Claude Code SubAgent、パーツライブラリ、CSVメタデータ管理
 
 ## プロジェクトアーキテクチャ
 
@@ -71,11 +71,11 @@ relatedPosts:
 
 パーツライブラリは再利用可能なUIコンポーネントとデザインシステムを定義したドキュメントで、976行の詳細な仕様を含みます。
 
-**主要構成要素**:
-- **フォント＆カラーシステム**: Noto Sans、Open Sansフォント、ブランドカラーパレット
-- **コンポーネントライブラリ**: ボタン、フォーム、テーブル、ナビゲーションなど
-- **レイアウトルール**: マージン、余白、コンテンツ幅設定
-- **レスポンシブ画像**: 動的比率設定と最適化
+<strong>主要構成要素</strong>:
+- <strong>フォント＆カラーシステム</strong>: Noto Sans、Open Sansフォント、ブランドカラーパレット
+- <strong>コンポーネントライブラリ</strong>: ボタン、フォーム、テーブル、ナビゲーションなど
+- <strong>レイアウトルール</strong>: マージン、余白、コンテンツ幅設定
+- <strong>レスポンシブ画像</strong>: 動的比率設定と最適化
 
 ```markdown
 # パーツライブラリ例
@@ -97,13 +97,13 @@ relatedPosts:
 
 31ページのメタデータをCSVファイルで一括管理し、効率性を最大化しました。
 
-**CSV構造**:
+<strong>CSV構造</strong>:
 ```csv
 ID,URL,パンくず,メタタイトル,メタ・ディスクリプション,H1タグ,og:type,og:title
 C-8,/contract/ds/dscard.html,HOME>契約者>サービスカード,サービスカード案内,カード関連サービス...,カード情報,article,サービスカード
 ```
 
-**CSV管理の利点**:
+<strong>CSV管理の利点</strong>:
 - 一箇所で全ページ情報を管理
 - Excel/Google Sheetsで簡単編集
 - SEOメタデータ一括レビュー可能
@@ -113,12 +113,12 @@ C-8,/contract/ds/dscard.html,HOME>契約者>サービスカード,サービス�
 
 プロジェクトに2つのコアエージェントを設定しました:
 
-**1) context-manager**: ワークフロー全体の調整
+<strong>1) context-manager</strong>: ワークフロー全体の調整
 - 作業順序管理
 - SubAgent間のコンテキスト共有
 - 進捗状況追跡
 
-**2) mcp-expert**: MCPプロトコル統合
+<strong>2) mcp-expert</strong>: MCPプロトコル統合
 - 外部ツール連携
 - データソースアクセス
 - API通信管理
@@ -144,7 +144,7 @@ CLAUDE.md                      # Claude Code指針書
 working_history/c/01_directory_map.csv  # 31ページ情報
 ```
 
-**CLAUDE.md初期化**:
+<strong>CLAUDE.md初期化</strong>:
 ```bash
 # Claude Codeの/initコマンド実行
 /init
@@ -171,7 +171,7 @@ working_history/c/01_directory_map.csv  # 31ページ情報
 5. HTMLファイル保存と検証
 ```
 
-**実行ログ**:
+<strong>実行ログ</strong>:
 ```sh
 > /run is running…
 
@@ -196,7 +196,7 @@ working_history/c/01_directory_map.csv  # 31ページ情報
 
 ### Phase 3: SubAgent並列処理戦略
 
-**バッチ処理構造**:
+<strong>バッチ処理構造</strong>:
 ```python
 # 擬似コード
 pages = parse_csv("01_directory_map.csv")  # 31ページ
@@ -214,12 +214,12 @@ for i in range(0, len(pages), batch_size):
     # 結果検証と次バッチへ
 ```
 
-**並列処理のメリット**:
-- **速度**: 順次処理比5倍高速
-- **リソース最適化**: トークン使用効率化
-- **独立性**: 各ページが独立して生成されエラー隔離
+<strong>並列処理のメリット</strong>:
+- <strong>速度</strong>: 順次処理比5倍高速
+- <strong>リソース最適化</strong>: トークン使用効率化
+- <strong>独立性</strong>: 各ページが独立して生成されエラー隔離
 
-**実パフォーマンス指標**:
+<strong>実パフォーマンス指標</strong>:
 - ページあたり平均生成時間: 2〜3分
 - ツール使用回数: 9〜17回（画像ダウンロード、HTML作成など）
 - バッチあたり処理時間: 約3〜4分（5ページ）
@@ -228,7 +228,7 @@ for i in range(0, len(pages), batch_size):
 
 1次生成完了後、一部ページでパーツライブラリが適切に適用されていないことが判明しました。これを解決するため、2段階検証プロセスを導入しました。
 
-**検証コマンド作成**（`apply-parts.md`）:
+<strong>検証コマンド作成</strong>（`apply-parts.md`）:
 ```markdown
 # 役割
 パーツライブラリ適用状態を確認し、不足部分を修正します。
@@ -241,7 +241,7 @@ for i in range(0, len(pages), batch_size):
 3. 問題のあるファイルを自動修正
 ```
 
-**検証実行ログ**:
+<strong>検証実行ログ</strong>:
 ```sh
 /apply-parts is running…
 
@@ -258,7 +258,7 @@ for i in range(0, len(pages), batch_size):
 ⎿ Session limit reached
 ```
 
-**セッション制限対応**:
+<strong>セッション制限対応</strong>:
 - Claude Codeはセッションあたりトークン制限あり
 - 作業をチャンクに分割して複数セッションで処理
 - 進捗状況をGitコミットで保存して作業継続
@@ -267,7 +267,7 @@ for i in range(0, len(pages), batch_size):
 
 ### 1. SubAgent並列オーケストレーション
 
-**fullstack-developer SubAgentの役割**:
+<strong>fullstack-developer SubAgentの役割</strong>:
 ```markdown
 # SubAgentに渡されるコンテキスト
 
@@ -285,7 +285,7 @@ Requirements:
 4. レスポンシブレイアウト適用
 ```
 
-**SubAgent実行パターン**:
+<strong>SubAgent実行パターン</strong>:
 ```bash
 # 同時に5個のSubAgent実行
 fullstack-developer(Create page C-8)  # 2m 41s
@@ -329,9 +329,9 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 1. セッション制限管理
 
-**課題**: Claude Codeはセッションあたりトークン制限あり
+<strong>課題</strong>: Claude Codeはセッションあたりトークン制限あり
 
-**解決策**:
+<strong>解決策</strong>:
 ```markdown
 # 作業をチャンクに分割
 - バッチサイズ: 5〜7ページ
@@ -342,7 +342,7 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 2. パーツライブラリドキュメント化
 
-**コア原則**:
+<strong>コア原則</strong>:
 ```markdown
 1. 全コンポーネントに明確なクラス名付与
    例: .btn-primary, .card-container
@@ -364,20 +364,20 @@ git show --name-only ee5ffc9 | grep '\.html$'
 
 ### 3. CSVメタデータ設計
 
-**効果的なCSV構造**:
+<strong>効果的なCSV構造</strong>:
 ```csv
 ID,URL,Breadcrumb,MetaTitle,MetaDescription,H1,OGType,OGImage
 C-8,/page,HOME>Sub,Title,Description,Heading,article,/img.jpg
 ```
 
-**注意点**:
+<strong>注意点</strong>:
 - CSVセルにカンマ含む場合は引用符で囲む
 - URLは絶対パスまたは相対パス明確に区分
 - 空白文字処理注意（trim必要）
 
 ### 4. SubAgentプロンプト最適化
 
-**効果的なSubAgent指示**:
+<strong>効果的なSubAgent指示</strong>:
 ```markdown
 Task: Create responsive HTML page
 
@@ -404,22 +404,22 @@ Output:
 
 | 指標 | 手作業 | 自動化 | 改善率 |
 |------|--------|--------|--------|
-| 総作業時間 | 〜31時間 | 〜3時間 | **90%短縮** |
-| ページあたり平均 | 60分 | 6分 | **90%短縮** |
-| エラー発生率 | 15% | 3% | **80%減少** |
-| 一貫性スコア | 75/100 | 98/100 | **30%向上** |
+| 総作業時間 | 〜31時間 | 〜3時間 | <strong>90%短縮</strong> |
+| ページあたり平均 | 60分 | 6分 | <strong>90%短縮</strong> |
+| エラー発生率 | 15% | 3% | <strong>80%減少</strong> |
+| 一貫性スコア | 75/100 | 98/100 | <strong>30%向上</strong> |
 
 ### 定性的成果
 
-**1. デザイン一貫性確保**
+<strong>1. デザイン一貫性確保</strong>
 - 全ページに同一パーツライブラリ適用
 - ブランドカラー、フォント、レイアウトルール100%準拠
 
-**2. SEO最適化自動化**
+<strong>2. SEO最適化自動化</strong>
 - CSVメタデータベース一括設定
 - OGタグ、メタディスクリプション自動生成
 
-**3. 保守性向上**
+<strong>3. 保守性向上</strong>
 - パーツライブラリ修正 → 再実行で一括更新可能
 - Gitベースバージョン管理で変更追跡容易
 
@@ -463,39 +463,39 @@ Claude CodeのSubAgentシステムを活用すると、大規模Webサイトペ�
 
 ### 成功要因
 
-1. **明確なパーツライブラリドキュメント化**
+1. <strong>明確なパーツライブラリドキュメント化</strong>
    - 再利用可能コンポーネント定義
    - 一貫した命名規則
    - 具体的な使用例含む
 
-2. **体系的なメタデータ管理**
+2. <strong>体系的なメタデータ管理</strong>
    - CSVベース中央集中管理
    - SEO要素一括設定
    - バージョン管理容易性
 
-3. **効率的な並列処理**
+3. <strong>効率的な並列処理</strong>
    - 5〜7個バッチ単位処理
    - 独立SubAgent実行
    - セッション制限考慮したチャンク分割
 
-4. **2段階品質検証**
+4. <strong>2段階品質検証</strong>
    - 1次: 自動生成
    - 2次: パーツ適用検証と修正
    - Gitベース変更追跡
 
 ### 今後の改善方向
 
-1. **AIベース品質検証強化**
+1. <strong>AIベース品質検証強化</strong>
    - アクセシビリティ自動チェック
    - パフォーマンス指標自動測定
    - クロスブラウザテスト自動化
 
-2. **CMS統合**
+2. <strong>CMS統合</strong>
    - 生成ページ自動デプロイ
    - コンテンツ更新ワークフロー
    - プレビュー環境自動構築
 
-3. **デザインシステム進化**
+3. <strong>デザインシステム進化</strong>
    - Figma → Parts Library自動変換
    - リアルタイムコンポーネント同期
    - デザイントークン自動適用

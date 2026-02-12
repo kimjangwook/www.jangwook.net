@@ -11,15 +11,15 @@ tags:
 relatedPosts: []
 ---
 
-> **시리즈: OpenClaw 완전 정복** (3/3)
+> <strong>시리즈: OpenClaw 완전 정복</strong> (3/3)
 > 1. [소개편](/ko/blog/ko/openclaw-introduction-guide/)
 > 2. [튜토리얼편](/ko/blog/ko/openclaw-installation-tutorial/)
-> 3. **활용법편** ← 현재 글
+> 3. <strong>활용법편</strong> ← 현재 글
 # OpenClaw 200% 활용하기 — 실전 고급 사용 사례 모음 🚀
 
 설치를 마치셨나요? 축하합니다! 🎉 이제 진짜 재미있는 파트입니다.
 
-OpenClaw는 단순한 챗봇이 아닙니다. 여러분의 디바이스에서 살아 숨쉬는 **개인 AI 에이전트**죠. 이 글에서는 **실제 프로덕션 수준의 워크플로우**를 하나하나 구축해 보겠습니다. 각 예제는 복사해서 바로 쓸 수 있는 완전한 형태로 제공합니다.
+OpenClaw는 단순한 챗봇이 아닙니다. 여러분의 디바이스에서 살아 숨쉬는 <strong>개인 AI 에이전트</strong>죠. 이 글에서는 <strong>실제 프로덕션 수준의 워크플로우</strong>를 하나하나 구축해 보겠습니다. 각 예제는 복사해서 바로 쓸 수 있는 완전한 형태로 제공합니다.
 
 ---
 
@@ -157,10 +157,10 @@ openclaw cron remove <jobId>
 - 긴급한 것 외 HEARTBEAT_OK
 ```
 
-> **크론 vs 하트비트 선택 기준:**
-> - **정확한 시간**이 중요 → 크론 (`"0 8 * * *"`)
-> - **여러 체크를 묶어서** 하고 싶다 → 하트비트 (`HEARTBEAT.md`)
-> - **일회성 리마인더** → 크론 (`--at "20m"` + `--delete-after-run`)
+> <strong>크론 vs 하트비트 선택 기준:</strong>
+> - <strong>정확한 시간</strong>이 중요 → 크론 (`"0 8 * * *"`)
+> - <strong>여러 체크를 묶어서</strong> 하고 싶다 → 하트비트 (`HEARTBEAT.md`)
+> - <strong>일회성 리마인더</strong> → 크론 (`--at "20m"` + `--delete-after-run`)
 
 ---
 
@@ -284,8 +284,8 @@ n8n에서 OpenClaw 웹훅을 호출하는 완전한 워크플로우입니다:
 
 Make에서는 HTTP 모듈을 사용합니다:
 
-1. **Webhook 트리거** → 외부 이벤트 수신
-2. **HTTP Make a request** 모듈 추가:
+1. <strong>Webhook 트리거</strong> → 외부 이벤트 수신
+2. <strong>HTTP Make a request</strong> 모듈 추가:
    - URL: `http://<gateway-ip>:18789/hooks/agent`
    - Method: POST
    - Headers: `Authorization: Bearer <토큰>`
@@ -326,15 +326,15 @@ curl -X POST http://127.0.0.1:18789/hooks/gmail \
 
 ## 활용법 3: MCP 서버 연동 🧠
 
-**MCP (Model Context Protocol)**는 AI 에이전트에게 외부 데이터 소스와 도구를 표준화된 방식으로 제공하는 프로토콜입니다. OpenClaw에서 MCP 서버를 활용하는 방법을 알아봅시다.
+<strong>MCP (Model Context Protocol)</strong>는 AI 에이전트에게 외부 데이터 소스와 도구를 표준화된 방식으로 제공하는 프로토콜입니다. OpenClaw에서 MCP 서버를 활용하는 방법을 알아봅시다.
 
 ### MCP 서버란?
 
 MCP 서버는 AI에게 특정 도구와 리소스를 제공하는 서비스입니다. 예를 들어:
-- **파일시스템 MCP** — 특정 디렉토리의 파일 읽기/쓰기
-- **데이터베이스 MCP** — SQL 쿼리 실행
-- **API MCP** — REST API 호출 추상화
-- **브라우저 MCP** — 웹 페이지 제어
+- <strong>파일시스템 MCP</strong> — 특정 디렉토리의 파일 읽기/쓰기
+- <strong>데이터베이스 MCP</strong> — SQL 쿼리 실행
+- <strong>API MCP</strong> — REST API 호출 추상화
+- <strong>브라우저 MCP</strong> — 웹 페이지 제어
 
 ### OpenClaw에서 MCP 활용하기
 
@@ -749,13 +749,13 @@ user-invocable: true
 > 2025-07-14 09:00 기준
 
 ## 🤖 AI
-- **제목** — 한줄 요약 [링크]
+- <strong>제목</strong> — 한줄 요약 [링크]
 
 ## 🔒 보안
-- **제목** — 한줄 요약 [링크]
+- <strong>제목</strong> — 한줄 요약 [링크]
 
 ## 💻 개발
-- **제목** — 한줄 요약 [링크]
+- <strong>제목</strong> — 한줄 요약 [링크]
 ```
 
 ## 저장
@@ -1040,22 +1040,22 @@ macOS 앱에서 Voice Wake + Talk Mode를 활성화하면 키보드 없이 대�
 
 정리하면, OpenClaw는:
 
-- 🤖 **AI 비서** — 크론+하트비트로 알아서 챙겨주고
-- 🔗 **자동화 허브** — 웹훅으로 n8n/Make/GitHub/Gmail 연동
-- 🧠 **MCP 브릿지** — 외부 데이터 소스와 표준화된 연결
-- 💻 **개발 파트너** — 서브 에이전트로 병렬 작업 처리
-- 🏠 **스마트홈 컨트롤러** — 노드 시스템으로 카메라·알림·위치
-- 🌐 **데이터 수집기** — 브라우저 자동화로 웹 모니터링
-- 🧩 **확장 플랫폼** — 스킬 개발하고 ClawHub에서 공유
-- 📝 **기억하는 동반자** — MEMORY.md로 세션을 넘어 기억
+- 🤖 <strong>AI 비서</strong> — 크론+하트비트로 알아서 챙겨주고
+- 🔗 <strong>자동화 허브</strong> — 웹훅으로 n8n/Make/GitHub/Gmail 연동
+- 🧠 <strong>MCP 브릿지</strong> — 외부 데이터 소스와 표준화된 연결
+- 💻 <strong>개발 파트너</strong> — 서브 에이전트로 병렬 작업 처리
+- 🏠 <strong>스마트홈 컨트롤러</strong> — 노드 시스템으로 카메라·알림·위치
+- 🌐 <strong>데이터 수집기</strong> — 브라우저 자동화로 웹 모니터링
+- 🧩 <strong>확장 플랫폼</strong> — 스킬 개발하고 ClawHub에서 공유
+- 📝 <strong>기억하는 동반자</strong> — MEMORY.md로 세션을 넘어 기억
 
-**올인원 AI 에이전트 플랫폼**입니다.
+<strong>올인원 AI 에이전트 플랫폼</strong>입니다.
 
-가장 중요한 건 **시작하는 것**입니다. 오늘 하나만 골라서 설정해보세요:
+가장 중요한 건 <strong>시작하는 것</strong>입니다. 오늘 하나만 골라서 설정해보세요:
 
-1. 🌅 **모닝 브리핑 크론** — 매일 아침 오늘의 정보 요약
-2. 📝 **HEARTBEAT.md** — 파일 하나로 자동 비서 체크리스트
-3. 🔗 **웹훅 하나** — GitHub/Gmail 알림을 텔레그램으로 전달
+1. 🌅 <strong>모닝 브리핑 크론</strong> — 매일 아침 오늘의 정보 요약
+2. 📝 <strong>HEARTBEAT.md</strong> — 파일 하나로 자동 비서 체크리스트
+3. 🔗 <strong>웹훅 하나</strong> — GitHub/Gmail 알림을 텔레그램으로 전달
 
 한 번 맛보면, 점점 더 많은 것을 맡기게 될 겁니다. 🦞
 
@@ -1066,4 +1066,4 @@ macOS 앱에서 Voice Wake + Talk Mode를 활성화하면 키보드 없이 대�
 *OpenClaw 완전 정복 시리즈*
 - [1편: OpenClaw이 뭔가요?](/ko/blog/ko/openclaw-introduction-guide/)
 - [2편: 설치부터 첫 대화까지](/ko/blog/ko/openclaw-installation-tutorial/)
-- **3편: 실전 고급 활용법** ← 지금 읽은 글
+- <strong>3편: 실전 고급 활용법</strong> ← 지금 읽은 글

@@ -206,13 +206,13 @@ sleep 2
 
 <strong>성능 비교</strong>:
 
-**Before (캐싱 전)**:
+<strong>Before (캐싱 전)</strong>:
 
 - 매번 Brave Search 호출
 - 40,000+ 토큰
 - 비용: ~$0.05/run
 
-**After (캐싱 후)**:
+<strong>After (캐싱 후)</strong>:
 
 - 24시간 내 캐시 재사용
 - 17,000 토큰
@@ -313,50 +313,50 @@ sequenceDiagram
 
 <strong>Phase 세부 내용</strong>:
 
-**Phase 1: Research & Planning**
+<strong>Phase 1: Research & Planning</strong>
 
 - Web Researcher 에이전트 호출
 - Trend Analyzer Skill 자동 발견
 - Brave Search MCP로 최신 정보 수집
 - 2초 지연으로 Rate Limit 준수
 
-**Phase 2: Image Generation**
+<strong>Phase 2: Image Generation</strong>
 
 - Image Generator 에이전트
 - Gemini API 사용 (GEMINI_API_KEY 필요)
 - 주제 기반 히어로 이미지 생성
 
-**Phase 3: Content Writing**
+<strong>Phase 3: Content Writing</strong>
 
 - Writing Assistant 에이전트
 - Blog Writing Skill 자동 발견
 - 한국어, 일본어, 영어 버전 동시 작성
 - 현지화 (번역이 아님)
 
-**Phase 4: Frontmatter & Metadata**
+<strong>Phase 4: Frontmatter & Metadata</strong>
 
 - Blog Writing Skill로 Frontmatter 검증
 - pubDate: 'YYYY-MM-DD' 형식 (작은따옴표)
 - heroImage: 상대 경로 검증
 
-**Phase 5: Metadata Generation**
+<strong>Phase 5: Metadata Generation</strong>
 
 - Post Analyzer 에이전트
 - Content Analyzer Skill 자동 활성화
 - difficulty (1-5) 및 categoryScores 계산
 
-**Phase 6: V3 Recommendations**
+<strong>Phase 6: V3 Recommendations</strong>
 
 - scripts/generate-recommendations-v3.js 실행
 - 메타데이터 기반 유사도 계산
 - 상위 5개 관련 포스트 선정
 
-**Phase 7: Backlink Updates**
+<strong>Phase 7: Backlink Updates</strong>
 
 - Backlink Manager 에이전트 (선택적)
 - 관련 포스트 상호 연결
 
-**Phase 8: Validation & Build**
+<strong>Phase 8: Validation & Build</strong>
 
 - npm run astro check
 - npm run build
@@ -432,7 +432,7 @@ async function getTrendData(topic: string) {
 
 ### 캐시 효과 시나리오
 
-**시나리오 1: 같은 날 여러 주제 검색**
+<strong>시나리오 1: 같은 날 여러 주제 검색</strong>
 
 ```bash
 # 첫 번째 주제 (캐시 미스)
@@ -448,7 +448,7 @@ async function getTrendData(topic: string) {
 # → 토큰: 17,000 (58% 절감)
 ```
 
-**시나리오 2: 다음 날 동일 주제**
+<strong>시나리오 2: 다음 날 동일 주제</strong>
 
 ```bash
 # 24시간 경과 (캐시 만료)

@@ -348,6 +348,6 @@ The accounting OCR service that was struggling in a red ocean has discovered new
 
 ---
 
-**Try the Service**: [Agent Effi Flow](https://agent-effi-flow.jangwook.net/)
+<strong>Try the Service</strong>: [Agent Effi Flow](https://agent-effi-flow.jangwook.net/)
 
 Feel free to reach out with feedback or questions. I'd love to build better services together.

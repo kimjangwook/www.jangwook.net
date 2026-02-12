@@ -73,12 +73,12 @@ Netflix, Spotify, Amazon과 같은 글로벌 기업들이 데이터 중심 문�
 DAU/MAU Ratio = (일일 활성 사용자 수 / 월간 활성 사용자 수) × 100%
 ```
 
-**벤치마크**:
+<strong>벤치마크</strong>:
 - 20% 이상: 우수한 참여도 (예: Facebook, Instagram)
 - 10〜20%: 양호한 수준 (대부분의 소셜 앱)
 - 10% 미만: 개선 필요 (유틸리티 앱은 예외)
 
-**실무 활용**:
+<strong>실무 활용</strong>:
 - 제품의 "습관 형성력"을 측정
 - 신규 기능 출시 후 참여도 변화 추적
 - 경쟁사와 벤치마킹
@@ -87,12 +87,12 @@ DAU/MAU Ratio = (일일 활성 사용자 수 / 월간 활성 사용자 수) × 1
 
 사용자가 얼마나 오래 제품을 사용하는지 측정합니다.
 
-**측정 시점별 분류**:
+<strong>측정 시점별 분류</strong>:
 - <strong>Day 1 Retention</strong>: 가입 다음 날 재방문율 (30〜40% 이상 목표)
 - <strong>Day 7 Retention</strong>: 일주일 후 (20〜30%)
 - <strong>Day 30 Retention</strong>: 한 달 후 (10〜20%)
 
-**Cohort Retention 분석 SQL**:
+<strong>Cohort Retention 분석 SQL</strong>:
 
 ```sql
 -- 코호트별 재방문율 분석
@@ -136,12 +136,12 @@ ORDER BY cohort_month, activity_month;
 NPS = (추천 고객 비율) - (비추천 고객 비율)
 ```
 
-**점수 해석**:
+<strong>점수 해석</strong>:
 - 9〜10점: Promoters (추천 고객)
 - 7〜8점: Passives (중립)
 - 0〜6점: Detractors (비추천 고객)
 
-**산업별 벤치마크**:
+<strong>산업별 벤치마크</strong>:
 - SaaS: 30〜40
 - E-commerce: 30〜50
 - Consumer Apps: 20〜40
@@ -150,13 +150,13 @@ NPS = (추천 고객 비율) - (비추천 고객 비율)
 
 사용자 여정의 각 단계별 전환율을 측정합니다.
 
-**E-commerce 깔때기 예시**:
+<strong>E-commerce 깔때기 예시</strong>:
 ```
 방문 → 상품 조회 → 장바구니 → 결제 → 구매 완료
 100% →   60%    →   25%   →  15%  →    12%
 ```
 
-**Funnel 분석 SQL**:
+<strong>Funnel 분석 SQL</strong>:
 
 ```sql
 -- 사용자 여정 깔때기 분석
@@ -209,7 +209,7 @@ RICE는 <strong>Reach</strong>, <strong>Impact</strong>, <strong>Confidence</str
 RICE Score = (Reach × Impact × Confidence) / Effort
 ```
 
-**각 요소 설명**:
+<strong>각 요소 설명</strong>:
 
 | 요소 | 측정 방법 | 예시 |
 |-----|----------|------|
@@ -218,7 +218,7 @@ RICE Score = (Reach × Impact × Confidence) / Effort
 | <strong>Confidence</strong> | 확신도 (0〜100%) | 80% |
 | <strong>Effort</strong> | 개발 공수 (person-months) | 2개월 |
 
-**실전 예시**:
+<strong>실전 예시</strong>:
 
 ```mermaid
 graph TD
@@ -232,7 +232,7 @@ graph TD
     G -->|No| I[보류 또는 재검토]
 ```
 
-**실제 계산 예시**:
+<strong>실제 계산 예시</strong>:
 
 | 기능 | Reach | Impact | Confidence | Effort | RICE Score |
 |-----|-------|--------|------------|--------|-----------|
@@ -254,7 +254,7 @@ ICE Score = (Impact + Confidence + Ease) / 3
 - <strong>Confidence</strong>: 확신도 (1〜10)
 - <strong>Ease</strong>: 구현 용이성 (1〜10)
 
-**활용 시나리오**: 스프린트 플래닝, 스타트업 초기 단계, 빠른 실험 평가
+<strong>활용 시나리오</strong>: 스프린트 플래닝, 스타트업 초기 단계, 빠른 실험 평가
 
 ### 3. Kano Model (사용자 만족도 분석)
 
@@ -275,7 +275,7 @@ graph LR
     F --> K[오히려 만족도 감소]
 ```
 
-**실무 적용**:
+<strong>실무 적용</strong>:
 1. <strong>Must-have 먼저 충족</strong>: 로그인, 검색, 결제 등
 2. <strong>Performance 지속 개선</strong>: 속도, 정확도, UX
 3. <strong>Delighters 선별 투자</strong>: 차별화 포인트
@@ -329,12 +329,12 @@ graph TD
 
 많은 기업이 <strong>Data Warehouse + SQL + BI 도구</strong> 조합을 선호합니다.
 
-**장점**:
+<strong>장점</strong>:
 - 완전한 데이터 통제권
 - 비용 효율성 (대규모 시)
 - 커스터마이징 자유도
 
-**구성 예시**:
+<strong>구성 예시</strong>:
 ```
 데이터 수집: Segment / RudderStack
     ↓
@@ -364,7 +364,7 @@ graph LR
 
 ### 샘플 사이즈 계산
 
-**필요한 샘플 수 공식** (간소화):
+<strong>필요한 샘플 수 공식</strong> (간소화):
 
 ```
 n = (Z² × p × (1-p)) / E²
@@ -375,9 +375,9 @@ p: 예상 전환율
 E: 허용 오차
 ```
 
-**실전 계산기**: [Evan Miller's Sample Size Calculator](https://www.evanmiller.org/ab-testing/sample-size.html)
+<strong>실전 계산기</strong>: [Evan Miller's Sample Size Calculator](https://www.evanmiller.org/ab-testing/sample-size.html)
 
-**예시**:
+<strong>예시</strong>:
 - 현재 전환율: 10%
 - 최소 감지 효과: 2% (절대값)
 - 신뢰 수준: 95%
@@ -408,8 +408,8 @@ E: 허용 오차
 
 #### 3. 충분한 테스트 기간
 
-**최소 기간**: 1〜2주 (요일 효과 제거)
-**주의**: 너무 짧으면 "novelty effect" (신기함 효과)에 영향받음
+<strong>최소 기간</strong>: 1〜2주 (요일 효과 제거)
+<strong>주의</strong>: 너무 짧으면 "novelty effect" (신기함 효과)에 영향받음
 
 #### 4. 세그먼트별 분석
 
@@ -429,7 +429,7 @@ GROUP BY user_segment, experiment_group
 ORDER BY user_segment, experiment_group;
 ```
 
-**결과 예시**:
+<strong>결과 예시</strong>:
 
 | Segment | Group | Users | Conversions | Conv. Rate |
 |---------|-------|-------|-------------|-----------|
@@ -438,7 +438,7 @@ ORDER BY user_segment, experiment_group;
 | Returning | Control | 3,000 | 600 | 20.0% |
 | Returning | Treatment | 3,000 | 585 | 19.5% |
 
-**인사이트**: 신규 사용자는 긍정적이지만 재방문자는 부정적 → <strong>신규 사용자만 타겟팅 고려</strong>
+<strong>인사이트</strong>: 신규 사용자는 긍정적이지만 재방문자는 부정적 → <strong>신규 사용자만 타겟팅 고려</strong>
 
 ### 흔한 A/B 테스트 실수
 
@@ -446,13 +446,13 @@ ORDER BY user_segment, experiment_group;
 
 실험 중간에 결과를 보고 조기 종료하면 <strong>위양성(False Positive)</strong> 확률 증가.
 
-**해결책**: Sequential Testing 또는 사전에 정한 종료 시점 엄수
+<strong>해결책</strong>: Sequential Testing 또는 사전에 정한 종료 시점 엄수
 
 #### 2. Simpson's Paradox
 
 전체적으로는 A가 우세하지만, 세그먼트별로는 B가 우세한 경우.
 
-**예시**:
+<strong>예시</strong>:
 ```
 전체: Treatment 승리 (12% vs 11%)
 모바일: Control 승리 (8% vs 7%)
@@ -465,7 +465,7 @@ ORDER BY user_segment, experiment_group;
 
 p < 0.05 달성해도 <strong>효과 크기가 작으면 실행 가치 없을 수 있음</strong>.
 
-**판단 기준**:
+<strong>판단 기준</strong>:
 - 절대값: 전환율 0.1% 증가 (10.0% → 10.1%)
 - 상대값: 1% 증가
 - 비즈니스 영향: 월 매출 $500 증가
@@ -476,70 +476,70 @@ p < 0.05 달성해도 <strong>효과 크기가 작으면 실행 가치 없을 �
 
 ### 1. Netflix: 개인화 추천 시스템
 
-**도전 과제**: 수천만 콘텐츠 중 사용자가 볼 콘텐츠를 어떻게 찾게 할까?
+<strong>도전 과제</strong>: 수천만 콘텐츠 중 사용자가 볼 콘텐츠를 어떻게 찾게 할까?
 
-**데이터 기반 해결책**:
+<strong>데이터 기반 해결책</strong>:
 - <strong>75%의 시청이 추천에서 발생</strong>
 - A/B 테스트로 썸네일 이미지 최적화
 - 사용자별 다른 썸네일 표시 (개인화)
 
-**핵심 지표**:
+<strong>핵심 지표</strong>:
 - Effective Catalog Size: 실제 시청되는 콘텐츠 비율
 - Take Rate: 추천 클릭 후 시청 전환율
 
-**결과**: 추천 알고리즘이 연간 <strong>$1B 이상의 가치</strong> 창출 (이탈 방지)
+<strong>결과</strong>: 추천 알고리즘이 연간 <strong>$1B 이상의 가치</strong> 창출 (이탈 방지)
 
 ### 2. Spotify: Discover Weekly
 
-**도전 과제**: 사용자가 새로운 음악을 발견하도록 유도
+<strong>도전 과제</strong>: 사용자가 새로운 음악을 발견하도록 유도
 
-**데이터 활용**:
+<strong>데이터 활용</strong>:
 - Collaborative Filtering + NLP (가사 분석)
 - 청취 이력, 스킵 패턴, 플레이리스트 저장 데이터 활용
 
-**A/B 테스트 결과**:
+<strong>A/B 테스트 결과</strong>:
 - <strong>재생 시간 9% 증가</strong>
 - 프리미엄 전환율 5% 개선
 
-**핵심 인사이트**: "신선함 vs 익숙함" 균형 (70% 익숙한 장르 + 30% 새로운 장르)
+<strong>핵심 인사이트</strong>: "신선함 vs 익숙함" 균형 (70% 익숙한 장르 + 30% 새로운 장르)
 
 ### 3. Airbnb: Dynamic Pricing (Smart Pricing)
 
-**도전 과제**: 호스트가 최적 가격을 설정하도록 지원
+<strong>도전 과제</strong>: 호스트가 최적 가격을 설정하도록 지원
 
-**데이터 모델**:
+<strong>데이터 모델</strong>:
 - 수요 예측: 지역 이벤트, 계절성, 검색 트렌드
 - 공급 분석: 주변 숙소 가격, 편의시설
 - 머신러닝으로 최적 가격 제안
 
-**결과**:
+<strong>결과</strong>:
 - 호스트 수익 <strong>평균 4% 증가</strong>
 - 예약률 8% 상승
 
 ### 4. Amazon: 1-Click Ordering
 
-**가설**: 결제 단계가 많을수록 이탈률 증가
+<strong>가설</strong>: 결제 단계가 많을수록 이탈률 증가
 
-**실험**:
+<strong>실험</strong>:
 - Control: 기존 3단계 결제
 - Treatment: 원클릭 결제
 
-**결과**:
+<strong>결과</strong>:
 - 전환율 <strong>20% 이상 증가</strong>
 - 특허 획득 및 경쟁 우위 확보
 
-**교훈**: <strong>마찰(friction) 제거가 핵심</strong>
+<strong>교훈</strong>: <strong>마찰(friction) 제거가 핵심</strong>
 
 ## 데이터 함정 피하기: 흔한 실수들
 
 ### 1. Correlation ≠ Causation (상관관계 ≠ 인과관계)
 
-**예시**:
+<strong>예시</strong>:
 - 관찰: "앱 푸시 알림을 많이 받는 사용자일수록 재방문율 높음"
 - 잘못된 결론: "푸시 알림을 더 보내면 재방문율 증가"
 - 실제 원인: 활동적인 사용자가 푸시를 더 많이 받은 것
 
-**해결책**: <strong>Randomized Controlled Trial (RCT)</strong> = A/B 테스트
+<strong>해결책</strong>: <strong>Randomized Controlled Trial (RCT)</strong> = A/B 테스트
 
 ### 2. Vanity Metrics (허영 지표)
 
@@ -554,10 +554,10 @@ p < 0.05 달성해도 <strong>효과 크기가 작으면 실행 가치 없을 �
 
 ### 3. Survivorship Bias (생존자 편향)
 
-**예시**: "성공한 사용자들은 모두 튜토리얼을 완료했다"
+<strong>예시</strong>: "성공한 사용자들은 모두 튜토리얼을 완료했다"
 → 하지만 튜토리얼 중 이탈한 사용자는 분석에서 제외됨
 
-**해결책**: <strong>이탈 사용자 분석</strong> 포함
+<strong>해결책</strong>: <strong>이탈 사용자 분석</strong> 포함
 
 ```sql
 -- 이탈 사용자 vs 유지 사용자 행동 비교
@@ -577,13 +577,13 @@ GROUP BY user_status;
 
 데이터를 본 후 가설을 만드는 것 = <strong>과학적 방법 위반</strong>
 
-**올바른 순서**:
+<strong>올바른 순서</strong>:
 1. 가설 수립
 2. 실험 설계
 3. 데이터 수집
 4. 분석 및 결론
 
-**잘못된 순서**:
+<strong>잘못된 순서</strong>:
 1. 데이터 수집
 2. 패턴 발견
 3. 가설 추가 (사후 정당화)
@@ -592,7 +592,7 @@ GROUP BY user_status;
 
 20개의 A/B 테스트를 동시에 실행하면, 우연히 1개는 p < 0.05 나올 수 있음.
 
-**해결책**: <strong>Bonferroni Correction</strong> 적용
+<strong>해결책</strong>: <strong>Bonferroni Correction</strong> 적용
 ```
 조정된 유의수준 = 0.05 / 테스트 개수
 ```
@@ -605,12 +605,12 @@ GROUP BY user_status;
 
 <strong>모든 팀원이 데이터를 읽고 해석할 수 있어야 합니다.</strong>
 
-**교육 프로그램**:
+<strong>교육 프로그램</strong>:
 - 기초 SQL 교육 (2주 과정)
 - 통계 101: p-value, 신뢰구간, 표본 크기
 - 대시보드 읽는 법 (주요 지표 이해)
 
-**추천 리소스**:
+<strong>추천 리소스</strong>:
 - Mode Analytics SQL Tutorial
 - Khan Academy Statistics
 - Amplitude's Product Analytics Playbook
@@ -619,25 +619,25 @@ GROUP BY user_status;
 
 PM이 데이터 팀에 의존하지 않고 직접 분석할 수 있어야 합니다.
 
-**구축 요소**:
+<strong>구축 요소</strong>:
 - 표준화된 데이터 웨어하우스
 - 사전 정의된 지표 (Metric Layer)
 - 대시보드 템플릿
 - SQL 쿼리 라이브러리
 
-**도구 예시**:
+<strong>도구 예시</strong>:
 - dbt (데이터 변환 및 문서화)
 - Looker / Tableau (셀프 서비스 BI)
 - Metabase (오픈소스 대안)
 
 ### 3. 데이터 거버넌스
 
-**정의해야 할 것들**:
+<strong>정의해야 할 것들</strong>:
 - <strong>North Star Metric</strong>: 회사 전체의 최우선 지표
 - 지표 정의 문서 (DAU의 정확한 정의는?)
 - 데이터 품질 SLA (정확도, 신선도, 완결성)
 
-**예시: North Star Metric**:
+<strong>예시: North Star Metric</strong>:
 - Spotify: Time Spent Listening
 - Airbnb: Nights Booked
 - Facebook: Daily Active Users (DAU)
@@ -646,18 +646,18 @@ PM이 데이터 팀에 의존하지 않고 직접 분석할 수 있어야 합니
 
 <strong>"의견"이 아닌 "데이터"로 논쟁을 해결하세요.</strong>
 
-**실천 방법**:
+<strong>실천 방법</strong>:
 - 모든 기능 출시 전 A/B 테스트 의무화
 - 실패한 실험도 공유 (학습 문화)
 - 실험 결과 정기 리뷰 회의
 
-**Amazon의 "Disagree and Commit"**:
+<strong>Amazon의 "Disagree and Commit"</strong>:
 - 의견이 다르면 데이터로 검증
 - 실험 결과에 따라 신속하게 방향 전환
 
 ### 5. PM과 Data Analyst 협업
 
-**효과적인 협업 구조**:
+<strong>효과적인 협업 구조</strong>:
 
 ```mermaid
 graph LR
@@ -668,7 +668,7 @@ graph LR
     E --> F[함께: 결과 측정]
 ```
 
-**Weekly Data Sync** 권장:
+<strong>Weekly Data Sync</strong> 권장:
 - 지난주 실험 결과 리뷰
 - 이번주 우선순위 지표 확인
 - 데이터 이슈 및 해결책 논의
@@ -707,17 +707,17 @@ graph LR
 
 ### 추천 학습 자료
 
-**책**:
+<strong>책</strong>:
 - "Lean Analytics" by Alistair Croll & Benjamin Yoskovitz
 - "Trustworthy Online Controlled Experiments" by Ron Kohavi et al.
 - "How to Measure Anything" by Douglas W. Hubbard
 
-**온라인 강의**:
+<strong>온라인 강의</strong>:
 - Reforge: [Product Analytics](https://www.reforge.com/product-analytics)
 - Udacity: [A/B Testing by Google](https://www.udacity.com/course/ab-testing--ud257)
 - Amplitude Academy: 무료 Product Analytics 강의
 
-**커뮤니티**:
+<strong>커뮤니티</strong>:
 - [Lenny's Newsletter](https://www.lennysnewsletter.com/) - PM 인사이트
 - [Reforge Community](https://www.reforge.com/community) - 데이터 중심 PM 네트워크
 - [Product School](https://productschool.com/) - 이벤트 및 워크샵

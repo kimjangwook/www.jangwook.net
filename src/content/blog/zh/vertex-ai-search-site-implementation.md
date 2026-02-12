@@ -157,22 +157,22 @@ gcloud services enable cloudbuild.googleapis.com
 <strong>使用Agent Builder创建搜索应用</strong>：
 
 1. 访问[Google Cloud Console](https://console.cloud.google.com/)
-2. 导航到 **Vertex AI** → **Agent Builder**
-3. 点击 **创建应用** → 选择 **搜索**
+2. 导航到 <strong>Vertex AI</strong> → <strong>Agent Builder</strong>
+3. 点击 <strong>创建应用</strong> → 选择 <strong>搜索</strong>
 4. 配置数据源：
-   - **网站爬取**：输入你的网站URL
-   - **文档上传**：上传PDF、HTML等文件
-   - **BigQuery**：连接数据库
+   - <strong>网站爬取</strong>：输入你的网站URL
+   - <strong>文档上传</strong>：上传PDF、HTML等文件
+   - <strong>BigQuery</strong>：连接数据库
 
 5. 配置搜索选项：
-   - 启用 **生成式摘要**（AI Summary）
-   - 设置 **结果排序规则**
-   - 配置 **过滤器和刻面**
+   - 启用 <strong>生成式摘要</strong>（AI Summary）
+   - 设置 <strong>结果排序规则</strong>
+   - 配置 <strong>过滤器和刻面</strong>
 
 6. 记下创建完成后的：
-   - **ENGINE_ID**（搜索引擎ID）
-   - **PROJECT_ID**（项目ID）
-   - **PROJECT_NUMBER**（项目编号）
+   - <strong>ENGINE_ID</strong>（搜索引擎ID）
+   - <strong>PROJECT_ID</strong>（项目ID）
+   - <strong>PROJECT_NUMBER</strong>（项目编号）
 
 ## Cloud Functions API服务器实现
 
@@ -308,11 +308,11 @@ exports.search = async (req, res) => {
 
 <strong>代码亮点</strong>：
 
-1. **环境变量驱动配置**：所有敏感信息通过环境变量管理
-2. **CORS安全控制**：只允许白名单域名访问
-3. **智能降级**：配额超限时返回友好错误
-4. **结果标准化**：统一的JSON响应格式
-5. **AI摘要集成**：自动生成搜索结果摘要
+1. <strong>环境变量驱动配置</strong>：所有敏感信息通过环境变量管理
+2. <strong>CORS安全控制</strong>：只允许白名单域名访问
+3. <strong>智能降级</strong>：配额超限时返回友好错误
+4. <strong>结果标准化</strong>：统一的JSON响应格式
+5. <strong>AI摘要集成</strong>：自动生成搜索结果摘要
 
 ### 依赖管理（package.json）
 
@@ -381,11 +381,11 @@ MAX_PAGE_SIZE=50                        # 最大结果数
 
 <strong>配置说明</strong>：
 
-- **PROJECT_ID**: 在GCP控制台顶部查看
-- **PROJECT_NUMBER**: 在项目设置中的"项目编号"
-- **ENGINE_ID**: 创建搜索引擎后在Agent Builder中查看
-- **ALLOWED_DOMAINS**: 限制哪些网站可以调用API（安全性）
-- **REGION**: 选择离用户最近的区域以降低延迟
+- <strong>PROJECT_ID</strong>: 在GCP控制台顶部查看
+- <strong>PROJECT_NUMBER</strong>: 在项目设置中的"项目编号"
+- <strong>ENGINE_ID</strong>: 创建搜索引擎后在Agent Builder中查看
+- <strong>ALLOWED_DOMAINS</strong>: 限制哪些网站可以调用API（安全性）
+- <strong>REGION</strong>: 选择离用户最近的区域以降低延迟
 
 ## 自动化部署脚本（deploy.sh）
 
@@ -824,26 +824,26 @@ chmod +x deploy.sh
 
 ### 脚本核心亮点
 
-1. **智能环境管理**
+1. <strong>智能环境管理</strong>
    - 自动读取和验证.env文件
    - 支持多环境配置切换
    - 必需变量检查
 
-2. **安全的GCP操作**
+2. <strong>安全的GCP操作</strong>
    - 自动检查当前项目
    - 避免误操作其他项目
    - 安全的项目切换
 
-3. **自动化API启用**
+3. <strong>自动化API启用</strong>
    - 检测并启用必需的GCP API
    - 幂等操作（重复执行安全）
 
-4. **详细的日志输出**
+4. <strong>详细的日志输出</strong>
    - 彩色日志增强可读性
    - 清晰的操作步骤提示
    - 错误时立即停止
 
-5. **测试工具生成**
+5. <strong>测试工具生成</strong>
    - 自动生成测试HTML页面
    - 包含完整的搜索UI
    - 即开即用
@@ -1163,11 +1163,11 @@ MAX_INSTANCES=50
 
 监控和优化API使用：
 
-1. **启用配额告警**：
+1. <strong>启用配额告警</strong>：
    - GCP Console → IAM & Admin → Quotas
    - 设置告警阈值（如80%）
 
-2. **实施速率限制**：
+2. <strong>实施速率限制</strong>：
    ```javascript
    // 在Cloud Functions中添加
    const rateLimit = new Map();
@@ -1189,7 +1189,7 @@ MAX_INSTANCES=50
    }
    ```
 
-3. **客户端防抖**：
+3. <strong>客户端防抖</strong>：
    - 输入300ms后才发起请求
    - 避免每次按键都调用API
 
@@ -1214,7 +1214,7 @@ gcloud functions logs read vertex-ai-search \
 
 在GCP Console中设置：
 
-1. **Cloud Monitoring → Dashboards**
+1. <strong>Cloud Monitoring → Dashboards</strong>
 2. 创建自定义仪表板
 3. 添加以下指标：
    - 函数调用次数
@@ -1308,7 +1308,7 @@ rm -rf node_modules
 
 ### 调试技巧
 
-1. **本地测试Cloud Functions**：
+1. <strong>本地测试Cloud Functions</strong>：
    ```bash
    # 安装Functions Framework
    npm install @google-cloud/functions-framework
@@ -1324,7 +1324,7 @@ rm -rf node_modules
      -d '{"query": "test", "pageSize": 5}'
    ```
 
-2. **启用详细日志**：
+2. <strong>启用详细日志</strong>：
    ```javascript
    // index.js中添加
    console.log('Request received:', JSON.stringify(req.body));
@@ -1338,45 +1338,45 @@ rm -rf node_modules
 
 <strong>核心要点回顾</strong>：
 
-1. **架构设计**
+1. <strong>架构设计</strong>
    - Vertex AI Search提供AI驱动的搜索能力
    - Cloud Functions作为API中间层
    - 前端通过HTTP调用搜索API
 
-2. **自动化部署**
+2. <strong>自动化部署</strong>
    - Shell脚本实现一键部署
    - 多环境配置管理
    - 自动生成测试工具
 
-3. **安全与性能**
+3. <strong>安全与性能</strong>
    - CORS域名白名单
    - 请求速率限制
    - 客户端缓存优化
 
-4. **成本控制**
+4. <strong>成本控制</strong>
    - 合理的资源配置
    - 配额监控告警
    - 降级策略
 
 ### 后续优化方向
 
-1. **增强功能**：
+1. <strong>增强功能</strong>：
    - 实现搜索历史记录
    - 添加个性化推荐
    - 支持多语言搜索
    - 集成语音搜索
 
-2. **性能提升**：
+2. <strong>性能提升</strong>：
    - 使用CDN缓存搜索结果
    - 实施服务端渲染（SSR）
    - 优化首屏加载速度
 
-3. **分析深化**：
+3. <strong>分析深化</strong>：
    - 搜索关键词分析
    - 用户行为追踪
    - A/B测试不同搜索UI
 
-4. **扩展场景**：
+4. <strong>扩展场景</strong>：
    - 整合到移动应用
    - 支持图片搜索
    - 接入企业知识库

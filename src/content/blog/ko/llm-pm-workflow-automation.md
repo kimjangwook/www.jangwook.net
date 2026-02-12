@@ -355,13 +355,13 @@ def analyze_project_risks(task_data):
 
 <strong>목표</strong>: LLM 도구의 효과를 검증하고 팀 수용도 확인
 
-**단계**:
+<strong>단계</strong>:
 1. <strong>도구 선택</strong>: ChatGPT Plus 또는 Claude Pro 구독 시작
 2. <strong>유스케이스 선정</strong>: 회의록 요약으로 시작 (가장 시간이 많이 걸리는 작업)
 3. <strong>프롬프트 템플릿 개발</strong>: 표준 프롬프트 3〜5개 작성
 4. <strong>측정</strong>: 시간 절감 및 품질 평가
 
-**성공 지표**:
+<strong>성공 지표</strong>:
 - 회의록 작성 시간 50% 이상 감소
 - 팀원 만족도 4/5 이상
 - 액션 아이템 누락률 0%
@@ -370,7 +370,7 @@ def analyze_project_risks(task_data):
 
 <strong>목표</strong>: 기존 PM 도구와 LLM 통합
 
-**도구 스택 예시**:
+<strong>도구 스택 예시</strong>:
 ```mermaid
 graph LR
     A[Jira/Asana] --> B[n8n/Zapier]
@@ -383,7 +383,7 @@ graph LR
     F --> D
 ```
 
-**통합 시나리오**:
+<strong>통합 시나리오</strong>:
 1. <strong>Jira → Claude → Slack</strong>
    - Jira 이슈 생성 시 자동으로 컨텍스트 분석
    - Slack에 우선순위 및 영향도 분석 결과 전송
@@ -400,7 +400,7 @@ graph LR
 
 <strong>목표</strong>: AI 에이전트 기반 자율 워크플로우 구축
 
-**Claude Skills 활용**:
+<strong>Claude Skills 활용</strong>:
 ```markdown
 # Skill: 스프린트 회고 분석기
 
@@ -438,7 +438,7 @@ graph LR
 | 리스크 식별 속도 | 주 1회 수동 | 실시간 자동 | 100% ↑ |
 | PM 전략 업무 시간 | 20% | 60% | 200% ↑ |
 
-**ROI 계산**:
+<strong>ROI 계산</strong>:
 ```python
 # PM 시간당 인건비를 10만원으로 가정
 hourly_rate = 100000  # 원
@@ -501,7 +501,7 @@ roi = (annual_savings - total_cost) / total_cost * 100
 - ✅ 기업용 LLM API (Azure OpenAI, Anthropic Enterprise) 사용
 - ✅ 데이터 보유 정책 확인 (Claude는 기본 30일 보관)
 
-**데이터 마스킹 예시**:
+<strong>데이터 마스킹 예시</strong>:
 ```python
 import re
 
@@ -547,7 +547,7 @@ graph LR
     D --> A
 ```
 
-**개선 방법**:
+<strong>개선 방법</strong>:
 - 효과가 좋은 프롬프트는 팀 라이브러리에 추가
 - 주간 LLM 팁 공유 (Slack 채널 활용)
 - 새로운 유스케이스 발굴 (팀 브레인스토밍)
@@ -568,7 +568,7 @@ graph LR
 "
 ```
 
-**원칙**: LLM은 <strong>보조 도구</strong>이지 대체재가 아닙니다.
+<strong>원칙</strong>: LLM은 <strong>보조 도구</strong>이지 대체재가 아닙니다.
 
 ### 2. 컨텍스트 부족
 
@@ -645,7 +645,7 @@ graph LR
 - 여러 도구를 연결하여 복잡한 워크플로우 실행
 - 사람의 승인을 받아 실제 액션 수행
 
-**예시**: Claude Computer Use
+<strong>예시</strong>: Claude Computer Use
 ```markdown
 PM: "다음주 스프린트 계획을 Jira에 생성하고 팀에 공지해줘"
 

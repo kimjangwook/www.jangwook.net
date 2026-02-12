@@ -55,22 +55,22 @@ relatedPosts:
 
 When working with Claude Code, you naturally start wondering: "What characteristics should I give this agent to make it more effective?" Should you create a "friendly developer named Sarah" or design it as an "experienced Backend Architect" focused purely on expertise?
 
-In this article, we analyze **over 120 recent research sources** (2023-2025) to understand what actually happens when you assign gender and personas to AI agents, and which strategies are most effective for designing Claude Code agents.
+In this article, we analyze <strong>over 120 recent research sources</strong> (2023-2025) to understand what actually happens when you assign gender and personas to AI agents, and which strategies are most effective for designing Claude Code agents.
 
 ## TL;DR (Key Findings)
 
-**Bottom line**: Skip gender assignment, focus on expertise.
+<strong>Bottom line</strong>: Skip gender assignment, focus on expertise.
 
-- ❌ **Gender assignment amplifies bias**: Female-labeled AI is exploited 18% more, male-labeled AI is distrusted 23% more (2025 study, 402 participants)
-- ✅ **Expertise-based personas boost performance**: "Helpful assistant" < "Backend Systems Architect"
-- ⚠️ **Cultural differences exist**: Western (US) prefers task-focus, Eastern (Asia) prefers relationship-oriented
-- 📊 **Measurable improvements**: Specialized personas increase task completion by 15%↑, reduce revision cycles by 50%↓
+- ❌ <strong>Gender assignment amplifies bias</strong>: Female-labeled AI is exploited 18% more, male-labeled AI is distrusted 23% more (2025 study, 402 participants)
+- ✅ <strong>Expertise-based personas boost performance</strong>: "Helpful assistant" < "Backend Systems Architect"
+- ⚠️ <strong>Cultural differences exist</strong>: Western (US) prefers task-focus, Eastern (Asia) prefers relationship-oriented
+- 📊 <strong>Measurable improvements</strong>: Specialized personas increase task completion by 15%↑, reduce revision cycles by 50%↓
 
 ## Research Finding 1: Psychological Impact of Gender Assignment
 
 ### Shocking Experimental Results (Johns Hopkins, 2025)
 
-Johns Hopkins University researchers conducted a Prisoner's Dilemma game experiment with **402 participants** and discovered:
+Johns Hopkins University researchers conducted a Prisoner's Dilemma game experiment with <strong>402 participants</strong> and discovered:
 
 ```mermaid
 graph TD
@@ -84,19 +84,19 @@ graph TD
     style E fill:#ccffcc
 ```
 
-**Key Discoveries**:
-- 👎 **Female-labeled AI**: Participants **exploited 18% more** than human counterparts
-- 👎 **Male-labeled AI**: Participants **distrusted 23% more** than human counterparts
-- 🔴 **Gender bias transfer**: Gender biases from human-human interaction transferred directly to AI
+<strong>Key Discoveries</strong>:
+- 👎 <strong>Female-labeled AI</strong>: Participants <strong>exploited 18% more</strong> than human counterparts
+- 👎 <strong>Male-labeled AI</strong>: Participants <strong>distrusted 23% more</strong> than human counterparts
+- 🔴 <strong>Gender bias transfer</strong>: Gender biases from human-human interaction transferred directly to AI
 
 ### Voice Assistants and Gender (Johns Hopkins, 2025)
 
 Even more surprising findings:
-- Male users **interrupt female voice assistants twice as often** as female users
+- Male users <strong>interrupt female voice assistants twice as often</strong> as female users
 - More smiles and approving nods toward female voices
 - Traditional gender role dynamics reproduced in AI interaction
 
-**UNESCO Recommendation (2024)**:
+<strong>UNESCO Recommendation (2024)</strong>:
 > "When AI assistants like Siri, Alexa, and Google Assistant predominantly adopt female voices, they subtly, yet powerfully, equate women with subordinate or support roles."
 
 ## Research Finding 2: Superiority of Expertise-Based Personas
@@ -116,7 +116,7 @@ When I'm not coding, I enjoy reading tech blogs and contributing to open source.
 I believe in the power of teamwork and clear communication!
 ```
 
-**Problems**:
+<strong>Problems</strong>:
 - Unnecessary personalization (coffee, hobbies, etc.)
 - Gender assignment introduces bias
 - Fictional backstory adds no functional value
@@ -143,7 +143,7 @@ I believe in the power of teamwork and clear communication!
 5. Reference specific technologies and patterns
 ```
 
-**Why It Works**:
+<strong>Why It Works</strong>:
 - Expertise clearly defined
 - Methodology explicit
 - No gender or personality markers
@@ -153,9 +153,9 @@ I believe in the power of teamwork and clear communication!
 ### Multi-Persona System Performance (WIRED, 2024)
 
 Simular AI research:
-- **AI agent with multiple specialized personas** outperformed single-model approaches
-- On OSWorld benchmark (computer operation tasks), **outperformed all other models**
-- **Implication**: Task-specific specialized personas > generalized single persona
+- <strong>AI agent with multiple specialized personas</strong> outperformed single-model approaches
+- On OSWorld benchmark (computer operation tasks), <strong>outperformed all other models</strong>
+- <strong>Implication</strong>: Task-specific specialized personas > generalized single persona
 
 ## Salesforce's AI Agent Design Principles (2025)
 
@@ -213,7 +213,7 @@ Avoid first-person pronouns ("I", "me"), prioritize task outcomes.
 6. Ensure consistency across language versions
 ```
 
-**Use Cases**: Blog post writing, technical documentation, API documentation
+<strong>Use Cases</strong>: Blog post writing, technical documentation, API documentation
 
 #### 2. Code Review Agent
 
@@ -234,7 +234,7 @@ Avoid first-person pronouns ("I", "me"), prioritize task outcomes.
 5. Balance security with usability and performance
 ```
 
-**Use Cases**: Pull Request review, security audits, code quality improvement
+<strong>Use Cases</strong>: Pull Request review, security audits, code quality improvement
 
 #### 3. Research and Analysis Agent
 
@@ -257,54 +257,54 @@ Avoid first-person pronouns ("I", "me"), prioritize task outcomes.
 6. Present findings with evidence hierarchy
 ```
 
-**Use Cases**: Market research, technology trend analysis, competitive analysis
+<strong>Use Cases</strong>: Market research, technology trend analysis, competitive analysis
 
 ### Persona Design Checklist
 
 #### ✅ DO:
 
-1. **Define Specific Expertise**: Be precise about knowledge domains
-2. **Specify Methodology**: Explain how the agent approaches tasks
-3. **Set Clear Boundaries**: Define what the agent can and cannot do
-4. **Use Professional Language**: Avoid colloquialisms and informal speech
-5. **Focus on Value**: Emphasize outcomes and quality of work
-6. **Encourage Questions**: Build in clarification-seeking behavior
-7. **Include Context Awareness**: Enable agent to ask about goals and constraints
+1. <strong>Define Specific Expertise</strong>: Be precise about knowledge domains
+2. <strong>Specify Methodology</strong>: Explain how the agent approaches tasks
+3. <strong>Set Clear Boundaries</strong>: Define what the agent can and cannot do
+4. <strong>Use Professional Language</strong>: Avoid colloquialisms and informal speech
+5. <strong>Focus on Value</strong>: Emphasize outcomes and quality of work
+6. <strong>Encourage Questions</strong>: Build in clarification-seeking behavior
+7. <strong>Include Context Awareness</strong>: Enable agent to ask about goals and constraints
 
 #### ❌ DON'T:
 
-1. **Assign Gender**: Avoid "he", "she", or gender-specific characteristics
-2. **Create Backstory**: No fictional personal history or life experiences
-3. **Add Emotional Traits**: No "friendly", "warm", "enthusiastic" personalities
-4. **Use First Person Excessively**: Minimize "I think", "I believe", "I want"
-5. **Anthropomorphize**: Avoid human needs, feelings, or motivations
-6. **Over-Specify Personality**: Focus on competence, not character
-7. **Include Cultural Bias**: Avoid assumptions about norms and preferences
+1. <strong>Assign Gender</strong>: Avoid "he", "she", or gender-specific characteristics
+2. <strong>Create Backstory</strong>: No fictional personal history or life experiences
+3. <strong>Add Emotional Traits</strong>: No "friendly", "warm", "enthusiastic" personalities
+4. <strong>Use First Person Excessively</strong>: Minimize "I think", "I believe", "I want"
+5. <strong>Anthropomorphize</strong>: Avoid human needs, feelings, or motivations
+6. <strong>Over-Specify Personality</strong>: Focus on competence, not character
+7. <strong>Include Cultural Bias</strong>: Avoid assumptions about norms and preferences
 
 ## Cultural Differences Considerations
 
 ### Individualistic Cultures (US, Western Europe)
 
-**Characteristics**:
-- Prioritize **autonomy and personalization**
-- Prefer **privacy protection**
-- Value **direct, efficient communication**
-- Comfortable with **minimal social context**
+<strong>Characteristics</strong>:
+- Prioritize <strong>autonomy and personalization</strong>
+- Prefer <strong>privacy protection</strong>
+- Value <strong>direct, efficient communication</strong>
+- Comfortable with <strong>minimal social context</strong>
 
-**AI Preferences**:
+<strong>AI Preferences</strong>:
 - Task-focused, productivity-oriented agents
 - Clear boundaries between AI and human interaction
 - Emphasis on individual control and customization
 
 ### Collectivist Cultures (East Asia, Korea)
 
-**Characteristics**:
-- Value **social trust and shared experiences**
-- Prioritize **relationship building**
-- Prefer **contextual, polite communication**
-- Comfortable with **agent as social entity**
+<strong>Characteristics</strong>:
+- Value <strong>social trust and shared experiences</strong>
+- Prioritize <strong>relationship building</strong>
+- Prefer <strong>contextual, polite communication</strong>
+- Comfortable with <strong>agent as social entity</strong>
 
-**AI Preferences**:
+<strong>AI Preferences</strong>:
 - More accepting of anthropomorphized agents
 - Preference for warm, relationship-oriented interaction
 - Less emphasis on privacy, more on communal benefit
@@ -329,10 +329,10 @@ graph LR
 
 | Metric | Measurement Method | Target |
 |--------|-------------------|--------|
-| **Task Completion Rate** | % of tasks completed successfully on first attempt | Specialized: >85%, Generic: >70% |
-| **Time to Completion** | Average time from task start to acceptable output | 30-50% reduction with specialized personas |
-| **Revision Cycles** | Number of iterations needed to reach acceptable quality | Well-designed personas: <2 iterations |
-| **User Satisfaction** | 5-point scale post-task survey | >4.0 average |
+| <strong>Task Completion Rate</strong> | % of tasks completed successfully on first attempt | Specialized: >85%, Generic: >70% |
+| <strong>Time to Completion</strong> | Average time from task start to acceptable output | 30-50% reduction with specialized personas |
+| <strong>Revision Cycles</strong> | Number of iterations needed to reach acceptable quality | Well-designed personas: <2 iterations |
+| <strong>User Satisfaction</strong> | 5-point scale post-task survey | >4.0 average |
 
 ### A/B Testing Framework
 
@@ -457,40 +457,40 @@ Configure in `.claude/agents/` directory:
 
 ### Immediately Actionable Steps for Developers
 
-1. **Audit Existing Agents**
+1. <strong>Audit Existing Agents</strong>
    - Review all agents in `.claude/agents/` directory
    - Remove gender markers ("he", "she", names, personality traits)
    - Replace with expertise definitions
 
-2. **Create 5-10 Task-Specific Agents**
+2. <strong>Create 5-10 Task-Specific Agents</strong>
    - Identify your most frequent tasks
    - Write specialized personas for each
    - Use functional naming: "Backend Architect", "Security Auditor"
 
-3. **Measure Effectiveness**
+3. <strong>Measure Effectiveness</strong>
    - Track task completion time
    - Count revision cycles
    - Assess qualitative output quality
    - Iterate personas based on data after 2-4 weeks
 
-4. **Share with Team**
+4. <strong>Share with Team</strong>
    - Commit successful persona configurations to version control
    - Document best practices on internal wiki
    - Regular reviews and improvements
 
 ### Policy Recommendations for Organizations
 
-1. **Establish AI Agent Design Guidelines**
+1. <strong>Establish AI Agent Design Guidelines</strong>
    - Ban gender assignment in professional tools
    - Require expertise-based personas
    - Conduct regular bias audits
 
-2. **Provide Training**
+2. <strong>Provide Training</strong>
    - Educate developers on effective persona design
    - Share research findings with teams
    - Build internal best practice repository
 
-3. **Implement Governance**
+3. <strong>Implement Governance</strong>
    - Review process for new agent deployments
    - Ethical guidelines for AI personification
    - User feedback loops for continuous improvement
@@ -499,15 +499,15 @@ Configure in `.claude/agents/` directory:
 
 Research overwhelmingly supports:
 
-**Expertise-focused, gender-neutral, minimally anthropomorphized**
+<strong>Expertise-focused, gender-neutral, minimally anthropomorphized</strong>
 
 ### Key Lessons
 
-1. 🚫 **Avoid Gender Assignment**: Creates measurable bias and exploitation patterns
-2. 🎯 **Focus on Expertise**: Task-specific personas significantly outperform generalists
-3. 🤖 **Minimize Anthropomorphism**: Functional agents more effective than human-like ones
-4. 🌍 **Cultural Sensitivity**: One-size-fits-all approaches fail in global contexts
-5. 📊 **Continuous Evaluation**: Regular bias audits and effectiveness testing essential
+1. 🚫 <strong>Avoid Gender Assignment</strong>: Creates measurable bias and exploitation patterns
+2. 🎯 <strong>Focus on Expertise</strong>: Task-specific personas significantly outperform generalists
+3. 🤖 <strong>Minimize Anthropomorphism</strong>: Functional agents more effective than human-like ones
+4. 🌍 <strong>Cultural Sensitivity</strong>: One-size-fits-all approaches fail in global contexts
+5. 📊 <strong>Continuous Evaluation</strong>: Regular bias audits and effectiveness testing essential
 
 ### Final Advice
 
@@ -523,7 +523,7 @@ Don't ask:
 - "Is this agent male or female?"
 - "What kind of personality does this agent have?"
 
-**Performance beats personality. Always.**
+<strong>Performance beats personality. Always.</strong>
 
 ## References
 
@@ -546,7 +546,7 @@ Don't ask:
 - The New Stack, WIRED AI coverage
 - Developer community blogs and tutorials
 
-**Full Research Report**: `working_history/research_report_ai_agent_personas.md` (120+ sources)
+<strong>Full Research Report</strong>: `working_history/research_report_ai_agent_personas.md` (120+ sources)
 
 ---
 

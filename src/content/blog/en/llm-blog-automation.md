@@ -73,12 +73,12 @@ Sound like magic? It's not. It's the result of careful prompt engineering and sy
 
 Writing quality technical content is time-consuming. A single blog post can take 4-8 hours:
 
-- **Research and outline**: 1-2 hours
-- **Writing first draft**: 2-3 hours
-- **Editing and proofreading**: 1 hour
-- **Image creation**: 30 minutes
-- **SEO optimization**: 30 minutes
-- **Multi-language translation**: 1-2 hours (if applicable)
+- <strong>Research and outline</strong>: 1-2 hours
+- <strong>Writing first draft</strong>: 2-3 hours
+- <strong>Editing and proofreading</strong>: 1 hour
+- <strong>Image creation</strong>: 30 minutes
+- <strong>SEO optimization</strong>: 30 minutes
+- <strong>Multi-language translation</strong>: 1-2 hours (if applicable)
 
 That's why many developers abandon their blogs after a few posts. But what if we could reduce this to 1 hour while maintaining - or even improving - quality?
 
@@ -122,26 +122,26 @@ Astro's content collections use plain Markdown files, which means:
 
 Each agent has a specific role defined in `.claude/agents/`:
 
-1. **content-planner.md**: Strategic content planning and topic ideation
-2. **writing-assistant.md**: Blog post composition and narrative structure
-3. **editor.md**: Grammar, style, and quality assurance
-4. **seo-optimizer.md**: Search engine optimization and metadata
-5. **site-manager.md**: Astro build and deployment automation
-6. **analytics.md**: Traffic analysis and performance metrics
-7. **social-media-manager.md**: Cross-platform content distribution
-8. **portfolio-curator.md**: Project showcase management
-9. **learning-tracker.md**: Skill development and trend monitoring
-10. **image-generator.md**: Visual content creation with AI
-11. **translator.md**: Multi-language content adaptation
+1. <strong>content-planner.md</strong>: Strategic content planning and topic ideation
+2. <strong>writing-assistant.md</strong>: Blog post composition and narrative structure
+3. <strong>editor.md</strong>: Grammar, style, and quality assurance
+4. <strong>seo-optimizer.md</strong>: Search engine optimization and metadata
+5. <strong>site-manager.md</strong>: Astro build and deployment automation
+6. <strong>analytics.md</strong>: Traffic analysis and performance metrics
+7. <strong>social-media-manager.md</strong>: Cross-platform content distribution
+8. <strong>portfolio-curator.md</strong>: Project showcase management
+9. <strong>learning-tracker.md</strong>: Skill development and trend monitoring
+10. <strong>image-generator.md</strong>: Visual content creation with AI
+11. <strong>translator.md</strong>: Multi-language content adaptation
 
 ### 4. MCP Integrations (The Extensions)
 
 Model Context Protocol (MCP) extends Claude's capabilities:
 
-- **context7**: Up-to-date library documentation
-- **playwright**: Browser automation for research
-- **notion-api**: Personal knowledge base integration
-- **chrome-devtools**: Web scraping and testing
+- <strong>context7</strong>: Up-to-date library documentation
+- <strong>playwright</strong>: Browser automation for research
+- <strong>notion-api</strong>: Personal knowledge base integration
+- <strong>chrome-devtools</strong>: Web scraping and testing
 
 ## Why This Works: The Astro Advantage
 
@@ -179,10 +179,10 @@ const { Content } = await post.render();
 
 For LLMs, this means:
 
-1. **Markdown focus**: LLMs are trained extensively on Markdown
-2. **Type safety**: Content collections validate schemas automatically
-3. **No runtime**: Pure static HTML - no client-side JavaScript needed
-4. **File-based routing**: Intuitive structure that LLMs understand
+1. <strong>Markdown focus</strong>: LLMs are trained extensively on Markdown
+2. <strong>Type safety</strong>: Content collections validate schemas automatically
+3. <strong>No runtime</strong>: Pure static HTML - no client-side JavaScript needed
+4. <strong>File-based routing</strong>: Intuitive structure that LLMs understand
 
 ## Deep Dive: The 11 Agent System
 
@@ -190,7 +190,7 @@ Let's examine how these agents work together with real examples.
 
 ### 1. Content Planner Agent
 
-**Role**: Strategic thinking and topic research
+<strong>Role</strong>: Strategic thinking and topic research
 
 ```markdown
 # Content Planner Agent
@@ -212,7 +212,7 @@ You analyze trends, suggest topics, and create detailed outlines.
 4. Generate structured outline with H2/H3 hierarchy
 ```
 
-**Example output**:
+<strong>Example output</strong>:
 
 ```markdown
 ## Proposed Topic: "LLM Blog Automation"
@@ -236,7 +236,7 @@ You analyze trends, suggest topics, and create detailed outlines.
 
 ### 2. Writing Assistant Agent
 
-**Role**: Transform outlines into engaging narrative
+<strong>Role</strong>: Transform outlines into engaging narrative
 
 ```markdown
 # Writing Assistant Agent
@@ -259,7 +259,7 @@ You write comprehensive blog posts based on outlines.
 - Use H2 for major sections, H3 for subsections
 ```
 
-**Before vs After Prompt Engineering**:
+<strong>Before vs After Prompt Engineering</strong>:
 
 Before (vague):
 
@@ -288,7 +288,7 @@ Target audience: Developers with 2+ years experience who maintain technical blog
 
 ### 3. Image Generator Agent
 
-**Role**: Create visual content with AI
+<strong>Role</strong>: Create visual content with AI
 
 ```markdown
 # Image Generator Agent
@@ -317,7 +317,7 @@ No text overlay.
 16:9 aspect ratio."
 ```
 
-**Real example from this post**:
+<strong>Real example from this post</strong>:
 
 ```
 Prompt: "Professional tech blog hero image about AI-powered blog automation.
@@ -333,7 +333,7 @@ Result: /images/blog/2025-10-04-llm-blog-automation-hero.png
 
 ### 4. SEO Optimizer Agent
 
-**Role**: Maximize search visibility
+<strong>Role</strong>: Maximize search visibility
 
 ```markdown
 # SEO Optimizer Agent
@@ -363,7 +363,7 @@ Example:
 
 ### 5. Translator Agent
 
-**Role**: Multi-language content adaptation (not just translation)
+<strong>Role</strong>: Multi-language content adaptation (not just translation)
 
 ```markdown
 # Translator Agent
@@ -402,7 +402,7 @@ The difference between mediocre and excellent AI output is prompt quality. Here'
 Claude, write a blog post about AI automation.
 ```
 
-**Result**: Generic, unfocused, 500 words of fluff.
+<strong>Result</strong>: Generic, unfocused, 500 words of fluff.
 
 ### After: Structured Prompts
 
@@ -437,34 +437,34 @@ pubDate: '2025-10-04'
 tags: ['llm', 'claude-code', 'automation']
 ```
 
-**Result**: Focused, comprehensive, exactly what you're reading now.
+<strong>Result</strong>: Focused, comprehensive, exactly what you're reading now.
 
 ### Key Prompt Engineering Techniques
 
-1. **Specificity over generality**
+1. <strong>Specificity over generality</strong>
 
    - Bad: "Write about automation"
    - Good: "Write a 2,500-word tutorial on blog automation using Claude Code, targeting developers who want to save 80% of content creation time"
 
-2. **Provide structure**
+2. <strong>Provide structure</strong>
 
    - Use numbered lists for required sections
    - Specify heading hierarchy (H2, H3)
    - Include word count targets per section
 
-3. **Define tone and style**
+3. <strong>Define tone and style</strong>
 
    - Specify voice (active vs passive)
    - Give audience context
    - Provide example sentences
 
-4. **Include constraints**
+4. <strong>Include constraints</strong>
 
    - Word count ranges
    - Required elements (code examples, tables)
    - Forbidden elements (marketing fluff, filler)
 
-5. **Give examples**
+5. <strong>Give examples</strong>
    - Show before/after transformations
    - Include sample code blocks
    - Reference similar successful content
@@ -475,9 +475,9 @@ Model Context Protocol (MCP) is what makes this system truly powerful. It's like
 
 ### 1. Context7: Always Up-to-Date Documentation
 
-**Problem**: LLMs have a knowledge cutoff. Astro 5.14 wasn't in Claude's training data.
+<strong>Problem</strong>: LLMs have a knowledge cutoff. Astro 5.14 wasn't in Claude's training data.
 
-**Solution**: Context7 provides real-time documentation.
+<strong>Solution</strong>: Context7 provides real-time documentation.
 
 ```typescript
 // In .mcp.json
@@ -491,7 +491,7 @@ Model Context Protocol (MCP) is what makes this system truly powerful. It's like
 }
 ```
 
-**Usage example**:
+<strong>Usage example</strong>:
 
 ```
 You: "How do I use Astro's new View Transitions API?"
@@ -506,7 +506,7 @@ Result: Accurate, up-to-date information every time.
 
 ### 2. Playwright: Automated Research
 
-**Use case**: Gathering information from multiple sources.
+<strong>Use case</strong>: Gathering information from multiple sources.
 
 ```javascript
 // Example: Research trending topics
@@ -518,7 +518,7 @@ const trends = await browser.evaluate(`
 `);
 ```
 
-**Real workflow**:
+<strong>Real workflow</strong>:
 
 1. Content Planner agent triggers research
 2. Playwright scrapes Hacker News, Reddit, Twitter
@@ -528,7 +528,7 @@ const trends = await browser.evaluate(`
 
 ### 3. Notion API: Personal Knowledge Base
 
-**Setup**:
+<strong>Setup</strong>:
 
 ```json
 // .mcp.json
@@ -545,7 +545,7 @@ const trends = await browser.evaluate(`
 }
 ```
 
-**Use case**: Learning Tracker agent logs new skills.
+<strong>Use case</strong>: Learning Tracker agent logs new skills.
 
 ```
 When I write about a new technology:
@@ -592,7 +592,7 @@ Provide summary:
 - Estimated time saved vs manual process
 ```
 
-**Real execution**:
+<strong>Real execution</strong>:
 
 ```bash
 # In Claude Code interface
@@ -848,22 +848,22 @@ Here's what this system achieved for this very blog post:
 | Image Creation       | 30 minutes    | 3 minutes      | 90%     |
 | SEO Optimization     | 30 minutes    | 2 minutes      | 93%     |
 | Editing & Review     | 1 hour        | 5 minutes      | 92%     |
-| **Total**            | **8.5 hours** | **50 minutes** | **90%** |
+| <strong>Total</strong>            | <strong>8.5 hours</strong> | <strong>50 minutes</strong> | <strong>90%</strong> |
 
 ### Content Quality
 
-- **Word count**: 2,847 (English), 3,124 (Korean), 3,056 (Japanese)
-- **Readability**: Flesch Reading Ease 65+ (college level)
-- **SEO score**: 95/100 (Yoast metrics)
-- **Code examples**: 15+ with syntax highlighting
-- **Internal links**: 8 relevant connections
+- <strong>Word count</strong>: 2,847 (English), 3,124 (Korean), 3,056 (Japanese)
+- <strong>Readability</strong>: Flesch Reading Ease 65+ (college level)
+- <strong>SEO score</strong>: 95/100 (Yoast metrics)
+- <strong>Code examples</strong>: 15+ with syntax highlighting
+- <strong>Internal links</strong>: 8 relevant connections
 
 ### Consistency Metrics
 
-- **Publishing frequency**: 3x increase (1/week → 3/week)
-- **Multi-language coverage**: 100% (all posts in 3 languages)
-- **Image quality**: Professional AI-generated heroes
-- **SEO compliance**: 100% of posts optimized
+- <strong>Publishing frequency</strong>: 3x increase (1/week → 3/week)
+- <strong>Multi-language coverage</strong>: 100% (all posts in 3 languages)
+- <strong>Image quality</strong>: Professional AI-generated heroes
+- <strong>SEO compliance</strong>: 100% of posts optimized
 
 ## Advanced Automation Scenarios
 
@@ -948,9 +948,9 @@ Building this system wasn't without obstacles. Here's what I learned:
 
 ### Challenge 1: Context Limits
 
-**Problem**: Claude has a 200k token context limit. Large codebases exceed this.
+<strong>Problem</strong>: Claude has a 200k token context limit. Large codebases exceed this.
 
-**Solution**:
+<strong>Solution</strong>:
 
 - Use `.claudeignore` to exclude irrelevant files
 - Implement hierarchical agent communication
@@ -967,9 +967,9 @@ dist/
 
 ### Challenge 2: Inconsistent Output
 
-**Problem**: LLMs can be non-deterministic. Same prompt, different results.
+<strong>Problem</strong>: LLMs can be non-deterministic. Same prompt, different results.
 
-**Solution**:
+<strong>Solution</strong>:
 
 - Use specific, structured prompts
 - Include examples in agent definitions
@@ -978,9 +978,9 @@ dist/
 
 ### Challenge 3: Image Quality
 
-**Problem**: AI-generated images sometimes miss the mark.
+<strong>Problem</strong>: AI-generated images sometimes miss the mark.
 
-**Solution**:
+<strong>Solution</strong>:
 
 - Create detailed prompt templates
 - Specify exact dimensions and style
@@ -998,9 +998,9 @@ Negative: "text, watermarks, logos, cluttered, busy, realistic photos, faces"
 
 ### Challenge 4: Multi-Language Nuance
 
-**Problem**: Direct translation loses cultural context.
+<strong>Problem</strong>: Direct translation loses cultural context.
 
-**Solution**:
+<strong>Solution</strong>:
 
 - Use "adaptation" instead of "translation"
 - Include cultural notes in translator agent
@@ -1085,7 +1085,7 @@ We're witnessing a fundamental shift in content creation. Just as calculators di
 
 This blog post you just read? It took 50 minutes to create in three languages with professional images and SEO optimization. The traditional approach would have taken 8+ hours.
 
-But here's the key insight: **automation doesn't mean absence of human creativity**. It means amplifying it.
+But here's the key insight: <strong>automation doesn't mean absence of human creativity</strong>. It means amplifying it.
 
 I still:
 
@@ -1108,13 +1108,13 @@ You now have everything you need:
 
 The question isn't whether to automate - it's when you'll start.
 
-**Start small**: Pick one agent (writing-assistant) and see the results.
+<strong>Start small</strong>: Pick one agent (writing-assistant) and see the results.
 
-**Iterate quickly**: Refine prompts based on output quality.
+<strong>Iterate quickly</strong>: Refine prompts based on output quality.
 
-**Scale gradually**: Add agents as you see value.
+<strong>Scale gradually</strong>: Add agents as you see value.
 
-**Share openly**: Document your journey and help others.
+<strong>Share openly</strong>: Document your journey and help others.
 
 The future of content creation is here. It's automated, intelligent, and accessible to anyone willing to learn.
 
@@ -1122,14 +1122,14 @@ What will you create?
 
 ---
 
-**Resources**:
+<strong>Resources</strong>:
 
 - [Claude Code Documentation](https://claude.ai/code)
 - [Astro Framework](https://astro.build)
 - [Model Context Protocol](https://modelcontextprotocol.io)
 - [This Blog's Source Code](https://github.com/yourusername/your-blog)
 
-**Connect**:
+<strong>Connect</strong>:
 
 Questions? Thoughts? I'd love to hear about your automation experiments. Reach out on [Twitter/X](https://twitter.com/yourhandle) or [LinkedIn](https://linkedin.com/in/yourprofile).
 

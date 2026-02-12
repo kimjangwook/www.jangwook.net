@@ -61,11 +61,11 @@ relatedPosts:
 ---
 ## Overview
 
-Claude Code is an agentic coding tool developed by Anthropic. Through its plugin system, you can **install slash commands, specialized agents, skills, and hooks as a single package**.
+Claude Code is an agentic coding tool developed by Anthropic. Through its plugin system, you can <strong>install slash commands, specialized agents, skills, and hooks as a single package</strong>.
 
-This post provides an in-depth analysis of the **13 official plugins**, over **100 community marketplace plugins**, and the **actual plugin structure**.
+This post provides an in-depth analysis of the <strong>13 official plugins</strong>, over <strong>100 community marketplace plugins</strong>, and the <strong>actual plugin structure</strong>.
 
-> **★ Insight**
+> <strong>★ Insight</strong>
 >
 > - 13 Official Plugins: Managed in the anthropics/claude-code repository
 > - Community Marketplaces: 100+ plugins across 13 categories
@@ -103,7 +103,7 @@ Claude Code uses a Git repository-based marketplace system.
 /plugin
 ```
 
-> **★ Insight**
+> <strong>★ Insight</strong>
 >
 > - Minimum version requirement: Claude Code 1.0.33+
 > - Storage location: Project level (.claude/) or user level (~/.claude/)
@@ -119,7 +119,7 @@ Official plugins from the [anthropics/claude-code](https://github.com/anthropics
 /plugin install commit-commands
 ```
 
-**3 Commands Provided**:
+<strong>3 Commands Provided</strong>:
 
 | Command             | Function                                                                      |
 | ------------------- | ----------------------------------------------------------------------------- |
@@ -138,7 +138,7 @@ Official plugins from the [anthropics/claude-code](https://github.com/anthropics
 **How `/commit-push-pr` Works**:
 
 1. Automatically creates new branch if on main
-2. Analyzes **entire commit history** of branch (not just latest commit)
+2. Analyzes <strong>entire commit history</strong> of branch (not just latest commit)
 3. Auto-generates PR description (Summary + Test plan)
 4. Creates PR via GitHub CLI (`gh`) and returns URL
 
@@ -156,7 +156,7 @@ git add .
 /plugin install feature-dev
 ```
 
-**7-Phase Structured Workflow**:
+<strong>7-Phase Structured Workflow</strong>:
 
 ```mermaid
 graph TD
@@ -168,7 +168,7 @@ graph TD
     F --> G["7. Summary<br/>Change summary and next steps"]
 ```
 
-**3 Specialized Agents**:
+<strong>3 Specialized Agents</strong>:
 
 | Agent              | Role                                                                                  |
 | ------------------ | ------------------------------------------------------------------------------------- |
@@ -182,7 +182,7 @@ graph TD
 # → Proceeds through 7 phases, user confirmation at each step
 ```
 
-**When to Use?**
+<strong>When to Use?</strong>
 
 - New features spanning multiple files
 - Complex tasks requiring architecture decisions
@@ -194,18 +194,18 @@ graph TD
 /plugin install code-review
 ```
 
-**How It Works**:
+<strong>How It Works</strong>:
 
 1. Auto-skips closed/draft/trivial/already-reviewed PRs
 2. Collects CLAUDE.md guideline files
-3. Runs **4 parallel agents**:
+3. Runs <strong>4 parallel agents</strong>:
    - Agent #1, #2: CLAUDE.md compliance (duplicate verification)
    - Agent #3: Bug detection (within PR change scope only)
    - Agent #4: Git blame history analysis
-4. Assigns **confidence score (0-100)** to each issue
-5. **Filters out scores below 80** (removes false positives)
+4. Assigns <strong>confidence score (0-100)</strong> to each issue
+5. <strong>Filters out scores below 80</strong> (removes false positives)
 
-**Confidence Score Criteria**:
+<strong>Confidence Score Criteria</strong>:
 
 | Score | Meaning                                   |
 | ----- | ----------------------------------------- |
@@ -223,7 +223,7 @@ graph TD
 /code-review --comment
 ```
 
-**Filtered False Positives**:
+<strong>Filtered False Positives</strong>:
 
 - Issues that existed before the PR
 - Issues linters can catch
@@ -236,7 +236,7 @@ graph TD
 /plugin install hookify
 ```
 
-**4 Commands Provided**:
+<strong>4 Commands Provided</strong>:
 
 | Command                    | Function                                                  |
 | -------------------------- | --------------------------------------------------------- |
@@ -245,7 +245,7 @@ graph TD
 | `/hookify:list`          | List active rules                                         |
 | `/hookify:configure`     | Enable/disable rules                                      |
 
-**Hook File Format** (`.claude/hookify.*.local.md`):
+<strong>Hook File Format</strong> (`.claude/hookify.*.local.md`):
 
 ```yaml
 ---
@@ -263,7 +263,7 @@ This command could delete important files.
 - Make sure you have backups
 ```
 
-**Event Types**:
+<strong>Event Types</strong>:
 
 - `bash`: On Bash command execution
 - `file`: On Edit/Write tool usage
@@ -283,18 +283,18 @@ This command could delete important files.
 /plugin install plugin-dev
 ```
 
-**8-Phase Plugin Creation Workflow**:
+<strong>8-Phase Plugin Creation Workflow</strong>:
 
-1. **Discovery**: Understand plugin purpose and requirements
-2. **Component Planning**: Decide on skills/commands/agents/hooks/MCP needed
-3. **Detailed Design**: Detailed design for each component
-4. **Structure Creation**: Create directories and manifest
-5. **Component Implementation**: AI-assisted implementation
-6. **Validation**: plugin-validator and component-specific checks
-7. **Testing**: Real-world testing in Claude Code
-8. **Documentation**: Finalize README and prepare for distribution
+1. <strong>Discovery</strong>: Understand plugin purpose and requirements
+2. <strong>Component Planning</strong>: Decide on skills/commands/agents/hooks/MCP needed
+3. <strong>Detailed Design</strong>: Detailed design for each component
+4. <strong>Structure Creation</strong>: Create directories and manifest
+5. <strong>Component Implementation</strong>: AI-assisted implementation
+6. <strong>Validation</strong>: plugin-validator and component-specific checks
+7. <strong>Testing</strong>: Real-world testing in Claude Code
+8. <strong>Documentation</strong>: Finalize README and prepare for distribution
 
-**7 Core Skills**:
+<strong>7 Core Skills</strong>:
 
 | Skill               | Trigger Keywords                   | Content                                      |
 | ------------------- | ---------------------------------- | -------------------------------------------- |
@@ -318,14 +318,14 @@ This command could delete important files.
 /plugin install frontend-design
 ```
 
-A skill that **auto-activates** during frontend work.
+A skill that <strong>auto-activates</strong> during frontend work.
 
-**Core Principles**:
+<strong>Core Principles</strong>:
 
-- **Bold aesthetic choices**: Avoid generic AI styles
-- **Distinctive typography and color palettes**
-- **High-impact animations and visual details**
-- **Context-aware implementation**
+- <strong>Bold aesthetic choices</strong>: Avoid generic AI styles
+- <strong>Distinctive typography and color palettes</strong>
+- <strong>High-impact animations and visual details</strong>
+- <strong>Context-aware implementation</strong>
 
 ```bash
 # Auto-activation examples
@@ -340,7 +340,7 @@ A skill that **auto-activates** during frontend work.
 /plugin install pr-review-toolkit
 ```
 
-**6 Specialized Agents**:
+<strong>6 Specialized Agents</strong>:
 
 - Comment reviewer
 - Test reviewer
@@ -359,7 +359,7 @@ A skill that **auto-activates** during frontend work.
 /plugin install security-guidance
 ```
 
-**9 Security Patterns Monitored**:
+<strong>9 Security Patterns Monitored</strong>:
 
 - Injection attacks
 - XSS (Cross-site scripting)
@@ -371,7 +371,7 @@ A skill that **auto-activates** during frontend work.
 - Weak cryptography
 - Authentication/authorization flaws
 
-Real-time warnings **before tool execution** via PreToolUse hook.
+Real-time warnings <strong>before tool execution</strong> via PreToolUse hook.
 
 ### Other Official Plugins
 
@@ -396,13 +396,13 @@ Real-time warnings **before tool execution** via PreToolUse hook.
 
 ### Key Plugins by Category (ccplugins)
 
-**Workflow Orchestration (8)**:
+<strong>Workflow Orchestration (8)</strong>:
 
 - `ultrathink`: Coordinator directing 4 specialized sub-agents
 - `lyra`: Master-level AI prompt optimization expert
 - `problem-solver-specialist`: Systematic problem solving
 
-**Code Quality & Testing (16)**:
+<strong>Code Quality & Testing (16)</strong>:
 
 - `bug-detective`: Step-by-step systematic debugging
 - `double-check`: Dual verification of changes
@@ -410,28 +410,28 @@ Real-time warnings **before tool execution** via PreToolUse hook.
 - `unit-test-generator`: Automatic unit test generation
 - `database-performance-optimizer`: DB performance optimization
 
-**Git Workflow (14)**:
+<strong>Git Workflow (14)</strong>:
 
 - `fix-github-issue`: Auto-fix based on GitHub issues
 - `create-pr`: PR creation automation
 - `update-branch-name`: Branch name convention enforcement
 - `husky`: Git hook setup
 
-**Documentation (8)**:
+<strong>Documentation (8)</strong>:
 
 - `analyze-codebase`: Comprehensive codebase analysis
 - `changelog-generator`: Auto-generate changelogs
 - `update-claudemd`: Auto-update CLAUDE.md
 - `openapi-expert`: OpenAPI spec expert
 
-**Security & Compliance (7)**:
+<strong>Security & Compliance (7)</strong>:
 
 - `audit`: Codebase security audit
 - `enterprise-security-reviewer`: Enterprise-grade security review
 - `legal-compliance-checker`: Legal compliance verification
 - `data-privacy-engineer`: Data privacy
 
-**Development Engineering (15)**:
+<strong>Development Engineering (15)</strong>:
 
 - `ai-engineer`: AI feature development specialist
 - `backend-architect`: Backend architecture design
@@ -440,20 +440,20 @@ Real-time warnings **before tool execution** via PreToolUse hook.
 
 ### kivilaid Marketplace Specialized Tools
 
-**Document Processing Suite**:
+<strong>Document Processing Suite</strong>:
 
 - `xlsx`: Excel generation with formulas and data visualization
 - `docx`: Word documents with change tracking and formatting
 - `pptx`: PowerPoint with layouts and templates
 - `pdf`: PDF extraction, merging, splitting, form processing
 
-**Creative & Design**:
+<strong>Creative & Design</strong>:
 
 - `algorithmic-art`: p5.js-based generative art
 - `canvas-design`: PNG/PDF visual art generation
 - `slack-gif-creator`: Animated GIFs for Slack
 
-**davila7 Toolkit (10)**:
+<strong>davila7 Toolkit (10)</strong>:
 
 - Git workflow, Supabase, Next.js/Vercel
 - Testing, security audit, AI/ML, DevOps
@@ -592,7 +592,7 @@ auto_invoke: true
 }
 ```
 
-**MCP Server Types**:
+<strong>MCP Server Types</strong>:
 
 - `stdio`: Local process (most common)
 - `sse`: Server-Sent Events (hosting/OAuth)
@@ -680,7 +680,7 @@ export API_KEY="sk-..."
 
 ## Summary
 
-The Claude Code plugin system provides a rich ecosystem of **13 official plugins** and **100+ community plugins**.
+The Claude Code plugin system provides a rich ecosystem of <strong>13 official plugins</strong> and <strong>100+ community plugins</strong>.
 
 `<strong>`Key Takeaways`</strong>`:
 

@@ -61,15 +61,15 @@ relatedPosts:
 
 ## 개요
 
-2024년 11월, Anthropic이 발표한 Model Context Protocol(MCP)은 AI 에이전트 개발의 패러다임을 완전히 바꾸었습니다. 기존에는 각 데이터 소스마다 별도의 통합 작업이 필요했지만, MCP는 **단일 프로토콜로 모든 데이터 소스와 AI를 연결**하는 표준을 제시했습니다.
+2024년 11월, Anthropic이 발표한 Model Context Protocol(MCP)은 AI 에이전트 개발의 패러다임을 완전히 바꾸었습니다. 기존에는 각 데이터 소스마다 별도의 통합 작업이 필요했지만, MCP는 <strong>단일 프로토콜로 모든 데이터 소스와 AI를 연결</strong>하는 표준을 제시했습니다.
 
-이 가이드에서는 Notion API MCP 서버와 Claude Code를 활용하여 **실제 업무에서 사용할 수 있는 자동화 파이프라인**을 구축하는 방법을 다룹니다. 단순한 이론이 아닌, 실무에서 검증된 접근법과 함께 **무엇이 가능하고 불가능한지**, 도입 시 얻을 수 있는 장점과 유의해야 할 점들을 명확히 제시합니다.
+이 가이드에서는 Notion API MCP 서버와 Claude Code를 활용하여 <strong>실제 업무에서 사용할 수 있는 자동화 파이프라인</strong>을 구축하는 방법을 다룹니다. 단순한 이론이 아닌, 실무에서 검증된 접근법과 함께 <strong>무엇이 가능하고 불가능한지</strong>, 도입 시 얻을 수 있는 장점과 유의해야 할 점들을 명확히 제시합니다.
 
 ## MCP(Model Context Protocol)란 무엇인가?
 
 ### 핵심 개념
 
-MCP는 **AI 어시스턴트와 데이터 소스를 연결하는 오픈 표준 프로토콜**입니다. Anthropic이 개발했으며, 다음과 같은 핵심 원칙을 기반으로 합니다:
+MCP는 <strong>AI 어시스턴트와 데이터 소스를 연결하는 오픈 표준 프로토콜</strong>입니다. Anthropic이 개발했으며, 다음과 같은 핵심 원칙을 기반으로 합니다:
 
 ```mermaid
 graph LR
@@ -78,37 +78,37 @@ graph LR
     C --> D[Data Source<br/>Notion]
 ```
 
-**기존 방식의 문제점:**
+<strong>기존 방식의 문제점:</strong>
 - 각 데이터 소스마다 커스텀 통합 코드 작성 필요
 - 일관성 없는 API 인터페이스
 - 유지보수 비용 증가
 - 확장성 부족
 
-**MCP가 해결하는 방법:**
-- **단일 프로토콜**: 한 번 구현하면 모든 MCP 호환 클라이언트에서 사용 가능
-- **양방향 통신**: 데이터 읽기뿐만 아니라 쓰기, 업데이트도 지원
-- **컨텍스트 유지**: AI가 여러 데이터 소스의 정보를 통합하여 이해
-- **오픈 표준**: 커뮤니티 기여로 지속적으로 발전
+<strong>MCP가 해결하는 방법:</strong>
+- <strong>단일 프로토콜</strong>: 한 번 구현하면 모든 MCP 호환 클라이언트에서 사용 가능
+- <strong>양방향 통신</strong>: 데이터 읽기뿐만 아니라 쓰기, 업데이트도 지원
+- <strong>컨텍스트 유지</strong>: AI가 여러 데이터 소스의 정보를 통합하여 이해
+- <strong>오픈 표준</strong>: 커뮤니티 기여로 지속적으로 발전
 
 ### MCP의 주요 구성 요소
 
 #### 1. MCP Hosts (클라이언트)
 AI 어플리케이션이 MCP 프로토콜을 사용하여 데이터에 접근:
-- **Claude Desktop**: Anthropic의 공식 데스크톱 앱
-- **Claude Code**: CLI 기반 AI 코딩 어시스턴트
-- **Zed, Replit, Codeium**: 서드파티 개발 도구
+- <strong>Claude Desktop</strong>: Anthropic의 공식 데스크톱 앱
+- <strong>Claude Code</strong>: CLI 기반 AI 코딩 어시스턴트
+- <strong>Zed, Replit, Codeium</strong>: 서드파티 개발 도구
 
 #### 2. MCP Servers
 데이터 소스를 MCP 프로토콜로 노출:
-- **로컬 서버**: 파일 시스템, SQLite, 로컬 데이터베이스
-- **원격 서버**: Notion, GitHub, Slack, Google Drive
-- **커스텀 서버**: 자체 개발한 비즈니스 로직
+- <strong>로컬 서버</strong>: 파일 시스템, SQLite, 로컬 데이터베이스
+- <strong>원격 서버</strong>: Notion, GitHub, Slack, Google Drive
+- <strong>커스텀 서버</strong>: 자체 개발한 비즈니스 로직
 
 #### 3. MCP Protocol
 표준화된 통신 규약:
-- **Resources**: 읽기 전용 데이터 (문서, 파일 등)
-- **Tools**: 실행 가능한 작업 (검색, 생성, 업데이트)
-- **Prompts**: 재사용 가능한 템플릿
+- <strong>Resources</strong>: 읽기 전용 데이터 (문서, 파일 등)
+- <strong>Tools</strong>: 실행 가능한 작업 (검색, 생성, 업데이트)
+- <strong>Prompts</strong>: 재사용 가능한 템플릿
 
 ## Notion API MCP로 가능한 것들
 
@@ -128,7 +128,7 @@ const tasks = await mcp.tools['notion:query-database']({
 });
 ```
 
-**실전 활용 사례:**
+<strong>실전 활용 사례:</strong>
 - 프로젝트 관리: 진행 중인 작업 자동 추적
 - 콘텐츠 달력: 발행 예정 콘텐츠 일정 조회
 - CRM: 고객 정보 및 상호작용 이력 검색
@@ -154,7 +154,7 @@ await mcp.tools['notion:create-page']({
 });
 ```
 
-**실전 활용 사례:**
+<strong>실전 활용 사례:</strong>
 - 자동 문서화: 코드 리뷰 결과를 Notion 페이지로 변환
 - 리포트 생성: 일일/주간 실적 자동 집계 및 기록
 - 온보딩 자동화: 신규 팀원용 문서 자동 생성
@@ -177,7 +177,7 @@ await mcp.tools['notion:append-block-children']({
 });
 ```
 
-**실전 활용 사례:**
+<strong>실전 활용 사례:</strong>
 - 기술 문서 업데이트: 코드 예제 자동 동기화
 - 학습 자료 관리: 튜토리얼에 실습 코드 추가
 - 체크리스트 생성: 배포 절차 자동화
@@ -193,7 +193,7 @@ const results = await mcp.tools['notion:search']({
 });
 ```
 
-**실전 활용 사례:**
+<strong>실전 활용 사례:</strong>
 - 지식 베이스: 관련 문서 자동 찾기
 - 중복 제거: 유사한 콘텐츠 식별
 - 태그 기반 조직화: 주제별 자료 분류
@@ -201,42 +201,42 @@ const results = await mcp.tools['notion:search']({
 ## Notion API MCP로 불가능한 것들
 
 ### 1. 실시간 협업 기능
-**제약사항:**
+<strong>제약사항:</strong>
 - Notion의 실시간 편집 세션 참여 불가
 - 커서 위치, 선택 영역 등 실시간 상태 접근 불가
 - 동시 편집 충돌 해결 미지원
 
-**대안:**
+<strong>대안:</strong>
 - 폴링(polling) 방식으로 주기적 업데이트 확인
 - Webhook을 통한 변경 알림 (별도 설정 필요)
 
 ### 2. 복잡한 레이아웃 조작
-**제약사항:**
+<strong>제약사항:</strong>
 - Notion의 비주얼 레이아웃 편집기 기능 미지원
 - 컬럼, 토글, 싱크 블록 등 고급 레이아웃 제한적
 - 임베드, 북마크 등 일부 블록 타입 읽기 전용
 
-**대안:**
+<strong>대안:</strong>
 - 기본 블록 타입(헤딩, 단락, 리스트)으로 구조화
 - 템플릿 페이지 미리 생성 후 내용만 채우기
 
 ### 3. 권한 및 공유 관리
-**제약사항:**
+<strong>제약사항:</strong>
 - 페이지 권한 설정 API 제한적
 - 워크스페이스 멤버 관리 불가
 - 외부 공유 링크 세부 설정 미지원
 
-**대안:**
+<strong>대안:</strong>
 - 사전에 권한 구조 설계
 - Notion 관리자 대시보드에서 수동 설정
 
 ### 4. 파일 첨부 및 미디어 처리
-**제약사항:**
+<strong>제약사항:</strong>
 - 파일 직접 업로드는 외부 URL 방식만 지원
 - Notion 내부 스토리지 직접 접근 불가
 - 이미지 편집, 크롭 등 미디어 처리 불가
 
-**대안:**
+<strong>대안:</strong>
 - 외부 스토리지(S3, Cloudflare R2) 활용
 - 공개 URL로 이미지 참조
 
@@ -263,14 +263,14 @@ Claude Code는 `.mcp.json` 파일로 MCP 서버를 설정합니다:
 }
 ```
 
-**환경 변수 설정:**
+<strong>환경 변수 설정:</strong>
 
 ```bash
 # .env 파일
 NOTION_API_KEY=secret_xxxxxxxxxxxxxxxxxxxxx
 ```
 
-**권한 구성:**
+<strong>권한 구성:</strong>
 Claude Code는 `.claude/settings.local.json`에서 MCP 도구 권한을 관리합니다:
 
 ```json
@@ -288,7 +288,7 @@ Claude Code는 `.claude/settings.local.json`에서 MCP 도구 권한을 관리�
 
 #### 예제: 블로그 아이디어 관리 자동화
 
-**시나리오**: Notion 데이터베이스에서 "작성 대기" 상태의 블로그 아이디어를 가져와 자동으로 초안을 생성합니다.
+<strong>시나리오</strong>: Notion 데이터베이스에서 "작성 대기" 상태의 블로그 아이디어를 가져와 자동으로 초안을 생성합니다.
 
 ```typescript
 // 1. Notion에서 아이디어 조회
@@ -395,7 +395,7 @@ Claude Code의 서브에이전트 기능을 활용하여 전문화된 자동화�
 4. 동기화 실행 및 로그 기록
 ```
 
-**사용 예시:**
+<strong>사용 예시:</strong>
 
 ```bash
 # Claude Code에서 서브에이전트 호출
@@ -406,7 +406,7 @@ Claude Code의 서브에이전트 기능을 활용하여 전문화된 자동화�
 
 ### 1. 개발 생산성 극대화
 
-**기존 방식:**
+<strong>기존 방식:</strong>
 ```typescript
 // 각 API마다 별도 클라이언트 학습 및 구현
 const notionClient = new NotionClient(apiKey);
@@ -415,7 +415,7 @@ const slackClient = new WebClient(slackToken);
 // ... 각각 다른 방식으로 통합
 ```
 
-**MCP 방식:**
+<strong>MCP 방식:</strong>
 ```typescript
 // 단일 인터페이스로 모든 데이터 소스 접근
 await mcp.tools['notion:create-page']({ ... });
@@ -423,16 +423,16 @@ await mcp.tools['github:create-issue']({ ... });
 await mcp.tools['slack:send-message']({ ... });
 ```
 
-**측정 가능한 효과:**
-- 통합 개발 시간 **60-70% 단축**
-- 코드 유지보수 비용 **50% 감소**
-- 버그 발생률 **40% 감소** (표준화된 인터페이스)
+<strong>측정 가능한 효과:</strong>
+- 통합 개발 시간 <strong>60-70% 단축</strong>
+- 코드 유지보수 비용 <strong>50% 감소</strong>
+- 버그 발생률 <strong>40% 감소</strong> (표준화된 인터페이스)
 
 ### 2. AI 컨텍스트 품질 향상
 
-MCP는 AI가 **여러 데이터 소스의 정보를 통합하여 이해**할 수 있게 합니다:
+MCP는 AI가 <strong>여러 데이터 소스의 정보를 통합하여 이해</strong>할 수 있게 합니다:
 
-**시나리오**: 프로젝트 현황 리포트 작성
+<strong>시나리오</strong>: 프로젝트 현황 리포트 작성
 ```
 1. GitHub에서 PR 및 이슈 현황 조회
 2. Notion 프로젝트 관리 DB에서 마일스톤 확인
@@ -440,11 +440,11 @@ MCP는 AI가 **여러 데이터 소스의 정보를 통합하여 이해**할 수
 4. 통합 리포트를 Notion 페이지로 생성
 ```
 
-기존에는 각 단계를 수동으로 실행했지만, MCP로 **하나의 AI 워크플로우**에서 처리 가능합니다.
+기존에는 각 단계를 수동으로 실행했지만, MCP로 <strong>하나의 AI 워크플로우</strong>에서 처리 가능합니다.
 
 ### 3. 확장성과 재사용성
 
-**MCP 서버는 한 번 구현하면 모든 클라이언트에서 재사용:**
+<strong>MCP 서버는 한 번 구현하면 모든 클라이언트에서 재사용:</strong>
 
 ```
 [Your Custom MCP Server]
@@ -458,7 +458,7 @@ MCP는 AI가 **여러 데이터 소스의 정보를 통합하여 이해**할 수
 
 ### 4. 오픈소스 생태계의 이점
 
-**커뮤니티 기여로 지속적 발전:**
+<strong>커뮤니티 기여로 지속적 발전:</strong>
 - [MCP Servers Repository](https://github.com/modelcontextprotocol/servers): 100+ 공식 서버
 - 활발한 커뮤니티: Discord, GitHub Discussions
 - 빠른 버그 수정 및 기능 추가
@@ -725,7 +725,7 @@ await automation.run();
 
 ## 결론
 
-Model Context Protocol과 Claude Code를 활용한 AI 에이전트 시스템은 **이론이 아닌 실무에서 즉시 적용 가능한 기술**입니다. Notion API MCP 통합을 통해 다음을 실현할 수 있습니다:
+Model Context Protocol과 Claude Code를 활용한 AI 에이전트 시스템은 <strong>이론이 아닌 실무에서 즉시 적용 가능한 기술</strong>입니다. Notion API MCP 통합을 통해 다음을 실현할 수 있습니다:
 
 ### 가능한 것
 ✅ 데이터베이스 CRUD 자동화
@@ -742,13 +742,13 @@ Model Context Protocol과 Claude Code를 활용한 AI 에이전트 시스템은 
 
 ### 시작하기
 
-1. **MCP 기초 학습**: [공식 문서](https://docs.claude.com/en/docs/claude-code/mcp) 참고
-2. **Notion Integration 생성**: Notion에서 API 키 발급
-3. **Claude Code 설정**: `.mcp.json`에 Notion 서버 추가
-4. **작은 프로젝트로 시작**: 단순한 자동화부터 점진적 확장
-5. **커뮤니티 참여**: GitHub, Discord에서 경험 공유
+1. <strong>MCP 기초 학습</strong>: [공식 문서](https://docs.claude.com/en/docs/claude-code/mcp) 참고
+2. <strong>Notion Integration 생성</strong>: Notion에서 API 키 발급
+3. <strong>Claude Code 설정</strong>: `.mcp.json`에 Notion 서버 추가
+4. <strong>작은 프로젝트로 시작</strong>: 단순한 자동화부터 점진적 확장
+5. <strong>커뮤니티 참여</strong>: GitHub, Discord에서 경험 공유
 
-MCP는 단순히 새로운 기술이 아니라, **AI와 데이터 소스 통합의 표준**이 되어가고 있습니다. 지금 시작하여 자동화 파이프라인을 구축하고, AI 에이전트의 진정한 잠재력을 경험해보시기 바랍니다.
+MCP는 단순히 새로운 기술이 아니라, <strong>AI와 데이터 소스 통합의 표준</strong>이 되어가고 있습니다. 지금 시작하여 자동화 파이프라인을 구축하고, AI 에이전트의 진정한 잠재력을 경험해보시기 바랍니다.
 
 ## 참고 자료
 

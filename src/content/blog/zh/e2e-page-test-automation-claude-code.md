@@ -74,14 +74,14 @@ Web 开发者在页面开发完成后，花多少时间进行质量验证？跨�
 
 | 优先级 | 测试项目 | 说明 |
 |--------|---------|------|
-| **P0** | 跨浏览器 | Chromium、Firefox、WebKit 同时测试 |
-| **P0** | 链接完整性 | 所有链接的 HTTP 状态码验证 |
-| **P0** | 无障碍 (a11y) | WCAG 2.1 AA 级合规确认 |
-| **P0** | 移动端响应式 | 各视口布局验证 |
-| **P1** | 图片优化 | 渲染尺寸 vs 原始尺寸比较 |
-| **P1** | SEO 验证 | 元标签、OG、结构化数据确认 |
-| **P1** | UI/UX | 字体大小、触摸目标验证 |
-| **P2** | 内容质量 | 语言设置、标题结构确认 |
+| <strong>P0</strong> | 跨浏览器 | Chromium、Firefox、WebKit 同时测试 |
+| <strong>P0</strong> | 链接完整性 | 所有链接的 HTTP 状态码验证 |
+| <strong>P0</strong> | 无障碍 (a11y) | WCAG 2.1 AA 级合规确认 |
+| <strong>P0</strong> | 移动端响应式 | 各视口布局验证 |
+| <strong>P1</strong> | 图片优化 | 渲染尺寸 vs 原始尺寸比较 |
+| <strong>P1</strong> | SEO 验证 | 元标签、OG、结构化数据确认 |
+| <strong>P1</strong> | UI/UX | 字体大小、触摸目标验证 |
+| <strong>P2</strong> | 内容质量 | 语言设置、标题结构确认 |
 
 ## 架构
 
@@ -264,9 +264,9 @@ const screenshot = await mcp_chrome_devtools_take_screenshot({
 <summary><strong>查看完整测试报告</strong></summary>
 
 ### 测试环境
-- **测试时间**: 2024-11-24 09:56:25
-- **目标 URL**: https://jangwook.net/en/
-- **浏览器**: Chromium (Playwright)
+- <strong>测试时间</strong>: 2024-11-24 09:56:25
+- <strong>目标 URL</strong>: https://jangwook.net/en/
+- <strong>浏览器</strong>: Chromium (Playwright)
 
 ### 1. 跨浏览器测试 ✅
 
@@ -280,7 +280,7 @@ const screenshot = await mcp_chrome_devtools_take_screenshot({
 
 ### 3. 无障碍 (a11y) 检查 ⚠️
 
-**触摸目标尺寸未达标（20个）**
+<strong>触摸目标尺寸未达标（20个）</strong>
 
 低于 WCAG 推荐最小尺寸 44×44px 的元素：
 - 导航链接（当前高度: 36px）
@@ -295,7 +295,7 @@ const screenshot = await mcp_chrome_devtools_take_screenshot({
 
 ### 5. 图片优化检查 ⚠️
 
-**发现6张过大图片**
+<strong>发现6张过大图片</strong>
 
 | 图片 | 原始尺寸 | 渲染尺寸 | 可节省 |
 |------|---------|---------|--------|
@@ -324,13 +324,13 @@ const screenshot = await mcp_chrome_devtools_take_screenshot({
 
 ### 发现的主要问题
 
-**1. 图片优化问题**
+<strong>1. 图片优化问题</strong>
 
 ```
 hero-image.webp: 600×600px → 382×192px（约可减少75%）
 ```
 
-**解决方案：**
+<strong>解决方案：</strong>
 ```html
 <img
   srcset="hero-400w.webp 400w, hero-800w.webp 800w"
@@ -340,7 +340,7 @@ hero-image.webp: 600×600px → 382×192px（约可减少75%）
   loading="lazy">
 ```
 
-**2. 触摸目标尺寸未达标**
+<strong>2. 触摸目标尺寸未达标</strong>
 
 WCAG 推荐的最小尺寸为 44×44px。当前导航链接高度为 36px，不足。
 

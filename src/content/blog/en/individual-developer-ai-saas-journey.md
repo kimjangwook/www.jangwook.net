@@ -83,7 +83,7 @@ The differentiation point as an individual developer: <strong>Structured data ex
 
 Reasons for choosing SvelteKit instead of Next.js:
 
-**1. Svelte 5's Innovative Reactivity System**
+<strong>1. Svelte 5's Innovative Reactivity System</strong>
 
 ```typescript
 // Svelte 5 Runes: $state and $derived
@@ -93,13 +93,13 @@ let doubled = $derived(count * 2);
 // More intuitive than React hooks, less boilerplate
 ```
 
-**2. Bundle Size and Performance**
+<strong>2. Bundle Size and Performance</strong>
 
 - Svelte removes framework code at compile time
 - Client bundle 40% smaller than React
 - Noticeably faster Time to Interactive
 
-**3. Developer Experience**
+<strong>3. Developer Experience</strong>
 
 - Low learning curve, readable code
 - Excellent TypeScript support
@@ -109,7 +109,7 @@ let doubled = $derived(count * 2);
 
 Supabase instead of Firebase:
 
-**1. PostgreSQL Power**
+<strong>1. PostgreSQL Power</strong>
 
 ```sql
 -- Multi-tenant implementation with Row Level Security
@@ -118,14 +118,14 @@ ON credits FOR SELECT
 USING (auth.uid() = user_id);
 ```
 
-**2. Integrated Features**
+<strong>2. Integrated Features</strong>
 
 - Auth: Email/social login ready to use
 - Database: PostgreSQL with real-time subscriptions
 - Storage: File upload and CDN
 - Edge Functions: Serverless functions (Deno-based)
 
-**3. Open Source and Pricing**
+<strong>3. Open Source and Pricing</strong>
 
 - Fully open source (self-hosting possible)
 - Generous free tier (50,000 MAU, 500MB DB)
@@ -135,7 +135,7 @@ USING (auth.uid() = user_id);
 
 Gemini instead of OpenAI GPT:
 
-**1. Cost Efficiency**
+<strong>1. Cost Efficiency</strong>
 
 ```
 Gemini 2.5 Flash:
@@ -149,7 +149,7 @@ GPT-4 Turbo:
 → ~100x cheaper
 ```
 
-**2. Structured Output Support**
+<strong>2. Structured Output Support</strong>
 
 ```typescript
 const responseSchema = {
@@ -183,20 +183,20 @@ const result = await model.generateContent({
 });
 ```
 
-**3. Multimodal Performance**
+<strong>3. Multimodal Performance</strong>
 
 - Excellent image OCR quality (OmniDocBench benchmark #1)
 - Strong at handling complex layouts like passports and receipts
 
 ### Why Vercel for Deployment
 
-**1. SvelteKit Optimization**
+<strong>1. SvelteKit Optimization</strong>
 
 - Direct support from Vercel, creators of SvelteKit
 - Automatic SSR/Edge Function deployment
 - Fast deployment with build caching
 
-**2. Serverless Architecture**
+<strong>2. Serverless Architecture</strong>
 
 - API routes automatically deploy as serverless functions
 - Usage-based billing (minimal cost with no traffic)
@@ -206,7 +206,7 @@ const result = await model.generateContent({
 
 ### 1. OCR API with Structured Output
 
-**Actual code** (`src/routes/api/receipt-ocr/+server.ts`):
+<strong>Actual code</strong> (`src/routes/api/receipt-ocr/+server.ts`):
 
 ```typescript
 import { GoogleGenerativeAI, SchemaType as Type } from '@google/generative-ai';
@@ -284,7 +284,7 @@ const parsedData = JSON.parse(result.response.text());
 // parsedData is already a type-safe object complying with schema
 ```
 
-**Key advantages**:
+<strong>Key advantages</strong>:
 
 - <strong>Type safety</strong>: Schema enforces response structure
 - <strong>No parsing errors</strong>: JSON parsing failures almost eliminated
@@ -292,7 +292,7 @@ const parsedData = JSON.parse(result.response.text());
 
 ### 2. Credit System
 
-**Stripe Checkout Integration**:
+<strong>Stripe Checkout Integration</strong>:
 
 ```typescript
 // src/routes/agents/credits/+page.server.ts
@@ -343,7 +343,7 @@ export const actions = {
 };
 ```
 
-**Credit Grant via Webhook**:
+<strong>Credit Grant via Webhook</strong>:
 
 ```typescript
 // src/routes/api/webhooks/stripe/+server.ts
@@ -379,7 +379,7 @@ export const POST = async ({ request }) => {
 
 ### 3. API Authentication
 
-**API Key Issuance and Validation**:
+<strong>API Key Issuance and Validation</strong>:
 
 ```typescript
 // API key creation
@@ -442,7 +442,7 @@ async function checkAndDeductCredits(userId: string, amount: number) {
 
 ### 4. Multi-language Support
 
-**i18n with Paraglide**:
+<strong>i18n with Paraglide</strong>:
 
 ```typescript
 // src/lib/i18n.ts
@@ -457,7 +457,7 @@ export const i18n = paraglide({
 // Supported languages: ko, en, ja, zh, es
 ```
 
-**Language-based Routing**:
+<strong>Language-based Routing</strong>:
 
 ```typescript
 // src/routes/[lang]/+layout.server.ts
@@ -473,7 +473,7 @@ export const load = async ({ params }) => {
 
 ## Token Usage Tracking and Cost Optimization
 
-**Real-time Token Monitoring**:
+<strong>Real-time Token Monitoring</strong>:
 
 ```typescript
 const result = await model.generateContent({...});
@@ -520,7 +520,7 @@ function calculateCost(usage) {
 
 ### SEO/AEO-Driven Acquisition
 
-**Content Marketing Strategy**:
+<strong>Content Marketing Strategy</strong>:
 
 1. <strong>Leverage jangwook.net Blog</strong>
    - Build brand credibility through technical blog
@@ -539,7 +539,7 @@ function calculateCost(usage) {
 
 ### 3-Month KPI Targets
 
-**Realistic Solo Developer Goals**:
+<strong>Realistic Solo Developer Goals</strong>:
 
 | Metric | Target | Measurement |
 |--------|--------|-------------|
@@ -549,7 +549,7 @@ function calculateCost(usage) {
 | MRR | ¥30,000 | Stripe subscriptions |
 | OCR API Calls | 1,000 | api_usage table |
 
-**Why These Numbers?**
+<strong>Why These Numbers?</strong>
 
 - 500 visitors → Realistic with SEO
 - 6% conversion (30/500) → B2B SaaS average
@@ -560,18 +560,18 @@ function calculateCost(usage) {
 
 ### Day 1 (2025-11-24): Foundation
 
-**Completed**:
+<strong>Completed</strong>:
 - Project initialization (SvelteKit + TypeScript)
 - Supabase integration (Auth + Database)
 - First service: Receipt OCR for Tax Refund
 - Passport + tax refund document auto-recognition
 - Structured Output schema validation
 
-**Code written**: ~800 lines
+<strong>Code written</strong>: ~800 lines
 
 ### Day 2 (2025-11-25): Payment & Second Service
 
-**Completed**:
+<strong>Completed</strong>:
 - Accounting OCR service added
 - Stripe Checkout integration
 - Credit system implementation
@@ -582,26 +582,26 @@ function calculateCost(usage) {
   - Terms of Service
 - Google Analytics integration
 
-**Code written**: ~1,200 lines
+<strong>Code written</strong>: ~1,200 lines
 
 ### Day 3 (2025-11-26): Polish & Launch
 
-**Completed**:
+<strong>Completed</strong>:
 - Service description pages
 - API documentation
 - Landing page optimization
 - Production deployment (Vercel)
 - DNS setup
 
-**Code written**: ~600 lines
+<strong>Code written</strong>: ~600 lines
 
-**Total**: 3 days, ~2,600 lines of code
+<strong>Total</strong>: 3 days, ~2,600 lines of code
 
 ## Lessons Learned
 
 ### 1. SvelteKit 5 Reactivity is a Game Changer
 
-**Before (React hooks)**:
+<strong>Before (React hooks)</strong>:
 
 ```typescript
 const [credits, setCredits] = useState(0);
@@ -612,7 +612,7 @@ useEffect(() => {
 }, [credits]);
 ```
 
-**After (Svelte 5 runes)**:
+<strong>After (Svelte 5 runes)</strong>:
 
 ```typescript
 let credits = $state(0);
@@ -620,14 +620,14 @@ let doubled = $derived(credits * 2);
 // Automatic reactivity, no useEffect needed
 ```
 
-**Realized benefits**:
+<strong>Realized benefits</strong>:
 - 70% reduction in boilerplate code
 - Easier debugging (no explicit dependencies)
 - Performance improvement (no unnecessary re-renders)
 
 ### 2. Supabase RLS Makes Multi-tenant Easy
 
-**Row Level Security Policies**:
+<strong>Row Level Security Policies</strong>:
 
 ```sql
 -- Each user can only view their own credits
@@ -641,14 +641,14 @@ ON credits FOR INSERT
 USING (auth.role() = 'service_role');
 ```
 
-**Benefits**:
+<strong>Benefits</strong>:
 - No permission checks needed in application code
 - Data isolation guaranteed at SQL level
 - Security vulnerabilities fundamentally blocked
 
 ### 3. Gemini API Cost Optimization
 
-**Prompt Optimization**:
+<strong>Prompt Optimization</strong>:
 
 ```typescript
 // Before: Long prompt
@@ -667,7 +667,7 @@ const prompt = `Extract receipt data as JSON:
 // Cost savings: 83%
 ```
 
-**Image Size Optimization**:
+<strong>Image Size Optimization</strong>:
 
 ```typescript
 // Resize images to max 1024px
@@ -683,7 +683,7 @@ const optimized = await sharp(imageBuffer)
 
 ### 4. Solo Developer Productivity Tips
 
-**Methods to maximize productivity**:
+<strong>Methods to maximize productivity</strong>:
 
 1. <strong>Local Development with Supabase CLI</strong>
    ```bash

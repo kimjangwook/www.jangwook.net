@@ -59,7 +59,7 @@ relatedPosts:
 
 # Automating Blog Analytics with Google Analytics MCP and AI Agents
 
-When running a blog, the most crucial question is: "How well is my content performing?" While Google Analytics is a powerful tool, manually logging into dashboards to check and analyze data can be tedious. This guide shows you how to completely automate blog analytics using **Model Context Protocol (MCP)** and **AI agents**.
+When running a blog, the most crucial question is: "How well is my content performing?" While Google Analytics is a powerful tool, manually logging into dashboards to check and analyze data can be tedious. This guide shows you how to completely automate blog analytics using <strong>Model Context Protocol (MCP)</strong> and <strong>AI agents</strong>.
 
 This guide provides step-by-step instructions for an analytics automation system applied to a live blog, complete with ready-to-use code and query examples.
 
@@ -69,18 +69,18 @@ This guide provides step-by-step instructions for an analytics automation system
 
 Google Analytics dashboards provide tons of data, but extracting actionable insights requires multiple steps:
 
-1. **Manual Data Collection**: Logging into dashboards and finding the metrics you need
-2. **Complex Query Writing**: Understanding GA's complex interface to create custom reports
-3. **Repetitive Tasks**: Repeating the same process for weekly/monthly reports
-4. **Lack of Insights**: You see numbers, but not answers to "what should I do next?"
+1. <strong>Manual Data Collection</strong>: Logging into dashboards and finding the metrics you need
+2. <strong>Complex Query Writing</strong>: Understanding GA's complex interface to create custom reports
+3. <strong>Repetitive Tasks</strong>: Repeating the same process for weekly/monthly reports
+4. <strong>Lack of Insights</strong>: You see numbers, but not answers to "what should I do next?"
 
 ### The MCP and AI Agent Solution
 
-**Model Context Protocol (MCP)** is a standard protocol that enables AI to communicate with external data sources. Using Google Analytics MCP:
+<strong>Model Context Protocol (MCP)</strong> is a standard protocol that enables AI to communicate with external data sources. Using Google Analytics MCP:
 
-- **Natural Language Queries**: Ask "What were the most popular posts last week?" and get instant answers
-- **Automated Analysis**: AI agents regularly analyze data and generate reports
-- **Actionable Insights**: Not just numbers, but recommendations on "what to write next"
+- <strong>Natural Language Queries</strong>: Ask "What were the most popular posts last week?" and get instant answers
+- <strong>Automated Analysis</strong>: AI agents regularly analyze data and generate reports
+- <strong>Actionable Insights</strong>: Not just numbers, but recommendations on "what to write next"
 
 ## What is Google Analytics MCP?
 
@@ -101,10 +101,10 @@ MCP is a standardized communication protocol between AI models and data sources.
 
 Google Analytics MCP provides:
 
-- **Report Queries**: Access various metrics and dimensions via GA4 Data API
-- **Real-time Data**: Live visitor counts and event tracking
-- **Custom Queries**: Request complex filters and segments in natural language
-- **Automatic Analysis**: AI performs trend analysis, comparisons, etc.
+- <strong>Report Queries</strong>: Access various metrics and dimensions via GA4 Data API
+- <strong>Real-time Data</strong>: Live visitor counts and event tracking
+- <strong>Custom Queries</strong>: Request complex filters and segments in natural language
+- <strong>Automatic Analysis</strong>: AI performs trend analysis, comparisons, etc.
 
 ## Installation and Setup
 
@@ -121,7 +121,7 @@ First, install the Google Analytics MCP server. This is a standalone server you 
 
 To use the Google Analytics API, you need a Google Cloud project:
 
-**Step-by-step setup:**
+<strong>Step-by-step setup:</strong>
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com)
 2. Create a new project or select an existing one
@@ -141,7 +141,7 @@ gcloud iam service-accounts keys create ~/credentials/ga-credentials.json \
   --iam-account=ga-mcp-reader@PROJECT_ID.iam.gserviceaccount.com
 ```
 
-**Important**: Replace `PROJECT_ID` with your actual Google Cloud project ID.
+<strong>Important</strong>: Replace `PROJECT_ID` with your actual Google Cloud project ID.
 
 ### 3. Google Analytics Permissions
 
@@ -150,10 +150,10 @@ Grant the service account read access to your GA4 property:
 1. GA4 Property → Admin → Property Access Management
 2. Click "+" button in top right
 3. Enter service account email address (e.g., `ga-mcp-reader@PROJECT_ID.iam.gserviceaccount.com`)
-4. Role: Select **Viewer**
+4. Role: Select <strong>Viewer</strong>
 5. Click Add
 
-**Security Tip**: Grant read-only permissions to prevent data modification.
+<strong>Security Tip</strong>: Grant read-only permissions to prevent data modification.
 
 ### 4. Claude Code MCP Configuration
 
@@ -173,9 +173,9 @@ Create or modify the `.mcp.json` file in your project root:
 }
 ```
 
-**Important**: Update the `GOOGLE_APPLICATION_CREDENTIALS` path to your actual service account key file location.
+<strong>Important</strong>: Update the `GOOGLE_APPLICATION_CREDENTIALS` path to your actual service account key file location.
 
-**Security Note**:
+<strong>Security Note</strong>:
 
 ```bash
 # Must add credentials folder to .gitignore
@@ -200,7 +200,7 @@ Once setup is complete, you can immediately run these queries. These provide ess
 
 ### 1. Real-time Activity Check
 
-**See what's happening on your blog right now:**
+<strong>See what's happening on your blog right now:</strong>
 
 ```javascript
 mcp__analytics -
@@ -211,7 +211,7 @@ mcp__analytics -
   });
 ```
 
-**What you'll learn:**
+<strong>What you'll learn:</strong>
 
 - Current number of active users
 - Which pages they're viewing
@@ -219,7 +219,7 @@ mcp__analytics -
 
 ### 2. Last 7 Days Summary
 
-**Understand weekly traffic trends:**
+<strong>Understand weekly traffic trends:</strong>
 
 ```javascript
 mcp__analytics -
@@ -239,7 +239,7 @@ mcp__analytics -
   });
 ```
 
-**How to use:**
+<strong>How to use:</strong>
 
 - Track daily traffic changes
 - Analyze day-of-week patterns (weekend vs weekday)
@@ -247,7 +247,7 @@ mcp__analytics -
 
 ### 3. Top 10 Content (Last 30 Days)
 
-**See which posts got the most readers:**
+<strong>See which posts got the most readers:</strong>
 
 ```javascript
 mcp__analytics -
@@ -271,7 +271,7 @@ mcp__analytics -
   });
 ```
 
-**Insights:**
+<strong>Insights:</strong>
 
 - Analyze Top 10 posts → Expand similar topics
 - Posts with high engagement time → Quality benchmarks
@@ -279,7 +279,7 @@ mcp__analytics -
 
 ### 4. Traffic Source Analysis
 
-**Understand where visitors come from:**
+<strong>Understand where visitors come from:</strong>
 
 ```javascript
 mcp__analytics -
@@ -293,7 +293,7 @@ mcp__analytics -
   });
 ```
 
-**Strategy development:**
+<strong>Strategy development:</strong>
 
 - Organic Search percentage → Measure SEO effectiveness
 - Social traffic → Which platforms are effective
@@ -302,7 +302,7 @@ mcp__analytics -
 
 ### 5. Geographic Distribution
 
-**Check global reach:**
+<strong>Check global reach:</strong>
 
 ```javascript
 mcp__analytics -
@@ -316,7 +316,7 @@ mcp__analytics -
   });
 ```
 
-**Multilingual blog strategy:**
+<strong>Multilingual blog strategy:</strong>
 
 - Korean content → Check Korean reader ratio
 - English content → Analyze US, India, European readers
@@ -324,7 +324,7 @@ mcp__analytics -
 
 ### 6. Device & Browser Breakdown
 
-**Understand user environment:**
+<strong>Understand user environment:</strong>
 
 ```javascript
 mcp__analytics -
@@ -337,7 +337,7 @@ mcp__analytics -
   });
 ```
 
-**UX optimization:**
+<strong>UX optimization:</strong>
 
 - Mobile ratio 50%+ → Prioritize mobile optimization
 - High bounce rate on specific browser → Check compatibility issues
@@ -345,7 +345,7 @@ mcp__analytics -
 
 ### 7. New vs Returning Visitors
 
-**Check if building loyal readership:**
+<strong>Check if building loyal readership:</strong>
 
 ```javascript
 mcp__analytics -
@@ -362,7 +362,7 @@ mcp__analytics -
   });
 ```
 
-**Goal setting:**
+<strong>Goal setting:</strong>
 
 - New visitor ratio 60-70% → Growing
 - Returning visitor ratio 30-40% → Good loyalty
@@ -370,7 +370,7 @@ mcp__analytics -
 
 ### 8. Landing Page Analysis
 
-**Optimize entry points:**
+<strong>Optimize entry points:</strong>
 
 ```javascript
 mcp__analytics -
@@ -384,13 +384,13 @@ mcp__analytics -
   });
 ```
 
-**SEO insights:**
+<strong>SEO insights:</strong>
 
 - High search traffic landing pages → Keyword analysis
 - High bounce rate landing pages → Suspect content-title mismatch
 - Long session time landing pages → Add internal links to related posts
 
-**Tip**: Change the `property_id` in each query to your GA4 property ID. You can find it in the GA4 Admin page.
+<strong>Tip</strong>: Change the `property_id` in each query to your GA4 property ID. You can find it in the GA4 Admin page.
 
 ## Building AI Agent-Based Analytics System
 
@@ -454,9 +454,9 @@ Always structure reports as:
 
 Now you can use this agent to generate automatic reports. For example:
 
-**Question**: "Analyze blog traffic for the past 7 days and provide insights"
+<strong>Question</strong>: "Analyze blog traffic for the past 7 days and provide insights"
 
-**AI Response Example**:
+<strong>AI Response Example</strong>:
 
 ```
 ## Weekly Traffic Analysis Report (Oct 28 - Nov 3, 2025)
@@ -582,7 +582,7 @@ if (require.main === module) {
 module.exports = { dailySnapshot };
 ```
 
-**How to run:**
+<strong>How to run:</strong>
 
 ```bash
 # Manual execution
@@ -615,7 +615,7 @@ Google Analytics Data API has daily quotas:
 - Default: 25,000 requests per day
 - 10 requests per second per project
 
-**Optimization tips:**
+<strong>Optimization tips:</strong>
 
 ```typescript
 // Use caching
@@ -641,13 +641,13 @@ async function fetchWithCache(query, ttl = 3600) {
 
 Give clear instructions to AI agents:
 
-**Bad example**:
+<strong>Bad example</strong>:
 
 ```
 "Analyze the blog"
 ```
 
-**Good example**:
+<strong>Good example</strong>:
 
 ```
 "Analyze the past 30 days of data:
@@ -663,9 +663,9 @@ Format results as a Markdown table."
 
 ### Authentication Errors
 
-**Issue**: "Permission denied" or "Invalid credentials"
+<strong>Issue</strong>: "Permission denied" or "Invalid credentials"
 
-**Solutions**:
+<strong>Solutions</strong>:
 
 1. Verify service account key path
 2. Check service account permissions in GA property
@@ -676,15 +676,15 @@ Format results as a Markdown table."
 
 ### Data Discrepancies
 
-**Issue**: MCP results differ from GA UI
+<strong>Issue</strong>: MCP results differ from GA UI
 
-**Causes**:
+<strong>Causes</strong>:
 
 - Timezone differences (GA UI uses property timezone, API defaults to UTC)
 - Sampling (occurs with large datasets)
 - Filter differences
 
-**Solution**:
+<strong>Solution</strong>:
 
 ```typescript
 // Specify timezone
@@ -700,9 +700,9 @@ Format results as a Markdown table."
 
 ### Performance Issues
 
-**Issue**: Queries are too slow
+<strong>Issue</strong>: Queries are too slow
 
-**Optimizations**:
+<strong>Optimizations</strong>:
 
 1. Request only necessary dimensions/metrics
 2. Limit date ranges
@@ -720,26 +720,26 @@ Combining Google Analytics MCP with AI agents completely transforms blog managem
 
 ### Expected Benefits
 
-1. **Time Savings**: Invest time saved from manual analysis into content creation
-2. **Better Insights**: AI discovers patterns humans easily miss
-3. **Data-Driven Decisions**: Build content strategy with data, not gut feeling
-4. **Automated Workflows**: Set it up once and it runs continuously
+1. <strong>Time Savings</strong>: Invest time saved from manual analysis into content creation
+2. <strong>Better Insights</strong>: AI discovers patterns humans easily miss
+3. <strong>Data-Driven Decisions</strong>: Build content strategy with data, not gut feeling
+4. <strong>Automated Workflows</strong>: Set it up once and it runs continuously
 
 ### Scalability
 
 This system can expand beyond blog analytics:
 
-- **A/B Test Automation**: Automatically measure title, image effectiveness
-- **Competitor Analysis**: Compare with similar blogs
-- **Predictive Analytics**: Forecast future traffic with historical data
-- **Personalization**: Content recommendations based on reader behavior patterns
+- <strong>A/B Test Automation</strong>: Automatically measure title, image effectiveness
+- <strong>Competitor Analysis</strong>: Compare with similar blogs
+- <strong>Predictive Analytics</strong>: Forecast future traffic with historical data
+- <strong>Personalization</strong>: Content recommendations based on reader behavior patterns
 
 ### Next Steps
 
-1. **MCP Setup**: Follow this guide to integrate Google Analytics MCP
-2. **Generate First Report**: Start with "Analyze last week's traffic"
-3. **Customize Agent**: Develop analysis logic for your blog
-4. **Build Automation**: Set up periodic reports with GitHub Actions
+1. <strong>MCP Setup</strong>: Follow this guide to integrate Google Analytics MCP
+2. <strong>Generate First Report</strong>: Start with "Analyze last week's traffic"
+3. <strong>Customize Agent</strong>: Develop analysis logic for your blog
+4. <strong>Build Automation</strong>: Set up periodic reports with GitHub Actions
 
 ### Additional Resources
 
@@ -754,5 +754,5 @@ Data isn't just numbers. When properly analyzed and utilized, it becomes a compa
 
 Now it's your turn. Start data-driven blog management today!
 
-**Questions? Feedback?**
+<strong>Questions? Feedback?</strong>
 If you have questions about this guide or real implementation experience, please share in the comments. Let's build better blog automation systems together.

@@ -74,15 +74,15 @@ relatedPosts:
 
 従来のブログワークフローは非効率的です:
 
-1. **アイデア構想** (30 分)
-2. **リサーチ** (1-2 時間)
-3. **下書き作成** (2-3 時間)
-4. **編集・校正** (1 時間)
-5. **SEO 最適化** (30 分)
-6. **画像制作** (1 時間)
-7. **多言語翻訳** (諦めるか追加コスト)
+1. <strong>アイデア構想</strong> (30 分)
+2. <strong>リサーチ</strong> (1-2 時間)
+3. <strong>下書き作成</strong> (2-3 時間)
+4. <strong>編集・校正</strong> (1 時間)
+5. <strong>SEO 最適化</strong> (30 分)
+6. <strong>画像制作</strong> (1 時間)
+7. <strong>多言語翻訳</strong> (諦めるか追加コスト)
 
-平均して**6-8 時間**かかり、一貫性の維持も困難です。しかし、LLM を活用すれば、これらすべてのプロセスを**1 時間以内に短縮**し、**品質はむしろ向上**させることができます。
+平均して<strong>6-8 時間</strong>かかり、一貫性の維持も困難です。しかし、LLM を活用すれば、これらすべてのプロセスを<strong>1 時間以内に短縮</strong>し、<strong>品質はむしろ向上</strong>させることができます。
 
 ## システムアーキテクチャ: Claude Code + 11 Agents + MCP + Astro
 
@@ -122,11 +122,11 @@ relatedPosts:
 
 ### コア技術スタック
 
-- **Claude Code**: Anthropic の CLI ベース AI 開発環境
-- **Astro 5**: Islands Architecture 基盤の静的サイトジェネレーター
-- **MCP (Model Context Protocol)**: AI と外部システムの接続
-- **TypeScript**: 型安全なコード
-- **Markdown/MDX**: LLM フレンドリーなコンテンツフォーマット
+- <strong>Claude Code</strong>: Anthropic の CLI ベース AI 開発環境
+- <strong>Astro 5</strong>: Islands Architecture 基盤の静的サイトジェネレーター
+- <strong>MCP (Model Context Protocol)</strong>: AI と外部システムの接続
+- <strong>TypeScript</strong>: 型安全なコード
+- <strong>Markdown/MDX</strong>: LLM フレンドリーなコンテンツフォーマット
 
 ## Astro を選んだ理由: Markdown = LLM の最良の友
 
@@ -169,7 +169,7 @@ pubDate: "2025-10-04"
 LLM は Markdown を非常によく理解し、生成します。
 ```
 
-Markdown は lllm の学習データに豊富に含まれているため、**最高品質の出力**を保証します。
+Markdown は lllm の学習データに豊富に含まれているため、<strong>最高品質の出力</strong>を保証します。
 
 ### 3. Islands Architecture - パフォーマンス最適化
 
@@ -195,7 +195,7 @@ const { Content } = await post.render();
 </BlogPost>
 ```
 
-**ビルド時にすべてのページを HTML にレンダリング**し、ユーザーは超高速なロードを体験します。
+<strong>ビルド時にすべてのページを HTML にレンダリング</strong>し、ユーザーは超高速なロードを体験します。
 
 ## 11 のエージェントシステム: それぞれの専門性
 
@@ -222,7 +222,7 @@ const { Content } = await post.render();
 3. 3 ヶ月コンテンツロードマップ提案
 ```
 
-**実際の使用例:**
+<strong>実際の使用例:</strong>
 
 ```bash
 # エージェント呼び出し
@@ -273,7 +273,7 @@ flat design style, vibrant colors (#3B82F6, #10B981),
 high contrast, technical aesthetic, 4K quality"
 ```
 
-**Playwright MCP を活用した自動生成:**
+<strong>Playwright MCP を活用した自動生成:</strong>
 
 ```typescript
 // 画像生成自動化
@@ -339,7 +339,7 @@ const generateHeroImage = async (topic: string) => {
 - Canonical URL 設定
 ```
 
-**実際の実装:**
+<strong>実際の実装:</strong>
 
 ```astro
 ---
@@ -403,7 +403,7 @@ const { title, description, image = '/default-og.jpg' } = Astro.props;
 
 ### Case 1: ライティングプロンプト
 
-**Before (悪い例):**
+<strong>Before (悪い例):</strong>
 
 ```
 ブログ記事を書いてください。トピックはAIです。
@@ -415,7 +415,7 @@ const { title, description, image = '/default-og.jpg' } = Astro.props;
 - トーン、長さ、構造が不明確
 - ターゲット読者未定義
 
-**After (良い例):**
+<strong>After (良い例):</strong>
 
 ````markdown
 あなたは 10 年のキャリアを持つ技術ブロガーです。
@@ -478,7 +478,7 @@ tags: [5-8個]
 
 「プロンプトエンジニアリング」に関する技術ブログ記事用の Hero 画像を作成してください。
 
-**スタイル要件**:
+<strong>スタイル要件</strong>:
 
 - 美学: モダン、ミニマリスト、フラットデザイン
 - カラーパレット:
@@ -487,20 +487,20 @@ tags: [5-8個]
   - 背景: #F3F4F6 (ライトグレー)
 - 構成: 中心焦点の幾何学的要素
 
-**主要要素**:
+<strong>主要要素</strong>:
 
 1. AI/脳を表す中央アイコン
 2. 周囲の要素: コードスニペット、チャットバブル
 3. タイトルオーバーレイエリア用のクリーンなタイポグラフィ
 4. 可読性のための高コントラスト
 
-**技術仕様**:
+<strong>技術仕様</strong>:
 
 - 解像度: 1920x1080 (16:9)
 - フォーマット: 透過 PNG
 - ファイルサイズ: < 500KB
 
-**ムード**: プロフェッショナル、革新的、親しみやすい
+<strong>ムード</strong>: プロフェッショナル、革新的、親しみやすい
 
 例: Vercel、Stripe のデザイン美学に類似
 
@@ -606,9 +606,9 @@ if (metrics.loadTime > 3000) {
 ```markdown
 # /write-post コマンド
 
-**使用法**: `/write-post "トピック" [オプション]`
+<strong>使用法</strong>: `/write-post "トピック" [オプション]`
 
-**プロセス**:
+<strong>プロセス</strong>:
 
 1. Content Planner: トピック分析と概要生成
 2. Writing Assistant: 下書き作成
@@ -617,7 +617,7 @@ if (metrics.loadTime > 3000) {
 5. SEO Optimizer: メタデータ最適化
 6. Site Manager: ビルドとデプロイ
 
-**オプション**:
+<strong>オプション</strong>:
 
 - `--lang`: 言語 (ko, en, ja)
 - `--length`: 長さ (short: 1500, medium: 2500, long: 4000)
@@ -743,17 +743,17 @@ npm run deploy       # Vercelデプロイ
 const researchPrompt = `
 最新のプロンプトエンジニアリングトレンドを調査してください。
 
-**調査項目**:
+<strong>調査項目</strong>:
 1. 2025年の新技術
 2. 主要LLMアップデート (GPT-4, Claude 3.5など)
 3. 実務ケーススタディ3件
 
-**情報ソース**:
+<strong>情報ソース</strong>:
 - Context7: OpenAI, Anthropic公式ドキュメント
 - WebSearch: 最近3ヶ月のブログ記事
 - GitHub: 人気プロンプトライブラリ
 
-**出力形式**:
+<strong>出力形式</strong>:
 - 主要発見事項 (3-5件)
 - 各発見事項のコード例
 - 参考リンク
@@ -919,16 +919,16 @@ tags: [タグ]
 
 # /write-blog コマンド
 
-**役割**: トピックを受け取り、完全なブログ記事を生成します。
+<strong>役割</strong>: トピックを受け取り、完全なブログ記事を生成します。
 
-**ステップ**:
+<strong>ステップ</strong>:
 
 1. ユーザーからトピック入力を受ける
 2. Writing Assistant エージェント呼び出し
 3. 生成された内容を`/src/content/blog/[slug].md`に保存
 4. ビルドとプレビュー実行
 
-**使用例**:
+<strong>使用例</strong>:
 \`/write-blog "AI プロンプトエンジニアリング"\`
 ```
 

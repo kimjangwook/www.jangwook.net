@@ -58,23 +58,23 @@ relatedPosts:
 
 ## Deep Agentsパラダイムとは何か
 
-2025年、AIエージェント開発は大きな転換点を迎えています。LangChainの創設者たちとPhilipp Schmid氏が提唱する**Deep Agents（またはAgents 2.0）**は、従来のShallow Agents（Agent 1.0）の限界を超える新しいパラダイムです。
+2025年、AIエージェント開発は大きな転換点を迎えています。LangChainの創設者たちとPhilipp Schmid氏が提唱する<strong>Deep Agents（またはAgents 2.0）</strong>は、従来のShallow Agents（Agent 1.0）の限界を超える新しいパラダイムです。
 
 ### Shallow Agents vs Deep Agents
 
-**Shallow Agents (Agent 1.0)**の特徴:
+<strong>Shallow Agents (Agent 1.0)</strong>の特徴:
 - 5〜15ステップで完了する短いタスク
 - 単純なReActループ（Reasoning + Action）
 - 失敗時は即座に中断
 - コンテキストを保持しない
 
-**Deep Agents (Agents 2.0)**の特徴:
+<strong>Deep Agents (Agents 2.0)</strong>の特徴:
 - 100ステップ以上の長期タスクを実行
 - 明示的な計画と階層的委譲
 - 失敗時も自律的に回復
 - 永続的な状態管理
 
-**Agent 1.0 (Shallow) ワークフロー:**
+<strong>Agent 1.0 (Shallow) ワークフロー:</strong>
 
 ```mermaid
 graph LR
@@ -83,7 +83,7 @@ graph LR
     C -->|No| E[失敗]
 ```
 
-**Agent 2.0 (Deep) ワークフロー:**
+<strong>Agent 2.0 (Deep) ワークフロー:</strong>
 
 ```mermaid
 graph TD
@@ -99,7 +99,7 @@ graph TD
     H -->|Yes| I[成功]
 ```
 
-この違いは、単に処理ステップ数の問題ではありません。**エージェントがどのように「考え」「行動し」「学習する」かの根本的なアーキテクチャの違い**なのです。
+この違いは、単に処理ステップ数の問題ではありません。<strong>エージェントがどのように「考え」「行動し」「学習する」かの根本的なアーキテクチャの違い</strong>なのです。
 
 ## Deep Agentsの4つの柱
 
@@ -107,7 +107,7 @@ LangChainとAnthropic、Microsoft等のリサーチから抽出された4つの�
 
 ### 1. Explicit Planning（明示的計画）
 
-従来のエージェントは暗黙的に次のアクションを決定していました。Deep Agentsは**明示的な計画を生成し、追跡し、適応**します。
+従来のエージェントは暗黙的に次のアクションを決定していました。Deep Agentsは<strong>明示的な計画を生成し、追跡し、適応</strong>します。
 
 ```typescript
 // planning-protocol.md の例
@@ -129,7 +129,7 @@ interface PlanStep {
 }
 ```
 
-**なぜ重要か**:
+<strong>なぜ重要か</strong>:
 - 複雑なタスクを管理可能な単位に分解
 - 進捗状況を可視化
 - 失敗時の原因特定が容易
@@ -137,9 +137,9 @@ interface PlanStep {
 
 ### 2. Hierarchical Delegation（階層的委譲）
 
-単一のエージェントがすべてを処理するのではなく、**オーケストレーターが専門エージェントに委譲**します。
+単一のエージェントがすべてを処理するのではなく、<strong>オーケストレーターが専門エージェントに委譲</strong>します。
 
-**オーケストレーター → クラスター:**
+<strong>オーケストレーター → クラスター:</strong>
 
 ```mermaid
 graph LR
@@ -150,7 +150,7 @@ graph LR
     O --> OP[Operations]
 ```
 
-**クラスター → エージェント (例: Content):**
+<strong>クラスター → エージェント (例: Content):</strong>
 
 ```mermaid
 graph LR
@@ -160,7 +160,7 @@ graph LR
     CC --> IG[image-generator]
 ```
 
-**階層構造の利点**:
+<strong>階層構造の利点</strong>:
 - 各エージェントが専門領域に集中
 - コンテキストウィンドウの効率的活用
 - 並列実行による高速化
@@ -168,7 +168,7 @@ graph LR
 
 ### 3. Persistent Memory（永続的メモリ）
 
-Deep Agentsは**セッション間で状態を保持**し、中断したタスクを再開できます。
+Deep Agentsは<strong>セッション間で状態を保持</strong>し、中断したタスクを再開できます。
 
 ```typescript
 // state-management の構造
@@ -193,7 +193,7 @@ interface Checkpoint {
 }
 ```
 
-**永続メモリの用途**:
+<strong>永続メモリの用途</strong>:
 - タスク中断からの再開
 - 過去の実行履歴の参照
 - 学習と改善のためのデータ蓄積
@@ -201,9 +201,9 @@ interface Checkpoint {
 
 ### 4. Extreme Context Engineering（極限コンテキストエンジニアリング）
 
-トークン制限内で**最も関連性の高い情報を正確に提供**する技術です。
+トークン制限内で<strong>最も関連性の高い情報を正確に提供</strong>する技術です。
 
-**実践方法**:
+<strong>実践方法</strong>:
 - 動的コンテキスト選択
 - 階層的情報圧縮
 - プロンプト最適化
@@ -229,11 +229,11 @@ interface Checkpoint {
 
 ## 現在の構造分析：65%の準拠度
 
-私たちの`.claude/`ディレクトリ構造を分析した結果、Deep Agentsパラダイムに対して**約65%の準拠度**であることが判明しました。
+私たちの`.claude/`ディレクトリ構造を分析した結果、Deep Agentsパラダイムに対して<strong>約65%の準拠度</strong>であることが判明しました。
 
 ### 既存の強み
 
-**専門化されたエージェント**: 18個の専門エージェントが定義済み
+<strong>専門化されたエージェント</strong>: 18個の専門エージェントが定義済み
 ```
 .claude/agents/
 ├── content-planner.md
@@ -256,8 +256,8 @@ interface Checkpoint {
 └── orchestrator.md
 ```
 
-**スラッシュコマンド**: 20以上の自動化コマンド
-**MCP統合**: Context7、Notion、Playwright等の外部サービス連携
+<strong>スラッシュコマンド</strong>: 20以上の自動化コマンド
+<strong>MCP統合</strong>: Context7、Notion、Playwright等の外部サービス連携
 
 ### 不足していた要素
 
@@ -301,13 +301,13 @@ interface Checkpoint {
 
 | クラスター | リーダー | メンバー |
 |-----------|---------|----------|
-| **content-creation** | writing-assistant | content-planner, editor, image-generator |
-| **research-analysis** | web-researcher | post-analyzer, analytics, analytics-reporter |
-| **seo-marketing** | seo-optimizer | backlink-manager, social-media-manager |
-| **content-discovery** | content-recommender | - |
-| **operations** | site-manager | portfolio-curator, learning-tracker, improvement-tracker, prompt-engineer |
+| <strong>content-creation</strong> | writing-assistant | content-planner, editor, image-generator |
+| <strong>research-analysis</strong> | web-researcher | post-analyzer, analytics, analytics-reporter |
+| <strong>seo-marketing</strong> | seo-optimizer | backlink-manager, social-media-manager |
+| <strong>content-discovery</strong> | content-recommender | - |
+| <strong>operations</strong> | site-manager | portfolio-curator, learning-tracker, improvement-tracker, prompt-engineer |
 
-**各クラスターの役割**:
+<strong>各クラスターの役割</strong>:
 
 | クラスター | リーダー | 主要機能 |
 |-----------|---------|----------|
@@ -348,7 +348,7 @@ interface Checkpoint {
 - 外部API障害 → キャッシュデータを使用
 ```
 
-**計画フロー**:
+<strong>計画フロー</strong>:
 
 ```mermaid
 flowchart TB
@@ -411,7 +411,7 @@ flowchart TB
 }
 ```
 
-**状態ファイル構造**:
+<strong>状態ファイル構造</strong>:
 
 ```
 .claude/memory/
@@ -437,7 +437,7 @@ flowchart TB
 | Critical | 回復不能 | ユーザーにエスカレート | - |
 ```
 
-**回復決定ツリー**:
+<strong>回復決定ツリー</strong>:
 
 ```mermaid
 flowchart TD
@@ -454,7 +454,7 @@ flowchart TD
     J -->|No| L[ユーザーに報告]
 ```
 
-**実装例**:
+<strong>実装例</strong>:
 
 ```typescript
 async function executeWithRecovery(step: PlanStep): Promise<StepResult> {
@@ -517,19 +517,19 @@ Deep Agentsパラダイムの実装により、以下の改善が期待されま
 
 ### 定性的改善
 
-**信頼性向上**:
+<strong>信頼性向上</strong>:
 - 失敗時の自動回復により、タスクの中断が大幅に減少
 - チェックポイントからの再開が可能
 
-**スケーラビリティ**:
+<strong>スケーラビリティ</strong>:
 - 新しいエージェントの追加が容易
 - クラスター単位での機能拡張
 
-**可観測性**:
+<strong>可観測性</strong>:
 - タスクの進捗状況をリアルタイムで把握
 - ボトルネックの特定と改善
 
-**保守性**:
+<strong>保守性</strong>:
 - 明確な責任分離により、デバッグが容易
 - 個々のエージェントを独立して更新可能
 
@@ -682,25 +682,25 @@ echo '{}' > .claude/memory/task-state.json
 
 Deep Agentsパラダイムは、AIエージェントシステムを根本的に変革するアプローチです。
 
-**4つの柱を忘れずに**:
-1. **Explicit Planning**: 暗黙の判断から明示的な計画へ
-2. **Hierarchical Delegation**: 単一エージェントから専門クラスターへ
-3. **Persistent Memory**: 揮発性から永続的状態管理へ
-4. **Extreme Context Engineering**: 全情報から関連情報のみへ
+<strong>4つの柱を忘れずに</strong>:
+1. <strong>Explicit Planning</strong>: 暗黙の判断から明示的な計画へ
+2. <strong>Hierarchical Delegation</strong>: 単一エージェントから専門クラスターへ
+3. <strong>Persistent Memory</strong>: 揮発性から永続的状態管理へ
+4. <strong>Extreme Context Engineering</strong>: 全情報から関連情報のみへ
 
-**実装の重要ポイント**:
+<strong>実装の重要ポイント</strong>:
 - オーケストレーターは調整役に徹する
 - 各エージェントは専門領域に集中
 - 失敗を前提として回復プロトコルを用意
 - 状態を保存して継続性を確保
 
-**期待される成果**:
+<strong>期待される成果</strong>:
 - タスクステップ数: 5〜15 → 100+
 - 自動回復率: >90%
 - コンテキスト効率: 95%
 - タスク完了率: 95%
 
-Deep Agentsの導入により、エージェントシステムは**より堅牢で、スケーラブルで、自律的**になります。これは単なる改善ではなく、AIエージェント開発のパラダイムシフトなのです。
+Deep Agentsの導入により、エージェントシステムは<strong>より堅牢で、スケーラブルで、自律的</strong>になります。これは単なる改善ではなく、AIエージェント開発のパラダイムシフトなのです。
 
 ## 参考資料
 
@@ -721,4 +721,4 @@ Deep Agentsの導入により、エージェントシステムは**より堅牢�
 
 ---
 
-**次回記事**: [AIエージェントペルソナ分析](/ja/blog/ja/ai-agent-persona-analysis)では、エージェントの役割定義とペルソナ設計の最適化方法を詳しく解説します。
+<strong>次回記事</strong>: [AIエージェントペルソナ分析](/ja/blog/ja/ai-agent-persona-analysis)では、エージェントの役割定義とペルソナ設計の最適化方法を詳しく解説します。

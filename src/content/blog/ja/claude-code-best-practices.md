@@ -53,7 +53,7 @@ relatedPosts:
 
 ## はじめに
 
-AIコーディングアシスタントは、今や開発者の必須ツールとなりました。しかし、単に使用することと**効果的に活用する**ことは全く異なる次元の問題です。Anthropicが最近公開した[Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)を分析し、実際のプロジェクトに適用した経験を共有します。
+AIコーディングアシスタントは、今や開発者の必須ツールとなりました。しかし、単に使用することと<strong>効果的に活用する</strong>ことは全く異なる次元の問題です。Anthropicが最近公開した[Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)を分析し、実際のプロジェクトに適用した経験を共有します。
 
 ## Claude Code ベストプラクティスの核心要約
 
@@ -61,9 +61,9 @@ Anthropicエンジニアリングブログで公開されたベストプラク�
 
 ### 1. CLAUDE.mdでコンテキストを明確に伝える
 
-**核心**: Claude CodeはプロジェクトのCLAUDE.mdファイルを読んでコンテキストを理解します。
+<strong>核心</strong>: Claude CodeはプロジェクトのCLAUDE.mdファイルを読んでコンテキストを理解します。
 
-**含めるべき内容**:
+<strong>含めるべき内容</strong>:
 - ✅ Bashコマンド（ビルド、テスト、デプロイ）
 - ✅ コアファイルとユーティリティ関数の場所
 - ✅ コードスタイルガイドライン
@@ -71,14 +71,14 @@ Anthropicエンジニアリングブログで公開されたベストプラク�
 - ✅ リポジトリエチケット（コミットメッセージ、PRルール）
 - ✅ 開発環境セットアップガイド
 
-**Before（既存のCLAUDE.md）**:
+<strong>Before（既存のCLAUDE.md）</strong>:
 ```markdown
 ## コマンド
 npm run dev
 npm run build
 ```
 
-**After（改善されたCLAUDE.md）**:
+<strong>After（改善されたCLAUDE.md）</strong>:
 ```markdown
 ## Testing Guidelines
 ### 型チェックと検証
@@ -95,7 +95,7 @@ npm run preview        # ビルド結果のプレビュー
 
 ### 2. Explore → Plan → Code → Commit ワークフロー
 
-**核心**: Claudeは明確な目標と反復的改善を通じて最高の結果を導き出します。
+<strong>核心</strong>: Claudeは明確な目標と反復的改善を通じて最高の結果を導き出します。
 
 #### Explore（探索）
 コーディング前に関連ファイルを先に読んでコンテキストを把握します。
@@ -123,27 +123,27 @@ TodoWriteツールとThinkモードを活用して作業計画を立てます。
 
 ### 3. Thinkツールの活用
 
-**いつ使用するか**:
+<strong>いつ使用するか</strong>:
 - 複雑なアーキテクチャ決定が必要な時
 - 複数ファイル修正が必要な場合
 - 順次的意思決定が求められる作業
 
-**実際の適用例**:
+<strong>実際の適用例</strong>:
 ```
 "Thinkモードを使用してブログの多言語SEO戦略を立て、
 各言語別に最適なメタデータを提案してください。"
 ```
 
-**パフォーマンス改善**:
+<strong>パフォーマンス改善</strong>:
 - Airlineドメインテスト: 54%の相対的パフォーマンス向上
 - Retailドメイン: 0.812（ベースライン 0.783）
 - SWE-bench: 平均1.6%改善
 
 ### 4. サブエージェントシステムの構築
 
-**核心**: 専門化されたエージェントに特定タスクを委任すると、コンテキスト集中度とトークン効率性が向上します。
+<strong>核心</strong>: 専門化されたエージェントに特定タスクを委任すると、コンテキスト集中度とトークン効率性が向上します。
 
-**このプロジェクトのサブエージェント構造**:
+<strong>このプロジェクトのサブエージェント構造</strong>:
 ```
 .claude/agents/
 ├── content-planner.md        # コンテンツ戦略
@@ -154,7 +154,7 @@ TodoWriteツールとThinkモードを活用して作業計画を立てます。
 └── analytics-reporter.md     # トラフィック分析
 ```
 
-**使用例**:
+<strong>使用例</strong>:
 ```bash
 @writing-assistant "TypeScript 5.0機能についてのブログ作成"
 @seo-optimizer "最近の投稿の内部リンク最適化"
@@ -165,9 +165,9 @@ TodoWriteツールとThinkモードを活用して作業計画を立てます。
 
 ### 改善1: テストガイドライン追加
 
-**問題点**: Claudeが変更後の検証方法が分からずエラーを見逃す
+<strong>問題点</strong>: Claudeが変更後の検証方法が分からずエラーを見逃す
 
-**解決策**: Testing Guidelinesセクション追加
+<strong>解決策</strong>: Testing Guidelinesセクション追加
 ```markdown
 ## Testing Guidelines
 
@@ -179,13 +179,13 @@ TodoWriteツールとThinkモードを活用して作業計画を立てます。
 npm run build
 ```
 
-**結果**: Claudeが自動的に変更後`npm run astro check`を実行して検証
+<strong>結果</strong>: Claudeが自動的に変更後`npm run astro check`を実行して検証
 
 ### 改善2: Repository Etiquetteの明示
 
-**問題点**: 一貫性のないコミットメッセージ
+<strong>問題点</strong>: 一貫性のないコミットメッセージ
 
-**解決策**: Git Commit Messageルールを文書化
+<strong>解決策</strong>: Git Commit Messageルールを文書化
 ```markdown
 ## Repository Etiquette
 
@@ -199,7 +199,7 @@ npm run build
 - refactor: コードリファクタリング
 ```
 
-**結果**: Claudeが自動的にルールに準拠したコミットメッセージを生成
+<strong>結果</strong>: Claudeが自動的にルールに準拠したコミットメッセージを生成
 ```bash
 feat(blog): add claude code best practices post
 docs(claude): update workflow guidelines
@@ -207,9 +207,9 @@ docs(claude): update workflow guidelines
 
 ### 改善3: 環境設定ガイド追加
 
-**問題点**: 環境変数設定方法を毎回説明する必要がある
+<strong>問題点</strong>: 環境変数設定方法を毎回説明する必要がある
 
-**解決策**: Environment Setupセクション追加
+<strong>解決策</strong>: Environment Setupセクション追加
 ```markdown
 ## Environment Setup
 
@@ -218,18 +218,18 @@ docs(claude): update workflow guidelines
 GEMINI_API_KEY=your_api_key_here
 ```
 
-**結果**: 新しいタスク時にClaudeが自動的に必要な環境変数を確認
+<strong>結果</strong>: 新しいタスク時にClaudeが自動的に必要な環境変数を確認
 
 ### 改善4: Claude Codeワークフロー最適化
 
-**追加されたセクション**:
+<strong>追加されたセクション</strong>:
 - Explore → Plan → Code → Commit ワークフロー
 - Thinkツール活用ガイド
 - サブエージェント活用戦略
 - /clear コマンド使用ガイド
 - 反復的改善（Iteration）戦略
 
-**実際の効果**:
+<strong>実際の効果</strong>:
 ```bash
 # 以前: 直接作業指示
 "ブログ投稿を作成してください"
@@ -243,13 +243,13 @@ GEMINI_API_KEY=your_api_key_here
 
 ### 改善5: MCP Server Integration文書化
 
-**追加内容**:
+<strong>追加内容</strong>:
 - Context7: 最新ライブラリドキュメント照会
 - Playwright: Web自動化とテスト
 - Chrome DevTools: パフォーマンス分析
 - Google Analytics: トラフィック分析
 
-**活用例**:
+<strong>活用例</strong>:
 ```bash
 "Context7を使用してAstro 5.0の最新イメージ最適化機能を照会してください"
 ```
@@ -257,18 +257,18 @@ GEMINI_API_KEY=your_api_key_here
 ## 測定可能な改善効果
 
 ### 1. 作業効率性
-- **エラー発生率**: 40%減少（事前検証チェックリスト導入）
-- **再作業回数**: 60%減少（明確なワークフロー）
-- **平均タスク完了時間**: 30%短縮
+- <strong>エラー発生率</strong>: 40%減少（事前検証チェックリスト導入）
+- <strong>再作業回数</strong>: 60%減少（明確なワークフロー）
+- <strong>平均タスク完了時間</strong>: 30%短縮
 
 ### 2. コード品質
-- **型チェック通過率**: 95% → 100%
-- **一貫したコードスタイル**: 手動修正ほぼ不要
-- **SEO メタデータ完成度**: 80% → 100%
+- <strong>型チェック通過率</strong>: 95% → 100%
+- <strong>一貫したコードスタイル</strong>: 手動修正ほぼ不要
+- <strong>SEO メタデータ完成度</strong>: 80% → 100%
 
 ### 3. コンテキスト効率性
-- **トークン使用量**: 平均25%削減（サブエージェント活用）
-- **不要な説明**: 70%減少（文書化されたガイドライン）
+- <strong>トークン使用量</strong>: 平均25%削減（サブエージェント活用）
+- <strong>不要な説明</strong>: 70%減少（文書化されたガイドライン）
 
 ## ベストプラクティスチェックリスト
 
@@ -375,14 +375,14 @@ CLAUDE.mdに投資した時間は、各タスクごとに倍になって返っ�
 
 Claude Code Best Practicesを適用した結果、単に「AIがコードを書いてくれるツール」から「開発ワークフロー全体を最適化するプラットフォーム」へと認識が変わりました。
 
-**核心教訓**:
-1. **ドキュメンテーションに投資する**: CLAUDE.mdはプロジェクトの頭脳
-2. **ワークフローを定義する**: Explore → Plan → Code → Commit
-3. **専門化する**: サブエージェントシステム活用
-4. **反復する**: 最初の試みが完璧である必要はない
-5. **測定する**: 改善効果を定量的に追跡
+<strong>核心教訓</strong>:
+1. <strong>ドキュメンテーションに投資する</strong>: CLAUDE.mdはプロジェクトの頭脳
+2. <strong>ワークフローを定義する</strong>: Explore → Plan → Code → Commit
+3. <strong>専門化する</strong>: サブエージェントシステム活用
+4. <strong>反復する</strong>: 最初の試みが完璧である必要はない
+5. <strong>測定する</strong>: 改善効果を定量的に追跡
 
-Claude Codeは単純なコーディングアシスタントではなく、**開発生産性を革新するパートナー**です。ベストプラクティスに従えば、その潜在力を100%引き出すことができます。
+Claude Codeは単純なコーディングアシスタントではなく、<strong>開発生産性を革新するパートナー</strong>です。ベストプラクティスに従えば、その潜在力を100%引き出すことができます。
 
 ## 参考資料
 
@@ -394,4 +394,4 @@ Claude Codeは単純なコーディングアシスタントではなく、**開�
 
 ---
 
-**この投稿が役に立った場合**、あなたのプロジェクトにもClaude Code Best Practicesを適用してみてください。開発生産性が目に見えて向上するでしょう。
+<strong>この投稿が役に立った場合</strong>、あなたのプロジェクトにもClaude Code Best Practicesを適用してみてください。開発生産性が目に見えて向上するでしょう。

@@ -36,24 +36,24 @@ relatedPosts:
 
 ## The Multi-Agent Era Has Arrived
 
-In 2025, AI development reached a new turning point. We've evolved from single AI agents handling all tasks to **multi-agent systems where specialized agents collaborate**.
+In 2025, AI development reached a new turning point. We've evolved from single AI agents handling all tasks to <strong>multi-agent systems where specialized agents collaborate</strong>.
 
 One developer orchestrating five specialized agents to build a full-stack application—this is today's reality.
 
 ### Why Multi-Agent?
 
-**Limitations of Single Agents**:
+<strong>Limitations of Single Agents</strong>:
 - Context window constraints (one AI can't remember everything)
 - Lack of expertise (can't be proficient in all domains)
 - No parallel processing (can only perform one task at a time)
 
-**Strengths of Multi-Agent Systems**:
-- **Division of Labor & Specialization**: Each agent focuses on specific areas
-- **Parallel Execution**: Multiple tasks processed simultaneously
-- **Scalability**: Functionality expands by adding new agents
-- **Resilience**: One agent's failure doesn't affect the entire system
+<strong>Strengths of Multi-Agent Systems</strong>:
+- <strong>Division of Labor & Specialization</strong>: Each agent focuses on specific areas
+- <strong>Parallel Execution</strong>: Multiple tasks processed simultaneously
+- <strong>Scalability</strong>: Functionality expands by adding new agents
+- <strong>Resilience</strong>: One agent's failure doesn't affect the entire system
 
-In practice, Toyota saved **over 10,000 hours annually** with multi-agent systems, while an e-commerce API project achieved **70% bug reduction and 75% faster refactoring**.
+In practice, Toyota saved <strong>over 10,000 hours annually</strong> with multi-agent systems, while an e-commerce API project achieved <strong>70% bug reduction and 75% faster refactoring</strong>.
 
 ## Architecture of 5 Specialized Agents
 
@@ -61,16 +61,16 @@ The ideal agent configuration for full-stack application development:
 
 ### 1. Architecture Agent
 
-**Role**: System design and structural decisions
+<strong>Role</strong>: System design and structural decisions
 
-**Core Responsibilities**:
+<strong>Core Responsibilities</strong>:
 - System architecture design (microservices, monolithic, serverless, etc.)
 - Database schema design
 - Technology stack selection
 - Component interface definition
 - Scalability and performance considerations
 
-**Output Example**:
+<strong>Output Example</strong>:
 ````markdown
 ## System Architecture
 
@@ -115,20 +115,20 @@ CREATE TABLE posts (
 
 ### 2. Coding Agent
 
-**Role**: Code implementation and generation
+<strong>Role</strong>: Code implementation and generation
 
-**Core Responsibilities**:
+<strong>Core Responsibilities</strong>:
 - Implement Architecture Agent's designs into actual code
 - Write business logic
 - Implement API endpoints
 - Develop frontend components
 - Code review and refactoring
 
-**Real-World Results**:
-- **35% reduction in implementation time** (professional developer study)
-- **27% decrease in defect rates**
+<strong>Real-World Results</strong>:
+- <strong>35% reduction in implementation time</strong> (professional developer study)
+- <strong>27% decrease in defect rates</strong>
 
-**Implementation Example**:
+<strong>Implementation Example</strong>:
 ```typescript
 // Architecture Agent Design → Coding Agent Implementation
 
@@ -185,16 +185,16 @@ export class UserController {
 
 ### 3. Testing Agent
 
-**Role**: Automated test creation and quality assurance
+<strong>Role</strong>: Automated test creation and quality assurance
 
-**Core Responsibilities**:
+<strong>Core Responsibilities</strong>:
 - Generate unit tests
 - Write integration tests
 - Implement E2E test scenarios
 - Analyze test coverage
 - Detect and report bugs
 
-**Test Example**:
+<strong>Test Example</strong>:
 ```typescript
 // user.service.test.ts
 describe('UserService', () => {
@@ -263,16 +263,16 @@ describe('User API Integration', () => {
 
 ### 4. Security Agent
 
-**Role**: Security vulnerability detection and defense
+<strong>Role</strong>: Security vulnerability detection and defense
 
-**Core Responsibilities**:
+<strong>Core Responsibilities</strong>:
 - Code security scanning
 - Vulnerability detection (SQL injection, XSS, CSRF, etc.)
 - Compliance verification (GDPR, HIPAA)
 - Security recommendations
 - Threat analysis and mitigation strategies
 
-**Security Checklist Example**:
+<strong>Security Checklist Example</strong>:
 ````markdown
 ## Security Checklist
 
@@ -300,7 +300,7 @@ describe('User API Integration', () => {
 - [x] Privacy policy update
 ````
 
-**Vulnerability Report Example**:
+<strong>Vulnerability Report Example</strong>:
 ```typescript
 // ❌ Vulnerability detected by Security Agent
 app.get('/user/:id', (req, res) => {
@@ -335,18 +335,18 @@ app.get('/user/:id', async (req, res) => {
 
 ### 5. DevOps Agent
 
-**Role**: CI/CD, deployment, and monitoring
+<strong>Role</strong>: CI/CD, deployment, and monitoring
 
-**Core Responsibilities**:
+<strong>Core Responsibilities</strong>:
 - CI/CD pipeline configuration
 - Infrastructure provisioning (Terraform, CloudFormation)
 - Containerization (Docker, Kubernetes)
 - Monitoring and alerting setup
 - Performance optimization
 
-**Real-World Results**: Chemical industry case achieved **30% reduction in quality failures**
+<strong>Real-World Results</strong>: Chemical industry case achieved <strong>30% reduction in quality failures</strong>
 
-**CI/CD Pipeline Example**:
+<strong>CI/CD Pipeline Example</strong>:
 ```yaml
 # .github/workflows/deploy.yml
 name: Deploy to Production
@@ -415,7 +415,7 @@ jobs:
 
 ### 1. Hierarchical Orchestration
 
-**Structure**: Manager agent coordinates 5 specialized agents
+<strong>Structure</strong>: Manager agent coordinates 5 specialized agents
 
 ```mermaid
 graph TD
@@ -426,17 +426,17 @@ graph TD
     Manager --> DevOps[DevOps Agent]
 ```
 
-**Advantages**:
+<strong>Advantages</strong>:
 - Clear command structure
 - Centralized progress tracking
 - Easy debugging
 
-**Best For**:
+<strong>Best For</strong>:
 - Tasks with clear decomposition
 - Need for centralized monitoring
 - Teams preferring structured workflows
 
-**Implementation** (using LangGraph):
+<strong>Implementation</strong> (using LangGraph):
 ```python
 from langgraph.graph import StateGraph, END
 
@@ -478,15 +478,15 @@ result = app.invoke({
 
 ### 2. Event-Driven Architecture
 
-**Structure**: Asynchronous event streaming between agents
+<strong>Structure</strong>: Asynchronous event streaming between agents
 
-**Advantages**:
+<strong>Advantages</strong>:
 - Service decoupling (agents only know event router)
 - Fault isolation (one agent failure doesn't cascade)
 - Scalable coordination
 - Real-time processing
 
-**Event Flow Example**:
+<strong>Event Flow Example</strong>:
 ```mermaid
 sequenceDiagram
     participant User as User
@@ -511,7 +511,7 @@ sequenceDiagram
     ER->>User: Completion Response
 ```
 
-**Redis Streams Implementation**:
+<strong>Redis Streams Implementation</strong>:
 ```typescript
 import Redis from 'ioredis';
 
@@ -562,14 +562,14 @@ async function listenForArchitecture() {
 
 ### 3. Graph-Based Orchestration
 
-**Structure**: DAG (Directed Acyclic Graph) for dependency expression
+<strong>Structure</strong>: DAG (Directed Acyclic Graph) for dependency expression
 
-**Advantages**:
+<strong>Advantages</strong>:
 - Visual workflow representation
 - Parallel task execution
 - Clear dependency management
 
-**Parallel Execution Example**:
+<strong>Parallel Execution Example</strong>:
 ```mermaid
 graph TB
     Arch[Architecture Agent] --> CodeFE[Coding Agent<br/>Frontend]
@@ -584,18 +584,18 @@ graph TB
 
 ### Model Context Protocol (MCP)
 
-**Developer**: Anthropic (2024 open-source), officially adopted by OpenAI (March 2025)
+<strong>Developer</strong>: Anthropic (2024 open-source), officially adopted by OpenAI (March 2025)
 
-**Purpose**: Vertical communication between agent ↔ tools/memory
+<strong>Purpose</strong>: Vertical communication between agent ↔ tools/memory
 
-**Features**:
+<strong>Features</strong>:
 - JSON-RPC client-server interface
 - Secure context injection
 - Structured tool invocation
 - Resource management
 - Access control enforcement
 
-**Usage Example**:
+<strong>Usage Example</strong>:
 ```json
 // MCP Request: Coding Agent → Database Tool
 {
@@ -626,17 +626,17 @@ graph TB
 }
 ```
 
-**Global Adoption**: As of 2025, **78% of global organizations use MCP or A2A protocols**
+<strong>Global Adoption</strong>: As of 2025, <strong>78% of global organizations use MCP or A2A protocols</strong>
 
 ### Agent-to-Agent Protocol (A2A)
 
-**Purpose**: Horizontal communication between agents
+<strong>Purpose</strong>: Horizontal communication between agents
 
-**Difference**:
+<strong>Difference</strong>:
 - MCP: When agents access tools or memory
 - A2A: When agents communicate directly with each other
 
-**A2A Message Example**:
+<strong>A2A Message Example</strong>:
 ```json
 // Architecture Agent → Coding Agent
 {
@@ -680,7 +680,7 @@ graph TB
 
 ### 1. Fallback Strategy
 
-**3-Level Fallback**:
+<strong>3-Level Fallback</strong>:
 ```typescript
 async function executeWithFallback(task: Task) {
   try {
@@ -702,7 +702,7 @@ async function executeWithFallback(task: Task) {
 
 ### 2. Canary Deployment
 
-**Agent Deployment Strategy**:
+<strong>Agent Deployment Strategy</strong>:
 ```yaml
 # Canary deployment: 5% → 50% → 100%
 deployment:
@@ -726,7 +726,7 @@ deployment:
 
 ### 3. Circuit Breaker Pattern
 
-**Prevent Failure Cascade Between Agents**:
+<strong>Prevent Failure Cascade Between Agents</strong>:
 ```typescript
 class CircuitBreaker {
   private failureCount = 0;
@@ -774,7 +774,7 @@ class CircuitBreaker {
 
 ### 1. Agent Responsibility Separation
 
-**Principle**: Each agent focuses on a single domain
+<strong>Principle</strong>: Each agent focuses on a single domain
 
 ````markdown
 ✅ Good Example:
@@ -786,7 +786,7 @@ class CircuitBreaker {
 - All-in-One Agent: Design + Coding + Testing + Deployment all together
 ````
 
-**Benefits**:
+<strong>Benefits</strong>:
 - Reduced complexity
 - Easier debugging
 - Prevents context window overload
@@ -794,7 +794,7 @@ class CircuitBreaker {
 
 ### 2. Add QA Stage
 
-**Final Review Stage**:
+<strong>Final Review Stage</strong>:
 ```mermaid
 graph LR
     Arch[Architecture] --> Code[Coding]
@@ -804,7 +804,7 @@ graph LR
     DevOps --> QA[QA Agent<br/>Final Review]
 ```
 
-**QA Agent Responsibilities**:
+<strong>QA Agent Responsibilities</strong>:
 - Review all agent outputs
 - Verify consistency
 - Confirm quality criteria are met
@@ -812,7 +812,7 @@ graph LR
 
 ### 3. Human-in-the-Loop Integration
 
-**When Should Humans Intervene?**
+<strong>When Should Humans Intervene?</strong>
 
 | Situation | HITL Needed? | Reason |
 |-----------|-------------|---------|
@@ -823,7 +823,7 @@ graph LR
 | Production deployment approval | ✅ | Final review needed |
 | Infrastructure changes | ✅ | Cost and impact considerations |
 
-**Implementation Example**:
+<strong>Implementation Example</strong>:
 ```typescript
 async function deployToProduction(deployment: Deployment) {
   // DevOps Agent creates deployment plan
@@ -849,9 +849,9 @@ async function deployToProduction(deployment: Deployment) {
 
 ### 4. Observability
 
-**5 Essential Observability Areas** (Microsoft Azure recommendations):
+<strong>5 Essential Observability Areas</strong> (Microsoft Azure recommendations):
 
-1. **Comprehensive Logging**:
+1. <strong>Comprehensive Logging</strong>:
 ```typescript
 class AgentLogger {
   log(agent: string, event: string, data: any) {
@@ -872,7 +872,7 @@ logger.log('coding-agent', 'task-started', {
 });
 ```
 
-2. **Performance Metrics**:
+2. <strong>Performance Metrics</strong>:
 ```typescript
 const metrics = {
   agent_execution_time: new Histogram({
@@ -906,50 +906,50 @@ try {
 }
 ```
 
-3. **Quality and Safety Standards Verification**
-4. **Compliance Monitoring**
-5. **User Experience Optimization**
+3. <strong>Quality and Safety Standards Verification</strong>
+4. <strong>Compliance Monitoring</strong>
+5. <strong>User Experience Optimization</strong>
 
 ## Future Outlook
 
 ### 2025: "The Year of Agentic AI"
 
-Industry leader consensus: **2025 is the year of agentic AI**
+Industry leader consensus: <strong>2025 is the year of agentic AI</strong>
 
-**Key Trends**:
+<strong>Key Trends</strong>:
 
-1. **Trillion-Dollar Market Opportunity**
+1. <strong>Trillion-Dollar Market Opportunity</strong>
    - AI software development stack: Trillion-dollar market
    - 30 million developers worldwide using AI coding assistants
    - Productivity gains creating trillions in global GDP value
 
-2. **From Prototype to Production**
+2. <strong>From Prototype to Production</strong>
    - 2023-2024: Generative AI (GPT, image generation)
    - 2025+: Autonomous agentic systems (real work automation)
 
-3. **Protocol Standardization**
-   - **78% of global organizations** use MCP or A2A protocols
+3. <strong>Protocol Standardization</strong>
+   - <strong>78% of global organizations</strong> use MCP or A2A protocols
    - Industry-wide interoperability
 
-4. **Sovereign AI**
+4. <strong>Sovereign AI</strong>
    - Data sovereignty and geopolitical resilience
    - Compliance and auditability for autonomous agents
    - Critical infrastructure deployment
 
-5. **Self-Healing Systems**
+5. <strong>Self-Healing Systems</strong>
    - Autonomous error detection and recovery
    - Adaptive system resilience
    - Problem-solving without human intervention
 
 ### Redefining the Developer Role
 
-**Before (Traditional Development)**:
+<strong>Before (Traditional Development)</strong>:
 - Code writing 70% + Design 20% + Testing 10%
 
-**After (Agent Orchestration)**:
+<strong>After (Agent Orchestration)</strong>:
 - Requirements definition 30% + Agent management 40% + Verification 20% + Optimization 10%
 
-**Core Skills Transformation**:
+<strong>Core Skills Transformation</strong>:
 
 | Traditional Skill | Importance | New Core Skill |
 |------------------|-----------|----------------|
@@ -974,27 +974,27 @@ pip install crewai langchain-openai
 export OPENAI_API_KEY="your-api-key"
 ```
 
-**Learning Resources**:
+<strong>Learning Resources</strong>:
 - [LangGraph Official Tutorial](https://blog.langchain.com/langgraph-multi-agent-workflows/)
 - [CrewAI GitHub](https://github.com/crewAIInc/crewAI)
 
 ### Week 2: Small-Scale Project Implementation
 
-**Recommended Starting Project**:
+<strong>Recommended Starting Project</strong>:
 - Simple REST API (2-3 endpoints)
 - Use only Architecture Agent + Coding Agent
 - Manual testing and deployment
 
 ### Week 3: Expand to Full Pipeline
 
-**Integrate All 5 Agents**:
+<strong>Integrate All 5 Agents</strong>:
 - Add Testing Agent → Automated tests
 - Add Security Agent → Security scanning
 - Add DevOps Agent → CI/CD pipeline
 
 ### After 1 Month: Production Deployment
 
-**Measure Results**:
+<strong>Measure Results</strong>:
 - Development speed improvement rate
 - Bug reduction rate
 - Test coverage
@@ -1002,19 +1002,19 @@ export OPENAI_API_KEY="your-api-key"
 
 ## Conclusion
 
-Multi-agent systems are no longer the future. They are **a reality you can apply right now**.
+Multi-agent systems are no longer the future. They are <strong>a reality you can apply right now</strong>.
 
-**Key Takeaways**:
-1. **5 Specialized Agents**: Architecture, Coding, Testing, Security, DevOps
-2. **Orchestration Patterns**: Hierarchical, Event-Driven, Graph-Based
-3. **Communication Protocols**: MCP (tool access), A2A (agent-to-agent)
-4. **Resilience**: Fallback, Circuit Breaker, Canary deployment
-5. **Best Practices**: Responsibility separation, QA stage, HITL, observability
+<strong>Key Takeaways</strong>:
+1. <strong>5 Specialized Agents</strong>: Architecture, Coding, Testing, Security, DevOps
+2. <strong>Orchestration Patterns</strong>: Hierarchical, Event-Driven, Graph-Based
+3. <strong>Communication Protocols</strong>: MCP (tool access), A2A (agent-to-agent)
+4. <strong>Resilience</strong>: Fallback, Circuit Breaker, Canary deployment
+5. <strong>Best Practices</strong>: Responsibility separation, QA stage, HITL, observability
 
-**Real-World Results**:
-- Toyota: **10,000 hours saved annually**
-- E-commerce API: **70% bug reduction, 75% faster refactoring**
-- Professional developers: **35% faster implementation, 27% fewer defects**
+<strong>Real-World Results</strong>:
+- Toyota: <strong>10,000 hours saved annually</strong>
+- E-commerce API: <strong>70% bug reduction, 75% faster refactoring</strong>
+- Professional developers: <strong>35% faster implementation, 27% fewer defects</strong>
 
 A new era has arrived where you can orchestrate 5 AI agents to build full-stack applications, even as a solo developer.
 
@@ -1040,4 +1040,4 @@ A new era has arrived where you can orchestrate 5 AI agents to build full-stack 
 
 ---
 
-**Next Article**: [Self-Healing AI Systems: Building Agents That Automatically Fix Bugs Without Human Intervention](/en/blog/en/self-healing-ai-systems) will cover implementation methods for Self-Healing Systems, one of the core trends of 2025, with practical code examples.
+<strong>Next Article</strong>: [Self-Healing AI Systems: Building Agents That Automatically Fix Bugs Without Human Intervention](/en/blog/en/self-healing-ai-systems) will cover implementation methods for Self-Healing Systems, one of the core trends of 2025, with practical code examples.

@@ -11,12 +11,12 @@ tags:
 relatedPosts: []
 ---
 
-> **시리즈: OpenClaw 완전 정복** (2/3)
+> <strong>시리즈: OpenClaw 완전 정복</strong> (2/3)
 > 1. [소개편](/ko/blog/ko/openclaw-introduction-guide/)
-> 2. **튜토리얼편** ← 현재 글
+> 2. <strong>튜토리얼편</strong> ← 현재 글
 > 3. [활용법편](/ko/blog/ko/openclaw-advanced-usage/)
 
-지난 글에서 OpenClaw이 무엇인지 살펴봤습니다. 이번에는 **직접 설치하고, 첫 대화를 나누는 것**까지 한 번에 해보겠습니다. 터미널을 열고 따라오세요! 🚀
+지난 글에서 OpenClaw이 무엇인지 살펴봤습니다. 이번에는 <strong>직접 설치하고, 첫 대화를 나누는 것</strong>까지 한 번에 해보겠습니다. 터미널을 열고 따라오세요! 🚀
 
 ---
 
@@ -26,11 +26,11 @@ OpenClaw은 Node.js 런타임 위에서 동작합니다.
 
 | 항목 | 요구사항 |
 |------|----------|
-| **Node.js** | v22 이상 (`node -v`로 확인) |
-| **OS** | Windows · macOS · Linux 모두 지원 |
+| <strong>Node.js</strong> | v22 이상 (`node -v`로 확인) |
+| <strong>OS</strong> | Windows · macOS · Linux 모두 지원 |
 
-- **macOS / Linux** — 별도 준비 없이 바로 시작할 수 있습니다.
-- **Windows** — 네이티브 환경에서도 동작합니다. WSL2도 지원되지만 필수는 아닙니다.
+- <strong>macOS / Linux</strong> — 별도 준비 없이 바로 시작할 수 있습니다.
+- <strong>Windows</strong> — 네이티브 환경에서도 동작합니다. WSL2도 지원되지만 필수는 아닙니다.
 
 Node.js가 없다면 [공식 사이트](https://nodejs.org/)에서 LTS 버전(22+)을 받거나, 버전 관리자를 사용하세요:
 
@@ -50,9 +50,9 @@ fnm use 22
 
 ### 선택 사항 (하지만 추천!)
 
-- **Brave Search API 키** — 웹 검색 기능 사용 시 필요. [Brave Search API](https://brave.com/search/api/)에서 무료 발급
-- **AI 모델 API 키** — Anthropic, OpenAI, Google 중 하나 이상. `ANTHROPIC_API_KEY` 또는 `OPENAI_API_KEY` 환경변수로 설정
-- **Git** — 소스 빌드 시 필요
+- <strong>Brave Search API 키</strong> — 웹 검색 기능 사용 시 필요. [Brave Search API](https://brave.com/search/api/)에서 무료 발급
+- <strong>AI 모델 API 키</strong> — Anthropic, OpenAI, Google 중 하나 이상. `ANTHROPIC_API_KEY` 또는 `OPENAI_API_KEY` 환경변수로 설정
+- <strong>Git</strong> — 소스 빌드 시 필요
 
 ---
 
@@ -98,7 +98,7 @@ pnpm build
 openclaw onboard --install-daemon
 ```
 
-> **Tip:** 소스 빌드는 기여(contribution)를 생각하고 있거나, 최신 기능을 미리 써보고 싶을 때 추천합니다. npm과 소스 빌드를 나중에 전환하는 것도 쉽습니다 — `openclaw doctor`가 Gateway 서비스 엔트리포인트를 자동 업데이트합니다.
+> <strong>Tip:</strong> 소스 빌드는 기여(contribution)를 생각하고 있거나, 최신 기능을 미리 써보고 싶을 때 추천합니다. npm과 소스 빌드를 나중에 전환하는 것도 쉽습니다 — `openclaw doctor`가 Gateway 서비스 엔트리포인트를 자동 업데이트합니다.
 
 ---
 
@@ -114,16 +114,16 @@ openclaw onboard --install-daemon
 
 | 설정 항목 | 설명 |
 |---|---|
-| **Gateway** | AI 에이전트가 상주하는 상시 실행 데몬 |
-| **인증** | AI 모델 API 키 (Anthropic, OpenAI 등) |
-| **채널** | Telegram, Discord 등 메시지 플랫폼 |
-| **워크스페이스** | 에이전트의 파일 작업 공간 경로 |
-| **Gateway 토큰** | 마법사가 기본으로 생성 (loopback에서도) |
+| <strong>Gateway</strong> | AI 에이전트가 상주하는 상시 실행 데몬 |
+| <strong>인증</strong> | AI 모델 API 키 (Anthropic, OpenAI 등) |
+| <strong>채널</strong> | Telegram, Discord 등 메시지 플랫폼 |
+| <strong>워크스페이스</strong> | 에이전트의 파일 작업 공간 경로 |
+| <strong>Gateway 토큰</strong> | 마법사가 기본으로 생성 (loopback에서도) |
 
 `--install-daemon` 플래그를 붙이면 Gateway가 OS 서비스로 등록됩니다:
-- **macOS**: launchd
-- **Linux**: systemd 사용자 서비스
-- **Windows**: Windows 서비스
+- <strong>macOS</strong>: launchd
+- <strong>Linux</strong>: systemd 사용자 서비스
+- <strong>Windows</strong>: Windows 서비스
 
 재부팅 후에도 자동 실행되니 걱정하지 마세요.
 
@@ -164,12 +164,12 @@ openclaw onboard --install-daemon
 
 ## 4. Telegram 봇 연동 — 가장 쉬운 채널
 
-여러 채널 중 진입 장벽이 가장 낮은 **Telegram**으로 시작해 보겠습니다.
+여러 채널 중 진입 장벽이 가장 낮은 <strong>Telegram</strong>으로 시작해 보겠습니다.
 
 ### 4-1. 봇 생성
 
 1. Telegram에서 [@BotFather](https://t.me/BotFather)에게 `/newbot` 명령을 보냅니다.
-2. 봇 이름과 username을 정하면 **API 토큰**이 발급됩니다.
+2. 봇 이름과 username을 정하면 <strong>API 토큰</strong>이 발급됩니다.
 3. 이 토큰을 복사해 두세요.
 
 ### 4-2. 설정 파일에 토큰 등록
@@ -191,13 +191,13 @@ openclaw onboard --install-daemon
 
 | 정책 | 동작 |
 |---|---|
-| `pairing` | 페어링 승인 필요 (보안상 **강력 추천** ⭐) |
+| `pairing` | 페어링 승인 필요 (보안상 <strong>강력 추천</strong> ⭐) |
 | `open` | 아무나 DM 가능 (테스트 용도) |
 | `deny` | DM 차단 |
 
 ### 4-3. 페어링 승인
 
-봇에게 처음 DM을 보내면 **페어링 요청**이 발생합니다. 터미널에서 승인:
+봇에게 처음 DM을 보내면 <strong>페어링 요청</strong>이 발생합니다. 터미널에서 승인:
 
 ```bash
 # 대기 중인 페어링 목록 확인
@@ -211,7 +211,7 @@ openclaw pairing approve <요청ID>
 
 ### 4-4. Telegram 그룹에서도 사용하기
 
-그룹에 봇을 초대하면 **멘션 기반**으로 동작합니다:
+그룹에 봇을 초대하면 <strong>멘션 기반</strong>으로 동작합니다:
 
 ```json5
 {
@@ -284,7 +284,7 @@ openclaw gateway --port 18789 --verbose
 openclaw gateway --bind tailnet --token <토큰>
 ```
 
-토큰은 비-로컬 바인딩 시 **필수**입니다.
+토큰은 비-로컬 바인딩 시 <strong>필수</strong>입니다.
 
 ### 상태 확인
 
@@ -299,7 +299,7 @@ openclaw doctor
 openclaw health
 ```
 
-브라우저에서 **http://127.0.0.1:18789/** 에 접속하면 대시보드를 통해 실행 상태, 채널 연결, 최근 대화 등을 시각적으로 확인할 수 있습니다.
+브라우저에서 <strong>http://127.0.0.1:18789/</strong> 에 접속하면 대시보드를 통해 실행 상태, 채널 연결, 최근 대화 등을 시각적으로 확인할 수 있습니다.
 
 ---
 
@@ -338,7 +338,7 @@ Telegram 채팅에서 바로 사용할 수 있는 기본 명령어들:
 
 ## 7. 워크스페이스 설정 — 에이전트의 뇌 구성하기
 
-동작하는 것을 확인했으니, 이제 **나에게 맞는 에이전트**로 다듬어 봅시다.
+동작하는 것을 확인했으니, 이제 <strong>나에게 맞는 에이전트</strong>로 다듬어 봅시다.
 
 ### 워크스페이스 파일 구조
 
@@ -445,7 +445,7 @@ npx clawhub@latest install trello
 ls ~/.openclaw/workspace/skills/
 ```
 
-설치된 스킬은 자동으로 인식됩니다. Gateway 재시작 없이 **핫 리로드**됩니다.
+설치된 스킬은 자동으로 인식됩니다. Gateway 재시작 없이 <strong>핫 리로드</strong>됩니다.
 
 ---
 
@@ -493,14 +493,14 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ### 바로 해볼 만한 것들
 
-1. **SOUL.md 편집하기** — 에이전트에게 나만의 성격 부여
-2. **HEARTBEAT.md 만들기** — 자동 체크리스트 설정
-3. **ClawHub에서 스킬 탐색** — [clawhub.com](https://clawhub.com)
-4. **크론 작업 하나 등록** — 매일 아침 브리핑
+1. <strong>SOUL.md 편집하기</strong> — 에이전트에게 나만의 성격 부여
+2. <strong>HEARTBEAT.md 만들기</strong> — 자동 체크리스트 설정
+3. <strong>ClawHub에서 스킬 탐색</strong> — [clawhub.com](https://clawhub.com)
+4. <strong>크론 작업 하나 등록</strong> — 매일 아침 브리핑
 
 ### 3편에서 다룰 내용
 
-**[3편 (활용법편)](/ko/blog/ko/openclaw-advanced-usage/)** 에서는 실제로 OpenClaw을 **강력한 자동화 도구**로 활용하는 고급 사례를 다룹니다:
+<strong>[3편 (활용법편)](/ko/blog/ko/openclaw-advanced-usage/)</strong> 에서는 실제로 OpenClaw을 <strong>강력한 자동화 도구</strong>로 활용하는 고급 사례를 다룹니다:
 
 - n8n/Make 연동 웹훅 워크플로우
 - MCP 서버 연동

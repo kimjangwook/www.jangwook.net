@@ -590,7 +590,7 @@ graph TD
     C2[Enforce security scan] --> C
 ```
 
-**Phase 1 Implementation:**
+<strong>Phase 1 Implementation:</strong>
 
 ```bash
 #!/bin/bash
@@ -605,7 +605,7 @@ echo "ℹ️  Audit trail recorded"
 exit 0
 ```
 
-**Phase 2 Implementation:**
+<strong>Phase 2 Implementation:</strong>
 
 ```bash
 #!/bin/bash
@@ -621,7 +621,7 @@ npx eslint "$file_path" || echo "⚠️  Linting issues found"
 exit 2
 ```
 
-**Phase 3 Implementation:**
+<strong>Phase 3 Implementation:</strong>
 
 ```bash
 #!/bin/bash

@@ -139,7 +139,7 @@ planning_protocol:
 
 单一代理无法精通所有领域。层级化委托通过<strong>专业化分工</strong>解决这一问题：
 
-**Orchestrator → 集群:**
+<strong>Orchestrator → 集群:</strong>
 
 ```mermaid
 graph LR
@@ -150,7 +150,7 @@ graph LR
     O --> C5[Research]
 ```
 
-**集群 → Agent (例: Content):**
+<strong>集群 → Agent (例: Content):</strong>
 
 ```mermaid
 graph LR

@@ -58,7 +58,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-> **시리즈: DeNA LLM 스터디** (2/5)
+> <strong>시리즈: DeNA LLM 스터디</strong> (2/5)
 >
 > 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)
 > 2. <strong>[Part 2: 구조화 출력과 멀티 LLM 파이프라인](/ko/blog/ko/dena-llm-study-part2-structured-output)</strong> ← 현재 글
@@ -68,23 +68,23 @@ relatedPosts:
 
 ## 개요
 
-DeNA의 LLM 스터디 시리즈 Part 2에서는 LLM 출력을 안정적으로 제어하는 **구조화 출력(Structured Output)** 기법과 여러 LLM을 조합하여 더 강력한 시스템을 만드는 **Multi-LLM 파이프라인 패턴**을 다룹니다.
+DeNA의 LLM 스터디 시리즈 Part 2에서는 LLM 출력을 안정적으로 제어하는 <strong>구조화 출력(Structured Output)</strong> 기법과 여러 LLM을 조합하여 더 강력한 시스템을 만드는 <strong>Multi-LLM 파이프라인 패턴</strong>을 다룹니다.
 
 이번 글에서는 DeNA 스터디 자료를 기반으로 최신 정보를 추가하여, 실무에서 즉시 활용할 수 있는 패턴과 베스트 프랙티스를 정리했습니다.
 
 ### 이 글에서 다룰 내용
 
-1. **구조화 출력 기법**
+1. <strong>구조화 출력 기법</strong>
    - JSON Schema와 Pydantic 활용
    - Constrained Decoding 원리
    - 프로바이더별 구현 방식 (OpenAI, Anthropic, Google)
 
-2. **복수 LLM 조합 패턴**
+2. <strong>복수 LLM 조합 패턴</strong>
    - Sequential, Parallel, Cascade, Router, Iterative
    - 각 패턴의 적용 시나리오와 트레이드오프
    - 실전 구현 예제
 
-3. **실습 B & C 내용**
+3. <strong>실습 B & C 내용</strong>
    - B1: 이항 분류 (코멘트 분류)
    - B2: 복수 항목 추출과 채점
    - B3: 네스트 구조화 출력
@@ -98,10 +98,10 @@ DeNA의 LLM 스터디 시리즈 Part 2에서는 LLM 출력을 안정적으로 �
 
 LLM은 기본적으로 자유 형식의 텍스트를 생성합니다. 하지만 실무 애플리케이션에서는 다음과 같은 요구사항이 있습니다:
 
-- **파싱 가능한 데이터**: JSON, YAML 등 표준 형식
-- **타입 안전성**: 필드 타입 검증 (string, number, boolean 등)
-- **필수 필드 보장**: 누락 방지
-- **중첩 구조 지원**: 복잡한 데이터 모델
+- <strong>파싱 가능한 데이터</strong>: JSON, YAML 등 표준 형식
+- <strong>타입 안전성</strong>: 필드 타입 검증 (string, number, boolean 등)
+- <strong>필수 필드 보장</strong>: 누락 방지
+- <strong>중첩 구조 지원</strong>: 복잡한 데이터 모델
 
 자유 텍스트 출력의 문제점:
 
@@ -190,7 +190,7 @@ data = json.loads(response.choices[0].message.content)
 # {"name": "John", "age": 30, "email": "john@example.com"}
 ```
 
-**주요 특징**:
+<strong>주요 특징</strong>:
 
 - `strict: True` 옵션으로 100% 스키마 준수 보장
 - Constrained Decoding 기반으로 잘못된 JSON 생성 불가능
@@ -242,7 +242,7 @@ print(user.age)   # 30
 print(user.email) # "john@example.com"
 ```
 
-**장점**:
+<strong>장점</strong>:
 
 - Python 네이티브 타입 체크
 - IDE 자동완성 지원
@@ -292,7 +292,7 @@ print(person.companies[0].name)  # "Google"
 
 ### 1.4 Constrained Decoding 원리
 
-Constrained Decoding은 LLM이 토큰을 생성할 때, **스키마에 맞지 않는 토큰을 실시간으로 차단**하는 기법입니다.
+Constrained Decoding은 LLM이 토큰을 생성할 때, <strong>스키마에 맞지 않는 토큰을 실시간으로 차단</strong>하는 기법입니다.
 
 #### 작동 원리
 
@@ -343,21 +343,21 @@ graph TD
 # 최종 출력: {"name": "John", "age": 30}
 ```
 
-**핵심**:
+<strong>핵심</strong>:
 
-- 각 단계에서 **스키마에 맞는 토큰만 허용**
-- 잘못된 JSON이 생성될 가능성 **0%**
+- 각 단계에서 <strong>스키마에 맞는 토큰만 허용</strong>
+- 잘못된 JSON이 생성될 가능성 <strong>0%</strong>
 - 추가 검증 로직 불필요
 
 #### 프로바이더별 구현
 
 | 프로바이더            | 구현 방식                               | 비고                     |
 | --------------------- | --------------------------------------- | ------------------------ |
-| **OpenAI**            | Native Structured Outputs API           | 가장 편리 (2024.08〜)    |
-| **Anthropic**         | Tool Use 우회 방식                      | `tools` 파라미터 활용    |
-| **Google Gemini**     | `response_mime_type="application/json"` | JSON Schema 지원 (Beta)  |
-| **Local (llama.cpp)** | Grammar-based decoding                  | GBNF 문법 정의 필요      |
-| **Outlines**          | FSM-based decoding                      | 오픈소스, 모든 모델 지원 |
+| <strong>OpenAI</strong>            | Native Structured Outputs API           | 가장 편리 (2024.08〜)    |
+| <strong>Anthropic</strong>         | Tool Use 우회 방식                      | `tools` 파라미터 활용    |
+| <strong>Google Gemini</strong>     | `response_mime_type="application/json"` | JSON Schema 지원 (Beta)  |
+| <strong>Local (llama.cpp)</strong> | Grammar-based decoding                  | GBNF 문법 정의 필요      |
+| <strong>Outlines</strong>          | FSM-based decoding                      | 오픈소스, 모든 모델 지원 |
 
 #### Anthropic Claude Tool Use 방식
 
@@ -491,9 +491,9 @@ graph TD
 
 ### 2.2 Sequential Pattern (순차 실행)
 
-**개념**: 이전 LLM의 출력을 다음 LLM의 입력으로 사용
+<strong>개념</strong>: 이전 LLM의 출력을 다음 LLM의 입력으로 사용
 
-**적용 시나리오**:
+<strong>적용 시나리오</strong>:
 
 - 단계적 데이터 변환 (번역 → 요약 → 감정 분석)
 - 점진적 정제 (초안 작성 → 문법 교정 → 스타일 개선)
@@ -519,7 +519,7 @@ async def sequential_pipeline(text: str) -> str:
 result = await sequential_pipeline("한국어 긴 문서...")
 ```
 
-**트레이드오프**:
+<strong>트레이드오프</strong>:
 
 - ✅ 각 단계가 명확하게 분리
 - ✅ 디버깅 용이
@@ -528,9 +528,9 @@ result = await sequential_pipeline("한국어 긴 문서...")
 
 ### 2.3 Parallel Pattern (병렬 실행)
 
-**개념**: 여러 LLM을 동시에 실행하여 결과 집계
+<strong>개념</strong>: 여러 LLM을 동시에 실행하여 결과 집계
 
-**적용 시나리오**:
+<strong>적용 시나리오</strong>:
 
 - 다각도 평가 (문법, 스타일, 내용 동시 평가)
 - 앙상블 추론 (여러 모델의 결과를 투표/평균)
@@ -569,7 +569,7 @@ async def evaluate_grammar(text: str) -> float:
 # 다른 평가 함수도 동일한 패턴...
 ```
 
-**실행 시간 비교**:
+<strong>실행 시간 비교</strong>:
 
 ```python
 # Sequential: 3초 × 3 = 9초
@@ -577,7 +577,7 @@ async def evaluate_grammar(text: str) -> float:
 # → 66% 시간 단축!
 ```
 
-**트레이드오프**:
+<strong>트레이드오프</strong>:
 
 - ✅ 최대 속도 (병렬 실행)
 - ✅ 독립적인 평가 가능
@@ -586,9 +586,9 @@ async def evaluate_grammar(text: str) -> float:
 
 ### 2.4 Cascade Pattern (점진적 확대)
 
-**개념**: 작은 모델부터 시작하여, 필요시 큰 모델로 확대
+<strong>개념</strong>: 작은 모델부터 시작하여, 필요시 큰 모델로 확대
 
-**적용 시나리오**:
+<strong>적용 시나리오</strong>:
 
 - 비용 최적화 (간단한 질문은 작은 모델로)
 - 품질 보장 (복잡한 질문만 큰 모델로)
@@ -626,7 +626,7 @@ async def cascade_routing(query: str) -> str:
 # → 평균 비용: 0.15 × 0.8 + 5 × 0.2 = $1.12 (78% 절감)
 ```
 
-**트레이드오프**:
+<strong>트레이드오프</strong>:
 
 - ✅ 비용 효율 극대화
 - ✅ 평균 품질 유지
@@ -635,9 +635,9 @@ async def cascade_routing(query: str) -> str:
 
 ### 2.5 Router Pattern (조건부 라우팅)
 
-**개념**: 입력의 특성에 따라 최적의 모델로 라우팅
+<strong>개념</strong>: 입력의 특성에 따라 최적의 모델로 라우팅
 
-**적용 시나리오**:
+<strong>적용 시나리오</strong>:
 
 - 도메인별 전문가 모델 (의료, 법률, 기술)
 - 언어별 모델 (한국어 특화, 영어 특화)
@@ -674,7 +674,7 @@ async def router_pattern(query: str) -> str:
     return response
 ```
 
-**트레이드오프**:
+<strong>트레이드오프</strong>:
 
 - ✅ 최적의 모델 선택
 - ✅ 비용 대비 품질 최적화
@@ -683,9 +683,9 @@ async def router_pattern(query: str) -> str:
 
 ### 2.6 Iterative Pattern (반복 개선)
 
-**개념**: 평가 → 수정을 반복하며 품질 개선
+<strong>개념</strong>: 평가 → 수정을 반복하며 품질 개선
 
-**적용 시나리오**:
+<strong>적용 시나리오</strong>:
 
 - 글쓰기 개선 (초안 → 피드백 → 수정 → 재평가)
 - 코드 리팩토링 (코드 → 리뷰 → 수정 → 재리뷰)
@@ -738,7 +738,7 @@ improved = await iterative_improvement(
 )
 ```
 
-**트레이드오프**:
+<strong>트레이드오프</strong>:
 
 - ✅ 점진적 품질 개선
 - ✅ 명확한 피드백 루프
@@ -810,13 +810,13 @@ async def hybrid_pipeline(text: str) -> str:
 
 ### 4.1 2025년 구조화 출력 표준
 
-**OpenAI Structured Outputs**가 사실상 표준으로 자리잡았습니다:
+<strong>OpenAI Structured Outputs</strong>가 사실상 표준으로 자리잡았습니다:
 
-- **Constrained Decoding 기반**: 100% 스키마 준수
-- **추가 비용 없음**: 기존 API와 동일한 가격
-- **Pydantic 통합**: Instructor 등 라이브러리 지원
+- <strong>Constrained Decoding 기반</strong>: 100% 스키마 준수
+- <strong>추가 비용 없음</strong>: 기존 API와 동일한 가격
+- <strong>Pydantic 통합</strong>: Instructor 등 라이브러리 지원
 
-**경쟁 제품**:
+<strong>경쟁 제품</strong>:
 
 - Anthropic: Tool Use 방식 (우회적)
 - Google: `response_mime_type` (Beta)
@@ -843,7 +843,7 @@ async def cost_optimized_pipeline(query: str) -> str:
     return result
 ```
 
-**비용 절감 효과**:
+<strong>비용 절감 효과</strong>:
 
 - Cascade: 70-80%
 - Caching: 50-90% (반복 쿼리 비율에 따라)
@@ -851,14 +851,14 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 ### 4.3 품질 보장 체크리스트
 
-**구조화 출력**:
+<strong>구조화 출력</strong>:
 
 - ✅ 필수 필드 정의 (`required` 배열)
 - ✅ 타입 제약 (`minimum`, `maximum`, `pattern`)
 - ✅ 설명 추가 (`description` 필드로 LLM 가이드)
 - ✅ 검증 로직 (`Pydantic validator`)
 
-**파이프라인 설계**:
+<strong>파이프라인 설계</strong>:
 
 - ✅ 오류 처리 (각 단계마다 try-catch)
 - ✅ 타임아웃 설정 (무한 대기 방지)
@@ -869,45 +869,45 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 | 도구           | 용도                        | 추천도     |
 | -------------- | --------------------------- | ---------- |
-| **Instructor** | Pydantic ↔ LLM 통합         | ⭐⭐⭐⭐⭐ |
-| **Outlines**   | Constrained Decoding (로컬) | ⭐⭐⭐⭐   |
-| **LangChain**  | 파이프라인 오케스트레이션   | ⭐⭐⭐     |
-| **LlamaIndex** | RAG + Structured Outputs    | ⭐⭐⭐⭐   |
-| **Guidance**   | Template-based 출력 제어    | ⭐⭐⭐     |
+| <strong>Instructor</strong> | Pydantic ↔ LLM 통합         | ⭐⭐⭐⭐⭐ |
+| <strong>Outlines</strong>   | Constrained Decoding (로컬) | ⭐⭐⭐⭐   |
+| <strong>LangChain</strong>  | 파이프라인 오케스트레이션   | ⭐⭐⭐     |
+| <strong>LlamaIndex</strong> | RAG + Structured Outputs    | ⭐⭐⭐⭐   |
+| <strong>Guidance</strong>   | Template-based 출력 제어    | ⭐⭐⭐     |
 
 ## 5. 다음 단계
 
 ### Part 3 예고: RAG와 벡터 데이터베이스
 
-다음 글에서는 **외부 지식을 LLM에 주입**하는 RAG(Retrieval-Augmented Generation) 기법을 다룹니다:
+다음 글에서는 <strong>외부 지식을 LLM에 주입</strong>하는 RAG(Retrieval-Augmented Generation) 기법을 다룹니다:
 
-1. **벡터 데이터베이스 기초**
+1. <strong>벡터 데이터베이스 기초</strong>
    - Embedding 모델 선택
    - FAISS, Pinecone, Weaviate 비교
 
-2. **RAG 파이프라인 구축**
+2. <strong>RAG 파이프라인 구축</strong>
    - Chunking 전략
    - Retrieval 최적화
    - Reranking 기법
 
-3. **고급 RAG 패턴**
+3. <strong>고급 RAG 패턴</strong>
    - Hybrid Search (키워드 + 벡터)
    - Multi-hop Retrieval
    - Self-Query
 
 ### 실습 프로젝트 제안
 
-1. **문서 처리 시스템**
+1. <strong>문서 처리 시스템</strong>
    - PDF → 구조화 데이터 추출
    - Parallel Pattern으로 병렬 처리
    - Pydantic으로 검증
 
-2. **자동 평가 파이프라인**
+2. <strong>자동 평가 파이프라인</strong>
    - Iterative Pattern으로 품질 개선
    - 복수 평가축 (문법, 스타일, 내용)
    - 목표 점수 도달까지 반복
 
-3. **비용 최적화 시스템**
+3. <strong>비용 최적화 시스템</strong>
    - Cascade Pattern으로 모델 선택
    - 쿼리 분류 → 라우팅
    - 캐싱 + 배치 처리
@@ -916,17 +916,17 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 DeNA LLM 스터디 Part 2에서는 LLM을 실무에 적용하기 위한 두 가지 핵심 기법을 배웠습니다:
 
-1. **구조화 출력**
+1. <strong>구조화 출력</strong>
    - JSON Schema, Pydantic으로 타입 안전한 출력 보장
    - Constrained Decoding으로 100% 스키마 준수
    - OpenAI Structured Outputs API가 현재 최고의 선택
 
-2. **Multi-LLM 조합 패턴**
+2. <strong>Multi-LLM 조합 패턴</strong>
    - Sequential, Parallel, Cascade, Router, Iterative
    - 각 패턴의 트레이드오프 이해
    - 실무에서는 하이브리드 조합 활용
 
-**핵심 메시지**:
+<strong>핵심 메시지</strong>:
 
 - 구조화 출력은 <strong>프로덕션 LLM 애플리케이션의 필수 요소</strong>
 - 단일 LLM보다 <strong>복수 LLM 조합이 더 강력</strong>

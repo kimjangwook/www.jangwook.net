@@ -58,7 +58,7 @@ relatedPosts:
 ---
 
 > <strong>시리즈 안내</strong>: 이 글은 "EffiFlow 자동화 구조 분석/평가 및 개선" 시리즈의 Part 1/3입니다.
-> - **Part 1** (현재): 핵심 아키텍처와 메트릭 분석
+> - <strong>Part 1</strong> (현재): 핵심 아키텍처와 메트릭 분석
 > - [Part 2](/ko/blog/ko/effiflow-automation-analysis-part2): Skills와 Commands 통합 전략
 > - [Part 3](/ko/blog/ko/effiflow-automation-analysis-part3): 실전 개선 사례 및 ROI 분석
 
@@ -128,17 +128,17 @@ graph TB
 
 ### 계층별 역할
 
-**Commands (7개)**: 사용자가 직접 호출하는 워크플로우 오케스트레이터
+<strong>Commands (7개)</strong>: 사용자가 직접 호출하는 워크플로우 오케스트레이터
 - 복잡한 다단계 작업 관리
 - Agents에게 작업 위임
 - 최종 검증 및 출력
 
-**Agents (17개)**: 독립 실행 가능한 전문가
+<strong>Agents (17개)</strong>: 독립 실행 가능한 전문가
 - 특정 도메인 지식 보유
 - Skills와 Tools 활용
 - 병렬 실행 지원
 
-**Skills (4개)**: 자동 발견되는 모듈형 기능
+<strong>Skills (4개)</strong>: 자동 발견되는 모듈형 기능
 - SKILL.md + 지원 파일
 - 재사용 가능한 로직
 - 도구 접근 제어 가능
@@ -206,7 +206,7 @@ graph LR
     style Total fill:#10b981
 ```
 
-**ROI 분석**:
+<strong>ROI 분석</strong>:
 - Break-even Point: 3회 실행
 - 연간 절감: <strong>$4.07 (71%)</strong>
 - 투자 회수: 즉시 (3주 내)
@@ -226,7 +226,7 @@ if (existingMeta[slug]?.contentHash === newHash) {
 }
 ```
 
-**효과**:
+<strong>효과</strong>:
 - 13개 포스트 전체 분석: 2분, $0.09
 - 신규 2〜3개만 분석: 20초, ~$0.02
 - <strong>79% 추가 절감</strong>
@@ -239,8 +239,8 @@ if (existingMeta[slug]?.contentHash === newHash) {
 
 | 방식 | 장점 | 단점 |
 |------|------|------|
-| **TF-IDF** | 빠름, 저렴 | 의미 이해 부족, 동의어 미처리 |
-| **Claude LLM** | 의미 이해, 맥락 고려 | 느림, 비용 발생 |
+| <strong>TF-IDF</strong> | 빠름, 저렴 | 의미 이해 부족, 동의어 미처리 |
+| <strong>Claude LLM</strong> | 의미 이해, 맥락 고려 | 느림, 비용 발생 |
 
 EffiFlow는 <strong>Claude LLM</strong>을 선택했지만, 메타데이터 우선 아키텍처로 비용 문제를 해결했습니다.
 
@@ -272,7 +272,7 @@ const similarityDimensions = {
 }
 ```
 
-**다국어 추론**의 핵심: LLM은 각 언어로 <strong>독립적인 이유</strong>를 생성합니다(단순 번역이 아님).
+<strong>다국어 추론</strong>의 핵심: LLM은 각 언어로 <strong>독립적인 이유</strong>를 생성합니다(단순 번역이 아님).
 
 ### 성과 지표
 
@@ -333,24 +333,24 @@ recommendations.json        (추천 업데이트, V2)
 
 ### 자동화 효과
 
-**수동 작업 시간** (기존):
+<strong>수동 작업 시간</strong> (기존):
 - 리서치: 30분
 - 글쓰기: 2시간
 - 이미지 제작: 20분
 - 번역: 1시간
 - 메타데이터: 10분
 - SEO 최적화: 20분
-- **총 4시간 40분/포스트**
+- <strong>총 4시간 40분/포스트</strong>
 
-**자동화 후**:
+<strong>자동화 후</strong>:
 - 명령 입력: 5초
 - 대기: 5〜8분
 - 검토 및 수정: 10〜20분
-- **총 30분/포스트**
+- <strong>총 30분/포스트</strong>
 
-**절감**: <strong>4시간 10분/포스트 (90%)</strong>
+<strong>절감</strong>: <strong>4시간 10분/포스트 (90%)</strong>
 
-**연간 효과** (주 2회 포스트):
+<strong>연간 효과</strong> (주 2회 포스트):
 - 104 포스트 × 4.17시간 = <strong>433시간 절감</strong>
 - 시급 $50 기준: <strong>$21,650 가치</strong>
 
@@ -381,7 +381,7 @@ After (메타데이터 우선):
 
 ### 비용 분석
 
-**현재 운영 비용** (연간):
+<strong>현재 운영 비용</strong> (연간):
 
 ```
 메타데이터 생성:    $0.09  (1회)
@@ -392,7 +392,7 @@ GA 리포트:         $1.20  (월 1회 × 12개월)
 총 연간 비용:      $10.65
 ```
 
-**ROI**:
+<strong>ROI</strong>:
 - 시간 절감: 433시간/년 × $50/시간 = $21,650
 - 운영 비용: $10.65
 - <strong>순 이익: $21,639</strong>
@@ -412,7 +412,7 @@ Claude Code 공식 베스트 프랙티스와 비교한 결과:
 | 도구 목록 | 권장 | ✅ 제공됨 | 100% | 10/10 |
 | 파일 간결성 | 100줄 이하 | ⚠️ 일부 초과 | 47% | 7/10 |
 
-**평균**: 9.2/10 ⭐⭐⭐⭐⭐
+<strong>평균</strong>: 9.2/10 ⭐⭐⭐⭐⭐
 
 ### Skills (4개 구현)
 
@@ -424,7 +424,7 @@ Claude Code 공식 베스트 프랙티스와 비교한 결과:
 | 설명 구체성 | "Use when..." | ✅ 명시 | 100% | 10/10 |
 | allowed-tools | 권장 | ✅ 모두 명시 | 100% | 10/10 |
 
-**평균**: 10/10 ⭐⭐⭐⭐⭐
+<strong>평균</strong>: 10/10 ⭐⭐⭐⭐⭐
 
 ### Commands (7개)
 
@@ -435,7 +435,7 @@ Claude Code 공식 베스트 프랙티스와 비교한 결과:
 | $ARGUMENTS | 활용 | ✅ 6/7 사용 | 86% | 9/10 |
 | Agent 통합 | 명확 | ✅ 명시적 | 100% | 10/10 |
 
-**평균**: 9.7/10 ⭐⭐⭐⭐⭐
+<strong>평균</strong>: 9.7/10 ⭐⭐⭐⭐⭐
 
 ### 종합 점수: A 등급 (8.98/10)
 
@@ -455,7 +455,7 @@ Claude Code 공식 베스트 프랙티스와 비교한 결과:
 
 ### 1. 빈 Skills 제거
 
-**문제**: 4개 빈 디렉토리 존재 (50% 미구현)
+<strong>문제</strong>: 4개 빈 디렉토리 존재 (50% 미구현)
 
 ```bash
 .claude/skills/
@@ -465,20 +465,20 @@ Claude Code 공식 베스트 프랙티스와 비교한 결과:
 └── web-automation/       (빈 디렉토리)
 ```
 
-**조치**:
+<strong>조치</strong>:
 ```bash
 rm -rf .claude/skills/{blog-automation,content-analysis,git-automation,web-automation}
 ```
 
-**효과**: 코드베이스 정리, 혼란 제거
-**소요 시간**: 5분
-**우선순위**: Critical
+<strong>효과</strong>: 코드베이스 정리, 혼란 제거
+<strong>소요 시간</strong>: 5분
+<strong>우선순위</strong>: Critical
 
 ### 2. 병렬 처리 구현
 
-**문제**: 순차 처리로 시간 소요
+<strong>문제</strong>: 순차 처리로 시간 소요
 
-**현재**:
+<strong>현재</strong>:
 ```javascript
 for (const post of posts) {
   await analyzePost(post);  // 순차
@@ -486,21 +486,21 @@ for (const post of posts) {
 // 처리 시간: 2분
 ```
 
-**개선**:
+<strong>개선</strong>:
 ```javascript
 await Promise.all(posts.map(analyzePost));  // 병렬
 // 처리 시간: 30〜40초 (70% 단축)
 ```
 
-**효과**: 처리 시간 70% 단축
-**소요 시간**: 4〜6시간
-**우선순위**: High
+<strong>효과</strong>: 처리 시간 70% 단축
+<strong>소요 시간</strong>: 4〜6시간
+<strong>우선순위</strong>: High
 
 ### 3. 자동 테스트 추가
 
-**문제**: 현재 테스트 커버리지 0%
+<strong>문제</strong>: 현재 테스트 커버리지 0%
 
-**필요**:
+<strong>필요</strong>:
 ```python
 # tests/test_blog_writing.py
 def test_validate_frontmatter():
@@ -511,15 +511,15 @@ def test_generate_slug():
     assert generate_slug('Claude Code') == 'claude-code'
 ```
 
-**효과**: 품질 보증, 회귀 방지
-**소요 시간**: 8〜12시간
-**우선순위**: High
+<strong>효과</strong>: 품질 보증, 회귀 방지
+<strong>소요 시간</strong>: 8〜12시간
+<strong>우선순위</strong>: High
 
 ## 실전 적용 가이드
 
 ### 독자가 따라할 수 있는 구체적 단계
 
-**1단계: 메타데이터 우선 아키텍처 적용**
+<strong>1단계: 메타데이터 우선 아키텍처 적용</strong>
 
 ```bash
 # 현재 포스트 분석
@@ -529,11 +529,11 @@ def test_generate_slug():
 cat post-metadata.json
 ```
 
-**예상 결과**:
+<strong>예상 결과</strong>:
 - 13개 포스트: 2분, $0.09
 - 메타데이터 파일 생성 완료
 
-**2단계: V3 추천 생성**
+<strong>2단계: V3 추천 생성</strong>
 
 ```bash
 # 메타데이터 기반 추천
@@ -543,7 +543,7 @@ cat post-metadata.json
 # 비용: $0.03
 ```
 
-**3단계: 자동화된 포스트 작성**
+<strong>3단계: 자동화된 포스트 작성</strong>
 
 ```bash
 # 전체 워크플로우 실행
@@ -571,16 +571,16 @@ cat post-metadata.json
 
 ### 예상 결과 및 메트릭
 
-**즉시 효과**:
+<strong>즉시 효과</strong>:
 - 포스트 작성 시간: 4시간 40분 → 30분 (90% 절감)
 - 토큰 비용: $0.11/회 → $0.03/회 (73% 절감)
 
-**3개월 후**:
+<strong>3개월 후</strong>:
 - 누적 시간 절감: ~100시간
 - 누적 비용 절감: ~$10
 - Break-even 달성
 
-**1년 후**:
+<strong>1년 후</strong>:
 - 시간 절감: 433시간 ($21,650 가치)
 - 비용 절감: $4.07 (71%)
 - ROI: 2,032배
@@ -589,26 +589,26 @@ cat post-metadata.json
 
 ### Part 2: Skills와 Commands 통합 전략 (다음 편)
 
-**다룰 내용**:
+<strong>다룰 내용</strong>:
 - 4개 구현 Skill 상세 워크플로우
 - Commands의 Agent 위임 패턴
 - 캐싱 전략 (24h/7d/48h)
 - Rate Limiting 처리 (Brave Search 2초 지연)
 
-**독자 이득**:
+<strong>독자 이득</strong>:
 - 재사용 가능한 Skill 설계 방법
 - Command 체이닝 구현 가이드
 - 실제 코드 예제 및 템플릿
 
 ### Part 3: 실전 개선 사례 및 ROI 분석 (다다음 편)
 
-**다룰 내용**:
+<strong>다룰 내용</strong>:
 - 병렬 처리 구현 (70% 시간 단축)
 - 자동 테스트 추가 (품질 보증)
 - 성능 대시보드 구축
 - 비용 추적 및 최적화
 
-**독자 이득**:
+<strong>독자 이득</strong>:
 - 즉시 적용 가능한 최적화 기법
 - 비용 절감 계산 방법
 - 장기 ROI 분석 프레임워크
@@ -625,12 +625,12 @@ EffiFlow 블로그 자동화 시스템은 <strong>3가지 핵심 혁신</strong>
 
 ### 실무 적용 가치
 
-**즉시 적용 가능**:
+<strong>즉시 적용 가능</strong>:
 - 메타데이터 추출 및 재사용 패턴
 - 증분 처리 (Content Hash)
 - 한국어만 분석 (3배 비용 절감)
 
-**투자 대비 효과**:
+<strong>투자 대비 효과</strong>:
 - Break-even: 3회 실행 (3주 내)
 - ROI: 2,032배 (1년 기준)
 - 장기 가치: 지속적 비용 절감 + 시간 절약
@@ -639,13 +639,13 @@ EffiFlow 블로그 자동화 시스템은 <strong>3가지 핵심 혁신</strong>
 
 Part 2에서는 <strong>4개 구현 Skill의 상세 워크플로우</strong>와 <strong>Commands의 Agent 위임 패턴</strong>을 깊이 다룹니다. 특히 <strong>캐싱 전략</strong>(24h/7d/48h)과 <strong>Rate Limiting 처리</strong> 방법을 실제 코드와 함께 공유할 예정입니다.
 
-**독자 질문 환영**:
+<strong>독자 질문 환영</strong>:
 - 궁금한 부분이 있다면 댓글로 남겨주세요
 - 다음 편에서 상세히 다루겠습니다
 
 ---
 
-**시리즈 네비게이션**:
-- **Part 1** (현재): 핵심 아키텍처와 메트릭 분석
+<strong>시리즈 네비게이션</strong>:
+- <strong>Part 1</strong> (현재): 핵심 아키텍처와 메트릭 분석
 - Part 2 (예정): Skills와 Commands 통합 전략
 - Part 3 (예정): 실전 개선 사례 및 ROI 분석

@@ -53,35 +53,35 @@ relatedPosts:
       zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
-> **Series: Mastering OpenAI AgentKit** (1/2)
+> <strong>Series: Mastering OpenAI AgentKit</strong> (1/2)
 >
-> 1. **OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started** ← Current article
+> 1. <strong>OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started</strong> ← Current article
 > 2. [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2)
 
 # OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started
 
-On October 6, 2025, at OpenAI DevDay in San Francisco, Sam Altman made an announcement that would fundamentally change the developer ecosystem: **AgentKit**.
+On October 6, 2025, at OpenAI DevDay in San Francisco, Sam Altman made an announcement that would fundamentally change the developer ecosystem: <strong>AgentKit</strong>.
 
-"Everything you need to build, deploy, and optimize agent workflows from prototype to production with way less friction," as Sam Altman put it, AgentKit is not just an API update. It represents **a new paradigm where AI sits at the center of your workflow**.
+"Everything you need to build, deploy, and optimize agent workflows from prototype to production with way less friction," as Sam Altman put it, AgentKit is not just an API update. It represents <strong>a new paradigm where AI sits at the center of your workflow</strong>.
 
 In this guide, we'll understand the core concepts of AgentKit and walk through complete tutorials to build your first AI agents.
 
 ## Key Takeaways (TL;DR)
 
-- 🎯 **AgentKit = AI Workflow Platform**: Competes with Zapier/n8n, but with AI reasoning at the core
-- 🧩 **4 Core Components**: Agent Builder (visual), ChatKit (UI), Connector Registry (tools), Evals (performance)
-- 🐍 **Python SDK Included**: Code-first development with `openai-agents` package
-- 🔌 **Native MCP Support**: "USB-C for AI apps" standardizing tool integration
-- 📊 **Beta Status**: Agent Builder currently in beta, billing starts November 1, 2025
-- 💡 **When to Use**: AI-centric workflows, multi-agent collaboration, complex decision automation
+- 🎯 <strong>AgentKit = AI Workflow Platform</strong>: Competes with Zapier/n8n, but with AI reasoning at the core
+- 🧩 <strong>4 Core Components</strong>: Agent Builder (visual), ChatKit (UI), Connector Registry (tools), Evals (performance)
+- 🐍 <strong>Python SDK Included</strong>: Code-first development with `openai-agents` package
+- 🔌 <strong>Native MCP Support</strong>: "USB-C for AI apps" standardizing tool integration
+- 📊 <strong>Beta Status</strong>: Agent Builder currently in beta, billing starts November 1, 2025
+- 💡 <strong>When to Use</strong>: AI-centric workflows, multi-agent collaboration, complex decision automation
 
 ## What is AgentKit?
 
 ### OpenAI's Strategic Shift
 
-OpenAI is no longer just an "API provider." Through AgentKit, they're evolving into a **platform company**.
+OpenAI is no longer just an "API provider." Through AgentKit, they're evolving into a <strong>platform company</strong>.
 
-While traditional workflow automation tools (Zapier, n8n, Make) focused on **"connecting APIs"**, AgentKit creates **"workflows where AI reasons and orchestrates"**.
+While traditional workflow automation tools (Zapier, n8n, Make) focused on <strong>"connecting APIs"</strong>, AgentKit creates <strong>"workflows where AI reasons and orchestrates"</strong>.
 
 ```mermaid
 graph TB
@@ -104,10 +104,10 @@ graph TB
     style B3 fill:#fff3e0
 ```
 
-**Core Difference**:
+<strong>Core Difference</strong>:
 
-- Traditional tools: Pre-defined **rule-based flows**
-- AgentKit: AI **understands context and decides** in agentic flows
+- Traditional tools: Pre-defined <strong>rule-based flows</strong>
+- AgentKit: AI <strong>understands context and decides</strong> in agentic flows
 
 ### 4 Core Components
 
@@ -115,7 +115,7 @@ AgentKit consists of four integrated systems:
 
 #### 1️⃣ Agent Builder (Beta)
 
-**"Figma for AI Workflows"**
+<strong>"Figma for AI Workflows"</strong>
 
 - Drag-and-drop visual canvas
 - No-code/low-code multi-agent system design
@@ -123,7 +123,7 @@ AgentKit consists of four integrated systems:
 - Built-in versioning
 - Sticky notes for team collaboration
 
-**When to Use**:
+<strong>When to Use</strong>:
 
 - Collaborating with non-developers
 - Visualizing complex workflows
@@ -131,14 +131,14 @@ AgentKit consists of four integrated systems:
 
 #### 2️⃣ ChatKit
 
-**"Embeddable ChatGPT UI"**
+<strong>"Embeddable ChatGPT UI"</strong>
 
 - Chat interface ready to drop into your app
 - File upload support (1 GB free monthly)
 - Integrates with Agent Builder workflows
 - White-label customization
 
-**When to Use**:
+<strong>When to Use</strong>:
 
 - Adding AI chat to SaaS products
 - Building customer support bots
@@ -146,14 +146,14 @@ AgentKit consists of four integrated systems:
 
 #### 3️⃣ Connector Registry
 
-**"Toolbox for Agents"**
+<strong>"Toolbox for Agents"</strong>
 
 - Centralized tool and data management
 - Model Context Protocol (MCP) server support
 - Admin permission controls
 - Secure tool integration
 
-**When to Use**:
+<strong>When to Use</strong>:
 
 - Enterprise tool access control
 - Adding custom tools via MCP servers
@@ -161,14 +161,14 @@ AgentKit consists of four integrated systems:
 
 #### 4️⃣ Evals (Evaluation System)
 
-**"Agent Performance Dashboard"**
+<strong>"Agent Performance Dashboard"</strong>
 
 - Trace grading (execution log evaluation)
 - Dataset management
 - Automated prompt optimization
 - Real-time debugging
 
-**When to Use**:
+<strong>When to Use</strong>:
 
 - Measuring agent performance
 - Prompt A/B testing
@@ -181,7 +181,7 @@ To understand AgentKit's philosophy, you need to know three core principles:
 
 ### 1. Agents
 
-**Definition**: LLMs with specific roles and tools
+<strong>Definition</strong>: LLMs with specific roles and tools
 
 ```python
 from agents import Agent
@@ -199,11 +199,11 @@ agent = Agent(
 )
 ```
 
-**Core**: Agents aren't just prompts. They're **autonomous actors with roles, tools, and constraints**.
+<strong>Core</strong>: Agents aren't just prompts. They're <strong>autonomous actors with roles, tools, and constraints</strong>.
 
 ### 2. Handoffs
 
-**Definition**: Task delegation between agents
+<strong>Definition</strong>: Task delegation between agents
 
 ```python
 from agents import Agent
@@ -221,11 +221,11 @@ technical_agent = Agent(
 )
 ```
 
-**Usage Patterns**:
+<strong>Usage Patterns</strong>:
 
-- **Hierarchical delegation**: Manager → Specialist
-- **Peer collaboration**: Agent-to-agent cooperation
-- **Escalation**: AI → Human
+- <strong>Hierarchical delegation</strong>: Manager → Specialist
+- <strong>Peer collaboration</strong>: Agent-to-agent cooperation
+- <strong>Escalation</strong>: AI → Human
 
 ```mermaid
 graph TD
@@ -245,7 +245,7 @@ graph TD
 
 ### 3. Guardrails
 
-**Definition**: Input/output validation and safety mechanisms
+<strong>Definition</strong>: Input/output validation and safety mechanisms
 
 ```python
 from agents import Agent, guardrails
@@ -264,12 +264,12 @@ agent = Agent(
 )
 ```
 
-**Why Critical?**:
+<strong>Why Critical?</strong>:
 
-- Ensures **safety** in production
-- Prevents **cost runaway** (infinite loops, unnecessary API calls)
-- **Brand protection** (blocks inappropriate responses)
-- **Compliance** (regulatory adherence)
+- Ensures <strong>safety</strong> in production
+- Prevents <strong>cost runaway</strong> (infinite loops, unnecessary API calls)
+- <strong>Brand protection</strong> (blocks inappropriate responses)
+- <strong>Compliance</strong> (regulatory adherence)
 
 ## Building Your First Agent: Step-by-Step Tutorial
 
@@ -301,7 +301,7 @@ print("✓ OpenAI Agents SDK installed")
 
 ### Tutorial 1: Simple Weather Agent
 
-**Goal**: Build an agent that provides weather information for cities
+<strong>Goal</strong>: Build an agent that provides weather information for cities
 
 #### Step 1: Define a Tool
 
@@ -333,7 +333,7 @@ def get_weather(location: str) -> str:
     )
 ```
 
-**Core**: The `@function_tool` decorator converts a function into a tool the agent can use. The docstring teaches the agent how to use the tool.
+<strong>Core</strong>: The `@function_tool` decorator converts a function into a tool the agent can use. The docstring teaches the agent how to use the tool.
 
 #### Step 2: Create Agent
 
@@ -367,7 +367,7 @@ print(result.final_output)
 # Output: "The current weather in Seoul is clear with a temperature of 22°C!"
 ```
 
-**Async Execution** (for production):
+<strong>Async Execution</strong> (for production):
 
 ```python
 import asyncio
@@ -384,7 +384,7 @@ asyncio.run(main())
 
 ### Tutorial 2: Multi-Agent Customer Support System
 
-**Goal**: Classify questions and route to appropriate specialist agents
+<strong>Goal</strong>: Classify questions and route to appropriate specialist agents
 
 #### Step 1: Define Specialist Agents
 
@@ -513,7 +513,7 @@ for user_message in turns:
     print(f"Agent: {result.final_output}\n")
 ```
 
-**Why Sessions Matter**:
+<strong>Why Sessions Matter</strong>:
 
 - Maintain conversation context (remember previous questions)
 - Preserve history after handoffs
@@ -558,51 +558,51 @@ Don't like code? Use Agent Builder's visual canvas.
 
 ### Creating Multi-Agent Visually
 
-**Scenario**: Content generation workflow
+<strong>Scenario</strong>: Content generation workflow
 
-1. **Drag "Agent" node** → "Content Planner"
+1. <strong>Drag "Agent" node</strong> → "Content Planner"
 
    - Instructions: "Create content outlines based on topics"
 
-2. **Drag "Agent" node** → "Content Writer"
+2. <strong>Drag "Agent" node</strong> → "Content Writer"
 
    - Instructions: "Write blog posts from outlines"
    - Connect: Planner → Writer
 
-3. **Drag "Agent" node** → "SEO Optimizer"
+3. <strong>Drag "Agent" node</strong> → "SEO Optimizer"
 
    - Instructions: "Optimize content for SEO"
    - Connect: Writer → SEO Optimizer
 
-4. **Drag "Guardrail" node** → "Quality Check"
+4. <strong>Drag "Guardrail" node</strong> → "Quality Check"
 
    - Type: Output Validation
    - Rules: Minimum 500 words, no plagiarism
    - Connect: SEO Optimizer → Quality Check
 
-5. **Click "Preview"** → Test run
+5. <strong>Click "Preview"</strong> → Test run
 
-6. **Click "Deploy"** → Production deployment
+6. <strong>Click "Deploy"</strong> → Production deployment
 
 ### Visual vs Code: When to Use What?
 
 | Criteria              | Agent Builder (Visual)         | Python SDK (Code)             |
 | --------------------- | ------------------------------ | ----------------------------- |
-| **Learning Curve**    | Low (intuitive)                | Medium (requires programming) |
-| **Flexibility**       | Limited                        | Unlimited                     |
-| **Collaboration**     | Excellent (includes non-devs)  | Fair (developer-centric)      |
-| **Version Control**   | Built-in UI                    | Git integration               |
-| **Debugging**         | Visual traces                  | Code-level debugging          |
-| **Production Deploy** | One-click                      | CI/CD pipeline                |
-| **Recommended Use**   | Prototypes, business workflows | Enterprise, complex logic     |
+| <strong>Learning Curve</strong>    | Low (intuitive)                | Medium (requires programming) |
+| <strong>Flexibility</strong>       | Limited                        | Unlimited                     |
+| <strong>Collaboration</strong>     | Excellent (includes non-devs)  | Fair (developer-centric)      |
+| <strong>Version Control</strong>   | Built-in UI                    | Git integration               |
+| <strong>Debugging</strong>         | Visual traces                  | Code-level debugging          |
+| <strong>Production Deploy</strong> | One-click                      | CI/CD pipeline                |
+| <strong>Recommended Use</strong>   | Prototypes, business workflows | Enterprise, complex logic     |
 
-**Best Practice**: Prototype with visual → Productionize with code
+<strong>Best Practice</strong>: Prototype with visual → Productionize with code
 
 ## Model Context Protocol (MCP) Integration
 
 ### What is MCP?
 
-**"USB-C for AI Apps"** - Connect tools and data sources in a standardized way
+<strong>"USB-C for AI Apps"</strong> - Connect tools and data sources in a standardized way
 
 Traditional approach:
 
@@ -664,7 +664,7 @@ agent = Agent(
 )
 ```
 
-**Benefits**:
+<strong>Benefits</strong>:
 
 - Tool reuse (same MCP server across agents)
 - Centralized permission management
@@ -672,7 +672,7 @@ agent = Agent(
 
 ### MCP Ecosystem
 
-**Major MCP Servers**:
+<strong>Major MCP Servers</strong>:
 
 - Notion MCP
 - Google Drive MCP
@@ -680,24 +680,24 @@ agent = Agent(
 - GitHub MCP
 - PostgreSQL MCP
 
-**Build Your Own**: https://modelcontextprotocol.io/docs
+<strong>Build Your Own</strong>: https://modelcontextprotocol.io/docs
 
 ## Deep Dive into Guardrails
 
 ### Why Are Guardrails Essential?
 
-**Real Production Incidents**:
+<strong>Real Production Incidents</strong>:
 
 - Chatbot exposed customer PII
 - Infinite loop caused $10,000 API bill
 - Generated brand guideline violations
 - Produced harmful content
 
-**Guardrails' Role**: Prevent these incidents proactively
+<strong>Guardrails' Role</strong>: Prevent these incidents proactively
 
 ### Input Guardrails
 
-**Validate user input**
+<strong>Validate user input</strong>
 
 ```python
 from agents import Agent, guardrails
@@ -723,7 +723,7 @@ agent = Agent(
 )
 ```
 
-**Flow**:
+<strong>Flow</strong>:
 
 1. User input arrives
 2. Guardrails execute sequentially
@@ -732,7 +732,7 @@ agent = Agent(
 
 ### Output Guardrails
 
-**Validate agent response**
+<strong>Validate agent response</strong>
 
 ```python
 agent = Agent(
@@ -758,7 +758,7 @@ agent = Agent(
 )
 ```
 
-**Flow**:
+<strong>Flow</strong>:
 
 1. Agent generates response
 2. Guardrails validate sequentially
@@ -796,17 +796,17 @@ agent = Agent(
 
 ### Guardrail Best Practices
 
-1. **Protect Input and Output**: Bidirectional defense
-2. **Hierarchical Guardrails**: Fast checks first, expensive checks later
-3. **Clear Error Messages**: Tell users why blocked
-4. **Logging**: Track guardrail blocks for improvement
-5. **Testing**: Test guardrails with adversarial inputs
+1. <strong>Protect Input and Output</strong>: Bidirectional defense
+2. <strong>Hierarchical Guardrails</strong>: Fast checks first, expensive checks later
+3. <strong>Clear Error Messages</strong>: Tell users why blocked
+4. <strong>Logging</strong>: Track guardrail blocks for improvement
+5. <strong>Testing</strong>: Test guardrails with adversarial inputs
 
 ## Session and Conversation History Management
 
 ### Why Sessions Matter
 
-For **multi-turn conversations** with agents, you need to remember previous context.
+For <strong>multi-turn conversations</strong> with agents, you need to remember previous context.
 
 ```python
 # Without session (no context)
@@ -844,7 +844,7 @@ restored_session = Session.from_dict(session_data)
 result = Runner.run_sync(agent, "What did we talk about?", session=restored_session)
 ```
 
-**Production Environment**: Save sessions in Redis or PostgreSQL
+<strong>Production Environment</strong>: Save sessions in Redis or PostgreSQL
 
 ```python
 import redis
@@ -885,7 +885,7 @@ cheap_agent = Agent(
 )
 ```
 
-**Model Selection Guide**:
+<strong>Model Selection Guide</strong>:
 
 - Simple classification/routing: `gpt-realtime-mini`
 - General tasks: `gpt-4o`
@@ -911,7 +911,7 @@ agent = Agent(
 )
 ```
 
-**Tokens = Cost**: Shorter prompts = cheaper
+<strong>Tokens = Cost</strong>: Shorter prompts = cheaper
 
 ### 3. Prevent Infinite Loops with Guardrails
 
@@ -1038,7 +1038,7 @@ deployment = deploy(
 print(f"Deployed at: {deployment.url}")
 ```
 
-**CI/CD Integration**:
+<strong>CI/CD Integration</strong>:
 
 ```yaml
 # .github/workflows/deploy.yml
@@ -1064,9 +1064,9 @@ jobs:
 
 ### Case 1: Customer Support Automation (Clay)
 
-**Result**: 10x growth
+<strong>Result</strong>: 10x growth
 
-**Implementation**:
+<strong>Implementation</strong>:
 
 ```python
 support_system = Agent(
@@ -1081,7 +1081,7 @@ support_system = Agent(
 )
 ```
 
-**Outcomes**:
+<strong>Outcomes</strong>:
 
 - 80% auto-resolution rate
 - Average response time: 5min → 30sec
@@ -1089,7 +1089,7 @@ support_system = Agent(
 
 ### Case 2: Content Generation Pipeline
 
-**Implementation**:
+<strong>Implementation</strong>:
 
 ```python
 content_planner = Agent(
@@ -1115,7 +1115,7 @@ result = Runner.run_sync(
 )
 ```
 
-**Outcomes**:
+<strong>Outcomes</strong>:
 
 - Content production speed 5x
 - SEO score average 85+ maintained
@@ -1123,7 +1123,7 @@ result = Runner.run_sync(
 
 ### Case 3: Research Assistant System
 
-**Implementation**:
+<strong>Implementation</strong>:
 
 ```python
 @function_tool
@@ -1150,7 +1150,7 @@ research_agent = Agent(
 )
 ```
 
-**Outcomes**:
+<strong>Outcomes</strong>:
 
 - Literature review time reduced 70%
 - Broader research coverage
@@ -1160,13 +1160,13 @@ research_agent = Agent(
 
 You now understand AgentKit's core concepts and have built your first agents.
 
-**Coming Next**: [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2) will cover:
+<strong>Coming Next</strong>: [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2) will cover:
 
-- 🏗️ **Production Architecture Patterns**: Designing enterprise-grade multi-agent systems
-- 🔧 **Advanced Tool Integration**: Building your own MCP servers, external API integration
-- 📊 **Performance Optimization**: A/B testing and prompt optimization with Evals
-- 🛡️ **Security and Compliance**: Production safety mechanisms
-- 💼 **Complete Case Studies**: Three industry-specific full implementations
+- 🏗️ <strong>Production Architecture Patterns</strong>: Designing enterprise-grade multi-agent systems
+- 🔧 <strong>Advanced Tool Integration</strong>: Building your own MCP servers, external API integration
+- 📊 <strong>Performance Optimization</strong>: A/B testing and prompt optimization with Evals
+- 🛡️ <strong>Security and Compliance</strong>: Production safety mechanisms
+- 💼 <strong>Complete Case Studies</strong>: Three industry-specific full implementations
 
 ## Additional Resources
 
@@ -1189,6 +1189,6 @@ You now understand AgentKit's core concepts and have built your first agents.
 
 ---
 
-**See you in Part 2!** Let's master AgentKit together with real-world examples.
+<strong>See you in Part 2!</strong> Let's master AgentKit together with real-world examples.
 
 _Have questions or feedback? Leave a comment below. I reply to all comments!_

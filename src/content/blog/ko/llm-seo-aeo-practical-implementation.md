@@ -73,9 +73,9 @@ B2B 의사결정자들은 구매 전 평균 12개 이상의 검색을 수행합�
 
 ### 3일간의 Phase 1 최적화 여정
 
-**목표**: SvelteKit 기반 Agent Effi Flow의 SEO 기반 구축 및 8개 페이지 최적화
+<strong>목표</strong>: SvelteKit 기반 Agent Effi Flow의 SEO 기반 구축 및 8개 페이지 최적화
 
-**성과**:
+<strong>성과</strong>:
 - 구조화 데이터 실장률: 0% → 100%
 - OGP 실장률: 0% → 100%
 - 재사용 가능한 SEO 컴포넌트 구축 (단위 테스트 7개 전부 통과)
@@ -102,7 +102,7 @@ src/routes/
 └── api/                   # API 엔드포인트 (사이트맵 제외)
 ```
 
-**초기 SEO 감사 결과**:
+<strong>초기 SEO 감사 결과</strong>:
 - 총합: 65/100
 - 메타태그: 부분적 구현 (30/100)
 - 구조화 데이터: 미구현 (0/100)
@@ -113,12 +113,12 @@ src/routes/
 
 B2B SaaS 특성상 롱테일 키워드와 의도 파악이 중요합니다:
 
-**핵심 키워드 예시**:
+<strong>핵심 키워드 예시</strong>:
 - 상업적 의도: "経費精算システム 比較" (검색량: 1,300/월, 경쟁도: 중)
 - 정보적 의도: "OCR 領収書 精度" (검색량: 480/월, 경쟁도: 저)
 - 롱테일: "中小企業 経理自動化 ツール" (검색량: 210/월, 경쟁도: 저)
 
-**인사이트**:
+<strong>인사이트</strong>:
 1. 중소기업 타겟 키워드는 경쟁이 낮음 (기회)
 2. "API 연동", "자동화" 관련 키워드 수요 증가
 3. 비교/리뷰 콘텐츠 수요 높음
@@ -134,7 +134,7 @@ B2B SaaS 특성상 롱테일 키워드와 의도 파악이 중요합니다:
 | 블로그 콘텐츠 | 주 2회 | 월 2〜4회 | 계획 중 |
 | 사이트맵 | 자동 생성 | 수동 관리 | 미구현 → 자동 |
 
-**핵심 학습**:
+<strong>핵심 학습</strong>:
 - 선두 기업도 AEO는 미구현 (기회)
 - FAQ 구조화 데이터 활용도 낮음
 - 대부분 전통적인 SEO에만 집중
@@ -195,7 +195,7 @@ B2B SaaS 특성상 롱테일 키워드와 의도 파악이 중요합니다:
 </svelte:head>
 ```
 
-**사용 예시**:
+<strong>사용 예시</strong>:
 
 ```svelte
 <!-- +page.svelte -->
@@ -214,7 +214,7 @@ B2B SaaS 특성상 롱테일 키워드와 의도 파악이 중요합니다:
 </main>
 ```
 
-**컴포넌트화의 이점**:
+<strong>컴포넌트화의 이점</strong>:
 1. <strong>일관성</strong>: 모든 페이지에서 동일한 메타태그 구조
 2. <strong>유지보수성</strong>: 한 곳만 수정하면 전체 반영
 3. <strong>자동화</strong>: URL 감지, hreflang 생성 등 자동 처리
@@ -236,7 +236,7 @@ Schema.org 표준을 따르는 JSON-LD 형식으로 구현했습니다:
 </svelte:head>
 ```
 
-**1) Organization 스키마** (전체 페이지에 공통 적용):
+<strong>1) Organization 스키마</strong> (전체 페이지에 공통 적용):
 
 ```typescript
 const organizationSchema = {
@@ -262,7 +262,7 @@ const organizationSchema = {
 };
 ```
 
-**2) Product 스키마** (서비스 페이지):
+<strong>2) Product 스키마</strong> (서비스 페이지):
 
 ```typescript
 const productSchema = {
@@ -290,7 +290,7 @@ const productSchema = {
 };
 ```
 
-**3) BreadcrumbList 스키마** (탐색 경로):
+<strong>3) BreadcrumbList 스키마</strong> (탐색 경로):
 
 ```typescript
 const breadcrumbSchema = {
@@ -319,7 +319,7 @@ const breadcrumbSchema = {
 };
 ```
 
-**4) FAQPage 스키마** (가격 페이지 - Phase 2 예정):
+<strong>4) FAQPage 스키마</strong> (가격 페이지 - Phase 2 예정):
 
 ```typescript
 const faqSchema = {
@@ -346,7 +346,7 @@ const faqSchema = {
 };
 ```
 
-**구조화 데이터의 효과**:
+<strong>구조화 데이터의 효과</strong>:
 - <strong>리치 스니펫</strong>: 검색 결과에 별점, 가격 등 추가 정보 표시
 - <strong>CTR 향상</strong>: 시각적으로 돋보이는 검색 결과
 - <strong>AI 엔진 이해도 향상</strong>: ChatGPT, Perplexity 등이 정보 추출 용이
@@ -419,13 +419,13 @@ function generateHreflang(page: string, baseUrl: string): string {
 }
 ```
 
-**자동화의 이점**:
+<strong>자동화의 이점</strong>:
 1. <strong>제로 메인터넌스</strong>: 새 페이지 추가 시 자동 반영
 2. <strong>오류 방지</strong>: 수동 관리로 인한 누락 없음
 3. <strong>다국어 지원</strong>: hreflang 자동 생성
 4. <strong>성능</strong>: 빌드 시 한 번만 생성, 1시간 캐시
 
-**robots.txt 최적화**:
+<strong>robots.txt 최적화</strong>:
 
 ```text
 # robots.txt
@@ -443,7 +443,7 @@ Crawl-delay: 1
 
 #### 성능 최적화
 
-**이미지 Lazy Loading**:
+<strong>이미지 Lazy Loading</strong>:
 
 ```svelte
 <script>
@@ -497,7 +497,7 @@ Crawl-delay: 1
 />
 ```
 
-**Core Web Vitals 개선 결과**:
+<strong>Core Web Vitals 개선 결과</strong>:
 - LCP (Largest Contentful Paint): 2.8s → 1.9s
 - FID (First Input Delay): 100ms → 50ms
 - CLS (Cumulative Layout Shift): 0.15 → 0.05
@@ -516,23 +516,23 @@ Crawl-delay: 1
 
 #### 예상 효과 (6개월 후)
 
-**오가닉 검색 유입**:
+<strong>오가닉 검색 유입</strong>:
 - 현재: 약 500 방문/월
 - 6개월 후 예상: 1,000〜1,250 방문/월 (+100〜150%)
 
-**평균 CTR (Click-Through Rate)**:
+<strong>평균 CTR (Click-Through Rate)</strong>:
 - 현재: 1.5%
 - 예상: 3.0〜3.5% (리치 스니펫 효과)
 
-**리치 스니펫 표시율**:
+<strong>리치 스니펫 표시율</strong>:
 - 현재: 0%
 - 예상: 30〜40% (Product, FAQ 스키마)
 
-**SNS 유입**:
+<strong>SNS 유입</strong>:
 - 현재: 약 200 방문/월
 - 예상: 500〜700 방문/월 (+150〜250%, OGP 효과)
 
-**비즈니스 임팩트**:
+<strong>비즈니스 임팩트</strong>:
 - 데모 신청: +80〜120%
 - 무료 트라이얼 가입: +60〜100%
 - SQL (Sales Qualified Lead): +40〜70%
@@ -556,12 +556,12 @@ Crawl-delay: 1
 
 #### AI 검색 엔진의 부상
 
-**시장 데이터**:
+<strong>시장 데이터</strong>:
 - 62% 마케터가 AI 답변 엔진으로 인한 <strong>클릭 감소</strong> 경험
 - 하지만 <strong>조기 AEO 도입자</strong>는 50〜200% 트래픽 성장
 - 2026년까지 검색의 <strong>50%가 AI 모드</strong>로 전환 예상
 
-**주요 플랫폼별 특성**:
+<strong>주요 플랫폼별 특성</strong>:
 
 1. <strong>ChatGPT Search</strong>:
    - 종합적인 답변 선호
@@ -587,9 +587,9 @@ Crawl-delay: 1
 
 #### 1. E-E-A-T 강화 (경험, 전문성, 권위성, 신뢰성)
 
-**Google의 E-E-A-T는 이제 랭킹 팩터**입니다 (단순 가이드라인이 아님):
+<strong>Google의 E-E-A-T는 이제 랭킹 팩터</strong>입니다 (단순 가이드라인이 아님):
 
-**Experience (경험)**:
+<strong>Experience (경험)</strong>:
 ```markdown
 ## 저자 소개
 
@@ -602,23 +602,23 @@ Crawl-delay: 1
 - Email: chulsoo@agent-effi-flow.com
 ```
 
-**Expertise (전문성)**:
+<strong>Expertise (전문성)</strong>:
 - 자격 증명 명시 (AWS 인증, CPA 등)
 - 실제 사례 데이터 공개 (익명화)
 - 원본 연구 발행 (백서, 조사 리포트)
 
-**Authoritativeness (권위성)**:
+<strong>Authoritativeness (권위성)</strong>:
 - 업계 미디어 기고 (TechCrunch, Nikkei)
 - 컨퍼런스 발표 (SaaS Summit Japan 2025)
 - 제3자 인용 획득 (다른 블로그/매체에서 인용)
 
-**Trustworthiness (신뢰성)**:
+<strong>Trustworthiness (신뢰성)</strong>:
 - HTTPS 필수
 - 개인정보 보호정책 명시
 - 연락처 정보 공개
 - 고객 리뷰 (Google Reviews, G2)
 
-**구현 예시**:
+<strong>구현 예시</strong>:
 
 ```svelte
 <!-- +page.svelte (블로그 포스트) -->
@@ -653,12 +653,12 @@ Crawl-delay: 1
 
 AI는 짧고 단편적인 콘텐츠보다 <strong>종합적이고 깊이 있는 가이드</strong>를 선호합니다.
 
-**최적 길이**:
+<strong>최적 길이</strong>:
 - 일반 블로그: 1,500〜2,000 단어
 - AEO 타겟: <strong>3,000〜5,000 단어</strong>
 - 궁극적 가이드: 5,000〜10,000 단어
 
-**구조화 방법**:
+<strong>구조화 방법</strong>:
 
 ```markdown
 # 경비 정산 시스템 완벽 가이드 2025
@@ -701,12 +701,12 @@ AI는 짧고 단편적인 콘텐츠보다 <strong>종합적이고 깊이 있는 
 **A**: 네, freee, MFクラウド, 弥生会計 등 주요 시스템과 API 연동을 지원합니다...
 ```
 
-**질문 기반 구조**:
+<strong>질문 기반 구조</strong>:
 - H2, H3 제목을 질문 형태로 작성
 - "〜란?", "〜하는 방법", "〜와 〜의 차이" 등
 - AI는 질문에 대한 직접적인 답변을 찾음
 
-**대화형 키워드 타겟팅**:
+<strong>대화형 키워드 타겟팅</strong>:
 - "OK Google, 경비 정산 시스템 추천해줘"
 - "Alexa, 영수증 OCR 정확도는 얼마나 돼?"
 - "Hey Siri, 경리 자동화 비용은 얼마야?"
@@ -715,7 +715,7 @@ AI는 짧고 단편적인 콘텐츠보다 <strong>종합적이고 깊이 있는 
 
 <strong>Position Zero</strong>는 검색 결과 최상단에 표시되는 요약 답변입니다. Google뿐만 아니라 음성 검색에서도 읽혀집니다.
 
-**Featured Snippet 유형**:
+<strong>Featured Snippet 유형</strong>:
 
 1. <strong>단락형</strong> (Paragraph):
 ```markdown
@@ -744,7 +744,7 @@ AI는 짧고 단편적인 콘텐츠보다 <strong>종합적이고 깊이 있는 
 | 경쟁사 B | 12,000엔/월 | 92% | 없음 |
 ```
 
-**FAQPage 구조화 데이터** (Phase 2에서 구현 예정):
+<strong>FAQPage 구조화 데이터</strong> (Phase 2에서 구현 예정):
 
 ```typescript
 const faqSchema = {
@@ -775,25 +775,25 @@ const faqSchema = {
 
 각 AI 플랫폼은 고유한 알고리즘과 선호도를 가지고 있습니다:
 
-**Google (E-E-A-T + 구조화 데이터)**:
+<strong>Google (E-E-A-T + 구조화 데이터)</strong>:
 - ✓ 저자 바이오 추가
 - ✓ Organization, Product 스키마
 - ✓ 백링크 확보
 - ✓ Core Web Vitals 최적화
 
-**ChatGPT (종합적 답변 + 인용)**:
+<strong>ChatGPT (종합적 답변 + 인용)</strong>:
 - ✓ 3,000+ 단어 장문 콘텐츠
 - ✓ 명확한 섹션 구분 (H2, H3)
 - ✓ 데이터 기반 주장 (통계, 사례)
 - ✓ 원본 소스 링크 포함
 
-**Perplexity (연구 등급 콘텐츠 + 권위 신호)**:
+<strong>Perplexity (연구 등급 콘텐츠 + 권위 신호)</strong>:
 - ✓ 학술적 톤 (전문 용어 정의)
 - ✓ 제3자 인용 (업계 리포트, 논문)
 - ✓ 원본 연구 발행 (독자적 데이터)
 - ✓ PR 아웃리치 (매체 기고)
 
-**음성 검색 (Featured Snippet 중심)**:
+<strong>음성 검색 (Featured Snippet 중심)</strong>:
 - ✓ 간결한 답변 (50〜60 단어)
 - ✓ 대화형 키워드 ("〜하는 방법", "〜란")
 - ✓ 리스트 형식
@@ -812,7 +812,7 @@ Perplexity는 B2B 의사결정자들이 가장 많이 사용하는 AI 검색 엔
 
 #### 최적화 전략
 
-**1. 연구 등급 출처 우선**:
+<strong>1. 연구 등급 출처 우선</strong>:
 
 Perplexity는 다음 출처를 선호합니다:
 - 학술 논문 (arXiv, IEEE)
@@ -820,7 +820,7 @@ Perplexity는 다음 출처를 선호합니다:
 - 기술 블로그 (Hacker News 상위 랭크)
 - 공식 문서 (API 레퍼런스, 기술 스펙)
 
-**구현 방법**:
+<strong>구현 방법</strong>:
 ```markdown
 ## OCR 정확도 벤치마크 (2025)
 
@@ -843,11 +843,11 @@ Perplexity는 다음 출처를 선호합니다:
 출처: Agent Effi Flow 내부 연구, 2025년 3월
 ```
 
-**2. 제3자 인용 > 백링크**:
+<strong>2. 제3자 인용 > 백링크</strong>:
 
 전통적인 SEO는 백링크에 집중하지만, Perplexity는 <strong>얼마나 많은 제3자가 당신을 인용하는가</strong>를 중시합니다.
 
-**PR 아웃리치 전략**:
+<strong>PR 아웃리치 전략</strong>:
 ```
 타겟 매체:
 1. 업계 뉴스 사이트 (TechCrunch Japan, The Bridge)
@@ -862,7 +862,7 @@ Perplexity는 다음 출처를 선호합니다:
 - 컨퍼런스 발표: 1건/반기
 ```
 
-**3. 원본 연구 발행**:
+<strong>3. 원본 연구 발행</strong>:
 
 독자적인 데이터는 Perplexity에서 가장 높이 평가됩니다:
 
@@ -883,7 +883,7 @@ Perplexity는 다음 출처를 선호합니다:
 [다운로드: 전체 리포트 PDF (12페이지)]
 ```
 
-**4. 예상 효과**:
+<strong>4. 예상 효과</strong>:
 
 - <strong>인용 횟수</strong>: 5〜10건/월 (6개월 후)
 - <strong>참조 트래픽</strong>: 200〜400 방문/월
@@ -894,7 +894,7 @@ Perplexity는 다음 출처를 선호합니다:
 
 ### Phase 1: 기반 구축 (1개월) ✓ 완료
 
-**완료 항목**:
+<strong>완료 항목</strong>:
 - [x] 메타태그 최적화 (OGP, canonical, hreflang)
 - [x] 기본 구조화 데이터 (Organization, WebSite, BreadcrumbList)
 - [x] 사이트맵 생성
@@ -902,12 +902,12 @@ Perplexity는 다음 출처를 선호합니다:
 - [x] 이미지 lazy loading
 - [x] 재사용 가능한 SEO 컴포넌트 (테스트 커버리지 100%)
 
-**남은 작업**:
+<strong>남은 작업</strong>:
 - [ ] OG 이미지 생성 (5장: 홈, 서비스×3, 가격)
 - [ ] Google Search Console 등록 및 사이트맵 제출
 - [ ] Google Analytics 4 연동
 
-**Quick Wins (30〜60일 내)**:
+<strong>Quick Wins (30〜60일 내)</strong>:
 
 1. <strong>저자 바이오 추가</strong> (1일):
 ```svelte
@@ -939,14 +939,14 @@ Perplexity는 다음 출처를 선호합니다:
 
 예상 효과: Position Zero 획득 가능성 +30〜40%, CTR +20〜40%
 
-**예상 성과 (60일 후)**:
+<strong>예상 성과 (60일 후)</strong>:
 - 오가닉 트래픽: +20〜40%
 - Featured Snippet: 1〜2개 획득
 - 리치 스니펫 표시율: 15〜25%
 
 ### Phase 2: 콘텐츠 최적화 (2개월)
 
-**구현 항목**:
+<strong>구현 항목</strong>:
 
 1. <strong>Product 구조화 데이터</strong> (3일):
 ```typescript
@@ -994,7 +994,7 @@ const pricingFAQ = {
    - 목표: 1,500〜2,000 단어
    - 추가 섹션: 사용 사례, 도입 효과, 경쟁 비교, FAQ
 
-**Medium-term (90〜180일)**:
+<strong>Medium-term (90〜180일)</strong>:
 
 1. <strong>원본 연구 발행</strong> (월 1회):
 ```
@@ -1013,7 +1013,7 @@ const pricingFAQ = {
    - 주제: "경리 담당자를 위한 OCR 가이드"
    - CTA: 무료 체험 링크
 
-**예상 성과 (180일 후)**:
+<strong>예상 성과 (180일 후)</strong>:
 - Perplexity 인용: 5〜10건/월
 - 오가닉 트래픽: +80〜120%
 - 브랜드 검색: +150〜200%
@@ -1021,7 +1021,7 @@ const pricingFAQ = {
 
 ### Phase 3: AEO 확장 (3-4개월)
 
-**구현 항목**:
+<strong>구현 항목</strong>:
 
 1. <strong>FAQ 페이지 구축</strong> (10일):
 ```
@@ -1086,7 +1086,7 @@ const articleSchema = {
 };
 ```
 
-**Long-term (6개월+)**:
+<strong>Long-term (6개월+)</strong>:
 
 1. <strong>멀티 플랫폼 배포</strong>:
    - 블로그 포스트 → LinkedIn 아티클 (자동)
@@ -1103,7 +1103,7 @@ const articleSchema = {
    - 월간 콘텐츠 업데이트 (상위 10개 페이지)
    - 분기별 경쟁사 분석
 
-**예상 성과 (6개월+)**:
+<strong>예상 성과 (6개월+)</strong>:
 - 오가닉 트래픽: +150〜200%
 - Perplexity 인용: 10〜20건/월
 - Featured Snippet: 5〜10개
@@ -1111,7 +1111,7 @@ const articleSchema = {
 
 ### Phase 4: 측정 및 개선 (지속)
 
-**KPI 추적**:
+<strong>KPI 추적</strong>:
 
 ```typescript
 // 주간 대시보드
@@ -1142,14 +1142,14 @@ const weeklyKPIs = {
 };
 ```
 
-**도구 스택**:
+<strong>도구 스택</strong>:
 - <strong>Google Search Console</strong>: 검색 성과, 크롤링 상태
 - <strong>Google Analytics 4</strong>: 트래픽, 전환
 - <strong>Ahrefs/SEMrush</strong>: 키워드 순위, 백링크
 - <strong>Perplexity Tracker</strong> (커스텀): AI 인용 추적
 - <strong>Schema Markup Validator</strong>: 구조화 데이터 검증
 
-**주간 최적화 루틴**:
+<strong>주간 최적화 루틴</strong>:
 
 ```
 월요일: KPI 대시보드 확인
@@ -1159,7 +1159,7 @@ const weeklyKPIs = {
 금요일: PR 아웃리치 (매체 기고, 게스트 포스팅)
 ```
 
-**경쟁사 모니터링**:
+<strong>경쟁사 모니터링</strong>:
 - 월 1회: 경쟁사 상위 10개 키워드 분석
 - 분기 1회: 경쟁사 백링크 프로필 분석
 - 반기 1회: 경쟁사 콘텐츠 전략 분석
@@ -1189,7 +1189,7 @@ Day 3:
 └── Documentation Writer (완료 보고서)
 ```
 
-**이점**:
+<strong>이점</strong>:
 - 작업 시간 <strong>60% 단축</strong> (순차 대비)
 - 전문성 <strong>향상</strong> (각 에이전트가 특화 분야에 집중)
 - 품질 <strong>일관성</strong> (컴포넌트 기반 접근)
@@ -1209,7 +1209,7 @@ Day 3:
 <StructuredData schema={pageSchema} />
 ```
 
-**효과**:
+<strong>효과</strong>:
 - 8개 페이지 최적화: <strong>2시간</strong> (페이지당 15분)
 - 일관성 유지: 메타태그 누락 <strong>0건</strong>
 - 유지보수 비용: <strong>90% 절감</strong>
@@ -1227,7 +1227,7 @@ const routes = import.meta.glob('/src/routes/**/+page.svelte');
 // → 자동으로 모든 페이지 포함
 ```
 
-**ROI**:
+<strong>ROI</strong>:
 - 초기 개발: 4시간
 - 절감 시간: 월 2시간 (연간 24시간)
 - 오류 방지: 누락/중복 <strong>0건</strong>
@@ -1251,7 +1251,7 @@ const routes = import.meta.glob('/src/routes/**/+page.svelte');
 
 #### 1. Svelte/React 프로젝트
 
-**SEO 컴포넌트 재사용**:
+<strong>SEO 컴포넌트 재사용</strong>:
 ```bash
 # 8개 페이지 최적화 소요 시간
 전통적 방법: 8페이지 × 1시간 = 8시간
@@ -1259,7 +1259,7 @@ const routes = import.meta.glob('/src/routes/**/+page.svelte');
 절감: 50%
 ```
 
-**프레임워크별 구현**:
+<strong>프레임워크별 구현</strong>:
 
 <strong>SvelteKit</strong>:
 ```svelte
@@ -1299,12 +1299,12 @@ const { title, description } = Astro.props;
 
 #### 2. Schema.org 검증
 
-**Google Rich Results Test**:
+<strong>Google Rich Results Test</strong>:
 1. https://search.google.com/test/rich-results 접속
 2. URL 또는 코드 입력
 3. 실시간 확인 (미리보기 포함)
 
-**자주 발생하는 오류**:
+<strong>자주 발생하는 오류</strong>:
 ```typescript
 // ❌ 잘못된 날짜 형식
 "datePublished": "2025/11/27"
@@ -1335,7 +1335,7 @@ const { title, description } = Astro.props;
 
 #### 3. Lazy Loading
 
-**가장 간단한 방법** (대부분의 경우 충분):
+<strong>가장 간단한 방법</strong> (대부분의 경우 충분):
 ```html
 <img
   src="/images/hero.jpg"
@@ -1346,7 +1346,7 @@ const { title, description } = Astro.props;
 />
 ```
 
-**고급 방법** (IntersectionObserver):
+<strong>고급 방법</strong> (IntersectionObserver):
 ```typescript
 // Svelte Action
 export function lazyLoad(node: HTMLImageElement) {
@@ -1369,13 +1369,13 @@ export function lazyLoad(node: HTMLImageElement) {
 }
 ```
 
-**효과 측정**:
+<strong>효과 측정</strong>:
 - LCP 개선: 2.8s → 1.9s (<strong>-32%</strong>)
 - 초기 페이로드 감소: 3.2MB → 1.1MB (<strong>-66%</strong>)
 
 #### 4. Sitemap 자동화
 
-**Vite/SvelteKit**:
+<strong>Vite/SvelteKit</strong>:
 ```typescript
 // import.meta.glob 패턴
 const routes = import.meta.glob('/src/routes/**/+page.svelte');
@@ -1391,7 +1391,7 @@ if (url.startsWith('/api/')) {
 }
 ```
 
-**Next.js App Router**:
+<strong>Next.js App Router</strong>:
 ```typescript
 // app/sitemap.ts
 export default async function sitemap() {
@@ -1403,7 +1403,7 @@ export default async function sitemap() {
 }
 ```
 
-**Astro**:
+<strong>Astro</strong>:
 ```typescript
 // astro.config.mjs
 export default defineConfig({
@@ -1418,13 +1418,13 @@ export default defineConfig({
 
 #### 1. OG 이미지 미리 준비
 
-**실수**:
+<strong>실수</strong>:
 ```
 Phase 1: SEO 구조만 구축
 Phase 2: OG 이미지 생성 ← 늦음!
 ```
 
-**올바른 접근**:
+<strong>올바른 접근</strong>:
 ```
 Phase 1 시작 전:
 1. 디자인 시스템 정의
@@ -1433,14 +1433,14 @@ Phase 1 시작 전:
 → Phase 1에서 즉시 적용
 ```
 
-**Agent Effi Flow 교훈**:
+<strong>Agent Effi Flow 교훈</strong>:
 - OG 이미지 생성을 Phase 1에서 보류 → SNS 공유 효과 지연
 - 5개 이미지 생성에 2〜3일 소요 예상
 - 결과: 빠른 승리 기회 <strong>놓침</strong>
 
 #### 2. 초기부터 테스트 코드 작성
 
-**TDD (Test-Driven Development) 적용**:
+<strong>TDD (Test-Driven Development) 적용</strong>:
 
 ```typescript
 // SEO.test.ts
@@ -1460,14 +1460,14 @@ describe('SEO Component', () => {
 });
 ```
 
-**이점**:
+<strong>이점</strong>:
 - 버그 조기 발견 (구현 중 3건 발견)
 - 리팩토링 안정성 (회귀 테스트)
 - 문서화 역할 (테스트 = 사용 예시)
 
 #### 3. 구조화 데이터는 JSON-LD 선호
 
-**마이크로데이터 vs JSON-LD**:
+<strong>마이크로데이터 vs JSON-LD</strong>:
 
 <strong>마이크로데이터</strong> (❌ 권장하지 않음):
 ```html
@@ -1491,7 +1491,7 @@ describe('SEO Component', () => {
 <!-- HTML과 분리, 관리 용이 -->
 ```
 
-**JSON-LD 이점**:
+<strong>JSON-LD 이점</strong>:
 - HTML과 <strong>분리</strong>: 콘텐츠 수정 시 스키마 영향 없음
 - <strong>중앙 관리</strong>: 컴포넌트로 추상화 가능
 - <strong>Google 권장</strong>: 공식 문서에서 선호
@@ -1503,7 +1503,7 @@ describe('SEO Component', () => {
 
 전통적인 SEO는 <strong>Search Everywhere Optimization</strong>으로 진화하고 있습니다.
 
-**플랫폼별 최적화**:
+<strong>플랫폼별 최적화</strong>:
 
 ```mermaid
 graph TD
@@ -1523,13 +1523,13 @@ graph TD
     I --> J
 ```
 
-**2026년 예측**:
+<strong>2026년 예측</strong>:
 - Google 검색의 <strong>50%가 AI 모드</strong>
 - 전통적인 10개 블루 링크 → 1〜3개 AI 큐레이션 답변
 - <strong>브랜드 인용</strong>이 백링크보다 중요
 - <strong>제로 클릭 검색</strong> 70% (현재 50%)
 
-**대응 전략**:
+<strong>대응 전략</strong>:
 1. <strong>브랜드 구축</strong>: 사람들이 직접 검색하게 만들기
 2. <strong>멀티 터치포인트</strong>: 검색만이 아닌 다양한 채널
 3. <strong>커뮤니티</strong>: Reddit, Discord 등 플랫폼 진출
@@ -1539,13 +1539,13 @@ graph TD
 
 <strong>GEO</strong>는 생성형 AI 엔진(ChatGPT, Gemini)에 최적화하는 새로운 분야입니다.
 
-**핵심 원칙**:
+<strong>핵심 원칙</strong>:
 1. <strong>인용 가능성</strong>: AI가 인용하기 쉬운 형식
 2. <strong>권위 신호</strong>: 전문성 지표
 3. <strong>구조화</strong>: 명확한 섹션, 헤딩
 4. <strong>데이터 기반</strong>: 통계, 연구 결과
 
-**실험적 기법**:
+<strong>실험적 기법</strong>:
 ```markdown
 ## AI 인용 최적화 체크리스트
 
@@ -1559,7 +1559,7 @@ graph TD
 
 ### AI 에이전트와 SEO/AEO의 결합
 
-**미래 워크플로우**:
+<strong>미래 워크플로우</strong>:
 
 ```
 1. AI Research Agent:
@@ -1583,19 +1583,19 @@ graph TD
    - 인용 추적
 ```
 
-**Agent Effi Flow의 다음 단계**:
+<strong>Agent Effi Flow의 다음 단계</strong>:
 - Claude Code 서브에이전트 활용
 - 주간 SEO 리포트 자동 생성
 - 콘텐츠 아이디어 자동 수집
 
 ### 음성 기반 AI 검색
 
-**Winner-takes-all 시장**:
+<strong>Winner-takes-all 시장</strong>:
 - 음성 검색은 <strong>1개 답변만</strong> 읽어줌
 - Featured Snippet이 99% 선택됨
 - Position Zero 확보 = 트래픽 독점
 
-**최적화 전략**:
+<strong>최적화 전략</strong>:
 ```markdown
 ## 경비 정산 시스템이란?
 
@@ -1603,22 +1603,22 @@ graph TD
 (50-60 단어로 간결하게)
 ```
 
-**대화형 키워드**:
+<strong>대화형 키워드</strong>:
 - "OK Google, 경비 정산 시스템 추천해줘"
 - "Alexa, OCR 영수증 인식 정확도는?"
 - "Hey Siri, 경리 자동화 비용 얼마야?"
 
 ### 멀티모달 검색 최적화
 
-**이미지 검색**:
+<strong>이미지 검색</strong>:
 - Google Lens: 제품 이미지에 Schema.org 연결
 - Pinterest: 인포그래픽 최적화
 
-**비디오 검색**:
+<strong>비디오 검색</strong>:
 - YouTube SEO: 자막, 타임스탬프, 챕터
 - TikTok/Shorts: 해시태그, 캡션
 
-**팟캐스트 검색**:
+<strong>팟캐스트 검색</strong>:
 - 트랜스크립트 공개
 - 챕터 마커
 - Speakable 스키마
@@ -1652,29 +1652,29 @@ graph TD
    - Perplexity 적합도 점수
    - 개선 제안 자동 생성
 
-**출간 예정**: 2025년 12월 중
+<strong>출간 예정</strong>: 2025년 12월 중
 
 ## 참고 자료
 
 ### Agent Effi Flow 프로젝트 문서
 
-**완료 보고서**:
+<strong>완료 보고서</strong>:
 - [SEO Completion Report](/research/seo/COMPLETION_REPORT.md)
 - 전체 구현 사항, 성과 지표, 테스트 결과 포함
 
-**계획 문서**:
+<strong>계획 문서</strong>:
 - [04_optimization_plan.md](/research/seo/04_optimization_plan.md) - Phase 1〜4 상세 로드맵
 - [01_keyword_research.md](/research/seo/01_keyword_research.md) - 일본어 키워드 분석
 - [02_competitor_analysis.md](/research/seo/02_competitor_analysis.md) - 경쟁사 12개사 비교
 
-**감사 문서**:
+<strong>감사 문서</strong>:
 - [03_seo_audit.md](/research/seo/03_seo_audit.md) - 전체 페이지 SEO 감사 보고서
 - [05_og_image_specifications.md](/research/seo/05_og_image_specifications.md) - OG 이미지 사양서
 
-**작업 이력**:
+<strong>작업 이력</strong>:
 - [99_work_log.md](/research/seo/99_work_log.md) - 전체 작업 이력 및 타임라인
 
-**코드 예시**:
+<strong>코드 예시</strong>:
 - [SEO.svelte](/research/seo/SEO.svelte) - 재사용 가능한 SEO 컴포넌트 ([사용 예시](/research/seo/SEO.example.md))
 - [StructuredData.svelte](/research/seo/StructuredData.svelte) - Schema.org 주입 ([사용 예시](/research/seo/StructuredData.example.md))
 - [sitemap-server.ts](/research/seo/sitemap-server.ts) - 동적 사이트맵 생성
@@ -1682,12 +1682,12 @@ graph TD
 
 ### 공식 문서 및 가이드
 
-**Google**:
+<strong>Google</strong>:
 - [E-E-A-T 가이드](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) - 품질 평가 기준
 - [구조화 데이터 가이드](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) - Schema.org 구현
 - [Rich Results Test](https://search.google.com/test/rich-results) - 스키마 검증 도구
 
-**Schema.org**:
+<strong>Schema.org</strong>:
 - [Organization](https://schema.org/Organization) - 조직 스키마
 - [Product](https://schema.org/Product) - 제품 스키마
 - [FAQPage](https://schema.org/FAQPage) - FAQ 스키마
@@ -1695,32 +1695,32 @@ graph TD
 
 ### AEO 연구 자료
 
-**산업 리포트**:
+<strong>산업 리포트</strong>:
 - "The State of AEO 2025" - BrightEdge
 - "AI Search Impact Study" - Semrush
 - "Perplexity SEO Analysis" - Ahrefs
 
-**학술 논문**:
+<strong>학술 논문</strong>:
 - "Optimizing Content for Large Language Models" - arXiv
 - "Citation Patterns in AI Search Engines" - ACL 2024
 
 ### 추가 학습 자료
 
-**블로그**:
+<strong>블로그</strong>:
 - [Moz Blog](https://moz.com/blog) - SEO 최신 트렌드
 - [Search Engine Land](https://searchengineland.com) - 업계 뉴스
 - [Backlinko](https://backlinko.com) - 실전 SEO 가이드
 
-**팟캐스트**:
+<strong>팟캐스트</strong>:
 - "Search Engine Journal Show" - 주간 SEO 뉴스
 - "Marketing School" - Neil Patel & Eric Siu
 
-**커뮤니티**:
+<strong>커뮤니티</strong>:
 - [r/SEO](https://reddit.com/r/SEO) - Reddit 커뮤니티
 - [SEO Signals Lab](https://www.facebook.com/groups/seosignalslab/) - Facebook 그룹
 
 ---
 
-**마지막 업데이트**: 2025-11-27
-**작성자**: Agent Effi Flow SEO Team
-**다음 글**: "AEO 고급 전략: AI 에이전트와 함께하는 콘텐츠 최적화" (2025년 12월 예정)
+<strong>마지막 업데이트</strong>: 2025-11-27
+<strong>작성자</strong>: Agent Effi Flow SEO Team
+<strong>다음 글</strong>: "AEO 고급 전략: AI 에이전트와 함께하는 콘텐츠 최적화" (2025년 12월 예정)

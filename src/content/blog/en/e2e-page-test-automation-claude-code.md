@@ -76,14 +76,14 @@ This single command automatically tests the following items:
 
 | Priority | Test Item | Description |
 |----------|-----------|-------------|
-| **P0** | Cross-browser | Simultaneous testing on Chromium, Firefox, WebKit |
-| **P0** | Link Integrity | HTTP status code verification for all links |
-| **P0** | Accessibility (a11y) | WCAG 2.1 AA level compliance |
-| **P0** | Mobile Responsive | Layout verification across viewports |
-| **P1** | Image Optimization | Rendered vs. natural size comparison |
-| **P1** | SEO Validation | Meta tags, OG, structured data |
-| **P1** | UI/UX | Font size, touch target verification |
-| **P2** | Content Quality | Language settings, heading structure |
+| <strong>P0</strong> | Cross-browser | Simultaneous testing on Chromium, Firefox, WebKit |
+| <strong>P0</strong> | Link Integrity | HTTP status code verification for all links |
+| <strong>P0</strong> | Accessibility (a11y) | WCAG 2.1 AA level compliance |
+| <strong>P0</strong> | Mobile Responsive | Layout verification across viewports |
+| <strong>P1</strong> | Image Optimization | Rendered vs. natural size comparison |
+| <strong>P1</strong> | SEO Validation | Meta tags, OG, structured data |
+| <strong>P1</strong> | UI/UX | Font size, touch target verification |
+| <strong>P2</strong> | Content Quality | Language settings, heading structure |
 
 ## Architecture
 
@@ -266,9 +266,9 @@ Here are the actual test results for the `https://jangwook.net/en/` page:
 <summary><strong>View Full Test Report</strong></summary>
 
 ### Test Environment
-- **Test Time**: 2024-11-24 09:56:25
-- **Target URL**: https://jangwook.net/en/
-- **Browser**: Chromium (Playwright)
+- <strong>Test Time</strong>: 2024-11-24 09:56:25
+- <strong>Target URL</strong>: https://jangwook.net/en/
+- <strong>Browser</strong>: Chromium (Playwright)
 
 ### 1. Cross-browser Test ✅
 
@@ -282,7 +282,7 @@ Page loaded normally in Chromium environment. Main elements rendered correctly.
 
 ### 3. Accessibility (a11y) Check ⚠️
 
-**Touch Target Size Below Minimum (20 items)**
+<strong>Touch Target Size Below Minimum (20 items)</strong>
 
 Elements below WCAG recommended minimum size of 44×44px:
 - Navigation links (current height: 36px)
@@ -297,7 +297,7 @@ Elements below WCAG recommended minimum size of 44×44px:
 
 ### 5. Image Optimization Check ⚠️
 
-**6 Oversized Images Found**
+<strong>6 Oversized Images Found</strong>
 
 | Image | Original Size | Rendered Size | Possible Reduction |
 |-------|---------------|---------------|-------------------|
@@ -326,13 +326,13 @@ Elements below WCAG recommended minimum size of 44×44px:
 
 ### Key Issues Found
 
-**1. Image Optimization Issues**
+<strong>1. Image Optimization Issues</strong>
 
 ```
 hero-image.webp: 600×600px → 382×192px (approximately 75% reduction possible)
 ```
 
-**Solution:**
+<strong>Solution:</strong>
 ```html
 <img
   srcset="hero-400w.webp 400w, hero-800w.webp 800w"
@@ -342,7 +342,7 @@ hero-image.webp: 600×600px → 382×192px (approximately 75% reduction possible
   loading="lazy">
 ```
 
-**2. Touch Target Size Below Minimum**
+<strong>2. Touch Target Size Below Minimum</strong>
 
 The WCAG recommended minimum size is 44×44px. The current navigation link height is 36px, which is insufficient.
 

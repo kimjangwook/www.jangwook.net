@@ -58,7 +58,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-> **シリーズ: DeNA LLMスタディ** (2/5)
+> <strong>シリーズ: DeNA LLMスタディ</strong> (2/5)
 >
 > 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)
 > 2. <strong>Part 2: 構造化出力とマルチLLMパイプライン</strong> ← 現在の記事
@@ -74,17 +74,17 @@ DeNAのLLMスタディシリーズPart 2では、LLMの出力を安定的に制�
 
 ### この記事で扱う内容
 
-1. **構造化出力技法**
+1. <strong>構造化出力技法</strong>
    - JSON SchemaとPydanticの活用
    - Constrained Decodingの原理
    - プロバイダー別実装方式 (OpenAI、Anthropic、Google)
 
-2. **複数LLM組み合わせパターン**
+2. <strong>複数LLM組み合わせパターン</strong>
    - Sequential、Parallel、Cascade、Router、Iterative
    - 各パターンの適用シナリオとトレードオフ
    - 実践的な実装例
 
-3. **実習B & C内容**
+3. <strong>実習B & C内容</strong>
    - B1: 二項分類 (コメント分類)
    - B2: 複数項目抽出と採点
    - B3: ネスト構造化出力
@@ -98,10 +98,10 @@ DeNAのLLMスタディシリーズPart 2では、LLMの出力を安定的に制�
 
 LLMは基本的に自由形式のテキストを生成します。しかし実務アプリケーションでは以下のような要件があります:
 
-- **パース可能なデータ**: JSON、YAMLなどの標準形式
-- **型安全性**: フィールド型の検証 (string、number、booleanなど)
-- **必須フィールドの保証**: 欠落防止
-- **ネスト構造のサポート**: 複雑なデータモデル
+- <strong>パース可能なデータ</strong>: JSON、YAMLなどの標準形式
+- <strong>型安全性</strong>: フィールド型の検証 (string、number、booleanなど)
+- <strong>必須フィールドの保証</strong>: 欠落防止
+- <strong>ネスト構造のサポート</strong>: 複雑なデータモデル
 
 自由テキスト出力の問題点:
 
@@ -190,7 +190,7 @@ data = json.loads(response.choices[0].message.content)
 # {"name": "John", "age": 30, "email": "john@example.com"}
 ```
 
-**主な特徴**:
+<strong>主な特徴</strong>:
 
 - `strict: True`オプションで100%スキーマ準拠を保証
 - Constrained Decodingベースで誤ったJSON生成が不可能
@@ -242,7 +242,7 @@ print(user.age)   # 30
 print(user.email) # "john@example.com"
 ```
 
-**利点**:
+<strong>利点</strong>:
 
 - Pythonネイティブの型チェック
 - IDEの自動補完サポート
@@ -343,7 +343,7 @@ graph TD
 # 最終出力: {"name": "John", "age": 30}
 ```
 
-**ポイント**:
+<strong>ポイント</strong>:
 
 - 各ステップで<strong>スキーマに合うトークンのみ許可</strong>
 - 誤ったJSONが生成される可能性<strong>0%</strong>
@@ -353,11 +353,11 @@ graph TD
 
 | プロバイダー          | 実装方式                                | 備考                         |
 | --------------------- | --------------------------------------- | ---------------------------- |
-| **OpenAI**            | Native Structured Outputs API           | 最も便利 (2024.08〜)         |
-| **Anthropic**         | Tool Use迂回方式                        | `tools`パラメータ活用        |
-| **Google Gemini**     | `response_mime_type="application/json"` | JSON Schemaサポート (Beta)   |
-| **Local (llama.cpp)** | Grammar-based decoding                  | GBNF文法定義が必要           |
-| **Outlines**          | FSM-based decoding                      | オープンソース、全モデル対応 |
+| <strong>OpenAI</strong>            | Native Structured Outputs API           | 最も便利 (2024.08〜)         |
+| <strong>Anthropic</strong>         | Tool Use迂回方式                        | `tools`パラメータ活用        |
+| <strong>Google Gemini</strong>     | `response_mime_type="application/json"` | JSON Schemaサポート (Beta)   |
+| <strong>Local (llama.cpp)</strong> | Grammar-based decoding                  | GBNF文法定義が必要           |
+| <strong>Outlines</strong>          | FSM-based decoding                      | オープンソース、全モデル対応 |
 
 #### Anthropic Claude Tool Use方式
 
@@ -491,9 +491,9 @@ graph TD
 
 ### 2.2 Sequential Pattern (順次実行)
 
-**概念**: 前のLLMの出力を次のLLMの入力として使用
+<strong>概念</strong>: 前のLLMの出力を次のLLMの入力として使用
 
-**適用シナリオ**:
+<strong>適用シナリオ</strong>:
 
 - 段階的データ変換 (翻訳 → 要約 → 感情分析)
 - 段階的精緻化 (草案作成 → 文法校正 → スタイル改善)
@@ -519,7 +519,7 @@ async def sequential_pipeline(text: str) -> str:
 result = await sequential_pipeline("日本語の長い文書...")
 ```
 
-**トレードオフ**:
+<strong>トレードオフ</strong>:
 
 - ✅ 各ステップが明確に分離
 - ✅ デバッグが容易
@@ -528,9 +528,9 @@ result = await sequential_pipeline("日本語の長い文書...")
 
 ### 2.3 Parallel Pattern (並列実行)
 
-**概念**: 複数のLLMを同時に実行して結果を集約
+<strong>概念</strong>: 複数のLLMを同時に実行して結果を集約
 
-**適用シナリオ**:
+<strong>適用シナリオ</strong>:
 
 - 多角的評価 (文法、スタイル、内容を同時評価)
 - アンサンブル推論 (複数モデルの結果を投票/平均)
@@ -569,7 +569,7 @@ async def evaluate_grammar(text: str) -> float:
 # 他の評価関数も同じパターン...
 ```
 
-**実行時間の比較**:
+<strong>実行時間の比較</strong>:
 
 ```python
 # Sequential: 3秒 × 3 = 9秒
@@ -577,7 +577,7 @@ async def evaluate_grammar(text: str) -> float:
 # → 66%の時間短縮!
 ```
 
-**トレードオフ**:
+<strong>トレードオフ</strong>:
 
 - ✅ 最大速度 (並列実行)
 - ✅ 独立した評価が可能
@@ -586,9 +586,9 @@ async def evaluate_grammar(text: str) -> float:
 
 ### 2.4 Cascade Pattern (段階的拡大)
 
-**概念**: 小さなモデルから始めて、必要に応じて大きなモデルに拡大
+<strong>概念</strong>: 小さなモデルから始めて、必要に応じて大きなモデルに拡大
 
-**適用シナリオ**:
+<strong>適用シナリオ</strong>:
 
 - コスト最適化 (簡単な質問は小さなモデルで)
 - 品質保証 (複雑な質問のみ大きなモデルで)
@@ -626,7 +626,7 @@ async def cascade_routing(query: str) -> str:
 # → 平均コスト: 0.15 × 0.8 + 5 × 0.2 = $1.12 (78%削減)
 ```
 
-**トレードオフ**:
+<strong>トレードオフ</strong>:
 
 - ✅ コスト効率の最大化
 - ✅ 平均品質の維持
@@ -635,9 +635,9 @@ async def cascade_routing(query: str) -> str:
 
 ### 2.5 Router Pattern (条件付きルーティング)
 
-**概念**: 入力の特性に応じて最適なモデルにルーティング
+<strong>概念</strong>: 入力の特性に応じて最適なモデルにルーティング
 
-**適用シナリオ**:
+<strong>適用シナリオ</strong>:
 
 - ドメイン別専門家モデル (医療、法律、技術)
 - 言語別モデル (韓国語特化、英語特化)
@@ -674,7 +674,7 @@ async def router_pattern(query: str) -> str:
     return response
 ```
 
-**トレードオフ**:
+<strong>トレードオフ</strong>:
 
 - ✅ 最適なモデル選択
 - ✅ コスト対品質の最適化
@@ -683,9 +683,9 @@ async def router_pattern(query: str) -> str:
 
 ### 2.6 Iterative Pattern (反復改善)
 
-**概念**: 評価 → 修正を繰り返して品質改善
+<strong>概念</strong>: 評価 → 修正を繰り返して品質改善
 
-**適用シナリオ**:
+<strong>適用シナリオ</strong>:
 
 - ライティング改善 (草案 → フィードバック → 修正 → 再評価)
 - コードリファクタリング (コード → レビュー → 修正 → 再レビュー)
@@ -738,7 +738,7 @@ improved = await iterative_improvement(
 )
 ```
 
-**トレードオフ**:
+<strong>トレードオフ</strong>:
 
 - ✅ 段階的な品質改善
 - ✅ 明確なフィードバックループ
@@ -810,13 +810,13 @@ async def hybrid_pipeline(text: str) -> str:
 
 ### 4.1 2025年の構造化出力標準
 
-**OpenAI Structured Outputs**が事実上の標準として定着しました:
+<strong>OpenAI Structured Outputs</strong>が事実上の標準として定着しました:
 
-- **Constrained Decodingベース**: 100%スキーマ準拠
-- **追加コストなし**: 既存APIと同じ価格
-- **Pydantic統合**: Instructorなどのライブラリサポート
+- <strong>Constrained Decodingベース</strong>: 100%スキーマ準拠
+- <strong>追加コストなし</strong>: 既存APIと同じ価格
+- <strong>Pydantic統合</strong>: Instructorなどのライブラリサポート
 
-**競合製品**:
+<strong>競合製品</strong>:
 
 - Anthropic: Tool Use方式 (迂回的)
 - Google: `response_mime_type` (Beta)
@@ -843,7 +843,7 @@ async def cost_optimized_pipeline(query: str) -> str:
     return result
 ```
 
-**コスト削減効果**:
+<strong>コスト削減効果</strong>:
 
 - Cascade: 70-80%
 - Caching: 50-90% (繰り返しクエリの割合に応じて)
@@ -851,14 +851,14 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 ### 4.3 品質保証チェックリスト
 
-**構造化出力**:
+<strong>構造化出力</strong>:
 
 - ✅ 必須フィールドの定義 (`required`配列)
 - ✅ 型制約 (`minimum`、`maximum`、`pattern`)
 - ✅ 説明の追加 (`description`フィールドでLLMをガイド)
 - ✅ 検証ロジック (`Pydantic validator`)
 
-**パイプライン設計**:
+<strong>パイプライン設計</strong>:
 
 - ✅ エラー処理 (各ステップでtry-catch)
 - ✅ タイムアウト設定 (無限待機防止)
@@ -869,11 +869,11 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 | ツール         | 用途                             | 推奨度     |
 | -------------- | -------------------------------- | ---------- |
-| **Instructor** | Pydantic ↔ LLM統合               | ⭐⭐⭐⭐⭐ |
-| **Outlines**   | Constrained Decoding (ローカル)  | ⭐⭐⭐⭐   |
-| **LangChain**  | パイプラインオーケストレーション | ⭐⭐⭐     |
-| **LlamaIndex** | RAG + Structured Outputs         | ⭐⭐⭐⭐   |
-| **Guidance**   | Template-based出力制御           | ⭐⭐⭐     |
+| <strong>Instructor</strong> | Pydantic ↔ LLM統合               | ⭐⭐⭐⭐⭐ |
+| <strong>Outlines</strong>   | Constrained Decoding (ローカル)  | ⭐⭐⭐⭐   |
+| <strong>LangChain</strong>  | パイプラインオーケストレーション | ⭐⭐⭐     |
+| <strong>LlamaIndex</strong> | RAG + Structured Outputs         | ⭐⭐⭐⭐   |
+| <strong>Guidance</strong>   | Template-based出力制御           | ⭐⭐⭐     |
 
 ## 5. 次のステップ
 
@@ -881,33 +881,33 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 次の記事では、<strong>外部知識をLLMに注入</strong>するRAG(Retrieval-Augmented Generation)技法を扱います:
 
-1. **ベクトルデータベース基礎**
+1. <strong>ベクトルデータベース基礎</strong>
    - Embeddingモデル選択
    - FAISS、Pinecone、Weaviate比較
 
-2. **RAGパイプライン構築**
+2. <strong>RAGパイプライン構築</strong>
    - Chunking戦略
    - Retrieval最適化
    - Reranking技法
 
-3. **高度なRAGパターン**
+3. <strong>高度なRAGパターン</strong>
    - Hybrid Search (キーワード + ベクトル)
    - Multi-hop Retrieval
    - Self-Query
 
 ### 実習プロジェクト提案
 
-1. **文書処理システム**
+1. <strong>文書処理システム</strong>
    - PDF → 構造化データ抽出
    - Parallel Patternで並列処理
    - Pydanticで検証
 
-2. **自動評価パイプライン**
+2. <strong>自動評価パイプライン</strong>
    - Iterative Patternで品質改善
    - 複数評価軸 (文法、スタイル、内容)
    - 目標スコア到達まで反復
 
-3. **コスト最適化システム**
+3. <strong>コスト最適化システム</strong>
    - Cascade Patternでモデル選択
    - クエリ分類 → ルーティング
    - キャッシング + バッチ処理
@@ -916,17 +916,17 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 DeNA LLMスタディPart 2では、LLMを実務に適用するための2つの核心技法を学びました:
 
-1. **構造化出力**
+1. <strong>構造化出力</strong>
    - JSON Schema、Pydanticで型安全な出力を保証
    - Constrained Decodingで100%スキーマ準拠
    - OpenAI Structured Outputs APIが現在最高の選択
 
-2. **Multi-LLM組み合わせパターン**
+2. <strong>Multi-LLM組み合わせパターン</strong>
    - Sequential、Parallel、Cascade、Router、Iterative
    - 各パターンのトレードオフの理解
    - 実務ではハイブリッド組み合わせを活用
 
-**核心メッセージ**:
+<strong>核心メッセージ</strong>:
 
 - 構造化出力は<strong>プロダクションLLMアプリケーションの必須要素</strong>
 - 単一LLMより<strong>複数LLM組み合わせがより強力</strong>

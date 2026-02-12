@@ -58,11 +58,11 @@ relatedPosts:
 ---
 ## 概要
 
-Claude CodeはAnthropicが開発したエージェンティックコーディングツールです。プラグインシステムを通じて、スラッシュコマンド、専門エージェント、スキル、フックを**一つのパッケージとしてインストール**できます。
+Claude CodeはAnthropicが開発したエージェンティックコーディングツールです。プラグインシステムを通じて、スラッシュコマンド、専門エージェント、スキル、フックを<strong>一つのパッケージとしてインストール</strong>できます。
 
-この記事では**公式13プラグイン**の詳細機能、**コミュニティマーケットプレイス**の100以上のプラグイン、そして**実際のプラグイン構造**を深く分析します。
+この記事では<strong>公式13プラグイン</strong>の詳細機能、<strong>コミュニティマーケットプレイス</strong>の100以上のプラグイン、そして<strong>実際のプラグイン構造</strong>を深く分析します。
 
-> **★ Insight**
+> <strong>★ Insight</strong>
 >
 > - 公式プラグイン13個: anthropics/claude-codeリポジトリで管理
 > - コミュニティマーケットプレイス: 100以上のプラグイン（13カテゴリ）
@@ -100,7 +100,7 @@ Claude CodeはGitリポジトリベースのマーケットプレイスシステ
 /plugin
 ```
 
-> **★ Insight**
+> <strong>★ Insight</strong>
 >
 > - プラグイン最小要求バージョン: Claude Code 1.0.33以上
 > - 保存場所: プロジェクト(.claude/)またはユーザー(~/.claude/)レベル
@@ -116,7 +116,7 @@ Anthropicが管理する[anthropics/claude-code](https://github.com/anthropics/c
 /plugin install commit-commands
 ```
 
-**提供コマンド3つ**:
+<strong>提供コマンド3つ</strong>:
 
 | コマンド            | 機能                                                                 |
 | ------------------- | -------------------------------------------------------------------- |
@@ -135,7 +135,7 @@ Anthropicが管理する[anthropics/claude-code](https://github.com/anthropics/c
 **`/commit-push-pr` の動作方式**:
 
 1. mainブランチなら自動で新しいブランチを作成
-2. ブランチの**全コミット履歴**を分析（最新コミットだけでなく）
+2. ブランチの<strong>全コミット履歴</strong>を分析（最新コミットだけでなく）
 3. PR説明を自動生成（Summary + Test plan）
 4. GitHub CLI(`gh`)でPR作成後URLを返す
 
@@ -153,7 +153,7 @@ git add .
 /plugin install feature-dev
 ```
 
-**7段階の構造化されたワークフロー**:
+<strong>7段階の構造化されたワークフロー</strong>:
 
 ```mermaid
 graph TD
@@ -165,7 +165,7 @@ graph TD
     F --> G["7. Summary<br/>変更要約と次のステップ提案"]
 ```
 
-**専門エージェント3種**:
+<strong>専門エージェント3種</strong>:
 
 | エージェント       | 役割                                                                     |
 | ------------------ | ------------------------------------------------------------------------ |
@@ -179,7 +179,7 @@ graph TD
 # → 7段階を順次進行、各段階でユーザー確認
 ```
 
-**いつ使うか？**
+<strong>いつ使うか？</strong>
 
 - 複数ファイルにまたがる新機能開発
 - アーキテクチャ決定が必要な複雑な作業
@@ -191,18 +191,18 @@ graph TD
 /plugin install code-review
 ```
 
-**動作方式**:
+<strong>動作方式</strong>:
 
 1. クローズ済み/ドラフト/些細な/レビュー済みPRは自動スキップ
 2. CLAUDE.mdガイドラインファイルを収集
-3. **4つの並列エージェント**を実行:
+3. <strong>4つの並列エージェント</strong>を実行:
    - Agent #1, #2: CLAUDE.md準拠確認（重複検証）
    - Agent #3: バグ検出（PR変更範囲内のみ）
    - Agent #4: Git blame履歴分析
-4. 各イシューに**信頼度スコア(0〜100)**を付与
-5. **80点未満をフィルタリング**（誤検出除去）
+4. 各イシューに<strong>信頼度スコア(0〜100)</strong>を付与
+5. <strong>80点未満をフィルタリング</strong>（誤検出除去）
 
-**信頼度スコア基準**:
+<strong>信頼度スコア基準</strong>:
 
 | スコア | 意味                           |
 | ------ | ------------------------------ |
@@ -220,7 +220,7 @@ graph TD
 /code-review --comment
 ```
 
-**フィルタリングされる誤検出**:
+<strong>フィルタリングされる誤検出</strong>:
 
 - PR以前から存在した問題
 - リンターで検出できる問題
@@ -233,7 +233,7 @@ graph TD
 /plugin install hookify
 ```
 
-**提供コマンド4つ**:
+<strong>提供コマンド4つ</strong>:
 
 | コマンド                | 機能                                       |
 | ----------------------- | ------------------------------------------ |
@@ -242,7 +242,7 @@ graph TD
 | `/hookify:list`       | 有効なルール一覧                           |
 | `/hookify:configure`  | ルールの有効化/無効化                      |
 
-**フックファイル形式** (`.claude/hookify.*.local.md`):
+<strong>フックファイル形式</strong> (`.claude/hookify.*.local.md`):
 
 ```yaml
 ---
@@ -260,7 +260,7 @@ action: block  # warn または block
 - バックアップがあるか確認してください
 ```
 
-**イベントタイプ**:
+<strong>イベントタイプ</strong>:
 
 - `bash`: Bashコマンド実行時
 - `file`: Edit/Writeツール使用時
@@ -280,18 +280,18 @@ action: block  # warn または block
 /plugin install plugin-dev
 ```
 
-**8段階プラグイン作成ワークフロー**:
+<strong>8段階プラグイン作成ワークフロー</strong>:
 
-1. **Discovery**: プラグインの目的と要件把握
-2. **Component Planning**: 必要なskills/commands/agents/hooks/MCPを決定
-3. **Detailed Design**: 各コンポーネントの詳細設計
-4. **Structure Creation**: ディレクトリとmanifest作成
-5. **Component Implementation**: AI支援での実装
-6. **Validation**: plugin-validatorとコンポーネント別検証
-7. **Testing**: Claude Codeでの実動作テスト
-8. **Documentation**: README完成と配布準備
+1. <strong>Discovery</strong>: プラグインの目的と要件把握
+2. <strong>Component Planning</strong>: 必要なskills/commands/agents/hooks/MCPを決定
+3. <strong>Detailed Design</strong>: 各コンポーネントの詳細設計
+4. <strong>Structure Creation</strong>: ディレクトリとmanifest作成
+5. <strong>Component Implementation</strong>: AI支援での実装
+6. <strong>Validation</strong>: plugin-validatorとコンポーネント別検証
+7. <strong>Testing</strong>: Claude Codeでの実動作テスト
+8. <strong>Documentation</strong>: README完成と配布準備
 
-**7つのコアスキル**:
+<strong>7つのコアスキル</strong>:
 
 | スキル              | トリガーキーワード                 | 内容                                        |
 | ------------------- | ---------------------------------- | ------------------------------------------- |
@@ -315,14 +315,14 @@ action: block  # warn または block
 /plugin install frontend-design
 ```
 
-フロントエンド作業時に**自動で起動**されるスキルです。
+フロントエンド作業時に<strong>自動で起動</strong>されるスキルです。
 
-**コア原則**:
+<strong>コア原則</strong>:
 
-- **大胆な美学的選択**: 汎用的なAIスタイルを避ける
-- **独特なタイポグラフィとカラーパレット**
-- **高インパクトなアニメーションとビジュアルディテール**
-- **コンテキスト認識実装**
+- <strong>大胆な美学的選択</strong>: 汎用的なAIスタイルを避ける
+- <strong>独特なタイポグラフィとカラーパレット</strong>
+- <strong>高インパクトなアニメーションとビジュアルディテール</strong>
+- <strong>コンテキスト認識実装</strong>
 
 ```bash
 # 自動起動の例
@@ -337,7 +337,7 @@ action: block  # warn または block
 /plugin install pr-review-toolkit
 ```
 
-**6つの専門エージェント**:
+<strong>6つの専門エージェント</strong>:
 
 - コメントレビュアー
 - テストレビュアー
@@ -356,7 +356,7 @@ action: block  # warn または block
 /plugin install security-guidance
 ```
 
-**9つのセキュリティパターン監視**:
+<strong>9つのセキュリティパターン監視</strong>:
 
 - インジェクション攻撃
 - XSS（クロスサイトスクリプティング）
@@ -368,7 +368,7 @@ action: block  # warn または block
 - 脆弱な暗号化
 - 認証/認可の欠陥
 
-PreToolUseフックで**ツール実行前**にリアルタイム警告。
+PreToolUseフックで<strong>ツール実行前</strong>にリアルタイム警告。
 
 ### その他の公式プラグイン
 
@@ -393,13 +393,13 @@ PreToolUseフックで**ツール実行前**にリアルタイム警告。
 
 ### カテゴリ別主要プラグイン（ccplugins基準）
 
-**ワークフローオーケストレーション（8個）**:
+<strong>ワークフローオーケストレーション（8個）</strong>:
 
 - `ultrathink`: 4つの専門サブエージェントを指揮するコーディネーター
 - `lyra`: マスター級AIプロンプト最適化専門家
 - `problem-solver-specialist`: 体系的問題解決
 
-**コード品質＆テスト（16個）**:
+<strong>コード品質＆テスト（16個）</strong>:
 
 - `bug-detective`: 段階的体系的デバッグ
 - `double-check`: 変更の二重検証
@@ -407,28 +407,28 @@ PreToolUseフックで**ツール実行前**にリアルタイム警告。
 - `unit-test-generator`: ユニットテスト自動生成
 - `database-performance-optimizer`: DB性能最適化
 
-**Gitワークフロー（14個）**:
+<strong>Gitワークフロー（14個）</strong>:
 
 - `fix-github-issue`: GitHubイシューベースの自動修正
 - `create-pr`: PR作成自動化
 - `update-branch-name`: ブランチ名コンベンション適用
 - `husky`: Gitフック設定
 
-**ドキュメンテーション（8個）**:
+<strong>ドキュメンテーション（8個）</strong>:
 
 - `analyze-codebase`: コードベース総合分析
 - `changelog-generator`: 変更ログ自動生成
 - `update-claudemd`: CLAUDE.md自動更新
 - `openapi-expert`: OpenAPIスペック専門家
 
-**セキュリティ＆コンプライアンス（7個）**:
+<strong>セキュリティ＆コンプライアンス（7個）</strong>:
 
 - `audit`: コードベースセキュリティ監査
 - `enterprise-security-reviewer`: エンタープライズ級セキュリティレビュー
 - `legal-compliance-checker`: 法的準拠確認
 - `data-privacy-engineer`: データプライバシー
 
-**開発エンジニアリング（15個）**:
+<strong>開発エンジニアリング（15個）</strong>:
 
 - `ai-engineer`: AI機能開発専門
 - `backend-architect`: バックエンドアーキテクチャ設計
@@ -437,20 +437,20 @@ PreToolUseフックで**ツール実行前**にリアルタイム警告。
 
 ### kiviladマーケットプレイス特化ツール
 
-**ドキュメント処理スイート**:
+<strong>ドキュメント処理スイート</strong>:
 
 - `xlsx`: 数式とデータ可視化を含むExcel生成
 - `docx`: 変更追跡と書式を含むWord文書
 - `pptx`: レイアウトとテンプレートを含むPowerPoint
 - `pdf`: PDF抽出、結合、分割、フォーム処理
 
-**クリエイティブ＆デザイン**:
+<strong>クリエイティブ＆デザイン</strong>:
 
 - `algorithmic-art`: p5.jsベースのジェネレーティブアート
 - `canvas-design`: PNG/PDFビジュアルアート生成
 - `slack-gif-creator`: Slack用アニメーションGIF
 
-**davila7ツールキット（10個）**:
+<strong>davila7ツールキット（10個）</strong>:
 
 - Gitワークフロー、Supabase、Next.js/Vercel
 - テスト、セキュリティ監査、AI/ML、DevOps
@@ -589,7 +589,7 @@ auto_invoke: true
 }
 ```
 
-**MCPサーバータイプ**:
+<strong>MCPサーバータイプ</strong>:
 
 - `stdio`: ローカルプロセス（最も一般的）
 - `sse`: Server-Sent Events（ホスティング/OAuth）
@@ -677,7 +677,7 @@ export API_KEY="sk-..."
 
 ## まとめ
 
-Claude Codeプラグインシステムは**公式13プラグイン**と**コミュニティ100以上のプラグイン**で構成される豊富なエコシステムを提供します。
+Claude Codeプラグインシステムは<strong>公式13プラグイン</strong>と<strong>コミュニティ100以上のプラグイン</strong>で構成される豊富なエコシステムを提供します。
 
 `<strong>`要点まとめ`</strong>`:
 

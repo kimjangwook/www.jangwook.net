@@ -225,10 +225,10 @@ graph LR
 
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
-| Role Clarity | 17.6% | **100%** | **+82.4%** |
-| Core Principles | 11.8% | **100%** | **+88.2%** |
-| Uncertainty Handling | 0% | 17.6% | **+17.6%** |
-| Quality Checklists | 23.5% | **82.4%** | **+58.9%** |
+| Role Clarity | 17.6% | <strong>100%</strong> | <strong>+82.4%</strong> |
+| Core Principles | 11.8% | <strong>100%</strong> | <strong>+88.2%</strong> |
+| Uncertainty Handling | 0% | 17.6% | <strong>+17.6%</strong> |
+| Quality Checklists | 23.5% | <strong>82.4%</strong> | <strong>+58.9%</strong> |
 
 ## Most Powerful Improvement: "Don't Know = Say So"
 

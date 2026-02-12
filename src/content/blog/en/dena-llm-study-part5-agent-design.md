@@ -91,7 +91,7 @@ This article synthesizes DeNA's official study materials with the latest researc
 
 [n8n](https://n8n.io/) is a <strong>no-code/low-code workflow automation platform</strong>. As of 2025, it supports 422+ integrations and provides specialized features for building LLM agents.
 
-**Key Features**:
+<strong>Key Features</strong>:
 
 - Visual workflow builder
 - LangChain, Ollama, and major LLM framework integrations
@@ -123,7 +123,7 @@ Example of implementing the ReAct (Reasoning and Acting) pattern in n8n:
 
 According to DeNA study materials and recent research, the key trend for agent systems in 2025 is a <strong>shift from "full autonomy" to "orchestration"</strong>.
 
-**Reasons**:
+<strong>Reasons</strong>:
 
 1. <strong>Cost Explosion</strong>: Unlimited API calls from autonomous agents
 2. <strong>Unpredictability</strong>: Difficulty controlling agent behavior
@@ -167,7 +167,7 @@ graph LR
 
 The central engine of the agent.
 
-**Components**:
+<strong>Components</strong>:
 
 - <strong>Prompt Template</strong>: System message, persona definition
 - <strong>LLM Engine</strong>: Claude, GPT-4, Gemini, etc.
@@ -177,13 +177,13 @@ The central engine of the agent.
 
 The agent's memory system.
 
-**Short-term Memory**:
+<strong>Short-term Memory</strong>:
 
 - Current conversation session history
 - Typically last N messages (N=5〜10)
 - Directly included in Context Window
 
-**Long-term Memory**:
+<strong>Long-term Memory</strong>:
 
 - Persistent knowledge base
 - Vector Database (Pinecone, Weaviate, etc.)
@@ -193,7 +193,7 @@ The agent's memory system.
 
 The agent's strategy for executing complex tasks.
 
-**ReAct Pattern**:
+<strong>ReAct Pattern</strong>:
 
 ```
 Thought: User requested company revenue data.
@@ -219,7 +219,7 @@ Mechanism for LLM to interact with external tools.
 
 Critical issue highlighted in DeNA study materials: <strong>LLM function calling is not 100% reliable</strong>.
 
-**Problem Cases**:
+<strong>Problem Cases</strong>:
 
 1. <strong>Incorrect Parameters</strong>: Missing required fields, type mismatches
 2. <strong>Hallucination</strong>: Calling non-existent tools
@@ -270,12 +270,12 @@ Patterns for distributed processing of complex tasks across multiple agents.
 
 Linear structure where one agent's output becomes the next agent's input.
 
-**Use Cases**:
+<strong>Use Cases</strong>:
 
 - Blog post creation: Research → Draft → Edit → Publish
 - Data pipeline: Collect → Clean → Analyze → Visualize
 
-**Pros**:
+<strong>Pros</strong>:
 
 - Simple implementation
 - Easy debugging
@@ -285,7 +285,7 @@ Linear structure where one agent's output becomes the next agent's input.
 
 Structure where multiple agents work independently and simultaneously.
 
-**Use Cases**:
+<strong>Use Cases</strong>:
 
 - Content review: Quality check + Legal review + Fact checking in parallel
 - Multimodal analysis: Text + Image + Audio parallel processing
@@ -294,7 +294,7 @@ Structure where multiple agents work independently and simultaneously.
 
 Structure where a central supervisor distributes tasks and integrates results.
 
-**Use Cases**:
+<strong>Use Cases</strong>:
 
 - Complex research: Supervisor distributes sub-topics to multiple workers
 - Code generation: Supervisor assigns module implementations to workers
@@ -303,7 +303,7 @@ Structure where a central supervisor distributes tasks and integrates results.
 
 Multiple levels of supervisor-worker relationships forming a tree structure.
 
-**Use Cases**:
+<strong>Use Cases</strong>:
 
 - Large-scale project management: PM → Team Leaders → Developers
 - Complex system design: Architect → Module Designers → Implementers
@@ -312,7 +312,7 @@ Multiple levels of supervisor-worker relationships forming a tree structure.
 
 Structure where agents communicate freely in a P2P manner.
 
-**Use Cases**:
+<strong>Use Cases</strong>:
 
 - Creative collaboration: Idea brainstorming
 - Democratic decision-making: Vote-based consensus
@@ -334,9 +334,9 @@ Comparison of the three major multi-agent frameworks.
 
 #### LangGraph
 
-**Philosophy**: <strong>Express everything as graphs</strong>
+<strong>Philosophy</strong>: <strong>Express everything as graphs</strong>
 
-**Pros**:
+<strong>Pros</strong>:
 
 - <strong>Clear control flow</strong>: All paths explicitly defined in graph
 - <strong>Easy debugging</strong>: State tracking possible
@@ -344,15 +344,15 @@ Comparison of the three major multi-agent frameworks.
 
 #### AutoGen
 
-**Philosophy**: <strong>Problem-solving through agent conversation</strong>
+<strong>Philosophy</strong>: <strong>Problem-solving through agent conversation</strong>
 
-**Pros**:
+<strong>Pros</strong>:
 
 - <strong>Natural collaboration</strong>: Mimics human team conversations
 - <strong>Flexibility</strong>: Dynamic conversation flow
 - <strong>Emergent behavior</strong>: Unexpected problem-solving
 
-**Cons**:
+<strong>Cons</strong>:
 
 - Cost explosion risk (unlimited conversations)
 - Unpredictable
@@ -360,15 +360,15 @@ Comparison of the three major multi-agent frameworks.
 
 #### CrewAI
 
-**Philosophy**: <strong>Role-based team composition</strong>
+<strong>Philosophy</strong>: <strong>Role-based team composition</strong>
 
-**Pros**:
+<strong>Pros</strong>:
 
 - <strong>Intuitive</strong>: Role concept is easy to understand
 - <strong>Rapid prototyping</strong>: Implementation with minimal code
 - <strong>Built-in memory</strong>: Automatic context management
 
-**Cons**:
+<strong>Cons</strong>:
 
 - Insufficient logging (debugging difficulties)
 - Limitations with complex workflows
@@ -378,7 +378,7 @@ Comparison of the three major multi-agent frameworks.
 
 Analysis of how pattern selection affects costs in real projects.
 
-**Scenario**: Blog post generation (Research + Writing + Editing)
+<strong>Scenario</strong>: Blog post generation (Research + Writing + Editing)
 
 | Pattern           | API Calls                                          | Expected Cost | Processing Time |
 | ----------------- | -------------------------------------------------- | ------------- | --------------- |
@@ -387,7 +387,7 @@ Analysis of how pattern selection affects costs in real projects.
 | Supervisor        | 7 calls (supervisor 2 + workers 3 + integration 2) | $0.35         | 60 sec          |
 | Network (AutoGen) | 15〜50 calls (conversation)                        | $0.75〜$2.50  | 120〜300 sec    |
 
-**Production Recommendations**:
+<strong>Production Recommendations</strong>:
 
 1. <strong>Clear workflow</strong> exists → Sequential or Parallel
 2. <strong>Dynamic task distribution</strong> needed → Supervisor
@@ -399,7 +399,7 @@ Analysis of how pattern selection affects costs in real projects.
 
 [MemGPT](https://arxiv.org/abs/2310.08560) is an innovative approach applying OS virtual memory concepts to LLMs.
 
-**Core Idea**:
+<strong>Core Idea</strong>:
 
 - <strong>Main Context (Main Memory)</strong>: LLM's Context Window
 - <strong>External Storage</strong>: Vector DB, Relational DB
@@ -409,12 +409,12 @@ Analysis of how pattern selection affects costs in real projects.
 
 MemGPT combines two memory strategies.
 
-**Push (Active)**:
+<strong>Push (Active)</strong>:
 
 - LLM automatically saves information it deems important
 - Example: "This user prefers TypeScript" → Save
 
-**Pull (Reactive)**:
+<strong>Pull (Reactive)</strong>:
 
 - Search external storage when needed
 - Example: User says "consider my preferences" → Search
@@ -444,7 +444,7 @@ L3: Long-term Memory (Long-term storage)
 
 [A-MEM](https://arxiv.org/abs/2502.12110) is an innovative memory system proposed by Rutgers University in 2025. It applies Zettelkasten (German for "note box") methodology to LLM agents.
 
-**What is Zettelkasten?**
+<strong>What is Zettelkasten?</strong>
 
 - Note organization method developed by Niklas Luhmann (sociologist)
 - Assign unique IDs to each note
@@ -455,7 +455,7 @@ L3: Long-term Memory (Long-term storage)
 
 The core of A-MEM is that <strong>agents organize memory themselves</strong>.
 
-**Implementation Example**:
+<strong>Implementation Example</strong>:
 
 ```typescript
 class AMem {
@@ -489,7 +489,7 @@ class AMem {
 }
 ```
 
-**A-MEM Benefits**:
+<strong>A-MEM Benefits</strong>:
 
 1. <strong>Dynamic organization</strong>: No manual structuring needed
 2. <strong>Relevance-based search</strong>: Direct matching + indirect connections
@@ -502,13 +502,13 @@ Real production deployment of <strong>NOC (Network Operations Center) Alert Agen
 
 ### Problem Definition
 
-**Background**:
+<strong>Background</strong>:
 
 - Operations team receives 100〜200 alerts daily
 - 70% of alerts are false positives
 - Engineers manually classify and respond to alerts
 
-**Goals**:
+<strong>Goals</strong>:
 
 - Automatic alert classification and prioritization
 - False positive filtering
@@ -544,9 +544,9 @@ Problems discovered during actual deployment and their solutions.
 
 #### 1. Hallucination Problem
 
-**Issue**: LLM mentions non-existent logs or metrics
+<strong>Issue</strong>: LLM mentions non-existent logs or metrics
 
-**Solution**:
+<strong>Solution</strong>:
 
 ```typescript
 // Tool call result validation
@@ -580,9 +580,9 @@ class ToolExecutor {
 
 #### 2. Latency Problem
 
-**Issue**: Alert → Response takes 45 seconds on average (Target: 10 seconds)
+<strong>Issue</strong>: Alert → Response takes 45 seconds on average (Target: 10 seconds)
 
-**Solutions**:
+<strong>Solutions</strong>:
 
 - <strong>Parallel processing</strong>: Collect logs/metrics/history simultaneously
 - <strong>Caching</strong>: Cache frequently used query results
@@ -590,9 +590,9 @@ class ToolExecutor {
 
 #### 3. Cost Problem
 
-**Issue**: 200 alerts/day × $0.20 = $40/day ($1,200/month)
+<strong>Issue</strong>: 200 alerts/day × $0.20 = $40/day ($1,200/month)
 
-**Solutions**:
+<strong>Solutions</strong>:
 
 - <strong>False positive pre-filter</strong>: Filter obvious false positives with rules first
 - <strong>Batching</strong>: Process similar alerts together
@@ -613,7 +613,7 @@ The biggest challenges for LLM agent systems are <strong>cost</strong> and <stro
 
 ### 1. Semantic Caching (90% Cost Reduction)
 
-**Concept**: Reuse cached responses for semantically similar queries
+<strong>Concept</strong>: Reuse cached responses for semantically similar queries
 
 ```typescript
 // Semantic caching implementation
@@ -641,23 +641,23 @@ class SemanticCache {
 }
 ```
 
-**Impact**:
+<strong>Impact</strong>:
 
 - 60% cache hit rate → 60% cost reduction
 - 95% latency reduction (network delay eliminated)
 
 ### 2. Batching (50% Reduction)
 
-**Concept**: Bundle multiple requests for processing at once
+<strong>Concept</strong>: Bundle multiple requests for processing at once
 
-**Impact**:
+<strong>Impact</strong>:
 
 - Batch size of 10 → Approximately 50% cost reduction
 - However, latency slightly increases (wait time)
 
 ### 3. SLM (Small Language Model, 14x Reduction)
 
-**Concept**: Use smaller models for simple tasks
+<strong>Concept</strong>: Use smaller models for simple tasks
 
 ```typescript
 // Model routing
@@ -679,7 +679,7 @@ class ModelRouter {
 }
 ```
 
-**Impact**:
+<strong>Impact</strong>:
 
 - If 70% of tasks can be handled by SLM
 - Cost: 70% × $0.001 + 30% × $0.014 = $0.0049 (average)
@@ -688,7 +688,7 @@ class ModelRouter {
 
 ### 4. Quantization
 
-**Concept**: Reduce model weight precision to decrease size and cost
+<strong>Concept</strong>: Reduce model weight precision to decrease size and cost
 
 | Quantization Level | Model Size | Accuracy Loss | Inference Speed | Use Case                        |
 | ------------------ | ---------- | ------------- | --------------- | ------------------------------- |
@@ -701,7 +701,7 @@ class ModelRouter {
 
 Real-world case combining all four techniques.
 
-**Before (Pre-optimization)**:
+<strong>Before (Pre-optimization)</strong>:
 
 ```typescript
 // Process all requests with Claude Sonnet 4
@@ -710,7 +710,7 @@ const response = await claude.generate(query);
 // Latency: 2 seconds
 ```
 
-**After (Post-optimization)**:
+<strong>After (Post-optimization)</strong>:
 
 ```typescript
 async function optimizedQuery(query: string): Promise<string> {
@@ -740,7 +740,7 @@ async function optimizedQuery(query: string): Promise<string> {
 }
 ```
 
-**Cost Calculation**:
+<strong>Cost Calculation</strong>:
 
 ```
 Cache hit (60%): $0 × 0.6 = $0
@@ -772,7 +772,7 @@ There is no "one-size-fits-all" among the six patterns. Each has clear pros and 
 
 The biggest barrier to LLM agent systems in production is <strong>cost</strong>.
 
-**Core Strategies**:
+<strong>Core Strategies</strong>:
 
 1. <strong>Semantic caching</strong> - Apply to all systems (60% hit rate alone yields significant benefits)
 2. <strong>SLM routing</strong> - Simple tasks (70%) with small models

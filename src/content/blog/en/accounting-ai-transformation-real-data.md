@@ -99,7 +99,7 @@ graph TD
 | Error rate | ~20% (requiring rework) |
 | Rework cost | Additional $15 per invoice |
 
-The key figure here is the **20% error rate**. This is not unusual for the industry. It includes everything from simple typos to account classification mistakes and missed PO matches.
+The key figure here is the <strong>20% error rate</strong>. This is not unusual for the industry. It includes everything from simple typos to account classification mistakes and missed PO matches.
 
 ## The 6-Month Adoption Journey — Month-by-Month Data Analysis
 
@@ -110,10 +110,10 @@ We applied the AI agent to approximately 300 invoices — about 10% of the total
 | Metric | Manual | AI | Difference |
 |--------|--------|-----|-----------|
 | Cost per invoice | $7.00 | $2.50 | -64% |
-| Accuracy | 80% | 72% | **-8%** |
+| Accuracy | 80% | 72% | <strong>-8%</strong> |
 | Processing time | 12 min | 3 min | -75% |
 
-**First-month accuracy actually dropped.** This is the part most AI adoption stories hide. The AI model couldn't adapt to the firm's unique invoice formats, vendor-specific patterns, and internal chart of accounts.
+<strong>First-month accuracy actually dropped.</strong> This is the part most AI adoption stories hide. The AI model couldn't adapt to the firm's unique invoice formats, vendor-specific patterns, and internal chart of accounts.
 
 ### Month 2: Training Data Refinement and Feedback Loop Construction
 
@@ -133,12 +133,12 @@ In month two, we built a feedback loop that channeled human reviewer corrections
 |--------|---------|---------|--------|
 | AI processing ratio | 10% | 25% | +15% |
 | Cost per invoice | $2.50 | $1.80 | -28% |
-| Accuracy | 72% | 81% | **+9%** |
+| Accuracy | 72% | 81% | <strong>+9%</strong> |
 | Human review time | 8 min/invoice | 5 min/invoice | -37% |
 
 ### Month 3-4: The Turning Point — Redefining Human and AI Roles
 
-A critical shift occurred in month three. AI accuracy **surpassed human-only processing accuracy (80%)**.
+A critical shift occurred in month three. AI accuracy <strong>surpassed human-only processing accuracy (80%)</strong>.
 
 | Metric | Month 3 | Month 4 |
 |--------|---------|---------|
@@ -149,8 +149,8 @@ A critical shift occurred in month three. AI accuracy **surpassed human-only pro
 
 At this point, the human role fundamentally changed:
 
-**Before**: Data entry operator → Process every invoice manually
-**After**: Exception handling specialist → Handle only non-standard cases AI can't process
+<strong>Before</strong>: Data entry operator → Process every invoice manually
+<strong>After</strong>: Exception handling specialist → Handle only non-standard cases AI can't process
 
 ```mermaid
 graph TD
@@ -170,8 +170,8 @@ graph TD
 | Metric | Month 5 | Month 6 | vs. Pre-Adoption |
 |--------|---------|---------|-----------------|
 | AI processing ratio | 85% | 92% | — |
-| Cost per invoice | $0.30 | **$0.20** | **-97%** |
-| Accuracy | 96% | **98%** | **+18%p** |
+| Cost per invoice | $0.30 | <strong>$0.20</strong> | <strong>-97%</strong> |
+| Accuracy | 96% | <strong>98%</strong> | <strong>+18%p</strong> |
 | Total monthly cost | $900 | $600 | -97% |
 | Processing time | 45 sec | 30 sec | -96% |
 
@@ -187,7 +187,7 @@ The headline figure of "$7→$0.20 per invoice" doesn't include several costs:
 | Initial integration development (3 months) | $45,000 |
 | Training data refinement labor | $18,000 |
 | Employee retraining | $8,000 |
-| **Total initial investment** | **$95,000** |
+| <strong>Total initial investment</strong> | <strong>$95,000</strong> |
 
 ### ROI Calculation
 
@@ -198,7 +198,7 @@ Annual net savings: $18,400 × 12 - $95,000 = $125,800 (Year 1)
 Year 2+ annual savings: $18,400 × 12 = $220,800
 ```
 
-**Investment recovered in 5 months.** An attractive figure, but with one prerequisite: successful role transitions for existing employees without significant attrition during the adoption process.
+<strong>Investment recovered in 5 months.</strong> An attractive figure, but with one prerequisite: successful role transitions for existing employees without significant attrition during the adoption process.
 
 ## The Accuracy Improvement Mechanism — Why AI Became More Accurate Than Humans
 
@@ -211,15 +211,15 @@ Human and AI error patterns are fundamentally different:
 | Simple typing mistakes | High | Near zero |
 | Account classification errors | Medium | Low (post-training) |
 | PO matching omissions | High | Very low |
-| Non-standard format handling | Low | **High** |
+| Non-standard format handling | Low | <strong>High</strong> |
 | Amount calculation errors | Medium | Near zero |
-| Contextual judgment mistakes | Very low | **Medium** |
+| Contextual judgment mistakes | Very low | <strong>Medium</strong> |
 
-AI excels overwhelmingly at **repetitive, pattern-based tasks** but still requires humans for **context-dependent, non-standard cases**.
+AI excels overwhelmingly at <strong>repetitive, pattern-based tasks</strong> but still requires humans for <strong>context-dependent, non-standard cases</strong>.
 
 ### The Composition of 98% Accuracy
 
-The final 98% accuracy comes not from "AI alone" but from an **AI + Human hybrid system**:
+The final 98% accuracy comes not from "AI alone" but from an <strong>AI + Human hybrid system</strong>:
 
 ```mermaid
 graph TD
@@ -245,26 +245,26 @@ graph TD
 | Exception specialists | 0 | 3 | New |
 | Client consulting | 3 | 8 | +167% |
 
-Total headcount remained at 15. But the **role composition changed completely**. Staff who previously handled simple data entry transitioned to higher-value client consulting roles.
+Total headcount remained at 15. But the <strong>role composition changed completely</strong>. Staff who previously handled simple data entry transitioned to higher-value client consulting roles.
 
 ### Resistance and Resolution During Transition
 
 Honestly, this process wasn't smooth:
 
-1. **Phase 1 — Denial (Month 1)**: "AI is trying to take our jobs" was the prevailing sentiment.
-2. **Phase 2 — Experimentation (Month 2-3)**: As humans corrected AI errors, staff began understanding AI's limitations.
-3. **Phase 3 — Collaboration (Month 4-5)**: Staff realized they could focus on more meaningful work as AI handled routine tasks.
-4. **Phase 4 — Ownership (Month 6)**: Employees began proactively suggesting AI improvements.
+1. <strong>Phase 1 — Denial (Month 1)</strong>: "AI is trying to take our jobs" was the prevailing sentiment.
+2. <strong>Phase 2 — Experimentation (Month 2-3)</strong>: As humans corrected AI errors, staff began understanding AI's limitations.
+3. <strong>Phase 3 — Collaboration (Month 4-5)</strong>: Staff realized they could focus on more meaningful work as AI handled routine tasks.
+4. <strong>Phase 4 — Ownership (Month 6)</strong>: Employees began proactively suggesting AI improvements.
 
 ## Lessons as an Engineering Manager
 
 ### 1. Accuracy Always Drops First
 
-Any AI system may perform worse than the existing system during initial deployment. I call this the **"J-Curve Effect."** Pre-briefing executives on this J-curve and securing agreement on a 3-month learning period is critical.
+Any AI system may perform worse than the existing system during initial deployment. I call this the <strong>"J-Curve Effect."</strong> Pre-briefing executives on this J-curve and securing agreement on a 3-month learning period is critical.
 
 ### 2. The Feedback Loop Is Everything
 
-What improves AI model performance isn't the model itself — it's the **quality of the feedback loop**. Invest the most time in building a system where human reviewers accurately classify and feed back AI errors.
+What improves AI model performance isn't the model itself — it's the <strong>quality of the feedback loop</strong>. Invest the most time in building a system where human reviewers accurately classify and feed back AI errors.
 
 ### 3. People Problems Are Harder Than Tech Problems
 
@@ -292,11 +292,11 @@ AI transformation in accounting firms isn't a "magic button." The cost reduction
 
 As an engineering manager, I want to emphasize three things:
 
-1. **Brace for the J-Curve**: The first 3 months are an investment period.
-2. **Invest in People**: Change management matters more than technology.
-3. **Let Data Speak**: Transparently sharing monthly metrics builds trust.
+1. <strong>Brace for the J-Curve</strong>: The first 3 months are an investment period.
+2. <strong>Invest in People</strong>: Change management matters more than technology.
+3. <strong>Let Data Speak</strong>: Transparently sharing monthly metrics builds trust.
 
-The gap between "ideal" and "reality" in AI adoption definitely exists. But bridging that gap requires not a better AI model, but **better processes and a better team**.
+The gap between "ideal" and "reality" in AI adoption definitely exists. But bridging that gap requires not a better AI model, but <strong>better processes and a better team</strong>.
 
 ## References
 

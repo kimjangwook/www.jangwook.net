@@ -82,7 +82,7 @@ relatedPosts:
 
 选择SvelteKit而不是Next.js的理由:
 
-**1. Svelte 5的革命性响应式系统**
+<strong>1. Svelte 5的革命性响应式系统</strong>
 
 ```typescript
 // Svelte 5 Runes: $state和$derived
@@ -92,13 +92,13 @@ let doubled = $derived(count * 2);
 // 比React hooks更直观,样板代码更少
 ```
 
-**2. 打包体积和性能**
+<strong>2. 打包体积和性能</strong>
 
 - Svelte在编译时移除框架代码
 - 客户端bundle比React小40%
 - Time to Interactive明显更快
 
-**3. 开发者体验**
+<strong>3. 开发者体验</strong>
 
 - 学习曲线平缓,代码易读
 - TypeScript支持优秀
@@ -108,7 +108,7 @@ let doubled = $derived(count * 2);
 
 选择Supabase而不是Firebase:
 
-**1. PostgreSQL的强大功能**
+<strong>1. PostgreSQL的强大功能</strong>
 
 ```sql
 -- 通过Row Level Security实现多租户
@@ -117,14 +117,14 @@ ON credits FOR SELECT
 USING (auth.uid() = user_id);
 ```
 
-**2. 集成化功能**
+<strong>2. 集成化功能</strong>
 
 - Auth:即开即用的邮箱/社交登录
 - Database:支持实时订阅的PostgreSQL
 - Storage:文件上传和CDN
 - Edge Functions:基于Deno的Serverless函数
 
-**3. 开源和定价**
+<strong>3. 开源和定价</strong>
 
 - 完全开源(可自托管)
 - 慷慨的免费套餐(50,000 MAU,500MB数据库)
@@ -134,7 +134,7 @@ USING (auth.uid() = user_id);
 
 选择Gemini而不是OpenAI GPT:
 
-**1. 成本效益**
+<strong>1. 成本效益</strong>
 
 ```
 Gemini 2.5 Flash:
@@ -148,7 +148,7 @@ GPT-4 Turbo:
 → 约便宜100倍
 ```
 
-**2. Structured Output支持**
+<strong>2. Structured Output支持</strong>
 
 ```typescript
 const responseSchema = {
@@ -182,20 +182,20 @@ const result = await model.generateContent({
 });
 ```
 
-**3. 多模态性能**
+<strong>3. 多模态性能</strong>
 
 - 图像OCR质量优秀(OmniDocBench基准测试第一名)
 - 在处理护照、收据等复杂布局方面表现出色
 
 ### 为什么选择Vercel作为部署平台
 
-**1. SvelteKit优化**
+<strong>1. SvelteKit优化</strong>
 
 - Vercel创建了SvelteKit并提供直接支持
 - 自动SSR/Edge Function部署
 - 构建缓存使部署速度更快
 
-**2. Serverless架构**
+<strong>2. Serverless架构</strong>
 
 - API路由自动部署为serverless function
 - 按使用量计费(无流量时几乎零成本)
@@ -205,7 +205,7 @@ const result = await model.generateContent({
 
 ### 1. OCR API with Structured Output
 
-**实际代码** (`src/routes/api/receipt-ocr/+server.ts`):
+<strong>实际代码</strong> (`src/routes/api/receipt-ocr/+server.ts`):
 
 ```typescript
 import { GoogleGenerativeAI, SchemaType as Type } from '@google/generative-ai';
@@ -283,7 +283,7 @@ const parsedData = JSON.parse(result.response.text());
 // parsedData已经是遵循schema的类型安全对象
 ```
 
-**核心优势**:
+<strong>核心优势</strong>:
 
 - <strong>类型安全</strong>:通过schema强制响应结构
 - <strong>消除解析错误</strong>:JSON解析几乎不会失败
@@ -291,7 +291,7 @@ const parsedData = JSON.parse(result.response.text());
 
 ### 2. Credit System (积分系统)
 
-**Stripe Checkout集成**:
+<strong>Stripe Checkout集成</strong>:
 
 ```typescript
 // src/routes/agents/credits/+page.server.ts
@@ -342,7 +342,7 @@ export const actions = {
 };
 ```
 
-**通过Webhook发放积分**:
+<strong>通过Webhook发放积分</strong>:
 
 ```typescript
 // src/routes/api/webhooks/stripe/+server.ts
@@ -378,7 +378,7 @@ export const POST = async ({ request }) => {
 
 ### 3. API Authentication (API认证)
 
-**API密钥发放和验证**:
+<strong>API密钥发放和验证</strong>:
 
 ```typescript
 // API密钥生成
@@ -441,7 +441,7 @@ async function checkAndDeductCredits(userId: string, amount: number) {
 
 ### 4. Multi-language Support (多语言支持)
 
-**使用Paraglide实现i18n**:
+<strong>使用Paraglide实现i18n</strong>:
 
 ```typescript
 // src/lib/i18n.ts
@@ -456,7 +456,7 @@ export const i18n = paraglide({
 // 支持语言: ko, en, ja, zh, es
 ```
 
-**按语言路由**:
+<strong>按语言路由</strong>:
 
 ```typescript
 // src/routes/[lang]/+layout.server.ts
@@ -472,7 +472,7 @@ export const load = async ({ params }) => {
 
 ## 令牌使用量跟踪和成本优化
 
-**实时令牌监控**:
+<strong>实时令牌监控</strong>:
 
 ```typescript
 const result = await model.generateContent({...});
@@ -519,7 +519,7 @@ function calculateCost(usage) {
 
 ### SEO/AEO-Driven Acquisition (基于搜索的客户获取)
 
-**内容营销策略**:
+<strong>内容营销策略</strong>:
 
 1. <strong>利用jangwook.net博客</strong>
    - 通过技术博客建立品牌信任度
@@ -538,7 +538,7 @@ function calculateCost(usage) {
 
 ### 3-Month KPI Targets (3个月KPI目标)
 
-**独立开发者的现实目标**:
+<strong>独立开发者的现实目标</strong>:
 
 | 指标 | 目标 | 测量方法 |
 |-----|-----|---------|
@@ -548,7 +548,7 @@ function calculateCost(usage) {
 | MRR | ¥30,000 | Stripe订阅总计 |
 | OCR API调用 | 1,000次 | api_usage表 |
 
-**Why These Numbers?**
+<strong>Why These Numbers?</strong>
 
 - 500访问量 → 通过SEO可达成的现实数字
 - 6%转化率(30/500) → B2B SaaS平均值
@@ -559,18 +559,18 @@ function calculateCost(usage) {
 
 ### Day 1 (2025-11-24): Foundation
 
-**完成事项**:
+<strong>完成事项</strong>:
 - 项目初始化(SvelteKit + TypeScript)
 - Supabase集成(Auth + Database)
 - 首个服务实现:Receipt OCR for Tax Refund
 - 护照+免税单据自动识别
 - Structured Output schema验证
 
-**代码量**: ~800行
+<strong>代码量</strong>: ~800行
 
 ### Day 2 (2025-11-25): Payment & Second Service
 
-**完成事项**:
+<strong>完成事项</strong>:
 - 添加Accounting OCR服务
 - Stripe Checkout集成
 - 实现积分系统
@@ -581,26 +581,26 @@ function calculateCost(usage) {
   - 使用条款
 - 集成Google Analytics
 
-**代码量**: ~1,200行
+<strong>代码量</strong>: ~1,200行
 
 ### Day 3 (2025-11-26): Polish & Launch
 
-**完成事项**:
+<strong>完成事项</strong>:
 - 服务说明页面
 - API文档编写
 - 着陆页优化
 - 生产环境部署(Vercel)
 - DNS配置
 
-**代码量**: ~600行
+<strong>代码量</strong>: ~600行
 
-**总计**: 3天,约2,600行代码
+<strong>总计</strong>: 3天,约2,600行代码
 
 ## 经验总结
 
 ### 1. SvelteKit 5的响应式系统是游戏改变者
 
-**Before (React hooks)**:
+<strong>Before (React hooks)</strong>:
 
 ```typescript
 const [credits, setCredits] = useState(0);
@@ -611,7 +611,7 @@ useEffect(() => {
 }, [credits]);
 ```
 
-**After (Svelte 5 runes)**:
+<strong>After (Svelte 5 runes)</strong>:
 
 ```typescript
 let credits = $state(0);
@@ -619,14 +619,14 @@ let doubled = $derived(credits * 2);
 // 自动处理响应式,无需useEffect
 ```
 
-**实际体会**:
+<strong>实际体会</strong>:
 - 样板代码减少70%
 - 调试更容易(无需显式依赖)
 - 性能提升(无不必要的重渲染)
 
 ### 2. Supabase RLS让多租户变简单
 
-**Row Level Security策略**:
+<strong>Row Level Security策略</strong>:
 
 ```sql
 -- 每个用户只能查看自己的积分
@@ -640,14 +640,14 @@ ON credits FOR INSERT
 USING (auth.role() = 'service_role');
 ```
 
-**优势**:
+<strong>优势</strong>:
 - 应用代码无需权限检查
 - SQL级别保证数据隔离
 - 从源头防止安全漏洞
 
 ### 3. Gemini API成本优化
 
-**Prompt优化**:
+<strong>Prompt优化</strong>:
 
 ```typescript
 // Before: 冗长的prompt
@@ -666,7 +666,7 @@ const prompt = `Extract receipt data as JSON:
 // 成本节省: 83%
 ```
 
-**图像尺寸优化**:
+<strong>图像尺寸优化</strong>:
 
 ```typescript
 // 将图像调整到1024px以内
@@ -682,7 +682,7 @@ const optimized = await sharp(imageBuffer)
 
 ### 4. Solo Developer Productivity Tips
 
-**最大化生产力的方法**:
+<strong>最大化生产力的方法</strong>:
 
 1. <strong>使用Supabase CLI本地开发</strong>
    ```bash

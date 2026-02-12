@@ -69,11 +69,11 @@ This is a critical bug in the scheduling logic. A fix is available in the dev ch
 
 Key issues addressed:
 
-*   **Cron job failures**: Jobs not triggering (#9788 `recomputeNextRuns`)
-*   **Delivery regression**: Message failures (#9733)
-*   **48h gap**: Unexpected delays (#10025)
-*   **Gateway restart bug**: Schedule loading issues (#10045)
-*   **NextRunAtMs only**: Updates without execution (#10201)
+*   <strong>Cron job failures</strong>: Jobs not triggering (#9788 `recomputeNextRuns`)
+*   <strong>Delivery regression</strong>: Message failures (#9733)
+*   <strong>48h gap</strong>: Unexpected delays (#10025)
+*   <strong>Gateway restart bug</strong>: Schedule loading issues (#10045)
+*   <strong>NextRunAtMs only</strong>: Updates without execution (#10201)
 
 ## Solution: Update to Dev Channel
 
@@ -107,7 +107,7 @@ pnpm install && pnpm build && npm install -g .
 
 #### 4. Restart Gateway (Required)
 
-**Crucial step:**
+<strong>Crucial step:</strong>
 
 ```bash
 openclaw gateway restart

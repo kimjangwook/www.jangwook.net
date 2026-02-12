@@ -58,7 +58,7 @@ relatedPosts:
 ---
 
 > <strong>系列指南</strong>：本文是"EffiFlow 自动化架构分析/评估与改进"系列的第 1/3 部分。
-> - **第 1 部分**（当前）：核心架构与指标分析
+> - <strong>第 1 部分</strong>（当前）：核心架构与指标分析
 > - [第 2 部分](/zh/blog/zh/effiflow-automation-analysis-part2)：Skills 与 Commands 整合策略
 > - [第 3 部分](/zh/blog/zh/effiflow-automation-analysis-part3)：实战改进案例及 ROI 分析
 
@@ -128,17 +128,17 @@ graph TB
 
 ### 各层职责
 
-**Commands（7 个）**：用户直接调用的工作流编排器
+<strong>Commands（7 个）</strong>：用户直接调用的工作流编排器
 - 管理复杂的多步骤任务
 - 将任务委派给 Agents
 - 最终验证和输出
 
-**Agents（17 个）**：可独立执行的专家
+<strong>Agents（17 个）</strong>：可独立执行的专家
 - 拥有特定领域知识
 - 使用 Skills 和 Tools
 - 支持并行执行
 
-**Skills（4 个）**：自动发现的模块化功能
+<strong>Skills（4 个）</strong>：自动发现的模块化功能
 - SKILL.md + 支持文件
 - 可重用的逻辑
 - 可控的工具访问权限
@@ -206,7 +206,7 @@ graph LR
     style Total fill:#10b981
 ```
 
-**ROI 分析**：
+<strong>ROI 分析</strong>：
 - 盈亏平衡点：3 次执行
 - 年度节省：<strong>$4.07（71%）</strong>
 - 投资回收：立即（3 周内）
@@ -226,7 +226,7 @@ if (existingMeta[slug]?.contentHash === newHash) {
 }
 ```
 
-**效果**：
+<strong>效果</strong>：
 - 分析全部 13 篇文章：2 分钟，$0.09
 - 仅分析新增 2〜3 篇：20 秒，~$0.02
 - <strong>额外节省 79%</strong>
@@ -239,8 +239,8 @@ if (existingMeta[slug]?.contentHash === newHash) {
 
 | 方法 | 优势 | 劣势 |
 |------|------|------|
-| **TF-IDF** | 快速、低成本 | 缺乏语义理解，无法处理同义词 |
-| **Claude LLM** | 语义理解、考虑上下文 | 较慢、产生成本 |
+| <strong>TF-IDF</strong> | 快速、低成本 | 缺乏语义理解，无法处理同义词 |
+| <strong>Claude LLM</strong> | 语义理解、考虑上下文 | 较慢、产生成本 |
 
 EffiFlow 选择了 <strong>Claude LLM</strong>，但通过元数据优先架构解决了成本问题。
 
@@ -273,7 +273,7 @@ const similarityDimensions = {
 }
 ```
 
-**多语言推理**的核心：LLM 为每种语言生成<strong>独立的理由</strong>（而非简单翻译）。
+<strong>多语言推理</strong>的核心：LLM 为每种语言生成<strong>独立的理由</strong>（而非简单翻译）。
 
 ### 性能指标
 
@@ -334,24 +334,24 @@ recommendations.json        (更新推荐，V2)
 
 ### 自动化效果
 
-**手动工作时间**（原有）：
+<strong>手动工作时间</strong>（原有）：
 - 研究：30 分钟
 - 写作：2 小时
 - 图像制作：20 分钟
 - 翻译：1 小时
 - 元数据：10 分钟
 - SEO 优化：20 分钟
-- **总计 4 小时 40 分钟/篇**
+- <strong>总计 4 小时 40 分钟/篇</strong>
 
-**自动化后**：
+<strong>自动化后</strong>：
 - 输入命令：5 秒
 - 等待：5〜8 分钟
 - 审查和修改：10〜20 分钟
-- **总计 30 分钟/篇**
+- <strong>总计 30 分钟/篇</strong>
 
-**节省**：<strong>4 小时 10 分钟/篇（90%）</strong>
+<strong>节省</strong>：<strong>4 小时 10 分钟/篇（90%）</strong>
 
-**年度效果**（每周 2 篇文章）：
+<strong>年度效果</strong>（每周 2 篇文章）：
 - 104 篇 × 4.17 小时 = <strong>节省 433 小时</strong>
 - 按时薪 $50 计算：<strong>价值 $21,650</strong>
 
@@ -382,7 +382,7 @@ recommendations.json        (更新推荐，V2)
 
 ### 成本分析
 
-**当前运营成本**（年度）：
+<strong>当前运营成本</strong>（年度）：
 
 ```
 元数据生成：        $0.09  (一次性)
@@ -393,7 +393,7 @@ GA 报告：           $1.20  (每月 1 次 × 12 个月)
 年度总成本：        $10.65
 ```
 
-**ROI**：
+<strong>ROI</strong>：
 - 时间节省：433 小时/年 × $50/小时 = $21,650
 - 运营成本：$10.65
 - <strong>净利润：$21,639</strong>
@@ -413,7 +413,7 @@ GA 报告：           $1.20  (每月 1 次 × 12 个月)
 | 工具列表 | 建议 | ✅ 已提供 | 100% | 10/10 |
 | 文件简洁性 | 100 行以下 | ⚠️ 部分超出 | 47% | 7/10 |
 
-**平均**：9.2/10 ⭐⭐⭐⭐⭐
+<strong>平均</strong>：9.2/10 ⭐⭐⭐⭐⭐
 
 ### Skills（已实现 4 个）
 
@@ -425,7 +425,7 @@ GA 报告：           $1.20  (每月 1 次 × 12 个月)
 | 描述具体性 | "Use when..." | ✅ 已说明 | 100% | 10/10 |
 | allowed-tools | 建议 | ✅ 全部说明 | 100% | 10/10 |
 
-**平均**：10/10 ⭐⭐⭐⭐⭐
+<strong>平均</strong>：10/10 ⭐⭐⭐⭐⭐
 
 ### Commands（7 个）
 
@@ -436,7 +436,7 @@ GA 报告：           $1.20  (每月 1 次 × 12 个月)
 | $ARGUMENTS | 利用 | ✅ 6/7 使用 | 86% | 9/10 |
 | Agent 整合 | 明确 | ✅ 明确 | 100% | 10/10 |
 
-**平均**：9.7/10 ⭐⭐⭐⭐⭐
+<strong>平均</strong>：9.7/10 ⭐⭐⭐⭐⭐
 
 ### 综合评分：A 级（8.98/10）
 
@@ -456,7 +456,7 @@ GA 报告：           $1.20  (每月 1 次 × 12 个月)
 
 ### 1. 删除空 Skills
 
-**问题**：存在 4 个空目录（50% 未实现）
+<strong>问题</strong>：存在 4 个空目录（50% 未实现）
 
 ```bash
 .claude/skills/
@@ -466,20 +466,20 @@ GA 报告：           $1.20  (每月 1 次 × 12 个月)
 └── web-automation/       (空目录)
 ```
 
-**措施**：
+<strong>措施</strong>：
 ```bash
 rm -rf .claude/skills/{blog-automation,content-analysis,git-automation,web-automation}
 ```
 
-**效果**：清理代码库，消除混乱
-**所需时间**：5 分钟
-**优先级**：关键
+<strong>效果</strong>：清理代码库，消除混乱
+<strong>所需时间</strong>：5 分钟
+<strong>优先级</strong>：关键
 
 ### 2. 实现并行处理
 
-**问题**：顺序处理导致时间消耗
+<strong>问题</strong>：顺序处理导致时间消耗
 
-**当前**：
+<strong>当前</strong>：
 ```javascript
 for (const post of posts) {
   await analyzePost(post);  // 顺序
@@ -487,21 +487,21 @@ for (const post of posts) {
 // 处理时间：2 分钟
 ```
 
-**改进**：
+<strong>改进</strong>：
 ```javascript
 await Promise.all(posts.map(analyzePost));  // 并行
 // 处理时间：30〜40 秒（缩短 70%）
 ```
 
-**效果**：处理时间缩短 70%
-**所需时间**：4〜6 小时
-**优先级**：高
+<strong>效果</strong>：处理时间缩短 70%
+<strong>所需时间</strong>：4〜6 小时
+<strong>优先级</strong>：高
 
 ### 3. 添加自动化测试
 
-**问题**：当前测试覆盖率 0%
+<strong>问题</strong>：当前测试覆盖率 0%
 
-**需要**：
+<strong>需要</strong>：
 ```python
 # tests/test_blog_writing.py
 def test_validate_frontmatter():
@@ -512,15 +512,15 @@ def test_generate_slug():
     assert generate_slug('Claude Code') == 'claude-code'
 ```
 
-**效果**：质量保证，防止回归
-**所需时间**：8〜12 小时
-**优先级**：高
+<strong>效果</strong>：质量保证，防止回归
+<strong>所需时间</strong>：8〜12 小时
+<strong>优先级</strong>：高
 
 ## 实战应用指南
 
 ### 读者可遵循的具体步骤
 
-**第 1 步：应用元数据优先架构**
+<strong>第 1 步：应用元数据优先架构</strong>
 
 ```bash
 # 分析当前文章
@@ -530,11 +530,11 @@ def test_generate_slug():
 cat post-metadata.json
 ```
 
-**预期结果**：
+<strong>预期结果</strong>：
 - 13 篇文章：2 分钟，$0.09
 - 元数据文件生成完成
 
-**第 2 步：生成 V3 推荐**
+<strong>第 2 步：生成 V3 推荐</strong>
 
 ```bash
 # 基于元数据的推荐
@@ -544,7 +544,7 @@ cat post-metadata.json
 # 成本：$0.03
 ```
 
-**第 3 步：自动化文章撰写**
+<strong>第 3 步：自动化文章撰写</strong>
 
 ```bash
 # 执行完整工作流
@@ -572,16 +572,16 @@ cat post-metadata.json
 
 ### 预期结果与指标
 
-**即时效果**：
+<strong>即时效果</strong>：
 - 文章撰写时间：4 小时 40 分钟 → 30 分钟（节省 90%）
 - Token 成本：$0.11/次 → $0.03/次（节省 73%）
 
-**3 个月后**：
+<strong>3 个月后</strong>：
 - 累计时间节省：~100 小时
 - 累计成本节省：~$10
 - 达到盈亏平衡
 
-**1 年后**：
+<strong>1 年后</strong>：
 - 时间节省：433 小时（价值 $21,650）
 - 成本节省：$4.07（71%）
 - ROI：2,032 倍
@@ -590,26 +590,26 @@ cat post-metadata.json
 
 ### 第 2 部分：Skills 与 Commands 整合策略（下期）
 
-**涵盖内容**：
+<strong>涵盖内容</strong>：
 - 4 个已实现 Skill 的详细工作流
 - Commands 的 Agent 委派模式
 - 缓存策略（24h/7d/48h）
 - Rate Limiting 处理（Brave Search 2 秒延迟）
 
-**读者收益**：
+<strong>读者收益</strong>：
 - 可重用的 Skill 设计方法
 - Command 链式调用实现指南
 - 实际代码示例和模板
 
 ### 第 3 部分：实战改进案例及 ROI 分析（下下期）
 
-**涵盖内容**：
+<strong>涵盖内容</strong>：
 - 并行处理实现（缩短 70% 时间）
 - 添加自动化测试（质量保证）
 - 构建性能仪表板
 - 成本追踪与优化
 
-**读者收益**：
+<strong>读者收益</strong>：
 - 可立即应用的优化技巧
 - 成本节省计算方法
 - 长期 ROI 分析框架
@@ -626,12 +626,12 @@ EffiFlow 博客自动化系统通过<strong>3 项核心创新</strong>达到了�
 
 ### 实际应用价值
 
-**可立即应用**：
+<strong>可立即应用</strong>：
 - 元数据提取和重用模式
 - 增量处理（Content Hash）
 - 仅分析韩语（节省 3 倍成本）
 
-**投资回报效果**：
+<strong>投资回报效果</strong>：
 - 盈亏平衡：3 次执行（3 周内）
 - ROI：2,032 倍（1 年基准）
 - 长期价值：持续节省成本 + 节省时间
@@ -640,13 +640,13 @@ EffiFlow 博客自动化系统通过<strong>3 项核心创新</strong>达到了�
 
 第 2 部分将深入探讨<strong>4 个已实现 Skill 的详细工作流</strong>和 <strong>Commands 的 Agent 委派模式</strong>。特别是<strong>缓存策略</strong>（24h/7d/48h）和 <strong>Rate Limiting 处理</strong>方法，将与实际代码一起分享。
 
-**欢迎读者提问**：
+<strong>欢迎读者提问</strong>：
 - 如有疑问，请在评论中留言
 - 下期将详细解答
 
 ---
 
-**系列导航**：
-- **第 1 部分**（当前）：核心架构与指标分析
+<strong>系列导航</strong>：
+- <strong>第 1 部分</strong>（当前）：核心架构与指标分析
 - 第 2 部分（计划中）：Skills 与 Commands 整合策略
 - 第 3 部分（计划中）：实战改进案例及 ROI 分析

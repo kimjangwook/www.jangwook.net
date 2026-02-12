@@ -62,7 +62,7 @@ relatedPosts:
 
 ウェブパフォーマンスの最適化は常に重要でしたが、一貫して測定し改善することは困難でした。Chrome DevToolsを手動で開いてプロファイリングし、スクリーンショットを撮り、指標を比較する作業は時間がかかり、反復的です。さらに大きな問題は、AIコードジェネレーターが実際のブラウザでどのように動作するか確認できない点でした。
 
-2025年9月22日、Google Chrome DevToolsチームはこの問題を解決する**Chrome DevTools MCP**を公開しました。これにより、Claude、Cursor、CopilotなどのAIアシスタントが実際のChromeブラウザを直接制御し、パフォーマンスを測定し、データに基づいて最適化を検証できるようになりました。
+2025年9月22日、Google Chrome DevToolsチームはこの問題を解決する<strong>Chrome DevTools MCP</strong>を公開しました。これにより、Claude、Cursor、CopilotなどのAIアシスタントが実際のChromeブラウザを直接制御し、パフォーマンスを測定し、データに基づいて最適化を検証できるようになりました。
 
 ## Chrome DevTools MCPとは?
 
@@ -70,11 +70,11 @@ Chrome DevTools MCPは、AIコーディングアシスタントにChromeブラ�
 
 ### 主要機能
 
-- **リアルタイムパフォーマンス測定**: Core Web Vitals (LCP、CLS、INP) の自動測定
-- **ネットワークモニタリング**: すべてのHTTPリクエストのタイミング、ヘッダー、ペイロード分析
-- **デバイスエミュレーション**: CPUスロットリング、ネットワーク制限でモバイル環境をシミュレート
-- **自動化デバッグ**: コンソールメッセージ、エラーログの収集と分析
-- **パフォーマンスインサイト**: レンダーブロッキングリソース、長いタスク、レイアウトシフトの自動識別
+- <strong>リアルタイムパフォーマンス測定</strong>: Core Web Vitals (LCP、CLS、INP) の自動測定
+- <strong>ネットワークモニタリング</strong>: すべてのHTTPリクエストのタイミング、ヘッダー、ペイロード分析
+- <strong>デバイスエミュレーション</strong>: CPUスロットリング、ネットワーク制限でモバイル環境をシミュレート
+- <strong>自動化デバッグ</strong>: コンソールメッセージ、エラーログの収集と分析
+- <strong>パフォーマンスインサイト</strong>: レンダーブロッキングリソース、長いタスク、レイアウトシフトの自動識別
 
 ### 動作原理
 
@@ -158,11 +158,11 @@ performance_start_trace(reload=true, autoStop=true)
 
 トレースを停止し、包括的なパフォーマンスインサイトを返します:
 
-- **Core Web Vitals**: LCP、CLS、INP、TBT、TTFB
-- **最も長いメインスレッドタスク**
-- **レンダーブロッキングリソース**
-- **JavaScript実行タイミング**
-- **ネットワークウォーターフォール分析**
+- <strong>Core Web Vitals</strong>: LCP、CLS、INP、TBT、TTFB
+- <strong>最も長いメインスレッドタスク</strong>
+- <strong>レンダーブロッキングリソース</strong>
+- <strong>JavaScript実行タイミング</strong>
+- <strong>ネットワークウォーターフォール分析</strong>
 
 **`performance_analyze_insight(insightName)`**
 
@@ -182,17 +182,17 @@ performance_analyze_insight("RenderBlocking")
 
 Chrome DevTools MCPはすべてのCore Web Vitalsを自動測定します:
 
-- **LCP (Largest Contentful Paint)**: 2.5秒以下 = Good
-- **CLS (Cumulative Layout Shift)**: 0.1以下 = Good
-- **INP (Interaction to Next Paint)**: 200ms以下 = Good
-- **TBT (Total Blocking Time)**: 300ms以下 = Good
-- **TTFB (Time to First Byte)**: 600ms以下 = Good
+- <strong>LCP (Largest Contentful Paint)</strong>: 2.5秒以下 = Good
+- <strong>CLS (Cumulative Layout Shift)</strong>: 0.1以下 = Good
+- <strong>INP (Interaction to Next Paint)</strong>: 200ms以下 = Good
+- <strong>TBT (Total Blocking Time)</strong>: 300ms以下 = Good
+- <strong>TTFB (Time to First Byte)</strong>: 600ms以下 = Good
 
 AIはこれらの指標を分析し、どれが閾値を超えているかすぐに教えてくれます。
 
 ### 3. デバイスエミュレーション
 
-**CPUスロットリング**
+<strong>CPUスロットリング</strong>
 
 ```typescript
 // 4倍遅いCPUをシミュレート (ローエンドモバイル)
@@ -202,7 +202,7 @@ emulate_cpu(4)
 performance_start_trace(reload=true)
 ```
 
-**ネットワークスロットリング**
+<strong>ネットワークスロットリング</strong>
 
 ```typescript
 // Slow 4Gネットワークをシミュレート
@@ -213,7 +213,7 @@ emulate_network("Slow 4G")
 
 ### 4. ネットワークリクエストモニタリング
 
-**全リクエスト取得**
+<strong>全リクエスト取得</strong>
 
 ```typescript
 list_network_requests(
@@ -228,7 +228,7 @@ list_network_requests(
 // - ファイルサイズと圧縮状況
 ```
 
-**特定リクエストの詳細取得**
+<strong>特定リクエストの詳細取得</strong>
 
 ```typescript
 get_network_request("https://example.com/main.js")
@@ -459,10 +459,10 @@ AI応答:
 
 ### セキュリティ考慮事項
 
-- **分離セッション使用**: `--isolated=true`オプションで一時ブラウザセッション使用
-- **機密データ注意**: 個人情報があるブラウザプロファイルで使用禁止
-- **プロダクションテスト**: アクセス制御実装、読み取り専用モード推奨
-- **AI生成スクリプト確認**: 実行前に必ず確認
+- <strong>分離セッション使用</strong>: `--isolated=true`オプションで一時ブラウザセッション使用
+- <strong>機密データ注意</strong>: 個人情報があるブラウザプロファイルで使用禁止
+- <strong>プロダクションテスト</strong>: アクセス制御実装、読み取り専用モード推奨
+- <strong>AI生成スクリプト確認</strong>: 実行前に必ず確認
 
 ### 他のMCPとの組み合わせ
 
@@ -504,7 +504,7 @@ Chrome DevTools MCPは他のMCPサーバーと一緒に使うとさらに強力�
   - LCP: 3.8秒 → 1.9秒 (50%改善)
   - Lighthouse Score: 62 → 94
 
-**時間節約: 75%**
+<strong>時間節約: 75%</strong>
 
 ## 今後の展望
 
@@ -517,10 +517,10 @@ Chrome DevTools MCPはウェブ開発ワークフローを根本的に変化さ�
 
 ### 予測可能な発展方向
 
-1. **予測的最適化**: AIがパフォーマンス低下を事前に予測して防止
-2. **自動修正**: 簡単なパフォーマンス問題はAIが直接修正 (承認後)
-3. **継続的モニタリング**: プロダクション環境でリアルタイムパフォーマンス追跡
-4. **パフォーマンスバジェット自動化**: 閾値設定すればCI/CDで自動検証
+1. <strong>予測的最適化</strong>: AIがパフォーマンス低下を事前に予測して防止
+2. <strong>自動修正</strong>: 簡単なパフォーマンス問題はAIが直接修正 (承認後)
+3. <strong>継続的モニタリング</strong>: プロダクション環境でリアルタイムパフォーマンス追跡
+4. <strong>パフォーマンスバジェット自動化</strong>: 閾値設定すればCI/CDで自動検証
 
 ## 始めてみましょう
 
@@ -528,11 +528,11 @@ Chrome DevTools MCPはウェブパフォーマンス最適化を推測からデ�
 
 ### 最初のステップ
 
-1. **インストール**: `npx chrome-devtools-mcp@latest`
-2. **Claude Desktop設定**: MCPサーバー追加
-3. **初回測定**: "私のサイトのパフォーマンスを測定して"
-4. **最適化開始**: AIの提案を一つずつ適用
-5. **結果検証**: 改善をデータで確認
+1. <strong>インストール</strong>: `npx chrome-devtools-mcp@latest`
+2. <strong>Claude Desktop設定</strong>: MCPサーバー追加
+3. <strong>初回測定</strong>: "私のサイトのパフォーマンスを測定して"
+4. <strong>最適化開始</strong>: AIの提案を一つずつ適用
+5. <strong>結果検証</strong>: 改善をデータで確認
 
 パフォーマンス最適化はもはや時間のかかる手作業ではありません。AIと一緒なら、速く、正確で、再現可能なプロセスになります。
 

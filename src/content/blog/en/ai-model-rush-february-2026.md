@@ -60,7 +60,7 @@ relatedPosts:
       zh: 在AI/ML领域涵盖类似主题，难度相当。
 ---
 
-In February 2026, something unprecedented is happening in the AI industry. News that **seven major AI models are scheduled for release in the same month** has sent the industry into what can only be described as a "Model Rush."
+In February 2026, something unprecedented is happening in the AI industry. News that <strong>seven major AI models are scheduled for release in the same month</strong> has sent the industry into what can only be described as a "Model Rush."
 
 ## February Release Schedule
 
@@ -68,13 +68,13 @@ According to [Mark's (@mark_k) post on X](https://x.com/mark_k/status/2020822166
 
 | Model | Developer | Notes |
 |-------|-----------|-------|
-| **Gemini 3 Pro GA** | Google DeepMind | General Availability release of Gemini 3 Pro |
-| **Sonnet 5** | Anthropic | Next version of the Claude Sonnet series |
-| **GPT-5.3** | OpenAI | Minor update to the GPT-5 series |
-| **Qwen 3.5** | Alibaba Cloud | Leading open-source contender |
-| **GLM 5** | Zhipu AI | Next-gen model from Chinese AI startup |
-| **Deepseek v4** | DeepSeek | New version of the reasoning-focused model |
-| **Grok 4.20** | xAI | Latest model from Elon Musk's xAI |
+| <strong>Gemini 3 Pro GA</strong> | Google DeepMind | General Availability release of Gemini 3 Pro |
+| <strong>Sonnet 5</strong> | Anthropic | Next version of the Claude Sonnet series |
+| <strong>GPT-5.3</strong> | OpenAI | Minor update to the GPT-5 series |
+| <strong>Qwen 3.5</strong> | Alibaba Cloud | Leading open-source contender |
+| <strong>GLM 5</strong> | Zhipu AI | Next-gen model from Chinese AI startup |
+| <strong>Deepseek v4</strong> | DeepSeek | New version of the reasoning-focused model |
+| <strong>Grok 4.20</strong> | xAI | Latest model from Elon Musk's xAI |
 
 ## Why Are They All Converging on February?
 
@@ -84,11 +84,11 @@ February sits between CES and MWC, making it a prime time for companies to unvei
 
 ### 2. Open Source vs Closed Source — Full-Scale Showdown
 
-What makes this rush particularly noteworthy is that **open-source models (Qwen 3.5, DeepSeek v4) and closed-source models (Gemini, Sonnet, GPT) are clashing simultaneously**. Since the second half of 2025, open-source model performance has improved dramatically, forcing closed-source players to accelerate their update cycles.
+What makes this rush particularly noteworthy is that <strong>open-source models (Qwen 3.5, DeepSeek v4) and closed-source models (Gemini, Sonnet, GPT) are clashing simultaneously</strong>. Since the second half of 2025, open-source model performance has improved dramatically, forcing closed-source players to accelerate their update cycles.
 
 ### 3. The Rise of Chinese AI Companies
 
-With GLM 5 (Zhipu AI), DeepSeek v4, and Qwen 3.5, **three Chinese-developed models** are in the mix. This demonstrates that the US-China AI competition is now playing out at the model level in earnest.
+With GLM 5 (Zhipu AI), DeepSeek v4, and Qwen 3.5, <strong>three Chinese-developed models</strong> are in the mix. This demonstrates that the US-China AI competition is now playing out at the model level in earnest.
 
 ## Key Highlights for Each Model
 
@@ -139,15 +139,15 @@ With seven models competing simultaneously, API prices are set to drop further. 
 
 ### 2. Multi-Model Strategies Become Essential
 
-The era of depending on a single model is over. **Model routing** strategies — selecting the optimal model for each task type — are becoming increasingly critical.
+The era of depending on a single model is over. <strong>Model routing</strong> strategies — selecting the optimal model for each task type — are becoming increasingly critical.
 
 ### 3. Real-World Evaluation Over Benchmarks
 
-As the number of models grows, benchmark scores alone become insufficient for decision-making. Building **custom evaluation (eval) pipelines** tailored to your specific use cases is now essential.
+As the number of models grows, benchmark scores alone become insufficient for decision-making. Building <strong>custom evaluation (eval) pipelines</strong> tailored to your specific use cases is now essential.
 
 ## Looking Ahead
 
-The February 2026 model rush signals that AI industry competition has entered a new phase. As absolute performance gaps between models narrow, **pricing, speed, specialization, and ecosystem** will become the defining criteria for model selection.
+The February 2026 model rush signals that AI industry competition has entered a new phase. As absolute performance gaps between models narrow, <strong>pricing, speed, specialization, and ecosystem</strong> will become the defining criteria for model selection.
 
 As developers, our path forward is clear: design architectures that avoid lock-in to any single model, and build infrastructure that can flexibly adapt to the rapidly evolving model ecosystem.
 

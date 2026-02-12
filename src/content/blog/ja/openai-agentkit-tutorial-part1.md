@@ -51,35 +51,35 @@ relatedPosts:
       zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
-> **シリーズ: OpenAI AgentKit マスター** (1/2)
+> <strong>シリーズ: OpenAI AgentKit マスター</strong> (1/2)
 >
-> 1. **OpenAI AgentKit 完全ガイド第 1 部：コアコンセプトとはじめ方** ← 現在の記事
+> 1. <strong>OpenAI AgentKit 完全ガイド第 1 部：コアコンセプトとはじめ方</strong> ← 現在の記事
 > 2. [OpenAI AgentKit 完全ガイド第 2 部：実践適用と高度なパターン](/ja/blog/ja/openai-agentkit-tutorial-part2)
 
 # OpenAI AgentKit 完全ガイド第 1 部：コアコンセプトとはじめ方
 
-2025 年 10 月 6 日、サンフランシスコで開催された OpenAI DevDay で、Sam Altman は開発者エコシステムを完全に変える発表を行いました。それが**AgentKit**です。
+2025 年 10 月 6 日、サンフランシスコで開催された OpenAI DevDay で、Sam Altman は開発者エコシステムを完全に変える発表を行いました。それが<strong>AgentKit</strong>です。
 
-「プロトタイプからプロダクションまで、はるかに少ない摩擦でエージェントを構築、デプロイ、最適化するために必要なすべて」という Sam Altman の言葉通り、AgentKit は単なる API アップデートではありません。これは**AI がワークフローの中心に立つ新しいパラダイム**です。
+「プロトタイプからプロダクションまで、はるかに少ない摩擦でエージェントを構築、デプロイ、最適化するために必要なすべて」という Sam Altman の言葉通り、AgentKit は単なる API アップデートではありません。これは<strong>AI がワークフローの中心に立つ新しいパラダイム</strong>です。
 
 この記事では、AgentKit のコアコンセプトを理解し、最初の AI エージェントを実際に作成する完全なチュートリアルを提供します。
 
 ## 要点まとめ (TL;DR)
 
-- 🎯 **AgentKit = AI ワークフロープラットフォーム**: Zapier/n8n と競合するが、AI 推論がコア
-- 🧩 **4 つのコアコンポーネント**: Agent Builder (ビジュアル), ChatKit (UI), Connector Registry (ツール), Evals (パフォーマンス)
-- 🐍 **Python SDK 提供**: `openai-agents`パッケージでコードファースト開発可能
-- 🔌 **MCP ネイティブサポート**: "AI アプリの USB-C"でツール統合を標準化
-- 📊 **ベータ段階**: Agent Builder は現在ベータ、2025 年 11 月 1 日から課金開始
-- 💡 **いつ使う?**: AI 中心のワークフロー、マルチエージェント協業、複雑な意思決定の自動化
+- 🎯 <strong>AgentKit = AI ワークフロープラットフォーム</strong>: Zapier/n8n と競合するが、AI 推論がコア
+- 🧩 <strong>4 つのコアコンポーネント</strong>: Agent Builder (ビジュアル), ChatKit (UI), Connector Registry (ツール), Evals (パフォーマンス)
+- 🐍 <strong>Python SDK 提供</strong>: `openai-agents`パッケージでコードファースト開発可能
+- 🔌 <strong>MCP ネイティブサポート</strong>: "AI アプリの USB-C"でツール統合を標準化
+- 📊 <strong>ベータ段階</strong>: Agent Builder は現在ベータ、2025 年 11 月 1 日から課金開始
+- 💡 <strong>いつ使う?</strong>: AI 中心のワークフロー、マルチエージェント協業、複雑な意思決定の自動化
 
 ## AgentKit とは何か?
 
 ### OpenAI の戦略的転換
 
-OpenAI はもはや「API プロバイダー」ではありません。AgentKit を通じて**プラットフォーム企業**へと進化しています。
+OpenAI はもはや「API プロバイダー」ではありません。AgentKit を通じて<strong>プラットフォーム企業</strong>へと進化しています。
 
-既存のワークフロー自動化ツール（Zapier、n8n、Make）が**「API を接続すること」**に焦点を当てていたのに対し、AgentKit は**「AI が推論しながら調整するワークフロー」**を作ります。
+既存のワークフロー自動化ツール（Zapier、n8n、Make）が<strong>「API を接続すること」</strong>に焦点を当てていたのに対し、AgentKit は<strong>「AI が推論しながら調整するワークフロー」</strong>を作ります。
 
 ```mermaid
 graph TB
@@ -102,10 +102,10 @@ graph TB
     style B3 fill:#fff3e0
 ```
 
-**コアな違い**:
+<strong>コアな違い</strong>:
 
-- 従来のツール: 事前定義された**ルールベースフロー**
-- AgentKit: AI が**状況を理解して決定**するエージェンティックフロー
+- 従来のツール: 事前定義された<strong>ルールベースフロー</strong>
+- AgentKit: AI が<strong>状況を理解して決定</strong>するエージェンティックフロー
 
 ### 4 つのコアコンポーネント
 
@@ -113,7 +113,7 @@ AgentKit は 4 つの統合システムで構成されています：
 
 #### 1️⃣ Agent Builder (ベータ)
 
-**"AI ワークフローの Figma"**
+<strong>"AI ワークフローの Figma"</strong>
 
 - ドラッグ&ドロップビジュアルキャンバス
 - ノーコード/ローコードマルチエージェントシステム設計
@@ -121,7 +121,7 @@ AgentKit は 4 つの統合システムで構成されています：
 - バージョン管理内蔵
 - 付箋でチーム協業サポート
 
-**いつ使う?**:
+<strong>いつ使う?</strong>:
 
 - 非開発者と協業する時
 - 複雑なワークフローを可視化する時
@@ -129,14 +129,14 @@ AgentKit は 4 つの統合システムで構成されています：
 
 #### 2️⃣ ChatKit
 
-**"埋め込み可能な ChatGPT UI"**
+<strong>"埋め込み可能な ChatGPT UI"</strong>
 
 - アプリにすぐに組み込めるチャットインターフェース
 - ファイルアップロード対応（月 1GB 無料）
 - Agent Builder ワークフローと統合
 - ホワイトラベルカスタマイズ
 
-**いつ使う?**:
+<strong>いつ使う?</strong>:
 
 - SaaS に AI チャット機能を追加
 - カスタマーサポートボットを構築
@@ -144,14 +144,14 @@ AgentKit は 4 つの統合システムで構成されています：
 
 #### 3️⃣ Connector Registry
 
-**"エージェントのためのツールボックス"**
+<strong>"エージェントのためのツールボックス"</strong>
 
 - 中央集権的ツールおよびデータ管理
 - MCP（Model Context Protocol）サーバーサポート
 - 管理者権限制御
 - セキュアなツール統合
 
-**いつ使う?**:
+<strong>いつ使う?</strong>:
 
 - エンタープライズ環境でツールアクセス制御
 - MCP サーバーでカスタムツール追加
@@ -159,14 +159,14 @@ AgentKit は 4 つの統合システムで構成されています：
 
 #### 4️⃣ Evals (評価システム)
 
-**"エージェントパフォーマンスダッシュボード"**
+<strong>"エージェントパフォーマンスダッシュボード"</strong>
 
 - トレースグレーディング（実行ログ評価）
 - データセット管理
 - 自動プロンプト最適化
 - リアルタイムデバッグ
 
-**いつ使う?**:
+<strong>いつ使う?</strong>:
 
 - エージェントパフォーマンス測定
 - プロンプト A/B テスト
@@ -179,7 +179,7 @@ AgentKit の哲学を理解するには、3 つのコア原則を知る必要が
 
 ### 1. Agents (エージェント)
 
-**定義**: 特定の役割とツールを持つ LLM
+<strong>定義</strong>: 特定の役割とツールを持つ LLM
 
 ```python
 from agents import Agent
@@ -197,11 +197,11 @@ agent = Agent(
 )
 ```
 
-**コア**: エージェントは単なるプロンプトではありません。彼らは**役割、ツール、制約**を持つ自律的なアクターです。
+<strong>コア</strong>: エージェントは単なるプロンプトではありません。彼らは<strong>役割、ツール、制約</strong>を持つ自律的なアクターです。
 
 ### 2. Handoffs (ハンドオフ)
 
-**定義**: エージェント間のタスク委任
+<strong>定義</strong>: エージェント間のタスク委任
 
 ```python
 from agents import Agent
@@ -219,11 +219,11 @@ technical_agent = Agent(
 )
 ```
 
-**使用パターン**:
+<strong>使用パターン</strong>:
 
-- **階層的委任**: マネージャー → スペシャリスト
-- **ピア協業**: エージェント同士の協力
-- **エスカレーション**: AI → 人間
+- <strong>階層的委任</strong>: マネージャー → スペシャリスト
+- <strong>ピア協業</strong>: エージェント同士の協力
+- <strong>エスカレーション</strong>: AI → 人間
 
 ```mermaid
 graph TD
@@ -243,7 +243,7 @@ graph TD
 
 ### 3. Guardrails (ガードレール)
 
-**定義**: 入出力検証および安全装置
+<strong>定義</strong>: 入出力検証および安全装置
 
 ```python
 from agents import Agent, guardrails
@@ -262,12 +262,12 @@ agent = Agent(
 )
 ```
 
-**なぜ重要?**:
+<strong>なぜ重要?</strong>:
 
-- プロダクション環境での**安全性保証**
-- **コスト暴走防止**（無限ループ、不要な API 呼び出し）
-- **ブランド保護**（不適切な応答をブロック）
-- **コンプライアンス**（規制遵守）
+- プロダクション環境での<strong>安全性保証</strong>
+- <strong>コスト暴走防止</strong>（無限ループ、不要な API 呼び出し）
+- <strong>ブランド保護</strong>（不適切な応答をブロック）
+- <strong>コンプライアンス</strong>（規制遵守）
 
 ## 最初のエージェントを作る: ステップバイステップチュートリアル
 
@@ -299,7 +299,7 @@ print("✓ OpenAI Agents SDKインストール完了")
 
 ### チュートリアル 1: シンプルな天気エージェント
 
-**目標**: 都市名を受け取り天気情報を提供するエージェント
+<strong>目標</strong>: 都市名を受け取り天気情報を提供するエージェント
 
 #### Step 1: ツール定義
 
@@ -331,7 +331,7 @@ def get_weather(location: str) -> str:
     )
 ```
 
-**コア**: `@function_tool`デコレーターが関数をエージェントが使用できるツールに変換します。Docstring がエージェントにツールの使い方を教えます。
+<strong>コア</strong>: `@function_tool`デコレーターが関数をエージェントが使用できるツールに変換します。Docstring がエージェントにツールの使い方を教えます。
 
 #### Step 2: エージェント作成
 
@@ -365,7 +365,7 @@ print(result.final_output)
 # 出力: "東京の現在の天気は曇りで、気温は18°Cです!"
 ```
 
-**非同期実行**（プロダクション環境）:
+<strong>非同期実行</strong>（プロダクション環境）:
 
 ```python
 import asyncio
@@ -382,7 +382,7 @@ asyncio.run(main())
 
 ### チュートリアル 2: マルチエージェントカスタマーサポートシステム
 
-**目標**: 質問を分類し、適切な専門エージェントにルーティング
+<strong>目標</strong>: 質問を分類し、適切な専門エージェントにルーティング
 
 #### Step 1: 専門エージェントの定義
 
@@ -511,7 +511,7 @@ for user_message in turns:
     print(f"Agent: {result.final_output}\n")
 ```
 
-**セッションの重要性**:
+<strong>セッションの重要性</strong>:
 
 - 会話コンテキストの保持（以前の質問を記憶）
 - ハンドオフ後も履歴を保存
@@ -556,51 +556,51 @@ for user_message in turns:
 
 ### ビジュアルでマルチエージェントを作成
 
-**シナリオ**: コンテンツ生成ワークフロー
+<strong>シナリオ</strong>: コンテンツ生成ワークフロー
 
-1. **"Agent"ノードをドラッグ** → "Content Planner"
+1. <strong>"Agent"ノードをドラッグ</strong> → "Content Planner"
 
    - Instructions: "トピックに基づいてコンテンツアウトラインを作成"
 
-2. **"Agent"ノードをドラッグ** → "Content Writer"
+2. <strong>"Agent"ノードをドラッグ</strong> → "Content Writer"
 
    - Instructions: "アウトラインからブログ記事を書く"
    - Connect: Planner → Writer
 
-3. **"Agent"ノードをドラッグ** → "SEO Optimizer"
+3. <strong>"Agent"ノードをドラッグ</strong> → "SEO Optimizer"
 
    - Instructions: "SEO 向けにコンテンツを最適化"
    - Connect: Writer → SEO Optimizer
 
-4. **"Guardrail"ノードをドラッグ** → "Quality Check"
+4. <strong>"Guardrail"ノードをドラッグ</strong> → "Quality Check"
 
    - Type: Output Validation
    - Rules: 最低 500 語、盗作なし
    - Connect: SEO Optimizer → Quality Check
 
-5. **"Preview"をクリック** → テスト実行
+5. <strong>"Preview"をクリック</strong> → テスト実行
 
-6. **"Deploy"をクリック** → プロダクションデプロイ
+6. <strong>"Deploy"をクリック</strong> → プロダクションデプロイ
 
 ### ビジュアル vs コード: いつ何を使う?
 
 | 基準                       | Agent Builder (ビジュアル)         | Python SDK (コード)              |
 | -------------------------- | ---------------------------------- | -------------------------------- |
-| **学習曲線**               | 低い（直感的）                     | 中程度（プログラミング必要）     |
-| **柔軟性**                 | 限定的                             | 無制限                           |
-| **協業**                   | 優れている（非開発者含む）         | 普通（開発者中心）               |
-| **バージョン管理**         | 内蔵 UI                            | Git 統合                         |
-| **デバッグ**               | ビジュアルトレース                 | コードレベルデバッグ             |
-| **プロダクションデプロイ** | ワンクリック                       | CI/CD パイプライン               |
-| **推奨ユースケース**       | プロトタイプ、ビジネスワークフロー | エンタープライズ、複雑なロジック |
+| <strong>学習曲線</strong>               | 低い（直感的）                     | 中程度（プログラミング必要）     |
+| <strong>柔軟性</strong>                 | 限定的                             | 無制限                           |
+| <strong>協業</strong>                   | 優れている（非開発者含む）         | 普通（開発者中心）               |
+| <strong>バージョン管理</strong>         | 内蔵 UI                            | Git 統合                         |
+| <strong>デバッグ</strong>               | ビジュアルトレース                 | コードレベルデバッグ             |
+| <strong>プロダクションデプロイ</strong> | ワンクリック                       | CI/CD パイプライン               |
+| <strong>推奨ユースケース</strong>       | プロトタイプ、ビジネスワークフロー | エンタープライズ、複雑なロジック |
 
-**ベストプラクティス**: ビジュアルでプロトタイプ → コードでプロダクション化
+<strong>ベストプラクティス</strong>: ビジュアルでプロトタイプ → コードでプロダクション化
 
 ## Model Context Protocol (MCP) 統合
 
 ### MCP とは?
 
-**"AI アプリのための USB-C"** - ツールとデータソースを標準化された方法で接続
+<strong>"AI アプリのための USB-C"</strong> - ツールとデータソースを標準化された方法で接続
 
 従来の方式:
 
@@ -662,7 +662,7 @@ agent = Agent(
 )
 ```
 
-**メリット**:
+<strong>メリット</strong>:
 
 - ツール再利用（複数エージェントで同じ MCP サーバー使用）
 - 中央集権的権限管理
@@ -670,7 +670,7 @@ agent = Agent(
 
 ### MCP エコシステム
 
-**主要 MCP サーバー**:
+<strong>主要 MCP サーバー</strong>:
 
 - Notion MCP
 - Google Drive MCP
@@ -678,24 +678,24 @@ agent = Agent(
 - GitHub MCP
 - PostgreSQL MCP
 
-**自分で作る**: https://modelcontextprotocol.io/docs
+<strong>自分で作る</strong>: https://modelcontextprotocol.io/docs
 
 ## ガードレールを深く理解する
 
 ### なぜガードレールが必須なのか?
 
-**実際のプロダクション事故例**:
+<strong>実際のプロダクション事故例</strong>:
 
 - チャットボットが顧客の個人情報を暴露
 - 無限ループで$10,000 の API 請求
 - ブランドガイドライン違反コンテンツ生成
 - 有害コンテンツ生成
 
-**ガードレールの役割**: このような事故を事前に防ぐ
+<strong>ガードレールの役割</strong>: このような事故を事前に防ぐ
 
 ### 入力ガードレール (Input Guardrails)
 
-**ユーザー入力を検証**
+<strong>ユーザー入力を検証</strong>
 
 ```python
 from agents import Agent, guardrails
@@ -721,7 +721,7 @@ agent = Agent(
 )
 ```
 
-**動作**:
+<strong>動作</strong>:
 
 1. ユーザー入力到着
 2. ガードレールを順次実行
@@ -730,7 +730,7 @@ agent = Agent(
 
 ### 出力ガードレール (Output Guardrails)
 
-**エージェント応答を検証**
+<strong>エージェント応答を検証</strong>
 
 ```python
 agent = Agent(
@@ -756,7 +756,7 @@ agent = Agent(
 )
 ```
 
-**動作**:
+<strong>動作</strong>:
 
 1. エージェント応答生成
 2. ガードレールで順次検証
@@ -794,17 +794,17 @@ agent = Agent(
 
 ### ガードレールのベストプラクティス
 
-1. **入力と出力の両方を保護**: 双方向防御
-2. **階層的ガードレール**: 高速チェック優先、高コストチェックは後
-3. **明確なエラーメッセージ**: ユーザーになぜブロックされたか通知
-4. **ロギング**: ガードレールブロック履歴を追跡して改善
-5. **テスト**: 悪意のある入力でガードレールをテスト
+1. <strong>入力と出力の両方を保護</strong>: 双方向防御
+2. <strong>階層的ガードレール</strong>: 高速チェック優先、高コストチェックは後
+3. <strong>明確なエラーメッセージ</strong>: ユーザーになぜブロックされたか通知
+4. <strong>ロギング</strong>: ガードレールブロック履歴を追跡して改善
+5. <strong>テスト</strong>: 悪意のある入力でガードレールをテスト
 
 ## セッションと会話履歴管理
 
 ### セッションの重要性
 
-エージェントと**複数ターン会話**をする際、以前のコンテキストを記憶する必要があります。
+エージェントと<strong>複数ターン会話</strong>をする際、以前のコンテキストを記憶する必要があります。
 
 ```python
 # セッションなし（コンテキストなし）
@@ -842,7 +842,7 @@ restored_session = Session.from_dict(session_data)
 result = Runner.run_sync(agent, "何について話しましたか?", session=restored_session)
 ```
 
-**プロダクション環境**: Redis や PostgreSQL にセッション保存
+<strong>プロダクション環境</strong>: Redis や PostgreSQL にセッション保存
 
 ```python
 import redis
@@ -883,7 +883,7 @@ cheap_agent = Agent(
 )
 ```
 
-**モデル選択ガイド**:
+<strong>モデル選択ガイド</strong>:
 
 - 単純な分類/ルーティング: `gpt-realtime-mini`
 - 一般的なタスク: `gpt-4o`
@@ -909,7 +909,7 @@ agent = Agent(
 )
 ```
 
-**トークン = コスト**: プロンプトが短いほど安価
+<strong>トークン = コスト</strong>: プロンプトが短いほど安価
 
 ### 3. ガードレールで無限ループを防止
 
@@ -1036,7 +1036,7 @@ deployment = deploy(
 print(f"Deployed at: {deployment.url}")
 ```
 
-**CI/CD 統合**:
+<strong>CI/CD 統合</strong>:
 
 ```yaml
 # .github/workflows/deploy.yml
@@ -1062,9 +1062,9 @@ jobs:
 
 ### ケース 1: カスタマーサポート自動化（Clay）
 
-**結果**: 10 倍成長
+<strong>結果</strong>: 10 倍成長
 
-**実装**:
+<strong>実装</strong>:
 
 ```python
 support_system = Agent(
@@ -1079,7 +1079,7 @@ support_system = Agent(
 )
 ```
 
-**成果**:
+<strong>成果</strong>:
 
 - 80%自動解決率
 - 平均応答時間 5 分 → 30 秒
@@ -1087,7 +1087,7 @@ support_system = Agent(
 
 ### ケース 2: コンテンツ生成パイプライン
 
-**実装**:
+<strong>実装</strong>:
 
 ```python
 content_planner = Agent(
@@ -1113,7 +1113,7 @@ result = Runner.run_sync(
 )
 ```
 
-**成果**:
+<strong>成果</strong>:
 
 - コンテンツ生産速度 5 倍
 - SEO スコア平均 85+維持
@@ -1121,7 +1121,7 @@ result = Runner.run_sync(
 
 ### ケース 3: 研究補助システム
 
-**実装**:
+<strong>実装</strong>:
 
 ```python
 @function_tool
@@ -1148,7 +1148,7 @@ research_agent = Agent(
 )
 ```
 
-**成果**:
+<strong>成果</strong>:
 
 - 文献調査時間 70%短縮
 - より広範な研究カバレッジ
@@ -1158,13 +1158,13 @@ research_agent = Agent(
 
 これで AgentKit のコアコンセプトを理解し、最初のエージェントを作成しました。
 
-**次回予告**: [OpenAI AgentKit 完全ガイド第 2 部: 実践適用と高度なパターン](/ja/blog/ja/openai-agentkit-tutorial-part2)では:
+<strong>次回予告</strong>: [OpenAI AgentKit 完全ガイド第 2 部: 実践適用と高度なパターン](/ja/blog/ja/openai-agentkit-tutorial-part2)では:
 
-- 🏗️ **実践アーキテクチャパターン**: エンタープライズグレードのマルチエージェントシステム設計
-- 🔧 **高度なツール統合**: MCP サーバーを自分で作る、外部 API 連携
-- 📊 **パフォーマンス最適化**: Evals を活用した A/B テストとプロンプト最適化
-- 🛡️ **セキュリティとコンプライアンス**: プロダクション環境の安全装置
-- 💼 **実際のケーススタディ**: 3 つの業界別完全実装例
+- 🏗️ <strong>実践アーキテクチャパターン</strong>: エンタープライズグレードのマルチエージェントシステム設計
+- 🔧 <strong>高度なツール統合</strong>: MCP サーバーを自分で作る、外部 API 連携
+- 📊 <strong>パフォーマンス最適化</strong>: Evals を活用した A/B テストとプロンプト最適化
+- 🛡️ <strong>セキュリティとコンプライアンス</strong>: プロダクション環境の安全装置
+- 💼 <strong>実際のケーススタディ</strong>: 3 つの業界別完全実装例
 
 ## 追加リソース
 
@@ -1187,6 +1187,6 @@ research_agent = Agent(
 
 ---
 
-**次回お会いしましょう!** 実践事例で一緒に AgentKit をマスターしましょう。
+<strong>次回お会いしましょう!</strong> 実践事例で一緒に AgentKit をマスターしましょう。
 
 _質問やフィードバックがあれば、コメントで残してください。すべてのご意見に回答します!_

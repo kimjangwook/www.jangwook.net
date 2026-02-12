@@ -61,9 +61,9 @@ relatedPosts:
 
 ## Overview
 
-The era of running multiple AI agents simultaneously has arrived. Claude excels at judgment and context understanding, while Codex shines at precise code generation. But the hardest problem is **routing** — deciding which agent should handle which task.
+The era of running multiple AI agents simultaneously has arrived. Claude excels at judgment and context understanding, while Codex shines at precise code generation. But the hardest problem is <strong>routing</strong> — deciding which agent should handle which task.
 
-In this article, I examine multi-agent routing from an Engineering Manager's (EM) perspective, arguing that it shares the same structure as **delegation in people management**.
+In this article, I examine multi-agent routing from an Engineering Manager's (EM) perspective, arguing that it shares the same structure as <strong>delegation in people management</strong>.
 
 ## Why Routing Is the Hardest Challenge
 
@@ -75,10 +75,10 @@ Assigning everything to one agent leads to context window overflow, lack of spec
 
 Splitting agents isn't the hard part. The real challenges are:
 
-1. **Task classification ambiguity**: "Is this PR review about code quality or architecture judgment?"
-2. **Context transfer costs**: Information loss when passing context between agents
-3. **Failure re-routing**: Fallback strategies when an agent fails
-4. **Dependency management**: Pipeline design where A's output feeds B's input
+1. <strong>Task classification ambiguity</strong>: "Is this PR review about code quality or architecture judgment?"
+2. <strong>Context transfer costs</strong>: Information loss when passing context between agents
+3. <strong>Failure re-routing</strong>: Fallback strategies when an agent fails
+4. <strong>Dependency management</strong>: Pipeline design where A's output feeds B's input
 
 ```mermaid
 graph TD
@@ -124,11 +124,11 @@ graph TB
     L1 --> L2 --> L3
 ```
 
-**Level 1 — Full Delegation**: Tasks with clear inputs and outputs. Unit test generation, JSON format conversion. Just throw these at Codex.
+<strong>Level 1 — Full Delegation</strong>: Tasks with clear inputs and outputs. Unit test generation, JSON format conversion. Just throw these at Codex.
 
-**Level 2 — Guided Delegation**: Set the direction but let the agent handle the specifics. PR reviews, code refactoring. Claude writes the guidelines, Codex executes.
+<strong>Level 2 — Guided Delegation</strong>: Set the direction but let the agent handle the specifics. PR reviews, code refactoring. Claude writes the guidelines, Codex executes.
 
-**Level 3 — Collaborative Execution**: Tasks where the orchestrator itself must be deeply involved. Architecture decisions, technology choices.
+<strong>Level 3 — Collaborative Execution</strong>: Tasks where the orchestrator itself must be deeply involved. Architecture decisions, technology choices.
 
 ## Routing Design Lessons from Real Cases
 
@@ -136,21 +136,21 @@ graph TB
 
 [okash1n (super_bonochin)](https://x.com/okaboringcode) shared a setup connecting Codex to Claude Code via MCP. The key insight:
 
-- **Claude Code serves as the orchestrator**, managing the overall flow
-- **Codex acts as an MCP server**, specializing in code generation
+- <strong>Claude Code serves as the orchestrator</strong>, managing the overall flow
+- <strong>Codex acts as an MCP server</strong>, specializing in code generation
 - When Claude determines "this is a code generation task," it delegates to Codex
 
-This is exactly the structure of an **EM (Claude) delegating implementation to a senior engineer (Codex)**.
+This is exactly the structure of an <strong>EM (Claude) delegating implementation to a senior engineer (Codex)</strong>.
 
 ### NabbilKhan's 8-Agent Operation
 
-NabbilKhan demonstrated running 8 agents simultaneously. The biggest problem? **Routing**:
+NabbilKhan demonstrated running 8 agents simultaneously. The biggest problem? <strong>Routing</strong>:
 
 - The judgment cost of deciding "which of 8 agents handles this task"
 - Splitting strategy when a task spans multiple agents' domains
 - The difficulty of synchronizing context across agents
 
-This is exactly what an **EM managing 8 engineers** faces.
+This is exactly what an <strong>EM managing 8 engineers</strong> faces.
 
 ## Core Principles of Routing Design
 
@@ -210,12 +210,12 @@ Just as a manager adjusts future delegation based on results, agent routing shou
 
 ## Conclusion
 
-The essence of multi-agent orchestration isn't technology — it's **design philosophy**. Just as an EM distributes work to team members, we distribute tasks to agents. The core principles:
+The essence of multi-agent orchestration isn't technology — it's <strong>design philosophy</strong>. Just as an EM distributes work to team members, we distribute tasks to agents. The core principles:
 
-1. **Define role boundaries clearly** — Agent responsibilities like Job Descriptions
-2. **Distinguish delegation levels** — Full / Guided / Collaborative
-3. **Design escalation paths** — Prepare fallbacks for failure scenarios
-4. **Continuously improve via feedback** — Track routing outcomes and refine rules
+1. <strong>Define role boundaries clearly</strong> — Agent responsibilities like Job Descriptions
+2. <strong>Distinguish delegation levels</strong> — Full / Guided / Collaborative
+3. <strong>Design escalation paths</strong> — Prepare fallbacks for failure scenarios
+4. <strong>Continuously improve via feedback</strong> — Track routing outcomes and refine rules
 
 Ultimately, just as a great manager builds a great team, a great orchestrator builds a great agent system.
 

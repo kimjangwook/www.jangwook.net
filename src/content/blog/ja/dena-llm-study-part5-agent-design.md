@@ -90,7 +90,7 @@ DeNA LLMスタディシリーズの最終編です。Part 5では、LLMを活用
 
 [n8n](https://n8n.io/)は<strong>ノーコード/ローコードワークフロー自動化プラットフォーム</strong>です。2025年時点で422以上の統合をサポートし、LLMエージェント構築に特化した機能を提供します。
 
-**主な特徴**:
+<strong>主な特徴</strong>:
 
 - ビジュアルワークフロービルダー
 - LangChain、Ollamaなど主要LLMフレームワーク統合
@@ -122,7 +122,7 @@ n8nでReAct（Reasoning and Acting）パターンを実装する例です：
 
 DeNAスタディ資料と最新研究によると、2025年のエージェントシステムの核心トレンドは<strong>「完全自律」から「オーケストレーション」への転換</strong>です。
 
-**理由**:
+<strong>理由</strong>:
 
 1. <strong>コスト爆発</strong>：自律エージェントの無制限API呼び出し
 2. <strong>予測不可能性</strong>：エージェント行動の制御困難
@@ -166,7 +166,7 @@ graph LR
 
 エージェントの中心エンジンです。
 
-**構成要素**:
+<strong>構成要素</strong>:
 
 - <strong>Prompt Template</strong>：システムメッセージ、ペルソナ定義
 - <strong>LLM Engine</strong>：Claude、GPT-4、Geminiなど
@@ -176,13 +176,13 @@ graph LR
 
 エージェントの記憶システムです。
 
-**Short-term Memory**:
+<strong>Short-term Memory</strong>:
 
 - 現在の対話セッションの履歴
 - 一般的に最後のN個のメッセージ（N=5〜10）
 - Context Windowに直接含める
 
-**Long-term Memory**:
+<strong>Long-term Memory</strong>:
 
 - 永続保存知識ベース
 - Vector Database（Pinecone、Weaviateなど）
@@ -192,7 +192,7 @@ graph LR
 
 エージェントが複雑なタスクを実行する戦略です。
 
-**ReActパターン**:
+<strong>ReActパターン</strong>:
 
 ```
 Thought: ユーザーが会社の売上データを要求した。
@@ -218,7 +218,7 @@ LLMが外部ツールと相互作用するメカニズムです。
 
 DeNAスタディ資料で指摘された重要な問題：<strong>LLMの関数呼び出しは100%信頼できません</strong>。
 
-**問題事例**:
+<strong>問題事例</strong>:
 
 1. <strong>誤ったパラメータ</strong>：必須フィールドの欠落、型の不一致
 2. <strong>ハルシネーション</strong>：存在しないツールの呼び出し
@@ -269,12 +269,12 @@ class SelfHealingAgent {
 
 1つのエージェントの出力が次のエージェントの入力になる線形構造です。
 
-**使用事例**:
+<strong>使用事例</strong>:
 
 - ブログ投稿作成：リサーチ → 下書き → 編集 → 公開
 - データパイプライン：収集 → 精製 → 分析 → 可視化
 
-**利点**:
+<strong>利点</strong>:
 
 - 実装が簡単
 - デバッグが容易
@@ -284,7 +284,7 @@ class SelfHealingAgent {
 
 複数のエージェントが同時に独立して作業する構造です。
 
-**使用事例**:
+<strong>使用事例</strong>:
 
 - コンテンツ検査：品質検査 + 法的レビュー + 事実確認を同時実行
 - マルチモーダル分析：テキスト + 画像 + オーディオを並列処理
@@ -293,7 +293,7 @@ class SelfHealingAgent {
 
 中央監督者がタスクを分配し、結果を統合する構造です。
 
-**使用事例**:
+<strong>使用事例</strong>:
 
 - 複雑なリサーチ：監督者がサブトピックを複数のワーカーに分配
 - コード生成：監督者がモジュール別実装をワーカーに割り当て
@@ -302,7 +302,7 @@ class SelfHealingAgent {
 
 複数段階の監督者-ワーカー関係がツリー構造を成す方式です。
 
-**使用事例**:
+<strong>使用事例</strong>:
 
 - 大規模プロジェクト管理：PM → チームリーダー → 開発者
 - 複雑なシステム設計：アーキテクト → モジュール設計者 → 実装者
@@ -311,7 +311,7 @@ class SelfHealingAgent {
 
 エージェント間がP2P方式で自由に通信する構造です。
 
-**使用事例**:
+<strong>使用事例</strong>:
 
 - 創造的な協働：アイデアブレインストーミング
 - 民主的意思決定：投票ベースの合意
@@ -333,9 +333,9 @@ class SelfHealingAgent {
 
 #### LangGraph
 
-**哲学**：<strong>グラフですべてを表現</strong>
+<strong>哲学</strong>：<strong>グラフですべてを表現</strong>
 
-**利点**:
+<strong>利点</strong>:
 
 - <strong>明確な制御フロー</strong>：すべてのパスがグラフに明示
 - <strong>デバッグが容易</strong>：状態追跡可能
@@ -343,15 +343,15 @@ class SelfHealingAgent {
 
 #### AutoGen
 
-**哲学**：<strong>エージェント間の対話で問題解決</strong>
+<strong>哲学</strong>：<strong>エージェント間の対話で問題解決</strong>
 
-**利点**:
+<strong>利点</strong>:
 
 - <strong>自然な協働</strong>：人間チームの対話方式を模倣
 - <strong>柔軟性</strong>：動的な対話フロー
 - <strong>創発的行動</strong>：予想外の問題解決
 
-**欠点**:
+<strong>欠点</strong>:
 
 - コスト爆発リスク（無制限対話）
 - 予測不可能
@@ -359,15 +359,15 @@ class SelfHealingAgent {
 
 #### CrewAI
 
-**哲学**：<strong>役割ベースのチーム構成</strong>
+<strong>哲学</strong>：<strong>役割ベースのチーム構成</strong>
 
-**利点**:
+<strong>利点</strong>:
 
 - <strong>直感的</strong>：役割概念が理解しやすい
 - <strong>迅速なプロトタイプ</strong>：少ないコードで実装
 - <strong>内蔵メモリ</strong>：自動コンテキスト管理
 
-**欠点**:
+<strong>欠点</strong>:
 
 - ログ不足（デバッグ困難）
 - 複雑なワークフローで限界
@@ -377,7 +377,7 @@ class SelfHealingAgent {
 
 実際のプロジェクトでパターン選択がコストに与える影響を分析します。
 
-**シナリオ**：ブログ投稿生成（リサーチ + 作成 + 編集）
+<strong>シナリオ</strong>：ブログ投稿生成（リサーチ + 作成 + 編集）
 
 | パターン           | API呼び出し回数                    | 予想コスト   | 処理時間   |
 | ------------------ | ---------------------------------- | ------------ | ---------- |
@@ -386,7 +386,7 @@ class SelfHealingAgent {
 | Supervisor         | 7回（監督者2 + ワーカー3 + 統合2） | $0.35        | 60秒       |
 | Network（AutoGen） | 15〜50回（対話）                   | $0.75〜$2.50 | 120〜300秒 |
 
-**実務推奨事項**:
+<strong>実務推奨事項</strong>:
 
 1. <strong>明確なワークフロー</strong>がある場合 → SequentialまたはParallel
 2. <strong>動的タスク分配</strong>が必要な場合 → Supervisor
@@ -398,7 +398,7 @@ class SelfHealingAgent {
 
 [MemGPT](https://arxiv.org/abs/2310.08560)は、オペレーティングシステムの仮想メモリ概念をLLMに適用した革新的アプローチです。
 
-**核心アイデア**:
+<strong>核心アイデア</strong>:
 
 - <strong>Main Context（主メモリ）</strong>：LLMのContext Window
 - <strong>External Storage（外部ストレージ）</strong>：ベクトルDB、リレーショナルDB
@@ -408,12 +408,12 @@ class SelfHealingAgent {
 
 MemGPTは2つのメモリ戦略を結合します。
 
-**Push（能動的）**:
+<strong>Push（能動的）</strong>:
 
 - LLMが重要だと判断した情報を自動保存
 - 例：「このユーザーはTypeScriptを好む」 → 保存
 
-**Pull（受動的）**:
+<strong>Pull（受動的）</strong>:
 
 - 必要時に外部ストレージから検索
 - 例：ユーザーが「私の好みを考慮して」と言えば → 検索
@@ -443,7 +443,7 @@ L3: Long-term Memory（長期保存）
 
 [A-MEM](https://arxiv.org/abs/2502.12110)は2025年にRutgers大学で提案された革新的メモリシステムです。Zettelkasten（ドイツ語で「メモボックス」）方法論をLLMエージェントに適用しました。
 
-**Zettelkastenとは？**
+<strong>Zettelkastenとは？</strong>
 
 - ニクラス・ルーマン（社会学者）が開発したメモ整理法
 - 各メモに固有ID付与
@@ -454,7 +454,7 @@ L3: Long-term Memory（長期保存）
 
 A-MEMの核心は<strong>エージェントが自らメモリを組織化</strong>する点です。
 
-**実装例**:
+<strong>実装例</strong>:
 
 ```typescript
 class AMem {
@@ -488,7 +488,7 @@ class AMem {
 }
 ```
 
-**A-MEMの利点**:
+<strong>A-MEMの利点</strong>:
 
 1. <strong>動的組織化</strong>：手動構造化不要
 2. <strong>関連性ベース検索</strong>：直接マッチング + 間接的接続
@@ -501,13 +501,13 @@ DeNAで実際にプロダクションに適用した<strong>NOC（Network Operat
 
 ### 問題定義
 
-**背景**:
+<strong>背景</strong>:
 
 - 運用チームに1日100〜200件のアラート到着
 - アラートの70%は誤検知（false positive）
 - エンジニアが手動でアラート分類および対応
 
-**目標**:
+<strong>目標</strong>:
 
 - アラート自動分類および優先順位指定
 - 誤検知フィルタリング
@@ -543,9 +543,9 @@ graph TD
 
 #### 1. ハルシネーション問題
 
-**問題**：LLMが存在しないログやメトリックに言及
+<strong>問題</strong>：LLMが存在しないログやメトリックに言及
 
-**解決**:
+<strong>解決</strong>:
 
 ```typescript
 // ツール呼び出し結果検証
@@ -579,9 +579,9 @@ class ToolExecutor {
 
 #### 2. レイテンシ問題
 
-**問題**：アラート → 対応まで平均45秒（目標：10秒）
+<strong>問題</strong>：アラート → 対応まで平均45秒（目標：10秒）
 
-**解決**:
+<strong>解決</strong>:
 
 - <strong>並列処理</strong>：ログ/メトリック/履歴を同時収集
 - <strong>キャッシング</strong>：頻繁に使用されるクエリ結果をキャッシング
@@ -589,9 +589,9 @@ class ToolExecutor {
 
 #### 3. コスト問題
 
-**問題**：1日200件 × $0.20 = $40（月$1,200）
+<strong>問題</strong>：1日200件 × $0.20 = $40（月$1,200）
 
-**解決**:
+<strong>解決</strong>:
 
 - <strong>誤検知プリフィルター</strong>：明確な誤検知はルールベースで先にフィルタリング
 - <strong>バッチング</strong>：類似したアラートをまとめて処理
@@ -612,7 +612,7 @@ LLMエージェントシステムの最大課題は<strong>コスト</strong>と
 
 ### 1. セマンティックキャッシング（90%コスト削減）
 
-**概念**：意味論的に類似したクエリはキャッシュされた応答を再利用
+<strong>概念</strong>：意味論的に類似したクエリはキャッシュされた応答を再利用
 
 ```typescript
 // セマンティックキャッシング実装
@@ -640,23 +640,23 @@ class SemanticCache {
 }
 ```
 
-**効果**:
+<strong>効果</strong>:
 
 - キャッシュヒット率60%達成時 → コスト60%削減
 - レイテンシ95%減少（ネットワーク遅延除去）
 
 ### 2. バッチング（50%削減）
 
-**概念**：複数のリクエストをまとめて一度に処理
+<strong>概念</strong>：複数のリクエストをまとめて一度に処理
 
-**効果**:
+<strong>効果</strong>:
 
 - バッチサイズ10の場合 → コスト約50%削減
 - ただし、レイテンシは若干増加（待機時間）
 
 ### 3. SLM（Small Language Model、14倍削減）
 
-**概念**：簡単なタスクは小さいモデルを使用
+<strong>概念</strong>：簡単なタスクは小さいモデルを使用
 
 ```typescript
 // モデルルーティング
@@ -678,7 +678,7 @@ class ModelRouter {
 }
 ```
 
-**効果**:
+<strong>効果</strong>:
 
 - タスクの70%がSLMで処理可能な場合
 - コスト：70% × $0.001 + 30% × $0.014 = $0.0049（平均）
@@ -687,7 +687,7 @@ class ModelRouter {
 
 ### 4. 量子化（Quantization）
 
-**概念**：モデルの重みの精度を下げてサイズとコストを削減
+<strong>概念</strong>：モデルの重みの精度を下げてサイズとコストを削減
 
 | 量子化レベル | モデルサイズ | 精度損失 | 推論速度 | 使用事例                   |
 | ------------ | ------------ | -------- | -------- | -------------------------- |
@@ -700,7 +700,7 @@ class ModelRouter {
 
 4つの技法を組み合わせた実際の事例です。
 
-**Before（最適化前）**:
+<strong>Before（最適化前）</strong>:
 
 ```typescript
 // すべてのリクエストをClaude Sonnet 4で処理
@@ -709,7 +709,7 @@ const response = await claude.generate(query);
 // レイテンシ：2秒
 ```
 
-**After（最適化後）**:
+<strong>After（最適化後）</strong>:
 
 ```typescript
 async function optimizedQuery(query: string): Promise<string> {
@@ -739,7 +739,7 @@ async function optimizedQuery(query: string): Promise<string> {
 }
 ```
 
-**コスト計算**:
+<strong>コスト計算</strong>:
 
 ```
 キャッシュヒット（60%）：$0 × 0.6 = $0
@@ -771,7 +771,7 @@ MemGPT、A-MEMのような高度なメモリシステムは、エージェント
 
 実務でLLMエージェントシステムの最大障壁は<strong>コスト</strong>です。
 
-**核心戦略**:
+<strong>核心戦略</strong>:
 
 1. <strong>セマンティックキャッシング</strong> - すべてのシステムに適用（60%ヒット率だけでも大きな効果）
 2. <strong>SLMルーティング</strong> - 簡単なタスク（70%）は小さいモデルで

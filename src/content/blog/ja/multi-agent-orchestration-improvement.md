@@ -700,7 +700,7 @@ npm run preview
 
 <strong>追加された主要セクション</strong>:
 
-**Git Commit ガイド (528行) 目次**:
+<strong>Git Commit ガイド (528行) 目次</strong>:
 
 | セクション | 内容 | 行数 |
 |-----------|------|------|
@@ -710,7 +710,7 @@ npm run preview
 | 4. エージェント連携 | @editor, @analytics-reporter | 100行 |
 | 5. トラブルシューティング | 問題と解決策 | 78行 |
 
-**1. Conventional Commits 標準**
+<strong>1. Conventional Commits 標準</strong>
 
 基本フォーマット: `<type>(<scope>): <subject>` + body + footer
 
@@ -734,7 +734,7 @@ npm run preview
 | `deps` | 依存関係 |
 | `config` | 設定ファイル |
 
-**良い例**:
+<strong>良い例</strong>:
 
 ```bash
 feat(blog): add TypeScript 5.0 feature guide
@@ -747,7 +747,7 @@ feat(blog): add TypeScript 5.0 feature guide
 Closes #123
 ```
 
-**悪い例**:
+<strong>悪い例</strong>:
 
 > ❌ Type なし: `updated blog post`
 >
@@ -757,7 +757,7 @@ Closes #123
 >
 > ❌ Scope が曖昧: `feat(stuff): add things`
 
-**2. コミットメッセージテンプレート**
+<strong>2. コミットメッセージテンプレート</strong>
 
 | 用途 | フォーマット |
 |------|------------|
@@ -765,7 +765,7 @@ Closes #123
 | バグ修正 | `fix(<scope>): resolve <issue>` + 問題、原因、解決策、影響範囲、Fixes # |
 | リファクタリング | `refactor(<scope>): improve <component>` + 変更前/後、パフォーマンス、破壊的変更 |
 
-**3. ワークフロー統合 (Explore → Plan → Code → Commit)**
+<strong>3. ワークフロー統合 (Explore → Plan → Code → Commit)</strong>
 
 | フェーズ | 作業内容 |
 |---------|---------|
@@ -774,14 +774,14 @@ Closes #123
 | Code | 実装 (@writing-assistant, @image-generator, @seo-optimizer, @editor) |
 | Commit | `npm run astro check` → `npm run build` → `git commit` |
 
-**4. エージェント連携**
+<strong>4. エージェント連携</strong>
 
 | 連携先 | ワークフロー |
 |--------|------------|
 | @editor | コード変更完了 → レビュー依頼 → フィードバック反映 → 再レビュー → 承認後コミット |
 | @analytics-reporter | レポート生成 → ファイル確認 → メタデータ検証 → コミットメッセージ作成 → コミット実行 |
 
-**5. トラブルシューティング**
+<strong>5. トラブルシューティング</strong>
 
 | 問題 | 症状 | 解決 |
 |------|------|------|

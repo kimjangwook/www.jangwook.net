@@ -53,13 +53,13 @@ relatedPosts:
 
 ## 概述
 
-本文介绍将UX心理学原则应用于实际网站以改善用户体验的案例。本次改进基于**目标梯度效应（Goal Gradient Effect）**、**冯·雷斯托夫效应（Von Restorff Effect）**、**菲茨定律（Fitts's Law）**、**多尔蒂阈值（Doherty Threshold）**等10个核心UX心理学原则对组件进行了改进。
+本文介绍将UX心理学原则应用于实际网站以改善用户体验的案例。本次改进基于<strong>目标梯度效应（Goal Gradient Effect）</strong>、<strong>冯·雷斯托夫效应（Von Restorff Effect）</strong>、<strong>菲茨定律（Fitts's Law）</strong>、<strong>多尔蒂阈值（Doherty Threshold）</strong>等10个核心UX心理学原则对组件进行了改进。
 
 ## 实现的UX改进
 
 ### 1. BlogCard阅读时间计算优化
 
-之前根据描述文本长度估算阅读时间，本次改进**在构建时计算文章正文的实际字数**以显示准确的阅读时间。
+之前根据描述文本长度估算阅读时间，本次改进<strong>在构建时计算文章正文的实际字数</strong>以显示准确的阅读时间。
 
 ```typescript
 // src/lib/content.ts
@@ -91,13 +91,13 @@ export function calculateReadingTime(content: string): number {
 }
 ```
 
-**应用的UX原则**: 认知负荷减少（Cognitive Load Reduction） - 帮助用户提前了解阅读所需时间，支持决策。
+<strong>应用的UX原则</strong>: 认知负荷减少（Cognitive Load Reduction） - 帮助用户提前了解阅读所需时间，支持决策。
 
 ![带阅读时间徽章的BlogCard](../../../assets/blog/en-blog-list.webp)
 
 ### 2. 卡片悬停效果（Card Lift）
 
-为BlogCard添加悬停时**轻微上浮效果**，明确显示当前交互的元素。
+为BlogCard添加悬停时<strong>轻微上浮效果</strong>，明确显示当前交互的元素。
 
 ```css
 /* src/styles/global.css */
@@ -112,7 +112,7 @@ export function calculateReadingTime(content: string): number {
 }
 ```
 
-**应用的UX原则**: 冯·雷斯托夫效应（Von Restorff Effect） - 悬停的卡片在其他卡片中视觉上更突出。
+<strong>应用的UX原则</strong>: 冯·雷斯托夫效应（Von Restorff Effect） - 悬停的卡片在其他卡片中视觉上更突出。
 
 ### 3. 标签药丸（Tag Pills）
 
@@ -130,7 +130,7 @@ export function calculateReadingTime(content: string): number {
 }
 ```
 
-**应用的UX原则**: 相似性法则（Law of Similarity） - 样式相似的标签被视觉上识别为一组。
+<strong>应用的UX原则</strong>: 相似性法则（Law of Similarity） - 样式相似的标签被视觉上识别为一组。
 
 ### 4. 阅读进度条（Reading Progress）
 
@@ -164,9 +164,9 @@ export function calculateReadingTime(content: string): number {
 
 ![博客文章中的阅读进度条](../../../assets/blog/en-blog-post.webp)
 
-**应用的UX原则**:
-- **目标梯度效应（Goal Gradient Effect）**: 越接近目标（读完）动力越强
-- **峰终定律（Peak-End Rule）**: 100%完成时的庆祝消息形成积极记忆
+<strong>应用的UX原则</strong>:
+- <strong>目标梯度效应（Goal Gradient Effect）</strong>: 越接近目标（读完）动力越强
+- <strong>峰终定律（Peak-End Rule）</strong>: 100%完成时的庆祝消息形成积极记忆
 
 ### 5. 返回顶部按钮
 
@@ -204,9 +204,9 @@ export function calculateReadingTime(content: string): number {
 
 ![页脚的返回顶部按钮](../../../assets/blog/en-footer.webp)
 
-**应用的UX原则**:
-- **泰斯勒定律（Tesler's Law）**: 减少复杂性提供快速导航
-- **菲茨定律（Fitts's Law）**: 48x48px尺寸便于触摸/点击
+<strong>应用的UX原则</strong>:
+- <strong>泰斯勒定律（Tesler's Law）</strong>: 减少复杂性提供快速导航
+- <strong>菲茨定律（Fitts's Law）</strong>: 48x48px尺寸便于触摸/点击
 
 ### 6. 触摸目标优化
 
@@ -219,7 +219,7 @@ export function calculateReadingTime(content: string): number {
 }
 ```
 
-**应用的UX原则**: 菲茨定律（Fitts's Law） - 更大的目标可以更快更准确地点击/触摸。
+<strong>应用的UX原则</strong>: 菲茨定律（Fitts's Law） - 更大的目标可以更快更准确地点击/触摸。
 
 ## 实现结果截图
 
@@ -245,16 +245,16 @@ BlogCard上应用了阅读时间徽章和标签药丸。悬停时卡片显示上
 
 | 原则 | 应用组件 | 效果 |
 |------|---------|------|
-| **目标梯度效应** | ReadingProgress | 提高完读率 |
-| **冯·雷斯托夫效应** | BlogCard (card-lift) | 明确焦点 |
-| **菲茨定律** | TouchTarget, BackToTop | 提高触摸精度 |
-| **多尔蒂阈值** | 动画 (<400ms) | 提升响应感 |
-| **峰终定律** | 完读庆祝消息 | 积极记忆 |
-| **泰斯勒定律** | BackToTop | 简化导航 |
-| **认知负荷** | 阅读时间徽章 | 支持决策 |
-| **相似性法则** | Tag Pills | 视觉分组 |
-| **WCAG AA** | focus-visible | 无障碍访问 |
-| **渐进式披露** | Stagger Animation | 顺序信息展示 |
+| <strong>目标梯度效应</strong> | ReadingProgress | 提高完读率 |
+| <strong>冯·雷斯托夫效应</strong> | BlogCard (card-lift) | 明确焦点 |
+| <strong>菲茨定律</strong> | TouchTarget, BackToTop | 提高触摸精度 |
+| <strong>多尔蒂阈值</strong> | 动画 (<400ms) | 提升响应感 |
+| <strong>峰终定律</strong> | 完读庆祝消息 | 积极记忆 |
+| <strong>泰斯勒定律</strong> | BackToTop | 简化导航 |
+| <strong>认知负荷</strong> | 阅读时间徽章 | 支持决策 |
+| <strong>相似性法则</strong> | Tag Pills | 视觉分组 |
+| <strong>WCAG AA</strong> | focus-visible | 无障碍访问 |
+| <strong>渐进式披露</strong> | Stagger Animation | 顺序信息展示 |
 
 ## 构建验证
 
@@ -266,7 +266,7 @@ npm run build
 
 ## 结论
 
-通过将UX心理学原则实现为实际代码，可以系统地改善用户体验。特别是**阅读时间准确性改进**、**卡片悬停效果**、**进度条**等功能，以相对简单的实现带来显著的UX提升。
+通过将UX心理学原则实现为实际代码，可以系统地改善用户体验。特别是<strong>阅读时间准确性改进</strong>、<strong>卡片悬停效果</strong>、<strong>进度条</strong>等功能，以相对简单的实现带来显著的UX提升。
 
 下一步计划分析实际用户数据（停留时间、完读率、点击率）来定量测量改进效果。
 

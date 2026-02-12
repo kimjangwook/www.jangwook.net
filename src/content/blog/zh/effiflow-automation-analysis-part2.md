@@ -207,13 +207,13 @@ sleep 2
 
 <strong>性能对比</strong>:
 
-**Before (缓存前)**:
+<strong>Before (缓存前)</strong>:
 
 - 每次调用 Brave Search
 - 40,000+ tokens
 - 成本: ~$0.05/次
 
-**After (缓存后)**:
+<strong>After (缓存后)</strong>:
 
 - 24小时内重用缓存
 - 17,000 tokens
@@ -314,50 +314,50 @@ sequenceDiagram
 
 <strong>Phase 详细内容</strong>:
 
-**Phase 1: Research & Planning**
+<strong>Phase 1: Research & Planning</strong>
 
 - 调用 Web Researcher 代理
 - 自动发现 Trend Analyzer Skill
 - 通过 Brave Search MCP 收集最新信息
 - 2秒延迟遵守速率限制
 
-**Phase 2: Image Generation**
+<strong>Phase 2: Image Generation</strong>
 
 - Image Generator 代理
 - 使用 Gemini API(需要 GEMINI_API_KEY)
 - 基于主题生成 Hero 图片
 
-**Phase 3: Content Writing**
+<strong>Phase 3: Content Writing</strong>
 
 - Writing Assistant 代理
 - 自动发现 Blog Writing Skill
 - 同时创建韩语、日语、英语版本
 - 本地化(非翻译)
 
-**Phase 4: Frontmatter & Metadata**
+<strong>Phase 4: Frontmatter & Metadata</strong>
 
 - 使用 Blog Writing Skill 验证 Frontmatter
 - pubDate: 'YYYY-MM-DD' 格式(单引号)
 - heroImage: 相对路径验证
 
-**Phase 5: Metadata Generation**
+<strong>Phase 5: Metadata Generation</strong>
 
 - Post Analyzer 代理
 - 自动激活 Content Analyzer Skill
 - 计算 difficulty (1-5) 和 categoryScores
 
-**Phase 6: V3 Recommendations**
+<strong>Phase 6: V3 Recommendations</strong>
 
 - 执行 scripts/generate-recommendations-v3.js
 - 基于元数据计算相似度
 - 选择前 5 篇相关文章
 
-**Phase 7: Backlink Updates**
+<strong>Phase 7: Backlink Updates</strong>
 
 - Backlink Manager 代理(可选)
 - 相关文章互联
 
-**Phase 8: Validation & Build**
+<strong>Phase 8: Validation & Build</strong>
 
 - npm run astro check
 - npm run build
@@ -433,7 +433,7 @@ async function getTrendData(topic: string) {
 
 ### 缓存效果场景
 
-**场景 1: 同一天搜索多个主题**
+<strong>场景 1: 同一天搜索多个主题</strong>
 
 ```bash
 # 第一个主题(缓存未命中)
@@ -449,7 +449,7 @@ async function getTrendData(topic: string) {
 # → Tokens: 17,000 (节省 58%)
 ```
 
-**场景 2: 次日相同主题**
+<strong>场景 2: 次日相同主题</strong>
 
 ```bash
 # 24小时已过(缓存过期)

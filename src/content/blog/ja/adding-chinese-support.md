@@ -752,7 +752,7 @@ Astroベースのブログに中国語サポートを追加する作業は、<st
 
 ---
 
-**関連リソース**:
+<strong>関連リソース</strong>:
 - [Astro Content Collections公式ドキュメント](https://docs.astro.build/en/guides/content-collections/)
 - [Astro i18nガイド](https://docs.astro.build/en/recipes/i18n/)
 - [Google多言語サイトSEO](https://developers.google.com/search/docs/specialty/international)

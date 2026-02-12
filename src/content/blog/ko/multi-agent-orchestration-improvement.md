@@ -113,7 +113,7 @@ const orchestration = {
 
 ### 분석 프로세스
 
-**1단계: 파일 그룹핑 (Orchestrator)**
+<strong>1단계: 파일 그룹핑 (Orchestrator)</strong>
 
 ```bash
 # Orchestrator가 작업 범위 정의
@@ -123,7 +123,7 @@ const orchestration = {
 .claude/guidelines/   # 기존 1개 → 신규 1개 추가
 ```
 
-**2단계: 병렬 분석 (각 Specialist)**
+<strong>2단계: 병렬 분석 (각 Specialist)</strong>
 
 각 에이전트는 자신의 영역을 독립적으로 분석:
 
@@ -145,7 +145,7 @@ agents_issues = {
 }
 ```
 
-**3단계: 이슈 통합 (Orchestrator)**
+<strong>3단계: 이슈 통합 (Orchestrator)</strong>
 
 ```markdown
 ## 발견된 이슈 요약 (61개)
@@ -225,7 +225,7 @@ priority_order = [
 
 ### 4대 핵심 영역
 
-**영역 1: Agents (4개 파일 수정)**
+<strong>영역 1: Agents (4개 파일 수정)</strong>
 
 가장 높은 재사용성을 가진 컴포넌트:
 
@@ -251,7 +251,7 @@ priority_order = [
    - 영향: 온보딩 시간 50% 단축
 ```
 
-**영역 2: Commands (4개 파일 수정)**
+<strong>영역 2: Commands (4개 파일 수정)</strong>
 
 개발자가 가장 자주 사용하는 인터페이스:
 
@@ -283,7 +283,7 @@ priority_order = [
    - After: 의존성 그래프 추가
 ```
 
-**의존성 그래프**:
+<strong>의존성 그래프</strong>:
 
 ```mermaid
 graph TD
@@ -302,7 +302,7 @@ graph TD
     style I fill:#FF9800
 ```
 
-**영역 3: Skills (4개 파일 수정)**
+<strong>영역 3: Skills (4개 파일 수정)</strong>
 
 콘텐츠 품질의 핵심:
 
@@ -337,7 +337,7 @@ def validate_related_posts(posts: List[Dict]) -> bool:
     return True
 ```
 
-**영역 4: Guidelines (신규 파일 1개)**
+<strong>영역 4: Guidelines (신규 파일 1개)</strong>
 
 ```markdown
 # implementation-status.md 생성
@@ -390,7 +390,7 @@ sequenceDiagram
 
 ### 실제 피드백 예시
 
-**commit.md 리뷰 1차**:
+<strong>commit.md 리뷰 1차</strong>:
 
 ```markdown
 ## Reviewer 피드백
@@ -406,7 +406,7 @@ sequenceDiagram
 ✅ 양호 4: 전체 구조는 논리적
 ```
 
-**수정 적용 후 2차 리뷰**:
+<strong>수정 적용 후 2차 리뷰</strong>:
 
 ```markdown
 ## Editor 수정사항
@@ -450,7 +450,7 @@ iterations = [
 
 ### Agents: Before/After 비교
 
-**image-generator.md 경로 이식성**:
+<strong>image-generator.md 경로 이식성</strong>:
 
 ```markdown
 # Before (하드코딩)
@@ -511,7 +511,7 @@ if (!outputPath.match(/\.(jpg|png|webp)$/)) {
 - ✅ 재사용성 증가 (블로그 외 용도 가능)
 ```
 
-**orchestrator.md 실제 예제 추가**:
+<strong>orchestrator.md 실제 예제 추가</strong>:
 
 ```markdown
 # Before (추상적 설명)
@@ -676,7 +676,7 @@ SEO-optimizer:
 ```
 ```
 
-**analytics 역할 명확화**:
+<strong>analytics 역할 명확화</strong>:
 
 ```markdown
 # Before (역할 중복)
@@ -760,7 +760,7 @@ SEO-optimizer:
 
 ### Commands: 대규모 개선
 
-**commit.md 완전 재작성 (12줄 → 528줄)**:
+<strong>commit.md 완전 재작성 (12줄 → 528줄)</strong>:
 
 ```markdown
 # Before (12줄)
@@ -1014,7 +1014,7 @@ git log  # 커밋이 feature 브랜치에 있어야 함
 ---
 ```
 
-**write-post.md 4개 언어 표준화**:
+<strong>write-post.md 4개 언어 표준화</strong>:
 
 ```markdown
 # Before
@@ -1140,7 +1140,7 @@ npm run build
 
 ### Skills: 타입 안전성 강화
 
-**relatedPosts 필수화**:
+<strong>relatedPosts 필수화</strong>:
 
 ```typescript
 // Before: src/content.config.ts
@@ -1183,7 +1183,7 @@ const relatedPostSchema = z.object({
 });
 ```
 
-**Python 스크립트 버그 수정**:
+<strong>Python 스크립트 버그 수정</strong>:
 
 ```python
 # Before: scripts/validate_frontmatter.py
@@ -1249,7 +1249,7 @@ except ValidationError as e:
     sys.exit(1)
 ```
 
-**중국어 지원 추가**:
+<strong>중국어 지원 추가</strong>:
 
 ```python
 # Before: scripts/generate_recommendations.py
@@ -1320,7 +1320,7 @@ def generate_reason_with_llm(
 
 ### Guidelines: 구현 상태 문서화
 
-**implementation-status.md 신규 생성**
+<strong>implementation-status.md 신규 생성</strong>
 
 이 문서는 `.claude/` 디렉토리의 모든 에이전트, 커맨드, 스킬 중 <strong>실제로 구현된 것</strong>과 <strong>이론적 계획만 있는 것</strong>을 명확히 구분합니다.
 
@@ -1402,7 +1402,7 @@ graph TD
 
 ### 정량적 지표
 
-**문서화 품질 점수**:
+<strong>문서화 품질 점수</strong>:
 ```python
 # 평가 기준
 quality_metrics = {
@@ -1441,7 +1441,7 @@ weighted_after = sum(
 # 개선률: +17.8%
 ```
 
-**토큰 절감 성과**:
+<strong>토큰 절감 성과</strong>:
 ```python
 # 100개 포스트 분석 시나리오
 token_usage = {
@@ -1463,7 +1463,7 @@ reduction = (1 - token_usage["after"]["total"] / token_usage["before"]["total"])
 # 결과: 94% 절감
 ```
 
-**개발 효율성**:
+<strong>개발 효율성</strong>:
 ```python
 # 블로그 포스트 작성 워크플로우
 workflow_time = {
@@ -1495,7 +1495,7 @@ time_saved = workflow_time["before"]["total"] - workflow_time["after"]["total"]
 
 ### 정성적 개선
 
-**개발자 경험 (DX) 개선**:
+<strong>개발자 경험 (DX) 개선</strong>:
 
 ```markdown
 ## Before v3.0
@@ -1513,7 +1513,7 @@ time_saved = workflow_time["before"]["total"] - workflow_time["after"]["total"]
 ✅ "implementation-status.md 보니 뭐가 되고 안 되는지 바로 알겠어요"
 ```
 
-**시스템 안정성**:
+<strong>시스템 안정성</strong>:
 
 ```python
 # 빌드 성공률
@@ -1566,7 +1566,7 @@ roi_months = investment["total"] / monthly_savings["total"]
 
 프로젝트에 적용할 때 다음 순서로 진행하세요:
 
-**1단계: 현재 상태 진단 (1-2시간)**
+<strong>1단계: 현재 상태 진단 (1-2시간)</strong>
 ```bash
 # 파일 수 확인
 find .claude -type f | wc -l
@@ -1581,7 +1581,7 @@ find .claude -type f | wc -l
 impact * urgency = priority_score
 ```
 
-**2단계: Orchestrator 설정 (2-4시간)**
+<strong>2단계: Orchestrator 설정 (2-4시간)</strong>
 ```markdown
 # .claude/agents/orchestrator.md 작성
 
@@ -1598,7 +1598,7 @@ impact * urgency = priority_score
 - 예상 시간: 2시간
 ```
 
-**3단계: 전문 에이전트 분할 (4-8시간)**
+<strong>3단계: 전문 에이전트 분할 (4-8시간)</strong>
 ```mermaid
 graph TD
     A[Orchestrator] --> B[Domain Expert 1]
@@ -1612,7 +1612,7 @@ graph TD
     E --> I[guidelines/*.md]
 ```
 
-**4단계: 피드백 루프 설정 (지속적)**
+<strong>4단계: 피드백 루프 설정 (지속적)</strong>
 ```python
 while not satisfied:
     draft = agent.generate()
@@ -1623,7 +1623,7 @@ while not satisfied:
         break
 ```
 
-**5단계: 구현 상태 문서화 (2-4시간)**
+<strong>5단계: 구현 상태 문서화 (2-4시간)</strong>
 ```markdown
 # implementation-status.md 생성
 
@@ -1636,14 +1636,14 @@ while not satisfied:
 
 이번 프로젝트에서 얻은 가장 중요한 인사이트:
 
-**1. 분할 정복이 핵심**
+<strong>1. 분할 정복이 핵심</strong>
 ```
 48개 파일을 한 번에 처리 → 불가능
 4개 그룹으로 분할 → 가능
 각 에이전트 전문화 → 효율적
 ```
 
-**2. 피드백이 품질을 만든다**
+<strong>2. 피드백이 품질을 만든다</strong>
 ```
 1회 시도 → 65점
 2회 반복 → 78점
@@ -1651,14 +1651,14 @@ while not satisfied:
 4회 반복 → 92점 (목표 달성)
 ```
 
-**3. 문서화는 투자가 아닌 절약**
+<strong>3. 문서화는 투자가 아닌 절약</strong>
 ```
 implementation-status.md 작성: 4시간 투자
 토큰 낭비 제거: 월 60% 절감
 ROI: 1주일 만에 회수
 ```
 
-**4. 메타데이터가 게임 체인저**
+<strong>4. 메타데이터가 게임 체인저</strong>
 ```
 전체 파일 읽기: 45,000 토큰
 메타데이터 읽기: 1,500 토큰
@@ -1669,7 +1669,7 @@ ROI: 1주일 만에 회수
 
 이 개선 프로세스는 일회성이 아닙니다. 지속적인 개선을 위해:
 
-**월간 리뷰**:
+<strong>월간 리뷰</strong>:
 ```bash
 # 1. 새 이슈 수집
 /improvement-tracker list
@@ -1681,7 +1681,7 @@ ROI: 1주일 만에 회수
 /orchestrate refactor "quarterly-improvement"
 ```
 
-**자동화 확장**:
+<strong>자동화 확장</strong>:
 ```python
 # 다음 목표
 - CI/CD 파이프라인에 메타데이터 검증 추가

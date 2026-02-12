@@ -85,7 +85,7 @@ Rather than guessing what the problem might be, I formulated a detailed question
 
 ChatGPT focused heavily on the entry point structure and navigation issues:
 
-**Key Points Identified:**
+<strong>Key Points Identified:</strong>
 1. <strong>Entry Point Problem:</strong> The root domain serving only as a language selector creates a "thin entry page" that the AdSense crawler sees as lacking content.
 2. <strong>Navigation Complexity:</strong> Users must go through multiple steps (Home → Language Selection → Blog List → Post) to reach actual content, degrading UX.
 3. <strong>Missing Essential Pages:</strong> Absence of Privacy Policy, Contact, and About pages signals lack of site maturity and trustworthiness.
@@ -97,7 +97,7 @@ ChatGPT emphasized that Google views sites without clear navigation and essentia
 
 Claude provided the most technically precise diagnosis, categorizing issues into three dimensions:
 
-**1. Technical Value Void:**
+<strong>1. Technical Value Void:</strong>
 The AdSense crawler (Mediapartners-Google) has more limited JavaScript execution capabilities compared to Googlebot. If the SvelteKit site relies on client-side rendering (CSR), the crawler might see only this:
 
 ```html
@@ -113,10 +113,10 @@ The AdSense crawler (Mediapartners-Google) has more limited JavaScript execution
 
 With no actual text content in the HTML source, the page appears empty to the crawler.
 
-**2. Structural Value Void:**
+<strong>2. Structural Value Void:</strong>
 The root domain acting as a language gateway creates what Claude termed a "Value Vacuum" state. The landing page has nearly zero text density, making it impossible for the crawler to determine the site's topic or quality.
 
-**3. E-E-A-T Signal Deficiency:**
+<strong>3. E-E-A-T Signal Deficiency:</strong>
 For technical YMYL (Your Money or Your Life) topics like cloud infrastructure and AI, Google demands strong signals of:
 - <strong>Experience:</strong> Personal insights and real-world application
 - <strong>Expertise:</strong> Demonstrated technical competency
@@ -129,7 +129,7 @@ Claude noted that while my About page had author information, it wasn't prominen
 
 Gemini concentrated on the technical incompatibility between modern Single Page Application (SPA) frameworks and legacy advertising crawlers:
 
-**Key Technical Issues:**
+<strong>Key Technical Issues:</strong>
 1. <strong>Hydration Gap:</strong> The delay between initial HTML load and JavaScript execution creates a blind spot for crawlers with short timeout windows.
 2. <strong>Virtual Routing:</strong> SPA navigation using History API doesn't trigger new page loads, potentially breaking AdSense verification code.
 3. <strong>Content Distribution Dilution:</strong> With 4 language directories, if one has 30 posts but another has only 6, the average site quality score drops dramatically.
@@ -151,7 +151,7 @@ This created several cascading problems:
 
 AdSense approval is granted at the domain level. The crawler visits the root domain first to understand the site's overall theme and quality. When it encounters only language selection buttons with no substantive content, it forms an immediate negative assessment.
 
-**Before (Root Page Content):**
+<strong>Before (Root Page Content):</strong>
 - Text content: ~50 words ("Select your language")
 - Clickable elements: 4 language buttons
 - Information density: Nearly zero
@@ -288,19 +288,19 @@ Here's a quantitative comparison of the site's AdSense readiness:
 
 ### Detailed Improvements
 
-**Content Value (5 → 9):**
+<strong>Content Value (5 → 9):</strong>
 - Added 200+ word site introduction explaining purpose and topics
 - Featured latest posts from all languages showing content breadth
 - Statistics section proving substantial content (232+ posts)
 - Project showcase demonstrating real-world applications
 
-**Technical SEO (6 → 9):**
+<strong>Technical SEO (6 → 9):</strong>
 - Complete hreflang implementation across all 961 pages
 - Proper canonical tags preventing duplicate content issues
 - Structured data markup for articles and author
 - Optimized meta descriptions for all pages
 
-**E-E-A-T (6 → 8):**
+<strong>E-E-A-T (6 → 8):</strong>
 - Prominent author bio with photo and credentials
 - Career timeline and expertise areas
 - Contact information and social proof

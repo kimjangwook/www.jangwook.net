@@ -11,16 +11,16 @@ tags:
 relatedPosts: []
 ---
 
-> **Series: Mastering OpenClaw** (3/3)
+> <strong>Series: Mastering OpenClaw</strong> (3/3)
 > 1. [Introduction](/en/blog/en/openclaw-introduction-guide/)
 > 2. [Tutorial](/en/blog/en/openclaw-installation-tutorial/)
-> 3. **Advanced Usage** ← You are here
+> 3. <strong>Advanced Usage</strong> ← You are here
 
 # Supercharge OpenClaw — 8 Advanced Real-World Use Cases 🚀
 
 Finished the installation? Congratulations! 🎉 Now for the really fun part.
 
-OpenClaw is not just a chatbot. It's a **personal AI agent** that lives and breathes on your devices. In this post, we'll build **production-level workflows** step by step. Every example is provided in a complete, copy-and-paste-ready form.
+OpenClaw is not just a chatbot. It's a <strong>personal AI agent</strong> that lives and breathes on your devices. In this post, we'll build <strong>production-level workflows</strong> step by step. Every example is provided in a complete, copy-and-paste-ready form.
 
 ---
 
@@ -158,10 +158,10 @@ Combining cron with heartbeats enables even more flexible automation:
 - HEARTBEAT_OK unless something urgent
 ```
 
-> **Choosing Between Cron and Heartbeat:**
-> - **Exact timing** matters → Cron (`"0 8 * * *"`)
-> - Want to **batch multiple checks** together → Heartbeat (`HEARTBEAT.md`)
-> - **One-off reminder** → Cron (`--at "20m"` + `--delete-after-run`)
+> <strong>Choosing Between Cron and Heartbeat:</strong>
+> - <strong>Exact timing</strong> matters → Cron (`"0 8 * * *"`)
+> - Want to <strong>batch multiple checks</strong> together → Heartbeat (`HEARTBEAT.md`)
+> - <strong>One-off reminder</strong> → Cron (`--at "20m"` + `--delete-after-run`)
 
 ---
 
@@ -285,8 +285,8 @@ A complete workflow for calling OpenClaw webhooks from n8n:
 
 In Make, you use the HTTP module:
 
-1. **Webhook trigger** → Receive external events
-2. Add an **HTTP Make a request** module:
+1. <strong>Webhook trigger</strong> → Receive external events
+2. Add an <strong>HTTP Make a request</strong> module:
    - URL: `http://<gateway-ip>:18789/hooks/agent`
    - Method: POST
    - Headers: `Authorization: Bearer <token>`
@@ -327,15 +327,15 @@ curl -X POST http://127.0.0.1:18789/hooks/gmail \
 
 ## Use Case 3: MCP Server Integration 🧠
 
-**MCP (Model Context Protocol)** is a protocol that provides AI agents with external data sources and tools in a standardized way. Let's explore how to use MCP servers with OpenClaw.
+<strong>MCP (Model Context Protocol)</strong> is a protocol that provides AI agents with external data sources and tools in a standardized way. Let's explore how to use MCP servers with OpenClaw.
 
 ### What Is an MCP Server?
 
 An MCP server is a service that provides specific tools and resources to AI. For example:
-- **Filesystem MCP** — Read/write files in specific directories
-- **Database MCP** — Execute SQL queries
-- **API MCP** — Abstracted REST API calls
-- **Browser MCP** — Web page control
+- <strong>Filesystem MCP</strong> — Read/write files in specific directories
+- <strong>Database MCP</strong> — Execute SQL queries
+- <strong>API MCP</strong> — Abstracted REST API calls
+- <strong>Browser MCP</strong> — Web page control
 
 ### Using MCP with OpenClaw
 
@@ -750,13 +750,13 @@ Use this skill when the user gives a "news" or "today's news" related command.
 > As of 2025-07-14 09:00
 
 ## 🤖 AI
-- **Title** — One-line summary [link]
+- <strong>Title</strong> — One-line summary [link]
 
 ## 🔒 Security
-- **Title** — One-line summary [link]
+- <strong>Title</strong> — One-line summary [link]
 
 ## 💻 Development
-- **Title** — One-line summary [link]
+- <strong>Title</strong> — One-line summary [link]
 ```
 
 ## Saving
@@ -1041,22 +1041,22 @@ Over the course of this 3-part series, we've explored the introduction, installa
 
 In summary, OpenClaw is:
 
-- 🤖 **AI Assistant** — Proactively takes care of things with cron + heartbeats
-- 🔗 **Automation Hub** — Integrates with n8n/Make/GitHub/Gmail via webhooks
-- 🧠 **MCP Bridge** — Standardized connections to external data sources
-- 💻 **Development Partner** — Parallel task processing with subagents
-- 🏠 **Smart Home Controller** — Camera, notifications, and location via the node system
-- 🌐 **Data Collector** — Web monitoring through browser automation
-- 🧩 **Extension Platform** — Develop skills and share them on ClawHub
-- 📝 **A Companion That Remembers** — Persistent memory across sessions with MEMORY.md
+- 🤖 <strong>AI Assistant</strong> — Proactively takes care of things with cron + heartbeats
+- 🔗 <strong>Automation Hub</strong> — Integrates with n8n/Make/GitHub/Gmail via webhooks
+- 🧠 <strong>MCP Bridge</strong> — Standardized connections to external data sources
+- 💻 <strong>Development Partner</strong> — Parallel task processing with subagents
+- 🏠 <strong>Smart Home Controller</strong> — Camera, notifications, and location via the node system
+- 🌐 <strong>Data Collector</strong> — Web monitoring through browser automation
+- 🧩 <strong>Extension Platform</strong> — Develop skills and share them on ClawHub
+- 📝 <strong>A Companion That Remembers</strong> — Persistent memory across sessions with MEMORY.md
 
-An **all-in-one AI agent platform**.
+An <strong>all-in-one AI agent platform</strong>.
 
-The most important thing is **getting started**. Pick just one thing today and set it up:
+The most important thing is <strong>getting started</strong>. Pick just one thing today and set it up:
 
-1. 🌅 **Morning Briefing Cron** — A daily summary of today's information every morning
-2. 📝 **HEARTBEAT.md** — An automated assistant checklist in a single file
-3. 🔗 **One Webhook** — Route GitHub/Gmail notifications to Telegram
+1. 🌅 <strong>Morning Briefing Cron</strong> — A daily summary of today's information every morning
+2. 📝 <strong>HEARTBEAT.md</strong> — An automated assistant checklist in a single file
+3. 🔗 <strong>One Webhook</strong> — Route GitHub/Gmail notifications to Telegram
 
 Once you get a taste, you'll find yourself delegating more and more. 🦞
 
@@ -1067,4 +1067,4 @@ If you have questions, come find us on the [OpenClaw Discord](https://discord.gg
 *Mastering OpenClaw Series*
 - [Part 1: What Is OpenClaw?](/en/blog/en/openclaw-introduction-guide/)
 - [Part 2: From Installation to Your First Chat](/en/blog/en/openclaw-installation-tutorial/)
-- **Part 3: Advanced Real-World Use Cases** ← You just read this
+- <strong>Part 3: Advanced Real-World Use Cases</strong> ← You just read this

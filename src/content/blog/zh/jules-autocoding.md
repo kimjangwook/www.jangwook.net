@@ -774,7 +774,7 @@ Jules从2024年12月开始通过Google AI Studio提供，有三种定价计划�
 - ❌ Swift / Objective-C
 - ❌ Kotlin
 
-**应对方法**：
+<strong>应对方法</strong>：
 - 对于多语言项目，仅在Python/TypeScript部分使用Jules
 - 其他语言使用Claude Code或Copilot
 
@@ -1142,12 +1142,12 @@ Jules现在已经很强大，但Google正在开发以下功能：
 
 要开始使用Jules：
 
-1. **访问Google AI Studio**（ai.google.dev）
-2. **连接GitHub账户**
-3. **在仓库中安装Jules**
-4. **创建第一个问题并提及@jules-agent**
-5. **审查计划后批准**
-6. **审查和合并PR**
+1. <strong>访问Google AI Studio</strong>（ai.google.dev）
+2. <strong>连接GitHub账户</strong>
+3. <strong>在仓库中安装Jules</strong>
+4. <strong>创建第一个问题并提及@jules-agent</strong>
+5. <strong>审查计划后批准</strong>
+6. <strong>审查和合并PR</strong>
 
 建议从免费计划开始，测试是否适合团队的工作流程，然后再升级。
 

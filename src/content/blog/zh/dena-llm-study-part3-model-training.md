@@ -77,21 +77,21 @@ graph TD
     C1[客户反馈<br/>改进口味] --> C
 ```
 
-**预训练 (Pre-training)**
+<strong>预训练 (Pre-training)</strong>
 
 - <strong>目的</strong>: 获得通用语言理解能力
 - <strong>数据</strong>: 数十至数百TB的网络数据
 - <strong>成本</strong>: 数亿至数千亿元 (GPT-4估计超1000亿元)
 - <strong>比喻</strong>: 在烹饪学校学习所有烹饪技法的过程
 
-**微调 (Fine-tuning)**
+<strong>微调 (Fine-tuning)</strong>
 
 - <strong>目的</strong>: 专门化特定任务/领域
 - <strong>数据</strong>: 数千至数万个任务特定数据
 - <strong>成本</strong>: 数十万至数百万元
 - <strong>比喻</strong>: 成为意大利餐厅意大利面专家的过程
 
-**强化学习 (Reinforcement Learning)**
+<strong>强化学习 (Reinforcement Learning)</strong>
 
 - <strong>目的</strong>: 生成符合人类偏好的响应
 - <strong>数据</strong>: 数千至数万个偏好数据
@@ -199,7 +199,7 @@ lora_config:
 
 ### LoRA变体
 
-**DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)**
+<strong>DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)</strong>
 
 ```python
 # DoRA: 将权重分解为幅度(magnitude)和方向(direction)
@@ -210,7 +210,7 @@ W = m * (V + B @ A)
 - <strong>优点</strong>: 性能更接近Full Fine-tuning
 - <strong>缺点</strong>: 比LoRA稍慢
 
-**GaLore (Gradient Low-Rank Projection, 2024)**
+<strong>GaLore (Gradient Low-Rank Projection, 2024)</strong>
 
 ```python
 # 将梯度投影到低秩空间以节省内存
@@ -221,7 +221,7 @@ optimizer.step(gradient_lowrank)
 - <strong>优点</strong>: 优化器状态也低秩压缩 → 额外节省50%内存
 - <strong>缺点</strong>: 实现复杂度高
 
-**LoRA+ (2024)**
+<strong>LoRA+ (2024)</strong>
 
 ```python
 # 对矩阵A、B应用不同学习率
@@ -402,18 +402,18 @@ preference_dataset = [
 
 ### DPO变体
 
-**ORPO (Odds Ratio Preference Optimization, 2024)**
+<strong>ORPO (Odds Ratio Preference Optimization, 2024)</strong>
 
 - <strong>同时</strong>执行SFT和偏好学习
 - 无需单独的SFT阶段
 - 进一步缩短训练时间
 
-**IPO (Identity Preference Optimization, 2024)**
+<strong>IPO (Identity Preference Optimization, 2024)</strong>
 
 - 可以无参考模型训练
 - 进一步减少内存使用
 
-**KTO (Kahneman-Tversky Optimization, 2024)**
+<strong>KTO (Kahneman-Tversky Optimization, 2024)</strong>
 
 - 使用<strong>单独反馈</strong>(好/坏)代替成对比较
 - 大幅降低数据收集成本
@@ -439,7 +439,7 @@ graph TD
 
 ### 实务建议
 
-**1. 聊天机器人/对话系统**
+<strong>1. 聊天机器人/对话系统</strong>
 
 ```
 提示 → SFT (LoRA) → DPO
@@ -448,7 +448,7 @@ graph TD
 - 领域知识注入: 用LoRA高效微调
 - 对话质量改善: 用DPO偏好对齐
 
-**2. 文档分类/标注**
+<strong>2. 文档分类/标注</strong>
 
 ```
 提示 → LoRA (可选)
@@ -457,7 +457,7 @@ graph TD
 - 大多数情况提示足够
 - 极限性能需求时添加LoRA
 
-**3. 代码生成**
+<strong>3. 代码生成</strong>
 
 ```
 提示 → SFT (QLoRA) → RLHF/DPO
@@ -466,7 +466,7 @@ graph TD
 - 代码风格学习: 用QLoRA训练大量代码
 - 可执行性改善: 用RLHF惩罚编译错误
 
-**4. 摘要/翻译**
+<strong>4. 摘要/翻译</strong>
 
 ```
 提示 → DPO

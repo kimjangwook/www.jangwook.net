@@ -59,7 +59,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-> **Series: DeNA LLM Study** (2/5)
+> <strong>Series: DeNA LLM Study</strong> (2/5)
 >
 > 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)
 > 2. <strong>Part 2: Structured Output and Multi-LLM Pipelines</strong> ← Current Article
@@ -75,17 +75,17 @@ This article builds upon DeNA's study materials with updated information, provid
 
 ### What We'll Cover
 
-1. **Structured Output Techniques**
+1. <strong>Structured Output Techniques</strong>
    - JSON Schema and Pydantic usage
    - Constrained Decoding principles
    - Provider-specific implementations (OpenAI, Anthropic, Google)
 
-2. **Multi-LLM Composition Patterns**
+2. <strong>Multi-LLM Composition Patterns</strong>
    - Sequential, Parallel, Cascade, Router, Iterative
    - Application scenarios and trade-offs for each pattern
    - Practical implementation examples
 
-3. **Workshop B & C Content**
+3. <strong>Workshop B & C Content</strong>
    - B1: Binary classification (comment classification)
    - B2: Multiple item extraction and scoring
    - B3: Nested structured output
@@ -99,10 +99,10 @@ This article builds upon DeNA's study materials with updated information, provid
 
 LLMs inherently generate free-form text. However, production applications require:
 
-- **Parseable data**: Standard formats like JSON, YAML
-- **Type safety**: Field type validation (string, number, boolean, etc.)
-- **Required field guarantees**: Preventing omissions
-- **Nested structure support**: Complex data models
+- <strong>Parseable data</strong>: Standard formats like JSON, YAML
+- <strong>Type safety</strong>: Field type validation (string, number, boolean, etc.)
+- <strong>Required field guarantees</strong>: Preventing omissions
+- <strong>Nested structure support</strong>: Complex data models
 
 Problems with free-text output:
 
@@ -191,7 +191,7 @@ data = json.loads(response.choices[0].message.content)
 # {"name": "John", "age": 30, "email": "john@example.com"}
 ```
 
-**Key Features**:
+<strong>Key Features</strong>:
 
 - `strict: True` option guarantees 100% schema compliance
 - Constrained Decoding-based, impossible to generate invalid JSON
@@ -243,7 +243,7 @@ print(user.age)   # 30
 print(user.email) # "john@example.com"
 ```
 
-**Advantages**:
+<strong>Advantages</strong>:
 
 - Python-native type checking
 - IDE autocomplete support
@@ -344,7 +344,7 @@ graph TD
 # Final output: {"name": "John", "age": 30}
 ```
 
-**Key Points**:
+<strong>Key Points</strong>:
 
 - At each step, <strong>only schema-valid tokens are allowed</strong>
 - <strong>0% possibility</strong> of generating invalid JSON
@@ -354,11 +354,11 @@ graph TD
 
 | Provider              | Implementation                          | Notes                            |
 | --------------------- | --------------------------------------- | -------------------------------- |
-| **OpenAI**            | Native Structured Outputs API           | Most convenient (from Aug 2024)  |
-| **Anthropic**         | Tool Use workaround                     | Uses `tools` parameter           |
-| **Google Gemini**     | `response_mime_type="application/json"` | JSON Schema support (Beta)       |
-| **Local (llama.cpp)** | Grammar-based decoding                  | Requires GBNF grammar definition |
-| **Outlines**          | FSM-based decoding                      | Open source, supports all models |
+| <strong>OpenAI</strong>            | Native Structured Outputs API           | Most convenient (from Aug 2024)  |
+| <strong>Anthropic</strong>         | Tool Use workaround                     | Uses `tools` parameter           |
+| <strong>Google Gemini</strong>     | `response_mime_type="application/json"` | JSON Schema support (Beta)       |
+| <strong>Local (llama.cpp)</strong> | Grammar-based decoding                  | Requires GBNF grammar definition |
+| <strong>Outlines</strong>          | FSM-based decoding                      | Open source, supports all models |
 
 #### Anthropic Claude Tool Use Approach
 
@@ -492,9 +492,9 @@ graph TD
 
 ### 2.2 Sequential Pattern
 
-**Concept**: Use previous LLM's output as next LLM's input
+<strong>Concept</strong>: Use previous LLM's output as next LLM's input
 
-**Application Scenarios**:
+<strong>Application Scenarios</strong>:
 
 - Stepwise data transformation (translation → summarization → sentiment analysis)
 - Progressive refinement (draft → grammar correction → style improvement)
@@ -520,7 +520,7 @@ async def sequential_pipeline(text: str) -> str:
 result = await sequential_pipeline("Long Korean document...")
 ```
 
-**Trade-offs**:
+<strong>Trade-offs</strong>:
 
 - ✅ Clear separation of each step
 - ✅ Easy debugging
@@ -529,9 +529,9 @@ result = await sequential_pipeline("Long Korean document...")
 
 ### 2.3 Parallel Pattern
 
-**Concept**: Execute multiple LLMs simultaneously and aggregate results
+<strong>Concept</strong>: Execute multiple LLMs simultaneously and aggregate results
 
-**Application Scenarios**:
+<strong>Application Scenarios</strong>:
 
 - Multi-faceted evaluation (simultaneous grammar, style, content evaluation)
 - Ensemble inference (voting/averaging results from multiple models)
@@ -570,7 +570,7 @@ async def evaluate_grammar(text: str) -> float:
 # Other evaluation functions follow same pattern...
 ```
 
-**Execution Time Comparison**:
+<strong>Execution Time Comparison</strong>:
 
 ```python
 # Sequential: 3s × 3 = 9s
@@ -578,7 +578,7 @@ async def evaluate_grammar(text: str) -> float:
 # → 66% time reduction!
 ```
 
-**Trade-offs**:
+<strong>Trade-offs</strong>:
 
 - ✅ Maximum speed (parallel execution)
 - ✅ Independent evaluation possible
@@ -587,9 +587,9 @@ async def evaluate_grammar(text: str) -> float:
 
 ### 2.4 Cascade Pattern
 
-**Concept**: Start with smaller models, escalate to larger models when needed
+<strong>Concept</strong>: Start with smaller models, escalate to larger models when needed
 
-**Application Scenarios**:
+<strong>Application Scenarios</strong>:
 
 - Cost optimization (simple queries use smaller models)
 - Quality assurance (only complex queries use larger models)
@@ -627,7 +627,7 @@ async def cascade_routing(query: str) -> str:
 # → Average cost: 0.15 × 0.8 + 5 × 0.2 = $1.12 (78% reduction)
 ```
 
-**Trade-offs**:
+<strong>Trade-offs</strong>:
 
 - ✅ Maximize cost efficiency
 - ✅ Maintain average quality
@@ -636,9 +636,9 @@ async def cascade_routing(query: str) -> str:
 
 ### 2.5 Router Pattern
 
-**Concept**: Route to optimal model based on input characteristics
+<strong>Concept</strong>: Route to optimal model based on input characteristics
 
-**Application Scenarios**:
+<strong>Application Scenarios</strong>:
 
 - Domain-specific expert models (medical, legal, technical)
 - Language-specific models (Korean-specialized, English-specialized)
@@ -675,7 +675,7 @@ async def router_pattern(query: str) -> str:
     return response
 ```
 
-**Trade-offs**:
+<strong>Trade-offs</strong>:
 
 - ✅ Optimal model selection
 - ✅ Cost-quality optimization
@@ -684,9 +684,9 @@ async def router_pattern(query: str) -> str:
 
 ### 2.6 Iterative Pattern
 
-**Concept**: Repeat evaluation → correction to improve quality
+<strong>Concept</strong>: Repeat evaluation → correction to improve quality
 
-**Application Scenarios**:
+<strong>Application Scenarios</strong>:
 
 - Writing improvement (draft → feedback → correction → re-evaluation)
 - Code refactoring (code → review → correction → re-review)
@@ -739,7 +739,7 @@ improved = await iterative_improvement(
 )
 ```
 
-**Trade-offs**:
+<strong>Trade-offs</strong>:
 
 - ✅ Progressive quality improvement
 - ✅ Clear feedback loop
@@ -811,13 +811,13 @@ async def hybrid_pipeline(text: str) -> str:
 
 ### 4.1 2025 Structured Output Standard
 
-**OpenAI Structured Outputs** has become the de facto standard:
+<strong>OpenAI Structured Outputs</strong> has become the de facto standard:
 
-- **Constrained Decoding-based**: 100% schema compliance
-- **No additional cost**: Same price as existing API
-- **Pydantic integration**: Instructor library support
+- <strong>Constrained Decoding-based</strong>: 100% schema compliance
+- <strong>No additional cost</strong>: Same price as existing API
+- <strong>Pydantic integration</strong>: Instructor library support
 
-**Competing Products**:
+<strong>Competing Products</strong>:
 
 - Anthropic: Tool Use approach (indirect)
 - Google: `response_mime_type` (Beta)
@@ -844,7 +844,7 @@ async def cost_optimized_pipeline(query: str) -> str:
     return result
 ```
 
-**Cost Reduction Effects**:
+<strong>Cost Reduction Effects</strong>:
 
 - Cascade: 70-80%
 - Caching: 50-90% (depending on repeat query ratio)
@@ -852,14 +852,14 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 ### 4.3 Quality Assurance Checklist
 
-**Structured Output**:
+<strong>Structured Output</strong>:
 
 - ✅ Define required fields (`required` array)
 - ✅ Type constraints (`minimum`, `maximum`, `pattern`)
 - ✅ Add descriptions (`description` field guides LLM)
 - ✅ Validation logic (`Pydantic validator`)
 
-**Pipeline Design**:
+<strong>Pipeline Design</strong>:
 
 - ✅ Error handling (try-catch at each step)
 - ✅ Timeout settings (prevent infinite waiting)
@@ -870,11 +870,11 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 | Tool           | Purpose                       | Recommendation |
 | -------------- | ----------------------------- | -------------- |
-| **Instructor** | Pydantic ↔ LLM integration    | ⭐⭐⭐⭐⭐     |
-| **Outlines**   | Constrained Decoding (local)  | ⭐⭐⭐⭐       |
-| **LangChain**  | Pipeline orchestration        | ⭐⭐⭐         |
-| **LlamaIndex** | RAG + Structured Outputs      | ⭐⭐⭐⭐       |
-| **Guidance**   | Template-based output control | ⭐⭐⭐         |
+| <strong>Instructor</strong> | Pydantic ↔ LLM integration    | ⭐⭐⭐⭐⭐     |
+| <strong>Outlines</strong>   | Constrained Decoding (local)  | ⭐⭐⭐⭐       |
+| <strong>LangChain</strong>  | Pipeline orchestration        | ⭐⭐⭐         |
+| <strong>LlamaIndex</strong> | RAG + Structured Outputs      | ⭐⭐⭐⭐       |
+| <strong>Guidance</strong>   | Template-based output control | ⭐⭐⭐         |
 
 ## 5. Next Steps
 
@@ -882,33 +882,33 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 The next article covers <strong>injecting external knowledge into LLMs</strong> using RAG (Retrieval-Augmented Generation):
 
-1. **Vector Database Fundamentals**
+1. <strong>Vector Database Fundamentals</strong>
    - Embedding model selection
    - FAISS, Pinecone, Weaviate comparison
 
-2. **RAG Pipeline Construction**
+2. <strong>RAG Pipeline Construction</strong>
    - Chunking strategies
    - Retrieval optimization
    - Reranking techniques
 
-3. **Advanced RAG Patterns**
+3. <strong>Advanced RAG Patterns</strong>
    - Hybrid Search (keyword + vector)
    - Multi-hop Retrieval
    - Self-Query
 
 ### Suggested Practice Projects
 
-1. **Document Processing System**
+1. <strong>Document Processing System</strong>
    - PDF → Structured data extraction
    - Parallel Pattern for parallel processing
    - Pydantic validation
 
-2. **Automated Evaluation Pipeline**
+2. <strong>Automated Evaluation Pipeline</strong>
    - Iterative Pattern for quality improvement
    - Multiple evaluation axes (grammar, style, content)
    - Iterate until target score reached
 
-3. **Cost Optimization System**
+3. <strong>Cost Optimization System</strong>
    - Cascade Pattern for model selection
    - Query classification → routing
    - Caching + batch processing
@@ -917,17 +917,17 @@ The next article covers <strong>injecting external knowledge into LLMs</strong> 
 
 In DeNA LLM Study Part 2, we learned two core techniques for production LLM applications:
 
-1. **Structured Output**
+1. <strong>Structured Output</strong>
    - JSON Schema and Pydantic ensure type-safe outputs
    - Constrained Decoding guarantees 100% schema compliance
    - OpenAI Structured Outputs API is currently the best choice
 
-2. **Multi-LLM Composition Patterns**
+2. <strong>Multi-LLM Composition Patterns</strong>
    - Sequential, Parallel, Cascade, Router, Iterative
    - Understanding trade-offs of each pattern
    - Using hybrid combinations in practice
 
-**Key Messages**:
+<strong>Key Messages</strong>:
 
 - Structured output is an <strong>essential component of production LLM applications</strong>
 - <strong>Multi-LLM composition is more powerful</strong> than single LLMs

@@ -588,7 +588,7 @@ graph TD
     C2[强制安全扫描] --> C
 ```
 
-**阶段 1 实现：**
+<strong>阶段 1 实现：</strong>
 
 ```bash
 #!/bin/bash
@@ -603,7 +603,7 @@ echo "ℹ️  Audit trail recorded"
 exit 0
 ```
 
-**阶段 2 实现：**
+<strong>阶段 2 实现：</strong>
 
 ```bash
 #!/bin/bash
@@ -619,7 +619,7 @@ npx eslint "$file_path" || echo "⚠️  Linting issues found"
 exit 2
 ```
 
-**阶段 3 实现：**
+<strong>阶段 3 实现：</strong>
 
 ```bash
 #!/bin/bash

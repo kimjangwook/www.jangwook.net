@@ -58,11 +58,11 @@ relatedPosts:
 ---
 ## 개요
 
-Claude Code는 Anthropic이 개발한 에이전틱 코딩 도구입니다. 플러그인 시스템을 통해 슬래시 커맨드, 전문 에이전트, 스킬, 훅을 **하나의 패키지로 설치**할 수 있습니다.
+Claude Code는 Anthropic이 개발한 에이전틱 코딩 도구입니다. 플러그인 시스템을 통해 슬래시 커맨드, 전문 에이전트, 스킬, 훅을 <strong>하나의 패키지로 설치</strong>할 수 있습니다.
 
-이 포스트에서는 **공식 플러그인 13개**의 상세 기능, **커뮤니티 마켓플레이스**의 100개 이상 플러그인, 그리고 **실제 플러그인 구조**를 심층적으로 분석합니다.
+이 포스트에서는 <strong>공식 플러그인 13개</strong>의 상세 기능, <strong>커뮤니티 마켓플레이스</strong>의 100개 이상 플러그인, 그리고 <strong>실제 플러그인 구조</strong>를 심층적으로 분석합니다.
 
-> **★ Insight**
+> <strong>★ Insight</strong>
 >
 > - 공식 플러그인 13개: anthropics/claude-code 저장소에서 관리
 > - 커뮤니티 마켓플레이스: 100개 이상의 플러그인 (13개 카테고리)
@@ -100,7 +100,7 @@ Claude Code는 Git 저장소 기반의 마켓플레이스 시스템을 사용합
 /plugin
 ```
 
-> **★ Insight**
+> <strong>★ Insight</strong>
 >
 > - 플러그인 최소 요구 버전: Claude Code 1.0.33 이상
 > - 저장 위치: 프로젝트(.claude/) 또는 사용자(~/.claude/) 레벨
@@ -116,7 +116,7 @@ Anthropic이 관리하는 [anthropics/claude-code](https://github.com/anthropics
 /plugin install commit-commands
 ```
 
-**제공 커맨드 3개**:
+<strong>제공 커맨드 3개</strong>:
 
 | 커맨드              | 기능                                                         |
 | ------------------- | ------------------------------------------------------------ |
@@ -135,7 +135,7 @@ Anthropic이 관리하는 [anthropics/claude-code](https://github.com/anthropics
 **`/commit-push-pr` 작동 방식**:
 
 1. main 브랜치면 자동으로 새 브랜치 생성
-2. 브랜치의 **전체 커밋 히스토리** 분석 (최신 커밋만이 아님)
+2. 브랜치의 <strong>전체 커밋 히스토리</strong> 분석 (최신 커밋만이 아님)
 3. PR 설명 자동 생성 (Summary + Test plan)
 4. GitHub CLI(`gh`)로 PR 생성 후 URL 반환
 
@@ -153,7 +153,7 @@ git add .
 /plugin install feature-dev
 ```
 
-**7단계 구조화된 워크플로우**:
+<strong>7단계 구조화된 워크플로우</strong>:
 
 ```mermaid
 graph TD
@@ -165,7 +165,7 @@ graph TD
     F --> G["7. Summary<br/>변경 요약 및 다음 단계 제안"]
 ```
 
-**전문 에이전트 3종**:
+<strong>전문 에이전트 3종</strong>:
 
 | 에이전트           | 역할                                                        |
 | ------------------ | ----------------------------------------------------------- |
@@ -179,7 +179,7 @@ graph TD
 # → 7단계 순차 진행, 각 단계에서 사용자 확인
 ```
 
-**언제 사용하나?**
+<strong>언제 사용하나?</strong>
 
 - 여러 파일에 걸친 새로운 기능 개발
 - 아키텍처 결정이 필요한 복잡한 작업
@@ -191,18 +191,18 @@ graph TD
 /plugin install code-review
 ```
 
-**작동 방식**:
+<strong>작동 방식</strong>:
 
 1. 닫힌/초안/사소한/이미 리뷰된 PR은 자동 스킵
 2. CLAUDE.md 가이드라인 파일 수집
-3. **4개 병렬 에이전트** 실행:
+3. <strong>4개 병렬 에이전트</strong> 실행:
    - Agent #1, #2: CLAUDE.md 준수 여부 (중복 검증)
    - Agent #3: 버그 탐지 (PR 변경 범위 내에서만)
    - Agent #4: Git blame 히스토리 분석
-4. 각 이슈에 **신뢰도 점수(0〜100)** 부여
-5. **80점 미만 필터링** (오탐 제거)
+4. 각 이슈에 <strong>신뢰도 점수(0〜100)</strong> 부여
+5. <strong>80점 미만 필터링</strong> (오탐 제거)
 
-**신뢰도 점수 기준**:
+<strong>신뢰도 점수 기준</strong>:
 
 | 점수 | 의미                        |
 | ---- | --------------------------- |
@@ -220,7 +220,7 @@ graph TD
 /code-review --comment
 ```
 
-**필터링되는 오탐**:
+<strong>필터링되는 오탐</strong>:
 
 - PR 이전부터 존재하던 문제
 - 린터가 잡을 수 있는 문제
@@ -233,7 +233,7 @@ graph TD
 /plugin install hookify
 ```
 
-**제공 커맨드 4개**:
+<strong>제공 커맨드 4개</strong>:
 
 | 커맨드                   | 기능                                    |
 | ------------------------ | --------------------------------------- |
@@ -242,7 +242,7 @@ graph TD
 | `/hookify:list`        | 활성화된 규칙 목록                      |
 | `/hookify:configure`   | 규칙 활성화/비활성화                    |
 
-**훅 파일 형식** (`.claude/hookify.*.local.md`):
+<strong>훅 파일 형식</strong> (`.claude/hookify.*.local.md`):
 
 ```yaml
 ---
@@ -260,7 +260,7 @@ action: block  # warn 또는 block
 - 백업이 있는지 확인하세요
 ```
 
-**이벤트 타입**:
+<strong>이벤트 타입</strong>:
 
 - `bash`: Bash 명령 실행 시
 - `file`: Edit/Write 도구 사용 시
@@ -280,18 +280,18 @@ action: block  # warn 또는 block
 /plugin install plugin-dev
 ```
 
-**8단계 플러그인 생성 워크플로우**:
+<strong>8단계 플러그인 생성 워크플로우</strong>:
 
-1. **Discovery**: 플러그인 목적과 요구사항 파악
-2. **Component Planning**: 필요한 skills/commands/agents/hooks/MCP 결정
-3. **Detailed Design**: 각 컴포넌트 상세 설계
-4. **Structure Creation**: 디렉토리와 manifest 생성
-5. **Component Implementation**: AI 지원 구현
-6. **Validation**: plugin-validator 및 컴포넌트별 검증
-7. **Testing**: Claude Code에서 실제 동작 테스트
-8. **Documentation**: README 완성 및 배포 준비
+1. <strong>Discovery</strong>: 플러그인 목적과 요구사항 파악
+2. <strong>Component Planning</strong>: 필요한 skills/commands/agents/hooks/MCP 결정
+3. <strong>Detailed Design</strong>: 각 컴포넌트 상세 설계
+4. <strong>Structure Creation</strong>: 디렉토리와 manifest 생성
+5. <strong>Component Implementation</strong>: AI 지원 구현
+6. <strong>Validation</strong>: plugin-validator 및 컴포넌트별 검증
+7. <strong>Testing</strong>: Claude Code에서 실제 동작 테스트
+8. <strong>Documentation</strong>: README 완성 및 배포 준비
 
-**7개 핵심 스킬**:
+<strong>7개 핵심 스킬</strong>:
 
 | 스킬                | 트리거 키워드                      | 내용                                  |
 | ------------------- | ---------------------------------- | ------------------------------------- |
@@ -315,14 +315,14 @@ action: block  # warn 또는 block
 /plugin install frontend-design
 ```
 
-프론트엔드 작업 시 **자동으로 활성화**되는 스킬입니다.
+프론트엔드 작업 시 <strong>자동으로 활성화</strong>되는 스킬입니다.
 
-**핵심 원칙**:
+<strong>핵심 원칙</strong>:
 
-- **대담한 미학적 선택**: 제네릭한 AI 스타일 지양
-- **독특한 타이포그래피와 색상 팔레트**
-- **고임팩트 애니메이션과 비주얼 디테일**
-- **컨텍스트 인식 구현**
+- <strong>대담한 미학적 선택</strong>: 제네릭한 AI 스타일 지양
+- <strong>독특한 타이포그래피와 색상 팔레트</strong>
+- <strong>고임팩트 애니메이션과 비주얼 디테일</strong>
+- <strong>컨텍스트 인식 구현</strong>
 
 ```bash
 # 자동 활성화 예시
@@ -337,7 +337,7 @@ action: block  # warn 또는 block
 /plugin install pr-review-toolkit
 ```
 
-**6개 전문 에이전트**:
+<strong>6개 전문 에이전트</strong>:
 
 - 코멘트 리뷰어
 - 테스트 리뷰어
@@ -356,7 +356,7 @@ action: block  # warn 또는 block
 /plugin install security-guidance
 ```
 
-**9개 보안 패턴 모니터링**:
+<strong>9개 보안 패턴 모니터링</strong>:
 
 - 인젝션 공격
 - XSS (크로스 사이트 스크립팅)
@@ -368,7 +368,7 @@ action: block  # warn 또는 block
 - 취약한 암호화
 - 인증/인가 결함
 
-PreToolUse 훅으로 **도구 실행 전** 실시간 경고.
+PreToolUse 훅으로 <strong>도구 실행 전</strong> 실시간 경고.
 
 ### 기타 공식 플러그인
 
@@ -393,13 +393,13 @@ PreToolUse 훅으로 **도구 실행 전** 실시간 경고.
 
 ### 카테고리별 주요 플러그인 (ccplugins 기준)
 
-**워크플로우 오케스트레이션 (8개)**:
+<strong>워크플로우 오케스트레이션 (8개)</strong>:
 
 - `ultrathink`: 4개 전문 서브에이전트를 지휘하는 코디네이터
 - `lyra`: 마스터급 AI 프롬프트 최적화 전문가
 - `problem-solver-specialist`: 체계적 문제 해결
 
-**코드 품질 & 테스트 (16개)**:
+<strong>코드 품질 & 테스트 (16개)</strong>:
 
 - `bug-detective`: 단계별 체계적 디버깅
 - `double-check`: 변경사항 이중 검증
@@ -407,28 +407,28 @@ PreToolUse 훅으로 **도구 실행 전** 실시간 경고.
 - `unit-test-generator`: 단위 테스트 자동 생성
 - `database-performance-optimizer`: DB 성능 최적화
 
-**Git 워크플로우 (14개)**:
+<strong>Git 워크플로우 (14개)</strong>:
 
 - `fix-github-issue`: GitHub 이슈 기반 자동 수정
 - `create-pr`: PR 생성 자동화
 - `update-branch-name`: 브랜치명 컨벤션 적용
 - `husky`: Git 훅 설정
 
-**문서화 (8개)**:
+<strong>문서화 (8개)</strong>:
 
 - `analyze-codebase`: 코드베이스 종합 분석
 - `changelog-generator`: 변경 로그 자동 생성
 - `update-claudemd`: CLAUDE.md 자동 업데이트
 - `openapi-expert`: OpenAPI 스펙 전문가
 
-**보안 & 컴플라이언스 (7개)**:
+<strong>보안 & 컴플라이언스 (7개)</strong>:
 
 - `audit`: 코드베이스 보안 감사
 - `enterprise-security-reviewer`: 엔터프라이즈급 보안 리뷰
 - `legal-compliance-checker`: 법적 준수 확인
 - `data-privacy-engineer`: 데이터 프라이버시
 
-**개발 엔지니어링 (15개)**:
+<strong>개발 엔지니어링 (15개)</strong>:
 
 - `ai-engineer`: AI 기능 개발 전문
 - `backend-architect`: 백엔드 아키텍처 설계
@@ -437,20 +437,20 @@ PreToolUse 훅으로 **도구 실행 전** 실시간 경고.
 
 ### kivilaid 마켓플레이스 특화 도구
 
-**문서 처리 스위트**:
+<strong>문서 처리 스위트</strong>:
 
 - `xlsx`: 수식과 데이터 시각화가 포함된 Excel 생성
 - `docx`: 변경 추적과 서식이 포함된 Word 문서
 - `pptx`: 레이아웃과 템플릿이 포함된 PowerPoint
 - `pdf`: PDF 추출, 병합, 분할, 양식 처리
 
-**크리에이티브 & 디자인**:
+<strong>크리에이티브 & 디자인</strong>:
 
 - `algorithmic-art`: p5.js 기반 제너레이티브 아트
 - `canvas-design`: PNG/PDF 시각 아트 생성
 - `slack-gif-creator`: Slack용 애니메이션 GIF
 
-**davila7 툴킷 (10개)**:
+<strong>davila7 툴킷 (10개)</strong>:
 
 - Git 워크플로우, Supabase, Next.js/Vercel
 - 테스트, 보안 감사, AI/ML, DevOps
@@ -589,7 +589,7 @@ auto_invoke: true
 }
 ```
 
-**MCP 서버 타입**:
+<strong>MCP 서버 타입</strong>:
 
 - `stdio`: 로컬 프로세스 (가장 일반적)
 - `sse`: Server-Sent Events (호스팅/OAuth)
@@ -677,7 +677,7 @@ export API_KEY="sk-..."
 
 ## 마무리
 
-Claude Code 플러그인 시스템은 **공식 13개 플러그인**과 **커뮤니티 100개 이상 플러그인**으로 구성된 풍부한 생태계를 제공합니다.
+Claude Code 플러그인 시스템은 <strong>공식 13개 플러그인</strong>과 <strong>커뮤니티 100개 이상 플러그인</strong>으로 구성된 풍부한 생태계를 제공합니다.
 
 `<strong>`핵심 정리`</strong>`:
 

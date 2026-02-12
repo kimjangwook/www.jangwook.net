@@ -55,7 +55,7 @@ relatedPosts:
 
 In early 2025, Andrej Karpathy coined the term "Vibe Coding" - throw prompts at AI, copy the generated code, and hope it works. Great for prototypes, but it falls apart fast on larger projects.
 
-Enter **Specification-Driven Development (SDD)**. Write clear specifications in Markdown, and AI coding agents "compile" them into executable code. This isn't just a methodology shift - it's a fundamental transformation in how we build software with AI.
+Enter <strong>Specification-Driven Development (SDD)</strong>. Write clear specifications in Markdown, and AI coding agents "compile" them into executable code. This isn't just a methodology shift - it's a fundamental transformation in how we build software with AI.
 
 ### The Limits of Vibe Coding
 
@@ -78,7 +78,7 @@ function login(username: string, password: string) {
 // Regenerates again... getting messier and inconsistent
 ```
 
-**Problems**:
+<strong>Problems</strong>:
 - AI loses full context with each prompt
 - Previous decisions get ignored or overwritten
 - Code quality becomes inconsistent and unpredictable
@@ -86,19 +86,19 @@ function login(username: string, password: string) {
 
 ## What is Specification-Driven Development?
 
-Specification-Driven Development is a methodology where you **clearly define "What" to build, then let AI implement "How"**.
+Specification-Driven Development is a methodology where you <strong>clearly define "What" to build, then let AI implement "How"</strong>.
 
 ### Core Principles
 
-1. **Specification as Single Source of Truth**
+1. <strong>Specification as Single Source of Truth</strong>
    - Specifications, not code, define the project
    - All changes start with specification updates
 
-2. **Structured Workflow**
+2. <strong>Structured Workflow</strong>
    - Specify → Plan → Task → Implement
    - Each phase clearly separated and traceable
 
-3. **AI as Tool, Developer as Designer**
+3. <strong>AI as Tool, Developer as Designer</strong>
    - Developer decides "what" (architecture, business logic)
    - AI executes "how" (code generation, testing, optimization)
 
@@ -106,12 +106,12 @@ Specification-Driven Development is a methodology where you **clearly define "Wh
 
 | Aspect | Traditional Development | Vibe Coding | Specification-Driven Development |
 |--------|------------------------|-------------|----------------------------------|
-| **Starting Point** | Requirements document | Ad-hoc prompts | Structured specification |
-| **AI Role** | None or assistant tool | Full code generation | Spec-based code generation |
-| **Consistency** | Depends on developer experience | Low (varies per prompt) | High (guaranteed by spec) |
-| **Scalability** | Possible but slow | Impossible (complexity↑ quality↓) | Excellent (manage spec only) |
-| **Maintenance** | Code modification needed | Risk of full regeneration | Update spec then regenerate |
-| **Collaboration** | Code review | Difficult | Spec review (more clear) |
+| <strong>Starting Point</strong> | Requirements document | Ad-hoc prompts | Structured specification |
+| <strong>AI Role</strong> | None or assistant tool | Full code generation | Spec-based code generation |
+| <strong>Consistency</strong> | Depends on developer experience | Low (varies per prompt) | High (guaranteed by spec) |
+| <strong>Scalability</strong> | Possible but slow | Impossible (complexity↑ quality↓) | Excellent (manage spec only) |
+| <strong>Maintenance</strong> | Code modification needed | Risk of full regeneration | Update spec then regenerate |
+| <strong>Collaboration</strong> | Code review | Difficult | Spec review (more clear) |
 
 ## Real Example: Building Auth System with Spec-Driven Approach
 
@@ -360,7 +360,7 @@ Now ask your AI coding agent (GitHub Copilot, Claude Code, etc.) to implement ea
          Also write tests and ensure coverage is above 90%."
 ```
 
-**AI-generated code example**:
+<strong>AI-generated code example</strong>:
 
 ```typescript
 // src/utils/password-hasher.ts
@@ -472,7 +472,7 @@ describe('PasswordHasher', () => {
 });
 ```
 
-**Key Points**:
+<strong>Key Points</strong>:
 - AI accurately reflects all requirements from the spec (NFR-1 security requirements)
 - Includes error handling, edge cases, and performance tests
 - Code is consistent and well-documented
@@ -590,7 +590,7 @@ spec-kit tasks plan/user-profile-plan.md --output tasks/user-profile-tasks.md
 
 ### 1. Writing Good Specifications
 
-**Clear Input/Output Definition**:
+<strong>Clear Input/Output Definition</strong>:
 
 ````markdown
 ❌ Bad Example:
@@ -623,7 +623,7 @@ Create a new user account.
 | Password too weak | "Password does not meet requirements" | 400 |
 ````
 
-**Measurable Non-Functional Requirements**:
+<strong>Measurable Non-Functional Requirements</strong>:
 
 ````markdown
 ❌ Bad Example:
@@ -652,22 +652,22 @@ The system should be fast.
 
 | Tool | Purpose | Strengths | Weaknesses |
 |------|---------|-----------|------------|
-| **GitHub Spec Kit** | Spec → Plan → Tasks | Official support, integrated workflow | Early version (experimental) |
-| **Kiro** | AI spec validation | Spec quality analysis | Spec Kit dependency |
-| **BMAD-Method** | Enterprise spec management | Large team collaboration | Commercial (paid) |
-| **Claude Code** | AI coding agent | High code quality | API costs |
-| **GitHub Copilot** | AI coding assistant | Excellent IDE integration | Context limitations |
+| <strong>GitHub Spec Kit</strong> | Spec → Plan → Tasks | Official support, integrated workflow | Early version (experimental) |
+| <strong>Kiro</strong> | AI spec validation | Spec quality analysis | Spec Kit dependency |
+| <strong>BMAD-Method</strong> | Enterprise spec management | Large team collaboration | Commercial (paid) |
+| <strong>Claude Code</strong> | AI coding agent | High code quality | API costs |
+| <strong>GitHub Copilot</strong> | AI coding assistant | Excellent IDE integration | Context limitations |
 
 ### Recommended Toolchain
 
-**Startups/Small Teams**:
+<strong>Startups/Small Teams</strong>:
 ```bash
 ├── GitHub Spec Kit (free)
 ├── GitHub Copilot (individual: $10/mo)
 └── GitHub Actions (CI/CD, free)
 ```
 
-**Medium-Large Enterprise**:
+<strong>Medium-Large Enterprise</strong>:
 ```bash
 ├── BMAD-Method (enterprise)
 ├── Claude Code (team license)
@@ -679,19 +679,19 @@ The system should be fast.
 
 ### Real Project Case Study
 
-**Project**: E-commerce API (50 endpoints, 3-person dev team)
+<strong>Project</strong>: E-commerce API (50 endpoints, 3-person dev team)
 
 | Metric | Traditional Development | Vibe Coding | Specification-Driven Development |
 |--------|------------------------|-------------|----------------------------------|
-| **Development Time** | 12 weeks | 8 weeks (fast initially) | 10 weeks |
-| **Bugs Found** | Avg 45 per sprint | Avg 80 per sprint | Avg 15 per sprint |
-| **Refactoring Time** | 20% of total | 40% of total | 5% of total |
-| **Code Review Time** | Avg 2h per PR | Avg 3h per PR | Avg 30min per PR |
-| **Test Coverage** | 75% | 45% | 92% |
-| **Technical Debt** | Medium | High | Low |
-| **Team Satisfaction** | 7/10 | 6/10 | 9/10 |
+| <strong>Development Time</strong> | 12 weeks | 8 weeks (fast initially) | 10 weeks |
+| <strong>Bugs Found</strong> | Avg 45 per sprint | Avg 80 per sprint | Avg 15 per sprint |
+| <strong>Refactoring Time</strong> | 20% of total | 40% of total | 5% of total |
+| <strong>Code Review Time</strong> | Avg 2h per PR | Avg 3h per PR | Avg 30min per PR |
+| <strong>Test Coverage</strong> | 75% | 45% | 92% |
+| <strong>Technical Debt</strong> | Medium | High | Low |
+| <strong>Team Satisfaction</strong> | 7/10 | 6/10 | 9/10 |
 
-**Key Insights**:
+<strong>Key Insights</strong>:
 - Spec-driven adds initial spec writing time, but saves time overall
 - 70% reduction in bugs (clear specs enable accurate AI code generation)
 - 75% reduction in refactoring time (structure clear from the start)
@@ -701,28 +701,28 @@ The system should be fast.
 
 ### When Spec-Driven Development Isn't Suitable
 
-1. **Rapid Prototyping**
+1. <strong>Rapid Prototyping</strong>
    - MVPs or PoCs are faster with Vibe Coding
    - Spec writing overhead is unnecessary
 
-2. **Unclear Requirements**
+2. <strong>Unclear Requirements</strong>
    - Exploratory projects suit agile approach better
    - Frequent spec changes become inefficient
 
-3. **Solo Developer + Small Projects**
+3. <strong>Solo Developer + Small Projects</strong>
    - No collaboration benefits = excessive process
    - Simple scripts or tools are faster with direct coding
 
 ## Conclusion: Redefining the Developer's Role
 
-Specification-Driven Development isn't just a methodology - it represents a **fundamental shift in the developer's role in the AI era**.
+Specification-Driven Development isn't just a methodology - it represents a <strong>fundamental shift in the developer's role in the AI era</strong>.
 
 ### The Changing Developer Role
 
-**Before (Traditional Development)**:
+<strong>Before (Traditional Development)</strong>:
 - Coding 70% + Design 20% + Testing 10%
 
-**After (Specification-Driven Development)**:
+<strong>After (Specification-Driven Development)</strong>:
 - Spec Writing 40% + AI Management 30% + Validation 20% + Optimization 10%
 
 ### Shifting Core Skills
@@ -737,7 +737,7 @@ Specification-Driven Development isn't just a methodology - it represents a **fu
 
 ### Getting Started
 
-**Week 1: Learn**
+<strong>Week 1: Learn</strong>
 ```bash
 # GitHub Spec Kit tutorial
 npx @github/spec-kit tutorial
@@ -747,17 +747,17 @@ git clone https://github.com/github/spec-kit-examples
 cd spec-kit-examples/todo-api
 ```
 
-**Week 2: Small-Scale Application**
+<strong>Week 2: Small-Scale Application</strong>
 - Refactor one feature of existing project with spec-driven approach
 - Write constitution.md (team coding principles)
 - Implement 1-2 simple API endpoints from spec → code
 
-**Week 3: Team Introduction**
+<strong>Week 3: Team Introduction</strong>
 - Share concepts with team members
 - Try spec-driven approach on one story in next sprint
 - Discuss improvements in retrospective
 
-**After 1 Month: Full Adoption Decision**
+<strong>After 1 Month: Full Adoption Decision</strong>
 - Measure results (bug reduction rate, dev speed, team satisfaction)
 - Choose tools (Spec Kit vs commercial tools)
 - Establish long-term roadmap
@@ -781,4 +781,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-**Next Article**: [AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized Agents](/en/blog/en/ai-agent-collaboration-patterns) covers orchestrating Architecture Agent, Coding Agent, Testing Agent, Security Agent, and DevOps Agent to build complex applications with real-world case studies.
+<strong>Next Article</strong>: [AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized Agents](/en/blog/en/ai-agent-collaboration-patterns) covers orchestrating Architecture Agent, Coding Agent, Testing Agent, Security Agent, and DevOps Agent to build complex applications with real-world case studies.

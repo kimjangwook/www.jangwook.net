@@ -55,10 +55,10 @@ relatedPosts:
       zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
 ---
 
-> **シリーズ：OpenAI AgentKitマスター** (2/2)
+> <strong>シリーズ：OpenAI AgentKitマスター</strong> (2/2)
 >
 > 1. [OpenAI AgentKit完全ガイド パート1：コア概念とスタートガイド](/ja/blog/ja/openai-agentkit-tutorial-part1)
-> 2. **OpenAI AgentKit完全ガイド パート2：実践応用と高度なパターン** ← 現在の記事
+> 2. <strong>OpenAI AgentKit完全ガイド パート2：実践応用と高度なパターン</strong> ← 現在の記事
 
 パート1でAgentKitの基本概念と基礎チュートリアルを学びました。パート2では、実際のプロダクション環境でのエンタープライズグレードシステム構築方法を探ります。
 
@@ -68,7 +68,7 @@ relatedPosts:
 
 大規模プロジェクトでは、単一エージェントではすべてのタスクを処理できません。マネージャーエージェントが全体戦略を立て、専門ワーカーエージェントに仕事を委任する階層構造が効果的です。
 
-**アーキテクチャ図**：
+<strong>アーキテクチャ図</strong>：
 
 ```mermaid
 graph TD
@@ -89,7 +89,7 @@ graph TD
     style DevOps fill:#F5A623,color:#fff
 ```
 
-**実装例**：
+<strong>実装例</strong>：
 
 ```python
 from openai_agents import Agent, Runner
@@ -176,22 +176,22 @@ result = runner.run(
 )
 ```
 
-**実行フロー**：
+<strong>実行フロー</strong>：
 
-1. **マネージャー分析**：要求を3つのサブタスクに分解
+1. <strong>マネージャー分析</strong>：要求を3つのサブタスクに分解
    - フロントエンド：商品一覧UI、ショッピングカートUI
    - バックエンド：商品API、決済処理ロジック
    - DevOps：Kubernetesデプロイメント設定
 
-2. **並列実行**：3つのスペシャリストが同時に作業
+2. <strong>並列実行</strong>：3つのスペシャリストが同時に作業
 
-3. **統合**：マネージャーがすべての成果物を統合して最終レポート
+3. <strong>統合</strong>：マネージャーがすべての成果物を統合して最終レポート
 
 ### 1.2 イベント駆動型オーケストレーション
 
 リアルタイムシステムでは、イベントに反応して適切なエージェントを起動するパターンが効果的です。
 
-**アーキテクチャ図**：
+<strong>アーキテクチャ図</strong>：
 
 ```mermaid
 graph LR
@@ -211,7 +211,7 @@ graph LR
     style Router fill:#10A37F,color:#fff
 ```
 
-**実装例**：
+<strong>実装例</strong>：
 
 ```python
 from openai_agents import Agent, Runner
@@ -315,7 +315,7 @@ asyncio.run(main())
 
 複雑な意思決定フローには、条件分岐と動的ルーティングを持つグラフ構造が適しています。
 
-**ワークフロー図**：
+<strong>ワークフロー図</strong>：
 
 ```mermaid
 graph TD
@@ -342,7 +342,7 @@ graph TD
     style End fill:#10A37F,color:#fff
 ```
 
-**実装例（LangGraph使用）**：
+<strong>実装例（LangGraph使用）</strong>：
 
 ```python
 from langgraph.graph import Graph, StateGraph
@@ -495,9 +495,9 @@ AgentKitの真の力は、MCPプロトコルを通じた独自ツールの構築
 
 ### 2.1 Slack統合MCPサーバー
 
-**ユースケース**：エージェントがSlackメッセージを送信し、チャンネル履歴を読み、リアクションを追加できるようにします。
+<strong>ユースケース</strong>：エージェントがSlackメッセージを送信し、チャンネル履歴を読み、リアクションを追加できるようにします。
 
-**実装**：
+<strong>実装</strong>：
 
 ```python
 from mcp import Server, Tool, Context
@@ -636,7 +636,7 @@ if __name__ == "__main__":
     server.run(transport="stdio")  # stdio または websocket
 ```
 
-**エージェントで使用**：
+<strong>エージェントで使用</strong>：
 
 ```python
 from openai_agents import Agent, Runner
@@ -682,22 +682,22 @@ print(result.output)
 
 ### 2.2 MCPサーバーのベストプラクティス
 
-1. **エラーハンドリング**：すべてのツール呼び出しを`try-except`でラップ
-2. **認証**：環境変数でAPIキーを管理（`.env`ファイル）
-3. **レート制限**：APIレート制限を考慮（バックオフ戦略実装）
-4. **ロギング**：デバッグ用の詳細ログ
-5. **型安全性**：Pydanticでパラメータ検証
-6. **ドキュメント**：各ツールに明確な説明を追加
+1. <strong>エラーハンドリング</strong>：すべてのツール呼び出しを`try-except`でラップ
+2. <strong>認証</strong>：環境変数でAPIキーを管理（`.env`ファイル）
+3. <strong>レート制限</strong>：APIレート制限を考慮（バックオフ戦略実装）
+4. <strong>ロギング</strong>：デバッグ用の詳細ログ
+5. <strong>型安全性</strong>：Pydanticでパラメータ検証
+6. <strong>ドキュメント</strong>：各ツールに明確な説明を追加
 
 ---
 
 ## 3. 本番環境モニタリング（Evals使用）
 
-AgentKitの**Evals**機能は、エージェントパフォーマンスを継続的に監視・最適化します。
+AgentKitの<strong>Evals</strong>機能は、エージェントパフォーマンスを継続的に監視・最適化します。
 
 ### 3.1 A/Bテストでプロンプト最適化
 
-**シナリオ**：カスタマーサポートエージェントの2つのプロンプトバージョンを比較
+<strong>シナリオ</strong>：カスタマーサポートエージェントの2つのプロンプトバージョンを比較
 
 ```python
 from openai_agents import Agent, Runner
@@ -826,7 +826,7 @@ print(f"改善度：+{optimizer.improvement}（満足度 3.8 → 4.0）")
 
 ### 4.1 マルチテナンシー実装
 
-**シナリオ**：SaaSプラットフォームで複数の顧客がエージェントを共有、データは厳格に分離
+<strong>シナリオ</strong>：SaaSプラットフォームで複数の顧客がエージェントを共有、データは厳格に分離
 
 ```python
 from openai_agents import Agent, Runner, Session
@@ -909,7 +909,7 @@ result_b = assistant.query_with_isolation(
 
 ### 4.2 GDPR/CCPAコンプライアンス
 
-**データ削除リクエスト処理**：
+<strong>データ削除リクエスト処理</strong>：
 
 ```python
 from openai_agents import Agent, Runner
@@ -1007,11 +1007,11 @@ print(f"監査ログ:\n{audit_trail}")
 
 ### ケーススタディ 1：SaaSオンボーディング自動化
 
-**企業**：ProjectManage Pro（架空のプロジェクト管理SaaS）
+<strong>企業</strong>：ProjectManage Pro（架空のプロジェクト管理SaaS）
 
-**課題**：新規ユーザーのオンボーディングプロセスが遅く（平均7日）、チャーン率が高い（30日以内に40%離脱）
+<strong>課題</strong>：新規ユーザーのオンボーディングプロセスが遅く（平均7日）、チャーン率が高い（30日以内に40%離脱）
 
-**AgentKit実装**：
+<strong>AgentKit実装</strong>：
 
 ```python
 from openai_agents import Agent, Runner
@@ -1068,20 +1068,20 @@ result = runner.run(
 )
 ```
 
-**結果**：
+<strong>結果</strong>：
 
-- **オンボーディング時間**：7日 → 2日（70%短縮）
-- **30日チャーン率**：40% → 12%（28ポイント改善）
-- **アクティベーション率**：45% → 78%（73%向上）
-- **カスタマーサポートチケット**：50%削減
+- <strong>オンボーディング時間</strong>：7日 → 2日（70%短縮）
+- <strong>30日チャーン率</strong>：40% → 12%（28ポイント改善）
+- <strong>アクティベーション率</strong>：45% → 78%（73%向上）
+- <strong>カスタマーサポートチケット</strong>：50%削減
 
 ### ケーススタディ 2：データパイプライン自動復旧
 
-**企業**：DataFlow Analytics（ビッグデータ分析プラットフォーム）
+<strong>企業</strong>：DataFlow Analytics（ビッグデータ分析プラットフォーム）
 
-**課題**：ETLパイプラインの障害が頻繁に発生（週に5-10回）、手動復旧に平均2時間かかる
+<strong>課題</strong>：ETLパイプラインの障害が頻繁に発生（週に5-10回）、手動復旧に平均2時間かかる
 
-**AgentKit実装**：
+<strong>AgentKit実装</strong>：
 
 ```python
 from openai_agents import Agent, Runner
@@ -1151,20 +1151,20 @@ async def monitor_pipeline():
 asyncio.run(monitor_pipeline())
 ```
 
-**結果**：
+<strong>結果</strong>：
 
-- **MTTR（平均復旧時間）**：2時間 → 22分（82%短縮）
-- **自動復旧成功率**：0% → 73%
-- **オンコールエンジニアの負担**：週40時間 → 週8時間（80%削減）
-- **パイプラインアップタイム**：92% → 99.2%
+- <strong>MTTR（平均復旧時間）</strong>：2時間 → 22分（82%短縮）
+- <strong>自動復旧成功率</strong>：0% → 73%
+- <strong>オンコールエンジニアの負担</strong>：週40時間 → 週8時間（80%削減）
+- <strong>パイプラインアップタイム</strong>：92% → 99.2%
 
 ### ケーススタディ 3：DevOpsワークフロー自動化
 
-**企業**：MicroServices Corp（マイクロサービスアーキテクチャ採用企業）
+<strong>企業</strong>：MicroServices Corp（マイクロサービスアーキテクチャ採用企業）
 
-**課題**：毎日50+回のデプロイ、手動レビューがボトルネック（デプロイ待ち時間平均3時間）
+<strong>課題</strong>：毎日50+回のデプロイ、手動レビューがボトルネック（デプロイ待ち時間平均3時間）
 
-**AgentKit実装**：
+<strong>AgentKit実装</strong>：
 
 ```python
 from openai_agents import Agent, Runner
@@ -1226,12 +1226,12 @@ def on_pull_request_opened(pr_data):
         print(f"デプロイブロック：{result.output}")
 ```
 
-**結果**：
+<strong>結果</strong>：
 
-- **デプロイ待ち時間**：3時間 → 8分（96%短縮）
-- **手動レビュー負担**：1日8時間 → 1日30分（94%削減）
-- **デプロイ頻度**：1日50回 → 1日200回（300%増加）
-- **プロダクション障害**：週3回 → 月1回（92%削減）
+- <strong>デプロイ待ち時間</strong>：3時間 → 8分（96%短縮）
+- <strong>手動レビュー負担</strong>：1日8時間 → 1日30分（94%削減）
+- <strong>デプロイ頻度</strong>：1日50回 → 1日200回（300%増加）
+- <strong>プロダクション障害</strong>：週3回 → 月1回（92%削減）
 
 ---
 
@@ -1318,16 +1318,16 @@ results = runner.run_batch(
 
 パート2では、AgentKitの高度な機能を探りました：
 
-1. **エンタープライズアーキテクチャパターン**：階層型、イベント駆動型、グラフベースの3つのパターン
-2. **カスタムMCPサーバー**：Slack統合など、独自ツール開発方法
-3. **本番環境監視**：EvalsでのA/Bテスト、自動プロンプト最適化
-4. **セキュリティとコンプライアンス**：マルチテナンシー、GDPR対応
-5. **実世界ケーススタディ**：SaaSオンボーディング70%時間短縮、データパイプライン自動復旧82% MTTR削減、DevOps手動レビュー94%削減
-6. **パフォーマンス最適化**：並列処理、ストリーミング、バッチ処理
+1. <strong>エンタープライズアーキテクチャパターン</strong>：階層型、イベント駆動型、グラフベースの3つのパターン
+2. <strong>カスタムMCPサーバー</strong>：Slack統合など、独自ツール開発方法
+3. <strong>本番環境監視</strong>：EvalsでのA/Bテスト、自動プロンプト最適化
+4. <strong>セキュリティとコンプライアンス</strong>：マルチテナンシー、GDPR対応
+5. <strong>実世界ケーススタディ</strong>：SaaSオンボーディング70%時間短縮、データパイプライン自動復旧82% MTTR削減、DevOps手動レビュー94%削減
+6. <strong>パフォーマンス最適化</strong>：並列処理、ストリーミング、バッチ処理
 
 AgentKitは、理論から実践まで、あらゆるスケールのAIエージェントシステムを構築できる強力なプラットフォームです。
 
-**次のステップ**：
+<strong>次のステップ</strong>：
 
 - [OpenAI AgentKit公式ドキュメント](https://platform.openai.com/docs/agents)
 - [MCPプロトコル仕様](https://modelcontextprotocol.io)

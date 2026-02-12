@@ -62,11 +62,11 @@ relatedPosts:
 
 When running a blog, you often see readers bounce after consuming just one article. They leave without discovering other relevant, high-quality content that exists on your site. Traditional "related posts" systems mostly rely on tag matching, which has several limitations:
 
-- **Surface-level matching**: "react" and "nextjs" tags are deeply related, but won't be recommended unless they match exactly
-- **Lack of context**: A beginner tutorial and advanced architecture post might share tags, but target different reader levels
-- **Multilingual challenges**: Connecting Korean/English/Japanese articles covering the same topic is difficult
+- <strong>Surface-level matching</strong>: "react" and "nextjs" tags are deeply related, but won't be recommended unless they match exactly
+- <strong>Lack of context</strong>: A beginner tutorial and advanced architecture post might share tags, but target different reader levels
+- <strong>Multilingual challenges</strong>: Connecting Korean/English/Japanese articles covering the same topic is difficult
 
-With **Claude LLM**, you can now build an intelligent recommendation system that understands article meaning, difficulty level, purpose, and complementary relationships. This guide covers the complete process of implementing a Claude-based recommendation system for an Astro static blog.
+With <strong>Claude LLM</strong>, you can now build an intelligent recommendation system that understands article meaning, difficulty level, purpose, and complementary relationships. This guide covers the complete process of implementing a Claude-based recommendation system for an Astro static blog.
 
 ## Why LLM-Based Recommendations?
 
@@ -74,16 +74,16 @@ With **Claude LLM**, you can now build an intelligent recommendation system that
 
 | Aspect | TF-IDF/Tag-Based | Claude LLM-Based |
 |--------|------------------|------------------|
-| **Accuracy** | Keyword matching only | Semantic similarity understanding |
-| **Multilingual** | Requires separate handling | Natural cross-language connections |
-| **Context Understanding** | Impossible | Grasps difficulty, purpose, audience |
-| **Cold Start** | Can't recommend without tags | Content-based recommendations |
-| **Explainability** | None | Provides recommendation reasoning |
-| **Implementation Complexity** | Medium | Low (API calls) |
+| <strong>Accuracy</strong> | Keyword matching only | Semantic similarity understanding |
+| <strong>Multilingual</strong> | Requires separate handling | Natural cross-language connections |
+| <strong>Context Understanding</strong> | Impossible | Grasps difficulty, purpose, audience |
+| <strong>Cold Start</strong> | Can't recommend without tags | Content-based recommendations |
+| <strong>Explainability</strong> | None | Provides recommendation reasoning |
+| <strong>Implementation Complexity</strong> | Medium | Low (API calls) |
 
 ### Key Advantages of LLM-Based Recommendations
 
-#### 1. **Multi-Dimensional Similarity Evaluation**
+#### 1. <strong>Multi-Dimensional Similarity Evaluation</strong>
 
 Claude evaluates similarity across multiple dimensions beyond simple word frequency:
 
@@ -98,7 +98,7 @@ Claude evaluates similarity across multiple dimensions beyond simple word freque
 }
 ```
 
-#### 2. **Explainable Recommendations**
+#### 2. <strong>Explainable Recommendations</strong>
 
 You can clearly communicate to readers why an article was recommended:
 
@@ -111,7 +111,7 @@ You can clearly communicate to readers why an article was recommended:
 }
 ```
 
-#### 3. **Zero-Shot Recommendations**
+#### 3. <strong>Zero-Shot Recommendations</strong>
 
 Newly created articles can immediately receive sophisticated recommendations. Even without tags or similar articles, the LLM understands content and finds relevant connections.
 
@@ -133,10 +133,10 @@ graph TD
 
 ### Core Components
 
-1. **Content Recommender Agent**: Claude-based similarity evaluation agent
-2. **Generate Recommendations Command**: Automated recommendation data generation
-3. **recommendations.json**: Pre-computed recommendation data store
-4. **RelatedPosts Component**: Recommendation UI rendering
+1. <strong>Content Recommender Agent</strong>: Claude-based similarity evaluation agent
+2. <strong>Generate Recommendations Command</strong>: Automated recommendation data generation
+3. <strong>recommendations.json</strong>: Pre-computed recommendation data store
+4. <strong>RelatedPosts Component</strong>: Recommendation UI rendering
 
 ## Implementation Steps
 
@@ -562,9 +562,9 @@ git commit -m "chore: update recommendations for new post"
 
 ### Build Time Optimization
 
-**Problem**: 30 posts × 5 seconds = 2.5 minutes
+<strong>Problem</strong>: 30 posts × 5 seconds = 2.5 minutes
 
-**Solutions**:
+<strong>Solutions</strong>:
 
 #### 1. Parallel Processing
 
@@ -613,9 +613,9 @@ const postsToProcess = posts.filter(post => {
 
 ### Runtime Performance
 
-**Static Site Advantages**:
+<strong>Static Site Advantages</strong>:
 - `recommendations.json` generated at build time
-- Runtime computation cost: **Zero**
+- Runtime computation cost: <strong>Zero</strong>
 - JSON file size: ~100KB (for 30 posts)
 - After Gzip compression: ~30KB
 
@@ -634,10 +634,10 @@ Based on industry data:
 
 ### Qualitative Effects
 
-1. **Enhanced Content Discovery**: Readers easily find deeply relevant content
-2. **Improved Learning Journey**: Natural progression from beginner → intermediate → advanced
-3. **Series Connectivity**: Better exposure of article series and related topic clusters
-4. **Multilingual Cross-Promotion**: Connect related content across languages
+1. <strong>Enhanced Content Discovery</strong>: Readers easily find deeply relevant content
+2. <strong>Improved Learning Journey</strong>: Natural progression from beginner → intermediate → advanced
+3. <strong>Series Connectivity</strong>: Better exposure of article series and related topic clusters
+4. <strong>Multilingual Cross-Promotion</strong>: Connect related content across languages
 
 ## Future Enhancement Directions
 
@@ -692,18 +692,18 @@ const unreadRecommendations = recommendations.filter(
 
 ## Conclusion
 
-A Claude LLM-based content recommendation system goes beyond simple tag matching to provide truly helpful recommendations through **semantic understanding**. Combined with static site generators like Astro:
+A Claude LLM-based content recommendation system goes beyond simple tag matching to provide truly helpful recommendations through <strong>semantic understanding</strong>. Combined with static site generators like Astro:
 
-✅ **Build-time pre-computation** for zero runtime cost
-✅ **LLM's sophisticated analysis** for high recommendation accuracy
-✅ **Automated workflows** for minimal maintenance
-✅ **Natural multilingual support** for global blog optimization
+✅ <strong>Build-time pre-computation</strong> for zero runtime cost
+✅ <strong>LLM's sophisticated analysis</strong> for high recommendation accuracy
+✅ <strong>Automated workflows</strong> for minimal maintenance
+✅ <strong>Natural multilingual support</strong> for global blog optimization
 
 Implementing this system will increase reader engagement time, improve content discoverability, and ultimately maximize your blog's value. You can apply it to your existing blog right away—start building today!
 
 ## Next Article
 
-**[Recommendation System Optimization: From 78K Tokens to Zero](/en/blog/metadata-based-recommendation-optimization)** covers how we optimized this LLM-based recommendation system with a metadata-based algorithm, eliminating 100% of token usage and reducing execution time by 99%.
+<strong>[Recommendation System Optimization: From 78K Tokens to Zero](/en/blog/metadata-based-recommendation-optimization)</strong> covers how we optimized this LLM-based recommendation system with a metadata-based algorithm, eliminating 100% of token usage and reducing execution time by 99%.
 
 ## References
 

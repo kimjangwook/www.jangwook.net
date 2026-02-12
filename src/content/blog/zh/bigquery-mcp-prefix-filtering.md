@@ -883,9 +883,9 @@ npm start
 
 要将 MCP 服务器连接到 Claude Desktop，需要修改配置文件：
 
-**macOS**：`~/Library/Application Support/Claude/claude_desktop_config.json`
+<strong>macOS</strong>：`~/Library/Application Support/Claude/claude_desktop_config.json`
 
-**Windows**：`%APPDATA%\Claude\claude_desktop_config.json`
+<strong>Windows</strong>：`%APPDATA%\Claude\claude_desktop_config.json`
 
 ````json
 {
