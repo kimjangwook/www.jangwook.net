@@ -1010,5 +1010,16 @@
       "devops": 0.4,
       "architecture": 0.7
     }
+  },
+  "webmcp-chrome-146-ai-tool-server": {
+    "pubDate": "2026-02-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.9,
+      "ai-ml": 0.85,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
   }
 }
