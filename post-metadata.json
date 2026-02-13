@@ -1011,6 +1011,17 @@
       "architecture": 0.7
     }
   },
+  "mit-soar-self-curriculum-reasoning": {
+    "pubDate": "2026-02-13",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.0,
+      "ai-ml": 1.0,
+      "devops": 0.0,
+      "architecture": 0.5
+    }
+  },
   "webmcp-chrome-146-ai-tool-server": {
     "pubDate": "2026-02-13",
     "difficulty": 3,
