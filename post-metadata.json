@@ -1043,5 +1043,16 @@
       "devops": 0.1,
       "architecture": 0.7
     }
+  },
+  "windsurf-arena-mode-speed-over-accuracy": {
+    "pubDate": "2026-02-13",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.1,
+      "architecture": 0.3
+    }
   }
 }
