@@ -999,5 +999,16 @@
       "devops": 0.2,
       "architecture": 0.9
     }
+  },
+  "gpt4o-retirement-model-dependency-risk": {
+    "pubDate": "2026-02-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.7
+    }
   }
 }
