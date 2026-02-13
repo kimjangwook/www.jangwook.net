@@ -1032,5 +1032,16 @@
       "devops": 0.2,
       "architecture": 0.7
     }
+  },
+  "openai-atlas-ai-app-hub": {
+    "pubDate": "2026-02-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.5,
+      "ai-ml": 0.9,
+      "devops": 0.1,
+      "architecture": 0.7
+    }
   }
 }
