@@ -45,9 +45,14 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-14
 
-**총 포스트 수**: 108개 (한국어 기준)
+**총 포스트 수**: 109개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **OpenClaw dev 버전 업데이트 에러 해결: unknown command doctor** (2026-02-14)
+
+   - OpenClaw dev 버전에서 openclaw update 실행 시 발생하는 error: unknown command 'doctor' 에러의 원인 분석과 3가지 시도를 거친 해결 과정
+   - **핵심 내용**: OpenClaw, doctor 커맨드, register.subclis.ts, CLI 트러블슈팅
 
 1. **GPT-5.2가 이론물리학에서 새로운 성과 도출 — AI가 '발견자'가 되는 전환점** (2026-02-14)
 
