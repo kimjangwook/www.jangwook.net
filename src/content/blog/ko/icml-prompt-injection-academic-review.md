@@ -1,6 +1,6 @@
 ---
 title: ICML 논문에 프롬프트 인젝션 삽입 — 학술 AI 심사의 취약성
-description: ICML 제출 논문에 프롬프트 인젝션이 삽입된 사건이 발각되었습니다. AI 심사에 의존하는 학술계의 보안 리스크를 기술적으로 분석합니다.
+description: ICML 제출 논문에 프롬프트 인젝션이 삽입된 사건이 발각되었습니다. AI 심사에 의존하는 학술계의 보안 리스크를 기술적으로 해설합니다.
 pubDate: '2026-02-14'
 heroImage: ../../../assets/blog/icml-prompt-injection-academic-review-hero.png
 tags:
