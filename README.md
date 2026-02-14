@@ -45,7 +45,7 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-14
 
-**총 포스트 수**: 102개 (한국어 기준)
+**총 포스트 수**: 108개 (한국어 기준)
 
 ### 공개된 포스트
 
@@ -797,6 +797,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-14 (GPT-5.2 이론물리학 발견 포스트 발행)
+**Last Updated**: 2026-02-14 (ICML 프롬프트 인젝션 학술 심사 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

@@ -21,6 +21,13 @@ relatedPosts:
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: icml-prompt-injection-academic-review
+    score: 0.94
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: ai-agent-persona-analysis
     score: 0.93
     reason:
@@ -44,13 +51,6 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
       zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
-  - slug: gpt4o-retirement-model-dependency-risk
-    score: 0.92
-    reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
 ---
 
 ## Overview

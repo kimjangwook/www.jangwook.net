@@ -1076,5 +1076,16 @@
       "devops": 0.0,
       "architecture": 0.3
     }
+  },
+  "icml-prompt-injection-academic-review": {
+    "pubDate": "2026-02-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.3
+    }
   }
 }
