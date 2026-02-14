@@ -1,6 +1,11 @@
 ---
-title: 'The Truth Behind Moltbook's "AI Society" — Forbes/MIT Tech Review Exposé and the AI Theater Problem'
-description: "Moltbook's AI autonomous society was revealed to be controlled by human operators. We analyze the AI Theater phenomenon and its implications for engineering leaders."
+title: >-
+  The Truth Behind Moltbook's "AI Society" — Forbes/MIT Tech Review Exposé and
+  the AI Theater Problem
+description: >-
+  Moltbook's AI autonomous society was revealed to be controlled by human
+  operators. We analyze the AI Theater phenomenon and its implications for
+  engineering leaders.
 pubDate: '2026-02-14'
 heroImage: ../../../assets/blog/moltbook-ai-theater-human-control-hero.png
 tags:
@@ -8,6 +13,46 @@ tags:
   - ai-agents
   - ai-ethics
   - technology
+relatedPosts:
+  - slug: ai-agent-persona-analysis
+    score: 0.93
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: ai-agent-kpi-ethics
+    score: 0.93
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: ssr-survey-analysis
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML
+        topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
+  - slug: gpt4o-retirement-model-dependency-risk
+    score: 0.92
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: mit-soar-self-curriculum-reasoning
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML
+        topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
 ## Overview
