@@ -1057,17 +1057,6 @@
   },
   "moltbook-ai-theater-human-control": {
     "pubDate": "2026-02-14",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.1,
-      "architecture": 0.3
-    }
-  },
-  "moltbook-ai-theater-human-control": {
-    "pubDate": "2026-02-14",
     "difficulty": 3,
     "categoryScores": {
       "automation": 0.2,
@@ -1075,6 +1064,17 @@
       "ai-ml": 0.95,
       "devops": 0.15,
       "architecture": 0.4
+    }
+  },
+  "gpt52-theoretical-physics-discovery": {
+    "pubDate": "2026-02-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.0,
+      "architecture": 0.3
     }
   }
 }
