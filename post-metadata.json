@@ -1109,5 +1109,16 @@
       "devops": 0.1,
       "architecture": 0.8
     }
+  },
+  "nvidia-llm-inference-cost-reduction": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.6
+    }
   }
 }
