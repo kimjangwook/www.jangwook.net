@@ -1131,5 +1131,16 @@
       "devops": 0.3,
       "architecture": 0.5
     }
+  },
+  "nvidia-dgx-spark-cuda-compatibility": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 0.85,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
   }
 }
