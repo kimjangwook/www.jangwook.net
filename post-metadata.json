@@ -1098,5 +1098,16 @@
       "devops": 0.9,
       "architecture": 0.4
     }
+  },
+  "ibm-gen-z-hiring-ai-limits": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.85,
+      "devops": 0.1,
+      "architecture": 0.8
+    }
   }
 }

@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-02-14
+**최신 포스트 날짜**: 2026-02-15
 
-**총 포스트 수**: 109개 (한국어 기준)
+**총 포스트 수**: 110개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **OpenClaw dev 버전 업데이트 에러 해결: unknown command doctor** (2026-02-14)
+1. **IBM, AI 대체의 한계를 실감하고 엔트리 레벨 채용 3배 확대** (2026-02-15)
+
+   - IBM이 AI 도입의 한계를 인식하고 Gen Z 엔트리 레벨 채용을 3배로 확대. EM 관점에서 AI 대체의 현실, 대기업 인력 계획, 조직 설계 변화를 분석
+   - **핵심 내용**: AI 대체 한계, 엔트리 레벨 채용, 조직 설계, Gen Z
+
+2. **OpenClaw dev 버전 업데이트 에러 해결: unknown command doctor** (2026-02-14)
 
    - OpenClaw dev 버전에서 openclaw update 실행 시 발생하는 error: unknown command 'doctor' 에러의 원인 분석과 3가지 시도를 거친 해결 과정
    - **핵심 내용**: OpenClaw, doctor 커맨드, register.subclis.ts, CLI 트러블슈팅
@@ -802,6 +807,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-14 (ICML 프롬프트 인젝션 학술 심사 포스트 발행)
+**Last Updated**: 2026-02-15 (IBM Gen Z 채용 확대 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
