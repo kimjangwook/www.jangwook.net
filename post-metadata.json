@@ -1120,5 +1120,16 @@
       "devops": 0.4,
       "architecture": 0.6
     }
+  },
+  "minimax-m25-open-weight-vs-proprietary": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.5
+    }
   }
 }
