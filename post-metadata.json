@@ -1153,5 +1153,16 @@
       "devops": 0.1,
       "architecture": 0.4
     }
+  },
+  "claude-code-local-model-inefficiency": {
+    "pubDate": "2026-02-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.85
+    }
   }
 }

@@ -43,13 +43,18 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-02-15
+**최신 포스트 날짜**: 2026-02-16
 
-**총 포스트 수**: 112개 (한국어 기준)
+**총 포스트 수**: 113개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **NVIDIA DGX Spark의 CUDA 호환성 문제 — 개인용 AI 워크스테이션의 현실** (2026-02-15)
+1. **Claude Code 로컬 모델 사용 시 전체 프롬프트 재처리 — 아키텍처 비효율성 분석** (2026-02-16)
+
+   - Claude Code를 로컬 LLM으로 실행할 때 발생하는 전체 프롬프트 재처리 문제의 원인과 해결책 분석
+   - **핵심 내용**: Claude Code, KV 캐시, 로컬 LLM, 개발자 도구, 아키텍처 설계
+
+2. **NVIDIA DGX Spark의 CUDA 호환성 문제 — 개인용 AI 워크스테이션의 현실** (2026-02-15)
 
    - NVIDIA DGX Spark의 sm121 아키텍처가 초래한 CUDA 소프트웨어 호환성 문제와 핸드헬드 게이밍 칩 유용 의혹을 기술적으로 분석
    - **핵심 내용**: DGX Spark, sm121, CUDA 호환성, 게이밍 칩 유용, AI 하드웨어
@@ -817,6 +822,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-15 (NVIDIA NVFP4 LLM 추론 비용 절감 포스트 발행)
+**Last Updated**: 2026-02-16 (Claude Code 로컬 모델 비효율성 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
