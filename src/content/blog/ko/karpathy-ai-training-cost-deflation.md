@@ -114,7 +114,7 @@ TPU v3에서 H100으로의 전환은 단순한 세대 교체를 넘어 근본적
 
 ### 4. 데이터 파이프라인 최적화 (Data)
 
-고품질 데이터 큐레이션과 효율적 데이터 로딩이 학습 효율을 높입니다.
+고품질 데이터 큐레이션과 효율적인 데이터 로딩이 학습 효율을 높입니다.
 
 - <strong>FineWeb-edu</strong>: 교육용 고품질 웹 데이터로 데이터 효율성 극대화
 - <strong>BOS-aligned dataloader</strong>: 모든 시퀀스가 BOS 토큰으로 시작하여 midtraining 불필요
