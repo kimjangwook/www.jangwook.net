@@ -1164,5 +1164,16 @@
       "devops": 0.4,
       "architecture": 0.85
     }
+  },
+  "qwen3-coder-8gb-vram": {
+    "pubDate": "2026-02-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.6
+    }
   }
 }

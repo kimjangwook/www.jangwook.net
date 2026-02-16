@@ -45,11 +45,12 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-16
 
-**총 포스트 수**: 113개 (한국어 기준)
+**총 포스트 수**: 114개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Claude Code 로컬 모델 사용 시 전체 프롬프트 재처리 — 아키텍처 비효율성 분석** (2026-02-16)
+1. **Qwen3-Coder-Next 80B를 8GB VRAM으로 실행하는 방법** (2026-02-16)
+2. **Claude Code 로컬 모델 사용 시 전체 프롬프트 재처리 — 아키텍처 비효율성 분석** (2026-02-16)
 
    - Claude Code를 로컬 LLM으로 실행할 때 발생하는 전체 프롬프트 재처리 문제의 원인과 해결책 분석
    - **핵심 내용**: Claude Code, KV 캐시, 로컬 LLM, 개발자 도구, 아키텍처 설계
@@ -822,6 +823,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-16 (Claude Code 로컬 모델 비효율성 포스트 발행)
+**Last Updated**: 2026-02-16 (Qwen3-Coder-Next 8GB VRAM 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
