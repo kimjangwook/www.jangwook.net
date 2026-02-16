@@ -1175,5 +1175,16 @@
       "devops": 0.3,
       "architecture": 0.6
     }
+  },
+  "heretic-12-vram-reduction": {
+    "pubDate": "2026-02-16",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.5
+    }
   }
 }
