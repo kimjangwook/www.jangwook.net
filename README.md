@@ -45,9 +45,14 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-16
 
-**총 포스트 수**: 115개 (한국어 기준)
+**총 포스트 수**: 116개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **Karpathy "AI 학습 비용은 연 40% 하락" — 디플레이션이 업계 구조를 바꾼다** (2026-02-16)
+
+   - AI 모델 학습 비용이 매년 40%씩 하락하는 구조적 요인과 업계 영향 분석
+   - **핵심 내용**: AI, LLM, 학습 비용, Karpathy, nanochat, 디플레이션
 
 1. **Heretic 1.2 — 양자화로 VRAM 70% 절감과 MPOA 기술 해부** (2026-02-16)
 
@@ -828,6 +833,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-16 (Heretic 1.2 VRAM 70% 절감 포스트 발행)
+**Last Updated**: 2026-02-16 (Karpathy AI 학습 비용 디플레이션 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
