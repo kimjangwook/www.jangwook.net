@@ -1197,5 +1197,16 @@
       "devops": 0.3,
       "architecture": 0.4
     }
+  },
+  "sqlite-ai-swarm-build": {
+    "pubDate": "2026-02-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.5,
+      "architecture": 0.8
+    }
   }
 }
