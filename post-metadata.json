@@ -1219,5 +1219,16 @@
       "devops": 0.3,
       "architecture": 0.3
     }
+  },
+  "ai-self-generated-skills-myth": {
+    "pubDate": "2026-02-17",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.4
+    }
   }
 }
