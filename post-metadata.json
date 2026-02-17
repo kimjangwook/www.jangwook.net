@@ -1252,5 +1252,16 @@
       "devops": 0.2,
       "architecture": 0.5
     }
+  },
+  "qwen35-vending-bench-bankruptcy": {
+    "pubDate": "2026-02-17",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.0,
+      "architecture": 0.2
+    }
   }
 }
