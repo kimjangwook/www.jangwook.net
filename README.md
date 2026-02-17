@@ -45,9 +45,13 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-17
 
-**총 포스트 수**: 118개 (한국어 기준)
+**총 포스트 수**: 119개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **FunctionGemma 270M — 초소형 모델로 멀티턴 tool calling 정확도 90-97% 달성** (2026-02-17)
+
+   - 270M 파라미터 모델을 파인튜닝하여 120B 교사 모델에 필적하는 tool calling 정확도 달성 사례 분석
 
 1. **AI가 스스로 생성한 스킬은 무의미하다 — LLM 자기개선 신화를 뒤집는 연구** (2026-02-17)
 
@@ -838,6 +842,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-17 (OpenRouter OSS Dominance 포스트 발행)
+**Last Updated**: 2026-02-17 (FunctionGemma 270M Tool Calling 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

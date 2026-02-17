@@ -1230,5 +1230,16 @@
       "devops": 0.1,
       "architecture": 0.4
     }
+  },
+  "functiongemma-270m-tool-calling": {
+    "pubDate": "2026-02-17",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.4
+    }
   }
 }
