@@ -57,10 +57,10 @@ Anthropic이 <strong>Claude Sonnet 4.6</strong>을 출시했습니다. 이번 �
 
 Claude Code 내부 테스트에서 사용자들은 Sonnet 4.6을 Sonnet 4.5 대비 <strong>약 70%의 비율로 선호</strong>했습니다. 특히 다음과 같은 개선이 보고되었습니다:
 
-- 코드 수정 전 <strong>컨텍스트를 더 효과적으로 파악</strong>
+- 코드 수정 전 <strong>컨텍스트(Context)를 더 효과적으로 파악</strong>
 - 공유 로직을 중복 없이 <strong>통합하는 능력 향상</strong>
-- 장시간 세션에서의 <strong>피로도 감소</strong>
-- 과도한 엔지니어링과 "게으른 응답" <strong>현저히 감소</strong>
+- 장시간 세션에서의 <strong>성능 저하 감소</strong>
+- 과도한 엔지니어링과 "게으른 응답"이 <strong>크게 줄어듦</strong>
 
 놀랍게도 사용자들은 2025년 11월 출시된 프론티어 모델 <strong>Opus 4.5보다도 Sonnet 4.6을 59% 비율로 선호</strong>했습니다.
 
@@ -141,14 +141,14 @@ graph TD
     style B fill:#D4A574,color:#fff
 ```
 
-Anthropic은 Sonnet 4.6이 <strong>"성능 대 비용 비율이 놀라울 정도"</strong>라고 표현했으며, 실제로 Heavy Opus 사용자에게 <strong>실행 가능한 대안</strong>이 되었다는 고객 피드백을 공개했습니다.
+Anthropic은 Sonnet 4.6의 <strong>"성능 대비 비용 효율이 놀라운 수준"</strong>이라고 표현했으며, 실제로 Opus를 많이 사용하던 고객에게 <strong>충분한 대안</strong>이 되고 있다는 피드백을 공개했습니다.
 
 ## 플랫폼 업데이트
 
 Sonnet 4.6 출시와 함께 주목할 만한 플랫폼 개선사항들이 있습니다:
 
-- <strong>적응형 사고(Adaptive Thinking)</strong>와 확장 사고 지원
-- <strong>컨텍스트 압축(Compaction)</strong> 베타: 대화가 한계에 가까워지면 이전 맥락을 자동 요약
+- <strong>어댑티브 씽킹(Adaptive Thinking)</strong>과 확장 사고 지원
+- <strong>컨텍스트 컴팩션(Compaction)</strong> 베타: 대화가 한계에 가까워지면 이전 맥락을 자동 요약
 - <strong>웹 검색/페치 도구</strong>: 검색 결과를 자동 필터링하는 코드 실행 기능 추가
 - <strong>Claude in Excel</strong>: MCP 커넥터 지원으로 S&P Global, Bloomberg 등 외부 데이터 연동
 - 코드 실행, 메모리, 프로그래매틱 도구 호출 등 <strong>GA(정식 출시)</strong>
@@ -157,7 +157,7 @@ Sonnet 4.6 출시와 함께 주목할 만한 플랫폼 개선사항들이 있습
 
 ### 마이그레이션 권장사항
 
-Anthropic은 Sonnet 4.5에서의 마이그레이션 시 <strong>사고 노력(thinking effort) 스펙트럼 전체를 탐색</strong>할 것을 권장합니다. Sonnet 4.6은 확장 사고 없이도 강력한 성능을 제공하므로, 용도에 따라 속도와 성능의 최적 균형점을 찾을 수 있습니다.
+Anthropic은 Sonnet 4.5에서 마이그레이션할 때 <strong>씽킹(Thinking) 강도를 다양하게 테스트</strong>해볼 것을 권장합니다. Sonnet 4.6은 확장 사고 없이도 강력한 성능을 제공하므로, 용도에 따라 속도와 성능의 최적 균형점을 찾을 수 있습니다.
 
 ### 모델 선택 가이드
 
