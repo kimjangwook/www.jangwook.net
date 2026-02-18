@@ -45,9 +45,13 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-18
 
-**총 포스트 수**: 120개 (한국어 기준)
+**총 포스트 수**: 121개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **CPU에서 1.2시간 만에 LLM 훈련 — MatMul-Free 아키텍처의 가능성** (2026-02-18)
+
+   - 행렬 곱셈 없이 삼진 가중치로 CPU만으로 언어 모델을 훈련하는 MatMul-Free 아키텍처의 원리와 에지 AI 활용 가능성을 분석
 
 1. **Claude Sonnet 4.6 출시 — Anthropic의 중간 모델 전략과 성능 분석** (2026-02-18)
 
@@ -846,6 +850,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-18 (Claude Sonnet 4.6 Release 포스트 발행)
+**Last Updated**: 2026-02-18 (MatMul-Free CPU LLM Training 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

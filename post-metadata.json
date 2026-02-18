@@ -1274,5 +1274,16 @@
       "devops": 0.2,
       "architecture": 0.5
     }
+  },
+  "matmulfree-cpu-llm-training": {
+    "pubDate": "2026-02-18",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.6
+    }
   }
 }
