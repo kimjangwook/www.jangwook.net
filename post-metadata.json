@@ -1307,5 +1307,16 @@
       "devops": 0.1,
       "architecture": 0.3
     }
+  },
+  "deepseek-v4-release": {
+    "pubDate": "2026-02-18",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 1.0,
+      "devops": 0.0,
+      "architecture": 0.3
+    }
   }
 }
