@@ -45,11 +45,15 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-18
 
-**총 포스트 수**: 122개 (한국어 기준)
+**총 포스트 수**: 123개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **BarraCUDA — CUDAコードをAMD GPUで動かすオープンソースコンパイラ** (2026-02-18)
+1. **KaniTTS2 — 3GB VRAMでボイスクローニング可能なオープンソースTTSモデル** (2026-02-18)
+
+   - 4億パラメータの軽量TTSモデルKaniTTS2がオープンソースで公開。3GB VRAMでボイスクローニングが可能で、事前学習コードも完全公開
+
+2. **BarraCUDA — CUDAコードをAMD GPUで動かすオープンソースコンパイラ** (2026-02-18)
 
    - NVIDIA CUDA独占に挑戦するBarraCUDAコンパイラの仕組み、対応CUDA機能、GPU民主化への影響を解説
 
@@ -854,6 +858,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-18 (BarraCUDA CUDA AMD Compiler 포스트 발행)
+**Last Updated**: 2026-02-18 (KaniTTS2 Voice Cloning 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

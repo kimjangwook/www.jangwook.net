@@ -1296,5 +1296,16 @@
       "devops": 0.3,
       "architecture": 0.8
     }
+  },
+  "kanitts2-voice-cloning": {
+    "pubDate": "2026-02-18",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.3
+    }
   }
 }
