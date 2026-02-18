@@ -45,11 +45,15 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-18
 
-**총 포스트 수**: 121개 (한국어 기준)
+**총 포스트 수**: 122개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **CPU에서 1.2시간 만에 LLM 훈련 — MatMul-Free 아키텍처의 가능성** (2026-02-18)
+1. **BarraCUDA — CUDAコードをAMD GPUで動かすオープンソースコンパイラ** (2026-02-18)
+
+   - NVIDIA CUDA独占に挑戦するBarraCUDAコンパイラの仕組み、対応CUDA機能、GPU民主化への影響を解説
+
+2. **CPU에서 1.2시간 만에 LLM 훈련 — MatMul-Free 아키텍처의 가능성** (2026-02-18)
 
    - 행렬 곱셈 없이 삼진 가중치로 CPU만으로 언어 모델을 훈련하는 MatMul-Free 아키텍처의 원리와 에지 AI 활용 가능성을 분석
 
@@ -850,6 +854,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-18 (MatMul-Free CPU LLM Training 포스트 발행)
+**Last Updated**: 2026-02-18 (BarraCUDA CUDA AMD Compiler 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

@@ -1285,5 +1285,16 @@
       "devops": 0.1,
       "architecture": 0.6
     }
+  },
+  "barracuda-cuda-amd-compiler": {
+    "pubDate": "2026-02-18",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 0.5,
+      "devops": 0.3,
+      "architecture": 0.8
+    }
   }
 }
