@@ -1,6 +1,6 @@
 ---
 title: CPU에서 1.2시간 만에 LLM 훈련 — MatMul-Free 아키텍처의 가능성
-description: 행렬 곱셈 없이 삼진 가중치로 CPU만으로 언어 모델을 훈련하는 MatMul-Free 아키텍처의 원리와 에지 AI 활용 가능성을 분석합니다.
+description: 행렬 곱셈 없이 삼진 가중치로 CPU만으로 언어 모델을 훈련하는 MatMul-Free 아키텍처의 원리와 엣지 AI 활용 가능성을 분석합니다.
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/matmulfree-cpu-llm-training-hero.png
 tags:
@@ -52,7 +52,7 @@ relatedPosts:
 
 GPU 없이 언어 모델을 훈련할 수 있다면? 최근 Reddit의 r/LocalLLaMA 커뮤니티에서 <strong>CPU만으로 1.2시간 만에 1,360만 파라미터 언어 모델을 훈련</strong>한 프로젝트가 공개되어 큰 관심을 모았습니다. FlashLM v3라 불리는 이 모델은 행렬 곱셈(MatMul)을 완전히 제거한 아키텍처를 사용하며, 추론 시에는 덧셈과 뺄셈만으로 동작합니다.
 
-이 글에서는 MatMul-Free 아키텍처의 핵심 원리, FlashLM v3의 구조, 그리고 에지 AI와 저비용 학습에 대한 시사점을 살펴봅니다.
+이 글에서는 MatMul-Free 아키텍처의 핵심 원리, FlashLM v3의 구조, 그리고 엣지 AI와 저비용 학습에 대한 시사점을 살펴봅니다.
 
 ## MatMul-Free 아키텍처란?
 
@@ -150,7 +150,7 @@ FlashLM v3는 UC Santa Cruz의 MatMul-Free 논문에서 영감을 받았지만, 
 | 메모리 절감 | 훈련 시 61%, 추론 시 10배 | CPU에서 동작 가능 수준 |
 | 목표 | 대규모 효율성 증명 | 초소형 CPU 훈련 가능성 증명 |
 
-## 에지 AI와 저비용 학습에 대한 시사점
+## 엣지 AI와 저비용 학습에 대한 시사점
 
 ### 1. GPU 없는 AI 개발
 
@@ -160,13 +160,13 @@ MatMul-Free 아키텍처는 GPU 접근이 제한된 환경에서의 AI 개발 �
 - <strong>개발도상국</strong>: 고가의 GPU 없이도 로컬 AI 모델 개발 가능
 - <strong>프로토타이핑</strong>: 아이디어를 빠르게 검증하는 데 GPU 대기 불필요
 
-### 2. 에지 디바이스 추론
+### 2. 엣지 디바이스 추론
 
-삼진 가중치의 가장 큰 장점은 <strong>에지 디바이스에서의 추론 효율성</strong>입니다:
+삼진 가중치의 가장 큰 장점은 <strong>엣지 디바이스에서의 추론 효율성</strong>입니다:
 
 - <strong>IoT 기기</strong>: 마이크로컨트롤러에서도 언어 모델 실행 가능
 - <strong>모바일</strong>: 배터리 소모 최소화하면서 온디바이스 추론
-- <strong>뉴로모픽 칩</strong>: 논문에 따르면 비동기 처리로 에지 GPU 대비 4배 처리량, 10배 에너지 절감
+- <strong>뉴로모픽 칩</strong>: 논문에 따르면 비동기 처리로 엣지 GPU 대비 4배 처리량, 10배 에너지 절감
 
 ### 3. 현실적 한계
 
