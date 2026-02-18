@@ -1263,5 +1263,16 @@
       "devops": 0.0,
       "architecture": 0.2
     }
+  },
+  "claude-sonnet-46-release": {
+    "pubDate": "2026-02-18",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.5
+    }
   }
 }

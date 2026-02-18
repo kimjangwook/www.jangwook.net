@@ -43,11 +43,15 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-02-17
+**최신 포스트 날짜**: 2026-02-18
 
-**총 포스트 수**: 119개 (한국어 기준)
+**총 포스트 수**: 120개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **Claude Sonnet 4.6 출시 — Anthropic의 중간 모델 전략과 성능 분석** (2026-02-18)
+
+   - Claude Sonnet 4.6의 업데이트 내용과 모델 버전 전략, 성능 비교, 비용 효율성을 종합적으로 분석
 
 1. **FunctionGemma 270M — 초소형 모델로 멀티턴 tool calling 정확도 90-97% 달성** (2026-02-17)
 
@@ -842,6 +846,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-17 (FunctionGemma 270M Tool Calling 포스트 발행)
+**Last Updated**: 2026-02-18 (Claude Sonnet 4.6 Release 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
