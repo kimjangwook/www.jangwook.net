@@ -1340,5 +1340,16 @@
       "devops": 0.4,
       "architecture": 0.6
     }
+  },
+  "local-ai-radio-smart-home": {
+    "pubDate": "2026-02-19",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.7
+    }
   }
 }
