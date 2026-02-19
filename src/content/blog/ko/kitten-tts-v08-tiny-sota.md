@@ -1,7 +1,7 @@
 ---
 title: Kitten TTS V0.8 — 25MB 미만으로 SOTA 달성한 초소형 TTS 모델 완전 해설
 description: >-
-  14M 파라미터·25MB 미만으로 클라우드 TTS 품질을 구현한 Kitten TTS V0.8을 철저히 분석합니다. 에지 디바이스 배포
+  14M 파라미터·25MB 미만으로 클라우드 TTS 품질을 구현한 Kitten TTS V0.8을 철저히 분석합니다. 엣지 디바이스 배포
   가능성과 로컬 음성 AI 최신 트렌드를 살펴봅니다.
 pubDate: '2026-02-19'
 heroImage: ../../../assets/blog/kitten-tts-v08-tiny-sota-hero.png
@@ -54,7 +54,7 @@ relatedPosts:
 
 음성 AI 분야에서 "작은 것이 곧 정의"인 시대가 도래했습니다. <strong>Kitten TTS V0.8</strong>은 단 <strong>14M 파라미터·25MB 미만</strong>이라는 크기로 클라우드 TTS에 필적하는 품질을 구현한 초소형 텍스트 음성 변환 모델입니다.
 
-KaniTTS2, Qwen3-TTS.cpp, FreeFlow 등 로컬 음성 AI 모델이 잇따라 등장하는 가운데, Kitten TTS는 극한의 경량성으로 새로운 지평을 열고 있습니다. 이 글에서는 Kitten TTS V0.8의 기술적 특징, 3가지 모델 변형 비교, 그리고 에지 디바이스 배포 가능성을 철저히 분석합니다.
+KaniTTS2, Qwen3-TTS.cpp, FreeFlow 등 로컬 음성 AI 모델이 잇따라 등장하는 가운데, Kitten TTS는 극한의 경량성으로 새로운 지평을 열고 있습니다. 이 글에서는 Kitten TTS V0.8의 기술적 특징, 3가지 모델 변형 비교, 그리고 엣지 디바이스 배포 가능성을 철저히 분석합니다.
 
 ## Kitten TTS V0.8이란
 
@@ -76,7 +76,7 @@ graph LR
 |------|------------|------|------|
 | <strong>Mini</strong> | 80M | ~150MB | 최고 품질·긴 텍스트에서도 높은 표현력 |
 | <strong>Micro</strong> | 40M | ~80MB | 품질과 크기의 균형 |
-| <strong>Nano</strong> | 14M | <strong><25MB</strong> | 초경량·에지 디바이스 최적화 |
+| <strong>Nano</strong> | 14M | <strong><25MB</strong> | 초경량·엣지 디바이스 최적화 |
 
 3개 모델 모두 <strong>8개의 표현력 있는 음성</strong>(여성 4개·남성 4개)을 탑재하고 있습니다. 현재는 영어 지원이며, 다국어 지원은 향후 릴리스에서 추가될 예정입니다.
 
@@ -84,7 +84,7 @@ graph LR
 
 ### 1. CPU 전용 실행 가능
 
-"GPU 불필요" 수준을 넘어, <strong>리소스 제약이 있는 에지 디바이스에서의 동작을 전제로 설계</strong>되었습니다. Raspberry Pi나 IoT 디바이스 같은 저사양 환경에서도 동작 가능하며, GPU 환경이 없는 개발자에게 큰 희소식입니다.
+"GPU 불필요" 수준을 넘어, <strong>리소스 제약이 있는 엣지 디바이스에서의 동작을 전제로 설계</strong>되었습니다. Raspberry Pi나 IoT 디바이스 같은 저사양 환경에서도 동작 가능하며, GPU 환경이 없는 개발자에게 큰 희소식입니다.
 
 ### 2. 클라우드 TTS 품질의 온디바이스 실현
 
@@ -113,7 +113,7 @@ graph TD
 V0.8에서는 다음과 같은 개선이 이루어졌습니다:
 
 - <strong>10배 학습 데이터셋</strong>: 데이터 양의 대폭 확충
-- <strong>개선된 트레이닝 파이프라인</strong>: 최적화 기법 쇄신
+- <strong>개선된 트레이닝 파이프라인</strong>: 최적화 기법 개선
 - <strong>품질·표현력·현실감 향상</strong>: 자연스러운 운율과 억양
 
 ## 로컬 음성 AI 트렌드에서의 위치
@@ -129,7 +129,7 @@ V0.8에서는 다음과 같은 개선이 이루어졌습니다:
 
 Kitten TTS의 최대 차별점은 <strong>크기</strong>입니다. 14M 파라미터·25MB 미만이라는 크기는 다른 어떤 모델과도 차원이 다릅니다.
 
-## 에지 디바이스 배포 가능성
+## 엣지 디바이스 배포 가능성
 
 ### 유스케이스 분석
 
@@ -177,7 +177,7 @@ HuggingFace에서 공개된 3개 모델:
 
 ## 향후 전망
 
-Kitten TTS V0.8은 현재 영어만 지원하지만, 향후 릴리스에서 <strong>다국어 지원</strong>이 예정되어 있습니다. 한국어 대응이 실현되면 국내 에지 AI 시장에 큰 임팩트를 줄 것입니다.
+Kitten TTS V0.8은 현재 영어만 지원하지만, 향후 릴리스에서 <strong>다국어 지원</strong>이 예정되어 있습니다. 한국어 대응이 실현되면 국내 엣지 AI 시장에 큰 임팩트를 줄 것입니다.
 
 또한 Apache 2.0 라이선스이므로 상용 이용도 자유롭습니다. 스타트업부터 대기업까지, 음성 기능을 프로덕트에 탑재하는 허들이 크게 낮아집니다.
 
@@ -185,7 +185,7 @@ Kitten TTS V0.8은 현재 영어만 지원하지만, 향후 릴리스에서 <str
 
 Kitten TTS V0.8은 <strong>"작은 모델로도 고품질"</strong>이라는 새로운 패러다임을 체현한 모델입니다. 14M 파라미터·25MB 미만이라는 경이적인 컴팩트함으로 클라우드 TTS에 필적하는 품질을 실현하고 있습니다.
 
-KaniTTS2, Qwen3-TTS.cpp, FreeFlow에 이은 음성 AI 로컬화 트렌드 속에서, Kitten TTS는 <strong>에지 디바이스 배포의 결정판</strong>으로 두각을 나타내고 있습니다. GPU 불필요, API 불필요, 완전 로컬로 동작하는 초소형 TTS 모델은 음성 AI 민주화의 다음 한 걸음을 보여주고 있습니다.
+KaniTTS2, Qwen3-TTS.cpp, FreeFlow에 이은 음성 AI 로컬화 트렌드 속에서, Kitten TTS는 <strong>엣지 디바이스 배포의 결정판</strong>으로 두각을 나타내고 있습니다. GPU 불필요, API 불필요, 완전 로컬로 동작하는 초소형 TTS 모델은 음성 AI 민주화의 다음 한 걸음을 보여주고 있습니다.
 
 ## 참고 자료
 
