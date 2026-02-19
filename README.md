@@ -43,13 +43,17 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-02-18
+**최신 포스트 날짜**: 2026-02-19
 
-**총 포스트 수**: 123개 (한국어 기준)
+**총 포스트 수**: 124개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **KaniTTS2 — 3GB VRAMでボイスクローニング可能なオープンソースTTSモデル** (2026-02-18)
+1. **Devstral Small 2 24BとQwen3 Coder 30B — 小型コーディングモデル時代の到来** (2026-02-19)
+
+   - Raspberry Piでも動くコーディングモデル時代が到来。Devstral Small 2 24BとQwen3 Coder 30Bの比較分析
+
+2. **KaniTTS2 — 3GB VRAMでボイスクローニング可能なオープンソースTTSモデル** (2026-02-18)
 
    - 4億パラメータの軽量TTSモデルKaniTTS2がオープンソースで公開。3GB VRAMでボイスクローニングが可能で、事前学習コードも完全公開
 
@@ -858,6 +862,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-18 (KaniTTS2 Voice Cloning 포스트 발행)
+**Last Updated**: 2026-02-19 (Devstral Qwen3 Coder Small Models 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

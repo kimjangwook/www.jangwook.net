@@ -1329,5 +1329,16 @@
       "devops": 0.2,
       "architecture": 0.7
     }
+  },
+  "devstral-qwen3-coder-small-models": {
+    "pubDate": "2026-02-19",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.6
+    }
   }
 }
