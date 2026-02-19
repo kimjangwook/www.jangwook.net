@@ -1318,5 +1318,16 @@
       "devops": 0.0,
       "architecture": 0.3
     }
+  },
+  "ddr5-rdimm-vs-rtx3090-local-llm": {
+    "pubDate": "2026-02-19",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 0.8,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
   }
 }
