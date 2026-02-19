@@ -51,7 +51,7 @@ relatedPosts:
 
 ## 개요
 
-2026년 2월, Reddit r/LocalLLaMA 커뮤니티에서 <strong>DDR5 RDIMM의 GB당 가격이 RTX 3090의 VRAM GB당 가격을 하회했다</strong>는 논의가 화제가 되었습니다. 392개의 추천을 받은 이 게시물은 로컬 LLM 하드웨어 선택에 있어 근본적인 전환점을 시사합니다.
+2026년 2월, Reddit r/LocalLLaMA 커뮤니티에서 <strong>DDR5 RDIMM의 GB당 가격이 RTX 3090의 VRAM GB당 가격을 하회했다</strong>는 논의가 화제가 되었습니다. 346개의 추천을 받은 이 게시물은 로컬 LLM 하드웨어 선택에 있어 근본적인 전환점을 시사합니다.
 
 그동안 "VRAM이 곧 정의"였던 로컬 LLM 커뮤니티에서, RAM 기반 CPU 추론이 비용 효율성 측면에서 GPU를 역전할 수 있다는 가능성은 많은 사람들에게 충격을 주었습니다.
 
