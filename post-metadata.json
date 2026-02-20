@@ -1406,5 +1406,16 @@
       "devops": 0.1,
       "architecture": 0.6
     }
+  },
+  "qwen3-coder-next-llama-cpp-graph-optimization": {
+    "pubDate": "2026-02-20",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.7
+    }
   }
 }
