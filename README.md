@@ -43,13 +43,14 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-02-19
+**최신 포스트 날짜**: 2026-02-20
 
-**총 포스트 수**: 135개 (한국어 기준)
+**총 포스트 수**: 136개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Kitten TTS V0.8 — 25MB未満でSOTA達成の超小型TTSモデル完全解説** (2026-02-19)
+1. **ASIC推論チップでLlama 3.1 8Bが16,000 tok/s — GPU不要のAI推論時代** (2026-02-20)
+2. **Kitten TTS V0.8 — 25MB未満でSOTA達成の超小型TTSモデル完全解説** (2026-02-19)
 
    - 14Mパラメータ・25MB未満でクラウドTTS品質を実現するKitten TTS V0.8を徹底解説。エッジデバイス展開の可能性とローカル音声AI最新トレンドを分析。
 
@@ -870,6 +871,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-19 (Devstral Qwen3 Coder Small Models 포스트 발행)
+**Last Updated**: 2026-02-20 (ASIC LLM Inference 16k TPS 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
