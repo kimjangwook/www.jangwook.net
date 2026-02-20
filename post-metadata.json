@@ -1384,5 +1384,16 @@
       "devops": 0.2,
       "architecture": 0.7
     }
+  },
+  "llama-cpp-iq-quantization-merge": {
+    "pubDate": "2026-02-20",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.5
+    }
   }
 }

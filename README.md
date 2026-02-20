@@ -45,9 +45,13 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-20
 
-**총 포스트 수**: 136개 (한국어 기준)
+**총 포스트 수**: 137개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **llama.cppにIQ*_K/IQ*_KS量子化が統合 — ik_llama.cppの成果がメインラインへ** (2026-02-20)
+
+   - ik_llama.cppで開発されたIQ系量子化手法がllama.cpp本体にマージ。IQ2_K〜IQ4_KSの精度向上とローカルLLM推論効率化の技術的背景を解説。
 
 1. **ASIC推論チップでLlama 3.1 8Bが16,000 tok/s — GPU不要のAI推論時代** (2026-02-20)
 2. **Kitten TTS V0.8 — 25MB未満でSOTA達成の超小型TTSモデル完全解説** (2026-02-19)
@@ -871,6 +875,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-20 (ASIC LLM Inference 16k TPS 포스트 발행)
+**Last Updated**: 2026-02-20 (llama-cpp-iq-quantization-merge 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
