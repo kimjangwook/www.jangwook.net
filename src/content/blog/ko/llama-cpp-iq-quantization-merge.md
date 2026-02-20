@@ -51,7 +51,7 @@ relatedPosts:
 
 ## 개요
 
-llama.cpp의 양자화 기법이 큰 전환점을 맞이했습니다. <strong>ik_llama.cpp</strong>(llama.cpp의 포크)에서 독자적으로 개발되어 온 <strong>IQ*_K / IQ*_KS</strong> 계열 양자화가 PR #19726을 통해 llama.cpp 본체에 머지되고 있습니다. Reddit r/LocalLLaMA에서 125포인트를 획득하며 로컬 LLM 커뮤니티에서 큰 주목을 받고 있습니다.
+llama.cpp의 양자화 기법이 큰 전환점을 맞이하고 있습니다. <strong>ik_llama.cpp</strong>(llama.cpp의 포크)에서 독자적으로 개발되어 온 <strong>IQ*_K / IQ*_KS</strong> 계열 양자화가 PR #19726을 통해 llama.cpp 본체에 머지되고 있습니다. Reddit r/LocalLLaMA에서 125포인트를 획득하며 로컬 LLM 커뮤니티에서 큰 주목을 받고 있습니다.
 
 이 글에서는 IQ 계열 양자화의 기술적 배경, 기존 기법과의 차이, 그리고 로컬 LLM 추론에 미치는 영향을 해설합니다.
 
@@ -138,11 +138,11 @@ graph TD
 | 양자화 | 퍼플렉시티 | 모델 크기 | 추론 속도 |
 |--------|-----------|----------|----------|
 | Q2_K | 기준 | 기준 | 기준 |
-| <strong>IQ2_K</strong> | 5-10% 개선 | 동등 | 동등~미감 |
+| <strong>IQ2_K</strong> | 5-10% 개선 | 동등 | 동등~소폭 감소 |
 | Q3_K_M | 기준 | 기준 | 기준 |
-| <strong>IQ3_K</strong> | 3-7% 개선 | 동등 | 동등~미감 |
+| <strong>IQ3_K</strong> | 3-7% 개선 | 동등 | 동등~소폭 감소 |
 | Q4_K_M | 기준 | 기준 | 기준 |
-| <strong>IQ4_K</strong> | 2-5% 개선 | 동등 | 동등~미감 |
+| <strong>IQ4_K</strong> | 2-5% 개선 | 동등 | 동등~소폭 감소 |
 
 <strong>같은 비트 수로 퍼플렉시티가 개선</strong>되는 것이 가장 큰 장점입니다. 특히 저비트 양자화(2-3비트)에서의 개선 폭이 두드러집니다.
 
