@@ -1417,5 +1417,16 @@
       "devops": 0.3,
       "architecture": 0.7
     }
+  },
+  "ggml-llamacpp-huggingface": {
+    "pubDate": "2026-02-21",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
   }
 }

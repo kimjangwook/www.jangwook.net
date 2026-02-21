@@ -43,13 +43,17 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-02-20
+**최신 포스트 날짜**: 2026-02-21
 
-**총 포스트 수**: 139개 (한국어 기준)
+**총 포스트 수**: 140개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Qwen3 Coder Next llama.cppグラフ最適化 — 最大38%の推論高速化** (2026-02-20)
+1. **GGML/llama.cppがHugging Faceに合流 — ローカルAIインフラの構造的転換点** (2026-02-21)
+
+   - llama.cppとGGMLの創設チームがHugging Faceに合流。ローカルAI推論インフラの帰属変化とオープンソースAIエコシステムの構造的転換を分析。
+
+2. **Qwen3 Coder Next llama.cppグラフ最適化 — 最大38%の推論高速化** (2026-02-20)
 
    - ggerganovがllama.cppのコンピュートグラフを再構成し、Qwen3 Coder Next 80Bモデルの推論速度を最大38%向上させた最適化手法とベンチマーク結果を解析。
 
@@ -883,6 +887,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-20 (consistency-diffusion-lm 포스트 발행)
+**Last Updated**: 2026-02-21 (ggml-llamacpp-huggingface 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
