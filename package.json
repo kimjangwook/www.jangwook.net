@@ -9,7 +9,14 @@
     "astro": "astro",
     "webp": "node scripts/convert-to-webp.js",
     "webp:blog": "node scripts/convert-to-webp.js src/assets/blog/",
-    "disable_toolbar": "astro preferences disable --global devToolbar"
+    "disable_toolbar": "astro preferences disable --global devToolbar",
+    "codex:migrate": "node scripts/codex-compat.mjs migrate",
+    "codex:analyze-posts": "node scripts/codex-compat.mjs analyze-posts",
+    "codex:generate-recommendations": "node scripts/codex-compat.mjs generate-recommendations",
+    "codex:next-post-recommendation": "node scripts/codex-compat.mjs next-post-recommendation",
+    "codex:write-post": "node scripts/codex-compat.mjs write-post",
+    "codex:write-ga-post": "node scripts/codex-compat.mjs write-ga-post",
+    "codex:commit": "node scripts/codex-compat.mjs commit"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

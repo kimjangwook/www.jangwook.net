@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__notionApi__API-post-search",
+      "mcp__notionApi__API-get-self",
+      "mcp__notionApi__API-get-block-children",
+      "Bash(npm run astro:*)",
+      "Bash(node generate_image.js:*)",
+      "SlashCommand(/analyze-posts)",
+      "Bash(cat:*)",
+      "Bash(shasum:*)",
+      "Bash(node:*)",
+      "Bash(awk:*)",
+      "SlashCommand(/generate-recommendations)",
+      "Bash(if [ -f recommendations.json ])",
+      "Bash(then)",
+      "Bash(else)",
+      "Bash(fi)",
+      "Read(//tmp/**)",
+      "Bash(npm run preview:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "chrome-devtools",
+    "gemini-google-search",
+    "analytics-mcp",
+    "serena"
+  ]
+}
