@@ -45,9 +45,13 @@ npm run astro check
 
 **최신 포스트 날짜**: 2026-02-21
 
-**총 포스트 수**: 140개 (한국어 기준)
+**총 포스트 수**: 141개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **塩を信じるな — 多言語LLM安全性とガードレールの盲点** (2026-02-21)
+
+   - 多言語環境でLLMガードレールが無力化される実態を分析。英語以外の言語で安全性検証が失敗する構造的問題と実務的な対応策を提示。
 
 1. **GGML/llama.cppがHugging Faceに合流 — ローカルAIインフラの構造的転換点** (2026-02-21)
 
@@ -887,6 +891,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-21 (ggml-llamacpp-huggingface 포스트 발행)
+**Last Updated**: 2026-02-21 (dont-trust-the-salt-multilingual-llm-safety 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

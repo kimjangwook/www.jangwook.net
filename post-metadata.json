@@ -1428,5 +1428,16 @@
       "devops": 0.2,
       "architecture": 0.7
     }
+  },
+  "dont-trust-the-salt-multilingual-llm-safety": {
+    "pubDate": "2026-02-21",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.4
+    }
   }
 }
