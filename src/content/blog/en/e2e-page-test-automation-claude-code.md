@@ -19,16 +19,16 @@ relatedPosts:
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
       zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: n8n-rss-automation
+  - slug: blog-launch-analysis-report
     score: 0.94
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
+        Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: blog-launch-analysis-report
+      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: chrome-devtools-mcp-performance
     score: 0.94
     reason:
       ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -46,15 +46,15 @@ relatedPosts:
         Covers similar topics in automation, web development, DevOps with
         comparable difficulty.
       zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
-  - slug: chrome-devtools-mcp-performance
+  - slug: n8n-rss-automation
     score: 0.94
     reason:
-      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Covers similar topics in automation, web development, DevOps,
+        Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
-      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## Why Automate Page Testing?

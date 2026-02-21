@@ -30,24 +30,6 @@ relatedPosts:
         Covers similar topics in automation, DevOps, architecture with
         comparable difficulty.
       zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: terraform-ai-batch-infrastructure
-    score: 0.89
-    reason:
-      ko: '자동화, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: e2e-page-test-automation-claude-code
-    score: 0.89
-    reason:
-      ko: '자동화, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-hooks-workflow
     score: 0.89
     reason:
@@ -57,6 +39,24 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through
         automation, DevOps, architecture topics.
       zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题进行连接。
+  - slug: e2e-page-test-automation-claude-code
+    score: 0.89
+    reason:
+      ko: '자동화, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: terraform-ai-batch-infrastructure
+    score: 0.89
+    reason:
+      ko: '자동화, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## Overview

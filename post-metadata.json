@@ -1,916 +1,15 @@
 {
-  "claude-agent-teams-guide": {
-    "pubDate": "2026-02-07",
+  "45-day-analytics-report-2025-11": {
+    "pubDate": "2025-11-20",
     "difficulty": 3,
     "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.2,
-      "ai-ml": 0.95,
-      "devops": 0.7,
-      "architecture": 0.85
-    }
-  },
-  "claude-code-insights-usage-analysis": {
-    "pubDate": "2026-02-05",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.7,
-      "web-development": 0.2,
-      "ai-ml": 0.9,
-      "devops": 0.4,
-      "architecture": 0.6
-    }
-  },
-  "tauri-ios-admob-rewarded-ads": {
-    "pubDate": "2026-01-30",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.75,
-      "ai-ml": 0.1,
-      "devops": 0.5,
-      "architecture": 0.8
-    }
-  },
-  "tauri-pixijs-ios-game-development": {
-    "pubDate": "2026-01-26",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.85,
-      "ai-ml": 0.2,
-      "devops": 0.6,
-      "architecture": 0.7
-    }
-  },
-  "tailwind-layoffs-opensource-ai-crisis": {
-    "pubDate": "2026-01-12",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.7,
-      "ai-ml": 0.8,
-      "devops": 0.2,
-      "architecture": 0.4
-    }
-  },
-  "claude-code-plugins-complete-guide": {
-    "pubDate": "2025-12-27",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.5,
-      "ai-ml": 0.9,
-      "devops": 0.7,
-      "architecture": 0.85
-    }
-  },
-  "anthropic-agent-skills-practical-guide": {
-    "pubDate": "2025-12-26",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.4,
-      "ai-ml": 1.0,
-      "devops": 0.6,
-      "architecture": 0.85
-    }
-  },
-  "anthropic-agent-skills-standard": {
-    "pubDate": "2025-12-25",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.3,
-      "ai-ml": 1.0,
-      "devops": 0.5,
-      "architecture": 0.9
-    }
-  },
-  "greptile-ai-coding-report-2025-review": {
-    "pubDate": "2025-12-19",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.6,
-      "web-development": 0.3,
-      "ai-ml": 0.85,
-      "devops": 0.4,
-      "architecture": 0.5
-    }
-  },
-  "ux-psychology-implementation-case-study": {
-    "pubDate": "2025-12-14",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.95,
-      "ai-ml": 0.2,
-      "devops": 0.1,
-      "architecture": 0.6
-    }
-  },
-  "ux-psychology-frontend-design-skill": {
-    "pubDate": "2025-12-13",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.5,
-      "web-development": 0.9,
-      "ai-ml": 0.6,
-      "devops": 0.1,
-      "architecture": 0.4
-    }
-  },
-  "dena-llm-study-part5-agent-design": {
-    "pubDate": "2025-12-12",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.2,
-      "ai-ml": 0.95,
-      "devops": 0.6,
-      "architecture": 0.85
-    }
-  },
-  "dena-llm-study-part2-structured-output": {
-    "pubDate": "2025-12-09",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.75,
-      "web-development": 0.2,
-      "ai-ml": 0.95,
-      "devops": 0.4,
-      "architecture": 0.85
-    }
-  },
-  "dena-llm-study-part3-model-training": {
-    "pubDate": "2025-12-08",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.7
-    }
-  },
-  "agent-effi-flow-pivot-omotenashi-bot": {
-    "pubDate": "2025-12-07",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.7,
-      "web-development": 0.65,
-      "ai-ml": 0.85,
-      "devops": 0.4,
-      "architecture": 0.8
-    }
-  },
-  "iterative-review-cycle-methodology": {
-    "pubDate": "2025-12-06",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.2,
-      "ai-ml": 0.9,
-      "devops": 0.4,
-      "architecture": 0.95
-    }
-  },
-  "aeo-implementation-experience": {
-    "pubDate": "2025-12-05",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.6,
-      "web-development": 0.85,
-      "ai-ml": 0.7,
-      "devops": 0.3,
-      "architecture": 0.75
-    }
-  },
-  "multi-agent-orchestration-improvement": {
-    "pubDate": "2025-12-04",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.3,
-      "ai-ml": 0.9,
-      "devops": 0.5,
-      "architecture": 0.95
-    }
-  },
-  "adsense-rejection-ai-analysis-improvement": {
-    "pubDate": "2025-12-03",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.4,
-      "web-development": 0.75,
-      "ai-ml": 0.65,
-      "devops": 0.3,
-      "architecture": 0.5
-    }
-  },
-  "ai-era-career-advice-for-juniors": {
-    "pubDate": "2025-12-02",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.7,
-      "devops": 0.1,
-      "architecture": 0.2
-    }
-  },
-  "enterprise-ai-adoption-topdown": {
-    "pubDate": "2025-12-01",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.6,
-      "web-development": 0.2,
-      "ai-ml": 0.8,
-      "devops": 0.3,
-      "architecture": 0.75
-    }
-  },
-  "vertex-ai-search-site-implementation": {
-    "pubDate": "2025-11-30",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.85,
-      "ai-ml": 0.95,
-      "devops": 0.85,
-      "architecture": 0.8
-    }
-  },
-  "llm-seo-aeo-practical-implementation": {
-    "pubDate": "2025-11-28",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.9,
-      "ai-ml": 0.7,
-      "devops": 0.4,
-      "architecture": 0.6
-    }
-  },
-  "individual-developer-ai-saas-journey": {
-    "pubDate": "2025-11-27",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.85,
-      "ai-ml": 0.95,
-      "devops": 0.7,
-      "architecture": 0.8
-    }
-  },
-  "terraform-ai-batch-infrastructure": {
-    "pubDate": "2025-11-26",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.3,
-      "ai-ml": 0.75,
-      "devops": 0.95,
-      "architecture": 0.9
-    }
-  },
-  "e2e-page-test-automation-claude-code": {
-    "pubDate": "2025-11-25",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.7,
-      "ai-ml": 0.6,
-      "devops": 0.8,
-      "architecture": 0.75
-    }
-  },
-  "google-code-wiki-guide": {
-    "pubDate": "2025-11-24",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.75,
-      "web-development": 0.6,
-      "ai-ml": 0.85,
-      "devops": 0.65,
-      "architecture": 0.7
-    }
-  },
-  "mcp-servers-toolkit-introduction": {
-    "pubDate": "2025-11-23",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.3,
-      "ai-ml": 0.8,
-      "devops": 0.7,
-      "architecture": 0.6
-    }
-  },
-  "deep-agents-architecture-optimization": {
-    "pubDate": "2025-11-22",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.2,
-      "ai-ml": 0.9,
-      "devops": 0.3,
-      "architecture": 0.95
-    }
-  },
-  "claude-code-cli-migration-guide": {
-    "pubDate": "2025-11-21",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.8,
-      "web-development": 0.3,
-      "ai-ml": 0.85,
-      "devops": 0.7,
-      "architecture": 0.75
-    }
-  },
-  "mcp-code-execution-practical-implementation": {
-    "pubDate": "2025-11-19",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.3,
-      "ai-ml": 0.85,
-      "devops": 0.6,
-      "architecture": 0.95
-    }
-  },
-  "anthropic-code-execution-mcp": {
-    "pubDate": "2025-11-18",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.4,
-      "ai-ml": 0.95,
-      "devops": 0.7,
-      "architecture": 0.9
-    }
-  },
-  "adding-chinese-support": {
-    "pubDate": "2025-11-17",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.75,
-      "ai-ml": 0.8,
-      "devops": 0.6,
-      "architecture": 0.85
-    }
-  },
-  "google-gemini-file-search-rag-tutorial": {
-    "pubDate": "2025-11-13",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.7,
-      "web-development": 0.4,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.6
-    }
-  },
-  "n8n-rss-automation": {
-    "pubDate": "2025-11-11",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.6,
-      "ai-ml": 0.8,
-      "devops": 0.7,
-      "architecture": 0.65
-    }
-  },
-  "blog-launch-analysis-report": {
-    "pubDate": "2025-10-06",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.6,
-      "ai-ml": 0.3,
-      "devops": 0.7,
-      "architecture": 0.65
-    }
-  },
-  "google-analytics-mcp-automation": {
-    "pubDate": "2025-10-05",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.5,
-      "ai-ml": 0.75,
-      "devops": 0.6,
-      "architecture": 0.7
-    }
-  },
-  "llm-blog-automation": {
-    "pubDate": "2025-10-04",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.7,
-      "ai-ml": 0.85,
-      "devops": 0.4,
-      "architecture": 0.6
-    }
-  },
-  "claude-code-best-practices": {
-    "pubDate": "2025-10-03",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.7,
-      "web-development": 0.5,
-      "ai-ml": 0.6,
-      "devops": 0.3,
-      "architecture": 0.5
-    }
-  },
-  "claude-code-web-automation": {
-    "pubDate": "2025-10-02",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.8,
-      "ai-ml": 0.5,
-      "devops": 0.65,
-      "architecture": 0.5
-    }
-  },
-  "ai-presentation-automation": {
-    "pubDate": "2025-10-01",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.2,
-      "ai-ml": 0.8,
-      "devops": 0.3,
-      "architecture": 0.5
-    }
-  },
-  "ai-agent-notion-mcp-automation": {
-    "pubDate": "2025-09-30",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.5,
-      "ai-ml": 0.7,
-      "devops": 0.4,
-      "architecture": 0.6
-    }
-  },
-  "chrome-devtools-mcp-performance": {
-    "pubDate": "2025-09-29",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.8,
-      "web-development": 0.85,
-      "ai-ml": 0.5,
-      "devops": 0.75,
-      "architecture": 0.6
-    }
-  },
-  "ai-content-recommendation-system": {
-    "pubDate": "2025-09-28",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.7,
-      "web-development": 0.6,
-      "ai-ml": 0.95,
-      "devops": 0.4,
-      "architecture": 0.8
-    }
-  },
-  "specification-driven-development": {
-    "pubDate": "2025-09-27",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.75,
-      "web-development": 0.5,
-      "ai-ml": 0.8,
-      "devops": 0.5,
-      "architecture": 0.9
-    }
-  },
-  "astro-scheduled-publishing": {
-    "pubDate": "2025-09-26",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.75,
-      "ai-ml": 0.2,
-      "devops": 0.9,
-      "architecture": 0.6
-    }
-  },
-  "ai-agent-collaboration-patterns": {
-    "pubDate": "2025-09-25",
-    "difficulty": 5,
-    "categoryScores": {
-      "automation": 0.8,
-      "web-development": 0.3,
-      "ai-ml": 0.95,
-      "devops": 0.5,
-      "architecture": 0.95
-    }
-  },
-  "self-healing-ai-systems": {
-    "pubDate": "2025-09-24",
-    "difficulty": 5,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.3,
-      "ai-ml": 0.95,
-      "devops": 0.9,
-      "architecture": 0.95
-    }
-  },
-  "metadata-based-recommendation-optimization": {
-    "pubDate": "2025-09-23",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.6,
-      "web-development": 0.7,
-      "ai-ml": 0.8,
-      "devops": 0.7,
-      "architecture": 0.85
-    }
-  },
-  "ai-agent-persona-analysis": {
-    "pubDate": "2025-10-19",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.4,
-      "web-development": 0.2,
-      "ai-ml": 0.9,
-      "devops": 0.2,
-      "architecture": 0.6
-    }
-  },
-  "openai-agentkit-tutorial-part2": {
-    "pubDate": "2025-10-22",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.4,
-      "ai-ml": 0.9,
-      "devops": 0.6,
-      "architecture": 0.75
-    }
-  },
-  "openai-agentkit-tutorial-part1": {
-    "pubDate": "2025-10-21",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.7,
-      "web-development": 0.3,
-      "ai-ml": 0.85,
-      "devops": 0.4,
-      "architecture": 0.5
-    }
-  },
-  "weekly-analytics-2025-10-14": {
-    "pubDate": "2025-10-14",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.6,
-      "web-development": 0.4,
-      "ai-ml": 0.3,
-      "devops": 0.5,
-      "architecture": 0.4
-    }
-  },
-  "claude-skills-implementation-guide": {
-    "pubDate": "2025-10-22",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.3,
-      "ai-ml": 0.9,
-      "devops": 0.5,
-      "architecture": 0.85
-    }
-  },
-  "llm-consumer-research-ssr": {
-    "pubDate": "2025-10-23",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.75,
-      "web-development": 0.2,
-      "ai-ml": 0.95,
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
       "devops": 0.15,
-      "architecture": 0.6
-    }
-  },
-  "ssr-survey-analysis": {
-    "pubDate": "2025-10-24",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.2,
-      "ai-ml": 0.9,
-      "devops": 0.1,
-      "architecture": 0.4
-    }
-  },
-  "playwright-ai-testing": {
-    "pubDate": "2025-10-25",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.85,
-      "ai-ml": 0.7,
-      "devops": 0.8,
-      "architecture": 0.6
-    }
-  },
-  "langgraph-multi-agent": {
-    "pubDate": "2025-10-26",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.3,
-      "ai-ml": 0.95,
-      "devops": 0.6,
-      "architecture": 0.9
-    }
-  },
-  "jules-autocoding": {
-    "pubDate": "2025-10-27",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.4,
-      "ai-ml": 0.9,
-      "devops": 0.6,
-      "architecture": 0.7
-    }
-  },
-  "bigquery-mcp-prefix-filtering": {
-    "pubDate": "2025-10-28",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.15,
-      "ai-ml": 0.9,
-      "devops": 0.7,
-      "architecture": 0.95
-    }
-  },
-  "claude-code-hooks-workflow": {
-    "pubDate": "2025-10-29",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.15,
-      "ai-ml": 0.65,
-      "devops": 0.9,
-      "architecture": 0.85
-    }
-  },
-  "llm-page-migration-standardization": {
-    "pubDate": "2025-10-30",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.9,
-      "ai-ml": 0.85,
-      "devops": 0.75,
-      "architecture": 0.9
-    }
-  },
-  "claude-code-parallel-testing": {
-    "pubDate": "2025-10-31",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.75,
-      "ai-ml": 0.85,
-      "devops": 0.8,
-      "architecture": 0.7
-    }
-  },
-  "llm-pm-workflow-automation": {
-    "pubDate": "2025-11-01",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.3,
-      "ai-ml": 0.9,
-      "devops": 0.6,
-      "architecture": 0.5
-    }
-  },
-  "recommendation-system-v3": {
-    "pubDate": "2025-11-02",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.75,
-      "web-development": 0.7,
-      "ai-ml": 0.6,
-      "devops": 0.65,
-      "architecture": 0.95
-    }
-  },
-  "notion-backlog-slack-claude-project-management": {
-    "pubDate": "2025-11-03",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.5,
-      "ai-ml": 0.7,
-      "devops": 0.65,
-      "architecture": 0.85
-    }
-  },
-  "slack-mcp-team-communication": {
-    "pubDate": "2025-11-04",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.3,
-      "ai-ml": 0.85,
-      "devops": 0.5,
-      "architecture": 0.75
-    }
-  },
-  "data-driven-pm-framework": {
-    "pubDate": "2025-11-05",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.4,
-      "web-development": 0.3,
-      "ai-ml": 0.75,
-      "devops": 0.2,
-      "architecture": 0.6
-    }
-  },
-  "verbalized-sampling-llm-diversity": {
-    "pubDate": "2025-11-08",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.4,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.7
-    }
-  },
-  "claude-code-verbalized-sampling": {
-    "pubDate": "2025-11-09",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.2,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.85
-    }
-  },
-  "prompt-engineering-agent-improvements": {
-    "pubDate": "2025-11-12",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.2,
-      "ai-ml": 0.95,
-      "devops": 0.4,
-      "architecture": 0.9
-    }
-  },
-  "effiflow-automation-analysis-part1": {
-    "pubDate": "2025-11-14",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 1.0,
-      "web-development": 0.3,
-      "ai-ml": 0.95,
-      "devops": 0.4,
-      "architecture": 0.9
-    }
-  },
-  "effiflow-automation-analysis-part2": {
-    "pubDate": "2025-11-15",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.4,
-      "ai-ml": 0.9,
-      "devops": 0.3,
-      "architecture": 0.85
-    }
-  },
-  "effiflow-automation-analysis-part3": {
-    "pubDate": "2025-11-16",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.2,
-      "ai-ml": 0.7,
-      "devops": 0.6,
-      "architecture": 0.75
-    }
-  },
-  "adsense-low-value-content-technical-fix": {
-    "pubDate": "2026-02-07",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.9,
-      "ai-ml": 0.2,
-      "devops": 0.7,
-      "architecture": 0.5
-    }
-  },
-  "openclaw-e2e-test-automation-guide": {
-    "pubDate": "2026-02-08",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.95,
-      "web-development": 0.6,
-      "ai-ml": 0.8,
-      "devops": 0.85,
-      "architecture": 0.75
-    }
-  },
-  "openclaw-opus-4-6-setup-guide": {
-    "pubDate": "2026-02-06",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.7,
-      "web-development": 0.2,
-      "ai-ml": 0.9,
-      "devops": 0.6,
-      "architecture": 0.5
-    }
-  },
-  "openclaw-cron-fix-guide": {
-    "pubDate": "2026-02-06",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.9,
-      "web-development": 0.2,
-      "ai-ml": 0.1,
-      "devops": 0.8,
-      "architecture": 0.6
-    }
-  },
-  "ai-agent-cost-reality": {
-    "pubDate": "2026-02-10",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.8,
-      "web-development": 0.1,
-      "ai-ml": 0.9,
-      "devops": 0.4,
-      "architecture": 0.6
-    }
-  },
-  "multi-agent-orchestration-routing": {
-    "pubDate": "2026-02-09",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.8,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.9
-    }
-  },
-  "ccc-vs-gcc-ai-compiled-c-compiler": {
-    "pubDate": "2026-02-09",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.4,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.8
-    }
-  },
-  "software-factory-zero-code-development": {
-    "pubDate": "2026-02-10",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.1,
-      "ai-ml": 0.9,
-      "devops": 0.4,
-      "architecture": 0.7
-    }
-  },
-  "meta-ai-agent-platform-sierra-avocado": {
-    "pubDate": "2026-02-10",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.6,
-      "web-development": 0.2,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.8
-    }
+      "architecture": 0.1
+    },
+    "_contentHash": "e33f6b9005173a11"
   },
   "accounting-ai-transformation-real-data": {
     "pubDate": "2026-02-10",
@@ -921,326 +20,68 @@
       "ai-ml": 0.85,
       "devops": 0.2,
       "architecture": 0.6
-    }
+    },
+    "_contentHash": "10a3c9ae47dc8652"
   },
-  "gpt53-codex-rollout-pause": {
-    "pubDate": "2026-02-11",
-    "difficulty": 4,
+  "adding-chinese-support": {
+    "pubDate": "2025-11-17",
+    "difficulty": 3,
     "categoryScores": {
-      "automation": 0.4,
-      "web-development": 0.3,
-      "ai-ml": 0.9,
-      "devops": 0.85,
-      "architecture": 0.8
-    }
+      "automation": 0.95,
+      "web-development": 0.75,
+      "ai-ml": 0.8,
+      "devops": 0.6,
+      "architecture": 0.85
+    },
+    "_contentHash": "0650215e1f9cb073"
   },
-  "ai-agent-kpi-ethics": {
-    "pubDate": "2026-02-11",
+  "adsense-low-value-content-technical-fix": {
+    "pubDate": "2026-02-07",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.9,
+      "ai-ml": 0.2,
+      "devops": 0.7,
+      "architecture": 0.5
+    },
+    "_contentHash": "14b8a072d1fd45e9"
+  },
+  "adsense-rejection-ai-analysis-improvement": {
+    "pubDate": "2025-12-03",
     "difficulty": 3,
     "categoryScores": {
       "automation": 0.4,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.7
-    }
+      "web-development": 0.75,
+      "ai-ml": 0.65,
+      "devops": 0.3,
+      "architecture": 0.5
+    },
+    "_contentHash": "1b062eaa0b74f858"
   },
-  "dena-perl-go-migration-ai-agents": {
-    "pubDate": "2026-02-11",
+  "aeo-implementation-experience": {
+    "pubDate": "2025-12-05",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.85,
+      "ai-ml": 0.7,
+      "devops": 0.3,
+      "architecture": 0.75
+    },
+    "_contentHash": "7f81ab4badd15847"
+  },
+  "agent-effi-flow-pivot-omotenashi-bot": {
+    "pubDate": "2025-12-07",
     "difficulty": 3,
     "categoryScores": {
       "automation": 0.7,
-      "web-development": 0.2,
-      "ai-ml": 0.9,
-      "devops": 0.5,
-      "architecture": 0.6
-    }
-  },
-  "ai-model-rush-february-2026": {
-    "pubDate": "2026-02-11",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.1,
-      "architecture": 0.3
-    }
-  },
-  "multi-agent-swe-bench-verdent": {
-    "pubDate": "2026-02-12",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.6,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.8
-    }
-  },
-  "patent-strategy-llm-era": {
-    "pubDate": "2026-02-12",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.0,
-      "ai-ml": 0.9,
-      "devops": 0.0,
-      "architecture": 0.3
-    }
-  },
-  "rlm-recursive-language-model-coding-agent": {
-    "pubDate": "2026-02-12",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.5,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.9
-    }
-  },
-  "gpt4o-retirement-model-dependency-risk": {
-    "pubDate": "2026-02-13",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.4,
-      "architecture": 0.7
-    }
-  },
-  "mit-soar-self-curriculum-reasoning": {
-    "pubDate": "2026-02-13",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.0,
-      "ai-ml": 1.0,
-      "devops": 0.0,
-      "architecture": 0.5
-    }
-  },
-  "webmcp-chrome-146-ai-tool-server": {
-    "pubDate": "2026-02-13",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.4,
-      "web-development": 0.9,
+      "web-development": 0.65,
       "ai-ml": 0.85,
-      "devops": 0.2,
-      "architecture": 0.7
-    }
-  },
-  "openai-atlas-ai-app-hub": {
-    "pubDate": "2026-02-13",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.5,
-      "ai-ml": 0.9,
-      "devops": 0.1,
-      "architecture": 0.7
-    }
-  },
-  "windsurf-arena-mode-speed-over-accuracy": {
-    "pubDate": "2026-02-13",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.2,
-      "ai-ml": 0.9,
-      "devops": 0.1,
-      "architecture": 0.3
-    }
-  },
-  "moltbook-ai-theater-human-control": {
-    "pubDate": "2026-02-14",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.15,
-      "architecture": 0.4
-    }
-  },
-  "gpt52-theoretical-physics-discovery": {
-    "pubDate": "2026-02-14",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.0,
-      "architecture": 0.3
-    }
-  },
-  "icml-prompt-injection-academic-review": {
-    "pubDate": "2026-02-14",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.1,
-      "architecture": 0.3
-    }
-  },
-  "openclaw-update-doctor-error-fix": {
-    "pubDate": "2026-02-14",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.2,
-      "devops": 0.9,
-      "architecture": 0.4
-    }
-  },
-  "ibm-gen-z-hiring-ai-limits": {
-    "pubDate": "2026-02-15",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.85,
-      "devops": 0.1,
+      "devops": 0.4,
       "architecture": 0.8
-    }
-  },
-  "nvidia-llm-inference-cost-reduction": {
-    "pubDate": "2026-02-15",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.4,
-      "architecture": 0.6
-    }
-  },
-  "minimax-m25-open-weight-vs-proprietary": {
-    "pubDate": "2026-02-15",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.5
-    }
-  },
-  "nvidia-dgx-spark-cuda-compatibility": {
-    "pubDate": "2026-02-15",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.0,
-      "ai-ml": 0.85,
-      "devops": 0.2,
-      "architecture": 0.7
-    }
-  },
-  "gpt-oss-120b-uncensored": {
-    "pubDate": "2026-02-15",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.1,
-      "architecture": 0.4
-    }
-  },
-  "claude-code-local-model-inefficiency": {
-    "pubDate": "2026-02-16",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.9,
-      "devops": 0.4,
-      "architecture": 0.85
-    }
-  },
-  "qwen3-coder-8gb-vram": {
-    "pubDate": "2026-02-16",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.6
-    }
-  },
-  "heretic-12-vram-reduction": {
-    "pubDate": "2026-02-16",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.4,
-      "architecture": 0.5
-    }
-  },
-  "karpathy-ai-training-cost-deflation": {
-    "pubDate": "2026-02-16",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.4
-    }
-  },
-  "sqlite-ai-swarm-build": {
-    "pubDate": "2026-02-16",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.6,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.5,
-      "architecture": 0.8
-    }
-  },
-  "openrouter-oss-dominance": {
-    "pubDate": "2026-02-17",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.3
-    }
-  },
-  "ai-self-generated-skills-myth": {
-    "pubDate": "2026-02-17",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.1,
-      "architecture": 0.4
-    }
-  },
-  "functiongemma-270m-tool-calling": {
-    "pubDate": "2026-02-17",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.4
-    }
+    },
+    "_contentHash": "e0a4579a851e4cc0"
   },
   "agents-md-effectiveness": {
     "pubDate": "2026-02-17",
@@ -1251,18 +92,392 @@
       "ai-ml": 0.9,
       "devops": 0.2,
       "architecture": 0.5
-    }
+    },
+    "_contentHash": "fec0d27e375952a6"
   },
-  "qwen35-vending-bench-bankruptcy": {
-    "pubDate": "2026-02-17",
+  "ai-agent-collaboration-patterns": {
+    "pubDate": "2025-10-16",
+    "difficulty": 5,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.3,
+      "ai-ml": 0.95,
+      "devops": 0.5,
+      "architecture": 0.95
+    },
+    "_contentHash": "24da177b1b7a4fc3"
+  },
+  "ai-agent-cost-reality": {
+    "pubDate": "2026-02-09",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.6
+    },
+    "_contentHash": "74015b7c1cb9ac1c"
+  },
+  "ai-agent-kpi-ethics": {
+    "pubDate": "2026-02-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    },
+    "_contentHash": "77ff5c39d7b74aa6"
+  },
+  "ai-agent-notion-mcp-automation": {
+    "pubDate": "2025-10-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.5,
+      "ai-ml": 0.7,
+      "devops": 0.4,
+      "architecture": 0.6
+    },
+    "_contentHash": "546902f80dc37e7f"
+  },
+  "ai-agent-persona-analysis": {
+    "pubDate": "2025-10-19",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.2,
+      "architecture": 0.6
+    },
+    "_contentHash": "3843c94ced81e5ea"
+  },
+  "ai-content-recommendation-system": {
+    "pubDate": "2025-10-12",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.6,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.8
+    },
+    "_contentHash": "e5925452421d7ea0"
+  },
+  "ai-era-career-advice-for-juniors": {
+    "pubDate": "2025-12-02",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.7,
+      "devops": 0.1,
+      "architecture": 0.2
+    },
+    "_contentHash": "00d5e309341ca05a"
+  },
+  "ai-model-rush-february-2026": {
+    "pubDate": "2026-02-11",
     "difficulty": 2,
     "categoryScores": {
       "automation": 0.1,
-      "web-development": 0.0,
+      "web-development": 0.1,
       "ai-ml": 0.95,
-      "devops": 0.0,
-      "architecture": 0.2
-    }
+      "devops": 0.1,
+      "architecture": 0.3
+    },
+    "_contentHash": "854cbcff28a2725c"
+  },
+  "ai-presentation-automation": {
+    "pubDate": "2025-10-09",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.2,
+      "ai-ml": 0.8,
+      "devops": 0.3,
+      "architecture": 0.5
+    },
+    "_contentHash": "6b6dacbb24886f55"
+  },
+  "ai-self-generated-skills-myth": {
+    "pubDate": "2026-02-17",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.4
+    },
+    "_contentHash": "4f87d941de448f3a"
+  },
+  "anthropic-agent-skills-practical-guide": {
+    "pubDate": "2025-12-26",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.4,
+      "ai-ml": 1,
+      "devops": 0.6,
+      "architecture": 0.85
+    },
+    "_contentHash": "d4d41678a7740b8c"
+  },
+  "anthropic-agent-skills-standard": {
+    "pubDate": "2025-12-25",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 1,
+      "devops": 0.5,
+      "architecture": 0.9
+    },
+    "_contentHash": "d1a85a60e0586678"
+  },
+  "anthropic-code-execution-mcp": {
+    "pubDate": "2025-11-18",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.4,
+      "ai-ml": 0.95,
+      "devops": 0.7,
+      "architecture": 0.9
+    },
+    "_contentHash": "5ae71bb72c27be87"
+  },
+  "asic-llm-inference-16k-tps": {
+    "pubDate": "2026-02-20",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    },
+    "_contentHash": "0ec4f611ec9d83e6"
+  },
+  "astro-scheduled-publishing": {
+    "pubDate": "2025-10-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.75,
+      "ai-ml": 0.2,
+      "devops": 0.9,
+      "architecture": 0.6
+    },
+    "_contentHash": "7c8c9a3c80bb13c8"
+  },
+  "banana-x-image-prompt-guide": {
+    "pubDate": "2026-02-06",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "974364328a197f2a"
+  },
+  "barracuda-cuda-amd-compiler": {
+    "pubDate": "2026-02-18",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 0.5,
+      "devops": 0.3,
+      "architecture": 0.8
+    },
+    "_contentHash": "97a6514ace77b3f6"
+  },
+  "bigquery-mcp-prefix-filtering": {
+    "pubDate": "2025-10-28",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.15,
+      "ai-ml": 0.9,
+      "devops": 0.7,
+      "architecture": 0.95
+    },
+    "_contentHash": "2ca470a2713ac449"
+  },
+  "blog-launch-analysis-report": {
+    "pubDate": "2025-10-06",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.6,
+      "ai-ml": 0.3,
+      "devops": 0.7,
+      "architecture": 0.65
+    },
+    "_contentHash": "e7fa53178db614b7"
+  },
+  "ccc-vs-gcc-ai-compiled-c-compiler": {
+    "pubDate": "2026-02-09",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.8
+    },
+    "_contentHash": "3a40e0aa3f763e1e"
+  },
+  "chrome-devtools-mcp-performance": {
+    "pubDate": "2025-10-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.85,
+      "ai-ml": 0.5,
+      "devops": 0.75,
+      "architecture": 0.6
+    },
+    "_contentHash": "edc557b22ac7a6d5"
+  },
+  "claude-agent-teams-guide": {
+    "pubDate": "2026-02-07",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.7,
+      "architecture": 0.85
+    },
+    "_contentHash": "d879ca09b8d77fae"
+  },
+  "claude-code-best-practices": {
+    "pubDate": "2025-10-07",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.5,
+      "ai-ml": 0.6,
+      "devops": 0.3,
+      "architecture": 0.5
+    },
+    "_contentHash": "0e9f00aac354d2c4"
+  },
+  "claude-code-cli-migration-guide": {
+    "pubDate": "2025-11-21",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.7,
+      "architecture": 0.75
+    },
+    "_contentHash": "db292aa373e58ec5"
+  },
+  "claude-code-hooks-workflow": {
+    "pubDate": "2025-10-29",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.15,
+      "ai-ml": 0.65,
+      "devops": 0.9,
+      "architecture": 0.85
+    },
+    "_contentHash": "789571b8f8b742e6"
+  },
+  "claude-code-insights-usage-analysis": {
+    "pubDate": "2026-02-05",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.6
+    },
+    "_contentHash": "39fa1e594c298cf3"
+  },
+  "claude-code-local-model-inefficiency": {
+    "pubDate": "2026-02-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.85
+    },
+    "_contentHash": "caadb069825e259e"
+  },
+  "claude-code-parallel-testing": {
+    "pubDate": "2025-10-31",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.75,
+      "ai-ml": 0.85,
+      "devops": 0.8,
+      "architecture": 0.7
+    },
+    "_contentHash": "213fe4ca05dfeafb"
+  },
+  "claude-code-plugins-complete-guide": {
+    "pubDate": "2026-01-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.5,
+      "ai-ml": 0.9,
+      "devops": 0.7,
+      "architecture": 0.85
+    },
+    "_contentHash": "4727846e9b2a8e87"
+  },
+  "claude-code-verbalized-sampling": {
+    "pubDate": "2025-11-09",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.85
+    },
+    "_contentHash": "fbca500a9e97366b"
+  },
+  "claude-code-web-automation": {
+    "pubDate": "2025-10-08",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.8,
+      "ai-ml": 0.5,
+      "devops": 0.65,
+      "architecture": 0.5
+    },
+    "_contentHash": "8bbc6d4b5ff57b50"
+  },
+  "claude-skills-implementation-guide": {
+    "pubDate": "2025-10-22",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.5,
+      "architecture": 0.85
+    },
+    "_contentHash": "2e85eac617c37ae6"
   },
   "claude-sonnet-46-release": {
     "pubDate": "2026-02-18",
@@ -1273,62 +488,140 @@
       "ai-ml": 0.95,
       "devops": 0.2,
       "architecture": 0.5
-    }
+    },
+    "_contentHash": "620bcc23c35081a9"
   },
-  "matmulfree-cpu-llm-training": {
-    "pubDate": "2026-02-18",
-    "difficulty": 3,
+  "consistency-diffusion-lm": {
+    "pubDate": "2026-02-20",
+    "difficulty": 4,
     "categoryScores": {
       "automation": 0.1,
-      "web-development": 0.0,
+      "web-development": 0,
       "ai-ml": 0.95,
       "devops": 0.1,
       "architecture": 0.6
-    }
+    },
+    "_contentHash": "b4ce525aee755308"
   },
-  "barracuda-cuda-amd-compiler": {
-    "pubDate": "2026-02-18",
+  "data-driven-pm-framework": {
+    "pubDate": "2025-11-05",
     "difficulty": 3,
     "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.0,
-      "ai-ml": 0.5,
-      "devops": 0.3,
-      "architecture": 0.8
-    }
-  },
-  "kanitts2-voice-cloning": {
-    "pubDate": "2026-02-18",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.1,
-      "architecture": 0.3
-    }
-  },
-  "deepseek-v4-release": {
-    "pubDate": "2026-02-18",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.0,
-      "ai-ml": 1.0,
-      "devops": 0.0,
-      "architecture": 0.3
-    }
+      "automation": 0.4,
+      "web-development": 0.3,
+      "ai-ml": 0.75,
+      "devops": 0.2,
+      "architecture": 0.6
+    },
+    "_contentHash": "be2db6c75ed90f51"
   },
   "ddr5-rdimm-vs-rtx3090-local-llm": {
     "pubDate": "2026-02-19",
     "difficulty": 3,
     "categoryScores": {
       "automation": 0.1,
-      "web-development": 0.0,
+      "web-development": 0,
       "ai-ml": 0.8,
       "devops": 0.2,
       "architecture": 0.7
-    }
+    },
+    "_contentHash": "14f83acbc38413d7"
+  },
+  "deep-agents-architecture-optimization": {
+    "pubDate": "2025-11-22",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.95
+    },
+    "_contentHash": "7661baf651beb7b0"
+  },
+  "deepseek-v4-release": {
+    "pubDate": "2026-02-18",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 1,
+      "devops": 0,
+      "architecture": 0.3
+    },
+    "_contentHash": "32f1fb59da334b90"
+  },
+  "dena-llm-study-part1-fundamentals": {
+    "pubDate": "2025-12-08",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "0b1365a9acb5fd6b"
+  },
+  "dena-llm-study-part2-structured-output": {
+    "pubDate": "2025-12-09",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.75,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.85
+    },
+    "_contentHash": "424183473d2483f3"
+  },
+  "dena-llm-study-part3-model-training": {
+    "pubDate": "2025-12-10",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    },
+    "_contentHash": "15c68846fad86023"
+  },
+  "dena-llm-study-part4-rag": {
+    "pubDate": "2025-12-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "88edd0ce5bdd95f7"
+  },
+  "dena-llm-study-part5-agent-design": {
+    "pubDate": "2025-12-12",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.6,
+      "architecture": 0.85
+    },
+    "_contentHash": "bc5376b8415251ca"
+  },
+  "dena-perl-go-migration-ai-agents": {
+    "pubDate": "2026-02-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.5,
+      "architecture": 0.6
+    },
+    "_contentHash": "c77bc67b1caec03d"
   },
   "devstral-qwen3-coder-small-models": {
     "pubDate": "2026-02-19",
@@ -1339,95 +632,8 @@
       "ai-ml": 0.95,
       "devops": 0.4,
       "architecture": 0.6
-    }
-  },
-  "local-ai-radio-smart-home": {
-    "pubDate": "2026-02-19",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.85,
-      "web-development": 0.1,
-      "ai-ml": 0.9,
-      "devops": 0.3,
-      "architecture": 0.7
-    }
-  },
-  "kitten-tts-v08-tiny-sota": {
-    "pubDate": "2026-02-19",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.1,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.4
-    }
-  },
-  "gemini-31-pro-release": {
-    "pubDate": "2026-02-20",
-    "difficulty": 2,
-    "categoryScores": {
-      "automation": 0.3,
-      "web-development": 0.2,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.4
-    }
-  },
-  "asic-llm-inference-16k-tps": {
-    "pubDate": "2026-02-20",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.7
-    }
-  },
-  "llama-cpp-iq-quantization-merge": {
-    "pubDate": "2026-02-20",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.5
-    }
-  },
-  "consistency-diffusion-lm": {
-    "pubDate": "2026-02-20",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.1,
-      "architecture": 0.6
-    }
-  },
-  "qwen3-coder-next-llama-cpp-graph-optimization": {
-    "pubDate": "2026-02-20",
-    "difficulty": 4,
-    "categoryScores": {
-      "automation": 0.2,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.3,
-      "architecture": 0.7
-    }
-  },
-  "ggml-llamacpp-huggingface": {
-    "pubDate": "2026-02-21",
-    "difficulty": 3,
-    "categoryScores": {
-      "automation": 0.1,
-      "web-development": 0.0,
-      "ai-ml": 0.95,
-      "devops": 0.2,
-      "architecture": 0.7
-    }
+    },
+    "_contentHash": "ae201b6211a4bdae"
   },
   "dont-trust-the-salt-multilingual-llm-safety": {
     "pubDate": "2026-02-21",
@@ -1438,6 +644,1039 @@
       "ai-ml": 0.95,
       "devops": 0.1,
       "architecture": 0.4
-    }
+    },
+    "_contentHash": "207f246fb20f2f83"
+  },
+  "e2e-page-test-automation-claude-code": {
+    "pubDate": "2025-11-25",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.7,
+      "ai-ml": 0.6,
+      "devops": 0.8,
+      "architecture": 0.75
+    },
+    "_contentHash": "d2edbcd02906dead"
+  },
+  "effiflow-automation-analysis-part1": {
+    "pubDate": "2025-11-14",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 1,
+      "web-development": 0.3,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.9
+    },
+    "_contentHash": "69312cad56232166"
+  },
+  "effiflow-automation-analysis-part2": {
+    "pubDate": "2025-11-15",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.4,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.85
+    },
+    "_contentHash": "9599c02103c81fed"
+  },
+  "effiflow-automation-analysis-part3": {
+    "pubDate": "2025-11-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.7,
+      "devops": 0.6,
+      "architecture": 0.75
+    },
+    "_contentHash": "4f10d7009d4e8e09"
+  },
+  "enterprise-ai-adoption-topdown": {
+    "pubDate": "2025-12-01",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.2,
+      "ai-ml": 0.8,
+      "devops": 0.3,
+      "architecture": 0.75
+    },
+    "_contentHash": "c5e481d68580b16d"
+  },
+  "figma-mcp-web-components-sync": {
+    "pubDate": "2025-11-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "4d4610e188337ec7"
+  },
+  "functiongemma-270m-tool-calling": {
+    "pubDate": "2026-02-17",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.4
+    },
+    "_contentHash": "dcd74bf5249aa1cb"
+  },
+  "gcloud-mcp-infrastructure-audit": {
+    "pubDate": "2025-11-29",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "d3ac263ae3bab3e7"
+  },
+  "gemini-31-pro-release": {
+    "pubDate": "2026-02-20",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.4
+    },
+    "_contentHash": "d5d083b155acc89f"
+  },
+  "ggml-llamacpp-huggingface": {
+    "pubDate": "2026-02-21",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    },
+    "_contentHash": "666e60d29c01fad6"
+  },
+  "google-analytics-mcp-automation": {
+    "pubDate": "2025-10-05",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.5,
+      "ai-ml": 0.75,
+      "devops": 0.6,
+      "architecture": 0.7
+    },
+    "_contentHash": "0200147505c6e218"
+  },
+  "google-code-wiki-guide": {
+    "pubDate": "2025-11-24",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.75,
+      "web-development": 0.6,
+      "ai-ml": 0.85,
+      "devops": 0.65,
+      "architecture": 0.7
+    },
+    "_contentHash": "88709d4721f69a57"
+  },
+  "google-gemini-file-search-rag-tutorial": {
+    "pubDate": "2025-11-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.4,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.6
+    },
+    "_contentHash": "6ea2b802048e738b"
+  },
+  "gpt-oss-120b-uncensored": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.4
+    },
+    "_contentHash": "24ce3a2d0a6b0076"
+  },
+  "gpt4o-retirement-model-dependency-risk": {
+    "pubDate": "2026-02-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.7
+    },
+    "_contentHash": "75cfc4b5d9657810"
+  },
+  "gpt52-theoretical-physics-discovery": {
+    "pubDate": "2026-02-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0,
+      "architecture": 0.3
+    },
+    "_contentHash": "e47de34d9cfcf55a"
+  },
+  "gpt53-codex-rollout-pause": {
+    "pubDate": "2026-02-11",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.85,
+      "architecture": 0.8
+    },
+    "_contentHash": "876fed68a0487b48"
+  },
+  "greptile-ai-coding-report-2025-review": {
+    "pubDate": "2025-12-19",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.4,
+      "architecture": 0.5
+    },
+    "_contentHash": "25175734ae2130a2"
+  },
+  "heretic-12-vram-reduction": {
+    "pubDate": "2026-02-16",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.5
+    },
+    "_contentHash": "3d2d4216186b9a4a"
+  },
+  "ibm-gen-z-hiring-ai-limits": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.85,
+      "devops": 0.1,
+      "architecture": 0.8
+    },
+    "_contentHash": "561dce67cb038f3f"
+  },
+  "icml-prompt-injection-academic-review": {
+    "pubDate": "2026-02-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.3
+    },
+    "_contentHash": "71f187c7d9603413"
+  },
+  "individual-developer-ai-saas-journey": {
+    "pubDate": "2025-11-27",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.85,
+      "ai-ml": 0.95,
+      "devops": 0.7,
+      "architecture": 0.8
+    },
+    "_contentHash": "bad2f2d2f9f1e968"
+  },
+  "iterative-review-cycle-methodology": {
+    "pubDate": "2025-12-06",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.95
+    },
+    "_contentHash": "bf64e43f199448ed"
+  },
+  "jules-autocoding": {
+    "pubDate": "2025-10-27",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.4,
+      "ai-ml": 0.9,
+      "devops": 0.6,
+      "architecture": 0.7
+    },
+    "_contentHash": "43d2ec6e3feb94e2"
+  },
+  "kanitts2-voice-cloning": {
+    "pubDate": "2026-02-18",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.3
+    },
+    "_contentHash": "70263c603cbb5152"
+  },
+  "karpathy-ai-training-cost-deflation": {
+    "pubDate": "2026-02-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.4
+    },
+    "_contentHash": "f1a3d4a726603e00"
+  },
+  "kitten-tts-v08-tiny-sota": {
+    "pubDate": "2026-02-19",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.4
+    },
+    "_contentHash": "4b8c18b00f6ec528"
+  },
+  "langgraph-multi-agent": {
+    "pubDate": "2025-10-26",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.3,
+      "ai-ml": 0.95,
+      "devops": 0.6,
+      "architecture": 0.9
+    },
+    "_contentHash": "3c1462cbc8873130"
+  },
+  "llama-cpp-iq-quantization-merge": {
+    "pubDate": "2026-02-20",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.5
+    },
+    "_contentHash": "a3ae2a7f996e0970"
+  },
+  "llm-blog-automation": {
+    "pubDate": "2025-10-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.7,
+      "ai-ml": 0.85,
+      "devops": 0.4,
+      "architecture": 0.6
+    },
+    "_contentHash": "5ee6ab99946fd1c9"
+  },
+  "llm-consumer-research-ssr": {
+    "pubDate": "2025-10-23",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.75,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.15,
+      "architecture": 0.6
+    },
+    "_contentHash": "777a533069192c65"
+  },
+  "llm-page-migration-standardization": {
+    "pubDate": "2025-10-30",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.9,
+      "ai-ml": 0.85,
+      "devops": 0.75,
+      "architecture": 0.9
+    },
+    "_contentHash": "17833f9630a26e70"
+  },
+  "llm-pm-workflow-automation": {
+    "pubDate": "2025-11-01",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.6,
+      "architecture": 0.5
+    },
+    "_contentHash": "bb612b07d73e2fd9"
+  },
+  "llm-seo-aeo-practical-implementation": {
+    "pubDate": "2025-11-28",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.9,
+      "ai-ml": 0.7,
+      "devops": 0.4,
+      "architecture": 0.6
+    },
+    "_contentHash": "ba794190dc11e93e"
+  },
+  "local-ai-radio-smart-home": {
+    "pubDate": "2026-02-19",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.7
+    },
+    "_contentHash": "6894593a2b8935b1"
+  },
+  "matmulfree-cpu-llm-training": {
+    "pubDate": "2026-02-18",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.6
+    },
+    "_contentHash": "38dd1d21df669535"
+  },
+  "mcp-code-execution-practical-implementation": {
+    "pubDate": "2025-11-19",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.6,
+      "architecture": 0.95
+    },
+    "_contentHash": "dda090e680866ef3"
+  },
+  "mcp-servers-toolkit-introduction": {
+    "pubDate": "2025-11-23",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.3,
+      "ai-ml": 0.8,
+      "devops": 0.7,
+      "architecture": 0.6
+    },
+    "_contentHash": "ade5320d06b12dc8"
+  },
+  "meta-ai-agent-platform-sierra-avocado": {
+    "pubDate": "2026-02-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.8
+    },
+    "_contentHash": "02b6b0cb36a0cf54"
+  },
+  "metadata-based-recommendation-optimization": {
+    "pubDate": "2025-10-18",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.7,
+      "ai-ml": 0.8,
+      "devops": 0.7,
+      "architecture": 0.85
+    },
+    "_contentHash": "1909f2f30c9fa7e9"
+  },
+  "minimax-m25-open-weight-vs-proprietary": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.5
+    },
+    "_contentHash": "50f37ece1ba186f1"
+  },
+  "mit-soar-self-curriculum-reasoning": {
+    "pubDate": "2026-02-13",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0,
+      "ai-ml": 1,
+      "devops": 0,
+      "architecture": 0.5
+    },
+    "_contentHash": "0d982f11e3942b28"
+  },
+  "moltbook-ai-theater-human-control": {
+    "pubDate": "2026-02-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.15,
+      "architecture": 0.4
+    },
+    "_contentHash": "a2b4ff44758f863c"
+  },
+  "monthly-analytics-2025-12": {
+    "pubDate": "2025-12-24",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "3b6900255cfa3d46"
+  },
+  "multi-agent-orchestration-improvement": {
+    "pubDate": "2025-12-04",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.5,
+      "architecture": 0.95
+    },
+    "_contentHash": "b9f3d8d7010cf721"
+  },
+  "multi-agent-orchestration-routing": {
+    "pubDate": "2026-02-09",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.9
+    },
+    "_contentHash": "7cee1e78639b76db"
+  },
+  "multi-agent-swe-bench-verdent": {
+    "pubDate": "2026-02-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.8
+    },
+    "_contentHash": "08473dd43938fe07"
+  },
+  "n8n-rss-automation": {
+    "pubDate": "2025-11-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.6,
+      "ai-ml": 0.8,
+      "devops": 0.7,
+      "architecture": 0.65
+    },
+    "_contentHash": "73be99e07cd4292d"
+  },
+  "notion-backlog-slack-claude-project-management": {
+    "pubDate": "2025-11-03",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.5,
+      "ai-ml": 0.7,
+      "devops": 0.65,
+      "architecture": 0.85
+    },
+    "_contentHash": "597ee2ac032c8ad0"
+  },
+  "nvidia-dgx-spark-cuda-compatibility": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 0.85,
+      "devops": 0.2,
+      "architecture": 0.7
+    },
+    "_contentHash": "221122c0db842a81"
+  },
+  "nvidia-llm-inference-cost-reduction": {
+    "pubDate": "2026-02-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.6
+    },
+    "_contentHash": "584656858b12b591"
+  },
+  "openai-agentkit-tutorial-part1": {
+    "pubDate": "2025-10-20",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.4,
+      "architecture": 0.5
+    },
+    "_contentHash": "d8756267694d7277"
+  },
+  "openai-agentkit-tutorial-part2": {
+    "pubDate": "2025-10-21",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.4,
+      "ai-ml": 0.9,
+      "devops": 0.6,
+      "architecture": 0.75
+    },
+    "_contentHash": "904354832f33c584"
+  },
+  "openai-atlas-ai-app-hub": {
+    "pubDate": "2026-02-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.5,
+      "ai-ml": 0.9,
+      "devops": 0.1,
+      "architecture": 0.7
+    },
+    "_contentHash": "536864ed25b7c359"
+  },
+  "openclaw-advanced-usage": {
+    "pubDate": "2026-02-05",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "249633d564b4beee"
+  },
+  "openclaw-cron-fix-guide": {
+    "pubDate": "2026-02-06",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.2,
+      "ai-ml": 0.1,
+      "devops": 0.8,
+      "architecture": 0.6
+    },
+    "_contentHash": "52fa2d6c1b6f55a8"
+  },
+  "openclaw-e2e-test-automation-guide": {
+    "pubDate": "2026-02-08",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.6,
+      "ai-ml": 0.8,
+      "devops": 0.85,
+      "architecture": 0.75
+    },
+    "_contentHash": "8323c41a54e6a184"
+  },
+  "openclaw-installation-tutorial": {
+    "pubDate": "2026-02-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "36b19b56ca424242"
+  },
+  "openclaw-introduction-guide": {
+    "pubDate": "2026-02-03",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "d7ef64deebd6379b"
+  },
+  "openclaw-opus-4-6-setup-guide": {
+    "pubDate": "2026-02-06",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.6,
+      "architecture": 0.5
+    },
+    "_contentHash": "150df18be3f3df3b"
+  },
+  "openclaw-update-doctor-error-fix": {
+    "pubDate": "2026-02-14",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.2,
+      "devops": 0.9,
+      "architecture": 0.4
+    },
+    "_contentHash": "e9fd35f099dd8e83"
+  },
+  "openrouter-oss-dominance": {
+    "pubDate": "2026-02-17",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.3
+    },
+    "_contentHash": "9e30fa2fdcd0ddc9"
+  },
+  "patent-strategy-llm-era": {
+    "pubDate": "2026-02-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 0.9,
+      "devops": 0,
+      "architecture": 0.3
+    },
+    "_contentHash": "790381cfd7f5a053"
+  },
+  "playwright-ai-testing": {
+    "pubDate": "2025-10-25",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.85,
+      "ai-ml": 0.7,
+      "devops": 0.8,
+      "architecture": 0.6
+    },
+    "_contentHash": "2b5f8b4768c78653"
+  },
+  "prompt-engineering-agent-improvements": {
+    "pubDate": "2025-11-12",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.9
+    },
+    "_contentHash": "a3685e71397e3a07"
+  },
+  "qwen3-coder-8gb-vram": {
+    "pubDate": "2026-02-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.6
+    },
+    "_contentHash": "427670e2c0f0e616"
+  },
+  "qwen3-coder-next-llama-cpp-graph-optimization": {
+    "pubDate": "2026-02-20",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.7
+    },
+    "_contentHash": "9f712740343bfbac"
+  },
+  "qwen35-vending-bench-bankruptcy": {
+    "pubDate": "2026-02-17",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.1,
+      "web-development": 0,
+      "ai-ml": 0.95,
+      "devops": 0,
+      "architecture": 0.2
+    },
+    "_contentHash": "39ca4409e8d9548f"
+  },
+  "recommendation-system-v3": {
+    "pubDate": "2025-11-02",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.75,
+      "web-development": 0.7,
+      "ai-ml": 0.6,
+      "devops": 0.65,
+      "architecture": 0.95
+    },
+    "_contentHash": "45dfeff5a12f198c"
+  },
+  "rlm-recursive-language-model-coding-agent": {
+    "pubDate": "2026-02-12",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.9
+    },
+    "_contentHash": "7a9d547c6f9b18bd"
+  },
+  "self-healing-ai-systems": {
+    "pubDate": "2025-10-17",
+    "difficulty": 5,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.3,
+      "ai-ml": 0.95,
+      "devops": 0.9,
+      "architecture": 0.95
+    },
+    "_contentHash": "ef6c8aea8e8ff5ad"
+  },
+  "slack-mcp-team-communication": {
+    "pubDate": "2025-11-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.5,
+      "architecture": 0.75
+    },
+    "_contentHash": "3e7d59820901ef33"
+  },
+  "software-factory-zero-code-development": {
+    "pubDate": "2026-02-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.7
+    },
+    "_contentHash": "9b2e1139615341e7"
+  },
+  "specification-driven-development": {
+    "pubDate": "2025-10-15",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.75,
+      "web-development": 0.5,
+      "ai-ml": 0.8,
+      "devops": 0.5,
+      "architecture": 0.9
+    },
+    "_contentHash": "8ef61752e07bec08"
+  },
+  "sqlite-ai-swarm-build": {
+    "pubDate": "2026-02-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.5,
+      "architecture": 0.8
+    },
+    "_contentHash": "f7b66898813e0b94"
+  },
+  "ssr-survey-analysis": {
+    "pubDate": "2025-10-24",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.1,
+      "architecture": 0.4
+    },
+    "_contentHash": "de285409675ddeb3"
+  },
+  "tailwind-layoffs-opensource-ai-crisis": {
+    "pubDate": "2026-01-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.7,
+      "ai-ml": 0.8,
+      "devops": 0.2,
+      "architecture": 0.4
+    },
+    "_contentHash": "159486de72517dee"
+  },
+  "terraform-ai-batch-infrastructure": {
+    "pubDate": "2025-11-26",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.3,
+      "ai-ml": 0.75,
+      "devops": 0.95,
+      "architecture": 0.9
+    },
+    "_contentHash": "7ab80317bfd00385"
+  },
+  "three-week-analytics-2025-11-04": {
+    "pubDate": "2025-11-06",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.25,
+      "ai-ml": 0.25,
+      "devops": 0.15,
+      "architecture": 0.1
+    },
+    "_contentHash": "46babeda40093eb9"
+  },
+  "ux-psychology-frontend-design-skill": {
+    "pubDate": "2025-12-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.9,
+      "ai-ml": 0.6,
+      "devops": 0.1,
+      "architecture": 0.4
+    },
+    "_contentHash": "191de0f7e7ab8b0c"
+  },
+  "ux-psychology-implementation-case-study": {
+    "pubDate": "2025-12-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.95,
+      "ai-ml": 0.2,
+      "devops": 0.1,
+      "architecture": 0.6
+    },
+    "_contentHash": "654bfc5b8d68a309"
+  },
+  "verbalized-sampling-llm-diversity": {
+    "pubDate": "2025-11-08",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    },
+    "_contentHash": "76c094a99e65280c"
+  },
+  "vertex-ai-search-site-implementation": {
+    "pubDate": "2025-11-30",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.85,
+      "ai-ml": 0.95,
+      "devops": 0.85,
+      "architecture": 0.8
+    },
+    "_contentHash": "8a44347366661ede"
+  },
+  "webmcp-chrome-146-ai-tool-server": {
+    "pubDate": "2026-02-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.9,
+      "ai-ml": 0.85,
+      "devops": 0.2,
+      "architecture": 0.7
+    },
+    "_contentHash": "50aa16531270f47d"
+  },
+  "weekly-analytics-2025-10-14": {
+    "pubDate": "2025-10-14",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.4,
+      "ai-ml": 0.3,
+      "devops": 0.5,
+      "architecture": 0.4
+    },
+    "_contentHash": "8ca3a3effb92bd07"
+  },
+  "windsurf-arena-mode-speed-over-accuracy": {
+    "pubDate": "2026-02-13",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.1,
+      "architecture": 0.3
+    },
+    "_contentHash": "725e577891aa77e7"
   }
 }

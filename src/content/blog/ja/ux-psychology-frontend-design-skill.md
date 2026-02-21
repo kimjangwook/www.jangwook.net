@@ -10,7 +10,7 @@ tags:
   - claude-code
   - frontend
 relatedPosts:
-  - slug: aeo-implementation-experience
+  - slug: adsense-rejection-ai-analysis-improvement
     score: 0.93
     reason:
       ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -19,7 +19,7 @@ relatedPosts:
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
       zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
-  - slug: adsense-rejection-ai-analysis-improvement
+  - slug: aeo-implementation-experience
     score: 0.93
     reason:
       ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -37,24 +37,20 @@ relatedPosts:
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
       zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
-  - slug: llm-blog-automation
-    score: 0.9
+  - slug: 45-day-analytics-report-2025-11
+    score: 0.91
     reason:
-      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, AI/ML with comparable
-        difficulty.
-      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
-  - slug: agent-effi-flow-pivot-omotenashi-bot
-    score: 0.89
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.91
     reason:
-      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, AI/ML with comparable
-        difficulty.
-      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 ## 背景：AIが生成するUIの限界

@@ -1,5 +1,5 @@
 ---
-title: 'OpenClaw 완전 소개 — 나만의 AI 비서를 만들자'
+title: OpenClaw 완전 소개 — 나만의 AI 비서를 만들자
 description: '오픈소스 AI 비서 플랫폼 OpenClaw의 주요 기능과 아키텍처를 소개합니다. 멀티채널, 멀티모델, 노드 시스템까지 완전 가이드.'
 pubDate: '2026-02-03'
 heroImage: ../../../assets/blog/openclaw-introduction-guide-hero.png
@@ -8,7 +8,42 @@ tags:
   - ai-assistant
   - open-source
   - automation
-relatedPosts: []
+relatedPosts:
+  - slug: 45-day-analytics-report-2025-11
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part4-rag
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: figma-mcp-web-components-sync
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: gcloud-mcp-infrastructure-audit
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 > 📚 <strong>시리즈: OpenClaw 완전 정복</strong>

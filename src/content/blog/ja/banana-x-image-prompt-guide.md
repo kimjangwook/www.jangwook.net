@@ -1,6 +1,8 @@
 ---
 title: 300件のデザイン評価データから作ったAI画像プロンプト完全ガイド
-description: Banana Xのインフォグラフィック評価データ300件を分析して作成したYAML 7-Part Structure画像プロンプト作成法。高得点パターンとドメイン別テンプレート付き。
+description: >-
+  Banana Xのインフォグラフィック評価データ300件を分析して作成したYAML 7-Part
+  Structure画像プロンプト作成法。高得点パターンとドメイン別テンプレート付き。
 pubDate: '2026-02-06'
 heroImage: ../../../assets/blog/banana-x-image-prompt-guide-hero.png
 tags:
@@ -8,7 +10,42 @@ tags:
   - image-generation
   - prompt-engineering
   - design
-relatedPosts: []
+relatedPosts:
+  - slug: 45-day-analytics-report-2025-11
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part4-rag
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: figma-mcp-web-components-sync
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: gcloud-mcp-infrastructure-audit
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 ## はじめに：「なんとなく綺麗な画像」はもう卒業

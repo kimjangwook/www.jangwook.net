@@ -1,8 +1,6 @@
 ---
-title: >-
-  jangwook.net 45天增长报告：从750名访客中学到的7个洞察
-description: >-
-  博客启动45天GA4数据深度分析 - 自然搜索占比44.3%达成、SEO优化ROI、流量激增原因分析、英文内容91%跳出率解决方案
+title: jangwook.net 45天增长报告：从750名访客中学到的7个洞察
+description: 博客启动45天GA4数据深度分析 - 自然搜索占比44.3%达成、SEO优化ROI、流量激增原因分析、英文内容91%跳出率解决方案
 pubDate: '2025-11-20'
 noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
@@ -11,14 +9,41 @@ tags:
   - Report
   - Data
 relatedPosts:
-  - slug: blog-launch-analysis-report
+  - slug: figma-mcp-web-components-sync
     score: 0.95
     reason:
-      ko: '이전 블로그 런칭 리포트의 후속편으로, 45일간의 성장 과정을 상세히 분석합니다.'
-      ja: 前回のブログ立ち上げレポートの続編として、45日間の成長過程を詳細に分析します。
-      en: >-
-        Follow-up to the previous blog launch report, providing detailed analysis of 45 days of growth.
-      zh: 作为上一篇博客启动报告的后续，详细分析了45天的增长过程。
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: three-week-analytics-2025-11-04
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
+    score: 0.94
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: claude-code-web-automation
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: playwright-ai-testing
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 # jangwook.net 45天增长报告：数据揭示的真相

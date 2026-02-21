@@ -10,8 +10,17 @@ tags:
   - langgraph
   - devops
 relatedPosts:
-  - slug: metadata-based-recommendation-optimization
-    score: 0.89
+  - slug: ai-agent-collaboration-patterns
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: google-analytics-mcp-automation
+    score: 0.9
     reason:
       ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, DevOps, 아키텍처 기초를 다룹니다.'
       ja: 事前学習資料として有用であり、自動化、AI/ML、DevOps、アーキテクチャの基礎を扱います。
@@ -19,6 +28,33 @@ relatedPosts:
         Useful as prerequisite knowledge, covering automation, AI/ML, DevOps,
         architecture fundamentals.
       zh: 作为先修知识很有用，涵盖自动化、AI/ML、DevOps、架构基础。
+  - slug: specification-driven-development
+    score: 0.9
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML,
+        architecture fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、架构基础。
+  - slug: ai-content-recommendation-system
+    score: 0.88
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML,
+        architecture fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、架构基础。
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.81
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
+      ja: 自動化、AI/ML、アーキテクチャの観点から補完的な内容を提供します。
+      en: >-
+        Provides complementary content from automation, AI/ML, architecture
+        perspective.
+      zh: 从自动化、AI/ML、架构角度提供补充内容。
 ---
 
 ## 自我修复的时代

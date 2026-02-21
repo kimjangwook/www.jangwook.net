@@ -9,8 +9,17 @@ tags:
   - mcp
   - web-optimization
 relatedPosts:
-  - slug: astro-scheduled-publishing
-    score: 0.93
+  - slug: claude-code-web-automation
+    score: 0.95
+    reason:
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
+  - slug: blog-launch-analysis-report
+    score: 0.94
     reason:
       ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
@@ -18,42 +27,33 @@ relatedPosts:
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
       zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: metadata-based-recommendation-optimization
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.91
+    reason:
+      ko: '자동화, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, architecture with comparable
+        difficulty.
+      zh: 在自动化、架构领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
+    score: 0.91
+    reason:
+      ko: '자동화, 웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, architecture with
+        comparable difficulty.
+      zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
+  - slug: google-analytics-mcp-automation
     score: 0.9
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOps、アーキテクチャのトピックで繋がります。
+      ko: '다음 단계 학습으로 적합하며, 자동화, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、DevOps、アーキテクチャのトピックで繋がります。
       en: >-
         Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps、架构主题进行连接。
-  - slug: specification-driven-development
-    score: 0.88
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、架构主题进行连接。
-  - slug: ai-content-recommendation-system
-    score: 0.87
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、架构主题进行连接。
-  - slug: self-healing-ai-systems
-    score: 0.78
-    reason:
-      ko: '자동화, DevOps, 아키텍처 관점에서 보완적인 내용을 제공합니다.'
-      ja: 自動化、DevOps、アーキテクチャの観点から補完的な内容を提供します。
-      en: >-
-        Provides complementary content from automation, DevOps, architecture
-        perspective.
-      zh: 从自动化、DevOps、架构角度提供补充内容。
+        automation, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题进行连接。
 ---
 
 ## Web 性能优化的新范式

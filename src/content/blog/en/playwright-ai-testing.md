@@ -13,15 +13,6 @@ tags:
   - TypeScript
   - AI
 relatedPosts:
-  - slug: claude-code-web-automation
-    score: 0.95
-    reason:
-      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, DevOps with
-        comparable difficulty.
-      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
   - slug: chrome-devtools-mcp-performance
     score: 0.95
     reason:
@@ -31,6 +22,24 @@ relatedPosts:
         Covers similar topics in automation, web development, DevOps,
         architecture with comparable difficulty.
       zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-web-automation
+    score: 0.95
+    reason:
+      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, DevOps with
+        comparable difficulty.
+      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: blog-launch-analysis-report
     score: 0.93
     reason:
@@ -49,15 +58,6 @@ relatedPosts:
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
       zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-notion-mcp-automation
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 End-to-end (E2E) testing has long been the bottleneck in modern web development. While unit and integration tests are relatively straightforward to write and maintain, E2E tests often suffer from flakiness, slow execution, and maintenance overhead. Enter Playwright with AI-powered test generation—a paradigm shift that transforms how we approach browser automation and testing.

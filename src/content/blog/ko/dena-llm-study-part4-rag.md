@@ -1,9 +1,52 @@
 ---
-title: "DeNA LLM 스터디 Part 4: RAG 아키텍처와 최신 트렌드"
-description: "DeNA의 LLM 스터디 자료 Part 4를 통해 RAG의 핵심 개념부터 GraphRAG, Agentic RAG까지 최신 검색 증강 생성 기술을 살펴봅니다."
-pubDate: "2025-12-11"
-heroImage: "../../../assets/blog/dena-llm-study-part4-rag-hero.jpg"
-tags: ["rag", "llm", "ai", "dena", "embedding"]
+title: 'DeNA LLM 스터디 Part 4: RAG 아키텍처와 최신 트렌드'
+description: >-
+  DeNA의 LLM 스터디 자료 Part 4를 통해 RAG의 핵심 개념부터 GraphRAG, Agentic RAG까지 최신 검색 증강 생성
+  기술을 살펴봅니다.
+pubDate: '2025-12-11'
+heroImage: ../../../assets/blog/dena-llm-study-part4-rag-hero.jpg
+tags:
+  - rag
+  - llm
+  - ai
+  - dena
+  - embedding
+relatedPosts:
+  - slug: 45-day-analytics-report-2025-11
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: figma-mcp-web-components-sync
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: gcloud-mcp-infrastructure-audit
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: three-week-analytics-2025-11-04
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 > <strong>시리즈: DeNA LLM 스터디</strong> (4/5)

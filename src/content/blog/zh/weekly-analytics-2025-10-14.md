@@ -18,6 +18,15 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through automation
         topics.
       zh: 适合作为下一步学习资源，通过自动化主题进行连接。
+  - slug: chrome-devtools-mcp-performance
+    score: 0.92
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through automation
+        topics.
+      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
   - slug: claude-code-web-automation
     score: 0.92
     reason:
@@ -27,8 +36,8 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through automation
         topics.
       zh: 适合作为下一步学习资源，通过自动化主题进行连接。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.92
+  - slug: astro-scheduled-publishing
+    score: 0.91
     reason:
       ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
       ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
@@ -43,15 +52,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through automation
-        topics.
-      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
 ---
 
 # 博客第一周分析报告：与31位热情早期采用者共同开启的旅程

@@ -12,7 +12,7 @@ tags:
   - specification
   - best-practices
 relatedPosts:
-  - slug: metadata-based-recommendation-optimization
+  - slug: ai-content-recommendation-system
     score: 0.94
     reason:
       ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -21,26 +21,35 @@ relatedPosts:
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-collaboration-patterns
-    score: 0.92
+  - slug: google-analytics-mcp-automation
+    score: 0.94
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
-  - slug: self-healing-ai-systems
-    score: 0.91
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.9
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、アーキテクチャの基礎を扱います。
       en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
-  - slug: astro-scheduled-publishing
-    score: 0.82
+        Useful as prerequisite knowledge, covering automation, AI/ML,
+        architecture fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、架构基础。
+  - slug: llm-blog-automation
+    score: 0.9
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML, 아키텍처 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/ML、アーキテクチャの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML,
+        architecture fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML、架构基础。
+  - slug: blog-launch-analysis-report
+    score: 0.87
     reason:
       ko: '선행 학습 자료로 유용하며, 자동화, 아키텍처 기초를 다룹니다.'
       ja: 事前学習資料として有用であり、自動化、アーキテクチャの基礎を扱います。

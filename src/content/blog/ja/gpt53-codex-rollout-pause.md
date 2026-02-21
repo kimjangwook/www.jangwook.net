@@ -13,7 +13,7 @@ tags:
   - incident-management
   - engineering-management
 relatedPosts:
-  - slug: metadata-based-recommendation-optimization
+  - slug: bigquery-mcp-prefix-filtering
     score: 0.92
     reason:
       ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -31,7 +31,7 @@ relatedPosts:
         Covers similar topics in AI/ML, DevOps, architecture with comparable
         difficulty.
       zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: bigquery-mcp-prefix-filtering
+  - slug: metadata-based-recommendation-optimization
     score: 0.92
     reason:
       ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -40,7 +40,7 @@ relatedPosts:
         Covers similar topics in AI/ML, DevOps, architecture with comparable
         difficulty.
       zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: dena-llm-study-part5-agent-design
+  - slug: anthropic-code-execution-mcp
     score: 0.91
     reason:
       ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -49,7 +49,7 @@ relatedPosts:
         Covers similar topics in AI/ML, DevOps, architecture with comparable
         difficulty.
       zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-code-execution-practical-implementation
+  - slug: dena-llm-study-part5-agent-design
     score: 0.91
     reason:
       ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'

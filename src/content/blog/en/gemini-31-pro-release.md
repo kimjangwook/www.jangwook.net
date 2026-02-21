@@ -20,14 +20,14 @@ relatedPosts:
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: windsurf-arena-mode-speed-over-accuracy
+  - slug: kanitts2-voice-cloning
     score: 0.94
     reason:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: kanitts2-voice-cloning
+  - slug: windsurf-arena-mode-speed-over-accuracy
     score: 0.94
     reason:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
@@ -41,7 +41,7 @@ relatedPosts:
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: functiongemma-270m-tool-calling
+  - slug: claude-sonnet-46-release
     score: 0.93
     reason:
       ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'

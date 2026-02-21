@@ -1,5 +1,5 @@
 ---
-title: 'OpenClaw 설치부터 첫 대화까지 — 완벽 튜토리얼'
+title: OpenClaw 설치부터 첫 대화까지 — 완벽 튜토리얼
 description: 'OpenClaw 설치, Telegram 연결, 첫 AI 대화까지 단계별로 안내합니다. Node.js 설정부터 워크스페이스 구조까지.'
 pubDate: '2026-02-04'
 heroImage: ../../../assets/blog/openclaw-installation-tutorial-hero.png
@@ -8,7 +8,42 @@ tags:
   - tutorial
   - telegram
   - installation
-relatedPosts: []
+relatedPosts:
+  - slug: 45-day-analytics-report-2025-11
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part4-rag
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: figma-mcp-web-components-sync
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: gcloud-mcp-infrastructure-audit
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 > <strong>시리즈: OpenClaw 완전 정복</strong> (2/3)

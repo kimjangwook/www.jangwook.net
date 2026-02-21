@@ -11,7 +11,7 @@ tags:
   - cloud-functions
   - search
 relatedPosts:
-  - slug: e2e-page-test-automation-claude-code
+  - slug: adding-chinese-support
     score: 0.94
     reason:
       ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -20,7 +20,7 @@ relatedPosts:
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
       zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: adding-chinese-support
+  - slug: e2e-page-test-automation-claude-code
     score: 0.94
     reason:
       ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -38,15 +38,6 @@ relatedPosts:
         Covers similar topics in automation, web development, AI/ML, DevOps,
         architecture with comparable difficulty.
       zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: playwright-ai-testing
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: notion-backlog-slack-claude-project-management
     score: 0.94
     reason:
@@ -56,6 +47,15 @@ relatedPosts:
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
       zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: playwright-ai-testing
+    score: 0.94
+    reason:
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 개요

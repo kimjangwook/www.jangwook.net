@@ -9,42 +9,6 @@ tags:
   - Blog
   - Report
 relatedPosts:
-  - slug: chrome-devtools-mcp-performance
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-web-automation
-    score: 0.93
-    reason:
-      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, DevOps with
-        comparable difficulty.
-      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
-  - slug: ai-agent-notion-mcp-automation
-    score: 0.91
-    reason:
-      ko: '자동화, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, architecture with comparable
-        difficulty.
-      zh: 在自动化、架构领域涵盖类似主题，难度相当。
   - slug: google-analytics-mcp-automation
     score: 0.9
     reason:
@@ -54,6 +18,15 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through
         automation, DevOps, architecture topics.
       zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题进行连接。
+  - slug: llm-blog-automation
+    score: 0.89
+    reason:
+      ko: '자동화, 웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, architecture with
+        comparable difficulty.
+      zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
 ---
 
 # jangwook.net ブログローンチ分析レポート

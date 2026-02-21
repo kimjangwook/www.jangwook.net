@@ -12,51 +12,41 @@ tags:
   - design-system
   - automation
 relatedPosts:
-  - slug: metadata-based-recommendation-optimization
+  - slug: three-week-analytics-2025-11-04
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
     score: 0.94
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 涵盖自动化、Web 开发、AI/ML、DevOps、架构等类似主题,难度相当。
-  - slug: google-analytics-mcp-automation
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: claude-code-web-automation
     score: 0.93
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 涵盖自动化、AI/ML、DevOps、架构等类似主题,难度相当。
-  - slug: specification-driven-development
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: playwright-ai-testing
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: ai-agent-notion-mcp-automation
     score: 0.92
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 涵盖自动化、AI/ML、架构等类似主题,难度相当。
-  - slug: claude-code-web-automation
-    score: 0.91
-    reason:
-      ko: '선행 학습 자료로 유용하며, 자동화, 웹 개발, DevOps 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、自動化、Web開発、DevOpsの基礎を扱います。
-      en: >-
-        Useful as prerequisite knowledge, covering automation, web development,
-        DevOps fundamentals.
-      zh: 作为先导知识很有用,涵盖自动化、Web 开发、DevOps 基础。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.91
-    reason:
-      ko: '선행 학습 자료로 유용하며, 자동화, 웹 개발, DevOps, 아키텍처 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、自動化、Web開発、DevOps、アーキテクチャの基礎を扱います。
-      en: >-
-        Useful as prerequisite knowledge, covering automation, web development,
-        DevOps, architecture fundamentals.
-      zh: 作为先导知识很有用,涵盖自动化、Web 开发、DevOps、架构基础。
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 ## 개요

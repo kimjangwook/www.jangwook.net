@@ -10,7 +10,7 @@ tags:
   - ai
   - productivity
 relatedPosts:
-  - slug: ai-agent-notion-mcp-automation
+  - slug: llm-blog-automation
     score: 0.93
     reason:
       ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
@@ -19,15 +19,8 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML topics.
       zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
-  - slug: ai-presentation-automation
-    score: 0.92
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: claude-code-web-automation
-    score: 0.9
+  - slug: blog-launch-analysis-report
+    score: 0.88
     reason:
       ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
       ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
@@ -35,16 +28,7 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through automation
         topics.
       zh: 适合作为下一步学习资源，通过自动化主题进行连接。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.89
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through automation
-        topics.
-      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
-  - slug: ai-content-recommendation-system
+  - slug: google-analytics-mcp-automation
     score: 0.84
     reason:
       ko: '자동화, AI/ML 관점에서 보완적인 내용을 제공합니다.'

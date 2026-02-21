@@ -1,8 +1,8 @@
 ---
-title: >-
-  jangwook.net 45일 성장 리포트: 750명 방문과 함께 배운 7가지 인사이트
+title: 'jangwook.net 45일 성장 리포트: 750명 방문과 함께 배운 7가지 인사이트'
 description: >-
-  블로그 런칭 45일 GA4 데이터 전격 분석 - 오가닉 검색 44.3% 달성, SEO 최적화 ROI, 트래픽 급증 원인 분석, 영어 콘텐츠 91% 이탈률 해결 전략
+  블로그 런칭 45일 GA4 데이터 전격 분석 - 오가닉 검색 44.3% 달성, SEO 최적화 ROI, 트래픽 급증 원인 분석, 영어 콘텐츠
+  91% 이탈률 해결 전략
 pubDate: '2025-11-20'
 noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
@@ -11,14 +11,41 @@ tags:
   - Report
   - Data
 relatedPosts:
-  - slug: blog-launch-analysis-report
+  - slug: figma-mcp-web-components-sync
     score: 0.95
     reason:
-      ko: '이전 블로그 런칭 리포트의 후속편으로, 45일간의 성장 과정을 상세히 분석합니다.'
-      ja: 前回のブログ立ち上げレポートの続編として、45日間の成長過程を詳細に分析します。
-      en: >-
-        Follow-up to the previous blog launch report, providing detailed analysis of 45 days of growth.
-      zh: 作为之前博客启动报告的续集，详细分析45天的成长过程。
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: three-week-analytics-2025-11-04
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
+    score: 0.94
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: claude-code-web-automation
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: playwright-ai-testing
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 # jangwook.net 45일 성장 리포트: 데이터가 말해주는 진실

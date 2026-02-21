@@ -1,31 +1,48 @@
 ---
-title: 'gcloud MCPでGCPインフラ自動監査を実装する'
-description: 'AIエージェントとgcloud MCPを活用して、GCPインフラのセキュリティ脆弱性と構成問題を自動的に検出・改善する方法を紹介します。'
+title: gcloud MCPでGCPインフラ自動監査を実装する
+description: AIエージェントとgcloud MCPを活用して、GCPインフラのセキュリティ脆弱性と構成問題を自動的に検出・改善する方法を紹介します。
 pubDate: '2025-11-29'
-heroImage: '../../../assets/blog/gcloud-mcp-infrastructure-audit.jpg'
-tags: ['gcp', 'mcp', 'infrastructure']
+heroImage: ../../../assets/blog/gcloud-mcp-infrastructure-audit.jpg
+tags:
+  - gcp
+  - mcp
+  - infrastructure
 relatedPosts:
-  - slug: 'ai-agent-collaboration-patterns'
-    score: 0.92
+  - slug: 45-day-analytics-report-2025-11
+    score: 0.95
     reason:
-      ko: '병렬 에이전트 아키텍처와 멀티 에이전트 협업 패턴을 심화 학습할 수 있습니다'
-      en: 'Deep dive into parallel agent architecture and multi-agent collaboration patterns'
-      ja: '並列エージェントアーキテクチャとマルチエージェント協業パターンを深く学べます'
-      zh: '深入学习并行代理架构和多代理协作模式'
-  - slug: 'mcp-servers-toolkit-introduction'
-    score: 0.88
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: figma-mcp-web-components-sync
+    score: 0.95
     reason:
-      ko: 'MCP 서버의 기본 개념과 다양한 MCP 도구들을 소개합니다'
-      en: 'Introduction to MCP server basics and various MCP tools'
-      ja: 'MCPサーバーの基本概念と様々なMCPツールを紹介します'
-      zh: '介绍MCP服务器的基本概念和各种MCP工具'
-  - slug: 'terraform-ai-batch-infrastructure'
-    score: 0.85
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: three-week-analytics-2025-11-04
+    score: 0.95
     reason:
-      ko: 'Terraform과 AI를 활용한 인프라 자동화의 또 다른 접근 방식을 배울 수 있습니다'
-      en: 'Learn another approach to infrastructure automation using Terraform and AI'
-      ja: 'TerraformとAIを活用したインフラ自動化の別のアプローチを学べます'
-      zh: '学习使用Terraform和AI进行基础设施自动化的另一种方法'
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
+    score: 0.94
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: llm-seo-aeo-practical-implementation
+    score: 0.94
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 ## 概要

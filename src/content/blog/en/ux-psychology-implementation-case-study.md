@@ -11,13 +11,6 @@ tags:
   - frontend
   - astro
 relatedPosts:
-  - slug: ux-psychology-frontend-design-skill
-    score: 0.89
-    reason:
-      ko: 웹 개발 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: Web開発分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in web development with comparable difficulty.
-      zh: 在Web开发领域涵盖类似主题，难度相当。
   - slug: aeo-implementation-experience
     score: 0.89
     reason:
@@ -27,6 +20,13 @@ relatedPosts:
         Covers similar topics in web development, architecture with comparable
         difficulty.
       zh: 在Web开发、架构领域涵盖类似主题，难度相当。
+  - slug: ux-psychology-frontend-design-skill
+    score: 0.89
+    reason:
+      ko: 웹 개발 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: Web開発分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in web development with comparable difficulty.
+      zh: 在Web开发领域涵盖类似主题，难度相当。
   - slug: adsense-rejection-ai-analysis-improvement
     score: 0.88
     reason:

@@ -21,15 +21,13 @@ relatedPosts:
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
       zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
-  - slug: vertex-ai-search-site-implementation
+  - slug: 45-day-analytics-report-2025-11
     score: 0.92
     reason:
-      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, AI/ML with comparable
-        difficulty.
-      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
   - slug: adding-chinese-support
     score: 0.92
     reason:
@@ -39,24 +37,20 @@ relatedPosts:
         Covers similar topics in web development, AI/ML with comparable
         difficulty.
       zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
-  - slug: llm-blog-automation
+  - slug: figma-mcp-web-components-sync
     score: 0.92
     reason:
-      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, AI/ML with comparable
-        difficulty.
-      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
-  - slug: individual-developer-ai-saas-journey
-    score: 0.91
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: gcloud-mcp-infrastructure-audit
+    score: 0.92
     reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, AI/ML topics.
-      zh: 适合作为下一步学习资源，通过Web开发、AI/ML主题进行连接。
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 Getting rejected by Google AdSense is a frustrating experience that many bloggers face. When I received the notification stating <strong>"Your site does not comply with Google AdSense program policies - Low Value Content,"</strong> I was confused. My blog had over 230 high-quality technical articles covering AI, Claude Code, MCP, and cloud infrastructure topics. So what went wrong?

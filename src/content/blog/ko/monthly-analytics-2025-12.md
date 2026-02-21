@@ -1,8 +1,8 @@
 ---
-title: >-
-  jangwook.net 월간 성장 리포트 (12월): 2,600명 방문, 오가닉 검색 57% 돌파
+title: 'jangwook.net 월간 성장 리포트 (12월): 2,600명 방문, 오가닉 검색 57% 돌파'
 description: >-
-  블로그 런칭 75일 GA4 데이터 분석 - 일일 평균 85명 방문, 오가닉 검색 56.5% 달성, Google Code Wiki 가이드 신규 인기 포스트 등극, 중국 시장 급성장
+  블로그 런칭 75일 GA4 데이터 분석 - 일일 평균 85명 방문, 오가닉 검색 56.5% 달성, Google Code Wiki 가이드 신규
+  인기 포스트 등극, 중국 시장 급성장
 pubDate: '2025-12-24'
 noindex: true
 heroImage: ../../../assets/blog/monthly-analytics-2025-12-hero.png
@@ -14,24 +14,38 @@ relatedPosts:
   - slug: 45-day-analytics-report-2025-11
     score: 0.95
     reason:
-      ko: '이전 45일 리포트의 후속편으로, 11월 21일부터 12월 21일까지의 성장을 상세 분석합니다.'
-      ja: '前回の45日レポートの続編として、11月21日から12月21日までの成長を詳細に分析します。'
-      en: 'Follow-up to the 45-day report, providing detailed analysis of growth from November 21 to December 21.'
-      zh: '作为45天报告的续集，详细分析11月21日至12月21日的增长情况。'
-  - slug: blog-launch-analysis-report
-    score: 0.85
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.95
     reason:
-      ko: '블로그 런칭 초기부터 현재까지의 성장 궤적을 비교할 수 있습니다.'
-      ja: 'ブログ開設初期から現在までの成長軌跡を比較できます。'
-      en: 'Compare growth trajectory from initial blog launch to the present.'
-      zh: '可以比较从博客初始发布到现在的增长轨迹。'
-  - slug: google-analytics-mcp-automation
-    score: 0.8
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part4-rag
+    score: 0.95
     reason:
-      ko: '이 리포트 생성에 사용된 GA MCP 자동화 시스템의 구현 방법을 설명합니다.'
-      ja: 'このレポート生成に使用されたGA MCP自動化システムの実装方法を説明します。'
-      en: 'Explains the implementation of the GA MCP automation system used to generate this report.'
-      zh: '说明用于生成此报告的GA MCP自动化系统的实现方法。'
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: figma-mcp-web-components-sync
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: gcloud-mcp-infrastructure-audit
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 # jangwook.net 월간 성장 리포트: 오가닉 검색 57%, 3배 성장의 비밀

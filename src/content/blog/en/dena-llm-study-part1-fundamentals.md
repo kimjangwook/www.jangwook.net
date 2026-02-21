@@ -1,31 +1,51 @@
 ---
-title: "DeNA LLM Study Part 1: LLM Fundamentals and 2025 AI Landscape"
-description: "DeNA LLM Study series begins. Comparing GPT-4, Claude, and Gemini, covering Next Token Prediction, Instruction Tuning, Reasoning models, and prompt engineering basics."
-pubDate: "2025-12-08"
-heroImage: "../../../assets/blog/dena-llm-study-part1-fundamentals-hero.jpg"
-tags: ["llm", "ai", "prompt-engineering"]
+title: 'DeNA LLM Study Part 1: LLM Fundamentals and 2025 AI Landscape'
+description: >-
+  DeNA LLM Study series begins. Comparing GPT-4, Claude, and Gemini, covering
+  Next Token Prediction, Instruction Tuning, Reasoning models, and prompt
+  engineering basics.
+pubDate: '2025-12-08'
+heroImage: ../../../assets/blog/dena-llm-study-part1-fundamentals-hero.jpg
+tags:
+  - llm
+  - ai
+  - prompt-engineering
 relatedPosts:
-  - slug: dena-llm-study-part2-structured-output
-    score: 0.98
-    reason:
-      ko: "DeNA LLM 스터디 시리즈의 다음 포스트로, 구조화 출력과 멀티 LLM 파이프라인을 다룹니다."
-      ja: "DeNA LLMスタディシリーズの次のポストで、構造化出力とマルチLLMパイプラインを扱います。"
-      en: "Next post in the DeNA LLM Study series covering structured output and multi-LLM pipelines."
-      zh: "DeNA LLM 学习系列的下一篇文章，涵盖结构化输出和多LLM管道。"
-  - slug: dena-llm-study-part3-model-training
+  - slug: 45-day-analytics-report-2025-11
     score: 0.95
     reason:
-      ko: "DeNA LLM 스터디 시리즈의 Part 3로, 모델 학습 방법론을 다룹니다."
-      ja: "DeNA LLMスタディシリーズのPart 3で、モデル学習方法論を扱います。"
-      en: "Part 3 of the DeNA LLM Study series covering model training methodologies."
-      zh: "DeNA LLM 学习系列的第3部分，涵盖模型训练方法论。"
-  - slug: claude-code-best-practices
-    score: 0.88
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: figma-mcp-web-components-sync
+    score: 0.95
     reason:
-      ko: "LLM 활용 실전 가이드로, 프롬프트 엔지니어링 기초와 연결됩니다."
-      ja: "LLM活用実践ガイドで、プロンプトエンジニアリングの基礎と関連します。"
-      en: "Practical LLM guide that connects with prompt engineering fundamentals."
-      zh: "LLM实用指南，与提示工程基础相关。"
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: gcloud-mcp-infrastructure-audit
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: three-week-analytics-2025-11-04
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: llm-blog-automation
+    score: 0.94
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 > <strong>Series: DeNA LLM Study</strong> (1/5)

@@ -16,44 +16,42 @@ tags:
   - automation
   - notion-api
 relatedPosts:
-  - slug: chrome-devtools-mcp-performance
-    score: 0.91
+  - slug: llm-blog-automation
+    score: 0.94
     reason:
-      ko: '자동화, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: >-
-        Covers similar topics in automation, architecture with comparable
+        Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
-      zh: 在自动化、架构领域涵盖类似主题，难度相当。
-  - slug: ai-content-recommendation-system
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: google-analytics-mcp-automation
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
+  - slug: claude-code-best-practices
+    score: 0.92
+    reason:
+      ko: '선행 학습 자료로 유용하며, 자동화, AI/ML 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化、AI/MLの基礎を扱います。
+      en: >-
+        Useful as prerequisite knowledge, covering automation, AI/ML
+        fundamentals.
+      zh: 作为先修知识很有用，涵盖自动化、AI/ML基础。
+  - slug: claude-code-web-automation
+    score: 0.92
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: blog-launch-analysis-report
     score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
-  - slug: specification-driven-development
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.89
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
-  - slug: astro-scheduled-publishing
-    score: 0.87
     reason:
       ko: '자동화, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。

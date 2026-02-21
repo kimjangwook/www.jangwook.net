@@ -11,7 +11,7 @@ tags:
   - cli
   - devops
 relatedPosts:
-  - slug: terraform-ai-batch-infrastructure
+  - slug: openclaw-cron-fix-guide
     score: 0.85
     reason:
       ko: '다음 단계 학습으로 적합하며, DevOps 주제에서 연결됩니다.'
@@ -20,7 +20,7 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through DevOps
         topics.
       zh: 适合作为下一步学习资源，通过DevOps主题进行连接。
-  - slug: openclaw-cron-fix-guide
+  - slug: terraform-ai-batch-infrastructure
     score: 0.85
     reason:
       ko: '다음 단계 학습으로 적합하며, DevOps 주제에서 연결됩니다.'
@@ -36,13 +36,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: mcp-servers-toolkit-introduction
-    score: 0.83
-    reason:
-      ko: DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in DevOps with comparable difficulty.
-      zh: 在DevOps领域涵盖类似主题，难度相当。
   - slug: astro-scheduled-publishing
     score: 0.83
     reason:
@@ -52,6 +45,13 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through DevOps
         topics.
       zh: 适合作为下一步学习资源，通过DevOps主题进行连接。
+  - slug: mcp-servers-toolkit-introduction
+    score: 0.83
+    reason:
+      ko: DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in DevOps with comparable difficulty.
+      zh: 在DevOps领域涵盖类似主题，难度相当。
 ---
 
 ## はじめに

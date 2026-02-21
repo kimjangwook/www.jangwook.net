@@ -10,13 +10,6 @@ tags:
   - AgentKit
   - AI Agent
 relatedPosts:
-  - slug: claude-code-best-practices
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: ai-presentation-automation
     score: 0.93
     reason:
@@ -24,7 +17,14 @@ relatedPosts:
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
       zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: llm-blog-automation
+  - slug: claude-code-best-practices
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: ai-agent-notion-mcp-automation
     score: 0.91
     reason:
       ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
@@ -33,7 +33,7 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML topics.
       zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
-  - slug: ai-agent-notion-mcp-automation
+  - slug: llm-blog-automation
     score: 0.91
     reason:
       ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'

@@ -1,5 +1,5 @@
 ---
-title: '三周分析报告：自然搜索爆炸增长1266%，以及发布20篇文章的旅程'
+title: 三周分析报告：自然搜索爆炸增长1266%，以及发布20篇文章的旅程
 description: 2025年10月15日〜11月4日GA4数据分析，自然搜索从4.3%飙升至54.4%，发布20篇新文章，韩国成为第一访问国家 - 透明分享博客增长记录
 pubDate: '2025-11-06'
 noindex: true
@@ -8,6 +8,42 @@ tags:
   - Analytics
   - Report
   - Data
+relatedPosts:
+  - slug: llm-blog-automation
+    score: 0.94
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: claude-code-web-automation
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: playwright-ai-testing
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.92
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: chrome-devtools-mcp-performance
+    score: 0.92
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 # 三周分析报告：自然搜索爆炸增长1266%，以及发布20篇文章的旅程

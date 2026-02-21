@@ -11,16 +11,7 @@ tags:
   - web-development
   - ai-agents
 relatedPosts:
-  - slug: chrome-devtools-mcp-performance
-    score: 0.95
-    reason:
-      ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, DevOps with
-        comparable difficulty.
-      zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
+  - slug: blog-launch-analysis-report
     score: 0.93
     reason:
       ko: '자동화, 웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
@@ -29,31 +20,31 @@ relatedPosts:
         Covers similar topics in automation, web development, DevOps with
         comparable difficulty.
       zh: 在自动化、Web开发、DevOps领域涵盖类似主题，难度相当。
-  - slug: ai-agent-notion-mcp-automation
+  - slug: llm-blog-automation
     score: 0.92
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.89
+      ko: '자동화, 웹 개발 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development with comparable
+        difficulty.
+      zh: 在自动化、Web开发领域涵盖类似主题，难度相当。
+  - slug: google-analytics-mcp-automation
+    score: 0.9
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
+      ko: '다음 단계 학습으로 적합하며, 자동화, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、DevOpsのトピックで繋がります。
       en: >-
         Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: specification-driven-development
-    score: 0.88
+        automation, DevOps topics.
+      zh: 适合作为下一步学习资源，通过自动化、DevOps主题进行连接。
+  - slug: claude-code-best-practices
+    score: 0.89
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化のトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through automation
-        topics.
-      zh: 适合作为下一步学习资源，通过自动化主题进行连接。
+      ko: '선행 학습 자료로 유용하며, 자동화 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、自動化の基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering automation fundamentals.'
+      zh: 作为先修知识很有用，涵盖自动化基础。
 ---
 
 ## 개요

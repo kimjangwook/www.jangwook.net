@@ -26,13 +26,6 @@ relatedPosts:
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: patent-strategy-llm-era
-    score: 0.92
-    reason:
-      ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
-      en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
-      zh: 作为先修知识很有用，涵盖AI/ML基础。
   - slug: mit-soar-self-curriculum-reasoning
     score: 0.92
     reason:
@@ -42,15 +35,20 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
       zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
-  - slug: ssr-survey-analysis
+  - slug: patent-strategy-llm-era
+    score: 0.92
+    reason:
+      ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
+      zh: 作为先修知识很有用，涵盖AI/ML基础。
+  - slug: ai-model-rush-february-2026
     score: 0.91
     reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML
-        topics.
-      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
+      ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
+      zh: 作为先修知识很有用，涵盖AI/ML基础。
 ---
 
 ## 개요

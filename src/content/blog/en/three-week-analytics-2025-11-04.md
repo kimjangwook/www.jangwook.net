@@ -1,7 +1,11 @@
 ---
-title: '3-Week Analytics Report: 1266% Organic Search Explosion & 20-Post Publishing Sprint'
+title: >-
+  3-Week Analytics Report: 1266% Organic Search Explosion & 20-Post Publishing
+  Sprint
 description: >-
-  2025-10-15〜11-04 GA4 analysis, organic search leap from 4.3% to 54.4%, 20 new posts published, South Korea emerges as #1 country - transparently sharing blog growth journey
+  2025-10-15〜11-04 GA4 analysis, organic search leap from 4.3% to 54.4%, 20 new
+  posts published, South Korea emerges as #1 country - transparently sharing
+  blog growth journey
 pubDate: '2025-11-06'
 noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
@@ -9,6 +13,42 @@ tags:
   - Analytics
   - Report
   - Data
+relatedPosts:
+  - slug: llm-blog-automation
+    score: 0.94
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: claude-code-web-automation
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: playwright-ai-testing
+    score: 0.93
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: ai-agent-notion-mcp-automation
+    score: 0.92
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: chrome-devtools-mcp-performance
+    score: 0.92
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 # 3-Week Analytics Report: 1266% Organic Search Explosion & 20-Post Publishing Sprint

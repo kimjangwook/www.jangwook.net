@@ -24,7 +24,7 @@ relatedPosts:
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: ai-agent-persona-analysis
+  - slug: ai-agent-kpi-ethics
     score: 0.88
     reason:
       ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
@@ -33,7 +33,7 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
       zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
-  - slug: ai-agent-kpi-ethics
+  - slug: ai-agent-persona-analysis
     score: 0.88
     reason:
       ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
@@ -51,13 +51,15 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through AI/ML
         topics.
       zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
-  - slug: greptile-ai-coding-report-2025-review
+  - slug: data-driven-pm-framework
     score: 0.85
     reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
+      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML
+        topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
 In February 2026, something unprecedented is happening in the AI industry. News that <strong>seven major AI models are scheduled for release in the same month</strong> has sent the industry into what can only be described as a "Model Rush."
