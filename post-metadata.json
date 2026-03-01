@@ -1678,5 +1678,71 @@
       "architecture": 0.3
     },
     "_contentHash": "725e577891aa77e7"
+  },
+  "mit-tlt-adaptive-drafter-reasoning-training": {
+    "pubDate": "2026-02-28",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.7
+    }
+  },
+  "github-agentic-workflows-cicd-ai": {
+    "pubDate": "2026-03-01",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.2,
+      "ai-ml": 0.85,
+      "devops": 0.9,
+      "architecture": 0.7
+    }
+  },
+  "anthropic-pentagon-ai-governance-cto-lessons": {
+    "pubDate": "2026-03-02",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.85
+    }
+  },
+  "jira-ai-agents-mcp-engineering-management": {
+    "pubDate": "2026-03-03",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.2,
+      "ai-ml": 0.8,
+      "devops": 0.5,
+      "architecture": 0.7
+    }
+  },
+  "mit-encompass-agent-search-reliability": {
+    "pubDate": "2026-03-04",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.8
+    }
+  },
+  "agentic-workflow-meta-tools-optimization": {
+    "pubDate": "2026-03-05",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.8
+    }
   }
 }
