@@ -1,45 +1,61 @@
 ---
-title: 'GitHub Agentic Workflows — CI/CDにAIエージェントが参加'
-description: 'GitHub Agentic Workflowsの技術プレビューを分析します。MarkdownでAIエージェントが自動化を定義し、継続的なAIパラダイムで課題分類・コード生成・テスト作成を実現します。'
+title: GitHub Agentic Workflows — CI/CDにAIエージェントが参加
+description: >-
+  GitHub Agentic
+  Workflowsの技術プレビューを分析します。MarkdownでAIエージェントが自動化を定義し、継続的なAIパラダイムで課題分類・コード生成・テスト作成を実現します。
 pubDate: '2026-03-01'
 heroImage: ../../../assets/blog/github-agentic-workflows-cicd-ai-hero.jpg
-tags: [github, ai-agent, cicd, automation]
+tags:
+  - github
+  - ai-agent
+  - cicd
+  - automation
 relatedPosts:
-  - slug: self-healing-ai-systems
-    score: 0.91
-    reason:
-      ko: "CI 실패 자동 수정과 자가 치유 시스템의 아키텍처가 유사합니다."
-      ja: "CI障害の自動修正とセルフヒーリングシステムのアーキテクチャが類似しています。"
-      en: "CI failure auto-fix and self-healing system architectures are closely related."
-      zh: "CI失败自动修复与自愈系统的架构非常相似。"
-  - slug: claude-code-parallel-testing
-    score: 0.88
-    reason:
-      ko: "AI 에이전트를 활용한 테스트 자동화 패턴이 공통됩니다."
-      ja: "AIエージェントを活用したテスト自動化パターンが共通しています。"
-      en: "Both share AI agent-driven test automation patterns."
-      zh: "两者都采用了AI代理驱动的测试自动化模式。"
-  - slug: specification-driven-development
-    score: 0.85
-    reason:
-      ko: "Markdown으로 의도를 정의하고 AI가 실행하는 패러다임이 동일합니다."
-      ja: "Markdownで意図を定義しAIが実行するパラダイムが同じです。"
-      en: "Both follow the paradigm of defining intent in Markdown and letting AI execute."
-      zh: "两者都遵循用Markdown定义意图、让AI执行的范式。"
   - slug: claude-agent-teams-guide
-    score: 0.82
+    score: 0.94
     reason:
-      ko: "멀티 에이전트 오케스트레이션과 역할 분담 설계가 관련됩니다."
-      ja: "マルチエージェントオーケストレーションと役割分担の設計が関連します。"
-      en: "Multi-agent orchestration and role-based design are related."
-      zh: "多代理编排和基于角色的设计密切相关。"
-  - slug: anthropic-code-execution-mcp
-    score: 0.80
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-cli-migration-guide
+    score: 0.94
     reason:
-      ko: "에이전트의 코드 실행 환경과 보안 격리 설계에서 유사점이 있습니다."
-      ja: "エージェントのコード実行環境とセキュリティ分離の設計に類似点があります。"
-      en: "Both address agent code execution environments and security isolation design."
-      zh: "两者都涉及代理代码执行环境和安全隔离设计。"
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: effiflow-automation-analysis-part3
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: llm-pm-workflow-automation
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: terraform-ai-batch-infrastructure
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概要

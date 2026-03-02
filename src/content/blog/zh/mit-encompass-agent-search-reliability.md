@@ -1,45 +1,49 @@
 ---
-title: 'MIT EnCompass：用搜索算法将AI代理准确率提升40%'
-description: '分析MIT CSAIL开发的EnCompass框架如何将搜索策略应用于AI代理执行路径，从实务角度大幅提升可靠性与准确率。'
+title: MIT EnCompass：用搜索算法将AI代理准确率提升40%
+description: 分析MIT CSAIL开发的EnCompass框架如何将搜索策略应用于AI代理执行路径，从实务角度大幅提升可靠性与准确率。
 pubDate: '2026-03-04'
 heroImage: ../../../assets/blog/mit-encompass-agent-search-reliability-hero.jpg
-tags: [ai-agent, llm, reliability, mit-research]
+tags:
+  - ai-agent
+  - llm
+  - reliability
+  - mit-research
 relatedPosts:
-  - slug: self-healing-ai-systems
-    score: 0.88
+  - slug: rlm-recursive-language-model-coding-agent
+    score: 0.95
     reason:
-      ko: "두 포스트 모두 AI 에이전트의 오류 복구와 신뢰성 향상을 다룹니다."
-      ja: "両記事ともAIエージェントのエラー回復と信頼性向上を扱います。"
-      en: "Both posts address AI agent error recovery and reliability improvement."
-      zh: "两篇文章都讨论了AI代理的错误恢复和可靠性提升。"
-  - slug: deep-agents-architecture-optimization
-    score: 0.82
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: verbalized-sampling-llm-diversity
+    score: 0.95
     reason:
-      ko: "에이전트 아키텍처 최적화와 실행 전략 개선이라는 공통 주제를 공유합니다."
-      ja: "エージェントアーキテクチャの最適化と実行戦略の改善という共通テーマを共有します。"
-      en: "Both share the common theme of agent architecture optimization and execution strategy improvement."
-      zh: "两者共享代理架构优化和执行策略改进的共同主题。"
-  - slug: multi-agent-orchestration-improvement
-    score: 0.78
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part2-structured-output
+    score: 0.94
     reason:
-      ko: "에이전트 실행 흐름 제어와 오케스트레이션 전략에서 유사점이 있습니다."
-      ja: "エージェント実行フロー制御とオーケストレーション戦略で類似点があります。"
-      en: "Similarities in agent execution flow control and orchestration strategies."
-      zh: "在代理执行流控制和编排策略方面有相似之处。"
-  - slug: ai-agent-collaboration-patterns
-    score: 0.75
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part3-model-training
+    score: 0.94
     reason:
-      ko: "AI 에이전트의 실행 패턴과 협업 전략이라는 관점에서 보완적입니다."
-      ja: "AIエージェントの実行パターンと協業戦略という観点で補完的です。"
-      en: "Complementary from the perspective of AI agent execution patterns and collaboration strategies."
-      zh: "从AI代理执行模式和协作策略的角度来看是互补的。"
-  - slug: mit-soar-self-curriculum-reasoning
-    score: 0.72
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: multi-agent-orchestration-routing
+    score: 0.94
     reason:
-      ko: "MIT의 AI 연구 성과를 실무에 적용하는 관점에서 연결됩니다."
-      ja: "MITのAI研究成果を実務に適用する観点で繋がります。"
-      en: "Connected through the lens of applying MIT AI research to practical use."
-      zh: "从将MIT AI研究成果应用于实践的角度相连。"
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述

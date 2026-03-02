@@ -1744,5 +1744,27 @@
       "devops": 0.4,
       "architecture": 0.8
     }
+  },
+  "nist-ai-agent-security-standards": {
+    "pubDate": "2026-03-06",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.6,
+      "architecture": 0.85
+    }
+  },
+  "ai-distillation-attacks-enterprise-defense": {
+    "pubDate": "2026-03-02",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.7
+    }
   }
 }

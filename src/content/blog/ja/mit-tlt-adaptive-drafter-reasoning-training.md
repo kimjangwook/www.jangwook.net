@@ -1,45 +1,49 @@
 ---
 title: 'MIT TLT: 推論LLM訓練の速度を2倍に加速させる適応型ドラフター'
-description: 'MITが発表したTLT技術は、遊休GPUを活用して推論LLMのRL訓練を70～210%加速します。適応型ドラフターとロールアウトエンジンの仕組みを解析します。'
+description: >-
+  MITが発表したTLT技術は、遊休GPUを活用して推論LLMのRL訓練を70～210%加速します。適応型ドラフターとロールアウトエンジンの仕組みを解析します。
 pubDate: '2026-02-28'
 heroImage: ../../../assets/blog/mit-tlt-adaptive-drafter-reasoning-training-hero.jpg
-tags: ["llm-training", "ai-research", "performance"]
+tags:
+  - llm-training
+  - ai-research
+  - performance
 relatedPosts:
-  - slug: "mit-soar-self-curriculum-reasoning"
-    score: 0.88
+  - slug: dena-llm-study-part3-model-training
+    score: 0.94
     reason:
-      ko: "둘 다 MIT의 추론 LLM 개선 연구이며, SOAR는 학습 데이터 품질을, TLT는 훈련 속도를 다룹니다."
-      ja: "どちらもMITの推論LLM改善研究で、SOARは学習データ品質を、TLTは訓練速度を扱います。"
-      en: "Both are MIT research on improving reasoning LLMs — SOAR focuses on training data quality while TLT targets training speed."
-      zh: "两者都是MIT关于改进推理LLM的研究——SOAR关注训练数据质量，TLT关注训练速度。"
-  - slug: "nvidia-llm-inference-cost-reduction"
-    score: 0.82
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: heretic-12-vram-reduction
+    score: 0.94
     reason:
-      ko: "LLM 추론 비용 최적화라는 공통 주제를 다루며, NVFP4와 TLT 모두 효율성 극대화를 목표로 합니다."
-      ja: "LLM推論コスト最適化という共通テーマを扱い、NVFP4もTLTも効率最大化を目指します。"
-      en: "Both address LLM cost optimization — NVFP4 targets inference while TLT targets training efficiency."
-      zh: "两者都涉及LLM成本优化——NVFP4针对推理，TLT针对训练效率。"
-  - slug: "asic-llm-inference-16k-tps"
-    score: 0.78
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: qwen3-coder-next-llama-cpp-graph-optimization
+    score: 0.94
     reason:
-      ko: "GPU 대안 하드웨어로 LLM 성능을 높이는 관점에서, TLT의 유휴 자원 활용 전략과 맥을 같이 합니다."
-      ja: "GPU代替ハードウェアでLLM性能を高める観点で、TLTの遊休リソース活用戦略と通じます。"
-      en: "Both explore hardware-level optimization for LLM performance — ASIC inference and TLT's idle resource utilization."
-      zh: "两者都探索LLM性能的硬件级优化——ASIC推理和TLT的空闲资源利用。"
-  - slug: "karpathy-ai-training-cost-deflation"
-    score: 0.75
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: verbalized-sampling-llm-diversity
+    score: 0.94
     reason:
-      ko: "AI 훈련 비용 하락 트렌드의 구체적 사례로서, TLT는 Karpathy가 예측한 비용 디플레이션을 실현하는 기술입니다."
-      ja: "AI訓練コスト低下トレンドの具体例として、TLTはKarpathyが予測したコストデフレを実現する技術です。"
-      en: "TLT is a concrete example of the training cost deflation trend that Karpathy predicted."
-      zh: "TLT是Karpathy预测的训练成本通缩趋势的具体实例。"
-  - slug: "consistency-diffusion-lm"
-    score: 0.72
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: llama-cpp-iq-quantization-merge
+    score: 0.93
     reason:
-      ko: "AR 모델 대비 추론 속도 향상이라는 공통 주제에서, 디퓨전 LM과 TLT 모두 효율적 생성을 지향합니다."
-      ja: "ARモデル比の推論速度向上という共通テーマで、ディフュージョンLMもTLTも効率的な生成を目指します。"
-      en: "Both pursue faster generation compared to standard AR models — diffusion LM for inference, TLT for training."
-      zh: "两者都追求比标准AR模型更快的生成——扩散LM用于推理，TLT用于训练。"
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
 ---
 
 ## 概要

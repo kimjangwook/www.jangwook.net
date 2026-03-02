@@ -1,44 +1,49 @@
 ---
-title: 'Anthropic vs ペンタゴン — AI ガバナンス時代に CTO が準備すべきベンダー戦略'
-description: 'Anthropic のペンタゴン軍事 AI 要求拒否事態を分析し、CTO/VPoE が AI ベンダー依存リスクと統治戦略をいかに構築すべきか実践ガイドを提示します。'
+title: Anthropic vs ペンタゴン — AI ガバナンス時代に CTO が準備すべきベンダー戦略
+description: >-
+  Anthropic のペンタゴン軍事 AI 要求拒否事態を分析し、CTO/VPoE が AI
+  ベンダー依存リスクと統治戦略をいかに構築すべきか実践ガイドを提示します。
 pubDate: '2026-03-02'
-tags: ["ai-governance", "cto-strategy", "vendor-risk"]
+tags:
+  - ai-governance
+  - cto-strategy
+  - vendor-risk
 relatedPosts:
-  - slug: "enterprise-ai-adoption-topdown"
-    score: 0.91
+  - slug: ccc-vs-gcc-ai-compiled-c-compiler
+    score: 0.95
     reason:
-      ko: "두 포스트 모두 기업 AI 도입 전략을 다루며, 조직 차원의 의사결정 프레임워크를 제시합니다."
-      ja: "両記事とも企業のAI導入戦略を扱い、組織レベルの意思決定フレームワークを提示しています。"
-      en: "Both posts address enterprise AI adoption strategy and present organizational decision-making frameworks."
-      zh: "两篇文章都探讨企业AI导入策略，并提出组织层面的决策框架。"
-  - slug: "ai-agent-kpi-ethics"
-    score: 0.88
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-local-model-inefficiency
+    score: 0.95
     reason:
-      ko: "AI 에이전트의 윤리적 사용과 KPI 설계에서의 거버넌스 문제를 공통적으로 다룹니다."
-      ja: "AIエージェントの倫理的使用とKPI設計におけるガバナンス問題を共通して扱っています。"
-      en: "Both discuss governance issues in ethical AI agent use and KPI design."
-      zh: "两篇文章共同探讨AI代理的伦理使用和KPI设计中的治理问题。"
-  - slug: "gpt4o-retirement-model-dependency-risk"
-    score: 0.85
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: gpt4o-retirement-model-dependency-risk
+    score: 0.95
     reason:
-      ko: "AI 모델 벤더 의존 리스크와 전환 전략이라는 공통 주제를 다룹니다."
-      ja: "AIモデルベンダー依存リスクと移行戦略という共通テーマを扱います。"
-      en: "Both address the common theme of AI model vendor dependency risk and migration strategy."
-      zh: "两篇文章都涉及AI模型供应商依赖风险和迁移策略的共同主题。"
-  - slug: "ibm-gen-z-hiring-ai-limits"
-    score: 0.78
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-distillation-attacks-enterprise-defense
+    score: 0.95
     reason:
-      ko: "기업의 AI 활용 한계와 인간 역할의 중요성을 조직 운영 관점에서 공유합니다."
-      ja: "企業のAI活用の限界と人間の役割の重要性を組織運営の観点から共有しています。"
-      en: "Both share perspectives on the limits of enterprise AI adoption and the importance of human roles."
-      zh: "两篇文章从组织运营角度分享企业AI应用的局限性和人类角色的重要性。"
-  - slug: "ai-agent-cost-reality"
-    score: 0.75
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-agent-kpi-ethics
+    score: 0.94
     reason:
-      ko: "AI 도입의 현실적 비용과 리스크를 기술 리더 관점에서 분석합니다."
-      ja: "AI導入の現実的なコストとリスクを技術リーダーの視点から分析しています。"
-      en: "Both analyze the realistic costs and risks of AI adoption from a tech leader's perspective."
-      zh: "两篇文章都从技术领导者的角度分析AI导入的现实成本和风险。"
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概要

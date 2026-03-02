@@ -1,45 +1,60 @@
 ---
-title: "Jira AI 에이전트와 MCP — Engineering Manager가 준비해야 할 것들"
-description: "Atlassian이 Jira에 AI 에이전트를 도입하고 MCP를 전면 채택했습니다. EM 관점에서 팀 운영 변화와 실무 대응 전략을 정리합니다."
+title: Jira AI 에이전트와 MCP — Engineering Manager가 준비해야 할 것들
+description: >-
+  Atlassian이 Jira에 AI 에이전트를 도입하고 MCP를 전면 채택했습니다. EM 관점에서 팀 운영 변화와 실무 대응 전략을
+  정리합니다.
 pubDate: '2026-03-03'
 heroImage: ../../../assets/blog/jira-ai-agents-mcp-engineering-management-hero.jpg
-tags: ["ai-agent", "mcp", "engineering-management"]
+tags:
+  - ai-agent
+  - mcp
+  - engineering-management
 relatedPosts:
-  - slug: ai-agent-notion-mcp-automation
-    score: 0.88
+  - slug: anthropic-agent-skills-practical-guide
+    score: 0.95
     reason:
-      ko: "MCP를 활용한 프로젝트 관리 자동화라는 공통 주제를 다룹니다."
-      ja: "MCPを活用したプロジェクト管理自動化という共通テーマを扱います。"
-      en: "Both cover project management automation using MCP."
-      zh: "都涉及使用MCP进行项目管理自动化的主题。"
-  - slug: notion-backlog-slack-claude-project-management
-    score: 0.85
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-agent-skills-standard
+    score: 0.95
     reason:
-      ko: "AI 도구를 활용한 프로젝트 관리 워크플로우 구축 사례입니다."
-      ja: "AIツールを活用したプロジェクト管理ワークフロー構築事例です。"
-      en: "Both demonstrate building project management workflows with AI tools."
-      zh: "都展示了使用AI工具构建项目管理工作流的案例。"
-  - slug: slack-mcp-team-communication
-    score: 0.82
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: claude-agent-teams-guide
+    score: 0.95
     reason:
-      ko: "MCP 기반의 팀 협업 도구 통합이라는 점에서 유사합니다."
-      ja: "MCPベースのチームコラボレーションツール統合という点で類似しています。"
-      en: "Similar in integrating team collaboration tools via MCP."
-      zh: "在通过MCP集成团队协作工具方面相似。"
-  - slug: github-agentic-workflows-cicd-ai
-    score: 0.80
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: claude-skills-implementation-guide
+    score: 0.95
     reason:
-      ko: "개발 워크플로우에 AI 에이전트를 통합하는 사례를 다룹니다."
-      ja: "開発ワークフローにAIエージェントを統合する事例を扱います。"
-      en: "Both cover integrating AI agents into development workflows."
-      zh: "都涉及将AI代理集成到开发工作流中。"
-  - slug: enterprise-ai-adoption-topdown
-    score: 0.78
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: effiflow-automation-analysis-part3
+    score: 0.95
     reason:
-      ko: "조직 차원의 AI 도입 전략이라는 관점에서 연결됩니다."
-      ja: "組織レベルのAI導入戦略という観点で関連しています。"
-      en: "Connected through the lens of organizational AI adoption strategy."
-      zh: "从组织级AI采用策略的角度相互关联。"
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 개요

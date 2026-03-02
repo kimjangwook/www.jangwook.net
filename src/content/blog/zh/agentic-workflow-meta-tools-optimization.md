@@ -1,40 +1,60 @@
 ---
-title: '用元工具优化AI代理工作流：AWO框架实战指南'
-description: '基于arXiv论文的Agent Workflow Optimization(AWO)框架分析。通过将重复的工具调用模式编译为元工具，实现LLM调用减少12%、成功率提升4%的方法介绍。'
+title: 用元工具优化AI代理工作流：AWO框架实战指南
+description: >-
+  基于arXiv论文的Agent Workflow
+  Optimization(AWO)框架分析。通过将重复的工具调用模式编译为元工具，实现LLM调用减少12%、成功率提升4%的方法介绍。
 pubDate: '2026-03-05'
+heroImage: ../../../assets/blog/agentic-workflow-meta-tools-optimization-hero.jpg
 tags:
   - ai-agent
   - optimization
   - workflow
 relatedPosts:
+  - slug: claude-code-verbalized-sampling
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: deep-agents-architecture-optimization
-    score: 0.91
+    score: 0.95
     reason:
-      ko: "두 포스트 모두 AI 에이전트 아키텍처의 최적화 전략을 다루며, 실무 적용 가능한 기법을 소개합니다."
-      ja: "両記事ともAIエージェントアーキテクチャの最適化戦略を扱い、実務に適用可能な技法を紹介します。"
-      en: "Both posts cover AI agent architecture optimization strategies with practical techniques."
-      zh: "两篇文章都涵盖了AI代理架构的优化策略，介绍了实用的技术方法。"
-  - slug: multi-agent-orchestration-improvement
-    score: 0.88
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part2-structured-output
+    score: 0.95
     reason:
-      ko: "멀티 에이전트 오케스트레이션과 워크플로우 개선이라는 공통 주제를 다룹니다."
-      ja: "マルチエージェントオーケストレーションとワークフロー改善という共通テーマを扱います。"
-      en: "Both share the theme of multi-agent orchestration and workflow improvement."
-      zh: "两者都围绕多代理编排和工作流改进的共同主题展开。"
-  - slug: ai-agent-cost-reality
-    score: 0.85
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part5-agent-design
+    score: 0.95
     reason:
-      ko: "AI 에이전트 운영 비용과 효율성 관점에서 밀접한 관련이 있습니다."
-      ja: "AIエージェントの運用コストと効率性の観点で密接に関連しています。"
-      en: "Closely related in terms of AI agent operational costs and efficiency."
-      zh: "在AI代理运营成本和效率方面密切相关。"
-  - slug: multi-agent-orchestration-routing
-    score: 0.82
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.95
     reason:
-      ko: "에이전트 라우팅과 워크플로우 최적화라는 유사한 기술적 관점을 공유합니다."
-      ja: "エージェントルーティングとワークフロー最適化という類似の技術的観点を共有します。"
-      en: "Shares similar technical perspectives on agent routing and workflow optimization."
-      zh: "在代理路由和工作流优化方面共享类似的技术视角。"
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概述
