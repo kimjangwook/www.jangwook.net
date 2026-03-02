@@ -4,6 +4,7 @@ description: >-
   Anthropic のペンタゴン軍事 AI 要求拒否事態を分析し、CTO/VPoE が AI
   ベンダー依存リスクと統治戦略をいかに構築すべきか実践ガイドを提示します。
 pubDate: '2026-03-02'
+heroImage: ../../../assets/blog/anthropic-pentagon-ai-governance-cto-lessons-hero.jpg
 tags:
   - ai-governance
   - cto-strategy

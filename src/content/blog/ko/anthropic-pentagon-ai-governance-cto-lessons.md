@@ -4,6 +4,7 @@ description: >-
   Anthropic의 펜타곤 군사 AI 요구 거부 사태를 분석하고, CTO/VPoE가 AI 벤더 의존 리스크와 거버넌스 전략을 어떻게 수립해야
   하는지 실전 가이드를 제시합니다.
 pubDate: '2026-03-02'
+heroImage: ../../../assets/blog/anthropic-pentagon-ai-governance-cto-lessons-hero.jpg
 tags:
   - ai-governance
   - cto-strategy

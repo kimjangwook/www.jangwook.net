@@ -5,6 +5,7 @@ description: >-
   practical guidance for CTOs/VPoEs on establishing AI vendor dependency risk
   and governance strategies.
 pubDate: '2026-03-02'
+heroImage: ../../../assets/blog/anthropic-pentagon-ai-governance-cto-lessons-hero.jpg
 tags:
   - ai-governance
   - cto-strategy

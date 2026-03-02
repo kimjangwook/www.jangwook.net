@@ -2,6 +2,7 @@
 title: Anthropic vs 五角大楼 — AI治理时代的CTO供应商战略
 description: 分析Anthropic拒绝五角大楼军事AI需求事件，指导CTO/VPoE如何建立AI供应商依赖风险和治理策略。
 pubDate: '2026-03-02'
+heroImage: ../../../assets/blog/anthropic-pentagon-ai-governance-cto-lessons-hero.jpg
 tags:
   - ai-governance
   - cto-strategy
