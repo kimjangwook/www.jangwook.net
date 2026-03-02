@@ -1766,5 +1766,16 @@
       "devops": 0.4,
       "architecture": 0.7
     }
+  },
+  "adl-agent-definition-language-governance": {
+    "pubDate": "2026-03-07",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.1,
+      "ai-ml": 0.85,
+      "devops": 0.5,
+      "architecture": 0.9
+    }
   }
 }
