@@ -1,6 +1,6 @@
 ---
-title: 'ADL（Agent Definition Language）— AI エージェント ガバナンスの OpenAPI が登場'
-description: 'AI エージェントの定義・権限・ツールを宣言的に標準化する ADL 仕様の核構造と EM/CTO 視点から見たガバナンス戦略をまとめました。'
+title: ADL（Agent Definition Language）— AI エージェント ガバナンスの OpenAPI が登場
+description: AI エージェントの定義・権限・ツールを宣言的に標準化する ADL 仕様の核構造と EM/CTO 視点から見たガバナンス戦略をまとめました。
 pubDate: '2026-03-07'
 heroImage: ../../../assets/blog/adl-agent-definition-language-governance-hero.jpg
 tags:
@@ -8,41 +8,51 @@ tags:
   - governance
   - adl
 relatedPosts:
-  - slug: nist-ai-agent-security-standards
-    score: 0.92
+  - slug: sqlite-ai-swarm-build
+    score: 0.95
     reason:
-      ko: 'AI 에이전트 표준화와 거버넌스를 다루는 점에서 직접적으로 관련됩니다.'
-      ja: 'AIエージェントの標準化とガバナンスを扱う点で直接的に関連します。'
-      en: 'Directly related in covering AI agent standardization and governance.'
-      zh: '在AI智能体标准化和治理方面直接相关。'
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: anthropic-agent-skills-standard
-    score: 0.88
+    score: 0.94
     reason:
-      ko: 'AI 에이전트 역량 정의와 표준화라는 공통 주제를 다룹니다.'
-      ja: 'AIエージェントの能力定義と標準化という共通テーマを扱います。'
-      en: 'Shares the common theme of AI agent capability definition and standardization.'
-      zh: '共同探讨AI智能体能力定义和标准化主题。'
-  - slug: specification-driven-development
-    score: 0.85
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: claude-agent-teams-guide
+    score: 0.94
     reason:
-      ko: '선언적 사양 기반 개발이라는 패러다임을 공유합니다.'
-      ja: '宣言的な仕様ベース開発というパラダイムを共有します。'
-      en: 'Shares the paradigm of declarative specification-driven development.'
-      zh: '共享声明式规范驱动开发的范式。'
-  - slug: dena-llm-study-part5-agent-design
-    score: 0.82
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: enterprise-ai-adoption-topdown
+    score: 0.94
     reason:
-      ko: '에이전트 설계 패턴과 멀티 에이전트 오케스트레이션에서 연결됩니다.'
-      ja: 'エージェント設計パターンとマルチエージェントオーケストレーションで繋がります。'
-      en: 'Connected through agent design patterns and multi-agent orchestration.'
-      zh: '通过智能体设计模式和多智能体编排相连。'
-  - slug: ai-agent-collaboration-patterns
-    score: 0.80
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: meta-ai-agent-platform-sierra-avocado
+    score: 0.94
     reason:
-      ko: 'AI 에이전트 간 협업과 역할 정의라는 주제에서 관련됩니다.'
-      ja: 'AIエージェント間の協業と役割定義というテーマで関連します。'
-      en: 'Related through the topic of AI agent collaboration and role definition.'
-      zh: '通过AI智能体协作和角色定义主题相关。'
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 概要

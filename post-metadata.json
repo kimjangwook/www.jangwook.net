@@ -1777,5 +1777,16 @@
       "devops": 0.5,
       "architecture": 0.9
     }
+  },
+  "llm-coding-harness-optimization": {
+    "pubDate": "2026-03-03",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.4,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.8
+    }
   }
 }
