@@ -1799,5 +1799,16 @@
       "devops": 0.3,
       "architecture": 0.85
     }
+  },
+  "cursor-agent-trace-ai-code-attribution": {
+    "pubDate": "2026-03-09",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.2,
+      "ai-ml": 0.85,
+      "devops": 0.6,
+      "architecture": 0.7
+    }
   }
 }
