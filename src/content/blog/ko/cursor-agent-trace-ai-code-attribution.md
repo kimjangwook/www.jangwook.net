@@ -1,44 +1,51 @@
 ---
-title: 'Cursor Agent Trace — AI가 작성한 코드를 추적하는 오픈 표준이 등장하다'
-description: 'Cursor가 제안한 Agent Trace 0.1.0 사양을 분석하고, git blame으로는 불가능한 AI 코드 기여 추적이 EM과 CTO에게 왜 중요한지 실무 관점에서 해설합니다.'
+title: Cursor Agent Trace — AI가 작성한 코드를 추적하는 오픈 표준이 등장하다
+description: >-
+  Cursor가 제안한 Agent Trace 0.1.0 사양을 분석하고, git blame으로는 불가능한 AI 코드 기여 추적이 EM과
+  CTO에게 왜 중요한지 실무 관점에서 해설합니다.
 pubDate: '2026-03-09'
-tags: ["ai-agent", "code-attribution", "engineering-management"]
+tags:
+  - ai-agent
+  - code-attribution
+  - engineering-management
 relatedPosts:
-  - slug: "agents-md-effectiveness"
-    score: 0.82
+  - slug: nist-ai-agent-security-standards
+    score: 0.95
     reason:
-      ko: "AGENTS.md의 실효성 검증과 Agent Trace의 코드 기여 추적은 AI 에이전트 거버넌스라는 공통 주제를 다룹니다."
-      ja: "AGENTS.mdの効果検証とAgent Traceのコード寄与追跡は、AIエージェントガバナンスという共通テーマを扱います。"
-      en: "Both posts address AI agent governance — AGENTS.md effectiveness and Agent Trace code attribution tracking."
-      zh: "两篇文章都涉及AI代理治理——AGENTS.md的有效性验证和Agent Trace的代码贡献追踪。"
-  - slug: "specification-driven-development"
-    score: 0.78
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: gpt4o-retirement-model-dependency-risk
+    score: 0.94
     reason:
-      ko: "사양 주도 개발과 Agent Trace 모두 AI 시대의 코드 품질 관리를 위한 표준화 접근법을 제시합니다."
-      ja: "仕様駆動開発とAgent Traceはどちらも、AI時代のコード品質管理のための標準化アプローチを提示します。"
-      en: "Both specification-driven development and Agent Trace propose standardization approaches for code quality management in the AI era."
-      zh: "规范驱动开发和Agent Trace都提出了AI时代代码质量管理的标准化方法。"
-  - slug: "adl-agent-definition-language-governance"
-    score: 0.85
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: sqlite-ai-swarm-build
+    score: 0.94
     reason:
-      ko: "ADL과 Agent Trace는 AI 에이전트 생태계의 표준화라는 동일한 흐름 위에 있는 상호보완적 사양입니다."
-      ja: "ADLとAgent Traceは、AIエージェントエコシステムの標準化という同じ流れにある相互補完的な仕様です。"
-      en: "ADL and Agent Trace are complementary specifications within the same trend of AI agent ecosystem standardization."
-      zh: "ADL和Agent Trace是AI代理生态系统标准化同一趋势下的互补规范。"
-  - slug: "claude-code-best-practices"
-    score: 0.72
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-distillation-attacks-enterprise-defense
+    score: 0.94
     reason:
-      ko: "Claude Code 활용 시 AI가 생성한 코드의 추적 가능성은 팀 개발 모범 사례의 핵심 요소입니다."
-      ja: "Claude Code活用時にAIが生成したコードの追跡可能性は、チーム開発ベストプラクティスの核心要素です。"
-      en: "Traceability of AI-generated code when using Claude Code is a core element of team development best practices."
-      zh: "使用Claude Code时，AI生成代码的可追溯性是团队开发最佳实践的核心要素。"
-  - slug: "greptile-ai-coding-report-2025-review"
-    score: 0.70
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: adl-agent-definition-language-governance
+    score: 0.94
     reason:
-      ko: "AI 코딩의 실제 생산성 데이터와 코드 기여 추적의 필요성이 맞닿아 있습니다."
-      ja: "AIコーディングの実際の生産性データとコード寄与追跡の必要性が接点を持ちます。"
-      en: "Real productivity data from AI coding and the need for code attribution tracking are closely connected."
-      zh: "AI编码的实际生产力数据与代码贡献追踪的需求密切相关。"
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 개요

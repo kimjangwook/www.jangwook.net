@@ -1810,5 +1810,16 @@
       "devops": 0.6,
       "architecture": 0.7
     }
+  },
+  "mcp-open-standard-linux-foundation-engineering-guide": {
+    "pubDate": "2026-03-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.2,
+      "ai-ml": 0.8,
+      "devops": 0.5,
+      "architecture": 0.9
+    }
   }
 }

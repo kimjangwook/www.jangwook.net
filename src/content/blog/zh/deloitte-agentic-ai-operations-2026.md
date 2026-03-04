@@ -1,6 +1,6 @@
 ---
-title: "Deloitte 2026技术趋势中的代理AI运营战略——89%企业为何难上线及EM的委派-审查-所有制框架"
-description: "Deloitte调查仅11%企业运营代理AI。89%企业的困境不在技术而在运营模式。揭示EM和VPoE周一早上可执行的框架。"
+title: Deloitte 2026技术趋势中的代理AI运营战略——89%企业为何难上线及EM的委派-审查-所有制框架
+description: Deloitte调查仅11%企业运营代理AI。89%企业的困境不在技术而在运营模式。揭示EM和VPoE周一早上可执行的框架。
 pubDate: '2026-03-08'
 heroImage: ../../../assets/blog/deloitte-agentic-ai-operations-2026-hero.jpg
 tags:
@@ -8,41 +8,51 @@ tags:
   - engineering-management
   - enterprise
 relatedPosts:
-  - slug: enterprise-ai-adoption-topdown
-    score: 0.92
+  - slug: claude-code-verbalized-sampling
+    score: 0.95
     reason:
-      ko: "두 포스트 모두 기업의 AI 도입 전략을 다루지만, 본 포스트는 운영 모델에 초점을 맞춥니다."
-      ja: "両記事とも企業のAI導入戦略を扱いますが、本記事は運用モデルに焦点を当てています。"
-      en: "Both cover enterprise AI adoption but this post focuses on the operational model."
-      zh: "两篇文章都涉及企业AI采用策略，但本文侧重于运营模型。"
-  - slug: ai-agent-kpi-ethics
-    score: 0.85
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: deep-agents-architecture-optimization
+    score: 0.95
     reason:
-      ko: "AI 에이전트의 성과 측정과 거버넌스를 다루는 점에서 유사합니다."
-      ja: "AIエージェントの成果測定とガバナンスを扱う点で類似しています。"
-      en: "Similar in covering AI agent performance measurement and governance."
-      zh: "在涵盖AI代理绩效衡量和治理方面相似。"
-  - slug: nist-ai-agent-security-standards
-    score: 0.82
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part2-structured-output
+    score: 0.95
     reason:
-      ko: "AI 에이전트 보안 표준과 EM 관점의 프레임워크를 다루는 점에서 연관됩니다."
-      ja: "AIエージェントセキュリティ標準とEM視点のフレームワークを扱う点で関連しています。"
-      en: "Related in covering AI agent security standards and EM-perspective frameworks."
-      zh: "在涵盖AI代理安全标准和EM视角框架方面相关。"
-  - slug: jira-ai-agents-mcp-engineering-management
-    score: 0.80
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: multi-agent-orchestration-routing
+    score: 0.95
     reason:
-      ko: "엔지니어링 관리와 AI 에이전트 활용을 다루는 점에서 유사합니다."
-      ja: "エンジニアリング管理とAIエージェント活用を扱う点で類似しています。"
-      en: "Similar in covering engineering management and AI agent utilization."
-      zh: "在涵盖工程管理和AI代理利用方面相似。"
-  - slug: data-driven-pm-framework
-    score: 0.78
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part5-agent-design
+    score: 0.94
     reason:
-      ko: "데이터 기반 의사결정과 프로젝트 관리 프레임워크를 다루는 점에서 유사합니다."
-      ja: "データ駆動の意思決定とプロジェクト管理フレームワークを扱う点で類似しています。"
-      en: "Similar in covering data-driven decision making and project management frameworks."
-      zh: "在涵盖数据驱动决策和项目管理框架方面相似。"
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## 序言：代理AI革命的海市蜃楼
