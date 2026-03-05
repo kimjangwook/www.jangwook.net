@@ -1,44 +1,62 @@
 ---
-title: 'RoguePilot — GitHub Copilot Prompt Injection Vulnerability and AI Coding Tool Security'
-description: 'Analysis of the RoguePilot vulnerability found in GitHub Codespaces, passive prompt injection risks in AI coding tools, and security guidelines for engineering teams.'
+title: >-
+  RoguePilot — GitHub Copilot Prompt Injection Vulnerability and AI Coding Tool
+  Security
+description: >-
+  Analysis of the RoguePilot vulnerability found in GitHub Codespaces, passive
+  prompt injection risks in AI coding tools, and security guidelines for
+  engineering teams.
 pubDate: '2026-03-10'
-tags: ["security", "github-copilot", "prompt-injection"]
+tags:
+  - security
+  - github-copilot
+  - prompt-injection
 relatedPosts:
-  - slug: icml-prompt-injection-academic-review
-    score: 0.91
+  - slug: cursor-agent-trace-ai-code-attribution
+    score: 0.95
     reason:
-      ko: "두 포스트 모두 프롬프트 인젝션 공격의 실제 사례와 대응 전략을 다룹니다."
-      ja: "両記事ともプロンプトインジェクション攻撃の実例と対策を扱います。"
-      en: "Both posts cover real-world prompt injection attack cases and countermeasures."
-      zh: "两篇文章都涵盖了提示注入攻击的实际案例和应对策略。"
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: nist-ai-agent-security-standards
-    score: 0.87
+    score: 0.94
     reason:
-      ko: "AI 에이전트 보안 표준과 실무 적용 관점에서 상호보완적입니다."
-      ja: "AIエージェントセキュリティ標準と実務適用の観点で相互補完的です。"
-      en: "Complementary perspectives on AI agent security standards and practical application."
-      zh: "在AI智能体安全标准和实务应用方面具有互补性。"
-  - slug: ai-distillation-attacks-enterprise-defense
-    score: 0.85
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-agent-skills-practical-guide
+    score: 0.93
     reason:
-      ko: "AI 시스템을 표적으로 한 공격 유형과 기업 방어 전략을 다루는 공통 주제입니다."
-      ja: "AIシステムを標的とした攻撃類型と企業防御戦略を扱う共通テーマです。"
-      en: "Shared theme of attack types targeting AI systems and enterprise defense strategies."
-      zh: "共同主题是针对AI系统的攻击类型和企业防御策略。"
-  - slug: github-agentic-workflows-cicd-ai
-    score: 0.82
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-agent-teams-guide
+    score: 0.93
     reason:
-      ko: "GitHub 환경에서 AI 에이전트를 활용하는 워크플로우의 보안 측면을 보완합니다."
-      ja: "GitHub環境でAIエージェントを活用するワークフローのセキュリティ面を補完します。"
-      en: "Complements the security aspects of AI agent workflows in GitHub environments."
-      zh: "补充了GitHub环境中AI智能体工作流的安全方面。"
-  - slug: claude-code-hooks-workflow
-    score: 0.78
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-cli-migration-guide
+    score: 0.93
     reason:
-      ko: "AI 코딩 도구의 자동화 훅과 보안 경계 설정에 대한 실전 노하우를 공유합니다."
-      ja: "AIコーディングツールの自動化フックとセキュリティ境界設定の実践ノウハウを共有します。"
-      en: "Shares practical know-how on automation hooks and security boundaries in AI coding tools."
-      zh: "分享AI编码工具自动化钩子和安全边界设置的实战经验。"
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ## Overview

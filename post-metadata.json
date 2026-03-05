@@ -1832,5 +1832,16 @@
       "devops": 0.6,
       "architecture": 0.7
     }
+  },
+  "claude-cowork-enterprise-productivity-platform": {
+    "pubDate": "2026-03-05",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.2,
+      "ai-ml": 0.85,
+      "devops": 0.3,
+      "architecture": 0.8
+    }
   }
 }
