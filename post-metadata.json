@@ -1843,5 +1843,16 @@
       "devops": 0.3,
       "architecture": 0.8
     }
+  },
+  "ai-convenience-loop-reshaping-language-choices": {
+    "pubDate": "2026-03-06",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.6,
+      "ai-ml": 0.85,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
   }
 }
