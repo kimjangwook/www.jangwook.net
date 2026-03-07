@@ -94,13 +94,7 @@ The command delegates to the Writing Assistant agent with the following tasks:
 
 **IMPORTANT - Publication Date**:
 
-- Find the most recent post's `pubDate` in `src/content/blog/` across all languages
-- Calculate two candidates:
-  - **Candidate A**: Latest existing post's pubDate + 1 day
-  - **Candidate B**: Today's date + 1 day
-- Set `pubDate` to **whichever is later** (max of A and B)
-- This ensures no past-dated posts are created even if there's a publishing gap
-- Use `python .claude/skills/blog-writing/scripts/get_next_pubdate.py` to auto-calculate
+- Set `pubDate` to **today's date** (the day the post is written)
 - Format: 'YYYY-MM-DD' (single quotes required)
 
 **IMPORTANT - Korean-First Workflow**:
@@ -115,7 +109,7 @@ The content generation follows a **two-stage process**:
   ---
   title: [Korean Title]
   description: [Korean SEO Description]
-  pubDate: "[Latest Post Date + 1 day]" # Must use single quotes and YYYY-MM-DD format
+  pubDate: "[Today's Date]" # Must use single quotes and YYYY-MM-DD format
   heroImage: ../../../assets/blog/[slug]-hero.[ext]
   tags: [tag1, tag2, ...]
   ---
@@ -330,7 +324,7 @@ Manually edit the `post-metadata.json` file to add metadata for the new post:
 
 - Use base slug WITHOUT language prefix (e.g., "slack-mcp-team-communication", not "ko/slack-mcp-team-communication")
 - All language versions share the same metadata
-- pubDate must be latest post + 1 day
+- pubDate is today's date (the day the post is written)
 
 ### 7. Generate Related Post Recommendations (V3)
 
@@ -471,11 +465,7 @@ Requirements:
 
 1. **Determine publication date**:
 
-   - Run `python .claude/skills/blog-writing/scripts/get_next_pubdate.py` to auto-calculate
-   - OR manually: Find the latest pubDate across all language folders, then pick the **later** of:
-     - Latest post's pubDate + 1 day
-     - Today's date + 1 day
-   - This prevents past-dated posts when there's a publishing gap
+   - Set `pubDate` to **today's date** (the day the post is written)
    - Format as 'YYYY-MM-DD' (single quotes)
 
 2. Research topic using Web Researcher agent:

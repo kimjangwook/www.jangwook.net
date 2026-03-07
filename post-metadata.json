@@ -1854,5 +1854,16 @@
       "devops": 0.2,
       "architecture": 0.7
     }
+  },
+  "olmo-hybrid-transformer-rnn-data-efficiency": {
+    "pubDate": "2026-03-07",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.85
+    }
   }
 }
