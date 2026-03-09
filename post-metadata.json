@@ -1876,5 +1876,16 @@
       "devops": 0.85,
       "architecture": 0.8
     }
+  },
+  "tool-r0-zero-data-agent-training": {
+    "pubDate": "2026-03-09",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.6
+    }
   }
 }
