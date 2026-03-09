@@ -25,6 +25,6 @@ export default defineConfig({
       // 청크 크기 경고 임계값
       chunkSizeWarningLimit: 600,
     },
-    cacheDir: '.vite-cache',
+    cacheDir: '/sessions/gifted-friendly-goldberg/vite-cache',
   },
 });
