@@ -1887,5 +1887,16 @@
       "devops": 0.2,
       "architecture": 0.6
     }
+  },
+  "claude-firefox-22-cves-ai-security-audit": {
+    "pubDate": "2026-03-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.3,
+      "ai-ml": 0.8,
+      "devops": 0.6,
+      "architecture": 0.7
+    }
   }
 }
