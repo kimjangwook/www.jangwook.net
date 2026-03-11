@@ -1,6 +1,12 @@
 ---
-title: 'The Science of Agent Scaling — Google Research Debunks the "More Agents = Better" Myth'
-description: "Google Research's 180-configuration quantitative experiment exposes the multi-agent paradox: 39–70% performance degradation on sequential tasks, 17.2× error amplification, and what 87% predictive accuracy means for your architecture decisions."
+title: >-
+  The Science of Agent Scaling — Google Research Debunks the "More Agents =
+  Better" Myth
+description: >-
+  Google Research's 180-configuration quantitative experiment exposes the
+  multi-agent paradox: 39–70% performance degradation on sequential tasks, 17.2×
+  error amplification, and what 87% predictive accuracy means for your
+  architecture decisions.
 pubDate: '2026-03-10'
 heroImage: ../../../assets/blog/google-agent-scaling-science-multiagent-limits-hero.jpg
 tags:
@@ -8,41 +14,47 @@ tags:
   - LLM
   - architecture
 relatedPosts:
-  - slug: multi-agent-orchestration-routing
+  - slug: rlm-recursive-language-model-coding-agent
     score: 0.95
     reason:
-      ko: 멀티에이전트 라우팅 설계의 본질을 다루는 직접 연계 심화편입니다.
-      ja: マルチエージェントルーティング設計の本質を扱う直接連携の応用編です。
-      en: A direct deep-dive companion on the essence of multi-agent routing design.
-      zh: 探讨多智能体路由设计本质的直接关联深化篇。
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: mit-encompass-agent-search-reliability
-    score: 0.92
+    score: 0.95
     reason:
-      ko: MIT의 에이전트 신뢰성 연구로 Google 스케일링 원칙의 학술적 배경을 보완합니다.
-      ja: MITのエージェント信頼性研究でGoogleスケーリング原則の学術的背景を補完します。
-      en: MIT's agent reliability research complements the academic background of Google's scaling principles.
-      zh: MIT智能体可靠性研究为Google缩放原则提供学术背景补充。
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: deloitte-agentic-ai-operations-2026
-    score: 0.90
+    score: 0.95
     reason:
-      ko: 에이전틱 AI 운영의 산업 현황을 스케일링 원칙과 연결하는 현장 가이드입니다.
-      ja: アジェンティックAI運用の産業現状をスケーリング原則と結びつける現場ガイドです。
-      en: A field guide connecting the industry landscape of agentic AI operations with scaling principles.
-      zh: 将智能体AI运营行业现状与缩放原则相结合的实战指南。
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-verbalized-sampling
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: deep-agents-architecture-optimization
-    score: 0.88
+    score: 0.94
     reason:
-      ko: Deep Agents 아키텍처 최적화로 스케일링 원칙을 실전에 적용하는 설계 가이드입니다.
-      ja: Deep Agentsアーキテクチャ最適化でスケーリング原則を実践に適用する設計ガイドです。
-      en: A design guide for applying scaling principles in practice through Deep Agents architecture optimization.
-      zh: 通过Deep Agents架构优化将缩放原则付诸实践的设计指南。
-  - slug: agentic-workflow-meta-tools-optimization
-    score: 0.85
-    reason:
-      ko: 메타 도구 최적화로 에이전트 워크플로우를 스케일링 원칙에 맞게 재설계하는 실전편입니다.
-      ja: メタツール最適化でエージェントワークフローをスケーリング原則に合わせて再設計する実践編です。
-      en: A practical guide for redesigning agent workflows to align with scaling principles through meta-tool optimization.
-      zh: 通过元工具优化按缩放原则重新设计智能体工作流的实战篇。
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 ## "More agents means better performance" — This assumption is wrong
