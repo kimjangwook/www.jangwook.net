@@ -1920,5 +1920,16 @@
       "devops": 0.2,
       "architecture": 0.5
     }
+  },
+  "openai-open-responses-agentic-standard": {
+    "pubDate": "2026-03-12",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.85
+    }
   }
 }
