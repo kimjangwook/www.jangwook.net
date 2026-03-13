@@ -1931,5 +1931,27 @@
       "devops": 0.4,
       "architecture": 0.85
     }
+  },
+  "mcp-apps-interactive-ui-agent-ux": {
+    "pubDate": "2026-03-12",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.85,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.8
+    }
+  },
+  "anthropic-institute-partner-network": {
+    "pubDate": "2026-03-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.2,
+      "architecture": 0.7
+    }
   }
 }
