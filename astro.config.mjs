@@ -25,6 +25,6 @@ export default defineConfig({
       // 청크 크기 경고 임계값
       chunkSizeWarningLimit: 600,
     },
-    cacheDir: './node_modules/.vite-cache',
+    cacheDir: '.vite-cache',
   },
 });

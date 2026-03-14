@@ -1953,5 +1953,27 @@
       "devops": 0.2,
       "architecture": 0.7
     }
+  },
+  "agent-washing-detection-em-checklist": {
+    "pubDate": "2026-03-13",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.7
+    }
+  },
+  "openai-promptfoo-ai-agent-devsecops": {
+    "pubDate": "2026-03-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.1,
+      "ai-ml": 0.85,
+      "devops": 0.8,
+      "architecture": 0.7
+    }
   }
 }
