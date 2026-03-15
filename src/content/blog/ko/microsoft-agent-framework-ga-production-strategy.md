@@ -1,48 +1,62 @@
 ---
-title: 'Microsoft Agent Framework GA: AutoGen + Semantic Kernel 통합 완성 — EM/CTO 프로덕션 도입 전략'
-description: 'AutoGen과 Semantic Kernel이 통합된 Microsoft Agent Framework가 Q1 2026 GA를 앞두고 있습니다. EM/CTO 관점에서 핵심 기능, 마이그레이션 전략, 프로덕션 도입 로드맵을 정리합니다.'
+title: >-
+  Microsoft Agent Framework GA: AutoGen + Semantic Kernel 통합 완성 — EM/CTO 프로덕션 도입
+  전략
+description: >-
+  AutoGen과 Semantic Kernel이 통합된 Microsoft Agent Framework가 Q1 2026 GA를 앞두고 있습니다.
+  EM/CTO 관점에서 핵심 기능, 마이그레이션 전략, 프로덕션 도입 로드맵을 정리합니다.
 pubDate: '2026-03-14'
-heroImage: '../../../assets/blog/microsoft-agent-framework-ga-production-strategy-hero.png'
+heroImage: ../../../assets/blog/microsoft-agent-framework-ga-production-strategy-hero.png
 tags:
   - ai-agent
   - engineering-management
   - microsoft
 relatedPosts:
-  - slug: a2a-mcp-hybrid-architecture-production-guide
-    score: 0.92
+  - slug: bigquery-mcp-prefix-filtering
+    score: 0.95
     reason:
-      ko: A2A+MCP 하이브리드 아키텍처 전략은 Microsoft Agent Framework의 프로토콜 지원과 직접 연결됩니다.
-      ja: A2A+MCPハイブリッドアーキテクチャ戦略は、Microsoft Agent FrameworkのプロトコルサポートとA2Aに直接関連します。
-      en: The A2A+MCP hybrid architecture strategy directly connects with Microsoft Agent Framework's protocol support.
-      zh: A2A+MCP混合架构策略与Microsoft Agent Framework的协议支持直接相关。
-  - slug: langgraph-multi-agent
-    score: 0.89
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part5-agent-design
+    score: 0.95
     reason:
-      ko: LangGraph의 그래프 기반 오케스트레이션 패턴은 Microsoft Agent Framework와 아키텍처 관점을 비교하는 데 유용합니다.
-      ja: LangGraphのグラフベースオーケストレーションパターンは、Microsoft Agent Frameworkとのアーキテクチャ比較に役立ちます。
-      en: LangGraph's graph-based orchestration patterns are useful for comparing architecture with Microsoft Agent Framework.
-      zh: LangGraph的图形化编排模式有助于与Microsoft Agent Framework进行架构比较。
-  - slug: production-grade-ai-agent-design-principles
-    score: 0.87
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-code-execution-mcp
+    score: 0.94
     reason:
-      ko: 프로덕션급 AI 에이전트 설계 원칙은 Microsoft Agent Framework 도입 시 기준점으로 활용됩니다.
-      ja: プロダクショングレードのAIエージェント設計原則は、Microsoft Agent Framework導入時の基準として活用できます。
-      en: Production-grade AI agent design principles serve as a reference when adopting Microsoft Agent Framework.
-      zh: 生产级AI智能体设计原则是采用Microsoft Agent Framework时的参考基准。
-  - slug: deloitte-agentic-ai-operations-2026
-    score: 0.84
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part2-structured-output
+    score: 0.94
     reason:
-      ko: 2026년 에이전틱 AI 운영 동향은 Microsoft Agent Framework 도입 결정의 시장 맥락을 제공합니다.
-      ja: 2026年のエージェンティックAI運用動向は、Microsoft Agent Framework導入判断の市場コンテキストを提供します。
-      en: The 2026 agentic AI operations trends provide market context for Microsoft Agent Framework adoption decisions.
-      zh: 2026年代理型AI运营趋势为Microsoft Agent Framework采用决策提供了市场背景。
-  - slug: ai-agent-collaboration-patterns
-    score: 0.82
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: iterative-review-cycle-methodology
+    score: 0.94
     reason:
-      ko: 에이전트 협업 패턴은 Microsoft Agent Framework의 멀티에이전트 오케스트레이션을 설계할 때 참고할 수 있습니다.
-      ja: エージェント協調パターンは、Microsoft Agent Frameworkのマルチエージェントオーケストレーション設計時の参考になります。
-      en: Agent collaboration patterns can be referenced when designing Microsoft Agent Framework's multi-agent orchestration.
-      zh: 智能体协作模式可在设计Microsoft Agent Framework的多智能体编排时参考。
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 2026년 3월 현재, AI 에이전트 프레임워크 시장에서 가장 주목할 만한 움직임이 완성 단계에 접어들었다. Microsoft가 수년에 걸쳐 각각 발전시켜온 <strong>AutoGen</strong>과 <strong>Semantic Kernel</strong>이 하나의 플랫폼, 즉 <strong>Microsoft Agent Framework</strong>로 통합된 것이다. 2026년 2월 19일 RC(Release Candidate) 1.0이 출시되었고, Q1 2026 GA(General Availability)를 목전에 두고 있다.

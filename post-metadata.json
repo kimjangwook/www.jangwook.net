@@ -1986,5 +1986,16 @@
       "devops": 0.6,
       "architecture": 0.85
     }
+  },
+  "perplexity-computer-always-on-ai-agent": {
+    "pubDate": "2026-03-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.7
+    }
   }
 }
