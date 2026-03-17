@@ -2008,5 +2008,16 @@
       "devops": 0.3,
       "architecture": 0.8
     }
+  },
+  "hindsight-mcp-agent-memory-learning": {
+    "pubDate": "2026-03-17",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.85
+    }
   }
 }
