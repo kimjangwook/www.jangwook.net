@@ -2019,5 +2019,16 @@
       "devops": 0.4,
       "architecture": 0.85
     }
+  },
+  "alphaevolve-ramsey-ai-research-partner": {
+    "pubDate": "2026-03-18",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.6
+    }
   }
 }
