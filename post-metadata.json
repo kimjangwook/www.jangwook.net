@@ -2041,5 +2041,16 @@
       "devops": 0.3,
       "architecture": 0.8
     }
+  },
+  "ibm-confluent-realtime-data-ai-agents": {
+    "pubDate": "2026-03-20",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.1,
+      "ai-ml": 0.85,
+      "devops": 0.5,
+      "architecture": 0.95
+    }
   }
 }
