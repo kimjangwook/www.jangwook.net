@@ -2052,5 +2052,16 @@
       "devops": 0.5,
       "architecture": 0.95
     }
+  },
+  "deeptune-ai-agent-training-gyms-rl-professional-workflows": {
+    "pubDate": "2026-03-21",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.4,
+      "architecture": 0.7
+    }
   }
 }
