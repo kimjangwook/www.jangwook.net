@@ -117,6 +117,24 @@ The content generation follows a **two-stage process**:
 - This becomes the **source of truth** for all translations
 - Apply Korean technical writing style (존댓말, mix of Korean/English terms)
 - Include all code examples with Korean comments
+- **글쓰기 톤 가이드 (필수 준수)** — 아래 규칙을 반드시 따른다:
+
+#### 사람다운 글쓰기 규칙
+
+**금지 패턴:**
+- "이것은 단순한 X가 아닙니다" / "X를 넘어" / "패러다임의 전환" 등 과장 클리셰
+- 매 포스트에 CTO/EM 액션 아이템, 단기/중기/장기 로드맵 삽입
+- 모든 포스트에 mermaid + 비교 표 + 코드 예제 풀세트 배치
+- 결론이 항상 긍정적 ("혁명적", "지금 준비해야 합니다")
+- 전부 "~이다", "~한다" 객관적 서술로만 채우기
+
+**필수 패턴:**
+- **1인칭 주관 최소 2회**: "나는 이게 ~라고 본다", "솔직히 ~가 아쉽다" 등
+- **비판적 시각 1개 이상**: 한계, 리스크, 과대평가 가능성 등
+- **구체적 경험/시도 서술**: "API를 호출해보니", "코드를 돌려보니" 등 실제 사용 흔적
+- **구조 장치는 최대 2개**: 비교 표, mermaid, 코드 예제, 체크리스트 중 2개만 선택
+- **도입부 변주**: "개요" 섹션 고정이 아니라, 질문/일화/코드 스니펫/뉴스 한 줄 등 다양하게
+- **문장 리듬**: 짧은 문장과 긴 문장을 섞어서 단조로움 방지
 
 **Stage 2: Natural Translation to Other Languages**
 

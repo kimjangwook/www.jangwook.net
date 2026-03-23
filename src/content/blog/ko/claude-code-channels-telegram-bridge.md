@@ -13,38 +13,48 @@ relatedPosts:
   - slug: llm-pm-workflow-automation
     score: 0.95
     reason:
-      ko: 'Channels로 메신저-터미널 연동에 관심이 있다면, LLM을 활용한 PM 워크플로우 자동화 사례도 참고할 만합니다.'
-      ja: Channelsによるメッセンジャー連携に興味があれば、LLMを活用したPMワークフロー自動化の事例も参考になります。
-      en: If you're interested in messenger-terminal integration via Channels, this PM workflow automation case study is also worth checking out.
-      zh: 如果你对通过Channels实现消息-终端联动感兴趣，这篇LLM驱动的PM工作流自动化案例也值得一读。
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: claude-agent-teams-guide
     score: 0.94
     reason:
-      ko: 'Claude Code의 멀티 에이전트 팀 구성 방법을 다룹니다. Channels와 함께 쓰면 원격 팀 협업이 가능해집니다.'
-      ja: Claude Codeのマルチエージェントチーム構成を解説しています。Channelsと組み合わせるとリモートチーム連携が可能になります。
-      en: Covers how to set up multi-agent teams in Claude Code. Combined with Channels, it enables remote team collaboration.
-      zh: 介绍了Claude Code的多Agent团队配置方法。与Channels配合使用可实现远程团队协作。
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: claude-code-cli-migration-guide
     score: 0.94
     reason:
-      ko: 'Claude Code CLI 전반적인 설정과 마이그레이션 가이드입니다. Channels를 처음 세팅할 때 기본 환경 설정 참고용으로 유용합니다.'
-      ja: Claude Code CLIの全般的な設定とマイグレーションガイドです。Channelsの初期セットアップ時の環境設定に役立ちます。
-      en: A comprehensive Claude Code CLI setup and migration guide — useful as a reference when first configuring Channels.
-      zh: Claude Code CLI的全面设置和迁移指南，初次配置Channels时可作为环境设置参考。
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: effiflow-automation-analysis-part3
     score: 0.94
     reason:
-      ko: '크론 기반 에이전트 자동화의 실전 분석입니다. 이 글에서 다룬 launchd + Channels 조합과 비교해서 읽으면 좋습니다.'
-      ja: クロンベースのエージェント自動化の実践分析です。本記事で扱ったlaunchd + Channelsの組み合わせと比較して読むと参考になります。
-      en: A practical analysis of cron-based agent automation. Great to compare with the launchd + Channels setup discussed in this post.
-      zh: 基于cron的Agent自动化实战分析。与本文讨论的launchd + Channels组合对比阅读效果更佳。
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: jules-autocoding
     score: 0.94
     reason:
-      ko: 'Google의 Jules와 비교하면 Claude Code Channels의 로컬 실행 방식이 어떤 차이를 만드는지 체감할 수 있습니다.'
-      ja: GoogleのJulesと比較すると、Claude Code Channelsのローカル実行方式がどのような違いを生むか実感できます。
-      en: Comparing with Google Jules helps illustrate what difference Claude Code Channels' local execution model makes.
-      zh: 与Google的Jules对比，能直观感受到Claude Code Channels本地执行方式带来的差异。
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
 ---
 
 지난 3월 20일, Claude Code v2.1.80에 `--channels`라는 플래그가 하나 추가됐다. 이게 뭔가 했더니, 텔레그램이나 디스코드에서 메시지를 보내면 내 로컬 터미널에서 돌고 있는 Claude가 그걸 받아서 코드를 실행하고, 결과를 다시 메신저로 보내주는 기능이다.
