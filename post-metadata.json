@@ -2085,5 +2085,16 @@
       "devops": 0.6,
       "architecture": 0.8
     }
+  },
+  "dapr-agents-v1-cncf-production-ai-framework": {
+    "pubDate": "2026-03-24",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.1,
+      "ai-ml": 0.8,
+      "devops": 0.85,
+      "architecture": 0.9
+    }
   }
 }

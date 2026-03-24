@@ -18,38 +18,48 @@ relatedPosts:
   - slug: claude-agent-teams-guide
     score: 0.95
     reason:
-      ko: NemoClaw의 멀티에이전트 관리가 궁금하다면, Claude Agent Teams의 팀 단위 에이전트 오케스트레이션 방식도 비교해볼 만합니다.
-      ja: NemoClawのマルチエージェント管理に興味があれば、Claude Agent Teamsのチーム単位オーケストレーションも比較する価値があります。
-      en: If NemoClaw's multi-agent management interests you, compare it with Claude Agent Teams' team-level orchestration approach.
-      zh: 如果你对NemoClaw的多智能体管理感兴趣，可以对比Claude Agent Teams的团队级编排方式。
-  - slug: nist-ai-agent-security-standards
-    score: 0.93
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: sqlite-ai-swarm-build
+    score: 0.95
     reason:
-      ko: NemoClaw의 정책 엔진이 해결하려는 보안 문제를 NIST 표준 관점에서 더 깊이 이해할 수 있습니다.
-      ja: NemoClawのポリシーエンジンが解決しようとするセキュリティ課題を、NIST標準の観点からより深く理解できます。
-      en: Understand the security challenges NemoClaw's policy engine addresses from the NIST standards perspective.
-      zh: 从NIST标准角度更深入理解NemoClaw策略引擎要解决的安全问题。
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: adl-agent-definition-language-governance
     score: 0.95
     reason:
-      ko: NemoClaw의 YAML 정책 파일과 ADL의 에이전트 정의 언어는 에이전트 거버넌스의 두 가지 접근법입니다.
-      ja: NemoClawのYAMLポリシーファイルとADLのエージェント定義言語は、エージェントガバナンスの2つのアプローチです。
-      en: NemoClaw's YAML policy files and ADL's agent definition language represent two approaches to agent governance.
-      zh: NemoClaw的YAML策略文件和ADL的智能体定义语言是智能体治理的两种方法。
-  - slug: openclaw-introduction-guide
-    score: 0.92
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-agent-cost-reality
+    score: 0.94
     reason:
-      ko: NemoClaw의 기반이 되는 OpenClaw의 기본 개념과 사용법을 먼저 파악하고 싶다면 이 글을 참고하세요.
-      ja: NemoClawの基盤となるOpenClawの基本概念と使い方を先に把握したい方はこちらを参照してください。
-      en: Start here to understand OpenClaw basics before diving into NemoClaw's enterprise wrapper.
-      zh: 想先了解NemoClaw底层OpenClaw的基本概念和用法，请参考这篇文章。
-  - slug: mcp-security-crisis-30-cves-enterprise-hardening
-    score: 0.91
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-agent-skills-practical-guide
+    score: 0.94
     reason:
-      ko: NemoClaw가 해결하려는 에이전트 보안 문제의 실제 사례를 MCP 생태계의 CVE 분석을 통해 확인할 수 있습니다.
-      ja: NemoClawが解決しようとするエージェントセキュリティ問題の実例を、MCPエコシステムのCVE分析で確認できます。
-      en: See real-world examples of the agent security issues NemoClaw aims to solve through MCP ecosystem CVE analysis.
-      zh: 通过MCP生态系统CVE分析，了解NemoClaw要解决的智能体安全问题的实际案例。
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 ```bash
