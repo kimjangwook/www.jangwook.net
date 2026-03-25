@@ -2096,5 +2096,16 @@
       "devops": 0.85,
       "architecture": 0.9
     }
+  },
+  "anthropic-vibe-physics-ai-research-assistant": {
+    "pubDate": "2026-03-25",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.0,
+      "ai-ml": 0.95,
+      "devops": 0.3,
+      "architecture": 0.4
+    }
   }
 }
