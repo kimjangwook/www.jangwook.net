@@ -1,4 +1,5 @@
 ---
+heroImage: '../../../assets/blog/anthropic-vibe-physics-ai-research-assistant-hero.jpg'
 title: Vibe Physics — A Physics Professor Had Claude Write a Paper
 description: >-
   Analyzing Anthropic's Science blog debut where Harvard physicist Matthew

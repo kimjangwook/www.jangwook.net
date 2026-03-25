@@ -1,4 +1,5 @@
 ---
+heroImage: '../../../assets/blog/anthropic-vibe-physics-ai-research-assistant-hero.jpg'
 title: Vibe Physics — 物理学教授がClaudeに論文を書かせてみた
 description: >-
   Anthropic Science ブログの初投稿で、ハーバード物理学教授 Matthew Schwartz が Claude

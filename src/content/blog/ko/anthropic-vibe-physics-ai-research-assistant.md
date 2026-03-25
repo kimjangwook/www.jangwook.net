@@ -1,4 +1,5 @@
 ---
+heroImage: '../../../assets/blog/anthropic-vibe-physics-ai-research-assistant-hero.jpg'
 title: Vibe Physics — 물리학 교수가 Claude에게 논문을 시켜봤다
 description: >-
   Anthropic Science 블로그 첫 글에서 하버드 물리학 교수 Matthew Schwartz가 Claude를 "대학원생"처럼 지도한

@@ -1,4 +1,5 @@
 ---
+heroImage: '../../../assets/blog/anthropic-vibe-physics-ai-research-assistant-hero.jpg'
 title: Vibe Physics — 物理学教授让Claude写了一篇论文
 description: >-
   分析Anthropic Science博客首篇文章：哈佛物理学教授Matthew
