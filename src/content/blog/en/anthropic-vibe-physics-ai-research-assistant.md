@@ -1,5 +1,5 @@
 ---
-heroImage: '../../../assets/blog/anthropic-vibe-physics-ai-research-assistant-hero.jpg'
+heroImage: ../../../assets/blog/anthropic-vibe-physics-ai-research-assistant-hero.jpg
 title: Vibe Physics — A Physics Professor Had Claude Write a Paper
 description: >-
   Analyzing Anthropic's Science blog debut where Harvard physicist Matthew
@@ -12,41 +12,41 @@ tags:
   - science
   - llm
 relatedPosts:
-  - slug: gpt52-theoretical-physics-discovery
-    score: 0.96
-    reason:
-      ko: GPT-5.2가 이론 물리학에서 새로운 발견을 했다는 사례와 직접 비교할 수 있습니다. Claude의 G2 수준 평가와 대조해보세요.
-      ja: GPT-5.2が理論物理学で新発見をした事例と直接比較できます。ClaudeのG2評価と対照してみてください。
-      en: Directly comparable to the GPT-5.2 theoretical physics discovery case. Contrast it with Claude's G2-level assessment.
-      zh: 可以与GPT-5.2在理论物理学中的新发现案例直接对比。请与Claude的G2水平评估进行对照。
-  - slug: alphaevolve-ramsey-ai-research-partner
+  - slug: functiongemma-270m-tool-calling
     score: 0.94
     reason:
-      ko: AlphaEvolve가 수학 난제를 풀어낸 사례입니다. AI가 과학 연구의 파트너가 되는 흐름을 다른 각도에서 보여줍니다.
-      ja: AlphaEvolveが数学の難問を解いた事例です。AIが科学研究のパートナーになる流れを別の角度から示します。
-      en: The case of AlphaEvolve solving a math conjecture. Shows AI as a science research partner from a different angle.
-      zh: AlphaEvolve解决数学难题的案例。从不同角度展示了AI成为科学研究伙伴的趋势。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: agents-md-effectiveness
-    score: 0.92
+    score: 0.93
     reason:
-      ko: 이 글에서 다룬 CLAUDE.md + CHANGELOG.md 패턴의 효과를 데이터로 검증한 포스트입니다.
-      ja: この記事で取り上げたCLAUDE.md + CHANGELOG.mdパターンの効果をデータで検証した記事です。
-      en: Validates the CLAUDE.md + CHANGELOG.md pattern discussed here with actual effectiveness data.
-      zh: 用数据验证了本文讨论的CLAUDE.md + CHANGELOG.md模式的实际效果。
-  - slug: karpathy-autoresearch-overnight-ml-experiments
-    score: 0.90
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: ai-agent-cost-reality
+    score: 0.93
     reason:
-      ko: Karpathy의 자동 연구 실험과 Schwartz의 물리학 실험은 "AI에게 연구를 맡기는 패턴"이라는 점에서 같은 흐름입니다.
-      ja: Karpathyの自動研究実験とSchwartzの物理学実験は「AIに研究を任せるパターン」という点で同じ流れです。
-      en: Karpathy's auto-research experiments and Schwartz's physics experiment share the same theme of delegating research to AI.
-      zh: Karpathy的自动研究实验和Schwartz的物理学实验在"将研究委托给AI的模式"这一点上属于同一趋势。
-  - slug: claude-code-best-practices
-    score: 0.88
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: ai-self-generated-skills-myth
+    score: 0.93
     reason:
-      ko: Ralph Loop과 test oracle 패턴을 실무에 적용하려면, Claude Code 베스트 프랙티스를 함께 읽어보는 것이 좋습니다.
-      ja: Ralph Loopとtest oracleパターンを実務に適用するなら、Claude Codeのベストプラクティスも併せて読むことをお勧めします。
-      en: If you want to apply the Ralph Loop and test oracle patterns in practice, pair it with these Claude Code best practices.
-      zh: 如果想在实际工作中应用Ralph Loop和test oracle模式，建议配合阅读Claude Code最佳实践。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: dena-perl-go-migration-ai-agents
+    score: 0.93
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
 ---
 
 A theoretical physics paper was completed in two weeks. That's work that normally takes a year.
