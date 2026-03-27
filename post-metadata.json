@@ -2118,5 +2118,16 @@
       "devops": 0.3,
       "architecture": 0.7
     }
+  },
+  "github-copilot-data-policy-opt-out-guide": {
+    "pubDate": "2026-03-27",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.7,
+      "devops": 0.3,
+      "architecture": 0.1
+    }
   }
 }

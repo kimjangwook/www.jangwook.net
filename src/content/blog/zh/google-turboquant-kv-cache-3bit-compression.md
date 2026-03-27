@@ -15,38 +15,38 @@ relatedPosts:
   - slug: qwen3-coder-next-llama-cpp-graph-optimization
     score: 0.95
     reason:
-      ko: llama.cpp의 그래프 최적화로 추론 속도를 높이는 접근이 TurboQuant의 KV cache 압축과 상호보완적입니다.
-      ja: llama.cppのグラフ最適化による推論高速化はTurboQuantのKVキャッシュ圧縮と相互補完的です。
-      en: The llama.cpp graph optimization approach to faster inference complements TurboQuant's KV cache compression strategy.
-      zh: llama.cpp的图优化推理加速方法与TurboQuant的KV cache压缩策略互为补充。
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: consistency-diffusion-lm
+    score: 0.94
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part3-model-training
+    score: 0.94
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: llama-cpp-iq-quantization-merge
     score: 0.94
     reason:
-      ko: IQ 양자화의 메인라인 통합 과정을 다뤘는데, TurboQuant와 같은 양자화 기법의 실제 생태계 적용 사례입니다.
-      ja: IQ量子化のメインライン統合を扱っており、TurboQuantと同じ量子化技術のエコシステム適用事例です。
-      en: Covers IQ quantization mainline integration — a real-world example of quantization techniques entering the ecosystem, like TurboQuant aims to do.
-      zh: 介绍了IQ量化合入主线的过程，是与TurboQuant类似的量化技术进入生态系统的实际案例。
-  - slug: nvidia-llm-inference-cost-reduction
-    score: 0.93
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: verbalized-sampling-llm-diversity
+    score: 0.94
     reason:
-      ko: NVIDIA NVFP4로 추론 비용을 줄이는 하드웨어 접근을 다뤘는데, TurboQuant의 소프트웨어 접근과 비교하면 흥미롭습니다.
-      ja: NVFP4による推論コスト削減のハードウェアアプローチを扱っており、TurboQuantのソフトウェアアプローチとの比較が興味深いです。
-      en: Covers NVIDIA's NVFP4 hardware approach to inference cost reduction — an interesting contrast to TurboQuant's software-only approach.
-      zh: 介绍了NVIDIA NVFP4降低推论成本的硬件方法，与TurboQuant的纯软件方法形成有趣对比。
-  - slug: deep-thinking-ratio-llm-cost-optimization
-    score: 0.92
-    reason:
-      ko: LLM 추론 비용 최적화를 다른 각도(추론 비율 조절)에서 접근한 글로, 비용 절감이라는 같은 목표를 공유합니다.
-      ja: LLM推論コスト最適化を別の角度（推論比率調整）から扱った記事で、コスト削減という同じ目標を共有します。
-      en: Approaches LLM inference cost optimization from a different angle (reasoning ratio), sharing the same cost reduction goal as TurboQuant.
-      zh: 从不同角度（推理比率调节）探讨LLM推理成本优化，与TurboQuant共享降低成本的目标。
-  - slug: ddr5-rdimm-vs-rtx3090-local-llm
-    score: 0.91
-    reason:
-      ko: 로컬 LLM의 메모리 제약을 하드웨어로 해결하려는 시도인데, TurboQuant는 같은 문제를 알고리즘으로 풀어냅니다.
-      ja: ローカルLLMのメモリ制約をハードウェアで解決する試みで、TurboQuantは同じ問題をアルゴリズムで解決します。
-      en: Attempts to solve local LLM memory constraints through hardware, while TurboQuant tackles the same problem algorithmically.
-      zh: 试图通过硬件解决本地LLM的内存限制，而TurboQuant用算法解决同一问题。
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 昨天（3月25日），Google Research博客发布了一篇文章，瞬间在半导体业界引发震动。这项名为TurboQuant的KV cache压缩技术，声称<strong>内存节省6倍、attention计算加速8倍，且精度损失为零</strong>。说实话，第一眼看到时，我的第一反应是"又是一篇基准测试cherry-picking"。
