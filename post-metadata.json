@@ -1,4 +1,16 @@
 {
+  "gemini-31-flash-live-realtime-voice-agent": {
+    "pubDate": "2026-03-28",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.3,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.7
+    },
+    "_contentHash": ""
+  },
   "45-day-analytics-report-2025-11": {
     "pubDate": "2025-11-20",
     "difficulty": 3,

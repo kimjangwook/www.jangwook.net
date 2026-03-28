@@ -10,41 +10,43 @@ tags:
   - ai
   - developer-tools
 relatedPosts:
-  - slug: roguepilot-copilot-prompt-injection-security
-    score: 0.88
+  - slug: ai-era-career-advice-for-juniors
+    score: 0.92
     reason:
-      ko: "Copilot의 데이터 정책이 걱정된다면, 이 글에서 다룬 Copilot 프롬프트 인젝션 보안 취약점도 함께 읽어보세요."
-      ja: "Copilotのデータポリシーが気になるなら、この記事で取り上げたCopilotプロンプトインジェクションの脆弱性も併せてお読みください。"
-      en: "If Copilot's data policy concerns you, also check out this analysis of Copilot prompt injection security vulnerabilities."
-      zh: "如果你关心Copilot的数据政策，也建议阅读这篇关于Copilot提示注入安全漏洞的分析。"
-  - slug: llm-deanonymization-privacy-risk-defense
-    score: 0.82
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: gemini-31-pro-release
+    score: 0.92
     reason:
-      ko: "AI 도구의 데이터 수집이 걱정된다면, LLM이 익명성을 무너뜨리는 메커니즘을 다룬 이 글도 관련이 있습니다."
-      ja: "AIツールのデータ収集が心配なら、LLMが匿名性を崩すメカニズムを扱ったこの記事も関連があります。"
-      en: "If AI tool data collection worries you, this article on how LLMs can break anonymity is directly relevant."
-      zh: "如果担心AI工具的数据收集，这篇关于LLM如何打破匿名性的文章也很相关。"
-  - slug: patent-strategy-llm-era
-    score: 0.78
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: kanitts2-voice-cloning
+    score: 0.91
     reason:
-      ko: "코드의 지적 재산권 보호에 관심이 있다면, LLM 시대의 특허 전략 변화도 읽어볼 만합니다."
-      ja: "コードの知的財産権保護に関心があるなら、LLM時代の特許戦略の変化も一読の価値があります。"
-      en: "If you're concerned about code IP protection, the evolving patent strategies in the LLM era are worth reading."
-      zh: "如果你关注代码知识产权保护，LLM时代专利策略的变化也值得一读。"
-  - slug: gpt-oss-120b-uncensored
-    score: 0.75
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: openrouter-oss-dominance
+    score: 0.91
     reason:
-      ko: "GitHub의 데이터 정책 변경과 오픈소스 AI 모델의 무검열 논쟁은 'AI 학습 데이터의 윤리'라는 같은 축에서 연결됩니다."
-      ja: "GitHubのデータポリシー変更とオープンソースAIモデルの無検閲論争は、「AI学習データの倫理」という同じ軸で繋がります。"
-      en: "GitHub's data policy change and the uncensored open-source AI debate connect on the same axis of AI training data ethics."
-      zh: "GitHub的数据政策变更与开源AI模型的无审查争论，在'AI训练数据伦理'这同一轴线上相互关联。"
-  - slug: ai-distillation-attacks-enterprise-defense
-    score: 0.72
+      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML
+        topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
+  - slug: windsurf-arena-mode-speed-over-accuracy
+    score: 0.91
     reason:
-      ko: "Copilot이 코드 데이터를 수집하는 것과 AI 모델 증류 공격은 모두 'AI가 학습한 데이터의 소유권' 문제를 다룹니다."
-      ja: "CopilotがコードデータをCollectするのとAIモデル蒸留攻撃は、どちらも「AIが学習したデータの所有権」問題を扱います。"
-      en: "Copilot collecting code data and AI distillation attacks both deal with the ownership of data AI models learn from."
-      zh: "Copilot收集代码数据与AI模型蒸馏攻击，都涉及'AI学习数据的所有权'问题。"
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
 ---
 
 3月25日，GitHub博客上静悄悄地发布了一篇文章。标题很克制 — "Updates to our Privacy Statement and Terms of Service." 但内容相当直接。**从4月24日起，Copilot Free、Pro和Pro+用户的交互数据将默认用于训练AI模型。**
