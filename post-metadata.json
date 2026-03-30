@@ -1,4 +1,15 @@
 {
+  "ai-coding-secrets-sprawl-mcp-config-security": {
+    "pubDate": "2026-03-30",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.2,
+      "ai-ml": 0.75,
+      "devops": 0.85,
+      "architecture": 0.6
+    }
+  },
   "gemini-31-flash-live-realtime-voice-agent": {
     "pubDate": "2026-03-28",
     "difficulty": 3,
