@@ -15,38 +15,48 @@ relatedPosts:
   - slug: openai-promptfoo-ai-agent-devsecops
     score: 0.94
     reason:
-      ko: AI 에이전트가 만드는 코드의 보안 테스트 자동화를 다루며, 시크릿 유출 방지와 함께 DevSecOps 파이프라인을 완성하는 방법을 소개합니다.
-      ja: AIエージェントが生成するコードのセキュリティテスト自動化を扱い、シークレット漏洩防止と合わせてDevSecOpsパイプラインを完成させる方法を紹介します。
-      en: Covers automated security testing for AI-generated code, complementing secret leak prevention with a complete DevSecOps pipeline approach.
-      zh: 介绍了AI生成代码的安全测试自动化，与密钥泄露防护结合构建完整的DevSecOps流水线。
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: terraform-ai-batch-infrastructure
+    score: 0.93
+    reason:
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: cursor-agent-trace-ai-code-attribution
+    score: 0.93
+    reason:
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: roguepilot-copilot-prompt-injection-security
     score: 0.93
     reason:
-      ko: AI 코딩 도구의 또 다른 보안 위협인 프롬프트 인젝션을 다룹니다. 시크릿 유출과 함께 알아두어야 할 AI 코딩 보안 리스크입니다.
-      ja: AIコーディングツールのもう一つのセキュリティ脅威であるプロンプトインジェクションを扱います。シークレット漏洩と併せて知っておくべきリスクです。
-      en: Explores prompt injection vulnerabilities in AI coding tools — another critical security risk to understand alongside secret leakage.
-      zh: 探讨AI编程工具的另一个安全威胁——提示注入漏洞，与密钥泄露同为需要了解的关键风险。
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: claude-firefox-22-cves-ai-security-audit
     score: 0.93
     reason:
-      ko: AI가 보안 취약점을 자동으로 찾아내는 사례를 보여줍니다. AI가 시크릿을 유출시키기도 하지만, 반대로 보안 감사의 도구가 되기도 한다는 양면을 이해할 수 있습니다.
-      ja: AIが自動的にセキュリティ脆弱性を発見する事例です。AIがシークレットを漏洩させる一方で、セキュリティ監査ツールにもなるという両面を理解できます。
-      en: Shows how AI can automatically find security vulnerabilities. While AI leaks secrets, it can also serve as a powerful security audit tool — understanding both sides is key.
-      zh: 展示了AI自动发现安全漏洞的案例。AI既会泄露密钥，也能成为安全审计工具——理解这种双面性很重要。
-  - slug: mcp-security-crisis-30-cves-enterprise-hardening
-    score: 0.92
-    reason:
-      ko: MCP 프로토콜 자체의 CVE 취약점을 다룬 글입니다. 설정 파일의 시크릿 유출과는 다른 각도에서 MCP 보안 전체를 조망할 수 있습니다.
-      ja: MCPプロトコル自体のCVE脆弱性を扱った記事です。設定ファイルのシークレット漏洩とは異なる角度からMCPセキュリティ全体を俯瞰できます。
-      en: Covers CVE vulnerabilities in the MCP protocol itself. Provides a different angle on MCP security beyond config file secret leakage.
-      zh: 讨论了MCP协议本身的CVE漏洞。从不同角度全面审视MCP安全性，超越配置文件密钥泄露的范畴。
-  - slug: cursor-agent-trace-ai-code-attribution
-    score: 0.91
-    reason:
-      ko: AI가 작성한 코드를 추적하는 오픈 표준을 소개합니다. 시크릿 유출 코드가 AI가 만든 것인지 추적하려면 이런 귀속 시스템이 필요합니다.
-      ja: AIが作成したコードを追跡するオープン標準を紹介します。シークレット漏洩コードがAI生成かどうか追跡するにはこのような帰属システムが必要です。
-      en: Introduces an open standard for tracking AI-written code. Attribution systems like this are essential for tracing whether leaked secrets came from AI-generated code.
-      zh: 介绍了追踪AI编写代码的开放标准。要追溯泄露密钥是否来自AI生成的代码，这类归属系统不可或缺。
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 上周翻阅GitGuardian发布的 *State of Secrets Sprawl 2026* 报告时，我的手停了下来。GitHub上一年内检测到的密钥数量达到了**2900万个**。但真正让我紧张的是下一句话——使用AI编程工具的仓库，密钥泄露率是GitHub整体平均水平的**2倍**。

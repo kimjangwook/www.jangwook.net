@@ -1,4 +1,15 @@
 {
+  "litellm-supply-chain-attack-ai-dependency-security": {
+    "pubDate": "2026-03-31",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.7,
+      "devops": 0.9,
+      "architecture": 0.5
+    }
+  },
   "ai-coding-secrets-sprawl-mcp-config-security": {
     "pubDate": "2026-03-30",
     "difficulty": 3,
