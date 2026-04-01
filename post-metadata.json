@@ -2136,7 +2136,7 @@
     "difficulty": 3,
     "categoryScores": {
       "automation": 0.5,
-      "web-development": 0.0,
+      "web-development": 0,
       "ai-ml": 0.95,
       "devops": 0.3,
       "architecture": 0.4
@@ -2147,7 +2147,7 @@
     "difficulty": 4,
     "categoryScores": {
       "automation": 0.2,
-      "web-development": 0.0,
+      "web-development": 0,
       "ai-ml": 0.95,
       "devops": 0.3,
       "architecture": 0.7
@@ -2184,6 +2184,17 @@
       "ai-ml": 0.8,
       "devops": 0.2,
       "architecture": 0.5
+    }
+  },
+  "paperclip-zero-human-company-agent-orchestration": {
+    "pubDate": "2026-04-02",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.2,
+      "ai-ml": 0.8,
+      "devops": 0.4,
+      "architecture": 0.9
     }
   }
 }

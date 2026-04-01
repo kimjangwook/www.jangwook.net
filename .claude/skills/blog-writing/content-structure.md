@@ -1,6 +1,41 @@
 # Content Structure Template
 
-## Standard Blog Post Structure
+## Blog Post Structure — 유연한 가이드
+
+> **핵심**: 모든 포스트가 같은 구조를 따르면 AI가 쓴 것처럼 보인다. 아래는 "필수 요소" 목록이지, 고정 템플릿이 아니다.
+
+### 필수 요소 (순서는 자유)
+
+1. **도입** — 아래 중 하나로 시작 (매번 다르게):
+   - 코드 스니펫 → "이 코드를 보자"
+   - 뉴스/이벤트 → "어제 X가 발표됐다"
+   - 개인 경험 → "지난주 배포 중에 이런 일이 있었다"
+   - 질문 → "왜 아무도 이걸 문제라고 안 할까?"
+   - 반직관적 주장 → "이 기술은 과대평가됐다"
+   - **금지**: 매번 "## 개요"로 시작
+
+2. **본문** — 2~5개 섹션, 길이 불균일하게
+   - 어떤 섹션은 3줄, 어떤 섹션은 20줄
+   - 구조 장치(표, 다이어그램, 코드, 체크리스트)는 **최대 2개**
+   - 1인칭 경험 최소 3회
+   - 비판적 의견 최소 2회
+   - 전문 분야 밖 내용은 지식 수준 명시
+
+3. **마무리** — 아래를 피한다:
+   - "정리하자면" 요약 반복
+   - "앞으로 기대됩니다" 공허한 전망
+   - 체크리스트/할 일 목록
+   - 대신: 미해결 질문, 다음 실험 계획, 구체적 제안
+
+4. **참고 자료** (선택) — 링크 나열
+
+### 구조 변주 예시
+
+**패턴 A**: 문제 발견 → 삽질 과정 → 해결 → 교훈
+**패턴 B**: 뉴스 요약 → 내 해석 → 실제 테스트 → 결론
+**패턴 C**: 코드 먼저 → 왜 이렇게 짰는지 → 대안 비교
+**패턴 D**: 두 기술 비교 → 각각 써본 경험 → 추천
+**패턴 E**: 질문 제기 → 리서치 → 부분적 답 → 남은 의문
 
 ```markdown
 ---
@@ -11,62 +46,22 @@ heroImage: '../../../assets/blog/your-image.jpg'
 tags: ['tag1', 'tag2', 'tag3']
 ---
 
-## Overview
+[도입 — 매번 다른 방식으로]
 
-Brief introduction to the topic (2-3 paragraphs):
-- What problem does this solve?
-- Why is it important?
-- What will readers learn?
+## [본문 섹션 — 제목은 내용에 맞게 자유롭게]
 
-## Main Content
+[내용]
 
-### Section 1: Problem/Background
+## [필요한 만큼 섹션 추가]
 
-Explain the context and background:
-- Current situation
-- Pain points
-- Why existing solutions fall short
+[내용]
 
-### Section 2: Solution/Approach
+[마무리 — "## 결론" 헤더 없이 자연스럽게 끝내도 됨]
 
-Present your solution or approach:
-- Core concept
-- Key features
-- How it works
+## 참고 자료 (선택)
 
-### Section 3: Implementation
-
-Step-by-step implementation details:
-- Code examples
-- Configuration
-- Best practices
-
-### Section 4: Advanced Topics (Optional)
-
-For more in-depth posts:
-- Advanced use cases
-- Performance optimization
-- Edge cases
-
-### Section 5: Real-world Examples
-
-Practical demonstrations:
-- Working examples
-- Case studies
-- Before/after comparisons
-
-## Conclusion
-
-Summary and takeaways:
-- Key points recap
-- What readers should do next
-- Additional resources
-
-## References (Optional)
-
-- External links
-- Documentation
-- Related articles
+- [Link 1]
+- [Link 2]
 ```
 
 ## Content Guidelines
@@ -287,49 +282,13 @@ When creating multi-language versions:
 - Idiomatic expressions
 - Writing style and tone
 
-### Example Structure Consistency
+### Multi-language Consistency
 
-All three language versions should have identical section structure:
-
-**Korean (ko):**
-```markdown
-## 개요
-## 문제 배경
-## 해결 방법
-## 구현 단계
-## 실전 예제
-## 결론
-```
-
-**English (en):**
-```markdown
-## Overview
-## Problem Background
-## Solution Approach
-## Implementation Steps
-## Real-world Examples
-## Conclusion
-```
-
-**Japanese (ja):**
-```markdown
-## 概要
-## 問題の背景
-## 解決アプローチ
-## 実装手順
-## 実例
-## まとめ
-```
-
-**Chinese (zh):**
-```markdown
-## 概述
-## 问题背景
-## 解决方案
-## 实现步骤
-## 实际案例
-## 总结
-```
+All language versions should have the **same number of sections and same content flow**, but:
+- Section headings are naturally translated (not mechanically mapped)
+- The specific heading text should fit each language's conventions
+- Section order and count must match across all 4 languages
+- **Do NOT use a fixed heading template** — headings should reflect the actual content of each post
 
 ## Quality Checklist
 

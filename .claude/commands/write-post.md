@@ -59,38 +59,131 @@ The command delegates to the Writing Assistant agent with the following tasks:
 #### Phase 1: Research & Planning
 
 - Analyze the topic and identify key points
-- **Research current information using Web Researcher agent**:
-  - Use Brave Search MCP to gather latest information
-  - **IMPORTANT: Implement 2-second delay between search requests to avoid rate limiting**
+- **Research current information using web search**:
+  - Use built-in WebSearch tool or Chrome browser extension to gather latest information
   - Verify technical accuracy from official documentation
   - Identify trending discussions and best practices
   - Collect code examples from reliable sources
 - Create content structure and outline based on research findings
 - Identify additional code examples and technical details needed
 
-#### Phase 2: Image Generation (Hero + In-Content Images)
+#### Phase 2: Hands-on Testing (설치 가능한 도구/서비스인 경우 필수)
 
-**Hero Image**:
-- Generate a **context-specific, detailed** hero image prompt (see Image Prompt Guidelines below)
-- Call Image Generator agent to create hero image
-- Save image to appropriate path: `src/assets/blog/[slug]-hero.[ext]`
-- Store image metadata for frontmatter
+> **판단 기준**: 포스트 주제가 설치·실행 가능한 도구, 라이브러리, 서비스, CLI, 웹 앱이면 이 Phase는 **MANDATORY**이다.
+> 순수 개념/뉴스/비교 분석 글이면 SKIP하고 Phase 3으로 넘어간다.
 
-**In-Content Images** (screenshots, diagrams, illustrations):
-- Identify sections in the content that benefit from visual explanation (architecture diagrams, UI screenshots, workflow illustrations, comparison charts)
-- For each identified section, either:
-  - **Generate**: Create additional images via Image Generator for conceptual illustrations
-    - Save to `src/assets/blog/[slug]-[section-name].[ext]`
-    - Reference in markdown: `![alt text](../../../assets/blog/[slug]-[section-name].[ext])`
-  - **Download from official sources**: When the blog references official documentation, tools, or services that have relevant screenshots/diagrams:
-    - Download the image directly from the official source URL
-    - Save to `src/assets/blog/[slug]-[descriptive-name].[ext]`
-    - Add proper attribution in alt text or caption (e.g., `![Next.js App Router structure (출처: Next.js 공식 문서)](...)`)
-    - Prefer official docs images for: UI screenshots, architecture diagrams from docs, official logos/badges, configuration panels
-    - Use `curl` or `node` to download: `curl -o src/assets/blog/[slug]-[name].png "https://docs.example.com/image.png"`
-- **Goal**: Every blog post should have **at least 2-3 images** (hero + 1~2 in-content) for better readability and SEO
+**목적**: 실제로 설치하고 돌려본 경험이 글의 신뢰도를 결정한다. 이 단계를 건너뛰면 "AI가 문서만 읽고 쓴 글"이 된다.
 
-#### Phase 3: Content Generation (Korean-First Approach)
+##### Step 1: 환경 준비
+
+```bash
+mkdir -p _sandbox/screenshots
+cd _sandbox
+```
+
+- `_sandbox/` 폴더는 gitignore됨 — 자유롭게 설치/삭제 가능
+- 도구에 필요한 런타임(Node, Python, Docker 등) 확인
+
+##### Step 2: 설치 & 실행
+
+```bash
+# 예시: GitHub 프로젝트 클론 후 실행
+git clone <repo-url> _sandbox/<project-name>
+cd _sandbox/<project-name>
+# 프로젝트 문서의 Quickstart 따라 실행
+```
+
+- README/공식 문서의 Quickstart를 **그대로** 따른다
+- 설치 중 발생한 문제(에러, 누락 의존성 등)를 메모 — 블로그 본문에 활용
+- 설치가 실패해도 그 자체가 콘텐츠가 된다 ("설치해봤는데 X에서 막혔다")
+
+##### Step 3: 탐색 & 체험
+
+- UI가 있으면 주요 화면 탐색 (대시보드, 설정, 핵심 기능)
+- CLI라면 주요 명령어 실행
+- API라면 curl/httpie로 호출
+- **최소 3개 이상의 기능/화면**을 직접 확인
+- 인상적이거나 불편한 점을 메모
+
+##### Step 4: 스크린샷 촬영
+
+촬영한 스크린샷이 블로그의 In-Content 이미지가 되고, **가장 좋은 스크린샷이 히어로 이미지**가 된다.
+
+**웹 페이지 스크린샷**:
+- Chrome DevTools MCP `take_screenshot` 사용
+- 또는 Chrome 브라우저 확장에서 직접 캡처
+
+**터미널 출력 스크린샷**:
+```bash
+screencapture -x _sandbox/screenshots/[name]-raw.png          # 전체 화면
+screencapture -ix _sandbox/screenshots/[name]-raw.png         # 특정 영역 (드래그)
+```
+
+**촬영 대상 (최소 2~3장)**:
+- 메인 대시보드/랜딩 화면
+- 핵심 기능 동작 화면
+- 설정/아키텍처 화면
+- 터미널에서의 설치/실행 과정 (선택)
+
+##### Step 5: 스크린샷 후처리
+
+```bash
+python3 scripts/process-screenshot.py \
+  _sandbox/screenshots/[name]-raw.png \
+  src/assets/blog/[slug]-[name].png \
+  --blur x,y,w,h \          # API 키, 비밀번호 등 블러
+  --blackout x,y,w,h \      # 완전 가림
+  --highlight x,y,w,h \     # 빨간 강조 박스
+  --highlight-green x,y,w,h \  # 초록 강조 박스
+  --label x,y "설명 텍스트" \  # 라벨 추가
+  --arrow x1,y1,x2,y2 \     # 화살표
+  --crop x,y,w,h \          # 영역 잘라내기
+  --resize 1020x510 \       # 히어로 이미지용 리사이즈
+  --border                  # 외곽선 추가
+```
+
+##### Step 6: 민감 정보 체크 (필수)
+
+스크린샷에 다음이 포함되지 않았는지 **반드시** 확인:
+- API 키, 토큰, 비밀번호
+- 이메일 주소, 사용자 이름
+- 파일 시스템 경로에 포함된 사용자명 (예: `/Users/jangwook/`)
+- 내부 URL, IP 주소
+
+##### Step 7: 경험 노트 정리
+
+Phase 4 (글쓰기)에서 사용할 **1인칭 경험** 소재 정리:
+- 설치 과정에서 겪은 일 (성공/실패 모두)
+- UI/기능에 대한 첫인상
+- 예상과 달랐던 점
+- 비판적 의견 소재 (부족한 점, 개선 필요 사항)
+
+> **이 노트가 Anti-AI Writing의 핵심 재료가 된다.** 실제 경험 없이는 "~해봤는데", "직접 돌려보니" 같은 1인칭 서술을 쓸 수 없다.
+
+#### Phase 3: Image Selection (Hero + In-Content)
+
+**히어로 이미지 선택 — 비용 절감 우선순위**:
+
+1. **스크린샷 활용 (비용: 0)** — Phase 2에서 촬영한 스크린샷 중 가장 대표적인 화면을 히어로로 사용
+   - `process-screenshot.py`로 2:1 비율(1020x510)에 맞게 crop/resize
+   - 저장: `src/assets/blog/[slug]-hero.png`
+   - **Phase 2를 수행했다면 이 방법을 기본으로 사용**
+
+2. **공식 소스 다운로드 (비용: 0)** — 프로젝트 공식 이미지(README 헤더, 공식 스크린샷 등)
+   - `curl`로 다운로드 후 resize
+   - 출처 표기 필수
+
+3. **AI 이미지 생성 (비용: API 호출)** — 위 두 방법이 모두 불가할 때만 사용
+   - 순수 개념/뉴스 글로 스크린샷이 없는 경우
+   - Image Prompt Guidelines의 YAML 7-Part Structure 따르기
+   - `generate_image.js` 호출
+
+**In-Content 이미지**:
+- Phase 2의 스크린샷을 본문에 배치: `![alt text](../../../assets/blog/[slug]-[name].png)`
+- 추가로 공식 소스 이미지나 AI 생성 이미지 보충 가능
+- **Goal**: 히어로 포함 최소 2~3장의 이미지
+
+#### Phase 4: Content Generation (Korean-First Approach)
 
 **IMPORTANT - Publication Date**:
 
@@ -119,22 +212,180 @@ The content generation follows a **two-stage process**:
 - Include all code examples with Korean comments
 - **글쓰기 톤 가이드 (필수 준수)** — 아래 규칙을 반드시 따른다:
 
-#### 사람다운 글쓰기 규칙
+#### 사람다운 글쓰기 규칙 (Anti-AI Writing Guide)
 
-**금지 패턴:**
-- "이것은 단순한 X가 아닙니다" / "X를 넘어" / "패러다임의 전환" 등 과장 클리셰
+> **핵심 원칙**: 인간은 제약(시간, 지식, 경험) 안에서 글을 쓴다. AI는 제약 없이 쓰려 한다. 제약을 드러내라 — 그게 사람다움이다.
+
+##### 1. 금지 어휘 & 패턴 (감지 즉시 삭제)
+
+**AI 냄새 나는 단어 목록** (한국어):
+- 혁신적, 패러다임, 게임체인저, 핵심적인, 강력한, 획기적인, 뛰어난
+- "X를 넘어", "단순한 X가 아닙니다", "새로운 지평", "무한한 가능성"
+- "~의 세계로", "~의 시대가 열리다", "~를 재정의하다"
+- 심층 분석, 종합 가이드, 완벽 가이드, 실전 가이드
+
+**AI 냄새 나는 문장 구조**:
+- "이것은 단순한 X가 아니라 Y입니다" (contrast-reframe)
+- "~뿐만 아니라 ~까지" 반복 사용
+- 모든 섹션이 "~합니다", "~입니다"로 끝나는 균일한 어미
+- "결론적으로", "요약하자면", "정리하면" — 결론 시작 클리셰
+- "~해보겠습니다", "~살펴보겠습니다" — 안내자 톤 반복
+
+**AI 냄새 나는 구조 패턴**:
 - 매 포스트에 CTO/EM 액션 아이템, 단기/중기/장기 로드맵 삽입
-- 모든 포스트에 mermaid + 비교 표 + 코드 예제 풀세트 배치
-- 결론이 항상 긍정적 ("혁명적", "지금 준비해야 합니다")
+- 결론이 항상 긍정적 ("지금 준비해야 합니다", "미래를 선도하세요")
 - 전부 "~이다", "~한다" 객관적 서술로만 채우기
+- "가짜 균형" — "문제라고 보는 시각" vs "괜찮다고 보는 시각"을 나란히 놓고 어느 쪽도 선택 안 하는 것
+- 3의 법칙 남용 — 항상 3개씩 나열 (2개, 4개, 5개도 써라)
 
-**필수 패턴:**
-- **1인칭 주관 최소 2회**: "나는 이게 ~라고 본다", "솔직히 ~가 아쉽다" 등
-- **비판적 시각 1개 이상**: 한계, 리스크, 과대평가 가능성 등
-- **구체적 경험/시도 서술**: "API를 호출해보니", "코드를 돌려보니" 등 실제 사용 흔적
-- **구조 장치는 최대 2개**: 비교 표, mermaid, 코드 예제, 체크리스트 중 2개만 선택
-- **도입부 변주**: "개요" 섹션 고정이 아니라, 질문/일화/코드 스니펫/뉴스 한 줄 등 다양하게
-- **문장 리듬**: 짧은 문장과 긴 문장을 섞어서 단조로움 방지
+**과용 금지 단어** (포스트당 최대 1회):
+- "솔직히" — 인간미 마커로 남용됨. 1회 이하
+- "결국" — 마무리 클리셰. 1회 이하
+- "사실" — 권위적 톤 강화 장치. 1회 이하
+
+##### 2. 지식 정직성 (Knowledge Honesty) — 가장 중요
+
+> **작성자는 수학, 과학, 학술 분야의 전문가가 아니다.** 이 사실을 글에 반영해야 한다.
+
+**지식 수준별 화법 구분**:
+
+| 지식 수준 | 사용할 화법 | 예시 |
+|-----------|------------|------|
+| 직접 경험 | "직접 써봤는데", "내 프로젝트에서" | "이 API를 실제로 붙여봤는데 응답이 2초 걸렸다" |
+| 리서치 기반 | "찾아본 바로는", "공식 문서에 따르면" | "OpenAI 블로그에 따르면 처리량이 30% 개선됐다고 한다" |
+| 간접 지식 | "내가 이해하기로는", "~라고 들었다" | "트랜스포머 아키텍처가 정확히 어떻게 작동하는지는 내 전문 분야가 아니지만, 핵심은 어텐션 메커니즘이다" |
+| 모르는 영역 | "이 부분은 잘 모르겠다", "전문가 의견이 필요하다" | "수학적 증명은 내 영역 밖이니 원논문을 직접 확인하는 걸 추천한다" |
+
+**금지**: 수학 공식이나 과학 원리를 마치 깊이 이해한 것처럼 설명하는 것
+**필수**: 출처 링크를 달고, 자신의 이해 수준을 명시하는 것
+
+**Before (나쁜 예)**:
+```
+트랜스포머의 셀프 어텐션 메커니즘은 Query, Key, Value 행렬의 내적을 통해
+문맥 의존적 가중치를 계산하며, 이를 통해 장거리 의존성을 효과적으로 포착합니다.
+```
+
+**After (좋은 예)**:
+```
+트랜스포머가 왜 잘 작동하는지에 대한 수학적 설명은 내 전문 분야가 아니다.
+다만 실무적으로 중요한 건, 입력 텍스트의 어떤 부분에 "주목"할지를 모델이
+스스로 학습한다는 점이다. 자세한 메커니즘이 궁금하면 Jay Alammar의
+"The Illustrated Transformer"를 추천한다.
+```
+
+##### 3. 문장 리듬 & 구조 변주 (필수)
+
+**문장 길이 변주**:
+- 한 문단 안에서 짧은 문장(10자 이하)과 긴 문장(40자 이상)을 섞는다
+- 메트로놈처럼 균일한 길이는 AI의 가장 큰 특징
+
+**Before (AI)**:
+```
+이 도구는 여러 데이터 소스를 통합합니다. 통합된 데이터는 대시보드에 표시됩니다.
+팀은 패턴을 발견할 수 있습니다. 이를 통해 빠른 의사결정이 가능합니다.
+```
+
+**After (사람)**:
+```
+데이터 소스를 한 곳에 모은다. 여기까진 어디서나 하는 이야기다.
+차이는 이 데이터들이 실제로 서로 "대화"한다는 점인데, 예를 들어 매출이
+떨어지는 타이밍과 고객 불만 접수가 늘어나는 타이밍이 겹치는 걸 자동으로 잡아낸다.
+그 전엔 이걸 엑셀에서 수동으로 했다.
+```
+
+**전환어 사용 금지**:
+- "그러나", "또한", "더불어", "나아가" — 기계적 전환어. 사용 최소화
+- 대신: 다음 문장을 바로 시작하거나, 질문을 던지거나, 반례를 들어라
+- "그런데 이게 실제로 되나?" > "그러나 실제 효과는 검증이 필요합니다"
+
+**섹션 구조 변주**:
+- 매 포스트의 섹션 수와 길이를 달리한다 (어떤 섹션은 3줄, 어떤 섹션은 20줄)
+- 모든 포스트가 "개요 → 핵심 내용 → 코드 예제 → 결론" 구조를 따르면 안 된다
+- 때로는 코드로 시작하고, 때로는 일화로 시작하고, 때로는 뉴스 한 줄로 시작한다
+
+##### 4. 구체성 & 진짜 경험 (필수)
+
+**1인칭 경험 최소 3회**:
+- "API를 호출해보니", "코드를 돌려보니" 등 실제 사용 흔적
+- "내 블로그에서 이걸 적용했을 때" 같은 구체적 맥락
+- 추상적 "많은 개발자들이"가 아니라 구체적 상황 서술
+
+**Before (AI)**:
+```
+많은 조직에서 데이터 사일로 문제를 겪고 있습니다. 이러한 문제를 해결하기 위해
+통합 플랫폼이 필요합니다.
+```
+
+**After (사람)**:
+```
+마케팅은 HubSpot, 개발은 Jira, 영업은 엑셀. 화요일에 "이탈 위험 고객이 누구야?"
+라고 물으면, 답은 세 시스템에 흩어져 있고 관리자 권한도 제각각이다.
+당연한 해결책은 전부 연결하는 플랫폼 도입인데, 진짜 어려운 건 마이그레이션과
+재교육과 아무것도 안 되는 그 일주일이다.
+```
+
+**예시의 구체성**:
+- "한 회사에서" → 실제 도구명, 실제 수치, 실제 시나리오
+- "성능이 향상됐다" → "빌드 시간이 47초에서 12초로 줄었다"
+- "많은 사용자가" → "GitHub에서 별 2.3k개를 받았고" 또는 "내 주변에서 3명이 쓰고 있다"
+
+##### 5. 진짜 비판 & 의견 표명 (필수)
+
+**비판적 시각 최소 2개**:
+- 한계, 리스크, 과대평가 가능성
+- "이 접근법의 약점은", "여기서 빠진 게 있다면"
+- 양비론이 아닌 명확한 입장: "나는 이게 과대평가됐다고 본다"
+
+**의견 표명**:
+- 포스트에서 한 가지 이상 명확한 입장을 취한다
+- "이건 아직 프로덕션에 쓰기엔 이르다", "이 도구는 가격 대비 별로다"
+- 읽는 사람이 "이 글쓴이는 이렇게 생각하는구나"를 알 수 있어야 한다
+
+**금지**: 가짜 균형 (양쪽 입장을 나열만 하고 결론 없이 "각자 판단할 문제다"로 마무리)
+
+##### 6. 구조 장치 제한
+
+- **비교 표, mermaid, 코드 예제, 체크리스트 중 최대 2개만 선택**
+- 모든 포스트에 표 + 다이어그램 + 코드가 다 들어가면 AI 템플릿처럼 보인다
+- 어떤 포스트는 코드만, 어떤 포스트는 다이어그램만, 어떤 포스트는 아무것도 없이 산문만
+
+##### 7. 도입부 & 결론 변주
+
+**도입부** — 아래 방식 중 하나를 포스트마다 다르게 선택:
+- 코드 스니펫으로 시작 ("이 코드를 보자")
+- 뉴스 한 줄로 시작 ("어제 OpenAI가 X를 발표했다")
+- 개인 일화로 시작 ("지난주 배포하다가 X를 발견했다")
+- 질문으로 시작 ("왜 아무도 이 문제를 이야기하지 않을까?")
+- 반직관적 주장으로 시작 ("이 기술은 실패할 거라고 본다")
+- **금지**: 매번 "## 개요"로 시작
+
+**결론** — 아래를 피한다:
+- "~를 정리해보았습니다" (요약 반복)
+- "앞으로 ~가 기대됩니다" (공허한 미래 전망)
+- 체크리스트로 마무리 (할 일 목록 = AI 패턴)
+- 대신: 해결되지 않은 질문, 자신의 다음 실험 계획, 또는 독자에게 구체적 제안
+
+##### 8. 언어별 자연스러움
+
+**한국어 특유의 자연스러움**:
+- "~거든요" (설명 톤), "~더라고요" (경험 서술), "~같다" (추측) 등 구어체 혼합
+- 모든 문장이 "~입니다", "~합니다"로 끝나면 보고서다, 블로그가 아니다
+- 때로 반말과 존댓말을 섞는 것도 자연스럽다: "이건 좀 아닌 것 같다. 이유는 이렇습니다."
+
+##### 9. 셀프 체크 (작성 완료 후 필수)
+
+포스트 작성 후 아래 항목을 반드시 검증:
+
+- [ ] 금지 어휘가 사용되지 않았는가? (혁신적, 패러다임 등)
+- [ ] "솔직히", "결국", "사실"이 각각 1회 이하인가?
+- [ ] 전문 분야 밖의 내용에 대해 전문가처럼 서술하지 않았는가?
+- [ ] 1인칭 경험/시도가 3회 이상 포함되었는가?
+- [ ] 비판적 의견이 2개 이상인가?
+- [ ] 명확한 입장 표명이 1개 이상인가?
+- [ ] 구조 장치(표, 다이어그램, 코드, 체크리스트)가 2개 이하인가?
+- [ ] 도입부가 직전 포스트와 다른 방식인가?
+- [ ] 문장 길이에 변주가 있는가? (메트로놈 아닌가?)
+- [ ] "이 글을 AI가 쓴 것 같다"고 느껴지는 부분이 있는가? → 있으면 재작성
 
 **Stage 2: Natural Translation to Other Languages**
 
@@ -159,7 +410,7 @@ Based on the completed Korean post:
 - Maintain technical term consistency across languages
 - Keep Mermaid diagrams but translate labels
 
-#### Phase 4: File Operations
+#### Phase 5: File Operations
 
 - Generate URL-friendly slug from topic
 - Save files to appropriate paths:
@@ -466,7 +717,61 @@ Next Steps:
   2. Run: npm run astro check
   3. Preview: npm run dev
   4. Run: node scripts/generate-recommendations-v3.js (if not auto-run)
+
+Sandbox Cleanup:
+  [아래 cleanup 단계 참조]
 ```
+
+### 9. Sandbox Cleanup (필수)
+
+블로그 작성 중 `_sandbox/`에서 설치하거나 생성한 모든 것을 정리한다.
+이 폴더는 gitignore되어 커밋되지 않지만, 방치하면 디스크를 차지하고 다음 작업 시 혼동을 줄 수 있다.
+
+#### Cleanup 절차
+
+```bash
+# 1. _sandbox 내부에 설치한 npm 패키지 삭제 (가장 큰 용량)
+rm -rf _sandbox/node_modules
+
+# 2. 스크린샷 원본 삭제 (민감 정보가 포함된 원본은 반드시 삭제)
+rm -rf _sandbox/screenshots/*
+
+# 3. 테스트용 소스 코드, 설정 파일 등 삭제
+rm -rf _sandbox/*
+
+# 4. 폴더 구조만 유지 (다음 작업을 위해)
+mkdir -p _sandbox/screenshots
+```
+
+#### 반드시 삭제해야 하는 것
+
+| 대상 | 이유 |
+|------|------|
+| `_sandbox/node_modules/` | 수백 MB 이상 차지 가능 |
+| `_sandbox/screenshots/*-raw.png` | 후처리 전 원본 = 민감 정보 포함 가능 |
+| `_sandbox/.env`, `_sandbox/credentials*` | 테스트용 API 키, 토큰 |
+| `_sandbox/package-lock.json` | 불필요한 락 파일 |
+| Docker 컨테이너/이미지 (사용 시) | `docker rm`, `docker rmi`로 정리 |
+
+#### 삭제하면 안 되는 것
+
+| 대상 | 이유 |
+|------|------|
+| `src/assets/blog/[slug]-*.png` | 이미 후처리 완료된 블로그용 이미지 — 커밋 대상 |
+| `_sandbox/` 폴더 자체 | 다음 작업을 위해 빈 폴더 유지 |
+
+#### 자동 Cleanup 명령
+
+포스트 작성 완료 후 아래 명령을 실행하거나 실행 여부를 사용자에게 확인:
+
+```bash
+# 전체 cleanup (확인 후 실행)
+find _sandbox -mindepth 1 ! -path '_sandbox/screenshots' -delete 2>/dev/null
+mkdir -p _sandbox/screenshots
+echo "✓ _sandbox cleaned up"
+```
+
+**주의**: cleanup 전에 `src/assets/blog/`에 후처리된 이미지가 모두 저장되었는지 반드시 확인한다.
 
 ## Writing Assistant Delegation
 
@@ -486,10 +791,9 @@ Requirements:
    - Set `pubDate` to **today's date** (the day the post is written)
    - Format as 'YYYY-MM-DD' (single quotes)
 
-2. Research topic using Web Researcher agent:
+2. Research topic using web search:
 
-   - Delegate to Web Researcher for comprehensive research
-   - **CRITICAL: Ensure 2-second delay between search requests**
+   - Use built-in WebSearch tool or Chrome browser extension for research
    - Gather latest information, official documentation, and examples
    - Verify technical accuracy and current best practices
    - Create detailed outline based on research findings
@@ -698,51 +1002,18 @@ updatedDate: string (optional, format: 'YYYY-MM-DD' only, single quotes)
 
 ### Content Structure
 
-````markdown
-## 개요 / Overview / 概要 / 概述
-
-[Introduction paragraph - context and problem statement]
-
-## 핵심 내용 / Key Concepts / 主要内容 / 核心内容
-
-### [Subtopic 1]
-
-[Detailed explanation]
-
-### [Subtopic 2]
-
-[Detailed explanation]
-
-## 코드 예제 / Code Examples / コード例 / 代码示例
-
-```language
-[Working code example]
-```
-````
-
-## 실전 활용 / Practical Application / 実践活用 / 实践应用
-
-[Real-world use cases]
-
-## 결론 / Conclusion / 結論 / 结论
-
-[Summary and key takeaways]
-
-## 참고 자료 / References / 参考資料 / 参考资料
-
-- [Link 1]
-- [Link 2]
-
-`````
+> **고정 템플릿 사용 금지**. content-structure.md의 "유연한 가이드"를 따른다.
+> 매 포스트마다 다른 구조 패턴(A~E)을 선택하고, 도입부와 결론 방식을 변주한다.
+> 자세한 내용은 `.claude/skills/blog-writing/content-structure.md` 참조.
 
 ### Style Guidelines
-- Use clear, professional technical writing
-- Explain technical terms on first use
-- Include working code examples
-- Use active voice
-- Keep paragraphs concise (2-4 sentences)
-- Use bullet points for lists
-- Add code comments in target language
+- **Anti-AI Writing 규칙을 최우선으로 적용** (위 "사람다운 글쓰기 규칙" 섹션 참조)
+- 기술 용어는 처음 사용 시 설명하되, 독자가 아는 용어까지 설명하지 않는다
+- 코드 예제는 실제 동작하는 것만 포함
+- 능동태 선호, 하지만 모든 문장이 같은 어미로 끝나면 안 된다
+- 문단 길이 불균일하게 (1문장 문단도 OK, 5문장 문단도 OK)
+- 코드 주석은 해당 언어로 작성
+- **전문 분야 밖 내용은 반드시 지식 수준 명시** ("내가 이해하기로는", "찾아본 바로는")
 - **블로그 본문에서 볼드 텍스트는 마크다운 `**text**` 대신 HTML `<strong>text</strong>` 태그를 사용할 것. 이는 특수문자와의 충돌을 방지하기 위함.**
 
 ### Markdown Formatting Guidelines
@@ -1078,18 +1349,10 @@ A structured, type-safe, architectural blueprint illustration of TypeScript type
 
 ## Integration with Other Agents
 
-### Web Researcher
-
-- **Primary research executor** for content accuracy
-- Uses Brave Search MCP to gather latest information
-- Verifies technical details from official sources
-- Provides structured research report to Writing Assistant
-- Identifies trending topics and best practices
-
 ### Writing Assistant
 
 - Primary executor of content generation
-- Delegates research to Web Researcher agent
+- Uses built-in WebSearch tool or Chrome browser extension for research
 - Handles writing and multi-language translation based on research findings
 
 ### Image Generator
@@ -1181,7 +1444,6 @@ Future enhancements may include:
 ### Agents
 
 - Writing Assistant: `.claude/agents/writing-assistant.md`
-- Web Researcher: `.claude/agents/web-researcher.md`
 - Image Generator: `.claude/agents/image-generator.md`
 - Backlink Manager: `.claude/agents/backlink-manager.md`
 

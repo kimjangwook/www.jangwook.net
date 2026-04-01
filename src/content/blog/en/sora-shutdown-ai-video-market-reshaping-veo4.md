@@ -16,41 +16,41 @@ tags:
   - content-creation
   - workflow
 relatedPosts:
-  - slug: mistral-voxtral-tts-open-weight-speech
-    score: 0.88
+  - slug: claude-code-insights-usage-analysis
+    score: 0.94
     reason:
-      ko: 'AI 비디오의 음성 레이어에 관심이 있다면, 오픈 웨이트 TTS 모델의 현주소와 일본어 지원 한계를 다룬 이 글이 워크플로우 설계에 도움됩니다.'
-      ja: 'AI動画の音声レイヤーに興味があれば、オープンウェイトTTSモデルの現状と日本語対応の課題を扱ったこの記事がワークフロー設計に役立ちます。'
-      en: 'If you care about the audio layer of AI video, this post on open-weight TTS models and their language support gaps helps with workflow design.'
-      zh: '如果你关注AI视频的音频层，这篇关于开源TTS模型现状和日语支持局限的文章对工作流设计很有帮助。'
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: greptile-ai-coding-report-2025-review
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: multi-agent-swe-bench-verdent
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: ai-presentation-automation
-    score: 0.85
+    score: 0.93
     reason:
-      ko: 'Sora의 비디오 자동화와 유사한 맥락에서, AI를 활용한 발표 자료 제작 자동화의 실전 경험과 비용 절감 효과를 비교해볼 수 있습니다.'
-      ja: 'Soraの動画自動化と類似した文脈で、AIを活用したプレゼン資料作成の自動化の実践経験とコスト削減効果を比較できます。'
-      en: 'In a similar vein to Sora video automation, compare practical experiences and cost savings from AI-powered presentation creation.'
-      zh: '在与Sora视频自动化类似的背景下，可以比较AI驱动的演示文稿制作自动化的实践经验和成本节约效果。'
-  - slug: gpt-54-computer-use-1m-context-engineering-impact
-    score: 0.82
-    reason:
-      ko: 'Sora 종료와 동시에 발표된 GPT-5.4의 컴퓨터 사용 기능이 OpenAI의 전략적 피벗을 이해하는 데 핵심적인 맥락을 제공합니다.'
-      ja: 'Sora終了と同時に発表されたGPT-5.4のコンピュータ操作機能が、OpenAIの戦略的ピボットを理解する上で重要な文脈を提供します。'
-      en: 'GPT-5.4 computer use, announced alongside Sora shutdown, provides crucial context for understanding OpenAI strategic pivot.'
-      zh: '与Sora关停同时发布的GPT-5.4计算机使用功能，为理解OpenAI的战略转向提供了关键背景。'
-  - slug: kitten-tts-v08-tiny-sota
-    score: 0.78
-    reason:
-      ko: 'AI 비디오 파이프라인에서 TTS는 필수 컴포넌트입니다. 25MB 미만 초소형 TTS 모델의 가능성을 다룬 이 글이 경량 워크플로우 구축에 참고가 됩니다.'
-      ja: 'AI動画パイプラインでTTSは必須コンポーネントです。25MB未満の超小型TTSモデルの可能性を扱ったこの記事が軽量ワークフロー構築の参考になります。'
-      en: 'TTS is essential in AI video pipelines. This post on sub-25MB SOTA TTS models is relevant for building lightweight video workflows.'
-      zh: 'TTS是AI视频管道中的必要组件。这篇关于25MB以下SOTA TTS模型的文章对构建轻量级工作流很有参考价值。'
-  - slug: gemini-31-flash-live-realtime-voice-agent
-    score: 0.76
-    reason:
-      ko: 'Veo 4와 같은 Google AI 생태계의 실시간 음성 에이전트 기능을 다뤘는데, Google의 멀티모달 AI 전략의 전체 그림을 이해하는 데 도움됩니다.'
-      ja: 'Veo 4と同じGoogleAIエコシステムのリアルタイム音声エージェント機能を扱っており、Googleのマルチモーダル AI戦略の全体像を理解するのに役立ちます。'
-      en: 'Covers real-time voice agents in the same Google AI ecosystem as Veo 4, helping you understand the full picture of Google multimodal AI strategy.'
-      zh: '介绍了与Veo 4同属Google AI生态的实时语音代理功能，有助于理解Google多模态AI战略的全貌。'
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 OpenAI is shutting down the Sora app on April 26th. The API stays alive until September 24th, but make no mistake — this is a retreat.
