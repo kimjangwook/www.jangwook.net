@@ -2174,5 +2174,16 @@
       "devops": 0.2,
       "architecture": 0.4
     }
+  },
+  "sora-shutdown-ai-video-market-reshaping-veo4": {
+    "pubDate": "2026-04-01",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.2,
+      "ai-ml": 0.8,
+      "devops": 0.2,
+      "architecture": 0.5
+    }
   }
 }

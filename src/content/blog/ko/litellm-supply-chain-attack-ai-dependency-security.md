@@ -4,7 +4,8 @@ description: >-
   PyPI에서 발생한 LiteLLM 공급망 공격을 분석하고, AI 도구 체인에서 의존성 관리와 공급망 보안을 강화하기 위한 실전 방법을
   정리합니다.
 pubDate: '2026-03-31'
-heroImage: ../../../assets/blog/litellm-supply-chain-attack-ai-dependency-security-hero.jpg
+heroImage: >-
+  ../../../assets/blog/litellm-supply-chain-attack-ai-dependency-security-hero.jpg
 tags:
   - security
   - supply-chain
@@ -14,38 +15,42 @@ relatedPosts:
   - slug: ai-coding-secrets-sprawl-mcp-config-security
     score: 0.94
     reason:
-      ko: 'AI 코딩 도구의 설정 파일과 시크릿 유출 위험을 다뤘다면, 이 글에서 다룬 패키지 레벨 공급망 공격도 같은 맥락의 위협입니다.'
-      ja: 'AIコーディングツールの設定ファイルやシークレット漏洩リスクに関心があれば、パッケージレベルのサプライチェーン攻撃も同じ文脈の脅威です。'
-      en: 'If you explored config file and secret sprawl risks in AI coding tools, package-level supply chain attacks are threats in the same vein.'
-      zh: '如果你了解了AI编码工具中配置文件和密钥泄露的风险，包级别的供应链攻击也是同一类型的威胁。'
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: openai-promptfoo-ai-agent-devsecops
     score: 0.93
     reason:
-      ko: 'promptfoo를 활용한 AI 에이전트 보안 테스트를 다뤘는데, 이번 글의 CI/CD 보안 강화 방법과 함께 적용하면 더 견고한 DevSecOps 파이프라인을 구축할 수 있습니다.'
-      ja: 'promptfooを活用したAIエージェントのセキュリティテストと、この記事のCI/CDセキュリティ強化を組み合わせれば、より堅固なDevSecOpsパイプラインを構築できます。'
-      en: 'Combining the AI agent security testing with promptfoo and the CI/CD hardening methods in this post gives you a more robust DevSecOps pipeline.'
-      zh: '将promptfoo的AI代理安全测试与本文的CI/CD安全强化方法结合，可以构建更坚固的DevSecOps管道。'
-  - slug: roguepilot-copilot-prompt-injection-security
-    score: 0.92
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: gpt53-codex-rollout-pause
+    score: 0.91
     reason:
-      ko: 'RoguePilot은 AI 코딩 도구의 프롬프트 인젝션 취약점을 다뤘고, 이번 글은 패키지 의존성 공격을 다룹니다. AI 개발 도구의 두 가지 다른 공격 벡터를 비교해볼 수 있습니다.'
-      ja: 'RoguePilotはAIコーディングツールのプロンプトインジェクション脆弱性、この記事はパッケージ依存関係攻撃を扱います。AI開発ツールの2つの異なる攻撃ベクターを比較できます。'
-      en: 'RoguePilot covered prompt injection in AI coding tools while this post covers package dependency attacks — two different attack vectors targeting AI dev tools.'
-      zh: 'RoguePilot讨论了AI编码工具的提示注入漏洞，本文讨论包依赖攻击。可以比较针对AI开发工具的两种不同攻击向量。'
+      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        DevOps topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、DevOps主题进行连接。
+  - slug: cursor-agent-trace-ai-code-attribution
+    score: 0.91
+    reason:
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: mcp-security-crisis-30-cves-enterprise-hardening
     score: 0.91
     reason:
-      ko: 'MCP 서버에서 발견된 30개 CVE와 엔터프라이즈 보안 강화를 다뤘는데, AI 인프라의 다른 레이어에서 발생하는 보안 위협의 패턴을 함께 이해할 수 있습니다.'
-      ja: 'MCPサーバーで発見された30件のCVEとエンタープライズセキュリティ強化を扱っており、AIインフラの異なるレイヤーで発生するセキュリティ脅威のパターンを理解できます。'
-      en: 'Covers 30 CVEs found in MCP servers and enterprise hardening — helps you understand security threat patterns across different layers of AI infrastructure.'
-      zh: '涵盖了MCP服务器中发现的30个CVE和企业安全加固，帮助理解AI基础设施不同层面的安全威胁模式。'
-  - slug: nist-ai-agent-security-standards
-    score: 0.90
-    reason:
-      ko: 'NIST의 AI 에이전트 보안 표준을 다룬 글로, 이번 공급망 공격 사례가 왜 표준 수준의 보안 프레임워크가 필요한지 실감하게 해줍니다.'
-      ja: 'NISTのAIエージェントセキュリティ標準を扱った記事で、今回のサプライチェーン攻撃事例がなぜ標準レベルのセキュリティフレームワークが必要かを実感させてくれます。'
-      en: 'Covers NIST AI agent security standards — this supply chain attack case study shows exactly why standard-level security frameworks are needed.'
-      zh: '讨论了NIST AI代理安全标准，本次供应链攻击案例让人深刻体会到为什么需要标准级别的安全框架。'
+      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        DevOps topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、DevOps主题进行连接。
 ---
 
 3월 24일, PyPI에 올라온 LiteLLM 1.82.7과 1.82.8 버전에서 백도어가 발견됐다. LiteLLM은 하루 340만 다운로드를 기록하는, 클라우드 환경의 36%에 설치된 LLM 프록시 라이브러리다. 보안 스캐너 Trivy를 먼저 감염시킨 뒤, 그 스캐너가 CI/CD 파이프라인에서 LiteLLM 빌드를 오염시킨 공격이었다.
