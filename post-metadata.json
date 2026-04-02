@@ -2196,5 +2196,16 @@
       "devops": 0.4,
       "architecture": 0.9
     }
+  },
+  "mcp-gateway-agent-traffic-control": {
+    "pubDate": "2026-04-02",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.1,
+      "ai-ml": 0.7,
+      "devops": 0.6,
+      "architecture": 0.9
+    }
   }
 }

@@ -23,3 +23,6 @@ credentials
 
 # jetbrains setting folder
 .idea/
+
+# blog sandbox - test/demo workspace (NEVER commit)
+_sandbox/
