@@ -126,6 +126,132 @@ gateway.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 这段代码能在生产环境中使用吗？说实话还不行。但核心思想已经表达清楚了——Agent的工具调用必须经过一个统一的节点，而这个节点要能执行策略。
 
+## 实际跑起来才发现缺了什么
+
+把上面的代码塞进Claude Code跑了一下。结论是——直接用不了。
+
+第一个问题是<strong>工具列表同步</strong>。Gateway要拦截`CallToolRequest`，首先得告诉客户端（Claude Code）"我有这些工具"。上面的代码没有`listTools`处理器。你得连接upstream MCP服务器，拿到工具列表，原样转发给客户端。
+
+```typescript
+import { ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+
+gateway.setRequestHandler(ListToolsRequestSchema, async () => {
+  const upstreamTools = await fetchToolsFromUpstream();
+  return { tools: upstreamTools };
+});
+```
+
+加了这个能跑起来，但upstream服务器有多个时工具名会冲突。我的环境里Gmail和Google Calendar都暴露了`list`这种generic名称，得加命名空间。
+
+第二个问题是<strong>限流的生命周期</strong>。上面代码里的`callCount`在内存里。进程重启计数就归零。Claude Code每个会话都会重新启动MCP服务器，所以换个会话限制就重置了。"每天10次"这种策略根本执行不了。
+
+第三，`requireApproval`往`console.error`输出完全没用。没人在实时看stderr。真要拿到审批，得往外部渠道（Telegram、Slack）发请求然后阻塞等响应——在stdio模式的MCP里实现异步等待相当麻烦。
+
+想了想怎么一次性解决这三个问题，至少前两个的答案很简单：<strong>把审计日志写到SQLite里，而不是文件或内存。</strong>
+
+## 审计日志写入SQLite
+
+把原来通过`console.error`输出的审计日志存到SQLite表里，限流生命周期的问题也一并解决了。进程重启DB还在。
+
+```typescript
+import Database from "better-sqlite3";
+
+const db = new Database("mcp-audit.db");
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS audit_log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT DEFAULT (datetime('now')),
+    tool_name TEXT NOT NULL,
+    args TEXT,
+    result_status TEXT DEFAULT 'ok',
+    latency_ms INTEGER,
+    blocked INTEGER DEFAULT 0,
+    block_reason TEXT
+  )
+`);
+
+const insertLog = db.prepare(`
+  INSERT INTO audit_log (tool_name, args, result_status, latency_ms, blocked, block_reason)
+  VALUES (?, ?, ?, ?, ?, ?)
+`);
+
+const countToday = db.prepare(`
+  SELECT COUNT(*) as cnt FROM audit_log
+  WHERE tool_name = ? AND timestamp > datetime('now', '-1 day') AND blocked = 0
+`);
+```
+
+用`countToday`查询替代内存里的`callCount`字典，即使换了会话也能准确追踪"今天Gmail读取调了几次"。Gateway处理器变成这样：
+
+```typescript
+gateway.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const toolName = request.params.name;
+  const rule = policy[toolName];
+  const start = Date.now();
+
+  if (rule) {
+    const { cnt } = countToday.get(toolName) as { cnt: number };
+    if (cnt >= rule.rateLimit) {
+      insertLog.run(toolName,
+        JSON.stringify(request.params.arguments),
+        "blocked", 0, 1, "rate_limit");
+      return {
+        content: [{ type: "text",
+          text: `Rate limit exceeded: ${toolName} (${cnt}/${rule.rateLimit} today)` }],
+        isError: true,
+      };
+    }
+  }
+
+  const result = await forwardToUpstream(
+    toolName, request.params.arguments);
+  const latency = Date.now() - start;
+
+  insertLog.run(toolName,
+    JSON.stringify(request.params.arguments),
+    "ok", latency, 0, null);
+  return result;
+});
+```
+
+## 积累的日志能干什么
+
+跑了几天，`mcp-audit.db`里攒了不少数据。能做的事比想象的多。
+
+<strong>工具调用频率</strong>——哪个工具被调用最多，一目了然。
+
+```sql
+SELECT tool_name, COUNT(*) as calls, ROUND(AVG(latency_ms)) as avg_ms
+FROM audit_log WHERE blocked = 0
+GROUP BY tool_name ORDER BY calls DESC LIMIT 10;
+```
+
+我这里`notion-search`遥遥领先。Agent做任何事之前都先搜一下Notion。看到这个数据我觉得缓存Notion搜索结果可能有意义。
+
+<strong>拦截率</strong>——被限流挡住的调用占总数的百分比。
+
+```sql
+SELECT tool_name,
+  SUM(CASE WHEN blocked = 1 THEN 1 ELSE 0 END) as blocked,
+  COUNT(*) as total,
+  ROUND(100.0 * SUM(blocked) / COUNT(*), 1) as block_rate
+FROM audit_log GROUP BY tool_name HAVING blocked > 0;
+```
+
+拦截率高说明两件事之一：限制太严了，或者Agent有反复调用同一工具的低效模式。如果是后者，该调的是prompt。
+
+<strong>时段分布</strong>——Agent什么时候最活跃。
+
+```sql
+SELECT strftime('%H', timestamp) as hour, COUNT(*) as calls
+FROM audit_log GROUP BY hour ORDER BY hour;
+```
+
+结果不意外——调用集中在我的cron任务运行的11点到12点。团队环境下这个数据可以用来决定MCP服务器的负载均衡时机。
+
+这些数据的真正价值在于它成为<strong>策略调优的依据</strong>。"Gmail读取每天10次够不够？"不用猜了，看实际使用模式就行。我的情况是`gmail_read_message`平均每天才调3次，限制10绰绰有余。而`notion-search`每天接近40次调用，限制20根本不够，调到了30。
+
 ## 什么时候真正需要它
 
 "我们团队还没怎么用MCP"——这个借口快要过期了。
@@ -158,11 +284,12 @@ MCP Gateway之所以被需要，说明MCP协议本身缺少治理层。我们在
 
 还有一点——引入Gateway会拖慢Agent的响应速度。多经过一层代理，延迟增加是必然的。本地测试下来，每次工具调用增加约50到100毫秒的开销。大多数情况下感知不到，但当LLM在一个任务中调用工具20到30次时，总计多出1到2秒，这会影响用户体验。
 
-## 接下来我要做的
+## 还没解决的
 
-目前只在本地做了原型级别的测试。下一步：
+用SQLite存日志、根据数据调策略，这些一个人就能做。但`requireApproval`——拿到人类审批这部分还没真正实现。
 
-- 打算接入Telegram机器人，让`requireApproval: true`的工具调用通过Telegram发送审批请求
-- 想把审计日志存到SQLite里，生成"本周Agent调用最多的工具Top 10"之类的统计
+下一步想试的是接Telegram机器人。`requireApproval: true`的工具调用进来时，Gateway往Telegram发审批请求，用户点"OK"之前一直hold住请求。想法简单，但在stdio模式的MCP里做异步等待需要改结构。现在是同步流程——请求进来就得立刻返回响应。
 
-给AI Agent工具的时候，"不能做什么"和"能做什么"一样重要。MCP Gateway是前者最现实的起点。但也要记住，这不会是永久的答案。
+而且从根本上说，这只在个人开发者的本地环境有意义。团队用的话需要Gateway本身的认证、多租户、策略管理UI——到了那个程度，该用产品而不是自己造。
+
+给AI Agent工具的时候，"不能做什么"和"能做什么"一样重要。MCP Gateway是后者最现实的起点，光加一个SQLite就能让"我的Agent在干什么"变得可见。从那里开始，策略可以靠数据来定。

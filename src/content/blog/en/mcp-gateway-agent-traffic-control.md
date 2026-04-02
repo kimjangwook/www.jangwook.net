@@ -129,6 +129,132 @@ gateway.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 Is this production-ready? Honestly, not yet. But the core idea comes through clearly enough. Every agent tool call should pass through a single point, and that single point needs to enforce policies.
 
+## Running It Revealed What's Missing
+
+I plugged the code above into Claude Code and ran it. Short answer — it doesn't work as-is.
+
+The first problem is <strong>tool list synchronization</strong>. For the Gateway to intercept `CallToolRequest`, it first needs to tell the client (Claude Code) "here are the tools I have." The code above has no `listTools` handler. You need to connect to upstream MCP servers, fetch their tool lists, and forward them to the client.
+
+```typescript
+import { ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+
+gateway.setRequestHandler(ListToolsRequestSchema, async () => {
+  const upstreamTools = await fetchToolsFromUpstream();
+  return { tools: upstreamTools };
+});
+```
+
+This gets things working, but when you have multiple upstream servers, tool names can collide. In my environment, Gmail and Google Calendar both expose generic names like `list`, so I had to add namespacing.
+
+The second problem is <strong>rate limit lifetime</strong>. The `callCount` in the code above lives in memory. Restart the process and the count resets to zero. Claude Code spawns a new MCP server per session, so the limit resets every time you start a new session. A "10 per day" policy simply can't be enforced this way.
+
+Third, printing `requireApproval` to `console.error` was completely useless. Nobody's watching stderr in real time. Actually getting approval means sending a request to an external channel (Telegram, Slack) and blocking until a response comes back — and implementing async waiting in stdio-based MCP is quite involved.
+
+I thought about what solves all three at once, and at least for the first two, the answer is simple: <strong>write audit logs to SQLite instead of files or memory.</strong>
+
+## Audit Logs in SQLite
+
+Storing audit logs in a SQLite table instead of piping them through `console.error` also solves the rate limit lifetime problem. The DB persists across process restarts.
+
+```typescript
+import Database from "better-sqlite3";
+
+const db = new Database("mcp-audit.db");
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS audit_log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT DEFAULT (datetime('now')),
+    tool_name TEXT NOT NULL,
+    args TEXT,
+    result_status TEXT DEFAULT 'ok',
+    latency_ms INTEGER,
+    blocked INTEGER DEFAULT 0,
+    block_reason TEXT
+  )
+`);
+
+const insertLog = db.prepare(`
+  INSERT INTO audit_log (tool_name, args, result_status, latency_ms, blocked, block_reason)
+  VALUES (?, ?, ?, ?, ?, ?)
+`);
+
+const countToday = db.prepare(`
+  SELECT COUNT(*) as cnt FROM audit_log
+  WHERE tool_name = ? AND timestamp > datetime('now', '-1 day') AND blocked = 0
+`);
+```
+
+Replace the in-memory `callCount` dictionary with the `countToday` query, and you can accurately track "how many times Gmail read was called today" across sessions. The Gateway handler becomes:
+
+```typescript
+gateway.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const toolName = request.params.name;
+  const rule = policy[toolName];
+  const start = Date.now();
+
+  if (rule) {
+    const { cnt } = countToday.get(toolName) as { cnt: number };
+    if (cnt >= rule.rateLimit) {
+      insertLog.run(toolName,
+        JSON.stringify(request.params.arguments),
+        "blocked", 0, 1, "rate_limit");
+      return {
+        content: [{ type: "text",
+          text: `Rate limit exceeded: ${toolName} (${cnt}/${rule.rateLimit} today)` }],
+        isError: true,
+      };
+    }
+  }
+
+  const result = await forwardToUpstream(
+    toolName, request.params.arguments);
+  const latency = Date.now() - start;
+
+  insertLog.run(toolName,
+    JSON.stringify(request.params.arguments),
+    "ok", latency, 0, null);
+  return result;
+});
+```
+
+## What You Can Do With the Accumulated Logs
+
+After running this for a few days, `mcp-audit.db` had enough data to be useful. More useful than I expected.
+
+<strong>Tool call frequency</strong> — see which tools get called most at a glance.
+
+```sql
+SELECT tool_name, COUNT(*) as calls, ROUND(AVG(latency_ms)) as avg_ms
+FROM audit_log WHERE blocked = 0
+GROUP BY tool_name ORDER BY calls DESC LIMIT 10;
+```
+
+In my case, `notion-search` was the runaway #1. The agent has this pattern of searching Notion before doing anything else. Seeing this made me think caching Notion search results might be worthwhile.
+
+<strong>Block rate</strong> — what percentage of calls hit the rate limit.
+
+```sql
+SELECT tool_name,
+  SUM(CASE WHEN blocked = 1 THEN 1 ELSE 0 END) as blocked,
+  COUNT(*) as total,
+  ROUND(100.0 * SUM(blocked) / COUNT(*), 1) as block_rate
+FROM audit_log GROUP BY tool_name HAVING blocked > 0;
+```
+
+A high block rate means one of two things: the limit is too tight, or the agent has an inefficient pattern of repeatedly calling the same tool. If it's the latter, fix the prompt.
+
+<strong>Hourly patterns</strong> — when is your agent most active.
+
+```sql
+SELECT strftime('%H', timestamp) as hour, COUNT(*) as calls
+FROM audit_log GROUP BY hour ORDER BY hour;
+```
+
+Unsurprising result — calls cluster around 11am-12pm when my cron jobs run. In a team environment, this data could inform MCP server load balancing decisions.
+
+The real value of this data is that it becomes <strong>evidence for policy tuning</strong>. Instead of guessing whether "10 per day for Gmail read" is enough, you can look at actual usage patterns. In my case, `gmail_read_message` averaged 3 calls per day, so a limit of 10 was plenty. Meanwhile, `notion-search` was hitting nearly 40 per day, making the limit of 20 insufficient — I bumped it to 30.
+
 ## When You Actually Need This
 
 "Our team doesn't use MCP that much yet" — that excuse is expiring.
@@ -161,11 +287,12 @@ Personally, I expect something like a policy extension to be added to the MCP sp
 
 One more thing — introducing a Gateway slows down agent response times. Adding a proxy hop is an obvious trade-off. In my local testing, each tool call added about 50-100ms of overhead. In most cases that's imperceptible, but when an LLM calls tools 20-30 times in a single task, that's 1-2 extra seconds total, which can affect user experience.
 
-## What I'm Trying Next
+## What's Still Unsolved
 
-Right now I've only tested at prototype level locally. Next steps:
+Logging to SQLite and tuning policies based on data — that's doable solo. But the `requireApproval` part — actually getting human approval — is still not properly implemented.
 
-- I want to integrate with a Telegram bot so that tool calls with `requireApproval: true` send approval requests via Telegram
-- I'd like to store audit logs in SQLite and generate stats like "Top 10 tools my agent called most this week"
+What I want to try next is Telegram bot integration. When a tool call with `requireApproval: true` comes in, the Gateway sends an approval request via Telegram and holds the request until the user taps "OK." The idea is simple, but implementing async waiting in stdio-based MCP requires restructuring. Right now it's a synchronous flow — request in, response out immediately.
 
-When giving AI agents access to tools, "what they can't do" matters as much as "what they can do." MCP Gateway is the most pragmatic starting point for the former. Just keep in mind it won't be the permanent answer.
+And fundamentally, this only makes sense at the individual developer's local environment level. For team use, you'd need authentication for the Gateway itself, multi-tenancy, a policy management UI — at that point, you should be using a product, not building one.
+
+When giving AI agents access to tools, "what they can't do" matters as much as "what they can do." MCP Gateway is the most pragmatic starting point for the latter, and just adding SQLite makes "what my agent is actually doing" visible. From there, policies can be driven by data.

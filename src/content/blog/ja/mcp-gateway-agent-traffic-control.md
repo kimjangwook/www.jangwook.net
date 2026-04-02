@@ -128,6 +128,132 @@ gateway.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 このコードが実際にプロダクションで使えるか？正直まだだ。しかしコアアイデアはこれだけで十分伝わる。エージェントのツール呼び出しは必ず一箇所を経由すべきで、その一箇所でポリシーを適用できなければならない。
 
+## 実際に動かしてみたら足りないものが見えた
+
+上のコードをClaude Codeに挟んで動かしてみた。結論から言うと——そのままでは動かない。
+
+最初の問題は<strong>ツールリストの同期</strong>だ。Gatewayが`CallToolRequest`をインターセプトするには、まずクライアント（Claude Code）に「これらのツールがある」と伝える必要がある。上のコードには`listTools`ハンドラーがない。upstream MCPサーバーに接続してツールリストを取得し、それをそのままクライアントに伝えるパートを自分で作る必要がある。
+
+```typescript
+import { ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+
+gateway.setRequestHandler(ListToolsRequestSchema, async () => {
+  const upstreamTools = await fetchToolsFromUpstream();
+  return { tools: upstreamTools };
+});
+```
+
+これだけで動くには動くが、upstreamサーバーが複数あるとツール名が衝突する可能性がある。私の環境ではGmailとGoogle Calendarが両方とも`list`のようなgenericなツール名を公開していたので、ネームスペースを付ける必要があった。
+
+2つ目の問題は<strong>レートリミットの寿命</strong>だ。上のコードの`callCount`はメモリ上にある。プロセスを再起動するとカウントが0に戻る。Claude CodeはセッションごとにMCPサーバーを新しく起動するので、セッションが変わるたびにリミットがリセットされる。「1日10回」というポリシーをちゃんと守れないということだ。
+
+3つ目に、`requireApproval`を`console.error`で出力するのは全く意味がなかった。stderrログをリアルタイムで見ている人がいないから。実際に承認を得るには外部チャネル（Telegram、Slack）にリクエストを送って応答が来るまでブロックする必要があるが、stdio基盤のMCPで非同期待機を実装するのはかなり面倒だ。
+
+この3つを一度に解決する方法は何かと考えたが、少なくとも1つ目と2つ目の答えはシンプルだ。<strong>監査ログをファイルやメモリではなくSQLiteに書けばいい。</strong>
+
+## 監査ログをSQLiteへ
+
+`console.error`で流していた監査ログをSQLiteテーブルに保存すれば、レートリミットの寿命問題も同時に解決する。プロセスが再起動してもDBは残るから。
+
+```typescript
+import Database from "better-sqlite3";
+
+const db = new Database("mcp-audit.db");
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS audit_log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT DEFAULT (datetime('now')),
+    tool_name TEXT NOT NULL,
+    args TEXT,
+    result_status TEXT DEFAULT 'ok',
+    latency_ms INTEGER,
+    blocked INTEGER DEFAULT 0,
+    block_reason TEXT
+  )
+`);
+
+const insertLog = db.prepare(`
+  INSERT INTO audit_log (tool_name, args, result_status, latency_ms, blocked, block_reason)
+  VALUES (?, ?, ?, ?, ?, ?)
+`);
+
+const countToday = db.prepare(`
+  SELECT COUNT(*) as cnt FROM audit_log
+  WHERE tool_name = ? AND timestamp > datetime('now', '-1 day') AND blocked = 0
+`);
+```
+
+既存の`callCount`ディクショナリの代わりに`countToday`クエリを使えば、セッションが変わっても「今日Gmailの読み取りを何回呼んだか」を正確に追跡できる。Gatewayのハンドラーはこう変わる：
+
+```typescript
+gateway.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const toolName = request.params.name;
+  const rule = policy[toolName];
+  const start = Date.now();
+
+  if (rule) {
+    const { cnt } = countToday.get(toolName) as { cnt: number };
+    if (cnt >= rule.rateLimit) {
+      insertLog.run(toolName,
+        JSON.stringify(request.params.arguments),
+        "blocked", 0, 1, "rate_limit");
+      return {
+        content: [{ type: "text",
+          text: `Rate limit exceeded: ${toolName} (${cnt}/${rule.rateLimit} today)` }],
+        isError: true,
+      };
+    }
+  }
+
+  const result = await forwardToUpstream(
+    toolName, request.params.arguments);
+  const latency = Date.now() - start;
+
+  insertLog.run(toolName,
+    JSON.stringify(request.params.arguments),
+    "ok", latency, 0, null);
+  return result;
+});
+```
+
+## 溜まったログで何ができるか
+
+数日動かすと`mcp-audit.db`にデータが溜まった。これで出来ることが思った以上に多い。
+
+<strong>ツール別呼び出し頻度</strong>——どのツールが最も多く呼ばれているか一目で分かる。
+
+```sql
+SELECT tool_name, COUNT(*) as calls, ROUND(AVG(latency_ms)) as avg_ms
+FROM audit_log WHERE blocked = 0
+GROUP BY tool_name ORDER BY calls DESC LIMIT 10;
+```
+
+私の場合`notion-search`が圧倒的1位だった。エージェントが何かをする前にまずNotionを検索するパターンがあるようだ。これを見てNotion検索結果のキャッシングが意味あるかもと思った。
+
+<strong>ブロック率</strong>——レートリミットに引っかかった呼び出しが全体の何パーセントか。
+
+```sql
+SELECT tool_name,
+  SUM(CASE WHEN blocked = 1 THEN 1 ELSE 0 END) as blocked,
+  COUNT(*) as total,
+  ROUND(100.0 * SUM(blocked) / COUNT(*), 1) as block_rate
+FROM audit_log GROUP BY tool_name HAVING blocked > 0;
+```
+
+ブロック率が高ければ2つのうちどちらかだ。リミットが厳しすぎるか、エージェントが同じツールを繰り返し呼ぶ非効率なパターンを持っているか。後者ならプロンプトを見直すべきだ。
+
+<strong>時間帯別パターン</strong>——エージェントが最も活発な時間帯はいつか。
+
+```sql
+SELECT strftime('%H', timestamp) as hour, COUNT(*) as calls
+FROM audit_log GROUP BY hour ORDER BY hour;
+```
+
+当然の結果ではあるが、私のcronジョブが走る11時〜12時に呼び出しが集中する。チーム環境ならこのデータでMCPサーバーの負荷分散タイミングを決められるだろう。
+
+このデータの本当の価値は<strong>ポリシーチューニングの根拠</strong>になるということだ。「Gmailの読み取りは1日10回で足りるか？」という問いに勘で答えるのではなく、実際の利用パターンを見て判断できる。私の場合`gmail_read_message`は1日平均3回しか使っておらず、リミット10は余裕だった。一方`notion-search`は1日40回近く呼ばれていてリミット20では足りず、30に上げた。
+
 ## 実際に必要になる瞬間
 
 「うちのチームはまだMCPをそんなに使ってないですけど」——この言い訳が通じる時代が終わりつつある。
@@ -160,11 +286,12 @@ MCP Gatewayが必要だということは、MCPプロトコル自体にガバナ
 
 もう一つ——Gatewayを導入するとエージェントのレスポンス速度が遅くなる。プロキシを一段経由するので当然だ。ローカルでテストしたところ、ツール呼び出し1回あたり50〜100msのオーバーヘッドが追加された。ほとんどの場合は体感できないが、LLMが1タスクでツールを20〜30回呼ぶパターンでは全体で1〜2秒追加され、ユーザー体験に影響しうる。
 
-## 次にやること
+## まだ解決していないこと
 
-今はローカルでプロトタイプレベルのテストしかしていない。次のステップとして：
+SQLiteでログを溜めてポリシーをチューニングするところまでは一人でもできる。しかし`requireApproval`——人間の承認を得るパートはまだちゃんと実装できていない。
 
-- Telegramボットと連携して、`requireApproval: true`のツール呼び出しが来たらTelegramで承認リクエストを送るワークフローを作ってみるつもりだ
-- 監査ログをSQLiteに保存して「今週エージェントが最も多く呼んだツールTop 10」のような統計を出してみたい
+次に試すのはTelegramボット連携だ。`requireApproval: true`のツール呼び出しが来たらTelegramで承認リクエストを送り、ユーザーが「OK」を押すまでGatewayがリクエストをホールドする方式。アイデアはシンプルだが、stdio基盤のMCPでこれを非同期処理するには構造を変える必要がある。今はリクエストが来たらすぐレスポンスを返す同期構造なので。
 
-AIエージェントにツールを渡す時、「何ができるか」と同じくらい「何をさせないか」が重要だ。MCP Gatewayは後者のための最も現実的な出発点だ。ただしこれが永遠の答えではないことも覚えておこう。
+そして根本的に、これは個人開発者のローカル環境でしか意味のないレベルだ。チーム単位で使うにはGateway自体の認証、マルチテナンシー、ポリシー管理UIなどが必要で、そこまで来ると自作ではなくプロダクトを使うのが正解だ。
+
+AIエージェントにツールを渡す時、「何ができるか」と同じくらい「何をさせないか」が重要だ。MCP Gatewayは後者のための最も現実的な出発点であり、SQLite一つ付けるだけで「自分のエージェントが何をしているか」が見え始める。そこからポリシーはデータで決められる。
