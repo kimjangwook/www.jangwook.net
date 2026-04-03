@@ -1,4 +1,15 @@
 {
+  "effloow-side-project-ai-company": {
+    "pubDate": "2026-04-02",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.7,
+      "ai-ml": 0.8,
+      "devops": 0.5,
+      "architecture": 0.7
+    }
+  },
   "litellm-supply-chain-attack-ai-dependency-security": {
     "pubDate": "2026-03-31",
     "difficulty": 3,
