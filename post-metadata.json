@@ -2218,5 +2218,16 @@
       "devops": 0.6,
       "architecture": 0.9
     }
+  },
+  "stripe-minions-autonomous-coding-agents-1300-prs": {
+    "pubDate": "2026-04-03",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.9,
+      "web-development": 0.1,
+      "ai-ml": 0.8,
+      "devops": 0.7,
+      "architecture": 0.8
+    }
   }
 }
