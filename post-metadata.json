@@ -1,4 +1,15 @@
 {
+  "anthropic-emotion-concepts-llm-alignment": {
+    "pubDate": "2026-04-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.3
+    }
+  },
   "effloow-side-project-ai-company": {
     "pubDate": "2026-04-02",
     "difficulty": 3,

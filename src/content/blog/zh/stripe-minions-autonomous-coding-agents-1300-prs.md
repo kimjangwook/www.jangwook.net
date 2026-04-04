@@ -4,7 +4,7 @@ description: >-
   Stripe 如何通过自主编码 Agent Minions 每周生产超过 1,300 个 PR。分析 Blueprint 架构、沙箱 VM
   和三层反馈循环背后的实际工程实践。
 pubDate: '2026-04-03'
-heroImage: '../../../assets/blog/stripe-minions-autonomous-coding-agents-1300-prs-hero.jpg'
+heroImage: ../../../assets/blog/stripe-minions-autonomous-coding-agents-1300-prs-hero.jpg
 tags:
   - ai-agent
   - stripe
@@ -13,41 +13,51 @@ tags:
   - ci-cd
   - engineering
 relatedPosts:
-  - slug: software-factory-zero-code-development
-    score: 0.92
-    reason:
-      ko: 'Stripe Minions가 실제 기업에서 어떻게 작동하는지 봤다면, 코드를 한 줄도 안 쓰는 개발 프로세스의 전체 그림이 궁금할 것이다.'
-      ja: 'Stripe Minionsの実例を見たなら、コードを一行も書かない開発プロセスの全体像が気になるはずだ。'
-      en: 'After seeing how Stripe Minions works in practice, you will want the bigger picture of zero-code development processes.'
-      zh: '看完Stripe Minions的实际运作后，你可能想了解零代码开发流程的全景。'
-  - slug: paperclip-zero-human-company-agent-orchestration
-    score: 0.90
-    reason:
-      ko: 'Minions는 사람이 리뷰만 하는 구조인데, 여기서 한 발 더 나아가 사람 없이 회사를 운영하는 실험 사례를 다룬다.'
-      ja: 'Minionsは人間がレビューだけする構造だが、さらに一歩進んで人間なしで会社を運営する実験事例を扱う。'
-      en: 'Minions keeps humans in the review loop — this post explores what happens when you remove humans from the loop entirely.'
-      zh: 'Minions让人类只负责Review，而这篇文章探讨了完全去掉人类环节的实验案例。'
-  - slug: production-grade-ai-agent-design-principles
-    score: 0.88
-    reason:
-      ko: 'Stripe의 Blueprint 패턴과 샌드박스 설계에 감명받았다면, 프로덕션 AI 에이전트 설계의 9가지 원칙이 더 체계적인 프레임워크를 제공한다.'
-      ja: 'StripeのBlueprintパターンとサンドボックス設計に感銘を受けたなら、プロダクションAIエージェント設計の9原則がより体系的なフレームワークを提供する。'
-      en: 'If the Blueprint pattern and sandbox design impressed you, these 9 design principles for production AI agents offer a more systematic framework.'
-      zh: '如果Blueprint模式和沙箱设计给你留下了深刻印象，这9条生产级AI Agent设计原则提供了更系统化的框架。'
   - slug: mcp-servers-toolkit-introduction
-    score: 0.86
+    score: 0.94
     reason:
-      ko: 'Minions의 핵심 인프라인 400개 이상의 MCP 도구가 궁금하다면, MCP 서버를 직접 구축하는 방법을 이 글에서 다룬다.'
-      ja: 'Minionsの核心インフラである400以上のMCPツールが気になるなら、MCPサーバーを自分で構築する方法をこの記事で扱う。'
-      en: 'Curious about the 400+ MCP tools powering Minions? This post covers how to build your own MCP servers.'
-      zh: '对驱动Minions的400多个MCP工具感到好奇？这篇文章介绍了如何构建自己的MCP服务器。'
-  - slug: self-healing-ai-systems
-    score: 0.85
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-agent-teams-guide
+    score: 0.93
     reason:
-      ko: 'Minions의 3단계 피드백 루프에서 에이전트가 스스로 버그를 수정하는 부분이 인상적이었다면, 자가 치유 AI 시스템의 아키텍처를 더 깊이 다룬다.'
-      ja: 'Minionsの3段階フィードバックループでエージェントが自らバグを修正する部分が印象的だったなら、自己修復AIシステムのアーキテクチャをより深く扱う。'
-      en: 'If the self-fixing aspect of Minions 3-tier feedback loop impressed you, this post dives deeper into self-healing AI system architectures.'
-      zh: '如果Minions三层反馈循环中Agent自我修复Bug的部分给你留下了印象，这篇文章更深入地探讨了自愈AI系统的架构。'
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
+  - slug: claude-code-insights-usage-analysis
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: effiflow-automation-analysis-part3
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
+  - slug: openclaw-opus-4-6-setup-guide
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
 ---
 
 在 Slack 中对一个 Bug 报告加个表情，10 秒后沙箱 VM 启动，修复代码，运行测试，创建 PR。人类只负责 Review。这就是 Stripe 今年 2 月公开的内部系统"Minions"的工作方式。
