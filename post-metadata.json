@@ -1,4 +1,15 @@
 {
+  "claude-code-source-leak-analysis": {
+    "pubDate": "2026-04-05",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.2,
+      "ai-ml": 0.85,
+      "devops": 0.4,
+      "architecture": 0.9
+    }
+  },
   "anthropic-emotion-concepts-llm-alignment": {
     "pubDate": "2026-04-04",
     "difficulty": 3,
