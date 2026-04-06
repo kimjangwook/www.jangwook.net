@@ -2251,5 +2251,16 @@
       "devops": 0.7,
       "architecture": 0.8
     }
+  },
+  "gemma-4-local-agent-edge-ai": {
+    "pubDate": "2026-04-06",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.3,
+      "architecture": 0.5
+    }
   }
 }
