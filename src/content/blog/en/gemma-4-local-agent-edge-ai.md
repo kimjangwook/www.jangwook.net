@@ -1,9 +1,11 @@
 ---
 title: >-
-  I Ran Gemma 4 Locally — We're in an Era Where an 8B Model Can Do Function Calling
+  I Ran Gemma 4 Locally — We're in an Era Where an 8B Model Can Do Function
+  Calling
 description: >-
-  I installed Google's Gemma 4 (Apache 2.0) via Ollama and tested Korean language, structured output, and function calling firsthand.
-  Can a 9.6GB local model actually become a building block for agent pipelines?
+  I installed Google's Gemma 4 (Apache 2.0) via Ollama and tested Korean
+  language, structured output, and function calling firsthand. Can a 9.6GB local
+  model actually become a building block for agent pipelines?
 pubDate: '2026-04-06'
 heroImage: ../../../assets/blog/gemma-4-local-agent-edge-ai-hero.jpg
 tags:
@@ -14,34 +16,41 @@ tags:
   - ai-agent
   - function-calling
 relatedPosts:
-  - slug: qwen3-coder-8gb-vram
-    score: 0.88
+  - slug: claude-code-insights-usage-analysis
+    score: 0.95
     reason:
-      ko: Qwen3-Coder를 8GB VRAM에서 돌리는 방법을 다뤘다. 제한된 하드웨어에서 로컬 LLM을 활용하는 관점에서 Gemma 4와 직접 비교해볼 수 있다.
-      ja: Qwen3-Coderを8GB VRAMで動かす方法を扱った。限られたハードウェアでローカルLLMを活用する観点からGemma 4と直接比較できる。
-      en: Covers running Qwen3-Coder on 8GB VRAM. Directly comparable to Gemma 4 from the perspective of utilizing local LLMs on limited hardware.
-      zh: 介绍了在8GB VRAM上运行Qwen3-Coder的方法。从在有限硬件上利用本地LLM的角度来看，可以与Gemma 4直接比较。
-  - slug: google-turboquant-kv-cache-3bit-compression
-    score: 0.85
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: greptile-ai-coding-report-2025-review
+    score: 0.94
     reason:
-      ko: Gemma 4의 Q4_K_M 양자화가 신경 쓰인다면, Google의 TurboQuant 3-bit KV 캐시 압축 기술이 양자화 품질 문제를 어떻게 접근하는지 참고할 만하다.
-      ja: Gemma 4のQ4_K_M量子化が気になるなら、GoogleのTurboQuant 3bit KVキャッシュ圧縮技術が量子化品質問題にどうアプローチしているか参考になる。
-      en: If the Q4_K_M quantization of Gemma 4 concerns you, see how Google's TurboQuant 3-bit KV cache compression approaches quantization quality issues.
-      zh: 如果你关心Gemma 4的Q4_K_M量化问题，可以参考Google的TurboQuant 3-bit KV缓存压缩技术如何解决量化质量问题。
-  - slug: dapr-agents-v1-cncf-production-ai-framework
-    score: 0.82
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.94
     reason:
-      ko: Gemma 4로 로컬 에이전트를 만들겠다면, 프로덕션 레벨의 에이전트 프레임워크가 필요하다. Dapr Agents가 그 선택지 중 하나다.
-      ja: Gemma 4でローカルエージェントを作るなら、プロダクションレベルのエージェントフレームワークが必要だ。Dapr Agentsはその選択肢の一つ。
-      en: If you plan to build local agents with Gemma 4, you'll need a production-grade agent framework. Dapr Agents is one such option.
-      zh: 如果你打算用Gemma 4构建本地Agent，就需要一个生产级的Agent框架。Dapr Agents就是选择之一。
-  - slug: mistral-voxtral-tts-open-weight-speech
-    score: 0.80
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: sora-shutdown-ai-video-market-reshaping-veo4
+    score: 0.94
     reason:
-      ko: 오픈 웨이트 모델의 또 다른 사례. Mistral의 음성 합성 모델과 Google의 Gemma 4를 비교하면 오픈소스 AI 생태계의 현주소가 보인다.
-      ja: オープンウェイトモデルのもう一つの事例。MistralのTTSモデルとGoogleのGemma 4を比較すると、オープンソースAIエコシステムの現在地が見える。
-      en: Another example of open-weight models. Comparing Mistral's TTS model with Google's Gemma 4 reveals the current state of the open-source AI ecosystem.
-      zh: 开源权重模型的另一个案例。将Mistral的TTS模型与Google的Gemma 4对比，可以看到开源AI生态系统的现状。
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: ai-presentation-automation
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 `ollama pull gemma4` — with this single line, a 9.6GB model landed on my MacBook.

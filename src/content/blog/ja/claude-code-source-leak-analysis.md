@@ -1,7 +1,8 @@
 ---
 title: Claude Codeソース流出 — 51万行から読み解くエージェントアーキテクチャの内側
 description: >-
-  Anthropicのnpmパッケージ配布ミスでClaude Codeの全ソースが公開された。エージェントループ、メモリシステム、コスト最適化戦略まで、流出コードから開発者が持ち帰れるものを整理する。
+  Anthropicのnpmパッケージ配布ミスでClaude
+  Codeの全ソースが公開された。エージェントループ、メモリシステム、コスト最適化戦略まで、流出コードから開発者が持ち帰れるものを整理する。
 pubDate: '2026-04-05'
 heroImage: ../../../assets/blog/claude-code-source-leak-analysis-hero.jpg
 tags:
@@ -11,41 +12,41 @@ tags:
   - source-code
   - security
 relatedPosts:
-  - slug: claude-code-hooks-workflow
-    score: 0.91
+  - slug: claude-code-local-model-inefficiency
+    score: 0.95
     reason:
-      ko: 유출 코드에서 발견된 에이전트 아키텍처를 이해했다면, Claude Code 훅 시스템의 실제 활용법도 함께 보면 좋다.
-      ja: 流出コードで発見されたエージェントアーキテクチャを理解したなら、Claude Codeフックシステムの実践的な活用法も併せて読むと良い。
-      en: If you understood the agent architecture from the leaked code, the practical hook system usage guide pairs well with it.
-      zh: 如果你理解了泄露代码中的Agent架构，那么Claude Code Hook系统的实际应用指南也值得一读。
-  - slug: claude-code-plugins-complete-guide
-    score: 0.88
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-pentagon-ai-governance-cto-lessons
+    score: 0.95
     reason:
-      ko: 유출된 코드의 44개 피처 플래그 중 일부는 이미 플러그인으로 공식 출시됐다. 공식 기능과 미출시 기능의 차이를 비교해볼 수 있다.
-      ja: 流出コードの44個のフィーチャーフラグの一部はすでにプラグインとして公式リリースされた。公式機能と未リリース機能の違いを比較できる。
-      en: Some of the 44 leaked feature flags have already shipped as official plugins. Compare official features with unreleased ones.
-      zh: 泄露代码中44个功能标志的一部分已作为插件正式发布。可以比较官方功能与未发布功能的差异。
-  - slug: ai-coding-secrets-sprawl-mcp-config-security
-    score: 0.90
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ccc-vs-gcc-ai-compiled-c-compiler
+    score: 0.94
     reason:
-      ko: 유출 사건의 보안 시사점과 직접 연결된다. MCP 설정과 시크릿 관리의 위험성을 다룬 글이다.
-      ja: 流出事件のセキュリティ上の示唆と直接つながる。MCP設定とシークレット管理のリスクを扱った記事だ。
-      en: Directly connected to the security implications of the leak. Covers MCP config and secret management risks.
-      zh: 与泄露事件的安全影响直接相关。讨论了MCP配置和密钥管理的风险。
-  - slug: litellm-supply-chain-attack-ai-dependency-security
-    score: 0.87
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: gpt4o-retirement-model-dependency-risk
+    score: 0.94
     reason:
-      ko: npm 소스맵 유출도 결국 공급망 보안 문제다. AI 도구의 의존성 보안을 다른 각도에서 분석한 글이다.
-      ja: npmソースマップ流出も結局サプライチェーンセキュリティの問題だ。AIツールの依存関係セキュリティを別の角度から分析した記事。
-      en: The npm source map leak is ultimately a supply chain security issue. Analyzes AI tool dependency security from a different angle.
-      zh: npm source map泄露归根结底也是供应链安全问题。从不同角度分析了AI工具依赖安全。
-  - slug: production-grade-ai-agent-design-principles
-    score: 0.85
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: nist-ai-agent-security-standards
+    score: 0.94
     reason:
-      ko: 유출된 에이전트 루프와 메모리 설계를 참고하려면, 프로덕션급 AI 에이전트의 설계 원칙도 함께 읽어야 한다.
-      ja: 流出されたエージェントループとメモリ設計を参考にするなら、プロダクショングレードAIエージェントの設計原則も一緒に読むべきだ。
-      en: If you want to reference the leaked agent loop and memory design, read this alongside for production-grade AI agent design principles.
-      zh: 如果要参考泄露的Agent循环和内存设计，也应该一起阅读生产级AI Agent的设计原则。
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 3月31日、AnthropicがnpmにClaude Code v2.1.88を配布した。普通のパッチアップデートのはずだったが、このパッケージの中に59.8MBの`.map`ソースマップファイルが入っていた。セキュリティ研究者のChaofan ShouがこれをXに投稿した後、数時間でGitHubで8万4千回フォークされた。

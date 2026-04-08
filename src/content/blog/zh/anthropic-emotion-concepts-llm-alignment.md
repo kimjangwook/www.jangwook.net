@@ -13,38 +13,38 @@ relatedPosts:
   - slug: dont-trust-the-salt-multilingual-llm-safety
     score: 0.95
     reason:
-      ko: 감정 표상이 가드레일 우회와 연결된다면, 다국어 환경에서 가드레일이 얼마나 취약한지 다룬 이 글도 읽어볼 만하다.
-      ja: 感情表象がガードレール迂回と関連するなら、多言語環境でのガードレールの脆弱性を扱ったこの記事も参考になる。
-      en: If emotion representations connect to guardrail bypass, this post on how multilingual contexts expose guardrail weaknesses is worth reading.
-      zh: 如果情感表征与绕过护栏有关，那这篇关于多语言环境中护栏脆弱性的文章也值得一读。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: gpt-oss-120b-uncensored
-    score: 0.92
+    score: 0.95
     reason:
-      ko: 검열 없는 오픈소스 모델에서는 감정 표상에 의한 행동 변화가 어떻게 나타날까? 안전장치 없는 모델의 현실을 다룬다.
-      ja: 検閲なしのオープンソースモデルでは感情表象による行動変化はどう現れるか？安全装置のないモデルの現実を扱う。
-      en: How would emotion-driven behavior changes manifest in uncensored open-source models? Explores the reality of models without safety measures.
-      zh: 在无审查的开源模型中，情感驱动的行为变化会如何表现？探讨了没有安全措施的模型现实。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: icml-prompt-injection-academic-review
-    score: 0.93
+    score: 0.95
     reason:
-      ko: 프롬프트 인젝션도 결국 모델 내부 상태를 조작하는 공격이다. 감정 표상 연구와 같은 맥락에서 읽으면 공격 표면이 더 잘 보인다.
-      ja: プロンプトインジェクションも結局モデル内部状態を操作する攻撃だ。感情表象研究と同じ文脈で読むと攻撃面がよく見える。
-      en: Prompt injection is ultimately about manipulating model internal states. Reading it alongside emotion research reveals a broader attack surface.
-      zh: 提示注入本质上也是操纵模型内部状态的攻击。与情感表征研究一起阅读，能更清晰地看到攻击面。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: moltbook-ai-theater-human-control
-    score: 0.90
+    score: 0.95
     reason:
-      ko: AI가 감정 비슷한 내부 상태를 갖는다면, AI의 자율성과 인간 통제의 경계는 어디인가? 이 글에서 그 논쟁을 다룬다.
-      ja: AIが感情に似た内部状態を持つなら、AIの自律性と人間の制御の境界はどこか？この記事でその議論を扱う。
-      en: If AI has emotion-like internal states, where is the line between AI autonomy and human control? This post explores that debate.
-      zh: 如果AI拥有类似情感的内部状态，AI自主性与人类控制的边界在哪里？这篇文章探讨了这一争论。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: ai-self-generated-skills-myth
-    score: 0.88
+    score: 0.94
     reason:
-      ko: LLM의 내부 메커니즘이 실제로 어떻게 작동하는지에 대한 환상과 현실을 다룬다. 감정 표상 연구와 함께 읽으면 LLM 능력의 경계가 보인다.
-      ja: LLMの内部メカニズムが実際にどう動くかについての幻想と現実を扱う。感情表象研究と合わせて読むとLLM能力の境界が見える。
-      en: Covers the illusions and realities of how LLM internal mechanisms actually work. Together with emotion research, it reveals the boundaries of LLM capabilities.
-      zh: 探讨了LLM内部机制实际运作方式的幻想与现实。与情感表征研究一起阅读，可以看到LLM能力的边界。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
 ---
 
 "如果在提示词中写'拼命行动'，AI真的会变得拼命吗？"

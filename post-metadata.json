@@ -1,4 +1,15 @@
 {
+  "prismml-bonsai-1bit-llm-edge-ai": {
+    "pubDate": "2026-04-08",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.1,
+      "architecture": 0.5
+    }
+  },
   "claude-code-source-leak-analysis": {
     "pubDate": "2026-04-05",
     "difficulty": 3,
