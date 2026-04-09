@@ -1,4 +1,15 @@
 {
+  "claude-mythos-preview-glasswing-ai-cybersecurity": {
+    "pubDate": "2026-04-09",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.6
+    }
+  },
   "prismml-bonsai-1bit-llm-edge-ai": {
     "pubDate": "2026-04-08",
     "difficulty": 2,

@@ -12,34 +12,41 @@ tags:
   - model-compression
   - local-llm
 relatedPosts:
-  - slug: gemma-4-local-agent-edge-ai
-    score: 0.91
+  - slug: ai-model-rush-february-2026
+    score: 0.94
     reason:
-      ko: Gemma 4를 로컬에서 돌려본 경험을 다뤘다. Bonsai의 1.15GB와 Gemma 4의 9.6GB를 비교하면 엣지 AI의 현재 스펙트럼을 한눈에 볼 수 있다.
-      ja: Gemma 4をローカルで動かした体験を扱っています。Bonsaiの1.15GBとGemma 4の9.6GBを比較すれば、エッジAIの現在のスペクトラムが一目で分かります。
-      en: Covers hands-on experience running Gemma 4 locally. Comparing Bonsai's 1.15GB with Gemma 4's 9.6GB shows the full spectrum of edge AI today.
-      zh: 介绍了在本地运行Gemma 4的实际体验。将Bonsai的1.15GB与Gemma 4的9.6GB进行对比，可以一览边缘AI的当前全貌。
-  - slug: qwen3-coder-8gb-vram
-    score: 0.88
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: gemini-31-pro-release
+    score: 0.94
     reason:
-      ko: 8GB VRAM이라는 제약 안에서 LLM을 돌리는 실전 가이드다. Bonsai처럼 하드웨어 제약을 극복하는 다른 접근법을 비교해볼 수 있다.
-      ja: 8GB VRAMという制約の中でLLMを動かす実践ガイドです。Bonsaiのようにハードウェア制約を克服する別のアプローチと比較できます。
-      en: A practical guide to running LLMs within 8GB VRAM constraints. Compare this quantization approach with Bonsai's 1-bit strategy for overcoming hardware limits.
-      zh: 在8GB VRAM限制下运行LLM的实战指南。可以将这种量化方法与Bonsai的1-bit策略进行比较。
-  - slug: google-turboquant-kv-cache-3bit-compression
-    score: 0.85
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: kanitts2-voice-cloning
+    score: 0.94
     reason:
-      ko: Google의 TurboQuant 3-bit KV 캐시 압축 기술을 다뤘다. Bonsai의 1-bit 접근과 비교하면 모델 압축 기술의 트레이드오프를 더 깊이 이해할 수 있다.
-      ja: GoogleのTurboQuant 3-bit KVキャッシュ圧縮技術を扱っています。Bonsaiの1-bitアプローチと比較すれば、モデル圧縮技術のトレードオフをより深く理解できます。
-      en: Covers Google's TurboQuant 3-bit KV cache compression. Compare with Bonsai's 1-bit approach to understand the trade-offs in model compression techniques.
-      zh: 介绍了Google的TurboQuant 3-bit KV缓存压缩技术。与Bonsai的1-bit方法比较，可以更深入地理解模型压缩技术的权衡取舍。
-  - slug: matmulfree-cpu-llm-training
-    score: 0.82
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: windsurf-arena-mode-speed-over-accuracy
+    score: 0.94
     reason:
-      ko: MatMul 연산 자체를 없애는 접근법을 다뤘다. Bonsai가 MatMul을 비트 연산으로 대체하는 것과 같은 맥락의 연구다.
-      ja: MatMul演算自体を排除するアプローチを扱っています。BonsaiがMatMulをビット演算に置き換えるのと同じ文脈の研究です。
-      en: Explores the approach of eliminating MatMul operations entirely. Same line of research as Bonsai replacing MatMul with bitwise operations.
-      zh: 探讨了完全消除MatMul运算的方法。与Bonsai用位运算替代MatMul属于同一研究方向。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: deepseek-v4-release
+    score: 0.93
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
 ---
 
 上周五，一家名为PrismML的隐身创业公司携$16.25M种子轮融资正式亮相。团队由Caltech研究人员创立，带来的是一个名为Bonsai的1-bit LLM系列。8B参数模型，体积仅1.15GB。单看数字，感觉哪里不对劲。
