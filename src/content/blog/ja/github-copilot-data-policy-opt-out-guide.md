@@ -49,6 +49,7 @@ relatedPosts:
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 3月25日、GitHubのブログにひっそりと投稿された記事が開発者コミュニティを騒がせました。タイトルは控えめでした — 「Updates to our Privacy Statement and Terms of Service.」しかし中身はかなり直接的です。**4月24日からCopilot Free、Pro、Pro+ユーザーのインタラクションデータが、AIモデルの学習にデフォルトで使用されます。**

@@ -48,6 +48,8 @@ export function filterPostsByDate(
 
   const today = toDateString(getJSTDate());
   return posts.filter((post) => {
+    // Exclude draft posts
+    if (post.data.draft) return false;
     const postDate = toDateString(post.data.pubDate);
     return postDate <= today;
   });

@@ -49,6 +49,7 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 # 3-Week Analytics Report: 1266% Organic Search Explosion & 20-Post Publishing Sprint

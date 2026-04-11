@@ -44,6 +44,7 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 # 三周分析报告：自然搜索爆炸增长1266%，以及发布20篇文章的旅程

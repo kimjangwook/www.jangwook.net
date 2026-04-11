@@ -48,6 +48,7 @@ relatedPosts:
       ja: アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in architecture with comparable difficulty.
       zh: 在架构领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 ## Overview

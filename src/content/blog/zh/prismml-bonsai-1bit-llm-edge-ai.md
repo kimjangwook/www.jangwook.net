@@ -47,6 +47,7 @@ relatedPosts:
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 上周五，一家名为PrismML的隐身创业公司携$16.25M种子轮融资正式亮相。团队由Caltech研究人员创立，带来的是一个名为Bonsai的1-bit LLM系列。8B参数模型，体积仅1.15GB。单看数字，感觉哪里不对劲。

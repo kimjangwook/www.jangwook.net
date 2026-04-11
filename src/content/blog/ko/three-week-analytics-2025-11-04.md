@@ -46,6 +46,7 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 # 3주 분석 리포트: 오가닉 검색 1266% 폭발 성장, 그리고 20개 포스트 발행의 여정

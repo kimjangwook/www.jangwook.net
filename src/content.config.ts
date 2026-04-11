@@ -29,6 +29,7 @@ const blog = defineCollection({
 			// V3: Related posts (optional)
 			relatedPosts: z.array(relatedPostSchema).optional(),
 			noindex: z.boolean().optional(),
+			draft: z.boolean().optional(),
 		}),
 });
 

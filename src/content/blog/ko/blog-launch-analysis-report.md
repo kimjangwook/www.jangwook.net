@@ -27,6 +27,7 @@ relatedPosts:
         Covers similar topics in automation, web development, architecture with
         comparable difficulty.
       zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 # jangwook.net 블로그 런칭 분석 리포트

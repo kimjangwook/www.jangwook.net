@@ -54,6 +54,7 @@ relatedPosts:
         Useful as prerequisite knowledge, covering automation, web development
         fundamentals.
       zh: 作为先修知识很有用，涵盖自动化、Web开发基础。
+draft: true
 ---
 
 ## コンテンツ推薦の新しいパラダイム

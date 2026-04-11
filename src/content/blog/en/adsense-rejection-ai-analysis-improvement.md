@@ -51,6 +51,7 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 Getting rejected by Google AdSense is a frustrating experience that many bloggers face. When I received the notification stating <strong>"Your site does not comply with Google AdSense program policies - Low Value Content,"</strong> I was confused. My blog had over 230 high-quality technical articles covering AI, Claude Code, MCP, and cloud infrastructure topics. So what went wrong?

@@ -52,6 +52,7 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 # 博客第一周分析报告：与31位热情早期采用者共同开启的旅程

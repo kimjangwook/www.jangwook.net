@@ -47,6 +47,7 @@ relatedPosts:
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 先週の金曜日、PrismMLというステルススタートアップが$16.25Mのシードラウンドとともに姿を現した。Caltechの研究者が創業し、引っさげてきたのはBonsaiという1-bit LLMファミリーだ。8Bパラメータのモデルが1.15GB。数字だけ見ると何かが間違っているような気がする。

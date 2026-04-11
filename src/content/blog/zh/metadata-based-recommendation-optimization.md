@@ -54,6 +54,7 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, DevOps, architecture topics.
       zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
+draft: true
 ---
 
 ## 引言：成本如滚雪球

@@ -51,6 +51,7 @@ relatedPosts:
       ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
       en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
       zh: 作为先修知识很有用，涵盖AI/ML基础。
+draft: true
 ---
 
 ## Overview

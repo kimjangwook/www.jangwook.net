@@ -52,6 +52,7 @@ relatedPosts:
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 Google AI Studio에서 새 모델 이름이 보였다. `gemini-3.1-flash-live-preview`. "또 하나 나왔네" 하고 넘기려다 스펙 시트를 열어보고 멈췄다. 오디오 입력을 받아 오디오로 바로 응답하는 모델인데, 도구 호출(function calling)까지 실시간 대화 중에 된다고? 3월 26일 공개된 이 모델을 하루 만져본 소감을 정리한다.

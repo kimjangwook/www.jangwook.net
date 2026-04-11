@@ -47,6 +47,7 @@ relatedPosts:
       ja: Claude Sonnet 4.6のリリース分析。Mythosと同じAnthropicモデルラインナップにおける位置を比較できます。
       en: Analysis of the Claude Sonnet 4.6 release. Compare where it sits in the same Anthropic model lineup as Mythos.
       zh: Claude Sonnet 4.6发布分析。可以比较它在与Mythos相同的Anthropic模型产品线中的定位。
+draft: true
 ---
 
 4月7日，Anthropic发布了Claude Mythos Preview。SWE-bench Verified 93.9%。USAMO 2026上97.6%。在所有主要基准测试中超越了GPT-5.4。

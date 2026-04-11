@@ -39,6 +39,7 @@ relatedPosts:
       ja: GPT-5.4のコンピュータ使用エージェントを監視するために必要なオブザーバビリティガイドです。
       en: Observability guide needed for monitoring GPT-5.4 computer use agents.
       zh: 监控GPT-5.4计算机使用代理所需的可观测性指南。
+draft: true
 ---
 
 ## Why GPT-5.4 Is Different
