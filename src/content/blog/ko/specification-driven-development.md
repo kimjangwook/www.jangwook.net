@@ -57,6 +57,7 @@ relatedPosts:
         Useful as prerequisite knowledge, covering automation, architecture
         fundamentals.
       zh: 作为先修知识很有用，涵盖自动化、架构基础。
+draft: true
 ---
 
 ## AI 코딩의 새로운 패러다임

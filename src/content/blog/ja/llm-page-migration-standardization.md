@@ -57,6 +57,7 @@ relatedPosts:
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
       zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 ## 概要: Webページ移行の新しいパラダイム

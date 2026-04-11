@@ -57,6 +57,7 @@ relatedPosts:
         Covers similar topics in automation, AI/ML, DevOps, architecture with
         comparable difficulty.
       zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 The AI-powered CLI tool landscape has evolved rapidly in 2025, giving developers more choices than ever. Whether you're looking to reduce costs, leverage specific integrations, or explore open-source alternatives, understanding your migration options is essential. This guide provides practical guidance for migrating from Claude Code to GitHub Copilot CLI, Gemini CLI, or OpenAI Codex CLI.

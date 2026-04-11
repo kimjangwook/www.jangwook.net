@@ -50,6 +50,7 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through AI/ML,
         architecture topics.
       zh: 适合作为下一步学习资源，通过AI/ML、架构主题进行连接。
+draft: true
 ---
 
 ## 개요

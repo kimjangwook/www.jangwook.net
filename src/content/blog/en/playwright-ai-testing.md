@@ -58,6 +58,7 @@ relatedPosts:
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
       zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 End-to-end (E2E) testing has long been the bottleneck in modern web development. While unit and integration tests are relatively straightforward to write and maintain, E2E tests often suffer from flakiness, slow execution, and maintenance overhead. Enter Playwright with AI-powered test generation—a paradigm shift that transforms how we approach browser automation and testing.

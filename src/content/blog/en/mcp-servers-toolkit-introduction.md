@@ -49,6 +49,7 @@ relatedPosts:
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
       zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+draft: true
 ---
 
 ## What is MCP and Why It Matters

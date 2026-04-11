@@ -43,6 +43,7 @@ relatedPosts:
       ja: 事前学習資料として有用であり、自動化の基礎を扱います。
       en: 'Useful as prerequisite knowledge, covering automation fundamentals.'
       zh: 作为先修知识很有用，涵盖自动化基础。
+draft: true
 ---
 
 ## 概述
