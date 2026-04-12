@@ -13,42 +13,49 @@ tags:
   - ai-governance
   - project-glasswing
 relatedPosts:
-  - slug: claude-firefox-22-cves-ai-security-audit
-    score: 0.95
+  - slug: devstral-qwen3-coder-small-models
+    score: 0.93
     reason:
-      ko: Mythos 이전에 Claude가 Firefox에서 22개 CVE를 찾아낸 사례다. Mythos의 보안 감사 능력이 어디서 출발했는지 맥락을 잡을 수 있다.
-      ja: Mythos以前にClaudeがFirefoxで22件のCVEを発見した事例です。Mythosのセキュリティ監査能力がどこから始まったのか文脈を掴めます。
-      en: Before Mythos, Claude found 22 CVEs in Firefox. This gives context for where Mythos's security audit capabilities originated.
-      zh: 在Mythos之前，Claude在Firefox中发现了22个CVE。这为Mythos安全审计能力的起源提供了背景。
-  - slug: mcp-security-crisis-30-cves-enterprise-hardening
-    score: 0.88
+      ko: '다음 단계 학습으로 적합하며, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、架构主题进行连接。
+  - slug: gemini-31-pro-release
+    score: 0.93
     reason:
-      ko: MCP 프로토콜에서 발견된 30개 CVE와 엔터프라이즈 하드닝 전략. Mythos급 모델이 등장하면 MCP 보안이 더 중요해진다.
-      ja: MCPプロトコルで発見された30件のCVEとエンタープライズハードニング戦略。Mythos級モデルの登場でMCPセキュリティの重要性が増します。
-      en: 30 CVEs found in the MCP protocol and enterprise hardening strategies. Mythos-level models make MCP security even more critical.
-      zh: MCP协议中发现的30个CVE及企业加固策略。Mythos级别模型的出现使MCP安全更加重要。
-  - slug: anthropic-pentagon-ai-governance-cto-lessons
-    score: 0.87
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: gpt4o-retirement-model-dependency-risk
+    score: 0.93
     reason:
-      ko: Anthropic의 펜타곤 AI 거버넌스 사례를 다뤘다. Glasswing의 제한적 공개 결정이 같은 맥락 위에 있다.
-      ja: Anthropicのペンタゴン向けAIガバナンス事例を扱っています。Glasswingの制限公開の決定が同じ文脈上にあります。
-      en: Covers Anthropic's Pentagon AI governance case. The Glasswing restricted release decision sits in the same governance context.
-      zh: 介绍了Anthropic的五角大楼AI治理案例。Glasswing的限制发布决策处于相同的治理背景中。
+      ko: '다음 단계 학습으로 적합하며, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、架构主题进行连接。
+  - slug: nvidia-llm-inference-cost-reduction
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、架构主题进行连接。
   - slug: ai-distillation-attacks-enterprise-defense
-    score: 0.84
+    score: 0.93
     reason:
-      ko: AI 모델의 IP 보호와 증류 공격 방어 전략. Mythos처럼 강력한 모델의 접근 제한이 왜 필요한지 다른 각도에서 보여준다.
-      ja: AIモデルのIP保護と蒸留攻撃防御戦略。Mythosのような強力なモデルへのアクセス制限がなぜ必要かを別の角度から見せます。
-      en: AI model IP protection and distillation attack defense. Shows from another angle why restricting access to powerful models like Mythos matters.
-      zh: AI模型的IP保护和蒸馏攻击防御策略。从另一个角度展示了为什么限制Mythos等强大模型的访问是必要的。
-  - slug: claude-sonnet-46-release
-    score: 0.82
-    reason:
-      ko: Claude Sonnet 4.6 출시 분석. Mythos와 같은 Anthropic 모델 라인업에서 어떤 위치인지 비교할 수 있다.
-      ja: Claude Sonnet 4.6のリリース分析。Mythosと同じAnthropicモデルラインナップにおける位置を比較できます。
-      en: Analysis of the Claude Sonnet 4.6 release. Compare where it sits in the same Anthropic model lineup as Mythos.
-      zh: Claude Sonnet 4.6发布分析。可以比较它在与Mythos相同的Anthropic模型产品线中的定位。
-draft: true
+      ko: '다음 단계 학습으로 적합하며, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、架构主题进行连接。
 ---
 
 4月7日、AnthropicがClaude Mythos Previewを発表した。SWE-bench Verified 93.9%。USAMO 2026で97.6%。すべての主要ベンチマークでGPT-5.4を超えた。

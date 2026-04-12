@@ -2284,5 +2284,16 @@
       "devops": 0.3,
       "architecture": 0.5
     }
+  },
+  "hermes-agent-self-evolving-ai-framework": {
+    "pubDate": "2026-04-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.1,
+      "ai-ml": 0.9,
+      "devops": 0.2,
+      "architecture": 0.6
+    }
   }
 }
