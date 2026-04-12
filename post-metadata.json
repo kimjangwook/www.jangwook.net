@@ -2295,5 +2295,30 @@
       "devops": 0.2,
       "architecture": 0.6
     }
+  },
+  "mcp-server-build-practical-guide-2026": {
+    "title": {
+      "ko": "MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기",
+      "ja": "MCPサーバーを自分で作る — Streamable HTTPトランスポートで実際のAIツールを実装する",
+      "en": "Building Your Own MCP Server — Implementing Real AI Tools with Streamable HTTP Transport",
+      "zh": "从零构建MCP服务器 — 使用Streamable HTTP传输实现真实AI工具"
+    },
+    "description": {
+      "ko": "Python FastMCP로 MCP 서버를 처음부터 구축하는 실전 튜토리얼. Streamable HTTP 트랜스포트 설정, 도구 구현, Claude Code 연동까지 직접 해본 경험을 공유합니다.",
+      "ja": "Python FastMCPでMCPサーバーをゼロから構築する実践チュートリアル。Streamable HTTPトランスポートの設定、ツール実装、Claude Code連携まで実際に試した経験をまとめました。",
+      "en": "A hands-on tutorial for building an MCP server from scratch using Python FastMCP. Covers Streamable HTTP transport setup, tool implementation, and Claude Code integration from real experience.",
+      "zh": "使用Python FastMCP从零构建MCP服务器的实战教程。涵盖Streamable HTTP传输配置、工具实现及Claude Code集成，基于实际操作经验分享。"
+    },
+    "pubDate": "2026-04-13",
+    "tags": [
+      "MCP",
+      "Python",
+      "FastMCP",
+      "Tutorial"
+    ],
+    "category": "tutorial",
+    "contentType": "how-to",
+    "targetKeyword": "MCP 서버 만들기",
+    "searchIntent": "how-to"
   }
 }
