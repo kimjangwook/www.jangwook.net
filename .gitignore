@@ -26,3 +26,9 @@ credentials
 
 # blog sandbox - test/demo workspace (NEVER commit)
 _sandbox/
+
+# automation data (operational data, API responses, strategy reports)
+data/
+
+# scheduler logs
+logs/
