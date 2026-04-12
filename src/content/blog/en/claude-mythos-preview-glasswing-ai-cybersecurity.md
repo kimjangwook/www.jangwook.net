@@ -77,7 +77,7 @@ A glasswing is a butterfly species with transparent wings. The "transparency" sy
 
 ## Breaking Down the Benchmarks
 
-The numbers are genuinely impressive.
+The numbers are genuinely impressive. The [Claude Code source leak analysis](/en/blog/en/claude-code-source-leak-analysis) that came out around the same time reveals architectural details that help contextualize this performance jump.
 
 - **SWE-bench Verified**: 93.9% (Opus 4.6 scored 80.8%, GPT-5.4 roughly 73%)
 - **SWE-bench Pro**: 77.8%
@@ -107,7 +107,7 @@ Picus Security nailed it: ["The thing that can break everything is also the thin
 
 The vulnerabilities Mythos found are real. A 27-year-old bug surviving in OpenBSD means existing security audit processes missed it. And if AI can automatically find bugs like these, it's only a matter of time before attackers build models with similar capabilities.
 
-So Anthropic really only had two options:
+The risks of unintended information exposure from AI systems are already real — the [AI distillation attacks and enterprise defense strategies post](/en/blog/en/ai-distillation-attacks-enterprise-defense) covers this threat class in depth. So Anthropic really only had two options:
 
 1. Release publicly so everyone can use it defensively, but accept the risk of offensive use
 2. Release selectively to give defenders a head start
@@ -118,7 +118,7 @@ Anthropic chose option 2. Reasonable — but it assumes "defenders" means 12 Big
 
 Claude found 22 CVEs in Firefox just a few months ago. People said "AI is changing security audits." Mythos takes that to an entirely different level.
 
-What I personally find encouraging is that this kind of capability will inevitably be democratized. Right now only Glasswing participants have access, but I expect comparable open-source security agents within 1-2 years. Opus 4.6 can already do impressive security auditing work.
+What I personally find encouraging is that this kind of capability will inevitably be democratized. Right now only Glasswing participants have access, but I expect comparable open-source security agents within 1-2 years. Opus 4.6 can already do impressive security auditing work. For a concrete look at how AI supply chain attacks work in practice, the [LiteLLM supply chain attack analysis](/en/blog/en/litellm-supply-chain-attack-ai-dependency-security) covers a real incident worth reading alongside this.
 
 Until then, what matters is reducing the security debt in your own codebase. If a 27-year-old bug existed in OpenBSD, nobody can guarantee their project is clean.
 

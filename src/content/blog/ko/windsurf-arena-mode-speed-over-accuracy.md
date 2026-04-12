@@ -1,8 +1,8 @@
 ---
 title: Windsurf Arena Mode 결과 — 개발자가 원하는 것은 정확도보다 속도
 description: >-
-  Windsurf의 Arena Mode 투표(4만 표 이상)에서 개발자들이 정확도보다 속도를 우선시한다는 결과가 나왔습니다. AI 코딩 도구의
-  미래 방향성을 분석합니다.
+  Windsurf Arena Mode 4만 표 이상의 투표 결과, 개발자들은 AI 코딩 도구에서 정확도보다 속도를 2배 이상 중요하게 여기는 것으로
+  나타났습니다. Cursor, GitHub Copilot과의 AI 코딩 도구 경쟁에서 이 데이터가 갖는 전략적 의미를 분석합니다.
 pubDate: '2026-02-13'
 heroImage: ../../../assets/blog/windsurf-arena-mode-speed-over-accuracy-hero.png
 tags:

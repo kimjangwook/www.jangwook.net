@@ -1,8 +1,8 @@
 ---
 title: 'WebMCP: Chrome 146에서 브라우저가 AI 에이전트의 툴 서버가 된다'
 description: >-
-  Chrome 146부터 MCP 서버가 브라우저에 내장됩니다. WebMCP의 작동 원리, AI 에이전트와의 연동 방식, 그리고 웹 개발의
-  미래를 분석합니다.
+  Chrome 146부터 브라우저 자체가 MCP 서버가 됩니다. WebMCP 프로토콜 작동 원리, Claude·GPT-4o 같은 AI 에이전트 연동
+  방식, 로컬 앱 없이 브라우저만으로 MCP 툴을 노출하는 새 아키텍처와 기업별 보안 샌드박스 적용 전략을 심층 분석합니다.
 pubDate: '2026-02-13'
 heroImage: ../../../assets/blog/webmcp-chrome-146-ai-tool-server-hero.png
 tags:

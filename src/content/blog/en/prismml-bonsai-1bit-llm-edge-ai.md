@@ -60,7 +60,7 @@ A typical 8B model consumes around 16GB in FP16. Even with Q4 quantization, you'
 
 The name is a bit misleading. "1-bit" sounds like you're down to just zeros and ones, but in practice, weights are represented using only two values: {-1, +1}. Just a sign bit. Multiplications disappear, leaving only additions and subtractions. Matrix multiplication (MatMul) is effectively replaced by bitwise operations, which dramatically cuts down on compute.
 
-This idea isn't new. Microsoft Research published the BitNet paper back in 2023, followed by BitNet b1.58 in 2024, which used a ternary scheme ({-1, 0, +1}). What PrismML did is take this concept and turn it into a model that's actually usable.
+This idea isn't new. Microsoft Research published the BitNet paper back in 2023, followed by BitNet b1.58 in 2024, which used a ternary scheme ({-1, 0, +1}). What PrismML did is take this concept and turn it into a model that's actually usable. For a different approach to memory compression — reducing KV cache to 3-bit — see the [Google TurboQuant KV cache compression analysis](/en/blog/en/google-turboquant-kv-cache-3bit-compression).
 
 ## The Model Lineup
 
@@ -86,7 +86,7 @@ Despite those concerns, I think the underlying direction is right.
 
 The biggest bottleneck in the LLM ecosystem right now is GPU memory. People who want to run models locally end up quantizing because of VRAM constraints, then downgrading to smaller models when that's still not enough. At 1.15GB, this approach sidesteps the bottleneck entirely. It runs comfortably on the unified memory of an M1 MacBook Air — and potentially on smartphones.
 
-Notably, Google just published LiteRT-LM (April 7th), an LLM inference framework built for edge devices. It supports Android, iOS, web, desktop, and IoT, with GPU/NPU acceleration. When ultra-lightweight models like PrismML's Bonsai meet runtimes like LiteRT-LM, "offline LLMs" stop being a demo and start becoming a viable product stack.
+Notably, Google just published LiteRT-LM (April 7th), an LLM inference framework built for edge devices. It supports Android, iOS, web, desktop, and IoT, with GPU/NPU acceleration. When ultra-lightweight models like PrismML's Bonsai meet runtimes like LiteRT-LM, "offline LLMs" stop being a demo and start becoming a viable product stack. I tested what running a capable model locally actually looks like in the [Gemma 4 local agent hands-on review](/en/blog/en/gemma-4-local-agent-edge-ai).
 
 The use case I'm most excited about is privacy. Processing medical records or internal documents on-device without sending anything to the cloud eliminates one of the biggest barriers to LLM adoption in regulated industries.
 

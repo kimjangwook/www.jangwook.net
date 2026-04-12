@@ -58,7 +58,7 @@ draft: true
 
 这个名字容易引起误解。"1-bit"听起来像是只用0和1，但实际上是将权重表示为{-1, +1}两个值——仅一个符号位。乘法消失了，只剩加法和减法。矩阵乘法（MatMul）实际上被位运算替代，计算量因此大幅下降。
 
-这个思路本身并不新鲜。Microsoft Research的BitNet论文2023年就发表了，2024年BitNet b1.58以三值（{-1, 0, +1}）方式发布了后续研究。PrismML的贡献在于将这一思路落地为真正可用的模型。
+这个思路本身并不新鲜。Microsoft Research的BitNet论文2023年就发表了，2024年BitNet b1.58以三值（{-1, 0, +1}）方式发布了后续研究。PrismML的贡献在于将这一思路落地为真正可用的模型。关于提升内存效率的另一种方法——将KV缓存压缩到3-bit，可以参考[Google TurboQuant KV缓存压缩分析](/zh/blog/zh/google-turboquant-kv-cache-3bit-compression)进行对比。
 
 ## 已公开的模型阵容
 
@@ -84,7 +84,7 @@ PrismML发布了三款模型：
 
 当前LLM生态最大的瓶颈是GPU显存。想在本地运行模型，受VRAM限制不得不量化，还不够就只能换更小的模型。1.15GB从根本上绕过了这个瓶颈。M1 MacBook Air的统一内存可以轻松运行，甚至智能手机上也可行。
 
-恰好Google在前天（4月7日）发布了LiteRT-LM——一款面向边缘设备的LLM推理框架，支持Android、iOS、Web、桌面和IoT，并提供GPU/NPU加速。PrismML这类超轻量模型与LiteRT-LM这样的runtime结合，"离线运行的LLM"就不只是demo，而是真正有望落地的产品组合。
+恰好Google在前天（4月7日）发布了LiteRT-LM——一款面向边缘设备的LLM推理框架，支持Android、iOS、Web、桌面和IoT，并提供GPU/NPU加速。PrismML这类超轻量模型与LiteRT-LM这样的runtime结合，"离线运行的LLM"就不只是demo，而是真正有望落地的产品组合。本地运行高能力模型的实际体验，可以参考[Gemma 4本地代理实机评测](/zh/blog/zh/gemma-4-local-agent-edge-ai)。
 
 我个人最期待的是隐私保护场景。医疗数据或内部文档无需上传云端、直接在设备端处理——这意味着在监管严格的行业，LLM落地最大的壁垒将被消除。
 

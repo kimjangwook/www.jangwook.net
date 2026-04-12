@@ -93,7 +93,7 @@ Hermes takes a different approach:
 2. Skill documents are saved to `~/.hermes/plugins/` or `.hermes/plugins/`
 3. When a similar task comes in next time, the tool discovery phase references these documents
 
-What made this pattern interesting to me personally is that it's structurally similar to Claude Code's CLAUDE.md. You write "follow these rules in this project" in CLAUDE.md, and the agent reads and acts on it in the next session. Hermes just automates that whole process.
+What made this pattern interesting to me personally is that it's structurally similar to Claude Code's CLAUDE.md. You write "follow these rules in this project" in CLAUDE.md, and the agent reads and acts on it in the next session. Hermes just automates that whole process. For a different take on how agents maintain context across sessions, the [Hindsight MCP agent memory architecture](/en/blog/en/hindsight-mcp-agent-memory-learning) is worth comparing.
 
 But to be honest, the quality of auto-generated skill documents isn't consistent yet. Simple file operations or API calls produce pretty usable skills, but complex tasks that depend heavily on context sometimes miss the point. v0.7.0 added DSPy + GEPA-based evolutionary self-improvement via the NousResearch/hermes-agent-self-evolution repo, but that's still closer to experimental.
 
@@ -131,9 +131,9 @@ I don't think this is a silver bullet that replaces everything. For comparison:
 
 **Claude Code/OpenClaw** — Coding-specialized with strong IDE integration. CLAUDE.md-based project rules are manual but controllable. If writing code is your primary goal, Claude Code is still better.
 
-**LangChain/CrewAI** — Strong at workflow orchestration, but lacks the concept of agents growing on their own. Executes along predefined graphs.
+**LangChain/CrewAI** — Strong at workflow orchestration, but lacks the concept of agents growing on their own. Executes along predefined graphs. How multi-agent collaboration affects benchmark performance is covered in the [SWE-bench multi-agent performance analysis](/en/blog/en/multi-agent-swe-bench-verdent).
 
-**Hermes Agent** — A general-purpose agent where self-improvement is the core. Better suited for daily automation, research, and communication hubs than coding. Multi-platform support is particularly strong.
+**Hermes Agent** — A general-purpose agent where self-improvement is the core. Better suited for daily automation, research, and communication hubs than coding. Multi-platform support is particularly strong. For enterprise-scale agent deployment, the [Stripe autonomous coding agents handling 1,300 PRs case study](/en/blog/en/stripe-minions-autonomous-coding-agents-1300-prs) shows what that looks like in practice.
 
 Honestly, I think "self-evolution" might be a bit overhyped. The current level is closer to "documenting task records for reuse" than fundamentally changing like humans learn from experience. But I have to admit that the automation of documentation itself already has significant value.
 
