@@ -169,7 +169,8 @@ async function postToHashnode(article) {
     return { success: true, url: post?.url, id: post?.id };
   }
 
-  return { success: false, error: `HTTP ${res.status}` };
+  const errBody = await res.text();
+  return { success: false, error: `HTTP ${res.status}: ${errBody}` };
 }
 
 // --- Log results ---

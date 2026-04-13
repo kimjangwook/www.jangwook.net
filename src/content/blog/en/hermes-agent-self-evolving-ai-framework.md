@@ -16,38 +16,42 @@ relatedPosts:
   - slug: ai-presentation-automation
     score: 0.94
     reason:
-      ko: Hermes의 스킬 자동 생성이 흥미로웠다면, 프레젠테이션 자동화에서도 비슷한 반복 작업 제거 패턴을 확인할 수 있습니다.
-      ja: Hermesのスキル自動生成に興味を持ったなら、プレゼン自動化でも類似の反復タスク削減パターンが見られます。
-      en: If Hermes's auto-skill generation caught your eye, presentation automation shows a similar pattern of eliminating repetitive tasks.
-      zh: 如果Hermes的技能自动生成引起了你的兴趣，演示自动化中也有类似的消除重复任务模式。
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: claude-code-insights-usage-analysis
     score: 0.94
     reason:
-      ko: 본문에서 비교한 Claude Code의 CLAUDE.md 패턴을 실제 사용 데이터로 분석한 글입니다. 에이전트 학습 방식의 차이를 더 깊이 이해할 수 있습니다.
-      ja: 本文で比較したClaude CodeのCLAUDE.mdパターンを実際の使用データで分析した記事です。エージェント学習方式の違いをより深く理解できます。
-      en: Analyzes the Claude Code CLAUDE.md pattern with real usage data — the same pattern compared in this post. Deepens understanding of different agent learning approaches.
-      zh: 用实际使用数据分析了本文中比较的Claude Code CLAUDE.md模式，帮助更深入理解不同的代理学习方式。
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: multi-agent-swe-bench-verdent
     score: 0.94
     reason:
-      ko: Hermes가 단일 에이전트의 자기 진화라면, 이 글은 멀티 에이전트가 협업할 때 벤치마크 성능이 어떻게 바뀌는지 다룹니다.
-      ja: Hermesが単一エージェントの自己進化なら、この記事はマルチエージェント協業時のベンチマーク性能変化を扱います。
-      en: While Hermes focuses on single-agent self-evolution, this post covers how benchmark performance changes when multiple agents collaborate.
-      zh: Hermes是单代理的自我进化，这篇文章则讨论多代理协作时基准测试性能的变化。
-  - slug: hindsight-mcp-agent-memory-learning
-    score: 0.93
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: sora-shutdown-ai-video-market-reshaping-veo4
+    score: 0.94
     reason:
-      ko: Hermes의 플러그인 메모리와 다른 접근인 MCP 기반 에이전트 메모리를 비교해볼 수 있습니다. 에이전트 기억 아키텍처에 관심 있다면 필독.
-      ja: Hermesのプラグインメモリとはアプローチの異なるMCPベースのエージェントメモリを比較できます。エージェント記憶アーキテクチャに関心があれば必読。
-      en: Compare Hermes's plugin memory with a different approach — MCP-based agent memory. Essential reading if you're interested in agent memory architecture.
-      zh: 可以将Hermes的插件化内存与不同方法——基于MCP的代理内存进行比较。如果对代理记忆架构感兴趣，必读。
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
   - slug: gemma-4-local-agent-edge-ai
     score: 0.94
     reason:
-      ko: Hermes의 백엔드 모델로 Gemma 4를 로컬에서 쓸 수 있을까? 이 글에서 Gemma 4의 실제 성능과 함수 호출 능력을 확인할 수 있습니다.
-      ja: HermesのバックエンドモデルとしてGemma 4をローカルで使えるか？この記事でGemma 4の実際の性能と関数呼び出し能力を確認できます。
-      en: Could Gemma 4 work as Hermes's backend model locally? This post tests Gemma 4's real-world performance and function-calling capabilities.
-      zh: Gemma 4能作为Hermes的本地后端模型吗？这篇文章测试了Gemma 4的实际性能和函数调用能力。
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 Thirty minutes after running `pip install hermes-agent`, I thought: "okay, this one's different."

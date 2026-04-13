@@ -1,45 +1,52 @@
 ---
-title: 'MCPサーバーを自分で作る — Streamable HTTPトランスポートで実際のAIツールを実装する'
-description: 'Python FastMCPでMCPサーバーをゼロから構築する実践チュートリアル。Streamable HTTPトランスポートの設定、ツール実装、Claude Code連携まで実際に試した経験をまとめました。'
+title: MCPサーバーを自分で作る — Streamable HTTPトランスポートで実際のAIツールを実装する
+description: >-
+  Python FastMCPでMCPサーバーをゼロから構築する実践チュートリアル。Streamable
+  HTTPトランスポートの設定、ツール実装、Claude Code連携まで実際に試した経験をまとめました。
 pubDate: '2026-04-13'
-heroImage: '../../../assets/blog/mcp-server-build-practical-guide-2026-hero.jpg'
-tags: ['MCP', 'Python', 'AIエージェント', 'FastMCP', 'チュートリアル']
+heroImage: ../../../assets/blog/mcp-server-build-practical-guide-2026-hero.jpg
+tags:
+  - MCP
+  - Python
+  - AIエージェント
+  - FastMCP
+  - チュートリアル
 relatedPosts:
-  - slug: 'mcp-servers-toolkit-introduction'
-    score: 0.88
+  - slug: claude-mythos-preview-glasswing-ai-cybersecurity
+    score: 0.93
     reason:
-      ko: 'MCP 서버 도구 모음을 소개한 이 글을 먼저 읽으면, 직접 서버를 만들어야 하는 이유가 더 명확해집니다.'
-      ja: 'MCPサーバーツールの紹介記事を先に読むと、自分でサーバーを作る必要性がより明確になります。'
-      en: 'Reading the MCP server toolkit overview first will help you understand why building your own server makes sense.'
-      zh: '先阅读MCP服务器工具包介绍，可以更清楚地了解为何需要自己构建服务器。'
-  - slug: 'mcp-gateway-agent-traffic-control'
-    score: 0.82
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-insights-usage-analysis
+    score: 0.93
     reason:
-      ko: '직접 만든 MCP 서버를 프로덕션에 올릴 때, MCP Gateway로 트래픽을 제어하는 방법을 함께 보면 완성도가 높아집니다.'
-      ja: '自作MCPサーバーを本番環境に投入する際、MCP Gatewayでトラフィックを制御する方法を合わせて読むと完成度が上がります。'
-      en: 'When deploying your own MCP server to production, pairing it with MCP Gateway for traffic control rounds out the architecture.'
-      zh: '将自制MCP服务器部署到生产环境时，结合MCP Gateway进行流量控制会让架构更完整。'
-  - slug: 'mcp-open-standard-linux-foundation-engineering-guide'
-    score: 0.79
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: google-code-wiki-guide
+    score: 0.93
     reason:
-      ko: 'MCP가 Linux Foundation 표준이 된 배경을 이해하면, Streamable HTTP 트랜스포트 설계 결정의 맥락이 더 잘 보입니다.'
-      ja: 'MCPがLinux Foundation標準になった経緯を理解すると、Streamable HTTPトランスポートの設計決定の背景がよく見えます。'
-      en: 'Understanding why MCP joined the Linux Foundation adds context to the Streamable HTTP transport design decisions.'
-      zh: '了解MCP加入Linux Foundation的背景，有助于理解Streamable HTTP传输层的设计决策。'
-  - slug: 'mcp-security-crisis-30-cves-enterprise-hardening'
-    score: 0.75
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: greptile-ai-coding-report-2025-review
+    score: 0.93
     reason:
-      ko: 'MCP 서버를 직접 만든다면 보안 취약점 패턴을 미리 알아야 합니다. 30개 CVE 분석이 자작 서버 설계에 직접적으로 도움이 됩니다.'
-      ja: 'MCPサーバーを自作するなら、セキュリティ脆弱性のパターンを事前に知っておく必要があります。30のCVE分析が自作サーバーの設計に直接役立ちます。'
-      en: 'If you build your own MCP server, knowing the vulnerability patterns upfront is essential. The 30 CVE analysis directly informs server design choices.'
-      zh: '自制MCP服务器时，提前了解安全漏洞模式至关重要。30个CVE分析直接指导服务器设计选择。'
-  - slug: 'webmcp-chrome-146-ai-tool-server'
-    score: 0.72
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: multi-agent-swe-bench-verdent
+    score: 0.93
     reason:
-      ko: 'Streamable HTTP 기반 MCP 서버를 만들고 나면, 브라우저 자체를 MCP 서버로 쓰는 WebMCP 개념과 비교해볼 만합니다.'
-      ja: 'Streamable HTTPベースのMCPサーバーを作った後、ブラウザ自体をMCPサーバーとして使うWebMCPの概念と比較してみる価値があります。'
-      en: 'After building your Streamable HTTP MCP server, comparing it with WebMCP — which turns the browser itself into an MCP server — is illuminating.'
-      zh: '构建基于Streamable HTTP的MCP服务器后，可以与将浏览器本身用作MCP服务器的WebMCP概念进行比较。'
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 MCPサーバーを「使う」記事は山ほどあるが、「自分で作る」記事は意外と少ない。

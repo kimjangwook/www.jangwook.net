@@ -2319,6 +2319,48 @@
     "category": "tutorial",
     "contentType": "how-to",
     "targetKeyword": "MCP 서버 만들기",
-    "searchIntent": "how-to"
+    "searchIntent": "how-to",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.5,
+      "architecture": 0.8
+    }
+  },
+  "claude-code-parallel-sessions-git-worktree": {
+    "title": {
+      "ko": "Claude Code 병렬 세션 운영하기 — Git Worktree로 여러 작업 동시에 처리하는 실전 가이드",
+      "ja": "Claude Code 並列セッション運用ガイド — Git Worktreeで複数タスクを同時処理する実践的アプローチ",
+      "en": "Running Claude Code in Parallel — A Practical Guide to Git Worktree for Simultaneous Tasks",
+      "zh": "Claude Code 并行会话运行指南 — 使用 Git Worktree 同时处理多项任务"
+    },
+    "description": {
+      "ko": "Git Worktree와 Claude Code를 조합해 여러 기능을 동시에 개발하는 방법. Plan Mode 활용, 세션 격리, 충돌 없는 병렬 작업 패턴을 직접 써본 경험으로 정리했습니다.",
+      "ja": "Git WorktreeとClaude Codeを組み合わせて複数機能を同時開発する方法。Plan Mode活用、セッション分離、競合なし並列作業パターンを実際に試した経験をもとに解説します。",
+      "en": "How to combine Git Worktree with Claude Code to develop multiple features simultaneously. Covers Plan Mode, session isolation, and conflict-free parallel workflows based on hands-on experience.",
+      "zh": "将 Git Worktree 与 Claude Code 结合，实现多功能并行开发的方法。涵盖 Plan Mode 应用、会话隔离、无冲突并行工作模式，基于实际使用经验整理。"
+    },
+    "pubDate": "2026-04-13",
+    "tags": [
+      "ClaudeCode",
+      "Git",
+      "Productivity",
+      "Tutorial",
+      "AICoding"
+    ],
+    "category": "tutorial",
+    "contentType": "how-to",
+    "targetKeyword": "Claude Code 고급 활용",
+    "searchIntent": "how-to",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.2,
+      "ai-ml": 0.7,
+      "devops": 0.8,
+      "architecture": 0.5
+    }
   }
 }
