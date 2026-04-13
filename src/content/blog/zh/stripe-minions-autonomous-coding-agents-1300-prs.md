@@ -72,13 +72,13 @@ relatedPosts:
 
 核心概念是叫做 **Blueprint** 的编排模式——交替执行确定性代码节点和 LLM Agent 循环的结构。git checkout 和 lint 之类的操作由固定脚本处理，而"如何修复这个 Bug"由 LLM 判断。Stripe 将此称为"contained boxes"——将 LLM 放入受控盒子中，系统整体的可靠性会以复利方式提升。
 
-Agent 的基础是 Block（原 Square）的开源编码 Agent Goose 的 fork 版本，通过 MCP（Model Context Protocol）连接了 Stripe 内部工具和上下文。内部的 Toolshed 服务器托管了超过 400 个 MCP 工具。
+Agent 的基础是 Block（原 Square）的开源编码 Agent Goose 的 fork 版本，通过 [MCP（Model Context Protocol）](/zh/blog/zh/mcp-server-build-practical-guide-2026)连接了 Stripe 内部工具和上下文。内部的 Toolshed 服务器托管了超过 400 个 MCP 工具。
 
 ## 沙箱：约束即自由
 
 每个 Minion 都在隔离的 VM 中运行。与人类工程师使用的开发环境相同，但代码和服务已预加载，10 秒即可启动。
 
-关键在于这些 VM **既没有互联网访问权限，也没有生产环境访问权限**。完全的沙箱。正是这个约束带来了一个悖论——不再需要权限检查，并且可以无限并行化。从安全角度来看也很干净——Agent 根本没有向外泄露任何东西的路径。
+关键在于这些 VM **既没有互联网访问权限，也没有生产环境访问权限**。完全的沙箱。正是这个约束带来了一个悖论——不再需要权限检查，并且可以无限并行化。从安全角度来看也很干净——[Agent 根本没有向外泄露任何东西的路径](/zh/blog/zh/mcp-gateway-agent-traffic-control)。
 
 我认为这个设计决策是 Minions 中最聪明的部分。大多数 AI Agent 项目都朝着"给 Agent 更多权限"的方向发展，而 Stripe 走了完全相反的路。极度限制权限，同时在限制范围内最大化自主性。
 
@@ -121,7 +121,7 @@ Minions 处理的任务比想象的要多样：
 
 **"墙比模型更重要"** —— Stripe 工程师 Steve Kaliski 的话，我也同意。决定 Agent 效能的不是 LLM 的能力，而是围绕 Agent 的约束和工具的质量。好的沙箱、精良的 MCP 工具、清晰的 Blueprint，有了这些，模型是可替换的。
 
-Blueprint 模式——确定性节点与 Agent 循环交替——在小规模场景中也值得应用。我们团队用 Claude Code 构建自动化时也使用类似结构，明确分离"固定步骤"和"LLM 判断步骤"后，调试变得容易很多。
+Blueprint 模式——确定性节点与 Agent 循环交替——在小规模场景中也值得应用。我们团队用 [Claude Code](/zh/blog/zh/claude-code-parallel-sessions-git-worktree) 构建自动化时也使用类似结构，明确分离"固定步骤"和"LLM 判断步骤"后，调试变得容易很多。
 
 从 300 万个测试中选择相关测试运行的 Selective CI 也是个好主意。这种方法不仅适用于 Agent，在常规开发流程中也值得引入，这个我打算另外研究一下。
 

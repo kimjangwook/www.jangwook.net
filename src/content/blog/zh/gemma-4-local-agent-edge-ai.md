@@ -140,7 +140,7 @@ echo 'Answer in JSON: {"capital": "<answer>"}. What is the capital of France?' \
 # → {"capital": "Paris"}
 ```
 
-个人觉得到这个程度的话，可以用作MCP服务器的本地后端了。在不调用外部API、处理公司内部数据来构建Agent的场景下，对安全要求高的环境特别有价值。
+个人觉得到这个程度的话，可以用作[MCP服务器的本地后端](/zh/blog/zh/mcp-server-build-practical-guide-2026)了。在不调用外部API、处理公司内部数据来构建Agent的场景下，[对安全要求高的环境](/zh/blog/zh/mcp-gateway-agent-traffic-control)特别有价值。
 
 ## 那实际能拿来做什么
 

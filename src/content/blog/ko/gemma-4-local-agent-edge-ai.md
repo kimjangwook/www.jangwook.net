@@ -140,7 +140,7 @@ echo 'Answer in JSON: {"capital": "<answer>"}. What is the capital of France?' \
 # → {"capital": "Paris"}
 ```
 
-개인적으로 이 정도면 MCP 서버의 로컬 백엔드로 쓸 수 있겠다는 생각이 든다. 외부 API 호출 없이 사내 데이터를 처리하는 에이전트를 만들 때, 보안이 중요한 환경에서 특히 가치가 있다.
+개인적으로 이 정도면 [MCP 서버의 로컬 백엔드](/ko/blog/ko/mcp-server-build-practical-guide-2026)로 쓸 수 있겠다는 생각이 든다. 외부 API 호출 없이 사내 데이터를 처리하는 에이전트를 만들 때, [보안이 중요한 환경](/ko/blog/ko/mcp-gateway-agent-traffic-control)에서 특히 가치가 있다.
 
 ## 그래서 실제로 뭘 만들 수 있나
 

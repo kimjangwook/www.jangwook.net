@@ -67,7 +67,7 @@ MCP's (Model Context Protocol) growth is staggering. Combined Python + TypeScrip
 
 The problem is that this protocol focuses on **connectivity**, not **control**.
 
-When you create an MCP server, you define tools, and clients call those tools. Authentication? OAuth 2.1 made it into the spec. But policy-level concerns like "how many times can this agent call this tool per day" or "tools returning sensitive data must not be called without approval" aren't part of the MCP protocol itself. That's left to the implementer.
+When you [create an MCP server](/en/blog/en/mcp-server-build-practical-guide-2026), you define tools, and clients call those tools. Authentication? OAuth 2.1 made it into the spec. But policy-level concerns like "how many times can this agent call this tool per day" or "tools returning sensitive data must not be called without approval" aren't part of the MCP protocol itself. That's left to the implementer.
 
 That's where the MCP Gateway concept comes in.
 
@@ -265,7 +265,7 @@ The real value of this data is that it becomes <strong>evidence for policy tunin
 
 "Our team doesn't use MCP that much yet" — that excuse is expiring.
 
-Here's a case I actually experienced: while editing a Notion page through the Notion MCP in Claude Code, I accidentally touched another team's page. The agent picked a page with a similar title from the search results, and I hit the approve button without thinking. No data was lost, but it was embarrassing.
+Here's a case I actually experienced: while editing a Notion page through the Notion MCP in [Claude Code](/en/blog/en/claude-code-parallel-sessions-git-worktree), I accidentally touched another team's page. The agent picked a page with a similar title from the search results, and I hit the approve button without thinking. No data was lost, but it was embarrassing.
 
 When this happens to one developer locally, it's just awkward. But when 50 people on a team are using agents, each connected to 5-10 MCP servers? With no audit logs? No way to trace who called what?
 

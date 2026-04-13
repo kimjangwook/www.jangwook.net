@@ -73,13 +73,13 @@ In one line: an autonomous coding agent that goes from a Slack message or bug ti
 
 The core concept is an orchestration pattern called **Blueprint** — a structure that alternates between deterministic code nodes and LLM agent loops. Fixed scripts handle things like git checkout and linting, while the LLM decides "how to fix this bug." Stripe calls these "contained boxes" — the philosophy being that putting LLMs into controlled boxes compounds into system-wide reliability gains.
 
-The agent base is a fork of Block's (formerly Square) open-source coding agent Goose, customized with Stripe's internal tools and context connected via MCP (Model Context Protocol). Their internal Toolshed server hosts over 400 MCP tools.
+The agent base is a fork of Block's (formerly Square) open-source coding agent Goose, customized with Stripe's internal tools and context connected via [MCP (Model Context Protocol)](/en/blog/en/mcp-server-build-practical-guide-2026). Their internal Toolshed server hosts over 400 MCP tools.
 
 ## The Sandbox: Constraints as Freedom
 
 Every Minion runs in an isolated VM — the same dev environment human engineers use, but pre-loaded with code and services so it spins up in 10 seconds.
 
-The critical detail: these VMs have **no internet access and no production access**. Complete sandbox. This constraint paradoxically eliminates the need for permission checks and enables unlimited parallelization. From a security standpoint, it's clean — there's simply no pathway for the agent to leak anything externally.
+The critical detail: these VMs have **no internet access and no production access**. Complete sandbox. This constraint paradoxically eliminates the need for permission checks and enables unlimited parallelization. From a security standpoint, it's clean — there's simply [no pathway for the agent to leak anything externally](/en/blog/en/mcp-gateway-agent-traffic-control).
 
 I think this design decision is the smartest part of Minions. Most AI agent projects push toward "give agents more permissions," but Stripe went the opposite direction. They severely restricted permissions while maximizing autonomy within those restrictions.
 
@@ -122,7 +122,7 @@ Even without Stripe's scale, there are useful lessons here.
 
 **"The walls matter more than the model"** — Steve Kaliski, Stripe engineer. I agree. What determines an agent's effectiveness isn't the LLM's capability but the quality of constraints and tools surrounding it. Good sandboxes, well-built MCP tools, and clear Blueprints make the model interchangeable.
 
-The Blueprint pattern — alternating deterministic nodes and agent loops — is worth applying at smaller scales too. When our team builds automations with Claude Code, we use a similar structure, and clearly separating "fixed steps" from "LLM judgment steps" makes debugging significantly easier.
+The Blueprint pattern — alternating deterministic nodes and agent loops — is worth applying at smaller scales too. When our team builds automations with [Claude Code](/en/blog/en/claude-code-parallel-sessions-git-worktree), we use a similar structure, and clearly separating "fixed steps" from "LLM judgment steps" makes debugging significantly easier.
 
 Selective CI that picks related tests from 3 million to run is also a solid idea. It's an approach worth adopting in regular development processes too, not just for agents — something I plan to investigate separately.
 

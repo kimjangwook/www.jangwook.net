@@ -143,7 +143,7 @@ echo 'Answer in JSON: {"capital": "<answer>"}. What is the capital of France?' \
 # → {"capital": "Paris"}
 ```
 
-Personally, I think this is good enough to use as a local backend for an MCP server. For building agents that process internal data without external API calls, it's especially valuable in security-sensitive environments.
+Personally, I think this is good enough to use as a [local backend for an MCP server](/en/blog/en/mcp-server-build-practical-guide-2026). For building agents that process internal data without external API calls, it's especially valuable in [security-sensitive environments](/en/blog/en/mcp-gateway-agent-traffic-control).
 
 ## So What Can You Actually Build With This?
 

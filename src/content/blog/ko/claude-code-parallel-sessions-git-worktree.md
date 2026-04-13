@@ -1,8 +1,8 @@
 ---
 title: Claude Code 병렬 세션 운영하기 — Git Worktree로 여러 작업 동시에 처리하는 실전 가이드
 description: >-
-  Git Worktree와 Claude Code를 조합해 여러 기능을 동시에 개발하는 방법. Plan Mode 활용, 세션 격리, 충돌 없는
-  병렬 작업 패턴을 직접 써본 경험으로 정리했습니다.
+  Git Worktree와 Claude Code를 조합해 여러 기능을 병렬로 개발하는 실전 가이드. Plan Mode 활용법, 독립 세션
+  격리 전략, Worktree 간 충돌 없는 브랜치 관리, 멀티에이전트 병렬 패턴까지, 직접 경험을 기반으로 단계별로 구체적으로 정리했습니다.
 pubDate: '2026-04-13'
 heroImage: ../../../assets/blog/claude-code-parallel-sessions-git-worktree-hero.jpg
 tags:
