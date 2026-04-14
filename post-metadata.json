@@ -2362,5 +2362,38 @@
       "devops": 0.8,
       "architecture": 0.5
     }
+  },
+  "local-llm-private-mcp-server-gemma4-fastmcp": {
+    "pubDate": "2026-04-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.5,
+      "security": 0.4
+    },
+    "topics": [
+      "local-llm",
+      "mcp",
+      "fastmcp",
+      "ollama",
+      "gemma4",
+      "offline-ai",
+      "private-ai"
+    ],
+    "techStack": [
+      "Python",
+      "FastMCP",
+      "Ollama",
+      "Gemma 4",
+      "OpenAI API"
+    ],
+    "summary": {
+      "ko": "Ollama + Gemma 4 + FastMCP로 완전 오프라인 AI 도구 파이프라인을 구축하는 방법",
+      "en": "How to build a fully offline AI tool pipeline using Ollama + Gemma 4 + FastMCP",
+      "ja": "Ollama + Gemma 4 + FastMCPを使って完全オフラインのAIツールパイプラインを構築する方法",
+      "zh": "使用Ollama + Gemma 4 + FastMCP构建完全离线AI工具管道的方法"
+    }
   }
 }
