@@ -129,6 +129,8 @@ graph TB
 
 ### Google Cloud项目配置
 
+如需系统化管理GCP基础设施，推荐参阅[使用gcloud MCP实现GCP基础设施自动审计](/zh/blog/zh/gcloud-mcp-infrastructure-audit)。
+
 <strong>步骤1：创建或选择GCP项目</strong>
 
 ```bash
@@ -1084,7 +1086,7 @@ async function performSearch(query) {
 
 ### 2. 搜索分析追踪
 
-集成Google Analytics追踪搜索行为：
+集成Google Analytics追踪搜索行为。如果想用AI代理自动化分析流程，请参阅[使用Google Analytics MCP和AI代理自动化博客分析](/zh/blog/zh/google-analytics-mcp-automation)：
 
 ```javascript
 function trackSearch(query, resultsCount) {

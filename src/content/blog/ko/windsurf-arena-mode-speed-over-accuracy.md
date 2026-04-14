@@ -73,7 +73,7 @@ graph LR
     Vote --> Result[결과 집계]
 ```
 
-이 방식은 Chatbot Arena(LMSYS)와 유사하지만, <strong>실제 코딩 작업</strong>에 특화되어 있다는 점이 차별화됩니다. 개발자들은 코드 완성, 리팩토링, 디버깅 등 실전 작업에서 두 모델을 비교 평가합니다.
+이 방식은 Chatbot Arena(LMSYS)와 유사하지만, <strong>실제 코딩 작업</strong>에 특화되어 있다는 점이 차별화됩니다. 개발자들은 코드 완성, 리팩토링, 디버깅 등 실전 작업에서 두 모델을 비교 평가합니다. 실무에서 AI 코딩 도구를 최대한 활용하는 방법은 [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)에서 확인할 수 있습니다.
 
 ## 핵심 발견: 속도가 정확도를 이긴다
 
@@ -131,6 +131,8 @@ graph TD
 | 코드 정확도 | 응답 속도 |
 | 첫 시도 성공률 | 반복 수정 효율 |
 | 벤치마크 점수 | 체감 생산성 |
+
+이처럼 반복적인 피드백 루프를 극대화하려면 병렬 작업 환경이 도움이 됩니다. [Git Worktree로 Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)에서 여러 기능을 동시에 처리하는 실전 방법을 다루고 있습니다.
 
 ## 다른 벤치마크와의 비교
 

@@ -82,6 +82,8 @@ MCP的核心组件包括：
 - <strong>Resources</strong>：AI可读取的结构化数据
 - <strong>Prompts</strong>：预定义的提示模板
 
+如果您想亲手构建MCP服务器，[亲手构建MCP服务器 — 使用Streamable HTTP传输实现真实AI工具](/zh/blog/zh/mcp-server-build-practical-guide-2026)提供了详细的步骤指南。
+
 ## WebMCP的工作原理
 
 WebMCP使网页能够将自身功能作为MCP服务器公开。Web开发者可以声明式地定义AI代理可使用的工具和数据。
@@ -218,13 +220,13 @@ AI代理开发者无需为每个网站编写定制爬取逻辑，通过标准化
 - <strong>Safari</strong>：从Apple Intelligence集成角度值得关注
 - <strong>Edge</strong>：预计与Copilot自然集成
 
-由于MCP已作为开放协议设计，实现跨浏览器兼容性相对容易。
+由于MCP已作为开放协议设计，实现跨浏览器兼容性相对容易。关于MCP开放标准化历程，请参阅[MCP成为开放标准 — 加入Linux Foundation与工程团队引入路线图](/zh/blog/zh/mcp-open-standard-linux-foundation-engineering-guide)。
 
 ## 开发者应做的准备
 
 ### 短期（3-6个月）
 
-1. 学习MCP协议规范
+1. 学习MCP协议规范 — [使用本地LLM构建私有MCP服务器](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)支持在完全离线环境中实验MCP
 2. 梳理自有服务的AI代理应用场景
 3. 在Chrome 146 Beta中试验WebMCP
 

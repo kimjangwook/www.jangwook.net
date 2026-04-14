@@ -98,7 +98,7 @@ graph LR
 
 ### Google Cloud 프로젝트 설정
 
-먼저 Google Cloud Console에서 새 프로젝트를 생성하거나 기존 프로젝트를 선택합니다:
+먼저 Google Cloud Console에서 새 프로젝트를 생성하거나 기존 프로젝트를 선택합니다. GCP 인프라를 체계적으로 관리하고 싶다면 [gcloud MCP로 GCP 인프라 자동 감사 구현하기](/ko/blog/ko/gcloud-mcp-infrastructure-audit)도 함께 살펴보세요.
 
 ```bash
 # gcloud CLI 설치 (아직 없다면)
@@ -1674,7 +1674,7 @@ async function getAutocompleteSuggestions(query) {
 
 <strong>3. 검색 분석 대시보드</strong>
 
-Google Analytics와 통합하여 검색 패턴 분석:
+Google Analytics와 통합하여 검색 패턴 분석할 수 있습니다. AI 에이전트로 분석을 자동화하고 싶다면 [Google Analytics MCP와 AI 에이전트로 블로그 분석 자동화하기](/ko/blog/ko/google-analytics-mcp-automation)를 참고하세요.
 
 ```javascript
 // Google Analytics 이벤트 트래킹

@@ -1,6 +1,9 @@
 ---
 title: 'Anthropic MCP 코드 실행: AI 에이전트 효율성 98.7% 향상'
-description: '토큰 사용량 150,000개에서 2,000개로 줄이는 혁신적인 접근법을 알아보세요'
+description: >-
+  Anthropic MCP 코드 실행 기능을 활용해 AI 에이전트의 토큰 사용량을 150,000개에서 2,000개로 98.7% 절감하는
+  방법을 상세히 알아봅니다. 반복 코드 실행 루프 최적화와 결과 캐싱 전략으로 AI 에이전트 효율성을 획기적으로 향상시키는
+  실전 가이드입니다.
 pubDate: '2025-11-18'
 heroImage: ../../../assets/blog/anthropic-code-execution-mcp-hero.jpg
 tags:

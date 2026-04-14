@@ -71,7 +71,7 @@ graph LR
     Vote --> Result[结果汇总]
 ```
 
-这种方式与Chatbot Arena（LMSYS）类似，但其差异化在于专注于<strong>实际编码任务</strong>。开发者在代码补全、重构、调试等实战工作中比较评估两个模型。
+这种方式与Chatbot Arena（LMSYS）类似，但其差异化在于专注于<strong>实际编码任务</strong>。开发者在代码补全、重构、调试等实战工作中比较评估两个模型。关于如何在实际工作中有效利用AI编码工具，请参阅[Claude Code最佳实践](/zh/blog/zh/claude-code-best-practices)。
 
 ## 核心发现：速度胜过精度
 
@@ -129,6 +129,8 @@ graph TD
 | 代码精度 | 响应速度 |
 | 首次成功率 | 迭代修改效率 |
 | 基准测试分数 | 感知生产力 |
+
+要最大化这些快速反馈循环，[使用Git Worktree运行Claude Code并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)是一个非常有效的方法。
 
 ## 与其他基准测试的比较
 

@@ -73,7 +73,7 @@ graph LR
     Vote --> Result[結果集計]
 ```
 
-この方式はChatbot Arena（LMSYS）と似ていますが、<strong>実際のコーディング作業</strong>に特化している点が差別化ポイントです。開発者たちはコード補完、リファクタリング、デバッグなどの実戦的な作業で2つのモデルを比較評価します。
+この方式はChatbot Arena（LMSYS）と似ていますが、<strong>実際のコーディング作業</strong>に特化している点が差別化ポイントです。開発者たちはコード補完、リファクタリング、デバッグなどの実戦的な作業で2つのモデルを比較評価します。実務でAIコーディングツールを効果的に活用する方法は[Claude Code Best Practices](/ja/blog/ja/claude-code-best-practices)でご確認いただけます。
 
 ## 核心的発見：速度が精度に勝つ
 
@@ -131,6 +131,8 @@ graph TD
 | コード精度 | 応答速度 |
 | 初回成功率 | 反復修正効率 |
 | ベンチマークスコア | 体感生産性 |
+
+このような反復的なフィードバックループを最大化するには、[Git WorktreeでClaude Codeの並列セッションを運用する](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)方法が効果的です。
 
 ## 他のベンチマークとの比較
 

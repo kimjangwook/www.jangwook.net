@@ -1,6 +1,9 @@
 ---
 title: NotionとBacklogとSlackとClaude Codeで実現するプロジェクト管理標準化
-description: 4つのツールを統合してプロジェクト成功率を80%以上に向上させる実践的な方法を解説します
+description: >-
+  Notion·Backlog·Slack·Claude 4つのツールを統合し、アジャイル開発チームのプロジェクト管理を体系的に自動化する実践
+  ガイド。バックログチケット作成からSlack通知の自動化、Claude AIによるコードレビューまで、完全な開発ワークフローを段階的に
+  構築する方法を解説します。
 pubDate: '2025-11-03'
 heroImage: ../../../assets/blog/notion-backlog-slack-claude-project-management-hero.jpg
 tags:

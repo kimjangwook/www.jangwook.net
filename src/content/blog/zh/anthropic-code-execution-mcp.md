@@ -1,8 +1,8 @@
 ---
 title: Anthropic 代码执行与 MCP：AI 智能体效率提升 98.7% 的革命性突破
 description: >-
-  深度解析 Anthropic 推出的 Code Execution with MCP 技术，实现 98.7% 的 token 使用量减少和 60%
-  的执行速度提升。
+  深度解析Anthropic推出的Code Execution with MCP技术，通过沙箱代码执行实现98.7%的token使用量削减和60%的执行
+  速度提升。详细介绍反复执行循环优化与结果缓存策略，帮助开发者大幅提升AI智能体运行效率的完整实战指南。
 pubDate: '2025-11-18'
 heroImage: ../../../assets/blog/anthropic-code-execution-mcp-hero.jpg
 tags:

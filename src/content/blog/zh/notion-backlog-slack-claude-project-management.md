@@ -1,6 +1,8 @@
 ---
 title: 使用Notion·Backlog·Slack·Claude标准化项目管理
-description: 整合四种工具构建敏捷项目管理工作流程的完整指南
+description: >-
+  整合Notion·Backlog·Slack·Claude四大工具，为敏捷开发团队系统化自动化项目管理流程的完整实战指南。涵盖从Backlog工单
+  创建、Slack消息通知自动化，到Claude AI智能代码审查的全链路DevOps工作流程，助力团队将项目成功率提升80%以上。
 pubDate: '2025-11-03'
 heroImage: ../../../assets/blog/notion-backlog-slack-claude-project-management-hero.jpg
 tags:

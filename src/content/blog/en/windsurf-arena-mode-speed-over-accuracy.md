@@ -74,7 +74,7 @@ graph LR
     Vote --> Result[Results Tally]
 ```
 
-This approach is similar to Chatbot Arena (LMSYS) but differentiates itself by focusing on <strong>actual coding tasks</strong>. Developers compare two models on practical work like code completion, refactoring, and debugging.
+This approach is similar to Chatbot Arena (LMSYS) but differentiates itself by focusing on <strong>actual coding tasks</strong>. Developers compare two models on practical work like code completion, refactoring, and debugging. For tips on getting the most out of AI coding tools in practice, see [Claude Code Best Practices](/en/blog/en/claude-code-best-practices).
 
 ## Key Finding: Speed Beats Accuracy
 
@@ -132,6 +132,8 @@ For developers, "good AI code" means <strong>not perfect code, but a fast starti
 | Code accuracy | Response speed |
 | First-try success rate | Iteration efficiency |
 | Benchmark scores | Perceived productivity |
+
+To maximize these fast feedback loops, working on multiple features in parallel helps greatly. [Running Claude Code Parallel Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) covers practical strategies for handling multiple tasks simultaneously.
 
 ## Comparison with Other Benchmarks
 

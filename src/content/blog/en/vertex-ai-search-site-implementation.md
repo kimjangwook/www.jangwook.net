@@ -102,7 +102,7 @@ Before diving into implementation, you'll need to set up several Google Cloud Pl
 
 ### 1. Google Cloud Project Setup
 
-First, ensure you have a GCP project with billing enabled:
+First, ensure you have a GCP project with billing enabled. If you want to systematically audit and manage your GCP infrastructure, check out [Implementing Automated GCP Infrastructure Audit with gcloud MCP](/en/blog/en/gcloud-mcp-infrastructure-audit).
 
 ```bash
 # Install Google Cloud SDK if not already installed
@@ -1653,7 +1653,7 @@ app.use('/search', limiter);
 1. <strong>Personalized Search</strong>: Use user context to tailor results
 2. <strong>Search Suggestions</strong>: Implement autocomplete using Vertex AI
 3. <strong>Faceted Search</strong>: Add filters for date, type, category, etc.
-4. <strong>Search Analytics Dashboard</strong>: Visualize popular queries and user behavior
+4. <strong>Search Analytics Dashboard</strong>: Visualize popular queries and user behavior — [Automating Blog Analytics with Google Analytics MCP and AI Agents](/en/blog/en/google-analytics-mcp-automation) shows how to automate this analysis
 5. <strong>A/B Testing</strong>: Test different search configurations
 
 <strong>Monitoring and Optimization</strong>:

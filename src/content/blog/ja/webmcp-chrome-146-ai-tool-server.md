@@ -82,6 +82,8 @@ MCPの主要コンポーネントは以下の通りです：
 - <strong>Resources</strong>：AIが読み取れる構造化データ
 - <strong>Prompts</strong>：事前定義されたプロンプトテンプレート
 
+MCPサーバーを自分で実装してみたい方は、[MCPサーバーを作る — Streamable HTTPトランスポートで実際のAIツールを実装する](/ja/blog/ja/mcp-server-build-practical-guide-2026)を参考にしてください。
+
 ## WebMCPの仕組み
 
 WebMCPにより、Webページが自身の機能をMCPサーバーとして公開できるようになります。Web開発者は、AIエージェントが利用できるツールとデータを宣言的に定義します。
@@ -218,13 +220,13 @@ WebサービスがAIエージェント向けの<strong>MCPエンドポイント<
 - <strong>Safari</strong>：Apple Intelligenceとの統合観点で注目
 - <strong>Edge</strong>：Copilotとの自然な連携が予想される
 
-MCPがすでにオープンプロトコルとして設計されているため、ブラウザ間の互換性確保は比較的容易と見られます。
+MCPがすでにオープンプロトコルとして設計されているため、ブラウザ間の互換性確保は比較的容易と見られます。MCPのオープン標準化の詳細は[MCPがオープン標準になった — Linux Foundation参加とエンジニアリングチームの導入ロードマップ](/ja/blog/ja/mcp-open-standard-linux-foundation-engineering-guide)で確認できます。
 
 ## 開発者が準備すべきこと
 
 ### 短期（3〜6ヶ月）
 
-1. MCPプロトコル仕様の学習
+1. MCPプロトコル仕様の学習 — [ローカルLLMでプライベートMCPサーバーを構築する](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp)でオフライン環境でのMCP実験が可能です
 2. 自社サービスのAIエージェント活用シナリオ策定
 3. Chrome 146ベータでのWebMCP実験
 

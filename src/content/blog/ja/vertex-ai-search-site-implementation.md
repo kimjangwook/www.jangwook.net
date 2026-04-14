@@ -98,7 +98,7 @@ graph LR
 
 ### Google Cloudプロジェクト設定
 
-まず、Google Cloudプロジェクトを準備します。
+まず、Google Cloudプロジェクトを準備します。GCPインフラを体系的に管理したい場合は、[gcloud MCPでGCPインフラ自動監査を実装する](/ja/blog/ja/gcloud-mcp-infrastructure-audit)も参考にしてください。
 
 ```bash
 # gcloud CLIがインストールされていることを確認
@@ -1091,7 +1091,7 @@ const apiEndpoint = import.meta.env.PUBLIC_VERTEX_AI_SEARCH_ENDPOINT;
 
 1. <strong>検索ログの分析</strong>
    - Cloud LoggingとBigQueryを連携
-   - ユーザーの検索行動を分析
+   - ユーザーの検索行動を分析 — [Google Analytics MCPとAIエージェントで分析を自動化する](/ja/blog/ja/google-analytics-mcp-automation)方法も参考になります
    - 検索品質の改善
 
 2. <strong>パーソナライゼーション</strong>

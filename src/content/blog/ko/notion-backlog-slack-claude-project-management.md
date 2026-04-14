@@ -1,6 +1,9 @@
 ---
 title: Notion·Backlog·Slack·Claude로 프로젝트 매니징 표준화하기
-description: 4가지 도구를 통합한 애자일 프로젝트 관리 워크플로우 구축 가이드
+description: >-
+  Notion·Backlog·Slack·Claude 4가지 도구를 연동해 애자일 개발 팀의 프로젝트 관리를 체계적으로 자동화하는
+  실전 가이드. 백로그 티켓 생성부터 슬랙 알림 자동화, Claude AI 기반 코드 리뷰까지 완전한 DevOps 워크플로우를
+  단계별로 구축합니다.
 pubDate: '2025-11-03'
 heroImage: ../../../assets/blog/notion-backlog-slack-claude-project-management-hero.jpg
 tags:
