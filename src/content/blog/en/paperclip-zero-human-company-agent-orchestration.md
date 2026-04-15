@@ -3,9 +3,9 @@ title: >-
   Paperclip — I Installed the Open-Source Platform That Manages AI Agents Like
   Employees
 description: >-
-  Using one AI agent well is easy enough. But what about running multiple agents
-  like a company? I installed Paperclip, created a company, hired agents, and
-  here's my honest review.
+  Paperclip manages AI agents like employees. I installed this open-source
+  platform, hired a Claude Code agent, and tested the dashboard, Org Chart,
+  and cost tracking.
 pubDate: '2026-04-02'
 heroImage: ../../../assets/blog/paperclip-zero-human-company-agent-orchestration-hero.png
 tags:
@@ -60,7 +60,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-Have you ever had 20 Claude Code terminals open at once? I have. When you're writing blog posts in four languages while running a research agent, an image generation agent, and a translation agent simultaneously, there comes a point where you start losing track of who's doing what. Distinguishing them by terminal tab names has its limits, and costs vary so much that calculating the monthly total becomes a chore.
+Have you ever had 20 Claude Code terminals open at once? I have. When you're writing blog posts in four languages while running a research agent, an image generation agent, and a translation agent simultaneously, there comes a point where you start losing track of who's doing what. Distinguishing them by terminal tab names has its limits, and costs vary so much that calculating the monthly total becomes a chore. If you're interested in managing parallel Claude Code sessions more systematically with Git Worktree, [Running Claude Code Parallel Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) is worth a read.
 
 [Paperclip](https://github.com/paperclipai/paperclip) tackles this problem head-on. The tagline is provocative: "Open-source orchestration for zero-human companies." The idea is to manage agents as employees and groups of agents as companies.
 
@@ -136,7 +136,7 @@ Installation is simple thanks to the built-in PostgreSQL. One `pnpm dev:once` co
 
 There's no reason to use this if you're only running one agent. It means learning yet another task manager, and with just 1〜2 agents, managing them directly from the terminal is faster. Also, the "zero-human company" tagline is a stretch from reality. In my experience, when an agent fails, a human still has to debug it, and task definitions still require a human. This is a "tool for managing agents," not yet a "tool that replaces humans."
 
-One more thing: you need to understand that Paperclip is <strong>not</strong> an agent framework or a prompt manager. It doesn't create agents for you -- it organizes agents that already exist. It only makes sense if you already have CLI agents like Claude Code or Codex up and running.
+One more thing: you need to understand that Paperclip is <strong>not</strong> an agent framework or a prompt manager. It doesn't create agents for you -- it organizes agents that already exist. It only makes sense if you already have CLI agents like Claude Code or Codex up and running. For a comparison of which agentic workflow pattern fits your use case, [5 Claude Code Agentic Workflow Patterns — Which One Fits Your Work?](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) is a useful reference.
 
 ## Who Should Use This
 

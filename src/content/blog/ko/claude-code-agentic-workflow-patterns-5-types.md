@@ -1,7 +1,8 @@
 ---
 title: 'Claude Code 에이전틱 워크플로우 패턴 5가지 — 내 작업에 맞는 패턴은?'
 description: >-
-  순차·운영자·병렬·팀·자율 — Claude Code에서 직접 써보며 정리한 5가지 에이전틱 워크플로우 패턴. 각 패턴의 장단점과 선택 기준을 실전 경험을 바탕으로 설명합니다.
+  Claude Code의 에이전틱 워크플로우 패턴 5가지 — 순차·운영자·병렬·팀·자율을 직접 사용해보며 정리했습니다. 각 패턴의
+  작동 원리와 장단점, 적합한 작업 유형, 비용·속도 트레이드오프, 그리고 내 업무에 맞는 패턴 선택 기준을 실전 경험 기반으로 비교합니다.
 pubDate: '2026-04-15'
 heroImage: '../../../assets/blog/claude-code-agentic-workflow-patterns-5-types-hero.jpg'
 tags:

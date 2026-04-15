@@ -1,8 +1,8 @@
 ---
 title: Paperclip — AI 에이전트를 직원처럼 관리하는 오픈소스 플랫폼을 설치해봤다
 description: >-
-  AI 에이전트 하나를 잘 쓰는 건 됐다. 여러 개를 회사처럼 굴리려면? Paperclip을 직접 설치하고 회사를 만들고 에이전트를 고용해본
-  경험과 솔직한 평가.
+  AI 에이전트 여러 개를 회사처럼 관리하는 오픈소스 플랫폼 Paperclip을 직접 설치해봤다. Linear 스타일 대시보드, Org
+  Chart, 비용 추적, 다양한 에이전트 어댑터까지 — Claude Code 에이전트를 조직화하는 실전 경험과 솔직한 평가를 공유합니다.
 pubDate: '2026-04-02'
 heroImage: ../../../assets/blog/paperclip-zero-human-company-agent-orchestration-hero.png
 tags:
@@ -57,7 +57,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-Claude Code 터미널 20개를 동시에 열어놓고 작업한 적이 있는가? 나는 있다. 블로그 포스트를 4개 언어로 쓰면서 리서치 에이전트, 이미지 생성 에이전트, 번역 에이전트를 각각 돌리다 보면 어느 순간 "지금 누가 뭘 하고 있지?"가 헷갈리기 시작한다. 터미널 탭 이름으로 구분하는 건 한계가 있고, 비용도 제각각이라 월말에 얼마 썼는지 계산하기가 귀찮다.
+Claude Code 터미널 20개를 동시에 열어놓고 작업한 적이 있는가? 나는 있다. 블로그 포스트를 4개 언어로 쓰면서 리서치 에이전트, 이미지 생성 에이전트, 번역 에이전트를 각각 돌리다 보면 어느 순간 "지금 누가 뭘 하고 있지?"가 헷갈리기 시작한다. 터미널 탭 이름으로 구분하는 건 한계가 있고, 비용도 제각각이라 월말에 얼마 썼는지 계산하기가 귀찮다. Git Worktree를 활용한 병렬 세션 관리 방법이 궁금하다면 [Git Worktree로 Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)가 도움이 된다.
 
 [Paperclip](https://github.com/paperclipai/paperclip)은 이 문제를 정면으로 건드린다. 슬로건이 도발적인데 — "Open-source orchestration for zero-human companies." 에이전트를 직원으로, 에이전트 그룹을 회사로 관리하자는 거다.
 
@@ -133,7 +133,7 @@ Costs 페이지가 꽤 상세하다. Inference Spend, Budget, Finance Net, Finan
 
 에이전트 하나만 쓰는 사람에게는 쓸 이유가 없다. 태스크 매니저를 하나 더 배워야 하는데, 에이전트가 1〜2개면 터미널에서 직접 관리하는 게 빠르다. 그리고 "zero-human company"라는 슬로건이 실제 현실과 거리가 있다. 내가 써본 경험으로는 에이전트가 실패하면 결국 사람이 디버깅해야 하고, 태스크 정의도 사람이 해야 한다. "에이전트를 관리하는 도구"이지 "사람을 대체하는 도구"는 아직 아니다.
 
-또 하나, Paperclip 자체가 에이전트 프레임워크나 프롬프트 매니저가 <strong>아니라는</strong> 점을 이해해야 한다. 에이전트를 만들어주는 게 아니라, 이미 있는 에이전트를 조직화하는 도구다. Claude Code, Codex 같은 CLI 에이전트가 이미 돌아가고 있어야 의미가 있다.
+또 하나, Paperclip 자체가 에이전트 프레임워크나 프롬프트 매니저가 <strong>아니라는</strong> 점을 이해해야 한다. 에이전트를 만들어주는 게 아니라, 이미 있는 에이전트를 조직화하는 도구다. Claude Code, Codex 같은 CLI 에이전트가 이미 돌아가고 있어야 의미가 있다. 어떤 에이전틱 워크플로우 패턴이 내 작업에 맞는지는 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 확인해볼 수 있다.
 
 ## 누가 써야 하나
 

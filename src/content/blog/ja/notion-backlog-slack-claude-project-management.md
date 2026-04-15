@@ -73,13 +73,15 @@ draft: true
 - <strong>Slack</strong>: リアルタイムコミュニケーションと協働センター
 - <strong>Claude Code</strong>: AI駆動開発支援とプロジェクトコンテキスト管理
 
+Claude CodeのHookシステムを活用すると、コードレビューやリントチェックを自動化できます。[Claude Code Hookで構築する自動化コードレビューシステム](/ja/blog/ja/claude-code-hooks-workflow)で実践的な設定方法をご確認ください。
+
 これらのツールを正しく統合することで、<strong>定時デリバリー率80%以上、ツール切り替え時間50%削減</strong>を実現できます。
 
 ## ツール別コア機能
 
 ### Notion: 戦略的計画ハブ
 
-Notionはデータベース中心のアーキテクチャを持ち、プロジェクトのあらゆる情報を一元管理できます。
+Notionはデータベース中心のアーキテクチャを持ち、プロジェクトのあらゆる情報を一元管理できます。Notion APIとMCPを連携させた高度な自動化については、[AIエージェントシステム構築実践ガイド: Notion API MCPとClaude Codeで自動化パイプラインを構築](/ja/blog/ja/ai-agent-notion-mcp-automation)を参照してください。
 
 #### データベース設計のベストプラクティス
 

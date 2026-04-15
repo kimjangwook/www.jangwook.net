@@ -107,11 +107,13 @@ graph LR
 - <strong>Slack</strong>: 团队沟通、通知、工作流自动化
 - <strong>Claude Code</strong>: 基于AI的编码支持、文档生成、项目上下文管理
 
+利用Claude Code的Hook系统可以自动化代码审查和Lint检查。请参阅[使用Claude Code Hook构建自动化代码审查系统](/zh/blog/zh/claude-code-hooks-workflow)了解实战配置方法。
+
 ## 各工具核心功能
 
 ### Notion: 战略规划中心
 
-Notion扮演项目的<strong>大脑</strong>角色。以数据库为中心的架构可以结构化所有信息,成为与其他工具集成的中心。
+Notion扮演项目的<strong>大脑</strong>角色。以数据库为中心的架构可以结构化所有信息,成为与其他工具集成的中心。有关将Notion API与AI智能体连接的高级自动化管道，请参阅[AI智能体系统构建实战指南: Notion API MCP与Claude Code自动化管道](/zh/blog/zh/ai-agent-notion-mcp-automation)。
 
 #### 以数据库为中心的架构
 

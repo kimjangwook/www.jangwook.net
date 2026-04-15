@@ -1,7 +1,7 @@
 ---
 title: 'Claude Code智能体工作流5种模式 — 哪种适合你的工作?'
 description: >-
-  顺序、操作者、并行、团队、自律 — 通过实际使用Claude Code总结的5种智能体工作流模式。基于实践经验，详解各模式的优缺点与选择标准。
+  Claude Code智能体工作流5种模式全面对比 — 顺序、操作者、并行、团队、自律，亲身使用后整理。详解各模式工作原理、适合的任务类型、成本与速度的权衡，以及选择依据。
 pubDate: '2026-04-15'
 heroImage: '../../../assets/blog/claude-code-agentic-workflow-patterns-5-types-hero.jpg'
 tags:

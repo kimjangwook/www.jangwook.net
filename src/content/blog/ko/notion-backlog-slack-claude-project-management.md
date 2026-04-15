@@ -108,11 +108,13 @@ graph LR
 - <strong>Slack</strong>: 팀 커뮤니케이션, 알림, 워크플로우 자동화
 - <strong>Claude Code</strong>: AI 기반 코딩 지원, 문서 생성, 프로젝트 컨텍스트 관리
 
+특히 Claude Code의 Hook 시스템을 활용하면 코드 리뷰와 린트 체크를 자동화할 수 있습니다. [Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템](/ko/blog/ko/claude-code-hooks-workflow)에서 실전 설정 방법을 확인하세요.
+
 ## 도구별 핵심 기능
 
 ### Notion: 전략적 계획 허브
 
-Notion은 프로젝트의 <strong>두뇌</strong> 역할을 합니다. 데이터베이스 중심 아키텍처로 모든 정보를 구조화하고, 다른 도구와의 연동을 위한 허브가 됩니다.
+Notion은 프로젝트의 <strong>두뇌</strong> 역할을 합니다. 데이터베이스 중심 아키텍처로 모든 정보를 구조화하고, 다른 도구와의 연동을 위한 허브가 됩니다. Notion API와 MCP를 연동한 고급 자동화 파이프라인은 [AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기](/ko/blog/ko/ai-agent-notion-mcp-automation)를 참고하세요.
 
 #### 데이터베이스 중심 아키텍처
 

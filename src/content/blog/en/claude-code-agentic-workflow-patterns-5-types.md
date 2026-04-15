@@ -1,7 +1,9 @@
 ---
 title: '5 Claude Code Agentic Workflow Patterns — Which One Fits Your Work?'
 description: >-
-  Sequential, Operator, Parallel, Teams, Autonomous — 5 agentic workflow patterns I learned from actually using Claude Code. A practical guide to the trade-offs and selection criteria for each pattern.
+  5 Claude Code agentic workflow patterns — Sequential, Operator, Parallel,
+  Teams, Autonomous — compared from real use. Find which pattern fits your
+  work and why.
 pubDate: '2026-04-15'
 heroImage: '../../../assets/blog/claude-code-agentic-workflow-patterns-5-types-hero.jpg'
 tags:
