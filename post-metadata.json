@@ -2395,5 +2395,16 @@
       "ja": "Ollama + Gemma 4 + FastMCPを使って完全オフラインのAIツールパイプラインを構築する方法",
       "zh": "使用Ollama + Gemma 4 + FastMCP构建完全离线AI工具管道的方法"
     }
+  },
+  "claude-code-agentic-workflow-patterns-5-types": {
+    "pubDate": "2026-04-15",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.8,
+      "web-development": 0.2,
+      "ai-ml": 0.7,
+      "devops": 0.5,
+      "architecture": 0.7
+    }
   }
 }
