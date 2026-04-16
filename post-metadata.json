@@ -2406,5 +2406,16 @@
       "devops": 0.5,
       "architecture": 0.7
     }
+  },
+  "claude-managed-agents-production-deployment-guide": {
+    "pubDate": "2026-04-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.65,
+      "architecture": 0.7
+    }
   }
 }

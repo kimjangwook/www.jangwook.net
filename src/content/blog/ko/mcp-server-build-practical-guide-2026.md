@@ -1,8 +1,8 @@
 ---
 title: MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기
 description: >-
-  Python FastMCP로 MCP 서버를 처음부터 구축하는 실전 튜토리얼. Streamable HTTP 트랜스포트 설정, 커스텀
-  AI 도구 구현, Claude Code 클라이언트 연동, FastAPI 기반 배포까지 직접 구현한 경험을 단계별 코드 예제와 함께 공유합니다.
+  Python FastMCP로 MCP 서버를 처음부터 구축하는 실전 튜토리얼. Streamable HTTP 트랜스포트 설정, 커스텀 AI 도구
+  구현, Claude Code 클라이언트 연동, FastAPI 기반 배포까지 직접 구현한 경험을 단계별 코드 예제와 함께 공유합니다.
 pubDate: '2026-04-13'
 heroImage: ../../../assets/blog/mcp-server-build-practical-guide-2026-hero.jpg
 tags:

@@ -1,50 +1,59 @@
 ---
-title: 'Claude Codeのエージェントワークフローパターン5選 — 自分の作業に合うパターンは?'
+title: Claude Codeのエージェントワークフローパターン5選 — 自分の作業に合うパターンは?
 description: >-
-  Claude Codeのエージェントワークフローパターン5選 — 順次・オペレーター・並列・チーム・自律を実際に使いながら比較整理しました。各パターンの動作原理、適した作業タイプ、コスト・速度のトレードオフ、そして選択基準を実践経験に基づいて解説します。
+  Claude Codeのエージェントワークフローパターン5選 —
+  順次・オペレーター・並列・チーム・自律を実際に使いながら比較整理しました。各パターンの動作原理、適した作業タイプ、コスト・速度のトレードオフ、そして選択基準を実践経験に基づいて解説します。
 pubDate: '2026-04-15'
-heroImage: '../../../assets/blog/claude-code-agentic-workflow-patterns-5-types-hero.jpg'
+heroImage: ../../../assets/blog/claude-code-agentic-workflow-patterns-5-types-hero.jpg
 tags:
   - ClaudeCode
   - エージェントAI
   - ワークフロー
   - チュートリアル
 relatedPosts:
-  - slug: claude-code-parallel-sessions-git-worktree
+  - slug: stripe-minions-autonomous-coding-agents-1300-prs
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-insights-usage-analysis
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: mcp-servers-toolkit-introduction
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-presentation-automation
     score: 0.93
     reason:
-      ko: '병렬(Parallel) 패턴의 핵심인 Git Worktree 운용법을 이 포스트에서 단계별로 깊게 다룬다. 패턴 개요를 파악했다면 실제 설정 방법은 여기서 확인하는 것이 빠르다.'
-      ja: 並列（Parallel）パターンの核心であるGit Worktree運用方法を、このポストでステップバイステップで詳しく解説しています。パターンの概要を把握した後、実際の設定方法はこちらで確認するのが早いでしょう。
-      en: 'This post covers the Git Worktree operations at the core of the Parallel pattern in step-by-step detail. Once you understand the pattern overview, this is the fastest way to get the actual setup working.'
-      zh: '这篇文章深入介绍了并行（Parallel）模式核心的Git Worktree运作方式。了解模式概述后，在这里查看实际配置方法最为高效。'
-  - slug: claude-agent-teams-guide
-    score: 0.90
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+  - slug: anthropic-agent-skills-practical-guide
+    score: 0.93
     reason:
-      ko: '팀(Teams) 패턴의 실제 구성 방법과 OpenClaw 환경에서 에이전트 팀을 운용하는 경험이 담겨있다. "어떻게 역할을 분담할 것인가"가 궁금하다면 이 포스트가 가장 구체적이다.'
-      ja: チーム（Teams）パターンの実際の構成方法と、OpenClaw環境でエージェントチームを運用する経験が詳しく書かれています。「どのように役割を分担するか」に興味があるなら、このポストが最も具体的です。
-      en: 'This post covers the actual setup for the Teams pattern and experience running agent teams in OpenClaw. If you want to know how to split responsibilities between agents, this is the most concrete resource.'
-      zh: '这篇文章包含了团队（Teams）模式的实际配置方法以及在OpenClaw环境中运营智能体团队的经验。如果想了解如何分配角色，这篇文章最为具体。'
-  - slug: multi-agent-orchestration-improvement
-    score: 0.85
-    reason:
-      ko: '오케스트레이터 패턴을 실제 블로그 자동화 시스템에 적용했을 때 어떤 문제가 생기고 어떻게 개선했는지 솔직하게 기록한 포스트다. 이론보다 실패 사례가 더 교훈적이었다.'
-      ja: オーケストレーターパターンを実際のブログ自動化システムに適用した際に発生した問題と、その改善方法を率直に記録したポストです。理論よりも失敗事例の方が教訓的でした。
-      en: 'An honest record of what went wrong and how things improved when applying the orchestrator pattern to a real blog automation system. The failure cases were more instructive than the theory.'
-      zh: '这篇文章真实记录了将协调器模式应用于实际博客自动化系统时遇到的问题以及改进方法。实际失败案例比理论更有教育意义。'
-  - slug: claude-code-best-practices
-    score: 0.82
-    reason:
-      ko: '패턴을 선택했다면, 각 패턴 안에서 Claude Code를 잘 활용하기 위한 구체적인 모범 사례가 이 포스트에 정리되어 있다. CLAUDE.md 작성법부터 컨텍스트 관리까지.'
-      ja: パターンを選択したら、各パターン内でClaude Codeをうまく活用するための具体的なベストプラクティスがこのポストにまとめられています。CLAUDE.md の書き方からコンテキスト管理まで。
-      en: 'Once you have chosen a pattern, this post has the specific best practices for using Claude Code effectively within each pattern — from writing CLAUDE.md to managing context.'
-      zh: '选定模式后，这篇文章整理了在各种模式中有效使用Claude Code的具体最佳实践——从CLAUDE.md的编写方法到上下文管理。'
-  - slug: claude-code-hooks-workflow
-    score: 0.80
-    reason:
-      ko: '자율(Autonomous) 패턴을 실제로 운용하려면 Hooks가 필수다. 이 포스트에서 PreToolUse·PostToolUse·Notification 훅을 활용한 워크플로우 자동화를 상세히 다룬다.'
-      ja: 自律（Autonomous）パターンを実際に運用するにはHooksが不可欠です。このポストでは、PreToolUse・PostToolUse・Notification フックを活用したワークフロー自動化を詳しく解説しています。
-      en: 'Hooks are essential for running the Autonomous pattern in production. This post covers workflow automation in detail using PreToolUse, PostToolUse, and Notification hooks.'
-      zh: '实际运行自律（Autonomous）模式需要Hooks。这篇文章详细介绍了使用PreToolUse、PostToolUse和Notification钩子实现工作流自动化的方法。'
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
 ---
 
 Claude Codeを使い始めた頃、私はすべてをシンプルに考えていた。ターミナルを開いて「この機能を実装して」と打ち込み、結果を受け取る。ところが作業が複雑になるにつれ、このシンプルな方法は限界に当たった。ある作業は時間がかかりすぎ、あるものはコンテキストが混乱し、あるものはClaude Codeが方向を見失った。

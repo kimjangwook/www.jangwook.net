@@ -4,8 +4,8 @@ title: >-
   Employees
 description: >-
   Paperclip manages AI agents like employees. I installed this open-source
-  platform, hired a Claude Code agent, and tested the dashboard, Org Chart,
-  and cost tracking.
+  platform, hired a Claude Code agent, and tested the dashboard, Org Chart, and
+  cost tracking.
 pubDate: '2026-04-02'
 heroImage: ../../../assets/blog/paperclip-zero-human-company-agent-orchestration-hero.png
 tags:

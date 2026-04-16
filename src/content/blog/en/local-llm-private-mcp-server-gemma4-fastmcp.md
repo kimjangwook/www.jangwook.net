@@ -1,11 +1,14 @@
 ---
-title: Building a Private MCP Server with Local LLM — Gemma 4 + FastMCP Fully Offline AI Tool Guide
+title: >-
+  Building a Private MCP Server with Local LLM — Gemma 4 + FastMCP Fully Offline
+  AI Tool Guide
 description: >-
-  How to build an offline AI tool pipeline with Ollama + Gemma 4 + FastMCP, no internet required.
-  A hands-on implementation guide for using MCP tools in medical, legal, and financial environments
-  where data cannot leave the premises.
+  How to build an offline AI tool pipeline with Ollama + Gemma 4 + FastMCP, no
+  internet required. A hands-on implementation guide for using MCP tools in
+  medical, legal, and financial environments where data cannot leave the
+  premises.
 pubDate: '2026-04-14'
-heroImage: '../../../assets/blog/local-llm-private-mcp-server-gemma4-fastmcp-hero.jpg'
+heroImage: ../../../assets/blog/local-llm-private-mcp-server-gemma4-fastmcp-hero.jpg
 tags:
   - Ollama
   - FastMCP
@@ -13,41 +16,41 @@ tags:
   - LocalLLM
   - MCP
 relatedPosts:
-  - slug: mcp-server-build-practical-guide-2026
-    score: 0.93
+  - slug: claude-mythos-preview-glasswing-ai-cybersecurity
+    score: 0.85
     reason:
-      ko: 이 글에서 만든 FastMCP 서버의 구조를 더 깊이 이해하고 싶다면, FastMCP의 Streamable HTTP 트랜스포트와 Claude Code 연동까지 다룬 이전 글이 필수 선행 학습이다.
-      ja: ここで構築するFastMCPサーバーの仕組みをより深く理解したいなら、Streamable HTTPトランスポートとClaude Code連携まで解説した前の記事が不可欠な予備知識だ。
-      en: To deeply understand the FastMCP server we build here, the previous post covering Streamable HTTP transport and Claude Code integration is essential prerequisite reading.
-      zh: 如果想深入理解本文构建的FastMCP服务器结构，之前那篇涵盖Streamable HTTP传输和Claude Code集成的文章是必读的先修内容。
-  - slug: gemma-4-local-agent-edge-ai
-    score: 0.90
-    reason:
-      ko: Gemma 4가 함수 호출을 어느 수준까지 해내는지 직접 테스트한 결과가 있다. 이 글의 오케스트레이터가 Gemma 4 툴 콜링에 의존하는 만큼, 그 정확도 맥락을 알면 기대치 설정이 쉬워진다.
-      ja: Gemma 4がどこまで関数呼び出しをこなせるか実際にテストした結果がある。このオーケストレーターがGemma 4のツールコーリングに依存している以上、その精度の文脈を知ると期待値設定が楽になる。
-      en: There's hands-on test data showing how far Gemma 4's function calling actually goes. Since our orchestrator relies on Gemma 4 tool calling, understanding that accuracy context helps set realistic expectations.
-      zh: 有实际测试数据显示Gemma 4的函数调用能做到哪种程度。由于我们的编排器依赖Gemma 4的工具调用，了解其准确度背景有助于设定合理预期。
-  - slug: mcp-gateway-agent-traffic-control
+      ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
+      zh: 作为先修知识很有用，涵盖AI/ML基础。
+  - slug: prismml-bonsai-1bit-llm-edge-ai
     score: 0.82
     reason:
-      ko: 이 글의 로컬 MCP 파이프라인을 팀 단위로 확장하려면, MCP Gateway로 에이전트 트래픽을 제어하는 방법이 다음 단계가 된다.
-      ja: この記事のローカルMCPパイプラインをチーム単位でスケールさせたいなら、MCP Gatewayでエージェントトラフィックを制御する方法が次のステップになる。
-      en: If you want to scale this local MCP pipeline to team level, controlling agent traffic with MCP Gateway becomes the natural next step.
-      zh: 如果想将本文的本地MCP管道扩展到团队规模，使用MCP Gateway控制智能体流量将成为下一步。
-  - slug: mcp-security-crisis-30-cves-enterprise-hardening
-    score: 0.78
+      ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
+      zh: 作为先修知识很有用，涵盖AI/ML基础。
+  - slug: claude-code-source-leak-analysis
+    score: 0.79
     reason:
-      ko: 로컬 환경이라고 MCP 보안 문제가 사라지지는 않는다. 30개의 CVE가 확인된 MCP 보안 위협과 강화 방법을 다룬 글에서 로컬 배포에서도 주의해야 할 벡터를 짚어볼 수 있다.
-      ja: ローカル環境だからといってMCPのセキュリティ問題が消えるわけではない。30のCVEが確認されたMCPセキュリティ脅威と強化方法を扱った記事で、ローカルデプロイでも注意すべきベクターを確認できる。
-      en: Being local doesn't make MCP security issues disappear. The post covering 30 confirmed CVEs in MCP threats and hardening methods shows attack vectors that still apply to local deployments.
-      zh: 在本地环境并不意味着MCP安全问题消失了。那篇涵盖30个已确认CVE的MCP安全威胁和加固方法的文章，展示了本地部署中仍需注意的攻击向量。
-  - slug: ggml-llamacpp-huggingface
-    score: 0.75
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: anthropic-emotion-concepts-llm-alignment
+    score: 0.76
     reason:
-      ko: Ollama 말고 llama.cpp를 직접 쓰고 싶거나, GGUF 포맷의 다른 로컬 모델로 바꿔보고 싶다면, GGML과 llama.cpp 생태계를 다룬 이 글이 참고가 된다.
-      ja: Ollamaではなくllama.cppを直接使いたい、またはGGUFフォーマットの別のローカルモデルに変えてみたいなら、GGMLとllama.cppのエコシステムを扱ったこの記事が参考になる。
-      en: If you want to use llama.cpp directly instead of Ollama, or swap in a different local model in GGUF format, this post covering the GGML and llama.cpp ecosystem is a useful reference.
-      zh: 如果想直接使用llama.cpp而不是Ollama，或者换用GGUF格式的其他本地模型，这篇介绍GGML和llama.cpp生态系统的文章是很好的参考。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: effloow-side-project-ai-company
+    score: 0.73
+    reason:
+      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
+      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 "We work in an environment where cloud AI is not allowed" — I honestly didn't get that at first. Then I realized how many teams actually deal with hospital medical records, legal document review, or financial customer data analysis. Telling those teams to "just paste it into Claude or GPT" isn't an option.

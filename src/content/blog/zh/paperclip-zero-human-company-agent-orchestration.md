@@ -1,8 +1,8 @@
 ---
 title: Paperclip — 像管理员工一样管理AI Agent的开源平台，我装了试试
 description: >-
-  以员工方式管理AI Agent的开源平台Paperclip亲测体验。Linear风格仪表板、Org Chart、费用追踪、多种Agent适配器一网打尽
-  — 用Claude Code雇佣Agent组织化运营的实战经验与真实评价。
+  以员工方式管理AI Agent的开源平台Paperclip亲测体验。Linear风格仪表板、Org Chart、费用追踪、多种Agent适配器一网打尽 —
+  用Claude Code雇佣Agent组织化运营的实战经验与真实评价。
 pubDate: '2026-04-02'
 heroImage: ../../../assets/blog/paperclip-zero-human-company-agent-orchestration-hero.png
 tags:

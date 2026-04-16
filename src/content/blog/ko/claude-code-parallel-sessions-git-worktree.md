@@ -1,8 +1,8 @@
 ---
 title: Claude Code 병렬 세션 운영하기 — Git Worktree로 여러 작업 동시에 처리하는 실전 가이드
 description: >-
-  Git Worktree와 Claude Code를 조합해 여러 기능을 병렬로 개발하는 실전 가이드. Plan Mode 활용법, 독립 세션
-  격리 전략, Worktree 간 충돌 없는 브랜치 관리, 멀티에이전트 병렬 패턴까지, 직접 경험을 기반으로 단계별로 구체적으로 정리했습니다.
+  Git Worktree와 Claude Code를 조합해 여러 기능을 병렬로 개발하는 실전 가이드. Plan Mode 활용법, 독립 세션 격리
+  전략, Worktree 간 충돌 없는 브랜치 관리, 멀티에이전트 병렬 패턴까지, 직접 경험을 기반으로 단계별로 구체적으로 정리했습니다.
 pubDate: '2026-04-13'
 heroImage: ../../../assets/blog/claude-code-parallel-sessions-git-worktree-hero.jpg
 tags:
@@ -15,38 +15,48 @@ relatedPosts:
   - slug: mcp-servers-toolkit-introduction
     score: 0.94
     reason:
-      ko: 'Claude Code를 여러 worktree에서 동시에 실행할 때, 각 세션에 다른 MCP 도구 조합을 연결하면 더 특화된 병렬 작업이 가능합니다. MCP 서버 생태계를 파악해두면 세션별 도구 설정이 수월해집니다.'
-      ja: 複数のworktreeでClaude Codeを同時実行する際、各セッションに異なるMCPツールの組み合わせを接続すると、より特化した並列作業が可能になります。MCPサーバーのエコシステムを把握しておくと、セッションごとのツール設定が楽になります。
-      en: 'When running Claude Code across multiple worktrees simultaneously, connecting different MCP tool combinations to each session enables more specialized parallel work. Knowing the MCP server ecosystem makes per-session tool configuration much easier.'
-      zh: 在多个worktree中同时运行Claude Code时，为每个会话连接不同的MCP工具组合可以实现更专业的并行工作。了解MCP服务器生态系统有助于简化各会话的工具配置。
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: openclaw-opus-4-6-setup-guide
     score: 0.94
     reason:
-      ko: 'OpenClaw는 Claude Code의 원격·자동화 레이어인데, worktree 병렬 세션과 결합하면 여러 브랜치를 원격에서 동시에 자율 실행하는 패턴으로 자연스럽게 이어집니다.'
-      ja: OpenClawはClaude Codeのリモート・自動化レイヤーであり、worktreeの並列セッションと組み合わせると、複数のブランチをリモートで同時に自律実行するパターンへと自然に発展します。
-      en: 'OpenClaw is the remote and automation layer for Claude Code. Combined with worktree parallel sessions, it naturally extends into a pattern where multiple branches run autonomously from a remote environment simultaneously.'
-      zh: OpenClaw是Claude Code的远程自动化层，与worktree并行会话结合，自然延伸为在远程环境中同时自主运行多个分支的模式。
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: github-agentic-workflows-cicd-ai
     score: 0.93
     reason:
-      ko: '각 worktree 브랜치를 GitHub Actions CI/CD와 연결하면 병렬 개발 → 자동 테스트 → 자동 머지까지 완전 자동화 흐름이 완성됩니다. 이 글이 그 마지막 퍼즐 조각입니다.'
-      ja: 各worktreeブランチをGitHub Actions CI/CDと連携すると、並列開発→自動テスト→自動マージまでの完全自動化フローが完成します。この記事がその最後のパズルのピースです。
-      en: 'Connecting each worktree branch to GitHub Actions CI/CD completes a fully automated flow: parallel development → automated testing → automated merge. This post is the final puzzle piece.'
-      zh: 将每个worktree分支与GitHub Actions CI/CD连接，完成并行开发→自动测试→自动合并的完整自动化流程。这篇文章是最后一块拼图。
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps主题进行连接。
   - slug: stripe-minions-autonomous-coding-agents-1300-prs
     score: 0.93
     reason:
-      ko: 'Stripe가 1,300개 PR을 자율 에이전트로 처리한 것은 결국 worktree 기반 병렬 세션의 대규모 버전입니다. 내 워크플로우를 그 방향으로 확장할 때 좋은 참고가 됩니다.'
-      ja: Stripeが1,300のPRを自律エージェントで処理したのは、結局worktreeベースの並列セッションの大規模バージョンです。自分のワークフローをその方向に拡張するときの良い参考になります。
-      en: "Stripe's approach of handling 1,300 PRs with autonomous agents is essentially the large-scale version of worktree-based parallel sessions. A great reference when scaling your own workflow in that direction."
-      zh: Stripe用自主智能体处理1300个PR，本质上是基于worktree并行会话的大规模版本。这是将个人工作流向该方向扩展的好参考。
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: claude-code-cli-migration-guide
     score: 0.92
     reason:
-      ko: 'worktree 패턴을 쓰다 보면 Claude Code CLI를 스크립트로 직접 호출하고 싶어집니다. 이 마이그레이션 가이드가 CLI 직접 활용의 출발점이 됩니다.'
-      ja: worktreeパターンを使っていると、Claude Code CLIをスクリプトから直接呼び出したくなります。このマイグレーションガイドがCLI直接活用の出発点になります。
-      en: 'Once you get comfortable with the worktree pattern, you start wanting to call Claude Code CLI directly from scripts. This migration guide is the starting point for that direct CLI usage.'
-      zh: 熟悉worktree模式后，你会想直接从脚本中调用Claude Code CLI。这个迁移指南是直接使用CLI的起点。
+      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, AI/ML, DevOps topics.
+      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps主题进行连接。
 ---
 
 Claude Code 탭을 여러 개 열어두면 "병렬 작업"처럼 느껴진다. 그런데 실제로는 아니다.
