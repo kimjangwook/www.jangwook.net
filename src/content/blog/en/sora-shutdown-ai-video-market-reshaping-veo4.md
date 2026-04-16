@@ -61,7 +61,7 @@ Honestly, my first reaction was "saw it coming." The Sora demo videos were jaw-d
 
 According to TechCrunch, Sora never exceeded 500,000 paying users even at its peak. Daily operating costs hit roughly $1 million — a level that GPU infrastructure costs alone made unsustainable.
 
-What's interesting is OpenAI's strategic pivot. They're pulling out of consumer video generation to focus on enterprise coding agents (Codex). Combined with the GPT-5.4 launch, this accelerates their transformation into a "platform company."
+What's interesting is OpenAI's strategic pivot. They're pulling out of consumer video generation to focus on [enterprise coding agents](/en/blog/en/openai-agentkit-tutorial-part1) (Codex). Combined with the GPT-5.4 launch, this accelerates their transformation into a "platform company."
 
 I think this is a rational move. AI video generation is still too early to be a standalone "product." The vision of anyone creating movie-quality video from a single text prompt is compelling, but the reality was 30 minutes of prompt engineering, 5 minutes of generation, and another 30 minutes of revisions.
 
@@ -96,7 +96,7 @@ If you've been using the Sora API, you need to migrate by September. My recommen
 **Technical Content Creation (Blog → Video)**
 - NotebookLM Video Overview + Gemini TTS for automated generation
 - Remotion for branded intro/outro overlays
-- This combo produces surprisingly good results without dedicated video generation AI
+- This combo produces surprisingly good results without dedicated video generation AI ([see AI presentation automation case study](/en/blog/en/ai-presentation-automation))
 
 **Marketing/Ad Videos**
 - Runway Gen-4 is currently the most stable option

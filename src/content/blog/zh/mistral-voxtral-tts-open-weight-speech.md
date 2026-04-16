@@ -1,6 +1,6 @@
 ---
 title: Mistral Voxtral TTS — 3秒语音克隆+开放权重，但不支持日语
-description: 分析Mistral发布的4B参数开放权重TTS模型Voxtral。虽然在人工评估中击败了ElevenLabs， 但日语不支持这一致命缺陷不容忽视。
+description: '分析Mistral于2026年3月发布的4B参数开放权重TTS模型Voxtral：盲测中以更自然语调击败ElevenLabs Flash v2.5，3秒音频即可完成零样本语音克隆，且仅需8GB显存本地运行。然而日语和韩语的缺席是进军亚洲市场的致命短板。详解CC BY NC 4.0商用限制及替代方案选型。'
 pubDate: '2026-03-29'
 heroImage: ../../../assets/blog/mistral-voxtral-tts-open-weight-speech-hero.jpg
 tags:
@@ -64,7 +64,7 @@ Voxtral的核心规格整理如下：
 
 据称在人工评估（human evaluation）中击败了ElevenLabs Flash v2.5。这是Mistral方面的说法，需要独立验证，但敢于公布盲测A/B测试结果本身就是一种自信的表现。
 
-4B的参数规模也值得关注。近期智能手机NPU已经开始处理7-10B的推理任务，Voxtral是设备端TTS的现实候选者。虽然不像Kitten TTS（14M）那样极致小巧，但品质与体积的平衡点很有意思。
+4B的参数规模也值得关注。近期智能手机NPU已经开始处理7-10B的推理任务，Voxtral是设备端TTS的现实候选者。虽然不像[Kitten TTS](/zh/blog/zh/kitten-tts-v08-tiny-sota)（14M）那样极致小巧，但品质与体积的平衡点很有意思。
 
 ## TTS引擎对比：我实际使用过的
 
@@ -104,7 +104,7 @@ response = requests.post(
 )
 ```
 
-之前介绍的KaniTTS2需要3GB VRAM才能实现语音克隆，而Voxtral只需一行API调用。当然，如果要在本地运行，需要从Hugging Face下载权重自行推理，但4B模型8GB VRAM应该足够。
+之前介绍的[KaniTTS2](/zh/blog/zh/kanitts2-voice-cloning)需要3GB VRAM才能实现语音克隆，而Voxtral只需一行API调用。当然，如果要在本地运行，需要从Hugging Face下载权重自行推理，但4B模型8GB VRAM应该足够。
 
 说实话，3秒克隆的实际品质到底如何，不亲耳听过无法判断。Mistral演示页面的样本令人印象深刻，但演示展示的永远是最佳案例。
 

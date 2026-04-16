@@ -1,8 +1,6 @@
 ---
 title: Mistral Voxtral TTS — 3秒ボイスクローニング＋オープンウェイト、しかし日本語非対応
-description: >-
-  Mistralが公開した4BパラメータのオープンウェイトTTSモデルVoxtralを分析します。人間評価でElevenLabsに勝利しましたが、
-  日本語非対応という致命的な空白があります。
+description: 'Mistralが公開した4BパラメータオープンウェイトTTSモデルVoxtralを分析する。3秒ボイスクローニング機能を備え人間評価でElevenLabsを超えた実力を持ちながら、日本語・韓国語非対応という致命的な弱点がアジア市場での利用を阻む。CC BY NCライセンスの注意点と代替案も解説する。'
 pubDate: '2026-03-29'
 heroImage: ../../../assets/blog/mistral-voxtral-tts-open-weight-speech-hero.jpg
 tags:
@@ -66,7 +64,7 @@ Voxtralのコアスペックをまとめます：
 
 人間評価（human evaluation）でElevenLabs Flash v2.5に勝ったとのことです。Mistral側の発表なので独立検証は必要ですが、ブラインドA/Bテストの結果を公開したこと自体は自信の表れでしょう。
 
-4Bというサイズも注目です。最近のスマートフォンNPUは7〜10Bの推論をこなし始めているので、VoxtralはオンデバイスTTSの現実的な候補です。Kitten TTS（14M）ほど極端に小さくはありませんが、品質とサイズのバランスが興味深い。
+4Bというサイズも注目です。最近のスマートフォンNPUは7〜10Bの推論をこなし始めているので、VoxtralはオンデバイスTTSの現実的な候補です。[Kitten TTS](/ja/blog/ja/kitten-tts-v08-tiny-sota)（14M）ほど極端に小さくはありませんが、品質とサイズのバランスが興味深い。
 
 ## TTSエンジン比較：実際に使ってみたもの
 
@@ -106,7 +104,7 @@ response = requests.post(
 )
 ```
 
-以前取り上げたKaniTTS2が3GB VRAMでボイスクローニングを実現したのに対し、VoxtralはAPI一行で済みます。もちろんローカルで動かすならHugging Faceからウェイトをダウンロードして自前で推論する必要がありますが、4Bモデルなので8GB VRAMで十分でしょう。
+以前取り上げた[KaniTTS2](/ja/blog/ja/kanitts2-voice-cloning)が3GB VRAMでボイスクローニングを実現したのに対し、VoxtralはAPI一行で済みます。もちろんローカルで動かすならHugging Faceからウェイトをダウンロードして自前で推論する必要がありますが、4Bモデルなので8GB VRAMで十分でしょう。
 
 率直に言って、3秒クローニングの品質が実際にどのレベルかは直接聴いてみないとわかりません。Mistralのデモページのサンプルは印象的でしたが、デモというのは常にベストケースを見せるものです。
 

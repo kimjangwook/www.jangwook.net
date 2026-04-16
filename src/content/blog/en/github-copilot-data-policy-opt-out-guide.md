@@ -2,10 +2,7 @@
 title: >-
   GitHub Copilot Will Train AI on Your Code Starting April — Opt Out or You
   Agreed
-description: >-
-  GitHub announced on March 25 that Copilot Free/Pro/Pro+ user interaction data
-  will be used for AI model training by default. Here is how to opt out and what
-  it actually means.
+description: "GitHub announced that Copilot Free/Pro/Pro+ interaction data will be used for AI model training by default. Here is how to opt out and what it actually means."
 pubDate: '2026-03-27'
 heroImage: ../../../assets/blog/github-copilot-data-policy-opt-out-guide-hero.jpg
 tags:
@@ -107,9 +104,9 @@ For my personal projects, I'm not going to opt out. I'm fine contributing to Cop
 
 ## The Bigger Picture
 
-This policy change isn't unique to GitHub. The pattern of offering AI tools for free or cheap while using interaction data to improve models is becoming an industry standard. Google's Gemini, Anthropic's Claude — similar policies exist or are coming.
+This policy change isn't unique to GitHub. The pattern of offering AI tools for free or cheap while using interaction data to improve models is becoming an industry standard. Google's Gemini, Anthropic's [Claude Code](/en/blog/en/claude-code-best-practices) — similar policies exist or are coming.
 
-What makes this especially sensitive in the developer tools space is that code is intellectual property. Text conversations and code are fundamentally different in nature.
+What makes this especially sensitive in the developer tools space is that code is intellectual property. This connects to broader discussions around [tracking AI code attribution](/en/blog/en/cursor-agent-trace-ai-code-attribution). Text conversations and code are fundamentally different in nature.
 
 Ultimately, it's a personal decision. Having an opt-out setting at all is a positive. But **choosing opt-out as the default rather than opt-in** will inevitably draw criticism. Requiring users to actively disable collection, rather than actively enable it, is a deliberate design choice — and not one that favors the user.
 

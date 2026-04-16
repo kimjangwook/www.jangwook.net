@@ -1,9 +1,6 @@
 ---
 title: 'Mistral Voxtral TTS — 3-Second Voice Cloning, Open Weight, But No Japanese'
-description: >-
-  Analyzing Mistral's 4B parameter open-weight TTS model Voxtral. It beat
-  ElevenLabs in human evaluations, but the lack of Japanese support is a
-  dealbreaker for Asia-focused projects.
+description: "Analyzing Mistral's 4B open-weight TTS model Voxtral. It beat ElevenLabs in human evaluations but lacks Japanese support, a dealbreaker for Asian markets."
 pubDate: '2026-03-29'
 heroImage: ../../../assets/blog/mistral-voxtral-tts-open-weight-speech-hero.jpg
 tags:
@@ -67,7 +64,7 @@ Here's what Voxtral brings to the table:
 
 It reportedly beat ElevenLabs Flash v2.5 in human evaluations. This is Mistral's own claim, so independent verification is needed, but publishing blind A/B test results at all signals confidence.
 
-The 4B size is also noteworthy. Recent smartphone NPUs can handle 7-10B inference, making Voxtral a realistic candidate for on-device TTS. Not as tiny as Kitten TTS (14M), but the quality-to-size ratio is compelling.
+The 4B size is also noteworthy. Recent smartphone NPUs can handle 7-10B inference, making Voxtral a realistic candidate for on-device TTS. Not as tiny as [Kitten TTS](/en/blog/en/kitten-tts-v08-tiny-sota) (14M), but the quality-to-size ratio is compelling.
 
 ## TTS Engine Comparison: Engines I've Actually Used
 
@@ -107,7 +104,7 @@ response = requests.post(
 )
 ```
 
-Where KaniTTS2 needed 3GB VRAM for voice cloning, Voxtral does it in one API call. Running locally means downloading weights from Hugging Face, but at 4B parameters, 8GB VRAM should suffice.
+Where [KaniTTS2](/en/blog/en/kanitts2-voice-cloning) needed 3GB VRAM for voice cloning, Voxtral does it in one API call. Running locally means downloading weights from Hugging Face, but at 4B parameters, 8GB VRAM should suffice.
 
 Honestly, I can't judge the actual quality of 3-second cloning without hearing it myself. Mistral's demo samples were impressive, but demos always showcase the best cases.
 
