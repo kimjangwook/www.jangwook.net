@@ -2417,5 +2417,16 @@
       "devops": 0.65,
       "architecture": 0.7
     }
+  },
+  "anthropic-claude-performance-decline-controversy-april-2026": {
+    "pubDate": "2026-04-17",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.55,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.5,
+      "architecture": 0.6
+    }
   }
 }
