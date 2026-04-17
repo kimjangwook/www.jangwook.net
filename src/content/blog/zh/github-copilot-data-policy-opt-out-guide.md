@@ -1,6 +1,8 @@
 ---
 title: GitHub Copilot 4月起将用你的代码训练AI — 不退出就等于同意
-description: 'GitHub宣布从4月24日起，Copilot Free/Pro/Pro+用户的代码片段、内联建议采纳及对话交互等数据将默认用于AI模型训练。未主动关闭此选项即视为同意接受数据采集。整理具体退出步骤、所采集数据的类型与范围，以及企业和涉密项目开发者的实际应对建议，还包括团队管理员的组织策略设置要点。'
+description: >-
+  GitHub宣布从4月24日起，Copilot
+  Free/Pro/Pro+用户的代码片段、内联建议采纳及对话交互等数据将默认用于AI模型训练。未主动关闭此选项即视为同意接受数据采集。整理具体退出步骤、所采集数据的类型与范围，以及企业和涉密项目开发者的实际应对建议，还包括团队管理员的组织策略设置要点。
 pubDate: '2026-03-27'
 heroImage: ../../../assets/blog/github-copilot-data-policy-opt-out-guide-hero.jpg
 tags:

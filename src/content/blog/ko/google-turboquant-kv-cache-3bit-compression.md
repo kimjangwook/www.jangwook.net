@@ -63,7 +63,7 @@ LLM 추론에서 가장 큰 메모리 병목은 모델 가중치가 아니라 KV
 - H100 80GB VRAM에서 모델 자체를 올리고 나면 KV cache에 쓸 공간이 빠듯
 - 배치 사이즈를 늘려 처리량을 높이고 싶어도 메모리가 부족
 
-기존에도 양자화로 이 문제를 해결하려는 시도는 많았다. INT8, INT4 양자화가 대표적인데, 3비트 이하로 내려가면 정확도가 눈에 띄게 떨어지는 것이 한계였다.
+기존에도 양자화로 이 문제를 해결하려는 시도는 많았다. [INT8, INT4 양자화](/ko/blog/ko/prismml-bonsai-1bit-llm-edge-ai)가 대표적인데, 3비트 이하로 내려가면 정확도가 눈에 띄게 떨어지는 것이 한계였다.
 
 ## TurboQuant의 핵심 아이디어 두 가지
 
@@ -125,7 +125,7 @@ def turboquant_attention(Q, K, V):
 
 LLM 추론 비용의 상당 부분이 GPU 메모리에서 온다. 모델 자체는 이미 다양한 양자화(GPTQ, AWQ, GGUF 등)로 압축하고 있지만, KV cache는 상대적으로 손대지 못하고 있었다. TurboQuant가 보여주는 것은 <strong>"하드웨어 스케일링 없이도 긴 컨텍스트를 효율적으로 처리할 수 있는 길"</strong>이다.
 
-개인적으로 가장 기대되는 적용 시나리오는 로컬 LLM이다. 24GB VRAM의 소비자 GPU에서 128K 컨텍스트를 돌리는 것은 현재로서는 거의 불가능한데, KV cache를 6배 줄일 수 있다면 이야기가 완전히 달라진다. llama.cpp 생태계에서 이걸 구현한다면 정말 재미있어질 것이다.
+개인적으로 가장 기대되는 적용 시나리오는 로컬 LLM이다. [24GB VRAM의 소비자 GPU](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)에서 128K 컨텍스트를 돌리는 것은 현재로서는 거의 불가능한데, KV cache를 6배 줄일 수 있다면 이야기가 완전히 달라진다. [llama.cpp](/ko/blog/ko/llama-cpp-iq-quantization-merge) 생태계에서 이걸 구현한다면 정말 재미있어질 것이다.
 
 ## 참고 자료
 

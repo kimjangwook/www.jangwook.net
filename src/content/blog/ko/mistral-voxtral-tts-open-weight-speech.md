@@ -1,6 +1,9 @@
 ---
 title: 'Mistral Voxtral TTS — 3초 보이스 클로닝에 오픈 웨이트, 그런데 일본어가 없다'
-description: 'Mistral이 공개한 4B 파라미터 오픈 웨이트 TTS 모델 Voxtral을 분석한다. ElevenLabs를 인간 평가에서 이겼고 3초 보이스 클로닝을 지원하지만, 일본어·한국어 미지원이라는 치명적 빈자리가 아시아 시장 활용을 막는다. 라이선스 함정과 실무 대안도 함께 짚는다.'
+description: >-
+  Mistral이 공개한 4B 파라미터 오픈 웨이트 TTS 모델 Voxtral을 분석한다. ElevenLabs를 인간 평가에서 이겼고 3초
+  보이스 클로닝을 지원하지만, 일본어·한국어 미지원이라는 치명적 빈자리가 아시아 시장 활용을 막는다. 라이선스 함정과 실무 대안도 함께
+  짚는다.
 pubDate: '2026-03-29'
 heroImage: ../../../assets/blog/mistral-voxtral-tts-open-weight-speech-hero.jpg
 tags:

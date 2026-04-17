@@ -1,10 +1,8 @@
 ---
-title: >-
-  The Complete Guide to Claude Code Agent Teams — Building and Running Agent
-  Teams with OpenClaw
+title: "Claude Code Agent Teams: 5-Team Setup and Production Guide"
 description: >-
-  A hands-on guide to enabling Claude Code's Agent Teams in an OpenClaw
-  environment, configuring 5 specialized teams, and running them in production.
+  How to activate Claude Code Agent Teams in OpenClaw: 5 specialized agents with
+  multi-agent orchestrator pattern for production-grade workflow automation.
 pubDate: '2026-02-07'
 heroImage: ../../../assets/blog/claude-agent-teams-guide-hero.png
 tags:

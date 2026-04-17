@@ -1,8 +1,8 @@
 ---
 title: AIコーディングツールが生む「便利ループ」— TypeScript 66%急騰と言語選択の構造変化
 description: >-
-  GitHub
-  Octoverseデータが示すAIコーディングツールの便利ループ効果。TypeScriptが66%急騰した理由とEM/CTO視点の技術スタック戦略を分析します。
+  GitHub OctoverseデータでAIコーディングツールが生む便利ループ効果を分析します。TypeScript 66%急騰とPython首位獲得の構造的原因を
+  EM・CTO視点で解説し、AIコーディング時代における技術スタックの長期意思決定フレームワークを具体的に提示します。
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/ai-convenience-loop-reshaping-language-choices-hero.png
 tags:

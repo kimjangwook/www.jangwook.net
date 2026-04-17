@@ -1,9 +1,8 @@
 ---
 title: 'AI''s Convenience Loop: How Coding Tools Reshape Language Choices'
 description: >-
-  GitHub Octoverse data reveals the convenience loop effect of AI coding tools.
-  Explore why TypeScript surged 66% and what it means for tech stack strategy
-  from an EM/CTO perspective.
+  AI coding tools create a convenience loop reshaping language popularity. Why TypeScript
+  surged 66% and Python hit #1, with EM/CTO tech stack decision framework.
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/ai-convenience-loop-reshaping-language-choices-hero.png
 tags:

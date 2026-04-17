@@ -65,7 +65,7 @@ relatedPosts:
 
 ## 왜 또 다른 프레임워크인가
 
-대부분의 에이전트 프레임워크는 LLM 호출 로직에 집중한다. 프롬프트 체이닝, 도구 호출, 멀티에이전트 대화 — 전부 "에이전트가 뭘 할 것인가"에 대한 답이다. 그런데 프로덕션에서 에이전트를 돌려본 사람이라면 이런 경험이 있을 것이다.
+대부분의 에이전트 프레임워크는 LLM 호출 로직에 집중한다. 프롬프트 체이닝, 도구 호출, [멀티에이전트 대화](/ko/blog/ko/claude-agent-teams-guide) — 전부 "에이전트가 뭘 할 것인가"에 대한 답이다. 그런데 프로덕션에서 에이전트를 돌려본 사람이라면 이런 경험이 있을 것이다.
 
 - LLM API 호출 중간에 타임아웃이 나서 전체 워크플로우가 실패
 - 에이전트가 3단계 중 2단계까지 처리했는데 Pod이 재시작돼서 처음부터 다시 실행
@@ -100,9 +100,9 @@ dapr run --app-id weather-agent --app-port 8001 \
   --resources-path ./components -- python agent.py
 ```
 
-내부적으로는 Dapr의 **Virtual Actor 모델** 위에서 동작한다. 각 에이전트가 하나의 Actor로 표현되고, Actor는 스레드 세이프하면서 분산 환경에서 자동으로 배치된다. 수천 개의 에이전트를 단일 머신에서 돌려도 되고, Kubernetes 클러스터에 분산해도 된다.
+내부적으로는 Dapr의 **Virtual Actor 모델** 위에서 동작한다. 각 에이전트가 하나의 Actor로 표현되고, Actor는 스레드 세이프하면서 분산 환경에서 자동으로 배치된다. 수천 개의 에이전트를 단일 머신에서 돌려도 되고, Kubernetes 클러스터에 분산해도 된다. [GitHub Actions 기반 에이전트 워크플로우](/ko/blog/ko/github-agentic-workflows-cicd-ai)와 결합하면 완전한 CI/CD 파이프라인을 구성할 수 있다.
 
-나는 이 접근이 꽤 합리적이라고 본다. 에이전트 프레임워크가 자체적으로 분산 시스템을 재발명하는 대신, 이미 검증된 인프라 위에 올리는 거니까. LangGraph가 커스텀 체크포인팅을 구현하고, CrewAI가 자체 메모리 시스템을 만드는 동안, Dapr Agents는 Redis든 PostgreSQL이든 DynamoDB든 — 이미 운영 중인 30개 이상의 데이터베이스를 상태 저장소로 그냥 꽂아 쓴다.
+나는 이 접근이 꽤 합리적이라고 본다. 에이전트 프레임워크가 자체적으로 분산 시스템을 재발명하는 대신, [이미 검증된 인프라 위에 올리는](/ko/blog/ko/deep-agents-architecture-optimization) 거니까. LangGraph가 커스텀 체크포인팅을 구현하고, CrewAI가 자체 메모리 시스템을 만드는 동안, Dapr Agents는 Redis든 PostgreSQL이든 DynamoDB든 — 이미 운영 중인 30개 이상의 데이터베이스를 상태 저장소로 그냥 꽂아 쓴다.
 
 ## Scale-to-Zero와 성능
 

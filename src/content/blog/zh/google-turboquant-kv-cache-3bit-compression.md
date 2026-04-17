@@ -63,7 +63,7 @@ LLM推理中最大的内存瓶颈并非模型权重本身，而是KV cache。Tra
 - 在H100 80GB VRAM中加载模型本体之后，留给KV cache的空间所剩无几
 - 想通过增大batch size提升吞吐量，却受限于内存不足
 
-此前也有大量用量化来解决这一问题的尝试，INT8、INT4量化是典型方案，但降到3位以下时精度明显下滑，这是难以逾越的限制。
+此前也有大量用量化来解决这一问题的尝试，[INT8、INT4量化](/zh/blog/zh/prismml-bonsai-1bit-llm-edge-ai)是典型方案，但降到3位以下时精度明显下滑，这是难以逾越的限制。
 
 ## TurboQuant的两个核心思路
 
@@ -125,7 +125,7 @@ def turboquant_attention(Q, K, V):
 
 LLM推理成本的相当大一部分来自GPU内存。模型本体已经通过各类量化方案（GPTQ、AWQ、GGUF等）得到压缩，而KV cache相对来说一直是难以触碰的部分。TurboQuant所揭示的，是<strong>"无需扩展硬件规模，也能高效处理长上下文的路径"</strong>。
 
-我个人最期待的应用场景是本地LLM。在24GB VRAM的消费级GPU上运行128K上下文，目前几乎是不可能的事，但如果KV cache能压缩6倍，整个局面将截然不同。如果llama.cpp生态系统能实现这项技术，那将会非常有趣。
+我个人最期待的应用场景是本地LLM。在[24GB VRAM的消费级GPU](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)上运行128K上下文，目前几乎是不可能的事，但如果KV cache能压缩6倍，整个局面将截然不同。如果[llama.cpp](/zh/blog/zh/llama-cpp-iq-quantization-merge)生态系统能实现这项技术，那将会非常有趣。
 
 ## 参考资料
 

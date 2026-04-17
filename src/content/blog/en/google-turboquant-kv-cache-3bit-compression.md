@@ -64,7 +64,7 @@ Some concrete numbers:
 - After loading the model itself onto an H100 with 80GB VRAM, there's barely room left for the cache
 - Increasing batch size to boost throughput is constrained by this same memory pressure
 
-There have been plenty of attempts to solve this with quantization. INT8 and INT4 are the standard approaches, but going below 3 bits has historically meant a noticeable drop in accuracy — that's been the hard limit.
+There have been plenty of attempts to solve this with quantization. [INT8 and INT4](/en/blog/en/prismml-bonsai-1bit-llm-edge-ai) are the standard approaches, but going below 3 bits has historically meant a noticeable drop in accuracy — that's been the hard limit.
 
 ## TurboQuant's Two Core Ideas
 
@@ -126,7 +126,7 @@ Despite those critiques, I think the direction of this research has real value.
 
 A significant portion of LLM inference costs comes from GPU memory. Model weights are already being compressed through various quantization schemes (GPTQ, AWQ, GGUF, etc.), but KV cache has largely been left untouched. What TurboQuant demonstrates is <strong>a path to handling long contexts efficiently without scaling hardware</strong>.
 
-The scenario I'm most excited about is local LLMs. Running a 128K context on a consumer GPU with 24GB VRAM is currently near-impossible — but if you can cut KV cache by 6x, that changes the picture entirely. If the llama.cpp ecosystem picks this up, things get very interesting very fast.
+The scenario I'm most excited about is local LLMs. Running a 128K context on a [consumer GPU with 24GB VRAM](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp) is currently near-impossible — but if you can cut KV cache by 6x, that changes the picture entirely. If the [llama.cpp](/en/blog/en/llama-cpp-iq-quantization-merge) ecosystem picks this up, things get very interesting very fast.
 
 ## References
 

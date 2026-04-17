@@ -65,7 +65,7 @@ relatedPosts:
 
 ## 为什么又要搞一个新框架
 
-大多数 Agent 框架都聚焦在 LLM 调用逻辑上。Prompt chaining、工具调用、多 Agent 对话 —— 全都是在回答"Agent 该做什么"这个问题。但如果你真的在生产环境跑过 Agent，大概率遇到过这些情况：
+大多数 Agent 框架都聚焦在 LLM 调用逻辑上。Prompt chaining、工具调用、[多 Agent 对话](/zh/blog/zh/claude-agent-teams-guide) —— 全都是在回答"Agent 该做什么"这个问题。但如果你真的在生产环境跑过 Agent，大概率遇到过这些情况：
 
 - LLM API 调用中途超时，整个 workflow 直接挂掉
 - Agent 三步任务跑到第二步，Pod 重启了，只能从头来过

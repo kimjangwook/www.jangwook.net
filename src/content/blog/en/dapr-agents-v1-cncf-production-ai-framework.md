@@ -66,7 +66,7 @@ Honestly, my first reaction was "yet another agent framework?" LangGraph, CrewAI
 
 ## Why Yet Another Framework
 
-Most agent frameworks focus on LLM call logic. Prompt chaining, tool calling, multi-agent conversation — it's all about "what should the agent do." But if you've ever run agents in production, you've probably experienced something like this:
+Most agent frameworks focus on LLM call logic. Prompt chaining, tool calling, [multi-agent conversation](/en/blog/en/claude-agent-teams-guide) — it's all about "what should the agent do." But if you've ever run agents in production, you've probably experienced something like this:
 
 - A timeout mid-LLM API call that tanks the entire workflow
 - An agent that processed steps 1 and 2 out of 3, then the Pod restarted and it ran everything from scratch
@@ -103,7 +103,7 @@ dapr run --app-id weather-agent --app-port 8001 \
 
 Under the hood, it runs on Dapr's **Virtual Actor model**. Each agent is represented as an Actor, and Actors are thread-safe and automatically placed across distributed environments. You can run thousands of agents on a single machine or distribute them across a Kubernetes cluster.
 
-I think this approach is quite sensible. Instead of agent frameworks reinventing distributed systems on their own, it builds on top of already-proven infrastructure. While LangGraph implements custom checkpointing and CrewAI builds its own memory system, Dapr Agents just plugs into whatever you're already running — Redis, PostgreSQL, DynamoDB — with support for 30+ databases as state stores out of the box.
+I think this approach is quite sensible. Instead of agent frameworks reinventing distributed systems on their own, it builds on top of [already-proven infrastructure](/en/blog/en/deep-agents-architecture-optimization). While LangGraph implements custom checkpointing and CrewAI builds its own memory system, Dapr Agents just plugs into whatever you're already running — Redis, PostgreSQL, DynamoDB — with support for 30+ databases as state stores out of the box.
 
 ## Scale-to-Zero and Performance
 

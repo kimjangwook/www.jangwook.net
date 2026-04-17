@@ -1,6 +1,9 @@
 ---
 title: GitHub Copilot이 4월부터 내 코드로 AI를 학습한다 — 옵트아웃 안 하면 동의한 것
-description: 'GitHub이 3월 25일 Copilot Free·Pro·Pro+ 사용자의 코드 스니펫과 채팅 인터랙션 데이터를 AI 모델 학습에 기본 사용하겠다고 발표했다. 4월 24일까지 설정 변경이 없으면 자동 동의로 처리된다. 옵트아웃 방법, 수집 데이터 범위, 개발자 실무 대응법을 정리한다.'
+description: >-
+  GitHub이 3월 25일 Copilot Free·Pro·Pro+ 사용자의 코드 스니펫과 채팅 인터랙션 데이터를 AI 모델 학습에 기본
+  사용하겠다고 발표했다. 4월 24일까지 설정 변경이 없으면 자동 동의로 처리된다. 옵트아웃 방법, 수집 데이터 범위, 개발자 실무 대응법을
+  정리한다.
 pubDate: '2026-03-27'
 heroImage: ../../../assets/blog/github-copilot-data-policy-opt-out-guide-hero.jpg
 tags:

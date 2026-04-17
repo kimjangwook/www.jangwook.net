@@ -52,7 +52,7 @@ draft: true
 
 A theoretical physics paper was completed in two weeks. That's work that normally takes a year.
 
-On March 23, Anthropic launched its new Science blog. The first post has a provocative title — "Vibe Physics: The AI Grad Student." It's an experiment log from Harvard physics professor Matthew Schwartz, who directly supervised Claude Opus 4.5 through theoretical physics calculations.
+On March 23, Anthropic launched its new Science blog. The first post has a provocative title — "Vibe Physics: The AI Grad Student." It's an experiment log from Harvard physics professor Matthew Schwartz, who directly supervised [Claude Opus 4.5](/en/blog/en/anthropic-claude-performance-decline-controversy-april-2026) through theoretical physics calculations.
 
 I'll be honest — when I saw the title, I thought it'd be another "AI is revolutionizing science" piece. But it turned out to be something quite different. Less a success story, more a **supervision journal**.
 
@@ -73,7 +73,7 @@ Schwartz rated current LLMs' theoretical physics capability at the **G2 (second-
 
 I don't think this assessment applies only to physics. I get the same feeling when having AI write code or prose. It's impressively fast up to 80%, but that last 20% requires an expert's eye. The popularity of "vibe coding" stems from the same dynamic — things seem to work, but you need a human to verify they actually do.
 
-The implication is significant. AI isn't "replacing" research — it's **amplifying expert productivity**. If someone without physics knowledge asks Claude to write a paper, the output would likely be plausible but wrong.
+The implication is significant. AI isn't "replacing" research — it's **[amplifying expert productivity](/en/blog/en/ai-agent-cost-reality)**. If someone without physics knowledge asks Claude to write a paper, the output would likely be plausible but wrong.
 
 ## A Practical Pattern Released Alongside: The Ralph Loop
 
@@ -114,6 +114,6 @@ Personally, I find this direction exciting but also concerning. The risks of AI 
 
 You probably won't be writing physics papers, but the lessons from this experiment are clear.
 
-**Patterns for delegating long-running tasks to AI are being established.** Provide project context via CLAUDE.md, track state via CHANGELOG.md, verify quality with a test oracle. This structure applies equally whether you're doing physics research, building data pipelines, or tackling a large-scale refactoring.
+**Patterns for delegating long-running tasks to AI are being established.** Provide project context via [CLAUDE.md](/en/blog/en/agents-md-effectiveness), track state via CHANGELOG.md, verify quality with a test oracle. This structure applies equally whether you're doing physics research, building data pipelines, or tackling a large-scale refactoring.
 
 Just don't forget the "G2 level" assessment. An eager but supervision-required grad student. Use the output without that premise, and problems will surface as fast as the work was produced.

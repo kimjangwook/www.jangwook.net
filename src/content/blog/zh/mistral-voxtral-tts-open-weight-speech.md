@@ -1,6 +1,9 @@
 ---
 title: Mistral Voxtral TTS — 3秒语音克隆+开放权重，但不支持日语
-description: '分析Mistral于2026年3月发布的4B参数开放权重TTS模型Voxtral：盲测中以更自然语调击败ElevenLabs Flash v2.5，3秒音频即可完成零样本语音克隆，且仅需8GB显存本地运行。然而日语和韩语的缺席是进军亚洲市场的致命短板。详解CC BY NC 4.0商用限制及替代方案选型。'
+description: >-
+  分析Mistral于2026年3月发布的4B参数开放权重TTS模型Voxtral：盲测中以更自然语调击败ElevenLabs Flash
+  v2.5，3秒音频即可完成零样本语音克隆，且仅需8GB显存本地运行。然而日语和韩语的缺席是进军亚洲市场的致命短板。详解CC BY NC
+  4.0商用限制及替代方案选型。
 pubDate: '2026-03-29'
 heroImage: ../../../assets/blog/mistral-voxtral-tts-open-weight-speech-hero.jpg
 tags:
