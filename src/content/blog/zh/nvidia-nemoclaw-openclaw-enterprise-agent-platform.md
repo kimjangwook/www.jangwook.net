@@ -109,7 +109,7 @@ agent:
     retention_days: 90
 ```
 
-我认为这相当实用。能够声明式地为Agent定义"这个可以做，那个不行"，意味着与安全团队的对话会变得具体得多。比起"我们想引入Agent，可以吗？"，"Agent会按照这个策略文件运行"显然更有说服力。
+我认为这相当实用。能够声明式地为Agent定义"这个可以做，那个不行"，意味着与安全团队的对话会变得具体得多。比起"我们想引入Agent，可以吗？"，"Agent会按照这个策略文件运行"显然更有说服力。这种声明式治理并非NemoClaw独有的方向，[ADL（Agent Definition Language）](/zh/blog/zh/adl-agent-definition-language-governance)等行业层面的Agent治理标准化动向同样值得关注。
 
 **3. 审计日志与可观测性**
 
@@ -146,6 +146,6 @@ GTC主题演讲中炫目的Demo和"一行命令创建Agent"的宣传确实让人
 
 当NemoClaw成熟后，Agent引入最大的障碍——"说服安全团队"——可能会变得容易得多。用一个策略文件定义Agent的行为范围，通过审计日志实现事后追踪，这意味着有了一条满足合规要求的清晰路径。
 
-不过，与其现在急于引入NemoClaw，**提前开始设计策略文件**才是更现实的做法。先梳理好团队的Agent需要访问哪些工具、哪些数据绝不能碰，这样无论是NemoClaw还是其他方案，在引入时都能立即应用。
+不过，与其现在急于引入NemoClaw，**提前开始设计策略文件**才是更现实的做法。从[AI Agent引入的实际成本](/zh/blog/zh/ai-agent-cost-reality)来看，一次治理缺失引发的事故，其代价往往高于数月的订阅费用。先梳理好团队的Agent需要访问哪些工具、哪些数据绝不能碰，这样无论是NemoClaw还是其他方案，在引入时都能立即应用。[Anthropic的Agent技能结构化方法](/zh/blog/zh/anthropic-agent-skills-practical-guide)在工具权限设计方面提供了实用参考。
 
 黄仁勋把Agent称为"下一代计算平台"可能有些夸张。但Agent要从个人工具迈向企业基础设施，确实需要NemoClaw这样的治理层，这一点没错。问题在于速度——NVIDIA能多快从Alpha走到Production Ready，才是关键所在。

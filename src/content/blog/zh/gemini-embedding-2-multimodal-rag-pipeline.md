@@ -51,7 +51,7 @@ relatedPosts:
 
 2026年3月10日，Google 发布了 <strong>Gemini Embedding 2</strong>，称其为"我们的首个原生多模态 embedding 模型"。该模型能够将文本、图像、视频、音频和文档映射到<strong>同一个向量空间</strong>。
 
-现有 RAG 流水线最大的限制在于只能处理文本。即使内部 Wiki 中有架构图，产品手册中有截图，在 embedding 阶段也会被全部忽略。结果导致明明存在与用户提问相关的信息，却无法被检索到的情况反复出现。
+[现有 RAG 流水线](/zh/blog/zh/dena-llm-study-part4-rag)最大的限制在于只能处理文本。即使内部 Wiki 中有架构图，产品手册中有截图，在 embedding 阶段也会被全部忽略。结果导致明明存在与用户提问相关的信息，却无法被检索到的情况反复出现。
 
 Gemini Embedding 2 从根本上解决了这个问题。
 
@@ -237,7 +237,7 @@ Gemini Embedding 2 可通过 `task_type` 参数指定 embedding 目的：
 
 ### 2. 评估供应商依赖风险
 
-目前 Gemini Embedding 2 是 Google 专属产品。对于采用多云战略的企业而言：
+目前 Gemini Embedding 2 是 Google 专属产品。对于采用多云战略的企业而言，从 [A2A + MCP 混合架构](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide) 的视角预先将 embedding 层设计为可替换接口，长期来看更为有利：
 
 - <strong>embedding 层抽象化</strong>：将 embedding 模型设计为可替换的接口
 - <strong>向量格式兼容</strong>：3,072 维向量与大多数向量数据库兼容
@@ -247,7 +247,7 @@ Gemini Embedding 2 可通过 `task_type` 参数指定 embedding 目的：
 
 将多模态数据发送至外部 API 涉及治理问题：
 
-- 在 Vertex AI 中可使用 <strong>VPC Service Controls</strong> 设置数据边界
+- 在 Vertex AI 中可使用 <strong>VPC Service Controls</strong> 设置数据边界（[BigQuery MCP 前缀过滤](/zh/blog/zh/bigquery-mcp-prefix-filtering)所体现的精细化企业数据访问控制模式，在 Google 生态系统中保持高度一致性）
 - 支持 <strong>CMEK（客户自管密钥）</strong>
 - 建议对会议录像和客户通话语音进行 PII 脱敏后再进行 embedding 处理
 - 若有 Data Residency 要求，必须确认区域选择

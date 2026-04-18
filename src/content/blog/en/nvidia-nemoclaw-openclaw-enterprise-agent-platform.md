@@ -110,7 +110,7 @@ agent:
     retention_days: 90
 ```
 
-I think this is genuinely practical. Being able to declaratively define "this is allowed, that isn't" for an agent makes conversations with the security team far more concrete. "We want to adopt agents — is that okay?" is a much weaker pitch than "here's the policy file that governs how the agent operates."
+I think this is genuinely practical. Being able to declaratively define "this is allowed, that isn't" for an agent makes conversations with the security team far more concrete. "We want to adopt agents — is that okay?" is a much weaker pitch than "here's the policy file that governs how the agent operates." This kind of declarative governance isn't unique to NemoClaw — industry-wide standardization efforts like [ADL (Agent Definition Language)](/en/blog/en/adl-agent-definition-language-governance) are moving in the same direction and are worth watching alongside this.
 
 **3. Audit Logs and Observability**
 
@@ -147,6 +147,6 @@ Personally, I'm excited about the direction of the policy engine. Right now it's
 
 Once NemoClaw matures, the biggest barrier to agent adoption — "convincing the security team" — could become significantly easier. Defining an agent's behavioral scope with a single policy file and enabling post-hoc tracking via audit logs means there's a clear path to meeting compliance requirements.
 
-That said, rather than rushing to adopt NemoClaw right now, the realistic move is to **start designing your policy files today**. If you map out which tools your team's agents should access and which data they should never touch, you'll be ready to apply those policies immediately when NemoClaw — or any alternative solution — is ready for production.
+That said, rather than rushing to adopt NemoClaw right now, the realistic move is to **start designing your policy files today**. When you look at [the real cost of AI agent adoption](/en/blog/en/ai-agent-cost-reality), a single governance failure can cost more than months of subscriptions. If you map out which tools your team's agents should access and which data they should never touch, you'll be ready to apply those policies immediately when NemoClaw — or any alternative solution — is ready for production. [Anthropic's structured approach to agent skills](/en/blog/en/anthropic-agent-skills-practical-guide) is a useful reference for thinking through tool permission design.
 
 Jensen Huang calling agents "the next computing platform" might be an exaggeration. But he's right that agents need a governance layer like NemoClaw to make the leap from personal tools to enterprise infrastructure. The question is speed — how quickly NVIDIA can take this from alpha to production-ready is what really matters.

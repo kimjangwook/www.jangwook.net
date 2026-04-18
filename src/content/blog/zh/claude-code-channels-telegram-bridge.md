@@ -88,7 +88,7 @@ claude --channels plugin:telegram@claude-plugins-official
 
 ## 从 OpenClaw 借鉴了什么，又改变了什么
 
-我使用 OpenClaw 已经有相当长的时间了。Cron 集成、多 Channel 配置等内容在这个博客中也多次介绍过。所以我看 Claude Code Channels 的视角自然有些不同。
+我使用 [OpenClaw 的高级功能](/zh/blog/zh/openclaw-advanced-usage) 已经有相当长的时间了。Cron 集成、多 Channel 配置等内容在这个博客中也多次介绍过。所以我看 Claude Code Channels 的视角自然有些不同。
 
 **借鉴的核心概念：**
 - 消息平台 → AI Agent 的消息注入
@@ -125,7 +125,7 @@ OpenClaw 基于 Webhook，有时需要开放入站端口。Claude Code Channels 
 
 ## 实际能做什么
 
-我目前用 Claude Code + launchd Cron 运行这个博客的自动发布流水线。接入 Channels 后，有几个很有趣的场景。
+我目前用 Claude Code + launchd Cron 运行这个博客的[自动发布流水线](/zh/blog/zh/effiflow-automation-analysis-part3)。接入 Channels 后，有几个很有趣的场景。
 
 **1. CI/CD 告警 → 即时调试**
 
@@ -157,7 +157,7 @@ Cron 任务失败时将错误日志转发到 Channel，Claude 自动分析原因
 - 已经将 Claude Code 作为主力工具
 - 想把配置时间降到最低（一个标志搞定）
 
-就个人而言，我打算两者并行。Cron 基础的自动化继续使用现有的 OpenClaw 流水线，Telegram 基础的交互式编程请求则切换到 Claude Code Channels，这是最现实的方案。
+就个人而言，我打算两者并行。Cron 基础的自动化继续使用现有的 OpenClaw 流水线，Telegram 基础的交互式编程请求则切换到 Claude Code Channels，这是最现实的方案。如果你正在考虑全面迁移到 Claude Code CLI，[Claude Code CLI 迁移指南](/zh/blog/zh/claude-code-cli-migration-guide)也值得先读一读。
 
 ---
 

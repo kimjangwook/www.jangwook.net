@@ -1,6 +1,6 @@
 ---
 title: 'A2A + MCP 하이브리드 아키텍처: 2026년 멀티에이전트 프로덕션 전략'
-description: 'Google A2A와 Anthropic MCP는 경쟁이 아닌 상호보완 관계입니다. EM/CTO 관점에서 두 프로토콜의 역할 차이를 이해하고, 멀티에이전트 시스템을 프로덕션에서 안전하게 운영하는 전략을 정리합니다.'
+description: 'Google A2A는 에이전트 간 통신을, Anthropic MCP는 도구·컨텍스트 연결을 담당합니다. 두 프로토콜은 경쟁이 아닌 상호보완 관계로, EM/CTO 관점의 역할 분리와 2026년 멀티에이전트 프로덕션 운영 전략을 정리합니다.'
 pubDate: '2026-03-09'
 heroImage: '../../../assets/blog/a2a-mcp-hybrid-architecture-production-guide-hero.jpg'
 tags:

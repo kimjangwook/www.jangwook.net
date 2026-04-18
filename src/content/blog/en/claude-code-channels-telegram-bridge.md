@@ -92,7 +92,7 @@ One flag and you're done. Set up a Telegram bot token, authenticate with a pairi
 
 ## What They Borrowed from OpenClaw, and What They Changed
 
-I've been using OpenClaw for quite a while now. I've written about cron integrations, multi-channel setups, and more on this blog. So naturally, I look at Claude Code Channels through a different lens.
+I've been using [OpenClaw's advanced features](/en/blog/en/openclaw-advanced-usage) for quite a while now. I've written about cron integrations, multi-channel setups, and more on this blog. So naturally, I look at Claude Code Channels through a different lens.
 
 **Core concepts borrowed:**
 - Message injection from messaging platforms → AI agent
@@ -129,7 +129,7 @@ It's labeled "research preview" for a reason, and there are real friction points
 
 ## So What Can You Actually Do with It?
 
-I currently run an automated posting pipeline for this blog using Claude Code + launchd cron jobs. Hooking up Channels opens up a few interesting scenarios.
+I currently run an [automated posting pipeline](/en/blog/en/effiflow-automation-analysis-part3) for this blog using Claude Code + launchd cron jobs. Hooking up Channels opens up a few interesting scenarios.
 
 **1. CI/CD alerts → immediate debugging**
 
@@ -161,7 +161,7 @@ Having used both, this isn't a "which one is better" question.
 - You're already using Claude Code as your primary tool
 - You want minimal setup time (one flag and done)
 
-Personally, I plan to use both. I'll keep my existing OpenClaw pipeline for cron-based automation and switch to Claude Code Channels for conversational coding requests via Telegram. That's the pragmatic approach.
+Personally, I plan to use both. I'll keep my existing OpenClaw pipeline for cron-based automation and switch to Claude Code Channels for conversational coding requests via Telegram. That's the pragmatic approach. If you're considering a full transition to Claude Code CLI, the [Claude Code CLI migration guide](/en/blog/en/claude-code-cli-migration-guide) is worth reading first.
 
 ---
 

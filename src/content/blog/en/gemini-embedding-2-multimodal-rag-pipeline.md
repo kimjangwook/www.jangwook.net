@@ -52,7 +52,7 @@ relatedPosts:
 
 On March 10, 2026, Google announced <strong>Gemini Embedding 2</strong> — described as "our first native multimodal embedding model." It maps text, images, video, audio, and documents into <strong>a single vector space</strong>.
 
-The biggest limitation of existing RAG pipelines was that they could only handle text. Even when an internal wiki contained diagrams, or a product manual included screenshots, all of that was ignored at the embedding stage. As a result, searches repeatedly failed to surface relevant information despite it being present in the knowledge base.
+The biggest limitation of [existing RAG pipelines](/en/blog/en/dena-llm-study-part4-rag) was that they could only handle text. Even when an internal wiki contained diagrams, or a product manual included screenshots, all of that was ignored at the embedding stage. As a result, searches repeatedly failed to surface relevant information despite it being present in the knowledge base.
 
 Gemini Embedding 2 addresses this problem at its root.
 
@@ -238,7 +238,7 @@ According to Google's official blog, some customers have achieved <strong>70% la
 
 ### 2. Vendor Dependency Assessment
 
-Gemini Embedding 2 is currently Google-exclusive. For organizations running a multi-cloud strategy:
+Gemini Embedding 2 is currently Google-exclusive. For organizations running a multi-cloud strategy, thinking through this from an [A2A + MCP hybrid architecture](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide) perspective makes designing a swappable embedding layer a long-term advantage:
 
 - <strong>Abstract the embedding layer</strong>: Design the embedding model as a swappable interface
 - <strong>Vector format compatibility</strong>: 3,072-dimension vectors are compatible with most vector databases
@@ -248,7 +248,7 @@ Gemini Embedding 2 is currently Google-exclusive. For organizations running a mu
 
 Sending multimodal data to an external API introduces governance considerations:
 
-- On Vertex AI, <strong>VPC Service Controls</strong> can define data perimeters
+- On Vertex AI, <strong>VPC Service Controls</strong> can define data perimeters (the fine-grained enterprise data access control pattern exemplified by [BigQuery MCP prefix filtering](/en/blog/en/bigquery-mcp-prefix-filtering) is consistent across the Google ecosystem)
 - <strong>CMEK (Customer-Managed Encryption Keys)</strong> is supported
 - PII masking is recommended before embedding meeting recordings and customer call audio
 - If Data Residency requirements apply, confirm region selection carefully

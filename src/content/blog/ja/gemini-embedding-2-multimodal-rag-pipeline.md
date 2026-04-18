@@ -51,7 +51,7 @@ relatedPosts:
 
 2026年3月10日、Googleが<strong>Gemini Embedding 2</strong>を発表しました。「私たちの初のネイティブマルチモーダルエンベディングモデル」という説明が添えられています。テキスト、画像、動画、音声、ドキュメントを<strong>一つのベクトル空間</strong>にマッピングするモデルです。
 
-既存のRAGパイプラインの最大の制約は、テキストしか扱えない点でした。社内Wikiにダイアグラムがあっても、製品マニュアルにスクリーンショットが含まれていても、エンベディング段階ですべて無視されていました。結果として、ユーザーの質問のコンテキストに合った情報があるにもかかわらず検索されない状況が繰り返されていました。
+[既存のRAGパイプライン](/ja/blog/ja/dena-llm-study-part4-rag)の最大の制約は、テキストしか扱えない点でした。社内Wikiにダイアグラムがあっても、製品マニュアルにスクリーンショットが含まれていても、エンベディング段階ですべて無視されていました。結果として、ユーザーの質問のコンテキストに合った情報があるにもかかわらず検索されない状況が繰り返されていました。
 
 Gemini Embedding 2はこの問題を根本的に解決します。
 
@@ -237,7 +237,7 @@ Google公式ブログによると、一部の顧客は<strong>レイテンシ70%
 
 ### 2. ベンダー依存性の評価
 
-現在Gemini Embedding 2はGoogle専用です。マルチクラウド戦略を運用している企業であれば：
+現在Gemini Embedding 2はGoogle専用です。マルチクラウド戦略を運用している企業であれば、[A2A + MCPハイブリッドアーキテクチャ](/ja/blog/ja/a2a-mcp-hybrid-architecture-production-guide)の観点からエンベディングレイヤーを交換可能なインターフェースとして設計しておくことが長期的に有利です：
 
 - <strong>エンベディングレイヤーの抽象化</strong>：エンベディングモデルを交換可能なインターフェースとして設計
 - <strong>ベクトルフォーマットの互換性</strong>：3,072次元ベクトルは大部分のベクトルDBで互換
@@ -247,7 +247,7 @@ Google公式ブログによると、一部の顧客は<strong>レイテンシ70%
 
 マルチモーダルデータを外部APIに送信することはガバナンス上の問題を伴います。
 
-- Vertex AIでは<strong>VPC Service Controls</strong>でデータ境界の設定が可能
+- Vertex AIでは<strong>VPC Service Controls</strong>でデータ境界の設定が可能（[BigQuery MCPプレフィックスフィルタリング](/ja/blog/ja/bigquery-mcp-prefix-filtering)のようなきめ細かいデータアクセス制御パターンがGoogle生態系全体で一貫性を持って広がっている）
 - <strong>CMEK（Customer-Managed Encryption Keys）</strong>サポート
 - 会議録画や顧客通話音声はPIIマスキング後にエンベディング処理することを推奨
 - Data Residency要件がある場合はリージョン選択の確認が必須
