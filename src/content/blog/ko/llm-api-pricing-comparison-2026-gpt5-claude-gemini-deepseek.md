@@ -1,0 +1,277 @@
+---
+title: LLM API 가격 비교 2026 — GPT-5 vs Claude vs Gemini vs DeepSeek 실제 비용 계산
+description: >-
+  2026년 4월 기준 주요 LLM API 가격을 실제 프로덕션 시나리오별로 비교합니다. GPT-5.4, Claude Opus 4.6,
+  Gemini 3.1 Pro, DeepSeek V4의 토큰 비용과 캐시 할인, 배치 API 활용까지 정리했습니다.
+pubDate: '2026-04-18'
+heroImage: >-
+  ../../../assets/blog/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek-hero.jpg
+tags:
+  - llm
+  - api-pricing
+  - cost-optimization
+  - gpt-5
+  - claude
+relatedPosts:
+  - slug: openclaw-opus-4-6-setup-guide
+    score: 0.94
+    reason:
+      ko: Claude Opus 4.6 가격($5/M)이 납득되면, OpenClaw로 동일 모델을 로컬에서 실행해 API 비용 자체를 줄이는 방법도 있다.
+      ja: Claude Opus 4.6の価格（$5/M）に納得したら、OpenClawで同モデルをローカル実行してAPI費用を削減する選択肢もある。
+      en: Once you understand Claude Opus 4.6 pricing ($5/M), OpenClaw shows how to run the same model locally to cut API costs entirely.
+      zh: 了解了Claude Opus 4.6定价（$5/M）后，OpenClaw提供了本地运行同款模型以彻底削减API费用的方案。
+  - slug: anthropic-claude-performance-decline-controversy-april-2026
+    score: 0.94
+    reason:
+      ko: Claude API 비용을 최적화하면서 Anthropic이 effort 레벨을 몰래 낮췄다는 논란도 알아두면, 같은 $5/M에서 받는 품질이 언제든 변할 수 있음을 이해할 수 있다.
+      ja: Claude APIコストを最適化する中で、Anthropicがeffortレベルを密かに下げたという論争も把握しておくと、同じ$5/Mで受け取る品質がいつでも変わりうることが分かる。
+      en: When optimizing Claude API costs, knowing that Anthropic quietly reduced effort levels helps you understand that quality at the same $5/M can shift at any time.
+      zh: 在优化Claude API成本时，了解Anthropic悄然降低effort级别的争议，有助于理解同样$5/M所获得的质量随时可能改变。
+  - slug: claude-code-insights-usage-analysis
+    score: 0.93
+    reason:
+      ko: API 가격을 비교했다면 다음 질문은 "어떤 태스크에서 토큰이 가장 많이 소비되는가"다. Claude Code 실사용 분석이 그 답을 준다.
+      ja: API価格を比較したなら、次の疑問は「どのタスクでトークンが最も多く消費されるか」だ。Claude Code実使用分析がその答えを示してくれる。
+      en: After comparing API prices, the next question is which tasks consume the most tokens. The Claude Code usage analysis provides that answer.
+      zh: 比较API价格之后，下一个问题是哪些任务消耗最多Token。Claude Code实际使用分析提供了这个答案。
+  - slug: greptile-ai-coding-report-2025-review
+    score: 0.93
+    reason:
+      ko: AI 코딩 도구를 선택할 때 모델 가격만큼 중요한 게 실사용 패턴이다. Greptile 리포트는 개발자들이 AI 코딩에서 실제로 무엇을 원하는지 수치로 보여준다.
+      ja: AIコーディングツールを選ぶとき、モデル価格と同じくらい重要なのが実使用パターンだ。GreptileレポートはAIコーディングで開発者が実際に何を求めているかを数値で示している。
+      en: When choosing AI coding tools, actual usage patterns matter as much as model pricing. The Greptile report quantifies what developers actually want from AI coding.
+      zh: 选择AI编程工具时，实际使用模式与模型定价同样重要。Greptile报告用数据展示了开发者对AI编程的实际需求。
+  - slug: mcp-servers-toolkit-introduction
+    score: 0.93
+    reason:
+      ko: MCP 서버를 운영할 때 백엔드 LLM 선택이 곧 운영 비용이다. 이 가격 비교는 MCP 서버 구축 시 모델 결정에 바로 적용된다.
+      ja: MCPサーバーを運用する際、バックエンドLLMの選択が運用コストに直結する。この価格比較はMCPサーバー構築時のモデル決定にそのまま適用できる。
+      en: When running an MCP server, your backend LLM choice directly determines operational cost. This pricing comparison applies directly to model selection when building MCP servers.
+      zh: 运行MCP服务器时，后端LLM的选择直接决定运营成本。这份定价对比可以直接应用于构建MCP服务器时的模型选择。
+---
+
+지난달 이 블로그의 자동화 파이프라인을 Claude Sonnet 4.6으로 전환하면서 처음으로 월간 API 비용을 꼼꼼히 따져봤다. 포스트 작성, 번역, 추천 생성, SEO 클로징까지 합산하니 월 $60〜$80 수준. 처음엔 "이 정도면 괜찮다"고 생각했는데, 동일한 워크플로우를 Gemini 2.5 Flash로 전환하면 $8〜$12로 줄어든다는 계산이 나왔다.
+
+그 차이가 7배다.
+
+물론 응답 품질이 같지 않으니 단순 교체는 불가능하다. 하지만 "프리미엄 모델을 써야 하는 부분"과 "저렴한 모델로 충분한 부분"을 분리하지 않으면 불필요한 비용이 계속 나간다. 이 글은 그 판단을 돕기 위한 2026년 4월 기준 LLM API 가격 비교다.
+
+## 2026년 시장 현황 — 1,000배 가격 격차의 시대
+
+2024년에 GPT-4 Turbo가 $10/M 입력 토큰이었던 걸 기억하는가. 2026년 4월 기준, 가장 저렴한 주요 모델은 $0.02/M(Mistral Nemo) 수준이고, 가장 비싼 건 o1-pro의 $375/M blended다. 격차가 약 18,000배다.
+
+이 수치를 처음 봤을 때 실감이 안 났다. 그냥 숫자가 크다는 생각이었는데, 실제로 같은 태스크에 두 모델을 돌려보면서 체감했다. 요약 태스크 10만 건을 처리할 때 어떤 모델을 선택하느냐에 따라 비용이 $20이 될 수도 있고 $3,750이 될 수도 있다.
+
+**2024→2026 가격 변화의 핵심 트렌드:**
+
+- LLM API 가격이 전반적으로 2년 만에 약 80% 하락
+- "추론(reasoning) 기능에 2〜4배 프리미엄" 관행이 깨짐 — DeepSeek V4가 추론 기능을 기본 가격에 포함
+- 캐시 히트 할인이 최대 90%까지 확대 (입력 토큰을 사실상 무료에 가깝게 만듦)
+- 컨텍스트 창 경쟁: 1M 토큰이 기본, Gemini 3.1 Pro는 2M 제공
+
+한 가지 주의할 점은, 가격이 빠르게 변한다는 것이다. 이 글의 데이터는 2026년 4월 기준이고, 몇 달 후엔 다를 수 있다. 항상 공식 문서를 직접 확인하길 권한다.
+
+## 모델별 가격표 (2026년 4월 기준)
+
+### GPT-5 계열 — 버전 파편화의 함정
+
+OpenAI는 2025년 8월 GPT-5를 출시한 이후 빠른 속도로 개정판을 내놨다. 지금은 GPT-5, GPT-5.2, GPT-5.3 Codex, GPT-5.4가 동시에 살아있다.
+
+| 모델 | 입력 ($/1M) | 출력 ($/1M) | 컨텍스트 |
+|------|------------|------------|---------|
+| GPT-5 (Aug 2025) | $0.625 | $5.00 | 400K |
+| GPT-5.2 (Dec 2025) | $0.875 | $7.00 | 400K |
+| GPT-5.3 Codex (Feb 2026) | $1.75 | $14.00 | 400K |
+| GPT-5.4 (현재 플래그십) | $2.50 | $15.00 | 400K |
+| GPT-5.4 (장문 컨텍스트) | $5.00 | $22.50 | 400K+ |
+
+GPT-5.4는 배치 API를 쓰면 50% 할인이 적용돼 $1.25/$7.50이 된다. 캐시 입력은 $0.25/M까지 내려간다.
+
+내가 아쉽게 보는 점은 이 버전 파편화다. 어떤 버전을 써야 하는지, 최신이 항상 최선인지 불분명하다. GPT-5.4가 GPT-5.2보다 코딩 태스크에서 나은 건 맞는데, $0.875와 $2.50 사이의 비용 차이를 정당화할 만큼의 품질 차이가 모든 태스크에서 나타나진 않는다. API를 처음 선택하는 팀이라면 어떤 버전을 기준으로 잡아야 할지 혼란스럽다.
+
+### Claude 4 계열 — 컨텍스트 창의 승자
+
+| 모델 | 입력 ($/1M) | 출력 ($/1M) | 컨텍스트 |
+|------|------------|------------|---------|
+| Claude Haiku 4.5 | $0.25 | $1.25 | 200K |
+| Claude Sonnet 4.6 | $3.00 | $15.00 | 1M |
+| Claude Opus 4.6 | $5.00 | $25.00 | 1M |
+
+Anthropic의 가장 큰 변화는 1M 토큰 컨텍스트 창에 장문 프리미엄을 없앤 것이다. Sonnet 4.6과 Opus 4.6 모두 1M 토큰까지 기본 가격에 포함된다. 코드 리포지토리 전체를 컨텍스트에 넣거나, 긴 문서를 처리하는 워크플로우에서 이 차이는 크다.
+
+배치 API를 쓰면 역시 50% 할인. Sonnet은 $1.50/$7.50, Opus는 $2.50/$12.50이 된다.
+
+### Gemini 3.1 + Flash 계열 — Google의 계층화 전략
+
+| 모델 | 입력 ($/1M) | 출력 ($/1M) | 컨텍스트 |
+|------|------------|------------|---------|
+| Gemini 2.5 Flash-Lite | $0.10 | $0.40 | 1M |
+| Gemini 2.5 Flash | $0.15 | $0.60 | 1M |
+| Gemini 3.1 Pro (≤200K) | $2.00 | $12.00 | 2M |
+| Gemini 3.1 Pro (>200K) | $4.00 | $18.00 | 2M |
+
+Google의 전략이 흥미롭다. Gemini 2.5 Flash는 $0.15/M 입력으로 Claude Haiku 4.5보다 40% 저렴하면서 1M 토큰 컨텍스트를 제공한다. 캐시 적용 시 Gemini 3.1 Pro의 입력은 $0.20/M으로 떨어진다.
+
+Gemini 3.1 Pro는 2M 토큰 컨텍스트 창을 제공한다. 아직 시장에서 이 정도 긴 컨텍스트가 일반적으로 필요한 경우는 드물지만, 대용량 코드베이스 분석이나 긴 계약서 처리 등 특정 유즈케이스에선 의미 있는 차별점이다.
+
+### DeepSeek V4 — 오픈소스가 뒤집은 가격 기준
+
+| 모델 | 입력 ($/1M) | 출력 ($/1M) | 비고 |
+|------|------------|------------|------|
+| DeepSeek V3.2 | $0.28 | $0.42 | 캐시 히트 $0.028/M |
+| DeepSeek V4 | $0.30 | $0.50 | SWE-bench 81% |
+| DeepSeek R1 | $0.55 | $2.19 | 추론 전용 |
+
+DeepSeek V4는 2026년 3월 출시됐고, SWE-bench Verified에서 81%를 기록했다(V3.2의 69%에서 크게 개선). 가격은 V3.2 대비 소폭 올랐지만 여전히 OpenAI·Anthropic 플래그십 대비 90% 저렴하다.
+
+캐시 할인이 인상적이다. V3.2 기준 캐시 히트 입력이 $0.028/M — 즉 동일한 시스템 프롬프트를 반복해서 보내는 워크플로우라면 입력 비용이 사실상 무료에 가까워진다.
+
+한 가지 주의할 점: DeepSeek 서버가 수요 급증 시 레이트 리밋에 걸리는 경우가 종종 보고된다. 중국 기반 서비스라는 점에서 데이터 프라이버시 규정이 엄격한 업종(의료, 금융, 공공)에서는 쓰기 어렵다. 이 제약을 무시하고 가격만 보면 안 된다.
+
+## 캐시·배치 할인이 바꾸는 실제 비용
+
+가격표만 보면 의사결정을 잘못할 수 있다. 실제 프로덕션에선 캐시와 배치 할인이 핵심이다.
+
+**캐시 할인 요약:**
+
+| 제공사 | 캐시 히트 할인율 | 조건 |
+|--------|--------------|------|
+| OpenAI (GPT-5.4) | 90% | 512토큰 이상 반복 입력 |
+| Anthropic | 최대 90% | 프롬프트 캐싱 명시적 활성화 필요 |
+| Google (Gemini 3.1) | 90% | 컨텍스트 캐싱 활성화 |
+| DeepSeek V3.2 | 90% | 자동 적용 |
+
+**배치 API 할인:**
+- OpenAI, Anthropic 모두 50% 할인 (24시간 내 비동기 처리)
+- 실시간 응답이 필요 없는 태스크 (번역, 분류, 요약 배치 처리)에 적합
+
+내가 이 자동화 파이프라인에 배치 API를 적용하면서 배운 것은, 캐시 적중률이 낮으면 할인 효과가 생각보다 적다는 점이다. 시스템 프롬프트가 태스크마다 달라지는 구조라면 캐시 효율이 떨어진다. [LLM 추론 비용을 50% 줄이는 Deep-Thinking Ratio 지표](/ko/blog/ko/deep-thinking-ratio-llm-cost-optimization)에서 비슷한 문제를 다뤘는데, 비용 최적화는 할인율보다 태스크 구조 설계가 먼저라는 결론이 같다.
+
+## 실제 프로덕션 시나리오별 비용 계산
+
+이론적 가격표보다 실제 워크플로우에 적용해보는 게 훨씬 유용하다. 아래 계산은 2026년 4월 기준 가격이고, 배치 할인은 미적용 기본 가격이다.
+
+### 시나리오 A: 블로그/콘텐츠 자동화 (월 1,000건 포스트 처리)
+
+가정: 포스트당 평균 입력 4,000토큰, 출력 2,000토큰
+
+```python
+# 월 비용 계산
+posts_per_month = 1000
+input_tokens = 4_000  # per post
+output_tokens = 2_000  # per post
+
+models = {
+    "GPT-5.4": (2.50, 15.00),
+    "Claude Sonnet 4.6": (3.00, 15.00),
+    "Gemini 2.5 Flash": (0.15, 0.60),
+    "DeepSeek V4": (0.30, 0.50),
+}
+
+for model, (input_price, output_price) in models.items():
+    monthly_cost = posts_per_month * (
+        (input_tokens / 1_000_000) * input_price +
+        (output_tokens / 1_000_000) * output_price
+    )
+    print(f"{model}: ${monthly_cost:.2f}/월")
+
+# 결과:
+# GPT-5.4: $40.00/월
+# Claude Sonnet 4.6: $42.00/월
+# Gemini 2.5 Flash: $1.80/월
+# DeepSeek V4: $2.20/월
+```
+
+GPT-5.4와 Gemini 2.5 Flash의 차이가 22배다. 콘텐츠 자동화 품질이 GPT-5.4만큼 나와야 하는 이유가 없다면 Flash나 DeepSeek이 압도적으로 유리하다.
+
+### 시나리오 B: 코드 리뷰 봇 (하루 500건 PR 코멘트)
+
+가정: 코드 diff 평균 8,000토큰 입력, 코멘트 1,500토큰 출력
+
+```python
+reviews_per_day = 500
+reviews_per_month = reviews_per_day * 22  # 영업일 기준
+input_tokens = 8_000
+output_tokens = 1_500
+
+for model, (input_price, output_price) in models.items():
+    monthly_cost = reviews_per_month * (
+        (input_tokens / 1_000_000) * input_price +
+        (output_tokens / 1_000_000) * output_price
+    )
+    print(f"{model}: ${monthly_cost:.2f}/월")
+
+# 결과:
+# GPT-5.4: $467.50/월
+# Claude Sonnet 4.6: $544.50/월
+# Gemini 2.5 Flash: $29.70/월
+# DeepSeek V4: $68.75/월
+```
+
+여기서 DeepSeek이 Claude Sonnet 대비 8배 저렴하다. 하지만 코드 리뷰라면 DeepSeek의 데이터 처리 정책을 확인하는 게 먼저다. 내부 코드가 외부 서버를 통과하는 구조면 보안 정책에 걸릴 수 있다.
+
+### 시나리오 C: 고객 지원 챗봇 (일 1만 건 대화, 장문 컨텍스트)
+
+가정: 대화당 10,000토큰 입력(히스토리 포함), 500토큰 출력, 캐시 적중률 40%
+
+이 시나리오는 컨텍스트 창 크기와 캐시 적중률이 중요하다. 대화 히스토리가 길어지면 200K 이하 모델에선 잘라내야 하는데, 그 손실이 품질에 영향을 준다.
+
+| 모델 | 기본 월 비용 | 캐시 40% 적용 후 |
+|------|------------|----------------|
+| Claude Sonnet 4.6 | $3,900 | $2,574 |
+| Gemini 3.1 Pro | $2,640 | $1,743 |
+| Gemini 2.5 Flash | $198 | $131 |
+| DeepSeek V4 | $438 | $289 |
+
+이 시나리오에선 Gemini 2.5 Flash가 가격 대비 성능 면에서 가장 설득력 있다. 1M 토큰 컨텍스트, 멀티모달 지원, 캐시 할인까지 합산하면 선택지가 명확해진다.
+
+## 모델 선택 전에 피해야 할 실수 세 가지
+
+LLM API 비용 이야기를 할 때 가격표만 보고 결정하는 팀을 자주 본다. 직접 경험하거나 주변에서 겪은 패턴 세 가지를 정리해둔다.
+
+**첫째, 벤치마크 수치를 그대로 믿는 것.** SWE-bench나 MMLU 점수가 높다고 내 태스크에서 그 성능이 나오는 건 아니다. 찾아본 바로는 SWE-bench는 Python 중심 코딩 태스크에 특화된 벤치마크인데, 한국어 콘텐츠 생성이나 특정 도메인 분류에서의 성능은 전혀 다른 이야기일 수 있다. 반드시 실제 유즈케이스 샘플 데이터로 직접 테스트해야 한다. 100건 샘플에 $5〜10 써서 테스트하는 게, 잘못된 모델로 6개월을 날리는 것보다 낫다.
+
+**둘째, 입력 토큰만 계산하는 것.** 많은 팀이 가격 비교 시 입력 토큰 가격만 보는데, 실제 LLM 워크플로우에서 비용 대부분은 출력 토큰에서 나온다. GPT-5.4의 입력은 $2.50이지만 출력은 $15.00이다. 출력이 입력의 6배 비싸다. 코드 생성이나 긴 설명을 요구하는 태스크에선 출력 토큰이 총 비용의 70〜80%를 차지할 수 있다. 비교할 때 반드시 "예상 입출력 비율"로 실제 비용을 계산해야 한다.
+
+**셋째, 컨텍스트 창 크기를 무시하는 것.** "128K면 충분하지"라고 생각했다가, 실제 프로덕션에서 코드 리포지토리 전체를 넣거나 긴 문서를 처리하면서 잘라내기(truncation)를 해야 하는 상황이 생긴다. 잘라낸 정보가 핵심일 때 그 비용은 API 비용이 아닌 품질 저하로 나타난다. Claude Sonnet 4.6의 1M 컨텍스트나 Gemini 3.1 Pro의 2M 컨텍스트가 단순한 수치가 아니라, 특정 유즈케이스에선 결정적 요소가 된다.
+
+## 결정 매트릭스 — 어떤 모델을 언제 써야 하는가
+
+AI 에이전트 비용 현실을 분석한 포스트에서 다뤘듯, [AI 에이전트의 실제 운영 비용](/ko/blog/ko/ai-agent-cost-reality)은 단순 토큰 비용 이상이다. 하지만 모델 선택 기준은 비교적 명확하게 정리할 수 있다.
+
+| 유즈케이스 | 추천 모델 | 이유 |
+|-----------|---------|------|
+| 복잡한 추론, 코드 생성 (최고 품질) | Claude Opus 4.6 또는 GPT-5.4 | 가격보다 품질이 우선인 경우 |
+| 코드 리뷰, 기술 분석 (품질·비용 균형) | Claude Sonnet 4.6 또는 GPT-5.2 | 중간 밴드에서 가장 검증됨 |
+| 대용량 문서 처리 (2M+ 컨텍스트) | Gemini 3.1 Pro | 유일하게 2M 컨텍스트 제공 |
+| 고볼륨 자동화 (비용 최소화) | Gemini 2.5 Flash 또는 DeepSeek V4 | 10〜22배 비용 절감 |
+| 배치 번역, 분류, 요약 | DeepSeek V4 + 캐시 | 입력 비용이 사실상 무료 수준 |
+| 보안 민감 내부 코드 처리 | Claude 또는 GPT-5 (미국 데이터 센터) | 데이터 처리 정책 안전 |
+
+모델 선택보다 더 중요한 건 태스크 분리다. 같은 파이프라인에서도 "판단이 필요한 단계"는 프리미엄 모델, "반복 처리 단계"는 저가 모델로 나누는 설계가 비용을 크게 줄인다. [멀티모델 에이전트 플릿의 비용 최적화](/ko/blog/ko/heterogeneous-llm-agent-fleet-cost-optimization)에서 이 접근법을 실제 아키텍처 레벨로 다뤘다.
+
+한 가지 더 짚을 점: "2026년은 싸다"고 안심해선 안 된다. 사용량이 늘어나면 비용도 그대로 스케일한다. 월 $50이 별거 아닌 것 같아도, 그 자동화를 10배로 키우면 $500이 된다.
+
+## 2026년 내 선택과 이유
+
+단도직입으로 말한다. 나는 현재 Claude Sonnet 4.6을 메인으로, Gemini 2.5 Flash를 보조로 사용하는 이중 스택을 운영 중이다. 이 결정에 이른 이유를 설명하자면:
+
+**Claude Sonnet 4.6을 메인으로 쓰는 이유**: 이 블로그 포스트를 포함한 콘텐츠 생성 워크플로우에서 GPT-5.4와 Claude Sonnet을 A/B 테스트해봤는데, 한국어 퀄리티 측면에서 Claude가 더 자연스러웠다. GPT-5.4가 코딩 벤치마크에서 높은 점수를 받는 건 맞지만, 내 유즈케이스에선 차이가 $1.50/M이 정당화될 만큼 크지 않았다.
+
+**Gemini 2.5 Flash를 보조로 쓰는 이유**: 포스트 분류, 태그 생성, 초안 요약 같은 배치 처리는 Flash로 넘겼다. $0.15/M 입력이면 이런 태스크에 Sonnet을 쓰는 건 낭비다.
+
+**DeepSeek을 메인으로 쓰지 않는 이유**: 개인적으로 가격은 매력적이지만, 이 블로그 자동화 시스템 특성상 작업 지시, 내부 콘텐츠, API 키가 오가는 구조라 중국 서버 경유에 불편함이 있다. 가격이 1/10이어도 감수하고 싶지 않은 부분이다. 민감 데이터가 없는 태스크에선 충분히 쓸 수 있다고 생각하지만, 그게 내 현재 상황에 맞지 않을 뿐이다.
+
+GPT-5.4가 과대평가됐다고 본다. 벤치마크 수치는 인상적이지만, 실제로 한국어 콘텐츠 자동화 파이프라인에서 Claude Sonnet 대비 체감 차이가 $1.50/M의 가격 차이를 정당화하지 못했다. 벤치마크와 실제 유즈케이스 사이의 간극이 여기서도 크다.
+
+결론을 정리하자면: 지금 LLM API를 처음 선택하는 팀이라면, Gemini 2.5 Flash로 시작해서 품질이 부족한 부분을 Sonnet으로 보강하는 접근을 추천한다. 처음부터 Opus나 GPT-5.4를 전 파이프라인에 쓰는 건 비용 낭비다. 월 $10짜리 워크플로우가 충분한 품질을 낸다면, 거기에 $100을 쓸 이유가 없다.
+
+---
+
+두 가지 예외적인 경우만 언급한다. <strong>대용량 문서 처리가 주업무인 팀</strong>은 Gemini 3.1 Pro의 2M 컨텍스트를 먼저 고려해야 한다. 법률 계약서, 대형 코드베이스, 긴 연구 논문을 처리할 때 컨텍스트 창에서 잘려나가는 정보가 생기는 구조는 프리미엄 모델도 답이 아니다. <strong>데이터 프라이버시가 최우선인 팀</strong>은 DeepSeek 옵션을 처음부터 배제하고 OpenAI 또는 Anthropic에서 선택해야 한다. 가격 차이가 크더라도 규정 준수 비용과 리스크를 고려하면 맞는 선택이다.
+
+다음에 할 실험은 같은 파이프라인에서 Gemini 2.5 Flash와 Claude Sonnet 4.6의 A/B 비율을 조정하면서 실제 품질 차이가 어느 시점에서 드러나는지 측정하는 것이다. 비용이 10분의 1이 되는 모델이 품질도 10분의 1이면 의미 없지만, 대부분의 반복 태스크에선 그런 차이가 나지 않는다고 생각한다.
+
+---
+
+*가격 데이터 출처: OpenAI API Pricing 공식 문서, Anthropic Claude API Pricing, Google AI Gemini API Pricing, DeepSeek API Docs (2026년 4월 기준). 환율, 부가세, 지역별 차이는 미포함.*

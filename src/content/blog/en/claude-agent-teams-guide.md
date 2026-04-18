@@ -1,5 +1,5 @@
 ---
-title: "Claude Code Agent Teams: 5-Team Setup and Production Guide"
+title: 'Claude Code Agent Teams: 5-Team Setup and Production Guide'
 description: >-
   How to activate Claude Code Agent Teams in OpenClaw: 5 specialized agents with
   multi-agent orchestrator pattern for production-grade workflow automation.

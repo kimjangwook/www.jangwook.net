@@ -1,8 +1,8 @@
 ---
 title: AI 코딩 도구가 만드는 편의 루프 — TypeScript 급등과 언어 선택의 구조적 변화
 description: >-
-  GitHub Octoverse 데이터로 AI 코딩 도구의 편의 루프 효과를 심층 분석합니다. TypeScript 66% 급등과 Python 1위 등극의
-  구조적 이유를 EM·CTO 관점에서 풀어보고, AI 시대에 흔들리지 않는 기술 스택 의사결정 프레임워크를 제시합니다.
+  GitHub Octoverse 데이터로 AI 코딩 도구의 편의 루프 효과를 심층 분석합니다. TypeScript 66% 급등과 Python
+  1위 등극의 구조적 이유를 EM·CTO 관점에서 풀어보고, AI 시대에 흔들리지 않는 기술 스택 의사결정 프레임워크를 제시합니다.
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/ai-convenience-loop-reshaping-language-choices-hero.png
 tags:

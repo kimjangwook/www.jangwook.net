@@ -16,38 +16,38 @@ relatedPosts:
   - slug: claude-mythos-preview-glasswing-ai-cybersecurity
     score: 0.94
     reason:
-      ko: Anthropic이 Mythos 개발에 컴퓨트를 집중하면서 기존 Claude 성능이 조정됐다는 추측이 있다. Mythos 미리보기가 궁금하다면 이 글이 그 맥락을 제공한다.
-      ja: AnthropicがMythos開発にコンピュートを集中する一方、既存Claudeの性能が調整されたという推測がある。Mythosのプレビューに興味があれば、このポストがその背景を理解する助けになる。
-      en: There's speculation Anthropic shifted compute toward Mythos development while quietly adjusting existing Claude performance. If you're curious about Mythos, this post provides useful context for that theory.
-      zh: 有猜测称Anthropic将算力集中于Mythos开发，同时悄悄调整了现有Claude的性能。如果你对Mythos感兴趣，这篇文章为该理论提供了有用的背景。
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: claude-code-insights-usage-analysis
     score: 0.94
     reason:
-      ko: 이 글에서 다룬 effort 레벨 변경이 실제 Claude Code 사용량에 어떤 영향을 주는지, 사용량 분석 글에서 더 자세히 파악할 수 있다.
-      ja: このポストで扱ったeffortレベル変更が実際のClaude Code使用量にどう影響するか、使用量分析ポストでより詳しく把握できる。
-      en: The effort level change discussed in this post had direct effects on Claude Code token usage. The usage analysis post breaks down exactly what that shift looked like in practice.
-      zh: 这篇文章讨论的effort级别变更对Claude Code实际使用量产生了直接影响。使用量分析文章详细分析了这种变化在实践中的具体表现。
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: greptile-ai-coding-report-2025-review
     score: 0.94
     reason:
-      ko: AI 코딩 도구의 실제 사용 패턴과 한계를 정량적으로 분석한 글로, Claude 성능 논란과 비교해 읽으면 AI 코딩 도구 업계 전체 흐름을 파악하는 데 도움이 된다.
-      ja: AIコーディングツールの実際の使用パターンと限界を定量的に分析したポストで、Claude性能論争と比較して読むとAIコーディングツール業界全体の流れを把握するのに役立つ。
-      en: This Greptile report quantifies how developers actually use AI coding tools — the limitations it documents help contextualize why the effort level change hit power users harder than casual users.
-      zh: 这份Greptile报告定量分析了开发者实际使用AI编码工具的方式——它记录的局限性有助于理解为什么effort级别变更对重度用户的影响比普通用户更大。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: openclaw-opus-4-6-setup-guide
     score: 0.94
     reason:
-      ko: effort 레벨을 명시적으로 설정하는 방법이 궁금하다면, Claude Opus 4.6 설정 가이드에서 구체적인 파라미터 설정 방법을 확인할 수 있다.
-      ja: effortレベルを明示的に設定する方法が気になるなら、Claude Opus 4.6セットアップガイドで具体的なパラメータ設定方法を確認できる。
-      en: If you want to pin effort levels explicitly as this post recommends, the Claude Opus 4.6 setup guide shows exactly which parameters to configure and how.
-      zh: 如果你想按照本文建议明确设置effort级别，Claude Opus 4.6设置指南详细说明了需要配置哪些参数以及如何配置。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: gemma-4-local-agent-edge-ai
     score: 0.94
     reason:
-      ko: 단일 공급자 의존 리스크를 줄이는 방법으로 로컬 LLM 활용이 있다. Gemma 4로 오프라인 에이전트를 구축하는 방법이 대안적 선택지를 보여준다.
-      ja: 単一プロバイダー依存リスクを減らす方法としてローカルLLM活用がある。Gemma 4でオフラインエージェントを構築する方法が代替的な選択肢を示している。
-      en: Reducing single-provider dependency is one of this post's core recommendations. Building offline agents with Gemma 4 is a concrete example of what that alternative looks like in practice.
-      zh: 减少单一提供商依赖是本文的核心建议之一。使用Gemma 4构建离线代理是该替代方案在实践中的具体示例。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
 ---
 
 "Why is Claude suddenly acting weird?"

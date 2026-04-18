@@ -1,6 +1,8 @@
 ---
 title: Claude Code Agent Teams 完全ガイド — 5チーム構成と実践運用
-description: Claude CodeのAgent TeamsをOpenClaw環境で有効化する全手順と、5専門チームの構成方法を丁寧に解説します。アーキテクチャ・コーディング・テスト・セキュリティ・DevOpsエージェントをオーケストレーターパターンで連携させ、プロダクション級アプリを自動構築した実践知見を共有します。
+description: >-
+  Claude CodeのAgent
+  TeamsをOpenClaw環境で有効化する全手順と、5専門チームの構成方法を丁寧に解説します。アーキテクチャ・コーディング・テスト・セキュリティ・DevOpsエージェントをオーケストレーターパターンで連携させ、プロダクション級アプリを自動構築した実践知見を共有します。
 pubDate: '2026-02-07'
 heroImage: ../../../assets/blog/claude-agent-teams-guide-hero.png
 tags:

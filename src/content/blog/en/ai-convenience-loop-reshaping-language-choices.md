@@ -1,8 +1,9 @@
 ---
 title: 'AI''s Convenience Loop: How Coding Tools Reshape Language Choices'
 description: >-
-  AI coding tools create a convenience loop reshaping language popularity. Why TypeScript
-  surged 66% and Python hit #1, with EM/CTO tech stack decision framework.
+  AI coding tools create a convenience loop reshaping language popularity. Why
+  TypeScript surged 66% and Python hit #1, with EM/CTO tech stack decision
+  framework.
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/ai-convenience-loop-reshaping-language-choices-hero.png
 tags:

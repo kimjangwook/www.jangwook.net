@@ -1,6 +1,8 @@
 ---
 title: Claude Code Agent Teams 完全指南 — 从 OpenClaw 团队搭建到实战运营
-description: 详解在 OpenClaw 环境中启用 Claude Code Agent Teams 的完整步骤，以及架构、编码、测试、安全、DevOps 共 5 个专业 Agent 团队的配置方法，分享通过多智能体编排模式自动化构建生产级全栈应用的完整实战经验。
+description: >-
+  详解在 OpenClaw 环境中启用 Claude Code Agent Teams 的完整步骤，以及架构、编码、测试、安全、DevOps 共 5 个专业
+  Agent 团队的配置方法，分享通过多智能体编排模式自动化构建生产级全栈应用的完整实战经验。
 pubDate: '2026-02-07'
 heroImage: ../../../assets/blog/claude-agent-teams-guide-hero.png
 tags:

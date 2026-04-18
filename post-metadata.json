@@ -2428,5 +2428,16 @@
       "devops": 0.5,
       "architecture": 0.6
     }
+  },
+  "llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek": {
+    "pubDate": "2026-04-18",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.6,
+      "architecture": 0.4
+    }
   }
 }

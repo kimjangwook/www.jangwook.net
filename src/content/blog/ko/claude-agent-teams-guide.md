@@ -1,8 +1,9 @@
 ---
 title: Claude Code Agent Teams 완벽 가이드 — 5개 전문 팀 구축과 실전 운용
 description: >-
-  Claude Code Agent Teams를 OpenClaw 환경에서 활성화하는 전체 과정과 5개 전문 에이전트 팀(아키텍처·코딩·테스트·보안·DevOps)을
-  구성하는 방법을 다룹니다. 멀티에이전트 오케스트레이터 패턴으로 프로덕션급 풀스택 앱을 자동화한 실전 경험을 공유합니다.
+  Claude Code Agent Teams를 OpenClaw 환경에서 활성화하는 전체 과정과 5개 전문 에이전트
+  팀(아키텍처·코딩·테스트·보안·DevOps)을 구성하는 방법을 다룹니다. 멀티에이전트 오케스트레이터 패턴으로 프로덕션급 풀스택 앱을 자동화한
+  실전 경험을 공유합니다.
 pubDate: '2026-02-07'
 heroImage: ../../../assets/blog/claude-agent-teams-guide-hero.png
 tags:

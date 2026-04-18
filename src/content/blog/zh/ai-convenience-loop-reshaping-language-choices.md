@@ -1,8 +1,8 @@
 ---
 title: AI便利循环：TypeScript暴涨66%背后的语言变革
 description: >-
-  基于 GitHub Octoverse 数据，全面分析 AI 编程工具构建的便利循环效应，揭示 TypeScript 暴涨 66%、Python 登顶的结构性
-  原因，并从 EM/CTO 视角提供 AI 时代技术栈长期选型与决策的实用框架与行动指南。
+  基于 GitHub Octoverse 数据，全面分析 AI 编程工具构建的便利循环效应，揭示 TypeScript 暴涨 66%、Python
+  登顶的结构性 原因，并从 EM/CTO 视角提供 AI 时代技术栈长期选型与决策的实用框架与行动指南。
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/ai-convenience-loop-reshaping-language-choices-hero.png
 tags:
