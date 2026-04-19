@@ -1,8 +1,8 @@
 ---
 title: Anthropic이 Claude를 몰래 낮췄다는 논란 — 파워 유저 반발의 진짜 맥락
 description: >-
-  2026년 3월 Anthropic이 Claude 기본 effort를 조용히 "medium"으로 낮췄다. 파워 유저 반발, 가격 인상 논란,
-  그리고 이 사태가 드러낸 AI 서비스 신뢰 문제를 짚어본다.
+  2026년 3월 Anthropic이 Claude 기본 effort 레벨을 조용히 "medium"으로 낮췄다. 파워 유저 반발과 가격 인상
+  논란, 그리고 이 사태가 드러낸 AI 서비스 투명성과 신뢰 문제를 CTO·엔지니어링 리더 관점에서 분석한다.
 pubDate: '2026-04-17'
 heroImage: >-
   ../../../assets/blog/anthropic-claude-performance-decline-controversy-april-2026-hero.jpg

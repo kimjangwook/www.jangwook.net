@@ -79,7 +79,7 @@ draft: true
 
 ### AI 에이전트가 요구하는 것
 
-2026년의 AI 에이전트는 단순히 질문에 답하는 챗봇이 아니다. <strong>자율적으로 판단하고, 행동하고, 결과를 확인하는 능동적 시스템</strong>이다. 이런 에이전트가 "어제의 데이터"를 기반으로 의사결정을 한다면, 그 결과는 신뢰할 수 없다.
+2026년의 AI 에이전트는 단순히 질문에 답하는 챗봇이 아니다. <strong>자율적으로 판단하고, 행동하고, 결과를 확인하는 능동적 시스템</strong>이다. [LangGraph, CrewAI, Dapr 등 주요 에이전트 프레임워크](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)가 이런 에이전트의 구현 기반이 되며, 이 에이전트가 "어제의 데이터"를 기반으로 의사결정을 한다면 그 결과는 신뢰할 수 없다.
 
 ```mermaid
 graph TD
@@ -166,7 +166,7 @@ result = ai_model.predict(
 
 ### 2. 거버넌스와 리니지의 중요성
 
-실시간 데이터가 AI 에이전트의 의사결정에 직접 영향을 미치면, <strong>데이터 거버넌스</strong>의 중요성이 급격히 높아진다.
+실시간 데이터가 AI 에이전트의 의사결정에 직접 영향을 미치면, <strong>[데이터 거버넌스](/ko/blog/ko/nist-ai-agent-security-standards)</strong>의 중요성이 급격히 높아진다.
 
 ```mermaid
 graph TD
@@ -274,7 +274,7 @@ while True:
 
 ## 결론
 
-IBM의 Confluent 인수는 <strong>"AI 에이전트 시대의 데이터 인프라는 실시간이어야 한다"</strong>는 메시지를 명확히 전달한다. $110억이라는 금액은 실시간 데이터 스트리밍이 단순한 기술 트렌드가 아닌, <strong>엔터프라이즈 AI의 기반 인프라</strong>임을 증명한다.
+IBM의 Confluent 인수는 <strong>"AI 에이전트 시대의 데이터 인프라는 실시간이어야 한다"</strong>는 메시지를 명확히 전달한다. $110억이라는 금액은 실시간 데이터 스트리밍이 단순한 기술 트렌드가 아닌, <strong>엔터프라이즈 AI의 기반 인프라</strong>임을 증명한다. [Deloitte의 2026 에이전틱 AI 전략 분석](/ko/blog/ko/deloitte-agentic-ai-operations-2026)에서도 실시간 데이터 연동이 에이전트 운영의 핵심 요소로 꼽힌다.
 
 엔지니어링 리더로서 지금 시작할 수 있는 액션:
 

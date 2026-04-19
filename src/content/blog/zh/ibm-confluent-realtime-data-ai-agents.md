@@ -77,7 +77,7 @@ draft: true
 
 ### AI Agent的真正需求
 
-2026年的AI Agent已不再是简单的问答聊天机器人，而是<strong>能够自主判断、执行操作并验证结果的主动式系统</strong>。如果这样的Agent基于"昨天的数据"进行决策，其结果将无法令人信赖。
+2026年的AI Agent已不再是简单的问答聊天机器人，而是<strong>能够自主判断、执行操作并验证结果的主动式系统</strong>。[LangGraph、CrewAI、Dapr等Agent框架](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)正是这类Agent的实现基础，而如果这样的Agent基于"昨天的数据"进行决策，其结果将无法令人信赖。
 
 ```mermaid
 graph TD
@@ -164,7 +164,7 @@ result = ai_model.predict(
 
 ### 2. 治理与血缘追踪的重要性
 
-当实时数据直接影响AI Agent的决策时，<strong>数据治理</strong>的重要性急剧上升。
+当实时数据直接影响AI Agent的决策时，<strong>[数据治理](/zh/blog/zh/nist-ai-agent-security-standards)</strong>的重要性急剧上升。
 
 ```mermaid
 graph TD
@@ -272,7 +272,7 @@ while True:
 
 ## 结论
 
-IBM收购Confluent明确传达了一个信号：<strong>"AI Agent时代的数据基础设施必须是实时的"</strong>。110亿美元的收购金额证明，实时数据流不再只是技术趋势，而是<strong>企业级AI的基础设施</strong>。
+IBM收购Confluent明确传达了一个信号：<strong>"AI Agent时代的数据基础设施必须是实时的"</strong>。110亿美元的收购金额证明，实时数据流不再只是技术趋势，而是<strong>企业级AI的基础设施</strong>。[Deloitte 2026 Agentic AI分析](/zh/blog/zh/deloitte-agentic-ai-operations-2026)同样将实时数据连接列为Agent运营的核心要素。
 
 作为工程领导者，现在可以启动的行动：
 

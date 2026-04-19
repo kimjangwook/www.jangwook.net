@@ -115,11 +115,11 @@ RL addresses these problems through **experience-based learning**. Through thous
 
 Until recently, the biggest bottleneck for AI agent adoption was **model capability**. But as foundation models like GPT-4, Claude, and Gemini converge in raw performance, the bottleneck is shifting to **domain-specific adaptation**.
 
-Deeptune's approach tackles this adaptation problem structurally. For engineering organizations, this means we're moving from an era of "persuading" general-purpose LLMs with prompts to an era of **deploying RL-trained agents** purpose-built for specific workflows.
+Deeptune's approach tackles this adaptation problem structurally. For engineering organizations, this means we're moving from an era of "persuading" general-purpose LLMs with prompts to an era of **deploying RL-trained agents** purpose-built for specific workflows. Selecting the right [agent orchestration framework](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) becomes a critical engineering decision in this new paradigm.
 
 ### 2. The Rise of "AI Agent DevOps"
 
-Just as CI/CD pipelines are now table stakes in software development, **training-evaluation-deployment pipelines for AI agents** will soon become essential. Deeptune's RL environment handles the "training" phase of that pipeline.
+Just as CI/CD pipelines are now table stakes in software development, **[training-evaluation-deployment pipelines for AI agents](/en/blog/en/claude-code-agentic-workflow-patterns-5-types)** will soon become essential. Deeptune's RL environment handles the "training" phase of that pipeline.
 
 ```mermaid
 graph TB
@@ -198,7 +198,7 @@ The most notable name on the angel investor list is **Noam Brown** of OpenAI Res
 
 5. **Evaluate simulation environment solutions**: Assess third-party solutions like Deeptune, but verify they can handle the unique aspects of your work environment. Organizations with many proprietary systems should carefully evaluate environment construction costs.
 
-6. **Build agent evaluation frameworks**: Before deploying RL-trained agents to production, prepare systematic benchmarks and safety testing frameworks.
+6. **Build agent evaluation frameworks**: Before deploying RL-trained agents to production, prepare systematic benchmarks and safety testing frameworks. The [Managed Agents Production Deployment Guide](/en/blog/en/claude-managed-agents-production-deployment-guide) provides concrete evaluation approaches from real deployments.
 
 ### Long-Term (18+ Months)
 

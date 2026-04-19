@@ -141,7 +141,7 @@ AlphaEvolve 이전에도 AI가 과학 연구에 기여한 사례는 있었습니
 | 시스템 | 접근 방식 | 특징 |
 |--------|---------|------|
 | AlphaFold | 단백질 구조 예측 | 특정 도메인에 특화된 모델 |
-| GPT-5.2 | 이론물리학 추론 | 대형 모델의 추론 능력 활용 |
+| [GPT-5.2](/ko/blog/ko/gpt52-theoretical-physics-discovery) | 이론물리학 추론 | 대형 모델의 추론 능력 활용 |
 | AlphaEvolve | 알고리즘 자동 발견 | <strong>도메인 비의존적 메타 알고리즘</strong> |
 
 AlphaEvolve의 핵심 차별점은 <strong>범용성</strong>입니다. 라마지 수뿐 아니라:
@@ -182,7 +182,7 @@ AlphaEvolve는 이미 Google 내부에서 프로덕션 최적화에 활용되고
 - <strong>데이터센터 스케줄링</strong>: 리소스 할당 알고리즘 개선
 - <strong>컴파일러 최적화</strong>: 자동 코드 최적화 탐색
 
-엔지니어링 팀이 당장 적용할 수 있는 영역:
+엔지니어링 팀이 당장 적용할 수 있는 영역([Claude Code 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)과 결합하면 더욱 효과적입니다):
 
 - 성능 크리티컬 알고리즘의 자동 최적화
 - A/B 테스트 전략의 진화적 개선
@@ -190,7 +190,7 @@ AlphaEvolve는 이미 Google 내부에서 프로덕션 최적화에 활용되고
 
 ### 3. "AI가 AI를 개선하는" 피드백 루프
 
-AlphaEvolve가 Gemini의 학습 효율을 개선하고, 개선된 Gemini가 다시 AlphaEvolve의 성능을 높이는 구조는 <strong>자기 강화 루프(self-reinforcing loop)</strong>의 초기 형태입니다:
+AlphaEvolve가 Gemini의 학습 효율을 개선하고, 개선된 Gemini가 다시 AlphaEvolve의 성능을 높이는 구조는 <strong>자기 강화 루프(self-reinforcing loop)</strong>의 초기 형태입니다. [Karpathy의 Autoresearch 프레임워크](/ko/blog/ko/karpathy-autoresearch-overnight-ml-experiments)도 유사한 자율 실험 반복 패턴을 보여줍니다:
 
 ```mermaid
 graph TD

@@ -1,11 +1,9 @@
 ---
-title: >-
-  AI Agent Framework Comparison 2026 — LangGraph vs CrewAI vs Dapr Agents
-  Production Selection Guide
+title: 'AI Agent Framework Comparison 2026: LangGraph vs CrewAI vs Dapr Selection Guide'
 description: >-
-  A production-focused comparison of LangGraph v1.0, CrewAI v1.10, and Dapr
-  Agents v1.0. Analyzes architecture, development speed, operational durability,
-  and cost to help you choose the right framework for your team.
+  LangGraph v1.0, CrewAI v1.10, and Dapr Agents v1.0 compared on architecture,
+  dev speed, durability, and cost. Find which multi-agent framework fits your
+  team's production needs in 2026.
 pubDate: '2026-04-19'
 heroImage: >-
   ../../../assets/blog/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production-hero.jpg

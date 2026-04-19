@@ -139,7 +139,7 @@ AI并非"学习"了这些数学构造法，而是在进化搜索过程中<strong
 | 系统 | 方法 | 特点 |
 |--------|---------|------|
 | AlphaFold | 蛋白质结构预测 | 针对特定领域的专用模型 |
-| GPT-5.2 | 理论物理推理 | 利用大型模型的推理能力 |
+| [GPT-5.2](/zh/blog/zh/gpt52-theoretical-physics-discovery) | 理论物理推理 | 利用大型模型的推理能力 |
 | AlphaEvolve | 自动算法发现 | <strong>领域无关的元算法</strong> |
 
 AlphaEvolve的核心差异化在于<strong>通用性</strong>。不仅限于Ramsey数：
@@ -180,7 +180,7 @@ AlphaEvolve已在Google内部投入生产优化使用：
 - <strong>数据中心调度</strong>：资源分配算法改进
 - <strong>编译器优化</strong>：自动代码优化搜索
 
-工程团队可立即应用的领域：
+工程团队可立即应用的领域（结合[Claude Code Agentic工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)效果更佳）：
 
 - 性能关键型算法的自动优化
 - A/B测试策略的进化式改进
@@ -188,7 +188,7 @@ AlphaEvolve已在Google内部投入生产优化使用：
 
 ### 3. "AI优化AI"的反馈循环
 
-AlphaEvolve改进Gemini的训练效率，改进后的Gemini又提升AlphaEvolve的性能——这一结构是<strong>自强化循环（self-reinforcing loop）</strong>的初级形态：
+AlphaEvolve改进Gemini的训练效率，改进后的Gemini又提升AlphaEvolve的性能——这一结构是<strong>自强化循环（self-reinforcing loop）</strong>的初级形态。[Karpathy的Autoresearch框架](/zh/blog/zh/karpathy-autoresearch-overnight-ml-experiments)展示了类似的自主实验迭代模式：
 
 ```mermaid
 graph TD

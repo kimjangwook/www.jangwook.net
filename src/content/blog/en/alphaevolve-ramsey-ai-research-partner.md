@@ -142,7 +142,7 @@ AI had contributed to scientific research before AlphaEvolve, but there are impo
 | System | Approach | Characteristic |
 |--------|----------|----------------|
 | AlphaFold | Protein structure prediction | Domain-specific model |
-| GPT-5.2 | Theoretical physics reasoning | Leverages large model reasoning |
+| [GPT-5.2](/en/blog/en/gpt52-theoretical-physics-discovery) | Theoretical physics reasoning | Leverages large model reasoning |
 | AlphaEvolve | Automated algorithm discovery | <strong>Domain-agnostic meta-algorithm</strong> |
 
 AlphaEvolve's key differentiator is its <strong>generality</strong>. Beyond Ramsey numbers:
@@ -183,7 +183,7 @@ AlphaEvolve is already being used for production optimization within Google:
 - <strong>Data center scheduling</strong>: Improved resource allocation algorithms
 - <strong>Compiler optimization</strong>: Automated code optimization search
 
-Areas where engineering teams can apply this today:
+Areas where engineering teams can apply this today (combining with [Claude Code agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) amplifies the impact):
 
 - Automated optimization of performance-critical algorithms
 - Evolutionary improvement of A/B testing strategies
@@ -191,7 +191,7 @@ Areas where engineering teams can apply this today:
 
 ### 3. The "AI Improving AI" Feedback Loop
 
-The structure where AlphaEvolve improves Gemini's training efficiency and the improved Gemini in turn boosts AlphaEvolve's performance represents an early form of a <strong>self-reinforcing loop</strong>:
+The structure where AlphaEvolve improves Gemini's training efficiency and the improved Gemini in turn boosts AlphaEvolve's performance represents an early form of a <strong>self-reinforcing loop</strong>. [Karpathy's Autoresearch framework](/en/blog/en/karpathy-autoresearch-overnight-ml-experiments) demonstrates a similar pattern of autonomous overnight experimentation:
 
 ```mermaid
 graph TD

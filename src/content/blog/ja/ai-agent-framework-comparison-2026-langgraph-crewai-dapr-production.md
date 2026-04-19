@@ -1,8 +1,8 @@
 ---
-title: AIエージェントフレームワーク比較2026 — LangGraph vs CrewAI vs Dapr Agentsプロダクション選択基準
+title: 'AIエージェントフレームワーク比較2026: LangGraph vs CrewAI vs Dapr 選択基準'
 description: >-
-  LangGraph v1.0、CrewAI v1.10、Dapr Agents
-  v1.0を実際のプロダクション基準で比較します。各フレームワークのアーキテクチャ、開発速度、運用耐久性、コストを分析し、チームに合った選択基準を提示します。
+  LangGraph v1.0、CrewAI v1.10、Dapr Agents v1.0をプロダクション基準で比較します。アーキテクチャ、開発速度、
+  運用耐久性、コストを分析し、状態管理型・協調型・インフラ統合型それぞれでチームに最適なマルチエージェントフレームワークを選ぶ基準を提示します。
 pubDate: '2026-04-19'
 heroImage: >-
   ../../../assets/blog/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production-hero.jpg

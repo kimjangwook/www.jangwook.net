@@ -1,7 +1,8 @@
 ---
 title: AnthropicがClaudeをこっそり低下させた論争 — パワーユーザー反発の本当の文脈
 description: >-
-  2026年3月、AnthropicがClaudeのデフォルトeffortレベルを静かに"medium"に引き下げた。パワーユーザーの反発、価格引き上げ論争、そしてこの問題が明らかにしたAIサービスへの信頼の危機を分析する。
+  2026年3月、AnthropicがClaudeのデフォルトeffortレベルを静かに"medium"に引き下げた。パワーユーザーの反発と価格引き上げ論争、
+  そしてこの問題が明らかにしたAIサービスの透明性と信頼危機をCTO・エンジニアリングリーダー視点で分析する。
 pubDate: '2026-04-17'
 heroImage: >-
   ../../../assets/blog/anthropic-claude-performance-decline-controversy-april-2026-hero.jpg
