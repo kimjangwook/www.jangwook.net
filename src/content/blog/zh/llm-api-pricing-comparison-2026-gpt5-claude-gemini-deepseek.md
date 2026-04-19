@@ -16,38 +16,38 @@ relatedPosts:
   - slug: openclaw-opus-4-6-setup-guide
     score: 0.94
     reason:
-      ko: Claude Opus 4.6 가격($5/M)이 납득되면, OpenClaw로 동일 모델을 로컬에서 실행해 API 비용 자체를 줄이는 방법도 있다.
-      ja: Claude Opus 4.6の価格（$5/M）に納得したら、OpenClawで同モデルをローカル実行してAPI費用を削減する選択肢もある。
-      en: Once you understand Claude Opus 4.6 pricing ($5/M), OpenClaw shows how to run the same model locally to cut API costs entirely.
-      zh: 了解了Claude Opus 4.6定价（$5/M）后，OpenClaw提供了本地运行同款模型以彻底削减API费用的方案。
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
   - slug: anthropic-claude-performance-decline-controversy-april-2026
     score: 0.94
     reason:
-      ko: Claude API 비용을 최적화하면서 Anthropic이 effort 레벨을 몰래 낮췄다는 논란도 알아두면, 같은 $5/M에서 받는 품질이 언제든 변할 수 있음을 이해할 수 있다.
-      ja: Claude APIコストを最適化する中で、Anthropicがeffortレベルを密かに下げたという論争も把握しておくと、同じ$5/Mで受け取る品質がいつでも変わりうることが分かる。
-      en: When optimizing Claude API costs, knowing that Anthropic quietly reduced effort levels helps you understand that quality at the same $5/M can shift at any time.
-      zh: 在优化Claude API成本时，了解Anthropic悄然降低effort级别的争议，有助于理解同样$5/M所获得的质量随时可能改变。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: claude-code-insights-usage-analysis
     score: 0.93
     reason:
-      ko: API 가격을 비교했다면 다음 질문은 "어떤 태스크에서 토큰이 가장 많이 소비되는가"다. Claude Code 실사용 분석이 그 답을 준다.
-      ja: API価格を比較したなら、次の疑問は「どのタスクでトークンが最も多く消費されるか」だ。Claude Code実使用分析がその答えを示してくれる。
-      en: After comparing API prices, the next question is which tasks consume the most tokens. The Claude Code usage analysis provides that answer.
-      zh: 比较API价格之后，下一个问题是哪些任务消耗最多Token。Claude Code实际使用分析提供了这个答案。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: greptile-ai-coding-report-2025-review
     score: 0.93
     reason:
-      ko: AI 코딩 도구를 선택할 때 모델 가격만큼 중요한 게 실사용 패턴이다. Greptile 리포트는 개발자들이 AI 코딩에서 실제로 무엇을 원하는지 수치로 보여준다.
-      ja: AIコーディングツールを選ぶとき、モデル価格と同じくらい重要なのが実使用パターンだ。GreptileレポートはAIコーディングで開発者が実際に何を求めているかを数値で示している。
-      en: When choosing AI coding tools, actual usage patterns matter as much as model pricing. The Greptile report quantifies what developers actually want from AI coding.
-      zh: 选择AI编程工具时，实际使用模式与模型定价同样重要。Greptile报告用数据展示了开发者对AI编程的实际需求。
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: mcp-servers-toolkit-introduction
     score: 0.93
     reason:
-      ko: MCP 서버를 운영할 때 백엔드 LLM 선택이 곧 운영 비용이다. 이 가격 비교는 MCP 서버 구축 시 모델 결정에 바로 적용된다.
-      ja: MCPサーバーを運用する際、バックエンドLLMの選択が運用コストに直結する。この価格比較はMCPサーバー構築時のモデル決定にそのまま適用できる。
-      en: When running an MCP server, your backend LLM choice directly determines operational cost. This pricing comparison applies directly to model selection when building MCP servers.
-      zh: 运行MCP服务器时，后端LLM的选择直接决定运营成本。这份定价对比可以直接应用于构建MCP服务器时的模型选择。
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
 ---
 
 上个月，当我把这个博客的自动化流水线切换到Claude Sonnet 4.6时，我第一次认真算了一下每月的API费用。文章生成、翻译、推荐系统、SEO优化——全部加起来大约每月$60〜$80。起初我觉得"这还行"，直到我用同样的工作流在Gemini 2.5 Flash上跑了一遍，得到了$8〜$12的结果。

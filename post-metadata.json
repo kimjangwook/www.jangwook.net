@@ -1,4 +1,15 @@
 {
+  "ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production": {
+    "pubDate": "2026-04-19",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.75,
+      "architecture": 0.95
+    }
+  },
   "claude-mythos-preview-glasswing-ai-cybersecurity": {
     "pubDate": "2026-04-09",
     "difficulty": 2,
