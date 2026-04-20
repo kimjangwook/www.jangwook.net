@@ -166,7 +166,7 @@ Once this pattern becomes viable, team throughput increases dramatically. Howeve
 
 - <strong>Task decomposition skills</strong>: The ability to distinguish between tasks that can be delegated to AI and tasks that require human involvement
 - <strong>Output review skills</strong>: The ability to quickly verify the quality of AI-generated outputs
-- <strong>Asynchronous orchestration</strong>: Managing AI agent task queues and adjusting priorities
+- <strong>Asynchronous orchestration</strong>: Managing [AI agent task queues](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) and adjusting priorities
 
 ### 3. Cost-Benefit Analysis
 
@@ -188,7 +188,7 @@ Perplexity Computer does not exist in a vacuum. The 'always-on AI agent' market 
 |---|---|---|
 | Perplexity Personal Computer | Mac mini-based 24/7 agent | Dedicated hardware + cloud AI |
 | OpenClaw | Open-source AI assistant (210K stars) | Runs on your own hardware |
-| Anthropic Claude | MCP-based tool integration agent | API + protocol standardization |
+| [Claude Managed Agents](/en/blog/en/claude-managed-agents-production-deployment-guide) | MCP-based tool integration agent | API + protocol standardization |
 | OpenAI Codex | Coding-specialized agent | Cloud only |
 
 Gartner predicts that <strong>40% of enterprise apps will feature AI agents by the end of 2026</strong> (up sharply from less than 5% in 2025). Always-on AI agents are at the forefront of this trend.
@@ -199,7 +199,7 @@ There's no need to adopt Perplexity Computer right away. However, the following 
 
 1. <strong>Catalog AI-delegatable tasks</strong>: List out the repetitive research, analysis, and report generation tasks performed within your team.
 2. <strong>Design a governance framework</strong>: Define what level of authority AI agents should have and which tasks require human approval.
-3. <strong>Design asynchronous workflows</strong>: Build processes for delegating tasks to AI agents and reviewing their outputs.
+3. <strong>Design asynchronous workflows</strong>: Build processes for delegating tasks to [AI agents](/en/blog/en/python-ai-agent-library-comparison-2026) and reviewing their outputs.
 4. <strong>Review security policies</strong>: Examine security policies for local file access, cloud data transmission, and audit log management.
 
 ## Conclusion

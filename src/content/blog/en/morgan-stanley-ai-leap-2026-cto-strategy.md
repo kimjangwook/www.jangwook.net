@@ -69,7 +69,7 @@ Most organizations plan AI adoption on an annual basis. But in an environment wh
 
 - <strong>Quarterly AI capability reassessment</strong>: At the start of each quarter, review the latest model benchmarks and re-identify areas in your current workflows that can be automated.
 - <strong>"AI-Ready" backlog management</strong>: Maintain a separate list of tasks that are currently manual but could be automated as AI performance improves.
-- <strong>Vendor lock-in avoidance</strong>: Design an abstraction layer to prevent dependency on a single AI vendor. Standards like MCP (Model Context Protocol) can help with this.
+- <strong>Vendor lock-in avoidance</strong>: Design an abstraction layer to prevent dependency on a single AI vendor. Standards like MCP (Model Context Protocol) and [exchangeable frameworks like LangGraph, CrewAI, Dapr](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) can help with this.
 
 ```typescript
 // Example: AI vendor abstraction layer
@@ -95,7 +95,7 @@ If Morgan Stanley's predicted AI leap materializes, current team structures will
 ### Action Items
 
 - <strong>Adopt the Centaur Pod model</strong>: A combination of 2 - 3 senior engineers plus AI agents can match the output of a traditional 5 - 6 person team.
-- <strong>Create an AI Orchestrator role</strong>: Establish a dedicated role within each team responsible for designing AI agent workflows and managing quality.
+- <strong>Create an AI Orchestrator role</strong>: Establish a dedicated role within each team responsible for designing [AI agent workflows](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) and managing quality.
 - <strong>Update your code review process</strong>: Define separate review criteria and processes for AI-generated code.
 
 ```mermaid
@@ -124,7 +124,7 @@ Morgan Stanley's report references the <strong>"15-15-15" dynamic</strong>: 15-y
 ### Action Items
 
 - <strong>Hybrid AI infrastructure strategy</strong>: Don't put all AI workloads in the cloud. Consider a split strategy where inference runs locally or at the edge, and training runs in the cloud.
-- <strong>Build a cost monitoring dashboard</strong>: Track AI API call costs in real time and measure ROI by model and by feature.
+- <strong>Build a cost monitoring dashboard</strong>: Track [AI API call costs](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek) in real time and measure ROI by model and by feature.
 - <strong>Plan for open-source model adoption</strong>: Continuously benchmark open-source alternatives like Mistral 3 and GLM-5 that achieve 92% of proprietary model performance at 15% of the cost.
 
 | Strategy | Cost Reduction | Best-Fit Workloads |
