@@ -13,27 +13,51 @@ tags:
   - dapr
   - multi-agent
 relatedPosts:
-  - slug: dapr-agents-v1-cncf-production-ai-framework
-    score: 0.96
-    reason:
-      ko: 이 글에서 비교한 Dapr Agents의 durable workflow 철학을 더 깊이 파고들고 싶다면, Dapr Agents v1.0 GA 분석 포스트가 출발점이다.
-      ja: この記事で比較したDapr AgentsのDurable Workflowの哲学をさらに深く掘り下げたい場合、Dapr Agents v1.0 GA分析記事が出発点になる。
-      en: If you want to go deeper on the Dapr Agents durable workflow philosophy compared here, the Dapr Agents v1.0 GA analysis is the natural next read.
-      zh: 如果想深入了解本文比较的Dapr Agents持久工作流哲学，Dapr Agents v1.0 GA分析文章是最佳出发点。
-  - slug: claude-agent-teams-guide
-    score: 0.93
-    reason:
-      ko: LangGraph와 CrewAI의 팀 구성 방식이 실제 Claude 에이전트 팀에서 어떻게 구현되는지 비교해보면 프레임워크 선택의 감이 온다.
-      ja: LangGraphとCrewAIのチーム構成方式が実際のClaudeエージェントチームでどう実装されるか比較すると、フレームワーク選択の感覚が掴める。
-      en: Seeing how LangGraph and CrewAI team patterns translate to real Claude agent team implementations gives you the intuition for framework selection.
-      zh: 了解LangGraph和CrewAI的团队构建方式在实际Claude智能体团队中如何实现，有助于建立框架选择的直觉。
   - slug: mcp-gateway-agent-traffic-control
-    score: 0.91
+    score: 0.95
     reason:
-      ko: CrewAI v1.10의 MCP 네이티브 지원이 실제로 어떤 의미인지 이해하려면, MCP Gateway로 에이전트 트래픽을 제어하는 방법을 함께 읽어야 그림이 완성된다.
-      ja: CrewAI v1.10のMCPネイティブサポートが実際に何を意味するか理解するには、MCPゲートウェイでエージェントトラフィックを制御する方法を合わせて読むと全体像が見えてくる。
-      en: To understand what CrewAI v1.10's native MCP support actually means in practice, reading about MCP Gateway traffic control completes the picture.
-      zh: 要理解CrewAI v1.10原生MCP支持在实践中的真正含义，结合阅读MCP Gateway流量控制文章能让全貌更清晰。
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-agent-teams-guide
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-cli-migration-guide
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: sqlite-ai-swarm-build
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: terraform-ai-batch-infrastructure
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 "应该用哪个智能体框架？"
