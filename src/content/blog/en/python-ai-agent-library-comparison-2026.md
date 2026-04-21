@@ -1,6 +1,6 @@
 ---
 title: 'Python AI Agent Library Comparison 2026 — Pydantic AI vs Instructor vs Smolagents Practical Guide'
-description: 'A hands-on comparison of Pydantic AI, Instructor, and Smolagents with real code examples. Learn which library fits your project based on structured output needs, agent architecture, and production readiness.'
+description: 'Pydantic AI vs Instructor vs Smolagents: real-code benchmarks for structured output, agent architecture, production readiness, and cost efficiency to guide your 2026 library choice.'
 pubDate: '2026-04-20'
 heroImage: '../../../assets/blog/python-ai-agent-library-comparison-2026-hero.jpg'
 tags:

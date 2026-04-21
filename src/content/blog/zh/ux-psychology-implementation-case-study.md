@@ -56,6 +56,8 @@ draft: true
 
 本文介绍将UX心理学原则应用于实际网站以改善用户体验的案例。本次改进基于<strong>目标梯度效应（Goal Gradient Effect）</strong>、<strong>冯·雷斯托夫效应（Von Restorff Effect）</strong>、<strong>菲茨定律（Fitts's Law）</strong>、<strong>多尔蒂阈值（Doherty Threshold）</strong>等10个核心UX心理学原则对组件进行了改进。
 
+各原则的理论背景及与Claude Code技能的集成方法，请先参阅[用UX心理学强化前端设计技能](/zh/blog/zh/ux-psychology-frontend-design-skill)。
+
 ## 实现的UX改进
 
 ### 1. BlogCard阅读时间计算优化
@@ -269,7 +271,7 @@ npm run build
 
 通过将UX心理学原则实现为实际代码，可以系统地改善用户体验。特别是<strong>阅读时间准确性改进</strong>、<strong>卡片悬停效果</strong>、<strong>进度条</strong>等功能，以相对简单的实现带来显著的UX提升。
 
-下一步计划分析实际用户数据（停留时间、完读率、点击率）来定量测量改进效果。
+下一步计划分析实际用户数据（停留时间、完读率、点击率）来定量测量改进效果。关于SEO和AEO视角的优化策略，请参阅[LLM SEO·AEO实战实现指南](/zh/blog/zh/llm-seo-aeo-practical-implementation)。
 
 ## 参考资料
 

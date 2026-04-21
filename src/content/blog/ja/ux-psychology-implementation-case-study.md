@@ -58,6 +58,8 @@ draft: true
 
 UX心理学の原則を実際のウェブサイトに適用してユーザー体験を改善した事例を紹介します。今回の改善では、<strong>Goal Gradient Effect</strong>、<strong>Von Restorff Effect</strong>、<strong>Fitts's Law</strong>、<strong>Doherty Threshold</strong>など10の主要なUX心理学原則に基づいてコンポーネントを改善しました。
 
+各原則の理論的背景とClaude Codeスキルとの統合方法については、[UX心理学でフロントエンドデザインスキルを強化する](/ja/blog/ja/ux-psychology-frontend-design-skill)を先にご覧ください。
+
 ## 実装されたUX改善事項
 
 ### 1. BlogCard読了時間計算の改善
@@ -271,7 +273,7 @@ npm run build
 
 UX心理学原則を実際のコードとして実装することで、ユーザー体験を体系的に改善できます。特に<strong>読了時間の精度向上</strong>、<strong>カードホバー効果</strong>、<strong>進捗バー</strong>などは、比較的シンプルな実装で大きなUX向上をもたらします。
 
-次のステップとして、実際のユーザーデータ（滞在時間、完読率、クリック率）を分析して改善効果を定量的に測定する予定です。
+次のステップとして、実際のユーザーデータ（滞在時間、完読率、クリック率）を分析して改善効果を定量的に測定する予定です。SEOとAEOの観点からの最適化については、[LLM SEO・AEO実践実装ガイド](/ja/blog/ja/llm-seo-aeo-practical-implementation)をご参照ください。
 
 ## 参考資料
 

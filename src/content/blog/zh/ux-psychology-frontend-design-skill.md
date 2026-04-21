@@ -56,6 +56,8 @@ draft: true
 
 如果你使用过Claude Code，可能已经注意到AI生成的UI常常有一种独特的"AI味道"。Inter字体、紫色渐变、可预测的布局...功能上可以工作，但总是显得平淡无奇，难以让人记住。
 
+关于将这些原则应用于实际博客的具体实现案例，请参阅[基于UX心理学的前端改进实战案例](/zh/blog/zh/ux-psychology-implementation-case-study)。
+
 为了解决这个问题，我从Qiita上[nori0724的文章](https://qiita.com/nori0724/items/5c1aa2a5d5327bb68b6c)中获得了灵感。关键发现是：向AI提供UX心理学背景可以显著提升生成UI的质量。
 
 ## 调研：70多个UX心理学原则
@@ -199,6 +201,8 @@ const ProductCard = ({ isLoading }) => {
 ## 结论
 
 <strong>没有可用性的美是艺术。没有美的可用性是工程。伟大的设计两者兼备。</strong>
+
+关于从AEO（Answer Engine Optimization）角度优化博客内容，请参阅[AEO实现体验：AI搜索时代的全新SEO策略](/zh/blog/zh/aeo-implementation-experience)。
 
 通过将UX心理学整合到frontend-design技能中：
 

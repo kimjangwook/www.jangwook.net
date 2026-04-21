@@ -2,8 +2,8 @@
 
 title: MCP服务器Kubernetes生产部署 — 在52%宕机率中活下来的方法
 description: >-
-  2026年4月的扫描发现一半MCP端点已死亡。本文整理了生产环境生存清单：Kubernetes资源配置、Streamable HTTP、健康检查到OAuth
-  2.1。
+  2026年4月生产MCP端点52%异常。本文提供完整的生存清单：Kubernetes资源配置、Streamable HTTP迁移、健康检查自动化、
+  OAuth 2.1认证，帮助您构建稳定的生产级MCP服务器。
 pubDate: '2026-04-21'
 heroImage: >-
   ../../../assets/blog/mcp-server-production-deployment-kubernetes-guide-hero.jpg

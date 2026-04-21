@@ -58,6 +58,8 @@ draft: true
 
 Claude Code를 사용해본 개발자라면 AI가 생성하는 UI가 종종 "AI 냄새"가 난다는 것을 느꼈을 것입니다. Inter 폰트, 보라색 그라데이션, 예측 가능한 레이아웃... 기능적으로는 동작하지만 어딘가 밋밋하고 기억에 남지 않는 디자인.
 
+이 스킬을 실제 블로그에 적용한 구체적인 구현 사례는 [UX 심리학 기반 프론트엔드 개선 실전 사례](/ko/blog/ko/ux-psychology-implementation-case-study)에서 확인할 수 있습니다.
+
 이 문제를 해결하기 위해 Qiita의 [nori0724님 글](https://qiita.com/nori0724/items/5c1aa2a5d5327bb68b6c)에서 힌트를 얻었습니다. UX 심리학 컨텍스트를 AI에게 제공하면 생성되는 UI 품질이 획기적으로 향상된다는 것이죠.
 
 ## 조사: 70개 이상의 UX 심리학 원칙
@@ -201,6 +203,8 @@ const ProductCard = ({ isLoading }) => {
 ## 결론
 
 <strong>Beauty without usability is art. Usability without beauty is engineering. Great design is both.</strong>
+
+AEO(Answer Engine Optimization) 관점에서 블로그 콘텐츠를 최적화하는 방법은 [AEO 구현 경험: AI 검색 시대의 새로운 SEO 전략](/ko/blog/ko/aeo-implementation-experience)을 참고하세요.
 
 UX 심리학을 frontend-design 스킬에 통합함으로써:
 

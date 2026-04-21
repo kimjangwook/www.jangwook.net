@@ -58,6 +58,8 @@ draft: true
 
 Claude Codeを使ったことがある開発者なら、AIが生成するUIに「AI臭」がすることに気づいたかもしれません。Interフォント、紫のグラデーション、予測可能なレイアウト...機能的には動作しますが、どこか味気なく記憶に残らないデザイン。
 
+これらの原則を実際のブログに適用した具体的な実装事例は、[UX心理学に基づくフロントエンド改善実践事例](/ja/blog/ja/ux-psychology-implementation-case-study)でご確認ください。
+
 この問題を解決するため、Qiitaの[nori0724さんの記事](https://qiita.com/nori0724/items/5c1aa2a5d5327bb68b6c)からヒントを得ました。UX心理学のコンテキストをAIに提供すると、生成されるUIの品質が画期的に向上するということです。
 
 ## 調査：70以上のUX心理学原則
@@ -201,6 +203,8 @@ const ProductCard = ({ isLoading }) => {
 ## 結論
 
 <strong>Beauty without usability is art. Usability without beauty is engineering. Great design is both.</strong>
+
+デザイン改善とあわせてAEO（Answer Engine Optimization）観点でのブログ最適化については、[AEO実装体験：AI検索時代の新しいSEO戦略](/ja/blog/ja/aeo-implementation-experience)をご参照ください。
 
 UX心理学をfrontend-designスキルに統合することで：
 

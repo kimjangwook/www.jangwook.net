@@ -59,6 +59,8 @@ draft: true
 
 This article presents a case study of applying UX psychology principles to improve user experience on a real website. We implemented improvements based on 10 core UX psychology principles including <strong>Goal Gradient Effect</strong>, <strong>Von Restorff Effect</strong>, <strong>Fitts's Law</strong>, and <strong>Doherty Threshold</strong>.
 
+For the theoretical background and how these principles integrate into the Claude Code frontend-design skill, see [Enhancing Frontend Design Skills with UX Psychology](/en/blog/en/ux-psychology-frontend-design-skill) first.
+
 ## Implemented UX Improvements
 
 ### 1. BlogCard Reading Time Calculation Enhancement
@@ -272,7 +274,7 @@ npm run build
 
 By implementing UX psychology principles into actual code, we can systematically improve user experience. Features like <strong>accurate reading time</strong>, <strong>card hover effects</strong>, and <strong>progress bars</strong> provide significant UX improvements with relatively simple implementations.
 
-Next steps include analyzing actual user data (time on page, completion rate, click-through rate) to quantitatively measure improvement effects.
+Next steps include analyzing actual user data (time on page, completion rate, click-through rate) to quantitatively measure improvement effects. For optimization strategies from an SEO and AEO perspective, see the [LLM SEO & AEO Practical Implementation Guide](/en/blog/en/llm-seo-aeo-practical-implementation).
 
 ## References
 

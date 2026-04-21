@@ -1,6 +1,6 @@
 ---
 title: 'Python AI 에이전트 라이브러리 비교 2026 — Pydantic AI vs Instructor vs Smolagents 실전 선택 가이드'
-description: 'Pydantic AI, Instructor, Smolagents 세 라이브러리를 실제 코드와 함께 비교합니다. 구조화 출력, 에이전트 아키텍처, 프로덕션 준비도를 기준으로 어떤 프로젝트에 무엇을 써야 하는지 결정 기준을 제시합니다.'
+description: 'Pydantic AI, Instructor, Smolagents 세 라이브러리를 실제 벤치마크 코드와 함께 비교합니다. 구조화 출력, 에이전트 아키텍처, 프로덕션 준비도, 비용 효율성까지 실전 관점에서 어떤 프로젝트에 무엇을 써야 하는지 명확한 결정 기준을 제시합니다.'
 pubDate: '2026-04-20'
 heroImage: '../../../assets/blog/python-ai-agent-library-comparison-2026-hero.jpg'
 tags:

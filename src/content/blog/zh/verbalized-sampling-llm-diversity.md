@@ -351,6 +351,8 @@ sentiment_data = generate_training_data(
 print(f"生成数据: {len(sentiment_data)}条")
 ```
 
+将Pydantic AI、Instructor等AI智能体库与Verbalized Sampling结合使用，可以更高效地构建合成数据管道。请参阅[Python AI智能体库对比2026: Pydantic AI vs Instructor vs Smolagents](/zh/blog/zh/python-ai-agent-library-comparison-2026)了解各库的特点。
+
 ### 3. 对话模拟: 多样化的人物角色
 
 ```python
@@ -398,6 +400,8 @@ dialogue = simulate_conversation(
 for turn in dialogue:
     print(f"{turn['speaker']}: {turn['text']}\n")
 ```
+
+关于在多智能体环境中构建角色协作模式的详细内容，请参阅[AI智能体协作模式: 生产系统设计指南](/zh/blog/zh/ai-agent-collaboration-patterns)。
 
 ### 4. 多视角答案生成
 
@@ -707,6 +711,7 @@ print(dist.sample().text)
 - <strong>论文</strong>: [arXiv:2510.01171](https://arxiv.org/abs/2510.01171)
 - <strong>GitHub</strong>: [stanford-oval/verbalized-sampling](https://github.com/stanford-oval/verbalized-sampling)
 - <strong>演示</strong>: [Hugging Face Space](https://huggingface.co/spaces/stanford-oval/verbalized-sampling-demo)
+- <strong>实战案例</strong>: [在Claude Code中应用Verbalized Sampling](/zh/blog/zh/claude-code-verbalized-sampling)
 
 Verbalized Sampling是释放LLM创造潜力的强大工具。如果您的项目中需要多样性,请尝试这种技术。仅通过简单的提示更改就能获得惊人的结果。
 

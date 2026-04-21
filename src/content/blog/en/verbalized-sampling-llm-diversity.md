@@ -355,6 +355,8 @@ with open("diverse_qa_dataset.json", "w") as f:
     json.dump(dataset, f, indent=2)
 ```
 
+When building production-grade synthetic data pipelines, libraries like Pydantic AI and Instructor pair well with Verbalized Sampling. See [Python AI Agent Library Comparison 2026: Pydantic AI vs Instructor vs Smolagents](/en/blog/en/python-ai-agent-library-comparison-2026) for a practical breakdown of each library's strengths.
+
 ### Dialogue Simulation
 
 Create realistic multi-turn conversations with diverse personas:
@@ -389,6 +391,8 @@ dialogue = simulate_dialogue(
 for i, turn in enumerate(dialogue, 1):
     print(f"\nTurn {i}: {turn}")
 ```
+
+For a deeper look at structuring multi-agent conversations and collaboration patterns in production systems, see [AI Agent Collaboration Patterns: Structuring Production Systems](/en/blog/en/ai-agent-collaboration-patterns).
 
 ### Open-Ended Question Answering
 
@@ -667,6 +671,8 @@ As LLMs continue to grow in capability and reach, ensuring they maintain creativ
 <strong>Code</strong>: [GitHub Repository](https://github.com/CHATS-lab/verbalized-sampling)
 
 <strong>Website</strong>: [verbalized-sampling.com](https://www.verbalized-sampling.com/)
+
+<strong>Related</strong>: [Verbalized Sampling in Claude Code — practical workflow guide](/en/blog/en/claude-code-verbalized-sampling)
 
 <strong>Authors</strong>: Jiayi Zhang, Simon Yu, Derek Chong, Anthony Sicilia, Michael R. Tomz, Christopher D. Manning, Weiyan Shi
 

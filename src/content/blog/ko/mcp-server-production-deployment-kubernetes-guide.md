@@ -2,8 +2,8 @@
 
 title: MCP 서버 Kubernetes 배포 — 52%가 죽는 현실에서 살아남는 법
 description: >-
-  2026년 4월 조사에서 MCP 엔드포인트 절반이 죽어있었다. Kubernetes 리소스 설정, Streamable HTTP, 헬스체크,
-  OAuth 2.1까지 프로덕션 생존 체크리스트를 정리했다.
+  2026년 4월 기준 프로덕션 MCP 엔드포인트 52%가 비정상 상태입니다. Kubernetes 리소스 설정부터 Streamable HTTP
+  전환, 헬스체크 자동화, OAuth 2.1 인증까지 MCP 서버 프로덕션 생존을 위한 실전 배포 체크리스트를 제공합니다.
 pubDate: '2026-04-21'
 heroImage: >-
   ../../../assets/blog/mcp-server-production-deployment-kubernetes-guide-hero.jpg

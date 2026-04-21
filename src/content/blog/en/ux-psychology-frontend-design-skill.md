@@ -58,6 +58,8 @@ draft: true
 
 If you've used Claude Code, you've probably noticed that AI-generated UIs often have that distinctive "AI smell." Inter fonts, purple gradients, predictable layouts... Functionally working but somehow bland and unmemorable designs.
 
+For a concrete walkthrough of applying these principles to a real blog, see [UX Psychology-Based Frontend Implementation Case Study](/en/blog/en/ux-psychology-implementation-case-study).
+
 To solve this problem, I found inspiration from [nori0724's article on Qiita](https://qiita.com/nori0724/items/5c1aa2a5d5327bb68b6c). The key insight: providing UX psychology context to AI dramatically improves the quality of generated UIs.
 
 ## Research: 70+ UX Psychology Principles
@@ -201,6 +203,8 @@ const ProductCard = ({ isLoading }) => {
 ## Conclusion
 
 <strong>Beauty without usability is art. Usability without beauty is engineering. Great design is both.</strong>
+
+For optimizing blog content from an AEO (Answer Engine Optimization) perspective alongside design improvements, see [AEO Implementation: New SEO Strategy for the AI Search Era](/en/blog/en/aeo-implementation-experience).
 
 By integrating UX psychology into the frontend-design skill:
 
