@@ -1,6 +1,8 @@
 ---
 title: Morgan Stanleyが警告した2026年AI飛躍 — CTOが今準備すべき5つの戦略
-description: Morgan Stanleyが警告した2026年上半期のAI能力の非線形飛躍に備え、AIロードマップの四半期再設計、Centaur Podチーム構造、ハイブリッドインフラコスト、ガバナンスフレームワーク、AIリテラシーまで、CTOとエンジニアリングリーダーが今すぐ実行すべき5つの準備戦略を整理します。
+description: >-
+  Morgan Stanleyが警告した2026年上半期のAI能力の非線形飛躍に備え、AIロードマップの四半期再設計、Centaur
+  Podチーム構造、ハイブリッドインフラコスト、ガバナンスフレームワーク、AIリテラシーまで、CTOとエンジニアリングリーダーが今すぐ実行すべき5つの準備戦略を整理します。
 pubDate: '2026-03-16'
 heroImage: ../../../assets/blog/morgan-stanley-ai-leap-2026-cto-strategy-hero.png
 tags:

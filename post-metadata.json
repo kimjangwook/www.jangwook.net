@@ -2450,5 +2450,16 @@
       "devops": 0.6,
       "architecture": 0.4
     }
+  },
+  "mcp-server-production-deployment-kubernetes-guide": {
+    "pubDate": "2026-04-21",
+    "difficulty": 4,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.2,
+      "ai-ml": 0.75,
+      "devops": 0.95,
+      "architecture": 0.9
+    }
   }
 }

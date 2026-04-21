@@ -1,6 +1,9 @@
 ---
 title: Hindsight — Open-Source MCP Memory That Gives AI Agents Learning
-description: 'Analyzing the architecture, core capabilities, and production deployment strategies of the Hindsight MCP memory system that solves the AI agent memory problem.'
+description: >-
+  Analyzing the architecture, core capabilities, and production deployment
+  strategies of the Hindsight MCP memory system that solves the AI agent memory
+  problem.
 pubDate: '2026-03-17'
 heroImage: ../../../assets/blog/hindsight-mcp-agent-memory-learning-hero.jpg
 tags:

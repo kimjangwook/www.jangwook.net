@@ -1,6 +1,8 @@
 ---
 title: Morgan Stanley가 경고한 2026 AI 도약 — CTO가 지금 준비해야 할 5가지
-description: 'Morgan Stanley가 경고한 2026년 상반기 AI 능력의 비선형 도약. AI 로드맵 분기 재설계, Centaur Pod 팀 구조, 하이브리드 인프라 비용, 거버넌스 프레임워크, AI 리터러시까지 CTO와 엔지니어링 리더가 지금 실행해야 할 5가지 준비 전략을 정리합니다.'
+description: >-
+  Morgan Stanley가 경고한 2026년 상반기 AI 능력의 비선형 도약. AI 로드맵 분기 재설계, Centaur Pod 팀 구조,
+  하이브리드 인프라 비용, 거버넌스 프레임워크, AI 리터러시까지 CTO와 엔지니어링 리더가 지금 실행해야 할 5가지 준비 전략을 정리합니다.
 pubDate: '2026-03-16'
 heroImage: ../../../assets/blog/morgan-stanley-ai-leap-2026-cto-strategy-hero.png
 tags:

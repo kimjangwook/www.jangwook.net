@@ -1,6 +1,9 @@
 ---
 title: Hindsight — AIエージェントに学習する記憶を与えるMCPメモリ
-description: AIエージェントに学習する記憶を与えるオープンソースMCPメモリシステムHindsight。LongMemEval 91.4%達成の3層記憶構造、Retain·Recall·Reflect操作、Mental Model自動形成のメカニズムとDockerで5分起動のプロダクション導入戦略を徹底解説します。
+description: >-
+  AIエージェントに学習する記憶を与えるオープンソースMCPメモリシステムHindsight。LongMemEval
+  91.4%達成の3層記憶構造、Retain·Recall·Reflect操作、Mental
+  Model自動形成のメカニズムとDockerで5分起動のプロダクション導入戦略を徹底解説します。
 pubDate: '2026-03-17'
 heroImage: ../../../assets/blog/hindsight-mcp-agent-memory-learning-hero.jpg
 tags:

@@ -1,6 +1,9 @@
 ---
 title: Morgan Stanley警告2026 AI飞跃——CTO现在必须准备的5件事
-description: Morgan Stanley警告2026年上半年AI能力非线性飞跃即将到来。本文整理CTO与工程领导者必须立即执行的5大准备策略：AI路线图季度重构、Centaur Pod团队新模式、混合基础设施成本优化、AI治理框架与合规管理，以及系统提升工程团队AI素养的具体行动方案。
+description: >-
+  Morgan
+  Stanley警告2026年上半年AI能力非线性飞跃即将到来。本文整理CTO与工程领导者必须立即执行的5大准备策略：AI路线图季度重构、Centaur
+  Pod团队新模式、混合基础设施成本优化、AI治理框架与合规管理，以及系统提升工程团队AI素养的具体行动方案。
 pubDate: '2026-03-16'
 heroImage: ../../../assets/blog/morgan-stanley-ai-leap-2026-cto-strategy-hero.png
 tags:

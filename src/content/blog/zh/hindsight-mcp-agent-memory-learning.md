@@ -1,6 +1,8 @@
 ---
 title: Hindsight——赋予AI智能体学习记忆的开源MCP内存系统
-description: 开源MCP内存系统Hindsight赋予AI智能体真正的学习记忆能力，在LongMemEval基准测试中达到91.4%。本文深入解析三层记忆架构、Retain·Recall·Reflect核心操作、Mental Model自动形成机制，以及基于Docker实现5分钟快速部署的生产落地策略。
+description: >-
+  开源MCP内存系统Hindsight赋予AI智能体真正的学习记忆能力，在LongMemEval基准测试中达到91.4%。本文深入解析三层记忆架构、Retain·Recall·Reflect核心操作、Mental
+  Model自动形成机制，以及基于Docker实现5分钟快速部署的生产落地策略。
 pubDate: '2026-03-17'
 heroImage: ../../../assets/blog/hindsight-mcp-agent-memory-learning-hero.jpg
 tags:
