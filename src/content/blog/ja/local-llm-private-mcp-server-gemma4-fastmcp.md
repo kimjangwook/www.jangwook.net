@@ -13,35 +13,35 @@ tags:
   - MCP
 relatedPosts:
   - slug: claude-mythos-preview-glasswing-ai-cybersecurity
-    score: 0.50
+    score: 0.70
     reason:
       ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
       ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
       en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
       zh: 作为先修知识很有用，涵盖AI/ML基础。
   - slug: prismml-bonsai-1bit-llm-edge-ai
-    score: 0.50
+    score: 0.70
     reason:
       ko: '선행 학습 자료로 유용하며, AI/ML 기초를 다룹니다.'
       ja: 事前学習資料として有用であり、AI/MLの基礎を扱います。
       en: 'Useful as prerequisite knowledge, covering AI/ML fundamentals.'
       zh: 作为先修知识很有用，涵盖AI/ML基础。
   - slug: claude-code-source-leak-analysis
-    score: 0.50
+    score: 0.70
     reason:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: anthropic-emotion-concepts-llm-alignment
-    score: 0.50
+    score: 0.70
     reason:
       ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
       ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in AI/ML with comparable difficulty.
       zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: effloow-side-project-ai-company
-    score: 0.50
+    score: 0.70
     reason:
       ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
       ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
