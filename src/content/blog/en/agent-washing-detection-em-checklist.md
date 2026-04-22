@@ -1,9 +1,7 @@
 ---
 title: 'How to Detect Agent Washing: A 7-Point EM Checklist'
 description: >-
-  Only ~130 of thousands of AI agent vendors build genuinely agentic systems.
-  This practical 7-point checklist helps Engineering Managers distinguish real
-  agentic AI from marketing buzzwords.
+  ~130 of thousands of AI agent vendors build truly agentic systems. Use this EM 7-point checklist to test goal re-routing, context memory, and tool flexibility.
 pubDate: '2026-03-13'
 heroImage: ../../../assets/blog/agent-washing-detection-em-checklist-hero.png
 tags:
@@ -167,7 +165,7 @@ A genuine agent <strong>continues toward the overall goal even under partial fai
 
 <strong>Question:</strong> When resource constraints are in place, does the system recognize trade-offs?
 
-A genuine agent adjusts its strategy to <strong>produce the best result within given constraints</strong> — time, tokens, API costs. An agent-washed product runs the same way regardless of resource limitations.
+A genuine agent adjusts its strategy to <strong>produce the best result within given constraints</strong> — time, tokens, [API costs](/en/blog/en/ai-agent-cost-reality). An agent-washed product runs the same way regardless of resource limitations.
 
 ```python
 # Genuine agent: resource awareness
@@ -196,7 +194,7 @@ A genuine agent uses <strong>transfer learning</strong> to handle novel domain t
 
 <strong>Question:</strong> Can the system explain why it chose a particular action?
 
-A genuine agent provides <strong>transparent traces of its decision-making process</strong>. An agent-washed product operates as a black box or returns only pre-written explanations.
+A genuine agent provides <strong>[transparent traces](/en/blog/en/ai-agent-observability-production-guide) of its decision-making process</strong>. An agent-washed product operates as a black box or returns only pre-written explanations.
 
 ```mermaid
 graph TD

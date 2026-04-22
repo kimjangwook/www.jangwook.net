@@ -1,8 +1,7 @@
 ---
 title: '에이전트 워싱 감별법: EM을 위한 7가지 체크리스트'
 description: >-
-  수천 개 AI 에이전트 벤더 중 진짜는 130개뿐. Engineering Manager가 진짜 에이전틱 AI와 단순 자동화를 구별하는 실전
-  체크리스트 7가지를 소개합니다.
+  수천 개 AI 에이전트 벤더 중 진짜는 130개뿐. Engineering Manager가 진짜 에이전틱 AI와 단순 자동화를 구별하는 7가지 실전 체크리스트. 목표 재설정, 컨텍스트 기억, 도구 유연성, 실패 복구 테스트와 벤더 미팅 질문 목록을 제공합니다.
 pubDate: '2026-03-13'
 heroImage: ../../../assets/blog/agent-washing-detection-em-checklist-hero.png
 tags:
@@ -166,7 +165,7 @@ class WashedAgent:
 
 <strong>질문:</strong> 리소스 제약이 있을 때 시스템이 트레이드오프를 인식합니까?
 
-진짜 에이전트는 주어진 <strong>시간, 토큰, API 비용의 제약 안에서 최적 결과를 도출</strong>하기 위해 전략을 조정합니다. 에이전트 워싱은 리소스 제약을 인식하지 못하고 항상 같은 방식으로 실행됩니다.
+진짜 에이전트는 주어진 <strong>시간, 토큰, [API 비용](/ko/blog/ko/ai-agent-cost-reality)의 제약 안에서 최적 결과를 도출</strong>하기 위해 전략을 조정합니다. 에이전트 워싱은 리소스 제약을 인식하지 못하고 항상 같은 방식으로 실행됩니다.
 
 ```python
 # 진짜 에이전트: 리소스 인식
@@ -195,7 +194,7 @@ async def run_with_budget(self, task, token_budget=10000):
 
 <strong>질문:</strong> 시스템이 왜 특정 행동을 선택했는지 설명할 수 있습니까?
 
-진짜 에이전트는 <strong>의사결정 과정의 투명한 추적(trace)</strong>을 제공합니다. 에이전트 워싱은 "블랙박스"로 작동하거나, 사전 작성된 설명만 반환합니다.
+진짜 에이전트는 <strong>[의사결정 과정의 투명한 추적(trace)](/ko/blog/ko/ai-agent-observability-production-guide)</strong>을 제공합니다. 에이전트 워싱은 "블랙박스"로 작동하거나, 사전 작성된 설명만 반환합니다.
 
 ```mermaid
 graph TD

@@ -1,9 +1,7 @@
 ---
 title: OpenAI Acquires Promptfoo — The AI Agent DevSecOps Era Begins
 description: >-
-  OpenAI has acquired Promptfoo, the AI security testing platform used by 25% of
-  the Fortune 500. As it integrates into the Frontier platform, a new standard
-  for AI agent DevSecOps is taking shape.
+  OpenAI acquired Promptfoo (25% of Fortune 500). Learn what it means for AI agent DevSecOps: red team testing, CI/CD pipelines, and behavior policies.
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/openai-promptfoo-ai-agent-devsecops-hero.jpg
 tags:
@@ -96,7 +94,7 @@ What stands out is Promptfoo's approach to red teaming. Rather than cycling thro
 
 ### 1. A Paradigm Shift in AI Agent Security
 
-Through 2025, AI security largely focused on "model safety" — aligning models with RLHF, adding output filters, and configuring guardrails. But in 2026, AI agents <strong>call tools, access data, and interact with external systems</strong>. The attack surface has fundamentally changed.
+Through 2025, AI security largely focused on "model safety" — aligning models with RLHF, adding output filters, and configuring guardrails. But in 2026, AI agents <strong>call tools, access data, and interact with external systems</strong>. The [attack surface](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security) has fundamentally changed.
 
 ```mermaid
 graph TD
@@ -231,7 +229,7 @@ escalation_triggers:
 
 ### 3. Establish Security Testing Benchmarks
 
-Using the NIST AI Risk Management Framework as a foundation, define security testing thresholds that fit your team's context.
+Using the [NIST AI Risk Management Framework](/en/blog/en/nist-ai-agent-security-standards) as a foundation, define security testing thresholds that fit your team's context.
 
 | Test Category | Minimum Threshold | Recommended Threshold |
 |---------------|-------------------|-----------------------|

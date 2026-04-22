@@ -84,7 +84,7 @@ graph TD
 
 ### 1. 基于图的工作流编排
 
-与LangGraph类似，支持有状态（stateful）的基于图的工作流。可处理顺序执行、并行执行和条件分支，并通过<strong>检查点（checkpointing）</strong>实现长时间运行工作流的暂停与恢复。
+与[LangGraph](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)类似，支持有状态（stateful）的基于图的工作流。可处理顺序执行、并行执行和条件分支，并通过<strong>检查点（checkpointing）</strong>实现长时间运行工作流的暂停与恢复。
 
 ```python
 from microsoft.agents import AgentRuntime, Agent, tool
@@ -114,7 +114,7 @@ workflow = SequentialWorkflow([
 
 ### 2. 原生MCP与A2A协议支持
 
-Microsoft Agent Framework从一开始就被设计为支持MCP（模型上下文协议）和A2A（Agent到Agent）协议。这意味着可以与HubSpot、Salesforce、Slack、Azure DevOps等数百个MCP服务器即时集成。
+Microsoft Agent Framework从一开始就被设计为支持MCP（模型上下文协议）和[A2A（Agent到Agent）协议](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide)。这意味着可以与HubSpot、Salesforce、Slack、Azure DevOps等数百个MCP服务器即时集成。
 
 ```python
 from microsoft.agents.mcp import MCPToolServer
@@ -171,7 +171,7 @@ escalation_policy:
 
 ### 5. 生产级可观测性
 
-内置基于OpenTelemetry的完整遥测功能。所有Agent动作、工具调用和编排步骤均自动追踪。
+内置基于OpenTelemetry的完整[遥测](/zh/blog/zh/ai-agent-observability-production-guide)功能。所有Agent动作、工具调用和编排步骤均自动追踪。
 
 ```mermaid
 graph TD

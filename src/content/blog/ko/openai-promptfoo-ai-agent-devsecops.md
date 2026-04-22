@@ -1,8 +1,7 @@
 ---
 title: OpenAI의 Promptfoo 인수 — AI 에이전트 DevSecOps 시대가 열린다
 description: >-
-  OpenAI가 AI 보안 테스트 플랫폼 Promptfoo를 인수했다. Fortune 500의 25%가 사용하는 이 도구가 Frontier에
-  통합되면서 AI 에이전트 DevSecOps의 새로운 표준이 만들어지고 있다.
+  OpenAI가 AI 보안 테스트 플랫폼 Promptfoo를 인수했다. Fortune 500의 25%가 사용하는 이 도구가 Frontier에 통합되면서 AI 에이전트 DevSecOps의 새로운 표준이 형성된다. 레드팀 테스트와 CI/CD 보안 파이프라인 구축법을 소개합니다.
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/openai-promptfoo-ai-agent-devsecops-hero.jpg
 tags:
@@ -95,7 +94,7 @@ Enterprise:
 
 ### 1. AI 에이전트 보안의 패러다임 전환
 
-2025년까지 AI 보안은 대부분 "모델 안전성"에 초점을 맞췄다. RLHF로 모델을 정렬하고, 출력 필터를 달고, 가드레일을 설정하는 방식이었다. 하지만 2026년의 AI 에이전트는 <strong>도구를 호출하고, 데이터에 접근하고, 외부 시스템과 상호작용</strong>한다. 공격 표면이 완전히 달라졌다.
+2025년까지 AI 보안은 대부분 "모델 안전성"에 초점을 맞췄다. RLHF로 모델을 정렬하고, 출력 필터를 달고, 가드레일을 설정하는 방식이었다. 하지만 2026년의 AI 에이전트는 <strong>도구를 호출하고, 데이터에 접근하고, 외부 시스템과 상호작용</strong>한다. [공격 표면](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security)이 완전히 달라졌다.
 
 ```mermaid
 graph TD
@@ -230,7 +229,7 @@ escalation_triggers:
 
 ### 3. 보안 테스트 기준을 수립하라
 
-NIST AI 위험 관리 프레임워크를 기반으로, 팀에 맞는 보안 테스트 기준을 수립한다.
+[NIST AI 위험 관리 프레임워크](/ko/blog/ko/nist-ai-agent-security-standards)를 기반으로, 팀에 맞는 보안 테스트 기준을 수립한다.
 
 | 테스트 카테고리 | 최소 기준 | 권장 기준 |
 |-------------|---------|---------|

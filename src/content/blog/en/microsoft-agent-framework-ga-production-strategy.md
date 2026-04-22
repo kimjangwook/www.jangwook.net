@@ -87,7 +87,7 @@ graph TD
 
 ### 1. Graph-Based Workflow Orchestration
 
-Similar to LangGraph, it supports stateful graph-based workflows. Sequential execution, parallel execution, and conditional branching are all handled, while <strong>checkpointing</strong> enables pause and resume for long-running workflows.
+Similar to [LangGraph](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production), it supports stateful graph-based workflows. Sequential execution, parallel execution, and conditional branching are all handled, while <strong>checkpointing</strong> enables pause and resume for long-running workflows.
 
 ```python
 from microsoft.agents import AgentRuntime, Agent, tool
@@ -117,7 +117,7 @@ workflow = SequentialWorkflow([
 
 ### 2. Native MCP and A2A Protocol Support
 
-Microsoft Agent Framework was designed from day one to support MCP (Model Context Protocol) and A2A (Agent-to-Agent) protocols. This means instant integration with hundreds of MCP servers including HubSpot, Salesforce, Slack, and Azure DevOps.
+Microsoft Agent Framework was designed from day one to support MCP (Model Context Protocol) and [A2A (Agent-to-Agent) protocols](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide). This means instant integration with hundreds of MCP servers including HubSpot, Salesforce, Slack, and Azure DevOps.
 
 ```python
 from microsoft.agents.mcp import MCPToolServer
@@ -174,7 +174,7 @@ escalation_policy:
 
 ### 5. Production-Grade Observability
 
-Full telemetry based on OpenTelemetry is built in. Every agent action, tool invocation, and orchestration step is automatically traced.
+Full [telemetry](/en/blog/en/ai-agent-observability-production-guide) based on OpenTelemetry is built in. Every agent action, tool invocation, and orchestration step is automatically traced.
 
 ```mermaid
 graph TD

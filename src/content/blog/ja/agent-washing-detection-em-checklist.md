@@ -1,8 +1,7 @@
 ---
 title: 'エージェントウォッシング見抜き術: EMのための7つのチェックリスト'
 description: >-
-  数千のAIエージェントベンダーのうち本物は130社のみ。Engineering
-  Managerが真のエージェントAIと単なる自動化を見分ける実践チェックリスト7選を紹介します。
+  数千のAIエージェントベンダーのうち本物は130社のみ。Engineering Managerが真のエージェントAIと単なる自動化を見分ける実践チェックリスト7選。目標再設定・コンテキスト記憶・ツール柔軟性・失敗復旧・予算認識・ドメイン一般化・推論の透明性を検証する7つのテストとベンダー評価の質問リスト付き。
 pubDate: '2026-03-13'
 heroImage: ../../../assets/blog/agent-washing-detection-em-checklist-hero.png
 tags:
@@ -166,7 +165,7 @@ class WashedAgent:
 
 <strong>質問:</strong> リソース制約がある場合、システムはトレードオフを認識しますか?
 
-真のエージェントは与えられた<strong>時間、トークン、APIコストの制約内で最適な結果を導き出す</strong>ために戦略を調整します。エージェントウォッシングはリソース制約を認識せず、常に同じ方法で実行されます。
+真のエージェントは与えられた<strong>時間、トークン、[APIコスト](/ja/blog/ja/ai-agent-cost-reality)の制約内で最適な結果を導き出す</strong>ために戦略を調整します。エージェントウォッシングはリソース制約を認識せず、常に同じ方法で実行されます。
 
 ```python
 # 真のエージェント: リソース認識
@@ -195,7 +194,7 @@ async def run_with_budget(self, task, token_budget=10000):
 
 <strong>質問:</strong> システムがなぜ特定の行動を選んだかを説明できますか?
 
-真のエージェントは<strong>意思決定プロセスの透明なトレース</strong>を提供します。エージェントウォッシングは「ブラックボックス」として機能するか、事前に作成された説明のみを返します。
+真のエージェントは<strong>[意思決定プロセスの透明なトレース](/ja/blog/ja/ai-agent-observability-production-guide)</strong>を提供します。エージェントウォッシングは「ブラックボックス」として機能するか、事前に作成された説明のみを返します。
 
 ```mermaid
 graph TD

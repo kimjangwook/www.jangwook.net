@@ -1,8 +1,7 @@
 ---
 title: OpenAIのPromptfoo買収 — AIエージェントDevSecOps時代の幕開け
 description: >-
-  OpenAIがAIセキュリティテストプラットフォームのPromptfooを買収。Fortune
-  500の25%が使用するこのツールがFrontierに統合され、AIエージェントDevSecOpsの新たな標準が生まれつつあります。
+  OpenAIがAIセキュリティテストプラットフォームPromptfooを買収しました。Fortune 500の25%が使用するこのツールがFrontierに統合され、AIエージェントDevSecOpsの新標準が生まれつつあります。レッドチームテストとCI/CD統合手順も解説します。
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/openai-promptfoo-ai-agent-devsecops-hero.jpg
 tags:
@@ -95,7 +94,7 @@ Enterprise:
 
 ### 1. AIエージェントセキュリティのパラダイムシフト
 
-2025年までAIセキュリティのほとんどは「モデルの安全性」に焦点を当てていました。RLHFでモデルを調整し、出力フィルターを付け、ガードレールを設定するアプローチです。しかし2026年のAIエージェントは<strong>ツールを呼び出し、データにアクセスし、外部システムと相互作用</strong>します。攻撃対象領域が根本的に変わったのです。
+2025年までAIセキュリティのほとんどは「モデルの安全性」に焦点を当てていました。RLHFでモデルを調整し、出力フィルターを付け、ガードレールを設定するアプローチです。しかし2026年のAIエージェントは<strong>ツールを呼び出し、データにアクセスし、外部システムと相互作用</strong>します。[攻撃対象領域](/ja/blog/ja/ai-coding-secrets-sprawl-mcp-config-security)が根本的に変わったのです。
 
 ```mermaid
 graph TD
@@ -230,7 +229,7 @@ escalation_triggers:
 
 ### 3. セキュリティテスト基準を策定する
 
-NIST AIリスク管理フレームワークを基盤に、チームに適したセキュリティテスト基準を策定します。
+[NIST AIリスク管理フレームワーク](/ja/blog/ja/nist-ai-agent-security-standards)を基盤に、チームに適したセキュリティテスト基準を策定します。
 
 | テストカテゴリ | 最低基準 | 推奨基準 |
 |-------------|---------|---------|

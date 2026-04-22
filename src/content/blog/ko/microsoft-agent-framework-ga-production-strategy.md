@@ -86,7 +86,7 @@ graph TD
 
 ### 1. 그래프 기반 워크플로우 오케스트레이션
 
-LangGraph처럼 상태를 가진(stateful) 그래프 기반 워크플로우를 지원한다. 순차 실행, 병렬 실행, 조건부 분기를 모두 처리할 수 있으며, <strong>체크포인팅(checkpointing)</strong>으로 장기 실행 워크플로우의 중단/재개가 가능하다.
+[LangGraph](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)처럼 상태를 가진(stateful) 그래프 기반 워크플로우를 지원한다. 순차 실행, 병렬 실행, 조건부 분기를 모두 처리할 수 있으며, <strong>체크포인팅(checkpointing)</strong>으로 장기 실행 워크플로우의 중단/재개가 가능하다.
 
 ```python
 from microsoft.agents import AgentRuntime, Agent, tool
@@ -116,7 +116,7 @@ workflow = SequentialWorkflow([
 
 ### 2. MCP 및 A2A 프로토콜 네이티브 지원
 
-Microsoft Agent Framework는 처음부터 MCP(Model Context Protocol)와 A2A(Agent-to-Agent) 프로토콜을 지원하도록 설계되었다. 이는 HubSpot, Salesforce, Slack, Azure DevOps 등 수백 개의 MCP 서버와 즉시 연동 가능하다는 것을 의미한다.
+Microsoft Agent Framework는 처음부터 MCP(Model Context Protocol)와 [A2A(Agent-to-Agent) 프로토콜](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide)을 지원하도록 설계되었다. 이는 HubSpot, Salesforce, Slack, Azure DevOps 등 수백 개의 MCP 서버와 즉시 연동 가능하다는 것을 의미한다.
 
 ```python
 from microsoft.agents.mcp import MCPToolServer
@@ -173,7 +173,7 @@ escalation_policy:
 
 ### 5. 프로덕션 등급 관찰가능성
 
-OpenTelemetry 기반의 완전한 텔레메트리가 내장되어 있다. 모든 에이전트 동작, 툴 호출, 오케스트레이션 단계가 자동으로 추적된다.
+OpenTelemetry 기반의 완전한 [텔레메트리](/ko/blog/ko/ai-agent-observability-production-guide)가 내장되어 있다. 모든 에이전트 동작, 툴 호출, 오케스트레이션 단계가 자동으로 추적된다.
 
 ```mermaid
 graph TD

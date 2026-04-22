@@ -1,8 +1,7 @@
 ---
 title: OpenAI收购Promptfoo——AI智能体DevSecOps时代开启
 description: >-
-  OpenAI收购AI安全测试平台Promptfoo。这一被Fortune
-  500中25%企业使用的工具将集成到Frontier平台，正在为AI智能体DevSecOps制定全新行业标准。
+  OpenAI收购AI安全测试平台Promptfoo，这一被Fortune 500中25%企业使用的工具将集成至其企业平台Frontier，正为AI智能体DevSecOps制定全新行业标准。本文深度解析Promptfoo的红队测试方法、CI/CD流水线安全集成步骤与智能体行为策略制定，涵盖EM/CTO须知的实操指南。
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/openai-promptfoo-ai-agent-devsecops-hero.jpg
 tags:
@@ -95,7 +94,7 @@ Enterprise:
 
 ### 1. AI智能体安全的范式转变
 
-2025年之前，AI安全大多聚焦于"模型安全性"——通过RLHF对齐模型、添加输出过滤器、设置护栏。然而，2026年的AI智能体已经可以<strong>调用工具、访问数据、与外部系统交互</strong>，攻击面已发生根本性变化。
+2025年之前，AI安全大多聚焦于"模型安全性"——通过RLHF对齐模型、添加输出过滤器、设置护栏。然而，2026年的AI智能体已经可以<strong>调用工具、访问数据、与外部系统交互</strong>，[攻击面](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security)已发生根本性变化。
 
 ```mermaid
 graph TD
@@ -230,7 +229,7 @@ escalation_triggers:
 
 ### 3. 建立安全测试基准
 
-基于NIST AI风险管理框架，结合团队实际情况制定安全测试基准。
+基于[NIST AI风险管理框架](/zh/blog/zh/nist-ai-agent-security-standards)，结合团队实际情况制定安全测试基准。
 
 | 测试类别 | 最低基准 | 推荐基准 |
 |-------------|---------|---------|
