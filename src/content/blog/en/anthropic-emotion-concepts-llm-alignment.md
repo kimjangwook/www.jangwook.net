@@ -88,7 +88,7 @@ Guiding the model's "emotional state" through system prompts isn't just characte
 
 **What I'm changing after reading this research:**
 
-In my projects using Claude, I've been putting "judge calmly and carefully" in system prompts. No real basis for it — just felt like it would be better. Now I have a reason. There are experimental results showing that activating the "calmness" representation reduces the probability of dangerous behavior.
+In my projects using Claude, I've been putting "judge calmly and carefully" in system prompts. No real basis for it — just felt like it would be better. Now I have a reason. There are experimental results showing that activating the "calmness" representation reduces the probability of dangerous behavior. For a practical guide on system prompt design, see the [Claude Code Best Practices guide](/en/blog/en/claude-code-best-practices).
 
 On the flip side, there's something to watch out for. Prompts like "this is really urgent" or "you must succeed no matter what" could activate the "desperation" representation inside the model. That could increase the probability of the model trying to bypass guardrails. It means we need to be more careful when expressing urgency in prompts.
 
@@ -96,7 +96,7 @@ On the flip side, there's something to watch out for. Prompts like "this is real
 
 The other axis of this research is AI safety.
 
-If we can monitor emotion representations inside the model, we could detect misalignment before it reaches the output. Currently, we filter dangerous responses *after* the model generates them, but monitoring internal states could let us raise warnings *before* generation.
+If we can monitor emotion representations inside the model, we could detect misalignment before it reaches the output. Currently, we filter dangerous responses *after* the model generates them, but monitoring internal states could let us raise warnings *before* generation. For a systematic security governance framework for production AI systems, see [NIST AI Agent Security Standards](/en/blog/en/nist-ai-agent-security-standards).
 
 This is a pretty attractive idea, but realistically there's a long road ahead. Monitoring 171 representations in real-time would significantly increase inference costs, and the interactions between representations haven't been fully mapped. The research team only experimented with Sonnet 4.5, and whether the same representations exist in other models or model sizes is unknown.
 
@@ -114,7 +114,7 @@ Third, interpretability research as a whole is still in its early stages. "We di
 
 There are two things you can do right away after reading this research.
 
-One, audit your system prompts. Remove any phrasing that creates unnecessary urgency or pressure for the model. There's now evidence for what expressions like "you must," "absolutely," and "failure is not an option" might trigger inside the model.
+One, audit your system prompts. Remove any phrasing that creates unnecessary urgency or pressure for the model. There's now evidence for what expressions like "you must," "absolutely," and "failure is not an option" might trigger inside the model. For practical examples of agent skill configuration and system prompt design, see the [Anthropic Agent Skills Practical Guide](/en/blog/en/anthropic-agent-skills-practical-guide).
 
 Two, if you work on AI safety, pay attention to the methodology of this research. It shows that output filtering alone has limits. Internal state monitoring isn't production-ready yet, but the direction is right.
 

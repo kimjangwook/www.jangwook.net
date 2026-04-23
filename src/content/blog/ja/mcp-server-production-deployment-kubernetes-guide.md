@@ -1,8 +1,8 @@
 ---
 title: MCPサーバーKubernetes本番デプロイ — 52%が死ぬ現実を生き延びる方法
 description: >-
-  2026年4月時点でプロダクションMCPエンドポイントの52%が異常状態。Kubernetesリソース設定からStreamable HTTP移行、
-  ヘルスチェック自動化、OAuth 2.1認証まで、MCP本番運用サバイバルチェックリストを提供します。
+  2026年4月時点でプロダクションMCPエンドポイントの52%が異常状態です。Kubernetesリソース設定からStreamable HTTP移行、
+  ヘルスチェック自動化、OAuth 2.1認証まで—MCP本番環境で生き残るための実践的デプロイチェックリストを解説します。
 pubDate: '2026-04-21'
 heroImage: >-
   ../../../assets/blog/mcp-server-production-deployment-kubernetes-guide-hero.jpg

@@ -2,7 +2,7 @@
 title: Vercel AI SDK로 Claude 스트리밍 에이전트 만들기
 description: >-
   Vercel AI SDK v6 + @ai-sdk/anthropic으로 Next.js App Router에서 Claude 스트리밍 채팅과 도구
-  호출 에이전트를 구현하는 실전 가이드. streamText, generateObject, 도구 루프 패턴을 코드로 익힌다.
+  호출 에이전트를 구현하는 실전 가이드. streamText, generateObject, 도구 루프 패턴을 실제 코드로 익힌다.
 pubDate: '2026-04-23'
 heroImage: ../../../assets/blog/vercel-ai-sdk-claude-streaming-agent-2026-hero.jpg
 tags:

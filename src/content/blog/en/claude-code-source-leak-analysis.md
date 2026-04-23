@@ -70,7 +70,7 @@ The first thing that caught my eye in the leaked code was the agent loop structu
 
 At its core, Claude Code is a reactive system. The user sends a message, and it responds. Nothing unusual there. But the code contains a feature flag called `PROACTIVE`, and enabling it activates a mode called `KAIROS`. KAIROS uses a heartbeat mechanism to periodically evaluate "is there something worth doing right now?" and acts autonomously without user input.
 
-In plain terms, it's a daemon mode that runs 24/7 in the background, making decisions like "should I clean up memory?" or "should I suggest refactoring this code?" on its own.
+In plain terms, it's a daemon mode that runs 24/7 in the background, making decisions like "should I clean up memory?" or "should I suggest refactoring this code?" on its own. This autonomous execution pattern was later formalized as [Claude Code Routines](/en/blog/en/claude-code-routines-practical-guide-2026).
 
 What struck me about this architecture is the clear separation between "initiative (deciding what to do)" and "execution (actually doing it)." Even when KAIROS determines something is worth doing, the action still has to pass through a separate permission gate. The most dangerous scenario with autonomous agents is "the AI did something on its own and things went sideways" — this separation helps mitigate that risk.
 
@@ -93,7 +93,7 @@ const systemPrompt = [
 
 On Reddit's r/ClaudeAI, there were reports of people using the leaked code to identify a "cache invalidation bug" and reducing token consumption by 10〜20x. Developers like Theo Browne criticized this cache invalidation bug for pushing unnecessary costs onto users.
 
-This pattern is something I can use in my own projects. When calling LLM APIs, separating the static portion of your system prompt and leveraging prompt caching can significantly reduce costs, especially in long conversation sessions.
+This pattern is something I can use in my own projects. When calling LLM APIs, separating the static portion of your system prompt and leveraging prompt caching can significantly reduce costs, especially in long conversation sessions. For a deeper dive into Claude API cost optimization and prompt design strategies, see the [Claude Code Best Practices guide](/en/blog/en/claude-code-best-practices).
 
 ## Three-Tier Memory — Why Claude Code Remembers Context So Well
 
@@ -150,7 +150,7 @@ Some of these features have already shipped in recent Claude Code updates. Backg
 
 ## Security Considerations
 
-There's an issue more serious than the leak itself. Vulnerabilities like CVE-2025-59536 and CVE-2026-21852 have been identified, and with the source code public, exploitation becomes significantly easier.
+There's an issue more serious than the leak itself. Vulnerabilities like CVE-2025-59536 and CVE-2026-21852 have been identified, and with the source code public, exploitation becomes significantly easier. For a systematic framework on AI agent security vulnerability response, see the [NIST AI Agent Security Standards](/en/blog/en/nist-ai-agent-security-standards) post.
 
 Specifically:
 - Cloning a repo containing malicious `.claude/` configuration files can enable remote code execution (RCE)

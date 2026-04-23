@@ -73,7 +73,7 @@ relatedPosts:
 
 ## 为什么要做这个
 
-安装完Paperclip之后，我想的是"得实际做点东西才能真正理解它"。在CLI里跑一个Agent和像组织一样运营14个，是完全不同的事情。
+安装完Paperclip之后，我想的是"得实际做点东西才能真正理解它"。在CLI里跑一个Agent和像组织一样运营14个，是完全不同的事情。Agent技能配置和编排策略的实践案例可参考[Anthropic Agent Skills实战指南](/zh/blog/zh/anthropic-agent-skills-practical-guide)。
 
 而且我很好奇：<strong>公司能不能仅靠AI运转？</strong>收入为零也没关系，只要内容能生产、站点能维护、质量能管控——这个循环能不能在无人参与的情况下运行。
 
@@ -87,7 +87,7 @@ Effloow的Agent分为5个业务单元。
 
 <strong>Content Factory</strong> — 生产面向SEO的长文。Trend Scout挖掘选题，Writer撰写初稿，Lead Researcher负责事实核查。
 
-<strong>Tool Forge</strong> — 开发免费Web工具。目前已上线的是twMerge Playground——一个调试Tailwind CSS类名冲突的交互式工具，由Builder Agent负责。
+<strong>Tool Forge</strong> — 开发免费Web工具。目前已上线的是twMerge Playground——一个调试Tailwind CSS类名冲突的交互式工具，由Builder Agent负责。为交互式AI工具添加实时流式传输的方法，可参考[用Vercel AI SDK构建Claude流式Agent](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)。
 
 <strong>Experiment Lab</strong> — 进行变现实验。本来是为了A/B测试AdSense、联盟链接之类的，但目前实验数为零。
 
@@ -158,6 +158,6 @@ tags: [ai, paperclip, orchestration]
 
 但有一点是确定的：<strong>初期搭建速度碾压式地快</strong>。一天之内就搞出了网站 + 内容 + 工具 + GA4集成 + Live Dashboard。一个人做的话至少得一周。
 
-我打算继续运营Effloow。下一个目标是让Agent自主创建Issue——Trend Scout发现选题，Board创建Issue，自动分配给Writer的循环。目前还是我手动创建Issue，离真正的"无人公司"还有距离。
+我打算继续运营Effloow。下一个目标是让Agent自主创建Issue——Trend Scout发现选题，Board创建Issue，自动分配给Writer的循环。目前还是我手动创建Issue，离真正的"无人公司"还有距离。结合定时任务和API事件实现Agent自动化循环的方法，可参考[Claude Code Routines实战指南](/zh/blog/zh/claude-code-routines-practical-guide-2026)。
 
 代码暂未开源，但站点可以在[effloow.com](https://www.effloow.com)查看。我计划每周通过Effloow Weekly记录进展。

@@ -1,9 +1,9 @@
 ---
 title: MCP Server Kubernetes Deployment — Surviving the 52% Death Rate
 description: >-
-  April 2026: 52% of MCP endpoints are down. Checklist covering Kubernetes
-  config, Streamable HTTP migration, health checks, and OAuth 2.1 for production
-  MCP servers.
+  April 2026: 52% of production MCP endpoints are failing. Step-by-step
+  checklist: Kubernetes config, Streamable HTTP migration, health checks, and
+  OAuth 2.1.
 pubDate: '2026-04-21'
 heroImage: >-
   ../../../assets/blog/mcp-server-production-deployment-kubernetes-guide-hero.jpg

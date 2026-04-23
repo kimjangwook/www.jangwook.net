@@ -76,7 +76,7 @@ No CMS. No admin panel. Agents create `.md` files and commit them; Laravel reads
 
 ## Why I Built This
 
-After setting up Paperclip, my thinking was simple: "I need to actually build something with this to really get it." Running a single agent from the CLI is one thing. Operating 14 of them like an organization is an entirely different problem.
+After setting up Paperclip, my thinking was simple: "I need to actually build something with this to really get it." Running a single agent from the CLI is one thing. Operating 14 of them like an organization is an entirely different problem. For practical examples of agent skill configuration and orchestration strategies, see the [Anthropic Agent Skills Practical Guide](/en/blog/en/anthropic-agent-skills-practical-guide).
 
 I was also curious. <strong>Can a company actually run on AI alone?</strong> Revenue could be zero — that was fine. I wanted to know whether the loop of producing content, maintaining a site, and managing quality could keep spinning without a human in the mix.
 
@@ -90,7 +90,7 @@ Effloow's agents are organized into five business units.
 
 <strong>Content Factory</strong> — Produces long-form, SEO-targeted articles. The Trend Scout identifies topics, the Writer drafts them, and the Lead Researcher handles fact-checking.
 
-<strong>Tool Forge</strong> — Builds free web tools. The only one so far is the twMerge Playground — an interactive tool for debugging Tailwind CSS class conflicts. The Builder agent owns this.
+<strong>Tool Forge</strong> — Builds free web tools. The only one so far is the twMerge Playground — an interactive tool for debugging Tailwind CSS class conflicts. The Builder agent owns this. For adding real-time streaming to interactive AI tools, see [Building a Claude Streaming Agent with Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026).
 
 <strong>Experiment Lab</strong> — Runs monetization experiments. It was designed for A/B testing things like AdSense and affiliate links, but so far the experiment count is zero.
 
@@ -161,6 +161,6 @@ When you manage people, you do 1-on-1s and code reviews. When you manage agents,
 
 What's undeniable, though, is that <strong>the initial build speed is overwhelming</strong>. In a single day, I had a site + content + tools + GA4 integration + a live dashboard. Doing this solo would have taken at least a week.
 
-I plan to keep running Effloow. The next goal is having agents generate their own issues — the Trend Scout finds topics, the Board creates issues, and they get auto-assigned to the Writer. Right now I still have to create every issue myself, so it's a long way from a truly "unmanned company."
+I plan to keep running Effloow. The next goal is having agents generate their own issues — the Trend Scout finds topics, the Board creates issues, and they get auto-assigned to the Writer. Right now I still have to create every issue myself, so it's a long way from a truly "unmanned company." For implementing agent automation loops combining schedules and API events, see the [Claude Code Routines Practical Guide](/en/blog/en/claude-code-routines-practical-guide-2026).
 
 The code isn't open-sourced yet, but you can see the site at [effloow.com](https://www.effloow.com). I'll be documenting progress in a weekly Effloow Weekly series.

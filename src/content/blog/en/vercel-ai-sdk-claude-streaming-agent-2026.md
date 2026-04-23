@@ -1,9 +1,8 @@
 ---
 title: Building a Claude Streaming Agent with Vercel AI SDK
 description: >-
-  A hands-on guide to implementing Claude streaming chat and tool-calling agents
-  in Next.js App Router using Vercel AI SDK v6 + @ai-sdk/anthropic. Learn
-  streamText, generateObject, and tool loop patterns through working code.
+  Build Claude streaming and tool-calling agents in Next.js App Router using
+  Vercel AI SDK v6. Master streamText, generateObject, and tool loop patterns.
 pubDate: '2026-04-23'
 heroImage: ../../../assets/blog/vercel-ai-sdk-claude-streaming-agent-2026-hero.jpg
 tags:
