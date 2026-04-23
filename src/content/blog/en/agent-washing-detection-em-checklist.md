@@ -1,7 +1,9 @@
 ---
 title: 'How to Detect Agent Washing: A 7-Point EM Checklist'
 description: >-
-  ~130 of thousands of AI agent vendors build truly agentic systems. Use this EM 7-point checklist to test goal re-routing, context memory, and tool flexibility.
+  ~130 of thousands of AI agent vendors build truly agentic systems. Use this EM
+  7-point checklist to test goal re-routing, context memory, and tool
+  flexibility.
 pubDate: '2026-03-13'
 heroImage: ../../../assets/blog/agent-washing-detection-em-checklist-hero.png
 tags:

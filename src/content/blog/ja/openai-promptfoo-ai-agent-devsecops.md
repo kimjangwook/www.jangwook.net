@@ -1,7 +1,8 @@
 ---
 title: OpenAIのPromptfoo買収 — AIエージェントDevSecOps時代の幕開け
 description: >-
-  OpenAIがAIセキュリティテストプラットフォームPromptfooを買収しました。Fortune 500の25%が使用するこのツールがFrontierに統合され、AIエージェントDevSecOpsの新標準が生まれつつあります。レッドチームテストとCI/CD統合手順も解説します。
+  OpenAIがAIセキュリティテストプラットフォームPromptfooを買収しました。Fortune
+  500の25%が使用するこのツールがFrontierに統合され、AIエージェントDevSecOpsの新標準が生まれつつあります。レッドチームテストとCI/CD統合手順も解説します。
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/openai-promptfoo-ai-agent-devsecops-hero.jpg
 tags:

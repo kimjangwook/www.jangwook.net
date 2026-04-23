@@ -1,7 +1,8 @@
 ---
 title: OpenAI收购Promptfoo——AI智能体DevSecOps时代开启
 description: >-
-  OpenAI收购AI安全测试平台Promptfoo，这一被Fortune 500中25%企业使用的工具将集成至其企业平台Frontier，正为AI智能体DevSecOps制定全新行业标准。本文深度解析Promptfoo的红队测试方法、CI/CD流水线安全集成步骤与智能体行为策略制定，涵盖EM/CTO须知的实操指南。
+  OpenAI收购AI安全测试平台Promptfoo，这一被Fortune
+  500中25%企业使用的工具将集成至其企业平台Frontier，正为AI智能体DevSecOps制定全新行业标准。本文深度解析Promptfoo的红队测试方法、CI/CD流水线安全集成步骤与智能体行为策略制定，涵盖EM/CTO须知的实操指南。
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/openai-promptfoo-ai-agent-devsecops-hero.jpg
 tags:

@@ -1,7 +1,8 @@
 ---
 title: '에이전트 워싱 감별법: EM을 위한 7가지 체크리스트'
 description: >-
-  수천 개 AI 에이전트 벤더 중 진짜는 130개뿐. Engineering Manager가 진짜 에이전틱 AI와 단순 자동화를 구별하는 7가지 실전 체크리스트. 목표 재설정, 컨텍스트 기억, 도구 유연성, 실패 복구 테스트와 벤더 미팅 질문 목록을 제공합니다.
+  수천 개 AI 에이전트 벤더 중 진짜는 130개뿐. Engineering Manager가 진짜 에이전틱 AI와 단순 자동화를 구별하는 7가지
+  실전 체크리스트. 목표 재설정, 컨텍스트 기억, 도구 유연성, 실패 복구 테스트와 벤더 미팅 질문 목록을 제공합니다.
 pubDate: '2026-03-13'
 heroImage: ../../../assets/blog/agent-washing-detection-em-checklist-hero.png
 tags:

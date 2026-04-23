@@ -2461,5 +2461,16 @@
       "devops": 0.95,
       "architecture": 0.9
     }
+  },
+  "vercel-ai-sdk-claude-streaming-agent-2026": {
+    "pubDate": "2026-04-23",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.9,
+      "ai-ml": 0.85,
+      "devops": 0.3,
+      "architecture": 0.6
+    }
   }
 }

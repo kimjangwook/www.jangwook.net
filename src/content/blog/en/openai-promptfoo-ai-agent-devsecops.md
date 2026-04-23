@@ -1,7 +1,8 @@
 ---
 title: OpenAI Acquires Promptfoo — The AI Agent DevSecOps Era Begins
 description: >-
-  OpenAI acquired Promptfoo (25% of Fortune 500). Learn what it means for AI agent DevSecOps: red team testing, CI/CD pipelines, and behavior policies.
+  OpenAI acquired Promptfoo (25% of Fortune 500). Learn what it means for AI
+  agent DevSecOps: red team testing, CI/CD pipelines, and behavior policies.
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/openai-promptfoo-ai-agent-devsecops-hero.jpg
 tags:

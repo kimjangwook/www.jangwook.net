@@ -1,5 +1,4 @@
 ---
-
 title: MCP服务器Kubernetes生产部署 — 在52%宕机率中活下来的方法
 description: >-
   2026年4月生产MCP端点52%异常。本文提供完整的生存清单：Kubernetes资源配置、Streamable HTTP迁移、健康检查自动化、
@@ -16,38 +15,48 @@ relatedPosts:
   - slug: mcp-security-crisis-30-cves-enterprise-hardening
     score: 0.95
     reason:
-      ko: MCP 서버 60일 내 CVE 30개 분석 — 여기서 다룬 OAuth 인증과 자격증명 관리 취약점을 구체적인 공격 사례로 확인할 수 있다.
-      ja: MCPサーバーの60日間CVE30件分析 — ここで扱ったOAuth認証と認証情報管理の脆弱性を具体的な攻撃事例で確認できる。
-      en: 30 CVEs in 60 days across MCP servers — the credential and OAuth vulnerabilities discussed here are analyzed through real attack cases.
-      zh: MCP服务器60天内30个CVE分析 — 本文讨论的OAuth认证和凭据管理漏洞可通过具体攻击案例得到验证。
-  - slug: mcp-gateway-agent-traffic-control
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: gpt53-codex-rollout-pause
+    score: 0.94
+    reason:
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: bigquery-mcp-prefix-filtering
     score: 0.92
     reason:
-      ko: 여러 MCP 서버를 운영한다면 각각 헬스체크를 직접 다루는 대신 MCP Gateway로 중앙 집중 관리하는 방법도 있다.
-      ja: 複数のMCPサーバーを運用するなら、それぞれヘルスチェックを個別に管理する代わりにMCP Gatewayで一元管理する方法もある。
-      en: When running multiple MCP servers, centralizing health management through MCP Gateway is a viable alternative to per-server health checks.
-      zh: 当运行多个MCP服务器时，通过MCP Gateway集中管理是逐个服务器健康检查的可行替代方案。
-  - slug: mcp-server-build-practical-guide-2026
-    score: 0.90
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-hooks-workflow
+    score: 0.92
     reason:
-      ko: 이 글은 배포에 초점을 뒀지만, FastMCP로 MCP 서버를 처음 만드는 과정이 궁금하다면 이 포스트에서 시작하면 된다.
-      ja: この記事はデプロイに焦点を当てているが、FastMCPでMCPサーバーを最初から作る過程が気になるなら、このポストから始めるといい。
-      en: This guide focuses on deployment — if you need to build the MCP server first, this earlier post covers FastMCP from scratch.
-      zh: 本文聚焦于部署，如果需要先构建MCP服务器，这篇早期文章涵盖了从零开始使用FastMCP的完整过程。
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: self-healing-ai-systems
-    score: 0.88
+    score: 0.92
     reason:
-      ko: Kubernetes 헬스체크로 단기 장애를 감지하는 것 이상으로, AI 시스템이 스스로 상태를 진단하고 복구하는 아키텍처 패턴을 다룬다.
-      ja: KubernetesヘルスチェックによるAI障害検知を超えて、AIシステムが自ら状態を診断し復旧するアーキテクチャパターンを扱う。
-      en: Beyond Kubernetes health checks for detection, this covers architecture patterns where AI systems self-diagnose and recover.
-      zh: 超越Kubernetes健康检查的障碍检测，涵盖AI系统自我诊断和恢复的架构模式。
-  - slug: dapr-agents-v1-cncf-production-ai-framework
-    score: 0.85
-    reason:
-      ko: Kubernetes에서 MCP 서버를 운영하는 것과 달리, Dapr Agents는 서비스 메시를 통해 AI 에이전트 인프라를 관리하는 또 다른 프로덕션 접근법이다.
-      ja: KubernetesでMCPサーバーを運用するのとは異なり、Dapr Agentsはサービスメッシュを通じてAIエージェントインフラを管理する別のプロダクションアプローチだ。
-      en: Unlike running MCP servers on Kubernetes directly, Dapr Agents manages AI agent infrastructure through a service mesh — a different production approach worth comparing.
-      zh: 与直接在Kubernetes上运行MCP服务器不同，Dapr Agents通过服务网格管理AI代理基础设施，是值得比较的另一种生产方案。
+      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
 ---
 
 上个月我在连接几个外部MCP服务器时发现了一件奇怪的事。README上明明标着"stable"，GitHub星标也有几百个，但打`/mcp`端点时连接直接断开。起初以为是自己的配置问题，但换了另一个服务器，又一个服务器，结果都一样。
