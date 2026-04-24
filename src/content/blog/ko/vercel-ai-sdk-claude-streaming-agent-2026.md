@@ -11,41 +11,51 @@ tags:
   - nextjs
   - typescript
 relatedPosts:
+  - slug: adsense-rejection-ai-analysis-improvement
+    score: 0.95
+    reason:
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
   - slug: webmcp-chrome-146-ai-tool-server
-    score: 0.92
+    score: 0.95
     reason:
-      ko: Vercel AI SDK로 서버 사이드 도구 호출을 구현했다면, 브라우저 자체를 AI 도구 서버로 만드는 WebMCP 패턴도 자연스러운 다음 단계다.
-      ja: Vercel AI SDKでサーバーサイドのツール呼び出しを実装したなら、ブラウザ自体をAIツールサーバーにするWebMCPパターンも次のステップとして自然だ。
-      en: After implementing server-side tool calls with Vercel AI SDK, making the browser itself an AI tool server via WebMCP is a natural next step.
-      zh: 用Vercel AI SDK实现了服务端工具调用后，将浏览器本身作为AI工具服务器的WebMCP模式是自然的下一步。
+      ko: '웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML, architecture with
+        comparable difficulty.
+      zh: 在Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: aeo-implementation-experience
+    score: 0.94
+    reason:
+      ko: '웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML, architecture with
+        comparable difficulty.
+      zh: 在Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: mcp-apps-interactive-ui-agent-ux
-    score: 0.89
+    score: 0.94
     reason:
-      ko: useChat 훅으로 채팅 UI를 만든 이후에는, AI가 생성하는 인터랙티브 UI 컴포넌트 패턴이 Claude와 Next.js 조합의 다음 진화 방향이다.
-      ja: useChatフックでチャットUIを作った後は、AIが生成するインタラクティブUIコンポーネントパターンがClaudeとNext.jsの組み合わせの次の進化方向だ。
-      en: After building chat UI with the useChat hook, AI-generated interactive UI components are the next evolution for Claude + Next.js combinations.
-      zh: 用useChat钩子构建聊天UI之后，AI生成的交互式UI组件是Claude与Next.js组合的下一个演进方向。
-  - slug: production-grade-ai-agent-design-principles
-    score: 0.85
+      ko: '웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML, architecture with
+        comparable difficulty.
+      zh: 在Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ux-psychology-frontend-design-skill
+    score: 0.93
     reason:
-      ko: streamText로 기본 에이전트를 만들었다면, 프로덕션에서 실제로 신뢰할 수 있는 에이전트를 설계하는 9가지 원칙을 알아야 한다.
-      ja: streamTextで基本的なエージェントを作ったなら、本番環境で実際に信頼できるエージェントを設計する9つの原則を知っておく必要がある。
-      en: If you've built a basic agent with streamText, the 9 design principles for truly reliable production agents are the essential next read.
-      zh: 用streamText构建了基础代理后，需要了解在生产环境中真正可靠的代理设计9大原则。
-  - slug: individual-developer-ai-saas-journey
-    score: 0.82
-    reason:
-      ko: Vercel AI SDK + Claude로 프로토타입을 만들었다면, 실제로 AI 기반 SaaS를 혼자 3일 만에 프로덕션까지 가져간 경험기가 다음에 읽을 만하다.
-      ja: Vercel AI SDK + Claudeでプロトタイプを作ったなら、実際にAIベースのSaaSを1人で3日間でプロダクションまで持っていった経験談が次に読む価値がある。
-      en: If you've prototyped with Vercel AI SDK + Claude, the account of shipping an AI-based SaaS solo to production in 3 days is worth reading next.
-      zh: 用Vercel AI SDK + Claude做出了原型后，一个人用3天把AI SaaS推向生产环境的经历值得一读。
-  - slug: context-engineering-production-ai-agents
-    score: 0.80
-    reason:
-      ko: generateObject로 구조화 출력을 추출할 때 품질이 낮으면, 컨텍스트 엔지니어링이 실제로 무엇인지 이해하면 즉각적인 개선이 가능하다.
-      ja: generateObjectで構造化出力を抽出するときに品質が低ければ、コンテキストエンジニアリングが実際に何かを理解することで即座の改善が可能だ。
-      en: If generateObject output quality isn't where you need it, understanding what context engineering actually means will give you immediate improvements.
-      zh: 如果generateObject的输出质量不理想，理解上下文工程的实际含义能带来立竿见影的改善。
+      ko: '웹 개발, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, AI/ML with comparable
+        difficulty.
+      zh: 在Web开发、AI/ML领域涵盖类似主题，难度相当。
 ---
 
 ```typescript

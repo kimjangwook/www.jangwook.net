@@ -2472,5 +2472,16 @@
       "devops": 0.3,
       "architecture": 0.6
     }
+  },
+  "openai-gpt-5-5-release-claude-comparison-april-2026": {
+    "pubDate": "2026-04-24",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.2,
+      "architecture": 0.5
+    }
   }
 }
