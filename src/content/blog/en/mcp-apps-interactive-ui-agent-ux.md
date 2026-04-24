@@ -95,7 +95,7 @@ Apps can delegate actions to the host. When an app sends "schedule this meeting"
 
 <strong>4. Security Guarantees</strong>
 
-MCP Apps run inside a sandboxed iframe. They can't access the parent page, steal cookies, or escape their container. Hosts can safely render third-party apps without fully trusting the server developer.
+MCP Apps run inside a sandboxed iframe. They can't access the parent page, steal cookies, or escape their container. Hosts can safely render third-party apps without fully trusting the server developer. For broader MCP ecosystem security threats and enterprise hardening, see [MCP Security Crisis — 30 CVEs in 60 Days: Enterprise Hardening Guide](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening).
 
 ## How It Works: Architecture Deep Dive
 
@@ -360,7 +360,7 @@ As of March 2026, clients supporting MCP Apps include:
 | ChatGPT | ⏳ Unknown | No official announcement |
 | Cursor | ⏳ Unknown | Under roadmap discussion |
 
-In VS Code, the `/mcp` chat command lets you enable/disable servers and manage OAuth authentication.
+In VS Code, the `/mcp` chat command lets you enable/disable servers and manage OAuth authentication. For running MCP servers directly in the browser, see [WebMCP: Chrome 146 — Your Browser Becomes an AI Agent Tool Server](/en/blog/en/webmcp-chrome-146-ai-tool-server).
 
 ## Practical Application: Engineering Manager Perspective
 
@@ -419,7 +419,7 @@ MCP Apps solves a fundamental limitation of AI agent interfaces. AI that previou
 
 The value from an Engineering Manager's perspective is clear: team members can ask AI a question, receive an interactive tool in response, and complete their work—all without switching to a separate dashboard tab or tool.
 
-You don't need to add UI to every MCP server right now. But start by applying MCP Apps to one tool your team uses most. That experience will reshape how you design AI workflows going forward.
+You don't need to add UI to every MCP server right now. But start by applying MCP Apps to one tool your team uses most. That experience will reshape how you design AI workflows going forward. For standardized agent skill systems that AI agents can leverage, also read [Anthropic Agent Skills Standard: Extending AI Agent Capabilities](/en/blog/en/anthropic-agent-skills-standard).
 
 ## References
 

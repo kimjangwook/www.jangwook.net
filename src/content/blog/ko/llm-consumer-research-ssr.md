@@ -1,6 +1,6 @@
 ---
 title: 'AI가 소비자 행동을 예측하는 새로운 방법: 의미론적 유사도 평가'
-description: 'LLM을 활용한 합성 소비자 연구의 혁신, SSR 방법론으로 90% 신뢰도 달성'
+description: 'LLM 기반 합성 소비자 연구(Synthetic Surveyed Research)가 전통 설문 조사를 혁신합니다. 의미론적 유사도 평가로 90% 신뢰도를 달성하면서 조사 비용을 10분의 1로 줄이는 SSR의 핵심 원리, 파이썬 구현, 실전 기업 적용 사례를 분석합니다.'
 pubDate: '2025-10-23'
 heroImage: ../../../assets/blog/llm-consumer-research-hero.jpg
 tags:

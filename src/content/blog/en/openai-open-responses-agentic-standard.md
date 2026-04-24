@@ -60,7 +60,7 @@ relatedPosts:
 
 ## Why Agentic AI Needs a "Standard" Right Now
 
-As of March 2026, the agentic AI ecosystem is experiencing explosive growth. With countless frameworks competing — Anthropic's Claude Agent SDK, OpenAI's AgentKit, Google's Agent Development Kit, LangChain, CrewAI, and more — development teams have been given freedom of choice, but at the cost of severe fragmentation.
+As of March 2026, the agentic AI ecosystem is experiencing explosive growth. With countless frameworks competing — Anthropic's Claude Agent SDK (see [Anthropic Agent Skills Standard: Extending AI Agent Capabilities](/en/blog/en/anthropic-agent-skills-standard)), OpenAI's AgentKit, Google's Agent Development Kit, LangChain, CrewAI, and more — development teams have been given freedom of choice, but at the cost of severe fragmentation.
 
 Each framework handles tool calling, response formats, and agent loop processing differently. Swapping models or running multiple models in parallel meant rewriting integration code from scratch every time. As one developer put it, it was a vicious cycle of <strong>"writing wrappers for wrappers for wrappers."</strong>
 
@@ -131,7 +131,7 @@ The greatest strength of Open Responses is the broad ecosystem support it secure
 |---------|------|--------------|
 | Hugging Face | Open-source hub | Standard API access for thousands of models |
 | OpenRouter | Model router | Seamless switching between multiple providers |
-| Vercel | Frontend platform | Frontend development standardization via AI SDK integration |
+| [Vercel](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026) | Frontend platform | Frontend development standardization via AI SDK integration |
 | LM Studio | Local inference | Same API for local models |
 | Ollama | Local inference | Standardization in self-hosted environments |
 | vLLM | Inference engine | Compatibility with high-performance inference servers |
@@ -268,7 +268,7 @@ Reasoning Visibility is not just a debugging tool — it is <strong>core infrast
 
 ### What About Anthropic and Google?
 
-Currently, neither Anthropic nor Google has officially joined as Open Responses spec partners. Both companies have their own agent frameworks (Claude Agent SDK, Google ADK), and it remains uncertain whether they will adopt Open Responses or push their own proprietary standards.
+Currently, neither Anthropic nor Google has officially joined as Open Responses spec partners. For the open-source model dominance trend and multi-provider strategy, see [OpenRouter Weekly TOP5: 4 Out of 5 Are Open Source — The End of the Proprietary Model Era](/en/blog/en/openrouter-oss-dominance). Both companies have their own agent frameworks (Claude Agent SDK, Google ADK), and it remains uncertain whether they will adopt Open Responses or push their own proprietary standards.
 
 That said, as evidenced by the recent case where over 30 OpenAI and Anthropic employees jointly collaborated on a Department of Defense lawsuit, cooperation and competition coexist in the AI industry. If the industry's need for standardization grows, there is a reasonable chance they will join.
 

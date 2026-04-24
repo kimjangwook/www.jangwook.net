@@ -71,7 +71,7 @@ graph TD
     JC --> AI
 ```
 
-The <strong>Frontier Red Team</strong> stress-tests the extreme capabilities of AI systems. A notable recent project used Claude to autonomously discover 22 CVEs (security vulnerabilities) in the Firefox codebase. Beyond simply finding vulnerabilities, the team tested whether AI could autonomously exploit them as well.
+The <strong>Frontier Red Team</strong> stress-tests the extreme capabilities of AI systems. A notable recent project used Claude to autonomously discover 22 CVEs (security vulnerabilities) in the Firefox codebase. Beyond simply finding vulnerabilities, the team tested whether AI could autonomously exploit them as well. Technical details of this project are covered in [Claude Discovers 22 CVEs in Firefox — A New Paradigm for AI Security Auditing](/en/blog/en/claude-firefox-22-cves-ai-security-audit).
 
 The <strong>Societal Impacts</strong> team conducts field research on how AI is being used in the real world. The <strong>Economic Research</strong> team tracks AI's effects on the labor market and the macroeconomy.
 
@@ -125,7 +125,7 @@ The implications are clear:
 
 Another key element is the <strong>Code Modernization Starter Kit</strong>. It provides partner companies with a standardized starting point for legacy codebase migration and technical debt resolution.
 
-Anthropic itself has stated that this is the "highest-demand enterprise workload." The assessment is that Claude's agentic coding capability translates most directly into customer outcomes in this area.
+Anthropic itself has stated that this is the "highest-demand enterprise workload." The assessment is that Claude's agentic coding capability translates most directly into customer outcomes in this area. For agentic coding workflow patterns with Claude, see [Claude Code Agentic Workflow Patterns: 5 Types](/en/blog/en/claude-code-agentic-workflow-patterns-5-types).
 
 ## Three Signals Every CTO Should Read
 
@@ -223,7 +223,7 @@ CTOs and VPoEs need to take three actions now:
 
 1. Expand AI vendor evaluation criteria from "model performance" to "ecosystem maturity"
 2. Establish an AI certification roadmap for your team
-3. Decide whether to pursue early participation in partner programs
+3. Decide whether to pursue early participation in partner programs — see [Anthropic Agent Skills Standard: Extending AI Agent Capabilities](/en/blog/en/anthropic-agent-skills-standard) for how Claude agents can be leveraged in partner ecosystems
 
 In an era where technological differentiation is converging, true competitive advantage comes from the ecosystem.
 

@@ -1,6 +1,6 @@
 ---
 title: '생성형 AI 도입, 왜 탑다운 방식이 필요한가: 42% 실패율의 진짜 이유'
-description: 바텀업 AI 도입의 한계와 조직 변화 관리 전략. 업무 문서화와 표준화를 통한 체계적 접근법
+description: 생성형 AI 프로젝트의 42%가 실패하는 원인과 탑다운 방식의 해법을 상세히 분석합니다. 바텀업 AI 도입의 구조적 한계, 효과적인 조직 변화 관리 전략, 업무 문서화와 표준화 방법, 직원 저항 최소화, ROI 측정 프레임워크까지 CTO를 위한 실전 가이드를 제시합니다.
 pubDate: '2025-12-01'
 heroImage: ../../../assets/blog/enterprise-ai-adoption-topdown-hero.jpg
 tags:
