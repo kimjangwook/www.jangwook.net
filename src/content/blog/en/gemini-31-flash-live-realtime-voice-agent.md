@@ -90,7 +90,7 @@ The `thinkingLevel` parameter is interesting. Set it to `minimal` for lowest lat
 
 Enable the Live API in Google AI Studio, connect a microphone, and you can start talking right away. What impressed me most was this: you can prototype a voice agent in a browser with zero infrastructure setup. I tried speaking in Korean and the recognition quality was quite decent. Long sentences occasionally got clipped mid-way, though background noise filtering was noticeably improved from the previous version.
 
-I wired up function calling with a simple weather API. Speak a request, the function fires, and the result comes back as speech. The key is that this entire flow happens within a single WebSocket session without interruption. However, asynchronous function calling isn't supported yet — if an external API is slow, the user has to endure silence.
+I wired up function calling with a simple weather API. Speak a request, the function fires, and the result comes back as speech. The key is that this entire flow happens within a single WebSocket session without interruption. However, asynchronous function calling isn't supported yet — if an external API is slow, the user has to endure silence. Handling async tool calls is also a core UX challenge when [building streaming agents with the Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026).
 
 ## Migration Notes from 2.5
 
@@ -111,13 +111,13 @@ I'll be straightforward about what's missing.
 
 **Preview instability.** Rate limits and pricing remain unclear. It's too early for production deployment.
 
-**Competitive landscape.** OpenAI's Realtime API already offers similar capabilities, and there are rumors that Anthropic is preparing voice interfaces too. There aren't enough comparative benchmarks to claim Flash Live is definitively the best.
+**Competitive landscape.** OpenAI's Realtime API already offers similar capabilities, and there are rumors that Anthropic is preparing voice interfaces too. There aren't enough comparative benchmarks to claim Flash Live is definitively the best. As with [comparing AI agent communication protocols](/en/blog/en/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026), the best stack depends on your use case.
 
 ## Where Can You Use This
 
 Realistic scenarios for immediate application:
 
-- **Internal voice FAQ bot**: Sales team asks product specs by voice, gets instant answers. Wire up internal DB through function calling.
+- **Internal voice FAQ bot**: Sales team asks product specs by voice, gets instant answers. Wire up internal DB through function calling. This aligns with the direction [Meta AI is taking with its enterprise agent platform alongside Sierra](/en/blog/en/meta-ai-agent-platform-sierra-avocado).
 - **Multilingual customer support**: With 90+ languages, it's useful for first-line global support. Quality will vary by language, though.
 - **Real-time meeting assistant**: Leverage the large context window for live summarization and action item extraction during meetings.
 

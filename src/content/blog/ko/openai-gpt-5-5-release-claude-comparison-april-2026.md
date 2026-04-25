@@ -1,8 +1,8 @@
 ---
 title: GPT-5.5 출시 — 에이전트 런타임으로 전환한 OpenAI와 Claude 비교
 description: >-
-  어제 출시된 GPT-5.5. SWE-bench 88.7%에 가격은 2배. 에이전트 런타임 전용으로 재설계됐다는 주장이 개발자 선택에 뭘
-  바꾸는지 직접 따져봤다.
+  GPT-5.5는 에이전트 런타임 전용으로 재설계된 모델입니다. SWE-bench 88.7%에 가격은 2배. 단순 벤치마크를 넘어 실제 개발
+  워크플로우에서 Claude Sonnet 4.6과 직접 비교하며 에이전트 시대의 모델 선택 기준을 솔직하게 따져봤습니다.
 pubDate: '2026-04-24'
 heroImage: >-
   ../../../assets/blog/openai-gpt-5-5-release-claude-comparison-april-2026-hero.jpg

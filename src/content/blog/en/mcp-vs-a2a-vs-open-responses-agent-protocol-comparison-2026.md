@@ -1,5 +1,5 @@
 ---
-title: 'MCP vs A2A vs Open Responses — AI Agent Communication Protocols in 2026: What to Actually Use'
+title: 'MCP vs A2A vs Open Responses — Agent Protocol Guide 2026'
 description: 'A practical comparison of MCP, A2A, and Open Responses: design goals, ecosystems, and how to combine them in real-world AI agent projects in 2026.'
 pubDate: '2026-04-25'
 heroImage: '../../../assets/blog/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026-hero.jpg'

@@ -69,7 +69,7 @@ relatedPosts:
 
 **第一个问题是上下文注入。** 当你让AI代理"帮我调这个API"时，代理生成的代码有时会包含实际的API key。尤其是代理用内联值代替环境变量的情况其实挺多的。人写代码时会本能地想"这个得抽到环境变量里"，但AI的首要目标是生成"能跑的代码"。
 
-**第二个问题更严重——MCP配置文件。** Claude Code、Cursor、Windsurf这些工具连接MCP服务器时使用的配置文件里，数据库连接信息、API key、OAuth token都是明文存储的。据GitGuardian统计，仅公开仓库的MCP配置文件中就发现了**24,008个**独立密钥。
+**第二个问题更严重——MCP配置文件。** Claude Code、Cursor、Windsurf这些工具连接MCP服务器时使用的配置文件里，数据库连接信息、API key、OAuth token都是明文存储的。据GitGuardian统计，仅公开仓库的MCP配置文件中就发现了**24,008个**独立密钥。[考虑到MCP生态系统在60天内报告了30个CVE的攻击面规模](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening)，这并不令人意外。
 
 ```json
 // 这样的配置文件被直接commit的案例数以万计
@@ -132,7 +132,7 @@ git log -p --all -S 'postgresql://' -- '*.json'
 
 配置方式：在GitHub仓库的 Settings > Code security and analysis 中启用"Secret scanning"和"Push protection"即可。已经启用的仓库，通过MCP Server的操作也会自动覆盖。
 
-我个人看好这个功能的原因在于，它能在**代理工作流内部**捕获AI代理生成代码中的密钥泄露。在人工review之前系统先拦截，这很符合"代理commit的代码由我来review"这一现实工作流。
+我个人看好这个功能的原因在于，它能在**代理工作流内部**捕获AI代理生成代码中的密钥泄露。在人工review之前系统先拦截，这很符合[「代理commit的代码由我来review」](/zh/blog/zh/cursor-agent-trace-ai-code-attribution)这一现实工作流。
 
 ## 但光靠这个还不够
 
@@ -156,6 +156,6 @@ git log -p --all -S 'postgresql://' -- '*.json'
 
 ## 写在最后
 
-2900万这个数字确实吓人，但其实大多数密钥泄露并非源于复杂的攻击，而是"忘了就commit了"这种级别的失误。AI编程代理正在提高这类失误的发生频率——这就是这份报告的核心要点。
+2900万这个数字确实吓人，但其实大多数密钥泄露并非源于复杂的攻击，而是"忘了就commit了"这种级别的失误。AI编程代理正在提高这类失误的发生频率——这就是这份报告的核心要点。[AI编程工具的提示注入漏洞](/zh/blog/zh/roguepilot-copilot-prompt-injection-security)直接导致凭证被盗，也是同一个问题的不同侧面。
 
 对我触动最大的教训是：用AI代理提高了代码生成速度，**安全review的速度也必须跟上**。代理10秒生成的代码，不到30秒就commit的习惯是最危险的。至少跑一遍 `git diff` 吧——尤其是当暂存区里有 `.json`、`.yaml`、`.env` 扩展名的文件时。

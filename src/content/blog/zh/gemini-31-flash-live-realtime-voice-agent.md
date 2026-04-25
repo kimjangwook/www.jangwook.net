@@ -87,7 +87,7 @@ Google AI Studio里出现了一个新的模型名称：`gemini-3.1-flash-live-pr
 
 在Google AI Studio中启用Live API，连接麦克风，就可以直接开始对话。我觉得最令人印象深刻的是：不需要任何额外基础设施，在浏览器中就能快速搭建语音Agent原型。我用中文试了试，识别率相当不错。不过长句偶尔会在中间被截断，背景噪音过滤确实比之前版本有了明显改善。
 
-我接入了一个简单的天气API来测试function calling。语音发出请求后，函数被调用，结果以语音形式返回。关键在于这整个流程在一个WebSocket会话中无缝完成。但异步函数调用尚不支持——如果外部API响应慢，用户只能忍受沉默。
+我接入了一个简单的天气API来测试function calling。语音发出请求后，函数被调用，结果以语音形式返回。关键在于这整个流程在一个WebSocket会话中无缝完成。但异步函数调用尚不支持——如果外部API响应慢，用户只能忍受沉默。[用Vercel AI SDK构建流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)时，异步工具调用的处理同样是核心UX挑战之一。
 
 ## 从2.5迁移的注意事项
 
@@ -108,13 +108,13 @@ Google AI Studio里出现了一个新的模型名称：`gemini-3.1-flash-live-pr
 
 **Preview阶段的不稳定性。** Rate limit是多少、价格是多少，目前都不明确。投入生产还为时尚早。
 
-**竞争格局。** OpenAI的Realtime API已经提供了类似功能，还有传闻称Anthropic也在准备语音接口。目前还缺乏足够的对比基准来断言Flash Live是最优选择。
+**竞争格局。** OpenAI的Realtime API已经提供了类似功能，还有传闻称Anthropic也在准备语音接口。目前还缺乏足够的对比基准来断言Flash Live是最优选择。正如[AI代理通信协议比较](/zh/blog/zh/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026)所示，最优方案取决于具体使用场景。
 
 ## 可以用在哪里
 
 现实中可以立即应用的场景：
 
-- **内部语音FAQ机器人**：销售团队通过语音询问产品规格，即时获得回答。通过function calling连接内部数据库。
+- **内部语音FAQ机器人**：销售团队通过语音询问产品规格，即时获得回答。通过function calling连接内部数据库。[Meta与Sierra共建企业代理平台](/zh/blog/zh/meta-ai-agent-platform-sierra-avocado)正是指向这一方向。
 - **多语言客户服务**：支持90+种语言，适合全球化服务的一线应对。不过不同语言的质量会有差异。
 - **实时会议助手**：利用大容量上下文窗口，在会议中实时进行摘要和行动项提取。
 

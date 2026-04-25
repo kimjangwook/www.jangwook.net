@@ -1,6 +1,6 @@
 ---
 title: 'MCP vs A2A vs Open Responses — 2026年AI智能体通信协议三足鼎立，实战中该用什么'
-description: '深度对比MCP、A2A、Open Responses三个协议的设计目标与生态系统，并直接分析2026年实际项目中如何组合使用。'
+description: '深度对比MCP、A2A、Open Responses三个协议的设计目标与生态系统。分析2026年实际AI代理项目中各协议的使用时机与组合方法，以及OpenAI、Google、Anthropic在代理通信标准竞争中的核心策略。'
 pubDate: '2026-04-25'
 heroImage: '../../../assets/blog/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026-hero.jpg'
 tags: ['MCP', 'A2A', 'AI智能体', '协议对比']

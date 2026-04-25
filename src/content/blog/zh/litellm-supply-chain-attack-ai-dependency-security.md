@@ -89,7 +89,7 @@ relatedPosts:
 
 **更新周期快。** AI库的API变更频繁，导致开发者经常执行`pip install --upgrade`。每次新模型发布就更新SDK的习惯扩大了攻击面。
 
-**生产环境的高权限。** LLM代理服务器大多将云API密钥作为环境变量。AWS、GCP和各种AI提供商的密钥集中在一个地方，对攻击者来说简直是金矿。
+**生产环境的高权限。** LLM代理服务器大多将云API密钥作为环境变量。AWS、GCP和各种AI提供商的密钥集中在一个地方，对攻击者来说简直是金矿。[仅MCP配置文件就在公共仓库中暴露了2万多个凭证的案例](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security)也源于同样的结构问题。
 
 ## 实战应对方法
 
@@ -121,7 +121,7 @@ diff <(cat /tmp/pth-before.txt) \
 
 ### 3. 安全工具也是验证对象
 
-这次事件最痛苦的教训是"我们信任了安全扫描器，结果它就是感染向量"。Trivy、Snyk、Checkmarx等安全工具的GitHub Actions版本也应该基于哈希固定。
+这次事件最痛苦的教训是"我们信任了安全扫描器，结果它就是感染向量"。Trivy、Snyk、Checkmarx等安全工具的GitHub Actions版本也应该基于哈希固定。这正是[AI代理DevSecOps管道](/zh/blog/zh/openai-promptfoo-ai-agent-devsecops)将外部工具信任验证列为核心议题的原因。
 
 ```yaml
 # Bad: 基于标签（可被篡改）
@@ -139,7 +139,7 @@ diff <(cat /tmp/pth-before.txt) \
 
 需要注意一点：不要将此事件过度解读为"不应该使用AI库"。供应链攻击不是AI独有的问题，从npm（event-stream事件）、PyPI（ctx包）到SolarWinds，这是整个软件生态系统的问题。但AI工具链由于高权限+快速更新周期+深层依赖的组合，攻击价值更高，这一点需要认识到。
 
-就个人而言，这次事件之后，我们团队开始将CI/CD管道中所有外部Action切换为基于哈希的方式。说实话很麻烦，但想到一个`.pth`文件就能让所有云密钥被窃取的场景，没有理由不做。
+就个人而言，这次事件之后，我们团队开始将CI/CD管道中所有外部Action切换为基于哈希的方式。说实话很麻烦，但想到一个`.pth`文件就能让所有云密钥被窃取的场景，没有理由不做。[MCP生态系统在60天内发现30个CVE的安全危机](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening)说明，AI基础设施安全已经是一场现实的战争。
 
 ---
 

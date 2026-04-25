@@ -93,7 +93,7 @@ I believe this incident is especially dangerous for the AI/LLM ecosystem for spe
 
 **Rapid update cycles.** AI libraries see frequent API changes, leading developers to run `pip install --upgrade` often. The habit of updating SDKs every time a new model drops expands the attack surface.
 
-**High-privilege production environments.** LLM proxy servers typically hold cloud API keys as environment variables. AWS, GCP, and various AI provider keys all concentrated in one place — a goldmine for attackers.
+**High-privilege production environments.** LLM proxy servers typically hold cloud API keys as environment variables. AWS, GCP, and various AI provider keys all concentrated in one place — a goldmine for attackers. [MCP configuration files alone exposed over 24,000 credentials in public repositories](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security) — rooted in this same structural issue.
 
 ## Practical Countermeasures
 
@@ -125,7 +125,7 @@ diff <(cat /tmp/pth-before.txt) \
 
 ### 3. Security Tools Are Also Verification Targets
 
-The most painful lesson from this incident is "we trusted the security scanner, and it was the infection vector." GitHub Actions versions of security tools like Trivy, Snyk, and Checkmarx should also be pinned by commit hash.
+The most painful lesson from this incident is "we trusted the security scanner, and it was the infection vector." GitHub Actions versions of security tools like Trivy, Snyk, and Checkmarx should also be pinned by commit hash. It's the core reason [AI agent DevSecOps pipelines](/en/blog/en/openai-promptfoo-ai-agent-devsecops) treat external tool verification as a first-class concern.
 
 ```yaml
 # Bad: Tag-based (can be tampered with)
@@ -143,7 +143,7 @@ If an LLM proxy server can open outbound connections, credential exfiltration be
 
 One thing to watch out for: don't over-interpret this as "we shouldn't use AI libraries." Supply chain attacks aren't exclusive to AI — from npm (the event-stream incident), PyPI (the ctx package), to SolarWinds, this is an industry-wide problem. However, AI tool chains carry higher attack value due to the combination of high privileges + rapid update cycles + deep dependencies.
 
-Personally, after this incident, our team started migrating all external actions in our CI/CD pipelines to hash-based pinning. It's tedious, honestly, but when you consider the scenario where a single `.pth` file could exfiltrate all your cloud keys, there's no reason not to do it.
+Personally, after this incident, our team started migrating all external actions in our CI/CD pipelines to hash-based pinning. It's tedious, honestly, but when you consider the scenario where a single `.pth` file could exfiltrate all your cloud keys, there's no reason not to do it. [30 CVEs discovered in the MCP ecosystem within 60 days](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening) is a reminder that AI infrastructure security is already an active battleground.
 
 ---
 
