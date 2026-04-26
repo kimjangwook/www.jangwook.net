@@ -1,0 +1,777 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-04-26T22:17:00Z",
+  "topics": [
+    {
+      "slug": "mcp-server-build-practical-guide-2026",
+      "title_idea": "MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기",
+      "content_type": "how-to",
+      "target_keyword": "MCP 서버 만들기",
+      "secondary_keywords": [
+        "Model Context Protocol 튜토리얼",
+        "MCP 서버 구현",
+        "AI 에이전트 도구 서버",
+        "MCP Python"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "modelcontextprotocol.io, dev.to MCP 2026 가이드",
+      "added_at": "2026-04-13",
+      "status": "done",
+      "notes": "MCP 2.1이 2026년 공개됐고, Streamable HTTP 트랜스포트가 수평 확장 표준으로 자리잡음. Claude Code와 함께 쓰는 실습 예제 중심으로 작성하면 검색 수요 높음. 기존 포스트 webmcp-chrome-146-ai-tool-server와 내부링크 연결 가능."
+    },
+    {
+      "slug": "claude-code-parallel-sessions-git-worktree",
+      "title_idea": "Claude Code 병렬 세션 운영하기 — Git Worktree로 여러 작업 동시에 처리하는 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code 고급 활용",
+      "secondary_keywords": [
+        "Claude Code git worktree",
+        "Claude Code 병렬 처리",
+        "AI 코딩 생산성",
+        "Claude Code Plan Mode"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic Claude Code 공식 문서, franksworld.com 시니어 엔지니어 가이드",
+      "added_at": "2026-04-13",
+      "status": "done",
+      "notes": "Claude Code 사용자가 급증하면서 '고급 활용법' 검색 수요 빠르게 증가 중. Git Worktree + Plan Mode + 서브에이전트 패턴 조합이 핵심. Hermes Agent 포스트와 에이전트 학습 관점에서 연결 가능. 개인 경험 기반으로 작성하면 차별화 됨."
+    },
+    {
+      "slug": "microsoft-autogen-1-0-production-agent-tutorial",
+      "title_idea": "Microsoft AutoGen 1.0 — 프로덕션 수준 멀티 에이전트 시스템 처음부터 만들어보기",
+      "content_type": "how-to",
+      "target_keyword": "AutoGen 1.0 튜토리얼",
+      "secondary_keywords": [
+        "Microsoft Agent Framework",
+        "AutoGen Python",
+        "멀티 에이전트 시스템",
+        "AutoGen .NET"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Visual Studio Magazine 2026-04-06 기사, Microsoft 공식 릴리스",
+      "added_at": "2026-04-13",
+      "status": "queued",
+      "notes": "Microsoft가 2026년 4월 6일 AutoGen 1.0 정식 릴리스. Semantic Kernel + AutoGen을 합친 프로덕션 레디 프레임워크. LangChain 대비 비교, Hermes Agent와 아키텍처 비교 포함하면 풍부한 콘텐츠 가능. multi-agent-swe-bench-verdent 내부링크 연결 적합."
+    },
+    {
+      "slug": "local-llm-private-mcp-server-gemma4-fastmcp",
+      "title_idea": "로컬 LLM으로 프라이빗 MCP 서버 구축하기 — Gemma 4 + FastMCP 완전 오프라인 AI 도구 가이드",
+      "content_type": "how-to",
+      "target_keyword": "로컬 LLM MCP 서버",
+      "secondary_keywords": [
+        "Gemma 4 MCP",
+        "FastMCP 로컬",
+        "오프라인 AI 도구",
+        "Ollama MCP 서버"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "블로그 기존 포스트 분석 (gemma-4-local-agent-edge-ai, mcp-server-build-practical-guide-2026)",
+      "added_at": "2026-04-13",
+      "status": "done",
+      "notes": "기존 Gemma 4 로컬 실행 포스트와 MCP 서버 구축 포스트를 자연스럽게 연결하는 시너지 콘텐츠. 보안 민감 환경에서 완전 오프라인 AI 도구를 원하는 독자층 타겟. 두 포스트로부터 내부링크 유입 가능. 차별화: 기존 포스트는 각각 따로 다뤘으나, 조합 사례는 없음."
+    },
+    {
+      "slug": "langgraph-multi-agent-state-management-tutorial",
+      "title_idea": "LangGraph 멀티에이전트 상태 관리 실전 가이드 — 복잡한 AI 워크플로우를 그래프로 구현하기",
+      "content_type": "how-to",
+      "target_keyword": "LangGraph 튜토리얼",
+      "secondary_keywords": [
+        "LangGraph 멀티에이전트",
+        "LangChain 에이전트",
+        "AI 워크플로우 상태 관리",
+        "LangGraph Python"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "LangChain 공식 블로그, 2026년 에이전트 프레임워크 트렌드 분석",
+      "added_at": "2026-04-13",
+      "status": "queued",
+      "notes": "AutoGen 1.0과 함께 2026년 가장 검색 수요 높은 에이전트 오케스트레이션 프레임워크. 기존 Hermes Agent, Paperclip, Dapr 포스트와 비교 관점에서 내부링크 연결 가능. LangGraph vs AutoGen vs Dapr 비교 섹션 추가하면 차별화 됨."
+    },
+    {
+      "slug": "claude-managed-agents-complete-guide-2026",
+      "title_idea": "Claude Managed Agents 완전 가이드 — 프로덕션 AI 에이전트를 코드 없이 빠르게 구축하는 방법",
+      "content_type": "how-to",
+      "target_keyword": "Claude Managed Agents",
+      "secondary_keywords": [
+        "Anthropic 에이전트 구축",
+        "Claude API 에이전트",
+        "프로덕션 AI 에이전트",
+        "Claude Managed Agents 튜토리얼"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "the-ai-corner.com Claude Managed Agents 가이드 2026, Anthropic 공식 발표",
+      "added_at": "2026-04-14",
+      "status": "queued",
+      "notes": "Anthropic이 2026년 4월 8일 Claude Managed Agents를 퍼블릭 베타로 출시. AI 에이전트 빌더에게 올해 가장 중요한 릴리스로 평가됨. 기존 claude-code-parallel-sessions, claude-agent-teams-guide 포스트와 내부링크 연결 가능. 차별화: Managed vs 직접 구축 비교, 실제 프로덕션 사례 중심."
+    },
+    {
+      "slug": "claude-code-agentic-workflow-patterns-5-types",
+      "title_idea": "Claude Code 에이전틱 워크플로우 패턴 5가지 — 순차·병렬·오케스트레이터 패턴 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code 에이전트 패턴",
+      "secondary_keywords": [
+        "Claude Code 워크플로우",
+        "AI 에이전트 오케스트레이션",
+        "Claude Code 서브에이전트",
+        "agentic workflow 패턴"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "mindstudio.ai Claude Code Agentic Workflow Patterns, franksworld.com 시니어 엔지니어 가이드",
+      "added_at": "2026-04-14",
+      "status": "done",
+      "notes": "2026년 Claude Code 사용자 급증으로 '에이전트 패턴' 검색 수요 폭발적 증가. 순차(Sequential), 운영자(Operator), 병렬(Parallel), 팀(Agent Teams), 자율(Autonomous) 5가지 패턴 비교. claude-code-parallel-sessions-git-worktree, claude-agent-teams-guide 내부링크 연결 적합. 각 패턴에 실제 코드 예제 포함하면 고가치 콘텐츠."
+    },
+    {
+      "slug": "claude-managed-agents-news-analysis-april-2026",
+      "title_idea": "Claude Managed Agents 공개 베타 — Anthropic이 AI 에이전트 인프라까지 책임지는 시대",
+      "content_type": "news",
+      "target_keyword": "Claude Managed Agents",
+      "secondary_keywords": [
+        "Anthropic 에이전트 서비스",
+        "AI 에이전트 인프라",
+        "Claude API 에이전트",
+        "Notion AI 에이전트"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "thenewstack.io, medium.com/ai-software-engineer, Anthropic 공식 발표",
+      "added_at": "2026-04-15",
+      "status": "queued",
+      "notes": "Anthropic이 2026년 4월 8일 Claude Managed Agents를 퍼블릭 베타로 출시. 세션당 $0.08 요금제로 개발자가 에이전트 인프라 관리 없이 프로덕션 AI 에이전트를 즉시 배포 가능. Notion, Rakuten, Sentry가 이미 프로덕션 적용. '인프라 없는 에이전트' 패러다임이 무엇을 의미하는지 분석. claude-code-agentic-workflow-patterns-5-types, claude-agent-teams-guide 내부링크 연결 적합."
+    },
+    {
+      "slug": "claude-advisor-executor-pattern-analysis",
+      "title_idea": "Claude Advisor + Executor 패턴 — Anthropic이 제안하는 AI 에이전트 속도·지능 트레이드오프 해법",
+      "content_type": "news",
+      "target_keyword": "Claude Advisor Executor 패턴",
+      "secondary_keywords": [
+        "Anthropic agentic AI",
+        "AI 에이전트 성능 최적화",
+        "Claude API advisor tool",
+        "AI 추론 속도 최적화"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Anthropic Claude Developer Platform 릴리스 노트, releasebot.io",
+      "added_at": "2026-04-15",
+      "status": "queued",
+      "notes": "Anthropic Claude Developer Platform이 '어드바이저 툴' 퍼블릭 베타 출시. 빠른 Executor 모델 + 고지능 Advisor 모델 페어링으로 에이전트 워크플로우 속도와 지능 동시 확보. '빠른 모델 + 느리지만 현명한 모델' 이중 레이어 아키텍처가 업계 표준이 될 가능성 분석. claude-code-agentic-workflow-patterns-5-types, anthropic-code-execution-mcp 내부링크 연결 적합."
+    },
+    {
+      "slug": "claude-code-desktop-app-redesign-routines-april-2026",
+      "title_idea": "Claude Code 데스크탑 앱 전면 개편 — Routines와 병렬 세션 관리가 달라지는 것",
+      "content_type": "news",
+      "target_keyword": "Claude Code 데스크탑 앱 2026",
+      "secondary_keywords": [
+        "Claude Code Routines",
+        "Claude Code 병렬 세션",
+        "Anthropic Claude Code 업데이트",
+        "Claude Code 새 기능"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "MacRumors 2026-04-15, VentureBeat 2026-04-14, Anthropic 공식",
+      "added_at": "2026-04-16",
+      "status": "queued",
+      "notes": "Anthropic이 4월 14일 Claude Code 데스크탑 앱을 전면 개편하고 Routines 기능을 리서치 프리뷰로 출시. 사이드바에서 모든 세션을 한눈에 관리, 프로젝트별 그룹화, 병렬 세션 시각화. 개발자 워크플로우에 실질적 변화를 주는 업데이트. claude-code-parallel-sessions-git-worktree, claude-code-hooks-workflow 내부링크 연결 적합."
+    },
+    {
+      "slug": "anthropic-claude-performance-decline-controversy-april-2026",
+      "title_idea": "Anthropic이 Claude 성능을 몰래 낮췄다 — 파워 유저 반발과 토큰 절약의 트레이드오프",
+      "content_type": "news",
+      "target_keyword": "Claude AI 성능 저하",
+      "secondary_keywords": [
+        "Anthropic Claude 성능",
+        "Claude 모델 품질 저하",
+        "AI 토큰 절약 모드",
+        "Claude power user 불만"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Fortune 2026-04-14, Axios 2026-04-16",
+      "added_at": "2026-04-16",
+      "status": "done",
+      "notes": "Anthropic이 Claude 모델의 기본 \"effort\" 레벨을 몰래 낮춰 토큰 절약. 개발자들이 복잡한 워크플로우에서 명령 미준수, 오류 증가 보고. 파워 유저 vs 회사 경제성 트레이드오프 분석. claude-code-insights-usage-analysis 내부링크 연결 적합. 개인 경험(이 블로그 자동화 시스템에서 체감한 변화) 포함하면 차별화 가능."
+    },
+    {
+      "slug": "llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek",
+      "title_idea": "LLM API 가격 비교 2026 — GPT-5 vs Claude Opus 4.6 vs Gemini 3.1 vs DeepSeek 실제 운용 비용 계산 가이드",
+      "content_type": "comparison",
+      "target_keyword": "LLM API 가격 비교 2026",
+      "secondary_keywords": [
+        "OpenAI API 비용",
+        "Claude API 가격",
+        "Gemini API 가격",
+        "DeepSeek API 비용"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "WebSearch: fungies.io LLM API Pricing Comparison 2026, vellum.ai LLM Leaderboard",
+      "added_at": "2026-04-17",
+      "status": "done",
+      "notes": "토요일 비교 가이드용. 실제 프로덕션 사용 시나리오별 토큰 비용 계산을 포함하면 차별화 가능. GPT-5.4($2.5/1M input), Claude Sonnet 4.6($3/$15), Claude Opus 4.6($5/$25), Gemini 2.5 Flash-Lite($0.10/$0.40), DeepSeek V3.2($0.28/$0.42) 가격 데이터 확보됨."
+    },
+    {
+      "slug": "ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production",
+      "title_idea": "AI 에이전트 프레임워크 비교 2026 — LangGraph vs CrewAI vs Dapr Agents 프로덕션 선택 기준",
+      "content_type": "comparison",
+      "target_keyword": "AI 에이전트 프레임워크 비교 2026",
+      "secondary_keywords": [
+        "LangGraph vs CrewAI",
+        "Dapr Agents 비교",
+        "멀티에이전트 프레임워크",
+        "AI 에이전트 생산 배포"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "WebSearch: nxcode.io CrewAI vs LangChain 2026, gurusup.com best multi-agent frameworks",
+      "added_at": "2026-04-17",
+      "status": "done",
+      "notes": "2026-04-19 발행 완료. 토요일 비교 가이드용. LangGraph GA v1.0.10, CrewAI 빠른 프로토타이핑, Dapr Agents 인프라 내구성 각각의 강점 포지셔닝 필요. 기존 포스트 dapr-agents-v1-cncf-production-ai-framework와 내부링크 연계 가능."
+    },
+    {
+      "slug": "mcp-server-production-deployment-kubernetes-guide",
+      "title_idea": "MCP 서버 프로덕션 배포 완전 가이드 — Kubernetes + Streamable HTTP로 안정적인 MCP 엔드포인트 구축하기",
+      "content_type": "how-to",
+      "target_keyword": "MCP 서버 프로덕션 배포",
+      "secondary_keywords": [
+        "Kubernetes MCP 서버",
+        "MCP Streamable HTTP",
+        "MCP 서버 헬스체크",
+        "MCP OAuth 2.1"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "thenewstack.io - 15 Best Practices for MCP in Production, apigene.ai, 2026-04 조사 2181개 MCP 엔드포인트 중 52% 죽은 현실",
+      "added_at": "2026-04-18",
+      "status": "done",
+      "notes": "실제 MCP 엔드포인트의 52%가 배포 후 죽는 현실. OAuth 2.1 표준화, Streamable HTTP 트랜스포트, Kubernetes 리소스 제한, 의존성 핀닝 등 실전 체크리스트로 차별화. 월요일 How-to 유형. [발행완료: 2026-04-26 sunday-strategy 처리]"
+    },
+    {
+      "slug": "claude-code-masterclass-series-1-prompt-to-agent",
+      "title_idea": "Claude Code 실전 마스터클래스 #1 — 슬래시 명령어·훅·서브에이전트 3단계로 워크플로우 자동화하기",
+      "content_type": "series",
+      "target_keyword": "Claude Code 마스터클래스",
+      "secondary_keywords": [
+        "Claude Code 고급 사용법",
+        "Claude Code 자동화",
+        "Claude Code 서브에이전트",
+        "Claude Code slash command"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic 공식 Claude Code 문서, claude-code-parallel-sessions 포스트 연계",
+      "added_at": "2026-04-20",
+      "status": "queued",
+      "notes": "시리즈물 런칭 첫 편. 슬래시 명령어 정의 → settings.json 훅 연결 → 서브에이전트 위임까지 실전 3단계 구성. 독자가 직접 자신의 자동화 시스템을 만들 수 있게 안내. #2는 MCP 서버 연동, #3은 멀티에이전트 오케스트레이션으로 연결 예정. claude-code-agentic-workflow-patterns-5-types, claude-code-parallel-sessions 내부링크 연결."
+    },
+    {
+      "slug": "ai-agent-architecture-series-1-orchestrator-pattern",
+      "title_idea": "AI 에이전트 아키텍처 시리즈 #1 — 오케스트레이터·서브에이전트 패턴으로 복잡한 워크플로우 설계하기",
+      "content_type": "series",
+      "target_keyword": "AI 에이전트 아키텍처",
+      "secondary_keywords": [
+        "멀티에이전트 오케스트레이션",
+        "AI 에이전트 설계 패턴",
+        "서브에이전트 위임",
+        "LLM 워크플로우 설계"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "claude-code-agentic-workflow-patterns-5-types 포스트 딥다이브 버전",
+      "added_at": "2026-04-20",
+      "status": "queued",
+      "notes": "기존 '5가지 패턴' 포스트가 인기를 끌고 있어 시리즈 확장 타당성 높음. #1에서 오케스트레이터 패턴 상세 해부 → #2는 에러 복구와 재시도 전략 → #3은 프로덕션 모니터링. 마스터클래스 시리즈와 교차 내부링크 가능."
+    },
+    {
+      "slug": "python-ai-agent-library-comparison-2026",
+      "title_idea": "Python AI 에이전트 라이브러리 비교 2026 — Pydantic AI vs Instructor vs Smolagents 실전 선택 가이드",
+      "content_type": "comparison",
+      "target_keyword": "Python AI 에이전트 라이브러리 비교",
+      "secondary_keywords": [
+        "Pydantic AI 사용법",
+        "Instructor LLM",
+        "Smolagents HuggingFace",
+        "Python LLM 라이브러리"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "HuggingFace smolagents 공식 문서, Pydantic AI 0.2 릴리스 노트, Instructor 최신 버전",
+      "added_at": "2026-04-20",
+      "status": "done",
+      "notes": "토요일 비교 가이드용. LangGraph·CrewAI 비교 포스트가 반응 좋았던 후속편. 하위 레이어(라이브러리)를 다루므로 포지셔닝 차별화 명확. 실제 코드 예제 + 구조화된 출력 품질 비교 + 성능 벤치마크 포함. ai-agent-framework-comparison 포스트와 내부링크 연결. [발행완료: 2026-04-26 sunday-strategy 처리]"
+    },
+    {
+      "slug": "claude-code-custom-commands-hooks-automation",
+      "title_idea": "Claude Code 커스텀 명령어와 훅으로 반복 작업 없애기 — 실전 자동화 레시피 7가지",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code 커스텀 명령어",
+      "secondary_keywords": [
+        "Claude Code hooks",
+        "Claude Code 자동화",
+        "Claude Code settings.json",
+        "Claude Code slash command 만들기"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic Claude Code 공식 문서 훅 섹션, claude-controller 실제 운영 경험",
+      "added_at": "2026-04-20",
+      "status": "queued",
+      "notes": "실제 이 블로그에서 운영 중인 daily-post, daily-closing, sunday-strategy 자동화 시스템을 공개하는 형태로 차별화 가능. 독자가 직접 복사해 쓸 수 있는 레시피 형태. claude-code-masterclass-series와 연계하면 시너지. 월요일 How-to 유형."
+    },
+    {
+      "slug": "ai-agent-security-2026-prompt-injection-defense",
+      "title_idea": "AI 에이전트 보안 2026 — 프롬프트 인젝션·툴 권한 남용 방어 실전 체크리스트",
+      "content_type": "news",
+      "target_keyword": "AI 에이전트 보안",
+      "secondary_keywords": [
+        "프롬프트 인젝션 방어",
+        "LLM 보안 취약점",
+        "AI 에이전트 권한 제어",
+        "MCP 보안"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "OWASP LLM Top 10 2025, Anthropic Claude 보안 가이드, MCP 보안 사례 연구",
+      "added_at": "2026-04-20",
+      "status": "queued",
+      "notes": "에이전트가 외부 도구를 호출하는 환경이 늘면서 프롬프트 인젝션 공격 사례 증가 중. MCP 서버를 직접 운영하는 독자층에게 실용적. mcp-server-production-deployment 포스트와 보안 관점 내부링크 연결. 화요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "agentic-coding-shift-2026-anthropic-report",
+      "title_idea": "Anthropic 에이전틱 코딩 트렌드 2026 분석 — 코드 작성에서 에이전트 지휘로 전환되는 엔지니어의 역할",
+      "content_type": "news",
+      "target_keyword": "에이전틱 코딩 2026",
+      "secondary_keywords": [
+        "Anthropic 코딩 트렌드 보고서",
+        "AI 에이전트 팀 오케스트레이션",
+        "멀티에이전트 개발",
+        "agentic coding trends"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Anthropic 2026 Agentic Coding Trends Report, pragmaticengineer.com, CIO.com",
+      "added_at": "2026-04-18",
+      "status": "queued",
+      "notes": "Anthropic 공식 보고서 기반. 단일 AI 어시스턴트에서 조율된 에이전트 팀으로 전환. 엔지니어 역할 변화(코드 작성 → 시스템 설계/검증). 화요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "openai-codex-cli-vs-claude-code-practical-comparison",
+      "title_idea": "OpenAI Codex CLI vs Claude Code — 오픈소스 AI 코딩 에이전트 2026 실전 비교",
+      "content_type": "how-to",
+      "target_keyword": "OpenAI Codex CLI 사용법",
+      "secondary_keywords": [
+        "Codex CLI vs Claude Code",
+        "AI 코딩 에이전트 비교",
+        "OpenAI CLI 설치",
+        "Codex CLI 튜토리얼"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "OpenAI 공식 릴리스 (2026-04), GitHub openai/codex-cli, VentureBeat 비교 기사",
+      "added_at": "2026-04-19",
+      "status": "queued",
+      "notes": "OpenAI가 2026년 4월 오픈소스 Codex CLI 출시. Claude Code와 직접 경쟁. 설치·설정·실제 사용 비교 How-to 수요 급증. claude-code-agentic-workflow-patterns-5-types, claude-code-parallel-sessions 내부링크 연결. 월요일 How-to 유형."
+    },
+    {
+      "slug": "gemini-25-flash-api-cost-optimization-guide",
+      "title_idea": "Gemini 2.5 Flash API 비용 최적화 가이드 — 토큰당 $0.10으로 프로덕션 AI 앱 운영하기",
+      "content_type": "how-to",
+      "target_keyword": "Gemini 2.5 Flash API 가이드",
+      "secondary_keywords": [
+        "Gemini API 비용 절감",
+        "Gemini Flash 튜토리얼",
+        "Google AI Studio API",
+        "LLM API 비용 최적화"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Google AI Studio 공식 문서, llm-api-pricing-comparison-2026 포스트 딥다이브 연계",
+      "added_at": "2026-04-19",
+      "status": "queued",
+      "notes": "Gemini 2.5 Flash-Lite가 $0.10/1M input 토큰으로 가장 저렴한 고성능 모델로 부상. 프로덕션 비용 최적화 실전 가이드 수요 높음. 기존 llm-api-pricing-comparison-2026 포스트에서 자연스럽게 유입 가능. 월요일 How-to 유형."
+    },
+    {
+      "slug": "vercel-ai-sdk-claude-streaming-agent-2026",
+      "title_idea": "Vercel AI SDK로 Claude 스트리밍 에이전트 만들기 — 2026 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Vercel AI SDK 사용법",
+      "secondary_keywords": [
+        "AI 스트리밍 에이전트",
+        "Claude API Next.js",
+        "useChat hook"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Vercel AI SDK v4 출시 및 Claude 공식 지원 강화 트렌드",
+      "added_at": "2026-04-20",
+      "status": "done",
+      "notes": "Vercel AI SDK v4의 Claude 공식 지원, streamText/generateObject 패턴, 실시간 스트리밍 구현. Next.js 앱과 통합하는 실전 코드 포함. Python 에이전트 라이브러리 비교 포스트와 시너지"
+    },
+    {
+      "slug": "openai-responses-api-vs-chat-completions-migration-2026",
+      "title_idea": "OpenAI Responses API 완전 가이드 — Chat Completions와 차이점 및 마이그레이션",
+      "content_type": "how-to",
+      "target_keyword": "OpenAI Responses API 마이그레이션",
+      "secondary_keywords": [
+        "Responses API 사용법",
+        "Chat Completions 차이",
+        "OpenAI 에이전틱 API"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "OpenAI Open Responses 표준 발표 후 마이그레이션 수요 증가",
+      "added_at": "2026-04-20",
+      "status": "queued",
+      "notes": "Responses API는 tool_choice, parallel_tool_calls, 내장 웹검색 등 에이전틱 워크플로우에 최적화. 기존 Chat Completions에서 마이그레이션하는 팀을 위한 실전 가이드. openai-open-responses-agentic-standard 포스트와 연계"
+    },
+    {
+      "slug": "claude-code-routines-practical-guide-2026",
+      "title_idea": "Claude Code Routines 실전 구현 가이드 — 스케줄, API, GitHub 이벤트 트리거 완전 정복",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code Routines 사용법",
+      "secondary_keywords": [
+        "Claude Code 스케줄 자동화",
+        "Anthropic Routines 가이드",
+        "AI 에이전트 자동화",
+        "Claude Code GitHub Actions"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "dev.to AI Weekly April 2026, pasqualepillitteri.it Claude Code Routines",
+      "added_at": "2026-04-21",
+      "status": "done",
+      "notes": "2026년 4월 14일 Anthropic이 공개한 Claude Code Routines 리서치 프리뷰. 프롬프트·저장소·커넥터를 한 번만 설정하면 일정·API 호출·GitHub 이벤트로 자동 실행. MCP 서버 배포 포스트와 연계하여 자동화 시리즈로 발전 가능. 경쟁 포스트 없음 — 블루오션 키워드."
+    },
+    {
+      "slug": "mcp-v2-client-typescript-implementation-guide",
+      "title_idea": "MCP v2.1 클라이언트 TypeScript 직접 구현 가이드 — Claude Desktop·Cursor 연동까지",
+      "content_type": "how-to",
+      "target_keyword": "MCP 클라이언트 구현",
+      "secondary_keywords": [
+        "Model Context Protocol v2.1",
+        "MCP TypeScript SDK",
+        "MCP 클라이언트 개발",
+        "Claude MCP 연동"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "dev.to AI Weekly April 2026 — Claude Desktop·Cursor 모두 MCP v2.1 지원 완료",
+      "added_at": "2026-04-21",
+      "status": "queued",
+      "notes": "Q2 2026 기준 MCP가 에이전트-도구 통신 표준으로 자리잡음. Claude Desktop과 Cursor 모두 v2.1 지원. 클라이언트 직접 구현 How-to는 수요 높음. mcp-server-production-deployment-kubernetes-guide와 좋은 내부링크 쌍 형성 가능."
+    },
+    {
+      "slug": "github-copilot-agent-mode-ga-claude-code-comparison",
+      "title_idea": "GitHub Copilot 에이전트 모드 GA — Claude Code와 실전 비교, 2026년 AI 코딩 에이전트 선택 가이드",
+      "content_type": "news",
+      "target_keyword": "GitHub Copilot 에이전트 모드",
+      "secondary_keywords": [
+        "GitHub Copilot vs Claude Code",
+        "AI 코딩 에이전트 비교 2026",
+        "Copilot Workspace 에이전트",
+        "GitHub Copilot GA"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "GitHub Blog, VentureBeat GitHub Universe 2026 발표, Copilot 공식 릴리스 노트",
+      "added_at": "2026-04-22",
+      "status": "queued",
+      "notes": "GitHub Copilot 에이전트 모드가 2026년 Q1 GA로 전환되면서 Claude Code와 직접 경쟁 구도 형성. PR 생성·코드 리뷰·테스트 자동화까지 에이전트화된 Copilot과 Claude Code의 실질적 차이를 EM/시니어 개발자 관점에서 비교. openai-codex-cli-vs-claude-code-practical-comparison, claude-code-agentic-workflow-patterns-5-types 내부링크 연결 가능. 목요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "openai-o3-reasoning-agent-enterprise-six-months",
+      "title_idea": "OpenAI o3 출시 6개월 — 추론 모델이 에이전트 설계를 어떻게 바꿨나",
+      "content_type": "news",
+      "target_keyword": "OpenAI o3 에이전트 활용",
+      "secondary_keywords": [
+        "o3 reasoning model 에이전트",
+        "OpenAI 추론 모델 프로덕션",
+        "o3 vs Claude Opus 비교",
+        "reasoning model 에이전트 설계"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "OpenAI DevDay 2026, Fortune, Axios 기업 AI 채택 리포트 Q1 2026",
+      "added_at": "2026-04-22",
+      "status": "queued",
+      "notes": "o3 출시 이후 에이전트 설계 패러다임 변화 분석. 단순 스텝별 도구 호출 → 추론 내재화로 에이전트 구조 단순화 트렌드. '느리지만 자율적' 추론 모델을 언제 쓰고 언제 빠른 모델로 대체할지 실전 의사결정 가이드. claude-advisor-executor-pattern-analysis와 함께 추론·실행 분리 패턴 비교로 연계 가능. 목요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "ai-browser-operator-agent-2026-production-ready",
+      "title_idea": "AI 브라우저 오퍼레이터 에이전트 2026 — Computer Use·Operator가 프로덕션에 실제 쓰이기 시작했다",
+      "content_type": "news",
+      "target_keyword": "AI 브라우저 에이전트 2026",
+      "secondary_keywords": [
+        "Claude Computer Use 프로덕션",
+        "OpenAI Operator 사례",
+        "AI 웹 자동화 에이전트",
+        "browser agent 실전"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Anthropic Computer Use 사례 연구, OpenAI Operator 출시 리뷰, TechCrunch Q1 2026",
+      "added_at": "2026-04-22",
+      "status": "queued",
+      "notes": "Claude Computer Use와 OpenAI Operator가 2025년 말 공개된 후 2026년 Q1에 첫 실제 프로덕션 사례들이 나오기 시작. 반복 웹 작업 자동화, 레거시 UI 스크래핑, RPA 대체 시나리오별 성공·실패 패턴 분석. 아직 국내에 심층 분석 콘텐츠가 적어 블루오션. roguepilot-copilot-prompt-injection-security, ai-coding-secrets-sprawl-mcp-config-security 내부링크 연결 적합. 목요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "anthropic-claude-opus-4-7-managed-agents-2026",
+      "title_idea": "Anthropic Claude Opus 4.7 + Managed Agents — 자율형 AI 에이전트 인프라 책임지는 새 패러다임",
+      "content_type": "news",
+      "target_keyword": "Claude Opus 4.7 Managed Agents",
+      "secondary_keywords": [
+        "Anthropic 에이전트 서비스",
+        "Claude Opus 4.7 코딩 성능",
+        "AI 에이전트 인프라",
+        "Managed Agents 퍼블릭 베타"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "releasebot.io/updates/anthropic, thenewstack.io/anthropic-claude-code-limits",
+      "added_at": "2026-04-23",
+      "status": "queued",
+      "notes": "Claude Opus 4.7이 코딩 성능 전반 강화되었고, Managed Agents(공개 베타)는 개발자가 안전한 샌드박스 환경에서 자율형 AI를 즉시 배포 가능. 세션당 $0.08 요금제. Notion·Rakuten·Sentry 이미 프로덕션 적용. claude-managed-agents-news-analysis-april-2026, anthropic-agent-skills-practical-guide 내부링크 연결 적합. 금요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "openai-gpt-5-5-release-claude-comparison-april-2026",
+      "title_idea": "OpenAI GPT-5.5 출시 임박 — Anthropic Claude와의 벤치마크 비교와 개발자 선택 가이드",
+      "content_type": "news",
+      "target_keyword": "GPT-5.5 출시",
+      "secondary_keywords": [
+        "GPT-5.5 vs Claude Opus",
+        "LLM 벤치마크 2026",
+        "OpenAI 모델 비교",
+        "AI 모델 선택 기준"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "lumichats.com/blog/gpt-5-5-spud-openai-release-date-features-april-2026",
+      "added_at": "2026-04-23",
+      "status": "done",
+      "notes": "OpenAI GPT-5.5(코드명 Spud)가 2026년 4월 내 출시 가능성 높음. 프리트레이닝 완료 후 파인튜닝 단계. Claude Opus 4.7과의 벤치마크 비교는 개발자 도구 선택에 직접 영향. 실용적 비교(코딩·추론·비용) 관점으로 작성. llm-api-pricing-comparison-2026 내부링크 연결 적합. 금요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "claude-code-vs-cursor-glass-ai-coding-tools-2026",
+      "title_idea": "Claude Code vs Cursor 3.0 Glass — 8개월 만의 왕좌 교체, AI 코딩 도구 생태계 재편 분석",
+      "content_type": "news",
+      "target_keyword": "Claude Code vs Cursor 비교 2026",
+      "secondary_keywords": [
+        "Cursor 3.0 Glass 기능",
+        "Claude Code 점유율",
+        "AI 코딩 도구 선택",
+        "개발자 AI 도구 트렌드"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "thenewstack.io/ai-coding-tool-stack, pragmaticengineer.com/ai-tooling-2026",
+      "added_at": "2026-04-23",
+      "status": "queued",
+      "notes": "Cursor 3.0(Glass) 출시와 Claude Code 점유율 급상승이 동시에 발생. 개발자 커뮤니티에서 실제 도구 선택 변화 추적. 에이전트 통합 깊이, 컨텍스트 관리, 비용 관점 비교. github-copilot-agent-mode-ga-claude-code-comparison, openai-codex-cli-vs-claude-code-practical-comparison 내부링크 연결 가능. 금요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "claude-api-vs-openai-api-vs-gemini-api-price-performance-guide-2026",
+      "title_idea": "Claude API vs OpenAI API vs Gemini API — 프로젝트별 최적 LLM API 선택 완전 가이드 2026",
+      "content_type": "comparison",
+      "target_keyword": "Claude API vs OpenAI API 비교 2026",
+      "secondary_keywords": [
+        "LLM API 가격 비교",
+        "Gemini API 비교",
+        "AI API 선택 가이드",
+        "토큰 비용 계산",
+        "엔터프라이즈 AI API"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "cosmicjs.com/claude-code-vs-github-copilot-vs-cursor, artificialanalysis.ai/agents/coding",
+      "added_at": "2026-04-24",
+      "status": "queued",
+      "notes": "토요일 비교 가이드. Claude 3.5/3.7 vs GPT-4.5/o3 vs Gemini 2.0 Pro를 입력/출력 토큰 가격, 컨텍스트 윈도우, 속도, 사용 사례별로 비교. 스타트업·엔터프라이즈·개인 개발자 3개 시나리오로 최적 선택 제시. openai-open-responses-agentic-standard, anthropic-institute-partner-network 내부링크 연결 가능. 실용적 선택 가이드라 검색 전환율 높음."
+    },
+    {
+      "slug": "mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026",
+      "title_idea": "MCP vs A2A vs Open Responses — AI 에이전트 통신 프로토콜 3파전 완전 비교",
+      "content_type": "comparison",
+      "target_keyword": "MCP vs A2A 프로토콜 비교",
+      "secondary_keywords": [
+        "Open Responses API",
+        "A2A 프로토콜",
+        "MCP 표준",
+        "에이전트 통신 표준",
+        "AI 프로토콜 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "openresponses.org, modelcontextprotocol.io, google a2a protocol docs",
+      "added_at": "2026-04-24",
+      "status": "done",
+      "notes": "토요일 비교 가이드. Anthropic MCP(Linux Foundation 표준), Google A2A(에이전트 간 통신), OpenAI Open Responses(에이전틱 워크플로우 표준) 3개 프로토콜을 설계 목적·지원 생태계·실전 구현 난이도·미래 방향성으로 비교. openai-open-responses-agentic-standard, mcp-apps-interactive-ui-agent-ux, anthropic-agent-skills-standard 내부링크 연결 가능. 차별화된 비교 주제로 경쟁 포스트 부재. [발행완료: 2026-04-26 sunday-strategy 처리]"
+    },
+    {
+      "slug": "cursor-3-agents-window-parallel-ai-development",
+      "title_idea": "Cursor 3.0 Agents Window 실전 가이드 — 병렬 AI 에이전트로 개발 속도 3배 올리는 방법",
+      "content_type": "how-to",
+      "target_keyword": "cursor 3.0 agents window 병렬 개발",
+      "secondary_keywords": [
+        "cursor 3 multi-agent",
+        "cursor 3.0 워크트리",
+        "AI 코딩 에이전트 병렬"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Cursor 3.0 출시 (2026-04-02) — Agents Window로 여러 에이전트를 독립 워크트리에서 동시 실행. 월요일 How-to 최적 주제",
+      "added_at": "2026-04-25",
+      "status": "queued",
+      "notes": "Cursor 3.0이 2026-04-02에 출시. VS Code 포크 최초 메이저 릴리즈. Agents Window가 핵심 신기능 — 여러 AI 에이전트를 로컬/SSH/클라우드에서 병렬 실행. 개발자 관심도 최고조."
+    },
+    {
+      "slug": "claude-opus-47-task-budget-agent-cost-control",
+      "title_idea": "Claude Opus 4.7 task budget 실전 설정 — AI 에이전트 비용 폭발 막는 완전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "claude opus 4.7 task budget 설정",
+      "secondary_keywords": [
+        "claude opus 4.7",
+        "에이전트 비용 제어",
+        "task budget API"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic 2026-04-16 출시 — Opus 4.7에 task budget 기능 추가. CursorBench +12점. 장기 실행 에이전트의 쿼터 소진 방지",
+      "added_at": "2026-04-25",
+      "status": "queued",
+      "notes": "Claude Opus 4.7 신기능: task budget으로 장기 에이전트가 조용히 할당량 소진하는 문제 해결. 고해상도 이미지(2576px) 지원 추가. 프로덕션 에이전트 운영자에게 필수 가이드."
+    },
+    {
+      "slug": "cursor-3-vs-claude-code-vs-windsurf-2026",
+      "title_idea": "Cursor 3.0 vs Claude Code vs Windsurf — 2026년 AI 코딩 도구 3파전 완전 비교",
+      "content_type": "comparison",
+      "target_keyword": "cursor 3.0 vs claude code 2026",
+      "secondary_keywords": [
+        "windsurf vs cursor",
+        "AI 코딩 도구 비교 2026",
+        "cursor agents window"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "Cursor 3.0 출시 + Claude Code 업데이트로 경쟁 재편. 기존 비교 포스트 업데이트 필요",
+      "added_at": "2026-04-25",
+      "status": "done",
+      "notes": "토요일 비교 가이드에 적합. Cursor 3.0의 Agents Window vs Claude Code의 멀티에이전트 오케스트레이션 vs Windsurf Arena Mode 비교. 검색 수요 높음."
+    },
+    {
+      "slug": "stackoverflow-developer-survey-ai-coding-2026",
+      "title_idea": "Stack Overflow 개발자 설문 2026 분석 - AI 코딩 도구 채택률 67% 돌파, 엔지니어 역할은 실제로 어떻게 달라졌나",
+      "content_type": "news",
+      "target_keyword": "Stack Overflow 개발자 설문 2026",
+      "secondary_keywords": [
+        "AI 코딩 도구 채택률",
+        "AI 에이전트 엔지니어링",
+        "개발자 생산성 2026",
+        "AI 도구 실제 활용"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Stack Overflow Annual Developer Survey 2026 결과 발표",
+      "added_at": "2026-04-26",
+      "status": "queued",
+      "notes": "2026년 개발자 설문에서 AI 코딩 도구 채택률 67% 돌파. 실제 엔지니어 역할 변화를 데이터로 분석하는 뉴스 포스트. 화요일 뉴스 분석 유형."
+    },
+    {
+      "slug": "google-io-2026-ai-agent-announcements-analysis",
+      "title_idea": "Google I/O 2026 AI 에이전트 발표 총정리 - Gemini 2.5 Pro·Veo 3·Project Astra가 바꾸는 개발자 워크플로우",
+      "content_type": "news",
+      "target_keyword": "Google IO 2026 AI 에이전트",
+      "secondary_keywords": [
+        "Gemini 2.5 Pro 출시",
+        "Google AI Agent 2026",
+        "Project Astra",
+        "Vertex AI 에이전트"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Google I/O 2026 예정, Google AI 발표 트래킹",
+      "added_at": "2026-04-26",
+      "status": "queued",
+      "notes": "Google I/O 2026 직후 즉각 발행 예정 뉴스 포스트. Gemini 2.5 Pro GA, Veo 3, Project Astra 분석. 목요일 뉴스 유형."
+    },
+    {
+      "slug": "ai-agent-production-incidents-q1-2026-case-study",
+      "title_idea": "AI 에이전트 프로덕션 장애 사례 2026 Q1 - 업계가 공개하지 않는 실패 패턴 5가지",
+      "content_type": "news",
+      "target_keyword": "AI 에이전트 프로덕션 장애",
+      "secondary_keywords": [
+        "LLM 인시던트 분석",
+        "AI 에이전트 안정성",
+        "LLM hallucination 프로덕션",
+        "AI 에이전트 실패 사례"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "2026 Q1 AI 인시던트 리포트, 커뮤니티 사례 수집",
+      "added_at": "2026-04-26",
+      "status": "queued",
+      "notes": "프로덕션 AI 에이전트의 실제 실패 사례 분석. 비판적 시각으로 작성하면 차별화. ai-agent-security 포스트와 내부링크 연계. 화요일 뉴스 유형."
+    },
+    {
+      "slug": "claude-api-prompt-caching-cost-optimization-guide",
+      "title_idea": "Claude API Prompt Caching 실전 가이드 - 프로덕션 LLM 비용 75% 절감하는 캐싱 패턴 7가지",
+      "content_type": "how-to",
+      "target_keyword": "Claude API Prompt Caching 가이드",
+      "secondary_keywords": [
+        "Anthropic 프롬프트 캐싱",
+        "LLM API 비용 절감",
+        "Claude 토큰 캐싱",
+        "프로덕션 AI 비용 최적화"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic 공식 Prompt Caching 문서, 이 블로그 운영 경험 (60-70% 비용 절감 달성)",
+      "added_at": "2026-04-26",
+      "status": "queued",
+      "notes": "이 블로그 자동화에서 실제 60-70% 토큰 절감 경험 기반. 시스템 프롬프트, 컨텍스트, 도구 정의 캐싱 패턴. 월요일 How-to 유형."
+    },
+    {
+      "slug": "opentelemetry-llm-pipeline-observability-guide",
+      "title_idea": "AI 에이전트 분산 추적 구축 실전 - OpenTelemetry + LangSmith로 LLM 파이프라인 가시성 확보하기",
+      "content_type": "how-to",
+      "target_keyword": "LLM 파이프라인 모니터링",
+      "secondary_keywords": [
+        "OpenTelemetry AI 에이전트",
+        "LangSmith 트레이싱",
+        "AI 에이전트 디버깅",
+        "LLM 분산 추적"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "OpenTelemetry AI/LLM 시맨틱 컨벤션, LangSmith v2 문서",
+      "added_at": "2026-04-26",
+      "status": "queued",
+      "notes": "에이전트가 복잡해질수록 어디서 왜 실패했는지 파악이 핵심 문제. 오픈소스 트레이싱 구축 How-to. mcp-server-production-deployment-kubernetes-guide와 배포 단계 연계. 수요일 유형."
+    },
+    {
+      "slug": "nextjs-15-claude-api-fullstack-ai-app-guide",
+      "title_idea": "Next.js 15 + Claude API 풀스택 AI 앱 처음부터 만들기 - Server Actions, 스트리밍, 에러 핸들링 완전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Next.js Claude API 풀스택 AI",
+      "secondary_keywords": [
+        "Next.js Server Actions AI",
+        "Claude API Next.js 15",
+        "스트리밍 AI 응답",
+        "Vercel AI SDK 2026"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Next.js 15 공식 문서, Vercel AI SDK v4, Anthropic Claude API",
+      "added_at": "2026-04-26",
+      "status": "queued",
+      "notes": "vercel-ai-sdk-claude-streaming-agent 포스트의 심화편. Next.js 15 앱 라우터 + Server Actions + Claude API 스트리밍 종합 How-to. 월요일 유형."
+    }
+  ]
+}
