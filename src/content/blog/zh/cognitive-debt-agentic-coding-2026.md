@@ -2,6 +2,7 @@
 title: '认知债务：Anthropic 2026年智能体编程报告警示的AI时代新型负债'
 description: 'Anthropic发布的《2026年智能体编程趋势报告》与"认知债务"新概念相互呼应——AI越多地代替人类写代码，团队对系统的共同理解就越悄然侵蚀。分析工程管理者现在必须采取的应对策略。'
 pubDate: '2026-03-07'
+heroImage: ../../../assets/blog/cognitive-debt-agentic-coding-2026-hero.jpg
 tags:
   - engineering-management
   - ai-agent
@@ -30,6 +31,8 @@ relatedPosts:
       zh: 涵盖生成式AI采用的自上而下策略，与组织层面AI导入失败原因分析相关联。
 ---
 
+
+![Cognitive Debt风险图 - 速度、审查循环、共享理解](../../../assets/blog/cognitive-debt-agentic-coding-2026-risk-map.jpg)
 # 认知债务：Anthropic 2026年智能体编程报告警示的AI时代新型负债
 
 2026年1月，Anthropic发布了**《2026年智能体编程趋势报告》**，正式宣告软件工程进入大转型时代。TELUS引入AI智能体后工程代码交付速度提升30%，Rakuten将新功能发布周期从24天压缩至5天，降幅达79%。单看数字，这无疑是一个黄金时代。

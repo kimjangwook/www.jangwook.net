@@ -14,9 +14,32 @@ tags:
   - ai
   - mcp
   - prompt-engineering
-relatedPosts: []
+relatedPosts:
+  - slug: astro-scheduled-publishing
+    score: 0.91
+    reason:
+      ko: 블로그 자동화 이후 예약 공개와 daily 발행 파이프라인을 어떻게 안정화했는지 이어서 볼 수 있습니다.
+      ja: ブログ自動化の後、予約公開とdaily配信パイプラインをどう安定化したかを続けて確認できます。
+      en: Continues from blog automation into scheduled publishing and the daily release pipeline that keeps the system reliable.
+      zh: 从博客自动化延伸到定时发布与每日发布管线，展示如何让系统稳定运行。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.88
+    reason:
+      ko: 초기 블로그 자동화 아이디어가 실제 에이전트·스킬·커맨드 구조로 어떻게 발전했는지 보여줍니다.
+      ja: 初期のブログ自動化アイデアが、実際のエージェント・スキル・コマンド構造へどう発展したかを示します。
+      en: Shows how the initial blog automation idea evolved into a real agent, skill, and command architecture.
+      zh: 展示早期博客自动化想法如何发展为实际的代理、技能和命令架构。
+  - slug: multi-agent-orchestration-improvement
+    score: 0.84
+    reason:
+      ko: 단일 작성 자동화를 넘어 멀티 에이전트 오케스트레이션으로 품질 개선 루프를 확장한 사례입니다.
+      ja: 単一の執筆自動化から、マルチエージェント・オーケストレーションによる品質改善ループへ拡張した事例です。
+      en: Extends single-post automation into a multi-agent orchestration loop for quality improvement.
+      zh: 将单篇写作自动化扩展为多代理编排的质量改进循环。
 ---
 
+
+![LLM博客自动化架构 - research, draft, verify, publish](../../../assets/blog/llm-blog-automation-architecture.jpg)
 # 利用LLM与Claude Code实现博客自动化
 
 ## 如果每天只需1小时就能用3种语言写出完美的技术博客?

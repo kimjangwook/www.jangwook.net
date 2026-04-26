@@ -2,6 +2,7 @@
 title: 'Cognitive Debt: The New Liability AI Teams Are Quietly Accumulating in 2026'
 description: 'Anthropic''s 2026 Agentic Coding Trends Report heralds a productivity revolution — but a parallel research thread warns of "Cognitive Debt." As AI writes more code, teams quietly lose their shared understanding of their own systems. Here''s what Engineering Managers must do now.'
 pubDate: '2026-03-07'
+heroImage: ../../../assets/blog/cognitive-debt-agentic-coding-2026-hero.jpg
 tags:
   - engineering-management
   - ai-agent
@@ -30,6 +31,8 @@ relatedPosts:
       zh: 涵盖生成式AI采用的自上而下策略，与组织层面AI导入失败原因分析相关联。
 ---
 
+
+![Cognitive Debt risk map - velocity, review loops, shared understanding](../../../assets/blog/cognitive-debt-agentic-coding-2026-risk-map.jpg)
 # Cognitive Debt: The New Liability AI Teams Are Quietly Accumulating in 2026
 
 In January 2026, Anthropic published its **2026 Agentic Coding Trends Report** — a formal declaration that software engineering has entered a new era. TELUS teams shipped engineering code 30% faster after adopting AI agents. Rakuten compressed new feature delivery from 24 days to 5, a 79% reduction. By the numbers, this looks like an unambiguous golden age.

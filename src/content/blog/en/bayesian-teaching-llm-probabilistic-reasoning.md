@@ -3,6 +3,7 @@ title: "Bayesian Teaching: How LLMs Learn Probabilistic Reasoning — A Deep Div
 description: >-
   Google's Bayesian Teaching research, published in Nature Communications, introduces a training methodology that enables LLMs to probabilistically update their beliefs when receiving new information. This post analyzes its implications for AI agents and enterprise systems from an engineering leadership perspective.
 pubDate: '2026-03-08'
+heroImage: ../../../assets/blog/bayesian-teaching-llm-probabilistic-reasoning-hero.jpg
 tags:
   - LLM
   - AIResearch
@@ -31,6 +32,8 @@ relatedPosts:
       zh: 讨论LLM推理训练效率的文章，与贝叶斯教学互补。
 ---
 
+
+![Bayesian Teaching workflow - prior, evidence, posterior update](../../../assets/blog/bayesian-teaching-llm-probabilistic-reasoning-workflow.jpg)
 Modern LLMs are remarkably capable, but they share a fundamental weakness: the longer a conversation runs — or the more new information is provided — the worse they become at rationally updating their "beliefs." A user might say, "Actually, I prefer window seats," and the next recommendation might not reflect this at all.
 
 A research team from Google Research and MIT addressed this directly in a paper published in <strong>Nature Communications</strong>: "Bayesian Teaching Enables Probabilistic Reasoning in Large Language Models." The core idea is as elegant as it is powerful: instead of training LLMs to memorize correct answers, <strong>train them to mimic the probabilistic reasoning process of a mathematically optimal Bayesian model</strong>.

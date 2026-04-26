@@ -3,6 +3,7 @@ title: 'Bayesian Teaching: LLM이 확률적 추론을 배우는 방법 — Googl
 description: >-
   Google이 Nature Communications에 발표한 Bayesian Teaching 연구는 LLM이 새 정보를 받을 때 확률적으로 믿음을 업데이트하도록 훈련하는 방법론이다. AI 에이전트의 불확실성 처리 방식을 근본적으로 개선할 이 연구를 EM 관점에서 분석한다.
 pubDate: '2026-03-08'
+heroImage: ../../../assets/blog/bayesian-teaching-llm-probabilistic-reasoning-hero.jpg
 tags:
   - LLM
   - AI연구
@@ -31,6 +32,8 @@ relatedPosts:
       zh: 讨论LLM推理训练效率的文章，与贝叶斯教学互补。
 ---
 
+
+![Bayesian Teaching 워크플로우 - prior, evidence, posterior update](../../../assets/blog/bayesian-teaching-llm-probabilistic-reasoning-workflow.jpg)
 현대의 LLM은 놀라운 능력을 지니고 있지만, 한 가지 근본적인 약점이 있다. 대화가 길어질수록, 혹은 새로운 정보가 주어질수록 자신의 "믿음(belief)"을 합리적으로 업데이트하는 능력이 현저히 떨어진다는 것이다. 사용자가 "아, 사실 나는 창가 자리를 좋아해요"라고 말해도, 다음 추천에서 LLM이 이를 반영하지 못하는 경우가 많다.
 
 Google Research와 MIT의 연구팀이 <strong>Nature Communications</strong>에 발표한 "Bayesian Teaching Enables Probabilistic Reasoning in Large Language Models"는 이 문제를 정면으로 다룬다. 핵심 아이디어는 단순하면서도 강력하다: LLM이 정답을 외우는 방식 대신, <strong>베이즈 최적 모델의 확률적 추론 과정을 모방하도록 훈련</strong>하는 것이다.

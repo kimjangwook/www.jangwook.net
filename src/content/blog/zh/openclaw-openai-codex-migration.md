@@ -9,8 +9,32 @@ tags:
   - openai
   - ai-agent
   - migration
+relatedPosts:
+  - slug: openclaw-installation-tutorial
+    score: 0.9
+    reason:
+      ko: OpenClaw를 처음 설치하고 채널을 연결하는 기본 흐름을 먼저 확인할 수 있습니다.
+      ja: OpenClawを初めてインストールし、チャネルを接続する基本フローを先に確認できます。
+      en: Covers the initial OpenClaw setup and channel connection flow before migrating models.
+      zh: 介绍OpenClaw初始安装和频道连接流程，适合在模型迁移前阅读。
+  - slug: openclaw-advanced-usage
+    score: 0.86
+    reason:
+      ko: 모델 전환 이후 크론, MCP, 멀티 에이전트 같은 고급 운영 패턴으로 확장하는 데 도움이 됩니다.
+      ja: モデル切り替え後にcron、MCP、マルチエージェントなどの高度な運用パターンへ拡張する助けになります。
+      en: Helps extend the migration into advanced operations such as cron, MCP, and multi-agent patterns.
+      zh: 帮助在模型切换后扩展到cron、MCP和多代理等高级运维模式。
+  - slug: openclaw-update-doctor-error-fix
+    score: 0.82
+    reason:
+      ko: OpenClaw 업데이트와 doctor 오류를 다룬 글로, 전환 과정에서 만나는 운영 문제를 함께 해결할 수 있습니다.
+      ja: OpenClawのアップデートとdoctorエラーを扱い、移行中に遭遇しやすい運用問題を一緒に解決できます。
+      en: Covers OpenClaw update and doctor errors, useful for resolving operational issues during migration.
+      zh: 讲解OpenClaw更新和doctor错误，有助于处理迁移过程中遇到的运维问题。
 ---
 
+
+![OpenClaw Codex迁移清单 - backup, OAuth, model switch, verification](../../../assets/blog/openclaw-openai-codex-migration-checklist.jpg)
 ## 事件起因：Claude和Gemini的ToS变更
 
 2026年初，Anthropic（Claude）和Google（Gemini）更新了服务条款。核心问题是：<strong>订阅计划（Pro/Max等）的OAuth认证能否用于第三方工具？</strong>

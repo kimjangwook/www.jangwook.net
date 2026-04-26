@@ -2,6 +2,7 @@
 title: 'Meta Llama 4 全面解析 — Maverick·Scout开源AI如何改变企业AI战略'
 description: '深入分析Meta Llama 4 Maverick（400B MoE）与Scout（10M上下文）的架构、基准测试和成本结构，从CTO/工程总监视角探讨企业应如何重新定义开源AI战略。'
 pubDate: '2026-03-06'
+heroImage: ../../../assets/blog/llama4-maverick-scout-enterprise-strategy-hero.jpg
 tags: ['LLM', '开源AI', '企业战略']
 relatedPosts:
   - slug: 'minimax-m25-open-weight-vs-proprietary'
@@ -27,6 +28,8 @@ relatedPosts:
       zh: '理解2026年AI模型竞争格局所需的先行背景'
 ---
 
+
+![Llama 4企业战略图 - Scout, Maverick, MoE routing](../../../assets/blog/llama4-maverick-scout-enterprise-strategy-moe-map.jpg)
 Meta正式发布了Llama 4。两个立即可用的模型——Maverick和Scout——以及仍在训练中的超大型模型Behemoth（2万亿参数）的预告，这次发布绝非简单的模型更新。**这是开源AI真正追上前沿商业模型的转折点**。作为工程总监或CTO，我们来理清这一发布意味着什么。
 
 ## Llama 4的两个模型：Scout与Maverick

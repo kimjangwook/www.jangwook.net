@@ -2,6 +2,7 @@
 title: 'Meta Llama 4 完全解説 — Maverick・ScoutのオープンソースAIがエンタープライズ戦略を変える'
 description: 'Meta Llama 4 Maverick（400B MoE）とScout（10Mコンテキスト）のアーキテクチャ・ベンチマーク・コスト構造を分析し、エンジニアリング組織がオープンソースAI戦略をいかに再定義すべきかをCTO/EM視点でまとめる。'
 pubDate: '2026-03-06'
+heroImage: ../../../assets/blog/llama4-maverick-scout-enterprise-strategy-hero.jpg
 tags: ['LLM', 'オープンソースAI', 'エンタープライズ戦略']
 relatedPosts:
   - slug: 'minimax-m25-open-weight-vs-proprietary'
@@ -27,6 +28,8 @@ relatedPosts:
       zh: '理解2026年AI模型竞争格局所需的先行背景'
 ---
 
+
+![Llama 4 エンタープライズ戦略マップ - Scout, Maverick, MoE routing](../../../assets/blog/llama4-maverick-scout-enterprise-strategy-moe-map.jpg)
 MetaがLlama 4を公開した。MaverickとScoutという2つのモデル、そしてまだリリース前の超大型モデルBehemoth（2兆パラメータ）まで含むこの発表は、単なるモデルアップデートではない。**オープンソースAIが商用最前線モデルと同等水準に達した転換点**だ。Engineering ManagerあるいはCTOとして、この発表をどう読み解くべきかを整理する。
 
 ## Llama 4の2モデル: ScoutとMaverick

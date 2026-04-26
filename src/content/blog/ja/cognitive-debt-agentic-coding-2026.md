@@ -2,6 +2,7 @@
 title: 'Cognitive Debt: Anthropic 2026エージェンティックコーディングレポートが警告するAI時代の新たな負債'
 description: 'Anthropicの2026 Agentic Coding Trends Reportと共に登場した新概念「Cognitive Debt」— AIがコードを代わりに書くほど、チームの理解力は静かに侵食される。EMが今すぐ実践すべき対応戦略を分析します。'
 pubDate: '2026-03-07'
+heroImage: ../../../assets/blog/cognitive-debt-agentic-coding-2026-hero.jpg
 tags:
   - engineering-management
   - ai-agent
@@ -30,6 +31,8 @@ relatedPosts:
       zh: 涵盖生成式AI采用的自上而下策略，与组织层面AI导入失败原因分析相关联。
 ---
 
+
+![Cognitive Debt リスクマップ - 速度、レビュー、共有理解](../../../assets/blog/cognitive-debt-agentic-coding-2026-risk-map.jpg)
 # Cognitive Debt: Anthropic 2026エージェンティックコーディングレポートが警告するAI時代の新たな負債
 
 2026年1月、Anthropicが発表した**2026 Agentic Coding Trends Report**は、ソフトウェアエンジニアリングの大転換を公式に宣言した。TELUSはAIエージェント導入後にエンジニアリングコードの出荷速度が30%向上し、Rakutenは新機能リリースサイクルを24日から5日へ79%短縮した。数字だけ見れば黄金期だ。

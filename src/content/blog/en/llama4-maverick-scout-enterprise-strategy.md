@@ -2,6 +2,7 @@
 title: 'Meta Llama 4 Deep Dive — How Maverick & Scout Are Reshaping Enterprise AI Strategy'
 description: 'A technical and strategic analysis of Meta Llama 4 Maverick (400B MoE) and Scout (10M context window): architecture, benchmarks, cost structure, and what engineering leaders need to know to update their open-source AI strategy.'
 pubDate: '2026-03-06'
+heroImage: ../../../assets/blog/llama4-maverick-scout-enterprise-strategy-hero.jpg
 tags: ['LLM', 'OpenSourceAI', 'EnterpriseStrategy']
 relatedPosts:
   - slug: 'minimax-m25-open-weight-vs-proprietary'
@@ -27,6 +28,8 @@ relatedPosts:
       zh: '理解2026年AI模型竞争格局所需的先行背景'
 ---
 
+
+![Llama 4 enterprise strategy map - Scout, Maverick, MoE routing](../../../assets/blog/llama4-maverick-scout-enterprise-strategy-moe-map.jpg)
 Meta just released Llama 4. Two immediately available models — Maverick and Scout — plus a teaser for Behemoth (a 2-trillion-parameter giant still in training). This isn't just another model drop. **It's the moment open-source AI credibly caught up to frontier proprietary models**. Here's what engineering leaders need to understand.
 
 ## The Two Models: Scout and Maverick

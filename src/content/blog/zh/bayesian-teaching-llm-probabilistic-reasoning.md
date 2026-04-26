@@ -3,6 +3,7 @@ title: 'Bayesian Teaching：LLM学习概率推理的方法——Google·Nature C
 description: >-
   Google在Nature Communications发表的Bayesian Teaching研究，提出了一种训练方法论，使LLM在接收新信息时能够以概率方式更新其信念。本文从工程管理视角分析这项研究对AI智能体和企业系统的影响。
 pubDate: '2026-03-08'
+heroImage: ../../../assets/blog/bayesian-teaching-llm-probabilistic-reasoning-hero.jpg
 tags:
   - LLM
   - AI研究
@@ -31,6 +32,8 @@ relatedPosts:
       zh: 讨论LLM推理训练效率的文章，与贝叶斯教学互补。
 ---
 
+
+![Bayesian Teaching工作流 - prior, evidence, posterior update](../../../assets/blog/bayesian-teaching-llm-probabilistic-reasoning-workflow.jpg)
 现代LLM拥有惊人的能力，但有一个根本性的弱点：对话越长，或者提供的新信息越多，它们合理更新自身"信念(belief)"的能力就越差。用户可能会说"其实我喜欢靠窗的座位"，但下一次推荐中LLM往往无法反映这一点。
 
 Google Research和MIT研究团队在<strong>Nature Communications</strong>发表的"Bayesian Teaching Enables Probabilistic Reasoning in Large Language Models"正面应对了这个问题。核心理念简单而强大：不是训练LLM记忆正确答案，而是<strong>训练其模仿数学最优贝叶斯模型的概率推理过程</strong>。

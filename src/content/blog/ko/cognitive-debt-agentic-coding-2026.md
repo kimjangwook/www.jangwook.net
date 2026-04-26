@@ -2,6 +2,7 @@
 title: 'Cognitive Debt: Anthropic 2026 에이전틱 코딩 리포트가 경고하는 AI 시대의 새로운 부채'
 description: 'Anthropic의 2026 Agentic Coding Trends Report와 함께 등장한 새로운 개념 "Cognitive Debt" — AI가 코드를 대신 쓸수록 팀의 이해력은 조용히 침식된다. EM이 지금 당장 실천해야 할 대응 전략을 분석합니다.'
 pubDate: '2026-03-07'
+heroImage: ../../../assets/blog/cognitive-debt-agentic-coding-2026-hero.jpg
 tags:
   - engineering-management
   - ai-agent
@@ -30,6 +31,8 @@ relatedPosts:
       zh: 涵盖生成式AI采用的自上而下策略，与组织层面AI导入失败原因分析相关联。
 ---
 
+
+![Cognitive Debt 리스크 맵 - 속도, 리뷰 루프, 공유 이해](../../../assets/blog/cognitive-debt-agentic-coding-2026-risk-map.jpg)
 # Cognitive Debt: Anthropic 2026 에이전틱 코딩 리포트가 경고하는 AI 시대의 새로운 부채
 
 2026년 1월, Anthropic이 발표한 **2026 Agentic Coding Trends Report**는 소프트웨어 엔지니어링의 대전환을 공식 선언했다. TELUS는 AI 에이전트를 도입한 뒤 엔지니어링 코드 출하 속도가 30% 빨라졌고, Rakuten은 신기능 출시 주기를 24일에서 5일로 79% 단축시켰다. 숫자만 보면 황금기다.
