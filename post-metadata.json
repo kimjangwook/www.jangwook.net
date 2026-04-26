@@ -2483,5 +2483,17 @@
       "devops": 0.2,
       "architecture": 0.5
     }
+  },
+  "cursor-3-vs-claude-code-vs-windsurf-2026": {
+    "pubDate": "2026-04-26",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.5,
+      "ai-ml": 0.85,
+      "devops": 0.2,
+      "architecture": 0.4
+    },
+    "_contentHash": "963d8eb2cb5c3ec6"
   }
 }
