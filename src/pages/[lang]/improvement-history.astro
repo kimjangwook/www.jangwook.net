@@ -695,8 +695,8 @@ const tt = (key: any) => {
 
 		<script>
 			// Category filtering
-			const filterTabs = document.querySelectorAll('.filter-tab');
-			const timelineItems = document.querySelectorAll('.timeline-item');
+			const filterTabs = document.querySelectorAll<HTMLElement>('.filter-tab');
+			const timelineItems = document.querySelectorAll<HTMLElement>('.timeline-item');
 
 			filterTabs.forEach(tab => {
 				tab.addEventListener('click', () => {

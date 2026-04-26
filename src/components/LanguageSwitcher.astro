@@ -8,127 +8,96 @@ interface Props {
 
 const { currentLang } = Astro.props;
 const currentRoute = getRouteFromUrl(Astro.url.pathname);
+const languageCodes: Record<Language, string> = {
+	ko: 'KO',
+	en: 'EN',
+	ja: 'JA',
+	zh: 'ZH',
+};
 ---
 
-<div class="language-selector-wrapper">
-	<svg class="language-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
-	</svg>
-	<select
-		id="language-selector"
-		class="language-selector"
-		aria-label="Select language"
-	>
-		{Object.entries(languages).map(([lang, label]) => (
-			<option
-				value={`/${lang}${currentRoute.replace(/{LANG}/g, lang)}`}
-				selected={lang === currentLang}
+<nav class="language-switcher" aria-label="Select language">
+	{Object.entries(languages).map(([lang, label]) => {
+		const language = lang as Language;
+		const href = `/${language}${currentRoute.replace(/{LANG}/g, language)}`;
+
+		return (
+			<a
+				href={href}
+				class:list={['language-switcher__item', { 'is-active': language === currentLang }]}
+				data-lang={language}
+				aria-current={language === currentLang ? 'page' : undefined}
+				title={label}
 			>
-				{label}
-			</option>
-		))}
-	</select>
-</div>
+				<span class="language-switcher__code">{languageCodes[language]}</span>
+				<span class="language-switcher__label">{label}</span>
+			</a>
+		);
+	})}
+</nav>
 
 <style>
-	.language-selector-wrapper {
-		position: relative;
-		display: flex;
+	.language-switcher {
+		display: inline-flex;
 		align-items: center;
-		gap: 0.375rem;
-		padding: 0.25rem 0.5rem;
-		border-radius: 0.5rem;
-		background-color: rgba(59, 130, 246, 0.05);
-		transition: all 0.2s ease;
+		gap: 0;
+		padding: 0.2rem;
+		border: 1px solid var(--paper-edge);
+		border-radius: 999px;
+		background: var(--paper);
 	}
 
-	.language-selector-wrapper:hover {
-		background-color: rgba(59, 130, 246, 0.1);
+	.language-switcher__item {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.34rem;
+		min-height: 2rem;
+		padding: 0.35rem 0.72rem;
+		border-radius: 999px;
+		color: var(--ink-2);
+		text-decoration: none;
 	}
 
-	.language-icon {
-		width: 1.125rem;
-		height: 1.125rem;
-		color: #3B82F6;
-		pointer-events: none;
-		flex-shrink: 0;
+	.language-switcher__item:hover {
+		color: var(--ink);
+		background: var(--paper-2);
 	}
 
-	.language-selector {
-		appearance: none;
-		background-color: transparent;
-		border: 1px solid rgba(59, 130, 246, 0.3);
-		border-radius: 0.375rem;
-		padding: 0.375rem 1.75rem 0.375rem 0.625rem;
-		font-size: 0.875rem;
+	.language-switcher__item.is-active {
+		color: var(--paper);
+		background: var(--ink);
+	}
+
+	.language-switcher__code {
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
 		font-weight: 600;
-		color: #1E40AF;
-		cursor: pointer;
-		transition: all 0.2s ease;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233B82F6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-		background-repeat: no-repeat;
-		background-position: right 0.375rem center;
-		background-size: 1rem;
+		letter-spacing: 0.05em;
 	}
 
-	.language-selector:hover {
-		border-color: #3B82F6;
-		background-color: rgba(59, 130, 246, 0.05);
-		transform: translateY(-1px);
-		box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
-	}
-
-	.language-selector:focus {
-		outline: 2px solid #3B82F6;
-		outline-offset: 2px;
-		border-color: #3B82F6;
-	}
-
-	/* Dark mode styles */
-	:global(.dark) .language-selector-wrapper {
-		background-color: rgba(96, 165, 250, 0.1);
-	}
-
-	:global(.dark) .language-selector-wrapper:hover {
-		background-color: rgba(96, 165, 250, 0.15);
-	}
-
-	:global(.dark) .language-icon {
-		color: #60A5FA;
-	}
-
-	:global(.dark) .language-selector {
-		border-color: rgba(96, 165, 250, 0.4);
-		color: #93C5FD;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2360A5FA'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-	}
-
-	:global(.dark) .language-selector:hover {
-		border-color: #60A5FA;
-		background-color: rgba(96, 165, 250, 0.1);
-		box-shadow: 0 2px 4px rgba(96, 165, 250, 0.3);
-	}
-
-	:global(.dark) .language-selector:focus {
-		outline-color: #60A5FA;
-		border-color: #60A5FA;
-	}
-
-	/* Dark mode option styles */
-	:global(.dark) .language-selector option {
-		background-color: #1F2937;
-		color: #F9FAFB;
+	.language-switcher__label {
+		font-size: 0.78rem;
+		line-height: 1;
 	}
 
 	@media (max-width: 720px) {
-		.language-selector {
-			padding: 0.25rem 1.5rem 0.25rem 0.5rem;
-			font-size: 0.8125rem;
+		.language-switcher {
+			width: min(10rem, 42vw);
+			min-width: 0;
+			overflow-x: auto;
+			scrollbar-width: none;
 		}
 
-		.language-icon {
-			width: 1rem;
-			height: 1rem;
+		.language-switcher::-webkit-scrollbar {
+			display: none;
+		}
+
+		.language-switcher__item {
+			padding-inline: 0.56rem;
+		}
+
+		.language-switcher__label {
+			display: none;
 		}
 	}
 </style>
@@ -136,20 +105,10 @@ const currentRoute = getRouteFromUrl(Astro.url.pathname);
 <script>
 	import { saveLanguagePreference, type SupportedLanguage } from '../lib/language-detection';
 
-	const languageSelector = document.getElementById('language-selector') as HTMLSelectElement;
-
-	languageSelector?.addEventListener('change', (e) => {
-		const target = e.target as HTMLSelectElement;
-		const newUrl = target.value;
-
-		// Extract language from the URL (e.g., "/ko/blog" -> "ko")
-		const langMatch = newUrl.match(/^\/([a-z]{2})\//);
-		if (langMatch) {
-			const lang = langMatch[1] as SupportedLanguage;
-			// Save language preference to cookie
-			saveLanguagePreference(lang);
-		}
-
-		window.location.href = newUrl;
+	document.querySelectorAll<HTMLAnchorElement>('.language-switcher__item[data-lang]').forEach((link) => {
+		link.addEventListener('click', () => {
+			const lang = link.dataset.lang as SupportedLanguage | undefined;
+			if (lang) saveLanguagePreference(lang);
+		});
 	});
 </script>

@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE } from "../consts";
 import { useTranslations, type Language } from "../lib/i18n/languages";
+import BrandMark from "./BrandMark.astro";
 import HeaderLink from "./HeaderLink.astro";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import ThemeToggle from "./ThemeToggle.astro";
@@ -14,16 +15,16 @@ const t = useTranslations(lang);
 ---
 
 <header
-  class="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700"
+  class="site-header sticky top-0 z-50 backdrop-blur-sm border-b"
 >
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <div class="flex items-center gap-8">
+    <div class="flex items-center justify-between min-h-20 gap-4">
+      <div class="flex items-center gap-6">
         <!-- Mobile menu button (shown on mobile and tablet) -->
         <!-- UX: Touch target minimum 44x44px (Fitts's Law) -->
         <button
           id="mobile-menu-button"
-          class="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-accent hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 touch-target"
+          class="lg:hidden p-2 rounded-md transition-all duration-200 touch-target"
           aria-label="Toggle menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -56,12 +57,13 @@ const t = useTranslations(lang);
           </svg>
         </button>
 
-        <h2 class="text-xl font-bold">
+        <h2 class="brand-heading">
           <a
             href={`/${lang}/`}
-            class="gradient-text hover:opacity-80 transition-opacity link-underline"
+            class="brand-link"
+            aria-label={SITE_TITLE}
           >
-            {SITE_TITLE.split("|")[0].trim()}
+            <BrandMark showWordmark size={42} />
           </a>
         </h2>
         <!-- UX: Navigation limited to 6 items (Miller's Law - 7±2 rule) -->
@@ -71,9 +73,6 @@ const t = useTranslations(lang);
           <HeaderLink href={`/${lang}/about/`}>{t("nav.about")}</HeaderLink>
           <HeaderLink href={`/${lang}/contact/`}>{t("nav.contact")}</HeaderLink>
           <HeaderLink href={`/${lang}/social/`}>{t("nav.social")}</HeaderLink>
-          <HeaderLink href={`/${lang}/improvement-history/`}
-            >{t("nav.improvementHistory")}</HeaderLink
-          >
         </div>
       </div>
       <div class="flex items-center gap-2">
@@ -86,7 +85,7 @@ const t = useTranslations(lang);
     <!-- UX: Smooth transitions (Doherty Threshold - < 400ms feels instant) -->
     <div
       id="mobile-menu"
-      class="mobile-menu lg:hidden border-t border-gray-200 dark:border-gray-700"
+      class="mobile-menu lg:hidden border-t"
       aria-hidden="true"
     >
       <div class="flex flex-col gap-2 py-4">
@@ -95,13 +94,45 @@ const t = useTranslations(lang);
         <HeaderLink href={`/${lang}/about/`}>{t("nav.about")}</HeaderLink>
         <HeaderLink href={`/${lang}/contact/`}>{t("nav.contact")}</HeaderLink>
         <HeaderLink href={`/${lang}/social/`}>{t("nav.social")}</HeaderLink>
-        <HeaderLink href={`/${lang}/improvement-history/`}
-          >{t("nav.improvementHistory")}</HeaderLink
-        >
       </div>
     </div>
   </nav>
 </header>
+
+<style>
+  .site-header {
+    background: color-mix(in oklch, var(--paper) 92%, transparent);
+    border-color: var(--paper-rule);
+  }
+
+  .brand-heading {
+    margin: 0;
+    line-height: 1;
+  }
+
+  .brand-link {
+    display: inline-flex;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .brand-link:hover {
+    color: var(--ink);
+  }
+
+  #mobile-menu-button {
+    color: var(--ink-2);
+  }
+
+  #mobile-menu-button:hover {
+    color: var(--ink);
+    background: var(--paper-2);
+  }
+
+  #mobile-menu {
+    border-color: var(--paper-rule);
+  }
+</style>
 
 <script>
   const mobileMenuButton = document.getElementById("mobile-menu-button");

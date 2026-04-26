@@ -106,20 +106,18 @@ if (validPosts.length === 0) {
 <style>
   .related-posts {
     margin: 3.5rem 0 2.5rem;
-    padding: 2rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(var(--gray-light), 0.2);
+    padding-top: 2rem;
+    border-top: 1px solid var(--paper-rule);
   }
 
   .section-title {
+    font-family: var(--font-serif);
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0 0 1.5rem 0;
-    color: rgb(var(--gray-dark));
+    color: var(--ink);
     padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(var(--gray-light), 0.3);
+    border-bottom: 1px solid var(--paper-rule);
   }
 
   .recommendations-list {
@@ -129,7 +127,7 @@ if (validPosts.length === 0) {
   }
 
   .recommendation-item {
-    border-bottom: 1px solid rgba(var(--gray-light), 0.2);
+    border-bottom: 1px solid var(--paper-rule);
   }
 
   .recommendation-item:last-child {
@@ -143,7 +141,7 @@ if (validPosts.length === 0) {
     padding: 1.25rem 0;
     text-decoration: none;
     color: inherit;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
   }
 
   .recommendation-item:hover a {
@@ -158,8 +156,10 @@ if (validPosts.length === 0) {
   .item-title {
     margin: 0 0 0.5rem 0;
     font-size: 1.0625rem;
-    font-weight: 600;
-    color: rgb(var(--gray-dark));
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
+    font-weight: 500;
+    color: var(--ink);
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -168,13 +168,13 @@ if (validPosts.length === 0) {
   }
 
   .recommendation-item:hover .item-title {
-    color: rgb(var(--accent));
+    color: var(--flow-deep);
   }
 
   .item-reason {
     margin: 0;
     font-size: 0.8125rem;
-    color: rgb(var(--gray));
+    color: var(--ink-2);
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -188,79 +188,14 @@ if (validPosts.length === 0) {
     height: 80px;
     border-radius: 6px;
     overflow: hidden;
-    background: rgba(var(--gray-light), 0.1);
+    background: var(--paper-2);
+    border: 1px solid var(--paper-edge);
   }
 
   .item-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  /* Dark mode support - class toggle */
-  :global(.dark) .related-posts {
-    background: rgba(30, 35, 45, 0.95);
-    border-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  }
-
-  :global(.dark) .section-title {
-    color: rgba(255, 255, 255, 0.95);
-    border-bottom-color: rgba(255, 255, 255, 0.15);
-  }
-
-  :global(.dark) .recommendation-item {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-
-  :global(.dark) .item-title {
-    color: rgba(255, 255, 255, 0.92);
-  }
-
-  :global(.dark) .recommendation-item:hover .item-title {
-    color: rgb(var(--accent-light));
-  }
-
-  :global(.dark) .item-reason {
-    color: rgba(255, 255, 255, 0.65);
-  }
-
-  :global(.dark) .item-image {
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  /* Dark mode support - system preference */
-  @media (prefers-color-scheme: dark) {
-    .related-posts {
-      background: rgba(30, 35, 45, 0.95);
-      border-color: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    .section-title {
-      color: rgba(255, 255, 255, 0.95);
-      border-bottom-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .recommendation-item {
-      border-bottom-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .item-title {
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    .recommendation-item:hover .item-title {
-      color: rgb(var(--accent-light));
-    }
-
-    .item-reason {
-      color: rgba(255, 255, 255, 0.65);
-    }
-
-    .item-image {
-      background: rgba(255, 255, 255, 0.08);
-    }
   }
 
   /* Responsive design */

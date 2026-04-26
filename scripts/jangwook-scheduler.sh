@@ -33,6 +33,17 @@ tg_send() {
     fi
 }
 
+should_run_publishing_gate() {
+    case "$TASK_NAME" in
+        *daily*|*publish*|*post*|*blog*|*write*)
+            return 0
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
+
 # Task name
 TASK_NAME="${1:?Usage: jangwook-scheduler.sh <task-name> <claude-args...>}"
 shift
@@ -61,9 +72,12 @@ if ! git pull --rebase origin main >> "$LOG_FILE" 2>&1; then
     git rebase --abort >> "$LOG_FILE" 2>&1 || true
     git stash >> "$LOG_FILE" 2>&1 || true
     if ! git pull --rebase origin main >> "$LOG_FILE" 2>&1; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Resetting to origin/main..." >> "$LOG_FILE"
-        git fetch origin >> "$LOG_FILE" 2>&1
-        git reset --hard origin/main >> "$LOG_FILE" 2>&1
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Remote sync failed; refusing destructive reset." >> "$LOG_FILE"
+        tg_send "[jangwook.net] 원격 동기화 실패
+작업: ${TASK_NAME}
+상태: git pull --rebase 실패
+조치: 수동 확인 필요"
+        exit 1
     fi
     git stash pop >> "$LOG_FILE" 2>&1 || true
 
@@ -91,6 +105,37 @@ EXIT_CODE=$?
 # Kill watchdog
 kill $WATCHDOG_PID 2>/dev/null || true
 wait $WATCHDOG_PID 2>/dev/null || true
+
+if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] Publishing validation gate..." >> "$LOG_FILE"
+    if ! npm run validate:publishing >> "$LOG_FILE" 2>&1; then
+        EXIT_CODE=1
+        tg_send "[jangwook.net] 발행 검증 실패
+작업: ${TASK_NAME}
+상태: npm run validate:publishing 실패
+조치: 로그 확인 필요"
+    elif [ "${PUBLISHING_BUILD_GATE:-0}" = "1" ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Optional Astro check gate..." >> "$LOG_FILE"
+        if ! npm run astro -- check >> "$LOG_FILE" 2>&1; then
+            EXIT_CODE=1
+            tg_send "[jangwook.net] Astro 체크 실패
+작업: ${TASK_NAME}
+상태: npm run astro -- check 실패
+조치: 로그 확인 필요"
+        fi
+
+        if [ "$EXIT_CODE" -eq 0 ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Optional publishing build gate..." >> "$LOG_FILE"
+        if ! npm run build >> "$LOG_FILE" 2>&1; then
+            EXIT_CODE=1
+            tg_send "[jangwook.net] 발행 빌드 실패
+작업: ${TASK_NAME}
+상태: npm run build 실패
+조치: 로그 확인 필요"
+        fi
+        fi
+    fi
+fi
 
 ELAPSED=$(( $(date +%s) - START_TIME ))
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] DONE: $TASK_NAME (exit: $EXIT_CODE, ${ELAPSED}s)" >> "$LOG_FILE"

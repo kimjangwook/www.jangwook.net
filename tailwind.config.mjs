@@ -7,14 +7,14 @@ export default {
 			colors: {
 				// AI/생산성 블로그 컬러 스킴
 				primary: {
-					DEFAULT: '#1E293B',
-					dark: '#0F172A',
-					light: '#334155',
+					DEFAULT: '#2c3039',
+					dark: '#1f232b',
+					light: '#4d5663',
 				},
 				accent: {
-					DEFAULT: '#3B82F6',
-					dark: '#2563EB',
-					light: '#60A5FA',
+					DEFAULT: '#2aa8c7',
+					dark: '#176985',
+					light: '#8bd9e7',
 				},
 				secondary: {
 					DEFAULT: '#8B5CF6',
@@ -40,8 +40,9 @@ export default {
 				},
 			},
 			fontFamily: {
-				sans: ['Inter', 'Noto Sans KR', 'Noto Sans JP', 'sans-serif'],
-				mono: ['JetBrains Mono', 'Consolas', 'monospace'],
+				sans: ['Geist', 'Noto Sans KR', 'Noto Sans JP', 'sans-serif'],
+				serif: ['Newsreader', 'Noto Serif KR', 'Noto Serif JP', 'Noto Serif SC', 'Iowan Old Style', 'Georgia', 'serif'],
+				mono: ['Geist Mono', 'JetBrains Mono', 'Consolas', 'monospace'],
 			},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1rem' }],

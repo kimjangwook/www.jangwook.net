@@ -2,27 +2,27 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // SEO/AEO Optimized: Title 50~60 chars, Description 150~160 chars
-export const SITE_TITLE = 'EffiFlow | AI Automation & Developer Productivity Tech Blog';
-export const SITE_DESCRIPTION = 'Explore Claude Code, MCP (Model Context Protocol), workflow automation, and AI-powered development. Practical guides and deep dives into LLM integration for developers.';
+export const SITE_TITLE = 'Kim Jangwook | Personal Tech Blog';
+export const SITE_DESCRIPTION = 'Personal notes on AI agents, automation, developer tools, and building software. Practical experiments, implementation logs, and lessons learned by Kim Jangwook.';
 
 // Language-specific site metadata for RSS feeds and SEO
 // AEO Optimized: Each language with proper title (50~60 chars) and description (150~160 chars)
 export const SITE_META = {
 	ko: {
-		title: 'EffiFlow | AI 자동화 & 개발자 생산성 기술 블로그',
-		description: 'Claude Code, MCP, 워크플로우 자동화, AI 기반 개발에 대한 실용적인 가이드와 심층 분석. LLM 통합으로 개발 생산성을 높이는 방법을 공유합니다.'
+		title: '김장욱 | AI 에이전트와 개발 기록',
+		description: 'AI 에이전트, 자동화, 개발 도구, 소프트웨어 제작 과정을 기록하는 김장욱의 개인 기술 블로그입니다. 실험, 구현 로그, 운영 경험을 공유합니다.'
 	},
 	en: {
-		title: 'EffiFlow | AI Automation & Developer Productivity Tech Blog',
-		description: 'Explore Claude Code, MCP (Model Context Protocol), workflow automation, and AI-powered development. Practical guides and deep dives into LLM integration for developers.'
+		title: 'Kim Jangwook | AI Agents & Software Notes',
+		description: 'Personal notes on AI agents, automation, developer tools, and building software. Practical experiments, implementation logs, and lessons learned by Kim Jangwook.'
 	},
 	ja: {
-		title: 'EffiFlow | AI自動化＆開発者生産性技術ブログ',
-		description: 'Claude Code、MCP、ワークフロー自動化、AI駆動開発の実践ガイドと深掘り記事。LLM統合で開発生産性を向上させる方法を共有します。'
+		title: 'Kim Jangwook | AIエージェントと開発記録',
+		description: 'AIエージェント、自動化、開発ツール、ソフトウェア開発の過程を記録するKim Jangwookの個人技術ブログです。実験、実装ログ、運用経験を共有します。'
 	},
 	zh: {
-		title: 'EffiFlow | AI自动化与开发者生产力技术博客',
-		description: '探索 Claude Code、MCP（模型上下文协议）、工作流自动化和 AI 驱动开发。为开发者提供 LLM 集成的实用指南和深度分析。'
+		title: 'Kim Jangwook | AI 代理与软件笔记',
+		description: 'Kim Jangwook 的个人技术博客，记录 AI 代理、自动化、开发工具和软件构建过程，分享实验、实现日志和运营经验。'
 	}
 };
 
@@ -54,10 +54,10 @@ export const AUTHOR = {
 
 // Organization information for structured data
 export const ORGANIZATION = {
-	name: 'EffiFlow',
+	name: 'jangwook.net',
 	url: 'https://jangwook.net',
 	logo: 'https://jangwook.net/favicon.svg',
-	description: 'AI automation and developer productivity solutions',
+	description: 'Personal technology blog by Kim Jangwook',
 	foundingDate: '2024',
 	sameAs: [
 		'https://github.com/kimjangwook',

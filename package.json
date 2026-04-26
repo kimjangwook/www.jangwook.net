@@ -4,9 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/validate-publishing.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "validate:publishing": "node scripts/validate-publishing.mjs",
     "webp": "node scripts/convert-to-webp.js",
     "webp:blog": "node scripts/convert-to-webp.js src/assets/blog/",
     "disable_toolbar": "astro preferences disable --global devToolbar",

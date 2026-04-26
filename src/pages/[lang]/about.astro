@@ -20,60 +20,64 @@ const t = useTranslations(lang);
 	<head>
 		<BaseHead title={t('nav.about')} description={t('site.description')} />
 	</head>
-	<body class="bg-gray-50 dark:bg-gray-900">
+	<body>
 		<Header lang={lang} />
-		<main class="max-w-4xl mx-auto px-4 py-12">
+		<main class="about-page max-w-5xl mx-auto px-4 py-12">
 			<!-- Profile Section -->
-			<section class="mb-16">
-				<h1 class="text-4xl font-bold mb-2 text-gray-900 dark:text-gray-100">Kim Jangwook</h1>
-				<p class="text-xl text-gray-600 dark:text-gray-300 mb-8">Renew day by day!</p>
-				<div class="prose prose-lg max-w-none dark:prose-invert">
+			<section class="about-profile mb-16">
+				<div>
+					<p class="mono uc about-profile__kicker"><span class="flow-dot"></span> the writer</p>
+					<h1>Kim<br /><em>Jangwook.</em></h1>
+					<p class="mono about-profile__names">김장욱 · キム・ジャンウク · 金张旭</p>
+				</div>
+				<div class="about-profile__body">
+					<p class="about-profile__tagline">Renew day by day.</p>
 					{lang === 'ko' ? (
 						<div>
-							<p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-								안녕하세요, "EffiFlow"에 오신 것을 환영합니다. 저는 이 블로그의 운영자 Kim Jangwook입니다. 이곳에서는 최신 기술 트렌드와 혁신적인 아이디어를 소개하고 있습니다.
+							<p>
+								안녕하세요. 저는 김장욱(Kim Jangwook)입니다. jangwook.net은 제가 AI 에이전트, 자동화, 개발 도구, 제품 제작 과정에서 배운 것을 기록하는 개인 기술 블로그입니다.
 							</p>
-							<p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-								"EffiFlow"는 기술에 대한 열정과 호기심을 가진 모든 분들을 위한 공간입니다. 복잡하고 어려운 기술 주제를 쉽게 풀어 설명하여 더 많은 사람들이 새로운 기술에 접근할 수 있도록 돕고자 합니다.
-							</p>
-							<p class="text-lg text-gray-700 dark:text-gray-300">
-								저와 함께 최신 기술 동향을 따라가며, 미래를 선도할 기술 혁신에 대해 알아보세요. 여러분의 관심과 참여를 기대합니다. 감사합니다!
+								<p>
+									Effloow 같은 콘텐츠 서비스와 Agent Effi Flow 같은 자동화 시스템은 각각 별도 도메인에서 운영하고, 이곳은 실험 과정과 구현 로그, 판단 근거를 남기는 개인 공간으로 정리하고 있습니다.
+								</p>
+							<p>
+								글은 완성된 홍보 문구보다 실제로 해본 것, 실패한 것, 다시 정리한 것을 중심으로 씁니다.
 							</p>
 						</div>
 					) : lang === 'ja' ? (
 						<div>
-							<p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-								こんにちは、「EffiFlow」へようこそ。私はこのブログの運営者、Kim Jangwookです。ここでは、最新の技術トレンドや革新的なアイデアを紹介しています。
+							<p>
+								こんにちは。Kim Jangwookです。jangwook.netは、AIエージェント、自動化、開発ツール、プロダクト制作の過程で学んだことを記録する個人技術ブログです。
 							</p>
-							<p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-								「EffiFlow」は、技術に対する情熱と好奇心を持つすべての人のためのスペースです。複雑で難しい技術トピックを分かりやすく説明し、より多くの人が新しい技術にアクセスできるよう、情報を提供することを目指しています。
-							</p>
-							<p class="text-lg text-gray-700 dark:text-gray-300">
-								私と一緒に最新の技術トレンドを追い、未来を導く技術革新について学びましょう。皆さんの関心と参加を楽しみにしています。ありがとうございます！
+								<p>
+									EffloowのようなコンテンツサービスやAgent Effi Flowのような自動化システムは、それぞれ別ドメインで運営し、ここでは実験の過程、実装ログ、判断の理由を個人の記録として整理しています。
+								</p>
+							<p>
+								完成した宣伝文句よりも、実際に試したこと、失敗したこと、考え直したことを中心に書いています。
 							</p>
 						</div>
 					) : lang === 'zh' ? (
 						<div>
-							<p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-								您好，欢迎来到"EffiFlow"。我是这个博客的运营者Kim Jangwook。在这里，我们介绍最新的技术趋势和创新理念。
+							<p>
+								您好，我是 Kim Jangwook。jangwook.net 是我的个人技术博客，用来记录 AI 代理、自动化、开发工具和产品构建过程中学到的内容。
 							</p>
-							<p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-								"EffiFlow"是为所有对技术充满热情和好奇心的人准备的空间。我们旨在以通俗易懂的方式解释复杂的技术主题，帮助更多人接触新技术。
-							</p>
-							<p class="text-lg text-gray-700 dark:text-gray-300">
-								与我一起跟随最新的技术趋势，探索引领未来的技术创新。期待您的关注和参与。谢谢！
+								<p>
+									Effloow 这样的内容服务和 Agent Effi Flow 这样的自动化系统会分别在独立域名运营，而这里更像是个人记录，用来整理实验过程、实现日志和决策依据。
+								</p>
+							<p>
+								这里的文章更关注真实尝试、失败经验和重新整理后的思考，而不是完成后的宣传文案。
 							</p>
 						</div>
 					) : (
 						<div>
-							<p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-								Hello, welcome to "EffiFlow". I am Kim Jangwook, the operator of this blog. Here, we introduce the latest technology trends and innovative ideas.
+							<p>
+								Hello, I am Kim Jangwook. jangwook.net is my personal technology blog for recording what I learn while building AI agents, automation, developer tools, and software products.
 							</p>
-							<p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
-								"EffiFlow" is a space for all those who have a passion and curiosity for technology. We aim to explain complex and difficult technology topics in an easy-to-understand manner and provide information so that more people can access new technology.
-							</p>
-							<p class="text-lg text-gray-700 dark:text-gray-300">
-								Follow the latest technology trends with me and learn about the technological innovations that will lead the future. I look forward to your interest and participation. Thank you!
+								<p>
+									Content services such as Effloow and automation systems such as Agent Effi Flow live on separate domains. This site is the personal space where I keep experiments, implementation logs, and the reasoning behind technical decisions.
+								</p>
+							<p>
+								I write less like finished marketing copy and more like a working notebook: what I tried, what broke, and what I would do differently next time.
 							</p>
 						</div>
 					)}
@@ -142,25 +146,45 @@ const t = useTranslations(lang);
 				</div>
 			</div>
 
-			<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-				<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
-					<a href="https://agent-effi-flow.jangwook.net" target="_blank" class="text-accent hover:underline dark:text-accent">
-						Agent Effi Flow
-					</a>
-				</h4>
-				<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: SvelteKit, Supabase, Google Gemini API, Stripe</p>
-				<p class="text-gray-700 dark:text-gray-300">
-					{lang === 'ko' ? (
-						'AI 기반 B2B SaaS OCR 자동화 서비스. 면세처리 OCR과 경리 OCR을 제공하며, 일본 인바운드 관광 비즈니스와 중소기업 경리 팀을 타겟으로 합니다.'
-					) : lang === 'ja' ? (
-						'AIベースのB2B SaaS OCR自動化サービス。免税処理OCRと経理OCRを提供し、日本のインバウンド観光ビジネスと中小企業の経理チームをターゲットにしています。'
-					) : lang === 'zh' ? (
-						'基于AI的B2B SaaS OCR自动化服务。提供免税处理OCR和会计OCR，面向日本入境旅游企业和中小企业会计团队。'
-					) : (
-						'AI-powered B2B SaaS for OCR automation. Provides Receipt OCR for Tax Refund and Accounting OCR services targeting Japanese inbound tourism businesses and SME accounting teams.'
-					)}
-				</p>
-			</div>
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+					<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+						<a href="https://agent-effi-flow.jangwook.net/" target="_blank" class="text-accent hover:underline dark:text-accent">
+							Agent Effi Flow
+						</a>
+					</h4>
+					<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: SvelteKit, Supabase, Google Gemini API, Stripe</p>
+					<p class="text-gray-700 dark:text-gray-300">
+						{lang === 'ko' ? (
+							'AI 기반 B2B SaaS OCR 자동화 시스템. 면세처리 OCR과 경리 OCR을 제공하며, 일본 인바운드 관광 비즈니스와 중소기업 경리 팀을 타겟으로 합니다.'
+						) : lang === 'ja' ? (
+							'AIベースのB2B SaaS OCR自動化システム。免税処理OCRと経理OCRを提供し、日本のインバウンド観光ビジネスと中小企業の経理チームをターゲットにしています。'
+						) : lang === 'zh' ? (
+							'基于AI的B2B SaaS OCR自动化系统。提供免税处理OCR和会计OCR，面向日本入境旅游企业和中小企业会计团队。'
+						) : (
+							'AI-powered B2B SaaS OCR automation system. Provides Receipt OCR for Tax Refund and Accounting OCR services targeting Japanese inbound tourism businesses and SME accounting teams.'
+						)}
+					</p>
+				</div>
+
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+					<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+						<a href="https://www.effloow.com" target="_blank" class="text-accent hover:underline dark:text-accent">
+							Effloow
+						</a>
+					</h4>
+					<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: Paperclip, Codex, Markdown, GA4</p>
+					<p class="text-gray-700 dark:text-gray-300">
+						{lang === 'ko' ? (
+							'AI 에이전트가 콘텐츠 기획, 작성, 운영 이슈를 처리하는 콘텐츠 비즈니스 실험. www.effloow.com에서 별도 서비스로 운영하며, 이 블로그와는 분리된 프로젝트입니다.'
+						) : lang === 'ja' ? (
+							'AIエージェントがコンテンツ企画、執筆、運用課題を処理するコンテンツビジネス実験。www.effloow.comで別サービスとして運営し、このブログとは分離したプロジェクトです。'
+						) : lang === 'zh' ? (
+							'由 AI 代理处理内容策划、写作和运营事项的内容业务实验。在 www.effloow.com 作为独立服务运营，并与此博客分离。'
+						) : (
+							'A content-business experiment where AI agents handle planning, writing, and operational issues. It runs as a separate service at www.effloow.com, apart from this blog.'
+						)}
+					</p>
+				</div>
 
 				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
@@ -444,5 +468,92 @@ const t = useTranslations(lang);
 			</section>
 		</main>
 		<Footer lang={lang} />
+
+		<style>
+			.about-profile {
+				display: grid;
+				grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+				gap: clamp(2rem, 6vw, 4rem);
+				padding-bottom: 3rem;
+				border-bottom: 1px solid var(--paper-rule);
+			}
+
+			.about-profile__kicker {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.65rem;
+				margin: 0 0 1rem;
+				font-size: 0.68rem;
+				color: var(--flow-deep);
+			}
+
+			.about-profile h1 {
+				margin: 0;
+				font-size: clamp(4rem, 10vw, 7rem);
+				font-weight: 500;
+				line-height: 0.96;
+				letter-spacing: -0.035em;
+			}
+
+			.about-profile h1 em {
+				color: var(--flow-deep);
+				font-style: italic;
+			}
+
+			.about-profile__names {
+				margin: 1.1rem 0 0;
+				font-size: 0.8rem;
+				letter-spacing: 0.04em;
+				color: var(--ink-3);
+			}
+
+			.about-profile__body {
+				padding-left: 1.6rem;
+				border-left: 1px solid var(--paper-rule);
+			}
+
+			.about-profile__tagline {
+				margin: 0 0 1.1rem;
+				font-family: var(--font-serif);
+				font-size: 1.55rem;
+				font-style: italic;
+				color: var(--ember);
+			}
+
+			.about-profile__body p {
+				font-family: var(--font-serif);
+				font-size: 1.08rem;
+				line-height: 1.72;
+				color: var(--ink-2);
+			}
+
+			.about-page section > h2 {
+				font-size: clamp(2rem, 4vw, 3rem);
+				font-weight: 500;
+				border-bottom-color: var(--paper-rule);
+				color: var(--ink);
+			}
+
+			.about-page :global(.bg-gray-50),
+			.about-page :global(.dark .dark\:bg-gray-800) {
+				background: var(--paper-2);
+			}
+
+			.about-page :global(.border-gray-200),
+			.about-page :global(.dark .dark\:border-gray-700) {
+				border-color: var(--paper-rule);
+			}
+
+			@media (max-width: 820px) {
+				.about-profile {
+					grid-template-columns: 1fr;
+				}
+
+				.about-profile__body {
+					padding-left: 0;
+					border-left: 0;
+				}
+			}
+		</style>
 	</body>
 </html>

@@ -11,13 +11,39 @@ const isActive = pathname === href || pathname.startsWith(href + '/');
 <a
 	href={href}
 	class:list={[
-		'px-3 py-2 rounded-md text-sm font-medium transition-colors',
+		'nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors',
 		isActive
-			? 'bg-accent/10 text-accent dark:bg-accent/20'
-			: 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-accent',
+			? 'nav-link--active'
+			: 'nav-link--idle',
 		className
 	]}
 	{...props}
 >
 	<slot />
 </a>
+
+<style>
+	.nav-link {
+		color: var(--ink-2);
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		border-bottom: 1.5px solid transparent;
+	}
+
+	.nav-link--active {
+		color: var(--ink);
+		background: transparent;
+		border-bottom-color: var(--flow);
+	}
+
+	.nav-link--idle:hover {
+		color: var(--ink);
+		background: var(--paper-2);
+	}
+
+	:global(.dark) .nav-link--active {
+		color: var(--paper);
+	}
+</style>

@@ -23,7 +23,7 @@ const today = new Date();
 <BackToTop />
 
 <footer
-  class="bg-gray-900 dark:bg-gray-950 text-gray-300 dark:text-gray-400 mt-20"
+  class="site-footer mt-20"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -175,16 +175,16 @@ const today = new Date();
       <p id="footer-tagline" class="mb-2 text-gray-300 dark:text-gray-400">
         {
           lang === "ko"
-            ? "AI로 효율의 흐름을 만들다"
+            ? "AI 에이전트와 소프트웨어 제작을 기록하는 개인 기술 블로그"
             : lang === "ja"
-              ? "AIで効率の流れを創る"
+              ? "AIエージェント、自動化、ソフトウェア開発の個人ノート"
               : lang === "zh"
-                ? "用AI创造效率之流"
-                : "Creating the Flow of Efficiency with AI"
+                ? "关于 AI 代理、自动化和软件构建的个人笔记"
+                : "Personal notes on AI agents, automation, and building software"
         }
       </p>
       <p id="footer-copyright">
-        &copy; {today.getFullYear()} EffiFlow. {t("footer.allRightsReserved")}.
+        &copy; {today.getFullYear()} Kim Jangwook. {t("footer.allRightsReserved")}.
       </p>
     </div>
   </div>
@@ -194,18 +194,11 @@ const today = new Date();
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     const socialLinks = document.querySelectorAll(".social-link");
-    console.log(
-      "[GA Debug] Social link tracking initialized, found",
-      socialLinks.length,
-      "links"
-    );
 
     socialLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
         const platform = event.currentTarget.dataset.socialPlatform;
         const url = event.currentTarget.href;
-
-        console.log("[GA Debug] Social link clicked:", { platform, url });
 
         // Send GA4 event
         if (typeof gtag !== "undefined" && platform) {
@@ -215,19 +208,45 @@ const today = new Date();
             event_category: "engagement",
             event_label: `social_${platform}`,
           };
-          console.log("[GA Debug] Sending social_link_click event:", eventData);
           gtag("event", "social_link_click", eventData);
-          console.log("[GA Debug] Event sent successfully");
-        } else {
-          console.warn(
-            "[GA Debug] gtag is not defined or platform is missing:",
-            {
-              gtagExists: typeof gtag !== "undefined",
-              platform,
-            }
-          );
         }
       });
     });
   });
 </script>
+
+<style>
+  .site-footer {
+    background: var(--slate);
+    color: oklch(0.80 0.008 245);
+    border-top: 1px solid var(--slate-rule);
+  }
+
+  .site-footer h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    color: oklch(0.96 0.005 245);
+  }
+
+  .site-footer p,
+  .site-footer li {
+    color: oklch(0.74 0.008 245);
+  }
+
+  .site-footer a {
+    color: oklch(0.80 0.008 245);
+  }
+
+  .site-footer a:hover {
+    color: var(--flow);
+  }
+
+  .site-footer .social-link {
+    border: 1px solid var(--slate-rule);
+    border-radius: 8px;
+  }
+
+  .site-footer .social-link:hover {
+    background: var(--slate-2);
+  }
+</style>

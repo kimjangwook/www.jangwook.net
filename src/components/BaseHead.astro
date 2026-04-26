@@ -23,11 +23,24 @@ interface Props {
 	};
 	faqData?: FAQItem[];
 	isHomePage?: boolean;
+	enableAds?: boolean;
+	noindex?: boolean;
+	robots?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage, articleData, faqData, isHomePage = false } = Astro.props;
+const {
+	title,
+	description,
+	image = FallbackImage,
+	articleData,
+	faqData,
+	enableAds = false,
+	noindex = false,
+	robots,
+} = Astro.props;
+const robotsContent = robots || (noindex ? 'noindex, follow' : undefined);
 
 // 로컬호스트 체크 (GA 비활성화용)
 const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
@@ -251,28 +264,27 @@ const articleSchema = articleData ? {
 />
 
 <meta name="generator" content={Astro.generator} />
+{robotsContent && <meta name="robots" content={robotsContent} />}
 
 <!-- Google AdSense -->
 <meta name="google-adsense-account" content="ca-pub-7556938384772610">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7556938384772610"
-     crossorigin="anonymous"></script>
+{enableAds && (
+	<script
+		is:inline
+		async
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7556938384772610"
+		crossorigin="anonymous"
+	></script>
+)}
 
 <!-- Google Fonts Optimization (preconnect + async load) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<!-- 필수 웨이트만 로드: Inter(400,600,700), Noto Sans KR(400,700), Noto Sans JP(400,700), JetBrains Mono(400,600) -->
+<!-- Quiet Flow design system: Newsreader, Geist, Geist Mono with CJK fallbacks -->
 <link
-	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap"
 	rel="stylesheet"
-	media="print"
-	onload="this.media='all'"
 />
-<noscript>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap"
-		rel="stylesheet"
-	/>
-</noscript>
 
 <!-- Font preloads (local fonts) -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
@@ -307,17 +319,17 @@ const articleSchema = articleData ? {
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
 
 <!-- Schema.org Structured Data (AEO Optimized) -->
-<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-{articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
-{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
-{speakableSchema && <script type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />}
+<script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+{articleSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
+{faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+{speakableSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />}
 
 <!-- Google Analytics (프로덕션 환경에서만 로드) -->
 {!isLocalhost && (
 	<>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWXG8FFDHW"></script>
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-PWXG8FFDHW"></script>
 		<script is:inline>
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
@@ -329,8 +341,6 @@ const articleSchema = articleData ? {
 		<!-- External Link Click Tracking -->
 		<script is:inline>
 	document.addEventListener('DOMContentLoaded', () => {
-		console.log('[GA Debug] External link tracking initialized');
-
 		// Track all external link clicks
 		document.addEventListener('click', (event) => {
 			const target = event.target;
@@ -340,20 +350,10 @@ const articleSchema = articleData ? {
 				const currentHost = window.location.hostname;
 				const linkUrl = new URL(link.href, window.location.href);
 
-				console.log('[GA Debug] Link clicked:', {
-					href: link.href,
-					currentHost,
-					linkHost: linkUrl.hostname,
-					isExternal: linkUrl.hostname !== currentHost,
-					isSocialLink: link.classList.contains('social-link')
-				});
-
 				// Check if link is external (different domain)
 				// Exclude social links (already tracked separately)
 				if (linkUrl.hostname !== currentHost &&
 					!link.classList.contains('social-link')) {
-					console.log('[GA Debug] External link detected');
-
 					// Send GA4 event
 					if (typeof gtag !== 'undefined') {
 						const eventData = {
@@ -364,11 +364,7 @@ const articleSchema = articleData ? {
 							'event_category': 'engagement',
 							'event_label': 'external_link'
 						};
-						console.log('[GA Debug] Sending external_link_click event:', eventData);
 						gtag('event', 'external_link_click', eventData);
-						console.log('[GA Debug] Event sent successfully');
-					} else {
-						console.warn('[GA Debug] gtag is not defined');
 					}
 				}
 			}

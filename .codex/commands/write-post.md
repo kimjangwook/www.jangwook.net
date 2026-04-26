@@ -68,26 +68,25 @@ The command delegates to the Writing Assistant agent with the following tasks:
 - Create content structure and outline based on research findings
 - Identify additional code examples and technical details needed
 
-#### Phase 2: Image Generation (Hero + In-Content Images)
+#### Phase 2: Codex Image Generation (Hero + In-Content Images)
 
 **Hero Image**:
 - Generate a **context-specific, detailed** hero image prompt (see Image Prompt Guidelines below)
-- Call Image Generator agent to create hero image
+- Use Codex image generation to create a realistic, content-specific hero image
 - Save image to appropriate path: `src/assets/blog/[slug]-hero.[ext]`
 - Store image metadata for frontmatter
 
 **In-Content Images** (screenshots, diagrams, illustrations):
 - Identify sections in the content that benefit from visual explanation (architecture diagrams, UI screenshots, workflow illustrations, comparison charts)
 - For each identified section, either:
-  - **Generate**: Create additional images via Image Generator for conceptual illustrations
+  - **Generate with Codex**: Create additional realistic images for conceptual architecture, workflow, execution examples, or illustrative UI states
     - Save to `src/assets/blog/[slug]-[section-name].[ext]`
     - Reference in markdown: `![alt text](../../../assets/blog/[slug]-[section-name].[ext])`
-  - **Download from official sources**: When the blog references official documentation, tools, or services that have relevant screenshots/diagrams:
-    - Download the image directly from the official source URL
+  - **Capture or source real screenshots**: When the article explains an actual local app, CLI output, dashboard, or official UI:
+    - Prefer real screenshots captured from the running system or official source images with attribution
     - Save to `src/assets/blog/[slug]-[descriptive-name].[ext]`
     - Add proper attribution in alt text or caption (e.g., `![Next.js App Router structure (출처: Next.js 공식 문서)](...)`)
-    - Prefer official docs images for: UI screenshots, architecture diagrams from docs, official logos/badges, configuration panels
-    - Use `curl` or `node` to download: `curl -o src/assets/blog/[slug]-[name].png "https://docs.example.com/image.png"`
+    - Do not generate fake exact product screenshots when factual UI fidelity matters
 - **Goal**: Every blog post should have **at least 2-3 images** (hero + 1~2 in-content) for better readability and SEO
 
 #### Phase 3: Content Generation (Korean-First Approach)
@@ -118,8 +117,12 @@ The content generation follows a **two-stage process**:
   pubDate: "[Latest Post Date + 1 day]" # Must use single quotes and YYYY-MM-DD format
   heroImage: ../../../assets/blog/[slug]-hero.[ext]
   tags: [tag1, tag2, ...]
+  relatedPosts: []
+  draft: true
+  noindex: true
   ---
   ```
+- Keep `draft: true` and `noindex: true` while the post is being assembled. Remove both only after images, relatedPosts, translations, and validation pass.
 - This becomes the **source of truth** for all translations
 - Apply Korean technical writing style (존댓말, mix of Korean/English terms)
 - Include all code examples with Korean comments
@@ -164,6 +167,7 @@ Based on the completed Korean post:
 - Check frontmatter format (title, description, pubDate required)
 - Validate image path references
 - Ensure proper Markdown formatting
+- Run `npm run validate:publishing`
 - **Verify `relatedPosts` is present in ALL language versions**:
   - Each file MUST have `relatedPosts` array with 3-5 entries
   - Each entry must have: `slug`, `score` (0-1), `reason` (with ko, ja, en, zh)
@@ -486,12 +490,12 @@ Requirements:
    - Verify technical accuracy and current best practices
    - Create detailed outline based on research findings
 
-3. Generate images (hero + in-content):
+3. Generate images with Codex (hero + in-content):
 
-   - **Hero image**: Create a detailed, content-specific image prompt (use 6-part structure: Subject, Style, Composition, Colors, Elements, Constraints). Call Image Generator agent. Save to src/assets/blog/[slug]-hero.[ext]. Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter.
+   - **Hero image**: Create a detailed, content-specific image prompt (use 6-part structure: Subject, Style, Composition, Colors, Elements, Constraints). Use Codex image generation. Save to src/assets/blog/[slug]-hero.[ext]. Use path ../../../assets/blog/[slug]-hero.[ext] in frontmatter.
    - **In-content images**: Identify 1-3 sections that benefit from visual explanation. For each:
-     - If conceptual/illustrative → Generate via Image Generator, save as src/assets/blog/[slug]-[section].[ext]
-     - If official docs screenshot/diagram → Download directly from source URL using curl/node, save as src/assets/blog/[slug]-[name].[ext], add source attribution
+     - If conceptual/illustrative → Generate with Codex, save as src/assets/blog/[slug]-[section].[ext]
+     - If exact UI/CLI output matters → Capture a real screenshot from the running system or use official source media with attribution
    - Reference in-content images in markdown: `![descriptive alt text](../../../assets/blog/[slug]-[name].[ext])`
    - **Minimum**: Every post must have hero image + at least 1 in-content image
 
@@ -892,7 +896,7 @@ graph TD
 - **English**: Use American English spelling, standard technical documentation style
 - **Chinese**: Use simplified Chinese (简体中文), professional technical writing style, mix Chinese and English technical terms appropriately
 
-## Image Generation Integration
+## Codex Image Generation Integration
 
 ### Hero Image Requirements
 
@@ -904,9 +908,12 @@ graph TD
 
 ### Image Prompt Guidelines
 
-**IMPORTANT**: The Writing Assistant MUST generate context-aware, detailed image prompts following the **YAML 7-Part Structure** defined in `.claude/guidelines/image-prompt-guidelines.md`. Every prompt must be unique to the specific post content.
+**IMPORTANT**: The Writing Assistant MUST generate context-aware, detailed image prompts for Codex image generation. Every prompt must be unique to the specific post content and should produce a realistic image unless the article explicitly needs a diagrammatic style.
 
-**📋 MANDATORY**: Before writing any image prompt, read `.claude/guidelines/image-prompt-guidelines.md` for the full YAML structure, domain-specific templates, high-scoring patterns, and the self-check process.
+**MANDATORY**: Before generating images, create an image plan with:
+- 1 hero image
+- 1-3 supporting images for architecture, workflow, execution result, comparison, or UI state
+- A clear decision for each supporting image: Codex-generated illustration, real screenshot, or official sourced image with attribution
 
 #### Prompt Generation Process (YAML 7-Part Structure):
 
@@ -919,7 +926,7 @@ graph TD
    - **Constraints**: No text overlay, no watermarks, 2:1 ratio
    - **Self-Check**: 3-point verification (uniqueness, specificity, consistency)
 
-2. **Convert YAML to English prompt** for `generate_image.js`:
+2. **Convert YAML to an English prompt** for Codex image generation:
    ```
    A [Tone keywords] illustration of [Features description].
    [Shapes] arranged in [Composition]. [Texture] with [Effects].
@@ -1007,11 +1014,19 @@ A structured, type-safe, architectural blueprint illustration of TypeScript type
 
 #### Additional Requirements:
 
-- **Always avoid text in the image** (no code snippets, no labels)
+- **Prefer realistic images** for examples, workflows, desks, devices, dashboards, and product-context scenes
+- **Use diagrams deliberately** for architecture or data flow, and keep labels in Markdown/Mermaid unless text in the image is essential
+- **Avoid text-heavy generated images** (no fake code snippets, long labels, or unreadable UI text)
+- **Do not generate fake exact screenshots** of real products; capture the real UI or use official media when factual fidelity matters
 - **Match the blog post's complexity level** (simple for beginner content, sophisticated for advanced)
 - **Consider cultural context** for multi-language posts (use universal visual language)
 - **Ensure brand consistency** while being creative
 - **Think about thumbnail appeal** (will it look good at small sizes?)
+- **Name supporting assets consistently**:
+  - `[slug]-architecture.[ext]`
+  - `[slug]-workflow.[ext]`
+  - `[slug]-execution-example.[ext]`
+  - `[slug]-ui-example.[ext]`
 
 ## Error Handling
 
@@ -1021,7 +1036,7 @@ A structured, type-safe, architectural blueprint illustration of TypeScript type
 2. **Missing topic**: Display usage instructions
 3. **File write failure**: Check directory permissions
 4. **Schema validation error**: Verify frontmatter format
-5. **Image generation failure**: Fall back to default placeholder
+5. **Image generation failure**: Keep the post as draft/noindex until a real hero image or intentional placeholder is added
 
 ### Validation Checks
 
@@ -1042,27 +1057,33 @@ A structured, type-safe, architectural blueprint illustration of TypeScript type
    code src/content/blog/[slug].md
    ```
 
-2. **Type Check**:
+2. **Publishing Preflight**:
+
+   ```bash
+   npm run validate:publishing
+   ```
+
+3. **Type Check**:
 
    ```bash
    npm run astro check
    ```
 
-3. **Preview Locally**:
+4. **Preview Locally**:
 
    ```bash
    npm run dev
    # Visit http://localhost:4321/blog/[slug]
    ```
 
-4. **Edit if Needed**:
+5. **Edit if Needed**:
 
    - Refine technical details
    - Adjust code examples
    - Update SEO description
    - Crop/replace hero image
 
-5. **Build & Deploy**:
+6. **Build & Deploy**:
    ```bash
    npm run build
    npm run preview
@@ -1084,10 +1105,11 @@ A structured, type-safe, architectural blueprint illustration of TypeScript type
 - Delegates research to Web Researcher agent
 - Handles writing and multi-language translation based on research findings
 
-### Image Generator
+### Codex Image Generation
 
-- Called by Writing Assistant for hero image creation
-- Receives prompt and returns image path
+- Used by Writing Assistant for hero and supporting images
+- Produces realistic hero images, execution-example scenes, workflow visuals, or architecture illustrations
+- Real screenshots are still preferred when the article depends on exact UI or CLI output
 
 ### SEO Optimizer
 
@@ -1174,13 +1196,13 @@ Future enhancements may include:
 
 - Writing Assistant: `.claude/agents/writing-assistant.md`
 - Web Researcher: `.claude/agents/web-researcher.md`
-- Image Generator: `.claude/agents/image-generator.md`
+- Codex Image Workflow: `docs/adsense-publishing-strategy.md`
 - Backlink Manager: `.claude/agents/backlink-manager.md`
 
 ### Guidelines
 
 - SEO Optimization: `.claude/guidelines/seo-title-description-guidelines.md`
-- **Image Prompt Guidelines**: `.claude/guidelines/image-prompt-guidelines.md` ← YAML 7-Part Structure, domain templates, high-scoring patterns
+- **Image Prompt Guidelines**: use the Codex image plan in this command and `docs/adsense-publishing-strategy.md`
 
 ### Scripts
 

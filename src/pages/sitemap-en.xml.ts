@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
-import { filterPostsByDate } from '../lib/content';
+import { filterIndexablePosts } from '../lib/content';
 
 const SITE = 'https://jangwook.net';
 const LANG = 'en';
@@ -13,6 +13,9 @@ const staticPages = [
   { path: '/en/contact', priority: 0.7, changefreq: 'monthly' },
   { path: '/en/social', priority: 0.7, changefreq: 'monthly' },
   { path: '/en/improvement-history', priority: 0.6, changefreq: 'weekly' },
+  { path: '/en/privacy', priority: 0.5, changefreq: 'yearly' },
+  { path: '/en/terms', priority: 0.5, changefreq: 'yearly' },
+  { path: '/en/portfolio/shadow-dash', priority: 0.7, changefreq: 'monthly' },
 ];
 
 function generateSitemapXml(urls: { loc: string; lastmod?: string; changefreq?: string; priority?: number }[]): string {
@@ -30,7 +33,7 @@ ${urls.map(url => `  <url>
 export const GET: APIRoute = async () => {
   // Get all blog posts for this language
   const allPosts = await getCollection('blog');
-  const langPosts = filterPostsByDate(allPosts).filter(post => post.id.startsWith(`${LANG}/`));
+  const langPosts = filterIndexablePosts(allPosts).filter(post => post.id.startsWith(`${LANG}/`));
 
   // Generate URLs
   const urls = [

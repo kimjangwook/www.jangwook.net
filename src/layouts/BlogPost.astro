@@ -1,11 +1,4 @@
 ---
-/**
- * BlogPost Layout
- * UX Psychology Principles Applied:
- * - Goal Gradient Effect: Reading progress bar shows completion and motivates readers
- * - Peak-End Rule: Celebration at 100% creates positive memory
- * - Cognitive Load Reduction: Clear visual hierarchy and readable typography
- */
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
@@ -32,7 +25,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	}>;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, lang, tags, postId, noindex, relatedPosts } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, lang, tags, noindex, relatedPosts } = Astro.props;
 const t = useTranslations(lang);
 
 // Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
@@ -77,26 +70,31 @@ const breadcrumbSchema = {
 				author: SITE_TITLE,
 				tags: tags,
 			}}
+			enableAds={!noindex}
+			noindex={noindex}
 		/>
-		{noindex && <meta name="robots" content="noindex, follow" />}
-		<!-- BreadcrumbList Schema -->
-		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 	</head>
 
-	<body class="bg-gray-50 dark:bg-gray-900">
-		<!-- UX: Reading Progress Bar (Goal Gradient Effect - motivation increases as users approach completion) -->
-		<ReadingProgress showCelebration={true} />
+	<body>
+		<ReadingProgress />
 		<Header lang={lang} />
-		<main class="py-12">
-			<article class="max-w-4xl mx-auto px-0 sm:px-6 lg:px-8">
+		<main class="article-shell">
+			<aside class="article-shell__rail" aria-hidden="true">
+				<span class="mono uc">ENTRY · {pubDate.getFullYear()} · {lang}</span>
+				<i></i>
+				<i></i>
+				<i></i>
+			</aside>
+			<article class="article-shell__article">
 				{heroImage && (
-					<div class="mb-8 -mx-4 sm:mx-0">
+					<div class="article-shell__hero">
 						<Image
 							width={1020}
 							height={510}
 							src={heroImage}
 							alt={title}
-							class="w-full h-auto rounded-none sm:rounded-2xl shadow-xl object-cover"
+							class="article-shell__hero-image"
 							loading="eager"
 							fetchpriority="high"
 							format="webp"
@@ -105,10 +103,9 @@ const breadcrumbSchema = {
 					</div>
 				)}
 
-				<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
-					<!-- Header -->
-					<header class="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200 dark:border-gray-700">
-						<div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-3 sm:mb-4">
+				<div class="article-shell__panel">
+					<header class="article-shell__header">
+						<div class="article-shell__meta mono">
 							<time datetime={pubDate.toISOString()}>
 								{t('blog.publishedOn')}: <FormattedDate date={pubDate} />
 							</time>
@@ -121,16 +118,15 @@ const breadcrumbSchema = {
 								</>
 							)}
 						</div>
-						<h1 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 leading-tight">
+						<h1>
 							{title}
 						</h1>
-						<p class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
+						<p>
 							{description}
 						</p>
 					</header>
 
-					<!-- Content -->
-					<div class="prose sm:prose-lg prose-gray max-w-none
+					<div class="article-prose prose sm:prose-lg prose-gray max-w-none
 						prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-gray-100
 						prose-h2:text-xl sm:prose-h2:text-2xl lg:prose-h2:text-3xl prose-h2:mt-8 sm:prose-h2:mt-12 prose-h2:mb-4 sm:prose-h2:mb-6
 						prose-h3:text-lg sm:prose-h3:text-xl lg:prose-h3:text-2xl prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4
@@ -148,23 +144,18 @@ const breadcrumbSchema = {
 						<slot />
 					</div>
 
-					<!-- Language Switcher -->
 					<BlogPostLanguageSwitcher slug={slug} currentLang={lang} />
 
-					<!-- Buy Me a Coffee -->
 					<BuyMeACoffee lang={lang} />
 
-					<!-- Author Box -->
 					<AuthorBox lang={lang} />
 
-					<!-- Related Posts (V3) -->
 					{relatedPosts && relatedPosts.length > 0 && (
 						<RelatedPosts items={relatedPosts} language={lang} />
 					)}
 				</div>
 
-				<!-- Comments -->
-				<div class="mt-8 bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-4 sm:p-8 lg:p-12">
+				<div class="article-shell__panel article-shell__comments">
 					<div class="giscus"></div>
 				</div>
 
@@ -223,14 +214,11 @@ const breadcrumbSchema = {
 				</script>
 
 				<!-- Back to blog link -->
-				<div class="mt-8 text-center">
+				<div class="article-shell__back">
 					<a
 						href={`/${lang}/blog`}
-						class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-medium transition-colors"
+						class="mono"
 					>
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-						</svg>
 						{lang === 'ko' ? '블로그 목록으로' : lang === 'ja' ? 'ブログリストへ' : lang === 'zh' ? '返回博客列表' : 'Back to Blog'}
 					</a>
 				</div>
@@ -239,7 +227,7 @@ const breadcrumbSchema = {
 		<Footer lang={lang} />
 
 		<!-- Mermaid Diagram Rendering -->
-		<script type="module">
+		<script is:inline type="module">
 			import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
 			// Initialize Mermaid
@@ -287,40 +275,24 @@ const breadcrumbSchema = {
 		<script is:inline>
 			let scrollTracked = false;
 
-			console.log('[GA Debug] Blog post read tracking initialized');
-
 			function trackScrollComplete() {
-				if (scrollTracked) {
-					console.log('[GA Debug] Scroll already tracked, skipping');
-					return;
-				}
+				if (scrollTracked) return;
 
 				const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+				if (scrollHeight <= 0) return;
+
 				const scrollPosition = window.scrollY;
 				const scrollPercentage = (scrollPosition / scrollHeight) * 100;
 
-				console.log('[GA Debug] Scroll position:', {
-					scrollHeight,
-					scrollPosition,
-					scrollPercentage: scrollPercentage.toFixed(2) + '%'
-				});
-
 				if (scrollPercentage >= 100) {
 					scrollTracked = true;
-					console.log('[GA Debug] 100% scroll reached, firing event');
 
-					// Send GA4 event
 					if (typeof gtag !== 'undefined') {
-						const eventData = {
+						gtag('event', 'blog_post_read_complete', {
 							'page_title': document.title,
 							'page_location': window.location.href,
 							'page_path': window.location.pathname
-						};
-						console.log('[GA Debug] Sending blog_post_read_complete event:', eventData);
-						gtag('event', 'blog_post_read_complete', eventData);
-						console.log('[GA Debug] Event sent successfully');
-					} else {
-						console.warn('[GA Debug] gtag is not defined');
+						});
 					}
 				}
 			}
@@ -330,8 +302,194 @@ const breadcrumbSchema = {
 			window.addEventListener('scroll', () => {
 				clearTimeout(scrollTimeout);
 				scrollTimeout = setTimeout(trackScrollComplete, 100);
-			});
-			console.log('[GA Debug] Scroll listener attached');
+				});
 		</script>
+
+		<style>
+			.article-shell {
+				display: grid;
+				grid-template-columns: 72px minmax(0, 1fr);
+				max-width: 1180px;
+				margin: 0 auto;
+				padding: 0 1.5rem 4rem 0;
+			}
+
+			.article-shell__rail {
+				position: sticky;
+				top: 5rem;
+				align-self: start;
+				min-height: calc(100vh - 5rem);
+				border-right: 1px solid var(--paper-rule);
+			}
+
+			.article-shell__rail span {
+				position: absolute;
+				left: 1.45rem;
+				top: 2rem;
+				writing-mode: vertical-rl;
+				transform: rotate(180deg);
+				font-size: 0.62rem;
+				color: var(--ink-3);
+			}
+
+			.article-shell__rail i {
+				position: absolute;
+				right: -3px;
+				width: 5px;
+				height: 5px;
+				border-radius: 999px;
+				background: var(--ink-4);
+			}
+
+			.article-shell__rail i:nth-of-type(1) {
+				top: 7rem;
+			}
+
+			.article-shell__rail i:nth-of-type(2) {
+				top: 20rem;
+				background: var(--flow);
+			}
+
+			.article-shell__rail i:nth-of-type(3) {
+				top: 33rem;
+			}
+
+			.article-shell__article {
+				width: min(100%, 820px);
+				margin: 0 auto;
+				padding: clamp(2rem, 5vw, 3.6rem) 0 0 clamp(1.5rem, 4vw, 3.2rem);
+			}
+
+			.article-shell__hero {
+				margin-bottom: 2rem;
+				border: 1px solid var(--paper-edge);
+				border-radius: 8px;
+				overflow: hidden;
+				background: var(--paper-2);
+			}
+
+			.article-shell__hero-image {
+				display: block;
+				width: 100%;
+				height: auto;
+				border-radius: 0;
+				object-fit: cover;
+			}
+
+			.article-shell__panel {
+				padding: 0;
+				background: transparent;
+			}
+
+			.article-shell__header {
+				margin-bottom: 2.2rem;
+				padding-bottom: 1.7rem;
+				border-bottom: 1px solid var(--paper-rule);
+			}
+
+			.article-shell__meta {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0.55rem;
+				margin-bottom: 1rem;
+				font-size: 0.72rem;
+				color: var(--ink-3);
+			}
+
+			.article-shell__header h1 {
+				margin: 0;
+				font-family: var(--font-serif);
+				font-size: clamp(2.55rem, 6vw, 4.3rem);
+				font-weight: 500;
+				line-height: 1.02;
+				letter-spacing: -0.03em;
+				color: var(--ink);
+				text-wrap: balance;
+			}
+
+			.article-shell__header p {
+				margin: 1.2rem 0 0;
+				font-family: var(--font-serif);
+				font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+				line-height: 1.52;
+				font-style: italic;
+				color: var(--ink-2);
+				text-wrap: pretty;
+			}
+
+			:global(.article-prose) {
+				font-family: var(--font-serif);
+				color: var(--ink-2);
+			}
+
+			:global(.article-prose p) {
+				font-size: 1.08rem;
+				line-height: 1.78;
+				color: var(--ink-2);
+			}
+
+			:global(.article-prose h2),
+			:global(.article-prose h3),
+			:global(.article-prose h4) {
+				font-family: var(--font-serif);
+				font-weight: 500;
+				letter-spacing: -0.018em;
+				color: var(--ink);
+			}
+
+			:global(.article-prose a) {
+				color: var(--flow-deep);
+				text-decoration: underline;
+				text-decoration-color: color-mix(in oklch, var(--flow) 40%, transparent);
+				text-underline-offset: 0.18em;
+			}
+
+			:global(.article-prose pre) {
+				border-radius: 8px;
+				border: 1px solid var(--slate-rule);
+			}
+
+			:global(.article-prose code) {
+				font-family: var(--font-mono);
+			}
+
+			.article-shell__comments {
+				margin-top: 3rem;
+				padding-top: 2rem;
+				border-top: 1px solid var(--paper-rule);
+			}
+
+			.article-shell__back {
+				margin-top: 2.2rem;
+				text-align: center;
+			}
+
+			.article-shell__back a {
+				display: inline-flex;
+				color: var(--flow-deep);
+				font-size: 0.72rem;
+				text-decoration: none;
+			}
+
+			.article-shell__back a::before {
+				content: '<- ';
+			}
+
+			@media (max-width: 820px) {
+				.article-shell {
+					grid-template-columns: 1fr;
+					padding: 0 1rem 3rem;
+				}
+
+				.article-shell__rail {
+					display: none;
+				}
+
+				.article-shell__article {
+					padding-left: 0;
+				}
+			}
+		</style>
 	</body>
 </html>

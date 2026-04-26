@@ -1,10 +1,10 @@
 # jangwook.net
 
-Astro 5.14 기반의 다국어 기술 블로그 및 포트폴리오 사이트
+Astro 5.14 기반의 다국어 개인 기술 블로그 및 포트폴리오 사이트
 
 ## 🌟 프로젝트 개요
 
-개발자를 위한 종합 블로그 플랫폼으로, AI 자동화, SEO 최적화, 다국어 콘텐츠 관리를 핵심으로 합니다.
+Kim Jangwook의 개인 기술 블로그로, AI 에이전트, 자동화, 개발 도구, 소프트웨어 제작 기록을 다국어로 정리합니다. Effloow 같은 서비스 브랜드와 분리된 개인 기록/포트폴리오 채널입니다.
 
 **핵심 특징**:
 
@@ -12,7 +12,7 @@ Astro 5.14 기반의 다국어 기술 블로그 및 포트폴리오 사이트
 - ⚡ **Islands Architecture**: Astro 기반 초고속 정적 사이트
 - 🤖 **AI 자동화**: Claude Code 에이전트 시스템으로 콘텐츠 생성 및 관리
 - 📊 **데이터 기반**: Google Analytics MCP 통합 분석
-- 🎨 **자동 이미지 생성**: Gemini API 기반 히어로 이미지 자동 생성
+- 🎨 **Codex 이미지 워크플로우**: 히어로 + 본문 보조 이미지 생성/캡처 기준 운영
 - 🔍 **SEO 최적화**: 사이트맵, RSS, Open Graph, Twitter Cards
 
 ## 🚀 빠른 시작
@@ -33,6 +33,9 @@ npm run dev
 
 # 프로덕션 빌드
 npm run build
+
+# 발행 품질 검증 (RSS/sitemap, draft/noindex, 이미지 경로)
+npm run validate:publishing
 
 # 빌드 미리보기
 npm run preview
@@ -608,13 +611,13 @@ npm run astro check
 ### AI & Automation
 
 - **Claude Code**: AI 코딩 어시스턴트
+- **Codex 이미지 생성**: 히어로 이미지와 본문 보조 이미지 제작
 - **Model Context Protocol (MCP)**: 외부 데이터 소스 통합
   - Notion API
   - Google Analytics
   - Chrome DevTools
   - Context7 (라이브러리 문서)
   - Playwright (웹 자동화)
-- **Gemini API**: 이미지 자동 생성
 
 ### Tools & Services
 
@@ -772,15 +775,11 @@ tags: ["tag1", "tag2", "tag3"] # 최대 3-5개 권장
 Markdown 또는 MDX 형식으로 작성...
 ```
 
-### 자동 이미지 생성
+### Codex 이미지 워크플로우
 
-```bash
-# Gemini API로 히어로 이미지 생성
-node generate_image.js src/assets/blog/hero.jpg "Modern tech blog hero image"
+새 글은 히어로 이미지 1개와 본문 보조 이미지 1〜3개를 함께 준비합니다. 실행 화면은 실제 캡처를 우선하고, 구조·워크플로우·예시 장면은 Codex 이미지 생성을 사용합니다.
 
-# 환경 변수 필요
-# GEMINI_API_KEY=your_api_key
-```
+자세한 운영 기준은 `docs/adsense-publishing-strategy.md`를 참고하세요.
 
 ## 🔧 개발 가이드
 

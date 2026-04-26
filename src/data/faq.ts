@@ -21,8 +21,8 @@ export interface FAQItem {
 export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 	ko: [
 		{
-			question: 'EffiFlow는 어떤 블로그인가요?',
-			answer: 'EffiFlow는 <strong>AI 자동화와 개발자 생산성</strong>에 초점을 맞춘 기술 블로그입니다. Claude Code, MCP(Model Context Protocol), 워크플로우 자동화, LLM 통합 등 최신 AI 기술에 대한 실용적인 가이드와 심층 분석을 제공합니다.'
+			question: 'jangwook.net은 어떤 블로그인가요?',
+			answer: 'jangwook.net은 김장욱의 <strong>개인 기술 블로그</strong>입니다. AI 에이전트, 자동화, 개발 도구, 소프트웨어 제작 과정에서 얻은 실험과 구현 로그를 한국어, 영어, 일본어, 중국어로 정리합니다.'
 		},
 		{
 			question: 'Claude Code란 무엇인가요?',
@@ -34,17 +34,17 @@ export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 		},
 		{
 			question: '블로그에서 다루는 주요 주제는 무엇인가요?',
-			answer: 'EffiFlow에서 다루는 주요 주제: <strong>1)</strong> Claude Code 활용법 <strong>2)</strong> MCP 서버 개발 <strong>3)</strong> AI 워크플로우 자동화 <strong>4)</strong> LLM 애플리케이션 개발 <strong>5)</strong> 개발자 생산성 도구. 실전에서 바로 적용할 수 있는 실용적인 내용을 제공합니다.'
+			answer: '이 블로그의 주요 주제는 <strong>1)</strong> Claude Code 활용법 <strong>2)</strong> MCP 서버 개발 <strong>3)</strong> AI 워크플로우 자동화 <strong>4)</strong> LLM 애플리케이션 개발 <strong>5)</strong> 개발자 도구와 제품 제작 기록입니다.'
 		},
 		{
 			question: '블로그 저자는 누구인가요?',
-			answer: 'Kim Jangwook은 <strong>10년 이상의 웹 개발 경험</strong>을 가진 풀스택 개발자이자 AI 전문가입니다. 현재 AI 기반 OCR 자동화 플랫폼 Agent Effi Flow를 개발하고 있으며, Laravel, Vue.js, Python, SvelteKit 등 다양한 기술 스택에 전문성을 보유하고 있습니다.'
+			answer: 'Kim Jangwook은 <strong>10년 이상의 웹 개발 경험</strong>을 가진 풀스택 개발자이자 AI 전문가입니다. 현재 AI 기반 OCR 자동화 플랫폼 Effloow를 개발하고 있으며, Laravel, Vue.js, Python, SvelteKit 등 다양한 기술 스택에 전문성을 보유하고 있습니다.'
 		}
 	],
 	en: [
 		{
-			question: 'What is EffiFlow?',
-			answer: 'EffiFlow is a technical blog focused on <strong>AI automation and developer productivity</strong>. We provide practical guides and deep dives into cutting-edge AI technologies including Claude Code, MCP (Model Context Protocol), workflow automation, and LLM integration.'
+			question: 'What is jangwook.net?',
+			answer: 'jangwook.net is Kim Jangwook’s <strong>personal technology blog</strong>. It collects experiments, implementation logs, and lessons from building AI agents, automation, developer tools, and software products in Korean, English, Japanese, and Chinese.'
 		},
 		{
 			question: 'What is Claude Code?',
@@ -56,17 +56,17 @@ export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 		},
 		{
 			question: 'What topics does the blog cover?',
-			answer: 'EffiFlow covers: <strong>1)</strong> Claude Code usage <strong>2)</strong> MCP server development <strong>3)</strong> AI workflow automation <strong>4)</strong> LLM application development <strong>5)</strong> Developer productivity tools. We focus on practical, immediately applicable content.'
+			answer: 'This blog covers: <strong>1)</strong> Claude Code usage <strong>2)</strong> MCP server development <strong>3)</strong> AI workflow automation <strong>4)</strong> LLM application development <strong>5)</strong> developer tools and software build notes.'
 		},
 		{
 			question: 'Who is the blog author?',
-			answer: 'Kim Jangwook is a full-stack developer and AI specialist with <strong>over 10 years of web development experience</strong>. Currently developing Agent Effi Flow, an AI-powered OCR automation platform. Expertise includes Laravel, Vue.js, Python, and SvelteKit.'
+			answer: 'Kim Jangwook is a full-stack developer and AI specialist with <strong>over 10 years of web development experience</strong>. He is currently building Effloow, an AI-powered OCR automation platform. Expertise includes Laravel, Vue.js, Python, and SvelteKit.'
 		}
 	],
 	ja: [
 		{
-			question: 'EffiFlowとは何ですか？',
-			answer: 'EffiFlowは<strong>AI自動化と開発者生産性</strong>に焦点を当てた技術ブログです。Claude Code、MCP（Model Context Protocol）、ワークフロー自動化、LLM統合など、最先端AI技術に関する実践ガイドと深掘り記事を提供しています。'
+			question: 'jangwook.netとは何ですか？',
+			answer: 'jangwook.netはKim Jangwookの<strong>個人技術ブログ</strong>です。AIエージェント、自動化、開発ツール、ソフトウェア開発の過程で得た実験と実装ログを韓国語、英語、日本語、中国語で整理しています。'
 		},
 		{
 			question: 'Claude Codeとは何ですか？',
@@ -78,17 +78,17 @@ export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 		},
 		{
 			question: 'ブログで扱う主なトピックは何ですか？',
-			answer: 'EffiFlowの主なトピック：<strong>1)</strong> Claude Code活用法 <strong>2)</strong> MCPサーバー開発 <strong>3)</strong> AIワークフロー自動化 <strong>4)</strong> LLMアプリケーション開発 <strong>5)</strong> 開発者生産性ツール。すぐに実践できる実用的な内容を提供しています。'
+			answer: '主なトピックは、<strong>1)</strong> Claude Code活用法 <strong>2)</strong> MCPサーバー開発 <strong>3)</strong> AIワークフロー自動化 <strong>4)</strong> LLMアプリケーション開発 <strong>5)</strong> 開発ツールとソフトウェア制作記録です。'
 		},
 		{
 			question: 'ブログの著者は誰ですか？',
-			answer: 'Kim Jangwookは<strong>10年以上のWeb開発経験</strong>を持つフルスタック開発者でありAI専門家です。現在、AI搭載OCR自動化プラットフォームAgent Effi Flowを開発中。Laravel、Vue.js、Python、SvelteKitなどの技術に精通しています。'
+			answer: 'Kim Jangwookは<strong>10年以上のWeb開発経験</strong>を持つフルスタック開発者でありAI専門家です。現在、AI搭載OCR自動化プラットフォームEffloowを開発中。Laravel、Vue.js、Python、SvelteKitなどの技術に精通しています。'
 		}
 	],
 	zh: [
 		{
-			question: 'EffiFlow 是什么？',
-			answer: 'EffiFlow 是一个专注于<strong>AI 自动化和开发者生产力</strong>的技术博客。我们提供关于 Claude Code、MCP（模型上下文协议）、工作流自动化和 LLM 集成等前沿 AI 技术的实用指南和深度分析。'
+			question: 'jangwook.net 是什么？',
+			answer: 'jangwook.net 是 Kim Jangwook 的<strong>个人技术博客</strong>，记录 AI 代理、自动化、开发工具和软件构建过程中的实验与实现日志，并以韩语、英语、日语和中文整理发布。'
 		},
 		{
 			question: 'Claude Code 是什么？',
@@ -100,11 +100,11 @@ export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 		},
 		{
 			question: '博客涵盖哪些主题？',
-			answer: 'EffiFlow 涵盖的主题：<strong>1)</strong> Claude Code 使用方法 <strong>2)</strong> MCP 服务器开发 <strong>3)</strong> AI 工作流自动化 <strong>4)</strong> LLM 应用开发 <strong>5)</strong> 开发者生产力工具。专注于可立即应用的实用内容。'
+			answer: '博客涵盖的主题包括：<strong>1)</strong> Claude Code 使用方法 <strong>2)</strong> MCP 服务器开发 <strong>3)</strong> AI 工作流自动化 <strong>4)</strong> LLM 应用开发 <strong>5)</strong> 开发工具和软件构建记录。'
 		},
 		{
 			question: '博客作者是谁？',
-			answer: 'Kim Jangwook 是一位拥有<strong>超过 10 年 Web 开发经验</strong>的全栈开发者和 AI 专家。目前正在开发 AI 驱动的 OCR 自动化平台 Agent Effi Flow。精通 Laravel、Vue.js、Python 和 SvelteKit 等技术。'
+			answer: 'Kim Jangwook 是一位拥有<strong>超过 10 年 Web 开发经验</strong>的全栈开发者和 AI 专家。目前正在开发 AI 驱动的 OCR 自动化平台 Effloow。精通 Laravel、Vue.js、Python 和 SvelteKit 等技术。'
 		}
 	]
 };

@@ -1,12 +1,4 @@
 ---
-/**
- * Hero Section Component
- * UX Psychology Principles Applied:
- * - Selective Attention: Hero text animation draws focus to key messaging
- * - Progressive Disclosure: Staggered animations reveal content in digestible chunks
- * - Social Proof: Activity indicator shows real-time engagement
- * - Aesthetic-Usability Effect: Micro-interactions make buttons feel more responsive
- */
 import { useTranslations, type Language } from '../lib/i18n/languages';
 
 interface Props {
@@ -15,125 +7,316 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const copy = {
+	ko: {
+		kicker: 'now writing — daily lab notes',
+		titleA: '안녕하세요,',
+		titleB: '김장욱입니다.',
+		subtitle: 'AI 에이전트, 자동화 도구, 개발 실험을 샌드박스에서 검증하고 기록하는 개인 기술 노트입니다.',
+		primary: '최신 글 읽기',
+		secondary: '소개 보기',
+		stats: [
+			['daily', 'cadence'],
+			['4', 'languages'],
+			['lab', 'sandbox first'],
+			['jw', 'personal notes'],
+		],
+	},
+	ja: {
+		kicker: 'now writing — daily lab notes',
+		titleA: 'こんにちは、',
+		titleB: 'Kim Jangwookです。',
+		subtitle: 'AIエージェント、自動化ツール、開発実験をサンドボックスで検証して記録する個人技術ノートです。',
+		primary: '最新記事を読む',
+		secondary: '紹介を見る',
+		stats: [
+			['daily', 'cadence'],
+			['4', 'languages'],
+			['lab', 'sandbox first'],
+			['jw', 'personal notes'],
+		],
+	},
+	en: {
+		kicker: 'now writing — daily lab notes',
+		titleA: "Hi, I'm",
+		titleB: 'Jangwook.',
+		subtitle: t('site.description'),
+		primary: 'Read latest',
+		secondary: 'About',
+		stats: [
+			['daily', 'cadence'],
+			['4', 'languages'],
+			['lab', 'sandbox first'],
+			['jw', 'personal notes'],
+		],
+	},
+	zh: {
+		kicker: 'now writing — daily lab notes',
+		titleA: '你好，',
+		titleB: '我是 Kim Jangwook。',
+		subtitle: '这是我的个人技术笔记，记录 AI 代理、自动化工具和软件实验的验证过程。',
+		primary: '阅读最新文章',
+		secondary: '关于我',
+		stats: [
+			['daily', 'cadence'],
+			['4', 'languages'],
+			['lab', 'sandbox first'],
+			['jw', 'personal notes'],
+		],
+	},
+}[lang];
 ---
 
-<!-- UX: Hero section with entry animations -->
-<section class="relative bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-950 overflow-hidden">
-	<!-- Background Pattern -->
-	<div class="absolute inset-0 opacity-[0.03]">
-		<div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #3B82F6 1px, transparent 0); background-size: 40px 40px;"></div>
+<section class="home-hero">
+	<div class="home-hero__rail" aria-hidden="true">
+		<span>JANGWOOK.NET · FIELD NOTEBOOK</span>
+		<i></i>
+		<i></i>
+		<i></i>
 	</div>
 
-	<!-- Gradient Orbs -->
-	<div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-	<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
-
-	<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-		<div class="text-center">
-			<!-- UX: Badge with pulse animation (Social Proof - indicates active community) -->
-			<div class="hero-text-animate inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-700 dark:text-blue-300 font-medium text-sm mb-8 border border-blue-200 dark:border-blue-800">
-				<!-- UX: Pulse dot indicates live/active status -->
-				<span class="pulse-dot bg-green-500 mr-2"></span>
-				<svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-					<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-				</svg>
-				AI & Productivity
+	<div class="home-hero__content">
+		<div class="home-hero__main">
+			<div class="home-hero__kicker mono uc">
+				<span class="flow-dot"></span>
+				{copy.kicker}
 			</div>
 
-			<!-- UX: Main Heading with hero animation (Selective Attention) -->
-			<h1 class="hero-text-animate text-4xl sm:text-5xl md:text-6xl font-bold mb-6" style="animation-delay: 0.1s;">
-				{lang === 'ko' ? (
-					<>
-						<span class="block text-gray-900 dark:text-gray-100">AI로 생산성을</span>
-						<span class="block bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">극대화하세요</span>
-					</>
-				) : lang === 'ja' ? (
-					<>
-						<span class="block text-gray-900 dark:text-gray-100">AIで生産性を</span>
-						<span class="block bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">最大化しましょう</span>
-					</>
-				) : lang === 'en' ? (
-					<>
-						<span class="block text-gray-900 dark:text-gray-100">Maximize Your</span>
-						<span class="block bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Productivity with AI</span>
-					</>
-				) : (
-					<>
-						<span class="block text-gray-900 dark:text-gray-100">用AI</span>
-						<span class="block bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">提升生产力</span>
-					</>
-				)}
+			<h1>
+				<span>{copy.titleA}</span>
+				<em>{copy.titleB}</em>
 			</h1>
 
-			<!-- UX: Description with delayed animation (Progressive Disclosure) -->
-			<p class="hero-text-animate text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto" style="animation-delay: 0.2s;">
-				{t('site.description')}
-			</p>
+			<p>{copy.subtitle}</p>
 
-			<!-- UX: CTA Buttons with micro-interactions (Aesthetic-Usability Effect) -->
-			<div class="hero-text-animate flex flex-col sm:flex-row gap-4 justify-center" style="animation-delay: 0.3s;">
-				<a
-					href={`/${lang}/blog`}
-					class="btn-interactive inline-flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold rounded-lg shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-				>
-					{lang === 'ko' ? '블로그 보기' : lang === 'ja' ? 'ブログを見る' : lang === 'en' ? 'View Blog' : '查看博客'}
-					<svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-					</svg>
+			<div class="home-hero__actions">
+				<a class="home-hero__button home-hero__button--primary" href={`/${lang}/blog`}>
+					{copy.primary}
 				</a>
-				<a
-					href={`/${lang}/about`}
-					class="btn-interactive inline-flex items-center justify-center px-8 py-3 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 font-semibold rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-				>
-					{lang === 'ko' ? '더 알아보기' : lang === 'ja' ? '詳しく見る' : lang === 'en' ? 'Learn More' : '了解更多'}
+				<a class="home-hero__button home-hero__button--secondary" href={`/${lang}/about`}>
+					{copy.secondary}
 				</a>
 			</div>
 		</div>
 
-		<!-- UX: Feature Cards with staggered animation (Progressive Disclosure) -->
-		<div class="stagger-animation grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-			<!-- UX: Card with lift effect (Von Restorff Effect - hovered items stand out) -->
-			<div class="card-lift bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-100 dark:border-gray-700">
-				<div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-4">
-					<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-					</svg>
+		<aside class="home-hero__stats" aria-label="Site summary">
+			<div class="mono uc">counts</div>
+			{copy.stats.map(([value, label]) => (
+				<div class="home-hero__stat">
+					<strong>{value}</strong>
+					<span class="mono">{label}</span>
 				</div>
-				<h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
-					{lang === 'ko' ? 'AI 도구 소개' : lang === 'ja' ? 'AIツール紹介' : lang === 'en' ? 'AI Tools' : 'AI工具介绍'}
-				</h3>
-				<p class="text-gray-600 dark:text-gray-300 text-sm">
-					{lang === 'ko' ? '최신 AI 도구와 활용법을 소개합니다' : lang === 'ja' ? '最新のAIツールと活用方法を紹介します' : lang === 'en' ? 'Discover the latest AI tools and how to use them' : '介绍最新的AI工具及其使用方法'}
-				</p>
-			</div>
-
-			<div class="card-lift bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-100 dark:border-gray-700">
-				<div class="w-12 h-12 bg-violet-100 dark:bg-violet-900/30 rounded-lg flex items-center justify-center mb-4">
-					<svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-					</svg>
-				</div>
-				<h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
-					{lang === 'ko' ? '생산성 팁' : lang === 'ja' ? '生産性のヒント' : lang === 'en' ? 'Productivity Tips' : '生产力技巧'}
-				</h3>
-				<p class="text-gray-600 dark:text-gray-300 text-sm">
-					{lang === 'ko' ? '실무에 바로 적용 가능한 생산성 향상 방법' : lang === 'ja' ? '実務にすぐ適用できる生産性向上方法' : lang === 'en' ? 'Practical methods to boost your productivity' : '可立即应用于实践的生产力提升方法'}
-				</p>
-			</div>
-
-			<div class="card-lift bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-100 dark:border-gray-700">
-				<div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4">
-					<svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-					</svg>
-				</div>
-				<h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-gray-100">
-					{lang === 'ko' ? '튜토리얼' : lang === 'ja' ? 'チュートリアル' : lang === 'en' ? 'Tutorials' : '教程'}
-				</h3>
-				<p class="text-gray-600 dark:text-gray-300 text-sm">
-					{lang === 'ko' ? '단계별 가이드로 쉽게 따라하기' : lang === 'ja' ? 'ステップバイステップガイドで簡単にフォロー' : lang === 'en' ? 'Easy-to-follow step-by-step guides' : '循序渐进，轻松跟随'}
-				</p>
-			</div>
-		</div>
+			))}
+		</aside>
 	</div>
 </section>
+
+<style>
+	.home-hero {
+		display: grid;
+		grid-template-columns: 72px minmax(0, 1fr);
+		background: var(--paper);
+		border-bottom: 1px solid var(--paper-rule);
+		overflow: hidden;
+	}
+
+	.home-hero__rail {
+		position: relative;
+		min-height: 38rem;
+		border-right: 1px solid var(--paper-rule);
+	}
+
+	.home-hero__rail span {
+		position: absolute;
+		left: 1.45rem;
+		top: 2rem;
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
+		font-family: var(--font-mono);
+		font-size: 0.62rem;
+		letter-spacing: 0.22em;
+		color: var(--ink-3);
+	}
+
+	.home-hero__rail i {
+		position: absolute;
+		right: -3px;
+		width: 5px;
+		height: 5px;
+		border-radius: 999px;
+		background: var(--ink-4);
+	}
+
+	.home-hero__rail i:nth-of-type(1) {
+		top: 5rem;
+	}
+
+	.home-hero__rail i:nth-of-type(2) {
+		top: 18rem;
+		background: var(--flow);
+	}
+
+	.home-hero__rail i:nth-of-type(3) {
+		top: 31rem;
+	}
+
+	.home-hero__content {
+		width: min(1180px, 100%);
+		margin: 0 auto;
+		padding: clamp(3rem, 8vw, 6rem) 1.5rem clamp(3.5rem, 8vw, 6.5rem);
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 18rem;
+		gap: clamp(2rem, 5vw, 4.5rem);
+		align-items: end;
+	}
+
+	.home-hero__main {
+		max-width: 46rem;
+	}
+
+	.home-hero__kicker {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin-bottom: 1.2rem;
+		font-size: 0.68rem;
+		font-weight: 600;
+		color: var(--flow-deep);
+	}
+
+	.home-hero h1 {
+		margin: 0;
+		font-family: var(--font-serif);
+		font-size: clamp(3.4rem, 8vw, 6.2rem);
+		font-weight: 500;
+		line-height: 0.98;
+		letter-spacing: -0.03em;
+		text-wrap: balance;
+	}
+
+	.home-hero h1 span,
+	.home-hero h1 em {
+		display: block;
+	}
+
+	.home-hero h1 em {
+		color: var(--flow-deep);
+		font-style: italic;
+	}
+
+	.home-hero p {
+		margin: 1.55rem 0 0;
+		max-width: 38rem;
+		font-family: var(--font-serif);
+		font-size: clamp(1.12rem, 2vw, 1.35rem);
+		line-height: 1.55;
+		color: var(--ink-2);
+		text-wrap: pretty;
+	}
+
+	.home-hero__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 2rem;
+	}
+
+	.home-hero__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 2.85rem;
+		padding: 0.72rem 1.15rem;
+		border-radius: 6px;
+		font-weight: 500;
+		text-decoration: none;
+	}
+
+	.home-hero__button--primary {
+		color: var(--paper);
+		background: var(--ink);
+	}
+
+	.home-hero__button--primary:hover {
+		color: var(--paper);
+		background: var(--flow-deep);
+		transform: translateY(-1px);
+	}
+
+	.home-hero__button--secondary {
+		color: var(--ink);
+		border: 1px solid var(--paper-edge);
+		background: transparent;
+	}
+
+	.home-hero__button--secondary:hover {
+		color: var(--ink);
+		background: var(--paper-2);
+	}
+
+	.home-hero__stats {
+		border-left: 1px solid var(--paper-rule);
+		padding-left: 1.5rem;
+	}
+
+	.home-hero__stats > .mono {
+		margin-bottom: 0.7rem;
+		font-size: 0.62rem;
+		color: var(--ink-3);
+	}
+
+	.home-hero__stat {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.72rem 0;
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	.home-hero__stat:last-child {
+		border-bottom: 0;
+	}
+
+	.home-hero__stat strong {
+		font-family: var(--font-serif);
+		font-size: 1.75rem;
+		font-weight: 500;
+		color: var(--ink);
+	}
+
+	.home-hero__stat span {
+		font-size: 0.68rem;
+		color: var(--ink-3);
+		letter-spacing: 0.08em;
+		text-align: right;
+	}
+
+	@media (max-width: 900px) {
+		.home-hero {
+			grid-template-columns: 1fr;
+		}
+
+		.home-hero__rail {
+			display: none;
+		}
+
+		.home-hero__content {
+			grid-template-columns: 1fr;
+		}
+
+		.home-hero__stats {
+			border-left: 0;
+			border-top: 1px solid var(--paper-rule);
+			padding: 1rem 0 0;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0 1rem;
+		}
+
+		.home-hero__stats > .mono {
+			grid-column: 1 / -1;
+		}
+	}
+</style>

@@ -56,6 +56,17 @@ export function filterPostsByDate(
 }
 
 /**
+ * Filters posts that are safe to expose to crawlers and feeds.
+ * Keeps the public page filter separate from indexing/feed rules so a post can
+ * be reachable for review while still staying out of RSS and sitemap output.
+ */
+export function filterIndexablePosts(
+  posts: CollectionEntry<"blog">[]
+): CollectionEntry<"blog">[] {
+  return filterPostsByDate(posts).filter((post) => !post.data.draft && !post.data.noindex);
+}
+
+/**
  * Calculates estimated reading time from markdown content
  * Uses different WPM rates for different character types:
  * - English/Latin: ~200 WPM

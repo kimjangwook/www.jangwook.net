@@ -7,7 +7,7 @@
 <button
 	id="theme-toggle"
 	type="button"
-	class="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent"
+	class="theme-toggle p-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent"
 	aria-label="Toggle theme"
 	title="Toggle theme"
 >
@@ -99,3 +99,17 @@
 		}
 	});
 </script>
+
+<style>
+	.theme-toggle {
+		color: var(--ink-2);
+		border: 1px solid var(--paper-rule);
+		background: var(--paper);
+	}
+
+	.theme-toggle:hover {
+		color: var(--ink);
+		background: var(--paper-2);
+		border-color: var(--paper-edge);
+	}
+</style>

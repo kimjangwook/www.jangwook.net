@@ -1,6 +1,8 @@
-import { GoogleGenAI, Modality } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 import * as fs from "node:fs";
 
+// Legacy fallback only. The default blog workflow now uses Codex image generation;
+// see docs/adsense-publishing-strategy.md for the current image policy.
 async function main(imagePath, prompt) {
   const apiKey = process.env.GEMINI_API_KEY;
 

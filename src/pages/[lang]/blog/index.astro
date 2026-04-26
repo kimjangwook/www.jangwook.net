@@ -28,14 +28,17 @@ const posts = filterPostsByDate(allPosts)
 <!doctype html>
 <html lang={lang}>
 	<head>
-		<BaseHead title={t('nav.blog')} description={t('site.description')} />
+		<BaseHead title={t('nav.blog')} description={t('site.description')} enableAds={true} />
 	</head>
-	<body class="bg-gray-50 dark:bg-gray-900">
+	<body>
 		<Header lang={lang} />
-		<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+		<main class="blog-archive max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
 			<section>
-				<h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-gray-100">{t('nav.blog')}</h1>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<header class="blog-archive__header">
+					<p class="mono uc"><span class="flow-dot"></span> archive</p>
+					<h1>{t('nav.blog')}</h1>
+				</header>
+				<div class="blog-archive__list">
 					{
 						posts.map((post) => (
 							<BlogCard
@@ -46,6 +49,8 @@ const posts = filterPostsByDate(allPosts)
 								heroImage={post.data.heroImage}
 								tags={post.data.tags}
 								readingTime={calculateReadingTime(post.body || '')}
+								readingTimeLabel={t('blog.readTime')}
+								readMoreLabel={t('blog.readMore')}
 							/>
 						))
 					}
@@ -55,3 +60,32 @@ const posts = filterPostsByDate(allPosts)
 		<Footer lang={lang} />
 	</body>
 </html>
+
+<style>
+	.blog-archive__header {
+		margin-bottom: 1.25rem;
+		padding-bottom: 0.9rem;
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	.blog-archive__header p {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin: 0 0 0.65rem;
+		font-size: 0.68rem;
+		color: var(--flow-deep);
+	}
+
+	.blog-archive__header h1 {
+		margin: 0;
+		font-size: clamp(2.6rem, 6vw, 5rem);
+		line-height: 0.98;
+		letter-spacing: -0.03em;
+	}
+
+	.blog-archive__list {
+		display: grid;
+		gap: 0;
+	}
+</style>

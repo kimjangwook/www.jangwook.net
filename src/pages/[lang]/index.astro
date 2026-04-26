@@ -38,30 +38,29 @@ const posts = filterPostsByDate(allPosts)
 			description={t('site.description')}
 			faqData={faqItems}
 			isHomePage={true}
+			enableAds={true}
 		/>
 	</head>
-	<body class="bg-gray-50 dark:bg-gray-900">
+	<body>
 		<Header lang={lang} />
 		<HeroSection lang={lang} />
 
 		<!-- Latest Posts Section -->
-		<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-			<div class="flex items-center justify-between mb-8">
-				<h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
-					{t('blog.latestPosts')}
-				</h2>
+		<main class="latest-notes max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="latest-notes__header">
+				<div>
+					<p class="mono uc"><span class="flow-dot"></span> latest</p>
+					<h2>{t('blog.latestPosts')}</h2>
+				</div>
 				<a
 					href={`/${lang}/blog`}
-					class="text-accent hover:text-accent-dark font-medium flex items-center gap-1"
+					class="latest-notes__archive mono"
 				>
 					{t('blog.viewAll')}
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-					</svg>
 				</a>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<div class="latest-notes__list">
 				{posts.map((post) => (
 					<BlogCard
 						href={`/${lang}/blog/${post.id}/`}
@@ -71,6 +70,8 @@ const posts = filterPostsByDate(allPosts)
 						heroImage={post.data.heroImage}
 						tags={post.data.tags}
 						readingTime={calculateReadingTime(post.body || '')}
+						readingTimeLabel={t('blog.readTime')}
+						readMoreLabel={t('blog.readMore')}
 					/>
 				))}
 			</div>
@@ -82,3 +83,54 @@ const posts = filterPostsByDate(allPosts)
 		<Footer lang={lang} />
 	</body>
 </html>
+
+<style>
+	.latest-notes__header {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 1.5rem;
+		margin-bottom: 1.2rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	.latest-notes__header p {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin: 0 0 0.5rem;
+		font-size: 0.68rem;
+		color: var(--flow-deep);
+	}
+
+	.latest-notes__header h2 {
+		margin: 0;
+		font-size: clamp(2rem, 4vw, 3rem);
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+	}
+
+	.latest-notes__archive {
+		color: var(--flow-deep);
+		font-size: 0.72rem;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.latest-notes__archive::after {
+		content: ' ->';
+	}
+
+	.latest-notes__list {
+		display: grid;
+		gap: 0;
+	}
+
+	@media (max-width: 640px) {
+		.latest-notes__header {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+	}
+</style>

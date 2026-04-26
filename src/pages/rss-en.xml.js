@@ -1,13 +1,12 @@
 import { getCollection } from 'astro:content';
 import rss from '@astrojs/rss';
 import { SITE_META } from '../consts';
+import { filterIndexablePosts } from '../lib/content';
 
 export async function GET(context) {
-	const now = new Date();
-
 	// Only include English blog posts from Content Collection (excludes About, Contact, etc.)
-	const posts = (await getCollection('blog'))
-		.filter((post) => post.id.startsWith('en/') && post.data.pubDate <= now)
+	const posts = filterIndexablePosts(await getCollection('blog'))
+		.filter((post) => post.id.startsWith('en/'))
 		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 	return rss({
