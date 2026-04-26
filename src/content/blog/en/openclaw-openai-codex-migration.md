@@ -1,7 +1,8 @@
 ---
 title: 'Switching OpenClaw to OpenAI Codex — A Practical Guide After the Claude/Gemini ToS Confusion'
 description: >-
-  A step-by-step guide for OpenClaw users migrating to OpenAI Codex after the Claude and Gemini ToS changes. Covers backup, model switching, and per-agent configuration.
+  OpenClaw migration guide: switch from Claude/Gemini OAuth to OpenAI Codex in 15 minutes.
+  Covers backup, model config, per-agent settings, provider layer strategy, and cost comparison.
 pubDate: '2026-02-22'
 heroImage: ../../../assets/blog/openclaw-openai-codex-migration-hero.png
 tags:
@@ -49,7 +50,7 @@ Check three things before jumping in.
 
 - <strong>Prompt compatibility</strong>: Claude and GPT-5.x-Codex respond differently to the same prompts. Expect to spend a few days tuning `SOUL.md` and `AGENTS.md`
 - <strong>Different strengths</strong>: Codex excels at code generation and tool use. For natural prose — essays, social posts — Claude consistently gets higher marks from the community
-- <strong>The API key option</strong>: If you want to keep Claude, the API key approach (`console.anthropic.com`) is still fully legal. Just be aware that running Opus agent loops can easily exceed $100/month
+- <strong>The API key option</strong>: If you want to keep Claude, the API key approach (`console.anthropic.com`) is still fully legal. Just be aware that running Opus agent loops can easily exceed $100/month. See [AI Agent Cost vs Human Labor: A Real-World Analysis](/en/blog/en/ai-agent-cost-reality) for a detailed breakdown of operating costs
 
 ## Migration Steps (4 Steps, ~15 Minutes)
 
@@ -156,7 +157,7 @@ For a full switch, deleting per-agent `model` blocks is the simplest approach.
 
 ## The Layer Strategy — Community-Recommended Architecture
 
-Instead of going all-in on one provider, the community has converged on a <strong>layer strategy</strong> that distributes workloads by model strength.
+Instead of going all-in on one provider, the community has converged on a <strong>layer strategy</strong> that distributes workloads by model strength. [AI Agent Framework Comparison 2026: LangGraph vs CrewAI vs Dapr](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) covers multi-agent architecture patterns in more depth.
 
 ```mermaid
 graph TD
@@ -206,7 +207,7 @@ Generate an API key at `console.anthropic.com` and pay per token. For Opus agent
 | Code/Tools | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
 | Migration Effort | — | Easy (~15 min) | Easy |
 
-The most important takeaway: <strong>don't lock yourself into a single provider.</strong> OpenClaw's config-driven architecture lets you swap providers with minimal friction — use that to your advantage.
+The most important takeaway: <strong>don't lock yourself into a single provider.</strong> OpenClaw's config-driven architecture lets you swap providers with minimal friction — use that to your advantage. If you're still choosing between AI coding tools more broadly, [Cursor 3 vs Claude Code vs Windsurf](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026) is worth reading alongside this guide.
 
 ## References
 

@@ -47,7 +47,7 @@ relatedPosts:
 
 - <strong>Prompt兼容性</strong>：Claude和GPT-5.x-Codex对相同Prompt会给出不同响应。需要花几天时间调整`SOUL.md`和`AGENTS.md`
 - <strong>各模型的优势差异</strong>：Codex在代码生成和工具调用（Tool Use）方面更强，而自然文笔方面Claude的评价更高
-- <strong>API Key这个选项</strong>：想继续用Claude的话，可以选择API Key方式（`console.anthropic.com`），不受订阅OAuth的ToS限制。但Opus Agent循环每月容易超过$100
+- <strong>API Key这个选项</strong>：想继续用Claude的话，可以选择API Key方式（`console.anthropic.com`），不受订阅OAuth的ToS限制。但Opus Agent循环每月容易超过$100。详细的运营成本分析可参考[AI Agent成本vs人力成本的现实](/zh/blog/zh/ai-agent-cost-reality)
 
 ## 切换步骤（4步，约15分钟）
 
@@ -154,7 +154,7 @@ openclaw cron edit <cron-id> --model "openai-codex/gpt-5.3-codex"
 
 ## 分层策略 — 社区推荐架构
 
-与其押注单一Provider，不如按用途分配模型。这种<strong>分层策略</strong>正在社区中形成共识。
+与其押注单一Provider，不如按用途分配模型。这种<strong>分层策略</strong>正在社区中形成共识。[AI Agent框架对比2026：LangGraph vs CrewAI vs Dapr](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)对多Agent架构设计有更深入的介绍。
 
 ```mermaid
 graph TD
@@ -204,7 +204,7 @@ openclaw onboard --auth-choice anthropic
 | 代码/工具 | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
 | 迁移难度 | — | 简单（15分钟） | 简单 |
 
-最重要的是<strong>不要把自己锁死在某个Provider上</strong>。利用OpenClaw基于配置的架构，保持灵活切换的能力。
+最重要的是<strong>不要把自己锁死在某个Provider上</strong>。利用OpenClaw基于配置的架构，保持灵活切换的能力。如果你还在选择AI编程工具，[Cursor 3 vs Claude Code vs Windsurf对比](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026)也值得参考。
 
 ## 参考资料
 

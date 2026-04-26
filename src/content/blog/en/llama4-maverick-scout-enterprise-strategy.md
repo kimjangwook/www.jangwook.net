@@ -30,7 +30,7 @@ relatedPosts:
 
 
 ![Llama 4 enterprise strategy map - Scout, Maverick, MoE routing](../../../assets/blog/llama4-maverick-scout-enterprise-strategy-moe-map.jpg)
-Meta just released Llama 4. Two immediately available models — Maverick and Scout — plus a teaser for Behemoth (a 2-trillion-parameter giant still in training). This isn't just another model drop. **It's the moment open-source AI credibly caught up to frontier proprietary models**. Here's what engineering leaders need to understand.
+Meta just released Llama 4. Two immediately available models — Maverick and Scout — plus a teaser for Behemoth (a 2-trillion-parameter giant still in training). This isn't just another model drop. **It's the moment open-source AI credibly caught up to frontier proprietary models**. For context on the competitive landscape leading up to this, [The February 2026 AI Model Rush](/en/blog/en/ai-model-rush-february-2026) is worth reading first. Here's what engineering leaders need to understand.
 
 ## The Two Models: Scout and Maverick
 
@@ -103,7 +103,7 @@ Here's how major models compare on inference cost (blended input/output, API pri
 | Llama 4 Maverick | **$0.19–$0.49** |
 | Llama 4 Scout | **$0.10–$0.20** |
 
-For an organization processing 100 million tokens per month, switching from GPT-4o to Maverick could mean **millions of dollars in annual savings**.
+For an organization processing 100 million tokens per month, switching from GPT-4o to Maverick could mean **millions of dollars in annual savings**. [AI Agent Cost vs Human Labor: A Real-World Analysis](/en/blog/en/ai-agent-cost-reality) provides a useful framework for thinking through the full cost structure of AI operations.
 
 This isn't a simple cost-swap argument, though. Model selection requires weighing task requirements, quality thresholds, and infrastructure maturity.
 
@@ -128,7 +128,7 @@ Tier 3 — High-volume / simple classification / log analysis
 
 Both models support self-hosting. Through partnerships with IBM and Dell, Fortune 500 companies are already deploying them on-premises.
 
-When processing internal codebases, customer data, or financial records, **sending data to an external API is itself a risk**. For these use cases, self-hosted open-source LLMs offer clear compliance and security advantages.
+When processing internal codebases, customer data, or financial records, **sending data to an external API is itself a risk**. For these use cases, self-hosted open-source LLMs offer clear compliance and security advantages. [GLM-5: MIT-Licensed Frontier Model and Enterprise Strategy](/en/blog/en/glm-5-mit-opensource-frontier-enterprise) makes for a useful companion read on this theme.
 
 ### 3. Vendor Independence
 

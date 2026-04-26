@@ -100,7 +100,7 @@ relatedPosts:
 
 ### 核心技术栈
 
-- <strong>Claude Code</strong>: Anthropic的CLI基础AI开发环境
+- <strong>Claude Code</strong>: Anthropic的CLI基础AI开发环境（参见[Claude Code最佳实践指南](/zh/blog/zh/claude-code-best-practices)）
 - <strong>Astro 5</strong>: 基于Islands Architecture的静态网站生成器
 - <strong>MCP (Model Context Protocol)</strong>: 连接AI与外部系统
 - <strong>TypeScript</strong>: 类型安全的代码
@@ -487,7 +487,7 @@ Example: Similar to Vercel, Stripe design aesthetics
 
 ## MCP集成: AI的超能力
 
-MCP (Model Context Protocol) 使Claude能够与外部系统交互。
+MCP (Model Context Protocol) 使Claude能够与外部系统交互。[Claude Code Hooks与工作流自动化](/zh/blog/zh/claude-code-hooks-workflow)中有实际MCP集成模式的详细介绍。
 
 ### 1. Context7 - 自动搜索最新文档
 

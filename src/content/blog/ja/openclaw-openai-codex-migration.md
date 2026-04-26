@@ -49,7 +49,7 @@ relatedPosts:
 
 - <strong>プロンプトの互換性</strong>：ClaudeとGPT-5.x-Codexは同じプロンプトでも異なる応答をします。`SOUL.md`や`AGENTS.md`を数日かけて調整する必要があります
 - <strong>モデルごとの強み</strong>：Codexはコードとツール呼び出し（Tool Use）に強い一方、エッセイやSNS投稿のような自然な文章ではClaudeの評価が高いです
-- <strong>APIキーという選択肢</strong>：Claudeを使い続けたい場合、サブスクOAuthではなくAPIキー方式（`console.anthropic.com`）が使えます。ただし、Opusでエージェントループを回すと月$100を超えやすいので注意が必要です
+- <strong>APIキーという選択肢</strong>：Claudeを使い続けたい場合、サブスクOAuthではなくAPIキー方式（`console.anthropic.com`）が使えます。ただし、Opusでエージェントループを回すと月$100を超えやすいので注意が必要です。実際の運用コスト分析は[AIエージェントのコストと人件費の現実](/ja/blog/ja/ai-agent-cost-reality)を参照してください
 
 ## 切り替え手順（4ステップ）
 
@@ -156,7 +156,7 @@ openclaw cron edit <cron-id> --model "openai-codex/gpt-5.3-codex"
 
 ## レイヤー戦略 — コミュニティ推奨アーキテクチャ
 
-一つのプロバイダーに頼り切るのではなく、用途ごとにモデルを分ける<strong>レイヤー戦略</strong>がコミュニティで定着しつつあります。
+一つのプロバイダーに頼り切るのではなく、用途ごとにモデルを分ける<strong>レイヤー戦略</strong>がコミュニティで定着しつつあります。[AIエージェントフレームワーク比較2026](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)では、マルチエージェントアーキテクチャの設計についてより詳しく解説しています。
 
 ```mermaid
 graph TD
@@ -206,7 +206,7 @@ openclaw onboard --auth-choice anthropic
 | コード/ツール | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
 | 切り替え難度 | — | 簡単（15分） | 簡単 |
 
-最も大切なのは、<strong>特定のプロバイダーに依存しない構成</strong>を作っておくことです。OpenClawの設定ベースのアーキテクチャを活かせば、どのプロバイダーがポリシーを変えても柔軟に対応できます。
+最も大切なのは、<strong>特定のプロバイダーに依存しない構成</strong>を作っておくことです。OpenClawの設定ベースのアーキテクチャを活かせば、どのプロバイダーがポリシーを変えても柔軟に対応できます。AIコーディングツール全体を比較したい場合は[Cursor 3 vs Claude Code vs Windsurf](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026)も参考になります。
 
 ## 参考資料
 

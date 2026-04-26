@@ -1,8 +1,8 @@
 ---
 title: LLM과 Claude Code를 활용한 블로그 자동화 - 미래의 콘텐츠 제작
 description: >-
-  Claude Code와 11개의 전문 에이전트로 블로그를 완전 자동화하는 방법. 프롬프트 엔지니어링부터 MCP 통합, 다국어 지원, 이미지
-  생성까지 - 누구나 따라할 수 있는 실전 가이드.
+  Claude Code와 11개의 전문 에이전트로 블로그를 완전 자동화하는 실전 가이드. 프롬프트 엔지니어링, MCP 통합, 4개 언어 자동화,
+  AI 이미지 생성, SEO 최적화, 크로스포스팅까지 — 하루 1시간으로 4개 언어 기술 블로그를 운영하는 전체 파이프라인을 공개합니다.
 pubDate: '2025-10-04'
 heroImage: ../../../assets/blog/2025-10-04-llm-blog-automation.png
 tags:
@@ -100,7 +100,7 @@ relatedPosts:
 
 ### 핵심 기술 스택
 
-- <strong>Claude Code</strong>: Anthropic의 CLI 기반 AI 개발 환경
+- <strong>Claude Code</strong>: Anthropic의 CLI 기반 AI 개발 환경 ([Claude Code Best Practices 가이드](/ko/blog/ko/claude-code-best-practices) 참고)
 - <strong>Astro 5</strong>: Islands Architecture 기반 정적 사이트 생성기
 - <strong>MCP (Model Context Protocol)</strong>: AI와 외부 시스템 연결
 - <strong>TypeScript</strong>: 타입 안전한 코드
@@ -488,7 +488,7 @@ Example: Similar to Vercel, Stripe design aesthetics
 
 ## MCP 통합: AI의 슈퍼파워
 
-MCP (Model Context Protocol)는 Claude가 외부 시스템과 상호작용할 수 있게 해줍니다.
+MCP (Model Context Protocol)는 Claude가 외부 시스템과 상호작용할 수 있게 해줍니다. [Claude Code Hooks 워크플로우 자동화](/ko/blog/ko/claude-code-hooks-workflow)에서 실제 MCP 통합 사례와 자동화 패턴을 더 자세히 확인할 수 있습니다.
 
 ### 1. Context7 - 최신 문서 자동 검색
 

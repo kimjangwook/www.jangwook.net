@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-26T22:17:00Z",
+  "updated_at": "2026-04-26T23:07:00Z",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -772,6 +772,42 @@
       "added_at": "2026-04-26",
       "status": "queued",
       "notes": "vercel-ai-sdk-claude-streaming-agent 포스트의 심화편. Next.js 15 앱 라우터 + Server Actions + Claude API 스트리밍 종합 How-to. 월요일 유형."
+    },
+    {
+      "slug": "mcp-remote-http-deployment-pattern",
+      "title_idea": "MCP 원격 HTTP 서버 배포 패턴 — stdio에서 Streamable HTTP로 전환하는 에이전트 확장 가이드",
+      "content_type": "how-to",
+      "target_keyword": "MCP HTTP 배포",
+      "secondary_keywords": [
+        "MCP 원격 서버",
+        "SSE 대체 MCP",
+        "MCP OAuth 2.1 배포",
+        "에이전트 인프라 스케일링"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "modelcontextprotocol.io, taskade.com/blog/mcp-servers, 2026-04 리서치",
+      "added_at": "2026-04-26",
+      "status": "queued",
+      "notes": "stdio→HTTP 전환이 급증 트렌드 (월간 MCP 서버 설치 97M, 500+ 서버). 한국 기업 엔터프라이즈 MCP 도입 초기 단계라 선점 가능. mcp-server-production-deployment-kubernetes-guide와 차별화: 배포 인프라보다 트랜스포트 전환 패턴 중심. mcp-v2-client-typescript-implementation-guide와 클라이언트-서버 쌍으로 연계 가능. 월요일 How-to 유형."
+    },
+    {
+      "slug": "prompt-engineering-system-architecture-2026",
+      "title_idea": "2026년 프롬프트 엔지니어링은 죽었다 — 에이전트 시대의 시스템 설계 마인드셋으로 전환하기",
+      "content_type": "how-to",
+      "target_keyword": "시스템 프롬프트 아키텍처",
+      "secondary_keywords": [
+        "프롬프트 엔지니어링 진화",
+        "에이전트 설계 패턴",
+        "AI 시스템 설계 2026",
+        "아키텍처 마인드셋 전환"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "akka.io/blog/agentic-ai-frameworks, NVIDIA Nemotron Developer Days Seoul 트렌드, 2026-04 리서치",
+      "added_at": "2026-04-26",
+      "status": "queued",
+      "notes": "'에이전트 설계'에 대한 개발자 관심 급증 (서울 행사 500명 참여 등). 단순 프롬프트 작성 → 시스템 아키텍처 설계로 패러다임 전환 논의 활발. 개인 경험(이 블로그 자동화 시스템 구축 과정)과 결합하면 차별화 가능. CLAUDE.md, AGENTS.md, skills 구조를 예제로 활용. claude-code-agentic-workflow-patterns-5-types, llm-blog-automation 내부링크 연결 적합. 월요일 How-to/Opinion 유형."
     }
   ]
 }

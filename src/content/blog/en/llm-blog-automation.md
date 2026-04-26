@@ -1,9 +1,9 @@
 ---
 title: Blog Automation with LLM and Claude Code - The Future of Content Creation
 description: >-
-  Complete guide to automating your blog with Claude Code and 11 specialized AI
-  agents. From prompt engineering to MCP integration, multi-language support,
-  and image generation - a practical tutorial anyone can follow.
+  How to build a fully automated blog pipeline with Claude Code and 11 AI agents —
+  covering MCP integration, multilingual content, AI image generation, SEO, and cross-posting
+  in a practical step-by-step guide.
 pubDate: '2025-10-04'
 heroImage: ../../../assets/blog/2025-10-04-llm-blog-automation.png
 tags:
@@ -66,7 +66,7 @@ My blog automation system consists of four key components:
 
 ### 1. Claude Code (The Orchestrator)
 
-Claude Code isn't just a coding assistant - it's a complete development environment powered by Claude 3.5 Sonnet. It can:
+Claude Code isn't just a coding assistant - it's a complete development environment powered by Claude 3.5 Sonnet. (See [Claude Code Best Practices: Maximizing AI Coding Productivity](/en/blog/en/claude-code-best-practices) for a deeper dive.) It can:
 
 - Read and write files across your entire project
 - Execute bash commands and manage git operations
@@ -449,7 +449,7 @@ tags: ['llm', 'claude-code', 'automation']
 
 ## MCP Integration: Extending Claude's Capabilities
 
-Model Context Protocol (MCP) is what makes this system truly powerful. It's like giving Claude superpowers.
+Model Context Protocol (MCP) is what makes this system truly powerful. It's like giving Claude superpowers. [Claude Code Hooks & Workflow Automation](/en/blog/en/claude-code-hooks-workflow) covers real MCP integration patterns in production.
 
 ### 1. Context7: Always Up-to-Date Documentation
 
