@@ -1,7 +1,8 @@
 ---
-title: 'Cursor 3 vs Claude Code vs Windsurf — 2026年AI コーディングツール3強、どれを使うべきか'
+title: 'Cursor 3 vs Claude Code vs Windsurf: 2026年AIコーディングツール選択ガイド'
 description: >-
-  3つのAIコーディングツールを実際に使った経験をもとに比較します。Cursor 3.1世代の非同期エージェント、Claude Code 2.1.119のアーキテクチャ推論、Windsurf 2.0.67のCascade — それぞれどの状況に適しているかを率直に整理しました。
+  3つのAIコーディングツールを実際に使用した経験に基づく比較ガイドです。Cursor 3.1の非同期エージェント、Claude Code 2.1.119の
+  アーキテクチャ推論、Windsurf 2.0.67のCascade — それぞれどの状況に適しているかを性能とコストの観点で整理しました。
 pubDate: '2026-04-26'
 heroImage: '../../../assets/blog/cursor-3-vs-claude-code-vs-windsurf-2026-hero.jpg'
 tags:

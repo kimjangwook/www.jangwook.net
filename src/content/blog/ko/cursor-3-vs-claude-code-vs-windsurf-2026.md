@@ -1,7 +1,7 @@
 ---
-title: 'Cursor 3 vs Claude Code vs Windsurf — 2026년 AI 코딩 도구 3파전, 어떤 걸 써야 할까'
+title: 'Cursor 3 vs Claude Code vs Windsurf: 2026 AI 코딩 도구 선택 가이드'
 description: >-
-  세 가지 AI 코딩 도구를 직접 써본 경험을 바탕으로 비교합니다. Cursor 3.1 세대의 비동기 에이전트, Claude Code 2.1.119의 아키텍처 추론, Windsurf 2.0.67의 Cascade — 어떤 도구가 어떤 상황에 맞는지 솔직하게 정리했습니다.
+  세 AI 코딩 도구를 직접 사용한 경험 기반으로 비교합니다. Cursor 3.1의 비동기 에이전트, Claude Code 2.1.119의 아키텍처 추론, Windsurf 2.0.67의 Cascade — 각 도구가 어떤 상황에 적합한지 성능과 비용 기준으로 솔직하게 정리했습니다.
 pubDate: '2026-04-26'
 heroImage: '../../../assets/blog/cursor-3-vs-claude-code-vs-windsurf-2026-hero.jpg'
 tags:

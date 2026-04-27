@@ -113,7 +113,7 @@ EM/CTO 관점에서 이것은 단순한 지정학적 이야기가 아닙니다. 
 | GPT-5.2 | $6.00 | $24.00 | 약 1.0x |
 | GLM-5 (API) | $1.00 | $3.20 | <strong>약 0.15x</strong> |
 
-GLM-5 API는 Claude Opus 4.6 대비 입력 비용 5분의 1, 출력 비용 약 8분의 1입니다. 동등한 성능에서 이 비용 차이는 규모가 커질수록 의사결정에 결정적인 영향을 미칩니다.
+GLM-5 API는 Claude Opus 4.6 대비 입력 비용 5분의 1, 출력 비용 약 8분의 1입니다. 동등한 성능에서 이 비용 차이는 규모가 커질수록 의사결정에 결정적인 영향을 미칩니다. 2026년 주요 LLM API 가격 전체 비교는 [GPT-5, Claude, Gemini, DeepSeek LLM API 가격 비교 2026](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 확인할 수 있습니다.
 
 ### 자체 호스팅(Self-Hosting) 시나리오
 
@@ -173,7 +173,7 @@ graph TD
 - 대규모 문서 처리 (200K 컨텍스트)
 - 데이터 규정이 엄격한 금융·의료·법률 분야 (MIT 자체 호스팅)
 - 스타트업·SMB의 비용 최적화 (Claude Opus 대비 85% 절감)
-- AI 에이전트·MCP 워크플로우 (MCP-Atlas 오픈소스 1위)
+- AI 에이전트·MCP 워크플로우 (MCP-Atlas 오픈소스 1위) — GLM-5와 함께 사용할 에이전트 프레임워크 선택이 고민된다면 [2026년 LangGraph vs CrewAI vs Dapr 에이전트 프레임워크 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)를 참고하세요
 
 <strong>기존 상용 모델이 더 나은 상황:</strong>
 
@@ -252,7 +252,7 @@ GLM-5의 등장은 세 가지 메시지를 전달합니다.
 
 오늘 당장 모든 워크로드를 GLM-5로 전환할 필요는 없습니다. 그러나 코딩 어시스턴트, AI 에이전트, 대용량 문서 처리 같은 영역에서 즉시 파일럿을 시작해볼 충분한 근거가 생겼습니다.
 
-AI 도입에서 "최고 성능 모델을 쓰는 것"이 정답이 아닌 시대가 왔습니다. 이제는 워크로드별 최적 모델을 지능적으로 라우팅하는 것이 엔지니어링 리더의 핵심 역량이 됩니다.
+AI 도입에서 "최고 성능 모델을 쓰는 것"이 정답이 아닌 시대가 왔습니다. 이제는 워크로드별 최적 모델을 지능적으로 라우팅하는 것이 엔지니어링 리더의 핵심 역량이 됩니다. GPT-5.5와 Claude 최신 모델 간의 성능 비교는 [OpenAI GPT-5.5 출시 — Claude와 비교 분석](/ko/blog/ko/openai-gpt-5-5-release-claude-comparison-april-2026)에서 확인할 수 있습니다.
 
 ## 참고 자료
 

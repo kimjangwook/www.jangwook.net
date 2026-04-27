@@ -1,8 +1,8 @@
 ---
-title: 'Claude API提示缓存实战指南 — 降低70%生产LLM成本的4个模式'
+title: 'Claude API提示缓存实战 — 4种模式将LLM成本降低70%'
 description: >-
-  基于真实生产经验的Claude API提示缓存指南。涵盖系统提示、RAG文档、工具定义和多轮对话缓存模式，
-  以及2026年TTL变更的陷阱和实际节省的计算方法。
+  基于真实生产环境经验的Claude API提示缓存完全实战指南。涵盖系统提示、RAG文档、工具定义和多轮对话四种缓存模式，
+  以及2026年TTL变更的陷阱、缓存命中率与成本节省的计算方法，附实测数据。
 pubDate: '2026-04-27'
 heroImage: >-
   ../../../assets/blog/claude-api-prompt-caching-cost-optimization-guide-hero.png

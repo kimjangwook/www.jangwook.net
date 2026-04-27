@@ -115,7 +115,7 @@ graph TD
 | GPT-5.2 | $6.00 | $24.00 | 约1.0x |
 | GLM-5（API） | $1.00 | $3.20 | <strong>约0.15x</strong> |
 
-GLM-5的API成本仅为Claude Opus 4.6的15%〜20%。在性能接近的前提下，这种成本优势在规模化应用中会产生决定性影响。
+GLM-5的API成本仅为Claude Opus 4.6的15%〜20%。在性能接近的前提下，这种成本优势在规模化应用中会产生决定性影响。主要LLM API的完整定价比较请参考[2026年LLM API价格对比：GPT-5、Claude、Gemini、DeepSeek](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)。
 
 ### 自托管（Self-Hosting）的可行性
 
@@ -175,7 +175,7 @@ graph TD
 - 海量文档处理与理解（200K上下文窗口）
 - 数据隐私规制严格的金融、医疗、法律部门（支持本地部署）
 - 创业公司和中小企业的成本优化（相比Claude Opus节省85%）
-- AI代理和MCP工作流应用（MCP-Atlas开源第1名）
+- AI代理和MCP工作流应用（MCP-Atlas开源第1名）— 如果在评估与GLM-5配合使用的代理框架，请参考[2026年AI代理框架对比：LangGraph vs CrewAI vs Dapr](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)
 
 <strong>现有商用模型仍占优势的场景：</strong>
 
@@ -265,7 +265,7 @@ GLM-5的出现向行业传递了三个核心信号：
 
 当下无需将所有工作负载迁移到GLM-5。但代码助手、AI代理、大规模文档处理等领域立即启动试点已有充分的技术和经济学依据。
 
-AI采纳已经进入了新的竞争维度：不再是<strong>"用最强的模型"</strong>，而是<strong>"按工作负载特征智能路由最优模型"</strong>。这成为了工程领导力的新标志。
+AI采纳已经进入了新的竞争维度：不再是<strong>"用最强的模型"</strong>，而是<strong>"按工作负载特征智能路由最优模型"</strong>。这成为了工程领导力的新标志。关于最新的GPT-5.5与Claude的能力对比，可参考[OpenAI GPT-5.5发布——与Claude的深度对比分析](/zh/blog/zh/openai-gpt-5-5-release-claude-comparison-april-2026)。
 
 ## 参考资源
 

@@ -1,9 +1,8 @@
 ---
-title: 'Claude API Prompt Caching in Practice — 4 Patterns That Cut LLM Costs by 70%'
+title: 'Claude Prompt Caching: Cut LLM API Costs 70% With 4 Patterns'
 description: >-
-  A hands-on guide to Claude API prompt caching based on real production experience.
-  Covers system prompt, RAG document, tool definition, and multi-turn caching patterns,
-  plus the 2026 TTL change gotcha and how to measure actual savings.
+  Production guide to Claude API prompt caching. Covers system prompt, RAG, tool, and
+  multi-turn patterns — plus 2026 TTL gotcha and how to measure cost savings.
 pubDate: '2026-04-27'
 heroImage: >-
   ../../../assets/blog/claude-api-prompt-caching-cost-optimization-guide-hero.png

@@ -1,8 +1,8 @@
 ---
-title: 'Claude API Prompt Caching 실전 가이드 — 프로덕션 LLM 비용 70% 줄이는 4가지 패턴'
+title: 'Claude API Prompt Caching 실전 — LLM 비용 70% 절감하는 4가지 패턴'
 description: >-
-  Claude API의 프롬프트 캐싱을 프로덕션에 실제로 적용한 경험 기반 가이드. 시스템 프롬프트·RAG 문서·툴 정의·멀티턴 대화 캐싱 패턴과
-  2026년 TTL 변경의 함정, 비용 계산 방법까지 정리했습니다.
+  Claude API 프롬프트 캐싱을 실제 프로덕션 환경에 적용하기 위한 완전 실전 가이드입니다. 시스템 프롬프트·RAG 문서·툴 정의·멀티턴 대화
+  4가지 캐싱 패턴과 2026년 TTL 변경의 함정, 캐싱 적중률 및 비용 절감 계산 방법을 실측 데이터와 함께 정리합니다.
 pubDate: '2026-04-27'
 heroImage: >-
   ../../../assets/blog/claude-api-prompt-caching-cost-optimization-guide-hero.png

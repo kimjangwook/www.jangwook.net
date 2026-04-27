@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-27T15:41:00Z",
+  "updated_at": "2026-04-27T23:07:00Z",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -808,6 +808,57 @@
       "added_at": "2026-04-26",
       "status": "queued",
       "notes": "'에이전트 설계'에 대한 개발자 관심 급증 (서울 행사 500명 참여 등). 단순 프롬프트 작성 → 시스템 아키텍처 설계로 패러다임 전환 논의 활발. 개인 경험(이 블로그 자동화 시스템 구축 과정)과 결합하면 차별화 가능. CLAUDE.md, AGENTS.md, skills 구조를 예제로 활용. claude-code-agentic-workflow-patterns-5-types, llm-blog-automation 내부링크 연결 적합. 월요일 How-to/Opinion 유형."
+    },
+    {
+      "slug": "anthropic-message-batches-api-production-guide",
+      "title_idea": "Anthropic Message Batches API 실전 가이드 — 대용량 LLM 요청 비용 50% 절감",
+      "content_type": "how-to",
+      "target_keyword": "Anthropic Message Batches API",
+      "secondary_keywords": [
+        "LLM 배치 처리",
+        "Claude API 비용 절감",
+        "batch API 사용법"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic 공식 문서 + April 2026 API 리서치",
+      "added_at": "2026-04-27",
+      "status": "queued",
+      "notes": "오늘 Prompt Caching 가이드와 자연스러운 시리즈 연계. Batch API로 50% 비용 절감 + 비동기 처리 패턴"
+    },
+    {
+      "slug": "claude-1m-context-codebase-analysis-automation",
+      "title_idea": "1M 컨텍스트로 전체 코드베이스 자동 리뷰하기 — Claude API 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Claude 1M 컨텍스트 코드베이스 분석",
+      "secondary_keywords": [
+        "LLM 코드 리뷰",
+        "1M context 활용법",
+        "Claude API 코드 분석"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Claude API 문서 + 1M context GA 뉴스 (2026-03)",
+      "added_at": "2026-04-27",
+      "status": "queued",
+      "notes": "1M context GA 이후 가장 실용적인 사용 사례. GPT-5.4 포스트와 연계 가능"
+    },
+    {
+      "slug": "github-actions-claude-code-ci-automation",
+      "title_idea": "GitHub Actions + Claude Code CI 자동화 — PR 리뷰 파이프라인 구축 가이드",
+      "content_type": "how-to",
+      "target_keyword": "GitHub Actions Claude Code 자동화",
+      "secondary_keywords": [
+        "AI PR 리뷰 자동화",
+        "CI/CD LLM 통합",
+        "Claude Code GitHub Actions"
+      ],
+      "search_intent": "how-to",
+      "priority": 3,
+      "source": "GitHub Actions 문서 + Claude Code Routines 포스트 연계",
+      "added_at": "2026-04-27",
+      "status": "queued",
+      "notes": "CI/CD 통합 상록수 주제. Claude Code Routines와 차별화: Actions 워크플로우 파일 중심 구현"
     }
   ]
 }

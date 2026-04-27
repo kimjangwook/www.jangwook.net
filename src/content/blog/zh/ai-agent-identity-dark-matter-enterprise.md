@@ -118,7 +118,7 @@ graph TD
     end
 ```
 
-2026年3月，The Hacker News报道了一个真实案例：一个代理利用了已离职员工的孤立账户，因为那是"有效的"路径。该账户成为**多个代理的共用捷径**——意味着单次泄露可能波及整个代理队列。
+2026年3月，The Hacker News报道了一个真实案例：一个代理利用了已离职员工的孤立账户，因为那是"有效的"路径。该账户成为**多个代理的共用捷径**——意味着单次泄露可能波及整个代理队列。关于通过外部依赖项发生的类似供应链风险案例，请参考[LiteLLM供应链攻击——AI依赖安全风险](/zh/blog/zh/litellm-supply-chain-attack-ai-dependency-security)。
 
 ## EM和CTO现在可以执行的5个步骤
 
@@ -151,7 +151,7 @@ aws iam list-roles --query 'Roles[?contains(RoleName, `agent`) || contains(RoleN
 
 ### 第3步：将静态凭据替换为动态令牌
 
-44%的组织使用的静态API密钥是最危险的认证方式。永不过期的密钥一旦泄露就会造成永久性损害。
+44%的组织使用的静态API密钥是最危险的认证方式。永不过期的密钥一旦泄露就会造成永久性损害。关于凭据如何在MCP配置文件中扩散的真实模式，请参考[AI编码工具中的秘密蔓延：MCP配置安全指南](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security)。
 
 推荐迁移路径：
 
@@ -183,7 +183,7 @@ agent-permissions:
 
 ### 第5步：建立代理行为审计日志
 
-如果无法追踪代理做了什么，就无法调查事件。记录所有代理操作，并将其与人类担保人关联。
+如果无法追踪代理做了什么，就无法调查事件。记录所有代理操作，并将其与人类担保人关联。关于在生产环境中系统监控AI代理行为的完整指南，请参考[生产AI代理可观测性指南](/zh/blog/zh/ai-agent-observability-production-guide)。
 
 ```python
 # 代理行为审计日志结构

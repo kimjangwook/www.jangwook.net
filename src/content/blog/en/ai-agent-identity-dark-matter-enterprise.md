@@ -119,7 +119,7 @@ graph TD
     end
 ```
 
-As reported by The Hacker News in March 2026, one real-world case involved an agent exploiting a retired employee's orphaned account because it was the path that "just worked." That single account became a **shared shortcut for multiple agents** — meaning a single breach could cascade across an entire agent fleet.
+As reported by The Hacker News in March 2026, one real-world case involved an agent exploiting a retired employee's orphaned account because it was the path that "just worked." That single account became a **shared shortcut for multiple agents** — meaning a single breach could cascade across an entire agent fleet. For a concrete supply chain attack case affecting AI dependencies, see [LiteLLM Supply Chain Attack — AI Dependency Security Risks](/en/blog/en/litellm-supply-chain-attack-ai-dependency-security).
 
 ## 5 Steps EMs and CTOs Can Take Right Now
 
@@ -152,7 +152,7 @@ Next Audit Due:  2026-06-01
 
 ### Step 3: Replace Static Credentials with Dynamic Tokens
 
-Static API keys — used by 44% of organizations — are the most dangerous authentication method. A key that never expires creates permanent risk if compromised.
+Static API keys — used by 44% of organizations — are the most dangerous authentication method. A key that never expires creates permanent risk if compromised. For real patterns of how credentials sprawl across MCP config files, see [AI Coding Secrets Sprawl: MCP Config Security Guide](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security).
 
 Recommended migration paths:
 
@@ -184,7 +184,7 @@ agent-permissions:
 
 ### Step 5: Build Agent Action Audit Logs
 
-If you can't trace what an agent did, you can't investigate incidents. Log all agent actions and tie them back to their human sponsor.
+If you can't trace what an agent did, you can't investigate incidents. Log all agent actions and tie them back to their human sponsor. For a comprehensive production observability guide for AI agents, see [Production AI Agent Observability Guide](/en/blog/en/ai-agent-observability-production-guide).
 
 ```python
 # Agent action audit log structure

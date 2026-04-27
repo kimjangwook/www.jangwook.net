@@ -94,7 +94,7 @@ GLM-5 releases focus on practical enterprise workloads rather than academic lead
 
 - <strong>Coding (SWE-bench 77.8%)</strong>: Within 3 percentage points of Claude Opus 4.6. Sufficient for code review, debugging, and documentation generation.
 - <strong>Long-form generation (Vending-Bench 2)</strong>: <strong>#1 open-source model</strong>. Excellent for report generation, whitepaper writing, and content creation.
-- <strong>MCP tool use (MCP-Atlas)</strong>: <strong>#1 open-source</strong>. Better integration with enterprise tools and API orchestration than proprietary models.
+- <strong>MCP tool use (MCP-Atlas)</strong>: <strong>#1 open-source</strong>. Better integration with enterprise tools and API orchestration than proprietary models. If you're evaluating which agent framework pairs best with GLM-5, see [AI Agent Framework Comparison 2026: LangGraph vs CrewAI vs Dapr](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production).
 
 The benchmark narrative: GLM-5 is <strong>frontier-grade for practical tasks</strong>, not matching bleeding-edge reasoning models, but exceptional for document processing, coding assistance, and tool automation.
 
@@ -148,7 +148,7 @@ Let's compare real-world API costs for a typical enterprise workload (100M token
 | GLM-5 (OpenRouter) | $1 | $3.20 | $160/mo | <strong>0.11x</strong> |
 | GLM-5 (self-hosted) | ~$0.50 | ~$1.50 | ~$100/mo | <strong>0.07x</strong> |
 
-<strong>Cost savings: 85~93% compared to Claude/GPT-5.2</strong>.
+<strong>Cost savings: 85~93% compared to Claude/GPT-5.2</strong>. For a detailed comparison of LLM API pricing across all major providers, see [LLM API Pricing Comparison 2026: GPT-5, Claude, Gemini, DeepSeek](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek).
 
 ### Self-Hosting Scenario: DIY Cost Breakdown
 
@@ -565,7 +565,7 @@ With GLM-5 available at 1/15th the API cost of Claude/GPT-5.2, enterprises have 
 
 GLM-5 is not a replacement for Claude Opus 4.6 or GPT-5.2—it's a <strong>cost-effective alternative for 70~80% of enterprise LLM workloads</strong>. 
 
-For EM/CTOs: Start with a 4-week pilot on a non-critical workload (code review, document summarization). Benchmark against your current model. If cost savings exceed 50% and quality is acceptable, proceed to Phase 2 workload classification. Build an intelligent routing layer. Monitor geopolitical risks.
+For EM/CTOs: Start with a 4-week pilot on a non-critical workload (code review, document summarization). Benchmark against your current model. If cost savings exceed 50% and quality is acceptable, proceed to Phase 2 workload classification. Build an intelligent routing layer. Monitor geopolitical risks. For the latest Claude vs GPT-5.5 capabilities comparison to inform your routing decisions, see [OpenAI GPT-5.5 Release — Claude Comparison Analysis](/en/blog/en/openai-gpt-5-5-release-claude-comparison-april-2026).
 
 The competitive landscape for AI is no longer dominated by a single vendor. Embrace the choice.
 

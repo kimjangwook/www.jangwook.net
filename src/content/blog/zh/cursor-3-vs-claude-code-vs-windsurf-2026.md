@@ -1,7 +1,8 @@
 ---
-title: 'Cursor 3 vs Claude Code vs Windsurf — 2026年AI编程工具三强对比，该用哪个？'
+title: 'Cursor 3 vs Claude Code vs Windsurf: 2026年AI编程工具选择指南'
 description: >-
-  基于亲身使用三款AI编程工具的经验进行对比。Cursor 3.1世代的异步子智能体、Claude Code 2.1.119的架构推理、Windsurf 2.0.67的Cascade——各工具适合什么场景，坦率整理如下。
+  基于亲身使用三款AI编程工具经验的深度对比指南。Cursor 3.1的异步子智能体、Claude Code 2.1.119的架构推理、
+  Windsurf 2.0.67的Cascade——各工具适合什么场景，从性能和成本角度坦率整理。
 pubDate: '2026-04-26'
 heroImage: '../../../assets/blog/cursor-3-vs-claude-code-vs-windsurf-2026-hero.jpg'
 tags:

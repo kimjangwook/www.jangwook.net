@@ -82,7 +82,7 @@ In traditional MCP setups, tool schemas are injected on every turn as the number
 - **47% reduction in total token usage**
 - Accuracy maintained
 
-Tool search enables agents to dynamically discover tools on demand rather than injecting all schemas upfront. Cost savings are particularly significant in large enterprise MCP environments.
+Tool search enables agents to dynamically discover tools on demand rather than injecting all schemas upfront. Cost savings are particularly significant in large enterprise MCP environments. For a practical guide to deploying MCP servers in production, see [MCP Server Build Practical Guide 2026](/en/blog/en/mcp-server-build-practical-guide-2026).
 
 ## GPT-5.4 Thinking vs Pro
 
@@ -100,7 +100,7 @@ The fact that computer use ability has surpassed human-level performance means t
 
 ### Context Engineering Paradigm Shift
 
-Agent architectures designed around 128K expand to 1M. Instead of complex RAG pipelines, simply "putting everything needed into context" becomes a realistic option. However, be aware that accuracy in the 256K〜1M range (21.4%) remains limited.
+Agent architectures designed around 128K expand to 1M. Instead of complex RAG pipelines, simply "putting everything needed into context" becomes a realistic option. However, be aware that accuracy in the 256K〜1M range (21.4%) remains limited. For practical methods to engineer context efficiently in production agents, see [Context Engineering for Production AI Agents](/en/blog/en/context-engineering-production-ai-agents).
 
 ### Tool Cost Optimization
 
@@ -116,7 +116,7 @@ First, list your current GUI-based internal processes that haven't been automate
 
 Second, identify tasks that genuinely need 1M context. The question isn't just whether context is long, but whether long context is actually advantageous in terms of accuracy and cost for specific cases.
 
-Third, if your MCP server count exceeds 10, evaluate introducing tool search. A 47% token reduction is a number you can't ignore.
+Third, if your MCP server count exceeds 10, evaluate introducing tool search. A 47% token reduction is a number you can't ignore. For a broader look at agentic workflow patterns that pair well with these capabilities, see [Claude Code Agentic Workflow 5 Patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types).
 
 ## Closing Thoughts
 
