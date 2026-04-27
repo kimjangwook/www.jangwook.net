@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-26T23:07:00Z",
+  "updated_at": "2026-04-27T15:41:00Z",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -734,7 +734,7 @@
       "priority": 1,
       "source": "Anthropic 공식 Prompt Caching 문서, 이 블로그 운영 경험 (60-70% 비용 절감 달성)",
       "added_at": "2026-04-26",
-      "status": "queued",
+      "status": "done",
       "notes": "이 블로그 자동화에서 실제 60-70% 토큰 절감 경험 기반. 시스템 프롬프트, 컨텍스트, 도구 정의 캐싱 패턴. 월요일 How-to 유형."
     },
     {
