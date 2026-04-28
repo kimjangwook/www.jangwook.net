@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-27T23:07:00Z",
+  "updated_at": "2026-04-28T15:38:59Z",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -823,8 +823,8 @@
       "priority": 1,
       "source": "Anthropic 공식 문서 + April 2026 API 리서치",
       "added_at": "2026-04-27",
-      "status": "queued",
-      "notes": "오늘 Prompt Caching 가이드와 자연스러운 시리즈 연계. Batch API로 50% 비용 절감 + 비동기 처리 패턴"
+      "status": "done",
+      "notes": "오늘 Prompt Caching 가이드와 자연스러운 시리즈 연계. Batch API로 50% 비용 절감 + 비동기 처리 패턴 Published 2026-04-28. Source Review lane (no API key). Node.js + Python code verified in sandbox. 50% cost savings documented."
     },
     {
       "slug": "claude-1m-context-codebase-analysis-automation",
