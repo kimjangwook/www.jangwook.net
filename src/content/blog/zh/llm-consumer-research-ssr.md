@@ -75,7 +75,7 @@ draft: true
 
 ### LLM驱动的合成消费者诞生
 
-LLM展现了模拟具有不同人口统计特征"合成消费者"的可能性。然而，早期研究遭遇了关键问题：
+LLM展现了模拟具有不同人口统计特征"合成消费者"的可能性。[关于为AI智能体赋予角色特征时心理效应的研究](/zh/blog/zh/ai-agent-persona-analysis)已通过120多项研究得到验证，同样的原理也适用于合成消费者画像的设计。然而，早期研究遭遇了关键问题：
 
 <strong>直接数值评估的问题</strong>：
 - 直接询问LLM"请从1到5中选择一个"时
@@ -221,7 +221,7 @@ print(f"主要购买动机：{results.top_reasons}")
 - <strong>版本A</strong>："环保竹制牙刷"
 - <strong>版本B</strong>："为可持续未来而生的竹制牙刷"
 
-用数千名合成消费者进行测试，立即确认哪种信息更有效。
+用数千名合成消费者进行测试，立即确认哪种信息更有效。对于这种规模的LLM调用，使用[Anthropic Message Batches API](/zh/blog/zh/anthropic-message-batches-api-production-guide)批量处理请求可将成本降低最多50%。
 
 ### 3. 细分目标分析
 
@@ -256,7 +256,7 @@ LLM本身的偏差也会反映在合成消费者响应中：
 
 随着SSR等技术的成熟：
 
-1. <strong>成本削减</strong>：以传统调研成本的10%以下进行大规模调查
+1. <strong>成本削减</strong>：以传统调研成本的10%以下进行大规模调查（应用[Claude API Prompt Caching](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)可进一步将重复LLM调用成本降低70%）
 2. <strong>速度提升</strong>：将耗时数周的调查缩短至几小时内完成
 3. <strong>规模扩大</strong>：使用数万名而非数百名合成受访者进行测试
 4. <strong>迭代实验</strong>：通过快速迭代优化产品

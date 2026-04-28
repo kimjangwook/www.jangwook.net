@@ -147,7 +147,7 @@ autoresearchが自動化するのは<strong>「修正→学習→評価」の反
 
 ### 3. チーム導入時の考慮事項
 
-autoresearchをR&Dチームに導入する場合、以下を考慮する必要があります：
+autoresearchをR&Dチームに導入する場合、以下を考慮する必要があります。すでに[マルチエージェント協調パターン](/ja/blog/ja/ai-agent-collaboration-patterns)を活用しているチームであれば、そのオーケストレーション戦略を複数GPUノードへのautoresearchエージェント分散配置に応用できます：
 
 <strong>技術的要件</strong>：
 - NVIDIA GPU 1台（H100で検証済み）
@@ -203,7 +203,7 @@ Reduce val_bpb by optimizing the attention mechanism.
 
 ## より広い文脈：AI研究の自動化トレンド
 
-autoresearchは孤立した現象ではありません。2026年初頭のAI業界で見られる<strong>「AIがAIを研究する」</strong>トレンドの一部です：
+autoresearchは孤立した現象ではありません。[AlphaEvolveが20年間維持されてきた数学的定理を自律的に更新](/ja/blog/ja/alphaevolve-ramsey-ai-research-partner)した事例のように、AIによる自律研究の波はすでに数学・自然科学・ソフトウェアエンジニアリング全体に広がっています。2026年初頭のAI業界で見られる<strong>「AIがAIを研究する」</strong>トレンドの一部です：
 
 - <strong>Anthropic Code Review</strong>：マルチエージェントシステムがAI生成コードを自動分析し、ロジックエラーを検出
 - <strong>OpenAIの自動レッドチーミング</strong>：AIモデルが別のAIモデルの脆弱性を自動的に探索
@@ -219,7 +219,7 @@ EM/VPoEの視点から注目すべき点は：
 
 1. <strong>研究生産性の定義の変化</strong>：「1日に何件の実験を回したか」から「どれほど良い実験方向を設定したか」へ
 2. <strong>シニアリサーチャーの役割変化</strong>：自ら実験を回す人からエージェントの研究方向を設計する人へ
-3. <strong>GPU遊休時間の価値</strong>：夜間/週末のGPU遊休時間が100件の実験機会に転換
+3. <strong>GPU遊休時間の価値</strong>：夜間/週末のGPU遊休時間が100件の実験機会に転換([AIエージェント運用コストの現実](/ja/blog/ja/ai-agent-cost-reality)を参照して予算を設定することをお勧めします)
 
 「一晩100件の実験」という数値自体よりも、<strong>研究者の役割が「実行」から「方向設定」へ移行</strong>しているという構造的変化に注目すべきです。
 

@@ -147,7 +147,7 @@ autoresearch가 자동화하는 것은 <strong>"수정→학습→평가"의 반
 
 ### 3. 팀 도입 시 고려사항
 
-autoresearch를 R&D 팀에 도입한다면 다음을 고려해야 합니다:
+autoresearch를 R&D 팀에 도입한다면 다음을 고려해야 합니다. [멀티 에이전트 협업 패턴](/ko/blog/ko/ai-agent-collaboration-patterns)을 병행 활용하면 여러 GPU 노드에 에이전트를 분산 배치하는 오케스트레이션 전략을 구체화할 수 있습니다:
 
 <strong>기술적 요구사항</strong>:
 - NVIDIA GPU 1대 (H100 기준 검증됨)
@@ -203,7 +203,7 @@ Reduce val_bpb by optimizing the attention mechanism.
 
 ## 더 넓은 맥락: AI 연구의 자동화 트렌드
 
-autoresearch는 독립적인 현상이 아닙니다. 2026년 초 AI 업계에서 나타나는 <strong>"AI가 AI를 연구하는"</strong> 트렌드의 일부입니다:
+autoresearch는 독립적인 현상이 아닙니다. [AlphaEvolve가 20년간 유지된 수학 정리를 AI가 스스로 갱신](/ko/blog/ko/alphaevolve-ramsey-ai-research-partner)한 사례처럼, AI가 AI를 연구하는 흐름은 이미 수학·자연과학·SW 엔지니어링 전반으로 확산되고 있습니다. 2026년 초 AI 업계에서 나타나는 <strong>"AI가 AI를 연구하는"</strong> 트렌드의 일부입니다:
 
 - <strong>Anthropic Code Review</strong>: 멀티 에이전트 시스템이 AI 생성 코드를 자동 분석하고 로직 오류를 감지
 - <strong>OpenAI의 자동화된 레드팀</strong>: AI 모델이 다른 AI 모델의 취약점을 자동으로 탐색
@@ -219,7 +219,7 @@ EM/VPoE 관점에서 주목할 점은:
 
 1. <strong>연구 생산성 정의의 변화</strong>: "하루에 몇 개 실험을 돌렸는가"에서 "얼마나 좋은 실험 방향을 설정했는가"로
 2. <strong>시니어 연구원의 역할 변화</strong>: 직접 실험을 돌리는 사람에서 에이전트의 연구 방향을 설계하는 사람으로
-3. <strong>GPU 유휴 시간의 가치</strong>: 야간/주말의 GPU 유휴 시간이 100개 실험의 기회로 전환
+3. <strong>GPU 유휴 시간의 가치</strong>: 야간/주말의 GPU 유휴 시간이 100개 실험의 기회로 전환([AI 에이전트 운용 비용 현실](/ko/blog/ko/ai-agent-cost-reality)을 참고하면 실제 예산 계획에 도움이 됩니다)
 
 "밤새 100개 실험"이라는 수치 자체보다, <strong>연구자의 역할이 "실행"에서 "방향 설정"으로 이동</strong>하고 있다는 구조적 변화에 주목해야 합니다.
 

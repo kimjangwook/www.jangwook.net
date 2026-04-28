@@ -148,7 +148,7 @@ Let's compare this with traditional ML research workflows:
 
 ### 3. Considerations for Team Adoption
 
-If you are introducing autoresearch to an R&D team, consider the following:
+If you are introducing autoresearch to an R&D team, consider the following. Teams already running [multi-agent collaboration patterns](/en/blog/en/ai-agent-collaboration-patterns) can extend those orchestration strategies to distribute autoresearch agents across multiple GPU nodes:
 
 <strong>Technical requirements</strong>:
 - 1 NVIDIA GPU (validated on H100)
@@ -204,7 +204,7 @@ After an overnight run, analyze the logs left by the agent. You can review val_b
 
 ## The Bigger Picture: The Trend of Automating AI Research
 
-autoresearch is not an isolated phenomenon. It is part of a broader <strong>"AI researching AI"</strong> trend emerging in early 2026:
+autoresearch is not an isolated phenomenon. Just as [AlphaEvolve autonomously refreshed five Ramsey number bounds that had stood for up to 20 years](/en/blog/en/alphaevolve-ramsey-ai-research-partner), the wave of AI-driven autonomous research is now spreading across mathematics, natural sciences, and software engineering. It is part of a broader <strong>"AI researching AI"</strong> trend emerging in early 2026:
 
 - <strong>Anthropic Code Review</strong>: Multi-agent systems that automatically analyze AI-generated code and detect logic errors
 - <strong>OpenAI's automated red teaming</strong>: AI models that automatically probe other AI models for vulnerabilities
@@ -220,7 +220,7 @@ Key takeaways from an EM/VPoE perspective:
 
 1. <strong>Shifting the definition of research productivity</strong>: From "how many experiments did you run today?" to "how good were the experiment directions you set?"
 2. <strong>Evolving role of senior researchers</strong>: From hands-on experimenters to designers of the agent's research direction
-3. <strong>The value of GPU idle time</strong>: Nighttime and weekend GPU idle hours become opportunities for 100 experiments
+3. <strong>The value of GPU idle time</strong>: Nighttime and weekend GPU idle hours become opportunities for 100 experiments (see [the real cost breakdown of running AI agents](/en/blog/en/ai-agent-cost-reality) before setting your budget)
 
 More important than the raw number of "100 experiments overnight" is the structural shift: <strong>the researcher's role is moving from "execution" to "direction setting."</strong>
 

@@ -66,7 +66,7 @@ The enthusiasm around generative AI has created a gold rush mentality, but the g
 - <strong>MIT Research</strong>: 95% of AI pilots fail to achieve revenue acceleration
 - <strong>Gartner Prediction</strong>: By end of 2025, 50% of generative AI projects will be abandoned at the pilot stage
 
-These aren't just numbers — they represent billions in wasted investment and countless hours of organizational effort. But more importantly, they reveal a fundamental misunderstanding about what makes AI adoption succeed.
+These aren't just numbers — they represent billions in wasted investment and countless hours of organizational effort. [A detailed breakdown of real AI agent operating costs](/en/blog/en/ai-agent-cost-reality) shows that hidden integration and orchestration expenses are often larger than the model costs themselves. But more importantly, these figures reveal a fundamental misunderstanding about what makes AI adoption succeed.
 
 ### The Three Usual Suspects
 
@@ -80,7 +80,7 @@ While these are valid challenges, they're symptoms, not root causes. The real pr
 
 ## The Hidden Divide: Leadership vs. Frontline Reality
 
-Recent research by Writer reveals a troubling disconnect. There's an <strong>18 percentage point trust gap</strong> between senior executives and frontline employees when it comes to AI:
+Recent research by Writer reveals a troubling disconnect. There's an <strong>18 percentage point trust gap</strong> between senior executives and frontline employees when it comes to AI. [Practical advice for developers navigating AI-driven job uncertainty](/en/blog/en/ai-era-career-advice-for-juniors) offers a useful frame for building empathy when communicating change:
 
 - <strong>Senior Executives</strong>: 71% trust in AI initiatives
 - <strong>Frontline Employees</strong>: 53% trust in AI initiatives
@@ -179,7 +179,7 @@ Here's where top-down becomes essential. Once the optimal workflow is defined:
 - Monitor adoption rigorously
 - Address resistance systematically
 
-This isn't optional. Without standardization, you get 42% failure rates.
+This isn't optional. Without standardization, you get 42% failure rates. Before deploying AI organization-wide, also review [how KPI-driven AI agents can produce ethical violations](/en/blog/en/ai-agent-kpi-ethics) — governance frameworks need to be designed alongside the rollout.
 
 ## The Leadership Imperative
 

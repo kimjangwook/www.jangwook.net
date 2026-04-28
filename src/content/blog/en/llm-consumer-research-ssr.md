@@ -77,7 +77,7 @@ Companies invest massive resources in consumer research but face significant con
 
 ### Emergence of LLM-Based Synthetic Consumers
 
-LLMs offered the possibility of simulating "synthetic consumers" with diverse demographic characteristics. However, early research encountered a critical problem:
+LLMs offered the possibility of simulating "synthetic consumers" with diverse demographic characteristics. [Research across 120+ studies on assigning personas to AI agents](/en/blog/en/ai-agent-persona-analysis) has validated the psychological effects at play — the same principles apply when designing demographic profiles for synthetic consumers. However, early research encountered a critical problem:
 
 <strong>Issues with Direct Numerical Rating Requests</strong>:
 - When LLMs are directly asked to "choose a number from 1 to 5"
@@ -224,7 +224,7 @@ Quickly test at scale how subtle differences in product descriptions affect purc
 - <strong>Version A</strong>: "Eco-friendly bamboo toothbrush"
 - <strong>Version B</strong>: "Bamboo toothbrush for a sustainable future"
 
-Test with thousands of synthetic consumers to immediately see which message is more effective.
+Test with thousands of synthetic consumers to immediately see which message is more effective. For LLM calls at this scale, [Anthropic Message Batches API](/en/blog/en/anthropic-message-batches-api-production-guide) lets you batch requests together and cut costs by up to 50%.
 
 ### 3. Segmented Target Analysis
 
@@ -259,7 +259,7 @@ Biases inherent in LLMs can be reflected in synthetic consumer responses:
 
 As technologies like SSR mature:
 
-1. <strong>Cost Reduction</strong>: Large-scale surveys possible at less than 10% of traditional costs
+1. <strong>Cost Reduction</strong>: Large-scale surveys possible at less than 10% of traditional costs (applying [Claude API Prompt Caching](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide) can further reduce repeated LLM call costs by 70%)
 2. <strong>Speed Improvement</strong>: Complete in hours what previously took weeks
 3. <strong>Scale Expansion</strong>: Test with tens of thousands of synthetic respondents instead of hundreds
 4. <strong>Iterative Experimentation</strong>: Product optimization through rapid iteration

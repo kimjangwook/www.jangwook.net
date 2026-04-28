@@ -147,7 +147,7 @@ autoresearch所自动化的是<strong>"修改→训练→评估"的重复循环<
 
 ### 3. 团队引入时的考量
 
-如果将autoresearch引入R&D团队，需要考虑以下几点：
+如果将autoresearch引入R&D团队，需要考虑以下几点。已在实践[多Agent协作模式](/zh/blog/zh/ai-agent-collaboration-patterns)的团队，可以将现有的编排策略扩展到跨多个GPU节点分布式部署autoresearch智能体：
 
 <strong>技术要求</strong>：
 - 1块NVIDIA GPU（已在H100上验证）
@@ -203,7 +203,7 @@ Reduce val_bpb by optimizing the attention mechanism.
 
 ## 更广阔的视角：AI研究自动化趋势
 
-autoresearch并非孤立现象。它是2026年初AI行业中<strong>"AI研究AI"</strong>趋势的一部分：
+autoresearch并非孤立现象。正如[AlphaEvolve自主刷新了沉寂长达20年的数学定理](/zh/blog/zh/alphaevolve-ramsey-ai-research-partner)所示，AI驱动的自主研究浪潮已蔓延至数学、自然科学和软件工程各领域。它是2026年初AI行业中<strong>"AI研究AI"</strong>趋势的一部分：
 
 - <strong>Anthropic Code Review</strong>：多Agent系统自动分析AI生成的代码并检测逻辑错误
 - <strong>OpenAI的自动化红队测试</strong>：AI模型自动探索其他AI模型的漏洞
@@ -219,7 +219,7 @@ Karpathy的autoresearch是一个将ML研究中"重复执行"部分委托给Agent
 
 1. <strong>研究生产力定义的转变</strong>：从"一天跑了多少个实验"转向"设定了多好的实验方向"
 2. <strong>资深研究员角色的转变</strong>：从亲自跑实验的人转变为设计Agent研究方向的人
-3. <strong>GPU空闲时间的价值</strong>：夜间/周末的GPU空闲时间转化为100个实验的机会
+3. <strong>GPU空闲时间的价值</strong>：夜间/周末的GPU空闲时间转化为100个实验的机会（建议参考[AI智能体运营成本的实际分析](/zh/blog/zh/ai-agent-cost-reality)制定合理预算）
 
 比起"一夜100个实验"这个数字本身，更值得关注的是<strong>研究人员的角色正从"执行"向"方向设定"转移</strong>这一结构性变化。
 

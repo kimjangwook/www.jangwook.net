@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-28T15:38:59Z",
+  "updated_at": "2026-04-28T23:07:00Z",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -859,6 +859,60 @@
       "added_at": "2026-04-27",
       "status": "queued",
       "notes": "CI/CD 통합 상록수 주제. Claude Code Routines와 차별화: Actions 워크플로우 파일 중심 구현"
+    },
+    {
+      "slug": "claude-api-tool-use-strict-mode-production-guide",
+      "title_idea": "Claude API Tool Use 실전 가이드 — strict 모드·Tool Runner·Extended Thinking 조합법",
+      "content_type": "how-to",
+      "target_keyword": "Claude API tool use 실전",
+      "secondary_keywords": [
+        "Claude function calling",
+        "tool use strict mode",
+        "programmatic tool calling",
+        "extended thinking tools"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic 공식 문서 + Claude Lab 리서치 (2026-04-28)",
+      "added_at": "2026-04-29",
+      "status": "queued",
+      "notes": "strict: true 스키마로 툴 호출 신뢰도 향상, Tool Runner 베타(Python/TS/Ruby SDK), Extended Thinking + 3단계 이상 툴 체이닝 차별화 포인트. vercel-ai-sdk 포스트와 겹치지 않도록 Anthropic SDK 직접 사용 관점 집중."
+    },
+    {
+      "slug": "pydantic-ai-type-safe-agent-tutorial-2026",
+      "title_idea": "PydanticAI 실전 튜토리얼 — 타입 안전한 AI 에이전트를 FastAPI 감각으로 만드는 법",
+      "content_type": "how-to",
+      "target_keyword": "PydanticAI 튜토리얼",
+      "secondary_keywords": [
+        "PydanticAI 에이전트",
+        "structured output LLM",
+        "type-safe AI agent Python",
+        "PydanticAI Claude"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "PydanticAI GitHub(16K+ stars), Real Python, DataCamp 튜토리얼 리서치 (2026-04-28)",
+      "added_at": "2026-04-29",
+      "status": "queued",
+      "notes": "16K+ GitHub stars, FastAPI 팀과 같은 Pydantic 팀 작품. Claude 포함 멀티 프로바이더 지원. 스트리밍 구조화 출력, 타입 검증 실패 시 자동 재시도가 핵심 차별점. vercel-ai-sdk 포스트와 다른 파이썬 생태계 관점."
+    },
+    {
+      "slug": "claude-api-computer-use-automation-guide-2026",
+      "title_idea": "Claude Computer Use API 실전 가이드 — 브라우저·데스크톱 자동화를 코드 5줄로 구현하기",
+      "content_type": "how-to",
+      "target_keyword": "Claude Computer Use API 실전",
+      "secondary_keywords": [
+        "Claude computer use",
+        "browser automation AI",
+        "desktop automation claude",
+        "computer use python"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Anthropic 공식 문서 + DEV Community 가이드 리서치 (2026-04-28)",
+      "added_at": "2026-04-29",
+      "status": "queued",
+      "notes": "Computer Use API가 2026 초 GA. Playwright 없이 Claude가 직접 브라우저 조작. 캡처→분석→클릭 루프 구현이 핵심. 기존 claude-code 관련 포스트와 달리 비개발자도 활용 가능한 자동화 관점."
     }
   ]
 }

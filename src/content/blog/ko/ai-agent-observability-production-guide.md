@@ -1,6 +1,6 @@
 ---
 title: 'AI 에이전트 옵저버빌리티 실전 가이드: 프로덕션 LLM 시스템을 투명하게 만드는 방법'
-description: '멀티 에이전트 시스템을 프로덕션에서 운영할 때 반드시 알아야 할 옵저버빌리티 전략. 트레이싱, 메트릭, 로깅부터 OpenTelemetry 적용, Langfuse·LangSmith·Braintrust 도구 비교까지 EM 관점의 실전 가이드.'
+description: '멀티 에이전트 시스템을 프로덕션에서 운영할 때 반드시 갖춰야 할 옵저버빌리티 전략의 실전 가이드. OpenTelemetry 트레이싱·메트릭·로그 구조화부터 Langfuse·LangSmith·Braintrust 3종 도구 비교, 알림 설계까지 EM 관점으로 상세히 총정리.'
 pubDate: '2026-03-12'
 heroImage: ../../../assets/blog/ai-agent-observability-production-guide-hero.jpg
 tags:
