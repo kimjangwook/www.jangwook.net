@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-29T15:43:00Z",
+  "updated_at": "2026-04-29T23:07:00Z",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -913,6 +913,60 @@
       "added_at": "2026-04-29",
       "status": "queued",
       "notes": "Computer Use API가 2026 초 GA. Playwright 없이 Claude가 직접 브라우저 조작. 캡처→분석→클릭 루프 구현이 핵심. 기존 claude-code 관련 포스트와 달리 비개발자도 활용 가능한 자동화 관점."
+    },
+    {
+      "slug": "glm-5-1-open-source-beats-gpt-claude-swebench-2026",
+      "title_idea": "GLM-5.1이 GPT·Claude를 앞섰다 — 오픈소스 LLM의 역전, 개발팀에 미치는 영향",
+      "content_type": "news",
+      "target_keyword": "GLM-5.1 오픈소스 LLM 비교",
+      "secondary_keywords": [
+        "GLM-5.1 SWE-Bench Pro",
+        "오픈소스 AI 2026",
+        "Zhipu AI GLM",
+        "LLM 가격 하락 2026"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "llm-stats.com, fazm.ai/blog/llm-releases-april-2026, af.net April 2026 LLM recap",
+      "added_at": "2026-04-29",
+      "status": "queued",
+      "notes": "Zhipu AI의 GLM-5.1(744B MoE, MIT)이 SWE-Bench Pro에서 Claude Opus 4.6·GPT-5.4를 앞섬. 오픈소스가 최상위 모델을 넘어선 최초 사례. EM/CTO 관점: 자체 호스팅 vs API 비용 결정에 직접 영향. LLM 추론 비용이 2026년 1월 대비 50% 하락한 시장 배경과 함께 분석."
+    },
+    {
+      "slug": "claude-opus-4-7-vs-gpt-5-5-engineering-comparison-2026",
+      "title_idea": "Claude Opus 4.7 vs GPT-5.5 — 엔지니어링팀을 위한 실전 비교 분석",
+      "content_type": "news",
+      "target_keyword": "Claude Opus 4.7 GPT-5.5 비교",
+      "secondary_keywords": [
+        "Claude Opus 4.7 출시",
+        "GPT-5.5 vs Claude",
+        "AI 에이전트 모델 비교 2026",
+        "Anthropic OpenAI 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "anthropic.com/news/claude-opus-4-7, aicloudit.com GPT-5.5 vs Opus 4.7 분석",
+      "added_at": "2026-04-29",
+      "status": "queued",
+      "notes": "Opus 4.7 GA 후 며칠 만에 GPT-5.5 출시. 양 모델 모두 엔터프라이즈·에이전틱 AI 타겟. 소프트웨어 엔지니어링 벤치마크(SWE-Bench), 속도, 가격, 툴 사용 정확도 관점에서 EM이 알아야 할 실질 차이 분석. 하버드 FAS의 ChatGPT→Claude 교체 사례와 함께 시장 흐름 제시."
+    },
+    {
+      "slug": "anthropic-usage-caps-llm-pricing-disruption-analysis-2026",
+      "title_idea": "Anthropic 사용량 제한 + LLM 가격 붕괴 — 2026년 AI 비용 구조의 변화",
+      "content_type": "news",
+      "target_keyword": "Anthropic 사용량 제한 2026",
+      "secondary_keywords": [
+        "LLM 비용 최적화 2026",
+        "Claude API 가격",
+        "DeepSeek R2 가격",
+        "AI 인프라 비용"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "llm-stats.com/llm-updates, fazm.ai LLM news April 2026, DeepSeek R2 벤치마크",
+      "added_at": "2026-04-29",
+      "status": "queued",
+      "notes": "Anthropic이 수요 급증으로 사용량 제한 도입. 동시에 DeepSeek R2가 서구 모델 대비 70% 저렴한 가격으로 등장. '좋은 수준의 LLM 추론' 비용이 2026년 1월 대비 50% 하락. EM/VPoE가 AI 예산 전략을 재검토해야 하는 시점을 뉴스 분석으로 제시."
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
-title: "Claude Code Routines 실전 구현 가이드 — 스케줄, API, GitHub 이벤트로 AI를 24/7 자동화하는 방법"
-description: "Claude Code Routines는 프롬프트·저장소·커넥터를 한 번만 설정하면 Anthropic 인프라에서 자율 실행됩니다. 스케줄, API 호출, GitHub 이벤트 세 가지 트리거 방식을 실제 설정 과정과 함께 설명하고, PR 리뷰 자동화부터 문서 드리프트 감지까지 실전 사용 사례를 공유합니다."
+title: "Claude Code Routines 실전 — 스케줄·API·GitHub 이벤트 자동화 가이드"
+description: "Claude Code Routines는 프롬프트·저장소·커넥터를 한 번 설정하면 Anthropic 인프라에서 24/7 자율 실행됩니다. 스케줄·API 호출·GitHub 이벤트 세 가지 트리거 방식과 PR 리뷰 자동화, 문서 드리프트 감지까지 실전 사례를 상세히 설명합니다."
 pubDate: '2026-04-22'
 heroImage: '../../../assets/blog/claude-code-routines-practical-guide-2026-hero.jpg'
 tags:

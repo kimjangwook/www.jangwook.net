@@ -1,6 +1,6 @@
 ---
-title: "Claude Code Routines 実践ガイド — スケジュール・API・GitHubイベントでAIを24/7自動化する方法"
-description: "Claude Code Routinesはプロンプト・リポジトリ・コネクタを一度設定するだけで、Anthropicのインフラ上で自律実行されます。スケジュール・API呼び出し・GitHubイベントという3種類のトリガー方式を実際の設定手順とともに解説し、PRレビュー自動化からドキュメントドリフト検出まで実践的なユースケースを紹介します。"
+title: "Claude Code Routines 実践 — スケジュール・API・GitHubイベント自動化"
+description: "Claude Code Routinesはプロンプト・リポジトリを一度設定するだけでAnthropicインフラ上で24/7自律実行されます。スケジュール・API・GitHubイベントの3トリガー方式と設定手順、PRレビュー自動化などの実践例を紹介します。"
 pubDate: '2026-04-22'
 heroImage: '../../../assets/blog/claude-code-routines-practical-guide-2026-hero.jpg'
 tags:

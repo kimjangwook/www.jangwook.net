@@ -1,5 +1,5 @@
 ---
-title: 'Anthropic Message Batches API 실전 가이드 — 대용량 LLM 요청 비용 50% 절감하는 법'
+title: 'Anthropic Message Batches API — LLM 요청 비용 50% 절감 실전 가이드'
 description: 'Anthropic Message Batches API로 최대 100,000개 LLM 요청을 단일 배치로 처리해 비용을 50% 절감하는 실전 가이드. 비동기 폴링·에러 복구 패턴을 Python 코드 예제로 상세 설명. Prompt Caching 병행 시 최대 95% 절감 가능.'
 pubDate: '2026-04-28'
 heroImage: '../../../assets/blog/anthropic-message-batches-api-production-guide-hero.png'

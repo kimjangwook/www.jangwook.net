@@ -1,5 +1,5 @@
 ---
-title: 'Anthropic Message Batches API 実践ガイド — 大量LLMリクエストのコストを50%削減する方法'
+title: 'Anthropic Batches API 実践ガイド — LLMコストを50%削減する方法'
 description: 'Anthropic Message Batches APIで最大100,000件のリクエストを単一バッチで処理し、コストを50%削減する方法をコード例とともに解説。Prompt Cachingとの組み合わせで最大95%削減も可能。'
 pubDate: '2026-04-28'
 heroImage: '../../../assets/blog/anthropic-message-batches-api-production-guide-hero.png'

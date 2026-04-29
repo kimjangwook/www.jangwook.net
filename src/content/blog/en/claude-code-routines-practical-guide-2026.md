@@ -1,6 +1,6 @@
 ---
-title: "Claude Code Routines Practical Guide — How to Automate AI Tasks 24/7 with Schedules, APIs, and GitHub Events"
-description: "Claude Code Routines lets you configure a prompt, repository, and connectors once, then runs autonomously on Anthropic's infrastructure. This guide covers all three trigger types—schedules, API calls, and GitHub events—with real setup steps and practical use cases from PR review automation to documentation drift detection."
+title: "Claude Code Routines — Scheduled AI Automation Guide"
+description: "Claude Code Routines runs AI prompts autonomously on Anthropic's infra via schedule, API, or GitHub events. Setup guide and real automation use cases included."
 pubDate: '2026-04-22'
 heroImage: '../../../assets/blog/claude-code-routines-practical-guide-2026-hero.jpg'
 tags:

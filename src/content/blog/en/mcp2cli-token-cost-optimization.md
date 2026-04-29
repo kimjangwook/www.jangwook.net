@@ -156,7 +156,7 @@ Difference: 237,160,000 tokens/day
 At Claude Sonnet 4.6 pricing ($3/MTok): ~$711/day saved, ~$21,000/month
 ```
 
-Beyond cost, keeping the context window clean directly affects **model reasoning quality and latency**.
+Beyond cost, keeping the context window clean directly affects **model reasoning quality and latency**. For a practical guide on tracking these cost and quality metrics together in production, see [AI Agent Observability in Production](/en/blog/en/ai-agent-observability-production-guide).
 
 ### Understanding the Trade-offs
 
@@ -233,7 +233,7 @@ The problem mcp2cli solves is simple but real. As the MCP ecosystem matures and 
 - <strong>80+ tools</strong>: Monthly costs start to look noticeably different
 - <strong>120+ tools</strong>: This becomes a survival strategy, not just optimization
 
-Beyond token savings, keeping the context window clean has a positive effect on actual model reasoning quality. Reducing noise in the context window is becoming as important as prompt engineering itself.
+Beyond token savings, keeping the context window clean has a positive effect on actual model reasoning quality. Reducing noise in the context window is becoming as important as prompt engineering itself. For another major lever on LLM cost reduction, the [Claude API Prompt Caching guide](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide) covers complementary optimization strategies.
 
 ---
 

@@ -99,7 +99,7 @@ Developers and engineers ask technical questions or share opinions on Stack Over
 
 <strong>Internal Information Exposure</strong>: Employee technical questions and discussions can indirectly reveal the infrastructure, architecture, and technical challenges they're working with.
 
-<strong>Social Engineering</strong>: Based on identified employees' online activity patterns, sophisticated phishing attacks become possible.
+<strong>Social Engineering</strong>: Based on identified employees' online activity patterns, sophisticated phishing attacks become possible. AI coding tool [prompt injection threats](/en/blog/en/roguepilot-copilot-prompt-injection-security) follow a similar attack vector worth understanding alongside this one.
 
 ### Weakening Whistleblower Protection
 
@@ -138,7 +138,7 @@ The first step is <strong>alerting team members to this threat</strong>. Many de
 
 <strong>Metadata Minimization</strong>: Minimize supplementary information like posting time, IP address, and browser information. Recommend VPN usage, Tor browser, and privacy-focused browsers.
 
-<strong>Account Separation Principle</strong>: Completely separate accounts for work-related and personal activities. Establish policies prohibiting identical email addresses or similar usernames across accounts.
+<strong>Account Separation Principle</strong>: Completely separate accounts for work-related and personal activities. Establish policies prohibiting identical email addresses or similar usernames across accounts. For a broader AI security governance framework, the [NIST AI Agent Security Standards](/en/blog/en/nist-ai-agent-security-standards) guide provides a solid foundation.
 
 ### 3. Policy Framework
 
@@ -188,7 +188,7 @@ LLM-based deanonymization isn't used solely for harm.
 
 <strong>Negative Abuse</strong>: It can be weaponized for stalking, doxxing, activist repression, corporate surveillance, and government surveillance.
 
-While the technology itself is neutral, <strong>the current defense capabilities lag far behind attack capabilities</strong>. Attackers can execute large-scale deanonymization at low cost, while defenders must respond individually — an asymmetric structure.
+While the technology itself is neutral, <strong>the current defense capabilities lag far behind attack capabilities</strong>. Attackers can execute large-scale deanonymization at low cost, while defenders must respond individually — an asymmetric structure. [Enterprise AI distillation attacks and defense strategies](/en/blog/en/ai-distillation-attacks-enterprise-defense) document another asymmetric threat following a similar pattern.
 
 ## Conclusion
 

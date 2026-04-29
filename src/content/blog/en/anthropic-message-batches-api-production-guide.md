@@ -1,6 +1,6 @@
 ---
-title: 'Anthropic Message Batches API Production Guide — Cut LLM Costs 50% at Scale'
-description: 'A hands-on guide to Anthropic Message Batches API: batch up to 100,000 Claude requests in a single call and cut costs by 50%. With Prompt Caching stacked on top, up to 95% savings is achievable. Includes working Node.js and Python code examples.'
+title: 'Anthropic Message Batches API — Cut LLM Costs 50% at Scale'
+description: 'Batch 100,000 Claude requests in one call, cutting LLM costs 50%. Covers async polling, error recovery, and Prompt Caching. Python and Node.js examples included.'
 pubDate: '2026-04-28'
 heroImage: '../../../assets/blog/anthropic-message-batches-api-production-guide-hero.png'
 tags:

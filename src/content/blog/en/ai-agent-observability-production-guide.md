@@ -40,7 +40,7 @@ relatedPosts:
       zh: NIST安全标准和可观测性共同构成企业AI代理治理的基础
 ---
 
-After deploying AI agents to production, the two questions that come up most often are: "Why did it give that response?" and "How much did that cost?" If you can't answer both of these quickly in a multi-agent system, you've already lost control of it.
+After deploying AI agents to production, the two questions that come up most often are: "Why did it give that response?" and "How much did that cost?" If you can't answer both of these quickly in a multi-agent system, you've already lost control of it. The more complex your [multi-agent orchestration architecture](/en/blog/en/multi-agent-orchestration-improvement), the more critical observability becomes.
 
 In 2026, AI agent observability has moved from nice-to-have to non-negotiable. It's no longer about collecting logs — it's about understanding reasoning chains, tool call flows, cost attribution, and quality degradation as an integrated monitoring practice. For Engineering Managers and CTOs, the ability to make agent behavior transparent is becoming a core operational competency.
 
@@ -118,6 +118,8 @@ Key metric categories to track in an agent system:
 - Average tokens per request (input/output separated)
 - Cost distribution by model
 - Total cost per agent execution
+
+For agents using MCP tools, [cutting MCP token costs by 96–99% with mcp2cli](/en/blog/en/mcp2cli-token-cost-optimization) is a key lever for improving cost metrics.
 
 **Quality Metrics**
 - Tool call success rate
@@ -320,4 +322,4 @@ Recommended adoption sequence:
 3. **1 month**: Metrics dashboard + alert design
 4. **Quarterly**: Evaluation (Eval) pipeline build-out
 
-Production AI system reliability doesn't start with a better model. It starts with better observation.
+Production AI system reliability doesn't start with a better model. It starts with better observation. On the cost optimization side, the [Claude API Prompt Caching guide](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide) covers complementary strategies worth pairing with your observability stack.
