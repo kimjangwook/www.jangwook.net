@@ -1,0 +1,363 @@
+---
+title: 'PydanticAI実践チュートリアル — FastAPI感覚で型安全なAIエージェントを作る方法'
+description: 'PydanticAI 1.88.0を実際にインストールし、TestModel、output_type、@agent.tool、マルチプロバイダー切り替えを直接テストした結果です。result_type→output_type変更のような実際の罠とFunctionModelテスト戦略も含みます。'
+pubDate: '2026-04-29'
+heroImage: '../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-hero.jpg'
+tags:
+  - python
+  - pydantic-ai
+  - ai-agent
+relatedPosts:
+  - slug: python-ai-agent-library-comparison-2026
+    score: 0.92
+    reason:
+      ko: 이 튜토리얼에서 PydanticAI를 골랐다면, 비교 포스트가 왜 이 라이브러리가 Instructor나 Smolagents와 다른지 정확히 짚어준다.
+      ja: このチュートリアルでPydanticAIを選んだなら、比較ポストがInstructorやSmolagentsとの違いを明確に説明してくれる。
+      en: If you chose PydanticAI after this tutorial, the comparison post explains precisely why it differs from Instructor or Smolagents.
+      zh: 如果在本教程后选择了PydanticAI，比较文章能精确说明它与Instructor或Smolagents的区别。
+  - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
+    score: 0.85
+    reason:
+      ko: PydanticAI로 단일 에이전트를 만들었다면, 다음 질문은 오케스트레이션 프레임워크와 어떻게 조합하느냐다. LangGraph·CrewAI 비교가 그 답을 제시한다.
+      ja: PydanticAIで単体エージェントを作ったなら、次の問いはオーケストレーションフレームワークとどう組み合わせるかだ。LangGraph・CrewAI比較がその答えを示す。
+      en: Once you've built a single agent with PydanticAI, the next question is how to combine it with orchestration frameworks. The LangGraph·CrewAI comparison answers that.
+      zh: 用PydanticAI构建了单个智能体后，下一个问题是如何与编排框架结合。LangGraph·CrewAI对比文章给出了答案。
+  - slug: production-grade-ai-agent-design-principles
+    score: 0.82
+    reason:
+      ko: 에이전트가 TestModel을 넘어 실제 LLM과 연동되는 순간부터 프로덕션 설계 원칙이 필요해진다. 이 포스트에서 재시도 전략과 관찰 가능성을 다룬다.
+      ja: エージェントがTestModelを超えて実際のLLMと連携する瞬間から、本番設計原則が必要になる。このポストではリトライ戦略と可観測性を扱う。
+      en: The moment your agent moves beyond TestModel to a real LLM, production design principles become essential. This post covers retry strategy and observability.
+      zh: 当智能体从TestModel转向真实LLM时，生产设计原则就变得必不可少。这篇文章涵盖重试策略和可观测性。
+  - slug: context-engineering-production-ai-agents
+    score: 0.78
+    reason:
+      ko: PydanticAI의 system_prompt와 의존성 주입 패턴이 컨텍스트 엔지니어링과 어떻게 연결되는지 이 포스트에서 확인할 수 있다.
+      ja: PydanticAIのsystem_promptと依存性注入パターンがコンテキストエンジニアリングとどう結びつくかをこのポストで確認できる。
+      en: This post shows how PydanticAI's system_prompt and dependency injection patterns connect to context engineering.
+      zh: 这篇文章展示了PydanticAI的system_prompt和依赖注入模式如何与上下文工程相结合。
+  - slug: vercel-ai-sdk-claude-streaming-agent-2026
+    score: 0.74
+    reason:
+      ko: Python 백엔드가 아닌 TypeScript/Next.js 스택에서 비슷한 스트리밍 에이전트를 만들고 싶다면, Vercel AI SDK 포스트가 정확히 그 경로를 다룬다.
+      ja: PythonバックエンドではなくTypeScript/Next.jsスタックで同様のストリーミングエージェントを作りたいなら、Vercel AI SDKポストがまさにその経路を扱っている。
+      en: If you want to build a similar streaming agent on a TypeScript/Next.js stack instead of Python, the Vercel AI SDK post covers exactly that path.
+      zh: 如果想在TypeScript/Next.js技术栈而非Python后端构建类似的流式智能体，Vercel AI SDK文章正好涵盖了这条路径。
+---
+
+```python
+from pydantic_ai import Agent
+from pydantic_ai.models.test import TestModel
+
+agent = Agent('test', system_prompt='Pythonの専門家')
+result = agent.run_sync('f-stringと.format()どっちが速いですか？', model=TestModel())
+print(result.output)  # → success (no tool calls)
+```
+
+このコードがAPIキーなしで動くのを初めて見たとき、少し驚いた。FastAPIを初めて使ったときのように — 構造があまりにも直感的で、むしろ疑いたくなった。PydanticAIはそういうライブラリだ。
+
+正直、最初は「Instructorにラッパーかぶせただけじゃないの？」と思っていた。実際に使ってみて考えが変わった。FastAPIのように型システムを中心に設計されたフレームワークで、AIエージェントにその哲学をそのまま持ち込んだものだ。今日は直接インストールして動かした結果をまとめる。失敗したテストも含めて。
+
+## なぜPydanticAIなのか — 既存比較との違う視点
+
+以前の[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)でPydanticAI・Instructor・Smolagentsを扱った。あのポストが「何を選ぶか」を扱うなら、今回のポストは「PydanticAIで実際にどう作るか」だ。実装方法が目的だ。
+
+主な違いをまとめると:
+
+| ライブラリ | 核心的な役割 | エージェントループ | 型安全性 |
+|-----------|----------|-----------------|---------|
+| Instructor | LLM出力のパース | なし | 構造化出力のみ |
+| PydanticAI | エージェントフレームワーク | 完全サポート | 入出力+ツール全体 |
+| LangGraph | オーケストレーション | グラフベース | 弱い |
+| CrewAI | マルチエージェントチーム | ロールベース | 弱い |
+
+特に2行目が実際に使うときの違いを生む。LLMがツールを呼び出し、その結果を受け取って処理する全ループで型が維持される。ランタイムエラーが開発中のIDEエラーとして前倒しで現れる。
+
+## インストールとPre-requisites
+
+```bash
+pip install pydantic-ai
+```
+
+今日時点(2026年4月29日)の最新バージョンは1.88.0だ。インストールは簡単。
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install pydantic-ai
+```
+
+プロバイダー別の追加パッケージは使う時点でインストールすれば良い:
+
+```bash
+pip install pydantic-ai[anthropic]   # Claude使用時
+pip install pydantic-ai[openai]       # OpenAI GPT使用時
+pip install pydantic-ai[google]       # Gemini使用時
+```
+
+**Requirements**: Python 3.9以上、pydantic v2(v1は非サポート)。
+
+## 最初のエージェント: TestModelで構造検証
+
+エージェントを作るとき私が最初に使うパターンだ。実際のAPIを繋げる前にエージェントの構造が正しいか確認する。
+
+```python
+from pydantic_ai import Agent
+from pydantic_ai.models.test import TestModel
+
+agent = Agent(
+    'test',
+    system_prompt='あなたはPythonコードレビュアーです。簡潔に答えてください。',
+)
+
+result = agent.run_sync(
+    'f-stringと.format()どっちが速いですか？',
+    model=TestModel()  # APIキー不要
+)
+
+print(result.output)    # → "success (no tool calls)"
+print(result.usage())   # → RunUsage(input_tokens=64, output_tokens=4, requests=1)
+```
+
+`TestModel`はAPIを呼び出さない。エージェントの構造、ツール設定、依存性注入が正しいか確認するためのテスト専用モデルだ。CIパイプラインでAPIコストなしにエージェントロジックを検証する時に活用する。
+
+実際のClaudeを繋げるにはモデル文字列一つを変えるだけ:
+
+```python
+import os
+os.environ['ANTHROPIC_API_KEY'] = 'sk-ant-...'
+
+# 開発中: TestModel
+result = agent.run_sync('コードレビューして', model=TestModel())
+
+# 本番: 実際のClaude
+result = agent.run_sync('コードレビューして', model='anthropic:claude-sonnet-4-6')
+```
+
+エージェントのコードはそのままで、モデルだけ交換する。
+
+## 構造化出力: output_typeでPydanticモデルを返す
+
+ここからPydanticAIの核心だ。LLMが自由テキストではなくPydanticモデルインスタンスを返すよう強制できる。
+
+**重要 — v1.88.0 Breaking Change**: `result_type`パラメータが`output_type`に変更された。古いドキュメントやチュートリアルをそのまま使うと次のエラーが出る:
+
+```
+pydantic_ai.exceptions.UserError: Unknown keyword arguments: `result_type`
+```
+
+直接遭遇した。`inspect.signature(Agent.__init__)`で確認したら`output_type`が正しいパラメータ名だった。
+
+```python
+from pydantic import BaseModel, Field
+from pydantic_ai import Agent
+
+class CodeReview(BaseModel):
+    severity: str = Field(description="'low', 'medium', 'high'のいずれか")
+    issues: list[str] = Field(description="発見された問題のリスト")
+    suggestions: list[str] = Field(description="改善提案のリスト")
+    score: int = Field(ge=0, le=100, description="コード品質スコア(0-100)")
+
+review_agent = Agent(
+    'anthropic:claude-sonnet-4-6',
+    output_type=CodeReview,  # ← v1.88.0: result_typeではない
+    system_prompt='Pythonコードをレビューして構造化フィードバックを提供してください。',
+)
+
+result = review_agent.run_sync('''
+def get_user(id):
+    db = connect()
+    return db.query(f"SELECT * FROM users WHERE id={id}")
+''')
+
+print(type(result.output))       # → <class '__main__.CodeReview'>
+print(result.output.severity)    # → 'high'
+print(result.output.score)       # → 25
+print(result.output.issues[0])   # → 'SQLインジェクション脆弱性'
+```
+
+返り値がdictやstrではなくPydanticモデルインスタンスだ。`result.output.`を入力するとIDEが`severity`、`issues`などをオートコンプリートしてくれる。
+
+自動リトライメカニズムも重要だ:
+
+```python
+review_agent = Agent(
+    'anthropic:claude-sonnet-4-6',
+    output_type=CodeReview,
+    retries=3,       # 出力バリデーション失敗時に最大3回リトライ
+    output_retries=2
+)
+```
+
+3回全て失敗すると`UnexpectedModelBehavior`例外が発生する。
+
+## @agent.toolと依存性注入 — FastAPIのDepends()と同じパターン
+
+```python
+from pydantic_ai import Agent, RunContext
+
+class AppDeps:
+    def __init__(self, db_url: str, user_id: int):
+        self.db_url = db_url
+        self.user_id = user_id
+
+agent = Agent(
+    'anthropic:claude-sonnet-4-6',
+    deps_type=AppDeps,
+    system_prompt='タスク管理エージェントです。',
+)
+
+# 非同期ツール
+@agent.tool
+async def get_pending_tasks(ctx: RunContext[AppDeps], limit: int = 5) -> list[dict]:
+    """未完了タスクのリストを取得します"""
+    return [
+        {"id": f"task_{i}", "title": f"タスク {i}", "priority": "high"}
+        for i in range(limit)
+    ]
+
+# 同期ツール
+@agent.tool
+def calculate_priority_score(
+    ctx: RunContext[AppDeps],
+    urgency: int,
+    importance: int
+) -> float:
+    """タスクの優先度スコアを計算します"""
+    return urgency * 0.6 + importance * 0.4
+
+deps = AppDeps(db_url="postgresql://localhost/taskdb", user_id=42)
+result = agent.run_sync("緊急タスクで最優先のものを選んで", deps=deps)
+```
+
+`@agent.tool`は関数シグネチャとdocstringを読んでLLMに渡すJSON Schemaを自動生成する。
+
+メッセージフローは4段階で追跡できる:
+
+```
+1. ModelRequest  → system_prompt + user_prompt
+2. ModelResponse → ToolCallPart(tool_name='get_pending_tasks', ...)
+3. ModelRequest  → ToolReturnPart(content=[{...}])
+4. ModelResponse → 最終応答
+```
+
+![PydanticAI実行ログ — サンドボックステスト結果](../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-log.jpg)
+
+## TestModel vs FunctionModel — テスト戦略
+
+サンドボックスでテストしていてTestModelの重要な制限を発見した。
+
+TestModelは`str`フィールドに`'a'`、`int`フィールドに`0`のような最小値を返す。厳格なカスタムvalidatorがあると失敗する:
+
+```python
+from pydantic_ai.exceptions import UnexpectedModelBehavior
+
+class UserProfile(BaseModel):
+    email: str
+
+    @field_validator('email')
+    @classmethod
+    def valid_email(cls, v):
+        if '@' not in v:  # TestModelが'a'を返すので常に失敗
+            raise ValueError('@が必要')
+        return v
+
+agent = Agent('test', output_type=UserProfile, retries=3)
+try:
+    result = agent.run_sync('...', model=TestModel())
+except UnexpectedModelBehavior as e:
+    print(f"例外: {e}")
+    # → Exceeded maximum retries (3) for output validation
+```
+
+`FunctionModel`を使えば解決する:
+
+```python
+from pydantic_ai.models.function import FunctionModel
+from pydantic_ai.messages import ModelMessage, ModelResponse, TextPart
+from pydantic_ai.settings import ModelSettings
+import json
+
+def mock_valid_response(messages: list[ModelMessage], settings: ModelSettings) -> ModelResponse:
+    data = {"email": "test@example.com", "name": "テスト"}
+    return ModelResponse(parts=[TextPart(content=json.dumps(data))])
+
+agent = Agent(FunctionModel(mock_valid_response), output_type=UserProfile)
+result = agent.run_sync("...")
+assert result.output.email == "test@example.com"
+```
+
+テスト戦略の整理:
+
+```python
+class TestMyAgent:
+    def test_structure(self):
+        """エージェント構造検証 — TestModel"""
+        result = my_agent.run_sync("テスト", model=TestModel())
+        assert result is not None
+
+    def test_tool_called(self):
+        """ツール呼び出し確認 — TestModel + call_tools"""
+        result = my_agent.run_sync(
+            "DBからデータを取得して",
+            deps=test_deps,
+            model=TestModel(call_tools=['query_database'])
+        )
+        assert 'query_database' in result.output
+
+    def test_with_mock(self):
+        """応答処理ロジック — FunctionModel"""
+        def mock_fn(messages, settings):
+            return ModelResponse(parts=[TextPart(content='{"email": "t@t.com"}')])
+
+        result = my_agent.run_sync("...", model=FunctionModel(mock_fn))
+        assert result.output.email == "t@t.com"
+```
+
+## マルチプロバイダー切り替え
+
+エージェントのコードを変えずにモデル文字列だけで別プロバイダーに切り替えられる:
+
+```python
+review_agent = Agent(
+    system_prompt='シニアPython開発者としてコードをレビューします。',
+    output_type=CodeReview,
+)
+
+# 実行時にモデルを指定
+result_claude = review_agent.run_sync(code, model='anthropic:claude-sonnet-4-6')
+result_gpt    = review_agent.run_sync(code, model='openai:gpt-4o')
+result_gemini = review_agent.run_sync(code, model='google-gla:gemini-2.5-flash')
+result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
+```
+
+[コンテキストエンジニアリングの観点](/ja/blog/ja/context-engineering-production-ai-agents)から見ると、`system_prompt`と`output_type`スキーマがコンテキストの核心で、その上でモデルを交換可能にするのが良い設計だ。
+
+## 実際に使ってみて — 率直な評価
+
+**良かった点**:
+- 型安全性が実際に差を生む。`output_type`スキーマを変更するとIDEが即座に関連エラーを捕捉する
+- `@agent.tool`の自動JSON Schema生成が便利だ。ツール仕様を手動で再作成する必要がない
+- TestModel + FunctionModelの組み合わせでAPIなしにエージェントロジックを完全に単体テストできる
+
+**残念な点**:
+- v1.88.0まで`result_type → output_type`のような非互換な変更が頻繁にある。ライブラリがまだ安定化段階にない。実際に`inspect.signature(Agent.__init__)`でパラメータを確認しなければならない状況が生じた
+- ストリーミング構造化出力はまだベータ版だ。LLMが部分的に応答を生成している間にPydanticモデルとしてパースするのは難しく、現在の実装が安定していない
+- Pydantic v2に強く結びついている。v1のレガシーコードベースならマイグレーションコストを考慮する必要がある
+
+[プロダクションAIエージェント設計原則](/ja/blog/ja/production-grade-ai-agent-design-principles)と合わせて読むと、エージェントフレームワーク選択においてどんな基準が重要かがより明確になる。
+
+## 次のステップ
+
+TypeScriptスタックなら[Vercel AI SDKでClaudeストリーミングエージェントを作る方法](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026)がPythonと似たアプローチを提供する。
+
+PydanticAIを実際のプロダクションに適用するなら、推奨する順番:
+
+1. `output_type`で返却スキーマを最初に定義する
+2. `deps_type`でDB接続、HTTPクライアントを依存性として管理する
+3. `@agent.tool`で外部API連携を追加する
+4. TestModel → FunctionModel → 実際のモデルの順で段階的にテストする
+5. `retries=3`と`output_retries=2`でリトライ戦略を設定する
+6. バージョンを固定する(`pydantic-ai==1.88.0`)。変更が頻繁なライブラリだ
+
+PydanticAI GitHubリポジトリは急速に更新されている。公式ドキュメントよりCHANGELOGを先に読む習慣がプロダクティビティを向上させる。
