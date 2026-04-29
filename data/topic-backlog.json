@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-28T23:07:00Z",
+  "updated_at": "2026-04-29T15:43:00Z",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -893,7 +893,7 @@
       "priority": 1,
       "source": "PydanticAI GitHub(16K+ stars), Real Python, DataCamp 튜토리얼 리서치 (2026-04-28)",
       "added_at": "2026-04-29",
-      "status": "queued",
+      "status": "done",
       "notes": "16K+ GitHub stars, FastAPI 팀과 같은 Pydantic 팀 작품. Claude 포함 멀티 프로바이더 지원. 스트리밍 구조화 출력, 타입 검증 실패 시 자동 재시도가 핵심 차별점. vercel-ai-sdk 포스트와 다른 파이썬 생태계 관점."
     },
     {
