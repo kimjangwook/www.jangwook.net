@@ -1,6 +1,8 @@
 ---
 title: 'EffiFlow Part 2: Skillsの自動検出と58%トークン削減キャッシング'
-description: Skillsの自動検出メカニズムとCommandsの統合。キャッシング戦略で58%トークン削減達成プロセス
+description: >-
+  Claude CodeのSkills自動検出メカニズムを詳細に分析し、Commands統合方法をステップ別に解説。
+  プロンプトキャッシングでトークンコストを58%削減したEffiFlowブログ自動化システムの実装プロセスと検証済みの改善成果を紹介します。
 pubDate: '2025-11-15'
 heroImage: ../../../assets/blog/effiflow-part2-skills-commands-hero.jpg
 tags:

@@ -113,7 +113,7 @@ resource "aws_lambda_function" "api_handler" {
 }
 ```
 
-2025年現在、ClaudeやGPT-4などのLLMはTerraformコード生成において<strong>ほぼプロダクションレベル</strong>の成果物を作成できます。自然言語で要件を説明すれば、完成度の高いIaC設定を得ることができます。
+2025年現在、[Claude](/ja/blog/ja/anthropic-code-execution-mcp)やGPT-4などのLLMはTerraformコード生成において<strong>ほぼプロダクションレベル</strong>の成果物を作成できます。自然言語で要件を説明すれば、完成度の高いIaC設定を得ることができます。
 
 ### 2. インフラ状態管理
 
@@ -153,7 +153,7 @@ variable "allowed_ips" {
 
 ### デプロイ自動化
 
-複雑なデプロイプロセスを単一スクリプトで抽象化します。
+複雑なデプロイプロセスを単一スクリプトで抽象化します。[GitHub Actionsと組み合わせる](/ja/blog/ja/github-actions-claude-code-ci-automation)ことで、完全に自動化されたCI/CDパイプラインを構築できます。
 
 ```bash
 #!/bin/bash
@@ -309,7 +309,7 @@ workers/
 4. Lambdaキューマッピング更新
 5. `./deploy.sh`実行
 
-Terraformのモジュール化により<strong>新しいサービス追加が非常に簡単</strong>です。
+Terraformのモジュール化により<strong>新しいサービス追加が非常に簡単</strong>です。各ワーカーに[型安全なAIエージェントロジック](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を実装することで、より堅牢なシステムを構築できます。
 
 ## 実践適用結果
 

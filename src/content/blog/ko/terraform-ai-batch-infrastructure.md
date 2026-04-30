@@ -113,7 +113,7 @@ resource "aws_lambda_function" "api_handler" {
 }
 ```
 
-2025년 현재, Claude나 GPT-4 같은 LLM들은 Terraform 코드 생성에서 <strong>거의 프로덕션 수준</strong>의 결과물을 만들어냅니다. 자연어로 요구사항을 설명하면 완성도 높은 IaC 설정을 얻을 수 있습니다.
+2025년 현재, [Claude](/ko/blog/ko/anthropic-code-execution-mcp)나 GPT-4 같은 LLM들은 Terraform 코드 생성에서 <strong>거의 프로덕션 수준</strong>의 결과물을 만들어냅니다. 자연어로 요구사항을 설명하면 완성도 높은 IaC 설정을 얻을 수 있습니다.
 
 ### 2. 인프라 상태 관리
 
@@ -153,7 +153,7 @@ variable "allowed_ips" {
 
 ### 배포 자동화
 
-복잡한 배포 과정을 단일 스크립트로 추상화합니다.
+복잡한 배포 과정을 단일 스크립트로 추상화합니다. [GitHub Actions와 조합](/ko/blog/ko/github-actions-claude-code-ci-automation)하면 완전 자동화된 CI/CD 파이프라인을 구성할 수 있습니다.
 
 ```bash
 #!/bin/bash
@@ -309,7 +309,7 @@ workers/
 4. Lambda 큐 매핑 업데이트
 5. `./deploy.sh` 실행
 
-Terraform의 모듈화 덕분에 <strong>새로운 서비스 추가가 매우 간단</strong>합니다.
+Terraform의 모듈화 덕분에 <strong>새로운 서비스 추가가 매우 간단</strong>합니다. 각 워커에 [타입 안전한 AI 에이전트 로직](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 적용하면 더욱 안정적인 시스템을 구축할 수 있습니다.
 
 ## 실전 적용 결과
 

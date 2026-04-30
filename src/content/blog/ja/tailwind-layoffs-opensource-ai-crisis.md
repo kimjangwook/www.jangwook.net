@@ -97,7 +97,7 @@ graph TD
     既存モデル -.->|"AI登場により転換"| 現在モデル
 ```
 
-<strong>核心的な問題</strong>：AIコーディングアシスタント（GitHub Copilot、Cursor、Claudeなど）が開発者の質問に直接回答することで、開発者はもはや公式ドキュメントを訪問する必要がなくなりました。ドキュメントトラフィックが有料製品発見の唯一の経路だったため、トラフィック減少は即座に売上減少につながりました。
+<strong>核心的な問題</strong>：AIコーディングアシスタント（GitHub Copilot、Cursor、[Claude](/ja/blog/ja/github-actions-claude-code-ci-automation)など）が開発者の質問に直接回答することで、開発者はもはや公式ドキュメントを訪問する必要がなくなりました。ドキュメントトラフィックが有料製品発見の唯一の経路だったため、トラフィック減少は即座に売上減少につながりました。
 
 ### LLMフレンドリーなドキュメント要求の拒否
 
@@ -209,7 +209,7 @@ graph LR
 
 ### 2. AIエージェント/プラグインエコシステムへの参入
 
-AIツールと<strong>協力</strong>して新しい収益源を創出：
+[AIツール](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026)と<strong>協力</strong>して新しい収益源を創出：
 
 ```typescript
 // 仮想のTailwind AIプラグイン例
@@ -229,7 +229,7 @@ const tailwindPlugin = {
 };
 ```
 
-<strong>戦略</strong>：AIコーディングアシスタントの<strong>プラグイン/拡張</strong>として存在し、AIがコードを生成する際に自然にプレミアム製品を推奨するようにする。
+<strong>戦略</strong>：AIコーディングアシスタントの<strong>プラグイン/拡張</strong>として存在し、[AIがコードを生成する際](/ja/blog/ja/webmcp-chrome-146-ai-tool-server)に自然にプレミアム製品を推奨するようにする。
 
 ### 3. エンタープライズライセンシングの強化
 

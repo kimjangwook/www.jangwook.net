@@ -113,7 +113,7 @@ resource "aws_lambda_function" "api_handler" {
 }
 ```
 
-截至2025年，Claude和GPT-4等LLM在Terraform代码生成方面已经能够产出<strong>接近生产级别</strong>的成果。用自然语言描述需求，即可获得高完成度的IaC配置。
+截至2025年，[Claude](/zh/blog/zh/anthropic-code-execution-mcp)和GPT-4等LLM在Terraform代码生成方面已经能够产出<strong>接近生产级别</strong>的成果。用自然语言描述需求，即可获得高完成度的IaC配置。
 
 ### 2. 基础设施状态管理
 
@@ -153,7 +153,7 @@ variable "allowed_ips" {
 
 ### 部署自动化
 
-将复杂的部署过程抽象为单个脚本。
+将复杂的部署过程抽象为单个脚本。与[GitHub Actions结合](/zh/blog/zh/github-actions-claude-code-ci-automation)，可以构建完全自动化的CI/CD流水线。
 
 ```bash
 #!/bin/bash
@@ -309,7 +309,7 @@ workers/
 4. 更新Lambda队列映射
 5. 运行`./deploy.sh`
 
-得益于Terraform的模块化，<strong>添加新服务非常简单</strong>。
+得益于Terraform的模块化，<strong>添加新服务非常简单</strong>。在每个Worker中实现[类型安全的AI Agent逻辑](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)，可以构建更稳定的系统。
 
 ## 实践应用成果
 

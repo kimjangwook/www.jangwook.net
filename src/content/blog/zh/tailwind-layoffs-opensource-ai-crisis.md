@@ -95,7 +95,7 @@ graph TD
     原有模式 -.->|"因AI出现而转变"| 现有模式
 ```
 
-<strong>核心问题</strong>：AI编程助手（GitHub Copilot、Cursor、Claude等）现在直接回答开发者的问题，开发者不再需要访问官方文档。由于文档流量是发现付费产品的唯一途径，流量下降直接导致收入下降。
+<strong>核心问题</strong>：AI编程助手（GitHub Copilot、Cursor、[Claude](/zh/blog/zh/github-actions-claude-code-ci-automation)等）现在直接回答开发者的问题，开发者不再需要访问官方文档。由于文档流量是发现付费产品的唯一途径，流量下降直接导致收入下降。
 
 ### 拒绝LLM友好的文档请求
 
@@ -207,7 +207,7 @@ graph LR
 
 ### 2. 进入AI代理/插件生态系统
 
-与AI工具<strong>合作</strong>创造新的收入来源：
+与[AI工具](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)<strong>合作</strong>创造新的收入来源：
 
 ```typescript
 // 假设的Tailwind AI插件示例
@@ -227,7 +227,7 @@ const tailwindPlugin = {
 };
 ```
 
-<strong>策略</strong>：作为AI编程助手的<strong>插件/扩展</strong>存在，让AI在生成代码时自然推荐高级产品。
+<strong>策略</strong>：作为AI编程助手的<strong>插件/扩展</strong>存在，让[AI在生成代码时](/zh/blog/zh/webmcp-chrome-146-ai-tool-server)自然推荐高级产品。
 
 ### 3. 加强企业许可
 

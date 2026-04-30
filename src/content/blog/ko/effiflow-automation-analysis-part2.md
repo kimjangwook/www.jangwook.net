@@ -1,6 +1,6 @@
 ---
 title: 'EffiFlow Part 2: Skills 자동 발견과 58% 토큰 절감 캐싱'
-description: Skills 자동 발견 메커니즘과 Commands 통합. 캐싱 전략으로 58% 토큰 절감 달성 과정
+description: Claude Code의 Skills 자동 발견 메커니즘을 심층 분석하고 Commands 통합 방법을 단계별로 설명합니다. 프롬프트 캐싱 전략으로 토큰 비용을 58% 절감한 EffiFlow 블로그 자동화 시스템의 구체적 구현 과정과 수치로 검증된 개선 성과를 공유합니다.
 pubDate: '2025-11-15'
 heroImage: ../../../assets/blog/effiflow-part2-skills-commands-hero.jpg
 tags:

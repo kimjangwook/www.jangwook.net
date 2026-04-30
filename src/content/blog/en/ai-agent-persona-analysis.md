@@ -1,8 +1,10 @@
 ---
 title: What Happens When You Assign Gender and Personas to AI Agents?
 description: >-
-  Psychological effects and optimal design strategies for AI agent personas
-  revealed through 120+ research studies and industry best practices
+  Does assigning a gender or persona to an AI agent affect its performance?
+  Analyzing 120+ psychology and NLP studies, we reveal the empirical effects
+  of expert personas, emotional expression, and role assignment, then provide
+  optimal agent design strategies by task type — coding, creative, and analysis.
 pubDate: '2025-10-19'
 heroImage: ../../../assets/blog/ai-agent-persona-analysis-hero.jpg
 tags:

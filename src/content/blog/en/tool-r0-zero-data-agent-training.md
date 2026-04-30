@@ -66,7 +66,7 @@ The core capability of an AI agent is <strong>"the ability to accurately invoke 
 
 ## Why This Paper Matters Right Now
 
-The AI agent market is experiencing rapid growth centered on tool-calling (Function Calling / Tool Use) capabilities. OpenAI's Function Calling, Anthropic's Tool Use, Google's Gemini Function Calling — all frontier models ship with this capability as a core feature.
+The [AI agent](/en/blog/en/multi-agent-orchestration-routing) market is experiencing rapid growth centered on tool-calling (Function Calling / Tool Use) capabilities. OpenAI's Function Calling, Anthropic's Tool Use, Google's Gemini Function Calling — all frontier models ship with this capability as a core feature.
 
 However, equipping open-source or domain-specific models with this capability has required <strong>expensive training data construction</strong>:
 
@@ -221,13 +221,13 @@ graph TD
 
 ### 2. Reassessing Small Models
 
-Tool-R0 achieves 2x performance improvement even on a 0.5B model. This means that <strong>viable tool-calling agents can be built for edge devices and cost-sensitive environments</strong>. This is particularly significant for startups with limited GPU budgets or private cloud environments.
+Tool-R0 achieves 2x performance improvement even on a 0.5B model. This means that <strong>viable [tool-calling agents](/en/blog/en/prompt-engineering-agent-improvements) can be built for edge devices and cost-sensitive environments</strong>. This is particularly significant for startups with limited GPU budgets or private cloud environments.
 
 ### 3. Automating Curriculum Learning
 
 The most impressive aspect is that <strong>the learning curriculum is generated automatically</strong>. Previously, humans had to manually sort data from easy to hard examples, but Tool-R0's Generator automatically detects the Solver's current skill level and generates problems at the appropriate difficulty.
 
-This opens the door to <strong>autonomously operating the training pipeline for AI systems</strong>.
+This opens the door to <strong>autonomously operating the training pipeline for [AI systems](/en/blog/en/self-healing-ai-systems)</strong>.
 
 ## Context Within ICLR 2026 Agent Research Trends
 

@@ -1,6 +1,6 @@
 ---
 title: 给 AI 智能体赋予性别和人格会发生什么?
-description: 基于120余项研究揭示 AI 智能体人格设计的心理学效应及针对不同任务的最优设计策略
+description: 为AI代理赋予性别或角色人设真的会影响工作表现吗？通过分析120余项心理学与NLP研究，揭示专家人设、情感表达、角色赋予的实证效果，并提供编程、创作、摘要等不同任务类型的最优Agent人设设计策略。
 pubDate: '2025-10-19'
 heroImage: ../../../assets/blog/ai-agent-persona-analysis-hero.jpg
 tags:

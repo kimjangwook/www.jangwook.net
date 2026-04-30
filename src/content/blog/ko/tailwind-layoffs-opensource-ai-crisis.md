@@ -97,7 +97,7 @@ graph TD
     기존모델 -.->|"AI 등장으로 전환"| 현재모델
 ```
 
-<strong>핵심 문제</strong>: AI 코딩 어시스턴트(GitHub Copilot, Cursor, Claude 등)가 개발자의 질문에 직접 답변하면서, 개발자들이 더 이상 공식 문서를 방문할 필요가 없어졌습니다. 문서 트래픽이 유료 제품 발견의 유일한 경로였기 때문에, 트래픽 감소는 곧 매출 감소로 이어졌습니다.
+<strong>핵심 문제</strong>: AI 코딩 어시스턴트(GitHub Copilot, Cursor, [Claude](/ko/blog/ko/github-actions-claude-code-ci-automation) 등)가 개발자의 질문에 직접 답변하면서, 개발자들이 더 이상 공식 문서를 방문할 필요가 없어졌습니다. 문서 트래픽이 유료 제품 발견의 유일한 경로였기 때문에, 트래픽 감소는 곧 매출 감소로 이어졌습니다.
 
 ### LLM 친화적 문서 요청의 거절
 
@@ -209,7 +209,7 @@ graph LR
 
 ### 2. AI 에이전트/플러그인 생태계 진입
 
-AI 도구들과 <strong>협력</strong>하여 새로운 수익원 창출:
+[AI 도구들](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)과 <strong>협력</strong>하여 새로운 수익원 창출:
 
 ```typescript
 // 가상의 Tailwind AI 플러그인 예시
@@ -229,7 +229,7 @@ const tailwindPlugin = {
 };
 ```
 
-<strong>전략</strong>: AI 코딩 어시스턴트의 <strong>플러그인/확장</strong>으로 존재하여, AI가 코드를 생성할 때 자연스럽게 프리미엄 제품을 추천하도록 함.
+<strong>전략</strong>: AI 코딩 어시스턴트의 <strong>플러그인/확장</strong>으로 존재하여, [AI가 코드를 생성](/ko/blog/ko/webmcp-chrome-146-ai-tool-server)할 때 자연스럽게 프리미엄 제품을 추천하도록 함.
 
 ### 3. 엔터프라이즈 라이선싱 강화
 

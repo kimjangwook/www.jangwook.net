@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-30T15:30:00Z",
+  "updated_at": "2026-04-30",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -967,6 +967,42 @@
       "added_at": "2026-04-29",
       "status": "queued",
       "notes": "Anthropic이 수요 급증으로 사용량 제한 도입. 동시에 DeepSeek R2가 서구 모델 대비 70% 저렴한 가격으로 등장. '좋은 수준의 LLM 추론' 비용이 2026년 1월 대비 50% 하락. EM/VPoE가 AI 예산 전략을 재검토해야 하는 시점을 뉴스 분석으로 제시."
+    },
+    {
+      "slug": "deepseek-v4-preview-1t-moe-open-source-frontier-2026",
+      "title_idea": "DeepSeek V4 Preview 분석: 1.6조 파라미터 MoE로 오픈소스가 클로즈드 프론티어를 따라잡다",
+      "content_type": "news",
+      "target_keyword": "DeepSeek V4",
+      "secondary_keywords": [
+        "오픈소스 LLM",
+        "MoE 아키텍처",
+        "LLM 비용",
+        "1M 컨텍스트"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "CNBC 2026-04-24, MIT Technology Review, Apiyi.com Blog",
+      "added_at": "2026-04-30",
+      "status": "queued",
+      "notes": "4월 24일 공개된 DeepSeek V4-Pro(1.6T 파라미터, /bin/zsh.14/M tokens)와 V4-Flash(284B). 1M 컨텍스트, 오픈웨이트, 기존 V3 대비 KV 캐시 10% 수준. 클로즈드 모델 대비 압도적 비용 우위가 개발팀 멀티모델 라우팅 전략에 미치는 영향 분석."
+    },
+    {
+      "slug": "mcp-linux-foundation-agentic-ai-standard-97million-2026",
+      "title_idea": "MCP 9,700만 설치 달성 + 리눅스 재단 합류: 에이전트 AI 프로토콜 전쟁이 끝났다",
+      "content_type": "news",
+      "target_keyword": "MCP 리눅스 재단",
+      "secondary_keywords": [
+        "Model Context Protocol",
+        "Agentic AI Foundation",
+        "MCP 표준",
+        "AI 에이전트 프로토콜"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Anthropic Blog, GitHub Blog, DEV Community",
+      "added_at": "2026-04-30",
+      "status": "queued",
+      "notes": "MCP가 2026년 3월 월간 SDK 다운로드 9,700만 돌파. Anthropic이 리눅스 재단 산하 Agentic AI Foundation에 기증. 단일 벤더 거버넌스 리스크 해소, 엔터프라이즈 도입 가속. OpenAI(2025.3), Microsoft(2025.7), AWS(2025.11) 차례로 도입한 흐름과 함께 분석."
     }
   ]
 }
