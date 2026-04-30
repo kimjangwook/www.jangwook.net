@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-29T23:07:00Z",
+  "updated_at": "2026-04-30T15:30:00Z",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -857,8 +857,8 @@
       "priority": 3,
       "source": "GitHub Actions 문서 + Claude Code Routines 포스트 연계",
       "added_at": "2026-04-27",
-      "status": "queued",
-      "notes": "CI/CD 통합 상록수 주제. Claude Code Routines와 차별화: Actions 워크플로우 파일 중심 구현"
+      "status": "done",
+      "notes": "CI/CD 통합 상록수 주제. Claude Code Routines와 차별화: Actions 워크플로우 파일 중심 구현 | 발행 완료: 2026-04-30"
     },
     {
       "slug": "claude-api-tool-use-strict-mode-production-guide",
