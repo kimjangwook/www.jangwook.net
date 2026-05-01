@@ -109,7 +109,7 @@ Practical steps:
 
 ### 3. Context Quarantine
 
-In multi-agent systems, design each sub-agent to hold only the context relevant to its role. An orchestrator that retains all information and passes only the necessary slices to each agent is the effective pattern.
+In multi-agent systems, design each sub-agent to hold only the context relevant to its role. An orchestrator that retains all information and passes only the necessary slices to each agent is the effective pattern. [Claude Code Agentic Workflow Patterns — 5 Types](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) demonstrates how to implement this orchestrator-subagent architecture in practice.
 
 Practical steps:
 - When passing information between agents, pass summaries — not raw full content
@@ -179,7 +179,7 @@ When introducing context engineering to your team, verify the following:
 
 **Operations:**
 - [ ] Are context-precision and context-recall metrics measured regularly?
-- [ ] Is there monitoring to detect when context poisoning occurs?
+- [ ] Is there monitoring to detect when context poisoning occurs? (See [Production AI Agent Observability Guide](/en/blog/en/ai-agent-observability-production-guide) for concrete monitoring implementation approaches.)
 - [ ] Is the token usage vs. performance trade-off reviewed periodically?
 
 ---

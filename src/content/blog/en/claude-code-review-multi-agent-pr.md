@@ -59,7 +59,7 @@ PR Received
               └── Final review comment (PR overview + inline annotations)
 ```
 
-Agents run in parallel, and an aggregator agent consolidates results, removes duplicates, and sorts by severity. Developers see the most critical issues first.
+Agents run in parallel, and an aggregator agent consolidates results, removes duplicates, and sorts by severity. Developers see the most critical issues first. For teams looking to apply similar parallel agent execution patterns directly in their workflows, [Claude Code Agentic Workflow Patterns — 5 Types](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) provides concrete implementation examples.
 
 Average time per review: **~20 minutes**. This is a deliberate design choice: depth over speed.
 
@@ -138,7 +138,7 @@ Claude Code Review isn't positioned as a replacement — it's a **complement**. 
 
 ## Availability and Roadmap
 
-Currently available as a **Research Preview** for Team and Enterprise plan users, operating through GitHub integration. GitLab support is planned for a future expansion.
+Currently available as a **Research Preview** for Team and Enterprise plan users, operating through GitHub integration. GitLab support is planned for a future expansion. Teams already running a [GitHub Actions + Claude Code PR auto-review pipeline](/en/blog/en/github-actions-claude-code-ci-automation) can layer Code Review on top for compounding coverage across both automation and deep semantic analysis.
 
 As a Research Preview, both features and pricing may change before General Availability.
 

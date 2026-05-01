@@ -1,6 +1,6 @@
 ---
 title: OpenAI AgentKit完全ガイド パート2：実践応用と高度なパターン
-description: エンタープライズグレードのマルチエージェントシステム設計から本番デプロイまで、AgentKit実践マスターガイド
+description: 'OpenAI AgentKit実践ガイド2部：並列オーケストレーション、ハンドオフパターン、エラー復旧、本番デプロイまで。エンタープライズ環境でAgentKitを安定運用するための高度なアーキテクチャパターンとコード例を網羅。'
 pubDate: '2025-10-21'
 heroImage: ../../../assets/blog/openai-agentkit-part2-hero.jpg
 tags:

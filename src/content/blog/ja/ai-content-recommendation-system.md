@@ -1,6 +1,6 @@
 ---
 title: Claude LLMで構築するインテリジェントコンテンツ推薦システム
-description: 単純なタグマッチングを超えた意味論的理解による高精度な推薦を提供するAIベースのブログ推薦システム構築ガイド
+description: 'Claude LLM基盤のコンテンツ推薦システム構築実践ガイド。タグマッチングを超えた意味論的理解で精度の高い推薦を実現するAIアーキテクチャ設計、コスト最適化キャッシュ戦略、多言語パイプライン実装をコードとともに解説。'
 pubDate: '2025-10-12'
 heroImage: ../../../assets/blog/ai-content-recommendation-hero.jpg
 tags:

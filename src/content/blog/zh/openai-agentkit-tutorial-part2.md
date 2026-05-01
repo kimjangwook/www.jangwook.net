@@ -1,6 +1,6 @@
 ---
 title: OpenAI AgentKit完全指南第2部：实战应用与高级模式
-description: 从企业级多智能体系统设计到生产环境部署，AgentKit实战掌握指南
+description: 'OpenAI AgentKit实战指南第2部：并行编排、交接模式、错误恢复与生产部署。涵盖企业级高级架构模式与代码示例，助你稳定可扩展地运营AgentKit系统。'
 pubDate: '2025-10-21'
 heroImage: ../../../assets/blog/openai-agentkit-part2-hero.jpg
 tags:

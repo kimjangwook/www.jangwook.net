@@ -59,7 +59,7 @@ PR 수신
               └── 최종 리뷰 코멘트 (PR 개요 + 인라인 어노테이션)
 ```
 
-에이전트들은 병렬로 실행되며, 집계 에이전트가 결과를 종합해 중복을 제거하고 심각도 순으로 정렬한다. 이 덕분에 개발자는 가장 중요한 이슈부터 볼 수 있다.
+에이전트들은 병렬로 실행되며, 집계 에이전트가 결과를 종합해 중복을 제거하고 심각도 순으로 정렬한다. 이 덕분에 개발자는 가장 중요한 이슈부터 볼 수 있다. 이와 같은 병렬 에이전트 실행 패턴을 팀 워크플로우에 직접 적용하는 방법은 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 구체적인 구현 예시와 함께 다룬다.
 
 리뷰 한 건당 평균 소요 시간은 **약 20분**이다. "빠르게" 아니라 "깊게" 보겠다는 명확한 설계 철학이다.
 
@@ -138,7 +138,7 @@ Claude Code Review는 기존 도구를 대체하는 것이 아니라 **보완재
 
 ## 가용성과 로드맵
 
-현재 **Team 및 Enterprise 플랜** 사용자를 대상으로 Research Preview로 제공된다. GitHub 통합을 통해 동작하며, GitLab 지원은 추후 확장될 예정이다.
+현재 **Team 및 Enterprise 플랜** 사용자를 대상으로 Research Preview로 제공된다. GitHub 통합을 통해 동작하며, GitLab 지원은 추후 확장될 예정이다. [GitHub Actions와 Claude Code를 연동한 PR 자동 리뷰 파이프라인](/ko/blog/ko/github-actions-claude-code-ci-automation)을 이미 구성한 팀이라면, Code Review 기능을 그 위에 추가 레이어로 조합하는 방식이 시너지를 낸다.
 
 Research Preview 단계이므로 기능이 변경될 수 있고, 프라이싱도 GA 전에 조정될 가능성이 있다.
 

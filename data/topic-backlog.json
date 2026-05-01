@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-04-30",
+  "updated_at": "2026-05-01",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1003,6 +1003,60 @@
       "added_at": "2026-04-30",
       "status": "queued",
       "notes": "MCP가 2026년 3월 월간 SDK 다운로드 9,700만 돌파. Anthropic이 리눅스 재단 산하 Agentic AI Foundation에 기증. 단일 벤더 거버넌스 리스크 해소, 엔터프라이즈 도입 가속. OpenAI(2025.3), Microsoft(2025.7), AWS(2025.11) 차례로 도입한 흐름과 함께 분석."
+    },
+    {
+      "slug": "google-adk-vs-langgraph-agent-framework-comparison-2026",
+      "title_idea": "Google ADK vs LangGraph — 에이전트 프레임워크 선택 가이드 2026",
+      "content_type": "comparison",
+      "target_keyword": "Google ADK LangGraph 비교",
+      "secondary_keywords": [
+        "Google Agent Development Kit",
+        "에이전트 프레임워크 선택",
+        "멀티에이전트 프레임워크 2026",
+        "ADK vs LangGraph 한국어"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "ZenML Blog, Google Cloud Medium, Towards AI (2026-04 ~ 05)",
+      "added_at": "2026-05-01",
+      "status": "queued",
+      "notes": "Google ADK가 2026년 에이전트 프레임워크 시장에 새로운 경쟁자로 등장. LangGraph와의 근본적 차이(그래프 vs 이벤트 드리븐, Gemini 최적화 vs 모델 무관)를 비교하는 수요가 급증. A2A 프로토콜 네이티브 지원이 핵심 차별점. 기존 ai-agent-framework-comparison-2026 포스트에서 다루지 않은 ADK 깊이 있게 다루면 차별화 가능."
+    },
+    {
+      "slug": "claude-sonnet-46-vs-opus-47-developer-choice-guide",
+      "title_idea": "Claude Sonnet 4.6 vs Opus 4.7 — 개발자를 위한 실전 모델 선택 가이드",
+      "content_type": "comparison",
+      "target_keyword": "Claude Sonnet 4.6 Opus 4.7 비교",
+      "secondary_keywords": [
+        "Anthropic 모델 선택 2026",
+        "Claude 모델 비교",
+        "LLM 비용 대비 성능",
+        "Claude Opus 4.7 업그레이드"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "NxCode, MindStudio, BenchLM.ai, Anthropic 공식 (2026-04-16 Opus 4.7 출시)",
+      "added_at": "2026-05-01",
+      "status": "queued",
+      "notes": "Opus 4.7이 2026-04-16 릴리즈 이후 'Sonnet vs Opus 선택' 검색 수요 폭증. SWE-bench에서 Sonnet 4.6이 1.2%p 차이(79.6 vs 80.8%)로 5배 저렴. GPQA Diamond에서는 17.2%p 차이. 실제 개발 시나리오별 (코딩, 에이전트, 과학 추론) 선택 기준 정리하면 높은 검색 가치. anthropic-claude-opus-4-7-managed-agents-2026 포스트와 내부링크 연결 가능."
+    },
+    {
+      "slug": "langgraph-vs-crewai-production-battle-2026",
+      "title_idea": "LangGraph vs CrewAI 프로덕션 전쟁 2026 — 팀 규모별 최적 선택 기준",
+      "content_type": "comparison",
+      "target_keyword": "LangGraph CrewAI 프로덕션 비교 2026",
+      "secondary_keywords": [
+        "LangGraph vs CrewAI 차이",
+        "멀티에이전트 프레임워크 선택",
+        "CrewAI 프로덕션 안정성",
+        "LangGraph 학습 곡선"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "DEV Community, Medium Data Science Collective, OpenAgents.org (2026-02 ~ 04)",
+      "added_at": "2026-05-01",
+      "status": "queued",
+      "notes": "기존 ai-agent-framework-comparison-2026 포스트는 Dapr 포함 광범위 비교. 이번엔 LangGraph vs CrewAI에 집중, 팀 규모별(1인 vs 10명 vs 엔터프라이즈) 선택 가이드로 차별화. AutoGen은 사실상 유지보수 모드 진입, MS가 AG2로 이동. CrewAI는 데모 2-3일 vs LangGraph 10-14일 학습 곡선 차이가 핵심 포인트."
     }
   ]
 }
