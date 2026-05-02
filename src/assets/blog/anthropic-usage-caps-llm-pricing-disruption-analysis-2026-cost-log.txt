@@ -1,0 +1,40 @@
+Claude API Cost Analysis — Sandbox Verification
+Run date: 2026-05-02
+Model: Python cost calculation script (no API key required)
+Pricing source: platform.claude.com/docs/en/about-claude/pricing
+
+===== Verified Pricing (2026) =====
+Claude Opus 4.7: $5/$25 per 1M tokens (input/output)
+Fast Mode:       $30/$150 per 1M tokens (6x multiplier)
+Cached input:    $0.50 per 1M tokens (90% discount)
+Batch discount:  50% off all costs
+
+===== Scenario 1: OpenClaw Heavy User (was on Claude Max $200/month) =====
+Simulation: 500 agent sessions/day × 30 days
+  Each session: 2,000 input + 500 output tokens
+
+Opus 4.7 standard (no optimization):     $337.50/month
+Opus 4.7 Fast Mode (6x):               $2,025.00/month
+Opus 4.7 + 70% cache hit:               $243.00/month
+Sonnet 4.6 + 70% cache hit:             $145.80/month
+Haiku 4.5 + 70% cache hit:               $48.60/month
+
+Cost increase vs $200 Max plan: 1.7x (base) to 10.1x (fast mode)
+
+===== Scenario 2: Moderate Developer (50 sessions/day) =====
+Sonnet 4.6, 50 sessions/day × 30 days:
+  No optimization:     $20.25/month
+  With 80% cache:      $13.77/month
+  Cache + batch API:    $6.88/month
+
+===== Scenario 3: Cost-Optimized Strategy (Sonnet 4.6 + 75% cache + batch) =====
+   10 sessions/day →   $1.42/month
+   50 sessions/day →   $7.09/month
+  100 sessions/day →  $14.18/month
+  500 sessions/day →  $70.88/month
+ 1000 sessions/day → $141.75/month
+
+===== Conclusion =====
+Heavy OpenClaw users on $200 Max are likely to see 1.7x-10x cost increase
+depending on Fast Mode usage. Smart optimization (Sonnet + caching + batch)
+can bring costs BELOW the old $200 flat rate for most use cases.
