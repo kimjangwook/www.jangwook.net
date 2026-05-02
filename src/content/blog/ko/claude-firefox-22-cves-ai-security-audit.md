@@ -59,7 +59,7 @@ relatedPosts:
 
 ## 2주, 6,000개 C++ 파일, 22개 CVE
 
-2026년 3월 6일, Anthropic과 Mozilla는 AI 모델을 활용한 브라우저 보안 감사 결과를 공동 발표했습니다. Claude Opus 4.6이 Firefox의 C++ 코드베이스 약 <strong>6,000개 파일</strong>을 분석해 <strong>112건의 고유 버그 리포트</strong>를 제출했고, 그 중 <strong>22건이 공식 CVE</strong>로 등록되었습니다.
+2026년 3월 6일, Anthropic과 Mozilla는 AI 모델을 활용한 브라우저 보안 감사 결과를 공동 발표했습니다. [Claude Opus 4.6](/ko/blog/ko/anthropic-claude-opus-4-7-managed-agents-2026)이 Firefox의 C++ 코드베이스 약 <strong>6,000개 파일</strong>을 분석해 <strong>112건의 고유 버그 리포트</strong>를 제출했고, 그 중 <strong>22건이 공식 CVE</strong>로 등록되었습니다.
 
 심각도 분류는 다음과 같습니다:
 
@@ -141,7 +141,7 @@ graph TD
 - 결과를 기존 보안팀이 검증하여 신뢰도 측정
 
 <strong>Phase 2 (자동화, 1〜2개월)</strong>:
-- CI/CD 파이프라인에 AI 보안 스캔 단계 추가
+- [CI/CD 파이프라인에 AI 보안 스캔 단계 추가](/ko/blog/ko/github-actions-claude-code-ci-automation)
 - PR 단위로 변경된 코드에 대한 자동 분석
 - Slack/이메일 알림 체계 구축
 
@@ -175,7 +175,7 @@ Anthropic의 사례를 기준으로 추정하면:
 이번 사례는 단발성 이벤트가 아니라 <strong>AI 기반 보안 감사</strong>가 산업 표준이 되어가는 흐름의 일부입니다:
 
 - <strong>Google Project Zero</strong>는 이미 LLM을 활용한 취약점 탐지 연구를 진행 중
-- <strong>GitHub Copilot</strong>의 보안 리뷰 기능이 강화되고 있고
+- <strong>[GitHub Copilot](/ko/blog/ko/roguepilot-copilot-prompt-injection-security)</strong>의 보안 리뷰 기능이 강화되고 있고
 - <strong>NIST</strong>의 AI 에이전트 보안 표준은 역으로 AI를 보안 도구로 활용하는 가이드라인도 포함
 
 EM/CTO 입장에서 중요한 질문은 "AI 보안 감사를 도입할 것인가"가 아니라 <strong>"언제, 어떤 순서로 도입할 것인가"</strong>입니다. Firefox처럼 수십 년간 검증된 코드베이스에서도 AI가 새로운 취약점을 찾아낸다면, 여러분의 코드베이스는 어떨까요?

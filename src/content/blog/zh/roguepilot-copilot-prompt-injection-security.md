@@ -59,7 +59,7 @@ draft: true
 
 2026 年 2 月，安全公司 Orca Security 公开了 <strong>RoguePilot</strong> 漏洞。在 GitHub Codespaces 中运行的 GitHub Copilot 会自动处理 Issue 中隐藏的恶意提示，使攻击者<strong>无需任何特殊权限</strong>就能劫持仓库。这是一个严重的安全威胁。
 
-该漏洞展示了一种新的攻击模式——<strong>被动提示注入（Passive Prompt Injection）</strong>。它提醒我们，AI 编码工具与团队开发工作流集成得越深，安全风险就越大。
+该漏洞展示了一种新的攻击模式——<strong>被动提示注入（Passive Prompt Injection）</strong>。它提醒我们，[AI 编码工具](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026)与团队开发工作流集成得越深，安全风险就越大。
 
 本文将分析 RoguePilot 的技术机制，并为工程管理者（EM）总结需要应用于团队的 AI 编码工具安全指南。
 
@@ -141,7 +141,7 @@ graph TD
 
 <strong>文档自动分析</strong>：文档元数据中的恶意命令可能导致数据泄露
 
-<strong>代码审查自动化</strong>：PR 评论中的提示可能操纵 CI/CD 流水线
+<strong>[代码审查自动化](/zh/blog/zh/github-actions-claude-code-ci-automation)</strong>：PR 评论中的提示可能操纵 CI/CD 流水线
 
 ## 工程管理者应应用于团队的安全指南
 
@@ -235,7 +235,7 @@ Microsoft 在 Orca Security 的负责任披露后修补了该漏洞。但<strong
 
 AI 编码工具自动收集外部数据作为上下文的架构本身就为被动提示注入创造了攻击面。RoguePilot 只是一个案例，类似的漏洞可能出现在所有 AI 编码工具中。
 
-<strong>Claude Code 的方法</strong>为这个问题提供了一个解决方案。Claude Code 采用了不自动执行外部数据、要求用户明确批准的设计。基于 `.claude/settings.json` 的白名单权限管理和通过 Hook 系统进行执行前验证都是典型例子。
+<strong>[Claude Code](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types) 的方法</strong>为这个问题提供了一个解决方案。Claude Code 采用了不自动执行外部数据、要求用户明确批准的设计。基于 `.claude/settings.json` 的白名单权限管理和通过 Hook 系统进行执行前验证都是典型例子。
 
 ## 结论
 

@@ -55,7 +55,7 @@ relatedPosts:
 
 ## 「エージェントを増やすほど性能が上がる」— この信念は間違っていた
 
-2026年のAIエージェント分野には、ほぼドグマのように固まった信念があります。<strong>「より多くのエージェントを並列投入すれば性能が上がる。」</strong> LangGraph、CrewAI、AutoGenといったマルチエージェントフレームワークが爆発的に成長し、企業がエージェントチーム構成への投資を増やしているのも、この前提の上に成り立っています。
+2026年のAIエージェント分野には、ほぼドグマのように固まった信念があります。<strong>「より多くのエージェントを並列投入すれば性能が上がる。」</strong> [LangGraph、CrewAI、AutoGen](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)といったマルチエージェントフレームワークが爆発的に成長し、企業がエージェントチーム構成への投資を増やしているのも、この前提の上に成り立っています。
 
 Google Researchはこの前提を正面から覆す研究を発表しました。<strong>「Towards a Science of Scaling Agent Systems」</strong>論文は、180のエージェント設定を定量評価した結果、<strong>マルチエージェントシステムが特定条件下で単一エージェントと比較して最大70%性能を低下させる</strong>という事実を発見しました。
 
@@ -100,7 +100,7 @@ graph TD
 - <strong>Decentralized</strong>：エージェント同士がP2P方式で相互通信
 - <strong>Hybrid</strong>：集中型と分散型の混合構造
 
-評価にはOpenAI GPT、Google Gemini、Anthropic Claudeの3つのLLMファミリーが使用され、特定モデルに偏らない結果を導き出しました。
+評価にはOpenAI GPT、Google Gemini、[Anthropic Claude](/ja/blog/ja/anthropic-claude-opus-4-7-managed-agents-2026)の3つのLLMファミリーが使用され、特定モデルに偏らない結果を導き出しました。
 
 ---
 
@@ -162,7 +162,7 @@ graph TD
     end
 ```
 
-その理由は、各エージェントが独立してツールを呼び出す際に発生する<strong>コンテキスト同期コスト</strong>によるものです。エージェントAがAPIを呼び出した結果をエージェントBが知る必要がある場合、この情報を共有するプロセスでLLMコンテキストウィンドウと推論コストが急増します。
+その理由は、各エージェントが独立してツールを呼び出す際に発生する<strong>コンテキスト同期コスト</strong>によるものです。エージェントAがAPIを呼び出した結果をエージェントBが知る必要がある場合、この情報を共有するプロセスでLLMコンテキストウィンドウと[推論コスト](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)が急増します。
 
 ---
 

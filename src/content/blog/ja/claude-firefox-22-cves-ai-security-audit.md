@@ -59,7 +59,7 @@ relatedPosts:
 
 ## 2週間、6,000個のC++ファイル、22件のCVE
 
-2026年3月6日、AnthropicとMozillaはAIモデルを活用したブラウザセキュリティ監査の結果を共同発表しました。Claude Opus 4.6がFirefoxのC++コードベース約<strong>6,000個のファイル</strong>を分析し、<strong>112件のユニークなバグレポート</strong>を提出しました。そのうち<strong>22件が正式なCVE</strong>として登録されています。
+2026年3月6日、AnthropicとMozillaはAIモデルを活用したブラウザセキュリティ監査の結果を共同発表しました。[Claude Opus 4.6](/ja/blog/ja/anthropic-claude-opus-4-7-managed-agents-2026)がFirefoxのC++コードベース約<strong>6,000個のファイル</strong>を分析し、<strong>112件のユニークなバグレポート</strong>を提出しました。そのうち<strong>22件が正式なCVE</strong>として登録されています。
 
 深刻度の分類は以下の通りです：
 
@@ -141,7 +141,7 @@ graph TD
 - 結果を既存のセキュリティチームが検証し、信頼度を測定
 
 <strong>Phase 2（自動化、1〜2ヶ月）</strong>：
-- CI/CDパイプラインにAIセキュリティスキャンのステップを追加
+- [CI/CDパイプラインにAIセキュリティスキャンのステップを追加](/ja/blog/ja/github-actions-claude-code-ci-automation)
 - PR単位で変更されたコードに対する自動解析
 - Slack/メール通知体制の構築
 
@@ -175,7 +175,7 @@ Anthropicの事例を基準にした推定は以下の通りです：
 今回の事例は一過性のイベントではなく、<strong>AIベースのセキュリティ監査</strong>が業界標準へと進化していく流れの一部です：
 
 - <strong>Google Project Zero</strong>はすでにLLMを活用した脆弱性検出の研究を進めています
-- <strong>GitHub Copilot</strong>のセキュリティレビュー機能が強化されつつあります
+- <strong>[GitHub Copilot](/ja/blog/ja/roguepilot-copilot-prompt-injection-security)</strong>のセキュリティレビュー機能が強化されつつあります
 - <strong>NIST</strong>のAIエージェントセキュリティ標準は、逆にAIをセキュリティツールとして活用するためのガイドラインも含んでいます
 
 EM/CTOの立場から重要な問いは「AIセキュリティ監査を導入するかどうか」ではなく、<strong>「いつ、どのような順序で導入するか」</strong>です。Firefoxのように数十年にわたり検証されてきたコードベースでもAIが新たな脆弱性を発見できるのであれば、皆さんのコードベースではどうでしょうか。

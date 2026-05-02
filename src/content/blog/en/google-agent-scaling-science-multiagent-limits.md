@@ -59,7 +59,7 @@ relatedPosts:
 
 ## "More agents means better performance" — This assumption is wrong
 
-In 2026, the AI agent field has adopted what amounts to a dogma: <strong>"Deploy more agents in parallel and performance improves."</strong> The explosive growth of multi-agent frameworks like LangGraph, CrewAI, and AutoGen — and the surge in enterprise investment in agent teams — all rest on this assumption.
+In 2026, the AI agent field has adopted what amounts to a dogma: <strong>"Deploy more agents in parallel and performance improves."</strong> The explosive growth of multi-agent frameworks like [LangGraph, CrewAI, and AutoGen](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) — and the surge in enterprise investment in agent teams — all rest on this assumption.
 
 Google Research has published findings that directly challenge this premise. The paper <strong>"Towards a Science of Scaling Agent Systems"</strong> evaluated 180 agent configurations and found that <strong>multi-agent systems can degrade performance by up to 70% compared to a single agent under specific conditions</strong>.
 
@@ -104,7 +104,7 @@ graph TD
 - <strong>Decentralized</strong>: Agents communicate peer-to-peer
 - <strong>Hybrid</strong>: Mixed centralized and decentralized structure
 
-Three LLM families — OpenAI GPT, Google Gemini, and Anthropic Claude — were used to prevent bias toward any particular model.
+Three LLM families — OpenAI GPT, Google Gemini, and [Anthropic Claude](/en/blog/en/anthropic-claude-opus-4-7-managed-agents-2026) — were used to prevent bias toward any particular model.
 
 ---
 
@@ -168,7 +168,7 @@ graph TD
     end
 ```
 
-The cause is the <strong>context synchronization cost</strong> that occurs when each agent independently calls tools. If Agent B needs to know the result of Agent A's API call, sharing that information rapidly inflates LLM context window usage and inference costs.
+The cause is the <strong>context synchronization cost</strong> that occurs when each agent independently calls tools. If Agent B needs to know the result of Agent A's API call, sharing that information rapidly inflates LLM context window usage and [inference costs](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek).
 
 ---
 

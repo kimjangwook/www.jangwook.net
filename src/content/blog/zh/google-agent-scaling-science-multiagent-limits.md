@@ -55,7 +55,7 @@ relatedPosts:
 
 ## "增加更多智能体性能就会提升" — 这个信念是错误的
 
-2026年的AI智能体领域存在一个几乎已成教条的信念：<strong>"并行部署更多智能体，性能就会提升。"</strong> LangGraph、CrewAI、AutoGen等多智能体框架的爆炸式增长，以及企业在智能体团队构建上的投资增加，都建立在这一假设之上。
+2026年的AI智能体领域存在一个几乎已成教条的信念：<strong>"并行部署更多智能体，性能就会提升。"</strong> [LangGraph、CrewAI、AutoGen](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)等多智能体框架的爆炸式增长，以及企业在智能体团队构建上的投资增加，都建立在这一假设之上。
 
 Google Research发表了一项正面推翻这一假设的研究。论文<strong>《Towards a Science of Scaling Agent Systems》</strong>对180个智能体配置进行了定量评估，发现<strong>多智能体系统在特定条件下可能比单一智能体性能降低多达70%</strong>。
 
@@ -100,7 +100,7 @@ graph TD
 - <strong>Decentralized</strong>：智能体以P2P方式相互通信
 - <strong>Hybrid</strong>：集中式与分散式的混合结构
 
-评估使用了OpenAI GPT、Google Gemini、Anthropic Claude三个LLM系列，以避免对特定模型的偏向。
+评估使用了OpenAI GPT、Google Gemini、[Anthropic Claude](/zh/blog/zh/anthropic-claude-opus-4-7-managed-agents-2026)三个LLM系列，以避免对特定模型的偏向。
 
 ---
 
@@ -164,7 +164,7 @@ graph TD
     end
 ```
 
-原因在于每个智能体独立调用工具时产生的<strong>上下文同步成本</strong>。如果智能体B需要知道智能体A的API调用结果，共享这一信息的过程会急剧增加LLM上下文窗口使用和推理成本。
+原因在于每个智能体独立调用工具时产生的<strong>上下文同步成本</strong>。如果智能体B需要知道智能体A的API调用结果，共享这一信息的过程会急剧增加LLM上下文窗口使用和[推理成本](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)。
 
 ---
 

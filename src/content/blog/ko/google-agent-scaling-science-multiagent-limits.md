@@ -55,7 +55,7 @@ relatedPosts:
 
 ## "에이전트를 더 추가하면 더 좋아진다" — 이 믿음이 틀렸다
 
-2026년 AI 에이전트 분야에는 거의 도그마처럼 굳어진 믿음이 있습니다. <strong>"병렬로 더 많은 에이전트를 투입하면 성능이 오른다."</strong> LangGraph, CrewAI, AutoGen 등 멀티에이전트 프레임워크들이 폭발적으로 성장한 것도, 기업들이 에이전트 팀 구성에 투자를 늘리는 것도 이 가정 위에 서 있습니다.
+2026년 AI 에이전트 분야에는 거의 도그마처럼 굳어진 믿음이 있습니다. <strong>"병렬로 더 많은 에이전트를 투입하면 성능이 오른다."</strong> [LangGraph, CrewAI, AutoGen](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) 등 멀티에이전트 프레임워크들이 폭발적으로 성장한 것도, 기업들이 에이전트 팀 구성에 투자를 늘리는 것도 이 가정 위에 서 있습니다.
 
 Google Research는 이 가정을 정면으로 뒤집는 연구를 발표했습니다. <strong>「Towards a Science of Scaling Agent Systems」</strong> 논문은 180개의 에이전트 설정을 정량적으로 평가한 결과, <strong>멀티에이전트 시스템이 특정 조건에서 단일 에이전트 대비 최대 70% 성능을 저하시킨다</strong>는 사실을 발견했습니다.
 
@@ -100,7 +100,7 @@ graph TD
 - <strong>Decentralized</strong>: 에이전트들이 P2P 방식으로 상호 통신
 - <strong>Hybrid</strong>: 중앙집중 + 분산의 혼합 구조
 
-평가에는 OpenAI GPT, Google Gemini, Anthropic Claude 세 가지 LLM 패밀리가 사용되어 특정 모델에 편향되지 않은 결과를 도출했습니다.
+평가에는 OpenAI GPT, Google Gemini, [Anthropic Claude](/ko/blog/ko/anthropic-claude-opus-4-7-managed-agents-2026) 세 가지 LLM 패밀리가 사용되어 특정 모델에 편향되지 않은 결과를 도출했습니다.
 
 ---
 
@@ -250,7 +250,7 @@ graph TD
 
 **2. 모델 능력 진화**: Claude 4, GPT-5 등 더 강력한 모델이 등장하면서 "단일 에이전트 베이스라인 ~45%" 임계값 자체가 변화할 수 있습니다. 고성능 모델에서는 멀티에이전트의 성능 포화 지점이 더 낮을 수도 있습니다.
 
-**3. 비용 최적화 고려 미흡**: 이 연구는 주로 성능(정확도) 관점에서 분석했습니다. 실무에서는 비용 대비 성능이 핵심이므로, 이종 LLM 아키텍처(고성능 모델 + 저비용 모델 조합)와의 상호작용을 추가로 고려해야 합니다.
+**3. 비용 최적화 고려 미흡**: 이 연구는 주로 성능(정확도) 관점에서 분석했습니다. 실무에서는 비용 대비 성능이 핵심이므로, [이종 LLM 아키텍처(고성능 모델 + 저비용 모델 조합)](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)와의 상호작용을 추가로 고려해야 합니다.
 
 ---
 

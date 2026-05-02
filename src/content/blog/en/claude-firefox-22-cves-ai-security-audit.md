@@ -60,7 +60,7 @@ relatedPosts:
 
 ## Two Weeks, 6,000 C++ Files, 22 CVEs
 
-On March 6, 2026, Anthropic and Mozilla jointly announced the results of an AI-driven browser security audit. Claude Opus 4.6 analyzed roughly <strong>6,000 files</strong> in Firefox's C++ codebase, submitting <strong>112 unique bug reports</strong> — of which <strong>22 were registered as official CVEs</strong>.
+On March 6, 2026, Anthropic and Mozilla jointly announced the results of an AI-driven browser security audit. [Claude Opus 4.6](/en/blog/en/anthropic-claude-opus-4-7-managed-agents-2026) analyzed roughly <strong>6,000 files</strong> in Firefox's C++ codebase, submitting <strong>112 unique bug reports</strong> — of which <strong>22 were registered as official CVEs</strong>.
 
 The severity breakdown:
 
@@ -142,7 +142,7 @@ graph TD
 - Have your existing security team validate the results to calibrate trust
 
 <strong>Phase 2 (Automation, 1–2 months)</strong>:
-- Add an AI security scan stage to your CI/CD pipeline
+- [Add an AI security scan stage to your CI/CD pipeline](/en/blog/en/github-actions-claude-code-ci-automation)
 - Automatically analyze changed code on every PR
 - Set up Slack/email alerting workflows
 
@@ -176,7 +176,7 @@ AI auditing does not fully replace human experts, of course. The optimal approac
 This is not an isolated event. It is part of a broader shift toward <strong>AI-driven security auditing</strong> becoming an industry standard:
 
 - <strong>Google Project Zero</strong> is already researching LLM-based vulnerability detection
-- <strong>GitHub Copilot</strong> continues to strengthen its security review features
+- <strong>[GitHub Copilot](/en/blog/en/roguepilot-copilot-prompt-injection-security)</strong> continues to strengthen its security review features
 - <strong>NIST</strong>'s AI agent security standards include guidelines for using AI as a security tool
 
 For EMs and CTOs, the real question is no longer "Should we adopt AI security auditing?" but rather <strong>"When and in what order should we roll it out?"</strong> If AI can find new vulnerabilities in a codebase as thoroughly vetted as Firefox, what might it find in yours?

@@ -59,7 +59,7 @@ relatedPosts:
 
 ## 两周、6,000个C++文件、22个CVE
 
-2026年3月6日，Anthropic与Mozilla联合发布了利用AI模型进行浏览器安全审计的成果。Claude Opus 4.6对Firefox的C++代码库约<strong>6,000个文件</strong>进行了分析，共提交了<strong>112份独立Bug报告</strong>，其中<strong>22个被正式注册为CVE</strong>。
+2026年3月6日，Anthropic与Mozilla联合发布了利用AI模型进行浏览器安全审计的成果。[Claude Opus 4.6](/zh/blog/zh/anthropic-claude-opus-4-7-managed-agents-2026)对Firefox的C++代码库约<strong>6,000个文件</strong>进行了分析，共提交了<strong>112份独立Bug报告</strong>，其中<strong>22个被正式注册为CVE</strong>。
 
 严重程度分类如下：
 
@@ -141,7 +141,7 @@ graph TD
 - 由现有安全团队验证结果，评估可信度
 
 <strong>Phase 2（自动化，1~2个月）</strong>：
-- 在CI/CD流水线中添加AI安全扫描步骤
+- [在CI/CD流水线中添加AI安全扫描步骤](/zh/blog/zh/github-actions-claude-code-ci-automation)
 - 针对PR级别的代码变更进行自动分析
 - 构建Slack/邮件告警体系
 
@@ -175,7 +175,7 @@ graph TD
 此次案例并非孤立事件，而是<strong>AI驱动安全审计</strong>逐步成为行业标准这一趋势的一部分：
 
 - <strong>Google Project Zero</strong>已在开展基于LLM的漏洞检测研究
-- <strong>GitHub Copilot</strong>的安全审查功能持续增强
+- <strong>[GitHub Copilot](/zh/blog/zh/roguepilot-copilot-prompt-injection-security)</strong>的安全审查功能持续增强
 - <strong>NIST</strong>的AI Agent安全标准也包含了将AI作为安全工具使用的指南
 
 对EM/CTO而言，核心问题已不是"是否引入AI安全审计"，而是<strong>"何时、以何种顺序引入"</strong>。如果在Firefox这样经过数十年验证的代码库中AI都能发现新漏洞，那么你的代码库又会如何呢？
