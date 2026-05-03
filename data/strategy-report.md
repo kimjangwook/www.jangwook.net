@@ -4,6 +4,144 @@
 
 ---
 
+## 2026-05-03 주간 리뷰 (5월 1주차)
+
+### 성과 요약
+
+- **이번 주 포스트**: 8개
+- **콘텐츠 믹스**: How-to 62.5% / 뉴스 37.5% / 비교 0% / 시리즈 0%
+- **내부링크 최적화**: 전체 238개 포스트 중 내부링크 0개인 포스트 없음 (100% 커버리지 유지)
+- **크로스포스팅**: dev.to 8/8 (100%) — Hashnode 6/8 (75%)
+
+#### 이번 주 포스트 목록
+
+| 날짜 | 슬러그 | 유형 |
+|------|--------|------|
+| 4/27 | openclaw-codex-nanobot-stack-migration | 뉴스 |
+| 4/28 | anthropic-message-batches-api-production-guide | How-to |
+| 4/29 | pydantic-ai-type-safe-agent-tutorial-2026 | How-to |
+| 4/30 | github-actions-claude-code-ci-automation | How-to |
+| 5/1 | anthropic-claude-opus-4-7-managed-agents-2026 | 뉴스 |
+| 5/2 | anthropic-usage-caps-llm-pricing-disruption-analysis-2026 | 뉴스 |
+| 5/3 | langfuse-self-hosted-llm-tracing-setup-guide-2026 | How-to |
+| 5/3 | claude-api-prompt-caching-cost-optimization-guide | How-to |
+
+---
+
+### 콘텐츠 믹스 분석
+
+| 유형 | 이번 주 | 목표 | 편차 |
+|------|---------|------|------|
+| How-to | 62.5% (5개) | 40% | **+22.5% 과잉** |
+| 뉴스 | 37.5% (3개) | 30% | +7.5% (소폭 과잉) |
+| 비교 | 0% (0개) | 15% | **-15% 완전 부재** |
+| 시리즈 | 0% (0개) | 15% | **-15% ⚠️ 3주 연속 완전 부재** |
+
+**핵심 문제**: 지난 주 비교 3개 집중 문제를 의식해서인지 이번 주는 비교가 아예 0%가 됐다. 진자 운동 패턴이다. 시리즈는 이제 3주 연속 미발행으로, "소프트 우선순위" 처리로는 해결 불가능한 상태에 도달했다.
+
+---
+
+### 스타일 분석 (최근 7개 포스트 리뷰)
+
+**종합 스타일 점수: 8.1 / 10**
+
+#### 지난 주 조정 지침 반영 여부
+
+- **이미지 직후 내러티브 배치**: ✅ 부분 개선. 6/7개 포스트에서 도입 단락이 먼저 등장. pydantic-ai는 코드 블록으로 시작해 차별화 효과 있음
+- **뉴스/분석형 1인칭 삽입**: ✅ 명확히 개선. usage-caps "나는 이 소식을 OpenClaw 커뮤니티에서 먼저 봤다", claude-opus-4-7 "솔직히 첫 반응은 흥분이었다" — 이전보다 훨씬 자연스러운 1인칭
+- **다 문체 통일**: ✅ 이번 주 신규 포스트 전원 다 체 사용
+
+#### 강점 (유지할 것)
+
+- **도입부 다양성 우수**: 코드 블록 시작(pydantic-ai), 사건 날짜 시작(usage-caps "4월 4일, Anthropic이 조용히"), 개인 행동 시작(claude-opus "공식 블로그를 두 번 새로 고침했다"), 문제 서술 시작(github-actions, message-batches) — 7개 포스트 모두 진입 방식이 다름
+- **비판적 시각 자연스럽게 삽입**: langfuse "개인적으로 이 아키텍처 복잡도에 불만이 있다", usage-caps "타이밍은 좋지 않았다", message-batches "웹훅 부재가 아쉽다" — 특정 섹션이 아닌 본문 흐름 중에 삽입됨
+- **openclaw 포스트의 내러티브 강도**: "4월 4일 아침에 Anthropic 이메일을 받았다"로 시작해 실제 마이그레이션 경험을 시간순으로 풀어나가는 방식이 이 블로그 최고 수준의 스토리텔링
+
+#### 패턴 피로 (조정 필요)
+
+1. **결론 "권장" 패턴 재등장**: langfuse "Langfuse Cloud 무료 티어가 한계에 닿기 전에 Docker Compose 설정 파일을 미리 준비해두는 것을 권장한다", message-batches "Prompt Caching과 Batches API를 조합해 실제 파이프라인에 적용해보는 것을 권장한다" — 지난 주 지적된 문제가 How-to 포스트에서 다시 등장. How-to 특성상 완전히 없애기 어렵지만, 같은 주에 2개 이상 나오면 독자가 패턴을 의식함
+2. **코드 블록 과잉 의존**: 8개 포스트 전부 코드 블록 포함. 비교·뉴스 포스트에서도 코드가 메인 구조 장치로 사용됨. 표, 의사결정 트리, 다이어그램 등 대안적 구조 장치 필요
+3. **시리즈 3주 연속 미발행**: 스타일이 아닌 발행 시스템 문제. 아래 이슈 섹션에서 별도 처리
+
+---
+
+### 이슈 및 조치사항
+
+#### 1. 시리즈 3주 연속 미발행 — 즉각 에스컬레이션
+
+claude-code-masterclass-series-1이 3주 전에 계획됐고, 매주 "하드 룰"로 지정됐음에도 발행되지 않았다. 이는 더 이상 우선순위 문제가 아니다. **시스템 문제**: write-post가 매일 실행될 때 뉴스·How-to 주제를 자동 선택하는 로직이 시리즈보다 "명확한 슬러그"를 선호하는 것으로 추정된다.
+
+다음 주 화요일을 시리즈 하드 블록으로 설정. 이날 다른 유형의 포스트가 발행되면 그 자체를 실패로 기록할 것.
+
+#### 2. 백로그 비교·시리즈 불균형
+
+queued 기준: how-to 22개(47%), news 18개(38%), comparison 5개(11%), series 2개(4%). 시리즈 2개가 발행되지 않는 한 추가하지 않음. 비교는 5개로 적절하나 주 1개 이하 발행 속도 유지 필요.
+
+#### 3. Hashnode 75% — 개선 중이나 아직 불안정
+
+62.5% → 75%로 개선됐다. 실패 2개의 원인이 아직 파악되지 않음. 다음 daily-closing에서 crosspost-log의 실패 케이스 에러 메시지를 확인할 것.
+
+#### 4. 이번 주 발행 계획 대비 실적
+
+지난 주 strategy-report에서 계획한 포스트와 실제 발행 포스트가 전혀 일치하지 않는다. 계획: stackoverflow-survey, opentelemetry, claude-managed-agents-news, 시리즈, 비교. 실제: message-batches, pydantic-ai, github-actions, claude-opus-4-7, usage-caps, langfuse, prompt-caching, openclaw. 계획 vs 실행 괴리가 2주 연속 100%다. 이 자체는 뉴스 반응성 때문으로 이해 가능하지만, 시리즈처럼 뉴스와 무관한 항목조차 밀린다는 것이 문제.
+
+---
+
+### 다음 주 전략 (5월 4일 〜 5월 10일)
+
+#### 목표 믹스
+- How-to 3개 (42%) / 뉴스 1개 (14%) / **시리즈 2개 (29%)** / 비교 1개 (14%)
+
+시리즈 2개는 1개 런칭 + 후속편 의도. 시리즈 부채를 한 번에 갚는 주로 설정.
+
+#### 우선 처리 순서
+
+| 요일 | 유형 | 슬러그 | 비고 |
+|------|------|--------|------|
+| 월 | How-to | opentelemetry-llm-pipeline-observability-guide | 월간 How-to 시작 |
+| **화** | **시리즈 #1** | **claude-code-masterclass-series-1-prompt-to-agent** | **⛔ 하드 블록: 변경 불가** |
+| 수 | How-to | fastapi-claude-api-streaming-production-guide-2026 | 신규 추가 주제 |
+| 목 | 뉴스 | google-io-2026-ai-developer-key-announcements-analysis | I/O 발표 타이밍 대응 |
+| 금 | **시리즈 #2** | **ai-agent-architecture-series-1-orchestrator-pattern** | **⛔ 2번째 하드 블록** |
+| 토 | 비교 | anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026 | 신규 추가 주제 |
+
+#### 스타일 조정 지침 (다음 주 write-post 적용)
+
+1. **결론 "권장" 탈피 — 특히 How-to**: "...을 권장한다"로 끝내는 대신 개인 결정("나는 이것을 선택했다"), 실제 수치 요약("실제로 50% 절감됐다"), 열린 질문("6개월 뒤에도 같은 선택을 할까?") 중 하나로 마무리
+2. **코드 외 구조 장치 혼용**: 비교 포스트는 코드보다 의사결정 표와 시나리오별 추천 섹션 중심으로. How-to 포스트에도 "언제 쓰고 언제 쓰지 말아야 하는가" 의사결정 트리를 코드와 병렬 배치
+3. **시리즈 포스트 스타일 차별화**: #1과 #2를 같은 템플릿으로 쓰지 말 것. #1은 "처음 만나는 독자" 기준의 실습형, #2는 "#1을 읽은 독자" 기준의 응용형으로 톤과 난이도 차별화
+
+---
+
+### 백로그 현황 (2026-05-03 기준)
+
+**총 68개 주제 (대기 중 47개)**
+
+| 유형 | 대기 | 비율 |
+|------|------|------|
+| How-to | 22 | 47% |
+| 뉴스 | 18 | 38% |
+| 시리즈 | 2 | 4% ← 우선순위 0으로 상향, 즉시 발행 필요 |
+| 비교 | 5 | 11% |
+
+**이번 리뷰에서 추가된 주제 (6개)**:
+- `fastapi-claude-api-streaming-production-guide-2026` [how-to]
+- `claude-code-mcp-server-testing-debugging-guide-2026` [how-to]
+- `gemini-25-flash-thinking-api-developer-guide-2026` [how-to]
+- `google-io-2026-ai-developer-key-announcements-analysis` [news]
+- `openai-codex-api-release-vs-claude-code-comparison-may-2026` [news]
+- `anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026` [comparison]
+
+**이번 리뷰에서 done 처리 (2개)**:
+- `anthropic-usage-caps-llm-pricing-disruption-analysis-2026`
+- `anthropic-claude-opus-4-7-managed-agents-2026`
+
+**시리즈 우선순위 상향 (2개, priority 0으로)**:
+- `claude-code-masterclass-series-1-prompt-to-agent`
+- `ai-agent-architecture-series-1-orchestrator-pattern`
+
+---
+
 ## 2026-04-26 주간 리뷰 (4월 4〜5주차)
 
 ### 성과 요약
