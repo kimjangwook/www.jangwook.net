@@ -59,7 +59,7 @@ relatedPosts:
 
 Model Context Protocol（MCP）已成为LLM连接外部工具和数据的事实标准。随着其转入Linux Foundation的开放治理体系，Anthropic、OpenAI、Google等主要厂商纷纷宣布支持，采用率呈爆发式增长。然而，<strong>便利性所到之处，攻击面必然随之而来。</strong>
 
-2026年1〜2月，短短60天内，MCP生态系统中报告了<strong>30个CVE</strong>，暴露在互联网上的MCP服务器实例多达42,665个。在扫描的560个服务器中，36%完全没有身份认证。MCP正在成为AI时代增长最快的攻击面，这已不再是夸张之辞。
+2026年1〜2月，短短60天内，MCP生态系统中报告了<strong>30个CVE</strong>，暴露在互联网上的MCP服务器实例多达42,665个。在扫描的560个服务器中，36%完全没有身份认证。MCP正在成为AI时代增长最快的攻击面，这已不再是夸张之辞。想先了解MCP服务器代码执行边界和沙箱设计的读者，[Anthropic代码执行MCP服务器分析](/zh/blog/zh/anthropic-code-execution-mcp)是很好的入门参考。
 
 本文将从EM/VPoE/CTO的视角分析MCP安全现状，并提供团队和组织可立即应用的加固指南。
 
@@ -177,6 +177,8 @@ graph TD
 - <strong>审计日志</strong>：对所有MCP工具调用进行审计追踪，满足合规要求（GDPR、HIPAA、SOC2）
 - <strong>SAST + SCA</strong>：对MCP服务器代码应用静态分析工具和软件组成分析
 
+通过MCP连接BigQuery等敏感数据源时的访问控制实践，请参阅[BigQuery MCP服务器访问控制指南](/zh/blog/zh/bigquery-mcp-prefix-filtering)。
+
 ## 实战应用——MCP安全成熟度三阶段
 
 根据组织的当前状况分阶段提升安全水平是务实的做法。
@@ -185,7 +187,7 @@ graph TD
 
 - 立即停用或阻断无认证的MCP端点访问
 - 检查凭据是否以明文存储（`~/.openclaw/credentials/`、`.env`）
-- 确认正在使用的MCP SDK版本并应用补丁
+- 确认正在使用的MCP SDK版本并应用补丁。[Claude Code Hooks运行时MCP权限验证方法](/zh/blog/zh/claude-code-hooks-workflow)也值得同步检查，可以增加一层防御。
 
 ### Stage 2：基础建设（1〜2个月）
 

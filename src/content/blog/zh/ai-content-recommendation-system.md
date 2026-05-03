@@ -573,6 +573,8 @@ git add recommendations.json
 git commit -m "chore: update recommendations for new post"
 ```
 
+从文章编写到推荐生成、部署的完整自动化流水线设计原则，请参阅[基于LLM的博客文章自动化完全指南](/zh/blog/zh/llm-blog-automation)。
+
 ## 性能优化
 
 ### 构建时间优化
@@ -647,6 +649,8 @@ const postsToProcess = posts.filter(post => {
 | 跳出率 | -15〜25% |
 | 推荐点击率(CTR) | 18〜25% |
 
+如需实时追踪推荐效果，与[Google Analytics MCP博客分析自动化](/zh/blog/zh/google-analytics-mcp-automation)配合使用会更高效。
+
 ### 定性效果
 
 1. <strong>内容可发现性提升</strong>: 读者轻松发现高度相关的内容
@@ -714,7 +718,7 @@ const unreadRecommendations = recommendations.filter(
 ✅ <strong>自动化工作流程</strong>最小化维护
 ✅ <strong>自然支持多语言</strong>优化全球博客
 
-构建此系统后,读者的停留时间会增加,内容可发现性会提升,最终博客的价值会最大化。可以立即应用到现有博客,现在就开始吧!
+构建此系统后,读者的停留时间会增加,内容可发现性会提升,最终博客的价值会最大化。可以立即应用到现有博客,现在就开始吧!搭配[AI智能体与Notion MCP内容管理自动化](/zh/blog/zh/ai-agent-notion-mcp-automation),可以将整个博客运营整合到一个统一的工作流中。
 
 ## 下一篇
 

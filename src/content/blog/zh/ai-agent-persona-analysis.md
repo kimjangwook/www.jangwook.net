@@ -211,7 +211,7 @@ Salesforce 提出的4个核心原则:
 6. 确保语言版本间的一致性
 ```
 
-<strong>使用场景</strong>:博客文章写作、技术文档、API 文档
+<strong>使用场景</strong>:博客文章写作、技术文档、API 文档。将此智能体应用于实际博客文章自动化的示例，请参阅[基于LLM的博客文章自动化完全指南](/zh/blog/zh/llm-blog-automation)。
 
 #### 2. 代码审查智能体
 
@@ -451,6 +451,8 @@ graph LR
 @security-auditor "审查这个认证中间件的安全漏洞"
 ```
 
+将智能体与Notion MCP集成，可以从内容规划到发布、审查实现统一管理。具体配置请参阅[Claude Code + Notion MCP博客自动化指南](/zh/blog/zh/ai-agent-notion-mcp-automation)。
+
 ## 主要建议总结
 
 ### 开发者可立即采取的行动
@@ -458,7 +460,7 @@ graph LR
 1. <strong>审计现有智能体</strong>
    - 审查 `.claude/agents/` 目录中的所有智能体
    - 移除性别标记("他"、"她"、姓名、性格特征)
-   - 替换为专业性定义
+   - 替换为专业性定义。关于系统化编写智能体规范的方法，[规格驱动开发：规格先于代码](/zh/blog/zh/specification-driven-development)提供了实用框架。
 
 2. <strong>创建5-10个任务专用智能体</strong>
    - 识别最常做的任务

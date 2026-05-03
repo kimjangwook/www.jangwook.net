@@ -62,7 +62,7 @@ relatedPosts:
 
 Model Context Protocol (MCP) has become the de facto standard for connecting LLMs to external tools and data. With its transition to open governance under the Linux Foundation and endorsement from major vendors like Anthropic, OpenAI, and Google, adoption has skyrocketed. But <strong>wherever convenience is established, attack surface inevitably follows.</strong>
 
-Between January and February 2026, <strong>30 CVEs</strong> were reported across the MCP ecosystem in just 60 days, with 42,665 MCP server instances found exposed to the internet. Of the 560 servers scanned, 36% had no authentication whatsoever. It is no exaggeration to say that MCP is becoming the fastest-growing attack surface of the AI era.
+Between January and February 2026, <strong>30 CVEs</strong> were reported across the MCP ecosystem in just 60 days, with 42,665 MCP server instances found exposed to the internet. Of the 560 servers scanned, 36% had no authentication whatsoever. It is no exaggeration to say that MCP is becoming the fastest-growing attack surface of the AI era. Before diving in, [Anthropic Code Execution MCP Server Analysis](/en/blog/en/anthropic-code-execution-mcp) is a useful primer on how MCP server sandboxing and execution boundaries are designed.
 
 This article analyzes the current MCP security landscape from an EM/VPoE/CTO perspective and presents a hardening guide that teams and organizations can implement immediately.
 
@@ -180,6 +180,8 @@ graph TD
 - <strong>Audit logs</strong>: Maintain audit trails for all MCP tool invocations. Meet regulatory requirements (GDPR, HIPAA, SOC 2).
 - <strong>SAST + SCA</strong>: Apply static analysis tools and software composition analysis to MCP server code.
 
+For access control patterns when connecting sensitive data sources like BigQuery via MCP, [BigQuery MCP Server Access Control Guide](/en/blog/en/bigquery-mcp-prefix-filtering) covers real-world implementation.
+
 ## Practical Implementation — Three Stages of MCP Security Maturity
 
 A phased approach to raising your security posture based on your organization's current state is the most realistic path forward.
@@ -188,7 +190,7 @@ A phased approach to raising your security posture based on your organization's 
 
 - Immediately disable or block access to unauthenticated MCP endpoints
 - Audit for plaintext credential storage (`~/.openclaw/credentials/`, `.env`)
-- Verify MCP SDK versions in use and apply patches
+- Verify MCP SDK versions in use and apply patches. [Claude Code Hooks for Runtime MCP Permission Validation](/en/blog/en/claude-code-hooks-workflow) is also worth reviewing to add another defensive layer.
 
 ### Stage 2: Foundation Building (1–2 months)
 

@@ -215,7 +215,7 @@ Avoid first-person pronouns ("I", "me"), prioritize task outcomes.
 6. Ensure consistency across language versions
 ```
 
-<strong>Use Cases</strong>: Blog post writing, technical documentation, API documentation
+<strong>Use Cases</strong>: Blog post writing, technical documentation, API documentation. For a real-world example of applying this agent to blog post automation, see [Complete Guide to LLM-Based Blog Post Automation](/en/blog/en/llm-blog-automation).
 
 #### 2. Code Review Agent
 
@@ -455,6 +455,8 @@ Configure in `.claude/agents/` directory:
 @security-auditor "Review security vulnerabilities in this authentication middleware"
 ```
 
+Integrating agents with Notion MCP lets you manage everything from content planning to publishing in one system. See [Claude Code + Notion MCP Blog Automation Guide](/en/blog/en/ai-agent-notion-mcp-automation) for the setup details.
+
 ## Key Recommendations Summary
 
 ### Immediately Actionable Steps for Developers
@@ -462,7 +464,7 @@ Configure in `.claude/agents/` directory:
 1. <strong>Audit Existing Agents</strong>
    - Review all agents in `.claude/agents/` directory
    - Remove gender markers ("he", "she", names, personality traits)
-   - Replace with expertise definitions
+   - Replace with expertise definitions. For a structured approach to writing agent specifications, [Specification-Driven Development: Specs Before Code](/en/blog/en/specification-driven-development) provides a useful framework.
 
 2. <strong>Create 5-10 Task-Specific Agents</strong>
    - Identify your most frequent tasks

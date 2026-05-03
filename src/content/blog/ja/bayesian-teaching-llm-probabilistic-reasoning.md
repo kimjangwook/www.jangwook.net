@@ -1,5 +1,5 @@
 ---
-title: 'Bayesian Teaching: LLMが確率的推論を学ぶ方法 — Google・Nature Communications研究の完全解説'
+title: 'Bayesian Teaching: LLMの確率的推論訓練法 — Google研究解析'
 description: >-
   GoogleがNature Communicationsに発表したBayesian Teaching研究は、LLMが新しい情報を受け取ったとき確率的に信念を更新するよう訓練する方法論だ。AIエージェントの不確実性処理方式を根本的に改善するこの研究をEM視点で分析する。
 pubDate: '2026-03-08'

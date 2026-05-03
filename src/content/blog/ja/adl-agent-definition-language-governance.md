@@ -1,6 +1,6 @@
 ---
 title: ADL（Agent Definition Language）— AI エージェント ガバナンスの OpenAPI が登場
-description: AI エージェントの定義・権限・ツールを宣言的に標準化する ADL 仕様の核構造と EM/CTO 視点から見たガバナンス戦略をまとめました。
+description: AIエージェントの役割・権限・許可ツールを宣言的に定義するADL仕様が公開されました。OpenAPIがAPIを標準化したように、ADLはエージェントアーキテクチャを標準化します。核心フィールド構造の詳細分析とEM・CTOが即座に適用できるガバナンス導入戦略を解説します。
 pubDate: '2026-03-07'
 heroImage: ../../../assets/blog/adl-agent-definition-language-governance-hero.jpg
 tags:

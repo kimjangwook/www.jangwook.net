@@ -212,7 +212,7 @@ Salesforce가 제시한 4가지 핵심 원칙:
 6. 언어 버전 간 일관성 보장
 ```
 
-<strong>사용 시나리오</strong>: 블로그 포스트 작성, 기술 문서, API 문서
+<strong>사용 시나리오</strong>: 블로그 포스트 작성, 기술 문서, API 문서. 이 에이전트를 실제 블로그 포스트 작성 자동화에 적용한 예시는 [LLM 기반 블로그 포스팅 자동화 완전 가이드](/ko/blog/ko/llm-blog-automation)에서 확인할 수 있습니다.
 
 #### 2. 코드 리뷰 에이전트
 
@@ -452,6 +452,8 @@ graph LR
 @security-auditor "이 인증 미들웨어의 보안 취약점 검토"
 ```
 
+에이전트를 Notion MCP와 연동하면 콘텐츠 기획부터 발행, 리뷰까지 체계적으로 관리할 수 있습니다. 구체적인 설정은 [Claude Code + Notion MCP 블로그 자동화 가이드](/ko/blog/ko/ai-agent-notion-mcp-automation)를 참고하세요.
+
 ## 주요 권장사항 요약
 
 ### 개발자를 위한 즉시 실행 가능한 조치
@@ -459,7 +461,7 @@ graph LR
 1. <strong>기존 에이전트 감사</strong>
    - `.claude/agents/` 디렉토리의 모든 에이전트 검토
    - 성별 마커 제거 ("그", "그녀", 이름, 성격 특성)
-   - 전문성 정의로 교체
+   - 전문성 정의로 교체. 에이전트 명세를 구조적으로 작성하는 방법은 [사양 기반 개발: 코드보다 명세가 먼저다](/ko/blog/ko/specification-driven-development)를 참고하면 도움이 됩니다.
 
 2. <strong>작업별 5-10개 에이전트 만들기</strong>
    - 가장 자주 하는 작업 식별

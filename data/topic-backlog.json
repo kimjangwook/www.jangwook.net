@@ -1216,6 +1216,57 @@
       "added_at": "2026-05-03",
       "status": "queued",
       "notes": "비교 포스트 0% 이번 주 보충 필수. SDK 레이어에서 타입 안전성, 에러 분류, 스트리밍 구현, 레이트 리밋 처리 차이를 코드 예제로 비교. 토요일 발행 목표."
+    },
+    {
+      "slug": "langgraph-langfuse-agent-observability-how-to",
+      "title_idea": "LangGraph + Langfuse로 AI 에이전트 관찰 가능성 구축하기 — 트레이싱·평가·디버깅 완전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "langgraph langfuse 에이전트 트레이싱",
+      "secondary_keywords": [
+        "llm observability",
+        "multi-agent debugging",
+        "langfuse integration"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "daily-closing 자동 선정 — 오늘 langfuse 포스트 발행 후 자연스러운 심화 주제",
+      "added_at": "2026-05-03",
+      "status": "queued",
+      "notes": "오늘 발행한 langfuse-self-hosted-llm-tracing-setup-guide-2026와 시너지. LangGraph 멀티에이전트 환경에서 Langfuse를 실제로 연동하는 step-by-step 가이드. 개발자 수요 높음."
+    },
+    {
+      "slug": "claude-code-hooks-pre-post-workflow-automation-guide",
+      "title_idea": "Claude Code Hooks 실전 가이드: Pre/Post Hook으로 커밋·빌드·알림 자동화",
+      "content_type": "how-to",
+      "target_keyword": "claude code hooks 사용법",
+      "secondary_keywords": [
+        "claude code workflow automation",
+        "pre-commit hooks ai",
+        "claude hooks tutorial"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "daily-closing 자동 선정 — claude-code-hooks-workflow 내부링크 추가 기회 파악",
+      "added_at": "2026-05-03",
+      "status": "queued",
+      "notes": "claude-code-hooks-workflow 포스트가 있지만 더 실용적인 How-to 가이드 필요. 실제 커밋 전 lint/build 검증, Telegram 알림 연동 등 구체적인 예제 포함. 월요일 개발자 실용 콘텐츠로 적합."
+    },
+    {
+      "slug": "mcp-server-oauth-rbac-security-implementation-guide",
+      "title_idea": "MCP 서버 보안 강화 실전 가이드: OAuth 2.0 + RBAC 구현으로 CVE 76% 차단",
+      "content_type": "how-to",
+      "target_keyword": "mcp 서버 보안 설정",
+      "secondary_keywords": [
+        "mcp oauth 설정",
+        "mcp rbac",
+        "mcp server hardening guide"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "daily-closing 자동 선정 — 오늘 mcp-security-crisis 내부링크 추가 후 심화 How-to 필요성 파악",
+      "added_at": "2026-05-03",
+      "status": "queued",
+      "notes": "mcp-security-crisis-30-cves-enterprise-hardening이 분석 포스트였다면, 이 포스트는 실제 구현 가이드. Stage 1 즉시 조치(인증 없는 엔드포인트 차단, 자격증명 보호)를 코드 예제와 함께 제공."
     }
   ]
 }

@@ -61,7 +61,7 @@ relatedPosts:
 
 Model Context Protocol(MCP)은 LLM이 외부 도구와 데이터를 연결하는 사실상의 표준이 되었습니다. Linux Foundation 산하 오픈 거버넌스 체제로 전환되고, Anthropic·OpenAI·Google 등 주요 벤더가 지원을 선언하면서 채택이 폭발적으로 늘었습니다. 그러나 <strong>편의성이 확보된 자리에는 반드시 공격 표면이 따라옵니다.</strong>
 
-2026년 1〜2월, 불과 60일 사이에 <strong>30개의 CVE</strong>가 MCP 생태계에서 보고되었고, 인터넷에 노출된 MCP 서버 인스턴스는 42,665개에 달합니다. 스캔 대상 560개 서버 중 36%가 인증 자체가 없었습니다. MCP가 AI 시대의 가장 빠르게 성장하는 공격 표면이 되고 있다는 것은 더 이상 과장이 아닙니다.
+2026년 1〜2월, 불과 60일 사이에 <strong>30개의 CVE</strong>가 MCP 생태계에서 보고되었고, 인터넷에 노출된 MCP 서버 인스턴스는 42,665개에 달합니다. 스캔 대상 560개 서버 중 36%가 인증 자체가 없었습니다. MCP가 AI 시대의 가장 빠르게 성장하는 공격 표면이 되고 있다는 것은 더 이상 과장이 아닙니다. MCP 서버의 코드 실행 경계와 샌드박싱 설계를 먼저 파악하고 싶다면 [Anthropic 코드 실행 MCP 서버 분석](/ko/blog/ko/anthropic-code-execution-mcp)이 좋은 출발점입니다.
 
 이 글에서는 EM/VPoE/CTO 관점에서 MCP 보안 현황을 분석하고, 팀과 조직이 즉시 적용할 수 있는 하드닝 가이드를 제시합니다.
 
@@ -179,6 +179,8 @@ graph TD
 - <strong>감사 로그</strong>: 모든 MCP 도구 호출에 대한 감사 추적. 규제 요건(GDPR, HIPAA, SOC2) 충족
 - <strong>SAST + SCA</strong>: MCP 서버 코드에 정적 분석 도구와 소프트웨어 컴포지션 분석 적용
 
+BigQuery처럼 민감한 데이터 소스를 MCP로 연결할 때의 접근 제어 사례는 [BigQuery MCP 서버 접근 제어 가이드](/ko/blog/ko/bigquery-mcp-prefix-filtering)에서 확인할 수 있습니다.
+
 ## 실무 적용 — MCP 보안 성숙도 3단계
 
 조직의 현재 상황에 맞게 단계적으로 보안 수준을 높이는 접근이 현실적입니다.
@@ -187,7 +189,7 @@ graph TD
 
 - 인증 없는 MCP 엔드포인트 즉시 비활성화 또는 접근 차단
 - 자격 증명 평문 저장 여부 점검 (`~/.openclaw/credentials/`, `.env`)
-- 사용 중인 MCP SDK 버전 확인 및 패치 적용
+- 사용 중인 MCP SDK 버전 확인 및 패치 적용. [Claude Code Hooks로 실행 단계에서 MCP 권한을 검증하는 방법](/ko/blog/ko/claude-code-hooks-workflow)도 함께 검토하면 방어 레이어를 강화할 수 있습니다.
 
 ### Stage 2: 기반 구축 (1〜2개월)
 

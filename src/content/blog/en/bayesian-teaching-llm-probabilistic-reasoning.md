@@ -1,5 +1,5 @@
 ---
-title: "Bayesian Teaching: How LLMs Learn Probabilistic Reasoning — A Deep Dive into Google's Nature Communications Research"
+title: "Bayesian Teaching: How LLMs Learn Probabilistic Reasoning"
 description: >-
   Google's Bayesian Teaching research, published in Nature Communications, introduces a training methodology that enables LLMs to probabilistically update their beliefs when receiving new information. This post analyzes its implications for AI agents and enterprise systems from an engineering leadership perspective.
 pubDate: '2026-03-08'

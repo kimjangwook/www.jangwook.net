@@ -557,6 +557,8 @@ git add recommendations.json
 git commit -m "chore: update recommendations for new post"
 ```
 
+For the complete pipeline design—from post writing to recommendation generation and deployment—see [Complete Guide to LLM-Based Blog Post Automation](/en/blog/en/llm-blog-automation).
+
 ## Performance Optimization
 
 ### Build Time Optimization
@@ -631,6 +633,8 @@ Based on industry data:
 | Bounce Rate | -15-25% |
 | Recommendation CTR | 18-25% |
 
+To track these metrics in real time, setting up [Google Analytics MCP for Blog Analytics Automation](/en/blog/en/google-analytics-mcp-automation) alongside this system makes measurement straightforward.
+
 ### Qualitative Effects
 
 1. <strong>Enhanced Content Discovery</strong>: Readers easily find deeply relevant content
@@ -698,7 +702,7 @@ A Claude LLM-based content recommendation system goes beyond simple tag matching
 ✅ <strong>Automated workflows</strong> for minimal maintenance
 ✅ <strong>Natural multilingual support</strong> for global blog optimization
 
-Implementing this system will increase reader engagement time, improve content discoverability, and ultimately maximize your blog's value. You can apply it to your existing blog right away—start building today!
+Implementing this system will increase reader engagement time, improve content discoverability, and ultimately maximize your blog's value. You can apply it to your existing blog right away—start building today! Pairing this with [AI Agent + Notion MCP Blog Automation](/en/blog/en/ai-agent-notion-mcp-automation) lets you manage everything from content planning to recommendation data in one unified flow.
 
 ## Next Article
 
