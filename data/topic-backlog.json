@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-02",
+  "updated_at": "2026-05-03",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1091,6 +1091,24 @@
       "added_at": "2026-05-02",
       "status": "queued",
       "notes": "스트리밍은 모든 LLM 앱의 필수 요소지만 Anthropic SDK의 EventSource 이벤트 타입별 처리, 에러 핸들링, 재연결 패턴을 다룬 한국어 글이 부족함. message_batches와 내부링크 연결 가능. 2026-05-04(월) How-to 포스트로 적합."
+    },
+    {
+      "slug": "langfuse-self-hosted-llm-tracing-setup-guide-2026",
+      "title_idea": "Langfuse v3 셀프호스팅 완전 가이드 — LLM 트레이싱을 로컬에서 직접 구축하기",
+      "content_type": "how-to",
+      "target_keyword": "Langfuse 셀프호스팅",
+      "secondary_keywords": [
+        "LLM 트레이싱",
+        "Langfuse Docker Compose",
+        "LLM 옵저버빌리티 자체 구축",
+        "Langfuse SDK v4"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Langfuse GitHub, Python SDK 4.5.1 실험",
+      "added_at": "2026-05-03",
+      "status": "done",
+      "notes": "Lab Publish lane. SDK 4.5.1 설치 검증, docker-compose 서비스 구조 분석, v3→v4 breaking change 문서화. ClickHouse/MinIO 포함 6컨테이너 아키텍처 설명."
     }
   ]
 }
