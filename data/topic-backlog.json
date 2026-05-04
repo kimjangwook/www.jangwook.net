@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-03",
+  "updated_at": "2026-05-04",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1267,6 +1267,42 @@
       "added_at": "2026-05-03",
       "status": "queued",
       "notes": "mcp-security-crisis-30-cves-enterprise-hardening이 분석 포스트였다면, 이 포스트는 실제 구현 가이드. Stage 1 즉시 조치(인증 없는 엔드포인트 차단, 자격증명 보호)를 코드 예제와 함께 제공."
+    },
+    {
+      "slug": "openai-responses-api-stateful-agent-how-to-2026",
+      "title_idea": "OpenAI Responses API로 상태 유지 에이전트 만들기 — 세션 관리·도구 호출·멀티턴 대화 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "OpenAI Responses API 튜토리얼",
+      "secondary_keywords": [
+        "OpenAI stateful agent",
+        "Responses API 사용법",
+        "OpenAI 에이전트 세션 관리",
+        "멀티턴 AI 에이전트"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "OpenAI 2026년 4월 정식 출시, 개발자 커뮤니티 높은 관심",
+      "added_at": "2026-05-04",
+      "status": "queued",
+      "notes": "Chat Completions API 대비 무엇이 다른지 실코드로 비교. 에이전트 세션 비용 측면에서 LangGraph 대안으로 포지셔닝 가능."
+    },
+    {
+      "slug": "anthropic-files-api-batch-document-processing-guide",
+      "title_idea": "Anthropic Files API로 대용량 문서 배치 처리하기 — PDF 반복 업로드 없이 멀티턴 분석 구현",
+      "content_type": "how-to",
+      "target_keyword": "Anthropic Files API 사용법",
+      "secondary_keywords": [
+        "Claude Files API",
+        "Anthropic 파일 업로드",
+        "대용량 문서 AI 분석",
+        "Claude 배치 처리"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Anthropic Files API 2026년 4월 GA, 토큰 절감 효과로 커뮤니티 주목",
+      "added_at": "2026-05-04",
+      "status": "queued",
+      "notes": "메시지마다 파일 재업로드 없이 file_id 재사용으로 비용 절감. Message Batches API와 조합하면 대규모 문서 파이프라인 구축 가능."
     }
   ]
 }

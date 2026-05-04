@@ -92,12 +92,12 @@ Cognitive Debt's most dangerous property is its **invisibility**. Technical debt
 - When you're tracing the root cause of a complex production bug
 - When new requirements conflict with your existing architecture
 
-Anthropic's report acknowledges this tension. Developers tend to delegate tasks that are <strong>easily verifiable or low-stakes</strong> while keeping conceptually complex or design-dependent work for themselves or collaborative AI sessions. The developers who manage this boundary consciously are controlling their cognitive debt. Teams that don't are accumulating it invisibly.
+Anthropic's report acknowledges this tension. Developers tend to delegate tasks that are <strong>easily verifiable or low-stakes</strong> while keeping conceptually complex or design-dependent work for themselves or collaborative AI sessions. [5 Claude Code Agentic Workflow Patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) shows how to set these delegation boundaries in practice. The developers who manage this boundary consciously are controlling their cognitive debt. Teams that don't are accumulating it invisibly.
 
 ## 5 Actions for Engineering Managers to Take Now
 
 <strong>1. Ban "The AI wrote it" as an excuse</strong>
-In code review, "this section was AI-generated" is insufficient as an explanation. Before merging, someone must be able to explain <strong>why this structure was chosen and what tradeoffs it involves</strong>.
+In code review, "this section was AI-generated" is insufficient as an explanation. Before merging, someone must be able to explain <strong>why this structure was chosen and what tradeoffs it involves</strong>. The [Claude Code Best Practices](/en/blog/en/claude-code-best-practices) guide covers team processes for validating AI-generated code together.
 
 <strong>2. Make comprehension a deployment gate</strong>
 Require that at least one human fully understands every AI-generated change before deployment. This may seem to slow velocity, but the interest payments on cognitive debt cost far more later.

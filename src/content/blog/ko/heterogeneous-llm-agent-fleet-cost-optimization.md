@@ -32,7 +32,7 @@ relatedPosts:
       zh: '生产级AI Agent设计原则为异构架构的可靠性和运营稳定性提供必要指导。'
 ---
 
-에이전트 플릿을 운영하는 엔지니어링 팀이라면 누구나 마주하는 현실이 있다. 매일 수천 건의 LLM 호출이 쌓이고, 월말이 되면 예상을 훨씬 초과하는 API 청구서를 받는 것이다. **Claude Opus나 GPT-5.3 같은 최상위 모델로 모든 작업을 처리하면 품질은 보장되지만, 비용은 감당하기 어려운 수준이 된다.**
+에이전트 플릿을 운영하는 엔지니어링 팀이라면 누구나 마주하는 현실이 있다. 매일 수천 건의 LLM 호출이 쌓이고, 월말이 되면 예상을 훨씬 초과하는 API 청구서를 받는 것이다. **Claude Opus나 GPT-5.3 같은 최상위 모델로 모든 작업을 처리하면 품질은 보장되지만, 비용은 감당하기 어려운 수준이 된다.** 모델별 토큰 단가는 [2026년 LLM API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 상세히 확인할 수 있다.
 
 하지만 실제로 에이전트 시스템의 모든 작업이 최상위 모델을 필요로 하지는 않는다. 이 글에서는 EM과 CTO가 알아야 할 **이종 LLM 아키텍처(Heterogeneous LLM Architecture)** 전략을 통해 품질을 유지하면서 비용을 최대 90%까지 절감하는 방법을 다룬다.
 
@@ -207,6 +207,7 @@ def route_request(self, request: str) -> str:
 - 자동 라우팅 레이어 구현
 - Plan-Execute 패턴 적용
 - 비용 대시보드 구축 및 지속적 최적화
+- 프로덕션 배포 체계 정립([Claude Managed Agents 프로덕션 배포 가이드](/ko/blog/ko/claude-managed-agents-production-deployment-guide) 참고)
 
 ## 품질을 지키면서 비용을 줄이는 핵심 원칙
 

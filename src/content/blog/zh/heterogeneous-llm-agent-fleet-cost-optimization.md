@@ -32,7 +32,7 @@ relatedPosts:
       zh: '生产级AI Agent设计原则为异构架构的可靠性和运营稳定性提供必要指导。'
 ---
 
-运营Agent集群的工程团队都会面临同一个现实：LLM API账单增速远超预期。用Claude Opus或GPT-5.3等顶级模型处理所有任务固然能保证质量，但成本很快就会变得难以承受。
+运营Agent集群的工程团队都会面临同一个现实：LLM API账单增速远超预期。用Claude Opus或GPT-5.3等顶级模型处理所有任务固然能保证质量，但成本很快就会变得难以承受。各模型的每token价格详情，请参阅[2026年LLM API价格对比](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)。
 
 关键洞察是：**Agent系统中并非所有任务都真正需要顶级模型的推理能力**。本文将介绍EM和CTO必须了解的**异构LLM架构（Heterogeneous LLM Architecture）**策略，实现在保持质量的同时将成本削减高达90%。
 
@@ -169,7 +169,7 @@ class HeterogeneousAgentFleet:
 将最简单的20%任务迁移到小型模型。监控质量指标（准确率、用户反馈），根据结果逐步扩大范围。
 
 **第三阶段：完整异构架构（1〜2个月）**
-实现自动路由层，应用Plan-Execute模式，构建成本仪表盘进行持续优化。
+实现自动路由层，应用Plan-Execute模式，构建成本仪表盘进行持续优化。生产部署最佳实践请参阅[Claude Managed Agents生产部署指南](/zh/blog/zh/claude-managed-agents-production-deployment-guide)。
 
 ## 在降低成本的同时保证质量
 

@@ -1,6 +1,6 @@
 ---
 title: 'How to Build a PR Auto-Review Pipeline with GitHub Actions + Claude Code CLI'
-description: 'A practical guide to integrating claude -p directly into GitHub Actions for automated PR reviews. Learn the --bare, --dangerously-skip-permissions, and --max-budget-usd flags that make Claude Code CI-safe, with complete YAML examples.'
+description: 'Automate PR reviews with GitHub Actions and Claude Code CLI. Covers --bare, --dangerously-skip-permissions, and --max-budget-usd flags for safe CI execution, with complete YAML workflow examples.'
 pubDate: '2026-04-30'
 heroImage: ../../../assets/blog/github-actions-claude-code-ci-automation-hero.png
 tags:

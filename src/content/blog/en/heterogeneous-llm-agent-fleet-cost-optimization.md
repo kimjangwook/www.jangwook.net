@@ -32,7 +32,7 @@ relatedPosts:
       zh: '生产级AI Agent设计原则为异构架构的可靠性和运营稳定性提供必要指导。'
 ---
 
-Every engineering team running an agent fleet faces the same uncomfortable reality: LLM API bills that grow faster than expected. Using frontier models like Claude Opus 4.6 or GPT-5.3 for every single task guarantees quality—but the costs quickly become unsustainable at production scale.
+Every engineering team running an agent fleet faces the same uncomfortable reality: LLM API bills that grow faster than expected. Using frontier models like Claude Opus 4.6 or GPT-5.3 for every single task guarantees quality—but the costs quickly become unsustainable at production scale. For a detailed breakdown of per-token pricing across major models, see the [2026 LLM API Pricing Comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek).
 
 Here's the insight that changes everything: **not all tasks in your agent system actually require frontier-level reasoning**. In this post, I'll walk through the Heterogeneous LLM Architecture strategy that EMs and CTOs need to understand to cut costs by up to 90% while maintaining quality.
 
@@ -170,7 +170,7 @@ Analyze API logs to classify request types. Determine the complexity distributio
 Migrate the simplest 20% of tasks to small models. Monitor quality metrics (accuracy, user feedback). Expand scope incrementally based on results.
 
 **Phase 3: Full Heterogeneous Architecture (1–2 months)**
-Implement automated routing layer. Apply Plan-Execute pattern for complex workflows. Build a cost dashboard for continuous optimization.
+Implement automated routing layer. Apply Plan-Execute pattern for complex workflows. Build a cost dashboard for continuous optimization. For production deployment best practices, refer to the [Claude Managed Agents Production Deployment Guide](/en/blog/en/claude-managed-agents-production-deployment-guide).
 
 ## Maintaining Quality While Cutting Costs
 

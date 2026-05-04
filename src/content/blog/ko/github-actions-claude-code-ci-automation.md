@@ -1,6 +1,6 @@
 ---
 title: 'GitHub Actions + Claude Code CLI로 PR 자동 리뷰 파이프라인 구축하기'
-description: 'GitHub Actions에 claude -p를 직접 연동해 PR 리뷰를 자동화하는 실전 가이드. --bare, --dangerously-skip-permissions, --max-budget-usd 플래그로 CI 환경에서 안전하게 Claude Code를 실행하는 방법을 단계별로 설명합니다.'
+description: 'GitHub Actions에 claude -p를 직접 연동해 PR 리뷰를 자동화하는 실전 가이드. --bare, --dangerously-skip-permissions, --max-budget-usd 플래그로 CI 환경에서 안전하게 Claude Code를 실행하는 법을 설명합니다.'
 pubDate: '2026-04-30'
 heroImage: ../../../assets/blog/github-actions-claude-code-ci-automation-hero.png
 tags:

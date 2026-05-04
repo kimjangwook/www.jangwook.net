@@ -1,6 +1,6 @@
 ---
 title: 'Langfuse v3 셀프호스팅 완전 가이드 — LLM 트레이싱을 로컬에서 직접 구축하기'
-description: 'Langfuse v3 Docker Compose 설치부터 Python SDK 4.x 계측 코드 작성, RAG 파이프라인 트레이싱까지. LLM 옵저버빌리티를 데이터 주권을 유지하며 자체 인프라에 구축하는 실전 가이드.'
+description: 'Langfuse v3를 Docker Compose로 셀프호스팅하는 완전한 실전 가이드. Python SDK 4.x 계측 코드 작성부터 RAG 파이프라인 트레이싱, 비용·지연 모니터링 대시보드 구성까지. 데이터 주권을 지키며 LLM 옵저버빌리티를 자체 인프라에 구축하세요.'
 pubDate: '2026-05-03'
 heroImage: '../../../assets/blog/langfuse-self-hosted-llm-tracing-setup-guide-2026-hero.png'
 tags:

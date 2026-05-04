@@ -53,7 +53,7 @@ The short answer: they are not competing but **complementary at different layers
 
 Through 2025, most organizations were still experimenting with AI agents. Yet as of 2026, while roughly 63% of enterprises are piloting AI agents, fewer than 25% have successfully scaled them to production. Closing that gap is the central challenge—and the key lies in **protocol architecture**.
 
-MCP hit 97 million monthly SDK downloads (Python + TypeScript combined) as of February 2026, cementing its status as the de facto standard for agent-to-tool connectivity. A2A, launched by Google in 2025, now has the public backing of over 100 companies. Anthropic donated MCP to the Linux Foundation; Google donated A2A—both under the same foundation, signaling a converging, integrated ecosystem.
+MCP hit 97 million monthly SDK downloads (Python + TypeScript combined) as of February 2026, cementing its status as the de facto standard for agent-to-tool connectivity. A2A, launched by Google in 2025, now has the public backing of over 100 companies. For a hands-on comparison of frameworks implementing A2A, see [Google ADK vs LangGraph: In-Depth Comparison](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026). Anthropic donated MCP to the Linux Foundation; Google donated A2A—both under the same foundation, signaling a converging, integrated ecosystem.
 
 ## MCP vs A2A: Not the Same Layer
 
@@ -141,7 +141,7 @@ A2A is designed so every agent has an **Agent Card**—a JSON declaration of the
 
 ### 2. MCP Server Governance
 
-As the number of MCP servers grows, security, cost, and reliability concerns compound. The 30+ CVEs disclosed in early 2026 make this clear.
+As the number of MCP servers grows, security, cost, and reliability concerns compound. The 30+ CVEs disclosed in early 2026 make this clear. If you're building your own MCP server, check the security checklist in the [MCP Server Build Practical Guide](/en/blog/en/mcp-server-build-practical-guide-2026) before deploying.
 
 - **Central MCP gateway**: Route all agent MCP calls through a single gateway
 - **Least-privilege scopes**: Grant each agent access only to the tools it needs
@@ -157,7 +157,7 @@ Agent systems execute in a distributed fashion—traditional APM tools alone fal
 
 ### 4. Rollback and Isolation Strategy
 
-In multi-agent systems, failures can cascade.
+In multi-agent systems, failures can cascade. Frameworks like [Dapr Agents v1](/en/blog/en/dapr-agents-v1-cncf-production-ai-framework) ship with built-in circuit breakers, simplifying this layer significantly.
 
 - **Circuit breaker**: Isolate an agent after consecutive failures
 - **Timeout policy**: Set explicit timeouts on A2A task delegations
