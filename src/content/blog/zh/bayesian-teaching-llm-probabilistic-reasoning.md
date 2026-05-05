@@ -86,7 +86,7 @@ Google Research和MIT研究团队在<strong>Nature Communications</strong>发表
 
 ### 2. 不确定性量化(Uncertainty Quantification)的可能性
 
-贝叶斯推理的核心是将不确定性用数字表达——"这个选项有70%的可能性最适合"。目前LLM在这种校准(calibration)方面很弱。Bayesian Teaching可以改善这一点。
+贝叶斯推理的核心是将不确定性用数字表达——"这个选项有70%的可能性最适合"。目前LLM在这种校准(calibration)方面很弱。Bayesian Teaching可以改善这一点。探索LLM如何通过语言表达概率分布的[Verbalized Sampling研究](/zh/blog/zh/verbalized-sampling-llm-diversity)，也从另一角度提供了对同一挑战的互补方案。
 
 在企业决策支持系统中，"置信度82%"和"置信度51%"的差异非常重要——它决定了人工是否需要审核该推荐。
 
@@ -114,7 +114,7 @@ Google Research和MIT研究团队在<strong>Nature Communications</strong>发表
 - **医疗诊断支持**：累积症状和检查结果，推理出最可能诊断的AI
 - **金融风险分析**：持续反映市场数据，动态评估投资组合风险的系统
 
-在Gartner警告2027年底前超过40%的智能体AI项目将被取消的情况下，Bayesian Teaching这样的基础推理能力改善研究，可能成为降低这一失败率的核心技术。
+在Gartner警告2027年底前超过40%的智能体AI项目将被取消的情况下，[MIT自我课程推理研究](/zh/blog/zh/mit-soar-self-curriculum-reasoning)和Bayesian Teaching这样的基础推理能力改善研究，可能成为降低这一失败率的核心技术。
 
 ## 结语
 

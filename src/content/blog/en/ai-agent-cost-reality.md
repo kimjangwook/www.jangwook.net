@@ -155,7 +155,7 @@ Problems the routing layer must solve:
 - <strong>Error Handling</strong>: How do you recover when an agent fails?
 - <strong>Cost Optimization</strong>: How do you mix expensive and cheap models effectively?
 
-The time spent building and stabilizing this routing layer exceeds all other costs combined.
+The time spent building and stabilizing this routing layer exceeds all other costs combined. The multi-agent orchestration patterns covered in the [Claude agent team building guide](/en/blog/en/claude-agent-teams-guide) offer a practical starting point for reducing this routing complexity.
 
 ## The Over-Engineering Trap: 40 Hours vs 1 Prompt
 
@@ -202,7 +202,7 @@ Looking at costs alone, you might conclude "just hire a person." But there are a
 | Consistent criteria application | Exception handling |
 | Personal productivity scaling (solo teams) | Team collaboration/communication |
 
-AI agents are overwhelmingly effective for <strong>scaling personal productivity as a solo developer or small team</strong>. My 8 agents serve exactly this purpose—the key mindset is not "replacing humans" but "expanding what one person can accomplish."
+AI agents are overwhelmingly effective for <strong>scaling personal productivity as a solo developer or small team</strong>. My 8 agents serve exactly this purpose—the key mindset is not "replacing humans" but "expanding what one person can accomplish." The [Anthropic agent skills practical guide](/en/blog/en/anthropic-agent-skills-practical-guide) covers specific implementation patterns and cost-efficient design for exactly this use case.
 
 ## Practical Cost Optimization Tips
 
@@ -224,6 +224,8 @@ This strategy alone can reduce API costs by <strong>40-60%</strong>.
 - Cache results for identical prompt patterns
 - Batch non-real-time tasks together
 - Always cache embedding results (recomputation is expensive)
+
+The [LLM PM workflow automation](/en/blog/en/llm-pm-workflow-automation) case study shows how batching and caching strategies like these apply in real production environments.
 
 ### 3. Minimize Failure Costs
 

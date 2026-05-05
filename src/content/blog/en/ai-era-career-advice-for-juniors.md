@@ -1,8 +1,7 @@
 ---
 title: What I Want to Tell Juniors in the Age of AI
 description: >-
-  Career advice from years of SMB experience. How domain knowledge and T-shaped
-  growth can help you thrive in the AI era.
+  In an era where AI is shrinking hiring, here are honest survival strategies from SMB developer experience. How to build deep domain knowledge, grow as a T-shaped engineer, and collaborate with AI to increase your individual value.
 pubDate: '2025-12-02'
 heroImage: ../../../assets/blog/ai-era-career-advice-for-juniors-hero.png
 tags:

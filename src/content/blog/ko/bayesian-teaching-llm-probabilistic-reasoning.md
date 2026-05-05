@@ -86,7 +86,7 @@ Engineering Manager나 CTO 입장에서 이 연구는 여러 실질적인 시사
 
 ### 2. 불확실성 명시(Uncertainty Quantification)의 가능성
 
-베이즈적 추론의 핵심은 불확실성을 수치로 표현하는 것이다. "이 옵션이 70%로 가장 적합합니다"처럼. 현재 LLM은 이런 칼리브레이션(calibration)이 약하다. Bayesian Teaching은 이를 개선할 수 있다.
+베이즈적 추론의 핵심은 불확실성을 수치로 표현하는 것이다. "이 옵션이 70%로 가장 적합합니다"처럼. 현재 LLM은 이런 칼리브레이션(calibration)이 약하다. Bayesian Teaching은 이를 개선할 수 있다. [LLM 출력 다양성을 확률적으로 다루는 Verbalized Sampling 연구](/ko/blog/ko/verbalized-sampling-llm-diversity)도 같은 방향에서 보완적인 접근을 제시한다.
 
 엔터프라이즈 의사결정 지원 시스템에서 "확신도 82%"와 "확신도 51%"의 차이는 매우 중요하다.
 
@@ -114,7 +114,7 @@ Oracle 방식(정답 데이터셋 fine-tuning)에서 벗어나, 베이즈 어시
 - **의료 진단 지원**: 증상과 검사 결과를 누적해 가장 가능성 높은 진단을 추론하는 AI
 - **금융 리스크 분석**: 시장 데이터를 지속적으로 반영해 포트폴리오 리스크를 동적으로 평가하는 시스템
 
-Gartner가 2027년까지 에이전틱 AI 프로젝트의 40% 이상이 실패할 것이라고 경고한 상황에서, Bayesian Teaching 같은 근본적인 추론 능력 개선 연구는 이 실패율을 낮추는 데 기여할 핵심 기술이 될 수 있다.
+Gartner가 2027년까지 에이전틱 AI 프로젝트의 40% 이상이 실패할 것이라고 경고한 상황에서, Bayesian Teaching처럼 [LLM 추론 능력을 근본적으로 개선하는 연구](/ko/blog/ko/mit-soar-self-curriculum-reasoning)는 이 실패율을 낮추는 데 기여할 핵심 기술이 될 수 있다.
 
 ## 마치며
 

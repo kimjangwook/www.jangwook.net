@@ -1,6 +1,6 @@
 ---
 title: 'AI 시대, 후배들에게 전하고 싶은 이야기'
-description: 중소기업에서 쌓아온 경험을 바탕으로 AI 시대에 살아남기 위한 조언. 도메인 지식과 T자형 인재로 성장하기.
+description: AI가 채용을 줄이는 시대, 중소기업 개발자 경험에서 도출한 생존 전략을 공유합니다. 도메인 지식을 깊이 쌓고, T자형 인재로 성장하며, AI와 협업하는 방식으로 개인의 가치를 높이는 방법을 솔직하게 정리했습니다.
 pubDate: '2025-12-02'
 heroImage: ../../../assets/blog/ai-era-career-advice-for-juniors-hero.png
 tags:

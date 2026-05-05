@@ -1,6 +1,6 @@
 ---
 title: AI時代、後輩たちに伝えたいこと
-description: 中小企業で培ってきた経験をもとに、AI時代を生き抜くためのアドバイス。ドメイン知識とT字型人材への成長について。
+description: AIが採用を縮小する時代に、中小企業開発者の経験から導いた生存戦略を共有します。ドメイン知識を深め、T字型人材として成長し、AIと協働することで個人の価値を高める方法を率直にまとめました。
 pubDate: '2025-12-02'
 heroImage: ../../../assets/blog/ai-era-career-advice-for-juniors-hero.png
 tags:

@@ -1,6 +1,6 @@
 ---
 title: AI时代，想对后辈们说的话
-description: 基于中小企业多年经验的职业建议。领域知识和T型人才成长如何帮助你在AI时代生存。
+description: 在AI缩减招聘的时代，分享从中小企业开发者经验中提炼的生存策略。深入积累领域知识、以T型人才方式成长、并与AI协作提升个人价值的方法，坦诚整理如下。
 pubDate: '2025-12-02'
 heroImage: ../../../assets/blog/ai-era-career-advice-for-juniors-hero.png
 tags:

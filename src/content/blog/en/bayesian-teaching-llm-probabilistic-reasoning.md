@@ -86,7 +86,7 @@ Consider an enterprise HR system where an AI agent refines its understanding of 
 
 ### 2. Enabling Uncertainty Quantification
 
-At the heart of Bayesian reasoning is the ability to express uncertainty numerically — "Option A fits your profile at 70% confidence." Current LLMs are notoriously poorly calibrated in this regard. Bayesian Teaching can improve this directly.
+At the heart of Bayesian reasoning is the ability to express uncertainty numerically — "Option A fits your profile at 70% confidence." Current LLMs are notoriously poorly calibrated in this regard. Bayesian Teaching can improve this directly. [Verbalized Sampling research](/en/blog/en/verbalized-sampling-llm-diversity), which explores how LLMs express probability distributions through language, offers a complementary perspective on the same challenge.
 
 In enterprise decision-support systems, the difference between "82% confident" and "51% confident" is operationally significant — it determines whether a human reviews the recommendation or relies on it automatically.
 
@@ -114,7 +114,7 @@ This research demonstrates that LLMs can evolve beyond simple pattern matchers i
 - **Medical diagnosis support**: AI that accumulates symptom and test data to reason toward the most probable diagnosis
 - **Financial risk analysis**: Systems that dynamically update portfolio risk assessments as new market data arrives
 
-Given Gartner's warning that over 40% of agentic AI projects will be canceled by 2027 — largely due to failure to operationalize agents reliably — research like Bayesian Teaching represents exactly the kind of foundational capability improvement needed to close the gap between promising demos and production-grade systems.
+Given Gartner's warning that over 40% of agentic AI projects will be canceled by 2027 — largely due to failure to operationalize agents reliably — [foundational reasoning capability research like MIT's self-curriculum approach](/en/blog/en/mit-soar-self-curriculum-reasoning) and Bayesian Teaching represent exactly the kind of improvements needed to close the gap between promising demos and production-grade systems.
 
 ## Closing Thoughts
 

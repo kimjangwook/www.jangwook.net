@@ -283,7 +283,7 @@ By managing ADL definitions of all agents in your organization in a central repo
 }
 ```
 
-This enables CTOs to see at a glance via dashboard: "How many agents are currently running in our organization, and what system access permissions does each have?"
+This enables CTOs to see at a glance via dashboard: "How many agents are currently running in our organization, and what system access permissions does each have?" Combining this with [how to organize multiple agents as a team](/en/blog/en/claude-agent-teams-guide) makes the entire AI governance structure concrete and actionable.
 
 ### 3. Change History and Rollback
 
@@ -392,7 +392,7 @@ For Engineering Managers and CTOs particularly:
 - <strong>Organizational Visibility</strong>: Enterprise-wide AI asset understanding through agent catalog
 - <strong>Change Management</strong>: Git-based version control enables audit trails and rollback support
 
-Though still in early stages, it's a good time to start paying attention to and considering pilot deployments of this Apache 2.0-licensed open source standard.
+Though still in early stages, it's a good time to start paying attention to and considering pilot deployments of this Apache 2.0-licensed open source standard. Referencing the [enterprise AI adoption decision-making framework](/en/blog/en/enterprise-ai-adoption-topdown) to assess your organization's readiness before scoping ADL adoption is a practical approach.
 
 ## References
 
