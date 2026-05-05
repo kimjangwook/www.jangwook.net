@@ -1,6 +1,8 @@
 ---
 title: EffiFlow 第二部分：Skills 自动发现与 58% Token 节省缓存
-description: 深度解析Claude Code的Skills自动发现机制及Commands集成方法，分步说明实现过程。分享EffiFlow博客自动化系统通过提示缓存策略将Token成本降低58%的完整实现过程与数据验证结果。
+description: >-
+  深度解析Claude
+  Code的Skills自动发现机制及Commands集成方法，分步说明实现过程。分享EffiFlow博客自动化系统通过提示缓存策略将Token成本降低58%的完整实现过程与数据验证结果。
 pubDate: '2025-11-15'
 heroImage: ../../../assets/blog/effiflow-part2-skills-commands-hero.jpg
 tags:

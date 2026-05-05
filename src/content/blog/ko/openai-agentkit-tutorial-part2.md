@@ -1,6 +1,9 @@
 ---
 title: 'OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴'
-description: 'OpenAI AgentKit 실전 가이드 2부: 병렬 에이전트 오케스트레이션, 핸드오프 패턴, 에러 복구 전략, 프로덕션 배포 체크리스트까지. 엔터프라이즈 환경에서 AgentKit을 안정적이고 확장 가능하게 운영하기 위한 고급 아키텍처 패턴과 구체적인 코드 예시를 총정리한다.'
+description: >-
+  OpenAI AgentKit 실전 가이드 2부: 병렬 에이전트 오케스트레이션, 핸드오프 패턴, 에러 복구 전략, 프로덕션 배포
+  체크리스트까지. 엔터프라이즈 환경에서 AgentKit을 안정적이고 확장 가능하게 운영하기 위한 고급 아키텍처 패턴과 구체적인 코드 예시를
+  총정리한다.
 pubDate: '2025-10-21'
 heroImage: ../../../assets/blog/openai-agentkit-part2-hero.jpg
 tags:

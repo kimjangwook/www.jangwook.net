@@ -1,6 +1,8 @@
 ---
 title: 使用 Claude LLM 构建智能内容推荐系统
-description: '基于Claude LLM的智能内容推荐系统构建实战指南。超越标签匹配，通过语义理解实现精准推荐——涵盖AI架构设计、成本优化缓存策略及多语言管道实现，附详细代码示例。'
+description: >-
+  基于Claude
+  LLM的智能内容推荐系统构建实战指南。超越标签匹配，通过语义理解实现精准推荐——涵盖AI架构设计、成本优化缓存策略及多语言管道实现，附详细代码示例。
 pubDate: '2025-10-12'
 heroImage: ../../../assets/blog/ai-content-recommendation-hero.jpg
 tags:

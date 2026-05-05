@@ -1,6 +1,8 @@
 ---
 title: ADL(Agent Definition Language) — AI 에이전트 거버넌스의 OpenAPI가 등장하다
-description: AI 에이전트의 역할·권한·허용 도구를 선언적으로 정의하는 ADL 사양이 공개되었습니다. OpenAPI가 REST API를 표준화했듯, ADL은 에이전트 아키텍처 전체를 표준화합니다. 핵심 필드 구조 분석과 EM·CTO가 즉시 적용할 수 있는 거버넌스 도입 전략을 정리합니다.
+description: >-
+  AI 에이전트의 역할·권한·허용 도구를 선언적으로 정의하는 ADL 사양이 공개되었습니다. OpenAPI가 REST API를 표준화했듯,
+  ADL은 에이전트 아키텍처 전체를 표준화합니다. 핵심 필드 구조 분석과 EM·CTO가 즉시 적용할 수 있는 거버넌스 도입 전략을 정리합니다.
 pubDate: '2026-03-07'
 heroImage: ../../../assets/blog/adl-agent-definition-language-governance-hero.jpg
 tags:

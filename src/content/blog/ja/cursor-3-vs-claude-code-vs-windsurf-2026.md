@@ -4,7 +4,7 @@ description: >-
   3つのAIコーディングツールを実際に使用した経験に基づく比較ガイドです。Cursor 3.1の非同期エージェント、Claude Code 2.1.119の
   アーキテクチャ推論、Windsurf 2.0.67のCascade — それぞれどの状況に適しているかを性能とコストの観点で整理しました。
 pubDate: '2026-04-26'
-heroImage: '../../../assets/blog/cursor-3-vs-claude-code-vs-windsurf-2026-hero.jpg'
+heroImage: ../../../assets/blog/cursor-3-vs-claude-code-vs-windsurf-2026-hero.jpg
 tags:
   - cursor
   - claude-code
@@ -12,34 +12,43 @@ tags:
   - ai-coding-tools
   - comparison
 relatedPosts:
+  - slug: tailwind-layoffs-opensource-ai-crisis
+    score: 0.94
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: gemini-31-pro-release
+    score: 0.92
+    reason:
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
   - slug: windsurf-arena-mode-speed-over-accuracy
-    score: 0.87
+    score: 0.92
     reason:
-      ko: Windsurf의 철학과 Arena Mode 데이터를 심층 분석했습니다. 이 비교 글을 읽기 전에 먼저 읽으면 Windsurf의 "속도 우선" 포지셔닝이 왜 생겼는지 맥락을 잡을 수 있습니다.
-      ja: WindsurfのArena Modeのデータを深く分析しています。この比較記事の前に読むと、Windsurfの「速度優先」ポジショニングの背景が理解できます。
-      en: Deep dives into Windsurf's Arena Mode data, explaining why the tool leans into speed-first positioning — useful context before reading this comparison.
-      zh: 深入分析了Windsurf Arena Mode数据，解释了为什么该工具优先考虑速度。这是阅读本比较文章前的重要背景。
-  - slug: claude-code-parallel-sessions-git-worktree
-    score: 0.85
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: greptile-ai-coding-report-2025-review
+    score: 0.91
     reason:
-      ko: Claude Code의 Git Worktree 병렬 세션 운영법을 실전 예제와 함께 다룹니다. Claude Code를 선택했다면 이 패턴이 실제 생산성을 높이는 핵심 기술입니다.
-      ja: Claude CodeのGit Worktreeによる並列セッション運用を実例と共に解説。Claude Codeを選ぶなら、このパターンが生産性を高める核心技術です。
-      en: Covers Claude Code's Git Worktree parallel session patterns with hands-on examples — the core technique for boosting productivity after choosing Claude Code.
-      zh: 通过实际示例介绍Claude Code的Git Worktree并行会话操作。选择Claude Code后，这个模式是提升实际生产力的核心技术。
-  - slug: claude-code-best-practices
-    score: 0.82
+      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in AI/ML with comparable difficulty.
+      zh: 在AI/ML领域涵盖类似主题，难度相当。
+  - slug: openai-atlas-ai-app-hub
+    score: 0.91
     reason:
-      ko: Anthropic이 공식 발표한 Claude Code 모범 사례 가이드입니다. 이 비교 글에서 Claude Code를 선택한 뒤 무엇을 먼저 해야 하는지 로드맵을 잡는 데 좋습니다.
-      ja: AnthropicがリリースしたClaude Codeのベストプラクティス。この比較でClaude Codeを選んだ後に何から始めるかのロードマップになります。
-      en: Anthropic's official Claude Code best practices guide — the ideal roadmap for what to do first after choosing Claude Code from this comparison.
-      zh: Anthropic官方发布的Claude Code最佳实践指南。这是在本比较文章中选择Claude Code后，什么该先做的路线图。
-  - slug: python-ai-agent-library-comparison-2026
-    score: 0.76
-    reason:
-      ko: AI 코딩 도구 비교와 같은 방식으로 Python 에이전트 라이브러리를 비교했습니다. 도구 선택 기준 자체에 관심 있다면 함께 읽으면 좋습니다.
-      ja: AI コーディングツールの比較と同じ手法でPythonエージェントライブラリを比較。ツール選択基準自体に興味があれば併せて読む価値があります。
-      en: Applies the same comparison framework to Python AI agent libraries — good companion reading if you're interested in how to evaluate AI tools systematically.
-      zh: 用同样的框架比较了Python AI代理库。如果你对AI工具选择标准本身感兴趣，这是很好的配套阅读材料。
+      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML
+        topics.
+      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
 ---
 
 「Cursor使ってる？ Claude Code？ それともWindsurf？」最近の開発者コミュニティで最もよく聞かれる質問の一つだ。

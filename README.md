@@ -46,13 +46,19 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-04-05
+**최신 포스트 날짜**: 2026-05-05
 
-**총 포스트 수**: 211개 (한국어 기준)
+**총 포스트 수**: 240개 (한국어 기준)
 
 ### 공개된 포스트
 
-1. **Claude Code 소스코드 유출 — 51만 줄에서 읽어낸 에이전트 아키텍처의 속살** (2026-04-05)
+1. **Anthropic Files API 가이드 — PDF를 한 번만 업로드하고 반복 분석하기** (2026-05-05)
+   - 파일을 한 번 올리고 file_id만 재사용해 입력 토큰 비용을 줄이는 방법. Python SDK 0.97.0 기준 코드 예제, 에러 핸들링 패턴, Source Review 방식으로 정직하게 분석.
+
+1. **OpenClaw 떠나서 Codex+Nanobot으로 이사한 이유** (2026-04-27)
+   - Anthropic OAuth 차단 이후 OpenClaw를 끄고, launchd · Codex · Nanobot 조합으로 자동화 스택을 다시 짠 한 달간의 후기. 도구의 무게는 작업의 복잡도에 맞아야 한다는 깨달음.
+
+2. **Claude Code 소스코드 유출 — 51만 줄에서 읽어낸 에이전트 아키텍처의 속살** (2026-04-05)
    - Anthropic의 npm 패키지 배포 실수로 Claude Code 전체 소스가 공개됐다. 에이전트 루프, 메모리 시스템, 비용 최적화 전략까지 — 유출된 코드에서 개발자가 실제로 가져갈 수 있는 것들을 정리한다.
 
 2. **Effloow — AI 에이전트 14명이 운영하는 회사를 사이드 프로젝트로 만들었다** (2026-04-02)
@@ -908,6 +914,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-02-21 (dont-trust-the-salt-multilingual-llm-safety 포스트 발행)
+**Last Updated**: 2026-04-27 (openclaw-codex-nanobot-stack-migration 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

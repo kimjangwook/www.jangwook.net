@@ -1,41 +1,55 @@
 ---
-title: 'Langfuse v3 自托管完整指南 — 在本地基础设施上直接构建LLM追踪'
-description: '从Langfuse v3 Docker Compose安装到Python SDK 4.x代码检测和RAG管道追踪，全程实战指南。在保持数据主权的同时，在自有基础设施上部署LLM可观测性。'
+title: Langfuse v3 自托管完整指南 — 在本地基础设施上直接构建LLM追踪
+description: >-
+  从Langfuse v3 Docker Compose安装到Python SDK
+  4.x代码检测和RAG管道追踪，全程实战指南。在保持数据主权的同时，在自有基础设施上部署LLM可观测性。
 pubDate: '2026-05-03'
-heroImage: '../../../assets/blog/langfuse-self-hosted-llm-tracing-setup-guide-2026-hero.png'
+heroImage: >-
+  ../../../assets/blog/langfuse-self-hosted-llm-tracing-setup-guide-2026-hero.png
 tags:
   - llm-observability
   - langfuse
   - docker
 relatedPosts:
-  - slug: ai-agent-observability-production-guide
-    score: 0.88
+  - slug: claude-code-parallel-sessions-git-worktree
+    score: 0.94
     reason:
-      ko: 기존 Langfuse/LangSmith/Braintrust 비교 가이드를 먼저 읽었다면, 이 글에서 Langfuse를 직접 설치하고 코드로 계측하는 방법을 이어서 확인할 수 있다.
-      ja: LangfuseとLangSmith/Braintrustの比較ガイドを読んだ後、この記事でLangfuseを実際にインストールしてコードで計装する方法を確認できる。
-      en: After reading the Langfuse/LangSmith/Braintrust comparison guide, this article shows how to actually install Langfuse and instrument your code.
-      zh: 阅读Langfuse与LangSmith/Braintrust的对比指南后，本文展示如何实际安装Langfuse并用代码进行监控。
-  - slug: pydantic-ai-type-safe-agent-tutorial-2026
-    score: 0.76
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: ai-coding-secrets-sprawl-mcp-config-security
+    score: 0.93
     reason:
-      ko: PydanticAI로 만든 에이전트에 Langfuse 트레이싱을 붙이면 어떤 스텝에서 비용이 발생하는지 한눈에 볼 수 있다.
-      ja: PydanticAIで作ったエージェントにLangfuseのトレーシングを追加すると、どのステップでコストが発生しているかを一目で確認できる。
-      en: Adding Langfuse tracing to a PydanticAI agent lets you see exactly which steps are driving costs.
-      zh: 为PydanticAI代理添加Langfuse追踪后，可以清晰看到哪些步骤产生了费用。
-  - slug: mcp-server-build-practical-guide-2026
-    score: 0.71
+      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
+  - slug: openclaw-opus-4-6-setup-guide
+    score: 0.93
     reason:
-      ko: MCP 서버를 직접 구축해봤다면, 서버에서 발생하는 LLM 호출을 Langfuse로 트레이싱하는 조합이 자연스러운 다음 단계다.
-      ja: MCPサーバーを構築したなら、サーバーからのLLM呼び出しをLangfuseでトレースするのが自然な次のステップだ。
-      en: If you've built an MCP server, adding Langfuse tracing to its LLM calls is the natural next step.
-      zh: 如果你已经构建了MCP服务器，为其LLM调用添加Langfuse追踪是自然的下一步。
-  - slug: local-llm-private-mcp-server-gemma4-fastmcp
-    score: 0.68
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: openai-promptfoo-ai-agent-devsecops
+    score: 0.93
     reason:
-      ko: 로컬 LLM 환경을 완전 오프라인으로 운영하고 싶다면, Langfuse 셀프호스팅과 조합해 데이터가 외부로 나가지 않는 트레이싱 환경을 만들 수 있다.
-      ja: ローカルLLM環境を完全オフラインで運用したいなら、Langfuseのセルフホスティングと組み合わせてデータが外部に出ないトレーシング環境を構築できる。
-      en: For a fully offline local LLM setup, combining Langfuse self-hosting keeps all trace data on your own infrastructure.
-      zh: 如果想完全离线运行本地LLM环境，结合Langfuse自托管可以让所有追踪数据保留在自己的基础设施上。
+      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
+  - slug: llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek
+    score: 0.93
+    reason:
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
 ---
 
 将LLM智能体部署到生产环境后，总会遇到这样的时刻：你正在Langfuse仪表板中追踪"为什么会给出那个响应？"，然后看到了云服务账单。当月追踪量超过10万条后，Langfuse Cloud的Pro套餐开始变成真实的成本负担。于是我用Docker Compose搭建了自托管环境。这篇文章是我在这个过程中学到的东西。

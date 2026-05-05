@@ -1,6 +1,9 @@
 ---
 title: Building an Intelligent Content Recommendation System with Claude LLM
-description: 'Build a Claude LLM recommendation system beyond tag matching — semantic AI architecture, cost caching, and multilingual pipeline implementation with code.'
+description: >-
+  Build a Claude LLM recommendation system beyond tag matching — semantic AI
+  architecture, cost caching, and multilingual pipeline implementation with
+  code.
 pubDate: '2025-10-12'
 heroImage: ../../../assets/blog/ai-content-recommendation-hero.jpg
 tags:

@@ -10,34 +10,47 @@ tags:
   - langgraph
   - ai-agent
 relatedPosts:
+  - slug: sqlite-ai-swarm-build
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: nist-ai-agent-security-standards
+    score: 0.95
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: adl-agent-definition-language-governance
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
-    score: 0.92
+    score: 0.94
     reason:
-      ko: 이 글이 ADK와 LangGraph 1:1 비교라면, 저 글은 LangGraph·CrewAI·Dapr를 프로덕션 기준으로 비교해서 LangGraph 선택 맥락을 넓혀준다.
-      ja: このブログがADKとLangGraphの1対1比較なら、その記事はLangGraph・CrewAI・DaprをプロダクションのKPIで比較し、LangGraph選択の文脈を広げる。
-      en: This post is an ADK vs LangGraph 1:1 comparison; that post broadens the LangGraph selection context by comparing it to CrewAI and Dapr on production KPIs.
-      zh: 本文是ADK与LangGraph的1:1比较，那篇文章则以生产KPI对LangGraph、CrewAI和Dapr进行比较，拓宽了LangGraph的选择背景。
-  - slug: mcp-server-build-practical-guide-2026
-    score: 0.79
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-source-leak-analysis
+    score: 0.94
     reason:
-      ko: ADK가 내장 MCP 지원을 강점으로 내세우는데, MCP 서버를 직접 만들어본 경험이 있어야 그 차이가 와닿는다.
-      ja: ADKが内蔵MCPサポートを強みとしているが、MCPサーバーを自分で構築した経験があってこそ、その差異が実感できる。
-      en: ADK touts built-in MCP support as a key advantage — you'll appreciate that only after building your own MCP server.
-      zh: ADK以内置MCP支持为优势，只有自己构建过MCP服务器，才能真正体会到这一差异。
-  - slug: langfuse-self-hosted-llm-tracing-setup-guide-2026
-    score: 0.74
-    reason:
-      ko: ADK는 OpenTelemetry 기반 트레이싱을 내장하는데, Langfuse로 LLM 트레이싱을 직접 구축해본 경험과 비교하면 ADK 선택의 장단점이 선명해진다.
-      ja: ADKはOpenTelemetryベースのトレースを内蔵しているが、LangfuseでLLMトレースを構築した経験と比較するとADK選択の長所・短所がより明確になる。
-      en: ADK bundles OpenTelemetry-based tracing; comparing that with building LLM tracing yourself via Langfuse makes the ADK trade-off much clearer.
-      zh: ADK内置了基于OpenTelemetry的追踪，与通过Langfuse自己构建LLM追踪的经验相比，ADK的选择优缺点更加清晰。
-  - slug: context-engineering-production-ai-agents
-    score: 0.72
-    reason:
-      ko: ADK와 LangGraph 모두 에이전트의 상태·컨텍스트 관리가 핵심인데, 컨텍스트 엔지니어링 관점에서 두 프레임워크를 보면 설계 의도가 더 잘 읽힌다.
-      ja: ADKもLangGraphもエージェントの状態・コンテキスト管理が核心であり、コンテキストエンジニアリングの観点から両フレームワークを見ると設計意図がより明確になる。
-      en: Both ADK and LangGraph hinge on agent state and context management — viewing them through a context-engineering lens makes their design choices easier to read.
-      zh: ADK和LangGraph都以智能体的状态和上下文管理为核心，从上下文工程的角度看这两个框架，更容易读懂其设计意图。
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 每次出现新的AI智能体框架，我的第一反应都是安装它，弄清楚到底有什么不同。Google开源ADK（Agent Development Kit）时也不例外。这个周末我专门搭建了一个沙盒环境，把Google ADK v1.32.0和LangGraph v1.1.10并排安装，实际运行了代码。这篇文章是实验结果的整理。

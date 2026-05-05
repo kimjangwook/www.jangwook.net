@@ -11,41 +11,51 @@ tags:
   - automation
   - mcp
 relatedPosts:
-  - slug: openclaw-installation-tutorial
-    score: 0.92
-    reason:
-      ko: 'OpenClaw 설치와 장점을 먼저 정리한 글이라, 이번 이탈 결정의 기준점을 비교하기 좋습니다.'
-      ja: 'OpenClawの導入と長所を先に整理した記事で、今回の移行判断の基準点を比較できます。'
-      en: 'Establishes the earlier OpenClaw setup and strengths, making it the best baseline for this migration story.'
-      zh: '先整理了OpenClaw的安装和优点，适合作为这次迁移判断的对照基准。'
-  - slug: claude-code-channels-telegram-bridge
-    score: 0.9
-    reason:
-      ko: 'Telegram 브릿지와 Channels의 장단점을 다뤄, 이 글의 상태 관리 문제와 직접 연결됩니다.'
-      ja: 'TelegramブリッジとChannelsの長短を扱っており、本記事の状態管理の課題に直結します。'
-      en: 'Explains the Telegram bridge and Channels tradeoffs that led to the state-management layer in this post.'
-      zh: '解释了Telegram桥接和Channels的取舍，直接连接到本文的状态管理问题。'
-  - slug: claude-code-cli-migration-guide
-    score: 0.86
-    reason:
-      ko: 'Codex를 백업에서 주력 도구로 끌어올리는 흐름을 이해하는 데 도움이 됩니다.'
-      ja: 'Codexをバックアップから主力ツールへ移す流れを理解する助けになります。'
-      en: 'Gives the earlier Codex migration context that this article turns into a primary workflow.'
-      zh: '补足了Codex从备用方案变成主力工作流的迁移背景。'
   - slug: claude-agent-teams-guide
-    score: 0.78
+    score: 0.95
     reason:
-      ko: '여러 에이전트가 필요한 경우와 단일 MCP 호스트로 충분한 경우를 가르는 기준을 보완합니다.'
-      ja: '複数エージェントが必要な場合と単一MCPホストで足りる場合の判断軸を補えます。'
-      en: 'Adds a useful contrast for deciding when multi-agent teams are warranted versus one MCP host.'
-      zh: '补充了何时需要多智能体、何时一个MCP宿主就够用的判断标准。'
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-cli-migration-guide
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: effiflow-automation-analysis-part3
-    score: 0.72
+    score: 0.95
     reason:
-      ko: '자동화 운영을 실제 시스템에 맞게 줄이고 나누는 관점이 비슷합니다.'
-      ja: '自動化運用を実システムに合わせて小さく分ける視点が近い記事です。'
-      en: 'Shares the practical theme of resizing automation architecture to match the real operating workload.'
-      zh: '同样关注把自动化架构缩到真实运营负载所需的大小。'
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: github-agentic-workflows-cicd-ai
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-channels-telegram-bridge
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
 ---
 
 4月4日の朝、Anthropicからメールが届きました。Claude Pro契約ではOpenClawのようなサードパーティツールがもう使えない、という通知です。正確には「サブスクリプションで発行されたOAuthトークンを外部ツールで利用することを禁じる」というポリシーですが、OpenClawユーザーの立場からすれば事実上同じ意味です([VentureBeatの記事](https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and))。

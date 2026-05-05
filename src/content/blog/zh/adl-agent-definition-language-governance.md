@@ -1,6 +1,8 @@
 ---
 title: ADL(Agent Definition Language) — AI智能体治理的OpenAPI标准
-description: ADL（Agent Definition Language）是AI智能体的OpenAPI标准，以声明式方式统一定义智能体的角色、权限和工具访问权限。本文解析ADL规范核心字段结构，并提供EM和CTO可立即落地的企业级智能体治理导入策略。
+description: >-
+  ADL（Agent Definition
+  Language）是AI智能体的OpenAPI标准，以声明式方式统一定义智能体的角色、权限和工具访问权限。本文解析ADL规范核心字段结构，并提供EM和CTO可立即落地的企业级智能体治理导入策略。
 pubDate: '2026-03-07'
 heroImage: ../../../assets/blog/adl-agent-definition-language-governance-hero.jpg
 tags:

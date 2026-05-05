@@ -1,7 +1,9 @@
 ---
 title: 'ADL: The OpenAPI of AI Agent Governance'
 description: >-
-  ADL declaratively defines AI agent roles, permissions, and allowed tools—the OpenAPI of agent governance. Covers the core spec structure and practical EM/CTO governance adoption strategies.
+  ADL declaratively defines AI agent roles, permissions, and allowed tools—the
+  OpenAPI of agent governance. Covers the core spec structure and practical
+  EM/CTO governance adoption strategies.
 pubDate: '2026-03-07'
 heroImage: ../../../assets/blog/adl-agent-definition-language-governance-hero.jpg
 tags:
