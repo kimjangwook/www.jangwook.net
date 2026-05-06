@@ -120,14 +120,14 @@ Models at every stage (Base, SFT, DPO), all weights, intermediate checkpoints, f
 ## Implications from an EM/CTO Perspective
 
 1. Train higher-performing models on the same budget
-2. Performance improvements at 64K tokens → expanded long-context use cases
-3. Potential for 50% reduction in training costs
+2. Performance improvements at 64K tokens → expanded [long-context use cases](/en/blog/en/anthropic-files-api-batch-document-processing-guide)
+3. Potential for 50% reduction in [training costs](/en/blog/en/gemini-25-flash-api-cost-optimization-guide)
 4. Maturation of the open-source ecosystem
 
 ## Looking Ahead
 1. The era of pure Transformers is drawing to a close
 2. Scaling laws favor hybrid architectures
-3. Open-source models are becoming increasingly competitive
+3. Open-source models are [becoming increasingly competitive](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)
 
 ## References
 - [AI2 Official Blog](https://allenai.org/blog/olmohybrid)

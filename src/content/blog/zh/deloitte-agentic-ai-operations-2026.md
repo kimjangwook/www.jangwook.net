@@ -1,6 +1,8 @@
 ---
 title: Deloitte 2026技术趋势中的代理AI运营战略——89%企业为何难上线及EM的委派-审查-所有制框架
-description: Deloitte调查仅11%企业运营代理AI。89%企业的困境不在技术而在运营模式。揭示EM和VPoE周一早上可执行的框架。
+description: >-
+  Deloitte Tech Trends 2026报告揭示震撼现实——全球仅11%的企业在生产环境真正运营代理AI。89%陷入停滞的根本原因不是
+  技术能力不足，而是缺乏有效的运营模式。本文为EM和VPoE提供周一起可即时执行的Delegate·Review·Own三阶段运营框架指南。
 pubDate: '2026-03-08'
 heroImage: ../../../assets/blog/deloitte-agentic-ai-operations-2026-hero.jpg
 tags:
@@ -158,7 +160,7 @@ Gartner的警告明确无误：
 **根据CIO.com 2026年工程报告**，领先企业的工程师不再花大量时间"编写代码"。取而代之：
 
 - <strong>数据工程</strong>（超过50%的时间）：设计代理可访问的数据结构
-- <strong>代理编排</strong>（20〜30%）：协调多个代理之间的交互
+- <strong>[代理编排](/zh/blog/zh/multi-agent-orchestration-routing)</strong>（20〜30%）：协调多个代理之间的交互
 - <strong>治理和合规</strong>（20%以上）：定义代理可以和不能做什么
 - <strong>编码</strong>（10%或更少）：曾是大部分时间的活动
 
@@ -188,7 +190,7 @@ Deloitte报告中的惊人发现：
 这不仅仅是成本问题，而是**运营模式设计失败**的表现。
 
 **事实**：
-- Claude/GPT-4 Token成本在两年内下降了280倍 ✓
+- [Claude/GPT-4 Token成本](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)在两年内下降了280倍 ✓
 - 但企业月度AI账单高达$10M〜$50M ✗
 
 **为什么？**
@@ -752,4 +754,4 @@ HBR说得对：<strong>"高级领导层直接参与AI治理的企业比不参与
 **相关文章**：
 - "生成式AI采用，为何需要自上而下的方式"（战略角度）
 - "AI代理KPI和伦理：如何衡量绩效"（治理深化）
-- "NIST AI代理安全标准"（安全角度）
+- "[NIST AI代理安全标准](/zh/blog/zh/nist-ai-agent-security-standards)"（安全角度）

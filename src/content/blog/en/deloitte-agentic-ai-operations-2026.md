@@ -163,7 +163,7 @@ Redesigned process: Agent → Real-time data access → Auto-analysis → Human 
 **According to CIO.com's 2026 Engineering Report**, leading companies' engineers no longer spend time "writing code." Instead:
 
 - <strong>Data engineering</strong> (50%+ time): Designing data structures agents can access
-- <strong>Agent orchestration</strong> (20〜30%): Coordinating multiple agents
+- <strong>[Agent orchestration](/en/blog/en/multi-agent-orchestration-routing)</strong> (20〜30%): Coordinating multiple agents
 - <strong>Governance and compliance</strong> (20%+): Defining what agents can and cannot do
 - <strong>Coding</strong> (10% or less): An activity that previously consumed most time
 
@@ -193,7 +193,7 @@ These unexpected "hidden tasks" are the true cost of agent adoption.
 This isn't merely a cost issue—it reveals <strong>operational model design failure.</strong>
 
 **The facts:**
-- Claude/GPT-4 token costs fell 280x in two years ✓
+- [Claude/GPT-4 token costs](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek) fell 280x in two years ✓
 - Yet enterprise monthly AI bills reach $10M〜$50M ✗
 
 **Why?**
@@ -758,4 +758,4 @@ When your leadership is at the center of this transformation, your organization 
 **Related posts:**
 - "Enterprise AI Adoption: Why Top-Down Approaches Matter" (Strategic perspective)
 - "AI Agent KPIs and Ethics: How to Measure Performance" (Governance deep-dive)
-- "NIST AI Agent Security Standards" (Security perspective)
+- "[NIST AI Agent Security Standards](/en/blog/en/nist-ai-agent-security-standards)" (Security perspective)

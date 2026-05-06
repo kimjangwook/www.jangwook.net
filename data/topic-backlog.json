@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-05",
+  "updated_at": "2026-05-06",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1339,6 +1339,60 @@
       "added_at": "2026-05-05",
       "status": "queued",
       "notes": "Context Engineering이 2026 에이전트 개발의 핵심 트렌드로 부상. 단순 프롬프팅을 넘어 에이전트가 답하는 조건 자체를 설계하는 방법론. ADL 포스트, langfuse 포스트와 내부링크 연결 가능. 실전 코드 패턴 중심으로 작성하면 차별화 됨."
+    },
+    {
+      "slug": "gemini-31-ultra-2m-context-window-multimodal-analysis",
+      "title_idea": "Google Gemini 3.1 Ultra 출시 분석 — 200만 토큰 컨텍스트와 네이티브 멀티모달이 바꾸는 것",
+      "content_type": "news",
+      "target_keyword": "Gemini 3.1 Ultra",
+      "secondary_keywords": [
+        "Gemini 2M context window",
+        "Google AI 2026",
+        "멀티모달 AI",
+        "Gemini vs Claude vs GPT"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Google Cloud Next 2026, thenextweb.com",
+      "added_at": "2026-05-06",
+      "status": "queued",
+      "notes": "Gemini 3.1 Ultra가 2M 토큰 컨텍스트 윈도우와 텍스트·이미지·오디오·비디오를 전사 없이 네이티브로 처리하는 멀티모달 기능을 발표. Claude 4.7, GPT-5.5와의 비교 관점에서 EM/CTO 실무 시사점을 분석하면 차별화 가능. llm-api-pricing-comparison 내부링크 연결 적합."
+    },
+    {
+      "slug": "microsoft-agent-365-ga-enterprise-ai-agent-governance",
+      "title_idea": "Microsoft Agent 365 GA — 엔터프라이즈 AI 에이전트 거버넌스 플랫폼이 달라진 점과 AWS·GCP 통합",
+      "content_type": "news",
+      "target_keyword": "Microsoft Agent 365",
+      "secondary_keywords": [
+        "AI agent governance 2026",
+        "Agent 365 AWS Bedrock",
+        "enterprise AI management",
+        "AI agent inventory"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Microsoft Security Blog 2026-05-01, Microsoft Community Hub",
+      "added_at": "2026-05-06",
+      "status": "queued",
+      "notes": "Agent 365가 GA 발표와 함께 AWS Bedrock·Google Cloud 연동 기능 추가. AI 에이전트 인벤토리 자동 감지, 정책 기반 런타임 차단 기능이 2026년 6월 Intune·Defender 퍼블릭 프리뷰 예정. deloitte-agentic-ai-operations-2026, nist-ai-agent-security-standards와 내부링크 연결 적합."
+    },
+    {
+      "slug": "openai-gpt55-aws-bedrock-managed-agents-analysis",
+      "title_idea": "OpenAI GPT-5.5 AWS Bedrock 통합 분석 — Managed Agents API와 Codex 연동이 의미하는 것",
+      "content_type": "news",
+      "target_keyword": "GPT-5.5 AWS Bedrock",
+      "secondary_keywords": [
+        "OpenAI AWS partnership 2026",
+        "Bedrock Managed Agents OpenAI",
+        "GPT-5.5 API",
+        "Claude vs GPT AWS"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "llm-stats.com AI news May 2026, releasebot.io OpenAI updates",
+      "added_at": "2026-05-06",
+      "status": "queued",
+      "notes": "OpenAI가 GPT-5.5와 Codex를 AWS Bedrock에 출시하고 Bedrock Managed Agents 지원 추가. Claude와의 직접 경쟁 구도에서 AWS 선택지가 넓어진 실무 시사점 분석. cursor-3-vs-claude-code-vs-windsurf-2026, llm-api-pricing-comparison 내부링크 연결 적합."
     }
   ]
 }

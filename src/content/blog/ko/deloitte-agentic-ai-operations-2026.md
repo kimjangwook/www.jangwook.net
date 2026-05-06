@@ -3,8 +3,9 @@ title: >-
   Deloitte Tech Trends 2026이 제시하는 Agentic AI 운영 전략 — 89%가 프로덕션에 못 가는 이유와 EM을 위한
   Delegate, Review, Own 프레임워크
 description: >-
-  Deloitte 조사에서 11%만 운영 중인 Agentic AI. 89%가 막히는 근본 원인은 기술이 아닌 운영 모델. EM/VPoE가
-  Monday 아침에 실행할 수 있는 프레임워크를 공개합니다.
+  Deloitte Tech Trends 2026 보고서가 밝힌 충격 — 전 세계 기업 11%만 Agentic AI를 프로덕션에서 운영
+  중입니다. 89%가 실패하는 원인은 기술이 아닌 운영 모델. EM·VPoE가 즉시 실행할 수 있는
+  Delegate·Review·Own 프레임워크를 소개합니다.
 pubDate: '2026-03-08'
 heroImage: ../../../assets/blog/deloitte-agentic-ai-operations-2026-hero.jpg
 tags:
@@ -162,7 +163,7 @@ Gartner의 경고는 명확합니다:
 **CIO.com의 2026 엔지니어링 리포트**에 따르면, 선도 기업의 엔지니어들은 더 이상 "코드를 쓰는" 데 시간을 쓰지 않습니다. 대신:
 
 - <strong>데이터 엔지니어링</strong> (50% 이상의 시간): 에이전트가 접근할 수 있는 데이터 구조 설계
-- <strong>에이전트 오케스트레이션</strong> (20〜30%): 여러 에이전트 간 조율
+- <strong>[에이전트 오케스트레이션](/ko/blog/ko/multi-agent-orchestration-routing)</strong> (20〜30%): 여러 에이전트 간 조율
 - <strong>거버넌스 및 규정 준수</strong> (20% 이상): 에이전트가 무엇을 할 수 있고 없는지 정의
 - <strong>코딩</strong> (10% 이하): 이전에는 대부분의 시간을 썼던 활동
 
@@ -192,7 +193,7 @@ Deloitte의 보고서에서 놀라운 발견:
 이것은 단순한 비용 문제가 아니라, <strong>운영 모델 설계의 실패</strong>를 드러냅니다.
 
 **사실들:**
-- Claude/GPT-4 토큰 비용은 2년 사이 280배 하락했습니다 ✓
+- [Claude/GPT-4 토큰 비용](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)은 2년 사이 280배 하락했습니다 ✓
 - 그런데 엔터프라이즈 월간 AI 청구서는 $10M〜$50M입니다 ✗
 
 **왜인가?**
@@ -756,4 +757,4 @@ HBR의 말이 옳습니다: <strong>"Senior leadership이 AI 거버넌스에 직
 **관련 포스트:**
 - "생성형 AI 도입, 왜 탑다운 방식이 필요한가" (전략적 관점)
 - "AI 에이전트 KPI와 윤리: 성과 측정을 어떻게 할 것인가" (거버넌스 심화)
-- "NIST AI 에이전트 보안 표준" (보안 관점)
+- "[NIST AI 에이전트 보안 표준](/ko/blog/ko/nist-ai-agent-security-standards)" (보안 관점)
