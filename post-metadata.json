@@ -2550,5 +2550,25 @@
       "devops": 0.45,
       "architecture": 0.5
     }
+  },
+  "uv-python-ai-development-setup-guide-2026": {
+    "pubDate": "2026-05-07",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.65,
+      "web-development": 0.2,
+      "ai-ml": 0.75,
+      "devops": 0.85,
+      "architecture": 0.4
+    },
+    "tags": [
+      "Python",
+      "uv",
+      "Claude API",
+      "개발 환경",
+      "AI 개발"
+    ],
+    "readingTime": 9,
+    "wordCount": 2600
   }
 }
