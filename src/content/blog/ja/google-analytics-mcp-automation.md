@@ -48,7 +48,7 @@ Google Analytics のダッシュボードはデータが豊富ですが、実際
 
 ### MCP の仕組み
 
-MCP は AI モデルとデータソース間の標準化された通信プロトコルです。API に似ていますが、AI が直接理解して活用できるように設計されています。
+MCP は AI モデルとデータソース間の標準化された通信プロトコルです。API に似ていますが、AI が直接理解して活用できるように設計されています。[Notion API と MCP を連携した自動化パイプライン](/ja/blog/ja/ai-agent-notion-mcp-automation)でも同じ原理が機能しています。
 
 ```
 ┌─────────────┐      MCP Protocol      ┌──────────────────┐
@@ -358,7 +358,7 @@ mcp__analytics -
 
 ### アナリティクスエージェントの設計
 
-ブログ分析用の専門 AI エージェントを作成しましょう。`.claude/agents/analytics.md`ファイルを作成します:
+ブログ分析用の専門 AI エージェントを作成しましょう。`.claude/agents/analytics.md`ファイルを作成します。データ量が増えた場合は[BigQuery MCP サーバーと Dataset Prefix フィルタリング](/ja/blog/ja/bigquery-mcp-prefix-filtering)を組み合わせると、大規模クエリにも対応できます:
 
 ```markdown
 # Analytics Agent

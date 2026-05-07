@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-06",
+  "updated_at": "2026-05-07",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1393,6 +1393,42 @@
       "added_at": "2026-05-06",
       "status": "queued",
       "notes": "OpenAI가 GPT-5.5와 Codex를 AWS Bedrock에 출시하고 Bedrock Managed Agents 지원 추가. Claude와의 직접 경쟁 구도에서 AWS 선택지가 넓어진 실무 시사점 분석. cursor-3-vs-claude-code-vs-windsurf-2026, llm-api-pricing-comparison 내부링크 연결 적합."
+    },
+    {
+      "slug": "anthropic-google-200b-cloud-deal-vendor-strategy-analysis",
+      "title_idea": "Anthropic의 구글에 2,000억 달러 약속 — AI 인프라 독점이 스타트업 전략에 미치는 영향",
+      "content_type": "news",
+      "target_keyword": "Anthropic Google 클라우드 투자",
+      "secondary_keywords": [
+        "AI 인프라 벤더 전략",
+        "Anthropic Google 딜",
+        "AI 클라우드 종속",
+        "Google Cloud AI 2026"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "fortune.com, letsdatascience.com — 2026-05-05 보도",
+      "added_at": "2026-05-07",
+      "status": "queued",
+      "notes": "Anthropic가 5년간 구글 클라우드에 2,000억 달러를 투자하기로 약속. 구글이 Anthropic에 투자하는 금액(400억 달러 상정)의 5배. 벤더 독점 리스크, CTO 관점의 AI 인프라 전략, AWS·Azure와의 멀티클라우드 전략 비교. 당일 뉴스로 검색량 폭발 예상."
+    },
+    {
+      "slug": "claude-mythos-preview-project-glasswing-security-ai-analysis",
+      "title_idea": "Anthropic Claude Mythos Preview — 사이버보안 특화 AI와 Project Glasswing의 의미",
+      "content_type": "news",
+      "target_keyword": "Claude Mythos 보안 AI",
+      "secondary_keywords": [
+        "Anthropic Project Glasswing",
+        "AI 사이버보안 모델",
+        "Claude 취약점 분석",
+        "AI red teaming 2026"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "cnbc.com — 2026-05-05 보도",
+      "added_at": "2026-05-07",
+      "status": "queued",
+      "notes": "Anthropic이 소프트웨어 보안 취약점 발견 특화 모델 Claude Mythos Preview를 발표. Project Glasswing이라는 사이버보안 이니셔티브로 선별된 기업에만 제한 공개. 보안 AI 모델의 등장이 기업 보안 팀에 주는 시사점 분석 가능. 정부 AI 테스트(CASI)와 연결 가능."
     }
   ]
 }

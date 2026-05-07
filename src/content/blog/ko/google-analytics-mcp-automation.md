@@ -48,7 +48,7 @@ Google Analytics 대시보드는 데이터는 많지만, 실제로 필요한 인
 
 ### MCP의 작동 원리
 
-MCP는 AI 모델과 데이터 소스 사이의 표준화된 통신 프로토콜입니다. 생각해보면 API와 비슷하지만, AI가 직접 이해하고 활용할 수 있도록 설계되었습니다.
+MCP는 AI 모델과 데이터 소스 사이의 표준화된 통신 프로토콜입니다. 생각해보면 API와 비슷하지만, AI가 직접 이해하고 활용할 수 있도록 설계되었습니다. [Notion API와 MCP를 연결하는 자동화 파이프라인](/ko/blog/ko/ai-agent-notion-mcp-automation)에서도 같은 원리를 확인할 수 있습니다.
 
 ```
 ┌─────────────┐      MCP Protocol      ┌──────────────────┐
@@ -358,7 +358,7 @@ mcp__analytics -
 
 ### Analytics 에이전트 설계
 
-블로그 분석을 위한 전문 AI 에이전트를 만들어봅시다. `.claude/agents/analytics.md` 파일을 생성합니다:
+블로그 분석을 위한 전문 AI 에이전트를 만들어봅시다. `.claude/agents/analytics.md` 파일을 생성합니다. 데이터 규모가 커지면 [BigQuery MCP 서버와 Dataset Prefix 필터링](/ko/blog/ko/bigquery-mcp-prefix-filtering)을 병행해 대용량 쿼리도 처리할 수 있습니다:
 
 ```markdown
 # Analytics Agent

@@ -49,7 +49,7 @@ Google Analytics dashboards provide tons of data, but extracting actionable insi
 
 ### How MCP Works
 
-MCP is a standardized communication protocol between AI models and data sources. Think of it like an API, but designed for AI to understand and utilize directly.
+MCP is a standardized communication protocol between AI models and data sources. Think of it like an API, but designed for AI to understand and utilize directly. You'll see the same principle at work in a [Notion API MCP automation pipeline](/en/blog/en/ai-agent-notion-mcp-automation) — the connection pattern is essentially identical.
 
 ```
 ┌─────────────┐      MCP Protocol      ┌──────────────────┐
@@ -359,7 +359,7 @@ mcp__analytics -
 
 ### Designing the Analytics Agent
 
-Let's create a specialized AI agent for blog analytics. Create the file `.claude/agents/analytics.md`:
+Let's create a specialized AI agent for blog analytics. Create the file `.claude/agents/analytics.md`. If your data volume grows, pairing this with [BigQuery MCP server and Dataset Prefix filtering](/en/blog/en/bigquery-mcp-prefix-filtering) lets you handle large-scale queries as well:
 
 ```markdown
 # Analytics Agent

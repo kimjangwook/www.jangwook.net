@@ -140,7 +140,7 @@ At most organizations, AI adoption started with engineering teams. Tools like Cl
 
 ### 2. Vendor Lock-In and Platform Strategy
 
-Anthropic's Cowork strategy is clear — <strong>building an open ecosystem through MCP</strong>. With MCP donated to the Linux Foundation as an open standard, Cowork is positioning itself as "the best implementation of the standard."
+Anthropic's Cowork strategy is clear — <strong>building an open ecosystem through MCP</strong>. With MCP donated to the Linux Foundation as an open standard, Cowork is positioning itself as "the best implementation of the standard." See how [A2A and MCP combine in a hybrid multi-agent production architecture](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide) to understand what this standard looks like in practice.
 
 A comparison:
 
@@ -206,7 +206,7 @@ Zooming out, the Cowork launch reveals a three-stage strategy from Anthropic:
 2. <strong>Enterprise expansion</strong> (early 2026): Extend AI agents to non-developer roles with Cowork
 3. <strong>Platform ecosystem</strong> (2026 onward): Build a third-party ecosystem with the MCP open standard and Plugin Marketplace
 
-This strategy mirrors how Slack evolved from an engineering-only tool into an organization-wide communication platform. The difference is that Cowork delivers <strong>agentic AI execution power</strong> — not just passing messages back and forth, but actually performing work on your behalf.
+This strategy mirrors how Slack evolved from an engineering-only tool into an organization-wide communication platform. The difference is that Cowork delivers <strong>agentic AI execution power</strong> — not just passing messages back and forth, but actually performing work on your behalf. Reading the [Anthropic Managed Agents and Opus 4.7 analysis](/en/blog/en/anthropic-claude-opus-4-7-managed-agents-2026) fills in the full picture of this agentic AI strategy.
 
 ## Conclusion
 

@@ -48,7 +48,7 @@ Google Analytics仪表板提供了大量数据,但要获得真正需要的洞察
 
 ### MCP的工作原理
 
-MCP是AI模型与数据源之间的标准化通信协议。类似于API,但专门设计为AI可以直接理解和利用。
+MCP是AI模型与数据源之间的标准化通信协议。类似于API,但专门设计为AI可以直接理解和利用。[Notion API与MCP结合的自动化流水线](/zh/blog/zh/ai-agent-notion-mcp-automation)中也是同样的原理。
 
 ```
 ┌─────────────┐      MCP Protocol      ┌──────────────────┐
@@ -358,7 +358,7 @@ mcp__analytics -
 
 ### 设计Analytics代理
 
-让我们为博客分析创建一个专门的AI代理。创建`.claude/agents/analytics.md`文件:
+让我们为博客分析创建一个专门的AI代理。创建`.claude/agents/analytics.md`文件。数据量增大时，可搭配[BigQuery MCP服务器的Dataset Prefix过滤](/zh/blog/zh/bigquery-mcp-prefix-filtering)处理大规模查询:
 
 ```markdown
 # Analytics Agent

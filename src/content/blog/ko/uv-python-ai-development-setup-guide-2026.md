@@ -1,6 +1,6 @@
 ---
 title: 'uv로 AI 개발 환경 세팅하기 — Claude SDK 프로젝트를 0.87초 만에 시작하는 법'
-description: 'Rust로 만들어진 Python 패키지 매니저 uv 0.11로 anthropic, openai 등 AI SDK를 포함한 개발 환경을 설정하는 완전 실전 가이드. pip 대비 100배+ 빠른 설치 속도와 재현 가능한 환경 관리 방법을 실제 로그와 함께 정리했다.'
+description: 'Rust로 만들어진 Python 패키지 매니저 uv 0.11로 anthropic, openai 등 AI SDK 개발 환경을 설정하는 완전 실전 가이드. pip 대비 100배+ 빠른 설치 속도, 재현 가능한 환경 관리, Claude SDK 프로젝트 시작까지 실제 로그와 함께 정리했다.'
 pubDate: '2026-05-07'
 heroImage: '../../../assets/blog/uv-python-ai-development-setup-guide-2026-hero.png'
 tags: ['Python', 'uv', 'Claude API', '개발 환경', 'AI 개발']

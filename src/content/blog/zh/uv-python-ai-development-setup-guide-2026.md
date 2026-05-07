@@ -1,6 +1,6 @@
 ---
 title: '用uv搭建AI开发环境 — 0.87秒启动Claude SDK项目的实战指南'
-description: '使用Rust编写的Python包管理器uv 0.11搭建包含anthropic、openai等AI SDK的完整开发环境实战指南。实测pip安装速度的100倍以上，以及可复现环境管理的完整方法，附真实运行日志。'
+description: '使用Rust编写的Python包管理器uv 0.11搭建AI SDK开发环境的完整实战指南。覆盖pip速度100倍以上的加速安装、可复现环境管理、Claude SDK项目初始化全流程，附真实运行日志，是2026年Python AI开发的首选工具链。'
 pubDate: '2026-05-07'
 heroImage: '../../../assets/blog/uv-python-ai-development-setup-guide-2026-hero.png'
 tags: ['Python', 'uv', 'Claude API', '开发环境', 'AI开发']

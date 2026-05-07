@@ -114,7 +114,7 @@ The people who will thrive in the AI era aren't necessarily the ones who are the
 2. <strong>Identify problems worth solving</strong> - across organizational boundaries
 3. <strong>Use AI as a powerful tool</strong> - to execute solutions they've envisioned
 
-Think of it this way: AI is like having an incredibly capable assistant who can do almost anything you ask for, as long as you know what to ask for. The skill that matters is knowing what to ask for—and that comes from domain knowledge and cross-functional understanding.
+Think of it this way: AI is like having an incredibly capable assistant who can do almost anything you ask for, as long as you know what to ask for. The skill that matters is knowing what to ask for—and that comes from domain knowledge and cross-functional understanding. Building something like a [Claude Agent Teams system](/en/blog/en/claude-agent-teams-guide) — where specialized agents handle different parts of a workflow — is a concrete way to see why T-shaped understanding matters so much in practice.
 
 ## Practical Steps You Can Take
 
@@ -144,7 +144,7 @@ If you work for a company, try to understand how it actually makes money. What a
 
 I won't sugarcoat it: <strong>this is a tough market for junior professionals</strong>. Companies are hiring fewer people. The bar for entry-level positions has gone up. It feels unfair because it kind of is—you're entering the workforce at a moment of significant transition.
 
-But here's what I'm also seeing: there are companies actively looking for people who combine domain knowledge with AI fluency. They're not just hiring for specific technical skills. They're hiring for people who can think about problems holistically and use all available tools—including AI—to solve them.
+But here's what I'm also seeing: there are companies actively looking for people who combine domain knowledge with AI fluency. Getting hands-on fast — like [setting up an AI dev environment with uv in under a second](/en/blog/en/uv-python-ai-development-setup-guide-2026) — is a simple way to start building that fluency. They're not just hiring for specific technical skills. They're hiring for people who can think about problems holistically and use all available tools—including AI—to solve them.
 
 These opportunities might not be at the biggest, flashiest companies. They might be at smaller companies, or in industries you haven't considered, or in roles that don't have traditional job titles. But they exist.
 

@@ -139,7 +139,7 @@ Claude Cowork 在 Claude 桌面应用中运行，支持<strong>与 Excel 和 Pow
 
 ### 2. 供应商锁定与平台战略
 
-Anthropic 的 Cowork 战略非常明确——<strong>通过 MCP 构建开放生态系统</strong>。在 MCP 已捐赠给 Linux Foundation 成为开放标准的背景下，Cowork 试图抢占"最佳标准实现产品"的位置。
+Anthropic 的 Cowork 战略非常明确——<strong>通过 MCP 构建开放生态系统</strong>。在 MCP 已捐赠给 Linux Foundation 成为开放标准的背景下，Cowork 试图抢占"最佳标准实现产品"的位置。参考[A2A与MCP混合多智能体生产架构](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide)，可以直观理解这个标准在实际中如何运作。
 
 对比：
 
@@ -205,7 +205,7 @@ graph TD
 2. <strong>企业扩展</strong>（2026年初）：通过 Cowork 将 AI Agent 扩展至非开发岗位
 3. <strong>平台生态系统</strong>（2026〜）：通过 MCP 开放标准 + Plugin Marketplace 构建第三方生态
 
-这一战略与 Slack 从开发团队工具进化为全公司沟通平台的路径相似。区别在于 Cowork 提供的是<strong>智能体 AI 的执行力</strong>——不仅仅是收发消息，而是能够实际代替执行工作任务。
+这一战略与 Slack 从开发团队工具进化为全公司沟通平台的路径相似。区别在于 Cowork 提供的是<strong>智能体 AI 的执行力</strong>——不仅仅是收发消息，而是能够实际代替执行工作任务。阅读[Anthropic Managed Agents与Opus 4.7分析](/zh/blog/zh/anthropic-claude-opus-4-7-managed-agents-2026)，可以更清晰地看到这套智能体AI战略的完整图景。
 
 ## 结语
 
