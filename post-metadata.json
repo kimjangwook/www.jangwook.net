@@ -2570,5 +2570,25 @@
     ],
     "readingTime": 9,
     "wordCount": 2600
+  },
+  "openai-codex-api-release-vs-claude-code-comparison-may-2026": {
+    "pubDate": "2026-05-08",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.55,
+      "architecture": 0.7
+    },
+    "tags": [
+      "AI코딩",
+      "OpenAI",
+      "ClaudeCode",
+      "개발도구",
+      "비교분석"
+    ],
+    "readingTime": 10,
+    "wordCount": 2100
   }
 }
