@@ -100,7 +100,7 @@ function processUser(user) {
 }
 ```
 
-<strong>核心的な違い</strong>：`x: string`と宣言すれば、AIは即座にstringで動作しないすべての演算を除外します。型がなければ、AIは「おそらくstringだろう」と推測する必要があり、この推測が外れればランタイムエラーにつながります。
+<strong>核心的な違い</strong>：`x: string`と宣言すれば、AIは即座にstringで動作しないすべての演算を除外します。型がなければ、AIは「おそらくstringだろう」と推測する必要があり、この推測が外れればランタイムエラーにつながります。言語選択だけでなく、[編集フォーマットなどハーネス設計](/ja/blog/ja/llm-coding-harness-optimization)もLLMコーディング性能に大きく影響します。
 
 ### フレームワークエコシステムの加速効果
 
@@ -130,7 +130,7 @@ TypeScriptの急騰は、言語そのものだけの力ではありません。<
 ### GitHubデータが示す数字
 
 - <strong>TypeScript</strong>：月間アクティブコントリビューター263万6千人（第1位）
-- <strong>Python</strong>：AI/ML研究で25.87%と依然としてトップ
+- <strong>Python</strong>：AI/ML研究で25.87%と依然としてトップ（[uvを活用したPython AI開発環境構築](/ja/blog/ja/uv-python-ai-development-setup-guide-2026)が注目されています）
 - <strong>パブリックLLM SDKリポジトリ</strong>：110万以上がすでにLLM SDKを使用
 
 この数字が示しているのは、<strong>AIツール互換性が「あれば嬉しい」ではなく、言語選択の核心的な変数</strong>になったという点です。
@@ -167,7 +167,7 @@ graph TD
 
 <strong>実務ガイド</strong>：
 
-- <strong>Python/TypeScript中心のスタック</strong>：AIコーディングツールを積極活用し生産性を最大化
+- <strong>Python/TypeScript中心のスタック</strong>：AIコーディングツールを積極活用し生産性を最大化（ツール選択は[OpenAI Codex vs Claude Code比較](/ja/blog/ja/openai-codex-api-release-vs-claude-code-comparison-may-2026)を参照）
 - <strong>Java/C#スタック</strong>：静的型のメリットを活かしつつ、AIツールカバレッジの確認が必要
 - <strong>動的型レガシー（PHP、Ruby）</strong>：TypeScript型定義の追加や段階的マイグレーションを検討
 - <strong>システム言語（C/C++）</strong>：AIサポートが限定的なため、Rustへの移行ロードマップ策定を検討

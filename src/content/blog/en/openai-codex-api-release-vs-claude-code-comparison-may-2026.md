@@ -1,6 +1,6 @@
 ---
 title: 'OpenAI Codex Cloud Agent vs Claude Code — May 2026 Comparison'
-description: 'OpenAI Codex shifted to a full cloud agent workspace with its April 2026 update. A Source Review comparing architecture, benchmarks, cost, and real-world workflow fit against Claude Code.'
+description: 'OpenAI Codex became cloud-agent-only in April 2026. Architecture, benchmarks, cost, and workflow fit vs Claude Code — a clear May 2026 verdict for engineering teams.'
 pubDate: '2026-05-08'
 heroImage: '../../../assets/blog/openai-codex-api-release-vs-claude-code-comparison-may-2026-hero.png'
 tags: ['AI-coding', 'OpenAI', 'ClaudeCode', 'developer-tools', 'comparison']

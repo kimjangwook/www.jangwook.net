@@ -99,7 +99,7 @@ function processUser(user) {
 }
 ```
 
-<strong>핵심 차이</strong>: `x: string`이라고 선언하면 AI는 즉시 string에서 작동하지 않는 모든 연산을 배제합니다. 타입이 없으면 AI는 "아마 string일 것"이라고 추측해야 하고, 이 추측이 틀리면 런타임 에러로 이어집니다.
+<strong>핵심 차이</strong>: `x: string`이라고 선언하면 AI는 즉시 string에서 작동하지 않는 모든 연산을 배제합니다. 타입이 없으면 AI는 "아마 string일 것"이라고 추측해야 하고, 이 추측이 틀리면 런타임 에러로 이어집니다. 언어 외에도 [편집 포맷 등 하니스 설계](/ko/blog/ko/llm-coding-harness-optimization)가 LLM 코딩 성능에 큰 영향을 미친다는 점도 참고할 만합니다.
 
 ### 프레임워크 생태계의 가속 효과
 
@@ -129,7 +129,7 @@ TypeScript의 급등은 언어 자체만의 힘이 아닙니다. <strong>Next.js
 ### GitHub 데이터가 보여주는 숫자
 
 - <strong>TypeScript</strong>: 월간 활성 기여자 263만 6천 명 (1위)
-- <strong>Python</strong>: AI/ML 연구에서 25.87%로 여전히 선두
+- <strong>Python</strong>: AI/ML 연구에서 25.87%로 여전히 선두 ([uv를 활용한 Python AI 개발 환경 설정](/ko/blog/ko/uv-python-ai-development-setup-guide-2026)이 주목받고 있다)
 - <strong>공용 LLM SDK 레포</strong>: 110만 개 이상이 이미 LLM SDK를 사용
 
 이 수치가 보여주는 것은 <strong>AI 도구 호환성이 "있으면 좋은 것"이 아니라 언어 선택의 핵심 변수</strong>가 되었다는 점입니다.
@@ -166,7 +166,7 @@ graph TD
 
 <strong>실무 가이드</strong>:
 
-- <strong>Python/TypeScript 중심 스택</strong>: AI 코딩 도구를 적극 활용해 생산성 극대화
+- <strong>Python/TypeScript 중심 스택</strong>: AI 코딩 도구를 적극 활용해 생산성 극대화 (도구 선택은 [OpenAI Codex vs Claude Code 비교 분석](/ko/blog/ko/openai-codex-api-release-vs-claude-code-comparison-may-2026) 참조)
 - <strong>Java/C# 스택</strong>: 정적 타입의 이점을 활용하되, AI 도구 커버리지 확인 필요
 - <strong>동적 타입 레거시(PHP, Ruby)</strong>: TypeScript 타입 정의 추가나 점진적 마이그레이션 검토
 - <strong>시스템 언어(C/C++)</strong>: AI 지원이 제한적이므로 Rust로의 전환 로드맵 수립 고려

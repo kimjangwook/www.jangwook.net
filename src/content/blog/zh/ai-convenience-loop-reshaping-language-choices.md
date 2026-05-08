@@ -99,7 +99,7 @@ function processUser(user) {
 }
 ```
 
-<strong>关键差异</strong>：一旦声明 `x: string`，AI 就能立即排除所有不适用于 string 的操作。如果没有类型，AI 只能推测"大概是 string"，一旦推测错误就会导致运行时错误。
+<strong>关键差异</strong>：一旦声明 `x: string`，AI 就能立即排除所有不适用于 string 的操作。如果没有类型，AI 只能推测"大概是 string"，一旦推测错误就会导致运行时错误。除语言选择外，[编辑格式等工具链（harness）设计](/zh/blog/zh/llm-coding-harness-optimization)也对 LLM 编程性能有重大影响。
 
 ### 框架生态系统的加速效应
 
@@ -129,7 +129,7 @@ TypeScript 的暴涨并非仅靠语言本身。<strong>Next.js、Astro、Remix</
 ### GitHub 数据揭示的数字
 
 - <strong>TypeScript</strong>：月活跃贡献者263.6万人（第1位）
-- <strong>Python</strong>：在 AI/ML 研究中以25.87%依然领先
+- <strong>Python</strong>：在 AI/ML 研究中以25.87%依然领先（[使用 uv 搭建 Python AI 开发环境](/zh/blog/zh/uv-python-ai-development-setup-guide-2026)正受到广泛关注）
 - <strong>公共 LLM SDK 仓库</strong>：超过110万个仓库已在使用 LLM SDK
 
 这些数字表明，<strong>AI 工具兼容性已不是"锦上添花"，而是语言选择的核心变量</strong>。
@@ -166,7 +166,7 @@ graph TD
 
 <strong>实操指南</strong>：
 
-- <strong>Python/TypeScript 为主的技术栈</strong>：积极利用 AI 编程工具，最大化生产力
+- <strong>Python/TypeScript 为主的技术栈</strong>：积极利用 AI 编程工具，最大化生产力（工具选择可参考 [OpenAI Codex vs Claude Code 对比分析](/zh/blog/zh/openai-codex-api-release-vs-claude-code-comparison-may-2026)）
 - <strong>Java/C# 技术栈</strong>：利用静态类型的优势，但需确认 AI 工具覆盖范围
 - <strong>动态类型遗留系统（PHP、Ruby）</strong>：考虑添加 TypeScript 类型定义或渐进式迁移
 - <strong>系统级语言（C/C++）</strong>：鉴于 AI 支持有限，建议考虑制定向 Rust 转型的路线图

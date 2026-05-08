@@ -100,7 +100,7 @@ function processUser(user) {
 }
 ```
 
-<strong>The key difference</strong>: When you declare `x: string`, the AI immediately excludes all operations that don't work on strings. Without types, the AI has to guess "this is probably a string," and when that guess is wrong, it leads to runtime errors.
+<strong>The key difference</strong>: When you declare `x: string`, the AI immediately excludes all operations that don't work on strings. Without types, the AI has to guess "this is probably a string," and when that guess is wrong, it leads to runtime errors. Beyond language choice, [harness design — editing format and tool interfaces](/en/blog/en/llm-coding-harness-optimization) also significantly impacts LLM coding performance.
 
 ### The Accelerating Effect of Framework Ecosystems
 
@@ -130,7 +130,7 @@ A <strong>multi-layered convenience loop</strong> is forming: frameworks adopt T
 ### The Numbers from GitHub Data
 
 - <strong>TypeScript</strong>: 2.636 million monthly active contributors (ranked #1)
-- <strong>Python</strong>: Still leading in AI/ML research at 25.87%
+- <strong>Python</strong>: Still leading in AI/ML research at 25.87% ([setting up a Python AI dev environment with uv](/en/blog/en/uv-python-ai-development-setup-guide-2026) is gaining attention)
 - <strong>Public LLM SDK repos</strong>: Over 1.1 million already using LLM SDKs
 
 These numbers demonstrate that <strong>AI tool compatibility has shifted from a "nice to have" to a critical variable in language selection</strong>.
@@ -167,7 +167,7 @@ graph TD
 
 <strong>Practical guidelines</strong>:
 
-- <strong>Python/TypeScript-centric stacks</strong>: Aggressively leverage AI coding tools to maximize productivity
+- <strong>Python/TypeScript-centric stacks</strong>: Aggressively leverage AI coding tools to maximize productivity (see [OpenAI Codex vs Claude Code comparison](/en/blog/en/openai-codex-api-release-vs-claude-code-comparison-may-2026) for tool selection)
 - <strong>Java/C# stacks</strong>: Capitalize on static typing benefits, but verify AI tool coverage
 - <strong>Dynamic-typed legacy (PHP, Ruby)</strong>: Consider adding TypeScript type definitions or planning a gradual migration
 - <strong>Systems languages (C/C++)</strong>: AI support is limited — consider developing a roadmap for transitioning to Rust

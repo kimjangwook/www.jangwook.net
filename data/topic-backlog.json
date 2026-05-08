@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-07",
+  "updated_at": "2026-05-08",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1429,6 +1429,44 @@
       "added_at": "2026-05-07",
       "status": "queued",
       "notes": "Anthropic이 소프트웨어 보안 취약점 발견 특화 모델 Claude Mythos Preview를 발표. Project Glasswing이라는 사이버보안 이니셔티브로 선별된 기업에만 제한 공개. 보안 AI 모델의 등장이 기업 보안 팀에 주는 시사점 분석 가능. 정부 AI 테스트(CASI)와 연결 가능."
+    },
+    {
+      "slug": "ai-coding-agents-7way-comparison-2026-claude-cursor-windsurf-codex-kiro",
+      "title_idea": "AI 코딩 에이전트 7파전 비교 2026 — Claude Code·Cursor·Windsurf·Codex·Kiro·Copilot·Antigravity 실전 선택 가이드",
+      "content_type": "comparison",
+      "target_keyword": "AI 코딩 도구 비교 2026",
+      "secondary_keywords": [
+        "Claude Code vs Cursor",
+        "AI 에이전트 코딩 도구",
+        "Kiro AWS 코딩 에이전트",
+        "Windsurf Codex 비교",
+        "개발 생산성 도구 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "artificialanalysis.ai, lushbinary.com, nxcode.io — 7개 툴 비교 데이터 확보. Kiro(AWS 신규 출시) 포함.",
+      "added_at": "2026-05-08",
+      "status": "queued",
+      "notes": "오늘 Codex vs Claude Code 비교 포스트 발행 직후라 후속 포스트로 탁월. Kiro가 새 진입자. 7개 툴 가격·성능·철학 차이가 독자 관심 높음."
+    },
+    {
+      "slug": "llm-api-pricing-guide-2026-claude-openai-gemini-real-numbers",
+      "title_idea": "LLM API 가격 완전 비교 2026 — Claude·GPT·Gemini 실제 비용과 프로젝트별 최적 선택 공식",
+      "content_type": "comparison",
+      "target_keyword": "LLM API 가격 비교 2026",
+      "secondary_keywords": [
+        "Claude API 비용",
+        "GPT-4o API 가격",
+        "Gemini 2.5 Flash 비용",
+        "토큰 비용 계산",
+        "AI API 선택 가이드 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "cloudidr.com, pecollective.com, pricepertoken.com — 300개 이상 모델 가격 데이터.",
+      "added_at": "2026-05-08",
+      "status": "queued",
+      "notes": "실제 숫자: Opus /, Sonnet /, Haiku /bin/zsh.25/.25, GPT-4.1 /, Gemini Flash /bin/zsh.30/M. 배치 API 50% 할인·프롬프트 캐싱 90% 절감 포함."
     }
   ]
 }

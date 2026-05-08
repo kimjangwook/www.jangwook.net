@@ -141,7 +141,7 @@ graph TD
 
 <strong>핵심 개념</strong>:
 
-- <strong>MCP Host</strong>: AI 애플리케이션 (Claude Code, Cursor, Windsurf 등)
+- <strong>MCP Host</strong>: AI 애플리케이션 ([Claude Code, Cursor, Windsurf](/ko/blog/ko/openai-codex-api-release-vs-claude-code-comparison-may-2026) 등)
 - <strong>MCP Client</strong>: 호스트 내부에서 서버와 1:1 연결을 관리
 - <strong>MCP Server</strong>: 특정 리소스(DB, API, 파일 등)에 대한 접근을 제공
 - <strong>Transport</strong>: stdio(로컬) 또는 HTTP+SSE(원격) 프로토콜
@@ -197,7 +197,7 @@ MintMCP, Cloudflare Workers 등이 제공하는 <strong>MCP 게이트웨이</str
 
 실제 도입 사례에서 보고된 효과:
 
-- <strong>반복 작업 시간 40% 절감</strong>: Jira 이슈 생성, Slack 알림, DB 쿼리 등을 MCP로 자동화
+- <strong>반복 작업 시간 40% 절감</strong>: [Jira 이슈 생성, Slack 알림](/ko/blog/ko/jira-ai-agents-mcp-engineering-management), DB 쿼리 등을 MCP로 자동화
 - <strong>온보딩 시간 단축</strong>: 신규 팀원이 표준화된 MCP 서버를 통해 팀 도구에 즉시 접근
 - <strong>섀도우 IT 감소</strong>: 개인별 스크립트 대신 표준 MCP 서버로 도구 접근 통일
 
@@ -207,7 +207,7 @@ MintMCP, Cloudflare Workers 등이 제공하는 <strong>MCP 게이트웨이</str
 
 MCP의 빠른 확산에는 대가가 따릅니다. Cisco의 분석에 따르면 주요 위험은 다음과 같습니다:
 
-1. <strong>프롬프트 인젝션</strong>: MCP 서버가 반환하는 데이터에 악의적 프롬프트가 포함될 수 있음
+1. <strong>프롬프트 인젝션</strong>: MCP 서버가 반환하는 데이터에 악의적 프롬프트가 포함될 수 있음 ([MCP 코드 실행 보안 전략](/ko/blog/ko/anthropic-code-execution-mcp) 참조)
 2. <strong>공급망 공격</strong>: 커뮤니티 MCP 서버(예: OpenClaw의 5,700개+ 스킬)의 품질 관리 문제
 3. <strong>과도한 권한 부여</strong>: MCP 서버에 필요 이상의 시스템 접근 권한 부여
 4. <strong>데이터 유출</strong>: AI 모델을 통한 내부 데이터의 비의도적 외부 전송

@@ -141,7 +141,7 @@ graph TD
 
 <strong>コアコンセプト</strong>：
 
-- <strong>MCPホスト</strong>：AIアプリケーション（Claude Code、Cursor、Windsurfなど）
+- <strong>MCPホスト</strong>：AIアプリケーション（[Claude Code、Cursor、Windsurf](/ja/blog/ja/openai-codex-api-release-vs-claude-code-comparison-may-2026)など）
 - <strong>MCPクライアント</strong>：ホスト内部でサーバーと1:1接続を管理
 - <strong>MCPサーバー</strong>：特定のリソース（DB、API、ファイルなど）へのアクセスを提供
 - <strong>トランスポート</strong>：stdio（ローカル）またはHTTP+SSE（リモート）プロトコル
@@ -197,7 +197,7 @@ MintMCP、Cloudflare Workersなどが提供する<strong>MCPゲートウェイ</
 
 実際の導入事例で報告された効果：
 
-- <strong>反復作業時間40%削減</strong>：Jiraイシュー作成、Slack通知、DBクエリなどをMCPで自動化
+- <strong>反復作業時間40%削減</strong>：[Jiraイシュー作成、Slack通知](/ja/blog/ja/jira-ai-agents-mcp-engineering-management)、DBクエリなどをMCPで自動化
 - <strong>オンボーディング時間短縮</strong>：新メンバーが標準化されたMCPサーバーを通じてチームツールに即座にアクセス
 - <strong>シャドーIT削減</strong>：個人ごとのスクリプトの代わりに標準MCPサーバーでツールアクセスを統一
 
@@ -207,7 +207,7 @@ MintMCP、Cloudflare Workersなどが提供する<strong>MCPゲートウェイ</
 
 MCPの急速な普及には代償が伴います。Ciscoの分析によると、主なリスクは以下のとおりです。
 
-1. <strong>プロンプトインジェクション</strong>：MCPサーバーが返すデータに悪意あるプロンプトが含まれる可能性
+1. <strong>プロンプトインジェクション</strong>：MCPサーバーが返すデータに悪意あるプロンプトが含まれる可能性（[MCPコード実行セキュリティ戦略](/ja/blog/ja/anthropic-code-execution-mcp)を参照）
 2. <strong>サプライチェーン攻撃</strong>：コミュニティMCPサーバー（例：OpenClawの5,700以上のスキル）の品質管理問題
 3. <strong>過剰な権限付与</strong>：MCPサーバーに必要以上のシステムアクセス権限を付与
 4. <strong>データ流出</strong>：AIモデルを通じた内部データの意図しない外部送信

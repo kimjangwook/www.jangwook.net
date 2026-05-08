@@ -1,6 +1,6 @@
 ---
 title: 'OpenAI Codexクラウドエージェント vs Claude Code — 2026年5月、どちらを選ぶか'
-description: 'OpenAI Codexが4月の大型アップデートでクラウドエージェントワークスペースに転換した。Claude Codeとのアーキテクチャの違い、ベンチマーク、コスト、実際の開発ワークフローへの適合性をSource Reviewで比較する。'
+description: 'OpenAI Codexが4月にクラウドエージェント専用に転換。Claude Codeとのアーキテクチャ・ベンチマーク・コストの違いをSource Reviewで比較し、2026年5月時点でどちらがチームに適しているかの判断基準を示す。'
 pubDate: '2026-05-08'
 heroImage: '../../../assets/blog/openai-codex-api-release-vs-claude-code-comparison-may-2026-hero.png'
 tags: ['AIコーディング', 'OpenAI', 'ClaudeCode', '開発ツール', '比較分析']

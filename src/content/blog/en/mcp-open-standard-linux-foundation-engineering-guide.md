@@ -142,7 +142,7 @@ graph TD
 
 <strong>Core Concepts</strong>:
 
-- <strong>MCP Host</strong>: The AI application (Claude Code, Cursor, Windsurf, etc.)
+- <strong>MCP Host</strong>: The AI application ([Claude Code, Cursor, Windsurf](/en/blog/en/openai-codex-api-release-vs-claude-code-comparison-may-2026), etc.)
 - <strong>MCP Client</strong>: Manages 1:1 connections with servers inside the host
 - <strong>MCP Server</strong>: Provides access to specific resources (databases, APIs, files, etc.)
 - <strong>Transport</strong>: stdio (local) or HTTP+SSE (remote) protocol
@@ -198,7 +198,7 @@ sequenceDiagram
 
 Reported benefits from real-world deployments:
 
-- <strong>40% reduction in repetitive task time</strong>: Automating Jira issue creation, Slack notifications, and DB queries via MCP
+- <strong>40% reduction in repetitive task time</strong>: Automating [Jira issue creation and Slack notifications](/en/blog/en/jira-ai-agents-mcp-engineering-management), and DB queries via MCP
 - <strong>Faster onboarding</strong>: New team members gain immediate access to team tools through standardized MCP servers
 - <strong>Less shadow IT</strong>: Unified tool access through standard MCP servers instead of personal scripts
 
@@ -208,7 +208,7 @@ Reported benefits from real-world deployments:
 
 MCP's rapid adoption comes at a cost. According to Cisco's analysis, key risks include:
 
-1. <strong>Prompt injection</strong>: Data returned by MCP servers may contain malicious prompts
+1. <strong>Prompt injection</strong>: Data returned by MCP servers may contain malicious prompts (see [MCP code execution security strategies](/en/blog/en/anthropic-code-execution-mcp))
 2. <strong>Supply chain attacks</strong>: Quality control issues with community MCP servers (e.g., OpenClaw's 5,700+ skills)
 3. <strong>Excessive permissions</strong>: Granting MCP servers more system access than necessary
 4. <strong>Data exfiltration</strong>: Unintentional external transmission of internal data through AI models
