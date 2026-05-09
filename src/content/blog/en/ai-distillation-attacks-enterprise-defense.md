@@ -100,6 +100,8 @@ When selecting an AI vendor, you need to evaluate not just performance and cost,
 - Account verification and authentication strength
 - Sophistication of rate limiting
 
+The wider risks of AI vendor lock-in are covered in [GPT-4o Retirement and Model Dependency Risk](/en/blog/en/gpt4o-retirement-model-dependency-risk), which examines how single-model dependency affects enterprises and why a multi-vendor strategy matters.
+
 <strong>3. Provenance Risk of Open-Source Models</strong>
 
 When models created through illicit distillation are released as open source, organizations that use them may be indirectly implicated in IP infringement. Verifying model <strong>provenance</strong> has become critical.
@@ -163,7 +165,7 @@ Since this incident, the following movements have emerged across the AI industry
 
 <strong>1. Strengthened Cross-Industry Collaboration</strong>
 
-Anthropic, together with OpenAI, is calling for an industry-wide response to distillation attacks. Individual company defenses are insufficient — coordination between AI companies, cloud providers, and policymakers is necessary.
+Anthropic, together with OpenAI, is calling for an industry-wide response to distillation attacks. Individual company defenses are insufficient — coordination between AI companies, cloud providers, and policymakers is necessary. For a broader look at AI governance in national security contexts, see [Anthropic vs Pentagon — CTO Vendor Strategy for the AI Governance Era](/en/blog/en/anthropic-pentagon-ai-governance-cto-lessons).
 
 <strong>2. Microsoft's Open-Weight Model Backdoor Scanner</strong>
 

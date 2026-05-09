@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-08",
+  "updated_at": "2026-05-09",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1467,6 +1467,63 @@
       "added_at": "2026-05-08",
       "status": "queued",
       "notes": "실제 숫자: Opus /, Sonnet /, Haiku /bin/zsh.25/.25, GPT-4.1 /, Gemini Flash /bin/zsh.30/M. 배치 API 50% 할인·프롬프트 캐싱 90% 절감 포함."
+    },
+    {
+      "slug": "claude-managed-agents-memory-dreaming-guide-2026",
+      "title_idea": "Claude Managed Agents Memory·Dreaming 실전 가이드 — 세션 간 학습하는 AI 에이전트 만들기",
+      "content_type": "how-to",
+      "target_keyword": "Claude Managed Agents 가이드 2026",
+      "secondary_keywords": [
+        "Claude Managed Agents Memory",
+        "Claude agent dreaming",
+        "AI 에이전트 장기 기억",
+        "anthropic-beta managed-agents",
+        "Claude agent SDK Python"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic official release notes May 2026, Claude API Docs, 9to5Mac May 7 2026",
+      "added_at": "2026-05-09",
+      "status": "queued",
+      "notes": "Claude Managed Agents가 Memory(크로스 세션 기억)와 Dreaming(과거 세션 패턴 분석 자기개선) 기능을 2026년 5월 퍼블릭 베타 출시. 매우 타임리. 월요일 How-to 포스트로 적합. SDK에서 anthropic-beta: managed-agents-2026-04-01 헤더 필요."
+    },
+    {
+      "slug": "claude-advisor-tool-executor-pattern-agentic-workflow",
+      "title_idea": "Claude Advisor 도구로 장기 에이전틱 워크플로우 품질 높이기 — executor·advisor 듀얼 모델 패턴",
+      "content_type": "how-to",
+      "target_keyword": "Claude advisor tool 가이드",
+      "secondary_keywords": [
+        "Claude managed agents advisor",
+        "LLM 듀얼 모델 패턴",
+        "agentic workflow 품질 개선",
+        "Claude Opus advisor Sonnet executor",
+        "AI 에이전트 전략 가이드"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Anthropic Claude API release notes May 2026",
+      "added_at": "2026-05-09",
+      "status": "queued",
+      "notes": "Advisor tool: 빠른 executor 모델 + 고지능 advisor 모델 페어링으로 장기 에이전틱 워크로드에서 전략적 가이던스 제공. 2026년 5월 퍼블릭 베타. Opus 4.7(advisor) + Sonnet 4.6(executor) 조합 분석 포함."
+    },
+    {
+      "slug": "claude-managed-agents-multiagent-orchestration-webhooks-2026",
+      "title_idea": "Claude Managed Agents 멀티에이전트 오케스트레이션과 Webhook 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Claude Managed Agents 멀티에이전트 오케스트레이션",
+      "secondary_keywords": [
+        "Claude agents webhook",
+        "multiagent orchestration Python",
+        "Claude Managed Agents outcomes",
+        "AI 에이전트 파이프라인 자동화",
+        "Anthropic managed agents production"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Anthropic release notes May 2026",
+      "added_at": "2026-05-09",
+      "status": "queued",
+      "notes": "2026년 5월 Claude Managed Agents에 multiagent 세션·outcomes API·webhook 지원 추가. 프로덕션 이벤트 기반 파이프라인 구축에 최적. 다음 주 How-to 포스트 후보."
     }
   ]
 }

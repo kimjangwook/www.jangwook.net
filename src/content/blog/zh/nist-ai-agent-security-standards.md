@@ -252,7 +252,7 @@ graph TD
     ADL --> E3["代理定义<br/>厂商中立标准"]
 ```
 
-作为EM需要注意的是，MCP已经达到月9700万次下载，实际上已成为行业标准。在设计团队的AI代理架构时，将MCP兼容性作为基本要求是明智的。
+作为EM需要注意的是，MCP已经达到月9700万次下载，实际上已成为行业标准。在设计团队的AI代理架构时，将MCP兼容性作为基本要求是明智的。MCP与A2A在生产环境中的集成实战策略，请参阅[A2A + MCP混合架构：2026年多智能体生产策略](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide)。
 
 ## 实战应用：从明天开始的3件事
 
@@ -266,7 +266,7 @@ graph TD
 
 <strong>3. 构建审计日志管道(半天)</strong>
 
-建立记录代理所有行为的日志管道。从向现有监控堆栈(Datadog、Grafana等)添加代理专用仪表板开始。
+建立记录代理所有行为的日志管道。从向现有监控堆栈(Datadog、Grafana等)添加代理专用仪表板开始。关于生产环境LLM系统可观测性的深度实践指南，请参考[AI智能体可观测性实战指南](/zh/blog/zh/ai-agent-observability-production-guide)。
 
 ## 结论
 

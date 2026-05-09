@@ -1,8 +1,8 @@
 ---
 title: AI 모델 증류 공격의 실태 — CTO가 알아야 할 IP 보호 전략
 description: >-
-  Anthropic이 감지한 대규모 AI 모델 증류 공격 사례를 분석하고, 기업이 AI API 활용 시 지적재산을 보호하기 위한 실무 전략을
-  제시합니다.
+  DeepSeek·MiniMax의 1,600만 건 Claude 증류 공격 실태를 분석하고 기업 CTO·EM을 위한 실무 대응 전략을
+  제시합니다. AI API 지적재산 보호, 벤더 보안 평가 기준, 오픈소스 모델 출처 검증, 조직 AI 거버넌스 체계 구축 방법까지 다룹니다.
 pubDate: '2026-03-02'
 heroImage: ../../../assets/blog/ai-distillation-attacks-enterprise-defense-hero.jpg
 tags:
@@ -99,6 +99,8 @@ AI 벤더를 선택할 때 성능과 비용뿐 아니라, <strong>증류 공격 
 - 계정 검증 및 인증 강화 수준
 - 사용량 제한(rate limiting) 정교함
 
+AI 벤더 의존도 자체가 안고 있는 리스크는 [GPT-4o 은퇴와 모델 의존 리스크](/ko/blog/ko/gpt4o-retirement-model-dependency-risk)에서 다룹니다. 단일 모델 의존이 기업에 미치는 영향과 다중 벤더 전략을 참고하세요.
+
 <strong>3. 오픈소스 모델의 출처 리스크</strong>
 
 불법 증류로 만들어진 모델이 오픈소스로 공개되면, 이를 사용하는 기업도 간접적으로 IP 침해에 연루될 수 있습니다. 모델의 <strong>출처(provenance)</strong>를 검증하는 것이 중요해졌습니다.
@@ -162,7 +164,7 @@ graph TD
 
 <strong>1. 산업 전반의 협력 강화</strong>
 
-Anthropic은 OpenAI와 함께 증류 공격에 대한 산업 전체의 대응을 촉구하고 있습니다. 개별 기업의 방어만으로는 부족하며, AI 산업, 클라우드 제공자, 정책 입안자의 공조가 필요합니다.
+Anthropic은 OpenAI와 함께 증류 공격에 대한 산업 전체의 대응을 촉구하고 있습니다. 개별 기업의 방어만으로는 부족하며, AI 산업, 클라우드 제공자, 정책 입안자의 공조가 필요합니다. AI 거버넌스를 국가 안보 맥락에서 살펴보려면 [Anthropic vs 펜타곤 — CTO가 준비해야 할 벤더 전략](/ko/blog/ko/anthropic-pentagon-ai-governance-cto-lessons)을 참고하세요.
 
 <strong>2. Microsoft의 오픈 웨이트 모델 백도어 스캐너</strong>
 

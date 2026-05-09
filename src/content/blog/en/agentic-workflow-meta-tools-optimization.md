@@ -69,7 +69,7 @@ This article analyzes how the AWO (Agent Workflow Optimization) framework works 
 
 ## Why Agentic Workflow Optimization Matters
 
-Most AI agent systems today follow the <strong>ReAct (Reasoning + Acting)</strong> pattern. When an agent receives a user request, the LLM reasons, calls tools, observes results, and repeats the reasoning loop.
+Most AI agent systems today follow the <strong>ReAct (Reasoning + Acting)</strong> pattern. When an agent receives a user request, the LLM reasons, calls tools, observes results, and repeats the reasoning loop. Beyond ReAct, there are several other practical agentic patterns worth knowing — [5 Claude Code Agentic Workflow Patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) compares them from real use.
 
 The problem lies in the inefficiencies this creates:
 
@@ -369,7 +369,7 @@ Capabilities needed for AWO adoption:
 | Tree of Thought | Multiple reasoning paths | Exploration vs. AWO's integration |
 | AVATAR | Contrastive learning-based | Requires training, while AWO uses only execution analysis |
 
-AWO's strength is its <strong>non-invasive integration with existing systems</strong>. You only add tools without modifying the agent's core logic.
+AWO's strength is its <strong>non-invasive integration with existing systems</strong>. You only add tools without modifying the agent's core logic. If you're looking at system-level agent architecture optimization, [Optimizing AI Agent Systems with the Deep Agents Paradigm](/en/blog/en/deep-agents-architecture-optimization) is worth reading alongside this.
 
 ## Conclusion
 

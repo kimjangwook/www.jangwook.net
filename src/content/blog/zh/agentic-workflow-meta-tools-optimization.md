@@ -68,7 +68,7 @@ draft: true
 
 ## 为什么需要AI代理工作流优化
 
-目前大多数AI代理系统遵循<strong>ReAct(推理+行动)</strong>模式。当代理收到用户请求时，LLM进行推理，调用工具，观察结果，然后再次推理，形成一个反复循环。
+目前大多数AI代理系统遵循<strong>ReAct(推理+行动)</strong>模式。当代理收到用户请求时，LLM进行推理，调用工具，观察结果，然后再次推理，形成一个反复循环。除ReAct之外还有多种实用的工作流模式，[Claude Code智能体工作流5种模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)通过实际使用对各模式进行了比较。
 
 问题在于这个过程中的低效率：
 
@@ -368,7 +368,7 @@ AWO采用所需的能力：
 | Tree of Thought | 多路推理探索 | 探索 vs AWO是统一 |
 | AVATAR | 对比学习基础 | 需要学习，但AWO仅使用执行分析 |
 
-AWO的优势是可以<strong>非侵入性地应用于现有系统</strong>。只需添加工具，无需修改代理的核心逻辑。
+AWO的优势是可以<strong>非侵入性地应用于现有系统</strong>。只需添加工具，无需修改代理的核心逻辑。若关注系统级代理架构优化，[使用Deep Agents范式优化AI代理系统](/zh/blog/zh/deep-agents-architecture-optimization)值得一并参考。
 
 ## 结论
 

@@ -255,7 +255,7 @@ graph TD
     ADL --> E3["Agent Definition<br/>Vendor-Neutral Standard"]
 ```
 
-As an EM, a critical point to note is that MCP has already reached 97 million downloads monthly, becoming the de facto industry standard. When designing your team's AI agent architecture, it's wise to include MCP compatibility as a baseline requirement.
+As an EM, a critical point to note is that MCP has already reached 97 million downloads monthly, becoming the de facto industry standard. When designing your team's AI agent architecture, it's wise to include MCP compatibility as a baseline requirement. For hands-on production integration of MCP and A2A, see [A2A + MCP Hybrid Architecture: 2026 Multi-Agent Production Strategy](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide).
 
 ## Practical Application: Three Things to Start Tomorrow
 
@@ -269,7 +269,7 @@ Audit each agent's permissions and identify agents with excessive privileges. Im
 
 <strong>3. Build Audit Log Pipeline (Half day)</strong>
 
-Establish a logging pipeline that records all agent actions. Start by adding an agent-dedicated dashboard to your existing monitoring stack (Datadog, Grafana, etc.).
+Establish a logging pipeline that records all agent actions. Start by adding an agent-dedicated dashboard to your existing monitoring stack (Datadog, Grafana, etc.). For a deeper dive into production LLM system observability, see [AI Agent Observability in Production](/en/blog/en/ai-agent-observability-production-guide).
 
 ## Conclusion
 
