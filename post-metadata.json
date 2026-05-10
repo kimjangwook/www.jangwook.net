@@ -2590,5 +2590,16 @@
     ],
     "readingTime": 10,
     "wordCount": 2100
+  },
+  "claude-code-masterclass-series-1-prompt-to-agent": {
+    "pubDate": "2026-05-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.95,
+      "web-development": 0.2,
+      "ai-ml": 0.85,
+      "devops": 0.7,
+      "architecture": 0.75
+    }
   }
 }

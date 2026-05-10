@@ -1,0 +1,350 @@
+---
+title: "Claude Code 実践マスタークラス #1 — スラッシュコマンド・フック・サブエージェント3ステップでワークフロー自動化"
+description: 'スラッシュコマンド(.claude/commands/)でタスクを定義し、settings.jsonフックでイベントに連結し、サブエージェント(.claude/agents/)に委任する3ステップのClaude Code自動化パターンを実際のブログ自動化システムで解説します。'
+pubDate: '2026-05-10'
+heroImage: '../../../assets/blog/claude-code-masterclass-series-1-prompt-to-agent-hero.jpg'
+tags:
+  - ClaudeCode
+  - 自動化
+  - サブエージェント
+  - ワークフロー
+relatedPosts:
+  - slug: "claude-code-hooks-workflow"
+    score: 0.92
+    reason:
+      ko: "훅을 코드 리뷰 자동화에 적용한 구체적인 사례입니다. Step 2에서 다룬 PostToolUse·Stop 훅이 실제로 어떻게 쓰이는지 확인할 수 있습니다."
+      ja: "フックをコードレビュー自動化に適用した具体的なケースです。Step 2で扱ったPostToolUse・Stopフックが実際にどう使われるか確認できます。"
+      en: "A concrete example of applying hooks to code review automation. Shows how the PostToolUse and Stop hooks from Step 2 work in a real project."
+      zh: "将Hook应用于代码审查自动化的具体案例，展示Step 2中PostToolUse和Stop Hook在实际项目中的应用。"
+  - slug: "claude-agent-teams-guide"
+    score: 0.88
+    reason:
+      ko: "서브에이전트를 5개 전문 팀으로 조직하는 방법입니다. Step 3에서 소개한 에이전트 위임 패턴을 팀 단위로 확장한 버전입니다."
+      ja: "サブエージェントを5つの専門チームに組織する方法です。Step 3で紹介したエージェント委任パターンをチーム規模に拡張したバージョンです。"
+      en: "Organizing subagents into 5 specialized teams — extends the agent delegation pattern from Step 3 to a team-scale structure."
+      zh: "将子代理组织为5个专业团队，是Step 3中代理委托模式的团队级扩展版本。"
+  - slug: "claude-code-agentic-workflow-patterns-5-types"
+    score: 0.81
+    reason:
+      ko: "이 마스터클래스에서 만든 파이프라인이 5가지 에이전틱 패턴 중 어디에 속하는지 파악하는 데 도움이 됩니다."
+      ja: "このマスタークラスで作ったパイプラインが5つのエージェントパターンのどれに当たるか把握するのに役立ちます。"
+      en: "Helps identify where the pipeline built in this masterclass fits among the 5 agentic workflow patterns."
+      zh: "帮助了解本教程构建的管道属于5种代理工作流模式中的哪种。"
+  - slug: "claude-code-plugins-complete-guide"
+    score: 0.76
+    reason:
+      ko: "슬래시 명령어와 에이전트를 플러그인 형태로 재사용하는 방법입니다. 이 글에서 다룬 `.claude/commands/` 구조를 외부 레포에서 공유하는 다음 단계입니다."
+      ja: "スラッシュコマンドとエージェントをプラグイン形式で再利用する方法です。この記事で扱った`.claude/commands/`構造を外部リポジトリで共有する次のステップです。"
+      en: "How to reuse slash commands and agents as plugins. The next step after mastering the .claude/commands/ structure covered here."
+      zh: "以插件形式重用斜线命令和代理的方法，是本文.claude/commands/结构的外部共享进阶。"
+---
+
+今読んでいるこの記事は、今朝11時30分に自動実行されたlaunchdジョブがClaude Codeを起動し、`/daily-tech-blog`スラッシュコマンドを実行し、サブエージェントたちがリサーチと翻訳を分担して作った結果物である可能性が高い。
+
+この自動化パイプラインを構築・運用してきた数ヶ月間を振り返ると、完璧ではない。タイムアウトが発生したり、ビルドが失敗したり、ある言語バージョンだけが生成されて終わる日もある。それでも、このシステムなしに毎日4言語で記事を発行するのは物理的に不可能だっただろう。
+
+このシリーズはその過程で学んだことを整理する。第1回の今回は、核心となる3ステップ — <strong>スラッシュコマンド</strong>、<strong>フック</strong>、<strong>サブエージェント</strong> — を最初から作る方法を扱う。
+
+## Step 1: スラッシュコマンド — `.claude/commands/` フォルダがすべて
+
+Claude Codeで`/commit`、`/review`、`/deploy`のようなコマンドを作る方法は驚くほどシンプルだ。`.claude/commands/`ディレクトリに`.md`ファイルを1つ置くだけでいい。
+
+ファイル名がそのままコマンド名になる:
+
+```
+.claude/
+└── commands/
+    ├── commit.md          → /commit
+    ├── daily-review.md    → /daily-review
+    └── publish.md         → /publish
+```
+
+ファイルの中身は自然言語の指示文だ。Markdownに見えるが、コードのように動作する:
+
+```markdown
+# Publish Command
+
+Validate and publish the blog post to production.
+
+## Usage
+/publish <slug>
+
+## Workflow
+1. Run npm run validate:publishing
+2. Run npm run build
+3. Run git add and commit with the slug
+4. Run git push origin main
+
+Report errors clearly with the step number.
+```
+
+これだけだ。Claude Codeセッションで`/publish my-post-slug`と入力すれば、上記のワークフローがそのまま実行される。Claudeが各ステップを解釈してツール呼び出しに変換する。
+
+この構造を初めて見たとき驚いたのは「プログラミング言語が不要」という点だ。手順をテキストで書けば、Claudeが状況に合わせて実行してくれる。もちろん、意図と違う解釈をされることもある。この予測しづらさはまだ課題だ。
+
+### コマンド作成のコツ
+
+「何をすべきか」だけでなく、「なぜこの順序か」「どんな状況で違う動作をすべきか」を合わせて書くと、はるかに精度が上がる:
+
+```markdown
+# Daily Tech Blog
+
+Research, write, validate, and publish one daily article.
+
+## Context
+- Today's date: use `date +%F`
+- Blog repo: ~/Documents/workspace/www.jangwook.net
+- Content types: how-to (Mon-Wed), news (Thu-Fri), series (Sat-Sun)
+
+## Failure Handling
+- If sandbox test fails: switch to Source Review lane
+- If build fails 3 times: stop and report
+- Never ask the user — this runs unattended
+```
+
+"Never ask the user"の一行が自律実行モードを実現する鍵だ。これがないと、Claudeは不確かな状況のたびに確認を求めて止まる。cronジョブでは致命的になる。
+
+## Step 2: settings.jsonフック — イベント駆動の自動化
+
+スラッシュコマンドが「何をすべきか」を定義するなら、フックは「いつ自動的に動くべきか」を定義する。
+
+`.claude/settings.json`の`hooks`フィールドにイベント-コマンドのペアを登録する:
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/send-telegram.sh 'Claudeがタスクを完了しました'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[audit] $(date) — ファイル書き込み発生\" >> ~/.claude/audit.log"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### 4種類のフックタイプ
+
+| タイプ | 実行タイミング | 主な用途 |
+|--------|------------|---------|
+| `PreToolUse` | Claudeがツールを呼び出す<strong>直前</strong> | 危険なコマンドのブロック、監査ログ |
+| `PostToolUse` | ツール呼び出しが<strong>完了した直後</strong> | ファイル保存後のlint、コミット後の通知 |
+| `Stop` | Claudeが応答を<strong>完全に停止するとき</strong> | 完了通知、クリーンアップ |
+| `SessionStart` | Claudeセッションが<strong>開始するとき</strong> | 時間コンテキストの注入、環境設定 |
+
+私の設定で最も便利だったのは`Stop`フックだ。長い自動化タスク(30分〜1時間)が終わると、Telegramで通知が届く。これを設定してから「まだ終わったかな?」とターミナルを覗き込む習慣が完全になくなった。
+
+### permissionsの設定 — 許可リストベースのセキュリティ
+
+フックと合わせて必ず設定すべきなのが`permissions`だ。Claude Codeはデフォルトで、すべてのBashコマンド実行前にユーザーの承認を要求する。自動化環境ではこの動作がパイプラインを止めてしまう。
+
+許可するコマンドを事前に登録しておけば、承認プロンプトなしで実行される:
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run validate:*)"
+    ]
+  }
+}
+```
+
+<strong>注意</strong>: 許可リストを広く設定しすぎると(`Bash(*)`のように)、意図しないコマンドが実行される可能性がある。実際に必要なコマンドパターンだけを登録するのが安全だ。
+
+フックを実際のコードレビューパイプラインに適用した詳細な事例は、[Claude Code Hookで構築する自動化コードレビューシステム](/ja/blog/ja/claude-code-hooks-workflow)で確認できる。
+
+## Step 3: サブエージェント委任 — `.claude/agents/` 専門化されたAI
+
+リサーチ + 記事執筆 + SEO最適化 + 翻訳 + ビルドをすべて1つのClaudeに任せると、各分野の集中度が下がる。トークンコンテキストも無駄になる。
+
+サブエージェントは、各役割に特化した別個のClaudeインスタンスを作る概念だ。`.claude/agents/`フォルダにfrontmatterを持つMarkdownファイルとして定義する:
+
+```markdown
+---
+name: writing-assistant
+description: Technical blog post writer. Use when creating multilingual (ko/ja/en/zh) developer content.
+tools: Read, Write, WebSearch
+---
+
+You are a technical writer specializing in developer-focused content.
+
+Core rules:
+- Write for developers who will actually run the code
+- Include at least 3 first-person experience references
+- Verify technical claims before writing
+- Never fabricate benchmarks or logs
+```
+
+frontmatterの`description`フィールドが重要だ。オーケストレーターClaudeが「どのエージェントをいつ使うべきか」を判断するときにこのフィールドを参照する。曖昧に書くと、엉뚱なエージェントが呼ばれるか、完全に無視される。
+
+`tools`フィールドには、そのエージェントが実際に必要なツールだけを列挙する。`Write`権限のないリサーチエージェントは、誤ってファイルを修正することができない。役割の特化と権限の制限を同時に実現する方法だ。
+
+このブログでは現在19のエージェントが稼働している:
+
+- `writing-assistant` — 4言語の記事執筆
+- `seo-optimizer` — メタタグ、内部リンクの最適化
+- `web-researcher` — トレンドリサーチとファクトチェック
+- `content-recommender` — relatedPostsの生成
+- `image-generator` — ヒーロー画像ブリーフの作成
+
+エージェントをチームとして組織するより複雑なパターンは、[Claude Code Agent Teams完全ガイド](/ja/blog/ja/claude-agent-teams-guide)で扱った。
+
+## 3ステップ統合: 実際の自動化パイプライン
+
+理論より実際に動くパイプラインを見た方が理解しやすい。このブログの毎日の自動化フローはこうなっている:
+
+```
+macOS launchd (毎日11:30)
+    ↓
+daily-tech-blog.sh
+    ↓
+claude --dangerously-skip-permissions "/daily-tech-blog"
+    ↓
+/daily-tech-blog スラッシュコマンド実行
+    ├── トレンドリサーチ (サブエージェント: web-researcher)
+    ├── サンドボックステスト (mktemp)
+    ├── 4言語記事執筆 (サブエージェント: writing-assistant)
+    ├── npm run validate:publishing
+    ├── npm run build
+    └── git push origin main
+    ↓
+Stopフック → send-telegram.sh → Telegram通知
+```
+
+最も重要なファイルは`daily-tech-blog.sh`だ。Claudeを呼び出すコア部分:
+
+```bash
+run_with_timeout "$MAX_TIMEOUT" claude --dangerously-skip-permissions \
+  "/daily-tech-blog" \
+  < /dev/null >> "$LOG_FILE" 2>&1 || CLAUDE_EC=$?
+```
+
+`--dangerously-skip-permissions`はすべての権限プロンプトをスキップする。名前が示すように危険だ。許可リストが適切に定義されている状態でのみ使うべきで、個人の自動化プロジェクト以外への使用は勧めない。
+
+`< /dev/null`はstdinを閉じ、Claudeが対話型入力を待ち続けるのを防ぐ。cronコンテキストでは必須だ。
+
+実際の実行ログはこのようになっている:
+
+![daily-tech-blog実際の実行ログキャプチャ](../../../assets/blog/claude-code-masterclass-series-1-log-capture.jpg)
+
+launchd plistの設定も参考になる:
+
+```xml
+<key>StartCalendarInterval</key>
+<dict>
+    <key>Hour</key>
+    <integer>11</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+</dict>
+<key>StandardOutPath</key>
+<string>/Users/jangwook/logs/launchd-daily-tech-blog.log</string>
+```
+
+ログをファイルにリダイレクトしておくと、「なぜ今日の記事が公開されなかったのか」をデバッグするときに非常に役立つ。
+
+## 実際に始める方法 — 最小設定5分
+
+この3ステップを初めて導入する人のために、最小限の動作サンプルをまとめる。既存のプロジェクトにそのまま適用できる。
+
+**1. フォルダ構造の作成**
+
+```bash
+mkdir -p .claude/commands .claude/agents
+```
+
+**2. 最初のスラッシュコマンド** (`.claude/commands/review.md`)
+
+```markdown
+# Review Command
+
+Review recent changes before committing.
+
+## Steps
+1. Run git diff --staged to see staged changes
+2. Check for: hardcoded secrets, console.log, TODO comments
+3. Suggest improvements or approve with "LGTM"
+
+For detailed security analysis, delegate to @checker agent.
+```
+
+**3. 完了通知フックの設定** (`.claude/settings.json`)
+
+```json
+{
+  "permissions": {
+    "allow": ["Bash(git:*)", "Bash(npm:*)"]
+  },
+  "hooks": {
+    "Stop": [{
+      "hooks": [{
+        "type": "command",
+        "command": "say 'Claudeがタスクを完了しました'"
+      }]
+    }]
+  }
+}
+```
+
+**4. 最初のエージェント定義** (`.claude/agents/checker.md`)
+
+```markdown
+---
+name: checker
+description: Code quality reviewer. Use when checking files for issues before commit.
+tools: Read, Grep
+---
+
+Review the provided files for syntax errors, obvious bugs, and security issues.
+Rate: SAFE / CAUTION / CRITICAL
+```
+
+この4つのファイルが最小動作単位だ。これだけで`/review`がステージング済みの変更を分析し、作業終了時に音声通知を受け取り、詳細な検査が必要な場合は`checker`エージェントに委任できる。
+
+## 正直な評価 — うまくいかないこと
+
+このシステムを3ヶ月運用した結果、いくつかの現実的な制約に直面した。
+
+<strong>コストの問題</strong>: 4言語で2,500語以上の記事を毎日自動生成すると、月々のAPIコストが予想以上に積み上がる。Anthropic Maxサブスクリプションでなんとか管理しているが、このコストを受け入れずにこの規模の自動化は難しい。
+
+<strong>タイムアウト処理</strong>: ビルドが遅かったり、サブエージェントのチェーンが長くなると、60分のタイムアウトに引っかかる。記事が半分だけ生成された状態で中断する。タイムアウト検知後のクリーンアップロジックがなければ、リポジトリの状態が壊れる。
+
+<strong>エージェント品質の非決定性</strong>: 同じコマンドを2回実行しても結果が異なることがある。記事の品質、内部リンクの位置、relatedPostsの選択 — すべて日によって変わる。これはLLMの性質上避けられず、QAループ(validate:publishing、astro check、build)で最低限の品質基準を保つのが現実的だ。
+
+正直に言えば、このシステムを「プロダクションレディ」と呼ぶのは時期尚早だ。私の基準では「個人の自動化には十分安定しているレベル」だ。チーム規模で使うには、エラー回復、状態管理、監査ログをより堅固に設計する必要がある。
+
+エージェントワークフローを体系的に考えるフレームワークが必要なら、[Claude Code エージェントワークフローパターン5種類](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)が参考になる。
+
+## 次回: #2 MCPサーバー連携
+
+第1回は`.claude/`フォルダ内で完結する自動化を扱った。
+
+第2回ではさらに一歩進む — <strong>MCPサーバーを自作してClaude Codeに外部ツールを接続する方法</strong>。Notionデータベースの読み込み、Slackメッセージの送信、PostgreSQLクエリなど、外部システム連携がスラッシュコマンド1つで可能になる構造を解説する。
+
+MCPサーバーを構築した経験があるなら、[MCPサーバー構築実践ガイド](/ja/blog/ja/mcp-server-build-practical-guide-2026)が良い事前読書になる。
+
+---
+
+*この記事の`.claude/`ディレクトリ構造とシェルスクリプトのサンプルは、実際のjangwook.netブログ自動化システムから直接取得したものです。*
