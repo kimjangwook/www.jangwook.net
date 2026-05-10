@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-09",
+  "updated_at": "2026-05-10",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -396,7 +396,7 @@
       "priority": 1,
       "source": "Google AI Studio 공식 문서, llm-api-pricing-comparison-2026 포스트 딥다이브 연계",
       "added_at": "2026-04-19",
-      "status": "queued",
+      "status": "done",
       "notes": "Gemini 2.5 Flash-Lite가 $0.10/1M input 토큰으로 가장 저렴한 고성능 모델로 부상. 프로덕션 비용 최적화 실전 가이드 수요 높음. 기존 llm-api-pricing-comparison-2026 포스트에서 자연스럽게 유입 가능. 월요일 How-to 유형."
     },
     {
@@ -1020,7 +1020,7 @@
       "priority": 1,
       "source": "ZenML Blog, Google Cloud Medium, Towards AI (2026-04 ~ 05)",
       "added_at": "2026-05-01",
-      "status": "queued",
+      "status": "done",
       "notes": "Google ADK가 2026년 에이전트 프레임워크 시장에 새로운 경쟁자로 등장. LangGraph와의 근본적 차이(그래프 vs 이벤트 드리븐, Gemini 최적화 vs 모델 무관)를 비교하는 수요가 급증. A2A 프로토콜 네이티브 지원이 핵심 차별점. 기존 ai-agent-framework-comparison-2026 포스트에서 다루지 않은 ADK 깊이 있게 다루면 차별화 가능."
     },
     {
@@ -1197,7 +1197,7 @@
       "priority": 1,
       "source": "OpenAI 공식 발표, GitHub Copilot 블로그",
       "added_at": "2026-05-03",
-      "status": "queued",
+      "status": "done",
       "notes": "OpenAI Codex API 레이어 비교. Claude Code와의 실제 차이를 코드 실행, 파일 접근, 비용 기준으로 비교. openai-codex-cli-vs-claude-code-practical-comparison 포스트와 차별화(API 레이어 비교)."
     },
     {
@@ -1215,7 +1215,7 @@
       "priority": 1,
       "source": "Anthropic Python SDK GitHub, OpenAI Python SDK GitHub",
       "added_at": "2026-05-03",
-      "status": "queued",
+      "status": "done",
       "notes": "비교 포스트 0% 이번 주 보충 필수. SDK 레이어에서 타입 안전성, 에러 분류, 스트리밍 구현, 레이트 리밋 처리 차이를 코드 예제로 비교. 토요일 발행 목표."
     },
     {
@@ -1302,7 +1302,7 @@
       "priority": 2,
       "source": "Anthropic Files API 2026년 4월 GA, 토큰 절감 효과로 커뮤니티 주목",
       "added_at": "2026-05-04",
-      "status": "queued",
+      "status": "done",
       "notes": "메시지마다 파일 재업로드 없이 file_id 재사용으로 비용 절감. Message Batches API와 조합하면 대규모 문서 파이프라인 구축 가능."
     },
     {
@@ -1525,6 +1525,93 @@
       "added_at": "2026-05-09",
       "status": "queued",
       "notes": "2026년 5월 Claude Managed Agents에 multiagent 세션·outcomes API·webhook 지원 추가. 프로덕션 이벤트 기반 파이프라인 구축에 최적. 다음 주 How-to 포스트 후보."
+    },
+    {
+      "slug": "google-io-2026-gemini-ultra-project-astra-developer-impact",
+      "title_idea": "Google I/O 2026 핵심 발표 사전 분석 — Gemini 2.5 Ultra·Veo 3·Project Astra가 AI 개발자 워크플로우를 어떻게 바꾸는가",
+      "content_type": "news",
+      "target_keyword": "Google I/O 2026 AI 개발자",
+      "secondary_keywords": [
+        "Gemini 2.5 Ultra",
+        "Project Astra",
+        "Veo 3",
+        "Google AI 발표"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Google I/O 2026 공식 발표 (5월 19-20일)",
+      "added_at": "2026-05-10",
+      "status": "queued",
+      "notes": "Google I/O 2026이 5월 19-20일. 사전 예측 + 발표 직후 속보 포스트로 2개 커버 가능. Gemini 2.5 Ultra 공개, Veo 3 동영상 생성, Project Astra 실시간 AI 어시스턴트가 핵심."
+    },
+    {
+      "slug": "claude-managed-agents-memory-api-cross-session-learning",
+      "title_idea": "Claude Managed Agents Memory API 실전 — 세션 간 학습하는 AI 에이전트, 실제로 어떻게 다른가",
+      "content_type": "news",
+      "target_keyword": "Claude Managed Agents Memory API",
+      "secondary_keywords": [
+        "Claude 에이전트 메모리",
+        "크로스 세션 AI",
+        "Anthropic Memory",
+        "에이전트 학습"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Anthropic 공식 블로그, Managed Agents 문서",
+      "added_at": "2026-05-10",
+      "status": "queued",
+      "notes": "Claude Managed Agents의 Memory·Dreaming 기능은 에이전트 AI 패러다임 전환의 핵심. 뉴스 분석 + 실제 API 사용 시나리오 결합으로 뉴스+How-to 크로스오버 가능."
+    },
+    {
+      "slug": "github-copilot-agent-mode-ga-vs-claude-code-2026",
+      "title_idea": "GitHub Copilot 에이전트 모드 GA — Claude Code 사용자 관점에서 솔직하게 평가한다",
+      "content_type": "news",
+      "target_keyword": "GitHub Copilot 에이전트 모드",
+      "secondary_keywords": [
+        "Copilot vs Claude Code",
+        "AI 코딩 에이전트 2026",
+        "GitHub Copilot GA"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "GitHub 공식 블로그, VS Code 릴리스 노트",
+      "added_at": "2026-05-10",
+      "status": "queued",
+      "notes": "Copilot Agent Mode GA는 Claude Code 사용자들이 궁금해하는 주제. 직접 Claude Code 사용자 시각으로 쓰면 강한 개인 관점 포스트 가능. 뉴스 비율 보충에 최적."
+    },
+    {
+      "slug": "claude-code-hooks-precommit-build-notification-automation",
+      "title_idea": "Claude Code Hooks 실전 가이드: Pre-commit·Build·Slack 알림 자동화 5가지 패턴",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code Hooks 실전",
+      "secondary_keywords": [
+        "Claude Code pre-commit hook",
+        "settings.json hooks",
+        "Claude Code 자동화"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Claude Code 공식 문서, jangwook.net 자동화 시스템",
+      "added_at": "2026-05-10",
+      "status": "queued",
+      "notes": "claude-code-masterclass-series-1과 직접 연결되는 후속 How-to. 시리즈 #1이 '슬래시 명령어+훅+서브에이전트 개요'였다면 이건 훅만 깊게 파는 실전편. 내부링크 구조 강화 효과도 있음."
+    },
+    {
+      "slug": "ai-coding-agent-7way-comparison-claude-cursor-windsurf-codex-2026",
+      "title_idea": "AI 코딩 에이전트 7파전 2026 — Claude Code·Cursor·Windsurf·Codex·Kiro·Copilot, 실제 코드베이스에서 직접 써본 결과",
+      "content_type": "comparison",
+      "target_keyword": "AI 코딩 에이전트 비교 2026",
+      "secondary_keywords": [
+        "Claude Code vs Cursor",
+        "AI 코딩 도구 선택",
+        "Windsurf vs Codex"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "각 도구 공식 문서, 커뮤니티 피드백, 직접 사용 경험",
+      "added_at": "2026-05-10",
+      "status": "queued",
+      "notes": "Kiro(Codex의 IDEexperience), Copilot Agent Mode GA, Claude Code, Cursor 3, Windsurf, Codex 클라우드 에이전트를 하나의 포스트에서 비교. 검색 수요 최고. 단, 직접 사용하지 않은 도구는 명시적으로 Source Review로 처리할 것."
     }
   ]
 }

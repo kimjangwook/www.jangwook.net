@@ -4,6 +4,144 @@
 
 ---
 
+## 2026-05-10 주간 리뷰 (5월 2주차)
+
+### 성과 요약
+
+- **이번 주 포스트**: 7개
+- **콘텐츠 믹스**: How-to 43% / 뉴스 0% / 비교 43% / 시리즈 14%
+- **내부링크 최적화**: 전체 245개 포스트 중 내부링크 없는 포스트 104개 (42%) — daily-closing 처리 중
+- **크로스포스팅**: dev.to 7/7 (100%) — Hashnode 4/7 (57%)
+
+#### 이번 주 포스트 목록
+
+| 날짜 | 슬러그 | 유형 |
+|------|--------|------|
+| 5/4 | google-adk-vs-langgraph-agent-framework-comparison-2026 | 비교 |
+| 5/6 | gemini-25-flash-api-cost-optimization-guide | How-to |
+| 5/6 | anthropic-files-api-batch-document-processing-guide | How-to |
+| 5/7 | uv-python-ai-development-setup-guide-2026 | How-to |
+| 5/8 | openai-codex-api-release-vs-claude-code-comparison-may-2026 | 비교 |
+| 5/9 | anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026 | 비교 |
+| 5/10 | claude-code-masterclass-series-1-prompt-to-agent | 시리즈 |
+
+---
+
+### 콘텐츠 믹스 분석
+
+| 유형 | 이번 주 | 목표 | 편차 |
+|------|---------|------|------|
+| How-to | 43% (3개) | 40% | +3% (양호) |
+| 뉴스 | 0% (0개) | 30% | **-30% ⚠️ 완전 공백** |
+| 비교 | 43% (3개) | 15% | **+28% 과잉 — 2주 연속** |
+| 시리즈 | 14% (1개) | 15% | -1% (근접) ✅ 시리즈 드디어 런칭 |
+
+**핵심 문제**: 비교 포스트 43%가 2주 연속 반복됐다. 지난 주 5월 1주차는 비교 0%였는데, 그 반동으로 이번 주 다시 43%로 폭등. 진자 운동이 계속되고 있다. 뉴스가 0%인 것이 가장 심각한 문제 — 백로그에 뉴스 25개가 대기 중임에도 daily-post 셀렉터가 완성도 높은 비교·How-to 주제를 우선 선택한다.
+
+**긍정 신호**: claude-code-masterclass-series-1이 드디어 발행됐다. 지난 3주간 "하드 블록"을 지정해도 밀렸는데, 이번 주 토요일에 런칭 완료.
+
+---
+
+### 스타일 분석 (최근 7개 포스트 리뷰)
+
+**종합 스타일 점수: 7.3 / 10**
+
+#### 강점 (유지할 것)
+
+- **포스트 1, 2, 6의 강한 1인칭 밀도**: claude-code-masterclass-series-1은 8회, anthropic-sdk-vs-openai-sdk는 17회, openai-codex-vs-claude-code는 29회. 이 세 포스트는 첫 문장부터 개인 경험으로 시작하고, 중간 섹션에서도 1인칭이 유지됨
+- **openai-codex 포스트의 "Source Review" 투명성 선언**: "직접 써봤냐고 물어본다면, 아니다"라고 한계를 먼저 밝히고, 공개 자료 기반 비교를 진행한 점이 신뢰도를 높임. 이 패턴은 재사용 가치 있음
+- **anthropic-sdk 포스트의 버전 고정 비교**: anthropic 0.100.0 vs openai 2.36.0 — 구체적인 버전 명시가 독자 신뢰를 올리고 날짜가 지나도 참조 가치 유지
+
+#### 패턴 피로 (조정 필요)
+
+1. **"## 개요" 도입부 반복 — 심각**: 7개 포스트 중 4개(agentic-workflow-meta-tools, nist-ai-agent-security, llm-coding-harness, ai-distillation-attacks)가 "## 개요" 섹션으로 시작. AI가 작성했음을 가장 쉽게 알아보게 하는 패턴. 특히 뉴스·연구 분석형 포스트에서 집중적으로 나타남
+2. **1인칭 0회 포스트 발생**: ai-distillation-attacks(0회), agentic-workflow-meta-tools(0회) — 완전 중립적 서술이 뉴스 보도와 구별이 안 됨. 이 포스트들의 결론은 참고 링크 나열로만 끝남
+3. **결론이 "참고 자료" 링크만으로 종결**: 포스트 3, 4, 5, 7이 모두 같은 패턴. 결론에 편집자 판단이 없고 독자에게 "알아서 읽어보세요"로 위임. 이 블로그의 차별점이 사라지는 구간
+4. **How-to와 비교의 코드 블록 의존도**: 이번 주 7개 포스트 모두 코드 블록 포함. 뉴스 포스트에서도 코드가 구조 장치로 사용됨. 의사결정 표, 시나리오 비교표, 다이어그램 등 대안 구조 장치 필요
+
+---
+
+### 이슈 및 조치사항
+
+#### 1. 뉴스 0% — 다음 주 최우선 교정
+
+뉴스 포스트가 이번 주 완전히 0%였다. 백로그에는 news 25개가 대기 중. 이는 셀렉션 문제다. 다음 주 화·목은 뉴스 포스트 하드 블록으로 설정. Google I/O 2026이 5월 19-20일이므로 다음 주는 사전 분석 + 발표 직후 속보 두 편이 모두 가능한 최적의 뉴스 주간.
+
+#### 2. 비교 포스트 진자 운동 차단
+
+5월 1주차 0% → 5월 2주차 43% 진자 운동이 3회 반복됐다(4월 1주·4월 5주·5월 2주). 다음 주는 비교 포스트 1개 최대 한도를 엄격히 적용. 비교가 아닌 Google I/O 사전/사후 뉴스 2편이 자연스러운 대체제.
+
+#### 3. Hashnode 57% — 개선 필요
+
+dev.to 100% 대비 Hashnode가 4/7(57%). 실패 3건의 원인이 명확하지 않음. crosspost-log에서 에러 메시지 확인 후 API 키·율 제한·페이로드 크기 중 어디가 문제인지 다음 daily-closing에서 진단 필요.
+
+#### 4. 내부링크 커버리지 42% 공백 발견
+
+지난 주 리포트에서 100% 커버리지라고 기록했으나, 이번 주 Python으로 재계산 시 245개 포스트 중 104개(42%)가 내부링크 없음. 이전 스크립트의 계산 버그일 가능성 있음. daily-closing SEO 작업이 이미 진행 중이지만, 우선순위를 높여 내부링크 없는 포스트부터 처리하는 것을 권장.
+
+#### 5. "## 개요" 패턴 write-post 즉각 반영 필요
+
+스킬 파일에 명시적 규칙 추가 없이는 매일 write-post가 동일한 패턴을 반복할 것. 아래 스타일 조정 지침을 일일 포스트 작성 시 prompt에 포함되도록 daily-tech-blog SKILL.md에 반영 권장.
+
+---
+
+### 다음 주 전략 (5월 11일 〜 5월 17일)
+
+#### 목표 믹스
+- How-to 2개 (28%) / **뉴스 3개 (43%)** / 시리즈 1개 (14%) / 비교 1개 (14%)
+
+뉴스 비율 목표 30%를 초과해서 다음 주는 의도적으로 43%까지 올려 이번 주 0%를 평균으로 회복. Google I/O 2026 사전 분석이 자연스러운 뉴스 소재.
+
+#### 우선 처리 순서
+
+| 요일 | 유형 | 슬러그 후보 | 비고 |
+|------|------|-------------|------|
+| 월 | How-to | claude-code-hooks-precommit-build-notification-automation | 시리즈 #1 후속 실전편 |
+| **화** | **뉴스** | **google-io-2026-gemini-ultra-project-astra-developer-impact** | **Google I/O 사전 분석** |
+| 수 | How-to | context-engineering-ai-agent-information-architecture-2026 | 에이전트 설계 패러다임 |
+| **목** | **뉴스** | **github-copilot-agent-mode-ga-vs-claude-code-2026** | **Claude Code 사용자 시각 평가** |
+| 금 | **시리즈 #2** | **ai-agent-architecture-series-1-orchestrator-pattern** | ⛔ 하드 블록 — 시리즈 연속성 |
+| 토 | 비교 (1개 한도) | ai-coding-agent-7way-comparison-claude-cursor-windsurf-codex-2026 | 뉴스 + 비교 크로스오버 |
+| 예비 | 뉴스 | claude-managed-agents-memory-api-cross-session-learning | Google I/O 발표 반응 속보 |
+
+#### 스타일 조정 지침 (다음 주 write-post 적용 — 즉각 필요)
+
+1. **"## 개요" 도입부 금지**: 뉴스·연구 분석형 포스트는 반드시 첫 문장에서 사건·날짜·개인 반응으로 시작. "개요"라는 단어가 도입부 첫 H2에 들어가면 해당 포스트는 재작성 대상
+2. **뉴스 포스트 1인칭 최소 5회**: 단순 사실 나열이 아닌 "내가 이 발표를 어떻게 읽었는가"를 중심으로. 특히 중간 분석 섹션에서도 "이 수치가 흥미로운 이유는...", "내 경험과 비교하면..."으로 연결
+3. **결론 편집자 판단 필수**: 결론이 참고 자료 링크로만 끝나는 포스트는 완성 미달. 최소한 "내 판단은 이렇다" 1〜2문장 + 독자 행동 지침 1가지로 마무리
+4. **비교 포스트 "Source Review" 투명성 유지**: 직접 사용하지 않은 도구가 포함된 비교 포스트는 반드시 도입부에 검증 방법 명시 (openai-codex 포스트의 패턴이 기준)
+
+---
+
+### 백로그 현황 (2026-05-10 기준)
+
+**총 90개 주제 (대기 중 63개)**
+
+| 유형 | 대기 | 비율 |
+|------|------|------|
+| How-to | 31 | 49% |
+| 뉴스 | 25 | 40% ← 이번 주 3개 추가 |
+| 시리즈 | 1 | 2% ← 즉각 발행 대상 (priority 0) |
+| 비교 | 6 | 10% |
+
+**이번 리뷰에서 추가된 주제 (5개)**:
+- `google-io-2026-gemini-ultra-project-astra-developer-impact` [news] ← 5월 19-20일 Google I/O 대응
+- `claude-managed-agents-memory-api-cross-session-learning` [news] ← Managed Agents 뉴스 분석
+- `github-copilot-agent-mode-ga-vs-claude-code-2026` [news] ← 뉴스 비율 보충
+- `claude-code-hooks-precommit-build-notification-automation` [how-to] ← 시리즈 #1 연계
+- `ai-coding-agent-7way-comparison-claude-cursor-windsurf-codex-2026` [comparison] ← 종합 비교
+
+**이번 리뷰에서 done 처리 (5개)**:
+- `gemini-25-flash-api-cost-optimization-guide` → 발행 완료 (5/6)
+- `google-adk-vs-langgraph-agent-framework-comparison-2026` → 발행 완료 (5/4)
+- `openai-codex-api-release-vs-claude-code-comparison-may-2026` → 발행 완료 (5/8)
+- `anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026` → 발행 완료 (5/9)
+- `anthropic-files-api-batch-document-processing-guide` → 발행 완료 (5/6)
+
+**시리즈 현황**: `ai-agent-architecture-series-1-orchestrator-pattern` (priority 0) — 다음 주 금요일 하드 블록
+
+---
+
 ## 2026-05-03 주간 리뷰 (5월 1주차)
 
 ### 성과 요약
