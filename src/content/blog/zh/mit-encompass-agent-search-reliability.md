@@ -88,7 +88,7 @@ graph TD
 | 简单重试 | 实现简单 | 可能重复同一错误 |
 | 思维链 | 提升推理质量 | 无法纠正错误的推理链 |
 | 自我验证 | 能够检测错误 | 无法探索替代路径 |
-| 多代理 | 多视角考虑 | 协调成本高 |
+| [多代理](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) | 多视角考虑 | 协调成本高 |
 
 所有这些方法的共同限制是<strong>无法脱离已选择的路径</strong>。
 
@@ -205,7 +205,7 @@ EnCompass成功率：  85% (+25%p)
   EnCompass: $8.00 / 0.85 = $9.41/成功
 ```
 
-单纯从成本看，EnCompass更贵，但如果计入<strong>失败任务的后处理成本</strong>（人工修复、重做、质量问题），情况就不同了。特别是对于高价值任务（代码审查、安全分析等），准确率提升的价值足以抵消额外成本。
+单纯从成本看，EnCompass更贵，但如果计入<strong>[失败任务的后处理成本](/zh/blog/zh/ai-agent-cost-reality)</strong>（人工修复、重做、质量问题），情况就不同了。特别是对于高价值任务（代码审查、安全分析等），准确率提升的价值足以抵消额外成本。
 
 ## 实际应用策略
 
@@ -256,7 +256,7 @@ EnCompass的效果在很大程度上取决于<strong>评估函数的质量</stro
 
 除了EnCompass，还有其他多个提升代理可靠性的举措：
 
-- <strong>Agent Definition Language (ADL)</strong>：Moca开源的代理定义标准。以声明方式定义代理的权限、工具和安全边界，确保治理
+- <strong>[Agent Definition Language (ADL)](/zh/blog/zh/adl-agent-definition-language-governance)</strong>：Moca开源的代理定义标准。以声明方式定义代理的权限、工具和安全边界，确保治理
 - <strong>OpenAI Open Responses</strong>：通过标准化代理AI工作流来简化模型间的切换
 - <strong>GitHub代理工作流</strong>：用Markdown描述自动化目标，AI生成GitHub Actions工作流
 

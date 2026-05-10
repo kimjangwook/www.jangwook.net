@@ -1612,6 +1612,40 @@
       "added_at": "2026-05-10",
       "status": "queued",
       "notes": "Kiro(Codex의 IDEexperience), Copilot Agent Mode GA, Claude Code, Cursor 3, Windsurf, Codex 클라우드 에이전트를 하나의 포스트에서 비교. 검색 수요 최고. 단, 직접 사용하지 않은 도구는 명시적으로 Source Review로 처리할 것."
+    },
+    {
+      "slug": "aws-mcp-server-ga-practical-guide-2026",
+      "title_idea": "AWS MCP Server GA 실전 가이드 — IAM 기반 AI 에이전트 보안과 CloudWatch 연동",
+      "content_type": "how-to",
+      "target_keyword": "AWS MCP Server 실전",
+      "secondary_keywords": [
+        "AWS MCP Server GA",
+        "AI 에이전트 AWS 연동",
+        "MCP IAM 보안"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "https://www.factualminds.com/blog/aws-mcp-server-ga-agent-toolkit-serverless-plugin/",
+      "added_at": "2026-05-10",
+      "status": "queued",
+      "notes": "2026-05-06 AWS MCP Server GA. IAM 가드레일, CloudWatch, CloudTrail 포함. 엔터프라이즈 AI 에이전트 게임체인저."
+    },
+    {
+      "slug": "claude-code-skills-packaging-team-workflow",
+      "title_idea": "Claude Code Skills 패키징 실전: 팀 워크플로우를 재사용 스킬로 자동화하기",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code Skills 팀 자동화",
+      "secondary_keywords": [
+        "Claude Code Skills 만들기",
+        "Claude Code 워크플로우 자동화",
+        "SKILL.md 작성법"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "https://medium.com/agentic-builders/how-to-build-production-ready-ai-agents-mcp-cli-and-skills-the-right-tool-for-the-right-job-701dc102863f",
+      "added_at": "2026-05-10",
+      "status": "queued",
+      "notes": "Claude Code Skills 2026 핵심 패턴. SKILL.md 구조, 트리거, 팀 공유 전략 실전 예시. 마스터클래스 시리즈 2편 후보."
     }
   ]
 }

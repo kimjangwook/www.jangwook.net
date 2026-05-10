@@ -115,7 +115,7 @@ Atlassian采用MCP不仅是技术选择，更是<strong>从厂商锁定中彻底
 
 ### Rovo MCP Gallery
 
-通过Atlassian的Rovo MCP Gallery，GitHub、Box、Figma等第三方工具的代理也可以在Jira中运作。值得注意的是，<strong>当前MCP使用量的约1/3来自写入（Write）操作</strong>，这说明AI代理不仅仅在查询数据，而是真正在执行工作。
+通过Atlassian的Rovo MCP Gallery，GitHub、Box、Figma、[Slack](/zh/blog/zh/slack-mcp-team-communication)等第三方工具的代理也可以在Jira中运作。值得注意的是，<strong>当前MCP使用量的约1/3来自写入（Write）操作</strong>，这说明AI代理不仅仅在查询数据，而是真正在执行工作。
 
 ### 企业采用现状
 
@@ -158,7 +158,7 @@ escalation:
 
 ### 3. 基于MCP的工具集成战略
 
-MCP现在已是事实上的标准。虽然由Anthropic创建，但已捐赠给Linux Foundation，OpenAI、Google、Microsoft、AWS都已支持。
+[MCP现在已是事实上的标准](/zh/blog/zh/mcp-open-standard-linux-foundation-engineering-guide)。虽然由Anthropic创建，但已捐赠给Linux Foundation，OpenAI、Google、Microsoft、AWS都已支持。
 
 ```mermaid
 graph TD
@@ -240,7 +240,7 @@ graph TD
 ### AI代理≠万能工具
 
 - 代理是工具。<strong>判断权仍在人</strong>
-- 初期代理输出质量可能不稳定。一定要设置验证流程
+- 初期代理输出质量可能不稳定。请利用[代理清洗检查清单](/zh/blog/zh/agent-washing-detection-em-checklist)建立完善的验证流程
 - 考虑团队成员的心理安全感。主动应对"AI会替代我的工作"的焦虑
 
 ### 安全和合规

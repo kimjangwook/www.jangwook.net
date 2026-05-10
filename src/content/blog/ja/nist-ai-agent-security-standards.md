@@ -2,7 +2,7 @@
 title: NIST AI エージェント セキュリティ基準 — EM が今すぐ準備すべきフレームワーク
 description: >-
   NIST AI Agent Standards Initiative のコア内容と、Engineering Manager がチーム内の AI エージェント
-  セキュリティを強化するための実行チェックリスト
+  セキュリティを強化するためのステップ別チェックリストを整理します。アクセス制御、監査ログ、ガードレール設計まで実践的な対策を紹介します。
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/nist-ai-agent-security-standards-hero.jpg
 tags:

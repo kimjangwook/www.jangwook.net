@@ -202,7 +202,7 @@ graph TD
 | Component | Description | Tool Examples |
 |-----------|-------------|----------------|
 | Execution Tracing | What tools the agent used and in what sequence | LangSmith, Braintrust |
-| Cost Monitoring | Token usage, API call costs | Helicone, OpenMeter |
+| [Cost Monitoring](/en/blog/en/ai-agent-cost-reality) | Token usage, API call costs | Helicone, OpenMeter |
 | Policy Compliance | Detect and block guardrail violations | Guardrails AI, NeMo |
 | Audit Logs | Immutable records of all inputs and outputs | In-house build or Langfuse |
 
@@ -214,7 +214,7 @@ Catalog all AI services currently in use in your organization and evaluate the b
 
 <strong>Step 2: Establish Multi-Vendor Migration Plan (2–4 weeks)</strong>
 
-Design a Primary/Secondary/Fallback architecture and evaluate abstraction layer adoption. Tools like LiteLLM or LangChain are good starting points for quick implementation.
+Design a Primary/Secondary/Fallback architecture and evaluate abstraction layer adoption. [Tools like LiteLLM or LangChain](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) are good starting points for quick implementation.
 
 <strong>Step 3: Draft AI Governance Framework (1 month)</strong>
 
@@ -227,7 +227,7 @@ The Anthropic vs Pentagon crisis vividly demonstrated that AI technology transce
 As CTOs/VPoEs, our responsibilities are clear:
 
 1. Move away from single-vendor dependency and establish a multi-vendor strategy
-2. Internalize AI governance frameworks into organizational culture
+2. Internalize [AI governance frameworks](/en/blog/en/adl-agent-definition-language-governance) into organizational culture
 3. Design observability and audit systems from the ground up
 
 In 2026, when AI has become central to business operations, <strong>"managing AI safely" has become equally critical as "using AI effectively"</strong> for technical leaders.

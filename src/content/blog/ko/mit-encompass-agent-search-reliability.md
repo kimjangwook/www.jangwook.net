@@ -90,7 +90,7 @@ graph TD
 | 단순 재시도 | 구현이 간단 | 같은 실수 반복 가능 |
 | 체인 오브 쏘트 | 추론 품질 향상 | 잘못된 추론 체인 수정 불가 |
 | 자가 검증 | 오류 탐지 가능 | 대안 경로 탐색 없음 |
-| 멀티 에이전트 | 다양한 관점 | 조율 비용 높음 |
+| [멀티 에이전트](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) | 다양한 관점 | 조율 비용 높음 |
 
 이 모든 접근법의 공통적인 한계는, <strong>이미 선택한 경로에서 벗어나지 못한다</strong>는 점입니다.
 
@@ -207,7 +207,7 @@ EnCompass 성공률:     85% (+25%p)
   EnCompass: $8.00 / 0.85 = $9.41/성공
 ```
 
-단순 비용만 보면 EnCompass가 비싸지만, <strong>실패한 작업의 후처리 비용</strong>(인간의 수동 수정, 재작업, 품질 이슈)을 포함하면 이야기가 달라집니다. 특히 고가치 작업(코드 리뷰, 보안 분석 등)에서는 정확도 향상의 가치가 추가 비용을 충분히 상쇄합니다.
+단순 비용만 보면 EnCompass가 비싸지만, <strong>[실패한 작업의 후처리 비용](/ko/blog/ko/ai-agent-cost-reality)</strong>(인간의 수동 수정, 재작업, 품질 이슈)을 포함하면 이야기가 달라집니다. 특히 고가치 작업(코드 리뷰, 보안 분석 등)에서는 정확도 향상의 가치가 추가 비용을 충분히 상쇄합니다.
 
 ## 실무 적용 전략
 
@@ -258,7 +258,7 @@ EnCompass의 효과는 <strong>평가 함수의 품질</strong>에 크게 좌우
 
 EnCompass 외에도 에이전트 신뢰성을 높이기 위한 여러 움직임이 있습니다:
 
-- <strong>Agent Definition Language (ADL)</strong>: Moca가 오픈소스로 공개한 에이전트 정의 표준. 에이전트의 권한, 도구, 보안 경계를 선언적으로 정의하여 거버넌스 확보
+- <strong>[Agent Definition Language (ADL)](/ko/blog/ko/adl-agent-definition-language-governance)</strong>: Moca가 오픈소스로 공개한 에이전트 정의 표준. 에이전트의 권한, 도구, 보안 경계를 선언적으로 정의하여 거버넌스 확보
 - <strong>OpenAI Open Responses</strong>: 에이전틱 AI 워크플로우를 표준화하여 모델 간 전환을 용이하게 하는 규격
 - <strong>GitHub Agentic Workflows</strong>: 마크다운으로 자동화 목표를 기술하면 AI가 GitHub Actions 워크플로우를 생성
 

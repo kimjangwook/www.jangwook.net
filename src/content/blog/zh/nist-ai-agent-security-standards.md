@@ -1,6 +1,7 @@
 ---
 title: NIST AI代理安全标准 — EM现在应该准备的框架
-description: NIST AI Agent Standards Initiative的核心内容及工程经理团队内即刻实施AI代理安全强化的完整清单。
+description: >-
+  NIST AI Agent Standards Initiative的核心内容，以及工程经理为强化团队内AI代理安全性可立即实施的分步骤清单。涵盖访问控制、审计日志、护栏设计等实战策略。
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/nist-ai-agent-security-standards-hero.jpg
 tags:

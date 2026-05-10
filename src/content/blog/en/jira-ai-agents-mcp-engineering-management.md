@@ -118,7 +118,7 @@ Through Atlassian's hosted MCP servers, the following AI clients connect directl
 
 ### The Rovo MCP Gallery
 
-Through Atlassian's Rovo MCP Gallery, third-party tools like GitHub, Box, and Figma can run agents within Jira. What's notable: <strong>approximately one-third of MCP usage is for write operations</strong>. This isn't just data retrieval — agents are actually performing work.
+Through Atlassian's Rovo MCP Gallery, third-party tools like GitHub, Box, Figma, and [Slack](/en/blog/en/slack-mcp-team-communication) can run agents within Jira. What's notable: <strong>approximately one-third of MCP usage is for write operations</strong>. This isn't just data retrieval — agents are actually performing work.
 
 ### Enterprise Adoption Status
 
@@ -161,7 +161,7 @@ As an engineering manager, it's crucial to position this transition as <strong>o
 
 ### 3. Build a tool integration strategy around MCP
 
-MCP is now a <strong>de facto standard</strong>. Though created by Anthropic, it was donated to the Linux Foundation, and is supported by OpenAI, Google, Microsoft, and AWS.
+[MCP is now a <strong>de facto standard</strong>](/en/blog/en/mcp-open-standard-linux-foundation-engineering-guide). Though created by Anthropic, it was donated to the Linux Foundation, and is supported by OpenAI, Google, Microsoft, and AWS.
 
 ```mermaid
 graph TD
@@ -243,7 +243,7 @@ You need quantifiable metrics to measure the success of AI agent adoption.
 ### AI agents are not omnipotent
 
 - Agents are tools. <strong>Judgment remains a human responsibility</strong>
-- Early on, agent output quality may be inconsistent. Establish validation processes
+- Early on, agent output quality may be inconsistent. Use an [agent washing checklist](/en/blog/en/agent-washing-detection-em-checklist) to build solid validation processes
 - Consider team psychological safety. Proactively address fears that "AI will replace my job"
 
 ### Security and compliance

@@ -2,7 +2,7 @@
 title: NIST AI 에이전트 보안 표준 — EM이 지금 준비해야 할 프레임워크
 description: >-
   NIST AI Agent Standards Initiative의 핵심 내용과 Engineering Manager가 팀 내 AI 에이전트
-  보안을 강화하기 위해 즉시 실행할 수 있는 체크리스트를 정리합니다.
+  보안을 체계적으로 강화하기 위한 단계별 체크리스트를 정리합니다. 접근 제어, 감사 로그, 가드레일 설계까지 실전 대응 전략을 제시합니다.
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/nist-ai-agent-security-standards-hero.jpg
 tags:
