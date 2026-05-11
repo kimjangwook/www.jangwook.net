@@ -67,7 +67,7 @@ draft: true
 
 ## 什么是 Agentic Workflows？
 
-Agentic Workflows 是<strong>AI 代理执行由自然语言定义的意图的 GitHub Actions 工作流</strong>。不是用 YAML，而是用 Markdown 描述自动化，由 Copilot、Claude Code、Codex 等编码代理执行实际任务。
+Agentic Workflows 是<strong>AI 代理执行由自然语言定义的意图的 GitHub Actions 工作流</strong>。不是用 YAML，而是用 Markdown 描述自动化，由 Copilot、[Claude Code](/zh/blog/zh/claude-code-cli-migration-guide)、Codex 等编码代理执行实际任务。
 
 ```mermaid
 graph TD
@@ -260,7 +260,7 @@ graph TD
 
 ### 第 4 阶段（3 个月后）：复杂工作流
 
-组成由多个步骤链接的复杂工作流，如 CI 失败自动修复。
+组成[由多个步骤链接的复杂工作流](/zh/blog/zh/claude-agent-teams-guide)，如 CI 失败自动修复。
 
 ### 成本考虑
 

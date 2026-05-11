@@ -1,6 +1,6 @@
 ---
 title: "Claude Code 实战大师班 #1 — 用斜线命令·Hook·子代理三步实现工作流自动化"
-description: '通过斜线命令(.claude/commands/)定义任务，用settings.json Hook连接事件，委托给子代理(.claude/agents/)执行。本文通过实际博客自动化系统，详解Claude Code三步自动化模式。'
+description: '通过斜线命令(.claude/commands/)定义任务，用settings.json Hook连接事件，并委托给子代理(.claude/agents/)执行。本文以真实博客自动化系统为案例，从头到尾详解Claude Code三步自动化工作流构建方式，所有代码均可直接运行，帮你掌握这一高效自动化范式。'
 pubDate: '2026-05-10'
 heroImage: '../../../assets/blog/claude-code-masterclass-series-1-prompt-to-agent-hero.jpg'
 tags:

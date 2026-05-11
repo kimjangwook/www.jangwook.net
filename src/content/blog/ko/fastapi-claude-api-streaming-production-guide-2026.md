@@ -1,6 +1,6 @@
 ---
-title: 'FastAPI + Claude API 스트리밍 프로덕션 백엔드 구축 — SSE, 재시도, 에러 복구 실전 가이드'
-description: 'FastAPI와 Anthropic SDK로 프로덕션 수준의 스트리밍 AI 백엔드를 구축하는 완전 가이드. SSE 스트리밍 엔드포인트, 레이트 리밋 지수 백오프 재시도, 에러 분류 전략, Docker 배포까지 단계별로 정리합니다.'
+title: 'FastAPI + Claude API 스트리밍 백엔드 — SSE·재시도·에러 복구 프로덕션 가이드'
+description: 'FastAPI와 Anthropic SDK로 프로덕션 수준의 스트리밍 AI 백엔드를 구축하는 완전 가이드. SSE 스트리밍 엔드포인트, 레이트 리밋 지수 백오프 재시도, 에러 분류 전략, 토큰 스트리밍 최적화, Docker 컨테이너 배포까지 단계별 코드와 함께 정리합니다.'
 pubDate: '2026-05-11'
 heroImage: ../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-hero.png
 tags:

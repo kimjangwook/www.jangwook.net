@@ -68,7 +68,7 @@ In this post, I analyze the architecture of Agentic Workflows, the security mode
 
 ## What are Agentic Workflows?
 
-Agentic Workflows are <strong>GitHub Actions workflows where AI agents execute intentions defined in natural language</strong>. Instead of YAML, you write automation in Markdown, and coding agents like Copilot, Claude Code, and Codex perform the actual work.
+Agentic Workflows are <strong>GitHub Actions workflows where AI agents execute intentions defined in natural language</strong>. Instead of YAML, you write automation in Markdown, and coding agents like Copilot, [Claude Code](/en/blog/en/claude-code-cli-migration-guide), and Codex perform the actual work.
 
 ```mermaid
 graph TD
@@ -261,7 +261,7 @@ Expand to test generation and code improvement PR creation. <strong>Maintain hum
 
 ### Phase 4 (3+ months): Complex Workflows
 
-Compose complex workflows with multiple connected stages, like auto-fixing CI failures.
+Compose [complex workflows with multiple connected stages](/en/blog/en/claude-agent-teams-guide), like auto-fixing CI failures.
 
 ### Cost Considerations
 

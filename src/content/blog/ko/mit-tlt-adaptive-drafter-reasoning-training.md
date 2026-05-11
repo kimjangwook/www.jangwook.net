@@ -52,7 +52,7 @@ draft: true
 
 2026년 2월 26일, MIT 연구팀이 추론(reasoning) LLM의 강화학습(RL) 훈련 효율을 <strong>70〜210% 향상</strong>시키는 새로운 방법론 <strong>"TLT(Taming the Long Tail)"</strong>를 발표했습니다. 이 연구는 3월 22〜26일 피츠버그에서 열리는 ASPLOS 2026에서 공식 발표될 예정입니다.
 
-추론 LLM(예: DeepSeek-R1, o1 계열)은 복잡한 문제를 단계별로 사고하는 능력을 갖추기 위해 RL 훈련이 필수적인데, 이 과정에서 <strong>전체 실행 시간의 최대 85%</strong>가 롤아웃(rollout) 단계에 소비됩니다. TLT는 이 병목을 해결하여 동일한 하드웨어에서 훈련 속도를 사실상 2배로 끌어올립니다.
+추론 LLM(예: DeepSeek-R1, o1 계열)은 복잡한 문제를 단계별로 사고하는 능력을 갖추기 위해 [RL 훈련](/ko/blog/ko/dena-llm-study-part3-model-training)이 필수적인데, 이 과정에서 <strong>전체 실행 시간의 최대 85%</strong>가 롤아웃(rollout) 단계에 소비됩니다. TLT는 이 병목을 해결하여 동일한 하드웨어에서 훈련 속도를 사실상 2배로 끌어올립니다.
 
 ## 핵심 문제: 롤아웃의 긴 꼬리(Long Tail)
 
@@ -107,7 +107,7 @@ Worker Coordinator가 각 GPU의 상태를 세 가지로 관리합니다:
 
 ### 2. 적응형 롤아웃 엔진 (Adaptive Rollout Engine)
 
-두 번째 혁신은 <strong>추론적 디코딩(Speculative Decoding)을 RL 훈련의 롤아웃에 적용</strong>하는 것입니다.
+두 번째 혁신은 <strong>[추론적 디코딩](/ko/blog/ko/llama-cpp-iq-quantization-merge)(Speculative Decoding)을 RL 훈련의 롤아웃에 적용</strong>하는 것입니다.
 
 추론적 디코딩은 원래 추론(inference) 단계에서 속도를 높이기 위한 기법인데, TLT는 이를 <strong>훈련 과정의 생성 단계</strong>에 적용했습니다. 소형 드래프터 모델이 빠르게 토큰을 예측하고, 대형 추론 모델이 이를 검증하는 방식입니다.
 
@@ -143,7 +143,7 @@ MIT 연구팀은 4가지 규모의 모델에서 TLT를 검증했습니다:
 
 - 단일 배치 추론적 디코딩: <strong>3.46배</strong> 속도 향상
 - 128개 요청 시나리오: <strong>2.44배</strong> 속도 향상
-- CUDAGraph 메모리 최적화: 30.39GB → 10.69GB (<strong>2.8배 절감</strong>)
+- [CUDAGraph 메모리 최적화](/ko/blog/ko/heretic-12-vram-reduction): 30.39GB → 10.69GB (<strong>2.8배 절감</strong>)
 - <strong>정확도 손실 없음</strong>: 훈련 보상 곡선이 기존 VeRL과 거의 동일
 
 ## 엔지니어링 리더 관점에서의 시사점

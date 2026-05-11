@@ -67,7 +67,7 @@ draft: true
 
 ### 1. 解决开源可持续性问题
 
-自2023年出现以来，llama.cpp已成为本地AI推理的事实标准。然而，小团队维护这个庞大项目在可持续性方面面临巨大挑战。有了Hugging Face的资源支持，这个问题从结构上得到了解决。
+自2023年出现以来，llama.cpp已成为[本地AI推理](/zh/blog/zh/asic-llm-inference-16k-tps)的事实标准。然而，小团队维护这个庞大项目在可持续性方面面临巨大挑战。有了Hugging Face的资源支持，这个问题从结构上得到了解决。
 
 ### 2. transformers-ggml生态系统整合
 
@@ -83,7 +83,7 @@ graph LR
 
 - 从模型发布到本地推理的时间将大幅缩短
 - GGUF文件格式与Hugging Face Hub的集成将更加紧密
-- 量化质量控制可以在transformers层面进行
+- [量化](/zh/blog/zh/qwen3-coder-8gb-vram)质量控制可以在transformers层面进行
 
 ### 3. 用户体验改善
 
@@ -144,7 +144,7 @@ graph TD
 官方公告中提出的技术目标非常明确：
 
 1. <strong>与transformers的一键集成</strong>：由于transformers框架已确立为模型定义的"source of truth"，改善与ggml生态系统的兼容性是关键
-2. <strong>用户体验改善</strong>：随着本地推理作为云推理的替代方案达到有意义的水平，提高普通用户的可访问性至关重要
+2. <strong>用户体验改善</strong>：随着[本地推理](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm)作为云推理的替代方案达到有意义的水平，提高普通用户的可访问性至关重要
 3. <strong>开源超级智能</strong>：长期愿景提出了"open-source superintelligence accessible to the world"
 
 ## 结论

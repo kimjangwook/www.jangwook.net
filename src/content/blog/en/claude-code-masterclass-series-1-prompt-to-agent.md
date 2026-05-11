@@ -1,6 +1,6 @@
 ---
-title: "Claude Code Masterclass #1 — Automating Workflows with Slash Commands, Hooks, and Subagents"
-description: 'A practical guide to building Claude Code automation pipelines: define tasks with slash commands (.claude/commands/), connect them to events via hooks (settings.json), and delegate to specialized subagents (.claude/agents/).'
+title: "Claude Code Masterclass #1 — Commands, Hooks & Subagents"
+description: 'Automate with Claude Code: slash commands for tasks, hooks for event triggers, subagents for delegation. A 3-step workflow guide using a real blog system.'
 pubDate: '2026-05-10'
 heroImage: '../../../assets/blog/claude-code-masterclass-series-1-prompt-to-agent-hero.jpg'
 tags:

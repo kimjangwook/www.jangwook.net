@@ -53,7 +53,7 @@ draft: true
 
 On February 26, 2026, MIT researchers released <strong>TLT (Taming the Long Tail)</strong>, a new methodology that improves reinforcement learning (RL) training efficiency for reasoning LLMs by <strong>70–210%</strong>. The research will be presented officially at ASPLOS 2026, held March 22–26 in Pittsburgh.
 
-Reasoning LLMs (such as DeepSeek-R1 and o1 series) require RL training to develop step-by-step problem-solving capabilities. However, <strong>up to 85% of total execution time</strong> is spent in the rollout phase. TLT eliminates this bottleneck, effectively doubling training speed on the same hardware.
+Reasoning LLMs (such as DeepSeek-R1 and o1 series) require [RL training](/en/blog/en/dena-llm-study-part3-model-training) to develop step-by-step problem-solving capabilities. However, <strong>up to 85% of total execution time</strong> is spent in the rollout phase. TLT eliminates this bottleneck, effectively doubling training speed on the same hardware.
 
 ## The Core Problem: Long-Tail Rollouts
 
@@ -108,7 +108,7 @@ The system starts drafter training on idle GPUs and automatically pauses when ro
 
 ### 2. Adaptive Rollout Engine
 
-The second innovation is <strong>applying speculative decoding—originally used for inference speedup—to the rollout generation phase during RL training</strong>.
+The second innovation is <strong>applying [speculative decoding](/en/blog/en/llama-cpp-iq-quantization-merge)—originally used for inference speedup—to the rollout generation phase during RL training</strong>.
 
 The small drafter model rapidly predicts tokens while the large reasoning model verifies them.
 
@@ -144,7 +144,7 @@ MIT researchers validated TLT across four model scales:
 
 - Single-batch speculative decoding: <strong>3.46×</strong> speedup
 - 128-request scenario: <strong>2.44×</strong> speedup
-- CUDAGraph memory optimization: 30.39GB → 10.69GB (<strong>2.8× reduction</strong>)
+- [CUDAGraph memory optimization](/en/blog/en/heretic-12-vram-reduction): 30.39GB → 10.69GB (<strong>2.8× reduction</strong>)
 - <strong>No accuracy loss</strong>: Training reward curves are nearly identical to baseline VeRL
 
 ## Insights for Engineering Leaders

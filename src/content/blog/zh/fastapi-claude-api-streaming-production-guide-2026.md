@@ -1,6 +1,6 @@
 ---
 title: 'FastAPI + Claude API 流式生产后端构建 — SSE、重试与错误恢复实战指南'
-description: '使用FastAPI和Anthropic SDK构建生产级流式AI后端的完整指南。涵盖SSE流式端点实现、限速指数退避重试、错误分类策略以及Docker部署，逐步讲解每个环节。'
+description: '本文是面向后端开发者的FastAPI + Anthropic SDK生产级流式AI后端完整指南。涵盖SSE流式端点实现、限速指数退避重试机制、错误分类与恢复策略、令牌流优化，以及基于Docker的完整容器化部署方案，每步均附完整可运行Python代码示例，是快速掌握并部署流式AI后端的最佳实践指南。'
 pubDate: '2026-05-11'
 heroImage: ../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-hero.png
 tags:

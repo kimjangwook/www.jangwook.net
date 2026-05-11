@@ -69,7 +69,7 @@ draft: true
 
 ### 1. オープンソース持続可能性問題の解決
 
-llama.cppは2023年の登場以来、ローカルAI推論の事実上の標準となりました。しかし少人数のチームがこの巨大なプロジェクトを維持するのは、持続可能性の面で大きな課題でした。Hugging Faceのリソースが後ろ盾となることで、この問題が構造的に解決されます。
+llama.cppは2023年の登場以来、[ローカルAI推論](/ja/blog/ja/asic-llm-inference-16k-tps)の事実上の標準となりました。しかし少人数のチームがこの巨大なプロジェクトを維持するのは、持続可能性の面で大きな課題でした。Hugging Faceのリソースが後ろ盾となることで、この問題が構造的に解決されます。
 
 ### 2. transformers-ggmlエコシステム統合
 
@@ -85,7 +85,7 @@ graph LR
 
 - モデルリリースからローカル推論までの時間が大幅に短縮されます
 - GGUFファイル形式とHugging Face Hubの統合がより緊密になります
-- 量子化品質管理がtransformersレベルで行えるようになります
+- [量子化](/ja/blog/ja/qwen3-coder-8gb-vram)品質管理がtransformersレベルで行えるようになります
 
 ### 3. ユーザーエクスペリエンスの改善
 
@@ -146,7 +146,7 @@ graph TD
 公式発表で示された今後の技術目標は明確です：
 
 1. <strong>transformersとのワンクリック統合</strong>：transformersフレームワークがモデル定義の「source of truth」として確立されているため、ggmlエコシステムとの互換性改善が鍵となります
-2. <strong>ユーザーエクスペリエンス改善</strong>：クラウド推論の代替としてローカル推論が意味のあるレベルに達した今、一般ユーザーのアクセシビリティ向上が重要です
+2. <strong>ユーザーエクスペリエンス改善</strong>：クラウド推論の代替として[ローカル推論](/ja/blog/ja/ddr5-rdimm-vs-rtx3090-local-llm)が意味のあるレベルに達した今、一般ユーザーのアクセシビリティ向上が重要です
 3. <strong>オープンソース超知能</strong>：長期ビジョンとして「open-source superintelligence accessible to the world」を提示しました
 
 ## 結論

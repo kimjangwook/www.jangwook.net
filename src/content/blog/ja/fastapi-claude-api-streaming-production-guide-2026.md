@@ -1,6 +1,6 @@
 ---
-title: 'FastAPI + Claude API ストリーミングプロダクションバックエンド構築 — SSE・リトライ・エラー復旧 実践ガイド'
-description: 'FastAPIとAnthropic SDKでプロダクションレベルのストリーミングAIバックエンドを構築する完全ガイド。SSEエンドポイント実装、レートリミット指数バックオフリトライ、エラー分類戦略、Dockerデプロイまでステップごとに解説します。'
+title: 'FastAPI + Claude API ストリーミングバックエンド — SSE・リトライ・エラー復旧 実践ガイド'
+description: 'FastAPIとAnthropic SDKでプロダクションレベルのストリーミングAIバックエンドを構築する完全ガイド。SSEストリーミングエンドポイント実装、レートリミット指数バックオフリトライ、エラー分類戦略、トークンストリーミング最適化、Dockerコンテナデプロイをステップごとにコード例付きで解説します。'
 pubDate: '2026-05-11'
 heroImage: ../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-hero.png
 tags:

@@ -50,7 +50,7 @@ draft: true
 
 2026年2月26日，MIT研究团队发布了一项新的方法论<strong>TLT（Taming the Long Tail）</strong>，可以将推理类LLM的强化学习(RL)训练效率提升<strong>70〜210%</strong>。这项研究将在3月22〜26日于匹兹堡举行的ASPLOS 2026大会上正式发表。
 
-推理LLM（如DeepSeek-R1、o1系列）需要通过RL训练来获得逐步思考复杂问题的能力，但在这个过程中，<strong>整个执行时间的最多85%</strong>被消耗在生成(rollout)阶段。TLT通过解决这个瓶颈，在相同硬件上将训练速度实际提升接近2倍。
+推理LLM（如DeepSeek-R1、o1系列）需要通过[RL训练](/zh/blog/zh/dena-llm-study-part3-model-training)来获得逐步思考复杂问题的能力，但在这个过程中，<strong>整个执行时间的最多85%</strong>被消耗在生成(rollout)阶段。TLT通过解决这个瓶颈，在相同硬件上将训练速度实际提升接近2倍。
 
 ## 核心问题：生成的长尾(Long Tail)
 
@@ -105,7 +105,7 @@ Worker Coordinator将每个GPU的状态管理为三种状态：
 
 ### 2. 适应型生成引擎（Adaptive Rollout Engine）
 
-第二个创新是<strong>将推测解码(Speculative Decoding)应用于RL训练的生成阶段</strong>。
+第二个创新是<strong>将[推测解码](/zh/blog/zh/llama-cpp-iq-quantization-merge)(Speculative Decoding)应用于RL训练的生成阶段</strong>。
 
 推测解码原本是在推理(inference)阶段提高速度的技术，TLT将其应用于<strong>训练过程的生成阶段</strong>。小型草案模型快速预测tokens，大型推理模型验证这些预测。
 
@@ -141,7 +141,7 @@ MIT研究团队在4种规模的模型上验证了TLT：
 
 - 单个批次推测解码：<strong>3.46倍</strong>速度提升
 - 128个请求场景：<strong>2.44倍</strong>速度提升
-- CUDAGraph内存优化：30.39GB → 10.69GB（<strong>节省2.8倍</strong>）
+- [CUDAGraph内存优化](/zh/blog/zh/heretic-12-vram-reduction)：30.39GB → 10.69GB（<strong>节省2.8倍</strong>）
 - <strong>无精度损失</strong>：训练奖励曲线与现有VeRL基本相同
 
 ## 工程领导视角的启示

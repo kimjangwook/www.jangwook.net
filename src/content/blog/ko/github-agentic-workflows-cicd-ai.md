@@ -67,7 +67,7 @@ draft: true
 
 ## Agentic Workflows란?
 
-Agentic Workflows는 <strong>자연어로 정의한 의도를 AI 에이전트가 실행하는 GitHub Actions 워크플로우</strong>입니다. YAML 대신 Markdown으로 자동화를 기술하고, Copilot·Claude Code·Codex 같은 코딩 에이전트가 실제 작업을 수행합니다.
+Agentic Workflows는 <strong>자연어로 정의한 의도를 AI 에이전트가 실행하는 GitHub Actions 워크플로우</strong>입니다. YAML 대신 Markdown으로 자동화를 기술하고, Copilot·[Claude Code](/ko/blog/ko/claude-code-cli-migration-guide)·Codex 같은 코딩 에이전트가 실제 작업을 수행합니다.
 
 ```mermaid
 graph TD
@@ -260,7 +260,7 @@ graph TD
 
 ### Phase 4 (3개월 이후): 복합 워크플로우
 
-CI 실패 자동 수정처럼 여러 단계가 연결되는 복합 워크플로우를 구성합니다.
+CI 실패 자동 수정처럼 [여러 단계가 연결되는 복합 워크플로우](/ko/blog/ko/claude-agent-teams-guide)를 구성합니다.
 
 ### 비용 고려사항
 

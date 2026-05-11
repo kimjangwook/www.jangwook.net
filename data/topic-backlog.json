@@ -1646,6 +1646,60 @@
       "added_at": "2026-05-10",
       "status": "queued",
       "notes": "Claude Code Skills 2026 핵심 패턴. SKILL.md 구조, 트리거, 팀 공유 전략 실전 예시. 마스터클래스 시리즈 2편 후보."
+    },
+    {
+      "slug": "claude-agent-sdk-tool-use-complete-guide-2026",
+      "title_idea": "Claude Agent SDK 실전 가이드 — 10줄 코드로 Tool-using AI 에이전트 구축하기",
+      "content_type": "how-to",
+      "target_keyword": "claude agent sdk tutorial",
+      "secondary_keywords": [
+        "claude agent sdk python",
+        "tool use agent",
+        "claude code agent sdk",
+        "ai agent 10줄"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic Engineering Blog, DataCamp, claude agent sdk docs 2026-05-11",
+      "added_at": "2026-05-11",
+      "status": "queued",
+      "notes": "Claude Agent SDK가 Jan 2026 출시 후 DataCamp 튜토리얼 등장. Tool-use 에이전트를 10줄로 구축하는 방법을 오늘의 FastAPI 스트리밍 포스트와 연계하여 실전 시리즈화. 기존 'claude-agent-teams-guide'와 차별화: 이 포스트는 SDK 코드 레벨의 How-to."
+    },
+    {
+      "slug": "fastmcp-python-mcp-server-build-guide-2026",
+      "title_idea": "FastMCP 2.0 실전 — Python으로 30분 만에 프로덕션 MCP 서버 만들기",
+      "content_type": "how-to",
+      "target_keyword": "fastmcp python mcp server tutorial",
+      "secondary_keywords": [
+        "fastmcp 2.0",
+        "mcp server python",
+        "model context protocol server",
+        "fastmcp 만들기"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "tech-insider.org FastMCP 12-step tutorial, modelcontextprotocol.io docs 2026-05-11",
+      "added_at": "2026-05-11",
+      "status": "queued",
+      "notes": "MCP 서버 1000개 이상 생태계 형성. FastMCP 2.0이 Python SDK 표준으로 부상. 기존 '로컬 LLM 프라이빗 MCP 서버'(done)와 차별화: 이 포스트는 공개 MCP 서버를 FastMCP 2.0 데코레이터 방식으로 빠르게 구축하는 실전 How-to."
+    },
+    {
+      "slug": "anthropic-claude-api-prompt-caching-cost-reduction-guide-2026",
+      "title_idea": "Claude API 프롬프트 캐싱 완전 가이드 — 긴 컨텍스트 비용을 90% 줄이는 실전 패턴",
+      "content_type": "how-to",
+      "target_keyword": "claude api prompt caching tutorial",
+      "secondary_keywords": [
+        "anthropic prompt caching",
+        "claude api cost optimization",
+        "prompt cache",
+        "llm api 비용 절감"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Anthropic docs, FastAPI 스트리밍 포스트(오늘) 연계 아이디어 2026-05-11",
+      "added_at": "2026-05-11",
+      "status": "queued",
+      "notes": "오늘의 FastAPI 스트리밍 포스트 독자들이 다음으로 관심 가질 주제. 프롬프트 캐싱으로 API 비용 90% 절감 가능. 화요일 How-to 포맷에 적합하며 실제 코드 예제 포함 가능."
     }
   ]
 }

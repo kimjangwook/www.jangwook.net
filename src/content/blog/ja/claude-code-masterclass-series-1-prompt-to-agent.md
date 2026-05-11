@@ -1,6 +1,6 @@
 ---
-title: "Claude Code 実践マスタークラス #1 — スラッシュコマンド・フック・サブエージェント3ステップでワークフロー自動化"
-description: 'スラッシュコマンド(.claude/commands/)でタスクを定義し、settings.jsonフックでイベントに連結し、サブエージェント(.claude/agents/)に委任する3ステップのClaude Code自動化パターンを実際のブログ自動化システムで解説します。'
+title: "Claude Code 実践マスタークラス #1 — コマンド・フック・サブエージェント3ステップ自動化"
+description: 'スラッシュコマンド(.claude/commands/)でタスクを定義し、settings.jsonフックでイベントに連結し、サブエージェント(.claude/agents/)に委任する3ステップのClaude Code自動化パターンを実際のブログ自動化システム構築事例でコード例を交えて解説します。'
 pubDate: '2026-05-10'
 heroImage: '../../../assets/blog/claude-code-masterclass-series-1-prompt-to-agent-hero.jpg'
 tags:

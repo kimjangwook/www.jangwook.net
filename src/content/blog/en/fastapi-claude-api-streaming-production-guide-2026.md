@@ -1,6 +1,6 @@
 ---
-title: 'Building a FastAPI + Claude API Streaming Production Backend — SSE, Retry, and Error Recovery Guide'
-description: 'A complete guide to building a production-grade streaming AI backend with FastAPI and the Anthropic SDK. Covers SSE streaming endpoints, rate limit exponential backoff retry, error classification strategy, and Docker deployment step by step.'
+title: 'FastAPI + Claude API: Production Streaming API — SSE & Retry'
+description: 'A production FastAPI streaming guide with Anthropic SDK. SSE endpoints, exponential backoff retry, error classification, and Docker deployment covered.'
 pubDate: '2026-05-11'
 heroImage: ../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-hero.png
 tags:

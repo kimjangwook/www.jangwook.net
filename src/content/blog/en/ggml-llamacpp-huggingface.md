@@ -72,7 +72,7 @@ Key points from the [official announcement](https://github.com/ggml-org/llama.cp
 
 ### 1. Solving the Open-Source Sustainability Problem
 
-Since its emergence in 2023, llama.cpp has become the de facto standard for local AI inference. However, maintaining this massive project with a small team was a major sustainability challenge. With Hugging Face's resources backing the project, this problem is structurally resolved.
+Since its emergence in 2023, llama.cpp has become the de facto standard for [local AI inference](/en/blog/en/asic-llm-inference-16k-tps). However, maintaining this massive project with a small team was a major sustainability challenge. With Hugging Face's resources backing the project, this problem is structurally resolved.
 
 ### 2. transformers-ggml Ecosystem Integration
 
@@ -88,7 +88,7 @@ graph LR
 
 - Time from model release to local inference will be dramatically reduced
 - GGUF file format integration with Hugging Face Hub will become tighter
-- Quantization quality control can be performed at the transformers level
+- [Quantization](/en/blog/en/qwen3-coder-8gb-vram) quality control can be performed at the transformers level
 
 ### 3. User Experience Improvements
 
@@ -149,7 +149,7 @@ From <strong>model repository → model definition → quantization → inferenc
 The technical objectives outlined in the official announcement are clear:
 
 1. <strong>One-click integration with transformers</strong>: As the transformers framework has established itself as the "source of truth" for model definitions, improving compatibility with the ggml ecosystem is key
-2. <strong>User experience improvements</strong>: With local inference reaching a meaningful level as an alternative to cloud inference, improving accessibility for general users is critical
+2. <strong>User experience improvements</strong>: With [local inference](/en/blog/en/ddr5-rdimm-vs-rtx3090-local-llm) reaching a meaningful level as an alternative to cloud inference, improving accessibility for general users is critical
 3. <strong>Open-source superintelligence</strong>: The long-term vision presents "open-source superintelligence accessible to the world"
 
 ## Conclusion
