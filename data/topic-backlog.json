@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-10",
+  "updated_at": "2026-05-11",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1126,7 +1126,7 @@
       "priority": 2,
       "source": "Anthropic 공식 스트리밍 문서, FastAPI 공식 문서",
       "added_at": "2026-05-03",
-      "status": "queued",
+      "status": "done",
       "notes": "FastAPI와 Claude API를 결합한 실전 백엔드. SSE 스트리밍, 레이트 리밋 재시도 로직, 에러 분류 패턴 포함. anthropic-sdk-streaming, prompt-caching 포스트와 내부링크 연결 적합."
     },
     {

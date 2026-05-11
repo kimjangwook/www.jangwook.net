@@ -2601,5 +2601,16 @@
       "devops": 0.7,
       "architecture": 0.75
     }
+  },
+  "fastapi-claude-api-streaming-production-guide-2026": {
+    "pubDate": "2026-05-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.7,
+      "web-development": 0.8,
+      "ai-ml": 0.85,
+      "devops": 0.75,
+      "architecture": 0.8
+    }
   }
 }
