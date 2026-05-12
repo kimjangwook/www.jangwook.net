@@ -44,13 +44,13 @@ The idea that AI levels the playing field between engineers is a myth. Real data
 
 Senior engineers get approximately <strong>5x the productivity gains from AI</strong> compared to juniors. The reason is straightforward. Effectively reviewing and correcting AI-generated code requires deep understanding of system design, security patterns, and performance tradeoffs. Only those who know what good code looks like can truly leverage AI output.
 
-Conversely, teams with weak foundations ship AI-generated code without validation, accumulating technical debt or introducing security vulnerabilities. AI isn't just a tool—it's a multiplier of organizational capability.
+Conversely, teams with weak foundations ship AI-generated code without validation, [accumulating technical debt or introducing security vulnerabilities](/en/blog/en/cognitive-debt-agentic-coding-2026). AI isn't just a tool—it's a multiplier of organizational capability.
 
 ## 4 Core Practices of Elite Teams
 
 ### 1. Spec-Driven Development Expands Safe AI Delegation
 
-The traditional approach to AI usage stays at "write me this function." Elite teams operate differently. They write structured specifications in Markdown first, then delegate implementation to AI agents based on those specs.
+The traditional approach to AI usage stays at "write me this function." Elite teams operate differently. [They write structured specifications in Markdown first](/en/blog/en/specification-driven-development), then delegate implementation to AI agents based on those specs.
 
 What this changes is scale. Previously, you could only safely delegate 10〜20 minute tasks to AI. Spec-driven development extends this to <strong>multi-hour feature development</strong>. Ambiguity disappears, and AI agents operate within clear constraints.
 
@@ -96,7 +96,7 @@ If any of these three factors becomes zero, the product becomes zero. Without Ta
 
 ## What EMs and VPoEs Should Do Right Now
 
-If you understand that this is more than a passing trend, here are the actions you need to take.
+If you understand that this is more than a passing trend, here are the actions you need to take. [Enterprise AI adoption strategy](/en/blog/en/enterprise-ai-adoption-topdown) and organizational design must go hand in hand.
 
 First, start <strong>tracking Revenue per Employee</strong>. This metric is the most honest indicator of your team's actual leverage. Understand your current number and set a target for six months from now.
 

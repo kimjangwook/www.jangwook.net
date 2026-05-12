@@ -49,7 +49,7 @@ relatedPosts:
 
 ## What Is Remote Control?
 
-Claude Code Remote Control lets you <strong>control a Claude Code session running on your local machine from a mobile app or web browser</strong>. It was released as a research preview on February 25, 2026.
+Claude Code Remote Control lets you <strong>control a Claude Code session running on your local machine from a mobile app or web browser</strong>. It was released as a research preview on February 25, 2026. If you're new to Claude Code, check out the [Claude Code best practices guide](/en/blog/en/claude-code-best-practices) before diving in.
 
 Here are the key points.
 
@@ -193,7 +193,7 @@ Run your test suite and check results remotely, like a personal CI pipeline.
 
 ### Scenario 4: Multi-Project Management
 
-Manage multiple project sessions by giving each a descriptive name.
+Manage multiple project sessions by giving each a descriptive name. Pair this with the [Claude agent teams guide](/en/blog/en/claude-agent-teams-guide) for full multi-agent orchestration you can monitor remotely.
 
 ```bash
 # Name each project session
@@ -265,6 +265,6 @@ These projects aren't officially supported but are useful when you need scheduli
 
 Claude Code Remote Control removes the constraint that you must be at your desk to code. Your code stays safely on your local machine while you can instruct and monitor your AI agent from anywhere.
 
-Setup takes just one line with `/config`. While some instability is expected during the research preview phase, the core workflow is already practical enough for daily use.
+Setup takes just one line with `/config`. Combine it with [Claude Code hooks and automation workflows](/en/blog/en/claude-code-hooks-workflow) to control your entire development pipeline remotely. While some instability is expected during the research preview phase, the core workflow is already practical enough for daily use.
 
 <strong>Get started</strong>: Run `/config` in your terminal right now and enable "Enable Remote Control for all sessions."

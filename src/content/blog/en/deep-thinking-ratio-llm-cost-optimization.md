@@ -118,7 +118,7 @@ Concrete actions to consider:
 
 ### 2. AI Agent Pipeline Redesign
 
-For AI agents doing complex reasoning, DTR becomes a powerful optimization lever.
+For [AI agents doing complex reasoning](/en/blog/en/ai-agent-cost-reality), DTR becomes a powerful optimization lever.
 
 ```python
 # Conceptual implementation
@@ -167,7 +167,7 @@ Longer term, expect Anthropic, OpenAI, and Google to either adopt DTR-based opti
 
 Even without direct DTR calculation via commercial APIs, the research offers immediate practical takeaways:
 
-**Stop equating token length with reasoning quality.** Simply raising max token limits is likely costing you money without improving results.
+**Stop equating token length with reasoning quality.** Simply raising max token limits is likely costing you money without improving results. [Real-world LLM API cost experiments](/en/blog/en/gemini-25-flash-api-cost-optimization-guide) confirm this same pattern.
 
 **Experiment with Best-of-N strategies now.** The core idea behind Think@n — start multiple paths, quickly abandon the unpromising ones — can be implemented today using other heuristics like confidence scores or perplexity in place of DTR.
 
@@ -177,7 +177,7 @@ Even without direct DTR calculation via commercial APIs, the research offers imm
 
 DTR represents a genuine paradigm shift in how we measure and optimize LLM reasoning — from "think longer" to "think deeper." For engineering leaders managing AI infrastructure, the bottom line is compelling: <strong>there's now a theoretical and empirical foundation for cutting inference costs in half while improving accuracy.</strong>
 
-If your team is running open-source models, you have everything you need to start experimenting with DTR-based optimization today. And if you're on commercial APIs, watch for vendor adoption in the coming months.
+If your team is running open-source models, you have everything you need to start experimenting with DTR-based optimization today. And if you're on commercial APIs, watch for vendor adoption in the coming months. Paired with the [declining trajectory of AI training costs](/en/blog/en/karpathy-ai-training-cost-deflation), inference efficiency optimization is becoming the next real competitive edge.
 
 ---
 

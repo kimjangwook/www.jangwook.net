@@ -1,6 +1,6 @@
 ---
 title: 'Google Code Wiki: AI 기반 코드 문서화 플랫폼 완벽 가이드'
-description: 'Google이 발표한 Code Wiki의 기능, 사용법, Gemini 기반 자동 문서화 시스템을 상세히 알아봅니다.'
+description: 'Google Code Wiki는 Gemini AI가 GitHub 저장소를 자동으로 분석해 프로젝트 Wiki를 생성하는 AI 코드 문서화 플랫폼입니다. 활성화 방법, 자동 Wiki 생성 원리, Gemini Code Assist 통합, 팀 협업 워크플로우 설정까지 실전 예제와 함께 완전히 정리했습니다.'
 pubDate: '2025-11-24'
 heroImage: ../../../assets/blog/google-code-wiki-guide-hero.jpg
 tags:

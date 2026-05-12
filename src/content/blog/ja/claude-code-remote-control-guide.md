@@ -49,7 +49,7 @@ relatedPosts:
 
 ## Remote Controlとは？
 
-Claude Code Remote Controlは、<strong>ローカルマシンで実行中のClaude Codeセッションをモバイルアプリやウェブブラウザから遠隔操作</strong>する機能です。2026年2月25日にリサーチプレビューとしてリリースされました。
+Claude Code Remote Controlは、<strong>ローカルマシンで実行中のClaude Codeセッションをモバイルアプリやウェブブラウザから遠隔操作</strong>する機能です。2026年2月25日にリサーチプレビューとしてリリースされました。Claude Codeが初めての方は、先に[Claude Codeベストプラクティスガイド](/ja/blog/ja/claude-code-best-practices)を確認することをお勧めします。
 
 重要なポイントを押さえましょう。
 
@@ -193,7 +193,7 @@ graph TD
 
 ### シナリオ4：マルチプロジェクト管理
 
-複数プロジェクトのClaude Codeセッションにそれぞれ名前を付けて管理します。
+複数プロジェクトのClaude Codeセッションにそれぞれ名前を付けて管理します。[Claudeエージェントチームガイド](/ja/blog/ja/claude-agent-teams-guide)と組み合わせれば、複雑なマルチエージェントワークフローもリモートで制御できます。
 
 ```bash
 # プロジェクトごとにセッション名を設定
@@ -265,6 +265,6 @@ claude --resume "api-refactoring"
 
 Claude Code Remote Controlは「デスクの前にいなければコーディングできない」という制約を取り除きます。コードはローカルマシンに安全に保持しながら、どこからでもAIエージェントにタスクを指示しモニタリングできます。
 
-セットアップは`/config`一行で十分です。リサーチプレビュー段階のため断続的な不安定性はありますが、基本的なワークフローは十分に実用的です。
+セットアップは`/config`一行で十分です。[Claude Codeフックと自動化ワークフロー](/ja/blog/ja/claude-code-hooks-workflow)と組み合わせると、開発パイプライン全体をリモートで制御するレベルまで拡張できます。リサーチプレビュー段階のため断続的な不安定性はありますが、基本的なワークフローは十分に実用的です。
 
 <strong>始めてみましょう</strong>：今すぐターミナルで`/config`を実行し、「Enable Remote Control for all sessions」を有効にしてください。

@@ -49,7 +49,7 @@ relatedPosts:
 
 ## 什么是Remote Control？
 
-Claude Code Remote Control是一项<strong>从移动应用或网页浏览器远程控制本地机器上运行的Claude Code会话</strong>的功能。该功能于2026年2月25日作为研究预览版发布。
+Claude Code Remote Control是一项<strong>从移动应用或网页浏览器远程控制本地机器上运行的Claude Code会话</strong>的功能。该功能于2026年2月25日作为研究预览版发布。如果您刚开始使用Claude Code，建议先查阅[Claude Code最佳实践指南](/zh/blog/zh/claude-code-best-practices)。
 
 以下是关键要点。
 
@@ -193,7 +193,7 @@ graph TD
 
 ### 场景4：多项目管理
 
-为多个项目的Claude Code会话分别命名进行管理。
+为多个项目的Claude Code会话分别命名进行管理。结合[Claude智能体团队指南](/zh/blog/zh/claude-agent-teams-guide)，可以远程控制复杂的多智能体工作流。
 
 ```bash
 # 为每个项目设置会话名称
@@ -265,6 +265,6 @@ claude --resume "api-refactoring"
 
 Claude Code Remote Control消除了"必须坐在桌前才能编程"的限制。代码安全地保留在本地机器上，同时可以从任何地方向AI代理发送任务指令并进行监控。
 
-设置只需`/config`一行即可完成。虽然研究预览阶段可能存在间歇性不稳定，但核心工作流已经足够实用。
+设置只需`/config`一行即可完成。结合[Claude Code钩子与自动化工作流](/zh/blog/zh/claude-code-hooks-workflow)，可将整个开发流水线扩展到远程控制的层面。虽然研究预览阶段可能存在间歇性不稳定，但核心工作流已经足够实用。
 
 <strong>开始体验</strong>：现在就在终端运行`/config`，启用"Enable Remote Control for all sessions"。
