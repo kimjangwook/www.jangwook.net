@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-11",
+  "updated_at": "2026-05-12",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1680,7 +1680,7 @@
       "priority": 1,
       "source": "tech-insider.org FastMCP 12-step tutorial, modelcontextprotocol.io docs 2026-05-11",
       "added_at": "2026-05-11",
-      "status": "queued",
+      "status": "done",
       "notes": "MCP 서버 1000개 이상 생태계 형성. FastMCP 2.0이 Python SDK 표준으로 부상. 기존 '로컬 LLM 프라이빗 MCP 서버'(done)와 차별화: 이 포스트는 공개 MCP 서버를 FastMCP 2.0 데코레이터 방식으로 빠르게 구축하는 실전 How-to."
     },
     {
