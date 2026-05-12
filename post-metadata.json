@@ -2612,5 +2612,16 @@
       "devops": 0.75,
       "architecture": 0.8
     }
+  },
+  "fastmcp-python-mcp-server-build-guide-2026": {
+    "pubDate": "2026-05-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.6,
+      "architecture": 0.8
+    }
   }
 }
