@@ -1,6 +1,6 @@
 ---
 title: 'OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기'
-description: '2025년 10월 발표된 OpenAI AgentKit의 핵심 개념부터 실전 튜토리얼까지, AI 에이전트 개발의 모든 것'
+description: '2025년 10월 OpenAI DevDay에서 공개된 AgentKit 완전 분석. Agent Builder, ChatKit, MCP 네이티브 지원 등 4개 핵심 컴포넌트 구조부터 Python SDK로 첫 에이전트를 구축하는 실전 튜토리얼까지 단계별로 상세히 안내합니다.'
 pubDate: '2025-10-20'
 heroImage: ../../../assets/blog/openai-agentkit-part1-hero.jpg
 tags:

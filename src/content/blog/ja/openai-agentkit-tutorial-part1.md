@@ -1,6 +1,6 @@
 ---
 title: OpenAI AgentKit完全ガイド第1部：コアコンセプトとはじめ方
-description: 2025年10月発表のOpenAI AgentKitのコアコンセプトから実践チュートリアルまで、AIエージェント開発のすべて
+description: 'OpenAI DevDay 2025で発表されたAgentKitの完全解説。Agent Builder・ChatKit・MCPネイティブ対応など4つのコアコンポーネント解説と、Python SDKで初めてのエージェントを構築するステップバイステップチュートリアルをお届けします。'
 pubDate: '2025-10-20'
 heroImage: ../../../assets/blog/openai-agentkit-part1-hero.jpg
 tags:

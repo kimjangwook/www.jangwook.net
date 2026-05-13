@@ -57,7 +57,7 @@ relatedPosts:
 
 ## Introduction
 
-If you're running OpenClaw from source (dev version), you might occasionally run into unexpected errors. The one I hit recently was particularly frustrating — a failure during `openclaw update` that took some digging to resolve. Here's how I figured it out.
+If you're running OpenClaw from source (dev version), you might occasionally run into unexpected errors. (For standard installation, see the [OpenClaw Installation Tutorial](/en/blog/en/openclaw-installation-tutorial).) The one I hit recently was particularly frustrating — a failure during `openclaw update` that took some digging to resolve. Here's how I figured it out.
 
 ## The Problem
 
@@ -168,7 +168,7 @@ That's exactly why I'm documenting this — hopefully it saves someone else the 
 
 ## Wrapping Up
 
-Running a dev version means dealing with these kinds of issues from time to time. The key takeaway is to read error messages carefully and trace through the source code to find the root cause. This particular case was a straightforward command registration issue once you understood the structure.
+Running a dev version means dealing with these kinds of issues from time to time. The key takeaway is to read error messages carefully and trace through the source code to find the root cause. For another common OpenClaw maintenance issue, see the [OpenClaw Cron Fix Guide](/en/blog/en/openclaw-cron-fix-guide). This particular case was a straightforward command registration issue once you understood the structure.
 
 ## References
 

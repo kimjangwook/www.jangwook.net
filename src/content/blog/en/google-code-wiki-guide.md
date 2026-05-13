@@ -295,7 +295,7 @@ graph TB
 
 ## Gemini CLI Extension
 
-Google is developing a Gemini CLI extension that will bring Code Wiki capabilities to your local development environment. This extension will support:
+Google is developing a Gemini CLI extension that will bring Code Wiki capabilities to your local development environment. In the Claude AI ecosystem, the [MCP (Model Context Protocol) Server Toolkit](/en/blog/en/mcp-servers-toolkit-introduction) serves a similar purpose — connecting AI assistants to development tools through a standardized interface. This extension will support:
 
 - <strong>Private repository analysis</strong>: Generate wikis for proprietary codebases
 - <strong>Local IDE integration</strong>: Access documentation without leaving your editor
@@ -374,9 +374,9 @@ Code Wiki represents a significant shift in how we approach code documentation. 
 
 ## Conclusion
 
-Google Code Wiki is a powerful tool that addresses one of the most persistent challenges in software development: understanding unfamiliar codebases. By combining Gemini's advanced language understanding with automated documentation generation, it transforms hours of code exploration into minutes of interactive discovery.
+Google Code Wiki is a powerful tool that addresses one of the most persistent challenges in software development: understanding unfamiliar codebases. If you're curious how AI agents understand code and call tools under the hood, the [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) walks through the agentic loop implementation in detail. By combining Gemini's advanced language understanding with automated documentation generation, it transforms hours of code exploration into minutes of interactive discovery.
 
-While currently limited to public repositories, the upcoming Gemini CLI extension promises to bring these capabilities to private codebases. For developers who frequently work with open source projects or are evaluating new libraries, Code Wiki is an invaluable tool that's worth exploring.
+While currently limited to public repositories, the upcoming Gemini CLI extension promises to bring these capabilities to private codebases. For teams already using Claude-based tooling, [Claude Code Best Practices](/en/blog/en/claude-code-best-practices) covers how to integrate AI coding assistants into your daily workflow. For developers who frequently work with open source projects or are evaluating new libraries, Code Wiki is an invaluable tool that's worth exploring.
 
 Try it today at [codewiki.google](https://codewiki.google) and experience a new way of understanding code.
 

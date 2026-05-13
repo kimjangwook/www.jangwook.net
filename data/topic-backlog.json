@@ -1736,6 +1736,57 @@
       "added_at": "2026-05-12",
       "status": "queued",
       "notes": "2026년 4월 공개 베타 출시된 Claude Managed Agents의 실전 설정 가이드. agent 생성 → environment(컨테이너) 설정 → MCP 툴 연동 → 세션 스트리밍까지 단계별 구현. $0.08/session-hour 과금 구조, agent_toolset_20260401 활용 패턴. 기존 Managed Agents 개요 포스트와 차별화: 실제 컨테이너 설정과 MCP 툴 연동에 특화."
+    },
+    {
+      "slug": "claude-agent-sdk-subagents-orchestration-tutorial-2026",
+      "title_idea": "Claude Agent SDK 서브에이전트 오케스트레이션 실전 가이드 — 멀티 에이전트 병렬 처리 완전 정복",
+      "content_type": "how-to",
+      "target_keyword": "Claude Agent SDK 서브에이전트 오케스트레이션",
+      "secondary_keywords": [
+        "claude sub-agents",
+        "multi-agent orchestration",
+        "anthropic agent sdk"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "daily-closing 2026-05-13 — today published tool_use complete guide, subagents is natural next step",
+      "added_at": "2026-05-13",
+      "status": "queued",
+      "notes": "오늘 claude-agent-sdk-tool-use-complete-guide-2026 발행 완료. 다음 단계로 서브에이전트를 활용한 멀티 에이전트 오케스트레이션 방법이 자연스러운 시리즈 확장. tool_use 다음은 sub-agents가 독자 요구사항 흐름에 맞음."
+    },
+    {
+      "slug": "anthropic-batch-api-large-scale-llm-cost-guide-2026",
+      "title_idea": "Anthropic Message Batches API 실전 가이드 — 대규모 LLM 처리 비용 50% 절감하기",
+      "content_type": "how-to",
+      "target_keyword": "Anthropic Batch API 사용법",
+      "secondary_keywords": [
+        "message batches api",
+        "claude batch processing",
+        "llm cost optimization"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "daily-closing 2026-05-13 — cost optimization is evergreen high-traffic topic, complements prompt caching series",
+      "added_at": "2026-05-13",
+      "status": "queued",
+      "notes": "프롬프트 캐싱 가이드와 함께 비용 최적화 시리즈 구성 가능. 배치 처리는 대규모 데이터 처리 워크로드에서 50% 할인 제공으로 검색 수요 높음. 차별화: 실제 Python 코드로 1000건 배치 처리 비교 측정."
+    },
+    {
+      "slug": "claude-code-worktree-parallel-agent-development-guide-2026",
+      "title_idea": "Claude Code + Git Worktree로 에이전트 병렬 개발 환경 구축하기",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code git worktree 병렬 개발",
+      "secondary_keywords": [
+        "claude code parallel sessions",
+        "git worktree ai development",
+        "claude code 병렬"
+      ],
+      "search_intent": "how-to",
+      "priority": 3,
+      "source": "daily-closing 2026-05-13 — worktree guide exists as post, but practical setup tutorial with Claude Code integration is missing",
+      "added_at": "2026-05-13",
+      "status": "queued",
+      "notes": "기존 claude-code-parallel-sessions-git-worktree.md 포스트 존재하나 실전 셋업 튜토리얼로 확장 가능. 여러 기능 브랜치를 동시에 Claude Code 에이전트로 개발하는 워크플로우. 실제 프로젝트 예시 포함."
     }
   ]
 }

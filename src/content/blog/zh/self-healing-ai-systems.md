@@ -61,7 +61,7 @@ relatedPosts:
 
 2025年10月，GitHub公开的AI代理可以在没有开发者介入的情况下扫描代码库、发现Bug并提交Pull Request。Google DeepMind的CodeMender在过去6个月内<strong>向开源项目自动贡献了72个安全补丁</strong>。
 
-这不再是科幻小说。<strong>自我修复AI系统（Self-Healing AI Systems）</strong>的时代已经到来。
+这不再是科幻小说。<strong>自我修复AI系统（Self-Healing AI Systems）</strong>的时代已经到来。先了解[AI智能体协作模式](/zh/blog/zh/ai-agent-collaboration-patterns)，能为设计自我修复架构打下坚实基础。
 
 ### 什么是自我修复系统？
 
@@ -318,6 +318,8 @@ class AgentlessFixGenerator:
 <strong>结果比较</strong>：
 - <strong>Agentless</strong>：更快（1次调用），成功率更高（50.8%）
 - <strong>Multi-Agent</strong>：更复杂，但在大规模系统中更灵活
+
+要在生产环境中稳定运行这些代理，请参考[FastAPI + Claude API流式传输生产指南](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026)。
 
 ### 4. 测试与验证（Testing & Validation）
 

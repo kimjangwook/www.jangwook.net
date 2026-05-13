@@ -1,6 +1,6 @@
 ---
 title: 'EffiFlow 구조 분석: 메타데이터로 71% 비용 절감'
-description: 17개 Agents와 메타데이터 우선 아키텍처로 블로그 자동화. 60〜70% 토큰 절감과 완전 자동화 달성 사례
+description: '17개 Agent와 메타데이터 우선 아키텍처로 구현한 블로그 완전 자동화 시스템 심층 분석. 60〜70% 토큰 절감, 연간 71% 비용 절감($5.72→$1.65), 연 364시간 절약을 달성한 3-Tier 아키텍처 설계 원리와 핵심 성능 메트릭을 상세히 공개합니다.'
 pubDate: '2025-11-14'
 heroImage: ../../../assets/blog/effiflow-automation-analysis-hero.jpg
 tags:

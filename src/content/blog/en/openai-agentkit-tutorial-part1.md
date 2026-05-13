@@ -1,8 +1,6 @@
 ---
 title: 'OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started'
-description: >-
-  From core concepts to hands-on tutorials: everything you need to know about
-  OpenAI AgentKit announced in October 2025
+description: 'Complete breakdown of OpenAI AgentKit revealed at DevDay 2025. Covers the 4 core components — Agent Builder, ChatKit, Connector Registry, and Evals — plus a step-by-step Python SDK tutorial to build your first agent.'
 pubDate: '2025-10-20'
 heroImage: ../../../assets/blog/openai-agentkit-part1-hero.jpg
 tags:

@@ -56,7 +56,7 @@ relatedPosts:
 
 ## 前言
 
-在使用OpenClaw dev版（从源码直接构建）的过程中，偶尔会遇到意想不到的错误。这次我碰到的是执行`openclaw update`时出现的一个相当棘手的错误。经过一番折腾，终于解决了，在此分享整个过程。
+在使用OpenClaw dev版（从源码直接构建）的过程中，偶尔会遇到意想不到的错误。（标准安装方法请参考[OpenClaw安装教程](/zh/blog/zh/openclaw-installation-tutorial)。）这次我碰到的是执行`openclaw update`时出现的一个相当棘手的错误。经过一番折腾，终于解决了，在此分享整个过程。
 
 ## 问题状况
 
@@ -167,7 +167,7 @@ git reset HEAD~1 && git checkout -- .
 
 ## 总结
 
-使用dev版就难免会遇到这类问题。关键是要养成仔细阅读错误信息、追踪源代码寻找原因的习惯。这次的问题，理解了命令注册结构后就能比较轻松地解决。
+使用dev版就难免会遇到这类问题。关键是要养成仔细阅读错误信息、追踪源代码寻找原因的习惯。这次的问题，理解了命令注册结构后就能比较轻松地解决。类似的OpenClaw维护问题，可以参考[OpenClaw定时任务修复指南](/zh/blog/zh/openclaw-cron-fix-guide)。
 
 ## 参考资料
 

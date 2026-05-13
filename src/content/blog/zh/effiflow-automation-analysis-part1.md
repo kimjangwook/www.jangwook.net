@@ -1,6 +1,6 @@
 ---
 title: EffiFlow 架构分析：元数据驱动节省 71% 成本
-description: 17 个 Agents 和元数据优先架构实现博客自动化。节省 60〜70% Token 成本并实现完全自动化
+description: '深度分析17个Agent与元数据优先架构构建的博客全自动化系统。完整揭示实现60〜70% Token节省、年成本降低71%（$5.72→$1.65）、每年节省364小时的三层架构设计原理与核心性能指标。'
 pubDate: '2025-11-14'
 heroImage: ../../../assets/blog/effiflow-automation-analysis-hero.jpg
 tags:
