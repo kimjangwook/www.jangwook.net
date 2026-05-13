@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-12",
+  "updated_at": "2026-05-13",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1662,7 +1662,7 @@
       "priority": 1,
       "source": "Anthropic Engineering Blog, DataCamp, claude agent sdk docs 2026-05-11",
       "added_at": "2026-05-11",
-      "status": "queued",
+      "status": "done",
       "notes": "Claude Agent SDK가 Jan 2026 출시 후 DataCamp 튜토리얼 등장. Tool-use 에이전트를 10줄로 구축하는 방법을 오늘의 FastAPI 스트리밍 포스트와 연계하여 실전 시리즈화. 기존 'claude-agent-teams-guide'와 차별화: 이 포스트는 SDK 코드 레벨의 How-to."
     },
     {
