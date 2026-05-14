@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-13",
+  "updated_at": "2026-05-14",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1627,7 +1627,7 @@
       "priority": 1,
       "source": "https://www.factualminds.com/blog/aws-mcp-server-ga-agent-toolkit-serverless-plugin/",
       "added_at": "2026-05-10",
-      "status": "queued",
+      "status": "done",
       "notes": "2026-05-06 AWS MCP Server GA. IAM 가드레일, CloudWatch, CloudTrail 포함. 엔터프라이즈 AI 에이전트 게임체인저."
     },
     {
