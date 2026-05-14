@@ -657,7 +657,7 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 ### 1. Content Strategy
 
 <strong>Priority Content</strong>:
-- <strong>Expand Claude Code Series</strong>: Highest interest, so create sequels
+- 1. <strong>[Claude Code Series Expansion](/en/blog/en/claude-code-best-practices)</strong>: Highest interest, so create sequels
   - Part 2: Advanced patterns
   - Part 3: Production use cases
 - <strong>Focus on AI Development Workflow</strong>: Strengthen developer-centric content
@@ -742,7 +742,7 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 
 ### Blog Operation Recommendations
 
-1. <strong>Expand Claude Code Series</strong>: Highest interest
+1. 1. <strong>[Claude Code Series Expansion](/en/blog/en/claude-code-best-practices)</strong>: Highest interest
 2. <strong>Strengthen AI Development Workflow Content</strong>: GraphRAG, Multi-Agent, Screenshot-to-Code
 3. <strong>Multilingual Support</strong>: Prioritize English, Korean, Japanese
 4. <strong>4→5 Point Conversion Strategy</strong>: Deepen content quality (add hands-on examples, case studies)
@@ -776,7 +776,7 @@ The consumer research and content strategy fields are facing a new turning point
 - [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
 
 ### Blog Posts
-- [New Ways AI Predicts Consumer Behavior: Semantic Similarity Rating](/blog/en/llm-consumer-research-ssr) - Introduction to SSR methodology
+- [New Ways AI Predicts Consumer Behavior: Semantic Similarity Rating](/en/blog/en/llm-consumer-research-ssr) - Introduction to SSR methodology
 
 ### Related Research
 - [Research on LLM Bias in Survey Research](https://www.nature.com/articles/s41599-024-03609-x)

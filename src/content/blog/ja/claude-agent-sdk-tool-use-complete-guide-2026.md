@@ -1,6 +1,6 @@
 ---
 title: 'Claude Agent SDK 実践ガイド — Tool UseでAIエージェントが実際に行動するようにする方法'
-description: 'anthropic 0.101.0 SDKを直接インストールしてtool_useエージェンティックループを実装した。JSONスキーマツール定義から複数ツール呼び出し、エラーハンドリング、コスト最適化まで — チャットボットとエージェントを分ける核心パターン実践ガイド。'
+description: 'anthropic 0.101.0 SDKを直接インストールしてtool_useエージェンティックループを実装した。JSONスキーマツール定義から複数ツール呼び出し、エラーハンドリング、ストリーミング、コスト最適化まで — チャットボットとエージェントを分けるコアパターンを段階的な実践コードで解説する。'
 pubDate: '2026-05-13'
 heroImage: '../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/hero.png'
 tags: ['Claude', 'Anthropic SDK', 'Tool Use', 'AI Agent', 'Python']

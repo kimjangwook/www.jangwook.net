@@ -739,7 +739,7 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 
 ### 博客运营建议
 
-1. <strong>扩展Claude Code系列</strong>:最高兴趣点
+1. <strong>扩展Claude Code系列</strong>:[Claude Code Best Practices](/zh/blog/zh/claude-code-best-practices)是最高兴趣点
 2. <strong>强化AI开发工作流程内容</strong>:GraphRAG、Multi-Agent、Screenshot-to-Code
 3. <strong>多语言支持</strong>:优先英语、韩语、日语
 4. <strong>4→5分转化策略</strong>:深化内容质量(添加实践示例、案例研究)
@@ -773,7 +773,7 @@ SSR不仅是问卷工具,更是<strong>内容策略制定的创新工具</strong
 - [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
 
 ### 博客文章
-- [AI预测消费者行为的新方法:语义相似度评分](/blog/ko/llm-consumer-research-ssr) - SSR方法论介绍
+- [AI预测消费者行为的新方法:语义相似度评分](/zh/blog/zh/llm-consumer-research-ssr) - SSR方法论介绍
 
 ### 相关研究
 - [Research on LLM Bias in Survey Research](https://www.nature.com/articles/s41599-024-03609-x)

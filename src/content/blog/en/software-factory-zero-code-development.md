@@ -207,7 +207,7 @@ graph TD
 
 In detail:
 
-1. <strong>AI agent orchestration</strong>: Designing which agents to deploy in what combinations and defining inter-agent collaboration patterns
+1. <strong>AI agent orchestration</strong>: Designing which agents to deploy in what combinations and defining [inter-agent collaboration patterns](/en/blog/en/multi-agent-orchestration-improvement)
 2. <strong>Quality threshold tuning</strong>: Adjusting probabilistic test pass criteria to business requirements — 99.9% for payment systems, 95% for admin panels
 3. <strong>Cost optimization</strong>: Deciding how to allocate the $1,000/day compute budget across tasks
 4. <strong>Requirements quality management</strong>: AI needs clear requirements to generate correct code. Ambiguous requirements produce ambiguous outputs
@@ -247,7 +247,7 @@ The Software Factory model deserves to be called an <strong>industrial revolutio
 
 The key point: this change doesn't make developers unnecessary — it <strong>redefines the developer's role</strong>. From code writers to system designers and supervisors. From team managers to factory line optimizers.
 
-The $1,000/day computing cost is the admission price for this transition. And that cost will continue to drop. The real question isn't "Is this model possible?" but <strong>"Is our organization ready for this transition?"</strong>
+The $1,000/day computing cost is the admission price for this transition. The [Claude Code Agent Teams Guide](/en/blog/en/claude-agent-teams-guide) provides real-world agent team orchestration examples. And that cost will continue to drop. The real question isn't "Is this model possible?" but <strong>"Is our organization ready for this transition?"</strong>
 
 ## References
 

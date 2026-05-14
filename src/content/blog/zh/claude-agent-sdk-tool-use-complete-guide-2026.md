@@ -1,6 +1,6 @@
 ---
 title: 'Claude Agent SDK 实战指南 — 用Tool Use让AI代理真正执行任务'
-description: '亲自安装anthropic 0.101.0并实现了tool_use代理循环。从JSON Schema工具定义到多工具调用、错误处理、成本优化 — 区分聊天机器人与真正代理的核心模式实战指南。'
+description: '亲自安装anthropic 0.101.0 SDK并完整实现了tool_use代理循环全流程。本文系统介绍了从JSON Schema工具定义、多工具并发调用、错误处理策略到流式响应与成本优化，通过Python实战代码逐步详细讲解区分聊天机器人与真正AI代理的核心设计模式，附可运行代码示例与步骤说明。'
 pubDate: '2026-05-13'
 heroImage: '../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/hero.png'
 tags: ['Claude', 'Anthropic SDK', 'Tool Use', 'AI Agent', 'Python']

@@ -1,6 +1,6 @@
 ---
-title: 'Claude Agent SDK Practical Guide — Building Tool-Using AI Agents from Scratch'
-description: 'I installed anthropic 0.101.0 and implemented a tool_use agentic loop from scratch. JSON schema tool definitions, multi-tool calls, error handling, cost optimization — the core patterns that separate chatbots from real agents.'
+title: 'Claude Agent SDK: Build Tool-Using AI Agents from Scratch'
+description: 'Build tool-using AI agents with Anthropic SDK. Covers tool definitions, multi-tool calls, error handling, and cost optimization in hands-on Python code.'
 pubDate: '2026-05-13'
 heroImage: '../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/hero.png'
 tags: ['Claude', 'Anthropic SDK', 'Tool Use', 'AI Agent', 'Python']

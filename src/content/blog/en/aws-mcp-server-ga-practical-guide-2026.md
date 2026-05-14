@@ -1,6 +1,6 @@
 ---
-title: 'AWS MCP Server GA Practical Guide — Connecting CloudWatch & IAM to Your AI Coding Agent'
-description: 'AWS MCP Server hit general availability in May 2026. Here is what I found after actually installing it: 31 CloudWatch tools, 29 IAM tools, a one-line uvx setup, and an IAM security architecture that might be the most important part of the whole release.'
+title: 'AWS MCP Server GA: CloudWatch & IAM Tools for Claude Code'
+description: 'AWS MCP Server went GA May 2026. Connect 31 CloudWatch and 29 IAM tools to Claude Code. IAM condition-key architecture and honest real-world evaluation included.'
 pubDate: '2026-05-14'
 heroImage: '../../../assets/blog/aws-mcp-server-ga-practical-guide-2026-hero.png'
 tags:

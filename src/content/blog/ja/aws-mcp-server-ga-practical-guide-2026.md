@@ -1,6 +1,6 @@
 ---
-title: 'AWS MCP Server GA 実践ガイド — CloudWatch·IAM連携でAIエージェントに自分のAWSを理解させる'
-description: 'AWS MCPサーバーが2026年5月に正式リリース。uvx 1行でCloudWatch 31ツールとIAM 29ツールをClaude Codeに接続した実践インストール記、IAMセキュリティアーキテクチャ分析、率直な評価まで。'
+title: 'AWS MCP Server GA 実践ガイド — CloudWatch·IAMでAIエージェントにAWSを理解させる'
+description: 'AWS MCPサーバーが2026年5月に正式リリース。uvx 1行でCloudWatch 31ツールとIAM 29ツールをClaude Codeに接続した実践レポート。IAM条件キー(aws:ViaAWSMCPService)基盤のエージェント権限分離アーキテクチャ分析と実際のAWSアカウント連携テスト結果・率直な評価まで。'
 pubDate: '2026-05-14'
 heroImage: '../../../assets/blog/aws-mcp-server-ga-practical-guide-2026-hero.png'
 tags:

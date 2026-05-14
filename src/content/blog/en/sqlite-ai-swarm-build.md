@@ -128,7 +128,7 @@ Coordination commits: 84 (54.5%)
 └── Task coordination
 ```
 
-<strong>54.5% of all commits were pure coordination overhead</strong>. This demonstrates that multi-agent parallel throughput depends heavily on lock hygiene and stale-lock cleanup discipline.
+<strong>54.5% of all commits were pure coordination overhead</strong>. This demonstrates that multi-agent parallel throughput depends heavily on lock hygiene and stale-lock cleanup discipline. [AI Agent Cost Reality Analysis](/en/blog/en/ai-agent-cost-reality) examines how this overhead affects overall ROI in depth.
 
 ## Success Factors
 
@@ -165,7 +165,7 @@ PROGRESS.md grew to 490 lines, and the notes directory accumulated massive amoun
 
 ## Connection to Prior Work
 
-This experiment aligns with [Verdent AI's multi-agent SWE-bench results](/en/blog/multi-agent-swe-bench-verdent). While Verdent demonstrated parallel execution effectiveness on benchmarks, this SQLite project proves <strong>multi-agent division of labor on real system construction</strong>.
+This experiment aligns with [Verdent AI's multi-agent SWE-bench results](/en/blog/en/multi-agent-swe-bench-verdent). While Verdent demonstrated parallel execution effectiveness on benchmarks, this SQLite project proves <strong>multi-agent division of labor on real system construction</strong>.
 
 Key shared insights:
 

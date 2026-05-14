@@ -1787,6 +1787,57 @@
       "added_at": "2026-05-13",
       "status": "queued",
       "notes": "기존 claude-code-parallel-sessions-git-worktree.md 포스트 존재하나 실전 셋업 튜토리얼로 확장 가능. 여러 기능 브랜치를 동시에 Claude Code 에이전트로 개발하는 워크플로우. 실제 프로젝트 예시 포함."
+    },
+    {
+      "slug": "anthropic-openclaw-agent-credits-policy-change-2026",
+      "title_idea": "Anthropic OpenClaw 재허용 — 별도 크레딧 미터 도입의 의미와 개발자 영향 분석",
+      "content_type": "news",
+      "target_keyword": "Anthropic OpenClaw 크레딧 정책",
+      "secondary_keywords": [
+        "Claude 에이전트 사용량",
+        "OpenClaw 크레딧",
+        "Anthropic 정책 변화"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "VentureBeat — Anthropic reinstates OpenClaw and third-party agent usage with separate credit meter (2026-05-14)",
+      "added_at": "2026-05-14",
+      "status": "queued",
+      "notes": "Anthropic이 클로드 구독에서 제3자 에이전트 도구 사용을 재허용했으나 별도 크레딧 미터 뒤에 두었다. Claude Code 사용자에게 직접적인 영향. 크레딧 구조 변화, 비용 예측, 기존 OpenClaw 워크플로우 영향 분석 필요. 금요일 뉴스 분석에 최적."
+    },
+    {
+      "slug": "claude-opus-4-7-swe-bench-performance-analysis-2026",
+      "title_idea": "Claude Opus 4.7 실전 분석 — SWE-bench 87.6% 달성, 실제 개발자에게 무엇이 달라지나",
+      "content_type": "news",
+      "target_keyword": "Claude Opus 4.7 SWE-bench",
+      "secondary_keywords": [
+        "Claude Opus 4.7 성능",
+        "AI 코딩 벤치마크",
+        "SWE-bench Verified"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Anthropic — Introducing Claude Opus 4.7 (2026-05), llm-stats.com 벤치마크",
+      "added_at": "2026-05-14",
+      "status": "queued",
+      "notes": "Claude Opus 4.7가 SWE-bench Verified 87.6% 달성, 멀티파일 코드 추론 1위. GPT-5.5 (터미널 작업), Gemini 3.1 Pro (멀티모달)와 비교. 개발자 관점에서 실제 사용 시 차이점, 비용 대비 성능 분석, 언제 Opus 4.7 vs Sonnet 4.6 선택해야 하는지. 금요일 뉴스 분석."
+    },
+    {
+      "slug": "9router-open-source-free-ai-coding-claude-gpt-2026",
+      "title_idea": "9router — Claude Code·Cursor·Copilot을 40개 무료 제공자에 연결하는 오픈소스 도구 분석",
+      "content_type": "news",
+      "target_keyword": "9router Claude Code 무료",
+      "secondary_keywords": [
+        "AI 코딩 무료",
+        "9router 오픈소스",
+        "Claude API 비용 절감"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "AIToolly — 9router open-source solution for unlimited free AI programming (2026-05-13)",
+      "added_at": "2026-05-14",
+      "status": "queued",
+      "notes": "Claude Code, Codex, Cursor, Cline, Copilot 등을 40개 이상의 무료 AI 제공자에 연결하는 오픈소스. RTK 기술로 40% 토큰 절감. 실제 개발자 관점에서 합법성, 신뢰성, 실용성 분석. API 비용이 부담인 개발자에게 유용한 뉴스. 금요일 뉴스 분석."
     }
   ]
 }

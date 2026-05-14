@@ -206,7 +206,7 @@ graph TD
 
 구체적으로 살펴보면:
 
-1. <strong>AI 에이전트 오케스트레이션</strong>: 어떤 에이전트를 어떤 조합으로 운용할지, 에이전트 간 협업 패턴을 설계합니다
+1. <strong>AI 에이전트 오케스트레이션</strong>: 어떤 에이전트를 어떤 조합으로 운용할지, [에이전트 간 협업 패턴](/ko/blog/ko/multi-agent-orchestration-improvement)을 설계합니다
 2. <strong>품질 임계값 설정</strong>: 확률적 테스트의 통과 기준을 비즈니스 요구에 맞게 조정합니다. 결제 시스템은 99.9%, 관리 화면은 95% 등
 3. <strong>비용 최적화</strong>: 하루 $1000의 컴퓨팅 예산을 어떤 태스크에 얼마만큼 배분할지 결정합니다
 4. <strong>요구사항 품질 관리</strong>: AI가 올바른 코드를 생성하려면 요구사항이 명확해야 합니다. 모호한 요구사항은 모호한 결과물을 만듭니다
@@ -246,10 +246,10 @@ Software Factory 모델은 소프트웨어 개발의 <strong>산업혁명</stron
 
 중요한 것은 이 변화가 개발자를 불필요하게 만드는 것이 아니라, <strong>개발자의 역할을 재정의</strong>한다는 것입니다. 코드를 쓰는 사람에서, 시스템을 설계하고 감독하는 사람으로. EM은 팀을 관리하는 사람에서, 팩토리 라인을 최적화하는 사람으로.
 
-하루 $1000의 컴퓨팅 비용은 이 전환의 입장료입니다. 그리고 이 비용은 계속 낮아질 것입니다. 진짜 질문은 "이 모델이 가능한가?"가 아니라 <strong>"우리 조직은 이 전환에 준비되어 있는가?"</strong>입니다.
+하루 $1000의 컴퓨팅 비용은 이 전환의 입장료입니다. [Claude Code Agent Teams 가이드](/ko/blog/ko/claude-agent-teams-guide)에서 실제 에이전트 팀 오케스트레이션 사례를 참고할 수 있습니다. 그리고 이 비용은 계속 낮아질 것입니다. 진짜 질문은 "이 모델이 가능한가?"가 아니라 <strong>"우리 조직은 이 전환에 준비되어 있는가?"</strong>입니다.
 
 ## 참고 자료
 
 - [Software Factories And The Agentic Moment — iwashi86](https://iwashi.co/2025/02/01/Software-Factories-And-The-Agentic-Moment)
-- [Anthropic Claude의 에이전틱 코딩 패턴](https://docs.anthropic.com/en/docs/agents)
+- [Claude Agent SDK — Tool Use로 에이전트 구현하기](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)
 - [Statistical Quality Control in Manufacturing — ASQ](https://asq.org/quality-resources/statistical-quality-control)

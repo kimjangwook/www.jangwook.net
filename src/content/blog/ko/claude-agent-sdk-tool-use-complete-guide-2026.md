@@ -1,6 +1,6 @@
 ---
-title: 'Claude Agent SDK 실전 가이드 — Tool Use로 AI 에이전트가 실제로 뭔가를 하게 만드는 법'
-description: 'anthropic 0.101.0 SDK를 직접 설치해 tool_use 에이전틱 루프를 구현했다. JSON 스키마 도구 정의부터 다중 도구 호출, 에러 핸들링, 비용 최적화까지 — 챗봇과 에이전트를 가르는 핵심 패턴 실전 가이드.'
+title: 'Claude Agent SDK 실전 가이드 — Tool Use로 AI 에이전트 구현하기'
+description: 'anthropic 0.101.0 SDK를 직접 설치해 tool_use 에이전틱 루프를 구현했다. JSON 스키마 도구 정의부터 다중 도구 호출, 에러 핸들링, 스트리밍 응답, 비용 최적화까지 — 챗봇과 에이전트를 가르는 핵심 패턴을 단계별 Python 실전 코드로 설명한다.'
 pubDate: '2026-05-13'
 heroImage: '../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/hero.png'
 tags: ['Claude', 'Anthropic SDK', 'Tool Use', 'AI Agent', 'Python']
