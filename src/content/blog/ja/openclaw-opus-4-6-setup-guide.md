@@ -52,7 +52,7 @@ relatedPosts:
 
 2026年2月5日、AnthropicがClaude Opus 4.6をリリースした。<strong>100万トークンコンテキスト</strong>、<strong>128Kトークン出力</strong>、強化された計画力と自己修正能力。
 
-OpenClawユーザーなら、今すぐ設定して使い始めたいはずだ。
+OpenClawユーザーなら、今すぐ設定して使い始めたいはずだ。Opus 4.6のツール呼び出し機能を最大限に活用する方法は[Claude Agent SDK ツールユーズ完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)で詳しく解説している。
 
 この記事では、<strong>設定ファイルをそのままコピペして即座に動かせる</strong>最短手順を紹介する。
 
@@ -61,7 +61,7 @@ OpenClawユーザーなら、今すぐ設定して使い始めたいはずだ。
 - OpenClawがインストール済み（`npm install -g openclaw@latest`）
 - Anthropic APIキーが設定済み（`claude setup-token`）
 
-まだの場合は[公式ドキュメント](https://docs.openclaw.ai/start/getting-started)を参照。
+まだの場合は[公式ドキュメント](https://docs.openclaw.ai/start/getting-started)を参照。Claude Codeと併用する場合は[Claude Code ベストプラクティス](/ja/blog/ja/claude-code-best-practices)もワークフロー設計の参考になる。
 
 ## 設定ファイルの編集
 
@@ -163,7 +163,7 @@ openclaw models status
 3. `/new` で新セッション開始
 4. `openclaw models status` で確認
 
-以上。100万トークンコンテキストの世界へようこそ。
+以上。100万トークンコンテキストの世界へようこそ。使用量とコストを継続的にモニタリングするなら[Claude Code 使用量インサイト分析](/ja/blog/ja/claude-code-insights-usage-analysis)が役立つ。
 
 ## 参考資料
 

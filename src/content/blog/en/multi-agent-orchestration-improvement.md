@@ -64,7 +64,7 @@ relatedPosts:
 
 Managing a large-scale blog automation system presents unique challenges. When your codebase includes 17 specialized agents, 6 slash commands, and 4 skills working together to automate content creation, SEO optimization, and analytics reporting, maintaining consistency and quality across all components becomes critical.
 
-This post chronicles a real-world multi-agent orchestration project that analyzed 48 files and resolved 61 issues in a production blog automation system. The project leveraged Claude Code's multi-agent pattern to systematically improve documentation quality from 78 to 92 points while achieving 60-70% token cost savings.
+This post chronicles a real-world multi-agent orchestration project that analyzed 48 files and resolved 61 issues in a production blog automation system. The project leveraged Claude Code's multi-agent pattern to systematically improve documentation quality from 78 to 92 points while achieving 60-70% token cost savings. For a structured overview of the five core agentic workflow patterns in Claude Code, see [Claude Code Agentic Workflow Patterns: 5 Types](/en/blog/en/claude-code-agentic-workflow-patterns-5-types).
 
 <strong>Key Achievements</strong>:
 - 48 files analyzed across 4 domains
@@ -778,7 +778,7 @@ watch -n 60 'npm run build && echo "Build time: $(date)"'
 
 ## Conclusion
 
-Large-scale system improvements don't happen in a single pass. The multi-agent orchestration pattern demonstrated here—analyzing 48 files, identifying 61 issues, and systematically resolving them through iterative feedback—proves that structured approaches deliver measurable results.
+Large-scale system improvements don't happen in a single pass. The multi-agent orchestration pattern demonstrated here—analyzing 48 files, identifying 61 issues, and systematically resolving them through iterative feedback—proves that structured approaches deliver measurable results. For parallel execution with Git Worktree, [Claude Code Parallel Sessions and Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) covers the setup in detail.
 
 <strong>Final Statistics</strong>:
 - 17 files improved across 4 domains
@@ -802,7 +802,7 @@ Apply this pattern to your own projects:
 4. Iterate until quality targets met
 5. Measure and share your results
 
-The tools are available. The patterns are proven. The only question is: when will you start?
+The tools are available. The patterns are proven. The only question is: when will you start? For research on how multi-agent systems scale and where their limits lie, [Google Agent Scaling Science: Multi-Agent Limits](/en/blog/en/google-agent-scaling-science-multiagent-limits) is worth reading alongside this post.
 
 ---
 

@@ -54,7 +54,7 @@ relatedPosts:
 
 On February 5, 2026, Anthropic released Claude Opus 4.6. <strong>1 million token context</strong>, <strong>128K token output</strong>, enhanced planning and self-correction capabilities.
 
-If you're an OpenClaw user, you want to set this up right now.
+If you're an OpenClaw user, you want to set this up right now. For a deeper look at how to leverage Opus 4.6's tool-calling capabilities, see the [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026).
 
 This post gives you the <strong>shortest path to a working setup — copy, paste, and go.</strong>
 
@@ -63,7 +63,7 @@ This post gives you the <strong>shortest path to a working setup — copy, paste
 - OpenClaw installed (`npm install -g openclaw@latest`)
 - Anthropic API key configured (`claude setup-token`)
 
-If not, see the [official docs](https://docs.openclaw.ai/start/getting-started).
+If not, see the [official docs](https://docs.openclaw.ai/start/getting-started). If you're also using Claude Code, [Claude Code Best Practices](/en/blog/en/claude-code-best-practices) is worth reviewing for workflow setup.
 
 ## Editing the Config File
 
@@ -165,7 +165,7 @@ You can also check from within chat:
 3. Start a new session with `/new`
 4. Verify with `openclaw models status`
 
-That's it. Welcome to the world of 1 million token context.
+That's it. Welcome to the world of 1 million token context. To track usage and costs over time, [Claude Code Usage Insights Analysis](/en/blog/en/claude-code-insights-usage-analysis) has the monitoring setup you need.
 
 ## References
 

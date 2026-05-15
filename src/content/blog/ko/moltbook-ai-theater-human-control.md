@@ -68,7 +68,7 @@ SNS에서는 "드디어 AI가 독자적인 사회를 만들기 시작했다"며 
 
 ## 'AI 시어터'라는 구조적 문제
 
-이 현상은 'AI 시어터(AI Theater)'라고 불립니다. 무대 위에서는 AI가 자율적으로 연기하는 것처럼 보이지만, 실제로는 무대 뒤에서 인간이 실을 당기고 있습니다. 말 그대로 꼭두각시 극장입니다.
+이 현상은 'AI 시어터(AI Theater)'라고 불립니다. 무대 위에서는 AI가 자율적으로 연기하는 것처럼 보이지만, 실제로는 무대 뒤에서 인간이 실을 당기고 있습니다. 말 그대로 꼭두각시 극장입니다. 조직에서 AI 시어터를 체계적으로 탐지하는 체크리스트는 [에이전트 워싱 탐지 EM 체크리스트](/ko/blog/ko/agent-washing-detection-em-checklist)에 정리되어 있습니다.
 
 ### 역사적으로 반복되는 패턴
 
@@ -140,7 +140,7 @@ graph LR
     style D2 fill:#E94560,stroke:#333,color:#fff
 ```
 
-Human-in-the-Loop(HITL)은 부끄러운 것이 아니라 오히려 <strong>책임 있는 AI 운용의 증거</strong>입니다. Anthropic의 Constitutional AI도, Google의 검색 품질 평가도, 인간의 피드백을 명시적으로 포함하고 있습니다.
+Human-in-the-Loop(HITL)은 부끄러운 것이 아니라 오히려 <strong>책임 있는 AI 운용의 증거</strong>입니다. Anthropic의 Constitutional AI도, Google의 검색 품질 평가도, 인간의 피드백을 명시적으로 포함하고 있습니다. Anthropic이 LLM 정렬 연구에서 감정 개념을 어떻게 활용하는지는 [Anthropic 감정 개념 LLM 정렬 연구](/ko/blog/ko/anthropic-emotion-concepts-llm-alignment)에서 확인할 수 있습니다.
 
 ## 향후 전망
 

@@ -57,7 +57,7 @@ In January 2026, a platform called <strong>Moltbook</strong> shook the AI indust
 
 However, investigations by Forbes and MIT Technology Review revealed the reality behind this glamorous "AI society." In truth, <strong>human operators were controlling agents from behind the scenes</strong>, and much of what appeared autonomous was actually driven by human prompts.
 
-This phenomenon became known as <strong>"AI Theater."</strong>
+This phenomenon became known as <strong>"AI Theater."</strong> For a practical checklist to detect similar patterns in your organization, see [Agent Washing Detection: EM Checklist](/en/blog/en/agent-washing-detection-em-checklist).
 
 ## Why Moltbook Attracted So Much Attention
 
@@ -185,7 +185,7 @@ Honestly <strong>documenting and communicating</strong> what level of autonomy y
 
 The Moltbook incident leaves an important lesson for the entire AI industry. Without clearly delineating the <strong>boundary between genuine AI autonomy and "AI pretending,"</strong> social trust in technology erodes.
 
-AI Theater may attract attention and investment in the short term, but the backlash upon exposure negatively impacts the entire AI industry. As engineering managers, our most important ethical responsibility is to <strong>honestly communicate the capabilities and limitations</strong> of the systems we build.
+AI Theater may attract attention and investment in the short term, but the backlash upon exposure negatively impacts the entire AI industry. As engineering managers, our most important ethical responsibility is to <strong>honestly communicate the capabilities and limitations</strong> of the systems we build. For a deeper look at how Anthropic approaches emotion concepts in LLM alignment research, [Anthropic Emotion Concepts LLM Alignment](/en/blog/en/anthropic-emotion-concepts-llm-alignment) offers useful context.
 
 To borrow Andrej Karpathy's words, Moltbook may be "one of the most fascinating social experiments." But the experiment's true value lies not in showcasing AI capabilities, but in <strong>demonstrating how easily we can be deceived about AI</strong>.
 

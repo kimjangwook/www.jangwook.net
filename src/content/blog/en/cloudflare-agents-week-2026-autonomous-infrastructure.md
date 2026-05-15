@@ -1,6 +1,6 @@
 ---
 title: 'Cloudflare Agents Week 2026 — When AI Agents Become Cloud Customers'
-description: "Cloudflare shipped 20+ announcements during its April Agents Week: Sandboxes GA, Artifacts, Dynamic Workers, and agents that autonomously create Cloudflare accounts and buy domains. I installed the @cloudflare/agents SDK locally and here's what I found."
+description: 'Cloudflare Agents Week 2026: Sandboxes GA, Artifacts, Dynamic Workers, and AI agents that autonomously provision cloud infrastructure. Deep-dive into 20+ announcements with @cloudflare/agents SDK experiment results.'
 pubDate: '2026-05-15'
 heroImage: '../../../assets/blog/cloudflare-agents-week-2026-autonomous-infrastructure-hero.png'
 tags: ['Cloudflare', 'AI Agents', 'Agent Infrastructure', 'Web Platform']

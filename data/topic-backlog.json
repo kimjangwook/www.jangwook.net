@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-14",
+  "updated_at": "2026-05-15",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1838,6 +1838,63 @@
       "added_at": "2026-05-14",
       "status": "queued",
       "notes": "Claude Code, Codex, Cursor, Cline, Copilot 등을 40개 이상의 무료 AI 제공자에 연결하는 오픈소스. RTK 기술로 40% 토큰 절감. 실제 개발자 관점에서 합법성, 신뢰성, 실용성 분석. API 비용이 부담인 개발자에게 유용한 뉴스. 금요일 뉴스 분석."
+    },
+    {
+      "slug": "mcp-vs-a2a-agent-protocol-complete-comparison-2026",
+      "title_idea": "MCP vs A2A 완전 비교 — AI 에이전트 프로토콜의 역할 분리와 프로덕션 선택 기준",
+      "content_type": "comparison",
+      "target_keyword": "MCP vs A2A 비교",
+      "secondary_keywords": [
+        "AI 에이전트 프로토콜",
+        "Model Context Protocol",
+        "Agent-to-Agent Protocol",
+        "에이전트 간 통신",
+        "MCP A2A 차이"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "dev.to MCP vs A2A 2026 가이드, DigitalOcean A2A vs MCP 튜토리얼, turion.ai 에이전트 프로토콜 스택",
+      "added_at": "2026-05-15",
+      "status": "queued",
+      "notes": "2026년 5월 현재 MCP와 A2A는 경쟁 관계가 아니라 레이어가 다른 프로토콜로 정리되고 있음. MCP=도구 연결(수직), A2A=에이전트 간 협업(수평). 두 프로토콜을 언제 쓰고 어떻게 조합할지가 핵심 질문. Claude Agent SDK 실제 통합 예제와 함께 작성하면 차별화. cloudflare-agents-week-2026-autonomous-infrastructure, aws-mcp-server-ga-practical-guide-2026 포스트와 내부링크 연결 가능."
+    },
+    {
+      "slug": "claude-opus-47-vs-gpt-55-coding-agentic-workflow-comparison-2026",
+      "title_idea": "Claude Opus 4.7 vs GPT-5.5 코딩 성능 실전 비교 — SWE-Bench 결과와 에이전틱 워크플로우 실측",
+      "content_type": "comparison",
+      "target_keyword": "Claude Opus 4.7 vs GPT-5.5 비교",
+      "secondary_keywords": [
+        "AI 코딩 모델 비교",
+        "SWE-Bench 2026",
+        "에이전틱 코딩 성능",
+        "GPT-5.5 Claude 비교",
+        "AI 코딩 어시스턴트 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "BenchLM.ai 벤치마크 비교, MindStudio GPT-5.5 vs Claude Opus 4.7, DataCamp Opus 4.7 vs GPT-5.4 분석",
+      "added_at": "2026-05-15",
+      "status": "queued",
+      "notes": "GPT-5.5(4월 23일 출시) vs Claude Opus 4.7(4월 16일 출시). SWE-Bench Verified에서 GPT-5.5 약간 우위, 대규모 코드베이스 아키텍처 작업은 Opus 4.7 우위. GPT-5.5가 토큰 효율 72% 높음. EM 관점에서 팀 도입 판단 기준을 실제 벤치마크 + 비용 계산으로 제시. anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026 포스트와 내부링크 연결 가능."
+    },
+    {
+      "slug": "cloudflare-workers-ai-vs-vercel-ai-sdk-developer-experience-cost-2026",
+      "title_idea": "Cloudflare Workers AI vs Vercel AI SDK — 개발자 경험과 비용 완전 비교 (2026)",
+      "content_type": "comparison",
+      "target_keyword": "Cloudflare Workers AI vs Vercel AI SDK",
+      "secondary_keywords": [
+        "엣지 AI 인프라 비교",
+        "AI 애플리케이션 호스팅",
+        "Vercel AI SDK 비용",
+        "Cloudflare Workers 비용",
+        "AI 인프라 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "morphllm.com Cloudflare vs Vercel 2026, byteiota.com 엣지 컴퓨팅 2026, digitalkoncept 비교 분석",
+      "added_at": "2026-05-15",
+      "status": "queued",
+      "notes": "Cloudflare Agents Week 2026 포스트의 후속으로 연결 가능. 월 100만 AI 추론 요청 기준: Vercel+OpenAI $800-2000 vs Cloudflare Workers AI $150-400. 개발자 경험은 Vercel이 더 성숙, 비용 효율은 Cloudflare 압도적. Next.js 팀은 Vercel, edge-native 아키텍처는 Cloudflare 선택 기준 제시. cloudflare-agents-week-2026-autonomous-infrastructure 포스트와 직접 연결."
     }
   ]
 }

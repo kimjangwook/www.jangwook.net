@@ -52,7 +52,7 @@ relatedPosts:
 
 2026年2月5日，Anthropic发布了Claude Opus 4.6。<strong>100万token上下文</strong>、<strong>128K token输出</strong>、增强的规划能力和自我修正能力。
 
-如果你是OpenClaw用户，你一定想立刻配置并开始使用。
+如果你是OpenClaw用户，你一定想立刻配置并开始使用。如果想深入了解Opus 4.6的工具调用能力，可以参考[Claude Agent SDK工具使用完整指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)。
 
 这篇文章提供<strong>可以直接复制粘贴就能运行的</strong>最短路径。
 
@@ -61,7 +61,7 @@ relatedPosts:
 - OpenClaw已安装（`npm install -g openclaw@latest`）
 - Anthropic API密钥已配置（`claude setup-token`）
 
-如果还没有，请参考[官方文档](https://docs.openclaw.ai/start/getting-started)。
+如果还没有，请参考[官方文档](https://docs.openclaw.ai/start/getting-started)。如果同时使用Claude Code，[Claude Code最佳实践](/zh/blog/zh/claude-code-best-practices)对工作流设计也很有参考价值。
 
 ## 编辑配置文件
 
@@ -163,7 +163,7 @@ openclaw models status
 3. `/new` 开始新会话
 4. `openclaw models status` 确认
 
-完毕。欢迎来到100万token上下文的世界。
+完毕。欢迎来到100万token上下文的世界。如果想持续追踪使用量和成本，可以参考[Claude Code使用量洞察分析](/zh/blog/zh/claude-code-insights-usage-analysis)。
 
 ## 参考资料
 
