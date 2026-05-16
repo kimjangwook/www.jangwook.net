@@ -2623,5 +2623,16 @@
       "devops": 0.6,
       "architecture": 0.8
     }
+  },
+  "claude-managed-agents-dreaming-outcomes-code-with-claude-2026": {
+    "pubDate": "2026-05-16",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.85,
+      "web-development": 0.1,
+      "ai-ml": 0.95,
+      "devops": 0.55,
+      "architecture": 0.88
+    }
   }
 }
