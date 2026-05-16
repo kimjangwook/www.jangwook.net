@@ -1,6 +1,6 @@
 ---
 title: 'Gemini 2.5 Flash API Cost Optimization Guide — 99% Savings Confirmed by Real Experiments'
-description: 'Four cost optimization techniques for Gemini 2.5 Flash API, discovered through hands-on experiments. Covers Thinking token control, Context Caching, Flash vs Flash-Lite selection, and Batch API — with real measured data.'
+description: 'Gemini 2.5 Flash API: 4 cost-cutting techniques from direct experiments. Thinking tokens, Context Caching, Flash-Lite, Batch API. Real data proves 99% savings.'
 pubDate: '2026-05-06'
 heroImage: '../../../assets/blog/gemini-25-flash-cost-optimization-hero.png'
 tags: ['Gemini', 'LLM API', 'Cost Optimization', 'Google AI']

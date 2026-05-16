@@ -129,7 +129,7 @@ Reddit r/LocalLLaMA에서는 다음과 같은 의견이 나왔습니다:
 - <strong>아키텍처의 중요성</strong>: MoE(Mixture of Experts) 라우팅(Routing) 효율이 결과를 좌우
 - <strong>학습 데이터의 질</strong>: 양뿐 아니라 데이터의 질과 다양성이 중요
 
-GLM-5가 $8,000 이상의 수익으로 1위를 차지한 점도 눈에 띕니다. 표준 벤치마크에서 Qwen 3.5보다 아래에 있는 모델이 실전에서는 압도적으로 우수할 수 있다는 뜻입니다.
+GLM-5가 $8,000 이상의 수익으로 1위를 차지한 점도 눈에 띕니다. 표준 벤치마크에서 Qwen 3.5보다 아래에 있는 모델이 실전에서는 압도적으로 우수할 수 있다는 뜻입니다. 2026년 2월 AI 모델 출시 경쟁의 전반적인 동향은 [2026년 2월 AI 모델 러시 분석](/ko/blog/ko/ai-model-rush-february-2026)에서 자세히 다루고 있습니다.
 
 ## AI 평가의 향후 방향
 
@@ -154,6 +154,8 @@ graph LR
 2. <strong>실세계 시뮬레이션</strong>: Vending-Bench 같은 실전 벤치마크 확산
 3. <strong>도메인 특화 평가</strong>: 사용 목적에 맞는 전문적 테스트
 4. <strong>지속적 모니터링</strong>: 일회성 테스트가 아닌 다양한 조건에서의 평가
+
+코딩 도구 평가에서도 유사한 딜레마가 발견됩니다. [Windsurf Arena Mode 속도 vs 정확도 분석](/ko/blog/ko/windsurf-arena-mode-speed-over-accuracy)은 성능 수치와 실전 신뢰성 사이의 트레이드오프를 실증적으로 보여줍니다. AI 보안 측면의 평가 취약점은 [ICML 프롬프트 인젝션 학술 리뷰](/ko/blog/ko/icml-prompt-injection-academic-review)에서 확인할 수 있습니다.
 
 ## 결론
 

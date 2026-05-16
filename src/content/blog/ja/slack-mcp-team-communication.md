@@ -77,7 +77,7 @@ Model Context Protocol (MCP) は、Anthropicが開発した新しい標準プロ
 
 ### 核心概念
 
-Model Context Protocol (MCP) は、LLMアプリケーションとデータソース間の標準化されたインターフェースを提供します。従来のSlack APIが開発者にRESTエンドポイントを提供するのに対し、Slack MCPはAIエージェントが自然言語でSlackと対話できるようにします。
+Model Context Protocol (MCP) は、LLMアプリケーションとデータソース間の標準化されたインターフェースを提供します。従来のSlack APIが開発者にRESTエンドポイントを提供するのに対し、Slack MCPはAIエージェントが自然言語でSlackと対話できるようにします。Notionなど他のコラボレーションツールとのMCP自動化事例は[AIエージェントNotion MCP自動化ガイド](/ja/blog/ja/ai-agent-notion-mcp-automation)でも確認できます。
 
 ````mermaid
 graph LR
@@ -1039,7 +1039,7 @@ async function optimizeResponseTime(): Promise<void> {
 
 ### 事例3: リモートチーム文化モニタリング (グローバル企業)
 
-<strong>背景:</strong> 1,000人以上のリモート従業員を抱えるグローバル企業が、チームの孤立やバーンアウトのリスクを早期に検出する必要がありました。
+<strong>背景:</strong> 1,000人以上のリモート従業員を抱えるグローバル企業が、チームの孤立やバーンアウトのリスクを早期に検出する必要がありました。SlackとNotionをClaudeで連携してプロジェクトバックログを管理する方法は[NotionバックログとSlack Claudeプロジェクト管理](/ja/blog/ja/notion-backlog-slack-claude-project-management)で紹介しています。
 
 <strong>実装方法:</strong>
 
@@ -1727,7 +1727,7 @@ async function analyzeWithAudit(channelId: string, userId: string): Promise<any>
 
 ### 複数MCP統合
 
-複数のMCPサーバーを組み合わせることで、より強力な分析が可能になります。
+複数のMCPサーバーを組み合わせることで、より強力な分析が可能になります。[AWS MCPサーバーGA後のエンタープライズ環境での実践的な活用法](/ja/blog/ja/aws-mcp-server-ga-practical-guide-2026)も複数MCP統合の参考事例です。
 
 <strong>Slack + GitHub + Postgres統合例:</strong>
 

@@ -127,7 +127,7 @@ Reddit r/LocalLLaMA的讨论中出现了以下观点：
 - <strong>架构的重要性</strong>：MoE（混合专家）路由效率显著影响结果
 - <strong>训练数据质量</strong>：不仅是数量，质量和多样性同样重要
 
-GLM-5以超过$8,000的利润位居榜首也值得关注。在标准基准测试中排名低于Qwen 3.5的模型，在实际任务中可能表现出压倒性优势。
+GLM-5以超过$8,000的利润位居榜首也值得关注。在标准基准测试中排名低于Qwen 3.5的模型，在实际任务中可能表现出压倒性优势。2026年2月AI模型发布竞争的整体动向，可参阅[2026年2月AI模型浪潮分析](/zh/blog/zh/ai-model-rush-february-2026)。
 
 ## AI评估的未来方向
 
@@ -152,6 +152,8 @@ graph LR
 2. <strong>真实世界模拟</strong>：推广Vending-Bench等实践基准测试
 3. <strong>领域特化评估</strong>：针对使用目的的专业测试
 4. <strong>持续监测</strong>：在各种条件下持续评估，而非一次性测试
+
+编码工具评估中也存在类似的困境。[Windsurf Arena Mode速度vs精度分析](/zh/blog/zh/windsurf-arena-mode-speed-over-accuracy)通过实证展示了性能数据与实际可靠性之间的权衡。AI安全评估漏洞方面，请参阅[ICML提示注入学术综述](/zh/blog/zh/icml-prompt-injection-academic-review)。
 
 ## 结论
 

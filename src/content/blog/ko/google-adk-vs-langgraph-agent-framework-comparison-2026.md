@@ -1,8 +1,6 @@
 ---
 title: 'Google ADK vs LangGraph 2026: 두 AI 에이전트 프레임워크를 직접 설치하고 비교했다'
-description: >-
-  Google ADK v1.32.0과 LangGraph v1.1.10을 샌드박스에서 직접 설치해 코드, 의존성, 상태 관리, 조건부 분기,
-  배포 CLI까지 비교했습니다. 어떤 상황에서 뭘 선택해야 하는지 실험 결과를 바탕으로 정리합니다.
+description: 'Google ADK v1.32.0과 LangGraph v1.1.10을 샌드박스에서 직접 설치해 코드 구조, 의존성, 상태 관리, 조건부 분기, 배포 CLI까지 실험으로 비교했습니다. 어느 상황에서 어떤 프레임워크를 선택해야 하는지 실측 데이터를 바탕으로 명확하게 정리합니다.'
 pubDate: '2026-05-04'
 heroImage: ../../../assets/blog/google-adk-vs-langgraph-hero.png
 tags:

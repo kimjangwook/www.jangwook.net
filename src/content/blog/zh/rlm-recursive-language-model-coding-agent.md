@@ -52,7 +52,7 @@ draft: true
 
 在运营基于LLM的编码代理时，必然会遇到一堵墙：<strong>上下文窗口的限制</strong>。无论是128K还是200K token，处理大规模代码库时模型会开始遗漏重要信息。这就是所谓的"Context Rot"——随着上下文长度增加，性能急剧下降的现象。
 
-MIT发表的<strong>Recursive Language Models（RLM）</strong>论文（arXiv:2512.24601）为这个问题提出了根本性的解决方案。最近，一位名为Tenobrus的开发者将这个想法直接实现到Claude Code中，引起了广泛关注。他在编码代理内部将RLM实现为一个"技能"。
+MIT发表的<strong>Recursive Language Models（RLM）</strong>论文（arXiv:2512.24601）为这个问题提出了根本性的解决方案。最近，一位名为Tenobrus的开发者将这个想法直接实现到[Claude Code](/zh/blog/zh/claude-managed-agents-production-deployment-guide)中，引起了广泛关注。他在编码代理内部将RLM实现为一个"技能"。
 
 从用AI构建系统的工程管理者角度，让我分析这个方法为什么重要，以及在实际工作中如何应用。
 
@@ -153,7 +153,7 @@ graph TB
 
 ### 多代理 vs RLM
 
-近期AI行业为克服单体模型的局限，<strong>多代理系统</strong>备受关注——多个模型协作的方式。
+近期AI行业为克服单体模型的局限，[<strong>多代理系统</strong>](/zh/blog/zh/multi-agent-orchestration-routing)备受关注——多个模型协作的方式。
 
 RLM是不同的方法。因为<strong>同一个模型递归调用自身</strong>，所以没有模型间通信开销，并且能保持一致的"思维方式"。
 
@@ -221,6 +221,8 @@ claude --task "基于以下摘要分析整体架构" < /tmp/rlm_summaries.txt
 2. <strong>Phase 2</strong>：扩展到大规模重构辅助
 3. <strong>Phase 3</strong>：集成到调试工作流程
 4. <strong>Phase 4</strong>：应用到整个开发流水线
+
+关于代理架构优化的深度分析，请参阅[深度代理架构优化指南](/zh/blog/zh/deep-agents-architecture-optimization)。
 
 ## 论文的启示：未来展望
 

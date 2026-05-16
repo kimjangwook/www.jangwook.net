@@ -1,8 +1,6 @@
 ---
 title: 'Google ADK vs LangGraph 2026: 亲手安装两个框架并对比'
-description: >-
-  我在沙盒环境中实际安装了Google ADK v1.32.0和LangGraph v1.1.10，对代码模式、依赖数量、状态管理、条件分支
-  和部署CLI进行了全面比较。根据实验结果，告诉你在什么场景下该选哪个。
+description: '实际沙盒安装测试Google ADK v1.32.0与LangGraph v1.1.10，系统对比代码结构、依赖数量、状态管理实现、条件分支架构及部署CLI差异。基于实验数据，提供不同应用场景下的AI代理框架选型指南。'
 pubDate: '2026-05-04'
 heroImage: ../../../assets/blog/google-adk-vs-langgraph-hero.png
 tags:

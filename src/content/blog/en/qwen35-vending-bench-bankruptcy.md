@@ -130,7 +130,7 @@ The Reddit r/LocalLLaMA discussion featured notable perspectives:
 - <strong>Architecture matters</strong>: MoE (Mixture of Experts) routing efficiency significantly impacts results
 - <strong>Training data quality</strong>: Not just quantity, but quality and diversity matter
 
-GLM-5's dominant performance at over $8,000 profit is also noteworthy. Models that rank below Qwen 3.5 on standard benchmarks can dramatically outperform it on practical tasks.
+GLM-5's dominant performance at over $8,000 profit is also noteworthy. Models that rank below Qwen 3.5 on standard benchmarks can dramatically outperform it on practical tasks. The broader landscape of AI model releases in February 2026 is covered in [The February 2026 AI Model Rush Analysis](/en/blog/en/ai-model-rush-february-2026).
 
 ## The Future of AI Evaluation
 
@@ -155,6 +155,8 @@ These results clearly demonstrate that <strong>no single benchmark should determ
 2. <strong>Real-world simulations</strong>: Expanding practical benchmarks like Vending-Bench
 3. <strong>Domain-specific evaluation</strong>: Specialized testing aligned with intended use cases
 4. <strong>Continuous monitoring</strong>: Evaluation across varied conditions, not just one-time tests
+
+A similar dilemma appears in coding tool evaluation. [Windsurf Arena Mode: Speed vs Accuracy Analysis](/en/blog/en/windsurf-arena-mode-speed-over-accuracy) empirically shows the trade-off between performance metrics and real-world reliability. For AI security evaluation vulnerabilities, see the [ICML Prompt Injection Academic Review](/en/blog/en/icml-prompt-injection-academic-review).
 
 ## Conclusion
 

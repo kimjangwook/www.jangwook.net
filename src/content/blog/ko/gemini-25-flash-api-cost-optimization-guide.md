@@ -1,6 +1,6 @@
 ---
 title: 'Gemini 2.5 Flash API 비용 최적화 실전 가이드 — 실험으로 확인한 99% 절감 전략'
-description: 'Gemini 2.5 Flash API를 직접 실험해서 발견한 비용 최적화 기법 4가지. Thinking 토큰 비활성화, Context Caching, Flash-Lite 선택 기준, Batch API까지 — 실제 측정값으로 설명합니다.'
+description: 'Gemini 2.5 Flash API를 직접 실험해서 발견한 비용 최적화 기법 4가지. Thinking 토큰 비활성화, Context Caching, Flash-Lite 선택 기준, Batch API 활용까지 — 실측 데이터로 99% 비용 절감 전략을 단계별로 검증합니다.'
 pubDate: '2026-05-06'
 heroImage: '../../../assets/blog/gemini-25-flash-cost-optimization-hero.png'
 tags: ['Gemini', 'LLM API', '비용 최적화', 'Google AI']

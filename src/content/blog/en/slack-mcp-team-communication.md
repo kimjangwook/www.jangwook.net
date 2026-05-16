@@ -79,7 +79,7 @@ Whether you're a data analyst, engineering manager, or developer looking to enha
 
 ### Core Concepts
 
-<strong>Model Context Protocol (MCP)</strong> is an open standard developed by Anthropic that enables AI assistants to securely connect with external data sources and tools. Think of MCP as a universal adapter that lets AI models like Claude interact with your applications in a standardized, secure way.
+<strong>Model Context Protocol (MCP)</strong> is an open standard developed by Anthropic that enables AI assistants to securely connect with external data sources and tools. Think of MCP as a universal adapter that lets AI models like Claude interact with your applications in a standardized, secure way. For MCP automation examples with other collaboration tools like Notion, see the [AI Agent Notion MCP Automation Guide](/en/blog/en/ai-agent-notion-mcp-automation).
 
 Slack MCP specifically provides a bridge between Claude (or other MCP-compatible AI systems) and the Slack API, enabling:
 
@@ -862,7 +862,7 @@ ${threads.map(t => JSON.stringify(t)).join('\n')}
 
 ### Case Study 3: Remote Team Culture Monitoring (Global Corporation)
 
-<strong>Challenge</strong>: A 2,000-person remote company wanted to detect team health issues before they escalated to attrition.
+<strong>Challenge</strong>: A 2,000-person remote company wanted to detect team health issues before they escalated to attrition. For connecting Slack and Notion with Claude to manage project backlogs, see [Notion Backlog and Slack Claude Project Management](/en/blog/en/notion-backlog-slack-claude-project-management).
 
 <strong>Approach</strong>: Build a "Team Health Score" using multiple Slack signals:
 
@@ -1215,7 +1215,7 @@ async function onBotAddedToChannel(channelId: string) {
 
 ### Multi-MCP Integration
 
-The real power of MCP emerges when combining multiple servers. Here's a production example integrating Slack, GitHub, and PostgreSQL.
+The real power of MCP emerges when combining multiple servers. Here's a production example integrating Slack, GitHub, and PostgreSQL. The [AWS MCP Server GA Practical Guide](/en/blog/en/aws-mcp-server-ga-practical-guide-2026) is also a solid reference for enterprise multi-MCP integration.
 
 <strong>Scenario</strong>: Automated DevOps Pipeline Notifications
 

@@ -75,7 +75,7 @@ draft: true
 
 ### 核心概念
 
-<strong>模型上下文协议（Model Context Protocol, MCP）</strong>是Anthropic于2024年11月发布的开放协议,使AI模型能够以标准化方式与外部数据源和工具交互。传统的Slack API需要开发人员直接编写HTTP请求并解析响应,而MCP将这些复杂性抽象化,使用户能够通过自然语言请求和分析数据。
+<strong>模型上下文协议（Model Context Protocol, MCP）</strong>是Anthropic于2024年11月发布的开放协议,使AI模型能够以标准化方式与外部数据源和工具交互。传统的Slack API需要开发人员直接编写HTTP请求并解析响应,而MCP将这些复杂性抽象化,使用户能够通过自然语言请求和分析数据。Notion等其他协作工具的MCP自动化实例，可参阅[AI代理Notion MCP自动化指南](/zh/blog/zh/ai-agent-notion-mcp-automation)。
 
 <strong>传统Slack API vs Slack MCP</strong>:
 
@@ -1196,7 +1196,7 @@ setInterval(triageSupportTickets, 15 * 60 * 1000);
 
 <strong>背景</strong>:
 
-一个分布在5个时区、规模200人的工程团队在远程工作期间难以维持团队文化和归属感。
+一个分布在5个时区、规模200人的工程团队在远程工作期间难以维持团队文化和归属感。通过Claude连接Slack与Notion管理项目积压事项的方法，请参阅[Notion积压与Slack Claude项目管理](/zh/blog/zh/notion-backlog-slack-claude-project-management)。
 
 <strong>实施方法</strong>:
 
@@ -1659,7 +1659,7 @@ async function notifyDataCollection() {
 
 ### 多MCP集成
 
-通过连接多个MCP服务器,可以构建强大的自动化工作流。
+通过连接多个MCP服务器,可以构建强大的自动化工作流。[AWS MCP服务器GA后的企业实战应用指南](/zh/blog/zh/aws-mcp-server-ga-practical-guide-2026)也是多MCP集成的重要参考案例。
 
 <strong>Slack + GitHub + Postgres示例</strong>:
 

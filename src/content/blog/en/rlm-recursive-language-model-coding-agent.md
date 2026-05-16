@@ -57,7 +57,7 @@ draft: true
 
 When running LLM-powered coding agents, you inevitably hit a wall: <strong>the context window limit</strong>. Whether it's 128K or 200K tokens, working with large codebases causes the model to start missing critical information. This is known as "Context Rot" — the phenomenon where performance degrades sharply as context length increases.
 
-MIT's <strong>Recursive Language Models (RLM)</strong> paper (arXiv:2512.24601) presents a fundamental solution to this problem. Recently, a developer named Tenobrus implemented this idea directly in Claude Code, generating significant buzz. He implemented RLM as a "skill" inside the coding agent itself.
+MIT's <strong>Recursive Language Models (RLM)</strong> paper (arXiv:2512.24601) presents a fundamental solution to this problem. Recently, a developer named Tenobrus implemented this idea directly in [Claude Code](/en/blog/en/claude-managed-agents-production-deployment-guide), generating significant buzz. He implemented RLM as a "skill" inside the coding agent itself.
 
 From the perspective of an engineering manager who builds systems with AI, let me analyze why this approach matters and how it can be applied in practice.
 
@@ -158,7 +158,7 @@ Three key points:
 
 ### Multi-Agent vs RLM
 
-The AI industry has recently focused on <strong>multi-agent systems</strong> to overcome single model limits — multiple models collaborating together.
+The AI industry has recently focused on [<strong>multi-agent systems</strong>](/en/blog/en/multi-agent-orchestration-routing) to overcome single model limits — multiple models collaborating together.
 
 RLM is a different approach. Because <strong>the same model recursively calls itself</strong>, there's no inter-model communication overhead, and it maintains a consistent "thought process."
 
@@ -226,6 +226,8 @@ When introducing RLM patterns in an organization, I recommend these phases:
 2. <strong>Phase 2</strong>: Extend to large-scale refactoring assistance
 3. <strong>Phase 3</strong>: Integrate into debugging workflows
 4. <strong>Phase 4</strong>: Apply across the entire development pipeline
+
+For a deep-dive on agent architecture optimization, see the [Deep Agent Architecture Optimization Guide](/en/blog/en/deep-agents-architecture-optimization).
 
 ## Paper Implications: Future Outlook
 

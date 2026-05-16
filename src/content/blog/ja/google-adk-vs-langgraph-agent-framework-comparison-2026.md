@@ -1,8 +1,6 @@
 ---
 title: 'Google ADK vs LangGraph 2026: 両方を実際にインストールして比較してみた'
-description: >-
-  Google ADK v1.32.0とLangGraph v1.1.10をサンドボックスで実際にインストールし、コード、依存パッケージ数、状態管理、
-  条件分岐、デプロイCLIまで比較しました。どちらを選ぶべきかを実験結果から解説します。
+description: 'Google ADK v1.32.0とLangGraph v1.1.10をサンドボックスで直接インストールし、コード構造、依存パッケージ数、状態管理の実装、条件分岐のアーキテクチャ、デプロイCLIの違いを実験で比較しました。どのユースケースにどちらが適しているかを実測データで明確に解説します。'
 pubDate: '2026-05-04'
 heroImage: ../../../assets/blog/google-adk-vs-langgraph-hero.png
 tags:
