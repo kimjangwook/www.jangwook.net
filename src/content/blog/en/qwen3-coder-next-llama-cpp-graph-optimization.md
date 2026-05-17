@@ -162,16 +162,16 @@ ggerganov has outlined further optimizations:
 
 Here's what this optimization means in practice:
 
-- <strong>Apple Silicon users</strong>: Run the 80B MoE model at ~50 t/s on M2 Ultra for tg32. That's more than enough for real-time conversation.
+- <strong>Apple Silicon users</strong>: Run the 80B MoE model at ~50 t/s on M2 Ultra for tg32. That's more than enough for real-time conversation. For environments limited to 8GB VRAM, [running the 80B model with lazy loading](/en/blog/en/qwen3-coder-8gb-vram) is also possible, though speed drops to around 1.2 t/s.
 - <strong>NVIDIA GPU users</strong>: 20–38% speedup on DGX Spark. CUDA graph support promises further improvements.
-- <strong>Quantization choice</strong>: Q4_0 shows the largest gains, but Q4_K_M and Q8_0 also deliver consistent 20–37% improvements.
+- <strong>Quantization choice</strong>: Q4_0 shows the largest gains, but Q4_K_M and Q8_0 also deliver consistent 20–37% improvements. For finer-grained compression, check out [IQ-series quantization](/en/blog/en/llama-cpp-iq-quantization-merge) now integrated into llama.cpp.
 - <strong>No code changes needed</strong>: Simply update llama.cpp to the latest version.
 
 ## Conclusion
 
 ggerganov's graph-level optimization significantly improves MoE model inference performance in llama.cpp. Rather than optimizing individual kernels, the approach of <strong>restructuring the compute graph itself</strong> is impressive. Combined with parallel efforts to expand non-contiguous tensor support across multiple backends (Metal, CUDA, Vulkan), this pushes the boundaries of local LLM inference performance.
 
-If you're running MoE models like Qwen3 Coder Next locally, update llama.cpp to the latest version and experience the speedup immediately.
+If you're running MoE models like Qwen3 Coder Next locally, update llama.cpp to the latest version and experience the speedup immediately. If you also want to reduce VRAM usage, check out [Heretic 1.2's 4-bit quantization technique that cuts VRAM by up to 70%](/en/blog/en/heretic-12-vram-reduction).
 
 ## References
 

@@ -161,16 +161,16 @@ ggerganov는 이후 추가 최적화도 예고하고 있습니다.
 
 이번 최적화가 의미하는 바를 정리하면 다음과 같습니다.
 
-- <strong>Apple Silicon 사용자</strong>: M2 Ultra 기준으로 80B MoE 모델을 tg32에서 약 50 t/s로 실행 가능. 실시간 대화가 충분히 가능한 속도입니다.
+- <strong>Apple Silicon 사용자</strong>: M2 Ultra 기준으로 80B MoE 모델을 tg32에서 약 50 t/s로 실행 가능. 실시간 대화가 충분히 가능한 속도입니다. VRAM이 8GB로 제한된 환경에서는 [레이지 로딩으로 80B 모델을 실행하는 방법](/ko/blog/ko/qwen3-coder-8gb-vram)도 있지만, 그 경우 속도는 약 1.2 t/s 수준입니다.
 - <strong>NVIDIA GPU 사용자</strong>: DGX Spark에서도 20~38%의 속도 향상. CUDA 그래프 지원으로 추가 최적화가 기대됩니다.
-- <strong>양자화 선택</strong>: Q4_0이 가장 큰 속도 향상을 보이지만, Q4_K_M과 Q8_0에서도 일관된 20~37%의 개선이 확인됩니다.
+- <strong>양자화 선택</strong>: Q4_0이 가장 큰 속도 향상을 보이지만, Q4_K_M과 Q8_0에서도 일관된 20~37%의 개선이 확인됩니다. 더 정밀한 압축을 원한다면 [IQ계 양자화 기법](/ko/blog/ko/llama-cpp-iq-quantization-merge)을 참고하세요.
 - <strong>코드 변경 불필요</strong>: llama.cpp를 최신 버전으로 업데이트하기만 하면 자동으로 적용됩니다.
 
 ## 결론
 
 ggerganov의 이번 그래프 레벨 최적화는 llama.cpp의 MoE 모델 추론 성능을 크게 향상시켰습니다. 단순히 커널을 최적화하는 것이 아니라 <strong>컴퓨트 그래프 자체를 재구성</strong>하는 접근법이 인상적입니다. 특히 여러 백엔드(Metal, CUDA, Vulkan)에서 비연속 텐서 지원을 확대하는 병렬 작업과 결합되어, 로컬 LLM 추론의 성능 한계를 한 단계 끌어올리고 있습니다.
 
-Qwen3 Coder Next와 같은 MoE 모델을 로컬에서 실행하는 사용자라면, llama.cpp를 최신 버전으로 업데이트하여 이 성능 향상을 즉시 체감해보시기 바랍니다.
+Qwen3 Coder Next와 같은 MoE 모델을 로컬에서 실행하는 사용자라면, llama.cpp를 최신 버전으로 업데이트하여 이 성능 향상을 즉시 체감해보시기 바랍니다. VRAM 절감까지 원한다면 [4bit 양자화로 VRAM을 최대 70% 줄이는 Heretic 1.2 기법](/ko/blog/ko/heretic-12-vram-reduction)도 함께 살펴보세요.
 
 ## 참고 자료
 

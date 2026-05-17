@@ -337,7 +337,7 @@ git revert [commit-hash]
 
 ### Most Important Lesson
 
-AI agent performance depends more on "how honest" than "how smart". Agents that disclose uncertainty, provide sources, and verify systematically earn the most trust long-term.
+AI agent performance depends more on "how honest" than "how smart". Agents that disclose uncertainty, provide sources, and verify systematically earn the most trust long-term. To also boost output diversity, consider combining these techniques with [Verbalized Sampling for Claude Code agents](/en/blog/en/claude-code-verbalized-sampling). For production-scale multi-agent orchestration, [LangGraph Multi-Agent Systems](/en/blog/en/langgraph-multi-agent) provides a solid implementation foundation.
 
 ## References
 

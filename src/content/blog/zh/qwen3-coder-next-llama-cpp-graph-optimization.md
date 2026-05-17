@@ -159,16 +159,16 @@ ggerganov预告了进一步的优化工作：
 
 总结本次优化的实际意义：
 
-- <strong>Apple Silicon用户</strong>：M2 Ultra基准下80B MoE模型tg32可达约50 t/s，完全满足实时对话需求。
+- <strong>Apple Silicon用户</strong>：M2 Ultra基准下80B MoE模型tg32可达约50 t/s，完全满足实时对话需求。对于VRAM限制在8GB的环境，也可以参考[通过懒加载运行80B模型的方法](/zh/blog/zh/qwen3-coder-8gb-vram)，但该情况下速度约为1.2 t/s。
 - <strong>NVIDIA GPU用户</strong>：DGX Spark上20-38%的速度提升。CUDA图支持有望带来进一步优化。
-- <strong>量化选择</strong>：Q4_0显示最大速度提升，但Q4_K_M和Q8_0也有一致的20-37%改善。
+- <strong>量化选择</strong>：Q4_0显示最大速度提升，但Q4_K_M和Q8_0也有一致的20-37%改善。需要更精细压缩的话，可参考[已整合进llama.cpp的IQ系量化技术](/zh/blog/zh/llama-cpp-iq-quantization-merge)。
 - <strong>无需代码更改</strong>：只需将llama.cpp更新到最新版本即可自动应用。
 
 ## 结论
 
 ggerganov的图级优化大幅提升了llama.cpp的MoE模型推理性能。不是简单地优化内核，而是<strong>重构计算图本身</strong>的方法令人印象深刻。特别是与在多个后端（Metal、CUDA、Vulkan）中扩展非连续张量支持的并行工作相结合，将本地LLM推理的性能上限提升了一个台阶。
 
-如果您在本地运行Qwen3 Coder Next等MoE模型，请更新llama.cpp到最新版本，立即体验这一性能提升。
+如果您在本地运行Qwen3 Coder Next等MoE模型，请更新llama.cpp到最新版本，立即体验这一性能提升。如果还想减少VRAM占用，请参阅[通过4bit量化将VRAM最多减少70%的Heretic 1.2技术](/zh/blog/zh/heretic-12-vram-reduction)。
 
 ## 参考资料
 

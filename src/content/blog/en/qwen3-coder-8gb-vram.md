@@ -183,13 +183,13 @@ Key takeaways:
 
 1. <strong>Model structure analysis is the starting point for optimization</strong>: Understanding expert distribution in MoE models enables selective loading
 2. <strong>Multi-tier caching is essential</strong>: A VRAM → Pinned RAM → SSD caching strategy achieved a 300x speedup
-3. <strong>Hardware evolution narrows the gap</strong>: Next-generation GPUs may reach practical speeds
+3. <strong>Hardware evolution narrows the gap</strong>: Next-generation GPUs may reach practical speeds. Software-level approaches like [llama.cpp's compute graph optimization](/en/blog/en/qwen3-coder-next-llama-cpp-graph-optimization) are also rapidly narrowing this gap.
 
 ## Conclusion
 
 Running Qwen3-Coder-Next 80B on 8GB VRAM is a technically impressive achievement. While the current 1.2 t/s speed is insufficient for real-time coding assistance, advances in next-generation GPUs and optimization techniques are bringing large coding model execution on consumer hardware increasingly closer to reality.
 
-Developers interested in local LLMs should check out [nalexand's GitHub repository](https://github.com/nalexand/Qwen3-Coder-OPTIMIZED) and experiment with their own hardware.
+Developers interested in local LLMs should check out [nalexand's GitHub repository](https://github.com/nalexand/Qwen3-Coder-OPTIMIZED) and experiment with their own hardware. To reduce VRAM usage further, also check out [Heretic 1.2's 4-bit quantization that cuts VRAM by up to 70%](/en/blog/en/heretic-12-vram-reduction).
 
 ## References
 

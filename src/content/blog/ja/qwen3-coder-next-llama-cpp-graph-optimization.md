@@ -161,16 +161,16 @@ ggerganovは以降の追加最適化も予告しています。
 
 今回の最適化が意味するところをまとめます。
 
-- <strong>Apple Siliconユーザー</strong>：M2 Ultra基準で80B MoEモデルをtg32で約50 t/sで実行可能。リアルタイム対話に十分な速度です。
+- <strong>Apple Siliconユーザー</strong>：M2 Ultra基準で80B MoEモデルをtg32で約50 t/sで実行可能。リアルタイム対話に十分な速度です。VRAMが8GBに制限された環境では[レイジーローディングで80Bモデルを実行する方法](/ja/blog/ja/qwen3-coder-8gb-vram)もありますが、その場合の速度は約1.2 t/s程度です。
 - <strong>NVIDIA GPUユーザー</strong>：DGX Sparkでも20〜38%の速度向上。CUDAグラフサポートでさらなる最適化が期待されます。
-- <strong>量子化の選択</strong>：Q4_0が最大の速度向上を示しますが、Q4_K_MとQ8_0でも一貫した20〜37%の改善が確認されています。
+- <strong>量子化の選択</strong>：Q4_0が最大の速度向上を示しますが、Q4_K_MとQ8_0でも一貫した20〜37%の改善が確認されています。より精密な圧縮を求めるなら[IQ系量子化技術](/ja/blog/ja/llama-cpp-iq-quantization-merge)を参照してください。
 - <strong>コード変更不要</strong>：llama.cppを最新バージョンに更新するだけで自動的に適用されます。
 
 ## 結論
 
 ggerganovによる今回のグラフレベル最適化は、llama.cppのMoEモデル推論性能を大幅に向上させました。単にカーネルを最適化するのではなく、<strong>コンピュートグラフ自体を再構成</strong>するアプローチが印象的です。特に複数のバックエンド（Metal、CUDA、Vulkan）で非連続テンソルサポートを拡大する並行作業と組み合わせることで、ローカルLLM推論の性能限界を一段階引き上げています。
 
-Qwen3 Coder Nextのような MoEモデルをローカルで実行しているユーザーは、llama.cppを最新バージョンに更新してこの性能向上をすぐに体感してみてください。
+Qwen3 Coder Nextのような MoEモデルをローカルで実行しているユーザーは、llama.cppを最新バージョンに更新してこの性能向上をすぐに体感してみてください。VRAMの削減も希望する場合は、[4bit量子化でVRAMを最大70%削減するHeretic 1.2技術](/ja/blog/ja/heretic-12-vram-reduction)もご覧ください。
 
 ## 参考資料
 
