@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-15",
+  "updated_at": "2026-05-17",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -1895,6 +1895,171 @@
       "added_at": "2026-05-15",
       "status": "queued",
       "notes": "Cloudflare Agents Week 2026 포스트의 후속으로 연결 가능. 월 100만 AI 추론 요청 기준: Vercel+OpenAI $800-2000 vs Cloudflare Workers AI $150-400. 개발자 경험은 Vercel이 더 성숙, 비용 효율은 Cloudflare 압도적. Next.js 팀은 Vercel, edge-native 아키텍처는 Cloudflare 선택 기준 제시. cloudflare-agents-week-2026-autonomous-infrastructure 포스트와 직접 연결."
+    },
+    {
+      "slug": "claude-code-vs-cursor-4-vs-copilot-agent-2026-comparison",
+      "title_idea": "Claude Code vs Cursor 4 vs GitHub Copilot Agent — 2026년 중반기 AI 코딩 도구 완전 비교",
+      "content_type": "comparison",
+      "target_keyword": "claude code vs cursor 비교 2026",
+      "secondary_keywords": [
+        "AI 코딩 도구 비교 2026",
+        "cursor 4 claude code 차이",
+        "github copilot agent vs claude code",
+        "AI 코딩 도구 선택",
+        "코딩 에이전트 비교"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "실제 사용 비교, 커뮤니티 리뷰, 각 도구 공식 문서",
+      "added_at": "2026-05-16",
+      "status": "queued",
+      "notes": "토요일 비교 가이드 유형. Claude Code(Agent SDK 기반), Cursor 4(AI 퍼스트 IDE), Copilot Agent(GitHub 네이티브) 3가지를 실제 코딩 태스크로 비교. 컨텍스트 윈도우, 에이전트 자율성, 비용, 협업 워크플로우 기준. cursor-3-vs-claude-code-vs-windsurf-2026 포스트 업데이트 버전."
+    },
+    {
+      "slug": "anthropic-claude-api-vs-openai-api-vs-gemini-api-cost-latency-2026",
+      "title_idea": "Claude API vs OpenAI API vs Gemini API — 2026년 실측 비용·지연시간·품질 완전 비교",
+      "content_type": "comparison",
+      "target_keyword": "claude api vs openai api 비교",
+      "secondary_keywords": [
+        "LLM API 비용 비교 2026",
+        "anthropic openai gemini api 차이",
+        "LLM API 지연시간 벤치마크",
+        "AI API 선택 가이드",
+        "LLM API 실측 비교"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "artisan.co API 비교, artificialanalysis.ai 벤치마크, 공식 가격표",
+      "added_at": "2026-05-16",
+      "status": "queued",
+      "notes": "토요일 비교 가이드 유형. 실제 API 호출 기반 측정: 입력/출력 토큰 가격, P50/P95 지연시간, 컨텍스트 캐싱 효율, 배치 API 절감률, 모델별 품질(코딩/추론/창의). 프로젝트 유형별 권장 API 선택 기준 제시. llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek 포스트 심화 버전."
+    },
+    {
+      "slug": "mcp-vs-openai-function-calling-vs-gemini-tools-agent-protocol-2026",
+      "title_idea": "MCP vs OpenAI Function Calling vs Gemini Tools — AI 에이전트 도구 연동 표준 비교",
+      "content_type": "comparison",
+      "target_keyword": "MCP vs function calling 비교",
+      "secondary_keywords": [
+        "AI 에이전트 프로토콜 비교",
+        "MCP openai function calling 차이",
+        "에이전트 도구 표준 2026",
+        "gemini tools vs mcp",
+        "AI 도구 연동 방식"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "MCP 공식 사이트, OpenAI 함수 호출 문서, Gemini Tools API 문서",
+      "added_at": "2026-05-16",
+      "status": "queued",
+      "notes": "토요일 비교 가이드 유형. MCP(Anthropic 오픈 표준), OpenAI Function Calling(proprietary), Gemini Tools(Google 방식) 3가지를 에이전트 도구 연동 관점에서 비교. 표준화 성숙도, 생태계 풍부도, 개발자 경험, 보안 모델 기준. aws-mcp-server-ga-practical-guide-2026 포스트와 연계."
+    },
+    {
+      "slug": "ai-agent-architecture-series-2-multimodal-pipeline-design",
+      "title_idea": "AI 에이전트 아키텍처 시리즈 #2 — 멀티모달 에이전트 파이프라인: 이미지·오디오를 처리하는 에이전트 워크플로우 설계",
+      "content_type": "series",
+      "target_keyword": "멀티모달 AI 에이전트 설계",
+      "secondary_keywords": [
+        "멀티모달 에이전트 파이프라인",
+        "이미지 처리 에이전트",
+        "Claude 비전 에이전트",
+        "AI 멀티모달 워크플로우"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "AI 에이전트 아키텍처 시리즈 연속 기획",
+      "added_at": "2026-05-17",
+      "status": "queued",
+      "notes": "시리즈 #1(ai-agent-architecture-series-1-orchestrator-pattern)의 후속편. 멀티모달 입력(이미지, 오디오, PDF)을 처리하는 에이전트 파이프라인 설계 패턴 집중. Claude Vision API 활용, 멀티모달 데이터 전처리 에이전트, 결과 통합 패턴 포함. 시리즈 연속성으로 재방문율 높음."
+    },
+    {
+      "slug": "ai-agent-architecture-series-3-memory-system-implementation",
+      "title_idea": "AI 에이전트 아키텍처 시리즈 #3 — 에이전트 메모리 시스템 구현: 단기·장기·에피소딕 메모리 패턴 실전 코드",
+      "content_type": "series",
+      "target_keyword": "AI 에이전트 메모리 구현",
+      "secondary_keywords": [
+        "에이전트 장기 메모리",
+        "에피소딕 메모리 패턴",
+        "AI 에이전트 상태 관리",
+        "벡터 DB 에이전트 메모리"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "AI 에이전트 아키텍처 시리즈 연속 기획",
+      "added_at": "2026-05-17",
+      "status": "queued",
+      "notes": "시리즈 #2 후속. 에이전트 메모리를 단기(컨텍스트), 장기(벡터DB), 에피소딕(경험 기반) 세 레이어로 분리하는 아키텍처. Anthropic의 Dreaming 기능과 연결해 자기 개선 루프 설계 패턴까지. claude-managed-agents-dreaming 포스트와 내부링크 연결 적합."
+    },
+    {
+      "slug": "claude-code-masterclass-series-1-prompt-to-production",
+      "title_idea": "Claude Code 마스터클래스 시리즈 #1 — 프롬프트에서 프로덕션까지: 혼자 일하는 개발자를 위한 AI 코딩 워크플로우",
+      "content_type": "series",
+      "target_keyword": "Claude Code 완전 가이드",
+      "secondary_keywords": [
+        "Claude Code 마스터클래스",
+        "AI 코딩 워크플로우",
+        "Claude Code 고급 활용",
+        "혼자 하는 풀스택 개발"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Claude Code 사용 경험 기반 신규 시리즈",
+      "added_at": "2026-05-17",
+      "status": "queued",
+      "notes": "Claude Code 사용자 증가에 맞춘 실전 마스터클래스 시리즈 론칭. #1은 전체 워크플로우 개요: Plan Mode, 서브에이전트, Git Worktree, 훅 자동화를 한 프로젝트에 통합하는 방법. 기존 포스트(claude-code-parallel-sessions-git-worktree, claude-agent-sdk-tool-use-complete-guide)와 내부링크 연결. 시리즈 특성상 독자 리텐션 높음."
+    },
+    {
+      "slug": "google-io-2026-ai-agent-deep-analysis",
+      "title_idea": "Google I/O 2026 AI 에이전트 발표 심층 분석 — Gemini 2.5 Pro, Project Astra, 에이전트 스택이 바꾸는 것들",
+      "content_type": "news",
+      "target_keyword": "Google IO 2026 AI 에이전트",
+      "secondary_keywords": [
+        "Google IO 2026 정리",
+        "Gemini 2.5 Pro 발표",
+        "Project Astra 2026",
+        "구글 AI 에이전트 2026"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Google I/O 2026 공식 발표 예정",
+      "added_at": "2026-05-17",
+      "status": "queued",
+      "notes": "Google I/O 2026은 5월 20~21일 예정. 발표 직후 뉴스 분석 포스트로 트래픽 선점 가능. Gemini 에이전트 스택(Vertex AI Agent Builder, ADK, Gemini 2.5 Pro) 중심으로 분석. cloudflare-agents-week 분석 포스트와 비슷한 포맷으로 작성. 타이밍이 핵심."
+    },
+    {
+      "slug": "openai-codex-cli-vs-claude-code-2026-comparison",
+      "title_idea": "OpenAI Codex CLI vs Claude Code — 터미널 AI 코딩 에이전트 실전 비교 2026",
+      "content_type": "comparison",
+      "target_keyword": "openai codex cli vs claude code",
+      "secondary_keywords": [
+        "Codex CLI 리뷰",
+        "Claude Code 비교",
+        "터미널 AI 에이전트 비교",
+        "AI 코딩 CLI 도구 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "OpenAI Codex CLI 공개 이후 비교 필요성 증가",
+      "added_at": "2026-05-17",
+      "status": "queued",
+      "notes": "OpenAI가 Codex CLI를 공개하면서 Claude Code와의 직접 비교 수요 급증. 터미널 UX, 에이전트 자율성, 컨텍스트 관리, 비용, CLAUDE.md 같은 프로젝트 설정 파일 지원 여부 비교. claude-code-vs-cursor-4-vs-copilot-agent 포스트와 시리즈 형태로 연결 가능."
+    },
+    {
+      "slug": "anthropic-model-context-protocol-2-1-whats-new",
+      "title_idea": "MCP 2.1 완전 분석 — Streamable HTTP GA, OAuth 2.1 인증, 에이전트 보안 모델이 달라진 것들",
+      "content_type": "news",
+      "target_keyword": "MCP 2.1 새로운 기능",
+      "secondary_keywords": [
+        "Model Context Protocol 2.1",
+        "MCP Streamable HTTP",
+        "MCP OAuth 인증",
+        "MCP 에이전트 보안"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "MCP 공식 사이트, Anthropic 발표",
+      "added_at": "2026-05-17",
+      "status": "queued",
+      "notes": "MCP 2.1의 핵심 변화인 Streamable HTTP 트랜스포트 GA, OAuth 2.1 기반 인증 표준화, 에이전트 보안 모델 강화를 심층 분석. fastmcp-python-mcp-server-build-guide, aws-mcp-server-ga-practical-guide와 내부링크 연결. MCP 에코시스템 성숙도를 다루는 시리즈의 연속성 확보."
     }
   ]
 }

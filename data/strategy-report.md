@@ -4,6 +4,129 @@
 
 ---
 
+## 2026-05-17 주간 리뷰 (5월 3주차)
+
+### 성과 요약
+
+- **이번 주 포스트**: 7개
+- **콘텐츠 믹스**: How-to 71% / 뉴스 29% / 비교 0% / 시리즈 0%
+- **내부링크 최적화**: 전체 252개 포스트 중 내부링크 없는 포스트 84개 (33%) — 전주 104개 대비 20개 감소 중
+- **크로스포스팅**: dev.to 2/2 (100%), Hashnode 2/2 (100%)
+
+#### 이번 주 포스트 목록
+
+| 날짜 | 슬러그 | 유형 |
+|------|--------|------|
+| 5/11 | fastapi-claude-api-streaming-production-guide-2026 | How-to |
+| 5/12 | fastmcp-python-mcp-server-build-guide-2026 | How-to |
+| 5/13 | claude-agent-sdk-tool-use-complete-guide-2026 | How-to |
+| 5/14 | aws-mcp-server-ga-practical-guide-2026 | How-to |
+| 5/15 | cloudflare-agents-week-2026-autonomous-infrastructure | 뉴스 |
+| 5/16 | claude-managed-agents-dreaming-outcomes-code-with-claude-2026 | 뉴스 |
+| 5/17 | gemini-25-flash-thinking-api-developer-guide-2026 | How-to |
+
+---
+
+### 콘텐츠 믹스 분석
+
+| 유형 | 이번 주 | 목표 | 편차 |
+|------|---------|------|------|
+| How-to | 71% (5개) | 40% | **+31% 과잉** |
+| 뉴스 | 29% (2개) | 30% | -1% (양호) |
+| 비교 | 0% (0개) | 15% | **-15% 부재** |
+| 시리즈 | 0% (0개) | 15% | **-15% 완전 부재 (2주 연속)** |
+
+**핵심 문제**: How-to 비중이 71%로 목표(40%) 대비 31%p 초과. 시리즈 콘텐츠가 2주 연속 0건. 비교 가이드도 이번 주 전무. MCP/에이전트 관련 how-to 포스트 5개가 몰려 읽기 경험의 다양성이 저하됨.
+
+---
+
+### 스타일 분석 (최근 7개 포스트 리뷰)
+
+**종합 스타일 점수: 8.0 / 10**
+
+#### 강점 (유지할 것)
+
+- **1인칭 주관 표현**: "나는 Tool Use가 과소평가됐다고 본다", "직접 실험해보지 않았다면...", "개인적으로 이번 주에서 가장 주목한 것은" 등 포스트당 2〜4개 존재. 독자 몰입도 유지에 핵심
+- **비판적 시각 일관성**: 기술 한계를 솔직하게 서술 ("FastMCP는 자유도를 트레이드오프로 지불한다", "Dreaming은 조심스럽게 접근하길 권한다", "자기 개선 에이전트라는 프레이밍이 가져오는 과대 기대는 경계해야 한다")
+- **내부링크 자연스러운 삽입**: 맥락에 맞게 연관 포스트를 본문 안에 자연스럽게 삽입 — SEO와 독자 경험 모두에 기여
+- **크로스포스팅 완벽 성공률**: dev.to, Hashnode 모두 100% → 이전 주 Hashnode 50% 문제 해소
+
+#### 패턴 피로 (조정 필요)
+
+1. **"실행 가능성 판단" 섹션 중복**: fastmcp와 claude-managed-agents 두 포스트에서 동일한 `## 실행 가능성 판단 — 언제 X를 선택하나` 헤더 사용. 같은 날 혹은 연속으로 읽는 독자에게 템플릿 느낌 전달
+2. **결론 직전 "정리" 섹션 고착화**: claude-agent-sdk, fastmcp 두 포스트에서 `## 정리`로 요약하는 동일 패턴. "마치며", "지금 이 시점에서", "솔직한 평가" 등으로 로테이션 필요
+3. **한계 섹션 비율 과잉**: 7개 중 3개 포스트에서 "한계", "아직 해결 안 된 것들", "아쉬운 점" 류 섹션이 독립 헤더로 등장. 콘텐츠 다양성 있으나 구조가 반복됨
+4. **How-to 포스트 중간 섹션 1인칭 희박**: 도입부에 강한 주관이 있지만 본론 중반부에서 객관 서술로 급전환. 3〜4번째 섹션에서도 주관 표현 1개씩 배치 필요
+
+---
+
+### 이슈 및 조치사항
+
+#### 1. 시리즈 콘텐츠 결핍 (긴급)
+
+백로그에 series가 1개뿐이었음 → 이번 리뷰에서 3개 추가 (series 총 4개). 그러나 실제 발행 비율이 2주 연속 0%이므로 다음 주에 반드시 1개 발행 필요. 토요일 슬롯에 `ai-agent-architecture-series-1-orchestrator-pattern` 우선 배정 권장.
+
+#### 2. 내부링크 0-link 포스트 감소 추세 양호
+
+전체 252개 포스트 중 84개(33%)가 여전히 0-link이나 전주(104개) 대비 20개 감소. daily-closing의 내부링크 최적화 작업이 효과를 내고 있음. 현재 속도 유지 시 4〜5주 내 10% 이하 가능 예상.
+
+#### 3. 크로스포스팅 정상화
+
+지난 주 Hashnode 50% 성공률에서 이번 주 100%로 정상화. dev.to도 100% 유지. 안정적.
+
+---
+
+### 스타일 조정 제안 (다음 주 write-post 적용)
+
+1. **결론 섹션 헤더 로테이션**: "정리", "마치며", "실행 가능성 판단" 외에 "지금 알고 있는 것", "솔직한 평가", "내 선택", "6개월 뒤에 다시 보면" 등 다양하게
+2. **중간 섹션 1인칭 복귀**: How-to 포스트 3번째 섹션에 "직접 해보니...", "이 부분에서 막혔는데..." 등 짧은 주관 표현 1줄 삽입
+3. **한계 섹션 통합 vs 분리**: 한계가 있으면 별도 헤더로 빼지 말고 관련 섹션 안에 1〜2문장으로 녹이는 방식 시도 (섹션 반복감 감소)
+4. **도입부 세 번째 패턴 시도**: 현재 주로 사용하는 "직접 경험 서술"과 "핵심 질문 제시" 외에 "통념 반박"("X라고 알려진 것은 절반만 맞다")이나 "구체적 수치 충격"으로 시작하는 도입부 도입
+
+---
+
+### 다음 주 전략 (5월 18〜24일)
+
+#### 목표 믹스
+- How-to 3개 (43%) / 뉴스 2개 (29%) / 시리즈 1개 (14%) / 비교 1개 (14%)
+
+#### 우선 처리 순서
+
+| 요일 | 유형 | 슬러그 후보 |
+|------|------|-------------|
+| 월 | How-to | microsoft-autogen-1-0-production-agent-tutorial |
+| 화 | 뉴스 | google-io-2026-ai-agent-deep-analysis (**Google I/O 발표 직후 선점**) |
+| 수 | How-to | claude-code-custom-commands-hooks-automation |
+| 목 | 뉴스 | anthropic-model-context-protocol-2-1-whats-new |
+| 금 | How-to | langchain-langgraph-state-management-practical-guide-2026 |
+| **토** | **시리즈 #1** | **ai-agent-architecture-series-1-orchestrator-pattern** |
+| **일** | **비교** | **openai-codex-cli-vs-claude-code-2026-comparison** |
+
+> **중요**: Google I/O 2026이 5월 20〜21일 예정. 발표 직후 당일 포스팅으로 트래픽 선점.
+
+---
+
+### 백로그 현황 (2026-05-17 기준)
+
+**총 115개 주제 (대기 중 84개, +6개 추가)**
+
+| 유형 | 대기 | 비율 |
+|------|------|------|
+| How-to | 37 | 44% |
+| 뉴스 | 30 | 36% |
+| 비교 | 13 | 15% |
+| 시리즈 | 4 | 5% ← 이번 리뷰에서 1 → 4개로 확충 |
+
+**이번 리뷰에서 추가된 주제 (6개)**:
+- `ai-agent-architecture-series-2-multimodal-pipeline-design` [series]
+- `ai-agent-architecture-series-3-memory-system-implementation` [series]
+- `claude-code-masterclass-series-1-prompt-to-production` [series]
+- `google-io-2026-ai-agent-deep-analysis` [news] ← Google I/O 2026 직후 발행 타겟
+- `openai-codex-cli-vs-claude-code-2026-comparison` [comparison]
+- `anthropic-model-context-protocol-2-1-whats-new` [news]
+
+---
+
 ## 2026-05-10 주간 리뷰 (5월 2주차)
 
 ### 성과 요약
