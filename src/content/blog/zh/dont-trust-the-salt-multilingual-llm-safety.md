@@ -92,7 +92,7 @@ graph LR
 
 ### 655次评估揭示的差距
 
-Mozilla Foundation构建的[多语言AI安全性评估实验室](https://www.multilingualailab.com/)对GPT-4o、Gemini 2.5 Flash和Mistral Small进行了难民和庇护场景下英语与阿拉伯语/波斯语/普什图语/库尔德语的性能比较。
+Mozilla Foundation构建的[多语言AI安全性评估实验室](https://www.multilingualailab.com/)对GPT-4o、Gemini 2.5 Flash和Mistral Small进行了难民和庇护场景下英语与阿拉伯语/波斯语/普什图语/库尔德语的性能比较。同时查看[各模型的API定价与性能比较](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)有助于模型选型决策。
 
 ### 评估结果摘要
 
@@ -106,7 +106,7 @@ Mozilla Foundation构建的[多语言AI安全性评估实验室](https://www.mul
 
 ### LLM-as-Judge的过度自信问题
 
-LLM自动评估（LLM-as-a-Judge）在没有事实核查工具的情况下，<strong>从未回答过"不确定"</strong>。它低估了人工评估者指出的差距，有时甚至幻觉出原文中不存在的免责声明。
+LLM自动评估（LLM-as-a-Judge）在没有事实核查工具的情况下，<strong>从未回答过"不确定"</strong>。它低估了人工评估者指出的差距，有时甚至幻觉出原文中不存在的免责声明。要提高评估流程的可靠性，可以引入[Langfuse等LLM追踪工具](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026)，系统化追踪各语言的模型响应。
 
 ## 护栏崩溃的时刻
 
@@ -162,7 +162,7 @@ graph TD
 
 <strong>5. 构建从评估到护栏的连续管道</strong>
 
-需要一个评估结果直接反馈到护栏策略的连续流程。分别运营评估和护栏意味着发现的问题无法得到修复。
+需要一个评估结果直接反馈到护栏策略的连续流程。分别运营评估和护栏意味着发现的问题无法得到修复。[LangGraph、CrewAI、DAPR等Agent框架](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)可用于构建连接评估与护栏策略的自动化流程。
 
 ### 技术实施建议
 

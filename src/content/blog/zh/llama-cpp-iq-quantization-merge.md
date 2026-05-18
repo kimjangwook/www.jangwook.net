@@ -143,7 +143,7 @@ graph TD
 | Q4_K_M | 基准 | 基准 | 基准 |
 | <strong>IQ4_K</strong> | 改善2-5% | 相同 | 相同至略降 |
 
-最大优势是<strong>相同比特数下困惑度的改善</strong>。尤其在低比特量化（2-3比特）时改善幅度显著。
+最大优势是<strong>相同比特数下困惑度的改善</strong>。尤其在低比特量化（2-3比特）时改善幅度显著。本地推理与云端API的成本对比，可参阅[LLM API定价比较指南](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)。
 
 ## 对本地LLM推理的影响
 
@@ -155,6 +155,8 @@ IQ系量化的整合在以下场景中带来收益：
 - <strong>Apple Silicon Mac</strong>：在统一内存限制内以更高质量运行更大模型
 - <strong>边缘设备</strong>：IQ2_K/IQ2_KS使得2-3GB内存下的LLM推理变得实用
 
+如果首次搭建本地LLM推理环境，[使用uv搭建Python AI开发环境](/zh/blog/zh/uv-python-ai-development-setup-guide-2026)是个不错的起点。
+
 ### 量化生态系统的演进
 
 ```mermaid
@@ -165,7 +167,7 @@ graph LR
     B -->|整合| D[ollama / LM Studio<br/>终端用户工具]
 ```
 
-合并至llama.cpp主线意味着向<strong>ollama</strong>和<strong>LM Studio</strong>等终端用户工具的传播。用户无需特殊配置即可使用更高质量的量化模型。
+合并至llama.cpp主线意味着向<strong>ollama</strong>和<strong>LM Studio</strong>等终端用户工具的传播。用户无需特殊配置即可使用更高质量的量化模型。要持续监控推理质量，可使用[Langfuse自托管LLM追踪](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026)记录和对比推理请求与响应。
 
 ## 实践：IQ量化的使用方法
 

@@ -148,7 +148,7 @@ Comparison between existing Q-series and IQ-series quantization (reference value
 | Q4_K_M | Baseline | Baseline | Baseline |
 | <strong>IQ4_K</strong> | 2-5% better | Same | Same to slight decrease |
 
-The biggest advantage is <strong>improved perplexity at the same bit count</strong>. The improvement is especially pronounced at low-bit quantization (2-3 bits).
+The biggest advantage is <strong>improved perplexity at the same bit count</strong>. The improvement is especially pronounced at low-bit quantization (2-3 bits). For the cost trade-off between local inference and cloud API, check the [LLM API pricing comparison guide](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek).
 
 ## Impact on Local LLM Inference
 
@@ -160,6 +160,8 @@ The integration of IQ-series quantization brings benefits in these scenarios:
 - <strong>Apple Silicon Macs</strong>: Run larger models at higher quality within unified memory constraints
 - <strong>Edge devices</strong>: IQ2_K/IQ2_KS makes LLM inference practical with just 2-3GB of memory
 
+If you're setting up a local LLM inference environment for the first time, [uv for Python AI Development Setup](/en/blog/en/uv-python-ai-development-setup-guide-2026) is a great starting point.
+
 ### Quantization Ecosystem Evolution
 
 ```mermaid
@@ -170,7 +172,7 @@ graph LR
     B -->|Integration| D[ollama / LM Studio<br/>End-user Tools]
 ```
 
-Integration into llama.cpp mainline means propagation to end-user tools like <strong>ollama</strong> and <strong>LM Studio</strong>. Users will be able to use higher-quality quantized models without special configuration.
+Integration into llama.cpp mainline means propagation to end-user tools like <strong>ollama</strong> and <strong>LM Studio</strong>. Users will be able to use higher-quality quantized models without special configuration. For ongoing quality monitoring, [self-hosted Langfuse LLM tracing](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026) helps log and compare inference requests and responses.
 
 ## Practical Usage: IQ Quantization
 

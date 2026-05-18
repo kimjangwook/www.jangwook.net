@@ -1,6 +1,6 @@
 ---
 title: 'Claude Agent SDK 子代理编排实战指南 — 多代理并行处理完全掌握'
-description: '我亲自安装了claude-agent-sdk 0.2.82，验证了AgentDefinition结构和子代理并行执行模式。本文通过代码详细讲解编排器同时生成三个子代理、并用TaskBudget控制成本的完整流程。'
+description: '我亲自安装claude-agent-sdk 0.2.82，实测AgentDefinition结构与ClaudeAgentOptions类型，验证编排器同时spawn三个子代理的并行模式。完整讲解通过TaskBudget控制成本上限，以及SubagentStartHookInput钩子的Python实现全流程。'
 pubDate: '2026-05-18'
 heroImage: '../../../assets/blog/claude-agent-sdk-subagents-orchestration-tutorial-2026/hero.png'
 tags: ['Claude', 'Anthropic SDK', 'Subagents', 'Multi-Agent', 'Python']

@@ -1,5 +1,5 @@
 ---
-title: 'Gemini 2.5 Flash Thinking API: What I Learned from Running Budget=0, 1024, and 8000'
+title: 'Gemini 2.5 Flash Thinking API: thinking_budget Experiments'
 description: "I ran Gemini 2.5 Flash's thinking_budget at 0, 1024, and 8000 across simple tasks, math reasoning, and code review. Simple tasks got 5x slower with no gain. Math reasoning actually reduced output tokens. Here's the task-by-task decision framework."
 pubDate: '2026-05-17'
 heroImage: '../../../assets/blog/gemini-25-flash-thinking-api-developer-guide-2026/hero.png'

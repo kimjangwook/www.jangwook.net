@@ -1,5 +1,5 @@
 ---
-title: 'Gemini 2.5 Flash Thinking API 实战指南 — 亲测 thinking_budget=0/1024/8000 的真实结论'
+title: 'Gemini 2.5 Flash Thinking API 实战指南 — thinking_budget亲测结论'
 description: '我用 Budget=0/1024/8000 三种配置，在简单任务、数学推理、代码审查三类场景下亲测了 Gemini 2.5 Flash Thinking API。简单任务速度慢 5 倍毫无收益，数学推理反而减少了输出 token。分享按任务类型选择最优 budget 的决策框架。'
 pubDate: '2026-05-17'
 heroImage: '../../../assets/blog/gemini-25-flash-thinking-api-developer-guide-2026/hero.png'

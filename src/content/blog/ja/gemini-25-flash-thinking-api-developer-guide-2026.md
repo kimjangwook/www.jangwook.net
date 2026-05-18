@@ -1,5 +1,5 @@
 ---
-title: 'Gemini 2.5 Flash Thinking API 実践ガイド — thinking_budgetを直接実験して学んだこと'
+title: 'Gemini 2.5 Flash Thinking API 実践ガイド — thinking_budget実験まとめ'
 description: 'Gemini 2.5 FlashのThinking BudgetをBudget=0/1024/8000の3パターンで、単純タスク・数学推論・コードレビューに実験した。単純タスクは5倍遅くなり、数学問題では逆に出力トークンを削減する。タスク別最適設定フレームワークを公開する。'
 pubDate: '2026-05-17'
 heroImage: '../../../assets/blog/gemini-25-flash-thinking-api-developer-guide-2026/hero.png'

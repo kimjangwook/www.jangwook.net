@@ -1,6 +1,6 @@
 ---
 title: 'Claude Agent SDK サブエージェント・オーケストレーション実践ガイド — マルチエージェント並列処理を完全制覇'
-description: 'claude-agent-sdk 0.2.82を実際にインストールしてAgentDefinition構造とサブエージェント並列実行パターンを検証した。オーケストレーターが3つのサブエージェントを同時にスポーンし、TaskBudgetでコストを制御する全体フローをコードとともに解説する。'
+description: 'claude-agent-sdk 0.2.82を実際にインストールしてAgentDefinition構造とサブエージェント並列実行パターンを検証した。オーケストレーターが3つのサブエージェントを同時にスポーンし、TaskBudgetでコストを制御する全体フローをPythonコードとともに詳しく解説する。'
 pubDate: '2026-05-18'
 heroImage: '../../../assets/blog/claude-agent-sdk-subagents-orchestration-tutorial-2026/hero.png'
 tags: ['Claude', 'Anthropic SDK', 'Subagents', 'Multi-Agent', 'Python']

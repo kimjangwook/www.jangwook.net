@@ -86,7 +86,7 @@ Google showcased four practical demonstrations of Gemini 3.1 Pro's enhanced reas
 
 ### Current Competitive Landscape
 
-With Gemini 3.1 Pro's release, the AI model competition has intensified further. Comparing Claude 4 Opus/Sonnet with Gemini 3.1 Pro on key dimensions:
+With Gemini 3.1 Pro's release, the AI model competition has intensified further. Comparing Claude 4 Opus/Sonnet with Gemini 3.1 Pro on key dimensions (also see [OpenAI GPT-5.5 vs Claude comparison](/en/blog/en/openai-gpt-5-5-release-claude-comparison-april-2026) for the full competitive landscape):
 
 | Aspect | Gemini 3.1 Pro | Claude 4 Opus |
 |--------|---------------|---------------|
@@ -131,7 +131,7 @@ Gemini 3.1 Pro is accessible across multiple platforms:
 - <strong>Enterprise</strong>: Vertex AI, Gemini Enterprise
 - <strong>Consumers</strong>: Gemini app, NotebookLM
 
-The emergence of <strong>Google Antigravity</strong> as an agentic development platform is particularly noteworthy. It directly competes with Anthropic's MCP ecosystem.
+The emergence of <strong>Google Antigravity</strong> as an agentic development platform is particularly noteworthy. It directly competes with Anthropic's MCP ecosystem. See [LangGraph vs CrewAI vs DAPR production agent framework comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) for a breakdown of each option's trade-offs.
 
 ## Practical Implications
 
@@ -139,7 +139,7 @@ The emergence of <strong>Google Antigravity</strong> as an agentic development p
 
 1. <strong>Rethink model selection strategy</strong>: Gemini 3.1 Pro deserves serious consideration for tasks requiring complex reasoning
 2. <strong>Design multimodal workflows</strong>: Text → code → visualization can now be a single pipeline
-3. <strong>Compare agent development platforms</strong>: Evaluate Antigravity vs MCP vs LangChain and other agent frameworks
+3. <strong>Compare agent development platforms</strong>: Evaluate Antigravity vs MCP vs LangChain and other agent frameworks (see [Google ADK vs LangGraph in-depth comparison](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026))
 
 ### Caveats
 

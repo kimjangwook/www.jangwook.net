@@ -144,7 +144,7 @@ graph TD
 | Q4_K_M | 基準 | 基準 | 基準 |
 | <strong>IQ4_K</strong> | 2-5%改善 | 同等 | 同等〜微減 |
 
-<strong>同じビット数でパープレキシティが改善</strong>されることが最大のメリットです。特に低ビット量子化（2-3ビット）での改善幅が顕著です。
+<strong>同じビット数でパープレキシティが改善</strong>されることが最大のメリットです。特に低ビット量子化（2-3ビット）での改善幅が顕著です。ローカル推論とクラウドAPIの費用対効果は、[LLM API価格比較ガイド](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)で確認できます。
 
 ## ローカルLLM推論への影響
 
@@ -156,6 +156,8 @@ IQ系量子化の統合により、以下のシナリオで恩恵が期待され
 - <strong>Apple Silicon Mac</strong>：統合メモリの制約内で、より大きなモデルをより高品質に実行
 - <strong>エッジデバイス</strong>：IQ2_K/IQ2_KSにより、2-3GBメモリでもLLM推論が実用的に
 
+ローカルLLM推論環境を初めて構築するなら、[uvを使ったPython AI開発環境セットアップ](/ja/blog/ja/uv-python-ai-development-setup-guide-2026)が出発点として最適です。
+
 ### 量子化エコシステムの進化
 
 ```mermaid
@@ -166,7 +168,7 @@ graph LR
     B -->|統合| D[ollama / LM Studio<br/>エンドユーザーツール]
 ```
 
-llama.cpp本体への統合は、<strong>ollama</strong>や<strong>LM Studio</strong>などのエンドユーザー向けツールへの波及を意味します。ユーザーは特別な設定なしに、より高品質な量子化モデルを利用できるようになります。
+llama.cpp本体への統合は、<strong>ollama</strong>や<strong>LM Studio</strong>などのエンドユーザー向けツールへの波及を意味します。ユーザーは特別な設定なしに、より高品質な量子化モデルを利用できるようになります。推論品質を継続的にモニタリングするには、[LangfuseのセルフホストLLMトレーシング](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026)でリクエストと応答をログ・比較する方法が効果的です。
 
 ## 実践：IQ量子化の使い方
 

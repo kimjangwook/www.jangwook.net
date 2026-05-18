@@ -85,7 +85,7 @@ Google展示了4个Gemini 3.1 Pro增强推理能力的实践案例：
 
 ### 当前竞争格局
 
-随着Gemini 3.1 Pro的发布，AI模型竞争进一步加剧。将Claude 4 Opus/Sonnet与Gemini 3.1 Pro进行主要维度对比：
+随着Gemini 3.1 Pro的发布，AI模型竞争进一步加剧。将Claude 4 Opus/Sonnet与Gemini 3.1 Pro进行主要维度对比（了解AI竞争全貌，也可参阅[OpenAI GPT-5.5与Claude对比分析](/zh/blog/zh/openai-gpt-5-5-release-claude-comparison-april-2026)）：
 
 | 项目 | Gemini 3.1 Pro | Claude 4 Opus |
 |------|---------------|---------------|
@@ -130,7 +130,7 @@ Gemini 3.1 Pro可通过多个平台访问：
 - <strong>企业</strong>：Vertex AI、Gemini Enterprise
 - <strong>消费者</strong>：Gemini应用、NotebookLM
 
-<strong>Google Antigravity</strong>智能体开发平台的出现尤其值得关注，它直接与Anthropic的MCP生态系统竞争。
+<strong>Google Antigravity</strong>智能体开发平台的出现尤其值得关注，它直接与Anthropic的MCP生态系统竞争。[LangGraph、CrewAI、DAPR生产级Agent框架对比](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)可帮助你了解各框架的优缺点。
 
 ## 实践启示
 
@@ -138,7 +138,7 @@ Gemini 3.1 Pro可通过多个平台访问：
 
 1. <strong>重新审视模型选择策略</strong>：对于需要复杂推理的任务，Gemini 3.1 Pro值得认真考虑
 2. <strong>设计多模态工作流</strong>：文本 → 代码 → 可视化可作为单一管道构建
-3. <strong>比较智能体开发平台</strong>：需要评估Antigravity vs MCP vs LangChain等智能体框架
+3. <strong>比较智能体开发平台</strong>：需要评估Antigravity vs MCP vs LangChain等智能体框架（参考[Google ADK vs LangGraph深度对比](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026)）
 
 ### 注意事项
 

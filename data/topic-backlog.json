@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-17T23:07:00+09:00",
+  "updated_at": "2026-05-18T23:07:00+09:00",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -2111,6 +2111,40 @@
       "added_at": "2026-05-18",
       "status": "queued",
       "notes": "Claude Code 채택률 40.8%로 4위 달성. Hooks 기능은 공식 문서 외 실전 가이드가 적어 차별화 용이. 자동 커밋·테스트 실행·Telegram 알림 연동 등 자신의 사용 사례를 녹여 E-E-A-T 강화."
+    },
+    {
+      "slug": "pydantic-ai-structured-llm-output-guide-2026",
+      "title_idea": "Pydantic AI로 LLM 출력 구조화하기 — Claude/GPT 구조화 출력 완전 가이드 2026",
+      "content_type": "how-to",
+      "target_keyword": "pydantic ai structured output llm",
+      "secondary_keywords": [
+        "pydantic v2",
+        "anthropic sdk structured output",
+        "llm json schema"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "daily-closing 2026-05-18 — 트렌드 분석",
+      "added_at": "2026-05-19",
+      "status": "queued",
+      "notes": "Pydantic AI 라이브러리(pydantic-ai)는 2026년 가장 빠르게 성장하는 LLM 개발 도구 중 하나. response_model + BaseModel 조합으로 Claude/GPT/Gemini의 구조화 출력을 타입 안전하게 처리하는 방법은 실전 수요가 높음. 기존 fastmcp/fastapi 포스트와 시리즈 연계 가능."
+    },
+    {
+      "slug": "anthropic-computer-use-web-automation-guide-2026",
+      "title_idea": "Anthropic Computer Use API 실전 가이드 — AI 기반 웹 브라우저 자동화 구현",
+      "content_type": "how-to",
+      "target_keyword": "anthropic computer use api 웹 자동화",
+      "secondary_keywords": [
+        "claude computer use",
+        "screen automation llm",
+        "anthropic tool use"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "daily-closing 2026-05-18 — 트렌드 분석",
+      "added_at": "2026-05-19",
+      "status": "queued",
+      "notes": "Anthropic Computer Use는 Claude가 화면을 직접 제어하는 기능으로 2025년 베타 이후 실제 활용 사례가 증가 중. 스크린샷 분석 + 클릭/타이핑 도구 조합으로 웹 자동화를 구현하는 How-to는 claude-agent-sdk 시리즈와 연계할 수 있음. E-E-A-T를 위해 실제 코드 검증 필수."
     }
   ]
 }

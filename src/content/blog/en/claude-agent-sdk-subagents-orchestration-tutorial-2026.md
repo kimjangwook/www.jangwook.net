@@ -1,6 +1,6 @@
 ---
 title: 'Claude Agent SDK Subagent Orchestration Tutorial — Parallel Multi-Agent Processing in Practice'
-description: 'I installed claude-agent-sdk 0.2.82 directly and validated AgentDefinition structure and subagent parallel execution patterns. This guide walks through the full flow of an orchestrator spawning three subagents simultaneously and controlling costs with TaskBudget.'
+description: 'claude-agent-sdk 0.2.82 validated: AgentDefinition structure, parallel subagent spawning, and TaskBudget cost control. Full Python code walkthrough included.'
 pubDate: '2026-05-18'
 heroImage: '../../../assets/blog/claude-agent-sdk-subagents-orchestration-tutorial-2026/hero.png'
 tags: ['Claude', 'Anthropic SDK', 'Subagents', 'Multi-Agent', 'Python']
