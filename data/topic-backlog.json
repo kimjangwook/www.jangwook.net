@@ -1751,7 +1751,7 @@
       "priority": 1,
       "source": "daily-closing 2026-05-13 — today published tool_use complete guide, subagents is natural next step",
       "added_at": "2026-05-13",
-      "status": "queued",
+      "status": "done",
       "notes": "오늘 claude-agent-sdk-tool-use-complete-guide-2026 발행 완료. 다음 단계로 서브에이전트를 활용한 멀티 에이전트 오케스트레이션 방법이 자연스러운 시리즈 확장. tool_use 다음은 sub-agents가 독자 요구사항 흐름에 맞음."
     },
     {
