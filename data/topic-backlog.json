@@ -53,7 +53,7 @@
       "priority": 2,
       "source": "Visual Studio Magazine 2026-04-06 기사, Microsoft 공식 릴리스",
       "added_at": "2026-04-13",
-      "status": "queued",
+      "status": "done",
       "notes": "Microsoft가 2026년 4월 6일 AutoGen 1.0 정식 릴리스. Semantic Kernel + AutoGen을 합친 프로덕션 레디 프레임워크. LangChain 대비 비교, Hermes Agent와 아키텍처 비교 포함하면 풍부한 콘텐츠 가능. multi-agent-swe-bench-verdent 내부링크 연결 적합."
     },
     {
