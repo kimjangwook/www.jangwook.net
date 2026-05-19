@@ -95,7 +95,7 @@ graph LR
 | 冷却方式 | 液体冷却が必要 | 空冷可能 |
 | インフラ複雑度 | 高い | 低い |
 
-従来のGPU比で<strong>約10倍の速度向上</strong>を達成しながら、インフラは遥かにシンプルになりました。
+従来のGPU比で<strong>約10倍の速度向上</strong>を達成しながら、インフラは遥かにシンプルになりました。ローカル推論のハードウェア選択基準が変わりつつある中、[DDR5 RDIMMとRTX 3090のGB単価を比較した分析](/ja/blog/ja/ddr5-rdimm-vs-rtx3090-local-llm)も参考になります。
 
 ## GPU依存からの脱却トレンド
 
@@ -117,7 +117,7 @@ graph TD
     style Future fill:#FF6D00,color:#fff
 ```
 
-Taalas CEOのLjubisa Bajic氏はENIACからトランジスタへの転換を例に挙げ、AIも<strong>「簡単に作れ、速く、安い」</strong>方向に進化すべきだと強調しています。
+Taalas CEOのLjubisa Bajic氏はENIACからトランジスタへの転換を例に挙げ、AIも<strong>「簡単に作れ、速く、安い」</strong>方向に進化すべきだと強調しています。ハードウェアレベルの最適化と並行して、[拡散言語モデル（CDLM）がAR比14倍の推論速度を達成するアルゴリズムアプローチ](/ja/blog/ja/consistency-diffusion-lm)も注目されています。
 
 ## 推論コスト構造の激変
 

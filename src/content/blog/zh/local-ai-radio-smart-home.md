@@ -106,7 +106,7 @@ graph TD
 | phi4-mini | 意图分类器 | ~2B | 判别"智能家居命令还是提问？" |
 | gemma3:12b | 响应生成 | 12B | 实际回答与推理 |
 
-先用轻量模型分类意图，仅在需要时调用大模型，这种结构使<strong>Mac mini M4 16GB</strong>也能实现实时响应。
+先用轻量模型分类意图，仅在需要时调用大模型，这种结构使<strong>Mac mini M4 16GB</strong>也能实现实时响应。如果想将Ollama离线AI管道与MCP工具集成，[使用Gemma 4 + FastMCP构建私有MCP服务器的完整指南](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)有详细介绍。
 
 ### Home Assistant集成
 
@@ -186,7 +186,7 @@ graph LR
 
 <strong>30美元收音机 + 本地AI = 无需互联网的智能家居</strong>。这个等式虽然简单，却清楚地展示了边缘AI的实用未来。
 
-不依赖云端的AI系统已不再是理论。只要有16GB内存的Mac mini和30美元的收音机，今天就能实现。随着本地LLM性能的持续提升，<strong>边缘AI × IoT</strong>的组合将成为最具实用性的AI应用领域之一。
+不依赖云端的AI系统已不再是理论。只要有16GB内存的Mac mini和30美元的收音机，今天就能实现。随着本地LLM性能的持续提升，<strong>边缘AI × IoT</strong>的组合将成为最具实用性的AI应用领域之一。在选择本地推理硬件时，[DDR5 RDIMM与RTX 3090的每GB成本对比](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm)可帮助你找到最优配置。
 
 ## 参考资料
 

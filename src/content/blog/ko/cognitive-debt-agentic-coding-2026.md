@@ -1,6 +1,6 @@
 ---
-title: 'Cognitive Debt: Anthropic 2026 에이전틱 코딩 리포트가 경고하는 AI 시대의 새로운 부채'
-description: 'Anthropic의 2026 Agentic Coding Trends Report와 함께 등장한 새로운 개념 "Cognitive Debt" — AI가 코드를 대신 쓸수록 팀의 이해력은 조용히 침식된다. EM이 지금 당장 실천해야 할 대응 전략을 분석합니다.'
+title: 'Cognitive Debt: Anthropic이 경고하는 AI 코딩 시대의 새로운 부채'
+description: 'Anthropic 2026 Agentic Coding Trends Report가 경고하는 새로운 개념 "Cognitive Debt" — AI 코딩 도구를 쓸수록 팀의 이해력이 조용히 침식되는 현상. 엔지니어링 매니저가 지금 당장 실천해야 할 실전 대응 전략을 분석합니다.'
 pubDate: '2026-03-07'
 heroImage: ../../../assets/blog/cognitive-debt-agentic-coding-2026-hero.jpg
 tags:

@@ -111,7 +111,7 @@ The core of offline AI is a <strong>two-stage model architecture</strong>.
 | phi4-mini | Intent classifier | ~2B | Determines "smart home command or question?" |
 | gemma3:12b | Response generator | 12B | Actual answers and reasoning |
 
-By classifying intent with a lightweight model first and calling the larger model only when needed, <strong>real-time responses are achievable even on a Mac mini M4 with 16GB</strong>.
+By classifying intent with a lightweight model first and calling the larger model only when needed, <strong>real-time responses are achievable even on a Mac mini M4 with 16GB</strong>. For connecting an Ollama-based offline AI pipeline to MCP tools, the [private MCP server setup guide using Gemma 4 + FastMCP](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp) covers this in detail.
 
 ### Home Assistant Integration
 
@@ -191,7 +191,7 @@ The entire stack is open source, so you can write the code yourself or delegate 
 
 <strong>$30 radio + local AI = internet-free smart home</strong>. This equation is simple, but it clearly demonstrates the practical future of edge AI.
 
-AI systems that don't depend on the cloud are no longer theoretical. With a 16GB Mac mini and a $30 radio, this is something you can build today. As local LLM performance continues to improve, the <strong>edge AI × IoT</strong> combination is poised to become one of the most practical AI application domains.
+AI systems that don't depend on the cloud are no longer theoretical. With a 16GB Mac mini and a $30 radio, this is something you can build today. As local LLM performance continues to improve, the <strong>edge AI × IoT</strong> combination is poised to become one of the most practical AI application domains. When evaluating local inference hardware, the [DDR5 RDIMM vs RTX 3090 cost-per-GB comparison](/en/blog/en/ddr5-rdimm-vs-rtx3090-local-llm) helps you pick the right configuration.
 
 ## References
 

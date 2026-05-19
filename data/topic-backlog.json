@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-18T23:07:00+09:00",
+  "updated_at": "2026-05-19T23:07:00+09:00",
   "topics": [
     {
       "slug": "mcp-server-build-practical-guide-2026",
@@ -2145,6 +2145,60 @@
       "added_at": "2026-05-19",
       "status": "queued",
       "notes": "Anthropic Computer Use는 Claude가 화면을 직접 제어하는 기능으로 2025년 베타 이후 실제 활용 사례가 증가 중. 스크린샷 분석 + 클릭/타이핑 도구 조합으로 웹 자동화를 구현하는 How-to는 claude-agent-sdk 시리즈와 연계할 수 있음. E-E-A-T를 위해 실제 코드 검증 필수."
+    },
+    {
+      "slug": "claude-api-vision-multimodal-production-guide-2026",
+      "title_idea": "Claude API 비전 기능 실전 가이드 — 이미지 분석, OCR, 문서 파싱 프로덕션 구현",
+      "content_type": "how-to",
+      "target_keyword": "Claude API 이미지 분석",
+      "secondary_keywords": [
+        "Claude Vision API 사용법",
+        "Claude multimodal 예제",
+        "Anthropic API 이미지 처리",
+        "LLM OCR 구현"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Anthropic Docs Vision API, 실무 수요 높음",
+      "added_at": "2026-05-19",
+      "status": "queued",
+      "notes": "이미지 base64 인코딩, URL 직접 전달, PDF 페이지 분석, 비전 모델 비용 최적화 포인트. claude-sonnet-4-6 기준 예제 포함. anthropic-files-api-batch-document-processing-guide와 내부링크 연결 가능."
+    },
+    {
+      "slug": "openai-responses-api-vs-claude-agent-sdk-migration-2026",
+      "title_idea": "OpenAI Responses API에서 Claude Agent SDK로 마이그레이션하는 방법",
+      "content_type": "how-to",
+      "target_keyword": "OpenAI에서 Claude로 마이그레이션",
+      "secondary_keywords": [
+        "OpenAI API 대체",
+        "Claude Agent SDK 마이그레이션",
+        "Anthropic SDK 전환",
+        "OpenAI Responses API 비교"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "개발자 커뮤니티 수요, OpenAI Responses API 2026 릴리즈 이후 마이그레이션 질문 급증",
+      "added_at": "2026-05-19",
+      "status": "queued",
+      "notes": "코드 변환 패턴(threads→messages, runs→stream), 툴 정의 매핑, 에러 핸들링 차이, 비용 비교. anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026 포스트와 내부링크 연결. How-to 형식으로 단계별 코드 변환 예제 제공."
+    },
+    {
+      "slug": "vercel-ai-sdk-4-mcp-tool-integration-guide-2026",
+      "title_idea": "Vercel AI SDK 4.x로 MCP 도구 연동하기 — Next.js 풀스택 AI 앱 구축 실전",
+      "content_type": "how-to",
+      "target_keyword": "Vercel AI SDK MCP 연동",
+      "secondary_keywords": [
+        "AI SDK useChat MCP",
+        "Next.js AI MCP 서버",
+        "Vercel AI SDK 4 사용법",
+        "MCP client Next.js"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Vercel AI SDK 공식 MCP 지원 추가 (2026 Q1), 개발자 수요 확인",
+      "added_at": "2026-05-19",
+      "status": "queued",
+      "notes": "AI SDK의 experimental_createMCPClient, useChat hook MCP 연동, Edge Runtime 호환성 주의. vercel-ai-sdk-claude-streaming-agent-2026 포스트와 내부링크 연결. How-to + 실전 예제 중심."
     }
   ]
 }

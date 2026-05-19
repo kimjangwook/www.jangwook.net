@@ -1,6 +1,6 @@
 ---
 title: Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템
-description: 'Hook 기반 코딩 규칙 설정부터 CI/CD 통합까지, 실무에서 바로 적용 가능한 자동화 리뷰 프로세스 완전 가이드'
+description: 'Claude Code Hook 기능으로 코딩 규칙 자동 적용, 사전 커밋 검사, CI/CD 파이프라인 통합을 단계별로 구현하는 실전 가이드입니다. 팀 개발 워크플로우에 즉시 도입 가능한 완전 자동화 코드 리뷰 시스템을 실제 예제 코드와 함께 구축하는 방법을 소개합니다.'
 pubDate: '2025-10-29'
 heroImage: ../../../assets/blog/claude-code-hooks-workflow-hero.jpg
 tags:

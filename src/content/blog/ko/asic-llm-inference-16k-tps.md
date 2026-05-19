@@ -95,7 +95,7 @@ graph LR
 | 냉각 방식 | 액체 냉각 필요 | 공냉 가능 |
 | 인프라 복잡도 | 높음 | 낮음 |
 
-기존 GPU 대비 <strong>약 10배의 속도 향상</strong>을 달성하면서도, 인프라는 훨씬 단순해졌습니다.
+기존 GPU 대비 <strong>약 10배의 속도 향상</strong>을 달성하면서도, 인프라는 훨씬 단순해졌습니다. 로컬 추론을 위한 하드웨어 선택 기준이 달라지는 상황에서, [DDR5 RDIMM과 RTX 3090의 GB 단가를 비교한 분석](/ko/blog/ko/ddr5-rdimm-vs-rtx3090-local-llm)도 참고가 됩니다.
 
 ## GPU 의존 탈피 트렌드
 
@@ -117,7 +117,7 @@ graph TD
     style Future fill:#FF6D00,color:#fff
 ```
 
-Taalas CEO Ljubisa Bajic은 ENIAC에서 트랜지스터로의 전환을 비유하며, AI도 <strong>"쉽게 만들고, 빠르고, 저렴한"</strong> 방향으로 진화해야 한다고 강조합니다.
+Taalas CEO Ljubisa Bajic은 ENIAC에서 트랜지스터로의 전환을 비유하며, AI도 <strong>"쉽게 만들고, 빠르고, 저렴한"</strong> 방향으로 진화해야 한다고 강조합니다. 하드웨어 레벨 최적화와 함께, 알고리즘 차원에서도 [확산 언어 모델(CDLM)이 AR 대비 14배 추론 속도를 달성하는 방향](/ko/blog/ko/consistency-diffusion-lm)으로 접근이 진행 중입니다.
 
 ## 추론 비용 구조의 격변
 

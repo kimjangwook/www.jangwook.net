@@ -98,7 +98,7 @@ They claim the process takes just <strong>two months</strong> from model receipt
 | Cooling Method | Liquid cooling required | Air cooling possible |
 | Infrastructure Complexity | High | Low |
 
-A <strong>~10x speed improvement</strong> over conventional GPUs, with dramatically simpler infrastructure.
+A <strong>~10x speed improvement</strong> over conventional GPUs, with dramatically simpler infrastructure. As the criteria for local inference hardware shifts, the [DDR5 RDIMM vs RTX 3090 cost-per-GB comparison](/en/blog/en/ddr5-rdimm-vs-rtx3090-local-llm) offers useful context on the changing landscape.
 
 ## The Trend Away from GPU Dependency
 
@@ -120,7 +120,7 @@ graph TD
     style Future fill:#FF6D00,color:#fff
 ```
 
-Taalas CEO Ljubisa Bajic draws an analogy to the transition from ENIAC to transistors, emphasizing that AI must evolve to become <strong>"easy to build, fast, and cheap."</strong>
+Taalas CEO Ljubisa Bajic draws an analogy to the transition from ENIAC to transistors, emphasizing that AI must evolve to become <strong>"easy to build, fast, and cheap."</strong> On the algorithm side, [Consistency Diffusion Language Models achieving 14x inference speed over AR](/en/blog/en/consistency-diffusion-lm) show the same paradigm shift playing out at the software layer.
 
 ## The Inference Cost Revolution
 

@@ -108,7 +108,7 @@ graph TD
 | phi4-mini | 인텐트 분류기 | ~2B | "스마트홈 명령인가, 질문인가?" 판별 |
 | gemma3:12b | 응답 생성 | 12B | 실제 답변 및 추론 |
 
-가벼운 모델로 먼저 의도를 분류하고, 큰 모델은 필요할 때만 호출하는 구조로 <strong>Mac mini M4 16GB</strong>에서도 충분히 실시간 응답이 가능합니다.
+가벼운 모델로 먼저 의도를 분류하고, 큰 모델은 필요할 때만 호출하는 구조로 <strong>Mac mini M4 16GB</strong>에서도 충분히 실시간 응답이 가능합니다. Ollama로 구축하는 오프라인 AI 파이프라인을 MCP 도구와 연동하는 방법은 [Gemma 4 + FastMCP를 활용한 프라이빗 MCP 서버 구축 가이드](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)에서 자세히 다룹니다.
 
 ### Home Assistant 연동
 
@@ -188,7 +188,7 @@ Meshtastic은 메시 프로토콜이므로, 노드를 추가하면 통신 범위
 
 <strong>$30 라디오 + 로컬 AI = 인터넷 불필요 스마트홈</strong>. 이 등식은 단순하지만, 에지 AI의 실용적 미래를 명확하게 보여줍니다.
 
-클라우드에 의존하지 않는 AI 시스템은 더 이상 이론이 아닙니다. 16GB 메모리의 Mac mini와 $30 라디오만 있으면, 오늘 당장 구현할 수 있는 현실입니다. 로컬 LLM의 성능이 계속 향상되는 지금, <strong>에지 AI × IoT</strong>의 조합은 가장 실용적인 AI 활용 영역 중 하나가 될 것입니다.
+클라우드에 의존하지 않는 AI 시스템은 더 이상 이론이 아닙니다. 16GB 메모리의 Mac mini와 $30 라디오만 있으면, 오늘 당장 구현할 수 있는 현실입니다. 로컬 LLM의 성능이 계속 향상되는 지금, <strong>에지 AI × IoT</strong>의 조합은 가장 실용적인 AI 활용 영역 중 하나가 될 것입니다. 로컬 추론 하드웨어 선택에서 [DDR5 RDIMM vs RTX 3090 비용 비교](/ko/blog/ko/ddr5-rdimm-vs-rtx3090-local-llm)도 참고하면 최적의 구성을 잡는 데 도움이 됩니다.
 
 ## 참고 자료
 

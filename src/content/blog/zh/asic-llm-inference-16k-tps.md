@@ -93,7 +93,7 @@ graph LR
 | 散热方式 | 需要液冷 | 可用风冷 |
 | 基础设施复杂度 | 高 | 低 |
 
-相比传统GPU实现了<strong>约10倍的速度提升</strong>，同时基础设施大幅简化。
+相比传统GPU实现了<strong>约10倍的速度提升</strong>，同时基础设施大幅简化。随着本地推理硬件选择标准的变化，[DDR5 RDIMM与RTX 3090的每GB成本对比分析](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm)也能提供有价值的参考。
 
 ## 摆脱GPU依赖的趋势
 
@@ -115,7 +115,7 @@ graph TD
     style Future fill:#FF6D00,color:#fff
 ```
 
-Taalas CEO Ljubisa Bajic以ENIAC到晶体管的转变为例，强调AI也必须向<strong>"易于制造、快速、低成本"</strong>的方向发展。
+Taalas CEO Ljubisa Bajic以ENIAC到晶体管的转变为例，强调AI也必须向<strong>"易于制造、快速、低成本"</strong>的方向发展。在算法层面，[扩散语言模型（CDLM）实现比AR快14倍推理速度的方法](/zh/blog/zh/consistency-diffusion-lm)也展示了同样的范式转变正在软件层面展开。
 
 ## 推理成本结构的剧变
 

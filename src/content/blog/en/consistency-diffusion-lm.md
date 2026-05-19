@@ -137,7 +137,7 @@ Hardware utilization analysis shows block-wise DLMs sit at the <strong>optimal p
 
 ### A Turning Point for the AR-Dominant Era
 
-The current LLM ecosystem is dominated by AR models — GPT, Claude, and Gemini all use this approach. CDLM demonstrates that diffusion models can be <strong>competitive in both speed and quality</strong>.
+The current LLM ecosystem is dominated by AR models — GPT, Claude, and Gemini all use this approach. CDLM demonstrates that diffusion models can be <strong>competitive in both speed and quality</strong>. Alongside algorithmic acceleration at the software layer, [ASIC-based inference achieving 16,000 tok/s on Llama 8B without any GPU](/en/blog/en/asic-llm-inference-16k-tps) shows the same revolution is unfolding at the hardware level.
 
 ### Scalability
 
@@ -149,7 +149,7 @@ Leveraging bidirectional context, diffusion models excel at tasks that AR models
 
 ## Conclusion
 
-CDLM represents a significant step toward practical diffusion language models. Block-wise causal structure enables KV caching, while consistency training drastically reduces step counts without sacrificing quality. Up to 14.5x latency improvement poses a meaningful challenge to the AR-centric paradigm.
+CDLM represents a significant step toward practical diffusion language models. Block-wise causal structure enables KV caching, while consistency training drastically reduces step counts without sacrificing quality. Up to 14.5x latency improvement poses a meaningful challenge to the AR-centric paradigm. For a hardware quantization perspective on slashing inference costs, see [how NVIDIA NVFP4 cuts LLM inference cost by 8x while preserving accuracy](/en/blog/en/nvidia-llm-inference-cost-reduction).
 
 ## References
 
