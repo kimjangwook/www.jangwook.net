@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-19T23:07:00+09:00",
+  "updated_at": "2026-05-20T15:39:56+09:00",
   "topics": [
+    {
+      "slug": "nextjs-16-claude-api-streaming-guide-2026",
+      "title_idea": "Next.js 16 + Claude API로 스트리밍 AI 채팅 앱 만들기 — App Router 완전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Next.js 16 Claude API",
+      "secondary_keywords": [
+        "Next.js 스트리밍",
+        "Claude API Route Handler",
+        "SSE 스트리밍",
+        "React 19 AI 채팅"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "샌드박스 실험 (create-next-app@latest → Next.js 16.2.6, @anthropic-ai/sdk 0.97.1)",
+      "added_at": "2026-05-20",
+      "status": "done",
+      "notes": "Next.js 16 App Router + Claude API 스트리밍 직접 구현 실험. 빌드 성공, 4개 언어 동시 발행."
+    },
     {
       "slug": "mcp-server-build-practical-guide-2026",
       "title_idea": "MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기",
@@ -771,8 +789,8 @@
       "priority": 1,
       "source": "Next.js 15 공식 문서, Vercel AI SDK v4, Anthropic Claude API",
       "added_at": "2026-04-26",
-      "status": "queued",
-      "notes": "vercel-ai-sdk-claude-streaming-agent 포스트의 심화편. Next.js 15 앱 라우터 + Server Actions + Claude API 스트리밍 종합 How-to. 월요일 유형."
+      "status": "done",
+      "notes": "vercel-ai-sdk-claude-streaming-agent 포스트의 심화편. Next.js 15 앱 라우터 + Server Actions + Claude API 스트리밍 종합 How-to. 월요일 유형. | 실제 설치 시 Next.js 16이 설치되어 slug를 nextjs-16-claude-api-streaming-guide-2026으로 변경하여 발행. 2026-05-20"
     },
     {
       "slug": "mcp-remote-http-deployment-pattern",
