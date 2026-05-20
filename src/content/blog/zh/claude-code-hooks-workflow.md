@@ -434,6 +434,8 @@ exit 0
 
 ## CI/CD 集成策略
 
+将 Hook 系统与 CI/CD 流水线连接，可以将自动化范围扩展到本地环境之外。[GitHub Agentic Workflows — AI 代理加入 CI/CD](/zh/blog/zh/github-agentic-workflows-cicd-ai) 介绍了 AI 代理直接参与 Pull Request 审查和合并决策的模式。
+
 ### 1. GitHub Actions 集成
 
 ```yaml
@@ -572,7 +574,7 @@ if __name__ == '__main__':
 
 ### 1. 渐进式 Hook 引入策略
 
-如果一次性应用所有 Hook，可能会减慢工作流程。采用渐进式引入策略：
+如果一次性应用所有 Hook，可能会减慢工作流程。除渐进式引入外，[Claude Code Best Practices](/zh/blog/zh/claude-code-best-practices) 介绍了如何在整个开发工作流中高效运用 Claude Code。
 
 ```mermaid
 graph TD
@@ -1127,6 +1129,8 @@ Claude Code Hook 系统是为基于 AI 的编码工作流程提供<strong>一致
 2. 实现编码规则自动验证
 3. 集成 CI/CD 流水线
 4. 在整个团队中推广和改进
+
+如果目标是超越 Hook，实现无需人工干预的自动 Bug 修复，[自愈 AI 系统](/zh/blog/zh/self-healing-ai-systems) 提供了基于代理的自动恢复架构参考。
 
 有效利用 Hook 系统可以提高代码质量、缩短审查时间并实现合规自动化。从小的 Hook 开始，逐步扩展。
 

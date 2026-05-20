@@ -65,7 +65,7 @@ Mark Cuban이 X(구 Twitter)에서 흥미로운 지적을 했습니다. <strong>
 Cuban의 주장을 정리하면 다음과 같습니다:
 
 1. <strong>특허는 공개 문서다</strong>: 특허청에 출원하면 기술 내용이 상세히 공개됨
-2. <strong>LLM은 공개 데이터를 학습한다</strong>: 특허 문서도 학습 데이터에 포함됨
+2. <strong>LLM은 공개 데이터를 학습한다</strong>: 특허 문서도 학습 데이터에 포함됨 — LLM이 텍스트에서 다양성을 어떻게 추출하는지에 대해서는 [Verbalized Sampling: LLM 다양성을 되찾는 훈련 불필요 프롬프팅 기법](/ko/blog/ko/verbalized-sampling-llm-diversity)을 참고하세요.
 3. <strong>결과적으로 AI가 특허 기술을 "알게" 된다</strong>: 독점권은 있지만, 기술 지식 자체는 AI에 흡수됨
 
 이는 단순한 특허 침해 문제를 넘어서, <strong>특허 제도의 근본적 가치 교환이 무너지는 상황</strong>을 의미합니다.
@@ -178,7 +178,7 @@ Mark Cuban의 지적은 단순한 우려가 아닌, <strong>특허 제도의 근
 2. <strong>영업비밀과 특허의 최적 조합 재설계</strong>
 3. <strong>AI 시대에 맞는 지재권 전략 로드맵 수립</strong>
 
-특허 전략의 패러다임이 변하고 있습니다. 빠르게 적응하는 기업만이 기술적 우위를 유지할 수 있을 것입니다.
+특허 전략의 패러다임이 변하고 있습니다. 빠르게 적응하는 기업만이 기술적 우위를 유지할 수 있을 것입니다. AI 에이전트의 역량 자체를 표준화하려는 Anthropic의 접근은 [Anthropic Agent Skills 표준: AI 에이전트 역량 확장](/ko/blog/ko/anthropic-agent-skills-standard)에서 다룹니다.
 
 ## 참고 자료
 

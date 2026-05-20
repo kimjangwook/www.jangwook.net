@@ -68,7 +68,7 @@ This article analyzes how patent strategy must evolve in the LLM era, starting f
 Cuban's argument can be summarized as follows:
 
 1. <strong>Patents are public documents</strong>: Filing with a patent office means detailed technical disclosure
-2. <strong>LLMs learn from public data</strong>: Patent documents are included in training datasets
+2. <strong>LLMs learn from public data</strong>: Patent documents are included in training datasets — for how LLMs extract diversity from text, see [Verbalized Sampling: A Training-Free Prompting Technique to Restore LLM Diversity](/en/blog/en/verbalized-sampling-llm-diversity).
 3. <strong>AI ends up "knowing" patented technology</strong>: The monopoly right exists, but the technical knowledge itself is absorbed by AI
 
 This goes beyond simple patent infringement — it means <strong>the fundamental value exchange of the patent system is breaking down</strong>.
@@ -181,7 +181,7 @@ Companies should immediately consider three things:
 2. <strong>Redesign the optimal mix of trade secrets and patents</strong>
 3. <strong>Develop an IP strategy roadmap suited for the AI era</strong>
 
-The paradigm of patent strategy is shifting. Only companies that adapt quickly will maintain their technological edge.
+The paradigm of patent strategy is shifting. Only companies that adapt quickly will maintain their technological edge. Anthropic's effort to standardize AI agent capabilities is covered in [Anthropic Agent Skills Standard: Expanding AI Agent Capabilities](/en/blog/en/anthropic-agent-skills-standard).
 
 ## References
 

@@ -526,6 +526,8 @@ test('visual regression with interactions', async ({ page }) => {
 
 ## GitHub Actions CI/CD Integration
 
+Parallel execution is key when validating large numbers of pages in CI. [Automating Large-Scale Page Testing in Parallel with Claude Code](/en/blog/en/claude-code-parallel-testing) covers parallel test patterns for handling hundreds of pages simultaneously.
+
 Complete workflow for automated testing:
 
 ```yaml
@@ -1030,7 +1032,7 @@ Playwright combined with AI-powered tooling represents the future of E2E testing
 
 You can build test suites that are fast, reliable, and actually maintainable in production.
 
-The key is starting simple: begin with critical user flows, establish patterns through page objects, and gradually expand coverage. Let AI assist with boilerplate generation while you focus on test logic and business scenarios.
+The key is starting simple: begin with critical user flows, establish patterns through page objects, and gradually expand coverage. Let AI assist with boilerplate generation while you focus on test logic and business scenarios. For a practical walkthrough of combining Playwright tests with Claude Code agents, see [Automating Page E2E Tests with Claude Code](/en/blog/en/e2e-page-test-automation-claude-code).
 
 Modern E2E testing isn't about achieving 100% coverage—it's about testing the right things in the right way. Playwright gives you the tools; AI gives you the speed; best practices give you the confidence.
 

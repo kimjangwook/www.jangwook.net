@@ -436,6 +436,8 @@ exit 0
 
 ## CI/CD Integration Strategies
 
+Connecting hooks to your CI/CD pipeline extends automation beyond the local environment. [GitHub Agentic Workflows — When AI Agents Join CI/CD](/en/blog/en/github-agentic-workflows-cicd-ai) covers patterns where AI agents participate directly in pull request review and merge decisions.
+
 ### 1. GitHub Actions Integration
 
 ```yaml
@@ -574,7 +576,7 @@ if __name__ == '__main__':
 
 ### 1. Gradual Hook Adoption Strategy
 
-Applying all hooks at once can slow down your workflow. A gradual adoption strategy:
+Applying all hooks at once can slow down your workflow. Beyond gradual adoption, [Claude Code Best Practices](/en/blog/en/claude-code-best-practices) covers how to run Claude Code efficiently across your entire development workflow.
 
 ```mermaid
 graph TD
@@ -1129,6 +1131,8 @@ Claude Code Hook system is a powerful tool that ensures <strong>consistency, qua
 2. Implement automated coding rule validation
 3. Integrate with CI/CD pipeline
 4. Expand to the entire team and improve
+
+If your goal is to go beyond hooks toward a system that automatically fixes bugs without human intervention, [Self-Healing AI Systems](/en/blog/en/self-healing-ai-systems) covers agent-based automatic recovery architecture.
 
 With effective use of the hook system, code quality improves, review time decreases, and compliance is automated. Start with small hooks and gradually expand.
 

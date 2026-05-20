@@ -1,6 +1,6 @@
 ---
-title: 'Next.js 16 + Claude APIでストリーミングAIチャットアプリを作る — App Router完全ガイド'
-description: 'Next.js 16 App RouterでClaude APIストリーミングを接続する実践ガイド。Route Handler、SSE、React 19クライアント統合まで、実際にビルドしたコードとログで解説する。'
+title: 'Next.js 16 + Claude APIストリーミング — App Routerガイド'
+description: 'Next.js 16 App RouterでClaude APIストリーミングを完成させる実践ガイド。Route Handler設計、SSE応答処理、React 19クライアントフック、エラー復旧パターンまで、実際にビルドしたコードと動作ログを収録。'
 pubDate: '2026-05-20'
 heroImage: '../../../assets/blog/nextjs-16-claude-api-streaming-guide-2026-hero.png'
 tags: ["Next.js", "Claude API", "TypeScript", "ストリーミング"]

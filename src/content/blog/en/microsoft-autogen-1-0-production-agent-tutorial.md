@@ -1,6 +1,6 @@
 ---
-title: 'Microsoft AutoGen 0.7.x Multi-Agent Tutorial — From AssistantAgent to GraphFlow From Scratch'
-description: 'A hands-on guide to building multi-agent systems with AutoGen 0.7.x new API from scratch. Run RoundRobinGroupChat, SelectorGroupChat, GraphFlow, and FunctionTool directly in code while comparing with the 0.2.x approach.'
+title: 'AutoGen 0.7.x: Building Multi-Agent Systems from Scratch'
+description: 'Hands-on AutoGen 0.7.x guide. Build RoundRobinGroupChat, SelectorGroupChat, GraphFlow, FunctionTool step-by-step with real code, comparing with 0.2.x.'
 pubDate: '2026-05-19'
 heroImage: '../../../assets/blog/microsoft-autogen-1-0-production-agent-tutorial-hero.png'
 tags:

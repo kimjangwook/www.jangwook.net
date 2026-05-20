@@ -1,6 +1,6 @@
 ---
-title: 'Microsoft AutoGen 0.7.x 멀티에이전트 튜토리얼 — AssistantAgent부터 GraphFlow까지 처음부터 만들기'
-description: 'AutoGen 0.7.x의 새로운 API로 멀티에이전트 시스템을 처음부터 구현하는 실전 가이드. RoundRobinGroupChat, SelectorGroupChat, GraphFlow, FunctionTool을 직접 코드로 실행해보며 0.2.x와의 차이를 비교한다.'
+title: 'AutoGen 0.7.x 멀티에이전트 실전 — AssistantAgent·GraphFlow 처음부터 구현'
+description: 'AutoGen 0.7.x의 새로운 API로 멀티에이전트 시스템을 처음부터 구현하는 실전 가이드. RoundRobinGroupChat, SelectorGroupChat, GraphFlow, FunctionTool을 직접 코드로 실행하며 0.2.x와 차이를 단계별로 비교한다.'
 pubDate: '2026-05-19'
 heroImage: '../../../assets/blog/microsoft-autogen-1-0-production-agent-tutorial-hero.png'
 tags:

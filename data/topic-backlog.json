@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-20T15:39:56+09:00",
+  "updated_at": "2026-05-20T23:07:00+09:00",
   "topics": [
     {
       "slug": "nextjs-16-claude-api-streaming-guide-2026",
@@ -2217,6 +2217,57 @@
       "added_at": "2026-05-19",
       "status": "queued",
       "notes": "AI SDK의 experimental_createMCPClient, useChat hook MCP 연동, Edge Runtime 호환성 주의. vercel-ai-sdk-claude-streaming-agent-2026 포스트와 내부링크 연결. How-to + 실전 예제 중심."
+    },
+    {
+      "slug": "claude-opus-4-7-release-analysis-2026",
+      "title_idea": "Claude Opus 4.7 출시 분석 — 소프트웨어 엔지니어링 특화 모델의 실질적 차이",
+      "content_type": "news",
+      "target_keyword": "Claude Opus 4.7",
+      "secondary_keywords": [
+        "Anthropic 신모델",
+        "Claude 4.7 성능",
+        "AI 코딩 어시스턴트 2026"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Anthropic 공식 발표 (anthropic.com/news/claude-opus-4-7)",
+      "added_at": "2026-05-20",
+      "status": "queued",
+      "notes": "Opus 4.6 대비 고난이도 소프트웨어 엔지니어링 태스크에서 뚜렷한 향상. 개발자 독자에게 직접적 영향. Google I/O 직전 발표 타이밍도 분석 포인트."
+    },
+    {
+      "slug": "anthropic-900b-valuation-analysis-2026",
+      "title_idea": "Anthropic 9,000억 달러 투자 유치 — OpenAI를 넘어선 AI 기업 가치의 의미",
+      "content_type": "news",
+      "target_keyword": "Anthropic 기업가치 9000억",
+      "secondary_keywords": [
+        "AI 스타트업 밸류에이션",
+        "Anthropic 투자",
+        "OpenAI 경쟁"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "buildfastwithai.com, imfounder.com 리포트 (2026-05-18)",
+      "added_at": "2026-05-20",
+      "status": "queued",
+      "notes": "5월말 마감 예정. OpenAI $852B 초과. Claude for Small Business(15개 에이전틱 워크플로우) 공개 직후 타이밍. 기업 AI 도입 가속 신호로 분석."
+    },
+    {
+      "slug": "google-io-2026-antigravity-agent-platform",
+      "title_idea": "Google I/O 2026: Antigravity 2.0 에이전트 플랫폼 — Claude Code·Cursor와의 차이점",
+      "content_type": "news",
+      "target_keyword": "Google Antigravity 에이전트 플랫폼",
+      "secondary_keywords": [
+        "Google I/O 2026",
+        "AI 개발 플랫폼 비교",
+        "Gemini 3.5 에이전트"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Google Developers Blog (developers.googleblog.com/all-the-news-from-the-google-io-2026)",
+      "added_at": "2026-05-20",
+      "status": "queued",
+      "notes": "Google I/O 2026 Antigravity 2.0: 서브에이전트 오케스트레이션, 터미널 샌드박싱, 크리덴셜 마스킹. Claude Code/Cursor와 직접 경쟁 포지션. 개발자 선택지 분석."
     }
   ]
 }

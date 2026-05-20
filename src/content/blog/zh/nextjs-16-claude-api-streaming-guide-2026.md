@@ -1,6 +1,6 @@
 ---
 title: '用Next.js 16 + Claude API构建流式AI聊天应用 — App Router完整指南'
-description: '在Next.js 16 App Router中连接Claude API流式传输的实战指南。通过实际构建的代码和日志，详细介绍Route Handler、SSE和React 19客户端集成。'
+description: '在Next.js 16 App Router中实现Claude API流式传输的实战指南。涵盖Route Handler设计、SSE响应处理、React 19客户端Hook、背压与错误恢复模式，附实际构建代码和运行日志。'
 pubDate: '2026-05-20'
 heroImage: '../../../assets/blog/nextjs-16-claude-api-streaming-guide-2026-hero.png'
 tags: ["Next.js", "Claude API", "TypeScript", "流式传输"]

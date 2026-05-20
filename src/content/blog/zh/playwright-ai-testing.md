@@ -689,6 +689,8 @@ test("访问仪表板", async ({ page }) => {
 
 ## GitHub Actions CI/CD集成
 
+在 CI 环境中高效验证大量页面，并行执行是关键。[使用 Claude Code 并行自动化大规模页面测试](/zh/blog/zh/claude-code-parallel-testing)详细介绍了同时处理数百个页面的并行测试模式。
+
 ### 1. 基本工作流
 
 ```yaml
@@ -1238,6 +1240,8 @@ npx playwright codegen https://your-app.com
 ```
 
 ### 下一步
+
+将 Playwright 测试与 Claude Code 代理结合的实战案例，请参考 [使用 Claude Code 自动化页面 E2E 测试](/zh/blog/zh/e2e-page-test-automation-claude-code)。
 
 - <strong>高级模式</strong>：自定义Fixtures、全局设置、测试分片
 - <strong>性能测试</strong>：集成Lighthouse CI

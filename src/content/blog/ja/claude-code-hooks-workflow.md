@@ -434,6 +434,8 @@ exit 0
 
 ## CI/CD 統合戦略
 
+Hook システムを CI/CD パイプラインと連携させることで、自動化の範囲をローカル環境の外まで広げられます。[GitHub Agentic Workflows — CI/CD に AI エージェントが参加する](/ja/blog/ja/github-agentic-workflows-cicd-ai)では、AI エージェントがプルリクエストのレビューとマージ判断に直接参加するパターンを扱っています。
+
 ### 1. GitHub Actions 統合
 
 ```yaml
@@ -572,7 +574,7 @@ if __name__ == '__main__':
 
 ### 1. 段階的 Hook 導入戦略
 
-Hook を一度にすべて適用するとワークフローが遅くなる可能性があります。段階的導入戦略:
+Hook を一度にすべて適用するとワークフローが遅くなる可能性があります。段階的導入のほかに、[Claude Code Best Practices](/ja/blog/ja/claude-code-best-practices) では、開発ワークフロー全体で Claude Code を効率的に運用する方法を解説しています。
 
 ```mermaid
 graph TD
@@ -1127,6 +1129,8 @@ Claude Code Hook システムは、AI ベースのコーディングワークフ
 2. コーディング規則の自動検証実装
 3. CI/CD パイプライン統合
 4. チーム全体への展開と改善
+
+Hook の先に進んで、人間の介入なしにバグを自動修正するシステムを目指すなら、[自己修復 AI システム](/ja/blog/ja/self-healing-ai-systems) でエージェントベースの自動復旧アーキテクチャを参照してください。
 
 Hook システムを効果的に活用すれば、コード品質は向上し、レビュー時間は短縮され、規制遵守は自動化されます。小さな Hook から始めて、段階的に拡張していきましょう。
 

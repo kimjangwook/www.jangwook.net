@@ -1,5 +1,5 @@
 ---
-title: 'Microsoft AutoGen 0.7.x マルチエージェントチュートリアル — AssistantAgentからGraphFlowまで一から作る'
+title: 'AutoGen 0.7.x マルチエージェント実践 — AssistantAgent·GraphFlow一から構築'
 description: 'AutoGen 0.7.xの新APIでマルチエージェントシステムを一から実装する実践ガイド。RoundRobinGroupChat、SelectorGroupChat、GraphFlow、FunctionToolを実際にコードで動かしながら0.2.xとの違いを比較する。'
 pubDate: '2026-05-19'
 heroImage: '../../../assets/blog/microsoft-autogen-1-0-production-agent-tutorial-hero.png'

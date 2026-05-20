@@ -1,6 +1,6 @@
 ---
-title: 'Microsoft AutoGen 0.7.x 多智能体教程 — 从AssistantAgent到GraphFlow从零开始构建'
-description: '基于AutoGen 0.7.x新API从零实现多智能体系统的实战指南。直接运行RoundRobinGroupChat、SelectorGroupChat、GraphFlow和FunctionTool，对比0.2.x的差异。'
+title: 'AutoGen 0.7.x多智能体实战 — AssistantAgent到GraphFlow从零构建'
+description: '基于AutoGen 0.7.x新API从零实现多智能体系统的实战指南。逐步运行RoundRobinGroupChat、SelectorGroupChat、GraphFlow、FunctionTool，通过真实代码对比0.2.x差异。'
 pubDate: '2026-05-19'
 heroImage: '../../../assets/blog/microsoft-autogen-1-0-production-agent-tutorial-hero.png'
 tags:

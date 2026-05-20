@@ -689,6 +689,8 @@ test("대시보드 접근", async ({ page }) => {
 
 ## GitHub Actions CI/CD 통합
 
+CI 환경에서 대규모 페이지를 효율적으로 검증하려면 병렬 실행이 핵심입니다. [Claude Code로 대규모 페이지 테스트 병렬 자동화하기](/ko/blog/ko/claude-code-parallel-testing)에서는 수백 개 페이지를 동시에 처리하는 병렬 테스트 패턴을 자세히 다룹니다.
+
 ### 1. 기본 워크플로우
 
 ```yaml
@@ -1238,6 +1240,8 @@ npx playwright codegen https://your-app.com
 ```
 
 ### 다음 단계
+
+Playwright 테스트를 Claude Code 에이전트와 결합하는 실전 사례는 [Claude Code로 페이지 E2E 테스트 자동화하기](/ko/blog/ko/e2e-page-test-automation-claude-code)에서 확인할 수 있습니다.
 
 - <strong>고급 패턴</strong>: Custom Fixtures, Global Setup, Test Sharding
 - <strong>성능 테스트</strong>: Lighthouse CI 통합
