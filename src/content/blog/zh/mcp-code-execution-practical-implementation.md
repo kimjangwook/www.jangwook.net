@@ -1,6 +1,6 @@
 ---
 title: MCP代码执行实践：Claude Code项目结构优化
-description: 了解如何将Anthropic的MCP Code Execution模式应用于实际项目，包括目录结构改进和安全配置示例
+description: Anthropic MCP Code Execution模式实战应用指南，演示如何将其集成到Claude Code项目中。详细讲解已验证可降低98.7% token用量、提升60%执行速度的架构，并附.claude/目录结构改进前后对比案例。
 pubDate: '2025-11-19'
 heroImage: ../../../assets/blog/mcp-code-execution-practical-implementation-hero.jpg
 tags:

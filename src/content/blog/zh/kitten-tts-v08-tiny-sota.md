@@ -53,7 +53,7 @@ draft: true
 
 语音AI领域迎来了"小即是王道"的时代。<strong>Kitten TTS V0.8</strong>是一款仅凭<strong>14M参数、不到25MB</strong>的体积就实现了媲美云端TTS品质的超小型文本转语音模型。
 
-在KaniTTS2、Qwen3-TTS.cpp、FreeFlow等本地语音AI模型接连涌现的背景下，Kitten TTS以其极致的轻量化开辟了新的天地。本文将深入分析Kitten TTS V0.8的技术特征、三个模型变体的对比，以及边缘设备部署的可能性。
+在[KaniTTS2](/zh/blog/zh/kanitts2-voice-cloning)、Qwen3-TTS.cpp、FreeFlow等本地语音AI模型接连涌现的背景下，Kitten TTS以其极致的轻量化开辟了新的天地。本文将深入分析Kitten TTS V0.8的技术特征、三个模型变体的对比，以及边缘设备部署的可能性。
 
 ## Kitten TTS V0.8简介
 
@@ -154,7 +154,7 @@ graph TD
 
 <strong>3. 语音代理</strong>
 
-基于本地推理的低延迟TTS是对话式语音代理的理想选择。与LLM结合可构建完全本地化的语音对话系统。
+基于本地推理的低延迟TTS是对话式语音代理的理想选择。与LLM结合可构建完全本地化的[语音对话系统](/zh/blog/zh/gemini-31-flash-live-realtime-voice-agent)。
 
 ## 快速入门
 
@@ -184,7 +184,7 @@ Kitten TTS V0.8目前仅支持英语，但<strong>多语言支持</strong>已列
 
 Kitten TTS V0.8体现了<strong>"小模型也能高品质"</strong>的新范式。以令人惊叹的14M参数、不到25MB的体积，实现了媲美云端TTS的品质。
 
-在KaniTTS2、Qwen3-TTS.cpp、FreeFlow引领的语音AI本地化浪潮中，Kitten TTS作为<strong>边缘设备部署的终极方案</strong>脱颖而出。无需GPU、无需API、完全本地运行的超小型TTS模型，展示了语音AI民主化的下一步。
+在KaniTTS2、Qwen3-TTS.cpp、FreeFlow引领的语音AI本地化浪潮中，Kitten TTS作为<strong>边缘设备部署的终极方案</strong>脱颖而出。无需GPU、无需API、完全本地运行的超小型TTS模型，展示了语音AI民主化的下一步。随着[Mistral Voxtral](/zh/blog/zh/mistral-voxtral-tts-open-weight-speech)等企业开放权重TTS模型不断涌现，Kitten TTS在14M·25MB这一领域的独特定位依然无可替代。
 
 ## 参考资料
 

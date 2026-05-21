@@ -90,7 +90,7 @@ DDR5 RDIMM 가격이 급격히 하락하면서 상황이 변했습니다.
 
 ## 그런데 왜 GPU를 쓰는가: 속도의 문제
 
-GB당 비용만 보면 RDIMM이 압도적으로 유리하지만, 핵심은 <strong>추론 속도</strong>입니다.
+GB당 비용만 보면 RDIMM이 압도적으로 유리하지만, 핵심은 [<strong>추론 속도</strong>](/ko/blog/ko/asic-llm-inference-16k-tps)입니다.
 
 ### 메모리 대역폭 비교
 
@@ -195,7 +195,7 @@ graph TD
     C --> E["비동기 작업<br/>70B~405B 모델"]
 ```
 
-- 소형 모델 (7B~13B)은 GPU로 고속 추론
+- [소형 모델 (7B~13B)](/ko/blog/ko/devstral-qwen3-coder-small-models)은 GPU로 고속 추론
 - 대형 모델 (70B+)은 CPU로 비용 효율적 실행
 - llama.cpp의 `--n-gpu-layers` 옵션으로 일부 레이어만 GPU에 오프로드 가능
 
@@ -205,7 +205,7 @@ DDR5 RDIMM 가격이 RTX 3090 VRAM의 GB당 비용을 하회한 것은 단순한
 
 1. <strong>대형 모델 접근성 향상</strong>: 405B급 모델도 $2,500 시스템으로 실행 가능
 2. <strong>비용 최적화 옵션 다양화</strong>: 용도에 따라 GPU/CPU/하이브리드 선택
-3. <strong>진입 장벽 하락</strong>: 로컬 LLM 실험의 비용이 크게 감소
+3. <strong>진입 장벽 하락</strong>: [로컬 LLM 실험](/ko/blog/ko/prismml-bonsai-1bit-llm-edge-ai)의 비용이 크게 감소
 
 속도가 최우선이라면 여전히 GPU가 정답입니다. 하지만 <strong>"가장 큰 모델을 가장 저렴하게"</strong>가 목표라면, DDR5 RDIMM 기반 CPU 추론이 2026년의 새로운 최적해가 되고 있습니다.
 

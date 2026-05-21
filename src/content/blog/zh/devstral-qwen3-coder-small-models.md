@@ -153,7 +153,7 @@ export OPENAI_MODEL="qwen3-coder-plus"
 qwen
 ```
 
-同时支持与Claude Code集成，可以自然融入现有开发工作流。
+同时支持与[Claude Code](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)集成，可以自然融入现有开发工作流。
 
 ## 两款模型对比分析
 
@@ -168,7 +168,7 @@ qwen
 | <strong>上下文</strong> | 标准 | 256K（原生） |
 | <strong>最小VRAM</strong> | ~16GB（Q4） | ~4GB（活跃3B） |
 | <strong>运行环境</strong> | RTX 4090、Mac 32GB | Raspberry Pi级可用 |
-| <strong>智能体框架</strong> | OpenHands、SWE-Agent | Qwen Code、Claude Code |
+| <strong>智能体框架</strong> | OpenHands、SWE-Agent | Qwen Code、[Claude Code](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026) |
 
 ### 架构差异
 
@@ -209,7 +209,7 @@ graph TD
 这两款模型的出现具有超越新产品发布本身的意义。
 
 1. <strong>隐私保护</strong>：无需将代码发送到外部服务器即可获得AI辅助
-2. <strong>成本节约</strong>：在自有硬件上无限使用，无需API费用
+2. <strong>成本节约</strong>：在自有硬件上无限使用，无需[API费用](/zh/blog/zh/claude-code-local-model-inefficiency)
 3. <strong>离线工作</strong>：即使没有网络连接也能使用AI编码助手
 4. <strong>定制化</strong>：在自有代码库上微调，构建定制模型
 

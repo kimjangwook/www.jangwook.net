@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-21T15:44:00+09:00",
+  "updated_at": "2026-05-21T23:07:00+09:00",
   "topics": [
     {
       "slug": "google-io-2026-antigravity-2-agent-platform-analysis",
@@ -2286,6 +2286,40 @@
       "added_at": "2026-05-20",
       "status": "queued",
       "notes": "Google I/O 2026 Antigravity 2.0: 서브에이전트 오케스트레이션, 터미널 샌드박싱, 크리덴셜 마스킹. Claude Code/Cursor와 직접 경쟁 포지션. 개발자 선택지 분석."
+    },
+    {
+      "slug": "gemini-35-flash-vs-gpt-41-api-cost-analysis-may-2026",
+      "title_idea": "Gemini 3.5 Flash vs GPT-4.1 API 비용 심층 분석 — Google I/O 2026 이후 달라진 가격 구조",
+      "content_type": "news",
+      "target_keyword": "Gemini 3.5 Flash API 가격",
+      "secondary_keywords": [
+        "GPT-4.1 비교",
+        "Claude Sonnet 4.6 가격",
+        "LLM API 비용 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Google I/O 2026 발표 + 실제 API 가격표",
+      "added_at": "2026-05-21",
+      "status": "queued",
+      "notes": "Antigravity 2.0 포스트 이후 자연스러운 연계 주제. Gemini 3.5 Flash $1.50/MTok이 경쟁사 대비 어디에 위치하는지 숫자로 비교. Google I/O 직후라 검색 수요 높음"
+    },
+    {
+      "slug": "mcp-server-prompt-injection-security-2026",
+      "title_idea": "MCP 서버 프롬프트 인젝션 취약점 분석 — Claude Code·Cursor 사용자가 지금 알아야 할 보안 위협",
+      "content_type": "news",
+      "target_keyword": "MCP 서버 보안",
+      "secondary_keywords": [
+        "프롬프트 인젝션 MCP",
+        "Claude Code 보안",
+        "AI 에이전트 보안"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "OWASP AI Security + Anthropic 보안 가이드라인",
+      "added_at": "2026-05-21",
+      "status": "queued",
+      "notes": "MCP 도입이 급증하면서 보안 위협도 증가. 실제 공격 시나리오와 방어 방법을 다루면 개발자 독자의 실용적 수요 높음. fastmcp-python-mcp-server-build-guide-2026과 내부링크 연계 가능"
     }
   ]
 }

@@ -1,9 +1,6 @@
 ---
 title: 'MCP Code Execution in Practice: Improving Claude Code Project Structure'
-description: >-
-  Learn how to apply Anthropic's MCP Code Execution patterns to real projects
-  with practical examples of directory structure improvements and security
-  configurations.
+description: 'Apply MCP Code Execution patterns to reduce Claude Code token usage by 98.7% and boost speed by 60%. Step-by-step guide with .claude/ directory structure examples.'
 pubDate: '2025-11-19'
 heroImage: ../../../assets/blog/mcp-code-execution-practical-implementation-hero.jpg
 tags:

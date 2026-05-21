@@ -58,7 +58,7 @@ draft: true
 
 The era of "small is powerful" has arrived in voice AI. <strong>Kitten TTS V0.8</strong> is an ultra-compact text-to-speech model that achieves cloud-grade TTS quality with just <strong>14M parameters and under 25MB</strong> in size.
 
-As local voice AI models like KaniTTS2, Qwen3-TTS.cpp, and FreeFlow continue to emerge, Kitten TTS breaks new ground with its extreme lightweight design. This article provides a thorough analysis of Kitten TTS V0.8's technical features, a comparison of its three model variants, and an assessment of edge device deployment potential.
+As local voice AI models like [KaniTTS2](/en/blog/en/kanitts2-voice-cloning), Qwen3-TTS.cpp, and FreeFlow continue to emerge, Kitten TTS breaks new ground with its extreme lightweight design. This article provides a thorough analysis of Kitten TTS V0.8's technical features, a comparison of its three model variants, and an assessment of edge device deployment potential.
 
 ## What Is Kitten TTS V0.8?
 
@@ -159,7 +159,7 @@ Small enough to bundle with an app, enabling TTS functionality even offline. Thi
 
 <strong>3. Voice Agents</strong>
 
-Low-latency TTS via local inference is ideal for conversational voice agents. Combined with LLMs, fully local voice dialogue systems become achievable.
+Low-latency TTS via local inference is ideal for conversational voice agents. Combined with LLMs, fully local [voice dialogue systems](/en/blog/en/gemini-31-flash-live-realtime-voice-agent) become achievable.
 
 ## Quick Start
 
@@ -189,7 +189,7 @@ With Apache 2.0 licensing, commercial use is unrestricted. From startups to ente
 
 Kitten TTS V0.8 embodies the new paradigm of <strong>"small models, big quality."</strong> With an astonishing 14M parameters and under 25MB, it delivers quality comparable to cloud TTS services.
 
-In the wave of local voice AI models including KaniTTS2, Qwen3-TTS.cpp, and FreeFlow, Kitten TTS stands out as the <strong>definitive solution for edge device deployment</strong>. A GPU-free, API-free, fully local ultra-compact TTS model — it represents the next step in voice AI democratization.
+In the wave of local voice AI models including KaniTTS2, Qwen3-TTS.cpp, and FreeFlow, Kitten TTS stands out as the <strong>definitive solution for edge device deployment</strong>. A GPU-free, API-free, fully local ultra-compact TTS model — it represents the next step in voice AI democratization. As companies like [Mistral Voxtral](/en/blog/en/mistral-voxtral-tts-open-weight-speech) release open-weight TTS models, Kitten TTS's 14M–25MB niche remains distinctly its own.
 
 ## References
 

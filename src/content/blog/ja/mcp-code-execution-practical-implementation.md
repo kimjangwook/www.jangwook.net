@@ -1,6 +1,6 @@
 ---
 title: MCP Code Execution実践適用：プロジェクト構造改善
-description: AnthropicのMCP Code Executionパターンを実際のプロジェクトに適用し、ディレクトリ構造を改善した事例を紹介します
+description: 'AnthropicのMCP Code ExecutionパターンをClaude Codeプロジェクトに適用するステップ別実践ガイド。トークン使用量98.7%削減・実行速度60%改善が実証されたアーキテクチャを.claude/ディレクトリ構造の改善事例とともに解説します。'
 pubDate: '2025-11-19'
 heroImage: ../../../assets/blog/mcp-code-execution-practical-implementation-hero.jpg
 tags:

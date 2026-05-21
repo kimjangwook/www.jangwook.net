@@ -154,7 +154,7 @@ export OPENAI_MODEL="qwen3-coder-plus"
 qwen
 ```
 
-It also supports integration with Claude Code, allowing seamless integration into existing development workflows.
+It also supports integration with [Claude Code](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent), allowing seamless integration into existing development workflows.
 
 ## Comparative Analysis
 
@@ -169,7 +169,7 @@ It also supports integration with Claude Code, allowing seamless integration int
 | <strong>Context</strong> | Standard | 256K (native) |
 | <strong>Min VRAM</strong> | ~16GB (Q4) | ~4GB (3B active) |
 | <strong>Runtime</strong> | RTX 4090, Mac 32GB | Raspberry Pi capable |
-| <strong>Agent Frameworks</strong> | OpenHands, SWE-Agent | Qwen Code, Claude Code |
+| <strong>Agent Frameworks</strong> | OpenHands, SWE-Agent | Qwen Code, [Claude Code](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026) |
 
 ### Architecture Differences
 
@@ -210,7 +210,7 @@ graph TD
 The emergence of these two models carries significance beyond a simple product launch.
 
 1. <strong>Privacy</strong>: Get AI assistance locally without sending code to external servers
-2. <strong>Cost Savings</strong>: Unlimited use on your own hardware without API costs
+2. <strong>Cost Savings</strong>: Unlimited use on your own hardware without [API costs](/en/blog/en/claude-code-local-model-inefficiency)
 3. <strong>Offline Work</strong>: Use AI coding assistants without an internet connection
 4. <strong>Customization</strong>: Fine-tune on your own codebase to build custom models
 

@@ -2,9 +2,7 @@
 title: >-
   Auto-Coding with Jules: The Complete Guide to Google's Autonomous AI Coding
   Agent
-description: >-
-  Learn how to automate GitHub issue resolution and PR creation with Jules,
-  Google's groundbreaking AI coding agent powered by Gemini 2.5 Pro
+description: 'Google Jules autonomously resolves GitHub issues and creates PRs. Covers Jules vs Copilot/Cursor differences, async agent design, and practical setup workflows.'
 pubDate: '2025-10-27'
 heroImage: ../../../assets/blog/jules-autocoding-hero.jpg
 tags:

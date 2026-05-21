@@ -1,6 +1,6 @@
 ---
 title: Julesを利用したオートコーディング：Googleの自律型AIコーディングエージェント完全ガイド
-description: GoogleのAIコーディングエージェントJulesでGitHub Issueを自動解決しPRを生成する方法を詳しく解説します
+description: 'GoogleのAIコーディングエージェントJulesを使ってGitHub Issueをバックグラウンドで自動解決しPRを生成する方法をステップ別に解説。Copilot・Cursorとの具体的な違い、非同期エージェントの仕組み、実践的なワークフローを網羅します。'
 pubDate: '2025-10-27'
 heroImage: ../../../assets/blog/jules-autocoding-hero.jpg
 tags:

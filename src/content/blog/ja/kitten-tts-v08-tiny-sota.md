@@ -55,7 +55,7 @@ draft: true
 
 音声AI分野で「小さいは正義」の時代が到来しました。<strong>Kitten TTS V0.8</strong>は、わずか<strong>14Mパラメータ・25MB未満</strong>というサイズでありながら、クラウドTTSに匹敵する品質を実現した超小型テキスト音声変換モデルです。
 
-KaniTTS2、Qwen3-TTS.cpp、FreeFlowといったローカル音声AIモデルが次々と登場する中、Kitten TTSはその極限的な軽量性で新たな地平を切り開きます。本記事では、Kitten TTS V0.8の技術的特徴、3つのモデルバリアント比較、そしてエッジデバイス展開の可能性について徹底分析します。
+[KaniTTS2](/ja/blog/ja/kanitts2-voice-cloning)、Qwen3-TTS.cpp、FreeFlowといったローカル音声AIモデルが次々と登場する中、Kitten TTSはその極限的な軽量性で新たな地平を切り開きます。本記事では、Kitten TTS V0.8の技術的特徴、3つのモデルバリアント比較、そしてエッジデバイス展開の可能性について徹底分析します。
 
 ## Kitten TTS V0.8とは
 
@@ -156,7 +156,7 @@ graph TD
 
 <strong>3. ボイスエージェント</strong>
 
-ローカル推論による低レイテンシTTSは、対話型音声エージェントにとって理想的です。LLMと組み合わせることで、完全ローカルの音声対話システムが構築可能です。
+ローカル推論による低レイテンシTTSは、対話型音声エージェントにとって理想的です。LLMと組み合わせることで、完全ローカルの[音声対話システム](/ja/blog/ja/gemini-31-flash-live-realtime-voice-agent)が構築可能です。
 
 ## クイックスタート
 
@@ -186,7 +186,7 @@ Kitten TTS V0.8は英語のみの対応ですが、今後のリリースで<stro
 
 Kitten TTS V0.8は、<strong>「小さいモデルでも高品質」</strong>という新たなパラダイムを体現するモデルです。14Mパラメータ・25MB未満という驚異的なコンパクトさでありながら、クラウドTTSに匹敵する品質を実現しています。
 
-KaniTTS2、Qwen3-TTS.cpp、FreeFlowに続く音声AIローカル化トレンドの中で、Kitten TTSは<strong>エッジデバイス展開の決定版</strong>として際立った存在です。GPU不要、API不要、完全ローカルで動作する超小型TTSモデルは、音声AI民主化の次の一歩を示しています。
+KaniTTS2、Qwen3-TTS.cpp、FreeFlowに続く音声AIローカル化トレンドの中で、Kitten TTSは<strong>エッジデバイス展開の決定版</strong>として際立った存在です。GPU不要、API不要、完全ローカルで動作する超小型TTSモデルは、音声AI民主化の次の一歩を示しています。[Mistral Voxtral](/ja/blog/ja/mistral-voxtral-tts-open-weight-speech)のような企業がオープンウェイトで提供するTTSも増える中、14M・25MBというKitten TTSの領域は独自のポジションにあります。
 
 ## 参考資料
 

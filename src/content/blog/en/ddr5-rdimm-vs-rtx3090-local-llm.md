@@ -91,7 +91,7 @@ DDR5 RDIMM prices have plummeted, changing the equation entirely.
 
 ## Why GPUs Still Matter: The Speed Question
 
-While RDIMM wins overwhelmingly on cost per GB, the key factor is <strong>inference speed</strong>.
+While RDIMM wins overwhelmingly on cost per GB, the key factor is [<strong>inference speed</strong>](/en/blog/en/asic-llm-inference-16k-tps).
 
 ### Memory Bandwidth Comparison
 
@@ -196,7 +196,7 @@ graph TD
     C --> E["Async workloads<br/>70B-405B models"]
 ```
 
-- Small models (7B–13B) on GPU for fast inference
+- [Small models (7B–13B)](/en/blog/en/devstral-qwen3-coder-small-models) on GPU for fast inference
 - Large models (70B+) on CPU for cost-efficient execution
 - Use llama.cpp's `--n-gpu-layers` to offload select layers to GPU
 
@@ -206,7 +206,7 @@ DDR5 RDIMM pricing dropping below RTX 3090 VRAM per GB isn't just a price invers
 
 1. <strong>Large model accessibility</strong>: 405B-class models runnable on a $2,500 system
 2. <strong>Diversified cost optimization</strong>: Choose GPU/CPU/hybrid based on use case
-3. <strong>Lower barrier to entry</strong>: Local LLM experimentation costs have dropped significantly
+3. <strong>Lower barrier to entry</strong>: [Local LLM experimentation](/en/blog/en/prismml-bonsai-1bit-llm-edge-ai) costs have dropped significantly
 
 If speed is your top priority, GPU remains the answer. But if your goal is <strong>"the biggest model at the lowest cost"</strong>, DDR5 RDIMM-based CPU inference is emerging as the new optimal solution in 2026.
 

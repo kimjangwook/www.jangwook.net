@@ -1,6 +1,6 @@
 ---
 title: 'Jules를 이용한 오토코딩: Google의 자율 AI 코딩 에이전트 완벽 가이드'
-description: Google의 혁신적인 AI 코딩 에이전트 Jules로 GitHub 이슈를 자동으로 해결하고 PR을 생성하는 방법을 알아봅니다
+description: 'Google의 자율 AI 코딩 에이전트 Jules로 GitHub 이슈를 백그라운드에서 자동 해결하고 PR을 생성하는 방법을 단계별로 설명합니다. GitHub Copilot·Cursor와의 구체적 차이점, 비동기 에이전트 동작 원리, 활용 워크플로우를 한 번에 정리합니다.'
 pubDate: '2025-10-27'
 heroImage: ../../../assets/blog/jules-autocoding-hero.jpg
 tags:
