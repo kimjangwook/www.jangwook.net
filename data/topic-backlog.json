@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-20T23:07:00+09:00",
+  "updated_at": "2026-05-21T15:44:00+09:00",
   "topics": [
+    {
+      "slug": "google-io-2026-antigravity-2-agent-platform-analysis",
+      "title_idea": "Google I/O 2026: Antigravity 2.0 전면 분석 — Gemini CLI가 사라지고, 에이전트 IDE 경쟁이 본격화된다",
+      "content_type": "news",
+      "target_keyword": "Google Antigravity 2.0",
+      "secondary_keywords": [
+        "Gemini CLI 대체",
+        "멀티 에이전트 개발",
+        "Gemini 3.5 Flash API",
+        "Google IO 2026"
+      ],
+      "search_intent": "news",
+      "priority": 1,
+      "source": "실제 앱 구조 분석(Lab) + 공식 발표 Source Review. Antigravity v1.23.2 설치 확인, 확장 구조/MCP 지원 직접 분석",
+      "added_at": "2026-05-21",
+      "status": "done",
+      "notes": "4개 언어 동시 발행. Google IO 2026(5/19) 발표 직후 2일 만에 작성. agy CLI 미배포 확인, Source Review lane."
+    },
     {
       "slug": "nextjs-16-claude-api-streaming-guide-2026",
       "title_idea": "Next.js 16 + Claude API로 스트리밍 AI 채팅 앱 만들기 — App Router 완전 가이드",
