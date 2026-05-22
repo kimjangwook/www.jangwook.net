@@ -1,8 +1,8 @@
 ---
 title: 'OpenClaw로 E2E 테스트 자동화하기: 브라우저·디바이스·크론 통합 가이드'
 description: >-
-  AI 에이전트 플랫폼 OpenClaw의 브라우저 자동화, 노드 디바이스 관리, 크론 스케줄링을 조합하여 자연어 기반 E2E 테스트를 구축하는
-  실전 가이드입니다.
+  AI 에이전트 플랫폼 OpenClaw로 브라우저 자동화, 디바이스 관리, 크론 스케줄링을 통합해 자연어 기반 E2E 테스트를 구축하는
+  실전 가이드. CSS 셀렉터 없이 접근성 트리로 셀프 힐링 테스트를 구현하는 단계별 방법을 설명합니다.
 pubDate: '2026-02-08'
 heroImage: ../../../assets/blog/openclaw-e2e-test-automation-guide-hero.png
 tags:
@@ -62,7 +62,7 @@ draft: true
 
 ## 개요
 
-Selenium, Cypress, Playwright 같은 전통적인 E2E 테스트 도구는 CSS 셀렉터와 명령형 코드로 테스트를 작성합니다. UI가 변경되면 셀렉터가 깨지고, 수십 개의 테스트 파일을 수정해야 합니다.
+Selenium, Cypress, [Playwright](/ko/blog/ko/playwright-ai-testing) 같은 전통적인 E2E 테스트 도구는 CSS 셀렉터와 명령형 코드로 테스트를 작성합니다. UI가 변경되면 셀렉터가 깨지고, 수십 개의 테스트 파일을 수정해야 합니다.
 
 <strong>OpenClaw</strong>는 이 문제를 근본적으로 다른 방식으로 해결합니다. AI 에이전트가 접근성 트리(Accessibility Tree) 기반으로 웹 페이지를 이해하고, 자연어로 작성된 테스트 시나리오를 해석하여 실행합니다. 브라우저 자동화, 디바이스 관리, 크론 스케줄링, 멀티 에이전트 오케스트레이션을 하나의 플랫폼에서 통합 운용할 수 있습니다.
 
@@ -101,7 +101,7 @@ E2E 테스트 관점에서 각 구성 요소의 역할은 다음과 같습니다
 | <strong>Browser</strong> | Chromium 기반 웹 자동화 | 웹 앱 기능·UI 테스트 |
 | <strong>Nodes</strong> | 디바이스 제어 (macOS/iOS/Android) | 크로스 플랫폼 테스트 |
 | <strong>Cron</strong> | 스케줄링 엔진 | 정기 테스트 실행 트리거 |
-| <strong>Sub-agents</strong> | 병렬 에이전트 실행 | 테스트 스위트 병렬화 |
+| <strong>Sub-agents</strong> | 병렬 에이전트 실행 | [테스트 스위트 병렬화](/ko/blog/ko/claude-code-parallel-testing) |
 | <strong>Canvas</strong> | 시각적 작업 공간 | UI 회귀 테스트·결과 대시보드 |
 
 ## 브라우저 자동화: 접근성 트리 기반 테스트
@@ -336,7 +336,7 @@ openclaw cron add \
 
 ### 병렬 테스트 실행
 
-서브에이전트는 백그라운드에서 독립적으로 실행되는 에이전트입니다. 여러 테스트를 동시에 실행하고, 완료 시 결과를 자동으로 보고합니다.
+[서브에이전트](/ko/blog/ko/ai-agent-collaboration-patterns)는 백그라운드에서 독립적으로 실행되는 에이전트입니다. 여러 테스트를 동시에 실행하고, 완료 시 결과를 자동으로 보고합니다.
 
 ```mermaid
 graph TD

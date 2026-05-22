@@ -1,5 +1,5 @@
 ---
-title: 'Google I/O 2026: Antigravity 2.0 Deep Dive — Gemini CLI Is Gone, the Agent IDE War Has Begun'
+title: 'Google I/O 2026 Antigravity 2.0 — Gemini CLI Shutdown and Agent IDE War'
 description: >-
   Google announced Antigravity 2.0 at I/O 2026 and is shutting down Gemini CLI on June 18. I dug into the installed app's extension structure and analyzed the Gemini 3.5 Flash API — here's what it all means for developers.
 pubDate: '2026-05-21'

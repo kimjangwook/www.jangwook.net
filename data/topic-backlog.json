@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-21T23:07:00+09:00",
+  "updated_at": "2026-05-22T23:07:00+09:00",
   "topics": [
     {
       "slug": "google-io-2026-antigravity-2-agent-platform-analysis",
@@ -2320,6 +2320,42 @@
       "added_at": "2026-05-21",
       "status": "queued",
       "notes": "MCP 도입이 급증하면서 보안 위협도 증가. 실제 공격 시나리오와 방어 방법을 다루면 개발자 독자의 실용적 수요 높음. fastmcp-python-mcp-server-build-guide-2026과 내부링크 연계 가능"
+    },
+    {
+      "slug": "claude-code-vs-cursor-vs-windsurf-2026-ai-ide-comparison",
+      "title_idea": "Claude Code vs Cursor 3.0 vs Windsurf — 2026 AI IDE 3파전 실전 비교",
+      "content_type": "comparison",
+      "target_keyword": "Claude Code Cursor 비교 2026",
+      "secondary_keywords": [
+        "AI IDE 비교",
+        "Windsurf vs Cursor",
+        "Claude Code 장단점",
+        "AI 코딩 도구 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "개인 사용 경험 + Cursor 3.0 릴리스 노트 + Windsurf Cascade 공식 문서",
+      "added_at": "2026-05-22",
+      "status": "queued",
+      "notes": "Google I/O 2026 직후 AI IDE 경쟁이 화제. Antigravity 2.0(에이전트 IDE) 포스트와 자연스럽게 연결. Claude Code는 터미널 기반 자율성, Cursor는 대화형 IDE, Windsurf는 Cascade 에이전트 차별화. 3파전 비교는 검색 수요 높음. jules-autocoding, claude-code-best-practices 내부링크 연결 가능."
+    },
+    {
+      "slug": "anthropic-agent-sdk-vs-langgraph-vs-autogen-2026",
+      "title_idea": "Anthropic Agent SDK vs LangGraph vs AutoGen — 2026 에이전트 프레임워크 선택 완전 가이드",
+      "content_type": "comparison",
+      "target_keyword": "Anthropic Agent SDK LangGraph AutoGen 비교",
+      "secondary_keywords": [
+        "에이전트 프레임워크 비교 2026",
+        "LangGraph vs AutoGen",
+        "Claude Managed Agents",
+        "멀티에이전트 프레임워크 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Anthropic 공식 문서, LangChain 블로그, AutoGen 1.0 릴리스 노트",
+      "added_at": "2026-05-22",
+      "status": "queued",
+      "notes": "2026년 에이전트 프레임워크가 난립하며 선택 혼란 증가. Anthropic Agent SDK(클라우드 관리형) vs LangGraph(그래프 기반 오케스트레이션) vs AutoGen(마이크로소프트 오픈소스) 3자 비교. 기존 ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production 포스트와 내부링크 연결 가능. 차별화: 실제 사용 시나리오별 선택 매트릭스 제공."
     }
   ]
 }

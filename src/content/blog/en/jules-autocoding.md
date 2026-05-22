@@ -76,7 +76,7 @@ Unlike traditional coding assistants that require constant interaction, Jules op
 - <strong>Full Autonomy</strong>: Handles file modifications, test execution, and PR creation end-to-end
 - <strong>Codebase Comprehension</strong>: Leverages Gemini 2.5 Pro's 2M token context window to understand entire repositories
 
-The core value proposition is simple: <strong>delegate entire coding tasks, not just snippets</strong>. While GitHub Copilot suggests the next line and Claude Code assists with interactive coding sessions, Jules takes ownership of complete workflows from issue to pull request.
+The core value proposition is simple: <strong>delegate entire coding tasks, not just snippets</strong>. While GitHub Copilot suggests the next line and [Claude Code](/en/blog/en/claude-code-best-practices) assists with interactive coding sessions, Jules takes ownership of complete workflows from issue to pull request.
 
 ## Core Features: What Jules Can Do
 
@@ -567,7 +567,7 @@ How does Jules stack up against the competition? Let's compare:
 Smart teams use <strong>multiple tools</strong>:
 
 - <strong>Jules</strong> for overnight batch work (update dependencies, improve test coverage)
-- <strong>Claude Code</strong> for complex feature development (AI pair programming)
+- <strong>[Claude Code](/en/blog/en/claude-code-agentic-workflow-patterns-5-types)</strong> for complex feature development (AI pair programming)
 - <strong>GitHub Copilot</strong> for day-to-day autocomplete (productivity boost)
 
 This isn't zero-sum—it's additive. Each tool handles what it does best.
@@ -947,7 +947,7 @@ The most productive developers use a portfolio of AI tools:
    - "Improve test coverage to 85%"
    - "Refactor authentication to OAuth 2.0"
 
-2. <strong>Claude Code</strong> for complex feature development
+2. <strong>[Claude Code](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent)</strong> for complex feature development
    - "Help me architect a real-time chat feature"
    - "Debug this memory leak"
    - "Explain this legacy code"

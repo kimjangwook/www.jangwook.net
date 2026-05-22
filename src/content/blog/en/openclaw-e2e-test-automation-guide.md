@@ -63,7 +63,7 @@ draft: true
 
 ## Overview
 
-Traditional E2E testing tools like Selenium, Cypress, and Playwright rely on CSS selectors and imperative code to write tests. When the UI changes, selectors break, and you end up modifying dozens of test files.
+Traditional E2E testing tools like Selenium, Cypress, and [Playwright](/en/blog/en/playwright-ai-testing) rely on CSS selectors and imperative code to write tests. When the UI changes, selectors break, and you end up modifying dozens of test files.
 
 <strong>OpenClaw</strong> solves this problem with a fundamentally different approach. An AI agent understands web pages through an accessibility tree, interprets test scenarios written in natural language, and executes them. Browser automation, device management, cron scheduling, and multi-agent orchestration are all unified within a single platform.
 
@@ -102,7 +102,7 @@ Here is the role of each component from an E2E testing perspective:
 | <strong>Browser</strong> | Chromium-based web automation | Web app functional and UI testing |
 | <strong>Nodes</strong> | Device control (macOS/iOS/Android) | Cross-platform testing |
 | <strong>Cron</strong> | Scheduling engine | Triggers for scheduled test runs |
-| <strong>Sub-agents</strong> | Parallel agent execution | Test suite parallelization |
+| <strong>Sub-agents</strong> | Parallel agent execution | [Test suite parallelization](/en/blog/en/claude-code-parallel-testing) |
 | <strong>Canvas</strong> | Visual workspace | UI regression testing and result dashboards |
 
 ## Browser Automation: Accessibility Tree-Based Testing
@@ -337,7 +337,7 @@ For deep analysis, use `claude-opus-4-5` with the `--thinking high` option to en
 
 ### Parallel Test Execution
 
-Sub-agents are agents that run independently in the background. They execute multiple tests concurrently and automatically report results upon completion.
+[Sub-agents](/en/blog/en/ai-agent-collaboration-patterns) are agents that run independently in the background. They execute multiple tests concurrently and automatically report results upon completion.
 
 ```mermaid
 graph TD

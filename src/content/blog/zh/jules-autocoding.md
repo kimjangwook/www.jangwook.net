@@ -70,7 +70,7 @@ Jules不仅仅是一个简单的代码自动补全工具。当被分配到GitHub
 
 - <strong>GitHub Copilot</strong>：实时代码自动补全和建议
 - <strong>Cursor</strong>：基于AI的IDE，支持对话式代码编辑
-- <strong>Claude Code</strong>：基于终端的AI编程助手
+- <strong>Claude Code</strong>：[基于终端的AI编程助手](/zh/blog/zh/claude-code-best-practices)
 
 Jules的核心差异在于<strong>异步性（asynchronous）</strong>。其他工具在开发者的IDE中实时工作，而Jules在Google Cloud的隔离虚拟机中独立执行任务。开发者只需分配GitHub问题并批准计划，就可以继续其他工作，等待Jules完成任务。
 
@@ -674,7 +674,7 @@ app.post('/webhooks/jules', async (req, res) => {
 
 <strong>推荐组合2：Jules + Claude Code</strong>
 - <strong>Jules</strong>：基于GitHub问题的自动化
-- <strong>Claude Code</strong>：本地复杂代码探索和修改
+- <strong>Claude Code</strong>：[本地复杂代码探索和修改](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)
 - <strong>优点</strong>：两者都自主且具有强大的代码库理解能力
 
 <strong>推荐组合3：Jules + Cursor</strong>
@@ -1117,7 +1117,7 @@ Jules在以下情况下最有效：
 
 <strong>大型团队（10人以上）</strong>：
 - <strong>Jules Ultra</strong>：大量任务处理
-- <strong>Claude Code</strong>：复杂重构
+- <strong>Claude Code</strong>：[复杂重构](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)
 - <strong>GitHub Copilot Enterprise</strong>：整个团队的实时支持
 - <strong>总成本</strong>：$124.99 + ($39 × 团队成员数)
 

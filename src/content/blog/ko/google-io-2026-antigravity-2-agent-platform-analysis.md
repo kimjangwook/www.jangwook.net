@@ -1,5 +1,5 @@
 ---
-title: 'Google I/O 2026: Antigravity 2.0 전면 분석 — Gemini CLI가 사라지고, 에이전트 IDE 경쟁이 본격화된다'
+title: 'Google I/O 2026 Antigravity 2.0 — Gemini CLI 종료와 에이전트 IDE 전쟁'
 description: >-
   Google이 I/O 2026에서 Antigravity 2.0을 발표하며 Gemini CLI를 6월 18일부로 종료한다. 실제 설치된
   앱의 확장 구조와 Gemini 3.5 Flash API를 직접 분석하고, Claude Code와 비교한다.

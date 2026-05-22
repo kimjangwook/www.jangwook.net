@@ -69,8 +69,8 @@ According to data shared on Reddit's r/LocalLLaMA community, the OpenRouter week
 
 | Rank | Model | Type | Key Feature |
 |------|-------|------|-------------|
-| 1 | Qwen3-Coder | 🟢 OSS | Alibaba's coding-specialized model |
-| 2 | DeepSeek R2 | 🟢 OSS | Reasoning-focused large model |
+| 1 | [Qwen3-Coder](/en/blog/en/devstral-qwen3-coder-small-models) | 🟢 OSS | Alibaba's coding-specialized model |
+| 2 | [DeepSeek R2](/en/blog/en/deepseek-v4-release) | 🟢 OSS | Reasoning-focused large model |
 | 3 | MiniMax M2.5 | 🟢 OSS | Cost-efficient general-purpose model |
 | 4 | GPT-4.1 | 🔵 Proprietary | OpenAI's flagship |
 | 5 | Llama 4 Maverick | 🟢 OSS | Meta's open-source large model |
@@ -85,7 +85,7 @@ OpenRouter provides access to various AI models through a single API. Users sele
 
 ### 1. Overwhelming Cost Efficiency
 
-Open-source models benefit from active competition among API providers, resulting in significantly lower costs for equivalent performance. Qwen3-Coder offers similar coding performance to GPT-4.1 at <strong>roughly 1/10th the price</strong>.
+Open-source models benefit from active competition among API providers, resulting in [significantly lower costs](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek) for equivalent performance. Qwen3-Coder offers similar coding performance to GPT-4.1 at <strong>roughly 1/10th the price</strong>.
 
 ```
 Cost Comparison (per 1M tokens, estimated):
