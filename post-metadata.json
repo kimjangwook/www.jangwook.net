@@ -2645,5 +2645,16 @@
       "devops": 0.5,
       "architecture": 0.85
     }
+  },
+  "vector-db-comparison-2026-qdrant-chroma-pgvector": {
+    "pubDate": "2026-05-23",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.3,
+      "ai-ml": 0.85,
+      "devops": 0.45,
+      "architecture": 0.7
+    }
   }
 }

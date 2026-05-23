@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-22T23:07:00+09:00",
+  "updated_at": "2026-05-23T15:43:00+09:00",
   "topics": [
     {
       "slug": "google-io-2026-antigravity-2-agent-platform-analysis",
@@ -414,8 +414,8 @@
       "priority": 1,
       "source": "OpenAI 공식 릴리스 (2026-04), GitHub openai/codex-cli, VentureBeat 비교 기사",
       "added_at": "2026-04-19",
-      "status": "queued",
-      "notes": "OpenAI가 2026년 4월 오픈소스 Codex CLI 출시. Claude Code와 직접 경쟁. 설치·설정·실제 사용 비교 How-to 수요 급증. claude-code-agentic-workflow-patterns-5-types, claude-code-parallel-sessions 내부링크 연결. 월요일 How-to 유형."
+      "status": "skipped",
+      "notes": "OpenAI가 2026년 4월 오픈소스 Codex CLI 출시. Claude Code와 직접 경쟁. 설치·설정·실제 사용 비교 How-to 수요 급증. claude-code-agentic-workflow-patterns-5-types, claude-code-parallel-sessions 내부링크 연결. 월요일 How-to 유형. | skipped: openai-codex-api-release-vs-claude-code-comparison-may-2026가 유사 주제 커버"
     },
     {
       "slug": "gemini-25-flash-api-cost-optimization-guide",
@@ -2356,6 +2356,23 @@
       "added_at": "2026-05-22",
       "status": "queued",
       "notes": "2026년 에이전트 프레임워크가 난립하며 선택 혼란 증가. Anthropic Agent SDK(클라우드 관리형) vs LangGraph(그래프 기반 오케스트레이션) vs AutoGen(마이크로소프트 오픈소스) 3자 비교. 기존 ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production 포스트와 내부링크 연결 가능. 차별화: 실제 사용 시나리오별 선택 매트릭스 제공."
+    },
+    {
+      "slug": "vector-db-comparison-2026-qdrant-chroma-pgvector",
+      "title_idea": "Vector DB 비교 2026 — Qdrant vs ChromaDB vs pgvector, RAG 앱에 맞는 선택법",
+      "content_type": "comparison",
+      "target_keyword": "vector database comparison 2026",
+      "secondary_keywords": [
+        "chromadb qdrant 비교",
+        "pgvector vs qdrant",
+        "RAG 벡터 DB 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "직접 샌드박스 실험 (chromadb, qdrant-client pip install, numpy pgvector 근사)",
+      "added_at": "2026-05-23",
+      "status": "done",
+      "notes": "1000 벡터 dim=384 벤치마크 실험. ChromaDB 필터쿼리 2ms < Qdrant 7ms (소규모). 4개 언어 동시 발행."
     }
   ]
 }
