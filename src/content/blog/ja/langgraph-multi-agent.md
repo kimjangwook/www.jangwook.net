@@ -1,7 +1,7 @@
 ---
 title: LangGraphマルチエージェントシステム完全ガイド
 description: >-
-  LangGraphでプロダクション対応のマルチエージェントAIシステムを構築する方法。グラフベースのオーケストレーション、状態管理、実践パターンを解説します。
+  LangGraphを使ってプロダクション環境のマルチエージェントAIシステムを段階的に構築するための完全ガイドです。状態グラフ設計、エージェント間協調パターン、動的ルーティング実装から実際のデプロイ戦略まで、LangChainを活用した実践的なコード例を交えて解説します。
 pubDate: '2025-10-26'
 heroImage: ../../../assets/blog/langgraph-multi-agent-hero.jpg
 tags:

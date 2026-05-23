@@ -1,6 +1,6 @@
 ---
 title: Claude Sonnet 4.6 출시 — Anthropic의 중간 모델 전략과 성능 분석
-description: 'Claude Sonnet 4.6의 업데이트 내용과 모델 버전 전략, 성능 비교, 비용 효율성을 종합적으로 분석합니다.'
+description: 'Claude Sonnet 4.6 출시를 계기로 Anthropic의 모델 버전 전략을 심층 분석합니다. Opus·Sonnet·Haiku 라인업 재편, 성능 벤치마크 비교, API 비용 효율성 변화를 정리하고 개발자가 주목해야 할 핵심 업그레이드 포인트를 상세히 짚어드립니다.'
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/claude-sonnet-46-release-hero.png
 tags:

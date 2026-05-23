@@ -1,6 +1,6 @@
 ---
 title: LangGraph多智能体系统完全指南：从核心概念到生产部署
-description: 详细了解如何使用LangGraph在生产环境中构建可扩展的多智能体AI系统，涵盖核心概念、架构模式、实战代码示例和最佳实践，助力打造企业级AI应用
+description: 全面介绍如何使用LangGraph在生产环境中构建可扩展的多智能体AI系统。深入讲解状态图设计、智能体间协作模式、动态路由实现与部署策略，提供详细代码示例，助力开发者高效构建LangChain生态下的企业级AI工作流应用。
 pubDate: '2025-10-26'
 heroImage: ../../../assets/blog/langgraph-multi-agent-hero.jpg
 tags:

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-23T15:43:00+09:00",
+  "updated_at": "2026-05-23T23:07:00+09:00",
   "topics": [
     {
       "slug": "google-io-2026-antigravity-2-agent-platform-analysis",
@@ -2373,6 +2373,42 @@
       "added_at": "2026-05-23",
       "status": "done",
       "notes": "1000 벡터 dim=384 벤치마크 실험. ChromaDB 필터쿼리 2ms < Qdrant 7ms (소규모). 4개 언어 동시 발행."
+    },
+    {
+      "slug": "claude-opus-47-vs-sonnet-46-practical-use-case-guide-2026",
+      "title_idea": "Claude Opus 4.7 vs Sonnet 4.6: 실무 사용 사례별 모델 선택 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Claude Opus 4.7 사용 가이드",
+      "secondary_keywords": [
+        "Claude Sonnet 4.6 비교",
+        "Anthropic 모델 선택",
+        "LLM 비용 최적화",
+        "Claude API 실무"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "system-knowledge",
+      "added_at": "2026-05-23",
+      "status": "queued",
+      "notes": "Opus 4.7 출시로 개발자들이 가장 궁금해하는 모델 선택 기준. 코딩/분석/창작/에이전트 등 유형별 추천 모델을 실제 프롬프트 예시와 함께 정리."
+    },
+    {
+      "slug": "qdrant-production-deployment-complete-guide-2026",
+      "title_idea": "Qdrant 프로덕션 배포 완전 가이드 — Docker, 클라우드, 최적화까지",
+      "content_type": "how-to",
+      "target_keyword": "Qdrant 프로덕션 배포",
+      "secondary_keywords": [
+        "Qdrant Docker 설정",
+        "벡터 DB 프로덕션",
+        "Qdrant vs Pinecone",
+        "벡터 임베딩 최적화"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "system-knowledge",
+      "added_at": "2026-05-23",
+      "status": "queued",
+      "notes": "vector-db-comparison-2026-qdrant-chroma-pgvector 포스트의 후속. 비교 후 Qdrant를 선택한 독자에게 실제 배포 가이드 제공. 높은 검색 의도 포착 가능."
     }
   ]
 }

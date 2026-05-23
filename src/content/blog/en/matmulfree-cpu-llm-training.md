@@ -164,6 +164,8 @@ MatMul-Free architecture opens possibilities for AI development in GPU-constrain
 - <strong>Developing countries</strong>: Local AI model development without expensive GPUs
 - <strong>Prototyping</strong>: Quick idea validation without waiting for GPU access
 
+For those looking to cut API costs, [RTK: Reducing LLM API Costs by 60% with Rust-Based Token Compression](/en/blog/en/rtk-rust-token-killer-llm-cost-optimization-guide-2026) is another effective approach.
+
 ### 2. Edge Device Inference
 
 The biggest advantage of ternary weights is <strong>inference efficiency on edge devices</strong>:
@@ -171,6 +173,8 @@ The biggest advantage of ternary weights is <strong>inference efficiency on edge
 - <strong>IoT devices</strong>: Language models running on microcontrollers
 - <strong>Mobile</strong>: On-device inference with minimal battery drain
 - <strong>Neuromorphic chips</strong>: According to the paper, asynchronous processing achieves 4x throughput with 10x less energy than edge GPUs
+
+This aligns with broader trends, such as [Qwen3-Coder running on just 8GB VRAM](/en/blog/en/qwen3-coder-8gb-vram), showing that consumer-grade hardware can now run capable AI models.
 
 ### 3. Practical Limitations
 
@@ -189,6 +193,8 @@ MatMul-Free architecture is still in its early stages, but several development d
 2. <strong>Scale-up</strong>: The paper validated up to 2.7B parameters, suggesting CPU training may reach mid-scale
 3. <strong>Hardware optimization</strong>: Custom hardware or FPGA acceleration specialized for ternary operations
 4. <strong>Hybrid approaches</strong>: MatMul-Free for core layers, traditional methods for output
+
+The spread of dedicated AI hardware like [NVIDIA DGX Spark](/en/blog/en/nvidia-dgx-spark-cuda-compatibility) may further accelerate development of ternary-operation-optimized chipsets.
 
 ## Conclusion
 

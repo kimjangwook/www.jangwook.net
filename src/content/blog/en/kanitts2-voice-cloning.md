@@ -78,6 +78,8 @@ An <strong>RTF of 0.2</strong> means generating 1 second of speech takes only 0.
 
 Previous high-quality TTS models often required billions of parameters and 10GB+ of VRAM. KaniTTS2 achieves competitive quality with 400M parameters, running on <strong>consumer-grade GPUs like the RTX 3060</strong>.
 
+A similar trend toward lightweight models is [Qwen3-Coder running on 8GB VRAM](/en/blog/en/qwen3-coder-8gb-vram), which demonstrates comparable efficiency for coding-focused use cases.
+
 ### 2. Complete Open-Source Pretraining Framework
 
 Beyond model weights, the <strong>entire pretraining codebase</strong> is publicly available. This opens up possibilities for:
@@ -85,6 +87,8 @@ Beyond model weights, the <strong>entire pretraining codebase</strong> is public
 - Training TTS models for underrepresented languages
 - Building domain-specific voice models (medical, legal, etc.)
 - Customizing for specific accents and dialects
+
+The accelerating open-source AI competition can be viewed in broader context in [The February 2026 AI Model Rush](/en/blog/en/ai-model-rush-february-2026).
 
 ### 3. Built-in Voice Cloning
 
@@ -161,6 +165,8 @@ The release of KaniTTS2 goes beyond a simple model drop — it's a significant m
 2. <strong>Cost Barrier Removal</strong>: 3GB VRAM is enough, eliminating the need for expensive GPUs
 3. <strong>Research Acceleration</strong>: Full training pipeline disclosure improves reproducibility and speeds up TTS research
 4. <strong>Personal Privacy</strong>: Running locally instead of through cloud APIs ensures voice data privacy
+
+This democratization movement extends well beyond voice AI. The [DeepSeek V4 release](/en/blog/en/deepseek-v4-release) is another signal that open-weight LLM ecosystems are following the same trajectory.
 
 ## Conclusion
 

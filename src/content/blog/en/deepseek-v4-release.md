@@ -57,6 +57,8 @@ draft: true
 
 In early 2026, a new wave of large language models (LLMs) is sweeping through China's AI industry. News that <strong>DeepSeek V4's release is imminent</strong> has generated significant buzz in the Reddit r/LocalLLaMA community. Following Qwen3.5 and GLM-5, DeepSeek V4 marks yet another milestone — the next-generation model competition among Chinese AI companies is accelerating in full force.
 
+The [February 2026 AI Model Rush](/en/blog/en/ai-model-rush-february-2026) analysis captures the broader context around this inflection point in Chinese AI model releases.
+
 ## DeepSeek's Journey
 
 ### The Leap from V3 to V4
@@ -84,6 +86,8 @@ Here's a summary of major models released (or expected) in early 2026:
 | <strong>Qwen3.5</strong> | Alibaba Cloud | Large-scale parameters, multilingual enhancement |
 | <strong>GLM-5</strong> | Zhipu AI | Multimodal integration, enhanced agent capabilities |
 | <strong>Yi-Lightning</strong> | 01.AI | Inference optimization, cost efficiency |
+
+Qwen3.5 in particular drew attention for [its surprising VendingBench performance and disruption of commercial AI markets](/en/blog/en/qwen35-vending-bench-bankruptcy).
 
 ### Core Axes of Competition
 
@@ -134,6 +138,8 @@ The model rush from Chinese AI companies goes beyond mere competition — it con
 2. <strong>Cost reduction</strong>: Continued decline in training and inference costs
 3. <strong>Innovation acceleration</strong>: Community-driven model improvements and expansion of application domains
 4. <strong>Geopolitical impact</strong>: A new phase in the AI technology hegemony competition
+
+The same democratization wave extends to voice AI — [KaniTTS2 enabling voice cloning with just 3GB VRAM](/en/blog/en/kanitts2-voice-cloning) is a telling example.
 
 ## Conclusion
 

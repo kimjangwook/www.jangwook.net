@@ -161,6 +161,8 @@ MatMul-Free架构为GPU受限环境下的AI开发开辟了可能性：
 - <strong>发展中国家</strong>：无需昂贵GPU即可开发本地AI模型
 - <strong>原型开发</strong>：快速验证想法无需等待GPU资源
 
+如果希望降低API成本，[RTK：通过Rust压缩Token将LLM费用削减60%](/zh/blog/zh/rtk-rust-token-killer-llm-cost-optimization-guide-2026)也是一个有效选择。
+
 ### 2. 边缘设备推理
 
 三值权重的最大优势是<strong>边缘设备上的推理效率</strong>：
@@ -168,6 +170,8 @@ MatMul-Free架构为GPU受限环境下的AI开发开辟了可能性：
 - <strong>IoT设备</strong>：在微控制器上也能运行语言模型
 - <strong>移动端</strong>：最小化电池消耗的端侧推理
 - <strong>神经形态芯片</strong>：根据论文，异步处理可实现比边缘GPU高4倍的吞吐量和10倍的能效提升
+
+类似地，[在8GB VRAM上运行Qwen3-Coder](/zh/blog/zh/qwen3-coder-8gb-vram)等消费级硬件运行高性能AI模型的趋势正在加速。
 
 ### 3. 现实局限
 
@@ -186,6 +190,8 @@ MatMul-Free架构仍处于早期阶段，但有几个值得期待的发展方向
 2. <strong>规模扩展</strong>：论文已验证到27亿参数，CPU训练也可能达到中等规模
 3. <strong>硬件优化</strong>：针对三值运算的定制硬件或FPGA加速
 4. <strong>混合方法</strong>：核心层使用MatMul-Free，输出层使用传统方式
+
+随着[NVIDIA DGX Spark](/zh/blog/zh/nvidia-dgx-spark-cuda-compatibility)等个人专用AI硬件的普及，三值运算专用芯片的开发也可能随之加速。
 
 ## 结论
 
