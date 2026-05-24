@@ -1,9 +1,6 @@
 ---
 title: KaniTTS2 — Open-Source 400M TTS Model with Voice Cloning on Just 3GB VRAM
-description: >-
-  KaniTTS2, a lightweight 400M-parameter TTS model, has been open-sourced with
-  voice cloning capabilities requiring only 3GB VRAM. With full pretraining code
-  released, it marks a milestone in voice AI democratization.
+description: 'KaniTTS2 is a 400M-parameter open-source TTS model that runs voice cloning on just 3GB VRAM with full pretraining code released. We analyze MOS scores, zero-shot cloning quality, and practical use cases on local AI setups — a meaningful step toward accessible voice AI.'
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/kanitts2-voice-cloning-hero.png
 tags:

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-24T22:17:00+09:00",
+  "updated_at": "2026-05-24T23:07:06+09:00",
   "topics": [
     {
       "slug": "gemini-api-model-tier-benchmark-guide-2026",
@@ -2534,6 +2534,42 @@
       "added_at": "2026-05-24",
       "status": "queued",
       "notes": "저평가된 도구. 실용성 높은 how-to"
+    },
+    {
+      "slug": "claude-code-hooks-workflow-automation-guide",
+      "title_idea": "Claude Code Hooks 완전 가이드: PreToolUse·PostToolUse 훅으로 워크플로우 자동화하는 법",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code hooks 설정",
+      "secondary_keywords": [
+        "claude code 자동화",
+        "PreToolUse 훅",
+        "PostToolUse 훅",
+        "claude code workflow"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "daily-closing-2026-05-24",
+      "added_at": "2026-05-24",
+      "status": "queued",
+      "notes": "월요일 How-to용. settings.json hooks 설정, before/after 실행 자동화, 실전 예제 3가지 포함. 검색 수요 높음"
+    },
+    {
+      "slug": "anthropic-files-api-batch-processing-cost-guide",
+      "title_idea": "Anthropic Files API 실전 가이드: 파일 업로드·배치 처리로 대용량 문서 분석 비용 50% 절감하기",
+      "content_type": "how-to",
+      "target_keyword": "Anthropic Files API 사용법",
+      "secondary_keywords": [
+        "claude files api",
+        "anthropic batch api",
+        "문서 처리 비용 절감",
+        "large document analysis"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "daily-closing-2026-05-24",
+      "added_at": "2026-05-24",
+      "status": "queued",
+      "notes": "월요일 How-to용 대안. Files API GA로 실용 수요 증가. 배치 처리 코드 예제와 비용 시뮬레이션 포함 예정"
     }
   ]
 }

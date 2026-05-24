@@ -91,7 +91,7 @@ Sonnet 3.5 → Sonnet 4 → Sonnet 4.5 → Sonnet 4.6
 Opus 4 → Opus 4.5 → Opus 4.6
 ```
 
-<strong>Point releases in 0.1 increments</strong> suggest an approach of improving training data and fine-tuning while maintaining the architecture. This signals "non-breaking improvements" to users.
+<strong>Point releases in 0.1 increments</strong> suggest an approach of improving training data and fine-tuning while maintaining the architecture. This signals "non-breaking improvements" to users. That said, updates don't always yield universal improvements — as explored in the [Anthropic Claude Performance Decline Controversy](/en/blog/en/anthropic-claude-performance-decline-controversy-april-2026), some users have reported real-world regressions following certain updates.
 
 ### The Significance of the Mid-Tier Strategy
 
@@ -117,6 +117,8 @@ Sonnet 4.6's core message is <strong>"Opus-level performance at Sonnet pricing."
 | OfficeQA | Matches Opus 4.6 | Document comprehension |
 | Box Reasoning Q&A | +15pp | Enterprise documents |
 | Insurance Benchmark | 94% | Best computer use score |
+
+For a broader comparison against other AI models, see the [Gemini API Model Tier Benchmark Guide](/en/blog/en/gemini-api-model-tier-benchmark-guide-2026) for up-to-date cross-model performance data.
 
 ### Vending-Bench Arena: Strategic Thinking
 
@@ -167,7 +169,7 @@ Anthropic recommends <strong>exploring the full thinking effort spectrum</strong
 
 ### Model Selection Guide
 
-- <strong>Opus 4.6</strong>: When deepest reasoning is required (codebase refactoring, multi-agent workflows)
+- <strong>Opus 4.6</strong>: When deepest reasoning is required (codebase refactoring, [multi-agent workflows](/en/blog/en/claude-agent-sdk-subagents-orchestration-tutorial-2026))
 - <strong>Sonnet 4.6</strong>: Most production workloads (coding, document analysis, agentic tasks)
 - API identifier: `claude-sonnet-4-6`
 

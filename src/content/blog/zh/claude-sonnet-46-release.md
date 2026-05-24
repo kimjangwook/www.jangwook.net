@@ -86,7 +86,7 @@ Sonnet 3.5 → Sonnet 4 → Sonnet 4.5 → Sonnet 4.6
 Opus 4 → Opus 4.5 → Opus 4.6
 ```
 
-<strong>0.1单位的点版本发布</strong>暗示了在保持架构的同时改进训练数据和微调的方法。这向用户传达了"无破坏性改进"的信任。
+<strong>0.1单位的点版本发布</strong>暗示了在保持架构的同时改进训练数据和微调的方法。这向用户传达了"无破坏性改进"的信任。不过，更新并不总是带来全面改善，正如[Anthropic Claude性能争议分析](/zh/blog/zh/anthropic-claude-performance-decline-controversy-april-2026)中所记录的，部分用户反映某些更新后出现了实际性能下降。
 
 ### 中端模型策略的意义
 
@@ -112,6 +112,8 @@ Sonnet 4.6的核心信息是<strong>"以Sonnet价格获得Opus级性能"</strong
 | OfficeQA | 与Opus 4.6持平 | 文档理解 |
 | Box推理Q&A | +15pp | 企业文档 |
 | 保险基准 | 94% | 计算机使用最高分 |
+
+如需与其他AI模型进行横向比较，可参阅[Gemini API模型层级基准测试指南](/zh/blog/zh/gemini-api-model-tier-benchmark-guide-2026)获取最新的跨模型性能数据。
 
 ### Vending-Bench Arena：战略思维能力
 
@@ -162,7 +164,7 @@ Anthropic建议从Sonnet 4.5迁移时<strong>探索思考努力（thinking effor
 
 ### 模型选择指南
 
-- <strong>Opus 4.6</strong>：需要最深层推理时（代码库重构、多Agent工作流）
+- <strong>Opus 4.6</strong>：需要最深层推理时（代码库重构、[多Agent工作流](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026)）
 - <strong>Sonnet 4.6</strong>：大多数生产任务（编码、文档分析、Agent任务）
 - API标识符：`claude-sonnet-4-6`
 

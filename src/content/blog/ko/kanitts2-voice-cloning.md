@@ -1,8 +1,6 @@
 ---
 title: KaniTTS2 — 3GB VRAM으로 보이스 클로닝이 가능한 오픈소스 TTS 모델
-description: >-
-  4억 파라미터의 경량 TTS 모델 KaniTTS2가 오픈소스로 공개되었습니다. 3GB VRAM만으로 보이스 클로닝이 가능하며, 사전학습
-  코드까지 완전 공개되어 음성 AI 민주화의 새로운 이정표를 제시합니다.
+description: '4억 파라미터 경량 TTS 모델 KaniTTS2가 오픈소스로 공개되었습니다. 3GB VRAM으로 제로샷 보이스 클로닝이 가능하며 사전학습 코드까지 완전 공개되었습니다. MOS 스코어와 음성 품질을 분석하고, 로컬 AI 환경에서의 실용적 활용 가능성을 상세히 살펴봅니다.'
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/kanitts2-voice-cloning-hero.png
 tags:

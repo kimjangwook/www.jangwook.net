@@ -86,7 +86,7 @@ Sonnet 3.5 → Sonnet 4 → Sonnet 4.5 → Sonnet 4.6
 Opus 4 → Opus 4.5 → Opus 4.6
 ```
 
-<strong>0.1 단위의 포인트 릴리스</strong>는 아키텍처를 유지하면서 학습 데이터와 파인튜닝을 개선하는 접근을 시사합니다. 이는 사용자에게 "파괴적 변경 없는 개선"이라는 신뢰를 줍니다.
+<strong>0.1 단위의 포인트 릴리스</strong>는 아키텍처를 유지하면서 학습 데이터와 파인튜닝을 개선하는 접근을 시사합니다. 이는 사용자에게 "파괴적 변경 없는 개선"이라는 신뢰를 줍니다. 다만 업데이트마다 무조건 개선이 이루어지는 것은 아니며, [Anthropic Claude 성능 논란 분석](/ko/blog/ko/anthropic-claude-performance-decline-controversy-april-2026)에서 확인할 수 있듯이 실제 성능 저하를 경험한 사례도 보고됩니다.
 
 ### 중간 모델 전략의 의미
 
@@ -112,6 +112,8 @@ Sonnet 4.6의 핵심 메시지는 <strong>"Opus급 성능을 Sonnet 가격에"</
 | OfficeQA | Opus 4.6 동등 | 문서 이해 |
 | Box 추론 Q&A | +15pp | 엔터프라이즈 문서 |
 | 보험 벤치마크 | 94% | 컴퓨터 사용 최고 성능 |
+
+Claude 외 다른 AI 모델과의 성능 비교가 필요하다면 [Gemini API 모델 티어 벤치마크 가이드](/ko/blog/ko/gemini-api-model-tier-benchmark-guide-2026)에서 최신 벤치마크 데이터를 확인할 수 있습니다.
 
 ### Vending-Bench Arena: 전략적 사고 능력
 
@@ -162,7 +164,7 @@ Anthropic은 Sonnet 4.5에서 마이그레이션할 때 <strong>씽킹(Thinking)
 
 ### 모델 선택 가이드
 
-- <strong>Opus 4.6</strong>: 최심층 추론이 필요한 경우 (코드베이스 리팩터링, 멀티 에이전트 워크플로우)
+- <strong>Opus 4.6</strong>: 최심층 추론이 필요한 경우 (코드베이스 리팩터링, [멀티 에이전트 워크플로우](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026))
 - <strong>Sonnet 4.6</strong>: 대부분의 프로덕션 작업 (코딩, 문서 분석, 에이전트 작업)
 - API 식별자: `claude-sonnet-4-6`
 

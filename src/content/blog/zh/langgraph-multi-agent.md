@@ -378,6 +378,7 @@ app = workflow.compile(checkpointer=checkpointer)
 4. <strong>成本管理</strong>
    - 优化LLM调用次数
    - 使用缓存策略
+   - Agent工作流的元工具优化模式请参阅[智能体工作流元工具优化](/zh/blog/zh/agentic-workflow-meta-tools-optimization)
 
 ### 最佳实践
 
@@ -398,6 +399,8 @@ app = workflow.compile(checkpointer=checkpointer)
    - 增强质量控制
 
 ## 与其他框架的比较
+
+LangGraph与CrewAI、Dapr等多种智能体框架并存。如需了解各框架生产适用性和使用场景的详细对比，请参阅[2026年AI智能体框架对比：LangGraph vs CrewAI vs Dapr生产指南](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)。
 
 ### LangGraph vs CrewAI
 
@@ -469,7 +472,7 @@ Replit利用LangGraph开发了基于AI的编码助手:
 
 ## 结论
 
-LangGraph是构建生产级多智能体系统的强大而灵活的框架。通过基于图的架构、强大的状态管理和多样的架构模式,可以有效实现复杂的AI工作流。
+LangGraph是构建生产级多智能体系统的强大而灵活的框架。通过基于图的架构、强大的状态管理和多样的架构模式,可以有效实现复杂的AI工作流。如果您对使用Claude SDK实现多智能体编排感兴趣，可以参阅[Claude Agent SDK子智能体编排教程](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026)获取互补的实现思路。
 
 <strong>应该使用LangGraph的情况</strong>:
 - 需要复杂的多步骤工作流
