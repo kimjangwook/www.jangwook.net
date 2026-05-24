@@ -1,7 +1,24 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-23T23:07:00+09:00",
+  "updated_at": "2026-05-24T15:49:00+09:00",
   "topics": [
+    {
+      "slug": "gemini-api-model-tier-benchmark-guide-2026",
+      "title_idea": "Gemini API 모델 선택 가이드 2026 — Flash-Lite부터 3.5 Flash까지 직접 측정한 속도·비용·품질 트레이드오프",
+      "content_type": "comparison",
+      "target_keyword": "Gemini API 모델 비교",
+      "secondary_keywords": [
+        "Gemini 3.5 Flash",
+        "Flash-Lite 벤치마크",
+        "Gemini API 비용"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "샌드박스 실험 (@google/generative-ai SDK, 2026-05-24 실측) — gemini-2.5-flash-lite, gemini-2.5-flash, gemini-2.5-pro, gemini-3.5-flash 직접 측정",
+      "added_at": "2026-05-24",
+      "status": "done",
+      "notes": "4개 언어 동시 발행. Gemini 3.5 Flash 실제 발견 및 측정. 비용 시뮬레이션 포함."
+    },
     {
       "slug": "google-io-2026-antigravity-2-agent-platform-analysis",
       "title_idea": "Google I/O 2026: Antigravity 2.0 전면 분석 — Gemini CLI가 사라지고, 에이전트 IDE 경쟁이 본격화된다",
