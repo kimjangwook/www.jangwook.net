@@ -79,7 +79,7 @@ graph TD
 
 ### The Previous Challenge
 
-Traditional abliteration required loading the entire model in full precision (FP16/BF16) into VRAM. For a 70B parameter model, this means approximately <strong>140GB of VRAM</strong>.
+Traditional abliteration required loading the entire model in full precision (FP16/BF16) into VRAM. For a 70B parameter model, this means approximately <strong>140GB of VRAM</strong>. Unlike hardware-level approaches such as [NVFP4 quantization](/en/blog/en/nvidia-llm-inference-cost-reduction), Heretic addresses the same problem at the software layer.
 
 ### The New Approach
 
@@ -114,7 +114,7 @@ graph LR
 | 13B | ~26GB | ~7.8GB | 70% |
 | 70B | ~140GB | ~42GB | 70% |
 
-Consumer GPUs (RTX 4090, 24GB VRAM) can now process <strong>13B-class models</strong>.
+[Consumer GPUs](/en/blog/en/ddr5-rdimm-vs-rtx3090-local-llm) (RTX 4090, 24GB VRAM) can now process <strong>13B-class models</strong>.
 
 ## MPOA: A New Technique for High-Quality Abliteration
 

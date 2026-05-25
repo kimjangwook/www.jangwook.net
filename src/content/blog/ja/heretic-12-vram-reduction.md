@@ -78,7 +78,7 @@ graph TD
 
 ### 従来の課題
 
-従来のアブリテレーション処理では、モデル全体をフルプレシジョン（FP16/BF16）でVRAMにロードする必要がありました。例えば、70Bパラメータのモデルでは<strong>約140GBのVRAM</strong>が必要です。
+従来のアブリテレーション処理では、モデル全体をフルプレシジョン（FP16/BF16）でVRAMにロードする必要がありました。例えば、70Bパラメータのモデルでは<strong>約140GBのVRAM</strong>が必要です。[NVFP4量子化](/ja/blog/ja/nvidia-llm-inference-cost-reduction)のようなハードウェアレベルのアプローチとは異なり、Hereticはソフトウェアで同じ課題を解決します。
 
 ### 新しいアプローチ
 
@@ -113,7 +113,7 @@ graph LR
 | 13B | ~26GB | ~7.8GB | 70% |
 | 70B | ~140GB | ~42GB | 70% |
 
-消費者向けGPU（RTX 4090、24GB VRAM）でも<strong>13Bクラスのモデル</strong>を処理できるようになりました。
+[消費者向けGPU](/ja/blog/ja/ddr5-rdimm-vs-rtx3090-local-llm)（RTX 4090、24GB VRAM）でも<strong>13Bクラスのモデル</strong>を処理できるようになりました。
 
 ## MPOA：高品質アブリテレーションの新手法
 

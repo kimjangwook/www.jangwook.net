@@ -1,6 +1,6 @@
 ---
 title: 'Bun Shell로 TypeScript 자동화 스크립트 만들기 — 설치부터 실전 패턴까지'
-description: 'Bun 1.3.14에서 직접 실험한 Bun Shell 완전 가이드. $ 템플릿 리터럴 기본 패턴, .nothrow() 에러 처리, Promise.all 병렬화, macOS echo 함정까지 실제 출력 로그와 함께 정리했다.'
+description: 'Bun 1.3.14에서 직접 실험한 Bun Shell 완전 가이드. $ 템플릿 리터럴 기본 패턴, .nothrow() 에러 처리, Promise.all 병렬화, macOS echo 함정까지 실제 출력 로그와 함께 정리했다. zx와의 실질적 차이점, 그리고 프로덕션 배포 시 주의사항도 포함.'
 pubDate: '2026-05-25'
 heroImage: '../../../assets/blog/bun-shell-scripting-practical-guide-2026-hero.png'
 tags: ['Bun', 'TypeScript', '자동화', 'Shell']

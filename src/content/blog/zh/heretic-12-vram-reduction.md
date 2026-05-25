@@ -76,7 +76,7 @@ graph TD
 
 ### 此前的挑战
 
-传统消融处理需要将整个模型以全精度（FP16/BF16）加载到VRAM中。例如，70B参数模型需要<strong>约140GB的VRAM</strong>。
+传统消融处理需要将整个模型以全精度（FP16/BF16）加载到VRAM中。例如，70B参数模型需要<strong>约140GB的VRAM</strong>。与[NVFP4量化](/zh/blog/zh/nvidia-llm-inference-cost-reduction)等硬件层面的方案不同，Heretic在软件层面解决了同样的问题。
 
 ### 新方法
 
@@ -111,7 +111,7 @@ graph LR
 | 13B | ~26GB | ~7.8GB | 70% |
 | 70B | ~140GB | ~42GB | 70% |
 
-消费级GPU（RTX 4090，24GB VRAM）现在也能处理<strong>13B级模型</strong>。
+[消费级GPU](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm)（RTX 4090，24GB VRAM）现在也能处理<strong>13B级模型</strong>。
 
 ## MPOA：高质量消融的新技术
 

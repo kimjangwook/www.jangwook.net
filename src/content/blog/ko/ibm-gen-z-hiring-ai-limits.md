@@ -165,9 +165,9 @@ graph LR
 
 ### 4. 채용 전략의 재검토
 
-Korn Ferry 조사에서 37%의 기업이 주니어 직무를 AI로 대체할 계획이었지만, IBM의 움직임은 정반대입니다. EM으로서 고려해야 할 포인트:
+Korn Ferry 조사에서 37%의 기업이 [주니어 직무를 AI로 대체할 계획](/ko/blog/ko/enterprise-ai-adoption-topdown)이었지만, IBM의 움직임은 정반대입니다. EM으로서 고려해야 할 포인트:
 
-- AI 리터러시가 높은 신입이 기존 사원보다 빠르게 AI 도구를 활용할 수 있다
+- [AI 리터러시](/ko/blog/ko/ai-era-career-advice-for-juniors)가 높은 신입이 기존 사원보다 빠르게 AI 도구를 활용할 수 있다
 - LinkedIn 데이터에 따르면 <strong>AI 리터러시가 미국에서 가장 빠르게 성장하는 스킬</strong>
 - 'AI를 잘 다루는 주니어'가 'AI를 못 쓰는 시니어'보다 생산성이 높을 수 있다
 

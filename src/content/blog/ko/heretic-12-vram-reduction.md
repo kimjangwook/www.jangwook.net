@@ -78,7 +78,7 @@ graph TD
 
 ### 기존의 과제
 
-기존 어블리테레이션 처리에서는 모델 전체를 풀 프리시전(Full Precision)(FP16/BF16)으로 VRAM에 로드해야 했습니다. 예를 들어 70B 파라미터 모델에는 <strong>약 140GB의 VRAM</strong>이 필요합니다.
+기존 어블리테레이션 처리에서는 모델 전체를 풀 프리시전(Full Precision)(FP16/BF16)으로 VRAM에 로드해야 했습니다. 예를 들어 70B 파라미터 모델에는 <strong>약 140GB의 VRAM</strong>이 필요합니다. [NVFP4 양자화](/ko/blog/ko/nvidia-llm-inference-cost-reduction)처럼 하드웨어 레벨에서 접근하는 방식과 달리, Heretic은 소프트웨어로 같은 문제를 해결합니다.
 
 ### 새로운 접근법
 
@@ -113,7 +113,7 @@ graph LR
 | 13B | ~26GB | ~7.8GB | 70% |
 | 70B | ~140GB | ~42GB | 70% |
 
-소비자용 GPU(RTX 4090, 24GB VRAM)로도 <strong>13B급 모델</strong>을 처리할 수 있게 되었습니다.
+[소비자용 GPU](/ko/blog/ko/ddr5-rdimm-vs-rtx3090-local-llm)(RTX 4090, 24GB VRAM)로도 <strong>13B급 모델</strong>을 처리할 수 있게 되었습니다.
 
 ## MPOA: 고품질 어블리테레이션의 새로운 기법
 

@@ -163,9 +163,9 @@ graph LR
 
 ### 4. 採用戦略の見直し
 
-Korn Ferryの調査では37%の企業がジュニア職をAIで代替する計画でしたが、IBMの動きは逆方向です。EMとして考慮すべきポイント：
+Korn Ferryの調査では37%の企業が[ジュニア職をAIで代替する計画](/ja/blog/ja/enterprise-ai-adoption-topdown)でしたが、IBMの動きは逆方向です。EMとして考慮すべきポイント：
 
-- AI リテラシーの高い新卒の方が、既存社員より早くAIツールを活用できる
+- [AI リテラシー](/ja/blog/ja/ai-era-career-advice-for-juniors)の高い新卒の方が、既存社員より早くAIツールを活用できる
 - LinkedInのデータでは、<strong>AI リテラシーが米国で最も急成長しているスキル</strong>
 - 「AIを使いこなせるジュニア」は、「AIを使えないシニア」より生産性が高い可能性がある
 

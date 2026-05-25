@@ -163,9 +163,9 @@ graph LR
 
 ### 4. 重新审视招聘策略
 
-Korn Ferry调查中37%的企业计划用AI替代初级职位，但IBM的行动恰恰相反。EM需要考虑的要点：
+Korn Ferry调查中37%的企业计划[用AI替代初级职位](/zh/blog/zh/enterprise-ai-adoption-topdown)，但IBM的行动恰恰相反。EM需要考虑的要点：
 
-- AI素养高的应届毕业生比现有员工更快掌握AI工具
+- [AI素养](/zh/blog/zh/ai-era-career-advice-for-juniors)高的应届毕业生比现有员工更快掌握AI工具
 - LinkedIn数据显示，<strong>AI素养是美国增长最快的技能</strong>
 - "善用AI的初级"可能比"不会用AI的高级"生产力更高
 

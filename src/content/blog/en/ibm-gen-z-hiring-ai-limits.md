@@ -166,9 +166,9 @@ What previously took a junior engineer a week can now be done in 1–2 days with
 
 ### 4. Rethink Hiring Strategy
 
-While 37% of companies in Korn Ferry's survey planned to replace junior roles with AI, IBM is going in the opposite direction. Key considerations for EMs:
+While 37% of companies in Korn Ferry's survey planned to [replace junior roles with AI](/en/blog/en/enterprise-ai-adoption-topdown), IBM is going in the opposite direction. Key considerations for EMs:
 
-- AI-literate new grads can adopt AI tools faster than existing employees
+- [AI-literate](/en/blog/en/ai-era-career-advice-for-juniors) new grads can adopt AI tools faster than existing employees
 - LinkedIn data shows <strong>AI literacy is the fastest-growing skill in the U.S.</strong>
 - A "junior who masters AI" may outperform a "senior who doesn't use AI"
 

@@ -1,6 +1,6 @@
 ---
 title: '用Bun Shell构建TypeScript自动化脚本 — 从安装到实战模式'
-description: '基于Bun 1.3.14实际实验的Bun Shell完整指南。涵盖$模板字面量、.nothrow()错误处理、Promise.all并行化及macOS echo陷阱，附真实执行日志。'
+description: '基于Bun 1.3.14实际实验的Bun Shell完整指南。涵盖$模板字面量、.nothrow()错误处理、Promise.all并行化及macOS echo陷阱，附真实执行日志。还包含与zx的实质差异及生产环境部署的注意事项。'
 pubDate: '2026-05-25'
 heroImage: '../../../assets/blog/bun-shell-scripting-practical-guide-2026-hero.png'
 tags: ['Bun', 'TypeScript', '自动化', 'Shell']

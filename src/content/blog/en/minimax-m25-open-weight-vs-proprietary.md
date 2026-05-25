@@ -72,7 +72,7 @@ MiniMax M2.5 is a 229B parameter open-weight model freely available on HuggingFa
 
 ### SWE-Bench Verified (Coding)
 
-SWE-Bench Verified measures the ability to resolve real GitHub issues.
+SWE-Bench Verified measures the ability to resolve real GitHub issues. [Multi-agent SWE-Bench performance analysis](/en/blog/en/multi-agent-swe-bench-verdent) provides useful context for comparison.
 
 | Model | Score | Type |
 |-------|-------|------|
@@ -97,7 +97,7 @@ On BrowseComp, which measures web search and tool-calling abilities, M2.5 scored
 
 ## The Cost Revolution: Dominance in Price, Not Just Performance
 
-The impact of M2.5 extends beyond performance. The <strong>cost-performance ratio</strong> is in a different league.
+The impact of M2.5 extends beyond performance. The <strong>cost-performance ratio</strong> is in a different league. [2026 LLM API pricing comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek) makes the gap even clearer.
 
 | Metric | M2.5 Lightning | M2.5 Standard |
 |--------|---------------|---------------|

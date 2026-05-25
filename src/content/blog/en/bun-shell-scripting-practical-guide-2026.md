@@ -1,6 +1,6 @@
 ---
 title: 'Building Automation Scripts with Bun Shell — From Setup to Real-World Patterns'
-description: 'A hands-on Bun Shell guide based on real experiments with Bun 1.3.14. Covers $ template literals, .nothrow() error handling, Promise.all parallelism, and the macOS echo pitfall with actual execution logs.'
+description: 'Bun Shell guide from Bun 1.3.14 experiments: $ template literals, .nothrow() error handling, Promise.all parallelism, macOS echo pitfall, and a comparison with zx.'
 pubDate: '2026-05-25'
 heroImage: '../../../assets/blog/bun-shell-scripting-practical-guide-2026-hero.png'
 tags: ['Bun', 'TypeScript', 'Automation', 'Shell']
