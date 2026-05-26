@@ -97,7 +97,7 @@ Web browsers originated as <strong>document viewers</strong> designed in the 199
 
 2025–2026 marks the era when AI agents become truly practical. Claude's Computer Use, OpenAI's Operator, and Google's Mariner demonstrate <strong>AI directly operating computers</strong>.
 
-In this environment, the act of opening a browser, searching manually, and switching between multiple sites feels increasingly inefficient.
+In this environment, the act of opening a browser, searching manually, and switching between multiple sites feels increasingly inefficient. Meanwhile, [Chrome 146's WebMCP](/en/blog/en/webmcp-chrome-146-ai-tool-server) demonstrates browsers themselves evolving to become AI agent tool servers.
 
 ### 3. The AI Version of Super Apps
 
@@ -143,7 +143,7 @@ graph LR
 
 ### 1. Rethinking Platform Strategy
 
-If you build web-based SaaS, you need a strategy that also addresses AI hub platforms. Standards like MCP (Model Context Protocol) are already establishing themselves as interfaces for AI tool integration.
+If you build web-based SaaS, you need a strategy that also addresses AI hub platforms. Standards like [MCP (Model Context Protocol)](/en/blog/en/mcp-open-standard-linux-foundation-engineering-guide) are already establishing themselves as interfaces for AI tool integration.
 
 ### 2. AI-Native UX Design
 
@@ -164,6 +164,8 @@ Atlas isn't OpenAI's strategy alone. Here's how the major players are moving:
 | Anthropic | Claude + MCP | Open protocol-based tool integration |
 | Apple | Apple Intelligence | Device-native AI integration |
 | Microsoft | Copilot | Windows + Office ecosystem integration |
+
+[Google I/O 2026](/en/blog/en/google-io-2026-antigravity-2-agent-platform-analysis) made it clear that this competition has expanded well beyond chatbots into developer IDE territory.
 
 ## Conclusion
 

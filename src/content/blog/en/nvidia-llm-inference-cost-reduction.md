@@ -1,9 +1,6 @@
 ---
 title: NVIDIA's NVFP4 Cuts LLM Inference Costs by 8x — While Maintaining Accuracy
-description: >-
-  How NVIDIA's NVFP4 quantization technology reduces LLM inference costs to 1/8
-  while preserving accuracy. We analyze the cost structure transformation from
-  FP32 to FP4 with real-world benchmarks.
+description: NVIDIA NVFP4 cuts LLM inference costs 8x while preserving accuracy. RTX 4090 AdaLLM benchmarks plus monthly GPU cost simulations prove the FP32-to-FP4 savings.
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-llm-inference-cost-reduction-hero.png
 tags:
@@ -124,7 +121,7 @@ The <strong>AdaLLM</strong> project, which gained traction on Reddit's r/LocalLL
 
 <strong>Key findings</strong>:
 - Qwen3-8B: 2.4x VRAM reduction vs FP16, ~20-25% throughput loss
-- Gemma3-27B (27B parameters): Fits on a single RTX 4090 GPU
+- Gemma3-27B (27B parameters): Fits on a single [RTX 4090](/en/blog/en/ddr5-rdimm-vs-rtx3090-local-llm) GPU
 - Throughput loss comes from <strong>compute efficiency</strong> rather than memory, so cost efficiency improves with larger batch sizes
 
 ## Cost Structure Transformation
@@ -233,12 +230,14 @@ NVIDIA's Blackwell GPUs (B100, B200) provide <strong>native hardware-level FP4 s
 - FP4 computation without throughput loss
 - Larger models fitting on single GPUs
 
+That said, [as DGX Spark demonstrated](/en/blog/en/nvidia-dgx-spark-cuda-compatibility), FP4 support levels can vary even within the same Blackwell brand.
+
 ### Industry Impact
 
 The widespread adoption of FP4 quantization will drive several key changes:
 
 1. <strong>LLM service price drops</strong>: API-based LLM service pricing could fall to 1/4–1/8 of current levels
-2. <strong>Edge device deployment</strong>: 70B models running on consumer GPUs will accelerate on-premises LLM adoption
+2. <strong>Edge device deployment</strong>: 70B models running on consumer GPUs will accelerate on-premises LLM adoption. [Running 80B parameter models on 8GB VRAM](/en/blog/en/qwen3-coder-8gb-vram) is already being demonstrated.
 3. <strong>Lower startup barriers</strong>: Initial investment costs for operating high-performance LLMs will decrease significantly
 4. <strong>Environmental impact</strong>: Reduced GPU power consumption will shrink AI industry's carbon footprint
 

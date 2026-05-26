@@ -1,8 +1,6 @@
 ---
 title: NVIDIA DGX SparkのCUDA互換性問題 — 個人向けAIワークステーションの現実
-description: >-
-  NVIDIA DGX
-  Sparkのsm121アーキテクチャが引き起こしたCUDAソフトウェア互換性問題と、ハンドヘルドゲーミングチップ流用疑惑を技術分析します。
+description: NVIDIA DGX Sparkのsm121アーキテクチャが引き起こしたCUDAソフトウェア互換性問題と、ハンドヘルドゲーミングチップ流用疑惑を詳しく分析します。Triton非対応、FP4/FP6量子化不可など報告された問題点を整理し、購入前に確認すべき実践的なチェックリストをまとめます。
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-dgx-spark-cuda-compatibility-hero.png
 tags:
@@ -103,7 +101,7 @@ graph TD
 
 - <strong>Triton</strong>：sm_80コードパスにフォールバックするパッチが適用（[GitHub Issue #8335](https://github.com/triton-lang/triton/issues/8335)）
 - <strong>多数のCUDAライブラリ</strong>：sm_121を認識できずビルド失敗またはランタイムエラーが発生
-- <strong>Blackwell最適化機能</strong>：FP4/FP6量子化などBlackwell専用機能が使用不可
+- <strong>Blackwell最適化機能</strong>：[FP4/FP6量子化](/ja/blog/ja/nvidia-llm-inference-cost-reduction)などBlackwell専用機能が使用不可
 
 さらに問題なのは、NVIDIAフォーラムの担当者が<strong>存在しないソフトウェアバージョンやリリース</strong>を引用して問題が解決済みだと回答した点です。これはLLMハルシネーションの疑いがあり、NVIDIAのカスタマーサポートの品質に対する懸念も提起されています。
 
@@ -124,6 +122,8 @@ DGX Sparkのケースから得られる教訓は明確です：
 3. <strong>ソフトウェアエコシステムの確認は必須</strong>：ハードウェアスペックより実際に使いたいソフトウェアが動作するかが重要
 4. <strong>初期ユーザーレビューを待つこと</strong>：特に新しいカテゴリの製品は実使用レビューを確認してから購入判断
 
+ローカルLLM用ハードウェア選択時は[DDR5 vs GPU VRAMコスト分析](/ja/blog/ja/ddr5-rdimm-vs-rtx3090-local-llm)も参考になります。
+
 ## Apple Siliconとの比較
 
 同じ統合メモリアーキテクチャを使用するApple Silicon（M4 Ultra等）との比較も意味があります：
@@ -136,7 +136,7 @@ DGX Sparkのケースから得られる教訓は明確です：
 | ソフトウェア互換性 | 部分的 | MLXエコシステム成熟 |
 | 価格 | 〜$3,000 | 〜$4,000〜 |
 
-Apple SiliconはCUDAをサポートしていませんが、MLXフレームワークのエコシステムが急速に成熟しており、ローカルLLM推論ではむしろ安定した体験を提供しています。
+Apple SiliconはCUDAをサポートしていませんが、MLXフレームワークのエコシステムが急速に成熟しており、ローカルLLM推論ではむしろ安定した体験を提供しています。消費者GPU活用が目標なら[8GB VRAMで80Bモデルを実行する方法](/ja/blog/ja/qwen3-coder-8gb-vram)も検討に値します。
 
 ## 結論
 

@@ -1,8 +1,6 @@
 ---
 title: NVIDIA NVFP4로 LLM 추론 비용 8분의 1로 절감 — 정확도 유지의 비밀
-description: >-
-  NVIDIA의 NVFP4 양자화 기술이 LLM 추론 비용을 8분의 1로 줄이면서도 정확도를 유지하는 원리를 분석합니다. FP32에서
-  FP4로의 전환이 가져올 비용 구조 변화를 실전 벤치마크와 함께 살펴봅니다.
+description: NVIDIA의 NVFP4 양자화 기술이 LLM 추론 비용을 8분의 1로 줄이면서도 정확도를 유지하는 원리를 분석합니다. FP32에서 FP4 전환이 가져올 비용 구조 변화를 RTX 4090 AdaLLM 실전 벤치마크와 월간 GPU 운영 비용 시뮬레이션과 함께 살펴봅니다.
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-llm-inference-cost-reduction-hero.png
 tags:
@@ -123,7 +121,7 @@ Reddit r/LocalLLaMA 커뮤니티에서 화제가 된 <strong>AdaLLM</strong> 프
 
 <strong>핵심 결과</strong>:
 - Qwen3-8B: FP16 대비 VRAM 2.4배 절감, 처리량 손실 약 20-25%
-- Gemma3-27B(27B 파라미터): RTX 4090 단일 GPU에 탑재 가능
+- Gemma3-27B(27B 파라미터): [RTX 4090](/ko/blog/ko/ddr5-rdimm-vs-rtx3090-local-llm) 단일 GPU에 탑재 가능
 - 메모리가 아닌 <strong>연산 효율</strong>에서의 처리량 손실이므로, 배치 크기가 커질수록 비용 효율은 개선
 
 ## 비용 구조 변화 분석
@@ -232,12 +230,14 @@ NVIDIA의 Blackwell GPU(B100, B200)는 FP4를 <strong>하드웨어 레벨에서 
 - 처리량 손실 없는 FP4 연산
 - 더 큰 모델의 단일 GPU 탑재 가능
 
+단, [DGX Spark에서 확인됐듯이](/ko/blog/ko/nvidia-dgx-spark-cuda-compatibility) Blackwell 브랜드라도 FP4 지원 수준은 제품마다 다를 수 있습니다.
+
 ### 산업적 임팩트
 
 FP4 양자화의 보편화는 다음과 같은 변화를 가져올 것입니다:
 
 1. <strong>LLM 서비스 가격 하락</strong>: API 기반 LLM 서비스의 가격이 현재의 1/4~1/8 수준으로 하락 가능
-2. <strong>엣지 디바이스 배포</strong>: 70B 모델이 소비자 GPU에서 구동 가능해지면서 온프레미스 LLM 도입 가속
+2. <strong>엣지 디바이스 배포</strong>: 70B 모델이 소비자 GPU에서 구동 가능해지면서 온프레미스 LLM 도입 가속. [8GB VRAM으로 80B 파라미터 모델을 실행하는 방법](/ko/blog/ko/qwen3-coder-8gb-vram)이 실증되고 있습니다.
 3. <strong>스타트업 진입 장벽 하락</strong>: 고성능 LLM 운영에 필요한 초기 투자 비용이 대폭 감소
 4. <strong>환경적 영향</strong>: GPU 전력 소비 감소로 AI 산업의 탄소 발자국 축소
 

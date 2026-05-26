@@ -1,6 +1,6 @@
 ---
 title: NVIDIA DGX Spark的CUDA兼容性问题 — 个人AI工作站的现实
-description: 技术分析NVIDIA DGX Spark的sm121架构引发的CUDA软件兼容性问题，以及掌机游戏芯片挪用嫌疑。
+description: NVIDIA DGX Spark的sm121架构引发大量CUDA软件不兼容。详细分析Triton框架失效、FP4/FP6量化不可用、HDMI故障等实际缺陷以及掌机芯片挪用嫌疑，并提供消费者购买AI工作站前需核实的判断清单与避坑建议。
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-dgx-spark-cuda-compatibility-hero.png
 tags:
@@ -101,7 +101,7 @@ graph TD
 
 - <strong>Triton</strong>：已打补丁回退到sm_80代码路径（[GitHub Issue #8335](https://github.com/triton-lang/triton/issues/8335)）
 - <strong>众多CUDA库</strong>：无法识别sm_121，导致构建失败或运行时错误
-- <strong>Blackwell优化功能</strong>：FP4/FP6量化等Blackwell专属功能不可用
+- <strong>Blackwell优化功能</strong>：[FP4/FP6量化](/zh/blog/zh/nvidia-llm-inference-cost-reduction)等Blackwell专属功能不可用
 
 更令人担忧的是，NVIDIA论坛工作人员引用了<strong>不存在的软件版本和发布</strong>来声称问题已解决。这被怀疑是LLM幻觉，也引发了对NVIDIA客户支持质量的担忧。
 
@@ -122,6 +122,8 @@ graph TD
 3. <strong>必须验证软件生态系统</strong>：实际想用的软件能否运行比硬件规格更重要
 4. <strong>等待早期用户评测</strong>：特别是新品类产品，确认实际使用评测后再做购买决定
 
+进行本地LLM硬件选择时，[DDR5与GPU显存成本分析](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm)也值得参考。
+
 ## 与Apple Silicon的对比
 
 与同样使用统一内存架构的Apple Silicon（M4 Ultra等）进行对比也很有意义：
@@ -134,7 +136,7 @@ graph TD
 | 软件兼容性 | 部分 | MLX生态系统成熟 |
 | 价格 | ~$3,000 | ~$4,000+ |
 
-Apple Silicon虽然不支持CUDA，但MLX框架生态系统正在快速成熟，在本地LLM推理方面反而提供了更稳定的体验。
+Apple Silicon虽然不支持CUDA，但MLX框架生态系统正在快速成熟，在本地LLM推理方面反而提供了更稳定的体验。如果目标是利用消费级GPU，[8GB显存运行80B模型的方法](/zh/blog/zh/qwen3-coder-8gb-vram)也值得参考。
 
 ## 结论
 

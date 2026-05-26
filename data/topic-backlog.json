@@ -1,7 +1,43 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-26T15:30:00+09:00",
+  "updated_at": "2026-05-26T23:07:00+09:00",
   "topics": [
+    {
+      "slug": "ollama-fastapi-production-deployment-guide-2026",
+      "title_idea": "Ollama + FastAPI로 로컬 LLM API 서버 만들기 — 개발부터 Docker 배포까지 완전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Ollama FastAPI 프로덕션 배포",
+      "secondary_keywords": [
+        "Ollama Docker",
+        "로컬 LLM API",
+        "FastAPI LLM 서버",
+        "온프레미스 LLM"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Vitest/Bun 포스트 흐름 + 로컬 LLM 시리즈 (nvidia-llm-inference-cost-reduction, qwen3-coder-8gb-vram 등) 자연스러운 연계",
+      "added_at": "2026-05-26",
+      "status": "queued",
+      "notes": "로컬 LLM 트렌드 + FastAPI 결합. Ollama의 REST API + FastAPI 래퍼로 프로덕션 LLM 서버 구축. Docker Compose로 배포. nvidia-llm-inference-cost-reduction과 내부링크 연결 가능"
+    },
+    {
+      "slug": "vitest-4-ai-agent-testing-patterns-2026",
+      "title_idea": "Vitest 4로 AI 에이전트 테스트하기 — LLM 호출 모킹, 스트리밍 응답 테스트 실전 패턴",
+      "content_type": "how-to",
+      "target_keyword": "Vitest AI 에이전트 테스트",
+      "secondary_keywords": [
+        "Anthropic SDK 테스트",
+        "LLM 모킹",
+        "AI agent 단위 테스트",
+        "Vitest mock"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "vitest-4-jest-migration-guide-2026 포스트 자연스러운 후속편. AI 에이전트 테스트는 2026년 급부상 주제",
+      "added_at": "2026-05-26",
+      "status": "queued",
+      "notes": "vitest-4-jest-migration-guide-2026의 직접적 후속편. Anthropic SDK의 스트리밍 응답을 Vitest로 모킹하는 패턴, Claude 에이전트 도구 호출 테스트. 내부링크 풍부"
+    },
     {
       "slug": "vitest-4-jest-migration-guide-2026",
       "title_idea": "Jest에서 Vitest 4로 마이그레이션하기 — 설치부터 실전 테스트까지 완전 가이드",

@@ -2,9 +2,7 @@
 title: >-
   NVIDIA DGX Spark CUDA Compatibility Issues — The Reality of Personal AI
   Workstations
-description: >-
-  A technical analysis of NVIDIA DGX Spark's sm121 architecture CUDA software
-  compatibility problems and suspected handheld gaming chip repurposing.
+description: NVIDIA DGX Spark sm121 CUDA failures analyzed — Triton breakage, FP4/FP6 missing, handheld chip allegations, and a buyer checklist for AI workstation shoppers.
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-dgx-spark-cuda-compatibility-hero.png
 tags:
@@ -105,7 +103,7 @@ Reported compatibility issues include:
 
 - <strong>Triton</strong>: Patched to fall back to sm_80 code paths ([GitHub Issue #8335](https://github.com/triton-lang/triton/issues/8335))
 - <strong>Numerous CUDA libraries</strong>: Fail to recognize sm_121, resulting in build failures or runtime errors
-- <strong>Blackwell-specific features</strong>: FP4/FP6 quantization and other Blackwell-exclusive features unavailable
+- <strong>Blackwell-specific features</strong>: [FP4/FP6 quantization](/en/blog/en/nvidia-llm-inference-cost-reduction) and other Blackwell-exclusive features unavailable
 
 Making matters worse, the NVIDIA forum representative cited <strong>non-existent software versions and releases</strong> while claiming issues had been resolved. This is suspected to be LLM hallucination, raising concerns about NVIDIA's customer support quality.
 
@@ -126,6 +124,8 @@ The lessons from the DGX Spark case are clear:
 3. <strong>Verify software ecosystem support</strong>: Whether your desired software actually runs matters more than hardware specs
 4. <strong>Wait for early user reviews</strong>: Especially for new product categories, check real-world usage reviews before purchasing
 
+For local LLM hardware selection, [DDR5 vs GPU VRAM cost analysis](/en/blog/en/ddr5-rdimm-vs-rtx3090-local-llm) is also worth consulting.
+
 ## Comparison with Apple Silicon
 
 A comparison with Apple Silicon (M4 Ultra, etc.), which uses a similar unified memory architecture, is also meaningful:
@@ -138,7 +138,7 @@ A comparison with Apple Silicon (M4 Ultra, etc.), which uses a similar unified m
 | Software compatibility | Partial | Mature MLX ecosystem |
 | Price | ~$3,000 | ~$4,000+ |
 
-While Apple Silicon doesn't support CUDA, the MLX framework ecosystem is maturing rapidly, providing a more stable experience for local LLM inference.
+While Apple Silicon doesn't support CUDA, the MLX framework ecosystem is maturing rapidly, providing a more stable experience for local LLM inference. If consumer GPU utilization is the goal, [running 80B models on 8GB VRAM](/en/blog/en/qwen3-coder-8gb-vram) is worth considering.
 
 ## Conclusion
 
