@@ -1,7 +1,19 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-25T23:07:00+09:00",
+  "updated_at": "2026-05-26T15:30:00+09:00",
   "topics": [
+    {
+      "slug": "vitest-4-jest-migration-guide-2026",
+      "title_idea": "Jest에서 Vitest 4로 마이그레이션하기 — 설치부터 실전 테스트까지 완전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Vitest 4 Jest 마이그레이션",
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "샌드박스 실험 (vitest@4.1.7, 2026-05-26). 16개 테스트 157ms 통과 확인.",
+      "added_at": "2026-05-26",
+      "status": "done",
+      "notes": "4개 언어 동시 발행."
+    },
     {
       "slug": "claude-agent-sdk-typescript-practical-guide-2026",
       "title_idea": "Claude Agent SDK TypeScript 실전 가이드 — Claude Code와 같은 엔진으로 AI 에이전트 직접 만들기",
@@ -33,8 +45,8 @@
       "priority": 1,
       "source": "Vitest 3.0 공식 블로그 + 웹 리서치 (2026-05-25). 재설계된 public API, inline workspace 설정, Playwright/WebdriverIO 기반 browser mode 탑재. Jest 대비 3〜8배 빠름",
       "added_at": "2026-05-25",
-      "status": "queued",
-      "notes": "Vitest 3 major: 재설계 API + inline workspace + 성숙한 browser mode. Jest 마이그레이션 수요 높음 (npm uninstall jest → npm install vitest). jest.fn() → vi.fn() 자동 치환 패턴 실험 가능"
+      "status": "done",
+      "notes": "Vitest 3 major: 재설계 API + inline workspace + 성숙한 browser mode. Jest 마이그레이션 수요 높음 (npm uninstall jest → npm install vitest). jest.fn() → vi.fn() 자동 치환 패턴 실험 가능 → 실제 발행 slug는 vitest-4-jest-migration-guide-2026으로 변경 (Vitest 4.1.7 기준, 2026-05-26)"
     },
     {
       "slug": "bun-sql-database-guide-2026",

@@ -1,4 +1,15 @@
 {
+  "vitest-4-jest-migration-guide-2026": {
+    "pubDate": "2026-05-26",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.85,
+      "ai-ml": 0.1,
+      "devops": 0.6,
+      "architecture": 0.5
+    }
+  },
   "ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production": {
     "pubDate": "2026-04-19",
     "difficulty": 3,
