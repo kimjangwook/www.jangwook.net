@@ -2709,5 +2709,16 @@
       "zx",
       "Node.js"
     ]
+  },
+  "mcp-remote-http-deployment-pattern": {
+    "pubDate": "2026-05-27",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.55,
+      "ai-ml": 0.75,
+      "devops": 0.9,
+      "architecture": 0.8
+    }
   }
 }

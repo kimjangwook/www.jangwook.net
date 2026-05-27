@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-26T23:07:00+09:00",
+  "updated_at": "2026-05-27T15:35:00+09:00",
   "topics": [
     {
       "slug": "ollama-fastapi-production-deployment-guide-2026",
@@ -958,7 +958,7 @@
       "priority": 1,
       "source": "modelcontextprotocol.io, taskade.com/blog/mcp-servers, 2026-04 리서치",
       "added_at": "2026-04-26",
-      "status": "queued",
+      "status": "done",
       "notes": "stdio→HTTP 전환이 급증 트렌드 (월간 MCP 서버 설치 97M, 500+ 서버). 한국 기업 엔터프라이즈 MCP 도입 초기 단계라 선점 가능. mcp-server-production-deployment-kubernetes-guide와 차별화: 배포 인프라보다 트랜스포트 전환 패턴 중심. mcp-v2-client-typescript-implementation-guide와 클라이언트-서버 쌍으로 연계 가능. 월요일 How-to 유형."
     },
     {
