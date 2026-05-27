@@ -139,7 +139,7 @@ graph TB
 - <strong>Codex는 MCP 서버</strong>로서 코드 생성 전문가 역할
 - Claude가 "이건 코드 생성이다"라고 판단하면 Codex에 위임
 
-이것은 곧 <strong>EM(Claude)이 시니어 엔지니어(Codex)에게 구현을 위임</strong>하는 구조입니다.
+이것은 곧 <strong>EM(Claude)이 시니어 엔지니어(Codex)에게 구현을 위임</strong>하는 구조입니다. MCP를 통한 코드 실행 연동의 구체적인 구현 방법은 [MCP Code Execution 실전 적용 가이드](/ko/blog/ko/mcp-code-execution-practical-implementation)에서 확인할 수 있습니다.
 
 ### NabbilKhan의 8체 에이전트 운용
 
@@ -206,6 +206,8 @@ async def route_task(task: Task) -> Result:
 - 에이전트별 성공/실패율 추적
 - 재라우팅이 빈번한 패턴 식별
 - 라우팅 규칙의 점진적 세분화
+
+프로덕션에서 멀티에이전트 시스템을 운영할 때 각 에이전트의 동작을 추적하고 이상 징후를 감지하려면 [AI 에이전트 옵저버빌리티 실전 가이드](/ko/blog/ko/ai-agent-observability-production-guide)가 필수 참고 자료가 됩니다.
 
 ## 결론
 

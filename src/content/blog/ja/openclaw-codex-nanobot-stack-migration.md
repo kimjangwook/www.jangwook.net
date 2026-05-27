@@ -1,7 +1,8 @@
 ---
 title: OpenClawをやめてCodex+Nanobotに乗り換えた理由
 description: >-
-  OpenClawが重すぎてCodexとNanobotに引っ越した実体験。launchdスケジューリングとTelegramブリッジ、MCPホスト構成の長所と短所を正直にまとめました。
+  OpenClawからCodex+Nanobotへの実践マイグレーション体験記。launchdスケジューリング、Telegramブリッジ、MCPホスト
+  構成の長短を正直に比較し、リソース過負荷のない最適AIエージェント構成を解説します。
 pubDate: '2026-04-27'
 heroImage: ../../../assets/blog/openclaw-codex-nanobot-stack-migration-hero.jpg
 tags:

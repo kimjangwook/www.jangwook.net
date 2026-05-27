@@ -1,8 +1,8 @@
 ---
 title: Anthropic Files API 実践ガイド — PDF再アップロードなしでドキュメントを一括分析する
 description: >-
-  Anthropic Files APIで文書を1回アップロードして複数リクエストで再利用する方法。Python
-  SDKコード例、コスト削減パターン、実行可能性の判断まで解説
+  Anthropic Files APIでPDF・画像を一度アップロードし複数のAPIリクエストで再利用する実践ガイド。Python SDKバッチ
+  分析コード、プロンプトキャッシュとのコスト比較、file_idライフサイクル管理を詳しく解説。
 pubDate: '2026-05-05'
 heroImage: >-
   ../../../assets/blog/anthropic-files-api-batch-document-processing-guide-hero.png

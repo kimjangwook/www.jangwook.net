@@ -141,7 +141,7 @@ graph TB
 - <strong>Codex acts as an MCP server</strong>, specializing in code generation
 - When Claude determines "this is a code generation task," it delegates to Codex
 
-This is exactly the structure of an <strong>EM (Claude) delegating implementation to a senior engineer (Codex)</strong>.
+This is exactly the structure of an <strong>EM (Claude) delegating implementation to a senior engineer (Codex)</strong>. For a hands-on look at how MCP-based code execution is wired up in practice, see [MCP Code Execution in Practice: Improving Claude Code Project Structure](/en/blog/en/mcp-code-execution-practical-implementation).
 
 ### NabbilKhan's 8-Agent Operation
 
@@ -208,6 +208,8 @@ Just as a manager adjusts future delegation based on results, agent routing shou
 - Track per-agent success/failure rates
 - Identify patterns that frequently trigger re-routing
 - Progressively refine routing rules
+
+When operating multi-agent systems in production, [AI Agent Observability in Practice: Making Production LLM Systems Transparent](/en/blog/en/ai-agent-observability-production-guide) is an essential reference for tracking agent behavior and detecting anomalies.
 
 ## Conclusion
 

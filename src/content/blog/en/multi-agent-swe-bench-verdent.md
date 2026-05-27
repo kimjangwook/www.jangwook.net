@@ -134,13 +134,13 @@ The same question applies in the AI world.
 | Scalability | Depends on model size | Scales with agent count |
 | Cost Efficiency | Large model = high cost | Multiple small models = flexible cost |
 
-Just as code reviews, pair programming, and mob programming in real software teams transcend individual limitations, <strong>collaborative architectures in the AI agent world are producing results that surpass individual capabilities</strong>.
+Just as code reviews, pair programming, and mob programming in real software teams transcend individual limitations, <strong>collaborative architectures in the AI agent world are producing results that surpass individual capabilities</strong>. The [Claude Agent SDK Subagent Orchestration Guide](/en/blog/en/claude-agent-sdk-subagents-orchestration-tutorial-2026) walks through implementing this kind of multi-agent parallel processing at the code level.
 
 ## Practical Implications
 
 ### 1. Changing Criteria for AI Tool Selection
 
-If "which model to use" was the key question until now, going forward <strong>"how to architect and combine agents"</strong> becomes the more important question.
+If "which model to use" was the key question until now, going forward <strong>"how to architect and combine agents"</strong> becomes the more important question. The [AI Agent Framework Comparison 2026: LangGraph vs CrewAI vs Dapr](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) can help narrow down which framework fits your architecture needs.
 
 ### 2. Cost-Performance Optimization
 

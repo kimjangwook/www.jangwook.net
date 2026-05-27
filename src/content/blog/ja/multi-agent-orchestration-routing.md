@@ -139,7 +139,7 @@ graph TB
 - <strong>CodexはMCPサーバー</strong>としてコード生成専門家の役割
 - Claudeが「これはコード生成だ」と判断するとCodexに委譲
 
-これはすなわち<strong>EM（Claude）がシニアエンジニア（Codex）に実装を委譲</strong>する構造です。
+これはすなわち<strong>EM（Claude）がシニアエンジニア（Codex）に実装を委譲</strong>する構造です。MCP経由のコード実行連携の具体的な実装方法は[MCP Code Execution実践ガイド](/ja/blog/ja/mcp-code-execution-practical-implementation)で確認できます。
 
 ### NabbilKhanの8体エージェント運用
 
@@ -206,6 +206,8 @@ async def route_task(task: Task) -> Result:
 - エージェント別の成功/失敗率追跡
 - 再ルーティングが頻発するパターンの特定
 - ルーティングルールの段階的細分化
+
+プロダクションでマルチエージェントシステムを運用する際、各エージェントの動作を追跡し異常を検知するには[AIエージェントオブザーバビリティ実践ガイド](/ja/blog/ja/ai-agent-observability-production-guide)が必須の参考資料となります。
 
 ## 結論
 

@@ -1,6 +1,8 @@
 ---
 title: 我为什么从OpenClaw转向Codex+Nanobot
-description: 因为OpenClaw太重，我换成了Codex和Nanobot。聊聊launchd调度、Telegram桥接和MCP宿主组合的真实利弊。
+description: >-
+  从OpenClaw迁移到Codex+Nanobot的实战经验分享。对比launchd调度配置、Telegram桥接集成和MCP宿主组合的真实利弊，
+  介绍搭建无资源过载轻量级AI智能体工具链的最优方案。
 pubDate: '2026-04-27'
 heroImage: ../../../assets/blog/openclaw-codex-nanobot-stack-migration-hero.jpg
 tags:

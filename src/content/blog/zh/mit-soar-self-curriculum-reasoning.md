@@ -50,7 +50,7 @@ draft: true
 
 ## 概述
 
-近年来，通过强化学习（RL）微调来增强大语言模型（LLM）的推理能力备受关注。然而，在<strong>初始成功率极低的困难问题</strong>上，几乎没有学习信号，导致RL训练陷入停滞（plateau），这是一个根本性的局限。
+近年来，通过强化学习（RL）微调来增强大语言模型（LLM）的推理能力备受关注。如果你想在深入这项研究之前先了解LLM的基本工作原理，[DeNA LLM学习笔记Part 1：LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)是很好的入门起点。然而，在<strong>初始成功率极低的困难问题</strong>上，几乎没有学习信号，导致RL训练陷入停滞（plateau），这是一个根本性的局限。
 
 MIT研究团队（Shobhita Sundaram等）发表的论文<strong>"Teaching Models to Teach Themselves: Reasoning at the Edge of Learnability"</strong>为这一问题提供了创新性的解决方案。这就是<strong>SOAR（Self-improvement through Open-ended Automated Reasoning）</strong>——一个让LLM自主生成学习课程、逐步攻克无法解决的问题的框架。
 
@@ -140,7 +140,7 @@ SOAR成功地将人类教育中的<strong>脚手架（scaffolding）</strong>概
 
 ### 自我进化AI系统的可能性
 
-这项研究开启了AI在没有外部人类监督的情况下<strong>自主设计和执行学习课程（autonomous self-improvement）</strong>的可能性。虽然从安全角度需要谨慎对待，但技术可行性已被明确证明。
+这项研究开启了AI在没有外部人类监督的情况下<strong>自主设计和执行学习课程（autonomous self-improvement）</strong>的可能性。关于类似自我改进机制的实际开源实现，[Hermes Agent——随工作不断自我进化的开源AI智能体](/zh/blog/zh/hermes-agent-self-evolving-ai-framework)展示了生产级别的实现案例。虽然从安全角度需要谨慎对待，但技术可行性已被明确证明。
 
 ## 结论
 

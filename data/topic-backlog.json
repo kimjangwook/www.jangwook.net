@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-27T15:35:00+09:00",
+  "updated_at": "2026-05-27T23:07:00+09:00",
   "topics": [
     {
       "slug": "ollama-fastapi-production-deployment-guide-2026",
@@ -2686,6 +2686,60 @@
       "added_at": "2026-05-24",
       "status": "queued",
       "notes": "월요일 How-to용 대안. Files API GA로 실용 수요 증가. 배치 처리 코드 예제와 비용 시뮬레이션 포함 예정"
+    },
+    {
+      "slug": "mcp-2-1-rc-stateless-specification-analysis-2026",
+      "title_idea": "MCP 2.1 Release Candidate 심층 분석 — Stateless 코어·Tasks·MCP Apps, 에이전트 인프라가 달라지는 것",
+      "content_type": "news",
+      "target_keyword": "MCP 2.1 스펙 변경 stateless",
+      "secondary_keywords": [
+        "MCP Release Candidate",
+        "MCP Extensions 프레임워크",
+        "MCP Tasks",
+        "Model Context Protocol 2026"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "blog.modelcontextprotocol.io/posts/2026-mcp-roadmap, thenewstack.io/model-context-protocol-roadmap-2026",
+      "added_at": "2026-05-27",
+      "status": "queued",
+      "notes": "2026-05-21 RC 확정, 최종 스펙은 2026-07-28 예정. 핵심: 프로토콜 레이어에서 stateless화 → sticky routing·shared session store 불필요. Extensions 프레임워크, Tasks 타입, MCP Apps 신규. OAuth 2.1 인증 강화. 기존 MCP 서버 마이그레이션 포인트 포함 예정."
+    },
+    {
+      "slug": "anthropic-claude-wall-street-financial-agents-analysis-2026",
+      "title_idea": "Anthropic Claude 금융 에이전트 10종 분석 — AI 에이전트 제어 플레인 전쟁이 엔터프라이즈로 옮겨붙다",
+      "content_type": "news",
+      "target_keyword": "Anthropic Claude 금융 에이전트 Wall Street",
+      "secondary_keywords": [
+        "Claude 엔터프라이즈 에이전트",
+        "Claude Opus 4.7 금융",
+        "Microsoft 365 Claude 통합",
+        "AI 에이전트 제어 플레인"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon, venturebeat.com/orchestration/claudes-next-enterprise-battle",
+      "added_at": "2026-05-27",
+      "status": "queued",
+      "notes": "Anthropic이 세계 최대 은행 대상 사전 구축 AI 에이전트 10종 출시. Microsoft 365 완전 통합, Moody's 데이터 파트너십. Claude 엔터프라이즈 채택 128% 증가. 에이전트 제어 플레인 경쟁 구도 분석 (Anthropic vs OpenAI vs Microsoft)."
+    },
+    {
+      "slug": "nsa-mcp-security-guidance-developer-checklist-2026",
+      "title_idea": "NSA MCP 보안 가이드라인 분석 — AI 에이전트 개발자가 지금 당장 적용해야 할 5가지",
+      "content_type": "news",
+      "target_keyword": "MCP 보안 NSA 가이드라인",
+      "secondary_keywords": [
+        "MCP 프롬프트 인젝션",
+        "MCP 보안 체크리스트",
+        "AI 에이전트 보안 2026",
+        "NSA AI 보안"
+      ],
+      "search_intent": "informational",
+      "priority": 3,
+      "source": "nsa.gov/Portals/75/documents/Cybersecurity/CSI_MCP_SECURITY.pdf",
+      "added_at": "2026-05-27",
+      "status": "queued",
+      "notes": "NSA가 MCP Security v1.0 가이던스 발표. 파라미터 검증, 데이터 분류, 옵저버빌리티 강조. 개발자 관점에서 실천 체크리스트 형태로 구성 예정."
     }
   ]
 }

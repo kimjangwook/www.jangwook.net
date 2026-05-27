@@ -56,7 +56,7 @@ draft: true
 
 ## Overview
 
-Reinforcement learning (RL) fine-tuning to enhance the reasoning capabilities of Large Language Models (LLMs) has attracted significant attention in recent years. However, a fundamental limitation exists: on <strong>extremely difficult problems with near-zero initial success rates</strong>, there is virtually no learning signal, causing RL training to plateau.
+Reinforcement learning (RL) fine-tuning to enhance the reasoning capabilities of Large Language Models (LLMs) has attracted significant attention in recent years. For a grounding in how LLMs work before diving into this research, [DeNA LLM Study Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals) is a solid starting point. However, a fundamental limitation exists: on <strong>extremely difficult problems with near-zero initial success rates</strong>, there is virtually no learning signal, causing RL training to plateau.
 
 The paper <strong>"Teaching Models to Teach Themselves: Reasoning at the Edge of Learnability"</strong> by the MIT research team (Shobhita Sundaram et al.) presents an innovative solution. Enter <strong>SOAR (Self-improvement through Open-ended Automated Reasoning)</strong> — a framework where LLMs generate their own learning curriculum to progressively conquer previously unsolvable problems.
 
@@ -146,7 +146,7 @@ SOAR successfully applies the educational concept of <strong>scaffolding</strong
 
 ### The Possibility of Self-Evolving AI Systems
 
-This research opens the door to <strong>autonomous self-improvement</strong> where AI designs and executes its own learning curriculum without external human supervision. While careful consideration of safety implications is necessary, the technical feasibility has been clearly demonstrated.
+This research opens the door to <strong>autonomous self-improvement</strong> where AI designs and executes its own learning curriculum without external human supervision. For a real-world open-source implementation of a similar self-improvement mechanism, [Hermes Agent — an Open-Source AI Agent That Evolves as It Works](/en/blog/en/hermes-agent-self-evolving-ai-framework) shows what this looks like at the production level. While careful consideration of safety implications is necessary, the technical feasibility has been clearly demonstrated.
 
 ## Conclusion
 

@@ -1,6 +1,8 @@
 ---
 title: Anthropic Files API实战指南 — 无需重复上传PDF即可批量分析文档
-description: 如何通过Anthropic Files API将文档上传一次并在多个请求中复用。Python SDK代码示例、降本模式，以及坦诚的可执行性评估
+description: >-
+  通过Anthropic Files API将PDF文档上传一次、在多个请求中反复复用的实战指南。含Python SDK批量代码、与提示词缓存的成本对比、
+  file_id生命周期管理模式及批量分析适用场景判断。
 pubDate: '2026-05-05'
 heroImage: >-
   ../../../assets/blog/anthropic-files-api-batch-document-processing-guide-hero.png

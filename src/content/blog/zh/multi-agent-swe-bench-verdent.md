@@ -129,13 +129,13 @@ graph TD
 | 可扩展性 | 依赖模型规模 | 通过增加智能体扩展 |
 | 成本效率 | 大模型=高成本 | 多个小模型=灵活成本 |
 
-正如实际软件团队中的代码评审、结对编程、群体编程等协作方式能够超越个人局限，AI智能体世界中<strong>协作架构也在创造超越个体能力的成果</strong>。
+正如实际软件团队中的代码评审、结对编程、群体编程等协作方式能够超越个人局限，AI智能体世界中<strong>协作架构也在创造超越个体能力的成果</strong>。[Claude Agent SDK子智能体编排实战指南](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026)详细介绍了如何在代码层面实现这种多智能体并行处理。
 
 ## 实践启示
 
 ### 1. AI工具选择标准的变化
 
-如果说以前的核心问题是"用哪个模型"，那么今后<strong>"如何架构和组合智能体"</strong>将成为更重要的问题。
+如果说以前的核心问题是"用哪个模型"，那么今后<strong>"如何架构和组合智能体"</strong>将成为更重要的问题。[2026年AI智能体框架对比：LangGraph vs CrewAI vs Dapr](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)可以帮助你确定适合自身架构需求的框架。
 
 ### 2. 成本效益优化
 

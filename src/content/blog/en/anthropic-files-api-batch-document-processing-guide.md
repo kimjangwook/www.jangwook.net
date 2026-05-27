@@ -1,9 +1,8 @@
 ---
 title: Anthropic Files API Guide — Analyze Documents Without Re-uploading PDFs
 description: >-
-  How to upload documents once and reuse them across multiple requests with
-  Anthropic Files API. Python SDK examples, cost reduction patterns, and honest
-  executability assessment
+  Upload documents once with Anthropic Files API and reuse across requests.
+  Python SDK batch code, prompt-caching cost tradeoffs, and file_id management.
 pubDate: '2026-05-05'
 heroImage: >-
   ../../../assets/blog/anthropic-files-api-batch-document-processing-guide-hero.png

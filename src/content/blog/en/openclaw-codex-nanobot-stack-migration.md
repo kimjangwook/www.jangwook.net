@@ -1,9 +1,9 @@
 ---
 title: Why I Left OpenClaw for a Codex + Nanobot Stack
 description: >-
-  A real-world account of dropping OpenClaw because it got too heavy, then
-  rebuilding around Codex and Nanobot. Honest notes on launchd scheduling, a
-  Telegram bridge, and the MCP host combo.
+  A hands-on migration from OpenClaw to Codex+Nanobot. launchd scheduling,
+  Telegram bridge, MCP host tradeoffs, and tips for a lightweight AI agent
+  toolchain.
 pubDate: '2026-04-27'
 heroImage: ../../../assets/blog/openclaw-codex-nanobot-stack-migration-hero.jpg
 tags:

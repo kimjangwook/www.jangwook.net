@@ -139,7 +139,7 @@ graph TB
 - <strong>Codex作为MCP服务器</strong>，担任代码生成专家角色
 - Claude判断"这是代码生成任务"后委派给Codex
 
-这正是<strong>EM（Claude）将实现工作委派给高级工程师（Codex）</strong>的结构。
+这正是<strong>EM（Claude）将实现工作委派给高级工程师（Codex）</strong>的结构。关于MCP代码执行连接的具体实现方式，可参考[MCP Code Execution实战指南](/zh/blog/zh/mcp-code-execution-practical-implementation)。
 
 ### NabbilKhan的8体智能体运用
 
@@ -206,6 +206,8 @@ async def route_task(task: Task) -> Result:
 - 追踪每个智能体的成功/失败率
 - 识别频繁触发重新路由的模式
 - 逐步细化路由规则
+
+在生产环境运营多智能体系统时，[AI智能体可观测性实战指南](/zh/blog/zh/ai-agent-observability-production-guide)是追踪智能体行为、检测异常的必备参考资料。
 
 ## 结论
 
