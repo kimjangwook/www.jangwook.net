@@ -2720,5 +2720,31 @@
       "devops": 0.9,
       "architecture": 0.8
     }
+  },
+  "ollama-fastapi-production-deployment-guide-2026": {
+    "pubDate": "2026-05-28",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.4,
+      "ai-ml": 0.7,
+      "devops": 0.6,
+      "software-engineering": 0.5
+    },
+    "topics": [
+      "ollama",
+      "fastapi",
+      "local-llm",
+      "python",
+      "docker",
+      "sse",
+      "streaming"
+    ],
+    "targetAudience": [
+      "developers",
+      "ml-engineers",
+      "devops"
+    ],
+    "contentType": "how-to"
   }
 }

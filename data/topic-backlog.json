@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-27T23:07:00+09:00",
+  "updated_at": "2026-05-28T15:30:00+09:00",
   "topics": [
     {
       "slug": "ollama-fastapi-production-deployment-guide-2026",
@@ -17,8 +17,8 @@
       "priority": 2,
       "source": "Vitest/Bun 포스트 흐름 + 로컬 LLM 시리즈 (nvidia-llm-inference-cost-reduction, qwen3-coder-8gb-vram 등) 자연스러운 연계",
       "added_at": "2026-05-26",
-      "status": "queued",
-      "notes": "로컬 LLM 트렌드 + FastAPI 결합. Ollama의 REST API + FastAPI 래퍼로 프로덕션 LLM 서버 구축. Docker Compose로 배포. nvidia-llm-inference-cost-reduction과 내부링크 연결 가능"
+      "status": "done",
+      "notes": "로컬 LLM 트렌드 + FastAPI 결합. Ollama의 REST API + FastAPI 래퍼로 프로덕션 LLM 서버 구축. Docker Compose로 배포. nvidia-llm-inference-cost-reduction과 내부링크 연결 가능\n2026-05-28: Published. Lab Publish. FastAPI 0.136.3 + Ollama v0.20.5 sandbox verified."
     },
     {
       "slug": "vitest-4-ai-agent-testing-patterns-2026",
