@@ -1,6 +1,6 @@
 ---
 title: '用Ollama + FastAPI搭建本地LLM API服务器 — 从开发到Docker部署完整指南'
-description: '通过FastAPI封装Ollama REST API，构建具备SSE流式传输、健康检查和Docker Compose部署的生产级本地LLM服务器的实战指南。包含真实执行日志。'
+description: '本指南完整介绍如何通过FastAPI封装Ollama REST API，逐步构建具备SSE流式传输、健康检查、Docker Compose容器化部署的生产级本地LLM服务器，并附有Llama 3.2、Mistral等主流模型的实际运行日志与完整API调用测试示例。'
 pubDate: '2026-05-28'
 heroImage: '../../../assets/blog/ollama-fastapi-production-deployment-guide-2026-hero.png'
 tags: ['Ollama', 'FastAPI', '本地LLM', 'Python', 'Docker']

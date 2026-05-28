@@ -52,7 +52,7 @@ draft: true
 
 ## 概述
 
-MCP（Model Context Protocol）是Anthropic开发的开放协议，旨在标准化AI模型与外部数据源和工具之间的连接方式。在Claude Code等AI编程代理中，MCP服务器扮演着至关重要的角色——它们扩展了AI的能力边界，使其能够访问实时数据、执行代码分析、进行浏览器自动化等操作。
+MCP（Model Context Protocol）是Anthropic开发的开放协议，旨在标准化AI模型与外部数据源和工具之间的连接方式。在[Claude Code](/zh/blog/zh/claude-code-best-practices)等AI编程代理中，MCP服务器扮演着至关重要的角色——它们扩展了AI的能力边界，使其能够访问实时数据、执行代码分析、进行浏览器自动化等操作。
 
 传统的AI助手受限于训练数据的截止日期和固定的功能集。而通过MCP服务器，我们可以：
 
@@ -428,6 +428,6 @@ MCP服务器显著扩展了Claude Code的能力边界。通过合理配置和组
 3. <strong>Sequential Thinking</strong>：处理复杂问题时很有帮助
 4. <strong>Chrome DevTools</strong>：Web开发必备
 
-MCP生态系统正在快速发展，越来越多的工具正在加入。我建议关注[MCP官方仓库](https://github.com/modelcontextprotocol)以获取最新的服务器列表和更新。
+MCP生态系统正在快速发展，越来越多的工具正在加入。如需在远程环境部署MCP服务器，可参考[MCP Streamable HTTP服务器生产部署指南](/zh/blog/zh/mcp-remote-http-deployment-pattern)。我建议关注[MCP官方仓库](https://github.com/modelcontextprotocol)以获取最新的服务器列表和更新。
 
 通过这些工具的组合使用，Claude Code从一个智能助手进化成为一个真正的开发伙伴，能够理解代码、获取信息、执行测试、分析性能——几乎涵盖了开发工作流的各个方面。

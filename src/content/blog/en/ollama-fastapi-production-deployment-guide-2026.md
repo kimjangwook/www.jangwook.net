@@ -1,6 +1,6 @@
 ---
-title: 'Building a Local LLM API Server with Ollama + FastAPI — From Dev to Docker Deployment'
-description: 'A hands-on guide to wrapping Ollama REST API with FastAPI to build a production-ready local LLM server with SSE streaming, health checks, and Docker Compose deployment. Real execution logs included.'
+title: 'Ollama + FastAPI Local LLM Server — Docker Production Guide'
+description: 'Build a production LLM API with Ollama and FastAPI. Covers SSE streaming, health checks, Docker Compose. Llama 3.2 and Mistral execution logs included.'
 pubDate: '2026-05-28'
 heroImage: '../../../assets/blog/ollama-fastapi-production-deployment-guide-2026-hero.png'
 tags: ['Ollama', 'FastAPI', 'Local LLM', 'Python', 'Docker']

@@ -1,8 +1,6 @@
 ---
 title: Meta AIのエージェントプラットフォーム化 — Sierra・Avocado・Big Brain
-description: >-
-  MetaがAIエージェントプラットフォームへと進化しています。Sierraパートナーシップ、Avocadoモデル、Big
-  Brain推論エンジンの核心を解説します。
+description: 'MetaがソーシャルプラットフォームからAIエージェント企業へと転換しています。Sierraパートナーシップ、独自モデルAvocado、高度推論エンジンBig Brainの技術的意義と開発者生態系への影響を分析します。'
 pubDate: '2026-02-10'
 heroImage: ../../../assets/blog/meta-ai-agent-platform-sierra-avocado-hero.png
 tags:
@@ -60,7 +58,7 @@ draft: true
 
 Metaが単なるソーシャルメディア企業から<strong>AIエージェントプラットフォーム企業</strong>への大転換を図っています。2025年末から本格化したこの戦略は、3つのキーワードで要約されます：外部エージェントパートナーシップの<strong>Sierra</strong>、次世代フロンティアモデルの内部コードネーム<strong>Avocado</strong>、そして高度な推論能力を意味する<strong>Big Brain</strong>です。
 
-この記事では、MetaのAI戦略がどのように変化しているのか、そしてそれが開発者やビジネスにどのような意味を持つのかを分析します。
+この記事では、MetaのAI戦略がどのように変化しているのか、そしてそれが開発者やビジネスにどのような意味を持つのかを分析します。企業のAIエージェント採用動向については[企業AI導入のトップダウン戦略](/ja/blog/ja/enterprise-ai-adoption-topdown)も合わせて参照ください。
 
 ## LlamaからAvocadoへ — 戦略の大転換
 
@@ -199,6 +197,8 @@ graph TB
 | <strong>Google</strong> | Gemini + Android統合 | Gemini 3 |
 | <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
 | <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
+
+Anthropicのエージェント標準化アプローチについては[Anthropicエージェントスキル標準](/ja/blog/ja/anthropic-agent-skills-standard)で詳しく解説しています。
 
 ## まとめ
 

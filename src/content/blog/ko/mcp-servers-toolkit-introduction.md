@@ -56,7 +56,7 @@ draft: true
 
 MCP(Model Context Protocol)는 AI 코딩 에이전트가 외부 도구와
 통신하기 위한 표준 프로토콜이다.
-Claude Code에서 MCP 서버를 활용하면 코드 분석, 문서 검색,
+[Claude Code](/ko/blog/ko/claude-code-best-practices)에서 MCP 서버를 활용하면 코드 분석, 문서 검색,
 브라우저 자동화 등 다양한 기능을 AI 에이전트에 통합할 수 있다.
 
 MCP의 핵심 가치는 <strong>컨텍스트의 확장</strong>이다.
@@ -373,5 +373,6 @@ MCP 서버 도입 후 개발 생산성이 크게 향상됐다.
 3. <strong>Serena</strong>: 대규모 코드베이스에서 필수
 
 MCP 서버는 AI 코딩 에이전트의 한계를 확장하는 핵심 도구다.
+원격에서 MCP 서버를 운영해야 한다면 [MCP Streamable HTTP 서버 배포 실전 가이드](/ko/blog/ko/mcp-remote-http-deployment-pattern)를 참고하자.
 자신의 워크플로우에 맞는 서버를 선택하여
 개발 생산성을 극대화하길 바란다.

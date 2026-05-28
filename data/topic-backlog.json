@@ -1,7 +1,43 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-28T15:30:00+09:00",
+  "updated_at": "2026-05-28T23:07:00+09:00",
   "topics": [
+    {
+      "slug": "claude-code-agent-sdk-typescript-production-2026",
+      "title_idea": "Claude Agent SDK TypeScript 실전 — 프로덕션 AI 에이전트를 Claude Code 엔진으로 직접 만드는 방법",
+      "content_type": "news",
+      "target_keyword": "Claude Agent SDK 프로덕션 배포",
+      "secondary_keywords": [
+        "Claude Code SDK TypeScript",
+        "Anthropic 에이전트 빌드",
+        "Claude Agent SDK 튜토리얼",
+        "AI 에이전트 2026"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Anthropic 공식 문서 + 2026-05-28 리서치 — Claude Code SDK → Claude Agent SDK 리네임, TypeScript/Python 지원",
+      "added_at": "2026-05-28",
+      "status": "queued",
+      "notes": "내일(금요일) 뉴스 분석 유형 후보 #1. Claude Code와 동일 엔진을 라이브러리로 임베드 가능. 파일 읽기/쓰기/코드 편집 도구 기본 탑재. 개발자들의 관심 급증 중. claude-code-masterclass-series-1, vitest-4-ai-agent-testing-patterns과 자연스럽게 연계 가능."
+    },
+    {
+      "slug": "anthropic-claude-4-model-family-may-2026-analysis",
+      "title_idea": "Anthropic Claude 4 모델 패밀리 완전 분석 — Opus 4.7·Sonnet 4.6·Haiku 4.5 실전 선택 가이드",
+      "content_type": "news",
+      "target_keyword": "Claude 4 모델 비교 2026",
+      "secondary_keywords": [
+        "Claude Opus 4.7 성능",
+        "Claude Sonnet 4.6 가격",
+        "Anthropic 모델 선택",
+        "Claude 4 API 가이드"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Anthropic 공식 발표 + 2026-05-28 모델 ID 분석 — claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001",
+      "added_at": "2026-05-28",
+      "status": "queued",
+      "notes": "내일(금요일) 뉴스 분석 유형 후보 #2. 2026년 5월 기준 현역 Claude 4.x 모델 패밀리 완전 정리. 코딩·추론·비용 관점 3가지 시나리오별 최적 모델 제시. llm-api-pricing-comparison-2026과 내부링크 연계 가능. Fast mode(Opus + 빠른 출력) 소개 포함."
+    },
     {
       "slug": "ollama-fastapi-production-deployment-guide-2026",
       "title_idea": "Ollama + FastAPI로 로컬 LLM API 서버 만들기 — 개발부터 Docker 배포까지 완전 가이드",

@@ -1,8 +1,6 @@
 ---
 title: 'Meta AI의 에이전트 플랫폼 전환 — Sierra, Avocado, Big Brain'
-description: >-
-  Meta가 AI 에이전트 플랫폼으로 진화하고 있습니다. Sierra 파트너십, Avocado 모델, Big Brain 추론 엔진의 핵심을
-  분석합니다.
+description: 'Meta가 소셜 플랫폼을 넘어 AI 에이전트 플랫폼 기업으로 대전환합니다. Sierra 파트너십, 독점 모델 Avocado, 고급 추론 엔진 Big Brain의 기술적 의미와 WhatsApp 기반 30억 사용자 생태계에 미치는 영향을 개발자 관점으로 심층 분석합니다.'
 pubDate: '2026-02-10'
 heroImage: ../../../assets/blog/meta-ai-agent-platform-sierra-avocado-hero.png
 tags:
@@ -60,7 +58,7 @@ draft: true
 
 Meta가 단순한 소셜 미디어 기업에서 <strong>AI 에이전트 플랫폼 기업</strong>으로 대전환을 시도하고 있습니다. 2025년 말부터 본격화된 이 전략은 세 가지 핵심 키워드로 요약됩니다: 외부 에이전트 파트너십인 <strong>Sierra</strong>, 차세대 프론티어 모델의 내부 코드네임인 <strong>Avocado</strong>, 그리고 고급 추론 능력을 의미하는 <strong>Big Brain</strong>입니다.
 
-이 글에서는 Meta의 AI 전략이 어떻게 변화하고 있는지, 그리고 이것이 개발자와 비즈니스에 어떤 의미를 갖는지 분석합니다.
+이 글에서는 Meta의 AI 전략이 어떻게 변화하고 있는지, 그리고 이것이 개발자와 비즈니스에 어떤 의미를 갖는지 분석합니다. 기업의 AI 에이전트 도입 전략에 관심 있다면 [기업 AI 도입의 탑다운 전략](/ko/blog/ko/enterprise-ai-adoption-topdown)도 함께 참고하면 좋습니다.
 
 ## Llama에서 Avocado로 — 전략의 대전환
 
@@ -199,6 +197,8 @@ graph TB
 | <strong>Google</strong> | Gemini + Android 통합 | Gemini 3 |
 | <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
 | <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
+
+Anthropic의 에이전트 표준화 접근 방식은 [Anthropic 에이전트 스킬 표준](/ko/blog/ko/anthropic-agent-skills-standard)에서 자세히 살펴볼 수 있습니다.
 
 ## 결론
 

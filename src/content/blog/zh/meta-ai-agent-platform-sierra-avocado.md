@@ -1,6 +1,6 @@
 ---
 title: Meta AI的Agent平台化转型 — Sierra、Avocado与Big Brain
-description: Meta正在向AI Agent平台进化。本文分析Sierra合作伙伴关系、Avocado模型和Big Brain推理引擎的核心要点。
+description: 'Meta正从社交平台转型为AI Agent平台企业。深入分析Sierra外部Agent合作关系、独有模型Avocado与Big Brain推理引擎的技术意义，以及对WhatsApp 30亿用户生态和开发者的影响。'
 pubDate: '2026-02-10'
 heroImage: ../../../assets/blog/meta-ai-agent-platform-sierra-avocado-hero.png
 tags:
@@ -58,7 +58,7 @@ draft: true
 
 Meta正在从一家社交媒体公司向<strong>AI Agent平台企业</strong>进行重大转型。这一自2025年末开始加速的战略可以用三个关键词来概括：代表外部Agent合作伙伴关系的<strong>Sierra</strong>、下一代前沿模型内部代号<strong>Avocado</strong>、以及代表高级推理能力的<strong>Big Brain</strong>。
 
-本文分析Meta的AI战略如何变化，以及这对开发者和企业意味着什么。
+本文分析Meta的AI战略如何变化，以及这对开发者和企业意味着什么。如需了解企业AI Agent采用趋势，可参考[企业AI导入自上而下战略](/zh/blog/zh/enterprise-ai-adoption-topdown)。
 
 ## 从Llama到Avocado — 战略大转型
 
@@ -197,6 +197,8 @@ graph TB
 | <strong>Google</strong> | Gemini + Android集成 | Gemini 3 |
 | <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
 | <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
+
+关于Anthropic的Agent标准化方法，可参阅[Anthropic Agent技能标准](/zh/blog/zh/anthropic-agent-skills-standard)。
 
 ## 结论
 

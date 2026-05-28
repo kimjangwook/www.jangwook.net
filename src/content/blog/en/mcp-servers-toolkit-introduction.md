@@ -56,7 +56,7 @@ draft: true
 
 Model Context Protocol (MCP) is Anthropic's open standard for connecting AI assistants to external tools and data sources. Think of it as a universal adapter that allows Claude to interact with databases, APIs, development tools, and services through a standardized interface.
 
-For developers using Claude Code, MCP servers are game-changers. Instead of copying and pasting context manually, Claude can directly query documentation, analyze code semantically, run browser tests, and access real-time information. This dramatically reduces token usage while improving accuracy.
+For developers using [Claude Code](/en/blog/en/claude-code-best-practices), MCP servers are game-changers. Instead of copying and pasting context manually, Claude can directly query documentation, analyze code semantically, run browser tests, and access real-time information. This dramatically reduces token usage while improving accuracy.
 
 In this guide, I'll walk through the 7 MCP servers I use daily and explain how each one enhances my development workflow.
 
@@ -340,6 +340,6 @@ Add them incrementally. Each server you add expands Claude's capabilities withou
 
 MCP servers transform Claude Code from a smart autocomplete into a genuine development partner. By connecting Claude to semantic code analysis, current documentation, browser automation, and search capabilities, you create a workflow where the AI truly understands your context.
 
-The initial setup takes maybe 30 minutes. The productivity gains compound daily. If you're serious about AI-assisted development, MCP servers aren't optional—they're essential infrastructure.
+The initial setup takes maybe 30 minutes. The productivity gains compound daily. If you need to run MCP servers in a remote environment, check out our [MCP Streamable HTTP Server Deployment Guide](/en/blog/en/mcp-remote-http-deployment-pattern). If you're serious about AI-assisted development, MCP servers aren't optional—they're essential infrastructure.
 
 Start with one or two servers, get comfortable with their capabilities, then expand your toolkit. Your future self will thank you for the investment.
