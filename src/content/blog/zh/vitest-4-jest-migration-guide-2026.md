@@ -1,6 +1,6 @@
 ---
 title: '从 Jest 迁移到 Vitest 4 完整指南 — 2026 年更快的测试环境搭建'
-description: '基于 Vitest 4.1.7 的 Jest 项目迁移完整指南。涵盖安装、配置切换、jest→vitest 代码转换模式、稳定 Browser Mode 及新断言器（toSatisfy、toBeOneOf）——均经沙箱实验验证。'
+description: '基于 Vitest 4.1.7 的 Jest 项目完整迁移实战指南，附实验验证结果。涵盖安装配置切换、jest→vitest 代码转换模式、稳定 Browser Mode 及新断言器（toSatisfy、toBeOneOf），可直接应用于生产。'
 pubDate: '2026-05-26'
 heroImage: '../../../assets/blog/vitest-4-jest-migration-guide-2026-hero.png'
 tags: ['Vitest', 'Jest', 'TypeScript']

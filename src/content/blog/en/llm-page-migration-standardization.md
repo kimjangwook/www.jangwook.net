@@ -414,7 +414,7 @@ const { Content } = await post.render();
 
 ### E2E Testing: Playwright (2024-2025 Standard)
 
-Playwright has emerged as the de facto standard for E2E testing:
+Playwright has emerged as the de facto standard for E2E testing. For a hands-on walkthrough of AI-powered E2E test authoring with Playwright, see [Playwright + AI: Automated E2E Testing Guide](/en/blog/en/playwright-ai-testing).
 
 <strong>Advantages:</strong>
 - Microsoft-backed, active maintenance
@@ -583,7 +583,7 @@ getFCP(sendToAnalytics);
 
 ### AEO (Answer Engine Optimization) Check
 
-With the rise of AI-powered search engines, structured data validation is critical:
+With the rise of AI-powered search engines, structured data validation is critical. For a practical B2B SaaS implementation of SEO/AEO in the LLM era, see [LLM-Era SEO/AEO Practical Guide](/en/blog/en/llm-seo-aeo-practical-implementation).
 
 ```typescript
 import { test, expect } from '@playwright/test';

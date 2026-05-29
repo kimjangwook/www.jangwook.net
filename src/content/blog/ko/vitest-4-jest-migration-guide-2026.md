@@ -1,6 +1,6 @@
 ---
 title: 'Jest에서 Vitest 4로 마이그레이션하기 — 설치부터 실전 테스트까지 완전 가이드'
-description: 'Vitest 4.1.7 기준으로 Jest 프로젝트를 마이그레이션하는 완전 가이드. 설치, 설정 전환, jest→vitest 코드 변환 패턴, Browser Mode stable, 신규 매처(toSatisfy, toBeOneOf)까지 직접 실험한 결과를 담았다.'
+description: 'Vitest 4.1.7 기준으로 Jest 프로젝트를 단계별로 마이그레이션하는 실전 가이드. 설치, 설정 전환, jest→vitest 코드 변환 패턴, Browser Mode stable, 신규 매처(toSatisfy, toBeOneOf)까지 직접 실험한 결과를 담았다.'
 pubDate: '2026-05-26'
 heroImage: '../../../assets/blog/vitest-4-jest-migration-guide-2026-hero.png'
 tags: ['Vitest', 'Jest', 'TypeScript']

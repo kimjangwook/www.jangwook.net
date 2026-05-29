@@ -465,7 +465,7 @@ import Footer from '../components/Footer.astro';
 
 ### E2E测试：Playwright
 
-<strong>截至2024-2025年，Playwright已成为E2E测试的事实标准</strong>。由Microsoft开发并积极维护，通过跨浏览器(Chromium、Firefox、WebKit)支持和自动等待机制提供高稳定性。
+<strong>截至2024-2025年，Playwright已成为E2E测试的事实标准</strong>。由Microsoft开发并积极维护，通过跨浏览器(Chromium、Firefox、WebKit)支持和自动等待机制提供高稳定性。关于AI Codegen辅助E2E测试编写的实践指南，请参阅[Playwright + AI自动化E2E测试指南](/zh/blog/zh/playwright-ai-testing)。
 
 <strong>优势</strong>：
 - 跨浏览器测试(Chromium、Firefox、WebKit)
@@ -618,7 +618,7 @@ test('可访问性检查', async ({ page }) => {
 
 ### AEO(Answer Engine Optimization)检查
 
-AEO是AI搜索时代的新SEO。Schema.org结构化数据是必需的。
+AEO是AI搜索时代的新SEO。Schema.org结构化数据是必需的。关于LLM时代SEO/AEO的B2B SaaS实践案例，请参阅[LLM时代SEO/AEO实战指南](/zh/blog/zh/llm-seo-aeo-practical-implementation)。
 
 <strong>结构化数据验证</strong>：
 

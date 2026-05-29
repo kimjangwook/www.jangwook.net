@@ -72,6 +72,8 @@ This post shares real implementation experience from <a href="https://agent-effi
 - Target: AI systems extracting information
 - Key metrics: Citation rate, accuracy, source credibility
 
+For a hands-on walkthrough of applying these strategies to a real B2B SaaS product, see [AEO Implementation for the AI Search Era: Agent Effi Flow Case Study](/en/blog/en/aeo-implementation-experience).
+
 ### The Shift in User Behavior
 
 <strong>Users are asking questions, not typing keywords</strong>:
@@ -629,6 +631,8 @@ gtag('event', 'api_call', {
 
 ## AEO Advanced Strategies
 
+If you want to bring AI-powered search directly into your site, [Implementing Site Search with Vertex AI Search: Cloud Functions and Automated Deployment](/en/blog/en/vertex-ai-search-site-implementation) covers the full setup from API server to automated deployment.
+
 ### 1. Optimize for Citation-Worthy Content
 
 <strong>What makes content citation-worthy for LLMs?</strong>
@@ -826,6 +830,7 @@ Stay tuned!
 - <strong>AI Content Recommendation System</strong> - LLM-based semantic matching
 - <strong>Specification-Driven Development</strong> - Building with Claude Code
 - <strong>Individual Developer AI SaaS Journey</strong> - 3-day MVP to production
+- [Blog Automation with LLM and Claude Code](/en/blog/en/llm-blog-automation) - How to automate content pipelines with AI agents
 
 ## Conclusion
 

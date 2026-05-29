@@ -535,7 +535,7 @@ Crawl-delay: 1
 
 ### AEO란 무엇인가?
 
-<strong>AEO (Answer Engine Optimization)</strong>는 AI 검색 엔진(ChatGPT Search, Perplexity, Google AI Overviews 등)에서 콘텐츠가 답변 소스로 선택되도록 최적화하는 전략입니다.
+<strong>AEO (Answer Engine Optimization)</strong>는 AI 검색 엔진(ChatGPT Search, Perplexity, Google AI Overviews 등)에서 콘텐츠가 답변 소스로 선택되도록 최적화하는 전략입니다. 실제 B2B SaaS 프로젝트에 AEO를 적용한 구체적인 구현 사례는 [AEO 구현기: Agent Effi Flow 실전 적용](/ko/blog/ko/aeo-implementation-experience)에서 확인할 수 있습니다.
 
 #### SEO vs AEO: 핵심 차이점
 
@@ -554,6 +554,8 @@ Crawl-delay: 1
 - 62% 마케터가 AI 답변 엔진으로 인한 <strong>클릭 감소</strong> 경험
 - 하지만 <strong>조기 AEO 도입자</strong>는 50〜200% 트래픽 성장
 - 2026년까지 검색의 <strong>50%가 AI 모드</strong>로 전환 예상
+
+AI 기반 사이트 검색 기능을 직접 구현하고 싶다면, [Vertex AI Search로 사이트 내 검색 구현하기](/ko/blog/ko/vertex-ai-search-site-implementation)에서 Cloud Functions와 자동화 배포 방법을 다루고 있습니다.
 
 <strong>주요 플랫폼별 특성</strong>:
 
@@ -1164,7 +1166,7 @@ const weeklyKPIs = {
 
 #### 1. 오케스트레이션형 접근
 
-복수 전문 에이전트를 병렬로 실행하여 효율성을 극대화했습니다:
+복수 전문 에이전트를 병렬로 실행하여 효율성을 극대화했습니다. 이런 AI 에이전트 기반 자동화 워크플로우를 콘텐츠 제작에 적용하는 방법은 [LLM과 Claude Code를 활용한 블로그 자동화](/ko/blog/ko/llm-blog-automation)에서 자세히 설명합니다.
 
 ```
 Day 1:

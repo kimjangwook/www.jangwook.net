@@ -362,7 +362,7 @@ const { Content } = await post.render();
 
 ### E2Eテスト: Playwright (2024〜2025年推奨)
 
-Playwrightは、Microsoftが開発する次世代E2Eテストフレームワークです。Puppeteerと比較して、以下の優位性があります:
+Playwrightは、Microsoftが開発する次世代E2Eテストフレームワークです。Puppeteerと比較して、以下の優位性があります。AI Codegenを活用したE2Eテスト自動化の詳細は[Playwright + AI 自動化ガイド](/ja/blog/ja/playwright-ai-testing)をご覧ください。
 
 <strong>主な利点</strong>:
 - クロスブラウザ(Chromium、Firefox、WebKit)
@@ -487,7 +487,7 @@ test('アクセシビリティ検査', async ({ page }) => {
 
 ### AEO(Answer Engine Optimization)チェック
 
-AI検索時代の最適化として、Schema.org構造化データの検証が重要です:
+AI検索時代の最適化として、Schema.org構造化データの検証が重要です。LLM時代のSEO/AEO実践については[LLM時代のSEO/AEO実践ガイド](/ja/blog/ja/llm-seo-aeo-practical-implementation)も参考にしてください。
 
 ```typescript
 import { test } from '@playwright/test';

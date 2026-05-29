@@ -1,6 +1,6 @@
 ---
-title: 'Vector DB比較 2026 — Qdrant vs ChromaDB vs pgvector 実験で直接検証した選択ガイド'
-description: 'Qdrant、ChromaDB、pgvectorを1000ベクトル(dim=384)環境で実際にベンチマーク。挿入速度・クエリ遅延・フィルタ性能の数値をもとに、RAGアプリでどの状況に何を使うべきか明確な基準を提示。小規模でChromaDBフィルタがQdrantより速い理由も解説する。'
+title: 'Vector DB比較 2026: Qdrant vs ChromaDB vs pgvector 選択ガイド'
+description: 'Qdrant・ChromaDB・pgvectorを1000ベクトル(dim=384)環境で直接ベンチマーク。挿入速度・クエリ遅延・フィルタ性能の実測値でRAGアプリの選択基準を示し、小規模でChromaDBが速い理由も解説する。'
 pubDate: '2026-05-23'
 heroImage: '../../../assets/blog/vector-db-comparison-2026-qdrant-chroma-pgvector/hero.png'
 tags:

@@ -1,6 +1,6 @@
 ---
-title: 'Vector DB Comparison 2026 — Qdrant vs ChromaDB vs pgvector: What the Benchmarks Actually Show'
-description: 'I ran Qdrant, ChromaDB, and pgvector through the same 1000-vector (dim=384) benchmark — insert speed, query latency, and filter performance. Here are the raw numbers and a clear decision framework for RAG apps. Includes why ChromaDB filter queries beat Qdrant at small scale.'
+title: 'Vector DB Comparison 2026: Qdrant vs ChromaDB vs pgvector Guide'
+description: 'Benchmarked Qdrant, ChromaDB, and pgvector on 1,000 vectors (dim=384). Covers insert speed, query latency, and filter performance with a clear decision guide for RAG apps.'
 pubDate: '2026-05-23'
 heroImage: '../../../assets/blog/vector-db-comparison-2026-qdrant-chroma-pgvector/hero.png'
 tags:

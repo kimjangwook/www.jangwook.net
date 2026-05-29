@@ -1,6 +1,6 @@
 ---
-title: '向量数据库对比 2026 — Qdrant vs ChromaDB vs pgvector 实测基准选型指南'
-description: '对Qdrant、ChromaDB、pgvector在1000个向量(dim=384)环境下进行了实际基准测试，涵盖插入速度、查询延迟和过滤性能。提供RAG应用中各场景的明确选型标准，并解释为何小规模下ChromaDB过滤查询比Qdrant更快。'
+title: '向量数据库对比 2026: Qdrant vs ChromaDB vs pgvector 选型指南'
+description: '在1000个向量(dim=384)环境下实测Qdrant、ChromaDB与pgvector，对比插入速度、查询延迟和过滤性能，提供RAG应用的明确选型标准，并解释小规模下ChromaDB过滤查询快于Qdrant的原因。'
 pubDate: '2026-05-23'
 heroImage: '../../../assets/blog/vector-db-comparison-2026-qdrant-chroma-pgvector/hero.png'
 tags:

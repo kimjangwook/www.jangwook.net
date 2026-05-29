@@ -70,6 +70,8 @@ relatedPosts:
 - 目标：提取信息的AI系统
 - 关键指标：引用率、准确性、来源可信度
 
+关于将AEO策略应用于真实B2B SaaS产品的实战案例，请参阅[AI搜索时代的AEO实施经验：Agent Effi Flow实战案例](/zh/blog/zh/aeo-implementation-experience)。
+
 ### 用户行为的转变
 
 <strong>用户正在提问，而不是输入关键词</strong>：
@@ -627,6 +629,8 @@ gtag('event', 'api_call', {
 
 ## AEO高级策略
 
+如果您希望在自己的网站中引入AI搜索功能，[用Vertex AI Search实现站内搜索：Cloud Functions与自动化部署](/zh/blog/zh/vertex-ai-search-site-implementation)涵盖了从API服务器到自动化部署的完整流程。
+
 ### 1. 优化以获得可引用的内容
 
 <strong>什么样的内容值得LLM引用？</strong>
@@ -824,6 +828,7 @@ async function processReceipt(imagePath: string) {
 - <strong>AI内容推荐系统</strong> - 基于LLM的语义匹配
 - <strong>规范驱动开发</strong> - 使用Claude Code构建
 - <strong>个人开发者AI SaaS之旅</strong> - 3天从MVP到生产
+- [利用LLM与Claude Code实现博客自动化](/zh/blog/zh/llm-blog-automation) - 使用AI代理自动化内容流水线的方法
 
 ## 结论
 

@@ -589,7 +589,7 @@ Content Metrics:
 
 #### Answer Engine Optimizationとは?
 
-従来のSEOが<strong>検索結果順位</strong>を目標とするのに対し、AEOは<strong>LLMの回答に引用される</strong>ことを目標とします。
+従来のSEOが<strong>検索結果順位</strong>を目標とするのに対し、AEOは<strong>LLMの回答に引用される</strong>ことを目標とします。実際のB2B SaaSプロジェクトへのAEO適用事例については[AEO実装記：Agent Effi Flow実践適用](/ja/blog/ja/aeo-implementation-experience)で詳しく解説しています。
 
 ```mermaid
 graph LR
@@ -1134,7 +1134,7 @@ ROI Analysis:
    - データと統計の戦略的使用
 
 3. <strong>自動化インフラ</strong>
-   - Claude Code + MCPで80%自動化
+   - Claude Code + MCPで80%自動化。このようなLLMを活用したコンテンツ自動化の詳細は[LLMとClaude Codeを活用したブログ自動化](/ja/blog/ja/llm-blog-automation)を参照してください。
    - 週次レポートで継続改善
    - コスト効率: $0.32/lead
 
@@ -1213,7 +1213,7 @@ ROI Analysis:
 
 この記事では<strong>SEO基盤構築とAEO基本戦略</strong>を扱いました。次回の記事では、さらに高度なAEO戦略を深く掘り下げます:
 
-- 🔍 <strong>LLMプロンプト最適化</strong>: ChatGPT/Claude/Perplexityそれぞれに最適化されたコンテンツ戦略
+- 🔍 <strong>LLMプロンプト最適化</strong>: ChatGPT/Claude/Perplexityそれぞれに最適化されたコンテンツ戦略。サイト内にAI検索を実装する実践例は[Vertex AI Searchでサイト内検索を実装する](/ja/blog/ja/vertex-ai-search-site-implementation)で確認できます。
 - 📊 <strong>Citation Attribution</strong>: LLM引用の追跡と測定方法
 - 🤖 <strong>エージェントベースSEO</strong>: AI AgentがコンテンツをどのようにDiscover/Index/Rankするか
 - 💡 <strong>Future-Proof戦略</strong>: 2025年以降のSearch変化に備える

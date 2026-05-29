@@ -2776,6 +2776,44 @@
       "added_at": "2026-05-27",
       "status": "queued",
       "notes": "NSA가 MCP Security v1.0 가이던스 발표. 파라미터 검증, 데이터 분류, 옵저버빌리티 강조. 개발자 관점에서 실천 체크리스트 형태로 구성 예정."
+    },
+    {
+      "slug": "llamaindex-vs-langchain-vs-haystack-rag-framework-comparison-2026",
+      "title_idea": "LlamaIndex vs LangChain vs Haystack — RAG 프레임워크 3파전 완전 비교, 2026 선택 가이드",
+      "content_type": "comparison",
+      "target_keyword": "RAG 프레임워크 비교 2026",
+      "secondary_keywords": [
+        "LlamaIndex vs LangChain",
+        "Haystack RAG",
+        "RAG 구현 프레임워크",
+        "AI 검색 증강 생성 도구",
+        "LLM RAG 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "daily-closing analysis — 2026-05-29",
+      "added_at": "2026-05-29",
+      "status": "queued",
+      "notes": "토요일 비교 가이드용. RAG는 2026년 AI 앱 개발에서 가장 많이 적용되는 패턴이나 프레임워크 선택 혼란이 큼. LlamaIndex(문서 처리·인덱싱 최적화), LangChain(범용 오케스트레이션), Haystack(엔터프라이즈 파이프라인) 각각 강점이 뚜렷. 벡터 DB 연동, 청크 전략, 성능 벤치마크, 비용 기준 비교. vector-db-comparison-2026-qdrant-chroma-pgvector 포스트와 내부링크 연결로 시너지 높음. 아직 한국어 심층 비교 포스트가 드문 블루오션 주제."
+    },
+    {
+      "slug": "llm-deployment-options-comparison-2026-self-hosted-api-bedrock",
+      "title_idea": "LLM 배포 옵션 완전 비교 2026 — 자체 호스팅 vs API vs AWS Bedrock, 팀 규모별 최적 선택",
+      "content_type": "comparison",
+      "target_keyword": "LLM 배포 방식 비교",
+      "secondary_keywords": [
+        "LLM 자체 호스팅 비용",
+        "AWS Bedrock vs OpenAI API",
+        "Ollama vs API 비교",
+        "온프레미스 LLM 비용",
+        "LLM 인프라 선택 가이드"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "daily-closing analysis — 2026-05-29",
+      "added_at": "2026-05-29",
+      "status": "queued",
+      "notes": "토요일 비교 가이드용. LLM 도입 초기 팀이 가장 먼저 부딪히는 '어떻게 실행할 것인가' 선택 문제. (1) OpenAI/Anthropic/Gemini 직접 API, (2) AWS Bedrock·Azure OpenAI 등 관리형 클라우드, (3) Ollama·vLLM 자체 호스팅 3가지를 월 처리량·지연시간·보안·비용·유지보수 부담 기준으로 비교. 스타트업 1-5인 팀 / 10-50인 성장 팀 / 엔터프라이즈 3개 시나리오로 권장안 제시. ollama-fastapi-production-deployment-guide-2026, llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek 포스트와 내부링크 연결 가능. 전통적 인프라 팀이 처음 LLM 도입 시 검색하는 evergreen 주제."
     }
   ]
 }

@@ -106,7 +106,7 @@ relatedPosts:
 
 <strong>优势</strong>：
 - <strong>200K tokens上下文窗口</strong>可处理大容量文档
-- 可通过Claude Skills进行PM专用定制
+- [可通过Claude Skills进行PM专用定制](/zh/blog/zh/claude-skills-implementation-guide)
 - Artifacts功能可生成结构化输出
 - 安全且符合伦理的AI响应
 
@@ -392,11 +392,11 @@ graph LR
 
 3. <strong>Zoom → Claude → Notion</strong>
    - 自动总结会议记录
-   - 更新Notion项目页面
+   - [更新Notion项目页面](/zh/blog/zh/ai-agent-notion-mcp-automation)
 
 ### Phase 3：高级自动化（1〜2个月）
 
-<strong>目标</strong>：构建基于AI代理的自主工作流
+<strong>目标</strong>：[构建基于AI代理的自主工作流](/zh/blog/zh/llm-blog-automation)
 
 <strong>利用Claude Skills</strong>：
 ```markdown

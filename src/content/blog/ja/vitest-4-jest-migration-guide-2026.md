@@ -1,6 +1,6 @@
 ---
 title: 'JestからVitest 4への完全移行ガイド — インストールから実践テストまで'
-description: 'Vitest 4.1.7ベースのJestプロジェクト移行完全ガイド。インストール・設定切り替え・jest→vitestコード変換パターン・安定Browser Mode・新マッチャー(toSatisfy, toBeOneOf)まで、サンドボックスで検証した結果をまとめた。'
+description: 'Vitest 4.1.7ベースでJestプロジェクトをステップごとに移行する実践ガイド。インストールから設定切り替え・コード変換パターン・安定Browser Mode・新マッチャー(toSatisfy, toBeOneOf)まで、実際のサンドボックスで検証した全結果をまとめた決定版の完全移行ガイド。'
 pubDate: '2026-05-26'
 heroImage: '../../../assets/blog/vitest-4-jest-migration-guide-2026-hero.png'
 tags: ['Vitest', 'Jest', 'TypeScript']

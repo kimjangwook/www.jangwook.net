@@ -465,7 +465,7 @@ import Footer from '../components/Footer.astro';
 
 ### E2E 테스팅: Playwright
 
-<strong>2024-2025년 현재 Playwright가 E2E 테스팅의 사실상 표준</strong>이 되었습니다. Microsoft가 개발하고 적극적으로 유지보수하며, 크로스 브라우저(Chromium, Firefox, WebKit) 지원과 자동 대기 메커니즘으로 안정성이 높습니다.
+<strong>2024-2025년 현재 Playwright가 E2E 테스팅의 사실상 표준</strong>이 되었습니다. Microsoft가 개발하고 적극적으로 유지보수하며, 크로스 브라우저(Chromium, Firefox, WebKit) 지원과 자동 대기 메커니즘으로 안정성이 높습니다. AI Codegen을 활용한 E2E 테스트 작성 방법은 [Playwright + AI 자동화 가이드](/ko/blog/ko/playwright-ai-testing)에서 더 자세히 다룹니다.
 
 <strong>장점</strong>:
 - 크로스 브라우저 테스트(Chromium, Firefox, WebKit)
@@ -618,7 +618,7 @@ test('접근성 검사', async ({ page }) => {
 
 ### AEO(Answer Engine Optimization) 체크
 
-AEO는 AI 검색 시대의 새로운 SEO입니다. Schema.org 구조화 데이터가 필수입니다.
+AEO는 AI 검색 시대의 새로운 SEO입니다. Schema.org 구조화 데이터가 필수입니다. B2B SaaS 관점에서 LLM 시대 SEO/AEO를 실전 구현한 사례는 [LLM 시대의 SEO/AEO 실전 적용](/ko/blog/ko/llm-seo-aeo-practical-implementation)을 참고하세요.
 
 <strong>Structured Data 검증</strong>:
 
