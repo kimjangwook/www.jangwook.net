@@ -83,7 +83,7 @@ LLMベースのエージェントには<strong>コンテキストウィンドウ
 
 2024-2025年を起点としてLLM(Large Language Model)ベースのマルチエージェントシステムがソフトウェア工学分野で革新的な変化を導いています。ACM Transactions on Software Engineering and Methodologyに発表されたHe et al.(2024)の研究によると、マルチエージェントシステムは複雑な問題を小さな単位に分解し、専門化されたエージェントたちが協業して解決する方式で既存方法論の限界を克服します。
 
-McKinseyの2025年レポートによると、<strong>79〜85%の企業</strong>がAIエージェントを導入または導入を計画しており、<strong>23%の組織</strong>がすでにエージェンティックAIシステムをビジネス全般に拡大適用しています。
+McKinseyの2025年レポートによると、<strong>79〜85%の企業</strong>がAIエージェントを導入または導入を計画しており、<strong>23%の組織</strong>がすでにエージェンティックAIシステムをビジネス全般に拡大適用しています。[マルチエージェントオーケストレーションの実際の改善事例](/ja/blog/ja/multi-agent-orchestration-improvement)では、この変化が現場でどのように実践されているかを確認できます。
 
 ---
 
@@ -165,7 +165,7 @@ graph TD
 
 #### 階層的オーケストレーションパターン
 
-Microsoft Azure Architecture Centerが提示する5つの核心オーケストレーションパターンのうち、本方法論は<strong>階層的(Hierarchical)パターン</strong>を基盤とします:
+Microsoft Azure Architecture Centerが提示する5つの核心オーケストレーションパターンのうち、本方法論は<strong>階層的(Hierarchical)パターン</strong>を基盤とします。このパターンを本番環境で適用した詳細分析は[ディープエージェントアーキテクチャ最適化](/ja/blog/ja/deep-agents-architecture-optimization)でご確認ください:
 
 ```mermaid
 graph TD
@@ -532,7 +532,7 @@ graph LR
 
 ### 1. 構造化されたオーケストレーションの重要性
 
-METRの2025年研究は重要な教訓を提供します。経験豊富なオープンソース開発者を対象とした無作為対照実験で、AIツールを<strong>非構造化された方式で使用</strong>した場合、かえって<strong>19%遅い成果</strong>を見せました。
+METRの2025年研究は重要な教訓を提供します。経験豊富なオープンソース開発者を対象とした無作為対照実験で、AIツールを<strong>非構造化された方式で使用</strong>した場合、かえって<strong>19%遅い成果</strong>を見せました。プロンプト設計も結果に大きく影響するため、[エージェント向けプロンプトエンジニアリング改善](/ja/blog/ja/prompt-engineering-agent-improvements)で具体的な戦略を参照することをおすすめします。
 
 一方、<strong>構造化されたオーケストレーション</strong>を適用した場合:
 - Amazon社内研究: 57%速い作業完了

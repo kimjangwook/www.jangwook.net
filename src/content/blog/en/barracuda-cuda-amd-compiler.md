@@ -1,9 +1,6 @@
 ---
-title: 'BarraCUDA: Open-Source Compiler That Runs CUDA Code on AMD GPUs'
-description: >-
-  Explore BarraCUDA, an open-source compiler that compiles CUDA .cu files
-  directly to AMD GPU machine code without LLVM, challenging NVIDIA's GPU
-  computing monopoly.
+title: 'BarraCUDA: Open-Source Compiler Running CUDA on AMD GPUs'
+description: 'BarraCUDA compiles CUDA to AMD GPU binary — no LLVM or HIP. 15,000 lines of C99 cover shared memory, atomics, warp intrinsics. A direct challenge to NVIDIA GPU vendor lock-in.'
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/barracuda-cuda-amd-compiler-hero.png
 tags:

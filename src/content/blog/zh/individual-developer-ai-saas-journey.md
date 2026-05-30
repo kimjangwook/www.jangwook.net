@@ -71,10 +71,10 @@ relatedPosts:
 在日本工作期间发现的B2B自动化需求:
 
 1. <strong>免税处理业务依赖人工操作</strong>:需要人工核对护照和免税单据并手工录入
-2. <strong>财务工作重复性高</strong>:收据OCR后仍需手动整理数据
+2. <strong>财务工作重复性高</strong>:收据OCR后仍需手动整理数据。[用真实数据看AI财务自动化的效果](/zh/blog/zh/accounting-ai-transformation-real-data)从数字角度展示了这一问题的严重程度。
 3. <strong>现有解决方案的局限性</strong>:要么是昂贵的企业级方案,要么是精度低的通用OCR
 
-作为独立开发者,差异化的关键在于<strong>利用AI提取结构化数据</strong>。不仅仅是文字OCR,而是通过Google Gemini API的Structured Output功能获取类型安全的JSON响应,提供可以直接用于业务逻辑的数据。
+作为独立开发者,差异化的关键在于<strong>利用AI提取结构化数据</strong>。不仅仅是文字OCR,而是通过Google Gemini API的Structured Output功能获取类型安全的JSON响应,提供可以直接用于业务逻辑的数据。关于这个服务后续的方向调整,请参见[Agent Effi Flow的转型决策与待客机器人构想](/zh/blog/zh/agent-effi-flow-pivot-omotenashi-bot)。
 
 ## 技术栈选择
 
@@ -695,6 +695,8 @@ const optimized = await sharp(imageBuffer)
    - CRUD API脚手架
    - TypeScript类型定义
    - Zod schema验证
+   
+   借助AI工具将副业项目发展为公司规模的做法,在[Effloow：从副业到AI公司](/zh/blog/zh/effloow-side-project-ai-company)中也有详细介绍。
 
 3. <strong>Vercel Preview Deployments</strong>
    - 每个PR自动部署URL

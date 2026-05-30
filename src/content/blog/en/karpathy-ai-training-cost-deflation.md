@@ -93,7 +93,7 @@ Karpathy attributes the decline not to a single factor but to <strong>simultaneo
 
 ### 1. Hardware Evolution
 
-The transition from TPU v3 to H100 represents a fundamental leap in computational efficiency.
+The transition from TPU v3 to H100 represents a fundamental leap in computational efficiency. At the same time, hardware innovation is pushing further — [ASIC-based inference chips capable of 16,000 tokens per second](/en/blog/en/asic-llm-inference-16k-tps) show that the GPU may not remain the dominant compute substrate for long.
 
 - <strong>FP8 compute support</strong>: Lower training precision while maintaining quality
 - <strong>HBM3 memory</strong>: 3TB/s bandwidth eliminates memory bottlenecks
@@ -148,11 +148,11 @@ As cost ceases to be a differentiator, competition shifts to:
 
 - <strong>Data quality</strong>: Securing superior training data
 - <strong>Fine-tuning expertise</strong>: Domain-specific optimization capabilities
-- <strong>Inference efficiency</strong>: Serving costs matter more than training costs
+- <strong>Inference efficiency</strong>: Serving costs matter more than training costs — [how NVIDIA NVFP4 cuts LLM inference costs by 8×](/en/blog/en/nvidia-llm-inference-cost-reduction) is a clear example of where this competition is heading
 
 ### Strengthening the Open-Source Ecosystem
 
-Training a GPT-2-class model for under $100 means the <strong>open-source community</strong> can experiment and innovate at unprecedented speed. nanochat itself comprises roughly 1,000 lines of code, making it highly educational.
+Training a GPT-2-class model for under $100 means the <strong>open-source community</strong> can experiment and innovate at unprecedented speed. Efforts like [training LLMs on a CPU in 1.2 hours with a MatMul-Free architecture](/en/blog/en/matmulfree-cpu-llm-training) are a direct product of this democratization. nanochat itself comprises roughly 1,000 lines of code, making it highly educational.
 
 ### Outpacing Moore's Law
 

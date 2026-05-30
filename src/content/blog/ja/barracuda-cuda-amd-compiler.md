@@ -1,6 +1,6 @@
 ---
 title: BarraCUDA — CUDAコードをAMD GPUで動かすオープンソースコンパイラ
-description: NVIDIA CUDA独占に挑戦するBarraCUDAコンパイラの仕組み、対応CUDA機能、GPU民主化への影響を解説します。
+description: CUDAコードをLLVM不要でAMD GPU用機械語に直接コンパイルするオープンソースコンパイラBarraCUDAを徹底解説します。15,000行のC99で実装されたアーキテクチャ詳細、対応CUDA機能の完全一覧、そしてGPUベンダー独占から脱却するための実践的戦略を、実コード例とともに詳しく紹介します。
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/barracuda-cuda-amd-compiler-hero.png
 tags:

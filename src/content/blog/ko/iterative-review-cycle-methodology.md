@@ -83,7 +83,7 @@ LLM 기반 에이전트는 <strong>컨텍스트 윈도우(메모리) 한계</str
 
 2024-2025년을 기점으로 LLM(Large Language Model) 기반의 멀티 에이전트 시스템이 소프트웨어 공학 분야에서 혁신적인 변화를 이끌고 있습니다. ACM Transactions on Software Engineering and Methodology에 발표된 He et al.(2024)의 연구에 따르면, 멀티 에이전트 시스템은 복잡한 문제를 작은 단위로 분해하고 전문화된 에이전트들이 협업하여 해결하는 방식으로 기존 방법론의 한계를 극복합니다.
 
-McKinsey의 2025년 보고서에 따르면, <strong>79〜85%의 기업</strong>이 AI 에이전트를 도입하거나 도입을 계획하고 있으며, <strong>23%의 조직</strong>이 이미 에이전틱 AI 시스템을 비즈니스 전반에 확대 적용하고 있습니다.
+McKinsey의 2025년 보고서에 따르면, <strong>79〜85%의 기업</strong>이 AI 에이전트를 도입하거나 도입을 계획하고 있으며, <strong>23%의 조직</strong>이 이미 에이전틱 AI 시스템을 비즈니스 전반에 확대 적용하고 있습니다. [멀티 에이전트 오케스트레이션의 실제 개선 사례](/ko/blog/ko/multi-agent-orchestration-improvement)에서 이러한 전환이 현장에서 어떻게 적용되는지 확인할 수 있습니다.
 
 ---
 
@@ -164,7 +164,7 @@ graph TD
 
 #### 계층적 오케스트레이션 패턴
 
-Microsoft Azure Architecture Center에서 제시하는 5가지 핵심 오케스트레이션 패턴 중, 본 방법론은 <strong>계층적(Hierarchical) 패턴</strong>을 기반으로 합니다:
+Microsoft Azure Architecture Center에서 제시하는 5가지 핵심 오케스트레이션 패턴 중, 본 방법론은 <strong>계층적(Hierarchical) 패턴</strong>을 기반으로 합니다. [딥 에이전트 아키텍처 최적화](/ko/blog/ko/deep-agents-architecture-optimization)에서 이 패턴을 실제 프로덕션 환경에 적용한 심층 분석을 볼 수 있습니다:
 
 ```mermaid
 graph TD
@@ -531,7 +531,7 @@ graph LR
 
 ### 1. 구조화된 오케스트레이션의 중요성
 
-METR의 2025년 연구는 중요한 교훈을 제공합니다. 경험 있는 오픈소스 개발자들을 대상으로 한 무작위 대조 실험에서, AI 도구를 <strong>비구조화된 방식으로 사용</strong>한 경우 오히려 <strong>19% 느린 성과</strong>를 보였습니다.
+METR의 2025년 연구는 중요한 교훈을 제공합니다. 경험 있는 오픈소스 개발자들을 대상으로 한 무작위 대조 실험에서, AI 도구를 <strong>비구조화된 방식으로 사용</strong>한 경우 오히려 <strong>19% 느린 성과</strong>를 보였습니다. 에이전트 프롬프트 설계도 결과에 큰 영향을 주는데, [프롬프트 엔지니어링 에이전트 개선 사례](/ko/blog/ko/prompt-engineering-agent-improvements)에서 구체적인 전략을 확인할 수 있습니다.
 
 반면, <strong>구조화된 오케스트레이션</strong>을 적용한 경우:
 - Amazon 내부 연구: 57% 빠른 작업 완료

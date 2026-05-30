@@ -1,6 +1,6 @@
 ---
 title: 数据驱动产品决策：PM分析框架实战指南
-description: 通过DAU/MAU、RICE模型、A/B测试等核心指标与框架，提升产品决策精准度的实战方法论。
+description: '产品经理必备的数据驱动决策框架完整指南：系统讲解DAU/MAU指标体系、RICE优先级评分模型、A/B测试方法论与SQL查询实战技巧，并深度拆解Netflix、Spotify、Amazon的数据文化建设路径，全面提升产品决策精准度。'
 pubDate: '2025-11-05'
 heroImage: ../../../assets/blog/data-driven-pm-framework-hero.jpg
 tags:

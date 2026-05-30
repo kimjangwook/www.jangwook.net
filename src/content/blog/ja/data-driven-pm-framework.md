@@ -1,7 +1,6 @@
 ---
 title: データ駆動型プロダクト意思決定：PMのための分析フレームワーク
-description: >-
-  プロダクトマネージャーが成果を最大化するために必要な主要指標、分析フレームワーク、A/Bテスト、実践的なSQLクエリ、そしてデータ文化の構築方法を詳しく解説します。
+description: 'データ駆動型プロダクト意思決定を実践するPM向けフレームワークガイド。DAU/MAU比率・RICEスコア・A/Bテスト・SQLクエリの活用法に加え、Netflix・Spotify・Amazonの事例でデータ文化の構築方法まで徹底解説します。'
 pubDate: '2025-11-05'
 heroImage: ../../../assets/blog/data-driven-pm-framework-hero.jpg
 tags:

@@ -83,7 +83,7 @@ draft: true
 
 以2024-2025年为节点，基于LLM（大型语言模型）的多智能体系统正在软件工程领域引领革命性变革。根据ACM Transactions on Software Engineering and Methodology发表的He et al.（2024）的研究，多智能体系统通过将复杂问题分解成小单元并由专业化的智能体协作解决的方式，克服了现有方法论的局限。
 
-根据McKinsey的2025年报告，<strong>79〜85%的企业</strong>正在引入或计划引入AI智能体，<strong>23%的组织</strong>已经在整个业务中扩展应用智能体AI系统。
+根据McKinsey的2025年报告，<strong>79〜85%的企业</strong>正在引入或计划引入AI智能体，<strong>23%的组织</strong>已经在整个业务中扩展应用智能体AI系统。[多智能体编排的实际改进案例](/zh/blog/zh/multi-agent-orchestration-improvement)展示了这一转变在实践中是如何落地的。
 
 ---
 
@@ -164,7 +164,7 @@ graph TD
 
 #### 层次化编排模式
 
-在Microsoft Azure Architecture Center提出的5种核心编排模式中，本方法论基于<strong>层次化（Hierarchical）模式</strong>：
+在Microsoft Azure Architecture Center提出的5种核心编排模式中，本方法论基于<strong>层次化（Hierarchical）模式</strong>。关于在生产环境中应用这一模式的深度分析，可参阅[深度智能体架构优化](/zh/blog/zh/deep-agents-architecture-optimization)：
 
 ```mermaid
 graph TD
@@ -531,7 +531,7 @@ graph LR
 
 ### 1. 结构化编排的重要性
 
-METR的2025年研究提供了重要教训。在针对有经验的开源开发者的随机对照实验中，<strong>非结构化方式使用</strong>AI工具反而<strong>慢19%</strong>。
+METR的2025年研究提供了重要教训。在针对有经验的开源开发者的随机对照实验中，<strong>非结构化方式使用</strong>AI工具反而<strong>慢19%</strong>。提示词设计也是影响结果的关键因素，[智能体提示工程改进实践](/zh/blog/zh/prompt-engineering-agent-improvements)提供了具体的改进策略。
 
 相反，应用<strong>结构化编排</strong>时：
 - Amazon内部研究：快57%完成任务

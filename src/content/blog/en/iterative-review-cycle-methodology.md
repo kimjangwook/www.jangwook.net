@@ -83,7 +83,7 @@ LLM-based agents have an inherent constraint: <strong>context window (memory) li
 
 Since 2024-2025, LLM (Large Language Model)-based multi-agent systems have been driving revolutionary changes in software engineering. According to research by He et al. (2024) published in ACM Transactions on Software Engineering and Methodology, multi-agent systems overcome the limitations of existing methodologies by decomposing complex problems into smaller units and having specialized agents collaborate to solve them.
 
-According to McKinsey's 2025 report, <strong>79-85% of companies</strong> have adopted or are planning to adopt AI agents, and <strong>23% of organizations</strong> have already scaled agentic AI systems across their business operations.
+According to McKinsey's 2025 report, <strong>79-85% of companies</strong> have adopted or are planning to adopt AI agents, and <strong>23% of organizations</strong> have already scaled agentic AI systems across their business operations. [Real-world improvements in multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement) show how this shift plays out in practice.
 
 ---
 
@@ -164,7 +164,7 @@ For each identified task, the orchestration agent delegates the creation of appr
 
 #### Hierarchical Orchestration Pattern
 
-Among the five core orchestration patterns presented by Microsoft Azure Architecture Center, this methodology is based on the <strong>hierarchical pattern</strong>:
+Among the five core orchestration patterns presented by Microsoft Azure Architecture Center, this methodology is based on the <strong>hierarchical pattern</strong>. For a deep dive into applying this pattern in production, see [deep agents architecture optimization](/en/blog/en/deep-agents-architecture-optimization):
 
 ```mermaid
 graph TD
@@ -531,7 +531,7 @@ The iterative review cycle methodology minimizes fixing costs by discovering mos
 
 ### 1. Importance of Structured Orchestration
 
-METR's 2025 research provides important lessons. In randomized controlled experiments with experienced open-source developers, <strong>unstructured use</strong> of AI tools resulted in <strong>19% slower performance</strong>.
+METR's 2025 research provides important lessons. In randomized controlled experiments with experienced open-source developers, <strong>unstructured use</strong> of AI tools resulted in <strong>19% slower performance</strong>. Prompt design is one lever that matters here — [prompt engineering improvements for agents](/en/blog/en/prompt-engineering-agent-improvements) covers concrete strategies.
 
 In contrast, applying <strong>structured orchestration</strong>:
 - Amazon internal research: 57% faster task completion
