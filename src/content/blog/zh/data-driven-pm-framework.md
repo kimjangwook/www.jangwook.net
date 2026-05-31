@@ -488,7 +488,7 @@ ORDER BY user_segment, experiment_group;
 - Effective Catalog Size：实际被观看的内容比例
 - Take Rate：推荐点击后观看转化率
 
-<strong>结果</strong>：推荐算法创造年度<strong>超过10亿美元价值</strong>（防止流失）
+<strong>结果</strong>：推荐算法创造年度<strong>超过10亿美元价值</strong>（防止流失）。关于如何构建类似系统，可参考[用Claude LLM构建智能内容推荐系统](/zh/blog/zh/ai-content-recommendation-system)。
 
 ### 2. Spotify：Discover Weekly（每周发现）
 

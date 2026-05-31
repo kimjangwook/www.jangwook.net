@@ -1,8 +1,6 @@
 ---
 title: '자가 치유 AI 시스템: 인간 개입 없이 자동으로 버그를 수정하는 에이전트 구축하기'
-description: >-
-  GitHub, Google, Netflix가 실전 배포한 Self-Healing Systems 완벽 가이드. LangGraph로 에러
-  감지부터 자동 패치까지 전체 구현
+description: 'GitHub·Google·Netflix가 실제로 배포해 운영하는 자가 치유 AI 시스템 완벽 가이드. LangGraph로 에러 자동 감지, 원인 분석, 자동 코드 패치, 결과 검증까지 전체 파이프라인을 실제 파이썬 코드와 함께 단계별로 구현하는 방법을 상세히 설명합니다.'
 pubDate: '2025-10-17'
 heroImage: ../../../assets/blog/self-healing-ai-systems-hero.jpg
 tags:

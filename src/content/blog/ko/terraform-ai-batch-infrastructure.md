@@ -1,6 +1,6 @@
 ---
 title: Terraform으로 구축하는 서버리스 AI 배치 시스템
-description: 'API Gateway, Lambda, ECS Fargate를 활용한 비용 효율적인 AI 배치 처리 인프라 구축 실전 가이드'
+description: 'Terraform으로 AWS 서버리스 AI 배치 인프라를 구축하는 단계별 가이드. API Gateway, Lambda, ECS Fargate를 IaC로 통합하고, 비용 최적화·자동 스케일링·AI 모델 라우팅·CloudWatch 모니터링까지 프로덕션 코드와 함께 안내합니다.'
 pubDate: '2025-11-26'
 heroImage: ../../../assets/blog/terraform-ai-batch-infrastructure-hero.jpg
 tags:

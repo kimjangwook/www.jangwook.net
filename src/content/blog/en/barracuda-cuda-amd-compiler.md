@@ -50,7 +50,7 @@ draft: true
 
 ## Overview
 
-In the world of GPU computing, NVIDIA's CUDA is the de facto standard. But this also means <strong>vendor lock-in</strong> — code written in CUDA could only run on NVIDIA GPUs.
+In the world of GPU computing, NVIDIA's CUDA is the de facto standard. But this also means <strong>vendor lock-in</strong> — code written in CUDA could only run on NVIDIA GPUs. As [NVIDIA DGX Spark's CUDA compatibility issues](/en/blog/en/nvidia-dgx-spark-cuda-compatibility) demonstrate, the real-world consequences of this hardware dependency run deep.
 
 <strong>BarraCUDA</strong> is an open-source compiler born to break down this wall. It takes `.cu` files and compiles them directly to AMD RDNA 3 (GFX11) machine code. Written in 15,000 lines of C99 with zero LLVM dependency, no HIP translation layer required.
 
@@ -126,7 +126,7 @@ BarraCUDA's emergence goes beyond a technical achievement — it signals structu
 
 ### Challenging NVIDIA's Monopoly
 
-CUDA's position in the current GPU computing market is absolute. The vast majority of AI/ML workloads are CUDA-based, making them impossible to run without NVIDIA GPUs. BarraCUDA cracks this structure.
+CUDA's position in the current GPU computing market is absolute. The vast majority of AI/ML workloads are CUDA-based, making them impossible to run without NVIDIA GPUs. Just as [GPT-4o's retirement exposed the risks of model dependency](/en/blog/en/gpt4o-retirement-model-dependency-risk), over-reliance on a single hardware vendor carries serious strategic consequences. BarraCUDA cracks this structure.
 
 ### Expanding AMD GPU Potential
 
@@ -134,7 +134,7 @@ AMD's ROCm/HIP ecosystem is growing, but friction still exists when converting e
 
 ### The Power of Open Source
 
-The fact that a CUDA compiler was implemented in 15,000 lines of C99 demonstrates the capability of the open-source community. It garnered 66 points on Hacker News, drawing attention from the developer community.
+The fact that a CUDA compiler was implemented in 15,000 lines of C99 demonstrates the capability of the open-source community. It garnered 66 points on Hacker News, drawing attention from the developer community. As [the CCC vs GCC analysis of an AI-built C compiler](/en/blog/en/ccc-vs-gcc-ai-compiled-c-compiler) shows, small open-source compiler projects are earning growing respect.
 
 ## Current Limitations and Outlook
 

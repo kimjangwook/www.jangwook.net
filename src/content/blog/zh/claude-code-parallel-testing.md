@@ -1,6 +1,6 @@
 ---
 title: 使用Claude Code实现大规模页面测试并行自动化
-description: 通过Claude Code代理和Playwright将网页迁移测试速度提升5-8倍的实战指南
+description: 借助Claude Code多代理并行架构与Playwright，将大规模网页迁移测试效率提升5至8倍。本实战指南系统讲解多代理任务调度与协作设计、并行执行容错机制、测试结果汇总与差异报告生成策略，并分享实际项目落地经验，帮助工程师在CI环境中高效验证批量页面迁移结果，显著提升发布质量与团队交付效率。
 pubDate: '2025-10-31'
 heroImage: ../../../assets/blog/claude-code-parallel-testing-hero.jpg
 tags:

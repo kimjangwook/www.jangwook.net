@@ -1,6 +1,6 @@
 ---
 title: Claude Codeで大規模ページテストを並列自動化する
-description: Claude Code エージェントと Playwright で Web ページマイグレーションテストを 5-8 倍高速化する実践ガイド
+description: Claude Code エージェントとPlaywrightを活用してWebページマイグレーションテストを5〜8倍高速化する実践ガイド。並列サブエージェントの設計・実装からCI/CDパイプライン統合まで体系的に解説し、大規模ページの品質検証を自動化しながら開発効率を飛躍的に向上させる手法を紹介します。
 pubDate: '2025-10-31'
 heroImage: ../../../assets/blog/claude-code-parallel-testing-hero.jpg
 tags:

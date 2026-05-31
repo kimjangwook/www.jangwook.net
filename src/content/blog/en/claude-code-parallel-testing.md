@@ -1,8 +1,8 @@
 ---
 title: Automating Large-Scale Page Testing with Claude Code in Parallel
 description: >-
-  Practical guide to running web page migration tests 5-8x faster with Claude
-  Code agents and Playwright parallel execution
+  Learn how to run web page migration tests 5-8x faster using Claude Code
+  parallel agents and Playwright. Practical guide with real-world examples and benchmarks.
 pubDate: '2025-10-31'
 heroImage: ../../../assets/blog/claude-code-parallel-testing-hero.jpg
 tags:

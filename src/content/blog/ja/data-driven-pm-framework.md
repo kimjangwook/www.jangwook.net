@@ -401,7 +401,7 @@ ORDER BY step;
 - ユーザーごとに異なるホーム画面を生成
 
 <strong>成果</strong>：
-- 視聴時間が月間10億時間増加
+- 視聴時間が月間10億時間増加（[Claude LLMで構築するインテリジェントコンテンツ推薦システム](/ja/blog/ja/ai-content-recommendation-system)で実装方法を解説しています）
 - キャンセル率を大幅に削減
 
 <strong>主要指標</strong>：

@@ -505,7 +505,7 @@ Choose based on your needs:
 
 <strong>Results</strong>:
 - 80%+ of watched content comes from recommendations
-- Saved $1B+ annually in retention by reducing churn
+- Saved $1B+ annually in retention by reducing churn (see [Building an Intelligent Content Recommendation System with Claude LLM](/en/blog/en/ai-content-recommendation-system) for a hands-on implementation guide)
 - Personalized thumbnails increased engagement by 30%
 
 <strong>Key Insight</strong>: Focus on usage metrics, not vanity metrics. Netflix doesn't optimize for "titles in catalog" but for "hours engaged."

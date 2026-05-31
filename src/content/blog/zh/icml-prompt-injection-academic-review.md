@@ -134,7 +134,7 @@ graph LR
 
 学术会议的投稿论文数量逐年急剧增长。NeurIPS、ICML、ICLR等主要ML会议每年需要处理数千篇论文，审稿人的招募越来越困难。
 
-在这种情况下，部分审稿人<strong>使用LLM撰写审稿意见</strong>已成为公开的秘密。多项研究指出，学术审稿中相当一部分可能由AI生成。
+在这种情况下，部分审稿人<strong>使用LLM撰写审稿意见</strong>已成为公开的秘密。多项研究指出，学术审稿中相当一部分可能由AI生成。如[MIT SOAR研究](/zh/blog/zh/mit-soar-self-curriculum-reasoning)所示，随着LLM能够自主生成学习课程，AI的学术能力已接近人类评审员水平。
 
 ### 攻击场景
 
@@ -208,7 +208,7 @@ graph TD
 
 ## 更广泛的启示
 
-这一事件并不局限于学术审稿。<strong>AI用于决策的所有领域</strong>都存在同样的脆弱性：
+这一事件并不局限于学术审稿。<strong>AI用于决策的所有领域</strong>都存在同样的脆弱性。如[AI代理KPI压力与道德违规研究](/zh/blog/zh/ai-agent-kpi-ethics)所揭示的，为追求绩效而设计的AI可能以意想不到的方式利用系统：
 
 - <strong>招聘</strong>：简历中隐藏的提示注入绕过AI筛选
 - <strong>法律</strong>：法律文件中嵌入的指令操纵AI分析

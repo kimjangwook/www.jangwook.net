@@ -1,6 +1,6 @@
 ---
 title: OpenClaw 200% 활용하기 — 실전 고급 사용 사례 모음
-description: '크론 자동화, 웹훅 연동, MCP 서버, 멀티 에이전트, 브라우저 자동화 등 OpenClaw 실전 고급 활용법 8가지.'
+description: 'OpenClaw 고급 활용 8가지: 크론 자동화, 웹훅 연동, MCP 서버, 멀티 에이전트, 브라우저 자동화를 실전 예제로 완전 정리.'
 pubDate: '2026-02-05'
 heroImage: ../../../assets/blog/openclaw-advanced-usage-hero.png
 tags:

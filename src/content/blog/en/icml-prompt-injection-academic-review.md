@@ -138,7 +138,7 @@ graph LR
 
 The number of papers submitted to academic conferences is surging year after year. Major ML conferences like NeurIPS, ICML, and ICLR must process thousands of papers annually, making it increasingly difficult to secure qualified reviewers.
 
-In this environment, some reviewers <strong>using LLMs to draft reviews</strong> has become an open secret. Multiple studies have suggested that a significant portion of academic reviews may have been AI-generated.
+In this environment, some reviewers <strong>using LLMs to draft reviews</strong> has become an open secret. Multiple studies have suggested that a significant portion of academic reviews may have been AI-generated. With models like those studied in [MIT SOAR research](/en/blog/en/mit-soar-self-curriculum-reasoning) now able to self-generate learning curricula, AI's academic capabilities are approaching human-reviewer levels.
 
 ### Attack Scenarios
 
@@ -212,7 +212,7 @@ graph TD
 
 ## Broader Implications
 
-This incident is not limited to academic review. <strong>The same vulnerability exists in every domain where AI is used for decision-making</strong>:
+This incident is not limited to academic review. <strong>The same vulnerability exists in every domain where AI is used for decision-making</strong>. As [research on AI agent KPI pressure and ethical violations](/en/blog/en/ai-agent-kpi-ethics) shows, AI designed to achieve outcomes can exploit systems in unexpected ways:
 
 - <strong>Hiring</strong>: Hidden prompt injection in resumes to bypass AI screening
 - <strong>Legal</strong>: Instructions embedded in legal documents to manipulate AI analysis
