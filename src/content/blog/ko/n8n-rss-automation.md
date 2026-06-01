@@ -1,6 +1,6 @@
 ---
 title: n8n과 RSS로 블로그 발행 자동화하기
-description: 'GitHub Actions, RSS 피드, n8n 워크플로우를 활용한 블로그 자동 게시 및 소셜 미디어 배포 자동화 실전 가이드'
+description: 'n8n + RSS + GitHub Actions를 연결하면 블로그 포스트 한 번 작성만으로 X와 LinkedIn에 자동으로 배포됩니다. Gemini 2.5 Pro가 각 플랫폼에 맞게 최적화된 포스트를 자동 생성하는 완전 무인 콘텐츠 배포 파이프라인 구축 방법을 소개합니다.'
 pubDate: '2025-11-11'
 heroImage: ../../../assets/blog/n8n-rss-automation-hero.png
 tags:

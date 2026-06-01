@@ -59,7 +59,7 @@ draft: true
 
 In February 2026, OpenAI announced a groundbreaking achievement in theoretical physics. <strong>GPT-5.2 Pro</strong> independently conjectured a new formula for gluon scattering amplitudes (gluons being the particles that carry the strong nuclear force) and <strong>completed a formal proof of its validity</strong>.
 
-The result was published as a preprint on arXiv, authored jointly with researchers from the Institute for Advanced Study at Princeton, Harvard University, and the University of Cambridge. This marks a historic turning point where AI transitions from being a "tool" to a "discoverer" in scientific research.
+The result was published as a preprint on arXiv, authored jointly with researchers from the Institute for Advanced Study at Princeton, Harvard University, and the University of Cambridge. This marks a historic turning point where AI transitions from being a "tool" to a "discoverer" in scientific research. February 2026 was an unusually dense month for AI model milestones — the [February 2026 AI model rush roundup](/en/blog/en/ai-model-rush-february-2026) covers the broader context.
 
 ## What Was Discovered
 
@@ -180,7 +180,7 @@ Discovering patterns in super-exponentially complex expressions that are difficu
 
 <strong>2. Extended Autonomous Reasoning</strong>
 
-Completing a formal proof over 12 hours demonstrates that AI is capable of deep, sustained thinking — not just short responses.
+Completing a formal proof over 12 hours demonstrates that AI is capable of deep, sustained thinking — not just short responses. [MIT's SOAR research on self-curriculum reasoning](/en/blog/en/mit-soar-self-curriculum-reasoning) points in a similar direction, showing how AI can expand its own reasoning abilities by designing its own learning challenges.
 
 <strong>3. A New Human-AI Collaboration Model</strong>
 
@@ -200,7 +200,7 @@ The research team has already used GPT-5.2 to:
 
 This case offers important implications for software engineering:
 
-- <strong>Evolution of AI reasoning</strong>: 12 hours of continuous reasoning and formal proof suggest capabilities beyond code generation and bug fixing
+- <strong>Evolution of AI reasoning</strong>: 12 hours of continuous reasoning and formal proof suggest capabilities beyond code generation and bug fixing. The [IBM analysis of GenZ developer hiring and AI limitations](/en/blog/en/ibm-gen-z-hiring-ai-limits) shows how the competency bar for engineers is shifting in response.
 - <strong>Collaboration patterns with domain experts</strong>: The model where humans define problems and AI explores solutions applies to other fields
 - <strong>Importance of verification</strong>: The process of humans verifying AI-generated results using established methods (Berends-Giele recursion) remains critical
 

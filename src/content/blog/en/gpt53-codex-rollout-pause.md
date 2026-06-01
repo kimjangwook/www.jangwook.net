@@ -67,13 +67,13 @@ draft: true
 
 In February 2026, GitHub discovered critical reliability issues while rolling out GPT-5.3-based Codex across the platform and made the decision to <strong>temporarily roll back to the previous version (GPT-5.0)</strong>. This incident served as a stark reminder that AI model version upgrades are not simple feature improvements—they directly impact the stability of the entire production infrastructure.
 
-This article analyzes the background and causes of the GitHub Codex rollback and discusses how engineering managers (EMs) should approach AI model upgrade risk management.
+This article analyzes the background and causes of the GitHub Codex rollback and discusses how engineering managers (EMs) should approach AI model upgrade risk management. The broader risks of model dependency are explored in the companion post on [GPT-4o retirement and model dependency risk](/en/blog/en/gpt4o-retirement-model-dependency-risk).
 
 ## Timeline of Events
 
 ### What Is GPT-5.3 Codex?
 
-Codex, the core engine behind GitHub Copilot, provides code generation, auto-completion, and code review capabilities built on OpenAI's GPT models. The upgrade to GPT-5.3 targeted the following improvements:
+Codex, the core engine behind GitHub Copilot, provides code generation, auto-completion, and code review capabilities built on OpenAI's GPT models. According to the [Greptile AI Coding 2025 report](/en/blog/en/greptile-ai-coding-report-2025-review), developer reliance on these tools has already crossed a point of no return, which makes service disruptions like this one far more impactful. The upgrade to GPT-5.3 targeted the following improvements:
 
 - <strong>Improved code generation accuracy</strong>: Enhanced multi-file context understanding
 - <strong>Faster response times</strong>: Latency reduction through inference optimization
@@ -163,7 +163,7 @@ In this incident, the canary deployment (5%) failed to surface the issues. This 
 
 GitHub's team was able to roll back quickly because <strong>the rollback plan was established beforehand</strong>. As an EM, you should ensure:
 
-- <strong>Feature flag-based deployment</strong>: Design for runtime model version switching
+- <strong>Feature flag-based deployment</strong>: Design for runtime model version switching (for a practical example of phased migration, see the [Claude Code CLI migration guide](/en/blog/en/claude-code-cli-migration-guide))
 - <strong>Automatic rollback triggers</strong>: Auto-restore when core metrics (latency, error rate) exceed thresholds
 - <strong>Rollback rehearsals</strong>: Regularly test rollback scenarios
 

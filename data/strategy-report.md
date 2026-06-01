@@ -4,6 +4,104 @@
 
 ---
 
+## 2026-05-31 주간 리뷰 (6월 1주차)
+
+### 성과 요약
+
+- **이번 주 포스트**: 7개
+- **콘텐츠 믹스**: How-to 71% / 뉴스 29% / 비교 0% / 시리즈 0%
+- **내부링크 최적화**: 0-link 포스트 41개 잔여 (전체 266개 중, 15%)
+- **크로스포스팅**: dev.to 1/1 (100%), Hashnode 0/1 (0% — 데이터 확인됨)
+
+#### 이번 주 포스트 목록
+
+| 슬러그 | 유형 |
+|--------|------|
+| mcp-server-typescript-sdk-step-by-step-2026 | How-to |
+| barracuda-cuda-amd-compiler | 뉴스 |
+| data-driven-pm-framework | How-to |
+| karpathy-ai-training-cost-deflation | 뉴스 |
+| individual-developer-ai-saas-journey | How-to |
+| iterative-review-cycle-methodology | How-to |
+| gemini-api-managed-agents-practical-guide-2026 | How-to |
+
+---
+
+### 콘텐츠 믹스 분석
+
+| 유형 | 이번 주 | 목표 | 편차 |
+|------|---------|------|------|
+| How-to | 71% (5개) | 40% | **+31% 과잉** |
+| 뉴스 | 29% (2개) | 30% | -1% (양호) |
+| 비교 | 0% (0개) | 15% | **-15% 완전 부재** |
+| 시리즈 | 0% (0개) | 15% | **-15% 완전 부재** |
+
+**핵심 문제**: How-to가 목표 대비 31%p 초과. 비교와 시리즈 포스트가 이번 주 전무. 지난 5주차 리포트에서 시리즈 2편 하드 블록을 지정했음에도 이번 주도 시리즈 0%로 시스템 수준 문제가 지속되고 있다.
+
+---
+
+### 스타일 분석 (최근 7개 포스트 리뷰)
+
+**종합 스타일 점수: 6.8 / 10** — 이번 주 최저점 기록
+
+#### 강점 (유지할 것)
+
+- **mcp-server-typescript-sdk와 gemini-api-managed-agents가 고품질 기준**: 두 포스트 모두 1인칭 목소리, 직접 실험 경험, 비판적 평가가 포함됨. 특히 gemini 포스트의 "솔직한 평가" 섹션("지금 당장 쓸 수 있나")은 독자 질문에 직접 답하는 구조로 비판적 시각의 모범 사례
+- **코드 스니펫 + 실행 출력 결과 조합**: mcp-server 포스트의 실제 실행 결과를 함께 보여주는 방식이 신뢰도 높음
+- **karpathy 포스트의 ASCII 비용 추이 시각화**: $43,000 → $73 수치 대비 제시가 데이터 전달에 효과적
+
+#### 패턴 피로 (이번 주 심각 수준으로 악화)
+
+1. **"## 개요" 도입부 반복 — 7개 중 5개**: barracuda, data-driven-pm, karpathy, individual-developer가 '## 개요' 헤더로 시작. iterative-review는 '## 서론' 헤더. 7개 중 5개가 공식 헤더 도입부. 이전 리포트에서 지적한 문제가 개선되지 않고 오히려 악화됨
+2. **1인칭 표현 전무 포스트 4개**: barracuda, data-driven-pm, karpathy, iterative-review — 저자 목소리가 완전히 부재한 포스트가 절반 이상. 외부 사실 요약에 그쳐 원문을 직접 읽는 것과 차별점이 없음
+3. **relatedPosts reason 템플릿 복사**: barracuda, data-driven-pm, karpathy, iterative-review 4개 포스트의 relatedPosts reason이 '아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다'로 동일한 템플릿 문구 반복 — SEO 품질 직접 저하
+4. **초안(draft: true) 포스트 4개 발행**: barracuda, data-driven-pm, karpathy, iterative-review가 draft 상태로 발행됨 — 완성 기준 미달 포스트가 절반에 달함
+5. **결론 "## 결론" 헤더 반복 패턴**: 7개 중 5개에서 동일한 형식적 결론 구조
+
+---
+
+### 스타일 조정 제안
+
+1. **도입부 패턴 즉각 다각화 필수**: 다음 주 포스트는 (1) 코드 스니펫 + 1인칭 반응, (2) 구체적 수치 대비 제시, (3) 독자에게 직접 묻는 질문, (4) 개인 경험 시간 맥락 중 하나로 시작할 것. '## 개요' 및 '## 서론' 헤더 도입부 사용 금지
+2. **relatedPosts reason 개별화 필수**: 각 링크된 포스트와의 구체적 연결 이유를 1문장으로 작성할 것. '~분야에서 유사한 주제를 다루며 비슷한 난이도입니다' 문구 사용 금지. 예: '이 포스트의 MCP 서버 구현 예제는 해당 포스트의 보안 설정 섹션과 직접 연계됩니다'
+3. **draft 포스트 완성 기준 설정**: 1인칭 주관 표현 최소 3회, 비판적 시각 1섹션, 내부 링크 최소 2개를 초안 완료 기준으로 설정. 이 기준을 충족하지 못한 포스트는 발행 보류
+4. **뉴스 포스트에 저자 관점 1단락 필수**: karpathy, barracuda처럼 외부 사실만 요약하는 뉴스 포스트는 마지막에 '개발자 입장에서 실제로 달라지는 것' 단락을 반드시 포함
+
+---
+
+### 다음 주 전략 (6월 1〜7일)
+
+- **콘텐츠 유형 조정**: How-to 3개(50%) / 뉴스 2개(33%) / 비교 1개(17%) — comparison 복구 최우선. Series는 6월 둘째 주까지 연기하되 2주 연속 0개이므로 6월 둘째 주에는 반드시 1개 이상 편성
+- **스타일 조정**: '## 개요' 헤더 도입부 금지 + relatedPosts reason 개별화 + 초안 완성 기준 3가지 적용
+- **우선 처리 백로그 TOP 3**:
+  1. `claude-code-vs-cursor-vs-windsurf-2026-ai-ide-comparison` [comparison] — 믹스 복구 + 조회수 상위 카테고리
+  2. `nsa-mcp-security-guidance-developer-checklist-2026` [news] — MCP 보안 시의성 최고조
+  3. `claude-agent-sdk-typescript-production-2026` [how-to] — 백로그 대기 중 + SvelteKit 블로그 기술 스택 직결
+
+---
+
+### 백로그 현황 (2026-05-31 기준)
+
+**총 158개 주제 (대기 중 114개)**
+
+| 유형 | 대기 | 비율 |
+|------|------|------|
+| How-to | 78 | 68% |
+| 뉴스 | 47 | 41% |
+| 비교 | 26 | 23% |
+| 시리즈 | 7 | 6% |
+
+**신규 추가**: 6개
+
+- `claude-agent-sdk-sveltekit-5-streaming-guide` [how-to] — Claude Agent SDK + SvelteKit 실전 통합
+- `astro-5-content-layer-api-performance-guide` [how-to] — 빌드 성능 266개 포스트 실측 데이터
+- `pydantic-ai-structured-llm-output-guide-2026` [how-to] — 프로덕션 에이전트 데이터 검증
+- `nsa-mcp-security-guidance-developer-checklist-2026` [news] — NSA 가이드라인 즉각 대응
+- `eu-ai-act-2026-ai-agent-developer-compliance-checklist` [news] — 8월 시행 전 시의성
+- `claude-code-vs-cursor-vs-windsurf-2026-ai-ide-comparison` [comparison] — 믹스 복구 최우선
+
+---
+
 ## 2026-05-24 주간 리뷰 (5월 4주차)
 
 ### 성과 요약

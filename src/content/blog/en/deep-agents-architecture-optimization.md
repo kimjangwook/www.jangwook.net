@@ -1,8 +1,6 @@
 ---
 title: Optimizing AI Agent Systems with the Deep Agents Paradigm
-description: >-
-  A practical guide to analyzing Deep Agents concepts from LangChain and Philipp
-  Schmid and optimizing agent architecture
+description: 'Deep Agents: 100-step tasks, explicit planning, auto-recovery for AI agent 2.0. Applies LangChain and Philipp Schmid principles to optimize agent architecture.'
 pubDate: '2025-11-22'
 heroImage: ../../../assets/blog/deep-agents-architecture-optimization-hero.jpg
 tags:

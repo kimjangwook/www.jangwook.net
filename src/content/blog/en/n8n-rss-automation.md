@@ -1,8 +1,6 @@
 ---
 title: Automate Blog Publishing with n8n RSS Feed and AI Agents
-description: >-
-  Learn how to build a complete automation pipeline from blog publishing to
-  social media with GitHub Actions, RSS feeds, and n8n workflows powered by AI.
+description: 'Automate blog-to-social with n8n, RSS, and GitHub Actions. Gemini AI writes X and LinkedIn posts on each publish — zero effort, automatic distribution.'
 pubDate: '2025-11-11'
 heroImage: ../../../assets/blog/n8n-rss-automation-hero.png
 tags:

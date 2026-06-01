@@ -1,6 +1,6 @@
 ---
 title: 使用n8n和RSS实现博客发布自动化
-description: 利用GitHub Actions、RSS订阅和n8n工作流程实现博客自动发布和社交媒体分发的实战指南
+description: '手把手演示如何连接n8n、RSS订阅与GitHub Actions，搭建从博客发布到X·LinkedIn的完整自动内容分发流水线，内含全部配置代码与详细步骤说明。Gemini 2.5 Pro实时生成适配每个社交平台特点的定制化帖子内容，一次写作即自动全渠道分发，真正实现零人工干预的多平台同步自动发布。'
 pubDate: '2025-11-11'
 heroImage: ../../../assets/blog/n8n-rss-automation-hero.png
 tags:

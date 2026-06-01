@@ -89,11 +89,11 @@ graph TD
     end
 ```
 
-OpenAIが依然として市場をリードしていますが、Anthropicの成長率は驚異的です。<strong>1,547倍成長</strong>という数値は、Claudeが開発者コミュニティでいかに急速に採用されているかを示しています。
+OpenAIが依然として市場をリードしていますが、Anthropicの成長率は驚異的です。<strong>1,547倍成長</strong>という数値は、Claudeが開発者コミュニティでいかに急速に採用されているかを示しています。[4,516件のメッセージを通じたClaude Code使用パターン分析](/ja/blog/ja/claude-code-insights-usage-analysis)でも、同様の依存度の高まりを実感できます。
 
 ### 3. CLAUDE.mdファイルの標準化
 
-レポートによると、<strong>全リポジトリの67%がCLAUDE.mdルールファイルを採用</strong>しました。これはAIエージェントにコードベースのコンテキストを提供することが開発ワークフローの標準として定着したことを意味します。
+レポートによると、<strong>全リポジトリの67%がCLAUDE.mdルールファイルを採用</strong>しました。これはAIエージェントにコードベースのコンテキストを提供することが開発ワークフローの標準として定着したことを意味します。CLAUDE.mdを実際のプロジェクトに適用する具体的な方法は[このガイド](/ja/blog/ja/claude-code-best-practices)で確認できます。
 
 17%のリポジトリは3つの形式（CLAUDE.md、.cursorrules、.github/copilot-instructions.md）すべてを使用しており、マルチAIツール環境が現実化しています。
 
@@ -195,7 +195,7 @@ graph TD
 | ボイラープレートコード | <strong>90%</strong> | AIがパターンベースで即座に生成 |
 | ライブラリ学習 | <strong>80%</strong> | ドキュメントの代わりにコンテキストベースの例を提供 |
 | デバッグ | <strong>70%</strong> | エラー原因分析の自動化 |
-| テスト作成 | <strong>75%</strong> | テストケースの自動生成 |
+| テスト作成 | <strong>75%</strong> | テストケースの自動生成（[E2Eテスト自動化の実践事例も参考に](/ja/blog/ja/e2e-page-test-automation-claude-code)） |
 | コードリファクタリング | <strong>60%</strong> | パターン認識と改善案の提示 |
 
 ## 生産性向上の真の意味

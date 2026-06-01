@@ -2916,6 +2916,60 @@
       "search_intent": "Developers who saw the Code with Claude 2026 announcement and want to actually build a coordinator + subagent system using the new public beta API endpoint",
       "added_at": "2026-05-31",
       "notes": "The blog already has claude-managed-agents-dreaming-outcomes-code-with-claude-2026.md (which covers the announcement of Dreaming, Outcomes, and multiagent) and claude-agent-sdk-subagents-orchestration-tutorial-2026.md (SDK-level tutorial). The gap is a hands-on build guide focused specifically on the new managed-agents-2026-04-01 beta endpoint: declaring a coordinator config, listing up to 20 subagent IDs, running up to 25 parallel threads, and using the shared filesystem. Key differentiators over existing posts: (1) uses the actual managed platform API, not just the SDK; (2) includes a real-world task decomposition example (e.g., bug triage: log agent + metrics agent + ticket agent in parallel); (3) covers the 25-parallel-thread limit and depth-1 constraint as practical design constraints. The Harvey legal AI 6x completion rate stat is a strong opening hook. This also positions well for the claude-agent-sdk-typescript-production-2026 backlog item — the two posts can cross-link."
+    },
+    {
+      "slug": "claude-extended-thinking-api-streaming-guide-2026",
+      "title_idea": "Claude Extended Thinking API 실전 가이드 — 토큰 버짓 설정부터 스트리밍 응답 처리까지",
+      "content_type": "how-to",
+      "target_keyword": "Claude Extended Thinking API 사용법",
+      "secondary_keywords": [
+        "Claude API thinking budget",
+        "interleaved thinking streaming",
+        "Claude Opus 4 extended thinking",
+        "anthropic api thinking tokens"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "trend research",
+      "added_at": "2026-06-01",
+      "status": "queued",
+      "notes": "Claude 3.7 Sonnet과 Claude Opus 4 출시 이후 Extended Thinking(추론 토큰 예산 설정) 관련 검색 수요가 급증했으나 블로그에 전용 포스트가 없음. betas: thinking-enabled 헤더, max_tokens_for_thinking 파라미터, 스트리밍 중 thinking 블록과 text 블록 구분 처리, 비용 최적화(thinking 토큰은 캐싱 불가)까지 실전 코드로 커버. deep-thinking-ratio-llm-cost-optimization.md 포스트가 비용 관점이었다면, 이 포스트는 API 구현 방법론 관점으로 차별화. claude-api-prompt-caching, claude-agent-sdk 포스트와 내부링크 연결 가능. 화요일 How-to 유형."
+    },
+    {
+      "slug": "typescript-zod-v4-claude-api-structured-output-guide-2026",
+      "title_idea": "TypeScript Zod v4 + Claude API 구조화 출력 완전 가이드 — 타입 안전한 LLM 응답 파싱 실전",
+      "content_type": "how-to",
+      "target_keyword": "Zod Claude API 구조화 출력",
+      "secondary_keywords": [
+        "TypeScript LLM structured output",
+        "Zod v4 JSON schema",
+        "Claude API type-safe response",
+        "anthropic tool use json schema zod"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "trend research",
+      "added_at": "2026-06-01",
+      "status": "queued",
+      "notes": "Zod v4가 2026년 출시되면서 JSON Schema 변환 성능이 크게 개선됨. Claude API의 tool_use 기반 강제 JSON 출력을 Zod 스키마와 연동하면 런타임 타입 안전성을 확보할 수 있는데, 이를 다룬 한국어 How-to가 전무함. z.toJSONSchema()로 Zod 스키마를 Claude tool 정의로 변환, 응답 파싱 시 z.parse()로 검증, 실패 시 자동 재시도 패턴까지 커버. vitest-4-ai-agent-testing-patterns-2026, claude-api-tool-use-strict-mode-production-guide 포스트와 내부링크 연결 가능. TypeScript 생태계 독자층 타겟 화요일 How-to 유형."
+    },
+    {
+      "slug": "claude-code-plan-mode-deep-dive-workflow-guide-2026",
+      "title_idea": "Claude Code Plan Mode 완전 정복 — 대규모 리팩토링을 안전하게 수행하는 실전 워크플로우",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code Plan Mode 사용법",
+      "secondary_keywords": [
+        "Claude Code 계획 모드",
+        "Claude Code 대규모 변경",
+        "claude code shift+tab",
+        "AI 코딩 안전한 리팩토링"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "trend research",
+      "added_at": "2026-06-01",
+      "status": "queued",
+      "notes": "Claude Code의 Plan Mode(Shift+Tab으로 진입)는 공식 문서와 몇몇 포스트에서 키워드로 언급되지만 전용 How-to 가이드가 없음. 대규모 코드베이스 리팩토링 시나리오에서 Plan 작성 → 검토 및 수정 → 실행 승인 3단계 워크플로우를 실전 예제(마이그레이션, API 변경, 의존성 업그레이드 시나리오)로 설명. claude-code-parallel-sessions-git-worktree, claude-code-agentic-workflow-patterns-5-types 포스트와 내부링크 연결 적합. 화요일 How-to 유형. Claude Code 채택률 40%+ 독자층에게 즉시 실용적."
     }
   ]
 }

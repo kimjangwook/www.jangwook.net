@@ -87,11 +87,11 @@ graph TD
     end
 ```
 
-尽管 OpenAI 仍然领先市场，但 Anthropic 的增长势头令人瞩目。<strong>1,547 倍的增长</strong>数据显示了 Claude 在开发者社区中被快速采用的程度。
+尽管 OpenAI 仍然领先市场，但 Anthropic 的增长势头令人瞩目。<strong>1,547 倍的增长</strong>数据显示了 Claude 在开发者社区中被快速采用的程度。[对 4,516 条 Claude Code 消息的个人使用模式分析](/zh/blog/zh/claude-code-insights-usage-analysis)也印证了这种依赖度的持续增长。
 
 ### 3. CLAUDE.md 文件的标准化
 
-根据报告，<strong>67% 的代码仓库采用了 CLAUDE.md 规则文件</strong>。这意味着向 AI 代理提供代码库上下文已成为开发工作流程的标准。
+根据报告，<strong>67% 的代码仓库采用了 CLAUDE.md 规则文件</strong>。这意味着向 AI 代理提供代码库上下文已成为开发工作流程的标准。如果想了解如何将 CLAUDE.md 实际应用于项目，可以参考[这篇具体操作指南](/zh/blog/zh/claude-code-best-practices)。
 
 17% 的仓库同时使用三种格式（CLAUDE.md、.cursorrules、.github/copilot-instructions.md），显示多 AI 工具环境正在成为现实。
 
@@ -193,7 +193,7 @@ graph TD
 | 样板代码 | <strong>90%</strong> | AI 基于模式即时生成 |
 | 库学习 | <strong>80%</strong> | 提供基于上下文的示例而非文档 |
 | 调试 | <strong>70%</strong> | 错误原因分析自动化 |
-| 测试编写 | <strong>75%</strong> | 测试用例自动生成 |
+| 测试编写 | <strong>75%</strong> | 测试用例自动生成（另见[E2E 测试自动化实战案例](/zh/blog/zh/e2e-page-test-automation-claude-code)） |
 | 代码重构 | <strong>60%</strong> | 模式识别和改进建议 |
 
 ## 生产力提升的真正意义

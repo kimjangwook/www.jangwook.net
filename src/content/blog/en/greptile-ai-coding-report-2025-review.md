@@ -90,11 +90,11 @@ graph TD
     end
 ```
 
-While OpenAI still leads the market, Anthropic's growth is remarkable. The <strong>1,547x growth</strong> figure demonstrates how rapidly Claude is being adopted in the developer community.
+While OpenAI still leads the market, Anthropic's growth is remarkable. The <strong>1,547x growth</strong> figure demonstrates how rapidly Claude is being adopted in the developer community. [A personal analysis of 4,516 Claude Code messages](/en/blog/en/claude-code-insights-usage-analysis) reflects the same growing dependency in day-to-day development.
 
 ### 3. Standardization of CLAUDE.md Files
 
-According to the report, <strong>67% of repositories have adopted CLAUDE.md rule files</strong>. This means providing codebase context to AI agents has become a standard in development workflows.
+According to the report, <strong>67% of repositories have adopted CLAUDE.md rule files</strong>. This means providing codebase context to AI agents has become a standard in development workflows. If you want to apply CLAUDE.md-based workflows to a real project, [this guide covers the concrete steps](/en/blog/en/claude-code-best-practices).
 
 17% of repositories use all three formats (CLAUDE.md, .cursorrules, .github/copilot-instructions.md), showing that multi-AI tool environments are becoming reality.
 
@@ -196,7 +196,7 @@ Now I <strong>focus on specification definition and business logic review</stron
 | Boilerplate code | <strong>90%</strong> | AI generates instantly based on patterns |
 | Library learning | <strong>80%</strong> | Context-based examples instead of documentation |
 | Debugging | <strong>70%</strong> | Automated error cause analysis |
-| Test writing | <strong>75%</strong> | Automatic test case generation |
+| Test writing | <strong>75%</strong> | Automatic test case generation (see [E2E test automation in practice](/en/blog/en/e2e-page-test-automation-claude-code)) |
 | Code refactoring | <strong>60%</strong> | Pattern recognition and improvement suggestions |
 
 ## The True Meaning of Productivity Improvement
