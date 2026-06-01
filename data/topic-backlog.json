@@ -71,8 +71,8 @@
       "priority": 2,
       "source": "vitest-4-jest-migration-guide-2026 포스트 자연스러운 후속편. AI 에이전트 테스트는 2026년 급부상 주제",
       "added_at": "2026-05-26",
-      "status": "queued",
-      "notes": "vitest-4-jest-migration-guide-2026의 직접적 후속편. Anthropic SDK의 스트리밍 응답을 Vitest로 모킹하는 패턴, Claude 에이전트 도구 호출 테스트. 내부링크 풍부"
+      "status": "done",
+      "notes": "vitest-4-jest-migration-guide-2026의 직접적 후속편. Anthropic SDK의 스트리밍 응답을 Vitest로 모킹하는 패턴, Claude 에이전트 도구 호출 테스트. 내부링크 풍부\n2026-06-01: Published. Lab Publish. Vitest 4.1.7 + @anthropic-ai/sdk 0.100.1 sandbox verified. 9 tests, 142ms."
     },
     {
       "slug": "vitest-4-jest-migration-guide-2026",
