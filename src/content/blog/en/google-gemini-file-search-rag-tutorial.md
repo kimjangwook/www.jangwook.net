@@ -78,7 +78,7 @@ Traditionally, building a RAG system required these complex tasks:
 
 ### RAG Basics
 
-RAG (Retrieval Augmented Generation) is a technique to overcome LLM limitations. LLMs only know up to their training data and don't know the latest information or company-specific internal documents. RAG solves this problem like this:
+RAG (Retrieval Augmented Generation) is a technique to overcome LLM limitations. LLMs only know up to their training data and don't know the latest information or company-specific internal documents. RAG solves this problem like this. (If you're curious how embedding quality affects retrieval accuracy in a RAG pipeline, see the [Gemini Embedding 2 multimodal RAG guide](/en/blog/en/gemini-embedding-2-multimodal-rag-pipeline).)
 
 ```mermaid
 graph LR
@@ -678,6 +678,8 @@ Answers to actual questions are displayed, and you can verify the document sourc
 | <strong>Model Performance</strong> | GPT-4 Turbo | Gemini 2.5 Pro/Flash |
 
 ### LangChain + Vector DB vs Managed RAG
+
+When building your own RAG system, the choice of vector DB has a significant impact on performance. Benchmark results comparing Qdrant, ChromaDB, and pgvector head-to-head are available in the [Vector DB Comparison 2026 guide](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector).
 
 | Aspect | Self-built (LangChain) | Gemini File Search |
 |--------|----------------------|-------------------|

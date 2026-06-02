@@ -83,7 +83,7 @@ Companies running production systems that directly call the GPT-4o API face the 
 - <strong>API Endpoint Migration</strong>: Adapting to changes in GPT-4o-specific parameters and response formats
 - <strong>Prompt Re-optimization</strong>: The cost of rewriting prompts for the new model
 - <strong>Performance Regression Testing</strong>: Verifying existing workflows maintain quality on the new model
-- <strong>Cost Structure Changes</strong>: Budget restructuring due to token pricing changes in successor models
+- <strong>Cost Structure Changes</strong>: Budget restructuring due to token pricing changes in successor models (see [LLM API pricing comparison: GPT-5 vs Claude vs Gemini vs DeepSeek](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek))
 
 ## What Is Model Dependency Risk
 
@@ -123,7 +123,7 @@ Anthropic's Claude has shown remarkable growth in the enterprise market since la
 
 <strong>1. Safety-First Philosophy</strong>
 
-Anthropic delivers safety technologies like Constitutional AI in enterprise-ready formats. This approach has earned high trust in heavily regulated sectors like finance, healthcare, and legal.
+Anthropic delivers safety technologies like Constitutional AI in enterprise-ready formats. This approach has earned high trust in heavily regulated sectors like finance, healthcare, and legal. In fact, [42% of generative AI deployments fail due to the absence of top-down governance](/en/blog/en/enterprise-ai-adoption-topdown).
 
 <strong>2. Consistent API Policies</strong>
 

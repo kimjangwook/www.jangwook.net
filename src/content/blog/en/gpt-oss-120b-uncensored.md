@@ -141,7 +141,7 @@ graph TB
     Layer3 --> Layer2 --> Layer1
 ```
 
-Uncensored models remove the constraints at <strong>Layer 1 (Model Level)</strong>. For researchers, this is like accessing raw materials, but it also means all safety mechanisms are stripped away.
+Uncensored models remove the constraints at <strong>Layer 1 (Model Level)</strong>. For researchers, this is like accessing raw materials, but it also means all safety mechanisms are stripped away. As [research into LLM guardrail failures in multilingual environments](/en/blog/en/dont-trust-the-salt-multilingual-llm-safety) shows, the guardrails themselves can carry language bias that undermines their reliability.
 
 ### Ethical Perspective: The Open-Source AI Dilemma
 
@@ -227,7 +227,7 @@ graph LR
     E --> F
 ```
 
-The most promising direction is a <strong>modular safety architecture</strong>:
+The most promising direction is a <strong>modular safety architecture</strong>. This shift is also accelerated by the [narrowing performance gap between open-weight and proprietary models](/en/blog/en/minimax-m25-open-weight-vs-proprietary), which is rapidly raising the commercial viability of uncensored open-source LLMs:
 - Base models released without restrictions
 - Safety layers provided as separate modules
 - Appropriate safety levels selected based on use case

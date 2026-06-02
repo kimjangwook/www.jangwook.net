@@ -77,7 +77,7 @@ draft: true
 
 ### RAGの基本概念
 
-RAG (Retrieval Augmented Generation) は、LLMの限界を克服するための技術です。LLMは学習データまでしか知らず、最新情報や特定企業の内部ドキュメントは知りません。RAGは次のようにこの問題を解決します:
+RAG (Retrieval Augmented Generation) は、LLMの限界を克服するための技術です。LLMは学習データまでしか知らず、最新情報や特定企業の内部ドキュメントは知りません。RAGは次のようにこの問題を解決します。(RAGパイプラインでエンベディング品質が検索精度に与える影響については [Gemini Embedding 2 マルチモーダルRAGガイド](/ja/blog/ja/gemini-embedding-2-multimodal-rag-pipeline) を参照してください。)
 
 ```mermaid
 graph LR
@@ -677,6 +677,8 @@ streamlit run web_app.py
 | <strong>モデル性能</strong> | GPT-4 Turbo | Gemini 2.5 Pro/Flash |
 
 ### LangChain + Vector DB vs マネージドRAG
+
+自前構築の場合、どのベクトルDBを選ぶかがパフォーマンスを大きく左右する。Qdrant・ChromaDB・pgvectorを実測ベンチマークで比較した結果は [Vector DB比較2026 選択ガイド](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector) で確認できる。
 
 | 側面 | 自前構築 (LangChain) | Gemini File Search |
 |------|---------------------|-------------------|

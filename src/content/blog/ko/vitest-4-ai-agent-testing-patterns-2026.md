@@ -1,6 +1,6 @@
 ---
 title: 'Vitest 4로 AI 에이전트 테스트하기 — LLM 호출 모킹, 스트리밍 응답 테스트 실전 패턴'
-description: 'Vitest 4.1.7에서 Anthropic SDK의 messages.create()와 스트리밍 응답을 모킹하는 실전 패턴을 직접 검증했다. vi.fn().mockImplementation(function() {...})가 화살표 함수와 다른 이유, async function* 제너레이터로 SSE 스트림을 재현하는 방법까지 9개 테스트가 142ms 안에 통과하는 과정을 단계별로 설명한다.'
+description: 'Vitest 4.1.7로 Anthropic SDK messages.create()와 스트리밍 응답을 모킹하는 실전 패턴. vi.fn()과 화살표 함수 차이, async function* 제너레이터로 SSE 스트림을 재현해 9개 테스트를 142ms에 통과시키는 방법을 안내한다.'
 pubDate: '2026-06-01'
 heroImage: '../../../assets/blog/vitest-4-ai-agent-testing-patterns-2026/vitest-4-ai-agent-testing-patterns-2026-hero.png'
 tags: ['Vitest', 'AI 에이전트', 'TypeScript']
