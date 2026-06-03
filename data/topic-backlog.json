@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-31T23:07:00+09:00",
+  "updated_at": "2026-06-03T15:40:00+09:00",
   "topics": [
     {
       "slug": "claude-code-agent-sdk-typescript-production-2026",
@@ -3004,8 +3004,8 @@
       "priority": 1,
       "source": "daily-closing 자동 선정",
       "added_at": "2026-06-02",
-      "status": "queued",
-      "notes": "Hono v4가 2026년 엣지·서버리스 TypeScript API의 사실상 표준으로 자리잡음. Express 대비 초경량(12KB), Zod 검증 내장, Cloudflare Workers/Deno Deploy/Bun 동시 지원. 라우팅 정의부터 미들웨어, Zod 기반 입력 검증, Cloudflare Workers 배포까지 실전 코드로 커버. bun-shell-scripting-practical-guide-2026, typescript-zod-v4-claude-api-structured-output-guide-2026과 내부링크 연결 가능. 수요일 How-to 유형."
+      "status": "done",
+      "notes": "Hono v4가 2026년 엣지·서버리스 TypeScript API의 사실상 표준으로 자리잡음. Express 대비 초경량(12KB), Zod 검증 내장, Cloudflare Workers/Deno Deploy/Bun 동시 지원. 라우팅 정의부터 미들웨어, Zod 기반 입력 검증, Cloudflare Workers 배포까지 실전 코드로 커버. bun-shell-scripting-practical-guide-2026, typescript-zod-v4-claude-api-structured-output-guide-2026과 내부링크 연결 가능. 수요일 How-to 유형.\n2026-06-03: Published. Lab Publish. Bun 1.3.14 + Hono v4.12.23 + @hono/zod-validator@0.8.0 + zod@4.4.3 sandbox verified. CRUD API tested: GET/POST/PATCH/DELETE all passing. Sub-millisecond warm response times confirmed."
     }
   ]
 }
