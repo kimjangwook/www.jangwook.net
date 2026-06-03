@@ -1,7 +1,61 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-03T15:40:00+09:00",
+  "updated_at": "2026-06-03T23:07:00+09:00",
   "topics": [
+    {
+      "slug": "deno-2-vs-bun-nodejs-runtime-2026-comparison",
+      "title_idea": "Deno 2 vs Bun — 2026년 Node.js 대안 런타임 실전 비교: 속도·호환성·에코시스템 완전 분석",
+      "content_type": "news",
+      "target_keyword": "Deno 2 Bun 비교 2026",
+      "secondary_keywords": [
+        "Deno vs Bun 성능",
+        "Node.js 대안 런타임",
+        "TypeScript 런타임 2026",
+        "Bun 1.3 vs Deno 2"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Bun 포스트 (hono-typescript-api-2026, bun-shell-scripting-practical-guide-2026) + Deno 2.x 안정화 이후 개발자 선택 고민 증가",
+      "added_at": "2026-06-04",
+      "status": "queued",
+      "notes": "목요일 뉴스 분석 #1. Bun 1.3과 Deno 2.x가 안정화되면서 실제 선택 기준이 필요해진 시점. TypeScript 지원, npm 호환성, 런타임 성능 벤치마크 3가지 축으로 분석. 블로그의 Bun 포스트와 자연스러운 연계."
+    },
+    {
+      "slug": "anthropic-claude-agent-sdk-vs-openai-agents-sdk-2026",
+      "title_idea": "Claude Agent SDK vs OpenAI Agents SDK — 멀티 에이전트 프레임워크 2026 실전 비교",
+      "content_type": "news",
+      "target_keyword": "Claude Agent SDK OpenAI Agents SDK 비교",
+      "secondary_keywords": [
+        "멀티 에이전트 프레임워크 비교",
+        "Anthropic vs OpenAI SDK",
+        "AI 에이전트 개발 도구 2026",
+        "Claude Code SDK 비교"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "블로그 내 Claude Agent SDK 시리즈 (claude-agent-sdk-subagents-orchestration-tutorial-2026 등) 후속편 + OpenAI Agents SDK 출시로 경쟁 구도 형성",
+      "added_at": "2026-06-04",
+      "status": "queued",
+      "notes": "목요일 뉴스 분석 #2. 2026년 멀티 에이전트 프레임워크 경쟁의 핵심 대결. 오케스트레이션 방식, 도구 정의, 비용 모델, 타입 안전성 4가지 축 비교. 블로그의 Claude Agent SDK 포스트와 강하게 연계."
+    },
+    {
+      "slug": "cloudflare-workers-ai-edge-inference-2026-guide",
+      "title_idea": "Cloudflare Workers AI로 엣지 LLM 추론 구현하기 — Hono.js 통합과 지연 시간 최적화 실전",
+      "content_type": "news",
+      "target_keyword": "Cloudflare Workers AI LLM 추론",
+      "secondary_keywords": [
+        "엣지 AI 추론 2026",
+        "Cloudflare AI Gateway",
+        "Hono Workers AI",
+        "LLM 엣지 배포"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "hono-typescript-api-2026 포스트의 Cloudflare Workers 배포 후속편으로 자연스러운 확장. Cloudflare AI Gateway + Workers AI 조합이 2026년 엣지 AI 추론의 주류로 부상",
+      "added_at": "2026-06-04",
+      "status": "queued",
+      "notes": "목요일 뉴스 분석 #3. hono-typescript-api-2026의 직접적 후속편. Cloudflare Workers AI를 Hono 라우터에 통합하는 실전 코드. AI Gateway의 캐싱·레이트 리밋 기능으로 비용 최적화. 블로그 독자의 관심도 높을 것."
+    },
     {
       "slug": "claude-code-agent-sdk-typescript-production-2026",
       "title_idea": "Claude Agent SDK TypeScript 실전 — 프로덕션 AI 에이전트를 Claude Code 엔진으로 직접 만드는 방법",

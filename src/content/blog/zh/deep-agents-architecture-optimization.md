@@ -316,7 +316,7 @@ context_optimization:
 
 ### 2. 定义5个专业集群
 
-将现有16个代理组织为5个功能集群：
+将现有16个代理组织为5个功能集群。在Claude Code中实际构建这种团队结构的完整方法，可参考[Claude Code Agent Teams完整指南](/zh/blog/zh/claude-agent-teams-guide)：
 
 ```yaml
 # cluster-definitions.yaml
@@ -645,6 +645,8 @@ graph TB
 
 - <strong>任务完成时间</strong>：减少40%（并行执行+智能调度）
 - <strong>人工干预频率</strong>：降低80%（自动恢复机制）
+
+如需进一步提升并行执行效率，可参考[用元工具优化AI代理工作流：AWO框架实战指南](/zh/blog/zh/agentic-workflow-meta-tools-optimization)。
 - <strong>资源利用率</strong>：提升50%（智能资源调配）
 
 ### 质量指标

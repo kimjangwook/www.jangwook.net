@@ -1,5 +1,5 @@
 ---
-title: 'TypeScript Zod v4 + Claude API 구조화 출력 완전 가이드 — 타입 안전한 LLM 응답 파싱 실전'
+title: 'TypeScript Zod v4 + Claude API 구조화 출력 가이드 — LLM 응답 타입 파싱'
 description: 'Zod v4 safeParse()와 변경된 스키마 API로 Claude API 응답을 타입 안전하게 파싱하는 패턴을 직접 검증했다. v3 대비 성능 수치, z.string().check() 신규 API, 중첩 스키마 설계 전략을 Claude API 통합 코드와 함께 정리한다.'
 pubDate: '2026-06-02'
 heroImage: '../../../assets/blog/typescript-zod-v4-claude-api-structured-output-guide-2026/typescript-zod-v4-claude-api-structured-output-guide-2026-hero.png'

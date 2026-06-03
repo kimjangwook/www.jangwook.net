@@ -879,6 +879,8 @@ After implementing the Deep Agents architecture, we project significant improvem
 | Parallel Execution | None | 3〜5 agents | New capability |
 | Cross-session Continuity | None | Full | New capability |
 
+To maximize parallel execution efficiency in practice, also check [Optimizing AI Agent Workflows with Meta Tools: AWO Framework](/en/blog/en/agentic-workflow-meta-tools-optimization).
+
 ### Reliability
 
 | Metric | Before | After | Improvement |
@@ -1105,7 +1107,7 @@ Our analysis showed 65% compliance with Deep Agents principles in the existing s
 <strong>Key Takeaways</strong>:
 
 1. <strong>Explicit Planning</strong> transforms ad-hoc execution into predictable, optimizable workflows
-2. <strong>Hierarchical Clusters</strong> improve coordination and enable parallel execution
+2. <strong>Hierarchical Clusters</strong> improve coordination and enable parallel execution — see [Claude Code Agent Teams Complete Guide](/en/blog/en/claude-agent-teams-guide) for a hands-on implementation
 3. <strong>Persistent State</strong> enables cross-session continuity and learning
 4. <strong>Recovery Protocols</strong> automate error handling for >90% recovery rate
 5. <strong>Expected Results</strong>: 5〜15 steps to 100+ steps, with autonomous recovery
@@ -1118,6 +1120,7 @@ The Deep Agents architecture isn't just an incremental improvement—it's a fund
 - Philipp Schmid: "Deep Agents: Agents 2.0 Architecture" (2024)
 - Anthropic Engineering: "Claude Code Best Practices" (2024)
 - Anthropic Engineering: "Building Effective Agents" (2024)
+- [5 Claude Code Agentic Workflow Patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) — practical patterns for production agentic systems
 - LangGraph: Multi-Agent Orchestration Patterns
 
 ---

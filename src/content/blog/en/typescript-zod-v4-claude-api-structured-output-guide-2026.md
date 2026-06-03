@@ -1,5 +1,5 @@
 ---
-title: 'TypeScript Zod v4 + Claude API: A Complete Guide to Type-Safe LLM Response Parsing'
+title: 'Zod v4 + Claude API: Type-Safe LLM Response Parsing in TypeScript'
 description: 'I tested Zod v4 safeParse() and the updated schema API with Claude API responses to build type-safe LLM output pipelines. Here: v3 performance comparison, the new z.string().check() API, nested schema design, and error handling patterns for production use.'
 pubDate: '2026-06-02'
 heroImage: '../../../assets/blog/typescript-zod-v4-claude-api-structured-output-guide-2026/typescript-zod-v4-claude-api-structured-output-guide-2026-hero.png'

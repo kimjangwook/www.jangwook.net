@@ -102,7 +102,7 @@ graph LR
 
 ### 1. 데이터 품질 > 모델 크기
 
-동일한 고품질 데이터셋으로 Qwen3-0.6B와 FunctionGemma 270M 모두 우수한 성능을 달성했습니다. <strong>핵심은 모델 크기가 아니라 태스크에 특화된 고품질 학습 데이터</strong>입니다.
+동일한 고품질 데이터셋으로 Qwen3-0.6B와 FunctionGemma 270M 모두 우수한 성능을 달성했습니다. <strong>핵심은 모델 크기가 아니라 태스크에 특화된 고품질 학습 데이터</strong>입니다. 이와 관련하여 [AI가 스스로 생성한 스킬이 왜 무의미한지](/ko/blog/ko/ai-self-generated-skills-myth)를 다룬 실증 연구도 참고할 만합니다.
 
 ### 2. 445배 작은 모델의 실용적 의미
 
@@ -113,11 +113,11 @@ graph LR
 | 실행 환경 | GPU 서버 | 스마트폰 CPU |
 | 추론 속도 | - | 125 tok/s |
 
-에지 디바이스, 모바일 앱, 브라우저 내 추론 등 <strong>GPU 없이도 production-ready tool calling</strong>이 가능해집니다.
+에지 디바이스, 모바일 앱, 브라우저 내 추론 등 <strong>GPU 없이도 production-ready tool calling</strong>이 가능해집니다. 에지 추론의 극한을 보여주는 사례로 [ASIC 추론 칩으로 Llama 3.1 8B에서 16,000 tok/s를 달성한 사례](/ko/blog/ko/asic-llm-inference-16k-tps)도 참고가 됩니다.
 
 ### 3. 스케일링 법칙에 대한 반론
 
-최근 DeepSeek, Qwen 등 오픈소스 모델의 약진과 함께, 이번 결과는 <strong>"파라미터를 늘리는 것만이 성능 향상의 길"이라는 가정에 대한 추가 반론</strong>입니다. 특화된 태스크에서 적절한 파인튜닝은 모델 크기의 한계를 극복할 수 있습니다.
+최근 DeepSeek, Qwen 등 오픈소스 모델의 약진과 함께, 이번 결과는 <strong>"파라미터를 늘리는 것만이 성능 향상의 길"이라는 가정에 대한 추가 반론</strong>입니다. 특화된 태스크에서 적절한 파인튜닝은 모델 크기의 한계를 극복할 수 있습니다. 단, 지식 증류는 IP 관점에서 위험도 수반하는데 [AI 모델 증류 공격의 실태](/ko/blog/ko/ai-distillation-attacks-enterprise-defense)에서 기업이 대비해야 할 전략을 확인할 수 있습니다.
 
 ## 오픈소스 리소스
 

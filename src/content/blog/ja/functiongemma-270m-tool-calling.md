@@ -102,7 +102,7 @@ graph LR
 
 ### 1. データ品質 > モデルサイズ
 
-同一の高品質データセットでQwen3-0.6BとFunctionGemma 270Mの両方が優秀な性能を達成しました。<strong>核心はモデルサイズではなく、タスクに特化した高品質な学習データ</strong>です。
+同一の高品質データセットでQwen3-0.6BとFunctionGemma 270Mの両方が優秀な性能を達成しました。<strong>核心はモデルサイズではなく、タスクに特化した高品質な学習データ</strong>です。関連する視点として[AIが自動生成したスキルが無意味な理由](/ja/blog/ja/ai-self-generated-skills-myth)という実証研究も参照の価値があります。
 
 ### 2. 445倍小さいモデルの実用的意味
 
@@ -113,11 +113,11 @@ graph LR
 | 実行環境 | GPUサーバー | スマートフォンCPU |
 | 推論速度 | - | 125 tok/s |
 
-エッジデバイス、モバイルアプリ、ブラウザ内推論など、<strong>GPUなしでもproduction-ready tool calling</strong>が実現可能になります。
+エッジデバイス、モバイルアプリ、ブラウザ内推論など、<strong>GPUなしでもproduction-ready tool calling</strong>が実現可能になります。エッジ推論の極限事例として[ASICチップでLlama 3.1 8Bを16,000 tok/s達成](/ja/blog/ja/asic-llm-inference-16k-tps)も参考になります。
 
 ### 3. スケーリング法則への反論
 
-最近のDeepSeek、Qwenなどオープンソースモデルの躍進と合わせて、今回の結果は<strong>「パラメータを増やすことだけが性能向上の道」という仮定への追加反論</strong>です。特化したタスクにおいて適切なファインチューニングはモデルサイズの限界を克服できます。
+最近のDeepSeek、Qwenなどオープンソースモデルの躍進と合わせて、今回の結果は<strong>「パラメータを増やすことだけが性能向上の道」という仮定への追加反論</strong>です。特化したタスクにおいて適切なファインチューニングはモデルサイズの限界を克服できます。なお、知識蒸留はIP観点からリスクも伴うため、[AIモデル蒸留攻撃の実態](/ja/blog/ja/ai-distillation-attacks-enterprise-defense)で企業が備えるべき戦略も確認してください。
 
 ## オープンソースリソース
 

@@ -97,9 +97,11 @@ Google CloudのSecurity Command CenterやCloud Asset Inventoryも優れたツー
 2. <strong>コンテキスト認識</strong>：AIがリソース間の関係を理解して分析
 3. <strong>自動化レポート</strong>：構造化された分析結果と改善推奨事項を生成
 
+AWS環境でのMCP活用については[AWS MCP Server GA実践ガイド](/ja/blog/ja/aws-mcp-server-ga-practical-guide-2026)でCloudWatch・IAMエージェント連携の方法を確認できます。
+
 ### 並列エージェントアーキテクチャ
 
-単一エージェントで全サービスを順次点検する代わりに、並列サブエージェントパターンを適用しました：
+単一エージェントで全サービスを順次点検する代わりに、[並列サブエージェントパターン](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026)を適用しました：
 
 ```mermaid
 flowchart TB
@@ -360,7 +362,7 @@ gcloud run services update my-service \
   --update-secrets=OPENAI_API_KEY=openai-api-key:latest
 ```
 
-AIエージェントはこれらの修正コマンドを自動生成し、承認後に実行できます。
+AIエージェントはこれらの修正コマンドを自動生成し、承認後に実行できます。シークレット漏洩リスクの実態については[AIコーディングエージェントが2,900万のシークレットを漏洩させた事例](/ja/blog/ja/ai-coding-secrets-sprawl-mcp-config-security)も参照してください。
 
 ### 例：ファイアウォールルールの強化
 

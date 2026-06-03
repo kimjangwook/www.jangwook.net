@@ -1,6 +1,6 @@
 ---
-title: 'Hono.js + TypeScript でエッジ REST API を作る — Bun ローカルサーバーから Cloudflare Workers デプロイまで'
-description: 'Hono v4.12.23 + Bun 1.3.14 + Zod v4 で型安全な REST API を実際に構築した。ルーティング定義・Zod 入力バリデーション・CORS/logger/timing ミドルウェア・Cloudflare Workers デプロイ設定まで、実際のターミナルログと実行コードで解説する。'
+title: 'Hono.js + TypeScript でエッジ REST API を作る — Cloudflare Workers 実践'
+description: 'Hono v4 + Bun 1.3 + Zod v4 で型安全な REST API を実際に構築した。ルーティング定義・Zod 入力バリデーション・CORS/logger/timing ミドルウェア・Cloudflare Workers デプロイ設定まで、実際のターミナルログと実行コードで解説する。'
 pubDate: '2026-06-03'
 heroImage: '../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-hero.png'
 tags: ['Hono', 'TypeScript', 'REST API', 'Cloudflare Workers']

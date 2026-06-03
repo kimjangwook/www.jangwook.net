@@ -1,6 +1,6 @@
 ---
-title: 'Hono.js + TypeScript로 엣지 REST API 만들기 — Bun 로컬 서버부터 Cloudflare Workers 배포까지'
-description: 'Hono v4.12.23 + Bun 1.3.14 + Zod v4로 타입 안전한 REST API를 직접 만들었다. 라우팅 정의, Zod 기반 입력 검증, CORS·logger·timing 미들웨어, Cloudflare Workers 배포 설정까지 실전 코드와 터미널 로그를 포함한 단계별 가이드.'
+title: 'Hono.js + TypeScript로 엣지 REST API 만들기 — Cloudflare Workers'
+description: 'Hono v4 + Bun 1.3 + Zod v4로 타입 안전한 REST API를 직접 만들었다. 라우팅 정의, Zod 기반 입력 검증, CORS·logger·timing 미들웨어, Cloudflare Workers 배포 설정까지 실전 코드와 터미널 로그를 포함한 단계별 가이드.'
 pubDate: '2026-06-03'
 heroImage: '../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-hero.png'
 tags: ['Hono', 'TypeScript', 'REST API', 'Cloudflare Workers']

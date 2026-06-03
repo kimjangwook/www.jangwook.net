@@ -307,6 +307,8 @@ interface Checkpoint {
 | <strong>content-discovery</strong> | content-recommender | - |
 | <strong>operations</strong> | site-manager | portfolio-curator, learning-tracker, improvement-tracker, prompt-engineer |
 
+Claude Codeでこのようなチーム構造を実際に実装する方法は[Claude Code Agent Teams 完全ガイド](/ja/blog/ja/claude-agent-teams-guide)で確認できます。
+
 <strong>各クラスターの役割</strong>:
 
 | クラスター | リーダー | 主要機能 |
@@ -514,6 +516,8 @@ Deep Agentsパラダイムの実装により、以下の改善が期待されま
 | コンテキスト効率 | 60% | 95% | 58% |
 | 並列実行率 | 0% | 40% | - |
 | タスク完了率 | 70% | 95% | 36% |
+
+並列実行効率を実践でさらに高める方法は[AIエージェントワークフローをメタツールで最適化する: AWOフレームワーク実践ガイド](/ja/blog/ja/agentic-workflow-meta-tools-optimization)を参照してください。
 
 ### 定性的改善
 

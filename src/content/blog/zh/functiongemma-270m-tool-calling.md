@@ -102,7 +102,7 @@ graph LR
 
 ### 1. 数据质量 > 模型大小
 
-同一高质量数据集让Qwen3-0.6B和FunctionGemma 270M都取得了优秀性能。<strong>关键不在于模型大小，而在于针对特定任务的高质量训练数据</strong>。
+同一高质量数据集让Qwen3-0.6B和FunctionGemma 270M都取得了优秀性能。<strong>关键不在于模型大小，而在于针对特定任务的高质量训练数据</strong>。关于AI自生成技能为何往往无效的实证研究，可参考[AI自动生成的技能为何毫无意义](/zh/blog/zh/ai-self-generated-skills-myth)。
 
 ### 2. 小445倍模型的实用意义
 
@@ -113,11 +113,11 @@ graph LR
 | 运行环境 | GPU服务器 | 智能手机CPU |
 | 推理速度 | - | 125 tok/s |
 
-边缘设备、移动应用、浏览器内推理等场景中，<strong>无需GPU即可实现production-ready tool calling</strong>。
+边缘设备、移动应用、浏览器内推理等场景中，<strong>无需GPU即可实现production-ready tool calling</strong>。边缘推理的极致案例可参考[用ASIC推理芯片让Llama 3.1 8B达到16,000 tok/s](/zh/blog/zh/asic-llm-inference-16k-tps)。
 
 ### 3. 对Scaling Law的反驳
 
-结合近期DeepSeek、Qwen等开源模型的崛起，本次结果为<strong>"增加参数是提升性能的唯一途径"这一假设提供了又一反例</strong>。在特定任务上，适当的微调可以克服模型大小的限制。
+结合近期DeepSeek、Qwen等开源模型的崛起，本次结果为<strong>"增加参数是提升性能的唯一途径"这一假设提供了又一反例</strong>。在特定任务上，适当的微调可以克服模型大小的限制。不过知识蒸馏从IP角度也存在风险，[AI模型蒸馏攻击的实态](/zh/blog/zh/ai-distillation-attacks-enterprise-defense)中有企业应对策略的详细分析。
 
 ## 开源资源
 

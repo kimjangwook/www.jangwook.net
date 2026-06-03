@@ -1,6 +1,6 @@
 ---
-title: '用 Hono.js + TypeScript 构建边缘 REST API — 从 Bun 本地服务器到 Cloudflare Workers 部署'
-description: '我用 Hono v4.12.23、Bun 1.3.14 和 Zod v4 实际构建了一个类型安全的 REST API。本文涵盖路由定义、Zod 输入验证、CORS/日志/计时中间件，以及 Cloudflare Workers 部署配置——包含真实终端日志和分步骤代码示例。'
+title: '用 Hono.js + TypeScript 构建边缘 REST API — Cloudflare Workers 实战指南'
+description: '我用 Hono v4、Bun 1.3 和 Zod v4 实际构建了一个类型安全的 REST API。本文涵盖路由定义、Zod 输入验证、CORS/日志/计时中间件，以及 Cloudflare Workers 部署配置——包含真实终端日志和分步骤代码示例。'
 pubDate: '2026-06-03'
 heroImage: '../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-hero.png'
 tags: ['Hono', 'TypeScript', 'REST API', 'Cloudflare Workers']

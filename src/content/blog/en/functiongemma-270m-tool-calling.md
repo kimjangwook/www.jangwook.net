@@ -105,7 +105,7 @@ graph LR
 
 ### 1. Data Quality > Model Size
 
-The same high-quality dataset produced strong results on both Qwen3-0.6B and FunctionGemma 270M. <strong>The key factor is task-specific, high-quality training data, not model size</strong>.
+The same high-quality dataset produced strong results on both Qwen3-0.6B and FunctionGemma 270M. <strong>The key factor is task-specific, high-quality training data, not model size</strong>. An empirical study on why [AI-generated skills are often meaningless](/en/blog/en/ai-self-generated-skills-myth) offers a related perspective on data quality in AI training.
 
 ### 2. Practical Implications of a 445× Smaller Model
 
@@ -116,11 +116,11 @@ The same high-quality dataset produced strong results on both Qwen3-0.6B and Fun
 | Runtime | GPU Server | Smartphone CPU |
 | Inference Speed | - | 125 tok/s |
 
-This enables <strong>production-ready tool calling without GPUs</strong> — on edge devices, mobile apps, and in-browser inference.
+This enables <strong>production-ready tool calling without GPUs</strong> — on edge devices, mobile apps, and in-browser inference. For the extreme end of edge inference performance, [16,000 tok/s on Llama 3.1 8B with ASIC chips](/en/blog/en/asic-llm-inference-16k-tps) makes for a compelling comparison.
 
 ### 3. A Counter-Argument to Scaling Laws
 
-Combined with the recent rise of open-source models like DeepSeek and Qwen, these results provide <strong>additional evidence against the assumption that increasing parameters is the only path to better performance</strong>. Proper fine-tuning on specialized tasks can overcome model size limitations.
+Combined with the recent rise of open-source models like DeepSeek and Qwen, these results provide <strong>additional evidence against the assumption that increasing parameters is the only path to better performance</strong>. Proper fine-tuning on specialized tasks can overcome model size limitations. That said, knowledge distillation also carries IP risks — see [The Reality of AI Model Distillation Attacks](/en/blog/en/ai-distillation-attacks-enterprise-defense) for enterprise defense strategies.
 
 ## Open-Source Resources
 
