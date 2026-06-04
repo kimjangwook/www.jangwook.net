@@ -137,15 +137,15 @@ graph TD
 
 ### 1. Benefiting from API Price Wars
 
-With seven models competing simultaneously, API prices are set to drop further. Open-source models with self-hosting options offer particularly significant cost savings.
+With seven models competing simultaneously, API prices are set to drop further. Open-source models with self-hosting options offer particularly significant cost savings. Check the current pricing breakdown in [GPT-5, Claude, Gemini, DeepSeek API Pricing Comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek).
 
 ### 2. Multi-Model Strategies Become Essential
 
-The era of depending on a single model is over. <strong>Model routing</strong> strategies — selecting the optimal model for each task type — are becoming increasingly critical.
+The era of depending on a single model is over. <strong>Model routing</strong> strategies — selecting the optimal model for each task type — are becoming increasingly critical. See [How to Cut Agent Fleet Costs by 90% with Heterogeneous LLM Architecture](/en/blog/en/heterogeneous-llm-agent-fleet-cost-optimization) for practical multi-model design patterns.
 
 ### 3. Real-World Evaluation Over Benchmarks
 
-As the number of models grows, benchmark scores alone become insufficient for decision-making. Building <strong>custom evaluation (eval) pipelines</strong> tailored to your specific use cases is now essential.
+As the number of models grows, benchmark scores alone become insufficient for decision-making. Building <strong>custom evaluation (eval) pipelines</strong> tailored to your specific use cases is now essential. The [Deep-Thinking Ratio: A New Metric for Cutting LLM Inference Costs by 50%](/en/blog/en/deep-thinking-ratio-llm-cost-optimization) introduces a cost-aware framework for measuring model performance.
 
 ## Looking Ahead
 

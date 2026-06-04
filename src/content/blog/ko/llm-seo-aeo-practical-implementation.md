@@ -1,6 +1,6 @@
 ---
 title: 'LLM 시대의 SEO/AEO 실전 적용: B2B SaaS 최적화 로드맵'
-description: 'Agent Effi Flow 프로젝트를 통해 알아보는 SEO 기반 구축부터 AEO 전략까지, 실제 구현 사례와 측정 가능한 성과'
+description: 'B2B SaaS 프로젝트 Agent Effi Flow에 적용한 LLM 시대의 SEO/AEO 완전 전략 로드맵. 기술 스택 구현 방법부터 ChatGPT·Perplexity AI 검색 인용을 위한 AEO 콘텐츠 최적화, 실측 성과 지표까지 9단계 전략을 단계별로 공개합니다.'
 pubDate: '2025-11-28'
 heroImage: ../../../assets/blog/llm-seo-aeo-practical-implementation-hero.jpg
 tags:

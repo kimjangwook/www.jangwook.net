@@ -136,15 +136,15 @@ graph TD
 
 ### 1. API 가격 경쟁의 수혜
 
-7개 모델이 동시에 경쟁하면서 API 가격은 더욱 하락할 전망입니다. 특히 오픈소스 모델의 셀프 호스팅 옵션은 비용 절감에 큰 도움이 됩니다.
+7개 모델이 동시에 경쟁하면서 API 가격은 더욱 하락할 전망입니다. 특히 오픈소스 모델의 셀프 호스팅 옵션은 비용 절감에 큰 도움이 됩니다. 현재 주요 모델별 입출력 가격은 [GPT-5, Claude, Gemini, DeepSeek API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 확인할 수 있습니다.
 
 ### 2. 멀티 모델 전략의 필수화
 
-단일 모델에 의존하는 시대는 끝났습니다. 작업 유형별로 최적의 모델을 선택하는 <strong>모델 라우팅(Model Routing)</strong> 전략이 점점 더 중요해지고 있습니다.
+단일 모델에 의존하는 시대는 끝났습니다. 작업 유형별로 최적의 모델을 선택하는 <strong>모델 라우팅(Model Routing)</strong> 전략이 점점 더 중요해지고 있습니다. [이종 LLM 아키텍처로 에이전트 플릿 비용을 90% 줄이는 방법](/ko/blog/ko/heterogeneous-llm-agent-fleet-cost-optimization)에서 실전 멀티 모델 설계 패턴을 확인해볼 수 있습니다.
 
 ### 3. 벤치마크를 넘어선 실전 평가
 
-모델이 많아질수록 벤치마크 점수만으로는 판단이 어렵습니다. 자체 유스케이스에 맞는 <strong>실전 평가(Eval) 파이프라인</strong> 구축이 필수가 됩니다.
+모델이 많아질수록 벤치마크 점수만으로는 판단이 어렵습니다. 자체 유스케이스에 맞는 <strong>실전 평가(Eval) 파이프라인</strong> 구축이 필수가 됩니다. [Deep-Thinking Ratio: LLM 추론 비용을 50% 줄이는 새로운 측정 지표](/ko/blog/ko/deep-thinking-ratio-llm-cost-optimization)는 모델 성능을 비용 관점에서 측정하는 새로운 프레임워크를 제시합니다.
 
 ## 향후 전망
 

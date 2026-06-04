@@ -1,7 +1,61 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-03T23:07:00+09:00",
+  "updated_at": "2026-06-04T23:07:00+09:00",
   "topics": [
+    {
+      "slug": "amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026",
+      "title_idea": "Amazon Kiro 실전 리뷰 — spec 주도 AI IDE가 Claude Code를 대체할 수 있을까",
+      "content_type": "news",
+      "target_keyword": "Amazon Kiro AI IDE 2026",
+      "secondary_keywords": [
+        "Kiro vs Claude Code",
+        "spec 주도 개발 AI",
+        "Amazon AI 코딩 도구",
+        "AWS Kiro IDE 리뷰"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Amazon이 2026년 6월 spec-driven AI IDE Kiro를 출시. Claude Code와는 다른 접근법(스펙 먼저 작성 → AI 구현)으로 주목. 블로그의 Claude Code 시리즈와 자연스럽게 연결.",
+      "added_at": "2026-06-04",
+      "status": "queued",
+      "notes": "목요일 뉴스 분석 #1. Amazon Kiro의 spec 주도 개발 철학이 실제로 동작하는지 분석. Claude Code와의 워크플로우 비교가 핵심 차별화 포인트. 블로그 독자층(Claude Code 헤비 유저)에게 직접적인 의사결정 도움."
+    },
+    {
+      "slug": "ai-coding-agent-market-june-2026-open-source-challenge",
+      "title_idea": "2026년 6월 AI 코딩 에이전트 시장 지형 — 오픈소스 도전자들의 반격과 Claude Code 진영 대응",
+      "content_type": "news",
+      "target_keyword": "AI 코딩 에이전트 2026 오픈소스",
+      "secondary_keywords": [
+        "오픈소스 AI IDE 2026",
+        "Claude Code 대안",
+        "9router OpenClaw 코딩 에이전트",
+        "무료 AI 개발 도구 2026"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "9router, OpenClaw, Aider, Continue.dev 등 오픈소스 AI 코딩 에이전트의 급성장으로 유료 도구 시장 압박 증가. 블로그 내 OpenClaw 시리즈와 연결.",
+      "added_at": "2026-06-04",
+      "status": "queued",
+      "notes": "목요일 뉴스 분석 #2. 오픈소스 진영의 실력이 급성장한 2026년 상반기 시점에서 유료 vs 무료 AI 코딩 에이전트를 정리. 블로그의 openclaw-introduction-guide 등 오픈소스 포스트와 자연스럽게 연결."
+    },
+    {
+      "slug": "anthropic-claude-code-2026-h1-ecosystem-retrospective",
+      "title_idea": "Claude Code 2026 상반기 회고 — MCP 생태계 확산, Hooks 자동화, 서브에이전트 완성까지",
+      "content_type": "news",
+      "target_keyword": "Claude Code 2026 상반기 업데이트",
+      "secondary_keywords": [
+        "Claude Code 최신 기능 2026",
+        "MCP 생태계 2026 현황",
+        "Claude Code Hooks 자동화",
+        "Anthropic 개발 도구 로드맵"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "2026년 1월~6월 Claude Code의 주요 업데이트(MCP 지원 확장, Plan Mode, Hooks, Sub-agents)를 정리하는 회고 분석. 블로그 자체 경험 데이터 활용 가능.",
+      "added_at": "2026-06-04",
+      "status": "queued",
+      "notes": "목요일 뉴스 분석 #3. 블로그에 축적된 Claude Code 관련 포스트(30개+)의 경험을 종합하는 회고형 콘텐츠. 독자에게 학습 로드맵으로도 활용 가능. /insights 포스트와 자연 연결."
+    },
     {
       "slug": "deno-2-vs-bun-nodejs-runtime-2026-comparison",
       "title_idea": "Deno 2 vs Bun — 2026년 Node.js 대안 런타임 실전 비교: 속도·호환성·에코시스템 완전 분석",

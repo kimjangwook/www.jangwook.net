@@ -136,15 +136,15 @@ graph TD
 
 ### 1. API价格竞争的红利
 
-7个模型同时竞争，API价格将进一步下降。特别是开源模型的自托管选项为成本节约提供了巨大帮助。
+7个模型同时竞争，API价格将进一步下降。特别是开源模型的自托管选项为成本节约提供了巨大帮助。当前各主要模型的详细价格对比请参见[GPT-5、Claude、Gemini、DeepSeek API价格比较](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)。
 
 ### 2. 多模型策略成为刚需
 
-依赖单一模型的时代已经结束。按任务类型选择最优模型的<strong>模型路由（Model Routing）</strong>策略正变得越来越重要。
+依赖单一模型的时代已经结束。按任务类型选择最优模型的<strong>模型路由（Model Routing）</strong>策略正变得越来越重要。[如何用异构LLM架构将智能体集群成本降低90%](/zh/blog/zh/heterogeneous-llm-agent-fleet-cost-optimization)详细介绍了实用的多模型设计模式。
 
 ### 3. 超越基准的实战评估
 
-模型越多，仅凭基准分数越难做出判断。构建适合自身使用场景的<strong>实战评估（Eval）流水线</strong>已成为必需。
+模型越多，仅凭基准分数越难做出判断。构建适合自身使用场景的<strong>实战评估（Eval）流水线</strong>已成为必需。[Deep-Thinking Ratio：将LLM推理成本降低50%的新指标](/zh/blog/zh/deep-thinking-ratio-llm-cost-optimization)提出了一个从成本角度衡量模型性能的新框架。
 
 ## 未来展望
 

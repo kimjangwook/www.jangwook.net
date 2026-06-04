@@ -131,7 +131,7 @@ TaskCreate: 1,276 times
 Total: 4,751 times (TodoWrite + TaskCreate + TaskUpdate)
 ```
 
-For large-scale tasks, I always create a task list first, then distribute it to parallel agents. `/insights` evaluated this as a "sophisticated workflow."
+For large-scale tasks, I always create a task list first, then distribute it to parallel agents. `/insights` evaluated this as a "sophisticated workflow." See [AI Agent Collaboration Patterns: Building a Full-Stack App with 5 Specialized Agents](/en/blog/en/ai-agent-collaboration-patterns) for concrete examples of this multi-agent approach in practice.
 
 Real-world examples:
 - <strong>Novel project</strong>: Comprehensive review → issue identification → parallel multi-file fixes
@@ -142,7 +142,7 @@ The core principle is "plan first, execute in parallel."
 
 ### 2. Custom Slash Commands
 
-Creating custom slash commands like `/write-post` to automate repetitive tasks also received high praise. Writing a single blog post requires 10+ steps — research, Korean drafting, 3-language translation, image generation, metadata updates — and encoding this into a single command was highlighted as a strength.
+Creating custom slash commands like `/write-post` to automate repetitive tasks also received high praise. Writing a single blog post requires 10+ steps — research, Korean drafting, 3-language translation, image generation, metadata updates — and encoding this into a single command was highlighted as a strength. [EffiFlow Part 2: Skills Auto-Discovery and 58% Token Savings with Caching](/en/blog/en/effiflow-automation-analysis-part2) shows how this command structure translates to caching efficiency.
 
 > "Converting complex multi-step content generation into a repeatable one-command operation"
 > — /insights analysis result
@@ -316,7 +316,7 @@ Here are the lessons learned through `/insights`.
 
 1. <strong>Run it regularly</strong>: Running `/insights` about once a month lets you track changes in your work patterns.
 
-2. <strong>Reflect improvements in CLAUDE.md</strong>: Recording improvements suggested by `/insights` in CLAUDE.md means Claude Code will automatically follow those rules.
+2. <strong>Reflect improvements in CLAUDE.md</strong>: Recording improvements suggested by `/insights` in CLAUDE.md means Claude Code will automatically follow those rules. [Claude Code Best Practices](/en/blog/en/claude-code-best-practices) covers official recommendations applied to real projects in detail.
 
 3. <strong>Watch for error patterns</strong>: If you see many "File Too Large" or "Command Failed" errors, your workflow needs adjustment.
 

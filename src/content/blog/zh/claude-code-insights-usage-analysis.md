@@ -128,7 +128,7 @@ TaskCreate: 1,276 次
 合计: 4,751 次（TodoWrite + TaskCreate + TaskUpdate）
 ```
 
-在执行大规模任务时，我总是先创建任务列表，然后将其分配给并行代理。`/insights` 将这评价为"精密的工作流（sophisticated workflow）"。
+在执行大规模任务时，我总是先创建任务列表，然后将其分配给并行代理。`/insights` 将这评价为"精密的工作流（sophisticated workflow）"。[AI智能体协作模式：用5个专业智能体构建全栈应用](/zh/blog/zh/ai-agent-collaboration-patterns)中有这种多智能体方法的具体实现示例。
 
 实际应用示例：
 - <strong>小说项目</strong>：综合评审 → 问题识别 → 并行修复多个文件
@@ -139,7 +139,7 @@ TaskCreate: 1,276 次
 
 ### 2. 自定义斜杠命令的活用
 
-创建像 `/write-post` 这样的自定义斜杠命令来自动化重复任务也获得了高度评价。撰写一篇博客文章需要调研 → 韩语撰写 → 3 种语言翻译 → 图片生成 → 元数据更新等 10 个以上的步骤，而将这些编码为一个命令是一个显著的优势。
+创建像 `/write-post` 这样的自定义斜杠命令来自动化重复任务也获得了高度评价。撰写一篇博客文章需要调研 → 韩语撰写 → 3 种语言翻译 → 图片生成 → 元数据更新等 10 个以上的步骤，而将这些编码为一个命令是一个显著的优势。[EffiFlow Part 2：技能自动发现与58%令牌缓存节省](/zh/blog/zh/effiflow-automation-analysis-part2)展示了这种命令结构如何转化为缓存效率的提升。
 
 > "将复杂的多步骤内容生成转换为可重复的单命令操作"
 > — /insights 分析结果
@@ -313,7 +313,7 @@ graph TD
 
 1. <strong>定期执行</strong>：每月执行一次 `/insights`，可以追踪工作模式的变化。
 
-2. <strong>反映到 CLAUDE.md</strong>：将 `/insights` 建议的改进事项记录到 CLAUDE.md，Claude Code 会自动遵循这些规则。
+2. <strong>反映到 CLAUDE.md</strong>：将 `/insights` 建议的改进事项记录到 CLAUDE.md，Claude Code 会自动遵循这些规则。[Claude Code 最佳实践](/zh/blog/zh/claude-code-best-practices)详细介绍了将官方推荐设置应用于实际项目的案例。
 
 3. <strong>关注错误模式</strong>：如果"File Too Large"或"Command Failed"等错误很多，说明需要调整工作流。
 

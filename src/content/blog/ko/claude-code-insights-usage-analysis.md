@@ -128,7 +128,7 @@ TaskCreate: 1,276회
 합계: 4,751회 (TodoWrite + TaskCreate + TaskUpdate)
 ```
 
-저는 대규모 작업을 할 때 반드시 태스크 리스트를 먼저 만들고, 이를 병렬 에이전트에 분배하는 패턴을 사용합니다. `/insights`는 이를 "정교한 워크플로우(sophisticated workflow)"라고 평가했습니다.
+저는 대규모 작업을 할 때 반드시 태스크 리스트를 먼저 만들고, 이를 병렬 에이전트에 분배하는 패턴을 사용합니다. `/insights`는 이를 "정교한 워크플로우(sophisticated workflow)"라고 평가했습니다. [AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기](/ko/blog/ko/ai-agent-collaboration-patterns)에서 이런 멀티 에이전트 접근법의 구체적인 구현 예시를 확인할 수 있습니다.
 
 실제 활용 예시:
 - <strong>소설 프로젝트</strong>: 종합 리뷰 → 문제 식별 → 병렬로 여러 파일 동시 수정
@@ -139,7 +139,7 @@ TaskCreate: 1,276회
 
 ### 2. 커스텀 슬래시 커맨드 활용
 
-`/write-post` 같은 커스텀 슬래시 커맨드를 만들어 반복 작업을 자동화한 것도 높은 평가를 받았습니다. 블로그 포스트 하나를 작성하려면 리서치 → 한국어 작성 → 3개 언어 번역 → 이미지 생성 → 메타데이터 업데이트 등 10단계 이상의 작업이 필요한데, 이를 하나의 커맨드로 인코딩한 것입니다.
+`/write-post` 같은 커스텀 슬래시 커맨드를 만들어 반복 작업을 자동화한 것도 높은 평가를 받았습니다. 블로그 포스트 하나를 작성하려면 리서치 → 한국어 작성 → 3개 언어 번역 → 이미지 생성 → 메타데이터 업데이트 등 10단계 이상의 작업이 필요한데, 이를 하나의 커맨드로 인코딩한 것입니다. [EffiFlow Part 2: Skills 자동 발견과 58% 토큰 절감 캐싱](/ko/blog/ko/effiflow-automation-analysis-part2)에서 이런 커스텀 커맨드 구조가 어떻게 캐싱 효율로 이어지는지 확인할 수 있습니다.
 
 > "복잡한 다단계 콘텐츠 생성을 반복 가능한 원-커맨드 작업으로 변환"
 > — /insights 분석 결과
@@ -313,7 +313,7 @@ graph TD
 
 1. <strong>정기적으로 실행하세요</strong>: 한 달에 한 번 정도 `/insights`를 실행하면 작업 패턴의 변화를 추적할 수 있습니다.
 
-2. <strong>CLAUDE.md에 반영하세요</strong>: `/insights`가 제안한 개선사항을 CLAUDE.md에 기록하면, Claude Code가 자동으로 그 규칙을 따릅니다.
+2. <strong>CLAUDE.md에 반영하세요</strong>: `/insights`가 제안한 개선사항을 CLAUDE.md에 기록하면, Claude Code가 자동으로 그 규칙을 따릅니다. [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)는 공식 권장 설정을 실제 프로젝트에 적용한 사례를 상세히 정리합니다.
 
 3. <strong>에러 패턴을 주시하세요</strong>: "File Too Large"나 "Command Failed" 같은 에러가 많다면 워크플로우를 조정할 필요가 있습니다.
 
