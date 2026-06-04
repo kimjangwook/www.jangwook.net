@@ -17,8 +17,9 @@
       "priority": 1,
       "source": "Bun 포스트 (hono-typescript-api-2026, bun-shell-scripting-practical-guide-2026) + Deno 2.x 안정화 이후 개발자 선택 고민 증가",
       "added_at": "2026-06-04",
-      "status": "queued",
-      "notes": "목요일 뉴스 분석 #1. Bun 1.3과 Deno 2.x가 안정화되면서 실제 선택 기준이 필요해진 시점. TypeScript 지원, npm 호환성, 런타임 성능 벤치마크 3가지 축으로 분석. 블로그의 Bun 포스트와 자연스러운 연계."
+      "status": "published",
+      "notes": "목요일 뉴스 분석 #1. Bun 1.3과 Deno 2.x가 안정화되면서 실제 선택 기준이 필요해진 시점. TypeScript 지원, npm 호환성, 런타임 성능 벤치마크 3가지 축으로 분석. 블로그의 Bun 포스트와 자연스러운 연계.",
+      "published_at": "2026-06-04"
     },
     {
       "slug": "anthropic-claude-agent-sdk-vs-openai-agents-sdk-2026",

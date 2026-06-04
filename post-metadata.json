@@ -2746,5 +2746,16 @@
       "devops"
     ],
     "contentType": "how-to"
+  },
+  "deno-2-vs-bun-nodejs-runtime-2026-comparison": {
+    "pubDate": "2026-06-04",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.95,
+      "ai-ml": 0.1,
+      "devops": 0.6,
+      "architecture": 0.5
+    }
   }
 }
