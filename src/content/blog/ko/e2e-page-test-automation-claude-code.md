@@ -1,8 +1,8 @@
 ---
 title: Claude Code로 페이지 E2E 테스트 자동화하기
 description: >-
-  웹 퍼블리셔를 위한 페이지 품질 검증 자동화 시스템 구축 방법을 소개합니다. 8가지 품질 항목을 단일 커맨드로 테스트하고 개선 제안까지 받을
-  수 있습니다.
+  Claude Code와 Playwright를 활용한 웹 페이지 E2E 테스트 자동화 시스템 구축 방법을 소개합니다. 단일 커맨드로 크로스
+  브라우저, WCAG 접근성, SEO, 이미지 최적화 등 8가지 품질 항목을 자동 검증하고 AI 기반 개선 제안까지 받을 수 있습니다.
 pubDate: '2025-11-25'
 heroImage: ../../../assets/blog/e2e-page-test-automation-claude-code-hero.png
 tags:
@@ -63,7 +63,7 @@ relatedPosts:
 
 더 큰 문제는 <strong>일관성</strong>입니다. 바쁜 일정 속에서 특정 항목을 누락하거나, 담당자마다 검증 기준이 달라질 수 있습니다.
 
-이 문제를 해결하기 위해 Claude Code와 Playwright를 활용한 <strong>페이지 E2E 테스트 자동화 시스템</strong>을 구축했습니다.
+이 문제를 해결하기 위해 Claude Code와 [Playwright](/ko/blog/ko/playwright-ai-testing)를 활용한 <strong>페이지 E2E 테스트 자동화 시스템</strong>을 구축했습니다.
 
 ## 시스템 개요
 
@@ -230,7 +230,7 @@ sequenceDiagram
 
 ### 3. MCP 도구 활용
 
-Chrome DevTools MCP와 Playwright를 조합하여 강력한 테스트 환경을 구축합니다:
+[Chrome DevTools MCP](/ko/blog/ko/chrome-devtools-mcp-performance)와 Playwright를 조합하여 강력한 테스트 환경을 구축합니다:
 
 ```typescript
 // Chrome DevTools MCP로 성능 분석
@@ -367,7 +367,7 @@ a, button {
 
 ### 2. AI 분석의 가치
 
-단순히 "이미지가 큽니다"가 아닌, <strong>"어떻게 수정해야 하는지"</strong>까지 제안하는 것이 진정한 자동화입니다. Claude의 분석 능력이 여기서 빛을 발합니다.
+단순히 "이미지가 큽니다"가 아닌, <strong>"어떻게 수정해야 하는지"</strong>까지 제안하는 것이 진정한 자동화입니다. Claude의 분석 능력이 여기서 빛을 발합니다. Claude Code의 전반적인 활용법은 [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)에서 자세히 다룹니다.
 
 ### 3. 점진적 개선
 

@@ -61,7 +61,7 @@ relatedPosts:
 ---
 ## Overview
 
-Claude Code is an agentic coding tool developed by Anthropic. Through its plugin system, you can <strong>install slash commands, specialized agents, skills, and hooks as a single package</strong>.
+Claude Code is an agentic coding tool developed by Anthropic. Through its plugin system, you can <strong>install slash commands, [specialized agents and skills](/en/blog/en/anthropic-agent-skills-practical-guide), and hooks as a single package</strong>.
 
 This post provides an in-depth analysis of the <strong>13 official plugins</strong>, over <strong>100 community marketplace plugins</strong>, and the <strong>actual plugin structure</strong>.
 
@@ -105,7 +105,7 @@ Claude Code uses a Git repository-based marketplace system.
 
 > <strong>★ Insight</strong>
 >
-> - Minimum version requirement: Claude Code 1.0.33+
+> - Minimum version requirement: [Claude Code](/en/blog/en/claude-code-cli-migration-guide) 1.0.33+
 > - Storage location: Project level (.claude/) or user level (~/.claude/)
 > - Development mode: Test locally with `cc --plugin-dir /path/to/plugin`
 
@@ -197,7 +197,7 @@ graph TD
 <strong>How It Works</strong>:
 
 1. Auto-skips closed/draft/trivial/already-reviewed PRs
-2. Collects CLAUDE.md guideline files
+2. Collects [CLAUDE.md](/en/blog/en/claude-code-best-practices) guideline files
 3. Runs <strong>4 parallel agents</strong>:
    - Agent #1, #2: CLAUDE.md compliance (duplicate verification)
    - Agent #3: Bug detection (within PR change scope only)

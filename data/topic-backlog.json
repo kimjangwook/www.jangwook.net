@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-04T23:07:00+09:00",
+  "updated_at": "2026-06-05T23:07:00+09:00",
   "topics": [
     {
       "slug": "amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026",
@@ -3116,6 +3116,42 @@
       "added_at": "2026-06-02",
       "status": "done",
       "notes": "Hono v4가 2026년 엣지·서버리스 TypeScript API의 사실상 표준으로 자리잡음. Express 대비 초경량(12KB), Zod 검증 내장, Cloudflare Workers/Deno Deploy/Bun 동시 지원. 라우팅 정의부터 미들웨어, Zod 기반 입력 검증, Cloudflare Workers 배포까지 실전 코드로 커버. bun-shell-scripting-practical-guide-2026, typescript-zod-v4-claude-api-structured-output-guide-2026과 내부링크 연결 가능. 수요일 How-to 유형.\n2026-06-03: Published. Lab Publish. Bun 1.3.14 + Hono v4.12.23 + @hono/zod-validator@0.8.0 + zod@4.4.3 sandbox verified. CRUD API tested: GET/POST/PATCH/DELETE all passing. Sub-millisecond warm response times confirmed."
+    },
+    {
+      "slug": "claude-code-vs-cursor-vs-kiro-ai-ide-comparison-2026",
+      "title_idea": "Claude Code vs Cursor vs Kiro: 2026 AI IDE 완전 비교 — 어느 툴이 내 워크플로우에 맞는가",
+      "content_type": "comparison",
+      "target_keyword": "claude code cursor kiro 비교 2026",
+      "secondary_keywords": [
+        "AI IDE 비교 2026",
+        "claude code vs cursor 차이",
+        "kiro vs claude code 선택",
+        "AI 코딩 도구 비교"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "2026년 6월 AI IDE 시장: Claude Code(에이전트 중심), Cursor(인라인 편집 강점), Kiro(스펙 주도 개발) 세 패러다임 충돌. Kiro 발표 직후 타이밍. 블로그에 이미 개별 포스트 존재 → 비교 포스트로 트래픽 집결 효과.",
+      "added_at": "2026-06-05",
+      "status": "queued",
+      "notes": "토요일 비교 가이드 #1. 세 툴의 핵심 철학 차이(에이전트 vs 페어 프로그래밍 vs 스펙 주도), 실제 시나리오별 성능 비교, 팀 규모별 추천. 블로그의 Claude Code 헤비 독자에게 Kiro 가이드에서 연결되는 심층 비교."
+    },
+    {
+      "slug": "openai-anthropic-google-llm-api-pricing-developer-comparison-2026",
+      "title_idea": "GPT-4.1 vs Claude Sonnet 4 vs Gemini 2.5 Flash: 개발자 관점 LLM API 요금 & 성능 비교 2026",
+      "content_type": "comparison",
+      "target_keyword": "LLM API 요금 비교 개발자 2026",
+      "secondary_keywords": [
+        "claude api 가격 2026",
+        "openai gpt-4.1 비용",
+        "gemini api 요금",
+        "LLM API 선택 가이드"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "2026년 주요 LLM 공급자들이 모두 새 모델 출시. 개발자들이 실제 프로젝트 비용 계산에 혼란. 토큰 당 가격, 컨텍스트 창, 레이턴시를 실제 use case 시나리오로 비교하는 수요 높음.",
+      "added_at": "2026-06-05",
+      "status": "queued",
+      "notes": "토요일 비교 가이드 #2. 실제 월간 비용 시뮬레이션(챗봇 10만 MAU, RAG 파이프라인, 코드 리뷰 봇) 포함. 단순 토큰 가격 비교가 아닌 총소유비용(TCO) 관점. 캐싱, 배치 API 할인 포함 계산."
     }
   ]
 }

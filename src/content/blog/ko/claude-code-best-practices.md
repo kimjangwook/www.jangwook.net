@@ -1,8 +1,8 @@
 ---
 title: 'Claude Code Best Practices: 개발 생산성을 극대화하는 AI 코딩 가이드'
 description: >-
-  Anthropic의 공식 Best Practices를 기반으로 Claude Code 설정을 최적화하고, 실제 프로젝트에 적용한 개선 사례를
-  공유합니다.
+  Anthropic 공식 Best Practices 문서를 분석해 실제 Astro 블로그에 적용한 결과를 공유합니다. CLAUDE.md 최적화,
+  Explore→Plan→Code→Commit 워크플로우, 서브에이전트 구축으로 에러 40% 감소, 작업 시간 30% 단축을 달성했습니다.
 pubDate: '2025-10-07'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
 tags:
@@ -147,6 +147,8 @@ TodoWrite 도구와 Think 모드를 활용해 작업 계획을 수립합니다.
 @image-generator "블로그 히어로 이미지 생성"
 ```
 
+실제 블로그 운영에서 서브에이전트를 활용한 자동화 사례는 [LLM 기반 블로그 자동화 아키텍처](/ko/blog/ko/llm-blog-automation)에서 확인하세요.
+
 ## 실제 프로젝트 적용: 개선 전후 비교
 
 ### 개선 1: 테스트 가이드라인 추가
@@ -231,7 +233,7 @@ GEMINI_API_KEY=your_api_key_here
 
 <strong>추가 내용</strong>:
 - Context7: 최신 라이브러리 문서 조회
-- Playwright: 웹 자동화 및 테스트
+- [Playwright](/ko/blog/ko/claude-code-web-automation): 웹 자동화 및 테스트
 - Chrome DevTools: 성능 분석
 - Google Analytics: 트래픽 분석
 

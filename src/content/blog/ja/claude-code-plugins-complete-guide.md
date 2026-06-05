@@ -58,7 +58,7 @@ relatedPosts:
 ---
 ## 概要
 
-Claude CodeはAnthropicが開発したエージェンティックコーディングツールです。プラグインシステムを通じて、スラッシュコマンド、専門エージェント、スキル、フックを<strong>一つのパッケージとしてインストール</strong>できます。
+Claude CodeはAnthropicが開発したエージェンティックコーディングツールです。プラグインシステムを通じて、スラッシュコマンド、[専門エージェントとスキル](/ja/blog/ja/anthropic-agent-skills-practical-guide)、フックを<strong>一つのパッケージとしてインストール</strong>できます。
 
 この記事では<strong>公式13プラグイン</strong>の詳細機能、<strong>コミュニティマーケットプレイス</strong>の100以上のプラグイン、そして<strong>実際のプラグイン構造</strong>を深く分析します。
 
@@ -102,7 +102,7 @@ Claude CodeはGitリポジトリベースのマーケットプレイスシステ
 
 > <strong>★ Insight</strong>
 >
-> - プラグイン最小要求バージョン: Claude Code 1.0.33以上
+> - プラグイン最小要求バージョン: [Claude Code](/ja/blog/ja/claude-code-cli-migration-guide) 1.0.33以上
 > - 保存場所: プロジェクト(.claude/)またはユーザー(~/.claude/)レベル
 > - 開発モード: `cc --plugin-dir /path/to/plugin` でローカルテスト可能
 
@@ -194,7 +194,7 @@ graph TD
 <strong>動作方式</strong>:
 
 1. クローズ済み/ドラフト/些細な/レビュー済みPRは自動スキップ
-2. CLAUDE.mdガイドラインファイルを収集
+2. [CLAUDE.md](/ja/blog/ja/claude-code-best-practices)ガイドラインファイルを収集
 3. <strong>4つの並列エージェント</strong>を実行:
    - Agent #1, #2: CLAUDE.md準拠確認（重複検証）
    - Agent #3: バグ検出（PR変更範囲内のみ）

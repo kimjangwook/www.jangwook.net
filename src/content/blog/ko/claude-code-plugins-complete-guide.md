@@ -58,7 +58,7 @@ relatedPosts:
 ---
 ## 개요
 
-Claude Code는 Anthropic이 개발한 에이전틱 코딩 도구입니다. 플러그인 시스템을 통해 슬래시 커맨드, 전문 에이전트, 스킬, 훅을 <strong>하나의 패키지로 설치</strong>할 수 있습니다.
+Claude Code는 Anthropic이 개발한 에이전틱 코딩 도구입니다. 플러그인 시스템을 통해 슬래시 커맨드, [전문 에이전트와 스킬](/ko/blog/ko/anthropic-agent-skills-practical-guide), 훅을 <strong>하나의 패키지로 설치</strong>할 수 있습니다.
 
 이 포스트에서는 <strong>공식 플러그인 13개</strong>의 상세 기능, <strong>커뮤니티 마켓플레이스</strong>의 100개 이상 플러그인, 그리고 <strong>실제 플러그인 구조</strong>를 심층적으로 분석합니다.
 
@@ -102,7 +102,7 @@ Claude Code는 Git 저장소 기반의 마켓플레이스 시스템을 사용합
 
 > <strong>★ Insight</strong>
 >
-> - 플러그인 최소 요구 버전: Claude Code 1.0.33 이상
+> - 플러그인 최소 요구 버전: [Claude Code](/ko/blog/ko/claude-code-cli-migration-guide) 1.0.33 이상
 > - 저장 위치: 프로젝트(.claude/) 또는 사용자(~/.claude/) 레벨
 > - 개발 모드: `cc --plugin-dir /path/to/plugin` 으로 로컬 테스트 가능
 
@@ -194,7 +194,7 @@ graph TD
 <strong>작동 방식</strong>:
 
 1. 닫힌/초안/사소한/이미 리뷰된 PR은 자동 스킵
-2. CLAUDE.md 가이드라인 파일 수집
+2. [CLAUDE.md](/ko/blog/ko/claude-code-best-practices) 가이드라인 파일 수집
 3. <strong>4개 병렬 에이전트</strong> 실행:
    - Agent #1, #2: CLAUDE.md 준수 여부 (중복 검증)
    - Agent #3: 버그 탐지 (PR 변경 범위 내에서만)

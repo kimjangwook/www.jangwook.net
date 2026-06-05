@@ -1,8 +1,8 @@
 ---
 title: 'Claude Code Best Practices: Maximizing Developer Productivity with AI'
 description: >-
-  A comprehensive guide to optimizing Claude Code setup based on Anthropic
-  official best practices, with real-world implementation insights.
+  Anthropic Claude Code Best Practices: CLAUDE.md setup, subagent systems,
+  Explore→Plan→Code→Commit workflow. Real results: 40% fewer errors, 30% time saved.
 pubDate: '2025-10-07'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
 tags:
@@ -147,6 +147,8 @@ and propose optimal metadata for each language."
 @image-generator "Generate blog hero image"
 ```
 
+For a real-world blog automation example using subagents, see [LLM-Based Blog Automation Architecture](/en/blog/en/llm-blog-automation).
+
 ## Real-World Implementation: Before & After
 
 ### Improvement 1: Adding Testing Guidelines
@@ -231,7 +233,7 @@ GEMINI_API_KEY=your_api_key_here
 
 <strong>Added Content</strong>:
 - Context7: Latest library documentation lookup
-- Playwright: Web automation and testing
+- [Playwright](/en/blog/en/claude-code-web-automation): Web automation and testing
 - Chrome DevTools: Performance analysis
 - Google Analytics: Traffic analysis
 

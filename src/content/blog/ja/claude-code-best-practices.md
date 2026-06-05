@@ -1,6 +1,8 @@
 ---
 title: 'Claude Code ベストプラクティス: AIで開発生産性を最大化するガイド'
-description: Anthropic公式のベストプラクティスに基づいてClaude Code設定を最適化し、実際のプロジェクトに適用した改善事例を共有します。
+description: >-
+  Anthropic公式ベストプラクティスに基づくClaude Code最適化ガイド。CLAUDE.md設定、サブエージェント構築、
+  Explore→Plan→Code→Commitワークフローで実プロジェクトにてエラー40%削減、作業時間30%短縮を達成した事例を紹介。
 pubDate: '2025-10-07'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
 tags:
@@ -145,6 +147,8 @@ TodoWriteツールとThinkモードを活用して作業計画を立てます。
 @image-generator "ブログヒーローイメージ生成"
 ```
 
+サブエージェントを活用した実際のブログ自動化事例は[LLMベースのブログ自動化アーキテクチャ](/ja/blog/ja/llm-blog-automation)で確認できます。
+
 ## 実際のプロジェクト適用: 改善前後の比較
 
 ### 改善1: テストガイドライン追加
@@ -229,7 +233,7 @@ GEMINI_API_KEY=your_api_key_here
 
 <strong>追加内容</strong>:
 - Context7: 最新ライブラリドキュメント照会
-- Playwright: Web自動化とテスト
+- [Playwright](/ja/blog/ja/claude-code-web-automation): Web自動化とテスト
 - Chrome DevTools: パフォーマンス分析
 - Google Analytics: トラフィック分析
 

@@ -63,7 +63,7 @@ How much time do you spend on quality verification after developing a web page? 
 
 The bigger problem is <strong>consistency</strong>. In a busy schedule, certain items may be missed, or verification standards may vary between team members.
 
-To solve this problem, I built a <strong>Page E2E Test Automation System</strong> using Claude Code and Playwright.
+To solve this problem, I built a <strong>Page E2E Test Automation System</strong> using Claude Code and [Playwright](/en/blog/en/playwright-ai-testing).
 
 ## System Overview
 
@@ -230,7 +230,7 @@ Test results are generated as a markdown report in the following format:
 
 ### 3. MCP Tool Integration
 
-Combine Chrome DevTools MCP and Playwright to build a powerful testing environment:
+Combine [Chrome DevTools MCP](/en/blog/en/chrome-devtools-mcp-performance) and Playwright to build a powerful testing environment:
 
 ```typescript
 // Performance analysis with Chrome DevTools MCP
@@ -367,7 +367,7 @@ Don't try to implement all tests perfectly. <strong>Just 6 P0 items can detect 8
 
 ### 2. Value of AI Analysis
 
-True automation isn't just saying "the image is large" but <strong>suggesting "how to fix it"</strong>. This is where Claude's analytical capabilities shine.
+True automation isn't just saying "the image is large" but <strong>suggesting "how to fix it"</strong>. This is where Claude's analytical capabilities shine. For broader Claude Code usage patterns, see [Claude Code Best Practices](/en/blog/en/claude-code-best-practices).
 
 ### 3. Incremental Improvement
 

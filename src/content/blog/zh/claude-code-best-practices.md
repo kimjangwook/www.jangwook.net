@@ -1,6 +1,8 @@
 ---
 title: Claude Code 最佳实践：开发生产力革命指南
-description: 深入解析 Anthropic 官方最佳实践，从 CLAUDE.md 配置到子代理系统构建，通过实际案例展示如何最大化 AI 驱动的编程效率。
+description: >-
+  基于 Anthropic 官方最佳实践深度优化 Claude Code 的实战指南。系统讲解 CLAUDE.md 配置、Explore→Plan→Code→Commit
+  工作流和子代理架构，真实项目结果：错误率降低 40%，任务时间缩短 30%。
 pubDate: '2025-10-07'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
 tags:
@@ -145,6 +147,8 @@ npm run preview        # 预览构建结果
 @image-generator "生成博客英雄图片"
 ```
 
+有关子代理在实际博客运营中的自动化案例，请参阅 [基于 LLM 的博客自动化架构](/zh/blog/zh/llm-blog-automation)。
+
 ## 实际项目应用：改进前后对比
 
 ### 改进 1：添加测试指南
@@ -229,7 +233,7 @@ GEMINI_API_KEY=your_api_key_here
 
 <strong>新增内容</strong>：
 - Context7: 查询最新库文档
-- Playwright: Web 自动化及测试
+- [Playwright](/zh/blog/zh/claude-code-web-automation): Web 自动化及测试
 - Chrome DevTools: 性能分析
 - Google Analytics: 流量分析
 
