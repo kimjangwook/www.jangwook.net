@@ -17,8 +17,9 @@
       "priority": 1,
       "source": "Amazon이 2026년 6월 spec-driven AI IDE Kiro를 출시. Claude Code와는 다른 접근법(스펙 먼저 작성 → AI 구현)으로 주목. 블로그의 Claude Code 시리즈와 자연스럽게 연결.",
       "added_at": "2026-06-04",
-      "status": "queued",
-      "notes": "목요일 뉴스 분석 #1. Amazon Kiro의 spec 주도 개발 철학이 실제로 동작하는지 분석. Claude Code와의 워크플로우 비교가 핵심 차별화 포인트. 블로그 독자층(Claude Code 헤비 유저)에게 직접적인 의사결정 도움."
+      "status": "published",
+      "notes": "목요일 뉴스 분석 #1. Amazon Kiro의 spec 주도 개발 철학이 실제로 동작하는지 분석. Claude Code와의 워크플로우 비교가 핵심 차별화 포인트. 블로그 독자층(Claude Code 헤비 유저)에게 직접적인 의사결정 도움.",
+      "published_at": "2026-06-05"
     },
     {
       "slug": "ai-coding-agent-market-june-2026-open-source-challenge",
