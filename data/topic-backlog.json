@@ -1,7 +1,15 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-05T23:07:00+09:00",
+  "updated_at": "2026-06-06T15:40:00+09:00",
   "topics": [
+    {
+      "slug": "llamaindex-vs-langchain-vs-haystack-rag-2026",
+      "title_idea": "LlamaIndex vs LangChain vs Haystack — 2026년 RAG 프레임워크 실전 비교",
+      "content_type": "comparison",
+      "status": "published",
+      "published_at": "2026-06-06",
+      "added_at": "2026-06-06"
+    },
     {
       "slug": "amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026",
       "title_idea": "Amazon Kiro 실전 리뷰 — spec 주도 AI IDE가 Claude Code를 대체할 수 있을까",
