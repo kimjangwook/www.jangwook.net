@@ -91,6 +91,8 @@ graph TB
 <strong>公式説明:</strong>
 > "MCPは、異なるAIエージェントとアプリケーション、または外部システム(Figmaなど)が相互に通信する方法を定義するオープンソース標準です。"
 
+MCPの活用範囲はFigmaにとどまらず、様々な開発ツールへと広がります。[Chrome DevTools MCPでウェブパフォーマンス最適化を自動化する](/ja/blog/ja/chrome-devtools-mcp-performance)では、ブラウザ開発者ツールをMCPで制御する方法を確認できます。
+
 ### 1.2 2つの配置モード
 
 #### リモートサーバー(Figmaホスト)
@@ -582,7 +584,7 @@ class MyComponent extends HTMLElement {
 
 ### 4.2 Claude Codeエージェント統合
 
-Claude Codeエージェントを使用して同期プロセスを自動化します:
+Claude Codeエージェントを使用して同期プロセスを自動化します。エージェントベースの大規模自動化の実践事例については[Claude Codeを活用した大規模Webサイトページ自動生成](/ja/blog/ja/claude-code-web-automation)もご覧ください。
 
 #### エージェント定義
 

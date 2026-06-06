@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-06T15:40:00+09:00",
+  "updated_at": "2026-06-06",
   "topics": [
     {
       "slug": "llamaindex-vs-langchain-vs-haystack-rag-2026",
@@ -3160,6 +3160,42 @@
       "added_at": "2026-06-05",
       "status": "queued",
       "notes": "토요일 비교 가이드 #2. 실제 월간 비용 시뮬레이션(챗봇 10만 MAU, RAG 파이프라인, 코드 리뷰 봇) 포함. 단순 토큰 가격 비교가 아닌 총소유비용(TCO) 관점. 캐싱, 배치 API 할인 포함 계산."
+    },
+    {
+      "slug": "python-uv-package-manager-complete-guide-2026",
+      "title_idea": "Python uv 완전 가이드: pip/poetry 대신 uv를 써야 하는 이유와 실전 프로젝트 설정",
+      "content_type": "how-to",
+      "target_keyword": "python uv 패키지 매니저",
+      "secondary_keywords": [
+        "uv vs pip 비교",
+        "uv poetry 대체",
+        "python uv 가상환경",
+        "uv 실전 사용법"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "daily-closing 자동 선정",
+      "added_at": "2026-06-06",
+      "status": "queued",
+      "notes": "Astral의 uv가 Rust 기반으로 pip 대비 10〜100배 빠른 패키지 설치 속도로 Python 생태계 표준으로 급부상. 2026년 현재 FastAPI, LangChain 공식 문서도 uv 사용 권장. 가상환경 생성, 의존성 관리, pyproject.toml 설정, GitHub Actions CI까지 실전 코드로 커버. AI/ML 프로젝트 설정에도 적합. 월요일 How-to 유형."
+    },
+    {
+      "slug": "mcp-server-typescript-build-from-scratch-2026",
+      "title_idea": "TypeScript로 MCP 서버 처음부터 만들기: Claude에 새 도구를 추가하는 완전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "MCP 서버 만들기 TypeScript",
+      "secondary_keywords": [
+        "Model Context Protocol 서버",
+        "MCP TypeScript 구현",
+        "claude MCP 도구 추가",
+        "MCP 서버 개발 가이드"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "daily-closing 자동 선정",
+      "added_at": "2026-06-06",
+      "status": "queued",
+      "notes": "MCP 서버 직접 개발 수요가 폭발적으로 증가 중. @modelcontextprotocol/sdk 사용법, 도구(Tool) 정의, 리소스(Resource) 노출, 프롬프트 템플릿 등 핵심 개념을 처음부터 빌드하며 설명. Claude Desktop + VS Code 연동 테스트까지. figma-mcp, chrome-devtools-mcp 포스트와 내부링크 연결 가능. 월요일 How-to 유형."
     }
   ]
 }

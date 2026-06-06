@@ -65,6 +65,8 @@ draft: true
 <strong>官方说明:</strong>
 > "MCP 是一个开源标准,定义了不同 AI 代理和应用程序如何相互通信或与 Figma 等外部系统通信。"
 
+MCP 的应用范围远不止 Figma，它可以连接各种开发工具。[用 Chrome DevTools MCP 自动化 Web 性能优化](/zh/blog/zh/chrome-devtools-mcp-performance)展示了如何用同样的协议控制浏览器开发者工具，实现自动化性能审计。
+
 ```mermaid
 graph LR
     A[AI 客户端<br/>Claude Code] <--> B[MCP 协议]
@@ -692,7 +694,7 @@ function generateStyles(component: FigmaComponent): string {
 
 ### Claude Code 自动化集成
 
-利用 Claude Code 可以自动化 Figma 组件同步流程。通过代理和斜杠命令智能检测和更新变更。
+利用 Claude Code 可以自动化 Figma 组件同步流程。通过代理和斜杠命令智能检测和更新变更。[利用Claude Code自动生成大规模网站页面](/zh/blog/zh/claude-code-web-automation)中有基于代理的批量自动化实战案例，可作参考。
 
 #### 定义 Figma Sync Agent
 

@@ -60,7 +60,7 @@ draft: true
 
 2025年10月16日，Anthropic发布了<strong>Agent Skills</strong>这一革命性功能。这不仅仅是简单的提示工程，而是一种<strong>通过文件和文件夹结构化AI代理专业能力</strong>的全新范式。
 
-本文将分享在我的博客自动化项目中应用Claude Skills时遇到的<strong>试错过程、解决方案以及实战经验</strong>。这不是简单的功能介绍，而是<strong>结合实际代码的经验总结</strong>。
+本文将分享在我的博客自动化项目中应用Claude Skills时遇到的<strong>试错过程、解决方案以及实战经验</strong>。这不是简单的功能介绍，而是<strong>结合实际代码的经验总结</strong>。如需先了解Anthropic官方定义的技能规范与扩展架构，可参考[Anthropic Agent Skills标准](/zh/blog/zh/anthropic-agent-skills-standard)。
 
 ## 什么是Agent Skills？
 
@@ -118,6 +118,8 @@ python scripts/validate_frontmatter.py post.md
 - <strong>渐进式加载</strong>：只加载必要的文件到上下文
 - <strong>代码执行</strong>：可直接执行Python/Bash脚本
 - <strong>可复用性</strong>：整个团队都可共享
+
+这种用Markdown结构化AI代理行为的方式，与[AI 时代的规范驱动开发](/zh/blog/zh/specification-driven-development)中探讨的理念高度契合。
 
 ### Progressive Disclosure（渐进式披露）
 
@@ -701,7 +703,7 @@ cat .claude/skills/my-skill/SKILL.md | head -n 10
 
 ## 结论
 
-Claude Skills具有成为<strong>AI代理开发新标准</strong>的潜力。
+Claude Skills具有成为<strong>AI代理开发新标准</strong>的潜力。[Anthropic Agent Skills实战指南](/zh/blog/zh/anthropic-agent-skills-practical-guide)详细介绍了实际项目中的实现案例和ROI测量方法。
 
 <strong>核心优势</strong>：
 - ✅ 基于文件夹的直观结构

@@ -65,6 +65,8 @@ draft: true
 <strong>공식 설명:</strong>
 > "MCP는 다양한 AI 에이전트와 애플리케이션이 서로 또는 Figma와 같은 외부 시스템과 통신하는 방법에 대한 오픈소스 표준입니다."
 
+MCP의 활용 범위는 Figma를 넘어 다양한 개발 도구로 확장됩니다. 예를 들어 [Chrome DevTools MCP로 웹 성능 최적화 자동화하기](/ko/blog/ko/chrome-devtools-mcp-performance)에서는 브라우저 개발자 도구를 MCP 프로토콜로 제어하는 방법을 살펴볼 수 있습니다.
+
 ```mermaid
 graph LR
     A[AI 클라이언트<br/>Claude Code] <--> B[MCP 프로토콜]
@@ -692,7 +694,7 @@ function generateStyles(component: FigmaComponent): string {
 
 ### Claude Code 자동화 통합
 
-Claude Code를 활용하면 Figma 컴포넌트 동기화 프로세스를 자동화할 수 있습니다. 에이전트와 슬래시 커맨드를 통해 지능적으로 변경 사항을 감지하고 업데이트합니다.
+Claude Code를 활용하면 Figma 컴포넌트 동기화 프로세스를 자동화할 수 있습니다. 에이전트와 슬래시 커맨드를 통해 지능적으로 변경 사항을 감지하고 업데이트합니다. [Claude Code를 활용한 대규모 웹사이트 페이지 자동 생성](/ko/blog/ko/claude-code-web-automation)에서는 에이전트 기반 자동화로 수백 개의 페이지를 일괄 처리한 실전 사례를 확인할 수 있습니다.
 
 #### Figma Sync Agent 정의
 

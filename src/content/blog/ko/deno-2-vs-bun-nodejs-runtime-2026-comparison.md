@@ -1,6 +1,6 @@
 ---
-title: 'Deno 2 vs Bun 1.3 — 2026년 Node.js 대안 런타임 실전 비교: TypeScript, 속도, 보안'
-description: 'Deno 2.8.2와 Bun 1.3.14를 직접 설치해서 startup 시간, HTTP 처리량, npm 호환성, 보안 모델을 실측했다. 어느 쪽이 내 프로젝트에 맞는지 결론을 내려본다.'
+title: 'Deno 2 vs Bun 1.3 — 2026년 Node.js 런타임 실전 비교'
+description: 'Deno 2.8.2와 Bun 1.3.14를 직접 설치해서 startup 시간, HTTP 처리량, npm 호환성, 보안 모델을 실측했다. TypeScript 네이티브 지원과 패키지 호환성을 포함해, 2026년 프로젝트에 맞는 Node.js 대안을 데이터로 결정하는 실전 가이드.'
 pubDate: '2026-06-04'
 heroImage: '../../../assets/blog/deno-2-vs-bun-nodejs-runtime-2026-comparison-hero.png'
 tags: ['Deno', 'Bun', 'TypeScript', 'Node.js', '런타임 비교']

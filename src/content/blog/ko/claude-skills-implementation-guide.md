@@ -62,7 +62,7 @@ draft: true
 
 2025년 10월 16일, Anthropic은 <strong>Agent Skills</strong>라는 혁신적인 기능을 발표했습니다. 이는 단순한 프롬프트 엔지니어링을 넘어, <strong>파일과 폴더로 AI 에이전트의 전문성을 구조화</strong>하는 새로운 패러다임입니다.
 
-이 글에서는 Claude Skills를 내 블로그 자동화 프로젝트에 적용하면서 겪은 <strong>시행착오, 해결 과정, 그리고 실전 노하우</strong>를 공유합니다. 단순한 기능 소개가 아닌, <strong>실제 코드와 함께 배운 교훈</strong>을 담았습니다.
+이 글에서는 Claude Skills를 내 블로그 자동화 프로젝트에 적용하면서 겪은 <strong>시행착오, 해결 과정, 그리고 실전 노하우</strong>를 공유합니다. 단순한 기능 소개가 아닌, <strong>실제 코드와 함께 배운 교훈</strong>을 담았습니다. Anthropic이 공식 정의한 스킬 명세와 표준 아키텍처는 [Anthropic Agent Skills 표준](/ko/blog/ko/anthropic-agent-skills-standard)에서 먼저 확인하면 이 글을 더 잘 이해할 수 있습니다.
 
 ## Agent Skills란 무엇인가?
 
@@ -120,6 +120,8 @@ python scripts/validate_frontmatter.py post.md
 - <strong>점진적 로딩</strong>: 필요한 파일만 컨텍스트에 로드
 - <strong>코드 실행</strong>: Python/Bash 스크립트 직접 실행 가능
 - <strong>재사용성</strong>: 팀 전체가 공유 가능
+
+이처럼 Markdown으로 AI 에이전트의 행동을 구조화하는 접근법은 [AI 시대의 사양 주도 개발](/ko/blog/ko/specification-driven-development)에서 다루는 개념과 깊이 연결됩니다.
 
 ### Progressive Disclosure (점진적 공개)
 
@@ -703,7 +705,7 @@ Anthropic Engineering Blog에 따르면:
 
 ## 결론
 
-Claude Skills는 <strong>AI 에이전트 개발의 새로운 표준</strong>이 될 잠재력을 가지고 있습니다.
+Claude Skills는 <strong>AI 에이전트 개발의 새로운 표준</strong>이 될 잠재력을 가지고 있습니다. [Anthropic Agent Skills 실전 가이드](/ko/blog/ko/anthropic-agent-skills-practical-guide)에서는 실제 프로젝트에 적용한 구현 사례와 ROI 측정 방법을 확인할 수 있습니다.
 
 <strong>핵심 장점</strong>:
 - ✅ 폴더 기반의 직관적인 구조

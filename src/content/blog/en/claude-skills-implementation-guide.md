@@ -65,7 +65,7 @@ draft: true
 
 On October 16, 2025, Anthropic announced <strong>Agent Skills</strong>, a revolutionary feature that goes beyond simple prompt engineering by <strong>structuring AI agent expertise through files and folders</strong> - a completely new paradigm.
 
-In this article, I share the <strong>trials, errors, solutions, and practical know-how</strong> from applying Claude Skills to my blog automation project. This isn't just a feature overview, but <strong>lessons learned with actual code</strong>.
+In this article, I share the <strong>trials, errors, solutions, and practical know-how</strong> from applying Claude Skills to my blog automation project. This isn't just a feature overview, but <strong>lessons learned with actual code</strong>. For the official Anthropic skill spec and extensible architecture, [Anthropic Agent Skills Standard](/en/blog/en/anthropic-agent-skills-standard) is a good companion read.
 
 ## What are Agent Skills?
 
@@ -123,6 +123,8 @@ Key Differences:
 - <strong>Progressive Loading</strong>: Only necessary files loaded into context
 - <strong>Code Execution</strong>: Direct Python/Bash script execution
 - <strong>Reusability</strong>: Shareable across the entire team
+
+This pattern of structuring AI agent behavior with Markdown connects directly to the ideas in [Specification-Driven Development in the AI Era](/en/blog/en/specification-driven-development).
 
 ### Progressive Disclosure
 
@@ -706,7 +708,7 @@ According to the Anthropic Engineering Blog:
 
 ## Conclusion
 
-Claude Skills has the potential to become <strong>the new standard for AI agent development</strong>.
+Claude Skills has the potential to become <strong>the new standard for AI agent development</strong>. [Anthropic Agent Skills Practical Guide: From Implementation to ROI](/en/blog/en/anthropic-agent-skills-practical-guide) covers real-world implementation cases and how to measure the return on investment.
 
 <strong>Core Advantages</strong>:
 - ✅ Intuitive folder-based structure

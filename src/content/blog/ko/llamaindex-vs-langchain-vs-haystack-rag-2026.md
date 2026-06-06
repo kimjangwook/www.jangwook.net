@@ -1,6 +1,6 @@
 ---
 title: 'LlamaIndex vs LangChain vs Haystack — 2026년 RAG 프레임워크 실전 비교'
-description: 'LlamaIndex 0.14, LangChain 1.3, Haystack 2.30을 직접 설치·테스트했다. langchain-community deprecated 경고, 코드 복잡도 측정, InMemory 검색 실행 결과를 담은 실측 비교 가이드.'
+description: 'LlamaIndex 0.14, LangChain 1.3, Haystack 2.30을 직접 설치·테스트했다. langchain-community deprecated 경고, 코드 복잡도 측정, InMemory 검색 결과. 2026년 RAG 프레임워크 선택 기준을 실측 데이터로 정리했다.'
 pubDate: '2026-06-06'
 heroImage: '../../../assets/blog/llamaindex-vs-langchain-vs-haystack-rag-2026/hero.png'
 tags:

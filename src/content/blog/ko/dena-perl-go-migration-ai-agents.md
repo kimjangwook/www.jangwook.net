@@ -85,7 +85,7 @@ DeNA IT본부 IT기반부 소이케 부부장은 "리소스가 많이 드는 것
 
 ## 핵심 전략: AI 에이전트 2종 분업 체제
 
-이 프로젝트의 가장 혁신적인 부분은 AI 에이전트를 <strong>특성에 따라 2종류로 나누어 운용</strong>한 점입니다.
+이 프로젝트의 가장 혁신적인 부분은 AI 에이전트를 <strong>특성에 따라 2종류로 나누어 운용</strong>한 점입니다. 에이전트 팀 구성의 일반적인 방법론은 [Claude Code Agent Teams 완벽 가이드](/ko/blog/ko/claude-agent-teams-guide)에서 더 자세히 살펴볼 수 있습니다.
 
 ```mermaid
 graph LR
@@ -149,6 +149,8 @@ graph TD
 1. <strong>레거시 언어에서 모던 언어로의 마이그레이션</strong>: COBOL→Java, PHP→Go, Ruby→Rust 등
 2. <strong>대규모 코드베이스 변환</strong>: 수천~수만 줄 규모의 코드 전환
 3. <strong>공수 문제로 착수하지 못한 기술 부채 해소</strong>: AI로 비용 대비 효과를 극적으로 개선
+
+AI 에이전트 도입 시 실제 비용과 ROI에 대해서는 [AI 에이전트 비용 vs 인건비의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 구체적인 수치로 확인할 수 있습니다.
 
 ### 주의할 점
 

@@ -89,6 +89,8 @@ According to Figma's official documentation:
 
 > "MCP is an open-source standard for how different AI agents and applications talk to one another, or to other external systems like Figma."
 
+MCP's reach extends well beyond Figma—it connects any development tool to AI agents. [Automate Web Performance Optimization with Chrome DevTools MCP](/en/blog/en/chrome-devtools-mcp-performance) shows how the same protocol can control browser developer tools for automated performance audits.
+
 ### Two Deployment Modes
 
 #### Remote Server (Hosted by Figma)
@@ -1250,7 +1252,7 @@ figma.connect(
 
 ### Modern Architecture: Agent-Driven Sync
 
-Instead of complex webhook infrastructure, use <strong>Claude Code agents</strong> for intelligent, on-demand synchronization:
+Instead of complex webhook infrastructure, use <strong>Claude Code agents</strong> for intelligent, on-demand synchronization. For a deep dive into large-scale agent-driven page generation, see [Claude Code for Large-Scale Website Page Generation](/en/blog/en/claude-code-web-automation):
 
 ```mermaid
 sequenceDiagram
