@@ -1,6 +1,6 @@
 ---
 title: '추천 시스템 혁신: 78,000 토큰을 제로로 만든 메타데이터 최적화 여정'
-description: 콘텐츠 추천 시스템의 토큰 사용량을 100% 제거하고 실행 시간을 99% 단축한 메타데이터 기반 알고리즘 최적화 사례를 소개합니다.
+description: 블로그 콘텐츠 추천 시스템에서 78,000 토큰을 완전히 제로화하고 실행 시간을 99% 단축한 메타데이터 기반 최적화 실전 사례를 소개합니다. post-metadata.json 캐싱 전략과 해시 비교 기반 증분 처리로 추천 비용을 획기적으로 절감한 전 과정을 설명합니다.
 pubDate: '2025-10-18'
 heroImage: ../../../assets/blog/metadata-based-recommendation-optimization-hero.jpg
 tags:

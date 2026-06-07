@@ -48,7 +48,7 @@ draft: true
 
 ## 概述
 
-在大规模网站改版项目中，逐页手工制作数十个页面既低效又容易出错。本文将分享一个利用Claude Code的SubAgent系统自动生成31个HTML页面的真实项目案例。
+在大规模网站改版项目中，逐页手工制作数十个页面既低效又容易出错。本文将分享一个利用[Claude Code](/zh/blog/zh/claude-code-best-practices)的SubAgent系统自动生成31个HTML页面的真实项目案例。
 
 ### 项目背景
 
@@ -409,6 +409,7 @@ Output:
 <strong>2. SEO优化自动化</strong>
 - 基于CSV元数据批量设置
 - 自动生成OG标签、Meta描述
+- SEO成效可通过[Google Analytics MCP自动化](/zh/blog/zh/google-analytics-mcp-automation)进行自动追踪
 
 <strong>3. 提高可维护性</strong>
 - 修改组件库 → 重新执行即可批量更新
@@ -427,6 +428,8 @@ C-8,/zh/page,/en/page,标题,Title,描述,Description
 for lang in ['zh', 'en', 'ja']:
     create_page(metadata[lang])
 ```
+
+这种多语言自动化方法与[LLM与Claude Code实现博客自动化](/zh/blog/zh/llm-blog-automation)相结合，可以构建从内容生成到发布的完整自动化流水线。
 
 ### 2. A/B测试页面生成
 

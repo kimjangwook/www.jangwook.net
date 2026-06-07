@@ -99,11 +99,13 @@ The impact of KV cache invalidation is particularly severe on local model execut
 | Response Latency | 0.5–2 seconds | 10–30+ seconds |
 | GPU Compute Cost | Low | Very high |
 
+[Running Qwen3-Coder on 8GB VRAM](/en/blog/en/qwen3-coder-8gb-vram) covers hardware-level optimization strategies for local inference like this.
+
 Claude Code's system prompt can reach tens of thousands of tokens. Combined with conversation history, each request ends up reprocessing hundreds of thousands of tokens. On local GPUs, this results in <strong>response times increasing by 10x or more</strong>.
 
 ### Cost with API Proxies
 
-The same issue occurs when connecting to other models (e.g., GPT-4, Gemini) through third-party API proxies. When caching is invalidated on APIs that support prompt caching, <strong>token costs multiply several times over</strong>.
+The same issue occurs when connecting to other models (e.g., GPT-4, Gemini) through third-party API proxies. When caching is invalidated on APIs that support prompt caching, <strong>token costs multiply several times over</strong>. For hardware-level approaches to reducing LLM inference costs, see [Cutting LLM Inference Costs 8x with NVIDIA NVFP4](/en/blog/en/nvidia-llm-inference-cost-reduction).
 
 ## Solution
 
@@ -164,7 +166,7 @@ Even if something works fine with the official API, designs should account for t
 
 This case highlights challenges facing the LLM developer tool ecosystem:
 
-- <strong>Vendor lock-in</strong>: Tools optimized for specific APIs perform inefficiently in other environments
+- <strong>Vendor lock-in</strong>: Tools optimized for specific APIs perform inefficiently in other environments — real cases are covered in [GPT-4o Retirement and Model Dependency Risk](/en/blog/en/gpt4o-retirement-model-dependency-risk)
 - <strong>Lack of transparency</strong>: Undisclosed internal architectures make debugging difficult
 - <strong>Community dependence</strong>: User communities discover and share solutions themselves
 

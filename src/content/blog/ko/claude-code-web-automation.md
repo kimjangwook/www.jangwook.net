@@ -50,7 +50,7 @@ draft: true
 
 ## 개요
 
-대규모 웹사이트 리뉴얼 프로젝트에서 수십 개의 페이지를 일일이 수작업으로 만드는 것은 비효율적이고 오류가 발생하기 쉽습니다. 이번 글에서는 Claude Code의 SubAgent 시스템을 활용하여 31개의 HTML 페이지를 자동으로 생성한 실제 프로젝트 사례를 공유합니다.
+대규모 웹사이트 리뉴얼 프로젝트에서 수십 개의 페이지를 일일이 수작업으로 만드는 것은 비효율적이고 오류가 발생하기 쉽습니다. 이번 글에서는 [Claude Code](/ko/blog/ko/claude-code-best-practices)의 SubAgent 시스템을 활용하여 31개의 HTML 페이지를 자동으로 생성한 실제 프로젝트 사례를 공유합니다.
 
 ### 프로젝트 배경
 
@@ -411,6 +411,7 @@ Output:
 <strong>2. SEO 최적화 자동화</strong>
 - CSV 메타데이터 기반 일괄 설정
 - OG 태그, 메타 설명 자동 생성
+- 생성된 페이지의 SEO 성과는 [Google Analytics MCP 자동화](/ko/blog/ko/google-analytics-mcp-automation)로 자동 추적 가능
 
 <strong>3. 유지보수성 향상</strong>
 - 파츠 라이브러리 수정 → 재실행으로 일괄 업데이트 가능
@@ -429,6 +430,8 @@ C-8,/ko/page,/en/page,제목,Title,설명,Description
 for lang in ['ko', 'en', 'ja']:
     create_page(metadata[lang])
 ```
+
+[LLM과 Claude Code를 활용한 블로그 자동화](/ko/blog/ko/llm-blog-automation)에서는 이와 같은 다국어 자동화를 콘텐츠 생성 파이프라인 전반으로 확장하는 방법을 상세히 다룹니다.
 
 ### 2. A/B 테스트 페이지 생성
 

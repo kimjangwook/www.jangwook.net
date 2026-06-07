@@ -1,6 +1,6 @@
 ---
 title: AI搜索时代的AEO实施经验：Agent Effi Flow实战案例
-description: 分享针对ChatGPT、Perplexity等AI搜索引擎优化内容的AEO策略实施经验，包含结构化数据和Schema标记的具体实现方法。
+description: 分享针对ChatGPT、Perplexity等AI搜索引擎优化内容的AEO策略实施经验。涵盖Schema标记、FAQ页面优化、结构化数据设计等核心技术，以及Agent Effi Flow实际应用结果。
 pubDate: '2025-12-05'
 heroImage: ../../../assets/blog/aeo-implementation-experience-hero.png
 tags:

@@ -49,7 +49,7 @@ draft: true
 
 ## 概要
 
-大規模なWebサイトリニューアルプロジェクトで数十ページを手作業で作成することは非効率的でエラーが発生しやすいです。本記事では、Claude CodeのSubAgentシステムを活用して31個のHTMLページを自動生成した実プロジェクトの事例を紹介します。
+大規模なWebサイトリニューアルプロジェクトで数十ページを手作業で作成することは非効率的でエラーが発生しやすいです。本記事では、[Claude Code](/ja/blog/ja/claude-code-best-practices)のSubAgentシステムを活用して31個のHTMLページを自動生成した実プロジェクトの事例を紹介します。
 
 ### プロジェクト背景
 
@@ -410,6 +410,7 @@ Output:
 <strong>2. SEO最適化自動化</strong>
 - CSVメタデータベース一括設定
 - OGタグ、メタディスクリプション自動生成
+- SEO成果の自動追跡は[Google Analytics MCP自動化](/ja/blog/ja/google-analytics-mcp-automation)を参照
 
 <strong>3. 保守性向上</strong>
 - パーツライブラリ修正 → 再実行で一括更新可能
@@ -428,6 +429,8 @@ C-8,/ko/page,/en/page,제목,Title,설명,Description
 for lang in ['ko', 'en', 'ja']:
     create_page(metadata[lang])
 ```
+
+このような多言語自動化アプローチは、[LLMとClaude Codeを活用したブログ自動化](/ja/blog/ja/llm-blog-automation)と組み合わせることで、コンテンツ生成パイプライン全体を自動化できます。
 
 ### 2. A/Bテストページ生成
 

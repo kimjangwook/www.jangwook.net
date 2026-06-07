@@ -96,11 +96,13 @@ graph TD
 | 응답 지연 | 0.5~2초 | 10~30초+ |
 | GPU 연산 비용 | 낮음 | 매우 높음 |
 
+[Qwen3-Coder를 8GB VRAM으로 실행하는 방법](/ko/blog/ko/qwen3-coder-8gb-vram)에서는 이와 같은 로컬 추론의 하드웨어 최적화 전략을 상세히 다룹니다.
+
 Claude Code의 시스템 프롬프트는 수만 토큰에 달할 수 있으며, 여기에 대화 기록까지 합하면 매 요청마다 수십만 토큰을 재처리하게 됩니다. 로컬 GPU에서 이는 <strong>응답 시간이 10배 이상 증가</strong>하는 결과를 초래합니다.
 
 ### API 프록시 사용 시 비용
 
-서드파티 API 프록시를 통해 다른 모델(예: GPT-4, Gemini)에 연결하는 경우에도 동일한 문제가 발생합니다. 프롬프트 캐싱을 지원하는 API에서 캐시가 무효화되면 <strong>토큰 비용이 수배로 증가</strong>합니다.
+서드파티 API 프록시를 통해 다른 모델(예: GPT-4, Gemini)에 연결하는 경우에도 동일한 문제가 발생합니다. 프롬프트 캐싱을 지원하는 API에서 캐시가 무효화되면 <strong>토큰 비용이 수배로 증가</strong>합니다. LLM 추론 비용을 하드웨어 수준에서 줄이는 방법은 [NVIDIA NVFP4로 LLM 추론 비용 절감하기](/ko/blog/ko/nvidia-llm-inference-cost-reduction)에서 확인할 수 있습니다.
 
 ## 해결 방법
 
@@ -161,7 +163,7 @@ LLM 기반 도구를 설계할 때는 <strong>프롬프트의 캐시 친화성</
 
 이 사례는 LLM 기반 개발자 도구 생태계가 직면한 과제를 보여줍니다:
 
-- <strong>벤더 종속성</strong>: 특정 API에 최적화된 도구가 다른 환경에서 비효율적으로 동작
+- <strong>벤더 종속성</strong>: 특정 API에 최적화된 도구가 다른 환경에서 비효율적으로 동작 — [GPT-4o 은퇴와 모델 의존 리스크](/ko/blog/ko/gpt4o-retirement-model-dependency-risk)에서 실제 사례를 확인할 수 있습니다
 - <strong>투명성 부족</strong>: 내부 아키텍처가 공개되지 않아 디버깅이 어려움
 - <strong>커뮤니티 의존</strong>: 사용자 커뮤니티가 직접 문제를 발견하고 해결책을 공유
 

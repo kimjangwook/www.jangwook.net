@@ -1,8 +1,6 @@
 ---
 title: 'Recommendation System Optimization: From 78K Tokens to Zero'
-description: >-
-  How we eliminated 100% of token usage and reduced execution time by 99% in our
-  content recommendation system through metadata-based algorithmic optimization.
+description: 'Eliminated 78K tokens and reduced execution time 99% using metadata caching and hash-based updates. Guide to building a near-zero cost recommendation system.'
 pubDate: '2025-10-18'
 heroImage: ../../../assets/blog/metadata-based-recommendation-optimization-hero.jpg
 tags:

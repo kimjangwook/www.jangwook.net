@@ -141,6 +141,8 @@ graph LR
 
 ### Prompt Template
 
+This kind of structured prompt design aligns with the [Specification-Driven Development](/en/blog/en/specification-driven-development) paradigm.
+
 ````markdown
 <instructions>
 Generate k=5 diverse responses for the following topic.
@@ -734,7 +736,7 @@ graph TD
     style E fill:#6bcf7f
 ```
 
-Apply Verbalized Sampling at each stage to achieve <strong>hierarchical diversity</strong>.
+Apply Verbalized Sampling at each stage to achieve <strong>hierarchical diversity</strong>. For a deeper dive into designing multi-agent workflows, check out the [LangGraph Multi-Agent System Complete Guide](/en/blog/en/langgraph-multi-agent).
 
 ### 7. Avoid Failure Patterns
 
@@ -858,6 +860,8 @@ cat .claude/agents/prompt-engineer.md
 # - Evaluate quality (subjective)
 # - Fine-tune parameters
 ```
+
+For real-world agent deployment patterns, [OpenAI AgentKit Complete Guide Part 2](/en/blog/en/openai-agentkit-tutorial-part2) is also worth reading alongside this guide.
 
 ### Next Steps
 

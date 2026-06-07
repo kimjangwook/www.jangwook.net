@@ -94,11 +94,13 @@ KV缓存失效对本地模型运行的影响尤为严重：
 | 响应延迟 | 0.5~2秒 | 10~30秒以上 |
 | GPU计算成本 | 低 | 非常高 |
 
+[用8GB VRAM运行Qwen3-Coder的方法](/zh/blog/zh/qwen3-coder-8gb-vram)详细介绍了此类本地推理的硬件优化策略。
+
 Claude Code的系统提示词可能达到数万token，加上对话历史，每次请求需要重新处理数十万token。在本地GPU上，这导致<strong>响应时间增加10倍以上</strong>。
 
 ### API代理使用时的成本
 
-通过第三方API代理连接其他模型（如GPT-4、Gemini）时也会出现同样的问题。在支持提示词缓存的API上，缓存失效会导致<strong>token成本成倍增加</strong>。
+通过第三方API代理连接其他模型（如GPT-4、Gemini）时也会出现同样的问题。在支持提示词缓存的API上，缓存失效会导致<strong>token成本成倍增加</strong>。有关从硬件层面降低LLM推理成本的方法，请参阅[用NVIDIA NVFP4将LLM推理成本降低8倍](/zh/blog/zh/nvidia-llm-inference-cost-reduction)。
 
 ## 解决方法
 
@@ -159,7 +161,7 @@ graph LR
 
 此案例展示了LLM开发者工具生态系统面临的挑战：
 
-- <strong>供应商锁定</strong>：针对特定API优化的工具在其他环境中表现低效
+- <strong>供应商锁定</strong>：针对特定API优化的工具在其他环境中表现低效 — 实际案例详见[GPT-4o退役与模型依赖风险](/zh/blog/zh/gpt4o-retirement-model-dependency-risk)
 - <strong>透明度不足</strong>：内部架构未公开导致调试困难
 - <strong>社区依赖</strong>：用户社区自行发现问题并分享解决方案
 

@@ -1,6 +1,6 @@
 ---
 title: 'AI 검색 시대를 위한 AEO 구현기: Agent Effi Flow 실전 적용'
-description: 'ChatGPT, Perplexity 등 AI 검색 엔진에 콘텐츠가 인용되도록 최적화하는 AEO 전략의 실제 구현 경험을 공유합니다.'
+description: 'ChatGPT, Perplexity 등 AI 검색 엔진에 콘텐츠가 인용되도록 최적화하는 AEO(Answer Engine Optimization) 전략의 실제 구현 경험을 공유합니다. 스키마 마크업, FAQ 페이지 최적화, 구조적 데이터 설계 핵심 기법을 단계별로 설명합니다.'
 pubDate: '2025-12-05'
 heroImage: ../../../assets/blog/aeo-implementation-experience-hero.png
 tags:

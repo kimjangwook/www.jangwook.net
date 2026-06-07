@@ -1,6 +1,6 @@
 ---
 title: '推荐系统革新：将78,000令牌降至零的元数据优化之旅'
-description: 介绍如何将内容推荐系统的令牌使用量减少100%、执行时间缩短99%的元数据驱动算法优化案例。
+description: 介绍如何将博客内容推荐系统的78,000个token降至零并将执行时间缩短99%的元数据优化实战案例。详解post-metadata.json缓存策略和基于哈希比较的增量处理，大幅削减推荐成本的全过程。
 pubDate: '2025-10-18'
 heroImage: ../../../assets/blog/metadata-based-recommendation-optimization-hero.jpg
 tags:
