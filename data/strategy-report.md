@@ -4,6 +4,123 @@
 
 ---
 
+## 2026-06-07 주간 리뷰 (6월 2주차)
+
+### 성과 요약
+
+- **이번 주 포스트**: 6개
+- **콘텐츠 믹스**: How-to 50% / 뉴스 17% / 비교 33% / 시리즈 0%
+- **내부링크 최적화**: 전체 272개 포스트 모두 내부링크 보유 (0-link 0개, 100% 완벽 유지)
+- **크로스포스팅**: dev.to 0/0, Hashnode 0/0 (이번 주 크로스포스팅 기록 없음 — 시스템 확인 필요)
+
+#### 이번 주 포스트 목록
+
+| 슬러그 | 유형 |
+|--------|------|
+| vitest-4-ai-agent-testing-patterns-2026 | How-to |
+| typescript-zod-v4-claude-api-structured-output-guide-2026 | How-to |
+| hono-typescript-api-2026 | How-to |
+| deno-2-vs-bun-nodejs-runtime-2026-comparison | 비교 |
+| amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026 | 뉴스 |
+| llamaindex-vs-langchain-vs-haystack-rag-2026 | 비교 |
+
+---
+
+### 콘텐츠 믹스 분석
+
+| 유형 | 이번 주 | 목표 | 편차 |
+|------|---------|------|------|
+| How-to | 50% (3개) | 40% | **+10% 과잉** |
+| 뉴스 | 17% (1개) | 30% | **-13% 부족** |
+| 비교 | 33% (2개) | 15% | **+18% 과잉** |
+| 시리즈 | 0% (0개) | 15% | **-15% ⚠️ 7주 이상 연속 완전 부재** |
+
+**핵심 문제**: 비교 포스트(33%)가 또다시 목표(15%)의 2배를 넘었다. 뉴스(17%)는 지난 주 보다 낮다. 시리즈는 7주 연속 0%로, 이 문제는 더 이상 백로그 우선순위 조정으로 해결 불가능하다. 백로그에 시리즈 6개가 대기 중임에도 daily-post가 계속 선택하지 않고 있다.
+
+**개선된 부분**: 이번 주 비교 포스트 3편(kiro, deno-vs-bun, llamaindex)이 모두 "직접 설치/분석" 기반으로 작성되어 품질은 높음. 지난 주의 심각한 draft 발행 문제(4개)가 해소됨.
+
+---
+
+### 스타일 분석 (최근 7개 포스트 리뷰)
+
+**종합 스타일 점수: 8.5 / 10** — 지난 주 6.8에서 대폭 개선
+
+#### 강점 (유지할 것)
+
+- **"## 개요" 패턴 완전 해소**: 지난 주 7개 중 5개에서 '## 개요'/'## 서론' 헤더로 시작하는 문제가 완전히 사라짐. vitest 포스트 "AI 에이전트 코드를 쓰다 보면 어느 순간 테스트가 멈춘다"처럼 상황 몰입형 도입부로 복귀
+- **Source Review 투명성 정착**: kiro 포스트 "내가 실행하지 못한 기능은 실행했다고 쓰지 않는다. 분석의 한계와 내 판단을 명확히 구분해서 읽어주면 좋겠다"는 선언이 신뢰도 핵심. 이 패턴을 GUI/클라우드 서비스 분석 포스트에 표준으로 정착
+- **1인칭 목소리 자연스럽게 유지**: vitest "직접 샌드박스에서 코드를 돌려가며 확인", llamaindex "이번에 임시 샌드박스에서 세 프레임워크를 모두 설치하고 동일한 조건으로 테스트", kiro "Claude Code를 매일 쓰는 입장에서 이게 실제로 어떤 의미인지 따져봤다" — 모두 자연스러운 1인칭
+- **비판적 시각 자연 삽입**: llamaindex "LangChain은 langchain-community를 설치하자마자 deprecation 경고가 출력됐다", kiro "먼저 결론부터 말하자면: Kiro와 Claude Code는 직접 경쟁 관계가 아니다" — 공정하고 솔직한 평가
+
+#### 패턴 피로 (조정 필요)
+
+1. **비교 포스트 구조 수렴 — 2주 연속**: deno-vs-bun, llamaindex, (kiro 제외) 두 비교 포스트가 "직접 설치 → 코드 측정 → 실측 데이터 표 → 상황별 추천" 구조로 유사. 같은 주에 두 편이 나오면 독자가 패턴을 의식. 다음 비교 포스트는 시나리오 서사형("팀 A가 이 상황에서 X를 선택한 이유") 또는 역설 반박형으로 구조 변형 필요
+2. **도입부 실험 서사 집중**: 이번 주 6개 포스트 모두 "직접 해봤다" 서사로 시작. 어느 순간 독자가 "또 직접 실험 얘기네"로 패턴을 의식할 수 있음. 독자에게 직접 묻는 질문형("당신도 이런 상황 겪은 적 있지 않나요?") 또는 통념 반박형 도입부 병행 필요
+3. **크로스포스팅 기록 공백**: 이번 주 crosspost-log에 기록이 전혀 없음. 크로스포스팅이 실제로 안 된 것인지, 로깅 버그인지 확인 필요
+
+---
+
+### 이슈 및 조치사항
+
+#### 1. 시리즈 7주 연속 미발행 — 시스템 레벨 개입 필요
+
+백로그에 시리즈 6개가 대기 중(`ai-agent-architecture-series-1`, `claude-code-masterclass-series-1` 등)이다. 7주간 전략 리포트에서 "하드 블록", "즉각 발행", "⛔ 변경 불가" 등으로 지정했음에도 단 하나도 발행되지 않았다. 이는 daily-post SKILL.md에서 topic-backlog의 series 항목을 실제로 읽지 않거나, 완성도 높은 how-to/comparison 주제를 자동 우선 선택하는 로직 때문으로 추정된다.
+
+**권고 조치**: daily-tech-blog SKILL.md를 수정하여 "주 1회(토요일) series 강제 배정" 규칙을 명시적으로 추가. 이 조치 없이는 다음 주도 시리즈 0%가 반복될 것으로 예측.
+
+#### 2. 크로스포스팅 기록 공백
+
+crosspost-log.json에 2026-06-07 기준으로 이번 주 기록이 0건이다. 지난 3주 기록을 확인했을 때 5월 31일 이후 기록이 없다. daily-post 스킬에서 crosspost 단계가 실행되지 않고 있거나, 결과 로깅이 깨진 상태일 가능성이 높다. 다음 daily-post 실행 시 crosspost 로깅 확인 필요.
+
+#### 3. 내부링크 100% 완벽 유지
+
+272개 전체 포스트 모두 내부링크 보유. daily-closing의 지속적인 SEO 최적화 작업이 효과를 유지하고 있다. 이 지표는 앞으로 "신규 포스트 0-link 예방"으로만 모니터링.
+
+---
+
+### 스타일 조정 제안
+
+1. **비교 포스트 구조 다각화**: 다음 비교 포스트는 "직접 설치 + 측정 표" 대신 시나리오 서사형("스타트업 A vs 엔터프라이즈 B — 같은 도구를 다르게 쓰는 이유") 또는 독자 의사결정 트리 중심 구조 시도
+2. **도입부 패턴 로테이션**: 직접 실험 서사 외에 "통념 반박형"("모두가 X를 권하지만, 상황에 따라 Y가 낫다")이나 "독자 직접 질문형"으로 도입부 교체. 같은 주 포스트들끼리 도입부 유형이 겹치지 않도록
+3. **결론 다양화 지속**: 지난 주 조정 지침에서 개선된 결론 패턴을 계속 유지. "지금 시작하세요" 류의 결론 반복 방지
+
+---
+
+### 다음 주 전략 (6월 8〜14일)
+
+- **콘텐츠 유형 조정**: How-to 2개(33%) / 뉴스 2개(33%) / **시리즈 1개(17%)** / 비교 1개(17%)
+  - 비교는 1개 최대 한도 엄격 적용
+  - ⛔ **토요일: 시리즈 강제 배정 — `ai-agent-architecture-series-1-orchestrator-pattern`**
+  - 뉴스 2편으로 지난 2주 평균 17%를 30%로 복구
+- **스타일 조정**: 비교 포스트 구조 다각화 + 도입부 유형 주 내 중복 방지
+- **우선 처리 백로그 TOP 3**:
+  1. `ai-agent-architecture-series-1-orchestrator-pattern` [series] ⛔ 토요일 하드 블록
+  2. `claude-code-june-2026-new-features-changelog-developer-guide` [news] — 시의성 최고
+  3. `ai-coding-agent-market-june-2026-open-source-challenge` [news] — 백로그 대기 오래됨
+
+---
+
+### 백로그 현황 (2026-06-07 기준)
+
+**총 186개 주제 (대기 중 134개)**
+
+| 유형 | 대기 | 비율 |
+|------|------|------|
+| How-to | 58 | 43% |
+| 뉴스 | 50 | 37% |
+| 비교 | 20 | 15% |
+| 시리즈 | 6 | 5% |
+
+**신규 추가 (6개)**:
+- `claude-code-june-2026-new-features-changelog-developer-guide` [news] — Claude Code 6월 업데이트 분석
+- `openai-o3-pro-release-vs-claude-opus-coding-benchmark-june-2026` [news] — o3 Pro vs Claude Opus 코딩 비교
+- `javascript-runtime-2026-midyear-state-node-bun-deno-ecosystem` [news] — JS 런타임 생태계 2026 상반기
+- `bun-sql-advanced-patterns-transactions-prepared-statements-2026` [how-to] — Bun SQL 고급 패턴
+- `deno-2-5-fresh-2-1-fullstack-ai-chatbot-tutorial-2026` [how-to] — Deno 2.5 + Fresh 풀스택 앱
+- `anthropic-economic-index-may-2026-ai-developer-job-market-analysis` [news] — Anthropic Economic Index 분석
+
+---
+
 ## 2026-05-31 주간 리뷰 (6월 1주차)
 
 ### 성과 요약
