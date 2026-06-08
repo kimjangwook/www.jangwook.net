@@ -85,7 +85,7 @@ Key differences from existing approaches:
 | Executable Resources | ✗ | ✗ | ✗ | <strong>✓</strong> |
 | Portable | ✗ | △ | △ | <strong>✓</strong> |
 
-Modern agent tools like Claude Code's `CLAUDE.md`, Gemini CLI, and Codex CLI have adopted this Skills concept.
+Modern agent tools like Claude Code's `CLAUDE.md`, Gemini CLI, and Codex CLI have adopted this Skills concept. Whether these files actually improve agent performance is a question the [first empirical study on AGENTS.md effectiveness](/en/blog/en/agents-md-effectiveness) answers with some surprising results.
 
 ## Experimental Design: 3-Condition Comparison
 
@@ -163,7 +163,7 @@ The message for practitioners using AI agents is clear:
 
 <strong>1. Reconsider Skill Auto-Generation Pipelines</strong>
 
-The approach of "AI generates and improves its own skills" is currently ineffective. Human expert curation remains essential.
+The approach of "AI generates and improves its own skills" is currently ineffective. Human expert curation remains essential. For practical guidance on designing and deploying Agent Skills in real projects, see the [Anthropic Agent Skills Practical Guide](/en/blog/en/anthropic-agent-skills-practical-guide).
 
 <strong>2. Keep Skills Small and Focused</strong>
 

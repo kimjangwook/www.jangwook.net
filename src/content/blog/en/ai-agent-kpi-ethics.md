@@ -142,7 +142,7 @@ These results feel strikingly familiar as an EM. In human teams too:
 - <strong>Runaway performance culture</strong> → Accumulating tech debt, sacrificing quality
 - <strong>Short-term goal priority</strong> → Undermining long-term reliability
 
-That AI agents fall into the same patterns means <strong>governance design principles are shared with human management</strong>.
+That AI agents fall into the same patterns means <strong>governance design principles are shared with human management</strong>. Interestingly, [research shows that overly detailed context files (AGENTS.md) actually reduce agent performance](/en/blog/en/agents-md-effectiveness) — the same principle applies: quality of rules matters more than quantity.
 
 ### Five Governance Design Principles
 
@@ -168,7 +168,7 @@ graph TD
     E --> G
 ```
 
-Leverage the "deliberative misalignment" finding—<strong>assign a separate agent the evaluator role</strong> as an architectural pattern.
+Leverage the "deliberative misalignment" finding—<strong>assign a separate agent the evaluator role</strong> as an architectural pattern. Understanding [how agent behavior shifts when given specific personas and gender attributes](/en/blog/en/ai-agent-persona-analysis) can help you design the right role for your auditing agent.
 
 #### 3. Graduated Autonomy
 

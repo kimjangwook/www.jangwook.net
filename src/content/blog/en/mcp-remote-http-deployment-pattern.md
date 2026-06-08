@@ -1,6 +1,6 @@
 ---
-title: 'MCP Remote HTTP Server Deployment Patterns — A Practical Guide to Moving from stdio to Streamable HTTP'
-description: 'A hands-on guide to deploying MCP servers over Streamable HTTP instead of stdio. Covers stateful vs stateless session modes, Docker and Cloudflare Workers deployment, with real curl experiment logs using @modelcontextprotocol/sdk v1.29.0.'
+title: 'MCP Remote HTTP: Convert stdio Servers to Streamable HTTP'
+description: 'Convert MCP stdio servers to remote Streamable HTTP services. Covers stateful vs stateless session modes, Docker and Cloudflare Workers deployment patterns, with real experiment logs using TypeScript SDK v1.29.0.'
 pubDate: '2026-05-27'
 heroImage: '../../../assets/blog/mcp-remote-http-deployment-pattern/hero.png'
 tags:

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-07",
+  "updated_at": "2026-06-08",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3354,6 +3354,58 @@
       "added_at": "2026-06-07",
       "status": "queued",
       "notes": "2026-06-06 출시된 Qwen3 Coder Next로 실전 코드 생성 튜토리얼. API 설정, 코드 리뷰, 자동 테스트 생성까지. qwen3-coder-8gb-vram 포스트 대비 사용법 중심 콘텐츠로 차별화. 월요일 How-to 유형."
+    },
+    {
+      "slug": "node-sqlite-builtin-practical-guide-2026",
+      "title_idea": "Node.js 내장 SQLite 완전 가이드 — 외부 패키지 없이 바로 쓰는 실전 DB",
+      "content_type": "how-to",
+      "target_keyword": "Node.js 내장 SQLite",
+      "secondary_keywords": [
+        "node:sqlite",
+        "SQLite Node.js 22",
+        "내장 데이터베이스",
+        "DatabaseSync"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Node.js v26.3.0 공식 문서, LogRocket, Better Stack — 이미 hero 이미지 준비됨",
+      "added_at": "2026-06-08",
+      "status": "queued",
+      "notes": "assets/blog/node-sqlite-builtin-practical-guide-2026/ 디렉토리에 이미지가 이미 생성되어 있음. Node.js 22.5.0부터 --experimental-sqlite 플래그로 활성화. v26에서 안정화. 외부 의존성 없이 SQLite를 사용하는 유일한 방법으로 차별화."
+    },
+    {
+      "slug": "typescript-6-0-new-features-migration-guide-2026",
+      "title_idea": "TypeScript 6.0 핵심 기능 완전 정리 — 마이그레이션 체크리스트와 실전 예제",
+      "content_type": "how-to",
+      "target_keyword": "TypeScript 6.0 기능",
+      "secondary_keywords": [
+        "TypeScript 6.0 업그레이드",
+        "TS 6.0 마이그레이션",
+        "TypeScript 2026"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "TypeScript 6.0 RC (2026년 3월) 발표, InfoQ State of JS 2025 분석",
+      "added_at": "2026-06-08",
+      "status": "queued",
+      "notes": "TypeScript 6.0이 2026년 3월 RC 출시. 재빌드 40-60% 속도 향상, 메모리 25% 감소. GitHub에서 파이썬 제치고 1위. 마이그레이션 how-to 수요 높음."
+    },
+    {
+      "slug": "vite-rolldown-build-optimization-2026",
+      "title_idea": "Vite + Rolldown으로 빌드 최적화하기 — Rust 기반 번들러 전환 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Vite Rolldown 빌드 최적화",
+      "secondary_keywords": [
+        "Rolldown Rollup 대체",
+        "Vite Rust 번들러",
+        "프론트엔드 빌드 속도"
+      ],
+      "search_intent": "how-to",
+      "priority": 3,
+      "source": "State of JS 2025 — Vite 98% 만족도, Rolldown 1%→10% 급성장",
+      "added_at": "2026-06-08",
+      "status": "queued",
+      "notes": "Rolldown은 Rust 기반 Rollup 대체재로 Vite에 통합 예정. 2025년 1%→2026년 10%로 급성장. Vite 98% 만족도와 시너지. 번들 최적화 실전 가이드로 차별화."
     }
   ]
 }

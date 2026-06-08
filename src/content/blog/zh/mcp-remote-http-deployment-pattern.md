@@ -1,6 +1,6 @@
 ---
 title: 'MCP远程HTTP服务器部署模式 — 从stdio迁移到Streamable HTTP的实践指南'
-description: '使用MCP Streamable HTTP传输将stdio服务器转变为可远程部署的HTTP服务的实战指南。基于@modelcontextprotocol/sdk v1.29.0，通过实验日志详解stateful与stateless模式实现及Docker、Cloudflare部署模式。'
+description: '使用MCP Streamable HTTP传输将stdio服务器转变为可远程部署的HTTP服务的实战指南。基于TypeScript SDK v1.29.0，通过实验日志详解stateful与stateless模式实现及Docker、Cloudflare部署模式。'
 pubDate: '2026-05-27'
 heroImage: '../../../assets/blog/mcp-remote-http-deployment-pattern/hero.png'
 tags:

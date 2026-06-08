@@ -82,7 +82,7 @@ Skills 패키지 구조
 | 실행 가능 리소스 | ✗ | ✗ | ✗ | <strong>✓</strong> |
 | 이식성 | ✗ | △ | △ | <strong>✓</strong> |
 
-Claude Code의 `CLAUDE.md`, Gemini CLI, Codex CLI 등 최신 에이전트 도구들이 이 Skills 개념을 채택하고 있습니다.
+Claude Code의 `CLAUDE.md`, Gemini CLI, Codex CLI 등 최신 에이전트 도구들이 이 Skills 개념을 채택하고 있습니다. 이 파일들이 실제로 에이전트 성능을 높이는지에 대해서는 [AGENTS.md 효과를 검증한 최초 실증 연구](/ko/blog/ko/agents-md-effectiveness)에서 의외의 결과를 확인할 수 있습니다.
 
 ## 실험 설계: 3가지 조건 비교
 
@@ -160,7 +160,7 @@ graph TD
 
 <strong>1. 스킬 자동생성 파이프라인은 재고하라</strong>
 
-"AI가 자기 스킬을 생성하고 개선한다"는 접근은 현 시점에서 효과가 없습니다. 인간 전문가의 큐레이션이 여전히 필수입니다.
+"AI가 자기 스킬을 생성하고 개선한다"는 접근은 현 시점에서 효과가 없습니다. 인간 전문가의 큐레이션이 여전히 필수입니다. 실전에서 Agent Skills를 설계하고 도입하는 구체적인 방법은 [Anthropic Agent Skills 실전 가이드](/ko/blog/ko/anthropic-agent-skills-practical-guide)에서 확인할 수 있습니다.
 
 <strong>2. 스킬은 작고 집중적으로</strong>
 

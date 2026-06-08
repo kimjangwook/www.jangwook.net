@@ -81,7 +81,7 @@ Skillsパッケージ構造
 | 実行可能リソース | ✗ | ✗ | ✗ | <strong>✓</strong> |
 | ポータビリティ | ✗ | △ | △ | <strong>✓</strong> |
 
-Claude Codeの`CLAUDE.md`、Gemini CLI、Codex CLIなど、最新のエージェントツールがこのSkillsコンセプトを採用しています。
+Claude Codeの`CLAUDE.md`、Gemini CLI、Codex CLIなど、最新のエージェントツールがこのSkillsコンセプトを採用しています。これらのファイルが実際にエージェントの性能を向上させるかについては、[AGENTS.mdの効果を検証した初の実証研究](/ja/blog/ja/agents-md-effectiveness)で意外な結果が明らかになっています。
 
 ## 実験設計：3条件の比較
 
@@ -159,7 +159,7 @@ graph TD
 
 <strong>1. スキル自動生成パイプラインは再考せよ</strong>
 
-「AIが自分のスキルを生成し改善する」というアプローチは、現時点では効果がありません。人間の専門家によるキュレーションが依然として必須です。
+「AIが自分のスキルを生成し改善する」というアプローチは、現時点では効果がありません。人間の専門家によるキュレーションが依然として必須です。実際のプロジェクトでAgent Skillsを設計・導入する具体的な方法は、[Anthropic Agent Skills実践ガイド](/ja/blog/ja/anthropic-agent-skills-practical-guide)で確認できます。
 
 <strong>2. スキルは小さく集中的に</strong>
 

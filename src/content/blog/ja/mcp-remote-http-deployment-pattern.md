@@ -1,6 +1,6 @@
 ---
-title: 'MCPリモートHTTPサーバーデプロイパターン — stdioからStreamable HTTPへ移行するエージェント拡張ガイド'
-description: 'MCP Streamable HTTPトランスポートでstdioサーバーをリモート配備可能なHTTPサービスへ移行する実践ガイド。@modelcontextprotocol/sdk v1.29.0基準でstateful・statelessモードの実装とDocker・Cloudflare配備パターンを実験ログとともに解説します。'
+title: 'MCPリモートHTTPサーバーデプロイパターン — stdioからStreamable HTTPへ移行する実践ガイド'
+description: 'MCP Streamable HTTPトランスポートでstdioサーバーをリモート配備可能なHTTPサービスへ移行する実践ガイド。TypeScript SDK v1.29.0基準でstateful・statelessモードの実装とDocker・Cloudflare配備パターンを実験ログとともに解説します。'
 pubDate: '2026-05-27'
 heroImage: '../../../assets/blog/mcp-remote-http-deployment-pattern/hero.png'
 tags:

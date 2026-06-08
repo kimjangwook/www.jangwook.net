@@ -1,6 +1,6 @@
 ---
 title: "Claude Opus 4.8 Dynamic Workflows: 1,000 Parallel Agents and Fast Mode in Practice"
-description: "A candid technical breakdown of Claude Opus 4.8's Dynamic Workflows and Fast Mode. Architecture, real cost numbers, known bugs, and an honest verdict on which teams should deploy this now."
+description: "Claude Opus 4.8 Dynamic Workflows and Fast Mode: 1,000 parallel agents, real architecture trade-offs, cost data, known limitations, and an honest verdict on which teams should adopt this."
 pubDate: '2026-05-29'
 heroImage: '../../../assets/blog/claude-opus-4-8-dynamic-workflows-parallel-agents-guide-hero.png'
 tags: ["Claude", "AI Agents", "Anthropic"]

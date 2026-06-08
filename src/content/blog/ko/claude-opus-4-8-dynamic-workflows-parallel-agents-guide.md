@@ -1,6 +1,6 @@
 ---
 title: "Claude Opus 4.8 Dynamic Workflows 실전 분석"
-description: "1,000개 서브에이전트와 Fast Mode가 에이전트 개발 워크플로우를 어떻게 바꾸는가. 공식 문서와 실제 사례를 기준으로 아키텍처, 비용, 한계를 솔직하게 정리했다."
+description: "Claude Opus 4.8의 1,000개 병렬 서브에이전트와 Fast Mode가 AI 에이전트 개발 워크플로우를 실제로 어떻게 바꾸는지 심층 분석. 공식 릴리스 문서와 실제 구현 사례를 기준으로 멀티에이전트 아키텍처, 비용 구조, 운영상 한계를 체계적으로 빠짐없이 정리했다."
 pubDate: '2026-05-29'
 heroImage: '../../../assets/blog/claude-opus-4-8-dynamic-workflows-parallel-agents-guide-hero.png'
 tags: ["Claude", "AI 에이전트", "Anthropic"]

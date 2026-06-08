@@ -177,6 +177,7 @@ npm run lint          # 提交前必须运行
 - <strong>以Python为主</strong>：AGENTbench仅针对Python项目
 - <strong>小众仓库</strong>：使用上下文文件的仓库规模相对较小
 - <strong>静态评估</strong>：上下文文件在重复任务中是否有累积效果尚未验证
+- <strong>治理空白</strong>：代理忠实遵循指示却产生反效果的模式，与[AI代理KPI压力与伦理违规研究](/zh/blog/zh/ai-agent-kpi-ethics)也有关联
 
 未来研究方向包括：
 
@@ -193,6 +194,8 @@ AGENTS.md正在成为编码代理生态系统的事实标准，但这篇论文<s
 > <strong>上下文文件要精简，以构建和测试命令为核心。</strong>
 
 按照代理开发者的推荐通过`/init`自动生成，目前来看可能适得其反。手动编写，只包含真正必要的信息，才是最有效的策略。
+
+自动生成的低效不只是AGENTS.md的问题。[SkillsBench研究证明AI自我生成的技能同样无效](/zh/blog/zh/ai-self-generated-skills-myth)，从另一角度验证了相同的规律。
 
 ## 参考资料
 

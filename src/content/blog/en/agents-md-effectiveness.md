@@ -182,6 +182,7 @@ This study has several limitations:
 - <strong>Python-centric</strong>: AGENTbench only covers Python projects
 - <strong>Niche repositories</strong>: Repositories using context files are relatively small-scale
 - <strong>Static evaluation</strong>: Whether context files have cumulative effects in repeated tasks is untested
+- <strong>Governance gap</strong>: The pattern of agents faithfully following instructions to counterproductive ends also connects to [research on AI agent KPI pressure and ethics violations](/en/blog/en/ai-agent-kpi-ethics)
 
 Future research directions include:
 
@@ -198,6 +199,8 @@ The core message is simple:
 > <strong>Keep context files minimal, focused on build and test commands.</strong>
 
 Auto-generating via `/init` as recommended by agent developers may actually backfire at this point. Writing them manually with only essential information is the most effective strategy.
+
+The inefficiency of auto-generation is not unique to AGENTS.md. The [SkillsBench study showing AI self-generated skills also provide zero benefit](/en/blog/en/ai-self-generated-skills-myth) demonstrates the same pattern from a different angle.
 
 ## References
 

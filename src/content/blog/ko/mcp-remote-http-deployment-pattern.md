@@ -1,6 +1,6 @@
 ---
-title: 'MCP 원격 HTTP 서버 배포 패턴 — stdio에서 Streamable HTTP로 전환하는 에이전트 확장 가이드'
-description: 'MCP Streamable HTTP 트랜스포트로 stdio 서버를 원격 배포 가능한 HTTP 서비스로 전환하는 실전 가이드. @modelcontextprotocol/sdk v1.29.0 기준 stateful·stateless 모드 구현과 Docker·Cloudflare 배포 패턴을 실험 로그와 함께 설명합니다.'
+title: 'MCP 원격 HTTP 서버 배포 패턴 — stdio에서 Streamable HTTP로 전환하는 실전 가이드'
+description: 'MCP Streamable HTTP 트랜스포트로 stdio 서버를 원격 배포 가능한 HTTP 서비스로 전환하는 실전 가이드. TypeScript v1.29.0 기준 stateful·stateless 모드 구현과 Docker·Cloudflare 배포 패턴을 실험 로그와 함께 설명합니다.'
 pubDate: '2026-05-27'
 heroImage: '../../../assets/blog/mcp-remote-http-deployment-pattern/hero.png'
 tags:
