@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-08",
+  "updated_at": "2026-06-09",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3370,7 +3370,7 @@
       "priority": 1,
       "source": "Node.js v26.3.0 공식 문서, LogRocket, Better Stack — 이미 hero 이미지 준비됨",
       "added_at": "2026-06-08",
-      "status": "queued",
+      "status": "published",
       "notes": "assets/blog/node-sqlite-builtin-practical-guide-2026/ 디렉토리에 이미지가 이미 생성되어 있음. Node.js 22.5.0부터 --experimental-sqlite 플래그로 활성화. v26에서 안정화. 외부 의존성 없이 SQLite를 사용하는 유일한 방법으로 차별화."
     },
     {
