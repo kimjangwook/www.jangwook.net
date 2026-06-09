@@ -1,7 +1,5 @@
 ---
-title: >-
-  Deloitte Tech Trends 2026が示唆するエージェンティック AI運用戦略 — 89%がプロダクションに到達できない理由と、EMのための
-  Delegate、Review、Own フレームワーク
+title: 'Deloitte 2026 Agentic AI運用戦略 — 89%が本番化できない理由とEMフレームワーク'
 description: >-
   Deloitte Tech Trends 2026が明かす衝撃—11%しか本番Agentic AIを運用していない現実。89%が停滞する
   根本原因は技術ではなく運用モデル。月曜朝から即実行できるDelegate・Review・OwnフレームワークのEM・VPoEガイドです。

@@ -92,6 +92,8 @@ draft: true
 
 <strong>브랜드 신뢰도</strong>: AI가 인용하는 출처로 선택된다는 것은 콘텐츠의 신뢰성을 공식적으로 인정받는 것입니다.
 
+AEO 전략을 B2B SaaS 서비스에 단계적으로 적용한 9단계 로드맵은 [LLM 시대의 SEO/AEO 실전 적용 가이드](/ko/blog/ko/llm-seo-aeo-practical-implementation)에서 상세히 다루고 있습니다.
+
 ## Agent Effi Flow 서비스 소개
 
 ### 서비스 개요
@@ -1196,6 +1198,8 @@ Google의 <strong>검색 품질 평가 가이드라인</strong>에 따르면:
 - <strong>신뢰성(Trustworthiness)</strong>: 허위 정보 발견 시 사이트 전체 신뢰도 하락
 
 AI 검색 엔진도 사실 확인(Fact-checking)을 수행하므로, 허위 후기는 장기적으로 AEO에 치명적입니다.
+
+Google의 실제 콘텐츠 품질 심사 기준을 AI로 분석한 실전 경험은 [AdSense 도전기: "가치 없는 콘텐츠" 거절 극복하기](/ko/blog/ko/adsense-rejection-ai-analysis-improvement)에서 확인할 수 있습니다.
 
 ### 대안: "상정치(想定値)" 명시
 

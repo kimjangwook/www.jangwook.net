@@ -1,5 +1,5 @@
 ---
-title: 'Gemini API Model Selection Guide 2026 — Speed, Cost, and Quality Trade-offs Measured Directly from Flash-Lite to 3.5 Flash'
+title: 'Gemini API 2026 — Flash-Lite to Pro Speed & Cost Benchmarks'
 description: 'Real measurement data from May 2026. Compared Gemini 2.5 Flash-Lite (65 TPS), 2.5 Flash, 2.5 Pro, and 3.5 Flash under identical conditions. Includes monthly cost calculations for chatbot, code review, and RAG scenarios, plus decision criteria for which project needs which model.'
 pubDate: '2026-05-24'
 heroImage: '../../../assets/blog/gemini-api-model-tier-benchmark-guide-2026-hero.png'

@@ -92,6 +92,8 @@ The terminal-based AI coding assistant market has matured significantly:
 - Google Workspace organization → Gemini CLI
 - Custom tooling needs → Codex CLI
 
+Before migrating, make sure you're getting the most out of Claude Code by reviewing the [Claude Code Best Practices Guide](/en/blog/en/claude-code-best-practices).
+
 ## Core Comparison: 4 CLI Tools
 
 ### Architecture Comparison Table
@@ -501,6 +503,8 @@ codex --agent seo-optimizer "Analyze latest posts"
 - Need advanced agentic capabilities
 - Work on complex, multi-step tasks
 - Value Claude's reasoning abilities
+
+For the 5 agentic workflow patterns you can implement with Claude Code, see the [Claude Code Agentic Workflow Patterns Guide](/en/blog/en/claude-code-agentic-workflow-patterns-5-types).
 
 <strong>Example use case:</strong> This blog project uses Claude Code's sub-agents for specialized tasks—SEO optimization, content writing, image generation—that require coordinated autonomous workflows.
 

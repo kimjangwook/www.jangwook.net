@@ -79,6 +79,8 @@ draft: true
 4. <strong>团队协作</strong>：企业级功能和权限管理需求
 5. <strong>多模态支持</strong>：图像、音频等非文本输入需求
 
+迁移前，请先参考[Claude Code最佳实践指南](/zh/blog/zh/claude-code-best-practices)，确认是否已充分利用Claude Code的全部功能。
+
 ## 核心对比：四种CLI工具
 
 ### 架构对比表
@@ -384,6 +386,8 @@ codex --sandbox read-only "分析安全漏洞"
    - 已建立完善的代理系统
    - 专业化任务分工
    - 复杂的多步骤工作流
+
+Claude Code可实现的5种代理工作流模式，请参阅[Claude Code代理工作流模式指南](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)。
 
 ```bash
 # Claude Code优势示例

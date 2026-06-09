@@ -67,7 +67,7 @@ On September 22, 2025, Google's Chrome DevTools team released <strong>Chrome Dev
 
 ## What is Chrome DevTools MCP?
 
-Chrome DevTools MCP is an official Model Context Protocol server that gives AI coding assistants the ability to control Chrome browsers. Simply put, AI can now use your developer tools directly.
+Chrome DevTools MCP is an official Model Context Protocol server that gives AI coding assistants the ability to control Chrome browsers. Simply put, AI can now use your developer tools directly. For the full MCP open standard ecosystem, see the [MCP Open Standard Complete Guide](/en/blog/en/mcp-open-standard-linux-foundation-engineering-guide).
 
 ### Key Features
 
@@ -547,4 +547,4 @@ Performance optimization is no longer time-consuming manual work. With AI, it be
 
 ---
 
-Hand over your website's performance optimization to AI today. Let data speak, AI analyze, and you focus on what matters most.
+Hand over your website's performance optimization to AI today. Let data speak, AI analyze, and you focus on what matters most. To automate user traffic analysis alongside performance measurement, also see the [Google Analytics MCP Automation Guide](/en/blog/en/google-analytics-mcp-automation).

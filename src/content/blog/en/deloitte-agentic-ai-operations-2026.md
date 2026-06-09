@@ -1,7 +1,5 @@
 ---
-title: >-
-  Deloitte Tech Trends 2026: Agentic AI Operations Framework — Why 89% Never
-  Reach Production
+title: 'Deloitte 2026 Agentic AI: Why 89% Fail and the EM Framework'
 description: >-
   Only 11% of enterprises run Agentic AI in production. The barrier isn't
   technology—it's operational model. Here's the Delegate-Review-Own framework

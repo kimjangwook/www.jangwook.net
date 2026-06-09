@@ -66,7 +66,7 @@ relatedPosts:
 
 ## Chrome DevTools MCP란?
 
-Chrome DevTools MCP는 AI 코딩 어시스턴트에게 Chrome 브라우저를 제어할 수 있는 능력을 제공하는 공식 Model Context Protocol 서버입니다. 간단히 말하면, AI가 여러분의 개발자 도구를 직접 사용할 수 있게 됩니다.
+Chrome DevTools MCP는 AI 코딩 어시스턴트에게 Chrome 브라우저를 제어할 수 있는 능력을 제공하는 공식 Model Context Protocol 서버입니다. 간단히 말하면, AI가 여러분의 개발자 도구를 직접 사용할 수 있게 됩니다. MCP 표준 전체 생태계와 오픈 스탠다드 동향은 [MCP 오픈 스탠다드 완전 가이드](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide)에서 확인하세요.
 
 ### 핵심 기능
 
@@ -534,7 +534,7 @@ Chrome DevTools MCP는 웹 성능 최적화를 추측에서 데이터 기반 과
 4. <strong>최적화 시작</strong>: AI의 제안을 하나씩 적용
 5. <strong>결과 검증</strong>: 개선 사항을 데이터로 확인
 
-성능 최적화는 더 이상 시간이 많이 걸리는 수동 작업이 아닙니다. AI와 함께라면 빠르고, 정확하며, 반복 가능한 프로세스가 됩니다.
+성능 최적화는 더 이상 시간이 많이 걸리는 수동 작업이 아닙니다. AI와 함께라면 빠르고, 정확하며, 반복 가능한 프로세스가 됩니다. 웹 성능 측정과 함께 사용자 트래픽 분석을 자동화하려면 [Google Analytics MCP 자동화 가이드](/ko/blog/ko/google-analytics-mcp-automation)도 참고하세요.
 
 ## 참고 자료
 

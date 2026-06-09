@@ -3406,6 +3406,57 @@
       "added_at": "2026-06-08",
       "status": "queued",
       "notes": "Rolldown은 Rust 기반 Rollup 대체재로 Vite에 통합 예정. 2025년 1%→2026년 10%로 급성장. Vite 98% 만족도와 시너지. 번들 최적화 실전 가이드로 차별화."
+    },
+    {
+      "slug": "drizzle-orm-typescript-complete-guide-2026",
+      "title_idea": "Drizzle ORM TypeScript 완전 가이드 — Prisma 대비 초경량 타입 안전 ORM 실전",
+      "content_type": "how-to",
+      "target_keyword": "Drizzle ORM TypeScript 사용법",
+      "secondary_keywords": [
+        "Drizzle ORM Prisma 비교",
+        "TypeScript ORM 2026",
+        "Drizzle Kit 마이그레이션"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Drizzle ORM이 Star 수 기준 Prisma를 앞질렀으며, 번들 크기 0 런타임·완전 타입 안전·SQLite·D1 네이티브 지원으로 엣지 환경에 유리. How-to 포맷으로 스키마 정의부터 마이그레이션·쿼리·관계까지 커버.",
+      "added_at": "2026-06-09",
+      "status": "queued",
+      "notes": "node-sqlite-builtin-practical-guide와 연계 가능. TypeScript 개발자 독자층 직접 수요."
+    },
+    {
+      "slug": "claude-api-vision-multimodal-image-analysis-guide-2026",
+      "title_idea": "Claude API 비전 완전 가이드 — 이미지·PDF·스크린샷 분석 실전 코드 100% 커버",
+      "content_type": "how-to",
+      "target_keyword": "Claude API 이미지 분석 vision",
+      "secondary_keywords": [
+        "Claude vision API 사용법",
+        "Anthropic multimodal API",
+        "LLM 이미지 입력 처리"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Claude API Tool Use 가이드가 백로그에 있으나 비전/멀티모달은 별개 수요. base64 인코딩·URL 입력·PDF 처리·다중 이미지·스크린샷 분석 등 실전 패턴을 망라하는 How-to 포스트.",
+      "added_at": "2026-06-09",
+      "status": "queued",
+      "notes": "claude-api-prompt-caching-cost-optimization-guide 등 기존 Claude API 시리즈와 자연스러운 내부링크."
+    },
+    {
+      "slug": "effect-ts-functional-typescript-error-handling-2026",
+      "title_idea": "Effect-TS 실전 가이드 — TypeScript에서 Railway-Oriented Programming으로 에러 처리하기",
+      "content_type": "how-to",
+      "target_keyword": "Effect-TS TypeScript 사용법",
+      "secondary_keywords": [
+        "Effect-TS 에러 처리",
+        "TypeScript 함수형 프로그래밍",
+        "Effect pipe 실전"
+      ],
+      "search_intent": "how-to",
+      "priority": 3,
+      "source": "Effect-TS(구 @effect-ts/core)가 2026년 들어 트레이션 급증. try-catch 대신 Either/Option 패턴으로 에러를 타입으로 처리하는 방식이 TypeScript 커뮤니티의 주목을 받고 있음.",
+      "added_at": "2026-06-09",
+      "status": "queued",
+      "notes": "TypeScript 6.0 포스트와 연계 가능한 고급 TypeScript 시리즈 구성."
     }
   ]
 }
