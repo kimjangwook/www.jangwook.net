@@ -257,6 +257,15 @@
 		@apply mb-6;
 	}
 
+	/* 모바일: 넓은 테이블은 컨테이너를 뚫지 않고 내부 가로 스크롤 */
+	@media (max-width: 820px) {
+		article table {
+			display: block;
+			max-width: 100%;
+			overflow-x: auto;
+		}
+	}
+
 	img {
 		@apply max-w-full h-auto;
 		border-radius: 8px;
