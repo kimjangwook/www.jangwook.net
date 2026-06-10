@@ -1,6 +1,8 @@
 ---
 title: NVIDIA DGX Spark的CUDA兼容性问题 — 个人AI工作站的现实
-description: NVIDIA DGX Spark的sm121架构引发大量CUDA软件不兼容。详细分析Triton框架失效、FP4/FP6量化不可用、HDMI故障等实际缺陷以及掌机芯片挪用嫌疑，并提供消费者购买AI工作站前需核实的判断清单与避坑建议。
+description: >-
+  NVIDIA DGX
+  Spark的sm121架构引发大量CUDA软件不兼容。详细分析Triton框架失效、FP4/FP6量化不可用、HDMI故障等实际缺陷以及掌机芯片挪用嫌疑，并提供消费者购买AI工作站前需核实的判断清单与避坑建议。
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-dgx-spark-cuda-compatibility-hero.png
 tags:

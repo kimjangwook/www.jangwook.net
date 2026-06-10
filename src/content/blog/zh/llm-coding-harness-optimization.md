@@ -1,6 +1,8 @@
 ---
 title: LLM编码工具链优化——不换模型，仅改工具链即可提升15个模型性能
-description: 在LLM编码工具中，工具链（编辑格式、工具接口）优化比换模型更有效，可带来5〜14%性能提升。以Grok Code Fast从6.7%跃至68.3%的实际案例为基础，为EM与CTO整理工具链工程实战策略。
+description: >-
+  在LLM编码工具中，工具链（编辑格式、工具接口）优化比换模型更有效，可带来5〜14%性能提升。以Grok Code
+  Fast从6.7%跃至68.3%的实际案例为基础，为EM与CTO整理工具链工程实战策略。
 pubDate: '2026-03-03'
 heroImage: ../../../assets/blog/llm-coding-harness-optimization-hero.jpg
 tags:

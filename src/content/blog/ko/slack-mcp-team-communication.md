@@ -1,6 +1,8 @@
 ---
 title: Slack MCP로 팀 커뮤니케이션 데이터 분석하기
-description: Model Context Protocol(MCP)로 Slack 워크스페이스 데이터를 AI가 직접 분석하는 실전 가이드입니다. 팀 커뮤니케이션 패턴 파악, 핵심 논의 추출, 생산성 지표 측정까지 Claude API와 연동한 단계별 설정 방법과 활용 사례를 소개합니다.
+description: >-
+  Model Context Protocol(MCP)로 Slack 워크스페이스 데이터를 AI가 직접 분석하는 실전 가이드입니다. 팀 커뮤니케이션
+  패턴 파악, 핵심 논의 추출, 생산성 지표 측정까지 Claude API와 연동한 단계별 설정 방법과 활용 사례를 소개합니다.
 pubDate: '2025-11-04'
 heroImage: ../../../assets/blog/slack-mcp-team-communication-hero.jpg
 tags:

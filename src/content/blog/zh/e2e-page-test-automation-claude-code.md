@@ -1,8 +1,8 @@
 ---
 title: 使用 Claude Code 自动化页面 E2E 测试
 description: >-
-  使用 Claude Code 与 Playwright 构建 Web 页面 E2E 测试自动化系统的实战指南。通过单一命令验证跨浏览器兼容性、WCAG 无障碍、
-  SEO 和图片优化等 8 个质量项目，并获取 AI 智能改进建议。
+  使用 Claude Code 与 Playwright 构建 Web 页面 E2E 测试自动化系统的实战指南。通过单一命令验证跨浏览器兼容性、WCAG
+  无障碍、 SEO 和图片优化等 8 个质量项目，并获取 AI 智能改进建议。
 pubDate: '2025-11-25'
 heroImage: ../../../assets/blog/e2e-page-test-automation-claude-code-hero.png
 tags:

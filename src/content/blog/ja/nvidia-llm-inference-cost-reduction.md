@@ -1,6 +1,8 @@
 ---
 title: NVIDIAのNVFP4でLLM推論コスト8分の1に — 精度維持でコスト構造激変
-description: NVIDIAのNVFP4量子化技術がLLM推論コストを8分の1に削減しながら精度を維持する原理を詳しく解説します。RTX 4090でのAdaLLMベンチマーク結果と月次GPU運用コストシミュレーションを活用し、FP32からFP4移行によるコスト削減効果を検証します。
+description: >-
+  NVIDIAのNVFP4量子化技術がLLM推論コストを8分の1に削減しながら精度を維持する原理を詳しく解説します。RTX
+  4090でのAdaLLMベンチマーク結果と月次GPU運用コストシミュレーションを活用し、FP32からFP4移行によるコスト削減効果を検証します。
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-llm-inference-cost-reduction-hero.png
 tags:

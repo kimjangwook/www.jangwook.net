@@ -1,6 +1,8 @@
 ---
 title: 使用Jules实现自动编码：Google自主AI编程代理完全指南
-description: 谷歌自主AI编程代理Jules可在后台自动解决GitHub Issue并生成PR，无需开发者在场。本指南详细讲解Jules与GitHub Copilot、Cursor的区别，分析异步代理执行原理，提供从零开始的实战工作流。
+description: >-
+  谷歌自主AI编程代理Jules可在后台自动解决GitHub Issue并生成PR，无需开发者在场。本指南详细讲解Jules与GitHub
+  Copilot、Cursor的区别，分析异步代理执行原理，提供从零开始的实战工作流。
 pubDate: '2025-10-27'
 heroImage: ../../../assets/blog/jules-autocoding-hero.jpg
 tags:

@@ -1,8 +1,11 @@
 ---
-title: 'FastAPI + Claude API 스트리밍 백엔드 — SSE·재시도·에러 복구 프로덕션 가이드'
-description: 'FastAPI와 Anthropic SDK로 프로덕션 수준의 스트리밍 AI 백엔드를 구축하는 완전 가이드. SSE 스트리밍 엔드포인트, 레이트 리밋 지수 백오프 재시도, 에러 분류 전략, 토큰 스트리밍 최적화, Docker 컨테이너 배포까지 단계별 코드와 함께 정리합니다.'
+title: FastAPI + Claude API 스트리밍 백엔드 — SSE·재시도·에러 복구 프로덕션 가이드
+description: >-
+  FastAPI와 Anthropic SDK로 프로덕션 수준의 스트리밍 AI 백엔드를 구축하는 완전 가이드. SSE 스트리밍 엔드포인트, 레이트
+  리밋 지수 백오프 재시도, 에러 분류 전략, 토큰 스트리밍 최적화, Docker 컨테이너 배포까지 단계별 코드와 함께 정리합니다.
 pubDate: '2026-05-11'
-heroImage: ../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-hero.png
+heroImage: >-
+  ../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-hero.png
 tags:
   - FastAPI
   - Claude API
@@ -10,41 +13,51 @@ tags:
   - 스트리밍
   - AI백엔드
 relatedPosts:
-  - slug: anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026
-    score: 0.91
+  - slug: vertex-ai-search-site-implementation
+    score: 0.95
     reason:
-      ko: Anthropic Python SDK의 스트리밍 API 설계 철학을 이 글과 함께 비교하면 어떤 패턴이 프로덕션에 적합한지 판단하는 데 도움이 됩니다.
-      ja: Anthropic Python SDKのストリーミングAPI設計思想をこの記事と組み合わせると、どのパターンがプロダクションに適しているか判断しやすくなります。
-      en: Comparing the Anthropic Python SDK streaming API design philosophy alongside this guide helps you decide which pattern fits production best.
-      zh: 将Anthropic Python SDK的流式API设计理念与本文结合比较，有助于判断哪种模式最适合生产环境。
-  - slug: claude-api-prompt-caching-cost-optimization-guide
-    score: 0.87
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: effloow-side-project-ai-company
+    score: 0.94
     reason:
-      ko: 스트리밍 API를 쓸 때 프롬프트 캐싱을 함께 적용하면 입력 토큰 비용을 최대 90% 줄일 수 있습니다. 이 글의 다음 단계로 읽기 좋습니다.
-      ja: ストリーミングAPIにプロンプトキャッシュを併用すると入力トークンコストを最大90%削減できます。この記事の次のステップとして読むのに適しています。
-      en: Applying prompt caching alongside the streaming API can cut input token costs by up to 90%. A natural next read after this guide.
-      zh: 将提示词缓存与流式API结合使用，可将输入令牌成本降低高达90%。读完本文后的自然延伸阅读。
-  - slug: anthropic-message-batches-api-production-guide
-    score: 0.83
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: adding-chinese-support
+    score: 0.94
     reason:
-      ko: 스트리밍이 필요 없는 대량 처리 시나리오라면 Batch API가 훨씬 저렴합니다. 이 글과 쌍으로 읽으면 어떤 API를 선택할지 기준이 생깁니다.
-      ja: ストリーミングが不要な大量処理シナリオではBatch APIの方がはるかに安価です。この記事とセットで読むとAPIの選択基準が明確になります。
-      en: For bulk processing where streaming isn't needed, Batch API is far cheaper. Read alongside this guide to know which API to pick.
-      zh: 对于不需要流式传输的批量处理场景，Batch API要便宜得多。与本文配合阅读，可以明确API选择标准。
-  - slug: vercel-ai-sdk-claude-streaming-agent-2026
-    score: 0.79
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: agent-effi-flow-pivot-omotenashi-bot
+    score: 0.94
     reason:
-      ko: 프론트엔드에서 직접 Claude 스트리밍을 연동하고 싶다면 Vercel AI SDK 방식도 있습니다. 백엔드(FastAPI)와 프론트엔드(Next.js) 각각 어떻게 다른지 비교해볼 수 있습니다.
-      ja: フロントエンドから直接Claudeストリーミングを連携したい場合はVercel AI SDK方式もあります。バックエンド(FastAPI)とフロントエンド(Next.js)でどう違うか比較できます。
-      en: If you want to wire Claude streaming directly from the frontend, the Vercel AI SDK approach is an option. Compare how backend (FastAPI) and frontend (Next.js) differ.
-      zh: 如果想从前端直接集成Claude流式传输，还有Vercel AI SDK方式可选。可以比较后端(FastAPI)和前端(Next.js)各自的差异。
-  - slug: uv-python-ai-development-setup-guide-2026
-    score: 0.75
+      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: n8n-rss-automation
+    score: 0.94
     reason:
-      ko: FastAPI 프로젝트를 시작하기 전에 uv로 Python 환경을 구성하면 의존성 충돌 없이 빠르게 셋업됩니다. 선행 읽기 추천.
-      ja: FastAPIプロジェクトを始める前にuvでPython環境を構築しておくと、依存関係の競合なく素早くセットアップできます。事前読み推奨。
-      en: Setting up your Python environment with uv before starting a FastAPI project avoids dependency conflicts and speeds up setup. Recommended prerequisite reading.
-      zh: 在开始FastAPI项目前使用uv配置Python环境，可以避免依赖冲突并加快设置速度。推荐预先阅读。
+      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, AI/ML, DevOps,
+        architecture with comparable difficulty.
+      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 AI 백엔드를 구축하다 보면 결국 하나의 질문에 부딪힌다. "응답이 다 생성될 때까지 사용자를 기다리게 해도 괜찮을까?" 답은 대부분 "아니오"다. 특히 Claude 같은 언어 모델이 긴 텍스트를 생성할 때, 전체를 기다렸다가 한 번에 내려주는 방식은 UX를 죽인다.

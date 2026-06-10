@@ -1,6 +1,8 @@
 ---
 title: BarraCUDA — 在AMD GPU上运行CUDA代码的开源编译器
-description: 深度解析BarraCUDA开源编译器，无需LLVM或HIP转换层，即可将CUDA .cu源码直接编译为AMD RDNA3 GPU机器码。本文完整涵盖其15,000行C99实现的架构原理、所支持的CUDA功能清单，以及对打破NVIDIA GPU市场垄断格局的重要意义。
+description: >-
+  深度解析BarraCUDA开源编译器，无需LLVM或HIP转换层，即可将CUDA .cu源码直接编译为AMD RDNA3
+  GPU机器码。本文完整涵盖其15,000行C99实现的架构原理、所支持的CUDA功能清单，以及对打破NVIDIA GPU市场垄断格局的重要意义。
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/barracuda-cuda-amd-compiler-hero.png
 tags:

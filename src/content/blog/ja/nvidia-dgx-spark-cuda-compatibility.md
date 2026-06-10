@@ -1,6 +1,8 @@
 ---
 title: NVIDIA DGX SparkのCUDA互換性問題 — 個人向けAIワークステーションの現実
-description: NVIDIA DGX Sparkのsm121アーキテクチャが引き起こしたCUDAソフトウェア互換性問題と、ハンドヘルドゲーミングチップ流用疑惑を詳しく分析します。Triton非対応、FP4/FP6量子化不可など報告された問題点を整理し、購入前に確認すべき実践的なチェックリストをまとめます。
+description: >-
+  NVIDIA DGX
+  Sparkのsm121アーキテクチャが引き起こしたCUDAソフトウェア互換性問題と、ハンドヘルドゲーミングチップ流用疑惑を詳しく分析します。Triton非対応、FP4/FP6量子化不可など報告された問題点を整理し、購入前に確認すべき実践的なチェックリストをまとめます。
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-dgx-spark-cuda-compatibility-hero.png
 tags:

@@ -1,6 +1,7 @@
 ---
 title: 'レコメンデーションシステム革新：78,000トークンをゼロにしたメタデータ最適化の旅'
-description: コンテンツ推薦システムのトークン使用量を100%削減し、実行時間を99%短縮したメタデータ最適化の実践事例。post-metadata.jsonキャッシュとハッシュ比較による増分処理でコストを大幅削減した全工程を解説します。
+description: >-
+  コンテンツ推薦システムのトークン使用量を100%削減し、実行時間を99%短縮したメタデータ最適化の実践事例。post-metadata.jsonキャッシュとハッシュ比較による増分処理でコストを大幅削減した全工程を解説します。
 pubDate: '2025-10-18'
 heroImage: ../../../assets/blog/metadata-based-recommendation-optimization-hero.jpg
 tags:

@@ -1,6 +1,8 @@
 ---
 title: DeepSeek V4即将发布 — 中国AI下一代模型竞争加速
-description: 'DeepSeek V4发布在即，Qwen3.5、GLM-5等中国AI企业的模型大战持续升温。本文深入分析相比DeepSeek-R1的推理性能提升与编程基准改进，并探讨开源LLM逼近GPT-4级性能背景下全球AI竞争格局的深层变化。'
+description: >-
+  DeepSeek
+  V4发布在即，Qwen3.5、GLM-5等中国AI企业的模型大战持续升温。本文深入分析相比DeepSeek-R1的推理性能提升与编程基准改进，并探讨开源LLM逼近GPT-4级性能背景下全球AI竞争格局的深层变化。
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/deepseek-v4-release-hero.png
 tags:

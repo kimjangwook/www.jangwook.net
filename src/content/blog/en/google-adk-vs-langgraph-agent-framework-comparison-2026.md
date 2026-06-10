@@ -1,6 +1,9 @@
 ---
 title: 'Google ADK vs LangGraph 2026: I Installed Both and Compared Them Side by Side'
-description: 'Google ADK vs LangGraph in 2026: sandbox comparison of code, deps, state management, branching, and CLI. Pick the right AI agent framework for your use case.'
+description: >-
+  Google ADK vs LangGraph in 2026: sandbox comparison of code, deps, state
+  management, branching, and CLI. Pick the right AI agent framework for your use
+  case.
 pubDate: '2026-05-04'
 heroImage: ../../../assets/blog/google-adk-vs-langgraph-hero.png
 tags:

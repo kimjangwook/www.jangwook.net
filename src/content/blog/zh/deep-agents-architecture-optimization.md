@@ -1,6 +1,8 @@
 ---
 title: 使用Deep Agents范式优化AI代理系统
-description: '深入解析Deep Agents范式的显式规划、层级委托、持久记忆与自动错误恢复四大核心支柱。将LangChain与Philipp Schmid设计原则落地到.claude/目录结构优化，手把手演示如何将普通AI代理升级为真正可靠的代理2.0系统，附完整架构实现代码与详细实践案例，帮助开发者快速落地。'
+description: >-
+  深入解析Deep Agents范式的显式规划、层级委托、持久记忆与自动错误恢复四大核心支柱。将LangChain与Philipp
+  Schmid设计原则落地到.claude/目录结构优化，手把手演示如何将普通AI代理升级为真正可靠的代理2.0系统，附完整架构实现代码与详细实践案例，帮助开发者快速落地。
 pubDate: '2025-11-22'
 heroImage: ../../../assets/blog/deep-agents-architecture-optimization-hero.jpg
 tags:

@@ -1,6 +1,7 @@
 ---
 title: OpenClaw E2E测试自动化：浏览器·设备·定时任务集成指南
-description: 利用AI代理平台OpenClaw的浏览器自动化、节点设备管理、定时调度构建自然语言E2E测试的完整指南。无需CSS选择器，通过无障碍树实现自愈型测试，详解多代理编排和跨平台设备集成测试方案。
+description: >-
+  利用AI代理平台OpenClaw的浏览器自动化、节点设备管理、定时调度构建自然语言E2E测试的完整指南。无需CSS选择器，通过无障碍树实现自愈型测试，详解多代理编排和跨平台设备集成测试方案。
 pubDate: '2026-02-08'
 heroImage: ../../../assets/blog/openclaw-e2e-test-automation-guide-hero.png
 tags:

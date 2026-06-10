@@ -1,8 +1,8 @@
 ---
 title: Claude Code 最佳实践：开发生产力革命指南
 description: >-
-  基于 Anthropic 官方最佳实践深度优化 Claude Code 的实战指南。系统讲解 CLAUDE.md 配置、Explore→Plan→Code→Commit
-  工作流和子代理架构，真实项目结果：错误率降低 40%，任务时间缩短 30%。
+  基于 Anthropic 官方最佳实践深度优化 Claude Code 的实战指南。系统讲解 CLAUDE.md
+  配置、Explore→Plan→Code→Commit 工作流和子代理架构，真实项目结果：错误率降低 40%，任务时间缩短 30%。
 pubDate: '2025-10-07'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
 tags:

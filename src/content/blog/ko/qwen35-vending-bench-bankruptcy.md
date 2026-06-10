@@ -1,6 +1,9 @@
 ---
 title: Qwen 3.5가 Vending-Bench 2에서 파산 — 벤치마크 편중의 함정
-description: 표준 벤치마크 최상위권인 Qwen 3.5가 자판기 경영 시뮬레이션 Vending-Bench 2에서 파산 판정을 받았습니다. MMLU·HumanEval 편중 훈련이 실제 의사결정과 장기 계획 능력 평가에서 만들어내는 구조적 맹점을 벤치마크 결과 데이터와 함께 분석합니다.
+description: >-
+  표준 벤치마크 최상위권인 Qwen 3.5가 자판기 경영 시뮬레이션 Vending-Bench 2에서 파산 판정을 받았습니다.
+  MMLU·HumanEval 편중 훈련이 실제 의사결정과 장기 계획 능력 평가에서 만들어내는 구조적 맹점을 벤치마크 결과 데이터와 함께
+  분석합니다.
 pubDate: '2026-02-17'
 heroImage: ../../../assets/blog/qwen35-vending-bench-bankruptcy-hero.png
 tags:

@@ -1,6 +1,9 @@
 ---
 title: 'EffiFlow Part 3: 38분 만에 달성한 실전 개선 - 안정성 99%와 완성도 100%'
-description: 'Claude Code 자동화 시스템의 Quick Win 3가지를 38분 만에 모두 실행한 실전 기록. 빈 Skills 제거를 시작으로 완성도 100%, 안정성 99%에 도달하는 구체적 방법과 ROI, 어떤 자동화 프로젝트에도 바로 적용 가능한 점진적 개선 패턴을 단계별로 공개합니다.'
+description: >-
+  Claude Code 자동화 시스템의 Quick Win 3가지를 38분 만에 모두 실행한 실전 기록. 빈 Skills 제거를 시작으로 완성도
+  100%, 안정성 99%에 도달하는 구체적 방법과 ROI, 어떤 자동화 프로젝트에도 바로 적용 가능한 점진적 개선 패턴을 단계별로
+  공개합니다.
 pubDate: '2025-11-16'
 heroImage: ../../../assets/blog/effiflow-part3-quick-wins-hero.jpg
 tags:

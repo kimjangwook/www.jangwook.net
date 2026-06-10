@@ -1,38 +1,60 @@
 ---
-title: 'Deno 2 vs Bun 1.3 — 2026年Node.js替代运行时实战对比：TypeScript、速度与安全'
-description: '我实际安装了Deno 2.8.2和Bun 1.3.14，测量了启动时间、HTTP吞吐量、npm兼容性和安全模型。这是我会在哪种场景下选择哪个的具体结论。'
+title: Deno 2 vs Bun 1.3 — 2026年Node.js替代运行时实战对比：TypeScript、速度与安全
+description: 我实际安装了Deno 2.8.2和Bun 1.3.14，测量了启动时间、HTTP吞吐量、npm兼容性和安全模型。这是我会在哪种场景下选择哪个的具体结论。
 pubDate: '2026-06-04'
-heroImage: '../../../assets/blog/deno-2-vs-bun-nodejs-runtime-2026-comparison-hero.png'
-tags: ['Deno', 'Bun', 'TypeScript', 'Node.js', '运行时对比']
+heroImage: ../../../assets/blog/deno-2-vs-bun-nodejs-runtime-2026-comparison-hero.png
+tags:
+  - Deno
+  - Bun
+  - TypeScript
+  - Node.js
+  - 运行时对比
 relatedPosts:
-  - slug: 'bun-shell-scripting-practical-guide-2026'
-    score: 0.92
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.95
     reason:
-      ko: 'Bun의 전체 그림이 궁금해졌다면, Bun Shell의 $`` 템플릿 리터럴로 TypeScript 자동화 스크립트를 만드는 법을 이 글에서 깊게 다뤘다.'
-      ja: 'Bunの全体像が気になったなら、BunShellの$``テンプレートリテラルでTypeScript自動化スクリプトを作る方法をこの記事で詳しく扱っている。'
-      en: 'If you want to go deeper on Bun, this post covers Bun Shell scripting with the $`` template literal — a practical guide with real output logs.'
-      zh: '如果你想深入了解Bun，这篇文章详细介绍了使用$``模板字面量编写Bun Shell TypeScript自动化脚本的方法。'
-  - slug: 'hono-typescript-api-2026'
+      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, DevOps with comparable
+        difficulty.
+      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
+  - slug: adsense-low-value-content-technical-fix
+    score: 0.93
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
+  - slug: bun-shell-scripting-practical-guide-2026
     score: 0.88
     reason:
-      ko: 'Deno와 Bun 모두 Hono.js와 궁합이 좋다. 어느 런타임을 선택하든 Hono로 엣지 API를 만드는 실전 패턴이 그대로 적용된다.'
-      ja: 'DenoもBunもHono.jsと相性が良い。どのランタイムを選んでも、HonoでエッジAPIを作る実践パターンはそのまま使える。'
-      en: 'Both Deno and Bun work great with Hono.js. Whichever runtime you pick, the edge API patterns from this post apply directly.'
-      zh: 'Deno和Bun都与Hono.js配合良好。无论选择哪个运行时，这篇文章中的边缘API实践模式都直接适用。'
-  - slug: 'vitest-4-jest-migration-guide-2026'
-    score: 0.72
+      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, DevOps with comparable
+        difficulty.
+      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
+  - slug: astro-scheduled-publishing
+    score: 0.87
     reason:
-      ko: 'Bun은 bun test라는 자체 테스트 러너가 있고, Deno는 deno test를 내장한다. TypeScript 테스트 생태계 전환을 고려하고 있다면 이 글도 참고할 만하다.'
-      ja: 'Bunはbun testというテストランナーを内蔵し、Denodeno testを持っている。TypeScriptテスト移行を検討しているならこの記事も参考になる。'
-      en: 'Bun ships with bun test, Deno with deno test. If you are considering a TypeScript test ecosystem switch, this migration guide is worth a read.'
-      zh: 'Bun内置bun test，Deno内置deno test。如果你在考虑TypeScript测试生态系统的迁移，这篇迁移指南值得参考。'
-  - slug: 'uv-python-ai-development-setup-guide-2026'
-    score: 0.65
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
+  - slug: chrome-devtools-mcp-performance
+    score: 0.87
     reason:
-      ko: '"개발 도구 하나가 패키지 매니저, 런타임, 테스트 러너를 통합한다"는 흐름은 Bun과 uv가 공유하는 설계 철학이다. Python 진영의 같은 움직임이 궁금하다면 읽어볼 만하다.'
-      ja: '「開発ツール一つがパッケージマネージャー、ランタイム、テストランナーを統合する」という流れはBunとuvが共有する設計哲学だ。Python陣営の同じ動きが気になるなら読む価値がある。'
-      en: 'The idea of one tool unifying package manager, runtime, and test runner is a design philosophy shared by both Bun and uv. If you are curious about the same trend in Python, this post is the answer.'
-      zh: '"一个工具统一包管理器、运行时和测试运行器"这一趋势是Bun和uv共享的设计哲学。如果你对Python领域的同样趋势感到好奇，这篇文章能给你答案。'
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
 ---
 
 2026年中期，JavaScript运行时的选择实际上缩减到了三个：Node.js、Bun、Deno。说实话，坚持使用Node.js的理由越来越少了。真正的问题是在Bun和Deno之间做选择。

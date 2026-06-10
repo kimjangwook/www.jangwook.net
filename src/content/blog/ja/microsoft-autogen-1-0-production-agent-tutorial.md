@@ -1,48 +1,58 @@
 ---
-title: 'AutoGen 0.7.x マルチエージェント実践 — AssistantAgent·GraphFlow一から構築'
-description: 'AutoGen 0.7.xの新APIでマルチエージェントシステムを一から実装する実践ガイド。RoundRobinGroupChat、SelectorGroupChat、GraphFlow、FunctionToolを実際にコードで動かしながら0.2.xとの違いを比較する。'
+title: AutoGen 0.7.x マルチエージェント実践 — AssistantAgent·GraphFlow一から構築
+description: >-
+  AutoGen
+  0.7.xの新APIでマルチエージェントシステムを一から実装する実践ガイド。RoundRobinGroupChat、SelectorGroupChat、GraphFlow、FunctionToolを実際にコードで動かしながら0.2.xとの違いを比較する。
 pubDate: '2026-05-19'
-heroImage: '../../../assets/blog/microsoft-autogen-1-0-production-agent-tutorial-hero.png'
+heroImage: ../../../assets/blog/microsoft-autogen-1-0-production-agent-tutorial-hero.png
 tags:
   - autogen
   - multi-agent
   - python
 relatedPosts:
+  - slug: sqlite-ai-swarm-build
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: nist-ai-agent-security-standards
+    score: 0.95
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: adl-agent-definition-language-governance
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: google-adk-vs-langgraph-agent-framework-comparison-2026
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
   - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
-    score: 0.91
+    score: 0.94
     reason:
-      ko: AutoGen 0.7.x 아키텍처가 왜 LangGraph나 Dapr와 다른 접근을 택했는지 비교하면 더 명확해진다.
-      ja: AutoGen 0.7.xのアーキテクチャがLangGraphやDaprと異なるアプローチを取った理由を比較するとより明確になる。
-      en: Comparing why AutoGen 0.7.x chose a different approach from LangGraph or Dapr makes the design clearer.
-      zh: 比较AutoGen 0.7.x为何选择与LangGraph或Dapr不同的方案，能让设计意图更清晰。
-  - slug: python-ai-agent-library-comparison-2026
-    score: 0.88
-    reason:
-      ko: PydanticAI, Smolagents 등 다른 Python 에이전트 라이브러리와의 생태계 포지션을 파악하는 데 도움이 된다.
-      ja: PydanticAIやSmolagentsなど他のPythonエージェントライブラリとのエコシステムポジションを把握するのに役立つ。
-      en: Useful for understanding AutoGen's ecosystem position alongside PydanticAI, Smolagents, and other Python agent libraries.
-      zh: 有助于了解AutoGen在PydanticAI、Smolagents等Python智能体库生态中的定位。
-  - slug: claude-agent-sdk-subagents-orchestration-tutorial-2026
-    score: 0.85
-    reason:
-      ko: Claude Agent SDK의 서브에이전트 오케스트레이션과 AutoGen의 팀 기반 오케스트레이션을 비교해보면 각 방식의 트레이드오프가 잘 보인다.
-      ja: Claude Agent SDKのサブエージェントオーケストレーションとAutoGenのチームベースオーケストレーションを比較すると各方式のトレードオフがよく見える。
-      en: Comparing Claude Agent SDK subagent orchestration with AutoGen's team-based approach makes the trade-offs of each model visible.
-      zh: 对比Claude Agent SDK的子智能体编排与AutoGen的团队编排方式，能清晰看出各方案的权衡。
-  - slug: pydantic-ai-type-safe-agent-tutorial-2026
-    score: 0.82
-    reason:
-      ko: PydanticAI와 AutoGen은 둘 다 Python 에이전트 프레임워크지만 설계 철학이 정반대다. 두 튜토리얼을 비교하면 자신에게 맞는 스택을 고르는 데 유리하다.
-      ja: PydanticAIとAutoGenはどちらもPythonエージェントフレームワークだが設計哲学が正反対だ。両方のチュートリアルを比較すると自分に合ったスタックを選ぶのに有利だ。
-      en: PydanticAI and AutoGen are both Python agent frameworks but with opposite design philosophies. Comparing both tutorials helps you choose the right stack.
-      zh: PydanticAI与AutoGen都是Python智能体框架，但设计哲学截然相反。对比两个教程有助于选择适合自己的技术栈。
-  - slug: dapr-agents-v1-cncf-production-ai-framework
-    score: 0.78
-    reason:
-      ko: Dapr Agents가 Kubernetes 수준의 인프라 내구성을 노렸다면, AutoGen은 에이전트 간 협업 프로토콜을 먼저 잡는 방향이다. 두 접근을 함께 보면 "에이전트 오케스트레이션" 전체 그림이 나온다.
-      ja: Dapr AgentsがKubernetesレベルのインフラ耐久性を狙ったとすれば、AutoGenはエージェント間の協調プロトコルを先に固める方向だ。両方を合わせて見ると「エージェントオーケストレーション」全体像が見える。
-      en: If Dapr Agents targets Kubernetes-level infrastructure durability, AutoGen focuses first on inter-agent collaboration protocols. Together they paint the full picture of agent orchestration.
-      zh: 如果说Dapr Agents瞄准Kubernetes级别的基础设施持久性，那么AutoGen则优先建立智能体间的协作协议。两者结合看能看清"智能体编排"的全貌。
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 マルチエージェントフレームワークを初めて使おうとしたとき、AutoGen 0.2.xの例コードと0.4.xの例コードが同じGoogle検索結果に混在していてかなり混乱した。`llm_config={"model": "gpt-4"}` で設定するコードもあれば、`model_client=OpenAIChatCompletionClient(...)` 方式もある。この2つのコードが動くAutoGenバージョンはまったく異なる。

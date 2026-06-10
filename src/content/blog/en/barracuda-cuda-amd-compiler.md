@@ -1,6 +1,9 @@
 ---
 title: 'BarraCUDA: Open-Source Compiler Running CUDA on AMD GPUs'
-description: 'BarraCUDA compiles CUDA to AMD GPU binary — no LLVM or HIP. 15,000 lines of C99 cover shared memory, atomics, warp intrinsics. A direct challenge to NVIDIA GPU vendor lock-in.'
+description: >-
+  BarraCUDA compiles CUDA to AMD GPU binary — no LLVM or HIP. 15,000 lines of
+  C99 cover shared memory, atomics, warp intrinsics. A direct challenge to
+  NVIDIA GPU vendor lock-in.
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/barracuda-cuda-amd-compiler-hero.png
 tags:

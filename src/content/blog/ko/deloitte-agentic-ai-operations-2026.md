@@ -1,6 +1,9 @@
 ---
-title: 'Deloitte 2026 Agentic AI 운영 전략 — 89% 실패 원인과 EM 프레임워크'
-description: 'Deloitte Tech Trends 2026 보고서가 밝힌 사실 — 전 세계 기업 11%만 Agentic AI를 프로덕션에서 운영 중입니다. 89%가 실패하는 원인은 기술이 아닌 운영 모델. EM·VPoE가 즉시 쓸 수 있는 Delegate·Review·Own 프레임워크를 소개합니다.'
+title: Deloitte 2026 Agentic AI 운영 전략 — 89% 실패 원인과 EM 프레임워크
+description: >-
+  Deloitte Tech Trends 2026 보고서가 밝힌 사실 — 전 세계 기업 11%만 Agentic AI를 프로덕션에서 운영
+  중입니다. 89%가 실패하는 원인은 기술이 아닌 운영 모델. EM·VPoE가 즉시 쓸 수 있는 Delegate·Review·Own
+  프레임워크를 소개합니다.
 pubDate: '2026-03-08'
 heroImage: ../../../assets/blog/deloitte-agentic-ai-operations-2026-hero.jpg
 tags:

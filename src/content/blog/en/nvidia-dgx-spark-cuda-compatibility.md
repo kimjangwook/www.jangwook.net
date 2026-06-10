@@ -2,7 +2,10 @@
 title: >-
   NVIDIA DGX Spark CUDA Compatibility Issues — The Reality of Personal AI
   Workstations
-description: NVIDIA DGX Spark sm121 CUDA failures analyzed — Triton breakage, FP4/FP6 missing, handheld chip allegations, and a buyer checklist for AI workstation shoppers.
+description: >-
+  NVIDIA DGX Spark sm121 CUDA failures analyzed — Triton breakage, FP4/FP6
+  missing, handheld chip allegations, and a buyer checklist for AI workstation
+  shoppers.
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-dgx-spark-cuda-compatibility-hero.png
 tags:

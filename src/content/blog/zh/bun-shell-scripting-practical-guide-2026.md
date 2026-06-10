@@ -1,38 +1,59 @@
 ---
-title: '用Bun Shell构建TypeScript自动化脚本 — 从安装到实战模式'
-description: '基于Bun 1.3.14实际实验的Bun Shell完整指南。涵盖$模板字面量、.nothrow()错误处理、Promise.all并行化及macOS echo陷阱，附真实执行日志。还包含与zx的实质差异及生产环境部署的注意事项。'
+title: 用Bun Shell构建TypeScript自动化脚本 — 从安装到实战模式
+description: >-
+  基于Bun 1.3.14实际实验的Bun Shell完整指南。涵盖$模板字面量、.nothrow()错误处理、Promise.all并行化及macOS
+  echo陷阱，附真实执行日志。还包含与zx的实质差异及生产环境部署的注意事项。
 pubDate: '2026-05-25'
-heroImage: '../../../assets/blog/bun-shell-scripting-practical-guide-2026-hero.png'
-tags: ['Bun', 'TypeScript', '自动化', 'Shell']
+heroImage: ../../../assets/blog/bun-shell-scripting-practical-guide-2026-hero.png
+tags:
+  - Bun
+  - TypeScript
+  - 自动化
+  - Shell
 relatedPosts:
-  - slug: 'uv-python-ai-development-setup-guide-2026'
-    score: 0.78
+  - slug: weekly-analytics-2025-10-14
+    score: 0.93
     reason:
-      ko: 'Bun이 Node.js 생태계를 하나로 합치려는 것처럼, uv도 Python 패키지 관리를 단일 도구로 통합한다. "왜 이 도구가 이렇게 설계됐나"라는 질문에 두 글이 함께 답한다.'
-      ja: 'BunがNode.jsエコシステムを統合しようとするように、uvもPythonパッケージ管理を一元化する。両記事を読むと「このツールはなぜこう設計されたのか」という問いへの答えが見えてくる。'
-      en: 'Just as Bun unifies the Node.js ecosystem into one tool, uv does the same for Python. Reading both answers the question: why are modern dev tools designed this way?'
-      zh: '就像Bun试图统一Node.js生态系统一样，uv也在统一Python包管理。两篇文章一起阅读，能回答"为什么现代开发工具要这样设计"这个问题。'
-  - slug: 'github-actions-claude-code-ci-automation'
-    score: 0.74
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: astro-scheduled-publishing
+    score: 0.92
     reason:
-      ko: 'Bun Shell로 로컬 자동화 스크립트를 만들었다면, 그 스크립트를 GitHub Actions와 연결하는 방법이 자연스러운 다음 단계다.'
-      ja: 'Bun Shellでローカル自動化スクリプトを書いたなら、それをGitHub Actionsと連携させるのが次のステップだ。この記事がその橋渡しをしてくれる。'
-      en: 'If you built a local automation script with Bun Shell, connecting it to GitHub Actions is the natural next step — this post shows how.'
-      zh: '用Bun Shell编写了本地自动化脚本之后，将其与GitHub Actions集成是很自然的下一步。'
-  - slug: 'claude-code-hooks-workflow'
-    score: 0.70
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
+  - slug: blog-launch-analysis-report
+    score: 0.91
     reason:
-      ko: 'Claude Code 훅도 셸 명령을 실행하는 구조다. Bun Shell 스크립트와 Claude Code 훅을 조합하면 개발 워크플로 자동화의 폭이 넓어진다.'
-      ja: 'Claude CodeのフックもシェルコマンドをトリガーするUIだ。Bun Shellスクリプトと組み合わせると、開発ワークフロー自動化の幅が広がる。'
-      en: 'Claude Code hooks also execute shell commands — combining Bun Shell scripts with hooks unlocks a wider range of dev workflow automation.'
-      zh: 'Claude Code hooks也是执行shell命令的结构。将Bun Shell脚本与Claude Code hooks结合使用，可以扩大开发工作流自动化的范围。'
-  - slug: 'nextjs-16-claude-api-streaming-guide-2026'
-    score: 0.62
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
+  - slug: chrome-devtools-mcp-performance
+    score: 0.91
     reason:
-      ko: 'Bun을 패키지 매니저로 사용하는 Next.js 프로젝트에서 Claude API를 연동하는 실제 예제가 궁금하다면 이 글을 함께 참고하자.'
-      ja: 'BunをパッケージマネージャーとするNext.jsプロジェクトでClaude APIを連携する実例が気になる場合は、この記事も一緒に参照してほしい。'
-      en: 'If you want a real example of using Bun as a package manager in a Next.js project with Claude API, this companion post has you covered.'
-      zh: '如果你想看在Next.js项目中使用Bun作为包管理器并集成Claude API的实际示例，可以参考这篇文章。'
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
+  - slug: claude-code-web-automation
+    score: 0.91
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, web development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
 ---
 
 写shell脚本的时候，我总有个小烦恼。用bash写虽然熟悉但在Windows上会出问题。Node.js的`child_process`写起来回调满天飞。用`zx`又需要额外安装包。就在这时我试了试Bun Shell，起初以为不过是个zx的翻版，真正跑起来之后，想法有些改变了。

@@ -1,6 +1,8 @@
 ---
 title: Meta AIのエージェントプラットフォーム化 — Sierra・Avocado・Big Brain
-description: 'MetaがソーシャルプラットフォームからAIエージェント企業へと転換しています。Sierraパートナーシップ、独自モデルAvocado、高度推論エンジンBig Brainの技術的意義と開発者生態系への影響を分析します。'
+description: >-
+  MetaがソーシャルプラットフォームからAIエージェント企業へと転換しています。Sierraパートナーシップ、独自モデルAvocado、高度推論エンジンBig
+  Brainの技術的意義と開発者生態系への影響を分析します。
 pubDate: '2026-02-10'
 heroImage: ../../../assets/blog/meta-ai-agent-platform-sierra-avocado-hero.png
 tags:

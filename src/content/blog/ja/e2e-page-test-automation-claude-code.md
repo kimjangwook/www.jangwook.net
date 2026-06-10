@@ -1,7 +1,8 @@
 ---
 title: Claude Codeでページ E2E テストを自動化する
 description: >-
-  Claude CodeとPlaywrightを使ったWebページE2Eテスト自動化システム構築ガイド。単一コマンドでクロスブラウザ、WCAGアクセシビリティ、
+  Claude
+  CodeとPlaywrightを使ったWebページE2Eテスト自動化システム構築ガイド。単一コマンドでクロスブラウザ、WCAGアクセシビリティ、
   SEO、画像最適化など8項目を自動検証しAI改善提案を受け取れます。
 pubDate: '2025-11-25'
 heroImage: ../../../assets/blog/e2e-page-test-automation-claude-code-hero.png

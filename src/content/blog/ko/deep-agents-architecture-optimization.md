@@ -1,6 +1,8 @@
 ---
 title: Deep Agents 패러다임으로 AI 에이전트 시스템 최적화하기
-description: 'Deep Agents 패러다임을 활용하면 100+ 스텝의 장기 태스크 실행과 자동 복구가 가능한 AI 에이전트 2.0을 구현할 수 있습니다. LangChain·Philipp Schmid의 4가지 핵심 설계 원칙을 .claude/ 아키텍처에 적용한 실전 최적화 가이드입니다.'
+description: >-
+  Deep Agents 패러다임을 활용하면 100+ 스텝의 장기 태스크 실행과 자동 복구가 가능한 AI 에이전트 2.0을 구현할 수 있습니다.
+  LangChain·Philipp Schmid의 4가지 핵심 설계 원칙을 .claude/ 아키텍처에 적용한 실전 최적화 가이드입니다.
 pubDate: '2025-11-22'
 heroImage: ../../../assets/blog/deep-agents-architecture-optimization-hero.jpg
 tags:

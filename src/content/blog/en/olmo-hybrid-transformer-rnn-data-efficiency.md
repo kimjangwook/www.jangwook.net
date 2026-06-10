@@ -4,7 +4,8 @@ title: >-
   Hybrid
 description: >-
   AI2's Olmo Hybrid pairs Transformer and DeltaNet in a 3:1 mix for 49% token
-  savings at equal accuracy. Architecture deep-dive and LLM engineering implications.
+  savings at equal accuracy. Architecture deep-dive and LLM engineering
+  implications.
 pubDate: '2026-03-07'
 heroImage: ../../../assets/blog/olmo-hybrid-transformer-rnn-data-efficiency-hero.jpg
 tags:

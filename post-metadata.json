@@ -2757,5 +2757,16 @@
       "devops": 0.6,
       "architecture": 0.5
     }
+  },
+  "drizzle-orm-typescript-complete-guide-2026": {
+    "pubDate": "2026-06-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.85,
+      "ai-ml": 0.1,
+      "devops": 0.3,
+      "architecture": 0.65
+    }
   }
 }

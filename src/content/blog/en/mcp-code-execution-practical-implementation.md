@@ -1,6 +1,9 @@
 ---
 title: 'MCP Code Execution in Practice: Improving Claude Code Project Structure'
-description: 'Apply MCP Code Execution patterns to reduce Claude Code token usage by 98.7% and boost speed by 60%. Step-by-step guide with .claude/ directory structure examples.'
+description: >-
+  Apply MCP Code Execution patterns to reduce Claude Code token usage by 98.7%
+  and boost speed by 60%. Step-by-step guide with .claude/ directory structure
+  examples.
 pubDate: '2025-11-19'
 heroImage: ../../../assets/blog/mcp-code-execution-practical-implementation-hero.jpg
 tags:

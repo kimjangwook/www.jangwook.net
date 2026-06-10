@@ -1,6 +1,9 @@
 ---
 title: 'Data-Driven Product Decisions: Analytics Framework for PMs'
-description: 'PM guide to data-driven product decisions: DAU/MAU metrics, RICE scoring, and A/B testing. SQL query templates and case studies from Netflix, Spotify, Amazon.'
+description: >-
+  PM guide to data-driven product decisions: DAU/MAU metrics, RICE scoring, and
+  A/B testing. SQL query templates and case studies from Netflix, Spotify,
+  Amazon.
 pubDate: '2025-11-05'
 heroImage: ../../../assets/blog/data-driven-pm-framework-hero.jpg
 tags:

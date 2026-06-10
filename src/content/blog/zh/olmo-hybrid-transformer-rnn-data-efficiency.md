@@ -1,7 +1,8 @@
 ---
 title: Olmo Hybrid——Transformer + Linear RNN 混合架构实现2倍数据效率
 description: >-
-  AI2的Olmo Hybrid将Transformer与DeltaNet以3:1的比例结合，仅用49%更少的token量达到同等精度，数据效率提升2倍。深入分析混合LLM架构的设计原理、性能基准测试，以及对LLM工程师的实务启示。
+  AI2的Olmo
+  Hybrid将Transformer与DeltaNet以3:1的比例结合，仅用49%更少的token量达到同等精度，数据效率提升2倍。深入分析混合LLM架构的设计原理、性能基准测试，以及对LLM工程师的实务启示。
 pubDate: '2026-03-07'
 heroImage: ../../../assets/blog/olmo-hybrid-transformer-rnn-data-efficiency-hero.jpg
 tags:

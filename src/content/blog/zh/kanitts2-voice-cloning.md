@@ -1,6 +1,8 @@
 ---
 title: KaniTTS2 — 仅需3GB VRAM即可实现语音克隆的开源TTS模型
-description: '4亿参数轻量级TTS模型KaniTTS2已开源发布，仅需3GB VRAM即可实现零样本语音克隆，预训练代码完全公开。本文分析MOS评分和语音克隆质量，并深入探讨其在本地AI环境中的实际应用潜力与语音AI民主化意义。'
+description: >-
+  4亿参数轻量级TTS模型KaniTTS2已开源发布，仅需3GB
+  VRAM即可实现零样本语音克隆，预训练代码完全公开。本文分析MOS评分和语音克隆质量，并深入探讨其在本地AI环境中的实际应用潜力与语音AI民主化意义。
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/kanitts2-voice-cloning-hero.png
 tags:

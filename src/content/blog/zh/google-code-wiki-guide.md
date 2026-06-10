@@ -1,6 +1,9 @@
 ---
 title: 'Google Code Wiki: AI驱动的代码文档平台完全指南'
-description: 'Google Code Wiki是基于Gemini AI自动分析GitHub代码库并生成项目Wiki的文档化平台。涵盖激活步骤、自动文档生成原理、Gemini Code Assist集成及团队协作配置，结合实际示例完整说明。'
+description: >-
+  Google Code Wiki是基于Gemini
+  AI自动分析GitHub代码库并生成项目Wiki的文档化平台。涵盖激活步骤、自动文档生成原理、Gemini Code
+  Assist集成及团队协作配置，结合实际示例完整说明。
 pubDate: '2025-11-24'
 heroImage: ../../../assets/blog/google-code-wiki-guide-hero.jpg
 tags:

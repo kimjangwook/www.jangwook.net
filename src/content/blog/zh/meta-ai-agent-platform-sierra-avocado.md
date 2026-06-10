@@ -1,6 +1,8 @@
 ---
 title: Meta AI的Agent平台化转型 — Sierra、Avocado与Big Brain
-description: 'Meta正从社交平台转型为AI Agent平台企业。深入分析Sierra外部Agent合作关系、独有模型Avocado与Big Brain推理引擎的技术意义，以及对WhatsApp 30亿用户生态和开发者的影响。'
+description: >-
+  Meta正从社交平台转型为AI Agent平台企业。深入分析Sierra外部Agent合作关系、独有模型Avocado与Big
+  Brain推理引擎的技术意义，以及对WhatsApp 30亿用户生态和开发者的影响。
 pubDate: '2026-02-10'
 heroImage: ../../../assets/blog/meta-ai-agent-platform-sierra-avocado-hero.png
 tags:

@@ -1,6 +1,8 @@
 ---
 title: 'Meta AI의 에이전트 플랫폼 전환 — Sierra, Avocado, Big Brain'
-description: 'Meta가 소셜 플랫폼을 넘어 AI 에이전트 플랫폼 기업으로 대전환합니다. Sierra 파트너십, 독점 모델 Avocado, 고급 추론 엔진 Big Brain의 기술적 의미와 WhatsApp 기반 30억 사용자 생태계에 미치는 영향을 개발자 관점으로 심층 분석합니다.'
+description: >-
+  Meta가 소셜 플랫폼을 넘어 AI 에이전트 플랫폼 기업으로 대전환합니다. Sierra 파트너십, 독점 모델 Avocado, 고급 추론 엔진
+  Big Brain의 기술적 의미와 WhatsApp 기반 30억 사용자 생태계에 미치는 영향을 개발자 관점으로 심층 분석합니다.
 pubDate: '2026-02-10'
 heroImage: ../../../assets/blog/meta-ai-agent-platform-sierra-avocado-hero.png
 tags:

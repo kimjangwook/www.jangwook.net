@@ -2,7 +2,10 @@
 title: >-
   EffiFlow Part 3: Real-World Improvements in 38 Minutes - 99% Stability and
   100% Completion
-description: '3 Quick Wins implemented in 38 minutes: Claude Code automation improvements that took completion to 100% and stability to 99%. Step-by-step methods, ROI data, and reusable improvement patterns for any automation project.'
+description: >-
+  3 Quick Wins implemented in 38 minutes: Claude Code automation improvements
+  that took completion to 100% and stability to 99%. Step-by-step methods, ROI
+  data, and reusable improvement patterns for any automation project.
 pubDate: '2025-11-16'
 heroImage: ../../../assets/blog/effiflow-part3-quick-wins-hero.jpg
 tags:

@@ -1,6 +1,7 @@
 ---
 title: AI検索時代のためのAEO実装記：Agent Effi Flow実践適用
-description: ChatGPT、PerplexityなどのAI検索エンジンにコンテンツが引用されるよう最適化するAEO戦略の実装経験と成果を共有します。スキーママークアップ、FAQ最適化、構造化データ設計の実践的なノウハウを解説します。
+description: >-
+  ChatGPT、PerplexityなどのAI検索エンジンにコンテンツが引用されるよう最適化するAEO戦略の実装経験と成果を共有します。スキーママークアップ、FAQ最適化、構造化データ設計の実践的なノウハウを解説します。
 pubDate: '2025-12-05'
 heroImage: ../../../assets/blog/aeo-implementation-experience-hero.png
 tags:

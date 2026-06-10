@@ -1,7 +1,10 @@
 ---
 title: Automating Blog Analytics with Google Analytics MCP and AI Agents
 description: >-
-  Learn how to connect Google Analytics MCP with Claude AI agents to fully automate blog analytics. Query GA4 Data API in natural language, and auto-generate traffic, user behavior, and conversion reports with production-ready code examples.
+  Learn how to connect Google Analytics MCP with Claude AI agents to fully
+  automate blog analytics. Query GA4 Data API in natural language, and
+  auto-generate traffic, user behavior, and conversion reports with
+  production-ready code examples.
 pubDate: '2025-10-05'
 heroImage: ../../../assets/blog/google-analytics-mcp-hero.png
 tags:

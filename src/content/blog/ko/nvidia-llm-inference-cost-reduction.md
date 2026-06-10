@@ -1,6 +1,8 @@
 ---
 title: NVIDIA NVFP4로 LLM 추론 비용 8분의 1로 절감 — 정확도 유지의 비밀
-description: NVIDIA의 NVFP4 양자화 기술이 LLM 추론 비용을 8분의 1로 줄이면서도 정확도를 유지하는 원리를 분석합니다. FP32에서 FP4 전환이 가져올 비용 구조 변화를 RTX 4090 AdaLLM 실전 벤치마크와 월간 GPU 운영 비용 시뮬레이션과 함께 살펴봅니다.
+description: >-
+  NVIDIA의 NVFP4 양자화 기술이 LLM 추론 비용을 8분의 1로 줄이면서도 정확도를 유지하는 원리를 분석합니다. FP32에서 FP4
+  전환이 가져올 비용 구조 변화를 RTX 4090 AdaLLM 실전 벤치마크와 월간 GPU 운영 비용 시뮬레이션과 함께 살펴봅니다.
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-llm-inference-cost-reduction-hero.png
 tags:

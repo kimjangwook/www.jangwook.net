@@ -1,6 +1,8 @@
 ---
 title: Automate Blog Publishing with n8n RSS Feed and AI Agents
-description: 'Automate blog-to-social with n8n, RSS, and GitHub Actions. Gemini AI writes X and LinkedIn posts on each publish — zero effort, automatic distribution.'
+description: >-
+  Automate blog-to-social with n8n, RSS, and GitHub Actions. Gemini AI writes X
+  and LinkedIn posts on each publish — zero effort, automatic distribution.
 pubDate: '2025-11-11'
 heroImage: ../../../assets/blog/n8n-rss-automation-hero.png
 tags:

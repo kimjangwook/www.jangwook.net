@@ -1,9 +1,8 @@
 ---
 title: Cursor Agent Trace — AI가 작성한 코드를 추적하는 오픈 표준이 등장하다
 description: >-
-  Cursor가 발표한 Agent Trace 0.1.0 오픈 사양을 실무 관점에서 분석합니다. git blame이 보여주지 못하는 AI
-  코드 기여를 파일·라인 수준에서 추적하고, 코드 리뷰 최적화·컴플라이언스 감사·팀 AI 활용도 측정에 즉시 활용하는
-  EM·CTO 가이드입니다.
+  Cursor가 발표한 Agent Trace 0.1.0 오픈 사양을 실무 관점에서 분석합니다. git blame이 보여주지 못하는 AI 코드
+  기여를 파일·라인 수준에서 추적하고, 코드 리뷰 최적화·컴플라이언스 감사·팀 AI 활용도 측정에 즉시 활용하는 EM·CTO 가이드입니다.
 pubDate: '2026-03-09'
 tags:
   - ai-agent

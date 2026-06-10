@@ -1,31 +1,59 @@
 ---
-title: 'uv로 AI 개발 환경 세팅하기 — Claude SDK 프로젝트를 0.87초 만에 시작하는 법'
-description: 'Rust로 만들어진 Python 패키지 매니저 uv 0.11로 anthropic, openai 등 AI SDK 개발 환경을 설정하는 완전 실전 가이드. pip 대비 100배+ 빠른 설치 속도, 재현 가능한 환경 관리, Claude SDK 프로젝트 시작까지 실제 로그와 함께 정리했다.'
+title: uv로 AI 개발 환경 세팅하기 — Claude SDK 프로젝트를 0.87초 만에 시작하는 법
+description: >-
+  Rust로 만들어진 Python 패키지 매니저 uv 0.11로 anthropic, openai 등 AI SDK 개발 환경을 설정하는 완전
+  실전 가이드. pip 대비 100배+ 빠른 설치 속도, 재현 가능한 환경 관리, Claude SDK 프로젝트 시작까지 실제 로그와 함께
+  정리했다.
 pubDate: '2026-05-07'
-heroImage: '../../../assets/blog/uv-python-ai-development-setup-guide-2026-hero.png'
-tags: ['Python', 'uv', 'Claude API', '개발 환경', 'AI 개발']
+heroImage: ../../../assets/blog/uv-python-ai-development-setup-guide-2026-hero.png
+tags:
+  - Python
+  - uv
+  - Claude API
+  - 개발 환경
+  - AI 개발
 relatedPosts:
-  - slug: 'vercel-ai-sdk-claude-streaming-agent-2026'
-    score: 0.82
+  - slug: claude-code-parallel-sessions-git-worktree
+    score: 0.95
     reason:
-      ko: 'uv로 환경을 설정한 뒤 바로 이어지는 단계다. Vercel AI SDK와 함께 Claude 스트리밍 에이전트를 구현하는 실전 예제를 다루고 있어, uv 기반 프로젝트의 다음 스텝으로 자연스럽게 연결된다.'
-      ja: 'uv環境を整えた後の次のステップとして、Vercel AI SDKでClaudeストリーミングエージェントを実装する実践例を紹介している。'
-      en: 'The natural next step after setting up a uv environment: implementing a Claude streaming agent with the Vercel AI SDK in a real project.'
-      zh: '在uv环境配置完成后，这篇文章展示了如何用Vercel AI SDK实现Claude流式代理，是很自然的延续。'
-  - slug: 'mcp-server-build-practical-guide-2026'
-    score: 0.76
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: langfuse-self-hosted-llm-tracing-setup-guide-2026
+    score: 0.94
     reason:
-      ko: 'MCP 서버도 Python으로 구축하는 경우가 많다. uv로 환경을 세팅하면 FastMCP 의존성 설치부터 배포까지 일관된 워크플로우를 유지할 수 있다.'
-      ja: 'MCPサーバーもPythonで構築するケースが多い。uvで環境を管理すれば、FastMCP依存関係のインストールから本番デプロイまで一貫したワークフローが維持できる。'
-      en: 'MCP servers are often built in Python. Managing your environment with uv keeps the workflow consistent from FastMCP dependency install to production deployment.'
-      zh: 'MCP服务器也常用Python构建。用uv管理环境可以从FastMCP依赖安装到生产部署保持一致的工作流。'
-  - slug: 'llm-coding-harness-optimization'
-    score: 0.71
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: mcp-servers-toolkit-introduction
+    score: 0.93
     reason:
-      ko: 'LLM 기반 코딩 환경을 최적화할 때 패키지 설치 속도와 환경 재현성이 핵심 병목이다. uv가 이 문제를 어떻게 해소하는지 비교해볼 수 있다.'
-      ja: 'LLMベースのコーディング環境最適化において、パッケージインストール速度と環境の再現性が主なボトルネックだ。uvがこの問題をどう解決するかを比較できる。'
-      en: 'When optimizing LLM-based coding environments, package install speed and reproducibility are key bottlenecks. Compare how uv addresses these versus the old stack.'
-      zh: '在优化LLM编码环境时，包安装速度和环境可复现性是关键瓶颈。可以对比uv如何解决这些问题。'
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: openclaw-opus-4-6-setup-guide
+    score: 0.93
+    reason:
+      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
+  - slug: llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek
+    score: 0.93
+    reason:
+      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
+      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
 ---
 
 작년까지 나는 AI 프로젝트를 시작할 때마다 의식처럼 같은 과정을 반복했다. `python -m venv .venv`, `source .venv/bin/activate`, `pip install anthropic openai`… 그리고 기다렸다. 길게는 2분 넘게. anthropic, torch, pydantic 같은 패키지들이 차례로 다운로드되는 동안.

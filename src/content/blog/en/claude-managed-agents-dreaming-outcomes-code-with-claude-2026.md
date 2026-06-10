@@ -1,45 +1,66 @@
 ---
-title: "Claude Managed Agents' Dreaming, Outcomes, and Orchestration — How Agents Self-Improve While You Sleep"
-description: "A technical analysis of Dreaming, Outcomes, and Multiagent Orchestration announced at Code with Claude SF 2026. Breaking down Harvey's 6x claim, the productization of LLM-as-judge, and the governance risks of self-improving agents."
+title: >-
+  Claude Managed Agents' Dreaming, Outcomes, and Orchestration — How Agents
+  Self-Improve While You Sleep
+description: >-
+  A technical analysis of Dreaming, Outcomes, and Multiagent Orchestration
+  announced at Code with Claude SF 2026. Breaking down Harvey's 6x claim, the
+  productization of LLM-as-judge, and the governance risks of self-improving
+  agents.
 pubDate: '2026-05-16'
-heroImage: '../../../assets/blog/claude-managed-agents-dreaming-outcomes-code-with-claude-2026-hero.png'
-tags: ['Claude', 'AI Agents', 'Anthropic', 'Managed Agents']
+heroImage: >-
+  ../../../assets/blog/claude-managed-agents-dreaming-outcomes-code-with-claude-2026-hero.png
+tags:
+  - Claude
+  - AI Agents
+  - Anthropic
+  - Managed Agents
 relatedPosts:
-  - slug: 'claude-managed-agents-production-deployment-guide'
-    score: 0.93
+  - slug: claude-agent-teams-guide
+    score: 0.95
     reason:
-      ko: '4월에 Managed Agents 기본 배포를 다뤘다면, 이 글은 그 위에 추가된 Dreaming·Outcomes·Orchestration이 기술적으로 어떻게 작동하는지를 설명한다.'
-      ja: '4月にManaged Agentsの基本デプロイを扱ったなら、この記事はその上に追加されたDreaming・Outcomes・Orchestrationが技術的にどう動くかを解説する。'
-      en: 'If you set up Managed Agents in April, this post explains how Dreaming, Outcomes, and Orchestration technically layer on top of that foundation.'
-      zh: '如果您在4月部署了Managed Agents基础，这篇文章解释了Dreaming、Outcomes和Orchestration如何在技术层面叠加其上。'
-  - slug: 'anthropic-claude-opus-4-7-managed-agents-2026'
-    score: 0.88
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: software-factory-zero-code-development
+    score: 0.95
     reason:
-      ko: '4월 Opus 4.7 + Managed Agents 비용 분석에 이어, 5월 Code with Claude에서 발표된 에이전트 인프라 확장을 함께 읽으면 Anthropic 에이전트 전략의 흐름이 보인다.'
-      ja: '4月のOpus 4.7 + Managed Agentsコスト分析に続き、5月Code with Claudeで発표されたエージェントインフラ拡張と合わせて読むとAnthropicのエージェント戦略の流れが見える。'
-      en: 'Reading the April Opus 4.7 cost analysis alongside the May agent infrastructure expansion reveals how Anthropic is building toward a complete managed AI stack.'
-      zh: '将4月Opus 4.7成本分析与5月Code with Claude的代理基础设施扩展结合阅读，可以看出Anthropic代理策略的演进路径。'
-  - slug: 'context-engineering-production-ai-agents'
-    score: 0.82
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: jira-ai-agents-mcp-engineering-management
+    score: 0.95
     reason:
-      ko: 'Dreaming이 메모리 스토어를 어떻게 재구성하는지 이해하려면, 에이전트의 컨텍스트 관리 원리를 먼저 파악하면 도움이 된다.'
-      ja: 'Dreamingがメモリストアをどう再構成するかを理解するには、エージェントのコンテキスト管理の原理を先に把握しておくと理解が深まる。'
-      en: 'To understand how Dreaming reconstructs memory stores, grounding yourself in production context engineering patterns first makes the mechanism click.'
-      zh: '理解Dreaming如何重构内存存储，先了解生产环境中代理的上下文管理原理会很有帮助。'
-  - slug: 'ai-agent-cost-reality'
-    score: 0.77
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: mcp-open-standard-linux-foundation-engineering-guide
+    score: 0.95
     reason:
-      ko: 'Dreaming과 Outcomes가 자동화 사이클을 늘릴수록 에이전트 운용 비용도 복잡해진다. 비용 현실 분석을 함께 읽으면 도입 판단에 도움이 된다.'
-      ja: 'DreamingとOutcomesが自動化サイクルを増やすほどエージェント運用コストも複雑になる。コスト現実分析と合わせて読むと導入判断の参考になる。'
-      en: 'As Dreaming and Outcomes add more automated cycles, agent cost complexity grows. Reading the cost reality analysis alongside helps frame adoption decisions.'
-      zh: 'Dreaming和Outcomes增加的自动化循环越多，代理运营成本就越复杂。结合成本现实分析阅读有助于做出引入决策。'
-  - slug: 'hindsight-mcp-agent-memory-learning'
-    score: 0.73
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: nvidia-nemoclaw-openclaw-enterprise-agent-platform
+    score: 0.95
     reason:
-      ko: 'Hindsight MCP가 추구한 "경험 기반 메모리 갱신" 철학과 Dreaming의 접근이 겹친다. 두 구현을 비교하면 에이전트 메모리 설계의 선택지가 더 넓게 보인다.'
-      ja: 'Hindsight MCPが追求した「経験ベースのメモリ更新」の哲学とDreamingのアプローチが重なる。二つの実装を比較するとエージェントメモリ設計の選択肢がより広く見える。'
-      en: 'The "experience-based memory refresh" philosophy behind Hindsight MCP overlaps with Dreaming. Comparing both implementations broadens your view of agent memory design choices.'
-      zh: 'Hindsight MCP追求的"基于经验的内存更新"理念与Dreaming的方法有重叠。比较两种实现方式可以更广泛地看到代理内存设计的选择。'
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 When Anthropic announced three new features at the Code with Claude conference in San Francisco on May 6, my first thought was: "What exactly is this agent learning while I'm away?"

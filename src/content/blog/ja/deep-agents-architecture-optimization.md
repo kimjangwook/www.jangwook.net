@@ -1,6 +1,9 @@
 ---
 title: Deep Agentsパラダイムを活用したAIエージェントシステムの最適化
-description: 'Deep Agentsパラダイムを活用して100+ステップの長期タスクと自動リカバリを実現するAIエージェント2.0を構築する実践ガイドです。LangChainとPhilipp Schmidが提唱する4つの設計原則を.claude/ディレクトリに適用したアーキテクチャ最適化の具体的な手順を解説します。'
+description: >-
+  Deep
+  Agentsパラダイムを活用して100+ステップの長期タスクと自動リカバリを実現するAIエージェント2.0を構築する実践ガイドです。LangChainとPhilipp
+  Schmidが提唱する4つの設計原則を.claude/ディレクトリに適用したアーキテクチャ最適化の具体的な手順を解説します。
 pubDate: '2025-11-22'
 heroImage: ../../../assets/blog/deep-agents-architecture-optimization-hero.jpg
 tags:

@@ -1,38 +1,58 @@
 ---
-title: 'JestからVitest 4への完全移行ガイド — インストールから実践テストまで'
-description: 'Vitest 4.1.7ベースでJestプロジェクトをステップごとに移行する実践ガイド。インストールから設定切り替え・コード変換パターン・安定Browser Mode・新マッチャー(toSatisfy, toBeOneOf)まで、実際のサンドボックスで検証した全結果をまとめた決定版の完全移行ガイド。'
+title: JestからVitest 4への完全移行ガイド — インストールから実践テストまで
+description: >-
+  Vitest 4.1.7ベースでJestプロジェクトをステップごとに移行する実践ガイド。インストールから設定切り替え・コード変換パターン・安定Browser
+  Mode・新マッチャー(toSatisfy, toBeOneOf)まで、実際のサンドボックスで検証した全結果をまとめた決定版の完全移行ガイド。
 pubDate: '2026-05-26'
-heroImage: '../../../assets/blog/vitest-4-jest-migration-guide-2026-hero.png'
-tags: ['Vitest', 'Jest', 'TypeScript']
+heroImage: ../../../assets/blog/vitest-4-jest-migration-guide-2026-hero.png
+tags:
+  - Vitest
+  - Jest
+  - TypeScript
 relatedPosts:
-  - slug: 'playwright-ai-testing'
-    score: 0.82
+  - slug: adsense-low-value-content-technical-fix
+    score: 0.92
     reason:
-      ko: 'Vitest의 Browser Mode로 컴포넌트를 실제 브라우저에서 테스트하게 됐다면, 이 글에서 다루는 AI 기반 E2E 테스트 패턴이 자연스러운 다음 단계가 된다.'
-      ja: 'VitestのBrowser Modeでコンポーネントを実ブラウザでテストするようになったなら、このAI駆動E2Eテストのパターンが次のステップになる。'
-      en: 'Once you have Vitest Browser Mode testing components in a real browser, the AI-driven E2E testing patterns in this article become a natural next step.'
-      zh: '一旦用 Vitest Browser Mode 在真实浏览器中测试组件，这篇 AI 驱动 E2E 测试文章就成了顺理成章的下一步。'
-  - slug: 'bun-shell-scripting-practical-guide-2026'
-    score: 0.74
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.91
     reason:
-      ko: 'Vitest를 Bun으로 실행하는 조합은 TypeScript 프로젝트의 표준이 되고 있다. Bun Shell 자동화 패턴을 알아두면 테스트 스크립트 관리가 훨씬 편해진다.'
-      ja: 'VitestをBunで実行する組み合わせはTypeScriptプロジェクトの標準になりつつある。Bun Shellの自動化パターンを知っておくとテストスクリプト管理が楽になる。'
-      en: 'Running Vitest with Bun is becoming standard for TypeScript projects. Knowing Bun Shell automation patterns makes test script management much simpler.'
-      zh: '用 Bun 运行 Vitest 的组合正成为 TypeScript 项目的标准。掌握 Bun Shell 自动化模式会让测试脚本管理轻松许多。'
-  - slug: 'claude-code-parallel-testing'
-    score: 0.77
+      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, DevOps with comparable
+        difficulty.
+      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
+  - slug: astro-scheduled-publishing
+    score: 0.89
     reason:
-      ko: 'Vitest를 빠르게 돌리는 것과, Claude Code로 대규모 테스트를 병렬화하는 것은 별개의 차원이다. 이 글에서 다루는 병렬 자동화 전략이 성능 상한을 다시 높여준다.'
-      ja: 'Vitestを速く動かすことと、Claude Codeで大規模テストを並列化することは別次元の話だ。このパラレル自動化戦略がパフォーマンスの上限をさらに上げてくれる。'
-      en: 'Running Vitest fast and parallelizing large test suites with Claude Code are different levels of optimization. The parallel automation strategy in this article pushes the ceiling higher.'
-      zh: '快速运行 Vitest 和用 Claude Code 并行化大规模测试是两个不同层面的优化。这篇并行自动化策略将性能天花板再次抬高。'
-  - slug: 'uv-python-ai-development-setup-guide-2026'
-    score: 0.65
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
+  - slug: chrome-devtools-mcp-performance
+    score: 0.89
     reason:
-      ko: 'JavaScript 생태계에서 Vitest가 테스트 표준으로 굳어지듯, Python에서는 uv가 환경 관리의 기준이 되고 있다. 두 도구 모두 "설정 피로 없이 바로 시작"이라는 철학을 공유한다.'
-      ja: 'JavaScriptエコシステムでVitestがテスト標準になりつつあるように、Pythonではuvが環境管理の基準になりつつある。どちらも「設定疲れなしにすぐ始める」という哲学を共有している。'
-      en: 'Just as Vitest is becoming the testing standard in the JavaScript ecosystem, uv is emerging as the environment management baseline in Python. Both tools share the philosophy of getting started without configuration fatigue.'
-      zh: '就像 Vitest 在 JavaScript 生态中成为测试标准一样，uv 在 Python 中正成为环境管理的基准。两者都共享"无配置疲劳，即刻开始"的理念。'
+      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through web
+        development, DevOps topics.
+      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
+  - slug: weekly-analytics-2025-10-14
+    score: 0.88
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
 ---
 
 先月からサイドプロジェクトのテストパイプラインを整備していて、長年使ってきたJestをVitestに乗り換えた。理由はシンプルだ。TypeScriptプロジェクトでJestを維持しようとすると、`ts-jest`や`babel-jest`のような変換レイヤーが必要になる。設定項目が増えるにつれ、エラーメッセージが暗号のように読めなくなってくる。

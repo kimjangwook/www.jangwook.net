@@ -1,6 +1,8 @@
 ---
 title: 'AEO Implementation for the AI Search Era: Agent Effi Flow Case Study'
-description: 'Get content cited by ChatGPT and Perplexity with AEO. This Agent Effi Flow case study covers schema markup, FAQ optimization, and structured data design.'
+description: >-
+  Get content cited by ChatGPT and Perplexity with AEO. This Agent Effi Flow
+  case study covers schema markup, FAQ optimization, and structured data design.
 pubDate: '2025-12-05'
 heroImage: ../../../assets/blog/aeo-implementation-experience-hero.png
 tags:

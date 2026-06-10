@@ -1,6 +1,8 @@
 ---
 title: '데이터 기반 제품 의사결정: PM을 위한 분석 프레임워크'
-description: 'PM이라면 반드시 알아야 할 데이터 기반 제품 의사결정 실전 가이드입니다. DAU/MAU, RICE 스코어링, A/B 테스트, SQL 쿼리를 실무에서 바로 활용하는 법부터 Netflix·Spotify·Amazon 사례로 배우는 데이터 문화 구축까지 핵심만 정리했습니다.'
+description: >-
+  PM이라면 반드시 알아야 할 데이터 기반 제품 의사결정 실전 가이드입니다. DAU/MAU, RICE 스코어링, A/B 테스트, SQL 쿼리를
+  실무에서 바로 활용하는 법부터 Netflix·Spotify·Amazon 사례로 배우는 데이터 문화 구축까지 핵심만 정리했습니다.
 pubDate: '2025-11-05'
 heroImage: ../../../assets/blog/data-driven-pm-framework-hero.jpg
 tags:

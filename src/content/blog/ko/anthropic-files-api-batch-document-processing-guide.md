@@ -1,8 +1,8 @@
 ---
 title: Anthropic Files API 실전 가이드 — PDF 반복 업로드 없이 문서 배치 분석하기
 description: >-
-  Anthropic Files API로 PDF·이미지를 한 번 업로드해 여러 API 요청에서 반복 재사용하는 실전 가이드. Python
-  SDK 배치 분석 완성 코드, 프롬프트 캐싱과 비용 비교, file_id 관리 패턴, 문서당 최적 모델 선택 기준까지 상세히 다룹니다.
+  Anthropic Files API로 PDF·이미지를 한 번 업로드해 여러 API 요청에서 반복 재사용하는 실전 가이드. Python SDK
+  배치 분석 완성 코드, 프롬프트 캐싱과 비용 비교, file_id 관리 패턴, 문서당 최적 모델 선택 기준까지 상세히 다룹니다.
 pubDate: '2026-05-05'
 heroImage: >-
   ../../../assets/blog/anthropic-files-api-batch-document-processing-guide-hero.png

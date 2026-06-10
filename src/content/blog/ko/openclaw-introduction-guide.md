@@ -1,6 +1,9 @@
 ---
 title: OpenClaw 완전 소개 — 나만의 AI 비서를 만들자
-description: '오픈소스 AI 비서 플랫폼 OpenClaw 완전 소개 가이드. Telegram·Discord·Slack 멀티채널 지원, Claude·GPT·Gemini 멀티모델 동적 전환, 노드 기반 자동화 워크플로우의 핵심 아키텍처와 즉시 따라할 수 있는 설치 가이드를 한번에 정리합니다.'
+description: >-
+  오픈소스 AI 비서 플랫폼 OpenClaw 완전 소개 가이드. Telegram·Discord·Slack 멀티채널 지원,
+  Claude·GPT·Gemini 멀티모델 동적 전환, 노드 기반 자동화 워크플로우의 핵심 아키텍처와 즉시 따라할 수 있는 설치 가이드를
+  한번에 정리합니다.
 pubDate: '2026-02-03'
 heroImage: ../../../assets/blog/openclaw-introduction-guide-hero.png
 tags:

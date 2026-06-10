@@ -1,45 +1,56 @@
 ---
-title: 'FastMCP 3.x로 Python MCP 서버 30분 만에 만들기 — @tool 데코레이터 하나면 충분하다'
-description: 'FastMCP 3.2.4를 직접 설치해 @mcp.tool(), @mcp.resource(), @mcp.prompt() 데코레이터로 동작하는 MCP 서버를 만들어봤다. Claude Desktop과 Cursor가 호출하는 AI 도구 서버를 Python 30줄로 구현하는 실전 가이드.'
+title: FastMCP 3.x로 Python MCP 서버 30분 만에 만들기 — @tool 데코레이터 하나면 충분하다
+description: >-
+  FastMCP 3.2.4를 직접 설치해 @mcp.tool(), @mcp.resource(), @mcp.prompt() 데코레이터로 동작하는
+  MCP 서버를 만들어봤다. Claude Desktop과 Cursor가 호출하는 AI 도구 서버를 Python 30줄로 구현하는 실전 가이드.
 pubDate: '2026-05-12'
-heroImage: '../../../assets/blog/fastmcp-python-mcp-server-build-guide-2026/hero.png'
-tags: ['MCP', 'FastMCP', 'Python', 'AI Agent', 'Claude']
+heroImage: ../../../assets/blog/fastmcp-python-mcp-server-build-guide-2026/hero.png
+tags:
+  - MCP
+  - FastMCP
+  - Python
+  - AI Agent
+  - Claude
 relatedPosts:
-  - slug: 'mcp-server-build-practical-guide-2026'
-    score: 0.92
+  - slug: mcp-server-build-practical-guide-2026
+    score: 0.95
     reason:
-      ko: 'FastMCP의 고수준 API가 왜 편한지 이해하려면, 이 글이 다루는 Streamable HTTP 저수준 구현과 비교해보는 게 도움이 된다.'
-      ja: 'FastMCPの高レベルAPIの利点を理解するには、このStreamable HTTP低レベル実装と比較すると効果的だ。'
-      en: 'To understand why FastMCP is convenient, compare it with the low-level Streamable HTTP implementation covered in this post.'
-      zh: '要理解FastMCP高层API的便利性，与本文介绍的Streamable HTTP底层实现进行对比会很有帮助。'
-  - slug: 'local-llm-private-mcp-server-gemma4-fastmcp'
-    score: 0.85
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-message-batches-api-production-guide
+    score: 0.95
     reason:
-      ko: '로컬 LLM과 FastMCP를 완전 오프라인 환경에서 조합하는 방법을 다뤘다. 이 글의 클라우드 배포 패턴과 대비된다.'
-      ja: 'ローカルLLMとFastMCPをオフライン環境で組み合わせる方法を解説。クラウドデプロイパターンと対照的だ。'
-      en: 'Covers combining local LLM with FastMCP in a fully offline setup — the counterpart to the cloud deployment pattern in this post.'
-      zh: '介绍了在完全离线环境中组合本地LLM和FastMCP的方法，与本文的云端部署模式形成对比。'
-  - slug: 'mcp-gateway-agent-traffic-control'
-    score: 0.78
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: openai-codex-api-release-vs-claude-code-comparison-may-2026
+    score: 0.95
     reason:
-      ko: 'MCP 서버를 실제로 만든 다음엔 에이전트가 어떤 도구를 호출할 수 있는지 통제하고 싶어진다. MCP Gateway가 그 역할을 한다.'
-      ja: 'MCP サーバーを構築したら、次はエージェントがどのツールを呼び出せるか制御したくなる。MCP Gatewayがその役割を担う。'
-      en: 'After building an MCP server, you will want to control which tools agents can call. MCP Gateway handles that.'
-      zh: '构建MCP服务器后，你会想控制代理可以调用哪些工具。MCP Gateway正是扮演这个角色。'
-  - slug: 'mcp-servers-toolkit-introduction'
-    score: 0.72
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
+    score: 0.93
     reason:
-      ko: '내가 실제로 사용하는 MCP 서버 목록을 정리한 글이다. 직접 서버를 만들기 전에 이미 존재하는 것을 먼저 찾아보는 것도 전략이다.'
-      ja: '実際に使用しているMCPサーバーをまとめた記事。自分で作る前に既存のものを探すのも戦略的だ。'
-      en: 'A curated list of MCP servers I actually use. Before building your own, checking what already exists is also a valid strategy.'
-      zh: '整理了我实际使用的MCP服务器列表。在自己构建之前，先了解现有工具也是一种策略。'
-  - slug: 'mcp-code-execution-practical-implementation'
-    score: 0.70
+      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through AI/ML,
+        DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
+  - slug: claude-mythos-preview-glasswing-ai-cybersecurity
+    score: 0.93
     reason:
-      ko: 'MCP를 통해 Claude Code가 실제 코드를 실행하도록 만드는 실전 사례. 이 글의 @tool 패턴이 거기서도 핵심이다.'
-      ja: 'MCPを通じてClaude Codeが実際にコードを実行する実践事例。この記事の@toolパターンがそこでも中心的な役割を果たす。'
-      en: 'A real-world case of using MCP to let Claude Code execute actual code. The @tool pattern from this post is central there too.'
-      zh: '通过MCP让Claude Code执行实际代码的实战案例。本文的@tool模式在那里也是核心。'
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 MCP(Model Context Protocol) 서버를 처음부터 직접 구현하려면 생각보다 손이 많이 간다. stdio 트랜스포트 처리, JSON-RPC 2.0 직렬화, 핸들러 등록 — [MCP 서버를 Streamable HTTP로 직접 만드는 과정](/ko/blog/ko/mcp-server-build-practical-guide-2026)을 따라가 보면 알겠지만 "AI 도구를 하나 추가하고 싶을 뿐인데" 왜 이렇게 많은 보일러플레이트가 필요한지 답답해지는 순간이 온다.

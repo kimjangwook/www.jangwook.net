@@ -1,6 +1,8 @@
 ---
 title: LangGraph 멀티 에이전트 시스템 완전 가이드
-description: LangGraph로 프로덕션 수준의 멀티 에이전트 AI 시스템을 구축하는 방법을 단계별로 설명합니다. 상태 그래프 설계, 에이전트 간 협업 패턴, 동적 라우팅 구현부터 실제 배포까지 LangChain을 최대한 활용하는 실전 가이드로, 실제 코드 예제가 포함되어 있습니다.
+description: >-
+  LangGraph로 프로덕션 수준의 멀티 에이전트 AI 시스템을 구축하는 방법을 단계별로 설명합니다. 상태 그래프 설계, 에이전트 간 협업
+  패턴, 동적 라우팅 구현부터 실제 배포까지 LangChain을 최대한 활용하는 실전 가이드로, 실제 코드 예제가 포함되어 있습니다.
 pubDate: '2025-10-26'
 heroImage: ../../../assets/blog/langgraph-multi-agent-hero.jpg
 tags:

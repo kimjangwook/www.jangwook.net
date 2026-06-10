@@ -1,6 +1,9 @@
 ---
 title: NVIDIA's NVFP4 Cuts LLM Inference Costs by 8x — While Maintaining Accuracy
-description: NVIDIA NVFP4 cuts LLM inference costs 8x while preserving accuracy. RTX 4090 AdaLLM benchmarks plus monthly GPU cost simulations prove the FP32-to-FP4 savings.
+description: >-
+  NVIDIA NVFP4 cuts LLM inference costs 8x while preserving accuracy. RTX 4090
+  AdaLLM benchmarks plus monthly GPU cost simulations prove the FP32-to-FP4
+  savings.
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-llm-inference-cost-reduction-hero.png
 tags:

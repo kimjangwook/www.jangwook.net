@@ -1,6 +1,8 @@
 ---
 title: OpenAI AgentKit完全指南第1部分：核心概念与入门
-description: 'OpenAI DevDay 2025发布的AgentKit完整解析。从Agent Builder、ChatKit、MCP原生支持等4个核心组件结构，到使用Python SDK构建第一个智能体的实战教程，分步骤详细讲解。'
+description: >-
+  OpenAI DevDay 2025发布的AgentKit完整解析。从Agent
+  Builder、ChatKit、MCP原生支持等4个核心组件结构，到使用Python SDK构建第一个智能体的实战教程，分步骤详细讲解。
 pubDate: '2025-10-20'
 heroImage: ../../../assets/blog/openai-agentkit-part1-hero.jpg
 tags:

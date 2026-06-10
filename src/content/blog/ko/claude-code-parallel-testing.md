@@ -1,6 +1,8 @@
 ---
 title: Claude Code로 대규모 페이지 테스트 병렬 자동화하기
-description: 'Claude Code 에이전트와 Playwright를 결합해 웹페이지 마이그레이션 테스트를 5〜8배 빠르게 병렬로 실행하는 실전 자동화 가이드. 병렬 테스트 아키텍처 설계, 서브에이전트 조율, 실패 감지와 결과 집계까지 현업에서 검증된 구현법을 단계별로 상세히 안내합니다.'
+description: >-
+  Claude Code 에이전트와 Playwright를 결합해 웹페이지 마이그레이션 테스트를 5〜8배 빠르게 병렬로 실행하는 실전 자동화
+  가이드. 병렬 테스트 아키텍처 설계, 서브에이전트 조율, 실패 감지와 결과 집계까지 현업에서 검증된 구현법을 단계별로 상세히 안내합니다.
 pubDate: '2025-10-31'
 heroImage: ../../../assets/blog/claude-code-parallel-testing-hero.jpg
 tags:

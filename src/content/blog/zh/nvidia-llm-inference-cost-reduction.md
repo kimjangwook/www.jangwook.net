@@ -1,6 +1,8 @@
 ---
 title: NVIDIA NVFP4将LLM推理成本降至八分之一 — 精度不变成本巨变
-description: NVIDIA NVFP4量化技术将LLM推理成本降低八分之一同时维持精度的原理详解。通过RTX 4090 AdaLLM实测基准测试与月度GPU运营成本模拟，全面量化FP32到FP4转型对AI推理基础设施成本的实际影响。
+description: >-
+  NVIDIA NVFP4量化技术将LLM推理成本降低八分之一同时维持精度的原理详解。通过RTX 4090
+  AdaLLM实测基准测试与月度GPU运营成本模拟，全面量化FP32到FP4转型对AI推理基础设施成本的实际影响。
 pubDate: '2026-02-15'
 heroImage: ../../../assets/blog/nvidia-llm-inference-cost-reduction-hero.png
 tags:

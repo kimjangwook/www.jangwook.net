@@ -1,8 +1,10 @@
 ---
-title: 'MCPリモートHTTPサーバーデプロイパターン — stdioからStreamable HTTPへ移行する実践ガイド'
-description: 'MCP Streamable HTTPトランスポートでstdioサーバーをリモート配備可能なHTTPサービスへ移行する実践ガイド。TypeScript SDK v1.29.0基準でstateful・statelessモードの実装とDocker・Cloudflare配備パターンを実験ログとともに解説します。'
+title: MCPリモートHTTPサーバーデプロイパターン — stdioからStreamable HTTPへ移行する実践ガイド
+description: >-
+  MCP Streamable HTTPトランスポートでstdioサーバーをリモート配備可能なHTTPサービスへ移行する実践ガイド。TypeScript
+  SDK v1.29.0基準でstateful・statelessモードの実装とDocker・Cloudflare配備パターンを実験ログとともに解説します。
 pubDate: '2026-05-27'
-heroImage: '../../../assets/blog/mcp-remote-http-deployment-pattern/hero.png'
+heroImage: ../../../assets/blog/mcp-remote-http-deployment-pattern/hero.png
 tags:
   - MCP
   - TypeScript
@@ -10,34 +12,51 @@ tags:
   - デプロイ
   - Streamable-HTTP
 relatedPosts:
-  - slug: mcp-server-build-practical-guide-2026
-    score: 0.91
+  - slug: roguepilot-copilot-prompt-injection-security
+    score: 0.94
     reason:
-      ko: Python FastMCP로 MCP 서버를 처음 만들어봤다면, 이 글에서 다루는 TypeScript SDK 기반 HTTP 배포로 자연스럽게 이어집니다.
-      ja: Python FastMCPでMCPサーバーを作った経験があれば、このガイドのTypeScript SDKベースのHTTPデプロイへスムーズに続けられます。
-      en: If you've built an MCP server with Python FastMCP, this guide's TypeScript SDK HTTP deployment patterns are a natural next step.
-      zh: 如果你已用Python FastMCP构建过MCP服务器，本文的TypeScript SDK HTTP部署模式是自然的进阶。
-  - slug: mcp-server-production-deployment-kubernetes-guide
-    score: 0.88
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: fastapi-claude-api-streaming-production-guide-2026
+    score: 0.94
     reason:
-      ko: Streamable HTTP 기초를 잡은 다음 단계로, Kubernetes 기반 고가용성 배포 전략을 다룹니다.
-      ja: Streamable HTTPの基礎を掴んだ次のステップとして、Kubernetesによる高可用性デプロイ戦略を扱います。
-      en: After mastering Streamable HTTP basics, this covers Kubernetes-based high-availability deployment strategies.
-      zh: 掌握Streamable HTTP基础后，进阶至Kubernetes高可用部署策略。
-  - slug: mcp-gateway-agent-traffic-control
-    score: 0.85
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: ai-coding-secrets-sprawl-mcp-config-security
+    score: 0.93
     reason:
-      ko: 여러 원격 MCP 서버를 운영하기 시작했다면, 게이트웨이 레이어로 트래픽과 인증을 통합 관리하는 방법이 필요해집니다.
-      ja: 複数のリモートMCPサーバーを運用し始めたら、ゲートウェイレイヤーでトラフィックと認証を統合管理する方法が必要になります。
-      en: Once you're running multiple remote MCP servers, you'll need gateway-layer traffic and auth management.
-      zh: 当你运营多个远程MCP服务器时，需要网关层统一管理流量和认证。
-  - slug: local-llm-private-mcp-server-gemma4-fastmcp
-    score: 0.79
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: terraform-ai-batch-infrastructure
+    score: 0.93
     reason:
-      ko: 공개 배포가 아닌 완전 오프라인 환경에서 MCP를 운영하는 방법과 비교하면서 읽으면 트레이드오프가 명확해집니다.
-      ja: 公開デプロイではなく完全オフライン環境でMCPを運用する方法と比較して読むと、トレードオフが明確になります。
-      en: Reading this alongside the fully offline MCP setup makes the deployment trade-offs much clearer.
-      zh: 对比完全离线环境的MCP运营方式阅读，能让部署取舍更加清晰。
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: vertex-ai-search-site-implementation
+    score: 0.93
+    reason:
+      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in AI/ML, DevOps, architecture with comparable
+        difficulty.
+      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
 ---
 
 MCPサーバーを初めて作ったとき、stdioトランスポートでローカルからClaude Desktopに接続していた。`uv run` 一行でサーバーが起動して即座に繋がる手軽さがあった。でもチームメンバーが「同じサーバーを使いたい」と言い出したとき、問題が発生した。stdioはクライアントがサーバープロセスを直接spawnする必要があるため、私のローカルで動いているサーバーに他の人が接続する方法がない。

@@ -1,6 +1,8 @@
 ---
 title: Google Analytics MCPとAIエージェントでブログ分析を自動化する
-description: Google Analytics MCPとClaude AIエージェントを連携させてブログ分析を完全自動化する手順を解説します。GA4 Data APIを自然言語で照会し、トラフィック・ユーザー行動・コンバージョンデータを定期レポートとして自動生成する実践コードを提供します。
+description: >-
+  Google Analytics MCPとClaude AIエージェントを連携させてブログ分析を完全自動化する手順を解説します。GA4 Data
+  APIを自然言語で照会し、トラフィック・ユーザー行動・コンバージョンデータを定期レポートとして自動生成する実践コードを提供します。
 pubDate: '2025-10-05'
 heroImage: ../../../assets/blog/google-analytics-mcp-hero.png
 tags:

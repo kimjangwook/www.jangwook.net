@@ -1,8 +1,10 @@
 ---
 title: 'Vector DB 비교 2026: Qdrant vs ChromaDB vs pgvector 선택 가이드'
-description: 'Qdrant, ChromaDB, pgvector를 1000개 벡터(dim=384)로 직접 벤치마크했다. 삽입 속도·쿼리 지연·필터 성능 수치를 실측 데이터로 비교하고, RAG 앱 상황별 명확한 선택 기준을 제시한다. 소규모에서 ChromaDB가 더 빠른 이유도 설명한다.'
+description: >-
+  Qdrant, ChromaDB, pgvector를 1000개 벡터(dim=384)로 직접 벤치마크했다. 삽입 속도·쿼리 지연·필터 성능
+  수치를 실측 데이터로 비교하고, RAG 앱 상황별 명확한 선택 기준을 제시한다. 소규모에서 ChromaDB가 더 빠른 이유도 설명한다.
 pubDate: '2026-05-23'
-heroImage: '../../../assets/blog/vector-db-comparison-2026-qdrant-chroma-pgvector/hero.png'
+heroImage: ../../../assets/blog/vector-db-comparison-2026-qdrant-chroma-pgvector/hero.png
 tags:
   - vector-db
   - rag
@@ -10,27 +12,41 @@ tags:
   - qdrant
   - pgvector
 relatedPosts:
-  - slug: "dena-llm-study-part4-rag"
-    score: 0.87
+  - slug: claude-mythos-preview-glasswing-ai-cybersecurity
+    score: 0.94
     reason:
-      ko: "RAG 아키텍처를 처음 설계할 때 벡터 DB 선택과 함께 고민하게 되는 내용이 이 시리즈에 자세히 다뤄져 있다."
-      ja: "RAGアーキテクチャを設計する際に、ベクターDB選択と合わせて考えるべき内容がこのシリーズで詳しく取り上げられている。"
-      en: "When first designing a RAG architecture, the questions you'll ask alongside vector DB selection are covered in depth in this series."
-      zh: "在首次设计RAG架构时，与向量DB选择一起考虑的内容在这个系列中有详细介绍。"
-  - slug: "gemini-embedding-2-multimodal-rag-pipeline"
-    score: 0.84
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: mcp-server-build-practical-guide-2026
+    score: 0.94
     reason:
-      ko: "임베딩 모델 선택이 벡터 DB 성능에 직접 영향을 준다. Gemini Embedding 2의 멀티모달 임베딩이 dim 설계에 어떤 함의를 갖는지 이 글과 연결해서 읽으면 좋다."
-      ja: "埋め込みモデルの選択はベクターDBのパフォーマンスに直接影響する。Gemini Embedding 2のマルチモーダル埋め込みがdim設計にどんな意味を持つかを、この記事と合わせて読むと良い。"
-      en: "The embedding model you pick directly affects vector DB performance. Reading about Gemini Embedding 2's multimodal embeddings alongside this post clarifies how dim choices matter."
-      zh: "嵌入模型的选择直接影响向量DB的性能。将Gemini Embedding 2的多模态嵌入与本文结合阅读，有助于理解维度设计的影响。"
-  - slug: "python-ai-agent-library-comparison-2026"
-    score: 0.78
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-message-batches-api-production-guide
+    score: 0.93
     reason:
-      ko: "벡터 DB를 선택했다면, 그것을 쓸 AI 에이전트 라이브러리도 골라야 한다. 이 비교 가이드가 그 다음 결정을 도와준다."
-      ja: "ベクターDBを選んだら、それを使うAIエージェントライブラリも選ぶ必要がある。この比較ガイドが次の決断を助けてくれる。"
-      en: "Once you've picked a vector DB, you'll need to choose the AI agent library that wraps it. This comparison guide helps with that next decision."
-      zh: "选择了向量DB之后，还需要选择使用它的AI智能体库。这份比较指南帮助做出下一个决定。"
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: openai-codex-api-release-vs-claude-code-comparison-may-2026
+    score: 0.93
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.93
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 RAG 앱을 처음 만들 때 벡터 DB 선택은 생각보다 시간을 많이 잡아먹는다. "일단 Chroma 쓰면 되지 않나"로 시작해서 Qdrant 벤치마크 자료를 보고 흔들리고, pgvector 블로그 글을 읽으면서 다시 PostgreSQL로 돌아갈까 고민하는 과정을 반복한다.

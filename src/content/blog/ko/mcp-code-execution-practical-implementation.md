@@ -1,6 +1,8 @@
 ---
 title: 'MCP Code Execution 실전 적용: Claude Code 프로젝트 구조 개선'
-description: 'Anthropic MCP Code Execution 패턴을 실제 Claude Code 프로젝트에 적용하는 단계별 실전 가이드. 토큰 사용량 98.7% 절감·실행 속도 60% 개선이 검증된 패턴을 .claude/ 디렉토리 구조 개선 전후 사례와 함께 단계적으로 설명합니다.'
+description: >-
+  Anthropic MCP Code Execution 패턴을 실제 Claude Code 프로젝트에 적용하는 단계별 실전 가이드. 토큰 사용량
+  98.7% 절감·실행 속도 60% 개선이 검증된 패턴을 .claude/ 디렉토리 구조 개선 전후 사례와 함께 단계적으로 설명합니다.
 pubDate: '2025-11-19'
 heroImage: ../../../assets/blog/mcp-code-execution-practical-implementation-hero.jpg
 tags:

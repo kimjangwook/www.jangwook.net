@@ -1,6 +1,9 @@
 ---
 title: 'Google Code Wiki: Complete Guide to AI-Powered Code Documentation'
-description: 'Gemini AI builds a living wiki from your code automatically. Complete Google Code Wiki guide: setup, auto-documentation logic, Gemini Code Assist integration, and team collaboration configuration with practical examples.'
+description: >-
+  Gemini AI builds a living wiki from your code automatically. Complete Google
+  Code Wiki guide: setup, auto-documentation logic, Gemini Code Assist
+  integration, and team collaboration configuration with practical examples.
 pubDate: '2025-11-24'
 heroImage: ../../../assets/blog/google-code-wiki-guide-hero.jpg
 tags:

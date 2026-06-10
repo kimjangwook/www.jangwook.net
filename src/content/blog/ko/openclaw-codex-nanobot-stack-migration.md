@@ -1,8 +1,8 @@
 ---
 title: OpenClaw 떠나서 Codex+Nanobot으로 이사한 이유
 description: >-
-  OpenClaw에서 Codex+Nanobot 스택으로 갈아탄 실전 마이그레이션 후기. launchd 스케줄링, 텔레그램 브릿지 연동,
-  MCP 호스트 조합의 솔직한 장단점을 비교하고, 리소스 과부하 없이 자동화 에이전트를 운영하는 최적 툴체인 구성 방법을 제시합니다.
+  OpenClaw에서 Codex+Nanobot 스택으로 갈아탄 실전 마이그레이션 후기. launchd 스케줄링, 텔레그램 브릿지 연동, MCP
+  호스트 조합의 솔직한 장단점을 비교하고, 리소스 과부하 없이 자동화 에이전트를 운영하는 최적 툴체인 구성 방법을 제시합니다.
 pubDate: '2026-04-27'
 heroImage: ../../../assets/blog/openclaw-codex-nanobot-stack-migration-hero.jpg
 tags:

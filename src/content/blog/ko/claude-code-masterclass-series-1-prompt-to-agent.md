@@ -1,42 +1,62 @@
 ---
-title: "Claude Code 실전 마스터클래스 #1 — 슬래시 명령어·훅·서브에이전트 3단계로 워크플로우 자동화하기"
-description: '슬래시 명령어(.claude/commands/)로 작업을 정의하고, settings.json 훅으로 이벤트에 연결하고, 서브에이전트(.claude/agents/)에게 위임하는 3단계 Claude Code 자동화 패턴을 실제 블로그 자동화 시스템 구축 사례와 함께 설명합니다.'
+title: 'Claude Code 실전 마스터클래스 #1 — 슬래시 명령어·훅·서브에이전트 3단계로 워크플로우 자동화하기'
+description: >-
+  슬래시 명령어(.claude/commands/)로 작업을 정의하고, settings.json 훅으로 이벤트에 연결하고,
+  서브에이전트(.claude/agents/)에게 위임하는 3단계 Claude Code 자동화 패턴을 실제 블로그 자동화 시스템 구축 사례와
+  함께 설명합니다.
 pubDate: '2026-05-10'
-heroImage: '../../../assets/blog/claude-code-masterclass-series-1-prompt-to-agent-hero.jpg'
+heroImage: ../../../assets/blog/claude-code-masterclass-series-1-prompt-to-agent-hero.jpg
 tags:
   - ClaudeCode
   - 자동화
   - 서브에이전트
   - 워크플로우
 relatedPosts:
-  - slug: "claude-code-hooks-workflow"
-    score: 0.92
+  - slug: claude-agent-teams-guide
+    score: 0.95
     reason:
-      ko: "훅을 코드 리뷰 자동화에 적용한 구체적인 사례입니다. 이 글의 Step 2에서 다룬 PostToolUse·Stop 훅이 실제로 어떻게 쓰이는지 확인할 수 있습니다."
-      ja: "フックをコードレビュー自動化に適用した具体的なケースです。Step 2で扱ったPostToolUse・Stopフックが実際にどう使われるか確認できます。"
-      en: "A concrete example of applying hooks to code review automation. Shows how the PostToolUse and Stop hooks from Step 2 work in a real project."
-      zh: "将Hook应用于代码审查自动化的具体案例，展示Step 2中PostToolUse和Stop Hook在实际项目中的应用。"
-  - slug: "claude-agent-teams-guide"
-    score: 0.88
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: claude-code-cli-migration-guide
+    score: 0.95
     reason:
-      ko: "서브에이전트를 5개 전문 팀으로 조직하는 방법입니다. Step 3에서 소개한 에이전트 위임 패턴을 팀 단위로 확장한 버전입니다."
-      ja: "サブエージェントを5つの専門チームに組織する方法です。Step 3で紹介したエージェント委任パターンをチーム規模に拡張したバージョンです。"
-      en: "Organizing subagents into 5 specialized teams — extends the agent delegation pattern from Step 3 to a team-scale structure."
-      zh: "将子代理组织为5个专业团队，是Step 3中代理委托模式的团队级扩展版本。"
-  - slug: "claude-code-agentic-workflow-patterns-5-types"
-    score: 0.81
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: effiflow-automation-analysis-part3
+    score: 0.95
     reason:
-      ko: "이 마스터클래스에서 만든 파이프라인이 5가지 에이전틱 패턴 중 어디에 속하는지 파악하는 데 도움이 됩니다."
-      ja: "このマスタークラスで作ったパイプラインが5つのエージェントパターンのどれに当たるか把握するのに役立ちます。"
-      en: "Helps identify where the pipeline built in this masterclass fits among the 5 agentic workflow patterns."
-      zh: "帮助了解本教程构建的管道属于5种代理工作流模式中的哪种。"
-  - slug: "claude-code-plugins-complete-guide"
-    score: 0.76
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: github-agentic-workflows-cicd-ai
+    score: 0.95
     reason:
-      ko: "슬래시 명령어와 에이전트를 플러그인 형태로 재사용하는 방법입니다. 이 글에서 다룬 `.claude/commands/` 구조를 외부 레포에서 공유하는 다음 단계입니다."
-      ja: "スラッシュコマンドとエージェントをプラグイン形式で再利用する方法です。この記事で扱った`.claude/commands/`構造を外部リポジトリで共有する次のステップです。"
-      en: "How to reuse slash commands and agents as plugins. The next step after mastering the .claude/commands/ structure covered here."
-      zh: "以插件形式重用斜线命令和代理的方法，是本文.claude/commands/结构的外部共享进阶。"
+      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, DevOps, architecture with
+        comparable difficulty.
+      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+  - slug: jira-ai-agents-mcp-engineering-management
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
 이 글을 읽고 있는 지금, 이 포스트는 오늘 아침 11시 30분에 자동으로 실행된 launchd 작업이 Claude Code를 깨웠고, Claude Code가 `/daily-tech-blog` 슬래시 명령어를 실행하고, 서브에이전트들이 리서치와 번역을 분담하면서 만들어진 결과물이다.

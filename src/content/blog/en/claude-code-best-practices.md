@@ -2,7 +2,8 @@
 title: 'Claude Code Best Practices: Maximizing Developer Productivity with AI'
 description: >-
   Anthropic Claude Code Best Practices: CLAUDE.md setup, subagent systems,
-  Explore→Plan→Code→Commit workflow. Real results: 40% fewer errors, 30% time saved.
+  Explore→Plan→Code→Commit workflow. Real results: 40% fewer errors, 30% time
+  saved.
 pubDate: '2025-10-07'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
 tags:

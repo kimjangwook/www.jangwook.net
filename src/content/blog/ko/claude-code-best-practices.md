@@ -1,8 +1,9 @@
 ---
 title: 'Claude Code Best Practices: 개발 생산성을 극대화하는 AI 코딩 가이드'
 description: >-
-  Anthropic 공식 Best Practices 문서를 분석해 실제 Astro 블로그에 적용한 결과를 공유합니다. CLAUDE.md 최적화,
-  Explore→Plan→Code→Commit 워크플로우, 서브에이전트 구축으로 에러 40% 감소, 작업 시간 30% 단축을 달성했습니다.
+  Anthropic 공식 Best Practices 문서를 분석해 실제 Astro 블로그에 적용한 결과를 공유합니다. CLAUDE.md
+  최적화, Explore→Plan→Code→Commit 워크플로우, 서브에이전트 구축으로 에러 40% 감소, 작업 시간 30% 단축을
+  달성했습니다.
 pubDate: '2025-10-07'
 heroImage: ../../../assets/blog/claude-code-best-practices-hero.jpg
 tags:

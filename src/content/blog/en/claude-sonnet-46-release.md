@@ -3,8 +3,8 @@ title: >-
   Claude Sonnet 4.6 Release: Anthropic's Mid-Tier Model Strategy and Performance
   Analysis
 description: >-
-  Claude Sonnet 4.6 analysis: model versioning strategy, performance vs Opus
-  and Haiku, API cost changes, and upgrade guidance for developers building on
+  Claude Sonnet 4.6 analysis: model versioning strategy, performance vs Opus and
+  Haiku, API cost changes, and upgrade guidance for developers building on
   Claude.
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/claude-sonnet-46-release-hero.png

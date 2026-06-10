@@ -1,6 +1,9 @@
 ---
 title: 'Google Code Wiki: AIベースのコードドキュメント化プラットフォーム完全ガイド'
-description: 'Google Code WikiはGemini AIがGitHubリポジトリを自動分析してプロジェクトWikiを生成するドキュメント化プラットフォームです。有効化手順、自動Wiki生成の仕組み、Gemini Code Assist連携、チームコラボレーション設定まで実例を交えて完全解説します。'
+description: >-
+  Google Code WikiはGemini
+  AIがGitHubリポジトリを自動分析してプロジェクトWikiを生成するドキュメント化プラットフォームです。有効化手順、自動Wiki生成の仕組み、Gemini
+  Code Assist連携、チームコラボレーション設定まで実例を交えて完全解説します。
 pubDate: '2025-11-24'
 heroImage: ../../../assets/blog/google-code-wiki-guide-hero.jpg
 tags:
