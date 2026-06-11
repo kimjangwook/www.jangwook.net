@@ -2768,5 +2768,16 @@
       "devops": 0.3,
       "architecture": 0.65
     }
+  },
+  "claude-code-june-2026-new-features-changelog-developer-guide": {
+    "pubDate": "2026-06-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.75,
+      "web-development": 0.2,
+      "ai-ml": 0.95,
+      "devops": 0.45,
+      "architecture": 0.55
+    }
   }
 }

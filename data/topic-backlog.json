@@ -16,8 +16,9 @@
       "priority": 1,
       "source": "Claude Code 2026년 상반기 업데이트 누적 정리. Hooks, 서브에이전트, MCP 생태계 확장 등 개발자에게 실질적으로 영향을 준 변경사항을 정리하는 시의성 높은 주제.",
       "added_at": "2026-06-07",
-      "status": "queued",
-      "notes": "뉴스 부족 해소. Claude Code 헤비 유저 독자층에 직접 가치. 블로그 내 Claude Code 시리즈 포스트와 자연스러운 내부링크 연결."
+      "status": "done",
+      "notes": "뉴스 부족 해소. Claude Code 헤비 유저 독자층에 직접 가치. 블로그 내 Claude Code 시리즈 포스트와 자연스러운 내부링크 연결.",
+      "published_at": "2026-06-11"
     },
     {
       "slug": "openai-o3-pro-release-vs-claude-opus-coding-benchmark-june-2026",

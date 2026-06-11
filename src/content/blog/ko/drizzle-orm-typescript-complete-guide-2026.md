@@ -12,41 +12,45 @@ tags:
   - database
   - orm
 relatedPosts:
-  - slug: node-sqlite-builtin-practical-guide-2026
-    score: 0.92
+  - slug: ux-psychology-implementation-case-study
+    score: 0.93
     reason:
-      ko: 'Drizzle ORM의 SQLite 드라이버와 함께 쓰면 시너지가 있다. Node.js 내장 SQLite로 외부 패키지 없이 DB를 쓰는 방법을 다룬다.'
-      ja: DrizzleORMのSQLiteドライバと組み合わせると相乗効果がある。Node.js内蔵SQLiteで外部パッケージなしにDBを使う方法を扱っている。
-      en: Pairs well with Drizzle's SQLite driver — covers using Node.js built-in SQLite without external packages, which complements Drizzle's drizzle-orm/node-sqlite3 path.
-      zh: 与Drizzle的SQLite驱动配合使用效果很好。介绍了不用外部包直接使用Node.js内置SQLite的方法，与Drizzle的node-sqlite3路径相辅相成。
-  - slug: hono-typescript-api-2026
+      ko: '웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, architecture with comparable
+        difficulty.
+      zh: 在Web开发、架构领域涵盖类似主题，难度相当。
+  - slug: adsense-low-value-content-technical-fix
+    score: 0.91
+    reason:
+      ko: 웹 개발 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: Web開発分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in web development with comparable difficulty.
+      zh: 在Web开发领域涵盖类似主题，难度相当。
+  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
+    score: 0.89
+    reason:
+      ko: '선행 학습 자료로 유용하며, 웹 개발 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、Web開発の基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering web development fundamentals.'
+      zh: 作为先修知识很有用，涵盖Web开发基础。
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.88
+    reason:
+      ko: '선행 학습 자료로 유용하며, 웹 개발 기초를 다룹니다.'
+      ja: 事前学習資料として有用であり、Web開発の基礎を扱います。
+      en: 'Useful as prerequisite knowledge, covering web development fundamentals.'
+      zh: 作为先修知识很有用，涵盖Web开发基础。
+  - slug: aeo-implementation-experience
     score: 0.87
     reason:
-      ko: 'Drizzle + Hono.js 조합이 엣지 환경에서 자주 쓰인다. 이 글에서 언급한 "다음 예제" 빌드의 사전 지식으로 좋다.'
-      ja: Drizzle + Hono.jsの組み合わせはエッジ環境でよく使われる。この記事で言及した「次のサンプル」ビルドの前提知識として最適だ。
-      en: Drizzle + Hono.js is a popular edge-runtime combo. Good prerequisite for the REST API follow-up mentioned at the end of this post.
-      zh: Drizzle + Hono.js是边缘运行时的常见组合。这篇文章提到的REST API后续示例的预备知识。
-  - slug: typescript-zod-v4-claude-api-structured-output-guide-2026
-    score: 0.84
-    reason:
-      ko: 'drizzle-zod로 스키마에서 Zod 타입을 자동 생성하는 패턴을 쓸 때, Zod v4의 API 변화를 미리 파악해두면 좋다.'
-      ja: drizzle-zodでスキーマからZod型を自動生成するパターンを使う際、Zod v4のAPI変更を事前に把握しておくと良い。
-      en: When using drizzle-zod to auto-generate validation schemas, knowing the Zod v4 API changes is helpful — especially for the Claude API structured output patterns covered there.
-      zh: 使用drizzle-zod从schema自动生成Zod类型时，提前了解Zod v4的API变化很有帮助。
-  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
-    score: 0.79
-    reason:
-      ko: '런타임 선택이 ORM 선택에도 영향을 준다. Bun은 내장 SQLite를 지원하고, Deno도 SQLite 지원이 있어 Drizzle 연동 가능성을 비교해볼 수 있다.'
-      ja: ランタイムの選択はORMの選択にも影響する。BunはSQLiteを内蔵し、DenoもSQLiteサポートがあるため、Drizzle連携の可能性を比較できる。
-      en: Runtime choice affects ORM options — Bun has built-in SQLite and Deno has SQLite support, making this comparison useful when deciding the full stack alongside Drizzle.
-      zh: 运行时的选择也影响ORM的选择。Bun内置SQLite支持，Deno也有SQLite支持，在决定整体技术栈时可以参考。
-  - slug: bun-shell-scripting-practical-guide-2026
-    score: 0.75
-    reason:
-      ko: 'Bun에서 Drizzle ORM을 쓰면 bun:sqlite 드라이버를 통해 더 빠른 DB 연산이 가능하다. Bun 생태계에서 Drizzle을 쓸 계획이라면 참고가 된다.'
-      ja: BunでDrizzle ORMを使うとbun:sqliteドライバを通じてより高速なDB操作が可能だ。BunエコシステムでDrizzleを使う予定なら参考になる。
-      en: Using Drizzle with Bun's native bun:sqlite driver gives faster DB operations than better-sqlite3. Worth reading if you're planning to use Drizzle in a Bun environment.
-      zh: 在Bun中使用Drizzle ORM可以通过bun:sqlite驱动获得更快的数据库操作。如果计划在Bun生态中使用Drizzle，值得参考。
+      ko: '웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in web development, architecture with comparable
+        difficulty.
+      zh: 在Web开发、架构领域涵盖类似主题，难度相当。
 ---
 
 Prisma를 처음 배웠을 때 가장 당황스러웠던 건 마이그레이션 파일을 열어봤을 때였다. `prisma migrate dev` 한 번 치면 무언가가 돌아가는데, 정작 데이터베이스에 뭐가 날아갔는지는 알기 어려웠다. 내가 모르는 곳에서 뭔가가 조용히 일어나는 그 느낌이 불편했다.
