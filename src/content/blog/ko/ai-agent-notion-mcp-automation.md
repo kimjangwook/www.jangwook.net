@@ -60,7 +60,7 @@ draft: true
 
 ## 개요
 
-2024년 11월, Anthropic이 발표한 Model Context Protocol(MCP)은 AI 에이전트 개발의 패러다임을 완전히 바꾸었습니다. 기존에는 각 데이터 소스마다 별도의 통합 작업이 필요했지만, MCP는 <strong>단일 프로토콜로 모든 데이터 소스와 AI를 연결</strong>하는 표준을 제시했습니다.
+2024년 11월, Anthropic이 발표한 Model Context Protocol(MCP)은 AI 에이전트 개발의 패러다임을 완전히 바꾸었습니다. 기존에는 각 데이터 소스마다 별도의 통합 작업이 필요했지만, MCP는 <strong>단일 프로토콜로 모든 데이터 소스와 AI를 연결</strong>하는 표준을 제시했습니다. [Claude Code Hooks로 워크플로우 자동화하기](/ko/blog/ko/claude-code-hooks-workflow)에서 이 자동화를 더 심화하는 방법을 확인할 수 있습니다.
 
 이 가이드에서는 Notion API MCP 서버와 Claude Code를 활용하여 <strong>실제 업무에서 사용할 수 있는 자동화 파이프라인</strong>을 구축하는 방법을 다룹니다. 단순한 이론이 아닌, 실무에서 검증된 접근법과 함께 <strong>무엇이 가능하고 불가능한지</strong>, 도입 시 얻을 수 있는 장점과 유의해야 할 점들을 명확히 제시합니다.
 
@@ -243,7 +243,7 @@ const results = await mcp.tools['notion:search']({
 
 ### 1. MCP 서버 설치
 
-Claude Code는 `.mcp.json` 파일로 MCP 서버를 설정합니다:
+Claude Code는 `.mcp.json` 파일로 MCP 서버를 설정합니다. [Claude Code 베스트 프랙티스](/ko/blog/ko/claude-code-best-practices)에서 MCP 설정 시 주의할 점을 먼저 확인하면 도움이 됩니다:
 
 ```json
 {
@@ -747,7 +747,7 @@ Model Context Protocol과 Claude Code를 활용한 AI 에이전트 시스템은 
 4. <strong>작은 프로젝트로 시작</strong>: 단순한 자동화부터 점진적 확장
 5. <strong>커뮤니티 참여</strong>: GitHub, Discord에서 경험 공유
 
-MCP는 단순히 새로운 기술이 아니라, <strong>AI와 데이터 소스 통합의 표준</strong>이 되어가고 있습니다. 지금 시작하여 자동화 파이프라인을 구축하고, AI 에이전트의 진정한 잠재력을 경험해보시기 바랍니다.
+MCP는 단순히 새로운 기술이 아니라, <strong>AI와 데이터 소스 통합의 표준</strong>이 되어가고 있습니다. 더 나아가 [agentic 워크플로우 메타툴 최적화](/ko/blog/ko/agentic-workflow-meta-tools-optimization)를 통해 자동화 파이프라인의 효율을 높일 수 있습니다. 지금 시작하여 자동화 파이프라인을 구축하고, AI 에이전트의 진정한 잠재력을 경험해보시기 바랍니다.
 
 ## 참고 자료
 

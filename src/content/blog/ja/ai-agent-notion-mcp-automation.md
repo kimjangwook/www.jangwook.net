@@ -60,7 +60,7 @@ draft: true
 
 ## 概要
 
-2024年11月、AnthropicがリリースしたModel Context Protocol(MCP)は、AIエージェント開発のパラダイムを完全に変えました。従来は各データソースごとに個別の統合作業が必要でしたが、MCPは<strong>単一プロトコルですべてのデータソースとAIを接続</strong>する標準を提示しました。
+2024年11月、AnthropicがリリースしたModel Context Protocol(MCP)は、AIエージェント開発のパラダイムを完全に変えました。従来は各データソースごとに個別の統合作業が必要でしたが、MCPは<strong>単一プロトコルですべてのデータソースとAIを接続</strong>する標準を提示しました。[Claude Code Hooksでワークフロー自動化](/ja/blog/ja/claude-code-hooks-workflow)でこの自動化をさらに深化させる方法を確認できます。
 
 本ガイドでは、Notion API MCPサーバーとClaude Codeを活用して<strong>実務で使用できる自動化パイプライン</strong>を構築する方法を解説します。単なる理論ではなく、実務で検証されたアプローチとともに、<strong>何が可能で何が不可能か</strong>、導入時に得られるメリットと注意すべき点を明確に提示します。
 

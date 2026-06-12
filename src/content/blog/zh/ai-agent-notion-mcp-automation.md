@@ -60,7 +60,7 @@ draft: true
 
 ## 概述
 
-2024年11月，Anthropic发布的Model Context Protocol (MCP) 彻底改变了AI智能体 (AI Agent) 开发的范式。以往每个数据源都需要单独的集成工作，而MCP则提出了<strong>通过单一协议连接所有数据源与AI</strong>的标准化方案。
+2024年11月，Anthropic发布的Model Context Protocol (MCP) 彻底改变了AI智能体 (AI Agent) 开发的范式。以往每个数据源都需要单独的集成工作，而MCP则提出了<strong>通过单一协议连接所有数据源与AI</strong>的标准化方案。[Claude Code Hooks工作流自动化指南](/zh/blog/zh/claude-code-hooks-workflow)介绍了如何进一步深化这种自动化。
 
 本指南将介绍如何使用Notion API MCP服务器和Claude Code构建<strong>可在实际业务中使用的自动化流水线</strong>。不仅仅是理论讲解，我们将明确展示经过实战验证的方法论，并清晰阐述<strong>什么可行、什么不可行</strong>，以及导入时的优势和注意事项。
 

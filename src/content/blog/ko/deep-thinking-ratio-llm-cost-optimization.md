@@ -1,8 +1,9 @@
 ---
 title: 'Deep-Thinking Ratio: LLM 추론 비용을 50% 줄이는 새로운 측정 지표'
 description: >-
-  "길게 생각하면 좋다"는 상식을 뒤집는 Google·UVA 연구. Deep-Thinking Ratio(DTR)를 활용하면
-  추론 품질을 유지하면서 LLM 추론 비용을 절반으로 줄일 수 있습니다. EM/VPoE가 알아야 할 실전 인사이트.
+  "길게 생각하면 좋다"는 AI 상식을 뒤집는 Google·UVA 공동 연구. DTR(Deep-Thinking Ratio)를 활용하면
+  추론 품질을 유지하면서 LLM 추론 비용을 50% 절감할 수 있습니다. 연구 방법론·실험 결과·프로덕션 DTR
+  기준 설계법까지 총정리합니다.
 pubDate: '2026-03-05'
 heroImage: ../../../assets/blog/deep-thinking-ratio-llm-cost-optimization-hero.png
 tags:

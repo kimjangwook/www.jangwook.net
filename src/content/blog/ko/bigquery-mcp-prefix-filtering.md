@@ -62,7 +62,7 @@ draft: true
 
 ## 개요
 
-Model Context Protocol(MCP)은 AI 에이전트가 외부 시스템과 안전하게 상호작용할 수 있도록 설계된 표준 프로토콜입니다. 이 글에서는 BigQuery를 MCP 서버로 통합하면서, Dataset Prefix 필터링 기능을 구현하여 AI 에이전트의 데이터 접근 범위를 제어하는 방법을 다룹니다.
+Model Context Protocol(MCP)은 AI 에이전트가 외부 시스템과 안전하게 상호작용할 수 있도록 설계된 표준 프로토콜입니다. [A2A·MCP 하이브리드 아키텍처 실전 가이드](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide)에서 MCP의 더 넓은 활용 패턴을 확인할 수 있습니다. 이 글에서는 BigQuery를 MCP 서버로 통합하면서, Dataset Prefix 필터링 기능을 구현하여 AI 에이전트의 데이터 접근 범위를 제어하는 방법을 다룹니다.
 
 ### 왜 Dataset Prefix 필터링이 필요한가?
 
@@ -264,7 +264,7 @@ function extractDatasetsFromQuery(query: string): string[] {
 
 ### 도구 정의 원칙
 
-효과적인 MCP 도구는 다음 원칙을 따릅니다:
+효과적인 MCP 도구는 다음 원칙을 따릅니다. [AWS MCP 서버 GA 실전 가이드](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026)에서도 유사한 도구 설계 패턴을 볼 수 있습니다:
 
 1. <strong>단일 책임</strong>: 각 도구는 하나의 명확한 작업 수행
 2. <strong>명확한 입출력</strong>: JSON Schema로 파라미터와 반환값 정의
@@ -1007,7 +1007,7 @@ Dataset Prefix 필터링이 적용된 BigQuery MCP 서버를 구현함으로써 
 3. <strong>통합 테스트</strong>: 다양한 시나리오에 대한 자동화된 테스트 작성
 4. <strong>문서화</strong>: API 문서 및 사용자 가이드 작성
 
-MCP를 활용한 BigQuery 통합은 AI 에이전트가 안전하고 효율적으로 데이터를 분석할 수 있는 기반을 제공합니다. Dataset Prefix 필터링은 이러한 통합의 보안과 성능을 크게 향상시키는 핵심 기능입니다.
+MCP를 활용한 BigQuery 통합은 AI 에이전트가 안전하고 효율적으로 데이터를 분석할 수 있는 기반을 제공합니다. Dataset Prefix 필터링은 이러한 통합의 보안과 성능을 크게 향상시키는 핵심 기능입니다. 분석 자동화까지 확장하려면 [Google Analytics MCP 자동화 가이드](/ko/blog/ko/google-analytics-mcp-automation)를 참고하세요.
 
 ## 참고 자료
 

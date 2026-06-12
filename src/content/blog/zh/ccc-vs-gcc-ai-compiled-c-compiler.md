@@ -62,7 +62,7 @@ Anthropic于2026年2月5日发布的<strong>CCC（Claude's C Compiler）</strong
 
 ## CCC是什么
 
-CCC采用Anthropic Safeguards团队的Nicholas Carlini设计的<strong>Agent Teams</strong>方式开发。核心思路很简单：
+CCC采用Anthropic Safeguards团队的Nicholas Carlini设计的<strong>Agent Teams</strong>方式开发。正如[Claude Code的5种Agent工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)中所介绍的，核心思路很简单：
 
 > 16个Claude实例在共享代码库上并行工作，无需人工干预即可完成编译器。
 
@@ -152,7 +152,7 @@ CCC项目的真正意义不在于"击败了GCC"，而在于以下事实：
 
 ### 2. 并行化的力量
 
-16个Agent并行工作不仅仅是速度提升。每个Agent承担<strong>专业化角色</strong>：
+16个Agent并行工作不仅仅是速度提升。如[Claude Code并行会话与Git Worktree实战](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)所示，每个Agent承担<strong>专业化角色</strong>：
 
 - 功能实现Agent
 - 重复代码整合Agent
@@ -213,7 +213,7 @@ graph LR
 1. <strong>测试是核心</strong>: AI Agent的质量与测试环境的质量直接相关
 2. <strong>架构设计仍是人类的工作</strong>: SSA IR等高层设计决策由人类做出
 3. <strong>80%方案的价值</strong>: 不要低估虽不完美但能工作的成果
-4. <strong>并行Agent时代</strong>: AI作为团队而非个体工作的可能性
+4. <strong>并行Agent时代</strong>: AI作为团队而非个体工作的可能性。[多Agent编排改进案例](/zh/blog/zh/multi-agent-orchestration-improvement)提供了具体的实践模式
 
 ## 结论
 

@@ -63,7 +63,7 @@ Nearly 2,000 Claude Code sessions, $20,000 in API costs, and 100,000 lines of co
 
 ## What Is CCC?
 
-CCC was developed using an <strong>agent teams</strong> approach designed by Nicholas Carlini from Anthropic's Safeguards team. The core idea is simple:
+CCC was developed using an <strong>agent teams</strong> approach designed by Nicholas Carlini from Anthropic's Safeguards team. As covered in [Claude Code's 5 Agentic Workflow Patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types), the core idea is simple:
 
 > 16 Claude instances work in parallel on a shared codebase without active human intervention to build a complete compiler.
 
@@ -153,7 +153,7 @@ A human compiler developer would need <strong>months to years</strong> to build 
 
 ### 2. The Power of Parallelism
 
-Running 16 agents in parallel isn't just about speed. Each agent takes on a <strong>specialized role</strong>:
+Running 16 agents in parallel isn't just about speed. As shown in [Parallel Claude Code Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree), each agent takes on a <strong>specialized role</strong>:
 
 - Feature implementation agents
 - Duplicate code consolidation agent
@@ -214,7 +214,7 @@ Capabilities are improving dramatically with each generation. Opus 4.7 or 5.0 mi
 1. <strong>Testing is key</strong>: AI agent quality directly correlates with test environment quality
 2. <strong>Architecture design is still human work</strong>: High-level decisions like SSA IR were made by humans
 3. <strong>The value of 80% solutions</strong>: Don't underestimate working results that aren't perfect
-4. <strong>The era of parallel agents</strong>: AI working as teams, not individuals
+4. <strong>The era of parallel agents</strong>: AI working as teams, not individuals — see [Multi-Agent Orchestration Improvements](/en/blog/en/multi-agent-orchestration-improvement) for practical patterns
 
 ## Conclusion
 

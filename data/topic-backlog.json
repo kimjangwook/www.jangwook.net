@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-09",
+  "updated_at": "2026-06-13",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3458,6 +3458,40 @@
       "added_at": "2026-06-09",
       "status": "queued",
       "notes": "TypeScript 6.0 포스트와 연계 가능한 고급 TypeScript 시리즈 구성."
+    },
+    {
+      "slug": "typescript-vs-javascript-2026-complete-comparison",
+      "title_idea": "TypeScript vs JavaScript 2026 완전 비교 가이드 — tsgo 시대, 언제 무엇을 써야 하나",
+      "content_type": "comparison",
+      "target_keyword": "TypeScript JavaScript 비교 2026",
+      "secondary_keywords": [
+        "tsgo 컴파일러 속도",
+        "TypeScript 채택률 2026",
+        "TypeScript vs JavaScript 팀 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "TypeScript 채택률 78% 달성(2026), tsgo(네이티브 Go 컴파일러)로 타입체크 8~10배 빠름. 40%가 TS 전용, 6%만 JS 전용. Developer Survey 2026 데이터 기반 비교 가이드.",
+      "added_at": "2026-06-13",
+      "status": "queued",
+      "notes": "토요일 비교 가이드 포맷. drizzle-orm-typescript-complete-guide-2026과 내부링크 연계 가능. tsgo 도입으로 생산성 차이가 줄어드는 시점이라 타이밍 좋음."
+    },
+    {
+      "slug": "vercel-vs-cloudflare-workers-vs-fly-io-edge-hosting-2026",
+      "title_idea": "Vercel vs Cloudflare Workers vs Fly.io — 2026 에지 호스팅 완전 비교",
+      "content_type": "comparison",
+      "target_keyword": "Vercel Cloudflare Workers 비교 2026",
+      "secondary_keywords": [
+        "에지 컴퓨팅 호스팅 비교",
+        "Fly.io vs Vercel 가격",
+        "Next.js 배포 플랫폼 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "Vercel AI SDK 포스트와 연계. 2026년 에지 플랫폼 3강(Vercel, Cloudflare Pages/Workers, Fly.io) 가격·성능·콜드스타트·DX·락인 리스크 비교. 특히 Next.js 앱 배포 시나리오 중심.",
+      "added_at": "2026-06-13",
+      "status": "queued",
+      "notes": "vercel-ai-sdk-claude-streaming-agent-2026 포스트와 내부링크. 토요일 비교 가이드 포맷. SvelteKit 독자층도 Cloudflare/Fly.io 관심 높음."
     }
   ]
 }

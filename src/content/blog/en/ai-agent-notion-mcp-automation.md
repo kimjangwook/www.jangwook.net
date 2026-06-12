@@ -64,7 +64,7 @@ draft: true
 
 ## Overview
 
-In November 2024, Anthropic's release of the Model Context Protocol (MCP) fundamentally transformed the AI agent development paradigm. While previously each data source required separate integration work, MCP introduced a standard for <strong>connecting all data sources and AI through a single protocol</strong>.
+In November 2024, Anthropic's release of the Model Context Protocol (MCP) fundamentally transformed the AI agent development paradigm. While previously each data source required separate integration work, MCP introduced a standard for <strong>connecting all data sources and AI through a single protocol</strong>. [Claude Code Hooks for Workflow Automation](/en/blog/en/claude-code-hooks-workflow) shows how to deepen this automation further.
 
 This guide explores how to build <strong>automation pipelines ready for real-world deployment</strong> using Notion API MCP servers and Claude Code. Beyond mere theory, we present field-tested approaches along with clear explanations of <strong>what's possible and what's not</strong>, the benefits of adoption, and critical considerations.
 

@@ -1,8 +1,9 @@
 ---
 title: Claude Cowork 엔터프라이즈 출시 — 개발자 도구에서 전사 생산성 플랫폼으로
 description: >-
-  Anthropic Claude Cowork의 엔터프라이즈 기능 분석. Plugin Marketplace, MCP 커넥터,
-  Excel·PowerPoint 통합까지 — CTO가 준비해야 할 전사 AI 도입 전략.
+  Anthropic Claude Cowork 엔터프라이즈 버전의 핵심 기능 분석. Plugin Marketplace, MCP 커넥터,
+  Excel·PowerPoint 통합, 관리자 대시보드 — CTO와 IT 리더가 전사 AI 도입 전에 반드시 파악해야
+  할 전략과 체크리스트.
 pubDate: '2026-03-05'
 heroImage: ../../../assets/blog/claude-cowork-enterprise-productivity-platform-hero.jpg
 tags:

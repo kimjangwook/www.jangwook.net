@@ -63,7 +63,7 @@ draft: true
 
 ## Introduction
 
-The Model Context Protocol (MCP) is an emerging standard for connecting AI assistants to external data sources and tools. When working with large-scale data warehouses like Google BigQuery, AI agents need controlled, secure access to query and analyze data. This article demonstrates how to build an MCP server that integrates with BigQuery while implementing dataset prefix filtering for multi-tenant environments.
+The Model Context Protocol (MCP) is an emerging standard for connecting AI assistants to external data sources and tools. For a broader look at MCP integration patterns, see our [A2A-MCP Hybrid Architecture Production Guide](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide). When working with large-scale data warehouses like Google BigQuery, AI agents need controlled, secure access to query and analyze data. This article demonstrates how to build an MCP server that integrates with BigQuery while implementing dataset prefix filtering for multi-tenant environments.
 
 ### Why Dataset Prefix Filtering?
 
@@ -849,4 +849,4 @@ Before deploying to production:
 
 ---
 
-<strong>About the Author</strong>: This guide is based on practical experience building MCP servers for enterprise data platforms. The complete source code is available as a reference implementation for developers looking to integrate BigQuery with AI assistants through the Model Context Protocol.
+<strong>About the Author</strong>: This guide is based on practical experience building MCP servers for enterprise data platforms. The complete source code is available as a reference implementation for developers looking to integrate BigQuery with AI assistants through the Model Context Protocol. To extend analytics automation further, see our [Google Analytics MCP Automation Guide](/en/blog/en/google-analytics-mcp-automation).

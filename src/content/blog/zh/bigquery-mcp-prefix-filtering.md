@@ -60,7 +60,7 @@ draft: true
 
 ## 概述
 
-Model Context Protocol（MCP，模型上下文协议）是一个专为 AI 代理与外部系统安全交互而设计的标准协议。本文将介绍如何将 BigQuery 集成为 MCP 服务器，并实现数据集前缀过滤功能，以控制 AI 代理的数据访问范围。
+Model Context Protocol（MCP，模型上下文协议）是一个专为 AI 代理与外部系统安全交互而设计的标准协议。更广泛的MCP集成模式请参考[A2A·MCP混合架构生产实战指南](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide)。本文将介绍如何将 BigQuery 集成为 MCP 服务器，并实现数据集前缀过滤功能，以控制 AI 代理的数据访问范围。
 
 ### 为什么需要数据集前缀过滤？
 
@@ -1005,7 +1005,7 @@ required prefix 'analytics_'
 3. <strong>集成测试</strong>：为各种场景编写自动化测试
 4. <strong>文档编写</strong>：创建 API 文档和用户指南
 
-使用 MCP 的 BigQuery 集成为 AI 代理安全高效地分析数据提供了基础。数据集前缀过滤是显著提升此类集成的安全性和性能的核心功能。
+使用 MCP 的 BigQuery 集成为 AI 代理安全高效地分析数据提供了基础。数据集前缀过滤是显著提升此类集成的安全性和性能的核心功能。如需进一步扩展分析自动化，请参考[Google Analytics MCP自动化指南](/zh/blog/zh/google-analytics-mcp-automation)。
 
 ## 参考资料
 
