@@ -1,8 +1,8 @@
 ---
 title: Claude Code 2026年6月アップデート分析 — Safe Mode、Opus 4.8デフォルト、レート制限2倍
 description: >-
-  2026年6月のClaude Codeの主な変更点をまとめた。Safe Mode、/cdコマンド、Opus
-  4.8デフォルト化、/usage細分化、レート制限2倍まで。
+  2026年6月Claude Codeアップデートを完全解説 — Safe Mode権限分離、/cdコマンド追加、Opus 4.8デフォルト化、
+  /usageコスト細分化、レート制限2倍まで。開発者が今すぐ把握すべき全変更点と実務移行チェックリストを整理した。
 pubDate: '2026-06-11'
 heroImage: >-
   ../../../assets/blog/claude-code-june-2026-new-features-changelog-developer-guide-hero.png

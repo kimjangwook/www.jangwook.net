@@ -3492,6 +3492,40 @@
       "added_at": "2026-06-13",
       "status": "queued",
       "notes": "vercel-ai-sdk-claude-streaming-agent-2026 포스트와 내부링크. 토요일 비교 가이드 포맷. SvelteKit 독자층도 Cloudflare/Fly.io 관심 높음."
+    },
+    {
+      "slug": "opencode-getting-started-ai-coding-tool-2026",
+      "title_idea": "OpenCode 시작 가이드: AI 코딩 도구 순위 1위 등극 — 설치부터 실전 워크플로우까지",
+      "content_type": "how-to",
+      "target_keyword": "OpenCode AI 코딩 도구 2026",
+      "secondary_keywords": [
+        "OpenCode 설치 방법",
+        "OpenCode vs Claude Code",
+        "AI 코딩 도구 비교 2026"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "June 2026 AI dev tool power rankings: OpenCode entered #1, first major disruption since Cursor 3 rebuild (LogRocket Blog). High search intent from developers switching tools.",
+      "added_at": "2026-06-13",
+      "status": "queued",
+      "notes": "How-to 형식: OpenCode 설치 → 기본 설정 → Claude Code와 비교 → 실전 전환 가이드. 블로그의 Claude Code 독자층에게 중립적 비교 정보 제공 가치 높음."
+    },
+    {
+      "slug": "dify-llm-workflow-builder-tutorial-2026",
+      "title_idea": "Dify로 LLM 앱 10분 만에 만들기: 비주얼 워크플로우 빌더 실전 가이드 2026",
+      "content_type": "how-to",
+      "target_keyword": "Dify LLM 앱 만들기 2026",
+      "secondary_keywords": [
+        "Dify 사용법",
+        "LLM 워크플로우 빌더",
+        "Dify vs LangChain 2026"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Dify visual workflow builder gaining traction in June 2026 as drag-and-drop LLM app builder. Lower code barrier vs LangChain/LlamaIndex.",
+      "added_at": "2026-06-13",
+      "status": "queued",
+      "notes": "How-to 형식: Dify 설치/클라우드 → 첫 번째 워크플로우 → 실용 예제 3가지 → LangChain 대비 장단점. 코딩 경험 없는 팀원도 LLM 앱 빌드 가능한 점 강조."
     }
   ]
 }

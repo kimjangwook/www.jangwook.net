@@ -69,7 +69,7 @@ draft: true
 
 ## Overview
 
-Following the announcement of the Anthropic Agent Skills standard, many developers and businesses are asking how to integrate and utilize this powerful tool in their actual workflows. This tutorial focuses on the practical use of Anthropic Agent Skills, providing concrete implementation examples, execution methods, and an in-depth analysis of predicted effects and Return on Investment (ROI). Our goal is to offer a practical guide for those looking to maximize the potential of AI agents.
+Following the announcement of the [Anthropic Agent Skills standard](/en/blog/en/anthropic-agent-skills-standard), many developers and businesses are asking how to integrate and utilize this powerful tool in their actual workflows. This tutorial focuses on the practical use of Anthropic Agent Skills, providing concrete implementation examples, execution methods, and an in-depth analysis of predicted effects and Return on Investment (ROI). Our goal is to offer a practical guide for those looking to maximize the potential of AI agents.
 
 ## Key Insights: Deep Dive into Agent Skills
 
@@ -347,7 +347,7 @@ Agent Skills encapsulate an organization's specific workflows, best practices, a
 
 ### 4. Scalability and Portability
 
-Agent Skills, once developed, can be reused and deployed across various Claude applications, Claude Code environments, and APIs.
+Agent Skills, once developed, can be reused and deployed across various Claude applications, [Claude Code environments](/en/blog/en/claude-code-cli-migration-guide), and APIs.
 
 -   <strong>Effect</strong>: New requirements can be addressed quickly by leveraging existing skills, saving development time and resources. This leads to faster time-to-market and provides a long-term competitive advantage.
 -   <strong>Long-term ROI</strong>: Increased development efficiency, rapid adaptation to market changes, reduced technical debt.

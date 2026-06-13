@@ -1,6 +1,8 @@
 ---
 title: Claude Code 2026年6月更新分析 — Safe Mode、Opus 4.8默认、限制翻倍
-description: 整理了2026年6月Claude Code的核心变化：Safe Mode、/cd命令、Opus 4.8默认化、/usage细分、速率限制翻倍。
+description: >-
+  全面解析2026年6月Claude Code更新：Safe Mode权限隔离、/cd命令新增、Opus 4.8默认化、/usage成本细分、速率限制翻倍。
+  开发者需立即了解的所有变更内容与实务迁移清单。
 pubDate: '2026-06-11'
 heroImage: >-
   ../../../assets/blog/claude-code-june-2026-new-features-changelog-developer-guide-hero.png

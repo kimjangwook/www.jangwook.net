@@ -1,8 +1,8 @@
 ---
 title: 'Claude Code 6월 2026 업데이트 분석 — Safe Mode, Opus 4.8, 요금 2배'
 description: >-
-  2026년 6월 Claude Code의 핵심 변경사항을 정리했다. Safe Mode, /cd 커맨드, Opus 4.8 기본값, /usage
-  세분화, 요금 한도 2배까지.
+  2026년 6월 Claude Code 업데이트 완전 분석 — Safe Mode 권한 격리, /cd 커맨드 추가, Opus 4.8 기본값
+  전환, /usage 비용 세분화, 요금 한도 2배 상향까지. 개발자가 지금 알아야 할 모든 변경사항과 실무 이행 체크리스트를 정리했다.
 pubDate: '2026-06-11'
 heroImage: >-
   ../../../assets/blog/claude-code-june-2026-new-features-changelog-developer-guide-hero.png

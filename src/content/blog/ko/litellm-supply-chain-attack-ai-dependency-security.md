@@ -1,8 +1,8 @@
 ---
 title: LiteLLM 공급망 공격 — AI 인프라 의존성의 보안 사각지대
 description: >-
-  PyPI에서 발생한 LiteLLM 공급망 공격을 분석하고, AI 도구 체인에서 의존성 관리와 공급망 보안을 강화하기 위한 실전 방법을
-  정리합니다.
+  PyPI를 통해 발생한 LiteLLM 공급망 공격 사례를 심층 분석합니다. AI 개발 도구 체인의 의존성 취약점과 악성 패키지 탐지
+  방법, 공급망 보안 강화 전략을 다루며, 엔지니어링 팀이 즉시 실무에 적용할 수 있는 구체적인 방어 절차와 보안 체크리스트를 제공합니다.
 pubDate: '2026-03-31'
 heroImage: >-
   ../../../assets/blog/litellm-supply-chain-attack-ai-dependency-security-hero.jpg

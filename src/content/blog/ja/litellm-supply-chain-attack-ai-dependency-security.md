@@ -1,7 +1,8 @@
 ---
 title: LiteLLMサプライチェーン攻撃 — AIインフラ依存関係のセキュリティ死角
 description: >-
-  PyPIで発生したLiteLLMサプライチェーン攻撃を分析し、AIツールチェーンにおける依存関係管理とサプライチェーンセキュリティを強化するための実践的な方法を整理します。
+  PyPIで発生したLiteLLMサプライチェーン攻撃を深く分析します。AIツールチェーンの依存関係脆弱性と悪意あるパッケージ検出方法、
+  サプライチェーンセキュリティ強化戦略、エンジニアリングチームが即日実務に適用できる具体的な防御手順とセキュリティチェックリストを提供します。
 pubDate: '2026-03-31'
 heroImage: >-
   ../../../assets/blog/litellm-supply-chain-attack-ai-dependency-security-hero.jpg

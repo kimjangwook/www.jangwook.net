@@ -199,7 +199,7 @@ Annual net savings: $18,400 × 12 - $95,000 = $125,800 (Year 1)
 Year 2+ annual savings: $18,400 × 12 = $220,800
 ```
 
-<strong>Investment recovered in 5 months.</strong> An attractive figure, but with one prerequisite: successful role transitions for existing employees without significant attrition during the adoption process.
+<strong>Investment recovered in 5 months.</strong> An attractive figure, but I recommend [analyzing real AI agent cost structures](/en/blog/en/ai-agent-cost-reality) before committing. There is one prerequisite: successful role transitions for existing employees without significant attrition during the adoption process.
 
 ## The Accuracy Improvement Mechanism — Why AI Became More Accurate Than Humans
 
@@ -269,7 +269,7 @@ What improves AI model performance isn't the model itself — it's the <strong>q
 
 ### 3. People Problems Are Harder Than Tech Problems
 
-Technical implementation took 3 months. Organizational culture transformation wasn't complete even after 6 months. As an engineering manager, the most important role wasn't writing code — it was addressing team anxiety and presenting a vision for new roles.
+Technical implementation took 3 months. Organizational culture transformation wasn't complete even after 6 months. As an engineering manager, the most important role wasn't writing code — it was addressing team anxiety and presenting a vision for new roles. This is precisely why a [top-down AI adoption strategy](/en/blog/en/enterprise-ai-adoption-topdown) matters.
 
 ### 4. Gradual Adoption Is the Only Right Answer
 

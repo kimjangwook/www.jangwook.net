@@ -51,7 +51,7 @@ relatedPosts:
 
 ## Introduction: Stop Settling for "Just Pretty" Images
 
-Ever typed "modern clean blog hero image" into an AI image generator? The result was probably a bland, generic image you've seen a thousand times. When your prompt is vague, the AI produces vague images.
+Ever typed "modern clean blog hero image" into an AI image generator? The result was probably a bland, generic image you've seen a thousand times. When your prompt is vague, the AI produces vague images. (Understanding [how LLMs process prompts](/en/blog/en/dena-llm-study-part1-fundamentals) makes this phenomenon crystal clear.)
 
 To solve this, we analyzed <strong>300+ infographic designs evaluated across 5 criteria in the Banana X project</strong>. The result? High-scoring designs share clear, consistent patterns — and we distilled those patterns into a systematic prompt framework called the <strong>YAML 7-Part Structure</strong>.
 
@@ -525,7 +525,7 @@ After applying this guideline to actual blog hero image generation:
 - <strong>Before</strong>: Prompt "modern tech blog hero" → generic gradient image seen everywhere
 - <strong>After</strong>: YAML 7-Part Structure applied → a unique image perfectly aligned with the post content
 
-The <strong>Content Connection</strong> part alone boosted Theme Fit scores from an average of 6 to 9 out of 10.
+The <strong>Content Connection</strong> part alone boosted Theme Fit scores from an average of 6 to 9 out of 10. Combining this with [Figma MCP for design system synchronization](/en/blog/en/figma-mcp-web-components-sync) helps maintain a consistent visual identity across both hero images and UI components.
 
 ### Final Checklist
 

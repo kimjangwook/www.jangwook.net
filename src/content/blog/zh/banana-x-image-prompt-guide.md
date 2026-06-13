@@ -48,7 +48,7 @@ relatedPosts:
 
 ## 前言：别再满足于"看起来还行"的图片了
 
-你有没有在AI图像生成工具里输入过"modern clean blog hero image"？结果大概是一张哪里都见过的、毫无特色的图片。提示词越模糊，AI生成的图片就越模糊。
+你有没有在AI图像生成工具里输入过"modern clean blog hero image"？结果大概是一张哪里都见过的、毫无特色的图片。提示词越模糊，AI生成的图片就越模糊。（了解[LLM处理提示词的机制](/zh/blog/zh/dena-llm-study-part1-fundamentals)可以让这一现象的原因一目了然。）
 
 为了解决这个问题，我们分析了<strong>Banana X项目中300多个信息图设计的5维度评估数据</strong>。结果发现，高分设计有着明确的共同规律，我们将这些规律整理成了系统化的提示词框架——<strong>YAML 7-Part Structure</strong>。
 
@@ -522,7 +522,7 @@ precise. No text overlay. No watermarks. 2:1 aspect ratio.
 - <strong>Before</strong>：提示词"modern tech blog hero" → 到处都能见到的渐变图片
 - <strong>After</strong>：应用YAML 7-Part Structure → 与文章内容完美契合的独一无二图片
 
-特别是引入<strong>Content Connection</strong>后，Theme Fit得分从平均6分跃升至9分。
+特别是引入<strong>Content Connection</strong>后，Theme Fit得分从平均6分跃升至9分。结合[Figma MCP设计系统同步](/zh/blog/zh/figma-mcp-web-components-sync)，可以在主视觉图和UI组件之间保持更一致的视觉统一性。
 
 ### 最终检查清单
 

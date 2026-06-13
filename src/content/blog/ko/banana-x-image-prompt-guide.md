@@ -50,7 +50,7 @@ relatedPosts:
 
 ## 서론: "그냥 예쁜 이미지"는 이제 그만
 
-AI 이미지 생성 도구에 "modern clean blog hero image"라고 입력해본 적 있으신가요? 결과는 어디서나 본 듯한, 특색 없는 이미지였을 겁니다. 프롬프트가 모호하면 AI도 모호한 이미지를 생성합니다.
+AI 이미지 생성 도구에 "modern clean blog hero image"라고 입력해본 적 있으신가요? 결과는 어디서나 본 듯한, 특색 없는 이미지였을 겁니다. 프롬프트가 모호하면 AI도 모호한 이미지를 생성합니다. ([LLM이 프롬프트를 처리하는 메커니즘](/ko/blog/ko/dena-llm-study-part1-fundamentals)을 이해하면 이 현상의 이유가 명확해집니다.)
 
 이 문제를 해결하기 위해, <strong>Banana X 프로젝트에서 300건 이상의 인포그래픽 디자인을 5가지 기준으로 평가한 데이터</strong>를 분석했습니다. 그 결과, 고득점 디자인에는 뚜렷한 공통 패턴이 있었고, 이를 체계적인 프롬프트 구조로 정리한 것이 바로 <strong>YAML 7-Part Structure</strong>입니다.
 
@@ -524,7 +524,7 @@ YAML 구조에서 설계한 내용을 빠짐없이 자연어로 압축한 것이
 - <strong>Before</strong>: 프롬프트 "modern tech blog hero" → 어디서나 본 듯한 그라데이션 이미지
 - <strong>After</strong>: YAML 7-Part Structure 적용 → 포스트 내용과 정합하는, 유일무이한 이미지
 
-특히 <strong>Content Connection</strong> 파트를 도입한 후 Theme Fit 점수가 평균 6점에서 9점으로 크게 향상되었습니다.
+특히 <strong>Content Connection</strong> 파트를 도입한 후 Theme Fit 점수가 평균 6점에서 9점으로 크게 향상되었습니다. [Figma MCP를 활용한 디자인 시스템 동기화](/ko/blog/ko/figma-mcp-web-components-sync)와 결합하면 이미지와 컴포넌트 전반에 걸쳐 더 일관된 비주얼 아이덴티티를 유지할 수 있습니다.
 
 ### 최종 체크리스트
 

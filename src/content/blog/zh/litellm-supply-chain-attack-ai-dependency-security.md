@@ -1,6 +1,8 @@
 ---
 title: LiteLLM供应链攻击 — AI基础设施依赖的安全盲区
-description: 分析PyPI上发生的LiteLLM供应链攻击，整理在AI工具链中加强依赖管理和供应链安全的实战方法。
+description: >-
+  深入分析PyPI上发生的LiteLLM供应链攻击。涵盖AI工具链依赖漏洞与恶意包检测方法、供应链安全强化策略，
+  以及工程团队可立即应用于实务的具体防御步骤与安全检查清单。
 pubDate: '2026-03-31'
 heroImage: >-
   ../../../assets/blog/litellm-supply-chain-attack-ai-dependency-security-hero.jpg

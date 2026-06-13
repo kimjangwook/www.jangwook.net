@@ -1,8 +1,8 @@
 ---
 title: 'Claude Code June 2026 Update: Safe Mode, Opus 4.8, and Doubled Rate Limits'
 description: >-
-  A hands-on breakdown of Claude Code's June 2026 changes — Safe Mode, /cd
-  command, Opus 4.8 as default, /usage granularity, and 2x rate limits.
+  Complete breakdown of Claude Code June 2026: Safe Mode isolation, /cd command,
+  Opus 4.8 as default, /usage cost granularity, and doubled rate limits explained.
 pubDate: '2026-06-11'
 heroImage: >-
   ../../../assets/blog/claude-code-june-2026-new-features-changelog-developer-guide-hero.png
