@@ -4,6 +4,123 @@
 
 ---
 
+## 2026-06-14 주간 리뷰 (6월 3주차)
+
+### 성과 요약
+
+- **이번 주 공개 포스트**: 3개 (AdSense 게이트 통과)
+- **이번 주 draft 생성**: 3개 (뉴스 유형 — 수동 게이트 대기)
+- **콘텐츠 믹스 (공개 기준)**: How-to 100% / 뉴스 0% (draft 보관) / 비교 0% / 시리즈 0%
+- **내부링크 현황**: 278개 중 13개 0-link (신규 추가 + 기존 미처리 혼재)
+- **크로스포스팅**: dev.to 0/0, Hashnode 0/0 (기록 공백 3주+ 지속)
+
+#### 이번 주 포스트 목록
+
+| 슬러그 | 유형 | 상태 |
+|--------|------|------|
+| node-sqlite-builtin-practical-guide-2026 | How-to | 공개 |
+| drizzle-orm-typescript-complete-guide-2026 | How-to | 공개 |
+| mastra-ai-typescript-agent-framework-guide-2026 | How-to | 공개 |
+| claude-code-june-2026-new-features-changelog-developer-guide | News | Draft |
+| claude-fable-5-mythos-public-api-developer-analysis-2026 | News | Draft |
+| anthropic-openai-ipo-token-price-war-developer-guide-june-2026 | News | Draft |
+
+---
+
+### AdSense 회생 정책 준수 현황
+
+- ✅ 뉴스 반응형 공개 0% — SKILL.md "0〜10% 한도" 준수 (3개 draft 보관)
+- ✅ 공개 포스트 3개 모두 발행 게이트 통과 (1인칭 샌드박스 검증 How-to)
+- ⚠️ Draft 3개(클로드 코드, Fable 5, IPO 분석)는 수동 게이트 검토 대기 중
+
+---
+
+### 콘텐츠 믹스 분석 (공개 기준)
+
+| 유형 | 이번 주 | 목표 | 편차 |
+|------|---------|------|------|
+| How-to | 100% (3개) | 40% | +60% (AdSense 정책 준수 의도적) |
+| 뉴스 | 0% (3개 draft) | ≤10% | 준수 |
+| 비교 | 0% (0개) | 15% | -15% |
+| 시리즈 | 0% (0개) | 15% | **-15% ⚠️ 8주 연속 완전 부재** |
+
+---
+
+### 스타일 분석 (최근 7개 포스트 리뷰)
+
+**종합 스타일 점수: 8.7 / 10**
+
+#### 강점 (유지할 것)
+
+- **1인칭 + 상황 몰입형 도입 정착**: "npm install sqlite3를 입력하던 습관을 멈춰야 할 시점이 왔다"(Node SQLite), "TypeScript 개발자면 결국 LangChain.js 아니면 Vercel AI SDK 정도지"(Mastra) — 독자를 특정 상황으로 끌어당기는 방식이 전 포스트에서 유지됨
+- **결론의 조건부 판단**: Mastra("나는 Yes라고 본다. 단, 조건이 있다"), Node SQLite("프로덕션 서버에 바로 쓰기엔 아직 이르다") — 이분법 없이 "상황에 따라"로 마무리하는 패턴이 신뢰도를 높임
+- **비판적 시각 자연 삽입**: Mastra("프로덕션에 당장 투입하기엔 아직 생태계가 얇다"), Node SQLite("experimental 딱지가 붙어 있다는 점은 프로덕션 투입을 망설이게 한다") — 균형 잡힌 평가
+- **뉴스 포스트 품질 향상**: Draft 3개 모두 구체적인 relatedPosts 이유, 1차 출처 인용, 독자 관점 실용 분석 포함
+
+#### 패턴 이슈 (조정 필요)
+
+1. **relatedPosts reason 템플릿 재발**: Drizzle ORM과 Node SQLite의 관련 이유가 "○○ 주제를 한 단계 더 깊이 파고드는 글입니다" / "○○를 실제로 다뤄본 경험이 이어지는 글입니다" 복붙 문구로 회귀. 뉴스 포스트에서는 구체적으로 작성했는데 how-to에서 다시 빠짐. **다음 how-to 포스트부터 반드시 "독자가 왜 이 글을 다음에 읽어야 하는가"로 구체화**
+2. **Drizzle 포스트 결론 누락**: 마지막 섹션이 Zod 스키마 통합 설명으로 끝나 작성자 판단이 없음. 향후 how-to 포스트는 결론에 "쓸 것인가, 안 쓸 것인가, 언제 쓰면 안 되는가"에 대한 1〜2줄 필수
+3. **시리즈 8주 연속 공백**: 백로그에 6개 시리즈 항목 대기 중임에도 8주째 0%. SKILL.md "토요일 시리즈 강제 배정" 규칙 명문화 필요
+
+---
+
+### 이슈 및 조치사항
+
+#### 1. 시리즈 8주 연속 미발행 — priority 상향 완료, SKILL 규칙 추가 필요
+
+이번 주 조치: `AI 에이전트 아키텍처 시리즈 #1` priority 0 → 2로 상향 완료.
+
+**추가 권고**: daily-tech-blog SKILL.md에 "토요일은 series 항목 강제 배정" 규칙 명시 필요 (현재 미명시). priority 상향만으로는 불충분할 가능성 높음 — 9주째가 되면 SKILL.md 직접 수정.
+
+#### 2. relatedPosts reason 품질 편차
+
+How-to 포스트에서 복붙 문구 재발. SKILL.md에 이미 "동일 문구 복붙 금지" 규칙 있으나 how-to 생성 시 지켜지지 않음. 다음 포스트 작성 시 프롬프트 레벨에서 구체적 reason 작성 요구 필요.
+
+#### 3. 내부링크 0-link 13개 (지난 주 0개에서 증가)
+
+주요 미처리 포스트:
+- mcp-server-typescript-sdk-step-by-step-2026.md
+- astro-scheduled-publishing.md
+- individual-developer-ai-saas-journey.md
+- anthropic-agent-skills-standard.md
+- python-ai-agent-library-comparison-2026.md
+- (외 8개)
+
+daily-closing SEO 작업에서 이 13개를 우선 처리 대상으로 지정.
+
+---
+
+### 스타일 조정 제안
+
+1. **relatedPosts reason 구체화**: how-to 포스트도 "이 독자가 왜 저 글을 다음에 읽어야 하는가"를 1〜2줄로 작성. "TypeScript 흐름에서 함께 읽으면 좋습니다" 수준은 기준 미달
+2. **결론에 작성자 판단 필수**: "이 도구를 언제 쓰고, 언제 쓰면 안 되는가"에 대한 개인 판단으로 마무리. Mastra/Node SQLite 포스트가 좋은 모델
+3. **시리즈 토요일 고정 시도**: 다음 주 토요일 = AI 에이전트 아키텍처 시리즈 #1 (priority 2로 상향 완료)
+
+---
+
+### 다음 주 전략 (6월 15〜21일)
+
+- **콘텐츠 유형 조정**: How-to 4개 / 비교 1개 / **시리즈 1개** (토요일 하드 블록)
+  - 뉴스 공개 0% 유지 (AdSense 정책)
+  - ⛔ **토요일: AI 에이전트 아키텍처 시리즈 #1** (백로그 priority 2로 상향 완료)
+  - 비교 1편: Mastra vs Vercel AI SDK vs LangChain.js
+- **스타일 조정**: relatedPosts reason 구체화 + 결론 작성자 판단 필수화
+- **우선 처리 백로그 TOP 3**:
+  1. `AI 에이전트 아키텍처 시리즈 #1` ⛔ 토요일 하드 블록
+  2. `Bun Shell 스크립트 심화` [how-to] — 신규 추가, TypeScript 실무 연속성
+  3. `Mastra vs Vercel AI SDK vs LangChain.js` [comparison] — Mastra 포스트 자연스러운 후속
+
+---
+
+### 백로그 현황
+
+- 총 151개 대기 (How-to 73 / 뉴스 49 / 비교 23 / 시리즈 6)
+- 이번 주 신규 추가: 6개 (How-to 5개 + 비교 1개)
+- AI 에이전트 아키텍처 시리즈 #1 priority: 0 → 2 상향
+
+---
+
 ## 2026-06-07 주간 리뷰 (6월 2주차)
 
 ### 성과 요약
