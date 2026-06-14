@@ -18,6 +18,15 @@ relatedPosts:
       en: Goes one level deeper into docker.
       ja: dockerをもう一歩深く掘り下げた記事です。
       zh: 更深入地探讨 docker 主题。
+faq:
+  - question: "Langfuse v3をセルフホスティングするにはどうすればいいですか？"
+    answer: "公式のdocker-compose.ymlをダウンロードし、NEXTAUTH_SECRET、SALT、ENCRYPTION_KEYなどのセキュリティ環境変数を設定してから、docker-compose up -dで6つのサービスを起動します。正常に起動した後にlocalhost:3000へアクセスすると、最初に登録したアカウントが管理者になります。"
+  - question: "Langfuse v3はなぜ6つのサービスが必要なのですか？"
+    answer: "v3の核心的な変更はトレース保存先をPostgreSQLからClickHouseへ分離したことです。ClickHouseは数十万件のトレースの集計クエリをミリ秒で処理するカラム型OLAP DBで、これにMinIO（オブジェクトストレージ）、Redis（キュー/キャッシュ）、langfuse-web、langfuse-workerが加わり6つになります。"
+  - question: "Langfuse Cloudの代わりにセルフホスティングを使う利点は何ですか？"
+    answer: "トレースデータを自社インフラに置けるため、医療や金融など機密情報を含む場合にデータ主権を守れます。月のトレース数が10万件を超えてCloud Proの費用が重荷になる場合にも有利です。ただしチームが3人以下でインフラ管理のリソースがない場合はCloudの方が適しています。"
+  - question: "Langfuse Python SDK v4の最大の変更点は何ですか？"
+    answer: "langfuse.decoratorsモジュールが廃止され、importをfrom langfuse import observe, get_clientに変更する必要があります。さらにOpenTelemetryのネイティブ統合が追加され、OTelのSpanExporterインターフェースでデータを送信します。"
 ---
 
 LLMエージェントをプロダクションにデプロイした後、最初に気づくことがある。Langfuseダッシュボードで「なぜこの応答が出たのか」を追跡しようとした瞬間、クラウド料金の請求書を見ることになる。月のトレース数が10万件を超えると、Langfuse CloudのProプランが重荷になってくる。そこで私はDocker Composeでセルフホスティングを構築した。この記事はその過程で得たことをまとめたものだ。

@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "TypeScriptでMCPサーバーをどう作りますか?"
+    answer: "@modelcontextprotocol/sdkとZodをインストールし、3つのステップを踏むだけです。McpServerインスタンスを生成し、server.tool()でZodスキーマベースのツールを登録し、トランスポートを接続します。このパターンを理解すれば30分以内に動作するサーバーを完成できます。"
+  - question: "@modelcontextprotocol/sdkはどう始めますか?"
+    answer: "npm install @modelcontextprotocol/sdk zod でインストールし、このときSDK 1.29.0とZod 4.4.3が入ります。SDKはESMモジュールとして配布されるため、package.jsonにtype: moduleを指定し、tsconfig.jsonでmoduleをESNextに設定するとインポートパスが正しく解決されます。"
+  - question: "stdioトランスポートとHTTP/SSEトランスポートの違いは?"
+    answer: "stdio(StdioServerTransport)はClaude DesktopやCursorにローカル接続する標準的なデプロイ方式で、設定がシンプルです。HTTP/SSEトランスポートはチームで共有したりクラウドにデプロイする場合に使いますが、認証、HTTPS、CORS、セッション管理を別途処理する必要があります。社内ツール程度ならstdioのほうがはるかに簡単です。"
+  - question: "MCPツールのエラーはどう処理すべきですか?"
+    answer: "例外を投げる代わりに、エラーメッセージをcontent配列に入れて返すのがMCPの慣例です。クライアントごとに例外処理の方法が異なるためです。レスポンスにisError: trueフラグを追加すると、クライアントがその応答をエラーとして扱えます。"
 ---
 
 ```typescript

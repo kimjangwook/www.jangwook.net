@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same docker track.
       ja: 同じdockerの流れで併せて読むと役立ちます。
       zh: 在同一 docker 脉络中可一并阅读。
+faq:
+  - question: "Why wrap Ollama with FastAPI instead of calling it directly?"
+    answer: "Two reasons. First, model abstraction: managing DEFAULT_MODEL as an environment variable means you can swap models without touching any client code. Second, interface standardization: normalizing Ollama internals like the nanosecond total_duration field lets you replace the inference engine later without affecting clients."
+  - question: "How fast are the responses?"
+    answer: "On a CPU-only M1 MacBook Pro with the yinw1590/gemma4-e2b-text model, a single response took roughly 14.9 seconds. On a GPU server with an NVIDIA RTX 3090 or better, that drops to 1-2 seconds. The FastAPI adapter itself adds only 2-5ms of overhead, negligible against the inference time."
+  - question: "How do I deploy this to production?"
+    answer: "Use a Dockerfile and docker-compose.yml to run the Ollama container and the FastAPI container together. Since depends_on only guarantees start order, you need a healthcheck plus condition: service_healthy to avoid connection refused errors. Before exposing the server, always add Bearer token authentication and a slowapi rate limit."
+  - question: "Should I use a local LLM or a cloud API?"
+    answer: "A local LLM wins when you want to save token costs during iterative development or when data cannot leave your environment. A cloud API is better for top-quality responses or low-latency user-facing features. With the FastAPI adapter you can switch between the two by changing just two environment variables."
 ---
 
 There's a meaningful gap between "running a local LLM in a terminal" and "exposing it as an API that your team's apps can call."

@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "FastMCP로 MCP 서버는 어떻게 만드나요?"
+    answer: "pip install fastmcp로 설치한 뒤 FastMCP 인스턴스를 만들고 파이썬 함수에 @mcp.tool() 데코레이터를 붙이면 됩니다. 마지막에 mcp.run() 한 줄을 호출하면 stdio 모드로 서버가 실행됩니다. 글의 예제처럼 30줄 안에 동작하는 서버를 만들 수 있습니다."
+  - question: "@mcp.tool과 @mcp.resource의 차이는 무엇인가요?"
+    answer: "@mcp.tool()은 Claude가 직접 호출해 작업을 수행하는 함수로 검색·계산·파일 조작 같은 부수 효과가 있는 동작에 씁니다. @mcp.resource()는 data:// 같은 URI로 등록하는 읽기 전용 데이터 소스입니다. 글의 기준은 간단합니다. 부수 효과가 있으면 Tool, 없으면 Resource입니다."
+  - question: "타입 힌트는 왜 중요한가요?"
+    answer: "FastMCP는 함수의 타입 힌트를 자동으로 JSON Schema로 변환해 Claude에 전달합니다. Pydantic 모델과 Literal 타입도 지원하므로 복잡한 입력 구조를 손으로 inputSchema에 쓸 필요가 없습니다. 독스트링은 도구 설명으로 자동 사용됩니다."
+  - question: "언제 FastMCP 대신 MCP Python SDK를 직접 써야 하나요?"
+    answer: "Claude, Cursor, VS Code 같은 표준 MCP 클라이언트와 연동하거나 기존 파이썬 함수를 빠르게 노출할 때는 FastMCP가 적합합니다. 반면 저수준 MCP 메시지를 커스터마이즈하거나 비표준 트랜스포트가 필요하면 추상화 아래를 다시 다뤄야 하므로 MCP Python SDK를 직접 쓰는 편이 맞습니다."
 ---
 
 MCP(Model Context Protocol) 서버를 처음부터 직접 구현하려면 생각보다 손이 많이 간다. stdio 트랜스포트를 처리하고, JSON-RPC 2.0을 직렬화하고, 핸들러를 일일이 등록해야 한다. MCP 서버를 Streamable HTTP로 직접 만드는 과정을 따라가 보면 알겠지만 "AI 도구를 하나 추가하고 싶을 뿐인데" 왜 이렇게 많은 보일러플레이트가 필요한지 답답해지는 순간이 온다.

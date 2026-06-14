@@ -34,6 +34,13 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "如何用FastAPI实现Claude API流式传输？"
+    answer: "将FastAPI的StreamingResponse与Anthropic SDK的messages.stream()上下文管理器结合，构建SSE端点。遍历text_stream，以 'data: {...}\\n\\n' 格式逐个yield令牌，并将media_type设为text/event-stream。生产环境中应使用AsyncAnthropic客户端，以免阻塞uvicorn的事件循环。"
+  - question: "SSE流式传输中如何处理限速与错误恢复？"
+    answer: "需要按类型对错误分类并分别处理。只对RateLimitError和APIConnectionError进行指数退避重试，而AuthenticationError与BadRequestError重试没有意义，应立即向上传播。建议根据API套餐将MAX_RETRIES和BASE_DELAY的值通过环境变量外部化配置。"
+  - question: "生产部署时需要考虑哪些事项？"
+    answer: "在Nginx后端必须设置proxy_buffering off，SSE才能不经缓冲地流式输出。AsyncAnthropic客户端应在应用启动时仅创建一次并复用，API密钥则通过密钥管理服务管理。建议将TTFT、TPS和流式错误率作为核心指标进行监控。"
 ---
 
 在构建AI后端时，你终究会遇到同一个问题："能让用户等到完整响应生成完再返回吗？"大多数情况下，答案是否定的。当Claude这样的语言模型生成长文本时，缓冲所有内容再一次性发送会彻底破坏用户体验。

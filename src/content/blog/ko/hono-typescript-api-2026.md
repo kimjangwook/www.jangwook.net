@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Hono로 엣지 REST API를 만드는 기본 흐름은?"
+    answer: "bun add hono @hono/zod-validator zod로 설치한 뒤 new Hono()로 앱을 만들고 app.get/post 등으로 라우트를 정의한다. export default app 한 줄이 Bun, Deno, Cloudflare Workers의 진입점으로 인식되며 Node.js에서는 serve(app)만 추가하면 된다."
+  - question: "Hono와 Express는 무엇이 다른가?"
+    answer: "Hono 코어는 약 12KB로 Express(58KB)보다 가볍고 콜드 스타트가 빠르다. 처음부터 TypeScript로 작성되어 별도 타입 패키지 없이 라우트 핸들러와 미들웨어 상태까지 타입 추론이 흐른다. Express와 달리 Bun, Deno, Cloudflare Workers, Node.js에 동일 코드로 배포된다."
+  - question: "Cloudflare Workers 배포는 어떻게 하나?"
+    answer: "wrangler.toml에 진입점을 지정하고 Bindings 제네릭으로 D1, KV 등 환경 변수 타입을 연결한 뒤 wrangler deploy로 배포한다. 로컬 Bun 서버와 코드 구조는 같고 c.env.DB 같은 바인딩 접근 방식만 달라진다."
+  - question: "Zod 입력 검증은 어떻게 처리되나?"
+    answer: "@hono/zod-validator의 zValidator를 라우트 미들웨어로 끼우면 스키마 검증 실패 시 자동으로 HTTP 400을 반환한다. 핸들러 안에서는 c.req.valid('json')로 이미 검증된 데이터를 타입 안전하게 받는다."
 ---
 
 Express로 REST API를 짜본 사람이라면 한 번쯤 느꼈을 것이다. 미들웨어 등록, 타입 정의, 바디 파서 설정, Joi나 Zod 연동... 구조 자체는 단순한데 보일러플레이트가 너무 많다고. 그래서 Hono를 처음 봤을 때 솔직히 반신반의했다. "또 Express 클론이겠지." 실제로 써보기 전까지는 그랬다.

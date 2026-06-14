@@ -18,6 +18,15 @@ relatedPosts:
       en: Goes one level deeper into docker.
       ja: dockerをもう一歩深く掘り下げた記事です。
       zh: 更深入地探讨 docker 主题。
+faq:
+  - question: "Langfuse v3를 셀프호스팅하려면 어떻게 하나요?"
+    answer: "공식 docker-compose.yml을 다운로드하고 NEXTAUTH_SECRET, SALT, ENCRYPTION_KEY 등 보안 환경 변수를 설정한 뒤 docker-compose up -d로 6개 서비스를 띄웁니다. 정상 기동 후 localhost:3000에 접속하면 첫 등록 계정이 관리자가 됩니다."
+  - question: "Langfuse v3는 왜 6개 서비스가 필요한가요?"
+    answer: "v3의 핵심 변경점은 트레이스 저장소를 PostgreSQL에서 ClickHouse로 분리한 것입니다. ClickHouse는 수십만 건 트레이스의 집계 쿼리를 밀리초 단위로 처리하는 컬럼형 OLAP DB이며, 여기에 MinIO(오브젝트 스토리지), Redis(큐/캐시), langfuse-web, langfuse-worker가 더해져 6개가 됩니다."
+  - question: "Langfuse Cloud 대신 셀프호스팅을 쓰면 어떤 장점이 있나요?"
+    answer: "트레이스 데이터를 자체 인프라에 두므로 의료, 금융처럼 민감 정보가 포함된 경우 데이터 주권을 지킬 수 있습니다. 월 트레이스가 10만 건을 넘어 Cloud Pro 비용이 부담스러울 때도 셀프호스팅이 유리합니다. 다만 팀이 3명 이하이거나 인프라 관리 리소스가 없다면 Cloud가 더 낫습니다."
+  - question: "Langfuse Python SDK v4에서 가장 큰 변경점은 무엇인가요?"
+    answer: "langfuse.decorators 모듈이 사라져 import 경로를 from langfuse import observe, get_client로 바꿔야 합니다. 또한 OpenTelemetry 네이티브 통합이 추가되어 OTel SpanExporter 인터페이스로 데이터를 전송합니다."
 ---
 
 LLM 에이전트를 프로덕션에 올리고 나서 처음으로 확인하게 되는 것이 있다. Langfuse 대시보드에서 "왜 이 응답이 나왔지?"를 추적하려다가 클라우드 요금 청구서를 보게 되는 것이다. 월 트레이스 수가 10만 건을 넘는 순간부터 Langfuse Cloud의 Pro 플랜이 부담스러워진다. 그래서 나는 직접 Docker Compose로 셀프호스팅을 구축했고, 이 글은 그 과정에서 겪은 것들을 정리한 기록이다.

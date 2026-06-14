@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same docker track.
       ja: 同じdockerの流れで併せて読むと役立ちます。
       zh: 在同一 docker 脉络中可一并阅读。
+faq:
+  - question: "Ollamaを直接使わずFastAPIでラッピングする理由は？"
+    answer: "理由は2つあります。1つ目はモデルの抽象化で、DEFAULT_MODELを環境変数で管理すればモデルを差し替えてもクライアントコードを直す必要がありません。2つ目はインターフェースの標準化で、ナノ秒単位のtotal_durationなどOllamaの内部詳細を正規化しておけば、後で推論エンジンを変えてもクライアントに影響しません。"
+  - question: "レスポンス速度はどのくらいですか？"
+    answer: "M1 MacBook ProのCPUのみ環境でyinw1590/gemma4-e2b-textモデルを使い、約14.9秒でした。NVIDIA RTX 3090以上のGPUサーバーなら1〜2秒程度まで縮まります。FastAPIアダプター自体のオーバーヘッドは2〜5msで、推論時間に対しては無視できる水準です。"
+  - question: "本番環境へのデプロイはどうしますか？"
+    answer: "Dockerfileとdocker-compose.ymlでOllamaコンテナとFastAPIコンテナを一緒に起動します。depends_onは起動順序しか保証しないため、healthcheckとcondition: service_healthyを併用してconnection refusedを防ぐ必要があります。公開前にはBearerトークン認証とslowapiのレートリミットを必ず追加します。"
+  - question: "ローカルLLMとクラウドAPIのどちらを使うべきですか？"
+    answer: "反復的な開発テストでトークンコストを抑えたい場合や、データを外部に出せない場合はローカルLLMが有利です。最高品質のレスポンスや低レイテンシのユーザー向け機能にはクラウドAPIが適しています。FastAPIアダプターを使えば環境変数2つを変えるだけで両者を切り替えられます。"
 ---
 
 ローカルLLMを「ターミナルで動かすだけ」と「チームのサーバーやアプリから呼び出せるAPIにする」の間には、思った以上に大きな差がある。

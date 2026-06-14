@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "用 Hono 构建边缘 REST API 的基本流程是什么?"
+    answer: "先用 bun add hono @hono/zod-validator zod 安装，再用 new Hono() 创建应用，并通过 app.get/post 等定义路由。export default app 这一行会被 Bun、Deno 和 Cloudflare Workers 识别为入口，在 Node.js 上只需再加 serve(app) 即可。"
+  - question: "Hono 和 Express 有什么区别?"
+    answer: "Hono 核心约 12KB，比 Express 的 58KB 更轻，冷启动更快。它从一开始就用 TypeScript 编写，无需额外类型包，类型推断可一路贯穿到路由处理器和中间件状态。与 Express 不同，同一份代码可部署到 Bun、Deno、Cloudflare Workers 和 Node.js。"
+  - question: "如何部署到 Cloudflare Workers?"
+    answer: "在 wrangler.toml 中指定入口，通过 Bindings 泛型连接 D1、KV 等环境变量类型，然后运行 wrangler deploy。代码结构与本地 Bun 服务器一致，仅 c.env.DB 这类绑定访问方式不同。"
+  - question: "Zod 输入验证是如何处理的?"
+    answer: "把 @hono/zod-validator 的 zValidator 作为路由中间件插入后，模式验证失败时会自动返回 HTTP 400。在处理器内部，c.req.valid('json') 会以类型安全的形式返回已验证的数据。"
 ---
 
 用 Express 写过 REST API 的人，大概都有过这种感受：中间件注册、类型定义、body parser 配置、Joi 或 Zod 的接入……结构本身并不复杂，但样板代码多得烦人。第一次看到 Hono 时，我是持怀疑态度的，心想"又一个 Express 克隆吧"。直到真正用过之后，才改变了看法。

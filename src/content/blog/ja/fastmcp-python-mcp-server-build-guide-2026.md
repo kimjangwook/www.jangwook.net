@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "FastMCPでMCPサーバーはどう作りますか？"
+    answer: "pip install fastmcpでインストールし、FastMCPインスタンスを作ってPython関数に@mcp.tool()デコレーターを付けるだけです。最後にmcp.run()を一行呼べばstdioモードでサーバーが起動します。記事の例のように30行以内で動くサーバーを作れます。"
+  - question: "@mcp.toolと@mcp.resourceの違いは何ですか？"
+    answer: "@mcp.tool()はClaudeが直接呼び出して検索・計算・ファイル操作などを実行する関数です。@mcp.resource()はdata://などのURIで登録する読み取り専用データソースで、Claudeがコンテキストとして読み込みます。記事の基準はシンプルで、副作用があればTool、なければResourceです。"
+  - question: "型ヒントはなぜ重要なのですか？"
+    answer: "FastMCPは関数の型ヒントを自動的にJSON Schemaに変換してClaudeに渡します。PydanticモデルやLiteral型もサポートするため、複雑な入力構造のinputSchemaを手で書く必要がありません。docstringはツールの説明として自動的に使われます。"
+  - question: "いつFastMCPではなくMCP Python SDKを直接使うべきですか？"
+    answer: "Claude、Cursor、VS Codeなど標準MCPクライアントと連携したり、既存のPython関数を素早く公開する場合はFastMCPが適しています。低レベルMCPメッセージのカスタマイズや非標準トランスポートが必要な場合は、抽象化の下を扱い直すことになるためMCP Python SDKを直接使うのが正しいです。"
 ---
 
 MCP（Model Context Protocol）サーバーをゼロから実装しようとすると、思ったより手間がかかる。stdioトランスポートを処理し、JSON-RPC 2.0をシリアライズし、ハンドラーをひとつずつ登録する。Streamable HTTPでMCPサーバーを直接実装する過程を辿ってみると、「AIツールをひとつ追加したいだけなのに」なぜこんなにボイラープレートが必要なのかと嫌になる瞬間が来る。

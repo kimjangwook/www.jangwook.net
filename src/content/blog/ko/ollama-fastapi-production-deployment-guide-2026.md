@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same docker track.
       ja: 同じdockerの流れで併せて読むと役立ちます。
       zh: 在同一 docker 脉络中可一并阅读。
+faq:
+  - question: "Ollama를 직접 쓰지 않고 FastAPI로 감싸는 이유는?"
+    answer: "두 가지 이유 때문입니다. 첫째는 모델 추상화로, DEFAULT_MODEL을 환경변수로 관리하면 모델을 교체해도 클라이언트 코드를 고칠 필요가 없습니다. 둘째는 인터페이스 표준화로, Ollama의 나노초 단위 total_duration 같은 내부 세부사항을 정규화해 나중에 추론 엔진을 바꿔도 클라이언트에 영향이 없습니다."
+  - question: "응답 속도는 어느 정도인가요?"
+    answer: "M1 MacBook Pro의 CPU 전용 환경에서 yinw1590/gemma4-e2b-text 모델로 약 14.9초가 걸렸습니다. NVIDIA RTX 3090 이상의 GPU 서버에서는 1〜2초 수준으로 줄어듭니다. FastAPI 어댑터 자체의 오버헤드는 2〜5ms로 추론 시간 앞에서는 무의미합니다."
+  - question: "프로덕션 배포는 어떻게 하나요?"
+    answer: "Dockerfile과 docker-compose.yml로 Ollama 컨테이너와 FastAPI 컨테이너를 함께 띄웁니다. depends_on은 시작 순서만 보장하므로 healthcheck와 condition: service_healthy를 함께 써야 connection refused 문제를 막을 수 있습니다. 노출 전에는 Bearer 토큰 인증과 slowapi 레이트 리밋을 반드시 추가합니다."
+  - question: "로컬 LLM과 클라우드 API 중 어느 것을 써야 하나요?"
+    answer: "반복적인 개발 테스트로 토큰 비용을 아끼거나 데이터를 외부로 보낼 수 없는 경우 로컬 LLM이 유리합니다. 최고 품질의 응답이나 낮은 레이턴시가 필요한 사용자 대면 기능에는 클라우드 API가 낫습니다. FastAPI 어댑터를 쓰면 환경변수 두 개만 바꿔 둘 사이를 전환할 수 있습니다."
 ---
 
 로컬 LLM을 "그냥 터미널에서 돌리는 것"과 "팀 서버나 앱에서 호출할 수 있는 API로 만드는 것" 사이에는 생각보다 큰 간격이 있다.

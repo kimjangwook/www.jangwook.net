@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "如何用FastMCP构建MCP服务器？"
+    answer: "用pip install fastmcp安装，创建FastMCP实例，给Python函数加上@mcp.tool()装饰器即可。最后调用一行mcp.run()，服务器就以stdio模式运行。如文中示例，30行以内就能构建可运行的服务器。"
+  - question: "@mcp.tool和@mcp.resource有什么区别？"
+    answer: "@mcp.tool()是Claude直接调用以执行搜索、计算、文件操作等工作的函数。@mcp.resource()是用data://等URI注册的只读数据源，Claude将其作为上下文读取。文中的标准很简单：有副作用就是Tool，只读就是Resource。"
+  - question: "类型提示为什么重要？"
+    answer: "FastMCP会自动将函数的类型提示转换为JSON Schema并传给Claude。它支持Pydantic模型和Literal类型，因此无需为复杂的嵌套输入手写inputSchema。docstring会自动成为Claude看到的工具描述。"
+  - question: "什么时候该直接用MCP Python SDK而不是FastMCP？"
+    answer: "构建与Claude、Cursor、VS Code等标准MCP客户端集成的服务器，或快速暴露现有Python函数时，FastMCP很合适。需要自定义低级MCP消息或非标准传输时，就得挖出被抽象层隐藏的东西，这种情况下直接用MCP Python SDK更合适。"
 ---
 
 从零开始实现MCP（Model Context Protocol）服务器比想象中要麻烦。你得处理stdio传输，序列化JSON-RPC 2.0，再把每个处理器逐一注册。如果你走过用Streamable HTTP直接实现MCP服务器的过程，就知道那种感觉："我只是想添加一个AI工具，为什么需要这么多样板代码？"

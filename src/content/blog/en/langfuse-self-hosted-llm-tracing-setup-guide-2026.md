@@ -21,6 +21,15 @@ relatedPosts:
       en: Goes one level deeper into docker.
       ja: dockerをもう一歩深く掘り下げた記事です。
       zh: 更深入地探讨 docker 主题。
+faq:
+  - question: "How do I self-host Langfuse v3?"
+    answer: "Download the official docker-compose.yml, set security environment variables like NEXTAUTH_SECRET, SALT, and ENCRYPTION_KEY, then run docker-compose up -d to start all six services. After a successful start, visit localhost:3000 and the first account you register becomes the admin."
+  - question: "Why does Langfuse v3 need six services?"
+    answer: "The core v3 change was separating trace storage from PostgreSQL to ClickHouse, a columnar OLAP database that runs aggregation queries over hundreds of thousands of traces in milliseconds. Add MinIO for object storage, Redis for the queue and cache, plus langfuse-web and langfuse-worker, and you reach six services."
+  - question: "What are the benefits of self-hosting over Langfuse Cloud?"
+    answer: "Self-hosting keeps trace data on your own infrastructure, which preserves data sovereignty when traces contain sensitive information such as healthcare or finance data. It also helps when monthly trace volume exceeds 100K and Cloud Pro costs become real. If your team is three people or fewer with no infrastructure bandwidth, Cloud is the better choice."
+  - question: "What is the biggest change in the Langfuse Python SDK v4?"
+    answer: "The langfuse.decorators module was removed, so imports must change to from langfuse import observe, get_client. v4 also adds native OpenTelemetry integration, sending data through the OTel SpanExporter interface."
 ---
 
 There's a moment that comes for everyone after they push an LLM agent to production. You open the Langfuse dashboard to trace "why did it give that response?" and then your eye catches the cloud billing statement. Once monthly trace volume crosses 100K, Langfuse Cloud's Pro plan stops feeling free. So I set up self-hosting with Docker Compose. What follows is what I learned along the way.

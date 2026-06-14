@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Hono でエッジ REST API を作る基本の流れは?"
+    answer: "bun add hono @hono/zod-validator zod でインストールし、new Hono() でアプリを作って app.get/post などでルートを定義する。export default app の一行が Bun・Deno・Cloudflare Workers のエントリポイントとして認識され、Node.js では serve(app) を足すだけでよい。"
+  - question: "Hono と Express の違いは?"
+    answer: "Hono のコアは約 12KB で Express の 58KB より軽く、コールドスタートが速い。最初から TypeScript で書かれており、型パッケージなしでルートハンドラーやミドルウェアの状態まで型推論が流れる。Express と違い同一コードで Bun・Deno・Cloudflare Workers・Node.js にデプロイできる。"
+  - question: "Cloudflare Workers へのデプロイ方法は?"
+    answer: "wrangler.toml にエントリポイントを指定し、Bindings ジェネリックで D1 や KV などの環境変数型を結びつけたうえで wrangler deploy する。ローカルの Bun サーバーとコード構造は同じで、c.env.DB のようなバインディングアクセスだけが異なる。"
+  - question: "Zod の入力バリデーションはどう処理される?"
+    answer: "@hono/zod-validator の zValidator をルートのミドルウェアとして挟むと、スキーマ検証に失敗した際に自動で HTTP 400 を返す。ハンドラー内では c.req.valid('json') で検証済みのデータを型安全に受け取れる。"
 ---
 
 Express で REST API を書いたことがあるなら、一度は感じたはずだ。ミドルウェア登録、型定義、ボディパーサー設定、Joi や Zod の連携... 構造自体は単純なのに、ボイラープレートが多すぎると。Hono を初めて見たとき、正直半信半疑だった。「また Express クローンだろう」と。実際に使うまでは、そう思っていた。

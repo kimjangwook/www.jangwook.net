@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Drizzle ORM과 Prisma 중 무엇을 선택해야 하나요?"
+    answer: "SQL에 익숙하고 마이그레이션 SQL 파일을 직접 확인하며 관리하고 싶다면 Drizzle이 편합니다. Drizzle은 번들이 가볍고(~300KB) 엣지·서버리스에 적합합니다. 팀 전체가 ORM 추상화와 성숙한 생태계를 중시한다면 Prisma가 더 안전한 선택일 수 있습니다."
+  - question: "Drizzle로 타입 안전한 DB 레이어를 어떻게 만드나요?"
+    answer: "스키마를 TypeScript 파일에 sqliteTable/pgTable로 정의하면 SQL 컬럼 타입이 그대로 TS 타입으로 연결됩니다. 잘못된 타입을 쿼리에 넣으면 컴파일 시점에 잡히고, drizzle-zod로 Zod 검증 스키마를 자동 생성해 API 입력까지 같은 스키마로 검증할 수 있습니다."
+  - question: "마이그레이션은 어떻게 생성하고 적용하나요?"
+    answer: "drizzle.config.ts를 설정한 뒤 npx drizzle-kit generate로 사람이 읽을 수 있는 .sql 마이그레이션 파일을 생성합니다. 적용은 npx drizzle-kit migrate 또는 코드에서 migrate(db, { migrationsFolder }) 함수로 합니다. 무엇이 실행되는지 파일을 직접 열어 확인할 수 있습니다."
+  - question: "better-sqlite3 트랜잭션에서 async를 쓰면 왜 에러가 나나요?"
+    answer: "better-sqlite3는 동기 드라이버라 db.transaction 콜백에 async를 쓰면 Transaction function cannot return a promise 에러가 납니다. 동기 콜백으로 작성하고 쿼리는 .run()으로 실행하세요. PostgreSQL이나 MySQL 드라이버는 비동기라서 async/await를 그대로 쓸 수 있습니다."
 ---
 
 Prisma를 처음 배웠을 때 가장 당황스러웠던 건 마이그레이션 파일을 열어봤을 때였다. `prisma migrate dev` 한 번 치면 무언가가 돌아가는데, 정작 데이터베이스에 뭐가 날아갔는지는 알기 어려웠다. 내가 모르는 곳에서 뭔가가 조용히 일어나는 그 느낌이 불편했다.

@@ -35,6 +35,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "How do you build an edge REST API with Hono?"
+    answer: "Install with bun add hono @hono/zod-validator zod, create the app with new Hono(), and define routes via app.get/post. The single line export default app is recognized as the entry point for Bun, Deno, and Cloudflare Workers; on Node.js you just add serve(app)."
+  - question: "How is Hono different from Express?"
+    answer: "The Hono core is about 12KB versus Express at 58KB, so cold starts are faster. Written in TypeScript from the ground up, it infers types all the way through route handlers and middleware state with no separate type package. Unlike Express, the same code deploys to Bun, Deno, Cloudflare Workers, and Node.js."
+  - question: "How do you deploy to Cloudflare Workers?"
+    answer: "Set the entry point in wrangler.toml, connect environment variable types like D1 and KV through the Bindings generic, then run wrangler deploy. The code structure matches the local Bun server, with only binding access such as c.env.DB differing."
+  - question: "How does Zod input validation work?"
+    answer: "Drop the zValidator from @hono/zod-validator in as route middleware, and any schema validation failure automatically returns HTTP 400. Inside the handler, c.req.valid('json') gives you the already-validated data in a fully typed form."
 ---
 
 If you've ever built a REST API with Express, you've probably felt it. Middleware registration, type definitions, body parser setup, connecting Joi or Zod... the structure is simple, but the boilerplate is excessive. When I first saw Hono, I was skeptical. "Another Express clone," I thought. That changed when I actually ran it.

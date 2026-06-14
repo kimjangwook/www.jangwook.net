@@ -35,6 +35,13 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "How do I implement Claude API streaming with FastAPI?"
+    answer: "Combine FastAPI's StreamingResponse with the Anthropic SDK's messages.stream() context manager to build an SSE endpoint. Iterate over text_stream and yield each token in the 'data: {...}\\n\\n' format, setting media_type to text/event-stream. For production, use the AsyncAnthropic client so you don't block uvicorn's event loop."
+  - question: "How do I handle rate limits and error recovery in SSE streaming?"
+    answer: "Classify errors by type and handle each differently. Only retry RateLimitError and APIConnectionError with exponential backoff; propagate AuthenticationError and BadRequestError immediately since retrying them is pointless. Externalize the MAX_RETRIES and BASE_DELAY values as environment variables based on your API plan."
+  - question: "What should I consider for production deployment?"
+    answer: "Behind Nginx you must set proxy_buffering off so SSE flows without buffering. Create the AsyncAnthropic client once at app startup and reuse it, and manage the API key through a secrets manager. Monitor TTFT, TPS, and the streaming error rate as your core metrics."
 ---
 
 When building an AI backend, you eventually hit the same question: "Can I make users wait until the whole response is generated?" Most of the time the answer is no. When a model like Claude is producing a long piece of text, buffering everything and sending it all at once kills the UX.

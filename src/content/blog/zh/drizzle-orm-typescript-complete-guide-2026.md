@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Drizzle ORM 和 Prisma 该选哪个？"
+    answer: "如果你熟悉 SQL，想直接查看并管理 migration 的 SQL 文件，Drizzle 更顺手。它的打包体积小(~300KB)，适合 edge 和 serverless。如果整个团队更看重 ORM 的抽象层和成熟的生态，Prisma 可能是更稳妥的选择。这是因地制宜的取舍，没有绝对的赢家。"
+  - question: "如何用 Drizzle 构建类型安全的数据库层？"
+    answer: "用 sqliteTable 或 pgTable 在 TypeScript 文件里定义 schema，SQL 列类型会直接映射成 TS 类型。把错误类型传进查询会在编译期被捕获，还可以用 drizzle-zod 自动生成 Zod 校验 schema，用同一份 schema 校验 API 输入。"
+  - question: "如何生成和应用 migration？"
+    answer: "配置好 drizzle.config.ts 后，运行 npx drizzle-kit generate 生成人类可读的 .sql migration 文件。应用时用 npx drizzle-kit migrate，或在代码里调用 migrate(db, { migrationsFolder }) 函数。提交前可以打开文件确认到底会执行什么。"
+  - question: "为什么在 better-sqlite3 的 transaction 里用 async 会报错？"
+    answer: "better-sqlite3 是同步驱动，在 db.transaction 的回调里用 async 会报 Transaction function cannot return a promise 错误。要用同步回调，并用 .run() 执行查询。PostgreSQL 和 MySQL 的驱动是异步的，那里可以直接使用 async/await。"
 ---
 
 刚开始学 Prisma 的时候，最让我困惑的是打开 migration 文件的那一刻。跑一次 `prisma migrate dev` 确实有东西在运行，但数据库里到底发生了什么，很难说清楚。那种"有什么东西在我不知道的地方悄悄发生"的感觉，让我很不安。

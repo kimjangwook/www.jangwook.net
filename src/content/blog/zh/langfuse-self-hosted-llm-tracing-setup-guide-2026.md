@@ -18,6 +18,15 @@ relatedPosts:
       en: Goes one level deeper into docker.
       ja: dockerをもう一歩深く掘り下げた記事です。
       zh: 更深入地探讨 docker 主题。
+faq:
+  - question: "如何自托管Langfuse v3？"
+    answer: "下载官方的docker-compose.yml，设置NEXTAUTH_SECRET、SALT、ENCRYPTION_KEY等安全环境变量，然后运行docker-compose up -d启动6个服务。正常启动后访问localhost:3000，第一个注册的账户将成为管理员。"
+  - question: "为什么Langfuse v3需要6个服务？"
+    answer: "v3的核心变化是将追踪存储从PostgreSQL分离到ClickHouse，这是一个列式OLAP数据库，能在毫秒级完成数十万条追踪的聚合查询。再加上MinIO（对象存储）、Redis（队列与缓存）、langfuse-web和langfuse-worker，总共就有6个服务。"
+  - question: "相比Langfuse Cloud，自托管有什么优势？"
+    answer: "自托管将追踪数据保留在自有基础设施上，因此当追踪包含医疗、金融等敏感信息时可以保持数据主权。当月追踪量超过10万条、Cloud Pro成本变成真实负担时也更有利。但如果团队不超过3人且没有基础设施管理资源，那么Cloud是更好的选择。"
+  - question: "Langfuse Python SDK v4最大的变化是什么？"
+    answer: "langfuse.decorators模块被移除，import需要改为from langfuse import observe, get_client。v4还新增了OpenTelemetry原生集成，通过OTel的SpanExporter接口发送数据。"
 ---
 
 将LLM智能体部署到生产环境后，总会遇到这样的时刻：你正在Langfuse仪表板中追踪"为什么会给出那个响应？"，然后看到了云服务账单。当月追踪量超过10万条后，Langfuse Cloud的Pro套餐开始变成真实的成本负担。于是我用Docker Compose搭建了自托管环境。这篇文章是我在这个过程中学到的东西。

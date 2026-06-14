@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Should I choose Drizzle ORM or Prisma?"
+    answer: "Drizzle suits you if you know SQL and want to inspect and manage the migration SQL files directly. Its bundle is light (~300KB) and fits edge and serverless well. If your whole team values higher-level ORM abstraction and a more mature ecosystem, Prisma can be the safer pick. It is a situational choice, not a winner-takes-all."
+  - question: "How do I build a type-safe DB layer with Drizzle?"
+    answer: "You define the schema in a TypeScript file with sqliteTable or pgTable, so SQL column types map straight to TS types. Passing a wrong type into a query is caught at compile time, and drizzle-zod can auto-generate Zod validation schemas so the same schema validates API input too."
+  - question: "How do I generate and apply migrations?"
+    answer: "After setting up drizzle.config.ts, run npx drizzle-kit generate to produce a human-readable .sql migration file. Apply it with npx drizzle-kit migrate or call the migrate(db, { migrationsFolder }) function in code. You can open the file and confirm exactly what will run before committing."
+  - question: "Why does using async in a better-sqlite3 transaction throw an error?"
+    answer: "better-sqlite3 is a synchronous driver, so an async callback in db.transaction throws Transaction function cannot return a promise. Write a synchronous callback and run queries with .run(). PostgreSQL and MySQL drivers are async, so there you can use async/await directly."
 ---
 
 The first time I used Prisma, the thing that threw me off wasn't the API. It was opening a migration file. You run `prisma migrate dev`, something happens, and your database changes. But actually reading what got executed? That was harder than it should be. The feeling that something quiet was happening somewhere I couldn't see never stopped bothering me.

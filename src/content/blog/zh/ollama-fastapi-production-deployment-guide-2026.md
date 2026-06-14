@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same docker track.
       ja: 同じdockerの流れで併せて読むと役立ちます。
       zh: 在同一 docker 脉络中可一并阅读。
+faq:
+  - question: "为什么不直接用Ollama，而要用FastAPI封装一层？"
+    answer: "有两个原因。第一是模型抽象，把DEFAULT_MODEL作为环境变量管理后，更换模型时无需改动任何客户端代码。第二是接口标准化，把Ollama返回纳秒级total_duration等内部细节做归一化处理，日后即使更换推理引擎也不会影响客户端。"
+  - question: "响应速度大概有多快？"
+    answer: "在纯CPU的M1 MacBook Pro上使用yinw1590/gemma4-e2b-text模型，单次响应约14.9秒。换成配备NVIDIA RTX 3090及以上的GPU服务器，该时间会降至1〜2秒。FastAPI适配器自身的开销仅2〜5毫秒，相对推理时间可忽略不计。"
+  - question: "如何部署到生产环境？"
+    answer: "用Dockerfile和docker-compose.yml把Ollama容器和FastAPI容器一起启动。由于depends_on只保证启动顺序，需要配合healthcheck和condition: service_healthy来避免connection refused错误。对外暴露之前，务必加上Bearer令牌认证和slowapi限流。"
+  - question: "本地LLM和云端API该选哪个？"
+    answer: "在反复迭代开发中想节省token成本，或数据不能外发的场景下，本地LLM更有优势。需要最高质量响应或低延迟的面向用户功能时，云端API更合适。使用FastAPI适配器，只需改两个环境变量即可在两者之间切换。"
 ---
 
 "在终端运行本地LLM"和"将其封装成团队应用可调用的API"之间，差距比想象中要大。

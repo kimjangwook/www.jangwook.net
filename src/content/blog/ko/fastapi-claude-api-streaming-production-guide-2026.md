@@ -34,6 +34,13 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "FastAPI로 Claude API 스트리밍을 어떻게 구현하나요?"
+    answer: "FastAPI의 StreamingResponse와 Anthropic SDK의 messages.stream() 컨텍스트 매니저를 조합해 SSE 엔드포인트를 만듭니다. text_stream을 순회하며 'data: {...}\\n\\n' 형식으로 토큰을 흘려보내고, media_type을 text/event-stream으로 지정합니다. 프로덕션에서는 이벤트 루프를 블로킹하지 않도록 AsyncAnthropic 클라이언트를 쓰는 것이 맞습니다."
+  - question: "SSE 스트리밍에서 레이트 리밋과 에러 복구는 어떻게 처리하나요?"
+    answer: "에러를 유형별로 분류해 각각 다르게 처리해야 합니다. RateLimitError와 APIConnectionError만 지수 백오프로 재시도하고, AuthenticationError와 BadRequestError는 재시도해도 의미가 없으므로 즉시 전파합니다. MAX_RETRIES와 BASE_DELAY 값은 API 플랜에 따라 환경 변수로 외부화하는 것을 권장합니다."
+  - question: "프로덕션 배포 시 무엇을 고려해야 하나요?"
+    answer: "Nginx 뒤에서는 proxy_buffering off를 반드시 설정해야 SSE가 버퍼링 없이 흐릅니다. AsyncAnthropic 클라이언트는 앱 시작 시 한 번만 생성해 재사용하고, API 키는 시크릿 관리 서비스로 관리합니다. TTFT, TPS, 스트리밍 에러율을 핵심 지표로 모니터링하는 것이 좋습니다."
 ---
 
 AI 백엔드를 구축하다 보면 결국 하나의 질문에 부딪힌다. "응답이 다 생성될 때까지 사용자를 기다리게 해도 괜찮을까?" 답은 대부분 "아니오"다. 특히 Claude 같은 언어 모델이 긴 텍스트를 생성할 때, 전체를 기다렸다가 한 번에 내려주는 방식은 UX를 죽인다.
