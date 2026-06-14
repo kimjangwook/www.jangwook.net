@@ -1,9 +1,9 @@
 ---
 title: 'DeNA LLM Study Part 4: RAG Architecture and Latest Trends'
 description: >-
-  Exploring RAG from core concepts to GraphRAG and Agentic RAG through DeNA LLM
-  Study Series Part 4, covering cutting-edge retrieval-augmented generation
-  techniques.
+  DeNA in-house LLM Study Part 4: From basic RAG implementation to GraphRAG using knowledge graphs
+  and Agentic RAG that determines its own retrieval strategy — analyzing the evolution of modern
+  architectures with production adoption criteria and 2025–2026 trends.
 pubDate: '2025-12-11'
 heroImage: ../../../assets/blog/dena-llm-study-part4-rag-hero.jpg
 tags:

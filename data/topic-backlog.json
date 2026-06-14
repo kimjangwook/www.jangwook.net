@@ -3622,6 +3622,60 @@
       "source": "Hono v4 + wrangler v3. 로컬 miniflare 실행부터 D1 SQLite 연동, 배포까지 직접 실습 가능. 엣지 API TypeScript how-to.",
       "notes": "TypeScript 엣지 개발 흐름 — Drizzle/SvelteKit/Turso 포스트와 내부링크 연결",
       "added_at": "2026-06-14"
+    },
+    {
+      "slug": "claude-fable-5-claude-code-workflow-upgrade-guide-2026",
+      "title_idea": "Claude Fable 5로 Claude Code 워크플로우 업그레이드하기 — 1M 컨텍스트·128K 출력·Dreaming 기능 실전 적용",
+      "content_type": "how-to",
+      "target_keyword": "Claude Fable 5 Claude Code 활용",
+      "secondary_keywords": [
+        "Claude Fable 5 기능",
+        "Claude 1M 컨텍스트 활용",
+        "Fable 5 개발자 가이드",
+        "Claude Fable 5 API"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "WebSearch 2026-06-14 — Claude Fable 5 출시(2026-06-09). 1M 토큰 컨텍스트, 128K 출력, Dreaming 기능(에이전트가 세션 간 메모리 검토), $10/$50 per 1M 토큰. Simon Willison 초기 분석 + Anthropic API 문서.",
+      "added_at": "2026-06-14",
+      "status": "queued",
+      "notes": "월요일 How-to 유형. Fable 5가 2026-06-09 출시돼 시의성 최상. 7가지 새 기능을 Claude Code 워크플로우에 실제 적용하는 방법 중심. claude-code-masterclass-series-1, multi-agent-orchestration-improvement 내부링크 연결. 기존 claude-code-june-2026-new-features-changelog 포스트와 차별화: 업데이트 정리가 아닌 실전 적용 가이드."
+    },
+    {
+      "slug": "opencode-open-source-ai-coding-agent-guide-2026",
+      "title_idea": "OpenCode 완전 가이드 2026 — 143,000 스타 오픈소스 AI 코딩 에이전트, Claude Code와 무엇이 다른가",
+      "content_type": "comparison",
+      "target_keyword": "OpenCode 오픈소스 AI 코딩 에이전트",
+      "secondary_keywords": [
+        "OpenCode vs Claude Code",
+        "OpenCode 설치 방법",
+        "오픈소스 AI 코딩 도구 2026",
+        "OpenCode Ollama 로컬"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "WebSearch 2026-06-14 — OpenCode: 143,000+ GitHub 스타, 7.5M 월 활성 사용자. 75개 이상 AI 프로바이더 지원(OpenAI, Gemini, Ollama 로컬). 2026-01 Anthropic이 Claude 모델 차단 — 이것이 오히려 OpenCode vs Claude Code 비교 포인트가 됨.",
+      "added_at": "2026-06-14",
+      "status": "queued",
+      "notes": "토요일 비교 유형이지만 월요일 How-to로도 적합. 143K 스타 = 독자 관심도 보장. Anthropic 차단 사건이 핵심 논쟁점 — Claude Code 헤비유저 독자에게 직접적 관심사. ai-coding-agent-market-june-2026-open-source-challenge 포스트와 자연스러운 연계. 설치부터 로컬 Ollama 연동까지 실습 중심으로 차별화."
+    },
+    {
+      "slug": "claude-fable-5-context-engineering-large-codebase-2026",
+      "title_idea": "Claude Fable 5 컨텍스트 엔지니어링 실전 — 1M 토큰으로 대형 코드베이스 전체를 로드하고 분석하는 방법",
+      "content_type": "how-to",
+      "target_keyword": "Claude Fable 5 컨텍스트 엔지니어링",
+      "secondary_keywords": [
+        "LLM 1M 컨텍스트 활용",
+        "대형 코드베이스 AI 분석",
+        "Claude Fable 5 토큰",
+        "컨텍스트 윈도우 최적화"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "WebSearch 2026-06-14 — Fable 5의 1M 토큰 컨텍스트 + 128K 출력. 전체 코드베이스 + 문서 + 대화 이력을 동시에 로드 가능. 컨텍스트 엔지니어링 워크플로우에 특화.",
+      "added_at": "2026-06-14",
+      "status": "queued",
+      "notes": "claude-fable-5-claude-code-workflow-upgrade-guide 후속편으로 자연스러운 시리즈 구성. 코드베이스 전체 로드 → 아키텍처 분석 → 문서 자동 생성 실전 패턴. 128K 출력 한도 내에서 최대 가치를 끌어내는 방법."
     }
   ]
 }

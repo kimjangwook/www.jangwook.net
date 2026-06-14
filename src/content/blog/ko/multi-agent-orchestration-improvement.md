@@ -1,6 +1,7 @@
 ---
 title: 멀티 에이전트 오케스트레이션으로 블로그 자동화 시스템 개선하기
-description: Claude Code의 멀티 에이전트 오케스트레이션 패턴으로 48개 파일을 분석하고 61개 이슈를 수정한 대규모 개선 프로세스 가이드
+description: >-
+  Claude Code의 멀티 에이전트 오케스트레이션 패턴을 실전 적용한 대규모 블로그 자동화 개선 사례. 48개 파일을 병렬 분석해 61개 이슈를 발견하고, SEO 메타데이터 보정부터 4개 언어 번역 동기화, 내부링크 추가까지 에이전트팀이 자동 처리한 전체 프로세스를 공개한다.
 pubDate: '2025-12-04'
 heroImage: ../../../assets/blog/multi-agent-orchestration-improvement-hero.jpg
 tags:

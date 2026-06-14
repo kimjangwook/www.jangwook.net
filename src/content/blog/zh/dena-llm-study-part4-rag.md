@@ -1,6 +1,8 @@
 ---
 title: 'DeNA LLM 研究 Part 4: RAG 架构与最新趋势'
-description: 通过 DeNA LLM 研究资料 Part 4，探索从 RAG 核心概念到 GraphRAG、Agentic RAG 的最新检索增强生成技术。
+description: >-
+  DeNA 内部 LLM 研究 Part 4：从基础 RAG 实现到利用知识图谱的 GraphRAG、自主决定检索策略的 Agentic RAG，
+  深度分析最新架构演进。同时整理生产环境采用标准与 2025〜2026 年技术趋势。
 pubDate: '2025-12-11'
 heroImage: ../../../assets/blog/dena-llm-study-part4-rag-hero.jpg
 tags:

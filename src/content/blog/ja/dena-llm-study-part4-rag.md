@@ -1,6 +1,8 @@
 ---
 title: 'DeNA LLMスタディ Part 4: RAGアーキテクチャと最新トレンド'
-description: DeNAのLLMスタディ資料Part 4を通じて、RAGの核心概念からGraphRAG、Agentic RAGまで最新の検索拡張生成技術を探ります。
+description: >-
+  DeNA社内LLMスタディPart 4: 基本的なRAG実装から知識グラフを活用したGraphRAG、検索戦略を自ら決定するAgentic RAGまで、
+  最新アーキテクチャの進化を分析。プロダクション導入の判断基準と2025〜2026年のトレンドも解説します。
 pubDate: '2025-12-11'
 heroImage: ../../../assets/blog/dena-llm-study-part4-rag-hero.jpg
 tags:
