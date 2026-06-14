@@ -1,10 +1,8 @@
 ---
 title: 'EffiFlow Analysis: 71% Cost Reduction with Metadata Architecture'
 description: >-
-  Deep dive into a blog automation system built with 17 Agents and
-  metadata-first architecture. Reveals the 3-Tier design achieving 60-70% token
-  savings, 71% annual cost reduction ($5.72→$1.65), and 364 hours saved per
-  year.
+  How a 17-agent blog automation system used metadata-first 3-tier design to cut
+  tokens 60-70%, slash annual cost 71% ($5.72 to $1.65), and save 364 hours a year.
 pubDate: '2025-11-14'
 heroImage: ../../../assets/blog/effiflow-automation-analysis-hero.jpg
 tags:

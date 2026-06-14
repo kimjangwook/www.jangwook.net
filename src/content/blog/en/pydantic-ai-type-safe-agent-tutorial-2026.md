@@ -1,9 +1,9 @@
 ---
 title: PydanticAI Practical Tutorial — Building Type-Safe AI Agents the FastAPI Way
 description: >-
-  I installed PydanticAI 1.88.0 and tested TestModel, output_type, @agent.tool,
-  and multi-provider switching hands-on. Includes real traps like
-  result_type→output_type and a complete FunctionModel test strategy.
+  Build type-safe AI agents with PydanticAI 1.88.0: TestModel without an API
+  key, output_type and @agent.tool wiring, multi-provider switching, all run
+  hands-on.
 pubDate: '2026-04-29'
 heroImage: ../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-hero.jpg
 tags:

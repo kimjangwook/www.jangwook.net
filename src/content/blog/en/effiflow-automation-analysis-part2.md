@@ -1,10 +1,8 @@
 ---
 title: 'EffiFlow Part 2: Skills Auto-Discovery and 58% Token Reduction Caching'
 description: >-
-  A deep dive into Claude Code's Skills auto-discovery mechanism and Commands
-  integration. Learn how EffiFlow's blog automation achieved 58% token cost
-  reduction through prompt caching, with step-by-step implementation details and
-  validated performance metrics.
+  How Claude Code Skills auto-discovery and Commands integration cut EffiFlow's
+  blog automation token cost by 58% via prompt caching, with code and real metrics.
 pubDate: '2025-11-15'
 heroImage: ../../../assets/blog/effiflow-part2-skills-commands-hero.jpg
 tags:

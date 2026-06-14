@@ -1,9 +1,8 @@
 ---
 title: LlamaIndex vs LangChain vs Haystack — RAG Framework Comparison 2026
 description: >-
-  I installed and tested LlamaIndex 0.14, LangChain 1.3, and Haystack 2.30 in a
-  real sandbox. A hands-on comparison covering langchain-community deprecation
-  warnings, code complexity, InMemory retrieval results, and a clear decision
+  LlamaIndex 0.14, LangChain 1.3, and Haystack 2.30 tested side by side: code
+  complexity, the langchain-community sunset warning, and a clear decision
   guide.
 pubDate: '2026-06-06'
 heroImage: ../../../assets/blog/llamaindex-vs-langchain-vs-haystack-rag-2026/hero.png

@@ -1,9 +1,8 @@
 ---
 title: 'Individual Developer''s AI SaaS Journey: Production Launch in 3 Days'
 description: >-
-  Real-world experience building a B2B AI OCR service with SvelteKit, Supabase,
-  and Google Gemini API. Tech stack rationale, implementation details, and
-  business strategy from a solo developer's perspective.
+  Zero to a live B2B AI OCR product in three days with SvelteKit, Supabase, and
+  Gemini: stack choices, what broke, and the first-quarter KPIs a solo dev set.
 pubDate: '2025-11-27'
 heroImage: ../../../assets/blog/individual-developer-ai-saas-journey-hero.png
 tags:

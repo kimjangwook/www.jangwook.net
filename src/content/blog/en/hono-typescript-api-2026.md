@@ -1,10 +1,9 @@
 ---
 title: Hono.js + TypeScript Edge REST API — Cloudflare Workers Deployment Guide
 description: >-
-  I built a type-safe REST API with Hono v4, Bun 1.3, and Zod v4. This guide
-  covers routing, Zod input validation, CORS/logger/timing middleware, and
-  Cloudflare Workers deployment config — with real terminal logs and
-  step-by-step code.
+  Build a type-safe edge REST API with Hono v4, Bun 1.3, and Zod v4: routing,
+  input validation, CORS and logger middleware, plus Cloudflare Workers
+  deployment.
 pubDate: '2026-06-03'
 heroImage: >-
   ../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-hero.png

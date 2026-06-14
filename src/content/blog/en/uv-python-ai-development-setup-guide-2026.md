@@ -3,10 +3,9 @@ title: >-
   Setting Up AI Development with uv — Start a Claude SDK Project in Under 1
   Second
 description: >-
-  A complete hands-on guide to building AI development environments with uv
-  0.11, the Rust-based Python package manager. Real benchmark data: 16 packages
-  including anthropic installed in 0.874 seconds. Covers project init, Claude
-  SDK setup, Python version management, and CI/CD integration.
+  uv 0.11, the Rust-based Python package manager, installs 16 packages with
+  anthropic in 0.874 seconds. Set up a Claude SDK project, pin versions, run
+  CI/CD.
 pubDate: '2026-05-07'
 heroImage: ../../../assets/blog/uv-python-ai-development-setup-guide-2026-hero.png
 tags:

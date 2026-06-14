@@ -3,9 +3,8 @@ title: >-
   Building a Private MCP Server with Local LLM — Gemma 4 + FastMCP Fully Offline
   AI Tool Guide
 description: >-
-  How to build an offline AI tool pipeline with Ollama + Gemma 4 + FastMCP, no
-  internet required. A hands-on implementation guide for using MCP tools in
-  medical, legal, and financial environments where data cannot leave the
+  Run an offline AI tool pipeline with Ollama, Gemma 4, and FastMCP, no internet
+  needed. Built for medical, legal, and finance where data stays on the
   premises.
 pubDate: '2026-04-14'
 heroImage: ../../../assets/blog/local-llm-private-mcp-server-gemma4-fastmcp-hero.jpg

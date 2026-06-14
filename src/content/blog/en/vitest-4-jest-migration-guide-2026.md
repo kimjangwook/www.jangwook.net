@@ -1,9 +1,8 @@
 ---
 title: 'Migrating from Jest to Vitest 4: A Complete 2026 Guide'
 description: >-
-  Practical guide to migrating from Jest to Vitest 4.1.7. Covers installation,
-  config migration, jest-to-vitest code conversion patterns, stable Browser
-  Mode, and new matchers (toSatisfy, toBeOneOf) — verified hands-on in a real
+  Migrate Jest to Vitest 4.1.7 painlessly: config conversion, vi.importActual
+  async traps, stable Browser Mode, and new matchers, all tested in a real
   sandbox.
 pubDate: '2026-05-26'
 heroImage: ../../../assets/blog/vitest-4-jest-migration-guide-2026-hero.png
