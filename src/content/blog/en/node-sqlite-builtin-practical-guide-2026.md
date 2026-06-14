@@ -1,9 +1,8 @@
 ---
 title: 'Node.js Built-in SQLite: A Practical Guide — No npm Install Required'
 description: >-
-  Node.js 22.5.0 ships node:sqlite, an built-in SQLite module requiring zero npm
-  installs. DatabaseSync, StatementSync, transactions, and user-defined
-  functions — tested hands-on with real logs.
+  Node.js 22.5.0 ships node:sqlite, a built-in SQLite module needing zero npm
+  installs. DatabaseSync, transactions, and custom functions, tested hands-on.
 pubDate: '2026-06-09'
 heroImage: >-
   ../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-builtin-practical-guide-2026-hero.png

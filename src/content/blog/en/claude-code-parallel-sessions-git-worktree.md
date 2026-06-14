@@ -1,9 +1,8 @@
 ---
 title: Running Claude Code in Parallel — Git Worktree Guide for Simultaneous Tasks
 description: >-
-  How to combine Git Worktree with Claude Code to develop multiple features
-  simultaneously. Covers Plan Mode, session isolation, and conflict-free
-  parallel workflows based on hands-on experience.
+  Git Worktree plus Claude Code lets you build several features at once: Plan
+  Mode, session isolation, and conflict-free parallel workflows from real use.
 pubDate: '2026-04-13'
 heroImage: ../../../assets/blog/claude-code-parallel-sessions-git-worktree-hero.jpg
 tags:

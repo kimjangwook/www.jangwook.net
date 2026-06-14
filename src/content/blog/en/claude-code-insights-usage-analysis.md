@@ -3,9 +3,8 @@ title: >-
   Claude Code /insights Review: What 4,516 Messages Reveal About My AI Coding
   Patterns
 description: >-
-  I analyzed my real project usage patterns with Claude Code /insights. Discover
-  what 1,042 sessions and 6,267 file modifications reveal about effective AI
-  coding workflows and practical improvements.
+  4,516 messages, 1,042 sessions, and 6,267 file edits analyzed with Claude Code
+  /insights, exposing my real AI coding bottlenecks and the fixes I now use.
 pubDate: '2026-02-05'
 heroImage: ../../../assets/blog/claude-code-insights-usage-analysis-hero.jpg
 tags:
