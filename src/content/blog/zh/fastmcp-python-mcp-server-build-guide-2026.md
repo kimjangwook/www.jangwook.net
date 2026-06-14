@@ -122,11 +122,11 @@ Components
 
 FastMCP有三个核心概念。区分清楚这三者是设计好服务器的第一步。
 
-**@mcp.tool()** — Claude直接调用的函数。接收参数、执行操作、返回结果。搜索、计算、文件操作、API调用等都放这里。当我想让Claude直接操作我的文件系统或API时，用`@mcp.tool()`。
+**@mcp.tool()**: Claude直接调用的函数。接收参数、执行操作、返回结果。搜索、计算、文件操作、API调用等都放这里。当我想让Claude直接操作我的文件系统或API时，用`@mcp.tool()`。
 
-**@mcp.resource()** — 只读数据源。用`data://`、`file://`、`https://`等URI注册，Claude将其作为上下文读取。与工具不同，这是「读取」而非「执行」的概念。数据库模式、配置文件、文档等放这里，会进入Claude的上下文窗口。
+**@mcp.resource()**: 只读数据源。用`data://`、`file://`、`https://`等URI注册，Claude将其作为上下文读取。与工具不同，这是「读取」而非「执行」的概念。数据库模式、配置文件、文档等放这里，会进入Claude的上下文窗口。
 
-**@mcp.prompt()** — 可复用的提示模板。接收参数，返回结构化的提示消息。在Claude Desktop或claude.ai中可以像斜杠命令一样使用。
+**@mcp.prompt()**: 可复用的提示模板。接收参数，返回结构化的提示消息。在Claude Desktop或claude.ai中可以像斜杠命令一样使用。
 
 Tool和Resource的区别让初学者困惑。我的标准很简单：**有副作用就是Tool，只读就是Resource**。
 

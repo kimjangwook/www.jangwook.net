@@ -227,7 +227,7 @@ results = retriever.invoke("LCEL 파이프 연산자")
 - Core 의존성 9개로 가장 가벼운 핵심
 
 약점:
-- **langchain-community deprecated** — 신규 프로젝트에서 주의 필요
+- **langchain-community deprecated**: 신규 프로젝트에서 주의 필요
 - 빠른 API 변화로 버전 간 호환성 이슈가 잦음
 - 에러 메시지가 깊은 스택 트레이스로 숨어 있어 디버깅 어려움
 

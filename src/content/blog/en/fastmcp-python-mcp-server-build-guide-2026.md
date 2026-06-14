@@ -125,11 +125,11 @@ Components
 
 FastMCP has three core abstractions. Getting these right is what makes a well-designed server.
 
-**@mcp.tool()** — A function Claude can directly invoke. It takes parameters, does work, and returns results. Search, compute, file operations, API calls: anything with execution behavior goes here. If I want Claude to interact with my filesystem or an external API, `@mcp.tool()` is the answer.
+**@mcp.tool()**: A function Claude can directly invoke. It takes parameters, does work, and returns results. Search, compute, file operations, API calls: anything with execution behavior goes here. If I want Claude to interact with my filesystem or an external API, `@mcp.tool()` is the answer.
 
-**@mcp.resource()** — A read-only data source. Register it with a URI like `data://`, `file://`, or `https://`, and Claude reads it as context. Unlike tools, this is "read" not "execute." Database schemas, config files, documentation: put these here and they flow into Claude's context window.
+**@mcp.resource()**: A read-only data source. Register it with a URI like `data://`, `file://`, or `https://`, and Claude reads it as context. Unlike tools, this is "read" not "execute." Database schemas, config files, documentation: put these here and they flow into Claude's context window.
 
-**@mcp.prompt()** — A reusable prompt template. Takes parameters, returns a structured prompt message. Works like a slash command in Claude Desktop or claude.ai.
+**@mcp.prompt()**: A reusable prompt template. Takes parameters, returns a structured prompt message. Works like a slash command in Claude Desktop or claude.ai.
 
 The Tool vs Resource distinction trips people up. My rule: **if it has side effects, it's a Tool; if it's read-only, it's a Resource**.
 
