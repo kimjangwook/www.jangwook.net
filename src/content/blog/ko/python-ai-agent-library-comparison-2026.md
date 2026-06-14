@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "Pydantic AI, Instructor, Smolagents 중 무엇을 써야 하나요?"
+    answer: "세 라이브러리는 서로 다른 레이어를 다루므로 경쟁 관계가 아닙니다. 단일 LLM 호출에서 구조화 추출만 필요하면 Instructor, 타입 안전한 에이전트 루프가 필요하면 Pydantic AI, 코드 실행 에이전트가 필요하면 Smolagents를 선택하세요."
+  - question: "타입 안전성이 가장 중요하면 어떤 라이브러리가 좋나요?"
+    answer: "Pydantic 팀이 만든 Pydantic AI가 가장 적합합니다. Python 타입 힌트를 에이전트 설계의 중심에 두고 도구를 타입 안전하게 정의하며, 의존성 주입으로 테스트 가능한 구조를 만듭니다. 다만 아직 v0.x라 breaking change 리스크는 감수해야 합니다."
+  - question: "프로덕션에 지금 바로 써도 안전한 건 무엇인가요?"
+    answer: "Instructor가 가장 검증되어 있습니다. 월간 다운로드 300만 회, GitHub 스타 11k+로 가장 많은 프로덕션 검증을 거쳤습니다. Pydantic AI는 v0.x, Smolagents는 실험적 단계라 도입에 신중해야 합니다."
+  - question: "Smolagents의 코드 생성 방식은 왜 유리한가요?"
+    answer: "HuggingFace 벤치마크 기준 JSON 도구 호출 대비 LLM 호출이 약 30% 감소합니다. 여러 도구를 순서대로 호출할 때 매번 LLM에 묻지 않고 코드 한 번으로 처리하기 때문입니다. 단 코드 품질이 모델 성능에 크게 의존하므로 GPT-4o나 Claude Sonnet 이상을 권장합니다."
 ---
 
 지난 달에 새 프로젝트를 시작하면서 한 가지 결정을 해야 했다. Python으로 LLM 기반 에이전트를 만드는데, 어떤 라이브러리를 쓸 것인가? LangGraph, CrewAI 같은 무거운 오케스트레이션 프레임워크는 이미 알고 있었다. 문제는 그보다 한 단계 아래 레이어였다. LLM 호출을 직접 제어하고 싶은데 날 것의 OpenAI SDK는 너무 번거로울 때, 그 틈을 채우는 라이브러리들이 2025~2026년 사이에 급성장했다.

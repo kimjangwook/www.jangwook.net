@@ -35,6 +35,15 @@ relatedPosts:
       en: Worth reading alongside this in the same RAG track.
       ja: 同じRAGの流れで併せて読むと役立ちます。
       zh: 在同一 RAG 脉络中可一并阅读。
+faq:
+  - question: "Which is best for RAG — LlamaIndex, LangChain, or Haystack?"
+    answer: "It depends on your situation. Basic RAG pipelines measured at 10 meaningful lines for LlamaIndex versus 18 each for LangChain and Haystack. Choosing from scratch, I would pick Haystack because explicit structure makes maintenance easier as pipelines grow more complex."
+  - question: "Which framework do you recommend for beginners?"
+    answer: "LlamaIndex. Its VectorStoreIndex.from_documents() handles splitting, embedding, and indexing in one call, so a complete RAG runs in just 10 lines, and it has the lowest learning curve. It is especially strong for document-centric RAG and fast prototypes."
+  - question: "Which framework fits production environments?"
+    answer: "Haystack. It serializes the whole pipeline to a single YAML file so config can be versioned separately from code, and its type safety catches bad connections at build time rather than during execution. deepset also provides full-time enterprise support."
+  - question: "Should I start a new project with LangChain right now?"
+    answer: "Be cautious. During testing I hit a warning that langchain-community is being sunset and no longer actively maintained. langchain-core and langchain themselves stay active, so for greenfield projects skip community and install standalone packages like langchain-chroma instead."
 ---
 
 Every time you start a RAG project in Python, three names come up almost immediately: LlamaIndex, LangChain, and Haystack. They're all described as "RAG frameworks." But once you actually install them and give them the same job, the design philosophies pull apart.

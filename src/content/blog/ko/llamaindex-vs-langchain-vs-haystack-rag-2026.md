@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same RAG track.
       ja: 同じRAGの流れで併せて読むと役立ちます。
       zh: 在同一 RAG 脉络中可一并阅读。
+faq:
+  - question: "RAG에는 LlamaIndex, LangChain, Haystack 중 무엇이 낫나요?"
+    answer: "정답은 상황에 따라 다릅니다. 기본 RAG 코드 줄 수는 LlamaIndex 10줄, LangChain과 Haystack 각각 18줄이었습니다. 직접 셋을 새로 고른다면 파이프라인이 복잡해질수록 명시적 구조가 유지보수를 쉽게 만들어 주는 Haystack을 선택하겠습니다."
+  - question: "초보자에게는 어떤 프레임워크를 추천하나요?"
+    answer: "LlamaIndex를 추천합니다. VectorStoreIndex.from_documents()가 분할, 임베딩, 인덱싱을 한 번에 처리해 단 10줄로 완전한 RAG를 만들 수 있고, 학습 곡선이 가장 완만합니다. 문서 중심 RAG와 빠른 프로토타입에 특히 강합니다."
+  - question: "프로덕션 환경에는 어떤 프레임워크가 맞나요?"
+    answer: "Haystack이 적합합니다. 파이프라인을 YAML 단일 파일로 직렬화해 설정을 코드와 분리 관리할 수 있고, 잘못된 연결을 실행 전 빌드 시점에 검증하는 타입 안전성을 갖췄습니다. deepset의 엔터프라이즈 지원도 강점입니다."
+  - question: "지금 새 프로젝트를 LangChain으로 시작해도 되나요?"
+    answer: "신중할 필요가 있습니다. 테스트 중 langchain-community가 deprecated되어 더 이상 적극 유지보수되지 않는다는 경고를 만났습니다. langchain-core와 langchain 자체는 활발히 유지되므로, 새로 시작한다면 community 대신 langchain-chroma 같은 독립 패키지만 쓰는 것이 좋습니다."
 ---
 
 RAG 앱을 처음 만들려고 문서를 펼치면 세 개의 이름이 거의 동시에 등장한다. LlamaIndex, LangChain, Haystack. 셋 다 "RAG 프레임워크"라고 불린다. 그런데 직접 설치해서 같은 작업을 시켜보면 철학이 꽤 다르다.

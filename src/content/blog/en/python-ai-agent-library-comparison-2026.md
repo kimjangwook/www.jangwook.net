@@ -35,6 +35,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "Which one should I use: Pydantic AI, Instructor, or Smolagents?"
+    answer: "These libraries operate at different layers, so they are not really competitors. Pick Instructor if you only need structured extraction from a single LLM call, Pydantic AI if you need a type-safe agent loop, and Smolagents if you need a code-execution agent."
+  - question: "Which library is best when type safety matters most?"
+    answer: "Pydantic AI, built by the Pydantic team, fits best. It puts Python type hints at the center of agent design, lets you define tools type-safely, and uses dependency injection for testable structure. Note that it is still v0.x, so you must accept the risk of breaking changes."
+  - question: "Which one is safe to use in production right now?"
+    answer: "Instructor is the most battle-tested, with 3M+ monthly downloads and 11k+ GitHub stars, giving it the most production validation. Pydantic AI is still v0.x and Smolagents is experimental, so both call for more caution before adoption."
+  - question: "Why is Smolagents' code-generation approach advantageous?"
+    answer: "According to HuggingFace benchmarks, it cuts LLM calls by about 30% versus JSON tool calling, because chaining several tools is handled in one code block instead of asking the LLM each step. Code quality depends heavily on model strength, so GPT-4o or Claude Sonnet class models are recommended."
 ---
 
 Last month I started a new project and faced a choice. Which Python library should I use for LLM-based agents? I already knew the big orchestration frameworks like LangGraph and CrewAI. But a layer below those sits the space that fills the gap between raw OpenAI SDK calls and full-blown agent frameworks, and it has exploded with options over 2025–2026.

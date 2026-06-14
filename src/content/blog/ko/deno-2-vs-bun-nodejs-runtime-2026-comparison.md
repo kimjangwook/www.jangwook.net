@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same node.js track.
       ja: 同じnode.jsの流れで併せて読むと役立ちます。
       zh: 在同一 node.js 脉络中可一并阅读。
+faq:
+  - question: "Deno와 Bun 중 뭐가 더 빠른가?"
+    answer: "상황에 따라 다르다. 첫 실행(cold start)은 Deno가 0.067s로 Bun(0.243s)보다 약 3.6배 빠르고, 워밍업 후에는 Bun이 0.013s로 Deno(0.026s)보다 2배 빠르다. HTTP 처리량은 Bun 23,794 RPS, Deno 22,594 RPS로 약 5% 차이라 실무에서 의미 있는 차이는 아니다."
+  - question: "프로덕션엔 Deno와 Bun 중 뭘 써야 하나?"
+    answer: "기존 Node.js 프로젝트 속도 개선이나 npm 의존이 많은 서비스라면 마이그레이션 비용이 낮은 Bun이 실용적이다. 새 TypeScript 프로젝트, CLI 도구, 서드파티 코드를 실행하는 환경이라면 타입 체크와 기본 샌드박스를 갖춘 Deno가 낫다. 둘 다 2026년 기준 프로덕션에서 쓸 만한 수준이다."
+  - question: "Node.js에서 Bun이나 Deno로 마이그레이션이 쉬운가?"
+    answer: "Bun은 기존 package.json, node_modules, npm 워크플로우가 그대로 동작해 마이그레이션 비용이 매우 낮다. Deno 2도 node: 접두사로 node:fs, node:crypto, node:events 등이 플래그 없이 동작해 호환성이 크게 개선됐다. 다만 Deno는 권한 플래그(--allow-*)에 초기 마찰이 있다."
+  - question: "Deno와 Bun의 보안 모델은 어떻게 다른가?"
+    answer: "Bun은 Node.js처럼 파일 시스템, 네트워크, 환경변수에 기본으로 접근 가능한 열린 모델이라 악성 서드파티 코드를 막을 방법이 없다. Deno는 --allow-read, --allow-net 같은 권한을 명시적으로 허용해야 하는 기본 샌드박스 방식이라, CI/CD나 서버에서 서드파티 코드를 실행할 때 실질적인 방어선이 된다."
 ---
 
 2026년 중반, JavaScript 런타임 선택지는 셋으로 좁혀졌다. Node.js, Bun, Deno. 그리고 솔직히 말하면, Node.js를 고집할 이유가 점점 사라지고 있다. 문제는 Bun과 Deno 사이에서다.

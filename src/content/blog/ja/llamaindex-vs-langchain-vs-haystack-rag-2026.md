@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same RAG track.
       ja: 同じRAGの流れで併せて読むと役立ちます。
       zh: 在同一 RAG 脉络中可一并阅读。
+faq:
+  - question: "RAGにはLlamaIndex、LangChain、Haystackのどれが良いですか?"
+    answer: "状況によって答えは変わります。基本的なRAGのコード行数はLlamaIndexが10行、LangChainとHaystackがそれぞれ18行でした。三つをゼロから選ぶなら、パイプラインが複雑になるほど明示的な構造が保守を楽にしてくれるHaystackを選びます。"
+  - question: "初心者にはどのフレームワークがおすすめですか?"
+    answer: "LlamaIndexをおすすめします。VectorStoreIndex.from_documents()が分割、埋め込み、インデックス化を一度に処理するため、わずか10行で完全なRAGが作れ、学習曲線が最も緩やかです。ドキュメント中心のRAGや高速プロトタイプに特に強いです。"
+  - question: "本番環境にはどのフレームワークが向いていますか?"
+    answer: "Haystackが向いています。パイプライン全体を単一のYAMLファイルにシリアライズして設定をコードと分離管理でき、誤った接続を実行前のビルド時点で検証する型安全性を備えています。deepsetのエンタープライズサポートも強みです。"
+  - question: "今すぐLangChainで新規プロジェクトを始めても良いですか?"
+    answer: "慎重に判断する必要があります。テスト中にlangchain-communityがsunset扱いとなり、もはや積極的に保守されないという警告に遭遇しました。langchain-coreとlangchain自体は活発に保守されているため、新規開始ならcommunityではなくlangchain-chromaのような独立パッケージだけを使うのが良いです。"
 ---
 
 RAGアプリを初めて作ろうとドキュメントを開くと、三つの名前がほぼ同時に現れる。LlamaIndex、LangChain、Haystack。どれも「RAGフレームワーク」と呼ばれている。だが実際にインストールして同じ作業をさせると、設計思想はかなり違う。

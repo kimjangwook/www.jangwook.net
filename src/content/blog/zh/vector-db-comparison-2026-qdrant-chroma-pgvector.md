@@ -25,6 +25,15 @@ relatedPosts:
       en: Continues the hands-on RAG experience.
       ja: RAGを実際に扱った経験が続く記事です。
       zh: 延续 RAG 的实战经验。
+faq:
+  - question: "Qdrant、ChromaDB、pgvector 之间该选哪个?"
+    answer: "原型开发和几十万个向量以下的小规模适合零配置的 ChromaDB，预计 500 万个向量以上或需要水平扩展时 Qdrant 更有优势。如果已经在运行 PostgreSQL，先试用无需新增基础设施的 pgvector 更现实。"
+  - question: "pgvector 在什么情况下就够用?"
+    answer: "已有 PostgreSQL 基础设施和 DBA、且向量检索需要与现有 SQL 查询或 JOIN 结合时最为适用。大多数情况下够用，日后性能真成问题再迁移到 Qdrant 这一路径也可行。"
+  - question: "生产环境的性能差距有多大?"
+    answer: "在 1000 个向量的实测中，过滤查询 ChromaDB 为 2ms、Qdrant 为 7ms，小规模下 ChromaDB 更快，而插入是 Qdrant 更快（0.163s）。但超过 500 万个向量后，Qdrant 的 HNSW 优化占据优势，结果会反转。"
+  - question: "规模这么小，为什么 Qdrant 反而比 ChromaDB 慢?"
+    answer: "Qdrant 具备 Payload 索引、分布式过滤、Segment 管理等为百万级向量设计的结构，在 1000 个向量这种小规模下这套精细基础设施反而成为开销。ChromaDB 在小规模下采用更直接的过滤方式，因此更快。"
 ---
 
 每次开始新的RAG项目，向量数据库的选型总会花掉比预期更多的时间。从"先用Chroma吧"出发，看到Qdrant的基准测试数据后开始动摇，再读一篇pgvector的文章又想回到PostgreSQL。这个循环不断重复，直到真正坐下来自己跑一遍数字才能得出结论。

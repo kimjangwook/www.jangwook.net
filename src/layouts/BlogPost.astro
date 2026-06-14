@@ -12,6 +12,7 @@ import ReadingProgress from '../components/ReadingProgress.astro';
 import { useTranslations, type Language } from '../lib/i18n/languages';
 import { SITE_TITLE } from '../consts';
 import RelatedPosts from '../components/RelatedPosts.astro';
+import FAQ from '../components/FAQ.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & {
 	lang: Language;
@@ -23,9 +24,10 @@ type Props = CollectionEntry<'blog'>['data'] & {
 		score: number;
 		reason: { ko: string; ja: string; en: string; zh: string };
 	}>;
+	faq?: Array<{ question: string; answer: string }>;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, lang, tags, noindex, relatedPosts } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, lang, tags, noindex, relatedPosts, faq } = Astro.props;
 const t = useTranslations(lang);
 
 // Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
@@ -72,6 +74,7 @@ const breadcrumbSchema = {
 			}}
 			enableAds={!noindex}
 			noindex={noindex}
+			faqData={faq}
 		/>
 		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 	</head>
@@ -143,6 +146,10 @@ const breadcrumbSchema = {
 					">
 						<slot />
 					</div>
+
+					{faq && faq.length > 0 && (
+						<FAQ items={faq} lang={lang} />
+					)}
 
 					<BlogPostLanguageSwitcher slug={slug} currentLang={lang} />
 

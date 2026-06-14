@@ -30,6 +30,15 @@ const blog = defineCollection({
 			relatedPosts: z.array(relatedPostSchema).optional(),
 			noindex: z.boolean().optional(),
 			draft: z.boolean().optional(),
+			// GEO/AEO: 글 본문 근거의 실제 FAQ (FAQPage 스키마 + 가시적 FAQ 섹션)
+			faq: z
+				.array(
+					z.object({
+						question: z.string(),
+						answer: z.string(),
+					})
+				)
+				.optional(),
 		}),
 });
 

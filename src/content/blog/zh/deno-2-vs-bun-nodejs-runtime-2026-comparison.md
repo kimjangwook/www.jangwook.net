@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same node.js track.
       ja: 同じnode.jsの流れで併せて読むと役立ちます。
       zh: 在同一 node.js 脉络中可一并阅读。
+faq:
+  - question: "Deno和Bun哪个更快？"
+    answer: "取决于工作负载。冷启动（首次运行）Deno为0.067s，比Bun（0.243s）快约3.6倍；但热启动后Bun为0.013s，比Deno（0.026s）快2倍。HTTP吞吐量基本相当：Bun为23,794 RPS，Deno为22,594 RPS，仅差约5%，在实际项目中并无意义。"
+  - question: "生产环境应该用Deno还是Bun？"
+    answer: "如果是加速现有Node.js项目或依赖大量npm的服务，迁移成本低的Bun更实用。如果是新的TypeScript项目、CLI工具或运行第三方代码的环境，具备类型检查和默认沙箱的Deno更好。两者在2026年标准下都已达到可用于生产的水平。"
+  - question: "从Node.js迁移到Bun或Deno容易吗？"
+    answer: "Bun让现有的package.json、node_modules和npm工作流程直接运行，迁移成本非常低。Deno 2也能通过node:前缀让node:fs、node:crypto、node:events等无需任何标志即可运行，兼容性大幅改善。但Deno的权限标志（--allow-*）在初期会有摩擦。"
+  - question: "Deno和Bun的安全模型有什么区别？"
+    answer: "Bun像Node.js一样采用开放模型，默认可访问文件系统、网络和环境变量，因此无法阻止恶意第三方代码。Deno采用默认沙箱，需要明确授予--allow-read、--allow-net等权限，在CI/CD或服务器上运行第三方代码时，这成为实质性的防线。"
 ---
 
 2026年中期，JavaScript运行时的选择实际上缩减到了三个：Node.js、Bun、Deno。说实话，坚持使用Node.js的理由越来越少了。真正的问题是在Bun和Deno之间做选择。

@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same RAG track.
       ja: 同じRAGの流れで併せて読むと役立ちます。
       zh: 在同一 RAG 脉络中可一并阅读。
+faq:
+  - question: "RAG用LlamaIndex、LangChain还是Haystack更好?"
+    answer: "答案取决于具体场景。基础RAG的代码行数LlamaIndex为10行，LangChain和Haystack各为18行。如果让我从零开始三选一，我会选Haystack，因为管线越复杂，显式结构越能让维护变得轻松。"
+  - question: "对初学者推荐哪个框架?"
+    answer: "推荐LlamaIndex。VectorStoreIndex.from_documents()一次性完成切分、嵌入和索引，仅用10行就能构建完整的RAG，学习曲线最平缓。它在以文档为中心的RAG和快速原型方面尤其出色。"
+  - question: "生产环境适合哪个框架?"
+    answer: "Haystack更合适。它能把整条管线序列化为单个YAML文件，使配置与代码分离管理，并具备在执行前的构建阶段验证错误连接的类型安全。deepset的企业级支持也是优势。"
+  - question: "现在可以用LangChain新建项目吗?"
+    answer: "需要谨慎。测试中我遇到了警告，提示langchain-community正在被淘汰、不再积极维护。langchain-core和langchain本身仍在活跃维护，因此新建项目时最好跳过community，只安装langchain-chroma这类独立包。"
 ---
 
 每次开始Python RAG项目，几乎同时会冒出三个名字：LlamaIndex、LangChain和Haystack。它们都被称为"RAG框架"。可一旦真正装上、交给它们同一份活儿，设计理念的差异就显出来了。

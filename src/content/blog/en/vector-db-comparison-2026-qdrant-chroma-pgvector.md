@@ -27,6 +27,15 @@ relatedPosts:
       en: Continues the hands-on RAG experience.
       ja: RAGを実際に扱った経験が続く記事です。
       zh: 延续 RAG 的实战经验。
+faq:
+  - question: "Which should I choose among Qdrant, ChromaDB, and pgvector?"
+    answer: "ChromaDB is best for prototypes and small scale under a few hundred thousand vectors thanks to zero setup. Qdrant fits 5M+ vectors or anticipated horizontal scaling. If you already run PostgreSQL, trying pgvector first is the pragmatic choice since it adds no new infrastructure."
+  - question: "When is pgvector good enough?"
+    answer: "It fits best when you already have PostgreSQL infrastructure and a DBA, and your vector search needs to combine with regular SQL queries or JOINs. It is sufficient in most cases, and migrating to Qdrant later if performance becomes a problem remains tractable."
+  - question: "What is the production performance difference?"
+    answer: "At 1,000 vectors, filter queries ran 2ms on ChromaDB versus 7ms on Qdrant, so ChromaDB was faster at small scale, while Qdrant inserted faster at 0.163s. Past 5 million vectors, however, Qdrant's HNSW optimization takes the lead and the comparison flips."
+  - question: "Why is Qdrant slower than ChromaDB at small scale?"
+    answer: "Qdrant is built with payload indexing, distributed filtering, and segment management designed for millions of vectors, so at 1,000 vectors that infrastructure becomes overhead rather than a benefit. ChromaDB takes a more direct filtering approach at small scale and is faster for it."
 ---
 
 Every time I start a new RAG project, I end up spending more time choosing a vector DB than I expected. It starts with "just use Chroma," then I see Qdrant benchmark posts and waver, then a pgvector article pulls me back toward PostgreSQL. The loop repeats until I actually sit down and run the numbers myself.

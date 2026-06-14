@@ -26,6 +26,15 @@ relatedPosts:
       en: Continues the hands-on RAG experience.
       ja: RAGを実際に扱った経験が続く記事です。
       zh: 延续 RAG 的实战经验。
+faq:
+  - question: "Qdrant, ChromaDB, pgvector 중 무엇을 골라야 하나?"
+    answer: "프로토타입과 수십만 개 이하 소규모에는 설치가 간단한 ChromaDB가 좋고, 5M개 이상 대규모나 수평 확장이 예상되면 Qdrant가 유리하다. 이미 PostgreSQL을 운영 중이라면 추가 인프라가 없는 pgvector를 먼저 시도하는 게 현실적이다."
+  - question: "pgvector는 언제 충분한가?"
+    answer: "이미 PostgreSQL 인프라와 DBA가 있고 벡터 검색을 기존 SQL 쿼리나 JOIN과 결합해야 할 때 가장 적합하다. 대부분의 경우 충분하며, 나중에 성능이 문제가 되면 Qdrant로 이전하는 전략도 가능하다."
+  - question: "프로덕션 성능 차이는 어느 정도인가?"
+    answer: "1000개 벡터 실측에서는 필터 쿼리가 ChromaDB 2ms, Qdrant 7ms로 소규모에서는 ChromaDB가 더 빨랐고 삽입은 Qdrant가 0.163s로 더 빨랐다. 다만 5M개 이상 규모에서는 Qdrant의 HNSW 최적화가 우위를 보이며 결과가 역전된다."
+  - question: "소규모인데 왜 Qdrant가 ChromaDB보다 느린가?"
+    answer: "Qdrant는 페이로드 인덱스, 분산 필터, 세그먼트 관리 등 대규모를 위한 구조를 갖고 있어 1000개 같은 소규모에서는 이 정교함이 오히려 오버헤드가 된다. ChromaDB는 소규모에서 더 직접적인 방식으로 필터를 처리하기 때문에 빠르다."
 ---
 
 RAG 앱을 처음 만들 때 벡터 DB 선택은 생각보다 시간을 많이 잡아먹는다. "일단 Chroma 쓰면 되지 않나"로 시작해서 Qdrant 벤치마크 자료를 보고 흔들리고, pgvector 블로그 글을 읽으면서 다시 PostgreSQL로 돌아갈까 고민하는 과정을 반복한다.

@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same node.js track.
       ja: 同じnode.jsの流れで併せて読むと役立ちます。
       zh: 在同一 node.js 脉络中可一并阅读。
+faq:
+  - question: "DenoとBunはどちらが速いか？"
+    answer: "ワークロード次第だ。コールドスタート（初回実行）はDenoが0.067sでBun（0.243s）より約3.6倍速いが、ウォームアップ後はBunが0.013sでDeno（0.026s）より2倍速い。HTTP処理量はBun 23,794 RPS、Deno 22,594 RPSで約5%差にすぎず、実務で意味のある差ではない。"
+  - question: "本番環境ではDenoとBunのどちらを使うべきか？"
+    answer: "既存Node.jsプロジェクトの高速化やnpm依存の多いサービスなら、移行コストが低いBunが実用的だ。新しいTypeScriptプロジェクト、CLIツール、サードパーティコードを実行する環境なら、型チェックとデフォルトサンドボックスを備えるDenoが優れている。どちらも2026年現在プロダクションで使えるレベルだ。"
+  - question: "Node.jsからBunやDenoへの移行は簡単か？"
+    answer: "Bunは既存のpackage.json、node_modules、npmワークフローがそのまま動くため移行コストが非常に低い。Deno 2もnode:プレフィックスでnode:fs、node:crypto、node:eventsなどがフラグなしで動き、互換性が大きく改善した。ただしDenoは権限フラグ（--allow-*）に初期の摩擦がある。"
+  - question: "DenoとBunのセキュリティモデルはどう違うか？"
+    answer: "BunはNode.jsと同様、ファイルシステム・ネットワーク・環境変数にデフォルトでアクセスできるオープンモデルで、悪意あるサードパーティコードを防ぐ手段がない。Denoは--allow-readや--allow-netなどの権限を明示的に許可するデフォルトサンドボックス方式で、CI/CDやサーバーでサードパーティコードを実行する際に実質的な防壁になる。"
 ---
 
 2026年半ば、JavaScriptのランタイム選択肢は事実上3つに絞られた。Node.js、Bun、Deno。正直に言えば、Node.jsにこだわる理由はどんどん薄れている。問題はBunとDenoのどちらを選ぶかだ。

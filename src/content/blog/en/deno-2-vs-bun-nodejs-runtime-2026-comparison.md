@@ -36,6 +36,15 @@ relatedPosts:
       en: Worth reading alongside this in the same node.js track.
       ja: 同じnode.jsの流れで併せて読むと役立ちます。
       zh: 在同一 node.js 脉络中可一并阅读。
+faq:
+  - question: "Is Deno or Bun faster?"
+    answer: "It depends on the workload. On cold start Deno is about 3.6x faster (0.067s vs Bun's 0.243s), but after warm-up Bun is roughly 2x faster (0.013s vs Deno's 0.026s). HTTP throughput is essentially a tie: Bun hit 23,794 RPS and Deno 22,594 RPS, about a 5% difference that is not practically meaningful."
+  - question: "Which should I use in production, Deno or Bun?"
+    answer: "For speeding up an existing Node.js project or a service that relies heavily on npm, Bun is more practical thanks to low migration friction. For a new TypeScript project, CLI tools, or running untrusted third-party code, Deno wins with type checking and a default sandbox. Both are production-ready by 2026 standards."
+  - question: "Is migrating from Node.js to Bun or Deno easy?"
+    answer: "Bun keeps existing package.json, node_modules, and npm workflows working as-is, so migration cost is very low. Deno 2 also runs node:fs, node:crypto, and node:events through the node: prefix without any flags, a big compatibility improvement. The main friction with Deno is its permission flags (--allow-*) early on."
+  - question: "How do the security models of Deno and Bun differ?"
+    answer: "Bun works like Node.js with an open model where filesystem, network, and environment variables are accessible by default, so there is nothing to stop malicious third-party code. Deno uses a default sandbox that requires explicit grants like --allow-read and --allow-net, which becomes a real line of defense when running third-party code in CI/CD or on servers."
 ---
 
 By mid-2026, the JavaScript runtime choices have narrowed to three: Node.js, Bun, and Deno. Honestly, the reasons to stick with Node.js are shrinking. The real question is whether Bun or Deno fits your situation.

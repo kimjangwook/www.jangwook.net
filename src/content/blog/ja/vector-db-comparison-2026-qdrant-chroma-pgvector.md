@@ -25,6 +25,15 @@ relatedPosts:
       en: Continues the hands-on RAG experience.
       ja: RAGを実際に扱った経験が続く記事です。
       zh: 延续 RAG 的实战经验。
+faq:
+  - question: "Qdrant・ChromaDB・pgvectorのどれを選ぶべきか?"
+    answer: "プロトタイプや数十万件以下の小規模ではインストールが簡単なChromaDBが向き、500万件以上の大規模や水平スケールが予想されるならQdrantが有利だ。すでにPostgreSQLを運用中なら追加インフラのないpgvectorをまず試すのが現実的だ。"
+  - question: "pgvectorはいつ十分か?"
+    answer: "すでにPostgreSQLインフラとDBAがあり、ベクター検索を既存のSQLクエリやJOINと組み合わせる必要があるときに最も適する。大抵の場合それで十分で、後で性能が問題になればQdrantへ移行する戦略も可能だ。"
+  - question: "プロダクションでの性能差はどのくらいか?"
+    answer: "1000ベクターの実測ではフィルタークエリがChromaDB 2ms、Qdrant 7msで小規模ではChromaDBが速く、挿入はQdrantが0.163sで速かった。ただし500万件以上の規模ではQdrantのHNSW最適化が優位になり、結果は逆転する。"
+  - question: "小規模なのになぜQdrantはChromaDBより遅いのか?"
+    answer: "Qdrantはペイロードインデックス、分散フィルタ、セグメント管理など大規模向けの構造を持つため、1000件のような小規模ではこの精巧さがむしろオーバーヘッドになる。ChromaDBは小規模でより直接的な方法でフィルタを処理するため速い。"
 ---
 
 RAGアプリを初めて作るとき、ベクターDB選びは思ったより時間を取られる。「とりあえずChromaでいいか」から始まり、Qdrantのベンチマーク資料を見て揺らぎ、pgvectorのブログ記事を読んでまたPostgreSQLに戻ろうか悩む。その繰り返しだ。

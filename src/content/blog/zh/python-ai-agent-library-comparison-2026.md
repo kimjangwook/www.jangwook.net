@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "Pydantic AI、Instructor和Smolagents该选哪个？"
+    answer: "这三个库处理的是不同层级，并非竞争关系。如果只需在单次LLM调用中做结构化抽取，选Instructor；如果需要类型安全的智能体循环，选Pydantic AI；如果需要代码执行智能体，选Smolagents。"
+  - question: "最看重类型安全时哪个库更合适？"
+    answer: "由Pydantic团队打造的Pydantic AI最合适。它把Python类型提示放在智能体设计的核心，以类型安全的方式定义工具，并通过依赖注入构建可测试的结构。不过它仍是v0.x版本，需要承担破坏性变更的风险。"
+  - question: "现在可以直接用于生产环境的是哪个？"
+    answer: "Instructor最经得起考验，月下载量超300万、GitHub星标11k以上，经过了最多的生产验证。Pydantic AI仍是v0.x，Smolagents处于实验阶段，二者引入时都需更加谨慎。"
+  - question: "Smolagents的代码生成方式为何更有优势？"
+    answer: "根据HuggingFace的基准测试，相比JSON工具调用，它的LLM调用减少约30%。因为顺序调用多个工具时，无需每步都询问LLM，而是用一段代码一次处理完。但代码质量高度依赖模型性能，因此建议使用GPT-4o或Claude Sonnet及以上级别的模型。"
 ---
 
 上个月启动一个新项目时，我面临一个选择：用Python构建基于LLM的智能体，该用哪个库？LangGraph、CrewAI这类重量级编排框架我已经熟悉了。真正让我犯难的是它们之下的那一层。想直接控制LLM调用，但原始OpenAI SDK又太繁琐，填补这一空白的库在2025〜2026年间迎来了爆发式增长。

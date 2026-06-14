@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai-agent track.
       ja: 同じai-agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai-agent 脉络中可一并阅读。
+faq:
+  - question: "Google ADK和LangGraph应该选哪个？"
+    answer: "如果工作流会演化出复杂的分支逻辑，LangGraph更合适；如果目标是在Google Cloud生态内快速交付，则ADK更合适。条件分支和检查点的灵活性后期很难补上，因此新项目选LangGraph更稳妥。"
+  - question: "两个框架的核心区别是什么？"
+    answer: "ADK直接用Python类和内置编排器在代码中声明智能体，LangGraph则用节点和边把工作流建模为一张显式的图。可以说ADK是用代码组装管道，LangGraph是设计状态机。"
+  - question: "安装时的依赖差异有多大？"
+    answer: "Google ADK v1.32.0有45个直接依赖，从一开始就包含BigQuery、Spanner等Google Cloud技术栈。LangGraph v1.1.10只有6个，更轻量，但需要自己接入LLM客户端和检查点后端。"
+  - question: "哪种框架适合哪类团队？"
+    answer: "已投入Google Cloud和Gemini、希望用一套工具链完成从开发到部署和评估的团队适合ADK。处于AWS、Azure或多云环境、混用多种LLM或已有LangChain代码库、需要时间旅行调试的团队适合LangGraph。"
 ---
 
 每次出现新的AI智能体框架，我的第一反应都是安装它，弄清楚到底有什么不同。Google开源ADK（Agent Development Kit）时也不例外。这个周末我专门搭建了一个沙盒环境，把Google ADK v1.32.0和LangGraph v1.1.10并排安装，实际运行了代码。这篇文章是实验结果的整理。
