@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "AgentKit从什么时候开始收费?"
+    answer: "Agent Builder目前处于测试阶段，2025年11月1日开始收费。ChatKit的文件上传每月提供1GB免费额度。"
+  - question: "使用Python SDK需要什么环境?"
+    answer: "需要Python 3.8及以上版本，并通过pip安装openai-agents包。然后把OpenAI API密钥设置为环境变量OPENAI_API_KEY，就可以立即运行第一个智能体。"
+  - question: "应该选择Agent Builder还是Python SDK?"
+    answer: "Agent Builder学习曲线低，适合与非开发者协作和快速原型设计。Python SDK灵活性无限，适合企业级或复杂逻辑。文章建议先用可视化方式做原型，再用代码实现生产化。"
+  - question: "为什么需要护栏(Guardrails)?"
+    answer: "护栏会校验输入和输出，提前阻止个人信息泄露、无限循环导致的成本暴涨、以及违反品牌规范或有害内容等生产事故。文章推荐同时保护输入和输出的双向防御。"
 ---
 
 > <strong>系列：掌握OpenAI AgentKit</strong> (1/2)

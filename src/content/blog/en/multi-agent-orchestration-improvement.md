@@ -32,6 +32,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "Why use multi-agent orchestration instead of a single AI for 48 files?"
+    answer: "Big systems do better when expertise is split up, with each agent owning a narrow slice. The work was divided across four specialized domains (Agents, Commands, Skills, Guidelines), with the orchestrator coordinating specialized sub-agents."
+  - question: "How much did documentation quality improve?"
+    answer: "Documentation quality went from 78 to 92 points on a 100-point rubric, an 18% improvement. Example coverage rose from 40% to 85% and language consistency from 60% to 88%."
+  - question: "How were the 60-70% token cost savings achieved?"
+    answer: "Through a metadata-first architecture that reads post-metadata.json instead of full markdown files, incremental processing using content hashes to re-process only changed posts, and three-tier caching. Recommendation generation alone saw a 95% reduction."
+  - question: "Did the changes break anything in production?"
+    answer: "No. The post reports zero breaking changes during deployment across 17 files improved and 3,917 net lines added. Error detection also rose from about 40% to about 95% of issues caught."
 ---
 
 # Improving Blog Automation with Multi-Agent Orchestration

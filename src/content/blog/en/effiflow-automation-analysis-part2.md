@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "How do Model-Invoked and User-Invoked differ?"
+    answer: "Skills are Model-Invoked, meaning Claude activates them automatically based on context without an explicit call. Commands are User-Invoked, meaning the user calls them directly with slash notation and passes arguments via ARGUMENTS."
+  - question: "Where does the 58% token reduction come from?"
+    answer: "It comes from the trend-analyzer Skill's caching strategy. Before caching, every Brave Search call used 40,000+ tokens, but reusing the cache within 24 hours drops that to 17,000 tokens, a roughly 58% reduction. API calls also fall from about 15 to 3 on average."
+  - question: "How long does the 3-Tier cache keep each data type?"
+    answer: "Trend data is kept for 24 hours, technology data for 7 days, and keyword data for 48 hours. Expiration periods are set to match how quickly each kind of data changes."
+  - question: "How much does incremental processing save?"
+    answer: "It re-analyzes only changed posts using a Content Hash. For 13 existing posts plus 1 new one, usage drops from 42,000 tokens to 3,000 tokens, a 93% reduction, with an average saving of about 70%."
 ---
 
 ## Series Navigation

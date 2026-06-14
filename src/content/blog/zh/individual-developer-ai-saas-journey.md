@@ -25,6 +25,15 @@ relatedPosts:
       en: Continues the hands-on AI experience.
       ja: AIを実際に扱った経験が続く記事です。
       zh: 延续 AI 的实战经验。
+faq:
+  - question: "为什么选择Google Gemini API而不是OpenAI GPT?"
+    answer: "成本是主要原因。Gemini 2.5 Flash每100万输入token收费0.075美元、输出0.30美元,比GPT-4 Turbo便宜约100倍。它还支持Structured Output来强制输出类型安全的JSON,图像OCR质量在收据和护照等复杂版面上也表现出色。"
+  - question: "为什么选择SvelteKit而不是Next.js?"
+    answer: "Svelte 5的Runes响应式系统比React hooks更直观,样板代码减少约70%。由于Svelte在编译时移除框架代码,客户端打包体积比React小40%,Time to Interactive也更快。部署平台Vercel直接支持SvelteKit也是一个加分项。"
+  - question: "Gemini API的成本是如何降低的?"
+    answer: "用了两个方法。把冗长的指令提示词精简后,输入token从约150降到25,节省了约83%的成本。再把图像缩放到1024px以内,token用量又降低了70%。"
+  - question: "3个月的KPI目标是什么?"
+    answer: "目标是月访问量500以上、注册30人、付费转化5人、MRR3万日元、OCR API调用1,000次。6%的注册转化率和16.7%的付费转化率是基于B2B SaaS平均水平设定的、对独立开发者来说现实的数字。"
 ---
 
 ## 3天把它推上生产环境

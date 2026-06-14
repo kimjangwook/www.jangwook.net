@@ -26,6 +26,15 @@ relatedPosts:
       en: Continues the hands-on claudecode experience.
       ja: claudecodeを実際に扱った経験が続く記事です。
       zh: 延续 claudecode 的实战经验。
+faq:
+  - question: "同じブランチでClaude Codeセッションを複数動かしてはいけませんか?"
+    answer: "同じブランチで2つのセッションを同時に動かすと、一方がファイルを変更した瞬間にもう一方のコンテキストが汚染されます。ファイル状態の不一致、予期しないマージコンフリクト、追跡不能といった問題が起きます。worktreeで各ブランチを独立ディレクトリに置けば、競合も汚染もなくなります。"
+  - question: "worktree同士でnode_modulesやpackage.jsonは共有されますか?"
+    answer: "共有されません。package.json、package-lock.json、node_modulesはオリジナルとworktreeで別々に管理されるため、各worktreeでnpm installを別途実行する必要がある場合があります。特に機能ブランチで新しいパッケージを追加したときです。"
+  - question: "複数のworktreeで開発サーバーを同時に立ち上げるとどうなりますか?"
+    answer: "ローカルデータベースを同じポートで使う開発サーバーを複数のworktreeで同時に立ち上げると、ポートが競合します。各worktreeの.env.localでポートを別々に設定するか、DBを共有しつつマイグレーションは一方からのみ実行してください。"
+  - question: "worktree並列パターンは常に効果的ですか?"
+    answer: "万能ではありません。タスクが互いに異なるファイルを触る場合に最も効果的で、同じコンポーネントを2つのセッションが両方修正するとむしろマージコンフリクトが増えます。セッションが3つを超えると進捗の追跡にオーバーヘッドが生まれるため、まず2つから始めるのがおすすめです。"
 ---
 
 Claude Codeのタブを複数開いておくと「並列作業」をしているように感じる。でも実際はそうじゃない。

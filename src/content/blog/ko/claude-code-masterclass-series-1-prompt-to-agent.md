@@ -26,6 +26,15 @@ relatedPosts:
       en: Continues the hands-on claudecode experience.
       ja: claudecodeを実際に扱った経験が続く記事です。
       zh: 延续 claudecode 的实战经验。
+faq:
+  - question: "슬래시 명령어를 만들려면 별도의 프로그래밍이 필요한가요?"
+    answer: "아니요. .claude/commands/ 디렉토리에 .md 파일 하나를 만들면 파일명이 곧 명령어 이름이 됩니다. 파일 내용은 자연어 지침이며, Claude가 각 단계를 해석해 도구 호출로 변환합니다."
+  - question: "--dangerously-skip-permissions 플래그는 안전하게 써도 되나요?"
+    answer: "이름 그대로 위험한 플래그라 모든 권한 프롬프트를 건너뜁니다. 허용 목록(permissions allow)이 잘 정의된 상태에서만 써야 하고, 본문에서는 개인 자동화 프로젝트 외의 사용을 권장하지 않습니다."
+  - question: "훅에는 어떤 종류가 있고 무엇이 가장 유용했나요?"
+    answer: "PreToolUse, PostToolUse, Stop, SessionStart 4가지 타입이 있습니다. 글쓴이는 긴 자동화 작업이 끝나면 Telegram 알림을 보내는 Stop 훅이 가장 유용했다고 밝힙니다."
+  - question: "오케스트레이터가 엉뚱한 서브에이전트를 고르는 문제는 어떻게 줄이나요?"
+    answer: "에이전트 frontmatter의 description 필드를 명확하게 쓰면 줄어듭니다. 다만 완전히 없애기는 어려워, 슬래시 명령어 파일에 에이전트 호출 시점을 명시적으로 적어두는 방법이 도움이 됐다고 합니다."
 ---
 
 이 글을 읽고 있는 지금, 이 포스트는 오늘 아침 11시 30분에 자동으로 실행된 launchd 작업이 Claude Code를 깨웠고, Claude Code가 `/daily-tech-blog` 슬래시 명령어를 실행하고, 서브에이전트들이 리서치와 번역을 분담하면서 만들어진 결과물이다.

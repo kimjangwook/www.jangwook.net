@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "RAGで最も重要な部分は何ですか?"
+    answer: "DeNAスタディは、LLMはインターフェースに過ぎず検索システムが本当の核心だと強調します。検索品質がそのまま応答品質を決め、コンテキスト選択が幻覚を防ぐからです。"
+  - question: "ハイブリッド検索はどの方法を組み合わせますか?"
+    answer: "BM25(キーワードベース)、Denseベクトル(意味ベース)、Sparseベクトル(重要トークンベース)の3つを加重平均で結合します。BM25は正確なキーワードマッチに強いが意味理解が弱く、Denseは意味的類似度を捉えるがキーワードを取りこぼすため、互いに補完し合います。"
+  - question: "基本RAGからどのくらい性能を上げられますか?"
+    answer: "Dense検索だけの基本RAGにBM25を加えたハイブリッド検索で10〜20%の向上が期待できます。さらにBGE-rerankerで再ランク付けを加えると、追加で15〜25%の精度改善が見込めます。"
+  - question: "GraphRAGとAgentic RAGはどう違いますか?"
+    answer: "GraphRAGはMicrosoftが2024年に公開した知識グラフベースのRAGで、エンティティ間の関係を活用して多段階推論を行います。Agentic RAGはエージェント自身が検索戦略を計画し、反復的にツールを選び、検索が不十分なら再試行する自律的な方式です。"
 ---
 
 > <strong>シリーズ: DeNA LLMスタディ</strong> (4/5)

@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "为什么2025年推荐编排而非完全自主的智能体？"
+    answer: "完全自主的智能体会无限制地调用API导致成本爆炸，行为难以控制，在生产环境中不稳定。让智能体在清晰的工作流中发挥自主性可以使成本可预测，并提升可靠性和可调试性。这正是n8n和LangGraph等显式编排工具受到关注的原因。"
+  - question: "应该按什么标准选择多智能体模式？"
+    answer: "有明确阶段时选择Sequential或Parallel，需要动态分配任务时选择Supervisor，需要创造性协作时选择Network。但Network模式（如AutoGen）的成本会随对话长度变化而难以预测，使用时必须设置成本上限。"
+  - question: "为什么LLM的函数调用需要验证层和Self-Healing？"
+    answer: "LLM的函数调用无法做到百分之百可信，会出现错误参数、调用不存在的工具、无限循环等问题。因此需要一个检查工具是否存在、验证参数模式并限制调用频率的层，以及一个分析错误并自动重试的Self-Healing模式，这些在生产环境中是必需的。"
+  - question: "组合使用成本优化技术实际能节省多少？"
+    answer: "在结合语义缓存（命中率60％）、SLM路由和复杂度评估的案例中，每次请求的平均成本从0.014美元降至0.00196美元，约节省86％。延迟也从2000毫秒降至410毫秒，约下降79％。在DeNA NOC Alert Agent案例中，月运营成本从1,200美元降至350美元。"
 ---
 
 > <strong>系列: DeNA LLM 研究</strong> (5/5 - 最终篇)

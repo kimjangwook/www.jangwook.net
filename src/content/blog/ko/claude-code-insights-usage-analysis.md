@@ -32,6 +32,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "/insights는 어떻게 실행하나요?"
+    answer: "Claude Code v2.1에서 도입된 기능으로, 터미널에서 /insights를 입력하면 끝입니다. 로컬에 저장된 사용 데이터를 기반으로 사용 통계, 강점, 병목, 개선 제안을 분석해 줍니다."
+  - question: "분석에서 가장 큰 병목으로 꼽힌 것은 무엇인가요?"
+    answer: "컨텍스트 한도였습니다. 소설 리뷰, 대규모 번역, 블로그 콘텐츠 생성 같은 작업이 중간에 종료됐고, 근본 원인은 단일 세션에 너무 큰 작업을 할당하는 패턴이었습니다."
+  - question: "File Too Large 에러가 293건이나 발생한 이유는 무엇인가요?"
+    answer: "소설 프로젝트의 대용량 텍스트 파일이 원인이었습니다. 이 데이터를 보고 파일 분할 전략의 필요성을 실감했다고 본문에서 밝히고 있습니다."
+  - question: "지금 바로 적용할 수 있는 개선책은 무엇인가요?"
+    answer: "큰 작업을 챕터·섹션·모듈 단위로 분할하고, task-status.md 같은 파일에 진행 상황을 체크포인트로 남기는 것입니다. 세션이 끊겨도 다음 세션에서 이어서 작업할 수 있습니다."
 ---
 
 # Claude Code /insights 체험기: 4,516개 메시지가 말해주는 나의 AI 코딩 패턴

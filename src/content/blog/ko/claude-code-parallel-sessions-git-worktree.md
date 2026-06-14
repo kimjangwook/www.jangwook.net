@@ -26,6 +26,15 @@ relatedPosts:
       en: Continues the hands-on claudecode experience.
       ja: claudecodeを実際に扱った経験が続く記事です。
       zh: 延续 claudecode 的实战经验。
+faq:
+  - question: "같은 브랜치에서 Claude Code 세션을 여러 개 돌리면 안 되나요?"
+    answer: "같은 브랜치에서 두 세션을 동시에 돌리면 한 세션이 파일을 수정하는 순간 다른 세션의 컨텍스트가 오염됩니다. 파일 상태 불일치 경고, 예상치 못한 머지 충돌, 추적 불가 문제가 생깁니다. worktree로 각 브랜치를 독립 디렉토리에 두면 충돌과 오염이 사라집니다."
+  - question: "worktree끼리 node_modules나 package.json을 공유하나요?"
+    answer: "공유하지 않습니다. package.json, package-lock.json, node_modules는 원본과 worktree가 따로 관리하므로 각 worktree에서 npm install을 별도로 실행해야 할 수 있습니다. 특히 기능 브랜치에서 새 패키지를 추가했을 때 그렇습니다."
+  - question: "여러 worktree에서 개발 서버를 동시에 띄우면 어떻게 되나요?"
+    answer: "로컬 데이터베이스를 같은 포트로 쓰는 개발 서버를 여러 worktree에서 동시에 올리면 포트 충돌이 납니다. 각 worktree의 .env.local에서 포트를 다르게 설정하거나, DB는 공유하되 마이그레이션은 한 쪽에서만 실행하면 됩니다."
+  - question: "worktree 병렬 패턴이 항상 효과적인가요?"
+    answer: "만능은 아닙니다. 작업들이 서로 다른 파일을 건드릴 때 가장 효과적이고, 같은 컴포넌트를 두 세션이 모두 수정하면 오히려 머지 충돌이 더 많아집니다. 세션이 3개를 넘으면 진행 상황 추적에 오버헤드가 생기므로 두 개부터 시작하길 권합니다."
 ---
 
 Claude Code 탭을 여러 개 열어두면 "병렬 작업"처럼 느껴진다. 그런데 실제로는 아니다.

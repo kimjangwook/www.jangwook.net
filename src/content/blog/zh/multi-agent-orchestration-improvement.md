@@ -30,6 +30,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "为什么用多代理编排而不是单个AI来分析48个文件?"
+    answer: "因为一个文件改动可能悄悄弄坏另外三个，手动逐个修风险太大。于是把整套系统交给Claude Code的多代理编排模式，按Agents、Commands、Skills、Guidelines四个领域分工，一次性读完48个文件。"
+  - question: "发现的61个问题是如何分布的?"
+    answer: "Agents领域15个、Commands领域18个、Skills领域12个、Guidelines领域16个。其中Commands领域问题最多，commit.md的重写就是最显著的改进之一。"
+  - question: "commit.md做了哪些改动?"
+    answer: "原始文件仅有12行简单说明，缺少Git提交最佳实践、错误处理流程以及示例和反例。重写后扩展到528行，补充了Git安全协议等完整内容。"
+  - question: "这次改进达成了哪些主要目标?"
+    answer: "目标是通过多代理编排实现全面审查、问题分类、系统修复和质量验证，最终带来文档质量提升和令牌成本降低60-70%。"
 ---
 
 ## 系统大到不敢动的那一刻

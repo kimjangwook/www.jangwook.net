@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "Model-Invoked と User-Invoked は何が違いますか?"
+    answer: "Skills は Model-Invoked 方式で、ユーザーが呼び出さなくても Claude がコンテキストに基づいて自動的に活性化します。Commands は User-Invoked 方式で、ユーザーがスラッシュ命令で直接呼び出し、ARGUMENTS で引数を渡します。"
+  - question: "58%のトークン削減はどこから来ますか?"
+    answer: "trend-analyzer Skill のキャッシング戦略から来ます。キャッシング前は毎回 Brave Search を呼び出して 40,000+ トークンを使っていましたが、24時間以内にキャッシュを再利用すると 17,000 トークンに減り、約 58%削減されます。API呼び出しも平均15回から3回に減ります。"
+  - question: "3-Tier キャッシングはデータ別にどれくらい保持しますか?"
+    answer: "トレンドデータは24時間、技術データは7日間、キーワードデータは48時間保持します。データが変化する速度に合わせて失効期間を変えています。"
+  - question: "増分処理はトークンをどれくらい削減しますか?"
+    answer: "Content Hash で変更された投稿のみ再分析する方式です。既存13個に新規1個を加える場合、42,000トークンが3,000トークンに減り93%削減され、平均では約70%の削減効果があります。"
 ---
 
 ## シリーズ案内

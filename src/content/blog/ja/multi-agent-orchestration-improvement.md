@@ -30,6 +30,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "なぜ単一AIではなくマルチエージェントで48ファイルを分析したのですか?"
+    answer: "システムが成長すると専門性を分割したほうがうまくいくためです。Agents、Commands、Skills、Guidelinesの4領域に分け、オーケストレーターが専門サブエージェントを調整して分析しました。"
+  - question: "改善が必要だった主な問題は何でしたか?"
+    answer: "文書の一貫性不足、analyticsとanalytics-reporterの役割の重複、実装状態の不明確さ、実用例の不足という4つの問題が挙げられます。これらが成長とともに蓄積していました。"
+  - question: "分析対象となったファイルはどのような構成でしたか?"
+    answer: ".claudeディレクトリ配下のagents17ファイル、commands6ファイル、skills4ファイル、guidelines1ファイルが対象です。これらを横断して61件の問題を発見しました。"
+  - question: "発見された61件の問題はどの領域に多かったですか?"
+    answer: "Agents、Commands、Skillsがそれぞれ4件、Guidelinesが5件という分類で記事内に示されています。各領域ごとにパス移植性や文書不足などの具体的な問題が整理されました。"
 ---
 
 ## 触るのが怖くなったシステム

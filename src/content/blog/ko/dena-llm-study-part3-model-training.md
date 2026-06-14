@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "파인튜닝을 시작할 때 가장 먼저 무엇을 해봐야 하나요?"
+    answer: "본문은 프롬프트 최적화부터 시도하라고 권합니다. 태스크의 80%는 프롬프트만으로 해결 가능하며, 그래도 부족할 때 LoRA 파인튜닝을 먼저 고려하는 순서를 제시합니다."
+  - question: "QLoRA를 쓰면 어느 정도의 GPU로 7B 모델을 학습할 수 있나요?"
+    answer: "본문에 따르면 QLoRA는 4bit 양자화로 메모리를 크게 줄여 24GB VRAM인 RTX 3090이나 RTX 4090 단일 GPU에서 7B 모델 파인튜닝이 가능합니다. 다만 양자화 오버헤드로 Full Fine-tuning 대비 1.5〜2배 느립니다."
+  - question: "DPO가 RLHF보다 나은 점은 무엇인가요?"
+    answer: "본문은 DPO가 별도의 리워드 모델 없이 한 번의 학습으로 인간 선호도를 정렬한다고 설명합니다. PPO보다 안정적인 Classification loss를 쓰며 메모리와 시간을 약 50% 절감하면서 RLHF와 동등하거나 더 나은 성능을 냅니다."
+  - question: "LoRA의 rank(r) 값은 보통 얼마로 설정하나요?"
+    answer: "본문의 하이퍼파라미터 가이드는 r을 4〜16 범위에서 설정하며 대부분 8이 적절하다고 안내합니다. lora_alpha는 보통 r의 1〜2배로 두고, target_modules는 Attention의 q_proj와 v_proj가 가장 효과적입니다."
 ---
 
 > <strong>시리즈: DeNA LLM 스터디</strong> (3/5)

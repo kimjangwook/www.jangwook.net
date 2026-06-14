@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "Model-Invoked와 User-Invoked는 어떻게 다른가요?"
+    answer: "Skills는 Model-Invoked 방식으로, 사용자가 호출하지 않아도 Claude가 컨텍스트를 기반으로 자동 활성화합니다. Commands는 User-Invoked 방식으로, 사용자가 슬래시 명령으로 직접 호출하고 ARGUMENTS로 인자를 전달합니다."
+  - question: "58% 토큰 절감은 어디서 나오나요?"
+    answer: "trend-analyzer Skill의 캐싱 전략에서 나옵니다. 캐싱 전에는 매번 Brave Search를 호출해 40,000+ 토큰을 썼지만, 24시간 이내 캐시를 재사용하면 17,000 토큰으로 줄어 약 58% 절감됩니다. API 호출도 평균 15회에서 3회로 줄어듭니다."
+  - question: "3-Tier 캐싱은 데이터별로 얼마나 보관하나요?"
+    answer: "트렌드 데이터는 24시간, 기술 데이터는 7일, 키워드 데이터는 48시간 동안 보관합니다. 데이터가 변하는 속도에 맞춰 만료 기간을 다르게 설정한 것입니다."
+  - question: "증분 처리는 토큰을 얼마나 줄여 주나요?"
+    answer: "Content Hash로 변경된 포스트만 재분석하는 방식입니다. 기존 13개에 신규 1개를 더하는 경우 42,000 토큰이 3,000 토큰으로 줄어 93% 절감되며, 평균적으로는 약 70% 절감 효과가 있습니다."
 ---
 
 ## 시리즈 안내

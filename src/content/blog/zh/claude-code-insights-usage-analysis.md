@@ -32,6 +32,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "如何运行 /insights？"
+    answer: "这是 Claude Code v2.1 引入的功能，在终端中输入 /insights 即可。它基于本地存储的使用数据，分析使用统计、优势、瓶颈和改进建议。"
+  - question: "分析中指出的最大瓶颈是什么？"
+    answer: "上下文限制。小说评审、大规模翻译、博客内容生成等任务在执行中途终止，根本原因是在单个会话中分配了过大的任务。"
+  - question: "为什么会发生 293 次 File Too Large 错误？"
+    answer: "根子在小说项目里那些大体积文本文件。正如文中所述，看到这些数据才真正意识到文件分割策略的必要性。"
+  - question: "现在就能应用的改进措施有哪些？"
+    answer: "把大任务按章节、段落或模块拆分，并将进度作为检查点记录到 task-status.md 这样的文件中。这样即使会话断开，下一个会话也能从中断处继续。"
 ---
 
 # Claude Code /insights 体验记：4,516 条消息揭示的 AI 编程模式

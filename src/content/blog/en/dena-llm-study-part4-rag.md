@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "What matters most in a RAG system?"
+    answer: "The DeNA study stresses that the LLM is just an interface while the retrieval system is the real core. Retrieval quality determines response quality, and context selection is what prevents hallucination."
+  - question: "Which methods does hybrid search combine?"
+    answer: "It combines BM25 (keyword-based), Dense vectors (semantic), and Sparse vectors (important-token based) through a weighted average. BM25 nails precise keyword matching but lacks semantic understanding, while Dense captures meaning yet can miss keywords, so they complement each other."
+  - question: "How much can performance improve over basic RAG?"
+    answer: "Adding BM25 to a Dense-only baseline as hybrid search is expected to yield a 10〜20% gain. Layering BGE-reranker on top for reranking can add a further 15〜25% improvement in precision."
+  - question: "How do GraphRAG and Agentic RAG differ?"
+    answer: "GraphRAG is a knowledge-graph-based approach released by Microsoft in 2024 that leverages entity relationships for multi-hop reasoning. Agentic RAG is autonomous: the agent plans its own retrieval strategy, selects tools iteratively, and retries when results are insufficient."
 ---
 
 > <strong>Series: DeNA LLM Study</strong> (4/5)

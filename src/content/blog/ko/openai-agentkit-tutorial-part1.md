@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "AgentKit은 언제부터 유료인가요?"
+    answer: "Agent Builder는 현재 베타 단계이며, 2025년 11월 1일부터 과금이 시작됩니다. ChatKit의 파일 업로드는 월 1GB까지 무료로 제공됩니다."
+  - question: "Python SDK를 쓰려면 어떤 환경이 필요한가요?"
+    answer: "Python 3.8 이상이 필요하며 openai-agents 패키지를 pip로 설치하면 됩니다. 그다음 OpenAI API 키를 환경 변수 OPENAI_API_KEY로 설정하면 바로 첫 에이전트를 실행할 수 있습니다."
+  - question: "Agent Builder와 Python SDK 중 무엇을 써야 하나요?"
+    answer: "Agent Builder는 학습 곡선이 낮고 비개발자 협업과 빠른 프로토타이핑에 유리합니다. Python SDK는 유연성이 무제한이라 엔터프라이즈나 복잡한 로직에 적합합니다. 글에서는 비주얼로 프로토타입을 만든 뒤 코드로 프로덕션화하는 방식을 권장합니다."
+  - question: "가드레일은 왜 필요한가요?"
+    answer: "가드레일은 입출력을 검증해 개인정보 노출, 무한 루프로 인한 비용 폭주, 브랜드 위반이나 유해 콘텐츠 같은 프로덕션 사고를 사전에 차단합니다. 입력과 출력을 모두 보호하는 양방향 방어가 권장됩니다."
 ---
 
 > <strong>시리즈: OpenAI AgentKit 마스터하기</strong> (1/2)

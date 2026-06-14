@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "Are AI agents really more expensive than human moderators?"
+    answer: "They can be. The analysis in this post puts autonomous AI agent moderation at $1,350 to $2,250 per month, which can exceed a human moderator at around $1,200. Costs climb further when you need 24/7 autonomous operation, high-volume processing, and complex decisions."
+  - question: "What is the largest cost in running AI agents?"
+    answer: "Engineering time, not API costs. In the cost table, engineering time is the biggest line at $500 to $2,000+ per month, while API costs sit at $270 to $550. You only get the true total once maintenance and incident response are included."
+  - question: "What is the hardest part of a multi-agent system?"
+    answer: "The routing layer. It has to handle intent classification, context passing between agents, error recovery, and model cost optimization. The time spent building and stabilizing it exceeds all other costs combined."
+  - question: "Should I try an agent or a single prompt first?"
+    answer: "Try a single prompt first. The post describes spending 40 hours on a complex pipeline that failed, then solving the problem with one well-crafted prompt. Only split into agents when the prompt approach fails."
 ---
 
 ## AI Agents Are Not Magic

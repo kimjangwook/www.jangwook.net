@@ -27,6 +27,15 @@ relatedPosts:
       en: Continues the hands-on claudecode experience.
       ja: claudecodeを実際に扱った経験が続く記事です。
       zh: 延续 claudecode 的实战经验。
+faq:
+  - question: "Can I run multiple Claude Code sessions on the same branch?"
+    answer: "Running two sessions on the same branch corrupts the other session's context the moment one of them modifies a file. You get mismatched file-state warnings, unexpected merge conflicts, and no way to track which session did what. Putting each branch in its own worktree directory removes the conflicts and contamination."
+  - question: "Do worktrees share node_modules and package.json?"
+    answer: "No. package.json, package-lock.json, and node_modules are not shared between the original and its worktrees. You may need to run npm install separately in each worktree, especially when a feature branch adds new packages."
+  - question: "What happens if I start dev servers in several worktrees at once?"
+    answer: "If multiple worktrees spin up dev servers connecting to a local database on the same port, you hit port conflicts. Configure different ports in each worktree's .env.local, or share the database while running migrations from only one worktree."
+  - question: "Is the parallel worktree pattern always effective?"
+    answer: "It is not universal. It works best when your tasks touch different files; if two sessions both modify the same component you end up with more merge conflicts, not fewer. Past three sessions, tracking progress adds overhead, so it is best to start with two."
 ---
 
 Having multiple Claude Code tabs open feels like parallel work. It isn't.

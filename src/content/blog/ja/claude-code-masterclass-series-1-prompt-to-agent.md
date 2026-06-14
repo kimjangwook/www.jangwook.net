@@ -25,6 +25,15 @@ relatedPosts:
       en: Continues the hands-on claudecode experience.
       ja: claudecodeを実際に扱った経験が続く記事です。
       zh: 延续 claudecode 的实战经验。
+faq:
+  - question: "スラッシュコマンドを作るのにプログラミングは必要ですか?"
+    answer: "いいえ。.claude/commands/ ディレクトリに .md ファイルを1つ置くだけで、ファイル名がそのままコマンド名になります。ファイルの中身は自然言語の指示文で、Claudeが各ステップを解釈してツール呼び出しに変換します。"
+  - question: "--dangerously-skip-permissions フラグは安全に使えますか?"
+    answer: "名前の通り危険なフラグで、すべての権限プロンプトをスキップします。許可リストが適切に定義されている状態でのみ使うべきで、本文では個人の自動化プロジェクト以外への使用を勧めていません。"
+  - question: "フックにはどんな種類があり、どれが最も便利でしたか?"
+    answer: "PreToolUse、PostToolUse、Stop、SessionStart の4種類があります。筆者は長い自動化タスクが終わるとTelegramに通知を送るStopフックが最も便利だったと述べています。"
+  - question: "frontmatterのdescriptionフィールドはなぜ重要なのですか?"
+    answer: "オーケストレーターのClaudeが、どのエージェントをいつ使うべきかを判断するときにこのフィールドを参照するからです。曖昧に書くと、見当違いのエージェントが呼ばれるか、完全に無視されます。"
 ---
 
 今読んでいるこの記事は、今朝11時30分に自動実行されたlaunchdジョブがClaude Codeを起動し、`/daily-tech-blog`スラッシュコマンドを実行し、サブエージェントたちがリサーチと翻訳を分担して作った結果物である可能性が高い。

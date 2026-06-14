@@ -29,6 +29,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "开始微调前应该首先尝试什么？"
+    answer: "本文建议先尝试提示词优化。约80%的任务仅靠提示词即可解决，只有在仍不足时才进一步考虑LoRA微调。"
+  - question: "使用QLoRA用什么样的GPU能训练7B模型？"
+    answer: "根据本文，QLoRA通过4bit量化大幅降低显存占用，可在24GB显存的RTX 3090或RTX 4090单卡上微调7B模型。不过由于量化开销，训练速度比全量微调慢约1.5至2倍。"
+  - question: "DPO相比RLHF有哪些优势？"
+    answer: "本文说明DPO无需单独的奖励模型，一次训练即可对齐人类偏好。它采用比PPO更稳定的分类损失，在显存和时间上节省约50%，同时性能与RLHF相当或更优。"
+  - question: "LoRA的rank(r)值通常设置为多少？"
+    answer: "本文的超参数指南将r设置在4至16之间，多数情况下8较为合适。lora_alpha通常取r的1至2倍，target_modules中注意力机制的q_proj和v_proj最为有效。"
 ---
 
 > <strong>系列: DeNA LLM 研究</strong> (3/5)

@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "RAG 系统中最重要的部分是什么?"
+    answer: "DeNA 研究强调，LLM 只是接口，检索系统才是真正的核心。检索质量直接决定响应质量，而上下文选择是防止幻觉的关键。"
+  - question: "混合检索组合了哪些方法?"
+    answer: "它通过加权平均结合 BM25(关键词基础)、Dense 向量(语义基础)和 Sparse 向量(重要 token 基础)三种方法。BM25 擅长精确关键词匹配但缺乏语义理解，Dense 能捕获语义相似度却可能遗漏关键词，二者相互补充。"
+  - question: "相比基础 RAG 性能能提升多少?"
+    answer: "在仅用 Dense 检索的基础 RAG 上加入 BM25 构成混合检索，预期可获得 10〜20% 的提升。在此之上再加 BGE-reranker 进行重排序，可额外带来 15〜25% 的精度改进。"
+  - question: "GraphRAG 和 Agentic RAG 有何不同?"
+    answer: "GraphRAG 是 Microsoft 于 2024 年发布的基于知识图谱的 RAG，利用实体间关系进行多跳推理。Agentic RAG 则是自主式的：智能体自行规划检索策略，迭代选择工具，并在结果不足时重试。"
 ---
 
 > <strong>系列: DeNA LLM 研究</strong> (4/5)

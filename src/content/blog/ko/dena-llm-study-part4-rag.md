@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "RAG에서 가장 중요한 부분은 무엇인가요?"
+    answer: "DeNA 스터디는 LLM은 인터페이스일 뿐이고 검색 시스템이 진짜 핵심이라고 강조합니다. 검색 품질이 곧 응답 품질을 결정하고, 컨텍스트 선택이 환각을 방지하기 때문입니다."
+  - question: "하이브리드 검색은 어떤 방법을 조합하나요?"
+    answer: "BM25(키워드 기반), Dense 벡터(의미 기반), Sparse 벡터(중요 토큰 기반) 세 가지를 가중 평균으로 결합합니다. BM25는 정확한 키워드 매칭에 강하지만 의미 이해가 부족하고, Dense는 의미적 유사도를 잡지만 키워드를 놓칠 수 있어 서로 보완됩니다."
+  - question: "기본 RAG에서 성능을 얼마나 올릴 수 있나요?"
+    answer: "Dense 검색만 쓰는 기본 RAG에 BM25를 더한 하이브리드 검색으로 10〜20% 향상을 기대할 수 있습니다. 여기에 BGE-reranker로 재순위화를 추가하면 추가로 15〜25%의 정밀도 개선을 볼 수 있습니다."
+  - question: "GraphRAG와 Agentic RAG는 어떻게 다른가요?"
+    answer: "GraphRAG는 Microsoft가 2024년에 공개한 지식 그래프 기반 RAG로, 엔티티 간 관계를 활용해 다단계 추론을 수행합니다. Agentic RAG는 에이전트가 직접 검색 전략을 계획하고 반복적으로 도구를 선택하며, 검색이 불충분하면 재시도하는 자율적 방식입니다."
 ---
 
 > <strong>시리즈: DeNA LLM 스터디</strong> (4/5)

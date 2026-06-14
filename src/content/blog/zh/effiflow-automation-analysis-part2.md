@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "Model-Invoked 和 User-Invoked 有什么区别?"
+    answer: "Skills 以 Model-Invoked 方式运行,即使用户不调用,Claude 也会根据上下文自动激活。Commands 以 User-Invoked 方式运行,用户用斜杠命令直接调用,并通过 ARGUMENTS 传递参数。"
+  - question: "58% 的 Token 节省从何而来?"
+    answer: "来自 trend-analyzer Skill 的缓存策略。缓存前每次调用 Brave Search 都要用 40,000+ tokens,而在 24 小时内重用缓存可降至 17,000 tokens,约节省 58%。API 调用也从平均 15 次降到 3 次。"
+  - question: "三层缓存对每种数据保留多久?"
+    answer: "趋势数据保留 24 小时,技术数据保留 7 天,关键词数据保留 48 小时。过期周期按照各类数据的变化速度分别设置。"
+  - question: "增量处理能节省多少 Token?"
+    answer: "通过 Content Hash 仅重新分析已更改的文章。现有 13 篇加新 1 篇时,用量从 42,000 tokens 降至 3,000 tokens,节省 93%,平均约节省 70%。"
 ---
 
 ## 系列导读

@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "ファインチューニングを始めるとき、最初に何を試すべきですか？"
+    answer: "本文はまずプロンプト最適化を試すことを推奨しています。タスクの80%はプロンプトだけで解決でき、それでも不十分なときに初めてLoRAファインチューニングを検討する順序を示しています。"
+  - question: "QLoRAを使えばどの程度のGPUで7Bモデルを学習できますか？"
+    answer: "本文によると、QLoRAは4bit量子化でメモリを大幅に削減し、24GB VRAMのRTX 3090やRTX 4090の単一GPUで7Bモデルのファインチューニングが可能です。ただし量子化のオーバーヘッドによりFull Fine-tuningと比べて1.5〜2倍遅くなります。"
+  - question: "DPOがRLHFより優れている点は何ですか？"
+    answer: "本文はDPOがリワードモデルなしに一度の学習で人間の選好を整合させると説明しています。PPOより安定したClassification lossを用い、メモリと時間を約50%削減しながらRLHFと同等以上の性能を発揮します。"
+  - question: "LoRAのrank(r)値は通常いくつに設定しますか？"
+    answer: "本文のハイパーパラメータガイドではrを4〜16の範囲で設定し、多くの場合8が適切だとしています。lora_alphaは通常rの1〜2倍とし、target_modulesはAttentionのq_projとv_projが最も効果的です。"
 ---
 
 > <strong>シリーズ: DeNA LLMスタディ</strong> (3/5)

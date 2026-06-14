@@ -26,6 +26,15 @@ relatedPosts:
       en: Continues the hands-on claudecode experience.
       ja: claudecodeを実際に扱った経験が続く記事です。
       zh: 延续 claudecode 的实战经验。
+faq:
+  - question: "可以在同一个分支上运行多个 Claude Code 会话吗?"
+    answer: "在同一分支上同时运行两个会话，一旦一个会话修改了文件，另一个会话的上下文就会被污染。会出现文件状态不一致、意外的合并冲突以及无法追踪哪个会话做了什么的问题。用 worktree 把每个分支放到独立目录，冲突和污染就消失了。"
+  - question: "worktree 之间会共享 node_modules 和 package.json 吗?"
+    answer: "不会。package.json、package-lock.json 和 node_modules 在原始目录与 worktree 之间不共享，可能需要在每个 worktree 中单独运行 npm install，尤其是在功能分支添加了新包时。"
+  - question: "在多个 worktree 中同时启动开发服务器会怎样?"
+    answer: "如果多个 worktree 同时启动连接到同一端口本地数据库的开发服务器，会产生端口冲突。需要在各 worktree 的 .env.local 中配置不同端口，或共享数据库但只从一侧执行迁移。"
+  - question: "worktree 并行模式总是有效吗?"
+    answer: "它不是万能的。任务之间修改不同文件时效果最好；如果两个会话都需要修改同一组件，反而会产生更多合并冲突。会话超过三个后，追踪各会话进度会产生额外开销，因此建议先从两个开始。"
 ---
 
 同时打开多个 Claude Code 标签页感觉像是在并行工作。实际上并不是。

@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same AI track.
       ja: 同じAIの流れで併せて読むと役立ちます。
       zh: 在同一 AI 脉络中可一并阅读。
+faq:
+  - question: "LLM 是按 token 而非单词运作的，那中文之类的语言会怎么处理？"
+    answer: "LLM 按 token 而非单词运作。英文一个单词大约对应一个 token，而韩文一个单词大约对应 2〜3 个 token。token 数量直接影响成本和上下文上限，因此在优化用量时需要纳入考虑。"
+  - question: "CoT 提示能把准确率提升多少？"
+    answer: "即便不是推理专用模型，只要加一行让它分步计算的 CoT 提示，正答率也会明显提高。按本文示例，准确率从 Zero-shot 约 60 个百分点提升到 Few-shot 约 80 个百分点，再到 Chain of Thought 约 90 个百分点。"
+  - question: "RLHF 和 DPO 有什么区别？"
+    answer: "RLHF 旨在对齐人类偏好，需要数千到数万条数据，成本较高。DPO 是 Stanford 在 2023 年提出的方法，直接优化偏好，比 RLHF 更简单且更有效，数据需求约为数千条，成本居中。"
+  - question: "代码审查或数据分析该用哪个模型和 Temperature？"
+    answer: "按本文实战场景表，代码审查建议用 Claude Sonnet 4 配 temperature 0.3，数据分析用 Claude Sonnet 4 配 temperature 0.1。输出越需要确定且一致，Temperature 就设得越低。"
 ---
 
 > <strong>系列: DeNA LLM 学习</strong> (1/5)

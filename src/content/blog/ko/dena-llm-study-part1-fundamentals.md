@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same AI track.
       ja: 同じAIの流れで併せて読むと役立ちます。
       zh: 在同一 AI 脉络中可一并阅读。
+faq:
+  - question: "LLM은 단어가 아니라 토큰 단위로 동작한다는데, 한국어는 어떻게 처리되나요?"
+    answer: "LLM은 단어가 아닌 토큰 단위로 작동합니다. 영어는 1단어가 대략 1토큰이지만, 한국어는 1단어가 대략 2〜3토큰에 해당합니다. 토큰 수는 비용과 컨텍스트 한계에 직접 영향을 주므로 사용량 최적화 시 고려해야 합니다."
+  - question: "CoT 프롬프팅이 정확도를 얼마나 올려주나요?"
+    answer: "추론 전용 모델이 아니어도 단계별로 계산하라는 CoT 한 줄을 추가하면 정답률이 눈에 띄게 올라갑니다. 본문 예시 기준으로 Zero-shot 약 60퍼센트, Few-shot 약 80퍼센트, CoT 약 90퍼센트 수준으로 정확도가 향상됩니다."
+  - question: "RLHF와 DPO는 어떤 차이가 있나요?"
+    answer: "RLHF는 인간 선호도 정렬을 목적으로 수천〜수만 개의 데이터가 필요하고 비용이 높습니다. DPO는 2023년 Stanford에서 제안한 방법으로 선호도를 직접 최적화하며, RLHF보다 간단하면서도 효과적이고 데이터 요구량은 수천 개, 비용은 중간 수준입니다."
+  - question: "코드 리뷰나 데이터 분석 작업에는 어떤 모델과 Temperature를 쓰는 게 좋나요?"
+    answer: "본문 실전 시나리오 표 기준으로 코드 리뷰는 Claude Sonnet 4에 temperature 0.3, 데이터 분석은 Claude Sonnet 4에 temperature 0.1을 권장합니다. 결정적이고 일관된 출력이 필요한 작업일수록 Temperature를 낮게 설정합니다."
 ---
 
 > <strong>시리즈: DeNA LLM 스터디</strong> (1/5)

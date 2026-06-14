@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same AI track.
       ja: 同じAIの流れで併せて読むと役立ちます。
       zh: 在同一 AI 脉络中可一并阅读。
+faq:
+  - question: "LLMは単語ではなくトークン単位で動くそうですが、韓国語はどう処理されますか？"
+    answer: "LLMは単語ではなくトークン単位で動作します。英語は1単語がおよそ1トークンですが、韓国語は1単語がおよそ2〜3トークンに相当します。トークン数はコストやコンテキスト上限に直結するため、使用量を最適化する際に考慮が必要です。"
+  - question: "CoTプロンプティングで精度はどのくらい上がりますか？"
+    answer: "推論専用モデルでなくても、ステップごとに計算させるCoTを1行加えるだけで正答率が目に見えて上がります。本文の例ではZero-shotが約60パーセント、Few-shotが約80パーセント、CoTが約90パーセントまで精度が向上します。"
+  - question: "RLHFとDPOはどう違いますか？"
+    answer: "RLHFは人間の選好への整合を目的とし、数千〜数万件のデータが必要でコストが高い手法です。DPOは2023年にStanfordが提案した方法で、選好を直接最適化し、RLHFより簡単ながら効果的で、データ要求量は数千件、コストは中程度です。"
+  - question: "コードレビューやデータ分析にはどのモデルとTemperatureが向いていますか？"
+    answer: "本文の実践シナリオ表によると、コードレビューはClaude Sonnet 4でtemperature 0.3、データ分析はClaude Sonnet 4でtemperature 0.1が推奨されています。決定的で一貫した出力が必要な作業ほどTemperatureを低く設定します。"
 ---
 
 > <strong>シリーズ: DeNA LLM スタディ</strong> (1/5)

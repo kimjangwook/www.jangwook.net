@@ -26,6 +26,15 @@ relatedPosts:
       en: Continues the hands-on claudecode experience.
       ja: claudecodeを実際に扱った経験が続く記事です。
       zh: 延续 claudecode 的实战经验。
+faq:
+  - question: "创建斜线命令需要写代码吗?"
+    answer: "不需要。只要在 .claude/commands/ 目录下放一个 .md 文件，文件名就是命令名。文件内容是自然语言指令，Claude会把每个步骤解释后转换为工具调用。"
+  - question: "--dangerously-skip-permissions 这个参数可以放心用吗?"
+    answer: "如名字所示，它很危险，会跳过所有权限提示。只有在白名单定义完善的状态下才能使用，文中不建议在个人自动化项目之外使用它。"
+  - question: "Hook有哪些类型，哪一种最有用?"
+    answer: "共有 PreToolUse、PostToolUse、Stop、SessionStart 四种类型。作者认为最有用的是 Stop Hook，长时间自动化任务完成后会收到Telegram通知。"
+  - question: "frontmatter中的 description 字段为什么关键?"
+    answer: "因为编排器Claude在判断什么时候该用哪个代理时会参考这个字段。写得含糊，就会调用错误的代理，或者完全被忽略。"
 ---
 
 你现在读到的这篇文章，很可能是今天早上11点30分自动触发的launchd任务唤醒了Claude Code，执行了`/daily-tech-blog`斜线命令，再由多个子代理分工完成研究和翻译后生成的。

@@ -32,6 +32,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "계층형, 이벤트 주도, 그래프 기반 패턴 중 어떤 것을 골라야 하나요?"
+    answer: "명확한 책임 분리와 의사결정 트리가 필요하면 계층형, 비동기 작업과 느슨한 결합이 중요하면 이벤트 주도, 루프나 조건부 분기 같은 복잡한 동적 흐름이 있으면 그래프 기반이 적합합니다. 각 패턴의 장단점 절에서 매니저 병목, 디버깅 난이도, 초기 설정 복잡도를 비교해 두었으니 상황에 맞게 선택하세요."
+  - question: "커스텀 MCP 서버는 왜 필요하고 어떻게 만드나요?"
+    answer: "MCP를 쓰면 AgentKit을 Slack이나 GitHub 같은 외부 시스템과 표준화된 방식으로 연결할 수 있습니다. 본문의 Slack 예제처럼 Server를 상속하고 send_message 같은 도구를 register_tool로 등록한 뒤, 에이전트의 mcp_servers에 연결하면 됩니다. 모든 도구 호출은 try-except로 감싸고 토큰은 환경 변수로 관리하는 것이 권장됩니다."
+  - question: "여러 테넌트의 데이터 격리는 어떻게 보장하나요?"
+    answer: "테넌트별로 독립된 Session을 생성하고 isolation_level을 tenant로 설정해 데이터를 분리합니다. 본문 예제에서는 tenant_id로 세션 ID를 해싱하고, 테넌트별 가드레일과 감사 로그를 적용합니다. GDPR 대응을 위해 PII 감지 가드레일과 데이터 보존 기간 설정도 함께 다룹니다."
+  - question: "이 패턴들을 적용하면 실제로 어느 정도 효과가 있나요?"
+    answer: "본문 케이스 스터디 기준으로 SaaS 온보딩 시간은 평균 4시간에서 1.2시간으로 70% 줄었고, 데이터 파이프라인 평균 복구 시간(MTTR)은 45분에서 8분으로 82% 감소했습니다. DevOps 자동화 사례에서는 배포 실패율이 12%에서 0.8%로 떨어졌습니다. 다만 이 수치는 특정 기업 사례이므로 환경에 따라 달라질 수 있습니다."
 ---
 
 > <strong>시리즈: OpenAI AgentKit 마스터하기</strong> (2/2)

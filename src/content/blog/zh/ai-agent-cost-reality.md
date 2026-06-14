@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "AI Agent真的比人工审核员更贵吗?"
+    answer: "可能更贵。本文分析显示，AI Agent自主审核每月为1,350至2,250美元，可能超过约1,200美元的人工审核员。当需要24小时自主运行、大量处理和复杂判断时，成本会进一步上升。"
+  - question: "运营AI Agent最大的成本是什么?"
+    answer: "是工程时间，而非API成本。本文成本表中工程时间是最大项目，每月500至2,000美元以上，而API成本约为270至550美元。只有把维护和故障响应也算进去，才能得到真正的总成本。"
+  - question: "多Agent系统中最难的部分是什么?"
+    answer: "是路由层。它需要处理意图分类、Agent之间的上下文传递、错误恢复以及模型成本优化，而构建和稳定它所花的时间超过了所有其他成本的总和。"
+  - question: "应该先尝试Agent还是单个Prompt?"
+    answer: "先尝试单个Prompt。本文描述了花40小时构建复杂管道却失败，最终用一个写得好的Prompt解决问题的经历。只有在Prompt方法失败时才拆分为Agent。"
 ---
 
 ## AI Agent不是魔法

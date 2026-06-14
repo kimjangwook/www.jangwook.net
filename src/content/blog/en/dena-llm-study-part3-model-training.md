@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "What should I try first before fine-tuning?"
+    answer: "The article recommends starting with prompt optimization. About 80 percent of tasks can be solved with prompts alone, and only when that falls short should you try LoRA fine-tuning next."
+  - question: "What GPU can train a 7B model with QLoRA?"
+    answer: "According to the article, QLoRA uses 4-bit quantization to cut memory enough to fine-tune a 7B model on a single 24GB GPU like the RTX 3090 or RTX 4090. The tradeoff is that training runs about 1.5 to 2 times slower than full fine-tuning due to quantization overhead."
+  - question: "How is DPO better than RLHF?"
+    answer: "The article explains that DPO aligns human preferences in a single training stage without a separate reward model. It uses a classification loss that is more stable than PPO and cuts memory and time by roughly 50 percent while matching or beating RLHF performance."
+  - question: "What rank (r) value should I set for LoRA?"
+    answer: "The hyperparameter guide in the article sets r between 4 and 16, with 8 working for most cases. lora_alpha is usually 1 to 2 times r, and q_proj and v_proj in attention are the most effective target modules."
 ---
 
 > <strong>Series: DeNA LLM Study</strong> (3/5)

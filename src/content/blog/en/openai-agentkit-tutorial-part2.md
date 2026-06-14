@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "Which orchestration pattern should I use: hierarchical, event-driven, or graph-based?"
+    answer: "Use the hierarchical manager-worker pattern when you need clear responsibility separation and a single agent stops scaling. Choose event-driven orchestration for real-time systems that listen for events and wake the right agent. Pick a graph-based workflow when your logic involves loops, conditional branches, and routing that changes at runtime."
+  - question: "Why build a custom MCP server, and how does it connect to an agent?"
+    answer: "Most of AgentKit's real leverage comes from tools you build through the MCP protocol so agents can talk to Slack, JIRA, or internal databases. As shown in the Slack example, you subclass Server, register tools like send_message with the Tool decorator, and run it over stdio. You then connect it to an agent via the mcp_servers parameter."
+  - question: "How does multi-tenancy keep one customer's data from leaking into another's?"
+    answer: "Each tenant gets its own Session, with the session ID namespaced by hashing the tenant_id. The example injects a security system message scoping the agent to that tenant and adds a data_scope filter to queries. A separate GDPR section covers handling deletion and export requests with an audit log."
+  - question: "What measurable results did the case studies report?"
+    answer: "Per the case studies, SaaS onboarding time dropped from 7 days to 2 (a 70% reduction) and 30-day churn fell from 40% to 12%. Data pipeline MTTR went from 2 hours to 22 minutes (82% reduction), and DevOps deployment wait time fell from 3 hours to 8 minutes. These are specific company results, so your mileage may vary."
 ---
 
 > <strong>Series: Master OpenAI AgentKit</strong> (2/2)

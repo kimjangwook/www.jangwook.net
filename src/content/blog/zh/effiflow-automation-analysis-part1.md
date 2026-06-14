@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same automation track.
       ja: 同じ自動化の流れで併せて読むと役立ちます。
       zh: 在同一 自动化 脉络中可一并阅读。
+faq:
+  - question: "元数据优先架构如何节省 71% 的成本?"
+    answer: "推荐算法实际只用到标题、描述、标签和分类分数，但旧系统每次运行都读取全文，单次推荐就烧掉 9 万 Token。把元数据一次性提取到 post-metadata.json 重复使用后，年度成本从 $5.72 降到 $1.65。"
+  - question: "为什么推荐用 Claude LLM 而不是 TF-IDF?"
+    answer: "TF-IDF 快且便宜，但不理解语义、无法处理同义词。EffiFlow 选择了能把握语义和上下文的 Claude LLM，并通过元数据优先架构解决了成本问题。"
+  - question: "文章撰写时间实际能缩短多少?"
+    answer: "手动操作时，调研、写作、配图和翻译加起来每篇要 4 小时 40 分钟。采用 8-Phase 自动化后，命令输入、等待和审校合计约 30 分钟，节省 90%。"
+  - question: "增量处理如何进一步降低成本?"
+    answer: "通过 Content Hash 只重新分析有改动的文章。全量分析 13 篇需要 2 分钟、$0.09，而只处理新增的 2〜3 篇仅需 20 秒、约 $0.02，额外节省 79%。"
 ---
 
 > <strong>系列指南</strong>：本文是"EffiFlow 自动化架构分析/评估与改进"系列的第 1/3 部分。

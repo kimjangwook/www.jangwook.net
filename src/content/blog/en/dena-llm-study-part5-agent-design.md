@@ -36,6 +36,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "Why is orchestration recommended over fully autonomous agents in 2025?"
+    answer: "Fully autonomous agents make unlimited API calls that cause costs to explode, and their behavior is hard to control, which makes them unstable in production. Letting agents act autonomously inside a clear workflow keeps costs predictable and improves reliability and debugging. This is why explicit orchestration tools like n8n and LangGraph are gaining attention."
+  - question: "How should I choose among the multi-agent patterns?"
+    answer: "Use Sequential or Parallel when there are clear stages, Supervisor when dynamic task distribution is needed, and Network when creative collaboration matters. Note that Network patterns such as AutoGen have unpredictable costs that vary with conversation length, so you must set a cost limit when using them."
+  - question: "Why do LLM function calls need a validation layer and Self-Healing?"
+    answer: "LLM function calls cannot be trusted 100 percent, so problems like wrong parameters, calls to nonexistent tools, and infinite loops occur. That is why a layer that checks tool existence, validates parameter schemas, and limits call frequency is needed, along with a Self-Healing pattern that analyzes errors and retries automatically. These are essential in production."
+  - question: "How much can combining cost-optimization techniques actually save?"
+    answer: "In a case combining semantic caching (60 percent hit rate), SLM routing, and complexity assessment, the average cost per request dropped from 0.014 dollars to 0.00196 dollars, about an 86 percent reduction. Latency also fell from 2000ms to 410ms, roughly 79 percent. In the DeNA NOC Alert Agent case, monthly operating cost fell from 1,200 dollars to 350 dollars."
 ---
 
 > <strong>Series: DeNA LLM Study</strong> (5/5 - Final)

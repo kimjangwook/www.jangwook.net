@@ -25,6 +25,15 @@ relatedPosts:
       en: Continues the hands-on AI experience.
       ja: AIを実際に扱った経験が続く記事です。
       zh: 延续 AI 的实战经验。
+faq:
+  - question: "Why Google Gemini API instead of OpenAI GPT?"
+    answer: "Cost was the main reason. Gemini 2.5 Flash runs at 0.075 dollars per 1M input tokens and 0.30 dollars output, roughly 100x cheaper than GPT-4 Turbo. It also supports Structured Output to enforce type-safe JSON, and its image OCR quality is strong on complex layouts like receipts and passports."
+  - question: "Why choose SvelteKit over Next.js?"
+    answer: "Svelte 5's Runes reactivity is more intuitive than React hooks and cut boilerplate by about 70 percent. Because Svelte strips framework code at compile time, the client bundle is 40 percent smaller than React with faster Time to Interactive. Vercel, the deployment platform, also supports SvelteKit directly."
+  - question: "How was the Gemini API cost reduced?"
+    answer: "Two methods. Shortening the long instruction prompt into a concise form dropped input tokens from about 150 to 25, a roughly 83 percent cost saving. Resizing images to within 1024px also reduced token usage by 70 percent."
+  - question: "What are the 3-month KPI targets?"
+    answer: "The targets are 500+ monthly visitors, 30 signups, 5 paid conversions, 30,000 yen MRR, and 1,000 OCR API calls. The 6 percent signup rate and 16.7 percent paid conversion are realistic solo-developer figures based on B2B SaaS averages."
 ---
 
 ## Three Days, One Production Launch

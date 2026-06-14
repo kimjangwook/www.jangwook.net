@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "层级式、事件驱动和基于图的模式，应该怎么选？"
+    answer: "需要明确职责分离和清晰决策树时选层级式管理者-工作者模式；强调异步任务和松耦合时选事件驱动；存在循环、条件分支等复杂动态流程时选基于图的工作流。文中各模式的优缺点小节对比了管理者瓶颈、调试难度和初始配置复杂度，可据此选择。"
+  - question: "为什么需要自定义MCP服务器，又如何接入智能体？"
+    answer: "通过MCP协议可以把AgentKit以标准方式连接到Slack、GitHub等外部系统。按文中Slack示例，继承Server并用register_tool注册send_message等工具，再把它连接到智能体的mcp_servers即可。建议所有工具调用都用try-except包裹，令牌通过环境变量管理。"
+  - question: "如何保证多个租户之间的数据隔离？"
+    answer: "为每个租户创建独立的Session，并把isolation_level设为tenant来隔离数据。文中示例用tenant_id对会话ID做哈希，并应用按租户定制的护栏和审计日志。为满足GDPR合规，还一并涵盖了PII检测护栏和数据保留期设置。"
+  - question: "应用这些模式实际能带来多大效果？"
+    answer: "据文中案例，SaaS入门时间从平均4小时降到1.2小时，减少70%；数据管道平均恢复时间（MTTR）从45分钟降到8分钟，减少82%；DevOps自动化案例中部署失败率从12%降到0.8%。不过这些数字来自特定企业案例，实际效果因环境而异。"
 ---
 
 > <strong>系列：掌握OpenAI AgentKit</strong> (2/2)

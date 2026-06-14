@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same automation track.
       ja: 同じ自動化の流れで併せて読むと役立ちます。
       zh: 在同一 自动化 脉络中可一并阅读。
+faq:
+  - question: "How does the metadata-first architecture cut cost by 71%?"
+    answer: "The recommendation algorithm only ever touches titles, descriptions, tags, and category scores, yet the old system read the full body on every run, burning 90,000 tokens per recommendation. Extracting metadata once into post-metadata.json for reuse drops annual cost from $5.72 to $1.65."
+  - question: "Why use Claude LLM for recommendations instead of TF-IDF?"
+    answer: "TF-IDF is fast and cheap but has no semantic understanding and misses synonyms. EffiFlow chose Claude LLM for semantic, context-aware matching and solved the cost concern with the metadata-first architecture."
+  - question: "How much does post creation time actually drop?"
+    answer: "Manual work, covering research, writing, images, and translation, took 4 hours 40 minutes per post. After the 8-phase automation, command input, waiting, and review add up to about 30 minutes, a 90% reduction."
+  - question: "How does incremental processing reduce cost further?"
+    answer: "Content Hash is used to re-analyze only changed posts. A full analysis of 13 posts takes 2 minutes and $0.09, but processing only 2-3 new posts takes 20 seconds and roughly $0.02, a 79% additional saving."
 ---
 
 > <strong>Series Guide</strong>: This is Part 1/3 of the "EffiFlow Automation Analysis/Evaluation and Improvements" series.

@@ -32,6 +32,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "AgentKitはいつから有料になりますか?"
+    answer: "Agent Builderは現在ベータ段階で、2025年11月1日から課金が開始されます。ChatKitのファイルアップロードは月1GBまで無料で利用できます。"
+  - question: "Python SDKを使うにはどんな環境が必要ですか?"
+    answer: "Python 3.8以上が必要で、openai-agentsパッケージをpipでインストールします。そのうえでOpenAI APIキーを環境変数OPENAI_API_KEYに設定すれば、すぐに最初のエージェントを実行できます。"
+  - question: "Agent BuilderとPython SDKのどちらを使うべきですか?"
+    answer: "Agent Builderは学習コストが低く、非開発者との協業や素早いプロトタイピングに向いています。Python SDKは柔軟性が無制限で、エンタープライズや複雑なロジックに適しています。記事ではビジュアルでプロトタイプを作り、コードで本番化する流れを推奨しています。"
+  - question: "なぜガードレールが必要なのですか?"
+    answer: "ガードレールは入出力を検証し、個人情報の漏えい、無限ループによるコスト暴走、ブランド違反や有害コンテンツといった本番事故を事前に防ぎます。入力と出力の両方を守る双方向の防御が推奨されます。"
 ---
 
 > <strong>シリーズ: OpenAI AgentKit マスター</strong> (1/2)

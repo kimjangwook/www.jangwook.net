@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "When does AgentKit start charging?"
+    answer: "Agent Builder is currently in beta, and billing starts on November 1, 2025. ChatKit includes 1 GB of free file uploads per month."
+  - question: "What do I need to use the Python SDK?"
+    answer: "You need Python 3.8 or later and install the openai-agents package via pip. After setting your OpenAI API key as the OPENAI_API_KEY environment variable, you can run your first agent right away."
+  - question: "Should I use Agent Builder or the Python SDK?"
+    answer: "Agent Builder has a low learning curve and works well for non-developer collaboration and rapid prototyping. The Python SDK offers unlimited flexibility and suits enterprise or complex logic. The article recommends prototyping visually, then productionizing with code."
+  - question: "Why are guardrails necessary?"
+    answer: "Guardrails validate input and output to proactively prevent production incidents such as PII exposure, cost runaway from infinite loops, and brand-violating or harmful content. Bidirectional defense protecting both input and output is recommended."
 ---
 
 > <strong>Series: Mastering OpenAI AgentKit</strong> (1/2)

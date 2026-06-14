@@ -32,6 +32,15 @@ relatedPosts:
       en: Worth reading alongside this in the same AI track.
       ja: 同じAIの流れで併せて読むと役立ちます。
       zh: 在同一 AI 脉络中可一并阅读。
+faq:
+  - question: "LLMs operate on tokens rather than words, so how does that affect languages like Korean?"
+    answer: "LLMs operate on tokens, not words. In English, one word is roughly one token, but in Korean one word is roughly 2-3 tokens. Since token count directly affects cost and context limits, it matters when optimizing usage."
+  - question: "How much does Chain of Thought prompting improve accuracy?"
+    answer: "Even a non-reasoning model gets a noticeable accuracy bump from a single CoT instruction asking it to work step by step. Based on the article's examples, accuracy rises from about 60 percent for Zero-shot to about 80 percent for Few-shot and about 90 percent for Chain of Thought."
+  - question: "What is the difference between RLHF and DPO?"
+    answer: "RLHF aligns models with human preferences, requires thousands to tens of thousands of data points, and is high cost. DPO, proposed by Stanford in 2023, optimizes preferences directly and is simpler yet more effective than RLHF, needing only thousands of data points at medium cost."
+  - question: "Which model and Temperature should I use for code review or data analysis?"
+    answer: "Based on the practical use case table, code review is best with Claude Sonnet 4 at temperature 0.3, and data analysis with Claude Sonnet 4 at temperature 0.1. The more deterministic and consistent the output needs to be, the lower you set the Temperature."
 ---
 
 > <strong>Series: DeNA LLM Study</strong> (1/5)

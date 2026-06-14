@@ -35,6 +35,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "How do I run /insights?"
+    answer: "It is a feature introduced in Claude Code v2.1, and you just type /insights in the terminal. It analyzes your locally stored usage data to surface usage statistics, strengths, bottlenecks, and improvement suggestions."
+  - question: "What was identified as the biggest bottleneck in the analysis?"
+    answer: "Context limits. Tasks like novel reviews, large-scale translations, and blog content generation terminated mid-execution. The root cause was assigning too-large tasks to a single session."
+  - question: "Why did 293 File Too Large errors occur?"
+    answer: "They stemmed from the large text files in the novel project. Seeing this data is what made the need for file-splitting strategies clear, as the article notes."
+  - question: "What improvements can I apply right now?"
+    answer: "Break large tasks into chapter, section, or module units, and record progress as checkpoints in a file like task-status.md. That way, even if a session drops, the next one can continue from where it left off."
 ---
 
 # Claude Code /insights Review: What 4,516 Messages Reveal About My AI Coding Patterns
