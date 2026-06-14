@@ -457,18 +457,18 @@ async def generate(req: GenerateRequest):
 내가 테스트한 모델들을 기준으로 하드웨어별 추천을 정리한다.
 
 **CPU 전용 (RAM 16GB 이상)**
-- `llama3.2:3b` — 가장 빠른 CPU 추론, 15〜30초 수준
-- `phi3.5-mini` — 품질 대비 속도 균형
-- `gemma4:e2b` — 작은 버전, 3.1GB
+- `llama3.2:3b`: 가장 빠른 CPU 추론, 15〜30초 수준
+- `phi3.5-mini`: 품질 대비 속도 균형
+- `gemma4:e2b`: 작은 버전, 3.1GB
 
 이 환경에서는 스트리밍 엔드포인트가 특히 중요하다. 응답 전체가 나올 때까지 클라이언트를 block하면 UX가 너무 나쁘다.
 
 **NVIDIA GPU (VRAM 8GB)**
-- `llama3.2:8b` 또는 `mistral:7b` — VRAM에 완전히 올라가면 1〜3초 응답
-- `qwen2.5-coder:7b` — 코딩 특화, 코드 생성 요청에 유리
+- `llama3.2:8b` 또는 `mistral:7b`: VRAM에 완전히 올라가면 1〜3초 응답
+- `qwen2.5-coder:7b`: 코딩 특화, 코드 생성 요청에 유리
 
 **NVIDIA GPU (VRAM 24GB 이상)**
-- `llama3.1:70b` (Q4 quantized) — 프로덕션 수준 품질
+- `llama3.1:70b` (Q4 quantized): 프로덕션 수준 품질
 - 이 경우 `--workers 4` 이상으로 올려도 VRAM이 충분하다
 
 모델 크기와 성능에 대해서는 로컬 LLM 추론 비용 최적화 글에서 더 구체적인 벤치마크를 볼 수 있다.

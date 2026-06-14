@@ -26,7 +26,7 @@ relatedPosts:
 
 运营AI智能体后，很快就会意识到传统APM工具有多无用。Datadog和New Relic在HTTP延迟和错误率方面表现不错，但无法告诉你"这个RAG管道中检索步骤降低了多少整体响应质量"。提示词版本变更时响应质量如何变化，同样无法追踪。
 
-我在AI智能体可观测性实践指南中将Langfuse与Braintrust和LangSmith进行了比较，自托管能力和开源许可是Langfuse最显著的差异化优势。这篇文章越过比较阶段，直接讲实际部署方法。
+我在AI智能体可观测性实践指南里把Langfuse和Braintrust、LangSmith放在一起比过，自托管能力和开源许可是Langfuse最显著的差异化优势。比较到此为止，接下来就动手在本地把它跑起来。
 
 Langfuse提供的功能：
 

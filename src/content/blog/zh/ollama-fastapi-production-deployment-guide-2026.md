@@ -444,18 +444,18 @@ async def generate(req: GenerateRequest):
 根据不同硬件配置的测试经验总结推荐：
 
 **纯CPU（RAM 16GB以上）**
-- `llama3.2:3b` — CPU推理最快，通常15〜30秒
-- `phi3.5-mini` — 质量与速度的良好平衡
-- `gemma4:e2b` — 小型版本，3.1GB
+- `llama3.2:3b`：CPU推理最快，通常15〜30秒
+- `phi3.5-mini`：质量与速度的良好平衡
+- `gemma4:e2b`：小型版本，3.1GB
 
 在这种环境中，流式传输端点尤为重要。等待完整响应会让UX变得很差。
 
 **NVIDIA GPU（VRAM 8GB）**
-- `llama3.2:8b`或`mistral:7b` — 完全加载到VRAM后响应时间1〜3秒
-- `qwen2.5-coder:7b` — 代码专用，适合代码生成请求
+- `llama3.2:8b`或`mistral:7b`：完全加载到VRAM后响应时间1〜3秒
+- `qwen2.5-coder:7b`：代码专用，适合代码生成请求
 
 **NVIDIA GPU（VRAM 24GB以上）**
-- `llama3.1:70b`（Q4量化）— 生产级质量
+- `llama3.1:70b`（Q4量化）：生产级质量
 - VRAM充足时可以将`--workers`提高到4以上
 
 ## 添加Bearer Token认证中间件

@@ -39,7 +39,7 @@ Last month I overhauled the test pipeline for a side project and switched from J
 
 Vitest uses the same transformation pipeline as Vite, so it understands TypeScript without any extra setup. And with Vitest 4 graduating Browser Mode to stable, you can now run DOM tests in actual Chromium instead of the JSDOM simulation that jest-dom required.
 
-This guide is based on real sandbox experiments. I installed `vitest@4.1.7` and ran 16 tests to verify every pattern described here. Rather than walking through config options one by one, I focused on the specific places where people coming from Jest tend to get stuck.
+Every pattern below is something I actually ran. I installed `vitest@4.1.7` in a sandbox and got 16 tests passing before writing a word of this. So instead of walking through config options one by one, I focused on the specific places where people coming from Jest tend to get stuck.
 
 ## Why Vitest Over Jest: It's the Config, Not the Speed
 
@@ -439,6 +439,6 @@ If you're using TypeScript with Vite, SvelteKit, Nuxt, or a modern frontend fram
 
 For large Next.js or Express server test suites, be more careful. Vitest's Vite-first design can surface unexpected module resolution issues in complex server-side setups.
 
-npm weekly downloads went from 4.8M to 7.7M — a lot of projects made the switch. But not all of them did it smoothly. Factor your project's complexity before committing.
+npm weekly downloads went from 4.8M to 7.7M. A lot of projects made the switch, but not all of them did it smoothly. Factor your project's complexity before committing.
 
-Vitest 5.0 betas are already on npm. Once stable, expect another round of breaking changes. Migrating to 4.x now gives you a solid foundation before that wave hits. Pairing Vitest with [Bun for TypeScript script automation](/en/blog/en/bun-shell-scripting-practical-guide-2026) is something I'm currently exploring. That'll be a separate post.
+Vitest 5.0 betas are already on npm. Once stable, expect another round of breaking changes. Migrating to 4.x now gives you a solid foundation before that wave hits. Right now I'm exploring how to pair Vitest with [Bun for TypeScript script automation](/en/blog/en/bun-shell-scripting-practical-guide-2026), running the test suite under Bun. That'll be a separate post.

@@ -101,7 +101,7 @@ curl http://localhost:3000/
 # {"message":"Hello from Hono!"}
 ```
 
-`export default app` — that single line is recognized as the entry point for Bun, Deno, and Cloudflare Workers alike. For Node.js, add `serve(app)` and you're done. No runtime-branching code needed. That felt like the biggest quality-of-life win.
+That single line, `export default app`, is recognized as the entry point for Bun, Deno, and Cloudflare Workers alike. For Node.js, add `serve(app)` and you're done. No runtime-branching code needed. That felt like the biggest quality-of-life win.
 
 ## Middleware Stack: logger, CORS, timing
 

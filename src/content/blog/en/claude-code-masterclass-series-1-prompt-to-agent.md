@@ -29,7 +29,7 @@ relatedPosts:
 
 The post you're reading right now was created by a launchd job that fired at 11:30 AM, woke up Claude Code, ran the `/daily-tech-blog` slash command, and had subagents split the research and translation work.
 
-I've been building and running this automation pipeline for the past few months. It's not perfect. Sometimes it hits timeouts, sometimes the build fails, and occasionally only one language version gets generated. But without it, publishing daily posts in four languages would simply be impossible.
+I've been building and running this pipeline for the past few months. It's not perfect. Sometimes it hits a timeout. Sometimes the build fails. Some days only one language version gets generated and the rest never show up. But without it, publishing daily in four languages would just be impossible on my own.
 
 This series documents what I learned from that process. Part 1 covers the three core building blocks and how to wire them together from scratch: <strong>slash commands</strong>, <strong>hooks</strong>, and <strong>subagents</strong>.
 

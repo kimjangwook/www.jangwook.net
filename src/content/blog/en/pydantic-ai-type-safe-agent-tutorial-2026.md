@@ -313,7 +313,7 @@ class TestMyAgent:
         assert result.output.email == "t@t.com"
 ```
 
-## Multi-Provider Switching
+## Swapping Providers Without Touching the Agent
 
 One of PydanticAI's tangible strengths: swap providers by changing a model string, nothing else.
 
@@ -356,7 +356,7 @@ for name, model in providers.items():
 
 **What worked well**:
 - Type safety makes a real difference in practice. Change the `output_type` schema and the IDE flags every related error immediately
-- `@agent.tool` auto-generates JSON Schema from function signatures — no manual tool spec rewriting
+- `@agent.tool` auto-generates JSON Schema from function signatures, so there's no manual tool spec to rewrite
 - TestModel + FunctionModel combination enables complete unit testing without any API calls
 - `deps_type` makes dependency injection explicit, making mock swaps in tests clean
 

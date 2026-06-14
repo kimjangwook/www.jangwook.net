@@ -445,18 +445,18 @@ async def generate(req: GenerateRequest):
 ハードウェア別の推奨モデルをまとめる。
 
 **CPU専用（RAM 16GB以上）**
-- `llama3.2:3b` — 最速のCPU推論、15〜30秒程度
-- `phi3.5-mini` — 品質と速度のバランスが良い
-- `gemma4:e2b` — 小さいバリアント、3.1GB
+- `llama3.2:3b`：最速のCPU推論、15〜30秒程度
+- `phi3.5-mini`：品質と速度のバランスが良い
+- `gemma4:e2b`：小さいバリアント、3.1GB
 
 この環境ではストリーミングエンドポイントが特に重要だ。完全な応答が返るまでクライアントをブロックすると、UXが許容できないレベルになる。
 
 **NVIDIA GPU（VRAM 8GB）**
-- `llama3.2:8b`または`mistral:7b` — VRAMに完全に収まれば1〜3秒の応答
-- `qwen2.5-coder:7b` — コーディング特化、コード生成に有利
+- `llama3.2:8b`または`mistral:7b`：VRAMに完全に収まれば1〜3秒の応答
+- `qwen2.5-coder:7b`：コーディング特化、コード生成に有利
 
 **NVIDIA GPU（VRAM 24GB以上）**
-- `llama3.1:70b`（Q4量子化）— プロダクション品質
+- `llama3.1:70b`（Q4量子化）：プロダクション品質
 - VRAMに余裕があれば`--workers 4`以上に増やせる
 
 ## Bearer Token認証ミドルウェアの追加

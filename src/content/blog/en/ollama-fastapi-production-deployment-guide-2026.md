@@ -366,7 +366,7 @@ If you're on a CPU-only server, remove the `deploy.resources.reservations` block
 
 FastAPI sits between your clients and Ollama as a stable adapter. When you switch models or upgrade Ollama, client code stays unchanged. This is the primary reason to not expose Ollama directly.
 
-This approach differs from [wrapping local LLMs with FastMCP as an MCP server](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp). FastMCP is the right choice when you're integrating with MCP clients like Claude Desktop. FastAPI is the right choice for general HTTP clients — web apps, mobile, CLI tools. They're complementary, not competing.
+This approach differs from [wrapping local LLMs with FastMCP as an MCP server](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp). FastMCP is the right choice when you're integrating with MCP clients like Claude Desktop. FastAPI is the right choice for general HTTP clients like web apps, mobile, and CLI tools. They're complementary, not competing.
 
 ## Troubleshooting
 
@@ -403,18 +403,18 @@ The downside is a small latency overhead. In practice, FastAPI adds 2–5ms. Tha
 Based on my testing across different hardware configurations:
 
 **CPU-only (16GB+ RAM)**
-- `llama3.2:3b` — fastest CPU inference, 15–30 seconds typical
-- `phi3.5-mini` — good quality-to-speed balance
-- `gemma4:e2b` — small variant at 3.1GB
+- `llama3.2:3b`: fastest CPU inference, 15–30 seconds typical
+- `phi3.5-mini`: good quality-to-speed balance
+- `gemma4:e2b`: small variant at 3.1GB
 
 Streaming is especially important here. Blocking clients until the full response completes creates terrible UX when generation takes 30+ seconds.
 
 **NVIDIA GPU (8GB VRAM)**
-- `llama3.2:8b` or `mistral:7b` — fits fully in VRAM, 1–3 second responses
-- `qwen2.5-coder:7b` — coding-focused, good for code generation requests
+- `llama3.2:8b` or `mistral:7b`: fits fully in VRAM, 1–3 second responses
+- `qwen2.5-coder:7b`: coding-focused, good for code generation requests
 
 **NVIDIA GPU (24GB+ VRAM)**
-- `llama3.1:70b` (Q4 quantized) — production-quality responses
+- `llama3.1:70b` (Q4 quantized): production-quality responses
 - Bump `--workers` to 4+ when you have VRAM to spare
 
 ## Adding Bearer Token Authentication

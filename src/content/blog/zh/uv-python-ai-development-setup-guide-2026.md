@@ -69,7 +69,7 @@ uv sync（缓存命中，19个包）         →  0.074秒（29ms完成安装）
 
 - **macOS/Linux**：`curl`或Homebrew
 - **Windows**：PowerShell
-- 不需要预先安装Python——uv可以直接管理Python版本
+- 不需要预先安装Python。uv可以直接管理Python版本
 
 最后这点很重要。你不需要pyenv、conda或特定的系统Python版本。
 
@@ -255,7 +255,7 @@ uv run python -c "import anthropic; print(anthropic.__version__)"
 # 0.100.0
 ```
 
-如果你想进一步使用Vercel AI SDK实现Claude流式代理，项目搭建方式完全相同——用`uv add`添加所需SDK，用`uv run`执行入口文件。
+如果你想进一步使用Vercel AI SDK实现Claude流式代理，项目搭建方式完全相同。用`uv add`添加所需SDK，再用`uv run`执行入口文件。
 
 ## Step 5：Python版本管理
 
@@ -303,7 +303,7 @@ cd my-project
 uv sync
 ```
 
-今天的实测结果——删除`.venv`后执行`uv sync`：
+今天我把`.venv`整个删掉，再跑了一次`uv sync`，结果是这样：
 
 ```
 Using CPython 3.11.12
@@ -344,7 +344,7 @@ jobs:
         run: uv run pytest
 ```
 
-官方提供了`astral-sh/setup-uv` action，自动处理CI缓存。用Python构建MCP服务器时也可以直接套用这个CI模式——用`uv add fastmcp`添加依赖，在GitHub Actions中用`uv sync`安装。
+官方提供了`astral-sh/setup-uv` action，自动处理CI缓存。用Python构建MCP服务器时也可以直接套用这个CI模式。先用`uv add fastmcp`添加依赖，再在GitHub Actions中用`uv sync`安装。
 
 ## 用uv tool管理CLI工具
 
@@ -446,7 +446,7 @@ uv remove openai
 
 <strong>第一，生态系统成熟度。</strong>uv于2024年推出，截至今天已到v0.11，但仍是v0.x版本。对个人项目和新项目强烈推荐，但大型团队迁移现有Poetry或pip工作流时，需要考虑全团队的学习成本。
 
-<strong>第二，与conda生态系统的兼容性。</strong>如果需要从conda频道安装torch、CUDA工具包或tensorflow，uv帮不上忙——它只支持PyPI。如果你的AI项目只是调用API、跑跑文本生成或Agent框架，纯PyPI依赖就够了，这点完全不影响。但需要指定CUDA版本的深度学习项目，可能仍然离不开conda。
+<strong>第二，与conda生态系统的兼容性。</strong>如果需要从conda频道安装torch、CUDA工具包或tensorflow，uv帮不上忙，因为它只支持PyPI。如果你的AI项目只是调用API、跑跑文本生成或Agent框架，纯PyPI依赖就够了，这点完全不影响。但需要指定CUDA版本的深度学习项目，可能仍然离不开conda。
 
 <strong>第三，习惯`uv run`需要时间。</strong>把`python main.py`改成`uv run main.py`需要适应。好处是能防止团队成员忘记激活虚拟环境而用系统Python运行脚本的失误。
 

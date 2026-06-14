@@ -42,7 +42,7 @@ result = agent.run_sync('f-string和.format()哪个更快？', model=TestModel()
 print(result.output)  # → success (no tool calls)
 ```
 
-第一次看到这段代码不需要API密钥就能运行时，我略感惊讶。就像第一次使用FastAPI那样——结构如此直观，反而让人产生怀疑。PydanticAI就是这样一个库。
+第一次看到这段代码不需要API密钥就能运行时，我略感惊讶。那种感觉和第一次用FastAPI一样。结构太直观了，反而让人有点怀疑。PydanticAI就是这样一个库。
 
 坦白说，我最初的印象是"这不就是给Instructor加了个包装器吗？"实际使用后想法变了。这是一个以类型系统为核心的框架，把FastAPI带给Web API的那套哲学直接搬到了AI智能体上。今天分享的是我实际安装和运行后的结果，包括失败的测试。
 
@@ -310,7 +310,7 @@ class TestMyAgent:
         assert result.output.email == "t@t.com"
 ```
 
-## 多提供商切换
+## 多提供商切换：不动智能体代码
 
 不修改智能体代码，只换模型字符串即可切换提供商:
 

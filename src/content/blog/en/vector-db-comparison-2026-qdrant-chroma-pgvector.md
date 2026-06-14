@@ -84,7 +84,7 @@ The LangChain and LlamaIndex integrations for ChromaDB are the most mature among
 
 ### The Honest Limitations
 
-I've used ChromaDB in production once, and I wouldn't do it again past a certain scale. Past the tens-of-thousands mark, query performance starts feeling inconsistent. The HNSW index is there, but Qdrant's implementation is more tuned for high-volume workloads.
+I've spent enough time with ChromaDB to know I wouldn't push it past a certain scale. Past the tens-of-thousands mark, query performance starts feeling inconsistent. The HNSW index is there, but Qdrant's implementation is more tuned for high-volume workloads.
 
 More telling: when I look at what teams are actually running in production at scale, "ChromaDB in production" is rare. The community pattern of "Chroma for prototypes, Qdrant for production" shows up too often to dismiss. That doesn't mean ChromaDB is bad. It means it's a great starting point that runs into real ceiling concerns past a few hundred thousand vectors.
 

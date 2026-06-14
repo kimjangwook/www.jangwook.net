@@ -29,7 +29,7 @@ There's a moment that comes for everyone after they push an LLM agent to product
 
 Running AI agents in production makes it obvious fast how useless traditional APM tools are. Datadog and New Relic are great at HTTP latency and error rates, but they can't tell you "how much did the retrieval step degrade overall response quality in this RAG pipeline?" Or how response quality shifted when a prompt version changed.
 
-I compared Langfuse against Braintrust and LangSmith in the AI Agent Observability Production Guide. Self-hosting capability and open source licensing were Langfuse's clearest differentiators. This article goes past that comparison to actually building it locally.
+I compared Langfuse against Braintrust and LangSmith in the AI Agent Observability Production Guide, where self-hosting and the open source license came out as its clearest differentiators. The comparison ends there. From here on I'm actually standing the thing up locally.
 
 What Langfuse provides:
 
@@ -233,7 +233,7 @@ find . -name "*.py" -exec sed -i \
 
 ## Prompt Versioning and Datasets
 
-Where Langfuse goes beyond simple tracing: prompt versioning and dataset-based evaluation.
+Two features push Langfuse past plain tracing: prompt versioning and dataset-based evaluation.
 
 **Prompt versioning** lets you manage prompts outside your code repository:
 

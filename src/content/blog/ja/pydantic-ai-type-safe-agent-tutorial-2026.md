@@ -46,7 +46,7 @@ print(result.output)  # → success (no tool calls)
 
 正直、最初は「Instructorにラッパーかぶせただけじゃないの？」と思っていた。実際に使ってみて考えが変わった。FastAPIのように型システムを中心に設計されたフレームワークで、AIエージェントにその哲学をそのまま持ち込んだものだ。今日は直接インストールして動かした結果をまとめる。失敗したテストも含めて。
 
-## なぜPydanticAIなのか: 既存比較との違う視点
+## なぜPydanticAIなのか: 比較記事とは別の角度から
 
 以前の[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)でPydanticAI・Instructor・Smolagentsを扱った。あのポストが「何を選ぶか」を扱うなら、今回のポストは「PydanticAIで実際にどう作るか」だ。実装方法が目的だ。
 
@@ -302,7 +302,7 @@ class TestMyAgent:
         assert result.output.email == "t@t.com"
 ```
 
-## マルチプロバイダー切り替え
+## マルチプロバイダー切り替え: エージェントのコードに触れずに
 
 エージェントのコードを変えずにモデル文字列だけで別プロバイダーに切り替えられる:
 
