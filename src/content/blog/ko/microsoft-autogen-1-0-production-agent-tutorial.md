@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AutoGen 0.7.x 멀티에이전트 실전 — AssistantAgent·GraphFlow 처음부터 구현
 description: >-
   AutoGen 0.7.x의 새로운 API로 멀티에이전트 시스템을 처음부터 구현하는 실전 가이드. RoundRobinGroupChat,

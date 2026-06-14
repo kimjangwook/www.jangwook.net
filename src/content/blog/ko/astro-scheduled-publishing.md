@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '정적 블로그의 예약 공개 구현법: Astro + GitHub Actions로 자동화하기'
 description: >-
   Astro와 GitHub Pages를 사용한 정적 블로그에서 WordPress처럼 포스트 예약 공개를 구현하는 실전 가이드. pubDate

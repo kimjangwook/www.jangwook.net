@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'MCP vs A2A vs Open Responses — AI 에이전트 프로토콜 실전 비교'
 description: 'MCP, A2A, Open Responses 세 프로토콜의 설계 목적과 생태계를 비교합니다. 2026년 실전 에이전트 프로젝트에서 각 프로토콜의 사용 시점과 조합 방법, OpenAI·Google·Anthropic이 벌이는 에이전트 통신 표준 경쟁의 핵심을 정리했습니다.'
 pubDate: '2026-04-25'

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Code Best Practices: 개발 생산성을 극대화하는 AI 코딩 가이드'
 description: >-
   Anthropic 공식 Best Practices 문서를 분석해 실제 Astro 블로그에 적용한 결과를 공유합니다. CLAUDE.md

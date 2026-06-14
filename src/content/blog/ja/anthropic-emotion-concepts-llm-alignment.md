@@ -1,4 +1,5 @@
 ---
+draft: true
 title: LLMの中に感情がある — AnthropicがClaude内部で見つけた171個の感情表象
 description: >-
   Anthropic解釈可能性チームがClaude内部で171個の感情類似表象を発見し、それがモデル出力に因果的に影響を与えることを証明した。プロンプトエンジニアリングとAI安全への実践的示唆を整理する。

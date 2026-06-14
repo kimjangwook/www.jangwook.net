@@ -1,4 +1,5 @@
 ---
+draft: true
 title: mcp2cli — 用CLI按需发现工具，将MCP令牌成本削减96〜99%
 description: >-
   接入MCP服务器时，每轮对话都会注入全部工具schema——120个工具25轮对话将浪费362,000个token。mcp2cli通过CLI按需发现机制将这一成本削减96〜99%。本文解析其工作原理、实测数据与落地策略。

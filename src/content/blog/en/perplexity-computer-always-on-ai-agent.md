@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Perplexity Computer — The Rise of Always-On AI Agents
 description: >-
   Analyzing Perplexity Personal Computer and Enterprise. A 24/7 always-on AI

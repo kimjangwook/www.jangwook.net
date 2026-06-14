@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Found 22 CVEs in Firefox — AI Security Audits Arrive
 description: >-
   Anthropic Claude Opus 4.6 discovered 22 CVEs in Firefox in just two weeks. We

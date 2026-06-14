@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '에이전트 워싱 감별법: EM을 위한 7가지 체크리스트'
 description: >-
   수천 개 AI 에이전트 벤더 중 진짜는 130개뿐. Engineering Manager가 진짜 에이전틱 AI와 단순 자동화를 구별하는 7가지

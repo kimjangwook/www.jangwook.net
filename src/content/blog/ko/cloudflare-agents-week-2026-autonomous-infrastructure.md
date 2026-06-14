@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Cloudflare Agents Week 2026 분석 — AI 에이전트가 클라우드 인프라를 직접 프로비저닝한다'
 description: 'Cloudflare Agents Week 2026 전체 발표 심층 분석 — Sandboxes GA, Artifacts, Dynamic Workers, 에이전트가 직접 인프라를 자율 프로비저닝하는 기능까지. @cloudflare/agents SDK 로컬 실험 결과 포함.'
 pubDate: '2026-05-15'

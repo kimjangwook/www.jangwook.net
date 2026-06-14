@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'RTK(Rust Token Killer) 직접 써봤다 — LLM 토큰 비용 60〜90% 줄이는 CLI 프록시'
 description: >-
   RTK(Rust Token Killer)는 AI 코딩 에이전트의 Bash 명령어 출력을 LLM에 전송하기 전에 압축하는 CLI 프록시다. 실제 설치 후 find에서 90%, ls에서 50% 토큰 절감을 측정했다. 효과가 있는 경우와 없는 경우, Claude Code 통합 방법, 솔직한 한계까지 정리한다.

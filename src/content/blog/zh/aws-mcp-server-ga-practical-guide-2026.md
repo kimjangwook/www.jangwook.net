@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AWS MCP Server GA 实战指南 — 用CloudWatch与IAM让AI编程助手真正理解你的AWS环境'
 description: 'AWS MCP Server于2026年5月正式发布。实际测试了uvx一行同时接入CloudWatch 31个工具和IAM 29个工具到Claude Code的全过程。深入分析IAM条件键(aws:ViaAWSMCPService)权限分离架构，附真实AWS账号连接测试结果与客观评价，判断生产环境实用性。'
 pubDate: '2026-05-14'

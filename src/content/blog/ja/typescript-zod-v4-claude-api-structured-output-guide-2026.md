@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'TypeScript Zod v4 + Claude API 構造化出力ガイド — LLM応答の型安全パース'
 description: 'Zod v4のsafeParse()と変更されたスキーマAPIでClaude API応答を型安全にパースするパターンを実際に検証した。v3比の性能数値、z.string().check()新API、ネストスキーマ設計戦略をClaude API統合コードとともに整理する。'
 pubDate: '2026-06-02'

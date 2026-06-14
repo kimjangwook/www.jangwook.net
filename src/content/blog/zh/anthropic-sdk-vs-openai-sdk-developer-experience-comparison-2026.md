@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropic SDK vs OpenAI SDK 开发者体验对比 — 类型安全性、错误处理与流式模式实测'
 description: '在沙箱中同时安装anthropic 0.100.0和openai 2.36.0并深入比较。类型数量408 vs 230、错误类层级、流式实现、工具调用格式、SDK专有功能——全部从代码层面分析的实战比较指南。'
 pubDate: '2026-05-09'

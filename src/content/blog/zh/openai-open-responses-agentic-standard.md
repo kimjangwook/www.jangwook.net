@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenAI Open Responses——智能体AI工作流的通用标准正式登场
 description: OpenAI发布的Open Responses规范旨在标准化智能体AI工作流。本文深入分析其核心概念、支持生态以及EM/CTO视角下的落地策略。
 pubDate: '2026-03-12'

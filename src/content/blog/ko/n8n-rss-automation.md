@@ -1,4 +1,5 @@
 ---
+draft: true
 title: n8n과 RSS로 블로그 발행 자동화하기
 description: >-
   n8n + RSS + GitHub Actions를 연결하면 블로그 포스트 한 번 작성만으로 X와 LinkedIn에 자동으로 배포됩니다.

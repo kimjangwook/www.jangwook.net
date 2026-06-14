@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Context Engineering: The Core Skill Behind Production AI Agents'
 description: 'Why context engineering has become the defining skill for production AI agents in 2026 — 4 critical failure patterns and 5 core techniques, from an Engineering Manager perspective.'
 pubDate: '2026-03-11'

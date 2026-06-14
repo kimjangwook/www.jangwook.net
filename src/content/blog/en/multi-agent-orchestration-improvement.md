@@ -11,60 +11,36 @@ tags:
   - automation
   - orchestration
 relatedPosts:
+  - slug: claude-agent-teams-guide
+    score: 0.9
+    reason:
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
   - slug: effiflow-automation-analysis-part1
-    score: 0.95
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.95
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-code-execution-practical-implementation
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: prompt-engineering-agent-improvements
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-code-execution-mcp
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
 # Improving Blog Automation with Multi-Agent Orchestration
 
-## Overview
+## When the System Got Too Big to Touch
 
-Managing a large-scale blog automation system presents unique challenges. When your codebase includes 17 specialized agents, 6 slash commands, and 4 skills working together to automate content creation, SEO optimization, and analytics reporting, maintaining consistency and quality across all components becomes critical.
+My blog automation had grown to 17 specialized agents, 6 slash commands, and 4 skills. Each piece worked. Together, they were a mess I was afraid to edit, because changing one file might quietly break three others.
 
-This post chronicles a real-world multi-agent orchestration project that analyzed 48 files and resolved 61 issues in a production blog automation system. The project leveraged Claude Code's multi-agent pattern to systematically improve documentation quality from 78 to 92 points while achieving 60-70% token cost savings. For a structured overview of the five core agentic workflow patterns in Claude Code, see [Claude Code Agentic Workflow Patterns: 5 Types](/en/blog/en/claude-code-agentic-workflow-patterns-5-types).
+So I stopped patching things by hand. Instead, I pointed Claude Code's multi-agent pattern at the whole thing: 48 files, analyzed in one pass, with 61 issues coming out the other end. Documentation quality went from 78 to 92, and token costs dropped 60-70%. This post is the record of how that went. For a structured overview of the five core agentic workflow patterns in Claude Code, see Claude Code Agentic Workflow Patterns: 5 Types.
 
 <strong>Key Achievements</strong>:
 - 48 files analyzed across 4 domains
@@ -75,7 +51,7 @@ This post chronicles a real-world multi-agent orchestration project that analyze
 
 ## The Multi-Agent Orchestration Pattern
 
-Traditional approaches to system improvements often involve a single developer or AI assistant tackling all aspects of a project. However, large-scale systems benefit from specialized expertise distributed across multiple agents.
+The usual move is to have one developer, or one AI assistant, take on the whole job. That falls apart at scale. Big systems do better when the expertise is split up, with each agent owning a narrow slice.
 
 ### Architecture Overview
 
@@ -112,7 +88,7 @@ The orchestrator agent coordinates specialized sub-agents, each focusing on spec
 
 ### Initial Assessment
 
-The improvement process began with a comprehensive audit of the blog automation system. The research phase involved:
+Before changing anything, I wanted a full picture. The audit covered the entire automation system:
 
 <strong>Scope</strong>:
 - 48 files analyzed
@@ -776,9 +752,9 @@ watch -n 60 'npm run build && echo "Build time: $(date)"'
 3. <strong>Consistency Counts</strong>: Standardization enables automation
 4. <strong>Feedback Loops</strong>: Review → Fix → Review cycles improve output
 
-## Conclusion
+## What I'd Tell Myself Before Starting
 
-Large-scale system improvements don't happen in a single pass. The multi-agent orchestration pattern demonstrated here—analyzing 48 files, identifying 61 issues, and systematically resolving them through iterative feedback—proves that structured approaches deliver measurable results. For parallel execution with Git Worktree, [Claude Code Parallel Sessions and Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) covers the setup in detail.
+Large-scale cleanups don't finish in a single pass. The pattern here (analyze 48 files, surface 61 issues, then grind through them with iterative feedback) is not glamorous, but it produced numbers I could point to. That's the whole argument for doing it this way. For parallel execution with Git Worktree, [Claude Code Parallel Sessions and Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) covers the setup in detail.
 
 <strong>Final Statistics</strong>:
 - 17 files improved across 4 domains
@@ -791,7 +767,7 @@ The key insight: <strong>Specialization + Coordination + Iteration = Excellence<
 
 Whether you're managing a blog automation system, building a multi-agent AI platform, or maintaining any large-scale codebase, these patterns apply. Start with thorough analysis, assign specialized agents to specific domains, iterate through feedback cycles, and measure your improvements quantitatively.
 
-The future of software development isn't about replacing humans with AI—it's about orchestrating specialized AI agents to handle the tedious, error-prone work while humans focus on strategy, creativity, and quality control.
+This was never about replacing the human in the loop. It's about handing the tedious, error-prone parts to specialized agents so I can spend my attention on strategy, creativity, and the calls only a person should make.
 
 <strong>What's Next?</strong>
 
@@ -802,7 +778,7 @@ Apply this pattern to your own projects:
 4. Iterate until quality targets met
 5. Measure and share your results
 
-The tools are available. The patterns are proven. The only question is: when will you start? For research on how multi-agent systems scale and where their limits lie, [Google Agent Scaling Science: Multi-Agent Limits](/en/blog/en/google-agent-scaling-science-multiagent-limits) is worth reading alongside this post.
+The tools are available. The patterns are proven. The only question is: when will you start? For research on how multi-agent systems scale and where their limits lie, Google Agent Scaling Science: Multi-Agent Limits is worth reading alongside this post.
 
 ---
 

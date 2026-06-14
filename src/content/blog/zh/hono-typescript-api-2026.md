@@ -1,49 +1,49 @@
 ---
-title: '用 Hono.js + TypeScript 构建边缘 REST API — Cloudflare Workers 实战指南'
-description: '我用 Hono v4、Bun 1.3 和 Zod v4 实际构建了一个类型安全的 REST API。本文涵盖路由定义、Zod 输入验证、CORS/日志/计时中间件，以及 Cloudflare Workers 部署配置——包含真实终端日志和分步骤代码示例。'
+title: 用 Hono.js + TypeScript 构建边缘 REST API — Cloudflare Workers 实战指南
+description: >-
+  我用 Hono v4、Bun 1.3 和 Zod v4 实际构建了一个类型安全的 REST API。本文涵盖路由定义、Zod
+  输入验证、CORS/日志/计时中间件，以及 Cloudflare Workers 部署配置——包含真实终端日志和分步骤代码示例。
 pubDate: '2026-06-03'
-heroImage: '../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-hero.png'
-tags: ['Hono', 'TypeScript', 'REST API', 'Cloudflare Workers']
+heroImage: >-
+  ../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-hero.png
+tags:
+  - Hono
+  - TypeScript
+  - REST API
+  - Cloudflare Workers
 relatedPosts:
-  - slug: 'bun-shell-scripting-practical-guide-2026'
-    score: 0.87
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.9
     reason:
-      ko: 'Bun Shell로 자동화 스크립트를 이미 다뤘다면, 같은 Bun 런타임 위에서 Hono로 HTTP API 서버를 올리는 과정이 자연스러운 다음 단계다.'
-      ja: 'Bun Shellで自動化スクリプトを書いたなら、同じBunランタイム上でHonoのHTTP APIサーバーを立てるのが自然な次のステップだ。'
-      en: 'If you already know Bun Shell scripting, running a Hono HTTP API on the same Bun runtime is the natural next step — same ecosystem, different use case.'
-      zh: '如果你已经熟悉Bun Shell脚本，在同一Bun运行时上用Hono搭建HTTP API服务器是顺理成章的下一步。'
-  - slug: 'typescript-zod-v4-claude-api-structured-output-guide-2026'
-    score: 0.83
+      ko: TypeScript 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into TypeScript.
+      ja: TypeScriptをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 TypeScript 主题。
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.85
     reason:
-      ko: 'Hono에서 @hono/zod-validator로 입력을 검증할 때 Zod v4의 변경된 스키마 API를 그대로 사용한다.'
-      ja: 'HonoでZodバリデーションを使う際、Zod v4のスキーマAPIをそのまま活用できる。'
-      en: 'When you use @hono/zod-validator in Hono, you are directly using Zod v4 schema APIs.'
-      zh: '在Hono中使用@hono/zod-validator时，直接用到Zod v4的schema API。两篇文章结合阅读，能清楚看到Zod v4的变更在哪里实际影响你的代码。'
-  - slug: 'ollama-fastapi-production-deployment-guide-2026'
-    score: 0.74
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.8
     reason:
-      ko: 'Python 생태계에서 FastAPI가 하는 역할을 JavaScript/TypeScript 생태계에서 Hono가 담당한다.'
-      ja: 'PythonエコシステムでFastAPIが担う役割を、JavaScript/TypeScriptエコシステムではHonoが担う。'
-      en: 'Hono does for TypeScript what FastAPI does for Python — a lightweight, fast framework for HTTP APIs.'
-      zh: 'Hono在TypeScript生态中扮演的角色，正如FastAPI在Python生态中的地位。对比这两个框架，能清楚看到边缘计算趋势如何跨越语言边界蔓延。'
-  - slug: 'uv-python-ai-development-setup-guide-2026'
-    score: 0.68
-    reason:
-      ko: 'uv가 Python 프로젝트 부트스트랩을 빠르게 만든 것처럼, Bun + Hono도 TypeScript API 서버의 시작 시간을 극적으로 줄인다.'
-      ja: 'uvがPythonプロジェクトの起動を速くしたように、Bun+HonoもTypeScript APIサーバーの立ち上がりを劇的に短縮する。'
-      en: 'Just as uv dramatically speeds up Python project bootstrapping, Bun + Hono does the same for TypeScript API servers.'
-      zh: '就像uv大幅加速Python项目的启动一样，Bun+Hono也极大缩短了TypeScript API服务器的启动时间。两篇文章都讲的是开发工具的速度革命。'
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
-用 Express 写过 REST API 的人，大概都有过这种感受：中间件注册、类型定义、body parser 配置、Joi 或 Zod 的接入……结构本身并不复杂，但样板代码多得烦人。第一次看到 Hono 时，我是持怀疑态度的——"又一个 Express 克隆吧"。直到真正用过之后，才改变了看法。
+用 Express 写过 REST API 的人，大概都有过这种感受：中间件注册、类型定义、body parser 配置、Joi 或 Zod 的接入……结构本身并不复杂，但样板代码多得烦人。第一次看到 Hono 时，我是持怀疑态度的，心想"又一个 Express 克隆吧"。直到真正用过之后，才改变了看法。
 
 结论先说：Hono v4 不只是轻量和快速。TypeScript 类型推断能自然地流传到路由处理器；Zod 验证通过一个官方包就能接入；在 Bun 上运行时，响应速度对比 Express 有明显差距。本文内容来自我 2026 年 6 月在沙箱中实际运行的结果。
 
-## 为什么选 Hono — 对比 Express 和 Fastify
+## 为什么选 Hono: 对比 Express 和 Fastify
 
 要理解 Hono 的定位，需要回答三个问题。
 
-**包体积**：Hono v4 核心约 12KB，Express 是 58KB，Fastify 是 77KB。数字差距看起来不大，但在 Cloudflare Workers 或 Deno Deploy 这类边缘环境中，包体积直接影响冷启动时间。边缘函数有时每个请求都会初始化新的运行时——越小，首次响应越快。
+**包体积**：Hono v4 核心约 12KB，Express 是 58KB，Fastify 是 77KB。数字差距看起来不大，但在 Cloudflare Workers 或 Deno Deploy 这类边缘环境中，包体积直接影响冷启动时间。边缘函数有时每个请求都会初始化新的运行时，所以越小，首次响应越快。
 
 **运行时兼容性**：Express 只支持 Node.js。Fastify 也基本以 Node.js 为主要目标。而 Hono 从设计之初就把"到处都能运行"作为目标。同一份代码可以部署到 Bun、Deno、Cloudflare Workers、Node.js 和 AWS Lambda Edge。
 
@@ -51,7 +51,7 @@ relatedPosts:
 
 我并不是说 Hono 适合所有场景。如果团队已经深度使用 Express，或者需要成熟的插件生态，没有充分理由去切换。但如果目标是边缘部署，或者想从一开始就保证类型安全，Hono 是目前 TypeScript API 框架中最有说服力的选择。
 
-## 安装与第一个服务器 — 30 秒内收到响应
+## 安装与第一个服务器: 30 秒内收到响应
 
 我在沙箱里从零开始。Bun 1.3.14 环境。
 
@@ -99,9 +99,9 @@ curl http://localhost:3000/
 # {"message":"Hello from Hono!"}
 ```
 
-`export default app` 这一行，同时被 Bun、Deno 和 Cloudflare Workers 识别为入口点。在 Node.js 中只需添加 `serve(app)` 即可。不需要针对不同运行时写分支代码——这是体感上最大的改善。
+`export default app` 这一行，同时被 Bun、Deno 和 Cloudflare Workers 识别为入口点。在 Node.js 中只需添加 `serve(app)` 即可。不需要针对不同运行时写分支代码，这是体感上最大的改善。
 
-## 中间件栈 — logger、CORS、timing
+## 中间件栈: logger、CORS、timing
 
 ![Hono 中间件栈架构图](../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-arch.png)
 
@@ -142,7 +142,7 @@ app.use('*', cors({
 
 `cors()` 的默认行为是允许所有来源。生产环境中必须明确指定 `origin`。
 
-## Zod 输入验证 — 自动返回 400 错误
+## Zod 输入验证: 自动返回 400 错误
 
 `@hono/zod-validator` 是 Hono 的官方 Zod 集成包。作为中间件挂载到路由上后，Zod schema 验证失败时会自动返回 400 响应。
 
@@ -186,9 +186,9 @@ curl -X POST http://localhost:3000/tasks \
 
 HTTP 400 自动返回，处理器内部不需要写验证代码。
 
-`c.req.valid('json')` 是关键。返回的数据已经经过 Zod 验证并且是完全类型化的。如果你用过 [Zod v4 和 Claude API 结构化输出的组合](/zh/blog/zh/typescript-zod-v4-claude-api-structured-output-guide-2026)，v4 的 schema API 变更在这里同样适用——`@hono/zod-validator` 同时支持 v3 和 v4。
+`c.req.valid('json')` 是关键。返回的数据已经经过 Zod 验证并且是完全类型化的。如果你用过 Zod v4 和 Claude API 结构化输出的组合，v4 的 schema API 变更在这里同样适用。好在 `@hono/zod-validator` 同时支持 v3 和 v4，版本问题基本不用操心。
 
-## 完整 CRUD 实现 — 附实际执行日志
+## 完整 CRUD 实现: 附实际执行日志
 
 下面是完整的 Task CRUD API，包含实际运行的终端输出。用了内存存储（生产环境中替换为 D1、Prisma 或 Drizzle）。
 
@@ -304,7 +304,7 @@ Started development server: http://localhost:3000
 
 性能数据：首次请求 4ms，热状态下亚毫秒（日志显示 0ms）。同一台机器上运行 Express 时，热状态也需要 1〜2ms。在真实的生产边缘环境中，差距可能更大。
 
-## 部署到 Cloudflare Workers — 几乎不改代码
+## 部署到 Cloudflare Workers: 几乎不改代码
 
 Hono 的最大优势之一：换部署目标，代码几乎不用改。
 
@@ -363,9 +363,9 @@ wrangler deploy
 
 我没有验证 `wrangler deploy`——这需要真实的 Cloudflare 账户来配置绑定。但代码结构如上所示，与本地 Bun 服务器唯一的区别是如何访问 `c.env.DB` 这类绑定。
 
-查看 [Cloudflare Workers 智能体基础设施](/zh/blog/zh/cloudflare-agents-week-2026-autonomous-infrastructure)，可以看到 Hono 已经在 Cloudflare 生态中作为 AI 智能体的 API 层被广泛使用。
+查看 Cloudflare Workers 智能体基础设施，可以看到 Hono 已经在 Cloudflare 生态中作为 AI 智能体的 API 层被广泛使用。
 
-## 类型安全的中间件 — Variables 的用法
+## 类型安全的中间件: Variables 的用法
 
 Express 中要对 `req.user` 实现类型安全，需要扩展接口。Hono 用 `Variables` 泛型处理得更干净。
 
@@ -402,7 +402,7 @@ app.get('/tasks', (c) => {
 
 实际用下来，也有值得说的限制。
 
-**生态系统深度**：Fastify 的插件生态经过充分验证。`fastify-swagger` 可以自动生成 OpenAPI 规范，`fastify-multipart` 处理文件上传——这些都是经过验证和维护的插件。Hono 的第三方生态目前较薄。官方中间件覆盖了大部分基础需求，但遇到特殊需求时，可能需要自己实现。
+**生态系统深度**：Fastify 的插件生态经过充分验证。`fastify-swagger` 可以自动生成 OpenAPI 规范，`fastify-multipart` 处理文件上传，这些都是经过验证和维护的插件。Hono 的第三方生态目前较薄。官方中间件覆盖了大部分基础需求，但遇到特殊需求时，可能需要自己实现。
 
 **D1 本地开发体验**：在本地测试 Cloudflare D1 需要 `wrangler dev`，而这又需要真实的 Cloudflare 账户来配置绑定。基于 SQLite 兼容性，Drizzle 和 Prisma 都可以使用，但本地开发环境的搭建比 Express + PostgreSQL 的组合要复杂。
 
@@ -465,7 +465,7 @@ api.post('/users', ...)
 app.route('/api/v1', api)
 ```
 
-## 总结 — 跑完之后留下的笔记
+## 总结: 跑完之后留下的笔记
 
 这篇文章从 `bun add hono @hono/zod-validator zod` 这一行开始，到实际跑通完整 CRUD API 结束。内存存储有局限，但路由、中间件和 Zod 验证的配合方式已经验证清楚了。
 

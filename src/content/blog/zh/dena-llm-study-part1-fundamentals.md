@@ -10,54 +10,40 @@ tags:
   - ai
   - prompt-engineering
 relatedPosts:
-  - slug: 45-day-analytics-report-2025-11
-    score: 0.95
+  - slug: dena-llm-study-part4-rag
+    score: 0.9
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: figma-mcp-web-components-sync
-    score: 0.95
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: dena-llm-study-part3-model-training
+    score: 0.85
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: gcloud-mcp-infrastructure-audit
-    score: 0.95
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: individual-developer-ai-saas-journey
+    score: 0.8
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: three-week-analytics-2025-11-04
-    score: 0.95
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: llm-blog-automation
-    score: 0.94
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
+      ko: 같은 AI 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same AI track.
+      ja: 同じAIの流れで併せて読むと役立ちます。
+      zh: 在同一 AI 脉络中可一并阅读。
 ---
 
 > <strong>系列: DeNA LLM 学习</strong> (1/5)
 >
 > 1. <strong>[Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)</strong> ← 当前文章
-> 2. [Part 2: 结构化输出与多LLM管道](/zh/blog/zh/dena-llm-study-part2-structured-output)
+> 2. Part 2: 结构化输出与多LLM管道
 > 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training)
 > 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)
 > 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
 
-## DeNA LLM 学习开篇
+## GPT、Claude、Gemini交织的2025年AI格局
 
-2025年，AI技术的发展速度超乎想象。基于DeNA进行的LLM学习资料，我们将通过5期内容，从最新LLM技术的基础到实战应用进行全面整理。本期Part 1将探讨LLM的基本原理和2025年当前的AI生态系统。
+一年前的LLM版图，和今天已经完全是两回事。整理DeNA内部学习资料时，我又一次有了这种感受。这个系列以那份资料为底子，分五期把LLM从基础原理一路讲到实战应用。第一期，也就是这篇，先从LLM到底是怎么运作的讲起，再看看截至2025年底主要模型各自站在什么位置。
 
 > <strong>资料来源</strong>: 本文基于[DeNA 内部学习资料](https://dena.github.io/llm-study20251201/)编写。
 
@@ -65,7 +51,7 @@ relatedPosts:
 
 ### 性能比较: GPT-4 vs Claude vs Gemini
 
-截至2025年，三大主要LLM主导市场:
+2025年的市场由三大家族主导。把各家的旗舰阵容摆在一起对比，大致是这样。
 
 ```markdown
 | 模型                                     | 开发商    | 特点       | 优势                       |
@@ -184,7 +170,7 @@ def predict_next_token(context: str, model: LLM) -> str:
 
 ### 最新研究趋势: Mixture of Experts (MoE)
 
-从2024年开始，大型模型采用MoE架构:
+进入2024年后，多数大型模型都转向了MoE架构。它的思路其实很简单。
 
 ```mermaid
 graph TD
@@ -257,7 +243,7 @@ graph TD
 
 ### o1、o3与DeepSeek-R1的发展
 
-OpenAI在2024年9月发布o1推理模型后，2024年12月又公开了o3模型。同时，DeepSeek发布了开源推理模型DeepSeek-R1:
+OpenAI在2024年9月发布了o1推理模型。2024年12月，o3模型紧随其后。紧接着，DeepSeek又把局面搅动了一次，开源了推理模型DeepSeek-R1。
 
 ```mermaid
 graph TD
@@ -287,7 +273,7 @@ graph TD
 
 ### Chain of Thought (CoT) 提示
 
-通用模型使用CoT也能提升推理能力:
+哪怕不是推理专用模型，只要加上一句CoT，准确率也会明显上一个台阶。
 
 ```markdown
 # ❌ 普通提示
@@ -509,7 +495,7 @@ Part 2将涵盖<strong>结构化输出与多LLM管道</strong>:
 - 使用Pydantic实现类型安全
 - 练习 B: 构建复杂的数据提取系统
 
-> <strong>下一篇文章</strong>: [Part 2: 结构化输出与多LLM管道](/zh/blog/zh/dena-llm-study-part2-structured-output)
+> <strong>下一篇文章</strong>: Part 2: 结构化输出与多LLM管道
 
 ## 参考资料
 

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 利用LLM提升项目经理工作效率：AI让生产力提升3倍
 description: 介绍如何利用ChatGPT、Claude、Gemini等最新LLM工具自动化项目管理工作并最大化生产力的实战指南，从日常业务自动化到ROI测量的分步说明。
 pubDate: '2025-11-01'

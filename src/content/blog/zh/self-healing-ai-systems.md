@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 自我修复AI系统：构建无需人工干预、自动修复Bug的智能代理
 description: GitHub、Google、Netflix实战部署的自我修复系统完全指南。从错误检测到自动补丁，使用LangGraph完整实现
 pubDate: '2025-10-17'

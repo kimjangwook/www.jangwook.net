@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'LLM을 활용한 프로젝트 매니저 업무 효율화: AI로 생산성 3배 높이기'
 description: >-
   ChatGPT, Claude, Gemini 등 최신 LLM 도구를 활용하여 프로젝트 관리 업무를 자동화하고 생산성을 극대화하는 실전 가이드를

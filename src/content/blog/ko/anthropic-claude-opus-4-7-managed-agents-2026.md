@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropic 4월 쌍둥이 출시 — Opus 4.7과 Managed Agents의 에이전트 비용 충격'
 description: 'Claude Opus 4.7(4월 16일)과 Managed Agents 베타(4월 8일)가 같은 달 출시됐다. 역대급 벤치마크 뒤에 숨겨진 토큰나이저 비용 충격, task_budget 설계 원리, 세션당 $0.08 에이전트 모델의 실제 의미를 EM 시각에서 깊이 분석한다.'
 pubDate: '2026-05-01'

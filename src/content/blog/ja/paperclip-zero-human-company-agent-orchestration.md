@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Paperclip — AIエージェントを社員のように管理するオープンソースプラットフォームをインストールしてみた
 description: >-
   AIエージェントを社員として管理するオープンソースプラットフォームPaperclipを実際にインストールした。Linearスタイルのダッシュボード、Org

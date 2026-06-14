@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '2026年如何打造精英AI工程组织：为何3人团队能胜过50人'
 description: '对登上Hacker News榜首的精英AI工程文化深度分析。解读人均营收$3.48M vs $610K五倍差距背后的原因，以及每位EM都应实践的Taste × Discipline × Leverage公式'
 pubDate: '2026-03-07'

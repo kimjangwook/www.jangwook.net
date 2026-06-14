@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '亲测RTK(Rust Token Killer) — 削减LLM Token成本60〜90%的CLI代理'
 description: >-
   RTK(Rust Token Killer)是一个在Bash命令输出发送给LLM之前进行压缩的CLI代理。实际安装后，在find命令上测量到90%的削减，ls命令上50%。本文整理了哪些场景有效、哪些无效、如何集成Claude Code，以及诚实的局限性。

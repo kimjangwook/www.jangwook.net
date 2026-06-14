@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'GLM-5：MIT开源前沿模型的企业AI采纳战略重塑'
 description: '智谱AI发布的GLM-5是744B MoE开源模型，仅用华为昇腾芯片训练，MIT许可证完全商用自由。从EM/CTO视角解析企业AI采纳战略。'
 pubDate: '2026-03-14'

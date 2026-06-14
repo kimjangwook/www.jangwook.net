@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Cowork Enterprise Launch: From Dev Tool to Platform'
 description: >-
   Analysis of Anthropic Claude Cowork enterprise features. Plugin Marketplace,

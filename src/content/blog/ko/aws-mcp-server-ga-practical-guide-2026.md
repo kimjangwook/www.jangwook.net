@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AWS MCP Server GA 실전 가이드 — CloudWatch·IAM 에이전트 연동 완전 분석'
 description: 'AWS MCP Server가 2026년 5월 정식 출시됐다. uvx 한 줄로 CloudWatch 31개 도구와 IAM 29개 도구를 Claude Code에 연결한 실전 설치기. IAM 조건 키 기반 에이전트 권한 분리 아키텍처와 실제 AWS 계정 테스트 결과, 솔직한 평가까지.'
 pubDate: '2026-05-14'

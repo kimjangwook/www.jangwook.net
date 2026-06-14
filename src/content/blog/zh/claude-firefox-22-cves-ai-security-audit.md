@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude在Firefox中发现22个CVE——AI安全审计新范式
 description: >-
   深入分析Anthropic Claude Opus

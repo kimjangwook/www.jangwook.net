@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'How to Detect Agent Washing: A 7-Point EM Checklist'
 description: >-
   ~130 of thousands of AI agent vendors build truly agentic systems. Use this EM

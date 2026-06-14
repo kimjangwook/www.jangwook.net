@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Anthropic and OpenAI Filed for IPO in the Same Month — What the Token Price War Means for Developers"
 description: "In June 2026, Anthropic (6/1) and OpenAI (6/8) each submitted confidential S-1 filings to the SEC. Here's what the simultaneous IPO race means for API pricing, and how to position yourself as a developer before and after they go public."
 pubDate: '2026-06-13'

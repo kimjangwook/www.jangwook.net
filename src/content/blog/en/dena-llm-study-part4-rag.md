@@ -13,56 +13,42 @@ tags:
   - dena
   - embedding
 relatedPosts:
-  - slug: 45-day-analytics-report-2025-11
-    score: 0.95
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
   - slug: dena-llm-study-part1-fundamentals
-    score: 0.95
+    score: 0.9
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: figma-mcp-web-components-sync
-    score: 0.95
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: dena-llm-study-part5-agent-design
+    score: 0.85
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: gcloud-mcp-infrastructure-audit
-    score: 0.95
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: dena-llm-study-part3-model-training
+    score: 0.8
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: three-week-analytics-2025-11-04
-    score: 0.95
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>Series: DeNA LLM Study</strong> (4/5)
 >
 > 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: Structured Output and Multi-LLM Pipelines](/en/blog/en/dena-llm-study-part2-structured-output)
+> 2. Part 2: Structured Output and Multi-LLM Pipelines
 > 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training)
 > 4. <strong>Part 4: RAG Architecture and Latest Trends</strong> ← Current Article
 > 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design)
 
-## Overview
+## RAG Is Really a Search Engineering Problem
 
-DeNA's LLM Study Series Part 4 covers RAG (Retrieval-Augmented Generation) from core concepts to the latest trends. We've learned how to design systems that effectively leverage external knowledge beyond simple prompt engineering.
+Part 4 of the study was about RAG (Retrieval-Augmented Generation). I went in thinking of it as "just bolt a few documents onto the prompt." The materials changed my mind fast. Retrieval quality is answer quality, and how you design that retrieval is basically the whole game.
 
-This article organizes the complete RAG architecture, hybrid search strategies, reranking techniques, and cutting-edge developments like GraphRAG and Agentic RAG based on DeNA's study materials.
+What follows is what we covered that day: the full RAG architecture, hybrid search, reranking, and the more recent directions like GraphRAG and Agentic RAG. DeNA's study materials are the backbone here, but I've folded in a few things I noticed once I started getting my hands dirty.
 
 ## Context Engineering: LLM as Interface
 
@@ -812,9 +798,9 @@ def sanitize_response(response):
     return response
 ```
 
-## Reflections and Next Steps
+## Why I See RAG Differently Now
 
-Through DeNA's LLM Study Part 4, I've gained a deep understanding that RAG is not simply "retrieve and generate," but an engineering domain requiring sophisticated system design.
+The biggest shift was in how I frame the problem. "Retrieve and generate" is too tidy a summary. Each retrieval step turned out to be its own small engineering problem, and the sum of those choices is what made or broke the system.
 
 ### Key Insights
 
@@ -826,7 +812,7 @@ Through DeNA's LLM Study Part 4, I've gained a deep understanding that RAG is no
 
 ### Practical Application Plans
 
-Based on this learning, I'm planning the following improvements:
+Here's what I want to fix in the system I'm running right now, based on what I picked up:
 
 1. <strong>Introduce Hybrid Search</strong>
    - Currently using Dense vectors only → Add BM25

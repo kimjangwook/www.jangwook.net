@@ -12,64 +12,40 @@ tags:
   - n8n
   - langgraph
 relatedPosts:
-  - slug: anthropic-code-execution-mcp
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: bigquery-mcp-prefix-filtering
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-code-execution-practical-implementation
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: multi-agent-orchestration-improvement
-    score: 0.95
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: multi-agent 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into multi-agent.
+      ja: multi-agentをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 multi-agent 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
+    reason:
+      ko: dena를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on dena experience.
+      ja: denaを実際に扱った経験が続く記事です。
+      zh: 延续 dena 的实战经验。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.8
+    reason:
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>系列: DeNA LLM 研究</strong> (5/5 - 最终篇)
 >
 > 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: 结构化输出与多LLM管道](/zh/blog/zh/dena-llm-study-part2-structured-output)
+> 2. Part 2: 结构化输出与多LLM管道
 > 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training)
 > 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)
 > 5. <strong>Part 5: 智能体设计与多智能体编排</strong> ← 当前文章
 
-## 概述
+## 从自主智能体走向编排
 
-这是 DeNA LLM 研究系列的最终篇。Part 5 涵盖利用 LLM 的<strong>智能体设计</strong>和<strong>多智能体编排</strong>。超越简单的提示工程，探索如何构建自主运行的智能体系统，以及在生产环境中需要考虑的成本、性能和可靠性问题。
+这是本系列的最终篇。用一行提示词驱动 LLM 的阶段已经过去了。这一篇要谈的是：怎样设计能自己做判断、自己调用工具的智能体，以及怎样把好几个智能体串起来一起跑。不过，一味追求自主性，成本会失控，行为也会脱缰。所以接下来也会一并梳理在生产环境里真正会撞上的成本、性能和可靠性问题。
 
 ### Part 5 主要话题
 
@@ -80,7 +56,7 @@ relatedPosts:
 5. <strong>生产案例研究</strong> - DeNA NOC Alert Agent
 6. <strong>成本和性能优化</strong> - 语义缓存、批处理、SLM 应用
 
-本文基于 DeNA 官方研究资料，结合最新研究成果和生产案例进行综合整理。
+底子是 DeNA 的官方研究资料，我在上面叠加了最新研究和几个生产案例。
 
 ## 1. 利用 n8n 的 LLM 工作流
 
@@ -751,7 +727,7 @@ async function optimizedQuery(query: string): Promise<string> {
 
 ## 关键见解与思考
 
-完成 DeNA LLM 研究 Part 5 获得的核心见解。
+做完 Part 5 之后，留在脑子里的几点，记在这里。
 
 ### 1. "编排"优于"完全自主"
 
@@ -782,7 +758,7 @@ LLM 是概率系统。100% 准确的响应是不可能的。
 
 ## 系列回顾
 
-我们完成了 DeNA LLM 研究 Part 1〜5。回顾整个学习旅程。
+五篇到这里就全部写完了。整段路程，值得回头看一眼。
 
 ### 整个系列的见解
 

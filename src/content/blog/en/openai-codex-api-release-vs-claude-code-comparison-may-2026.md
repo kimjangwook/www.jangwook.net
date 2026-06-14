@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenAI Codex Cloud Agent vs Claude Code — May 2026 Comparison
 description: >-
   OpenAI Codex became cloud-agent-only in April 2026. Architecture, benchmarks,

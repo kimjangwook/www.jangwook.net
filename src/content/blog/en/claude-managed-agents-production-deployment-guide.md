@@ -1,4 +1,5 @@
 ---
+draft: true
 title: I Tried Claude Managed Agents — Deploy AI Agents in 30 Minutes
 description: >-
   An honest review of Anthropic's Claude Managed Agents, launched in public beta

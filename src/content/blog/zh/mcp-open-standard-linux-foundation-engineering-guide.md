@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP正式成为开放标准——Linux Foundation与工程团队落地路线图
 description: >-
   Anthropic将MCP捐赠给Linux

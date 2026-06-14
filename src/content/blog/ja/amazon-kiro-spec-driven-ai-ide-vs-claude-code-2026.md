@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Amazon Kiro 実戦分析 — スペック駆動AI IDEはClaude Codeを代替できるか'
 description: 'AWSが作ったスペック駆動AI IDE Kiroを公式ドキュメントとコミュニティレビューで徹底分析。EARS記法による要件生成、Agent Hooks、Steering Filesの実際の価値と、Claude Codeとの決定的な違いを正直にまとめた。'
 pubDate: '2026-06-05'

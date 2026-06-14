@@ -11,60 +11,29 @@ tags:
   - Subagents
   - Workflow
 relatedPosts:
-  - slug: claude-agent-teams-guide
-    score: 0.95
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-cli-migration-guide
-    score: 0.95
+      ko: 자동화 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into 자동화.
+      ja: 자동화をもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 자동화 主题。
+  - slug: claude-code-parallel-sessions-git-worktree
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effiflow-automation-analysis-part3
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: github-agentic-workflows-cicd-ai
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: jira-ai-agents-mcp-engineering-management
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: claudecode를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claudecode experience.
+      ja: claudecodeを実際に扱った経験が続く記事です。
+      zh: 延续 claudecode 的实战经验。
 ---
 
 The post you're reading right now was created by a launchd job that fired at 11:30 AM, woke up Claude Code, ran the `/daily-tech-blog` slash command, and had subagents split the research and translation work.
 
-I've been building and running this automation pipeline for the past few months. It's not perfect — sometimes it hits timeouts, sometimes the build fails, and occasionally only one language version gets generated. But without it, publishing daily posts in four languages would simply be impossible.
+I've been building and running this automation pipeline for the past few months. It's not perfect. Sometimes it hits timeouts, sometimes the build fails, and occasionally only one language version gets generated. But without it, publishing daily posts in four languages would simply be impossible.
 
-This series documents what I learned from that process. In part 1, I'll cover the three core building blocks: <strong>slash commands</strong>, <strong>hooks</strong>, and <strong>subagents</strong> — and how to wire them together from scratch.
+This series documents what I learned from that process. Part 1 covers the three core building blocks and how to wire them together from scratch: <strong>slash commands</strong>, <strong>hooks</strong>, and <strong>subagents</strong>.
 
-## Step 1: Slash Commands — It's Just a File in `.claude/commands/`
+## Step 1: Slash Commands: It's Just a File in `.claude/commands/`
 
 Creating custom slash commands in Claude Code is surprisingly simple: drop a `.md` file into the `.claude/commands/` directory.
 
@@ -97,9 +66,9 @@ Validate and publish the blog post to production.
 Report errors clearly with the step number.
 ```
 
-That's it. Type `/publish my-post-slug` in a Claude Code session, and it executes the workflow above — Claude interprets each step and translates it into tool calls.
+That's it. Type `/publish my-post-slug` in a Claude Code session, and it executes the workflow above. Claude interprets each step and translates it into tool calls.
 
-What surprised me was that you don't need a programming language. Write the procedure in text, and Claude figures out the execution. Though I'll be honest: it doesn't always interpret things the way I intended. That unpredictability is something I still wrestle with.
+What surprised me was that you don't need a programming language. Write the procedure in text, and Claude figures out the execution. I'll be honest, though. It doesn't always interpret things the way I intended, and that unpredictability is something I still wrestle with.
 
 ### Tips for Writing Commands
 
@@ -121,9 +90,9 @@ Research, write, validate, and publish one daily article.
 - Never ask the user — this runs unattended
 ```
 
-The "Never ask the user" line is what enables autonomous mode. Without it, Claude stops to ask confirmation questions whenever it encounters uncertainty — which is fatal for a cron job.
+The "Never ask the user" line is what enables autonomous mode. Without it, Claude stops to ask confirmation questions whenever it encounters uncertainty. For a cron job, that's fatal.
 
-## Step 2: Hooks — Event-Driven Automation via settings.json
+## Step 2: Hooks: Event-Driven Automation via settings.json
 
 If slash commands define "what to do," hooks define "when to automatically react."
 
@@ -168,9 +137,9 @@ Register event-command pairs in the `hooks` field of `.claude/settings.json`:
 
 The `Stop` hook has been the most useful in my setup. For long automation tasks (30 minutes to an hour), I get a Telegram notification when Claude finishes. Since setting this up, I've completely stopped staring at the terminal wondering "is it done yet?"
 
-### Permissions — Allowlist-Based Security
+### Permissions: Allowlist-Based Security
 
-You also need to configure `permissions` alongside hooks. By default, Claude Code asks for user approval before every Bash command — which kills any automation pipeline.
+You also need to configure `permissions` alongside hooks. By default, Claude Code asks for user approval before every Bash command, which kills any automation pipeline.
 
 Pre-register the commands you want to allow:
 
@@ -192,9 +161,9 @@ Pre-register the commands you want to allow:
 
 <strong>Warning</strong>: An overly broad allowlist like `Bash(*)` can lead to unintended commands running. Only register the specific patterns you actually need.
 
-For a detailed example of hooks applied to a real code review pipeline, see [Building Automated Code Review Systems with Claude Code Hooks](/en/blog/en/claude-code-hooks-workflow).
+For a detailed example of hooks applied to a real code review pipeline, see Building Automated Code Review Systems with Claude Code Hooks.
 
-## Step 3: Subagents — Specialized AI in `.claude/agents/`
+## Step 3: Subagents: Specialized AI in `.claude/agents/`
 
 Asking a single Claude instance to handle research + writing + SEO + translation + build all at once degrades the quality of each task. It also wastes token context.
 
@@ -284,7 +253,7 @@ The launchd plist setup is worth seeing too:
 
 Redirecting logs to a file is absolutely critical for debugging "why didn't today's post get published."
 
-## Getting Started — Minimum Viable Setup in 5 Minutes
+## Getting Started: Minimum Viable Setup in 5 Minutes
 
 For anyone starting fresh, here's the smallest configuration that actually does something useful. Drop these 4 files into any existing project:
 
@@ -345,29 +314,29 @@ Rate: SAFE / CAUTION / CRITICAL
 
 These four files are the minimum working unit. With just this, `/review` analyzes your staged changes, you get a voice notification when it finishes, and detailed checks can be delegated to the `checker` agent.
 
-## Honest Assessment — What Doesn't Work Well
+## Honest Assessment: What Doesn't Work Well
 
 After three months running this system, here's where it struggles.
 
 <strong>Cost</strong>: Generating 2,500+ word posts in four languages daily adds up faster than you'd expect. I manage this through an Anthropic Max subscription, but this level of automation isn't feasible without accepting real costs.
 
-<strong>Timeout handling</strong>: If the build is slow or a subagent chain runs long, it hits the 60-minute timeout. Posts get generated halfway and then stop. Without cleanup logic after timeout detection, the repo state gets messy. My script handles this gracefully — on timeout, it checks whether a new post file was actually created (by counting files before and after) rather than treating the exit code as the final verdict.
+<strong>Timeout handling</strong>: If the build is slow or a subagent chain runs long, it hits the 60-minute timeout. Posts get generated halfway and then stop. Without cleanup logic after timeout detection, the repo state gets messy. My script handles this gracefully. On timeout, it checks whether a new post file was actually created (by counting files before and after) rather than treating the exit code as the final verdict.
 
-<strong>Non-deterministic quality</strong>: Running the same command twice produces different results. Post quality, internal link placement, relatedPosts selection — all vary day to day. That's inherent to LLMs and can't be eliminated, only bounded by QA loops (validate:publishing, astro check, build).
+<strong>Non-deterministic quality</strong>: Running the same command twice produces different results. Post quality, internal link placement, relatedPosts selection: all of it varies day to day. That's inherent to LLMs and can't be eliminated, only bounded by QA loops (validate:publishing, astro check, build).
 
 <strong>Agent selection failures</strong>: Sometimes the orchestrator picks the wrong agent or skips delegation entirely. Clearer `description` fields help, but don't fully solve it. What actually worked was being explicit in the slash command itself: `"For research tasks, delegate to @web-researcher agent."` Don't leave the orchestrator to infer this.
 
 Honestly, calling this system "production-ready" would be overselling it. For my purposes, it's "stable enough for personal automation." Using it at team scale would require much more robust error recovery, state management, and audit logging.
 
-If you want a structured framework for thinking about agentic workflows, [5 Claude Code Agentic Workflow Patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) is the right follow-up read.
+If you want a structured framework for thinking about agentic workflows, 5 Claude Code Agentic Workflow Patterns is the right follow-up read.
 
-## Next Up: Part 2 — MCP Server Integration
+## Next Up: Part 2: MCP Server Integration
 
 This first part covered automation that stays within the `.claude/` folder.
 
-Part 2 goes a step further: <strong>building an MCP (Model Context Protocol) server from scratch to connect Claude Code to external tools</strong>. Reading a Notion database, sending Slack messages, querying PostgreSQL — all triggerable from a single slash command.
+Part 2 goes a step further: <strong>building an MCP (Model Context Protocol) server from scratch to connect Claude Code to external tools</strong>. Reading a Notion database, sending Slack messages, querying PostgreSQL, all triggerable from a single slash command.
 
-If you've already experimented with MCP servers, the [MCP Server Build Guide](/en/blog/en/mcp-server-build-practical-guide-2026) is good preparation.
+If you've already experimented with MCP servers, the MCP Server Build Guide is good preparation.
 
 ---
 

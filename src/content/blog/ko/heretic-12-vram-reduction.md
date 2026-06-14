@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Heretic 1.2 — 양자화로 VRAM 70% 절감과 MPOA 기술 해부
 description: >-
   Heretic 1.2가 출시되었습니다. 4bit 양자화로 VRAM 사용량을 최대 70% 줄이고, MPOA로 고품질 어블리테레이션을

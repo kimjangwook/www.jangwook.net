@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenAI Codex 云端智能体 vs Claude Code — 2026年5月对比
 description: >-
   OpenAI Codex于2026年4月转型为云端智能体专用工作区。本文对比Codex与Claude

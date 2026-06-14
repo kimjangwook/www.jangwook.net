@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Why Anthropic Cut Off OpenClaw — The Claude Subscription Policy Shift and What It Costs You'
 description: 'On April 4, 2026, Anthropic blocked Claude Pro/Max subscriptions from powering third-party agent tools. Add the Fast Mode 6x price multiplier, and this is a structural overhaul worth running the numbers on.'
 pubDate: '2026-05-02'

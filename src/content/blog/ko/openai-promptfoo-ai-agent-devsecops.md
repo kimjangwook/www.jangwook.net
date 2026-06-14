@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenAI의 Promptfoo 인수 — AI 에이전트 DevSecOps 시대가 열린다
 description: >-
   OpenAI가 AI 보안 테스트 플랫폼 Promptfoo를 인수했다. Fortune 500의 25%가 사용하는 이 도구가 Frontier에

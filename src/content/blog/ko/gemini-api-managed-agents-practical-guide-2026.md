@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Gemini API Managed Agents 실전 가이드 — 격리 샌드박스에서 에이전트 한 줄로 실행하기"
 description: "Google I/O 2026에서 발표된 Gemini Managed Agents를 직접 실행해봤다. client.interactions.create() 한 번으로 에이전트를 돌리는 구조, Claude·OpenAI Managed Agents와의 차이점, 멀티턴 대화 구현까지 코드로 정리한다."
 pubDate: '2026-05-30'

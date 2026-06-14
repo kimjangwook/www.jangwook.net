@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropic为何切断OpenClaw — Claude订阅政策转变与开发者成本现实'
 description: '2026年4月4日，Anthropic封锁了Claude Pro/Max订阅用于第三方代理工具的使用权限。加上Fast Mode 6倍计费，这次结构性转变需要用数据来分析。'
 pubDate: '2026-05-02'

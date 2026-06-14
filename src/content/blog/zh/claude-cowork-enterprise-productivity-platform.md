@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Cowork 企业版发布——从开发者工具到全公司生产力平台
 description: >-
   Anthropic Claude Cowork 企业功能深度分析。Plugin Marketplace、MCP 连接器、Excel·PowerPoint

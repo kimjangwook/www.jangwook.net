@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MiniMax M2.5 — オープンウェイトとプロプラの性能差が史上最小に
 description: >-
   MiniMax M2.5がSWE-Bench Verified 80.2%を達成し、Claude Opus

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude API Prompt Caching 실전 — LLM 비용 70% 절감하는 4가지 패턴'
 description: >-
   Claude API 프롬프트 캐싱을 실제 프로덕션 환경에 적용하기 위한 완전 실전 가이드입니다. 시스템 프롬프트·RAG 문서·툴 정의·멀티턴 대화

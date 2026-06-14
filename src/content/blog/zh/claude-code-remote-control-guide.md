@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Code Remote Control 完全指南 — 从设置到移动端远程控制'
 description: >-
   详解Claude Code Remote Control的设置方法和使用技巧。通过实战案例介绍如何从手机监控和控制桌面端的开发任务工作流。

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Verbalized Sampling: LLM 다양성을 되찾는 훈련 불필요 프롬프팅 기법'
 description: >-
   정렬 후 발생하는 모드 붕괴 문제를 해결하는 Verbalized Sampling 기법. 재훈련 없이 LLM 출력 다양성을 1.6〜2.1배

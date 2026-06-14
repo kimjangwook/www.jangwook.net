@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AnthropicがClaudeをこっそり低下させた論争 — パワーユーザー反発の本当の文脈
 description: >-
   2026年3月、AnthropicがClaudeのデフォルトeffortレベルを静かに"medium"に引き下げた。パワーユーザーの反発と価格引き上げ論争、

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AlphaEvolve Breaks 5 Ramsey Records: AI as Research Partner'
 description: >-
   Google DeepMind's AlphaEvolve broke five Ramsey number records held up to 20

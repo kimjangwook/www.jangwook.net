@@ -13,41 +13,20 @@ tags:
   - qdrant
   - pgvector
 relatedPosts:
-  - slug: claude-mythos-preview-glasswing-ai-cybersecurity
-    score: 0.94
+  - slug: dena-llm-study-part4-rag
+    score: 0.9
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-server-build-practical-guide-2026
-    score: 0.94
+      ko: RAG 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into RAG.
+      ja: RAGをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 RAG 主题。
+  - slug: llamaindex-vs-langchain-vs-haystack-rag-2026
+    score: 0.85
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-message-batches-api-production-guide
-    score: 0.93
-    reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: openai-codex-api-release-vs-claude-code-comparison-may-2026
-    score: 0.93
-    reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: fastmcp-python-mcp-server-build-guide-2026
-    score: 0.93
-    reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: RAG를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on RAG experience.
+      ja: RAGを実際に扱った経験が続く記事です。
+      zh: 延续 RAG 的实战经验。
 ---
 
 Every time I start a new RAG project, I end up spending more time choosing a vector DB than I expected. It starts with "just use Chroma," then I see Qdrant benchmark posts and waver, then a pgvector article pulls me back toward PostgreSQL. The loop repeats until I actually sit down and run the numbers myself.
@@ -66,7 +45,7 @@ There's also the architecture angle. Choosing a vector DB is not just a storage 
 
 If you haven't settled on your RAG architecture yet, [the full RAG design overview](/en/blog/en/dena-llm-study-part4-rag) is worth reading before going deeper into DB comparisons.
 
-## ChromaDB — Five-Minute Setup, Then What?
+## ChromaDB: Five-Minute Setup, Then What?
 
 ChromaDB's claim of "vector search in five minutes" is accurate. I verified it.
 
@@ -107,11 +86,11 @@ The LangChain and LlamaIndex integrations for ChromaDB are the most mature among
 
 I've used ChromaDB in production once, and I wouldn't do it again past a certain scale. Past the tens-of-thousands mark, query performance starts feeling inconsistent. The HNSW index is there, but Qdrant's implementation is more tuned for high-volume workloads.
 
-More telling: when I look at what teams are actually running in production at scale, "ChromaDB in production" is rare. The community pattern of "Chroma for prototypes, Qdrant for production" shows up too often to dismiss. That doesn't mean ChromaDB is bad — it means it's a great starting point that has real ceiling concerns past a few hundred thousand vectors.
+More telling: when I look at what teams are actually running in production at scale, "ChromaDB in production" is rare. The community pattern of "Chroma for prototypes, Qdrant for production" shows up too often to dismiss. That doesn't mean ChromaDB is bad. It means it's a great starting point that runs into real ceiling concerns past a few hundred thousand vectors.
 
 It also has no official clustering support. Scale-out is a single-node problem. If your traffic grows, you're looking at architectural changes.
 
-## Qdrant — When Performance Comes First
+## Qdrant: When Performance Comes First
 
 Qdrant is written in Rust and designed from the ground up for production scale. A single Docker command gets you a running instance.
 
@@ -169,9 +148,9 @@ Qdrant can be overkill for small projects. Running Docker adds friction that Chr
 
 If your dataset is under 100K vectors and you don't anticipate aggressive scaling, you might be paying an operational tax for performance headroom you won't use.
 
-## pgvector — If You're Already on PostgreSQL
+## pgvector: If You're Already on PostgreSQL
 
-pgvector is a PostgreSQL extension. You're not adding a new database — you're adding vector search to a database you already run.
+pgvector is a PostgreSQL extension. You're not adding a new database. You're adding vector search to a database you already run.
 
 ```sql
 -- Install extension
@@ -219,17 +198,17 @@ cur.execute(
 
 ### What pgvector Does Well
 
-Zero additional infrastructure if you're already on PostgreSQL. Your existing ORM, migration tools, backup strategy, and monitoring stack all stay the same. You get the full expressiveness of SQL for filtering, which matters when your filters need to JOIN against other tables — like restricting vector search to a specific user's documents by joining the users table.
+Zero additional infrastructure if you're already on PostgreSQL. Your existing ORM, migration tools, backup strategy, and monitoring stack all stay the same. You get the full expressiveness of SQL for filtering, which matters when your filters need to JOIN against other tables. Think restricting vector search to a specific user's documents by joining the users table.
 
 That JOIN use case is where pgvector genuinely shines. Neither ChromaDB nor Qdrant can express cross-table relationships the way SQL can.
 
 ### The Honest Limitations
 
-I think pgvector gets somewhat oversold. The "use your existing Postgres" pitch is real, but the performance gap with dedicated vector databases grows with scale. The bigger issue is network overhead. My benchmark numbers use numpy approximation for pgvector — in an actual deployment where PostgreSQL runs on a separate server, every query adds 10 to 50 ms of network roundtrip. That's not comparable to ChromaDB's in-memory results or Qdrant's local Docker latency.
+I think pgvector gets somewhat oversold. The "use your existing Postgres" pitch is real, but the performance gap with dedicated vector databases grows with scale. The bigger issue is network overhead. My benchmark numbers use numpy approximation for pgvector. In an actual deployment where PostgreSQL runs on a separate server, every query adds 10 to 50 ms of network roundtrip. That's not comparable to ChromaDB's in-memory results or Qdrant's local Docker latency.
 
 Proper HNSW tuning also requires PostgreSQL expertise. Running with default `m` and `ef_construction` values often underperforms expectations. Teams without a DBA may hit walls that they don't immediately know how to debug.
 
-## I Actually Ran the Benchmark — Here Are the Numbers
+## I Actually Ran the Benchmark. Here Are the Numbers
 
 Setup:
 
@@ -318,7 +297,7 @@ pgvector: ~1–3ms via numpy approximation
 
 ### What These Numbers Mean
 
-The result that surprised me most: <strong>ChromaDB's filter query (2 ms) beat Qdrant (7 ms) at 1,000 vectors</strong>. That seems wrong at first — Qdrant is the more sophisticated system. Why is it slower?
+The result that surprised me most: <strong>ChromaDB's filter query (2 ms) beat Qdrant (7 ms) at 1,000 vectors</strong>. That seems wrong at first. Qdrant is the more sophisticated system, so why is it slower?
 
 The answer is architecture overhead. Qdrant is built with payload indexing, distributed filtering, and segment management designed for millions of vectors. At 1,000 vectors, that infrastructure becomes overhead rather than a benefit. ChromaDB takes a more direct approach at small scale and pays off for it.
 
@@ -328,7 +307,7 @@ Plain queries are close, but Qdrant's P95 is 1.88 ms versus ChromaDB's 0.82 ms. 
 
 The takeaway: at small scale, ChromaDB's simplicity wins. Past 5 million vectors, Qdrant's HNSW optimization starts to matter in ways that flip this comparison.
 
-## Decision Matrix — What to Use When
+## Decision Matrix: What to Use When
 
 Looking only at the numbers, you might conclude ChromaDB always wins. The actual decision is more nuanced.
 
@@ -347,17 +326,17 @@ Looking only at the numbers, you might conclude ChromaDB always wins. The actual
 
 **Choose ChromaDB when** you need a fast proof of concept, your team doesn't have DevOps capacity, and you're confident data volume stays below a few hundred thousand vectors. It's the right tool for demo apps and anything that connects directly to LangChain or LlamaIndex tutorials.
 
-**Choose Qdrant when** you need to handle real production traffic, expect 5M+ vectors, or need horizontal scaling. Starting on Qdrant means you don't face a forced migration later when scale hits. The Docker operational cost is real, though — for small projects you're paying for headroom you may not use.
+**Choose Qdrant when** you need to handle real production traffic, expect 5M+ vectors, or need horizontal scaling. Starting on Qdrant means you don't face a forced migration later when scale hits. The Docker operational cost is real, though. For small projects you're paying for headroom you may not use.
 
 **Choose pgvector when** you have existing PostgreSQL infrastructure, a DBA who knows the system, and vector search that needs to combine with regular SQL queries. It's the most pragmatic choice for teams that can't afford the learning curve of a new database type.
 
-The embedding model dimension also directly affects which DB you pick. How [Gemini Embedding 2's multimodal embeddings change the dim design tradeoffs](/en/blog/en/gemini-embedding-2-multimodal-rag-pipeline) is worth reading alongside this comparison.
+The embedding model dimension also directly affects which DB you pick. How Gemini Embedding 2's multimodal embeddings change the dim design tradeoffs is worth reading alongside this comparison.
 
-## The Bottom Line — My Call
+## What I Reach For First
 
 Honestly, in 2026, I default to Qdrant on new projects. The reasoning is simple: a moderate overhead at small scale is cheaper than a forced migration when you hit growth. Starting on Qdrant means the production path is already in place.
 
-That said, if your team is already running PostgreSQL, try pgvector first. It's sufficient in most cases, and migrating to Qdrant later — if performance becomes a real problem — is a tractable migration.
+That said, if your team is already running PostgreSQL, try pgvector first. It's sufficient in most cases, and if performance becomes a real problem later, migrating to Qdrant is tractable.
 
 ChromaDB is still my first choice for prototypes. Nothing beats `pip install chromadb` for getting started. But when you're moving toward production, take Qdrant seriously.
 

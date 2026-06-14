@@ -10,51 +10,27 @@ tags:
   - Node.js
   - 运行时对比
 relatedPosts:
-  - slug: vitest-4-jest-migration-guide-2026
-    score: 0.95
-    reason:
-      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, DevOps with comparable
-        difficulty.
-      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
-  - slug: adsense-low-value-content-technical-fix
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
   - slug: bun-shell-scripting-practical-guide-2026
-    score: 0.88
+    score: 0.9
     reason:
-      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, DevOps with comparable
-        difficulty.
-      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
-    score: 0.87
+      ko: bun 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into bun.
+      ja: bunをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 bun 主题。
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.85
     reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.87
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
+  - slug: node-sqlite-builtin-practical-guide-2026
+    score: 0.8
     reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
+      ko: 같은 node.js 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same node.js track.
+      ja: 同じnode.jsの流れで併せて読むと役立ちます。
+      zh: 在同一 node.js 脉络中可一并阅读。
 ---
 
 2026年中期，JavaScript运行时的选择实际上缩减到了三个：Node.js、Bun、Deno。说实话，坚持使用Node.js的理由越来越少了。真正的问题是在Bun和Deno之间做选择。
@@ -373,7 +349,7 @@ bun build --compile index.ts --outfile server
 
 两者都有官方Docker镜像，容器化都很简单。Deno需要在`CMD`中包含权限标志，这迫使你在基础设施层面明确权限设计。
 
-## 结论
+## 最后，我会怎么选
 
 很难得出其中一个运行时明显更好的结论。"情况不同"这个陈腐的答案，这次确实来自实际数据。
 

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MiniMax M2.5 — 开源权重与闭源模型的性能差距达到历史最低
 description: >-
   MiniMax M2.5在SWE-Bench Verified上达到80.2%，超越Claude Opus

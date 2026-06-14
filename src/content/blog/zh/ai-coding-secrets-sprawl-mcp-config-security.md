@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AI编程代理泄露了2900万个密钥 — MCP配置文件安全的盲区
 description: >-
   根据GitGuardian

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP 서버 Kubernetes 배포 — 52%가 죽는 현실에서 살아남는 법
 description: >-
   2026년 4월 기준 프로덕션 MCP 엔드포인트 52%가 비정상 상태입니다. Kubernetes 리소스 설정, Streamable HTTP

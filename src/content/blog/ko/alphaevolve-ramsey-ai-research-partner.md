@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AlphaEvolve가 라마지 수 5개를 갱신하다 — AI가 수학 연구의 동반자가 되는 시대
 description: >-
   Google DeepMind의 AlphaEvolve가 최대 20년간 유지되던 라마지 수 하한 5개를 동시에 갱신한 사례를 분석하고, AI가

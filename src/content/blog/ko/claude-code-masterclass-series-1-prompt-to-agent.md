@@ -12,62 +12,31 @@ tags:
   - 서브에이전트
   - 워크플로우
 relatedPosts:
-  - slug: claude-agent-teams-guide
-    score: 0.95
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-cli-migration-guide
-    score: 0.95
+      ko: 자동화 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into 자동화.
+      ja: 자동화をもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 자동화 主题。
+  - slug: claude-code-parallel-sessions-git-worktree
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effiflow-automation-analysis-part3
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: github-agentic-workflows-cicd-ai
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: jira-ai-agents-mcp-engineering-management
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: claudecode를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claudecode experience.
+      ja: claudecodeを実際に扱った経験が続く記事です。
+      zh: 延续 claudecode 的实战经验。
 ---
 
 이 글을 읽고 있는 지금, 이 포스트는 오늘 아침 11시 30분에 자동으로 실행된 launchd 작업이 Claude Code를 깨웠고, Claude Code가 `/daily-tech-blog` 슬래시 명령어를 실행하고, 서브에이전트들이 리서치와 번역을 분담하면서 만들어진 결과물이다.
 
 나는 지난 몇 달 동안 이 자동화 파이프라인을 직접 만들고 운용해왔다. 완벽하지 않다. 가끔 타임아웃이 나고, 빌드가 실패하고, 한 언어 버전만 생성된 채 끝나는 날도 있다. 그래도 이 시스템이 없었다면 매일 4개 언어로 글을 발행하는 건 물리적으로 불가능했을 것이다.
 
-이 시리즈는 그 과정에서 배운 것들을 정리한다. #1편인 오늘은 가장 핵심적인 3단계 — <strong>슬래시 명령어</strong>, <strong>훅</strong>, <strong>서브에이전트</strong> — 를 처음부터 만드는 법을 다룬다.
+이 시리즈는 그 과정에서 배운 것들을 정리한다. #1편인 오늘은 가장 핵심적인 3단계를 처음부터 만드는 법을 다룬다. <strong>슬래시 명령어</strong>, <strong>훅</strong>, 그리고 <strong>서브에이전트</strong>다.
 
 대상 독자는 Claude Code를 이미 써본 사람이다. 설치법이나 기본 사용법은 다루지 않는다. 대신 "어떻게 하면 반복 작업을 자동화하고, 여러 역할을 에이전트로 분리하고, 이벤트에 반응하는 파이프라인을 만들 수 있는가"에 집중한다.
 
-## Step 1: 슬래시 명령어 — `.claude/commands/` 폴더가 전부다
+## Step 1: 슬래시 명령어: `.claude/commands/` 폴더가 전부다
 
 Claude Code에서 `/commit`, `/review`, `/deploy` 같은 명령어를 만드는 방법은 놀랍도록 단순하다. `.claude/commands/` 디렉토리 안에 `.md` 파일 하나를 만들면 된다.
 
@@ -102,7 +71,7 @@ Report errors clearly with the step number.
 
 이게 전부다. Claude Code 세션에서 `/publish my-post-slug`를 입력하면, 위에 정의한 워크플로우가 그대로 실행된다. Claude가 각 단계를 해석해서 도구 호출로 변환한다.
 
-내가 이 구조를 처음 봤을 때 놀란 점은 "프로그래밍 언어가 필요 없다"는 것이었다. 절차를 텍스트로 쓰면 Claude가 상황에 맞게 알아서 실행한다. 물론 의도와 다르게 해석될 때도 있다 — 이 부분은 솔직히 아직도 예측하기 어렵다.
+내가 이 구조를 처음 봤을 때 놀란 점은 "프로그래밍 언어가 필요 없다"는 것이었다. 절차를 텍스트로 쓰면 Claude가 상황에 맞게 알아서 실행한다. 물론 의도와 다르게 해석될 때도 있다. 이 부분은 솔직히 아직도 예측하기 어렵다.
 
 명령어 파일의 또 다른 장점은 버전 관리다. git에서 변경 이력이 남기 때문에, 어떤 워크플로우 변경이 문제를 일으켰는지 추적하기 쉽다. 일반 쉘 스크립트를 관리하는 것보다 훨씬 투명하다.
 
@@ -128,7 +97,7 @@ Research, write, validate, and publish one daily article.
 
 "Never ask the user" 줄 하나가 자율 실행 모드를 만드는 핵심이다. 이게 없으면 Claude는 불확실한 상황마다 확인 질문을 하며 멈춘다. 크론 작업에서는 치명적이다.
 
-## Step 2: settings.json 훅 — 이벤트에 반응하는 자동화
+## Step 2: settings.json 훅: 이벤트에 반응하는 자동화
 
 슬래시 명령어가 "무엇을 해야 하는가"를 정의한다면, 훅은 "언제 자동으로 동작해야 하는가"를 정의한다.
 
@@ -173,7 +142,7 @@ Research, write, validate, and publish one daily article.
 
 내 설정에서 가장 유용했던 건 `Stop` 훅이다. 긴 자동화 작업(30분〜1시간)이 끝나면 Telegram으로 알림이 온다. 이걸 설정한 뒤로 "아직 끝났나?" 하고 터미널을 들여다보는 습관이 완전히 사라졌다. 집중력을 끊기지 않고 다른 작업을 할 수 있게 됐다는 점에서, 이 훅 하나가 생산성에 가장 큰 기여를 했다고 본다.
 
-### permissions 설정 — 허용 목록 기반 보안
+### permissions 설정: 허용 목록 기반 보안
 
 훅과 함께 반드시 설정해야 하는 게 `permissions`다. Claude Code는 기본적으로 모든 Bash 명령어 실행 전에 사용자 승인을 요청한다. 자동화 환경에서는 이 동작이 파이프라인을 멈춰버린다.
 
@@ -197,9 +166,9 @@ Research, write, validate, and publish one daily article.
 
 <strong>주의</strong>: 허용 목록을 너무 넓게 잡으면(`Bash(*)`처럼) 의도치 않은 명령어가 실행될 수 있다. 실제로 필요한 명령어 패턴만 등록하는 게 안전하다.
 
-훅을 코드 리뷰 파이프라인에 실제로 적용한 사례는 [Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템](/ko/blog/ko/claude-code-hooks-workflow)에서 볼 수 있다.
+훅을 코드 리뷰 파이프라인에 실제로 적용한 사례는 Claude Code Hook으로 구축하는 자동화 코드 리뷰 시스템에서 볼 수 있다.
 
-## Step 3: 서브에이전트 위임 — `.claude/agents/` 전문화된 AI
+## Step 3: 서브에이전트 위임: `.claude/agents/` 전문화된 AI
 
 Claude 하나에게 리서치 + 글쓰기 + SEO 최적화 + 번역 + 빌드를 모두 맡기면, 각 분야의 집중도가 떨어진다. 토큰 컨텍스트도 낭비된다.
 
@@ -289,7 +258,7 @@ launchd plist 설정도 살펴볼 만하다:
 
 로그를 파일로 리다이렉트해두면 나중에 "왜 오늘 포스트가 안 나왔나"를 디버깅할 때 절대적으로 도움이 된다.
 
-## 실제로 시작하는 법 — 최소 설정 5분
+## 실제로 시작하는 법: 최소 설정 5분
 
 이 3단계를 처음 도입하는 사람을 위해 최소한의 작동 예제를 정리한다. 기존 프로젝트에 바로 적용할 수 있다.
 
@@ -356,7 +325,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 여기서 중요한 학습 포인트가 하나 있다. 이 구조는 "프로그래밍"이 아니라 "지시서 작성"에 가깝다. Claude는 파일을 실행하지 않고 읽어서 의도를 파악한다. 그래서 지시서가 모호하면 실행도 모호해진다. 구체적이고 명확한 지시가 복잡한 로직보다 더 중요하다.
 
-## 솔직한 평가 — 뭐가 잘 안 되는가
+## 솔직한 평가: 뭐가 잘 안 되는가
 
 이 시스템을 3개월 운용한 결과, 몇 가지 현실적인 제약을 만났다.
 
@@ -383,15 +352,15 @@ fi
 
 솔직히 말하면, 이 시스템을 "프로덕션 레디"라고 부르기는 이르다. 내 기준으로는 "개인 자동화에 충분히 안정적인 수준"이다. 팀 단위로 쓰려면 에러 복구, 상태 관리, 감사 로그를 더 견고하게 설계해야 한다.
 
-에이전틱 워크플로우를 구조적으로 분류하는 시각이 필요하다면 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)가 도움이 된다.
+에이전틱 워크플로우를 구조적으로 분류하는 시각이 필요하다면 Claude Code 에이전틱 워크플로우 패턴 5가지가 도움이 된다.
 
 ## 다음 편: #2 MCP 서버 연동
 
 이번 편에서는 `.claude/` 폴더 내부에서 완결되는 자동화를 다뤘다.
 
-#2편에서는 한 단계 더 나간다 — <strong>MCP(Model Context Protocol) 서버를 직접 만들어서 Claude Code에 외부 도구를 연결하는 법</strong>. Notion 데이터베이스 읽기, Slack 메시지 전송, PostgreSQL 쿼리 같은 외부 시스템 연동이 슬래시 명령어 하나로 가능해지는 구조를 다룬다.
+#2편에서는 한 단계 더 나간다. <strong>MCP(Model Context Protocol) 서버를 직접 만들어서 Claude Code에 외부 도구를 연결하는 법</strong>이다. Notion 데이터베이스를 읽고, Slack으로 메시지를 보내고, PostgreSQL을 쿼리하는 외부 시스템 연동이 슬래시 명령어 하나로 가능해지는 구조를 다룬다.
 
-이미 MCP 서버를 구축해본 경험이 있다면 [MCP 서버 처음부터 만들기 가이드](/ko/blog/ko/mcp-server-build-practical-guide-2026)가 좋은 사전 읽기다.
+이미 MCP 서버를 구축해본 경험이 있다면 MCP 서버 처음부터 만들기 가이드가 좋은 사전 읽기다.
 
 ---
 

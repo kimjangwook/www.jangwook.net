@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Gemini Embedding 2 — 멀티모달 임베딩이 RAG 파이프라인을 바꾼다
 description: >-
   Google이 발표한 첫 네이티브 멀티모달 임베딩 모델 Gemini Embedding 2의 핵심 기능과 기존 텍스트 전용 임베딩 대비

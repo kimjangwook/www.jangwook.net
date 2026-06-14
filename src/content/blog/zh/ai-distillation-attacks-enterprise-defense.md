@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AI模型蒸馏攻击实态——CTO必知的IP保护策略
 description: 深度分析Anthropic检测到的大规模AI模型蒸馏攻击案例，为企业在使用AI API时提供知识产权保护的实战策略与治理框架。
 pubDate: '2026-03-02'

@@ -13,58 +13,34 @@ tags:
   - 스트리밍
   - AI백엔드
 relatedPosts:
-  - slug: vertex-ai-search-site-implementation
-    score: 0.95
+  - slug: ollama-fastapi-production-deployment-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effloow-side-project-ai-company
-    score: 0.94
+      ko: fastapi 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into fastapi.
+      ja: fastapiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 fastapi 主题。
+  - slug: uv-python-ai-development-setup-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: adding-chinese-support
-    score: 0.94
+      ko: claude api를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claude api experience.
+      ja: claude apiを実際に扱った経験が続く記事です。
+      zh: 延续 claude api 的实战经验。
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.8
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: agent-effi-flow-pivot-omotenashi-bot
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: n8n-rss-automation
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 AI 백엔드를 구축하다 보면 결국 하나의 질문에 부딪힌다. "응답이 다 생성될 때까지 사용자를 기다리게 해도 괜찮을까?" 답은 대부분 "아니오"다. 특히 Claude 같은 언어 모델이 긴 텍스트를 생성할 때, 전체를 기다렸다가 한 번에 내려주는 방식은 UX를 죽인다.
 
 직접 서비스에 연동해보면서 느낀 건, 스트리밍 자체는 어렵지 않다. 진짜 문제는 그 주변이다. 레이트 리밋에 걸렸을 때 어떻게 할 것인가, 에러를 어떻게 분류하고 각각 다르게 처리할 것인가, Nginx 뒤에서 SSE가 제대로 흐르게 하려면 어떤 헤더가 필요한가. 이 글은 FastAPI 0.136과 Anthropic SDK 0.97 기준으로 그 실전 패턴을 직접 구현하고 테스트한 결과를 정리한 것이다.
 
-## Prerequisites
+## 시작 전에 필요한 것
 
 - Python 3.11 이상 (3.12 권장)
 - Anthropic API 키 (`ANTHROPIC_API_KEY`)
@@ -299,7 +275,7 @@ services:
       retries: 3
 ```
 
-## Step 5: 클라이언트 연동 — 브라우저 EventSource와 Python
+## Step 5: 클라이언트 연동: 브라우저 EventSource와 Python
 
 **브라우저 (JavaScript)**:
 
@@ -354,19 +330,19 @@ async def stream_chat(message: str):
                         print(event["text"], end="", flush=True)
 ```
 
-Vercel AI SDK를 사용하는 프론트엔드가 있다면 [Vercel AI SDK로 Claude 스트리밍 에이전트 만들기](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)를 참고하면 프론트엔드 연동을 더 빠르게 처리할 수 있다. `useChat` 훅이 SSE 파싱을 대신 해줘서 클라이언트 코드가 훨씬 단순해진다.
+Vercel AI SDK를 사용하는 프론트엔드가 있다면 Vercel AI SDK로 Claude 스트리밍 에이전트 만들기를 참고하면 프론트엔드 연동을 더 빠르게 처리할 수 있다. `useChat` 훅이 SSE 파싱을 대신 해줘서 클라이언트 코드가 훨씬 단순해진다.
 
 ## 아쉬운 점과 실제로 막히는 부분
 
 내가 이 스택을 실제 프로젝트에서 써보면서 느낀 한계를 솔직하게 정리한다.
 
-**첫째, 스트리밍과 프롬프트 캐싱의 조합이 까다롭다.** Claude API의 프롬프트 캐싱은 입력 토큰 비용을 크게 줄여준다. 그런데 스트리밍과 캐싱을 동시에 쓸 때 캐시 히트 여부를 스트림 중간에 알 수가 없다. 스트리밍 완료 후 `usage` 객체에서 확인할 수 있지만, 실시간으로 캐시 상태를 반영해야 하는 UI라면 구현이 복잡해진다. [Claude API 프롬프트 캐싱으로 비용 최적화하기](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide)에서 캐싱 전략을 미리 파악해두는 게 좋다.
+**첫째, 스트리밍과 프롬프트 캐싱의 조합이 까다롭다.** Claude API의 프롬프트 캐싱은 입력 토큰 비용을 크게 줄여준다. 그런데 스트리밍과 캐싱을 동시에 쓸 때 캐시 히트 여부를 스트림 중간에 알 수가 없다. 스트리밍 완료 후 `usage` 객체에서 확인할 수 있지만, 실시간으로 캐시 상태를 반영해야 하는 UI라면 구현이 복잡해진다. Claude API 프롬프트 캐싱으로 비용 최적화하기에서 캐싱 전략을 미리 파악해두는 게 좋다.
 
 **둘째, uvicorn의 워커 수와 커넥션 관리가 생각보다 복잡하다.** SSE는 연결을 오래 유지한다. `--workers 4`로 4개 워커를 쓴다면 동시에 최대 4개의 긴 스트리밍 연결이 가능하다. 실제 트래픽이 이를 초과하면 요청이 대기한다. K8s로 수평 확장하거나, `gunicorn + uvicorn worker class` 조합을 써야 한다.
 
 **셋째, 재시도 로직이 스트리밍 중간에 끼면 처리가 복잡하다.** 스트리밍이 절반쯤 진행됐을 때 네트워크 에러가 나면 어떻게 할 것인가? 처음부터 다시 요청하면 클라이언트는 이미 받은 텍스트가 중복된다. 실용적인 해결책은 클라이언트 측에서 `last-event-id`를 관리하고, 서버가 이를 받아 이어서 생성하는 것인데, 이 구현은 이 글의 범위를 벗어난다.
 
-이 패턴이 스트리밍 응답이 불필요한 대량 처리 시나리오에는 오버엔지니어링이다. 1,000개의 문서를 배치로 처리한다면 [Anthropic Message Batches API](/ko/blog/ko/anthropic-message-batches-api-production-guide)가 훨씬 저렴하고 적합하다.
+이 패턴이 스트리밍 응답이 불필요한 대량 처리 시나리오에는 오버엔지니어링이다. 1,000개의 문서를 배치로 처리한다면 Anthropic Message Batches API가 훨씬 저렴하고 적합하다.
 
 ## 성능 모니터링: 스트리밍에서 무엇을 측정해야 하는가
 
@@ -398,7 +374,7 @@ async def log_streaming_metrics(request: Request, call_next):
     return await call_next(request)
 ```
 
-OpenTelemetry와 연결하면 분산 트레이싱으로 훨씬 정교하게 추적할 수 있지만, 시작 단계에서는 이 정도 로그도 충분히 유용하다. [Anthropic SDK vs OpenAI SDK 비교](/ko/blog/ko/anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026)에서 Anthropic SDK의 `usage` 객체를 통해 토큰 사용량을 어떻게 추적하는지 더 자세히 살펴볼 수 있다.
+OpenTelemetry와 연결하면 분산 트레이싱으로 훨씬 정교하게 추적할 수 있지만, 시작 단계에서는 이 정도 로그도 충분히 유용하다. Anthropic SDK vs OpenAI SDK 비교에서 Anthropic SDK의 `usage` 객체를 통해 토큰 사용량을 어떻게 추적하는지 더 자세히 살펴볼 수 있다.
 
 ## 트러블슈팅 FAQ
 
@@ -438,7 +414,7 @@ Nginx의 `proxy_buffering off`가 빠진 경우가 대부분이다. 또는 `Cont
 
 이 체크리스트를 보면서 "다 알고 있는 내용인데 실제 배포 때 놓치는 경우가 많다"고 느꼈다면, 그게 정상이다. 나도 처음 배포할 때 CORS와 GZIP 설정에서 한 번씩 실수했다.
 
-## 결론: 언제 이 스택을 선택할 것인가
+## 이 스택이 제값을 하는 상황
 
 FastAPI + AsyncAnthropic + uvicorn 조합은 다음 상황에 잘 맞는다:
 
@@ -449,6 +425,6 @@ FastAPI + AsyncAnthropic + uvicorn 조합은 다음 상황에 잘 맞는다:
 
 솔직히 말하면, 이 스택이 모든 상황에서 최선은 아니다. Node.js 팀이라면 Vercel AI SDK가 더 빠르고, 대규모 실시간 연결이 필요하다면 WebSocket이나 gRPC Streaming이 더 나은 선택일 수 있다. 하지만 Python AI 백엔드를 빠르게 올리고 싶다면, 이 패턴은 내가 실제로 검증한 가장 실용적인 출발점이다.
 
-이 글에서 구현한 모든 코드는 FastAPI 0.136과 Anthropic SDK 0.97 기준이다. Anthropic SDK는 버전 업데이트가 잦으므로, `AsyncAnthropic`의 `stream()` 컨텍스트 매니저 API가 변경됐다면 공식 문서를 먼저 확인하는 게 좋다. [Anthropic SDK vs OpenAI SDK 개발자 경험 비교](/ko/blog/ko/anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026)를 읽으면 SDK의 변경 이력과 설계 철학을 이해하는 데 도움이 된다.
+이 글에서 구현한 모든 코드는 FastAPI 0.136과 Anthropic SDK 0.97 기준이다. Anthropic SDK는 버전 업데이트가 잦으므로, `AsyncAnthropic`의 `stream()` 컨텍스트 매니저 API가 변경됐다면 공식 문서를 먼저 확인하는 게 좋다. Anthropic SDK vs OpenAI SDK 개발자 경험 비교를 읽으면 SDK의 변경 이력과 설계 철학을 이해하는 데 도움이 된다.
 
 다음 단계로는 프롬프트 캐싱 적용으로 비용을 줄이고, 스트리밍 응답에 OpenTelemetry 트레이싱을 붙여 레이턴시와 토큰 사용량을 가시화하는 작업을 추천한다.

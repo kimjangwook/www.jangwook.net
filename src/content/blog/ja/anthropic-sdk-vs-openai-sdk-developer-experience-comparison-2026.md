@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropic SDK vs OpenAI SDK 開発者体験比較 — 型安全性・エラー処理・ストリーミングパターンを実測'
 description: 'anthropic 0.100.0とopenai 2.36.0をサンドボックスで実際にインストールして比較。型数408 vs 230、エラー階層、ストリーミング実装、ツール呼び出しフォーマット、SDK固有機能をコードレベルで分析した実践的比較ガイド。'
 pubDate: '2026-05-09'

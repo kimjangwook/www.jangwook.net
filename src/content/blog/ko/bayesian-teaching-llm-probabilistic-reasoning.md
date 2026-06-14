@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Bayesian Teaching: LLM 확률적 추론 훈련법 — Google 연구 분석'
 description: >-
   Google이 Nature Communications에 발표한 Bayesian Teaching 연구는 LLM이 새 정보를 받을 때 확률적으로 믿음을 업데이트하도록 훈련하는 방법론이다. AI 에이전트의 불확실성 처리 방식을 근본적으로 개선할 이 연구를 EM 관점에서 분석한다.

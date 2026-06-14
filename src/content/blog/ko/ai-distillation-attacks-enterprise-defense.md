@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AI 모델 증류 공격의 실태 — CTO가 알아야 할 IP 보호 전략
 description: >-
   DeepSeek·MiniMax의 1,600만 건 Claude 증류 공격 실태를 분석하고 기업 CTO·EM을 위한 실무 대응 전략을

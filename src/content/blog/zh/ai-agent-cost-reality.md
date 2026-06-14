@@ -10,56 +10,34 @@ tags:
   - engineering-management
   - automation
 relatedPosts:
-  - slug: anthropic-agent-skills-practical-guide
-    score: 0.94
+  - slug: effiflow-automation-analysis-part1
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-standard
-    score: 0.94
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: mastra-ai-typescript-agent-framework-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-agent-teams-guide
-    score: 0.94
+      ko: ai-agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai-agent experience.
+      ja: ai-agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai-agent 的实战经验。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-skills-implementation-guide
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: llm-pm-workflow-automation
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 ## AI Agent不是魔法
 
 对AI Agent的期望正在爆发式增长。"让Agent来做就能削减人工成本"的说法随处可见。但作为实际运营8体AI Agent的人，<strong>现实远没有那么简单</strong>。
 
-本文将基于数据分析AI Agent的实际运营成本，从"AI Agent不是魔法而是权衡取舍"的角度分享真实经验。
+于是我直接把数字拉出来看。把8体每月流出的成本按项目拆开后，"Agent不是魔法，而是权衡取舍"这句话就不再是抽象口号，而是一张实打实的账单。下面就是我对这张账单的诚实记录。
 
 ## 令人震惊的数据：AI审核 vs 人工审核
 
@@ -199,7 +177,7 @@ graph TD
 | 必须一致应用标准 | 异常情况应对 |
 | 个人生产力扩展（单人团队） | 团队协作/沟通 |
 
-特别是<strong>个人开发者或小团队扩展个人生产力</strong>的场景，AI Agent效果显著。我的8体Agent正是为此目的运营的，核心观点不是"替代人"而是"扩大一个人能做的范围"。[Anthropic智能体技能实战指南](/zh/blog/zh/anthropic-agent-skills-practical-guide)提供了针对这类使用场景的具体实现模式和高成本效益的设计方法。
+特别是<strong>个人开发者或小团队扩展个人生产力</strong>的场景，AI Agent效果显著。我的8体Agent正是为此目的运营的，核心观点不是"替代人"而是"扩大一个人能做的范围"。Anthropic智能体技能实战指南提供了针对这类使用场景的具体实现模式和高成本效益的设计方法。
 
 ## 实战成本优化技巧
 
@@ -222,7 +200,7 @@ graph TD
 - 不需要实时处理的任务批量处理
 - 嵌入结果必须缓存（重新计算成本很高）
 
-[LLM PM工作流自动化](/zh/blog/zh/llm-pm-workflow-automation)案例展示了这些批处理与缓存策略在实际生产环境中的应用方式。
+LLM PM工作流自动化案例展示了这些批处理与缓存策略在实际生产环境中的应用方式。
 
 ### 3. 最小化失败成本
 
@@ -230,11 +208,11 @@ graph TD
 - 调用昂贵模型前用便宜模型预验证
 - 设计Agent失败时的优雅降级
 
-## 结论：认识权衡取舍
+## 运营8体后学到的四件事
 
 AI Agent不是魔法。它是<strong>存在明确权衡取舍的工程工具</strong>。
 
-核心教训总结：
+这一年运营下来，真正刻进脑子里的教训是这几条。
 
 1. <strong>API成本只是总成本的一部分。</strong> 必须包括工程时间、维护和故障响应。
 2. <strong>路由层是最大的技术难关。</strong> 多Agent系统的真正困难不在于单个Agent，而在于编排。

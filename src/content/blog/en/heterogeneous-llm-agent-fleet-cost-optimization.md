@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Cut Agent Fleet Costs by 90% with Heterogeneous LLM Architecture'
 description: 'The Plan-Execute pattern: large models plan, small models execute. A practical guide for EMs and CTOs on heterogeneous LLM architecture strategies to dramatically reduce agent fleet costs without sacrificing quality.'
 pubDate: '2026-03-09'

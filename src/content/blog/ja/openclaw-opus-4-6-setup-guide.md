@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 【緊急】OpenClawにClaude Opus 4.6を設定する方法
 description: Claude Opus 4.6をOpenClawで使うための設定方法を解説。100万トークンコンテキスト、128K出力を活かすための設定をそのまま使えます。
 pubDate: '2026-02-06'

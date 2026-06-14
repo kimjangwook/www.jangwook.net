@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'How to Build an Elite AI Engineering Organization in 2026: Why a 3-Person Team Beats 50'
 description: 'Analysis of the elite AI engineering culture that topped Hacker News. Understanding the 5.7x gap between $3.48M vs $610K revenue per employee, and the Taste × Discipline × Leverage formula every EM should practice'
 pubDate: '2026-03-07'

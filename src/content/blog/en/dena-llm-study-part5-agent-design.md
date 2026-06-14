@@ -15,64 +15,40 @@ tags:
   - n8n
   - langgraph
 relatedPosts:
-  - slug: anthropic-code-execution-mcp
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: bigquery-mcp-prefix-filtering
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-code-execution-practical-implementation
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: multi-agent-orchestration-improvement
-    score: 0.95
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: multi-agent 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into multi-agent.
+      ja: multi-agentをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 multi-agent 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
+    reason:
+      ko: dena를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on dena experience.
+      ja: denaを実際に扱った経験が続く記事です。
+      zh: 延续 dena 的实战经验。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.8
+    reason:
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>Series: DeNA LLM Study</strong> (5/5 - Final)
 >
 > 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: Structured Output and Multi-LLM Pipelines](/en/blog/en/dena-llm-study-part2-structured-output)
+> 2. Part 2: Structured Output and Multi-LLM Pipelines
 > 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training)
 > 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag)
 > 5. <strong>Part 5: Agent Design and Multi-Agent Orchestration</strong> ← Current Article
 
-## Overview
+## From Autonomous Agents to Orchestration
 
-This is the final installment of the DeNA LLM Study Series. Part 5 covers <strong>agent design</strong> and <strong>multi-agent orchestration</strong> using LLMs. Beyond simple prompt engineering, we'll explore how to build autonomous agent systems and address cost, performance, and reliability challenges in production environments.
+This is the final installment of the series. The days of steering an LLM with a single prompt are behind us. Here I look at how to design agents that decide for themselves and call their own tools, and how to wire several of them together. Chase autonomy too hard, though, and costs blow up while behavior slips out of your control. So this part also walks through the cost, performance, and reliability problems you actually hit in production.
 
 ### Part 5 Key Topics
 
@@ -83,7 +59,7 @@ This is the final installment of the DeNA LLM Study Series. Part 5 covers <stron
 5. <strong>Production Case Study</strong> - DeNA NOC Alert Agent
 6. <strong>Cost and Performance Optimization</strong> - Semantic caching, batching, SLM utilization
 
-This article synthesizes DeNA's official study materials with the latest research findings and production case studies.
+The backbone here is DeNA's official study material. I've layered the latest research and a few production case studies on top of it.
 
 ## 1. LLM Workflows with n8n
 
@@ -754,7 +730,7 @@ Reduction rate: 86% (Before $0.014 → After $0.00196)
 
 ## Key Insights and Reflections
 
-Core insights gained from completing DeNA LLM Study Part 5.
+A few things stuck with me after finishing Part 5.
 
 ### 1. "Orchestration" Over "Full Autonomy"
 
@@ -785,7 +761,7 @@ LLMs are probabilistic systems. 100% accurate responses are impossible.
 
 ## Series Recap
 
-We've completed DeNA LLM Study Parts 1〜5. Let's look back at the entire learning journey.
+That's all five parts done. Worth a quick look back at the whole journey.
 
 ### Insights from the Entire Series
 

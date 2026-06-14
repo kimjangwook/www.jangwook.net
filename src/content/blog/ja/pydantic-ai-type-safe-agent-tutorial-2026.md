@@ -1,48 +1,36 @@
 ---
-title: 'PydanticAI実践チュートリアル — FastAPI感覚で型安全なAIエージェントを作る方法'
-description: 'PydanticAI 1.88.0を実際にインストールし、TestModel、output_type、@agent.tool、マルチプロバイダー切り替えを直接テストした結果です。result_type→output_type変更のような実際の罠とFunctionModelテスト戦略も含みます。'
+title: PydanticAI実践チュートリアル — FastAPI感覚で型安全なAIエージェントを作る方法
+description: >-
+  PydanticAI
+  1.88.0を実際にインストールし、TestModel、output_type、@agent.tool、マルチプロバイダー切り替えを直接テストした結果です。result_type→output_type変更のような実際の罠とFunctionModelテスト戦略も含みます。
 pubDate: '2026-04-29'
-heroImage: '../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-hero.jpg'
+heroImage: ../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-hero.jpg
 tags:
   - python
   - pydantic-ai
   - ai-agent
 relatedPosts:
   - slug: python-ai-agent-library-comparison-2026
-    score: 0.92
+    score: 0.9
     reason:
-      ko: 이 튜토리얼에서 PydanticAI를 골랐다면, 비교 포스트가 왜 이 라이브러리가 Instructor나 Smolagents와 다른지 정확히 짚어준다.
-      ja: このチュートリアルでPydanticAIを選んだなら、比較ポストがInstructorやSmolagentsとの違いを明確に説明してくれる。
-      en: If you chose PydanticAI after this tutorial, the comparison post explains precisely why it differs from Instructor or Smolagents.
-      zh: 如果在本教程后选择了PydanticAI，比较文章能精确说明它与Instructor或Smolagents的区别。
-  - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
+      ko: Python 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Python.
+      ja: Pythonをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Python 主题。
+  - slug: google-adk-vs-langgraph-agent-framework-comparison-2026
     score: 0.85
     reason:
-      ko: PydanticAI로 단일 에이전트를 만들었다면, 다음 질문은 오케스트레이션 프레임워크와 어떻게 조합하느냐다. LangGraph·CrewAI 비교가 그 답을 제시한다.
-      ja: PydanticAIで単体エージェントを作ったなら、次の問いはオーケストレーションフレームワークとどう組み合わせるかだ。LangGraph・CrewAI比較がその答えを示す。
-      en: Once you've built a single agent with PydanticAI, the next question is how to combine it with orchestration frameworks. The LangGraph·CrewAI comparison answers that.
-      zh: 用PydanticAI构建了单个智能体后，下一个问题是如何与编排框架结合。LangGraph·CrewAI对比文章给出了答案。
-  - slug: production-grade-ai-agent-design-principles
-    score: 0.82
+      ko: ai-agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai-agent experience.
+      ja: ai-agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai-agent 的实战经验。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.8
     reason:
-      ko: 에이전트가 TestModel을 넘어 실제 LLM과 연동되는 순간부터 프로덕션 설계 원칙이 필요해진다. 이 포스트에서 재시도 전략과 관찰 가능성을 다룬다.
-      ja: エージェントがTestModelを超えて実際のLLMと連携する瞬間から、本番設計原則が必要になる。このポストではリトライ戦略と可観測性を扱う。
-      en: The moment your agent moves beyond TestModel to a real LLM, production design principles become essential. This post covers retry strategy and observability.
-      zh: 当智能体从TestModel转向真实LLM时，生产设计原则就变得必不可少。这篇文章涵盖重试策略和可观测性。
-  - slug: context-engineering-production-ai-agents
-    score: 0.78
-    reason:
-      ko: PydanticAI의 system_prompt와 의존성 주입 패턴이 컨텍스트 엔지니어링과 어떻게 연결되는지 이 포스트에서 확인할 수 있다.
-      ja: PydanticAIのsystem_promptと依存性注入パターンがコンテキストエンジニアリングとどう結びつくかをこのポストで確認できる。
-      en: This post shows how PydanticAI's system_prompt and dependency injection patterns connect to context engineering.
-      zh: 这篇文章展示了PydanticAI的system_prompt和依赖注入模式如何与上下文工程相结合。
-  - slug: vercel-ai-sdk-claude-streaming-agent-2026
-    score: 0.74
-    reason:
-      ko: Python 백엔드가 아닌 TypeScript/Next.js 스택에서 비슷한 스트리밍 에이전트를 만들고 싶다면, Vercel AI SDK 포스트가 정확히 그 경로를 다룬다.
-      ja: PythonバックエンドではなくTypeScript/Next.jsスタックで同様のストリーミングエージェントを作りたいなら、Vercel AI SDKポストがまさにその経路を扱っている。
-      en: If you want to build a similar streaming agent on a TypeScript/Next.js stack instead of Python, the Vercel AI SDK post covers exactly that path.
-      zh: 如果想在TypeScript/Next.js技术栈而非Python后端构建类似的流式智能体，Vercel AI SDK文章正好涵盖了这条路径。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 ```python
@@ -54,11 +42,11 @@ result = agent.run_sync('f-stringと.format()どっちが速いですか？', mo
 print(result.output)  # → success (no tool calls)
 ```
 
-このコードがAPIキーなしで動くのを初めて見たとき、少し驚いた。FastAPIを初めて使ったときのように — 構造があまりにも直感的で、むしろ疑いたくなった。PydanticAIはそういうライブラリだ。
+このコードがAPIキーなしで動くのを初めて見たとき、少し驚いた。FastAPIを初めて触ったときと同じ感覚だ。構造があまりにも直感的で、むしろ疑いたくなった。PydanticAIはそういうライブラリだ。
 
 正直、最初は「Instructorにラッパーかぶせただけじゃないの？」と思っていた。実際に使ってみて考えが変わった。FastAPIのように型システムを中心に設計されたフレームワークで、AIエージェントにその哲学をそのまま持ち込んだものだ。今日は直接インストールして動かした結果をまとめる。失敗したテストも含めて。
 
-## なぜPydanticAIなのか — 既存比較との違う視点
+## なぜPydanticAIなのか: 既存比較との違う視点
 
 以前の[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)でPydanticAI・Instructor・Smolagentsを扱った。あのポストが「何を選ぶか」を扱うなら、今回のポストは「PydanticAIで実際にどう作るか」だ。実装方法が目的だ。
 
@@ -191,7 +179,7 @@ review_agent = Agent(
 
 3回全て失敗すると`UnexpectedModelBehavior`例外が発生する。
 
-## @agent.toolと依存性注入 — FastAPIのDepends()と同じパターン
+## @agent.toolと依存性注入: FastAPIのDepends()と同じパターン
 
 ```python
 from pydantic_ai import Agent, RunContext
@@ -243,7 +231,7 @@ result = agent.run_sync("緊急タスクで最優先のものを選んで", deps
 
 ![PydanticAI実行ログ — サンドボックステスト結果](../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-log.jpg)
 
-## TestModel vs FunctionModel — テスト戦略
+## TestModel vs FunctionModel: テスト戦略
 
 サンドボックスでテストしていてTestModelの重要な制限を発見した。
 
@@ -331,9 +319,9 @@ result_gemini = review_agent.run_sync(code, model='google-gla:gemini-2.5-flash')
 result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 ```
 
-[コンテキストエンジニアリングの観点](/ja/blog/ja/context-engineering-production-ai-agents)から見ると、`system_prompt`と`output_type`スキーマがコンテキストの核心で、その上でモデルを交換可能にするのが良い設計だ。
+コンテキストエンジニアリングの観点から見ると、`system_prompt`と`output_type`スキーマがコンテキストの核心で、その上でモデルを交換可能にするのが良い設計だ。
 
-## 実際に使ってみて — 率直な評価
+## 実際に使ってみて: 率直な評価
 
 **良かった点**:
 - 型安全性が実際に差を生む。`output_type`スキーマを変更するとIDEが即座に関連エラーを捕捉する
@@ -345,11 +333,11 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 - ストリーミング構造化出力はまだベータ版だ。LLMが部分的に応答を生成している間にPydanticモデルとしてパースするのは難しく、現在の実装が安定していない
 - Pydantic v2に強く結びついている。v1のレガシーコードベースならマイグレーションコストを考慮する必要がある
 
-[プロダクションAIエージェント設計原則](/ja/blog/ja/production-grade-ai-agent-design-principles)と合わせて読むと、エージェントフレームワーク選択においてどんな基準が重要かがより明確になる。
+プロダクションAIエージェント設計原則と合わせて読むと、エージェントフレームワーク選択においてどんな基準が重要かがより明確になる。
 
 ## 次のステップ
 
-TypeScriptスタックなら[Vercel AI SDKでClaudeストリーミングエージェントを作る方法](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026)がPythonと似たアプローチを提供する。
+TypeScriptスタックならVercel AI SDKでClaudeストリーミングエージェントを作る方法がPythonと似たアプローチを提供する。
 
 PydanticAIを実際のプロダクションに適用するなら、推奨する順番:
 

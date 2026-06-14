@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AutoGen 0.7.x: Building Multi-Agent Systems from Scratch'
 description: >-
   Hands-on AutoGen 0.7.x guide. Build RoundRobinGroupChat, SelectorGroupChat,

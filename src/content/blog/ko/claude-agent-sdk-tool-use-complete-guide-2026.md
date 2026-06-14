@@ -1,49 +1,49 @@
 ---
-title: 'Claude Agent SDK 실전 가이드 — Tool Use로 AI 에이전트 구현하기'
-description: 'anthropic 0.101.0 SDK를 직접 설치해 tool_use 에이전틱 루프를 구현했다. JSON 스키마 도구 정의부터 다중 도구 호출, 에러 핸들링, 스트리밍 응답, 비용 최적화까지 — 챗봇과 에이전트를 가르는 핵심 패턴을 단계별 Python 실전 코드로 설명한다.'
+title: Claude Agent SDK 실전 가이드 — Tool Use로 AI 에이전트 구현하기
+description: >-
+  anthropic 0.101.0 SDK를 직접 설치해 tool_use 에이전틱 루프를 구현했다. JSON 스키마 도구 정의부터 다중 도구
+  호출, 에러 핸들링, 스트리밍 응답, 비용 최적화까지 — 챗봇과 에이전트를 가르는 핵심 패턴을 단계별 Python 실전 코드로 설명한다.
 pubDate: '2026-05-13'
-heroImage: '../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/hero.png'
-tags: ['Claude', 'Anthropic SDK', 'Tool Use', 'AI Agent', 'Python']
+heroImage: ../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/hero.png
+tags:
+  - Claude
+  - Anthropic SDK
+  - Tool Use
+  - AI Agent
+  - Python
 relatedPosts:
-  - slug: 'fastapi-claude-api-streaming-production-guide-2026'
-    score: 0.91
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.9
     reason:
-      ko: 'Tool Use 에이전트의 응답을 실시간 스트리밍으로 전달하는 백엔드를 FastAPI로 구축하고 싶다면, 이 글이 서버 사이드 설계의 절반을 채워줄 것이다.'
-      ja: 'Tool Useエージェントのレスポンスをリアルタイムストリーミングで配信するFastAPIバックエンドを構築したいなら、このガイドがサーバーサイド設計の半分を埋めてくれる。'
-      en: 'If you want to stream tool use agent responses in real time via a FastAPI backend, this guide covers the server-side half of that architecture.'
-      zh: '如果想通过FastAPI后端实时流式传输Tool Use代理的响应，这篇文章会填补服务器端设计的一半。'
-  - slug: 'pydantic-ai-type-safe-agent-tutorial-2026'
-    score: 0.87
+      ko: claude 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into claude.
+      ja: claudeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 claude 主题。
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.85
     reason:
-      ko: '도구 정의를 Python 타입으로 자동 생성하고 싶다면, PydanticAI가 이 글에서 다룬 수동 JSON 스키마의 대안이다. 두 방식을 비교해보면 선택 기준이 명확해진다.'
-      ja: 'Pythonの型からツール定義を自動生成したいなら、PydanticAIがこの記事の手動JSONスキーマの代替になる。両アプローチを比較すると選択基準が明確になる。'
-      en: "If you want to auto-generate tool definitions from Python types, PydanticAI is the alternative to the manual JSON schema approach in this guide. Comparing both clarifies the trade-off."
-      zh: '如果想从Python类型自动生成工具定义，PydanticAI是本文手动JSON Schema方式的替代方案。对比两种方式可以明确选择标准。'
-  - slug: 'claude-api-prompt-caching-cost-optimization-guide'
-    score: 0.83
+      ko: ai agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai agent experience.
+      ja: ai agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai agent 的实战经验。
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.8
     reason:
-      ko: 'Tool Use를 쓰면 도구 정의가 매 요청마다 토큰을 소비한다. 이 글에서 다룬 캐싱 패턴을 조합하면 비용을 크게 줄일 수 있다.'
-      ja: 'Tool Useを使うとツール定義が毎リクエストのトークンを消費する。このガイドのキャッシュパターンを組み合わせることでコストを大幅に削減できる。'
-      en: "Tool use means tool definitions consume tokens on every request. Combining this with the caching patterns in that guide cuts costs significantly."
-      zh: '使用Tool Use时，工具定义会消耗每次请求的tokens。结合该文章的缓存模式可以大幅降低成本。'
-  - slug: 'vercel-ai-sdk-claude-streaming-agent-2026'
-    score: 0.78
-    reason:
-      ko: 'Vercel AI SDK는 Tool Use 루프를 SDK가 자동 처리해준다. 이 글의 수동 구현과 비교하면 언제 어느 방식을 쓸지 판단하기 좋다.'
-      ja: 'Vercel AI SDKはTool Useループを自動処理してくれる。この記事の手動実装と比較すると、いつどちらを使うか判断しやすい。'
-      en: 'Vercel AI SDK handles the tool use loop automatically. Comparing it with the manual implementation in this guide helps you decide which approach to use.'
-      zh: 'Vercel AI SDK自动处理Tool Use循环。与本文的手动实现对比，有助于判断何时选择哪种方式。'
+      ko: 같은 ai agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai agent track.
+      ja: 同じai agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai agent 脉络中可一并阅读。
 ---
 
 FastAPI로 Claude API 스트리밍 백엔드를 구축하다가 처음으로 Tool Use를 써봤다. 계기는 단순했다. 사용자가 "올해 남은 일수가 몇 일이야?"라고 물었을 때, Claude가 날짜 계산을 틀리게 답하는 걸 발견했다. 그냥 틀린 게 아니라 자신있게 틀렸다. 그걸 보고 "아, 이건 챗봇으론 안 되겠다"는 생각이 들었다.
 
 Tool Use는 그 문제를 구조적으로 해결한다. 모델이 직접 계산하는 대신, 계산 함수를 호출하고 그 결과를 받아서 답한다. 이 차이가 챗봇과 에이전트를 가르는 핵심이다.
 
-이 글에서는 anthropic SDK 0.101.0을 직접 설치해 검증한 Tool Use 패턴을 정리했다. 기본 도구 정의부터 에이전틱 루프, 에러 핸들링, 비용까지 — 실제로 쓸 수 있는 코드 중심으로.
+아래 내용은 anthropic SDK 0.101.0을 직접 설치해 검증한 Tool Use 패턴이다. 기본 도구 정의, 에이전틱 루프, 에러 핸들링, 비용. 전부 실제로 돌려본 코드 기준으로 적었다.
 
-## Tool Use가 챗봇과 다른 이유 — 구조적 차이
+## Tool Use가 챗봇과 다른 이유: 구조적 차이
 
-LLM은 확률 분포에서 토큰을 샘플링한다. 날짜 계산, 정확한 수치 연산, 외부 API 조회 같은 작업은 구조적으로 신뢰하기 어렵다. 학습 데이터의 패턴을 재현할 뿐이기 때문이다.
+LLM은 확률 분포에서 토큰을 샘플링한다. 날짜 계산이나 정확한 수치 연산, 외부 API 조회 같은 작업은 구조적으로 신뢰하기 어렵다. 학습 데이터의 패턴을 재현할 뿐이기 때문이다.
 
 Tool Use는 이 문제를 다른 층에서 해결한다. 모델은 "무엇을 해야 하는지"를 결정하고, 실제 실행은 외부 코드에 위임한다. 모델이 직접 계산하는 게 아니라 `calculate("365 - today.day_of_year")` 같은 호출을 내뱉고, 파이썬 코드가 그걸 실행해 결과를 돌려준다.
 
@@ -66,7 +66,7 @@ response = client.messages.create(
 
 결정적 차이는 신뢰성이다. 파이썬 `datetime` 모듈은 날짜를 틀리지 않는다.
 
-## 환경 설정 — 샌드박스 검증 결과
+## anthropic 0.101.0 설치와 클라이언트 초기화
 
 ```bash
 python3 -m venv venv
@@ -94,7 +94,7 @@ client = anthropic.Anthropic(api_key="your-api-key")  # ANTHROPIC_API_KEY 환경
 
 API 키는 `ANTHROPIC_API_KEY` 환경변수로 자동 로드된다. 코드에 직접 넣지 말 것.
 
-## 첫 번째 도구 정의 — JSON 스키마가 전부다
+## 첫 번째 도구 정의: JSON 스키마가 전부다
 
 Tool Use는 OpenAI Function Calling과 비슷한 구조를 쓴다. 도구 하나는 세 가지로 구성된다:
 
@@ -152,7 +152,7 @@ Tool: calculate
   Required params: ['operation', 'a', 'b']
 ```
 
-## 에이전틱 루프 구현 — Tool Use의 핵심 구조
+## 에이전틱 루프 구현: 호출과 응답이 반복되는 사이클
 
 ![에이전틱 루프 다이어그램 — 사용자 메시지에서 도구 실행, 결과 반환까지의 순환 흐름](../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/agentic-loop.png)
 
@@ -204,7 +204,7 @@ def run_agent(user_message: str, tools: list, max_iterations: int = 10) -> str:
 
 <strong>둘째</strong>, 도구 결과는 `user` 역할로 넣어야 한다. 직관적으로는 `assistant`일 것 같지만, API 설계상 도구 실행 결과는 사용자(환경)가 돌려주는 것으로 취급한다.
 
-## 실전 도구 구현 — 계산기·날짜·파일 읽기
+## 실전 도구 구현: 계산기, 날짜, 파일 읽기
 
 도구 실행 함수는 단순하다. 이름과 입력을 받아서 문자열을 반환한다:
 
@@ -288,7 +288,7 @@ Invalid input (missing required field): False, Missing required field: location
 
 [FastAPI + Claude API 스트리밍 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)에서 다룬 에러 분류 전략을 도구 에러에도 적용하면 프로덕션 안정성이 올라간다.
 
-## 다중 도구 호출 처리 — 병렬 실행이 가능한가
+## 다중 도구 호출 처리: 병렬 실행이 가능한가
 
 Claude는 한 턴에 여러 도구를 동시에 호출할 수 있다. "서울과 도쿄의 날씨를 비교해줘"라고 하면, 두 번의 `get_weather` 호출을 한꺼번에 반환한다.
 
@@ -346,7 +346,7 @@ with ThreadPoolExecutor(max_workers=4) as executor:
 
 멱등성(idempotent)이 보장된 조회 도구에만 병렬 실행을 적용하는 걸 권장한다.
 
-## 에러 핸들링 — 도구 실패를 우아하게 처리하기
+## 에러 핸들링: 도구 실패를 우아하게 처리하기
 
 도구가 실패하면 `is_error: true`를 붙여서 반환한다. 모델은 이걸 보고 오류 상황을 인식하고, 다른 방법을 시도하거나 사용자에게 적절히 안내한다.
 
@@ -376,9 +376,9 @@ for block in response.content:
 
 `is_error: true`를 반환하면 모델이 그냥 넘어가지 않는다. 직접 테스트해보니 모델은 에러 내용을 읽고 "파일을 찾을 수 없다고 하네요, 경로를 확인해주세요"처럼 사용자에게 맥락 있는 안내를 줬다. 에러를 무시하거나 빈 문자열로 처리하면 모델이 엉뚱한 응답을 생성할 수 있다.
 
-## Tool Use 비용 현실 — 토큰이 얼마나 늘어나는가
+## Tool Use 비용 현실: 토큰이 얼마나 늘어나는가
 
-솔직히 말하면, Tool Use는 비용이 올라간다. Anthropic 공식 문서 기준으로 도구 정의 하나당 약 200〜300 토큰의 오버헤드가 생긴다.
+솔직히 말하면 Tool Use는 비용이 올라간다. Anthropic 공식 문서 기준으로 도구 정의 하나당 약 200〜300 토큰의 오버헤드가 생긴다.
 
 ```
 도구 5개 정의 → ~1,250 토큰 고정 오버헤드 (매 요청마다)
@@ -390,7 +390,7 @@ for block in response.content:
 
 두 가지 대응이 있다:
 
-<strong>1. Prompt Caching 조합</strong>: 도구 정의는 매 요청마다 동일하다. [Claude API Prompt Caching 가이드](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide)에서 다룬 것처럼, 도구 정의 블록에 `cache_control: {"type": "ephemeral"}`을 달면 5분 TTL로 캐싱된다.
+<strong>1. Prompt Caching 조합</strong>: 도구 정의는 매 요청마다 동일하다. Claude API Prompt Caching 가이드에서 다룬 것처럼, 도구 정의 블록에 `cache_control: {"type": "ephemeral"}`을 달면 5분 TTL로 캐싱된다.
 
 ```python
 # 도구 정의에 캐싱 적용 (anthropic SDK의 system prompt 캐싱과 함께 활용)
@@ -433,7 +433,7 @@ if final_message.stop_reason == "tool_use":
     # ... 위와 동일한 처리
 ```
 
-스트리밍을 쓸 때 주의할 점: 텍스트 청크를 실시간으로 사용자에게 보여주면서 도구 호출도 처리해야 한다면, 스트리밍 도중 `tool_use` 블록이 나왔을 때 어떻게 UX를 처리할지 미리 설계해야 한다. [Vercel AI SDK 방식](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)을 참고하면 프론트엔드 통합에서 이 부분이 어떻게 추상화되는지 비교해볼 수 있다.
+스트리밍을 쓸 때 주의할 점: 텍스트 청크를 실시간으로 사용자에게 보여주면서 도구 호출도 처리해야 한다면, 스트리밍 도중 `tool_use` 블록이 나왔을 때 어떻게 UX를 처리할지 미리 설계해야 한다. Vercel AI SDK 방식을 참고하면 프론트엔드 통합에서 이 부분이 어떻게 추상화되는지 비교해볼 수 있다.
 
 ## 프로덕션 패턴: GitHub 이슈 모니터링 에이전트
 
@@ -526,7 +526,7 @@ def run_issue_agent(query: str) -> str:
 # result = run_issue_agent("anthropic/anthropic-sdk-python 저장소의 오픈 이슈 중 버그 관련된 것 요약해줘")
 ```
 
-## 아직 해결 안 된 것들 — 솔직한 한계
+## 아직 해결 안 된 것들: 솔직한 한계
 
 Tool Use를 실제로 써보면서 느낀 한계를 정리한다.
 
@@ -538,9 +538,9 @@ Tool Use를 실제로 써보면서 느낀 한계를 정리한다.
 
 나는 Tool Use가 과소평가됐다고 본다. 에이전트 프레임워크들이 화려한 추상화를 제공하지만, 결국 그 내부에는 이 패턴이 있다. [PydanticAI의 타입 안전한 도구 정의 방식](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)처럼 프레임워크가 JSON 스키마 생성을 자동화해주는 건 편리하지만, 기반 메커니즘을 직접 이해하고 있어야 디버깅할 때 막히지 않는다.
 
-## 정리
+## 다섯 줄로 압축한 Tool Use 핵심
 
-anthropic 0.101.0으로 직접 실험한 결과를 요약하면:
+anthropic 0.101.0으로 직접 실험한 결과를 요약하면 이렇다.
 
 - <strong>도구 정의</strong>: `name` + `description` + `input_schema` 세 가지가 전부다. description의 품질이 도구 선택을 결정한다.
 - <strong>에이전틱 루프</strong>: `stop_reason == "tool_use"` 감지 → 도구 실행 → `tool_result` 메시지 추가 → 반복. 간단하지만 messages 구조를 정확하게 맞춰야 한다.

@@ -12,51 +12,20 @@ tags:
   - チュートリアル
   - AIコーディング
 relatedPosts:
-  - slug: mcp-servers-toolkit-introduction
-    score: 0.94
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: openclaw-opus-4-6-setup-guide
-    score: 0.94
+      ko: 튜토리얼 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into 튜토리얼.
+      ja: 튜토리얼をもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 튜토리얼 主题。
+  - slug: claude-code-masterclass-series-1-prompt-to-agent
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: github-agentic-workflows-cicd-ai
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps主题进行连接。
-  - slug: stripe-minions-autonomous-coding-agents-1300-prs
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: claude-code-cli-migration-guide
-    score: 0.92
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps主题进行连接。
+      ko: claudecode를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claudecode experience.
+      ja: claudecodeを実際に扱った経験が続く記事です。
+      zh: 延续 claudecode 的实战经验。
 ---
 
 Claude Codeのタブを複数開いておくと「並列作業」をしているように感じる。でも実際はそうじゃない。
@@ -128,7 +97,7 @@ claude
 
 各セッションは完全に独立している。ターミナル2で`src/auth/oauth.ts`を変更しても、ターミナル3のClaude Codeは関知しない。別のブランチのファイルだから。
 
-[Claude Code Best PracticesとClaude Codeの基本活用法](/ja/blog/ja/claude-code-best-practices)をすでに把握しているなら、このパターンはすぐに適用できる。
+Claude Code Best PracticesとClaude Codeの基本活用法をすでに把握しているなら、このパターンはすぐに適用できる。
 
 ## Plan Modeを活用した作業分配
 
@@ -177,7 +146,7 @@ git merge fix/login-redirect
 
 worktreeなしでやっていたら、推薦アルゴリズム開発中にOG画像のバグが発生したとき、ブランチを切り替えるかstashを使う必要があった。worktreeを使えば、別のターミナルウィンドウに移動してすぐに修正できた。
 
-[Claude Code Hookで自動化されたレビューシステムを構成しておけば](/ja/blog/ja/claude-code-hooks-workflow)、worktree切り替え時にコンテキストを自動更新するhookも設定できる。
+Claude Code Hookで自動化されたレビューシステムを構成しておけば、worktree切り替え時にコンテキストを自動更新するhookも設定できる。
 
 ## 注意点と実際の限界
 
@@ -205,7 +174,7 @@ git worktree remove --force ../my-app-feature
 
 このパターンは気に入っているが、万能ではない。タスクが互いに異なるファイルを触る場合に最も効果的で、同じコンポーネントを2つのセッションが両方修正する必要があるなら、むしろマージコンフリクトが増える。また、セッションが3つを超えると、どのセッションがどこまで進んだか追跡し始めてオーバーヘッドが生まれる。
 
-[マルチエージェントPRレビューパターン](/ja/blog/ja/claude-code-review-multi-agent-pr)と組み合わせると、各worktreeブランチから出たPRを自動でレビューできるので、チーム単位ではこの組み合わせが最も実用的だった。
+マルチエージェントPRレビューパターンと組み合わせると、各worktreeブランチから出たPRを自動でレビューできるので、チーム単位ではこの組み合わせが最も実用的だった。
 
 ## コマンド早見表
 
@@ -222,7 +191,7 @@ git worktree remove <パス>
 git worktree prune  # すでに削除されたディレクトリの参照を整理
 ```
 
-## まとめ
+## まず2つから、慣れたら増やす
 
 正直、最初は「わざわざこんなことまでしなきゃいけないの?」と思っていた。でも一度使ってからは、並列開発が必要な場面で自然と手が動くようになった。
 

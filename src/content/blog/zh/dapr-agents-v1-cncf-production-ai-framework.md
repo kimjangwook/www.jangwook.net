@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Dapr Agents v1.0 GA — 让 AI Agent 在 Kubernetes 上永不宕机的方法
 description: >-
   深入分析 KubeCon Europe 2026 发布的 Dapr Agents v1.0 的 durable

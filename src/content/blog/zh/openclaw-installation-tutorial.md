@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 从安装 OpenClaw 到首次对话 — 完整教程
 description: 手把手教你安装 OpenClaw、连接 Telegram、完成首次 AI 对话。涵盖 Node.js 配置到工作区结构的全流程。
 pubDate: '2026-02-04'

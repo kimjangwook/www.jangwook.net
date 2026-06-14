@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Meta Llama 4 完全解説 — Maverick・ScoutのオープンソースAIがエンタープライズ戦略を変える'
 description: 'Meta Llama 4 Maverick（400B MoE）とScout（10Mコンテキスト）のアーキテクチャ・ベンチマーク・コスト構造を分析し、エンジニアリング組織がオープンソースAI戦略をいかに再定義すべきかをCTO/EM視点でまとめる。'
 pubDate: '2026-03-06'

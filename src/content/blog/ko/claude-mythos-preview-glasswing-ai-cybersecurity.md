@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Mythos Preview — AI가 '너무 잘해서' 공개를 못 한다는 게 말이 되나
 description: >-
   Anthropic이 SWE-bench 93.9%를 찍은 Claude Mythos Preview를 일반 공개하지 않기로 했다. 27년 된

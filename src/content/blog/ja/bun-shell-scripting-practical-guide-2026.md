@@ -12,49 +12,27 @@ tags:
   - 自動化
   - Shell
 relatedPosts:
-  - slug: weekly-analytics-2025-10-14
-    score: 0.93
+  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
+    score: 0.9
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
-    score: 0.92
+      ko: bun 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into bun.
+      ja: bunをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 bun 主题。
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.85
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: blog-launch-analysis-report
-    score: 0.91
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.8
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: claude-code-web-automation
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
 シェルスクリプトを書くとき、ちょっとした悩みが生まれる。bashで書けば慣れているがWindowsで壊れる。Node.jsの`child_process`はコールバックまみれになる。`zx`は追加パッケージが必要だ。そんな中でBun Shellを直接試してみた。最初は「zxの劣化版じゃないか」と思っていたが、実際に動かすと少し考えが変わった。
@@ -100,7 +78,7 @@ bun init -y
 
 `bun init`は`package.json`、`tsconfig.json`、`index.ts`を自動生成する。TypeScriptを追加設定なしにすぐ実行できる点が便利だ。
 
-## 基本パターン — $テンプレートリテラルでコマンドを実行する
+## 基本パターン: $テンプレートリテラルでコマンドを実行する
 
 最も基本的な使い方から始めよう。`bun`モジュールから`$`をインポートする:
 
@@ -203,7 +181,7 @@ const unique = await $`sort < input.txt | uniq`.text();
 
 Bun ShellはBashなしで動くが、OS組み込みコマンドの動作はそのOSに従うという点を頭に入れておこう。
 
-## 並列実行 — Promise.allが鍵だ
+## 並列実行：Promise.allが鍵だ
 
 Bun Shellでコマンドを並列実行するには`Promise.all`を使う。コマンドを順番に書くと順次実行になる。
 
@@ -257,7 +235,7 @@ async function build() {
 build().catch(console.error);
 ```
 
-このスクリプトを`scripts/build.ts`として保存して`bun run scripts/build.ts`で実行する。Node.js + ts-nodeの組み合わせが不要になる点が体感として楽だ。[このビルドスクリプトをGitHub ActionsのCI/CDパイプラインと連携](/ja/blog/ja/github-actions-claude-code-ci-automation)するのも自然な次のステップだ。
+このスクリプトを`scripts/build.ts`として保存して`bun run scripts/build.ts`で実行する。Node.js + ts-nodeの組み合わせが不要になる点が体感として楽だ。このビルドスクリプトをGitHub ActionsのCI/CDパイプラインと連携するのも自然な次のステップだ。
 
 ## 実験で見つけた罠たち
 
@@ -330,11 +308,11 @@ Bun Shellがzxより「優れている」という主張には同意しない。
 
 個人的には、`.stdin()` APIがまだ安定していない点が残念だ。これが安定したらstdinベースのパイプ処理がずっとすっきりするはずなのだが。
 
-## まとめ
+## 結局、いま使う価値はあるか
 
 実際にインストールして動かしてみて感じたのは、Bun Shellの開発者体験が思ったより良いということだ。変数の自動エスケープ、`.nothrow()`パターン、`.lines()`などの便利メソッドはzxにも見られないディテールだ。
 
-ただし、まだ1.xバージョンでAPIが安定していない部分がある。プロダクションのCI/CDスクリプトに使う前に実際の環境で十分に検証することを勧める。[Claude Codeフック](/ja/blog/ja/claude-code-hooks-workflow)のような自動化パイプラインに統合する際も同様だ。
+ただし、まだ1.xバージョンでAPIが安定していない部分がある。プロダクションのCI/CDスクリプトに使う前に実際の環境で十分に検証することを勧める。Claude Codeフックのような自動化パイプラインに統合する際も同様だ。
 
 Bunが進化し続ける中でShell APIも安定していくだろうと思う。今すぐzxを捨てる必要はないが、新しいBunプロジェクトなら内蔵シェルを先に試してみる価値はある。
 

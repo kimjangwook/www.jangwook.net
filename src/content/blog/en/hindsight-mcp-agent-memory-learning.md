@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Hindsight — Open-Source MCP Memory That Gives AI Agents Learning
 description: >-
   Analyzing the architecture, core capabilities, and production deployment

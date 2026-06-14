@@ -12,58 +12,36 @@ tags:
   - Jest
   - TypeScript
 relatedPosts:
-  - slug: adsense-low-value-content-technical-fix
-    score: 0.92
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.9
     reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
+      ko: TypeScript 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into TypeScript.
+      ja: TypeScriptをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 TypeScript 主题。
+  - slug: hono-typescript-api-2026
+    score: 0.85
+    reason:
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
   - slug: bun-shell-scripting-practical-guide-2026
-    score: 0.91
+    score: 0.8
     reason:
-      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, DevOps with comparable
-        difficulty.
-      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
-    score: 0.89
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.89
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
-  - slug: weekly-analytics-2025-10-14
-    score: 0.88
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
 Last month I overhauled the test pipeline for a side project and switched from Jest to Vitest. The reason was straightforward: maintaining Jest in a TypeScript project means you need transformation layers like `ts-jest` or `babel-jest`. The more config options you pile on, the more error messages start reading like cryptic noise.
 
 Vitest uses the same transformation pipeline as Vite, so it understands TypeScript without any extra setup. And with Vitest 4 graduating Browser Mode to stable, you can now run DOM tests in actual Chromium instead of the JSDOM simulation that jest-dom required.
 
-This guide is based on real sandbox experiments — I installed `vitest@4.1.7` and ran 16 tests to verify every pattern described here. Rather than walking through config options one by one, I focused on the specific places where people coming from Jest tend to get stuck.
+This guide is based on real sandbox experiments. I installed `vitest@4.1.7` and ran 16 tests to verify every pattern described here. Rather than walking through config options one by one, I focused on the specific places where people coming from Jest tend to get stuck.
 
-## Why Vitest Over Jest — Honestly
+## Why Vitest Over Jest: It's the Config, Not the Speed
 
 The "3–8x faster" benchmark numbers are everywhere. I didn't do a direct comparison myself, but what I noticed more than speed was **the difference in configuration complexity**.
 
@@ -191,7 +169,7 @@ import { vi } from 'vitest'
 const mockFn = vi.fn((x: number) => x * 2)
 ```
 
-Verified in sandbox — `vi.fn()` behaves identically to `jest.fn()`:
+Verified in sandbox. `vi.fn()` behaves identically to `jest.fn()`:
 
 ```
 ✓ vi.fn() mocking > tracks calls with vi.fn() 2ms
@@ -268,7 +246,7 @@ expect(fn).toHaveBeenCalledExactlyOnceWith('hello')  // ✗ called twice
 
 ### toSatisfy
 
-Custom predicate-based assertions — useful for range checks, pattern matching:
+Custom predicate-based assertions. Useful for range checks and pattern matching:
 
 ```ts
 expect(42).toSatisfy((n: number) => n > 0 && n < 100)
@@ -277,7 +255,7 @@ expect('vitest').toSatisfy((s: string) => s.startsWith('vi'))
 
 ### toBeOneOf
 
-Check if a value is one of several options — handy for environment variables and state machines:
+Check if a value is one of several options. Handy for environment variables and state machines:
 
 ```ts
 const env = process.env.NODE_ENV
@@ -374,7 +352,7 @@ export default defineConfig({
 })
 ```
 
-I didn't test Browser Mode myself in this article — that requires a different CI setup and is a bigger lift than a simple Node.js migration. But stable status matters: it means [combining Vitest with Playwright-based E2E testing](/en/blog/en/playwright-ai-testing) is now a reasonable production strategy rather than an experiment.
+I didn't test Browser Mode myself in this article. That requires a different CI setup and is a bigger lift than a simple Node.js migration. But the stable status matters. It means combining Vitest with Playwright-based E2E testing is now a reasonable production strategy rather than an experiment.
 
 ## Step 8: CI Configuration
 
@@ -451,16 +429,16 @@ Leaving it around can cause conflicts. Once you're fully migrated, remove it.
    Duration  157ms (transform 67ms, setup 0ms, import 91ms, tests 15ms)
 ```
 
-157 milliseconds for 16 tests. The transform time (67ms) is the Vite pipeline processing the TypeScript files on first run — subsequent runs are faster due to caching.
+157 milliseconds for 16 tests. The transform time (67ms) is the Vite pipeline processing the TypeScript files on first run. Subsequent runs are faster due to caching.
 
 ## Should You Migrate?
 
 My take: **yes for TypeScript projects, case-by-case for everything else.**
 
-If you're using TypeScript with Vite, SvelteKit, Nuxt, or a modern frontend framework, staying on Jest is increasingly going against the grain. Configuration conflicts, ts-jest updates breaking things, cryptic transform errors — the time spent debugging those is better spent shipping.
+If you're using TypeScript with Vite, SvelteKit, Nuxt, or a modern frontend framework, staying on Jest is increasingly going against the grain. Configuration conflicts. ts-jest updates that break things. Cryptic transform errors. The time spent debugging those is better spent shipping.
 
 For large Next.js or Express server test suites, be more careful. Vitest's Vite-first design can surface unexpected module resolution issues in complex server-side setups.
 
 npm weekly downloads went from 4.8M to 7.7M — a lot of projects made the switch. But not all of them did it smoothly. Factor your project's complexity before committing.
 
-Vitest 5.0 betas are already on npm. Once stable, expect another round of breaking changes. Migrating to 4.x now gives you a solid foundation before that wave hits. Pairing Vitest with [Bun for TypeScript script automation](/en/blog/en/bun-shell-scripting-practical-guide-2026) is something I'm currently exploring — that'll be a separate post.
+Vitest 5.0 betas are already on npm. Once stable, expect another round of breaking changes. Migrating to 4.x now gives you a solid foundation before that wave hits. Pairing Vitest with [Bun for TypeScript script automation](/en/blog/en/bun-shell-scripting-practical-guide-2026) is something I'm currently exploring. That'll be a separate post.

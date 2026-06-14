@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Agent Effi Flow的战略转型：面向日本入境市场推出おもてなしBot
 description: 从AI效率工具到日本入境旅游市场的战略转型。分享一位独立开发者如何避开竞争激烈的红海，寻找蓝海机会的市场分析和おもてなしBot服务构建过程。
 pubDate: '2025-12-07'

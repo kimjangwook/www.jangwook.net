@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Deep-Thinking Ratio: LLM推論コストを50%削減する新しい指標'
 description: >-
   「長く考えるほど良い」という常識を覆すGoogle・UVAの研究。Deep-Thinking Ratio(DTR)を活用すれば

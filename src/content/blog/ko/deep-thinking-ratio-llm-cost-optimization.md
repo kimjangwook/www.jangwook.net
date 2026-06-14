@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Deep-Thinking Ratio: LLM 추론 비용을 50% 줄이는 새로운 측정 지표'
 description: >-
   "길게 생각하면 좋다"는 AI 상식을 뒤집는 Google·UVA 공동 연구. DTR(Deep-Thinking Ratio)를 활용하면

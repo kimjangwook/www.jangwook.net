@@ -11,56 +11,36 @@ tags:
   - langgraph
   - ai-agent
 relatedPosts:
-  - slug: sqlite-ai-swarm-build
-    score: 0.95
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: nist-ai-agent-security-standards
-    score: 0.95
+      ko: ai-agent 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into ai-agent.
+      ja: ai-agentをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 ai-agent 主题。
+  - slug: mastra-ai-typescript-agent-framework-guide-2026
+    score: 0.85
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: adl-agent-definition-language-governance
-    score: 0.95
+      ko: ai-agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai-agent experience.
+      ja: ai-agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai-agent 的实战经验。
+  - slug: ai-agent-cost-reality
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-source-leak-analysis
-    score: 0.94
-    reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 ai-agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai-agent track.
+      ja: 同じai-agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai-agent 脉络中可一并阅读。
 ---
 
 Every time a new AI agent framework drops, my first instinct is to install it and figure out what's actually different. When Google open-sourced ADK (Agent Development Kit), I set up a clean sandbox environment and ran Google ADK v1.32.0 alongside LangGraph v1.1.10. This post is what I found.
 
 ![Sandbox execution logs comparing ADK and LangGraph](../../../assets/blog/google-adk-vs-langgraph-logs.png)
 
-## Two Different Philosophies
+## Code-Assembled Pipelines vs Explicit Graphs
 
-Google ADK's core message is "apply software development principles to AI agents." That becomes concrete the moment you write code. ADK defines agents as Python classes and functions. Built-in orchestrators — `SequentialAgent`, `ParallelAgent`, `LoopAgent` — let you declare flow naturally inside your code.
+Google ADK's core message is "apply software development principles to AI agents." That becomes concrete the moment you write code. ADK defines agents as Python classes and functions. Built-in orchestrators (`SequentialAgent`, `ParallelAgent`, `LoopAgent`) let you declare flow naturally inside your code.
 
 ```python
 from google.adk.agents import Agent, SequentialAgent, ParallelAgent
@@ -115,7 +95,7 @@ builder.add_edge("analyze", END)
 graph = builder.compile()
 ```
 
-The way I see it: ADK says "assemble a pipeline in code"; LangGraph says "design a state machine." Neither is objectively better — it's about which feels more natural for your problem.
+The way I see it: ADK says "assemble a pipeline in code"; LangGraph says "design a state machine." Neither is objectively better. It comes down to which feels more natural for your problem.
 
 ## The Dependency Gap Is Shocking
 
@@ -125,7 +105,7 @@ pip install google-adk langgraph
 
 Both install fine, but `pip show` reveals a stark difference:
 
-**Google ADK v1.32.0 — 45 direct dependencies:**
+**Google ADK v1.32.0, 45 direct dependencies:**
 ```
 aiosqlite, anyio, authlib, click, fastapi,
 google-api-python-client, google-auth,
@@ -142,7 +122,7 @@ opentelemetry-exporter-gcp-trace,
 ... (45 total)
 ```
 
-**LangGraph v1.1.10 — 6 direct dependencies:**
+**LangGraph v1.1.10, 6 direct dependencies:**
 ```
 langchain-core, langgraph-checkpoint,
 langgraph-prebuilt, langgraph-sdk,
@@ -155,7 +135,7 @@ LangGraph's "bring what you need" philosophy is lighter but requires more config
 
 ## Multi-Agent Patterns: Where the Difference Matters Most
 
-**ADK parallel execution** — this is actual code I ran:
+**ADK parallel execution.** This is actual code I ran:
 
 ```python
 parallel_research = ParallelAgent(
@@ -171,7 +151,7 @@ pipeline = SequentialAgent(
 
 Execution: `research_pipeline (SequentialAgent)` → `parallel_research (ParallelAgent)` → `synthesizer`. Clean, readable, obvious.
 
-**LangGraph conditional edges** — this is where ADK falls short:
+**LangGraph conditional edges.** This is where ADK falls short:
 
 ```python
 def should_retry(state: State) -> str:
@@ -191,7 +171,7 @@ I ran this in my sandbox:
 Final score: 80, total iterations: 2
 ```
 
-The agent retries automatically until quality passes. ADK's `LoopAgent` supports iteration too, but termination is controlled by `max_iterations`. Dynamic branching — "if this condition, go here; otherwise go there" — is where LangGraph's conditional edges shine. For production pipelines with generate-verify-retry loops, router agents, or multi-judgment branching, LangGraph is significantly more powerful.
+The agent retries automatically until quality passes. ADK's `LoopAgent` supports iteration too, but termination is controlled by `max_iterations`. Dynamic branching is where LangGraph's conditional edges shine: if this condition holds, go here; otherwise go there. Think generate-verify-retry loops, router agents, anything where the next step depends on a runtime judgment. In production pipelines like those, LangGraph is significantly more powerful.
 
 ## ADK's Killer Feature: The CLI and Built-in Evaluation
 
@@ -246,11 +226,11 @@ config = {"configurable": {"thread_id": "user-123"}}
 result = graph.invoke({"messages": [HumanMessage(content="Hello")]}, config)
 ```
 
-LangGraph's checkpoint system is more flexible. Swap `MemorySaver` for PostgreSQL, Redis, or SQLite backends. Time-travel debugging — rewinding to a past checkpoint — is also supported.
+LangGraph's checkpoint system is more flexible. Swap `MemorySaver` for PostgreSQL, Redis, or SQLite backends. It also supports time-travel debugging, where you rewind to a past checkpoint and re-run from there.
 
 I consider LangGraph stronger here. Swapping checkpoint backends means dev and production can run identical code. No vendor lock-in.
 
-ADK does beat LangGraph on one point: [MCP tool server](/en/blog/en/mcp-server-build-practical-guide-2026) support is built in. `MCPToolset` works out of the box. With LangGraph, you need a separate package and adapter code.
+ADK does beat LangGraph on one point: MCP tool server support is built in. `MCPToolset` works out of the box. With LangGraph, you need a separate package and adapter code.
 
 ## Comparison Table
 
@@ -300,8 +280,8 @@ Both frameworks are production-ready in 2026. The difference is what they optimi
 
 ADK optimizes for "build an agent system fast and deploy it to GCP." LangGraph optimizes for "precisely control the state transitions in your agent."
 
-The mistake I see in most framework comparisons is ranking by feature count. ADK has a CLI, eval, and deployment — so it wins? No. The real question is: does the framework's growth direction match my agent's complexity growth direction?
+The mistake I see in most framework comparisons is ranking by feature count. ADK has a CLI, eval, and deployment, so it wins? No. The real question is whether the framework's growth direction matches my agent's complexity growth direction.
 
 If a simple pipeline will evolve toward complex branching, choose LangGraph early. If the goal is fast delivery within the Google Cloud ecosystem, ADK removes a lot of friction.
 
-For broader context on how LangGraph compares with other frameworks, the [LangGraph vs CrewAI vs Dapr comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) is worth reading — it benchmarks them on production KPIs before ADK entered the picture.
+For broader context on how LangGraph compares with other frameworks, the LangGraph vs CrewAI vs Dapr comparison is worth reading. It benchmarks them on production KPIs before ADK entered the picture.

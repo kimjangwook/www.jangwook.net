@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'GLM-5: MIT オープンソース最前線モデルの登場とエンタープライズ戦略'
 description: '智谱AIのGLM-5は、744B MoE構造でNVIDIA無しに華為Ascendチップのみで訓練されたMITオープンソース最前線モデルです。EM/CTO観点からエンタープライズAI戦略を検討します。'
 pubDate: '2026-03-14'

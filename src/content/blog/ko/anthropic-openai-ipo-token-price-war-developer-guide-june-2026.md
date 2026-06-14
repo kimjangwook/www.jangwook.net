@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Anthropic과 OpenAI가 같은 달에 IPO를 신청했다 — 토큰 가격 전쟁이 개발자에게 의미하는 것"
 description: "2026년 6월, Anthropic(6/1)과 OpenAI(6/8)가 각각 SEC에 비공개 S-1을 제출했다. 두 AI 최대 기업의 동시 IPO가 API 가격을 어떻게 바꾸고 있는지, 실제 토큰 비용 비교와 함께 개발자 입장에서 분석한다."
 pubDate: '2026-06-13'

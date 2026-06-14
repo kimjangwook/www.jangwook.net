@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AI智能体协作模式：用5个专业Agent构建全栈应用
 description: 通过协调Architecture、Coding、Testing、Security、DevOps Agent构建生产级应用的实战指南
 pubDate: '2025-10-16'

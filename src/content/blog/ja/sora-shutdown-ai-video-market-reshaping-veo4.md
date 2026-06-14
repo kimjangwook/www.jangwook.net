@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Sora終了とAI動画市場の急激な再編 — Google Veo 4が空白を狙う
 description: >-
   OpenAIがSoraアプリの終了を発表した。1日100万ドルの赤字、ユーザー50万人以下への崩壊の全貌とともに、Google Veo 4の登場、

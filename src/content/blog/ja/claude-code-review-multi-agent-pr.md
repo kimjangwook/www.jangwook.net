@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Code Review — マルチエージェントPRレビューでコードレビュー率16%→54%を達成'
 description: 'Anthropicが発表したClaude CodeのCode Review機能を完全解説: 並列マルチエージェントアーキテクチャ、PR平均$15〜25のコスト構造、そしてEngineering Managerが導入検討時に知っておくべきすべてのこと'
 pubDate: '2026-03-11'

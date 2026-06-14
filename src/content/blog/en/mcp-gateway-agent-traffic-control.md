@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP Gateway — Who Controls Your AI Agent's Tool Calls?
 description: >-
   MCP has crossed 97 million monthly downloads and become the de facto standard,

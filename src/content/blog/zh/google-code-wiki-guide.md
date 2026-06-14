@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Google Code Wiki: AI驱动的代码文档平台完全指南'
 description: >-
   Google Code Wiki是基于Gemini

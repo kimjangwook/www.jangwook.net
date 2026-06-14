@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AIコーディングエージェントが2,900万件のシークレットを漏洩させた — MCP設定ファイルセキュリティの盲点'
 description: >-
   GitGuardian

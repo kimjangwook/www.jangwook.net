@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Verbalized Sampling: 无需训练的提示技术恢复LLM多样性'
 description: 解决对齐后模式崩溃问题的Verbalized Sampling技术。无需重新训练即可将LLM输出多样性提升1.6〜2.1倍的提示策略完全指南
 pubDate: '2025-11-08'

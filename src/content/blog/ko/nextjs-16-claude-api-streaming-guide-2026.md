@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Next.js 16 + Claude API로 스트리밍 AI 채팅 앱 만들기 — App Router 가이드'
 description: 'Next.js 16 App Router에서 Claude API 스트리밍을 완성하는 실전 가이드. Route Handler 설계, SSE 응답 처리, React 19 클라이언트 훅, 백프레셔와 타임아웃·에러 복구 패턴까지 실제로 빌드한 코드와 동작 로그를 모두 담아 정리했다.'
 pubDate: '2026-05-20'

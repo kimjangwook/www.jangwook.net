@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Hermes Agent — 작업할수록 스스로 진화하는 오픈소스 AI 에이전트
 description: >-
   NousResearch의 Hermes Agent v0.7.0을 설치해봤다. 작업을 마칠 때마다 스킬 문서를 자동 생성하고, 다음 실행에서

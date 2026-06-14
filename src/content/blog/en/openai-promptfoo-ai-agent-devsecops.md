@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenAI Acquires Promptfoo — The AI Agent DevSecOps Era Begins
 description: >-
   OpenAI acquired Promptfoo (25% of Fortune 500). Learn what it means for AI

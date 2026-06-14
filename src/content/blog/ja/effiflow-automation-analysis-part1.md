@@ -11,61 +11,37 @@ tags:
   - llm
   - architecture
 relatedPosts:
-  - slug: claude-code-verbalized-sampling
-    score: 0.95
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: prompt-engineering-agent-improvements
-    score: 0.95
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.94
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: ai-agent-cost-reality
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: openai-agentkit-tutorial-part2
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: specification-driven-development
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 자동화 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same automation track.
+      ja: 同じ自動化の流れで併せて読むと役立ちます。
+      zh: 在同一 自动化 脉络中可一并阅读。
 ---
 
 > <strong>シリーズ案内</strong>: この記事は「EffiFlow自動化構造分析/評価と改善」シリーズのPart 1/3です。
 > - <strong>Part 1</strong> (現在): コアアーキテクチャとメトリクス分析
 > - [Part 2](/ja/blog/ja/effiflow-automation-analysis-part2): SkillsとCommandsの統合戦略
-> - [Part 3](/ja/blog/ja/effiflow-automation-analysis-part3): 実践改善事例とROI分析
+> - Part 3: 実践改善事例とROI分析
 
-## はじめに
+## レコメンデーション1回で9万トークンを燃やしていた
 
-ブログ自動化システムを運用しながら、<strong>「どうすればもっと効率的にできるか?」</strong>という問いを投げかけ続けてきました。その答えを見つけるために、7.5時間かけて`.claude/`ディレクトリの28個のファイル(17個のAgents、4個のSkills、7個のCommands)を深く分析しました。
+ブログ自動化を1年近く回してきて、ずっと引っかかっていたことがあります。これ、もっと削れるんじゃないか。そう思って7.5時間かけ、`.claude/`ディレクトリのファイルを片っ端から開いてみました。全部で28個。内訳は17個のAgents、4個のSkills、7個のCommandsです。数字だけ見れば大したことはないのに、いざトークン使用量を追ってみると、漏れている箇所が思った以上に多かった。
 
 分析結果は驚くべきものでした:
 - <strong>60〜70%トークン削減</strong>を達成したメタデータ優先アーキテクチャ
@@ -75,7 +51,7 @@ relatedPosts:
 
 このPart 1では、システムのコアアーキテクチャと主要な発見を共有します。
 
-## システム概要: 3層アーキテクチャ
+## Commands → Agents → Skillsに分けた3層構造
 
 EffiFlowは<strong>Commands → Agents → Skills</strong>の3層構造で設計されています:
 
@@ -157,7 +133,7 @@ graph TB
 - 年間 (週1回): 52週 × $0.11 = $5.72
 ```
 
-これは明らかに非効率でした。レコメンデーションアルゴリズムに必要なのは<strong>タイトル、説明、タグ、カテゴリスコア</strong>などのメタデータだけなのに、毎回全文を読んでいたのです。
+どう見ても無駄でした。レコメンデーションアルゴリズムが実際に触るのは、タイトルや説明、タグ、カテゴリスコアといったメタデータだけ。それなのに、毎回本文を丸ごと読み込んでいたわけです。
 
 ### メタデータ優先設計
 
@@ -614,7 +590,7 @@ cat post-metadata.json
 - コスト削減計算方法
 - 長期ROI分析フレームワーク
 
-## 結論
+## 1年回してみて残ったもの
 
 ### 核心要点まとめ
 

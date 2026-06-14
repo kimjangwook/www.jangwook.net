@@ -14,61 +14,37 @@ tags:
   - llm
   - architecture
 relatedPosts:
-  - slug: claude-code-verbalized-sampling
-    score: 0.95
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: prompt-engineering-agent-improvements
-    score: 0.95
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.94
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: ai-agent-cost-reality
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: openai-agentkit-tutorial-part2
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: specification-driven-development
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 자동화 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same automation track.
+      ja: 同じ自動化の流れで併せて読むと役立ちます。
+      zh: 在同一 自动化 脉络中可一并阅读。
 ---
 
 > <strong>Series Guide</strong>: This is Part 1/3 of the "EffiFlow Automation Analysis/Evaluation and Improvements" series.
 > - <strong>Part 1</strong> (current): Core Architecture and Metrics Analysis
 > - [Part 2](/en/blog/en/effiflow-automation-analysis-part2): Skills and Commands Integration Strategy
-> - [Part 3](/en/blog/en/effiflow-automation-analysis-part3): Practical Improvement Cases and ROI Analysis
+> - Part 3: Practical Improvement Cases and ROI Analysis
 
-## Introduction
+## I Was Burning 90,000 Tokens on Every Recommendation Run
 
-While operating a blog automation system, I kept asking myself: <strong>"How can we make this more efficient?"</strong> To find the answer, I spent 7.5 hours deeply analyzing 28 files in the `.claude/` directory (17 Agents, 4 Skills, 7 Commands).
+After running a blog automation system for the better part of a year, one thing kept nagging at me. Could this be leaner? So I sat down and spent 7.5 hours picking apart every file in the `.claude/` directory. Twenty-eight of them. 17 Agents, 4 Skills, 7 Commands. The count sounds modest, but once I started tracing actual token usage, the leaks were everywhere.
 
 The results were remarkable:
 - <strong>60-70% token reduction</strong> with metadata-first architecture
@@ -78,7 +54,7 @@ The results were remarkable:
 
 In this Part 1, I'll share the system's core architecture and key findings.
 
-## System Overview: 3-Tier Architecture
+## How the System Splits into Commands, Agents, and Skills
 
 EffiFlow is designed with a <strong>Commands → Agents → Skills</strong> 3-tier structure:
 
@@ -160,7 +136,7 @@ Per recommendation generation:
 - Annual (weekly): 52 weeks × $0.11 = $5.72
 ```
 
-This was clearly inefficient. The recommendation algorithm only needed <strong>metadata like titles, descriptions, tags, and category scores</strong>, yet we were reading entire posts every time.
+This was clearly wasteful. The recommendation algorithm only ever touched a handful of fields: titles, descriptions, tags, the category scores. And yet we were pulling in the full body text on every single run.
 
 ### Metadata-First Design
 
@@ -617,7 +593,7 @@ cat post-metadata.json
 - Cost savings calculation methods
 - Long-term ROI analysis framework
 
-## Conclusion
+## What's Left After a Year of Running It
 
 ### Key Takeaways
 

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Anthropic이 Claude를 몰래 낮췄다는 논란 — 파워 유저 반발의 진짜 맥락
 description: >-
   2026년 3월 Anthropic이 Claude 기본 effort 레벨을 조용히 "medium"으로 낮췄다. 파워 유저 반발과 가격 인상

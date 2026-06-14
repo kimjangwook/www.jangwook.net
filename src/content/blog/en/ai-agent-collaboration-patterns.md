@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized
   Agents

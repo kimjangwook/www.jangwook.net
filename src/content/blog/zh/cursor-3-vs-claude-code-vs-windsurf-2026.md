@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Cursor 3 vs Claude Code vs Windsurf: 2026年AI编程工具选择指南'
 description: >-
   基于亲身使用三款AI编程工具经验的深度对比指南。Cursor 3.1的异步子智能体、Claude Code 2.1.119的架构推理、 Windsurf

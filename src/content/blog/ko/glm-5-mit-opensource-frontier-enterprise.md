@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'GLM-5: MIT 라이선스 프런티어 모델의 등장과 엔터프라이즈 전략'
 description: 'Zhipu AI의 GLM-5는 744B MoE 구조로 NVIDIA 없이 화웨이 Ascend 칩만으로 훈련된 MIT 오픈소스 최전선 모델입니다. EM/CTO 관점에서 엔터프라이즈 AI 전략을 재검토합니다.'
 pubDate: '2026-03-14'

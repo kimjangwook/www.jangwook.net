@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Cognitive Debt: Anthropic 2026エージェンティックコーディングレポートが警告するAI時代の新たな負債'
 description: 'Anthropicの2026 Agentic Coding Trends Reportと共に登場した新概念「Cognitive Debt」— AIがコードを代わりに書くほど、チームの理解力は静かに侵食される。EMが今すぐ実践すべき対応戦略を分析します。'
 pubDate: '2026-03-07'

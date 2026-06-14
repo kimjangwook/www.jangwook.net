@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AIモデル蒸留攻撃の実態 — CTOが知るべきIP保護戦略
 description: Anthropicが検出した大規模AIモデル蒸留攻撃の事例を分析し、企業がAI APIを活用する際に知的財産を保護するための実務戦略を解説します。
 pubDate: '2026-03-02'

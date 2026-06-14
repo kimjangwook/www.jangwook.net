@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Managed Agents 써봤다 — 인프라 없이 AI 에이전트 30분 배포
 description: >-
   Anthropic이 4월 공개한 Claude Managed Agents를 직접 붙여본 솔직한 사용기. API 3단계 체인, $0.08/시간

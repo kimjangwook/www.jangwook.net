@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Deloitte 2026技术趋势中的代理AI运营战略——89%企业为何难上线及EM的委派-审查-所有制框架
 description: >-
   Deloitte Tech Trends 2026报告揭示震撼现实——全球仅11%的企业在生产环境真正运营代理AI。89%陷入停滞的根本原因不是

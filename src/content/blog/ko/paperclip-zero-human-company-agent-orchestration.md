@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Paperclip — AI 에이전트를 직원처럼 관리하는 오픈소스 플랫폼을 설치해봤다
 description: >-
   AI 에이전트 여러 개를 회사처럼 관리하는 오픈소스 플랫폼 Paperclip을 직접 설치해봤다. Linear 스타일 대시보드, Org

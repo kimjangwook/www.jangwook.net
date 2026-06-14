@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AlphaEvolve刷新Ramsey数：AI研究伙伴时代
 description: Google DeepMind的AlphaEvolve同时刷新5项保持长达20年的Ramsey数下界记录，从CTO/EM视角深入解读AI进化为科学研究伙伴。
 pubDate: '2026-03-18'

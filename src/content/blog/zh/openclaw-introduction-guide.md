@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenClaw 完全指南 — 打造你的专属 AI 助手
 description: 介绍开源 AI 助手平台 OpenClaw 的核心功能与架构。多渠道、多模型、节点系统一网打尽的完全指南。
 pubDate: '2026-02-03'

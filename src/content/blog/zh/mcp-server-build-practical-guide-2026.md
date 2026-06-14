@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 从零构建MCP服务器 — 使用Streamable HTTP传输实现真实AI工具
 description: >-
   使用Python FastMCP从零构建MCP服务器的实战教程。涵盖Streamable HTTP传输配置、工具实现及Claude

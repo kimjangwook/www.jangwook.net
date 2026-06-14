@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Gemini Embedding 2 — マルチモーダル埋め込みがRAGパイプラインを変える
 description: >-
   GoogleのネイティブマルチモーダルエンベディングモデルGemini Embedding

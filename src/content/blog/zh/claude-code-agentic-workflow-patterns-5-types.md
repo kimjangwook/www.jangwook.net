@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Code智能体工作流5种模式 — 哪种适合你的工作?
 description: >-
   Claude Code智能体工作流5种模式全面对比 —

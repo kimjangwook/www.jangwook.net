@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP가 오픈 표준이 되었다 — Linux Foundation 합류와 엔지니어링 팀을 위한 도입 로드맵
 description: >-
   Anthropic이 MCP를 Linux Foundation에 기부하고 OpenAI, Google, Microsoft가 합류했습니다. 76%의

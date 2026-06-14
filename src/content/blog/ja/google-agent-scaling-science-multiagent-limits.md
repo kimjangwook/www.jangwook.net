@@ -1,4 +1,5 @@
 ---
+draft: true
 title: マルチエージェントスケーリングの科学 — Googleが明かした「エージェントを増やすほど良い」という神話
 description: >-
   Google Researchの180設定定量実験が明らかにしたマルチエージェントの逆説 —

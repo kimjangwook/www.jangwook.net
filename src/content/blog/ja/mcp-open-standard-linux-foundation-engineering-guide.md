@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCPがオープン標準に — Linux Foundation参画とエンジニアリング導入ロードマップ
 description: >-
   AnthropicがMCPをLinux

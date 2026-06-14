@@ -12,45 +12,27 @@ tags:
   - database
   - orm
 relatedPosts:
-  - slug: ux-psychology-implementation-case-study
-    score: 0.93
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.9
     reason:
-      ko: '웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, architecture with comparable
-        difficulty.
-      zh: 在Web开发、架构领域涵盖类似主题，难度相当。
-  - slug: adsense-low-value-content-technical-fix
-    score: 0.91
+      ko: TypeScript 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into TypeScript.
+      ja: TypeScriptをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 TypeScript 主题。
+  - slug: node-sqlite-builtin-practical-guide-2026
+    score: 0.85
     reason:
-      ko: 웹 개발 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: Web開発分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in web development with comparable difficulty.
-      zh: 在Web开发领域涵盖类似主题，难度相当。
-  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
-    score: 0.89
-    reason:
-      ko: '선행 학습 자료로 유용하며, 웹 개발 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、Web開発の基礎を扱います。
-      en: 'Useful as prerequisite knowledge, covering web development fundamentals.'
-      zh: 作为先修知识很有用，涵盖Web开发基础。
+      ko: sqlite를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on sqlite experience.
+      ja: sqliteを実際に扱った経験が続く記事です。
+      zh: 延续 sqlite 的实战经验。
   - slug: vitest-4-jest-migration-guide-2026
-    score: 0.88
+    score: 0.8
     reason:
-      ko: '선행 학습 자료로 유용하며, 웹 개발 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、Web開発の基礎を扱います。
-      en: 'Useful as prerequisite knowledge, covering web development fundamentals.'
-      zh: 作为先修知识很有用，涵盖Web开发基础。
-  - slug: aeo-implementation-experience
-    score: 0.87
-    reason:
-      ko: '웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, architecture with comparable
-        difficulty.
-      zh: 在Web开发、架构领域涵盖类似主题，难度相当。
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
 Prismaを初めて学んだとき、最も困惑したのはマイグレーションファイルを開いたときでした。`prisma migrate dev`を一度実行すると何かが動くのですが、実際にデータベースに何が送られたのかはわかりにくい。自分の知らないところで何かが静かに行われているその感覚が、正直不快でした。
@@ -93,7 +75,7 @@ npm install -D drizzle-kit
 }
 ```
 
-## スキーマ定義 — SQLをTypeScriptで書く感覚
+## スキーマ定義：SQLをTypeScriptで書く感覚
 
 DrizzleのスキーマがおもしろいのはSQLのカラム型がそのままTypeScriptの型として連携されるという点です。
 
@@ -224,7 +206,7 @@ migrate(db, { migrationsFolder: "./migrations" });
 
 Node.jsの内蔵SQLiteを使う場合は[Node.js内蔵SQLite完全ガイド](/ja/blog/ja/node-sqlite-builtin-practical-guide-2026)と合わせて読むと良いです。DrizzleはSQLiteの内蔵ドライバもサポートしています。
 
-## 基本CRUD — 実際の実行結果
+## 基本CRUDを実際の実行結果で見る
 
 実際に動かした結果です。
 
@@ -309,7 +291,7 @@ const postsWithAuthor = await db
 
 `leftJoin`、`rightJoin`、`fullJoin`も同じパターンで使えます。
 
-## Relations API — db.queryの便利さ
+## Relations API：db.queryでネストデータを取る
 
 Drizzleを使う理由の一つです。スキーマでRelationsを定義しておけば、`db.query`でJOINなしにネストしたデータを取得できます。
 
@@ -345,7 +327,7 @@ const usersWithPosts = await db.query.users.findMany({
 
 このAPIはTypeORMの`find({ relations: [...] })`に似ていますが、DrizzleはランタイムでN+1クエリを避ける方向でSQLを生成します。内部的にはサブクエリや別クエリを組み合わせる方式なので状況によって異なる場合があり、プロダクションでは実際のクエリを確認することをおすすめします。
 
-## トランザクション — ここに落とし穴があった
+## トランザクション：ここで落とし穴にはまった
 
 これを直接発見したとき、少し驚きました。`better-sqlite3`は同期（synchronous）ドライバです。SQLite自体がファイルベースの同期DBなので、そのように設計されています。
 
@@ -455,7 +437,7 @@ const updated = await db
 
 `sql`テンプレート内でカラムを参照すると、DrizzleがテーブルやカラムのSQL名を自動で処理してくれるため、SQLインジェクションを気にせず動的クエリが書けます。
 
-## Prisma vs Drizzle — 率直な比較
+## Prisma vs Drizzle：率直な比較
 
 実際に使ってみて感じたことです。どちらか一方を選ぶなら、こう考えます。
 
@@ -506,7 +488,7 @@ const db = drizzle(sqlite, {
 
 **N+1クエリ**: `db.query` Relations APIは便利ですが、内部動作を把握せずに使うとN+1クエリが発生することがあります。プロダクションではロギングで確認するか、直接JOINクエリを書く方が安全な場合があります。
 
-## drizzle-kit studio — 簡単なDBビューア
+## drizzle-kit studioでDBをのぞく
 
 Drizzle 0.30以降、`drizzle-kit studio`が内蔵されました。別途GUIなしにDB内容をブラウザで確認できるローカルビューアです。
 
@@ -546,7 +528,7 @@ function validatePost(data: unknown): NewPost {
 }
 ```
 
-こうするとDBスキーマとAPIバリデーションスキーマが乖離しなくなります。DBカラムが`notNull()`ならZodスキーマも自動的にrequiredフィールドになる。[TypeScript Zod v4 + Claude API 構造化出力ガイド](/ja/blog/ja/typescript-zod-v4-claude-api-structured-output-guide-2026)でZodをさらに深く解説しているので合わせて読むと良いです。
+こうするとDBスキーマとAPIバリデーションスキーマが乖離しなくなります。DBカラムが`notNull()`ならZodスキーマも自動的にrequiredフィールドになる。TypeScript Zod v4 + Claude API 構造化出力ガイドでZodをさらに深く解説しているので合わせて読むと良いです。
 
 `drizzle-valibot`や`drizzle-arktype`のように他のバリデーションライブラリと連携するパッケージも存在します。
 

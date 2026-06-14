@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AI智能体生产环境部署的9项设计原则 — 基于arXiv最新论文的实战指南'
 description: '通过arXiv论文与实务案例，从Engineering Manager视角梳理解决2026年AI智能体生产化核心挑战的9项设计原则。'
 pubDate: '2026-03-13'

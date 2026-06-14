@@ -11,54 +11,36 @@ tags:
   - ai-tools
   - developer-productivity
 relatedPosts:
-  - slug: greptile-ai-coding-report-2025-review
-    score: 0.95
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: openai-agentkit-tutorial-part1
-    score: 0.95
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: ai-presentation-automation
-    score: 0.93
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-standard
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
-  - slug: mcp-servers-toolkit-introduction
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
 # Claude Code /insights 体验记：4,516 条消息揭示的 AI 编程模式
 
 "我真的在高效使用 Claude Code 吗？"
 
-即使每天都在使用 AI 编程工具，这个问题也很难明确回答。直到我发现了 Claude Code 中 `/insights` 这个隐藏的宝藏功能——它能基于实际使用数据，客观地诊断你的工作流程。
+天天在用，却始终答不利索。后来才发现，Claude Code 里悄悄藏着一个叫 `/insights` 的功能。它能基于你的实际使用数据，客观地诊断你的工作流程。
 
-在这篇文章中，我将完整公开在实际项目中运行 `/insights` 的结果，并分享由此获得的洞察和实战技巧。
+下面是我在实际项目里跑完 `/insights` 的全部结果，以及我从中看出的门道，还有那一周就立刻用上的几个技巧。
 
 ## /insights 是什么？
 
@@ -101,7 +83,7 @@ Grep     ██████                   2,059 次
 TodoWrite ██████                  1,825 次
 ```
 
-Read 和 Edit 占据压倒性地位。这表明 Claude 遵循着"先理解，后修改"的模式——在充分阅读和理解现有代码后再进行修改。TodoWrite 进入 Top 6 也很有趣，这证明了并行代理和任务编排的积极使用。
+Read 和 Edit 占据压倒性地位。Claude 先把现有代码读透、读懂，然后才动手改。先理解，后修改。TodoWrite 能挤进 Top 6 让我有点意外，它说明并行代理和任务编排被用得相当频繁。
 
 ### 语言分布
 
@@ -128,7 +110,7 @@ TaskCreate: 1,276 次
 合计: 4,751 次（TodoWrite + TaskCreate + TaskUpdate）
 ```
 
-在执行大规模任务时，我总是先创建任务列表，然后将其分配给并行代理。`/insights` 将这评价为"精密的工作流（sophisticated workflow）"。[AI智能体协作模式：用5个专业智能体构建全栈应用](/zh/blog/zh/ai-agent-collaboration-patterns)中有这种多智能体方法的具体实现示例。
+在执行大规模任务时，我总是先创建任务列表，然后将其分配给并行代理。`/insights` 将这评价为"精密的工作流（sophisticated workflow）"。AI智能体协作模式：用5个专业智能体构建全栈应用中有这种多智能体方法的具体实现示例。
 
 实际应用示例：
 - <strong>小说项目</strong>：综合评审 → 问题识别 → 并行修复多个文件
@@ -156,13 +138,13 @@ graph TD
     D --> E[验证修复结果]
 ```
 
-"一人 AI 出版社"这个描述令人印象深刻。寻找情节漏洞、检查角色名称一致性、验证风格统一性，然后并行修复跨多个文件的所有问题——这就是整个工作流。
+"一人 AI 出版社"这个说法让我印象很深。先找情节漏洞，再核对角色名称是否前后一致，接着检查全书风格统不统一，最后并行修复跨多个文件的所有问题。这就是整个工作流。
 
 ## "阻碍因素"分析
 
 并非一切都很完美。`/insights` 也会冷静地指出问题所在。
 
-### 上下文限制——最大的瓶颈
+### 上下文限制是最大的瓶颈
 
 > "上下文限制导致最有雄心的会话在执行中途终止"
 
@@ -185,7 +167,7 @@ graph TD
 | Edit Failed | 37 次 |
 | File Not Found | 32 次 |
 
-"File Too Large" 错误达到 293 次，是因为小说项目中的大型文本文件。看到这些数据后，我深刻认识到了文件分割策略的必要性。
+"File Too Large" 错误达到 293 次，根子在小说项目里那些大体积文本文件。看到这些数据，我才真正意识到文件分割策略有多必要。
 
 ## "快速改进"分析
 
@@ -253,7 +235,7 @@ TypeScript 4,540 次，Rust 2,096 次，是最活跃的开发领域。还包括 
 深夜 (00-06)  ████████████████   778 次 (17.2%)
 ```
 
-下午和晚间集中工作的模式非常明显。深夜仍有 17% 的使用量，这也是在利用 AI 的优势——能够在深夜时分维持一个不会疲倦的编程伙伴。
+下午和晚间集中工作的模式非常明显。深夜仍有 17% 的使用量，这恰恰是在借力 AI 的长处，深夜时分也能有个不会疲倦的编程伙伴在旁。
 
 用户响应时间也是有趣的数据：
 
@@ -313,7 +295,7 @@ graph TD
 
 1. <strong>定期执行</strong>：每月执行一次 `/insights`，可以追踪工作模式的变化。
 
-2. <strong>反映到 CLAUDE.md</strong>：将 `/insights` 建议的改进事项记录到 CLAUDE.md，Claude Code 会自动遵循这些规则。[Claude Code 最佳实践](/zh/blog/zh/claude-code-best-practices)详细介绍了将官方推荐设置应用于实际项目的案例。
+2. <strong>反映到 CLAUDE.md</strong>：将 `/insights` 建议的改进事项记录到 CLAUDE.md，Claude Code 会自动遵循这些规则。Claude Code 最佳实践详细介绍了将官方推荐设置应用于实际项目的案例。
 
 3. <strong>关注错误模式</strong>：如果"File Too Large"或"Command Failed"等错误很多，说明需要调整工作流。
 
@@ -331,11 +313,11 @@ graph TD
 
 我向所有使用 AI 编程工具的开发者推荐执行 `/insights`。运行只需 5 分钟，但获得的洞察可能从根本上改变你未来的工作流。
 
-## 结语
+## 它更像教练，而非仪表盘
 
-Claude Code `/insights` 不仅仅是一个统计功能。它是一个<strong>AI 工作流教练</strong>，通过数据展示你与 AI 编程工具的协作方式，并提出具体的改进方向。
+Claude Code `/insights` 不仅仅是一个统计功能。它更像一个<strong>AI 工作流教练</strong>，用数据照出你与 AI 编程工具的协作方式，再给出具体的改进方向。
 
-4,516 条消息、1,042 个会话、6,267 次文件修改——这些数字告诉我们的不仅是"用了很多"，更是"如何在使用，哪里改进可以更好"。
+4,516 条消息、1,042 个会话、6,267 次文件修改。这些数字告诉我们的不只是"用了很多"，而是"我是怎么在用，哪里稍加调整就能更好"。
 
 如果你还没有运行过 `/insights`，现在就打开 Claude Code 输入 `/insights`。客观面对自己的 AI 编程模式，这是成为更好的开发者的第一步。
 

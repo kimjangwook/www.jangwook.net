@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenClaw 完全ガイド — 自分だけのAIアシスタントを作ろう
 description: >-
   オープンソースAIアシスタントプラットフォーム OpenClaw

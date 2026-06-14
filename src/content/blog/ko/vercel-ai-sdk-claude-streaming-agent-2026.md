@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Vercel AI SDK로 Claude 스트리밍 에이전트 만들기
 description: >-
   Vercel AI SDK v6 + @ai-sdk/anthropic으로 Next.js App Router에서 Claude 스트리밍 채팅과 도구

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Perplexity Computer — 나 대신 24시간 일하는 AI 에이전트의 등장
 description: >-
   Perplexity가 발표한 Personal Computer와 Enterprise를 분석합니다. 24/7 상시 AI 에이전트가 4주 만에

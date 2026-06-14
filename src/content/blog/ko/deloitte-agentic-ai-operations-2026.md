@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Deloitte 2026 Agentic AI 운영 전략 — 89% 실패 원인과 EM 프레임워크
 description: >-
   Deloitte Tech Trends 2026 보고서가 밝힌 사실 — 전 세계 기업 11%만 Agentic AI를 프로덕션에서 운영

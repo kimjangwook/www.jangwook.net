@@ -10,64 +10,48 @@ tags:
   - ファインチューニング
   - 強化学習
 relatedPosts:
-  - slug: verbalized-sampling-llm-diversity
-    score: 0.95
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.9
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ssr-survey-analysis
-    score: 0.93
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
     reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: dena-llm-study-part2-structured-output
-    score: 0.92
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.8
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-persona-analysis
-    score: 0.91
-    reason:
-      ko: '선행 학습 자료로 유용하며, AI/ML, 아키텍처 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、AI/ML、アーキテクチャの基礎を扱います。
-      en: >-
-        Useful as prerequisite knowledge, covering AI/ML, architecture
-        fundamentals.
-      zh: 作为先修知识很有用，涵盖AI/ML、架构基础。
-  - slug: llm-consumer-research-ssr
-    score: 0.91
-    reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>シリーズ: DeNA LLMスタディ</strong> (3/5)
 >
 > 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: 構造化出力とマルチLLMパイプライン](/ja/blog/ja/dena-llm-study-part2-structured-output)
+> 2. Part 2: 構造化出力とマルチLLMパイプライン
 > 3. <strong>Part 3: モデル学習方法論</strong> ← 現在の記事
 > 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag)
 > 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design)
 
-## はじめに
+## ファインチューニング、どこから手をつける?
 
-DeNAのLLMスタディ資料Part 3では、LLMの多様な学習方法論を扱います。事前学習(Pre-training)、ファインチューニング(Fine-tuning)、強化学習(Reinforcement Learning)の違いを理解し、LoRA、QLoRA、DPOのような最新の効率的学習技法の原理と実務適用方法を見ていきます。
+「モデルを自社データに合わせて学習させたいんですが、何から始めれば?」実務でいちばんよく受ける質問だ。事前学習? ファインチューニング? 強化学習? 用語ばかり増えて、肝心の「自分の状況にどれが合うか」が見えてこない。
 
-本記事はDeNAスタディ資料をベースにしつつ、2025年の最新トレンドと実務経験を追加して執筆しました。
+DeNAのLLMスタディ資料Part 3は、まさにそこを突いてくる。3つの学習方式がどう違うのか、そしてLoRA、QLoRA、DPOといった効率的な手法の仕組みと実務での使い方まで踏み込む。ここに2025年時点のトレンドと、自分が実際に回してみて得た感触を足して整理した。
 
 ## 事前学習 vs ファインチューニング vs 強化学習
 
-### レストランの比喩で理解する
+### 料理人のたとえが意外としっくりくる
 
-DeNA資料は3つの学習方式をレストラン運営に例えて説明しています:
+DeNA資料は3つの学習方式をレストラン運営になぞらえる。最初はこじつけかと思った。ところが読み進めると、各段階の役割がくっきり見えてくる。
 
 ```mermaid
 graph TD
@@ -491,11 +475,11 @@ graph TD
 - <strong>RTX 3090 (24GB)</strong>: QLoRAで7B学習可能
 - <strong>RTX 4060 Ti (16GB)</strong>: QLoRAで3B学習可能
 
-## 示唆点と所感
+## 資料を閉じたあとに残ったこと
 
-### 民主化されるLLMファインチューニング
+### ファインチューニングは、もう大企業だけのものじゃない
 
-DeNA資料を通じて最も印象的だった点は、<strong>LLMファインチューニングがもはや大企業の専有物ではない</strong>ということです。QLoRAとDPOの登場により:
+DeNA資料でいちばん刺さったのは、<strong>LLMファインチューニングがもはや大企業の専有物ではない</strong>という点だ。QLoRAとDPOが出てきて、前提が変わった:
 
 - 24GB VRAMで7Bモデルファインチューニング可能
 - 数百ドル予算でドメイン特化モデル構築可能

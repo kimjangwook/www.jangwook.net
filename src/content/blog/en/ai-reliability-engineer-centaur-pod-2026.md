@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AI Reliability Engineer: The New Engineering Team Paradigm and the Centaur Pod Model in 2026'
 description: 'Junior developer roles are evolving into AI Reliability Engineers (AREs). From Centaur Pod team structures to Code Audit hiring and Defect Capture Rate metrics — the AI-native team design strategy every Engineering Manager needs to act on now'
 pubDate: '2026-03-10'

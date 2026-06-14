@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 在本地跑了一下Gemma 4——8B模型居然能做函数调用了
 description: >-
   Google以Apache 2.0开源了Gemma 4，我用Ollama亲自安装并测试了中文、结构化输出和函数调用。

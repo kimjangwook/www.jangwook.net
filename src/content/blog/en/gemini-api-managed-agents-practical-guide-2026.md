@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Gemini API Managed Agents Practical Guide — Run AI Agents in an Isolated Sandbox with One Call"
 description: "A hands-on walkthrough of Gemini Managed Agents from Google I/O 2026. Covers the sandbox architecture, multi-turn conversations, tool usage, and an honest comparison with Claude Managed Agents."
 pubDate: '2026-05-30'

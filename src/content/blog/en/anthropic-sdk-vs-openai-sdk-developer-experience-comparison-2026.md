@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropic SDK vs OpenAI SDK: Developer Experience Compared — Type Safety, Error Handling, and Streaming Patterns'
 description: 'I installed anthropic 0.100.0 and openai 2.36.0 side by side in a sandbox and dug into the internals. Type count 408 vs 230, error class hierarchies, streaming implementations, tool call formats, and SDK-exclusive features — all analyzed at the code level.'
 pubDate: '2026-05-09'

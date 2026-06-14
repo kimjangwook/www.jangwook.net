@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Vitest 4でAIエージェントをテストする — LLM呼び出しモック、ストリーミングレスポンステストの実践パターン'
 description: 'Vitest 4.1.7でAnthropic SDKのmessages.create()とストリーミングレスポンスをモッキングする実践パターンを直接検証した。vi.fn().mockImplementation(function(){...})がアロー関数と異なる理由、async function*ジェネレーターでSSEストリームを再現する方法まで、9テストが142ms以内に通過する過程をステップバイステップで解説する。'
 pubDate: '2026-06-01'

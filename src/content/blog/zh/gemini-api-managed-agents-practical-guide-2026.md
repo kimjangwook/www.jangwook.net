@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Gemini API Managed Agents 实战指南 — 用一行代码在隔离沙箱中运行AI智能体"
 description: "实际动手体验Google I/O 2026发布的Gemini Managed Agents。一次API调用即可启动智能体，对比Claude和OpenAI的差异，并用代码演示多轮对话实现，同时指出官方文档与SDK实际行为的出入。"
 pubDate: '2026-05-30'

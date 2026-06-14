@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Anthropic AI生态大布局：研究所与1亿美元投资
 description: Anthropic Institute成立与Claude Partner Network 1亿美元投资。从CTO视角深度分析AI厂商生态系统成熟度演进。
 pubDate: '2026-03-13'

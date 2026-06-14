@@ -1,48 +1,37 @@
 ---
-title: 'PydanticAI Practical Tutorial — Building Type-Safe AI Agents the FastAPI Way'
-description: 'I installed PydanticAI 1.88.0 and tested TestModel, output_type, @agent.tool, and multi-provider switching hands-on. Includes real traps like result_type→output_type and a complete FunctionModel test strategy.'
+title: PydanticAI Practical Tutorial — Building Type-Safe AI Agents the FastAPI Way
+description: >-
+  I installed PydanticAI 1.88.0 and tested TestModel, output_type, @agent.tool,
+  and multi-provider switching hands-on. Includes real traps like
+  result_type→output_type and a complete FunctionModel test strategy.
 pubDate: '2026-04-29'
-heroImage: '../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-hero.jpg'
+heroImage: ../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-hero.jpg
 tags:
   - python
   - pydantic-ai
   - ai-agent
 relatedPosts:
   - slug: python-ai-agent-library-comparison-2026
-    score: 0.92
+    score: 0.9
     reason:
-      ko: 이 튜토리얼에서 PydanticAI를 골랐다면, 비교 포스트가 왜 이 라이브러리가 Instructor나 Smolagents와 다른지 정확히 짚어준다.
-      ja: このチュートリアルでPydanticAIを選んだなら、比較ポストがInstructorやSmolagentsとの違いを明確に説明してくれる。
-      en: If you chose PydanticAI after this tutorial, the comparison post explains precisely why it differs from Instructor or Smolagents.
-      zh: 如果在本教程后选择了PydanticAI，比较文章能精确说明它与Instructor或Smolagents的区别。
-  - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
+      ko: Python 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Python.
+      ja: Pythonをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Python 主题。
+  - slug: google-adk-vs-langgraph-agent-framework-comparison-2026
     score: 0.85
     reason:
-      ko: PydanticAI로 단일 에이전트를 만들었다면, 다음 질문은 오케스트레이션 프레임워크와 어떻게 조합하느냐다. LangGraph·CrewAI 비교가 그 답을 제시한다.
-      ja: PydanticAIで単体エージェントを作ったなら、次の問いはオーケストレーションフレームワークとどう組み合わせるかだ。LangGraph・CrewAI比較がその答えを示す。
-      en: Once you've built a single agent with PydanticAI, the next question is how to combine it with orchestration frameworks. The LangGraph·CrewAI comparison answers that.
-      zh: 用PydanticAI构建了单个智能体后，下一个问题是如何与编排框架结合。LangGraph·CrewAI对比文章给出了答案。
-  - slug: production-grade-ai-agent-design-principles
-    score: 0.82
+      ko: ai-agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai-agent experience.
+      ja: ai-agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai-agent 的实战经验。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.8
     reason:
-      ko: 에이전트가 TestModel을 넘어 실제 LLM과 연동되는 순간부터 프로덕션 설계 원칙이 필요해진다. 이 포스트에서 재시도 전략과 관찰 가능성을 다룬다.
-      ja: エージェントがTestModelを超えて実際のLLMと連携する瞬間から、本番設計原則が必要になる。このポストではリトライ戦略と可観測性を扱う。
-      en: The moment your agent moves beyond TestModel to a real LLM, production design principles become essential. This post covers retry strategy and observability.
-      zh: 当智能体从TestModel转向真实LLM时，生产设计原则就变得必不可少。这篇文章涵盖重试策略和可观测性。
-  - slug: context-engineering-production-ai-agents
-    score: 0.78
-    reason:
-      ko: PydanticAI의 system_prompt와 의존성 주입 패턴이 컨텍스트 엔지니어링과 어떻게 연결되는지 이 포스트에서 확인할 수 있다.
-      ja: PydanticAIのsystem_promptと依存性注入パターンがコンテキストエンジニアリングとどう結びつくかをこのポストで確認できる。
-      en: This post shows how PydanticAI's system_prompt and dependency injection patterns connect to context engineering.
-      zh: 这篇文章展示了PydanticAI的system_prompt和依赖注入模式如何与上下文工程相结合。
-  - slug: vercel-ai-sdk-claude-streaming-agent-2026
-    score: 0.74
-    reason:
-      ko: Python 백엔드가 아닌 TypeScript/Next.js 스택에서 비슷한 스트리밍 에이전트를 만들고 싶다면, Vercel AI SDK 포스트가 정확히 그 경로를 다룬다.
-      ja: PythonバックエンドではなくTypeScript/Next.jsスタックで同様のストリーミングエージェントを作りたいなら、Vercel AI SDKポストがまさにその経路を扱っている。
-      en: If you want to build a similar streaming agent on a TypeScript/Next.js stack instead of Python, the Vercel AI SDK post covers exactly that path.
-      zh: 如果想在TypeScript/Next.js技术栈而非Python后端构建类似的流式智能体，Vercel AI SDK文章正好涵盖了这条路径。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 ```python
@@ -54,11 +43,11 @@ result = agent.run_sync('Is f-string faster than .format()?', model=TestModel())
 print(result.output)  # → success (no tool calls)
 ```
 
-When I first saw this run without an API key, I was mildly surprised. Same feeling as when I first used FastAPI — the structure was so intuitive it almost made me suspicious. That's PydanticAI in a nutshell.
+When I first saw this run without an API key, I was mildly surprised. It reminded me of my first time with FastAPI. The structure was so intuitive it almost made me suspicious. That's PydanticAI in a nutshell.
 
-Honestly, my first impression was "isn't this just Instructor with a wrapper?" Using it changed my mind. It's a framework built around the type system — the same philosophy FastAPI brought to web APIs, now applied to AI agents. Here's what I actually found when I installed and ran it, failed tests included.
+Honestly, my first impression was "isn't this just Instructor with a wrapper?" Using it changed my mind. It's a framework built around the type system, the same philosophy FastAPI brought to web APIs, now applied to AI agents. Here's what I actually found when I installed and ran it, failed tests included.
 
-## Why PydanticAI — A Different Angle from the Comparison Post
+## Why PydanticAI: A Different Angle from the Comparison Post
 
 I wrote a [Python AI Agent Library Comparison](/en/blog/en/python-ai-agent-library-comparison-2026) covering PydanticAI, Instructor, and Smolagents. That post answers "which one to pick." This one answers "how do you actually build with PydanticAI."
 
@@ -71,7 +60,7 @@ Quick breakdown of where each library sits:
 | LangGraph | Orchestration | Graph-based | Weak |
 | CrewAI | Multi-agent teams | Role-based | Weak |
 
-That second row is what makes the real difference. Types are maintained throughout the entire loop — LLM calls a tool, gets results, processes them. Runtime errors surface as IDE errors during development.
+That second row is what makes the real difference. Types hold through the entire loop. The LLM calls a tool, gets results, processes them, and the type information never drops. Runtime errors surface as IDE errors during development.
 
 GitHub stars: 16K+. Built by the Pydantic team, so maintenance concerns are minimal.
 
@@ -195,7 +184,7 @@ review_agent = Agent(
 
 After 3 failures, `UnexpectedModelBehavior` is raised. In production, this handles models that occasionally return malformed output automatically.
 
-## @agent.tool and Dependency Injection — FastAPI's Depends() Pattern
+## @agent.tool and Dependency Injection: FastAPI's Depends() Pattern
 
 ```python
 from pydantic_ai import Agent, RunContext
@@ -247,7 +236,7 @@ Message flow is 4 stages, accessible via `result.all_messages()`:
 
 ![PydanticAI execution log — sandbox test results](../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-log.jpg)
 
-## TestModel vs FunctionModel — Test Strategy
+## TestModel vs FunctionModel: Test Strategy
 
 I found TestModel's critical limitation while testing in the sandbox. Worth documenting.
 
@@ -342,7 +331,7 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 result_groq   = review_agent.run_sync(code, model='groq:llama-3.3-70b-versatile')
 ```
 
-From a [context engineering standpoint](/en/blog/en/context-engineering-production-ai-agents), the `system_prompt` and `output_type` schema are the core context — designing so the model is swappable above that layer is good architecture.
+From a context engineering standpoint, the `system_prompt` and `output_type` schema are the core context. Designing so the model stays swappable above that layer is good architecture.
 
 Cost comparison pattern:
 
@@ -363,7 +352,7 @@ for name, model in providers.items():
           f"tokens={result.usage().input_tokens + result.usage().output_tokens}")
 ```
 
-## Honest Assessment — What I Liked and What Fell Short
+## Honest Assessment: What I Liked and What Fell Short
 
 **What worked well**:
 - Type safety makes a real difference in practice. Change the `output_type` schema and the IDE flags every related error immediately
@@ -372,12 +361,12 @@ for name, model in providers.items():
 - `deps_type` makes dependency injection explicit, making mock swaps in tests clean
 
 **Where it falls short**:
-- Non-breaking changes like `result_type → output_type` happen frequently up through v1.88.0. The library isn't in a stable phase yet. I had to use `inspect.signature(Agent.__init__)` to verify the actual parameter name — that's a sign the docs lag behind the code
+- Non-breaking changes like `result_type → output_type` happen frequently up through v1.88.0. The library isn't in a stable phase yet. I had to use `inspect.signature(Agent.__init__)` to verify the actual parameter name. That alone tells you the docs lag behind the code
 - Streaming structured output is still beta. Parsing into a Pydantic model while the LLM generates partial output is tricky, and the current implementation is unstable
 - Hard dependency on Pydantic v2. If you're on a v1 legacy codebase, migration cost is real
 - Logfire integration (Pydantic team's monitoring service) is the official observability path but it's paid. Direct OpenTelemetry connection is possible but not officially documented well
 
-Reading [Production AI Agent Design Principles](/en/blog/en/production-grade-ai-agent-design-principles) alongside this post clarifies what criteria matter most when choosing an agent framework.
+Reading Production AI Agent Design Principles alongside this post clarifies what criteria matter most when choosing an agent framework.
 
 ## Summary: Core Patterns at a Glance
 
@@ -441,7 +430,7 @@ result = agent.run_sync("Review this",
 
 ## Next Steps
 
-For TypeScript stacks, [Building a Claude Streaming Agent with Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026) covers a similar approach.
+For TypeScript stacks, Building a Claude Streaming Agent with Vercel AI SDK covers a similar approach.
 
 If you're taking PydanticAI to production, recommended order:
 
@@ -452,4 +441,4 @@ If you're taking PydanticAI to production, recommended order:
 5. Configure retry strategy with `retries=3` and `output_retries=2`
 6. Pin the version (`pydantic-ai==1.88.0`). This library changes frequently
 
-The PydanticAI GitHub repo updates fast. Reading the CHANGELOG before the official docs saves real debugging time. Speaking from experience — this library isn't at 1.0 yet, but for Python agent stacks, it's currently the most consistent type-safe option available.
+The PydanticAI GitHub repo updates fast. Reading the CHANGELOG before the official docs saves real debugging time. Speaking from experience, this library isn't at 1.0 yet. But for Python agent stacks, it's currently the most consistent type-safe option available.

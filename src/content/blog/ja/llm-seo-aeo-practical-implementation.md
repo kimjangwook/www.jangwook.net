@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'LLM時代のSEO/AEO実践適用: B2B SaaS最適化ロードマップ'
 description: Agent Effi Flowプロジェクトから学ぶSEO基盤構築からAEO戦略まで、実装事例と測定可能な成果
 pubDate: '2025-11-28'

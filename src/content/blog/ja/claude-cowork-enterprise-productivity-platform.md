@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Cowork企業版 — 開発ツールから全社AI基盤へ
 description: >-
   Claude Coworkのエンタープライズ機能を分析。Plugin

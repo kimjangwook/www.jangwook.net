@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropic四月双重发布 — Opus 4.7与Managed Agents如何改变Agent开发'
 description: 'Claude Opus 4.7（4月16日）和Managed Agents测试版（4月8日）在同一个月发布。基准测试创历史新高，但社区反应两极分化。本文分析新分词器成本冲击、task_budget参数，以及每会话$0.08定价模式的实际意义。'
 pubDate: '2026-05-01'

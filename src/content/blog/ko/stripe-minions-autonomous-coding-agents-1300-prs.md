@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Stripe Minions — Slack 이모지 하나로 주당 1,300개 PR을 만드는 코딩 에이전트'
 description: >-
   Stripe가 자율 코딩 에이전트 Minions로 주당 1,300개 이상의 PR을 생산하는 방법. Blueprint 아키텍처, 샌드박스

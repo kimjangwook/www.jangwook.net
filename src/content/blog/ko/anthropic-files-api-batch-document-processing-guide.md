@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Anthropic Files API 실전 가이드 — PDF 반복 업로드 없이 문서 배치 분석하기
 description: >-
   Anthropic Files API로 PDF·이미지를 한 번 업로드해 여러 API 요청에서 반복 재사용하는 실전 가이드. Python SDK

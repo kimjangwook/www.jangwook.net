@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'MCP 보안 위기 — 60일 만에 30개 CVE, 엔터프라이즈 하드닝 가이드'
 description: >-
   MCP(Model Context Protocol)의 공격 표면이 급속 확대되고 있습니다. 30개 CVE 분석, 3계층 공격 모델,

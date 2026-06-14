@@ -1,4 +1,5 @@
 ---
+draft: true
 title: GPT-5.5リリース — エージェントランタイムに転換したOpenAIとClaudeの比較
 description: >-
   昨日リリースされたGPT-5.5。SWE-bench

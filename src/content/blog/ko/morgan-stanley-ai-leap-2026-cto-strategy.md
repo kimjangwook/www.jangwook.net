@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Morgan Stanley가 경고한 2026 AI 도약 — CTO가 지금 준비해야 할 5가지
 description: >-
   Morgan Stanley가 경고한 2026년 상반기 AI 능력의 비선형 도약. AI 로드맵 분기 재설계, Centaur Pod 팀 구조,

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'OpenAI Codex 클라우드 에이전트 vs Claude Code — 2026년 5월, 어느 쪽이 맞나'
 description: >-
   OpenAI Codex가 4월 대규모 업데이트로 클라우드 에이전트 워크스페이스로 전환했다. Claude Code와의 아키텍처·벤치마크·비용

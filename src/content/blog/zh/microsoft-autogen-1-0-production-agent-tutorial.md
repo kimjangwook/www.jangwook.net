@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AutoGen 0.7.x多智能体实战 — AssistantAgent到GraphFlow从零构建
 description: >-
   基于AutoGen

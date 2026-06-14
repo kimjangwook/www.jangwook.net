@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Amazon Kiro 实战分析 — 规格驱动AI IDE能取代Claude Code吗？'
 description: '通过官方文档和社区评测深度分析AWS开发的规格驱动AI IDE Kiro。涵盖EARS记法需求生成、Agent Hooks、Steering Files的实际价值，以及与Claude Code的关键差异的坦诚评估。'
 pubDate: '2026-06-05'

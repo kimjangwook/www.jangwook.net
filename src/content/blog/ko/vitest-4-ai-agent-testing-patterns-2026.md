@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Vitest 4로 AI 에이전트 테스트하기 — LLM 호출 모킹, 스트리밍 응답 테스트 실전 패턴'
 description: 'Vitest 4.1.7로 Anthropic SDK messages.create()와 스트리밍 응답을 모킹하는 실전 패턴. vi.fn()과 화살표 함수 차이, async function* 제너레이터로 SSE 스트림을 재현해 9개 테스트를 142ms에 통과시키는 방법을 안내한다.'
 pubDate: '2026-06-01'

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'A2A + MCP混合架构：2026年多智能体生产策略'
 description: 'Google A2A与Anthropic MCP是互补关系，而非竞争。从EM/CTO视角理解两种协议的角色差异，学习在生产环境中安全运营多智能体系统的策略。'
 pubDate: '2026-03-09'

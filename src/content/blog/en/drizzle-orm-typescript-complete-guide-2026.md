@@ -13,52 +13,34 @@ tags:
   - database
   - orm
 relatedPosts:
-  - slug: ux-psychology-implementation-case-study
-    score: 0.93
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.9
     reason:
-      ko: '웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, architecture with comparable
-        difficulty.
-      zh: 在Web开发、架构领域涵盖类似主题，难度相当。
-  - slug: adsense-low-value-content-technical-fix
-    score: 0.91
+      ko: TypeScript 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into TypeScript.
+      ja: TypeScriptをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 TypeScript 主题。
+  - slug: node-sqlite-builtin-practical-guide-2026
+    score: 0.85
     reason:
-      ko: 웹 개발 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: Web開発分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in web development with comparable difficulty.
-      zh: 在Web开发领域涵盖类似主题，难度相当。
-  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
-    score: 0.89
-    reason:
-      ko: '선행 학습 자료로 유용하며, 웹 개발 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、Web開発の基礎を扱います。
-      en: 'Useful as prerequisite knowledge, covering web development fundamentals.'
-      zh: 作为先修知识很有用，涵盖Web开发基础。
+      ko: sqlite를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on sqlite experience.
+      ja: sqliteを実際に扱った経験が続く記事です。
+      zh: 延续 sqlite 的实战经验。
   - slug: vitest-4-jest-migration-guide-2026
-    score: 0.88
+    score: 0.8
     reason:
-      ko: '선행 학습 자료로 유용하며, 웹 개발 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、Web開発の基礎を扱います。
-      en: 'Useful as prerequisite knowledge, covering web development fundamentals.'
-      zh: 作为先修知识很有用，涵盖Web开发基础。
-  - slug: aeo-implementation-experience
-    score: 0.87
-    reason:
-      ko: '웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, architecture with comparable
-        difficulty.
-      zh: 在Web开发、架构领域涵盖类似主题，难度相当。
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
-The first time I used Prisma, what threw me off wasn't the API — it was opening a migration file. You run `prisma migrate dev`, something happens, and your database changes. But actually reading what got executed? Harder than it should be. That feeling of "something quiet is happening somewhere I can't see" never stopped being uncomfortable.
+The first time I used Prisma, the thing that threw me off wasn't the API. It was opening a migration file. You run `prisma migrate dev`, something happens, and your database changes. But actually reading what got executed? That was harder than it should be. The feeling that something quiet was happening somewhere I couldn't see never stopped bothering me.
 
 Drizzle ORM sits on the opposite end of that spectrum. The philosophy is basically: "if you know SQL, just add TypeScript type safety on top." In practice, `drizzle-kit generate` spits out a plain `.sql` file you can actually read. You see exactly what will run, review it, and commit it. That's it.
 
-At the time I'm writing this, Drizzle ORM is on version 0.45.2 and has picked up a lot of momentum on GitHub. I ran everything in a sandbox — CRUD, migrations, transactions, the Relations API — all the way through. I also hit one unexpected gotcha that I want to document clearly.
+At the time I'm writing this, Drizzle ORM is on version 0.45.2 and has picked up a lot of momentum on GitHub. I ran everything in a sandbox, all the way through: CRUD, migrations, transactions, the Relations API. I also hit one unexpected gotcha that I want to document clearly.
 
 ## Installation and Initial Setup
 
@@ -94,7 +76,7 @@ Your `tsconfig.json` needs `moduleResolution: "bundler"` or `"node16"` or higher
 }
 ```
 
-## Schema Definition — SQL Column Types as TypeScript Types
+## Schema Definition: SQL Column Types Become TypeScript Types
 
 What makes Drizzle's schema interesting is that SQL column types map directly to TypeScript types. The schema file IS a TypeScript file.
 
@@ -137,7 +119,7 @@ export const postsRelations = relations(posts, ({ one }) => ({
 }));
 ```
 
-`integer("created_at", { mode: "timestamp" })` makes the SQLite storage explicit while giving you a `Date` type at the TypeScript level. For PostgreSQL, swap in `import { pgTable, serial, varchar, timestamp } from "drizzle-orm/pg-core"` — the core API stays nearly identical.
+`integer("created_at", { mode: "timestamp" })` makes the SQLite storage explicit while giving you a `Date` type at the TypeScript level. For PostgreSQL, swap in `import { pgTable, serial, varchar, timestamp } from "drizzle-orm/pg-core"`. The core API stays nearly identical.
 
 One difference from Prisma worth noting: Prisma uses a separate `.prisma` file and generates types via the CLI. In Drizzle, the schema is just a TypeScript file, so you can check and modify types directly in your editor. I find this significantly more transparent.
 
@@ -195,7 +177,7 @@ CREATE TABLE `users` (
 CREATE UNIQUE INDEX `users_email_unique` ON `users` (`email`);
 ```
 
-That SQL runs directly on the database — nothing hidden. I can open it, read exactly what it does, understand it fully, and commit it to version control. Compared to Prisma, where migration generation feels more like a black box, this is a meaningful improvement for my workflow.
+That SQL runs directly on the database, nothing hidden. I can open it, read exactly what it does, understand it fully, and commit it to version control. Compared to Prisma, where migration generation feels more like a black box, this is a meaningful improvement for my workflow.
 
 ```bash
 npx drizzle-kit migrate --config=drizzle.config.ts
@@ -214,9 +196,9 @@ const db = drizzle(sqlite);
 migrate(db, { migrationsFolder: "./migrations" });
 ```
 
-If you're working with Node.js's built-in SQLite, check out my [Node.js Built-in SQLite Guide](/en/blog/en/node-sqlite-builtin-practical-guide-2026) — Drizzle supports it via `drizzle-orm/node-sqlite3`.
+If you're working with Node.js's built-in SQLite, check out my [Node.js Built-in SQLite Guide](/en/blog/en/node-sqlite-builtin-practical-guide-2026). Drizzle supports it via `drizzle-orm/node-sqlite3`.
 
-## Basic CRUD — With Actual Execution Results
+## Basic CRUD With Actual Execution Results
 
 ```typescript
 import Database from "better-sqlite3";
@@ -245,7 +227,7 @@ Output:
 ]
 ```
 
-`.returning()` works correctly with SQLite. Worth noting — older SQLite versions didn't support the `RETURNING` clause, but `better-sqlite3`'s latest version handles it fine.
+`.returning()` works correctly with SQLite. Worth noting: older SQLite versions didn't support the `RETURNING` clause, but `better-sqlite3`'s latest version handles it fine.
 
 **SELECT with filter and orderBy:**
 ```typescript
@@ -263,7 +245,7 @@ Output:
 ]
 ```
 
-Operators like `gt()`, `lt()`, `eq()`, `and()`, `or()`, `like()` compose cleanly. If the types don't match — say you pass `gt(posts.views, "100")` with a string — TypeScript catches it at compile time.
+Operators like `gt()`, `lt()`, `eq()`, `and()`, `or()`, `like()` compose cleanly. If the types don't match (say you pass `gt(posts.views, "100")` with a string), TypeScript catches it at compile time.
 
 **JOIN:**
 ```typescript
@@ -282,9 +264,9 @@ Output:
 ]
 ```
 
-`leftJoin`, `rightJoin`, `fullJoin` — same pattern throughout.
+`leftJoin`, `rightJoin`, and `fullJoin` follow the same pattern throughout.
 
-## Relations API — The Convenience of db.query
+## Relations API: The Convenience of db.query
 
 One of the more compelling reasons to pick Drizzle: define Relations in your schema once, and `db.query` handles nested data fetching without you writing manual JOINs.
 
@@ -315,9 +297,9 @@ Output:
 
 Similar to TypeORM's `find({ relations: [...] })`. Drizzle generates SQL to avoid N+1 queries, but I'd recommend enabling logging in development to verify what it's actually sending to the DB.
 
-## Transactions — Here's Where the Gotcha Hides
+## Transactions: Where the Gotcha Hides
 
-This one caught me off guard. `better-sqlite3` is a synchronous driver. SQLite is a file-based synchronous database, and the driver is built that way intentionally.
+This one caught me off guard. `better-sqlite3` is a synchronous driver. SQLite is a file-based synchronous database, so the driver is built that way on purpose.
 
 The problem: using `async` inside a Drizzle transaction callback throws an error.
 
@@ -349,7 +331,7 @@ db.transaction((tx) => {
 });
 ```
 
-`.run()` is the synchronous execution method — no `await` needed.
+`.run()` is the synchronous execution method. No `await` needed.
 
 Rollback is automatic when you throw inside the callback:
 
@@ -366,9 +348,9 @@ try {
 
 I tested this and confirmed the rollback works as expected.
 
-**PostgreSQL and MySQL** are different — their drivers are async by design, so `async/await` inside transactions works fine.
+**PostgreSQL and MySQL** are different. Their drivers are async by design, so `async/await` inside transactions works fine.
 
-If you're building with SQLite and need [a TypeScript REST API with Hono.js](/en/blog/en/hono-typescript-api-2026), keep this async/sync constraint in mind from the start — it's easier than refactoring later.
+If you're building with SQLite and need [a TypeScript REST API with Hono.js](/en/blog/en/hono-typescript-api-2026), keep this async/sync constraint in mind from the start. It's a lot easier than refactoring later.
 
 ## Aggregate Queries and Raw SQL
 
@@ -397,7 +379,7 @@ const updated = await db
 
 Column references inside `sql` template literals are processed by Drizzle, so they're safe from SQL injection.
 
-## Prisma vs Drizzle — An Honest Comparison
+## Prisma vs Drizzle: An Honest Comparison
 
 | Criteria | Drizzle ORM | Prisma |
 |----------|------------|--------|
@@ -411,11 +393,11 @@ Column references inside `sql` template literals are processed by Drizzle, so th
 
 This isn't a "which is better" question — it's about fit. If you're comfortable with SQL and want full visibility into your migrations, Drizzle feels more natural. If your team needs a safer abstraction with a mature ecosystem behind it, Prisma is a solid choice and I wouldn't argue against it.
 
-My main criticism of Drizzle: the documentation still has rough edges. The API itself works well, but some edge-case behaviors — like the transaction async error — aren't obvious from reading the docs. You find them by running into them.
+My main criticism of Drizzle: the documentation still has rough edges. The API itself works well, but some edge-case behaviors (like the transaction async error) aren't obvious from reading the docs. You find them by running into them.
 
 ## Production Considerations
 
-**Connection pooling**: `better-sqlite3` is a single-connection synchronous driver — not suitable for serverless or multi-threaded environments. For PostgreSQL:
+**Connection pooling**: `better-sqlite3` is a single-connection synchronous driver, which makes it a poor fit for serverless or multi-threaded environments. For PostgreSQL:
 
 ```typescript
 import { Pool } from "pg";
@@ -432,13 +414,13 @@ const db = drizzle(sqlite, { schema, logger: true });
 
 ## drizzle-kit studio
 
-Since Drizzle 0.30, `drizzle-kit studio` ships built-in — a local browser-based DB viewer.
+Since Drizzle 0.30, `drizzle-kit studio` ships built-in. It's a local browser-based DB viewer.
 
 ```bash
 npx drizzle-kit studio --config=drizzle.config.ts
 ```
 
-Opens at `https://local.drizzle.studio`. You get table listing, data browsing, and basic editing. Think Prisma Studio but free. Don't point it at a production database — there's no authentication layer.
+Opens at `https://local.drizzle.studio`. You get table listing, data browsing, and basic editing. Think Prisma Studio but free. Don't point it at a production database, though. There's no authentication layer.
 
 ## Combining with TypeScript Zod
 
@@ -462,10 +444,10 @@ const insertPostSchema = createInsertSchema(posts, {
 type NewPost = z.infer<typeof insertPostSchema>;
 ```
 
-Your DB schema and API validation stay in sync automatically. If a DB column is `notNull()`, the Zod schema marks it as required. For a deeper look at Zod itself, see my [TypeScript Zod v4 + Claude API Structured Output Guide](/en/blog/en/typescript-zod-v4-claude-api-structured-output-guide-2026).
+Your DB schema and API validation stay in sync automatically. If a DB column is `notNull()`, the Zod schema marks it as required. For a deeper look at Zod itself, see my TypeScript Zod v4 + Claude API Structured Output Guide.
 
 ---
 
-My overall take: Drizzle ORM is for TypeScript developers who know SQL and don't want to give up control for the sake of type safety. The migration transparency alone is worth considering — being able to open the generated `.sql` file and know exactly what will run against your database is an underrated feature. The async transaction gotcha is real, but it's avoidable once you know about it. And honestly, the fact that the error message told me precisely what was wrong (even if the fix wasn't spelled out) is better than a silent failure.
+My overall take: Drizzle ORM is for TypeScript developers who know SQL and don't want to give up control for the sake of type safety. The migration transparency alone is worth considering. Being able to open the generated `.sql` file and know exactly what will run against your database is an underrated feature. The async transaction gotcha is real, but it's avoidable once you know about it. And honestly, the fact that the error message told me precisely what was wrong (even if the fix wasn't spelled out) beats a silent failure any day.
 
 I plan to follow this up with a post showing Drizzle + Hono.js for a complete REST API.

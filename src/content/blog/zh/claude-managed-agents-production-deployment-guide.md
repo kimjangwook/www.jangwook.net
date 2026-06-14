@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 亲测Claude Managed Agents — 无需基础设施，30分钟部署AI智能体
 description: >-
   对Anthropic于4月公开测试的Claude Managed

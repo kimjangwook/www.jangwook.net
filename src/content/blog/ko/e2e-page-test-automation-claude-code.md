@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Code로 페이지 E2E 테스트 자동화하기
 description: >-
   Claude Code와 Playwright를 활용한 웹 페이지 E2E 테스트 자동화 시스템 구축 방법을 소개합니다. 단일 커맨드로 크로스

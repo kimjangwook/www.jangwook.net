@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '2026년 엘리트 AI 엔지니어링 조직을 만드는 법: 3인 팀이 50명을 이기는 구조'
 description: 'HN Top 랭킹을 달성한 엘리트 AI 엔지니어링 문화 분석. 매출/인당 $3.48M vs $610K의 5.7배 격차가 생기는 이유와 EM이 실천해야 할 Taste × Discipline × Leverage 공식'
 pubDate: '2026-03-07'

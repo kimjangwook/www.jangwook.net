@@ -13,51 +13,27 @@ tags:
   - 流式传输
   - AI后端
 relatedPosts:
-  - slug: vertex-ai-search-site-implementation
-    score: 0.95
+  - slug: ollama-fastapi-production-deployment-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effloow-side-project-ai-company
-    score: 0.94
+      ko: fastapi 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into fastapi.
+      ja: fastapiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 fastapi 主题。
+  - slug: uv-python-ai-development-setup-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: adding-chinese-support
-    score: 0.94
+      ko: claude api를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claude api experience.
+      ja: claude apiを実際に扱った経験が続く記事です。
+      zh: 延续 claude api 的实战经验。
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.8
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: agent-effi-flow-pivot-omotenashi-bot
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: n8n-rss-automation
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 在构建AI后端时，你终究会遇到同一个问题："能让用户等到完整响应生成完再返回吗？"大多数情况下，答案是否定的。当Claude这样的语言模型生成长文本时，缓冲所有内容再一次性发送会彻底破坏用户体验。
@@ -232,7 +208,7 @@ async def call_with_retry(fn, *args, **kwargs):
             raise  # 重试无意义的错误立即传播
 ```
 
-我在本地测试这个模式时——模拟一个失败两次后成功的不稳定API——结果是`Result: success (after 3 attempts)`，退避逻辑正常工作。
+我在本地测试过这个模式，模拟了一个失败两次后才成功的不稳定API。结果是`Result: success (after 3 attempts)`，退避逻辑工作正常。
 
 说实话，这里最让我不确定的是`MAX_RETRIES`和`BASE_DELAY`的值。限速阈值因Anthropic计划不同而不同，重试间隔太短会再次触发同一限速。建议根据API计划将这些值外部化为环境变量。
 
@@ -281,7 +257,7 @@ location /chat/stream {
 
 忘记`proxy_buffering off`意味着Nginx会把整个流收集到缓冲区，然后一次性发送。这不是流式传输，只是一个慢响应。这是第一次将SSE放在Nginx后面的人几乎必然会遇到的问题。
 
-## Step 5：客户端集成 — 浏览器EventSource与Python
+## Step 5：客户端集成: 浏览器EventSource与Python
 
 **浏览器（JavaScript）**：
 
@@ -333,19 +309,19 @@ async def stream_chat(message: str):
                         print(event["text"], end="", flush=True)
 ```
 
-如果你有使用Vercel AI SDK的前端，[用Vercel AI SDK构建Claude流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)展示了如何在前端侧连接这套方案。`useChat`钩子负责处理SSE解析，客户端代码会简单得多。
+如果你有使用Vercel AI SDK的前端，用Vercel AI SDK构建Claude流式代理展示了如何在前端侧连接这套方案。`useChat`钩子负责处理SSE解析，客户端代码会简单得多。
 
 ## 不足之处与实际会卡住的地方
 
 以下是我在实际项目中使用这套技术栈时遇到的真实限制。
 
-**第一，流式传输与提示词缓存的组合比较棘手。** Claude的提示词缓存能显著降低输入令牌成本。但同时使用流式传输和缓存时，在流传输中途无法知道是否命中缓存。可以在流式传输完成后从`usage`对象中确认，但如果需要实时反映缓存状态的UI，实现会变得复杂。建议先阅读[Claude API提示词缓存成本优化](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)，在架构设计时就考虑缓存策略。
+**第一，流式传输与提示词缓存的组合比较棘手。** Claude的提示词缓存能显著降低输入令牌成本。但同时使用流式传输和缓存时，在流传输中途无法知道是否命中缓存。可以在流式传输完成后从`usage`对象中确认，但如果需要实时反映缓存状态的UI，实现会变得复杂。建议先阅读Claude API提示词缓存成本优化，在架构设计时就考虑缓存策略。
 
 **第二，uvicorn的worker数量和连接管理比想象中复杂。** SSE会长时间保持连接。使用`--workers 4`时，同时最多只能处理4个长流式连接。实际流量超过这个数量时请求会排队。需要在Kubernetes上水平扩展，或者使用`gunicorn + uvicorn worker class`组合。
 
 **第三，重试逻辑在流式传输中途介入时处理复杂。** 流式传输进行到一半时发生网络错误怎么办？从头重新请求意味着客户端会收到重复文本。实用的解决方案是客户端管理`last-event-id`，让服务器接收后从断点继续生成，但这个实现超出了本文的范围。
 
-对于不需要流式传输的批量处理场景，这个模式也是过度设计。如果要批量处理1000个文档，[Anthropic Message Batches API](/zh/blog/zh/anthropic-message-batches-api-production-guide)要便宜和合适得多。
+对于不需要流式传输的批量处理场景，这个模式也是过度设计。如果要批量处理1000个文档，Anthropic Message Batches API要便宜和合适得多。
 
 ## 故障排除FAQ
 
@@ -365,7 +341,7 @@ async def stream_chat(message: str):
 
 要么`BASE_DELAY`太短，要么突发流量集中在同一时间窗口。查看Anthropic的限速页面确认你计划的TPM/RPM上限，将`BASE_DELAY`至少设为5秒以上。
 
-## 总结：何时选择这套技术栈
+## 这套技术栈真正派上用场的场景
 
 FastAPI + AsyncAnthropic + uvicorn组合适合以下情况：
 

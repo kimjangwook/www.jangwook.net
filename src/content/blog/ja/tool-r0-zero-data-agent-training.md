@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Tool-R0: ゼロデータでツール使用AIエージェントを訓練するSelf-Play RLフレームワーク'
 description: >-
   arXiv最新論文Tool-R0は、学習データなしにSelf-Play強化学習だけでLLMのツール呼び出し能力を92.5%向上させます。Generator-Solver共進化構造とEM視点の実務示唆を分析します。

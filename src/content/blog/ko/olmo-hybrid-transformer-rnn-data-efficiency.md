@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Olmo Hybrid — Transformer + Linear RNN 하이브리드로 데이터 효율 2배 달성
 description: >-
   AI2의 Olmo Hybrid는 Transformer와 DeltaNet(Linear RNN)을 3:1로 결합해 동일 정확도를 49% 적은

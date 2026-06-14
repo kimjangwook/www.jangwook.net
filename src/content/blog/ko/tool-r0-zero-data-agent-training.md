@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Tool-R0: 제로 데이터로 도구 사용 AI 에이전트를 훈련하는 Self-Play RL 프레임워크'
 description: >-
   arXiv 최신 논문 Tool-R0는 학습 데이터 없이 Self-Play 강화학습만으로 LLM의 도구 호출 능력을 92.5% 향상시킨다.

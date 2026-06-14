@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenAI Open Responses — 에이전틱 AI 워크플로우의 공통 표준이 등장하다
 description: >-
   OpenAI가 공개한 Open Responses 스펙이 에이전틱 AI 워크플로우를 표준화합니다. 핵심 개념, 지원 생태계, EM/CTO

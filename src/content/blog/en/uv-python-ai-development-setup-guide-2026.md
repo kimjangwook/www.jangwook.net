@@ -16,64 +16,44 @@ tags:
   - Dev Environment
   - AI Development
 relatedPosts:
-  - slug: claude-code-parallel-sessions-git-worktree
-    score: 0.95
+  - slug: fastapi-claude-api-streaming-production-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: langfuse-self-hosted-llm-tracing-setup-guide-2026
-    score: 0.94
+      ko: Python 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Python.
+      ja: Pythonをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Python 主题。
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.85
     reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: mcp-servers-toolkit-introduction
-    score: 0.93
+      ko: Python를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Python experience.
+      ja: Pythonを実際に扱った経験が続く記事です。
+      zh: 延续 Python 的实战经验。
+  - slug: python-ai-agent-library-comparison-2026
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: openclaw-opus-4-6-setup-guide
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek
-    score: 0.93
-    reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 Until last year, every time I started an AI project I'd go through the same ritual. `python -m venv .venv`, `source .venv/bin/activate`, `pip install anthropic openai`... and then wait. Sometimes over two minutes. Watching anthropic, torch, and pydantic download one by one.
 
 The context-switching cost added up. Every time I made a new experiment branch, environment setup broke the flow. The "works on my machine" problem didn't go away either.
 
-Then I started using `uv` — a Python package manager written in Rust, from the team behind Ruff at Astral. I benchmarked it today while setting up a Claude SDK project: installing `anthropic` along with 16 packages total took **0.874 seconds**. With pip, that same operation would have taken 20〜40 seconds.
+Then I started using `uv`, a Python package manager written in Rust from the team behind Ruff at Astral. I benchmarked it today while setting up a Claude SDK project. Installing `anthropic` plus 16 packages total took **0.874 seconds**. With pip, that same operation would have taken 20〜40 seconds.
 
-This is a complete hands-on guide to setting up an AI development environment with uv 0.11 from scratch.
+What follows is that benchmark run, retraced step by step. With uv 0.11, from an empty directory through project init, Claude SDK install, and CI.
 
-## Why uv Now — What's Actually Wrong with pip, Poetry, and conda
+## What's Actually Wrong with pip, Poetry, and conda
 
 Honestly, pip itself isn't the problem. It's a proven tool that's downloaded billions of packages. The issue is the combination of <strong>speed and environment isolation</strong>.
 
 Why pip is slow for AI dev is structural: it resolves packages sequentially and doesn't cache downloaded files efficiently. When you run `pip install anthropic openai torch`, it fetches each package's metadata, resolves dependencies, and checks for conflicts serially.
 
-Poetry is much better at dependency management — declarative `pyproject.toml`, lock file support. But Poetry itself is written in Python, which puts a ceiling on speed, and debugging a broken environment can get tedious fast.
+Poetry is much better at dependency management. Declarative `pyproject.toml`, lock file support. But Poetry itself is written in Python, which puts a ceiling on speed, and debugging a broken environment gets tedious fast.
 
 conda is strong for Python version management but environments tend to balloon to several gigabytes, and it's awkward to use in Docker CI.
 
@@ -86,13 +66,13 @@ uv add openai httpx python-dotenv →  0.555s  (3 more packages)
 uv sync (cache hit, 19 packages)  →  0.074s  (29ms install)
 ```
 
-## Prerequisites
+## What You Need Before Installing (Almost Nothing)
 
 Almost nothing is required to install uv. Check the following by OS:
 
 - **macOS/Linux**: `curl` or Homebrew
 - **Windows**: PowerShell
-- No need to pre-install Python — uv can manage Python versions directly
+- No need to pre-install Python. uv can manage Python versions directly
 
 That last point matters. You don't need pyenv, conda, or a specific system Python to get started.
 
@@ -203,7 +183,7 @@ Installed 16 packages in 20ms
  + typing-inspection==0.4.2
 ```
 
-Even with pydantic-core at 1.9MB, the entire install finished in 0.874 seconds. This is cold cache — no packages downloaded previously.
+Even with pydantic-core at 1.9MB, the entire install finished in 0.874 seconds. This is cold cache, nothing downloaded previously.
 
 Adding more SDKs is just as fast:
 
@@ -266,7 +246,7 @@ uv run python -c "import anthropic; print(anthropic.__version__)"
 # 0.100.0
 ```
 
-If you want to go further with [Claude streaming agents using the Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026), the project setup starts the same way — `uv add` whatever SDK you need and `uv run` your entry point.
+If you want to go further with Claude streaming agents using the Vercel AI SDK, the project setup starts the same way. Run `uv add` for whatever SDK you need, then `uv run` your entry point.
 
 ## Step 5: Python Version Management
 
@@ -314,7 +294,7 @@ cd my-project
 uv sync
 ```
 
-From today's test — deleted `.venv` and ran `uv sync`:
+From today's test. I deleted `.venv` and ran `uv sync`:
 
 ```
 Using CPython 3.11.12
@@ -355,7 +335,7 @@ jobs:
         run: uv run pytest
 ```
 
-The official `astral-sh/setup-uv` action handles cache automatically. When [building an MCP server in Python](/en/blog/en/mcp-server-build-practical-guide-2026), this same CI pattern applies — `uv add fastmcp` for the dependency, `uv sync` in GitHub Actions.
+The official `astral-sh/setup-uv` action handles cache automatically. When building an MCP server in Python, this same CI pattern applies. Add the dependency with `uv add fastmcp`, then `uv sync` in GitHub Actions.
 
 ## Managing CLI Tools with uv tool
 
@@ -459,19 +439,19 @@ uv remove openai
 
 Lock file updates automatically.
 
-## Honest Assessment — Where uv Falls Short
+## Where uv Still Falls Short, Honestly
 
 Performance-wise, uv is nearly perfect. But a few things deserve honesty.
 
 <strong>Ecosystem maturity.</strong> uv launched in 2024 and is at v0.11 as of today. Still pre-1.0. For personal projects and new codebases, it's an easy recommendation. For large teams migrating existing Poetry or pip workflows, factor in the transition cost.
 
-<strong>conda ecosystem compatibility.</strong> If you need torch, CUDA toolkits, or tensorflow installed from conda channels, uv can't help you — it's PyPI-only. For pure Python AI projects (API calls, text generation, agent frameworks), this isn't an issue. For deep learning work requiring specific CUDA versions, you may still need conda alongside uv.
+<strong>conda ecosystem compatibility.</strong> If you need torch, CUDA toolkits, or tensorflow installed from conda channels, uv can't help you — it's PyPI-only. For pure Python AI projects that just hit an API or run an agent framework over text, this isn't an issue. For deep learning work requiring specific CUDA versions, you may still need conda alongside uv.
 
 <strong>The `uv run` habit shift.</strong> Typing `uv run` instead of `python` takes adjustment. The upside is that team members can't accidentally run scripts against system Python without noticing.
 
-The [LLM coding environment optimization](/en/blog/en/llm-coding-harness-optimization) post touches on a similar observation: the harder part of adopting a faster tool is often changing team habits, not the tool itself.
+The LLM coding environment optimization post touches on a similar observation: the harder part of adopting a faster tool is often changing team habits, not the tool itself.
 
-## Summary: Command Recipes You Can Use Right Now
+## Command Recipes to Copy Right Now
 
 ```bash
 # Start a new AI project

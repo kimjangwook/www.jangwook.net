@@ -12,48 +12,30 @@ tags:
   - AI Agent
   - Claude
 relatedPosts:
-  - slug: mcp-server-build-practical-guide-2026
-    score: 0.95
+  - slug: claude-agent-sdk-tool-use-complete-guide-2026
+    score: 0.9
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-message-batches-api-production-guide
-    score: 0.95
+      ko: Python 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Python.
+      ja: Pythonをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Python 主题。
+  - slug: local-llm-private-mcp-server-gemma4-fastmcp
+    score: 0.85
     reason:
-      ko: 'AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in AI/ML, DevOps, architecture with comparable
-        difficulty.
-      zh: 在AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: openai-codex-api-release-vs-claude-code-comparison-may-2026
-    score: 0.95
+      ko: MCP를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on MCP experience.
+      ja: MCPを実際に扱った経験が続く記事です。
+      zh: 延续 MCP 的实战经验。
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.8
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML,
-        DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
-  - slug: claude-mythos-preview-glasswing-ai-cybersecurity
-    score: 0.93
-    reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 ai agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai agent track.
+      ja: 同じai agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai agent 脉络中可一并阅读。
 ---
 
-MCP(Model Context Protocol) 서버를 처음부터 직접 구현하려면 생각보다 손이 많이 간다. stdio 트랜스포트 처리, JSON-RPC 2.0 직렬화, 핸들러 등록 — [MCP 서버를 Streamable HTTP로 직접 만드는 과정](/ko/blog/ko/mcp-server-build-practical-guide-2026)을 따라가 보면 알겠지만 "AI 도구를 하나 추가하고 싶을 뿐인데" 왜 이렇게 많은 보일러플레이트가 필요한지 답답해지는 순간이 온다.
+MCP(Model Context Protocol) 서버를 처음부터 직접 구현하려면 생각보다 손이 많이 간다. stdio 트랜스포트를 처리하고, JSON-RPC 2.0을 직렬화하고, 핸들러를 일일이 등록해야 한다. MCP 서버를 Streamable HTTP로 직접 만드는 과정을 따라가 보면 알겠지만 "AI 도구를 하나 추가하고 싶을 뿐인데" 왜 이렇게 많은 보일러플레이트가 필요한지 답답해지는 순간이 온다.
 
 FastMCP는 그 답답함을 해소하기 위해 만들어진 프레임워크다. 나는 오늘 샌드박스에서 pip로 설치하고 실제로 동작하는 MCP 서버를 30분 안에 올렸다.
 
@@ -72,11 +54,11 @@ Python version:    3.12.8
 Platform:          macOS-15.6-arm64
 ```
 
-백로그에 "v2.0" 기준으로 적어뒀는데 이미 3.x까지 올라와 있다. MCP 프로토콜 자체도 1.27.0이다. 이 버전 번호가 말해주는 것 한 가지 — FastMCP는 꽤 활발하게 개발되고 있다.
+백로그에 "v2.0" 기준으로 적어뒀는데 이미 3.x까지 올라와 있다. MCP 프로토콜 자체도 1.27.0이다. 이 버전 번호가 말해주는 게 하나 있다. FastMCP는 꽤 활발하게 개발되고 있다는 사실이다.
 
 솔직히 말하면 3.x로 올라오면서 API가 얼마나 바뀌었는지 직접 확인해야 했다. 문서만 보는 것보다 실제로 돌려보는 게 빠르다.
 
-## 설치와 첫 서버 — 정말 이게 전부다
+## 설치와 첫 서버: 정말 이게 전부다
 
 ```bash
 pip install fastmcp
@@ -147,7 +129,7 @@ FastMCP의 핵심 개념은 세 가지다. 이걸 구분하는 것이 서버를 
 
 **@mcp.prompt()** — 재사용 가능한 프롬프트 템플릿이다. 파라미터를 받아서 구성된 프롬프트 메시지를 반환한다. Claude Desktop이나 Claude.ai에서 슬래시 명령어처럼 쓸 수 있다.
 
-MCP를 처음 쓰는 개발자들이 헷갈리는 부분이 Tool과 Resource의 차이다. 내 기준은 간단하다 — **부수 효과(side effect)가 있으면 Tool, 없으면 Resource**다.
+MCP를 처음 쓰는 개발자들이 헷갈리는 부분이 Tool과 Resource의 차이다. 내 기준은 간단하다. 부수 효과(side effect)가 있으면 Tool, 없으면 Resource다.
 
 ## Context로 진행 상황을 클라이언트에 전달하기
 
@@ -182,7 +164,7 @@ INFO  Received INFO from server: {'msg': '디렉터리 읽는 중: /tmp', 'extra
 
 ## FastMCP Client로 테스트하기
 
-실제 Claude Desktop 없이도 서버를 테스트할 수 있다. FastMCP는 in-process 클라이언트를 제공한다. [MCP 에이전트 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)을 구현할 때도 이 방식이 테스트를 단순하게 만들어준다.
+실제 Claude Desktop 없이도 서버를 테스트할 수 있다. FastMCP는 in-process 클라이언트를 제공한다. MCP 에이전트 워크플로우 패턴을 구현할 때도 이 방식이 테스트를 단순하게 만들어준다.
 
 ```python
 import asyncio
@@ -282,7 +264,7 @@ Claude Desktop에서 HTTP 서버에 연결하는 설정은 간단하다.
 }
 ```
 
-## fastmcp CLI — 개발 워크플로우에서 유용한 명령어들
+## fastmcp CLI: 개발 워크플로우에서 유용한 명령어들
 
 FastMCP는 CLI도 제공한다. 나는 처음엔 몰랐는데 `fastmcp --help`를 실행해보니 꽤 풍부했다.
 
@@ -297,7 +279,7 @@ Commands:
   run          — 서버 실행
 ```
 
-`fastmcp install server.py --client claude`를 실행하면 Claude Desktop config를 자동으로 수정해준다고 한다. 직접 JSON 파일을 편집하는 수고가 없어지는 거다. 다만 나는 이 명령어를 지금 환경에서 Claude Desktop이 설치된 상태가 아니라 직접 테스트하진 못했다 — `--client` 옵션이 어떤 경로를 건드리는지는 공식 문서에서 확인하는 것을 권한다.
+`fastmcp install server.py --client claude`를 실행하면 Claude Desktop config를 자동으로 수정해준다고 한다. 직접 JSON 파일을 편집하는 수고가 없어지는 거다. 다만 지금 환경에는 Claude Desktop이 깔려 있지 않아 직접 테스트하진 못했다. `--client` 옵션이 어떤 경로를 건드리는지는 공식 문서에서 확인하는 편이 안전하다.
 
 솔직히 `fastmcp dev` 쪽이 더 실용적으로 보인다. 코드를 수정할 때마다 서버를 재시작하는 귀찮음을 없애준다.
 
@@ -355,7 +337,7 @@ def list_files_advanced(
 
 도구의 description도 독스트링에서 자동으로 가져온다. 잘 쓴 독스트링 하나가 Claude에게 보내는 사용 설명서가 된다.
 
-## 실전 개발 도구 서버 — 코드 분석 MCP 서버
+## 실전 개발 도구 서버: 코드 분석 MCP 서버
 
 실제로 써먹을 수 있는 예제를 하나 만들어봤다. 파이썬 파일을 분석하는 개발 도구 MCP 서버다.
 
@@ -447,7 +429,7 @@ if __name__ == "__main__":
 
 ## 기존 MCP 서버 대비 뭐가 달라지나
 
-내가 [Streamable HTTP 방식으로 직접 MCP 서버를 만들어봤을 때](/ko/blog/ko/mcp-server-build-practical-guide-2026)와 비교하면 차이가 명확하다.
+내가 Streamable HTTP 방식으로 직접 MCP 서버를 만들어봤을 때와 비교하면 차이가 명확하다.
 
 직접 구현 시:
 - `Server` 인스턴스 생성
@@ -465,22 +447,22 @@ FastMCP:
 
 다만 내가 느낀 한계도 있다. FastMCP는 자유도를 트레이드오프로 지불한다. 저수준 MCP 메시지를 커스터마이즈해야 하거나, 비표준 트랜스포트를 써야 하는 상황이라면 FastMCP가 추상화 뒤에 숨겨버린 것들을 다시 꺼내야 한다. 그런 경우라면 MCP Python SDK를 직접 쓰는 게 맞다.
 
-## 실행 가능성 판단 — 언제 FastMCP를 선택하나
+## 실행 가능성 판단: 언제 FastMCP를 선택하나
 
 내 결론은 이렇다:
 
 **FastMCP를 쓸 때**: Claude, Cursor, VS Code 등 표준 MCP 클라이언트와 연동하는 서버를 만들 때. 특히 팀 내 AI 도구를 빠르게 프로토타이핑하거나, 기존 Python 함수를 MCP 서버로 노출하고 싶을 때.
 
-**직접 SDK를 쓸 때**: 커스텀 트랜스포트, 비표준 메시지 포맷, 또는 FastMCP가 지원하지 않는 MCP 기능이 필요할 때. [MCP Code Execution 실전 사례](/ko/blog/ko/mcp-code-execution-practical-implementation)처럼 저수준 제어가 필요한 경우다.
+**직접 SDK를 쓸 때**: 커스텀 트랜스포트, 비표준 메시지 포맷, 또는 FastMCP가 지원하지 않는 MCP 기능이 필요할 때. MCP Code Execution 실전 사례처럼 저수준 제어가 필요한 경우다.
 
-FastMCP가 아쉬운 점 하나 — 3.x로 올라오면서 문서가 코드 변화를 완전히 따라잡지 못하고 있다. `get_tools()` 같은 메서드가 문서에는 있는 것처럼 보이지만 실제로는 `list_tools()`로 바뀌어 있었다. 공식 docs보다 소스 코드나 `dir(mcp)`로 직접 확인하는 습관이 필요하다.
+FastMCP가 아쉬운 점이 하나 있다. 3.x로 올라오면서 문서가 코드 변화를 완전히 따라잡지 못하고 있다. `get_tools()` 같은 메서드가 문서에는 있는 것처럼 보이지만 실제로는 `list_tools()`로 바뀌어 있었다. 공식 docs보다 소스 코드나 `dir(mcp)`로 직접 확인하는 습관이 필요하다.
 
-프로덕션에 올리기 전에 한 가지 더 — [MCP Gateway로 에이전트 트래픽을 통제하는 방법](/ko/blog/ko/mcp-gateway-agent-traffic-control)도 함께 검토하는 것을 권한다. 서버를 노출했을 때 어떤 도구가 어떻게 호출되는지 통제하는 레이어가 필요해지는 순간이 온다.
+프로덕션에 올리기 전에 한 가지 더 — MCP Gateway로 에이전트 트래픽을 통제하는 방법도 함께 검토하는 것을 권한다. 서버를 노출했을 때 어떤 도구가 어떻게 호출되는지 통제하는 레이어가 필요해지는 순간이 온다.
 
-## 정리
+## 30분 만에 동작하는 서버, 그 다음은
 
 FastMCP 3.x는 Python 개발자가 MCP 서버를 가장 빠르게 만드는 방법이다. `pip install fastmcp` 한 줄, `@mcp.tool()` 데코레이터 하나, `mcp.run()` 한 줄. 30분 안에 Claude Desktop이 호출하는 AI 도구를 만들 수 있다.
 
-MCP 생태계가 빠르게 성숙하고 있다. [내가 사용하는 MCP 서버 목록](/ko/blog/ko/mcp-servers-toolkit-introduction)을 보면 이미 다양한 통합이 존재한다. 직접 만들기 전에 먼저 있는 것을 쓰는 게 실용적이지만, 없다면 FastMCP로 직접 만드는 게 이제 그렇게 어렵지 않다.
+MCP 생태계가 빠르게 성숙하고 있다. 내가 사용하는 MCP 서버 목록을 보면 이미 다양한 통합이 존재한다. 직접 만들기 전에 먼저 있는 것을 쓰는 게 실용적이지만, 없다면 FastMCP로 직접 만드는 게 이제 그렇게 어렵지 않다.
 
 오늘 샌드박스에서 확인한 버전은 FastMCP 3.2.4, MCP 1.27.0이다. 이 분야가 빠르게 바뀌고 있으니, 실제 적용 전에 [FastMCP 공식 문서](https://gofastmcp.com)에서 최신 API를 확인하길 바란다.

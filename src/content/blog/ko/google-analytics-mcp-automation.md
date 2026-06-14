@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Google Analytics MCP와 AI 에이전트로 블로그 분석 자동화하기
 description: >-
   Google Analytics MCP와 Claude AI 에이전트를 연결해 블로그 분석을 완전 자동화하는 방법을 단계별로 설명합니다. GA4

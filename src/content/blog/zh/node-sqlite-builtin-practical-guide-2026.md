@@ -1,38 +1,30 @@
 ---
-title: 'Node.js 内置 SQLite 完全指南 — 无需外部包，直接上手实战数据库'
-description: 'Node.js 22.5.0 起可用的 node:sqlite 内置模块，无需 npm install。从 DatabaseSync、StatementSync、事务处理到自定义函数，全部基于实际运行代码和日志整理。'
+title: Node.js 内置 SQLite 完全指南 — 无需外部包，直接上手实战数据库
+description: >-
+  Node.js 22.5.0 起可用的 node:sqlite 内置模块，无需 npm install。从
+  DatabaseSync、StatementSync、事务处理到自定义函数，全部基于实际运行代码和日志整理。
 pubDate: '2026-06-09'
-heroImage: '../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-builtin-practical-guide-2026-hero.png'
-tags: ['Node.js', 'SQLite', '内置模块']
+heroImage: >-
+  ../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-builtin-practical-guide-2026-hero.png
+tags:
+  - Node.js
+  - SQLite
+  - 内置模块
 relatedPosts:
-  - slug: 'deno-2-vs-bun-nodejs-runtime-2026-comparison'
-    score: 0.78
+  - slug: drizzle-orm-typescript-complete-guide-2026
+    score: 0.9
     reason:
-      ko: 'Deno와 Bun의 내장 데이터베이스 지원 방향을 비교하면, Node.js 내장 SQLite가 생태계에서 갖는 위치를 더 넓은 시각으로 볼 수 있다.'
-      ja: 'Deno・Bunの内蔵DB対応との違いを把握することで、node:sqliteの立ち位置がより明確になる。'
-      en: 'Seeing how Deno and Bun approach built-in database support puts Node.js built-in SQLite in broader ecosystem context.'
-      zh: '了解Deno和Bun的内置数据库支持方向，有助于更好地理解Node.js内置SQLite在生态中的位置。'
-  - slug: 'hono-typescript-api-2026'
-    score: 0.72
+      ko: sqlite 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into sqlite.
+      ja: sqliteをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 sqlite 主题。
+  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
+    score: 0.85
     reason:
-      ko: 'Hono로 API를 만들 때 외부 DB 없이 node:sqlite를 붙이면 의존성을 최소화한 마이크로서비스를 빠르게 구성할 수 있다.'
-      ja: 'HonoのAPIにnode:sqliteを組み合わせると、npm依存なしの軽量マイクロサービスが即座に作れる。'
-      en: 'Combining Hono APIs with node:sqlite lets you spin up zero-external-dependency microservices instantly.'
-      zh: '将Hono API与node:sqlite结合，可以快速搭建无外部依赖的轻量微服务。'
-  - slug: 'bun-shell-scripting-practical-guide-2026'
-    score: 0.65
-    reason:
-      ko: 'Bun Shell로 자동화 스크립트를 만들 때 node:sqlite와 같은 내장 모듈 철학을 이해하면 런타임별 내장 기능 활용 패턴을 비교해볼 수 있다.'
-      ja: 'Bun Shellのスクリプト自動化とnode:sqliteの設計思想を比べると、ランタイムの組み込み機能戦略の違いが見えてくる。'
-      en: 'Understanding the built-in module philosophy behind node:sqlite helps when comparing how Bun Shell approaches its own automation primitives.'
-      zh: '理解node:sqlite的内置模块理念，有助于比较Bun Shell等运行时的内置功能策略。'
-  - slug: 'sqlite-ai-swarm-build'
-    score: 0.68
-    reason:
-      ko: 'SQLite 구조를 AI 에이전트로 직접 구현한 경험이 있다면, 이 글에서 다룬 node:sqlite API가 실제 엔진이 제공하는 기능을 어느 수준까지 노출하는지 대조해보면 흥미롭다.'
-      ja: 'SQLiteをAIエージェントで実装した経験があるなら、node:sqliteが実エンジンのどの機能を公開しているか比較すると理解が深まる。'
-      en: "If you have built a SQLite-like engine with AI agents, comparing against node:sqlite actual API surface reveals what the real engine exposes."
-      zh: '如果你曾用AI代理实现过SQLite结构，与node:sqlite的API对比，能让你更清楚真实引擎的能力边界。'
+      ko: node.js를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on node.js experience.
+      ja: node.jsを実際に扱った経験が続く記事です。
+      zh: 延续 node.js 的实战经验。
 ---
 
 停止输入 `npm install sqlite3`。有更好的方式了。
@@ -52,7 +44,7 @@ Node.js 22.5.0 起内置了 `node:sqlite` 模块。无需安装，无需在 `pac
 一句话总结：设计理念相似，API 表面积更小。
 
 - 同样只提供同步（sync）API
-- 没有 `db.transaction()` 包装器 — 这是最大的差异（详见下文）
+- 没有 `db.transaction()` 包装器，这是最大的差异（详见下文）
 - 有 `db.function()` 和 `db.aggregate()`
 - 没有 `serialize()`/`deserialize()` 方式的内存 DB 序列化
 
@@ -71,8 +63,8 @@ node -e "const {DatabaseSync} = require('node:sqlite'); console.log('OK');"
 
 核心是两个类：
 
-- `DatabaseSync` — 数据库连接对象
-- `StatementSync` — 预编译 SQL 语句
+- `DatabaseSync`：数据库连接对象
+- `StatementSync`：预编译 SQL 语句
 
 ```js
 const { DatabaseSync } = require('node:sqlite');
@@ -385,9 +377,9 @@ try {
 
 **不足之处：**
 
-- Node.js 22 仍是 experimental — 小版本间 API 可能变化
-- 只有同步 API — 在 I/O 密集的服务器场景下会阻塞事件循环
-- 没有 `db.transaction()` 包装器 — 事务代码更冗长
+- Node.js 22 仍是 experimental，小版本间 API 可能变化
+- 只有同步 API，在 I/O 密集的服务器场景下会阻塞事件循环
+- 没有 `db.transaction()` 包装器，事务代码更冗长
 - 没有 `serialize()`/`deserialize()`
 
 **我的看法：**
@@ -396,10 +388,10 @@ try {
 
 在构建[类似 Bun Shell 的自动化脚本](/zh/blog/zh/bun-shell-scripting-practical-guide-2026)或内部开发工具时，想要最小化外部依赖，`node:sqlite` 是当下实用的选择。
 
-## 总结
+## 内部工具，现在就够用了
 
-把 `node:sqlite` 的每个方法都测试过后，我的结论是：**完成度比预期的高。** `DatabaseSync`、`StatementSync`、自定义函数、聚合函数、WAL 模式、BigInt 支持 — 内部工具所需的大部分功能都有了。
+把每个方法都测过一遍后，留下的结论只有一句：完成度比预期高。`DatabaseSync`、`StatementSync`、自定义函数、聚合函数、WAL 模式、BigInt 支持，内部工具会用到的功能基本都在。
 
-`better-sqlite3` 的 `db.transaction()` 包装器缺失是最明显的遗憾。但写一个 `withTransaction()` 工具函数就能解决，不算障碍。
+`better-sqlite3` 的 `db.transaction()` 包装器缺失，是最明显的遗憾。不过写一个 `withTransaction()` 工具函数就能补上，算不上障碍。
 
-这是 Node.js 生态系统将能力内置化的趋势信号。继 `fetch`、`WebCrypto`、`test runner` 之后，现在是 `sqlite`。下一个内置 `postgresql`？有点贪心，但开发者总是要有梦想的。
+这是个信号：Node.js 生态在持续把能力内置化。先是 `fetch`，再是 `WebCrypto`、`test runner`，现在轮到 `sqlite`。下一个会不会是内置 `postgresql`？有点贪心，但开发者总得有点念想。

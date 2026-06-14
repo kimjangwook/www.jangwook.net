@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenClaw インストールから初めての会話まで — 完全チュートリアル
 description: OpenClawのインストール、Telegram連携、初めてのAI会話までをステップバイステップで解説。Node.js設定からワークスペース構成まで。
 pubDate: '2026-02-04'

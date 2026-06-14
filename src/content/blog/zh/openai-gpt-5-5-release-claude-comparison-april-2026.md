@@ -1,4 +1,5 @@
 ---
+draft: true
 title: GPT-5.5发布 — OpenAI转向Agent Runtime，与Claude的实战对比
 description: 昨天发布的GPT-5.5，SWE-bench 88.7%，价格翻倍。OpenAI声称专为Agent Runtime重新设计，这对开发者选择究竟意味着什么？
 pubDate: '2026-04-24'

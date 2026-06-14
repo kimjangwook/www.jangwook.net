@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'MCP Apps: AI 채팅 안에서 인터랙티브 UI가 동작한다'
 description: >-
   MCP Apps가 AI 에이전트 UX를 어떻게 바꾸는지, sandboxed iframe과 JSON-RPC 양방향 통신 아키텍처부터 실전 구현

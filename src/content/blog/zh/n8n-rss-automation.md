@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 使用n8n和RSS实现博客发布自动化
 description: >-
   手把手演示如何连接n8n、RSS订阅与GitHub

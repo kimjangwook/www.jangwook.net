@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'A2A + MCP Hybrid Architecture: 2026 Multi-Agent Production Strategy'
 description: 'Google A2A and Anthropic MCP are complementary, not competing. From an EM/CTO perspective, understand the role differences between the two protocols and learn strategies for safely operating multi-agent systems in production.'
 pubDate: '2026-03-09'

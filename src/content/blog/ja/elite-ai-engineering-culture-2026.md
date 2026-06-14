@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '2026年、エリートAIエンジニアリング組織の作り方：3人チームが50人に勝てる理由'
 description: 'Hacker Newsトップを獲得したエリートAIエンジニアリング文化の分析。1人当たり売上$3.48M vs $610Kの5.7倍格差が生まれる理由と、EMが実践すべきTaste × Discipline × Leverageの公式'
 pubDate: '2026-03-07'

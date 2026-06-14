@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Mistral Voxtral TTS — 3秒语音克隆+开放权重，但不支持日语
 description: >-
   分析Mistral于2026年3月发布的4B参数开放权重TTS模型Voxtral：盲测中以更自然语调击败ElevenLabs Flash

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Agent SDK 서브에이전트 오케스트레이션 실전 가이드 — 멀티 에이전트 병렬 처리 완전 정복'
 description: 'claude-agent-sdk 0.2.82를 직접 설치해 AgentDefinition 구조와 서브에이전트 병렬 실행 패턴을 직접 검증했다. 오케스트레이터가 3개 서브에이전트를 동시에 스폰하고 TaskBudget으로 비용을 제어하는 전체 흐름을 Python 코드와 함께 설명한다.'
 pubDate: '2026-05-18'

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   GPT-5.5 Released — OpenAI Bets on the Agent Runtime, and How It Compares to
   Claude

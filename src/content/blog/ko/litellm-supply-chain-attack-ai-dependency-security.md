@@ -1,4 +1,5 @@
 ---
+draft: true
 title: LiteLLM 공급망 공격 — AI 인프라 의존성의 보안 사각지대
 description: >-
   PyPI를 통해 발생한 LiteLLM 공급망 공격 사례를 심층 분석합니다. AI 개발 도구 체인의 의존성 취약점과 악성 패키지 탐지

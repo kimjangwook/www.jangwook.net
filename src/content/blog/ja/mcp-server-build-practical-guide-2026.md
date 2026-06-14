@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCPサーバーを自分で作る — Streamable HTTPトランスポートで実際のAIツールを実装する
 description: >-
   Python FastMCPでMCPサーバーをゼロから構築する実践チュートリアル。Streamable

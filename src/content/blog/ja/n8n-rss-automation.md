@@ -1,4 +1,5 @@
 ---
+draft: true
 title: n8nとRSSでブログ公開を完全自動化する
 description: >-
   n8n・RSS・GitHub Actionsを連携して、ブログ投稿ひとつでX・LinkedInへの配信まで完全自動化する実践ガイドです。Gemini 2.5

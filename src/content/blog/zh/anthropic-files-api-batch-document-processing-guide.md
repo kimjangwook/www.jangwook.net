@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Anthropic Files API实战指南 — 无需重复上传PDF即可批量分析文档
 description: >-
   通过Anthropic Files API将PDF文档上传一次、在多个请求中反复复用的实战指南。含Python SDK批量代码、与提示词缓存的成本对比、

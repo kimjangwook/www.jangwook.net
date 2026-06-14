@@ -13,52 +13,34 @@ tags:
   - Python
   - Docker
 relatedPosts:
-  - slug: vitest-4-jest-migration-guide-2026
-    score: 0.5
+  - slug: fastapi-claude-api-streaming-production-guide-2026
+    score: 0.9
     reason:
-      ko: DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in DevOps with comparable difficulty.
-      zh: 在DevOps领域涵盖类似主题，难度相当。
-  - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
-    score: 0.5
+      ko: fastapi 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into fastapi.
+      ja: fastapiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 fastapi 主题。
+  - slug: local-llm-private-mcp-server-gemma4-fastmcp
+    score: 0.85
     reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/ML、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML,
-        DevOps topics.
-      zh: 适合作为下一步学习资源，通过AI/ML、DevOps主题进行连接。
-  - slug: claude-mythos-preview-glasswing-ai-cybersecurity
-    score: 0.5
+      ko: ollama를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ollama experience.
+      ja: ollamaを実際に扱った経験が続く記事です。
+      zh: 延续 ollama 的实战经验。
+  - slug: langfuse-self-hosted-llm-tracing-setup-guide-2026
+    score: 0.8
     reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: prismml-bonsai-1bit-llm-edge-ai
-    score: 0.5
-    reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: claude-code-source-leak-analysis
-    score: 0.5
-    reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML
-        topics.
-      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
+      ko: 같은 docker 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same docker track.
+      ja: 同じdockerの流れで併せて読むと役立ちます。
+      zh: 在同一 docker 脉络中可一并阅读。
 ---
 
 ローカルLLMを「ターミナルで動かすだけ」と「チームのサーバーやアプリから呼び出せるAPIにする」の間には、思った以上に大きな差がある。
 
 Ollamaはすでに`localhost:11434`にRESTエンドポイントを提供している。ただし、これを直接外部に公開するのは問題がある。認証もなく、CORSもなく、エラー形式もバラバラで、モデル名が変わるたびにクライアントコードを直す羽目になる。私はFastAPIで一枚ラッピングすることでこの問題を解決した。サンドボックスで実際に動かして検証したので、その記録をまとめる。
 
-## 作るもの
+## FastAPIアダプター一枚で手に入るもの
 
 - Ollama REST APIをラッピングするFastAPIサーバー（Python 3.12 + FastAPI 0.136.3）
 - `/health`、`/generate`、`/generate/stream`の3エンドポイント
@@ -216,7 +198,7 @@ async def generate(req: GenerateRequest):
 }
 ```
 
-macOSのCPUのみ環境で14.9秒。[NVIDIAハードウェアで最適化](/ja/blog/ja/nvidia-llm-inference-cost-reduction)すれば劇的に改善される。
+macOSのCPUのみ環境で14.9秒。NVIDIAハードウェアで最適化すれば劇的に改善される。
 
 ## Step 4: SSEストリーミングエンドポイント
 
@@ -440,7 +422,7 @@ async def generate(req: GenerateRequest):
 
 **ストリームが途中で切れる**
 - `timeout=120`に増やす。CPU専用環境では長いプロンプトで1分以上かかる場合がある
-- 初回リクエストは常に遅い — Ollamaがモデルをメモリにロードするため
+- 初回リクエストは常に遅い。Ollamaがモデルをメモリにロードするためだ
 
 **Docker: OllamaがGPUを認識しない**
 - `nvidia-container-toolkit`のインストールが必要：`apt install nvidia-container-toolkit`
@@ -529,10 +511,10 @@ app = FastAPI(title="Ollama API Server", lifespan=lifespan)
 
 プロダクション化に必要なもの：
 
-1. **認証** — 上記のBearerトークンミドルウェアを適用
-2. **レートリミット** — slowapiでIPごとのリクエスト制限
-3. **オブザーバビリティ** — リクエストレイテンシ、モデル別スループットのPrometheusエクスポーター
-4. **モデルマルチプレキシング** — コーディングリクエストをコード特化モデル、一般リクエストを別モデルにルーティング
-5. **フォールバックルーティング** — プライマリモデルが過負荷の場合にバックアップモデルに切り替え
+1. **認証**：上記のBearerトークンミドルウェアを適用
+2. **レートリミット**：slowapiでIPごとのリクエスト制限
+3. **オブザーバビリティ**：リクエストレイテンシ、モデル別スループットのPrometheusエクスポーター
+4. **モデルマルチプレキシング**：コーディングリクエストをコード特化モデル、一般リクエストを別モデルにルーティング
+5. **フォールバックルーティング**：プライマリモデルが過負荷の場合にバックアップモデルに切り替え
 
 ローカルLLMサーバーを作る理由は人それぞれだ。私の場合はAPIキーなしで実験できる環境が欲しかった。クラウドLLMの方が強力だが、反復実験フェーズでトークンコストが積み重なるのは避けたい。14.9秒の応答でも、コードが正しく動くかどうかを確認する用途には十分だ。Ollama + FastAPIの組み合わせはそのバランスをうまく取ってくれると思っている。

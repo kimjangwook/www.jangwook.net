@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP セキュリティ危機 — 60日で30件のCVE、企業防御ガイド
 description: >-
   MCP（Model Context

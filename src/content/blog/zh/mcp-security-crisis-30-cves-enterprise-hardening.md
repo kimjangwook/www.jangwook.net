@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP安全危机——60天内30个CVE与企业加固指南
 description: MCP（Model Context Protocol）的攻击面正在急速扩大。本文分析30个CVE、三层攻击模型，并提供企业安全加固检查清单。
 pubDate: '2026-03-08'

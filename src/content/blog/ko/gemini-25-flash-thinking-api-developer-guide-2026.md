@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Gemini 2.5 Flash Thinking API 개발 가이드 — thinking_budget 실험 결과'
 description: 'Gemini 2.5 Flash의 Thinking Budget을 Budget=0/1024/8000 세 가지로 단순 작업·수학 추론·코드 리뷰에 직접 실험했다. 단순 작업은 5배 느려지고, 수학 문제는 오히려 출력 토큰을 줄여준다. 작업 유형별 최적 설정 프레임워크를 공유한다.'
 pubDate: '2026-05-17'

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Anthropic의 AI 생태계 대전환 — 연구소와 $1억 파트너 투자
 description: >-
   Anthropic Institute 출범과 Claude Partner Network $1억 투자, Claude Certified

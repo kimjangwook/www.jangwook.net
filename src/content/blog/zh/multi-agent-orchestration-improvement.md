@@ -9,56 +9,32 @@ tags:
   - automation
   - orchestration
 relatedPosts:
+  - slug: claude-agent-teams-guide
+    score: 0.9
+    reason:
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
   - slug: effiflow-automation-analysis-part1
-    score: 0.95
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.95
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-code-execution-practical-implementation
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: prompt-engineering-agent-improvements
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-code-execution-mcp
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
-## 概述
+## 系统大到不敢动的那一刻
 
-在现代软件开发中，随着项目规模的增长，维护代码质量和文档一致性变得越来越具有挑战性。本文记录了一次使用多代理编排模式对博客自动化系统进行大规模改进的完整过程，展示了如何通过Claude Code的协作式AI方法系统地分析和解决复杂问题。Claude Code中五种核心代理工作流模式的详细解析，请参考[Claude Code代理工作流模式5种类型](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)。
+博客自动化系统攒到17个代理、6个命令、4个技能时，我开始害怕动它。改一个文件，不知道会在哪里悄悄弄坏另外三个。于是我不再一个个手动修，而是把整套系统交给Claude Code的多代理编排模式，让它一次性读完48个文件。最后吐出来61个问题。这篇文章就是那次改造的全程记录。Claude Code中五种核心代理工作流模式的详细解析，请参考Claude Code代理工作流模式5种类型。
 
 ### 项目背景
 
@@ -87,11 +63,11 @@ graph LR
 3. <strong>系统修复</strong>：优先处理高影响问题
 4. <strong>质量验证</strong>：确保改进符合最佳实践
 
-## 调研阶段：系统性分析
+## 先把48个文件摸清楚
 
 ### 文件范围扫描
 
-第一步是确定需要审查的文件范围。我使用了Glob工具来扫描整个`.claude`目录：
+动手之前，我得先知道要审查哪些文件。用Glob工具把整个`.claude`目录扫了一遍：
 
 ```bash
 # 扫描所有配置和文档文件
@@ -1493,11 +1469,11 @@ interface PerformanceMetrics {
 节省: 97.4%成本，93%时间
 ```
 
-## 结论：多代理编排的实践指南
+## 在你自己的项目里照做
 
 ### 核心经验总结
 
-通过这次大规模改进项目，我总结了以下关键经验：
+这次大规模改造做完，回头看，真正有用的经验就这么几条。
 
 #### 1. 系统性方法的重要性
 
@@ -1667,7 +1643,7 @@ graph TD
 4. <strong>自动化验证</strong>：让机器做重复工作
 5. <strong>监控成本</strong>：优化令牌使用
 
-通过这次改进，我的博客自动化系统从一个功能性但混乱的系统转变为一个结构清晰、文档完善、高效运行的平台。这个过程本身就是多代理编排威力的最佳证明。利用Git Worktree实现并行执行的具体方法，请参考[Claude Code并行会话与Git Worktree](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)。
+改造之前，这套系统能用，但乱。改造之后，它结构清楚、文档齐全，跑起来也快。最让我意外的是，整个过程本身反而成了多代理编排最有说服力的例子。想了解怎么用Git Worktree做并行执行，可以看[Claude Code并行会话与Git Worktree](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)。
 
 ---
 

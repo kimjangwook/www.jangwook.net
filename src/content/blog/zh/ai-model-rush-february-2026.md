@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 2026年2月AI模型大爆发：7大模型同月发布的史上最激烈竞争
 description: >-
   Gemini 3 Pro GA、Sonnet 5、GPT-5.3、Qwen 3.5、GLM 5、Deepseek v4、Grok

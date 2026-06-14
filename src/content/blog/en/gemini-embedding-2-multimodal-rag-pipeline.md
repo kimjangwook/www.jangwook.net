@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Gemini Embedding 2 — How Multimodal Embeddings Change RAG
 description: A deep dive into Google
 s first native multimodal embedding model: >-

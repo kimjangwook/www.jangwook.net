@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   Microsoft Agent Framework GA: AutoGen + Semantic Kernel統合完成 — EM/CTO
   プロダクション導入戦略

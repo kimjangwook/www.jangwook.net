@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   Sora Shutdown and the Rapid Reshaping of the AI Video Market — Google Veo 4
   Eyes the Vacuum

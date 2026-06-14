@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AI 에이전트 프로덕션 배포를 위한 9가지 설계 원칙 — arXiv 최신 논문 기반 실전 가이드'
 description: '2026년 AI 에이전트 프로덕션 전환의 핵심 과제를 해결하는 9가지 설계 원칙을 arXiv 논문과 실무 사례를 통해 Engineering Manager 관점으로 정리합니다.'
 pubDate: '2026-03-13'

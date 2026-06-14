@@ -6,7 +6,10 @@ import type { CollectionEntry } from "astro:content";
  * Used for local development and testing
  */
 export function shouldShowFuturePost(): boolean {
-  return import.meta.env.TEST_FLG == 1;
+  // 'true' 문자열일 때만 미래/draft 글을 노출한다.
+  // 과거 `== 1` 느슨한 비교는 TEST_FLG=1("1" == 1 → true)에서 프로덕션 빌드가
+  // draft·미래글을 전부 라이브로 빌드하는 버그가 있었다. 문서(=== 'true')와 일치시킨다.
+  return import.meta.env.TEST_FLG === "true";
 }
 
 /**

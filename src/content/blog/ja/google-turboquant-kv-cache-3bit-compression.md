@@ -1,4 +1,5 @@
 ---
+draft: true
 title: TurboQuant：KVキャッシュを3ビットに圧縮しても精度を維持
 description: >-
   GoogleのTurboQuantが示すPolarQuant＋QJL手法の仕組みを解説。KVキャッシュメモリ6倍削減・

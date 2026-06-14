@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCPサーバーKubernetes本番デプロイ — 52%が死ぬ現実を生き延びる方法
 description: >-
   2026年4月時点でプロダクションMCPエンドポイントの52%が異常状態です。Kubernetesリソース設定からStreamable HTTP移行、

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: The Complete Guide to OpenClaw — Build Your Own AI Assistant
 description: >-
   Discover OpenClaw, the open-source AI assistant platform. Multi-channel,

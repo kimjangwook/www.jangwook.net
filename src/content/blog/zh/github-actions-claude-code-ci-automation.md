@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '使用GitHub Actions + Claude Code CLI构建PR自动审查流水线'
 description: '在GitHub Actions中直接集成claude -p实现PR审查自动化的实战指南。详解--bare、--dangerously-skip-permissions、--max-budget-usd标志，让Claude Code在CI环境中安全运行的完整YAML示例。'
 pubDate: '2026-04-30'

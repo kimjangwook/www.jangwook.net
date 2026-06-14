@@ -12,51 +12,27 @@ tags:
   - commands
   - caching
 relatedPosts:
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
+    reason:
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
   - slug: effiflow-automation-analysis-part1
-    score: 0.95
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-verbalized-sampling
-    score: 0.94
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: claude-agent-teams-guide
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: openai-agentkit-tutorial-part2
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: prompt-engineering-agent-improvements
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
 ## 系列导读
@@ -65,13 +41,13 @@ relatedPosts:
 >
 > 1. [第一部分：通过元数据实现 71% 成本节省](/zh/blog/zh/effiflow-automation-analysis-part1) - 三层架构与整体系统概述
 > 2. <strong>第二部分：Skills 与 Commands 集成策略</strong> ← 当前文章
-> 3. [第三部分：实战改进案例与 ROI 分析](/zh/blog/zh/effiflow-automation-analysis-part3)
+> 3. 第三部分：实战改进案例与 ROI 分析
 
-## 引言
+## Model-Invoked、User-Invoked,还有 58% 这个数字
 
-在第一部分中,我们探讨了 EffiFlow 的三层架构(Agents → Skills → Commands)以及通过元数据优先策略实现 71% 成本节省。在第二部分中,我们将深入分析该系统的核心——<strong>Skills 的自动发现机制</strong>和<strong>Commands 的编排模式</strong>。
+第一部分梳理了 EffiFlow 的三层架构(Agents → Skills → Commands),以及元数据优先策略把成本砍掉 71% 的过程。可真正让我反复琢磨的,是另外两件事。Skills 我根本没调用,它怎么自己就启动了?Commands 那么多步骤,又是怎么一次性串起来的?
 
-核心问题如下："Model-Invoked 和 User-Invoked 的区别是什么,如何实现 58% 的 Token 节省?"
+这一部分就从这两个问题切入。Model-Invoked 和 User-Invoked 究竟差在哪里,58% 的 Token 节省又是从哪冒出来的?接下来对着实际代码和数据,一步步往下看。
 
 ## Skills：可自动发现的模块化功能
 
@@ -260,7 +236,7 @@ Commands 以<strong>User-Invoked</strong>方式运行。用户使用 `/command` 
 
 ### Phase-Based Execution 模式
 
-复杂的 Commands 划分为清晰的 Phase。让我们看看 `write-post` 的 8 个 Phases:
+复杂的 Commands 划分为清晰的 Phase。拿最复杂的 `write-post` 来说,它的 8 个 Phase 不妨一个一个看过去。
 
 ```mermaid
 sequenceDiagram
@@ -1027,9 +1003,9 @@ await Promise.all(posts.map((post) => analyzePost(post))); // 30秒(缩短70%)
 - 测试覆盖率: 0% → 80%
 - 稳定性: 95% → 99%
 
-## 结论
+## Skills 与 Commands 的咬合之处
 
-在第二部分中,我们深入分析了 EffiFlow 的核心——Skills 与 Commands 的集成策略。
+以上就是 EffiFlow 的两根支柱。我们看了 Skills 和 Commands 如何咬合,撑起整套系统的运转。
 
 <strong>核心洞察</strong>:
 

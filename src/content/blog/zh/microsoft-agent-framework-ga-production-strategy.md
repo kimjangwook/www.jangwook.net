@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Microsoft Agent Framework GA: AutoGen + Semantic Kernel整合完成 — EM/CTO生产环境落地战略'
 description: >-
   整合AutoGen与Semantic Kernel的Microsoft Agent Framework即将于Q1

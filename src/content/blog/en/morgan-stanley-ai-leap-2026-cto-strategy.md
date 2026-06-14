@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Morgan Stanley's 2026 AI Leap Warning — 5 Things CTOs Must Do Now
 description: >-
   Morgan Stanley predicts a non-linear AI capability leap in early 2026. Here

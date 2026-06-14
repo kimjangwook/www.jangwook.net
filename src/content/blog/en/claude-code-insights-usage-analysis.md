@@ -14,54 +14,36 @@ tags:
   - ai-tools
   - developer-productivity
 relatedPosts:
-  - slug: greptile-ai-coding-report-2025-review
-    score: 0.95
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: openai-agentkit-tutorial-part1
-    score: 0.95
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: ai-presentation-automation
-    score: 0.93
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-standard
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
-  - slug: mcp-servers-toolkit-introduction
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
 # Claude Code /insights Review: What 4,516 Messages Reveal About My AI Coding Patterns
 
 "Am I really using Claude Code effectively?"
 
-Even while using AI coding tools every day, this question was hard to answer clearly. Then I discovered `/insights` — a hidden gem in Claude Code that objectively diagnoses your workflow based on actual usage data.
+I use these tools daily, and I still couldn't answer that cleanly. Then I stumbled onto `/insights`, a tucked-away Claude Code feature that diagnoses your workflow from your actual usage data.
 
-In this post, I'll share the complete results from running `/insights` on a real project, along with the insights and practical tips I gained from the experience.
+What follows is the full output from running it on a real project, plus the patterns I noticed and the tips I started using the same week.
 
 ## What Is /insights?
 
@@ -73,7 +55,7 @@ In this post, I'll share the complete results from running `/insights` on a real
 - <strong>Improvement suggestions</strong>: Practical tips you can apply immediately
 - <strong>Project area analysis</strong>: How you're using the tool across different tasks
 
-Think of it as a "health checkup for your AI coding workflow." Running it is simple — just type `/insights` in Claude Code.
+Think of it as a "health checkup for your AI coding workflow." Running it is simple. Just type `/insights` in Claude Code.
 
 ## My Results: Core Metrics
 
@@ -104,7 +86,7 @@ Grep     ██████                   2,059 times
 TodoWrite ██████                  1,825 times
 ```
 
-Read and Edit dominate overwhelmingly. This shows that Claude follows a "understand first, then modify" pattern — reading and comprehending existing code thoroughly before making changes. TodoWrite making the Top 6 is also notable, as it demonstrates active use of parallel agents and task orchestration.
+Read and Edit dominate by a wide margin. Claude reads and comprehends the existing code thoroughly, then makes changes. Understand first, modify second. TodoWrite landing in the Top 6 surprised me, since it points to heavy use of parallel agents and task orchestration.
 
 ### Language Distribution
 
@@ -131,7 +113,7 @@ TaskCreate: 1,276 times
 Total: 4,751 times (TodoWrite + TaskCreate + TaskUpdate)
 ```
 
-For large-scale tasks, I always create a task list first, then distribute it to parallel agents. `/insights` evaluated this as a "sophisticated workflow." See [AI Agent Collaboration Patterns: Building a Full-Stack App with 5 Specialized Agents](/en/blog/en/ai-agent-collaboration-patterns) for concrete examples of this multi-agent approach in practice.
+For large-scale tasks, I always create a task list first, then distribute it to parallel agents. `/insights` evaluated this as a "sophisticated workflow." See AI Agent Collaboration Patterns: Building a Full-Stack App with 5 Specialized Agents for concrete examples of this multi-agent approach in practice.
 
 Real-world examples:
 - <strong>Novel project</strong>: Comprehensive review → issue identification → parallel multi-file fixes
@@ -142,7 +124,7 @@ The core principle is "plan first, execute in parallel."
 
 ### 2. Custom Slash Commands
 
-Creating custom slash commands like `/write-post` to automate repetitive tasks also received high praise. Writing a single blog post requires 10+ steps — research, Korean drafting, 3-language translation, image generation, metadata updates — and encoding this into a single command was highlighted as a strength. [EffiFlow Part 2: Skills Auto-Discovery and 58% Token Savings with Caching](/en/blog/en/effiflow-automation-analysis-part2) shows how this command structure translates to caching efficiency.
+Creating custom slash commands like `/write-post` to automate repetitive tasks also received high praise. Writing a single blog post takes 10+ steps: research, Korean drafting, three-language translation, image generation, metadata updates. Encoding all of that into one command was flagged as a strength. [EffiFlow Part 2: Skills Auto-Discovery and 58% Token Savings with Caching](/en/blog/en/effiflow-automation-analysis-part2) shows how this command structure translates to caching efficiency.
 
 > "Converting complex multi-step content generation into a repeatable one-command operation"
 > — /insights analysis result
@@ -159,13 +141,13 @@ graph TD
     D --> E[Verify corrections]
 ```
 
-The description "one-person AI publishing house" was particularly striking. Finding plot holes, checking character name consistency, verifying style uniformity, then fixing all issues across multiple files in parallel — that's the workflow.
+The phrase "one-person AI publishing house" stuck with me. Find the plot holes. Check character names for consistency. Verify the style holds across chapters. Then fix every issue across multiple files in parallel. That's the workflow.
 
 ## "What's Hindering" Analysis
 
 It's not all good news. `/insights` also points out problems with clear-eyed objectivity.
 
-### Context Limits — The Biggest Bottleneck
+### Context Limits Were the Biggest Bottleneck
 
 > "Context limits caused the most ambitious sessions to terminate mid-execution"
 
@@ -231,7 +213,7 @@ The idea is to add a "Long-Running Tasks" section to CLAUDE.md, explicitly speci
 
 Publication quality assessment, design consistency review, and multi-volume comprehensive reviews were performed. Systematically identifying structural, consistency, and style issues then fixing them in parallel is essentially automating the publishing industry's proofreading process with AI.
 
-### Novel Translation — Japanese to Korean (~1 session)
+### Novel Translation: Japanese to Korean (~1 session)
 
 Translation work leveraging Claude Code's parallel agent capabilities. Processing chapters in parallel increased speed, but context limit issues caused some session interruptions.
 
@@ -256,7 +238,7 @@ Evening (18-24)  █████████████████████
 Late night (00-06) ████████████████   778 (17.2%)
 ```
 
-The pattern of concentrated work during afternoon and evening hours is clear. The 17% usage during late night hours also leverages AI's advantage — maintaining a tireless coding partner well past midnight.
+Work clearly clusters in the afternoon and evening. That 17% in the late-night band leans on something AI is uniquely good at: being a tireless coding partner well past midnight.
 
 The user response time data is also interesting:
 
@@ -316,7 +298,7 @@ Here are the lessons learned through `/insights`.
 
 1. <strong>Run it regularly</strong>: Running `/insights` about once a month lets you track changes in your work patterns.
 
-2. <strong>Reflect improvements in CLAUDE.md</strong>: Recording improvements suggested by `/insights` in CLAUDE.md means Claude Code will automatically follow those rules. [Claude Code Best Practices](/en/blog/en/claude-code-best-practices) covers official recommendations applied to real projects in detail.
+2. <strong>Reflect improvements in CLAUDE.md</strong>: Recording improvements suggested by `/insights` in CLAUDE.md means Claude Code will automatically follow those rules. Claude Code Best Practices covers official recommendations applied to real projects in detail.
 
 3. <strong>Watch for error patterns</strong>: If you see many "File Too Large" or "Command Failed" errors, your workflow needs adjustment.
 
@@ -334,11 +316,11 @@ Data-based objective diagnosis delivers these values:
 
 I recommend running `/insights` to every developer using AI coding tools. It takes 5 minutes to run, but the insights you gain can fundamentally transform your future workflows.
 
-## Conclusion
+## It Turned Out to Be a Coach, Not a Dashboard
 
-Claude Code `/insights` is not just a statistics feature. It's an <strong>AI workflow coach</strong> that shows your collaboration methods with AI coding tools through data and presents concrete improvement directions.
+Claude Code `/insights` is not just a statistics feature. It works more like an <strong>AI workflow coach</strong>, showing how you collaborate with AI coding tools through data and pointing to concrete improvements.
 
-4,516 messages, 1,042 sessions, 6,267 file modifications — what these numbers tell us isn't simply "I used it a lot," but "how I'm using it and where improvements can make it even better."
+4,516 messages, 1,042 sessions, 6,267 file modifications. What those numbers tell me isn't simply "I used it a lot." It's "here's how I'm using it, and here's where small changes would make it better."
 
 If you haven't run `/insights` yet, open Claude Code right now and type `/insights`. Objectively confronting your AI coding patterns is the first step to becoming a better developer.
 

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Anthropic Message Batches API — LLM 요청 비용 50% 절감 실전 가이드
 description: >-
   Anthropic Message Batches API로 최대 100,000개 LLM 요청을 단일 배치로 처리해 비용을 50% 절감하는 실전

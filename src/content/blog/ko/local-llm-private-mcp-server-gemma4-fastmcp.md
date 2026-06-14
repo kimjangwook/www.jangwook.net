@@ -12,50 +12,36 @@ tags:
   - 로컬LLM
   - MCP
 relatedPosts:
-  - slug: llm-pm-workflow-automation
-    score: 0.95
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: ai-agent-cost-reality
-    score: 0.94
+      ko: fastmcp 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into fastmcp.
+      ja: fastmcpをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 fastmcp 主题。
+  - slug: ollama-fastapi-production-deployment-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: dena-perl-go-migration-ai-agents
-    score: 0.94
+      ko: ollama를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ollama experience.
+      ja: ollamaを実際に扱った経験が続く記事です。
+      zh: 延续 ollama 的实战经验。
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: jules-autocoding
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: claude-code-channels-telegram-bridge
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+      ko: 같은 MCP 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same MCP track.
+      ja: 同じMCPの流れで併せて読むと役立ちます。
+      zh: 在同一 MCP 脉络中可一并阅读。
 ---
 
-"클라우드 AI를 쓰면 안 되는 환경에서 일한다"는 말을 처음 들었을 때, 나는 솔직히 와닿지 않았다. 그런데 병원 의무기록 처리, 법률 내부 문서 검토, 금융 고객 데이터 분석을 하는 팀이 실제로 꽤 많다. 이 팀들에게 "Claude나 GPT에 붙여넣기 해보세요"는 말이 안 된다.
+"클라우드 AI를 쓰면 안 되는 환경에서 일한다." 이 말을 처음 들었을 때 솔직히 와닿지 않았다. 그런데 병원 의무기록을 다루는 팀, 법률 내부 문서를 검토하는 팀, 금융 고객 데이터를 분석하는 팀을 만나보니 생각보다 훨씬 많았다. 이런 팀에게 "Claude나 GPT에 붙여넣기 해보세요"는 애초에 선택지가 아니다.
 
-지난주에 [FastMCP로 MCP 서버를 직접 만드는 글](/ko/blog/ko/mcp-server-build-practical-guide-2026)을 썼다. 그 글에서 Claude Code를 클라이언트로 연결하는 부분을 다뤘는데, 그 직후 받은 질문이 이것이었다: "Claude 대신 로컬 LLM을 클라이언트로 쓸 수 있을까요?"
+지난주에 FastMCP로 MCP 서버를 직접 만드는 글을 썼다. 그 글에서 Claude Code를 클라이언트로 연결하는 부분을 다뤘는데, 그 직후 받은 질문이 이것이었다: "Claude 대신 로컬 LLM을 클라이언트로 쓸 수 있을까요?"
 
 이 글은 그 질문에 대한 답이다. Ollama + Gemma 4 + FastMCP로, 인터넷 연결 없이 완전히 오프라인에서 동작하는 AI 도구 파이프라인을 직접 구현해봤다.
 
-## 구조를 먼저 잡자
+## 데이터가 어디로 흐르는지부터 본다
 
 표준 MCP 구조는 이렇다.
 
@@ -80,13 +66,13 @@ relatedPosts:
 
 ## Step 1: Ollama + Gemma 4 설정
 
-[Gemma 4 로컬 설치 경험](/ko/blog/ko/gemma-4-local-agent-edge-ai)에서 다뤘듯, 설치 자체는 한 줄이다.
+Gemma 4 로컬 설치 경험에서 다뤘듯, 설치 자체는 한 줄이다.
 
 ```bash
 ollama pull gemma4
 ```
 
-이 글에서는 함수 호출(function calling)을 써야 하므로, 모델이 제대로 로드됐는지 먼저 확인한다.
+여기서는 함수 호출(function calling)이 핵심이다. 그래서 모델이 제대로 로드됐는지 먼저 확인한다.
 
 ```bash
 ollama run gemma4 "다음 JSON을 반환해줘: {\"status\": \"ok\"}"
@@ -236,13 +222,13 @@ Gemma 4가 `list_directory` 도구를 호출하고, FastMCP 서버가 결과를 
 answer = run("README.md 파일을 읽고 핵심 내용을 3줄로 요약해줘")
 ```
 
-Gemma 4는 `list_directory` → `read_file("README.md")` 순서로 호출했다. 두 번의 툴 콜을 거쳐 최종 요약을 생성했다. 오래 걸렸다(내 M2 맥북에서 약 12초). 클라우드 API에 비하면 느리다.
+Gemma 4는 `list_directory` → `read_file("README.md")` 순서로 호출했다. 두 번의 툴 콜을 거쳐 최종 요약이 나왔다. 다만 느렸다. 내 M2 맥북에서 약 12초. 클라우드 API와 비교하면 답답한 속도지만, 데이터가 맥북 밖으로 한 번도 나가지 않았다는 게 핵심이다.
 
 ## 솔직한 한계
 
 써보면서 느낀 것들이다.
 
-**툴 콜링 신뢰도가 낮다.** Gemma 4는 [함수 호출을 어느 정도 지원](/ko/blog/ko/gemma-4-local-agent-edge-ai)하지만, 인자를 잘못 넣거나 없는 도구를 호출하는 경우가 간혹 있다. Claude나 GPT-4o 대비 안정성이 떨어진다. 이를 보완하려면 오케스트레이터에 재시도 로직과 파라미터 검증을 추가해야 한다.
+**툴 콜링 신뢰도가 낮다.** Gemma 4는 함수 호출을 어느 정도 지원하지만, 인자를 잘못 넣거나 없는 도구를 호출하는 경우가 간혹 있다. Claude나 GPT-4o 대비 안정성이 떨어진다. 이를 보완하려면 오케스트레이터에 재시도 로직과 파라미터 검증을 추가해야 한다.
 
 **멀티스텝에서 맥락을 잃는다.** 3〜4번 이상 툴 콜이 이어지면 Gemma 4가 원래 목표를 잊는 경우가 있었다. 시스템 프롬프트에 명시적으로 "최종 목표: [X]"를 박아 넣는 게 도움이 됐다.
 
@@ -267,6 +253,6 @@ Gemma 4는 `list_directory` → `read_file("README.md")` 순서로 호출했다.
 - **도구 확장**: 사내 DB 연결, REST API 래퍼, 파일 변환 도구 추가
 - **팀 공유**: MCP Gateway를 앞단에 놓고 여러 사람이 같은 로컬 서버를 사용
 
-이 파이프라인이 프로덕션으로 갈 때는, [MCP 보안 이슈](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening)도 체크하길 권한다. 로컬이라도 툴 인젝션, 과도한 권한 같은 MCP 특유의 위험은 그대로 존재한다.
+이 파이프라인이 프로덕션으로 갈 때는, MCP 보안 이슈도 체크하길 권한다. 로컬이라도 툴 인젝션, 과도한 권한 같은 MCP 특유의 위험은 그대로 존재한다.
 
 코드는 모두 위에 있다. 설치 의존성은 `pip install fastmcp uvicorn openai requests` 하나면 끝이다. 돌려보고 막히는 부분이 있으면 각 스텝별로 따로 테스트해보는 게 빠르다.

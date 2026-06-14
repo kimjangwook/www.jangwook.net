@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropic이 OpenClaw를 끊은 이유 — Claude 구독 정책 전환과 개발자 비용 현실'
 description: '2026년 4월 4일, Anthropic이 Claude Pro/Max 구독으로 서드파티 에이전트(OpenClaw 등)를 차단했다. Fast Mode 6배 과금과 새 토큰나이저 비용 충격까지 더해진 구조적 전환이 개발자 워크플로우에 미치는 영향을 비용 계산과 함께 분석한다.'
 pubDate: '2026-05-02'

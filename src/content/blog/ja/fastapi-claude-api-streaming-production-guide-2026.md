@@ -13,58 +13,34 @@ tags:
   - ストリーミング
   - AIバックエンド
 relatedPosts:
-  - slug: vertex-ai-search-site-implementation
-    score: 0.95
+  - slug: ollama-fastapi-production-deployment-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effloow-side-project-ai-company
-    score: 0.94
+      ko: fastapi 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into fastapi.
+      ja: fastapiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 fastapi 主题。
+  - slug: uv-python-ai-development-setup-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: adding-chinese-support
-    score: 0.94
+      ko: claude api를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claude api experience.
+      ja: claude apiを実際に扱った経験が続く記事です。
+      zh: 延续 claude api 的实战经验。
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.8
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: agent-effi-flow-pivot-omotenashi-bot
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: n8n-rss-automation
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 AIバックエンドを構築していると、必ず一つの問いに突き当たる。「レスポンスが全部生成されるまでユーザーを待たせてもいいのか？」答えはほとんどの場合「ノー」だ。特にClaudeのような言語モデルが長いテキストを生成するとき、全体が完成してから一気に返す方式はUXを壊す。
 
 実際のサービスに組み込んでみて感じたのは、ストリーミング自体は難しくないということだ。本当の問題はその周辺にある。レートリミットに引っかかったときどうするか、エラーをどう分類してそれぞれ違う処理をするか、NginxのうしろでSSEを正しく流すにはどのヘッダーが必要か。この記事はFastAPI 0.136とAnthropic SDK 0.97をベースに、その実践パターンを自分で実装・検証した結果をまとめたものだ。
 
-## Prerequisites
+## 始める前に必要なもの
 
 - Python 3.11以上（3.12推奨）
 - Anthropic APIキー（`ANTHROPIC_API_KEY`）
@@ -281,7 +257,7 @@ location /chat/stream {
 
 `proxy_buffering off`を忘れると、Nginxがストリームをすべてバッファにためてからまとめて返す。それはストリーミングではなく、ただの遅いレスポンスになる。この設定は初めてSSEをNginxの後ろにつける人がほぼ確実に一度は経験する問題だ。
 
-## Step 5: クライアント連携 — ブラウザEventSourceとPython
+## Step 5: クライアント連携: ブラウザEventSourceとPython
 
 **ブラウザ（JavaScript）**：
 
@@ -333,19 +309,19 @@ async def stream_chat(message: str):
                         print(event["text"], end="", flush=True)
 ```
 
-Vercel AI SDKを使うフロントエンドがある場合、[Vercel AI SDKでClaudeストリーミングエージェントを作る](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026)を参照するとフロントエンド連携をより速く進められる。`useChat`フックがSSEのパースを代わりにやってくれて、クライアントコードがずっとシンプルになる。
+Vercel AI SDKを使うフロントエンドがある場合、Vercel AI SDKでClaudeストリーミングエージェントを作るを参照するとフロントエンド連携をより速く進められる。`useChat`フックがSSEのパースを代わりにやってくれて、クライアントコードがずっとシンプルになる。
 
 ## 残念な点と実際に詰まるポイント
 
 このスタックを実際のプロジェクトで使って感じた限界を正直に整理する。
 
-**一つ目、ストリーミングとプロンプトキャッシュの組み合わせが難しい。** Claude APIのプロンプトキャッシュは入力トークンコストを大きく削減する。しかしストリーミングとキャッシュを同時に使うとき、キャッシュヒット有無をストリーム途中に知ることができない。ストリーミング完了後の`usage`オブジェクトで確認できるが、リアルタイムでキャッシュ状態を反映するUIが必要なら実装が複雑になる。[Claude APIプロンプトキャッシュでコスト最適化する方法](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide)でキャッシュ戦略を事前に把握しておくといい。
+**一つ目、ストリーミングとプロンプトキャッシュの組み合わせが難しい。** Claude APIのプロンプトキャッシュは入力トークンコストを大きく削減する。しかしストリーミングとキャッシュを同時に使うとき、キャッシュヒット有無をストリーム途中に知ることができない。ストリーミング完了後の`usage`オブジェクトで確認できるが、リアルタイムでキャッシュ状態を反映するUIが必要なら実装が複雑になる。Claude APIプロンプトキャッシュでコスト最適化する方法でキャッシュ戦略を事前に把握しておくといい。
 
 **二つ目、uvicornのワーカー数とコネクション管理が思ったより複雑だ。** SSEは接続を長く保持する。`--workers 4`で4ワーカーを使うなら、同時に最大4つの長いストリーミング接続しかできない。実際のトラフィックがこれを超えるとリクエストが待機する。Kubernetesで水平スケールするか、`gunicorn + uvicorn worker class`の組み合わせが必要だ。
 
 **三つ目、リトライロジックがストリーミング途中に入ると処理が複雑になる。** ストリーミングが半分進んだときにネットワークエラーが起きたらどうするか。最初からリクエストし直すと、クライアントはすでに受け取ったテキストが重複する。実用的な解決策はクライアント側で`last-event-id`を管理し、サーバーがそれを受け取って続きから生成することだが、この実装はこの記事の範囲を超える。
 
-このパターンはストリーミングレスポンスが不要な大量処理シナリオにはオーバーエンジニアリングだ。1,000件のドキュメントをバッチ処理するなら[Anthropic Message Batches API](/ja/blog/ja/anthropic-message-batches-api-production-guide)の方がずっと安くて適切だ。
+このパターンはストリーミングレスポンスが不要な大量処理シナリオにはオーバーエンジニアリングだ。1,000件のドキュメントをバッチ処理するならAnthropic Message Batches APIの方がずっと安くて適切だ。
 
 ## トラブルシューティング FAQ
 
@@ -365,7 +341,7 @@ Nginxの`proxy_buffering off`が抜けている場合がほとんどだ。もし
 
 `BASE_DELAY`が短すぎるか、短時間にリクエストが集中するバーストトラフィックが原因だ。AnthropicのRate LimitsページでプランごとのTPM/RPM上限を確認し、`BASE_DELAY`を最低5秒以上に上げることを推奨する。
 
-## まとめ：このスタックをいつ選ぶか
+## このスタックが本領を発揮する場面
 
 FastAPI + AsyncAnthropic + uvicornの組み合わせは次の状況によく合う：
 

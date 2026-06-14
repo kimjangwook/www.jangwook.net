@@ -11,45 +11,13 @@ tags:
   - langfuse
   - docker
 relatedPosts:
-  - slug: claude-code-parallel-sessions-git-worktree
-    score: 0.94
+  - slug: ollama-fastapi-production-deployment-guide-2026
+    score: 0.9
     reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: ai-coding-secrets-sprawl-mcp-config-security
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML,
-        DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
-  - slug: openclaw-opus-4-6-setup-guide
-    score: 0.93
-    reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: openai-promptfoo-ai-agent-devsecops
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML,
-        DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
-  - slug: llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek
-    score: 0.93
-    reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+      ko: docker 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into docker.
+      ja: dockerをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 docker 主题。
 ---
 
 将LLM智能体部署到生产环境后，总会遇到这样的时刻：你正在Langfuse仪表板中追踪"为什么会给出那个响应？"，然后看到了云服务账单。当月追踪量超过10万条后，Langfuse Cloud的Pro套餐开始变成真实的成本负担。于是我用Docker Compose搭建了自托管环境。这篇文章是我在这个过程中学到的东西。
@@ -58,7 +26,7 @@ relatedPosts:
 
 运营AI智能体后，很快就会意识到传统APM工具有多无用。Datadog和New Relic在HTTP延迟和错误率方面表现不错，但无法告诉你"这个RAG管道中检索步骤降低了多少整体响应质量"。提示词版本变更时响应质量如何变化，同样无法追踪。
 
-我在[AI智能体可观测性实践指南](/zh/blog/zh/ai-agent-observability-production-guide)中将Langfuse与Braintrust和LangSmith进行了比较，自托管能力和开源许可是Langfuse最显著的差异化优势。这篇文章越过比较阶段，直接讲实际部署方法。
+我在AI智能体可观测性实践指南中将Langfuse与Braintrust和LangSmith进行了比较，自托管能力和开源许可是Langfuse最显著的差异化优势。这篇文章越过比较阶段，直接讲实际部署方法。
 
 Langfuse提供的功能：
 
@@ -70,7 +38,7 @@ Langfuse提供的功能：
 
 说实话，这些功能不需要从第一天就全部用上。我每天实际使用的只有追踪瀑布图和成本追踪两项。其余的可以等团队规模扩大或需要自动评估时再添加。
 
-## Langfuse v3架构 — 为什么变得如此复杂
+## Langfuse v3架构为何膨胀到六个服务
 
 Langfuse v2只需要PostgreSQL。docker-compose.yml只有10行，5分钟就能启动。v3变了。下载官方docker-compose.yml，你会发现里面定义了6个服务。
 
@@ -275,9 +243,9 @@ compiled = prompt.compile(
 
 这样管理提示词，"为什么用版本2提示词那天响应质量下降了？"这个问题在Langfuse UI中就能立即得到答案。
 
-如果你已经[直接构建了MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026)，为其LLM调用添加Langfuse追踪是自然的下一步。MCP服务器往往有较长的工具调用链，追踪瀑布图在这里价值尤为突出。
+如果你已经直接构建了MCP服务器，为其LLM调用添加Langfuse追踪是自然的下一步。MCP服务器往往有较长的工具调用链，追踪瀑布图在这里价值尤为突出。
 
-## 自托管的局限性与实际判断
+## 哪些情况下我不推荐自托管
 
 有些情况下我不推荐自托管。直接说明：
 
@@ -303,7 +271,7 @@ ClickHouse或Redis初始化尚未完成。等待1〜2分钟通常可以解决。
 
 最常见的原因是SDK的异步flush完成前进程就退出了。在脚本结尾明确调用`get_client().flush()`，或在异步环境中调用`await get_client().async_flush()`。
 
-## 总结 — 何时引入LLM可观测性
+## 什么时候才真正需要LLM可观测性
 
 根据我的经验，LLM追踪不是在第一次部署前引入的，而是收到第一个令人困惑的响应之后才引入的。那个时刻到来时，如果Langfuse已经在运行，5分钟内就能找到根本原因。没有的话，就要花几个小时翻日志文件。
 

@@ -10,51 +10,27 @@ tags:
   - AgentKit
   - AI Agent
 relatedPosts:
-  - slug: ai-content-recommendation-system
-    score: 0.94
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: google-analytics-mcp-automation
-    score: 0.94
+      ko: openai 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into openai.
+      ja: openaiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 openai 主题。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: specification-driven-development
-    score: 0.94
+      ko: ai agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai agent experience.
+      ja: ai agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai agent 的实战经验。
+  - slug: claude-agent-sdk-tool-use-complete-guide-2026
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-collaboration-patterns
-    score: 0.92
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
+      ko: 같은 ai agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai agent track.
+      ja: 同じai agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai agent 脉络中可一并阅读。
 ---
 
 > <strong>シリーズ：OpenAI AgentKitマスター</strong> (2/2)
@@ -62,13 +38,15 @@ relatedPosts:
 > 1. [OpenAI AgentKit完全ガイド パート1：コア概念とスタートガイド](/ja/blog/ja/openai-agentkit-tutorial-part1)
 > 2. <strong>OpenAI AgentKit完全ガイド パート2：実践応用と高度なパターン</strong> ← 現在の記事
 
-パート1でAgentKitの基本概念と基礎チュートリアルを学びました。パート2では、実際のプロダクション環境でのエンタープライズグレードシステム構築方法を探ります。
+パート1では基本を押さえました。ところがデモを抜けて本物のトラフィックを流し始めた瞬間、単一エージェントでは手に負えない問題が一気に出てきます。複数のエージェントをどう連携させるか。途中で落ちたらどう復旧するか。テナントごとのデータをどう分離するか。
+
+パート2はまさにそこを扱います。エンタープライズグレードのアーキテクチャパターンを、実際の企業がどう運用してきたかという視点で追い、そのまま自分のプロジェクトに移せるコードまで示します。
 
 ## 1. エンタープライズアーキテクチャパターン
 
 ### 1.1 階層型マネージャー・ワーカーパターン
 
-大規模プロジェクトでは、単一エージェントではすべてのタスクを処理できません。マネージャーエージェントが全体戦略を立て、専門ワーカーエージェントに仕事を委任する階層構造が効果的です。
+エージェント1体で回せるのは、せいぜい部品が1つの段階まで。それを超えたら階層化するしかありません。マネージャーエージェントが全体戦略を握り、得意分野に特化した専門ワーカーへ仕事を切り分けて渡す。これが効きます。
 
 <strong>アーキテクチャ図</strong>：
 
@@ -191,7 +169,7 @@ result = runner.run(
 
 ### 1.2 イベント駆動型オーケストレーション
 
-リアルタイムシステムでは、イベントに反応して適切なエージェントを起動するパターンが効果的です。
+リアルタイム性が求められるシステムは、トップダウンの指揮系統にあまりなじみません。ここで合うのは、イベントを待ち受けて、その都度ふさわしいエージェントを起こすやり方です。
 
 <strong>アーキテクチャ図</strong>：
 
@@ -315,7 +293,7 @@ asyncio.run(main())
 
 ### 1.3 グラフベースワークフロー（LangGraph統合）
 
-複雑な意思決定フローには、条件分岐と動的ルーティングを持つグラフ構造が適しています。
+ループや条件分岐、実行時に変わるルーティングが絡んでくると、フラットなハンドオフのリストでは扱いきれなくなります。そういう意思決定フローはグラフ構造できれいに収まります。
 
 <strong>ワークフロー図</strong>：
 
@@ -493,7 +471,7 @@ print(f"解決済み: {result['resolved']}, エスカレート: {result['escalat
 
 ## 2. カスタムMCPサーバー開発
 
-AgentKitの真の力は、MCPプロトコルを通じた独自ツールの構築にあります。企業の内部システム（Slack、JIRA、社内データベースなど）と統合する方法を見てみましょう。
+AgentKitの本当の威力は、MCPプロトコル経由で自前のツールを組むところから出てきます。エージェントにSlackやJIRA、社内データベースを触らせたいとする。その配線が実際どうなるのかを見ていきます。
 
 ### 2.1 Slack統合MCPサーバー
 
@@ -1316,9 +1294,9 @@ results = runner.run_batch(
 
 ---
 
-## まとめ
+## パート2を振り返って
 
-パート2では、AgentKitの高度な機能を探りました：
+かなりの分量になりました。あとで特定の箇所に戻りたくなったとき用に、扱った内容を並べておきます。
 
 1. <strong>エンタープライズアーキテクチャパターン</strong>：階層型、イベント駆動型、グラフベースの3つのパターン
 2. <strong>カスタムMCPサーバー</strong>：Slack統合など、独自ツール開発方法
@@ -1327,7 +1305,7 @@ results = runner.run_batch(
 5. <strong>実世界ケーススタディ</strong>：SaaSオンボーディング70%時間短縮、データパイプライン自動復旧82% MTTR削減、DevOps手動レビュー94%削減
 6. <strong>パフォーマンス最適化</strong>：並列処理、ストリーミング、バッチ処理
 
-AgentKitは、理論から実践まで、あらゆるスケールのAIエージェントシステムを構築できる強力なプラットフォームです。
+どれも特殊な発想ではありません。分散システムでいつも使う形を、エージェントに当てはめただけです。まず1つ選んで安定させ、それから次を重ねていけばいい。
 
 <strong>次のステップ</strong>：
 

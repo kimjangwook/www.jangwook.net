@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Deloitte 2026 Agentic AI: Why 89% Fail and the EM Framework'
 description: >-
   Only 11% of enterprises run Agentic AI in production. The barrier isn't

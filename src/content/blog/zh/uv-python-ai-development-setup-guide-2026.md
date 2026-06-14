@@ -13,58 +13,38 @@ tags:
   - 开发环境
   - AI开发
 relatedPosts:
-  - slug: claude-code-parallel-sessions-git-worktree
-    score: 0.95
+  - slug: fastapi-claude-api-streaming-production-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: langfuse-self-hosted-llm-tracing-setup-guide-2026
-    score: 0.94
+      ko: Python 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Python.
+      ja: Pythonをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Python 主题。
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.85
     reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: mcp-servers-toolkit-introduction
-    score: 0.93
+      ko: Python를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Python experience.
+      ja: Pythonを実際に扱った経験が続く記事です。
+      zh: 延续 Python 的实战经验。
+  - slug: python-ai-agent-library-comparison-2026
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: openclaw-opus-4-6-setup-guide
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek
-    score: 0.93
-    reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 直到去年，我每次启动AI项目都要重复同样的仪式：`python -m venv .venv`、`source .venv/bin/activate`、`pip install anthropic openai`……然后等待。有时超过两分钟。看着anthropic、torch、pydantic一个接一个地下载。
 
 上下文切换的代价相当可观。每次创建新的实验分支，环境搭建都会打断工作流。"在我机器上能跑"的问题也久治不愈。
 
-后来我开始使用`uv`——一个用Rust编写的Python包管理器，出自开发了Ruff的Astral团队。今天我在搭建Claude SDK项目时实际测量了一下：安装包含`anthropic`在内的16个包只用了**0.874秒**。用pip的话，同样的操作要花20〜40秒。
+后来我开始使用`uv`，一个用Rust编写的Python包管理器，出自开发了Ruff的Astral团队。今天搭建Claude SDK项目时我顺手测了一下：安装包含`anthropic`在内的16个包只用了**0.874秒**。用pip的话，同样的操作要花20〜40秒。
 
-本文是以uv 0.11为基础，从零搭建AI开发环境的完整实战指南。
+下面就是这次测量的完整复盘。基于uv 0.11，从一个空目录开始，一路走到项目初始化、Claude SDK安装、再到CI。
 
-## 为什么现在要用uv — pip、Poetry、conda的问题在哪里
+## pip、Poetry、conda的问题到底出在哪里
 
 说实话，pip本身没有问题。它是一个经受了数十亿包下载考验的成熟工具。问题在于<strong>速度与环境隔离</strong>的组合。
 
@@ -83,7 +63,7 @@ uv add openai httpx python-dotenv →  0.555秒（新增3个包）
 uv sync（缓存命中，19个包）         →  0.074秒（29ms完成安装）
 ```
 
-## 前提条件
+## 动手前要确认的，其实只有操作系统
 
 安装uv几乎没有任何先决条件。按操作系统确认以下内容即可：
 
@@ -275,7 +255,7 @@ uv run python -c "import anthropic; print(anthropic.__version__)"
 # 0.100.0
 ```
 
-如果你想进一步[使用Vercel AI SDK实现Claude流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)，项目搭建方式完全相同——用`uv add`添加所需SDK，用`uv run`执行入口文件。
+如果你想进一步使用Vercel AI SDK实现Claude流式代理，项目搭建方式完全相同——用`uv add`添加所需SDK，用`uv run`执行入口文件。
 
 ## Step 5：Python版本管理
 
@@ -364,7 +344,7 @@ jobs:
         run: uv run pytest
 ```
 
-官方提供了`astral-sh/setup-uv` action，自动处理CI缓存。[用Python构建MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026)时也可以直接套用这个CI模式——用`uv add fastmcp`添加依赖，在GitHub Actions中用`uv sync`安装。
+官方提供了`astral-sh/setup-uv` action，自动处理CI缓存。用Python构建MCP服务器时也可以直接套用这个CI模式——用`uv add fastmcp`添加依赖，在GitHub Actions中用`uv sync`安装。
 
 ## 用uv tool管理CLI工具
 
@@ -460,19 +440,19 @@ uv remove openai
 
 锁文件自动更新。
 
-## 坦率地说 — uv的不足之处
+## 坦率地说，uv还有几处帮不上忙
 
 仅看性能，uv几乎是完美的工具，但有几点需要诚实说明。
 
 <strong>第一，生态系统成熟度。</strong>uv于2024年推出，截至今天已到v0.11，但仍是v0.x版本。对个人项目和新项目强烈推荐，但大型团队迁移现有Poetry或pip工作流时，需要考虑全团队的学习成本。
 
-<strong>第二，与conda生态系统的兼容性。</strong>如果需要从conda频道安装torch、CUDA工具包或tensorflow，uv帮不上忙——它只支持PyPI。纯PyPI依赖的AI项目（API调用、文本生成、Agent框架）没有这个问题，但需要指定CUDA版本的深度学习项目可能仍需要conda。
+<strong>第二，与conda生态系统的兼容性。</strong>如果需要从conda频道安装torch、CUDA工具包或tensorflow，uv帮不上忙——它只支持PyPI。如果你的AI项目只是调用API、跑跑文本生成或Agent框架，纯PyPI依赖就够了，这点完全不影响。但需要指定CUDA版本的深度学习项目，可能仍然离不开conda。
 
 <strong>第三，习惯`uv run`需要时间。</strong>把`python main.py`改成`uv run main.py`需要适应。好处是能防止团队成员忘记激活虚拟环境而用系统Python运行脚本的失误。
 
-[LLM编码环境优化](/zh/blog/zh/llm-coding-harness-optimization)那篇文章也有类似的观察：采用更快工具的难点往往不在工具本身，而在于改变团队习惯。
+LLM编码环境优化那篇文章也有类似的观察：采用更快工具的难点往往不在工具本身，而在于改变团队习惯。
 
-## 总结：可以立即使用的命令速查
+## 现在就能复制粘贴的命令速查
 
 ```bash
 # 新建AI项目

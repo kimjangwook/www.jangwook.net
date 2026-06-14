@@ -1,31 +1,40 @@
 ---
-title: "Building Your Own MCP Server with TypeScript — A Practical @modelcontextprotocol/sdk Tutorial"
-description: "A hands-on tutorial for building a TypeScript MCP server from scratch using @modelcontextprotocol/sdk v1.29.0 and Zod v4. Step-by-step guide covering tool registration, InMemoryTransport testing, and public API integration — a working server in under 30 minutes."
+title: >-
+  Building Your Own MCP Server with TypeScript — A Practical
+  @modelcontextprotocol/sdk Tutorial
+description: >-
+  A hands-on tutorial for building a TypeScript MCP server from scratch using
+  @modelcontextprotocol/sdk v1.29.0 and Zod v4. Step-by-step guide covering tool
+  registration, InMemoryTransport testing, and public API integration — a
+  working server in under 30 minutes.
 pubDate: '2026-05-31'
-heroImage: '../../../assets/blog/mcp-server-typescript-sdk-step-by-step-2026-hero.png'
-tags: ["MCP", "TypeScript", "Tutorial"]
+heroImage: ../../../assets/blog/mcp-server-typescript-sdk-step-by-step-2026-hero.png
+tags:
+  - MCP
+  - TypeScript
+  - Tutorial
 relatedPosts:
-  - slug: "mcp-server-build-practical-guide-2026"
-    score: 0.92
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.9
     reason:
-      ko: "Python FastMCP로 MCP 서버를 구축하는 가이드로, TypeScript SDK와 비교해 같은 프로토콜을 다른 언어로 구현하는 방식을 확인할 수 있습니다."
-      ja: "Python FastMCPでMCPサーバーを構築するガイドで、TypeScript SDKと比較して同じプロトコルを別の言語で実装する方法が確認できます。"
-      en: "A guide for building MCP servers with Python FastMCP — useful for comparing how the same protocol is implemented in a different language alongside the TypeScript SDK."
-      zh: "使用Python FastMCP构建MCP服务器的指南，可与TypeScript SDK对比，了解同一协议在不同语言中的实现方式。"
-  - slug: "mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026"
-    score: 0.81
+      ko: TypeScript 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into TypeScript.
+      ja: TypeScriptをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 TypeScript 主题。
+  - slug: hono-typescript-api-2026
+    score: 0.85
     reason:
-      ko: "MCP, A2A, Open Responses 세 가지 에이전트 프로토콜을 비교 분석해 MCP를 선택하기 전에 프로토콜 생태계 전반을 이해하는 데 도움이 됩니다."
-      ja: "MCP、A2A、Open Responsesの3つのエージェントプロトコルを比較分析しており、MCPを選択する前にプロトコルエコシステム全体を理解するのに役立ちます。"
-      en: "A comparative analysis of MCP, A2A, and Open Responses protocols — helpful for understanding the agent protocol landscape before committing to MCP."
-      zh: "对MCP、A2A和Open Responses三种代理协议进行比较分析，有助于在选择MCP之前了解协议生态系统的全貌。"
-  - slug: "mcp-open-standard-linux-foundation-engineering-guide"
-    score: 0.75
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.8
     reason:
-      ko: "MCP가 Linux Foundation 오픈 표준으로 자리잡은 배경과 엔지니어링 관점에서의 설계 철학을 다루고 있어, SDK 실습 전에 MCP의 전체 그림을 이해하는 데 유용합니다."
-      ja: "MCPがLinux Foundationのオープン標準として確立された背景とエンジニアリング観点での設計思想を扱っており、SDK実習前にMCPの全体像を理解するのに役立ちます。"
-      en: "Covers the background of MCP becoming a Linux Foundation open standard and its engineering design philosophy — useful context before diving into SDK hands-on work."
-      zh: "涵盖MCP成为Linux Foundation开放标准的背景及工程设计理念，在进行SDK实践之前了解MCP全貌非常有用。"
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
 ```typescript
@@ -36,7 +45,7 @@ server.tool("get_book_info", "Fetch book info", { isbn: z.string() }, async ({ i
 
 When I first decided to build an MCP server, I was honestly surprised by how much easier it was than I expected. I'd heard plenty about MCP (Model Context Protocol) becoming the standard for AI platform interop, but "build your own server" sounded like it would be complex and have a steep learning curve. Turns out, with just the `@modelcontextprotocol/sdk` package and Zod, you can have a working MCP server in under 30 minutes.
 
-In this post, I walk through building a TypeScript MCP server from scratch, step by step, based on code I actually ran and output I actually got. The goal is to build a real tool that fetches book information by ISBN using the Open Library public API — and to internalize the core concepts of MCP server development along the way.
+So I built one. Everything below is code I actually ran, with the output I actually got. I put a tool that fetches book info by ISBN on top of the Open Library public API, and the point was to learn how an MCP server really behaves by getting my hands on it rather than reading about it.
 
 ## Why Build Your Own MCP Server Right Now
 
@@ -44,7 +53,7 @@ Claude, Cursor, Windsurf, Zed, and other major AI coding tools have all adopted 
 
 Before MCP, you had to build your own API and then develop separate plugins or integrations for each AI platform. MCP makes "build once, use everywhere" actually viable. My reasoning is simple: if I wrap an internal database query, a document search, or a workflow automation script as an MCP tool once, I can use it from Claude, from Cursor, from whatever comes next.
 
-The ecosystem isn't fully mature yet. But as I covered in [MCP Open Standard and the Linux Foundation](/en/blog/en/mcp-open-standard-linux-foundation-engineering-guide), this direction is already solidifying into an industry standard.
+The ecosystem isn't fully mature yet. But as I covered in MCP Open Standard and the Linux Foundation, this direction is already solidifying into an industry standard.
 
 ## Environment Setup and Package Installation
 
@@ -100,7 +109,7 @@ In `tsconfig.json`, setting `"module": "ESNext"` and `"moduleResolution": "bundl
 
 `"type": "module"` is not optional. Without it, Node can't resolve the SDK's import paths correctly (e.g. `@modelcontextprotocol/sdk/server/mcp.js`).
 
-## Creating a McpServer Instance — The Core 3-Step Pattern
+## Creating a McpServer Instance: The Core 3-Step Pattern
 
 After experimenting with this myself, the core pattern comes down to three steps.
 
@@ -370,13 +379,13 @@ server.tool(
 );
 ```
 
-Using `.default(5)` in a Zod schema makes the argument optional — if the AI doesn't explicitly supply a value, the default is used.
+Using `.default(5)` in a Zod schema makes the argument optional. If the AI doesn't explicitly supply a value, the default is used.
 
 ## Things to Watch Out for When Designing Tools
 
 I hit a few gotchas while building this out.
 
-**First, tool names and descriptions matter more than you'd think.** The AI model picks tools based on their descriptions. If your description is vague — like "get info" — the AI will either skip the tool when it should use it or apply it in the wrong situations. Describe the specific action, the expected input, and what the output looks like.
+**First, tool names and descriptions matter more than you'd think.** The AI model picks tools based on their descriptions. If your description is vague (think "get info"), the AI will either skip the tool when it should use it or apply it in the wrong situations. Describe the specific action, the expected input, and what the output looks like.
 
 **Second, Zod v4's API is different from v3.** Some APIs changed in Zod 4.4.3. Copying Zod v3 code directly can cause type errors. In particular, the behavior of `.optional()` combined with `.nullable()` and `z.union()` has changed. If you're using Zod elsewhere in your project, check for version conflicts.
 
@@ -418,7 +427,7 @@ Open `http://localhost:5173` in your browser and you'll see the registered tools
 
 One thing to be aware of: MCP Inspector requires Node.js 18 or later, and the first run takes a while since it installs its own npm packages. Expect to wait 30〜60 seconds on the first launch.
 
-## Resources and Prompts — MCP Features Beyond Tools
+## Resources and Prompts: MCP Features Beyond Tools
 
 The MCP spec includes two more features beyond Tools: Resources and Prompts.
 
@@ -446,7 +455,7 @@ Honestly, when I started out I wasn't sure how much real-world use Resources and
 
 ## Handling Complex Schemas with Zod v4
 
-You're not limited to simple `z.string()` — Zod gives you plenty of options for tool arguments:
+You're not limited to a simple `z.string()`. Zod gives you plenty of options for tool arguments:
 
 ```typescript
 server.tool(
@@ -475,7 +484,7 @@ Combining `z.object()`, `z.enum()`, `.optional()`, and `.default()` lets you def
 
 One Zod v4 specifics worth noting: `.describe()` should come before `.optional()`. `z.string().optional().describe()` can produce unexpected type inference. The correct order is `z.string().describe("description").optional()`.
 
-## HTTP/SSE Transport — Deploying a Remote MCP Server
+## HTTP/SSE Transport: Deploying a Remote MCP Server
 
 Everything so far has used local stdio. If you want to run an MCP server shared across a team or deploy it to the cloud, you need the HTTP/SSE transport.
 
@@ -533,7 +542,7 @@ app.listen(3000, () => {
 
 With this setup, you register `http://localhost:3000/sse` as the MCP server URL in Cursor or Claude Desktop. That said, HTTP mode adds more configuration complexity and requires you to handle security separately (auth tokens, HTTPS). For internal team tools, stdio is far simpler.
 
-As I covered in [MCP vs A2A vs Open Responses Protocol Comparison](/en/blog/en/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026), the remote MCP server architecture still has rough edges around maturity and security. If you're planning a remote deployment right now, pay close attention to auth tokens, CORS, and session management.
+As I covered in MCP vs A2A vs Open Responses Protocol Comparison, the remote MCP server architecture still has rough edges around maturity and security. If you're planning a remote deployment right now, pay close attention to auth tokens, CORS, and session management.
 
 ## Practical Tool Ideas
 
@@ -561,7 +570,7 @@ Working through this experiment, I confirmed that MCP server development has a m
 
 That said, the limitations are real. <strong>Connecting to actual Claude or Cursor clients requires switching to StdioServerTransport</strong>, which introduces additional configuration: deployment environment, absolute paths, Node.js version compatibility. And Zod v4 has API changes from v3, so existing code won't always port directly.
 
-Still, getting an end-to-end pipeline working — a public REST API wrapped as an MCP tool, returning real data, with no API key — in under 30 minutes is genuinely compelling. With Claude, Cursor, Windsurf, and others adopting MCP as their standard, building an MCP server is the most practical way to expose your own tools across multiple AI platforms at once.
+Still, getting an end-to-end pipeline working in under 30 minutes is genuinely compelling: a public REST API wrapped as an MCP tool, returning real data, with no API key. With Claude, Cursor, Windsurf, and others adopting MCP as their standard, building an MCP server is the most practical way to expose your own tools across multiple AI platforms at once.
 
 My recommendation for the next step: pick one internal system and wrap it as an MCP tool. The code structure is everything covered in this post. The rest is just understanding that system's API.
 

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Cursor 3 vs Claude Code vs Windsurf: 2026年AIコーディングツール選択ガイド'
 description: >-
   3つのAIコーディングツールを実際に使用した経験に基づく比較ガイドです。Cursor 3.1の非同期エージェント、Claude Code 2.1.119の

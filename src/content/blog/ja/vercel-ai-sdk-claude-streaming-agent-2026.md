@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Vercel AI SDKでClaudeストリーミングエージェントを作る
 description: >-
   Vercel AI SDK v6 + @ai-sdk/anthropicでNext.js App

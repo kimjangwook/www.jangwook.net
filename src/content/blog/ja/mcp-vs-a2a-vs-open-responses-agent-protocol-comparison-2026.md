@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'MCP vs A2A vs Open Responses — AIエージェント通信プロトコル3つ巴、実戦で何を使うべきか'
 description: 'MCP、A2A、Open Responsesの設計目的と生態系を比較します。2026年の実際のエージェントプロジェクトで各プロトコルをいつ・どう組み合わせるか、OpenAI・Google・Anthropicが繰り広げるエージェント通信標準競争の核心を整理しました。'
 pubDate: '2026-04-25'

@@ -16,52 +16,38 @@ tags:
   - LocalLLM
   - MCP
 relatedPosts:
-  - slug: llm-pm-workflow-automation
-    score: 0.95
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: ai-agent-cost-reality
-    score: 0.94
+      ko: fastmcp 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into fastmcp.
+      ja: fastmcpをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 fastmcp 主题。
+  - slug: ollama-fastapi-production-deployment-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: dena-perl-go-migration-ai-agents
-    score: 0.94
+      ko: ollama를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ollama experience.
+      ja: ollamaを実際に扱った経験が続く記事です。
+      zh: 延续 ollama 的实战经验。
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: jules-autocoding
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: claude-code-channels-telegram-bridge
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+      ko: 같은 MCP 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same MCP track.
+      ja: 同じMCPの流れで併せて読むと役立ちます。
+      zh: 在同一 MCP 脉络中可一并阅读。
 ---
 
-"We work in an environment where cloud AI is not allowed" — I honestly didn't get that at first. Then I realized how many teams actually deal with hospital medical records, legal document review, or financial customer data analysis. Telling those teams to "just paste it into Claude or GPT" isn't an option.
+"We work in an environment where cloud AI is not allowed." I honestly didn't get that at first. Then I started meeting the teams who live with it: people handling hospital medical records, reviewing legal documents, analyzing financial customer data. There are more of them than I assumed. Telling those teams to "just paste it into Claude or GPT" was never going to fly.
 
-Last week I wrote about [building an MCP server from scratch with FastMCP](/en/blog/en/mcp-server-build-practical-guide-2026). That post showed how to connect Claude Code as the client. Right after publishing, I got a question: "Can you use a local LLM as the client instead of Claude?"
+Last week I wrote about building an MCP server from scratch with FastMCP. That post showed how to connect Claude Code as the client. Right after publishing, I got a question: "Can you use a local LLM as the client instead of Claude?"
 
 Great question. And one I wanted to try myself.
 
 This post is the answer. Using Ollama + Gemma 4 + FastMCP, I built a fully offline AI tool pipeline that works without any internet connection.
 
-## The Architecture First
+## Tracing Where the Data Goes
 
 Standard MCP looks like this:
 
@@ -86,7 +72,7 @@ Everything runs locally. Ollama serves Gemma 4 as an OpenAI-compatible API, Fast
 
 ## Step 1: Ollama + Gemma 4 Setup
 
-As covered in [the Gemma 4 local setup post](/en/blog/en/gemma-4-local-agent-edge-ai), installation is one line:
+As covered in the Gemma 4 local setup post, installation is one line:
 
 ```bash
 ollama pull gemma4
@@ -146,7 +132,7 @@ python local_tools_server.py
 
 The server starts at `http://127.0.0.1:8000`.
 
-## Step 3: The Orchestrator
+## Step 3: The Orchestrator That Glues It Together
 
 This is the key piece. Gemma 4 doesn't natively understand the MCP protocol. The orchestrator:
 1. Fetches the available tool list from FastMCP
@@ -248,7 +234,7 @@ Gemma 4 went `list_directory` → `read_file("README.md")`. Two tool calls, then
 
 Things I noticed running this for a while:
 
-**Tool calling reliability is lower.** Gemma 4 [has function calling support](/en/blog/en/gemma-4-local-agent-edge-ai), but it occasionally passes wrong arguments or calls tools that don't exist. It's less stable than Claude or GPT-4o. To compensate, add retry logic and parameter validation in the orchestrator.
+**Tool calling reliability is lower.** Gemma 4 has function calling support, but it occasionally passes wrong arguments or calls tools that don't exist. It's less stable than Claude or GPT-4o. To compensate, add retry logic and parameter validation in the orchestrator.
 
 **Context loss in multi-step tasks.** After 3〜4 consecutive tool calls, Gemma 4 sometimes forgets the original goal. Explicitly writing "Final goal: [X]" in the system prompt helped.
 
@@ -273,6 +259,6 @@ To take this further:
 - **Expand tools**: Add internal DB connections, REST API wrappers, file conversion utilities
 - **Team deployment**: Put MCP Gateway in front so multiple team members share the same local server
 
-Before moving this to production, check [MCP security issues](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening) too. Being local doesn't eliminate tool injection or excessive permission risks — those are MCP-level concerns that persist regardless of deployment environment.
+Before moving this to production, check MCP security issues too. Being local doesn't eliminate tool injection or excessive permission risks — those are MCP-level concerns that persist regardless of deployment environment.
 
 All the code is above. Install everything with `pip install fastmcp uvicorn openai requests` and you're set. If anything breaks, test each step in isolation — that's faster than trying to debug the whole pipeline at once.

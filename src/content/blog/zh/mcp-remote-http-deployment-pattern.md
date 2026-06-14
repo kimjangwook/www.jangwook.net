@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP远程HTTP服务器部署模式 — 从stdio迁移到Streamable HTTP的实践指南
 description: >-
   使用MCP Streamable HTTP传输将stdio服务器转变为可远程部署的HTTP服务的实战指南。基于TypeScript SDK

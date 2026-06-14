@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   Implementing Scheduled Publishing on Static Sites: Automating Astro + GitHub
   Actions

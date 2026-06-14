@@ -10,54 +10,40 @@ tags:
   - ai
   - prompt-engineering
 relatedPosts:
-  - slug: 45-day-analytics-report-2025-11
-    score: 0.95
+  - slug: dena-llm-study-part4-rag
+    score: 0.9
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: figma-mcp-web-components-sync
-    score: 0.95
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: dena-llm-study-part3-model-training
+    score: 0.85
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: gcloud-mcp-infrastructure-audit
-    score: 0.95
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: individual-developer-ai-saas-journey
+    score: 0.8
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: three-week-analytics-2025-11-04
-    score: 0.95
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: llm-blog-automation
-    score: 0.94
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
+      ko: 같은 AI 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same AI track.
+      ja: 同じAIの流れで併せて読むと役立ちます。
+      zh: 在同一 AI 脉络中可一并阅读。
 ---
 
 > <strong>シリーズ: DeNA LLM スタディ</strong> (1/5)
 >
 > 1. <strong>[Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)</strong> ← 現在の記事
-> 2. [Part 2: 構造化出力とマルチLLMパイプライン](/ja/blog/ja/dena-llm-study-part2-structured-output)
+> 2. Part 2: 構造化出力とマルチLLMパイプライン
 > 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training)
 > 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag)
 > 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design)
 
-## DeNA LLM スタディを始めるにあたって
+## GPT・Claude・Geminiが入り乱れる2025年のAI地図
 
-2025年、AI技術の発展速度は想像を超えています。DeNAで実施されたLLMスタディ資料をもとに、最新LLM技術の基礎から実践活用まで5回にわたって整理します。今回のPart 1では、LLMの基本原理と2025年現在のAIエコシステムを見ていきます。
+1年前と今では、LLMの勢力図がまるで違います。DeNA社内の勉強会資料を整理しながら、改めてそう感じました。このシリーズはその資料をベースに、LLMの基礎原理から実践活用までを5回に分けて解きほぐしていきます。第1回となる今回は、LLMが実際にどう動いているのか、そして2025年末時点で主要モデルがどの位置にいるのかから押さえます。
 
 > <strong>資料出典</strong>: 本記事は[DeNA 社内勉強会資料](https://dena.github.io/llm-study20251201/)を基に作成されました。
 
@@ -65,7 +51,7 @@ relatedPosts:
 
 ### 性能比較: GPT-4 vs Claude vs Gemini
 
-2025年現在、3つの主要LLMが市場を主導しています:
+2025年の市場は、3つの主要ファミリーが牽引しています。各社の旗艦ラインナップを並べて比べると、こうなります。
 
 ```markdown
 | モデル                               | 開発会社  | 特徴             | 強み                       |
@@ -185,7 +171,7 @@ def predict_next_token(context: str, model: LLM) -> str:
 
 ### 最新研究動向: Mixture of Experts (MoE)
 
-2024年から大型モデルはMoEアーキテクチャを採用しています:
+2024年に入り、大型モデルの多くがMoEアーキテクチャへ移行しました。仕組み自体はシンプルです。
 
 ```mermaid
 graph TD
@@ -258,7 +244,7 @@ graph TD
 
 ### o1、o3とDeepSeek-R1の登場
 
-2024年9月、OpenAIは「考える」AIモデルo1を発表し、2025年には改善版o3を公開しました。特にDeepSeek-R1はオープンソースでありながら最高レベルの数学・推論性能を示しています:
+2024年9月、OpenAIは「考える」AIモデルo1を発表しました。2025年には改善版のo3が続きます。そこへDeepSeek-R1がオープンソースとして登場し、しかも最高レベルの数学・推論性能を見せつけました。
 
 ```mermaid
 graph TD
@@ -287,7 +273,7 @@ graph TD
 
 ### Chain of Thought (CoT) プロンプティング
 
-一般モデルもCoTを使用すれば推論能力を向上できます:
+推論専用でない普通のモデルでも、CoTを一言加えるだけで正答率がはっきり上がります。
 
 ```markdown
 # ❌ 一般プロンプト
@@ -512,7 +498,7 @@ Part 2では<strong>構造化出力とマルチLLMパイプライン</strong>を
 - Pydanticを活用した型安全性
 - 実習 B: 複雑なデータ抽出システム構築
 
-> <strong>次の記事へ</strong>: [Part 2: 構造化出力とマルチLLMパイプライン](/ja/blog/ja/dena-llm-study-part2-structured-output)
+> <strong>次の記事へ</strong>: Part 2: 構造化出力とマルチLLMパイプライン
 
 ## 参考資料
 

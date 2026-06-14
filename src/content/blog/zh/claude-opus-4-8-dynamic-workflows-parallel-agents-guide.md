@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Claude Opus 4.8 Dynamic Workflows 深度解析"
 description: "Claude Opus 4.8的1000个并行子代理与Fast Mode如何改变AI代理开发工作流。基于官方文档与真实实现案例，系统梳理多代理架构设计、成本结构与运营限制，并给出何时适合采用的诚实评估。"
 pubDate: '2026-05-29'

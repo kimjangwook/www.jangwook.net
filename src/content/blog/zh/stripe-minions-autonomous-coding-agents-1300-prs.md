@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Stripe Minions — 一个 Slack 表情触发每周 1,300 个 PR 的编码 Agent'
 description: >-
   Stripe 如何通过自主编码 Agent Minions 每周生产超过 1,300 个 PR。分析 Blueprint 架构、沙箱 VM

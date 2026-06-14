@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'URGENT: How to Set Up Claude Opus 4.6 on OpenClaw'
 description: >-
   Configure Claude Opus 4.6 on OpenClaw with copy-paste settings. Unlock 1M

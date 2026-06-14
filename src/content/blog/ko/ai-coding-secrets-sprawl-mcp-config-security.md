@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AI 코딩 에이전트가 2,900만 시크릿을 유출시켰다 — MCP 설정 파일 보안의 사각지대'
 description: >-
   GitGuardian 2026 리포트에 따르면 AI 코딩 도구 사용 리포지토리의 시크릿 유출률은 GitHub 평균의 2배다. MCP 설정

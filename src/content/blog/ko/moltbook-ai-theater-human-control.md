@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Moltbook 'AI 사회'의 정체 — Forbes가 폭로한 'AI 시어터' 문제
 description: >-
   자율적인 AI 사회로 주목받았던 Moltbook이 실제로는 인간이 조종하고 있었다는 사실이 밝혀졌습니다. AI 업계에 만연한 'AI 시어터'

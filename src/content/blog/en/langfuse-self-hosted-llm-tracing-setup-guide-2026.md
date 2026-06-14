@@ -14,54 +14,22 @@ tags:
   - langfuse
   - docker
 relatedPosts:
-  - slug: claude-code-parallel-sessions-git-worktree
-    score: 0.94
+  - slug: ollama-fastapi-production-deployment-guide-2026
+    score: 0.9
     reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: ai-coding-secrets-sprawl-mcp-config-security
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML,
-        DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
-  - slug: openclaw-opus-4-6-setup-guide
-    score: 0.93
-    reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: openai-promptfoo-ai-agent-devsecops
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/ML、DevOps、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML,
-        DevOps, architecture topics.
-      zh: 适合作为下一步学习资源，通过AI/ML、DevOps、架构主题进行连接。
-  - slug: llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek
-    score: 0.93
-    reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+      ko: docker 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into docker.
+      ja: dockerをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 docker 主题。
 ---
 
-After deploying an LLM agent to production, there's a moment that comes for everyone: you're trying to trace "why did it give that response?" in the Langfuse dashboard, and then you see the cloud billing statement. Once monthly trace volume crosses 100K, Langfuse Cloud's Pro plan starts feeling like a real cost. So I set up self-hosting with Docker Compose. This article is what I learned along the way.
+There's a moment that comes for everyone after they push an LLM agent to production. You open the Langfuse dashboard to trace "why did it give that response?" and then your eye catches the cloud billing statement. Once monthly trace volume crosses 100K, Langfuse Cloud's Pro plan stops feeling free. So I set up self-hosting with Docker Compose. What follows is what I learned along the way.
 
 ## What Problem Langfuse Actually Solves
 
 Running AI agents in production makes it obvious fast how useless traditional APM tools are. Datadog and New Relic are great at HTTP latency and error rates, but they can't tell you "how much did the retrieval step degrade overall response quality in this RAG pipeline?" Or how response quality shifted when a prompt version changed.
 
-I compared Langfuse against Braintrust and LangSmith in the [AI Agent Observability Production Guide](/en/blog/en/ai-agent-observability-production-guide) — self-hosting capability and open source licensing were Langfuse's clearest differentiators. This article goes past that comparison to actually building it locally.
+I compared Langfuse against Braintrust and LangSmith in the AI Agent Observability Production Guide. Self-hosting capability and open source licensing were Langfuse's clearest differentiators. This article goes past that comparison to actually building it locally.
 
 What Langfuse provides:
 
@@ -73,7 +41,7 @@ What Langfuse provides:
 
 Honestly, you don't need all of these from day one. What I actually use daily is just the trace waterfall and cost tracking. The rest can wait until the team grows or you need automated evaluation.
 
-## Langfuse v3 Architecture — Why It Got So Heavy
+## Why the v3 Architecture Grew to Six Services
 
 Langfuse v2 needed only PostgreSQL. The docker-compose.yml was 10 lines and started in five minutes. v3 is different. Pull the official docker-compose.yml and you'll find six services.
 
@@ -87,7 +55,7 @@ Service stack (from docker-compose.yml):
 └── PostgreSQL 17         (5432 — relational DB)
 ```
 
-Why the added complexity? The core v3 change was separating trace storage from PostgreSQL to ClickHouse. Aggregating "average latency trend over the last 30 days" across hundreds of thousands of traces was taking several seconds in PostgreSQL. ClickHouse is a columnar OLAP database optimized for exactly this kind of aggregation — same queries run in milliseconds.
+Why the added complexity? The core v3 change was separating trace storage from PostgreSQL to ClickHouse. Aggregating "average latency trend over the last 30 days" across hundreds of thousands of traces was taking several seconds in PostgreSQL. ClickHouse is a columnar OLAP database optimized for exactly this kind of aggregation, and the same queries run in milliseconds.
 
 I have complaints about this architectural complexity. Managing six containers for a small team or personal project is a burden. The Langfuse team knows this and continuously discusses lightweight deployment options, but as of May 2026, the full-stack configuration is the only officially supported path.
 
@@ -243,7 +211,7 @@ The `as_type` parameter is the key. Marking as `generation` automatically aggreg
 
 ## Breaking Changes in v4 SDK
 
-I got tripped up by the SDK v4 upgrade. An existing project using `from langfuse.decorators import observe` in about 50 places — all broke with `ModuleNotFoundError` after installing v4.
+I got tripped up by the SDK v4 upgrade. An existing project used `from langfuse.decorators import observe` in about 50 places. All of them broke with `ModuleNotFoundError` the moment I installed v4.
 
 | Item | v3 (old) | v4 (current) |
 |------|---------|---------|
@@ -283,7 +251,7 @@ compiled = prompt.compile(
 
 Managing prompts this way means "why did response quality drop on the day we used version 2?" becomes a question you can answer immediately in the Langfuse UI.
 
-If you've [built an MCP server directly](/en/blog/en/mcp-server-build-practical-guide-2026), adding Langfuse tracing to its LLM calls is the natural next step. MCP servers tend to have long tool invocation chains, which is exactly where trace waterfalls are most valuable.
+If you've built an MCP server directly, adding Langfuse tracing to its LLM calls is the natural next step. MCP servers tend to have long tool invocation chains, which is exactly where trace waterfalls are most valuable.
 
 ## When Self-Hosting Doesn't Make Sense
 
@@ -305,7 +273,7 @@ I run two projects simultaneously — one on Cloud, one self-hosted. Honestly, C
 
 **Q. langfuse-web keeps restarting after docker-compose up**
 
-ClickHouse or Redis initialization hasn't finished. Wait 1-2 minutes — it usually resolves. If it doesn't, check `docker-compose logs langfuse-web` for the error message.
+ClickHouse or Redis initialization hasn't finished. Wait 1-2 minutes and it usually resolves. If it doesn't, check `docker-compose logs langfuse-web` for the error message.
 
 **Q. Traces aren't showing up in the Langfuse UI**
 
@@ -315,7 +283,7 @@ The most common cause is the process exiting before the SDK's async flush comple
 
 Leaving `NEXTAUTH_SECRET` as the default value is a security risk in self-hosted setups. Generate a value with `openssl rand -base64 32` and set it in your environment variables.
 
-## When to Introduce LLM Observability
+## When You Actually Reach for LLM Observability
 
 In my experience, LLM tracing gets adopted not before the first deployment but immediately after the first baffling response. When that moment comes and Langfuse is already running, you find the root cause in five minutes. Without it, you spend hours digging through log files.
 

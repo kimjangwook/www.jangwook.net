@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기
 description: >-
   Python FastMCP로 MCP 서버를 처음부터 구축하는 실전 튜토리얼. Streamable HTTP 트랜스포트 설정, 커스텀 AI 도구

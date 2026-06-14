@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   Paperclip — I Installed the Open-Source Platform That Manages AI Agents Like
   Employees

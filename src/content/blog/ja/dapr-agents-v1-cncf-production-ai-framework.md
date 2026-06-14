@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Dapr Agents v1.0 GA — AIエージェントをKubernetes上で落ちないようにする方法
 description: >-
   KubeCon Europe 2026で発表されたDapr Agents v1.0のdurable

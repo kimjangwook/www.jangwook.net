@@ -14,64 +14,40 @@ tags:
   - n8n
   - langgraph
 relatedPosts:
-  - slug: anthropic-code-execution-mcp
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: bigquery-mcp-prefix-filtering
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-code-execution-practical-implementation
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: multi-agent-orchestration-improvement
-    score: 0.95
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: multi-agent 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into multi-agent.
+      ja: multi-agentをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 multi-agent 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
+    reason:
+      ko: dena를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on dena experience.
+      ja: denaを実際に扱った経験が続く記事です。
+      zh: 延续 dena 的实战经验。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.8
+    reason:
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>시리즈: DeNA LLM 스터디</strong> (5/5 - 최종회)
 >
 > 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: 구조화 출력과 멀티 LLM 파이프라인](/ko/blog/ko/dena-llm-study-part2-structured-output)
+> 2. Part 2: 구조화 출력과 멀티 LLM 파이프라인
 > 3. [Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training)
 > 4. [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag)
 > 5. <strong>[Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design)</strong> ← 현재 글
 
-## 개요
+## 자율 에이전트에서 오케스트레이션으로
 
-DeNA LLM 스터디 시리즈의 마지막 편입니다. 이번 Part 5에서는 LLM을 활용한 <strong>에이전트 설계</strong>와 <strong>멀티 에이전트 오케스트레이션</strong>을 다룹니다. 단순한 프롬프트 엔지니어링을 넘어 자율적으로 작동하는 에이전트 시스템을 구축하는 방법과 실무에서 고려해야 할 비용, 성능, 신뢰성 문제를 집중적으로 살펴봅니다.
+시리즈의 마지막 편입니다. 프롬프트 한 줄로 LLM을 부리던 단계는 지났습니다. 이번에는 스스로 판단하고 도구를 호출하는 에이전트를 어떻게 설계하는지, 그리고 여러 에이전트를 어떻게 묶어 굴리는지를 다룹니다. 다만 자율성만 좇다 보면 비용이 터지고 동작을 통제할 수 없게 됩니다. 그래서 프로덕션에서 부딪히는 비용, 성능, 신뢰성 문제를 함께 짚습니다.
 
 ### Part 5 주요 주제
 
@@ -82,7 +58,7 @@ DeNA LLM 스터디 시리즈의 마지막 편입니다. 이번 Part 5에서는 L
 5. <strong>실무 사례</strong> - DeNA NOC Alert Agent
 6. <strong>비용 및 성능 최적화</strong> - 시맨틱 캐싱, 배칭, SLM 활용
 
-이 글에서는 DeNA의 공식 스터디 자료를 기반으로 최신 연구 결과와 실무 사례를 추가하여 종합적으로 정리했습니다.
+정리의 뼈대는 DeNA 공식 스터디 자료입니다. 여기에 최신 연구와 실무 사례를 덧붙였습니다.
 
 ## 1. n8n을 활용한 LLM 워크플로우
 
@@ -1759,7 +1735,7 @@ async function optimizedQuery(query: string): Promise<string> {
 
 ## 시사점 및 느낀점
 
-DeNA LLM 스터디 Part 5를 정리하며 얻은 핵심 인사이트입니다.
+Part 5를 마치며 머릿속에 남은 것들을 적어둡니다.
 
 ### 1. "완전 자율"보다 "오케스트레이션"
 
@@ -1872,7 +1848,7 @@ for (let i = 0; i < maxRetries; i++) {
 
 ## 시리즈 총정리
 
-DeNA LLM 스터디 Part 1〜5를 모두 마쳤습니다. 전체 학습 여정을 돌아봅니다.
+이렇게 다섯 편이 모두 끝났습니다. 여정 전체를 한 번 돌아볼 만합니다.
 
 ### Part 1: LLM의 기초와 주요 모델 비교
 

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'OpenClaw 모델을 OpenAI Codex로 전환하기 — ToS 혼란 이후 실전 가이드'
 description: >-
   Claude·Gemini 이용약관 변경 이후 OpenClaw 사용자를 위한 OpenAI Codex 전환 실전 가이드입니다. 백업, OAuth 인증, 에이전트별 모델

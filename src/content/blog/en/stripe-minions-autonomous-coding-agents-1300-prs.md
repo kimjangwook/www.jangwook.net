@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Stripe Minions — How a Slack Emoji Triggers 1,300 PRs a Week'
 description: >-
   How Stripe produces over 1,300 PRs weekly with autonomous coding agents called

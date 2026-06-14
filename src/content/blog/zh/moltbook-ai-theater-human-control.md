@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Moltbook"AI社会"的真相 — Forbes/MIT Tech Review的揭露与"AI剧场"问题
 description: Moltbook的AI自主社会被揭露实际上由人类操作员控制。本文分析AI剧场现象及其对工程管理者的启示。
 pubDate: '2026-02-14'

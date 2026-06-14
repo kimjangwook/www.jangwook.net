@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Code Source Leak — What 510K Lines Reveal About Agent Architecture
 description: >-
   Anthropic's npm packaging error exposed Claude Code's full source. Agent

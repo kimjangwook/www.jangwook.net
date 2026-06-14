@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AlphaEvolveのラムゼー数突破 — AI研究パートナーの時代
 description: >-
   Google

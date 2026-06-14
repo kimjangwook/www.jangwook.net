@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'SEO/AEO in the LLM Era: B2B SaaS Optimization Roadmap'
 description: >-
   From SEO foundation to AEO strategy: real implementation case study with

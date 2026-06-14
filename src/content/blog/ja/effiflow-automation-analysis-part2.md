@@ -12,51 +12,27 @@ tags:
   - commands
   - caching
 relatedPosts:
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
+    reason:
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
   - slug: effiflow-automation-analysis-part1
-    score: 0.95
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-verbalized-sampling
-    score: 0.94
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: claude-agent-teams-guide
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: openai-agentkit-tutorial-part2
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: prompt-engineering-agent-improvements
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
 ## シリーズ案内
@@ -65,13 +41,13 @@ relatedPosts:
 >
 > 1. [Part 1: メタデータで 71%コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1) - 3-Tier アーキテクチャと全体システム概要
 > 2. <strong>Part 2: Skills と Commands の統合戦略</strong> ← 現在の記事
-> 3. [Part 3: 実践改善事例と ROI 分析](/ja/blog/ja/effiflow-automation-analysis-part3)
+> 3. Part 3: 実践改善事例と ROI 分析
 
-## はじめに
+## Model-Invoked と User-Invoked、そして 58%という数字
 
-Part 1 では、EffiFlow の 3-Tier アーキテクチャ(Agents → Skills → Commands)と、メタデータ優先戦略による 71%コスト削減を見てきました。Part 2 では、このシステムの核心である<strong>Skills の自動検出メカニズム</strong>と<strong>Commands のオーケストレーションパターン</strong>を深く分析します。
+Part 1 では、EffiFlow の 3-Tier アーキテクチャ(Agents → Skills → Commands)とメタデータ優先戦略で、コストを 71%削減した経緯をまとめた。ただ、実際にシステムを動かしながら一番気になったのは別のところだった。Skills は呼んでもいないのに、なぜ勝手に立ち上がるのか。Commands はあれだけの工程を、どうやって一度に束ねているのか。
 
-核心的な質問は次のとおりです:「Model-Invoked と User-Invoked の違いは何か、そしてどのように 58%のトークン削減を達成したのか?」
+今回はその二つの疑問から出発する。Model-Invoked と User-Invoked はいったい何が違い、そこからどうやって 58%というトークン削減が生まれたのか。実際のコードと数値を並べながら追っていく。
 
 ## Skills: 自動検出されるモジュール型機能
 
@@ -259,7 +235,7 @@ Commands は<strong>User-Invoked</strong>方式で動作します。ユーザー
 
 ### Phase-Based Execution パターン
 
-複雑な Commands は明確な Phase で区分されます。`write-post`の 8 Phases を見てみましょう:
+複雑な Commands は明確な Phase で区分されます。最も複雑な`write-post`の 8 Phases を、一つずつ追っていきます。
 
 ```mermaid
 sequenceDiagram
@@ -1026,9 +1002,9 @@ await Promise.all(posts.map((post) => analyzePost(post))); // 30秒 (70%短縮)
 - テストカバレッジ: 0% → 80%
 - 安定性: 95% → 99%
 
-## 結論
+## まとめ:Skills と Commands が噛み合う場所
 
-Part 2 では、EffiFlow の核心である Skills と Commands の統合戦略を深く分析しました。
+ここまでが EffiFlow の二つの軸だ。Skills と Commands がどう噛み合って回るのかを見てきた。
 
 <strong>核心インサイト</strong>:
 

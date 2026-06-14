@@ -11,60 +11,29 @@ tags:
   - サブエージェント
   - ワークフロー
 relatedPosts:
-  - slug: claude-agent-teams-guide
-    score: 0.95
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-cli-migration-guide
-    score: 0.95
+      ko: 자동화 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into 자동화.
+      ja: 자동화をもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 자동화 主题。
+  - slug: claude-code-parallel-sessions-git-worktree
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effiflow-automation-analysis-part3
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: github-agentic-workflows-cicd-ai
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: jira-ai-agents-mcp-engineering-management
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: claudecode를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claudecode experience.
+      ja: claudecodeを実際に扱った経験が続く記事です。
+      zh: 延续 claudecode 的实战经验。
 ---
 
 今読んでいるこの記事は、今朝11時30分に自動実行されたlaunchdジョブがClaude Codeを起動し、`/daily-tech-blog`スラッシュコマンドを実行し、サブエージェントたちがリサーチと翻訳を分担して作った結果物である可能性が高い。
 
 この自動化パイプラインを構築・運用してきた数ヶ月間を振り返ると、完璧ではない。タイムアウトが発生したり、ビルドが失敗したり、ある言語バージョンだけが生成されて終わる日もある。それでも、このシステムなしに毎日4言語で記事を発行するのは物理的に不可能だっただろう。
 
-このシリーズはその過程で学んだことを整理する。第1回の今回は、核心となる3ステップ — <strong>スラッシュコマンド</strong>、<strong>フック</strong>、<strong>サブエージェント</strong> — を最初から作る方法を扱う。
+このシリーズはその過程で学んだことを整理する。第1回の今回は、核心となる3ステップを最初から作る方法を扱う。<strong>スラッシュコマンド</strong>、<strong>フック</strong>、そして<strong>サブエージェント</strong>だ。
 
-## Step 1: スラッシュコマンド — `.claude/commands/` フォルダがすべて
+## Step 1: スラッシュコマンド: `.claude/commands/` フォルダがすべて
 
 Claude Codeで`/commit`、`/review`、`/deploy`のようなコマンドを作る方法は驚くほどシンプルだ。`.claude/commands/`ディレクトリに`.md`ファイルを1つ置くだけでいい。
 
@@ -123,7 +92,7 @@ Research, write, validate, and publish one daily article.
 
 "Never ask the user"の一行が自律実行モードを実現する鍵だ。これがないと、Claudeは不確かな状況のたびに確認を求めて止まる。cronジョブでは致命的になる。
 
-## Step 2: settings.jsonフック — イベント駆動の自動化
+## Step 2: settings.jsonフック: イベント駆動の自動化
 
 スラッシュコマンドが「何をすべきか」を定義するなら、フックは「いつ自動的に動くべきか」を定義する。
 
@@ -168,7 +137,7 @@ Research, write, validate, and publish one daily article.
 
 私の設定で最も便利だったのは`Stop`フックだ。長い自動化タスク(30分〜1時間)が終わると、Telegramで通知が届く。これを設定してから「まだ終わったかな?」とターミナルを覗き込む習慣が完全になくなった。
 
-### permissionsの設定 — 許可リストベースのセキュリティ
+### permissionsの設定: 許可リストベースのセキュリティ
 
 フックと合わせて必ず設定すべきなのが`permissions`だ。Claude Codeはデフォルトで、すべてのBashコマンド実行前にユーザーの承認を要求する。自動化環境ではこの動作がパイプラインを止めてしまう。
 
@@ -192,9 +161,9 @@ Research, write, validate, and publish one daily article.
 
 <strong>注意</strong>: 許可リストを広く設定しすぎると(`Bash(*)`のように)、意図しないコマンドが実行される可能性がある。実際に必要なコマンドパターンだけを登録するのが安全だ。
 
-フックを実際のコードレビューパイプラインに適用した詳細な事例は、[Claude Code Hookで構築する自動化コードレビューシステム](/ja/blog/ja/claude-code-hooks-workflow)で確認できる。
+フックを実際のコードレビューパイプラインに適用した詳細な事例は、Claude Code Hookで構築する自動化コードレビューシステムで確認できる。
 
-## Step 3: サブエージェント委任 — `.claude/agents/` 専門化されたAI
+## Step 3: サブエージェント委任: `.claude/agents/` 専門化されたAI
 
 リサーチ + 記事執筆 + SEO最適化 + 翻訳 + ビルドをすべて1つのClaudeに任せると、各分野の集中度が下がる。トークンコンテキストも無駄になる。
 
@@ -216,7 +185,7 @@ Core rules:
 - Never fabricate benchmarks or logs
 ```
 
-frontmatterの`description`フィールドが重要だ。オーケストレーターClaudeが「どのエージェントをいつ使うべきか」を判断するときにこのフィールドを参照する。曖昧に書くと、엉뚱なエージェントが呼ばれるか、完全に無視される。
+frontmatterの`description`フィールドが重要だ。オーケストレーターClaudeが「どのエージェントをいつ使うべきか」を判断するときにこのフィールドを参照する。曖昧に書くと、見当違いのエージェントが呼ばれるか、完全に無視される。
 
 `tools`フィールドには、そのエージェントが実際に必要なツールだけを列挙する。`Write`権限のないリサーチエージェントは、誤ってファイルを修正することができない。役割の特化と権限の制限を同時に実現する方法だ。
 
@@ -284,7 +253,7 @@ launchd plistの設定も参考になる:
 
 ログをファイルにリダイレクトしておくと、「なぜ今日の記事が公開されなかったのか」をデバッグするときに非常に役立つ。
 
-## 実際に始める方法 — 最小設定5分
+## 実際に始める方法: 最小設定5分
 
 この3ステップを初めて導入する人のために、最小限の動作サンプルをまとめる。既存のプロジェクトにそのまま適用できる。
 
@@ -342,7 +311,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 この4つのファイルが最小動作単位だ。これだけで`/review`がステージング済みの変更を分析し、作業終了時に音声通知を受け取り、詳細な検査が必要な場合は`checker`エージェントに委任できる。
 
-## 正直な評価 — うまくいかないこと
+## 正直な評価: うまくいかないこと
 
 このシステムを3ヶ月運用した結果、いくつかの現実的な制約に直面した。
 
@@ -350,19 +319,19 @@ Rate: SAFE / CAUTION / CRITICAL
 
 <strong>タイムアウト処理</strong>: ビルドが遅かったり、サブエージェントのチェーンが長くなると、60分のタイムアウトに引っかかる。記事が半分だけ生成された状態で中断する。タイムアウト検知後のクリーンアップロジックがなければ、リポジトリの状態が壊れる。
 
-<strong>エージェント品質の非決定性</strong>: 同じコマンドを2回実行しても結果が異なることがある。記事の品質、内部リンクの位置、relatedPostsの選択 — すべて日によって変わる。これはLLMの性質上避けられず、QAループ(validate:publishing、astro check、build)で最低限の品質基準を保つのが現実的だ。
+<strong>エージェント品質の非決定性</strong>: 同じコマンドを2回実行しても結果が異なることがある。記事の品質、内部リンクの位置、relatedPostsの選択。どれも日によって変わる。これはLLMの性質上避けられず、QAループ(validate:publishing、astro check、build)で最低限の品質基準を保つのが現実的だ。
 
 正直に言えば、このシステムを「プロダクションレディ」と呼ぶのは時期尚早だ。私の基準では「個人の自動化には十分安定しているレベル」だ。チーム規模で使うには、エラー回復、状態管理、監査ログをより堅固に設計する必要がある。
 
-エージェントワークフローを体系的に考えるフレームワークが必要なら、[Claude Code エージェントワークフローパターン5種類](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)が参考になる。
+エージェントワークフローを体系的に考えるフレームワークが必要なら、Claude Code エージェントワークフローパターン5種類が参考になる。
 
 ## 次回: #2 MCPサーバー連携
 
 第1回は`.claude/`フォルダ内で完結する自動化を扱った。
 
-第2回ではさらに一歩進む — <strong>MCPサーバーを自作してClaude Codeに外部ツールを接続する方法</strong>。Notionデータベースの読み込み、Slackメッセージの送信、PostgreSQLクエリなど、外部システム連携がスラッシュコマンド1つで可能になる構造を解説する。
+第2回ではさらに一歩進む。<strong>MCPサーバーを自作してClaude Codeに外部ツールを接続する方法</strong>だ。Notionデータベースを読み込み、Slackにメッセージを送り、PostgreSQLにクエリを投げる。こうした外部システム連携がスラッシュコマンド1つで可能になる構造を解説する。
 
-MCPサーバーを構築した経験があるなら、[MCPサーバー構築実践ガイド](/ja/blog/ja/mcp-server-build-practical-guide-2026)が良い事前読書になる。
+MCPサーバーを構築した経験があるなら、MCPサーバー構築実践ガイドが良い事前読書になる。
 
 ---
 

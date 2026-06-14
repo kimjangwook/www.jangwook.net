@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Anthropic和OpenAI在同一个月申请了IPO — Token价格战对开发者意味着什么"
 description: "2026年6月，Anthropic（6/1）和OpenAI（6/8）分别向SEC提交了保密S-1文件。两家AI巨头同时上市申请如何影响API定价？本文结合实际Token成本数据，从开发者视角进行分析。"
 pubDate: '2026-06-13'

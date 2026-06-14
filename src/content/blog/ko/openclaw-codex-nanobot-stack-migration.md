@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenClaw 떠나서 Codex+Nanobot으로 이사한 이유
 description: >-
   OpenClaw에서 Codex+Nanobot 스택으로 갈아탄 실전 마이그레이션 후기. launchd 스케줄링, 텔레그램 브릿지 연동, MCP

@@ -10,56 +10,42 @@ tags:
   - dena
   - embedding
 relatedPosts:
-  - slug: 45-day-analytics-report-2025-11
-    score: 0.95
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
   - slug: dena-llm-study-part1-fundamentals
-    score: 0.95
+    score: 0.9
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: figma-mcp-web-components-sync
-    score: 0.95
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: dena-llm-study-part5-agent-design
+    score: 0.85
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: gcloud-mcp-infrastructure-audit
-    score: 0.95
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: dena-llm-study-part3-model-training
+    score: 0.8
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: three-week-analytics-2025-11-04
-    score: 0.95
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>系列: DeNA LLM 研究</strong> (4/5)
 >
 > 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: 结构化输出与多LLM管道](/zh/blog/zh/dena-llm-study-part2-structured-output)
+> 2. Part 2: 结构化输出与多LLM管道
 > 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training)
 > 4. <strong>Part 4: RAG架构与最新趋势</strong> ← 当前文章
 > 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
 
-## 概述
+## RAG 说到底是检索工程
 
-DeNA 的 LLM 研究系列 Part 4 涵盖了 RAG（检索增强生成）从核心概念到最新趋势的全面内容。我们学习了如何超越简单的提示工程，设计能够有效利用外部知识的系统。
+Part 4 的主题是 RAG（检索增强生成）。一开始我把它想得很简单，无非是"往提示里塞几篇文档"。跟着资料走下来，看法完全变了。检索质量就是答案质量，而怎么设计这套检索，几乎决定了一切。
 
-本文基于 DeNA 研究资料，整理了完整的 RAG 架构、混合检索策略、重排序技术，以及 GraphRAG 和 Agentic RAG 等最新发展方向。
+这篇文章记的是那天讲过的内容：RAG 的完整架构、混合检索、重排序，还有 GraphRAG、Agentic RAG 这些较新的方向。底子是 DeNA 的研究资料，不过我也把自己动手之后注意到的一些细节写了进去。
 
 ## 上下文工程: LLM 是接口
 
@@ -809,9 +795,9 @@ def sanitize_response(response):
     return response
 ```
 
-## 思考与下一步
+## 我对 RAG 的看法为何变了
 
-通过 DeNA 的 LLM 研究 Part 4，我深刻理解到 RAG 不仅仅是"检索后生成"，而是需要精密系统设计的工程领域。
+研究前后变化最大的，是我看问题的角度。"检索后生成"这句话太干净利落了，反而不够用。检索的每一步其实都是一个小小的工程问题，而这些选择叠加起来，才决定了系统的成败。
 
 ### 核心见解
 
@@ -823,7 +809,7 @@ def sanitize_response(response):
 
 ### 实践应用计划
 
-基于此次学习，我计划进行以下改进：
+结合这次学到的东西，我把眼下这套系统里想动手改的地方梳理了一遍。
 
 1. <strong>引入混合检索</strong>
    - 当前仅使用 Dense 向量 → 添加 BM25

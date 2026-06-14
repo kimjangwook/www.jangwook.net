@@ -12,58 +12,27 @@ tags:
   - saas
   - supabase
 relatedPosts:
-  - slug: claude-code-parallel-testing
-    score: 0.95
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.9
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: llm-page-migration-standardization
-    score: 0.95
+      ko: AI 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into AI.
+      ja: AIをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 AI 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: ai-content-recommendation-system
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: google-analytics-mcp-automation
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: AI를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on AI experience.
+      ja: AIを実際に扱った経験が続く記事です。
+      zh: 延续 AI 的实战经验。
 ---
 
-## Overview
+## Three Days, One Production Launch
 
-I launched an AI-powered B2B SaaS to production in just 3 days. Named <a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">Agent Effi Flow</a>, this service provides two AI automation tools: Receipt OCR for Tax Refund and Accounting OCR, targeting Japanese inbound tourism businesses and SME accounting teams.
+Over the past three days I took an AI-powered B2B SaaS from nothing to a live production service. It's called <a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">Agent Effi Flow</a>. The product ships two AI automation tools, Receipt OCR for Tax Refund and Accounting OCR, and it targets Japanese inbound tourism businesses along with SME accounting teams.
 
-This article shares <strong>actual implementation experience</strong>, not "theoretically possible." I'll cover technology stack choices, core implementation, challenges faced, and 3-month KPI targets honestly.
+What follows isn't a "this is theoretically possible" write-up. It's <strong>what I actually built</strong>. I'll be honest about the stack I picked and why, how the core pieces fit together, where I got stuck, and the KPI targets I set for the first three months.
 
 ## Why I Built This SaaS
 
@@ -72,10 +41,10 @@ This article shares <strong>actual implementation experience</strong>, not "theo
 B2B automation needs discovered while working in Japan:
 
 1. <strong>Manual-dependent tax refund processing</strong>: Visual passport and tax refund document verification with manual data entry
-2. <strong>Repetitive accounting tasks</strong>: Manual data cleanup after receipt OCR. [AI accounting automation by the numbers](/en/blog/en/accounting-ai-transformation-real-data) shows just how significant this problem is with real data.
+2. <strong>Repetitive accounting tasks</strong>: Manual data cleanup after receipt OCR. AI accounting automation by the numbers shows just how significant this problem is with real data.
 3. <strong>Limitations of existing solutions</strong>: Either expensive enterprise solutions or low-accuracy generic OCR
 
-The differentiation point as an individual developer: <strong>Structured data extraction using AI</strong>. Beyond simple text OCR, using Google Gemini API's Structured Output feature to receive type-safe JSON responses immediately usable in business logic. For where the service headed next, see [Agent Effi Flow's pivot decision and the Omotenashi bot concept](/en/blog/en/agent-effi-flow-pivot-omotenashi-bot).
+The differentiation point as an individual developer: <strong>Structured data extraction using AI</strong>. Beyond simple text OCR, using Google Gemini API's Structured Output feature to receive type-safe JSON responses immediately usable in business logic. For where the service headed next, see Agent Effi Flow's pivot decision and the Omotenashi bot concept.
 
 ## Technology Stack Choices
 
@@ -697,7 +666,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript type definitions
    - Zod schema validation
    
-   The broader approach of using AI tools to grow a side project to company scale is covered in [Effloow: from side project to AI company](/en/blog/en/effloow-side-project-ai-company).
+   The broader approach of using AI tools to grow a side project to company scale is covered in Effloow: from side project to AI company.
 
 3. <strong>Vercel Preview Deployments</strong>
    - Automatic deployment URL per PR
@@ -766,16 +735,16 @@ const optimized = await sharp(imageBuffer)
 - [B2B SaaS Go-to-Market Strategies](https://martal.ca/b2b-saas-marketing-strategies-lb/) - B2B SaaS marketing strategies
 - [Stripe Credits for Usage-Based Billing](https://stripe.com/blog/introducing-credits-for-usage-based-billing) - Stripe credit system
 
-## Conclusion
+## What the Three-Day Launch Taught Me
 
-Launching a production SaaS in 3 days is <strong>possible</strong>. But the goal shouldn't be "build fast"—it should be <strong>"validate fast."</strong>
+Launching a production SaaS in 3 days is <strong>possible</strong>. But "build fast" was never the point. The point was <strong>"validate fast."</strong>
 
-The keys were these 3 things:
+Three things made it work:
 
 1. <strong>Right tool selection</strong>: SvelteKit + Supabase + Gemini API
 2. <strong>Limited scope</strong>: Start with 2 services, prioritize launch over perfection
 3. <strong>Business first</strong>: Focus on solving customer problems over technology
 
-Now the real journey begins. Acquiring the first paid customer, receiving feedback, and improving. I hope when I update this article in 3 months, I can write "¥30,000 MRR achieved."
+The real journey starts now. The first paid customer, then the feedback, then the long grind of fixing what they tell me is broken. I hope that when I update this article in three months, I get to write "¥30,000 MRR achieved."
 
 Fellow solo developers, let's build together.

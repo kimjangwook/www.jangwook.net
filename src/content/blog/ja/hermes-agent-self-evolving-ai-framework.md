@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Hermes Agent — タスクをこなすたびに自ら進化するオープンソースAIエージェント
 description: >-
   NousResearchのHermes Agent v0.7.0をインストールしてみた。タスク完了ごとにスキルドキュメントを自動生成し、

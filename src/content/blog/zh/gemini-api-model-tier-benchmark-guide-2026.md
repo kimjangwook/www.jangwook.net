@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Gemini API 模型选择指南 2026 — Flash-Lite至Pro速度与成本完全对比'
 description: '2026年5月实测数据。在相同条件下对比了Gemini 2.5 Flash-Lite（65 TPS）、2.5 Flash、2.5 Pro和3.5 Flash。包含聊天机器人、代码审查、RAG场景的月度成本计算，以及不同项目应选择哪个模型的决策依据。'
 pubDate: '2026-05-24'

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'LLM 시대의 SEO/AEO 실전 적용: B2B SaaS 최적화 로드맵'
 description: >-
   B2B SaaS 프로젝트 Agent Effi Flow에 적용한 LLM 시대의 SEO/AEO 완전 전략 로드맵. 기술 스택 구현 방법부터

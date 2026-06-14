@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 用Vercel AI SDK构建Claude流式代理
 description: >-
   使用Vercel AI SDK v6 + @ai-sdk/anthropic在Next.js App

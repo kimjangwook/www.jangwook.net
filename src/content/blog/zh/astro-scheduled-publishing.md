@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 静态博客的定时发布实现：Astro + GitHub Actions 自动化
 description: >-
   使用 Astro 和 GitHub Pages 的静态博客中，如何像 WordPress 一样实现文章定时发布。利用 pubDate

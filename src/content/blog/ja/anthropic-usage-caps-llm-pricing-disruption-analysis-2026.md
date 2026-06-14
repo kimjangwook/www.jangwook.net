@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AnthropicがOpenClawを切った理由 — Claudeサブスクリプション方針転換と開発者のコスト現実'
 description: '2026年4月4日、AnthropicがClaude Pro/Maxサブスクリプションによるサードパーティエージェントツール利用を遮断した。Fast Mode 6倍課金も加わった構造的転換を費用計算とともに分析する。'
 pubDate: '2026-05-02'

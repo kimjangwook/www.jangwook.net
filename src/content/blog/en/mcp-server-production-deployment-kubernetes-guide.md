@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP Server Kubernetes Deployment — Surviving the 52% Death Rate
 description: >-
   April 2026: 52% of production MCP endpoints are failing. Step-by-step

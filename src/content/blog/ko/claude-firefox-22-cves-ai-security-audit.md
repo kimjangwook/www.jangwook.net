@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude가 Firefox에서 22개 CVE를 발견하다 — AI 보안 감사의 새로운 패러다임
 description: >-
   Anthropic의 Claude Opus 4.6이 2주 만에 Firefox에서 22개 CVE를 발견한 사례를 분석하고, AI 기반 보안

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AI智能体框架比较2026: LangGraph vs CrewAI vs Dapr 生产选型指南'
 description: >-
   从实际生产角度比较LangGraph v1.0、CrewAI v1.10和Dapr Agents v1.0。分析架构、开发速度、运营耐久性和成本，

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Google Code Wiki: AIベースのコードドキュメント化プラットフォーム完全ガイド'
 description: >-
   Google Code WikiはGemini

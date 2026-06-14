@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Google Code Wiki: AI 기반 코드 문서화 플랫폼 완벽 가이드'
 description: >-
   Google Code Wiki는 Gemini AI가 GitHub 저장소를 자동으로 분석해 프로젝트 Wiki를 생성하는 AI 코드 문서화

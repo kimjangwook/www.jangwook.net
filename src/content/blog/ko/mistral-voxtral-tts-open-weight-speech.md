@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Mistral Voxtral TTS — 3초 보이스 클로닝에 오픈 웨이트, 그런데 일본어가 없다'
 description: >-
   Mistral이 공개한 4B 파라미터 오픈 웨이트 TTS 모델 Voxtral을 분석한다. ElevenLabs를 인간 평가에서 이겼고 3초

@@ -12,66 +12,44 @@ tags:
   - Automation
   - Shell
 relatedPosts:
-  - slug: weekly-analytics-2025-10-14
-    score: 0.93
+  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
+    score: 0.9
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
-    score: 0.92
+      ko: bun 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into bun.
+      ja: bunをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 bun 主题。
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.85
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: blog-launch-analysis-report
-    score: 0.91
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.8
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: claude-code-web-automation
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
-I have a small recurring frustration when writing shell scripts. Bash works but breaks on Windows. Node.js `child_process` turns into callback soup. `zx` needs an extra package. So when Bun Shell came up, I figured it was just another zx clone. After actually running it, my opinion shifted a bit.
+I have a small recurring frustration when writing shell scripts. Bash works but breaks on Windows. Node.js `child_process` turns into callback soup. And `zx` needs an extra package. So when Bun Shell came up, I figured it was just another zx clone. After actually running it, my opinion shifted a bit.
 
-This article is based on real experiments I ran with Bun 1.3.14. Some things in the docs didn't match actual runtime behavior — I'm documenting those honestly.
+This article is based on real experiments I ran with Bun 1.3.14. Some things in the docs didn't match actual runtime behavior, and I'm documenting those honestly.
 
 ## What Bun Shell Is and Why It's Worth Knowing
 
 Bun is a JavaScript runtime that also serves as a package manager, bundler, and test runner. The entire project is about collapsing a fragmented ecosystem into a single tool. [Just as Python's uv consolidates pip, pyenv, and poetry into one binary](/en/blog/en/uv-python-ai-development-setup-guide-2026), Bun merges npm/yarn/pnpm, a test runner, and a bundler into one.
 
-Bun Shell is the natural extension of this philosophy into shell scripting. Install `bun`, and you can use the `$` template literal to run shell commands directly inside TypeScript — no extra dependencies.
+Bun Shell is the natural extension of this philosophy into shell scripting. Install `bun`, and you can use the `$` template literal to run shell commands directly inside TypeScript. No extra dependencies.
 
 ### How It Differs From zx
 
-Honestly, the API surface looks similar. Both use the `` $`command` `` syntax. The meaningful difference is architectural: **Bun Shell doesn't depend on bash.**
+Honestly, the API surface looks similar. Both use the `` $`command` `` syntax. The meaningful difference is architectural. **Bun Shell doesn't depend on bash.**
 
-zx invokes the system's bash (or sh) under the hood. On Windows without bash, you need WSL or Git Bash. Bun Shell ships its own shell implementation written in Rust. It runs `ls`, `rm`, `echo`, `cd`, `mkdir`, and other common commands identically across Windows, macOS, and Linux — no bash required.
+zx invokes the system's bash (or sh) under the hood. On Windows without bash, you need WSL or Git Bash. Bun Shell ships its own shell implementation written in Rust. It runs `ls`, `rm`, `echo`, `cd`, `mkdir`, and other common commands identically across Windows, macOS, and Linux, with no bash required.
 
 If your team includes Windows developers, that difference matters.
 
@@ -98,9 +76,9 @@ mkdir my-scripts && cd my-scripts
 bun init -y
 ```
 
-`bun init` generates `package.json`, `tsconfig.json`, and `index.ts`. TypeScript works out of the box — no ts-node or additional configuration needed.
+`bun init` generates `package.json`, `tsconfig.json`, and `index.ts`. TypeScript works out of the box, with no ts-node or additional configuration needed.
 
-## Basic Patterns — Running Commands with $ Template Literals
+## Basic Patterns: Running Commands with $ Template Literals
 
 The core syntax: import `$` from the built-in `bun` module.
 
@@ -114,7 +92,7 @@ await $`echo "Hello from Bun Shell"`;
 const files = await $`ls -la`.text();
 console.log(files);
 
-// JavaScript variable interpolation — automatically escaped
+// JavaScript variable interpolation (automatically escaped)
 const filename = "my file.txt";  // note: has a space
 await $`echo "${filename}" > output.txt`;
 // → output.txt contains "my file.txt" (space handled correctly)
@@ -183,7 +161,7 @@ const result = await $`echo $LOCAL_VAR`
   .text();
 ```
 
-**Watch out:** the object you pass to `.env()` completely replaces the environment — it's not merged. If you forget `PATH`, subsequent commands won't find any executables.
+**Watch out:** the object you pass to `.env()` completely replaces the environment. It does not merge. If you forget `PATH`, subsequent commands won't find any executables.
 
 ### Pipelines
 
@@ -201,7 +179,7 @@ There's a trap here. On macOS, `echo "banana\napple"` does not interpret `\n` as
 
 This is an important nuance: Bun Shell runs without bash, but it still uses the OS's native commands. The OS-level behavior of `echo` remains unchanged.
 
-## Parallel Execution — Promise.all Is the Key
+## Parallel Execution: Promise.all Is the Key
 
 To run multiple commands in parallel with Bun Shell, use `Promise.all`. Commands written sequentially are executed sequentially.
 
@@ -217,7 +195,7 @@ await Promise.all([
 ]);
 ```
 
-When I measured this directly, sequential was around 471ms and parallel was around 263ms. More overhead than I expected — macOS process spawning has non-trivial cost. Still, for IO-heavy work the parallelization is meaningful.
+When I measured this directly, sequential was around 471ms and parallel was around 263ms. More overhead than I expected. macOS process spawning has non-trivial cost. Still, for IO-heavy work the parallelization is meaningful.
 
 ### A Practical Build Script
 
@@ -255,7 +233,7 @@ async function build() {
 build().catch(console.error);
 ```
 
-Save this as `scripts/build.ts` and run it with `bun run scripts/build.ts`. No Node.js or ts-node needed. [Wiring this build script into a GitHub Actions CI/CD pipeline](/en/blog/en/github-actions-claude-code-ci-automation) is a natural next step once local automation is working.
+Save this as `scripts/build.ts` and run it with `bun run scripts/build.ts`. No Node.js or ts-node needed. Wiring this build script into a GitHub Actions CI/CD pipeline is a natural next step once local automation is working.
 
 ## Pitfalls I Found While Experimenting
 
@@ -265,7 +243,7 @@ Here's the honest part.
 
 You may have seen examples using `` $`command`.stdin("text") ``. In Bun 1.3.14, this API doesn't exist. You'll get a `stdin is not a function` runtime error.
 
-Alternatives:
+Here are the alternatives that actually work:
 
 ```typescript
 // ❌ Doesn't work in 1.3.14
@@ -311,9 +289,9 @@ My conclusion: **if your project is already Bun-based, Bun Shell is a natural fi
 
 ### Use Bun Shell when:
 
-- **Your project already uses Bun** as package manager — zero extra dependencies for shell scripting.
-- **Your team includes Windows developers** — no bash dependency on any platform.
-- You want to **consolidate build/deploy scripts** into TypeScript — same language, same file as your app logic.
+- **Your project already uses Bun** as package manager. That means zero extra dependencies for shell scripting.
+- **Your team includes Windows developers** and you want no bash dependency on any platform.
+- You want to **consolidate build/deploy scripts** into TypeScript, keeping them in the same language and file as your app logic.
 
 ### Skip Bun Shell when:
 
@@ -321,9 +299,9 @@ My conclusion: **if your project is already Bun-based, Bun Shell is a natural fi
 - You have complex bash scripts with unknown bash-isms that might not translate.
 - `zx` already works and your team is comfortable with it.
 
-I'd push back on the framing that Bun Shell is "better than zx." In terms of ecosystem maturity and download numbers, zx is ahead. Bun Shell is the right choice for Bun projects specifically — not a universal upgrade recommendation.
+I'd push back on the framing that Bun Shell is "better than zx." In terms of ecosystem maturity and download numbers, zx is ahead. Bun Shell is the right choice for Bun projects specifically. It isn't a universal upgrade recommendation.
 
-And honestly, the missing `.stdin()` API bothers me. Once that's stable, stdin-based pipe processing will be significantly cleaner. Until then, there's a workaround but it adds friction.
+And honestly, the missing `.stdin()` API bothers me. Once that's stable, stdin-based pipe processing will be significantly cleaner. There's a workaround for now, but it adds friction.
 
 ## Deployment Considerations
 
@@ -366,11 +344,11 @@ if (result.exitCode !== 0) {
 
 Without `process.exit(1)`, a failed command might silently pass the pipeline. That's the kind of bug that surfaces at 2am on a release day.
 
-## Wrapping Up
+## So, Is It Ready for Daily Use
 
-After actually installing and running it, Bun Shell's developer experience is better than I expected. Automatic variable escaping, the `.nothrow()` pattern, `.lines()` for line-by-line output — these are thoughtful details you don't see in zx.
+After actually installing and running it, Bun Shell's developer experience is better than I expected. Automatic variable escaping, the `.nothrow()` pattern, and `.lines()` for line-by-line output are thoughtful details you don't see in zx.
 
-That said, it's still 1.x and some APIs are not stable. I'd recommend validating thoroughly in your actual environment before putting Bun Shell scripts into production CI/CD. The same applies if you're integrating with [Claude Code hooks](/en/blog/en/claude-code-hooks-workflow) or other automation pipelines.
+That said, it's still 1.x and some APIs are not stable. I'd recommend validating thoroughly in your actual environment before putting Bun Shell scripts into production CI/CD. The same applies if you're integrating with Claude Code hooks or other automation pipelines.
 
 Bun is moving fast and the Shell API will stabilize. There's no urgent reason to drop zx, but for new Bun projects, the built-in shell deserves a first look.
 

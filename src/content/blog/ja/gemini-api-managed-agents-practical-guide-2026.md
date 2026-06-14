@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Gemini API Managed Agents 実践ガイド — 隔離サンドボックスでエージェントをワンコールで実行する"
 description: "Google I/O 2026発表のGemini Managed Agentsを実際に動かした記録。client.interactions.create()一発でエージェントを起動する仕組み、Claude・OpenAIとの違い、マルチターン会話の実装までコードで解説する。"
 pubDate: '2026-05-30'

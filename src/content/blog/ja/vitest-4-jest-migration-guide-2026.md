@@ -10,49 +10,27 @@ tags:
   - Jest
   - TypeScript
 relatedPosts:
-  - slug: adsense-low-value-content-technical-fix
-    score: 0.92
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.9
     reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
+      ko: TypeScript 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into TypeScript.
+      ja: TypeScriptをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 TypeScript 主题。
+  - slug: hono-typescript-api-2026
+    score: 0.85
+    reason:
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
   - slug: bun-shell-scripting-practical-guide-2026
-    score: 0.91
+    score: 0.8
     reason:
-      ko: '웹 개발, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: Web開発、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in web development, DevOps with comparable
-        difficulty.
-      zh: 在Web开发、DevOps领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
-    score: 0.89
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.89
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through web
-        development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过Web开发、DevOps主题进行连接。
-  - slug: weekly-analytics-2025-10-14
-    score: 0.88
-    reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
 先月からサイドプロジェクトのテストパイプラインを整備していて、長年使ってきたJestをVitestに乗り換えた。理由はシンプルだ。TypeScriptプロジェクトでJestを維持しようとすると、`ts-jest`や`babel-jest`のような変換レイヤーが必要になる。設定項目が増えるにつれ、エラーメッセージが暗号のように読めなくなってくる。
@@ -61,7 +39,7 @@ VitestはViteと同じ変換パイプラインを使うため、TypeScriptを別
 
 この記事は、実際にサンドボックスで`vitest@4.1.7`をインストールして16個のテストをパスさせた結果をもとに書いた。設定ファイルを一つ一つ説明するのではなく、「Jestから来た人が詰まるポイント」を中心にまとめた。
 
-## VitestがJestより優れている点 — 正直に言うと
+## VitestがJestより優れている点、速度ではなく設定の単純さ
 
 「Vitestが3〜8倍速い」というベンチマーク数値をよく見かける。直接計測はしていないが、速度より自分が実感したのは**設定の複雑さの違い**だ。
 
@@ -382,13 +360,13 @@ export default defineConfig({
    Duration  157ms
 ```
 
-## 結論: 移行する価値はあるか
+## で、移行する価値はあるのか
 
 私の判断は**TypeScriptプロジェクトならYES、そうでなければケースバイケース**だ。
 
-UIダッシュボードよりも、[Claude Codeを使った大規模テストの並列自動化](/ja/blog/ja/claude-code-parallel-testing)と組み合わせることで、さらなるパフォーマンス向上が期待できる。
+UIダッシュボードよりも、Claude Codeを使った大規模テストの並列自動化と組み合わせることで、さらなるパフォーマンス向上が期待できる。
 
-TypeScriptを使うViteベースのプロジェクトでJestを維持するのは、徐々に逆方向になってきている。変換レイヤーの設定、tsconfig競合、モジュール解決エラー — これらの問題をデバッグし続ける時間が勿体ない。
+TypeScriptを使うViteベースのプロジェクトでJestを維持するのは、徐々に逆方向になってきている。変換レイヤーの設定。tsconfigの競合。モジュール解決のエラー。こうした問題をデバッグし続ける時間が勿体ない。
 
 一方、Next.jsやExpressベースの大規模サーバーテストスイートなら慎重に判断すべきだ。
 

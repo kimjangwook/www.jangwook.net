@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'セルフヒーリングAIシステム: 人間の介入なしでバグを自動修正するエージェント構築'
 description: >-
   GitHub、Google、Netflixが本番環境に導入したSelf-Healing

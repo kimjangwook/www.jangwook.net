@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Bayesian Teaching：LLM概率推理训练法 — Google研究分析'
 description: >-
   Google在Nature Communications发表的Bayesian Teaching研究，提出了一种训练方法论，使LLM在接收新信息时能够以概率方式更新其信念。本文从工程管理视角分析这项研究对AI智能体和企业系统的影响。

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Code Best Practices: Maximizing Developer Productivity with AI'
 description: >-
   Anthropic Claude Code Best Practices: CLAUDE.md setup, subagent systems,

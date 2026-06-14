@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Cognitive Debt: The New Liability AI Teams Are Quietly Accumulating in 2026'
 description: 'Anthropic''s 2026 Agentic Coding Trends Report heralds a productivity revolution — but a parallel research thread warns of "Cognitive Debt." As AI writes more code, teams quietly lose their shared understanding of their own systems. Here''s what Engineering Managers must do now.'
 pubDate: '2026-03-07'

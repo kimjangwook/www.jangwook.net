@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Mythos Preview — Does "Too Capable to Release" Actually Make Sense?
 description: >-
   Anthropic decided not to publicly release Claude Mythos Preview, which scored

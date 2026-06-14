@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP Apps：交互式UI在AI对话中直接运行
 description: >-
   MCP Apps如何改变AI智能体UX——从沙箱iframe与JSON-RPC双向通信架构到实战实现代码，从Engineering

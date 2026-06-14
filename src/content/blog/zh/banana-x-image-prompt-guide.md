@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 基于300个设计评估数据的AI图像提示词完全指南
 description: 分析Banana X的300多条信息图设计评估数据，打造YAML 7-Part Structure图像提示词写作法。包含高分模式和领域专属模板。
 pubDate: '2026-02-06'

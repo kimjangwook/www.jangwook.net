@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Code ベストプラクティス: AIで開発生産性を最大化するガイド'
 description: >-
   Anthropic公式ベストプラクティスに基づくClaude Code最適化ガイド。CLAUDE.md設定、サブエージェント構築、

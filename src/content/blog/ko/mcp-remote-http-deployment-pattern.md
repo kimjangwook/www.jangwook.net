@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP 원격 HTTP 서버 배포 패턴 — stdio에서 Streamable HTTP로 전환하는 실전 가이드
 description: >-
   MCP Streamable HTTP 트랜스포트로 stdio 서버를 원격 배포 가능한 HTTP 서비스로 전환하는 실전 가이드.

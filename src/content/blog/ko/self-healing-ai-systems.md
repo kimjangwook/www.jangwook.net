@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '자가 치유 AI 시스템: 인간 개입 없이 자동으로 버그를 수정하는 에이전트 구축하기'
 description: >-
   GitHub·Google·Netflix가 실제로 배포해 운영하는 자가 치유 AI 시스템 완벽 가이드. LangGraph로 에러 자동 감지,

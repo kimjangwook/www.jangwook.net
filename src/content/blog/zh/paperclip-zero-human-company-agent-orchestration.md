@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Paperclip — 像管理员工一样管理AI Agent的开源平台，我装了试试
 description: >-
   以员工方式管理AI Agent的开源平台Paperclip亲测体验。Linear风格仪表板、Org Chart、费用追踪、多种Agent适配器一网打尽 —

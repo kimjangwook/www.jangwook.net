@@ -13,58 +13,38 @@ tags:
   - 개발 환경
   - AI 개발
 relatedPosts:
-  - slug: claude-code-parallel-sessions-git-worktree
-    score: 0.95
+  - slug: fastapi-claude-api-streaming-production-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: langfuse-self-hosted-llm-tracing-setup-guide-2026
-    score: 0.94
+      ko: Python 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Python.
+      ja: Pythonをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Python 主题。
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.85
     reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: mcp-servers-toolkit-introduction
-    score: 0.93
+      ko: Python를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Python experience.
+      ja: Pythonを実際に扱った経験が続く記事です。
+      zh: 延续 Python 的实战经验。
+  - slug: python-ai-agent-library-comparison-2026
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: openclaw-opus-4-6-setup-guide
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek
-    score: 0.93
-    reason:
-      ko: 'AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, DevOps with comparable difficulty.'
-      zh: 在AI/ML、DevOps领域涵盖类似主题，难度相当。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 작년까지 나는 AI 프로젝트를 시작할 때마다 의식처럼 같은 과정을 반복했다. `python -m venv .venv`, `source .venv/bin/activate`, `pip install anthropic openai`… 그리고 기다렸다. 길게는 2분 넘게. anthropic, torch, pydantic 같은 패키지들이 차례로 다운로드되는 동안.
 
 작업 전환 비용이 꽤 컸다. 새 실험 브랜치를 만들 때마다 환경 세팅이 흐름을 끊었다. 동료 환경과 달라서 생기는 "내 PC에서는 됐는데?" 상황도 없애질 않았다.
 
-그러다 `uv`를 쓰기 시작했다. Rust로 만든 Python 패키지 매니저로, Ruff를 만든 Astral 팀의 작품이다. 오늘 Claude SDK 프로젝트를 설정하면서 직접 측정해봤는데 — `anthropic`을 포함한 16개 패키지 설치에 **0.874초**가 걸렸다. 기존 pip이었다면 20〜40초는 족히 걸렸을 작업이다.
+그러다 `uv`를 쓰기 시작했다. Rust로 만든 Python 패키지 매니저로, Ruff를 만든 Astral 팀의 작품이다. 오늘 Claude SDK 프로젝트를 설정하면서 직접 측정해봤다. `anthropic`을 포함한 16개 패키지 설치에 **0.874초**. 기존 pip이었다면 20〜40초는 족히 걸렸을 작업이다.
 
-이 글은 uv 0.11을 기준으로 AI 개발 환경을 처음부터 세팅하는 완전한 실전 가이드다.
+아래는 그 측정 과정을 그대로 따라가는 기록이다. uv 0.11 기준으로 프로젝트 초기화부터 Claude SDK 설치, CI까지 처음부터 세팅한다.
 
-## 왜 지금 uv인가 — pip, Poetry, conda의 어디가 문제인가
+## 왜 지금 uv인가: pip, Poetry, conda의 어디가 문제인가
 
 솔직히 말하면, pip 자체가 문제인 건 아니다. 수십억 패키지를 다운로드해온 검증된 도구다. 문제는 **속도와 환경 격리**의 조합이다.
 
@@ -82,7 +62,7 @@ uv add anthropic             →  0.874초 (16개 패키지 설치, pydantic-cor
 uv sync (캐시 적중 시)        →  0.074초 (19개 패키지 29ms 설치)
 ```
 
-## Prerequisites — 설치 전 확인사항
+## 설치 전 확인할 것은 사실상 OS 하나뿐
 
 uv 설치에 필요한 건 거의 없다. OS별로 다음만 확인하면 된다.
 
@@ -281,7 +261,7 @@ uv run python -c "import anthropic; print(anthropic.__version__)"
 # 0.100.0
 ```
 
-[Vercel AI SDK를 이용한 Claude 스트리밍 에이전트 구현](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)도 같은 방식으로 `uv add @ai-sdk/anthropic`으로 시작할 수 있다. TypeScript 프로젝트라면 npm/pnpm을 쓰겠지만, Python 프로젝트라면 uv가 훨씬 빠르다.
+Vercel AI SDK를 이용한 Claude 스트리밍 에이전트 구현도 같은 방식으로 `uv add @ai-sdk/anthropic`으로 시작할 수 있다. TypeScript 프로젝트라면 npm/pnpm을 쓰겠지만, Python 프로젝트라면 uv가 훨씬 빠르다.
 
 ## Step 5: Python 버전 관리
 
@@ -331,7 +311,7 @@ cd my-project
 uv sync
 ```
 
-오늘 직접 테스트한 결과 — `.venv`를 지우고 `uv sync`를 실행했을 때 결과:
+오늘 직접 테스트해봤다. `.venv`를 통째로 지우고 `uv sync`를 실행한 결과는 이렇다.
 
 ```
 Using CPython 3.11.12
@@ -374,7 +354,7 @@ jobs:
 
 `astral-sh/setup-uv` 액션이 공식 제공된다. CI 캐시도 자동으로 처리해준다.
 
-[MCP 서버를 Python으로 구축](/ko/blog/ko/mcp-server-build-practical-guide-2026)할 때도 이 CI 패턴이 그대로 적용된다. FastMCP 의존성을 `uv add fastmcp`로 추가하고, GitHub Actions에서 `uv sync`로 설치하면 일관된 빌드 환경을 유지할 수 있다.
+MCP 서버를 Python으로 구축할 때도 이 CI 패턴이 그대로 적용된다. FastMCP 의존성을 `uv add fastmcp`로 추가하고, GitHub Actions에서 `uv sync`로 설치하면 일관된 빌드 환경을 유지할 수 있다.
 
 ## uv tool로 CLI 도구 관리하기
 
@@ -494,7 +474,7 @@ uv add "anthropic[vertex]"
 
 대괄호 문법으로 선택적 확장 기능을 지정한다. `anthropic[bedrock]`은 `boto3`를 추가 설치한다.
 
-## 솔직하게 — uv의 아쉬운 점
+## 솔직하게, uv가 아직 못 해주는 것들
 
 성능만 보면 거의 완벽한 도구지만, 몇 가지 주의할 지점이 있다.
 
@@ -504,9 +484,9 @@ uv add "anthropic[vertex]"
 
 **셋째, `uv run` 명령에 익숙해지는 시간.** `python main.py` 대신 `uv run main.py`로 습관을 바꿔야 한다. 팀원 중 한 명이 `source .venv/bin/activate`를 잊고 시스템 Python으로 스크립트를 실행하는 실수를 방지하는 효과가 있긴 하다.
 
-[LLM 코딩 환경 최적화](/ko/blog/ko/llm-coding-harness-optimization)를 다룬 글에서도 비슷한 관찰을 했는데 — 도구 자체보다 팀의 습관 전환이 더 어렵다.
+LLM 코딩 환경 최적화를 다룬 글에서도 비슷한 관찰을 했다. 도구 자체보다 팀의 습관을 바꾸는 쪽이 늘 더 어렵다.
 
-## 정리: 지금 당장 쓸 수 있는 명령어 레시피
+## 지금 당장 복사해 쓰는 명령어 레시피
 
 ```bash
 # 새 AI 프로젝트 시작
@@ -546,4 +526,4 @@ uv self update
 
 **이미지 brief** (Codex 이미지 생성용): uv의 병렬 다운로드 아키텍처를 보여주는 다이어그램. pip의 순차적 패키지 해결(직렬 화살표)과 uv의 병렬 해결(동시 화살표 여러 개)을 나란히 배치. 배경은 어두운 터미널 테마. 제목은 "uv vs pip: Parallel Resolution". 색상: uv는 보라/인디고, pip은 회색.
 
-관련 깊이 있는 글: [LLM 코딩 환경을 최적화할 때 의존성 관리가 왜 중요한지](/ko/blog/ko/llm-coding-harness-optimization)도 참고하면 전체 개발 워크플로우를 맥락에서 이해하는 데 도움이 된다.
+관련 깊이 있는 글: LLM 코딩 환경을 최적화할 때 의존성 관리가 왜 중요한지도 참고하면 전체 개발 워크플로우를 맥락에서 이해하는 데 도움이 된다.

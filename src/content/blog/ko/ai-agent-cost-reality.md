@@ -12,56 +12,34 @@ tags:
   - engineering-management
   - automation
 relatedPosts:
-  - slug: anthropic-agent-skills-practical-guide
-    score: 0.94
+  - slug: effiflow-automation-analysis-part1
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-standard
-    score: 0.94
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: mastra-ai-typescript-agent-framework-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-agent-teams-guide
-    score: 0.94
+      ko: ai-agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai-agent experience.
+      ja: ai-agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai-agent 的实战经验。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-skills-implementation-guide
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: llm-pm-workflow-automation
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 ## AI 에이전트는 마법이 아니다
 
 AI 에이전트에 대한 기대가 폭발적으로 커지고 있습니다. "에이전트에게 맡기면 인건비를 절감할 수 있다"는 이야기가 넘쳐나고 있죠. 하지만 실제로 AI 에이전트 8체를 운용하고 있는 입장에서 말씀드리면, <strong>현실은 그렇게 단순하지 않습니다</strong>.
 
-이 글에서는 AI 에이전트의 실제 운용 비용을 데이터 기반으로 분석하고, "AI 에이전트는 마법이 아니라 트레이드오프"라는 관점에서 솔직한 경험을 공유합니다.
+그래서 숫자를 직접 들여다봤습니다. 8체를 굴리면서 매달 빠져나가는 비용을 항목별로 쪼개보니, "에이전트는 마법이 아니라 트레이드오프"라는 말이 추상적인 구호가 아니라 청구서로 다가오더군요. 아래는 그 청구서를 솔직하게 풀어낸 기록입니다.
 
 ## 충격적인 데이터: AI 모더레이션 vs 인간 모더레이션
 
@@ -201,7 +179,7 @@ graph TD
 | 일관된 기준 적용 필수 | 예외 상황 대응 |
 | 개인 생산성 확장 (1인 팀) | 팀 협업/커뮤니케이션 |
 
-특히 <strong>1인 개발자나 소규모 팀에서 개인 생산성을 확장</strong>하는 용도로는 AI 에이전트가 압도적으로 효과적입니다. [Anthropic 에이전트 스킬 실전 가이드](/ko/blog/ko/anthropic-agent-skills-practical-guide)에서 구체적인 구현 패턴과 비용 효율적인 설계 방법을 확인할 수 있습니다. 저의 8체 에이전트도 이 목적으로 운용하고 있으며, "사람을 대체한다"가 아니라 "나 혼자서 할 수 있는 범위를 넓힌다"는 관점이 핵심입니다.
+특히 <strong>1인 개발자나 소규모 팀에서 개인 생산성을 확장</strong>하는 용도로는 AI 에이전트가 압도적으로 효과적입니다. Anthropic 에이전트 스킬 실전 가이드에서 구체적인 구현 패턴과 비용 효율적인 설계 방법을 확인할 수 있습니다. 저의 8체 에이전트도 이 목적으로 운용하고 있으며, "사람을 대체한다"가 아니라 "나 혼자서 할 수 있는 범위를 넓힌다"는 관점이 핵심입니다.
 
 ## 실전 비용 최적화 팁
 
@@ -224,7 +202,7 @@ graph TD
 - 실시간 처리가 불필요한 작업은 배치로 모아서 처리
 - 임베딩 결과는 반드시 캐싱 (재계산 비용이 큼)
 
-[LLM PM 워크플로우 자동화](/ko/blog/ko/llm-pm-workflow-automation) 사례에서 이런 배치 처리와 캐싱 전략이 실제 프로덕션 환경에서 어떻게 적용되는지 확인할 수 있습니다.
+LLM PM 워크플로우 자동화 사례에서 이런 배치 처리와 캐싱 전략이 실제 프로덕션 환경에서 어떻게 적용되는지 확인할 수 있습니다.
 
 ### 3. 실패 비용 최소화
 
@@ -232,11 +210,11 @@ graph TD
 - 비싼 모델 호출 전에 저렴한 모델로 사전 검증
 - 에이전트 실패 시 graceful degradation 설계
 
-## 결론: 트레이드오프를 인식하라
+## 8체를 굴리며 배운 네 가지
 
 AI 에이전트는 마법이 아닙니다. <strong>명확한 트레이드오프가 존재하는 엔지니어링 도구</strong>입니다.
 
-핵심 교훈을 정리하면:
+지난 운용에서 건진 교훈을 정리하면:
 
 1. <strong>API 비용은 총 비용의 일부일 뿐입니다.</strong> 엔지니어링 시간, 유지보수, 장애 대응까지 포함해야 합니다.
 2. <strong>라우팅 레이어가 가장 큰 기술적 난관입니다.</strong> 멀티 에이전트 시스템의 진짜 어려움은 개별 에이전트가 아니라 오케스트레이션입니다.

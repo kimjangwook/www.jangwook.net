@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AI智能体可观测性实战指南：让生产环境LLM系统透明化'
 description: '面向工程经理的多智能体LLM系统生产运维可观测性策略。涵盖分布式追踪、指标、日志记录，OpenTelemetry应用，以及Langfuse、LangSmith、Braintrust工具对比。'
 pubDate: '2026-03-12'

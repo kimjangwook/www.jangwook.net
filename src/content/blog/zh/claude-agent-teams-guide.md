@@ -13,56 +13,32 @@ tags:
   - tmux
   - automation
 relatedPosts:
-  - slug: claude-code-cli-migration-guide
-    score: 0.95
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effiflow-automation-analysis-part3
-    score: 0.95
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-practical-guide
-    score: 0.94
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-standard
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-plugins-complete-guide
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
-## 什么是 Agent Teams
+## 子代理和 Agent Teams 到底差在哪
 
-2026 年 2 月 5 日，Anthropic 发布了 Claude Code 的全新实验性功能 <strong>Agent Teams</strong>。与此前只能在单一会话内返回结果的子代理（subagent）不同，Agent Teams 由多个完全独立的 Claude Code 实例组成，它们能够<strong>直接相互通信、协同工作</strong>。
+2026 年 2 月 5 日，Anthropic 发布了 Claude Code 的全新实验性功能 <strong>Agent Teams</strong>。此前的子代理（subagent）只能在单一会话内返回结果，是单向的。Agent Teams 不一样。它由多个完全独立的 Claude Code 实例组成，彼此能够<strong>直接通信、协同工作</strong>。
 
 核心区别如下：
 
@@ -73,11 +49,11 @@ relatedPosts:
 | 协调 | 主代理统一管理 | 通过共享任务列表自主协调 |
 | Token 成本 | 相对较低 | 随队友数量线性增长 |
 
-发布当天，我决定在 OpenClaw 环境中立即测试这一功能。本文记录了从环境搭建到实际运营的完整过程。
+功能发布当天，我就在 OpenClaw 环境里上手试了。本文记录了从环境搭建到实际运营的完整过程。
 
-## 前置准备 — OpenClaw dev 构建
+## 前置准备：OpenClaw dev 构建
 
-使用 Agent Teams 需要最新版 Claude Code。当时 OpenClaw stable 频道存在 cron 任务的 bug，正好需要切换到 dev 频道。（[相关文章](/zh/blog/zh/openclaw-cron-fix-guide/)）
+使用 Agent Teams 需要最新版 Claude Code。当时 OpenClaw stable 频道存在 cron 任务的 bug，正好也得切换到 dev 频道。（相关文章）
 
 ### 启用 pnpm
 
@@ -169,7 +145,7 @@ Agent Teams 支持三种显示模式：
 brew install tmux
 ```
 
-## 团队设计 — 5 个专业团队
+## 我把五个专业团队这样分工
 
 以下是本次组建的 5 个团队及其设计思路。
 
@@ -266,7 +242,7 @@ Agent Teams 的核心机制之一是<strong>共享任务列表</strong>。团队
 
 主管审核后批准或附带反馈驳回。
 
-## OpenClaw × Agent Teams — 协同效应
+## 当 OpenClaw 遇上 Agent Teams
 
 有趣的是，OpenClaw 自身的多代理能力与 Agent Teams 运行在<strong>不同层级</strong>。
 
@@ -339,10 +315,10 @@ OpenClaw 代理（频道层级）
 
 6. <strong>tmux 几乎是必需的</strong>：用 in-process 模式监控 5 个团队非常吃力，tmux 才是正解。
 
-## 总结
+## 用了一天后的体会
 
-Agent Teams 虽然还在实验阶段，但潜力已经显而易见。与 OpenClaw 的多代理架构结合后，能实现频道层级自动化 + 会话层级并行协作的双层体系。
+Agent Teams 虽然还在实验阶段，但潜力已经显而易见。与 OpenClaw 的多代理架构结合后，就能在频道层级自动化之上叠加会话层级的并行协作，形成双层体系。
 
-但现阶段将 Agent Teams 应用于所有任务并不划算。应聚焦于<strong>并行探索、代码审查、竞争假设验证</strong>等场景——独立工作居多、队友间讨论能创造实际价值的场景。
+但现阶段把 Agent Teams 用在所有任务上并不划算。真正划算的，是那些独立工作居多、队友之间靠讨论才能逼出更好答案的场景。并行探索。代码审查。竞争假设验证。把精力放在这些地方。
 
-环境搭建 30 分钟就能搞定。真正的难点在于<strong>如何划分团队、如何拆解任务</strong>这个设计问题。这种直觉，只能在实践中打磨。
+环境搭建 30 分钟就能搞定。真正的难点是另一回事：<strong>如何划分团队、如何拆解任务</strong>这个设计问题。这种直觉，只能在实践中慢慢磨出来。

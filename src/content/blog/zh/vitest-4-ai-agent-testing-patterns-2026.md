@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '用 Vitest 4 测试 AI 代理 — LLM 调用模拟、流式响应测试实战模式'
 description: '我在 Vitest 4.1.7 中直接验证了模拟 Anthropic SDK messages.create() 和流式响应的实战模式。涵盖 vi.fn().mockImplementation(function(){...}) 与箭头函数的区别、用 async function* 生成器重现 SSE 流的方法，以及 9 个测试在 142ms 内通过的完整过程。'
 pubDate: '2026-06-01'

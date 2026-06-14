@@ -1,4 +1,5 @@
 ---
+draft: true
 title: AutoGen 0.7.x マルチエージェント実践 — AssistantAgent·GraphFlow一から構築
 description: >-
   AutoGen

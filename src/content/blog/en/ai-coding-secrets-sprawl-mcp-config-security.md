@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   AI Coding Agents Leaked 29 Million Secrets — The Blind Spot in MCP Config File
   Security

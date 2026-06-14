@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenClaw 설치부터 첫 대화까지 — 완벽 튜토리얼
 description: 'OpenClaw 설치, Telegram 연결, 첫 AI 대화까지 단계별로 안내합니다. Node.js 설정부터 워크스페이스 구조까지.'
 pubDate: '2026-02-04'

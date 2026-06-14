@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 2026年2月のAIモデルラッシュ：7モデルが同月リリースという史上最大の競争
 description: >-
   Gemini 3 Pro GA、Sonnet 5、GPT-5.3、Qwen 3.5、GLM 5、Deepseek v4、Grok

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Gemini 2.5 Flash API 成本优化实战指南 — 实验验证的99%节省策略'
 description: '通过直接实验Gemini 2.5 Flash API发现的四大成本优化技巧：禁用Thinking令牌可削减高达99%费用、Context Caching降低重复调用成本、Flash-Lite与Flash的选型基准、以及Batch API异步调用方案，全程附实测数据说明。'
 pubDate: '2026-05-06'

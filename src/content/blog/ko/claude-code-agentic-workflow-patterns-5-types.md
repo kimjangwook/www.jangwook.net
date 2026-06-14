@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Code 에이전틱 워크플로우 패턴 5가지 — 내 작업에 맞는 패턴은?
 description: >-
   Claude Code의 에이전틱 워크플로우 패턴 5가지 — 순차·운영자·병렬·팀·자율을 직접 사용해보며 정리했습니다. 각 패턴의 작동 원리와

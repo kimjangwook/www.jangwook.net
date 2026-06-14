@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'MCP Apps: Interactive UI Running Inside AI Chat'
 description: >-
   How MCP Apps transform AI agent UX—from sandboxed iframe and JSON-RPC

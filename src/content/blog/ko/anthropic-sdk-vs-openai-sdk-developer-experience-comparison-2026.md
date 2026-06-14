@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropic SDK vs OpenAI SDK 개발자 경험 실측 비교 2026'
 description: 'anthropic 0.100.0과 openai 2.36.0을 직접 설치해 비교합니다. 타입 수 408 vs 230, 에러 계층 설계 차이, 스트리밍 구현 패턴, 툴 호출 포맷, SDK별 고유 기능까지 Python 코드로 직접 검증한 개발자를 위한 실전 비교 가이드입니다.'
 pubDate: '2026-05-09'

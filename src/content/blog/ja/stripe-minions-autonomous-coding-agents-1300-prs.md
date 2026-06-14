@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Stripe Minions — Slackの絵文字ひとつで週1,300件のPRを生み出すコーディングエージェント'
 description: >-
   Stripeが自律コーディングエージェントMinionsで週1,300件以上のPRを生産する方法。Blueprintアーキテクチャ、サンドボックスVM、3段階フィードバックループの実際のエンジニアリングを分析する。

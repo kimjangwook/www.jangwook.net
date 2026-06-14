@@ -14,64 +14,40 @@ tags:
   - n8n
   - langgraph
 relatedPosts:
-  - slug: anthropic-code-execution-mcp
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: bigquery-mcp-prefix-filtering
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-code-execution-practical-implementation
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
   - slug: multi-agent-orchestration-improvement
-    score: 0.95
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: multi-agent 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into multi-agent.
+      ja: multi-agentをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 multi-agent 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
+    reason:
+      ko: dena를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on dena experience.
+      ja: denaを実際に扱った経験が続く記事です。
+      zh: 延续 dena 的实战经验。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.8
+    reason:
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>シリーズ: DeNA LLMスタディ</strong> (5/5 - 最終回)
 >
 > 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: 構造化出力とマルチLLMパイプライン](/ja/blog/ja/dena-llm-study-part2-structured-output)
+> 2. Part 2: 構造化出力とマルチLLMパイプライン
 > 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training)
 > 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag)
 > 5. <strong>Part 5: エージェント設計とマルチエージェントオーケストレーション</strong> ← 現在の記事
 
-## 概要
+## 自律エージェントからオーケストレーションへ
 
-DeNA LLMスタディシリーズの最終編です。Part 5では、LLMを活用した<strong>エージェント設計</strong>と<strong>マルチエージェントオーケストレーション</strong>を扱います。単純なプロンプトエンジニアリングを超えて、自律的に動作するエージェントシステムを構築する方法と、実務で考慮すべきコスト、パフォーマンス、信頼性の問題を集中的に見ていきます。
+シリーズの最終編です。プロンプト1行でLLMを動かす段階はもう過ぎました。今回は、自分で判断してツールを呼び出すエージェントをどう設計するか、そして複数のエージェントをどう束ねて回すかを扱います。ただ、自律性ばかり追うとコストが爆発し、挙動が制御できなくなります。だからこそ、実務でぶつかるコスト、パフォーマンス、信頼性の問題も合わせて見ていきます。
 
 ### Part 5 の主要トピック
 
@@ -82,7 +58,7 @@ DeNA LLMスタディシリーズの最終編です。Part 5では、LLMを活用
 5. <strong>実務事例</strong> - DeNA NOC Alert Agent
 6. <strong>コストおよびパフォーマンス最適化</strong> - セマンティックキャッシング、バッチング、SLM活用
 
-本記事では、DeNAの公式スタディ資料を基に、最新の研究成果と実務事例を追加して包括的にまとめました。
+土台はDeNAの公式スタディ資料です。そこに最新の研究成果と実務事例を重ねました。
 
 ## 1. n8nを活用したLLMワークフロー
 
@@ -753,7 +729,7 @@ async function optimizedQuery(query: string): Promise<string> {
 
 ## 所見および感想
 
-DeNA LLMスタディPart 5をまとめて得た核心インサイトです。
+Part 5を終えて、頭に残ったことを書き留めておきます。
 
 ### 1. 「完全自律」より「オーケストレーション」
 
@@ -784,7 +760,7 @@ LLMは確率的システムです。100%正確な応答は不可能です。
 
 ## シリーズ総まとめ
 
-DeNA LLMスタディPart 1〜5をすべて完了しました。全学習過程を振り返ります。
+これで全5編が終わりました。ここまでの道のりを少し振り返ってみます。
 
 ### 全シリーズから得た洞察
 

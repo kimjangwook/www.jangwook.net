@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 300개 디자인 평가 데이터로 만든 AI 이미지 프롬프트 완벽 가이드
 description: >-
   Banana X의 인포그래픽 평가 데이터 300건을 분석하여 만든 YAML 7-Part Structure 이미지 프롬프트 작성법. 고득점

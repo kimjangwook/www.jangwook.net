@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '将OpenClaw切换到OpenAI Codex — ToS变更后的实战迁移指南'
 description: >-
   Claude和Gemini服务条款变更后，面向OpenClaw用户的OpenAI Codex迁移指南。从备份到模型切换、Agent配置，一文搞定。

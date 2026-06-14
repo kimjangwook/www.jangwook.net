@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Claude Code Routines 实战 — 定时·API·GitHub 事件自动化指南"
 description: "Claude Code Routines 只需一次配置提示词、代码库和连接器，即可在 Anthropic 基础设施上自主运行。本指南详解定时调度、API 调用、GitHub 事件三种触发方式的设置步骤，并分享从 PR 审查自动化到文档漂移检测的实战用例。"
 pubDate: '2026-04-22'

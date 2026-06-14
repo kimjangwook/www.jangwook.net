@@ -1,4 +1,5 @@
 ---
+draft: true
 title: IBM认识到AI替代的局限性，将入门级招聘扩大3倍
 description: IBM认识到AI导入的局限性后，将Gen Z入门级招聘扩大3倍。从EM视角分析AI替代的现实、大企业人力规划和组织设计变化。
 pubDate: '2026-02-15'

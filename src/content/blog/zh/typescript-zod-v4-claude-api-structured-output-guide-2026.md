@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'TypeScript Zod v4 + Claude API 结构化输出指南 — LLM响应类型安全解析'
 description: '通过实际测试Zod v4的safeParse()和更新的schema API处理Claude API响应，构建类型安全的LLM输出解析方案。涵盖v3性能对比、z.string().check()新API、嵌套schema设计策略和生产级错误处理模式。'
 pubDate: '2026-06-02'

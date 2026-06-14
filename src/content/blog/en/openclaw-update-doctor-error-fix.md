@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Fixing OpenClaw Dev Update Error: unknown command ''doctor'''
 description: >-
   How to fix the error: unknown command 'doctor' error when running openclaw

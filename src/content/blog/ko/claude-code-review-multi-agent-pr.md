@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Code Review — 멀티 에이전트 PR 리뷰로 코드 리뷰율 16%→54% 달성'
 description: 'Anthropic이 발표한 Claude Code의 Code Review 기능 완전 분석: 병렬 멀티 에이전트 아키텍처, PR당 평균 $15〜25 비용 구조, 그리고 Engineering Manager가 도입을 검토할 때 알아야 할 모든 것'
 pubDate: '2026-03-11'

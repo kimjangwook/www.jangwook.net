@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 멀티에이전트 스케일링의 과학 — Google이 밝힌 "더 많은 에이전트"의 역설
 description: >-
   Google Research의 180개 설정 정량 실험이 밝힌 멀티에이전트 역설 — 순차 작업에서 39〜70% 성능 저하, 에러 17.2배

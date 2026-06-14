@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'IBM, AI 대체의 한계를 실감하고 엔트리 레벨 채용 3배 확대'
 description: >-
   IBM이 AI 도입의 한계를 인식하고 Gen Z 엔트리 레벨 채용을 3배로 확대합니다. EM 관점에서 AI 대체의 현실, 대기업 인력 계획,

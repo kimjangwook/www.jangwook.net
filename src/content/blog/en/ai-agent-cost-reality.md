@@ -13,56 +13,34 @@ tags:
   - engineering-management
   - automation
 relatedPosts:
-  - slug: anthropic-agent-skills-practical-guide
-    score: 0.94
+  - slug: effiflow-automation-analysis-part1
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-standard
-    score: 0.94
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: mastra-ai-typescript-agent-framework-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-agent-teams-guide
-    score: 0.94
+      ko: ai-agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai-agent experience.
+      ja: ai-agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai-agent 的实战经验。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-skills-implementation-guide
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: llm-pm-workflow-automation
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 ## AI Agents Are Not Magic
 
 Expectations for AI agents are exploding. Stories about "letting agents handle things to cut labor costs" are everywhere. But speaking as someone who actually runs 8 AI agents in production, <strong>reality is far more nuanced</strong>.
 
-In this article, I'll analyze the real operational costs of AI agents with data and share honest experiences from the perspective that "AI agents aren't magic—they're tradeoffs."
+So I went and pulled the actual numbers. Once I broke down what leaves my account every month across all 8 agents, the line "agents aren't magic, they're tradeoffs" stopped being a slogan and turned into an invoice. What follows is that invoice, laid out honestly.
 
 ## The Shocking Data: AI Moderation vs Human Moderation
 
@@ -202,7 +180,7 @@ Looking at costs alone, you might conclude "just hire a person." But there are a
 | Consistent criteria application | Exception handling |
 | Personal productivity scaling (solo teams) | Team collaboration/communication |
 
-AI agents are overwhelmingly effective for <strong>scaling personal productivity as a solo developer or small team</strong>. My 8 agents serve exactly this purpose—the key mindset is not "replacing humans" but "expanding what one person can accomplish." The [Anthropic agent skills practical guide](/en/blog/en/anthropic-agent-skills-practical-guide) covers specific implementation patterns and cost-efficient design for exactly this use case.
+AI agents are overwhelmingly effective for <strong>scaling personal productivity as a solo developer or small team</strong>. My 8 agents serve exactly this purpose. The mindset that matters isn't "replacing humans" but "expanding what one person can get done." The Anthropic agent skills practical guide covers specific implementation patterns and cost-efficient design for exactly this use case.
 
 ## Practical Cost Optimization Tips
 
@@ -225,7 +203,7 @@ This strategy alone can reduce API costs by <strong>40-60%</strong>.
 - Batch non-real-time tasks together
 - Always cache embedding results (recomputation is expensive)
 
-The [LLM PM workflow automation](/en/blog/en/llm-pm-workflow-automation) case study shows how batching and caching strategies like these apply in real production environments.
+The LLM PM workflow automation case study shows how batching and caching strategies like these apply in real production environments.
 
 ### 3. Minimize Failure Costs
 
@@ -233,14 +211,14 @@ The [LLM PM workflow automation](/en/blog/en/llm-pm-workflow-automation) case st
 - Pre-validate with cheaper models before expensive model calls
 - Design graceful degradation for agent failures
 
-## Conclusion: Recognize the Tradeoffs
+## Four Things 8 Agents Taught Me
 
 AI agents aren't magic. They're <strong>engineering tools with clear tradeoffs</strong>.
 
-Key lessons:
+Here's what the past year of running them drove home:
 
 1. <strong>API costs are only part of the total cost.</strong> You must include engineering time, maintenance, and incident response.
-2. <strong>The routing layer is the biggest technical challenge.</strong> The real difficulty in multi-agent systems isn't individual agents—it's orchestration.
+2. <strong>The routing layer is the biggest technical challenge.</strong> The real difficulty in multi-agent systems isn't the individual agents. It's the orchestration.
 3. <strong>Beware over-engineering.</strong> A single well-crafted prompt can beat 40 hours of complex pipeline work.
 4. <strong>Use them for the right purpose.</strong> Excellent for personal productivity scaling, but may cost more than humans for simple labor replacement.
 

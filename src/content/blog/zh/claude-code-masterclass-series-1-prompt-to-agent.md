@@ -12,60 +12,29 @@ tags:
   - 子代理
   - 工作流
 relatedPosts:
-  - slug: claude-agent-teams-guide
-    score: 0.95
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-cli-migration-guide
-    score: 0.95
+      ko: 자동화 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into 자동화.
+      ja: 자동화をもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 자동화 主题。
+  - slug: claude-code-parallel-sessions-git-worktree
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effiflow-automation-analysis-part3
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: github-agentic-workflows-cicd-ai
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: jira-ai-agents-mcp-engineering-management
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: claudecode를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claudecode experience.
+      ja: claudecodeを実際に扱った経験が続く記事です。
+      zh: 延续 claudecode 的实战经验。
 ---
 
 你现在读到的这篇文章，很可能是今天早上11点30分自动触发的launchd任务唤醒了Claude Code，执行了`/daily-tech-blog`斜线命令，再由多个子代理分工完成研究和翻译后生成的。
 
 过去几个月，我一直在亲手构建和运维这套自动化管道。它并不完美——有时会触发超时，有时构建失败，有时只生成了某一种语言的版本就结束了。但如果没有这套系统，每天用4种语言发布文章根本不可能实现。
 
-这个系列记录的就是这一过程中学到的东西。第1篇聚焦最核心的三步：<strong>斜线命令</strong>、<strong>Hook</strong>、<strong>子代理</strong>——从零开始构建的方法。
+这个系列记录的就是这一过程中学到的东西。第1篇聚焦最核心的三步，讲清楚从零构建的方法：<strong>斜线命令</strong>、<strong>Hook</strong>和<strong>子代理</strong>。
 
-## Step 1：斜线命令 — `.claude/commands/` 文件夹就是全部
+## Step 1：斜线命令: `.claude/commands/` 文件夹就是全部
 
 在Claude Code中创建`/commit`、`/review`、`/deploy`这类命令的方法出奇地简单：只需在`.claude/commands/`目录下放一个`.md`文件。
 
@@ -100,7 +69,7 @@ Report errors clearly with the step number.
 
 就这些。在Claude Code会话中输入`/publish my-post-slug`，上面定义的工作流就会执行。Claude将每个步骤解释后转换为工具调用。
 
-第一次看到这个结构时，让我惊讶的是"不需要编程语言"。用文本写下流程，Claude就会按情况自行执行。当然，有时解释结果和意图有偏差——这种不可预测性至今仍是挑战。
+第一次看到这个结构时，让我惊讶的是"不需要编程语言"。用文本写下流程，Claude就会按情况自行执行。当然，有时解释结果和意图有偏差。这种不可预测性至今仍是挑战。
 
 ### 编写命令的技巧
 
@@ -124,7 +93,7 @@ Research, write, validate, and publish one daily article.
 
 "Never ask the user"这一行是实现自主运行模式的关键。没有它，Claude在遇到不确定情况时就会停下来询问确认。在定时任务中这是致命的。
 
-## Step 2：settings.json Hook — 事件驱动的自动化
+## Step 2：settings.json Hook: 事件驱动的自动化
 
 如果斜线命令定义"做什么"，Hook定义的就是"什么时候自动触发"。
 
@@ -169,7 +138,7 @@ Research, write, validate, and publish one daily article.
 
 在我的配置中最有用的是`Stop` Hook。长时间自动化任务（30分钟〜1小时）完成后，会收到Telegram通知。设置好这个之后，我就彻底摆脱了盯着终端看"结束了没有"的习惯。
 
-### permissions配置 — 基于白名单的安全控制
+### permissions配置: 基于白名单的安全控制
 
 与Hook一起必须配置的是`permissions`。默认情况下，Claude Code在执行每条Bash命令前都会请求用户审批。在自动化环境中，这个行为会阻断整个管道。
 
@@ -193,9 +162,9 @@ Research, write, validate, and publish one daily article.
 
 <strong>注意</strong>：白名单设置过宽（如`Bash(*)`）可能导致意外命令执行。只注册实际需要的命令模式才是安全做法。
 
-在实际代码审查管道中应用Hook的详细案例，可以参考[用Claude Code Hook构建自动化代码审查系统](/zh/blog/zh/claude-code-hooks-workflow)。
+在实际代码审查管道中应用Hook的详细案例，可以参考用Claude Code Hook构建自动化代码审查系统。
 
-## Step 3：子代理委托 — `.claude/agents/` 专业化AI
+## Step 3：子代理委托: `.claude/agents/` 专业化AI
 
 让单个Claude实例同时处理研究 + 写作 + SEO优化 + 翻译 + 构建，会降低每项任务的专注度，也浪费Token上下文。
 
@@ -285,7 +254,7 @@ launchd plist的配置也值得参考：
 
 将日志重定向到文件，在调试"为什么今天的文章没有发布"时帮助极大。
 
-## 实际入门 — 5分钟最小配置
+## 实际入门: 5分钟最小配置
 
 为刚开始尝试三步走的人整理了最简工作示例，可以直接应用到现有项目。
 
@@ -343,7 +312,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 这4个文件是最小工作单元。有了这些，`/review`就能分析暂存的变更，工作完成后收到语音通知，需要详细检查时委托给`checker`代理。
 
-## 诚实的评价 — 哪些地方不好用
+## 诚实的评价: 哪些地方不好用
 
 运行这套系统三个月后，我遇到了一些现实的限制。
 
@@ -351,19 +320,19 @@ Rate: SAFE / CAUTION / CRITICAL
 
 <strong>超时处理</strong>：构建慢或子代理链条太长，就会触发60分钟超时。文章只生成到一半就中断。如果没有超时检测后的清理逻辑，仓库状态会变得混乱。
 
-<strong>代理质量的非确定性</strong>：同一个命令执行两次，结果可能不同。文章质量、内链位置、relatedPosts选择——每天都不一样。这是LLM的特性，无法消除，只能通过QA循环（validate:publishing、astro check、build）来保证最低质量标准。
+<strong>代理质量的非确定性</strong>：同一个命令执行两次，结果可能不同。文章质量、内链位置、relatedPosts选择，每天都不一样。这是LLM的特性，无法消除，只能通过QA循环（validate:publishing、astro check、build）来保证最低质量标准。
 
 说实话，把这套系统称为"生产就绪"还为时过早。按我的标准，它是"对个人自动化来说足够稳定的水平"。在团队规模使用，需要更健壮地设计错误恢复、状态管理和审计日志。
 
-如果需要系统性地分析代理工作流的框架，[Claude Code代理工作流5种模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)是很好的参考。
+如果需要系统性地分析代理工作流的框架，Claude Code代理工作流5种模式是很好的参考。
 
 ## 下一篇：#2 MCP服务器集成
 
 第1篇涵盖了在`.claude/`文件夹内完结的自动化。
 
-第2篇更进一步——<strong>从头构建MCP服务器，将Claude Code连接到外部工具</strong>。读取Notion数据库、发送Slack消息、查询PostgreSQL——这些外部系统集成都可以通过一条斜线命令完成。
+第2篇更进一步，<strong>从头构建MCP服务器，将Claude Code连接到外部工具</strong>。读取Notion数据库、发送Slack消息、查询PostgreSQL，这些外部系统集成都可以通过一条斜线命令完成。
 
-如果已经尝试过MCP服务器构建，[MCP服务器从零构建实践指南](/zh/blog/zh/mcp-server-build-practical-guide-2026)是很好的预备阅读材料。
+如果已经尝试过MCP服务器构建，MCP服务器从零构建实践指南是很好的预备阅读材料。
 
 ---
 

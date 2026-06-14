@@ -13,51 +13,27 @@ tags:
   - AgentKit
   - AI Agent
 relatedPosts:
-  - slug: ai-content-recommendation-system
-    score: 0.94
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: google-analytics-mcp-automation
-    score: 0.94
+      ko: openai 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into openai.
+      ja: openaiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 openai 主题。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: specification-driven-development
-    score: 0.94
+      ko: ai agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai agent experience.
+      ja: ai agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai agent 的实战经验。
+  - slug: claude-agent-sdk-tool-use-complete-guide-2026
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-collaboration-patterns
-    score: 0.92
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
+      ko: 같은 ai agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai agent track.
+      ja: 同じai agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai agent 脉络中可一并阅读。
 ---
 
 > <strong>Series: Master OpenAI AgentKit</strong> (2/2)
@@ -65,13 +41,15 @@ relatedPosts:
 > 1. [OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started](/en/blog/en/openai-agentkit-tutorial-part1)
 > 2. <strong>OpenAI AgentKit Complete Guide Part 2: Production Deployment and Advanced Patterns</strong> ← Current Article
 
-In Part 1, we learned AgentKit's basic concepts and foundational tutorials. In Part 2, we'll explore how to build enterprise-grade systems in actual production environments.
+Part 1 covered the basics. The moment you push past a demo and put real traffic on an agent system, a different set of problems shows up. How do you coordinate several agents at once? What happens when one of them fails mid-task? How do you keep one tenant's data from leaking into another's session?
+
+Part 2 is about those questions. We'll work through enterprise-grade architecture patterns, the way real companies have actually deployed them, with code you can lift straight into your own project.
 
 ## 1. Enterprise Architecture Patterns
 
 ### 1.1 Hierarchical Manager-Worker Pattern
 
-In large-scale projects, a single agent cannot handle all tasks. A hierarchical structure where a manager agent formulates overall strategy and delegates work to specialized worker agents is effective.
+A single agent stops scaling somewhere around the point your project has more than one moving part. The fix is hierarchy. One manager agent owns the overall strategy and hands discrete pieces of work to specialist workers, each focused on what it does best.
 
 <strong>Architecture Diagram</strong>:
 
@@ -194,7 +172,7 @@ result = runner.run(
 
 ### 1.2 Event-Driven Orchestration
 
-For real-time systems, a pattern that reacts to events and activates appropriate agents is effective.
+Real-time systems rarely fit a top-down command structure. Here the better fit is a pattern that listens for events and wakes the right agent in response.
 
 <strong>Architecture Diagram</strong>:
 
@@ -318,7 +296,7 @@ asyncio.run(main())
 
 ### 1.3 Graph-Based Workflow (LangGraph Integration)
 
-For complex decision flows, a graph structure with conditional branching and dynamic routing is suitable.
+Once your logic involves loops, conditional branches, and routing that changes at runtime, a flat handoff list gets unwieldy. A graph structure handles that kind of decision flow cleanly.
 
 <strong>Workflow Diagram</strong>:
 
@@ -496,7 +474,7 @@ print(f"Resolved: {result['resolved']}, Escalated: {result['escalated']}")
 
 ## 2. Custom MCP Server Development
 
-AgentKit's true power lies in building custom tools through the MCP protocol. Let's see how to integrate with internal enterprise systems (Slack, JIRA, internal databases, etc.).
+Most of AgentKit's real leverage comes from the tools you build yourself through the MCP protocol. Say you want your agents talking to Slack, JIRA, or an internal database. Here's how that wiring actually works.
 
 ### 2.1 Slack Integration MCP Server
 
@@ -1319,9 +1297,9 @@ results = runner.run_batch(
 
 ---
 
-## Conclusion
+## Wrapping Up Part 2
 
-In Part 2, we explored AgentKit's advanced features:
+That was a lot of ground. Here's what we covered, in case you want to come back to a specific piece later:
 
 1. <strong>Enterprise Architecture Patterns</strong>: Hierarchical, event-driven, and graph-based patterns
 2. <strong>Custom MCP Servers</strong>: How to develop custom tools like Slack integration
@@ -1330,7 +1308,7 @@ In Part 2, we explored AgentKit's advanced features:
 5. <strong>Real-World Case Studies</strong>: SaaS onboarding 70% time reduction, data pipeline auto-recovery 82% MTTR reduction, DevOps manual review 94% reduction
 6. <strong>Performance Optimization</strong>: Parallel processing, streaming, batch processing
 
-AgentKit is a powerful platform for building AI agent systems at any scale, from theory to practice.
+None of these patterns are exotic. They're the same shapes you'd reach for in any distributed system, just applied to agents. Start with one, get it stable, then layer in the next.
 
 <strong>Next Steps</strong>:
 

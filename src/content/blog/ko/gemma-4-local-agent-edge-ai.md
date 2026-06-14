@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Gemma 4를 로컬에서 돌려봤다 — 8B 모델이 함수 호출까지 해내는 시대
 description: >-
   Google이 Apache 2.0으로 공개한 Gemma 4를 Ollama로 직접 설치해 한국어, 구조화 출력, 함수 호출까지 테스트했다.

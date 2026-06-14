@@ -35,12 +35,20 @@ export const GET: APIRoute = async () => {
   const allPosts = await getCollection('blog');
   const langPosts = filterIndexablePosts(allPosts).filter(post => post.id.startsWith(`${LANG}/`));
 
+  // 정적 페이지 lastmod는 "빌드 시각"이 아니라 "가장 최근 발행글 날짜"를 사용한다.
+  // new Date()를 쓰면 매일 도는 CI 빌드에서 모든 정적 페이지가 "오늘 수정됨"으로
+  // 표시되어 거짓 신선도(스팸) 신호가 된다. 실제 콘텐츠가 갱신될 때만 lastmod가 움직인다.
+  const latestMod = langPosts
+    .map(post => (post.data.updatedDate || post.data.pubDate).toISOString().split('T')[0])
+    .sort()
+    .at(-1) || new Date().toISOString().split('T')[0];
+
   // Generate URLs
   const urls = [
     // Static pages
     ...staticPages.map(page => ({
       loc: `${SITE}${page.path}`,
-      lastmod: new Date().toISOString().split('T')[0],
+      lastmod: latestMod,
       changefreq: page.changefreq,
       priority: page.priority,
     })),

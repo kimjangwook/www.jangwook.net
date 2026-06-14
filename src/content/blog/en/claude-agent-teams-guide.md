@@ -13,56 +13,32 @@ tags:
   - tmux
   - automation
 relatedPosts:
-  - slug: claude-code-cli-migration-guide
-    score: 0.95
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effiflow-automation-analysis-part3
-    score: 0.95
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-practical-guide
-    score: 0.94
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-agent-skills-standard
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-plugins-complete-guide
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
-## What Are Agent Teams?
+## How Agent Teams differ from subagents
 
-On February 5, 2026, Anthropic announced <strong>Agent Teams</strong> — a new experimental feature for Claude Code. While subagents run within a single session and can only report results back to the caller, Agent Teams consist of fully independent Claude Code instances that <strong>communicate directly with each other</strong>.
+On February 5, 2026, Anthropic announced <strong>Agent Teams</strong>, a new experimental feature for Claude Code. Subagents run within a single session and can only report results back to the caller. Agent Teams work differently. They consist of fully independent Claude Code instances that <strong>communicate directly with each other</strong>.
 
 Here's the key difference:
 
@@ -73,11 +49,11 @@ Here's the key difference:
 | Coordination | Main agent handles everything | Self-coordination via shared task list |
 | Token cost | Relatively low | Scales with number of teammates |
 
-The day of the announcement, I decided to test this in my OpenClaw environment. This post documents the entire process — the setup, the stumbling blocks, and the lessons learned.
+I tested it in my OpenClaw environment the same day it dropped. This post documents the whole process: the setup, the stumbling blocks, and what I learned along the way.
 
-## Prerequisites — OpenClaw Dev Build
+## Prerequisites: the OpenClaw dev build
 
-Agent Teams requires the latest Claude Code. At the time, OpenClaw's stable channel had a cron job bug that needed fixing anyway, so switching to the dev channel was a two-birds-one-stone situation. ([Related post](/en/blog/en/openclaw-cron-fix-guide/))
+Agent Teams requires the latest Claude Code. At the time, OpenClaw's stable channel had a cron job bug that needed fixing anyway, so switching to the dev channel killed two birds with one stone. (Related post)
 
 ### Enable pnpm
 
@@ -151,7 +127,7 @@ Agent Teams supports three display modes:
 - <strong>tmux</strong>: Each teammate gets its own tmux split pane. See everyone's output at once.
 - <strong>iTerm2</strong>: Auto-splits when running in iTerm2.
 
-The default is `auto` — split panes if you're already in tmux, in-process otherwise.
+The default is `auto`: split panes if you're already in tmux, in-process otherwise.
 
 I explicitly set <strong>tmux mode</strong>:
 
@@ -169,7 +145,7 @@ If tmux isn't installed:
 brew install tmux
 ```
 
-## Team Design — 5 Specialized Teams
+## How I split the five teams
 
 Here's how I structured the five teams and the thinking behind each.
 
@@ -183,7 +159,7 @@ Blog post creation, hero image generation, multilingual content management. This
 
 ### 3. invest (Investment)
 
-Market analysis, portfolio review, risk assessment — all running in parallel.
+Market analysis, portfolio review, and risk assessment, all running in parallel.
 
 ### 4. dev (Development)
 
@@ -266,9 +242,9 @@ Require plan approval before any changes.
 
 The lead reviews and approves or rejects with feedback.
 
-## OpenClaw × Agent Teams — The Synergy
+## Where OpenClaw and Agent Teams meet
 
-Here's what makes this interesting: OpenClaw's multi-agent capabilities and Agent Teams operate at <strong>different layers</strong>.
+Here's what makes this interesting. OpenClaw's multi-agent capabilities and Agent Teams operate at <strong>different layers</strong>.
 
 ### OpenClaw Multi-Agent
 
@@ -319,7 +295,7 @@ Each teammate uses its own context window, so token consumption spikes fast.
 
 - Use subagents for simple tasks
 - Reserve Agent Teams for <strong>discussion, review, and parallel exploration</strong>
-- Minimize broadcast messages — cost scales with team size
+- Minimize broadcast messages, since cost scales with team size
 
 ### 4. Permission management
 
@@ -339,10 +315,10 @@ Teammates inherit the lead's permission settings. If the lead runs with `--dange
 
 6. <strong>tmux is practically required</strong>: Monitoring 5 teams in in-process mode is painful. tmux is the way to go.
 
-## Wrapping Up
+## What a day with it taught me
 
-Agent Teams are still experimental, but the potential is clear. Combined with OpenClaw's multi-agent architecture, you get a dual-layer system: channel-level automation plus session-level parallel collaboration.
+Agent Teams are still experimental, but the potential is clear. Combined with OpenClaw's multi-agent architecture, you get a dual-layer system: channel-level automation sitting on top of session-level parallel collaboration.
 
-That said, applying Agent Teams to every task right now would be wasteful. Focus on scenarios where <strong>parallel exploration, code review, and competing hypothesis testing</strong> thrive — where independent work and inter-teammate discussion genuinely create value.
+That said, throwing Agent Teams at every task right now would be wasteful. The scenarios that pay off are the ones where independent work piles up and teammates actually argue their way to a better answer. Parallel exploration. Code review. Competing hypothesis testing. Focus there.
 
-The setup takes 30 minutes. The hard part is <strong>deciding what to team up and how to decompose tasks</strong>. That intuition only comes from hands-on experience.
+Setup takes 30 minutes. The hard part is something else entirely: <strong>deciding what to team up and how to decompose tasks</strong>. That intuition only comes from getting your hands dirty.

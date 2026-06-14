@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Code 6월 2026 업데이트 분석 — Safe Mode, Opus 4.8, 요금 2배'
 description: >-
   2026년 6월 Claude Code 업데이트 완전 분석 — Safe Mode 권한 격리, /cd 커맨드 추가, Opus 4.8 기본값

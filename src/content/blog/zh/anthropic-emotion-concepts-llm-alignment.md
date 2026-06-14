@@ -1,4 +1,5 @@
 ---
+draft: true
 title: LLM内部存在情感 — Anthropic在Claude内部发现了171个情感表征
 description: Anthropic可解释性团队在Claude内部发现了171个类情感表征，并证明它们对模型输出具有因果影响。整理对提示工程和AI安全的实际启示。
 pubDate: '2026-04-04'

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Hindsight — AIエージェントに学習する記憶を与えるMCPメモリ
 description: >-
   AIエージェントに学習する記憶を与えるオープンソースMCPメモリシステムHindsight。LongMemEval

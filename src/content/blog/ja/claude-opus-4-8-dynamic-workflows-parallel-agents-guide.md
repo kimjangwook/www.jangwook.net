@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Claude Opus 4.8 Dynamic Workflows 実践分析"
 description: "Claude Opus 4.8の1,000個の並列サブエージェントとFast Modeがエージェント開発ワークフローを実際にどう変えるか深掘り分析。公式リリースドキュメントと実装事例をもとに、マルチエージェントアーキテクチャ、コスト構造、運用上の限界を整理した。"
 pubDate: '2026-05-29'

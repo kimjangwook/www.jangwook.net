@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   MiniMax M2.5: The Performance Gap Between Open-Weight and Proprietary Models
   Hits an All-Time Low

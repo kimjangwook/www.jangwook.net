@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Dapr Agents v1.0 GA — AI 에이전트를 Kubernetes에서 죽지 않게 만드는 법
 description: >-
   KubeCon Europe 2026에서 발표된 Dapr Agents v1.0의 durable workflow, 자동 복구,

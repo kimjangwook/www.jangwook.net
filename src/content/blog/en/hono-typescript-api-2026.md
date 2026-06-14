@@ -1,49 +1,51 @@
 ---
-title: 'Hono.js + TypeScript Edge REST API — Cloudflare Workers Deployment Guide'
-description: 'I built a type-safe REST API with Hono v4, Bun 1.3, and Zod v4. This guide covers routing, Zod input validation, CORS/logger/timing middleware, and Cloudflare Workers deployment config — with real terminal logs and step-by-step code.'
+title: Hono.js + TypeScript Edge REST API — Cloudflare Workers Deployment Guide
+description: >-
+  I built a type-safe REST API with Hono v4, Bun 1.3, and Zod v4. This guide
+  covers routing, Zod input validation, CORS/logger/timing middleware, and
+  Cloudflare Workers deployment config — with real terminal logs and
+  step-by-step code.
 pubDate: '2026-06-03'
-heroImage: '../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-hero.png'
-tags: ['Hono', 'TypeScript', 'REST API', 'Cloudflare Workers']
+heroImage: >-
+  ../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-hero.png
+tags:
+  - Hono
+  - TypeScript
+  - REST API
+  - Cloudflare Workers
 relatedPosts:
-  - slug: 'bun-shell-scripting-practical-guide-2026'
-    score: 0.87
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.9
     reason:
-      ko: 'Bun Shell로 자동화 스크립트를 이미 다뤘다면, 같은 Bun 런타임 위에서 Hono로 HTTP API 서버를 올리는 과정이 자연스러운 다음 단계다.'
-      ja: 'Bun Shellで自動化スクリプトを書いたなら、同じBunランタイム上でHonoのHTTP APIサーバーを立てるのが自然な次のステップだ。'
-      en: 'If you already know Bun Shell scripting, running a Hono HTTP API on the same Bun runtime is the natural next step — same ecosystem, different use case.'
-      zh: '如果你已经熟悉Bun Shell脚本，在同一Bun运行时上用Hono搭建HTTP API服务器是顺理成章的下一步。'
-  - slug: 'typescript-zod-v4-claude-api-structured-output-guide-2026'
-    score: 0.83
+      ko: TypeScript 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into TypeScript.
+      ja: TypeScriptをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 TypeScript 主题。
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.85
     reason:
-      ko: 'Hono에서 @hono/zod-validator로 입력을 검증할 때 Zod v4의 변경된 스키마 API를 그대로 사용한다.'
-      ja: 'HonoでZodバリデーションを使う際、Zod v4のスキーマAPIをそのまま活用できる。'
-      en: 'When you use @hono/zod-validator in Hono, you are directly using Zod v4 schema APIs. Reading both posts together clarifies where Zod v4 breaking changes show up in practice.'
-      zh: '在Hono中使用@hono/zod-validator时，直接用到Zod v4的schema API。'
-  - slug: 'ollama-fastapi-production-deployment-guide-2026'
-    score: 0.74
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.8
     reason:
-      ko: 'Python 생태계에서 FastAPI가 하는 역할을 JavaScript/TypeScript 생태계에서 Hono가 담당한다.'
-      ja: 'PythonエコシステムでFastAPIが担う役割を、JavaScript/TypeScriptエコシステムではHonoが担う。'
-      en: 'Hono does for TypeScript what FastAPI does for Python — a lightweight, fast framework for HTTP APIs. Comparing the two reveals how edge computing trends cross language boundaries.'
-      zh: 'Hono在TypeScript生态中扮演的角色，正如FastAPI在Python生态中的地位。'
-  - slug: 'uv-python-ai-development-setup-guide-2026'
-    score: 0.68
-    reason:
-      ko: 'uv가 Python 프로젝트 부트스트랩을 빠르게 만든 것처럼, Bun + Hono도 TypeScript API 서버의 시작 시간을 극적으로 줄인다.'
-      ja: 'uvがPythonプロジェクトの起動を速くしたように、Bun+HonoもTypeScript APIサーバーの立ち上がりを劇的に短縮する。'
-      en: 'Just as uv dramatically speeds up Python project bootstrapping, Bun + Hono does the same for TypeScript API servers. Both stories are about developer tooling going fast.'
-      zh: '就像uv大幅加速Python项目启动一样，Bun+Hono也极大缩短了TypeScript API服务器的启动时间。'
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
 If you've ever built a REST API with Express, you've probably felt it. Middleware registration, type definitions, body parser setup, connecting Joi or Zod... the structure is simple, but the boilerplate is excessive. When I first saw Hono, I was skeptical. "Another Express clone," I thought. That changed when I actually ran it.
 
 Bottom line: Hono v4 is more than just lightweight and fast. TypeScript type inference flows naturally all the way to route handlers. Zod validation connects via a single official package. On Bun, response times are noticeably faster than Express. Everything in this post is based on what I ran in a sandbox in June 2026.
 
-## Why Hono — Compared to Express and Fastify
+## Why Hono: Compared to Express and Fastify
 
 Understanding where Hono fits means answering three questions.
 
-**Bundle size**: Hono v4 core is about 12KB. Express is 58KB, Fastify is 77KB. The gap might not sound dramatic, but in edge environments like Cloudflare Workers or Deno Deploy, bundle size directly affects cold start time. Edge functions sometimes initialize a new runtime per request — smaller means faster first response.
+**Bundle size**: Hono v4 core is about 12KB. Express is 58KB, Fastify is 77KB. The gap might not sound dramatic. But in edge environments like Cloudflare Workers or Deno Deploy, bundle size directly affects cold start time. Edge functions sometimes initialize a new runtime per request, so smaller means a faster first response.
 
 **Runtime compatibility**: Express is Node.js-only. Fastify targets Node.js by default. Hono was designed from the start to "run anywhere." The same code deploys to Bun, Deno, Cloudflare Workers, Node.js, and AWS Lambda Edge.
 
@@ -51,7 +53,7 @@ Understanding where Hono fits means answering three questions.
 
 I'm not saying Hono is the right choice for every situation. If your team is deeply invested in Express, or you need a mature plugin ecosystem, there's no compelling reason to switch. But if edge deployment is the goal, or you want type safety from day one, Hono is the most convincing TypeScript API framework right now.
 
-## Installation and First Server — Response in 30 Seconds
+## Installation and First Server: Response in 30 Seconds
 
 I started from scratch in a sandbox. Bun 1.3.14.
 
@@ -101,7 +103,7 @@ curl http://localhost:3000/
 
 `export default app` — that single line is recognized as the entry point for Bun, Deno, and Cloudflare Workers alike. For Node.js, add `serve(app)` and you're done. No runtime-branching code needed. That felt like the biggest quality-of-life win.
 
-## Middleware Stack — logger, CORS, timing
+## Middleware Stack: logger, CORS, timing
 
 ![Hono Middleware Stack Architecture](../../../assets/blog/hono-typescript-api-2026/hono-typescript-api-2026-arch.png)
 
@@ -142,7 +144,7 @@ app.use('*', cors({
 
 The `cors()` default allows all origins. In production, always specify `origin` explicitly.
 
-## Zod Validation — Automatic 400 Errors
+## Zod Validation: Automatic 400 Errors
 
 `@hono/zod-validator` is Hono's official Zod integration. Drop it in as middleware on a route, and any Zod schema validation failure automatically returns a 400.
 
@@ -186,9 +188,9 @@ curl -X POST http://localhost:3000/tasks \
 
 HTTP 400, automatically. No validation code needed inside the handler.
 
-`c.req.valid('json')` is the key. What comes back is already Zod-validated and fully typed. If you've worked with [Zod v4 and Claude API structured output](/en/blog/en/typescript-zod-v4-claude-api-structured-output-guide-2026), the v4 schema API changes apply here too — `@hono/zod-validator` supports both v3 and v4.
+`c.req.valid('json')` is the key. What comes back is already Zod-validated and fully typed. If you've worked with Zod v4 and Claude API structured output, the v4 schema API changes apply here too. And `@hono/zod-validator` supports both v3 and v4, so the version question rarely bites you.
 
-## Full CRUD Implementation — With Real Execution Logs
+## Full CRUD Implementation: With Real Execution Logs
 
 Here's the complete Task CRUD API, with the actual terminal output from running it. In-memory storage for this example (swap in D1, Prisma, or Drizzle for production).
 
@@ -304,9 +306,9 @@ Started development server: http://localhost:3000
 
 Performance numbers: first request 4ms, warm requests sub-millisecond (0ms in logger output). Running the same logic in Express on the same machine showed 1〜2ms warm. The real production edge gap would likely be larger.
 
-The reason for this performance: Bun's JavaScriptCore engine plus Hono's Trie-based router. Hono's router matches routes near O(1) regardless of how many routes you add — no linear scanning.
+The reason for this performance: Bun's JavaScriptCore engine plus Hono's Trie-based router. Hono's router matches routes near O(1) regardless of how many routes you add. There's no linear scanning.
 
-## Cloudflare Workers Deployment — Zero Code Changes
+## Cloudflare Workers Deployment: Zero Code Changes
 
 The biggest Hono advantage: changing the deployment target barely changes the code.
 
@@ -371,7 +373,7 @@ wrangler deploy
 
 I didn't verify `wrangler deploy` — that requires an actual Cloudflare account. The code structure is exactly as shown above, and the only difference from the local Bun server is how you access bindings like `c.env.DB`.
 
-[Cloudflare Workers agent infrastructure](/en/blog/en/cloudflare-agents-week-2026-autonomous-infrastructure) shows how Hono sits at the API layer in Cloudflare-based AI agent systems. It's already being used this way in production.
+Cloudflare Workers agent infrastructure shows how Hono sits at the API layer in Cloudflare-based AI agent systems. It's already being used this way in production.
 
 ## Type-Safe Middleware with Variables
 
@@ -406,7 +408,7 @@ app.get('/tasks', (c) => {
 })
 ```
 
-`c.get('userId')` returns `string` — TypeScript infers this from the `Variables` declaration. With Express, this inference didn't happen automatically.
+`c.get('userId')` returns `string`. TypeScript infers this from the `Variables` declaration. With Express, that inference didn't happen automatically.
 
 ## What I Found Frustrating
 
@@ -416,9 +418,9 @@ There are real limitations worth naming.
 
 **D1 local dev experience**: Testing against Cloudflare D1 locally requires `wrangler dev`, which requires an actual Cloudflare account to configure bindings. SQLite compatibility makes Drizzle/Prisma usable, but the local dev setup is more involved than Express + PostgreSQL.
 
-**`wrangler dev` cold start**: The first run of `wrangler dev` is slow because it emulates the Cloudflare runtime. Running with Bun directly starts instantly — but that skips Workers-specific behavior testing.
+**`wrangler dev` cold start**: The first run of `wrangler dev` is slow because it emulates the Cloudflare runtime. Running with Bun directly starts instantly, but that skips Workers-specific behavior testing.
 
-If edge deployment isn't your goal and you're building a conventional server, Fastify is more mature than Hono. The [Ollama + FastAPI approach](/en/blog/en/ollama-fastapi-production-deployment-guide-2026) — different language, same concept — is another valid path.
+If edge deployment isn't your goal and you're building a conventional server, Fastify is more mature than Hono. The [Ollama + FastAPI approach](/en/blog/en/ollama-fastapi-production-deployment-guide-2026), a different language solving the same problem, is another valid path.
 
 ## When to Choose Hono
 
@@ -435,9 +437,9 @@ My judgment:
 - You need a mature plugin ecosystem for enterprise-scale services
 - Heavy integration with legacy Node.js code
 
-Hono's GitHub stars crossed 66,000 in 2026. If you've already [set up a Bun Shell scripting environment](/en/blog/en/bun-shell-scripting-practical-guide-2026), adding Hono is the logical next step. Same runtime, same package manager, same TypeScript ecosystem — API server included.
+Hono's GitHub stars crossed 66,000 in 2026. If you've already [set up a Bun Shell scripting environment](/en/blog/en/bun-shell-scripting-practical-guide-2026), adding Hono is the logical next step. Same runtime, same package manager, same TypeScript ecosystem, and now the API server lives there too.
 
-## Cheat Sheet — Patterns I Look Up Every Time
+## Cheat Sheet: Patterns I Look Up Every Time
 
 ```typescript
 // Query parameter
@@ -477,7 +479,7 @@ api.post('/users', ...)
 app.route('/api/v1', api)
 ```
 
-## Wrap-Up — Notes After Running It
+## Wrap-Up: Notes After Running It
 
 This post started from `bun add hono @hono/zod-validator zod` and worked through a full CRUD API. In-memory storage limits what you can call "production-ready," but the routing, middleware, and Zod validation integration all checked out.
 

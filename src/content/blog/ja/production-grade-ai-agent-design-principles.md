@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AIエージェントのプロダクション展開における9つの設計原則 — arXiv最新論文に基づく実践ガイド'
 description: '2026年のAIエージェントプロダクション移行の核心課題を解決する9つの設計原則を、arXiv論文と実務事例を通じてEngineering Manager視点でまとめます。'
 pubDate: '2026-03-13'

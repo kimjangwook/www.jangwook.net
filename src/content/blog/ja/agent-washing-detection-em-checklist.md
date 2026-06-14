@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'エージェントウォッシング見抜き術: EMのための7つのチェックリスト'
 description: >-
   数千のAIエージェントベンダーのうち本物は130社のみ。Engineering

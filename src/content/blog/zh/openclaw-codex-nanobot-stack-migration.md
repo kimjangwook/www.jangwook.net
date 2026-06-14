@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 我为什么从OpenClaw转向Codex+Nanobot
 description: >-
   从OpenClaw迁移到Codex+Nanobot的实战经验分享。对比launchd调度配置、Telegram桥接集成和MCP宿主组合的真实利弊，

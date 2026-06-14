@@ -11,58 +11,27 @@ tags:
   - saas
   - supabase
 relatedPosts:
-  - slug: claude-code-parallel-testing
-    score: 0.95
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.9
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: llm-page-migration-standardization
-    score: 0.95
+      ko: AI 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into AI.
+      ja: AIをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 AI 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: ai-content-recommendation-system
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: google-analytics-mcp-automation
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: AI를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on AI experience.
+      ja: AIを実際に扱った経験が続く記事です。
+      zh: 延续 AI 的实战经验。
 ---
 
-## 概要
+## 3日間でプロダクションまで持っていった話
 
-3日間でAIベースのB2B SaaSをプロダクションまでローンチしました。<a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">Agent Effi Flow</a>という名前のこのサービスは、免税処理OCRと経理OCRという2つのAI自動化ツールを提供し、日本のインバウンド観光ビジネスと中小企業の経理チームをターゲットにしています。
+この3日間で、AIベースのB2B SaaSを一本、プロダクションまで立ち上げました。名前は<a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">Agent Effi Flow</a>。免税処理OCRと経理OCR、2つのAI自動化ツールを提供しています。狙っているのは日本のインバウンド観光ビジネスと、中小企業の経理チームです。
 
-この記事は「理論的に可能だ」ではなく<strong>実際に実装した</strong>経験を共有します。技術スタック選定理由、核心実装事項、直面した課題、そして3ヶ月のKPI目標まで正直に記録しました。
+ここに書くのは「理論的に可能だ」という話ではありません。<strong>実際に作った</strong>記録です。どの技術をなぜ選んだか、核心部分をどう組んだか、途中で何に詰まったか。3ヶ月のKPI目標まで、隠さずに残しておきます。
 
 ## なぜこのSaaSを作ったのか
 
@@ -71,10 +40,10 @@ relatedPosts:
 日本で働きながら発見したB2B自動化ニーズ:
 
 1. <strong>免税処理業務の手作業依存</strong>: パスポートと免税書類を目視確認し手入力
-2. <strong>経理業務の反復作業</strong>: レシートOCR後の手動データ整理。[実データで見るAI経理自動化の効果](/ja/blog/ja/accounting-ai-transformation-real-data)では、この課題がいかに深刻かを数字で示しています。
+2. <strong>経理業務の反復作業</strong>: レシートOCR後の手動データ整理。実データで見るAI経理自動化の効果では、この課題がいかに深刻かを数字で示しています。
 3. <strong>既存ソリューションの限界</strong>: 高価なエンタープライズソリューションか精度の低い汎用OCR
 
-個人開発者としての差別化ポイントは<strong>AIを活用した構造化データ抽出</strong>です。単純なテキストOCRを超えて、Google Gemini APIのStructured Output機能で型安全なJSON応答を受け取り、即座にビジネスロジックに活用可能なデータを提供します。このサービスのその後の方向性については[Agent Effi Flowのピボット決断とおもてなしボット構想](/ja/blog/ja/agent-effi-flow-pivot-omotenashi-bot)で続けて解説しています。
+個人開発者としての差別化ポイントは<strong>AIを活用した構造化データ抽出</strong>です。単純なテキストOCRを超えて、Google Gemini APIのStructured Output機能で型安全なJSON応答を受け取り、即座にビジネスロジックに活用可能なデータを提供します。このサービスのその後の方向性についてはAgent Effi Flowのピボット決断とおもてなしボット構想で続けて解説しています。
 
 ## 技術スタック選定
 
@@ -696,7 +665,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript型定義
    - Zodスキーマ検証
    
-   AIツールを活用してサイドプロジェクトを会社レベルに育てるアプローチは[Effloow：サイドプロジェクトからAIカンパニーへ](/ja/blog/ja/effloow-side-project-ai-company)でも詳しく解説しています。
+   AIツールを活用してサイドプロジェクトを会社レベルに育てるアプローチはEffloow：サイドプロジェクトからAIカンパニーへでも詳しく解説しています。
 
 3. <strong>Vercel Preview Deployments</strong>
    - PRごとに自動デプロイURL
@@ -765,16 +734,16 @@ const optimized = await sharp(imageBuffer)
 - [B2B SaaS Go-to-Market Strategies](https://martal.ca/b2b-saas-marketing-strategies-lb/) - B2B SaaSマーケティング戦略
 - [Stripe Credits for Usage-Based Billing](https://stripe.com/blog/introducing-credits-for-usage-based-billing) - Stripeクレジットシステム
 
-## 結びの言葉
+## 3日間のローンチが残したもの
 
-3日間でプロダクションSaaSをローンチすることは<strong>可能です</strong>。しかし「速く作る」が目標ではなく<strong>「速く検証する」</strong>が目標であるべきです。
+3日間でプロダクションSaaSをローンチすること。可能です。ただし「速く作る」が目標になってはいけません。目標は<strong>「速く検証する」</strong>であるべきです。
 
-核心は次の3つでした:
+振り返ると、効いたのは次の3つでした:
 
 1. <strong>適切なツール選択</strong>: SvelteKit + Supabase + Gemini API
 2. <strong>スコープ制限</strong>: 2サービスでスタート、完璧さよりローンチ優先
 3. <strong>ビジネス優先</strong>: 技術より顧客課題解決に集中
 
-今、本当の旅が始まります。最初の有料顧客を獲得し、フィードバックを受け、改善するプロセス。3ヶ月後この記事を更新する時「MRR ¥30,000達成」と書けることを願います。
+ここからが本番です。最初の有料顧客を取り、そのフィードバックで製品を直していく。地味な作業が待っています。3ヶ月後にこの記事を更新するとき、「MRR ¥30,000達成」と書けたらいいなと思っています。
 
 ソロ開発者の皆さん、一緒に作りましょう。

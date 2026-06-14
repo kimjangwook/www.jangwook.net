@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Mythos Preview — AIが「優秀すぎて」公開できないって本当か
 description: >-
   AnthropicがSWE-bench 93.9%を達成したClaude Mythos Previewを一般公開しないと決めた。

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '9 Design Principles for Production-Grade AI Agent Deployment — A Practical Guide from the Latest arXiv Research'
 description: 'Solve the core challenges of deploying AI agents to production in 2026 with 9 battle-tested design principles from arXiv research, presented from an Engineering Manager perspective.'
 pubDate: '2026-03-13'

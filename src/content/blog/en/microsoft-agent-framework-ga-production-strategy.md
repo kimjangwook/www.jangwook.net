@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   Microsoft Agent Framework GA: AutoGen + Semantic Kernel Unified — EM/CTO
   Production Adoption Strategy

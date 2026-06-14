@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 【紧急】在OpenClaw中配置Claude Opus 4.6的方法
 description: 如何在OpenClaw中配置Claude Opus 4.6。100万token上下文、128K输出的完整配置，直接复制使用。
 pubDate: '2026-02-06'

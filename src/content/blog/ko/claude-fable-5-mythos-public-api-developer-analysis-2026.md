@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Claude Fable 5 출시 분석 — Mythos가 공개됐다, API 비용 두 배는 낼 가치가 있나"
 description: "Anthropic이 2026년 6월 9일 Claude Fable 5를 출시했다. SWE-bench Pro 80.3%, 비용 $10/$50/MTok. Mythos Preview의 대중화 버전인 Fable 5가 실제 개발 워크플로우에서 Opus 4.8보다 가치 있는지 API 변경사항, 안전 라우팅 메커니즘, 비용 구조를 기준으로 분석한다."
 pubDate: '2026-06-12'

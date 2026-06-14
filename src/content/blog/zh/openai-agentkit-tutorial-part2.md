@@ -10,51 +10,27 @@ tags:
   - AgentKit
   - AI Agent
 relatedPosts:
-  - slug: ai-content-recommendation-system
-    score: 0.94
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: google-analytics-mcp-automation
-    score: 0.94
+      ko: openai 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into openai.
+      ja: openaiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 openai 主题。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: specification-driven-development
-    score: 0.94
+      ko: ai agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai agent experience.
+      ja: ai agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai agent 的实战经验。
+  - slug: claude-agent-sdk-tool-use-complete-guide-2026
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-collaboration-patterns
-    score: 0.92
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, 아키텍처 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、アーキテクチャのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, architecture topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、架构主题进行连接。
+      ko: 같은 ai agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai agent track.
+      ja: 同じai agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai agent 脉络中可一并阅读。
 ---
 
 > <strong>系列：掌握OpenAI AgentKit</strong> (2/2)
@@ -64,9 +40,9 @@ relatedPosts:
 
 # OpenAI AgentKit完全指南第2部：实战应用与高级模式
 
-在[第1部](/zh/blog/zh/openai-agentkit-tutorial-part1)中，我们学习了AgentKit的核心概念和基本用法。现在我们将探讨可在实际生产环境中使用的<strong>高级架构模式</strong>和<strong>企业级系统设计</strong>。
+[第1部](/zh/blog/zh/openai-agentkit-tutorial-part1)讲清了核心概念和基本用法。可一旦走出demo、把真实流量压上生产环境，单个智能体扛不住的问题立刻就冒出来了。多个智能体怎么协调？中途挂了怎么恢复？租户之间的数据怎么隔离？
 
-本文将介绍真实企业如何利用AgentKit解决复杂问题，并提供可直接实现的<strong>完整代码示例</strong>。
+第2部就是冲着这些问题来的。我们会一路走完可用于生产环境的<strong>高级架构模式</strong>和<strong>企业级系统设计</strong>，结合真实企业的落地方式，附上能直接搬进自己项目的<strong>完整代码示例</strong>。
 
 ## 核心总结 (TL;DR)
 
@@ -598,7 +574,7 @@ final_state = await app.ainvoke(initial_state)
 
 ## 构建自定义MCP服务器
 
-使用MCP（Model Context Protocol）可以以标准化方式将AgentKit连接到外部系统。
+AgentKit真正的杠杆，多半来自你自己用MCP（Model Context Protocol）造的工具。比方说，你想让智能体去操作Slack、管理频道。下面就看看这套连线具体是怎么搭起来的。
 
 ### 实战示例：构建Slack MCP服务器
 
@@ -1567,9 +1543,9 @@ async def batch_process(requests: list):
 
 ---
 
-## 下一步
+## 从这里开始动手
 
-您已经掌握了AgentKit！现在可以构建自己的生产系统了。
+跟到这里，你已经具备自己设计生产系统的基本功了。
 
 ### 推荐学习路径
 
@@ -1590,6 +1566,6 @@ async def batch_process(requests: list):
 
 <strong>系列完结！</strong> 🎉
 
-现在您已经了解了AgentKit的一切。在[第1部](/zh/blog/zh/openai-agentkit-tutorial-part1)学习了基础，在第2部掌握了实战技能。
+[第1部](/zh/blog/zh/openai-agentkit-tutorial-part1)打底，第2部上实战。两篇合起来，足够你拿AgentKit真正动手做点东西了。
 
-如有任何问题或反馈，请在评论中留言。期待您的AgentKit项目！
+哪里卡住了，或者你有不一样的解法，欢迎在评论里聊。挺好奇大家会做出什么。

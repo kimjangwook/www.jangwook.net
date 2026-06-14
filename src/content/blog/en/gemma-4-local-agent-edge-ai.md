@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   I Ran Gemma 4 Locally — We're in an Era Where an 8B Model Can Do Function
   Calling

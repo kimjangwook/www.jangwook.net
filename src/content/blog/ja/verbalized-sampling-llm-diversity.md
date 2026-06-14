@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Verbalized Sampling: LLM多様性を回復する学習不要のプロンプティング技法'
 description: >-
   アライメント後に発生するモード崩壊を解決するVerbalized

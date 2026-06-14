@@ -1,8 +1,12 @@
 ---
-title: 'LlamaIndex vs LangChain vs Haystack — RAG Framework Comparison 2026'
-description: 'I installed and tested LlamaIndex 0.14, LangChain 1.3, and Haystack 2.30 in a real sandbox. A hands-on comparison covering langchain-community deprecation warnings, code complexity, InMemory retrieval results, and a clear decision guide.'
+title: LlamaIndex vs LangChain vs Haystack — RAG Framework Comparison 2026
+description: >-
+  I installed and tested LlamaIndex 0.14, LangChain 1.3, and Haystack 2.30 in a
+  real sandbox. A hands-on comparison covering langchain-community deprecation
+  warnings, code complexity, InMemory retrieval results, and a clear decision
+  guide.
 pubDate: '2026-06-06'
-heroImage: '../../../assets/blog/llamaindex-vs-langchain-vs-haystack-rag-2026/hero.png'
+heroImage: ../../../assets/blog/llamaindex-vs-langchain-vs-haystack-rag-2026/hero.png
 tags:
   - rag
   - llamaindex
@@ -10,39 +14,32 @@ tags:
   - haystack
   - python
 relatedPosts:
-  - slug: "vector-db-comparison-2026-qdrant-chroma-pgvector"
-    score: 0.91
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.9
     reason:
-      ko: "RAG 파이프라인의 두 축은 프레임워크와 벡터 DB다. 이 글이 프레임워크 선택을 도왔다면, 벡터 DB 실측 비교는 다음 결정을 위한 것이다."
-      ja: "RAGパイプラインの二本柱はフレームワークとベクターDBだ。このガイドでフレームワークを選んだなら、ベクターDBの実測比較が次の決断に役立つ。"
-      en: "The two pillars of RAG are framework and vector DB. If this guide helped you pick a framework, the vector DB benchmark is for your next decision."
-      zh: "RAG管道的两大支柱是框架和向量DB。如果本文帮你选好了框架，向量DB实测对比就是下一个决策。"
-  - slug: "python-ai-agent-library-comparison-2026"
-    score: 0.84
+      ko: Python 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Python.
+      ja: Pythonをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Python 主题。
+  - slug: python-ai-agent-library-comparison-2026
+    score: 0.85
     reason:
-      ko: "RAG 프레임워크를 넘어 에이전트 오케스트레이션까지 필요하다면, Python AI 에이전트 라이브러리 비교가 연속된 결정을 도와준다."
-      ja: "RAGフレームワークを超えてエージェントオーケストレーションまで必要な場合、PythonのAIエージェントライブラリ比較が連続した意思決定を助ける。"
-      en: "If you need to go beyond RAG into agent orchestration, the Python AI agent library comparison helps with the next connected decision."
-      zh: "如果需要超越RAG进入智能体编排领域，Python AI智能体库比较能帮助做出下一个关联决策。"
-  - slug: "ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production"
-    score: 0.79
+      ko: Python를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Python experience.
+      ja: Pythonを実際に扱った経験が続く記事です。
+      zh: 延续 Python 的实战经验。
+  - slug: dena-llm-study-part4-rag
+    score: 0.8
     reason:
-      ko: "LangChain으로 RAG를 구축하다 LangGraph로 넘어가는 시점이 생긴다. 이 비교 가이드는 그 전환 판단에 필요한 맥락을 제공한다."
-      ja: "LangChainでRAGを構築していてLangGraphへ移行するタイミングが来る。この比較ガイドはその移行判断に必要なコンテキストを提供する。"
-      en: "There's a moment when building RAG with LangChain you'll wonder about moving to LangGraph. This comparison gives the context needed for that transition decision."
-      zh: "在用LangChain构建RAG时，会出现考虑迁移到LangGraph的时机。这份比较指南提供了做出该转型决策所需的背景信息。"
-  - slug: "pydantic-ai-type-safe-agent-tutorial-2026"
-    score: 0.73
-    reason:
-      ko: "Haystack의 타입 안전성에 매력을 느꼈다면, Pydantic AI는 에이전트 레이어에서 같은 철학을 적용한다."
-      ja: "Haystackの型安全性に魅力を感じたなら、Pydantic AIはエージェントレイヤーで同じ哲学を適用する。"
-      en: "If Haystack's type safety appealed to you, Pydantic AI applies the same philosophy at the agent layer."
-      zh: "如果Haystack的类型安全性吸引了你，Pydantic AI在智能体层面应用了相同的理念。"
+      ko: 같은 RAG 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same RAG track.
+      ja: 同じRAGの流れで併せて読むと役立ちます。
+      zh: 在同一 RAG 脉络中可一并阅读。
 ---
 
-Every time you start a RAG project in Python, three names come up almost immediately: LlamaIndex, LangChain, and Haystack. They're all described as "RAG frameworks," but once you actually install them, the design philosophies diverge significantly.
+Every time you start a RAG project in Python, three names come up almost immediately: LlamaIndex, LangChain, and Haystack. They're all described as "RAG frameworks." But once you actually install them and give them the same job, the design philosophies pull apart.
 
-This week I ran all three through a temporary sandbox under identical conditions — pip install, InMemory retrieval, code complexity measurements. I also hit an unexpected deprecation warning that anyone starting a new LangChain project needs to know about.
+So I built a throwaway sandbox and installed all three. Same conditions, same data. I went from pip install through InMemory retrieval and code complexity measurements, and somewhere in there I hit a deprecation warning I wasn't expecting. Anyone starting a new LangChain project needs to know about it.
 
 ## Test environment and installation
 
@@ -61,9 +58,9 @@ A few things came up during installation. After installing `llama-index-core`, i
 
 LangChain threw a deprecation warning the moment I installed `langchain-community`. I'll cover that in detail below. Haystack installed cleanly with no warnings.
 
-No API keys required — I used InMemory stores throughout. BM25 retrieval (Haystack), MockEmbedding (LlamaIndex), and FakeEmbeddings (LangChain) let you validate the full pipeline structure without spending on model calls.
+No API keys required. I used InMemory stores throughout. BM25 retrieval (Haystack), MockEmbedding (LlamaIndex), and FakeEmbeddings (LangChain) let you validate the full pipeline structure without spending on model calls.
 
-## LlamaIndex 0.14 — abstraction-first design
+## LlamaIndex 0.14: abstraction-first design
 
 LlamaIndex needs the fewest lines for a working RAG pipeline. `VectorStoreIndex.from_documents()` handles splitting, embedding, and indexing in one call.
 
@@ -85,7 +82,7 @@ print(response)
 
 That's 10 meaningful lines. My code complexity measurement landed at exactly 10.
 
-The `Settings` global object is the centerpiece. Set the LLM and embedding model once, and every component that follows picks them up automatically. Convenient — but if you have multiple pipelines needing different models, that global state becomes a problem.
+The `Settings` global object is the centerpiece. Set the LLM and embedding model once, and every component that follows picks them up automatically. Convenient. But if you have multiple pipelines needing different models, that global state becomes a problem.
 
 ### Testing without an API key
 
@@ -104,7 +101,7 @@ results = retriever.retrieve("What is VectorStoreIndex?")
 
 Persistence creates five separate files: `docstore.json`, `default__vector_store.json`, `index_store.json`, `image__vector_store.json`, `graph_store.json`. More files than the other two frameworks, but each has a clear purpose.
 
-93 top-level modules live in `llama_index.core`. When you're not sure what you need, it's in there somewhere. `SubQuestionQueryEngine`, `RouterQueryEngine`, `RecursiveRetriever` — advanced retrieval patterns are implemented and ready to use.
+93 top-level modules live in `llama_index.core`. When you're not sure what you need, it's in there somewhere. `SubQuestionQueryEngine`, `RouterQueryEngine`, `RecursiveRetriever`: the advanced retrieval patterns are implemented and ready to use.
 
 ### Strengths and weaknesses
 
@@ -119,9 +116,9 @@ Weaknesses:
 - Deep abstraction makes debugging non-obvious failures harder
 - 28 core dependencies pull in packages you may never use
 
-## LangChain 1.3 — LCEL and a deprecation you need to know about
+## LangChain 1.3: LCEL and a deprecation you need to know about
 
-LangChain builds chains using LCEL (LangChain Expression Language) — a pipe-operator syntax that connects components together.
+LangChain builds chains using LCEL (LangChain Expression Language). It's a pipe-operator syntax that connects components together.
 
 ```python
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
@@ -161,7 +158,7 @@ https://github.com/langchain-ai/langchain-community/issues/674
 for details and migration guidance toward standalone integration packages.
 ```
 
-**langchain-community is being deprecated.** Not just a soft warning — the package that handled hundreds of integrations is being sunset in favor of standalone packages.
+**langchain-community is being deprecated.** This isn't just a soft warning. The package that handled hundreds of integrations is being sunset in favor of standalone packages.
 
 What was:
 ```python
@@ -187,7 +184,7 @@ As of 1.3.4, the package breakdown:
 - `langchain` 1.3.4 — chain implementations (actively maintained)
 - `langchain-community` 0.4.2 — **deprecated**, migrating to standalone packages
 
-I covered this ecosystem in [Python AI agent library comparison 2026](/en/blog/en/python-ai-agent-library-comparison-2026) — LangChain's integration breadth is still unmatched. The community sunset is turbulence, not a death sentence.
+I covered this ecosystem in [Python AI agent library comparison 2026](/en/blog/en/python-ai-agent-library-comparison-2026). LangChain's integration breadth is still unmatched. The community sunset is turbulence, not a death sentence.
 
 ### InMemory test
 
@@ -204,7 +201,7 @@ results = retriever.invoke("LCEL pipe operator")
 # Result: LangChain 1.3 uses LCEL (LangChain Expression Language) with pipe operator.
 ```
 
-`InMemoryVectorStore` lives in `langchain-core` — no extra packages needed for basic testing.
+`InMemoryVectorStore` lives in `langchain-core`, so no extra packages are needed for basic testing.
 
 ### Strengths and weaknesses
 
@@ -215,11 +212,11 @@ Strengths:
 - Lightest core dependency footprint (9 packages)
 
 Weaknesses:
-- **langchain-community deprecated** — new projects need to avoid it
+- **langchain-community deprecated**, so new projects need to avoid it
 - Rapid API churn between versions causes compatibility surprises
 - Deep stack traces make error messages hard to parse
 
-## Haystack 2.30 — explicit graphs and YAML serialization
+## Haystack 2.30: explicit graphs and YAML serialization
 
 Haystack is the most explicit of the three. Every component gets `add_component()`, every connection gets `connect()`.
 
@@ -304,7 +301,7 @@ connections:
     sender: cleaner.documents
 ```
 
-A YAML-serialized pipeline means you can version configuration separately from code, let infra teams modify pipeline parameters without Python, and deploy config changes without code reviews. That's not a feature you care about until you really need it — then you'll wish you had it from day one.
+A YAML-serialized pipeline means you can version configuration separately from code. Infra teams can modify pipeline parameters without touching Python, and config changes ship without a code review. You won't care about any of this until the day you suddenly do. Then you'll wish you'd had it from the start.
 
 ### Type safety actually works
 
@@ -412,13 +409,13 @@ LangChain dominates on ecosystem size. But numbers aren't everything. Haystack i
 
 ## My take
 
-If I were choosing from scratch today, I'd go with Haystack. As pipelines grow more complex, explicit structure makes maintenance easier. The `connect()` declarations feel verbose initially, but six months in, when you're debugging a production issue at 2am, you'll appreciate being able to read the data flow directly from the code. The YAML serialization feels like overkill early on — then, when your infra and code change cycles diverge, you'll wish you had it from the start.
+If I were choosing from scratch today, I'd go with Haystack. As pipelines grow more complex, explicit structure makes maintenance easier. The `connect()` declarations feel verbose initially, but six months in, when you're debugging a production issue at 2am, you'll appreciate being able to read the data flow directly from the code. The YAML serialization feels like overkill early on. Then your infra and code change cycles diverge, and you'll wish you had it from the start.
 
 LlamaIndex is genuinely fast for prototypes. 10 lines to a working RAG is a real advantage. But without understanding what's happening under the abstraction, debugging gets hard when things break in unexpected ways.
 
 LangChain's `langchain-community` situation makes me cautious about starting new projects with it right now. Existing codebases are fine to maintain. For greenfield projects, I'd want to see how the community-to-standalone migration lands before making a long-term bet.
 
-If you're planning to extend beyond RAG into agent orchestration, the [LangGraph, CrewAI, Dapr agent framework comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) gives the context for the next connected decision.
+If you're planning to extend beyond RAG into agent orchestration, the LangGraph, CrewAI, Dapr agent framework comparison gives the context for the next connected decision.
 
 All three frameworks update frequently. These version numbers will be outdated before long. That's why checking each framework's CHANGELOG regularly matters more than any comparison article.
 

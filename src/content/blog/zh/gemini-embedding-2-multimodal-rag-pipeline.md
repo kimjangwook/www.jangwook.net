@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Gemini Embedding 2 — 多模态 embedding 改变 RAG 流水线
 description: >-
   Google 发布的首个原生多模态 embedding 模型 Gemini Embedding 2 核心功能解析，以及与纯文本 embedding

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Claude Code Routines 実践 — スケジュール・API・GitHubイベント自動化"
 description: "Claude Code Routinesはプロンプト・リポジトリを一度設定するだけでAnthropicインフラ上で24/7自律実行されます。スケジュール・API・GitHubイベントの3トリガー方式と設定手順、PRレビュー自動化などの実践例を紹介します。"
 pubDate: '2026-04-22'

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'OpenClaw dev 버전 업데이트 에러 해결: unknown command doctor'
 description: >-
   OpenClaw dev 버전에서 openclaw update 실행 시 발생하는 error: unknown command 'doctor'

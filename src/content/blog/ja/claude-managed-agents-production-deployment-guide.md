@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Managed Agentsを試した — インフラなしでAIエージェントを30分でデプロイ
 description: >-
   Anthropicが4月に公開したClaude Managed Agentsを実際に試してみた正直なレビュー。API

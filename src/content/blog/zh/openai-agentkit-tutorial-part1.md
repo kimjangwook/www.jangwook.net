@@ -10,47 +10,27 @@ tags:
   - AgentKit
   - AI Agent
 relatedPosts:
-  - slug: ai-presentation-automation
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: claude-code-best-practices
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: ai-agent-notion-mcp-automation
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
-  - slug: llm-blog-automation
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
-  - slug: ai-agent-persona-analysis
+  - slug: openai-agentkit-tutorial-part2
     score: 0.9
     reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML
-        topics.
-      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
+      ko: openai 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into openai.
+      ja: openaiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 openai 主题。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.85
+    reason:
+      ko: ai agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai agent experience.
+      ja: ai agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai agent 的实战经验。
+  - slug: claude-agent-sdk-tool-use-complete-guide-2026
+    score: 0.8
+    reason:
+      ko: 같은 ai agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai agent track.
+      ja: 同じai agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai agent 脉络中可一并阅读。
 ---
 
 > <strong>系列：掌握OpenAI AgentKit</strong> (1/2)
@@ -62,9 +42,9 @@ relatedPosts:
 
 2025年10月6日，在旧金山举行的OpenAI DevDay上，Sam Altman发布了将彻底改变开发者生态系统的产品——<strong>AgentKit</strong>。
 
-正如Sam Altman所说："从原型到生产，以更少的阻力构建、部署和优化智能体（Agent）所需的一切"，AgentKit不仅仅是简单的API更新。这是<strong>AI站在工作流中心的全新范式</strong>。
+"从原型到生产，以更少的阻力构建、部署和优化智能体（Agent）所需的一切。"Sam Altman 的这句话，把 AgentKit 的野心说尽了。它不只是一次普通的 API 更新。它是<strong>AI 站在工作流中心的全新范式</strong>。
 
-本文将帮助您理解AgentKit的核心概念，并提供创建首个AI智能体的完整教程。
+下面把核心概念一个个拆开讲，再亲手写出第一个智能体。所有代码都是能直接跑起来的。
 
 ## 核心要点 (TL;DR)
 
@@ -1156,9 +1136,9 @@ research_agent = Agent(
 - 更广泛的研究覆盖
 - 发现遗漏的重要论文
 
-## 下一步
+## 第 1 部分的收获，与第 2 部分要讲的
 
-现在您已经了解了AgentKit的核心概念并创建了首个智能体。
+走到这里，智能体、交接、护栏这三根支柱，加上你跑通的第一个智能体代码，应该都已经上手了。真正拉开差距的，是接下来的实战。
 
 <strong>下篇预告</strong>：[OpenAI AgentKit完全指南第2部分：实战应用与高级模式](/zh/blog/zh/openai-agentkit-tutorial-part2)中将介绍：
 
@@ -1189,6 +1169,6 @@ research_agent = Agent(
 
 ---
 
-<strong>下篇文章见！</strong>让我们通过实战案例一起掌握AgentKit。
+<strong>第 2 部分继续。</strong>我们拿实战案例当教材，把 AgentKit 再往深里挖一层。
 
 _如有问题或反馈，请在评论中留言。我会回复所有意见！_

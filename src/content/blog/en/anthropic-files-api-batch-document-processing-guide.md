@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Anthropic Files API Guide — Analyze Documents Without Re-uploading PDFs
 description: >-
   Upload documents once with Anthropic Files API and reuse across requests.

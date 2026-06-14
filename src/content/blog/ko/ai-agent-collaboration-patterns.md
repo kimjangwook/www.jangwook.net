@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기'
 description: >-
   Architecture, Coding, Testing, Security, DevOps Agent를 오케스트레이션하여 프로덕션급 애플리케이션을

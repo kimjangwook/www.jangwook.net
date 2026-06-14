@@ -13,51 +13,20 @@ tags:
   - Tutorial
   - AICoding
 relatedPosts:
-  - slug: mcp-servers-toolkit-introduction
-    score: 0.94
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.9
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: openclaw-opus-4-6-setup-guide
-    score: 0.94
+      ko: 튜토리얼 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into 튜토리얼.
+      ja: 튜토리얼をもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 튜토리얼 主题。
+  - slug: claude-code-masterclass-series-1-prompt-to-agent
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: github-agentic-workflows-cicd-ai
-    score: 0.93
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps主题进行连接。
-  - slug: stripe-minions-autonomous-coding-agents-1300-prs
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML, DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、DevOps领域涵盖类似主题，难度相当。
-  - slug: claude-code-cli-migration-guide
-    score: 0.92
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/ML、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps主题进行连接。
+      ko: claudecode를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claudecode experience.
+      ja: claudecodeを実際に扱った経験が続く記事です。
+      zh: 延续 claudecode 的实战经验。
 ---
 
 Having multiple Claude Code tabs open feels like parallel work. It isn't.
@@ -68,7 +37,7 @@ The short version: **git worktree + Claude Code works far more naturally than yo
 
 ## What Git Worktree Actually Is
 
-Git worktree lets you check out multiple branches simultaneously into separate directories — all from a single git repository. It's been built into git since 2016, yet it remains surprisingly underused.
+Git worktree lets you check out multiple branches simultaneously into separate directories, all from a single git repository. It's been built into git since 2016, yet it remains surprisingly underused.
 
 One key distinction: switching branches (`git checkout`) replaces the files in your working directory. With worktrees, each branch lives in its **own separate physical directory**.
 
@@ -127,9 +96,9 @@ cd ~/project/my-app-bugfix
 claude
 ```
 
-Each session is fully independent. If Terminal 2 modifies `src/auth/oauth.ts`, Terminal 3's Claude Code doesn't know — it's a different branch's file.
+Each session is fully independent. If Terminal 2 modifies `src/auth/oauth.ts`, Terminal 3's Claude Code doesn't know. It's a different branch's file.
 
-If you've already gone through [Claude Code Best Practices](/en/blog/en/claude-code-best-practices), this pattern slots in naturally.
+If you've already gone through Claude Code Best Practices, this pattern slots in naturally.
 
 ## Using Plan Mode for Task Distribution
 
@@ -176,13 +145,13 @@ Here's a case I actually ran recently. In a blog project:
 
 Without worktrees, hitting the OG image bug mid-feature-development would have meant either switching branches or stashing. With worktrees, I just moved to the other terminal and fixed it immediately.
 
-[Setting up Claude Code Hooks for automated review](/en/blog/en/claude-code-hooks-workflow) lets you attach hooks that update context automatically on worktree switches — a nice complement to this pattern.
+Setting up Claude Code Hooks for automated review lets you attach hooks that update context automatically on worktree switches — a nice complement to this pattern.
 
 ## Gotchas and Real Limitations
 
 ### Shared Resources
 
-`package.json`, `package-lock.json`, and `node_modules/` aren't shared between the original and worktrees. You may need to run `npm install` separately in each worktree — especially when a feature branch adds new packages.
+`package.json`, `package-lock.json`, and `node_modules/` aren't shared between the original and worktrees. You may need to run `npm install` separately in each worktree, especially when a feature branch adds new packages.
 
 ### Database Port Conflicts
 
@@ -207,7 +176,7 @@ git worktree prune
 
 I like this pattern, but it's not universal. It works best when your tasks touch different files. If two sessions both need to modify the same component, you'll end up with more merge conflicts, not fewer. And once you're managing more than three sessions, tracking what each one has done starts generating its own overhead.
 
-Pairing this with [multi-agent PR review](/en/blog/en/claude-code-review-multi-agent-pr) lets you automatically review the PR from each worktree branch. For team-scale use, that combination has been the most practical setup I've found.
+Pairing this with multi-agent PR review lets you automatically review the PR from each worktree branch. For team-scale use, that combination has been the most practical setup I've found.
 
 ## Quick Reference
 
@@ -224,7 +193,7 @@ git worktree remove <path>
 git worktree prune  # clean up references to already-deleted directories
 ```
 
-## Wrapping Up
+## Start With Two, Then Scale Up
 
 Honestly, my first reaction was "is this really worth the setup?" After using it once, I reach for it naturally whenever I need to parallelize work.
 

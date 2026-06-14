@@ -14,58 +14,34 @@ tags:
   - Streaming
   - AI Backend
 relatedPosts:
-  - slug: vertex-ai-search-site-implementation
-    score: 0.95
+  - slug: ollama-fastapi-production-deployment-guide-2026
+    score: 0.9
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: effloow-side-project-ai-company
-    score: 0.94
+      ko: fastapi 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into fastapi.
+      ja: fastapiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 fastapi 主题。
+  - slug: uv-python-ai-development-setup-guide-2026
+    score: 0.85
     reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: adding-chinese-support
-    score: 0.94
+      ko: claude api를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claude api experience.
+      ja: claude apiを実際に扱った経験が続く記事です。
+      zh: 延续 claude api 的实战经验。
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.8
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: agent-effi-flow-pivot-omotenashi-bot
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: n8n-rss-automation
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
 ---
 
 When building an AI backend, you eventually hit the same question: "Can I make users wait until the whole response is generated?" Most of the time the answer is no. When a model like Claude is producing a long piece of text, buffering everything and sending it all at once kills the UX.
 
-Having integrated this into actual services, what I found is that streaming itself isn't the hard part. The real complexity is around it: what to do when you hit a rate limit, how to classify errors and handle each one differently, which headers you need to make SSE flow properly behind Nginx. This guide covers those production patterns — implemented and tested against FastAPI 0.136 and Anthropic SDK 0.97.
+Having integrated this into actual services, what I found is that streaming itself isn't the hard part. The real complexity is around it. What to do when you hit a rate limit. How to classify errors so each one gets handled differently. Which headers you need to make SSE flow properly behind Nginx. This guide covers those production patterns, implemented and tested against FastAPI 0.136 and Anthropic SDK 0.97.
 
-## Prerequisites
+## What You Need Before Starting
 
 - Python 3.11 or later (3.12 recommended)
 - Anthropic API key (`ANTHROPIC_API_KEY`)
@@ -120,7 +96,7 @@ Running `uvicorn main:app --reload` locally and opening `/docs` gives you a live
 
 ## Step 2: Implementing the SSE Streaming Endpoint
 
-Server-Sent Events (SSE) is the simplest way to push a one-directional real-time stream over HTTP. It's simpler to implement than WebSocket and fits perfectly for the pattern of streaming text from server to client — exactly what Claude does.
+Server-Sent Events (SSE) is the simplest way to push a one-directional real-time stream over HTTP. It's simpler to implement than WebSocket and fits perfectly for the pattern of streaming text from server to client, which is exactly what Claude does.
 
 The key is combining FastAPI's `StreamingResponse` with Anthropic SDK's `stream()` context manager:
 
@@ -233,7 +209,7 @@ async def call_with_retry(fn, *args, **kwargs):
             raise  # No point retrying these — propagate immediately
 ```
 
-When I tested this pattern locally — simulating a flaky API that fails twice before succeeding — the result was `Result: success (after 3 attempts)`. The backoff worked as expected.
+I tested this pattern locally against a flaky API that fails twice before succeeding. The result was `Result: success (after 3 attempts)`. Backoff worked as expected.
 
 Honestly, the part of this I'm most uncertain about is the `MAX_RETRIES` and `BASE_DELAY` values. Rate limits differ per Anthropic plan, and if your retry interval is too short, you'll hit the same rate limit again. I'd recommend externalizing these values as environment variables based on your API plan.
 
@@ -280,9 +256,9 @@ location /chat/stream {
 }
 ```
 
-Leaving out `proxy_buffering off` means Nginx collects the entire stream in its buffer and sends it all at once. That's not streaming — it's just a slow response. This is a mistake nearly everyone makes the first time they put SSE behind Nginx.
+Leaving out `proxy_buffering off` means Nginx collects the entire stream in its buffer and sends it all at once. That's not streaming. It's just a slow response. Nearly everyone makes this mistake the first time they put SSE behind Nginx.
 
-## Step 5: Client Integration — Browser EventSource and Python
+## Step 5: Client Integration: Browser EventSource and Python
 
 **Browser (JavaScript)**:
 
@@ -334,25 +310,25 @@ async def stream_chat(message: str):
                         print(event["text"], end="", flush=True)
 ```
 
-If you have a frontend using the Vercel AI SDK, [building a Claude streaming agent with the Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026) shows how to wire this up on the frontend side. The `useChat` hook handles SSE parsing for you, which makes client-side code much simpler.
+If you have a frontend using the Vercel AI SDK, building a Claude streaming agent with the Vercel AI SDK shows how to wire this up on the frontend side. The `useChat` hook handles SSE parsing for you, which makes client-side code much simpler.
 
 ## Limitations and Where You'll Actually Get Stuck
 
 Here are the honest limitations I hit when using this stack in real projects.
 
-**First, combining streaming with prompt caching is tricky.** Claude's prompt caching reduces input token costs significantly. But when using streaming and caching together, you can't know mid-stream whether the cache was hit. The `usage` object is available after streaming completes, but if you need to reflect cache status in real time, the implementation gets complex. Read [Claude API prompt caching cost optimization](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide) before you design your architecture around caching.
+**First, combining streaming with prompt caching is tricky.** Claude's prompt caching reduces input token costs significantly. But when using streaming and caching together, you can't know mid-stream whether the cache was hit. The `usage` object is available after streaming completes, but if you need to reflect cache status in real time, the implementation gets complex. Read Claude API prompt caching cost optimization before you design your architecture around caching.
 
 **Second, uvicorn worker count and connection management is more involved than it looks.** SSE keeps connections open for a long time. With `--workers 4`, you can handle at most 4 concurrent long-running streaming connections. When real traffic exceeds that, requests queue. You'll need horizontal scaling on Kubernetes or the `gunicorn + uvicorn worker class` combination.
 
-**Third, retry logic mid-stream is a hard problem.** What do you do when a network error hits halfway through a stream? Restarting the request from scratch means the client gets duplicate text. The practical solution — having the client track `last-event-id` so the server can resume — is outside this guide's scope, but worth planning for early.
+**Third, retry logic mid-stream is a hard problem.** What do you do when a network error hits halfway through a stream? Restarting the request from scratch means the client gets duplicate text. The practical solution is having the client track `last-event-id` so the server can resume. That implementation is outside this guide's scope, but worth planning for early.
 
-This pattern is also overkill for bulk processing where streaming isn't the point. If you're processing 1,000 documents in batch, the [Anthropic Message Batches API](/en/blog/en/anthropic-message-batches-api-production-guide) is far cheaper and more appropriate.
+This pattern is also overkill for bulk processing where streaming isn't the point. If you're processing 1,000 documents in batch, the Anthropic Message Batches API is far cheaper and more appropriate.
 
 ## Troubleshooting FAQ
 
 **Q: SSE arrives all at once instead of streaming**
 
-`proxy_buffering off` is missing from Nginx in most cases. Also check that the `Content-Type: text/event-stream` header is present — without it, browsers won't recognize the response as SSE.
+`proxy_buffering off` is missing from Nginx in most cases. Also check that the `Content-Type: text/event-stream` header is present. Without it, browsers won't recognize the response as SSE.
 
 **Q: Intermittent `asyncio.CancelledError`**
 
@@ -366,7 +342,7 @@ This can happen when using the synchronous `anthropic.Anthropic()` client inside
 
 Either `BASE_DELAY` is too short or burst traffic is hammering the same window. Check Anthropic's Rate Limits page for your plan's TPM/RPM limits and set `BASE_DELAY` to at least 5 seconds.
 
-## Closing: When to Choose This Stack
+## When This Stack Earns Its Place
 
 FastAPI + AsyncAnthropic + uvicorn is a good fit when:
 

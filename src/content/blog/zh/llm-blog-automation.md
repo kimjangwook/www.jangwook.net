@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 利用LLM与Claude Code实现博客自动化 - 未来的内容创作
 description: >-
   使用Claude Code和11个专业代理完全自动化博客的方法。从提示工程(Prompt Engineering)到MCP集成、多语言支持、图像生成 -

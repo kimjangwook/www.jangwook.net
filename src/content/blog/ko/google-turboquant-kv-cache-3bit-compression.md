@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Google TurboQuant — KV Cache를 3비트로 압축해도 정확도가 안 떨어진다고?
 description: >-
   Google이 발표한 TurboQuant의 PolarQuant+QJL 기법을 분석한다. KV cache 메모리 6배 절감, 어텐션 8배

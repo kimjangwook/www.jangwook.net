@@ -1,4 +1,5 @@
 ---
+draft: true
 title: >-
   Verbalized Sampling: A Training-Free Prompting Technique to Restore LLM
   Diversity

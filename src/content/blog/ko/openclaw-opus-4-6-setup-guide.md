@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 【긴급】OpenClaw에 Claude Opus 4.6 설정하기
 description: >-
   Claude Opus 4.6을 OpenClaw에서 사용하기 위한 설정 방법. 100만 토큰 컨텍스트, 128K 출력을 활용하는 설정을 그대로

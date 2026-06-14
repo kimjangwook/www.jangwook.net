@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Claude Code Routines — Scheduled AI Automation Guide"
 description: "Claude Code Routines runs AI prompts autonomously on Anthropic's infra via schedule, API, or GitHub events. Setup guide and real automation use cases included."
 pubDate: '2026-04-22'

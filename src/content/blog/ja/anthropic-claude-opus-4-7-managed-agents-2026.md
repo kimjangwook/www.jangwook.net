@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Anthropicの4月二大リリース — Opus 4.7とManaged Agentsがエージェント開発を変える方法'
 description: 'Claude Opus 4.7（4月16日）とManaged Agentsベータ（4月8日）が同じ月に登場。ベンチマークは過去最高なのにコミュニティ反応が割れている。新トークナイザーのコスト衝撃、task_budget、セッションあたり$0.08モデルの実際の意味を分析する。'
 pubDate: '2026-05-01'

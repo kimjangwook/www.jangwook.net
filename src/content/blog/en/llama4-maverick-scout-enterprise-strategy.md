@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Meta Llama 4 Deep Dive — How Maverick & Scout Are Reshaping Enterprise AI Strategy'
 description: 'A technical and strategic analysis of Meta Llama 4 Maverick (400B MoE) and Scout (10M context window): architecture, benchmarks, cost structure, and what engineering leaders need to know to update their open-source AI strategy.'
 pubDate: '2026-03-06'

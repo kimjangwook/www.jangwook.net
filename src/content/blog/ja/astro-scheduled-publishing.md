@@ -1,4 +1,5 @@
 ---
+draft: true
 title: '静的ブログで予約投稿を実装する方法: Astro + GitHub Actionsによる完全自動化'
 description: >-
   AstroとGitHub

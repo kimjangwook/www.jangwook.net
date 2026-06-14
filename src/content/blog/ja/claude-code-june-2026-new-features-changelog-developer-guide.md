@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Code 2026年6月アップデート分析 — Safe Mode、Opus 4.8デフォルト、レート制限2倍
 description: >-
   2026年6月Claude Codeアップデートを完全解説 — Safe Mode権限分離、/cdコマンド追加、Opus 4.8デフォルト化、

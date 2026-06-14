@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Cloudflare Agents Week 2026 — When AI Agents Become Cloud Customers'
 description: 'Cloudflare Agents Week 2026: Sandboxes GA, Artifacts, Dynamic Workers, and AI agents that autonomously provision cloud infrastructure. Deep-dive into 20+ announcements with @cloudflare/agents SDK experiment results.'
 pubDate: '2026-05-15'

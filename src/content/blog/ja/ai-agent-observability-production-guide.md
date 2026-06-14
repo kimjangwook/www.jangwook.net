@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AIエージェントのオブザーバビリティ実践ガイド：プロダクション LLM システムを透明化する方法'
 description: 'マルチエージェントLLMシステムを本番運用する際に必須のオブザーバビリティ戦略。分散トレーシング・メトリクス・ロギングからOpenTelemetry適用、Langfuse・LangSmith・Braintrustの比較まで、EMの視点で解説。'
 pubDate: '2026-03-12'

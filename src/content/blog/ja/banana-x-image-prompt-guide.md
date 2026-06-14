@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 300件のデザイン評価データから作ったAI画像プロンプト完全ガイド
 description: >-
   Banana Xのインフォグラフィック評価データ300件を分析して作成したYAML 7-Part

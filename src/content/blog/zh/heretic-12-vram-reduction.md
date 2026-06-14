@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Heretic 1.2 — 量化实现VRAM降低70%与MPOA技术全解析
 description: Heretic 1.2正式发布。通过4bit量化将VRAM使用量最多降低70%，MPOA技术实现高质量消融。详解本地LLM运营成本削减的最新方法。
 pubDate: '2026-02-16'

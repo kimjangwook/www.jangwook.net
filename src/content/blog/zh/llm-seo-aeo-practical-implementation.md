@@ -1,4 +1,5 @@
 ---
+draft: true
 title: LLM时代的SEO/AEO实战应用：B2B SaaS优化路线图
 description: 从SEO基础到AEO战略：Agent Effi Flow项目的真实实施案例与可量化成果
 pubDate: '2025-11-28'

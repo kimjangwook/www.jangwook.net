@@ -1,4 +1,5 @@
 ---
+draft: true
 title: LLM과 Claude Code를 활용한 블로그 자동화 - 미래의 콘텐츠 제작
 description: >-
   Claude Code와 11개의 전문 에이전트로 블로그를 완전 자동화하는 실전 가이드. 프롬프트 엔지니어링, MCP 통합, 4개 언어

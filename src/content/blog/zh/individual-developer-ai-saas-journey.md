@@ -11,58 +11,27 @@ tags:
   - saas
   - supabase
 relatedPosts:
-  - slug: claude-code-parallel-testing
-    score: 0.95
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.9
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: llm-page-migration-standardization
-    score: 0.95
+      ko: AI 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into AI.
+      ja: AIをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 AI 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
     reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: ai-content-recommendation-system
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: google-analytics-mcp-automation
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, DevOps, architecture with
-        comparable difficulty.
-      zh: 在自动化、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.94
-    reason:
-      ko: '자동화, 웹 개발, AI/ML, DevOps, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、Web開発、AI/ML、DevOps、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, web development, AI/ML, DevOps,
-        architecture with comparable difficulty.
-      zh: 在自动化、Web开发、AI/ML、DevOps、架构领域涵盖类似主题，难度相当。
+      ko: AI를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on AI experience.
+      ja: AIを実際に扱った経験が続く記事です。
+      zh: 延续 AI 的实战经验。
 ---
 
-## 概述
+## 3天把它推上生产环境
 
-我在3天内完成了一个基于AI的B2B SaaS产品从开发到生产环境上线。这个名为<a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">Agent Effi Flow</a>的服务提供免税处理OCR和财务OCR两种AI自动化工具,目标客户是日本入境旅游业务和中小企业财务团队。
+过去这3天,我把一个基于AI的B2B SaaS从零做到了生产环境上线。它叫<a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">Agent Effi Flow</a>,提供免税处理OCR和财务OCR两种AI自动化工具。主要面向日本入境旅游业务和中小企业财务团队。
 
-本文分享的不是"理论上可行",而是<strong>实际落地的经验</strong>。包括技术栈选择理由、核心实现细节、遇到的挑战,以及3个月的KPI目标,全部真实呈现。
+这篇文章不谈"理论上可行"。我写的是<strong>真正落地的经验</strong>。技术栈为什么这么选、核心部分怎么搭、中途卡在哪里,还有头3个月的KPI目标,都如实记下来。
 
 ## 为什么要做这个SaaS
 
@@ -71,10 +40,10 @@ relatedPosts:
 在日本工作期间发现的B2B自动化需求:
 
 1. <strong>免税处理业务依赖人工操作</strong>:需要人工核对护照和免税单据并手工录入
-2. <strong>财务工作重复性高</strong>:收据OCR后仍需手动整理数据。[用真实数据看AI财务自动化的效果](/zh/blog/zh/accounting-ai-transformation-real-data)从数字角度展示了这一问题的严重程度。
+2. <strong>财务工作重复性高</strong>:收据OCR后仍需手动整理数据。用真实数据看AI财务自动化的效果从数字角度展示了这一问题的严重程度。
 3. <strong>现有解决方案的局限性</strong>:要么是昂贵的企业级方案,要么是精度低的通用OCR
 
-作为独立开发者,差异化的关键在于<strong>利用AI提取结构化数据</strong>。不仅仅是文字OCR,而是通过Google Gemini API的Structured Output功能获取类型安全的JSON响应,提供可以直接用于业务逻辑的数据。关于这个服务后续的方向调整,请参见[Agent Effi Flow的转型决策与待客机器人构想](/zh/blog/zh/agent-effi-flow-pivot-omotenashi-bot)。
+作为独立开发者,差异化的关键在于<strong>利用AI提取结构化数据</strong>。不仅仅是文字OCR,而是通过Google Gemini API的Structured Output功能获取类型安全的JSON响应,提供可以直接用于业务逻辑的数据。关于这个服务后续的方向调整,请参见Agent Effi Flow的转型决策与待客机器人构想。
 
 ## 技术栈选择
 
@@ -696,7 +665,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript类型定义
    - Zod schema验证
    
-   借助AI工具将副业项目发展为公司规模的做法,在[Effloow：从副业到AI公司](/zh/blog/zh/effloow-side-project-ai-company)中也有详细介绍。
+   借助AI工具将副业项目发展为公司规模的做法,在Effloow：从副业到AI公司中也有详细介绍。
 
 3. <strong>Vercel Preview Deployments</strong>
    - 每个PR自动部署URL
@@ -765,16 +734,16 @@ const optimized = await sharp(imageBuffer)
 - [B2B SaaS Go-to-Market Strategies](https://martal.ca/b2b-saas-marketing-strategies-lb/) - B2B SaaS营销策略
 - [Stripe Credits for Usage-Based Billing](https://stripe.com/blog/introducing-credits-for-usage-based-billing) - Stripe积分系统
 
-## 结语
+## 这场3天上线给我的东西
 
-3天内上线生产级SaaS<strong>是可能的</strong>。但目标不应该是"快速构建",而应该是<strong>"快速验证"</strong>。
+3天内上线一个生产级SaaS,<strong>是做得到的</strong>。但"快速构建"从来不是目的。真正的目的是<strong>"快速验证"</strong>。
 
-核心是以下3点:
+回头看,真正起作用的是这3点:
 
 1. <strong>选择合适的工具</strong>:SvelteKit + Supabase + Gemini API
 2. <strong>限制范围</strong>:从2个服务开始,上线优先于完美
 3. <strong>业务优先</strong>:专注解决客户问题而非技术本身
 
-现在真正的旅程才刚刚开始。获取首个付费客户、收集反馈、持续改进的过程。希望3个月后更新这篇文章时,能够写下"达成MRR ¥30,000"。
+真正的旅程从现在才开始。拿下第一个付费客户,再靠他们的反馈一点点打磨产品,这些枯燥的活儿还在后头。希望3个月后回来更新这篇文章时,我能写下"已达成MRR ¥30,000"。
 
 各位独立开发者,让我们一起努力。

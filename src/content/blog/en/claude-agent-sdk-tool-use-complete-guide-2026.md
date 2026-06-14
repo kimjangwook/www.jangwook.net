@@ -1,49 +1,50 @@
 ---
 title: 'Claude Agent SDK: Build Tool-Using AI Agents from Scratch'
-description: 'Build tool-using AI agents with Anthropic SDK. Covers tool definitions, multi-tool calls, error handling, and cost optimization in hands-on Python code.'
+description: >-
+  Build tool-using AI agents with Anthropic SDK. Covers tool definitions,
+  multi-tool calls, error handling, and cost optimization in hands-on Python
+  code.
 pubDate: '2026-05-13'
-heroImage: '../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/hero.png'
-tags: ['Claude', 'Anthropic SDK', 'Tool Use', 'AI Agent', 'Python']
+heroImage: ../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/hero.png
+tags:
+  - Claude
+  - Anthropic SDK
+  - Tool Use
+  - AI Agent
+  - Python
 relatedPosts:
-  - slug: 'fastapi-claude-api-streaming-production-guide-2026'
-    score: 0.91
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.9
     reason:
-      ko: 'Tool Use 에이전트의 응답을 실시간 스트리밍으로 전달하는 백엔드를 FastAPI로 구축하고 싶다면, 이 글이 서버 사이드 설계의 절반을 채워줄 것이다.'
-      ja: 'Tool Useエージェントのレスポンスをリアルタイムストリーミングで配信するFastAPIバックエンドを構築したいなら、このガイドがサーバーサイド設計の半分を埋めてくれる。'
-      en: 'If you want to stream tool use agent responses in real time via a FastAPI backend, this guide covers the server-side half of that architecture.'
-      zh: '如果想通过FastAPI后端实时流式传输Tool Use代理的响应，这篇文章会填补服务器端设计的一半。'
-  - slug: 'pydantic-ai-type-safe-agent-tutorial-2026'
-    score: 0.87
+      ko: claude 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into claude.
+      ja: claudeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 claude 主题。
+  - slug: openai-agentkit-tutorial-part1
+    score: 0.85
     reason:
-      ko: '도구 정의를 Python 타입으로 자동 생성하고 싶다면, PydanticAI가 이 글에서 다룬 수동 JSON 스키마의 대안이다. 두 방식을 비교해보면 선택 기준이 명확해진다.'
-      ja: 'Pythonの型からツール定義を自動生成したいなら、PydanticAIがこの記事の手動JSONスキーマの代替になる。両アプローチを比較すると選択基準が明確になる。'
-      en: "If you want to auto-generate tool definitions from Python types, PydanticAI is the alternative to the manual JSON schema approach in this guide. Comparing both clarifies the trade-off."
-      zh: '如果想从Python类型自动生成工具定义，PydanticAI是本文手动JSON Schema方式的替代方案。对比两种方式可以明确选择标准。'
-  - slug: 'claude-api-prompt-caching-cost-optimization-guide'
-    score: 0.83
+      ko: ai agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai agent experience.
+      ja: ai agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai agent 的实战经验。
+  - slug: openai-agentkit-tutorial-part2
+    score: 0.8
     reason:
-      ko: 'Tool Use를 쓰면 도구 정의가 매 요청마다 토큰을 소비한다. 이 글에서 다룬 캐싱 패턴을 조합하면 비용을 크게 줄일 수 있다.'
-      ja: 'Tool Useを使うとツール定義が毎リクエストのトークンを消費する。このガイドのキャッシュパターンを組み合わせることでコストを大幅に削減できる。'
-      en: "Tool use means tool definitions consume tokens on every request. Combining this with the caching patterns in that guide cuts costs significantly."
-      zh: '使用Tool Use时，工具定义会消耗每次请求的tokens。结合该文章的缓存模式可以大幅降低成本。'
-  - slug: 'vercel-ai-sdk-claude-streaming-agent-2026'
-    score: 0.78
-    reason:
-      ko: 'Vercel AI SDK는 Tool Use 루프를 SDK가 자동 처리해준다. 이 글의 수동 구현과 비교하면 언제 어느 방식을 쓸지 판단하기 좋다.'
-      ja: 'Vercel AI SDKはTool Useループを自動処理してくれる。この記事の手動実装と比較すると、いつどちらを使うか判断しやすい。'
-      en: 'Vercel AI SDK handles the tool use loop automatically. Comparing it with the manual implementation in this guide helps you decide which approach to use.'
-      zh: 'Vercel AI SDK自动处理Tool Use循环。与本文的手动实现对比，有助于判断何时选择哪种方式。'
+      ko: 같은 ai agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai agent track.
+      ja: 同じai agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai agent 脉络中可一并阅读。
 ---
 
-I ran into the Tool Use moment while building a FastAPI streaming backend with the Claude API. The trigger was simple: a user asked "how many days are left in this year?" and Claude answered wrong. Not just wrong — confidently wrong. I remember thinking, "OK, a chatbot can't handle this."
+I ran into the Tool Use moment while building a FastAPI streaming backend with the Claude API. The trigger was simple. A user asked "how many days are left in this year?" and Claude answered wrong. Not just wrong, but confidently wrong. I remember thinking, "OK, a chatbot can't handle this."
 
 Tool Use fixes that structurally. Instead of the model calculating directly, it calls a calculation function and uses the result to answer. That difference is what separates a chatbot from an agent.
 
-This guide covers the Tool Use patterns I validated by directly installing and running anthropic SDK 0.101.0. From basic tool definitions to the agentic loop, error handling, and cost — practical code you can actually use.
+What follows are the Tool Use patterns I validated by directly installing and running anthropic SDK 0.101.0. Basic tool definitions, the agentic loop, error handling, cost. Everything here is based on code I actually ran.
 
-## Why Tool Use Is Different from a Chatbot — The Structural Gap
+## Why Tool Use Is Different from a Chatbot: The Structural Gap
 
-An LLM samples tokens from a probability distribution. Tasks like date arithmetic, precise numerical calculations, or live API lookups are structurally unreliable — the model recreates patterns from training data, not ground truth.
+An LLM samples tokens from a probability distribution. Tasks like date arithmetic, precise numerical calculations, or live API lookups are structurally unreliable. The model recreates patterns from training data, not ground truth.
 
 Tool Use addresses this at a different layer. The model decides *what to do*, and actual execution is delegated to external code. Instead of computing directly, the model emits something like `calculate("365 - today.day_of_year")`, and Python runs it and returns the result.
 
@@ -66,7 +67,7 @@ response = client.messages.create(
 
 The decisive difference is reliability. Python's `datetime` module doesn't get dates wrong.
 
-## Setup — Sandbox Verification Results
+## Installing anthropic 0.101.0 and Initializing the Client
 
 ```bash
 python3 -m venv venv
@@ -82,7 +83,7 @@ Client instantiated: ✓
 Client type: Anthropic
 ```
 
-0.101.0 is the latest as of 2026-05-13. This is the official Anthropic SDK — completely different from packages like `pyautogen` that were common before 2025.
+0.101.0 is the latest as of 2026-05-13. This is the official Anthropic SDK. It's completely different from packages like `pyautogen` that were common before 2025.
 
 ```python
 import anthropic
@@ -94,7 +95,7 @@ client = anthropic.Anthropic(api_key="your-api-key")  # or set ANTHROPIC_API_KEY
 
 The SDK auto-loads the API key from `ANTHROPIC_API_KEY`. Don't hard-code it.
 
-## Defining Your First Tool — JSON Schema Is All You Need
+## Defining Your First Tool: JSON Schema Is All You Need
 
 Tool Use uses a structure similar to OpenAI Function Calling. Each tool has three parts:
 
@@ -152,7 +153,7 @@ Tool: calculate
   Required params: ['operation', 'a', 'b']
 ```
 
-## Implementing the Agentic Loop — The Core of Tool Use
+## Implementing the Agentic Loop: A Cycle of Calls and Responses
 
 ![Agentic loop diagram — flow from user message through tool execution to result return](../../../assets/blog/claude-agent-sdk-tool-use-complete-guide-2026/agentic-loop.png)
 
@@ -200,11 +201,11 @@ def run_agent(user_message: str, tools: list, max_iterations: int = 10) -> str:
 
 Two things are easy to miss here.
 
-<strong>First</strong>, add the entire `response.content` to messages — not just the text block. The model needs to know which tool it called in order to generate its next response correctly.
+<strong>First</strong>, add the entire `response.content` to messages, not just the text block. The model needs to know which tool it called in order to generate its next response correctly.
 
 <strong>Second</strong>, tool results go under the `user` role. Counterintuitive, but the API treats tool execution results as coming from the environment (the user side), not the assistant.
 
-## Building Real Tools — Calculator, Date, File Reader
+## Building Real Tools: Calculator, Date, File Reader
 
 The tool execution function is straightforward. It takes a name and input, returns a string:
 
@@ -286,9 +287,9 @@ Input validation (required field present): True
 Input validation (missing required field): False — Missing required field: location
 ```
 
-The error classification strategy from the [FastAPI + Claude API streaming guide](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026) applies here too — categorize tool errors as retryable vs. non-retryable for better production stability.
+The error classification strategy from the [FastAPI + Claude API streaming guide](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026) applies here too. Categorize tool errors as retryable versus non-retryable for better production stability.
 
-## Handling Multiple Tool Calls — Can We Run in Parallel?
+## Handling Multiple Tool Calls: Can We Run in Parallel?
 
 Claude can call multiple tools simultaneously in a single turn. Ask "compare the weather in Seoul and Tokyo" and it returns two `get_weather` calls at once.
 
@@ -324,7 +325,7 @@ Sandbox-verified multi-tool results:
 
 I'd only apply parallel execution to idempotent read tools. External API calls with side effects need careful rate-limit and ordering consideration.
 
-## Error Handling — Failing Gracefully
+## Error Handling: Failing Gracefully
 
 When a tool fails, return `is_error: true`. The model reads this, recognizes the error, and either tries something else or gives the user contextual guidance.
 
@@ -351,9 +352,9 @@ for block in response.content:
         tool_results.append(tool_result)
 ```
 
-When `is_error: true` is set, the model doesn't just skip past it. From my testing, it reads the error content and responds with something like "The file couldn't be found — please double-check the path." Returning empty strings or ignoring errors tends to produce confused or hallucinated responses.
+When `is_error: true` is set, the model doesn't just skip past it. From my testing, it reads the error content and responds with something like "The file couldn't be found, so please double-check the path." Returning empty strings or ignoring errors tends to produce confused or hallucinated responses.
 
-## The Real Cost of Tool Use — How Many Tokens Does It Add?
+## The Real Cost of Tool Use: How Many Tokens Does It Add?
 
 Honestly, Tool Use costs more. According to Anthropic's documentation, each tool definition adds roughly 200–300 tokens of overhead.
 
@@ -367,7 +368,7 @@ The agentic loop accumulates context. After 5 turns, everything from the first m
 
 Two ways to manage this:
 
-<strong>1. Combine with Prompt Caching</strong>: Tool definitions are the same on every request. As covered in the [Claude API Prompt Caching guide](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide), caching the system prompt with `cache_control: {"type": "ephemeral"}` applies here too, and tool definitions benefit similarly from repeated identical structures.
+<strong>1. Combine with Prompt Caching</strong>: Tool definitions are the same on every request. As covered in the Claude API Prompt Caching guide, caching the system prompt with `cache_control: {"type": "ephemeral"}` applies here too, and tool definitions benefit similarly from repeated identical structures.
 
 <strong>2. Pass only the tools you need</strong>: Always including 10 tool definitions is worse than passing the 2–3 that matter for the current task. More tools consume more tokens and occasionally lead the model to pick the wrong one.
 
@@ -393,11 +394,11 @@ if final_message.stop_reason == "tool_use":
     # ... same handling as above
 ```
 
-When streaming with tool use: if you're showing text chunks to the user in real time and also need to process tool calls, design the UX flow before you start. The [Vercel AI SDK approach](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026) is worth looking at to see how this gets abstracted on the frontend side.
+When streaming with tool use: if you're showing text chunks to the user in real time and also need to process tool calls, design the UX flow before you start. The Vercel AI SDK approach is worth looking at to see how this gets abstracted on the frontend side.
 
 ## Production Pattern: GitHub Issue Monitor Agent
 
-A complete example tying everything together — a simple agent that fetches and summarizes GitHub issues:
+A complete example that ties everything together. This is a simple agent that fetches and summarizes GitHub issues:
 
 ```python
 import anthropic
@@ -482,11 +483,11 @@ def run_issue_agent(query: str) -> str:
     return "Loop limit exceeded"
 ```
 
-## What's Still Unresolved — Honest Limitations
+## What's Still Unresolved: Honest Limitations
 
 Here's what I find genuinely frustrating about Tool Use in practice.
 
-<strong>Context accumulation</strong>: The agentic loop keeps growing the context. After 10 turns, everything from the first message to the tenth tool result is in there. Long-running agents need a context management strategy — summarize intermediate results, prune stale messages — and there's no standard pattern for this yet.
+<strong>Context accumulation</strong>: The agentic loop keeps growing the context. After 10 turns, everything from the first message to the tenth tool result is in there. Long-running agents need a context management strategy. You summarize intermediate results or prune stale messages by hand, and there's no standard pattern for this yet.
 
 <strong>Non-deterministic tool selection</strong>: Same question, different tool selection on different runs. Even with `temperature=0`, you can't guarantee identical behavior across invocations. This makes testing harder than it should be.
 
@@ -494,7 +495,7 @@ Here's what I find genuinely frustrating about Tool Use in practice.
 
 I think Tool Use is underappreciated. Agent frameworks offer impressive abstractions, but this pattern is what's running underneath all of them. [PydanticAI's type-safe tool definitions](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) are a convenient layer that auto-generates the JSON schema, but understanding the underlying mechanism is what gets you unstuck when things break.
 
-## Summary
+## The Five Things That Matter
 
 Validated findings from anthropic 0.101.0:
 
@@ -504,4 +505,4 @@ Validated findings from anthropic 0.101.0:
 - <strong>Cost</strong>: ~250 tokens overhead per tool definition. Combine with Prompt Caching. Watch context accumulation in multi-turn agents.
 - <strong>Parallel tool calls</strong>: `ThreadPoolExecutor` works for idempotent read tools. Apply selectively.
 
-Tool Use is the most direct path from chatbot to agent. You don't need a complex framework — this pattern alone is enough to build practical agents.
+Tool Use is the most direct path from chatbot to agent. You don't need a complex framework. This pattern alone is enough to build practical agents.

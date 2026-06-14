@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude Agent SDK Subagent Orchestration Tutorial — Parallel Multi-Agent Processing in Practice'
 description: 'claude-agent-sdk 0.2.82 validated: AgentDefinition structure, parallel subagent spawning, and TaskBudget cost control. Full Python code walkthrough included.'
 pubDate: '2026-05-18'

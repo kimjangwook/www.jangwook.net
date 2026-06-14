@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Sora关停与AI视频市场的急剧重塑 — Google Veo 4瞄准空白
 description: >-
   OpenAI宣布关停Sora应用。日亏100万美元、用户跌破50万的全貌，以及Google Veo

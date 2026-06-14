@@ -11,49 +11,27 @@ tags:
   - 自动化
   - Shell
 relatedPosts:
-  - slug: weekly-analytics-2025-10-14
-    score: 0.93
+  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
+    score: 0.9
     reason:
-      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in automation with comparable difficulty.
-      zh: 在自动化领域涵盖类似主题，难度相当。
-  - slug: astro-scheduled-publishing
-    score: 0.92
+      ko: bun 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into bun.
+      ja: bunをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 bun 主题。
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.85
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: blog-launch-analysis-report
-    score: 0.91
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.8
     reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: chrome-devtools-mcp-performance
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
-  - slug: claude-code-web-automation
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, 웹 개발, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、Web開発、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, web development, DevOps topics.
-      zh: 适合作为下一步学习资源，通过自动化、Web开发、DevOps主题进行连接。
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
 ---
 
 写shell脚本的时候，我总有个小烦恼。用bash写虽然熟悉但在Windows上会出问题。Node.js的`child_process`写起来回调满天飞。用`zx`又需要额外安装包。就在这时我试了试Bun Shell，起初以为不过是个zx的翻版，真正跑起来之后，想法有些改变了。
@@ -99,7 +77,7 @@ bun init -y
 
 `bun init`会自动生成`package.json`、`tsconfig.json`和`index.ts`。TypeScript无需额外配置就能直接运行，这点很方便。
 
-## 基本模式 — 用$模板字面量执行命令
+## 基本模式: 用$模板字面量执行命令
 
 最基本的用法：从内置`bun`模块导入`$`：
 
@@ -200,7 +178,7 @@ const unique = await $`sort < input.txt | uniq`.text();
 
 Bun Shell虽然不依赖bash运行，但内置命令的行为仍然遵循所在操作系统的规范，这一点要牢记。
 
-## 并行执行 — Promise.all是关键
+## 并行执行：Promise.all是关键
 
 在Bun Shell中并行执行多个命令需要使用`Promise.all`。顺序写的命令会顺序执行。
 
@@ -254,7 +232,7 @@ async function build() {
 build().catch(console.error);
 ```
 
-将这个脚本保存为`scripts/build.ts`，用`bun run scripts/build.ts`执行。不需要Node.js或ts-node，体感上轻松很多。[将这个构建脚本接入GitHub Actions CI/CD流水线](/zh/blog/zh/github-actions-claude-code-ci-automation)是本地自动化跑通后自然的下一步。
+将这个脚本保存为`scripts/build.ts`，用`bun run scripts/build.ts`执行。不需要Node.js或ts-node，体感上轻松很多。将这个构建脚本接入GitHub Actions CI/CD流水线是本地自动化跑通后自然的下一步。
 
 ## 实验中发现的陷阱
 
@@ -324,11 +302,11 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 
 还有一点，`.stdin()` API尚不稳定让我觉得遗憾。一旦稳定下来，基于stdin的管道处理会简洁很多，现在还需要绕路。
 
-## 总结
+## 现在到底值不值得用
 
-实际安装运行之后，Bun Shell的开发体验比我想象的好。变量自动转义、`.nothrow()`模式、`.lines()`这样的便利方法——这些细节设计在zx里也见不到。
+实际安装运行之后，Bun Shell的开发体验比我想象的好。变量自动转义、`.nothrow()`模式、`.lines()`这样的便利方法，这些细节设计在zx里也见不到。
 
-不过目前仍是1.x版本，部分API还不稳定。在生产CI/CD脚本中使用之前，建议在实际环境中充分验证。与[Claude Code hooks](/zh/blog/zh/claude-code-hooks-workflow)等自动化流水线集成时也同样如此。
+不过目前仍是1.x版本，部分API还不稳定。在生产CI/CD脚本中使用之前，建议在实际环境中充分验证。与Claude Code hooks等自动化流水线集成时也同样如此。
 
 Bun在快速发展，Shell API也会逐渐稳定。现在没有迫切需要放弃zx的理由，但新的Bun项目不妨先试试内置shell。
 

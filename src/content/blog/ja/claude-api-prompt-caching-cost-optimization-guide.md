@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Claude APIプロンプトキャッシング実践 — LLMコストを70%削減する4パターン'
 description: >-
   実際のプロダクション環境でClaude APIプロンプトキャッシングを適用した経験ベースの完全ガイドです。システムプロンプト・RAGドキュメント・

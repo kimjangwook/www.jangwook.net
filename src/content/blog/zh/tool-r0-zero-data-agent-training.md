@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Tool-R0：零数据Self-Play强化学习训练工具调用AI Agent
 description: >-
   arXiv最新论文Tool-R0无需训练数据，仅凭Self-Play强化学习将LLM工具调用能力提升92.5%。深入解析Generator-Solver共进化架构与EM视角实务启示。

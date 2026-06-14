@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Switching OpenClaw to OpenAI Codex — A Practical Guide After the Claude/Gemini ToS Confusion'
 description: >-
   OpenClaw migration guide: switch from Claude/Gemini OAuth to OpenAI Codex in 15 minutes.

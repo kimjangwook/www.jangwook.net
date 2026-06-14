@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Amazon Kiro 실전 분석 — 스펙 주도 AI IDE가 Claude Code를 대체할 수 있을까'
 description: 'AWS가 만든 스펙 주도 AI IDE Kiro를 공식 문서와 커뮤니티 리뷰로 분석했다. EARS 노테이션 기반 요구사항 생성, Agent Hooks, Steering Files의 실제 가치와 Claude Code와의 결정적 차이를 솔직하게 정리한다.'
 pubDate: '2026-06-05'

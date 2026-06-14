@@ -8,64 +8,48 @@ tags:
   - 微调
   - 强化学习
 relatedPosts:
-  - slug: verbalized-sampling-llm-diversity
-    score: 0.95
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.9
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ssr-survey-analysis
-    score: 0.93
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
     reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: dena-llm-study-part2-structured-output
-    score: 0.92
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.8
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-persona-analysis
-    score: 0.91
-    reason:
-      ko: '선행 학습 자료로 유용하며, AI/ML, 아키텍처 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、AI/ML、アーキテクチャの基礎を扱います。
-      en: >-
-        Useful as prerequisite knowledge, covering AI/ML, architecture
-        fundamentals.
-      zh: 作为先修知识很有用，涵盖AI/ML、架构基础。
-  - slug: llm-consumer-research-ssr
-    score: 0.91
-    reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>系列: DeNA LLM 研究</strong> (3/5)
 >
 > 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: 结构化输出与多LLM管道](/zh/blog/zh/dena-llm-study-part2-structured-output)
+> 2. Part 2: 结构化输出与多LLM管道
 > 3. <strong>Part 3: 模型训练方法论</strong> ← 当前文章
 > 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)
 > 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
 
-## 引言
+## 微调，到底该从哪儿下手?
 
-DeNA的LLM研究资料Part 3涵盖了LLM的多种学习方法论。我们将探索预训练(Pre-training)、微调(Fine-tuning)和强化学习(Reinforcement Learning)之间的区别，以及LoRA、QLoRA、DPO等最新高效学习技术的原理和实际应用方法。
+"想拿自家数据把模型训练一下，可是第一步该做什么?"这是我在实务里被问得最多的问题。预训练?微调?强化学习?术语一大堆，可究竟哪个适合自己的场景，却始终看不清。
 
-本文基于DeNA研究资料，并补充了2025年的最新趋势和实践经验。
+DeNA的LLM研究资料Part 3，恰好戳中了这个痛点。它先讲清三种训练方式的区别，再深入到LoRA、QLoRA、DPO这些高效方法的原理和实战用法。我又在此基础上补了2025年当下的趋势，以及自己亲手跑过之后的一些体会。
 
 ## 预训练 vs 微调 vs 强化学习
 
-### 通过餐厅比喻理解
+### 厨师这个比喻，意外地贴切
 
-DeNA资料通过餐厅运营比喻来解释三种学习方式:
+DeNA资料把三种学习方式比作经营一家餐厅。起初我以为有点牵强。读下去才发现，每个阶段的角色一下子就清晰了。
 
 ```mermaid
 graph TD
@@ -489,11 +473,11 @@ graph TD
 - <strong>RTX 3090 (24GB)</strong>: 用QLoRA训练7B
 - <strong>RTX 4060 Ti (16GB)</strong>: 用QLoRA训练3B
 
-## 启示与感想
+## 合上资料后，我还在想这些
 
-### LLM微调的民主化
+### 微调，已经不再是大公司的专利
 
-DeNA资料最令人印象深刻的是<strong>LLM微调不再是大公司专属</strong>。随着QLoRA和DPO的出现:
+DeNA资料里最戳中我的一点，是<strong>LLM微调不再是大公司专属</strong>。QLoRA和DPO一出现，前提就变了:
 
 - 24GB VRAM可以微调7B模型
 - 数百美元预算可以构建领域专用模型

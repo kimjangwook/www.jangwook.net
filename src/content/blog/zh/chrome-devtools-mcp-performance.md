@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 用 Chrome DevTools MCP 自动化 Web 性能优化
 description: AI 助手通过真实浏览器数据测量和优化性能的 Chrome DevTools MCP 完整指南——从 Core Web Vitals 自动化到实战工作流
 pubDate: '2025-10-11'

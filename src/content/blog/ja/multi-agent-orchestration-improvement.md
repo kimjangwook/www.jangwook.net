@@ -9,56 +9,32 @@ tags:
   - automation
   - orchestration
 relatedPosts:
+  - slug: claude-agent-teams-guide
+    score: 0.9
+    reason:
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
   - slug: effiflow-automation-analysis-part1
-    score: 0.95
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.95
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: mcp-code-execution-practical-implementation
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: prompt-engineering-agent-improvements
-    score: 0.95
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: anthropic-code-execution-mcp
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
-## 概要
+## 触るのが怖くなったシステム
 
-ブログ自動化システムを運営する中で、17個のエージェント、6個のコマンド、4個のスキルを含む大規模なマルチエージェントシステムが次第に複雑になり、メンテナンスが困難になってきました。この記事では、Claude Codeのマルチエージェントオーケストレーションパターンを活用して、48個のファイルを体系的に分析し、61件の問題を発見・修正した改善プロセスを詳しく紹介します。Claude Codeにおけるエージェントワークフローの5つのパターンは[Claude Codeエージェントワークフローパターン5選](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)で体系的に解説している。
+エージェント17個、コマンド6個、スキル4個。ブログ自動化システムがここまで膨らんだころには、ファイルを一つ直すたびに別のどこかが壊れる予感がして、手をつけるのが怖くなっていました。そこで一つずつ手で直すのをやめ、Claude Codeのマルチエージェントオーケストレーションパターンに48ファイルをまとめて読ませました。出てきた問題は61件。この記事は、その作業の記録です。Claude Codeにおけるエージェントワークフローの5つのパターンはClaude Codeエージェントワークフローパターン5選で体系的に解説している。
 
 ### プロジェクト背景
 
@@ -82,7 +58,7 @@ relatedPosts:
 
 ### 分析プロセス
 
-マルチエージェントオーケストレーションの最初のステップは、<strong>徹底的な調査</strong>です。システム全体を理解するために、以下のアプローチを取りました:
+最初にやったのは、とにかく全体を把握することでした。いきなり直し始めると必ず見落としが出る。システム全体を理解するために、こんなアプローチを取りました。
 
 ```mermaid
 graph TD
@@ -1697,11 +1673,11 @@ npm run build
 ```
 ````
 
-## 結論: マルチエージェントオーケストレーションの実践ガイド
+## 自分のプロジェクトで再現するために
 
 ### 成功要因
 
-このプロジェクトの成功は、以下の要因によるものでした:
+うまくいった理由を後から振り返ると、だいたい次の3つに集約されました。
 
 #### 1. 体系的な調査
 
@@ -1876,12 +1852,8 @@ graph LR
 
 ---
 
-このマルチエージェントオーケストレーション改善プロジェクトは、
-体系的なアプローチと反復的フィードバックにより、
-文書品質を18%向上させ、エラーを94%削減し、
-トークン使用量を92%削減することに成功しました。
+数字だけ並べると、文書品質は18%上がり、エラーは94%、トークン使用量は92%減りました。体系的に進め、何度もフィードバックを回した結果です。
 
-この経験が、同様のマルチエージェントシステムを構築する
-すべての開発者にとって有益なガイドとなることを願います。並列実行にGit Worktreeを活用する具体的な方法は[Claude Code並列セッションとGit Worktree](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)で確認できる。
+派手な手法は一つもありません。だからこそ、似たようなマルチエージェントシステムを抱えている人なら、そのまま真似できるはずです。並列実行にGit Worktreeを使う具体的な手順は[Claude Code並列セッションとGit Worktree](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)にまとめました。
 
 <strong>Happy Orchestrating!</strong> 🎭

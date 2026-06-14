@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'I Tried RTK (Rust Token Killer) — A CLI Proxy That Cuts LLM Token Costs 60–90%'
 description: >-
   RTK (Rust Token Killer) is a CLI proxy that compresses Bash command output before sending it to LLMs in AI coding agents. After real installation, I measured 90% reduction on find and 50% on ls commands. Here's what actually works, what doesn't, how to integrate with Claude Code, and the honest limitations.

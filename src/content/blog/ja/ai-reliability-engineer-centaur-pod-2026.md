@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'AI Reliability Engineer: 2026年エンジニアリングチームの新パラダイムとCentaur Podモデル'
 description: 'ジュニア開発者の役割がAI Reliability Engineer(ARE)へと進化している。Centaur Podチーム構造、Code Audit採用方式、Defect Capture Rate指標まで — EMが今すぐ実行すべきAIネイティブチーム設計戦略'
 pubDate: '2026-03-10'

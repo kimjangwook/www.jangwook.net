@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Moltbook「AI社会」の正体 — Forbes/MIT Tech Reviewの暴露と「AIシアター」問題
 description: MoltbookのAI自律社会が実は人間オペレーターに操作されていたことが暴露されました。AIシアター問題とエンジニアリング視点での示唆を分析します。
 pubDate: '2026-02-14'

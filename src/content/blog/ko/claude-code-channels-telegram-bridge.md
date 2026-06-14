@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Claude Code Channels로 텔레그램에서 코딩 시키기 — OpenClaw 사용자가 본 솔직한 비교
 description: >-
   Claude Code에 Channels 기능이 추가됐다. 텔레그램에서 메시지를 보내면 로컬 터미널의 Claude가 코드를 실행하고 답장한다.

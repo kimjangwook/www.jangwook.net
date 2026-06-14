@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'GitHub Actions + Claude Code CLIでPR自動レビューパイプラインを構築する'
 description: 'GitHub Actionsにclaude -pを直接統合してPRレビューを自動化する実践ガイド。--bare、--dangerously-skip-permissions、--max-budget-usdフラグでCI環境でClaudeCodeを安全に実行する方法をステップごとに解説します。'
 pubDate: '2026-04-30'

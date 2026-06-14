@@ -11,47 +11,27 @@ tags:
   - AgentKit
   - AI Agent
 relatedPosts:
-  - slug: ai-presentation-automation
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: claude-code-best-practices
-    score: 0.93
-    reason:
-      ko: '자동화, AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in automation, AI/ML with comparable difficulty.'
-      zh: 在自动化、AI/ML领域涵盖类似主题，难度相当。
-  - slug: ai-agent-notion-mcp-automation
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
-  - slug: llm-blog-automation
-    score: 0.91
-    reason:
-      ko: '다음 단계 학습으로 적합하며, 자동화, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、自動化、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through
-        automation, AI/ML topics.
-      zh: 适合作为下一步学习资源，通过自动化、AI/ML主题进行连接。
-  - slug: ai-agent-persona-analysis
+  - slug: openai-agentkit-tutorial-part2
     score: 0.9
     reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML
-        topics.
-      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
+      ko: openai 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into openai.
+      ja: openaiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 openai 主题。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.85
+    reason:
+      ko: ai agent를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ai agent experience.
+      ja: ai agentを実際に扱った経験が続く記事です。
+      zh: 延续 ai agent 的实战经验。
+  - slug: claude-agent-sdk-tool-use-complete-guide-2026
+    score: 0.8
+    reason:
+      ko: 같은 ai agent 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same ai agent track.
+      ja: 同じai agentの流れで併せて読むと役立ちます。
+      zh: 在同一 ai agent 脉络中可一并阅读。
 ---
 
 > <strong>Series: Mastering OpenAI AgentKit</strong> (1/2)
@@ -61,11 +41,11 @@ relatedPosts:
 
 # OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started
 
-On October 6, 2025, at OpenAI DevDay in San Francisco, Sam Altman made an announcement that would fundamentally change the developer ecosystem: <strong>AgentKit</strong>.
+On October 6, 2025, at OpenAI DevDay in San Francisco, Sam Altman announced something that reshapes how developers build. He called it <strong>AgentKit</strong>.
 
-"Everything you need to build, deploy, and optimize agent workflows from prototype to production with way less friction," as Sam Altman put it, AgentKit is not just an API update. It represents <strong>a new paradigm where AI sits at the center of your workflow</strong>.
+"Everything you need to build, deploy, and optimize agent workflows from prototype to production with way less friction." That one line from Altman tells you the ambition. This is not another API update. It is <strong>a new paradigm where AI sits at the center of your workflow</strong>.
 
-In this guide, we'll understand the core concepts of AgentKit and walk through complete tutorials to build your first AI agents.
+I'll take the core concepts one at a time, then we write the first agent by hand. Every code block here is meant to actually run.
 
 ## Key Takeaways (TL;DR)
 
@@ -1157,9 +1137,9 @@ research_agent = Agent(
 - Broader research coverage
 - Discovered missed important papers
 
-## Next Steps
+## What Part 1 Covered, and What's Next
 
-You now understand AgentKit's core concepts and have built your first agents.
+If you made it here, the three pillars — agents, handoffs, guardrails — plus your first running agent should feel familiar now. The rest is where real projects diverge.
 
 <strong>Coming Next</strong>: [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2) will cover:
 
@@ -1190,6 +1170,6 @@ You now understand AgentKit's core concepts and have built your first agents.
 
 ---
 
-<strong>See you in Part 2!</strong> Let's master AgentKit together with real-world examples.
+<strong>Part 2 picks up from here.</strong> We'll dig deeper with real-world examples.
 
 _Have questions or feedback? Leave a comment below. I reply to all comments!_

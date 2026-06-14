@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 用 Claude Code Channels 从 Telegram 远程编程 — 一个 OpenClaw 用户的真实对比
 description: >-
   Claude Code 新增了 Channels 功能。从 Telegram 发送消息，本地终端中的 Claude 就能执行代码并回复结果。它借鉴了

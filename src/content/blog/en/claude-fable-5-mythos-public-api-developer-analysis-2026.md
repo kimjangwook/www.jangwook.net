@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Claude Fable 5 Release Analysis — Mythos Goes Public, Is Paying 2x Worth It?"
 description: "Anthropic released Claude Fable 5 on June 9, 2026. SWE-bench Pro 80.3%, priced at $10/$50 per MTok. This post analyzes whether Fable 5 — the generally available version of Mythos Preview — is worth the cost over Opus 4.8, based on API changes, safety routing mechanics, and real cost structure."
 pubDate: '2026-06-12'

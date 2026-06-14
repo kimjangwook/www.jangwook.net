@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'Next.js 16 + Claude APIストリーミング — App Routerガイド'
 description: 'Next.js 16 App RouterでClaude APIストリーミングを完成させる実践ガイド。Route Handler設計、SSE応答処理、React 19クライアントフック、エラー復旧パターンまで、実際にビルドしたコードと動作ログを収録。'
 pubDate: '2026-05-20'

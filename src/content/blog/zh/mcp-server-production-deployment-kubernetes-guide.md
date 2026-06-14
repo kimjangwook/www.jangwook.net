@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP服务器Kubernetes生产部署 — 在52%宕机率中活下来的方法
 description: >-
   2026年4月生产MCP端点52%异常。本文提供完整的生存清单：Kubernetes资源配置、Streamable HTTP迁移、健康检查自动化、

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Mistral Voxtral TTS — 3秒ボイスクローニング＋オープンウェイト、しかし日本語非対応
 description: >-
   Mistralが公開した4BパラメータオープンウェイトTTSモデルVoxtralを分析する。3秒ボイスクローニング機能を備え人間評価でElevenLabsを超えた実力を持ちながら、日本語・韓国語非対応という致命的な弱点がアジア市場での利用を阻む。CC

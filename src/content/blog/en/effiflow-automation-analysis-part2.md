@@ -14,51 +14,27 @@ tags:
   - commands
   - caching
 relatedPosts:
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
+    reason:
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
   - slug: effiflow-automation-analysis-part1
-    score: 0.95
+    score: 0.85
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: claude-code-verbalized-sampling
-    score: 0.94
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: claude-agent-teams-guide
+    score: 0.8
     reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: langgraph-multi-agent
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: openai-agentkit-tutorial-part2
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: prompt-engineering-agent-improvements
-    score: 0.94
-    reason:
-      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: >-
-        Covers similar topics in automation, AI/ML, architecture with comparable
-        difficulty.
-      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
 ---
 
 ## Series Navigation
@@ -67,13 +43,13 @@ relatedPosts:
 >
 > 1. [Part 1: 71% Cost Reduction with Metadata](/en/blog/en/effiflow-automation-analysis-part1) - 3-Tier Architecture and System Overview
 > 2. <strong>Part 2: Skills and Commands Integration Strategy</strong> ← Current Article
-> 3. [Part 3: Practical Improvement Cases and ROI Analysis](/en/blog/en/effiflow-automation-analysis-part3)
+> 3. Part 3: Practical Improvement Cases and ROI Analysis
 
-## Introduction
+## Model-Invoked, User-Invoked, and That 58% Number
 
-In Part 1, we explored EffiFlow's 3-Tier architecture (Agents → Skills → Commands) and the 71% cost reduction achieved through metadata-first strategy. In Part 2, we'll dive deep into the core of this system: <strong>Skills' auto-discovery mechanism</strong> and <strong>Commands' orchestration pattern</strong>.
+Part 1 walked through EffiFlow's 3-Tier architecture (Agents → Skills → Commands) and how a metadata-first strategy cut costs by 71%. But running the system day to day, what actually nagged at me was something else. Skills fire up on their own, even when I never call them. Commands somehow bundle a dozen steps into one invocation. How?
 
-The key questions are: "What's the difference between Model-Invoked and User-Invoked, and how did we achieve 58% token reduction?"
+Those two questions are where this part starts. What really separates Model-Invoked from User-Invoked, and where did the 58% token reduction come from? I'll trace it with the actual code and numbers in front of us.
 
 ## Skills: Auto-Discovered Modular Functions
 
@@ -261,7 +237,7 @@ Commands operate in a <strong>User-Invoked</strong> manner. Users explicitly cal
 
 ### Phase-Based Execution Pattern
 
-Complex Commands are divided into clear Phases. Let's examine `write-post`'s 8 Phases:
+Complex Commands are divided into clear Phases. Take the most complex one, `write-post`, and walk its 8 Phases one at a time.
 
 ```mermaid
 sequenceDiagram
@@ -1028,9 +1004,9 @@ await Promise.all(posts.map((post) => analyzePost(post))); // 30 seconds (70% fa
 - Test coverage: 0% → 80%
 - Stability: 95% → 99%
 
-## Conclusion
+## Where Skills and Commands Click Together
 
-In Part 2, we deeply analyzed the core integration strategy of Skills and Commands in EffiFlow.
+That covers the two pillars of EffiFlow. We looked at how Skills and Commands mesh and keep the whole thing running.
 
 <strong>Key Insights</strong>:
 

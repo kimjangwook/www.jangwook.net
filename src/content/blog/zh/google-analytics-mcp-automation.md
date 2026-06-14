@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 使用Google Analytics MCP与AI代理自动化博客分析
 description: >-
   详细介绍如何将Google Analytics MCP与Claude AI代理连接，实现博客分析全自动化。通过自然语言查询GA4 Data

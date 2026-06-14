@@ -12,52 +12,34 @@ tags:
   - Python
   - Docker
 relatedPosts:
-  - slug: vitest-4-jest-migration-guide-2026
-    score: 0.5
+  - slug: fastapi-claude-api-streaming-production-guide-2026
+    score: 0.9
     reason:
-      ko: DevOps 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: DevOps分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in DevOps with comparable difficulty.
-      zh: 在DevOps领域涵盖类似主题，难度相当。
-  - slug: ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production
-    score: 0.5
+      ko: fastapi 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into fastapi.
+      ja: fastapiをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 fastapi 主题。
+  - slug: local-llm-private-mcp-server-gemma4-fastmcp
+    score: 0.85
     reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML, DevOps 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/ML、DevOpsのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML,
-        DevOps topics.
-      zh: 适合作为下一步学习资源，通过AI/ML、DevOps主题进行连接。
-  - slug: claude-mythos-preview-glasswing-ai-cybersecurity
-    score: 0.5
+      ko: ollama를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on ollama experience.
+      ja: ollamaを実際に扱った経験が続く記事です。
+      zh: 延续 ollama 的实战经验。
+  - slug: langfuse-self-hosted-llm-tracing-setup-guide-2026
+    score: 0.8
     reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: prismml-bonsai-1bit-llm-edge-ai
-    score: 0.5
-    reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: claude-code-source-leak-analysis
-    score: 0.5
-    reason:
-      ko: '다음 단계 학습으로 적합하며, AI/ML 주제에서 연결됩니다.'
-      ja: 次のステップの学習に適しており、AI/MLのトピックで繋がります。
-      en: >-
-        Suitable as a next-step learning resource, connecting through AI/ML
-        topics.
-      zh: 适合作为下一步学习资源，通过AI/ML主题进行连接。
+      ko: 같은 docker 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same docker track.
+      ja: 同じdockerの流れで併せて読むと役立ちます。
+      zh: 在同一 docker 脉络中可一并阅读。
 ---
 
 There's a meaningful gap between "running a local LLM in a terminal" and "exposing it as an API that your team's apps can call."
 
 Ollama already provides a REST endpoint at `localhost:11434`. The problem is that exposing it directly gives you zero authentication, no CORS handling, inconsistent error formats, and tight coupling to Ollama's specific response structure. When you change models, every client breaks. I solved this by wrapping Ollama with FastAPI, tested it in a sandbox, and this post documents what actually worked.
 
-## What We'll Build
+## What One FastAPI Adapter Layer Buys You
 
 - A FastAPI server wrapping Ollama's REST API (Python 3.12 + FastAPI 0.136.3)
 - Three endpoints: `/health`, `/generate`, `/generate/stream`
@@ -65,7 +47,7 @@ Ollama already provides a REST endpoint at `localhost:11434`. The problem is tha
 - Docker Compose configuration for container deployment
 - Real execution logs and response times from sandbox testing
 
-Tested on Ollama v0.20.5 with the `yinw1590/gemma4-e2b-text` model on an M1 MacBook Pro. Response time was ~14.9 seconds — CPU-only. On a Linux server with an NVIDIA GPU, that drops to 1–2 seconds.
+Tested on Ollama v0.20.5 with the `yinw1590/gemma4-e2b-text` model on an M1 MacBook Pro, CPU-only. Response time landed at roughly 14.9 seconds. On a Linux server with an NVIDIA GPU, that drops to 1–2 seconds.
 
 ## Prerequisites
 
@@ -215,7 +197,7 @@ Actual test response:
 }
 ```
 
-14.9 seconds on CPU-only macOS. On [NVIDIA-optimized hardware](/en/blog/en/nvidia-llm-inference-cost-reduction), this drops dramatically.
+14.9 seconds on CPU-only macOS. On NVIDIA-optimized hardware, this drops dramatically.
 
 ## Step 4: SSE Streaming Endpoint
 
@@ -257,7 +239,7 @@ data: {"text": "Enhanced", "done": false}
 data: {"text": " Privacy", "done": false}
 ```
 
-Using `aiter_lines()` means each chunk is forwarded to the client immediately, not buffered. The `yield f"data: ...\n\n"` format is the SSE standard — two newlines terminate each event.
+Using `aiter_lines()` means each chunk is forwarded to the client immediately, not buffered. The `yield f"data: ...\n\n"` format is the SSE standard. Two newlines terminate each event.
 
 Client-side JavaScript to consume this:
 
@@ -394,7 +376,7 @@ This approach differs from [wrapping local LLMs with FastMCP as an MCP server](/
 
 **Stream cuts off mid-response**
 - Increase to `timeout=120`. CPU-only environments can take over a minute for long prompts
-- The first call is always slow — Ollama loads the model into memory on first request
+- The first call is always slow, since Ollama loads the model into memory on first request
 
 **Streaming looks like batch mode**
 - Check that `media_type="text/event-stream"` is set
@@ -414,7 +396,7 @@ Two reasons drove my decision.
 
 **Interface normalization.** Ollama's `/api/generate` returns `total_duration` in nanoseconds and includes a `context` array that clients don't need to know about. If I later replace Ollama with vLLM or llama.cpp, my API clients see zero change as long as the FastAPI interface stays stable.
 
-The downside is a small latency overhead. In practice, FastAPI adds 2–5ms — invisible against a 14.9-second inference time.
+The downside is a small latency overhead. In practice, FastAPI adds 2–5ms. That's invisible against a 14.9-second inference time.
 
 ## Model Selection Guide
 
@@ -513,11 +495,11 @@ This is the FastAPI 0.100+ recommended pattern. The deprecated `@app.on_event("s
 
 To make this production-ready:
 
-1. **Authentication** — Bearer token middleware as shown above
-2. **Rate limiting** — slowapi per-IP request limits
-3. **Observability** — Prometheus exporter for request latency, throughput per model
-4. **Model multiplexing** — Route coding requests to code-specialized models, general requests elsewhere
-5. **Fallback routing** — Switch to a backup model if the primary is overloaded
+1. **Authentication**: Bearer token middleware as shown above
+2. **Rate limiting**: slowapi per-IP request limits
+3. **Observability**: a Prometheus exporter for request latency and per-model throughput
+4. **Model multiplexing**: route coding requests to code-specialized models, general requests elsewhere
+5. **Fallback routing**: switch to a backup model if the primary is overloaded
 
 The code in this guide is minimal by design. Each addition above is straightforward once the base structure works. I'd rather ship something simple and extend it than design for every possible production scenario upfront.
 

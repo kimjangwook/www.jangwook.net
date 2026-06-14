@@ -13,64 +13,48 @@ tags:
   - Fine-tuning
   - Reinforcement-Learning
 relatedPosts:
-  - slug: verbalized-sampling-llm-diversity
-    score: 0.95
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.9
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ssr-survey-analysis
-    score: 0.93
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
     reason:
-      ko: AI/ML 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
-      ja: AI/ML分野で類似したトピックを扱い、同程度の難易度です。
-      en: Covers similar topics in AI/ML with comparable difficulty.
-      zh: 在AI/ML领域涵盖类似主题，难度相当。
-  - slug: dena-llm-study-part2-structured-output
-    score: 0.92
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.8
     reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-  - slug: ai-agent-persona-analysis
-    score: 0.91
-    reason:
-      ko: '선행 학습 자료로 유용하며, AI/ML, 아키텍처 기초를 다룹니다.'
-      ja: 事前学習資料として有用であり、AI/ML、アーキテクチャの基礎を扱います。
-      en: >-
-        Useful as prerequisite knowledge, covering AI/ML, architecture
-        fundamentals.
-      zh: 作为先修知识很有用，涵盖AI/ML、架构基础。
-  - slug: llm-consumer-research-ssr
-    score: 0.91
-    reason:
-      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
-      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
-      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
-      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
 ---
 
 > <strong>Series: DeNA LLM Study</strong> (3/5)
 >
 > 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)
-> 2. [Part 2: Structured Output and Multi-LLM Pipelines](/en/blog/en/dena-llm-study-part2-structured-output)
+> 2. Part 2: Structured Output and Multi-LLM Pipelines
 > 3. <strong>Part 3: Model Training Methodologies</strong> ← Current Article
 > 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag)
 > 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design)
 
-## Introduction
+## Where do you even start with fine-tuning?
 
-DeNA's LLM study materials Part 3 covers diverse learning methodologies for LLMs. We'll explore the differences between pre-training, fine-tuning, and reinforcement learning, and examine the principles and practical applications of cutting-edge efficient training techniques like LoRA, QLoRA, and DPO.
+"I want to train the model on our own data, but where do I begin?" It's the question I field most often. Pre-training? Fine-tuning? Reinforcement learning? Plenty of jargon, and almost no clarity on which one actually fits your situation.
 
-This post is based on DeNA's study materials, enhanced with 2025 trends and hands-on experience.
+Part 3 of DeNA's LLM study materials lands right on that pain point. It walks through how the three training approaches differ, then digs into the mechanics and real-world use of efficient methods like LoRA, QLoRA, and DPO. On top of that, I've added the trends as they stand in 2025 and a few things I learned running this stuff myself.
 
 ## Pre-training vs Fine-tuning vs Reinforcement Learning
 
-### Understanding Through Restaurant Analogy
+### The chef analogy works better than it should
 
-DeNA materials explain the three learning approaches through a restaurant operation metaphor:
+DeNA's materials map the three approaches onto running a restaurant. I expected it to feel forced. It doesn't. Follow it through and the role of each stage clicks into place.
 
 ```mermaid
 graph TD
@@ -494,11 +478,11 @@ Prompt → DPO
 - <strong>RTX 3090 (24GB)</strong>: Can train 7B with QLoRA
 - <strong>RTX 4060 Ti (16GB)</strong>: Can train 3B with QLoRA
 
-## Insights and Reflections
+## What stuck with me after closing the materials
 
-### Democratization of LLM Fine-tuning
+### Fine-tuning isn't just for the big players anymore
 
-The most impressive aspect of DeNA materials was that <strong>LLM fine-tuning is no longer exclusive to large corporations</strong>. With the advent of QLoRA and DPO:
+What hit me hardest in the DeNA materials was this: <strong>LLM fine-tuning is no longer exclusive to large corporations</strong>. Once QLoRA and DPO arrived, the math changed:
 
 - Fine-tune 7B models with 24GB VRAM
 - Build domain-specific models on hundreds of dollars budget
@@ -512,7 +496,7 @@ Recently, <strong>Efficiency</strong> has become a trending topic:
 - QLoRA: Same performance with 1/4 memory
 - DPO: Equal performance with 1/3 of RLHF complexity
 
-This isn't just optimization but the result of <strong>novel mathematical insights</strong>. Low-rank hypotheses, quantization theory, implicit reward models—academic research is rapidly transitioning to practice.
+This isn't just optimization. It's the payoff from <strong>novel mathematical insights</strong>. Low-rank hypotheses, quantization theory, implicit reward models. Academic research is moving into practice fast.
 
 ### Lessons for Practitioners
 

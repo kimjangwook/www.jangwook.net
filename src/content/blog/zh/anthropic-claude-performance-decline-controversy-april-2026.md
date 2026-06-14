@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Anthropic悄悄降低Claude性能的争议——权力用户反弹的真实背景
 description: >-
   2026年3月，Anthropic悄悄将Claude默认effort调低为"medium"，引发权力用户强烈反弹。本文从CTO视角分析

@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MiniMax M2.5 — 오픈 웨이트와 상용 모델의 성능 격차가 역대 최소로
 description: >-
   MiniMax M2.5가 SWE-Bench Verified 80.2%를 달성하며 Claude Opus 4.6을 넘어섰습니다. 오픈 웨이트

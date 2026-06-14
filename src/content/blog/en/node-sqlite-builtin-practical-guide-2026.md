@@ -1,38 +1,31 @@
 ---
-title: "Node.js Built-in SQLite: A Practical Guide — No npm Install Required"
-description: 'Node.js 22.5.0 ships node:sqlite, an built-in SQLite module requiring zero npm installs. DatabaseSync, StatementSync, transactions, and user-defined functions — tested hands-on with real logs.'
+title: 'Node.js Built-in SQLite: A Practical Guide — No npm Install Required'
+description: >-
+  Node.js 22.5.0 ships node:sqlite, an built-in SQLite module requiring zero npm
+  installs. DatabaseSync, StatementSync, transactions, and user-defined
+  functions — tested hands-on with real logs.
 pubDate: '2026-06-09'
-heroImage: '../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-builtin-practical-guide-2026-hero.png'
-tags: ['Node.js', 'SQLite', 'Built-in Module']
+heroImage: >-
+  ../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-builtin-practical-guide-2026-hero.png
+tags:
+  - Node.js
+  - SQLite
+  - Built-in Module
 relatedPosts:
-  - slug: 'deno-2-vs-bun-nodejs-runtime-2026-comparison'
-    score: 0.78
+  - slug: drizzle-orm-typescript-complete-guide-2026
+    score: 0.9
     reason:
-      ko: 'Deno와 Bun의 내장 데이터베이스 지원 방향을 비교하면, Node.js 내장 SQLite가 생태계에서 갖는 위치를 더 넓은 시각으로 볼 수 있다.'
-      ja: 'Deno・Bunの内蔵DB対応との違いを把握することで、node:sqliteの立ち位置がより明確になる。'
-      en: 'Seeing how Deno and Bun approach built-in database support puts Node.js built-in SQLite in broader ecosystem context.'
-      zh: '了解Deno和Bun的内置数据库支持方向，有助于更好地理解Node.js内置SQLite在生态中的位置。'
-  - slug: 'hono-typescript-api-2026'
-    score: 0.72
+      ko: sqlite 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into sqlite.
+      ja: sqliteをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 sqlite 主题。
+  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
+    score: 0.85
     reason:
-      ko: 'Hono로 API를 만들 때 외부 DB 없이 node:sqlite를 붙이면 의존성을 최소화한 마이크로서비스를 빠르게 구성할 수 있다.'
-      ja: 'HonoのAPIにnode:sqliteを組み合わせると、npm依存なしの軽量マイクロサービスが即座に作れる。'
-      en: 'Combining Hono APIs with node:sqlite lets you spin up zero-external-dependency microservices instantly.'
-      zh: '将Hono API与node:sqlite结合，可以快速搭建无外部依赖的轻量微服务。'
-  - slug: 'bun-shell-scripting-practical-guide-2026'
-    score: 0.65
-    reason:
-      ko: 'Bun Shell로 자동화 스크립트를 만들 때 node:sqlite와 같은 내장 모듈 철학을 이해하면 런타임별 내장 기능 활용 패턴을 비교해볼 수 있다.'
-      ja: 'Bun Shellのスクリプト自동화とnode:sqliteの設計思想を比べると、ランタイムの組み込み機能戦略の違いが見えてくる。'
-      en: 'Understanding the built-in module philosophy behind node:sqlite helps when comparing how Bun Shell approaches its own automation primitives.'
-      zh: '理解node:sqlite的内置模块理念，有助于比较Bun Shell等运行时的内置功能策略。'
-  - slug: 'sqlite-ai-swarm-build'
-    score: 0.68
-    reason:
-      ko: 'SQLite 구조를 AI 에이전트로 직접 구현한 경험이 있다면, 이 글에서 다룬 node:sqlite API가 실제 엔진이 제공하는 기능을 어느 수준까지 노출하는지 대조해보면 흥미롭다.'
-      ja: 'SQLiteをAIエージェントで実装した経験があるなら、node:sqliteが実エンジンのどの機能を公開しているか比較すると理解が深まる。'
-      en: "If you have built a SQLite-like engine with AI agents, comparing against node:sqlite actual API surface reveals what the real engine exposes."
-      zh: '如果你曾用AI代理实现过SQLite结构，与node:sqlite的API对比，能让你更清楚真实引擎的能力边界。'
+      ko: node.js를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on node.js experience.
+      ja: node.jsを実際に扱った経験が続く記事です。
+      zh: 延续 node.js 的实战经验。
 ---
 
 Stop typing `npm install sqlite3`. There's a better way now.
@@ -43,7 +36,7 @@ I spent time testing every API surface. Here's what I found.
 
 ## Why node:sqlite Matters
 
-Dropping external packages isn't just convenience. `better-sqlite3` and `sqlite3` need native bindings compiled via `node-gyp`. That build fails constantly on CI runners and Alpine Linux containers. `node:sqlite` embeds SQLite directly into the Node.js binary — no native compilation, no platform-specific failures.
+Dropping external packages isn't just convenience. `better-sqlite3` and `sqlite3` need native bindings compiled via `node-gyp`. That build fails constantly on CI runners and Alpine Linux containers. `node:sqlite` embeds SQLite directly into the Node.js binary. No native compilation, no platform-specific failures.
 
 Honestly, the experimental label on Node.js 22 does give me pause for production use. I'd wait until Node.js v26 hits LTS before deploying this in a real server. But for internal tooling, scripts, prototypes, and build tools? It's solid right now.
 
@@ -52,7 +45,7 @@ Honestly, the experimental label on Node.js 22 does give me pause for production
 One line: similar philosophy, smaller API surface.
 
 - Both are synchronous only (no async/await)
-- No `db.transaction()` wrapper — this is the biggest gap (details below)
+- No `db.transaction()` wrapper. This is the biggest gap (details below)
 - `db.function()` and `db.aggregate()` exist
 - No `serialize()`/`deserialize()` for in-memory DB buffers
 
@@ -71,8 +64,8 @@ Suppress the warning with `--no-warnings` or `NODE_NO_WARNINGS=1`.
 
 Two classes drive everything:
 
-- `DatabaseSync` — the database connection
-- `StatementSync` — a compiled prepared statement
+- `DatabaseSync`: the database connection
+- `StatementSync`: a compiled prepared statement
 
 ```js
 const { DatabaseSync } = require('node:sqlite');
@@ -248,7 +241,7 @@ console.log('Average:', avg.avg);  // Average: 1012.5
 db.close();
 ```
 
-Date formatting, hashing, JSON parsing — anything you'd normally handle in application code can be pushed into the query. When [building a Hono API server](/en/blog/en/hono-typescript-api-2026), this approach cuts down on post-query data transformation.
+Date formatting, hashing, JSON parsing, anything you'd normally handle in application code can be pushed into the query instead. When [building a Hono API server](/en/blog/en/hono-typescript-api-2026), this approach cuts down on post-query data transformation.
 
 ## StatementSync Advanced Options
 
@@ -308,7 +301,7 @@ console.log(cols.map(c => c.name));  // ['id', 'player', 'score']
 
 ## Real Example: CLI Task Manager
 
-Here's a working CLI tool built entirely on `node:sqlite` — no external packages:
+Here's a working CLI tool built entirely on `node:sqlite`, no external packages:
 
 ```js
 // task-manager.js
@@ -406,22 +399,22 @@ Full error codes: [sqlite.org/rescode.html](https://www.sqlite.org/rescode.html)
 
 **What's missing:**
 
-- Still experimental in Node.js 22 — API could change between minor versions
-- Synchronous only — no async path, event loop can block under heavy I/O
-- No `db.transaction()` wrapper — more boilerplate for transactional code
-- No `serialize()`/`deserialize()` — can't dump an in-memory DB to a Buffer
+- Still experimental in Node.js 22. API could change between minor versions
+- Synchronous only. No async path, so the event loop can block under heavy I/O
+- No `db.transaction()` wrapper, which means more boilerplate for transactional code
+- No `serialize()`/`deserialize()`, so you can't dump an in-memory DB to a Buffer
 - Extension loading (`loadExtension`) exists but is platform-dependent
 
 **My honest assessment:**
 
-Don't ship this to a production HTTP server yet. Wait for Node.js v26 LTS and the experimental flag to drop. But for internal scripts, CLI tools, build pipelines, caches, and prototypes — it's ready right now. If you've ever lost an hour to a `better-sqlite3` build failure in CI, this module is immediately worth switching to.
+Don't ship this to a production HTTP server yet. Wait for Node.js v26 LTS and the experimental flag to drop. But for internal scripts, CLI tools, build pipelines, caches, and prototypes, it's ready right now. If you've ever lost an hour to a `better-sqlite3` build failure in CI, this module is immediately worth switching to.
 
 If you build [shell automation scripts like with Bun Shell](/en/blog/en/bun-shell-scripting-practical-guide-2026) or internal developer tooling and want to minimize dependencies, `node:sqlite` is a practical choice today.
 
-## Wrapping Up
+## Good Enough for Internal Tooling Today
 
-After testing every method in `node:sqlite`, my conclusion: **more complete than I expected.** `DatabaseSync`, `StatementSync`, user-defined functions, aggregates, WAL mode, BigInt support — most of what internal tooling needs is here.
+After testing every method in `node:sqlite`, I came away with one conclusion. It's more complete than I expected. `DatabaseSync`, `StatementSync`, user-defined functions, aggregates, WAL mode, BigInt support. Most of what internal tooling actually reaches for is already here.
 
-The missing `db.transaction()` wrapper is the most noticeable gap. But a one-time `withTransaction()` helper fixes it. It's not a dealbreaker.
+The missing `db.transaction()` wrapper is the most noticeable gap. But a one-time `withTransaction()` helper fixes it. Not a dealbreaker.
 
-What I see here is a signal: Node.js is steadily pulling capabilities in-house. `fetch`, `WebCrypto`, `test runner`, now `sqlite`. At some point I'll start wondering when `postgresql` makes the list — which is probably too much to ask, but a developer can dream.
+I read this as a signal. Node.js keeps pulling capabilities in-house: `fetch`, then `WebCrypto`, then the `test runner`, and now `sqlite`. At some point I'll start wondering when `postgresql` makes the list. Probably too much to ask, but a developer can dream.

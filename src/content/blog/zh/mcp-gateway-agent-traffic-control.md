@@ -1,4 +1,5 @@
 ---
+draft: true
 title: MCP Gateway — 谁在控制AI Agent的工具调用？
 description: MCP月下载量突破9700万成为事实标准，但缺少控制Agent调用哪些工具以及调用频率的治理层。MCP Gateway模式解决了这个问题。
 pubDate: '2026-04-02'

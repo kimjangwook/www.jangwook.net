@@ -1,4 +1,5 @@
 ---
+draft: true
 title: OpenClaw 완전 소개 — 나만의 AI 비서를 만들자
 description: >-
   오픈소스 AI 비서 플랫폼 OpenClaw 완전 소개 가이드. Telegram·Discord·Slack 멀티채널 지원,
