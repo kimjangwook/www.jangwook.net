@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "What is Mastra.ai?"
+    answer: "It's a TypeScript-first AI agent framework from the Gatsby.js team that bundles agents, workflows, memory, and observability into a single SDK. It runs on Vercel AI SDK underneath and shipped v1.0 in January 2026."
+  - question: "Can you really run an agent in 5 minutes?"
+    answer: "Installation via npm create mastra@latest took about 2 to 3 minutes, and reaching a working first agent was roughly 5 to 10 minutes total. The Google Gemini weather agent returned a Seoul-versus-Tokyo comparison in about 5.8 seconds."
+  - question: "What do you need to use Memory in Mastra?"
+    answer: "Memory requires a storage backend such as LibSQL or DuckDB. Running an agent standalone while including Memory throws a 'Memory requires a storage provider' error until you configure storage."
+  - question: "Which LLM providers does Mastra support?"
+    answer: "Any provider Vercel AI SDK covers, including OpenAI, Anthropic, Google Gemini, and Meta Llama. Switching providers is just changing the model string, so you can swap google/gemini-2.5-flash for anthropic/claude-sonnet-4-6 and it works."
 ---
 
 "If you're a TypeScript developer building AI agents, you're stuck with LangChain.js or Vercel AI SDK." I've heard that line a lot. It felt accurate enough that I never seriously questioned it. Then Mastra.ai popped up on my radar.

@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Bun Shell과 zx의 핵심 차이는 무엇인가요?"
+    answer: "API 문법은 거의 같지만 Bun Shell은 bash에 의존하지 않습니다. zx는 시스템의 bash나 sh를 호출하므로 Windows에서는 WSL이나 Git Bash가 필요하지만, Bun Shell은 Rust로 구현된 자체 쉘을 내장해 ls, rm, echo 같은 명령을 OS와 무관하게 동일하게 실행합니다."
+  - question: "Bun 1.3.14에서 .stdin()으로 문자열을 직접 전달할 수 있나요?"
+    answer: "아니요. 1.3.14에서 문자열을 직접 넘기면 stdin is not a function 에러가 발생합니다. 가장 안정적인 대안은 Bun.write로 파일에 쓴 뒤 리다이렉션하거나, printf로 파이프하는 것입니다."
+  - question: "$.env()를 쓸 때 왜 PATH를 직접 넣어야 하나요?"
+    answer: "$.env()에 전달하는 객체가 기존 환경 변수를 병합하지 않고 완전히 교체하기 때문입니다. PATH를 빠뜨리면 이후 모든 명령에서 ls 같은 기본 실행 파일조차 찾지 못할 수 있어 process.env.PATH를 명시적으로 포함해야 합니다."
+  - question: "지금 zx 대신 Bun Shell을 써야 하나요?"
+    answer: "프로젝트가 이미 Bun 기반이거나 팀에 Windows 개발자가 있다면 추가 의존성 없이 쓸 수 있어 좋은 선택입니다. 다만 Node.js + npm 기반이고 마이그레이션 계획이 없거나 zx가 잘 동작한다면 zx를 유지하는 게 더 현실적입니다."
 ---
 
 쉘 스크립트를 작성할 때 나는 항상 작은 딜레마를 겪는다. bash로 쓰면 익숙하지만 Windows에서 망가진다. Node.js `child_process`로 쓰면 콜백 지옥이 된다. `zx`를 쓰면 추가 패키지가 필요하고. 그러던 중 Bun Shell을 직접 써봤는데, 처음엔 "그냥 zx 아닌가?"라고 생각했다가 실제로 돌려보면서 생각이 좀 바뀌었다.

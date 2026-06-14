@@ -35,6 +35,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "서브에이전트와 Agent Teams는 무엇이 다른가요?"
+    answer: "서브에이전트는 메인 세션 안에서 결과만 돌려주는 단방향 구조이고, Agent Teams는 완전히 독립된 여러 Claude Code 인스턴스가 각자의 컨텍스트 윈도우를 가지고 서로 메시지를 주고받으며 협업합니다. 조율도 메인 에이전트가 전담하는 대신 공유 태스크 리스트로 자율적으로 이뤄집니다."
+  - question: "Agent Teams는 어떻게 활성화하나요?"
+    answer: "Agent Teams는 기본적으로 비활성화되어 있습니다. 환경변수 CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1을 설정하거나, ~/.claude/settings.json의 env 섹션에 같은 값을 넣어 영구 설정할 수 있습니다. 환경변수는 세션마다 날아가므로 settings.json 방식이 안정적입니다."
+  - question: "여러 팀원이 같은 파일을 수정하는 충돌은 어떻게 막나요?"
+    answer: "현재 파일 레벨 잠금은 지원되지 않으므로 태스크 설계로 우회해야 합니다. 팀원별로 담당 디렉토리와 파일을 명확히 분리하고, 공유 파일은 한 팀원만 수정하도록 태스크 의존성을 설정하면 됩니다."
+  - question: "Agent Teams는 토큰 비용이 얼마나 드나요?"
+    answer: "각 팀원이 독립된 컨텍스트 윈도우를 사용하므로 5명 팀이면 최소 5배의 토큰 소비가 발생합니다. 단순 작업은 서브에이전트로 처리하고, Agent Teams는 토론·리뷰·병렬 탐색처럼 협업이 실제 가치를 만드는 경우에 집중하는 것이 좋습니다."
 ---
 
 ## 서브에이전트와 Agent Teams, 무엇이 다른가

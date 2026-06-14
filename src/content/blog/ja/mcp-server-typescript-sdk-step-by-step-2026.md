@@ -32,14 +32,22 @@ relatedPosts:
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
 faq:
-  - question: "TypeScriptでMCPサーバーをどう作りますか?"
-    answer: "@modelcontextprotocol/sdkとZodをインストールし、3つのステップを踏むだけです。McpServerインスタンスを生成し、server.tool()でZodスキーマベースのツールを登録し、トランスポートを接続します。このパターンを理解すれば30分以内に動作するサーバーを完成できます。"
-  - question: "@modelcontextprotocol/sdkはどう始めますか?"
-    answer: "npm install @modelcontextprotocol/sdk zod でインストールし、このときSDK 1.29.0とZod 4.4.3が入ります。SDKはESMモジュールとして配布されるため、package.jsonにtype: moduleを指定し、tsconfig.jsonでmoduleをESNextに設定するとインポートパスが正しく解決されます。"
-  - question: "stdioトランスポートとHTTP/SSEトランスポートの違いは?"
-    answer: "stdio(StdioServerTransport)はClaude DesktopやCursorにローカル接続する標準的なデプロイ方式で、設定がシンプルです。HTTP/SSEトランスポートはチームで共有したりクラウドにデプロイする場合に使いますが、認証、HTTPS、CORS、セッション管理を別途処理する必要があります。社内ツール程度ならstdioのほうがはるかに簡単です。"
-  - question: "MCPツールのエラーはどう処理すべきですか?"
-    answer: "例外を投げる代わりに、エラーメッセージをcontent配列に入れて返すのがMCPの慣例です。クライアントごとに例外処理の方法が異なるためです。レスポンスにisError: trueフラグを追加すると、クライアントがその応答をエラーとして扱えます。"
+  - question: TypeScriptでMCPサーバーをどう作りますか?
+    answer: >-
+      @modelcontextprotocol/sdkとZodをインストールし、3つのステップを踏むだけです。McpServerインスタンスを生成し、server.tool()でZodスキーマベースのツールを登録し、トランスポートを接続します。このパターンを理解すれば30分以内に動作するサーバーを完成できます。
+  - question: '@modelcontextprotocol/sdkはどう始めますか?'
+    answer: >-
+      npm install @modelcontextprotocol/sdk zod でインストールし、このときSDK 1.29.0とZod
+      4.4.3が入ります。SDKはESMモジュールとして配布されるため、package.jsonにtype:
+      moduleを指定し、tsconfig.jsonでmoduleをESNextに設定するとインポートパスが正しく解決されます。
+  - question: stdioトランスポートとHTTP/SSEトランスポートの違いは?
+    answer: >-
+      stdio(StdioServerTransport)はClaude
+      DesktopやCursorにローカル接続する標準的なデプロイ方式で、設定がシンプルです。HTTP/SSEトランスポートはチームで共有したりクラウドにデプロイする場合に使いますが、認証、HTTPS、CORS、セッション管理を別途処理する必要があります。社内ツール程度ならstdioのほうがはるかに簡単です。
+  - question: MCPツールのエラーはどう処理すべきですか?
+    answer: >-
+      例外を投げる代わりに、エラーメッセージをcontent配列に入れて返すのがMCPの慣例です。クライアントごとに例外処理の方法が異なるためです。レスポンスにisError:
+      trueフラグを追加すると、クライアントがその応答をエラーとして扱えます。
 ---
 
 ```typescript
@@ -547,7 +555,7 @@ app.listen(3000, () => {
 
 この方法でデプロイすると、CursorやClaude Desktopから `http://localhost:3000/sse` をMCPサーバーURLとして登録できる。ただしHTTP方式は設定がより複雑で、セキュリティ(認証、HTTPS)の処理も別途必要だ。社内ツール程度であればstdioのほうがはるかにシンプルだ。
 
-MCP vs A2A vs Open Responses プロトコル比較 で触れたように、リモートMCPサーバーアーキテクチャは成熟度とセキュリティの面でまだ整理中の部分が多い。今すぐリモートデプロイを計画しているなら、認証トークン、CORS、セッション管理には必ず気を配る必要がある。
+MCP vs A2A vs Open Responses プロトコル比較で触れたように、リモートMCPサーバーアーキテクチャは成熟度とセキュリティの面でまだ整理中の部分が多い。今すぐリモートデプロイを計画しているなら、認証トークン、CORS、セッション管理には必ず気を配る必要がある。
 
 ## 実際に使えるツールのアイデア
 

@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "可以在没有API密钥的情况下测试PydanticAI吗？"
+    answer: "可以。TestModel不调用任何API，能验证智能体结构、工具配置和依赖注入是否正确。在CI流水线中可零成本验证智能体逻辑，之后再接入真实提供商。"
+  - question: "为什么在v1.88.0中使用result_type会报错？"
+    answer: "因为v1.88.0中result_type参数已重命名为output_type，使用旧文档会触发Unknown keyword arguments错误。通过inspect.signature确认可知output_type才是正确的参数名。"
+  - question: "如何在PydanticAI中切换模型提供商？"
+    answer: "保持智能体定义不变，只更改传给run_sync的model字符串即可，例如anthropic:claude-sonnet-4-6、openai:gpt-4o或google-gla:gemini-2.5-flash。无需修改智能体逻辑，只需注意安装对应提供商的专用包。"
+  - question: "什么时候用TestModel，什么时候用FunctionModel？"
+    answer: "TestModel为str返回'a'、为int返回0等最小值，对结构测试足够，但遇到严格的自定义validator会失败。当有validator或需要测试工具响应时，使用可直接提供精确响应的FunctionModel。"
 ---
 
 ```python

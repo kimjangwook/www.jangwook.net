@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "Tool Useは通常のチャットボット呼び出しと何が違うのか？"
+    answer: "チャットボットはモデルが直接答えを生成するため、日付計算のような処理を自信を持って間違えることがある。Tool Useはモデルがツール呼び出しを決めるだけで、実際の実行はPythonコードに委ねるため、datetimeのような正確な関数が結果を返す。この委譲の構造が信頼性を生む。"
+  - question: "ツールを定義する際に必須の項目は何か？"
+    answer: "ツール一つはname、description、input_schemaの三つで構成される。nameは識別子、input_schemaは入力パラメータのJSONスキーマで、descriptionはモデルがそのツールをいつ使うか判断する根拠となる。descriptionが曖昧だとモデルが誤ったツールを選んだり、まったく使わなかったりする。"
+  - question: "ツールの実行結果はどのrole(役割)でメッセージに入れるべきか？"
+    answer: "tool_resultはuserロールで入れる必要がある。直感的にはassistantに思えるが、API設計上ツール結果はユーザー(環境)が返すものとして扱われる。さらにモデルの応答はblock.textだけ取り出さず、response.content全体をassistantメッセージとして追加することで次の応答が正しく生成される。"
+  - question: "Tool Useはコストがどれくらい増え、どう抑えるのか？"
+    answer: "Anthropic公式ドキュメントによると、ツール定義一つあたり約200〜300トークンの固定オーバーヘッドがリクエストごとに発生し、エージェンティックループはコンテキストを累積する。ツール定義とシステムプロンプトにPrompt Caching(cache_control ephemeral)を適用し、現在のタスクに必要な2〜3個のツールだけ渡すことでコストを抑えられる。"
 ---
 
 FastAPIでClaude APIのストリーミングバックエンドを構築しているときに、初めてTool Useを使った。きっかけはシンプルだった。ユーザーが「今年の残り日数は？」と聞いたとき、Claudeが日付計算を間違えたのを発見した。ただ間違えたのではなく、自信を持って間違えていた。それを見て「これはチャットボットではダメだ」と思った。

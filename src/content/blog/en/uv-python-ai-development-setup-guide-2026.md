@@ -38,14 +38,33 @@ relatedPosts:
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
 faq:
-  - question: "What makes uv better than pip or Poetry?"
-    answer: "uv is written in Rust, so it downloads packages in parallel and uses its cache efficiently. Unlike pip, which resolves packages sequentially, or Poetry, which is written in Python, uv is fundamentally faster. It also unifies reproducible environment management via pyproject.toml and uv.lock, Python version management, and CLI tool installation into a single tool."
-  - question: "How do I set up an AI development environment like Claude SDK with uv?"
-    answer: "Create a project with uv init, then add the SDK with uv add anthropic. The virtual environment is created automatically and both pyproject.toml and uv.lock are updated. You can run scripts directly with uv run main.py, without needing to activate the environment via source."
-  - question: "How fast is uv in practice?"
-    answer: "In measured runs, the first install of 16 packages including anthropic took 0.874 seconds and uv init took 0.435 seconds. With a warm cache, reinstalling 19 packages via uv sync finished in 0.074 seconds. The same work with pip would typically take 20 to 40 seconds."
-  - question: "Are there any caveats or limits when using uv?"
-    answer: "As of 2026 uv is at v0.11, still in the v0.x range, so large organizations should weigh the learning cost before switching existing workflows. Because it is PyPI-based, it cannot directly handle ML libraries that need conda channels such as torch or CUDA, so you may still need conda alongside it in those cases."
+  - question: What makes uv better than pip or Poetry?
+    answer: >-
+      uv is written in Rust, so it downloads packages in parallel and uses its
+      cache efficiently. Unlike pip, which resolves packages sequentially, or
+      Poetry, which is written in Python, uv is fundamentally faster. It also
+      unifies reproducible environment management via pyproject.toml and
+      uv.lock, Python version management, and CLI tool installation into a
+      single tool.
+  - question: How do I set up an AI development environment like Claude SDK with uv?
+    answer: >-
+      Create a project with uv init, then add the SDK with uv add anthropic. The
+      virtual environment is created automatically and both pyproject.toml and
+      uv.lock are updated. You can run scripts directly with uv run main.py,
+      without needing to activate the environment via source.
+  - question: How fast is uv in practice?
+    answer: >-
+      In measured runs, the first install of 16 packages including anthropic
+      took 0.874 seconds and uv init took 0.435 seconds. With a warm cache,
+      reinstalling 19 packages via uv sync finished in 0.074 seconds. The same
+      work with pip would typically take 20 to 40 seconds.
+  - question: Are there any caveats or limits when using uv?
+    answer: >-
+      As of 2026 uv is at v0.11, still in the v0.x range, so large organizations
+      should weigh the learning cost before switching existing workflows.
+      Because it is PyPI-based, it cannot directly handle ML libraries that need
+      conda channels such as torch or CUDA, so you may still need conda
+      alongside it in those cases.
 ---
 
 Until last year, every time I started an AI project I'd go through the same ritual. `python -m venv .venv`, `source .venv/bin/activate`, `pip install anthropic openai`... and then wait. Sometimes over two minutes. Watching anthropic, torch, and pydantic download one by one.
@@ -344,7 +363,7 @@ jobs:
         run: uv run pytest
 ```
 
-The official `astral-sh/setup-uv` action handles cache automatically. When building an MCP server in Python, this same CI pattern applies. Add the dependency with `uv add fastmcp`, then `uv sync` in GitHub Actions.
+The official `astral-sh/setup-uv` action handles cache automatically. When building an MCP server in Python, this same CI pattern applies. Add the dependency with `uv add fastmcp` — see the [FastMCP server build guide](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026) for a complete example — then `uv sync` in GitHub Actions.
 
 ## Managing CLI Tools with uv tool
 

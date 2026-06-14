@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "Tool Use는 일반 챗봇 호출과 무엇이 다른가?"
+    answer: "챗봇은 모델이 직접 답을 생성하므로 날짜 계산 같은 작업을 자신있게 틀릴 수 있다. Tool Use는 모델이 도구 호출만 결정하고 실제 실행은 파이썬 코드에 위임하므로, datetime 같은 정확한 함수가 결과를 돌려준다. 이 위임 구조가 신뢰성을 만든다."
+  - question: "도구를 정의할 때 반드시 필요한 항목은 무엇인가?"
+    answer: "도구 하나는 name, description, input_schema 세 가지로 구성된다. name은 식별자, input_schema는 입력 파라미터의 JSON 스키마이며, description은 모델이 언제 그 도구를 쓸지 판단하는 근거다. description이 모호하면 모델이 엉뚱한 도구를 고르거나 아예 쓰지 않는다."
+  - question: "도구 실행 결과는 어떤 역할(role)로 메시지에 넣어야 하나?"
+    answer: "tool_result는 user 역할로 넣어야 한다. 직관적으로는 assistant일 것 같지만 API 설계상 도구 결과는 사용자(환경)가 돌려주는 것으로 취급한다. 또한 모델의 응답은 block.text만 뽑지 말고 response.content 전체를 assistant 메시지로 추가해야 다음 응답이 올바르게 생성된다."
+  - question: "Tool Use는 비용이 얼마나 늘어나며 어떻게 줄이나?"
+    answer: "Anthropic 공식 문서 기준 도구 정의 하나당 약 200〜300 토큰의 고정 오버헤드가 매 요청마다 생기고, 에이전틱 루프는 컨텍스트를 누적한다. 도구 정의와 시스템 프롬프트에 Prompt Caching(cache_control ephemeral)을 적용하고, 현재 작업에 필요한 2〜3개 도구만 전달하면 비용을 줄일 수 있다."
 ---
 
 FastAPI로 Claude API 스트리밍 백엔드를 구축하다가 처음으로 Tool Use를 써봤다. 계기는 단순했다. 사용자가 "올해 남은 일수가 몇 일이야?"라고 물었을 때, Claude가 날짜 계산을 틀리게 답하는 걸 발견했다. 그냥 틀린 게 아니라 자신있게 틀렸다. 그걸 보고 "아, 이건 챗봇으론 안 되겠다"는 생각이 들었다.

@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "Mastra.ai是什么样的框架?"
+    answer: "它是Gatsby.js团队打造的TypeScript-first AI代理框架，将代理、工作流、记忆和可观测性整合到单一SDK中。它底层基于Vercel AI SDK运行，并于2026年1月发布了v1.0。"
+  - question: "真的能在5分钟内运行代理吗?"
+    answer: "通过npm create mastra@latest安装大约需要2〜3分钟，加上首个代理运行总共约5〜10分钟。连接Google Gemini的天气代理在约5.8秒内返回了首尔与东京的天气对比结果。"
+  - question: "在Mastra中使用Memory需要什么?"
+    answer: "Memory必须配置LibSQL或DuckDB等存储后端。单独运行代理时若包含Memory，会立即抛出Memory requires a storage provider错误。"
+  - question: "Mastra支持哪些LLM提供商?"
+    answer: "支持Vercel AI SDK覆盖的几乎所有模型，包括OpenAI、Anthropic、Google Gemini和Meta Llama。切换提供商只需更改model字段的字符串，例如把google/gemini-2.5-flash换成anthropic/claude-sonnet-4-6即可正常运行。"
 ---
 
 "TypeScript开发者的选择无非就是LangChain.js或Vercel AI SDK。"每次想用JavaScript构建AI代理，我都会听到这句话。我自己也没怎么怀疑就接受了。直到今年初，我了解到Mastra.ai。这是一个通过YC W25批次获得1300万美元融资、发布了v1.0的框架。

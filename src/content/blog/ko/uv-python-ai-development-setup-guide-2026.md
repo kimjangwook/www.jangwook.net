@@ -35,14 +35,26 @@ relatedPosts:
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
 faq:
-  - question: "uv가 pip이나 Poetry보다 나은 점은 무엇인가요?"
-    answer: "uv는 Rust로 만들어져 패키지를 병렬로 다운로드하고 캐시를 효율적으로 활용합니다. 패키지를 순차적으로 해석하는 pip이나 Python으로 작성된 Poetry와 달리 근본적으로 빠른 속도를 냅니다. 또한 pyproject.toml과 uv.lock 기반의 재현 가능한 환경 관리, Python 버전 관리, CLI 도구 설치까지 하나의 도구로 통합합니다."
-  - question: "uv로 Claude SDK 같은 AI 개발 환경을 어떻게 세팅하나요?"
-    answer: "uv init으로 프로젝트를 만든 뒤 uv add anthropic으로 SDK를 추가하면 됩니다. 가상환경이 자동으로 생성되고 pyproject.toml과 uv.lock이 업데이트됩니다. 스크립트는 source 활성화 없이 uv run main.py로 바로 실행할 수 있습니다."
-  - question: "uv는 실제로 얼마나 빠른가요?"
-    answer: "직접 측정한 결과 anthropic을 포함한 16개 패키지 최초 설치가 0.874초, uv init은 0.435초였습니다. 캐시가 있는 상태에서 uv sync로 19개 패키지를 다시 설치하니 0.074초만에 끝났습니다. 같은 작업을 pip으로 하면 20초에서 40초 정도 걸립니다."
-  - question: "uv를 쓸 때 주의할 점이나 한계는 없나요?"
-    answer: "uv는 2026년 현재 v0.11로 아직 v0.x 단계라 대형 조직에서 기존 워크플로우를 전환할 때는 학습 비용을 고려해야 합니다. 또한 PyPI 기반이라 torch나 CUDA처럼 conda 채널에서 설치해야 하는 ML 라이브러리는 직접 다루지 못해, 이런 경우에는 conda를 함께 써야 합니다."
+  - question: uv가 pip이나 Poetry보다 나은 점은 무엇인가요?
+    answer: >-
+      uv는 Rust로 만들어져 패키지를 병렬로 다운로드하고 캐시를 효율적으로 활용합니다. 패키지를 순차적으로 해석하는 pip이나
+      Python으로 작성된 Poetry와 달리 근본적으로 빠른 속도를 냅니다. 또한 pyproject.toml과 uv.lock 기반의
+      재현 가능한 환경 관리, Python 버전 관리, CLI 도구 설치까지 하나의 도구로 통합합니다.
+  - question: uv로 Claude SDK 같은 AI 개발 환경을 어떻게 세팅하나요?
+    answer: >-
+      uv init으로 프로젝트를 만든 뒤 uv add anthropic으로 SDK를 추가하면 됩니다. 가상환경이 자동으로 생성되고
+      pyproject.toml과 uv.lock이 업데이트됩니다. 스크립트는 source 활성화 없이 uv run main.py로 바로
+      실행할 수 있습니다.
+  - question: uv는 실제로 얼마나 빠른가요?
+    answer: >-
+      직접 측정한 결과 anthropic을 포함한 16개 패키지 최초 설치가 0.874초, uv init은 0.435초였습니다. 캐시가
+      있는 상태에서 uv sync로 19개 패키지를 다시 설치하니 0.074초만에 끝났습니다. 같은 작업을 pip으로 하면 20초에서
+      40초 정도 걸립니다.
+  - question: uv를 쓸 때 주의할 점이나 한계는 없나요?
+    answer: >-
+      uv는 2026년 현재 v0.11로 아직 v0.x 단계라 대형 조직에서 기존 워크플로우를 전환할 때는 학습 비용을 고려해야 합니다.
+      또한 PyPI 기반이라 torch나 CUDA처럼 conda 채널에서 설치해야 하는 ML 라이브러리는 직접 다루지 못해, 이런 경우에는
+      conda를 함께 써야 합니다.
 ---
 
 작년까지 나는 AI 프로젝트를 시작할 때마다 의식처럼 같은 과정을 반복했다. `python -m venv .venv`, `source .venv/bin/activate`, `pip install anthropic openai`… 그리고 기다렸다. 길게는 2분 넘게. anthropic, torch, pydantic 같은 패키지들이 차례로 다운로드되는 동안.
@@ -363,7 +375,7 @@ jobs:
 
 `astral-sh/setup-uv` 액션이 공식 제공된다. CI 캐시도 자동으로 처리해준다.
 
-MCP 서버를 Python으로 구축할 때도 이 CI 패턴이 그대로 적용된다. FastMCP 의존성을 `uv add fastmcp`로 추가하고, GitHub Actions에서 `uv sync`로 설치하면 일관된 빌드 환경을 유지할 수 있다.
+MCP 서버를 Python으로 구축할 때도 이 CI 패턴이 그대로 적용된다. [FastMCP](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026) 의존성을 `uv add fastmcp`로 추가하고, GitHub Actions에서 `uv sync`로 설치하면 일관된 빌드 환경을 유지할 수 있다.
 
 ## uv tool로 CLI 도구 관리하기
 

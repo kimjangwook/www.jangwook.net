@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same LLM track.
       ja: 同じLLMの流れで併せて読むと役立ちます。
       zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "Mastra.ai는 어떤 프레임워크인가요?"
+    answer: "Gatsby.js 팀이 만든 TypeScript-first AI 에이전트 프레임워크로, 에이전트·워크플로우·메모리·옵저버빌리티를 하나의 SDK로 제공합니다. 내부적으로 Vercel AI SDK를 기반으로 동작하며 2026년 1월 v1.0을 출시했습니다."
+  - question: "정말 5분 만에 에이전트를 실행할 수 있나요?"
+    answer: "npm create mastra@latest 명령으로 설치하는 데 약 2〜3분이 걸렸고, 첫 에이전트 실행까지 합치면 5〜10분 정도입니다. Google Gemini 연동 날씨 에이전트는 서울·도쿄 날씨 비교 응답을 약 5.8초 만에 반환했습니다."
+  - question: "Mastra에서 Memory를 쓰려면 무엇이 필요한가요?"
+    answer: "Memory는 LibSQL이나 DuckDB 같은 스토리지 백엔드 설정이 반드시 필요합니다. 에이전트만 단독으로 쓰면서 Memory를 포함하면 'Memory requires a storage provider' 에러가 발생합니다."
+  - question: "어떤 LLM 제공자를 지원하나요?"
+    answer: "OpenAI, Anthropic, Google Gemini, Meta Llama 등 Vercel AI SDK가 지원하는 거의 모든 모델을 쓸 수 있습니다. model 필드의 문자열만 바꾸면 제공자가 전환되므로, 예를 들어 google/gemini-2.5-flash를 anthropic/claude-sonnet-4-6으로 교체할 수 있습니다."
 ---
 
 "TypeScript 개발자면 결국 LangChain.js 아니면 Vercel AI SDK 정도지." JavaScript로 AI 에이전트를 만들려고 할 때마다 이 말을 들었다. 나도 별 의심 없이 받아들이고 있었다. 그러다 올해 초 Mastra.ai를 알게 됐다. YC W25 배치를 거쳐 $13M 투자를 받고 v1.0을 출시한 프레임워크다.

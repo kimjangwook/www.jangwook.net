@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "How do Agent Teams differ from subagents?"
+    answer: "Subagents run inside a single session and only report results back to the caller. Agent Teams consist of fully independent Claude Code instances, each with its own context window, that message each other directly. Coordination happens autonomously through a shared task list instead of being handled entirely by the main agent."
+  - question: "How do I enable Agent Teams?"
+    answer: "Agent Teams are disabled by default. You can set the environment variable CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1, or add the same value to the env section of ~/.claude/settings.json for a persistent setting. The settings.json approach is more reliable because environment variables vanish between sessions."
+  - question: "How do I prevent multiple teammates from editing the same file?"
+    answer: "There is no file-level locking yet, so you have to work around it through task design. Clearly separate directory and file ownership per teammate, and use task dependencies to ensure shared files have only a single writer."
+  - question: "How expensive are Agent Teams in token cost?"
+    answer: "Each teammate uses its own context window, so a 5-person team means at least 5x token consumption. Use subagents for simple tasks and reserve Agent Teams for discussion, review, and parallel exploration where collaboration actually adds value."
 ---
 
 ## How Agent Teams differ from subagents

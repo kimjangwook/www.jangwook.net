@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "JestをVitest 4に移行すべきですか?"
+    answer: "TypeScriptとViteベースのプロジェクトなら推奨します。ts-jestなどの変換レイヤー設定、tsconfigの競合、モジュール解決エラーをデバッグし続けるコストが大きいためです。ただしNext.jsやExpressベースの大規模サーバーテストスイートでは、VitestがViteエコシステムに最適化されている分、慎重に判断すべきです。"
+  - question: "globals: trueオプションはなぜ重要ですか?"
+    answer: "このオプションをオンにすると、既存のJestコードのdescribe、test、expectをimportなしでそのまま使えます。移行初期にすべてのテストファイルを一度に変える必要がなくなります。設定しないとdescribe is not definedエラーが発生します。"
+  - question: "vi.importActual()を使うときによくある間違いは何ですか?"
+    answer: "jest.requireActual()と違いvi.importActual()は非同期なので、mockファクトリをasyncにしてawaitを付ける必要があります。awaitを忘れるとモジュールのexportではなくPromiseオブジェクトが展開されて入り、誤動作します。最初にここで詰まる人が多いポイントです。"
+  - question: "Vitest 4で追加されたBrowser Modeとは何ですか?"
+    answer: "Vitest 4でBrowser Modeがexperimentalからstableに格上げされました。以前jest-dom + JSDOMの組み合わせで模倣していたDOMテストを、実際のChromiumで実行できるようになっています。"
 ---
 
 先月からサイドプロジェクトのテストパイプラインを整備していて、長年使ってきたJestをVitestに乗り換えた。理由はシンプルだ。TypeScriptプロジェクトでJestを維持しようとすると、`ts-jest`や`babel-jest`のような変換レイヤーが必要になる。設定項目が増えるにつれ、エラーメッセージが暗号のように読めなくなってくる。

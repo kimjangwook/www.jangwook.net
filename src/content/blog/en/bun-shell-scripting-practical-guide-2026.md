@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "What is the core difference between Bun Shell and zx?"
+    answer: "The API syntax is nearly identical, but Bun Shell does not depend on bash. zx invokes the system bash or sh, so on Windows it needs WSL or Git Bash. Bun Shell ships its own shell written in Rust, running ls, rm, echo and similar commands identically across Windows, macOS, and Linux."
+  - question: "Can I pass a string directly via .stdin() in Bun 1.3.14?"
+    answer: "No. Passing a string in 1.3.14 raises a stdin is not a function runtime error. The most reliable alternatives are writing to a file with Bun.write and redirecting it, or piping through printf."
+  - question: "Why do I have to include PATH when using $.env()?"
+    answer: "Because the object you pass to $.env() completely replaces the environment instead of merging it. If you omit PATH, subsequent commands cannot find executables like ls, so you must explicitly include process.env.PATH."
+  - question: "Should I use Bun Shell instead of zx right now?"
+    answer: "If your project is already Bun-based or your team includes Windows developers, it is a natural fit with zero extra dependencies. But if you are on Node.js plus npm with no migration plans, or zx already works well, sticking with zx is more practical."
 ---
 
 I have a small recurring frustration when writing shell scripts. Bash works but breaks on Windows. Node.js `child_process` turns into callback soup. And `zx` needs an extra package. So when Bun Shell came up, I figured it was just another zx clone. After actually running it, my opinion shifted a bit.

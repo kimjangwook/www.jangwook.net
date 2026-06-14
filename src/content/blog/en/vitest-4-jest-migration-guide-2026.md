@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Should I migrate from Jest to Vitest 4?"
+    answer: "Yes for TypeScript and Vite-based projects. Maintaining Jest there means constant debugging of ts-jest transform layers, tsconfig conflicts, and module resolution errors. For large Next.js or Express server test suites, be more careful since Vitest is optimized for the Vite ecosystem and can surface unexpected module resolution issues."
+  - question: "Why does globals: true matter in the Vitest config?"
+    answer: "With globals: true, existing Jest code that uses describe, test, and expect without explicit imports runs immediately, so you do not have to change all your test files at once. Without it you get a describe is not defined error."
+  - question: "What is the most common mistake when migrating to vi.importActual()?"
+    answer: "Unlike jest.requireActual(), vi.importActual() is async, so the mock factory must be async and you must await the call. Forget the await and a Promise object gets spread into your mock instead of the real module exports. This is the most common mistake when migrating partial mocks."
+  - question: "How long does a Vitest migration take?"
+    answer: "For a small TypeScript project it was 30 to 60 minutes in my experience. The slowest parts are finding the vi.importActual() patterns and moving moduleNameMapper over to resolve.alias. Once those two are mapped out, the rest is almost automatic."
 ---
 
 Last month I overhauled the test pipeline for a side project and switched from Jest to Vitest. The reason was straightforward: maintaining Jest in a TypeScript project means you need transformation layers like `ts-jest` or `babel-jest`. The more config options you pile on, the more error messages start reading like cryptic noise.

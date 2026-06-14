@@ -36,14 +36,31 @@ relatedPosts:
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
 faq:
-  - question: "How do I build an MCP server with TypeScript?"
-    answer: "Install @modelcontextprotocol/sdk and Zod, then follow three steps. Create a McpServer instance, register tools with server.tool() using Zod schemas, and connect a transport. Once you understand this pattern you can have a working server running in under 30 minutes."
-  - question: "How do I get started with @modelcontextprotocol/sdk?"
-    answer: "Install it with npm install @modelcontextprotocol/sdk zod, which pulls in SDK version 1.29.0 and Zod 4.4.3. Because the SDK ships as an ESM module, set type: module in package.json and module: ESNext in tsconfig.json so the import paths resolve correctly."
-  - question: "What is the difference between stdio and HTTP/SSE transport?"
-    answer: "StdioServerTransport is the standard deployment mode for connecting locally to Claude Desktop or Cursor, and it is simple to configure. HTTP/SSE transport is for servers shared across a team or deployed to the cloud, but it requires handling auth, HTTPS, CORS, and session management separately. For internal tools, stdio is far simpler."
-  - question: "How should I handle errors in an MCP tool?"
-    answer: "MCP convention is to return the error message inside the content array rather than throwing an exception, since different clients handle thrown exceptions differently. Adding an isError: true flag to the response lets the client know to treat it as an error."
+  - question: How do I build an MCP server with TypeScript?
+    answer: >-
+      Install @modelcontextprotocol/sdk and Zod, then follow three steps. Create
+      a McpServer instance, register tools with server.tool() using Zod schemas,
+      and connect a transport. Once you understand this pattern you can have a
+      working server running in under 30 minutes.
+  - question: How do I get started with @modelcontextprotocol/sdk?
+    answer: >-
+      Install it with npm install @modelcontextprotocol/sdk zod, which pulls in
+      SDK version 1.29.0 and Zod 4.4.3. Because the SDK ships as an ESM module,
+      set type: module in package.json and module: ESNext in tsconfig.json so
+      the import paths resolve correctly.
+  - question: What is the difference between stdio and HTTP/SSE transport?
+    answer: >-
+      StdioServerTransport is the standard deployment mode for connecting
+      locally to Claude Desktop or Cursor, and it is simple to configure.
+      HTTP/SSE transport is for servers shared across a team or deployed to the
+      cloud, but it requires handling auth, HTTPS, CORS, and session management
+      separately. For internal tools, stdio is far simpler.
+  - question: How should I handle errors in an MCP tool?
+    answer: >-
+      MCP convention is to return the error message inside the content array
+      rather than throwing an exception, since different clients handle thrown
+      exceptions differently. Adding an isError: true flag to the response lets
+      the client know to treat it as an error.
 ---
 
 ```typescript

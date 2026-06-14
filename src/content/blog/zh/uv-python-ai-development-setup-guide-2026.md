@@ -35,14 +35,23 @@ relatedPosts:
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
 faq:
-  - question: "uv 相比 pip 或 Poetry 好在哪里？"
-    answer: "uv 用 Rust 编写，能并行下载包并高效利用缓存。与顺序解析依赖的 pip 或用 Python 编写的 Poetry 不同，uv 在速度上有本质提升。它还把基于 pyproject.toml 和 uv.lock 的可复现环境管理、Python 版本管理以及 CLI 工具安装统一到一个工具中。"
-  - question: "如何用 uv 搭建 Claude SDK 这类 AI 开发环境？"
-    answer: "先用 uv init 创建项目，再用 uv add anthropic 添加 SDK。虚拟环境会自动创建，pyproject.toml 和 uv.lock 也会同步更新。脚本无需通过 source 激活环境，直接用 uv run main.py 即可运行。"
-  - question: "uv 实际有多快？"
-    answer: "实测中，包含 anthropic 在内的 16 个包首次安装耗时 0.874 秒，uv init 为 0.435 秒。在有缓存的情况下，用 uv sync 重新安装 19 个包仅需 0.074 秒。同样的操作用 pip 通常要花 20 到 40 秒。"
-  - question: "使用 uv 有哪些注意事项或局限？"
-    answer: "截至 2026 年 uv 仍处于 v0.11，属于 v0.x 阶段，大型组织迁移现有工作流前需要考虑学习成本。由于它基于 PyPI，无法直接处理 torch、CUDA 等需要从 conda 渠道安装的 ML 库，这类情况仍需配合使用 conda。"
+  - question: uv 相比 pip 或 Poetry 好在哪里？
+    answer: >-
+      uv 用 Rust 编写，能并行下载包并高效利用缓存。与顺序解析依赖的 pip 或用 Python 编写的 Poetry 不同，uv
+      在速度上有本质提升。它还把基于 pyproject.toml 和 uv.lock 的可复现环境管理、Python 版本管理以及 CLI
+      工具安装统一到一个工具中。
+  - question: 如何用 uv 搭建 Claude SDK 这类 AI 开发环境？
+    answer: >-
+      先用 uv init 创建项目，再用 uv add anthropic 添加 SDK。虚拟环境会自动创建，pyproject.toml 和
+      uv.lock 也会同步更新。脚本无需通过 source 激活环境，直接用 uv run main.py 即可运行。
+  - question: uv 实际有多快？
+    answer: >-
+      实测中，包含 anthropic 在内的 16 个包首次安装耗时 0.874 秒，uv init 为 0.435 秒。在有缓存的情况下，用 uv
+      sync 重新安装 19 个包仅需 0.074 秒。同样的操作用 pip 通常要花 20 到 40 秒。
+  - question: 使用 uv 有哪些注意事项或局限？
+    answer: >-
+      截至 2026 年 uv 仍处于 v0.11，属于 v0.x 阶段，大型组织迁移现有工作流前需要考虑学习成本。由于它基于 PyPI，无法直接处理
+      torch、CUDA 等需要从 conda 渠道安装的 ML 库，这类情况仍需配合使用 conda。
 ---
 
 直到去年，我每次启动AI项目都要重复同样的仪式：`python -m venv .venv`、`source .venv/bin/activate`、`pip install anthropic openai`……然后等待。有时超过两分钟。看着anthropic、torch、pydantic一个接一个地下载。
@@ -353,7 +362,7 @@ jobs:
         run: uv run pytest
 ```
 
-官方提供了`astral-sh/setup-uv` action，自动处理CI缓存。用Python构建MCP服务器时也可以直接套用这个CI模式。先用`uv add fastmcp`添加依赖，再在GitHub Actions中用`uv sync`安装。
+官方提供了`astral-sh/setup-uv` action，自动处理CI缓存。用Python构建MCP服务器时也可以直接套用这个CI模式。先用`uv add fastmcp`添加依赖（详见[FastMCP服务器构建指南](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)），再在GitHub Actions中用`uv sync`安装。
 
 ## 用uv tool管理CLI工具
 

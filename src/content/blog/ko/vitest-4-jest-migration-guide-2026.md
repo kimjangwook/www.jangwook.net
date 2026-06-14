@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Jest를 꼭 Vitest 4로 마이그레이션해야 하나요?"
+    answer: "TypeScript와 Vite 기반 프로젝트라면 권장합니다. ts-jest 같은 변환 레이어 설정과 tsconfig 충돌, 모듈 해석 오류를 계속 디버깅하는 비용이 크기 때문입니다. 다만 Next.js나 Express 기반 대형 서버 테스트 스위트라면 Vitest가 Vite 생태계에 최적화돼 있어 신중하게 판단하는 것이 좋습니다."
+  - question: "globals: true 옵션은 왜 중요한가요?"
+    answer: "이 옵션을 켜면 기존 Jest 코드의 describe, test, expect를 import 없이 그대로 쓸 수 있습니다. 마이그레이션 초기에 모든 테스트 파일을 한꺼번에 바꾸지 않아도 됩니다. 설정하지 않으면 describe is not defined 에러가 발생합니다."
+  - question: "vi.importActual()을 쓸 때 자주 하는 실수는 무엇인가요?"
+    answer: "jest.requireActual()과 달리 vi.importActual()은 비동기라서 mock 팩토리를 async로 만들고 await를 붙여야 합니다. await를 빼면 모듈 export 대신 Promise 객체가 펼쳐져 들어가 잘못 동작합니다. 부분 mock 마이그레이션에서 가장 흔한 실수입니다."
+  - question: "Vitest 마이그레이션은 시간이 얼마나 걸리나요?"
+    answer: "필자 경험상 소규모 TypeScript 프로젝트 기준 30〜60분이면 충분했습니다. 가장 오래 걸리는 작업은 vi.importActual() 패턴을 찾는 것과 moduleNameMapper를 resolve.alias로 옮기는 것입니다. 이 두 가지만 미리 파악하면 나머지는 거의 자동입니다."
 ---
 
 지난달부터 사이드 프로젝트 테스트 파이프라인을 정비하면서, 오랫동안 써온 Jest를 Vitest로 전환했다. 이유는 간단했다. TypeScript 프로젝트에서 Jest를 유지하려면 `ts-jest`나 `babel-jest` 같은 변환 레이어가 필요한데, 이게 설정 항목이 늘수록 에러 메시지가 암호처럼 읽히기 시작한다.

@@ -37,6 +37,15 @@ relatedPosts:
       en: Worth reading alongside this in the same MCP track.
       ja: 同じMCPの流れで併せて読むと役立ちます。
       zh: 在同一 MCP 脉络中可一并阅读。
+faq:
+  - question: "Why use a local LLM + MCP setup instead of cloud AI?"
+    answer: "In environments handling hospital medical records, internal legal documents, or financial customer data, pasting into Claude or GPT is never an option because data cannot leave the premises. This setup runs Ollama + Gemma 4 + FastMCP entirely locally, so prompts and context never flow through external servers, and it works even in air-gapped environments with no internet."
+  - question: "Does Gemma 4 understand the MCP protocol directly?"
+    answer: "No. Gemma 4 does not natively understand the MCP protocol. A Python orchestrator bridges the gap: it fetches the tool list from FastMCP, converts it to OpenAI function calling format, passes it to Gemma 4, and when the model requests a tool call it executes that call against FastMCP and passes the result back."
+  - question: "How fast is it when running locally?"
+    answer: "On a personal M2 MacBook, a summary task involving two tool calls took about 12 seconds, and responses generally fall in the 5 to 15 second range, longer for longer outputs. It is not suitable for real-time interactive use; batch processing and background jobs are the realistic use case."
+  - question: "What are the limitations of this setup?"
+    answer: "Gemma 4 supports function calling to some degree but occasionally passes wrong arguments or calls tools that do not exist, making it less stable than Claude or GPT-4o. It can also forget the original goal after 3 to 4 consecutive tool calls, so adding retry logic and parameter validation plus stating the final goal in the system prompt helps."
 ---
 
 "We work in an environment where cloud AI is not allowed." I honestly didn't get that at first. Then I started meeting the teams who live with it: people handling hospital medical records, reviewing legal documents, analyzing financial customer data. There are more of them than I assumed. Telling those teams to "just paste it into Claude or GPT" was never going to fly.

@@ -32,6 +32,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "Can I test PydanticAI without an API key?"
+    answer: "Yes. TestModel makes no API calls and lets you verify that the agent structure, tool wiring, and dependency injection are correct. Use it in CI pipelines for zero-cost agent logic verification before connecting a real provider."
+  - question: "Why does result_type throw an error in v1.88.0?"
+    answer: "In v1.88.0 the result_type parameter was renamed to output_type, so old docs or tutorials trigger an Unknown keyword arguments error. Confirming via inspect.signature shows output_type is the correct parameter name."
+  - question: "How do I switch model providers in PydanticAI?"
+    answer: "Leave the agent definition unchanged and only change the model string passed to run_sync, such as anthropic:claude-sonnet-4-6, openai:gpt-4o, or google-gla:gemini-2.5-flash. No agent logic changes are needed, just install the provider-specific package."
+  - question: "When should I use TestModel versus FunctionModel?"
+    answer: "TestModel returns minimum values like a for str and 0 for int, which is fine for structure tests but fails strict custom validators. Use FunctionModel when you have validators or need to test tool response handling, since it lets you provide the exact response."
 ---
 
 ```python

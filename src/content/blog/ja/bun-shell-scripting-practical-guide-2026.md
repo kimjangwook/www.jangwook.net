@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Bun Shellとzxの核心的な違いは何ですか？"
+    answer: "API構文はほぼ同じですが、Bun ShellはBashに依存しません。zxはシステムのbashやshを呼び出すためWindowsではWSLやGit Bashが必要ですが、Bun ShellはRustで実装した自前のシェルを内蔵し、ls、rm、echoなどのコマンドをOSに関係なく同じように実行します。"
+  - question: "Bun 1.3.14で.stdin()に文字列を直接渡せますか？"
+    answer: "いいえ。1.3.14で文字列を直接渡すとstdin is not a functionエラーが発生します。最も安定した代替策は、Bun.writeでファイルに書き出してリダイレクトするか、printfでパイプする方法です。"
+  - question: "$.env()を使うとき、なぜPATHを明示的に渡す必要があるのですか？"
+    answer: "$.env()に渡すオブジェクトが既存の環境変数をマージせず完全に置換するためです。PATHを忘れると以降のすべてのコマンドでlsなどの基本実行ファイルが見つからなくなるので、process.env.PATHを明示的に含める必要があります。"
+  - question: "今すぐzxの代わりにBun Shellを使うべきですか？"
+    answer: "プロジェクトがすでにBunベースか、チームにWindowsの開発者がいる場合は追加依存なしで使えるため良い選択です。ただしNode.js + npmベースで移行計画がない、またはzxが問題なく動いているならzxを維持する方が現実的です。"
 ---
 
 シェルスクリプトを書くとき、ちょっとした悩みが生まれる。bashで書けば慣れているがWindowsで壊れる。Node.jsの`child_process`はコールバックまみれになる。`zx`は追加パッケージが必要だ。そんな中でBun Shellを直接試してみた。最初は「zxの劣化版じゃないか」と思っていたが、実際に動かすと少し考えが変わった。

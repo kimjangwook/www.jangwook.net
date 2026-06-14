@@ -25,6 +25,15 @@ relatedPosts:
       en: Continues the hands-on node.js experience.
       ja: node.jsを実際に扱った経験が続く記事です。
       zh: 延续 node.js 的实战经验。
+faq:
+  - question: "node:sqlite 从哪个 Node.js 版本开始可用?"
+    answer: "从 Node.js 22.5.0 起作为内置模块加入。在 v22.22.0 上会带着 experimental 警告运行，v26 已正式稳定化。无需安装，直接 require('node:sqlite') 即可使用。"
+  - question: "可以用 node:sqlite 替代 better-sqlite3 吗?"
+    answer: "两者都是同步专用的设计理念，但 node:sqlite 的 API 表面更窄。最大的区别是没有 db.transaction() 包装器，需要通过 exec() 自己管理 BEGIN/COMMIT/ROLLBACK，也没有 serialize()/deserialize() 内存数据库序列化。好处是无需原生编译，因此不会在 CI 或 Alpine 容器中构建失败。"
+  - question: "node:sqlite 可以直接用于生产服务器吗?"
+    answer: "作者认为还为时尚早。在 Node.js 22 中它仍是 experimental，次要版本间 API 可能变化，而且同步调用在 I/O 密集的服务器上可能阻塞事件循环。但对于内部 CLI 工具、脚本、构建工具、缓存和原型，现在就可以直接使用。"
+  - question: "没有 db.transaction() 时如何处理事务?"
+    answer: "先调用 db.exec('BEGIN')，在 try 块中执行操作，成功时 COMMIT，失败时 ROLLBACK。如果经常使用，可以把这个模式封装成一个 withTransaction(db, fn) 辅助函数，让代码更简洁。"
 ---
 
 停止输入 `npm install sqlite3`。有更好的方式了。

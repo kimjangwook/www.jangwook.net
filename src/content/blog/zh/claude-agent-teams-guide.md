@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "子代理和 Agent Teams 到底有什么区别？"
+    answer: "子代理只能在单一会话内返回结果，是单向结构。Agent Teams 由多个完全独立的 Claude Code 实例组成，各自拥有独立的上下文窗口，彼此直接收发消息进行协作。协调也不再由主代理统一管理，而是通过共享任务列表自主完成。"
+  - question: "如何启用 Agent Teams？"
+    answer: "Agent Teams 默认处于禁用状态。可以设置环境变量 CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1，或在 ~/.claude/settings.json 的 env 部分写入同样的值以持久化。由于环境变量会随会话消失，settings.json 方式更稳定。"
+  - question: "如何防止多个队友同时修改同一文件？"
+    answer: "目前还不支持文件级锁定，只能通过任务设计来规避。请为每个队友明确划分目录和文件职责，并通过任务依赖确保共享文件只有一个写入者。"
+  - question: "Agent Teams 的 Token 成本有多高？"
+    answer: "每个队友使用独立的上下文窗口，因此 5 人团队意味着至少 5 倍的 Token 消耗。简单任务用子代理即可，Agent Teams 应聚焦于讨论、审查和并行探索等协作真正能产生价值的场景。"
 ---
 
 ## 子代理和 Agent Teams 到底差在哪

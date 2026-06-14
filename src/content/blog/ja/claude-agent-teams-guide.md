@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Claude Code track.
       ja: 同じClaude Codeの流れで併せて読むと役立ちます。
       zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "サブエージェントとAgent Teamsは何が違いますか？"
+    answer: "サブエージェントは一つのセッション内で結果を返すだけの一方向構造です。Agent Teamsは完全に独立した複数のClaude Codeインスタンスが各自のコンテキストウィンドウを持ち、互いにメッセージを直接やり取りして協業します。調整もメインエージェントの一括管理ではなく、共有タスクリストで自律的に行われます。"
+  - question: "Agent Teamsはどう有効化しますか？"
+    answer: "Agent Teamsはデフォルトで無効です。環境変数CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1を設定するか、~/.claude/settings.jsonのenvセクションに同じ値を入れて永続化できます。環境変数はセッションごとに消えるため、settings.json方式の方が安定します。"
+  - question: "複数のチームメイトが同じファイルを修正する競合はどう防ぎますか？"
+    answer: "現時点ではファイルレベルのロックはサポートされていないため、タスク設計で回避する必要があります。チームメイトごとに担当ディレクトリとファイルを明確に分離し、共有ファイルは一人だけが修正するよう依存関係を設定してください。"
+  - question: "Agent Teamsのトークンコストはどれくらいですか？"
+    answer: "各チームメイトが独立したコンテキストウィンドウを使うため、5人チームなら最低5倍のトークン消費が発生します。単純作業はサブエージェントで処理し、Agent Teamsは議論・レビュー・並列探索など協業が実際に価値を生む場面に集中させるのが良いです。"
 ---
 
 ## サブエージェントとAgent Teamsの違い

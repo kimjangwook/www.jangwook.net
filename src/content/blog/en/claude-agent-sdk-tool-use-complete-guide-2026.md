@@ -34,6 +34,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "How is Tool Use different from a plain chatbot call?"
+    answer: "A chatbot has the model generate the answer itself, so tasks like date math can be confidently wrong. With Tool Use the model only decides which tool to call and delegates the actual execution to Python code, so a precise function like datetime returns the result. That delegation is what creates reliability."
+  - question: "What does a tool definition require?"
+    answer: "Each tool is made of three parts: name, description, and input_schema. The name is the identifier, input_schema is the JSON schema for input parameters, and the description is what the model reads to decide when to use the tool. A vague description makes the model pick the wrong tool or skip it entirely."
+  - question: "What role should tool execution results be added under?"
+    answer: "Tool results must be added with the user role. It feels like it should be assistant, but the API treats tool output as something the user (environment) returns. You also must append the full response.content as the assistant message rather than extracting only block.text, so the model remembers which tool it called."
+  - question: "How much does Tool Use cost and how can I reduce it?"
+    answer: "Per Anthropic docs each tool definition adds roughly 200 to 300 tokens of fixed overhead on every request, and the agentic loop accumulates context. You can cut cost by applying Prompt Caching (cache_control ephemeral) to the tool definitions and system prompt, and by passing only the 2 or 3 tools the current task actually needs."
 ---
 
 I ran into the Tool Use moment while building a FastAPI streaming backend with the Claude API. The trigger was simple. A user asked "how many days are left in this year?" and Claude answered wrong. Not just wrong, but confidently wrong. I remember thinking, "OK, a chatbot can't handle this."

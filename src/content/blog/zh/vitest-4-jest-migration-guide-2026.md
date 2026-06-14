@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same TypeScript track.
       ja: 同じTypeScriptの流れで併せて読むと役立ちます。
       zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "应该从 Jest 迁移到 Vitest 4 吗?"
+    answer: "TypeScript 和 Vite 生态项目推荐迁移。在这类项目里维护 Jest 需要不断调试 ts-jest 转换层、tsconfig 冲突和模块解析报错，成本很高。但 Next.js 或 Express 的大型服务端测试套件需谨慎评估，因为 Vitest 针对 Vite 生态优化，在复杂服务端模块系统中可能出现预期外的行为。"
+  - question: "globals: true 选项为什么重要?"
+    answer: "开启此选项后，现有 Jest 代码中的 describe、test、expect 无需显式 import 即可运行，迁移初期不必一次性修改所有测试文件。如果不设置，会出现 describe is not defined 报错。"
+  - question: "使用 vi.importActual() 时最常见的错误是什么?"
+    answer: "与 jest.requireActual() 不同，vi.importActual() 是异步的，因此 mock 工厂必须是 async 并加上 await。忘记 await 会把 Promise 对象展开到 mock 中，而不是实际模块的导出。这是迁移部分 mock 时最常见的错误。"
+  - question: "Vitest 4 的 Browser Mode 是什么?"
+    answer: "Vitest 4 最大的变化是 Browser Mode 从实验性升级为稳定版。以前要靠 jest-dom + JSDOM 模拟的 DOM 测试，现在可以在真实 Chromium 中运行。这意味着将 Vitest 与 Playwright E2E 测试结合已是合理的生产策略。"
 ---
 
 上个月整理了一个个人项目的测试流水线，把用了很久的 Jest 换成了 Vitest。原因很简单：在 TypeScript 项目里维护 Jest，需要 `ts-jest` 或 `babel-jest` 这类转换层。配置项越堆越多，报错信息就越来越像密文。

@@ -25,6 +25,15 @@ relatedPosts:
       en: Continues the hands-on node.js experience.
       ja: node.jsを実際に扱った経験が続く記事です。
       zh: 延续 node.js 的实战经验。
+faq:
+  - question: "node:sqlite는 어느 Node.js 버전부터 쓸 수 있나요?"
+    answer: "Node.js 22.5.0부터 내장 모듈로 추가됐습니다. v22.22.0에서는 experimental 경고와 함께 작동하고, v26에서 정식 안정화됐습니다. 별도 설치 없이 require('node:sqlite')로 바로 사용할 수 있습니다."
+  - question: "better-sqlite3 대신 node:sqlite를 써도 되나요?"
+    answer: "동기 전용이라는 설계 철학은 같지만 API 표면이 더 좁습니다. 가장 큰 차이는 db.transaction() 래퍼가 없어서 exec()으로 BEGIN/COMMIT/ROLLBACK을 직접 관리해야 한다는 점입니다. serialize()/deserialize() 메모리 직렬화도 없습니다. 다만 네이티브 빌드가 필요 없어 CI나 Alpine 컨테이너에서 빌드 실패 문제가 사라집니다."
+  - question: "node:sqlite를 프로덕션 서버에 바로 써도 되나요?"
+    answer: "글쓴이는 아직 이르다고 봅니다. Node.js 22에서는 experimental 딱지가 붙어 마이너 버전에서 API가 바뀔 수 있고, 동기 호출이 I/O가 많은 서버의 이벤트 루프를 막을 수 있기 때문입니다. 대신 내부 CLI 툴, 스크립트, 빌드 도구, 캐시, 프로토타입에는 지금 당장 써도 됩니다."
+  - question: "트랜잭션은 어떻게 처리하나요?"
+    answer: "db.exec('BEGIN') 후 try 블록에서 작업하고 성공 시 COMMIT, 실패 시 ROLLBACK을 호출하면 됩니다. 반복 사용한다면 이 패턴을 withTransaction(db, fn) 헬퍼 함수로 한 번 만들어두는 것이 편리합니다."
 ---
 
 `npm install sqlite3`를 입력하던 습관을 멈춰야 할 시점이 왔다.

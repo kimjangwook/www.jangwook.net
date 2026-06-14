@@ -32,6 +32,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "PydanticAI를 API 키 없이 테스트할 수 있나요?"
+    answer: "네, TestModel을 쓰면 실제 API를 호출하지 않고 에이전트의 구조, 도구 설정, 의존성 주입이 올바른지 확인할 수 있습니다. CI 파이프라인에서 API 비용 없이 에이전트 로직을 검증할 때 활용합니다."
+  - question: "v1.88.0에서 result_type을 쓰면 왜 오류가 나나요?"
+    answer: "v1.88.0에서 result_type 파라미터가 output_type으로 변경됐기 때문입니다. 구버전 문서대로 쓰면 Unknown keyword arguments 오류가 납니다. inspect.signature로 확인하면 output_type이 정확한 파라미터명입니다."
+  - question: "PydanticAI에서 모델 프로바이더를 어떻게 바꾸나요?"
+    answer: "에이전트 정의는 그대로 두고 run_sync의 model 문자열만 바꾸면 됩니다. anthropic:claude-sonnet-4-6, openai:gpt-4o, google-gla:gemini-2.5-flash 등으로 교체할 수 있고 에이전트 로직 수정은 필요 없습니다. 프로바이더 전용 패키지 설치만 주의하면 됩니다."
+  - question: "TestModel과 FunctionModel은 언제 구분해서 쓰나요?"
+    answer: "TestModel은 str에 a, int에 0 같은 최솟값을 반환하므로 구조 검증에는 충분하지만 엄격한 커스텀 validator가 있으면 실패합니다. validator가 있거나 도구 응답을 테스트할 때는 정확한 응답을 직접 제공하는 FunctionModel을 씁니다."
 ---
 
 ```python

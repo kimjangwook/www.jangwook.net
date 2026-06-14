@@ -35,14 +35,21 @@ relatedPosts:
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
 faq:
-  - question: "uvはpipやPoetryと比べて何が優れていますか？"
-    answer: "uvはRustで書かれているため、パッケージを並列でダウンロードしキャッシュを効率的に活用します。パッケージを順番に解決するpipや、Pythonで書かれたPoetryとは根本的に速度が異なります。さらにpyproject.tomlとuv.lockによる再現性の高い環境管理、Pythonバージョン管理、CLIツールのインストールまで1つのツールに統合しています。"
-  - question: "uvでClaude SDKのようなAI開発環境はどう構築しますか？"
-    answer: "uv initでプロジェクトを作成し、uv add anthropicでSDKを追加します。仮想環境が自動生成され、pyproject.tomlとuv.lockが更新されます。スクリプトはsourceでの有効化なしにuv run main.pyで直接実行できます。"
-  - question: "uvは実際どれくらい速いですか？"
-    answer: "実測では、anthropicを含む16パッケージの初回インストールが0.874秒、uv initが0.435秒でした。キャッシュがある状態でuv syncにより19パッケージを再インストールすると0.074秒で完了しました。同じ作業をpipで行うと20秒から40秒ほどかかります。"
-  - question: "uvを使う際の注意点や限界はありますか？"
-    answer: "uvは2026年現在v0.11でまだv0.x段階のため、大規模組織で既存ワークフローを移行する際は学習コストを考慮する必要があります。またPyPIベースのため、torchやCUDAのようにcondaチャネルからインストールが必要なMLライブラリは直接扱えず、その場合はcondaを併用する必要があります。"
+  - question: uvはpipやPoetryと比べて何が優れていますか？
+    answer: >-
+      uvはRustで書かれているため、パッケージを並列でダウンロードしキャッシュを効率的に活用します。パッケージを順番に解決するpipや、Pythonで書かれたPoetryとは根本的に速度が異なります。さらにpyproject.tomlとuv.lockによる再現性の高い環境管理、Pythonバージョン管理、CLIツールのインストールまで1つのツールに統合しています。
+  - question: uvでClaude SDKのようなAI開発環境はどう構築しますか？
+    answer: >-
+      uv initでプロジェクトを作成し、uv add
+      anthropicでSDKを追加します。仮想環境が自動生成され、pyproject.tomlとuv.lockが更新されます。スクリプトはsourceでの有効化なしにuv
+      run main.pyで直接実行できます。
+  - question: uvは実際どれくらい速いですか？
+    answer: >-
+      実測では、anthropicを含む16パッケージの初回インストールが0.874秒、uv initが0.435秒でした。キャッシュがある状態でuv
+      syncにより19パッケージを再インストールすると0.074秒で完了しました。同じ作業をpipで行うと20秒から40秒ほどかかります。
+  - question: uvを使う際の注意点や限界はありますか？
+    answer: >-
+      uvは2026年現在v0.11でまだv0.x段階のため、大規模組織で既存ワークフローを移行する際は学習コストを考慮する必要があります。またPyPIベースのため、torchやCUDAのようにcondaチャネルからインストールが必要なMLライブラリは直接扱えず、その場合はcondaを併用する必要があります。
 ---
 
 去年まで、AIプロジェクトを始めるたびに同じ手順を繰り返していた。`python -m venv .venv`、`source .venv/bin/activate`、`pip install anthropic openai`……そして待った。長いときは2分以上。anthropic、torch、pydanticといったパッケージが順番にダウンロードされるのをただ眺めながら。
@@ -333,7 +340,7 @@ jobs:
         run: uv run pytest
 ```
 
-PythonでMCPサーバーを構築する際も同じCIパターンが使える。FastMCPの依存関係を`uv add fastmcp`で追加し、GitHub Actionsで`uv sync`インストールすれば一貫したビルド環境を維持できる。
+PythonでMCPサーバーを構築する際も同じCIパターンが使える。[FastMCP](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)の依存関係を`uv add fastmcp`で追加し、GitHub Actionsで`uv sync`インストールすれば一貫したビルド環境を維持できる。
 
 ## uv toolでCLIツールを管理する
 

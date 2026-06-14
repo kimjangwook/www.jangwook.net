@@ -31,6 +31,15 @@ relatedPosts:
       en: Worth reading alongside this in the same Python track.
       ja: 同じPythonの流れで併せて読むと役立ちます。
       zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: "PydanticAIをAPIキーなしでテストできますか？"
+    answer: "はい。TestModelは実際のAPIを呼び出さず、エージェントの構造、ツール設定、依存性注入が正しいか確認できます。CIパイプラインでAPIコストなしにエージェントロジックを検証する時に活用します。"
+  - question: "v1.88.0でresult_typeを使うとなぜエラーになりますか？"
+    answer: "v1.88.0でresult_typeパラメータがoutput_typeに変更されたためです。古いドキュメントのまま使うとUnknown keyword argumentsエラーが出ます。inspect.signatureで確認するとoutput_typeが正しいパラメータ名です。"
+  - question: "PydanticAIでモデルプロバイダーをどう切り替えますか？"
+    answer: "エージェント定義はそのままで、run_syncに渡すmodel文字列だけを変えます。anthropic:claude-sonnet-4-6、openai:gpt-4o、google-gla:gemini-2.5-flashなどに交換でき、エージェントロジックの修正は不要です。プロバイダー専用パッケージのインストールだけ注意します。"
+  - question: "TestModelとFunctionModelはいつ使い分けますか？"
+    answer: "TestModelはstrに'a'、intに0のような最小値を返すため構造テストには十分ですが、厳格なカスタムvalidatorがあると失敗します。validatorがある場合やツール応答をテストする時は、正確な応答を直接提供するFunctionModelを使います。"
 ---
 
 ```python

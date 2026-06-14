@@ -33,6 +33,15 @@ relatedPosts:
       en: Worth reading alongside this in the same ai agent track.
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
+faq:
+  - question: "Tool Use 与普通的聊天机器人调用有什么不同？"
+    answer: "聊天机器人由模型直接生成答案，因此像日期计算这类任务可能会充满自信地算错。Tool Use 让模型只负责决定调用哪个工具，实际执行交给 Python 代码，由 datetime 这样精确的函数返回结果。正是这种委托结构带来了可靠性。"
+  - question: "定义一个工具必须包含哪些要素？"
+    answer: "每个工具由 name、description、input_schema 三部分构成。name 是标识符，input_schema 是输入参数的 JSON Schema，而 description 是模型判断何时使用该工具的依据。description 含糊时，模型会选错工具甚至完全不用。"
+  - question: "工具执行结果应以哪个 role(角色)加入消息？"
+    answer: "tool_result 必须以 user 角色加入。直觉上像是 assistant，但 API 设计上把工具结果视为用户(环境)返回的内容。此外，模型的响应不要只取 block.text，应把整个 response.content 作为 assistant 消息追加，这样模型才能记住自己调用了哪个工具。"
+  - question: "Tool Use 会增加多少成本，又如何降低？"
+    answer: "根据 Anthropic 官方文档，每个工具定义每次请求约带来 200〜300 个 token 的固定开销，且代理循环会不断累积上下文。可对工具定义和系统提示应用 Prompt Caching(cache_control ephemeral)，并只传入当前任务真正需要的 2〜3 个工具来降低成本。"
 ---
 
 在使用FastAPI构建Claude API流式传输后端时，我第一次真正用上了Tool Use。起因很简单：用户问"今年还剩多少天？"，Claude给出了错误的答案。不是一般的错，而是充满自信地错了。看到这一幕，我心里想："纯聊天机器人确实不够用。"

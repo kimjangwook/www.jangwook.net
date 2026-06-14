@@ -26,6 +26,15 @@ relatedPosts:
       en: Continues the hands-on node.js experience.
       ja: node.jsを実際に扱った経験が続く記事です。
       zh: 延续 node.js 的实战经验。
+faq:
+  - question: "Which Node.js version do I need for node:sqlite?"
+    answer: "It ships as a built-in module starting with Node.js 22.5.0. On v22.22.0 it runs with an experimental warning, and Node.js v26 stabilized it fully. No install is needed, just require('node:sqlite') and go."
+  - question: "Should I use node:sqlite instead of better-sqlite3?"
+    answer: "They share the synchronous-only philosophy but node:sqlite has a smaller API surface. The biggest gap is the missing db.transaction() wrapper, so you manage BEGIN/COMMIT/ROLLBACK through exec() yourself, and there is no serialize()/deserialize() for in-memory buffers. The upside is no native build, so it never fails on CI runners or Alpine containers."
+  - question: "Is node:sqlite ready for production servers?"
+    answer: "Not yet, in the author's view. It is still experimental on Node.js 22 so the API could change between minor versions, and synchronous calls can block the event loop under heavy I/O. For internal scripts, CLI tools, build pipelines, caches, and prototypes, though, it is ready to use right now."
+  - question: "How do I handle transactions without db.transaction()?"
+    answer: "Call db.exec('BEGIN'), do the work inside a try block, then COMMIT on success and ROLLBACK on failure. If you do this often, wrap the pattern once in a withTransaction(db, fn) helper to keep the code clean."
 ---
 
 Stop typing `npm install sqlite3`. There's a better way now.
