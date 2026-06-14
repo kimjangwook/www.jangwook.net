@@ -37,14 +37,32 @@ relatedPosts:
       ja: 同じai agentの流れで併せて読むと役立ちます。
       zh: 在同一 ai agent 脉络中可一并阅读。
 faq:
-  - question: "How do I build an MCP server with FastMCP?"
-    answer: "Install it with pip install fastmcp, create a FastMCP instance, and add the @mcp.tool() decorator to a Python function. Call mcp.run() at the end and the server runs in stdio mode. As the post shows, you can have a working server in under 30 lines of Python."
-  - question: "What is the difference between @mcp.tool and @mcp.resource?"
-    answer: "@mcp.tool() is a function Claude invokes directly to do work such as search, compute, or file operations. @mcp.resource() is a read-only data source registered with a URI like data://, file://, or https:// that Claude reads as context. The post's rule is simple: if it has side effects it is a Tool, if it is read-only it is a Resource."
-  - question: "Why do type hints matter in FastMCP?"
-    answer: "FastMCP converts a function's type hints into JSON Schema automatically and passes it to Claude. It supports Pydantic models and Literal types, so you never hand-write an inputSchema for complex nested inputs. The docstring becomes the tool description the model sees."
-  - question: "When should I use the raw MCP Python SDK instead of FastMCP?"
-    answer: "Use FastMCP when building servers for standard clients like Claude, Cursor, and VS Code, or to quickly expose existing Python functions. Reach for the MCP Python SDK directly when you need custom transports, non-standard message formats, or low-level MCP features that FastMCP hides behind its abstraction."
+  - question: How do I build an MCP server with FastMCP?
+    answer: >-
+      Install it with pip install fastmcp, create a FastMCP instance, and add
+      the @mcp.tool() decorator to a Python function. Call mcp.run() at the end
+      and the server runs in stdio mode. As the post shows, you can have a
+      working server in under 30 lines of Python.
+  - question: What is the difference between @mcp.tool and @mcp.resource?
+    answer: >-
+      @mcp.tool() is a function Claude invokes directly to do work such as
+      search, compute, or file operations. @mcp.resource() is a read-only data
+      source registered with a URI like data://, file://, or https:// that
+      Claude reads as context. The post's rule is simple: if it has side effects
+      it is a Tool, if it is read-only it is a Resource.
+  - question: Why do type hints matter in FastMCP?
+    answer: >-
+      FastMCP converts a function's type hints into JSON Schema automatically
+      and passes it to Claude. It supports Pydantic models and Literal types, so
+      you never hand-write an inputSchema for complex nested inputs. The
+      docstring becomes the tool description the model sees.
+  - question: When should I use the raw MCP Python SDK instead of FastMCP?
+    answer: >-
+      Use FastMCP when building servers for standard clients like Claude,
+      Cursor, and VS Code, or to quickly expose existing Python functions. Reach
+      for the MCP Python SDK directly when you need custom transports,
+      non-standard message formats, or low-level MCP features that FastMCP hides
+      behind its abstraction.
 ---
 
 Building an MCP (Model Context Protocol) server from scratch is more work than it looks. You handle the stdio transport, serialize JSON-RPC 2.0, then register every handler by hand. If you've gone through implementing an MCP server with Streamable HTTP, you know the moment where you think: "I just want to add one AI tool, why does this need so much boilerplate?"
@@ -407,7 +425,7 @@ FastMCP approach:
 - One `FastMCP` instance
 - `@mcp.tool()` registers functions directly as tools
 - JSON Schema auto-generated from type hints
-- `mcp.run()` — one line
+- `mcp.run()`: one line
 
 Fewer lines is secondary. The real point: **you focus on business logic, not transport mechanics**.
 

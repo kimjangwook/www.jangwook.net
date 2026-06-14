@@ -26,14 +26,28 @@ relatedPosts:
       ja: claudecodeを実際に扱った経験が続く記事です。
       zh: 延续 claudecode 的实战经验。
 faq:
-  - question: "Do I need to write code to create a slash command?"
-    answer: "No. Just drop a .md file into the .claude/commands/ directory, and the filename becomes the command name. The file content is plain natural language, and Claude interprets each step and translates it into tool calls."
-  - question: "Is the --dangerously-skip-permissions flag safe to use?"
-    answer: "As the name implies, it is dangerous because it bypasses all permission prompts. Only use it when your allowlist is properly defined, and the post strongly advises against using it outside personal automation projects."
-  - question: "What hook types exist and which one was most useful?"
-    answer: "There are four types: PreToolUse, PostToolUse, Stop, and SessionStart. The author found the Stop hook most useful, sending a Telegram notification when long automation tasks finish."
-  - question: "How do you reduce the orchestrator picking the wrong subagent?"
-    answer: "Clearer description fields in the agent frontmatter help, since the orchestrator reads that field to decide which agent to use. It does not fully solve it, so being explicit about delegation inside the slash command itself worked better."
+  - question: Do I need to write code to create a slash command?
+    answer: >-
+      No. Just drop a .md file into the .claude/commands/ directory, and the
+      filename becomes the command name. The file content is plain natural
+      language, and Claude interprets each step and translates it into tool
+      calls.
+  - question: Is the --dangerously-skip-permissions flag safe to use?
+    answer: >-
+      As the name implies, it is dangerous because it bypasses all permission
+      prompts. Only use it when your allowlist is properly defined, and the post
+      strongly advises against using it outside personal automation projects.
+  - question: What hook types exist and which one was most useful?
+    answer: >-
+      There are four types: PreToolUse, PostToolUse, Stop, and SessionStart. The
+      author found the Stop hook most useful, sending a Telegram notification
+      when long automation tasks finish.
+  - question: How do you reduce the orchestrator picking the wrong subagent?
+    answer: >-
+      Clearer description fields in the agent frontmatter help, since the
+      orchestrator reads that field to decide which agent to use. It does not
+      fully solve it, so being explicit about delegation inside the slash
+      command itself worked better.
 ---
 
 The post you're reading right now was created by a launchd job that fired at 11:30 AM, woke up Claude Code, ran the `/daily-tech-blog` slash command, and had subagents split the research and translation work.
@@ -200,11 +214,11 @@ The `tools` field should list only what the agent actually needs. A research age
 
 My blog currently runs 19 agents:
 
-- `writing-assistant` — writes posts in 4 languages
-- `seo-optimizer` — meta tags, internal link optimization
-- `web-researcher` — trend research and fact-checking
-- `content-recommender` — generates relatedPosts
-- `image-generator` — writes hero image briefs
+- `writing-assistant`: writes posts in 4 languages
+- `seo-optimizer`: meta tags, internal link optimization
+- `web-researcher`: trend research and fact-checking
+- `content-recommender`: generates relatedPosts
+- `image-generator`: writes hero image briefs
 
 For more complex patterns around organizing agents into teams, see the [Claude Code Agent Teams Complete Guide](/en/blog/en/claude-agent-teams-guide).
 
