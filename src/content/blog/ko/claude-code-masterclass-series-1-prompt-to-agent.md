@@ -257,8 +257,6 @@ run_with_timeout "$MAX_TIMEOUT" claude --dangerously-skip-permissions \
 
 실제 실행 로그는 이렇게 생겼다:
 
-![daily-tech-blog 실제 실행 로그 캡처](../../../assets/blog/claude-code-masterclass-series-1-log-capture.jpg)
-
 launchd plist 설정도 살펴볼 만하다:
 
 ```xml

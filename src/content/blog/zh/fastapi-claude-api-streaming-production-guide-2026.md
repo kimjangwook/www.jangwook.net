@@ -96,8 +96,6 @@ class ChatRequest(BaseModel):
 
 用Pydantic的`BaseModel`定义请求模式，FastAPI会自动生成输入验证和OpenAPI文档。如下图所示，Swagger UI会自动生成。
 
-![FastAPI Swagger UI — Claude Streaming API端点](../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-swagger.png)
-
 本地运行`uvicorn main:app --reload`后，打开`/docs`就能通过Swagger UI直接测试。这种便利性是选择FastAPI的主要原因之一。
 
 ## Step 2：SSE流式端点实现

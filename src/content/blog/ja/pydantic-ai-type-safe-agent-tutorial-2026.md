@@ -238,8 +238,6 @@ result = agent.run_sync("緊急タスクで最優先のものを選んで", deps
 4. ModelResponse → 最終応答
 ```
 
-![PydanticAI実行ログ — サンドボックステスト結果](../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-log.jpg)
-
 ## TestModel vs FunctionModel: テスト戦略
 
 サンドボックスでテストしていてTestModelの重要な制限を発見した。

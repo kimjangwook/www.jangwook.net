@@ -249,8 +249,6 @@ run_with_timeout "$MAX_TIMEOUT" claude --dangerously-skip-permissions \
 
 实际执行日志长这样：
 
-![daily-tech-blog实际执行日志截图](../../../assets/blog/claude-code-masterclass-series-1-log-capture.jpg)
-
 launchd plist的配置也值得参考：
 
 ```xml

@@ -243,8 +243,6 @@ Message flow is 4 stages, accessible via `result.all_messages()`:
 4. ModelResponse → Final answer
 ```
 
-![PydanticAI execution log — sandbox test results](../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-log.jpg)
-
 ## TestModel vs FunctionModel: Test Strategy
 
 I found TestModel's critical limitation while testing in the sandbox. Worth documenting.

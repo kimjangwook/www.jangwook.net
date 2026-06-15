@@ -96,8 +96,6 @@ class ChatRequest(BaseModel):
 
 PydanticのBaseModelでリクエストスキーマを定義すると、FastAPIが自動で入力バリデーションとOpenAPIドキュメントを生成する。下の画像のようにSwagger UIが自動生成されるのを確認できる。
 
-![FastAPI Swagger UI — Claude Streaming APIエンドポイント](../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-swagger.png)
-
 ローカルで`uvicorn main:app --reload`を実行すると、`/docs`のSwagger UIから直接テストできる。この手軽さがFastAPIを選んだ主な理由の一つだ。
 
 ## Step 2: SSEストリーミングエンドポイントの実装

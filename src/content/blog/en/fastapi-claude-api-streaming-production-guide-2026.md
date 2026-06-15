@@ -97,8 +97,6 @@ class ChatRequest(BaseModel):
 
 Defining the request schema with Pydantic's `BaseModel` gives you automatic input validation and OpenAPI docs from FastAPI for free. As you can see in the screenshot below, the Swagger UI generates automatically.
 
-![FastAPI Swagger UI — Claude Streaming API endpoints](../../../assets/blog/fastapi-claude-api-streaming-production-guide-2026-swagger.png)
-
 Running `uvicorn main:app --reload` locally and opening `/docs` gives you a live Swagger UI you can test directly. That convenience is one of the main reasons I reach for FastAPI.
 
 ## Step 2: Implementing the SSE Streaming Endpoint

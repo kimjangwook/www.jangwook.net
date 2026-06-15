@@ -240,8 +240,6 @@ result = agent.run_sync("从紧急任务中选出最高优先级的", deps=deps)
 4. ModelResponse → 最终回答
 ```
 
-![PydanticAI执行日志 — 沙箱测试结果](../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-log.jpg)
-
 ## TestModel vs FunctionModel: 测试策略
 
 在沙箱测试中发现了TestModel的重要限制。

@@ -89,8 +89,6 @@ const fileDb = new DatabaseSync('./my-app.db');
 
 実際に API を調べた。利用可能なメソッドは以下の通り:
 
-![node:sqlite API Reference — DatabaseSync と StatementSync のメソッド一覧](../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-api-reference.png)
-
 ```js
 // DatabaseSync のメソッド
 // ['open', 'close', 'prepare', 'exec', 'function',

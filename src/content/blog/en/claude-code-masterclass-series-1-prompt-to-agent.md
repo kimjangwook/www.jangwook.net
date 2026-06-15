@@ -258,8 +258,6 @@ run_with_timeout "$MAX_TIMEOUT" claude --dangerously-skip-permissions \
 
 Here's what the actual execution log looks like:
 
-![Actual daily-tech-blog execution log capture](../../../assets/blog/claude-code-masterclass-series-1-log-capture.jpg)
-
 The launchd plist setup is worth seeing too:
 
 ```xml

@@ -91,8 +91,6 @@ const fileDb = new DatabaseSync('./my-app.db');
 
 직접 API를 조회해봤다. `DatabaseSync` 인스턴스에서 사용할 수 있는 메서드는 다음과 같다:
 
-![node:sqlite API Reference — DatabaseSync와 StatementSync의 전체 메서드 목록](../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-api-reference.png)
-
 ```js
 const methods = Object.getOwnPropertyNames(Object.getPrototypeOf(db));
 // ['open', 'close', 'prepare', 'exec', 'function',

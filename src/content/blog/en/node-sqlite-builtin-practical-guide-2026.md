@@ -86,8 +86,6 @@ const fileDb = new DatabaseSync('./my-app.db');     // file-based, auto-created
 
 I queried the prototype chain directly:
 
-![node:sqlite API Reference — Full method list for DatabaseSync and StatementSync](../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-api-reference.png)
-
 ```js
 // DatabaseSync methods
 // ['open', 'close', 'prepare', 'exec', 'function',

@@ -294,8 +294,6 @@ result = agent.run_sync("사용자 정보 조회해줘", deps=deps, model=TestMo
 print(f"메시지 흐름: {len(result.all_messages())}단계")  # → 4단계
 ```
 
-![PydanticAI 실행 로그 — 샌드박스 테스트 결과](../../../assets/blog/pydantic-ai-type-safe-agent-tutorial-2026-log.jpg)
-
 ## TestModel vs FunctionModel: 테스트 전략
 
 샌드박스에서 테스트하다가 TestModel의 중요한 한계를 발견했다. 포스트에 넣을 만큼 중요한 내용이다.
