@@ -1642,6 +1642,26 @@ graph TD
     D --> D3[多租户支持]
 ```
 
+## 何时该用多代理编排，何时该避免
+
+这套模式不是万能的。亲手把48个文件拆开处理后，我也遇到过几处单一代理反而更合适的情况。在采用之前，先用下面的标准过一遍。
+
+### 适合的场景
+
+- <strong>任务范围天然可分</strong>：当各领域相互独立、共享上下文很少时（agents、commands、scripts、guidelines），每个代理只看自己那块也能做出充分判断。
+- <strong>文件和问题数量超出单一上下文</strong>：超过单个代理通读就会丢失脉络的规模（大约30个文件以上），拆分的收益才会变得明显。
+- <strong>反复验证决定质量</strong>：需要多轮"审查 → 修改 → 再验证"循环的文档与代码整理工作，很契合协调者加专家的结构。
+- <strong>反复派发同类工作</strong>：正如官方子代理文档所建议的，对于反复使用相同指令的工作单元，固定为专用代理更高效。
+
+### 应避免的场景
+
+- <strong>任务高度耦合</strong>：如果一个文件的决定会连锁改动另外五个文件，代理之间的协调成本会吃掉拆分的收益。在单一上下文里顺序处理通常更快。
+- <strong>规模很小</strong>：为修改三四个文件而搭建编排器属于过度设计，编排本身的开销反而更大。
+- <strong>探索性强、范围反复变动</strong>：在还不清楚要改什么的阶段，拆分的依据本身就在摇摆。先用单一代理通览全局，再做拆分。
+- <strong>对成本或延迟敏感</strong>：同时运行多个代理会让令牌和调用成倍增长。没有元数据缓存就盲目并行，往往更贵。
+
+简而言之，多代理擅长<strong>独立的大型任务</strong>，而不擅长<strong>小而耦合的任务</strong>。拿不准时就从单一代理起步，等上下文溢出时再拆分。如果想了解团队层面的协作结构，可以参考[Claude Code 代理团队实战指南](/zh/blog/zh/claude-agent-teams-guide)。
+
 ### 最后的思考
 
 多代理编排不是银弹，但它是管理复杂系统的强大方法。关键是：
@@ -1666,6 +1686,6 @@ graph TD
 - 质量提升: 78 → 92分
 
 <strong>相关资源</strong>:
-- [Claude Code文档](https://docs.claude.com/claude-code)
-- [多代理最佳实践](https://www.anthropic.com/engineering/multi-agent-best-practices)
-- [项目仓库](https://github.com/yourusername/blog-automation)
+- [Claude Code 官方文档](https://docs.claude.com/claude-code)
+- [创建自定义子代理（官方文档）](https://code.claude.com/docs/en/sub-agents)
+- [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)

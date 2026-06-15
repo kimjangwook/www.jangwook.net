@@ -727,14 +727,34 @@ const optimized = await sharp(imageBuffer)
    - Custom schema support
    - Webhook integration
 
+## When to Use This Stack and When to Avoid It
+
+The 3-day launch worked because the problem and the stack lined up well. The same choices are not the right answer for every project.
+
+<strong>When this approach fits well</strong>:
+
+- A solo developer or small team validating an MVP fast. A managed backend (Supabase) and serverless deployment (Vercel) remove almost all of the infrastructure overhead.
+- Usage-based services where AI inference cost flows straight into your unit economics. Gemini 2.5 Flash's cheap token pricing protects your margin. For a realistic breakdown of AI operating costs, see <a href="/en/blog/en/ai-agent-cost-reality">The Reality of AI Agent Costs</a>.
+- Services with spiky or near-zero early traffic. Serverless billing drops to roughly zero when idle.
+- Cases where structured data extraction is the core value. Structured Output removes the entire parsing layer.
+
+<strong>When to avoid or rethink it</strong>:
+
+- Strict data-governance or on-premise requirements. Sending images to an external LLM API can hit compliance walls on its own.
+- Latency-sensitive workloads where milliseconds matter. LLM inference takes hundreds of milliseconds to several seconds, so it is a poor fit for real-time processing.
+- Steady, predictable high-volume processing in the millions of calls per month. At that scale, dedicated infrastructure or a self-hosted model beats serverless and per-call APIs on unit cost. For a cost-and-impact analysis grounded in real operational data, see <a href="/en/blog/en/effiflow-automation-analysis-part2">Effi Flow Automation Analysis</a>.
+- High-stakes domains where an OCR error becomes an incident (medical prescriptions, original legal contracts). You have to keep a human review step, which breaks the "fully automated" premise.
+
+The cost of learning a new tool is not trivial either. A team already fluent in React/Next.js may find that the learning cost of switching to SvelteKit outweighs the bundle-size savings. For the actual patterns of a solo developer raising productivity with AI tools, I wrote them up in <a href="/en/blog/en/claude-code-insights-usage-analysis">Claude Code Usage Analysis</a>.
+
 ## References
 
 ### Official Documentation
 
-- [SvelteKit Documentation](https://kit.svelte.dev/docs) - SvelteKit official docs
-- [Supabase Guides](https://supabase.com/docs) - Supabase guides
-- [Google Gemini API Docs](https://ai.google.dev/docs) - Gemini API documentation
-- [Stripe Integration Guide](https://stripe.com/docs/checkout) - Stripe Checkout guide
+- [SvelteKit Documentation](https://svelte.dev/docs/kit) - SvelteKit official docs
+- [Supabase Documentation](https://supabase.com/docs) - Supabase guides
+- [Google Gemini API Docs](https://ai.google.dev/gemini-api/docs) - Gemini API documentation
+- [Stripe Checkout Docs](https://docs.stripe.com/payments/checkout) - Stripe Checkout guide
 
 ### Key Articles Referenced
 

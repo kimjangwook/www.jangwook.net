@@ -727,14 +727,34 @@ const optimized = await sharp(imageBuffer)
    - Custom schema support
    - Webhook integration
 
+## 이 스택을 언제 쓰고 언제 피할까
+
+3일 런칭이 가능했던 건 문제와 스택이 잘 맞았기 때문입니다. 모든 프로젝트에 같은 선택이 정답은 아닙니다.
+
+<strong>이 접근이 잘 맞는 경우</strong>:
+
+- 솔로 또는 소규모 팀이 빠르게 MVP를 검증하려는 경우. 관리형 백엔드(Supabase)와 서버리스 배포(Vercel)가 인프라 운영 부담을 거의 없애줍니다.
+- AI 추론 비용이 단가에 직접 반영되는 종량제 서비스. Gemini 2.5 Flash의 저렴한 토큰 단가가 마진을 지켜줍니다. AI 운영 비용의 현실적인 구조는 <a href="/ko/blog/ko/ai-agent-cost-reality">AI 에이전트 비용의 현실</a>에서 더 깊이 다뤘습니다.
+- 트래픽이 불규칙하거나 초기에 거의 없는 서비스. 서버리스 과금은 유휴 상태에서 비용이 0에 가깝습니다.
+- 구조화된 데이터 추출이 핵심 가치인 경우. Structured Output이 파싱 레이어를 통째로 없애줍니다.
+
+<strong>피하거나 다시 생각해야 하는 경우</strong>:
+
+- 엄격한 데이터 거버넌스나 온프레미스 요건이 있는 경우. 외부 LLM API에 이미지를 보내는 구조 자체가 컴플라이언스 문턱에 걸릴 수 있습니다.
+- 밀리초 단위 지연이 중요한 워크로드. LLM 추론은 수백 ms에서 수 초가 걸려 실시간 처리에는 부적합합니다.
+- 월 수백만 건 이상의 고정적·예측 가능한 대량 처리. 이 규모에서는 서버리스·종량 API보다 전용 인프라나 자체 모델이 단가에서 유리해집니다. 실제 운영 데이터로 검증한 비용·효과 분석은 <a href="/ko/blog/ko/effiflow-automation-analysis-part2">Effi Flow 자동화 분석</a>에서 확인할 수 있습니다.
+- OCR 오류가 곧 사고로 이어지는 고위험 도메인(의료 처방, 법적 계약 원본). 사람 검수 단계를 반드시 끼워야 하므로 "완전 자동화"라는 전제가 무너집니다.
+
+도구를 새로 익히는 비용도 무시할 수 없습니다. React/Next.js에 이미 숙련된 팀이라면 SvelteKit으로 갈아타는 학습 비용이 번들 크기 절감 이득보다 클 수도 있습니다. 솔로 개발자가 AI 도구로 생산성을 끌어올린 실제 패턴은 <a href="/ko/blog/ko/claude-code-insights-usage-analysis">Claude Code 사용 분석</a>에 정리해 뒀습니다.
+
 ## 참고 자료
 
 ### Official Documentation
 
-- [SvelteKit Documentation](https://kit.svelte.dev/docs) - SvelteKit 공식 문서
-- [Supabase Guides](https://supabase.com/docs) - Supabase 가이드
-- [Google Gemini API Docs](https://ai.google.dev/docs) - Gemini API 문서
-- [Stripe Integration Guide](https://stripe.com/docs/checkout) - Stripe Checkout 가이드
+- [SvelteKit Documentation](https://svelte.dev/docs/kit) - SvelteKit 공식 문서
+- [Supabase Documentation](https://supabase.com/docs) - Supabase 가이드
+- [Google Gemini API Docs](https://ai.google.dev/gemini-api/docs) - Gemini API 문서
+- [Stripe Checkout Docs](https://docs.stripe.com/payments/checkout) - Stripe Checkout 가이드
 
 ### Key Articles Referenced
 

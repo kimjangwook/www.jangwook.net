@@ -727,14 +727,34 @@ const optimized = await sharp(imageBuffer)
    - Custom schema support
    - Webhook integration
 
+## このスタックをいつ使い、いつ避けるか
+
+3日間でローンチできたのは、課題とスタックがうまく噛み合っていたからです。すべてのプロジェクトで同じ選択が正解になるわけではありません。
+
+<strong>このアプローチが向いているケース</strong>:
+
+- ソロまたは小規模チームがMVPを素早く検証したい場合。マネージドバックエンド(Supabase)とサーバーレスデプロイ(Vercel)が、インフラ運用の負担をほぼ取り除いてくれます。
+- AI推論コストが単価に直接反映される従量課金サービス。Gemini 2.5 Flashの安いトークン単価がマージンを守ります。AI運用コストの現実的な内訳は<a href="/ja/blog/ja/ai-agent-cost-reality">AIエージェントコストの現実</a>でより深く扱いました。
+- トラフィックが不規則、または初期はほぼゼロのサービス。サーバーレス課金はアイドル時にコストがほぼ0になります。
+- 構造化データ抽出が中核的な価値である場合。Structured Outputがパースレイヤーを丸ごと不要にします。
+
+<strong>避ける、または再考すべきケース</strong>:
+
+- 厳格なデータガバナンスやオンプレミス要件がある場合。画像を外部LLM APIへ送る構造そのものがコンプライアンスの壁に当たることがあります。
+- ミリ秒単位の遅延が重要なワークロード。LLM推論は数百ミリ秒から数秒かかるため、リアルタイム処理には不向きです。
+- 月数百万件以上の安定的で予測可能な大量処理。この規模では、サーバーレス・従量APIより専用インフラや自前モデルのほうが単価で有利になります。実運用データで検証したコスト・効果分析は<a href="/ja/blog/ja/effiflow-automation-analysis-part2">Effi Flow自動化分析</a>で確認できます。
+- OCRエラーがそのまま事故につながる高リスク領域(医療処方、法的契約の原本)。人手によるレビュー工程を必ず挟む必要があるため、「完全自動化」という前提が崩れます。
+
+新しいツールを習得するコストも無視できません。React/Next.jsにすでに習熟したチームなら、SvelteKitへ移る学習コストがバンドルサイズ削減の利得を上回ることもあります。ソロ開発者がAIツールで生産性を引き上げた実際のパターンは<a href="/ja/blog/ja/claude-code-insights-usage-analysis">Claude Code使用分析</a>にまとめてあります。
+
 ## 参考資料
 
 ### Official Documentation
 
-- [SvelteKit Documentation](https://kit.svelte.dev/docs) - SvelteKit公式ドキュメント
-- [Supabase Guides](https://supabase.com/docs) - Supabaseガイド
-- [Google Gemini API Docs](https://ai.google.dev/docs) - Gemini APIドキュメント
-- [Stripe Integration Guide](https://stripe.com/docs/checkout) - Stripe Checkoutガイド
+- [SvelteKit Documentation](https://svelte.dev/docs/kit) - SvelteKit公式ドキュメント
+- [Supabase Documentation](https://supabase.com/docs) - Supabaseガイド
+- [Google Gemini API Docs](https://ai.google.dev/gemini-api/docs) - Gemini APIドキュメント
+- [Stripe Checkout Docs](https://docs.stripe.com/payments/checkout) - Stripe Checkoutガイド
 
 ### Key Articles Referenced
 

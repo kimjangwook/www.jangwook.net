@@ -177,6 +177,35 @@ If you see these signs, step back:
 
 <strong>Rule of Thumb</strong>: Try a single prompt first. Only split into agents when that fails.
 
+## How to Calculate Costs Yourself: Reading the Official Price Tables
+
+To avoid relying on someone else's numbers, the most accurate path is reading the model providers' official price tables directly. Prices change almost every quarter, so checking primary sources beats trusting figures in a blog post.
+
+- <strong>Anthropic API pricing</strong>: The official docs page ([docs.anthropic.com/en/docs/about-claude/pricing](https://docs.anthropic.com/en/docs/about-claude/pricing)) lists per-model input/output token rates, prompt caching discounts, and the 50% batch processing discount. For plan comparisons, see [anthropic.com/pricing](https://www.anthropic.com/pricing).
+- <strong>OpenAI API pricing</strong>: [openai.com/api/pricing](https://openai.com/api/pricing/) lists per-model token rates and the Batch API discount. Note that ChatGPT subscriptions and API billing are completely separate.
+
+The estimation formula is simple: <strong>(monthly input tokens ÷ 1M × input rate) + (monthly output tokens ÷ 1M × output rate)</strong>. Fold in your cache hit rate and batch ratio and you get close to the real invoice. Output tokens often cost 4–5x more than input, so trimming output length is the fastest lever for savings.
+
+## When to Use Agents, and When to Avoid Them
+
+Whether to adopt agent automation isn't a "can we" question. It's a "does it pencil out" question. Use the following as a checklist.
+
+<strong>When adoption pencils out</strong>
+
+- The same task repeats hundreds of times a day with relatively stable rules. The higher the volume, the more the upfront build cost gets amortized.
+- 24/7 response ties directly to revenue or an SLA. The economics flip at the point where you'd otherwise pay for a night shift.
+- The cost of an error is low, or human review catches mistakes easily. Domains where a single misclassification doesn't cause large losses are safe.
+- Inputs and outputs are mostly short text, keeping token costs controllable.
+
+<strong>When to avoid or defer</strong>
+
+- Task frequency is low and irregular. Building a routing layer for a few dozen tasks a month almost always runs at a loss.
+- A single error is very expensive (legal, medical, financial judgment). Here, human accountability matters more than cost.
+- Input context is very long, burning large token volumes on every call. Stuffing long documents in wholesale and repeatedly pushes API costs past human labor fast.
+- Requirements are still changing often. Rewriting prompts and pipelines every week makes engineering time balloon without limit.
+
+When the call is genuinely ambiguous, the principle is one: <strong>run a single prompt for one or two weeks first, measure real token usage and error rates, then use that data to calculate the economics of full automation.</strong> Building architecture before measuring is the most expensive mistake.
+
 ## So When Are AI Agents Actually Useful?
 
 Looking at costs alone, you might conclude "just hire a person." But there are areas where AI agents have clear advantages:
@@ -204,7 +233,7 @@ Model allocation by task complexity:
 └── Low complexity (60%): Claude Haiku / GPT-4o-mini → Classification, summarization, formatting
 ```
 
-This strategy alone can reduce API costs by <strong>40-60%</strong>.
+This strategy alone can reduce API costs by <strong>40-60%</strong>. For how per-model rates and tool-call costs are handled at the code level, the [Claude Agent SDK tool use complete guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) walks through concrete implementations.
 
 ### 2. Caching and Batch Processing
 
@@ -235,7 +264,9 @@ For those considering AI agent adoption: <strong>Start with a small prompt and o
 
 ## References
 
-- [AI Content Moderation Cost Analysis](https://www.getrevue.co/) — AI moderation cost $1,350-2,250/month analysis
-- [Anthropic Claude API Pricing](https://www.anthropic.com/pricing) — Claude model pricing
-- [OpenAI API Pricing](https://openai.com/pricing) — GPT model pricing
-- [Building Effective Agents - Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/agents) — Agent design pattern guide
+<strong>Primary sources (official pricing and docs)</strong>
+
+- [Anthropic API Pricing (official docs)](https://docs.anthropic.com/en/docs/about-claude/pricing) — per-model input/output token rates, caching and batch discounts
+- [Anthropic Plans & Pricing](https://www.anthropic.com/pricing) — plan and tier comparison
+- [OpenAI API Pricing (official)](https://openai.com/api/pricing/) — per-model token rates and Batch API discount
+- [Building Effective Agents - Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/agents) — agent design pattern guide

@@ -174,6 +174,35 @@ graph TD
 
 <strong>经验法则</strong>：先用单个Prompt尝试，只有在失败时才拆分为Agent。
 
+## 如何自己计算成本：读懂官方价目表
+
+要避免依赖别人的数字，最准确的方法是直接查看模型提供商的官方价目表。价格几乎每个季度都会变动，因此核对一手出处比相信博客文章里的数字更可靠。
+
+- <strong>Anthropic API价格</strong>：官方文档页面（[docs.anthropic.com/en/docs/about-claude/pricing](https://docs.anthropic.com/en/docs/about-claude/pricing)）列出各模型的输入/输出Token单价、Prompt缓存折扣以及批处理50%折扣的条件。套餐比较见[anthropic.com/pricing](https://www.anthropic.com/pricing)。
+- <strong>OpenAI API价格</strong>：[openai.com/api/pricing](https://openai.com/api/pricing/)列出各GPT模型的Token单价和Batch API折扣。注意ChatGPT订阅与API计费是完全分开的。
+
+估算公式很简单：<strong>（月度输入Token ÷ 100万 × 输入单价）+（月度输出Token ÷ 100万 × 输出单价）</strong>。再把缓存命中率和批处理比例算进去，就能接近真实账单。输出Token通常比输入贵4〜5倍，所以缩短输出长度是最快的省钱手段。
+
+## 何时使用，何时避免
+
+是否引入Agent自动化，不该用"能不能做"来判断，而应该用"是否划算"来判断。把下面的标准当作检查清单使用。
+
+<strong>引入划算的情况</strong>
+
+- 同一任务每天重复数百次以上，且规则相对稳定。重复量越大，初期构建成本越能被分摊。
+- 24小时响应直接关系到营收或SLA。在替代夜班人力成本的临界点，损益会发生反转。
+- 任务结果的错误成本较低，或人工复核能轻松发现错误。单次误分类不会造成重大损失的领域较为安全。
+- 输入和输出以短文本为主，Token单价可控。
+
+<strong>应避免或推迟的情况</strong>
+
+- 任务频率低且非定型。为每月几十件的任务搭建路由层，几乎总是亏损。
+- 单次错误成本极高（法律、医疗、金融判断等）。这类领域中，人的最终责任比成本更重要。
+- 输入上下文很长，每次调用都消耗大量Token。把长文档反复整体塞入，会让API成本迅速超过人力成本。
+- 需求还在频繁变动。每周重写Prompt和管道，会让工程时间无限膨胀。
+
+判断模糊时的原则只有一条：<strong>先用单个Prompt运行一两周，测量真实的Token用量和错误率，再用这些数据计算全自动化的损益。</strong> 不测量就先搭架构，是最昂贵的错误。
+
 ## 那么AI Agent何时有用？
 
 只看成本可能觉得"不如直接雇人"。但AI Agent有明确优势的领域：
@@ -201,7 +230,7 @@ graph TD
 └── 低复杂度（60%）: Claude Haiku / GPT-4o-mini → 分类、摘要、格式化
 ```
 
-仅此策略就能将API成本<strong>降低40-60%</strong>。
+仅此策略就能将API成本<strong>降低40-60%</strong>。关于如何在代码层面处理各模型单价和工具调用成本，[Claude Agent SDK 工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)提供了具体的实现示例。
 
 ### 2. 缓存和批处理
 
@@ -232,7 +261,9 @@ AI Agent不是魔法。它是<strong>存在明确权衡取舍的工程工具</st
 
 ## 参考资料
 
-- [AI Content Moderation Cost Analysis](https://www.getrevue.co/) — AI审核成本 $1,350-2,250/月分析
-- [Anthropic Claude API Pricing](https://www.anthropic.com/pricing) — Claude模型定价
-- [OpenAI API Pricing](https://openai.com/pricing) — GPT模型定价
+<strong>一手出处（官方价格与文档）</strong>
+
+- [Anthropic API Pricing（官方文档）](https://docs.anthropic.com/en/docs/about-claude/pricing) — Claude各模型输入/输出Token单价、缓存与批处理折扣
+- [Anthropic Plans & Pricing](https://www.anthropic.com/pricing) — 套餐与档位比较
+- [OpenAI API Pricing（官方）](https://openai.com/api/pricing/) — GPT各模型Token单价与Batch API折扣
 - [Building Effective Agents - Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/agents) — Agent设计模式指南

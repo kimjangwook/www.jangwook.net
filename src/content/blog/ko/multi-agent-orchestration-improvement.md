@@ -1546,6 +1546,26 @@ roi_months = investment["total"] / monthly_savings["total"]
 # 결과: 0.53개월 (약 16일)만에 투자 회수
 ```
 
+## 언제 멀티 에이전트 오케스트레이션을 쓰고, 언제 피할까
+
+이 패턴이 만능은 아닙니다. 48개 파일을 직접 쪼개 보면서, 오히려 단일 에이전트가 나았을 상황도 분명히 있었습니다. 도입 전에 아래 기준으로 한 번 걸러 보길 권합니다.
+
+### 적합한 경우
+
+- <strong>작업 범위가 자연스럽게 나뉠 때</strong>: agents, commands, scripts, guidelines처럼 영역이 독립적이고 서로 겹치는 컨텍스트가 적으면, 각 에이전트가 자기 영역만 보고도 충분히 판단할 수 있습니다.
+- <strong>파일·이슈 수가 단일 컨텍스트를 넘길 때</strong>: 한 에이전트가 통째로 읽으면 중간부터 맥락이 흐려지는 규모(대략 30개 파일 이상)에서 분할의 이득이 분명해집니다.
+- <strong>반복 검증이 품질을 좌우할 때</strong>: 리뷰 → 수정 → 재검증 루프를 여러 번 돌려야 하는 문서·코드 정리 작업에 잘 맞습니다.
+- <strong>같은 종류의 작업을 계속 돌릴 때</strong>: 공식 서브에이전트 문서가 권장하듯, 동일한 지시를 반복하는 워커는 전용 에이전트로 고정하는 편이 효율적입니다.
+
+### 피해야 하는 경우
+
+- <strong>작업이 강하게 얽혀 있을 때</strong>: 한 파일의 결정이 다른 파일 다섯 개를 연쇄로 바꾸는 구조라면, 에이전트 간 조율 비용이 분할 이득을 잡아먹습니다. 차라리 단일 컨텍스트에서 순차 처리하는 게 빠릅니다.
+- <strong>규모가 작을 때</strong>: 파일 서너 개를 고치는 일에 오케스트레이터를 세우는 건 과설계입니다. 오케스트레이션 자체의 오버헤드가 더 큽니다.
+- <strong>탐색적이라 범위가 매번 바뀔 때</strong>: 무엇을 고칠지 아직 모르는 단계에서는 분할 기준 자체가 흔들립니다. 먼저 단일 에이전트로 전체를 훑어 윤곽을 잡은 뒤에 분할하세요.
+- <strong>비용·지연에 민감할 때</strong>: 여러 에이전트를 동시에 돌리면 토큰과 호출이 곱으로 늘 수 있습니다. 메타데이터 캐싱 없이 무작정 병렬화하면 오히려 비싸집니다.
+
+요약하면, 멀티 에이전트는 <strong>독립적이고 큰 작업</strong>에 강하고 <strong>작고 얽힌 작업</strong>에 약합니다. 의심스러우면 단일 에이전트로 시작해, 컨텍스트가 넘칠 때 비로소 분할하세요. 에이전트팀 단위의 협업 구조가 더 궁금하다면 [Claude Code 에이전트 팀 실전 가이드](/ko/blog/ko/claude-agent-teams-guide)를 참고하면 좋습니다.
+
 ## 7. 내 프로젝트에 그대로 적용하려면
 
 ### 멀티 에이전트 오케스트레이션 체크리스트
@@ -1687,9 +1707,9 @@ ROI: 1주일 만에 회수
 ---
 
 <strong>참고 자료</strong>:
+- [Claude Code 공식 문서](https://docs.claude.com/claude-code)
+- [Claude Code 서브에이전트 만들기 (공식 문서)](https://code.claude.com/docs/en/sub-agents)
 - [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
-- [Multi-Agent Orchestration Patterns](https://www.anthropic.com/engineering/multi-agent-orchestration)
-- [Token Optimization Strategies](https://www.anthropic.com/engineering/token-optimization)
 
 <strong>프로젝트 저장소</strong>:
 - GitHub: [jangwook.net](https://github.com/yourusername/jangwook.net)

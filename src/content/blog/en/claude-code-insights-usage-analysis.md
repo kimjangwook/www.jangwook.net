@@ -312,6 +312,24 @@ Here are the lessons learned through `/insights`.
 
 4. <strong>Use the HTML report</strong>: `/insights` also generates a detailed HTML report. Visualized data enables deeper analysis.
 
+## When to Use /insights and When to Skip It
+
+Even a good tool only pays off when you reach for it at the right moment. After running it for more than a month, here is where `/insights` shines and where it can mislead you.
+
+### Good times to run it
+
+- <strong>When enough work has piled up</strong>: The analysis is based on roughly 30 days of locally stored usage data. Run it after only a few days and the sample is too small for patterns to surface. The value showed up for me once thousands of messages had accumulated.
+- <strong>Right after changing your workflow</strong>: If you introduced a new custom command or reworked a parallel-agent pattern, running it again a month later is a clean way to compare whether error rates and session efficiency actually improved.
+- <strong>When a bottleneck feels vague</strong>: When you want to turn a hunch ("why do my sessions keep dying mid-task?") into data. In my case this feature was the first time I clearly saw the context limit as the culprit.
+
+### When to be careful or skip it
+
+- <strong>When you need team-level metrics</strong>: `/insights` is a personal tool that only reads your local usage data. For organization metrics like team adoption, PR contribution, or seat utilization, you want the [official Analytics dashboard](https://code.claude.com/docs/en/analytics) or [Console analytics](https://platform.claude.com/claude-code). They serve different purposes.
+- <strong>When treating numbers as absolute</strong>: Qualitative assessments like session category or satisfaction are estimated by a helper model. Use them to set direction, but don't treat a single run as a performance review.
+- <strong>In privacy-sensitive environments</strong>: The report reads your local usage history. If you put it on a shared screen or share a screenshot, project paths and filenames can show up verbatim.
+
+If you run parallel sessions often, reading this alongside [Running Parallel Claude Code Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) connects the dots to a concrete way of solving context-limit cutoffs by splitting sessions.
+
 ## Why I Recommend This to Other Developers
 
 The biggest takeaway from running `/insights` was realizing that <strong>"I didn't know how I was using AI, yet assumed I was using it well."</strong>
@@ -334,6 +352,15 @@ If you haven't run `/insights` yet, open Claude Code right now and type `/insigh
 
 ## References
 
-- [Claude Code Official Documentation](https://docs.anthropic.com/en/docs/claude-code)
-- [Claude Code Best Practices](https://docs.anthropic.com/en/docs/claude-code/best-practices)
-- [Claude Code CLI Migration Guide](/en/blog/claude-code-cli-migration-guide)
+### Official primary sources
+
+- [Claude Code Official Documentation](https://docs.claude.com/claude-code)
+- [Track team usage with analytics — Claude Code Docs](https://code.claude.com/docs/en/analytics)
+- [Claude Code usage analytics — Claude Help Center](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
+- [Claude Code Analytics dashboard (Console)](https://platform.claude.com/claude-code)
+
+### Worth reading alongside
+
+- [Claude Code Agent Teams Guide](/en/blog/en/claude-agent-teams-guide)
+- [Running Parallel Claude Code Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree)
+- [EffiFlow Part 2: Skills Auto-Discovery and Token-Saving Caching](/en/blog/en/effiflow-automation-analysis-part2)

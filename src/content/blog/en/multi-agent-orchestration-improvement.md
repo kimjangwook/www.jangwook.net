@@ -738,6 +738,26 @@ watch -n 60 'npm run build && echo "Build time: $(date)"'
    ✅ Do: Use semantic versioning and detailed changelogs
    ```
 
+## When to Use Multi-Agent Orchestration, and When to Avoid It
+
+This pattern isn't a silver bullet. Working through 48 files by hand, I hit several spots where a single agent would have been the better call. Before adopting it, run your task through the filter below.
+
+### Good fit
+
+- <strong>The work splits cleanly</strong>: when domains are independent and share little context (agents, commands, scripts, guidelines), each agent can reason well while seeing only its own slice.
+- <strong>File and issue counts exceed a single context</strong>: past the scale where one agent reading everything loses the thread (roughly 30+ files), the gains from splitting become obvious.
+- <strong>Repeated verification drives quality</strong>: cleanup work that needs several review → fix → re-verify loops maps well onto coordinator-plus-specialists.
+- <strong>You keep spawning the same kind of worker</strong>: as the official subagents documentation recommends, pin a dedicated agent when you repeat the same instructions over and over.
+
+### Poor fit
+
+- <strong>The work is tightly coupled</strong>: if one file's decision cascades into five others, inter-agent coordination costs eat the benefit of splitting. Sequential processing in a single context is usually faster.
+- <strong>The scope is small</strong>: standing up an orchestrator to edit three or four files is over-engineering. The orchestration overhead outweighs the work.
+- <strong>It's exploratory and the scope keeps shifting</strong>: when you don't yet know what to fix, the basis for splitting keeps moving. Sweep the whole thing with a single agent first, then split.
+- <strong>You're cost or latency sensitive</strong>: running many agents at once can multiply tokens and calls. Parallelizing without metadata caching often turns out more expensive.
+
+In short, multi-agent shines on <strong>large, independent</strong> work and struggles on <strong>small, coupled</strong> work. When in doubt, start single-agent and split only once context overflows. If you want the team-level collaboration model, the [Claude Code agent teams guide](/en/blog/en/claude-agent-teams-guide) covers it in depth.
+
 ## Key Takeaways
 
 ### For System Architects
@@ -793,8 +813,8 @@ The tools are available. The patterns are proven. The only question is: when wil
 
 <strong>Resources</strong>:
 - [Claude Code Documentation](https://docs.claude.com/claude-code)
-- [Multi-Agent Systems Best Practices](https://www.anthropic.com/engineering)
-- [Token Optimization Strategies](https://www.anthropic.com/research)
+- [Create custom subagents (official docs)](https://code.claude.com/docs/en/sub-agents)
+- [Anthropic Engineering Blog](https://www.anthropic.com/engineering)
 - Implementation Status: `.claude/guidelines/implementation-status.md`
 
 <strong>About This Series</strong>:

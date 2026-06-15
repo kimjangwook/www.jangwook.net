@@ -310,6 +310,24 @@ graph TD
 
 4. <strong>利用 HTML 报告</strong>：`/insights` 还会生成详细的 HTML 报告。可视化的数据可以进行更深入的分析。
 
+## 何时该用 /insights，何时该避开
+
+再好的工具，也要在合适的时机使用才有价值。在运行一个多月之后，我整理出了 `/insights` 真正发挥作用的场景，以及容易产生误导的场景。
+
+### 适合使用的场景
+
+- <strong>工作量已经积累到一定程度时</strong>：分析基于本地存储的约 30 天使用数据。只用了几天就运行，样本太少，模式很难显现。像我这样积累了数千条消息后，才能看出真正的价值。
+- <strong>调整工作流之后的复盘</strong>：如果你引入了新的自定义命令，或改动了并行代理模式，一个月后再运行一次，正好用来对比错误率和会话效率是否真的改善了。
+- <strong>瓶颈感觉模糊时</strong>：当你想把"为什么总是中途断掉"的直觉用数据确认时。就我而言，正是这个功能让我第一次清楚看到上下文限制才是元凶。
+
+### 需要谨慎或避开的场景
+
+- <strong>需要团队级指标时</strong>：`/insights` 终究是查看自己本地使用数据的个人工具。团队整体的采用率、PR 贡献度、席位利用率等组织指标，应该看[官方 Analytics 仪表盘](https://code.claude.com/docs/en/analytics)或 [Console 分析](https://platform.claude.com/claude-code)。两者目的不同。
+- <strong>把数值当作绝对标准时</strong>：会话分类、满意度等定性评估是辅助模型估算出的值。把它当作确定方向的参考即可，不要把一次结果当成绩效评价。
+- <strong>个人信息敏感的环境</strong>：报告会读取本地使用记录。在共享屏幕上展示或分享截图时，要注意项目路径和文件名可能会原样暴露。
+
+如果你经常使用并行会话，结合[用 Git Worktree 运行 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)一起阅读，就能进一步看到如何通过拆分会话来解决上下文限制导致中断的具体做法。
+
 ## 推荐给其他开发者的原因
 
 运行 `/insights` 后最大的感受是：<strong>"我不了解自己是如何使用 AI 的，却以为自己用得很好"</strong>。
@@ -332,6 +350,15 @@ Claude Code `/insights` 不仅仅是一个统计功能。它更像一个<strong>
 
 ## 参考资料
 
-- [Claude Code 官方文档](https://docs.anthropic.com/en/docs/claude-code)
-- [Claude Code Best Practices](https://docs.anthropic.com/en/docs/claude-code/best-practices)
-- [Claude Code CLI 迁移指南](/zh/blog/claude-code-cli-migration-guide)
+### 官方一手来源
+
+- [Claude Code 官方文档](https://docs.claude.com/claude-code)
+- [Track team usage with analytics — Claude Code Docs](https://code.claude.com/docs/en/analytics)
+- [Claude Code usage analytics — Claude Help Center](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
+- [Claude Code Analytics 仪表盘 (Console)](https://platform.claude.com/claude-code)
+
+### 推荐一并阅读
+
+- [Claude Code 代理团队组建指南](/zh/blog/zh/claude-agent-teams-guide)
+- [用 Git Worktree 运行 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)
+- [EffiFlow Part 2：Skills 自动发现与节省 Token 的缓存](/zh/blog/zh/effiflow-automation-analysis-part2)
