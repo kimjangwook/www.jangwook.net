@@ -448,6 +448,35 @@ Hono をわざわざ選ぶ必要がない場合:
 
 2026 年時点で Hono の GitHub スターは 66,000 を超えた。[Bun Shell ベースの自動化環境をすでに構築しているなら](/ja/blog/ja/bun-shell-scripting-practical-guide-2026)、Hono を加えるのは自然な次のステップだ。
 
+## Hono vs Express: いつ使い、いつ避けるか
+
+両方のフレームワークを実際に触ったうえでまとめた判断基準だ。抽象的な「速い」ではなく、実プロジェクトに当てはめられる表にした。
+
+| 状況 | Hono 推奨 | Express 推奨 |
+|------|----------|-------------|
+| デプロイ先が Cloudflare Workers / Deno Deploy / Bun | ✓ | |
+| コールドスタートとバンドルサイズがレイテンシに直結 | ✓ | |
+| 最初から TypeScript の型推論を最後まで効かせたい | ✓ | |
+| チームが Express ミドルウェアの生態系に深く依存 | | ✓ |
+| `passport`、`multer` など実績ある Express プラグインが要 | | ✓ |
+| レガシーな Node.js コードベースに段階的に乗せる | | ✓ |
+| OpenAPI 自動ドキュメント化が必須要件 | ✓ (`@hono/zod-openapi`) | ✓ (`swagger-jsdoc`) |
+
+Hono を避けるべき現実的なケースは二つだ。一つ目は、チーム全体が Express に慣れていてエッジデプロイの予定が一切ないとき。フレームワークを変えるコストが得られる利益を上回る。二つ目は、特定の Express 専用プラグインに強く縛られているとき。Hono は標準の `Request`/`Response` を使うため、Express ミドルウェアをそのまま持ち込めない。
+
+逆に、新規プロジェクトでデプロイ先がサーバーレス、TypeScript が標準言語なら、あえて Express を選ぶ理由は見つけにくい。公式の [Getting Started](https://hono.dev/docs/getting-started/basic) を 1 ページ追うだけで動くサーバーが出来上がる。
+
+## 参照した一次情報
+
+本記事のコードと数値は、以下の公式ドキュメントを直接たどって確認した。
+
+- [Hono 公式ドキュメント — Getting Started](https://hono.dev/docs/getting-started/basic): 基本的なアプリ構造、ルーティング、ランタイム別エントリポイント
+- [Hono 公式ドキュメント — Cloudflare Workers](https://hono.dev/docs/getting-started/cloudflare-workers): Bindings ジェネリクスと `wrangler` のデプロイフロー
+- [Cloudflare Workers 公式ガイド — Hono](https://developers.cloudflare.com/workers/frameworks/framework-guides/hono/): Workers ランタイムでの Hono プロジェクト構成とデプロイ
+- [Zod 公式ドキュメント](https://zod.dev/): スキーマ定義と型推論、`@hono/zod-validator` が依存する検証ルール
+
+各ドキュメントのバージョンは 2026 年 6 月時点であり、Hono v4 系の API に従っている。
+
 ## よく使うパターン チートシート
 
 Hono を使い始めたとき、よく調べることになるパターンをまとめた。

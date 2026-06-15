@@ -380,6 +380,26 @@ try {
 }
 ```
 
+## 何时使用，何时避免
+
+如果你在 `node:sqlite` 和 `better-sqlite3` 之间犹豫，决策其实比想象的简单。两者都是同步专用、都内嵌 SQLite，所以真正的分歧点是：你是否需要某个值得为之背上外部依赖的功能。
+
+**选择 node:sqlite 的场景：**
+
+- 你不想再看到原生编译在 CI runner 或 Alpine 容器中失败。这是最大的动机
+- 构建内部 CLI 工具、构建脚本或缓存层，希望依赖尽可能接近于零
+- 事务逻辑简单，或者一个 `withTransaction` 辅助函数就能覆盖全部需求
+- 想缩小 Docker 镜像。`node_modules` 里没有原生插件时，整个构建阶段都可以省去
+
+**保留 better-sqlite3 的场景：**
+
+- 你确实在用 `db.transaction()` 的嵌套事务（savepoint）或 `deferred`/`immediate`/`exclusive` 模式
+- 代码依赖 `serialize()`/`deserialize()` 把内存数据库导出为 Buffer 或恢复
+- 你被锁定在生产服务器的 Node.js 22 LTS 上，无法容忍 experimental 警告或小版本间的 API 变化
+- 代码库已经运行良好。如果构建从未失败过，就没有切换的理由
+
+一句话概括：新项目或内部工具，先从 `node:sqlite` 入手，遇到缺失的功能再退回 `better-sqlite3`。反过来，没必要急着把现有生产代码迁移过去。想自己比较细节，最可靠的方式是对照阅读 [node:sqlite 官方文档](https://nodejs.org/api/sqlite.html)和 [better-sqlite3 仓库](https://github.com/WiseLibs/better-sqlite3)。
+
 ## 当前局限与我的判断
 
 **不足之处：**
@@ -402,3 +422,12 @@ try {
 `better-sqlite3` 的 `db.transaction()` 包装器缺失，是最明显的遗憾。不过写一个 `withTransaction()` 工具函数就能补上，算不上障碍。
 
 这是个信号：Node.js 生态在持续把能力内置化。先是 `fetch`，再是 `WebCrypto`、`test runner`，现在轮到 `sqlite`。下一个会不会是内置 `postgresql`？有点贪心，但开发者总得有点念想。
+
+## 一手来源
+
+如果你想亲自核实，可以参考以下官方文档：
+
+- [Node.js 官方文档 — SQLite (node:sqlite)](https://nodejs.org/api/sqlite.html)：`DatabaseSync`、`StatementSync`、`db.function()`、`db.aggregate()` 等完整 API 参考
+- [WiseLibs/better-sqlite3 (GitHub)](https://github.com/WiseLibs/better-sqlite3)：对比库的官方仓库和 API 文档
+- [SQLite 官方文档 — Result and Error Codes](https://www.sqlite.org/rescode.html)：`errcode` 值（1、19 等）含义的完整列表
+- [SQLite 官方文档 — Write-Ahead Logging](https://www.sqlite.org/wal.html)：WAL 模式的工作原理与权衡

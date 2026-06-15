@@ -447,6 +447,35 @@ My judgment:
 
 Hono's GitHub stars crossed 66,000 in 2026. If you've already [set up a Bun Shell scripting environment](/en/blog/en/bun-shell-scripting-practical-guide-2026), adding Hono is the logical next step. Same runtime, same package manager, same TypeScript ecosystem, and now the API server lives there too.
 
+## Hono vs Express: When to Use, When to Avoid
+
+After working with both frameworks, here is the decision matrix I settled on. Instead of a vague "it's faster," these are criteria you can map onto an actual project.
+
+| Situation | Pick Hono | Pick Express |
+|-----------|-----------|--------------|
+| Deploy target is Cloudflare Workers / Deno Deploy / Bun | ✓ | |
+| Cold start and bundle size directly affect latency | ✓ | |
+| You want full TypeScript inference from the start | ✓ | |
+| Team already leans heavily on the Express middleware ecosystem | | ✓ |
+| Battle-tested Express plugins like `passport`, `multer` are core | | ✓ |
+| You need to layer onto a legacy Node.js codebase incrementally | | ✓ |
+| OpenAPI auto-documentation is a hard requirement | ✓ (`@hono/zod-openapi`) | ✓ (`swagger-jsdoc`) |
+
+There are two practical cases where you should avoid Hono. First, when the whole team knows Express and there is no edge deployment in sight. The switching cost outweighs the gain. Second, when you are tightly coupled to an Express-only plugin. Hono builds on standard `Request`/`Response`, so you cannot drop Express middleware in as-is.
+
+The reverse is just as clear. For a new project that targets serverless and uses TypeScript by default, it is hard to justify reaching for Express. Following a single page of the official [Getting Started](https://hono.dev/docs/getting-started/basic) guide already produces a working server.
+
+## Primary Sources
+
+The code and numbers in this post were verified directly against these official docs.
+
+- [Hono official docs — Getting Started](https://hono.dev/docs/getting-started/basic): basic app structure, routing, and per-runtime entry points
+- [Hono official docs — Cloudflare Workers](https://hono.dev/docs/getting-started/cloudflare-workers): Bindings generics and the `wrangler` deployment flow
+- [Cloudflare Workers official guide — Hono](https://developers.cloudflare.com/workers/frameworks/framework-guides/hono/): project setup and deployment on the Workers runtime
+- [Zod official docs](https://zod.dev/): schema definition and type inference, the validation rules `@hono/zod-validator` relies on
+
+Versions are current as of June 2026 and follow the Hono v4 line of APIs.
+
 ## Cheat Sheet: Patterns I Look Up Every Time
 
 ```typescript

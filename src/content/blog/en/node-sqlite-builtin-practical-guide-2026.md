@@ -401,6 +401,26 @@ try {
 
 Full error codes: [sqlite.org/rescode.html](https://www.sqlite.org/rescode.html).
 
+## When to Use It, When to Avoid It
+
+If you're torn between `node:sqlite` and `better-sqlite3`, the decision is simpler than it looks. Both are synchronous and both embed SQLite, so the real question is whether you need a feature worth taking on an external dependency for.
+
+**Reach for node:sqlite when:**
+
+- You're done watching native builds fail on CI runners or Alpine containers. This is the single biggest reason
+- You're building internal CLI tools, build scripts, or cache layers and want dependencies as close to zero as possible
+- Your transactions are simple, or a single `withTransaction` helper covers everything you need
+- You want smaller Docker images. With no native addon in `node_modules`, an entire build stage disappears
+
+**Stick with better-sqlite3 when:**
+
+- You actually use `db.transaction()` nested transactions (savepoints) or the `deferred`/`immediate`/`exclusive` modes
+- Your code relies on `serialize()`/`deserialize()` to dump an in-memory DB to a Buffer or restore it
+- You're pinned to Node.js 22 LTS on a production server and can't tolerate experimental warnings or API drift between minor versions
+- The codebase already works. If builds have never broken for you, there's no reason to switch
+
+In one sentence: for a new project or internal tool, start with `node:sqlite` and fall back to `better-sqlite3` the moment you hit a missing feature. There's no urgency to migrate existing production code the other way. To compare the specifics yourself, read the [official node:sqlite docs](https://nodejs.org/api/sqlite.html) against the [better-sqlite3 repository](https://github.com/WiseLibs/better-sqlite3).
+
 ## Current Limitations and My Take
 
 **What's missing:**
@@ -424,3 +444,12 @@ After testing every method in `node:sqlite`, I came away with one conclusion. It
 The missing `db.transaction()` wrapper is the most noticeable gap. But a one-time `withTransaction()` helper fixes it. Not a dealbreaker.
 
 I read this as a signal. Node.js keeps pulling capabilities in-house: `fetch`, then `WebCrypto`, then the `test runner`, and now `sqlite`. At some point I'll start wondering when `postgresql` makes the list. Probably too much to ask, but a developer can dream.
+
+## Primary Sources
+
+If you want to verify any of this firsthand, here are the official references:
+
+- [Node.js official docs — SQLite (node:sqlite)](https://nodejs.org/api/sqlite.html): the full API reference for `DatabaseSync`, `StatementSync`, `db.function()`, `db.aggregate()`, and more
+- [WiseLibs/better-sqlite3 (GitHub)](https://github.com/WiseLibs/better-sqlite3): the official repo and API docs for the library this post compares against
+- [SQLite official docs — Result and Error Codes](https://www.sqlite.org/rescode.html): the complete list of `errcode` values (1, 19, and the rest)
+- [SQLite official docs — Write-Ahead Logging](https://www.sqlite.org/wal.html): how WAL mode works and its tradeoffs

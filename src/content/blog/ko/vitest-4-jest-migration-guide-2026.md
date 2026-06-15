@@ -521,6 +521,26 @@ npx vitest --ui
 
 157ms. 테스트 16개가 0.16초. Jest라면 여기에 ts-jest 변환 시간이 더해진다.
 
+## 언제 마이그레이션하고, 언제 미뤄야 하나
+
+설치 명령어를 따라치기 전에, 이 전환이 지금 내 프로젝트에 맞는지부터 판단하는 게 순서다. 마이그레이션은 공짜가 아니다. 코드 변환 시간, CI 재검증, 팀원 학습 비용이 든다. 아래 기준으로 나눠봤다.
+
+**Vitest로 옮길 만한 경우**
+
+- 프로젝트가 이미 Vite, SvelteKit, Nuxt, Astro처럼 Vite 기반 빌드를 쓴다. 이 경우 테스트 변환 파이프라인과 빌드 파이프라인이 하나로 통합되므로 설정 중복이 사라진다.
+- TypeScript를 쓰는데 `ts-jest`나 `babel-jest` 설정에서 모듈 해석 오류, ESM/CJS 충돌을 반복적으로 디버깅하고 있다.
+- ESM(`import`/`export`) 중심 코드베이스다. Jest의 ESM 지원은 여전히 실험적 플래그가 필요한 반면, Vitest는 ESM이 기본이다.
+- 컴포넌트 테스트를 JSDOM 시뮬레이션 대신 실제 브라우저에서 돌리고 싶다. Vitest 4의 [Browser Mode](https://vitest.dev/guide/browser/)가 이 시나리오를 stable로 지원한다.
+
+**Vitest 마이그레이션을 미루거나 피해야 하는 경우**
+
+- Next.js나 Express 기반의 대형 서버 테스트 스위트다. Vitest는 Vite 생태계에 최적화돼 있어, Node.js 모듈 시스템의 복잡한 케이스에서 예상치 못한 동작이 나올 수 있다. 공식 [마이그레이션 가이드](https://vitest.dev/guide/migration.html)도 `mockReset` 동작 차이 같은 Jest와의 비호환 지점을 명시한다.
+- 팀이 Jest 스냅샷, 커스텀 리졸버, 방대한 `jest.config` 자산에 깊게 의존하고 있고, 당장 그걸 재작성할 여력이 없다.
+- 순수 Node.js 라이브러리이고 Browser Mode가 필요 없다. 이 경우 Jest를 유지해도 큰 손해가 없고, 마이그레이션의 한계 이득이 작다.
+- 마감이 코앞이다. 마이그레이션은 안정적인 스프린트에서 하는 게 좋다. 테스트 인프라를 바꾸면서 기능까지 만들면 두 가지 변수가 섞여 디버깅이 어려워진다.
+
+판단이 서지 않으면, 작은 테스트 파일 하나만 Vitest로 옮겨 병행 실행해보는 걸 추천한다. `globals: true`만 켜두면 대부분 그대로 통과하므로, 30분이면 실제 호환성을 확인할 수 있다.
+
 ## 그래서, 마이그레이션할 가치가 있나
 
 내 판단은 **TypeScript 프로젝트라면 예스, 그렇지 않으면 케이스 바이 케이스**다.
@@ -534,3 +554,14 @@ TypeScript를 쓰는 Vite 기반 프로젝트에서 Jest를 유지하는 건 점
 Vitest 5.0 beta가 이미 npm에 올라와 있다. 안정화되면 또 한 번 주요 변화가 있을 것 같다. 지금은 4.x로 마이그레이션해두는 게 무난한 선택이다.
 
 마이그레이션 자체는 생각보다 빠르게 끝난다. 내 경험으로는 소규모 TypeScript 프로젝트 기준으로 30〜60분이면 충분했다. 가장 오래 걸리는 건 `vi.importActual()` 패턴 찾기와 `moduleNameMapper`를 `resolve.alias`로 옮기는 작업이다. 이 두 가지만 미리 파악하고 들어가면 나머지는 거의 자동이다.
+
+TypeScript 도구 체인을 더 다듬고 싶다면, [MCP 서버를 TypeScript SDK로 단계별 구축](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)하거나 [Hono로 타입 안전한 API를 만드는 글](/ko/blog/ko/hono-typescript-api-2026)도 같은 흐름에서 함께 읽어두면 좋다. 테스트, 런타임, API 레이어를 모두 Vite 생태계로 정렬하면 설정 파일이 눈에 띄게 줄어든다.
+
+## 참고 자료 (1차 출처)
+
+이 글의 검증에 사용한 공식 문서다. 버전별 동작이 자주 바뀌므로, 실제 마이그레이션 전에는 항상 원문을 확인하길 권한다.
+
+- [Vitest 공식 사이트](https://vitest.dev) — 설정, API, 변경 로그의 1차 출처
+- [Vitest 공식 마이그레이션 가이드](https://vitest.dev/guide/migration.html) — Jest 호환성과 비호환 지점(`globals`, `mockReset` 등) 명시
+- [Vitest Browser Mode 가이드](https://vitest.dev/guide/browser/) — Vitest 4에서 stable로 격상된 브라우저 테스트
+- [Jest 공식 사이트](https://jestjs.io) — 비교 대상인 Jest의 설정과 API 레퍼런스

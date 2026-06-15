@@ -1552,6 +1552,48 @@ async def batch_process(requests: list):
 
 ---
 
+## 什么时候该用多智能体，什么时候该避开
+
+读到这里，很容易想把所有问题都用多智能体来解。但只要你启动不止一个智能体，调试难度、延迟和成本就会一起上升。在真正决定采用之前，先用下面这几条标准筛一遍。
+
+### 适合的场景
+
+- <strong>任务能清晰拆分</strong>：当职责边界分明（前端、后端、部署）时，分层管理者-工作者模式很合适。各智能体的工具和指令不重叠，追踪更易读。
+- <strong>异步、事件型的工作负载</strong>：如果注册后要并行处理邮件、资料创建和分析，事件驱动模式能提升吞吐量。
+- <strong>需要人工介入的长时运行流程</strong>：Agents SDK 的会话、human-in-the-loop 和护栏可直接使用，能显式切出恢复和审批步骤。
+- <strong>工具调用超过约10个且分支复杂</strong>：把所有工具塞进单个提示会让模型混乱。按角色拆分工具能提升准确率。
+
+### 应该避开的场景
+
+- <strong>简单的单一任务</strong>：一次问答、一次摘要，单个智能体就够了。编排层在这里是纯粹的开销。
+- <strong>对延迟敏感的实时路径</strong>：每次交接都会增加一次 LLM 往返。如果几百毫秒很关键，单个智能体或普通函数调用更优。
+- <strong>还没有可观测工具</strong>：没有追踪就运行多智能体，几乎无法定位失败点。先接入 <a href="https://openai.github.io/openai-agents-python/tracing/">Agents SDK 内置追踪</a> 或独立的可观测性栈，再开始扩展。
+- <strong>对确定性要求高的会计、结算逻辑</strong>：当分支规则固定时，手写的状态机比 LLM 路由更安全、更便宜。
+
+经验上，"先用两个智能体起步，稳定后再逐个增加"出事最少。第一天就画出六个智能体的图，调试就能耗掉你一周。
+
+---
+
+## 一手来源与延伸阅读
+
+本文的模式和 API 写法均以 OpenAI 官方文档为准。具体签名会随版本变化，建议在实现前直接核对以下一手来源。
+
+### 官方文档（一手来源）
+
+- <a href="https://openai.github.io/openai-agents-python/">OpenAI Agents SDK for Python — 官方文档</a>：智能体、工具、交接、护栏、会话、追踪的标准参考
+- <a href="https://developers.openai.com/api/docs/guides/agents">OpenAI Agents SDK 指南（developers.openai.com）</a>：从安装到运行第一个智能体的快速上手与 API 概念
+- <a href="https://developers.openai.com/api/docs/guides/agent-builder">OpenAI Agent Builder 指南</a>：可视化编排多步智能体工作流的 Agent Builder 官方文档
+- <a href="https://platform.openai.com/docs/guides/chatkit">OpenAI ChatKit 指南</a>：如何把基于智能体的聊天 UI 嵌入你的应用
+- <a href="https://openai.com/index/introducing-agentkit/">Introducing AgentKit（OpenAI 官方公告）</a>：DevDay 2025 发布的 AgentKit 组成（Agent Builder、ChatKit、Evals、Connector Registry）概览
+
+### 接着读
+
+- [OpenAI AgentKit 完全指南 第1部：核心概念与上手](/zh/blog/zh/openai-agentkit-tutorial-part1) — 本文的基础前提
+- [用 FastMCP 构建 Python MCP 服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026) — 当你超越正文的 Slack 示例、要自己设计 MCP 服务器时
+- [Claude Agent SDK 工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026) — 对比另一个框架的工具与交接设计
+
+---
+
 ## 从这里开始动手
 
 跟到这里，你已经具备自己设计生产系统的基本功了。

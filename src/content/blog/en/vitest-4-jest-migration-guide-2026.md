@@ -439,6 +439,26 @@ Leaving it around can cause conflicts. Once you're fully migrated, remove it.
 
 157 milliseconds for 16 tests. The transform time (67ms) is the Vite pipeline processing the TypeScript files on first run. Subsequent runs are faster due to caching.
 
+## When to Migrate, and When to Hold Off
+
+Before you copy the install commands, decide whether this switch fits your project right now. Migration isn't free. It costs conversion time, CI re-validation, and a learning curve for the team. Here's how I'd split it.
+
+**Worth moving to Vitest when:**
+
+- Your project already uses a Vite-based build (Vite, SvelteKit, Nuxt, Astro). The test transform pipeline and the build pipeline become one, so duplicate config disappears.
+- You use TypeScript and keep debugging module-resolution errors or ESM/CJS conflicts in `ts-jest` or `babel-jest`.
+- Your codebase is ESM-first. Jest's ESM support still needs an experimental flag, while Vitest treats ESM as the default.
+- You want component tests in a real browser instead of a JSDOM simulation. Vitest 4's [Browser Mode](https://vitest.dev/guide/browser/) supports that scenario as stable.
+
+**Hold off or avoid when:**
+
+- You have a large Next.js or Express server test suite. Vitest is tuned for the Vite ecosystem, so complex Node.js module-system cases can behave unexpectedly. The official [migration guide](https://vitest.dev/guide/migration.html) itself flags incompatibilities with Jest, such as the difference in `mockReset` behavior.
+- Your team leans heavily on Jest snapshots, custom resolvers, or a large `jest.config` investment you can't rewrite soon.
+- It's a pure Node.js library and you don't need Browser Mode. Staying on Jest costs little here, and the marginal gain from migrating is small.
+- You're against a deadline. Migrate during a stable sprint. Changing test infrastructure while shipping features mixes two variables and makes debugging harder.
+
+If you're unsure, move a single small test file to Vitest and run it in parallel. With `globals: true` on, most of it passes as-is, so you can confirm real compatibility in about 30 minutes.
+
 ## Should You Migrate?
 
 My take: **yes for TypeScript projects, case-by-case for everything else.**
@@ -450,3 +470,14 @@ For large Next.js or Express server test suites, be more careful. Vitest's Vite-
 npm weekly downloads went from 4.8M to 7.7M. A lot of projects made the switch, but not all of them did it smoothly. Factor your project's complexity before committing.
 
 Vitest 5.0 betas are already on npm. Once stable, expect another round of breaking changes. Migrating to 4.x now gives you a solid foundation before that wave hits. Right now I'm exploring how to pair Vitest with [Bun for TypeScript script automation](/en/blog/en/bun-shell-scripting-practical-guide-2026), running the test suite under Bun. That'll be a separate post.
+
+If you want to keep sharpening the TypeScript toolchain, [building an MCP server with the TypeScript SDK step by step](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) and [writing a type-safe API with Hono](/en/blog/en/hono-typescript-api-2026) fit the same track. Aligning your tests, runtime, and API layer on the Vite ecosystem cuts down config files noticeably.
+
+## References (Primary Sources)
+
+These are the official docs I used to verify this post. Behavior changes often between versions, so always check the originals before an actual migration.
+
+- [Vitest official site](https://vitest.dev) — primary source for config, API, and changelogs
+- [Vitest official migration guide](https://vitest.dev/guide/migration.html) — documents Jest compatibility and the incompatibilities (`globals`, `mockReset`, etc.)
+- [Vitest Browser Mode guide](https://vitest.dev/guide/browser/) — browser testing promoted to stable in Vitest 4
+- [Jest official site](https://jestjs.io) — config and API reference for the framework you're migrating from

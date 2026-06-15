@@ -1553,6 +1553,48 @@ async def batch_process(requests: list):
 
 ---
 
+## 언제 멀티 에이전트를 쓰고, 언제 피해야 하나
+
+여기까지 읽고 나면 모든 문제를 멀티 에이전트로 풀고 싶어진다. 하지만 에이전트를 여러 개 띄우는 순간 디버깅 난이도, 지연, 비용이 모두 함께 올라간다. 실제로 도입을 결정하기 전에 다음 기준으로 한 번 걸러내자.
+
+### 이럴 때는 쓸 만하다
+
+- <strong>작업이 명확히 분리되는 경우</strong>: 프론트엔드·백엔드·배포처럼 책임 경계가 뚜렷하면 계층적 매니저-작업자 패턴이 잘 맞는다. 각 에이전트의 도구와 지시문이 겹치지 않아 추적이 쉽다.
+- <strong>비동기·이벤트성 작업이 많은 경우</strong>: 사용자 가입 후 이메일·프로필·분석을 동시에 처리하는 식이면 이벤트 주도 패턴으로 처리량을 끌어올릴 수 있다.
+- <strong>장기 실행 워크플로우에 사람 개입이 필요한 경우</strong>: Agents SDK의 세션과 human-in-the-loop, 가드레일이 그대로 쓰인다. 복구·승인 단계를 명시적으로 끊어 넣을 수 있다.
+- <strong>도구 호출이 10개를 넘어가고 분기가 복잡한 경우</strong>: 단일 프롬프트에 모든 도구를 욱여넣으면 모델이 헷갈린다. 역할별로 도구를 나눠 주면 정확도가 올라간다.
+
+### 이럴 때는 피하는 게 낫다
+
+- <strong>단순 단일 작업</strong>: 질의응답 한 번, 요약 한 번이면 에이전트 하나로 충분하다. 오케스트레이션 계층은 순수 오버헤드다.
+- <strong>지연에 민감한 실시간 경로</strong>: 핸드오프가 한 번 일어날 때마다 LLM 왕복이 추가된다. 수백 ms가 중요한 경로라면 단일 에이전트 또는 일반 함수 호출이 낫다.
+- <strong>관측 도구가 아직 없을 때</strong>: 트레이싱 없이 멀티 에이전트를 운영하면 어디서 실패했는지 추적이 거의 불가능하다. <a href="https://openai.github.io/openai-agents-python/tracing/">Agents SDK 내장 트레이싱</a>이나 별도 옵저버빌리티부터 붙이고 시작하자.
+- <strong>결정성이 중요한 회계·정산 로직</strong>: 분기 규칙이 고정돼 있다면 LLM 라우팅보다 코드로 짠 상태 머신이 더 안전하고 싸다.
+
+경험상 "에이전트 2개로 시작해 안정화한 뒤 하나씩 늘린다"가 가장 사고가 적다. 처음부터 6개 에이전트 그래프를 그리면 디버깅에 일주일이 녹는다.
+
+---
+
+## 1차 출처 및 더 읽어보기
+
+이 글의 패턴과 API 표기는 OpenAI 공식 문서를 기준으로 정리했다. 세부 시그니처는 버전에 따라 바뀔 수 있으니 구현 전 아래 1차 출처를 직접 확인하길 권한다.
+
+### 공식 문서 (1차 출처)
+
+- <a href="https://openai.github.io/openai-agents-python/">OpenAI Agents SDK for Python — 공식 문서</a>: Agent, 도구, 핸드오프, 가드레일, 세션, 트레이싱의 표준 레퍼런스
+- <a href="https://developers.openai.com/api/docs/guides/agents">OpenAI Agents SDK 가이드 (developers.openai.com)</a>: 설치부터 첫 에이전트 실행까지의 퀵스타트와 API 개념 설명
+- <a href="https://developers.openai.com/api/docs/guides/agent-builder">OpenAI Agent Builder 가이드</a>: 멀티스텝 워크플로우를 시각적으로 구성하는 Agent Builder 공식 문서
+- <a href="https://platform.openai.com/docs/guides/chatkit">OpenAI ChatKit 가이드</a>: 에이전트 기반 채팅 UI를 앱에 임베드하는 방법
+- <a href="https://openai.com/index/introducing-agentkit/">Introducing AgentKit (OpenAI 공식 발표)</a>: DevDay 2025에서 공개된 AgentKit 구성요소(Agent Builder, ChatKit, Evals, Connector Registry) 개요
+
+### 이어서 읽으면 좋은 글
+
+- [OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기](/ko/blog/ko/openai-agentkit-tutorial-part1) — 이 글의 전제가 되는 기초편
+- [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026) — 본문 Slack 예제를 넘어 직접 MCP 서버를 설계할 때
+- [Claude Agent SDK 도구 사용 완벽 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026) — 다른 프레임워크의 도구·핸드오프 설계와 비교해 보기
+
+---
+
 ## 여기서부터 직접 만들어 보기
 
 여기까지 따라왔다면 프로덕션 시스템을 직접 설계할 기본기는 갖춘 셈이다.

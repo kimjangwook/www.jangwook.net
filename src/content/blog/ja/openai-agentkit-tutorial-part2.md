@@ -1303,6 +1303,48 @@ results = runner.run_batch(
 
 ---
 
+## マルチエージェントを使うべきとき、避けるべきとき
+
+ここまで読むと、何でもマルチエージェントで解きたくなります。しかしエージェントを複数立ち上げた瞬間、デバッグの難しさ・レイテンシ・コストがそろって上がります。導入を決める前に、次の基準で一度ふるいにかけましょう。
+
+### 向いているケース
+
+- <strong>作業がきれいに分離できる</strong>：フロントエンド・バックエンド・デプロイのように責任境界が明確なら、階層型マネージャー・ワーカーパターンがよく合います。各エージェントのツールと指示が重ならず、トレースが読みやすい。
+- <strong>非同期・イベント型の処理が多い</strong>：サインアップ後にメール・プロフィール・分析を同時処理するなら、イベント駆動型パターンでスループットを引き上げられます。
+- <strong>長時間実行で人の介在が必要</strong>：Agents SDKのセッション、human-in-the-loop、ガードレールがそのまま使えます。復旧・承認ステップを明示的に区切って組み込めます。
+- <strong>ツール呼び出しが10個を超え分岐が複雑</strong>：単一プロンプトに全ツールを詰め込むとモデルが混乱します。役割ごとにツールを分けると精度が上がります。
+
+### 避けたほうがよいケース
+
+- <strong>単純な単一タスク</strong>：1回の質疑応答、1回の要約ならエージェント1つで十分。オーケストレーション層は純粋なオーバーヘッドです。
+- <strong>レイテンシに敏感なリアルタイム経路</strong>：ハンドオフのたびにLLMの往復が増えます。数百msが重要な経路なら、単一エージェントか通常の関数呼び出しが勝ります。
+- <strong>観測ツールがまだない</strong>：トレーシングなしでマルチエージェントを運用すると、どこで失敗したか追跡がほぼ不可能になります。<a href="https://openai.github.io/openai-agents-python/tracing/">Agents SDK組み込みのトレーシング</a>か別途オブザーバビリティをまず接続してから始めましょう。
+- <strong>決定性が重要な会計・精算ロジック</strong>：分岐ルールが固定なら、LLMルーティングよりコードで書いた状態マシンのほうが安全で安い。
+
+経験則として「2つのエージェントで始め、安定させてから1つずつ増やす」が最も事故が少ない。最初から6エージェントのグラフを描くと、デバッグに1週間溶けます。
+
+---
+
+## 一次情報源とさらに読むために
+
+本記事のパターンとAPI表記はOpenAI公式ドキュメントを基準に整理しています。詳細なシグネチャはバージョンで変わるため、実装前に以下の一次情報源を直接確認することをおすすめします。
+
+### 公式ドキュメント（一次情報源）
+
+- <a href="https://openai.github.io/openai-agents-python/">OpenAI Agents SDK for Python — 公式ドキュメント</a>：Agent、ツール、ハンドオフ、ガードレール、セッション、トレーシングの標準リファレンス
+- <a href="https://developers.openai.com/api/docs/guides/agents">OpenAI Agents SDK ガイド（developers.openai.com）</a>：インストールから最初のエージェント実行までのクイックスタートとAPI概念
+- <a href="https://developers.openai.com/api/docs/guides/agent-builder">OpenAI Agent Builder ガイド</a>：マルチステップワークフローを視覚的に構成するAgent Builderの公式ドキュメント
+- <a href="https://platform.openai.com/docs/guides/chatkit">OpenAI ChatKit ガイド</a>：エージェントベースのチャットUIをアプリに埋め込む方法
+- <a href="https://openai.com/index/introducing-agentkit/">Introducing AgentKit（OpenAI公式発表）</a>：DevDay 2025で公開されたAgentKitの構成要素（Agent Builder、ChatKit、Evals、Connector Registry）の概要
+
+### あわせて読みたい
+
+- [OpenAI AgentKit完全ガイド 第1部：コア概念と始め方](/ja/blog/ja/openai-agentkit-tutorial-part1) — 本記事の前提となる基礎編
+- [FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026) — 本文のSlack例を超えて自分でMCPサーバーを設計するとき
+- [Claude Agent SDK ツール使用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026) — 別フレームワークのツール・ハンドオフ設計と比較する
+
+---
+
 ## パート2を振り返って
 
 かなりの分量になりました。あとで特定の箇所に戻りたくなったとき用に、扱った内容を並べておきます。

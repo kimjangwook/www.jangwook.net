@@ -434,6 +434,35 @@ app.get('/tasks', (c) => {
 
 2026 年，Hono 的 GitHub star 数已超过 66,000。如果你[已经搭建了 Bun Shell 脚本环境](/zh/blog/zh/bun-shell-scripting-practical-guide-2026)，加入 Hono 是自然的下一步——同一个运行时、同一个包管理器、同一个 TypeScript 生态，API 服务器也包含进来了。
 
+## Hono vs Express: 什么时候用，什么时候避开
+
+在实际用过两个框架之后,我整理出了这套决策依据。不是抽象的"更快",而是可以套到真实项目上的表格。
+
+| 场景 | 推荐 Hono | 推荐 Express |
+|------|----------|-------------|
+| 部署目标是 Cloudflare Workers / Deno Deploy / Bun | ✓ | |
+| 冷启动和包体积直接影响延迟 | ✓ | |
+| 想从一开始就把 TypeScript 类型推断贯穿到底 | ✓ | |
+| 团队已经深度依赖 Express 中间件生态 | | ✓ |
+| `passport`、`multer` 等久经验证的 Express 插件是核心 | | ✓ |
+| 需要在遗留 Node.js 代码库上逐步叠加 | | ✓ |
+| OpenAPI 自动文档化是硬性要求 | ✓ (`@hono/zod-openapi`) | ✓ (`swagger-jsdoc`) |
+
+应该避开 Hono 的现实情况有两种。第一,整个团队都熟悉 Express,且完全没有边缘部署计划。这时更换框架的成本超过收益。第二,被某个 Express 专属插件强绑定。Hono 基于标准的 `Request`/`Response`,无法直接搬用 Express 中间件。
+
+反过来也很清楚。如果是新项目、部署目标是 serverless、TypeScript 是默认语言,那就很难找到选 Express 的理由。照着官方 [Getting Started](https://hono.dev/docs/getting-started/basic) 一个页面走一遍,就能跑出一个可用的服务器。
+
+## 参考的一手来源
+
+本文的代码和数值都是直接照着以下官方文档验证的。
+
+- [Hono 官方文档 — Getting Started](https://hono.dev/docs/getting-started/basic): 基本应用结构、路由、各运行时的入口点
+- [Hono 官方文档 — Cloudflare Workers](https://hono.dev/docs/getting-started/cloudflare-workers): Bindings 泛型与 `wrangler` 部署流程
+- [Cloudflare Workers 官方指南 — Hono](https://developers.cloudflare.com/workers/frameworks/framework-guides/hono/): 在 Workers 运行时下的 Hono 项目配置与部署
+- [Zod 官方文档](https://zod.dev/): 模式定义与类型推断,`@hono/zod-validator` 所依赖的校验规则
+
+各文档版本以 2026 年 6 月为准,遵循 Hono v4 系列 API。
+
 ## 常用模式速查表
 
 ```typescript

@@ -1306,6 +1306,48 @@ results = runner.run_batch(
 
 ---
 
+## When to Use Multi-Agent, and When to Avoid It
+
+After reading this far, it's tempting to solve every problem with a fleet of agents. But the moment you run more than one, debugging difficulty, latency, and cost all climb together. Before you commit, run the decision through these filters.
+
+### Good fits
+
+- <strong>Cleanly separable work</strong>: When responsibilities have sharp boundaries (frontend, backend, deployment), the hierarchical manager-worker pattern fits well. Each agent's tools and instructions don't overlap, so traces stay readable.
+- <strong>Async, event-shaped workloads</strong>: If signup triggers email, profile creation, and analytics in parallel, the event-driven pattern lifts throughput.
+- <strong>Long-running flows that need a human</strong>: The Agents SDK's sessions, human-in-the-loop, and guardrails apply directly. You can carve out explicit recovery and approval steps.
+- <strong>More than ~10 tools with branching logic</strong>: Cramming every tool into one prompt confuses the model. Splitting tools by role raises accuracy.
+
+### Cases to avoid
+
+- <strong>Simple single tasks</strong>: One Q&A, one summary, one agent. An orchestration layer is pure overhead here.
+- <strong>Latency-sensitive real-time paths</strong>: Each handoff adds an LLM round trip. If hundreds of milliseconds matter, a single agent or plain function call wins.
+- <strong>No observability yet</strong>: Running multi-agent without tracing makes failure points nearly impossible to find. Wire up <a href="https://openai.github.io/openai-agents-python/tracing/">the Agents SDK's built-in tracing</a> or a separate observability stack before you scale out.
+- <strong>Deterministic accounting or billing logic</strong>: When branching rules are fixed, a hand-coded state machine is safer and cheaper than LLM routing.
+
+In practice, "start with two agents, stabilize, then add one at a time" causes the fewest incidents. Draw a six-agent graph on day one and you'll lose a week to debugging.
+
+---
+
+## Primary Sources and Further Reading
+
+The patterns and API notation here follow OpenAI's official docs. Exact signatures shift between versions, so confirm against these primary sources before you build.
+
+### Official documentation (primary sources)
+
+- <a href="https://openai.github.io/openai-agents-python/">OpenAI Agents SDK for Python — official docs</a>: the canonical reference for agents, tools, handoffs, guardrails, sessions, and tracing
+- <a href="https://developers.openai.com/api/docs/guides/agents">OpenAI Agents SDK guide (developers.openai.com)</a>: quickstart from install to first agent run, plus core API concepts
+- <a href="https://developers.openai.com/api/docs/guides/agent-builder">OpenAI Agent Builder guide</a>: official docs for the visual canvas that composes multi-step agent workflows
+- <a href="https://platform.openai.com/docs/guides/chatkit">OpenAI ChatKit guide</a>: how to embed an agentic chat UI into your app
+- <a href="https://openai.com/index/introducing-agentkit/">Introducing AgentKit (official OpenAI announcement)</a>: overview of the AgentKit pieces (Agent Builder, ChatKit, Evals, Connector Registry) unveiled at DevDay 2025
+
+### Worth reading next
+
+- [OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started](/en/blog/en/openai-agentkit-tutorial-part1) — the foundation this article builds on
+- [Building a Python MCP Server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026) — for when you go past the Slack example and design your own MCP server
+- [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) — to compare tool and handoff design in a different framework
+
+---
+
 ## Wrapping Up Part 2
 
 That was a lot of ground. Here's what we covered, in case you want to come back to a specific piece later:

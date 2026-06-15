@@ -335,6 +335,28 @@ Rate: SAFE / CAUTION / CRITICAL
 
 These four files are the minimum working unit. With just this, `/review` analyzes your staged changes, you get a voice notification when it finishes, and detailed checks can be delegated to the `checker` agent.
 
+## When to Use This Three-Step Automation, and When to Avoid It
+
+Something only became clear after I had built all three steps: this pattern isn't a universal answer. For some tasks it's overkill, for others it falls short.
+
+<strong>Good fits</strong>:
+
+- A <strong>repeating multi-step task</strong> that runs daily or weekly. Research → write → validate → publish is the classic case: the steps are fixed and doing them by hand every time gets old fast.
+- Work that <strong>splits naturally into specialized roles</strong>. Cramming research, writing, and SEO into one context drags quality down. Separating them into subagents raises the focus of each.
+- Outcomes that are <strong>objectively verifiable</strong>. When you have a clear pass/fail gate like `npm run build` or `astro check`, you can fence in the LLM's non-determinism with a QA loop.
+- When you need <strong>non-interactive execution</strong>. For a pipeline that has to run unattended via cron or launchd, the slash command and hook combination fits well.
+
+<strong>Better to avoid</strong>:
+
+- <strong>One-off work</strong>. Building a command file and an agent for a single task costs more than it saves. Just typing the prompt directly is faster.
+- <strong>Tasks that require deterministic output</strong>. Accounting reconciliation, payment processing, migration scripts: anything that must produce identical output every time is a poor fit for LLM-based automation. Write plain code instead.
+- <strong>High-cost-of-failure work</strong>. Production DB changes or outbound email, where a mistake is hard to undo, belong behind a human final approval. This is exactly where you must never attach `--dangerously-skip-permissions`.
+- <strong>Requirements that change every run</strong>. Command files shine when automating a stable procedure. Work whose conditions shift each time is usually better done interactively.
+
+The decision rule in one line: <strong>"Will I repeat this procedure in nearly the same form next month, and is there a way to verify the result automatically?"</strong> If both are yes, automate it. If either is no, doing it by hand is usually faster and safer.
+
+Once you reach the point of wanting to run several tasks in parallel, [running parallel Claude Code sessions with git worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree) is the natural next direction.
+
 ## Honest Assessment: What Doesn't Work Well
 
 After three months running this system, here's where it struggles.
@@ -358,6 +380,15 @@ This first part covered automation that stays within the `.claude/` folder.
 Part 2 goes a step further: <strong>building an MCP (Model Context Protocol) server from scratch to connect Claude Code to external tools</strong>. Reading a Notion database, sending Slack messages, querying PostgreSQL, all triggerable from a single slash command.
 
 If you've already experimented with MCP servers, the MCP Server Build Guide is good preparation.
+
+## Verify Against the Official Docs
+
+The slash command, hook, and subagent behavior in this post is all specified in the official Claude Code documentation. Fields in the frontmatter and the set of hook types can change between versions, so I'd check these primary sources before you build anything real.
+
+- [Slash commands reference](https://code.claude.com/docs/en/slash-commands) — the `.claude/commands/` file format and argument handling
+- [Hooks reference](https://code.claude.com/docs/en/hooks) — the full set of event types (`PreToolUse`, `PostToolUse`, `Stop`, `SessionStart`) and their payloads
+- [Subagents guide](https://code.claude.com/docs/en/sub-agents) — the `name`, `description`, `tools` frontmatter fields and the `/agents` command
+- [Claude Code documentation home](https://code.claude.com/docs/en/overview) — full overview from install and settings through to MCP
 
 ---
 

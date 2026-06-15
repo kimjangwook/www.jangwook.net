@@ -395,6 +395,26 @@ export default defineConfig({
    Duration  157ms
 ```
 
+## 何时迁移，何时暂缓
+
+在照抄安装命令之前，先判断这次切换是否适合你当前的项目。迁移不是免费的。它需要代码转换的时间、CI 的重新验证，以及团队的学习成本。我按下面的标准做了划分。
+
+**值得迁移到 Vitest 的情况**
+
+- 项目已经使用基于 Vite 的构建（Vite、SvelteKit、Nuxt、Astro）。此时测试转换流水线和构建流水线合二为一，重复配置随之消失。
+- 使用 TypeScript，却一直在 `ts-jest` 或 `babel-jest` 中反复调试模块解析错误、ESM/CJS 冲突。
+- 代码库以 ESM（`import`/`export`）为主。Jest 的 ESM 支持仍需实验性标志，而 Vitest 默认就是 ESM。
+- 希望在真实浏览器中运行组件测试，而非 JSDOM 模拟。Vitest 4 的 [Browser Mode](https://vitest.dev/guide/browser/) 已将该场景提升为稳定版。
+
+**应暂缓或避免迁移的情况**
+
+- 拥有大型 Next.js 或 Express 服务端测试套件。Vitest 针对 Vite 生态优化，因此在 Node.js 模块系统的复杂场景下可能出现预期外的行为。官方[迁移指南](https://vitest.dev/guide/migration.html)本身也标注了与 Jest 的不兼容点，例如 `mockReset` 行为的差异。
+- 团队严重依赖 Jest 快照、自定义解析器或庞大的 `jest.config` 资产，短期内无力重写。
+- 这是一个纯 Node.js 库，且不需要 Browser Mode。此时维护 Jest 代价很小，迁移的边际收益也不大。
+- 截止日期就在眼前。迁移最好放在稳定的迭代周期里做。一边改测试基础设施一边赶功能，会把两个变量混在一起，使调试更困难。
+
+如果拿不定主意，建议先把一个小测试文件迁到 Vitest 并行运行。只要开启 `globals: true`，大部分代码都能原样通过，大约 30 分钟即可验证实际兼容性。
+
 ## 那么，到底值不值得迁移
 
 我的判断：**TypeScript 项目推荐迁移，其他情况视具体需求而定。**
@@ -406,3 +426,14 @@ Next.js 或 Express 的大型服务端测试套件则需要谨慎评估。Vitest
 npm 周下载量从 480 万增长到 770 万，说明大量项目已经完成迁移。但并非所有人都顺利过渡。请根据项目复杂度做出决策。
 
 [用 Bun 自动化 TypeScript 脚本](/zh/blog/zh/bun-shell-scripting-practical-guide-2026)与 Vitest 结合运行是我目前正在探索的组合，将在下一篇文章中介绍。Vitest 5.0 beta 已经在 npm 上了，现在迁移到 4.x 是稳妥的选择。
+
+如果想进一步打磨 TypeScript 工具链，[用 TypeScript SDK 逐步构建 MCP 服务器](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)和[用 Hono 编写类型安全的 API](/zh/blog/zh/hono-typescript-api-2026)同属一条脉络，可一并阅读。把测试、运行时和 API 层都对齐到 Vite 生态后，配置文件会明显减少。
+
+## 参考资料（一手来源）
+
+以下是本文用于核实的官方文档。版本之间行为常有变化，实际迁移前请务必查阅原文。
+
+- [Vitest 官方网站](https://vitest.dev) — 配置、API 和变更日志的一手来源
+- [Vitest 官方迁移指南](https://vitest.dev/guide/migration.html) — 标注了 Jest 兼容性及不兼容点（`globals`、`mockReset` 等）
+- [Vitest Browser Mode 指南](https://vitest.dev/guide/browser/) — Vitest 4 中提升为稳定版的浏览器测试
+- [Jest 官方网站](https://jestjs.io) — 迁移来源 Jest 的配置与 API 参考

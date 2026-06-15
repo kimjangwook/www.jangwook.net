@@ -518,6 +518,35 @@ Hono를 굳이 선택할 필요 없는 경우:
 
 Express를 계속 쓸 이유가 없다고 단정 짓지는 않겠다. 하지만 새 프로젝트를 TypeScript와 Bun으로 시작하면서 엣지 배포를 염두에 두고 있다면, Hono는 지금 당장 고려할 만한 수준이다.
 
+## Hono vs Express: 언제 쓰고 언제 피할지
+
+직접 두 프레임워크를 다뤄본 뒤 정리한 의사결정 기준이다. 추상적인 "더 빠르다"는 말 대신, 실제 프로젝트 상황에 대입할 수 있는 표로 만들었다.
+
+| 상황 | Hono 권장 | Express 권장 |
+|------|----------|-------------|
+| 배포 타깃이 Cloudflare Workers / Deno Deploy / Bun | ✓ | |
+| 콜드 스타트와 번들 크기가 응답 지연에 직결 | ✓ | |
+| 처음부터 TypeScript 타입 추론을 끝까지 챙기고 싶다 | ✓ | |
+| 팀이 이미 Express 미들웨어 생태계에 깊이 의존 | | ✓ |
+| `passport`, `multer` 등 검증된 Express 플러그인이 핵심 | | ✓ |
+| 레거시 Node.js 코드베이스 위에 점진적으로 얹어야 함 | | ✓ |
+| OpenAPI 자동 문서화가 필수 요구사항 | ✓ (`@hono/zod-openapi`) | ✓ (`swagger-jsdoc`) |
+
+Hono를 피해야 하는 가장 현실적인 경우는 두 가지다. 첫째, 팀 전체가 Express에 익숙하고 엣지 배포 계획이 전혀 없을 때. 이때 프레임워크를 바꾸는 비용이 얻는 이득보다 크다. 둘째, 특정 Express 전용 플러그인에 강하게 묶여 있을 때. Hono는 표준 `Request`/`Response`를 쓰기 때문에 Express 미들웨어를 그대로 가져올 수 없다.
+
+반대로 새 프로젝트이고, 배포 대상이 서버리스이며, TypeScript가 기본 언어라면 Express를 굳이 고를 이유를 찾기 어렵다. 공식 문서의 [Getting Started](https://hono.dev/docs/getting-started/basic) 한 페이지만 따라 해도 동작하는 서버가 나온다.
+
+## 참고한 1차 출처
+
+이 글의 코드와 수치는 다음 공식 문서를 직접 따라 확인한 것이다.
+
+- [Hono 공식 문서 — Getting Started](https://hono.dev/docs/getting-started/basic): 기본 앱 구조, 라우팅, 런타임별 진입점 설명
+- [Hono 공식 문서 — Cloudflare Workers](https://hono.dev/docs/getting-started/cloudflare-workers): Bindings 제네릭과 `wrangler` 배포 흐름
+- [Cloudflare Workers 공식 가이드 — Hono](https://developers.cloudflare.com/workers/frameworks/framework-guides/hono/): Workers 런타임에서의 Hono 프로젝트 구성과 배포
+- [Zod 공식 문서](https://zod.dev/): 스키마 정의와 타입 추론, `@hono/zod-validator`가 의존하는 검증 규칙
+
+각 문서의 버전은 2026년 6월 기준이며, Hono v4 계열 API를 따랐다.
+
 ## 자주 쓰는 패턴 치트시트
 
 Hono를 처음 쓸 때 자꾸 검색하게 되는 패턴들을 모아뒀다.

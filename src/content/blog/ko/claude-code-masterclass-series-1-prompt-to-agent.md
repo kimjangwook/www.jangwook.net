@@ -340,6 +340,28 @@ Rate: SAFE / CAUTION / CRITICAL
 
 여기서 중요한 학습 포인트가 하나 있다. 이 구조는 "프로그래밍"이 아니라 "지시서 작성"에 가깝다. Claude는 파일을 실행하지 않고 읽어서 의도를 파악한다. 그래서 지시서가 모호하면 실행도 모호해진다. 구체적이고 명확한 지시가 복잡한 로직보다 더 중요하다.
 
+## 언제 이 3단계 자동화를 쓰고, 언제 피해야 하는가
+
+3단계 모두 구축한 뒤에야 명확해진 게 있다. 이 패턴은 만능이 아니다. 어떤 작업에는 과하고, 어떤 작업에는 부족하다.
+
+<strong>쓰면 좋은 경우</strong>:
+
+- 매일 또는 매주 <strong>반복되는 다단계 작업</strong>이 있을 때. 리서치 → 작성 → 검증 → 발행처럼 단계가 고정돼 있고 손으로 매번 반복하기 지겨운 흐름이 대표적이다.
+- 작업이 <strong>여러 전문 역할로 자연스럽게 쪼개질 때</strong>. 리서치와 글쓰기와 SEO를 한 컨텍스트에 욱여넣으면 품질이 떨어진다. 서브에이전트로 분리하면 각자 집중도가 올라간다.
+- 결과가 <strong>객관적으로 검증 가능할 때</strong>. `npm run build`나 `astro check`처럼 통과/실패가 명확한 게이트가 있으면 LLM의 비결정성을 QA 루프로 가둘 수 있다.
+- <strong>비대화형 실행</strong>이 필요할 때. 크론이나 launchd로 사람 없이 돌려야 하는 파이프라인이라면 슬래시 명령어와 훅 조합이 잘 맞는다.
+
+<strong>피하는 게 나은 경우</strong>:
+
+- <strong>한 번만 하고 말 작업</strong>. 일회성 작업에 명령어 파일과 에이전트를 만드는 건 배보다 배꼽이 크다. 그냥 직접 프롬프트를 치는 게 빠르다.
+- <strong>결정론적 결과가 필수인 작업</strong>. 회계 정산, 결제 처리, 마이그레이션 스크립트처럼 매번 똑같은 출력이 보장돼야 하는 일에는 LLM 기반 자동화가 부적합하다. 일반 코드로 짜야 한다.
+- <strong>실패 비용이 큰 작업</strong>. 프로덕션 DB 변경이나 외부에 발송되는 메일처럼 잘못되면 되돌리기 어려운 작업은 사람의 최종 승인을 거치는 게 맞다. `--dangerously-skip-permissions`를 절대 붙이면 안 되는 영역이다.
+- <strong>요구사항이 매번 바뀌는 작업</strong>. 명령어 파일은 안정적인 절차를 자동화할 때 빛난다. 매번 조건이 달라지는 작업은 차라리 대화형으로 하는 게 낫다.
+
+판단 기준을 한 줄로 줄이면 이렇다. <strong>"이 절차를 다음 달에도 거의 같은 형태로 반복할 것인가, 그리고 결과를 자동으로 검증할 방법이 있는가."</strong> 둘 다 "예"면 자동화하고, 하나라도 "아니오"면 손으로 하는 편이 보통 더 빠르고 안전하다.
+
+병렬로 여러 작업을 동시에 굴리고 싶은 단계까지 왔다면, [git worktree로 Claude Code 세션을 병렬 실행하는 패턴](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)이 다음 확장 방향으로 자연스럽다.
+
 ## 솔직한 평가: 뭐가 잘 안 되는가
 
 이 시스템을 3개월 운용한 결과, 몇 가지 현실적인 제약을 만났다.
@@ -376,6 +398,15 @@ fi
 #2편에서는 한 단계 더 나간다. <strong>MCP(Model Context Protocol) 서버를 직접 만들어서 Claude Code에 외부 도구를 연결하는 법</strong>이다. Notion 데이터베이스를 읽고, Slack으로 메시지를 보내고, PostgreSQL을 쿼리하는 외부 시스템 연동이 슬래시 명령어 하나로 가능해지는 구조를 다룬다.
 
 이미 MCP 서버를 구축해본 경험이 있다면 MCP 서버 처음부터 만들기 가이드가 좋은 사전 읽기다.
+
+## 공식 문서로 확인하기
+
+이 글의 슬래시 명령어, 훅, 서브에이전트 동작 방식은 모두 Claude Code 공식 문서에 명세돼 있다. 버전이 올라가면 frontmatter 필드나 훅 타입이 바뀔 수 있으니, 실제 구축 전에 아래 1차 출처를 확인하는 걸 권한다.
+
+- [슬래시 명령어 공식 문서](https://code.claude.com/docs/en/slash-commands) — `.claude/commands/` 파일 형식과 인자 처리 명세
+- [훅 레퍼런스](https://code.claude.com/docs/en/hooks) — `PreToolUse`, `PostToolUse`, `Stop`, `SessionStart` 등 전체 이벤트 타입과 페이로드
+- [서브에이전트 정의 가이드](https://code.claude.com/docs/en/sub-agents) — `name`, `description`, `tools` frontmatter 필드와 `/agents` 명령어
+- [Claude Code 공식 문서 홈](https://code.claude.com/docs/en/overview) — 설치, 설정, MCP까지 전체 개요
 
 ---
 
