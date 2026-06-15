@@ -363,6 +363,44 @@ This is genuinely useful for distributing CLI tools. The `--allow-*` flags in De
 
 Both have official Docker images and are straightforward to containerize. Deno's image requires that you include permission flags in the `CMD` directive, which forces you to make permission decisions explicit at the infrastructure layer.
 
+## When to Use Each, and When to Avoid It
+
+A decision rubric is more useful than abstract comparison. Here is how I'd map the measured results to real situations.
+
+**Use Bun when**
+
+- You want to speed up an existing Node.js service with minimal migration cost. Your `package.json` and `node_modules` keep working.
+- You have a large Jest test suite. `bun:test` is Jest-compatible, so the move is low-friction.
+- Your service depends heavily on npm. If internal libraries or legacy packages live only on npm, Bun is the safe bet.
+
+**Avoid Bun when**
+
+- You run untrusted third-party code. There is no default sandbox, so the file system and network are open.
+- You want strict type checking as a CI gate. Bun skips type checks, so you call `tsc` separately.
+
+**Use Deno when**
+
+- You start a new TypeScript project. Type checking, the default sandbox, and no-install `npm:` specifiers all arrive together.
+- You build CLI tools or short scripts. Cold start is fast and single-binary distribution is clean. For instance, if you port [a local data tool built on Node.js's built-in SQLite](/en/blog/en/node-sqlite-builtin-practical-guide-2026) to Deno, permission flags let you scope disk access tightly.
+- You run unknown third-party packages on a server or in CI/CD. The permission model is a real line of defense.
+
+**Avoid Deno when**
+
+- Your existing codebase leans hard on npm-only packages. Compatibility has improved, but some native addons still cause friction.
+- Your team can't absorb the early friction of managing permission flags. The `--allow-*` list grows long in complex apps.
+
+If you're also designing a type-safe data layer, it's worth validating a [Drizzle ORM and TypeScript setup](/en/blog/en/drizzle-orm-typescript-complete-guide-2026) on both runtimes. Drizzle behaves the same on Bun and Deno.
+
+## Sources and Official Docs
+
+The numbers here are my own measurements, but I confirmed the behavior and compatibility claims against each runtime's official documentation.
+
+- [Deno official site](https://deno.com) — runtime overview, JSR, and the permission model
+- [Deno Node and npm compatibility docs](https://docs.deno.com/runtime/fundamentals/node/) — the `node:` prefix, `npm:` specifiers, and package.json resolution
+- [Deno security and permissions docs](https://docs.deno.com/runtime/fundamentals/security/) — `--allow-*` flags and the secure-by-default sandbox
+- [Bun official site](https://bun.sh) and [Bun installation docs](https://bun.sh/docs/installation) — single-executable install and platform requirements
+- [Node.js official site](https://nodejs.org) — the baseline runtime this comparison is measured against
+
 ## Bottom Line
 
 I cannot make a strong case that one runtime is decisively better. That is a cliché conclusion, but this time it comes from actual measurements.

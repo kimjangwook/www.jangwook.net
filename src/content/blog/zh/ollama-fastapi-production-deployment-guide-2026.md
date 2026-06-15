@@ -467,6 +467,29 @@ async def generate(req: GenerateRequest):
 - `llama3.1:70b`（Q4量化）：生产级质量
 - VRAM充足时可以将`--workers`提高到4以上
 
+如果想进一步厘清模型规模与实际运营成本的关系，可以配合阅读[分析AI智能体真实运营成本的文章](/zh/blog/zh/ai-agent-cost-reality)。它能帮你判断本地推理究竟能把token成本压到多低，以及GPU运维开销会在哪里吃掉这部分节省。
+
+## 何时使用这套方案，何时应当避免
+
+上面讲了分模型的推荐和成本，但"到底要不要采用这套Ollama + FastAPI方案"的判断标准值得单独列出来。
+
+适合使用的场景：
+
+- 在开发测试阶段想不计每次调用费用、无限次反复实验提示词时
+- 处理内部文档、个人信息等不能发送到外部API的数据时
+- 多个客户端（Web应用、CLI、移动端）共用同一个模型端点，并希望在一处统一管理模型切换时
+- 网络不稳定或需要在内网/离线环境中运行时
+- 使用针对特定领域微调过的、或未经审查的模型时
+
+不建议使用的场景：
+
+- 只有一两个人偶尔使用时，直接用`ollama run`或`curl`调用比维护一层适配器更简单，没必要套一层FastAPI。
+- 没有人力维护GPU基础设施，而响应质量又直接关系业务的面向用户功能，云端API是更合适的选择。
+- 需要用单张GPU支撑数十到数百并发用户时，本地单节点很快就会触顶，此时应当横向扩展推理服务器或转向云端。
+- 当毫秒级延迟写进SLA时，纯CPU的本地推理（14.9秒）从一开始就不在候选之列。
+
+边界模糊时我用的判断标准很简单："节省token成本的价值 > GPU运维负担"就选本地，反之就选云端。而如果预计会在两者之间频繁切换，从一开始就铺好这层FastAPI适配器，能大幅降低日后的切换成本。
+
 ## 添加Bearer Token认证中间件
 
 本地开发时不需要认证，但将服务暴露给团队服务器或云端时，必须添加认证。使用FastAPI的`HTTPBearer`实现起来很简单。
@@ -525,4 +548,14 @@ app = FastAPI(title="Ollama API Server", lifespan=lifespan)
 4. **模型多路复用**：将代码请求路由到代码专用模型，普通请求路由到其他模型
 5. **备用路由**：主模型过载时自动切换到备用模型
 
-构建本地LLM服务器的原因因人而异。我的需求是拥有一个不需要API密钥就能实验的环境。云端LLM更强大，但反复实验阶段积累的token费用让人难以接受。14.9秒的响应时间对于验证代码是否正确运行已经足够。Ollama + FastAPI的组合在这两者之间找到了很好的平衡点。当真正需要生产级质量时，切换到云端API只需改变一个环境变量，而不需要重写客户端代码。
+构建本地LLM服务器的原因因人而异。我的需求是拥有一个不需要API密钥就能实验的环境。云端LLM更强大，但反复实验阶段积累的token费用让人难以接受。14.9秒的响应时间对于验证代码是否正确运行已经足够。Ollama + FastAPI的组合在这两者之间找到了很好的平衡点。当真正需要生产级质量时，切换到云端API只需改变一个环境变量，而不需要重写客户端代码。部署阶段切换到云端时，[用FastAPI将Claude API流式响应部署到生产环境的方法](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026)是本文自然的下一步——保持同一套FastAPI接口、只替换后端的模式可以原样套用。
+
+## 参考资料（一手来源）
+
+本文的代码与配置均依据以下官方文档编写并验证。
+
+- [Ollama API官方文档](https://docs.ollama.com/api) — `/api/generate`、`/api/tags`以及流式NDJSON响应格式的一手来源。GitHub上的[docs/api.md](https://github.com/ollama/ollama/blob/main/docs/api.md)也提供同一份参考。
+- [FastAPI官方文档 — StreamingResponse](https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse) — SSE流式响应与`media_type`设置的依据。
+- [FastAPI官方文档 — Lifespan Events](https://fastapi.tiangolo.com/advanced/events/) — 模型预热所用`lifespan`模式（取代已弃用的`@app.on_event`）的官方指南。
+- [Docker Compose官方参考 — healthcheck](https://docs.docker.com/reference/compose-file/services/#healthcheck) — 如何用`condition: service_healthy`保证启动顺序。
+- [Ollama官方网站](https://ollama.com) — 安装脚本与模型库。

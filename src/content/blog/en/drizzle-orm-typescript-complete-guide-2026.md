@@ -460,3 +460,34 @@ Your DB schema and API validation stay in sync automatically. If a DB column is 
 My overall take: Drizzle ORM is for TypeScript developers who know SQL and don't want to give up control for the sake of type safety. The migration transparency alone is worth considering. Being able to open the generated `.sql` file and know exactly what will run against your database is an underrated feature. The async transaction gotcha is real, but it's avoidable once you know about it. And honestly, the fact that the error message told me precisely what was wrong (even if the fix wasn't spelled out) beats a silent failure any day.
 
 I plan to follow this up with a post showing Drizzle + Hono.js for a complete REST API.
+
+## When to use Drizzle, and when to avoid it
+
+What matters more than the feature list is whether the tool fits your situation. Here's how I'd decide after using it.
+
+**Drizzle is a good fit when:**
+
+- Your team is already comfortable with SQL. Drizzle doesn't hide SQL, it just adds types on top, so the more you know SQL the smaller the learning curve.
+- You're deploying to edge or serverless runtimes (Cloudflare Workers, Vercel Edge, and similar). The runtime library has zero dependencies and stays tiny, which helps cold starts and bundle size.
+- You want to review and commit the migration SQL yourself. `drizzle-kit generate` emits human-readable `.sql`, so schema changes show up plainly in code review.
+- You need fine-grained query control. Writing complex JOINs, window functions, or DB-specific features directly through the `sql` template feels natural.
+
+**You're better off avoiding Drizzle when:**
+
+- Your team barely knows SQL and expects the ORM to abstract the data model as much as possible. Prisma's declarative schema and generated client have a lower barrier here.
+- You need very mature docs, tutorials, and third-party guides. Drizzle is improving fast, but some edge cases aren't as well-documented as Prisma yet.
+- Automated data-preserving migrations (like column-rename detection) or a rich GUI workflow are core requirements.
+
+**Drizzle vs Prisma in one line**: "Want to control the SQL → Drizzle. Want to forget the SQL → Prisma." Both give you enough type safety. The real difference is the abstraction level and migration transparency. The same reasoning applies to picking test tools in my [Vitest 4 migration guide](/en/blog/en/vitest-4-jest-migration-guide-2026) — switching tools always starts from "where does my current workflow hurt."
+
+If you want to see type safety carried all the way to the API layer, my [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) covers the same idea in a different context.
+
+## References (primary sources)
+
+This post is based on hands-on runs plus the following official sources.
+
+- [Drizzle ORM official docs](https://orm.drizzle.team) — schema, migrations, Relations API, and drizzle-kit reference
+- [drizzle-team/drizzle-orm (GitHub)](https://github.com/drizzle-team/drizzle-orm) — source code, release notes, issue tracker
+- [drizzle-team/drizzle-orm-docs (GitHub)](https://github.com/drizzle-team/drizzle-orm-docs) — source of the docs site
+- [WiseLibs/better-sqlite3 (GitHub)](https://github.com/WiseLibs/better-sqlite3) — the synchronous SQLite driver (basis for the transaction behavior)
+- [better-sqlite3 (npm)](https://www.npmjs.com/package/better-sqlite3) — version and install details

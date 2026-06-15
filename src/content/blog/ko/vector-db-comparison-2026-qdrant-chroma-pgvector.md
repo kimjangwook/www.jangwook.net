@@ -349,6 +349,53 @@ Qdrant는 `quantization`(양자화)로 high-dim 벡터의 메모리 사용량을
 
 임베딩 모델의 차원(dim) 선택도 DB 성능에 영향을 준다. Gemini Embedding 2처럼 멀티모달 임베딩을 쓸 때 dim 설계가 어떻게 달라지는지는 별도로 읽어볼 만하다.
 
+## 언제 쓰고, 언제 피해야 하는가
+
+벤치마크 숫자와 결정 매트릭스만으로는 실제 선택이 잘 안 된다. 그래서 각 DB를 "이럴 때 쓰고 / 이럴 때 피하라"로 정리했다.
+
+**ChromaDB를 쓸 때**
+
+- 며칠 안에 RAG PoC를 만들어야 하고, 데이터 규모가 수십만 개를 넘지 않을 게 확실할 때
+- 팀에 데브옵스 인력이 없고, 별도 인프라를 띄울 여유가 없을 때
+- LangChain·LlamaIndex 튜토리얼을 그대로 따라가며 데모를 만들 때
+
+**ChromaDB를 피할 때**
+
+- 100만 개 이상의 벡터를 안정적으로 서빙해야 할 때. 프로덕션 레퍼런스가 상대적으로 부족하다.
+- 자체 호스팅에서 다중 노드 수평 확장이 필수일 때. 내장 분산 클러스터가 없다.
+- "category가 tech이면서 score 0.8 이상이고 날짜가 특정 범위" 같은 복합 필터를 코드 깔끔하게 표현해야 할 때
+
+**Qdrant를 쓸 때**
+
+- 5M개 이상의 벡터, 또는 가까운 미래에 그 규모가 예상될 때
+- 수평 확장과 양자화로 메모리 비용을 통제해야 할 때
+- 페이로드 인덱스 기반의 대규모 메타데이터 필터가 임계 경로에 있을 때
+
+**Qdrant를 피할 때**
+
+- 데이터가 10만 개 이하로 확실하고, Docker 운영 부담을 질 이유가 없을 때. 소규모 필터 쿼리는 오히려 ChromaDB가 빨랐다.
+- 하루 만에 끝낼 해커톤이나 일회성 데모처럼 진입 장벽이 곧 비용인 상황
+
+**pgvector를 쓸 때**
+
+- 이미 PostgreSQL을 운영 중이고 DBA가 있으며, 추가 인프라를 0으로 유지하고 싶을 때
+- 벡터 검색을 사용자·권한 테이블과 JOIN해야 할 때. 이건 ChromaDB나 Qdrant로는 표현이 어렵다.
+
+**pgvector를 피할 때**
+
+- PostgreSQL이 별도 서버에 있어 쿼리당 10〜50ms 네트워크 왕복이 임계 경로에 더해질 때
+- HNSW 파라미터(`m`, `ef_construction`, `ef_search`)를 튜닝할 PostgreSQL 전문성이 팀에 없을 때
+
+## 공식 문서와 1차 출처
+
+이 글의 수치는 직접 측정한 결과지만, 설치·API·인덱스 파라미터는 각 프로젝트의 공식 문서를 1차 출처로 확인하는 게 정확하다.
+
+- **Qdrant**: 공식 사이트 [qdrant.tech](https://qdrant.tech)와 [공식 문서](https://qdrant.tech/documentation/), 소스 코드는 [github.com/qdrant/qdrant](https://github.com/qdrant/qdrant)
+- **Chroma**: 공식 사이트 [trychroma.com](https://www.trychroma.com)과 [공식 문서](https://docs.trychroma.com), 소스 코드는 [github.com/chroma-core/chroma](https://github.com/chroma-core/chroma)
+- **pgvector**: 공식 저장소 [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector), 버전별 변경 사항은 [PostgreSQL 릴리스 노트](https://www.postgresql.org/about/news/pgvector-082-released-3245/)
+
+특히 pgvector는 0.8.x에서 `halfvec`(2바이트 float), `sparsevec`, 바이너리 양자화 등 메모리 절감 기능이 추가됐으니, high-dim 임베딩을 다룬다면 위 릴리스 노트를 먼저 확인하는 게 좋다.
+
 ## 그래서 나는 무엇을 쓰는가
 
 솔직히 말하면, 2026년 기준으로 나는 새 프로젝트에서 Qdrant를 기본값으로 쓴다. 이유는 간단하다: 소규모에서 약간의 오버헤드를 감수하더라도, 나중에 규모가 커졌을 때 마이그레이션하는 비용이 더 크다.

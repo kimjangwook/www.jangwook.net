@@ -546,3 +546,34 @@ function validatePost(data: unknown): NewPost {
 最后说一下实际跑下来的感受：Drizzle ORM 是为"会写 SQL 的 TypeScript 开发者"准备的工具。它不是把 SQL 藏在抽象层后面，而是让你以类型安全的方式直接使用 SQL。虽然有像 transaction async 问题这样来自 SQLite 特性的陷阱，但说实话，"代码比文档更直观地解释了行为"这一点，我挺喜欢的。
 
 下一篇打算写 Drizzle + Hono.js 组合构建真实 REST API 的例子。
+
+## 何时该用 Drizzle，何时该避开
+
+比起罗列功能，更重要的是"它是否适合你的场景"。这是我实际用过之后总结的判断标准。
+
+**适合用 Drizzle 的情况：**
+
+- 团队已经熟悉 SQL。Drizzle 不隐藏 SQL，只是在上面叠加类型，越懂 SQL 学习成本越接近于零。
+- 部署到边缘 / 无服务器运行时（Cloudflare Workers、Vercel Edge 等）。运行时库零依赖且非常轻量，对冷启动和打包体积都有利。
+- 想自己审查并提交迁移 SQL。`drizzle-kit generate` 会输出人类可读的 `.sql`，schema 变更能在代码评审中一目了然。
+- 需要精细控制查询。用 `sql` 模板直接写复杂 JOIN、窗口函数或数据库特有功能会很顺手。
+
+**最好避开 Drizzle 的情况：**
+
+- 团队几乎不懂 SQL，并期望 ORM 尽量抽象掉数据模型。这种情况下 Prisma 的声明式 schema 和生成式客户端门槛更低。
+- 需要非常成熟的文档、教程和第三方指南。Drizzle 进步很快，但部分边界情况还没有 Prisma 整理得那么完善。
+- 迁移的数据保留自动化（如列 rename 检测）或丰富的 GUI 工作流是核心需求。
+
+**Drizzle vs Prisma 一句话判断**："想掌控 SQL → Drizzle，想忘掉 SQL → Prisma。" 两者都提供足够的类型安全。真正的差别在于抽象层级和迁移透明度。同样的思路也适用于在 [Vitest 4 迁移指南](/zh/blog/zh/vitest-4-jest-migration-guide-2026) 中挑选测试工具。更换工具的决定，总是从"我当前的工作流哪里疼"开始。
+
+如果你想看类型安全一路延伸到 API 层的做法，[MCP 服务器 TypeScript SDK 分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026) 在另一个场景下讲的是同一个理念。
+
+## 参考资料（一手来源）
+
+本文基于实际运行结果，并参考以下官方来源撰写。
+
+- [Drizzle ORM 官方文档](https://orm.drizzle.team) — schema、迁移、Relations API 以及 drizzle-kit 参考
+- [drizzle-team/drizzle-orm (GitHub)](https://github.com/drizzle-team/drizzle-orm) — 源代码、发布说明、问题追踪
+- [drizzle-team/drizzle-orm-docs (GitHub)](https://github.com/drizzle-team/drizzle-orm-docs) — 文档站点源码
+- [WiseLibs/better-sqlite3 (GitHub)](https://github.com/WiseLibs/better-sqlite3) — 同步 SQLite 驱动（事务行为的依据）
+- [better-sqlite3 (npm)](https://www.npmjs.com/package/better-sqlite3) — 版本与安装信息

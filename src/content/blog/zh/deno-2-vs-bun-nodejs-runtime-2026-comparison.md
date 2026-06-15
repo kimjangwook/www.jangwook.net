@@ -358,6 +358,44 @@ bun build --compile index.ts --outfile server
 
 两者都有官方Docker镜像，容器化都很简单。Deno需要在`CMD`中包含权限标志，这迫使你在基础设施层面明确权限设计。
 
+## 何时使用，何时避免
+
+比起抽象的对比，决策标准更有用。基于实测结果，按场景整理如下。
+
+**应该使用 Bun 的场景**
+
+- 想提升现有 Node.js 服务的速度，同时把迁移成本降到最低。`package.json` 和 `node_modules` 可以照常工作。
+- 拥有大量基于 Jest 的测试资产。`bun:test` 兼容 Jest API，迁移负担小。
+- npm 依赖较深的服务。如果内部库或遗留包只存在于 npm，Bun 更稳妥。
+
+**应该避免 Bun 的场景**
+
+- 在不可信环境中运行第三方代码。没有默认沙箱，文件系统和网络都是开放的。
+- 想在 CI 中把严格类型检查作为门禁。Bun 不做类型检查，需要单独调用 `tsc`。
+
+**应该使用 Deno 的场景**
+
+- 新的 TypeScript 项目。类型检查、默认沙箱和免安装的 `npm:` 指定符一次到位。
+- CLI 工具或短脚本。冷启动快，便于以单一二进制分发。例如把[用 Node.js 内置 SQLite 构建本地数据工具](/zh/blog/zh/node-sqlite-builtin-practical-guide-2026)的工作迁移到 Deno，就可以用权限标志收窄磁盘访问范围。
+- 在服务器或 CI/CD 中运行未知的第三方包。权限模型成为实质性的防御线。
+
+**应该避免 Deno 的场景**
+
+- 深度依赖 npm 专属包的现有代码库。兼容性已改善，但部分原生插件仍有摩擦。
+- 团队难以承受管理权限标志的初期摩擦。复杂应用中 `--allow-*` 列表会变长。
+
+如果还要一并设计类型安全的数据层，不妨在两种运行时上都验证一下[Drizzle ORM 与 TypeScript 的组合](/zh/blog/zh/drizzle-orm-typescript-complete-guide-2026)。Drizzle 在 Bun 和 Deno 上表现一致。
+
+## 来源与官方文档
+
+本文的数值是我自己测量的，但运行机制和兼容性都对照各运行时的官方文档做了核实。
+
+- [Deno 官方网站](https://deno.com) — 运行时概览、JSR 与权限模型介绍
+- [Deno 的 Node 与 npm 兼容性文档](https://docs.deno.com/runtime/fundamentals/node/) — `node:` 前缀、`npm:` 指定符与 package.json 解析方式
+- [Deno 安全与权限文档](https://docs.deno.com/runtime/fundamentals/security/) — `--allow-*` 标志与默认沙箱设计
+- [Bun 官方网站](https://bun.sh)与 [Bun 安装文档](https://bun.sh/docs/installation) — 单一可执行文件安装与平台要求
+- [Node.js 官方网站](https://nodejs.org) — 作为比较基准的标准运行时
+
 ## 最后，我会怎么选
 
 很难得出其中一个运行时明显更好的结论。"情况不同"这个陈腐的答案，这次确实来自实际数据。

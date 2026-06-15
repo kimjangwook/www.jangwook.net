@@ -480,7 +480,28 @@ async def generate(req: GenerateRequest):
 - `llama3.1:70b` (Q4 quantized): 프로덕션 수준 품질
 - 이 경우 `--workers 4` 이상으로 올려도 VRAM이 충분하다
 
-모델 크기와 성능에 대해서는 로컬 LLM 추론 비용 최적화 글에서 더 구체적인 벤치마크를 볼 수 있다.
+모델 크기와 운영 비용의 관계를 더 깊이 파고들려면 [AI 에이전트의 실제 비용 구조를 분석한 글](/ko/blog/ko/ai-agent-cost-reality)을 함께 보면 좋다. 로컬 추론이 토큰 비용을 어디까지 줄여주는지 감을 잡는 데 도움이 된다.
+
+## 이 구성을 언제 쓰고, 언제 피해야 하나
+
+위에서 모델별 추천과 비용 이야기를 했지만, 정작 "이 Ollama + FastAPI 구성 자체를 도입할지" 결정하는 기준은 따로 정리해두는 게 좋다.
+
+이럴 때 쓰면 좋다:
+
+- 개발·테스트 단계에서 API 호출당 비용 없이 무제한으로 프롬프트를 반복 실험하고 싶을 때
+- 사내 문서나 개인정보처럼 외부 API로 보낼 수 없는 데이터를 다룰 때
+- 여러 클라이언트(웹앱, CLI, 모바일)가 같은 모델 엔드포인트를 공유해야 하고, 모델 교체를 한 곳에서 관리하고 싶을 때
+- 네트워크가 불안정하거나 폐쇄망 환경에서 오프라인으로 동작해야 할 때
+- 특정 도메인에 파인튜닝하거나 검열되지 않은 모델을 써야 할 때
+
+이럴 때는 피하는 게 낫다:
+
+- 한두 명이 가끔 쓰는 수준이라면 어댑터 레이어 없이 `ollama run`이나 `curl`로 직접 호출하는 게 더 단순하다. 굳이 FastAPI를 끼울 필요가 없다.
+- GPU 인프라를 유지관리할 인력이 없고, 응답 품질이 비즈니스에 직결되는 사용자 대면 기능이라면 클라우드 API가 낫다.
+- 수십~수백 동시 사용자를 받아야 하는데 GPU가 한 장뿐이라면, 로컬 단일 노드는 금방 한계에 부딪힌다. 이때는 추론 서버를 수평 확장하거나 클라우드로 가는 게 맞다.
+- 밀리초 단위 레이턴시가 SLA인 실시간 기능에는 CPU 전용 로컬 추론(14.9초)이 애초에 후보가 아니다.
+
+경계가 애매할 때 내가 쓰는 기준은 단순하다. "토큰 비용을 아끼는 가치 > GPU 운영 부담"이면 로컬, 반대면 클라우드. 그리고 둘 사이를 자주 오갈 것 같으면 처음부터 이 FastAPI 어댑터를 깔아두는 게 나중에 전환 비용을 크게 줄여준다.
 
 ## Bearer Token 인증 미들웨어 추가
 
@@ -567,8 +588,18 @@ app = FastAPI(title="Ollama API Server", lifespan=lifespan)
 4. **모델 멀티플렉싱**: 요청 타입에 따라 코딩 모델 vs 일반 모델 라우팅
 5. **모델 자동 전환**: 특정 모델이 과부하 상태일 때 fallback 모델로 라우팅
 
-NVIDIA 하드웨어에서 LLM 추론 비용을 최적화하는 방법도 함께 읽어보면, 서버 구성 이후 실제 운영 비용을 어떻게 줄일 수 있는지 감이 온다.
+배포 단계에서 클라우드로 전환할 때는 [FastAPI로 Claude API 스트리밍을 프로덕션에 올리는 방법](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)이 이 글의 자연스러운 다음 단계다. 같은 FastAPI 인터페이스를 유지한 채 백엔드만 바꾸는 패턴을 그대로 적용할 수 있다.
 
 로컬 LLM 서버를 만드는 이유는 사람마다 다르다. 나는 API 키 없이 실험할 수 있는 환경이 필요했다. 클라우드 LLM이 더 강력하지만, 반복적인 실험 단계에서 토큰 비용이 쌓이는 것을 좋아하지 않는다. 14.9초짜리 응답도 내 코드가 맞게 작동하는지 확인하는 용도로는 충분하다. Ollama + FastAPI 조합은 그 균형점을 잘 잡아준다고 생각한다. 프로덕션 배포가 필요해지면 클라우드로 전환하면 되고, 그때 이 FastAPI 인터페이스가 스위칭 비용을 낮춰준다.
 
 이 가이드의 전체 코드는 `main.py` 68줄, `Dockerfile` 10줄, `docker-compose.yml` 35줄이 전부다. 최소한의 코드로 최대한의 유연성을 확보하는 것이 목표였다. 더 추가할 기능은 많지만, 일단 돌아가는 것을 먼저 만들고 필요할 때 하나씩 더하는 방식이 결국 더 빠르다.
+
+## 참고 자료 (1차 출처)
+
+이 글의 코드와 설정은 다음 공식 문서를 기준으로 작성하고 검증했다.
+
+- [Ollama API 공식 문서](https://docs.ollama.com/api) — `/api/generate`, `/api/tags`, 스트리밍 NDJSON 응답 형식의 1차 출처. GitHub의 [docs/api.md](https://github.com/ollama/ollama/blob/main/docs/api.md)에도 동일한 레퍼런스가 있다.
+- [FastAPI 공식 문서 — StreamingResponse](https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse) — SSE 스트리밍 응답과 `media_type` 설정의 근거.
+- [FastAPI 공식 문서 — Lifespan Events](https://fastapi.tiangolo.com/advanced/events/) — 모델 워밍업에 쓴 `lifespan` 패턴(구 `@app.on_event` 대체)의 공식 가이드.
+- [Docker Compose 공식 레퍼런스 — healthcheck](https://docs.docker.com/reference/compose-file/services/#healthcheck) — `condition: service_healthy`로 시작 순서를 보장하는 방법.
+- [Ollama 공식 사이트](https://ollama.com) — 설치 스크립트와 모델 라이브러리.

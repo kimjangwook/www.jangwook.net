@@ -426,6 +426,29 @@ Streaming is especially important here. Blocking clients until the full response
 - `llama3.1:70b` (Q4 quantized): production-quality responses
 - Bump `--workers` to 4+ when you have VRAM to spare
 
+If you want to reason about model size against actual operating cost, my [breakdown of what AI agents really cost to run](/en/blog/en/ai-agent-cost-reality) pairs well with this. It helps you see how far local inference pushes down token spend before GPU overhead eats the savings.
+
+## When to Use This Setup, and When to Avoid It
+
+I've covered model recommendations and cost above, but the decision of whether to adopt the Ollama + FastAPI setup at all deserves its own checklist.
+
+Use it when:
+
+- You want to iterate on prompts endlessly during development without per-call API charges.
+- You're handling data that can't leave your environment, like internal docs or PII.
+- Several clients (web app, CLI, mobile) share one model endpoint and you want model swaps managed in one place.
+- You need offline operation on flaky networks or air-gapped systems.
+- You're running a fine-tuned or uncensored model for a specific domain.
+
+Avoid it when:
+
+- One or two people use it occasionally. Calling `ollama run` or `curl` directly is simpler than maintaining an adapter layer.
+- You have no one to babysit GPU infrastructure and response quality is business-critical for a user-facing feature. A cloud API is the better trade.
+- You need to serve dozens or hundreds of concurrent users on a single GPU. A local single node hits its ceiling fast; scale out the inference server or move to the cloud.
+- Millisecond latency is in your SLA. CPU-only local inference at 14.9 seconds was never a candidate for real-time features.
+
+My rule when the line is blurry: if the value of saving token cost outweighs the burden of running GPUs, go local; otherwise go cloud. And if you expect to move between the two often, putting this FastAPI adapter in from the start cuts the switching cost later.
+
 ## Adding Bearer Token Authentication
 
 Direct Ollama exposure has zero authentication. For anything beyond localhost, add a token check. FastAPI's `HTTPBearer` makes this straightforward.
@@ -512,4 +535,14 @@ To make this production-ready:
 
 The code in this guide is minimal by design. Each addition above is straightforward once the base structure works. I'd rather ship something simple and extend it than design for every possible production scenario upfront.
 
-Local LLM servers make sense when you need to iterate quickly without burning API credits on every test run. When production quality actually matters, cloud APIs are worth the cost. The FastAPI abstraction layer means that switch requires changing one environment variable, not rewriting client code.
+Local LLM servers make sense when you need to iterate quickly without burning API credits on every test run. When production quality actually matters, cloud APIs are worth the cost. The natural next step is wiring this same interface to a hosted model: my guide on [streaming the Claude API to production with FastAPI](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026) reuses exactly this adapter pattern, swapping only the backend. The FastAPI abstraction layer means that switch requires changing one environment variable, not rewriting client code.
+
+## References (Primary Sources)
+
+The code and configuration here were written against and verified with the following official docs:
+
+- [Ollama API documentation](https://docs.ollama.com/api) — the primary source for `/api/generate`, `/api/tags`, and the streaming NDJSON response format. The same reference lives in [docs/api.md](https://github.com/ollama/ollama/blob/main/docs/api.md) on GitHub.
+- [FastAPI docs — StreamingResponse](https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse) — the basis for the SSE streaming response and `media_type` setting.
+- [FastAPI docs — Lifespan Events](https://fastapi.tiangolo.com/advanced/events/) — the official guide for the `lifespan` pattern used for model warmup (replacing the deprecated `@app.on_event`).
+- [Docker Compose reference — healthcheck](https://docs.docker.com/reference/compose-file/services/#healthcheck) — how `condition: service_healthy` enforces startup order.
+- [Ollama official site](https://ollama.com) — install script and model library.

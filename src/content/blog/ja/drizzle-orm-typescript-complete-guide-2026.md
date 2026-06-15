@@ -546,3 +546,34 @@ function validatePost(data: unknown): NewPost {
 使ってみた感想をまとめると: Drizzle ORMは「SQLが書けるTypeScript開発者」のためのツールです。抽象化の裏に隠すのではなく、SQLを型安全にそのまま書かせてくれる。トランザクションのasync問題のようにSQLiteの特性から来る落とし穴はありますが、ドキュメントよりコードの方が直感的に説明してくれるという点は、正直気に入りました。
 
 次はDrizzle + Hono.jsの組み合わせで実際のREST APIを作る例を書く予定です。
+
+## いつDrizzleを使い、いつ避けるべきか
+
+機能の自慢より大事なのは「自分の状況に合うか」です。実際に使ってまとめた判断基準です。
+
+**Drizzleが向いているケース:**
+
+- チームがすでにSQLに慣れている。DrizzleはSQLを隠さず型だけ被せる方向なので、SQLを知っているほど学習コストはほぼゼロです。
+- エッジ・サーバーレスランタイム(Cloudflare Workers、Vercel Edgeなど)にデプロイする。ランタイムライブラリは依存ゼロで非常に軽く、コールドスタートとバンドルサイズに有利です。
+- マイグレーションSQLを自分でレビューしてコミットしたい。`drizzle-kit generate`が人間が読める`.sql`を出力するので、スキーマ変更をコードレビューでそのまま確認できます。
+- クエリを細かく制御したい。複雑なJOINやウィンドウ関数、DB固有機能を`sql`テンプレートで直接書くのが快適です。
+
+**Drizzleを避けた方がよいケース:**
+
+- チームがSQLをほとんど知らず、ORMにデータモデルをできるだけ抽象化してほしいと期待している。この場合はPrismaの宣言的スキーマと生成型クライアントの方が敷居が低いです。
+- 非常に成熟したドキュメント・チュートリアル・サードパーティガイドが必要。Drizzleは急速に良くなっていますが、一部のエッジケースはまだPrismaほど整理されていません。
+- マイグレーションのデータ保持自動化(カラムrename検出など)やリッチなGUIワークフローが中心要件である。
+
+**Drizzle vs Prismaの一行判断**: 「SQLを制御したい → Drizzle、SQLを忘れたい → Prisma」。どちらも型安全性は十分にあります。違いは抽象化レベルとマイグレーションの透明性です。同じ考え方は[Vitest 4移行ガイド](/ja/blog/ja/vitest-4-jest-migration-guide-2026)でのテストツール選びにもそのまま当てはまります。ツールを変える決断はいつも「今のワークフローのどこが痛いか」から始まります。
+
+型安全性をAPIレイヤーまで持っていく流れが気になるなら、[MCPサーバー TypeScript SDK ステップバイステップガイド](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)も同じ文脈で役立ちます。
+
+## 参考資料(一次情報)
+
+この記事は実際に実行した結果に加え、以下の公式情報をもとに書いています。
+
+- [Drizzle ORM 公式ドキュメント](https://orm.drizzle.team) — スキーマ、マイグレーション、Relations API、drizzle-kitリファレンス
+- [drizzle-team/drizzle-orm (GitHub)](https://github.com/drizzle-team/drizzle-orm) — ソースコード、リリースノート、Issueトラッカー
+- [drizzle-team/drizzle-orm-docs (GitHub)](https://github.com/drizzle-team/drizzle-orm-docs) — ドキュメントサイトのソース
+- [WiseLibs/better-sqlite3 (GitHub)](https://github.com/WiseLibs/better-sqlite3) — 同期SQLiteドライバー(トランザクション挙動の根拠)
+- [better-sqlite3 (npm)](https://www.npmjs.com/package/better-sqlite3) — バージョンとインストール情報

@@ -341,6 +341,53 @@ Looking only at the numbers, you might conclude ChromaDB always wins. The actual
 
 The embedding model dimension also directly affects which DB you pick. How Gemini Embedding 2's multimodal embeddings change the dim design tradeoffs is worth reading alongside this comparison.
 
+## When to Use Each, and When to Avoid It
+
+Benchmark numbers and a decision matrix only get you so far. Here's each database framed as "reach for it when / avoid it when."
+
+**Use ChromaDB when**
+
+- You need a RAG proof of concept in days and you're confident data stays under a few hundred thousand vectors
+- Your team has no DevOps capacity and no appetite for standing up separate infrastructure
+- You're following LangChain or LlamaIndex tutorials directly to build a demo
+
+**Avoid ChromaDB when**
+
+- You need to serve millions of vectors reliably. Production references at that scale are comparatively thin.
+- Multi-node horizontal scale-out is a hard requirement on self-hosted infra. There's no built-in distributed cluster.
+- You need to express compound filters cleanly, such as "category is tech AND score above 0.8 AND date in a given range"
+
+**Use Qdrant when**
+
+- You expect 5M+ vectors now or in the near future
+- You need horizontal scaling and quantization to keep memory cost under control
+- Large-scale metadata filters backed by payload indexing sit in your critical path
+
+**Avoid Qdrant when**
+
+- Your dataset is firmly under 100K vectors and there's no reason to carry Docker operational overhead. At small scale, ChromaDB's filter queries were actually faster.
+- You're shipping a one-day hackathon or a throwaway demo where setup friction is itself the cost
+
+**Use pgvector when**
+
+- You already run PostgreSQL, have a DBA, and want to keep new infrastructure at zero
+- Your vector search needs to JOIN against user or permission tables. That's hard to express with ChromaDB or Qdrant.
+
+**Avoid pgvector when**
+
+- PostgreSQL lives on a separate server, so 10–50ms of network roundtrip per query lands on your critical path
+- Your team lacks the PostgreSQL expertise to tune HNSW parameters (`m`, `ef_construction`, `ef_search`)
+
+## Official Docs and Primary Sources
+
+The numbers here are my own measurements, but for installation, APIs, and index parameters, check each project's official docs as the primary source.
+
+- **Qdrant**: official site [qdrant.tech](https://qdrant.tech) and [documentation](https://qdrant.tech/documentation/), source at [github.com/qdrant/qdrant](https://github.com/qdrant/qdrant)
+- **Chroma**: official site [trychroma.com](https://www.trychroma.com) and [documentation](https://docs.trychroma.com), source at [github.com/chroma-core/chroma](https://github.com/chroma-core/chroma)
+- **pgvector**: official repository [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector), with per-version changes in the [PostgreSQL release notes](https://www.postgresql.org/about/news/pgvector-082-released-3245/)
+
+pgvector in particular added memory-saving features in the 0.8.x line, including `halfvec` (2-byte floats), `sparsevec`, and binary quantization. If you're working with high-dimensional embeddings, the release notes above are worth reading first.
+
 ## What I Reach For First
 
 Honestly, in 2026, I default to Qdrant on new projects. The reasoning is simple: a moderate overhead at small scale is cheaper than a forced migration when you hit growth. Starting on Qdrant means the production path is already in place.

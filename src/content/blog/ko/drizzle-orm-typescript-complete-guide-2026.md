@@ -546,3 +546,34 @@ function validatePost(data: unknown): NewPost {
 이렇게 하면 DB 스키마와 API 검증 스키마가 분리되지 않는다. DB 컬럼이 `notNull()`이면 Zod 스키마도 자동으로 required 필드가 된다. TypeScript Zod v4 + Claude API 구조화 출력 가이드에서 Zod를 더 깊게 다뤘으니 같이 보면 좋다.
 
 `drizzle-valibot`이나 `drizzle-arktype`처럼 다른 검증 라이브러리와 연동하는 패키지도 있다.
+
+## 언제 Drizzle을 쓰고, 언제 피해야 하나
+
+도구 자랑보다 중요한 건 "내 상황에 맞느냐"다. 직접 써보고 정리한 판단 기준이다.
+
+**Drizzle이 잘 맞는 경우:**
+
+- 팀이 이미 SQL을 편하게 다룬다. Drizzle은 SQL을 숨기지 않고 그대로 타입만 얹는 쪽이라, SQL을 아는 사람일수록 학습 비용이 거의 없다.
+- 엣지·서버리스 런타임(Cloudflare Workers, Vercel Edge 등)에 올린다. 런타임 라이브러리가 의존성 0이고 매우 가벼워서 콜드 스타트와 번들 크기에 유리하다.
+- 마이그레이션 SQL을 직접 검토하고 커밋하고 싶다. `drizzle-kit generate`가 사람이 읽는 `.sql`을 뽑아주니 코드 리뷰에서 스키마 변경을 그대로 확인할 수 있다.
+- 쿼리를 세밀하게 제어해야 한다. 복잡한 JOIN, 윈도우 함수, DB별 기능을 `sql` 템플릿으로 직접 쓰는 게 편하다.
+
+**Drizzle을 피하는 게 나은 경우:**
+
+- 팀이 SQL을 거의 모르고, ORM이 데이터 모델을 최대한 추상화해주길 기대한다. 이 경우 Prisma의 선언적 스키마와 생성형 클라이언트가 진입 장벽이 더 낮다.
+- 매우 성숙한 문서·튜토리얼·서드파티 가이드가 필요하다. Drizzle은 빠르게 좋아지고 있지만, 일부 엣지 케이스는 아직 Prisma만큼 정리돼 있지 않다.
+- 마이그레이션의 데이터 보존 자동화(예: 컬럼 rename 감지)나 풍부한 GUI 워크플로우가 핵심 요구사항이다.
+
+**Drizzle vs Prisma 한 줄 판단**: "SQL을 통제하고 싶다 → Drizzle, SQL을 잊고 싶다 → Prisma." 둘 다 타입 안전성은 충분히 제공한다. 차이는 추상화 레벨과 마이그레이션 투명성이다. 비슷한 고민을 [Vitest 4 마이그레이션 가이드](/ko/blog/ko/vitest-4-jest-migration-guide-2026)에서 테스트 도구 선택에도 똑같이 적용해볼 수 있다. 도구를 바꾸는 결정은 늘 "내 워크플로우의 어디가 아픈가"에서 출발한다.
+
+타입 안전성을 API 레이어까지 끌고 가는 흐름이 궁금하다면 [MCP 서버 TypeScript SDK 단계별 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)도 같은 맥락에서 도움이 된다.
+
+## 참고 자료 (1차 출처)
+
+이 글의 내용은 직접 실행한 결과와 함께 다음 공식 출처를 기준으로 작성했다.
+
+- [Drizzle ORM 공식 문서](https://orm.drizzle.team) — 스키마, 마이그레이션, Relations API, drizzle-kit 레퍼런스
+- [drizzle-team/drizzle-orm (GitHub)](https://github.com/drizzle-team/drizzle-orm) — 소스 코드, 릴리스 노트, 이슈 트래커
+- [drizzle-team/drizzle-orm-docs (GitHub)](https://github.com/drizzle-team/drizzle-orm-docs) — 문서 사이트 소스
+- [WiseLibs/better-sqlite3 (GitHub)](https://github.com/WiseLibs/better-sqlite3) — 동기 SQLite 드라이버 (트랜잭션 동작 근거)
+- [better-sqlite3 (npm)](https://www.npmjs.com/package/better-sqlite3) — 버전 및 설치 정보

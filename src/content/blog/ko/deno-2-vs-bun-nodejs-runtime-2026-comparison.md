@@ -401,6 +401,44 @@ bun build --compile index.ts --outfile server
 
 CLI 도구를 배포할 때 런타임 설치 없이 단일 바이너리를 배포할 수 있다는 건 두 런타임 모두 가진 강점이다.
 
+## 언제 쓰고, 언제 피해야 하나
+
+추상적인 비교보다 의사결정 기준이 더 유용하다. 실측 결과를 바탕으로 상황별로 정리한다.
+
+**Bun을 써야 할 때**
+
+- 기존 Node.js 서비스의 속도를 개선하면서 마이그레이션 비용은 최소화하고 싶을 때. `package.json`과 `node_modules`가 그대로 동작한다.
+- Jest 기반 테스트 자산이 많을 때. `bun:test`가 Jest API와 호환되므로 옮기는 부담이 작다.
+- npm 의존성이 깊은 서비스. 사내 라이브러리나 레거시 패키지가 npm에만 있다면 Bun이 안전하다.
+
+**Bun을 피해야 할 때**
+
+- 서드파티 코드를 신뢰할 수 없는 환경에서 실행할 때. 기본 샌드박스가 없어 파일 시스템과 네트워크가 열려 있다.
+- CI에서 엄격한 타입 검증을 게이트로 걸고 싶을 때. Bun은 타입 체크를 하지 않으므로 `tsc`를 별도로 호출해야 한다.
+
+**Deno를 써야 할 때**
+
+- 새 TypeScript 프로젝트. 타입 체크, 기본 샌드박스, 설치 없는 `npm:` 지정자가 한 번에 들어온다.
+- CLI 도구나 짧은 스크립트. cold start가 빠르고 단일 바이너리로 배포하기 좋다. 예를 들어 [Node.js 내장 SQLite로 로컬 데이터 도구를 만드는 작업](/ko/blog/ko/node-sqlite-builtin-practical-guide-2026)을 Deno로 옮기면 권한 플래그로 디스크 접근 범위를 좁힐 수 있다.
+- 알 수 없는 서드파티 패키지를 실행하는 서버나 CI/CD. 권한 모델이 실질적인 방어선이 된다.
+
+**Deno를 피해야 할 때**
+
+- npm 전용 패키지에 깊게 의존하는 기존 코드베이스. 호환성은 좋아졌지만 일부 네이티브 애드온은 여전히 마찰이 있다.
+- 권한 플래그 관리에 드는 초기 마찰을 팀이 감당하기 어려울 때. 복잡한 앱에서는 `--allow-*` 목록이 길어진다.
+
+타입 안전한 데이터 계층까지 함께 설계한다면 [Drizzle ORM과 TypeScript 조합](/ko/blog/ko/drizzle-orm-typescript-complete-guide-2026)을 두 런타임 모두에서 검증해보는 것도 방법이다. Drizzle는 Bun과 Deno에서 동일하게 동작한다.
+
+## 출처와 공식 문서
+
+이 글의 수치는 직접 측정했지만, 동작 방식과 호환성은 각 런타임의 공식 문서로 확인했다.
+
+- [Deno 공식 사이트](https://deno.com) — 런타임 개요와 JSR, 권한 모델 소개
+- [Deno의 Node 및 npm 호환성 문서](https://docs.deno.com/runtime/fundamentals/node/) — `node:` 접두사와 `npm:` 지정자, package.json 인식 방식
+- [Deno 보안 및 권한 문서](https://docs.deno.com/runtime/fundamentals/security/) — `--allow-*` 플래그와 기본 샌드박스 설계
+- [Bun 공식 사이트](https://bun.sh)와 [Bun 설치 문서](https://bun.sh/docs/installation) — 단일 실행 파일 설치와 플랫폼 요구사항
+- [Node.js 공식 사이트](https://nodejs.org) — 비교 기준이 된 표준 런타임
+
 ## 그래서 나는 뭘 쓰기로 했나
 
 두 런타임 중 하나가 압도적으로 낫다는 결론은 내리기 어렵다. 상황에 따라 다르다는 진부한 말이지만, 이번엔 실제 데이터에서 나온 결론이다.

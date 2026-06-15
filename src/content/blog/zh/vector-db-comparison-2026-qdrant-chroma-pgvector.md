@@ -337,6 +337,53 @@ pgvector: numpy近似约 1〜3ms
 
 嵌入模型的维度选择也直接影响向量数据库的性能。Gemini Embedding 2的多模态嵌入如何改变维度设计权衡值得结合本文一起阅读。
 
+## 什么时候用，什么时候避开
+
+光看基准数字和决策矩阵，实际选型还是难以拍板。所以我把每个数据库整理成"这种情况用 / 这种情况避开"。
+
+**用 ChromaDB 的时候**
+
+- 需要在几天内做出 RAG 的 PoC，且数据规模确定不会超过几十万条
+- 团队没有 DevOps 人力，也没有精力另起一套基础设施
+- 直接照着 LangChain、LlamaIndex 的教程做演示
+
+**避开 ChromaDB 的时候**
+
+- 需要稳定服务百万级以上向量时。这个规模的生产案例相对稀缺。
+- 自托管下必须做多节点水平扩展时。它没有内置的分布式集群。
+- 需要用代码干净地表达复合过滤，比如"category 为 tech 且 score 大于 0.8 且日期在某区间内"
+
+**用 Qdrant 的时候**
+
+- 预计现在或不久的将来会有 5M 以上向量时
+- 需要靠水平扩展和量化来控制内存成本时
+- 基于 payload 索引的大规模元数据过滤位于关键路径上时
+
+**避开 Qdrant 的时候**
+
+- 数据确定在 10 万条以下，没有理由背负 Docker 运维开销时。小规模的过滤查询反而是 ChromaDB 更快。
+- 一天就收尾的黑客松或一次性演示，搭建本身就是成本的场景
+
+**用 pgvector 的时候**
+
+- 已经在运行 PostgreSQL、有 DBA，且希望把新增基础设施保持为零时
+- 向量检索需要与用户表或权限表做 JOIN 时。这一点用 ChromaDB 或 Qdrant 难以表达。
+
+**避开 pgvector 的时候**
+
+- PostgreSQL 在独立服务器上，每次查询会把 10〜50ms 的网络往返叠加到关键路径时
+- 团队缺乏调优 HNSW 参数(`m`、`ef_construction`、`ef_search`)的 PostgreSQL 专业知识时
+
+## 官方文档与一手来源
+
+本文的数字是我亲自测得的，但安装、API、索引参数请以各项目的官方文档作为一手来源核实，这样最准确。
+
+- **Qdrant**：官方站点 [qdrant.tech](https://qdrant.tech) 与[官方文档](https://qdrant.tech/documentation/)，源码在 [github.com/qdrant/qdrant](https://github.com/qdrant/qdrant)
+- **Chroma**：官方站点 [trychroma.com](https://www.trychroma.com) 与[官方文档](https://docs.trychroma.com)，源码在 [github.com/chroma-core/chroma](https://github.com/chroma-core/chroma)
+- **pgvector**：官方仓库 [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector)，各版本变更见 [PostgreSQL 发布说明](https://www.postgresql.org/about/news/pgvector-082-released-3245/)
+
+尤其是 pgvector 在 0.8.x 系列加入了 `halfvec`（2 字节 float）、`sparsevec`、二值量化等节省内存的功能。如果要处理高维嵌入，建议先看上面的发布说明。
+
 ## 说到底，我自己会选什么
 
 说实话，2026年的今天，我在新项目中默认选Qdrant。理由很简单：小规模下承受一点额外开销，代价低于日后被迫迁移的成本。从一开始就用Qdrant，意味着生产路径已经就绪。

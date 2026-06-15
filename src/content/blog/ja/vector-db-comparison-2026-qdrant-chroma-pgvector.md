@@ -332,6 +332,53 @@ pgvector: numpy近似で1〜3ms（実際の環境は+10〜50msのネットワー
 
 埋め込みモデルの次元数（dim）の選択もDB性能に影響する。Gemini Embedding 2のようなマルチモーダル埋め込みを使う際にdim設計がどう変わるかは別途読む価値がある。
 
+## いつ使い、いつ避けるべきか
+
+ベンチマークの数値と決定マトリクスだけでは、実際の選択は決まりきらない。そこで各DBを「こういう時に使う / こういう時は避ける」で整理した。
+
+**ChromaDBを使う時**
+
+- 数日でRAGのPoCを作る必要があり、データ規模が数十万件を超えないことが確実な時
+- チームにDevOps人員がおらず、別途インフラを立てる余裕がない時
+- LangChain・LlamaIndexのチュートリアルをそのままなぞってデモを作る時
+
+**ChromaDBを避ける時**
+
+- 100万件以上のベクターを安定してサービングする必要がある時。この規模のプロダクション実績は相対的に乏しい。
+- セルフホストでマルチノードの水平スケールアウトが必須の時。内蔵の分散クラスタがない。
+- 「categoryがtechかつscore 0.8以上かつ日付が特定範囲」のような複合フィルタをコードで綺麗に表現したい時
+
+**Qdrantを使う時**
+
+- 5M件以上のベクター、または近い将来その規模が予想される時
+- 水平スケーリングと量子化でメモリコストを抑える必要がある時
+- ペイロードインデックスによる大規模メタデータフィルタがクリティカルパスにある時
+
+**Qdrantを避ける時**
+
+- データが10万件以下と確実で、Docker運用の負担を背負う理由がない時。小規模のフィルタクエリはむしろChromaDBの方が速かった。
+- 一日で終わるハッカソンや使い捨てデモのように、導入の手間そのものがコストになる場面
+
+**pgvectorを使う時**
+
+- すでにPostgreSQLを運用中でDBAがおり、追加インフラを0に保ちたい時
+- ベクター検索をユーザーや権限テーブルとJOINする必要がある時。これはChromaDBやQdrantでは表現が難しい。
+
+**pgvectorを避ける時**
+
+- PostgreSQLが別サーバーにあり、クエリごとに10〜50msのネットワーク往復がクリティカルパスに加わる時
+- HNSWパラメータ(`m`、`ef_construction`、`ef_search`)をチューニングするPostgreSQLの専門知識がチームにない時
+
+## 公式ドキュメントと一次情報源
+
+この記事の数値は直接測定した結果だが、インストール・API・インデックスパラメータは各プロジェクトの公式ドキュメントを一次情報源として確認するのが正確だ。
+
+- **Qdrant**: 公式サイト [qdrant.tech](https://qdrant.tech) と[公式ドキュメント](https://qdrant.tech/documentation/)、ソースコードは [github.com/qdrant/qdrant](https://github.com/qdrant/qdrant)
+- **Chroma**: 公式サイト [trychroma.com](https://www.trychroma.com) と[公式ドキュメント](https://docs.trychroma.com)、ソースコードは [github.com/chroma-core/chroma](https://github.com/chroma-core/chroma)
+- **pgvector**: 公式リポジトリ [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector)、バージョンごとの変更点は [PostgreSQLリリースノート](https://www.postgresql.org/about/news/pgvector-082-released-3245/)
+
+特にpgvectorは0.8.x系で`halfvec`(2バイトfloat)、`sparsevec`、バイナリ量子化などのメモリ削減機能が追加された。high-dimの埋め込みを扱うなら、上記リリースノートを先に確認するとよい。
+
 ## 結局、私は何を使うのか
 
 正直に言うと、2026年時点で私は新しいプロジェクトでQdrantをデフォルトとして使っている。理由はシンプルだ。小規模で多少のオーバーヘッドを許容しても、後でスケールが大きくなったときにマイグレーションするコストの方が大きい。
