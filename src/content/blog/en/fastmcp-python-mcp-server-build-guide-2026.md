@@ -69,6 +69,8 @@ Building an MCP (Model Context Protocol) server from scratch is more work than i
 
 FastMCP exists to fix that. Today I installed it in a sandbox via pip and had a working MCP server running in under 30 minutes.
 
+This post is about the FastMCP tool, not the MCP protocol itself. If you want the protocol background, keep the [Model Context Protocol official site](https://modelcontextprotocol.io) open, and for FastMCP's source and changelog the [jlowin/fastmcp GitHub repo](https://github.com/jlowin/fastmcp) is the canonical reference. Building the same kind of server in TypeScript follows a different path, which I wrote up separately in the [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026).
+
 ## What FastMCP Actually Is
 
 FastMCP is a high-level layer on top of the MCP Python SDK, similar to how Express.js wraps Node's http module. The official tagline reads "The fast, Pythonic way to build MCP servers and clients." After hands-on testing, I'd say that's accurate.
@@ -442,6 +444,26 @@ My practical take:
 One honest complaint about FastMCP: 3.x moved faster than the docs. I found `get_tools()` referenced in older content but it doesn't exist — `list_tools()` is the actual method. Trust `dir(mcp)` and the source code over older blog posts. Including mine.
 
 Before going to production, also look at MCP Gateway for controlling which tools agents can call. Once you've exposed a server, you'll want some control over what actually gets invoked and when.
+
+## When to Reach for It, and When to Skip It
+
+Plenty of posts recommend a tool. Few are honest about when not to use it. Here's the line I drew after actually running it.
+
+**FastMCP fits well when**
+
+- You need a server for a standard MCP client (Claude Desktop, Cursor, VS Code) and you want it fast.
+- You want to expose existing Python functions as AI tools. A decorator is the whole job.
+- You're prototyping inside a team and "working now" beats "perfectly controlled." You don't want to spend time on transport plumbing.
+- Your inputs are complex and you'd rather not hand-write an inputSchema. Type hints and Pydantic cover it.
+
+**You're better off skipping it when**
+
+- You have to touch low-level MCP messages or need a non-standard transport. Here the abstraction gets in the way, and using the MCP Python SDK directly is the right call.
+- Your primary runtime isn't Python. On Node/TypeScript the [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) is the more natural fit.
+- You want to keep everything local and private, model included. I covered that setup in [building a private MCP server with Gemma 3 and FastMCP](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp).
+- You're in a regulated or audited environment where every behavior inside the framework abstraction has to be traceable. Thin dependencies are safer there.
+
+One line: standard clients and speed, pick FastMCP; raw protocol control, pick the SDK.
 
 ## A Working Server in 30 Minutes, and What Comes Next
 

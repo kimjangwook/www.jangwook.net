@@ -294,3 +294,45 @@ The mistake I see in most framework comparisons is ranking by feature count. ADK
 If a simple pipeline will evolve toward complex branching, choose LangGraph early. If the goal is fast delivery within the Google Cloud ecosystem, ADK removes a lot of friction.
 
 For broader context on how LangGraph compares with other frameworks, the LangGraph vs CrewAI vs Dapr comparison is worth reading. It benchmarks them on production KPIs before ADK entered the picture.
+
+## When to Use Each, and When to Avoid It
+
+A feature table clouds the decision. The real call narrows to "does this tool fit our situation?" Here is when to reach for each framework, and when to walk away.
+
+**Choose Google ADK when**:
+
+- Your infrastructure already sits on Google Cloud (Vertex AI, BigQuery, Cloud Run). The value of `adk deploy` ending the deployment story in one line is real.
+- Gemini is your primary model and you have no near-term plans to switch.
+- You lack the time to build an eval pipeline and a web UI. `adk eval` and `adk web` do that work for you.
+- Your team writes agents in Go, Java, or TypeScript rather than Python.
+
+**Avoid Google ADK when**:
+
+- AWS or Azure is your primary platform, or you run multi-cloud. `adk deploy` and the GCP-bound tracing become dead weight.
+- You deploy to lightweight environments (serverless cold starts, edge) where 45 direct dependencies hurt.
+- Dynamic conditional branching (generate-evaluate-regenerate) is the core of your workflow. The `LoopAgent` `max_iterations` model expresses it awkwardly.
+- You need to reuse an existing LangChain codebase. ADK demands a near-rewrite to port.
+
+**Choose LangGraph when**:
+
+- Your workflow will clearly grow routers, branches, and retry loops. `conditional_edges` is a first-class citizen here.
+- You mix several LLMs (OpenAI, Anthropic, Gemini) or want room to swap them later.
+- Time-travel debugging and checkpoint replay matter in operations.
+- Portability across cloud vendors is important. Swap the checkpoint backend and the same code runs anywhere.
+
+**Avoid LangGraph when**:
+
+- You have a one-off linear pipeline that will not grow complex. The overhead of designing the graph upfront is too much.
+- You want deployment, eval, and UI from a single tool but cannot assemble separate infrastructure. LangGraph gives you the runtime only.
+- Your team has zero LangChain experience and works mainly in a language other than Python.
+
+If the call is hard, looking at a wider set of options in the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026) helps. For RAG-centric workflows, the [LlamaIndex vs LangChain vs Haystack comparison](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) shows another axis of the framework decision.
+
+## Primary Sources
+
+The measured data and code in this post were verified against the following official docs and repositories.
+
+- [Google ADK official docs](https://google.github.io/adk-docs/) — agent definitions, orchestrators, CLI, and deployment guides
+- [google/adk-python (GitHub)](https://github.com/google/adk-python) — ADK Python source, Apache 2.0 license
+- [LangGraph official docs](https://langchain-ai.github.io/langgraph/) — StateGraph, checkpoints, and conditional-edge concepts
+- [langchain-ai/langgraph (GitHub)](https://github.com/langchain-ai/langgraph) — LangGraph source, MIT license

@@ -49,6 +49,8 @@ faq:
 
 FastMCP正是为了解决这个问题而生的框架。今天，我在沙盒中用pip安装，并在30分钟内启动了一个实际可用的MCP服务器。
 
+本文讲的是FastMCP这个工具，而不是MCP协议本身。如果想了解协议背景，可以同时打开[Model Context Protocol官方网站](https://modelcontextprotocol.io)；FastMCP的源码与变更历史则以[jlowin/fastmcp GitHub仓库](https://github.com/jlowin/fastmcp)为准。顺带一提，用TypeScript构建同样的MCP服务器是另一条路径，我在[MCP服务器TypeScript SDK分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)中单独做了整理。
+
 ## 它到底是什么：MCP SDK之上的一层
 
 FastMCP是构建在MCP Python SDK之上的高层框架，类似于Express.js封装Node的http模块。官方描述：「The fast, Pythonic way to build MCP servers and clients」。实际用下来，这句话是准确的。
@@ -423,6 +425,26 @@ FastMCP：
 FastMCP有一点令人遗憾。3.x版本代码变化快，文档没有完全跟上。文档里像`get_tools()`这样的方法看似存在，但实际已经改成`list_tools()`了。建议养成直接看源代码或`dir(mcp)`的习惯，而不是依赖旧文章。
 
 上线前还有一点。建议同时看看用MCP Gateway控制智能体流量的方法。暴露服务器后，迟早需要控制哪些工具被如何调用的层。
+
+## 什么时候用，什么时候避开
+
+推荐工具的文章很多，但坦白写出「什么时候不该用」的文章很少。下面是我实际跑过之后整理的标准。
+
+**FastMCP适合的场景**
+
+- 需要快速做一个接到标准MCP客户端（Claude Desktop、Cursor、VS Code）的服务器时。
+- 想把已有的Python函数直接暴露为AI工具时。加个装饰器就完事了。
+- 像团队内部原型那样，「先能跑」优先，不想在传输层细节上花时间时。
+- 输入结构复杂、不想手写inputSchema时。类型提示和Pydantic替你完成。
+
+**最好避开FastMCP的场景**
+
+- 需要直接处理底层MCP消息，或需要非标准传输时。这种情况下抽象反而碍事，直接用MCP Python SDK才对。
+- 主力运行时不是Python时。在Node/TypeScript环境里，[MCP服务器TypeScript SDK分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)更自然。
+- 想完全本地、私有运行，不把服务器暴露到外部时。把模型也绑到本地的方案我在[用Gemma 3和FastMCP搭建私有MCP服务器](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)里讲过。
+- 在必须100%追踪框架抽象内部行为的合规或审计环境中。这种情况下保持依赖更薄更安全。
+
+一句话总结：要和标准客户端快速对接就选FastMCP，要直接触碰协议底层就选SDK。
 
 ## 30分钟跑起一个服务器，然后呢
 

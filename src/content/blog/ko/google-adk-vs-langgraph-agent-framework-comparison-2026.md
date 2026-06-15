@@ -452,3 +452,45 @@ AI 에이전트 프레임워크 비교를 할 때 자주 보는 실수가 있다
 단순한 파이프라인이 복잡한 분기로 진화할 예정이라면 LangGraph를 선택하고, Google Cloud 생태계 안에서 빠른 납품이 목표라면 ADK를 선택하라. 그게 내 판단이다.
 
 기존 에이전트 프레임워크 비교가 궁금하다면 LangGraph vs CrewAI vs Dapr 비교 글도 참고해봐도 좋다. ADK가 등장하기 전에 세 프레임워크를 프로덕션 기준으로 비교한 글인데, LangGraph 선택 맥락을 넓히는 데 도움이 된다.
+
+## 언제 쓰고, 언제 피해야 하는가
+
+기능표만 보면 판단이 흐려진다. 실제 도입 결정은 "이 도구가 우리 상황에 맞는가"로 좁혀진다. 두 프레임워크를 각각 언제 고르고 언제 피해야 하는지 정리한다.
+
+**Google ADK를 선택할 때**:
+
+- 인프라가 이미 Google Cloud(Vertex AI, BigQuery, Cloud Run) 위에 있다. `adk deploy` 한 줄로 배포가 끝나는 가치가 크다.
+- Gemini가 주력 모델이고, 당분간 모델을 바꿀 계획이 없다.
+- 평가 파이프라인과 웹 UI를 직접 만들 시간이 없다. `adk eval`과 `adk web`이 그 일을 대신한다.
+- Go, Java, TypeScript 등 Python 외 언어로 에이전트를 작성해야 하는 팀이다.
+
+**Google ADK를 피해야 할 때**:
+
+- AWS·Azure가 주력이거나 멀티클라우드다. `adk deploy`와 GCP 내장 트레이싱이 죽은 무게가 된다.
+- 의존성 45개가 부담스러운 경량 배포 환경(서버리스 콜드스타트, 엣지)이다.
+- 생성-검증-재생성처럼 동적 조건 분기가 핵심인 워크플로우다. `LoopAgent`의 `max_iterations` 모델로는 표현이 어색하다.
+- 기존 LangChain 코드베이스를 재사용해야 한다. ADK는 거의 재작성 수준의 포팅을 요구한다.
+
+**LangGraph를 선택할 때**:
+
+- 워크플로우가 라우터·분기·재시도 루프로 진화할 게 분명하다. `conditional_edges`가 1급 시민이다.
+- 여러 LLM(OpenAI, Anthropic, Gemini)을 혼용하거나 나중에 바꿀 여지를 남기고 싶다.
+- 타임트래블 디버깅과 체크포인트 재실행이 운영에 필요하다.
+- 클라우드 벤더에 묶이지 않는 이식성이 중요하다. 체크포인트 백엔드만 교체하면 같은 코드가 어디서든 돈다.
+
+**LangGraph를 피해야 할 때**:
+
+- 단발성 선형 파이프라인이고 앞으로도 복잡해질 일이 없다. 그래프를 먼저 설계하는 오버헤드가 과하다.
+- 배포·평가·UI까지 한 도구로 끝내고 싶은데 별도 인프라를 조립할 여력이 없다. LangGraph는 런타임만 제공한다.
+- 팀에 LangChain 경험이 전혀 없고 Python 외 언어가 주력이다.
+
+판단이 어렵다면 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 더 넓은 선택지를 함께 보는 것도 방법이다. RAG 중심 워크플로우라면 [LlamaIndex vs LangChain vs Haystack 비교](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)가 프레임워크 결정의 또 다른 축을 보여준다.
+
+## 1차 출처
+
+이 글의 실측 데이터와 코드는 다음 공식 문서·저장소를 기준으로 검증했다.
+
+- [Google ADK 공식 문서](https://google.github.io/adk-docs/) — 에이전트 정의, 오케스트레이터, CLI, 배포 가이드
+- [google/adk-python (GitHub)](https://github.com/google/adk-python) — ADK Python 소스, Apache 2.0 라이선스
+- [LangGraph 공식 문서](https://langchain-ai.github.io/langgraph/) — StateGraph, 체크포인트, 조건부 엣지 개념
+- [langchain-ai/langgraph (GitHub)](https://github.com/langchain-ai/langgraph) — LangGraph 소스, MIT 라이선스

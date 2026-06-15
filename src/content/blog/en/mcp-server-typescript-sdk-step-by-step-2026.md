@@ -78,7 +78,9 @@ Claude, Cursor, Windsurf, Zed, and other major AI coding tools have all adopted 
 
 Before MCP, you had to build your own API and then develop separate plugins or integrations for each AI platform. MCP makes "build once, use everywhere" actually viable. My reasoning is simple: if I wrap an internal database query, a document search, or a workflow automation script as an MCP tool once, I can use it from Claude, from Cursor, from whatever comes next.
 
-The ecosystem isn't fully mature yet. But as I covered in MCP Open Standard and the Linux Foundation, this direction is already solidifying into an industry standard.
+The ecosystem isn't fully mature yet. But as I covered in MCP Open Standard and the Linux Foundation, this direction is already solidifying into an industry standard. If you want to understand how the protocol itself works, it's worth reading the [official specification page](https://modelcontextprotocol.io/specification). It lays out the roles of hosts, clients, and servers, and the JSON-RPC 2.0 message flow between them.
+
+This post covers the TypeScript SDK, but the Python side follows much the same pattern. If you'd rather do the same thing in Python, the [Build a Python MCP Server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026) post will help. Comparing the two SDK designs makes the shared structure of the MCP protocol much clearer.
 
 ## Environment Setup and Package Installation
 
@@ -589,6 +591,25 @@ If you've read this far, you understand the MCP server structure well enough to 
 
 Any of these can be wrapped with the `server.tool()` pattern and turned into a working MCP server in under 30 minutes.
 
+## When to Use an MCP Server, and When to Avoid One
+
+After building one myself, it became clear that an MCP server isn't a cure-all. Here's how I decide.
+
+**When an MCP server is a good fit:**
+
+- When you want the same capability available **across multiple AI clients at once** — Claude, Cursor, Windsurf, and so on. Wrap it once and you skip building a separate integration per client.
+- When you're exposing a **tool the AI should call autonomously**, like querying an internal database, searching docs, or checking deployment status.
+- For tasks with a clear input schema and a result you can summarize as text. ISBN lookup, where input and output shapes are obvious, is ideal.
+
+**When you're better off avoiding one:**
+
+- If the capability only ever runs inside a single application, there's little reason to wrap it in MCP. Calling the function directly is faster and easier to debug.
+- For real-time streaming or large binary transfers. MCP is a JSON-RPC request-response model, so it doesn't fit those patterns well.
+- For responses larger than a few dozen KB. They eat into the AI context window and backfire. In that case, expose the data as a resource instead of a tool, or design pagination into the result first.
+- In a production environment with strict security boundaries where you can't afford to implement auth and access control yourself. As the [Security section of the official spec](https://modelcontextprotocol.io/specification) stresses, remote HTTP deployment requires user consent and access controls designed separately.
+
+When you're unsure, ask first whether the AI **needs to choose and invoke that tool on its own**. If the answer is yes, an MCP server fits. If it's "I can just call it from my code," a plain function or library is better. For a concrete case of running one privately on local hardware, I covered more in [Building a Local LLM with a Private MCP Server](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp).
+
 ## Bottom Line: I Think This Is the Realistic Standard for AI Tool Deployment
 
 Working through this experiment, I confirmed that MCP server development has a much lower barrier to entry than I expected. The `McpServer` API in `@modelcontextprotocol/sdk` is clean, and defining type-safe schemas with Zod is intuitive.
@@ -603,6 +624,8 @@ My recommendation for the next step: pick one internal system and wrap it as an 
 
 **Reference links:**
 - [Model Context Protocol official docs](https://modelcontextprotocol.io)
+- [MCP official specification](https://modelcontextprotocol.io/specification)
+- [@modelcontextprotocol/typescript-sdk (official repo)](https://github.com/modelcontextprotocol/typescript-sdk)
 - [@modelcontextprotocol/sdk on npm](https://www.npmjs.com/package/@modelcontextprotocol/sdk)
 - [Open Library API](https://openlibrary.org/developers/api)
 - [MCP Inspector](https://github.com/modelcontextprotocol/inspector)

@@ -406,6 +406,38 @@ result = pipeline.run({"retriever": {"query": query}})
 - Non-engineers need to modify pipeline behavior via config files
 - Medium to large teams planning for long-term maintenance
 
+## When to use each, and when to avoid it
+
+Knowing when to walk away matters as much as knowing what to pick. Here are the avoidance signals I hit during testing.
+
+**Avoid LlamaIndex when**
+
+- You run multiple pipelines in one process. The global `Settings` object can clobber per-pipeline model config. If you need two embedding models live at once, look elsewhere.
+- You care about dependency footprint. 28 core dependencies is the heaviest of the three, which hurts in size-sensitive serverless environments.
+- You need full control over internals. The thick abstraction makes it hard to trace why retrieval returned what it did.
+
+**Avoid LangChain when**
+
+- You're starting a greenfield project and would lean heavily on `langchain-community`. Until the deprecation path settles, stick to standalone packages or defer the decision.
+- You're maintaining a long-lived project sensitive to breakage. The API moves fast, and minor upgrades sometimes break things.
+
+**Avoid Haystack when**
+
+- Your goal is a prototype running by end of day. The same RAG takes nearly twice the code. That's overkill for fast validation.
+- Ecosystem size and third-party integration count are decisive. Haystack has fewer integrations than LangChain.
+- You're writing a small solo script, where explicit graph declarations become a chore rather than a help.
+
+## Official documentation and references
+
+These are the primary sources I checked directly. They're also the first places to look once versions move on.
+
+- LlamaIndex docs: [https://docs.llamaindex.ai](https://docs.llamaindex.ai) (currently resolves to `developers.llamaindex.ai/python/framework`)
+- LangChain docs: [https://python.langchain.com](https://python.langchain.com) (currently resolves to `docs.langchain.com/oss/python`)
+- Haystack site by deepset: [https://haystack.deepset.ai](https://haystack.deepset.ai) (docs at `docs.haystack.deepset.ai`)
+- langchain-community deprecation notice: [GitHub Issue #674](https://github.com/langchain-ai/langchain-community/issues/674)
+
+If you want to revisit RAG fundamentals before applying any of this, [DeNA LLM Study Part 4 — RAG](/en/blog/en/dena-llm-study-part4-rag) pairs well with this comparison.
+
 ## Community and ecosystem
 
 Rough GitHub star counts (June 2026):

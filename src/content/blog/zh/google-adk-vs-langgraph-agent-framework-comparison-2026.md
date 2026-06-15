@@ -273,3 +273,45 @@ ADK优化的是"快速构建智能体系统并部署到GCP"，LangGraph优化的
 如果简单管道会进化成复杂分支，就从一开始选LangGraph。如果目标是在Google Cloud生态内快速交付，ADK能省掉很多麻烦。
 
 关于ADK出现之前的LangGraph、CrewAI、Dapr三者比较，可以参考这篇生产KPI对比文章，有助于拓宽LangGraph的选择背景。
+
+## 何时使用，何时避免
+
+只看功能表会让判断变得模糊。真正的决策会收敛到"这个工具是否适合我们的情况"。下面整理在什么时候该选哪个框架，又在什么时候该放手。
+
+**选择 Google ADK 的场景**:
+
+- 基础设施已经建在 Google Cloud（Vertex AI、BigQuery、Cloud Run）之上。`adk deploy` 一行结束部署的价值很实在。
+- Gemini 是主力模型，短期内没有更换计划。
+- 没有时间自己搭建评估管道和 Web UI。`adk eval` 和 `adk web` 替你完成这些工作。
+- 团队用 Go、Java、TypeScript 等非 Python 语言编写智能体。
+
+**避免 Google ADK 的场景**:
+
+- AWS、Azure 是主力，或者是多云环境。`adk deploy` 和绑定 GCP 的追踪会变成死重。
+- 部署在 45 个依赖会拖累的轻量环境（无服务器冷启动、边缘）。
+- 生成-验证-再生成这类动态条件分支是工作流的核心。`LoopAgent` 的 `max_iterations` 模型表达起来很别扭。
+- 需要复用现有的 LangChain 代码库。ADK 要求近乎重写级别的移植。
+
+**选择 LangGraph 的场景**:
+
+- 工作流明显会演进出路由、分支和重试循环。`conditional_edges` 在这里是一等公民。
+- 混用多个 LLM（OpenAI、Anthropic、Gemini），或希望保留以后替换的余地。
+- 时间旅行调试和检查点重放在运维中很重要。
+- 跨云厂商的可移植性很重要。只需替换检查点后端，同一份代码就能在任何地方运行。
+
+**避免 LangGraph 的场景**:
+
+- 是一次性的线性管道，今后也不会变复杂。先设计图的开销过大。
+- 想用一个工具搞定部署、评估和 UI，却没有余力另外搭建基础设施。LangGraph 只提供运行时。
+- 团队完全没有 LangChain 经验，主力语言又不是 Python。
+
+如果难以抉择，可以在[Python AI 智能体库对比](/zh/blog/zh/python-ai-agent-library-comparison-2026)中一并查看更广的选项。如果是以 RAG 为中心的工作流，[LlamaIndex vs LangChain vs Haystack 对比](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026)展示了框架决策的另一个维度。
+
+## 一手来源
+
+本文的实测数据和代码均以下列官方文档与仓库为准进行验证。
+
+- [Google ADK 官方文档](https://google.github.io/adk-docs/) — 智能体定义、编排器、CLI 与部署指南
+- [google/adk-python (GitHub)](https://github.com/google/adk-python) — ADK Python 源码，Apache 2.0 许可证
+- [LangGraph 官方文档](https://langchain-ai.github.io/langgraph/) — StateGraph、检查点与条件边概念
+- [langchain-ai/langgraph (GitHub)](https://github.com/langchain-ai/langgraph) — LangGraph 源码，MIT 许可证

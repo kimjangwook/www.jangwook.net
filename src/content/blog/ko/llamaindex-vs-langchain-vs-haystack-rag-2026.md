@@ -455,6 +455,38 @@ result = pipeline.run({"retriever": {"query": query}})
 - 비개발직 팀원이 YAML로 파이프라인 설정을 조정해야 할 때
 - 중간 규모 이상 팀에서 장기 운영을 고려할 때
 
+## 언제 쓰고 언제 피해야 하는가
+
+"무엇을 고르나"만큼 중요한 게 "언제 피하나"다. 실측 과정에서 느낀 회피 기준을 정리한다.
+
+**LlamaIndex를 피해야 할 때**
+
+- 멀티 파이프라인 환경: `Settings` 전역 객체가 서로 다른 모델 설정을 덮어쓸 위험이 있다. 한 프로세스에서 임베딩 모델을 두 종류 이상 동시에 굴려야 한다면 다른 선택지를 보는 게 낫다.
+- 의존성을 최소로 묶어야 할 때: core 의존성이 28개로 가장 무겁다. 컨테이너 이미지 크기에 민감한 서버리스 환경이라면 부담이다.
+- 내부 동작을 완전히 통제해야 할 때: 추상화가 두꺼워서 검색 결과가 기대와 다를 때 원인 추적이 어렵다.
+
+**LangChain을 피해야 할 때**
+
+- 지금 막 시작하는 신규 프로젝트인데 `langchain-community`에 깊게 의존하려는 경우. deprecation 방향이 마무리되기 전까지는 독립 패키지만 쓰거나 결정을 미루는 편이 안전하다.
+- 버전 간 호환성에 민감한 장기 프로젝트: API 변화가 빠른 편이라 마이너 업그레이드에서도 깨지는 경우가 있다.
+
+**Haystack을 피해야 할 때**
+
+- 하루 안에 동작하는 프로토타입이 목표일 때: 같은 RAG에 코드가 두 배 가까이 들어간다. 빠른 검증에는 과하다.
+- 생태계 규모와 서드파티 통합 수가 결정적일 때: LangChain 대비 통합 수가 적다.
+- 혼자 작은 스크립트를 짤 때: 명시적 그래프 선언이 오히려 짐이 된다.
+
+## 공식 문서와 출처
+
+직접 확인한 1차 출처다. 버전이 바뀌면 가장 먼저 봐야 할 곳이기도 하다.
+
+- LlamaIndex 공식 문서: [https://docs.llamaindex.ai](https://docs.llamaindex.ai) (현재 `developers.llamaindex.ai/python/framework`로 연결됨)
+- LangChain 공식 문서: [https://python.langchain.com](https://python.langchain.com) (현재 `docs.langchain.com/oss/python`로 연결됨)
+- Haystack 공식 사이트(deepset): [https://haystack.deepset.ai](https://haystack.deepset.ai) (문서는 `docs.haystack.deepset.ai`)
+- langchain-community deprecation 안내: [GitHub Issue #674](https://github.com/langchain-ai/langchain-community/issues/674)
+
+RAG의 기초 개념부터 다시 짚고 싶다면 [DeNA LLM 스터디 4부 — RAG](/ko/blog/ko/dena-llm-study-part4-rag)를 함께 읽으면 이 비교가 더 선명해진다.
+
 ## 생태계와 커뮤니티
 
 GitHub 스타 수(2026년 6월 기준 추정):
