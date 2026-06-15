@@ -51,6 +51,25 @@ faq:
 > 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag)
 > 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design)
 
+## Who This Is For / When to Skip Ahead
+
+This is a fundamentals piece, so it isn't equally useful to everyone. Adjust how deeply you read based on where you're starting from.
+
+<strong>This is especially useful if you</strong>
+
+- Just started using LLMs and want the basics nailed down first: what a token is, why you'd ever touch Temperature.
+- Have been writing prompts on instinct and getting inconsistent accuracy, and want the difference between Zero-shot, Few-shot, and CoT laid out once.
+- Need to recommend a model to your team but aren't sure what to weigh when choosing among GPT, Claude, Gemini, and DeepSeek.
+- Want a one-page LLM summary for an internal study group or new-hire onboarding.
+
+<strong>You can skip ahead if you</strong>
+
+- Can already explain Transformers, Next Token Prediction, and RLHF. Skim this one as review and jump to Part 2 on structured output, or to [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag) if retrieval is what you care about.
+- Are designing tool-using agents rather than single calls. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design) speaks to that directly.
+- Want to dig into how models are actually trained. Part 3 on training methodology fits better than this basic comparison.
+
+In short: read this when you want to draw the concept map once. If you already have the map, jump to the part you need.
+
 ## GPT, Claude, and Gemini: The Tangled 2025 AI Map
 
 The LLM landscape a year ago looks nothing like it does today. That hit me again while pulling together DeNA's internal study materials. This five-part series builds on those materials, walking from the basic mechanics of LLMs all the way to practical use. Part 1, right here, starts with how an LLM actually works under the hood, then maps out where the major models stand as of late 2025.

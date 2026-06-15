@@ -59,6 +59,29 @@ faq:
 
 Part 3 of DeNA's LLM study materials lands right on that pain point. It walks through how the three training approaches differ, then digs into the mechanics and real-world use of efficient methods like LoRA, QLoRA, and DPO. On top of that, I've added the trends as they stand in 2025 and a few things I learned running this stuff myself.
 
+This is a middle chapter in the series. If you want to see how the model itself works first, start with [Part 1: LLM Fundamentals](/en/blog/en/dena-llm-study-part1-fundamentals). If you're curious about attaching external knowledge instead of training, [Part 4: RAG Architecture](/en/blog/en/dena-llm-study-part4-rag) picks up the thread.
+
+## When this is useful, and when you can skip it
+
+Fine-tuning, RLHF, and LoRA are fairly deep topics. Not everyone needs them. Before diving in, it's worth checking which bucket your situation falls into. It saves time.
+
+<strong>When this is useful</strong>
+
+- You run, or plan to run, open-source models (Llama, Qwen, Gemma, etc.) on your own infrastructure.
+- Prompts and few-shot examples don't reliably produce the output format or domain vocabulary you need.
+- You want to change model behavior using data that's awkward to send to an external API, like internal docs, logs, or support transcripts.
+- Inference cost or latency forces you to push a small model up to par on a specific task.
+- You want to align "taste" through data: tone, safety, how the model refuses.
+
+<strong>When you can skip it</strong>
+
+- You're using a commercial API like GPT, Claude, or Gemini as-is, and plan to keep doing so. Here, prompt design and RAG almost always come before fine-tuning.
+- The task is classification, extraction, or summarization, and a few lines of prompt solve it.
+- You have fewer than a few hundred training examples. At that scale, few-shot is often more stable than fine-tuning.
+- You have no GPU budget or ops capacity. LoRA lowered the bar, but it isn't zero.
+
+In short, ask <strong>"is an external API enough?"</strong> first. Only when the answer is no does the rest of this article become relevant. But if you do need to run the model yourself, what follows can cut your cost by an order of magnitude.
+
 ## Pre-training vs Fine-tuning vs Reinforcement Learning
 
 ### The chef analogy works better than it should
@@ -529,6 +552,7 @@ Expected trends:
 ### Papers
 
 - [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685) (Microsoft, 2021)
+- [Training language models to follow instructions with human feedback (InstructGPT, the original RLHF paper)](https://arxiv.org/abs/2203.02155) (OpenAI, 2022)
 - [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314) (University of Washington, 2023)
 - [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) (Stanford, 2023)
 - [DoRA: Weight-Decomposed Low-Rank Adaptation](https://arxiv.org/abs/2402.09353) (NVIDIA, 2024)

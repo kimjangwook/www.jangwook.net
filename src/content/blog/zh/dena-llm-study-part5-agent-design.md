@@ -67,6 +67,27 @@ faq:
 
 底子是 DeNA 的官方研究资料，我在上面叠加了最新研究和几个生产案例。
 
+## 这些内容什么时候有用，什么时候可以跳过
+
+智能体设计和多智能体看起来很酷，但并不是适合所有问题的工具。在往下读之前，先想清楚你正在做的东西是否真的需要这套结构。
+
+<strong>这些内容有用的场景</strong>：
+
+- 一次 LLM 调用搞不定、需要经过多个阶段才能得出答案的任务（先调查再分析、先分析再写作）。
+- 需要由 LLM 自己挑选并调用外部工具或 API 的情况（查询数据库、网页搜索、创建工单等）。
+- 每个步骤所需专长不同，按角色拆分更自然的情况（调查负责、验证负责分开）。
+- 长期运行、需要记住过去上下文的系统（客服机器人、个人助理）。
+- 每天处理数百条以上、需要压缩成本和延迟的生产管线。
+
+<strong>可以跳过的场景</strong>：
+
+- 简单的分类、摘要、翻译这类一次调用就结束的任务。这时一个函数就够了，不需要智能体。
+- 输入和输出固定的确定性处理。正则表达式或规则引擎更便宜、更快、更稳定。
+- 原型阶段，只想先确认能不能跑起来时。多智能体调试成本很高，先用单次调用验证，确有必要再拆分。
+- 无法控制成本上限却想用 Network（自由对话）模式的情况。对话长度一旦失控，账单也会跟着失控。
+
+一句话总结：<strong>只有当"多阶段 + 工具调用 + 记忆"同时出现时才掏出智能体，缺了任何一项，先怀疑是否有更简单的工具。</strong> 多智能体的成本陷阱见[AI 智能体的成本现实](/zh/blog/zh/ai-agent-cost-reality)，对编排更深入一层的探讨见[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)。
+
 ## 1. 利用 n8n 的 LLM 工作流
 
 ### n8n 是什么？
@@ -805,6 +826,12 @@ LLM 是概率系统。100% 准确的响应是不可能的。
 
 - [语义缓存论文](https://arxiv.org/abs/2508.07675)
 - [LLM 成本优化指南](https://ai.koombea.com/blog/llm-cost-optimization)
+
+### 智能体设计（一手来源）
+
+- [ReAct: Synergizing Reasoning and Acting in Language Models（论文）](https://arxiv.org/abs/2210.03629)
+- [Building Effective Agents（Anthropic 官方）](https://www.anthropic.com/research/building-effective-agents)
+- [How we built our multi-agent research system（Anthropic 官方）](https://www.anthropic.com/engineering/multi-agent-research-system)
 
 ---
 

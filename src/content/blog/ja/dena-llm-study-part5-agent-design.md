@@ -69,6 +69,27 @@ faq:
 
 土台はDeNAの公式スタディ資料です。そこに最新の研究成果と実務事例を重ねました。
 
+## この内容が役立つとき、読み飛ばしてよいとき
+
+エージェント設計やマルチエージェントは格好よく見えますが、すべての問題に合う道具ではありません。本文を読む前に、いま作ろうとしているものに本当にこの構造が必要なのかをまず見極めてください。
+
+<strong>この内容が役立つ状況</strong>:
+
+- 1回のLLM呼び出しでは終わらず、複数の段階を経て答えが出る作業（調査のあと分析、分析のあと執筆など）
+- 外部ツールやAPIをLLM自身が選んで呼び出す必要がある場合（DB照会、Web検索、チケット作成など）
+- 段階ごとに必要な専門性が異なり、役割を分けるのが自然な場合（調査担当と検証担当の分離）
+- 長時間実行され、過去の文脈を覚えておく必要があるシステム（カスタマーサポートボット、個人秘書）
+- 1日数百件以上を処理しつつ、コストとレイテンシを削る必要があるプロダクションパイプライン
+
+<strong>読み飛ばしてよい状況</strong>:
+
+- 単純な分類、要約、翻訳のように1回の呼び出しで終わる作業。ここではエージェントではなく関数ひとつで十分です。
+- 入力と出力が固定された決定論的な処理。正規表現やルールエンジンのほうが安く速く安定します。
+- プロトタイプ段階で、まず動作を確認したいとき。マルチエージェントはデバッグコストが大きいので、単一呼び出しで検証してから必要に応じて分割しましょう。
+- コスト上限を制御できないのにNetwork（自由対話）パターンを使おうとする場合。対話の長さが暴走すると請求書も一緒に暴走します。
+
+一言でまとめると、こうです。<strong>「複数段階 + ツール呼び出し + 記憶」が同時に必要なときだけエージェントを取り出し、どれか一つでも欠けるならまずもっと単純な道具を疑え。</strong> マルチエージェントのコストの罠は[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality)で、オーケストレーションをもう一歩深く掘り下げた話は[マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)で続きます。
+
 ## 1. n8nを活用したLLMワークフロー
 
 ### n8nとは？
@@ -807,6 +828,12 @@ LLMは確率的システムです。100%正確な応答は不可能です。
 
 - [Semantic Caching論文](https://arxiv.org/abs/2508.07675)
 - [LLM Cost Optimizationガイド](https://ai.koombea.com/blog/llm-cost-optimization)
+
+### エージェント設計（一次資料）
+
+- [ReAct: Synergizing Reasoning and Acting in Language Models（論文）](https://arxiv.org/abs/2210.03629)
+- [Building Effective Agents（Anthropic公式）](https://www.anthropic.com/research/building-effective-agents)
+- [How we built our multi-agent research system（Anthropic公式）](https://www.anthropic.com/engineering/multi-agent-research-system)
 
 ---
 

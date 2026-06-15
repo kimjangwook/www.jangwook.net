@@ -50,6 +50,25 @@ faq:
 > 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)
 > 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
 
+## 哪些读者适合读 / 什么情况下可以跳过
+
+这是一篇打基础的文章，并不是对每个人都同样必要。请根据自己的起点调整阅读的深度。
+
+<strong>这篇文章特别适合你，如果你</strong>
+
+- 刚开始用LLM，想先把基础搞清楚：什么是token，为什么要调Temperature。
+- 一直凭感觉写提示词，结果准确率忽高忽低，想把Zero-shot、Few-shot、CoT的区别一次理顺。
+- 需要给团队推荐模型，却不确定在GPT、Claude、Gemini、DeepSeek之间该按什么标准取舍。
+- 需要一份"LLM一页纸总结"，用于内部学习会或新人入职培训。
+
+<strong>可以跳过、直接看下一篇，如果你</strong>
+
+- 已经能讲清楚Transformer、Next Token Prediction和RLHF。那本篇当复习快速浏览即可，直接跳到讲结构化输出的Part 2，或者跳到讲检索结合的[Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)。
+- 目标是设计会调用工具的智能体，而非单次调用。那么[Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)更对口。
+- 想深入研究模型内部的训练过程。那么Part 3的训练方法论比这种基础对比更合适。
+
+一句话：想画一遍概念地图时就读它；如果你已经有地图了，直接跳到你需要的那一篇。
+
 ## GPT、Claude、Gemini交织的2025年AI格局
 
 一年前的LLM版图，和今天已经完全是两回事。整理DeNA内部学习资料时，我又一次有了这种感受。这个系列以那份资料为底子，分五期把LLM从基础原理一路讲到实战应用。第一期，也就是这篇，先从LLM到底是怎么运作的讲起，再看看截至2025年底主要模型各自站在什么位置。

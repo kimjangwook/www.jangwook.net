@@ -70,6 +70,27 @@ This is the final installment of the series. The days of steering an LLM with a 
 
 The backbone here is DeNA's official study material. I've layered the latest research and a few production case studies on top of it.
 
+## When This Is Useful, and When to Skip It
+
+Agent design and multi-agent setups look impressive, but they aren't the right tool for every problem. Before you read on, ask whether what you're building actually needs this structure.
+
+<strong>When this content helps</strong>:
+
+- The task can't be done in one LLM call and needs several stages (research then analysis, analysis then writing).
+- The LLM has to pick and call external tools or APIs on its own (DB lookups, web search, ticket creation).
+- Different steps need different expertise, so splitting into roles feels natural (a researcher, a verifier).
+- The system runs for a long time and has to remember past context (a support bot, a personal assistant).
+- It's a production pipeline handling hundreds of requests a day where cost and latency need trimming.
+
+<strong>When you can skip it</strong>:
+
+- Simple classification, summarization, or translation that finishes in one call. A single function beats an agent here.
+- Deterministic processing with fixed input and output. A regex or rule engine is cheaper, faster, and steadier.
+- The prototype stage, when you just want to confirm behavior. Multi-agent debugging is expensive, so validate with a single call first and split it out only when you have to.
+- A Network (free-form conversation) pattern with no cost ceiling. When conversation length runs away, so does the bill.
+
+In one line: <strong>reach for an agent only when "multiple stages plus tool calls plus memory" all show up at once. If even one is missing, suspect a simpler tool first.</strong> The cost trap of multi-agent setups is covered in [The Cost Reality of AI Agents](/en/blog/en/ai-agent-cost-reality), and a deeper take on orchestration continues in [Improving Multi-Agent Orchestration](/en/blog/en/multi-agent-orchestration-improvement).
+
 ## 1. LLM Workflows with n8n
 
 ### What is n8n?
@@ -808,6 +829,12 @@ That's all five parts done. Worth a quick look back at the whole journey.
 
 - [Semantic Caching Paper](https://arxiv.org/abs/2508.07675)
 - [LLM Cost Optimization Guide](https://ai.koombea.com/blog/llm-cost-optimization)
+
+### Agent Design (Primary Sources)
+
+- [ReAct: Synergizing Reasoning and Acting in Language Models (paper)](https://arxiv.org/abs/2210.03629)
+- [Building Effective Agents (Anthropic)](https://www.anthropic.com/research/building-effective-agents)
+- [How we built our multi-agent research system (Anthropic)](https://www.anthropic.com/engineering/multi-agent-research-system)
 
 ---
 

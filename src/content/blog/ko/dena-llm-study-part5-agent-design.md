@@ -69,6 +69,27 @@ faq:
 
 정리의 뼈대는 DeNA 공식 스터디 자료입니다. 여기에 최신 연구와 실무 사례를 덧붙였습니다.
 
+## 언제 이 내용이 유용한가, 언제 건너뛰어도 되나
+
+에이전트 설계나 멀티 에이전트는 멋져 보이지만, 모든 문제에 맞는 도구는 아닙니다. 본문을 읽기 전에 지금 만들려는 게 정말 이 구조가 필요한지부터 따져보세요.
+
+<strong>이 내용이 유용한 상황</strong>:
+
+- 한 번의 LLM 호출로 안 끝나고, 여러 단계를 거쳐야 답이 나오는 작업 (조사 후 분석, 분석 후 작성처럼)
+- 외부 도구나 API를 LLM이 직접 골라 호출해야 하는 경우 (DB 조회, 웹 검색, 티켓 생성 등)
+- 작업마다 필요한 전문성이 달라서 역할을 나누는 게 자연스러운 경우 (조사 담당, 검증 담당 분리)
+- 장기 실행되며 과거 맥락을 기억해야 하는 시스템 (고객 지원 봇, 개인 비서)
+- 하루 수백 건 이상 처리하면서 비용과 레이턴시를 깎아야 하는 프로덕션 파이프라인
+
+<strong>건너뛰어도 되는 상황</strong>:
+
+- 단순 분류, 요약, 번역처럼 한 번의 호출로 끝나는 작업. 이때는 에이전트가 아니라 그냥 함수 하나면 충분합니다.
+- 입력과 출력이 고정된 결정론적 처리. 정규식이나 규칙 엔진이 더 싸고 빠르고 안정적입니다.
+- 프로토타입 단계에서 동작부터 확인하고 싶을 때. 멀티 에이전트는 디버깅 비용이 크니, 단일 호출로 먼저 검증한 뒤 필요할 때 쪼개세요.
+- 비용 상한을 통제할 수 없는데 Network(자유 대화) 패턴을 쓰려는 경우. 대화 길이가 폭주하면 청구서도 같이 폭주합니다.
+
+한 줄로 요약하면 이렇습니다. <strong>"여러 단계 + 도구 호출 + 기억"이 동시에 필요할 때만 에이전트를 꺼내고, 하나라도 빠지면 더 단순한 도구를 먼저 의심하라.</strong> 멀티 에이전트의 비용 함정은 [AI 에이전트의 비용 현실](/ko/blog/ko/ai-agent-cost-reality)에서, 오케스트레이션을 한 단계 더 깊이 파고드는 내용은 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)에서 이어집니다.
+
 ## 1. n8n을 활용한 LLM 워크플로우
 
 ### n8n이란?
@@ -1941,9 +1962,14 @@ for (let i = 0; i < maxRetries; i++) {
 - [LLM Cost Optimization 가이드 (Koombea)](https://ai.koombea.com/blog/llm-cost-optimization)
 - [Anthropic 프롬프트 캐싱](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching)
 
+### 에이전트 설계 (1차 출처)
+
+- [ReAct: Synergizing Reasoning and Acting in Language Models (논문)](https://arxiv.org/abs/2210.03629)
+- [Building Effective Agents (Anthropic 공식)](https://www.anthropic.com/research/building-effective-agents)
+- [How we built our multi-agent research system (Anthropic 공식)](https://www.anthropic.com/engineering/multi-agent-research-system)
+
 ### 추가 학습 리소스
 
-- [Anthropic 에이전트 가이드](https://docs.anthropic.com/en/docs/agents/)
 - [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling)
 - [LangChain 에이전트 문서](https://python.langchain.com/docs/modules/agents/)
 
