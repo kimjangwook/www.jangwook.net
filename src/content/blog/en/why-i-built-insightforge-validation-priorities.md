@@ -1,6 +1,6 @@
 ---
-title: 'Why I Built InsightForge Around Validation Priorities'
-description: 'A builder note on why I positioned InsightForge as a validation-priority workflow, not a tool that pretends to predict real consumer behavior from synthetic panels.'
+title: 'Why I Built InsightForge: Turning AI Consumer Research Into Validation Priorities'
+description: 'A founder-style build log about what InsightForge is, why I built it, and the hard parts of turning synthetic panels and SSR-style research into a responsible product.'
 pubDate: '2026-06-15'
 heroImage: ../../../assets/blog/llm-consumer-research-hero.jpg
 tags: [ai, startup, product-research, insightforge, synthetic-panel]
@@ -35,179 +35,202 @@ relatedPosts:
       zh: '讨论了让AI系统成为可运营产品所需的防御性设计。'
 ---
 
-There is one sentence I decided not to use while building InsightForge:
+InsightForge is a service for early product and marketing research.
+
+A user enters a product concept, target customer, region, competitors, pricing assumption, and a business question. InsightForge builds a synthetic panel, collects persona-conditioned reactions, compares scores and reasons, and produces a report with segment reaction maps, triggers, blockers, evidence, confidence notes, and validation questions.
+
+From the outside, it can be described as an AI consumer research tool. But while building it, I intentionally chose a more conservative definition.
+
+> InsightForge is not a market prediction machine. It is a workflow for turning uncertainty into validation priorities.
+
+This post explains why I built it that way, what problem I was trying to solve, and what made the product harder than a simple AI demo.
+
+## The starting point: ideas are easy, validation is late
+
+When you build products alone or in a small team, the same pattern repeats.
+
+Ideas are plentiful. Landing pages can be made quickly. Copy can be written. Features can be shipped. The harder questions come immediately after that.
+
+Will this message actually work? Is this the right target customer? Is the price believable? Will people only show interest, or will they take action? If I interview customers now, what should I ask first?
+
+These questions are important, but they are often handled too late. Teams build a landing page, pick a message, implement features, and only then start asking whether the assumptions were right.
+
+I wanted a tool for the moment before formal validation. Not a tool that gives the answer, but a tool that identifies which assumptions are dangerous enough to test.
+
+## The first tempting version was much simpler
+
+The easy version of the product was obvious.
+
+The user enters a product idea. AI generates personas. Each persona gives a rating. The system shows an average market reaction score. The user gets a clean report and a number that feels actionable.
+
+That version is easy to explain. It is easy to demo. It feels like a SaaS product once you add credits, payments, and PDF reports.
+
+But the first real runs exposed the problem.
+
+If the average score is 7.2, what should a team do? Launch? Raise the price? Change the message? Drop a segment? Interview customers?
+
+The number exists, but the decision is still unclear. Worse, because the number is produced by an LLM and displayed in a report, it can look more authoritative than it deserves.
+
+That was the point where the product direction had to change.
+
+## The dangerous sentence: AI replaces consumers
+
+The easiest sentence to sell in this category is:
 
 “AI predicts real consumer behavior.”
 
-It is a convenient sentence. It is short, commercial, and easy to understand. It would make the product sound more powerful than a cautious methodology document ever could. But it is also the sentence that would make the product less trustworthy.
+It is strong. It is memorable. It would probably increase clicks. But I did not want InsightForge to depend on that claim.
 
-So I chose a narrower position:
+A synthetic persona is not a customer. It has not paid for a competing product. It has not argued with a manager about budget. It has not switched tools under time pressure. It has no lived context, procurement process, or memory of previous buying mistakes.
 
-> InsightForge is not a market-truth machine. It is a workflow for turning uncertainty into validation priorities.
+If synthetic responses are presented too beautifully, they start to look like real customer quotes. That is the dangerous part.
 
-This post is a builder note about that decision. It is not a claim that synthetic panels replace customers. It is an explanation of why I think AI-assisted research becomes more useful when it is positioned before human validation, not instead of it.
+So I set a few rules for the product:
 
-## The tempting version of the product
+- synthetic responses should not look like real customer quotes
+- confidence should not look like statistical confidence
+- average scores should not become the conclusion
+- evidence and limitations should travel with the finding
+- the report should end with validation questions, not market truth
 
-The tempting version is obvious.
+These rules make the product harder to sell, but easier to trust.
 
-A user enters a product idea. The system creates personas. Each persona gives a rating. The product returns a market score and says whether the idea will work.
+## The hard part: plausible is not useful
 
-That version is easy to demo. It is visually clean. It creates numbers. It gives the user something that looks like an answer.
+The most difficult part of building an LLM product is that plausible output is cheap.
 
-But the first hard question is: what should a team do with an average score of 7.2?
+Early reports looked good. The writing was natural. The summaries were coherent. The tables were clean. But many findings were too generic: convenience matters, trust matters, price matters, different segments react differently.
 
-Launch the product? Increase the price? Spend on ads? Change the segment? Interview users? Build more features?
+Those statements are not wrong. They are just not enough.
 
-The number may feel decisive, but it usually does not carry enough meaning to support the decision. Worse, because it is generated by a model, it can create confidence faster than the evidence deserves.
+What I wanted was more specific:
 
-## The average is not the insight
+- which segment reacted differently, and why
+- which objection repeated across personas
+- whether feature interest separated from adoption readiness
+- whether a price objection was really a trust objection
+- which claim required proof before it could work
+- what the next customer interview should ask
 
-In early product work, the average score is often the least interesting part of the output.
+To get closer to that, I had to make the workflow more structured. Persona generation, question generation, response capture, scoring, insight generation, and reporting could not be one loose prompt. Each stage needed constraints, checks, and a clear role.
 
-A concept can receive the same average score under very different conditions.
+It was not just prompt engineering. It was deciding what status each generated artifact should have inside the product.
 
-| Pattern | Same average? | Better decision question |
+## I kept fighting the average score
+
+At first, I wanted the score to be central. Users understand numbers. Dashboards are easier to design around numbers.
+
+But the more I tested, the more the average score felt dangerous.
+
+The same average can hide very different realities.
+
+| Hidden pattern | How the average looks | What the team should do |
 | --- | --- | --- |
-| Everyone is mildly interested | Yes | How do we sharpen the positioning? |
-| One segment is excited and others are indifferent | Yes | Is there a beachhead segment? |
-| People like the feature but distrust adoption | Yes | What proof is required before switching? |
+| Everyone is mildly interested | Looks acceptable | Sharpen the positioning |
+| One segment is excited, others are indifferent | Looks acceptable | Narrow the first target |
+| The feature is liked, but trust is weak | Looks acceptable | Validate proof and risk messaging |
+| Interest is high, urgency is low | Looks positive | Find why someone would act now |
 
-Averages compress disagreement. Early research needs the opposite. It needs to expose disagreement.
+So the report had to shift from averages to spread, disagreement, blockers, and adoption readiness.
 
-That is why I wanted InsightForge to focus on questions like:
+That made the report less simple, but much more useful.
 
-- Who reacts strongly, and why?
-- Which objections repeat across personas?
-- Is the problem price, trust, urgency, or proof?
-- Does feature interest translate into adoption readiness?
-- Which claim needs human validation before creative spend?
-- What should the next interview script ask?
+## Some runs failed in useful ways
 
-Those questions do not pretend to predict the market. They make the next validation step better.
+Not every research run worked.
 
-## Synthetic respondents are not customers
+Some survey-style runs failed with messages that looked like a sample-size problem. But the real cause was sometimes not simply count. It could be response variance, directional confidence width, or a gate that could not justify a stable interpretation. If the UI only says “sample too small,” it hides the real issue.
 
-The most important product boundary is simple: a synthetic respondent is not a customer.
+Some outputs were too smooth. Personas with different backgrounds still produced similar objections in similar language. That can look stable, but it may also mean the model is converging toward safe generic answers.
 
-It has not used the product. It has not paid for an alternative. It does not have a budget cycle, internal politics, switching costs, or lived context. It can simulate a response pattern, but it cannot become a sampled human respondent.
+Market grounding was also harder than it looked. Adding web evidence makes a report look stronger, but evidence is only useful when it supports a specific conclusion. Otherwise, it is decoration.
 
-That boundary changes the product language.
+Then there were operational problems: payments, credits, queues, provider cost, failed runs, refunds, DeepSeek balance alerts, admin visibility. A research product is not only a report generator. If it is a real service, every run has cost, failure modes, and user expectations.
 
-Synthetic responses should not be presented as customer quotes. Directional confidence should not look like statistical confidence. A report should not end with “the market wants this.” It should end with “these are the assumptions to test next.”
+These struggles pushed InsightForge away from demo and toward product.
 
-This makes the product less flashy. It also makes it more useful.
+## Translating SSR-style thinking into product language
 
-## What the research changed for me
+The core methodology behind InsightForge is close to Semantic Similarity Rating-style thinking.
 
-The research around synthetic samples and simulated economic agents is useful because it shows that language models can produce structured responses under persona and context constraints. That is enough to make them valuable as a pre-research tool.
+The useful idea is not that AI magically knows the market. The useful idea is that concepts, claims, persona responses, evidence, and rating anchors can be compared in a structured semantic workflow.
 
-But the cautionary work on synthetic survey data is just as important. Synthetic responses can be too smooth. Distributional shape can be wrong. Minority or edge cases can be distorted. The output may look more coherent than real human data.
+For a product message, the useful questions are:
 
-So the rule I settled on is:
+- which persona problem is this message closest to
+- which claim conflicts with which objection
+- does proof requirement dominate purchase interest
+- is the differentiation understood against alternatives
+- do identical scores come from different reasons
 
-> Use synthetic panels to create validation priorities, not validation results.
+This had to become a product report, not an academic paper. Teams need to know what to do next.
 
-That framing also matches the Semantic Similarity Rating style of thinking. Instead of asking the model for a precise demand forecast, compare concepts, claims, responses, and evidence directionally. Which claim fits which segment? Which objection keeps appearing? Which proof requirement blocks adoption? Which message deserves a real test?
+That is why the output is centered on validation priorities rather than final answers.
 
-## The constraints I intentionally added
+## The right first use case
 
-Some of the most important parts of InsightForge are constraints, not features.
+I do not think teams should start by asking InsightForge to “analyze the whole market.” Broad inputs create broad outputs.
 
-| Risk | Product constraint |
-| --- | --- |
-| Generic AI advice | Persona-conditioned questioning |
-| Fake precision | Directional scores, not population estimates |
-| Averages hiding disagreement | Segment spread and disagreement are surfaced |
-| Confident but unsupported summaries | Findings are linked to evidence |
-| Synthetic text looking like real quotes | Synthetic evidence is labeled as synthetic |
-| Report as final answer | Reports end with validation questions |
-
-These constraints make the product harder to build. They also make it more defensible.
-
-The hard part of an AI product is not generating text. It is deciding what status the generated text has. Is it a draft? A hypothesis? A simulated reaction? A validation result? A final recommendation?
-
-If the product blurs those categories, it becomes dangerous.
-
-## When the approach became useful
-
-The most useful moments were not the moments when a concept scored well.
-
-The useful moments were when the output separated interest from adoption readiness. A user can like an idea and still refuse to switch. A manager can understand a feature and still not buy it. A customer can agree with the value proposition and still ask for trust signals, proof, or social validation.
-
-That distinction matters.
-
-For example, a financial product may produce positive reactions to convenience features while still facing resistance around primary-account switching. A SaaS workflow tool may be attractive to founders but slow-moving for operations teams because integration risk dominates.
-
-In both cases, the useful output is not “positive” or “negative.” The useful output is the next research question:
-
-- What proof would make this credible?
-- Which segment should be tested first?
-- What objection should sales or customer interviews explore?
-- Which message is attractive but not yet believable?
-- What would make a user move from interest to action?
-
-That is where AI-assisted research earns its place.
-
-## Why this is not just a ChatGPT prompt
-
-A good prompt can be useful for early exploration. I do not think every workflow needs to become a product.
-
-But a product has to solve different problems:
-
-- outputs must be comparable across runs
-- persona assumptions must be explicit
-- scoring must not imply fake precision
-- evidence must be visible enough to audit
-- limitations must travel with the conclusion
-- the report must create a next action
-
-InsightForge is not differentiated by model access. The differentiation is the conversion of model output into an auditable workflow: panel construction, structured questioning, pattern aggregation, evidence trails, confidence notes, limitations, and validation recommendations. [Launching an AI SaaS as a solo developer](/en/blog/en/individual-developer-ai-saas-journey) taught the same thing—structure and repeatability matter more than model choice.
-
-## How I think teams should use it first
-
-The safest first use is narrow.
-
-Do not start with “analyze the whole market.” Start with:
+The first run should be narrow:
 
 - one product concept
 - one target segment
-- one market or region
-- one business question
-- a few competitive alternatives
+- one region or market
 - one pricing assumption
+- a few alternatives
+- one business question
 
-Then read the output as a research planning document, not as proof.
+The result should be read as a research planning document.
 
-The first success metric is not whether the report sounds smart. The first success metric is whether the next customer interview, message test, or landing page experiment becomes sharper.
+Not “does this prove the product will work?” but “what should I ask real customers next?”
 
-## What still needs work
+Not “is this message correct?” but “which claim is risky without proof?”
 
-There are still hard problems.
+Not “will this segment buy?” but “what is the strongest blocker for this segment?”
 
-How should directional confidence be explained without sounding statistical? How stable should a pattern be across repeated runs before it becomes a validation priority? How should the system detect overly smooth synthetic responses? Which patterns will survive contact with real customer interviews, and which will not?
+That is where the product is most useful.
 
-These questions are not implementation details. They are product integrity questions. And they compound with [the real economics of running AI agents](/en/blog/en/ai-agent-cost-reality)—once you move beyond a prototype, cost structure becomes central.
+## Where this becomes a real service
 
-The direction I want to avoid is “AI will do the research for you.” The direction I trust more is “AI can help you decide what to research next.”
+The workflow described in this post is available as a live service at [InsightForge](https://insightforge.effloow.com/).
 
-## Conclusion
+The service supports Focus studies and Survey studies. A user can enter a product concept, target customer, competitors, pricing assumption, region, and one core business question, then generate a structured report. For a first run, I recommend starting with one product concept and one narrow segment rather than asking the system to analyze an entire market.
 
-I built InsightForge around validation priorities because that is where the method is both useful and honest.
+If you want to understand the methodology first, the [InsightForge Research Method Guide](https://insightforge.effloow.com/) and sample report flow are the better starting points. If you want to try it directly, start with a small Focus study and use the output to prepare a real customer interview or message test.
 
-Early product teams do not need a fake oracle. They need a better way to turn unclear market uncertainty into concrete assumptions, objections, segments, and questions that can be tested with real people.
+This link is not just a product CTA. It connects the argument in this post to the actual implementation: validation priorities, synthetic evidence, limitations, and next validation questions are part of the report structure, not just marketing language.
 
-Synthetic panels can help with that. They become risky when they are sold as customers.
+## I am not trying to build an oracle
 
-That is the line I want InsightForge to keep.
+It is tempting to make stronger claims.
+
+AI predicts the market. Consumer research in minutes. Validation without interviews.
+
+Those lines might perform well as marketing copy. But they would damage the trust the product needs.
+
+I am not trying to build an oracle. I am trying to build a tool that helps people prepare better validation. A tool that prevents early product teams from building blindly by surfacing risky assumptions, strong objections, and proof requirements earlier.
+
+That definition is less flashy, but I think it is more durable.
 
 ## Research background
 
-This post is a builder note, but the direction was shaped by a few research threads.
+A few research threads shaped this direction.
 
 - [Out of One, Many: Using Language Models to Simulate Human Samples](https://arxiv.org/abs/2209.06899) shows why conditioned synthetic samples are worth investigating.
 - [Large Language Models as Simulated Economic Agents](https://arxiv.org/abs/2301.07543) frames LLMs as simulated agents and makes the limits of that framing visible.
 - [Using GPT for Market Research](https://www.hbs.edu/ris/Publication%20Files/23-062_1f58623a-ee21-44b9-a262-276047bc5543.pdf) explores GPT-style tools in market research workflows.
-- [Synthetic Replacements for Human Survey Data?](https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE) is an important warning against treating synthetic responses as a clean replacement for human survey data.
+- [Synthetic Replacements for Human Survey Data?](https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE) warns against treating synthetic responses as a clean replacement for human survey data.
 
-My takeaway is practical. This research direction can be useful for product teams, but only if the output is treated as a way to prepare better human validation, not as a substitute for it.
+My takeaway is practical. This research direction can help product teams, but only when the output is treated as preparation for human validation, not as a substitute for it.
+
+## Conclusion
+
+Building InsightForge has been less about adding features and more about drawing boundaries.
+
+Do not say AI replaces research. Do not package synthetic responses as customer voices. Do not make scores look like market truth. Instead, help teams see which assumptions, segments, objections, and proof requirements need human validation next.
+
+That is why I built InsightForge.
+
+The core sentence is still this:
+
+> A tool for turning vague market uncertainty into validation priorities that humans can actually test.

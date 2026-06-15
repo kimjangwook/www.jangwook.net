@@ -1,6 +1,6 @@
 ---
-title: 'InsightForgeを予測ではなく検証優先度の道具にした理由'
-description: 'LLMのsynthetic panelを市場予測ツールとして売るのではなく、何を検証すべきかを整理するワークフローとしてInsightForgeを設計した理由。synthetic panelの限界、directional score設計、auditable workflowの哲学を詳しく解説します。'
+title: 'InsightForgeを作った理由: AI消費者リサーチを検証優先度の道具にするまで'
+description: 'InsightForgeとは何か、なぜ作ったのか、synthetic panelとSSR的な方法論を責任あるプロダクトにする中で苦労した点をまとめました。'
 pubDate: '2026-06-15'
 heroImage: ../../../assets/blog/llm-consumer-research-hero.jpg
 tags: [ai, startup, product-research, insightforge, synthetic-panel]
@@ -33,175 +33,204 @@ relatedPosts:
       ja: 'AIシステムを運用可能な製品にするための防御的設計を扱います。'
       en: 'It covers defensive design for making AI systems operational.'
       zh: '讨论了让AI系统成为可运营产品所需的防御性设计。'
-
 ---
-InsightForgeを作る中で、最初に使わないと決めた言葉があります。
 
-「AIが実際の消費者反応を予測します」
+InsightForgeは、初期のプロダクトやマーケティング仮説を検証するためのリサーチ支援サービスです。
 
-この言葉は売りやすいです。短く、分かりやすく、プロダクトの力を強く見せることができます。しかし、私には危険な言葉に見えました。LLMが生成した反応を、市場の真実のように扱うと、プロダクトは便利に見えても意思決定の道具としては弱くなります。
+ユーザーは製品コンセプト、ターゲット顧客、地域、競合、価格仮説、ビジネス上の問いを入力します。InsightForgeはsynthetic panelを作り、personaごとの反応を集め、スコアと理由を比較し、segment reaction map、trigger、blocker、evidence、confidence note、validation questionを含むレポートを生成します。
 
-そこでInsightForgeの中心を、もっと狭く定義しました。
+外から見ると「AI消費者リサーチツール」と呼べます。ただし、作りながら私はもっと慎重に定義することにしました。
 
-> InsightForgeは市場の正解を出す道具ではなく、何を検証すべきかを整理する道具です。
+> InsightForgeは市場予測マシンではありません。不確実性を検証優先度に変えるワークフローです。
 
-この記事は、その判断についてのビルドログです。単なるプロダクト紹介ではなく、LLMを使ったリサーチ製品を作る時に、どこに線を引くべきかを整理した記録です。
+この記事では、なぜそう作ったのか、どんな問題から始まったのか、そして単なるAIデモより何が難しかったのかをまとめます。
 
-## 最初に魅力的に見えた方向
+## 出発点: アイデアは多いが検証は遅い
 
-一番分かりやすい製品の形は、すぐに思いつきます。
+一人または小さなチームでプロダクトを作っていると、同じ場面を何度も経験します。
 
-ユーザーが製品アイデアを入力する。システムがpersonaを作る。それぞれのpersonaが点数を付ける。最後に市場反応スコアを表示する。
+アイデアはあります。ランディングページも作れます。コピーも書けます。機能も実装できます。しかし、すぐに難しい問いが出てきます。
 
-デモとしては強いです。画面も作りやすいです。数字も出ます。ユーザーはすぐに答えを受け取ったように感じます。
+このメッセージは本当に刺さるのか。ターゲットは正しいのか。価格は信じられるのか。人は興味を持つだけなのか、それとも行動するのか。今インタビューをするなら何を聞くべきなのか。
 
-しかし、平均スコア7.2が出た時に、チームは何をすべきでしょうか。
+これらは重要ですが、多くの場合、遅れて扱われます。チームは先に作り、メッセージを決め、機能を実装し、その後に仮説が正しかったかを確認します。
 
-リリースするべきか。価格を上げるべきか。広告を出すべきか。ターゲットを変えるべきか。顧客インタビューをするべきか。
+私が欲しかったのは、正式な検証の前に使える道具でした。答えを出す道具ではなく、どの仮説が危険で検証すべきかを整理する道具です。
 
-数字は決定的に見えますが、実際の判断に必要な意味を十分に持っていないことが多いです。さらに、その数字がAIによって生成されると、根拠よりも早く確信が生まれます。
+## 最初に考えた形はもっと単純だった
 
-## 平均点はインサイトではない
+一番簡単な形は明らかでした。
 
-初期のプロダクト判断では、平均点はしばしば一番弱い情報です。
+製品アイデアを入力する。AIがpersonaを作る。それぞれが点数を付ける。平均の市場反応スコアを表示する。
 
-同じ平均点でも、背景はまったく違うことがあります。
+説明しやすく、デモもしやすい。credit、決済、PDFレポートを付ければSaaSらしく見えます。
 
-| パターン | 同じ平均になり得るか | より良い判断 |
-| --- | --- | --- |
-| 全員が少し興味を持つ | はい | ポジショニングを鋭くする |
-| 一部セグメントだけが強く反応する | はい | 最初のbeachhead segmentを探す |
-| 機能は良いが導入に不安がある | はい | 信頼や証拠のメッセージを検証する |
+しかし、実際に回してみると問題が見えました。
 
-平均は差を隠します。しかし初期リサーチで知りたいのは、差そのものです。
+平均スコア7.2が出たとして、チームは何をすべきでしょうか。ローンチするのか。価格を上げるのか。メッセージを変えるのか。セグメントを捨てるのか。顧客に聞くのか。
 
-私がInsightForgeで見たかったのは、次のような問いでした。
+数字はあります。しかし意思決定はまだ曖昧です。さらに、LLMが生成した数字をレポートに載せると、根拠以上に権威があるように見えてしまいます。
 
-- どのpersonaが強く反応したのか
-- どの反対理由が繰り返されたのか
-- 価格の問題なのか、信頼の問題なのか、緊急度の問題なのか
-- 機能への好意と導入意思は分かれているのか
-- どのclaimにはproofが必要なのか
+そこで、プロダクトの方向を変える必要があると感じました。
+
+## 危険な言葉: AIが消費者を代替する
+
+この領域で一番売りやすい言葉はこれです。
+
+「AIが実際の消費者行動を予測します」
+
+強く、覚えやすく、クリックも増えるかもしれません。しかし、InsightForgeをその主張に依存させたくありませんでした。
+
+synthetic personaは顧客ではありません。競合製品にお金を払ったことも、予算について上司と議論したことも、ツールを切り替えたこともありません。生活文脈も、購買プロセスも、過去の失敗の記憶もありません。
+
+synthetic responseをきれいに見せすぎると、本物の顧客引用のように見えます。ここが一番危険でした。
+
+だから、製品にはいくつかのルールを置きました。
+
+- synthetic responseを実顧客の引用のように見せない
+- confidenceを統計的信頼度のように見せない
+- 平均スコアを結論にしない
+- findingにはevidenceとlimitationを一緒に出す
+- レポートは市場の真実ではなくvalidation questionで終える
+
+これらは売り文句を弱くします。しかし、信頼性は強くします。
+
+## 難しかったこと: それっぽさと有用性は違う
+
+LLMプロダクトで一番怖いのは、それっぽい出力が簡単に出ることです。
+
+初期のレポートも見た目は良かったです。文章は自然で、要約も論理的で、表もきれいでした。しかし内容を読むと、便利さが重要、信頼が重要、価格が重要、segmentごとに反応が違う、という一般論が多くありました。
+
+間違ってはいません。でも、それだけでは意思決定に足りません。
+
+私が欲しかったのは、もっと具体的な情報でした。
+
+- どのsegmentがなぜ違う反応をしたのか
+- どのobjectionが繰り返されたのか
+- feature interestとadoption readinessは分かれているのか
+- 価格問題に見えて実は信頼問題ではないか
+- どのclaimにはproofが必要か
 - 次の顧客インタビューで何を聞くべきか
 
-これらは市場の正解ではありません。しかし、次の検証を良くします。
+そのために、workflowを構造化しました。persona generation、question generation、response capture、scoring、insight generation、reportingを一つの大きなpromptにしない。各stageに役割と制約を持たせる必要がありました。
 
-## synthetic panelは顧客ではない
+これは単なるprompt engineeringではありません。生成されたものをプロダクト内でどの地位に置くかを決める作業でした。
 
-一番重要な境界線は、synthetic respondentは顧客ではないということです。
+## 平均スコアとの戦い
 
-そのpersonaは製品を使っていません。競合製品にお金を払っていません。予算、社内政治、切り替えコスト、生活文脈を持っていません。反応パターンをシミュレーションすることはできますが、実際にサンプリングされた人間にはなりません。
+最初はscoreを中心にしたくなりました。ユーザーは数字を理解しやすく、画面も作りやすいからです。
 
-この境界線は、製品の言葉を変えます。
+しかしテストを重ねるほど、平均スコアは危険に見えました。
 
-synthetic responseを顧客の引用のように見せてはいけない。directional confidenceを統計的信頼区間のように見せてはいけない。レポートは「市場はこれを望んでいる」で終わるべきではなく、「次に検証すべき仮説はこれです」で終わるべきです。
+同じ平均でも、背後はまったく違います。
 
-この制約は製品を地味にします。しかし、より信頼できる道具にします。
+| 隠れたパターン | 平均だけで見ると | チームがすべきこと |
+| --- | --- | --- |
+| 全員が少し興味を持つ | 悪くない | ポジショニングを鋭くする |
+| 一部segmentだけ強く反応 | 悪くない | 最初のtargetを狭める |
+| 機能は良いが信頼が弱い | 悪くない | proofとrisk messageを検証する |
+| 興味は高いが緊急度が低い | 良く見える | 今行動する理由を探す |
 
-## 論文を読んで決めた基準
+そのため、レポートは平均よりspread、disagreement、blocker、adoption readinessを重視する方向に変えました。
 
-synthetic human samplesやsimulated economic agentsに関する研究は、LLMがpersonaや文脈の制約の下で、一定の反応パターンを生成できることを示しています。これはpre-research toolとしては十分に価値があります。
+単純さは少し失われましたが、実務的な価値は上がりました。
 
-一方で、synthetic survey dataをhuman surveyの代替として扱うことへの批判も重要です。分布が歪むことがあります。反応が滑らかになりすぎることがあります。実際の人間データにあるノイズや矛盾が消えることがあります。
+## 失敗した実行もあった
 
-そこで私が採用したルールはこうです。
+すべてのresearch runが成功したわけではありません。
 
-> synthetic panelはvalidation priorityを作るために使い、validation resultとは呼ばない。
+あるsurvey型の実行では、sample sizeが足りないような失敗になりました。しかし実際には、単純な件数不足ではなく、response varianceやconfidence gateの問題であることもありました。UIが「sampleが小さい」とだけ言うと、本当の原因を隠してしまいます。
 
-Semantic Similarity Rating的な考え方も、この方針に合っています。市場需要を正確に予測しようとするのではなく、concept、claim、response、evidenceの関係を方向性として比較する。どのclaimがどのsegmentに合うのか。どのobjectionが繰り返されるのか。どのproofがなければ導入されないのか。
+別の実行では、回答が滑らかすぎました。異なるpersonaなのに、似た語調で似た不安を話します。これは安定しているのではなく、モデルが安全な一般論に収束しているだけかもしれません。
 
-## 意図的に入れた制約
+web evidenceを付けることも簡単ではありませんでした。検索結果を増やすとレポートは強そうに見えます。しかしevidenceが特定の結論を支えていなければ、ただの装飾です。
 
-InsightForgeでは、機能よりも制約が重要な部分があります。
+さらに、決済、credit、queue、provider cost、失敗時の扱い、DeepSeek残高通知、adminでの使用状況確認など、運用の問題もありました。リサーチ製品はレポート生成器ではありません。実際のサービスにするなら、各runにはコスト、失敗、期待値があります。
 
-| リスク | 入れた制約 |
-| --- | --- |
-| 一般的なAI助言になる | persona条件と質問構造を固定する |
-| 点数が真実に見える | directional scoreとして扱う |
-| 平均が差を隠す | segment spreadとdisagreementを出す |
-| 要約が過信を生む | evidenceとinterpretationを分ける |
-| synthetic quoteが実顧客の声に見える | synthetic evidenceであることを明記する |
-| レポートが最終結論に見える | human validation questionで終える |
+この苦労が、InsightForgeをデモではなくプロダクトに近づけました。
 
-LLM製品で難しいのは、テキストを生成することではありません。生成されたものにどんな地位を与えるかです。下書きなのか、仮説なのか、シミュレーションされた反応なのか、検証結果なのか。ここを混ぜると、製品は危険になります。
+## SSR的な考えをプロダクトの言葉にする
 
-## 実際に役に立つと感じた瞬間
+InsightForgeの中心には、Semantic Similarity Ratingに近い考え方があります。
 
-この方法が役に立つと感じたのは、点数が高く出た時ではありません。
+重要なのはAIが市場を魔法のように知っていることではありません。concept、claim、persona response、evidence、rating anchorの関係を、構造化された意味的workflowとして比較することです。
 
-むしろ、興味と導入意思が分かれた時でした。ユーザーはアイデアを良いと思いながら、切り替えないことがあります。機能を理解しても、買わないことがあります。価値提案に同意しても、信頼や証拠がなければ動かないことがあります。
+製品メッセージでは、次の問いが重要になります。
 
-例えば金融サービスでは、便利な機能への反応は良くても、メイン口座を切り替える意思は弱いかもしれません。SaaSのワークフロー製品では、創業者チームは強く反応しても、operations teamはintegration riskを重く見るかもしれません。
+- このmessageはどのpersonaのproblemに近いか
+- どのclaimがどのobjectionと衝突するか
+- purchase interestよりproof requirementが強いか
+- alternativesと比べて差別化が理解されているか
+- 同じscoreでも理由は違うか
 
-この時に必要なのは「ポジティブかネガティブか」ではありません。
+これを論文ではなく、プロダクトレポートにする必要がありました。チームが次に何をするか分からなければ意味がありません。
 
-- どんなproofがあれば信じられるのか
-- 最初に試すsegmentはどこか
-- salesやinterviewで確認すべきobjectionは何か
-- 魅力的だが信じられていないmessageはどれか
-- interestからactionに進む条件は何か
+だから出力はfinal answerではなくvalidation prioritiesを中心にしました。
 
-この問いを作れるなら、AI-assisted researchには価値があります。
+## 正しい最初の使い方
 
-## ChatGPTプロンプトだけでは足りない理由
+最初から「市場全体を分析して」と使うべきではありません。入力が広いと出力も広くなります。
 
-良いプロンプトは初期探索に役立ちます。すべてを製品化する必要はありません。
-
-ただし、製品にするなら別の問題を解く必要があります。
-
-- 実行ごとに比較可能な出力が必要
-- personaの前提を明示する必要
-- scoreが偽の精密さに見えないようにする必要
-- evidenceをレビューできる形で残す必要
-- limitationを結論と一緒に出す必要
-- reportが次の行動につながる必要
-
-InsightForgeの差別化は、モデルにアクセスできることではありません。LLMの出力を、panel construction、structured questioning、pattern aggregation、evidence trail、confidence note、limitation、validation recommendationを含むauditable workflowに変えることです。[AIサービスをひとりで立ち上げた経験](/ja/blog/ja/individual-developer-ai-saas-journey)からも同じ結論でした—モデル選択より構造と再現性が重要です。
-
-## 最初の使い方
-
-最初から市場全体を分析しようとしない方が良いです。
-
-最初は狭く使うべきです。
+最初は狭く使う方が良いです。
 
 - 製品コンセプトを1つ
-- ターゲットセグメントを1つ
-- 市場または地域を1つ
-- ビジネス質問を1つ
-- 競合代替を数個
+- target segmentを1つ
+- 地域または市場を1つ
 - 価格仮説を1つ
+- 競合代替を数個
+- business questionを1つ
 
-そして結果を「証明」ではなく、research planning documentとして読むべきです。
+結果はresearch planning documentとして読むべきです。
 
-最初の成功指標は、レポートが賢く見えることではありません。次の顧客インタビュー、メッセージテスト、ランディングページ実験が鋭くなることです。
+「この製品が成功する証明か」ではなく、「次に実顧客へ何を聞くべきか」。
 
-## まだ残っている課題
+「このmessageが正解か」ではなく、「proofなしでは危険なclaimはどれか」。
 
-まだ難しい問題があります。
+「このsegmentが買うか」ではなく、「このsegmentの最大blockerは何か」。
 
-directional confidenceを、統計的なものに見せずにどう説明するか。同じ条件で複数回実行した時、どの程度安定していればvalidation priorityにできるか。滑らかすぎるsynthetic responseをどう検出するか。実際の顧客インタビューと照らした時、どのパターンが残り、どのパターンが消えるか。
+ここでInsightForgeは一番役に立ちます。
 
-これらは実装の細部ではなく、製品の誠実さに関わる問題です。[AIエージェントの実際の運用コスト](/ja/blog/ja/ai-agent-cost-reality)が予想以上に複雑であることも、同じ文脈にあります。
+## 実際のサービスへのリンク
 
-避けたい方向は「AIがリサーチを全部やってくれる」です。信頼できる方向は「AIが次に何をリサーチすべきかを整理してくれる」です。
+この記事で説明したworkflowは、現在 [InsightForge](https://insightforge.effloow.com/) という実サービスとして運用しています。
 
-## 結論
+サービスではFocus studyとSurvey studyを実行できます。製品コンセプト、target customer、競合代替、価格仮説、地域、business questionを入力し、構造化されたレポートを生成します。最初に使う場合は、市場全体を分析するよりも、1つの製品コンセプトと1つの狭いsegmentから始める方が適しています。
 
-InsightForgeを予測ツールではなく検証優先度ツールとして作った理由は、この方が有用で、かつ正直だからです。
+方法論を先に確認したい場合は、[InsightForge Research Method Guide](https://insightforge.effloow.com/) とsample reportの流れを見るのが良いです。実際に試す場合は、小さなFocus studyから始め、その結果を顧客インタビューやmessage testの準備に使うのが安全です。
 
-初期のプロダクトチームに必要なのは、偽のoracleではありません。曖昧な市場不確実性を、実際の人間で検証できる仮説、反対理由、segment、質問に変えることです。
+このリンクは単なるCTAではありません。この記事で説明したvalidation priorities、synthetic evidence、limitation、next validation questionが、実際のレポート構造にどう入っているかを確認するための接続点です。
 
-synthetic panelはその作業を助けることができます。しかし、それを顧客として売り始めた瞬間に、価値よりもリスクが大きくなります。
+## 作りたいのはoracleではない
 
-InsightForgeでは、この線を守りたいと思っています。
+もっと強い言葉を使いたくなる誘惑はあります。
+
+AIが市場を予測する。数分で消費者リサーチ。インタビューなしでvalidation。
+
+マーケティングコピーとしては強いかもしれません。しかし、それは製品に必要な信頼を壊します。
+
+私が作りたいのはoracleではありません。人間が検証すべき問いをより良く準備する道具です。初期プロダクトチームが盲目的に作らないように、危険な仮説、強いobjection、proof requirementを早く見せる道具です。
+
+この定義は地味ですが、長く使える方向だと思っています。
 
 ## 参考にした研究背景
 
-この記事はビルドログですが、方向性を決める時に参考にした研究の流れがあります。
+この方向性には、いくつかの研究が影響しています。
 
-- [Out of One, Many: Using Language Models to Simulate Human Samples](https://arxiv.org/abs/2209.06899) は、条件付けされたsynthetic sampleをLLMで作る可能性を示しています。
-- [Large Language Models as Simulated Economic Agents](https://arxiv.org/abs/2301.07543) は、LLMをsimulated agentsとして考える時の可能性と限界を考えさせます。
-- [Using GPT for Market Research](https://www.hbs.edu/ris/Publication%20Files/23-062_1f58623a-ee21-44b9-a262-276047bc5543.pdf) は、マーケットリサーチの文脈でGPT型ツールをどう使えるかを扱っています。
-- [Synthetic Replacements for Human Survey Data?](https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE) は、synthetic responseをhuman surveyの置き換えとして扱う危険を示しています。
+- [Out of One, Many: Using Language Models to Simulate Human Samples](https://arxiv.org/abs/2209.06899) は、条件付きsynthetic sampleを調べる価値を示しています。
+- [Large Language Models as Simulated Economic Agents](https://arxiv.org/abs/2301.07543) は、LLMをsimulated agentsとして見る時の可能性と限界を示しています。
+- [Using GPT for Market Research](https://www.hbs.edu/ris/Publication%20Files/23-062_1f58623a-ee21-44b9-a262-276047bc5543.pdf) は、市場調査workflowにおけるGPT型ツールの使い方を扱っています。
+- [Synthetic Replacements for Human Survey Data?](https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE) は、synthetic responseをhuman surveyの代替として扱う危険を警告しています。
 
-私の結論は実務的です。この研究の流れはプロダクトチームに役立ちます。ただし、出力を人間による検証の代替ではなく、より良い検証を準備するための材料として扱う場合に限ります。
+私の結論は実務的です。この研究方向はプロダクトチームに役立ちます。ただし、出力を人間による検証の代替ではなく、その準備として扱う場合に限ります。
+
+## 結論
+
+InsightForgeを作る過程は、機能を増やすことよりも境界線を引くことの連続でした。
+
+AIがリサーチを代替すると言わない。synthetic responseを顧客の声として包装しない。scoreを市場の真実のように見せない。その代わり、次に人間が検証すべきassumption、segment、objection、proof requirementを見えるようにする。
+
+これがInsightForgeを作った理由です。
+
+今でも、この製品の中心文はこれだと思っています。
+
+> 曖昧な市場不確実性を、人間が検証できる優先度に変える道具。
