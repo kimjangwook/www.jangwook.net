@@ -1,8 +1,6 @@
 ---
 title: 'DeNA LLM 스터디 Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션'
-description: >-
-  DeNA LLM 스터디 시리즈 최종회. n8n 워크플로우, 에이전트 설계 원칙, 멀티 에이전트 오케스트레이션 패턴, 메모리 관리 전략을 실무
-  관점에서 정리합니다.
+description: 'DeNA LLM 스터디 시리즈 최종회. n8n 워크플로우 자동화부터 ReAct·Plan&Execute 에이전트 설계 원칙, 멀티 에이전트 오케스트레이션 패턴, 메모리 관리 전략까지 총망라합니다. 구현 코드와 함께 실무에서 즉시 쓸 수 있는 에이전트 아키텍처 가이드의 완결편입니다.'
 pubDate: '2025-12-12'
 heroImage: ../../../assets/blog/dena-llm-study-part5-agent-design-hero.jpg
 tags:
@@ -44,8 +42,8 @@ faq:
     answer: "LLM의 함수 호출은 100% 신뢰할 수 없어서 잘못된 파라미터, 존재하지 않는 도구 호출, 무한 루프 같은 문제가 발생합니다. 그래서 도구 존재 여부와 파라미터 스키마를 검증하고 호출 빈도를 제한하는 레이어, 그리고 오류를 분석해 자동 재시도하는 Self-Healing 패턴이 프로덕션에 필수입니다."
   - question: "비용 최적화 기법을 결합하면 실제로 얼마나 절감되나요?"
     answer: "시맨틱 캐싱(60% 히트율), SLM 라우팅, 모델 복잡도 평가를 결합한 사례에서 요청당 평균 비용이 0.014달러에서 0.00196달러로 약 86% 절감되었습니다. 레이턴시도 2000ms에서 410ms로 약 79% 줄었습니다. DeNA NOC Alert Agent 사례에서는 월 운영 비용이 1,200달러에서 350달러로 떨어졌습니다."
----
 
+---
 > <strong>시리즈: DeNA LLM 스터디</strong> (5/5 - 최종회)
 >
 > 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)

@@ -1,6 +1,6 @@
 ---
 title: DeNA LLM 研究 Part 5：智能体设计与多智能体编排
-description: DeNA LLM 研究系列完结篇。从实务角度整理 n8n 工作流、智能体设计原则、多智能体编排模式和内存管理策略。
+description: 'DeNA LLM 研究系列终篇。内容涵盖n8n工作流自动化方案、ReAct与Plan&Execute智能体设计原则、多智能体编排模式的实战对比、内存管理策略与状态持久化，以及Tool Use和Reflection机制的实际应用方法。每个模式都配有具体实现思路，是适合直接应用于生产项目的智能体架构完整指南。'
 pubDate: '2025-12-12'
 heroImage: ../../../assets/blog/dena-llm-study-part5-agent-design-hero.jpg
 tags:
@@ -42,8 +42,8 @@ faq:
     answer: "LLM的函数调用无法做到百分之百可信，会出现错误参数、调用不存在的工具、无限循环等问题。因此需要一个检查工具是否存在、验证参数模式并限制调用频率的层，以及一个分析错误并自动重试的Self-Healing模式，这些在生产环境中是必需的。"
   - question: "组合使用成本优化技术实际能节省多少？"
     answer: "在结合语义缓存（命中率60％）、SLM路由和复杂度评估的案例中，每次请求的平均成本从0.014美元降至0.00196美元，约节省86％。延迟也从2000毫秒降至410毫秒，约下降79％。在DeNA NOC Alert Agent案例中，月运营成本从1,200美元降至350美元。"
----
 
+---
 > <strong>系列: DeNA LLM 研究</strong> (5/5 - 最终篇)
 >
 > 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)

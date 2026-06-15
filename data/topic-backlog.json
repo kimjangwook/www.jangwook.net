@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-14",
+  "updated_at": "2026-06-15",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3676,6 +3676,42 @@
       "added_at": "2026-06-14",
       "status": "queued",
       "notes": "claude-fable-5-claude-code-workflow-upgrade-guide 후속편으로 자연스러운 시리즈 구성. 코드베이스 전체 로드 → 아키텍처 분석 → 문서 자동 생성 실전 패턴. 128K 출력 한도 내에서 최대 가치를 끌어내는 방법."
+    },
+    {
+      "slug": "claude-code-hooks-automation-practical-guide-2026",
+      "title_idea": "Claude Code Hooks 실전 자동화 가이드: pre-commit·post-tool-call·user-prompt-submit 완벽 활용법",
+      "content_type": "how-to",
+      "target_keyword": "claude code hooks 자동화",
+      "secondary_keywords": [
+        "claude code pre-commit hook",
+        "claude code post-tool-call",
+        "claude code 자동화 워크플로우",
+        "claude code hooks 설정"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Claude Code hooks 시스템은 개발 워크플로우 자동화의 핵심 기능. 실제 사용 사례가 부족한 영역.",
+      "added_at": "2026-06-15",
+      "status": "queued",
+      "notes": "블로그 내 claude-code-masterclass 시리즈와 자연스럽게 연결. hooks로 lint, 빌드, 테스트 자동화까지 실전 예제 포함. How-to 형식으로 단계별 구성."
+    },
+    {
+      "slug": "python-asyncio-ai-api-parallel-calls-guide-2026",
+      "title_idea": "Python asyncio로 AI API 병렬 호출 최적화하기: Claude·OpenAI·Gemini 동시 처리 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "python asyncio AI API 병렬 처리",
+      "secondary_keywords": [
+        "python asyncio semaphore",
+        "asyncio gather AI API",
+        "python 비동기 LLM 호출",
+        "anthropic sdk asyncio"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "AI 애플리케이션 개발에서 API 비동기 처리는 필수. asyncio + semaphore 패턴으로 비용과 속도 모두 최적화.",
+      "added_at": "2026-06-15",
+      "status": "queued",
+      "notes": "fastapi-claude-api-streaming-production-guide-2026와 연결 가능. 실제 rate limit 처리, retry 로직, 병렬 호출 패턴을 실무 코드로. Python 개발자 독자층 타깃."
     }
   ]
 }
