@@ -354,6 +354,26 @@ TypeScript 생태계에서 Mastra와 가장 가깝게 비교할 수 있는 건 V
 
 두 번째는 Mastra Studio가 아직 프로덕션 배포 개념과 분리되어 있다는 점이다. Studio는 개발 도구인데, 실제로 에이전트를 프로덕션에 배포하는 방법에 대한 문서가 아직 충분하지 않다. Vercel에 배포하는 공식 가이드는 있지만 Docker나 자체 서버 배포는 직접 파악해야 한다.
 
+## 언제 Mastra를 쓰고, 언제 피해야 하나
+
+직접 써본 뒤 정리한 판단 기준이다. 도구 선택은 결국 상황에 달려 있다.
+
+**Mastra가 잘 맞는 경우**
+
+- TypeScript/JavaScript 기반 프로젝트에서 에이전트를 처음 도입할 때. 팀이 이미 Node 생태계에 익숙하다면 Python 스택을 새로 들이는 것보다 진입 비용이 낮다.
+- 에이전트 루프, 메모리, 옵저버빌리티를 한 SDK 안에서 끝내고 싶을 때. 여러 라이브러리를 직접 엮는 작업을 줄여준다.
+- 워크플로우(그래프 기반 멀티스텝 파이프라인)가 필요한 경우. `.then()` / `.branch()` / `.parallel()`의 타입 안전한 조합이 강점이다.
+- LLM 제공자를 자주 바꿔가며 실험하는 단계. 모델 문자열만 교체하면 OpenAI, Anthropic, Gemini를 오갈 수 있다. 비용과 응답 속도 트레이드오프는 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 더 자세히 다뤘다.
+
+**피하는 게 나은 경우**
+
+- 미션 크리티컬한 프로덕션 서비스에 당장 투입해야 할 때. v1.0이 나온 지 반년이 안 됐고, API 안정성과 서드파티 통합 생태계가 LangChain 수준에 못 미친다.
+- Python 라이브러리 생태계(LangGraph, CrewAI, PydanticAI)의 성숙도와 커뮤니티 플러그인이 결정적인 경우. 선택지 비교는 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)를 참고하면 좋다.
+- Vercel 외의 환경(Docker, 자체 서버)에 복잡한 배포 파이프라인을 즉시 구축해야 할 때. 공식 배포 문서가 아직 얇다.
+- 단순히 LLM 호출 한두 번이면 충분한 경우. 그럴 땐 Vercel AI SDK만으로도 충분하고, 에이전트 추상화의 오버헤드가 불필요하다.
+
+순수하게 툴 호출 패턴만 비교하고 싶다면 [Claude Agent SDK 툴 사용 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)와 나란히 놓고 보면 설계 차이가 분명해진다.
+
 ## 지금 Mastra를 써볼 만한가
 
 나는 Yes라고 본다. 단, 조건이 있다.
@@ -373,3 +393,10 @@ npm run dev
 ```
 
 `http://localhost:4111`에서 Mastra Studio가 열리면 첫 에이전트와 대화할 수 있다. 그게 전부다.
+
+## 참고 자료
+
+- [Mastra 공식 사이트](https://mastra.ai/) — 프레임워크 소개, 기능 개요, 가격 정책
+- [Mastra 공식 문서](https://mastra.ai/docs) — 에이전트, 워크플로우, 메모리, 옵저버빌리티 가이드
+- [Mastra GitHub 저장소](https://github.com/mastra-ai/mastra) — 소스 코드, 이슈, 릴리스 노트
+- [Open-Meteo API](https://open-meteo.com/) — 날씨 툴이 사용하는 무료 날씨 데이터 API

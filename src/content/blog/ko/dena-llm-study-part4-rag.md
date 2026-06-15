@@ -806,6 +806,52 @@ def sanitize_response(response):
     return response
 ```
 
+## 언제 어떤 RAG 전략을 쓰고, 언제 피할지
+
+스터디 자료를 정리하면서 가장 자주 받은 질문이 "그래서 우리 프로젝트엔 뭘 써야 하나요?"였습니다. 정답은 하나가 아니라 상황에 따라 다릅니다. 아래 기준은 DeNA 스터디와 실제로 손대본 경험을 합쳐 정리한 것입니다.
+
+### 기본 RAG (Dense 단독)를 쓸 때
+
+- 문서량이 수천 건 이하이고, 질문이 대부분 단일 사실 조회일 때
+- 프로토타입을 빠르게 만들어 베이스라인을 잡아야 할 때
+- 검색 인프라에 투자할 여력이 없을 때
+
+<strong>피해야 할 때</strong>: 정확한 키워드(제품 코드, 법조항 번호, 함수명)가 중요한 도메인. Dense 임베딩은 이런 토큰을 놓치기 쉽습니다. 이 경우는 곧바로 하이브리드로 가는 편이 낫습니다.
+
+### 하이브리드 검색 + Reranking을 쓸 때
+
+- 검색 품질이 곧 비즈니스 지표(전환율, 응대 시간)와 직결될 때
+- 키워드 매칭과 의미 검색이 모두 필요한 혼합 질의가 많을 때
+- Recall은 나오는데 상위 결과의 정밀도가 부족할 때 (Reranking이 특효)
+
+벡터 저장소 선택이 고민이라면 [2026 벡터 DB 비교: Qdrant vs Chroma vs pgvector](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector)에서 하이브리드 검색 지원 여부와 운영 부담을 비교해두었습니다.
+
+<strong>피해야 할 때</strong>: 응답 지연이 수십 ms 단위로 빡빡한 실시간 경로. Cross-Encoder Reranking은 지연을 늘리므로, 이럴 땐 ColBERT처럼 가벼운 방식이나 Reranking 생략을 검토합니다.
+
+### GraphRAG를 쓸 때
+
+- "A와 연결된 B를 거쳐 C를 찾는" 다단계 관계 추론이 필요할 때
+- 문서 전체를 가로지르는 요약형 질문("이 보고서들의 공통 리스크는?")이 많을 때
+- 조직도, 판례, 인용 네트워크처럼 엔티티 관계가 본질인 데이터
+
+<strong>피해야 할 때</strong>: [Microsoft GraphRAG 문서](https://microsoft.github.io/graphrag/)도 명시하듯 그래프 인덱싱은 비용이 큽니다. 문서가 자주 바뀌거나 단순 사실 조회 위주라면 인덱싱 비용 대비 효과가 떨어집니다. 작게 시작해 효과를 검증한 뒤 확장하세요.
+
+### Agentic RAG를 쓸 때
+
+- 한 번의 검색으로는 답이 안 나오고, 검색 → 평가 → 재검색 루프가 필요할 때
+- 여러 도구(벡터 검색, 키워드, 웹, SQL)를 질문에 따라 골라 써야 할 때
+
+<strong>피해야 할 때</strong>: 비용과 지연에 민감한 대량 트래픽 경로. 반복 호출은 토큰과 시간을 곱으로 늘립니다. 프레임워크 선택이 고민이라면 [LlamaIndex vs LangChain vs Haystack RAG 프레임워크 비교 2026](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)에서 에이전트형 검색 추상화가 어떻게 다른지 정리했으니 참고하세요.
+
+### 한 장 요약
+
+| 상황 | 권장 전략 | 피해야 할 신호 |
+| --- | --- | --- |
+| 단순 사실 조회, 소규모 | 기본 RAG (Dense) | 정확 키워드가 핵심인 도메인 |
+| 혼합 질의, 정밀도 부족 | 하이브리드 + Reranking | 초저지연 실시간 경로 |
+| 관계·다단계 추론 | GraphRAG | 잦은 문서 갱신, 단순 조회 |
+| 반복 검색·다중 도구 | Agentic RAG | 비용·지연 민감 대량 트래픽 |
+
 ## RAG를 다시 보게 된 이유
 
 스터디를 듣기 전과 후의 가장 큰 차이는 시각이었습니다. "검색 후 생성"이라는 한 줄 요약으로는 부족합니다. 검색 단계 하나하나가 작은 엔지니어링 문제였고, 그 합이 시스템의 성패를 갈랐습니다.
@@ -857,11 +903,17 @@ DeNA 스터디 시리즈의 마지막 Part 5에서는:
 - [RAG and Beyond: A Comprehensive Survey](https://arxiv.org/abs/2409.14924) (2024)
 - [Self-RAG: Learning to Retrieve, Generate, and Critique](https://arxiv.org/abs/2310.11511) (2023)
 
+### 공식 문서 및 1차 출처
+
+- [Microsoft GraphRAG (GitHub)](https://github.com/microsoft/graphrag) — Microsoft가 공개한 그래프 기반 RAG 공식 구현
+- [Microsoft GraphRAG 공식 문서](https://microsoft.github.io/graphrag/) — 인덱싱·쿼리 파이프라인과 비용 가이드
+- [LlamaIndex 공식 문서](https://docs.llamaindex.ai/) — RAG 파이프라인 구축 공식 가이드
+- [LangChain RAG 튜토리얼](https://python.langchain.com/docs/tutorials/rag/) — 공식 RAG 구현 튜토리얼
+
 ### 오픈소스 프로젝트
 
 - [FlagEmbedding (BGE 모델)](https://github.com/FlagOpen/FlagEmbedding)
-- [LangChain RAG 튜토리얼](https://python.langchain.com/docs/tutorials/rag/)
-- [LlamaIndex](https://github.com/run-llama/llama_index)
+- [LlamaIndex (GitHub)](https://github.com/run-llama/llama_index)
 
 ### 도구 및 플랫폼
 

@@ -547,6 +547,37 @@ Tool Use를 실제로 써보면서 느낀 한계를 정리한다.
 
 나는 Tool Use가 과소평가됐다고 본다. 에이전트 프레임워크들이 화려한 추상화를 제공하지만, 결국 그 내부에는 이 패턴이 있다. [PydanticAI의 타입 안전한 도구 정의 방식](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)처럼 프레임워크가 JSON 스키마 생성을 자동화해주는 건 편리하지만, 기반 메커니즘을 직접 이해하고 있어야 디버깅할 때 막히지 않는다.
 
+## 언제 Tool Use를 쓰고, 언제 피할까
+
+직접 써보면서 정리한 판단 기준이다. 모든 챗봇 호출에 도구를 붙일 필요는 없다.
+
+<strong>Tool Use가 맞는 경우</strong>:
+
+- 정확성이 신뢰성보다 중요할 때. 날짜 계산, 환율 변환, 수치 연산처럼 틀리면 안 되는 작업은 모델이 직접 생성하게 두지 말고 함수에 위임한다.
+- 모델이 모르는 실시간 데이터가 필요할 때. 학습 컷오프 이후의 정보, 사내 데이터베이스, 외부 API 응답은 도구로만 가져올 수 있다.
+- 부작용이 있는 행동을 실행해야 할 때. 파일 쓰기, 이메일 전송, 티켓 생성 같은 작업은 모델이 "무엇을" 할지 결정하고 실제 실행은 검증된 코드가 맡는 구조가 안전하다.
+- 여러 단계를 거쳐 결과를 조합해야 할 때. 이슈 목록을 가져와서 → 상세를 읽고 → 요약하는 식의 다단계 작업은 에이전틱 루프가 자연스럽게 처리한다.
+
+<strong>Tool Use를 피해야 하는 경우</strong>:
+
+- 모델 내부 지식만으로 충분한 단순 질의응답. "파이썬에서 리스트 정렬하는 법"에 도구를 붙이면 토큰 오버헤드만 늘고 얻는 게 없다.
+- 지연(latency)에 민감한 실시간 UX. 에이전틱 루프는 매 도구 호출마다 왕복이 생긴다. 한 번의 응답이 빨라야 하는 인터페이스라면 루프 횟수를 엄격히 제한하거나 도구 없이 처리한다.
+- 비용 상한이 빡빡한 대량 배치. 도구 정의당 ~250 토큰 고정 오버헤드와 컨텍스트 누적이 호출 수에 곱해진다. 수백만 건 배치라면 도구 없는 단일 호출이 더 경제적일 수 있다.
+- 결정성(determinism)이 필수인 파이프라인. 도구 선택 자체가 비결정적이라, 매번 같은 도구 호출 순서가 보장돼야 하는 워크플로우라면 규칙 기반 코드가 낫다.
+
+기준은 단순하다. "모델이 직접 답하면 틀릴 수 있는가, 아니면 모델이 모르는 걸 가져와야 하는가"를 자문해보면 된다. 둘 중 하나면 Tool Use, 아니면 일반 호출이다. 더 무거운 멀티에이전트 오케스트레이션이 필요해지는 시점은 [Claude Agent Teams로 다중 에이전트를 구성](/ko/blog/ko/claude-agent-teams-guide)할 때인데, 그 전에 단일 에이전트의 Tool Use부터 확실히 잡아두는 게 순서다.
+
+## 참고한 공식 문서
+
+이 글의 패턴은 전부 Anthropic 공식 문서를 기준으로 검증했다. 더 깊이 파고들 독자를 위해 1차 출처를 남긴다.
+
+- [Tool use with Claude — 개요](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview): `tool_use` / `tool_result` 블록, `stop_reason`, 에이전틱 루프의 공식 설명.
+- [Tool use — 도구 정의 레퍼런스](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference): `name` / `description` / `input_schema` 스키마와 토큰 오버헤드에 대한 1차 자료.
+- [Claude Agent SDK 개요](https://platform.claude.com/docs/en/agent-sdk/overview): 도구 루프를 직접 구현하는 대신 SDK가 추상화해주는 상위 계층.
+- [anthropic/claude-agent-sdk-python (GitHub)](https://github.com/anthropics/claude-agent-sdk-python): 공식 파이썬 SDK 저장소와 실행 가능한 예제 코드.
+
+MCP로 도구를 서버화해 재사용하고 싶다면 [FastMCP로 파이썬 MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026) 글이 이 Tool Use 패턴을 표준 프로토콜 위에 올리는 다음 단계를 다룬다.
+
 ## 다섯 줄로 압축한 Tool Use 핵심
 
 anthropic 0.101.0으로 직접 실험한 결과를 요약하면 이렇다.

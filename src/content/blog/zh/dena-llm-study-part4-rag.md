@@ -806,6 +806,52 @@ def sanitize_response(response):
     return response
 ```
 
+## 何时使用哪种 RAG 策略，何时应当避免
+
+整理研究资料时，我被问得最多的问题就是"那我们的项目到底该用哪个?"答案不止一个，要看具体情况。下面的判断标准结合了 DeNA 研究和我亲自上手的经验。
+
+### 何时使用基础 RAG (仅 Dense)
+
+- 文档量在数千份以内，且大多数问题是单一事实查询时
+- 需要快速搭建原型来确立基线时
+- 暂时无力在检索基础设施上投入时
+
+<strong>应当避免的情况</strong>：精确关键词(产品代码、法条编号、函数名)很重要的领域。Dense 嵌入容易漏掉这类 token。这种情况下直接上混合检索更稳妥。
+
+### 何时使用混合检索 + 重排序
+
+- 检索质量直接关系到业务指标(转化率、处理时长)时
+- 同时需要关键词匹配与语义检索的混合查询较多时
+- Recall 没问题但头部结果精度不足时(重排序在此特别见效)
+
+如果纠结于向量库的选择，[2026 向量数据库对比: Qdrant vs Chroma vs pgvector](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector)对混合检索支持与运维负担做了比较。
+
+<strong>应当避免的情况</strong>：响应延迟卡在数十毫秒的实时路径。Cross-Encoder 重排序会增加延迟，此时应考虑 ColBERT 这类轻量方式，或干脆省略重排序。
+
+### 何时使用 GraphRAG
+
+- 需要"经由与 A 相连的 B 找到 C"这类多跳关系推理时
+- 横跨整个文档集的摘要型问题(「这些报告共同的风险是什么?」)较多时
+- 数据本质上就是实体关系：组织架构、判例、引用网络
+
+<strong>应当避免的情况</strong>：正如 [Microsoft GraphRAG 文档](https://microsoft.github.io/graphrag/)所指出的，图索引构建成本很高。如果文档频繁变动，或查询以简单事实查询为主，索引成本就不划算。先小规模开始，验证效果后再扩展。
+
+### 何时使用 Agentic RAG
+
+- 单次检索无法得出答案，需要检索 → 评估 → 再检索的循环时
+- 需要根据问题在多种工具(向量检索、关键词、Web、SQL)间挑选时
+
+<strong>应当避免的情况</strong>：对成本和延迟敏感的大流量路径。反复调用会让 token 和时间成倍增加。如果纠结于框架选择，[LlamaIndex vs LangChain vs Haystack RAG 框架对比 2026](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026)梳理了智能体式检索抽象的差异。
+
+### 一表总结
+
+| 情况 | 推荐策略 | 应避免的信号 |
+| --- | --- | --- |
+| 简单事实查询、小规模 | 基础 RAG (Dense) | 精确关键词为核心的领域 |
+| 混合查询、精度不足 | 混合 + 重排序 | 超低延迟实时路径 |
+| 关系·多跳推理 | GraphRAG | 文档频繁更新、简单查询 |
+| 反复检索·多工具 | Agentic RAG | 对成本·延迟敏感的大流量 |
+
 ## 我对 RAG 的看法为何变了
 
 研究前后变化最大的，是我看问题的角度。"检索后生成"这句话太干净利落了，反而不够用。检索的每一步其实都是一个小小的工程问题，而这些选择叠加起来，才决定了系统的成败。
@@ -855,11 +901,17 @@ def sanitize_response(response):
 - [RAG and Beyond: A Comprehensive Survey](https://arxiv.org/abs/2409.14924) (2024)
 - [Self-RAG: Learning to Retrieve, Generate, and Critique](https://arxiv.org/abs/2310.11511) (2023)
 
+### 官方文档与一手来源
+
+- [Microsoft GraphRAG (GitHub)](https://github.com/microsoft/graphrag) — Microsoft 公开的基于图的 RAG 官方实现
+- [Microsoft GraphRAG 官方文档](https://microsoft.github.io/graphrag/) — 索引·查询管道与成本指南
+- [LlamaIndex 官方文档](https://docs.llamaindex.ai/) — 构建 RAG 管道的官方指南
+- [LangChain RAG 教程](https://python.langchain.com/docs/tutorials/rag/) — 官方 RAG 实现教程
+
 ### 开源项目
 
 - [FlagEmbedding (BGE 模型)](https://github.com/FlagOpen/FlagEmbedding)
-- [LangChain RAG 教程](https://python.langchain.com/docs/tutorials/rag/)
-- [LlamaIndex](https://github.com/run-llama/llama_index)
+- [LlamaIndex (GitHub)](https://github.com/run-llama/llama_index)
 
 ### 工具与平台
 

@@ -190,7 +190,7 @@ Pydantic AI offers five modes for structured output:
 
 It's still not v1.0. A rapidly changing API is the main reason to hesitate before committing to it in production. Sub-1.0 means breaking changes are on the table at any point. I trust Pydantic's quality bar, but watching for stabilization is smarter than rushing in.
 
-Multi-agent scenarios are also limited. For complex orchestration, a more practical setup is LangGraph handling state and flow with Pydantic AI as the structured output layer inside each node. I covered the upper layer in the LangGraph vs CrewAI vs Dapr comparison guide, which is useful context if you're designing a multi-agent system.
+Multi-agent scenarios are also limited. For complex orchestration, a more practical setup is LangGraph handling state and flow with Pydantic AI as the structured output layer inside each node. If you're weighing the upper-layer framework choice, [Google ADK vs LangGraph agent framework comparison](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026) is useful context first. For a hands-on, step-by-step walkthrough of Pydantic AI itself, see the [Pydantic AI type-safe agent tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026).
 
 ## Smolagents: Let the LLM Write the Code
 
@@ -328,4 +328,36 @@ Honestly? I use all three. They're good at different things.
 
 If someone asks "which is best?" my answer is simple. Instructor for structured extraction, Pydantic AI for type-safe agent loops, Smolagents for code-execution agents. That's the whole decision tree.
 
-The LLM API pricing comparison is worth reading alongside this. Whichever library you pick, model selection drives cost dramatically, especially Instructor retry costs and Smolagents code-generation loop overhead.
+[The cost reality of AI agents](/en/blog/en/ai-agent-cost-reality) is worth reading alongside this. Whichever library you pick, model selection drives cost dramatically, especially Instructor retry costs and Smolagents code-generation loop overhead. For the broader architectural picture of [production AI agent design principles](/en/blog/en/dena-llm-study-part5-agent-design), that series is a solid starting point for understanding the problems these libraries solve.
+
+## When to Use Each, and When to Avoid It
+
+Choosing a library means separating "it can do this" from "I should adopt it now." Here's where each one earns a yes and where it should wait.
+
+### Instructor
+
+**Reach for it when** you're already on the OpenAI or Anthropic SDK and just want validated Pydantic objects back. Single-call extraction, form autofill, RAG query classification — work that needs no agent loop. Teams that put production stability first.
+
+**Avoid it when** you need a real agent with tool calls, memory, or iteration loops. Instructor doesn't cover that layer, and forcing it in makes the code messier, not cleaner. Also, if a complex nested schema triggers frequent retries, costs get unpredictable, so cap `max_retries` and design a fallback before you ship that workload.
+
+### Pydantic AI
+
+**Reach for it when** you're starting a new project and want a type-safe agent loop. Your team already knows Pydantic and wants testable structure through dependency injection. You have room to absorb breaking changes at this experimental stage.
+
+**Avoid it when** you're migrating production code that already runs reliably. It's still v0.x, so when the API shifts you eat that cost directly. If you need complex orchestration across ten-plus agents, the multi-agent support isn't there yet, so look at an upper layer like LangGraph first.
+
+### Smolagents
+
+**Reach for it when** you need a code-execution agent and can handle sandboxing (E2B or similar). Workflows that chain several tools in sequence. Research-grade work where you need to read and modify the framework internals. Environments where you can run GPT-4o or Claude Sonnet-class models.
+
+**Avoid it when** you can only run small sub-7B models. Code quality tracks model capability closely, so the risk of executing buggy code climbs. Environments where user input feeds directly into code execution but sandboxing can't be guaranteed. Services that demand enterprise SLAs or long-term stability. Teams without the bandwidth to build auth, rate limiting, and logging themselves.
+
+## Primary Sources and Official Docs
+
+The technical claims here trace back to each library's official documentation and repository. To verify directly, start from these.
+
+- **Pydantic AI official docs**: <https://ai.pydantic.dev> — the primary source for output modes, dependency injection, and tool definitions covered above.
+- **Instructor official docs**: <https://python.useinstructor.com> — the official reference for the `response_model` patch approach, retries, and multi-provider support.
+- **Smolagents repository (HuggingFace)**: <https://github.com/huggingface/smolagents> — original code and docs for the CodeAgent design philosophy, the roughly 1,000-line core, and the sandbox executors.
+
+The benchmark figures (GAIA scores, LLM-call reduction rates) follow HuggingFace's official blog and repo README. They can change over time, so check the latest numbers before you adopt.

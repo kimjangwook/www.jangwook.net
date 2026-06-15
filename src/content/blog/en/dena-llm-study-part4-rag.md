@@ -806,6 +806,52 @@ def sanitize_response(response):
     return response
 ```
 
+## When to Use Each RAG Strategy, and When to Avoid It
+
+The question I got most while writing up the study notes was simply "so what should we use for our project?" There isn't one answer. It depends on the situation. The criteria below combine the DeNA study with what I learned hands-on.
+
+### When to use basic RAG (Dense only)
+
+- The corpus is a few thousand documents or fewer, and most queries are single-fact lookups
+- You need a fast prototype to set a baseline
+- You can't invest much in retrieval infrastructure yet
+
+<strong>When to avoid it</strong>: domains where exact keywords matter (product codes, statute numbers, function names). Dense embeddings tend to miss those tokens. In that case, jump straight to hybrid.
+
+### When to use hybrid search + reranking
+
+- Retrieval quality maps directly to a business metric (conversion, handling time)
+- You see mixed queries that need both keyword matching and semantic search
+- Recall is fine but the precision of top results is weak (reranking shines here)
+
+If picking a vector store is the open question, [2026 Vector DB Comparison: Qdrant vs Chroma vs pgvector](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector) compares hybrid-search support and operational overhead.
+
+<strong>When to avoid it</strong>: real-time paths with a tight latency budget of tens of milliseconds. Cross-Encoder reranking adds latency, so consider a lighter approach like ColBERT or skipping reranking entirely.
+
+### When to use GraphRAG
+
+- You need multi-hop relational reasoning ("find C through B, which connects to A")
+- You get summary-style questions across the whole corpus ("what risk do these reports share?")
+- The data is inherently about entity relationships: org charts, case law, citation networks
+
+<strong>When to avoid it</strong>: as the [Microsoft GraphRAG docs](https://microsoft.github.io/graphrag/) note, graph indexing is expensive. If documents change often or queries are mostly simple lookups, the indexing cost outweighs the benefit. Start small, validate, then scale.
+
+### When to use Agentic RAG
+
+- A single retrieval pass doesn't answer the question, and you need a retrieve → evaluate → re-retrieve loop
+- You need to pick among several tools (vector search, keyword, web, SQL) per query
+
+<strong>When to avoid it</strong>: high-traffic paths sensitive to cost and latency. Iterative calls multiply tokens and time. If the framework choice is the open question, [LlamaIndex vs LangChain vs Haystack RAG Framework Comparison 2026](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) covers how their agentic retrieval abstractions differ.
+
+### One-table summary
+
+| Situation | Recommended strategy | Signal to avoid |
+| --- | --- | --- |
+| Simple fact lookup, small scale | Basic RAG (Dense) | Domain where exact keywords are key |
+| Mixed queries, weak precision | Hybrid + Reranking | Ultra-low-latency real-time path |
+| Relational / multi-hop reasoning | GraphRAG | Frequent doc updates, simple lookups |
+| Iterative retrieval, multiple tools | Agentic RAG | Cost/latency-sensitive high traffic |
+
 ## Why I See RAG Differently Now
 
 The biggest shift was in how I frame the problem. "Retrieve and generate" is too tidy a summary. Each retrieval step turned out to be its own small engineering problem, and the sum of those choices is what made or broke the system.
@@ -855,11 +901,17 @@ In the final Part 5 of DeNA's study series, we'll cover:
 - [RAG and Beyond: A Comprehensive Survey](https://arxiv.org/abs/2409.14924) (2024)
 - [Self-RAG: Learning to Retrieve, Generate, and Critique](https://arxiv.org/abs/2310.11511) (2023)
 
+### Official Docs and Primary Sources
+
+- [Microsoft GraphRAG (GitHub)](https://github.com/microsoft/graphrag) — Microsoft's official graph-based RAG implementation
+- [Microsoft GraphRAG Documentation](https://microsoft.github.io/graphrag/) — indexing/query pipeline and cost guidance
+- [LlamaIndex Documentation](https://docs.llamaindex.ai/) — official guide to building RAG pipelines
+- [LangChain RAG Tutorial](https://python.langchain.com/docs/tutorials/rag/) — official RAG implementation tutorial
+
 ### Open Source Projects
 
 - [FlagEmbedding (BGE Models)](https://github.com/FlagOpen/FlagEmbedding)
-- [LangChain RAG Tutorial](https://python.langchain.com/docs/tutorials/rag/)
-- [LlamaIndex](https://github.com/run-llama/llama_index)
+- [LlamaIndex (GitHub)](https://github.com/run-llama/llama_index)
 
 ### Tools and Platforms
 

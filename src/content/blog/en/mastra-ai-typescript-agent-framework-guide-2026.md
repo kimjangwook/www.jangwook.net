@@ -273,6 +273,26 @@ The Memory setup barrier. New users following the official example will hit an e
 
 Production deployment documentation is thin. Mastra Studio is a development tool, but the path from "working locally" to "deployed on my server" isn't well documented outside of the Vercel deployment guide. Docker and self-hosted setups require figuring things out yourself.
 
+## When to Use Mastra, and When to Avoid It
+
+Here's the judgment I landed on after actually using it. Tool choice always comes down to context.
+
+**Mastra is a good fit when:**
+
+- You're introducing agents into a TypeScript/JavaScript project for the first time. If your team already lives in the Node ecosystem, the entry cost is lower than standing up a fresh Python stack.
+- You want the agent loop, memory, and observability handled inside one SDK instead of wiring several libraries together yourself.
+- You need workflows — graph-based multi-step pipelines. The type-safe composition of `.then()`, `.branch()`, and `.parallel()` is a real strength.
+- You're experimenting and switching LLM providers often. Swapping the model string moves you between OpenAI, Anthropic, and Gemini. The cost-versus-latency tradeoff is something I dug into in [the reality of AI agent costs](/en/blog/en/ai-agent-cost-reality).
+
+**Avoid it (for now) when:**
+
+- You need to ship a mission-critical production service today. v1.0 is less than six months old, and API stability plus the third-party integration ecosystem don't yet match LangChain.
+- The maturity and community plugins of the Python ecosystem (LangGraph, CrewAI, PydanticAI) are decisive for you. For weighing the options, see [the Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026).
+- You need a complex deployment pipeline on something other than Vercel (Docker, self-hosted) right away. The official deployment docs are still thin there.
+- A simple one-or-two-shot LLM call is all you need. In that case Vercel AI SDK alone is enough, and the agent abstraction is overhead you don't need.
+
+If you want to compare the raw tool-calling pattern, putting it next to the [Claude Agent SDK tool use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) makes the design differences clear.
+
 ## Is It Worth Trying Right Now?
 
 Yes, with caveats.
@@ -293,3 +313,10 @@ npm run dev
 ```
 
 The TypeScript AI agent ecosystem finally has a real contender. It's not fully there yet, but it's the most promising thing I've seen on the TypeScript side in a while.
+
+## References
+
+- [Mastra official site](https://mastra.ai/) — framework intro, feature overview, pricing
+- [Mastra official docs](https://mastra.ai/docs) — guides for agents, workflows, memory, and observability
+- [Mastra GitHub repository](https://github.com/mastra-ai/mastra) — source code, issues, release notes
+- [Open-Meteo API](https://open-meteo.com/) — the free weather data API used by the weather tool

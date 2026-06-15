@@ -395,6 +395,37 @@ if final_message.stop_reason == "tool_use":
 
 我认为Tool Use被低估了。代理框架提供了华丽的抽象，但归根结底底层运行的就是这个模式。像[PydanticAI的类型安全工具定义方式](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)这样的框架自动生成JSON Schema很方便，但只有理解底层机制，才能在出问题时找到根因。
 
+## 什么时候用Tool Use，什么时候避免
+
+这是我实际构建后总结出的判断标准。并非每个聊天机器人调用都需要挂上工具。
+
+<strong>适合用Tool Use的情况</strong>：
+
+- 准确性比流畅度更重要时。日期计算、汇率换算、数值运算这类不能出错的任务，应交给函数而非让模型直接生成。
+- 需要模型不掌握的实时数据时。训练截止之后的信息、内部数据库、外部API响应，只能通过工具获取。
+- 需要执行有副作用的动作时。写文件、发邮件、创建工单等，由模型决定"做什么"、实际执行交给经过验证的代码，这种结构才安全。
+- 需要经过多步骤组合结果时。取出issue列表 → 读取详情 → 汇总，这类多阶段任务由代理循环自然处理。
+
+<strong>应该避免Tool Use的情况</strong>：
+
+- 仅靠模型内部知识就足够的简单问答。给"Python里怎么给列表排序"挂工具只会徒增token开销。
+- 对延迟敏感的实时UX。代理循环每次工具调用都会产生一次往返。如果单次响应必须快，就严格限制循环次数或干脆不用工具。
+- 成本上限很紧的大批量任务。每个工具定义约250 token的固定开销和上下文累积会乘以调用次数。数百万条的批处理，无工具的单次调用可能更经济。
+- 必须确定性的流水线。工具选择本身是非确定的，如果工作流需要每次都保证相同的调用顺序，规则化代码更合适。
+
+判断标准很简单：自问"模型直接回答会不会出错，或者它是否需要去取自己不知道的东西"。两者之一就用Tool Use，否则普通调用即可。需要更重的多代理编排的时间点，是在[用Claude Agent Teams组建多代理](/zh/blog/zh/claude-agent-teams-guide)时，但在那之前先把单代理的Tool Use吃透才是正确顺序。
+
+## 参考的官方文档
+
+本文的所有模式都以Anthropic官方文档为准进行了验证。为想深入研究的读者留下一手出处。
+
+- [Tool use with Claude — 概览](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview)：`tool_use` / `tool_result` 块、`stop_reason`、代理循环的官方说明。
+- [Tool use — 工具定义参考](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference)：关于 `name` / `description` / `input_schema` 模式与token开销的一手资料。
+- [Claude Agent SDK 概览](https://platform.claude.com/docs/en/agent-sdk/overview)：无需自己实现工具循环、由SDK抽象化的上层。
+- [anthropic/claude-agent-sdk-python (GitHub)](https://github.com/anthropics/claude-agent-sdk-python)：官方Python SDK仓库与可运行的示例代码。
+
+如果想用MCP把工具服务化并复用，[用FastMCP构建Python MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)这篇文章介绍了把这个Tool Use模式搬到标准协议上的下一步。
+
 ## 浓缩成五条的Tool Use要点
 
 用anthropic 0.101.0直接实验下来，结论是这样：

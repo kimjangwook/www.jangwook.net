@@ -806,6 +806,52 @@ def sanitize_response(response):
     return response
 ```
 
+## どのRAG戦略をいつ使い、いつ避けるか
+
+スタディ資料をまとめていて一番よく受けた質問が「結局うちのプロジェクトには何を使えばいいの?」でした。答えは一つではなく、状況によります。以下の基準は、DeNAスタディと実際に手を動かした経験を合わせたものです。
+
+### 基本RAG (Dense単独) を使うとき
+
+- 文書量が数千件以下で、質問の多くが単一事実の照会のとき
+- プロトタイプを素早く作ってベースラインを取りたいとき
+- 検索インフラに投資する余裕がまだないとき
+
+<strong>避けるべきとき</strong>: 正確なキーワード(製品コード、条文番号、関数名)が重要なドメイン。Dense埋め込みはこうしたトークンを取りこぼしがちです。この場合はすぐにハイブリッドへ進む方が無難です。
+
+### ハイブリッド検索 + Rerankingを使うとき
+
+- 検索品質がそのままビジネス指標(コンバージョン、応対時間)に直結するとき
+- キーワードマッチと意味検索の両方が必要な混合クエリが多いとき
+- Recallは出るが上位結果の精度が足りないとき(Rerankingが特効)
+
+ベクトルストア選びで迷うなら、[2026 ベクトルDB比較: Qdrant vs Chroma vs pgvector](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector)でハイブリッド検索対応と運用負担を比較しています。
+
+<strong>避けるべきとき</strong>: 応答遅延が数十ms単位で厳しいリアルタイム経路。Cross-Encoder Rerankingは遅延を増やすため、ColBERTのような軽量な方式やReranking省略を検討します。
+
+### GraphRAGを使うとき
+
+- 「AとつながるBを経由してCを探す」多段階の関係推論が必要なとき
+- 文書全体を横断する要約型の質問(「これらの報告書に共通するリスクは?」)が多いとき
+- 組織図、判例、引用ネットワークのようにエンティティ関係が本質のデータ
+
+<strong>避けるべきとき</strong>: [Microsoft GraphRAGのドキュメント](https://microsoft.github.io/graphrag/)も明記する通り、グラフのインデックス構築はコストが大きいです。文書が頻繁に変わる、または単純な事実照会が中心なら、インデックスコストに見合いません。小さく始めて効果を検証してから拡張しましょう。
+
+### Agentic RAGを使うとき
+
+- 一度の検索では答えが出ず、検索 → 評価 → 再検索のループが必要なとき
+- 複数のツール(ベクトル検索、キーワード、Web、SQL)を質問に応じて選び分けるとき
+
+<strong>避けるべきとき</strong>: コストと遅延に敏感な大量トラフィック経路。反復呼び出しはトークンと時間を掛け算で増やします。フレームワーク選びで迷うなら、[LlamaIndex vs LangChain vs Haystack RAGフレームワーク比較 2026](/ja/blog/ja/llamaindex-vs-langchain-vs-haystack-rag-2026)でエージェント型検索の抽象化の違いを整理しています。
+
+### 一枚まとめ
+
+| 状況 | 推奨戦略 | 避けるべきサイン |
+| --- | --- | --- |
+| 単純な事実照会、小規模 | 基本RAG (Dense) | 正確なキーワードが核心のドメイン |
+| 混合クエリ、精度不足 | ハイブリッド + Reranking | 超低遅延のリアルタイム経路 |
+| 関係・多段階推論 | GraphRAG | 頻繁な文書更新、単純照会 |
+| 反復検索・複数ツール | Agentic RAG | コスト・遅延に敏感な大量トラフィック |
+
 ## RAGを見る目が変わった理由
 
 スタディの前後で一番変わったのは、問題の捉え方でした。「検索してから生成する」という一行のまとめでは足りません。検索の一段一段が小さなエンジニアリング課題で、その積み重ねがシステムの成否を分けていました。
@@ -857,11 +903,17 @@ DeNAスタディシリーズの最後のPart 5では:
 - [RAG and Beyond: A Comprehensive Survey](https://arxiv.org/abs/2409.14924) (2024)
 - [Self-RAG: Learning to Retrieve, Generate, and Critique](https://arxiv.org/abs/2310.11511) (2023)
 
+### 公式ドキュメントと一次情報
+
+- [Microsoft GraphRAG (GitHub)](https://github.com/microsoft/graphrag) — Microsoftが公開したグラフベースRAGの公式実装
+- [Microsoft GraphRAG 公式ドキュメント](https://microsoft.github.io/graphrag/) — インデックス・クエリのパイプラインとコストガイド
+- [LlamaIndex 公式ドキュメント](https://docs.llamaindex.ai/) — RAGパイプライン構築の公式ガイド
+- [LangChain RAGチュートリアル](https://python.langchain.com/docs/tutorials/rag/) — 公式のRAG実装チュートリアル
+
 ### オープンソースプロジェクト
 
 - [FlagEmbedding (BGEモデル)](https://github.com/FlagOpen/FlagEmbedding)
-- [LangChain RAGチュートリアル](https://python.langchain.com/docs/tutorials/rag/)
-- [LlamaIndex](https://github.com/run-llama/llama_index)
+- [LlamaIndex (GitHub)](https://github.com/run-llama/llama_index)
 
 ### ツールとプラットフォーム
 
