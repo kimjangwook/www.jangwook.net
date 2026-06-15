@@ -348,13 +348,35 @@ Nginxの`proxy_buffering off`が抜けている場合がほとんどだ。もし
 
 `BASE_DELAY`が短すぎるか、短時間にリクエストが集中するバーストトラフィックが原因だ。AnthropicのRate LimitsページでプランごとのTPM/RPM上限を確認し、`BASE_DELAY`を最低5秒以上に上げることを推奨する。
 
-## このスタックが本領を発揮する場面
+## いつ使い、いつ避けるべきか
 
-FastAPI + AsyncAnthropic + uvicornの組み合わせは次の状況によく合う：
+ストリーミングバックエンドを無条件にSSE + FastAPIで組むのが正解とは限らない。実際に運用した経験から、選択基準を整理する。
+
+**このスタックが本領を発揮する場面**:
 
 - Pythonチームがすでにあり、新しい言語スタック導入コストを避けたいとき
 - ストリーミングがコアUX要素であるAIチャット、コード生成、文書作成サービス
 - OpenAPIドキュメント自動化とPydanticバリデーションが必要なチーム
+- 既存のFastAPIまたはDjango RESTバックエンドにAI機能を段階的に追加する状況
+
+**避けたほうがよい場面**:
+
+- レスポンスを一括で受け取ってもUXに支障がない短い分類・抽出タスク。この場合は単純なリクエスト-レスポンスのほうがコードもシンプルでデバッグも楽だ。
+- 1,000件以上のドキュメントを一括処理するバッチ作業。ストリーミングは意味がなく、Anthropic Message Batches APIがコスト面で半分程度になる。
+- 双方向リアルタイム操作（タイピングインジケーター、同時編集）が必要な場合。SSEは単方向なのでWebSocketが適切だ。
+- ローカル・オンプレミス環境で外部API呼び出し自体がブロックされている場合。まずはセルフホストモデルが先になる。セルフホストの選択肢は[OllamaとFastAPIでプロダクションデプロイする方法](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)で扱った。
+
+つまり「長い出力 + リアルタイム表示」という二つの条件が同時に成立するときだけ、このパターンの複雑さが正当化される。どちらか一方が欠ければ、より単純な方法がある。
+
+## 一次ソースと参考資料
+
+この記事のコードは以下の公式ドキュメントを基準に作成・検証した。バージョンが上がると動作が変わることがあるので、実装前に一度確認することを推奨する。
+
+- [FastAPI公式ドキュメント — Custom Response / StreamingResponse](https://fastapi.tiangolo.com/advanced/custom-response/): `StreamingResponse`のジェネレーター動作とキャンセル処理に関する公式説明。
+- [Anthropic — Streaming Messages](https://docs.claude.com/en/docs/build-with-claude/streaming): Claude APIのSSEストリーミングイベント構造とSDKごとの使い方。
+- [MDN — Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events): SSEイベントフォーマット（`data:`、`event:`、`id:`、`retry:`）と`EventSource` APIの標準定義。
+
+型安全なリクエストスキーマをより厳密にしたいなら、[Pydantic AIで型安全なエージェントを作る](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)も併せて読むと役立つ。
 
 正直に言うと、このスタックがすべての状況で最善ではない。Node.jsチームならVercel AI SDKの方が速く、大規模なリアルタイム接続が必要ならWebSocketやgRPC Streamingが良い選択肢になる。しかしPython AIバックエンドを素早く立ち上げたいなら、このパターンは自分が実際に検証した最も実用的な出発点だ。
 

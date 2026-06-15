@@ -377,6 +377,37 @@ for name, model in providers.items():
 
 Reading Production AI Agent Design Principles alongside this post clarifies what criteria matter most when choosing an agent framework.
 
+## When to Use It and When to Avoid It
+
+An honest read from actually shipping with it. It isn't the right tool for every project.
+
+**Reach for PydanticAI when**:
+
+- Structured output is central. If you force LLM responses into a Pydantic model and build business logic on top, the type safety pays off directly.
+- You already run a FastAPI or Pydantic v2 stack. `deps_type` shares the mental model of `Depends()`, so the learning cost is close to zero.
+- You plan to A/B test providers or swap models for cost reasons. The agent code stays untouched.
+- You want to unit-test agent logic in CI without paying for API calls. The TestModel and FunctionModel combination shines here.
+
+**Hold off or avoid when**:
+
+- You're on a Pydantic v1 legacy codebase. Migration cost can exceed the benefit of adopting the framework.
+- Streaming structured output is a core product feature. The current implementation is beta, so stability isn't guaranteed.
+- Complex multi-agent graph orchestration is the main goal. That space is more mature on the LangGraph side. The criteria in [Google ADK vs LangGraph](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026) help you decide.
+- You can't keep up with version pinning and CHANGELOG tracking. It's pre-1.0, so breaking changes really do happen.
+
+In short, it's the best option right now for type-centric single or small-agent setups. For large graph workflows or v1 environments, look at other tools first.
+
+## References (Primary Sources)
+
+Official docs and repos I verified directly. Versions move fast, so check the source before you build.
+
+- [PydanticAI official docs](https://ai.pydantic.dev) — full reference for agents, tools, and output types
+- [PydanticAI testing guide](https://ai.pydantic.dev/testing/) — official coverage of TestModel and FunctionModel
+- [pydantic/pydantic-ai (GitHub)](https://github.com/pydantic/pydantic-ai) — source, CHANGELOG, and release notes
+- [pydantic/pydantic (GitHub)](https://github.com/pydantic/pydantic) — the underlying Pydantic v2 library
+
+For more in the same Python track, see [Building an MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026) and the [FastAPI + Claude API streaming production guide](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026).
+
 ## Summary: Core Patterns at a Glance
 
 ```python

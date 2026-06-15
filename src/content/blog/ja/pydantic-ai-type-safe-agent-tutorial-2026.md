@@ -344,6 +344,37 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 
 プロダクションAIエージェント設計原則と合わせて読むと、エージェントフレームワーク選択においてどんな基準が重要かがより明確になる。
 
+## いつ使い、いつ避けるか
+
+実際に動かした経験を率直にまとめる。すべてのプロジェクトに合う道具ではない。
+
+**PydanticAIを使うべきとき**:
+
+- 構造化出力が中心の場合。LLM応答をPydanticモデルに強制し、その上にビジネスロジックを載せるなら型安全性がそのまま利益になる。
+- すでにFastAPIやPydantic v2ベースのスタックを使っている場合。`deps_type`が`Depends()`と同じメンタルモデルなので学習コストがほぼゼロだ。
+- 複数のプロバイダーをA/Bテストしたり、コスト最適化でモデルを差し替える予定がある場合。エージェントのコードに触れない。
+- APIコストなしにCIでエージェントロジックを単体テストしたい場合。TestModelとFunctionModelの組み合わせがここで活きる。
+
+**避けるか保留するとき**:
+
+- Pydantic v1のレガシーコードベース。マイグレーションコストがフレームワーク導入の利益を上回ることがある。
+- ストリーミング構造化出力が製品の中核機能である場合。現在の実装はベータで安定性を保証しにくい。
+- 複雑なマルチエージェントのグラフオーケストレーションが主目的の場合。その領域はLangGraph側がより成熟している。[Google ADK vs LangGraph比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026)の基準が判断の助けになる。
+- バージョン固定とCHANGELOG追跡を続ける余力がない場合。1.0以前なので非互換な変更が実際に発生する。
+
+まとめると、型中心の単一・少数エージェントには現在最良の選択肢だが、大規模なグラフワークフローやv1環境では他の道具を先に検討するのが妥当だ。
+
+## 参考資料(一次ソース)
+
+直接確認した公式ドキュメントとリポジトリだ。バージョンが頻繁に変わるので、作業前に原文を確認することを勧める。
+
+- [PydanticAI公式ドキュメント](https://ai.pydantic.dev) — エージェント、ツール、出力タイプの全リファレンス
+- [PydanticAI Testingガイド](https://ai.pydantic.dev/testing/) — TestModel・FunctionModelの公式説明
+- [pydantic/pydantic-ai (GitHub)](https://github.com/pydantic/pydantic-ai) — ソース、CHANGELOG、リリースノート
+- [pydantic/pydantic (GitHub)](https://github.com/pydantic/pydantic) — 基盤となるPydantic v2ライブラリ
+
+同じPythonスタックで続けて読むなら、[FastMCPでMCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)と[FastAPI + Claude APIストリーミング本番ガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026)をおすすめする。
+
 ## 次のステップ
 
 TypeScriptスタックならVercel AI SDKでClaudeストリーミングエージェントを作る方法がPythonと似たアプローチを提供する。

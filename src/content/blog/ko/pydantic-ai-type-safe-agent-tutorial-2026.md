@@ -478,6 +478,37 @@ for name, data in results.items():
 
 이 아쉬운 점들을 프로덕션 AI 에이전트 설계 원칙과 함께 읽으면, 에이전트 프레임워크 선택에서 어떤 기준이 중요한지 더 명확해진다.
 
+## 언제 쓰고 / 언제 피할지
+
+써본 결과를 토대로 솔직하게 정리한다. 모든 프로젝트에 맞는 도구는 아니다.
+
+**이럴 때 PydanticAI를 쓴다**:
+
+- 구조화 출력이 핵심인 경우. LLM 응답을 Pydantic 모델로 강제하고 그 위에 비즈니스 로직을 올린다면 타입 안전성이 그대로 이득이 된다.
+- 이미 FastAPI나 Pydantic v2 기반 스택을 쓰고 있는 경우. `deps_type`이 `Depends()`와 같은 멘탈 모델이라 학습 비용이 거의 없다.
+- 여러 프로바이더를 A/B 테스트하거나 비용 최적화로 모델을 갈아끼울 계획이 있는 경우. 에이전트 코드를 건드리지 않는다.
+- API 비용 없이 CI에서 에이전트 로직을 단위 테스트하고 싶은 경우. TestModel과 FunctionModel 조합이 여기서 빛난다.
+
+**이럴 때는 피하거나 보류한다**:
+
+- Pydantic v1 레거시 코드베이스. 마이그레이션 비용이 프레임워크 도입 이득을 넘어설 수 있다.
+- 스트리밍 구조화 출력이 제품의 핵심 기능인 경우. 현재 구현이 베타라 안정성을 보장하기 어렵다.
+- 복잡한 멀티에이전트 그래프 오케스트레이션이 주 목적인 경우. 그 영역은 LangGraph 쪽이 더 성숙하다. [Google ADK vs LangGraph 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026)에서 다룬 기준이 도움이 된다.
+- 버전 고정과 CHANGELOG 추적을 감당할 여력이 없는 경우. 1.0 이전이라 호환성 없는 변경이 실제로 발생한다.
+
+요약하면, 타입 중심 단일/소수 에이전트에는 현재 가장 좋은 선택지이지만, 대규모 그래프 워크플로나 v1 환경에서는 다른 도구를 먼저 검토하는 게 맞다.
+
+## 참고 자료 (1차 출처)
+
+직접 확인한 공식 문서와 저장소다. 버전이 자주 바뀌므로 작업 전 원문을 확인하는 걸 권한다.
+
+- [PydanticAI 공식 문서](https://ai.pydantic.dev) — 에이전트, 도구, 출력 타입 전체 레퍼런스
+- [PydanticAI Testing 가이드](https://ai.pydantic.dev/testing/) — TestModel·FunctionModel 공식 설명
+- [pydantic/pydantic-ai (GitHub)](https://github.com/pydantic/pydantic-ai) — 소스, CHANGELOG, 릴리스 노트
+- [pydantic/pydantic (GitHub)](https://github.com/pydantic/pydantic) — 기반이 되는 Pydantic v2 라이브러리
+
+같은 Python 스택에서 이어 읽을 만한 글로는 [FastMCP로 MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)와 [FastAPI + Claude API 스트리밍 프로덕션 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)를 추천한다.
+
 ## 요약: 핵심 패턴 빠르게 훑기
 
 여기까지 다룬 내용을 한 곳에 정리한다.

@@ -1011,6 +1011,47 @@ await Promise.all(posts.map((post) => analyzePost(post))); // 30초 (70% 단축)
 - 테스트 커버리지: 0% → 80%
 - 안정성: 95% → 99%
 
+## 언제 쓰고, 언제 피해야 할까
+
+Skills와 Commands는 만능 도구가 아니다. 직접 굴려 보면서 "이건 잘 맞는다"와 "여기선 오히려 손해다"가 꽤 명확하게 갈렸다.
+
+<strong>Skills(Model-Invoked)가 잘 맞는 경우</strong>:
+
+- 같은 절차나 체크리스트를 매번 프롬프트에 붙여넣고 있을 때. 공식 문서도 "같은 지시를 반복해서 붙여넣게 될 때 Skill을 만들라"고 권한다.
+- 트리거 조건이 명확한 작업(예: "blog post", "frontmatter" 같은 키워드). description의 "Use when..." 한 줄로 활성화 시점을 Claude가 판단할 수 있어야 효과가 난다.
+- 본문은 짧고 참고 자료가 방대한 경우. Progressive Disclosure 덕분에 SKILL.md 본문은 5K 토큰 이하로 유지하고 나머지는 필요할 때만 읽힌다.
+
+<strong>Skills를 피해야 하는 경우</strong>:
+
+- 트리거가 모호한 작업. "가끔 쓰는데 언제 켜질지 나도 모르겠다" 싶으면 자동 발견이 헛돌거나 엉뚱하게 켜진다. 차라리 `/skill-name`으로 직접 부르는 편이 낫다.
+- 딱 한 번 쓰고 버릴 일회성 지시. 이건 그냥 프롬프트에 적는 게 빠르다.
+- 신뢰할 수 없는 출처의 Skill. 외부 URL에서 데이터를 가져오는 Skill은 프롬프트 인젝션 위험이 있어 공식 문서도 별도 경고를 둔다. 내가 만들었거나 Anthropic이 배포한 것만 쓰는 게 안전하다.
+
+<strong>Commands(User-Invoked)가 잘 맞는 경우</strong>:
+
+- 여러 Agent와 Skill을 정해진 순서로 묶어야 하는 다단계 워크플로우(`/write-post`의 8 Phase처럼).
+- 인자를 받아 동작을 바꿔야 할 때. `$ARGUMENTS`로 `--force`, `--tags` 같은 플래그를 받아 분기한다.
+
+<strong>Commands를 피해야 하는 경우</strong>:
+
+- 단계가 1〜2개뿐인 단순 작업. `commit`이 11줄로 끝나듯, 오케스트레이션이 필요 없으면 Command로 감싸는 것 자체가 과설계다.
+- 실제 로직을 Command 본문에 직접 박아 넣는 것. Command는 오케스트레이터로만 두고 작업은 Agent에 위임해야 재사용과 테스트가 산다.
+
+한 줄로 줄이면 이렇다. <strong>반복되고 트리거가 명확하면 Skill, 여러 컴포넌트를 순서대로 엮어야 하면 Command, 한 번 쓰고 말 거면 그냥 프롬프트.</strong>
+
+### 1차 출처
+
+직접 확인하고 싶다면 공식 문서가 가장 정확하다.
+
+- [Claude Code 개요](https://code.claude.com/docs/en/overview) — CLI 전반 구조
+- [Claude Code Skills 문서](https://code.claude.com/docs/en/skills) — SKILL.md 작성과 `/skill-name` 호출, 커스텀 커맨드 통합
+- [Agent Skills 개요 (Claude Platform)](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) — Progressive Disclosure 3단계 로딩과 보안 가이드
+- [Agent Skills 오픈 표준](https://agentskills.io) — 여러 AI 도구에서 통용되는 SKILL.md 표준
+- [anthropics/skills (GitHub)](https://github.com/anthropics/skills) — Anthropic이 공개한 오픈소스 Skill 모음
+- [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — Skills 아키텍처를 다룬 Anthropic 엔지니어링 블로그
+
+이 시리즈를 처음 본다면 [Part 1: 메타데이터로 71% 비용 절감](/ko/blog/ko/effiflow-automation-analysis-part1)에서 3-Tier 아키텍처 전체 그림을 먼저 잡는 편이 낫다. 여기서 다룬 Agent 위임 패턴을 더 파고들고 싶다면 [Claude Code 멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)와 [Claude Agent Teams 실전 가이드](/ko/blog/ko/claude-agent-teams-guide)가 자연스러운 다음 글이다.
+
 ## 정리하며: Skills와 Commands가 맞물리는 지점
 
 여기까지가 EffiFlow의 두 축이다. Skills와 Commands가 어떻게 맞물려 돌아가는지 짚어봤다.

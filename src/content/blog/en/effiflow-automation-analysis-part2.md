@@ -1011,6 +1011,47 @@ await Promise.all(posts.map((post) => analyzePost(post))); // 30 seconds (70% fa
 - Test coverage: 0% → 80%
 - Stability: 95% → 99%
 
+## When to Use Them, and When to Avoid Them
+
+Skills and Commands aren't universal hammers. Running this system day to day, the line between "this fits well" and "this actually costs you more" turned out fairly sharp.
+
+<strong>When Skills (Model-Invoked) fit</strong>:
+
+- You keep pasting the same procedure or checklist into the prompt. The official docs suggest the same trigger: create a Skill when you find yourself repeating the same instructions.
+- The task has a clear trigger (keywords like "blog post" or "frontmatter"). The single "Use when..." line in the description is what lets Claude decide when to activate.
+- The body is short but the reference material is large. Progressive Disclosure keeps the SKILL.md body under 5K tokens and loads the rest only on demand.
+
+<strong>When to avoid Skills</strong>:
+
+- The trigger is fuzzy. If even you can't say when it should fire, auto-discovery either spins idle or activates at the wrong moment. Call it directly with `/skill-name` instead.
+- One-off instructions you'll use once and discard. Just write that into the prompt.
+- Skills from untrusted sources. Skills that fetch data from external URLs carry a prompt-injection risk, which is why the docs add a separate warning. Stick to ones you built or that Anthropic ships.
+
+<strong>When Commands (User-Invoked) fit</strong>:
+
+- Multi-step workflows that chain several Agents and Skills in a fixed order (like the 8 phases of `/write-post`).
+- When you need arguments to change behavior. `$ARGUMENTS` parses flags like `--force` or `--tags` to branch.
+
+<strong>When to avoid Commands</strong>:
+
+- Simple tasks with one or two steps. Just as `commit` fits in 11 lines, wrapping something that needs no orchestration in a Command is over-engineering.
+- Baking the actual logic into the Command body. Keep the Command as an orchestrator and delegate the work to Agents, or reuse and testability die.
+
+The one-line version: <strong>repeated and clearly triggered, use a Skill; several components chained in order, use a Command; used once and gone, just prompt it.</strong>
+
+### Primary Sources
+
+If you want to verify any of this, the official docs are the most accurate reference.
+
+- [Claude Code overview](https://code.claude.com/docs/en/overview) — overall CLI structure
+- [Claude Code Skills docs](https://code.claude.com/docs/en/skills) — writing SKILL.md, `/skill-name` invocation, custom command merge
+- [Agent Skills overview (Claude Platform)](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) — three-level Progressive Disclosure loading and security guidance
+- [Agent Skills open standard](https://agentskills.io) — the SKILL.md standard that works across multiple AI tools
+- [anthropics/skills (GitHub)](https://github.com/anthropics/skills) — Anthropic's open-source Skills repository
+- [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — Anthropic engineering blog on Skills architecture
+
+New to this series? Start with [Part 1: cutting cost 71% with metadata](/en/blog/en/effiflow-automation-analysis-part1) to get the full 3-Tier picture first. If you want to push deeper on the Agent delegation pattern covered here, [Improving Claude Code multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement) and the [Claude Agent Teams hands-on guide](/en/blog/en/claude-agent-teams-guide) are the natural next reads.
+
 ## Where Skills and Commands Click Together
 
 That covers the two pillars of EffiFlow. We looked at how Skills and Commands mesh and keep the whole thing running.

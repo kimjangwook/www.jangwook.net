@@ -348,13 +348,35 @@ async def stream_chat(message: str):
 
 要么`BASE_DELAY`太短，要么突发流量集中在同一时间窗口。查看Anthropic的限速页面确认你计划的TPM/RPM上限，将`BASE_DELAY`至少设为5秒以上。
 
-## 这套技术栈真正派上用场的场景
+## 何时使用、何时避免
 
-FastAPI + AsyncAnthropic + uvicorn组合适合以下情况：
+流式后端并不一定都要用SSE + FastAPI。基于实际落地的经验，我把选择标准整理如下。
+
+**这套技术栈真正派上用场的场景**：
 
 - 团队已有Python能力，想避免引入新语言栈的成本
 - 流式传输是核心用户体验的AI聊天、代码生成、文档写作服务
 - 需要OpenAPI文档自动化和Pydantic验证的团队
+- 在已有的FastAPI或Django REST后端上渐进式添加AI功能
+
+**最好避免的场景**：
+
+- 一次性返回结果也不影响体验的短分类、抽取任务。这时简单的请求-响应代码更简洁、调试也更容易。
+- 批量处理1000份以上文档的场景。流式传输毫无意义，而Anthropic Message Batches API成本大约只有一半。
+- 需要双向实时交互（打字指示器、协同编辑）的场景。SSE是单向的，WebSocket才是合适的工具。
+- 在本地或私有化部署环境中外部API调用本身被屏蔽。此时应优先考虑自托管模型。自托管方案我在[用Ollama和FastAPI进行生产部署](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026)中讲过。
+
+简而言之，只有当"长输出"和"实时显示"两个条件同时成立时，这套模式的复杂度才是值得的。少了任何一个，都有更简单的做法。
+
+## 一手来源与延伸阅读
+
+本文的代码均基于以下官方文档编写和验证。版本升级后行为可能变化，建议在实现前逐一核对。
+
+- [FastAPI官方文档 — Custom Response / StreamingResponse](https://fastapi.tiangolo.com/advanced/custom-response/)：关于`StreamingResponse`生成器行为与取消处理的官方说明。
+- [Anthropic — Streaming Messages](https://docs.claude.com/en/docs/build-with-claude/streaming)：Claude API的SSE流式事件结构以及各SDK的用法。
+- [MDN — Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)：SSE事件格式（`data:`、`event:`、`id:`、`retry:`）和`EventSource` API的标准定义。
+
+如果你想让请求模式更严格、更类型安全，[用Pydantic AI构建类型安全的代理](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)也值得一并阅读。
 
 说实话，这套技术栈并非在所有情况下都是最佳选择。如果是Node.js团队，Vercel AI SDK上手更快；如果需要大规模实时并发连接，WebSocket或gRPC Streaming可能是更好的选择。但对于想快速启动Python AI流式后端的人来说，这是我亲自验证过的最实用的起点。
 

@@ -324,6 +324,40 @@ Teammates inherit the lead's permission settings. If the lead runs with `--dange
 
 6. <strong>tmux is practically required</strong>: Monitoring 5 teams in in-process mode is painful. tmux is the way to go.
 
+## When to Use It, When to Avoid It
+
+The official docs only recommend Agent Teams for work where parallel exploration adds real value. After a day of running it, here's the line I'd draw.
+
+<strong>Good fits</strong>
+
+- Splitting a code review into independent lenses (security, performance, test coverage) and running them at once
+- Debugging an unclear root cause by testing competing hypotheses in parallel and having teammates challenge each other
+- New features that span layers (frontend, backend, tests), with one teammate owning each
+- Research like surveying a library, where you gather and compare findings afterward
+
+<strong>Avoid when</strong>
+
+- The work has heavy dependencies and ends up serial anyway. A team won't make it faster.
+- Multiple teammates need to touch the same file. There's no file locking, so overwrites are a real risk.
+- It's simple, repetitive work. A single subagent handles that with far fewer tokens.
+- You're cost-sensitive. A 5-person team is at least 5x the tokens.
+
+If you're starting out, begin with review and research tasks that don't write code. The boundaries are clear, so you feel the value of parallel collaboration with the least risk.
+
+## Related Reading
+
+A few posts that approach the same multi-agent territory from other angles.
+
+- [Improving Multi-Agent Orchestration](/en/blog/en/multi-agent-orchestration-improvement) — goes a level deeper into the patterns for coordinating agents.
+- [Running Parallel Claude Code Sessions with Git Worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree) — the manual alternative to running parallel sessions without Agent Teams.
+- [The Reality of AI Agent Costs](/en/blog/en/ai-agent-cost-reality) — weighs the economics of multi-agent setups where token costs spike.
+
+## Primary Sources
+
+- [Claude Code — Agent Teams (official docs)](https://code.claude.com/docs/en/agent-teams)
+- [Claude Code — Subagents (official docs)](https://code.claude.com/docs/en/sub-agents)
+- [Claude Code Overview](https://code.claude.com/docs/en/overview)
+
 ## What a day with it taught me
 
 Agent Teams are still experimental, but the potential is clear. Combined with OpenClaw's multi-agent architecture, you get a dual-layer system: channel-level automation sitting on top of session-level parallel collaboration.

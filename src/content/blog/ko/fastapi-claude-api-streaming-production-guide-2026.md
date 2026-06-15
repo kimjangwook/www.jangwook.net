@@ -421,14 +421,35 @@ Nginx의 `proxy_buffering off`가 빠진 경우가 대부분이다. 또는 `Cont
 
 이 체크리스트를 보면서 "다 알고 있는 내용인데 실제 배포 때 놓치는 경우가 많다"고 느꼈다면, 그게 정상이다. 나도 처음 배포할 때 CORS와 GZIP 설정에서 한 번씩 실수했다.
 
-## 이 스택이 제값을 하는 상황
+## 언제 쓰고, 언제 피해야 하는가
 
-FastAPI + AsyncAnthropic + uvicorn 조합은 다음 상황에 잘 맞는다:
+스트리밍 백엔드를 무조건 SSE + FastAPI로 가는 게 정답은 아니다. 직접 써본 기준으로 선택 기준을 정리한다.
+
+**이 스택이 제값을 하는 경우**:
 
 - Python 팀이 이미 있고 새 언어 스택 도입 비용을 피하고 싶을 때
 - 스트리밍이 핵심 UX 요소인 AI 채팅, 코드 생성, 문서 작성 서비스
 - OpenAPI 문서 자동화와 Pydantic 검증이 필요한 팀
-- 기존 FastAPI 또는 Django REST 백엔드에 AI 기능을 추가하는 상황
+- 기존 FastAPI 또는 Django REST 백엔드에 AI 기능을 점진적으로 추가하는 상황
+
+**피하는 게 나은 경우**:
+
+- 응답을 한 번에 받아도 UX에 지장이 없는 짧은 분류·추출 작업. 이때는 그냥 단일 요청-응답이 코드도 단순하고 디버깅도 쉽다.
+- 1,000건 이상의 문서를 일괄 처리하는 배치 작업. 스트리밍은 의미가 없고 Anthropic Message Batches API가 비용 면에서 절반 수준이다.
+- 양방향 실시간 상호작용(타이핑 인디케이터, 동시 편집)이 필요한 경우. SSE는 단방향이므로 WebSocket이 맞다.
+- 로컬·온프레미스 환경에서 외부 API 호출 자체가 막혀 있을 때. 이 경우 자체 호스팅 모델이 먼저다. 자체 호스팅 옵션은 [Ollama와 FastAPI로 프로덕션 배포하기](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026)에서 다뤘다.
+
+요컨대 "긴 출력 + 실시간 표시"라는 두 조건이 동시에 성립할 때만 이 패턴의 복잡도가 정당화된다. 한쪽이라도 빠지면 더 단순한 방법이 있다.
+
+## 1차 출처와 참고 자료
+
+이 글의 코드는 다음 공식 문서를 기준으로 작성·검증했다. 버전이 올라가면 동작이 바뀔 수 있으니 구현 전에 한 번씩 확인하는 걸 권장한다.
+
+- [FastAPI 공식 문서 — Custom Response / StreamingResponse](https://fastapi.tiangolo.com/advanced/custom-response/): `StreamingResponse`의 제너레이터 동작과 취소 처리에 대한 공식 설명.
+- [Anthropic — Streaming Messages](https://docs.claude.com/en/docs/build-with-claude/streaming): Claude API의 SSE 스트리밍 이벤트 구조와 SDK별 사용법.
+- [MDN — Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events): SSE 이벤트 포맷(`data:`, `event:`, `id:`, `retry:`)과 `EventSource` API의 표준 정의.
+
+타입 안전한 요청 스키마를 더 엄격하게 가져가고 싶다면 [Pydantic AI로 타입 세이프 에이전트 만들기](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)도 같이 보면 도움이 된다.
 
 솔직히 말하면, 이 스택이 모든 상황에서 최선은 아니다. Node.js 팀이라면 Vercel AI SDK가 더 빠르고, 대규모 실시간 연결이 필요하다면 WebSocket이나 gRPC Streaming이 더 나은 선택일 수 있다. 하지만 Python AI 백엔드를 빠르게 올리고 싶다면, 이 패턴은 내가 실제로 검증한 가장 실용적인 출발점이다.
 

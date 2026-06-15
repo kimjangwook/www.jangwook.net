@@ -41,11 +41,11 @@ faq:
 
 在同一个分支上同时运行两个 Claude Code 会话，一旦一个会话修改了文件，另一个会话的上下文就会被污染。文件状态不一致、意外的合并冲突、无法追踪哪个会话做了什么。我亲历了这些问题之后，才认真研究起 git worktree。
 
-结论是：**git worktree + Claude Code 的组合运行起来比预想的自然得多**。配置也并不复杂。
+结论是：**git worktree + Claude Code 的组合运行起来比预想的自然得多**。配置也并不复杂。本文涉及的内容都可以在一手来源中核实：Git 官方文档的 [git-worktree](https://git-scm.com/docs/git-worktree) 页面、Claude Code 官方文档的 [Run parallel sessions with worktrees](https://code.claude.com/docs/en/worktrees) 章节，以及汇集日常工作配方的 [Common workflows](https://code.claude.com/docs/en/common-workflows) 指南。
 
 ## Git Worktree 是什么
 
-git worktree 允许从单个 git 仓库同时将多个分支检出到不同目录。这个功能从 2016 年起就内置于 git，但知道的人出乎意料地少。
+git worktree 允许从单个 git 仓库同时将多个分支检出到不同目录。这个功能从 2016 年起就内置于 git，但知道的人出乎意料地少。用[官方文档](https://git-scm.com/docs/git-worktree)的原话说，该命令"管理附加到同一仓库的多个工作树（Manage multiple working trees attached to the same repository）"。每个工作树都有自己的 `HEAD` 和索引。
 
 核心区别只有一点：切换分支（`git checkout`）会替换当前工作目录中的文件。使用 worktree，每个分支存在于**各自独立的物理目录**中。
 
@@ -107,6 +107,25 @@ claude
 每个会话完全独立。终端 2 修改 `src/auth/oauth.ts`，终端 3 的 Claude Code 对此一无所知。毕竟是不同分支的文件。
 
 如果已经熟悉 Claude Code 最佳实践，这个模式可以直接应用。
+
+### `--worktree` 标志：一步到位
+
+除了上面那种手动方式（`git worktree add`，再 `cd`，再 `claude`），Claude Code 还提供一个内置标志，把 worktree 创建和会话启动合并到一条命令里。根据官方文档（[Worktrees](https://code.claude.com/docs/en/worktrees)），传入 `--worktree`（或 `-w`）会在仓库根目录的 `.claude/worktrees/<名称>/` 下创建 worktree，在新的 `worktree-<名称>` 分支上，并在其中启动 Claude。
+
+```bash
+# 创建 worktree + 启动会话，一行搞定
+claude --worktree feature-auth
+
+# 在另一个终端用不同名称启动第二个隔离会话
+claude --worktree bugfix-123
+
+# 省略名称时会自动生成类似 bright-running-fox 的名字
+claude --worktree
+```
+
+默认从远程的默认分支（`origin/HEAD`）分叉，因此总是从干净的工作树开始。有一点要注意：worktree 是全新检出，所以 `.env`、`.env.local` 这类未被追踪的文件不会带过来。在项目根目录放一个 `.worktreeinclude` 文件（使用 `.gitignore` 语法），就能在每次创建新 worktree 时自动复制这些文件。另外建议把 `.claude/worktrees/` 加入 `.gitignore`。
+
+退出会话时，如果没有改动，worktree 和分支会被自动清理；如果有提交或未保存的修改，Claude 会询问保留还是删除。手动创建的 worktree 不在这个自动清理范围内，需要自己用 `git worktree remove` 删除。
 
 ## 使用 Plan Mode 分配任务
 
@@ -183,7 +202,27 @@ git worktree prune
 
 我很喜欢这个模式，但它不是万能的。任务之间修改不同文件时效果最好；如果两个会话都需要修改同一组件，反而会产生更多合并冲突。另外，会话超过三个后，开始追踪各会话进度时就会产生额外的管理开销。
 
-与多智能体 PR 审查模式结合，可以自动审查从各 worktree 分支产生的 PR。在团队规模的使用中，这种组合是我发现的最实用的配置。
+与多智能体 PR 审查模式结合，可以自动审查从各 worktree 分支产生的 PR。在团队规模的使用中，这种组合是我发现的最实用的配置。官方文档还进一步介绍了如何把子智能体隔离到各自的 worktree 中运行：在自定义子智能体的 frontmatter 里加上 `isolation: worktree`，每个智能体就会获得一个临时 worktree，在没有改动地结束时自动删除。[如果你搭建过智能体团队](/zh/blog/zh/claude-agent-teams-guide)，会立刻体会到这个隔离选项对并行工作冲突的削减有多明显。
+
+## 何时使用，何时避免
+
+我不会无条件推荐这个模式。实际用起来，效果明显的场景和反而吃亏的场景是分开的。
+
+**并行 worktree 有利的情形：**
+
+- 任务之间修改**不同的文件和目录**时。如果 OAuth 在 `src/auth/`、Bug 修复在 `src/routes/`，区域分开，合并冲突几乎不会发生。
+- 长任务进行中突然来了**紧急热修复**时。无需 stash 或切换分支，在另一个终端直接修好，完成后回到原本的工作。
+- 想对同一段代码**尝试多种方案**时。开两个目录并行，比较哪一个更好。
+- 想**隔离**子智能体或后台作业，保持主检出干净时。
+
+**最好避免并行 worktree 的情形：**
+
+- 两个任务都需要修改**同一个组件或同一个文件**时。这时 worktree 不但不减少冲突，反而增加。顺序处理更好。
+- 会话**超过三个**之后。追踪每个会话进度的开销会开始吞掉你省下的时间。先从两个开始。
+- 像数据库迁移那样**共享状态（本地 DB 等）顺序很重要**的工作。同时运行会把数据搞乱。
+- 几下就完成的小修改，**隔离的搭建成本大于任务本身**时。
+
+把判断标准压成一句话：任务在文件层面是否独立？是，则 worktree 大放异彩；否，就别硬拆。配合[Claude Code 大师课第一篇](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)里讲的提示词分配原则一起读，更容易判断哪些工作该如何拆分。
 
 ## 命令速查
 

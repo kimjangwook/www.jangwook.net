@@ -49,11 +49,17 @@ faq:
 
 "We work in an environment where cloud AI is not allowed." I honestly didn't get that at first. Then I started meeting the teams who live with it: people handling hospital medical records, reviewing legal documents, analyzing financial customer data. There are more of them than I assumed. Telling those teams to "just paste it into Claude or GPT" was never going to fly.
 
-Last week I wrote about building an MCP server from scratch with FastMCP. That post showed how to connect Claude Code as the client. Right after publishing, I got a question: "Can you use a local LLM as the client instead of Claude?"
+Last week I wrote about [building an MCP server from scratch with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026). That post showed how to connect Claude Code as the client. Right after publishing, I got a question: "Can you use a local LLM as the client instead of Claude?"
 
 Great question. And one I wanted to try myself.
 
-This post is the answer. Using Ollama + Gemma 4 + FastMCP, I built a fully offline AI tool pipeline that works without any internet connection.
+This post is the answer. Using Ollama + Gemma 4 + FastMCP, I built a fully offline AI tool pipeline that works without any internet connection. For the operational side of serving Gemma 4 with Ollama, my [Ollama + FastAPI production deployment guide](/en/blog/en/ollama-fastapi-production-deployment-guide-2026) goes deeper and pairs well with this.
+
+> **Read the primary sources first.** Here are the official references for the tools used in this post. Check each project's current recommended setup before you start.
+> - Ollama official site: [ollama.com](https://ollama.com)
+> - FastMCP official docs: [gofastmcp.com](https://gofastmcp.com)
+> - Model Context Protocol (MCP) official spec: [modelcontextprotocol.io](https://modelcontextprotocol.io)
+> - Gemma models (Google DeepMind): [deepmind.google/models/gemma](https://deepmind.google/models/gemma)
 
 ## Tracing Where the Data Goes
 
@@ -259,6 +265,26 @@ Things I noticed running this for a while:
 | Cost minimization (zero API traffic) | ✅ This pattern |
 
 Personally, I think of this as an upgrade to "local scripts with AI features." It puts a natural language interface on the file manipulation and data transformation tasks you'd previously do with shell scripts or Python scripts. It's closer to the next step in automation scripting than to a full agentic system.
+
+## When to Use It, When to Avoid It
+
+The table above is for a quick gut check. When you're actually deciding whether to adopt this, you need sharper criteria. Here's the line I've drawn after running it for a few months.
+
+**Cases where local LLM + MCP fits well**
+
+- **Data that absolutely cannot leave the premises.** Medical records, internal legal documents, financial customer data, anywhere compliance blocks external transmission. Here a smarter cloud API isn't even on the table. Air-gapped environments make the choice obvious.
+- **Batch-style work.** Classifying internal documents overnight, summarizing logs, converting files, anything where nobody is waiting on the response. A 5 to 15 second delay doesn't matter.
+- **Repetitive, high-volume work where API cost adds up.** If you run the same kind of processing thousands of times a day, trading per-token pricing for fixed local hardware cost can pay off.
+- **Few tools and a simple flow.** For tasks that finish in one or two tool calls, Gemma 4's function calling is good enough.
+
+**Cases where you should avoid it**
+
+- **Real-time interactive UI.** For a chatbot or search box where the user is staring at the screen, that latency turns straight into churn. A cloud API is the better call.
+- **Complex multi-step agents.** In workflows chaining five or six tool calls, Gemma 4 loses the goal or botches arguments more often. When you need reliable function calling, Claude or GPT-4o is still ahead.
+- **General tasks with low data sensitivity.** If the data is fine to send out, there's little reason to take on the local hardware and operational burden. Cloud APIs usually win on quality and speed.
+- **When top-tier reasoning quality is the key metric.** Local open models are improving fast, but a reasoning gap with frontier models still exists.
+
+It really comes down to two axes: can this data leave the building, and does this task make a person wait. If both answers are tight, this pattern fits. If both are relaxed, go cloud.
 
 ## Next Steps
 

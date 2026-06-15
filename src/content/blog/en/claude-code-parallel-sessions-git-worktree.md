@@ -41,11 +41,11 @@ Having multiple Claude Code tabs open feels like parallel work. It isn't.
 
 Run two Claude Code sessions on the same branch simultaneously, and the moment one session modifies a file, the other session's context gets corrupted. Mismatched file states, unexpected merge conflicts, no way to track which session did what. I had to experience this firsthand before I took git worktree seriously.
 
-The short version: **git worktree + Claude Code works far more naturally than you'd expect**. The setup isn't complicated either.
+The short version: **git worktree + Claude Code works far more naturally than you'd expect**. The setup isn't complicated either. Everything here is backed by primary sources: Git's official [git-worktree](https://git-scm.com/docs/git-worktree) reference, the Claude Code docs page on [Run parallel sessions with worktrees](https://code.claude.com/docs/en/worktrees), and the [Common workflows](https://code.claude.com/docs/en/common-workflows) guide that collects everyday recipes.
 
 ## What Git Worktree Actually Is
 
-Git worktree lets you check out multiple branches simultaneously into separate directories, all from a single git repository. It's been built into git since 2016, yet it remains surprisingly underused.
+Git worktree lets you check out multiple branches simultaneously into separate directories, all from a single git repository. It's been built into git since 2016, yet it remains surprisingly underused. As the [official documentation](https://git-scm.com/docs/git-worktree) puts it, the command "manages multiple working trees attached to the same repository." Each working tree carries its own `HEAD` and index.
 
 One key distinction: switching branches (`git checkout`) replaces the files in your working directory. With worktrees, each branch lives in its **own separate physical directory**.
 
@@ -107,6 +107,25 @@ claude
 Each session is fully independent. If Terminal 2 modifies `src/auth/oauth.ts`, Terminal 3's Claude Code doesn't know. It's a different branch's file.
 
 If you've already gone through Claude Code Best Practices, this pattern slots in naturally.
+
+### The `--worktree` flag: do it in one step
+
+Beyond the manual route above (`git worktree add`, then `cd`, then `claude`), Claude Code bundles worktree creation and session startup into a single command. Per the official docs ([Worktrees](https://code.claude.com/docs/en/worktrees)), passing `--worktree` (or `-w`) creates a worktree under `.claude/worktrees/<name>/` at your repo root, on a new `worktree-<name>` branch, and starts Claude inside it.
+
+```bash
+# Create the worktree and start a session in one line
+claude --worktree feature-auth
+
+# A second isolated session in another terminal, different name
+claude --worktree bugfix-123
+
+# Omit the name and Claude generates one like bright-running-fox
+claude --worktree
+```
+
+By default it branches from the remote's default branch (`origin/HEAD`), so you start from a clean tree. One thing to watch: a worktree is a fresh checkout, so untracked files like `.env` or `.env.local` don't come along. Drop a `.worktreeinclude` file (using `.gitignore` syntax) in your project root and those files get copied into each new worktree automatically. It's also worth adding `.claude/worktrees/` to your `.gitignore`.
+
+On exit, if you made no changes the worktree and its branch are removed automatically; if commits or uncommitted changes remain, Claude asks whether to keep or remove it. Worktrees you create manually are excluded from this auto-cleanup, so you remove those yourself with `git worktree remove`.
 
 ## Using Plan Mode for Task Distribution
 
@@ -184,7 +203,27 @@ git worktree prune
 
 I like this pattern, but it's not universal. It works best when your tasks touch different files. If two sessions both need to modify the same component, you'll end up with more merge conflicts, not fewer. And once you're managing more than three sessions, tracking what each one has done starts generating its own overhead.
 
-Pairing this with multi-agent PR review lets you automatically review the PR from each worktree branch. For team-scale use, that combination has been the most practical setup I've found.
+Pairing this with multi-agent PR review lets you automatically review the PR from each worktree branch. For team-scale use, that combination has been the most practical setup I've found. The official docs go a step further and show how to isolate subagents in their own worktrees: add `isolation: worktree` to a custom subagent's frontmatter, and each agent gets a temporary worktree that's removed automatically when it finishes without changes. [If you've built out agent teams before](/en/blog/en/claude-agent-teams-guide), you'll immediately feel how much this isolation cuts down on parallel-work collisions.
+
+## When to Use It, When to Avoid It
+
+I won't pretend this pattern fits everywhere. In practice, some situations clearly benefit and others actively backfire.
+
+**Where parallel worktrees help:**
+
+- When tasks touch **different files and directories**. If OAuth lives in `src/auth/` and the bug fix lives in `src/routes/`, merge conflicts are nearly nonexistent.
+- When an **urgent hotfix** lands mid-task. No stash, no branch switch — fix it in another terminal and return to your original work.
+- When you want to **try several approaches** to the same code. Spin up two directories and compare which one wins.
+- When you want to **isolate** subagents or background jobs and keep your main checkout clean.
+
+**Where you're better off avoiding them:**
+
+- When two tasks both need to edit the **same component or file**. Here a worktree adds conflicts rather than removing them. Do it sequentially instead.
+- Once you're past **three sessions**. The overhead of tracking what each one has done starts eating into the time you saved. Start with two.
+- For work where **shared state order matters** — database migrations against one local DB, for example. Running them at once tangles your data.
+- For a quick one-line fix where the **setup cost outweighs the task** itself.
+
+The whole decision compresses to one question: are the tasks independent at the file level? If yes, worktrees shine. If not, don't split them. Read alongside the prompt-distribution principles from [Claude Code Masterclass Part 1](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent) and it gets easier to judge which work to break apart and how.
 
 ## Quick Reference
 

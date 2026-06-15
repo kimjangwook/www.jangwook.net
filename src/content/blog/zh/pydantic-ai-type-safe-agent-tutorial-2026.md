@@ -354,6 +354,37 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 
 结合生产级AI智能体设计原则阅读，可以更清楚地了解选择智能体框架时哪些标准最重要。
 
+## 何时使用，何时避免
+
+基于实际投入使用的经验，坦率地总结一下。它并非适合所有项目的工具。
+
+**适合使用PydanticAI的场景**:
+
+- 结构化输出是核心。如果你把LLM响应强制为Pydantic模型，并在其上构建业务逻辑，类型安全会直接带来收益。
+- 你已经在使用FastAPI或基于Pydantic v2的技术栈。`deps_type`与`Depends()`共享同一套心智模型，学习成本几乎为零。
+- 你计划对多个提供商做A/B测试，或出于成本考虑替换模型。智能体代码无需改动。
+- 你想在CI中零成本单元测试智能体逻辑。TestModel与FunctionModel的组合在此大放异彩。
+
+**应避免或暂缓的场景**:
+
+- 你处于Pydantic v1遗留代码库。迁移成本可能超过引入框架的收益。
+- 流式结构化输出是产品的核心功能。当前实现仍是beta，稳定性难以保证。
+- 复杂的多智能体图编排是主要目标。该领域LangGraph一方更为成熟。[Google ADK vs LangGraph对比](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026)中的标准有助于判断。
+- 你没有精力跟进版本固定和CHANGELOG追踪。它尚处于1.0之前，破坏性变更确实会发生。
+
+总结来说，对于以类型为中心的单个或少量智能体场景，它是目前最佳选择；但对于大规模图工作流或v1环境，应先考虑其他工具。
+
+## 参考资料（一手来源）
+
+我直接核实过的官方文档和仓库。版本变化很快，建议动手前先查阅原文。
+
+- [PydanticAI官方文档](https://ai.pydantic.dev) — 智能体、工具、输出类型的完整参考
+- [PydanticAI测试指南](https://ai.pydantic.dev/testing/) — TestModel与FunctionModel的官方说明
+- [pydantic/pydantic-ai (GitHub)](https://github.com/pydantic/pydantic-ai) — 源码、CHANGELOG和发布说明
+- [pydantic/pydantic (GitHub)](https://github.com/pydantic/pydantic) — 作为基础的Pydantic v2库
+
+在同一Python技术栈中可继续阅读[用FastMCP构建MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)和[FastAPI + Claude API流式生产指南](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026)。
+
 ## 核心模式快速总结
 
 ```python

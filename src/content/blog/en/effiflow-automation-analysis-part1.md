@@ -51,7 +51,9 @@ faq:
 
 ## I Was Burning 90,000 Tokens on Every Recommendation Run
 
-After running a blog automation system for the better part of a year, one thing kept nagging at me. Could this be leaner? So I sat down and spent 7.5 hours picking apart every file in the `.claude/` directory. Twenty-eight of them. 17 Agents, 4 Skills, 7 Commands. The count sounds modest, but once I started tracing actual token usage, the leaks were everywhere.
+After running a blog automation system for the better part of a year, one thing kept nagging at me. Could this be leaner? So I sat down and spent 7.5 hours picking apart every file in the `.claude/` directory. Twenty-eight of them. 17 Agents, 4 Skills, 7 Commands. The count sounds modest, but once I started tracing actual token usage, the leaks were everywhere. If you're new to what Agents, Skills, and Commands actually are, the [official Claude Code documentation](https://code.claude.com/docs/en/overview) lays them out clearly.
+
+This analysis is really a continuation of my earlier write-up on [improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement). I went back to that same collaboration structure, this time through a cost lens.
 
 The results were remarkable:
 - <strong>60-70% token reduction</strong> with metadata-first architecture
@@ -129,6 +131,8 @@ graph TB
 - SKILL.md + support files
 - Reusable logic
 - Configurable tool access
+
+The structure of a skill and how auto-discovery works are documented in the [official Claude Code Skills guide](https://code.claude.com/docs/en/skills). The MCP integration that pulls in external data and tools follows the [Model Context Protocol](https://modelcontextprotocol.io) standard.
 
 ## Key Finding 1: Metadata-First Architecture
 
@@ -387,7 +391,7 @@ Total annual cost:     $10.65
 
 ## Best Practices Compliance
 
-Comparison with Claude Code official best practices:
+Comparison with the [official Claude Code best practices](https://code.claude.com/docs/en/best-practices):
 
 ### Agents (17)
 
@@ -501,6 +505,24 @@ def test_generate_slug():
 <strong>Impact</strong>: Quality assurance, regression prevention
 <strong>Time required</strong>: 8-12 hours
 <strong>Priority</strong>: High
+
+## When to Use This, and When to Avoid It
+
+A multi-agent setup this size isn't the right answer for every blog. Having run it myself for a year, here's the honest version.
+
+<strong>It fits well when</strong>:
+- You publish on a steady cadence. At one or two posts a week or more, the upfront time you sink into automation pays itself back quickly.
+- Multilingual output is a given. Hand-syncing four languages every time wears people down fast. This is where the automation earns its keep most.
+- The repetitive work, like metadata and recommendations, is clearly defined. The more an input maps to a fixed output, the more reliably an agent handles it.
+- You actually want to track and cut token cost. The benefit of a metadata-first design only shows up for people who look at the bill.
+
+<strong>You're better off avoiding it when</strong>:
+- You write one or two posts a month. The cost of setting up and maintaining 17 agents exceeds what you'd save. Writing by hand is just faster.
+- Format and tone shift a lot from post to post, making standardization hard. Automation shines on repeated patterns and struggles where each task needs a fresh judgment call.
+- You run a single language and your SEO metadata is already fine by hand. You'd be taking on complexity for no real gain.
+- Nobody on the team can maintain the system. When an agent definition changes, someone has to debug it. Weigh the operational burden before the dollar cost.
+
+In short, the break-even for automation is "frequency × repeatability × number of languages." If two of those three run high, build it. If two run low, hold off. I worked through similar tradeoffs in [the real cost of AI agents](/en/blog/en/ai-agent-cost-reality), which is worth reading alongside this if you're deciding.
 
 ## Practical Application Guide
 

@@ -33,6 +33,8 @@ faq:
 
 There's a moment that comes for everyone after they push an LLM agent to production. You open the Langfuse dashboard to trace "why did it give that response?" and then your eye catches the cloud billing statement. Once monthly trace volume crosses 100K, Langfuse Cloud's Pro plan stops feeling free. So I set up self-hosting with Docker Compose. What follows is what I learned along the way.
 
+Every setup in this guide was verified against the official Langfuse material. If you want to follow along, keep the [Langfuse website](https://langfuse.com), the [GitHub repository](https://github.com/langfuse/langfuse), and the [Docker Compose self-hosting docs](https://langfuse.com/self-hosting/deployment/docker-compose) open alongside this post. Versions change often, so treat the official docs as the primary source for environment variable names and ports.
+
 ## What Problem Langfuse Actually Solves
 
 Running AI agents in production makes it obvious fast how useless traditional APM tools are. Datadog and New Relic are great at HTTP latency and error rates, but they can't tell you "how much did the retrieval step degrade overall response quality in this RAG pipeline?" Or how response quality shifted when a prompt version changed.
@@ -261,21 +263,27 @@ Managing prompts this way means "why did response quality drop on the day we use
 
 If you've built an MCP server directly, adding Langfuse tracing to its LLM calls is the natural next step. MCP servers tend to have long tool invocation chains, which is exactly where trace waterfalls are most valuable.
 
-## When Self-Hosting Doesn't Make Sense
+## When to Self-Host and When to Avoid It
 
-There are cases where I wouldn't recommend self-hosting. I'll be direct about them.
+I touched on the Cloud-versus-self-hosting tradeoff earlier, but the real decision narrows to one question. "Is it acceptable for trace data to leave our infrastructure, and do we have someone to maintain that infrastructure?" Score yourself on those two axes and the answer is usually obvious.
 
-**Self-hosting makes sense when:**
-- Trace data includes sensitive personal information (healthcare, finance)
-- Monthly trace volume exceeds 100K and Cloud costs are real
-- You're already running Kubernetes-based infrastructure
+**Choose self-hosting when:**
+
+- Traces mix in medical records, financial transactions, or PII that can't be sent to an external SaaS
+- Monthly trace volume consistently passes 100K and Cloud Pro now costs more than running it yourself
+- You already operate Kubernetes or Docker infrastructure and have handled stateful services like ClickHouse and Redis before
+- Internal policy requires all observability data to stay in your own region
 
 **Just use the Cloud when:**
-- Team is 3 people or fewer with no infrastructure management bandwidth
-- Traces stay under 50K/month (Langfuse Cloud free tier)
-- You don't want to manage backups, scaling, and updates yourself
 
-I run two projects simultaneously — one on Cloud, one self-hosted. Honestly, ClickHouse consuming 2GB+ of memory still feels wasteful for the scale I'm running.
+- Your team is three people or fewer with no time for infrastructure upkeep
+- Traces stay under 50K per month and fit inside the free tier
+- You don't want to own backups, version upgrades, and scaling
+- You're at the prototype stage and plan to attach and detach tracing repeatedly
+
+If you're stuck in the murky middle, gauge your container-deployment comfort first. If the health checks, resource limits, and restart policies from my [guide to deploying Ollama and FastAPI in production](/en/blog/en/ollama-fastapi-production-deployment-guide-2026) feel routine to you, running the full Langfuse stack won't be a problem. If that post feels like a stretch, start on Cloud and migrate once you've grown.
+
+I split mine across two projects. The blog automation pipeline with no sensitive data runs on Cloud; the side that handles client data is self-hosted. Even for the same tool, matching the deployment to the nature of the data was the choice I regretted least. Honestly, ClickHouse eating 2GB+ of memory still feels wasteful for my scale.
 
 ## Troubleshooting FAQ
 

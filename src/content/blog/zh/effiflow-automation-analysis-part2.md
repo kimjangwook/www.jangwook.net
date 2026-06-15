@@ -1012,6 +1012,47 @@ await Promise.all(posts.map((post) => analyzePost(post))); // 30秒(缩短70%)
 - 测试覆盖率: 0% → 80%
 - 稳定性: 95% → 99%
 
+## 何时使用,何时避免
+
+Skills 与 Commands 并非万能工具。实际跑下来,「这个很合适」和「这里反而吃亏」的界线相当清晰。
+
+<strong>Skills(Model-Invoked)适合的场景</strong>:
+
+- 你在反复把同样的流程或清单粘进提示词时。官方文档也建议同样的触发点:当你发现自己在重复粘贴相同指令时,就该做一个 Skill。
+- 触发条件明确的任务(如「blog post」「frontmatter」这类关键词)。description 里那行「Use when...」正是让 Claude 判断何时激活的依据。
+- 正文短而参考资料庞大的场景。借助 Progressive Disclosure,SKILL.md 正文保持在 5K tokens 以下,其余部分只在需要时才加载。
+
+<strong>应避免使用 Skills 的场景</strong>:
+
+- 触发模糊的任务。如果连你自己都说不清它该何时启动,自动发现要么空转,要么误触发。这时不如用 `/skill-name` 直接调用。
+- 用一次就丢的一次性指令。直接写进提示词更快。
+- 来源不可信的 Skill。从外部 URL 抓取数据的 Skill 存在提示词注入风险,官方文档为此专门加了警告。只用自己做的或 Anthropic 发布的才安全。
+
+<strong>Commands(User-Invoked)适合的场景</strong>:
+
+- 需要把多个 Agent 与 Skill 按固定顺序串联的多阶段工作流(如 `/write-post` 的 8 个 Phase)。
+- 需要用参数改变行为时。`$ARGUMENTS` 解析 `--force`、`--tags` 这类标志来分支。
+
+<strong>应避免使用 Commands 的场景</strong>:
+
+- 只有 1〜2 步的简单任务。正如 `commit` 用 11 行就能搞定,不需要编排时,用 Command 去包裹本身就是过度设计。
+- 把实际逻辑直接塞进 Command 正文。应让 Command 只做编排,把工作委派给 Agent,否则复用与测试都会失效。
+
+一句话概括:<strong>重复且触发明确就用 Skill,需要按顺序串联多个组件就用 Command,只用一次就直接写提示词。</strong>
+
+### 一手来源
+
+想亲自核实的话,官方文档是最准确的参考。
+
+- [Claude Code 概览](https://code.claude.com/docs/en/overview) — CLI 的整体结构
+- [Claude Code Skills 文档](https://code.claude.com/docs/en/skills) — SKILL.md 写法、`/skill-name` 调用、自定义命令合并
+- [Agent Skills 概览 (Claude Platform)](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) — Progressive Disclosure 的三级加载与安全指南
+- [Agent Skills 开放标准](https://agentskills.io) — 可在多种 AI 工具间通用的 SKILL.md 标准
+- [anthropics/skills (GitHub)](https://github.com/anthropics/skills) — Anthropic 公开的开源 Skill 合集
+- [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — 讲解 Skills 架构的 Anthropic 工程博客
+
+第一次读这个系列的话,建议先看 [第一部分:用元数据节省 71% 成本](/zh/blog/zh/effiflow-automation-analysis-part1),先把 3-Tier 架构的全貌理清。若想进一步深入本文讲的 Agent 委派模式,[Claude Code 多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)和 [Claude Agent Teams 实战指南](/zh/blog/zh/claude-agent-teams-guide)是顺理成章的下一篇。
+
 ## Skills 与 Commands 的咬合之处
 
 以上就是 EffiFlow 的两根支柱。我们看了 Skills 和 Commands 如何咬合,撑起整套系统的运转。

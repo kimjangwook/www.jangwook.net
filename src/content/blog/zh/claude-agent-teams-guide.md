@@ -324,6 +324,40 @@ OpenClaw 代理（频道层级）
 
 6. <strong>tmux 几乎是必需的</strong>：用 in-process 模式监控 5 个团队非常吃力，tmux 才是正解。
 
+## 何时该用，何时该避开
+
+官方文档也只在“并行探索能带来实际价值”的任务上推荐 Agent Teams。用了一天后，我划出的界线如下。
+
+<strong>适合的场景</strong>
+
+- 把代码审查拆成安全、性能、测试覆盖率等独立视角，并行同时跑
+- 缺陷根因不明时，并行验证多个假设，让队友互相反驳
+- 跨前端、后端、测试等不同层级的新功能，由不同队友各自负责
+- 像调研某个库这类先收集再比较、讨论的研究型工作
+
+<strong>应避开的场景</strong>
+
+- 依赖关系密集、最终只能串行推进的工作。用团队也快不起来。
+- 多个队友需要改同一个文件。没有文件锁，覆盖风险很大。
+- 简单的重复工作。一个子代理就够了，而且 Token 消耗少得多。
+- 对成本敏感的情况。5 人团队意味着至少 5 倍的 Token。
+
+如果是第一次上手，建议从不写代码的审查、调研任务开始。边界清晰，能以最低风险体会到并行协作的价值。
+
+## 延伸阅读
+
+从其他角度切入同一多代理脉络的文章。
+
+- [多代理编排改进实录](/zh/blog/zh/multi-agent-orchestration-improvement) — 更深入地剖析调度多个代理的模式。
+- [用 Git Worktree 跑 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree) — 不依赖 Agent Teams、手动运行并行会话的替代方案。
+- [AI 代理成本的现实](/zh/blog/zh/ai-agent-cost-reality) — 算一算 Token 成本飙升的多代理运维到底划不划算。
+
+## 参考的一手来源
+
+- [Claude Code — Agent Teams 官方文档](https://code.claude.com/docs/en/agent-teams)
+- [Claude Code — Subagents 官方文档](https://code.claude.com/docs/en/sub-agents)
+- [Claude Code 概览](https://code.claude.com/docs/en/overview)
+
 ## 用了一天后的体会
 
 Agent Teams 虽然还在实验阶段，但潜力已经显而易见。与 OpenClaw 的多代理架构结合后，就能在频道层级自动化之上叠加会话层级的并行协作，形成双层体系。
