@@ -308,7 +308,7 @@ My conclusion: **if your project is already Bun-based, Bun Shell is a natural fi
 - You have complex bash scripts with unknown bash-isms that might not translate.
 - `zx` already works and your team is comfortable with it.
 
-I'd push back on the framing that Bun Shell is "better than zx." In terms of ecosystem maturity and download numbers, zx is ahead. Bun Shell is the right choice for Bun projects specifically. It isn't a universal upgrade recommendation.
+I'd push back on the framing that Bun Shell is "better than zx." In terms of ecosystem maturity and download numbers, zx is ahead. Bun Shell is the right choice for Bun projects specifically. It isn't a universal upgrade recommendation. If you're still deciding on the runtime itself, my [Deno 2 vs Bun vs Node.js comparison](/en/blog/en/deno-2-vs-bun-nodejs-runtime-2026-comparison) goes deeper into that decision, and it's worth reading before you lock in a tool.
 
 And honestly, the missing `.stdin()` API bothers me. Once that's stable, stdin-based pipe processing will be significantly cleaner. There's a workaround for now, but it adds friction.
 
@@ -360,6 +360,15 @@ After actually installing and running it, Bun Shell's developer experience is be
 That said, it's still 1.x and some APIs are not stable. I'd recommend validating thoroughly in your actual environment before putting Bun Shell scripts into production CI/CD. The same applies if you're integrating with Claude Code hooks or other automation pipelines.
 
 Bun is moving fast and the Shell API will stabilize. There's no urgent reason to drop zx, but for new Bun projects, the built-in shell deserves a first look.
+
+## References
+
+I verified the API behavior and the build/deploy recommendations in this post against these primary sources directly.
+
+- [Bun Shell official docs](https://bun.sh/docs/runtime/shell) — the canonical reference for `$` template literals, `.nothrow()`, `$.env()`, pipes/redirection, and the built-in command list.
+- [Bun official site](https://bun.sh) — installation and the entry point for the runtime, package manager, and bundler.
+- [oven-sh/bun GitHub repository](https://github.com/oven-sh/bun) — source code, issue tracker, and version-by-version changes (where I checked the unimplemented `.stdin()` behavior).
+- [google/zx GitHub repository](https://github.com/google/zx) — the official repo for zx, the comparison baseline. The Bun Shell docs credit it as an inspiration.
 
 ---
 

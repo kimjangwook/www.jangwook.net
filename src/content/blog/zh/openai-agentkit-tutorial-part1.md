@@ -1145,6 +1145,26 @@ research_agent = Agent(
 - 更广泛的研究覆盖
 - 发现遗漏的重要论文
 
+## 何时该用 AgentKit，何时该避开
+
+AgentKit 并非所有场景的正解。在决定引入之前，先权衡以下标准。
+
+### 适合的场景
+
+- <strong>已经以 OpenAI 模型为主的团队</strong>：如果 GPT 系列是你的默认选择，并且想把追踪、Evals、护栏都收进同一个生态，这里的摩擦最小。
+- <strong>需要多智能体路由的工作流</strong>：交接在 SDK 中是一等公民，分诊到专家的模式比自己实现要少写很多代码。
+- <strong>与非开发者协作的原型设计</strong>：Agent Builder 的可视化画布让 PM 或领域专家能直接看到并修改流程。
+- <strong>想用标准方式接入 MCP 工具时</strong>：Connector Registry 与 MCP 原生支持让工具集成保持一致。自己从头搭建 MCP 服务器的流程，可在[用 FastMCP 构建 Python MCP 服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)中深入了解。
+
+### 需要避开或谨慎对待的场景
+
+- <strong>核心是非 OpenAI 模型时</strong>：如果 Anthropic、Google 或开放权重模型是你的主力引擎，厂商锁定会是实打实的成本。这时模型中立的框架更安全。若工具调用设计是关键，可对比[Claude Agent SDK 工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)；若类型安全最重要，可权衡[Pydantic AI 类型安全智能体教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)。
+- <strong>简单的单次调用任务</strong>：一次分类、一次摘要，智能体抽象反而过度。直接调用 Chat Completions API 更便宜也更快。
+- <strong>有严格成本上限的大流量场景</strong>：智能体循环的 token 消耗难以预测。即便用护栏限制迭代次数，也要事先用压力测试验证成本。
+- <strong>难以承受 Beta 不稳定性的生产环境</strong>：Agent Builder 处于 Beta，API 表面可能变动。对于有长期合约的系统，在 GA 之前最好别放在关键路径上。
+
+<strong>一句话总结</strong>：以 OpenAI 为中心 + 多智能体 + 快速迭代，优势能发挥；多厂商 + 简单调用 + 严格成本控制，则应先考虑其他选项。
+
 ## 第 1 部分的收获，与第 2 部分要讲的
 
 走到这里，智能体、交接、护栏这三根支柱，加上你跑通的第一个智能体代码，应该都已经上手了。真正拉开差距的，是接下来的实战。
@@ -1159,11 +1179,13 @@ research_agent = Agent(
 
 ## 额外资源
 
-### 官方文档
+### 官方文档（一手来源）
 
-- OpenAI AgentKit官方页面：https://openai.com/agent-platform/
-- Agents SDK文档：https://openai.github.io/openai-agents-python/
-- MCP协议：https://modelcontextprotocol.io/
+- OpenAI Agents SDK 官方文档：https://openai.github.io/openai-agents-python/
+- OpenAI API 开发者文档（Platform）：https://platform.openai.com/docs
+- OpenAI 开发者门户 - Agents 指南：https://developers.openai.com/learn/agents
+- OpenAI Agents SDK GitHub 仓库：https://github.com/openai/openai-agents-python
+- Model Context Protocol 官方文档：https://modelcontextprotocol.io/
 
 ### 社区
 

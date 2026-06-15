@@ -354,7 +354,7 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 - 복잡한 bash 스크립트가 이미 많고, Bun Shell의 bash 호환성이 불확실하다.
 - `zx`가 이미 잘 동작하고 팀이 익숙하다.
 
-Bun Shell이 zx보다 "더 좋다"는 주장에는 동의하지 않는다. 생태계 성숙도와 다운로드 수에서 zx가 앞선다. Bun Shell은 "Bun을 쓰는 사람에게는 자연스러운 선택"이지 "모든 프로젝트에 zx 대신 써야 한다"는 게 아니다.
+Bun Shell이 zx보다 "더 좋다"는 주장에는 동의하지 않는다. 생태계 성숙도와 다운로드 수에서 zx가 앞선다. Bun Shell은 "Bun을 쓰는 사람에게는 자연스러운 선택"이지 "모든 프로젝트에 zx 대신 써야 한다"는 게 아니다. 런타임 자체를 고를 때의 판단 기준은 [Deno 2와 Bun, Node.js를 비교한 글](/ko/blog/ko/deno-2-vs-bun-nodejs-runtime-2026-comparison)에서 더 자세히 다뤘으니, 도구 선택 전에 참고하면 좋다.
 
 그리고 개인적으로, `.stdin()` API가 아직 안정적이지 않은 점이 아쉽다. 이게 안정화되면 stdin 기반 파이프 처리가 훨씬 깔끔해질 텐데.
 
@@ -407,6 +407,15 @@ if (result.exitCode !== 0) {
 다만 아직 1.x 버전이고, API가 안정적이지 않은 부분이 있다. 프로덕션 CI/CD 스크립트에 쓰기 전에 실제 환경에서 충분히 검증하고 쓰는 걸 권한다. Claude Code 훅처럼 자동화 파이프라인에 통합할 때도 마찬가지다.
 
 Bun이 계속 발전하면서 Shell API도 안정화될 거라고 본다. 지금 당장 zx를 버릴 이유는 없지만, 새 Bun 프로젝트라면 내장 쉘을 먼저 써보는 게 맞다.
+
+## 참고 자료
+
+이 글의 API 동작과 빌드/배포 권장 사항은 다음 1차 자료를 직접 확인하면서 검증했다.
+
+- [Bun Shell 공식 문서](https://bun.sh/docs/runtime/shell) — `$` 템플릿 리터럴, `.nothrow()`, `$.env()`, 파이프/리다이렉션, 내장 명령 목록의 공식 레퍼런스.
+- [Bun 공식 사이트](https://bun.sh) — 설치 방법과 런타임/패키지 매니저/번들러 전반의 진입점.
+- [oven-sh/bun GitHub 저장소](https://github.com/oven-sh/bun) — 소스 코드, 이슈 트래커, 버전별 변경 사항(예: `.stdin()` 관련 미구현 이슈 확인 경로).
+- [google/zx GitHub 저장소](https://github.com/google/zx) — 비교 대상인 zx의 공식 저장소. Bun Shell 문서 크레딧에서도 영감을 받았다고 밝히고 있다.
 
 ---
 

@@ -458,6 +458,32 @@ uv remove openai
 
 锁文件自动更新。
 
+## 什么时候用 uv，什么时候避开
+
+快不代表在所有场景都是最优解。在不同项目上分别试用之后，我大致是这样划线的。
+
+**适合用 uv 的情况**
+
+- 依赖完全是纯 PyPI 的 AI 代理项目，比如 Claude SDK、OpenAI SDK。依赖树干净，uv 的优势能直接体现出来。
+- CI/CD 构建时间是瓶颈的项目。`uv sync` 命中缓存的 0.074 秒，相比 pip 是实打实的差距。
+- 团队成员 Python 版本各不相同、频繁出现"在我机器上能跑"的情况。`uv python pin` 一行就能统一。
+- 不想分别管理 pipx、pyenv、venv 的个人开发者。一个工具就覆盖了这三者。
+
+**保留 pip 更稳妥的情况**
+
+- 已经跑得很好的遗留项目。如果 `requirements.txt` 和内部部署脚本都绑在 pip 上，没必要特意去动它。迁移成本可能超过速度收益。
+- 公司政策固定了工具链，引入新二进制需要繁琐审批的环境。
+
+**保留 Poetry 更稳妥的情况**
+
+- 把库发布到 PyPI 的包项目。如果 Poetry 的构建/发布流程已经成熟、团队也很熟悉，迁到 uv 的实际收益不大。（不过 uv 同样支持构建与发布，所以全新的库项目里 uv 也是候选。）
+
+**必须用 conda 的情况**
+
+- 依赖 torch、CUDA、tensorflow 等从 conda 频道构建的二进制的深度学习项目。uv 基于 PyPI，无法直接触及这一层。如果核心就是匹配 CUDA 版本，conda（或 conda 与 uv 并用）才是现实路径。
+
+一句话总结：**调用 API 的代理/后端类 Python 项目，从 uv 起步；深度绑定 GPU 二进制的 ML 训练项目，从 conda 起步。** 库选型的视角我在[Python AI 代理库对比](/zh/blog/zh/python-ai-agent-library-comparison-2026)里讲得更细，而构建类型安全代理时的依赖选择，可以参考[Pydantic AI 类型安全代理教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)。
+
 ## 坦率地说，uv还有几处帮不上忙
 
 仅看性能，uv几乎是完美的工具，但有几点需要诚实说明。
@@ -505,3 +531,13 @@ uv self update
 我现在启动新AI项目时，几乎下意识就会打`uv init`。找不到回到pip的理由。对于必须用conda的ML项目，选择还是必要的。
 
 0.874秒不只是一个速度数字。实验越频繁，每次实验的摩擦越小，就会尝试更多。这最终会产出更好的代码。
+
+## 参考资料（官方来源）
+
+本文中的命令和行为，均以 uv 0.11 为基准、对照官方文档逐一核对。
+
+- [uv 官方文档](https://docs.astral.sh/uv/) — uv 的完整功能与命令参考
+- [astral-sh/uv GitHub 仓库](https://github.com/astral-sh/uv) — 源代码、发布说明、Issue 追踪
+- [uv 安装指南](https://docs.astral.sh/uv/getting-started/installation/) — 各操作系统安装方式的官方文档
+- [在 GitHub Actions 中使用 uv](https://docs.astral.sh/uv/guides/integration/github/) — CI 集成与 `astral-sh/setup-uv` action
+- [Astral 官方文档中心](https://docs.astral.sh/) — uv、Ruff、ty 背后 Astral 团队的文档集

@@ -1145,6 +1145,26 @@ research_agent = Agent(
 - 더 광범위한 연구 커버리지
 - 놓친 중요 논문 발견
 
+## 언제 AgentKit을 쓰고, 언제 피해야 하는가
+
+AgentKit이 모든 상황의 정답은 아닙니다. 도입을 결정하기 전에 다음 기준을 따져보세요.
+
+### 쓰면 좋은 경우
+
+- <strong>이미 OpenAI 모델을 메인으로 쓰는 팀</strong>: GPT 계열을 기본으로 두고 트레이싱, Evals, 가드레일까지 한 생태계 안에서 묶고 싶다면 마찰이 가장 적습니다.
+- <strong>멀티 에이전트 라우팅이 필요한 워크플로우</strong>: 핸드오프 모델이 SDK에 1급 시민으로 들어가 있어, 트리아지 → 전문 에이전트 패턴을 직접 구현하는 것보다 코드가 훨씬 짧아집니다.
+- <strong>비개발자와 협업하는 프로토타이핑</strong>: Agent Builder의 비주얼 캔버스로 PM이나 도메인 전문가가 흐름을 직접 보고 수정할 수 있습니다.
+- <strong>MCP 도구를 표준 방식으로 붙이고 싶을 때</strong>: Connector Registry와 MCP 네이티브 지원으로 도구 통합이 일관됩니다. MCP 서버를 직접 만드는 흐름은 [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)에서 더 깊이 다룹니다.
+
+### 피하거나 신중해야 하는 경우
+
+- <strong>OpenAI 외 모델이 핵심인 경우</strong>: Anthropic, Google, 오픈 웨이트 모델을 주력으로 쓴다면 벤더 종속이 부담입니다. 이때는 프레임워크 자체가 모델 중립적인 쪽이 안전합니다. 도구 호출 설계가 핵심이라면 [Claude Agent SDK 도구 사용 완벽 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)를, 타입 안전성이 중요하면 [Pydantic AI 타입 안전 에이전트 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 함께 비교해 보세요.
+- <strong>단순한 단일 호출 작업</strong>: 분류 한 번, 요약 한 번이면 에이전트 추상화가 오히려 과합니다. Chat Completions API 직접 호출이 더 싸고 빠릅니다.
+- <strong>엄격한 비용 상한이 있는 대량 트래픽</strong>: 에이전트 루프는 토큰 소비가 예측하기 어렵습니다. 가드레일로 반복 횟수를 묶더라도, 사전에 부하 테스트로 비용을 검증해야 합니다.
+- <strong>베타 안정성을 감당하기 어려운 프로덕션</strong>: Agent Builder는 베타이고 API 표면이 바뀔 수 있습니다. 장기 계약이 걸린 시스템이라면 GA 전까지는 핵심 경로에 두지 않는 편이 안전합니다.
+
+<strong>한 줄 정리</strong>: OpenAI 중심 + 멀티 에이전트 + 빠른 반복이면 강점이 살고, 멀티 벤더 + 단순 호출 + 엄격한 비용 통제가 필요하면 다른 선택지를 먼저 검토하세요.
+
 ## 1부에서 챙긴 것, 그리고 2부에서 다룰 것
 
 여기까지 따라왔다면 에이전트, 핸드오프, 가드레일이라는 세 축과 첫 에이전트 코드가 손에 익었을 겁니다. 나머지는 실전에서 갈립니다.
@@ -1159,11 +1179,13 @@ research_agent = Agent(
 
 ## 추가 자료
 
-### 공식 문서
+### 공식 문서 (1차 출처)
 
-- OpenAI AgentKit 공식 페이지: https://openai.com/agent-platform/
-- Agents SDK 문서: https://openai.github.io/openai-agents-python/
-- MCP 프로토콜: https://modelcontextprotocol.io/
+- OpenAI Agents SDK 공식 문서: https://openai.github.io/openai-agents-python/
+- OpenAI API 개발자 문서(Platform): https://platform.openai.com/docs
+- OpenAI 개발자 포털 - Agents 가이드: https://developers.openai.com/learn/agents
+- OpenAI Agents SDK GitHub 리포지토리: https://github.com/openai/openai-agents-python
+- Model Context Protocol 공식 문서: https://modelcontextprotocol.io/
 
 ### 커뮤니티
 

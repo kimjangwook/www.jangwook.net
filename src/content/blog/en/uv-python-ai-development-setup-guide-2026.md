@@ -466,6 +466,32 @@ uv remove openai
 
 Lock file updates automatically.
 
+## When to Use uv, and When to Skip It
+
+Fast doesn't mean best for every situation. After splitting it across real projects, here's roughly the line I draw.
+
+**Reach for uv when**
+
+- You're building an AI agent project whose dependencies are pure PyPI, like the Claude SDK or OpenAI SDK. The dependency tree stays clean, so uv's strengths show up directly.
+- CI/CD build time is your bottleneck. A 0.074-second warm-cache `uv sync` is a real gap over pip.
+- Your team keeps hitting "works on my machine" because everyone's on a different Python version. `uv python pin` settles it in one line.
+- You're a solo developer tired of managing pipx, pyenv, and venv separately. One tool covers all three.
+
+**Leave pip alone when**
+
+- The legacy project already works. If `requirements.txt` and your internal deploy scripts are wired into pip, there's little reason to touch it. Migration cost can outweigh the speed win.
+- Company policy locks the toolchain and getting a new binary approved is a hassle.
+
+**Stay on Poetry when**
+
+- You publish libraries to PyPI and your team already knows Poetry's build and release flow well. The payoff for switching is small. (That said, uv supports build and publish too, so for a brand-new library it's a fair candidate.)
+
+**Use conda when**
+
+- Your deep learning project depends on conda-channel binaries like torch, CUDA, or tensorflow. uv is PyPI-based and can't reach that layer. If matching a CUDA version is the whole game, conda (or conda plus uv side by side) is the realistic path.
+
+One line: for an API-calling agent or backend Python project, start with uv. For an ML training project bound tightly to GPU binaries, start with conda. For the library side of that choice, I went deeper in the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026), and for dependency choices when building type-safe agents, the [Pydantic AI type-safe agent tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) is a useful companion.
+
 ## Where uv Still Falls Short, Honestly
 
 Performance-wise, uv is nearly perfect. But a few things deserve honesty.
@@ -513,3 +539,13 @@ uv self update
 I now reach for `uv init` almost automatically when starting a new AI project. I haven't found a reason to go back to pip. For conda-dependent ML work, the choice is still necessary.
 
 0.874 seconds isn't just a speed stat. The less friction each experiment costs, the more experiments you run. That tends to produce better code.
+
+## References (Official Sources)
+
+Every command and behavior in this post was cross-checked against the official uv 0.11 documentation.
+
+- [uv official documentation](https://docs.astral.sh/uv/) — full feature set and command reference
+- [astral-sh/uv GitHub repository](https://github.com/astral-sh/uv) — source code, release notes, issue tracker
+- [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/) — official per-OS install instructions
+- [Using uv in GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/) — CI integration and the `astral-sh/setup-uv` action
+- [Astral documentation hub](https://docs.astral.sh/) — docs from the Astral team behind uv, Ruff, and ty

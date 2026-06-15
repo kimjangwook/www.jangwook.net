@@ -495,6 +495,32 @@ uv add "anthropic[vertex]"
 
 대괄호 문법으로 선택적 확장 기능을 지정한다. `anthropic[bedrock]`은 `boto3`를 추가 설치한다.
 
+## uv를 언제 쓰고 언제 피할지
+
+빠르다고 모든 상황에 최선은 아니다. 내가 실제로 프로젝트를 나눠 적용해본 기준은 대략 이렇다.
+
+**uv를 쓰는 게 맞는 경우**
+
+- Claude SDK, OpenAI SDK처럼 순수 PyPI 의존성으로 끝나는 AI 에이전트 프로젝트. 의존성 트리가 깔끔해서 uv의 강점이 그대로 드러난다.
+- CI/CD에서 빌드 시간이 병목인 프로젝트. `uv sync`의 캐시 적중 0.074초는 pip 대비 차이가 크다.
+- 팀원마다 Python 버전이 제각각이라 "내 PC에서는 됐는데" 문제가 잦은 경우. `uv python pin`으로 한 방에 정리된다.
+- pipx, pyenv, venv를 따로 관리하기 귀찮은 개인 개발자. 도구 하나로 통합된다.
+
+**pip을 그대로 두는 게 나은 경우**
+
+- 이미 잘 돌아가는 레거시 프로젝트. `requirements.txt`와 사내 배포 스크립트가 pip에 묶여 있다면 굳이 건드릴 이유가 약하다. 전환 비용이 속도 이득보다 클 수 있다.
+- 회사 정책상 도구 체인이 고정돼 있어 새 바이너리 도입 승인이 까다로운 환경.
+
+**Poetry를 유지하는 게 나은 경우**
+
+- 라이브러리를 PyPI에 퍼블리시하는 패키지 프로젝트. Poetry의 빌드/배포 워크플로우가 이미 성숙해 있고 팀이 익숙하다면, uv로 굳이 옮길 실익이 작다. (다만 uv도 빌드·퍼블리시를 지원하므로 신규 라이브러리라면 uv도 후보다.)
+
+**conda를 써야 하는 경우**
+
+- torch, CUDA, tensorflow처럼 conda 채널에서 빌드된 바이너리에 의존하는 딥러닝 프로젝트. uv는 PyPI 기반이라 이 영역을 직접 못 다룬다. CUDA 버전 매칭이 핵심이라면 conda(또는 conda + uv 병행)가 현실적이다.
+
+한 줄로 정리하면, **API를 호출하는 에이전트/백엔드 성격의 Python 프로젝트라면 uv, GPU 바이너리에 깊게 묶인 ML 학습 프로젝트라면 conda**가 출발점이다. 라이브러리 추천 관점은 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 더 자세히 다뤘고, 타입 안전한 에이전트를 만들 때의 의존성 선택은 [Pydantic AI 타입 안전 에이전트 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 참고하면 좋다.
+
 ## 솔직하게, uv가 아직 못 해주는 것들
 
 성능만 보면 거의 완벽한 도구지만, 몇 가지 주의할 지점이 있다.
@@ -542,6 +568,16 @@ uv self update
 나는 이제 새 AI 프로젝트를 시작할 때 거의 자동으로 `uv init`을 친다. pip으로 돌아갈 이유를 찾지 못하고 있다. 다만 conda가 꼭 필요한 ML 프로젝트에서는 아직 선택이 필요하다.
 
 0.874초는 단순한 속도 이야기가 아니다. 실험을 자주 할수록, 실험당 마찰이 작을수록 더 많이 시도하게 된다. 그게 결국 더 나은 코드로 이어진다.
+
+## 참고 자료 (공식 출처)
+
+이 글의 명령어와 동작은 모두 uv 0.11 기준 공식 문서로 교차 확인했다.
+
+- [uv 공식 문서](https://docs.astral.sh/uv/) — uv의 전체 기능과 명령어 레퍼런스
+- [astral-sh/uv GitHub 저장소](https://github.com/astral-sh/uv) — 소스 코드, 릴리즈 노트, 이슈 트래커
+- [uv 설치 가이드](https://docs.astral.sh/uv/getting-started/installation/) — OS별 설치 방법 공식 문서
+- [GitHub Actions에서 uv 사용하기](https://docs.astral.sh/uv/guides/integration/github/) — CI 통합 및 `astral-sh/setup-uv` 액션
+- [Astral 공식 문서 허브](https://docs.astral.sh/) — uv, Ruff, ty를 만든 Astral 팀의 문서 모음
 
 ---
 

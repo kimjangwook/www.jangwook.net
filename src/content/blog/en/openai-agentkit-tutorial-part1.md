@@ -1145,6 +1145,26 @@ research_agent = Agent(
 - Broader research coverage
 - Discovered missed important papers
 
+## When to Use AgentKit, and When to Avoid It
+
+AgentKit is not the right answer for every situation. Weigh these criteria before you commit.
+
+### Good fits
+
+- <strong>Teams already standardized on OpenAI models</strong>: If GPT-family models are your default and you want tracing, Evals, and guardrails inside one ecosystem, friction is lowest here.
+- <strong>Workflows that need multi-agent routing</strong>: Handoffs are first-class citizens in the SDK, so the triage-to-specialist pattern takes far less code than rolling it yourself.
+- <strong>Prototyping alongside non-developers</strong>: Agent Builder's visual canvas lets a PM or domain expert see and edit the flow directly.
+- <strong>Connecting MCP tools in a standard way</strong>: The Connector Registry and native MCP support keep tool integration consistent. For building your own MCP server end to end, see [Building a Python MCP Server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026).
+
+### Cases to avoid or approach carefully
+
+- <strong>Non-OpenAI models at the core</strong>: If Anthropic, Google, or open-weight models are your primary engine, vendor lock-in is a real cost. A model-neutral framework is safer. If tool-call design is the crux, compare [The Complete Guide to Claude Agent SDK Tool Use](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026); if type safety matters most, weigh [Pydantic AI Type-Safe Agent Tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026).
+- <strong>Simple single-call tasks</strong>: One classification or one summary makes the agent abstraction overkill. A direct Chat Completions call is cheaper and faster.
+- <strong>High-traffic work under a hard cost ceiling</strong>: Agent loops have hard-to-predict token consumption. Even with guardrails capping iterations, validate cost with load tests up front.
+- <strong>Production that can't absorb beta instability</strong>: Agent Builder is in beta and its API surface may shift. For systems under long-term contracts, keep it off the critical path until GA.
+
+<strong>One-line takeaway</strong>: OpenAI-centric plus multi-agent plus fast iteration plays to its strengths; multi-vendor plus simple calls plus strict cost control means you should look at other options first.
+
 ## What Part 1 Covered, and What's Next
 
 If you made it here, the three pillars — agents, handoffs, guardrails — plus your first running agent should feel familiar now. The rest is where real projects diverge.
@@ -1159,11 +1179,13 @@ If you made it here, the three pillars — agents, handoffs, guardrails — plus
 
 ## Additional Resources
 
-### Official Documentation
+### Official Documentation (Primary Sources)
 
-- OpenAI AgentKit Official: https://openai.com/agent-platform/
-- Agents SDK Docs: https://openai.github.io/openai-agents-python/
-- MCP Protocol: https://modelcontextprotocol.io/
+- OpenAI Agents SDK official docs: https://openai.github.io/openai-agents-python/
+- OpenAI API developer docs (Platform): https://platform.openai.com/docs
+- OpenAI Developers portal - Agents guide: https://developers.openai.com/learn/agents
+- OpenAI Agents SDK GitHub repository: https://github.com/openai/openai-agents-python
+- Model Context Protocol official docs: https://modelcontextprotocol.io/
 
 ### Community
 

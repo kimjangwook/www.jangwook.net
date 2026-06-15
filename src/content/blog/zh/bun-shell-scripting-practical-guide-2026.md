@@ -307,7 +307,7 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 - 已有复杂bash脚本，Bun Shell的兼容性不确定。
 - `zx`已经运行良好，团队也很熟悉。
 
-我不认同"Bun Shell比zx更好"这种说法。从生态成熟度和下载量来看，zx更占优。Bun Shell是"用Bun的人的自然选择"，而不是"所有项目都应该弃用zx"。
+我不认同"Bun Shell比zx更好"这种说法。从生态成熟度和下载量来看，zx更占优。Bun Shell是"用Bun的人的自然选择"，而不是"所有项目都应该弃用zx"。如果你还在纠结运行时本身怎么选，我在[Deno 2、Bun与Node.js对比一文](/zh/blog/zh/deno-2-vs-bun-nodejs-runtime-2026-comparison)里更深入地讲了这个取舍，定工具之前值得一读。
 
 还有一点，`.stdin()` API尚不稳定让我觉得遗憾。一旦稳定下来，基于stdin的管道处理会简洁很多，现在还需要绕路。
 
@@ -318,6 +318,15 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 不过目前仍是1.x版本，部分API还不稳定。在生产CI/CD脚本中使用之前，建议在实际环境中充分验证。与Claude Code hooks等自动化流水线集成时也同样如此。
 
 Bun在快速发展，Shell API也会逐渐稳定。现在没有迫切需要放弃zx的理由，但新的Bun项目不妨先试试内置shell。
+
+## 参考资料
+
+本文中的API行为以及构建/部署建议，都是我直接查阅以下一手资料后验证的。
+
+- [Bun Shell官方文档](https://bun.sh/docs/runtime/shell) — `$`模板字面量、`.nothrow()`、`$.env()`、管道/重定向以及内置命令列表的官方参考。
+- [Bun官方网站](https://bun.sh) — 安装方法，以及运行时/包管理器/打包工具的整体入口。
+- [oven-sh/bun GitHub仓库](https://github.com/oven-sh/bun) — 源代码、Issue追踪以及各版本的变更（我在这里确认了`.stdin()`的未实现行为）。
+- [google/zx GitHub仓库](https://github.com/google/zx) — 对比对象zx的官方仓库。Bun Shell文档也明确表示从中获得了灵感。
 
 ---
 

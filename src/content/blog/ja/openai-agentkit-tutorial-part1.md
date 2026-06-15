@@ -1146,6 +1146,26 @@ research_agent = Agent(
 - より広範な研究カバレッジ
 - 見逃した重要論文を発見
 
+## AgentKit を使うべきとき、避けるべきとき
+
+AgentKit はあらゆる状況の正解ではありません。導入を決める前に次の基準を検討してください。
+
+### 向いているケース
+
+- <strong>すでに OpenAI モデルをメインで使っているチーム</strong>: GPT 系を既定にして、トレーシング・Evals・ガードレールまで一つの生態系にまとめたいなら、摩擦が最も小さくなります。
+- <strong>マルチエージェントのルーティングが必要なワークフロー</strong>: ハンドオフが SDK の一級市民として組み込まれており、トリアージ → 専門エージェントのパターンを自前で実装するよりコードが大幅に短くなります。
+- <strong>非開発者と協業するプロトタイピング</strong>: Agent Builder のビジュアルキャンバスで、PM やドメイン専門家が流れを直接見て修正できます。
+- <strong>MCP ツールを標準的な方式で接続したいとき</strong>: Connector Registry と MCP ネイティブ対応でツール統合が一貫します。MCP サーバーを自分で作る流れは[FastMCP で Python MCP サーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)でより深く扱っています。
+
+### 避ける、または慎重になるべきケース
+
+- <strong>OpenAI 以外のモデルが中核の場合</strong>: Anthropic、Google、オープンウェイトモデルを主力に使うなら、ベンダーロックインが現実的なコストになります。この場合はモデル中立のフレームワークが安全です。ツール呼び出し設計が要なら[Claude Agent SDK ツール使用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)を、型安全性が重要なら[Pydantic AI 型安全エージェントチュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を併せて比較してください。
+- <strong>単純な単一呼び出しのタスク</strong>: 分類一回、要約一回ならエージェント抽象化はむしろ過剰です。Chat Completions API を直接呼ぶほうが安く速い。
+- <strong>厳格なコスト上限がある大量トラフィック</strong>: エージェントループはトークン消費が予測しづらいです。ガードレールで反復回数を縛っても、事前に負荷テストでコストを検証する必要があります。
+- <strong>ベータの不安定さを許容しづらいプロダクション</strong>: Agent Builder はベータで、API 表面が変わる可能性があります。長期契約のかかったシステムなら、GA までは中核経路に置かないほうが安全です。
+
+<strong>一行まとめ</strong>: OpenAI 中心 + マルチエージェント + 高速反復なら強みが生き、マルチベンダー + 単純呼び出し + 厳格なコスト管理が必要なら、まず他の選択肢を検討してください。
+
 ## 第 1 部で得たもの、第 2 部で扱うもの
 
 ここまで来たなら、エージェント・ハンドオフ・ガードレールという三本柱と、最初に動かしたエージェントのコードは手に馴染んだはずです。差が出るのはここから先、実戦です。
@@ -1160,11 +1180,13 @@ research_agent = Agent(
 
 ## 追加リソース
 
-### 公式ドキュメント
+### 公式ドキュメント（一次情報源）
 
-- OpenAI AgentKit 公式ページ: https://openai.com/agent-platform/
-- Agents SDK ドキュメント: https://openai.github.io/openai-agents-python/
-- MCP プロトコル: https://modelcontextprotocol.io/
+- OpenAI Agents SDK 公式ドキュメント: https://openai.github.io/openai-agents-python/
+- OpenAI API 開発者ドキュメント（Platform）: https://platform.openai.com/docs
+- OpenAI 開発者ポータル - Agents ガイド: https://developers.openai.com/learn/agents
+- OpenAI Agents SDK GitHub リポジトリ: https://github.com/openai/openai-agents-python
+- Model Context Protocol 公式ドキュメント: https://modelcontextprotocol.io/
 
 ### コミュニティ
 
