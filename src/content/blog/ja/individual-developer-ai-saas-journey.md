@@ -49,7 +49,7 @@ faq:
 日本で働きながら発見したB2B自動化ニーズ:
 
 1. <strong>免税処理業務の手作業依存</strong>: パスポートと免税書類を目視確認し手入力
-2. <strong>経理業務の反復作業</strong>: レシートOCR後の手動データ整理。実データで見るAI経理自動化の効果では、この課題がいかに深刻かを数字で示しています。
+2. <strong>経理業務の反復作業</strong>: レシートOCR後の手動データ整理。[実データで見るAI経理自動化の効果](/ja/blog/ja/effiflow-automation-analysis-part1)では、この課題がいかに深刻かを数字で示しています。
 3. <strong>既存ソリューションの限界</strong>: 高価なエンタープライズソリューションか精度の低い汎用OCR
 
 個人開発者としての差別化ポイントは<strong>AIを活用した構造化データ抽出</strong>です。単純なテキストOCRを超えて、Google Gemini APIのStructured Output機能で型安全なJSON応答を受け取り、即座にビジネスロジックに活用可能なデータを提供します。このサービスのその後の方向性についてはAgent Effi Flowのピボット決断とおもてなしボット構想で続けて解説しています。
@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript型定義
    - Zodスキーマ検証
    
-   AIツールを活用してサイドプロジェクトを会社レベルに育てるアプローチはEffloow：サイドプロジェクトからAIカンパニーへでも詳しく解説しています。
+   AIツールを活用してサイドプロジェクトを会社レベルに育てるアプローチはEffloow：サイドプロジェクトからAIカンパニーへでも詳しく解説しています。複数のエージェントを連携させて作業を自動化する実践ノウハウは[マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)にまとめてあります。
 
 3. <strong>Vercel Preview Deployments</strong>
    - PRごとに自動デプロイURL

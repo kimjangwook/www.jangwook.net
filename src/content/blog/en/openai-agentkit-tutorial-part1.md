@@ -514,7 +514,7 @@ Don't like code? Use Agent Builder's visual canvas.
 
 ### Accessing Agent Builder
 
-1. Visit https://platform.openai.com/agent-builder
+1. Visit <https://platform.openai.com/agent-builder>
 2. Log in with OpenAI account
 3. Click "New Agent"
 
@@ -669,7 +669,7 @@ agent = Agent(
 - GitHub MCP
 - PostgreSQL MCP
 
-<strong>Build Your Own</strong>: https://modelcontextprotocol.io/docs
+<strong>Build Your Own</strong>: <https://modelcontextprotocol.io/docs>
 
 ## Deep Dive into Guardrails
 
@@ -1181,16 +1181,16 @@ If you made it here, the three pillars — agents, handoffs, guardrails — plus
 
 ### Official Documentation (Primary Sources)
 
-- OpenAI Agents SDK official docs: https://openai.github.io/openai-agents-python/
-- OpenAI API developer docs (Platform): https://platform.openai.com/docs
-- OpenAI Developers portal - Agents guide: https://developers.openai.com/learn/agents
-- OpenAI Agents SDK GitHub repository: https://github.com/openai/openai-agents-python
-- Model Context Protocol official docs: https://modelcontextprotocol.io/
+- OpenAI Agents SDK official docs: <https://openai.github.io/openai-agents-python/>
+- OpenAI API developer docs (Platform): <https://platform.openai.com/docs>
+- OpenAI Developers portal - Agents guide: <https://developers.openai.com/learn/agents>
+- OpenAI Agents SDK GitHub repository: <https://github.com/openai/openai-agents-python>
+- Model Context Protocol official docs: <https://modelcontextprotocol.io/>
 
 ### Community
 
-- OpenAI Developer Forum: https://community.openai.com/
-- AgentKit GitHub: https://github.com/openai/openai-agents-python
+- OpenAI Developer Forum: <https://community.openai.com/>
+- AgentKit GitHub: <https://github.com/openai/openai-agents-python>
 - Reddit: r/OpenAI
 
 ### Tutorial Videos

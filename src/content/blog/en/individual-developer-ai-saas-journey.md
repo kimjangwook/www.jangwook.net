@@ -49,7 +49,7 @@ What follows isn't a "this is theoretically possible" write-up. It's <strong>wha
 B2B automation needs discovered while working in Japan:
 
 1. <strong>Manual-dependent tax refund processing</strong>: Visual passport and tax refund document verification with manual data entry
-2. <strong>Repetitive accounting tasks</strong>: Manual data cleanup after receipt OCR. AI accounting automation by the numbers shows just how significant this problem is with real data.
+2. <strong>Repetitive accounting tasks</strong>: Manual data cleanup after receipt OCR. [AI accounting automation by the numbers](/en/blog/en/effiflow-automation-analysis-part1) shows just how significant this problem is with real data.
 3. <strong>Limitations of existing solutions</strong>: Either expensive enterprise solutions or low-accuracy generic OCR
 
 The differentiation point as an individual developer: <strong>Structured data extraction using AI</strong>. Beyond simple text OCR, using Google Gemini API's Structured Output feature to receive type-safe JSON responses immediately usable in business logic. For where the service headed next, see Agent Effi Flow's pivot decision and the Omotenashi bot concept.
@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript type definitions
    - Zod schema validation
    
-   The broader approach of using AI tools to grow a side project to company scale is covered in Effloow: from side project to AI company.
+   The broader approach of using AI tools to grow a side project to company scale is covered in Effloow: from side project to AI company. The hands-on details of chaining several agents to automate the work live in [my notes on improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement).
 
 3. <strong>Vercel Preview Deployments</strong>
    - Automatic deployment URL per PR

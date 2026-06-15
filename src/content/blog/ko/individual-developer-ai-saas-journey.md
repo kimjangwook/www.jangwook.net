@@ -49,7 +49,7 @@ faq:
 일본에서 일하면서 발견한 B2B 자동화 니즈:
 
 1. <strong>면세처리 업무의 수작업 의존</strong>: 여권과 면세 서류를 육안으로 확인하고 수기 입력
-2. <strong>경리 업무의 반복 작업</strong>: 영수증 OCR 후 수동 데이터 정리. 실제 데이터로 본 AI 경리 자동화의 효과에서 이 문제가 얼마나 심각한지 수치로 확인할 수 있습니다.
+2. <strong>경리 업무의 반복 작업</strong>: 영수증 OCR 후 수동 데이터 정리. [실제 데이터로 본 AI 경리 자동화의 효과](/ko/blog/ko/effiflow-automation-analysis-part1)에서 이 문제가 얼마나 심각한지 수치로 확인할 수 있습니다.
 3. <strong>기존 솔루션의 한계</strong>: 고가의 엔터프라이즈 솔루션이거나 정확도가 낮은 범용 OCR
 
 개인 개발자로서 차별화 포인트는 <strong>AI를 활용한 구조화된 데이터 추출</strong>입니다. 단순 텍스트 OCR을 넘어 Google Gemini API의 Structured Output 기능으로 타입 안전한 JSON 응답을 받아 즉시 비즈니스 로직에 활용 가능한 데이터를 제공합니다. 이 서비스의 이후 방향성에 대해서는 Agent Effi Flow의 피벗 결정과 오모테나시 봇 구상에서 이어서 다룹니다.
@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript 타입 정의
    - Zod 스키마 검증
    
-   솔로 개발자로 AI 도구를 활용해 사이드 프로젝트를 회사 수준으로 키우는 접근법은 효로우(Effloow) 사이드 프로젝트를 AI 컴퍼니로에서도 자세히 다뤘습니다.
+   솔로 개발자로 AI 도구를 활용해 사이드 프로젝트를 회사 수준으로 키우는 접근법은 효로우(Effloow) 사이드 프로젝트를 AI 컴퍼니로에서도 자세히 다뤘습니다. 여러 에이전트를 묶어 작업을 자동화하는 실전 노하우는 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)에 정리해 뒀습니다.
 
 3. <strong>Vercel Preview Deployments</strong>
    - PR마다 자동 배포 URL
