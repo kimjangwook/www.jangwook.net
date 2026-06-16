@@ -38,7 +38,7 @@ export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 		},
 		{
 			question: '블로그 저자는 누구인가요?',
-			answer: 'Kim Jangwook은 <strong>10년 이상의 웹 개발 경험</strong>을 가진 풀스택 개발자이자 AI 전문가입니다. 현재 AI 기반 OCR 자동화 플랫폼 Effloow를 개발하고 있으며, Laravel, Vue.js, Python, SvelteKit 등 다양한 기술 스택에 전문성을 보유하고 있습니다.'
+			answer: 'Kim Jangwook은 <strong>10년 이상의 웹 개발 경험</strong>을 가진 풀스택 개발자이자 AI 전문가입니다. AI 에이전트 시스템과 자동화 서비스를 만들며, AI 소비자 리서치 플랫폼 InsightForge와 문서 OCR 자동화 Agent Effi Flow 등을 운영합니다. Laravel, Python, SvelteKit 등에 전문성을 보유하고 있습니다.'
 		}
 	],
 	en: [
@@ -60,7 +60,7 @@ export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 		},
 		{
 			question: 'Who is the blog author?',
-			answer: 'Kim Jangwook is a full-stack developer and AI specialist with <strong>over 10 years of web development experience</strong>. He is currently building Effloow, an AI-powered OCR automation platform. Expertise includes Laravel, Vue.js, Python, and SvelteKit.'
+			answer: 'Kim Jangwook is a full-stack developer and AI specialist with <strong>over 10 years of web development experience</strong>. He builds AI agent systems and automation services, including InsightForge (AI consumer research) and Agent Effi Flow (document OCR automation). Expertise includes Laravel, Python, and SvelteKit.'
 		}
 	],
 	ja: [
@@ -82,7 +82,7 @@ export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 		},
 		{
 			question: 'ブログの著者は誰ですか？',
-			answer: 'Kim Jangwookは<strong>10年以上のWeb開発経験</strong>を持つフルスタック開発者でありAI専門家です。現在、AI搭載OCR自動化プラットフォームEffloowを開発中。Laravel、Vue.js、Python、SvelteKitなどの技術に精通しています。'
+			answer: 'Kim Jangwookは<strong>10年以上のWeb開発経験</strong>を持つフルスタック開発者でありAI専門家です。AIエージェントシステムと自動化サービスを開発し、AI消費者リサーチのInsightForge、文書OCR自動化のAgent Effi Flowなどを運営しています。Laravel、Python、SvelteKitなどに精通しています。'
 		}
 	],
 	zh: [
@@ -104,7 +104,7 @@ export const homeFAQ: Record<'ko' | 'en' | 'ja' | 'zh', FAQItem[]> = {
 		},
 		{
 			question: '博客作者是谁？',
-			answer: 'Kim Jangwook 是一位拥有<strong>超过 10 年 Web 开发经验</strong>的全栈开发者和 AI 专家。目前正在开发 AI 驱动的 OCR 自动化平台 Effloow。精通 Laravel、Vue.js、Python 和 SvelteKit 等技术。'
+			answer: 'Kim Jangwook 是一位拥有<strong>超过 10 年 Web 开发经验</strong>的全栈开发者和 AI 专家。他构建 AI 智能体系统与自动化服务，运营 AI 消费者研究平台 InsightForge 与文档 OCR 自动化 Agent Effi Flow 等。精通 Laravel、Python、SvelteKit 等技术。'
 		}
 	]
 };
