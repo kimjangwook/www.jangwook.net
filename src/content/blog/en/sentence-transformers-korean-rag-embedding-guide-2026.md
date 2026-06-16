@@ -40,9 +40,18 @@ relatedPosts:
       ja: セマンティック検索（RAG）とツール呼び出し（Tool Use）を組み合わせると、より強力なエージェントになる。
       en: Combining semantic retrieval (RAG) with tool calling creates more capable agents — comparing both implementation patterns clarifies design choices.
       zh: 将语义检索（RAG）与工具调用（Tool Use）结合，可以构建更强大的代理。
+faq:
+  - question: "Should I use local sentence-transformers or a managed embedding API like OpenAI or Cohere for Korean RAG?"
+    answer: "Use local sentence-transformers (multilingual-e5, paraphrase-multilingual) when data privacy matters, you want zero per-call embedding cost, and you have GPU or CPU capacity. A managed API is better when you want to avoid running infrastructure, call volume is low, and you need top-tier multilingual quality. As the experiment shows, avoid English-only models whenever Korean text is involved."
+  - question: "What exactly goes wrong if I build Korean RAG with all-MiniLM-L6-v2?"
+    answer: "The model was trained mostly on English sentence pairs, so it represents Korean semantics with lower fidelity. In the mini RAG test, two of three Korean queries returned the wrong document at rank 1, and switching to a multilingual model recovered all three correct answers."
+  - question: "What happens if I swap the embedding model later?"
+    answer: "Changing the model changes the vector space, so you must re-encode every document. That is why you should pick a multilingual model from the start when Korean data is involved, and store the model name and version as metadata alongside each vector."
+  - question: "Are embeddings alone enough for good retrieval quality?"
+    answer: "When a specific keyword constraint matters, such as without Python, keyword search like BM25 beats dense embeddings. In practice the standard solution is hybrid search that fuses BM25 and vector results via reciprocal rank fusion."
 ---
 
-When I first learned about RAG, embeddings were an abstraction I accepted without questioning. "Sentences get converted to vectors," "similar meanings end up close together in vector space" — all true, but none of it clicked until I actually measured the numbers. So I installed `sentence-transformers` locally, measured cosine similarities, ran a mini retrieval simulation, and checked what happens with Korean queries specifically.
+When I first learned about RAG, embeddings were an abstraction I accepted without questioning. "Sentences get converted to vectors," "similar meanings end up close together in vector space." All true, but none of it clicked until I actually measured the numbers. So I installed `sentence-transformers` locally, measured cosine similarities, ran a mini retrieval simulation, and checked what happens with Korean queries specifically.
 
 The short answer: **building a Korean RAG system with an English-optimized embedding model dropped accuracy by 67% in my tests.** Two out of three queries returned the wrong document at rank 1. This post documents that experiment and how switching to a multilingual model fixed it.
 
@@ -62,7 +71,7 @@ embedding = model.encode("building an AI agent")
 print(embedding.shape)  # (384,)
 ```
 
-`all-MiniLM-L6-v2` downloads from Hugging Face Hub on first run. Load time on my machine: **9.52 seconds**. After that, it's cached and loads in under 1 second. Model size is around 22MB — genuinely lightweight.
+`all-MiniLM-L6-v2` downloads from Hugging Face Hub on first run. Load time on my machine: **9.52 seconds**. After that, it's cached and loads in under 1 second. Model size is around 22MB, genuinely lightweight.
 
 The vector internals are worth inspecting:
 
@@ -76,7 +85,7 @@ Max: 0.183166
 First 5 dims: [-0.0216, 0.0593, -0.0049, -0.0172, 0.0079]
 ```
 
-The L2 norm being exactly 1.0 is interesting. sentence-transformers normalizes embeddings by default, which means cosine similarity and dot product return identical results. This is a nice property — you don't need to remember to normalize before computing similarity.
+The L2 norm being exactly 1.0 is interesting. sentence-transformers normalizes embeddings by default, which means cosine similarity and dot product return identical results. This is a nice property. You don't need to remember to normalize before computing similarity.
 
 384 dimensions is a deliberate tradeoff. Modern large embedding models use 1536〜3072 dimensions, which is more expressive but costs more to store and search. For most semantic search use cases, 384 is plenty.
 
@@ -106,7 +115,7 @@ Measured similarity scores:
 -0.0163            install packages vs stock market (unrelated)
 ```
 
-Semantically similar pairs land at 0.62〜0.65. Unrelated pairs are near zero or slightly negative. The negative values surprised me at first — cosine similarity ranges from -1 to 1, so truly unrelated sentences naturally cluster around 0, sometimes dipping slightly negative.
+Semantically similar pairs land at 0.62〜0.65. Unrelated pairs are near zero or slightly negative. The negative values surprised me at first. Cosine similarity ranges from -1 to 1, so truly unrelated sentences naturally cluster around 0, sometimes dipping slightly negative.
 
 For context on what "high" looks like in practice: the [vector DB benchmark post](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector) notes that RAG systems typically use 0.3〜0.5 as a retrieval threshold. So 0.65 is a strong semantic match.
 
@@ -140,7 +149,7 @@ Query: "Lightweight database without Python"
   (Node.js SQLite not in top 3)
 ```
 
-One query found the right answer at rank 2. The other two were completely off. The "agent protocol comparison" failure is particularly bad — there's a document with "protocol comparison" literally in its title, and the model ranked an observability guide above it. This is what an English model mishandling Korean semantics looks like.
+One query found the right answer at rank 2. The other two were completely off. The "agent protocol comparison" failure is particularly bad. There's a document with "protocol comparison" literally in its title, and the model ranked an observability guide above it. This is what an English model mishandling Korean semantics looks like.
 
 ## Why English models fail on Korean and how multilingual models fix it
 
@@ -160,13 +169,13 @@ Same 3 queries, both models:
 
 The similarity scores are also telling. The multilingual model assigned 0.720 to the correct cost-reduction document; the English model only managed 0.453 for the same pair. Stronger semantic connection, better ranked.
 
-The [RAG architecture post](/en/blog/en/dena-llm-study-part4-rag) argues that retrieval quality determines generation quality. This experiment shows that principle applies at the embedding model selection step — before you've written a single line of retrieval code.
+The [RAG architecture post](/en/blog/en/dena-llm-study-part4-rag) argues that retrieval quality determines generation quality. This experiment shows that principle applies at the embedding model selection step, before you've written a single line of retrieval code.
 
 My conclusion: **for Korean or multilingual RAG pipelines, start with a multilingual model.** Switching later means re-embedding your entire document collection, which is a meaningful operational cost for large corpora.
 
 ## Batch encoding: the 2.4x throughput gap
 
-Sequential encoding is the obvious first implementation. Batch encoding is faster for reasons that have to do with CPU/GPU parallelism and memory bandwidth — but how much faster exactly?
+Sequential encoding is the obvious first implementation. Batch encoding is faster for reasons that have to do with CPU/GPU parallelism and memory bandwidth. But how much faster exactly?
 
 ```python
 sentences = [f"This is test sentence number {i}" for i in range(100)]
@@ -185,7 +194,7 @@ Batch (100 sentences):      0.455s → 2.4x faster
 Throughput (batch):         220 sentences/sec
 ```
 
-220 sentences/second on CPU. For 10,000 documents at 5 sentences each, that's 50,000 sentences — about 227 seconds, under 4 minutes. With GPU (CUDA or Apple Silicon MPS), throughput reportedly scales 10〜50x higher, though I didn't test that directly.
+220 sentences/second on CPU. For 10,000 documents at 5 sentences each, that's 50,000 sentences, about 227 seconds, under 4 minutes. With GPU (CUDA or Apple Silicon MPS), throughput reportedly scales 10〜50x higher, though I didn't test that directly.
 
 The practical implication: use `model.encode(batch, batch_size=N)` instead of calling encode in a loop. This is especially true for initial indexing jobs.
 
@@ -211,7 +220,27 @@ context = "\n".join(retrieved_docs)
 # Pass context to Claude or another LLM
 ```
 
-One practical detail: store the model name as metadata alongside your embeddings. If you ever change models, you need to re-embed everything. Without metadata tracking, you risk mixing vectors from different embedding spaces in the same database — a subtle bug that produces silently degraded retrieval.
+One practical detail: store the model name as metadata alongside your embeddings. If you ever change models, you need to re-embed everything. Without metadata tracking, you risk mixing vectors from different embedding spaces in the same database, a subtle bug that produces silently degraded retrieval.
+
+## When to use sentence-transformers, and when to avoid it
+
+Writing this up left one question open: is local embedding always the answer for Korean RAG? It depends.
+
+**When local sentence-transformers fits:**
+
+- **Data can't leave your perimeter.** For internal docs or medical and legal data, calling an external API is itself a compliance problem. A local model is effectively the only option.
+- **High embedding volume makes API billing painful.** If you re-index millions of documents on a schedule, standing up a model once is far cheaper than paying per call.
+- **Offline or on-premise environments.** In air-gapped networks or on edge devices, you can't reach an external API at all.
+- **Multilingual data with Korean in the mix.** Models like `multilingual-e5` or `paraphrase-multilingual-MiniLM-L12-v2` map 50+ languages, Korean included, into one shared vector space.
+
+**When OpenAI/Cohere embeddings or another method wins:**
+
+- **You don't want to run infrastructure.** If GPU provisioning, model version management, and scaling aren't work you want to own, a managed API saves real effort.
+- **You need top-tier multilingual quality at low volume.** OpenAI `text-embedding-3-large` and Cohere `embed-multilingual-v3` sit near the top of the benchmarks, and at tens of thousands of calls a month the cost is negligible.
+- **Exact keyword matching matters more than semantic similarity.** For precise term, code, or proper-noun matching, BM25-style keyword search often beats dense retrieval. A hybrid of both is frequently the real answer.
+- **Embeddings aren't the bottleneck.** If chunking strategy or reranking has more room to improve, swapping the embedding model isn't where to spend effort first.
+
+The short version: with Korean-containing data, just avoid English-only models. After that, local versus API is a tradeoff between privacy, cost, and operational burden.
 
 ## What I still don't know and what's next
 
@@ -224,3 +253,10 @@ One practical detail: store the model name as metadata alongside your embeddings
 **What's next**: testing `multilingual-e5-large` on the same benchmark, wiring up a persistent ChromaDB store, and measuring hybrid search accuracy against pure vector retrieval.
 
 I went into this experiment thinking embedding models were interchangeable plug-ins. The 67% accuracy gap changed that view. For non-English RAG, model selection is a first-order decision that affects the entire pipeline downstream.
+
+## References
+
+- [Sentence Transformers official docs (SBERT.net)](https://www.sbert.net) — library usage, normalization, model selection guidance
+- [paraphrase-multilingual-MiniLM-L12-v2 model card (Hugging Face)](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2) — 50-language support, 384-dimensional output
+- [MTEB embedding benchmark leaderboard (Hugging Face)](https://huggingface.co/spaces/mteb/leaderboard) — multilingual embedding model performance comparison
+- [Sentence-BERT paper (Reimers & Gurevych, 2019)](https://arxiv.org/abs/1908.10084) — the theoretical basis of sentence-transformers

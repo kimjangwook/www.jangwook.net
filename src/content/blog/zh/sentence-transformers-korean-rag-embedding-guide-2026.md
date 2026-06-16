@@ -39,9 +39,18 @@ relatedPosts:
       ja: セマンティック検索（RAG）とツール呼び出し（Tool Use）を組み合わせると、より強力なエージェントになる。
       en: Combining semantic retrieval (RAG) with tool calling creates more capable agents — comparing both implementation patterns clarifies design choices.
       zh: 将语义检索（RAG）与工具调用（Tool Use）结合，可以构建更强大的代理。
+faq:
+  - question: "韩语RAG该用sentence-transformers还是OpenAI/Cohere的嵌入API？"
+    answer: "如果数据隐私重要、希望把嵌入成本降为零、且有GPU或CPU资源，本地sentence-transformers（multilingual-e5、paraphrase-multilingual）更合适。如果想避免运维基础设施、调用量较小、需要顶级多语言质量，托管API更有利。正如本文实验所示，只要涉及韩语就要避开纯英语模型。"
+  - question: "用all-MiniLM-L6-v2构建韩语RAG到底哪里出错？"
+    answer: "该模型主要用英语句子对训练，对韩语语义的表达精度较低。本文的迷你RAG中，3个韩语查询有2个在第1名返回了错误文档，换成多语言模型后3个全部找回正确答案。"
+  - question: "以后更换嵌入模型会怎样？"
+    answer: "更换模型会改变向量空间，因此必须重新编码所有文档。所以涉及韩语数据时应该一开始就选多语言模型，并把模型名称和版本作为元数据与每个向量一起存储。"
+  - question: "仅靠嵌入向量检索质量够吗？"
+    answer: "当某个关键词约束很重要时，例如不用Python，BM25这类关键词检索比稠密嵌入更准确。实务中标准解法是把BM25与向量结果通过reciprocal rank fusion融合的混合检索。"
 ---
 
-刚开始学RAG时，我把嵌入向量当作抽象概念接受下来。"句子转换成向量"、"相似的含义在向量空间中靠近" — 这些说法都对，但在真正看到数字之前，始终感觉不够直观。于是我在本地安装了`sentence-transformers`库，直接测量余弦相似度，跑了一个迷你RAG，确认了韩语查询中会发生什么。
+刚开始学RAG时，我把嵌入向量当作抽象概念接受下来。"句子转换成向量"、"相似的含义在向量空间中靠近"。这些说法都对，但在真正看到数字之前，始终感觉不够直观。于是我在本地安装了`sentence-transformers`库，直接测量余弦相似度，跑了一个迷你RAG，确认了韩语查询中会发生什么。
 
 先说结论：**用英语优化的嵌入模型构建韩语RAG系统，在我的实验中准确率下降了67%。** 3个查询中有2个返回了错误的文档作为第一名。这篇文章记录了那个实验过程，以及切换到多语言模型的解决结果，附带真实的运行日志。
 
@@ -75,7 +84,7 @@ L2范数: 1.000000
 前5维: [-0.0216, 0.0593, -0.0049, -0.0172, 0.0079]
 ```
 
-有趣的是**L2范数恰好为1.0**。sentence-transformers默认对向量进行L2归一化，因此余弦相似度和内积（dot product）返回相同结果。这是一个很好的特性 — 计算相似度前不需要手动归一化。
+有趣的是**L2范数恰好为1.0**。sentence-transformers默认对向量进行L2归一化，因此余弦相似度和内积（dot product）返回相同结果。这是一个很好的特性，计算相似度前不需要手动归一化。
 
 384维是有意为之的设计。与最新大型嵌入模型使用的1536〜3072维相比较小，但对基于余弦相似度的检索已经足够，存储成本也低。
 
@@ -105,7 +114,7 @@ for s1, s2 in pairs:
 相似度: -0.0163            如何安装Python包 vs 股市今天收高
 ```
 
-语义相似的句子对在0.62〜0.65，不相关的对在-0.01〜-0.02。**出现负相似度**令人惊讶 — 余弦值范围是-1〜1，所以完全不相关的句子自然落在0附近，有时略微为负。
+语义相似的句子对在0.62〜0.65，不相关的对在-0.01〜-0.02。**出现负相似度**令人惊讶。余弦值范围是-1〜1，所以完全不相关的句子自然落在0附近，有时略微为负。
 
 参考[向量数据库基准文章](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector)可知，RAG检索中实际使用的阈值通常是0.3〜0.5。0.65已经是相当强的语义关联。
 
@@ -191,6 +200,26 @@ context = "\n".join(retrieved_docs)
 
 一个实用提示：请将模型名称与嵌入向量一起存储为元数据。如果以后更换模型，需要重新生成所有嵌入。没有元数据追踪的话，混合了不同嵌入空间的向量会产生隐蔽的检索质量下降，调试起来非常困难。
 
+## 什么时候用sentence-transformers，什么时候避开
+
+整理这次实验时，留下一个问题：韩语RAG是不是无条件该用本地嵌入？答案取决于场景。
+
+**本地sentence-transformers适合的场景：**
+
+- **数据不能离开内网时。** 对于公司内部文档、医疗或法律数据，调用外部API本身就是合规问题，本地模型几乎是唯一选择。
+- **嵌入调用量大、API费用成为负担时。** 如果定期对数百万篇文档重新索引，启动一次模型远比按次计费的API便宜。
+- **离线或本地部署环境。** 在隔离网络或边缘设备上根本无法访问外部API。
+- **混有韩语的多语言数据。** `multilingual-e5`或`paraphrase-multilingual-MiniLM-L12-v2`这类多语言模型会把包括韩语在内的50多种语言映射到同一个向量空间。
+
+**OpenAI/Cohere嵌入API或其他方法更优的场景：**
+
+- **不想运维基础设施时。** 如果不想自己处理GPU供给、模型版本管理和扩缩容，托管API的便利性很大。
+- **需要顶级多语言质量但调用量低时。** OpenAI `text-embedding-3-large`和Cohere `embed-multilingual-v3`处于基准前列，每月几万次调用成本也极小。
+- **精确关键词匹配比语义相似更重要时。** 如果核心是精确的术语、代码或专有名词匹配，BM25这类关键词检索往往胜过稠密检索。实务中两者的混合常常才是答案。
+- **嵌入不是RAG质量瓶颈时。** 如果分块策略或重排序有更大改进空间，更换嵌入模型并非优先事项。
+
+简而言之，在混有韩语的数据上只要避开纯英语模型即可。之后选本地还是API，是隐私、成本和运维负担之间的权衡问题。
+
 ## 我还不知道的和接下来要尝试的
 
 **局限1**：知识库只有10篇。在数万篇文档中检索的实际性能可能很不一样。
@@ -202,3 +231,10 @@ context = "\n".join(retrieved_docs)
 **下一步**：用`multilingual-e5-large`进行同样的实验，搭建持久化ChromaDB存储，比较混合检索与纯向量检索的准确率。
 
 我原本认为嵌入模型是可以随意替换的组件。67%的准确率差距改变了这个看法。对于非英语RAG系统，模型选择是影响整个下游管道的首要决策。
+
+## 参考资料
+
+- [Sentence Transformers官方文档（SBERT.net）](https://www.sbert.net) — 库的用法、归一化、模型选择指南
+- [paraphrase-multilingual-MiniLM-L12-v2模型卡（Hugging Face）](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2) — 支持50种语言，384维输出
+- [MTEB嵌入基准排行榜（Hugging Face）](https://huggingface.co/spaces/mteb/leaderboard) — 多语言嵌入模型性能比较
+- [Sentence-BERT论文（Reimers & Gurevych, 2019）](https://arxiv.org/abs/1908.10084) — sentence-transformers的理论基础

@@ -39,9 +39,18 @@ relatedPosts:
       ja: セマンティック検索（RAG）とツール呼び出し（Tool Use）を組み合わせると、より強力なエージェントになる。
       en: Combining semantic retrieval (RAG) with tool calling creates more capable agents — comparing both implementation patterns clarifies design choices.
       zh: 将语义检索（RAG）与工具调用（Tool Use）结合，可以构建更强大的代理。
+faq:
+  - question: "한국어 RAG에 sentence-transformers를 쓸지, OpenAI/Cohere 임베딩 API를 쓸지 어떻게 정하나요?"
+    answer: "데이터 프라이버시가 중요하거나 임베딩 비용을 0으로 만들고 싶고 GPU/CPU 자원이 있다면 로컬 sentence-transformers(multilingual-e5, paraphrase-multilingual)가 적합합니다. 인프라 운영을 피하고 싶고 호출량이 적으며 최고 수준의 다국어 품질이 필요하면 관리형 API가 낫습니다. 본문 실험처럼 한국어가 섞이면 영어 전용 모델은 피하세요."
+  - question: "all-MiniLM-L6-v2로 한국어 RAG를 만들면 정확히 무엇이 잘못되나요?"
+    answer: "이 모델은 주로 영어 문장 쌍으로 학습돼 한국어 의미 표현이 정밀하지 않습니다. 본문 미니 RAG에서 한국어 쿼리 3개 중 2개가 1위로 엉뚱한 문서를 반환했고, 다국어 모델로 바꾸자 3개 모두 정답을 찾았습니다."
+  - question: "임베딩 모델을 나중에 교체하면 어떻게 되나요?"
+    answer: "모델을 바꾸면 벡터 공간이 달라지므로 기존 문서를 전부 재인코딩해야 합니다. 그래서 한국어 데이터가 있다면 처음부터 다국어 모델을 선택하고, 모델 이름과 버전을 메타데이터로 함께 저장하는 것이 좋습니다."
+  - question: "임베딩만으로 검색 품질이 충분한가요?"
+    answer: "'파이썬 없이' 같은 특정 키워드 조건이 중요할 때는 밀집 임베딩보다 BM25 같은 키워드 검색이 더 정확합니다. 실무에서는 BM25와 벡터 검색을 합친 하이브리드 검색(reciprocal rank fusion)이 표준 해법입니다."
 ---
 
-RAG를 처음 공부할 때 임베딩을 추상적인 개념으로 접했다. "문장을 벡터로 변환한다", "유사한 의미는 가까운 벡터 공간에 놓인다" — 맞는 말인데 직접 숫자를 보기 전까지는 감이 잡히지 않았다. 그래서 `sentence-transformers` 라이브러리를 직접 설치해 코사인 유사도를 측정하고, 미니 RAG를 돌려보고, 한국어 쿼리에서 어떤 일이 벌어지는지 확인해봤다.
+RAG를 처음 공부할 때 임베딩을 추상적인 개념으로 접했다. "문장을 벡터로 변환한다", "유사한 의미는 가까운 벡터 공간에 놓인다." 맞는 말인데 직접 숫자를 보기 전까지는 감이 잡히지 않았다. 그래서 `sentence-transformers` 라이브러리를 직접 설치해 코사인 유사도를 측정하고, 미니 RAG를 돌려보고, 한국어 쿼리에서 어떤 일이 벌어지는지 확인해봤다.
 
 결론부터 말하면: **영어 최적화 모델로 한국어 RAG 시스템을 구축하면 내 실험 기준으로 정확도가 67% 떨어졌다.** 쿼리 3개 중 2개가 잘못된 문서를 1위로 반환했다. 이 글은 그 실험 과정과 다국어 모델로 해결한 결과를 실측 로그와 함께 공유한다.
 
@@ -63,7 +72,7 @@ embedding = model.encode("AI 에이전트 구축")
 print(embedding.shape)  # (384,)
 ```
 
-`all-MiniLM-L6-v2`는 첫 실행 시 Hugging Face Hub에서 모델 가중치를 내려받는다. 내 환경에서 로드 시간은 **9.52초**였다. 이후 캐시에서 로드되므로 두 번째 실행부터는 1초 이내다. 모델 크기는 약 22MB — 경량 모델이다.
+`all-MiniLM-L6-v2`는 첫 실행 시 Hugging Face Hub에서 모델 가중치를 내려받는다. 내 환경에서 로드 시간은 **9.52초**였다. 이후 캐시에서 로드되므로 두 번째 실행부터는 1초 이내다. 모델 크기는 약 22MB로 경량 모델이다.
 
 생성된 벡터의 내부 구조를 확인해보면:
 
@@ -304,6 +313,26 @@ collection.add(
 
 이렇게 해두면 나중에 모델을 교체할 때 어떤 문서를 재인덱싱해야 하는지 쉽게 파악할 수 있다.
 
+## 언제 sentence-transformers를 쓰고, 언제 피해야 하나
+
+이번 실험을 정리하면서 "그래서 한국어 RAG에 무조건 로컬 임베딩이 답이냐"는 질문이 남았다. 답은 상황에 따라 다르다.
+
+**로컬 sentence-transformers가 적합한 경우:**
+
+- **데이터를 외부로 내보낼 수 없을 때.** 사내 문서, 의료·법률 데이터처럼 외부 API 호출 자체가 컴플라이언스 문제가 되는 경우 로컬 모델이 사실상 유일한 선택지다.
+- **임베딩 호출량이 많아 API 비용이 부담될 때.** 수백만 문서를 주기적으로 재인덱싱한다면 호출당 과금되는 API보다 한 번 모델을 띄워두는 쪽이 훨씬 싸다.
+- **오프라인·온프레미스 환경.** 폐쇄망이나 에지 디바이스에서는 외부 API를 부를 수 없다.
+- **한국어가 섞인 다국어 데이터.** `multilingual-e5`나 `paraphrase-multilingual-MiniLM-L12-v2` 같은 다국어 모델은 한국어를 포함한 50개 이상 언어를 한 벡터 공간에 매핑한다.
+
+**OpenAI/Cohere 임베딩 API나 다른 방법이 나은 경우:**
+
+- **인프라를 운영하고 싶지 않을 때.** GPU 프로비저닝, 모델 버전 관리, 스케일링을 직접 하기 싫다면 관리형 API의 편의성이 크다.
+- **최고 수준의 다국어 품질이 필요한데 호출량은 적을 때.** OpenAI `text-embedding-3-large`나 Cohere `embed-multilingual-v3`는 벤치마크 상위권이고, 월 수만 건 수준이라면 비용도 미미하다.
+- **키워드 일치가 의미 유사도보다 중요할 때.** 정확한 용어·코드·고유명사 매칭이 핵심이면 임베딩보다 BM25 같은 키워드 검색이 낫다. 실무에서는 둘을 합친 하이브리드가 정답인 경우가 많다.
+- **임베딩이 RAG 품질의 병목이 아닐 때.** 청킹 전략이나 리랭킹에서 더 큰 개선 여지가 있다면 임베딩 모델 교체는 우선순위가 아니다.
+
+요약하면, 한국어가 섞인 데이터에서 영어 전용 모델만 피하면 된다. 그다음 로컬이냐 API냐는 프라이버시·비용·운영 부담의 트레이드오프 문제다.
+
 ## 내가 아직 모르는 것과 다음에 시험해볼 것
 
 오늘 실험의 한계:
@@ -320,3 +349,10 @@ collection.add(
 - BM25(rank_bm25 패키지)와 벡터 검색을 합친 하이브리드 검색 정확도 비교
 
 임베딩을 "그냥 API로 쓰면 되는 것"으로 생각했는데, 직접 돌려보니 모델 선택이 예상보다 훨씬 중요한 변수였다. 특히 한국어 데이터를 다루는 RAG 시스템에서는 첫 모델 선택이 나중에 재인덱싱 비용으로 돌아온다는 것을 이번에 배웠다.
+
+## 참고 자료
+
+- [Sentence Transformers 공식 문서 (SBERT.net)](https://www.sbert.net) — 라이브러리 사용법, 정규화, 모델 선택 가이드
+- [paraphrase-multilingual-MiniLM-L12-v2 모델 카드 (Hugging Face)](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2) — 50개 언어 지원, 384차원 출력
+- [MTEB 임베딩 벤치마크 리더보드 (Hugging Face)](https://huggingface.co/spaces/mteb/leaderboard) — 다국어 임베딩 모델 성능 비교
+- [Sentence-BERT 논문 (Reimers & Gurevych, 2019)](https://arxiv.org/abs/1908.10084) — sentence-transformers의 이론적 기반
