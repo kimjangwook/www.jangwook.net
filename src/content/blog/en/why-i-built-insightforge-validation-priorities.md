@@ -33,6 +33,15 @@ relatedPosts:
       ja: 'AIシステムを運用可能な製品にするための防御的設計を扱います。'
       en: 'It covers defensive design for making AI systems operational.'
       zh: '讨论了让AI系统成为可运营产品所需的防御性设计。'
+faq:
+  - question: "Does InsightForge replace real market research?"
+    answer: "No. A synthetic panel does not replace human answers. It organizes what you should ask people next. The final output is a set of validation priorities, not a conclusion."
+  - question: "Why should I not rely on the average score alone?"
+    answer: "The same average of 7 can mean everyone is mildly interested, one segment is excited, or trust is weak. Each case calls for a different action, so the report emphasizes spread, disagreement, blockers, and adoption readiness."
+  - question: "When is a traditional survey the better choice?"
+    answer: "When you need statistically defensible numbers like conversion rate or market size, or in regulated, medical, or financial domains where a wrong conclusion is costly, a traditional survey with real respondents is far more appropriate."
+  - question: "How should I set up my first run?"
+    answer: "Start narrow with one product concept, one target segment, and one core question rather than analyzing a whole market. Broad inputs produce generic outputs."
 ---
 
 InsightForge is a service for early product and marketing research.
@@ -43,7 +52,7 @@ From the outside, it can be described as an AI consumer research tool. But while
 
 > InsightForge is not a market prediction machine. It is a workflow for turning uncertainty into validation priorities.
 
-This post explains why I built it that way, what problem I was trying to solve, and what made the product harder than a simple AI demo.
+Holding that one sentence turned out to be harder than I expected. What follows is the record of why I built it, where I got stuck, and which claims I decided never to make.
 
 ## The starting point: ideas are easy, validation is late
 
@@ -55,7 +64,7 @@ Will this message actually work? Is this the right target customer? Is the price
 
 These questions are important, but they are often handled too late. Teams build a landing page, pick a message, implement features, and only then start asking whether the assumptions were right.
 
-I wanted a tool for the moment before formal validation. Not a tool that gives the answer, but a tool that identifies which assumptions are dangerous enough to test.
+I wanted a tool for the moment before formal validation. Not a tool that gives the answer, but a tool that identifies which assumptions are dangerous enough to test. I hit the same vague blocker repeatedly while building things solo, which I wrote about in [a solo developer's AI SaaS journey](/en/blog/en/individual-developer-ai-saas-journey).
 
 ## The first tempting version was much simpler
 
@@ -112,7 +121,7 @@ What I wanted was more specific:
 - which claim required proof before it could work
 - what the next customer interview should ask
 
-To get closer to that, I had to make the workflow more structured. Persona generation, question generation, response capture, scoring, insight generation, and reporting could not be one loose prompt. Each stage needed constraints, checks, and a clear role.
+To get closer to that, I had to make the workflow more structured. Persona generation, question generation, response capture, scoring, insight generation, and reporting could not be one loose prompt. Each stage needed constraints, checks, and a clear role. The trial and error of splitting work across staged agents is something I covered in more depth in [improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement).
 
 It was not just prompt engineering. It was deciding what status each generated artifact should have inside the product.
 
@@ -145,7 +154,7 @@ Some outputs were too smooth. Personas with different backgrounds still produced
 
 Market grounding was also harder than it looked. Adding web evidence makes a report look stronger, but evidence is only useful when it supports a specific conclusion. Otherwise, it is decoration.
 
-Then there were operational problems: payments, credits, queues, provider cost, failed runs, refunds, DeepSeek balance alerts, admin visibility. A research product is not only a report generator. If it is a real service, every run has cost, failure modes, and user expectations.
+Then there were operational problems: payments, credits, queues, provider cost, failed runs, refunds, DeepSeek balance alerts, admin visibility. A research product is not only a report generator. If it is a real service, every run has cost, failure modes, and user expectations. Because each report fans out into many LLM calls, the bill adds up fast, which overlaps exactly with the problem I described in [the real cost of AI agents](/en/blog/en/ai-agent-cost-reality).
 
 These struggles pushed InsightForge away from demo and toward product.
 
@@ -223,7 +232,27 @@ A few research threads shaped this direction.
 
 My takeaway is practical. This research direction can help product teams, but only when the output is treated as preparation for human validation, not as a substitute for it.
 
-## Conclusion
+## When to use this approach, and when to avoid it
+
+A multi-agent synthetic panel like InsightForge is not a universal tool. It fits some situations and is a poor choice in others.
+
+It works well when:
+
+- You are early enough that you have no customer list yet, so there is nobody to interview or survey formally.
+- You have several concepts, messages, or pricing assumptions and need to decide what to validate first.
+- You want to surface risky assumptions before writing an interview script.
+- You want a cheap, fast sense of direction, with a clear intent to confirm it later with real people.
+
+It is the wrong tool when:
+
+- You need defensible evidence for a final launch or pricing decision. That belongs to real purchase data or real user interviews.
+- You need statistically defensible numbers such as conversion rates, market size, or significant segment shares. A traditional survey with real respondents is far better here.
+- You are in regulated, medical, or financial domains where a wrong conclusion is expensive. The hallucination risk of synthetic responses is not acceptable.
+- You already have enough live user traffic to measure directly through A/B tests. Measurement beats simulation when you can run it.
+
+Put simply, it helps while you still do not know what to ask people, and it becomes dangerous the moment you try to replace their answers.
+
+## It was about drawing boundaries, not adding features
 
 Building InsightForge has been less about adding features and more about drawing boundaries.
 
