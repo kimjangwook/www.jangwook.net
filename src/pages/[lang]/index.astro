@@ -10,6 +10,7 @@ import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
 import { useTranslations, type Language } from '../../lib/i18n/languages';
 import { filterPostsByDate, calculateReadingTime } from '../../lib/content';
 import { getFAQItems } from '../../data/faq';
+import ogHome from '../../assets/og-home.jpg';
 
 export function getStaticPaths() {
 	return getI18nStaticPaths();
@@ -36,6 +37,7 @@ const posts = filterPostsByDate(allPosts)
 		<BaseHead
 			title={t('site.title')}
 			description={t('site.description')}
+			image={ogHome}
 			faqData={faqItems}
 			isHomePage={true}
 			enableAds={true}
