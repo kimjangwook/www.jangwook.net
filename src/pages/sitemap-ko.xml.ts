@@ -12,7 +12,6 @@ const staticPages = [
   { path: '/ko/blog', priority: 0.9, changefreq: 'daily' },
   { path: '/ko/contact', priority: 0.7, changefreq: 'monthly' },
   { path: '/ko/social', priority: 0.7, changefreq: 'monthly' },
-  { path: '/ko/improvement-history', priority: 0.6, changefreq: 'weekly' },
   { path: '/ko/privacy', priority: 0.5, changefreq: 'yearly' },
   { path: '/ko/terms', priority: 0.5, changefreq: 'yearly' },
   { path: '/ko/portfolio/shadow-dash', priority: 0.7, changefreq: 'monthly' },
