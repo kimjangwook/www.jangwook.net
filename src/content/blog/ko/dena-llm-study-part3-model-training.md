@@ -1,8 +1,8 @@
 ---
 title: 'DeNA LLM 스터디 Part 3: 모델 학습 방법론 - 사전학습부터 RLHF/DPO까지'
 description: >-
-  DeNA LLM 스터디 자료 Part 3를 기반으로 사전학습, 파인튜닝, 강화학습의 차이와 LoRA, QLoRA, DPO 등 최신 효율적
-  학습 기법을 심층 분석합니다.
+  DeNA LLM 스터디 Part 3 심층 분석. 사전학습·파인튜닝·강화학습의 차이와 LoRA, QLoRA, DPO 등 최신 효율적 학습
+  기법의 작동 원리를 코드 예제와 함께 정리했습니다. GPT-4 수준 모델을 도메인 데이터로 튜닝하는 현업 파인튜닝 전략 선택 기준도 포함합니다.
 pubDate: '2025-12-10'
 heroImage: ../../../assets/blog/dena-llm-study-part3-model-training-hero.jpg
 tags:

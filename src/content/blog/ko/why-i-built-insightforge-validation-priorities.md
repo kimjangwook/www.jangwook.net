@@ -1,6 +1,6 @@
 ---
 title: 'InsightForge를 만든 이유: AI 소비자 리서치를 검증 우선순위 도구로 만들기까지'
-description: 'InsightForge가 무엇인지, 왜 만들었는지, synthetic panel과 SSR 방법론을 제품으로 만들면서 겪은 시행착오와 설계 원칙을 정리했다.'
+description: 'InsightForge가 무엇인지, 왜 만들었는지를 솔직하게 정리했다. synthetic panel과 SSR 방법론으로 소비자 리서치 자동화를 구현하면서 겪은 시행착오, 그리고 AI를 검증 우선순위 결정 도구로 재정의하기까지의 핵심 설계 원칙과 기술적 선택을 공유한다.'
 pubDate: '2026-06-15'
 heroImage: ../../../assets/blog/llm-consumer-research-hero.jpg
 tags: [ai, startup, product-research, insightforge, synthetic-panel]

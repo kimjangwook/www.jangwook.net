@@ -253,7 +253,7 @@ AI Agent不是魔法。它是<strong>存在明确权衡取舍的工程工具</st
 这一年运营下来，真正刻进脑子里的教训是这几条。
 
 1. <strong>API成本只是总成本的一部分。</strong> 必须包括工程时间、维护和故障响应。
-2. <strong>路由层是最大的技术难关。</strong> 多Agent系统的真正困难不在于单个Agent，而在于编排。
+2. <strong>路由层是最大的技术难关。</strong> 多Agent系统的真正困难不在于单个Agent，而在于[编排](/zh/blog/zh/multi-agent-orchestration-improvement)。
 3. <strong>警惕过度工程。</strong> 一个写得好的Prompt可能比40小时的复杂管道更好。
 4. <strong>按用途使用。</strong> 扩展个人生产力效果卓越，但单纯替代人工成本可能反而更高。
 

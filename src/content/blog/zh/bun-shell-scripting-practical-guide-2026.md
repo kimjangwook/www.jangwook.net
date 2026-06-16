@@ -315,7 +315,7 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 
 实际安装运行之后，Bun Shell的开发体验比我想象的好。变量自动转义、`.nothrow()`模式、`.lines()`这样的便利方法，这些细节设计在zx里也见不到。
 
-不过目前仍是1.x版本，部分API还不稳定。在生产CI/CD脚本中使用之前，建议在实际环境中充分验证。与Claude Code hooks等自动化流水线集成时也同样如此。
+不过目前仍是1.x版本，部分API还不稳定。在生产CI/CD脚本中使用之前，建议在实际环境中充分验证。与[Claude Code hooks等自动化流水线](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)集成时也同样如此。
 
 Bun在快速发展，Shell API也会逐渐稳定。现在没有迫切需要放弃zx的理由，但新的Bun项目不妨先试试内置shell。
 

@@ -237,7 +237,7 @@ Writing this up left one question open: is local embedding always the answer for
 
 - **You don't want to run infrastructure.** If GPU provisioning, model version management, and scaling aren't work you want to own, a managed API saves real effort.
 - **You need top-tier multilingual quality at low volume.** OpenAI `text-embedding-3-large` and Cohere `embed-multilingual-v3` sit near the top of the benchmarks, and at tens of thousands of calls a month the cost is negligible.
-- **Exact keyword matching matters more than semantic similarity.** For precise term, code, or proper-noun matching, BM25-style keyword search often beats dense retrieval. A hybrid of both is frequently the real answer.
+- **Exact keyword matching matters more than semantic similarity.** For precise term, code, or proper-noun matching, BM25-style keyword search often beats dense retrieval. A [hybrid of both](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) is frequently the real answer.
 - **Embeddings aren't the bottleneck.** If chunking strategy or reranking has more room to improve, swapping the embedding model isn't where to spend effort first.
 
 The short version: with Korean-containing data, just avoid English-only models. After that, local versus API is a tradeoff between privacy, cost, and operational burden.

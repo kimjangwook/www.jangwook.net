@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-15",
+  "updated_at": "2026-06-16",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3712,6 +3712,60 @@
       "added_at": "2026-06-15",
       "status": "queued",
       "notes": "fastapi-claude-api-streaming-production-guide-2026와 연결 가능. 실제 rate limit 처리, retry 로직, 병렬 호출 패턴을 실무 코드로. Python 개발자 독자층 타깃."
+    },
+    {
+      "slug": "uv-workspace-python-monorepo-ai-agents-guide-2026",
+      "title_idea": "Python uv Workspace로 멀티 에이전트 AI 프로젝트 관리하기 — 모노레포 구성부터 공유 의존성 고정까지",
+      "content_type": "how-to",
+      "target_keyword": "Python uv workspace 모노레포",
+      "secondary_keywords": [
+        "uv 워크스페이스",
+        "AI 에이전트 프로젝트 구조",
+        "Python 모노레포",
+        "uv.lock 공유"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "uv docs + pydevtools.com + 2026-06-16 리서치",
+      "added_at": "2026-06-16",
+      "status": "queued",
+      "notes": "uv 1.0 이후 workspace 기능이 안정화됨. AI 에이전트 프로젝트는 보통 여러 패키지(agent, tools, eval)로 분리되므로 모노레포 필요성 높음. Pydantic AI가 실제로 uv workspace 사용. How-to 적합."
+    },
+    {
+      "slug": "claude-code-devcontainer-team-dev-environment-2026",
+      "title_idea": "Claude Code + devcontainer로 팀 AI 개발 환경 표준화하기 — 재현 가능한 격리 환경 구축 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code devcontainer 팀 개발환경",
+      "secondary_keywords": [
+        "devcontainer.json",
+        "Claude Code Docker",
+        "AI 개발환경 표준화",
+        "팀 Claude Code 설정"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Claude 공식 문서 (2026-06-02) + thepromptshelf.dev + claudecode-lab.com",
+      "added_at": "2026-06-16",
+      "status": "queued",
+      "notes": "Anthropic이 2026-06-02 공식 devcontainer 문서 추가. 팀 단위 Claude Code 도입 시 필수. Docker 격리로 host 영향 없음. How-to 적합. 신규 팀원 온보딩 시간 단축 각도로 차별화."
+    },
+    {
+      "slug": "claude-code-21-lifecycle-hooks-advanced-2026",
+      "title_idea": "Claude Code 21개 Lifecycle Hook 완전 정복 — SessionStart부터 SubagentStop까지 실전 자동화 레시피",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code hooks 자동화",
+      "secondary_keywords": [
+        "Claude Code lifecycle hooks",
+        "PostToolUse 훅",
+        "SessionStart 훅",
+        "Claude Code 자동화"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "knightli.com/en/2026/05/01 + smartscope.blog + 2026-06-16 리서치",
+      "added_at": "2026-06-16",
+      "status": "queued",
+      "notes": "2026년 Claude Code가 21개 lifecycle events, 4가지 handler type, async 실행 지원으로 확장됨. hooks는 AI가 아닌 결정론적 실행이라 안정적. 기존 claude-code-hooks-automation-practical-guide-2026보다 심화 버전으로 차별화."
     }
   ]
 }

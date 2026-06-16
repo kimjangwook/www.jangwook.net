@@ -256,7 +256,7 @@ AI agents aren't magic. They're <strong>engineering tools with clear tradeoffs</
 Here's what the past year of running them drove home:
 
 1. <strong>API costs are only part of the total cost.</strong> You must include engineering time, maintenance, and incident response.
-2. <strong>The routing layer is the biggest technical challenge.</strong> The real difficulty in multi-agent systems isn't the individual agents. It's the orchestration.
+2. <strong>The routing layer is the biggest technical challenge.</strong> The real difficulty in multi-agent systems isn't the individual agents. It's the [orchestration](/en/blog/en/multi-agent-orchestration-improvement).
 3. <strong>Beware over-engineering.</strong> A single well-crafted prompt can beat 40 hours of complex pipeline work.
 4. <strong>Use them for the right purpose.</strong> Excellent for personal productivity scaling, but may cost more than humans for simple labor replacement.
 

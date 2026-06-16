@@ -357,7 +357,7 @@ Without `process.exit(1)`, a failed command might silently pass the pipeline. Th
 
 After actually installing and running it, Bun Shell's developer experience is better than I expected. Automatic variable escaping, the `.nothrow()` pattern, and `.lines()` for line-by-line output are thoughtful details you don't see in zx.
 
-That said, it's still 1.x and some APIs are not stable. I'd recommend validating thoroughly in your actual environment before putting Bun Shell scripts into production CI/CD. The same applies if you're integrating with Claude Code hooks or other automation pipelines.
+That said, it's still 1.x and some APIs are not stable. I'd recommend validating thoroughly in your actual environment before putting Bun Shell scripts into production CI/CD. The same applies if you're integrating with [Claude Code hooks or other automation pipelines](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent).
 
 Bun is moving fast and the Shell API will stabilize. There's no urgent reason to drop zx, but for new Bun projects, the built-in shell deserves a first look.
 
