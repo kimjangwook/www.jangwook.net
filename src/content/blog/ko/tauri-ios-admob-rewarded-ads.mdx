@@ -30,17 +30,26 @@ relatedPosts:
       ja: "プラグインアーキテクチャと開発方法論で類似したアプローチを扱います"
       en: "Covers similar approaches in plugin architecture and development methodology"
       zh: "在插件架构和开发方法论方面涵盖了类似的方法"
+faq:
+  - question: "Tauri에 공식 AdMob 플러그인이 없는데 직접 만들 수밖에 없나요?"
+    answer: "현재로서는 그렇습니다. 공식 플러그인이 없어 GoogleMobileAds SDK를 감싸는 Swift 플러그인을 직접 개발해야 합니다. 이 글의 AdmobPlugin.swift와 Rust 브릿지 코드를 그대로 출발점으로 쓸 수 있습니다."
+  - question: "왜 xcframework 대신 xcode 옵션으로 플러그인을 만드나요?"
+    answer: "GoogleMobileAds처럼 외부 SDK 의존성이 있을 때 xcode 옵션이 Swift Package Manager로 의존성을 추가하기 훨씬 쉽기 때문입니다. xcframework는 배포는 편하지만 외부 의존성 연결이 복잡합니다."
+  - question: "build.rs에서 #[cfg(target_os = ios)]를 쓰면 왜 안 되나요?"
+    answer: "build.rs는 빌드 대상이 아니라 호스트 머신(macOS)에서 실행되기 때문입니다. iOS 타겟을 감지하려면 std::env::var(TARGET) 값에 ios가 포함되는지 확인해야 프레임워크 링크가 올바르게 동작합니다."
+  - question: "리워드 광고가 표시되지 않을 때 가장 먼저 무엇을 확인해야 하나요?"
+    answer: "테스트 광고 ID를 쓰고 있는지, GADMobileAds.sharedInstance().start()가 호출됐는지, 그리고 시뮬레이터가 아닌 실제 기기에서 테스트하고 있는지 순서대로 확인하세요. 시뮬레이터는 광고 지원이 제한적입니다."
 ---
 
 import { Image } from 'astro:assets';
 import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
 import screenshot04 from '../../../assets/portfolio/shadow-dash/shadow-dash-04_iphone.png';
 
-## 개요
+## 공식 플러그인이 없는 상태에서 시작하기
 
-Tauri 2.x로 iOS 앱을 개발했는데, 수익화를 위해 AdMob 광고를 연동하려면 어떻게 해야 할까요?
+Shadow Dash를 App Store에 올리고 나니 다음 숙제는 수익화였습니다. 보상형 광고를 붙이려고 Tauri 플러그인 생태계를 뒤졌는데, AdMob을 다루는 공식 플러그인이 하나도 없었습니다.
 
-안타깝게도 **Tauri에는 공식 AdMob 플러그인이 없습니다**. 이 글에서는 직접 Swift 플러그인을 개발하여 AdMob 보상형 광고를 연동한 전체 과정을 공유합니다.
+결국 **GoogleMobileAds SDK를 감싸는 Swift 플러그인을 직접 만들어야** 했습니다. 아래 내용은 그 과정에서 막혔던 지점과 해결 코드를 순서대로 정리한 것입니다. Tauri CLI 업그레이드부터 권한 설정, 링커 에러까지 실제로 부딪힌 순서 그대로 따라갑니다.
 
 > 이 글은 [Tauri + PixiJS로 iOS 게임 개발](/ko/blog/ko/tauri-pixijs-ios-game-development) 포스트의 후속편입니다. Shadow Dash 게임에 광고를 연동한 실제 경험을 바탕으로 작성했습니다.
 
@@ -68,6 +77,24 @@ graph LR
 ```
 
 사용자가 **자발적으로** 광고를 시청하고 보상(게임 계속)을 받는 구조로, 사용자 경험을 해치지 않습니다.
+
+## 리워드 광고가 맞는 게임, 맞지 않는 게임
+
+광고 SDK를 붙이기 전에 보상형 광고가 내 게임에 어울리는지부터 따져봐야 합니다. 무작정 넣으면 수익도 안 나고 리뷰만 나빠집니다.
+
+**리워드 광고가 잘 맞는 경우:**
+
+- 짧은 세션을 반복하는 아케이드/캐주얼 게임. Shadow Dash처럼 게임오버가 자주 발생하고, "한 번 더"라는 욕구가 강한 구조가 이상적입니다.
+- 컨티뉴, 코인 2배, 힌트 공개처럼 광고 시청에 대한 보상이 명확하고 즉각적인 경우.
+- 무과금 유저 비중이 높아 인앱 결제만으로는 수익이 어려운 개인 개발자 앱. [개인 개발자의 AI SaaS 수익화 여정](/ko/blog/ko/individual-developer-ai-saas-journey)에서 다룬 것처럼, 작은 앱일수록 진입 장벽 없는 수익원이 중요합니다.
+
+**피하는 게 나은 경우:**
+
+- 몰입형 내러티브 게임이나 결제 의향이 높은 코어 게임. 전면 광고든 보상형이든 광고가 몰입을 끊으면 오히려 이탈을 부릅니다.
+- DAU가 수백 명 수준인 초기 앱. eCPM이 아무리 높아도 노출 수가 적으면 의미 있는 수익이 나지 않습니다. 이 경우엔 광고 연동보다 유저 확보가 먼저입니다.
+- 광고 SDK가 게임 용량과 빌드 복잡도를 키우는 게 부담되는 미니멀 프로젝트. 광고로 버는 돈보다 유지보수 비용이 클 수 있습니다. AI 도구를 쓰는 프로젝트라면 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 다룬 비용 대비 효과 관점을 그대로 적용해 판단하면 좋습니다.
+
+정리하면, **세션이 짧고 재시도 동기가 강한 게임**에 보상형 광고가 가장 잘 맞습니다. Shadow Dash의 구조와 비슷한 게임을 만들고 있다면 [Tauri + PixiJS iOS 게임 개발](/ko/blog/ko/tauri-pixijs-ios-game-development) 글에서 게임 루프 설계부터 확인해보세요.
 
 ### 광고 SDK 선택 과정
 
@@ -759,7 +786,7 @@ graph TD
 
 ---
 
-## 결론
+## 직접 붙여보고 남은 교훈
 
 ### 배운 점
 

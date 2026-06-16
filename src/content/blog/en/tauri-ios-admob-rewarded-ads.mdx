@@ -30,17 +30,26 @@ relatedPosts:
       ja: "プラグインアーキテクチャと開発方法論で類似したアプローチを扱います"
       en: "Covers similar approaches in plugin architecture and development methodology"
       zh: "在插件架构和开发方法论方面涵盖了类似的方法"
+faq:
+  - question: "Do I really have to build my own AdMob plugin for Tauri?"
+    answer: "For now, yes. There is no official plugin, so you need a custom Swift plugin that wraps the GoogleMobileAds SDK. You can use this article's AdmobPlugin.swift and Rust bridge code as a working starting point."
+  - question: "Why use the xcode option instead of xcframework when creating the plugin?"
+    answer: "When you have an external SDK dependency like GoogleMobileAds, the xcode option makes it far easier to add that dependency through Swift Package Manager. The xcframework option is simpler to distribute but more awkward for wiring up external dependencies."
+  - question: "Why does #[cfg(target_os = ios)] not work in build.rs?"
+    answer: "Because build.rs runs on the host machine (macOS), not the build target. To detect an iOS build you have to check whether std::env::var(TARGET) contains ios, otherwise the framework linking will not fire."
+  - question: "What should I check first when a rewarded ad fails to appear?"
+    answer: "Confirm in order that you are using the test ad ID, that GADMobileAds.sharedInstance().start() was called, and that you are testing on a real device rather than the simulator. Simulator support for ads is limited."
 ---
 
 import { Image } from 'astro:assets';
 import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
 import screenshot04 from '../../../assets/portfolio/shadow-dash/shadow-dash-04_iphone.png';
 
-## Overview
+## Starting With No Official Plugin
 
-You've developed an iOS app with Tauri 2.x, and now you want to monetize it with AdMob ads. How do you do it?
+Once Shadow Dash was live on the App Store, monetization became the next chore. I went looking for a way to add rewarded ads and searched the Tauri plugin ecosystem, only to find that no official plugin covers AdMob at all.
 
-Unfortunately, **there is no official AdMob plugin for Tauri**. In this article, I'll share the complete process of developing a custom Swift plugin to integrate AdMob rewarded ads.
+So I had to **build a Swift plugin that wraps the GoogleMobileAds SDK myself**. What follows is an ordered account of where I got stuck and the code that got me unstuck. It walks through the actual sequence I hit, from upgrading the Tauri CLI to permission setup and linker errors.
 
 > This post is a follow-up to [iOS Game Development with Tauri + PixiJS](/en/blog/en/tauri-pixijs-ios-game-development). It's based on real experience integrating ads into the Shadow Dash game.
 
@@ -68,6 +77,24 @@ graph LR
 ```
 
 Users **voluntarily** watch ads and receive rewards (continuing the game), which doesn't hurt the user experience.
+
+## When Rewarded Ads Fit, and When They Don't
+
+Before wiring up an ad SDK, decide whether rewarded ads even suit your game. Drop them in blindly and you get no revenue and worse reviews.
+
+**Where rewarded ads work well:**
+
+- Arcade and casual games built around short, repeating sessions. A structure like Shadow Dash, where game-over happens often and the "one more run" urge is strong, is the sweet spot.
+- Cases where the reward for watching is clear and immediate, such as a continue, doubled coins, or a revealed hint.
+- Solo-developer apps with a high share of non-paying users, where in-app purchases alone won't sustain revenue. As [an individual developer's AI SaaS monetization journey](/en/blog/en/individual-developer-ai-saas-journey) shows, the smaller the app, the more a low-barrier revenue source matters.
+
+**Where you're better off avoiding them:**
+
+- Immersive narrative games or core games with high willingness to pay. Whether interstitial or rewarded, an ad that breaks immersion tends to drive churn instead.
+- Early-stage apps with only a few hundred DAU. However high the eCPM, too few impressions won't produce meaningful revenue. Here, acquiring users comes before integrating ads.
+- Minimal projects where the SDK's added build size and complexity are a burden. The maintenance cost can outweigh the ad income. If your project leans on AI tooling, the cost-versus-benefit lens from [the reality of AI agent costs](/en/blog/en/ai-agent-cost-reality) applies directly to this call.
+
+In short, rewarded ads fit best in **games with short sessions and a strong retry motive**. If you're building something similar to Shadow Dash, start with the game-loop design in [iOS game development with Tauri + PixiJS](/en/blog/en/tauri-pixijs-ios-game-development).
 
 ### Ad SDK Selection Process
 
@@ -759,7 +786,7 @@ graph TD
 
 ---
 
-## Conclusion
+## What Building It Myself Taught Me
 
 ### Key Lessons
 

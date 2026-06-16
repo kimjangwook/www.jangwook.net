@@ -29,13 +29,22 @@ relatedPosts:
       ja: "Chrome DevTools MCPを活用した性能分析で、ゲーム最適化に活用できます"
       en: "Performance analysis with Chrome DevTools MCP can be applied to game optimization"
       zh: "使用Chrome DevTools MCP进行性能分析，可用于游戏优化"
+faq:
+  - question: "Do I really need to know Rust to build an iOS game with Tauri?"
+    answer: "The game logic is written entirely in TypeScript and PixiJS. Rust only shows up in lib.rs when you wire native commands like save or haptics, and at the level shown here you can get by without any Rust knowledge."
+  - question: "Should I pick PixiJS or Phaser?"
+    answer: "Choose PixiJS when custom visual effects and a small bundle matter most, and Phaser when fast prototyping and built-in features matter more. Shadow Dash went with PixiJS because of its day/night transition effect."
+  - question: "Why does the Rust build fail during the App Store Archive step?"
+    answer: "In archive mode Xcode re-runs the Rust build and fails to find PATH or environment. Skipping it with exit 0 when ACTION is install or archive in the Build Rust Code script fixes the error."
+  - question: "Can I test on a real device with only a free Apple ID?"
+    answer: "You can, but the signature expires after 7 days and you have to reinstall the app. App Store distribution requires a paid Apple Developer account at 99 dollars per year."
 ---
 
-## Overview
+## What Path Actually Makes Sense for a Web Dev's iOS Game
 
-What options do web developers have when they want to build an iOS app? Should they learn React Native, Flutter, or native Swift?
+What options do web developers have when they want to build an iOS app? Should they learn React Native, Flutter, or native Swift? Instead of picking up yet another framework, there's a route that reuses the TypeScript and Canvas knowledge you already have.
 
-In this article, I share my experience developing an iOS game using **Tauri 2.x + PixiJS + SvelteKit** and publishing it to the App Store. Based on the actual code from **Shadow Dash**, I'll cover the entire process from environment setup to App Store submission.
+I built a day/night runner game called **Shadow Dash** with the **Tauri 2.x + PixiJS + SvelteKit** stack and shipped it to the App Store. What follows is the real record, drawn from that project's code, of going from environment setup all the way to review submission.
 
 > 🎮 **Shadow Dash** Details: Check out the [portfolio page](/en/portfolio/shadow-dash) for the game's core mechanics, tech stack, and screenshots.
 
@@ -90,6 +99,24 @@ Recommended genres for first projects:
 - Simple and clear game logic
 - Easy to create series with skin/theme variations
 - Perfect for learning the complete development pipeline
+
+## When to Reach for Tauri+PixiJS, and When to Avoid It
+
+This stack isn't the right answer for every iOS game. Here are the lines that should decide it.
+
+**Good fit when:**
+- You already know web and TypeScript and you're building a 2D casual game (runner, puzzle, tap reaction)
+- You want to target iOS, Android, and even the web from one codebase
+- You're a solo dev or small team where bundle size and fast iteration matter
+- You're monetizing a lightweight app with ads or in-app purchases. Ad integration is covered, using the same Shadow Dash, in [Adding AdMob Rewarded Ads to a Tauri iOS App](/en/blog/en/tauri-ios-admob-rewarded-ads).
+
+**Native or another engine fits better when:**
+- You're pushing hundreds of sprites at 60fps or more, or shipping 3D and dense action. Unity or native Metal is the safer bet here.
+- You depend heavily on iOS-only frameworks like ARKit, advanced haptics, or background audio
+- Console-grade graphics or physics simulation is your core selling point
+- A rhythm game or anything extremely sensitive to input latency: the extra WebView rendering layer means you should benchmark first.
+
+In short, this stack is strong when the goal is "reuse web assets, ship fast, run lean," and native wins when the goal is "a flagship title pushed to the performance limit."
 
 ## Development Environment Setup
 
@@ -578,9 +605,9 @@ rustup target add aarch64-apple-ios
 rustup target add aarch64-apple-ios-sim
 ```
 
-## Conclusion
+## What Changes After Your First Release
 
-Developing iOS apps with Tauri 2.x + PixiJS + SvelteKit is an attractive option for web developers.
+Developing iOS apps with Tauri 2.x + PixiJS + SvelteKit is an attractive option for web developers. The first time around, environment setup and Archive errors will eat your hours, but once you've cut the path, the next app is just a copy of the same pipeline.
 
 **Key Takeaways:**
 1. **SvelteKit + PixiJS** - Lightweight and fast game development
@@ -588,7 +615,7 @@ Developing iOS apps with Tauri 2.x + PixiJS + SvelteKit is an attractive option 
 3. **Terminal builds** - More stable than direct Xcode builds
 4. **Build Script modification** - Prevents archive errors
 
-Once you successfully deploy your first app, the second one becomes much easier!
+The broader picture of a solo developer shipping products with web tech continues in [A Solo Developer's AI SaaS Journey](/en/blog/en/individual-developer-ai-saas-journey), and if you want to speed up development by running work in parallel, [Claude Code Parallel Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) picks it up there. Once you successfully deploy your first app, the second one becomes much easier.
 
 ## Download Shadow Dash
 

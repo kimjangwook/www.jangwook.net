@@ -30,17 +30,26 @@ relatedPosts:
       ja: "プラグインアーキテクチャと開発方法論で類似したアプローチを扱います"
       en: "Covers similar approaches in plugin architecture and development methodology"
       zh: "在插件架构和开发方法论方面涵盖了类似的方法"
+faq:
+  - question: "Tauriに公式AdMobプラグインがない以上、自作するしかないのですか？"
+    answer: "現状ではそうです。公式プラグインがないため、GoogleMobileAds SDKをラップするSwiftプラグインを自作する必要があります。本記事のAdmobPlugin.swiftとRustブリッジのコードをそのまま出発点として使えます。"
+  - question: "なぜxcframeworkではなくxcodeオプションでプラグインを作るのですか？"
+    answer: "GoogleMobileAdsのような外部SDK依存がある場合、xcodeオプションのほうがSwift Package Managerで依存関係を追加するのがはるかに簡単だからです。xcframeworkは配布は楽ですが、外部依存の連携が複雑になります。"
+  - question: "build.rsで#[cfg(target_os = ios)]が効かないのはなぜですか？"
+    answer: "build.rsはビルド対象ではなくホストマシン（macOS）で実行されるためです。iOSターゲットを検出するにはstd::env::var(TARGET)にiosが含まれるかを確認する必要があり、そうしないとフレームワークのリンクが行われません。"
+  - question: "リワード広告が表示されないとき、最初に何を確認すべきですか？"
+    answer: "テスト広告IDを使っているか、GADMobileAds.sharedInstance().start()が呼ばれているか、そしてシミュレーターではなく実機でテストしているかを順に確認してください。シミュレーターは広告サポートが限定的です。"
 ---
 
 import { Image } from 'astro:assets';
 import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
 import screenshot04 from '../../../assets/portfolio/shadow-dash/shadow-dash-04_iphone.png';
 
-## 概要
+## 公式プラグインがない状態からの出発
 
-Tauri 2.xでiOSアプリを開発しましたが、収益化のためにAdMob広告を統合するにはどうすればよいでしょうか？
+Shadow DashをApp Storeに公開すると、次の宿題は収益化でした。リワード広告を入れようとTauriのプラグインエコシステムを探し回ったのですが、AdMobを扱う公式プラグインは一つも見つかりませんでした。
 
-残念ながら、**Tauriには公式のAdMobプラグインがありません**。この記事では、AdMobリワード広告を統合するためにSwiftプラグインを独自開発した全過程を共有します。
+結局、**GoogleMobileAds SDKをラップするSwiftプラグインを自作する**しかありませんでした。以下は、その過程で詰まった箇所と解決コードを順番に整理したものです。Tauri CLIのアップグレードから権限設定、リンカーエラーまで、実際にぶつかった順序のまま進めます。
 
 > この記事は[Tauri + PixiJSでiOSゲーム開発](/ja/blog/ja/tauri-pixijs-ios-game-development)の続編です。Shadow Dashゲームに広告を統合した実際の経験に基づいて執筆しました。
 
@@ -67,7 +76,25 @@ graph LR
     C --> D[ゲーム再開]
 ```
 
-ユーザーが**自発的に**広告を視聴し、報酬（ゲーム継続）を受け取る構造で、ユーザー体験を損なわいません。
+ユーザーが**自発的に**広告を視聴し、報酬（ゲーム継続）を受け取る構造で、ユーザー体験を損ないません。
+
+## リワード広告が合うゲーム、合わないゲーム
+
+広告SDKを組み込む前に、そもそもリワード広告が自分のゲームに合うかを見極める必要があります。やみくもに入れても、収益は出ずレビューだけ悪くなります。
+
+**リワード広告がよく合うケース：**
+
+- 短いセッションを繰り返すアーケード/カジュアルゲーム。Shadow Dashのようにゲームオーバーが頻繁に起こり、「もう一回」という欲求が強い構造が理想です。
+- コンティニュー、コイン2倍、ヒント開放のように、広告視聴への報酬が明確で即座に得られるケース。
+- 無課金ユーザーの比率が高く、アプリ内課金だけでは収益が難しい個人開発者のアプリ。[個人開発者のAI SaaS収益化の旅](/ja/blog/ja/individual-developer-ai-saas-journey)でも触れたように、小さなアプリほど参入障壁のない収益源が重要になります。
+
+**避けたほうがよいケース：**
+
+- 没入型のナラティブゲームや、課金意欲の高いコアゲーム。インタースティシャルでもリワードでも、広告が没入を断ち切れば逆に離脱を招きます。
+- DAUが数百人規模の初期アプリ。eCPMがいくら高くても、表示回数が少なければ意味のある収益にはなりません。この場合は広告統合よりユーザー獲得が先です。
+- 広告SDKがゲーム容量とビルドの複雑さを増やすのが負担になるミニマルなプロジェクト。広告で得る額より保守コストが上回ることもあります。AIツールを使うプロジェクトなら、[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality)で扱った費用対効果の観点をそのまま当てはめて判断するとよいでしょう。
+
+まとめると、**セッションが短く再挑戦の動機が強いゲーム**にリワード広告が最も合います。Shadow Dashに近い構造のゲームを作っているなら、[Tauri + PixiJSでのiOSゲーム開発](/ja/blog/ja/tauri-pixijs-ios-game-development)の記事でゲームループの設計から確認してみてください。
 
 ### 広告SDK選定プロセス
 
@@ -759,7 +786,7 @@ graph TD
 
 ---
 
-## まとめ
+## 自作して残った教訓
 
 ### 学んだこと
 

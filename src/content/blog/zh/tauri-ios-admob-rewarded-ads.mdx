@@ -30,17 +30,26 @@ relatedPosts:
       ja: "プラグインアーキテクチャと開発方法論で類似したアプローチを扱います"
       en: "Covers similar approaches in plugin architecture and development methodology"
       zh: "在插件架构和开发方法论方面涵盖了类似的方法"
+faq:
+  - question: "Tauri 没有官方 AdMob 插件，只能自己开发吗？"
+    answer: "目前是的。由于没有官方插件，你需要自己开发一个封装 GoogleMobileAds SDK 的 Swift 插件。你可以直接把本文的 AdmobPlugin.swift 和 Rust 桥接代码作为可用的起点。"
+  - question: "为什么创建插件时用 xcode 选项而不是 xcframework？"
+    answer: "当存在像 GoogleMobileAds 这样的外部 SDK 依赖时，xcode 选项通过 Swift Package Manager 添加依赖要容易得多。xcframework 便于分发，但连接外部依赖更麻烦。"
+  - question: "为什么 #[cfg(target_os = ios)] 在 build.rs 中不起作用？"
+    answer: "因为 build.rs 运行在宿主机（macOS）上，而不是构建目标上。要检测 iOS 构建，必须检查 std::env::var(TARGET) 是否包含 ios，否则框架链接不会执行。"
+  - question: "激励广告不显示时应该先检查什么？"
+    answer: "请按顺序确认：是否使用测试广告 ID，GADMobileAds.sharedInstance().start() 是否已调用，以及是否在真机而非模拟器上测试。模拟器对广告的支持有限。"
 ---
 
 import { Image } from 'astro:assets';
 import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
 import screenshot04 from '../../../assets/portfolio/shadow-dash/shadow-dash-04_iphone.png';
 
-## 概述
+## 从没有官方插件的状态出发
 
-您使用 Tauri 2.x 开发了一个 iOS 应用，现在想要通过 AdMob 广告来变现。该怎么做呢？
+把 Shadow Dash 上架 App Store 之后，下一个任务就是变现。我想接入激励广告，翻遍了 Tauri 的插件生态，却发现没有任何一个官方插件涉及 AdMob。
 
-遗憾的是，**Tauri 没有官方的 AdMob 插件**。在本文中，我将分享开发自定义 Swift 插件来集成 AdMob 激励广告的完整过程。
+于是只能**自己写一个封装 GoogleMobileAds SDK 的 Swift 插件**。下面按顺序整理了我在这个过程中卡住的地方和对应的解决代码。从升级 Tauri CLI 到权限配置，再到链接器错误，完全按照我实际遇到的顺序推进。
 
 > 本文是 [使用 Tauri + PixiJS 开发 iOS 游戏](/zh/blog/zh/tauri-pixijs-ios-game-development) 的续篇。基于在 Shadow Dash 游戏中集成广告的实际经验撰写。
 
@@ -68,6 +77,24 @@ graph LR
 ```
 
 用户**自愿**观看广告并获得奖励（继续游戏），这种结构不会损害用户体验。
+
+## 激励广告适合的游戏，与不适合的游戏
+
+接入广告 SDK 之前，先判断激励广告是否真的适合你的游戏。盲目加入只会换来没有收益、评分还变差的结果。
+
+**激励广告很合适的情况：**
+
+- 围绕短时、可重复会话构建的街机/休闲游戏。像 Shadow Dash 这样游戏结束频繁、"再来一局"欲望强烈的结构最理想。
+- 观看广告的奖励明确且即时的情况，比如续命、金币翻倍、解锁提示。
+- 免费用户占比高、仅靠应用内购买难以盈利的个人开发者应用。正如[个人开发者的 AI SaaS 变现之旅](/zh/blog/zh/individual-developer-ai-saas-journey)所述，应用越小，没有准入门槛的收益来源就越重要。
+
+**最好避免的情况：**
+
+- 沉浸式叙事游戏，或付费意愿高的核心游戏。无论插页还是激励，只要广告打断沉浸感，反而会加剧流失。
+- DAU 只有几百人的早期应用。eCPM 再高，曝光太少也产生不了有意义的收益。这种情况下，获取用户应先于接入广告。
+- 广告 SDK 增加的体积和构建复杂度成为负担的极简项目。维护成本可能超过广告收入。如果项目依赖 AI 工具，[AI 智能体成本的现实](/zh/blog/zh/ai-agent-cost-reality)中讨论的成本效益视角可以直接套用到这个决策上。
+
+总之，激励广告最适合**会话短、重试动机强的游戏**。如果你在做与 Shadow Dash 类似结构的游戏，可以先从[使用 Tauri + PixiJS 开发 iOS 游戏](/zh/blog/zh/tauri-pixijs-ios-game-development)一文的游戏循环设计看起。
 
 ### 广告 SDK 选择过程
 
@@ -759,7 +786,7 @@ graph TD
 
 ---
 
-## 总结
+## 亲手接入后的收获
 
 ### 经验教训
 

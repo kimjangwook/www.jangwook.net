@@ -29,13 +29,22 @@ relatedPosts:
       ja: "Chrome DevTools MCPを活用した性能分析で、ゲーム最適化に活用できます"
       en: "Performance analysis with Chrome DevTools MCP can be applied to game optimization"
       zh: "使用Chrome DevTools MCP进行性能分析，可用于游戏优化"
+faq:
+  - question: "用 Tauri 开发 iOS 游戏必须懂 Rust 吗？"
+    answer: "游戏逻辑全部用 TypeScript 和 PixiJS 编写。Rust 只在处理保存、触感反馈等原生命令时在 lib.rs 里稍微涉及，达到本文示例的程度即使不懂 Rust 也能完成。"
+  - question: "PixiJS 和 Phaser 应该选哪个？"
+    answer: "如果更看重自定义视觉效果和小型包体就选 PixiJS，如果更看重快速原型和内置功能就选 Phaser。Shadow Dash 因为昼夜切换效果选择了 PixiJS。"
+  - question: "为什么 App Store Archive 阶段 Rust 构建会失败？"
+    answer: "在 Archive 模式下 Xcode 会重新执行 Rust 构建，因找不到 PATH 或环境而失败。在 Build Rust Code 脚本中，当 ACTION 为 install 或 archive 时用 exit 0 跳过即可解决。"
+  - question: "只用免费 Apple ID 能在真机上测试吗？"
+    answer: "可以，但签名 7 天后失效，需要重新安装应用。发布到 App Store 需要每年 99 美元的 Apple Developer 账户。"
 ---
 
-## 概述
+## Web 开发者的 iOS 游戏，哪条路更现实
 
-当 Web 开发者想要构建 iOS 应用时，有哪些选择？是学习 React Native、Flutter，还是原生 Swift？
+当 Web 开发者想要构建 iOS 应用时，有哪些选择？是学习 React Native、Flutter，还是原生 Swift？与其每次都学一个新框架，不如直接复用你已经掌握的 TypeScript 和 Canvas 知识。
 
-本文将分享使用 **Tauri 2.x + PixiJS + SvelteKit** 组合开发 iOS 游戏并发布到 App Store 的经验。基于实际开发的 **Shadow Dash** 游戏代码，涵盖从环境搭建到审核提交的完整流程。
+我用 **Tauri 2.x + PixiJS + SvelteKit** 组合做了一款名为 **Shadow Dash** 的昼夜切换跑酷游戏，并发布到了 App Store。下面是基于该项目实际代码，从环境搭建一路走到审核提交的完整记录。
 
 > 🎮 **Shadow Dash** 详情：在[作品集页面](/zh/portfolio/shadow-dash)查看游戏核心机制、技术栈和截图。
 
@@ -90,6 +99,24 @@ import screenshot05 from '../../../assets/portfolio/shadow-dash/shadow-dash-05_i
 - 游戏逻辑简单明确
 - 通过皮肤/主题变化易于系列化
 - 最适合学习完整开发流程
+
+## 何时该用 Tauri+PixiJS，何时应避免
+
+这个组合并非适用于所有 iOS 游戏。可以用以下标准来做决定。
+
+**适合的情况：**
+- 你已经熟悉 Web/TypeScript，且要做 2D 休闲游戏（跑酷、解谜、点击反应）
+- 你想用同一套代码库同时面向 iOS、Android 乃至 Web
+- 你是看重包体大小和快速迭代的个人或小团队
+- 你要做靠广告或内购变现的轻量应用。广告接入在[为 Tauri iOS 应用接入 AdMob 激励广告](/zh/blog/zh/tauri-ios-admob-rewarded-ads)中以同一款 Shadow Dash 为例讲解。
+
+**原生或其他引擎更合适的情况：**
+- 要在 60fps 以上驱动数百个精灵的 3D 或高密度动作游戏。这种情况下 Unity 或原生 Metal 更稳妥。
+- 深度依赖 ARKit、高级触感反馈、后台音频等 iOS 专属框架
+- 主机级画质或物理模拟是核心卖点
+- 节奏游戏等对输入延迟极度敏感的类型，由于多了一层 WebView 渲染，需要先做基准测试。
+
+总而言之，目标是"复用 Web 技术资产、快速发布、轻量运营"时这个组合很强，而目标是"把性能推到极限的大作"时原生更合适。
 
 ## 开发环境搭建
 
@@ -578,9 +605,9 @@ rustup target add aarch64-apple-ios
 rustup target add aarch64-apple-ios-sim
 ```
 
-## 总结
+## 首次发布之后会有什么变化
 
-使用 Tauri 2.x + PixiJS + SvelteKit 组合开发 iOS 应用，对于 Web 开发者来说是一个非常有吸引力的选择。
+使用 Tauri 2.x + PixiJS + SvelteKit 组合开发 iOS 应用，对于 Web 开发者来说是一个非常有吸引力的选择。第一次会在环境搭建和 Archive 错误上耗费时间，但只要把路打通，下一个应用只需复制同一套流程即可。
 
 **关键要点：**
 1. **SvelteKit + PixiJS** - 轻量且快速的游戏开发
@@ -588,7 +615,7 @@ rustup target add aarch64-apple-ios-sim
 3. **终端构建** - 比直接 Xcode 构建更稳定
 4. **Build Script 修改** - 防止 Archive 错误
 
-一旦成功发布第一个应用，第二个就会轻松很多！
+个人开发者用 Web 技术发布产品的更大背景，可以在[个人开发者的 AI SaaS 开发之旅](/zh/blog/zh/individual-developer-ai-saas-journey)中继续了解；而通过并行运行多项工作来提升开发速度的方法，则在[Claude Code 并行会话与 Git Worktree](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)中延续。一旦成功发布第一个应用，第二个就会轻松很多。
 
 ## 下载 Shadow Dash
 
