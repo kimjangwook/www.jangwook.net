@@ -37,8 +37,7 @@ export const AUTHOR = {
 		'https://github.com/kimjangwook',
 		'https://linkedin.com/in/jangwook-kim-2590a1174',
 		'https://x.com/Kim_Jangwook',
-		'https://medium.com/@kim-jangwook',
-		'https://www.youtube.com/@kim-jangwook'
+		'https://medium.com/@kim-jangwook'
 	],
 	knowsAbout: [
 		'AI/LLM',
