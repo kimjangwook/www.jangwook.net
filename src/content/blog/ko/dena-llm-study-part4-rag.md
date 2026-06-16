@@ -2,7 +2,7 @@
 title: 'DeNA LLM 스터디 Part 4: RAG 아키텍처와 최신 트렌드'
 description: >-
   DeNA 사내 LLM 스터디 Part 4: 기본 RAG 구현부터 지식 그래프를 활용한 GraphRAG, 검색 전략을 스스로 결정하는 Agentic RAG까지
-  최신 아키텍처 진화를 분석합니다. 프로덕션 도입 시 고려해야 할 기준과 2025~2026년 트렌드도 함께 정리합니다.
+  최신 아키텍처 진화를 분석합니다. 프로덕션 도입 시 고려해야 할 기준과 2025〜2026년 트렌드도 함께 정리합니다.
 pubDate: '2025-12-11'
 heroImage: ../../../assets/blog/dena-llm-study-part4-rag-hero.jpg
 tags:
