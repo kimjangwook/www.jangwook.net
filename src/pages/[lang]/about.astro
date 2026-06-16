@@ -187,6 +187,26 @@ const t = useTranslations(lang);
 				</div>
 
 				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+					<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
+						<a href="https://insightforge.effloow.com" target="_blank" class="text-accent hover:underline dark:text-accent">
+							InsightForge
+						</a>
+					</h4>
+					<p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Tech: Laravel 12, Python FastAPI, A2A Multi-Agent, Gemini / OpenAI / Anthropic</p>
+					<p class="text-gray-700 dark:text-gray-300">
+						{lang === 'ko' ? (
+							'AI 멀티 에이전트(A2A) 기반 소비자 리서치 플랫폼. 여러 AI 에이전트가 협업해 페르소나 설문, 인터뷰, 인사이트 도출을 자동화합니다. insightforge.effloow.com에서 별도 서비스로 운영합니다.'
+						) : lang === 'ja' ? (
+							'AIマルチエージェント(A2A)ベースの消費者リサーチプラットフォーム。複数のAIエージェントが協働してペルソナ調査、インタビュー、インサイト抽出を自動化します。insightforge.effloow.comで別サービスとして運営しています。'
+						) : lang === 'zh' ? (
+							'基于 AI 多智能体（A2A）的消费者研究平台。多个 AI 智能体协作，自动完成画像调研、访谈和洞察提取。在 insightforge.effloow.com 作为独立服务运营。'
+						) : (
+							'An AI multi-agent (A2A) consumer research platform where multiple AI agents collaborate to automate persona surveys, interviews, and insight extraction. It runs as a separate service at insightforge.effloow.com.'
+						)}
+					</p>
+				</div>
+
+				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
 						<h4 class="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
 							<a href="https://github.com/kimjangwook/ssr-repeater" target="_blank" class="text-accent hover:underline dark:text-accent">
 								{lang === 'ko' ? 'SSR 설문 분석' : lang === 'ja' ? 'SSRアンケート分析' : lang === 'zh' ? 'SSR 问卷分析' : 'SSR Survey Analysis'}
