@@ -25,9 +25,10 @@ type Props = CollectionEntry<'blog'>['data'] & {
 		reason: { ko: string; ja: string; en: string; zh: string };
 	}>;
 	faq?: Array<{ question: string; answer: string }>;
+	readingTime?: number;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, lang, tags, noindex, relatedPosts, faq } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, lang, tags, noindex, relatedPosts, faq, readingTime } = Astro.props;
 const t = useTranslations(lang);
 
 // Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
@@ -112,6 +113,12 @@ const breadcrumbSchema = {
 							<time datetime={pubDate.toISOString()}>
 								{t('blog.publishedOn')}: <FormattedDate date={pubDate} />
 							</time>
+							{readingTime && (
+								<>
+									<span>•</span>
+									<span>{readingTime} {t('blog.readTime')}</span>
+								</>
+							)}
 							{updatedDate && (
 								<>
 									<span>•</span>
