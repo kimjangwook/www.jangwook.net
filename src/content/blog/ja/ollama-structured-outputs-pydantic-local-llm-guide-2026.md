@@ -39,6 +39,15 @@ relatedPosts:
       ja: Claude APIでのTool Use実装パターンと本記事のエージェントツールディスパッチパターンを比較すると、クラウドLLMとローカルLLMの設計の違いが見えてくる。
       en: Comparing Claude's Tool Use implementation with this post's local tool dispatch patterns reveals key design differences between cloud and local LLM agent architectures.
       zh: 将Claude API的Tool Use实现模式与本文的本地工具分发模式进行比较，可以看出云端LLM和本地LLM的架构设计差异。
+faq:
+  - question: "Ollamaのformatパラメーターはどのバージョンから使えますか？"
+    answer: "JSONスキーマを受け取るformatパラメーターはOllama 0.3.0以上で動作します。本記事の例は0.30.7でテストしており、ollama --versionで導入済みのバージョンを確認できます。"
+  - question: "構造化出力は通常のテキスト生成より本当に速いのですか？"
+    answer: "直接測定した結果、同一プロンプトでformatなしが31.84秒、format適用時が4.99秒と約6.4倍速くなりました。constrained decodingがフォーマット用の不要なトークン生成を防ぐためです。"
+  - question: "PydanticモデルをJSONスキーマに変換するにはどうしますか？"
+    answer: "Pydantic BaseModelのmodel_json_schema()メソッドがスキーマのdictを自動生成します。これをOllamaのformatに渡し、レスポンスはmodel_validate_json()でパースと検証を一度に処理します。"
+  - question: "小型ローカルモデルで複雑なネストスキーマがうまくいかないのはなぜですか？"
+    answer: "Gemma4:e4bのような4B級の量子化モデルでは、3段階以上のネストスキーマで中間レベルが空配列になることがあります。構造を平坦に保つか、gemma4:12b-it-qatのような大きいモデルを使うと改善します。"
 ---
 
 `json.loads(response)` が失敗する瞬間がある。プロンプトに「JSONだけ返して」と書いたのに、モデルが ` ```json ` マークダウンコードフェンスを付けてきた。簡単な正規表現で除去できるが、その正規表現がまたエッジケースを生み、そのエッジケースがproductionで爆発する。
@@ -289,3 +298,10 @@ print(f"Key phrases: {result.key_phrases}")
 **モデル選択戦略。** シンプルな抽出は `gemma4:e4b`（速い）、複雑なネストスキーマは `gemma4:12b-it-qat`（正確）でランタイムに分岐するパターンがコスト品質のバランス上有利だ。[Pydantic AIでエージェント全体を構造化する方法](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を見ると、この判断をフレームワークレベルで抽象化する方法が確認できる。
 
 Gemma4ベースのエージェントを実行しているなら、今日すぐ `format` パラメーター一つ追加するだけでパース安定性が大きく変わる。特にエージェントのツール選択のように、間違ったレスポンスがすぐエラーにつながるパスでより顕著だ。
+
+## 参考資料
+
+- [Ollama Structured outputs（公式ブログ）](https://ollama.com/blog/structured-outputs) — `format` パラメーターとJSONスキーマ、Pydantic例を扱う一次資料
+- [Ollama APIドキュメント — Generate a completion / Structured outputs](https://github.com/ollama/ollama/blob/main/docs/api.md) — `/api/generate` エンドポイントと `format` フィールドの仕様
+- [Pydantic JSON Schema ドキュメント](https://docs.pydantic.dev/latest/concepts/json_schema/) — `model_json_schema()` の動作とカスタマイズ
+- [Ollama公式サイト](https://ollama.com) — インストールとモデルのダウンロード

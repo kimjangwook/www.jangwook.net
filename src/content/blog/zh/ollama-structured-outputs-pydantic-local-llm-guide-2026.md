@@ -39,6 +39,15 @@ relatedPosts:
       ja: Claude APIでのTool Use実装パターンと本記事のエージェントツールディスパッチパターンを比較すると、クラウドLLMとローカルLLMの設計の違いが見えてくる。
       en: Comparing Claude's Tool Use implementation with this post's local tool dispatch patterns reveals key design differences between cloud and local LLM agent architectures.
       zh: 将Claude API的Tool Use实现模式与本文的本地工具分发模式进行比较，可以看出云端LLM和本地LLM的架构设计差异。
+faq:
+  - question: "Ollama的format参数从哪个版本开始可用？"
+    answer: "接收JSON Schema的format参数在Ollama 0.3.0及以上版本可用。本文示例在0.30.7上测试，可通过ollama --version查看已安装的版本。"
+  - question: "结构化输出真的比普通文本生成更快吗？"
+    answer: "实测结果显示，相同提示词下无format耗时31.84秒，应用format后为4.99秒，约快6.4倍。原因是约束解码避免了模型为格式化生成不必要的token。"
+  - question: "如何将Pydantic模型转换为JSON Schema？"
+    answer: "Pydantic BaseModel的model_json_schema()方法会自动生成schema字典。将其传给Ollama的format，响应再用model_validate_json()一次性完成解析与验证。"
+  - question: "为什么小型本地模型处理复杂嵌套Schema效果不佳？"
+    answer: "像Gemma4:e4b这样的4B级量化模型，在3层以上嵌套Schema中有时会让中间层返回空数组。保持结构扁平，或改用gemma4:12b-it-qat等更大的模型可以改善。"
 ---
 
 `json.loads(response)` 在某个时刻就会报错。明明在提示词里写了"只返回JSON"，但模型却加上了 ```json 的Markdown代码围栏。用正则表达式能去掉——直到那个正则遇上边界情况，然后在生产环境炸开。
@@ -284,3 +293,10 @@ print(f"Key phrases: {result.key_phrases}")
 **模型切换策略。** 简单提取用 `gemma4:e4b`（速度快），复杂嵌套Schema用 `gemma4:12b-it-qat`（更准确），在运行时按需切换，是成本与质量平衡的优选方案。[用Pydantic AI构建完整Agent](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)展示了如何在框架层面抽象这个判断。
 
 如果你已经在本地运行基于Gemma4的Agent，今天只需添加一个 `format` 参数，就能显著提升解析稳定性。尤其是在Agent循环中，错误响应会直接导致下游错误的路径上，效果更为明显。
+
+## 参考资料
+
+- [Ollama Structured outputs（官方博客）](https://ollama.com/blog/structured-outputs) — 介绍 `format` 参数、JSON Schema 与 Pydantic 示例的一手文档
+- [Ollama API 文档 — Generate a completion / Structured outputs](https://github.com/ollama/ollama/blob/main/docs/api.md) — `/api/generate` 端点与 `format` 字段规范
+- [Pydantic JSON Schema 文档](https://docs.pydantic.dev/latest/concepts/json_schema/) — `model_json_schema()` 的工作方式与自定义
+- [Ollama 官方网站](https://ollama.com) — 安装与模型下载

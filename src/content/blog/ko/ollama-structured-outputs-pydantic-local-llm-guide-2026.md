@@ -39,6 +39,15 @@ relatedPosts:
       ja: Claude APIでのTool Use実装パターンと本記事のエージェントツールディスパッチパターンを比較すると、クラウドLLMとローカルLLMの設計の違いが見えてくる。
       en: Comparing Claude's Tool Use implementation with this post's local tool dispatch patterns reveals key design differences between cloud and local LLM agent architectures.
       zh: 将Claude API的Tool Use实现模式与本文的本地工具分发模式进行比较，可以看出云端LLM和本地LLM的架构设计差异。
+faq:
+  - question: "Ollama format 파라미터는 어느 버전부터 쓸 수 있나요?"
+    answer: "Ollama 0.3.0 이상에서 JSON schema를 받는 format 파라미터가 동작합니다. 이 글의 예제는 0.30.7에서 테스트했으며, ollama --version으로 설치된 버전을 확인할 수 있습니다."
+  - question: "구조화 출력이 일반 텍스트 생성보다 정말 더 빠른가요?"
+    answer: "직접 측정한 결과 동일 프롬프트에서 format 없이 31.84초, format 적용 시 4.99초로 약 6.4배 빨랐습니다. constrained decoding이 포맷팅용 불필요한 토큰 생성을 막기 때문입니다."
+  - question: "Pydantic 모델을 JSON schema로 변환하려면 어떻게 하나요?"
+    answer: "Pydantic BaseModel의 model_json_schema() 메서드가 schema dict를 자동 생성합니다. 이를 Ollama format에 넘기고, 응답은 model_validate_json()으로 파싱과 검증을 한 번에 처리합니다."
+  - question: "작은 로컬 모델에서 복잡한 중첩 스키마가 잘 안 되는 이유는 무엇인가요?"
+    answer: "Gemma4:e4b 같은 4B급 양자화 모델은 3단계 이상 중첩 스키마에서 중간 레벨이 빈 배열로 나오는 경우가 있습니다. 구조를 평탄하게 유지하거나 gemma4:12b-it-qat 같은 더 큰 모델을 쓰면 개선됩니다."
 ---
 
 `json.loads(response)`가 실패하는 시점이 있었다. 프롬프트에 "JSON만 반환해줘"라고 적었는데, 모델이 ```json 마크다운 코드 펜스를 붙여버렸다. 간단한 정규식으로 걷어낼 수 있지만, 그 정규식이 또 edge case를 만들고, 그 edge case가 production에서 터진다.
@@ -403,3 +412,10 @@ ollama --version
 별도 API 키가 없어도 된다. Ollama는 로컬에서만 돌아가고, 외부 서버와 통신하지 않는다. 개인 데이터를 처리하거나 네트워크 비용이 걱정되는 상황에서 장점이다.
 
 `urllib.request`는 Python 표준 라이브러리이므로 추가 설치가 없다. 실제 프로덕션에서는 `httpx`나 `requests`로 바꿔도 동일하게 동작한다.
+
+## 참고 자료
+
+- [Ollama Structured outputs (공식 블로그)](https://ollama.com/blog/structured-outputs) — `format` 파라미터와 JSON schema, Pydantic 예제를 다루는 1차 문서
+- [Ollama API 문서 — Generate a completion / Structured outputs](https://github.com/ollama/ollama/blob/main/docs/api.md) — `/api/generate` 엔드포인트와 `format` 필드 사양
+- [Pydantic JSON Schema 문서](https://docs.pydantic.dev/latest/concepts/json_schema/) — `model_json_schema()` 동작과 커스터마이징
+- [Ollama 공식 사이트](https://ollama.com) — 설치 및 모델 다운로드

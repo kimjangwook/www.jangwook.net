@@ -40,6 +40,15 @@ relatedPosts:
       ja: Claude APIでのTool Use実装パターンと本記事のエージェントツールディスパッチパターンを比較すると、クラウドLLMとローカルLLMの設計の違いが見えてくる。
       en: Comparing Claude's Tool Use implementation with this post's local tool dispatch patterns reveals key design differences between cloud and local LLM agent architectures.
       zh: 将Claude API的Tool Use实现模式与本文的本地工具分发模式进行比较，可以看出云端LLM和本地LLM的架构设计差异。
+faq:
+  - question: "Which Ollama version supports the format parameter?"
+    answer: "The format parameter that accepts a JSON schema works on Ollama 0.3.0 and later. The examples here were tested on 0.30.7, and you can check your installed version with ollama --version."
+  - question: "Is structured output really faster than plain text generation?"
+    answer: "In my direct measurement the same prompt took 31.84 seconds without format and 4.99 seconds with it, about 6.4x faster. Constrained decoding stops the model from spending tokens on formatting decisions."
+  - question: "How do I turn a Pydantic model into a JSON schema?"
+    answer: "Call the model_json_schema() method on a Pydantic BaseModel to generate the schema dict automatically. Pass it to Ollama format, then parse and validate the response in one step with model_validate_json()."
+  - question: "Why do small local models struggle with complex nested schemas?"
+    answer: "Quantized 4B-class models like Gemma4:e4b sometimes return empty arrays at intermediate levels for schemas nested 3+ levels deep. Keeping the structure flat or switching to a larger model such as gemma4:12b-it-qat improves reliability."
 ---
 
 `json.loads(response)` fails at a certain point. You told the model "return JSON only," but it added a ```json markdown code fence around everything. A quick regex strips it — until that regex hits an edge case, and that edge case blows up in production.
@@ -50,7 +59,7 @@ I ran these tests locally with Gemma4 and Ollama 0.30.7 to see how well it holds
 
 ## Why LLM Response Parsing Is Tricky
 
-The most common problem when running Ollama locally — without a cloud LLM API — is JSON parsing. Two reasons.
+The most common problem when running Ollama locally, without a cloud LLM API, is JSON parsing. Two reasons.
 
 First, text generation models are trained toward "natural text." Even if you ask for JSON only, they'll often wrap it in ` ```json ... ``` ` blocks or prepend "Of course! Here is the JSON you requested:" style text. Here's what I reproduced directly:
 
@@ -70,7 +79,7 @@ JSON parse: FAILED
 
 Python's `json.loads()` can't handle the markdown wrapper. The "JSON only" instruction is unreliable in production.
 
-Second, speed. I measured the same query both ways: 32 seconds without structured output, 5 seconds with it. More on why below.
+Second, speed. I measured the same query both ways. It took 32 seconds without structured output and 5 seconds with it. More on why below.
 
 ## How the Ollama format Parameter Works
 
@@ -99,7 +108,7 @@ def ollama_structured(prompt, schema, model="gemma4:e4b"):
     return result["response"]
 ```
 
-Constrained decoding sets the probability of any token that would violate the schema to zero at each generation step. So even if the model "wants" to generate a markdown fence, the schema makes it physically impossible. That's also where the speed gain comes from — the model doesn't waste tokens on formatting decisions.
+Constrained decoding sets the probability of any token that would violate the schema to zero at each generation step. So even if the model "wants" to generate a markdown fence, the schema makes it physically impossible. That's also where the speed gain comes from. The model doesn't waste tokens on formatting decisions.
 
 Here are the measured numbers:
 
@@ -118,7 +127,7 @@ With structured output:
   JSON parse: SUCCESS
 ```
 
-6.4x difference. Local LLMs are already slow, and adding unreliable parsing on top makes the whole pipeline feel worse.
+6.4x difference. Local LLMs are already slow, and adding unreliable parsing on top makes the whole pipeline feel worse still.
 
 ## Wiring Pydantic Models
 
@@ -202,7 +211,7 @@ Dispatch: OK (type-safe)
 
 Because `tool_name` is typed as `Literal["web_search", "read_file", ...]`, `tool_call.tool_name` is always one of those four values. If the model invents a nonexistent tool name, Pydantic throws `ValidationError`. The `if tool_call.tool_name == "web_search"` branch is safe to write.
 
-This is architecturally the same as function calling in cloud APIs. Comparing it with [Claude Agent SDK's Tool Use patterns](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) shows an interesting design difference: cloud LLMs handle tool selection natively at the model level, while local Ollama needs an explicit JSON schema + Pydantic validation layer.
+This is architecturally the same as function calling in cloud APIs. Comparing it with [Claude Agent SDK's Tool Use patterns](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) shows an interesting design difference. Cloud LLMs handle tool selection natively at the model level, while local Ollama needs an explicit JSON schema plus a Pydantic validation layer.
 
 ## Gemma4 and Schema Complexity: Limitations I Found
 
@@ -278,10 +287,17 @@ print(f"Key phrases: {result.key_phrases}")
 
 This only covers the simplest cases. A real agent needs a bit more.
 
-**Retry logic.** When Pydantic `ValidationError` fires, retry with a slightly modified prompt — ideally including the error message. Models often self-correct when they can see why they were wrong.
+**Retry logic.** When Pydantic `ValidationError` fires, retry with a slightly modified prompt that ideally includes the error message. Models often self-correct when they can see why they were wrong.
 
 **Streaming.** With `stream: true`, you can receive the JSON incrementally as it generates. Pair with a streaming JSON parser like `ijson` for memory-efficient handling of large responses.
 
 **Model switching.** Route simple extractions to `gemma4:e4b` (fast) and complex nested schemas to `gemma4:12b-it-qat` (accurate) at runtime. [Structuring an entire agent with Pydantic AI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) shows how to abstract this decision to the framework level.
 
 If you're already running a Gemma4-based agent locally, adding the `format` parameter today is a one-line change with a measurable reliability improvement. Especially anywhere in the agent loop where an invalid response immediately causes a downstream error.
+
+## References
+
+- [Ollama Structured outputs (official blog)](https://ollama.com/blog/structured-outputs): the primary source covering the `format` parameter, JSON schemas, and Pydantic examples
+- [Ollama API docs — Generate a completion / Structured outputs](https://github.com/ollama/ollama/blob/main/docs/api.md): the `/api/generate` endpoint and `format` field spec
+- [Pydantic JSON Schema docs](https://docs.pydantic.dev/latest/concepts/json_schema/): how `model_json_schema()` behaves and how to customize it
+- [Ollama official site](https://ollama.com): installation and model downloads
