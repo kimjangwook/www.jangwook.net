@@ -47,8 +47,6 @@ faq:
 > 1. [OpenAI AgentKit完全指南第1部：核心概念与入门](/zh/blog/zh/openai-agentkit-tutorial-part1)
 > 2. <strong>OpenAI AgentKit完全指南第2部：实战应用与高级模式</strong> ← 当前文章
 
-# OpenAI AgentKit完全指南第2部：实战应用与高级模式
-
 [第1部](/zh/blog/zh/openai-agentkit-tutorial-part1)讲清了核心概念和基本用法。可一旦走出demo、把真实流量压上生产环境，单个智能体扛不住的问题立刻就冒出来了。多个智能体怎么协调？中途挂了怎么恢复？租户之间的数据怎么隔离？
 
 第2部就是冲着这些问题来的。我们会一路走完可用于生产环境的<strong>高级架构模式</strong>和<strong>企业级系统设计</strong>，结合真实企业的落地方式，附上能直接搬进自己项目的<strong>完整代码示例</strong>。

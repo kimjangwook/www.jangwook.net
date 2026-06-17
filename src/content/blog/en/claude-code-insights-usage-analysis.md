@@ -45,8 +45,6 @@ faq:
     answer: "Break large tasks into chapter, section, or module units, and record progress as checkpoints in a file like task-status.md. That way, even if a session drops, the next one can continue from where it left off."
 ---
 
-# Claude Code /insights Review: What 4,516 Messages Reveal About My AI Coding Patterns
-
 "Am I really using Claude Code effectively?"
 
 I use these tools daily, and I still couldn't answer that cleanly. Then I stumbled onto `/insights`, a tucked-away Claude Code feature that diagnoses your workflow from your actual usage data.

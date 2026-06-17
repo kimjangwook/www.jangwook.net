@@ -48,8 +48,6 @@ faq:
 > 1. [OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기](/ko/blog/ko/openai-agentkit-tutorial-part1)
 > 2. <strong>OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴</strong> ← 현재 글
 
-# OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴
-
 [1부](/ko/blog/ko/openai-agentkit-tutorial-part1)에서 핵심 개념과 기본 사용법을 다뤘다. 데모를 넘어 실제 트래픽이 들어오는 프로덕션에 올리는 순간, 단일 에이전트로는 감당이 안 되는 문제들이 쏟아진다. 여러 에이전트를 어떻게 조율할지, 장애가 나면 어떻게 복구할지, 테넌트 데이터는 어떻게 격리할지.
 
 그래서 2부에서는 <strong>고급 아키텍처 패턴</strong>과 <strong>엔터프라이즈급 시스템 설계</strong>를 다룬다. 실제 기업들이 AgentKit으로 복잡한 문제를 푼 방식, 그리고 그대로 가져다 쓸 수 있는 <strong>완전한 코드 예제</strong>를 담았다.

@@ -48,8 +48,6 @@ faq:
 > 1. <strong>OpenAI AgentKit 完全ガイド第 1 部：コアコンセプトとはじめ方</strong> ← 現在の記事
 > 2. [OpenAI AgentKit 完全ガイド第 2 部：実践適用と高度なパターン](/ja/blog/ja/openai-agentkit-tutorial-part2)
 
-# OpenAI AgentKit 完全ガイド第 1 部：コアコンセプトとはじめ方
-
 2025 年 10 月 6 日、サンフランシスコで開催された OpenAI DevDay で、Sam Altman は開発者エコシステムを完全に変える発表を行いました。それが<strong>AgentKit</strong>です。
 
 「プロトタイプからプロダクションまで、はるかに少ない摩擦でエージェントを構築、デプロイ、最適化するために必要なすべて」。この Sam Altman の一言に AgentKit の野心がそのまま表れています。単なる API アップデートではない、ということです。これは<strong>AI がワークフローの中心に立つ新しいパラダイム</strong>なのです。

@@ -47,8 +47,6 @@ faq:
 > 1. <strong>OpenAI AgentKit完全指南第1部分：核心概念与入门</strong> ← 当前文章
 > 2. [OpenAI AgentKit完全指南第2部分：实战应用与高级模式](/zh/blog/zh/openai-agentkit-tutorial-part2)
 
-# OpenAI AgentKit完全指南第1部分：核心概念与入门
-
 2025年10月6日，在旧金山举行的OpenAI DevDay上，Sam Altman发布了将彻底改变开发者生态系统的产品——<strong>AgentKit</strong>。
 
 "从原型到生产，以更少的阻力构建、部署和优化智能体（Agent）所需的一切。"Sam Altman 的这句话，把 AgentKit 的野心说尽了。它不只是一次普通的 API 更新。它是<strong>AI 站在工作流中心的全新范式</strong>。

@@ -47,8 +47,6 @@ faq:
 > 1. <strong>OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started</strong> ← Current article
 > 2. [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2)
 
-# OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started
-
 On October 6, 2025, at OpenAI DevDay in San Francisco, Sam Altman announced something that reshapes how developers build. He called it <strong>AgentKit</strong>.
 
 "Everything you need to build, deploy, and optimize agent workflows from prototype to production with way less friction." That one line from Altman tells you the ambition. This is not another API update. It is <strong>a new paradigm where AI sits at the center of your workflow</strong>.

@@ -43,8 +43,6 @@ faq:
     answer: "No. The post reports zero breaking changes during deployment across 17 files improved and 3,917 net lines added. Error detection also rose from about 40% to about 95% of issues caught."
 ---
 
-# Improving Blog Automation with Multi-Agent Orchestration
-
 ## When the System Got Too Big to Touch
 
 My blog automation had grown to 17 specialized agents, 6 slash commands, and 4 skills. Each piece worked. Together, they were a mess I was afraid to edit, because changing one file might quietly break three others.

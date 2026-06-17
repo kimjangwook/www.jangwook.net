@@ -47,8 +47,6 @@ faq:
 > 1. <strong>OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기</strong> ← 현재 글
 > 2. [OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴](/ko/blog/ko/openai-agentkit-tutorial-part2)
 
-# OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기
-
 2025년 10월 6일, 샌프란시스코에서 열린 OpenAI DevDay에서 Sam Altman은 개발자 생태계를 완전히 바꿀 발표를 했습니다. 바로 <strong>AgentKit</strong>입니다.
 
 "프로토타입에서 프로덕션까지, 훨씬 적은 마찰로 에이전트를 구축, 배포, 최적화할 수 있는 모든 것." 샘 알트먼의 이 한 문장에 AgentKit의 야심이 다 담겨 있습니다. 단순한 API 업데이트가 아니라는 뜻입니다. 이건 <strong>AI가 워크플로우의 중심에 서는 새로운 패러다임</strong>입니다.
