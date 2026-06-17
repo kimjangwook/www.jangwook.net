@@ -25,13 +25,13 @@ relatedPosts:
       ja: 埋め込みを生成したら次は「どこに保存するか」。Qdrant vs Chroma vs pgvectorを1000ベクターで実測比較している。
       en: Once you can generate embeddings, the next question is where to store them. This post benchmarks Qdrant vs Chroma vs pgvector with 1000 vectors.
       zh: 生成了嵌入向量之后，下一个问题是存在哪里。这篇文章用1000个向量对Qdrant、Chroma和pgvector进行了实测比较。
-  - slug: claude-api-prompt-caching-cost-optimization-guide
+  - slug: llamaindex-vs-langchain-vs-haystack-rag-2026
     score: 0.71
     reason:
-      ko: 임베딩 모델과 함께 LLM 비용 구조를 이해하면 RAG 파이프라인의 전체 운영 비용이 보인다. Prompt Caching으로 70% 절감하는 실전 패턴을 다룬다.
-      ja: 埋め込みモデルと合わせてLLMのコスト構造を理解すると、RAGパイプライン全体の運用コストが見えてくる。
-      en: Understanding both embedding costs and LLM token costs gives you a complete picture of RAG pipeline economics.
-      zh: 结合了解嵌入模型和LLM的成本结构，可以看清RAG管道的整体运营成本。
+      ko: 임베딩을 정한 다음에는 어떤 RAG 프레임워크로 감쌀지가 문제다. LlamaIndex·LangChain·Haystack을 직접 설치해 비교한 실측 가이드다.
+      ja: 埋め込みを決めたら、次はどのRAGフレームワークでまとめるかが課題になる。LlamaIndex・LangChain・Haystackを実際に導入して比較した実測ガイド。
+      en: Once your embeddings are settled, the next decision is which RAG framework to wrap them in. This post compares LlamaIndex, LangChain, and Haystack hands-on.
+      zh: 选定嵌入模型之后，下一个问题是用哪个RAG框架来封装。这篇文章亲自安装并对比了LlamaIndex、LangChain和Haystack。
   - slug: claude-agent-sdk-tool-use-complete-guide-2026
     score: 0.68
     reason:

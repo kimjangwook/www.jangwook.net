@@ -25,13 +25,13 @@ relatedPosts:
       ja: Pydantic AIフレームワーク自体をエージェント構造に拡張したポスト。このガイドでPydanticデータ検証を学んだら、エージェント全体をPydanticでラップする次のステップ。
       en: Shows how to extend Pydantic beyond validation into a full agent framework — a logical next step from using Pydantic to parse LLM outputs.
       zh: 展示了如何将Pydantic扩展到完整的代理框架——在用Pydantic解析LLM输出之后的自然延伸。
-  - slug: gemma-4-local-agent-edge-ai
+  - slug: local-llm-private-mcp-server-gemma4-fastmcp
     score: 0.79
     reason:
-      ko: Gemma4 모델을 에지 AI 에이전트에 쓰는 실험을 정리한 글이다. 구조화 출력 적용 전후로 에이전트 안정성이 어떻게 달라지는지 비교 자료로 쓸 수 있다.
-      ja: Gemma4モデルをエッジAIエージェントに使う実験をまとめた記事。構造化出力の適用前後でエージェントの安定性がどう変わるかの比較資料として使える。
-      en: Documents experiments using Gemma4 for edge AI agents — useful context for understanding how structured outputs stabilize agent behavior.
-      zh: 记录了在边缘AI代理中使用Gemma4的实验。可作为了解结构化输出如何提升代理稳定性的对比参考。
+      ko: 같은 Ollama + Gemma 4 스택으로 완전 오프라인 MCP 서버를 구축한다. 구조화 출력으로 받은 데이터를 FastMCP 도구로 노출하는 다음 단계로 이어진다.
+      ja: 同じOllama + Gemma 4スタックで完全オフラインのMCPサーバーを構築する。構造化出力で受け取ったデータをFastMCPツールとして公開する次の段階につながる。
+      en: Builds a fully offline MCP server on the same Ollama and Gemma 4 stack — a natural next step for exposing your structured outputs as FastMCP tools.
+      zh: 用同样的Ollama + Gemma 4技术栈构建完全离线的MCP服务器。可作为将结构化输出数据通过FastMCP工具对外暴露的下一步。
   - slug: claude-agent-sdk-tool-use-complete-guide-2026
     score: 0.74
     reason:

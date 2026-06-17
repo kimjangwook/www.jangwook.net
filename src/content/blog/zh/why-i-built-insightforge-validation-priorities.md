@@ -5,34 +5,34 @@ pubDate: '2026-06-15'
 heroImage: ../../../assets/blog/llm-consumer-research-hero.jpg
 tags: [ai, startup, product-research, insightforge, synthetic-panel]
 relatedPosts:
-  - slug: 'ai-agent-persona-analysis'
-    score: 0.91
+  - slug: 'individual-developer-ai-saas-journey'
+    score: 0.88
     reason:
-      ko: 'AI persona 분석과 synthetic panel의 한계를 함께 이해할 수 있습니다.'
-      ja: 'AI persona分析とsynthetic panelの限界を合わせて理解できます。'
-      en: 'It connects AI persona analysis with the limits of synthetic panels.'
-      zh: '可以把AI persona分析和synthetic panel的限制一起理解。'
-  - slug: 'dena-llm-study-part2-structured-output'
-    score: 0.84
+      ko: '개인 개발자가 AI SaaS를 3일 만에 출시한 빌드 로그로, 같은 1인 창업자 시점에서 읽힙니다.'
+      ja: '個人開発者がAI SaaSを3日でローンチしたビルドログで、同じ一人創業者の視点で読めます。'
+      en: 'A solo developer''s 3-day AI SaaS launch log, read from the same one-founder vantage point.'
+      zh: '个人开发者用3天上线AI SaaS的构建日志，从同样的单人创业者视角阅读。'
+  - slug: 'effiflow-automation-analysis-part1'
+    score: 0.82
     reason:
-      ko: 'LLM 출력을 제품 기능으로 만들 때 왜 구조화가 필요한지 이어서 볼 수 있습니다.'
-      ja: 'LLM出力を製品機能にする時、なぜ構造化が必要なのかを続けて読めます。'
-      en: 'It explains why structured output matters when LLM results become product features.'
-      zh: '说明了为什么把LLM输出产品化时需要结构化。'
-  - slug: 'iterative-review-cycle-methodology'
-    score: 0.8
+      ko: 'AI 자동화 시스템의 비용 구조를 데이터로 뜯어본 분석으로, 제품화 경제성을 함께 가늠할 수 있습니다.'
+      ja: 'AI自動化システムのコスト構造をデータで分解した分析で、製品化の採算を合わせて測れます。'
+      en: 'A data-driven cost breakdown of an AI automation system, useful for gauging the economics of productizing AI.'
+      zh: '用数据拆解AI自动化系统成本结构的分析，可一并衡量产品化的经济性。'
+  - slug: 'ai-agent-cost-reality'
+    score: 0.78
     reason:
-      ko: '반복 리뷰와 게이트를 통해 품질을 올리는 방법론이 이어집니다.'
-      ja: '反復レビューとゲートで品質を上げる方法論につながります。'
-      en: 'It extends the discussion into iterative review and quality gates.'
-      zh: '延伸到通过迭代审查和质量门提升质量的方法。'
-  - slug: 'self-healing-ai-systems'
-    score: 0.76
+      ko: 'AI 에이전트 운영 비용을 솔직하게 따진 글로, 책임 있는 제품을 만들 때 비용 현실을 짚어줍니다.'
+      ja: 'AIエージェントの運用コストを率直に検証した記事で、責任ある製品づくりのコスト現実を示します。'
+      en: 'An honest accounting of AI agent running costs, grounding the cost reality of building a responsible product.'
+      zh: '坦诚核算AI代理运营成本的文章，点明打造负责任产品时的成本现实。'
+  - slug: 'claude-agent-teams-guide'
+    score: 0.74
     reason:
-      ko: 'AI 시스템을 운영 가능한 제품으로 만들 때 필요한 방어적 설계를 다룹니다.'
-      ja: 'AIシステムを運用可能な製品にするための防御的設計を扱います。'
-      en: 'It covers defensive design for making AI systems operational.'
-      zh: '讨论了让AI系统成为可运营产品所需的防御性设计。'
+      ko: '멀티 에이전트 팀을 실제로 구성하는 가이드로, AI 시스템을 운영 가능한 제품으로 만드는 다음 단계입니다.'
+      ja: 'マルチエージェントチームを実際に構成するガイドで、AIシステムを運用可能な製品にする次の段階です。'
+      en: 'A hands-on guide to setting up multi-agent teams — the next step toward making an AI system operational.'
+      zh: '实际搭建多代理团队的指南，是让AI系统成为可运营产品的下一步。'
 faq:
   - question: "InsightForge会替代真实的市场调研吗？"
     answer: "不会。synthetic panel不替代人的回答，而是帮你整理下一步该问人什么。最终输出不是结论，而是接下来要验证的优先级。"
