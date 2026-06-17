@@ -1,6 +1,6 @@
 ---
 title: 'Why I Built InsightForge: Turning AI Consumer Research Into Validation Priorities'
-description: 'A founder-style build log about what InsightForge is, why I built it, and the hard parts of turning synthetic panels and SSR-style research into a responsible product.'
+description: 'A founder-style build log on what InsightForge is, why I built it, and the hard parts of turning synthetic research panels into a responsible product.'
 pubDate: '2026-06-15'
 heroImage: ../../../assets/blog/llm-consumer-research-hero.jpg
 tags: [ai, startup, product-research, insightforge, synthetic-panel]

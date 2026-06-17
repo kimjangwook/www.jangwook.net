@@ -1,9 +1,8 @@
 ---
 title: 'Ollama Structured Outputs in Practice — Getting Type-Safe JSON from Local LLMs with Pydantic'
 description: >-
-  A hands-on guide to combining Ollama 0.3+'s JSON schema enforcement with Pydantic for
-  type-safe local LLM responses. Measured result: structured output is 6x faster and
-  achieves near-100% parse success compared to unstructured text.
+  A hands-on guide to Ollama's JSON schema enforcement with Pydantic for type-safe local LLM
+  responses. Measured: 6x faster with near-100% parse success.
 pubDate: '2026-06-17'
 heroImage: '../../../assets/blog/ollama-structured-outputs-pydantic-local-llm-guide-2026/hero.png'
 tags:

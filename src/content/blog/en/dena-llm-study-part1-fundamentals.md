@@ -1,9 +1,8 @@
 ---
 title: 'DeNA LLM Study Part 1: LLM Fundamentals and 2025 AI Landscape'
 description: >-
-  DeNA LLM Study series begins. Comparing GPT-4, Claude, and Gemini, covering
-  Next Token Prediction, Instruction Tuning, Reasoning models, and prompt
-  engineering basics.
+  DeNA LLM Study series begins: comparing GPT-4, Claude, and Gemini, covering
+  Next Token Prediction, Instruction Tuning, and reasoning models.
 pubDate: '2025-12-08'
 heroImage: ../../../assets/blog/dena-llm-study-part1-fundamentals-hero.jpg
 tags:

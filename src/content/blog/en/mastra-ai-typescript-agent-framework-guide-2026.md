@@ -1,9 +1,8 @@
 ---
 title: Mastra.ai Practical Guide — Running a TypeScript AI Agent in 5 Minutes
 description: >-
-  I installed Mastra.ai TypeScript agent framework, connected it to Google
-  Gemini, and built a working weather agent. Here's what happened — from setup
-  to actual tool calls.
+  I installed the Mastra.ai TypeScript agent framework, connected it to Google
+  Gemini, and built a working weather agent, from setup to real tool calls.
 pubDate: '2026-06-14'
 heroImage: ../../../assets/blog/mastra-ai-typescript-agent-framework-guide-2026-hero.jpg
 tags:
