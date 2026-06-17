@@ -93,6 +93,8 @@ node --version  # v22.22.0
 npm --version   # 10.9.4
 ```
 
+Node.js 22で追加された機能の中でテストに役立つものもある。[Node.js内蔵SQLiteモジュール](/ja/blog/ja/node-sqlite-builtin-practical-guide-2026)を使えば外部ドライバなしでインメモリDBを使えるため、Vitestと組み合わせることでCI上で高速なデータレイヤー統合テストが実現できる。
+
 ## Step 1: Vitest 4のインストール
 
 既存のJest依存関係を先に削除する。

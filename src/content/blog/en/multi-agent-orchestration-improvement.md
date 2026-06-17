@@ -49,7 +49,7 @@ faq:
 
 My blog automation had grown to 17 specialized agents, 6 slash commands, and 4 skills. Each piece worked. Together, they were a mess I was afraid to edit, because changing one file might quietly break three others.
 
-So I stopped patching things by hand. Instead, I pointed Claude Code's multi-agent pattern at the whole thing: 48 files, analyzed in one pass, with 61 issues coming out the other end. Documentation quality went from 78 to 92, and token costs dropped 60-70%. This post is the record of how that went. For a structured overview of the five core agentic workflow patterns in Claude Code, see Claude Code Agentic Workflow Patterns: 5 Types.
+So I stopped patching things by hand. Instead, I pointed Claude Code's multi-agent pattern at the whole thing: 48 files, analyzed in one pass, with 61 issues coming out the other end. Documentation quality went from 78 to 92, and token costs dropped 60-70%. This post is the record of how that went. For a practical breakdown of actual Claude Code usage costs and efficiency, see the [Claude Code Usage Insights Analysis](/en/blog/en/claude-code-insights-usage-analysis). For a structured overview of the five core agentic workflow patterns in Claude Code, see the [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026).
 
 <strong>Key Achievements</strong>:
 - 48 files analyzed across 4 domains

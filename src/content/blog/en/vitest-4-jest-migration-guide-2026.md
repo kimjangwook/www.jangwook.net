@@ -94,6 +94,8 @@ node --version  # v22.22.0
 npm --version   # 10.9.4
 ```
 
+One notable addition in Node.js 22 that's useful for testing: [Node.js built-in SQLite](/en/blog/en/node-sqlite-builtin-practical-guide-2026) lets you spin up an in-memory DB without external drivers, which pairs well with Vitest for fast integration tests.
+
 ## Step 1: Install Vitest 4
 
 Remove existing Jest dependencies first:

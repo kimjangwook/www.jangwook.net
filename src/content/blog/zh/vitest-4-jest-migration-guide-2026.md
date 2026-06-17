@@ -91,6 +91,8 @@ node --version  # v22.22.0
 npm --version   # 10.9.4
 ```
 
+Node.js 22新增了一个对测试很有用的功能：[Node.js内置SQLite模块](/zh/blog/zh/node-sqlite-builtin-practical-guide-2026)无需外部驱动即可使用内存数据库，与Vitest结合可在CI中快速运行数据层集成测试。
+
 ## Step 1: 安装 Vitest 4
 
 先卸载现有 Jest 依赖：

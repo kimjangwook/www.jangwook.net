@@ -93,6 +93,8 @@ node --version  # v22.22.0
 npm --version   # 10.9.4
 ```
 
+Node.js 22에서 새로 추가된 기능 중 테스트에 유용한 것도 있다. [Node.js 내장 SQLite 모듈](/ko/blog/ko/node-sqlite-builtin-practical-guide-2026)을 활용하면 외부 DB 없이 인메모리 DB로 데이터 레이어 통합 테스트를 빠르게 돌릴 수 있다.
+
 ## Step 1: Vitest 4 설치
 
 기존 Jest 의존성을 먼저 제거한다.

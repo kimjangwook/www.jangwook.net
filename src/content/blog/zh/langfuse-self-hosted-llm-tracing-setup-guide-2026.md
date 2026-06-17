@@ -163,7 +163,7 @@ result = call_llm("今天天气怎么样？")
 
 ## 追踪实际RAG管道
 
-就像我在[用PydanticAI构建类型安全智能体](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)中探索的那样，为实际智能体代码添加Langfuse，能立即看清哪些步骤在产生费用。
+就像我在[用PydanticAI构建类型安全智能体](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)中探索的那样，为实际智能体代码添加Langfuse，能立即看清哪些步骤在产生费用。如果还没确定使用哪个向量数据库，可以先参考[Qdrant、Chroma、pgvector对比](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector)再做决定。
 
 ```python
 from langfuse import observe, get_client
@@ -254,7 +254,7 @@ compiled = prompt.compile(
 
 这样管理提示词，"为什么用版本2提示词那天响应质量下降了？"这个问题在Langfuse UI中就能立即得到答案。
 
-如果你已经直接构建了MCP服务器，为其LLM调用添加Langfuse追踪是自然的下一步。MCP服务器往往有较长的工具调用链，追踪瀑布图在这里价值尤为突出。
+如果你已经[用FastMCP直接构建了MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)，为其LLM调用添加Langfuse追踪是自然的下一步。MCP服务器往往有较长的工具调用链，追踪瀑布图在这里价值尤为突出。
 
 ## 何时该自托管，何时该避开
 

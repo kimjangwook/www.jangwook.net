@@ -1,8 +1,8 @@
 ---
 title: Mastra.ai 실전 가이드 — TypeScript로 AI 에이전트를 5분 만에 실행하는 법
 description: >-
-  Mastra.ai TypeScript AI 에이전트 프레임워크를 직접 설치하고 Google Gemini와 연동해 날씨 에이전트를 만들어봤다.
-  설치부터 실제 툴 호출까지 실습 기록.
+  Mastra.ai TypeScript AI 에이전트 프레임워크를 직접 설치하고 Google Gemini와 연동해 날씨 조회 에이전트를 만들었다.
+  설치·워크플로우·메모리 통합 등 실습 전 과정과 LangGraph, CrewAI와의 핵심 차이점을 개발자 관점에서 정리했다.
 pubDate: '2026-06-14'
 heroImage: ../../../assets/blog/mastra-ai-typescript-agent-framework-guide-2026-hero.jpg
 tags:

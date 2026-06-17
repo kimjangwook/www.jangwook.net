@@ -158,7 +158,7 @@ result = call_llm("今日の天気は？")
 
 ## 実践RAGパイプラインのトレーシング
 
-[PydanticAIでタイプセーフなエージェントを作る方法](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を扱ったときのように、実際のエージェントコードにLangfuseを追加すると、どのステップでコストが発生しているかがすぐわかる。
+[PydanticAIでタイプセーフなエージェントを作る方法](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を扱ったときのように、実際のエージェントコードにLangfuseを追加すると、どのステップでコストが発生しているかがすぐわかる。使用するベクターDBがまだ決まっていなければ[Qdrant、Chroma、pgvectorの比較](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector)を先に確認しておくと選択が早まる。
 
 ```python
 from langfuse import observe, get_client
@@ -246,7 +246,7 @@ compiled = prompt.compile(
 
 プロンプトをこのように管理すると「バージョン2のプロンプトを使った日になぜ応答品質が下がったのか」という質問にすぐ答えられる。
 
-MCPサーバーを直接構築した経験があれば、そのサーバーで発生するLLM呼び出しにLangfuseトレーシングを追加することが自然な次のステップだ。MCPサーバーはツール呼び出しチェーンが長くなる傾向があり、トレースウォーターフォールの価値が特に高い。
+[FastMCPでMCPサーバーを直接構築した経験](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)があれば、そのサーバーで発生するLLM呼び出しにLangfuseトレーシングを追加することが自然な次のステップだ。MCPサーバーはツール呼び出しチェーンが長くなる傾向があり、トレースウォーターフォールの価値が特に高い。
 
 ## いつセルフホスティングを使い、いつ避けるべきか
 

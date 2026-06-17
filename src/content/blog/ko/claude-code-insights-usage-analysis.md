@@ -1,8 +1,8 @@
 ---
 title: 'Claude Code /insights 체험기: 4,516개 메시지가 말해주는 나의 AI 코딩 패턴'
 description: >-
-  Claude Code /insights 기능으로 실제 프로젝트 사용 패턴을 분석했습니다. 1,042 세션, 6,267 파일 수정의 실전
-  데이터를 통해 잘 되는 것과 개선점을 살펴봅니다.
+  Claude Code /insights 기능으로 실제 프로젝트 사용 패턴을 분석했습니다. 1,042 세션, 4,516개 메시지, 6,267파일
+  수정의 실전 데이터를 토대로 Claude Code를 더 잘 활용하는 패턴과 실제로 개선이 필요한 부분을 솔직하게 정리했습니다.
 pubDate: '2026-02-05'
 heroImage: ../../../assets/blog/claude-code-insights-usage-analysis-hero.jpg
 tags:

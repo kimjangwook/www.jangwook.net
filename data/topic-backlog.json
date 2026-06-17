@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-16",
+  "updated_at": "2026-06-17",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3766,6 +3766,60 @@
       "added_at": "2026-06-16",
       "status": "queued",
       "notes": "2026년 Claude Code가 21개 lifecycle events, 4가지 handler type, async 실행 지원으로 확장됨. hooks는 AI가 아닌 결정론적 실행이라 안정적. 기존 claude-code-hooks-automation-practical-guide-2026보다 심화 버전으로 차별화."
+    },
+    {
+      "slug": "openai-deployment-simulation-model-safety-2026",
+      "title_idea": "OpenAI Deployment Simulation 분석: 130만 대화로 모델 출시 전 위험을 시뮬레이션하는 법",
+      "content_type": "news",
+      "target_keyword": "OpenAI Deployment Simulation 2026",
+      "secondary_keywords": [
+        "AI 모델 사전 위험 평가",
+        "LLM 안전성 테스트",
+        "OpenAI 모델 출시 프로세스",
+        "AI 위험 시뮬레이션"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "openai.com/index/deployment-simulation (2026-06-16) + marktechpost.com",
+      "added_at": "2026-06-17",
+      "status": "queued",
+      "notes": "2026-06-16 OpenAI 공개. 130만 건 익명화 대화를 새 모델로 재실행해 실제 배포 전 행동 예측. 중앙값 오차 1.5배. GPT-5 시리즈 개발에 실제 적용됨. 뉴스 분석 + 개발자 시사점(자체 LLM 평가 파이프라인 설계)으로 차별화 가능."
+    },
+    {
+      "slug": "anthropic-agent-sdk-billing-pause-june-2026-analysis",
+      "title_idea": "Anthropic이 Agent SDK 과금 분리를 철회한 이유 — Claude Code 사용자가 알아야 할 것",
+      "content_type": "news",
+      "target_keyword": "Claude Agent SDK 과금 변경 2026",
+      "secondary_keywords": [
+        "Anthropic 구독 플랜",
+        "Claude Code 비용",
+        "claude -p 과금",
+        "Pro Max 크레딧"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "anthropic.com Help Center + codersera.com + techtimes.com (2026-06-15)",
+      "added_at": "2026-06-17",
+      "status": "queued",
+      "notes": "2026-05-14 발표 → 2026-06-15 시행 예정이었으나 당일 철회. Pro , Max 5x , Max 20x  별도 크레딧으로 분리 예정이었으나 사용자 반발로 중단. Anthropic이 \"계획 재조정\" 발표. Claude Code 사용자 혼란 정리 + 향후 과금 방향 분석으로 차별화."
+    },
+    {
+      "slug": "gemini-3-5-flash-developer-benchmark-analysis-2026",
+      "title_idea": "Gemini 3.5 Flash 실제 성능 분석 — 코딩·에이전트 벤치마크에서 Gemini 3.1 Pro를 이긴 이유",
+      "content_type": "news",
+      "target_keyword": "Gemini 3.5 Flash 벤치마크 2026",
+      "secondary_keywords": [
+        "Google Gemini 3.5 Flash",
+        "Gemini 3.1 Pro 비교",
+        "LLM 코딩 벤치마크",
+        "AI 모델 속도 성능"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Google I/O 2026 (2026-05-19) + llm-stats.com/ai-news",
+      "added_at": "2026-06-17",
+      "status": "queued",
+      "notes": "Google I/O 2026 발표. Gemini 3.1 Pro 대비 코딩·에이전트 벤치마크 우수하면서 4배 빠름. 가격도 인하 (AI Ultra →, 신규  개발자 티어). OpenAI GPT-5.5 Instant와 포지셔닝 비교 각도로 차별화 가능."
     }
   ]
 }

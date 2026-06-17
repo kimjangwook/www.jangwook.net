@@ -176,7 +176,7 @@ result = call_llm("오늘 날씨 어때?")
 
 ## 실전 RAG 파이프라인 트레이싱
 
-[PydanticAI로 타입 안전한 에이전트를 만드는 방법](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 다뤘을 때처럼, 실제 에이전트 코드에 Langfuse를 붙이면 어느 단계에서 비용이 발생하는지 바로 파악할 수 있다. 아래 코드가 내가 프로젝트에서 실제로 쓰는 패턴이다.
+[PydanticAI로 타입 안전한 에이전트를 만드는 방법](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 다뤘을 때처럼, 실제 에이전트 코드에 Langfuse를 붙이면 어느 단계에서 비용이 발생하는지 바로 파악할 수 있다. 벡터 검색 단계에 어떤 DB를 붙일지 아직 정하지 않았다면 [Qdrant, Chroma, pgvector 비교](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector)를 먼저 확인해두면 선택이 빨라진다. 아래 코드가 내가 프로젝트에서 실제로 쓰는 패턴이다.
 
 ```python
 from langfuse import observe, get_client
@@ -317,7 +317,7 @@ response = client.chat.completions.create(
 
 나는 두 가지 프로젝트를 동시에 운영하면서 하나는 Cloud, 하나는 셀프호스팅을 쓴다. ClickHouse 때문에 메모리를 2GB 이상 잡아먹는 게 여전히 아깝게 느껴지는 게 솔직한 감상이다.
 
-MCP 서버를 직접 구축해본 경험이 있다면, 그 서버에서 발생하는 LLM 호출에 Langfuse 트레이싱을 붙이는 것이 자연스러운 다음 단계다. MCP 서버는 도구 호출 체인이 길어지는 경향이 있어서 트레이스 워터폴의 가치가 특히 높다.
+[FastMCP로 MCP 서버를 직접 구축해본 경험](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)이 있다면, 그 서버에서 발생하는 LLM 호출에 Langfuse 트레이싱을 붙이는 것이 자연스러운 다음 단계다. MCP 서버는 도구 호출 체인이 길어지는 경향이 있어서 트레이스 워터폴의 가치가 특히 높다.
 
 ## 언제 셀프호스팅을 쓰고 언제 피해야 하나
 

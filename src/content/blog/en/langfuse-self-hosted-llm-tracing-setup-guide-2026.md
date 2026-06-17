@@ -165,7 +165,7 @@ result = call_llm("What's the weather like today?")
 
 ## Tracing a Real RAG Pipeline
 
-As I explored when building [type-safe agents with PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026), adding Langfuse to actual agent code makes it immediately clear which steps are driving costs. Below is the pattern I actually use in my projects.
+As I explored when building [type-safe agents with PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026), adding Langfuse to actual agent code makes it immediately clear which steps are driving costs. If you haven't settled on a vector DB yet, [comparing Qdrant, Chroma, and pgvector](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector) first will speed up that decision. Below is the pattern I actually use in my projects.
 
 ```python
 from langfuse import observe, get_client
@@ -261,7 +261,7 @@ compiled = prompt.compile(
 
 Managing prompts this way means "why did response quality drop on the day we used version 2?" becomes a question you can answer immediately in the Langfuse UI.
 
-If you've built an MCP server directly, adding Langfuse tracing to its LLM calls is the natural next step. MCP servers tend to have long tool invocation chains, which is exactly where trace waterfalls are most valuable.
+If you've [built an MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026), adding Langfuse tracing to its LLM calls is the natural next step. MCP servers tend to have long tool invocation chains, which is exactly where trace waterfalls are most valuable.
 
 ## When to Self-Host and When to Avoid It
 
