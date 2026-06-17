@@ -2779,5 +2779,16 @@
       "devops": 0.45,
       "architecture": 0.55
     }
+  },
+  "ollama-structured-outputs-pydantic-local-llm-guide-2026": {
+    "pubDate": "2026-06-17",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.3,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.65
+    }
   }
 }
