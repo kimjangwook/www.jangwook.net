@@ -30,6 +30,7 @@ export const ui = {
     "blog.updatedOn": "수정일",
     "blog.latestPosts": "최신 포스트",
     "blog.viewAll": "모두 보기",
+    "blog.description": "AI 에이전트, 자동화, 개발 도구를 다룬 모든 글의 아카이브입니다. 실험 기록과 구현 로그를 최신순으로 모았습니다.",
     "footer.allRightsReserved": "모든 권리 보유",
   },
   en: {
@@ -47,6 +48,7 @@ export const ui = {
     "blog.updatedOn": "Updated on",
     "blog.latestPosts": "Latest Posts",
     "blog.viewAll": "View All",
+    "blog.description": "The full archive of articles on AI agents, automation, and developer tools. Every experiment log and build note, newest first.",
     "footer.allRightsReserved": "All rights reserved",
   },
   ja: {
@@ -64,6 +66,7 @@ export const ui = {
     "blog.updatedOn": "更新日",
     "blog.latestPosts": "最新の投稿",
     "blog.viewAll": "すべて見る",
+    "blog.description": "AIエージェント、自動化、開発ツールに関する全記事のアーカイブです。実験記録と実装ログを新着順にまとめています。",
     "footer.allRightsReserved": "All rights reserved",
   },
   zh: {
@@ -81,6 +84,7 @@ export const ui = {
     "blog.updatedOn": "更新日期",
     "blog.latestPosts": "最新文章",
     "blog.viewAll": "查看全部",
+    "blog.description": "AI 代理、自动化和开发工具相关全部文章的归档，按最新顺序汇总实验记录与实现日志。",
     "footer.allRightsReserved": "保留所有权利",
   },
 } as const;
