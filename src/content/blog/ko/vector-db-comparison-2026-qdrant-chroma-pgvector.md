@@ -88,7 +88,7 @@ API가 직관적이다. `add`, `query`, `delete` 세 개면 기본 기능은 다
 
 인메모리 모드가 기본이라 테스트가 빠르다. `chromadb.PersistentClient(path="./db")`로 로컬 파일 저장도 간단하다. 클라이언트-서버 모드도 지원해서 `chromadb.HttpClient(host="localhost")`로 전환하면 된다.
 
-Python 생태계와의 통합이 좋다. LangChain, LlamaIndex에서 ChromaDB 지원이 가장 성숙하다. 레퍼런스 자료도 많아서 막히면 Stack Overflow나 GitHub 이슈에서 빠르게 해결된다.
+Python 생태계와의 통합이 좋다. [LangChain, LlamaIndex, Haystack RAG 프레임워크 비교](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)에서 확인할 수 있듯이 ChromaDB 지원이 가장 성숙하다. 레퍼런스 자료도 많아서 막히면 Stack Overflow나 GitHub 이슈에서 빠르게 해결된다.
 
 ### ChromaDB의 한계, 솔직히 말하면
 
@@ -343,7 +343,7 @@ pgvector: numpy 근사 기준 1〜3ms (실제 환경은 +10〜50ms 네트워크 
 
 ### 임베딩 차원(dim)과 DB 성능의 관계
 
-dim=384는 sentence-transformers 기본 설정이지만, 2026년 기준으로 더 높은 차원(1536, 3072)을 쓰는 임베딩 모델이 많다. OpenAI의 `text-embedding-3-large`는 3072차원, Gemini Embedding 2는 최대 3072차원을 지원한다. 차원이 높아질수록 벡터 DB의 메모리 사용량과 인덱스 생성 시간이 증가한다.
+dim=384는 sentence-transformers 기본 설정이지만([한국어 특화 sentence-transformers 임베딩 가이드](/ko/blog/ko/sentence-transformers-korean-rag-embedding-guide-2026) 참고), 2026년 기준으로 더 높은 차원(1536, 3072)을 쓰는 임베딩 모델이 많다. OpenAI의 `text-embedding-3-large`는 3072차원, Gemini Embedding 2는 최대 3072차원을 지원한다. 차원이 높아질수록 벡터 DB의 메모리 사용량과 인덱스 생성 시간이 증가한다.
 
 Qdrant는 `quantization`(양자화)로 high-dim 벡터의 메모리 사용량을 줄일 수 있다. Scalar Quantization만으로도 4배 압축이 가능하다. ChromaDB는 2026년 초 기준으로 이 기능이 없다. dim이 1536 이상인 임베딩을 대규모로 저장해야 한다면 Qdrant의 양자화가 실질적인 비용 절감으로 이어진다.
 

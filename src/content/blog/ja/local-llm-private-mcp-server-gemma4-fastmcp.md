@@ -1,5 +1,5 @@
 ---
-title: ローカルLLMでプライベートMCPサーバーを構築する — Gemma 4 + FastMCP 完全オフラインAIツールガイド
+title: 'Gemma 4 + FastMCPで完全オフラインのプライベートMCPサーバーを構築する'
 description: >-
   Ollama + Gemma 4 + FastMCPで、インターネットなしで動作するオフラインAIツールパイプラインの構築方法。
   医療・法律・金融環境でデータを外部に送らずMCPツールを使う実践実装ガイド。

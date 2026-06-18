@@ -87,7 +87,7 @@ API设计简洁而实用。`add`、`query`、`delete`三个方法覆盖了基本
 
 默认的内存模式使测试速度极快。切换到磁盘持久化只需`chromadb.PersistentClient(path="./db")`，切换到客户端-服务器模式是`chromadb.HttpClient(host="localhost")`。接口面积设计得有意精简。
 
-ChromaDB与LangChain、LlamaIndex的集成在三个数据库中最为成熟。如果你在跟教程或示例代码走，大概率用的就是Chroma。这意味着更少的意外，团队上手也更快。
+[LangChain、LlamaIndex、Haystack RAG框架对比](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026)可以印证，ChromaDB与这三个框架的集成在三个向量数据库中最为成熟。如果你在跟教程或示例代码走，大概率用的就是Chroma。这意味着更少的意外，团队上手也更快。
 
 ### 需要正视的局限
 
@@ -218,7 +218,7 @@ HNSW索引的正确调优也需要PostgreSQL专业知识。在不调整`m`、`ef
 实验环境：
 
 - **向量数量**：1,000个
-- **维度(dim)**：384（sentence-transformers标准）
+- **维度(dim)**：384（[sentence-transformers](/zh/blog/zh/sentence-transformers-korean-rag-embedding-guide-2026)标准）
 - **查询重复次数**：50次
 - **硬件**：MacBook Pro M2，本地运行
 - **ChromaDB**：内存模式

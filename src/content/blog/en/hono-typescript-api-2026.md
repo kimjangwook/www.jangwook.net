@@ -55,7 +55,7 @@ Understanding where Hono fits means answering three questions.
 
 **Bundle size**: Hono v4 core is about 12KB. Express is 58KB, Fastify is 77KB. The gap might not sound dramatic. But in edge environments like Cloudflare Workers or Deno Deploy, bundle size directly affects cold start time. Edge functions sometimes initialize a new runtime per request, so smaller means a faster first response.
 
-**Runtime compatibility**: Express is Node.js-only. Fastify targets Node.js by default. Hono was designed from the start to "run anywhere." The same code deploys to Bun, Deno, Cloudflare Workers, Node.js, and AWS Lambda Edge.
+**Runtime compatibility**: Express is Node.js-only. Fastify targets Node.js by default. Hono was designed from the start to "run anywhere." The same code deploys to Bun, Deno, Cloudflare Workers, Node.js, and AWS Lambda Edge. See the [Bun vs Deno runtime benchmark](/en/blog/en/deno-2-vs-bun-nodejs-runtime-2026-comparison) for a direct performance comparison of the two runtimes.
 
 **TypeScript support**: Express requires `@types/express` as a separate install, and properties added to `req` via middleware don't get type inference. Hono is written in TypeScript from the ground up, and the `Hono<{ Bindings: Env; Variables: Variables }>` generic gives you type-safe access to environment variables and middleware state.
 
@@ -424,7 +424,7 @@ There are real limitations worth naming.
 
 **Ecosystem depth**: Fastify's plugin ecosystem is battle-hardened. `fastify-swagger` auto-generates OpenAPI specs. `fastify-multipart` handles file uploads. These are validated, maintained plugins. Hono's third-party ecosystem is thinner. The official middleware covers the basics, but unusual requirements mean writing your own.
 
-**D1 local dev experience**: Testing against Cloudflare D1 locally requires `wrangler dev`, which requires an actual Cloudflare account to configure bindings. SQLite compatibility makes Drizzle/Prisma usable, but the local dev setup is more involved than Express + PostgreSQL.
+**D1 local dev experience**: Testing against Cloudflare D1 locally requires `wrangler dev`, which requires an actual Cloudflare account to configure bindings. SQLite compatibility makes [Drizzle ORM](/en/blog/en/drizzle-orm-typescript-complete-guide-2026)/Prisma usable, but the local dev setup is more involved than Express + PostgreSQL.
 
 **`wrangler dev` cold start**: The first run of `wrangler dev` is slow because it emulates the Cloudflare runtime. Running with Bun directly starts instantly, but that skips Workers-specific behavior testing.
 
@@ -522,7 +522,7 @@ This post started from `bun add hono @hono/zod-validator zod` and worked through
 
 The thing that impressed me most was type inference. Data from `c.req.valid('json')` is immediately typed by the Zod schema. Data stored with `c.set('userId', ...)` comes back as `string` from `c.get('userId')`. TypeScript doesn't lose track of types as they flow through the middleware chain.
 
-I won't claim there's no reason to keep using Express. But if you're starting a new project with TypeScript and Bun and have edge deployment in mind, Hono is worth using right now.
+I won't claim there's no reason to keep using Express. But if you're starting a new project with TypeScript and Bun and have edge deployment in mind, Hono is worth using right now. For production SSE streaming with AI APIs, the [FastAPI + Claude API streaming guide](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026) covers the backend patterns in depth.
 
 ---
 

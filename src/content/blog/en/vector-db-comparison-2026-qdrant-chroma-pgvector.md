@@ -88,7 +88,7 @@ The API is minimal in a good way. You need `add`, `query`, and `delete` and you'
 
 In-memory mode is the default, which makes testing trivially fast. Switching to disk persistence is `chromadb.PersistentClient(path="./db")` and switching to client-server mode is `chromadb.HttpClient(host="localhost")`. The surface area is intentionally small.
 
-The LangChain and LlamaIndex integrations for ChromaDB are the most mature among the three databases here. If you're following a tutorial or example repo, chances are it's using Chroma. That translates to fewer surprises and faster onboarding for your team.
+The [LangChain, LlamaIndex, and Haystack comparison](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) shows ChromaDB integrations are the most mature among the three databases here. If you're following a tutorial or example repo, chances are it's using Chroma. That translates to fewer surprises and faster onboarding for your team.
 
 ### The Honest Limitations
 
@@ -221,7 +221,7 @@ Proper HNSW tuning also requires PostgreSQL expertise. Running with default `m` 
 Setup:
 
 - **Vector count**: 1,000
-- **Dimensions**: 384 (sentence-transformers standard)
+- **Dimensions**: 384 ([sentence-transformers](/en/blog/en/sentence-transformers-korean-rag-embedding-guide-2026) standard)
 - **Query repetitions**: 50
 - **Hardware**: MacBook Pro M2, running locally
 - **ChromaDB**: in-memory mode

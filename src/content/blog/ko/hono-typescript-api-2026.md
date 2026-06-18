@@ -55,7 +55,7 @@ Hono의 포지션을 이해하려면 세 가지 질문에 답해야 한다.
 
 **번들 크기**: Hono v4 코어는 약 12KB다. Express는 58KB, Fastify는 77KB다. 숫자만 보면 큰 차이처럼 안 보일 수 있다. 그런데 Cloudflare Workers나 Deno Deploy 같은 엣지 환경에서는 번들 크기가 콜드 스타트 시간에 직결된다. 엣지 함수는 매 요청마다 런타임을 초기화하는 경우가 있어서, 작을수록 첫 응답이 빠르다.
 
-**런타임 호환성**: Express는 Node.js 전용이다. Fastify도 사실상 Node.js가 기본 타깃이다. 반면 Hono는 처음부터 "어디서나 동작한다"는 걸 설계 목표로 삼았다. Bun, Deno, Cloudflare Workers, Node.js, AWS Lambda Edge까지 동일한 코드로 배포할 수 있다.
+**런타임 호환성**: Express는 Node.js 전용이다. Fastify도 사실상 Node.js가 기본 타깃이다. 반면 Hono는 처음부터 "어디서나 동작한다"는 걸 설계 목표로 삼았다. Bun, Deno, Cloudflare Workers, Node.js, AWS Lambda Edge까지 동일한 코드로 배포할 수 있다. [Bun vs Deno 런타임 실측 비교](/ko/blog/ko/deno-2-vs-bun-nodejs-runtime-2026-comparison)에서 두 런타임의 성능 차이를 확인하면 서버 선택에 도움이 된다.
 
 **TypeScript 지원**: Express는 `@types/express`를 따로 설치해야 하고, 미들웨어를 통해 `req`에 추가된 속성은 타입 추론이 안 된다. Hono는 처음부터 TypeScript로 작성되었고, `Hono<{ Bindings: Env; Variables: Variables }>` 제네릭으로 환경 변수와 미들웨어 상태까지 타입 안전하게 관리된다.
 
@@ -487,7 +487,7 @@ Hono를 직접 써보면서 느낀 한계도 있다.
 
 **생태계의 깊이**: Fastify는 플러그인 생태계가 탄탄하다. `fastify-swagger`로 OpenAPI 스펙을 자동 생성하거나, `fastify-multipart`로 파일 업로드를 처리하는 등 검증된 플러그인이 많다. Hono는 아직 이런 서드파티 생태계가 얇다. 공식 미들웨어가 대부분의 기본 기능을 커버하지만, 특수한 요구사항이 있으면 직접 구현해야 하는 경우가 생긴다.
 
-**D1 로컬 개발 경험**: Cloudflare D1을 로컬에서 시뮬레이션하려면 `wrangler dev`가 필요하고, 실제 Cloudflare 계정이 있어야 한다. SQLite 기반이라 Drizzle이나 Prisma 같은 ORM을 쓰기는 좋지만, 로컬 개발 환경 설정이 Express + PostgreSQL 조합보다 복잡하다.
+**D1 로컬 개발 경험**: Cloudflare D1을 로컬에서 시뮬레이션하려면 `wrangler dev`가 필요하고, 실제 Cloudflare 계정이 있어야 한다. SQLite 기반이라 [Drizzle ORM](/ko/blog/ko/drizzle-orm-typescript-complete-guide-2026)이나 Prisma 같은 ORM을 쓰기는 좋지만, 로컬 개발 환경 설정이 Express + PostgreSQL 조합보다 복잡하다.
 
 **`wrangler dev` 콜드 스타트**: 로컬에서 `wrangler dev`를 처음 실행할 때 Cloudflare 런타임 에뮬레이션 때문에 시작이 느리다. Bun으로 직접 돌리면 즉시 시작되지만, Workers 환경 테스트를 위해서는 wrangler가 필요하다.
 
@@ -593,7 +593,7 @@ api.post('/users', ...)
 app.route('/api/v1', api)
 ```
 
-이 치트시트는 개인적으로 Hono 프로젝트를 시작할 때마다 참조한다. 특히 `c.stream()`은 AI API 응답처럼 스트리밍이 필요한 경우 자주 쓰인다.
+이 치트시트는 개인적으로 Hono 프로젝트를 시작할 때마다 참조한다. 특히 `c.stream()`은 AI API 응답처럼 스트리밍이 필요한 경우 자주 쓰인다. 프로덕션에서 SSE 스트리밍 백엔드를 안정적으로 운영하는 방법은 [FastAPI + Claude API 스트리밍 프로덕션 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)에서 다룬다.
 
 ---
 

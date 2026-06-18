@@ -1,8 +1,8 @@
 ---
 title: '개인 개발자의 AI 활용 SaaS 구축기: 3일 만에 프로덕션 런칭'
 description: >-
-  SvelteKit, Supabase, Google Gemini API로 구축한 B2B AI OCR 서비스의 실전 개발기. 기술 선택 이유,
-  구현 과정, 비즈니스 전략까지 솔로 개발자의 생생한 경험담.
+  SvelteKit, Supabase, Google Gemini API로 3일 만에 프로덕션 런칭한 B2B AI OCR SaaS 구축기. 기술
+  스택 선정 이유, 인증·결제 구현, 마케팅 없이 첫 결제를 이끌어낸 비즈니스 전략까지 솔로 인디해커의 경험을 솔직하게 정리했다.
 pubDate: '2025-11-27'
 heroImage: ../../../assets/blog/individual-developer-ai-saas-journey-hero.png
 tags:

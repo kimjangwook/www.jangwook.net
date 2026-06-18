@@ -54,7 +54,7 @@ faq:
 
 **包体积**：Hono v4 核心约 12KB，Express 是 58KB，Fastify 是 77KB。数字差距看起来不大，但在 Cloudflare Workers 或 Deno Deploy 这类边缘环境中，包体积直接影响冷启动时间。边缘函数有时每个请求都会初始化新的运行时，所以越小，首次响应越快。
 
-**运行时兼容性**：Express 只支持 Node.js。Fastify 也基本以 Node.js 为主要目标。而 Hono 从设计之初就把"到处都能运行"作为目标。同一份代码可以部署到 Bun、Deno、Cloudflare Workers、Node.js 和 AWS Lambda Edge。
+**运行时兼容性**：Express 只支持 Node.js。Fastify 也基本以 Node.js 为主要目标。而 Hono 从设计之初就把"到处都能运行"作为目标。同一份代码可以部署到 Bun、Deno、Cloudflare Workers、Node.js 和 AWS Lambda Edge。可以参考 [Bun vs Deno 运行时性能对比](/zh/blog/zh/deno-2-vs-bun-nodejs-runtime-2026-comparison) 了解两者的实测差异。
 
 **TypeScript 支持**：Express 需要单独安装 `@types/express`，中间件给 `req` 添加的属性也无法获得类型推断。Hono 从一开始就用 TypeScript 编写，`Hono<{ Bindings: Env; Variables: Variables }>` 泛型可以让环境变量和中间件状态也能类型安全地访问。
 
@@ -413,7 +413,7 @@ app.get('/tasks', (c) => {
 
 **生态系统深度**：Fastify 的插件生态经过充分验证。`fastify-swagger` 可以自动生成 OpenAPI 规范，`fastify-multipart` 处理文件上传，这些都是经过验证和维护的插件。Hono 的第三方生态目前较薄。官方中间件覆盖了大部分基础需求，但遇到特殊需求时，可能需要自己实现。
 
-**D1 本地开发体验**：在本地测试 Cloudflare D1 需要 `wrangler dev`，而这又需要真实的 Cloudflare 账户来配置绑定。基于 SQLite 兼容性，Drizzle 和 Prisma 都可以使用，但本地开发环境的搭建比 Express + PostgreSQL 的组合要复杂。
+**D1 本地开发体验**：在本地测试 Cloudflare D1 需要 `wrangler dev`，而这又需要真实的 Cloudflare 账户来配置绑定。基于 SQLite 兼容性，[Drizzle ORM](/zh/blog/zh/drizzle-orm-typescript-complete-guide-2026) 和 Prisma 都可以使用，但本地开发环境的搭建比 Express + PostgreSQL 的组合要复杂。
 
 如果边缘部署不是你的目标，只是搭建普通服务器，Fastify 比 Hono 更成熟。像 [Ollama + FastAPI 的搭配](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026)那样换个语言和运行时，也是实际可行的路线。
 
@@ -509,7 +509,7 @@ app.route('/api/v1', api)
 
 最让我印象深刻的是类型推断。`c.req.valid('json')` 拿到的数据直接就是 Zod schema 推断出的类型。`c.set('userId', ...)` 存的数据，从 `c.get('userId')` 取出来就是 `string`。经过中间件链，TypeScript 不会丢失类型信息。
 
-我不会说继续用 Express 就没有理由了。但如果你正在用 TypeScript 和 Bun 启动一个新项目，同时考虑边缘部署，Hono 现在就值得采用。
+我不会说继续用 Express 就没有理由了。但如果你正在用 TypeScript 和 Bun 启动一个新项目，同时考虑边缘部署，Hono 现在就值得采用。如需在生产环境中稳定运行 AI API 的 SSE 流式响应，可以参考 [FastAPI + Claude API 流式传输生产指南](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026)。
 
 ---
 

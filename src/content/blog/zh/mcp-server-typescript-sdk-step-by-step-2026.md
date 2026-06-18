@@ -301,7 +301,7 @@ await client.close();
 
 ## 使用StdioServerTransport与Claude实际集成
 
-`InMemoryTransport`非常适合测试和开发调试，但要连接到实际的Claude Desktop或Cursor，需要切换到`StdioServerTransport`。这是MCP服务器的标准部署方式。
+`InMemoryTransport`非常适合测试和开发调试，但要连接到实际的Claude Desktop或Cursor，需要切换到`StdioServerTransport`。这是MCP服务器的标准部署方式。如果想直接在Claude SDK中定义和调用工具，而不是通过MCP，[Claude Agent SDK工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)有详细说明。
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -606,7 +606,7 @@ app.listen(3000, () => {
 
 尽管如此，能够在无需API密钥的情况下，在30分钟内完成一个从公共REST API包装到实际数据查询的端到端可运行管道，这显然是有吸引力的。在Claude、Cursor、Windsurf等已将MCP作为标准采用的情况下，MCP服务器是将自己的工具同时暴露给多个AI平台的最现实方式。
 
-下一步，建议选择一个实际的内部系统，尝试将其包装为MCP工具。代码结构就是本文所涉及的全部内容。剩下的，就是理解那个系统的API了。
+下一步，建议选择一个实际的内部系统，尝试将其包装为MCP工具。代码结构就是本文所涉及的全部内容。剩下的，就是理解那个系统的API了。如果想了解如何在Claude Code中将MCP与斜杠命令、钩子结合，构建完整的自动化工作流，可以参考 [Claude Code大师班第1期](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)。
 
 ---
 

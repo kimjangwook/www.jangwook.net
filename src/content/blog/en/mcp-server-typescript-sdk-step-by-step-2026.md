@@ -313,7 +313,7 @@ await client.close();
 
 ## Connecting to Claude with StdioServerTransport
 
-`InMemoryTransport` is great for testing and development, but to connect your server to actual Claude Desktop or Cursor, you switch to `StdioServerTransport`. This is the standard deployment mode for MCP servers.
+`InMemoryTransport` is great for testing and development, but to connect your server to actual Claude Desktop or Cursor, you switch to `StdioServerTransport`. This is the standard deployment mode for MCP servers. If you prefer defining tools directly inside the Claude SDK rather than through MCP, the [Claude Agent SDK tool use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) covers that approach in depth.
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -618,7 +618,7 @@ That said, the limitations are real. <strong>Connecting to actual Claude or Curs
 
 Still, getting an end-to-end pipeline working in under 30 minutes is genuinely compelling: a public REST API wrapped as an MCP tool, returning real data, with no API key. With Claude, Cursor, Windsurf, and others adopting MCP as their standard, building an MCP server is the most practical way to expose your own tools across multiple AI platforms at once.
 
-My recommendation for the next step: pick one internal system and wrap it as an MCP tool. The code structure is everything covered in this post. The rest is just understanding that system's API.
+My recommendation for the next step: pick one internal system and wrap it as an MCP tool. The code structure is everything covered in this post. The rest is just understanding that system's API. For a broader view of how MCP integrates with slash commands, hooks, and automation workflows in Claude Code, see the [Claude Code Masterclass Part 1](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent).
 
 ---
 

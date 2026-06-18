@@ -301,7 +301,7 @@ await client.close();
 
 ## StdioServerTransport でClaudeと実際に連携する
 
-`InMemoryTransport` はテストや開発デバッグには最適だが、実際のClaude DesktopやCursorに接続するには `StdioServerTransport` に切り替える必要がある。これがMCPサーバーの標準デプロイ方法だ。
+`InMemoryTransport` はテストや開発デバッグには最適だが、実際のClaude DesktopやCursorに接続するには `StdioServerTransport` に切り替える必要がある。これがMCPサーバーの標準デプロイ方法だ。MCPではなくClaude SDKで直接ツールを定義・呼び出す方法は [Claude Agent SDK ツール活用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026) で詳しく説明している。
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -606,7 +606,7 @@ MCP vs A2A vs Open Responses プロトコル比較で触れたように、リモ
 
 それでも、公開REST APIひとつをMCPツールとしてラップして実際のデータ取得まで動作するエンドツーエンドのパイプラインをAPIキーなしで30分以内に完成できるのは、明らかに魅力的だ。Claude、Cursor、Windsurfなどが標準としてMCPを採用している状況で、自分だけのツールを複数のAIプラットフォームに同時に公開する最も現実的な方法がMCPサーバーだ。
 
-次のステップとして、実際の社内システムをひとつ選んでMCPツールとしてラップしてみることを勧める。コードの構造はこの記事で扱ったものがすべてだ。残りはそのシステムのAPIを理解することだ。
+次のステップとして、実際の社内システムをひとつ選んでMCPツールとしてラップしてみることを勧める。コードの構造はこの記事で扱ったものがすべてだ。残りはそのシステムのAPIを理解することだ。Claude CodeでMCPとスラッシュコマンド、フックを組み合わせて自動化ワークフローを構築する全体像は [Claude Code マスタークラス第1回](/ja/blog/ja/claude-code-masterclass-series-1-prompt-to-agent) で確認できる。
 
 ---
 

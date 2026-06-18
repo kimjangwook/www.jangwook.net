@@ -1,8 +1,8 @@
 ---
-title: 로컬 LLM으로 프라이빗 MCP 서버 구축하기 — Gemma 4 + FastMCP 완전 오프라인 AI 도구 가이드
+title: 'Gemma 4 + FastMCP로 완전 오프라인 프라이빗 MCP 서버 구축하기'
 description: >-
-  Ollama + Gemma 4 + FastMCP로 인터넷 없이 동작하는 오프라인 AI 도구 파이프라인 구축법. 의료·법률·금융 환경에서
-  데이터를 외부로 보내지 않고 MCP 도구를 사용하는 실전 구현 가이드.
+  Ollama + Gemma 4 + FastMCP로 인터넷 연결 없이 작동하는 완전 오프라인 프라이빗 AI 도구 파이프라인을 구축하는 실전 가이드.
+  의료·법률·금융처럼 사내 데이터를 외부 클라우드 서버로 보낼 수 없는 보안 환경에서 로컬 LLM 기반 MCP 도구를 안전하게 운영하는 방법.
 pubDate: '2026-04-14'
 heroImage: ../../../assets/blog/local-llm-private-mcp-server-gemma4-fastmcp-hero.jpg
 tags:

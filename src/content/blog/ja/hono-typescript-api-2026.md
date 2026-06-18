@@ -55,7 +55,7 @@ Hono のポジションを理解するには、三つの問いに答える必要
 
 **バンドルサイズ**: Hono v4 コアは約 12KB。Express は 58KB、Fastify は 77KB だ。数字だけ見ると大差ないように見えるが、Cloudflare Workers や Deno Deploy といったエッジ環境では、バンドルサイズがコールドスタート時間に直結する。エッジ関数はリクエストごとにランタイムを初期化する場合があり、小さいほど最初のレスポンスが速い。
 
-**ランタイム互換性**: Express は Node.js 専用だ。Fastify も事実上 Node.js がメインターゲット。一方 Hono は最初から「どこでも動く」を設計目標にしていた。Bun、Deno、Cloudflare Workers、Node.js、AWS Lambda Edge まで同じコードでデプロイできる。
+**ランタイム互換性**: Express は Node.js 専用だ。Fastify も事実上 Node.js がメインターゲット。一方 Hono は最初から「どこでも動く」を設計目標にしていた。Bun、Deno、Cloudflare Workers、Node.js、AWS Lambda Edge まで同じコードでデプロイできる。[Bun vs Deno ランタイム実測比較](/ja/blog/ja/deno-2-vs-bun-nodejs-runtime-2026-comparison)で2つのランタイムの性能差を確認できる。
 
 **TypeScript サポート**: Express は `@types/express` を別途インストールする必要があり、ミドルウェアで `req` に追加したプロパティの型推論が効かない。Hono は最初から TypeScript で書かれており、`Hono<{ Bindings: Env; Variables: Variables }>` ジェネリクスで環境変数とミドルウェア状態まで型安全に管理できる。
 
@@ -427,7 +427,7 @@ Hono を実際に使ってみて感じた限界もある。
 
 **エコシステムの深さ**: Fastify はプラグインエコシステムが充実している。`fastify-swagger` で OpenAPI スペックを自動生成したり、`fastify-multipart` でファイルアップロードを処理するなど、検証済みのプラグインが多い。Hono はまだこういったサードパーティエコシステムが薄い。公式ミドルウェアが基本的な機能のほとんどをカバーするが、特殊な要件があると自前実装が必要になることがある。
 
-**D1 ローカル開発体験**: Cloudflare D1 をローカルでシミュレートするには `wrangler dev` が必要で、実際の Cloudflare アカウントが要る。SQLite ベースなので Drizzle や Prisma といった ORM は使いやすいが、ローカル開発環境の設定は Express + PostgreSQL の組み合わせより複雑だ。
+**D1 ローカル開発体験**: Cloudflare D1 をローカルでシミュレートするには `wrangler dev` が必要で、実際の Cloudflare アカウントが要る。SQLite ベースなので [Drizzle ORM](/ja/blog/ja/drizzle-orm-typescript-complete-guide-2026) や Prisma といった ORM は使いやすいが、ローカル開発環境の設定は Express + PostgreSQL の組み合わせより複雑だ。
 
 エッジデプロイが目標でなく一般的なサーバー環境なら、Fastify の方が Hono より成熟した選択だ。[Ollama + FastAPI の組み合わせ](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)のように言語とランタイムを変えるのも現実的な選択肢だ。
 
@@ -525,7 +525,7 @@ app.route('/api/v1', api)
 
 最も印象的だったのは型推論だ。`c.req.valid('json')` で受け取ったデータが Zod スキーマから推論された型としてそのまま使える。`c.set('userId', ...)` で保存したデータが `c.get('userId')` で `string` として返ってくる。ミドルウェアチェーンを経ても TypeScript が型情報を失わない。
 
-Express を使い続ける理由がないとは言い切らない。ただ、新しいプロジェクトを TypeScript と Bun で始めながらエッジデプロイを念頭に置いているなら、Hono は今すぐ検討できるレベルにある。
+Express を使い続ける理由がないとは言い切らない。ただ、新しいプロジェクトを TypeScript と Bun で始めながらエッジデプロイを念頭に置いているなら、Hono は今すぐ検討できるレベルにある。プロダクションで AI API の SSE ストリーミングを安定運用する方法は [FastAPI + Claude API ストリーミングガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026) で詳しく扱っている。
 
 ---
 

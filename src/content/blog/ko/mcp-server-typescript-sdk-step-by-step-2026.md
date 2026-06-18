@@ -305,7 +305,7 @@ await client.close();
 
 ## StdioServerTransport로 Claude와 실제 연동하기
 
-`InMemoryTransport`는 테스트와 개발 디버깅에는 완벽하지만, 실제 Claude Desktop이나 Cursor에 연결하려면 `StdioServerTransport`로 바꿔야 한다. 이게 MCP 서버의 표준 배포 방식이다.
+`InMemoryTransport`는 테스트와 개발 디버깅에는 완벽하지만, 실제 Claude Desktop이나 Cursor에 연결하려면 `StdioServerTransport`로 바꿔야 한다. 이게 MCP 서버의 표준 배포 방식이다. MCP가 아닌 Claude SDK에서 직접 도구를 정의하고 호출하는 방식이 궁금하다면 [Claude Agent SDK 도구 활용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)를 참고할 수 있다.
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -610,7 +610,7 @@ MCP vs A2A vs Open Responses 프로토콜 비교에서 다뤘듯, 원격 MCP 서
 
 그럼에도 불구하고, 공개 REST API 하나를 MCP 도구로 래핑해 실제 데이터 조회까지 동작하는 end-to-end 파이프라인을 API 키 없이 30분 안에 완성할 수 있다는 것은 분명히 매력적이다. Claude, Cursor, Windsurf 등이 MCP를 표준으로 채택한 상황에서, 자신만의 도구를 여러 AI 플랫폼에 동시에 노출하는 가장 현실적인 방법이 MCP 서버다.
 
-다음 단계로는 실제 사내 시스템 하나를 골라서 MCP 도구로 래핑해보는 것을 권한다. 코드 구조는 이 글에서 다룬 것이 전부다. 나머지는 해당 시스템의 API를 이해하는 일이다.
+다음 단계로는 실제 사내 시스템 하나를 골라서 MCP 도구로 래핑해보는 것을 권한다. 코드 구조는 이 글에서 다룬 것이 전부다. 나머지는 해당 시스템의 API를 이해하는 일이다. Claude Code에서 MCP와 슬래시 커맨드, 훅을 조합해 자동화 워크플로우를 구성하는 더 넓은 그림은 [Claude Code 마스터클래스 1편: 프롬프트에서 에이전트로](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent)에서 확인할 수 있다.
 
 ---
 

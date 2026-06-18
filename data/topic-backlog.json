@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-17",
+  "updated_at": "2026-06-18",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3820,6 +3820,40 @@
       "added_at": "2026-06-17",
       "status": "queued",
       "notes": "Google I/O 2026 발표. Gemini 3.1 Pro 대비 코딩·에이전트 벤치마크 우수하면서 4배 빠름. 가격도 인하 (AI Ultra →, 신규  개발자 티어). OpenAI GPT-5.5 Instant와 포지셔닝 비교 각도로 차별화 가능."
+    },
+    {
+      "slug": "claude-opus-4-8-release-analysis-1m-context-agentic-coding-2026",
+      "title_idea": "Claude Opus 4.8 출시 분석 — 1M 컨텍스트·GPT-5.5 초과·동적 워크플로우가 개발자에게 의미하는 것",
+      "content_type": "news",
+      "target_keyword": "Claude Opus 4.8 분석 2026",
+      "secondary_keywords": [
+        "Claude Opus 4.8 1M 컨텍스트",
+        "Claude vs GPT-5.5 2026",
+        "Anthropic 동적 워크플로우"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Yahoo Finance/Anthropic 2026-06: Claude Opus 4.8 출시, GPT-5.5·Gemini 3.1 Pro 에이전트 벤치마크 초과, 1M 기본 컨텍스트, 동적 워크플로우(서브에이전트 수백개) 도입",
+      "added_at": "2026-06-18",
+      "status": "queued",
+      "notes": "Claude Code 헤비유저 독자층 직접 관련. 1M 컨텍스트 실무 의미, 동적 워크플로우 vs 기존 에이전트 아키텍처 비교. 블로그 Claude 시리즈 내부링크 연결."
+    },
+    {
+      "slug": "jetbrains-top-agentic-frameworks-2026-langgraph-crewai-analysis",
+      "title_idea": "JetBrains 선정 2026 에이전트 프레임워크 TOP — LangGraph·CrewAI·MCP 생태계 현황 분석",
+      "content_type": "news",
+      "target_keyword": "에이전트 프레임워크 2026 비교",
+      "secondary_keywords": [
+        "LangGraph 2026",
+        "CrewAI 2026",
+        "AI 에이전트 프레임워크 순위"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "JetBrains 블로그 Top Agentic Frameworks 2026 (2026-06): LangGraph, CrewAI, Ontheia. MCP 표준화·추론모델·메모리 3대 트렌드 제시",
+      "added_at": "2026-06-18",
+      "status": "queued",
+      "notes": "뉴스+비교 크로스오버. Agno, PydanticAI, Google ADK 기존 포스트 내부링크 연결. JetBrains 1차 소스 + 블로그 기존 분석 대조로 차별화."
     }
   ]
 }
