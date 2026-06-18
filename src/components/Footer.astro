@@ -40,7 +40,15 @@ const today = new Date();
       <!-- Quick Links with focus states (WCAG AA) -->
       <div>
         <h3 class="text-white dark:text-gray-100 font-bold text-lg mb-4">
-          Links
+          {
+            lang === "ko"
+              ? "바로가기"
+              : lang === "ja"
+                ? "リンク"
+                : lang === "zh"
+                  ? "链接"
+                  : "Links"
+          }
         </h3>
         <ul class="space-y-2 text-sm">
           <li>
@@ -101,7 +109,7 @@ const today = new Date();
       <!-- UX: Social Links with touch-friendly targets (Fitts's Law - 44x44px) and micro-interactions -->
       <div>
         <h3 class="text-white dark:text-gray-100 font-bold text-lg mb-4">
-          Social
+          {t("nav.social")}
         </h3>
         <div class="flex gap-2">
           <!-- UX: Touch target 44x44px minimum for mobile accessibility -->
