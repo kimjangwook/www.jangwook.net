@@ -36,6 +36,15 @@ relatedPosts:
       en: Agno covers the Python side, Mastra covers TypeScript — reading both gives you a complete picture of the 2026 agent framework landscape.
       ja: PythonはAgno、TypeScriptはMastra — 両方読むとエージェントフレームワークの全体像が見えます。
       zh: Python 用 Agno，TypeScript 用 Mastra — 两篇合读可以掌握两种语言的 Agent 框架全貌。
+faq:
+  - question: "What is Agno and how does it relate to phidata?"
+    answer: "Agno is a lightweight Python framework for building LLM agents. It started life as Phidata and rebranded to Agno in early 2025. Its core selling points are being model-agnostic (70+ LLMs through the same code), multimodal by default, and treating multi-agent orchestration as a first-class citizen. The version tested in this post is v2.6.17."
+  - question: "What's the difference between output_schema and output_model?"
+    answer: "Despite the similar names, they're completely different parameters. Use output_schema when you want structured output (results returned as a Pydantic instance). output_model expects an LLM model instance or string ID, so passing a Pydantic model there raises 'ValueError: Model must be a Model instance, string, or None'."
+  - question: "How do multi-agent teams work with mode=\"coordinate\"?"
+    answer: "You register agents on the Team class via members=[...] and set mode=\"coordinate\". The team leader (the model passed to Team) analyzes the task and delegates to each member. Note that in v2.6.17, coordinate runs members sequentially rather than in parallel, so latency accumulates with more members. Also watch out: the parameter is members=, not agents=."
+  - question: "When should I use Agno vs PydanticAI?"
+    answer: "Reach for Agno when fast startup and multi-tool agents matter — its 100+ built-in tools work with just an API key, and the Team class makes small multi-agent setups natural. Reach for PydanticAI when type safety and explicit control over tool logic matter more. Both are far lighter than LangChain in terms of dependencies."
 ---
 
 If you've ever felt like LangChain was too heavy, you're not alone. The dependency tree is enormous. Abstraction layers pile up. At some point you lose track of what's actually happening underneath. That frustration has pushed a lot of people toward lighter alternatives — frameworks that prove you can build a capable agent without a hundred transitive dependencies.
@@ -302,6 +311,13 @@ Two things I didn't test today:
 **Agent memory.** Agno has `enable_agentic_memory=True` with SQLite-backed storage. Cross-session memory persistence is the piece that would make agents feel genuinely stateful rather than starting fresh each time.
 
 **MCP tool integration.** `agno.tools.mcp` exists. If Agno agents can connect to MCP servers as tool sources, that means reusing existing MCP server infrastructure without rewriting anything. Worth testing.
+
+## References
+
+- [Agno official docs](https://docs.agno.com) — the canonical documentation for agents, teams, workflows, and the AgentOS runtime. Your first stop when a parameter name confuses you.
+- [Agno GitHub repo (agno-agi/agno)](https://github.com/agno-agi/agno) — Apache 2.0 open source. When the docs lag the code, the `examples/` directory here is the up-to-date source of truth.
+- [Agno on PyPI](https://pypi.org/project/agno/) — the pip install target. The latest version as of this writing is v2.6.17.
+- [Google Gemini API docs](https://ai.google.dev/gemini-api/docs) — the official reference for available model IDs plus structured output and function calling. Check here first when a deprecated model throws a 404.
 
 ## Summary
 

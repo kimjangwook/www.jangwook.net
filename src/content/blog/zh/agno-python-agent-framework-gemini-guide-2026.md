@@ -36,6 +36,15 @@ relatedPosts:
       en: Agno for Python, Mastra for TypeScript — together they map the agent framework landscape across both languages.
       ja: PythonはAgno、TypeScriptはMastra — 両方でエージェントフレームワークの全体像が見えます。
       zh: Python 用 Agno，TypeScript 用 Mastra — 合读两篇可以全面了解 2026 年两种语言的 Agent 框架生态。
+faq:
+  - question: "Agno 是什么？它与 phidata 是什么关系？"
+    answer: "Agno 是一个用于构建 LLM Agent 的轻量级 Python 框架，前身是 Phidata，于 2025 年初更名为 Agno。其核心卖点是多模型支持（同一套代码接入 70 多个 LLM）、默认多模态设计，以及把多 Agent 编排作为一等公民。本文验证的版本是 v2.6.17。"
+  - question: "output_schema 和 output_model 有什么区别？"
+    answer: "尽管名字相似，它们是完全不同的两个参数。需要结构化输出（以 Pydantic 实例形式返回结果）时应使用 output_schema。output_model 接收的是 LLM 模型实例或字符串 ID，把 Pydantic 模型传给它会报 'ValueError: Model must be a Model instance' 错误。"
+  - question: "mode=\"coordinate\" 下多 Agent 团队是如何运作的？"
+    answer: "在 Team 类上用 members=[...] 注册各个 Agent，并设置 mode=\"coordinate\"，传入 Team 的 model 作为团队领导，会分析任务并委派给各成员。但在 v2.6.17 中，coordinate 模式是顺序执行而非并行，成员越多延迟越高。还要注意参数是 members=，不是 agents=。"
+  - question: "应该用 Agno 还是 PydanticAI？"
+    answer: "如果看重快速上手和多工具 Agent，Agno 更有优势——100 多个内置工具只需注入 API Key 即可使用，Team 类也让小规模多 Agent 编排很自然。如果更看重类型安全和对工具逻辑的显式控制，PydanticAI 更强。在依赖体量上，两者都比 LangChain 轻得多。"
 ---
 
 如果你曾经觉得 LangChain 太重了，那你的感受并不孤独。依赖树庞大，抽象层层叠加，最终很难追踪底层究竟发生了什么。正是这种挫败感推动了一批更轻量替代方案的崛起——那些证明"不需要百来个传递依赖也能构建强大 Agent"的框架。
@@ -294,6 +303,13 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 **小规模 Agent 团队（2〜4 个）。** Agno 的 `Team` 类处理小型协调任务很干净。一旦需要数十个 Agent 组成复杂依赖图，LangGraph 或 Microsoft AutoGen 这类状态图框架能提供更精细的控制。
 
 不适合使用 Agno 的场景：实时流式响应 UI、需要精细错误处理和重试保障的生产工作流、需要完整审计每步 Agent 决策的系统。
+
+## 参考资料
+
+- [Agno 官方文档](https://docs.agno.com) — 涵盖 Agent、Team、Workflow 设计以及 AgentOS 运行时的官方文档。参数命名拿不准时，这里是首选的一手来源。
+- [Agno GitHub 仓库 (agno-agi/agno)](https://github.com/agno-agi/agno) — Apache 2.0 许可的开源项目。当文档落后于代码时，这里的 examples/ 目录才是最新基准。
+- [Agno PyPI 包](https://pypi.org/project/agno/) — pip 安装的对象。截至本文撰写，最新版本为 v2.6.17。
+- [Google Gemini API 文档](https://ai.google.dev/gemini-api/docs) — 查询可用模型 ID 以及结构化输出、函数调用功能的官方文档。遇到废弃模型导致的 404 时，先到这里确认。
 
 ## 总结
 

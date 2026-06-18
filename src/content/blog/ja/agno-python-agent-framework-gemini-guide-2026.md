@@ -36,6 +36,15 @@ relatedPosts:
       en: Agno for Python, Mastra for TypeScript — together they map the agent framework landscape across both languages.
       ja: PythonはAgno、TypeScriptはMastra — 両方読むとエージェントフレームワークの全体像が見えます。
       zh: Python 用 Agno，TypeScript 用 Mastra — 两篇合读可以掌握两种语言的 Agent 框架全貌。
+faq:
+  - question: "Agnoとは何で、phidataとどんな関係ですか?"
+    answer: "AgnoはLLMエージェントを作る軽量なPythonフレームワークで、もともとPhidataという名前でしたが2025年初頭にAgnoへリブランドしました。モデル不可知論(70以上のLLMを同じコードで)、マルチモーダルをデフォルト設計、マルチエージェントオーケストレーションをファーストクラスとして扱う点が核心です。この記事で検証したバージョンはv2.6.17です。"
+  - question: "output_schemaとoutput_modelの違いは何ですか?"
+    answer: "名前は似ていますが、まったく別のパラメータです。構造化出力(結果をPydanticインスタンスで受け取ること)が欲しい場合はoutput_schemaを使います。output_modelはLLMモデルのインスタンスや文字列IDを受け取るパラメータなので、そこにPydanticモデルを渡すと'ValueError: Model must be a Model instance'エラーになります。"
+  - question: "mode=\"coordinate\"でマルチエージェントチームはどう動きますか?"
+    answer: "Teamクラスにmembers=[...]でエージェントを登録し、mode=\"coordinate\"を指定すると、modelパラメータで指定したチームリーダーがタスクを分析して各メンバーに委任します。ただしv2.6.17ではcoordinateモードは並列ではなく順次実行なので、メンバーが多いとレイテンシが積み重なります。agents=ではなくmembers=である点にも注意してください。"
+  - question: "AgnoとPydanticAIのどちらを使うべきですか?"
+    answer: "素早い立ち上げとマルチツールエージェントが重要ならAgnoが有利です。100以上の内蔵ツールがAPIキーの注入だけで使え、Teamクラスで小規模なマルチエージェントも自然に組めます。一方、型安全性とツールロジックの明示的な制御が重要ならPydanticAIの方が強いです。依存関係の軽さはどちらもLangChainよりはるかに軽量です。"
 ---
 
 LangChainが重すぎると感じたことがあるなら、同じ結論に達した人はかなり多いだろう。依存関係のツリーが巨大で、抽象化レイヤーが積み重なっていくと、実際に何が起きているのか追うのが難しくなる。だからこそ最近は「LangChainなしでもエージェントが作れる」ことを証明する軽量フレームワークが増えている。
@@ -106,7 +115,7 @@ ERROR    Error from Gemini API: 404 NOT_FOUND.
 
 最初に試みたときに実際に遭遇したエラーだ。公式サイトで現在使用可能なモデルIDを先に確認するのが正しい。
 
-## WikipediaツールでリサーチエージェントをつくるAI agent
+## Wikipediaツールでリサーチエージェントをつくる
 
 ```python
 from agno.tools.wikipedia import WikipediaTools
@@ -292,6 +301,13 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 **マルチツールエージェント。** 100個以上の内蔵ツールがあり、APIキーを渡すだけで使える。Slack、Gmail、Notion、GitHub、Postgresなどの実務ツールをエージェントで繋ぐ作業に強い。
 
 **単一エージェントまたは小規模チーム。** Agent 2〜3個をTeamとして束ねる程度はAgnoがすっきりしている。数十個のエージェントを複雑な依存関係でオーケストレーションする必要があるなら、LangGraphやMicrosoft AutoGenのような状態グラフベースのフレームワークの方が適している可能性がある。
+
+## 参考資料
+
+- [Agno公式ドキュメント](https://docs.agno.com) — エージェント・チーム・ワークフローの設計とAgentOSランタイムを扱う公式ドキュメント。パラメータ名で迷ったときに最初に確認する一次情報。
+- [Agno GitHubリポジトリ (agno-agi/agno)](https://github.com/agno-agi/agno) — Apache 2.0ライセンスのオープンソース。ドキュメントがコードに追いつかないときは、ここのexamples/フォルダが最新の基準になる。
+- [Agno PyPIパッケージ](https://pypi.org/project/agno/) — pipインストールの対象。この記事時点の最新バージョンはv2.6.17。
+- [Google Gemini APIドキュメント](https://ai.google.dev/gemini-api/docs) — 使用可能なモデルIDや構造化出力・関数呼び出し機能を確認できる公式ドキュメント。非推奨モデルで404が出たときに最初に見る場所。
 
 ## まとめ
 

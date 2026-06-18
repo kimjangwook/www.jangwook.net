@@ -36,6 +36,15 @@ relatedPosts:
       en: Agno for Python, Mastra for TypeScript — together they map the agent framework landscape across both languages.
       ja: Python 側は Agno、TypeScript 側は Mastra — 両方を読むとエージェントフレームワークの全体像が見えてきます。
       zh: Python 用 Agno，TypeScript 用 Mastra — 两篇合读可以掌握两种语言的 Agent 框架全貌。
+faq:
+  - question: "Agno란 무엇이고 phidata와 어떤 관계인가요?"
+    answer: "Agno는 LLM 에이전트를 만드는 경량 파이썬 프레임워크로, 원래 Phidata라는 이름이었다가 2025년 초에 Agno로 리브랜딩했습니다. 모델 불가지론(70개 이상 LLM 지원), 멀티모달 기본 설계, 멀티 에이전트 오케스트레이션을 핵심으로 내세웁니다. 이 글에서 검증한 버전은 v2.6.17입니다."
+  - question: "output_schema와 output_model의 차이는 무엇인가요?"
+    answer: "이름이 헷갈리지만 둘은 완전히 다른 파라미터입니다. 구조화 출력(Pydantic 모델로 결과를 받는 것)을 원하면 output_schema를 써야 합니다. output_model은 LLM 모델 인스턴스를 받는 파라미터라서, 여기에 Pydantic 모델을 넣으면 'ValueError: Model must be a Model instance' 에러가 납니다."
+  - question: "mode=\"coordinate\"로 멀티 에이전트 팀은 어떻게 동작하나요?"
+    answer: "Team 클래스에 members=[...]로 에이전트들을 등록하고 mode=\"coordinate\"를 지정하면, model 파라미터로 지정한 팀 리더가 태스크를 분석해 각 멤버에게 위임합니다. 다만 v2.6.17 기준 coordinate 모드는 병렬이 아니라 순차 실행이라, 멤버가 많으면 레이턴시가 누적됩니다. agents=가 아니라 members=인 점에 주의하세요."
+  - question: "Agno와 PydanticAI 중 무엇을 써야 하나요?"
+    answer: "빠른 시작과 멀티 도구 에이전트가 중요하면 Agno가 유리합니다. 100개 넘는 내장 도구를 API 키 주입만으로 쓸 수 있고 Team 클래스로 멀티 에이전트도 자연스럽습니다. 반면 타입 안전성과 도구 로직의 명시적 제어가 중요하면 PydanticAI가 더 강합니다. 의존성 무게는 둘 다 LangChain보다 가볍습니다."
 ---
 
 LangChain이 너무 무겁다고 느낀 적이 있다면, 아마 비슷한 결론에 도달한 사람이 꽤 많을 것이다. 의존성 트리가 거대하고, 추상화 계층이 쌓이다 보면 실제로 무슨 일이 벌어지는지 추적하기 어려워진다. 그래서 요즘은 "LangChain 없이도 에이전트를 만들 수 있다"는 걸 증명하는 가벼운 프레임워크들이 늘고 있다.
@@ -337,6 +346,13 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 하나는 Agno의 Agent Memory 시스템이다. `enable_agentic_memory=True`와 함께 SQLite 기반 메모리를 에이전트에 붙이는 기능이 있는데, 멀티 세션에 걸쳐 정보를 유지하는 에이전트를 만들 때 핵심이 될 것 같다. 특히 사용자 선호나 이전 대화 맥락을 기억해야 하는 챗봇 류 에이전트에서 유용할 것 같다.
 
 다른 하나는 MCP 도구 통합이다. `agno.tools.mcp`가 있다. Agno 에이전트가 MCP 서버에 연결해서 도구를 호출하는 구성이 가능하다면, 기존에 만들어둔 MCP 서버를 그대로 재사용할 수 있다는 의미다. 현재 진행 중인 프로젝트에서 MCP 서버를 여러 개 운용하고 있는데, 그 위에 Agno 에이전트를 얹을 수 있다면 통합 비용이 많이 줄어든다. 이건 실제로 해보고 싶다.
+
+## 참고자료
+
+- [Agno 공식 문서](https://docs.agno.com) — 에이전트·팀·워크플로우 설계와 AgentOS 런타임을 다루는 공식 문서. 파라미터 이름이 헷갈릴 때 1차 출처로 확인할 곳.
+- [Agno GitHub 저장소 (agno-agi/agno)](https://github.com/agno-agi/agno) — Apache 2.0 라이선스 오픈소스. 문서가 코드를 못 따라갈 때는 여기 examples/ 폴더가 최신 기준이다.
+- [Agno PyPI 패키지](https://pypi.org/project/agno/) — pip 설치 대상. 이 글 기준 최신 버전은 v2.6.17이다.
+- [Google Gemini API 문서](https://ai.google.dev/gemini-api/docs) — 사용 가능한 모델 ID와 구조화 출력·함수 호출 기능을 확인할 공식 문서. deprecated 모델 때문에 404가 날 때 먼저 볼 곳.
 
 ## 정리
 
