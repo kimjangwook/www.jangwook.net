@@ -76,7 +76,7 @@ export const ui = {
     "about.description": "Kim Jangwook について。AIエージェントと自動化サービスを作るフルスタック開発者です。InsightForgeやAgent Effi Flowの運営経験と技術スタックを紹介します。",
     "contact.description": "Kim Jangwook への連絡。コラボレーション、技術的な質問、AIエージェントや自動化プロジェクトに関するお問い合わせを歓迎します。",
     "social.description": "Kim Jangwook のソーシャルチャンネル。GitHubや技術ブログなどでAIエージェントと開発関連のコンテンツをフォローできます。",
-    "footer.allRightsReserved": "All rights reserved",
+    "footer.allRightsReserved": "全著作権所有",
   },
   zh: {
     "nav.home": "首页",
