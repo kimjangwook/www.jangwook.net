@@ -2790,5 +2790,16 @@
       "devops": 0.4,
       "architecture": 0.65
     }
+  },
+  "mcp-client-typescript-sdk-guide-2026": {
+    "pubDate": "2026-06-19",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.7,
+      "ai-ml": 0.85,
+      "devops": 0.4,
+      "architecture": 0.65
+    }
   }
 }
