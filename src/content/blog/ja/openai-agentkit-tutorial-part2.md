@@ -1360,9 +1360,9 @@ results = runner.run_batch(
 
 <strong>次のステップ</strong>：
 
-- [OpenAI AgentKit公式ドキュメント](https://platform.openai.com/docs/agents)
+- [OpenAI AgentKit公式ドキュメント](https://platform.openai.com/docs/guides/agents)
 - [MCPプロトコル仕様](https://modelcontextprotocol.io)
 - [Agent Builderベータアクセス](https://platform.openai.com/agent-builder)
-- [コミュニティサンプル](https://github.com/openai/openai-agents-examples)
+- [コミュニティサンプル](https://github.com/openai/openai-agents-js)
 
 プロダクション環境でのエージェント構築を始めましょう！

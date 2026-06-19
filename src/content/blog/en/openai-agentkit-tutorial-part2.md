@@ -1363,9 +1363,9 @@ None of these patterns are exotic. They're the same shapes you'd reach for in an
 
 <strong>Next Steps</strong>:
 
-- [OpenAI AgentKit Official Docs](https://platform.openai.com/docs/agents)
+- [OpenAI AgentKit Official Docs](https://platform.openai.com/docs/guides/agents)
 - [MCP Protocol Specification](https://modelcontextprotocol.io)
 - [Agent Builder Beta Access](https://platform.openai.com/agent-builder)
-- [Community Examples](https://github.com/openai/openai-agents-examples)
+- [Community Examples](https://github.com/openai/openai-agents-js)
 
 Start building production-grade agents today!
