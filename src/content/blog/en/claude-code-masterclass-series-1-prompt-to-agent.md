@@ -379,7 +379,7 @@ This first part covered automation that stays within the `.claude/` folder.
 
 Part 2 goes a step further: <strong>building an MCP (Model Context Protocol) server from scratch to connect Claude Code to external tools</strong>. Reading a Notion database, sending Slack messages, querying PostgreSQL, all triggerable from a single slash command.
 
-If you've already experimented with MCP servers, the MCP Server Build Guide is good preparation.
+If you've already experimented with MCP servers, the [TypeScript SDK MCP Server step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) is good preparation.
 
 ## Verify Against the Official Docs
 

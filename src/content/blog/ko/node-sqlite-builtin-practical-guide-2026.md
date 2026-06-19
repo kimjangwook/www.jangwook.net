@@ -1,8 +1,8 @@
 ---
 title: Node.js 내장 SQLite 완전 가이드 — 외부 패키지 없이 바로 쓰는 실전 DB
 description: >-
-  Node.js 22.5.0부터 npm install 없이 쓸 수 있는 node:sqlite 모듈. DatabaseSync,
-  StatementSync, 트랜잭션, 사용자 정의 함수까지 실제 실행한 코드와 로그로 정리했다.
+  Node.js 22.5.0에 추가된 node:sqlite 내장 모듈. npm install 없이 DatabaseSync, StatementSync API,
+  트랜잭션, 사용자 정의 함수까지 실제 실행 코드와 로그로 단계별 정리. better-sqlite3와의 API 차이도 비교한다.
 pubDate: '2026-06-09'
 heroImage: >-
   ../../../assets/blog/node-sqlite-builtin-practical-guide-2026/node-sqlite-builtin-practical-guide-2026-hero.png

@@ -1,6 +1,6 @@
 ---
 title: "Agno로 AI 에이전트 만들기 — Gemini와 내장 툴로 직접 돌려봤다"
-description: "phidata에서 리브랜딩한 Agno v2.6.17을 샌드박스에 설치하고, Calculator·Wikipedia·구조화 출력·멀티 에이전트 팀까지 실제 실행 로그와 함께 검증했습니다. output_schema vs output_model 혼동, deprecated 모델 ID, Team API 변경점 등 실제로 마주친 트랩도 정직하게 기록합니다."
+description: "Agno v2.6.17(구 phidata)로 Gemini 기반 AI 에이전트를 직접 구현했다. Calculator·Wikipedia 툴, 구조화 출력, 멀티 에이전트 팀까지 실행 로그로 검증. output_schema 혼동, deprecated 모델 ID 등 실제 트랩도 기록한다."
 pubDate: '2026-06-18'
 heroImage: ../../../assets/blog/agno-python-agent-framework-gemini-guide-2026-hero.png
 tags:

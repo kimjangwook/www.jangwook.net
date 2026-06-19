@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-18",
+  "updated_at": "2026-06-19",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3854,6 +3854,57 @@
       "added_at": "2026-06-18",
       "status": "queued",
       "notes": "뉴스+비교 크로스오버. Agno, PydanticAI, Google ADK 기존 포스트 내부링크 연결. JetBrains 1차 소스 + 블로그 기존 분석 대조로 차별화."
+    },
+    {
+      "slug": "vercel-ai-sdk-vs-mastra-typescript-agent-framework-comparison-2026",
+      "title_idea": "Vercel AI SDK vs Mastra vs Genkit: TypeScript AI 에이전트 프레임워크 2026 직접 비교",
+      "content_type": "comparison",
+      "target_keyword": "Vercel AI SDK Mastra 비교 2026",
+      "secondary_keywords": [
+        "TypeScript AI 에이전트 프레임워크",
+        "Mastra vs LangChain.js",
+        "AI SDK 비교 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "GitHub 2025 언어 리포트에서 TypeScript가 Python을 추월. Vercel AI SDK가 가장 많이 설치되는 TypeScript 에이전트 툴킷으로 부상. Mastra와 Genkit도 빠른 성장세. 블로그에 이미 Mastra 개별 포스트가 있어 자연스러운 시리즈 연결 가능.",
+      "added_at": "2026-06-19",
+      "status": "queued",
+      "notes": "비교 포스트 강점: 독자가 선택 결정을 내리는 데 도움. 블로그 내 mastra-ai-typescript-agent-framework-guide-2026, agno-python-agent-framework-gemini-guide-2026 포스트와 내부링크 연결 가능."
+    },
+    {
+      "slug": "claude-sonnet-46-vs-gpt-41-coding-benchmark-2026",
+      "title_idea": "Claude Sonnet 4.6 vs GPT-4.1: 개발자가 실전에서 써본 코딩 성능 비교 2026",
+      "content_type": "comparison",
+      "target_keyword": "Claude Sonnet 4.6 GPT-4.1 비교 2026",
+      "secondary_keywords": [
+        "Claude vs GPT 코딩 2026",
+        "AI 코딩 모델 비교",
+        "SWE-bench 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Claude Sonnet 4.6이 SWE-bench 79.6% 달성, GPT-4.1과 비용·품질·속도 3축에서 검색 수요 급증. 블로그 독자층(Claude Code 헤비 유저)에 직접 관련. 가격·컨텍스트 창·실전 코드 품질 데이터 공개.",
+      "added_at": "2026-06-19",
+      "status": "queued",
+      "notes": "균형잡힌 시각 필수 (Claude 독자층이지만 GPT 우위 영역도 정직하게 기술). claude-agent-sdk-tool-use-complete-guide-2026, fastapi-claude-api-streaming-production-guide-2026 포스트와 내부링크 연결."
+    },
+    {
+      "slug": "tRPC-vs-graphql-vs-rest-api-typescript-2026-comparison",
+      "title_idea": "tRPC vs GraphQL vs REST: TypeScript 풀스택 API 설계 2026년 현실적 선택 가이드",
+      "content_type": "comparison",
+      "target_keyword": "tRPC GraphQL REST 비교 2026",
+      "secondary_keywords": [
+        "TypeScript API 설계 2026",
+        "tRPC vs REST 2026",
+        "GraphQL 대안 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "tRPC가 TypeScript 풀스택 생태계에서 빠르게 성장. Next.js + tRPC 조합이 REST/GraphQL의 대안으로 부상 중. Hono, Drizzle ORM 등 경량 스택과의 연계 수요도 증가.",
+      "added_at": "2026-06-19",
+      "status": "queued",
+      "notes": "블로그 내 hono-typescript-api-2026, drizzle-orm-typescript-complete-guide-2026 포스트와 내부링크 연결. SvelteKit + tRPC 경험 바탕으로 실전 코드 예제 포함 가능."
     }
   ]
 }

@@ -297,7 +297,7 @@ MCPサーバーにコードのリンティング、ファイル変換、外部AP
 
 **独自エージェントフレームワークの開発**
 
-LangGraphやLlamaIndexなしで独自のエージェントを書く場合、MCPサーバーが提供するツールをエージェントループに組み込める。`listTools()`でツール一覧を取得してLLMプロンプトに注入し、LLMの応答からツール呼び出しパラメータを解析して`callTool()`で実行するパターンだ。[MCPゲートウェイによるエージェントトラフィック制御](/ja/blog/ja/mcp-gateway-agent-traffic-control)も、このコンテキストで合わせて読む価値がある。
+LangGraphやLlamaIndexなしで独自のエージェントを書く場合、MCPサーバーが提供するツールをエージェントループに組み込める。`listTools()`でツール一覧を取得してLLMプロンプトに注入し、LLMの応答からツール呼び出しパラメータを解析して`callTool()`で実行するパターンだ。AIエージェントにツールを体系的に組み込む方法は[Claude Agent SDKによるtool use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)で詳しく解説している。
 
 **テストとデバッグ**
 

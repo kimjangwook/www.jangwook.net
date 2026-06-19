@@ -366,7 +366,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 第2回ではさらに一歩進む。<strong>MCPサーバーを自作してClaude Codeに外部ツールを接続する方法</strong>だ。Notionデータベースを読み込み、Slackにメッセージを送り、PostgreSQLにクエリを投げる。こうした外部システム連携がスラッシュコマンド1つで可能になる構造を解説する。
 
-MCPサーバーを構築した経験があるなら、MCPサーバー構築実践ガイドが良い事前読書になる。
+MCPサーバーを構築した経験があるなら、[TypeScript SDKでMCPサーバーをゼロから作るガイド](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)が良い事前読書になる。
 
 ## 公式ドキュメントで確認する
 

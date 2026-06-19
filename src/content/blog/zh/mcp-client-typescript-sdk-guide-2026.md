@@ -264,7 +264,7 @@ Parallel calls (4 ops) in 1ms:
 
 **构建自定义智能体框架**
 
-不使用 LangGraph 或 LlamaIndex，直接写自己的智能体时，MCP 客户端可以作为工具执行层嵌入智能体循环。用 `listTools()` 获取工具列表注入 LLM 提示词，解析模型响应后用 `callTool()` 执行。[通过 MCP Gateway 控制智能体流量](/zh/blog/zh/mcp-gateway-agent-traffic-control)是这一场景的自然延伸。
+不使用 LangGraph 或 LlamaIndex，直接写自己的智能体时，MCP 客户端可以作为工具执行层嵌入智能体循环。用 `listTools()` 获取工具列表注入 LLM 提示词，解析模型响应后用 `callTool()` 执行。如何系统地为 AI 智能体附加工具，[Claude Agent SDK tool use 完整指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)对此有详细说明。
 
 **测试和调试 MCP 服务器**
 

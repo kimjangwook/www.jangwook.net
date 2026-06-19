@@ -397,7 +397,7 @@ fi
 
 #2편에서는 한 단계 더 나간다. <strong>MCP(Model Context Protocol) 서버를 직접 만들어서 Claude Code에 외부 도구를 연결하는 법</strong>이다. Notion 데이터베이스를 읽고, Slack으로 메시지를 보내고, PostgreSQL을 쿼리하는 외부 시스템 연동이 슬래시 명령어 하나로 가능해지는 구조를 다룬다.
 
-이미 MCP 서버를 구축해본 경험이 있다면 MCP 서버 처음부터 만들기 가이드가 좋은 사전 읽기다.
+이미 MCP 서버를 구축해본 경험이 있다면 [TypeScript SDK로 MCP 서버를 처음부터 만드는 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)가 좋은 사전 읽기다.
 
 ## 공식 문서로 확인하기
 

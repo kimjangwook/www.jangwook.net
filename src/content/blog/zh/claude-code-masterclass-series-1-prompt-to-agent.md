@@ -365,7 +365,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 第2篇更进一步，<strong>从头构建MCP服务器，将Claude Code连接到外部工具</strong>。读取Notion数据库、发送Slack消息、查询PostgreSQL，这些外部系统集成都可以通过一条斜线命令完成。
 
-如果已经尝试过MCP服务器构建，MCP服务器从零构建实践指南是很好的预备阅读材料。
+如果已经尝试过MCP服务器构建，[TypeScript SDK MCP服务器逐步构建指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)是很好的预备阅读材料。
 
 ## 用官方文档核对
 

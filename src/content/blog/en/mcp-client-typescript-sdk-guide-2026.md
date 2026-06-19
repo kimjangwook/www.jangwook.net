@@ -312,7 +312,7 @@ If your MCP server exposes code linting, file conversion, or external API lookup
 
 **Building a custom agent framework**
 
-If you're writing your own agent loop without LangGraph or LlamaIndex, a custom MCP client slots in as the tool execution layer. Pull the tool list with `listTools()`, inject it into your LLM prompt, parse the model's tool call decision, and run it with `callTool()`. The [MCP Gateway post](/en/blog/en/mcp-gateway-agent-traffic-control) is a natural follow-up if you need to route traffic across multiple servers.
+If you're writing your own agent loop without LangGraph or LlamaIndex, a custom MCP client slots in as the tool execution layer. Pull the tool list with `listTools()`, inject it into your LLM prompt, parse the model's tool call decision, and run it with `callTool()`. For a more complete treatment of attaching tools to an AI agent, the [Claude Agent SDK tool use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) covers this pattern in depth.
 
 **Testing and debugging MCP servers**
 

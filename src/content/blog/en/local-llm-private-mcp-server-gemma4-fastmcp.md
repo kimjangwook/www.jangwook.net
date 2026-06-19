@@ -295,4 +295,6 @@ To take this further:
 
 Before moving this to production, check MCP security issues too. Being local doesn't eliminate tool injection or excessive permission risks — those are MCP-level concerns that persist regardless of deployment environment.
 
+If you'd prefer TypeScript over Python for the MCP client side, [@modelcontextprotocol/sdk TypeScript client guide](/en/blog/en/mcp-client-typescript-sdk-guide-2026) covers the same flow programmatically. For getting reliable structured JSON out of local models like Gemma 4, see the [Ollama structured outputs + Pydantic guide](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026).
+
 All the code is above. Install everything with `pip install fastmcp uvicorn openai requests` and you're set. If anything breaks, test each step in isolation — that's faster than trying to debug the whole pipeline at once.

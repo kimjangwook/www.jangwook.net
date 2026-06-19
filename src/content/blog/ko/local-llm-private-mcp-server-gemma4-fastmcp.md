@@ -290,4 +290,6 @@ Gemma 4는 `list_directory` → `read_file("README.md")` 순서로 호출했다.
 
 이 파이프라인이 프로덕션으로 갈 때는, MCP 보안 이슈도 체크하길 권한다. 로컬이라도 툴 인젝션, 과도한 권한 같은 MCP 특유의 위험은 그대로 존재한다.
 
+Python 오케스트레이터 대신 TypeScript로 MCP 클라이언트를 구현하고 싶다면 [@modelcontextprotocol/sdk로 TypeScript MCP 클라이언트를 만드는 방법](/ko/blog/ko/mcp-client-typescript-sdk-guide-2026)을 참고하면 된다. 로컬 모델에서 구조화된 JSON 출력을 안정적으로 받는 기법은 [Ollama structured outputs + Pydantic 가이드](/ko/blog/ko/ollama-structured-outputs-pydantic-local-llm-guide-2026)에서 따로 다뤘다.
+
 코드는 모두 위에 있다. 설치 의존성은 `pip install fastmcp uvicorn openai requests` 하나면 끝이다. 돌려보고 막히는 부분이 있으면 각 스텝별로 따로 테스트해보는 게 빠르다.
