@@ -40,6 +40,15 @@ relatedPosts:
       ja: Claude Agent SDKでAIエージェントに直接ツールを付ける方法だ。MCPクライアントをエージェントレイヤーに統合するときに参考になる。
       en: How to attach tools directly to an AI agent via the Claude Agent SDK — useful when integrating an MCP client into the agent layer.
       zh: 介绍如何通过 Claude Agent SDK 直接为 AI 智能体附加工具，在将 MCP 客户端集成到智能体层时可供参考。
+faq:
+  - question: "MCPクライアントとMCPサーバーは何が違うのか?"
+    answer: "MCPサーバーはtoolとresourceを外部に公開する側で、クライアントはそのサーバーに接続してtoolを呼び出しresourceを読む側だ。Claude DesktopやCursorがまさにクライアント(正確にはホスト)の役割を担う。この記事では`@modelcontextprotocol/sdk`の`Client`クラスでそのクライアントを自作した。"
+  - question: "TypeScript SDKはどのtransportに対応しているか?"
+    answer: "stdioとHTTP系(SSE、Streamable HTTP)の2種類に対応している。この記事では`StdioClientTransport`でサーバープロセスを直接スポーンするstdioのみを扱った。リモートサーバーに接続するには`StreamableHTTPClientTransport`や`SSEClientTransport`を使い、設定方法が少し変わる。"
+  - question: "クライアントからtoolを呼び出したりresourceを読むには?"
+    answer: "接続後、`client.listTools()`でツール一覧を取得し、`client.callTool({ name, arguments })`で実行する。resourceは`client.listResources()`で一覧化し`client.readResource({ uri })`で読む。戻り値の`content`配列は項目ごとに`type`フィールドが異なり、`text`以外に`image`や`resource`も来るため、型を先に確認する必要がある。"
+  - question: "エラーはどう処理する? exceptionは発生するのか?"
+    answer: "ツール実行エラーはexceptionとして投げられず、応答オブジェクトの`isError: true`フィールドで返る。`try/catch`ではなく`result.isError`を確認するのが正しい。これはMCP仕様で意図された設計で、ツール実行エラーとプロトコルエラーを区別するためだ。"
 ---
 
 Claude Desktopがサーバーに接続するとき、内部で何が起きているのかずっと気になっていた。「stdioで接続している」という説明は聞いていたが、コードレベルで実際にどう実装されているかは自分で書いてみないとわからない。そこで今日は`@modelcontextprotocol/sdk`をインストールし、TypeScript MCPクライアントをゼロから作ってみた。
@@ -333,7 +342,7 @@ for (const item of result.content) {
 
 `type`フィールドを確認せずに`content[0].text`にアクセスすると、ツールが画像や埋め込みリソースを返したときに`undefined`が返る。特に外部MCPサーバーを使う場合は、常に`type`フィールドを先に確認する習慣をつけるといい。
 
-## 솔직な評価と限界
+## 率直な評価と限界
 
 いくつか気になった点も正直に書いておく。
 
@@ -352,3 +361,10 @@ AIエージェントパイプラインを自分で構築している開発者、
 70行のTypeScriptで、MCPサーバーへの接続、ツール一覧の取得、ツールの呼び出し、リソースの読み込み、クリーンな終了がすべてできる。これが最初から公式ドキュメントにサンプルとして載っていればよかったのに、なかったので自分で作ってみた。
 
 次は実際のMCPサーバー（ファイルシステムサーバーやGitHub MCPサーバー）にこのクライアントをつないで、小さな自動化スクリプトを作ってみたいと思っている。
+
+## 参考資料
+
+- [Model Context Protocol 公式サイト](https://modelcontextprotocol.io) — MCPの概念、アーキテクチャ、クライアント/サーバーのビルドガイドをまとめた公式ドキュメントサイト。
+- [MCPクライアントのビルドガイド](https://modelcontextprotocol.io/docs/develop/build-client) — 公式ドキュメントのうちクライアント実装を扱うチュートリアル。この記事のTypeScript例と比較すると理解が深まる。
+- [@modelcontextprotocol/typescript-sdk (GitHub)](https://github.com/modelcontextprotocol/typescript-sdk) — この記事で使ったSDKの公式リポジトリ。`Client`や`StdioClientTransport`の実装とissueを確認できる。
+- [@modelcontextprotocol/sdk (npm)](https://www.npmjs.com/package/@modelcontextprotocol/sdk) — 実際にインストールするnpmパッケージ。バージョン履歴とzodのpeer dependencyを確認できる。

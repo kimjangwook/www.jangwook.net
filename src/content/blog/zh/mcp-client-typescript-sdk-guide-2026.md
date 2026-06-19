@@ -39,6 +39,15 @@ relatedPosts:
       ja: Claude Agent SDKでAIエージェントに直接ツールを付ける方法だ。MCPクライアントをエージェントレイヤーに統合するときに参考になる。
       en: How to attach tools directly to an AI agent via the Claude Agent SDK — useful when integrating an MCP client into the agent layer.
       zh: 介绍如何通过 Claude Agent SDK 直接为 AI 智能体附加工具，在将 MCP 客户端集成到智能体层时可供参考。
+faq:
+  - question: "MCP 客户端和 MCP 服务器有什么区别?"
+    answer: "MCP 服务器是向外部暴露 tool 和 resource 的一方，客户端则是连接该服务器、调用 tool 并读取 resource 的一方。Claude Desktop 和 Cursor 正是扮演客户端（准确说是宿主）的角色。本文用 `@modelcontextprotocol/sdk` 的 `Client` 类亲手实现了这个客户端。"
+  - question: "TypeScript SDK 支持哪些 transport?"
+    answer: "SDK 同时支持 stdio 和 HTTP 系（SSE、Streamable HTTP）两种。本文只介绍了用 `StdioClientTransport` 直接生成服务器进程的 stdio 方式。连接远程服务器需要使用 `StreamableHTTPClientTransport` 或 `SSEClientTransport`，配置方式略有不同。"
+  - question: "如何从客户端调用 tool 或读取 resource?"
+    answer: "连接后，用 `client.listTools()` 获取工具列表，用 `client.callTool({ name, arguments })` 执行。resource 则用 `client.listResources()` 列出、用 `client.readResource({ uri })` 读取。返回值的 `content` 数组中每个元素的 `type` 字段不同，除 `text` 外还可能是 `image` 或 `resource`，因此需先检查类型。"
+  - question: "错误如何处理? callTool 会抛出异常吗?"
+    answer: "工具执行错误不会抛出异常，而是以响应对象的 `isError: true` 字段返回。应当检查 `result.isError` 而非使用 `try/catch`。这是 MCP 规范中的有意设计，用于区分工具执行错误和协议层错误。"
 ---
 
 Claude Desktop 连接 MCP 服务器时，内部究竟发生了什么？我一直很好奇。"通过 stdio 连接"这个说法我听过，但要在代码层面真正理解，还是得自己写一遍。所以今天我安装了 `@modelcontextprotocol/sdk`，从零开始构建了一个 TypeScript MCP 客户端。
@@ -315,3 +324,10 @@ for (const item of result.content) {
 70行 TypeScript 就够了：连接 MCP 服务器、列出工具、调用工具、读取资源、干净地关闭。希望官方文档从一开始就把这个作为示例放出来。既然没有，我就自己来写。
 
 下一步：把这个客户端连接到真实的 MCP 服务器（文件系统服务器或 GitHub MCP 服务器），围绕它构建一个小型自动化脚本。
+
+## 参考资料
+
+- [Model Context Protocol 官方网站](https://modelcontextprotocol.io) — 汇集 MCP 概念、架构以及客户端/服务器构建指南的官方文档站点。
+- [构建 MCP 客户端指南](https://modelcontextprotocol.io/docs/develop/build-client) — 官方文档中讲解客户端实现的教程。与本文的 TypeScript 示例对照阅读会更有收获。
+- [@modelcontextprotocol/typescript-sdk (GitHub)](https://github.com/modelcontextprotocol/typescript-sdk) — 本文所用 SDK 的官方仓库，可查看 `Client`、`StdioClientTransport` 的实现及 issue。
+- [@modelcontextprotocol/sdk (npm)](https://www.npmjs.com/package/@modelcontextprotocol/sdk) — 实际安装的 npm 包，可查看版本历史和 zod peer dependency。

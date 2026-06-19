@@ -40,6 +40,15 @@ relatedPosts:
       ja: Claude Agent SDKでAIエージェントに直接ツールを付ける方法だ。MCPクライアントをエージェントレイヤーに統合するときに参考になる。
       en: How to attach tools directly to an AI agent via the Claude Agent SDK — useful when integrating an MCP client into the agent layer.
       zh: 介绍如何通过 Claude Agent SDK 直接为 AI 智能体附加工具，在将 MCP 客户端集成到智能体层时可供参考。
+faq:
+  - question: "MCP 클라이언트와 MCP 서버는 무엇이 다른가?"
+    answer: "MCP 서버는 tool과 resource를 외부에 노출하는 쪽이고, 클라이언트는 그 서버에 연결해 tool을 호출하고 resource를 읽는 쪽이다. Claude Desktop이나 Cursor가 바로 클라이언트(정확히는 호스트) 역할을 한다. 이 글에서는 `@modelcontextprotocol/sdk`의 `Client` 클래스로 그 클라이언트를 직접 구현했다."
+  - question: "TypeScript SDK는 어떤 transport를 지원하나?"
+    answer: "stdio와 HTTP 계열(SSE, Streamable HTTP) 두 종류를 지원한다. 이 글에서는 `StdioClientTransport`로 서버 프로세스를 직접 스폰하는 stdio 방식만 다뤘다. 원격 서버에 붙으려면 `StreamableHTTPClientTransport`나 `SSEClientTransport`를 쓰며, 설정 방식이 조금 달라진다."
+  - question: "클라이언트에서 tool을 호출하거나 resource를 읽으려면?"
+    answer: "연결 후 `client.listTools()`로 도구 목록을 받고, `client.callTool({ name, arguments })`로 실행한다. resource는 `client.listResources()`로 나열하고 `client.readResource({ uri })`로 읽는다. 반환값의 `content` 배열은 항목마다 `type` 필드가 달라 `text` 외에 `image`, `resource`도 올 수 있으니 타입을 먼저 확인해야 한다."
+  - question: "에러는 어떻게 처리하나? exception이 발생하나?"
+    answer: "도구 실행 에러는 exception으로 던져지지 않고 응답 객체의 `isError: true` 필드로 돌아온다. `try/catch` 대신 `result.isError`를 확인하는 패턴이 맞다. 이는 MCP 스펙에서 의도된 설계로, 도구 실행 에러와 프로토콜 에러를 구분하기 위함이다."
 ---
 
 Claude Desktop나 Cursor가 MCP 서버에 연결할 때 내부적으로 무슨 일이 벌어지는지 궁금했다. 그냥 "stdio로 연결한다"는 말은 들었는데, 코드 레벨에서 실제로 어떻게 구현되는지는 직접 짜봐야 이해가 된다. 그래서 오늘은 `@modelcontextprotocol/sdk`를 설치해서 TypeScript MCP 클라이언트를 처음부터 만들어봤다.
@@ -433,3 +442,10 @@ for (const item of result.content) {
 이미지나 임베딩된 리소스를 반환하는 도구도 있다. `text` 타입만 있다고 가정하면 런타임에 `undefined`를 만나게 된다. 특히 외부 MCP 서버를 붙일 때는 `type` 필드를 항상 먼저 확인하는 습관을 들이는 게 좋다.
 
 SDK의 타입 정의 파일(`.d.ts`)을 직접 열어보면 `TextContent`, `ImageContent`, `EmbeddedResource` 타입이 분리되어 있다. TypeScript를 쓴다면 이 타입을 import해서 타입 좁히기(type narrowing)를 명시적으로 작성하는 게 낫다.
+
+## 참고자료
+
+- [Model Context Protocol 공식 사이트](https://modelcontextprotocol.io) — MCP의 개념, 아키텍처, 클라이언트/서버 빌드 가이드를 모아둔 공식 문서 사이트.
+- [MCP 클라이언트 빌드 가이드](https://modelcontextprotocol.io/docs/develop/build-client) — 공식 문서 중 클라이언트 구현을 다루는 튜토리얼. 이 글의 TypeScript 예제와 비교해보면 좋다.
+- [@modelcontextprotocol/typescript-sdk (GitHub)](https://github.com/modelcontextprotocol/typescript-sdk) — 이 글에서 사용한 SDK의 공식 저장소. `Client`, `StdioClientTransport` 등의 구현과 이슈를 확인할 수 있다.
+- [@modelcontextprotocol/sdk (npm)](https://www.npmjs.com/package/@modelcontextprotocol/sdk) — 실제로 설치하는 npm 패키지. 버전 히스토리와 의존성(zod peer dependency)을 확인할 수 있다.

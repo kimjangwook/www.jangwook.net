@@ -40,6 +40,15 @@ relatedPosts:
       ja: Claude Agent SDKでAIエージェントに直接ツールを付ける方法だ。MCPクライアントをエージェントレイヤーに統合するときに参考になる。
       en: How to attach tools directly to an AI agent via the Claude Agent SDK — useful when integrating an MCP client into the agent layer.
       zh: 介绍如何通过 Claude Agent SDK 直接为 AI 智能体附加工具，在将 MCP 客户端集成到智能体层时可供参考。
+faq:
+  - question: "What is the difference between an MCP client and an MCP server?"
+    answer: "An MCP server exposes tools and resources to the outside world, while a client connects to that server to call its tools and read its resources. Hosts like Claude Desktop and Cursor act as clients. In this guide I built the client myself using the `Client` class from `@modelcontextprotocol/sdk`."
+  - question: "What transport options does the TypeScript SDK support (stdio vs HTTP/SSE)?"
+    answer: "The SDK supports both stdio and HTTP-based transports (SSE and Streamable HTTP). This guide covers only stdio via `StdioClientTransport`, which spawns the server process directly. To connect to a remote server you'd use `StreamableHTTPClientTransport` or `SSEClientTransport`, with slightly different setup."
+  - question: "How do you call a tool or list resources from the client?"
+    answer: "After connecting, call `client.listTools()` to get the tool list and `client.callTool({ name, arguments })` to execute one. For resources, use `client.listResources()` and `client.readResource({ uri })`. The returned `content` array can hold `text`, `image`, or `resource` items, so check each item's `type` field before accessing `.text`."
+  - question: "How does error handling work — does callTool throw?"
+    answer: "Tool execution errors don't throw an exception; they come back on the response object as `isError: true`. Instead of `try/catch`, you check `result.isError`. This is intentional in the MCP spec, separating tool execution errors from protocol-level errors."
 ---
 
 I've always been curious what Claude Desktop does internally when it connects to an MCP server. "It connects via stdio" is the short answer, but I needed to see the code to actually understand it. So today I installed `@modelcontextprotocol/sdk`, built a TypeScript MCP client from scratch, and ran it against a server I wrote myself.
@@ -375,3 +384,10 @@ The use cases are real. Developers building AI agent pipelines from scratch, tea
 Seventy lines of TypeScript is enough to connect to an MCP server, list its tools, call them, read its resources, and close cleanly. I wish this had been in the official docs as a worked example from the start. Since it wasn't, here it is.
 
 Next up: attaching this client to a real-world MCP server — probably the filesystem one or the GitHub MCP server — and building a small automation script around it.
+
+## References
+
+- [Model Context Protocol official site](https://modelcontextprotocol.io) — The official docs hub covering MCP concepts, architecture, and build guides for both clients and servers.
+- [Build an MCP client (official guide)](https://modelcontextprotocol.io/docs/develop/build-client) — The official client-building tutorial. Worth comparing against the TypeScript example in this post.
+- [@modelcontextprotocol/typescript-sdk on GitHub](https://github.com/modelcontextprotocol/typescript-sdk) — The official repo for the SDK used here. Source for `Client`, `StdioClientTransport`, and the issue tracker.
+- [@modelcontextprotocol/sdk on npm](https://www.npmjs.com/package/@modelcontextprotocol/sdk) — The package you actually install. Check version history and the zod peer dependency here.
