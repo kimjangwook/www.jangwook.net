@@ -98,9 +98,26 @@ fi
 ) &
 WATCHDOG_PID=$!
 
+# 일시적 실패(인증/과부하/네트워크) 감지 — 이 run 의 로그 꼬리에서만 확인.
+# 빌드 진행 카운터 "(401/798)" 같은 오탐을 피하려 정밀 패턴 사용.
+is_transient_failure() {
+    tail -n 120 "$LOG_FILE" | grep -qiE 'Invalid authentication|Failed to authenticate|API Error: (401|429|500|503|529)|overloaded_error|Too Many Requests|ETIMEDOUT|ECONNRESET|rate.?limit'
+}
+
 # Run Claude Code
 claude "$@" >> "$LOG_FILE" 2>&1
 EXIT_CODE=$?
+
+# 일시적 실패면 1회만 재시도. 인증/과부하 실패는 claude 가 실제 작업 전에 죽으므로
+# (2026-06-20 daily-post 401 사례) 재시도해도 중복 발행 위험이 없다. 발행 게이트
+# 실패는 claude 가 이미 작업한 경우라 여기서 재시도하지 않는다(아래 게이트에서 처리).
+if [ "$EXIT_CODE" -ne 0 ] && is_transient_failure; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] claude 일시적 실패(인증/과부하 추정) 감지 — 120초 후 1회 재시도" >> "$LOG_FILE"
+    tg_send "[jangwook.net] ${TASK_NAME}: 일시적 실패 감지, 120초 후 1회 재시도"
+    sleep 120
+    claude "$@" >> "$LOG_FILE" 2>&1
+    EXIT_CODE=$?
+fi
 
 # Kill watchdog
 kill $WATCHDOG_PID 2>/dev/null || true
@@ -139,4 +156,15 @@ fi
 
 ELAPSED=$(( $(date +%s) - START_TIME ))
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] DONE: $TASK_NAME (exit: $EXIT_CODE, ${ELAPSED}s)" >> "$LOG_FILE"
+
+# claude 자체 실패는 그동안 Telegram 알림이 없어 조용히 묻혔다(2026-06-20 401).
+# 최종 종료코드가 0이 아니면 항상 알림을 보내 실패가 가시화되도록 한다.
+if [ "$EXIT_CODE" -ne 0 ]; then
+    tg_send "[jangwook.net] 작업 실패
+작업: ${TASK_NAME}
+종료코드: ${EXIT_CODE}
+소요: $((ELAPSED / 60))분
+조치: ~/.jangwook-net/logs/${TASK_NAME}.log 확인 필요"
+fi
+
 exit $EXIT_CODE
