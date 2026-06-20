@@ -1,8 +1,8 @@
 ---
-title: 'sentence-transformers로 RAG 임베딩 직접 실험하기 — 한국어 쿼리 정확도가 67% 떨어지는 이유'
+title: 'sentence-transformers로 한국어 RAG 임베딩 실험 — 정확도가 67% 떨어지는 이유'
 description: >-
-  all-MiniLM-L6-v2를 로컬에서 설치해 코사인 유사도, 미니 RAG, 다국어 모델 비교까지 직접 측정했다. 영어 최적화
-  임베딩 모델로 한국어 RAG를 구축하면 정확도가 67% 하락한다는 실측 결과와 해결책을 공유한다.
+  all-MiniLM-L6-v2를 로컬에 설치해 코사인 유사도, 미니 RAG 검색, 다국어 모델 비교까지 직접 측정했다. 영어 최적화
+  임베딩으로 한국어 RAG를 만들면 정확도가 67% 떨어지는 실측 결과와, 다국어 모델로 이를 해결하는 구체적 방법을 코드와 함께 공유한다.
 pubDate: '2026-06-16'
 heroImage: '../../../assets/blog/sentence-transformers-korean-rag-embedding-guide-2026/hero.png'
 tags:

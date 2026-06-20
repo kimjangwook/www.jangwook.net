@@ -1,8 +1,8 @@
 ---
 title: 'DeNA LLM 스터디 Part 1: LLM 기초와 2025년 AI 현황'
 description: >-
-  DeNA LLM 스터디 시리즈 시작. GPT-4, Claude, Gemini 비교, Next Token Prediction,
-  Instruction Tuning, Reasoning 모델, 프롬프트 엔지니어링 기초를 다룹니다.
+  DeNA 사내 LLM 스터디 시리즈의 첫 글. GPT-4, Claude, Gemini를 비교하고 Next Token Prediction,
+  Instruction Tuning, Reasoning 모델의 원리와 프롬프트 엔지니어링 기초를 2025년 AI 현황과 함께 정리했습니다.
 pubDate: '2025-12-08'
 heroImage: ../../../assets/blog/dena-llm-study-part1-fundamentals-hero.jpg
 tags:
