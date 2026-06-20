@@ -1,6 +1,6 @@
 ---
 title: "Building AI Agents with Agno — I Actually Ran It with Gemini and Built-in Tools"
-description: "I installed Agno v2.6.17 (formerly Phidata) in a sandbox and ran Calculator, Wikipedia, structured output, and multi-agent team features with real execution logs. Includes honest account of the traps I fell into: output_schema vs output_model, deprecated model IDs, and Team API naming changes."
+description: "I ran Agno v2.6.17 (formerly Phidata) with Gemini: Calculator, Wikipedia, structured output, and multi-agent teams, plus the real traps I hit along the way."
 pubDate: '2026-06-18'
 heroImage: ../../../assets/blog/agno-python-agent-framework-gemini-guide-2026-hero.png
 tags:

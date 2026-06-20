@@ -1,8 +1,8 @@
 ---
 title: 'Testing Korean RAG Embeddings with sentence-transformers'
 description: >-
-  I ran all-MiniLM-L6-v2 locally to measure cosine similarity, build a mini RAG, and compare
-  multilingual models. English-tuned embeddings drop Korean RAG accuracy by 67% — real logs and the fix.
+  I ran all-MiniLM-L6-v2 locally to compare multilingual embeddings on Korean RAG. English-tuned
+  models dropped accuracy by 67%, with real logs and the fix.
 pubDate: '2026-06-16'
 heroImage: '../../../assets/blog/sentence-transformers-korean-rag-embedding-guide-2026/hero.png'
 tags:

@@ -1,9 +1,8 @@
 ---
 title: 'Building a TypeScript MCP Client from Scratch — @modelcontextprotocol/sdk v1.29 in Practice'
 description: >-
-  I installed @modelcontextprotocol/sdk v1.29.0 and built a TypeScript MCP client myself.
-  A hands-on guide to calling MCP server tools and reading resources programmatically,
-  without Claude Desktop. Includes real run logs and error-handling patterns.
+  I built a TypeScript MCP client with @modelcontextprotocol/sdk v1.29.0: calling server tools
+  and reading resources programmatically, without Claude Desktop.
 pubDate: '2026-06-19'
 heroImage: ../../../assets/blog/mcp-client-typescript-sdk-guide-2026/hero.png
 tags:
