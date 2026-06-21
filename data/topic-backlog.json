@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-19",
+  "updated_at": "2026-06-21",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -3905,6 +3905,114 @@
       "added_at": "2026-06-19",
       "status": "queued",
       "notes": "블로그 내 hono-typescript-api-2026, drizzle-orm-typescript-complete-guide-2026 포스트와 내부링크 연결. SvelteKit + tRPC 경험 바탕으로 실전 코드 예제 포함 가능."
+    },
+    {
+      "slug": "local-llm-inference-engines-comparison-ollama-llamacpp-lmstudio-2026",
+      "title_idea": "로컬 LLM 추론 엔진 3파전 — Ollama vs llama.cpp vs LM Studio 실측 비교 2026",
+      "content_type": "comparison",
+      "target_keyword": "로컬 LLM 추론 엔진 비교 2026",
+      "secondary_keywords": [
+        "Ollama vs llama.cpp",
+        "LM Studio 성능",
+        "로컬 LLM 벤치마크"
+      ],
+      "search_intent": "commercial",
+      "priority": 1,
+      "source": "이번 주 ollama-structured-outputs 포스트와 토픽 클러스터 형성. 로컬 LLM 실행 환경 선택은 독자 수요 높은 비교 주제. 내부링크 시너지.",
+      "added_at": "2026-06-21",
+      "status": "queued",
+      "notes": "비교 비율 보강(이번 주 0%). ollama-structured-outputs 글과 상호 내부링크.",
+      "published_at": null
+    },
+    {
+      "slug": "mcp-client-typescript-vs-python-sdk-production-comparison-2026",
+      "title_idea": "MCP 클라이언트 SDK 비교 — TypeScript vs Python, 프로덕션엔 어느 쪽인가",
+      "content_type": "comparison",
+      "target_keyword": "MCP 클라이언트 SDK 비교",
+      "secondary_keywords": [
+        "MCP TypeScript SDK",
+        "MCP Python SDK",
+        "MCP 클라이언트 프로덕션"
+      ],
+      "search_intent": "commercial",
+      "priority": 2,
+      "source": "이번 주 mcp-client-typescript-sdk 가이드의 자연스러운 후속. 언어 선택 의사결정을 돕는 비교 글.",
+      "added_at": "2026-06-21",
+      "status": "queued",
+      "notes": "mcp-client-typescript-sdk-guide-2026, mcp-server-typescript-sdk 글과 클러스터.",
+      "published_at": null
+    },
+    {
+      "slug": "insightforge-build-log-part2-synthetic-panel-prompt-design",
+      "title_idea": "InsightForge 개발기 2부 — synthetic panel 프롬프트 설계와 환각 줄이기",
+      "content_type": "series",
+      "target_keyword": "synthetic panel 프롬프트 설계",
+      "secondary_keywords": [
+        "AI 소비자 리서치 구현",
+        "LLM 페르소나 프롬프트",
+        "환각 줄이기"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "why-i-built-insightforge 글의 직접 후속편. 시리즈 비율(백로그 6개로 최저) 보강. 빌드 스토리 독자 반응 좋음.",
+      "added_at": "2026-06-21",
+      "status": "queued",
+      "notes": "why-i-built-insightforge-validation-priorities와 시리즈 연결. 1인칭 경험 기반 서술.",
+      "published_at": null
+    },
+    {
+      "slug": "korean-rag-reranking-accuracy-boost-cross-encoder-guide-2026",
+      "title_idea": "한국어 RAG 정확도를 리랭킹으로 끌어올리기 — Cross-Encoder 재정렬 실전",
+      "content_type": "how-to",
+      "target_keyword": "한국어 RAG 리랭킹",
+      "secondary_keywords": [
+        "Cross-Encoder 재정렬",
+        "RAG 정확도 개선",
+        "한국어 임베딩 리랭커"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "sentence-transformers-korean-rag 글에서 드러난 67% 정확도 저하 문제의 해결책 후속. 실측 기반 심화.",
+      "added_at": "2026-06-21",
+      "status": "queued",
+      "notes": "sentence-transformers-korean-rag-embedding-guide-2026과 클러스터. 후속 실험 글.",
+      "published_at": null
+    },
+    {
+      "slug": "llm-context-cost-optimization-format-caching-real-numbers-2026",
+      "title_idea": "LLM 컨텍스트 비용 절감 실전 — 포맷 최적화부터 프롬프트 캐싱까지 실측",
+      "content_type": "news",
+      "target_keyword": "LLM 컨텍스트 비용 절감",
+      "secondary_keywords": [
+        "프롬프트 캐싱 2026",
+        "토큰 비용 최적화",
+        "LLM API 비용"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "이번 주 llm-token-cost-data-format 실험 글의 확장. 포맷 외 캐싱·압축까지 비용 절감 종합. 시의성 높음.",
+      "added_at": "2026-06-21",
+      "status": "queued",
+      "notes": "llm-token-cost-data-format-experiment와 클러스터. 뉴스/분석 비율 보강.",
+      "published_at": null
+    },
+    {
+      "slug": "agno-multi-agent-team-coordinate-route-collaborate-deep-dive-2026",
+      "title_idea": "Agno 멀티 에이전트 팀 심화 — coordinate, route, collaborate 모드 실전 비교",
+      "content_type": "comparison",
+      "target_keyword": "Agno 멀티 에이전트 팀",
+      "secondary_keywords": [
+        "Agno coordinate route",
+        "멀티 에이전트 협업 모드",
+        "Agno Team 클래스"
+      ],
+      "search_intent": "informational",
+      "priority": 3,
+      "source": "이번 주 agno-python-agent-framework 가이드에서 다룬 Team 협업 모드의 심화 비교. 모드별 동작 차이 실측.",
+      "added_at": "2026-06-21",
+      "status": "queued",
+      "notes": "agno-python-agent-framework-gemini-guide-2026과 클러스터. 협업 모드 3종 비교.",
+      "published_at": null
     }
   ]
 }
