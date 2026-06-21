@@ -2801,5 +2801,16 @@
       "devops": 0.4,
       "architecture": 0.65
     }
+  },
+  "llm-token-cost-data-format-experiment": {
+    "categoryScores": {
+      "ai-ml": 0.9,
+      "architecture": 0.5,
+      "automation": 0.4,
+      "devops": 0.3,
+      "web-development": 0.2
+    },
+    "difficulty": 2,
+    "pubDate": "2026-06-21"
   }
 }
