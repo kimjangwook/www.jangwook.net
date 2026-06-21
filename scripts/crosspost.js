@@ -170,7 +170,13 @@ async function postToHashnode(article) {
   }
 
   const errBody = await res.text();
-  return { success: false, error: `HTTP ${res.status}: ${errBody}` };
+  // HTML(비-JSON) 응답이면 전체 페이지를 덤프하지 말고 원인을 짚어준다.
+  // 보통 API 키 무효/엔드포인트 변경/Cloudflare 안티봇 → 코드가 아니라 환경 문제.
+  const looksHtml = /^\s*<(?:!doctype|html)/i.test(errBody);
+  const detail = looksHtml
+    ? 'non-JSON(HTML) 응답 — HASHNODE_API_KEY 유효성/엔드포인트/안티봇(Cloudflare) 확인 필요'
+    : errBody.slice(0, 300);
+  return { success: false, error: `HTTP ${res.status}: ${detail}` };
 }
 
 // --- Log results ---
