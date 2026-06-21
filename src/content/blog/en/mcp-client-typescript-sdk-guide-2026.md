@@ -25,13 +25,6 @@ relatedPosts:
       ja: Python FastMCPで30分でサーバーを立ち上げる方法を扱う。この記事で作ったTypeScriptクライアントがそのサーバーを呼び出せる。
       en: Covers spinning up a FastMCP Python server in 30 minutes — and the TypeScript client built here can call it.
       zh: 介绍用 Python FastMCP 在30分钟内搭建服务器的方法。这篇文章中构建的 TypeScript 客户端可以调用该服务器。
-  - slug: mcp-gateway-agent-traffic-control
-    score: 0.78
-    reason:
-      ko: 여러 MCP 클라이언트가 하나의 게이트웨이를 통해 서버와 통신하는 아키텍처를 다룬다. 스케일업이 필요한 시점의 다음 단계다.
-      ja: 複数のMCPクライアントが一つのゲートウェイを介してサーバーと通信するアーキテクチャを扱う。スケールアップが必要な時の次のステップだ。
-      en: Covers an architecture where multiple MCP clients communicate with servers through a gateway — the next step when you need to scale.
-      zh: 介绍多个 MCP 客户端通过网关与服务器通信的架构，是需要扩展时的下一步。
   - slug: claude-agent-sdk-tool-use-complete-guide-2026
     score: 0.75
     reason:
