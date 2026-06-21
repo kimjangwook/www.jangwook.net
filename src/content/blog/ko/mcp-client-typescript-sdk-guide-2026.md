@@ -1,5 +1,5 @@
 ---
-title: 'TypeScript로 MCP 클라이언트 직접 만들기 — @modelcontextprotocol/sdk v1.29로 서버 호출 자동화'
+title: 'TypeScript MCP 클라이언트 만들기 — @modelcontextprotocol/sdk v1.29'
 description: >-
   @modelcontextprotocol/sdk v1.29.0을 직접 설치해 TypeScript MCP 클라이언트를 만들어봤다.
   Claude Desktop 없이 MCP 서버의 tool을 프로그래밍으로 호출하고 resource를 읽는 실전 가이드.

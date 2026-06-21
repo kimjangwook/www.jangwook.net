@@ -1,5 +1,5 @@
 ---
-title: Python AIエージェントライブラリ比較2026 — Pydantic AI vs Instructor vs Smolagents 実践選択ガイド
+title: Python AIエージェントライブラリ比較 — Pydantic·Instructor·Smolagents
 description: >-
   Pydantic
   AI、Instructor、Smolagentsを実際のベンチマークコードで比較。構造化出力、エージェントアーキテクチャ、プロダクション準備度、コスト効率の4軸でどのプロジェクトに何を使うべきか明確な判断基準を提示します。

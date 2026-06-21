@@ -1,5 +1,5 @@
 ---
-title: 'Building a TypeScript MCP Client from Scratch — @modelcontextprotocol/sdk v1.29 in Practice'
+title: 'Building a TypeScript MCP Client — @modelcontextprotocol/sdk v1.29'
 description: >-
   I built a TypeScript MCP client with @modelcontextprotocol/sdk v1.29.0: calling server tools
   and reading resources programmatically, without Claude Desktop.

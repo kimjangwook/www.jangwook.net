@@ -1,5 +1,5 @@
 ---
-title: 'TypeScriptでMCPクライアントを自作する — @modelcontextprotocol/sdk v1.29の実践ガイド'
+title: 'TypeScriptでMCPクライアント自作 — @modelcontextprotocol/sdk v1.29'
 description: >-
   @modelcontextprotocol/sdk v1.29.0を実際にインストールしてTypeScript MCPクライアントを作った。
   Claude Desktopなしでサーバーのツールをプログラムから呼び出す実践ガイド。

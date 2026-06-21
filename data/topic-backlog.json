@@ -4013,6 +4013,24 @@
       "status": "queued",
       "notes": "agno-python-agent-framework-gemini-guide-2026과 클러스터. 협업 모드 3종 비교.",
       "published_at": null
+    },
+    {
+      "slug": "claude-code-dynamic-workflows-parallel-orchestration-guide-2026",
+      "title_idea": "Claude Code Dynamic Workflows 실전 가이드 — 병렬 서브에이전트 오케스트레이션으로 대형 작업 자동화하기",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code Dynamic Workflows",
+      "secondary_keywords": [
+        "병렬 서브에이전트",
+        "워크플로우 오케스트레이션",
+        "Claude Code 자동화"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Anthropic 2026-06 릴리스: Dynamic Workflows 리서치 프리뷰. 수십~수백 병렬 서브에이전트를 단일 세션에서 오케스트레이션하는 신기능. (releasebot.io, code.claude.com/docs/whats-new)",
+      "added_at": "2026-06-21",
+      "status": "queued",
+      "notes": "내일(월) How-to 1순위 후보. 기존 claude-code-subagent-parallel-execution 글과 차별화: 'Dynamic Workflows'는 6월 신규 기능명으로, 자동 오케스트레이션 스크립트 생성+내장 검증이 핵심 차별점. How-to 과대편중 상태이므로 추가는 1건으로 제한.",
+      "published_at": null
     }
   ]
 }

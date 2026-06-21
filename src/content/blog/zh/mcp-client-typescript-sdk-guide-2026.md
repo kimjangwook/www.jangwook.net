@@ -1,5 +1,5 @@
 ---
-title: '用 TypeScript 亲手构建 MCP 客户端 — @modelcontextprotocol/sdk v1.29 实战指南'
+title: '用 TypeScript 构建 MCP 客户端 — @modelcontextprotocol/sdk v1.29'
 description: >-
   我亲自安装了 @modelcontextprotocol/sdk v1.29.0，构建了一个 TypeScript MCP 客户端。
   不依赖 Claude Desktop，通过编程方式调用 MCP 服务器工具和读取资源的实战指南，包含真实运行日志和错误处理模式。

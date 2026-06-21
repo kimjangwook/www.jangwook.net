@@ -1,5 +1,5 @@
 ---
-title: Python AI智能体库比较2026 — Pydantic AI vs Instructor vs Smolagents 实战选择指南
+title: Python AI智能体库比较 — Pydantic·Instructor·Smolagents
 description: >-
   用真实基准代码对比Pydantic
   AI、Instructor和Smolagents。从结构化输出、智能体架构、生产就绪度、成本效率四个维度，为您提供2026年明确的Python
