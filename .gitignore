@@ -29,6 +29,9 @@ _sandbox/
 
 # automation data (operational data, API responses, strategy reports)
 data/
+# 단, 주간 잡이 매주 커밋하는 운영 산출물은 추적 유지(인덱스에서 빠져도 재추가되도록 예외).
+!data/strategy-report.md
+!data/topic-backlog.json
 
 # scheduler logs
 logs/
