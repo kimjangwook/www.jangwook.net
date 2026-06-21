@@ -1,6 +1,6 @@
 ---
 title: "Stop Feeding Raw JSON to Your LLM — I Measured Token Cost Across 9 Data Formats"
-description: "I serialized the same 50 records into JSON, YAML, CSV, TSV, XML and more, then counted tokens with tiktoken. For flat data, TSV was 62% cheaper than pretty JSON. For nested data, the answer flips."
+description: "I serialized 50 records into 9 formats (JSON, YAML, CSV, TSV, XML...) and counted tokens with tiktoken. For flat data, TSV ran 62% cheaper than pretty JSON."
 pubDate: '2026-06-21'
 heroImage: ../../../assets/blog/llm-token-cost-data-format-experiment.png
 tags:
@@ -29,6 +29,15 @@ relatedPosts:
       ja: 出力を構造化JSONに強制する話の裏で、この記事は入力データの形式コストを扱う。入出力の両面を見るとトークン家計簿が完成する。
       en: That post forces output into structured JSON; this one measures the cost of the data going in. Seeing both sides completes your token budget.
       zh: 那篇讲把输出强制为结构化JSON，本文衡量输入数据的格式成本。看清输入输出两端，token账本才算完整。
+faq:
+  - question: "Which data format is cheapest for LLM tokens?"
+    answer: "It depends on the data's shape. For flat, uniform records, TSV was the cheapest in my measurement at 62% fewer tokens than pretty JSON, with CSV and Markdown tables close behind. For nested data, tabular formats can't be used and compact JSON wins instead at 45.7% cheaper than pretty JSON. XML was the most expensive in every case."
+  - question: "Why is TSV or CSV cheaper than JSON?"
+    answer: "Tabular formats write each field name once in a header row, then list only values across the rows. JSON repeats a key like \"warehouse\": once per record, so 50 records mean 50 repetitions of every key, plus the quotes and braces wrapping them. On 50 flat records, pretty JSON spent about 82 tokens per record versus TSV's 31, for the exact same data."
+  - question: "Does the cheapest format change for nested versus flat data?"
+    answer: "Yes, the conclusion flips. CSV, TSV, and Markdown tables can't represent variable-length arrays or nested objects, so they drop out entirely. For nested data I measured compact JSON (json.dumps with separators) as the cheapest at 45.7% below pretty JSON. The rule of thumb: tabular for uniform rows, compact JSON for nested structures."
+  - question: "How do I measure token cost myself?"
+    answer: "Use OpenAI's tiktoken library. Load the encoding that matches your model — o200k_base for GPT-4o and the GPT-5 family, cl100k_base for older GPT-4 and 3.5 — then count len(enc.encode(serialized_string)). Counting the same data serialized different ways shows the per-format difference directly, rather than relying on the rough chars times 0.75 heuristic."
 ---
 
 I needed to hand an agent a 50-row product catalog as context. Out of habit I dumped it with `json.dumps(records, indent=2)`, and the token counter read past 4,000. The data itself was tiny. I started to suspect the indentation and quotes were eating close to half my tokens. So I serialized the exact same data into nine formats and counted the real tokens.
@@ -126,5 +135,12 @@ Today's measurements changed my defaults to this.
 - If a format change cut tokens significantly, verify once that model accuracy holds in that format.
 
 Data format is a value your code picks almost automatically, so you rarely think about it. But the moment it enters an LLM context, that thoughtless `indent=2` can become half your token bill. Until I measured it myself, I was underestimating the size of it too.
+
+## References
+
+- [tiktoken (OpenAI)](https://github.com/openai/tiktoken) — OpenAI's official BPE tokenizer. The library used for all token counts here, including the `o200k_base` and `cl100k_base` encodings.
+- [JSON specification (json.org)](https://www.json.org/json-en.html) — The canonical reference for the JSON interchange format, the baseline format in this experiment.
+- [YAML 1.2.2 specification (yaml.org)](https://yaml.org) — The official YAML spec, useful for understanding the indentation rules that drive its token cost.
+- [TOML specification (toml.io)](https://toml.io) — The official TOML spec, one of the nine formats measured.
 
 > The measurement code and full logs were run once in the sandbox and preserved in `docs/evidence/llm-token-cost-data-format-experiment.md`. Measured on tiktoken 0.12.0, Python 3.12.8.

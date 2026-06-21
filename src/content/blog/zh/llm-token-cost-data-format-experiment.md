@@ -29,6 +29,15 @@ relatedPosts:
       ja: 出力を構造化JSONに強制する話の裏で、この記事は入力データの形式コストを扱う。入出力の両面を見るとトークン家計簿が完成する。
       en: That post forces output into structured JSON; this one measures the cost of the data going in. Seeing both sides completes your token budget.
       zh: 那篇讲把输出强制为结构化JSON，本文衡量输入数据的格式成本。看清输入输出两端，token账本才算完整。
+faq:
+  - question: "哪种数据格式的LLM token最便宜?"
+    answer: "取决于数据的形状。对平坦、均匀的记录，在这次实测中TSV最便宜，比pretty JSON少用62%的token，CSV和Markdown表紧随其后。对嵌套数据则用不了表格系，compact JSON以比pretty JSON便宜45.7%夺得第一。XML在所有情况下都最贵。"
+  - question: "为什么TSV或CSV比JSON便宜?"
+    answer: "表格系把字段名只写在表头一行，行里只列值。而JSON每条记录都重复 `\"warehouse\":` 这样的键，50条记录就意味着每个键重复50次，再加上包裹它们的引号和花括号。在50条平坦记录上，pretty JSON每条约82 token，TSV为31 token，同样的数据相差两倍以上。"
+  - question: "平坦数据和嵌套数据下最便宜的格式会变吗?"
+    answer: "会变，结论反转。CSV、TSV、Markdown表无法表示变长数组或嵌套对象，因此直接出局。在嵌套数据中，我测得compact JSON(带separators的json.dumps)最便宜，比pretty JSON低45.7%。经验法则很简单：均匀的行用表格系，嵌套结构用compact JSON。"
+  - question: "我自己该如何测量token成本?"
+    answer: "用OpenAI的tiktoken库即可。加载与模型匹配的编码(GPT-4o和GPT-5系列用o200k_base，旧版GPT-4和3.5用cl100k_base)，再用len(enc.encode(序列化字符串))计数。把同一份数据序列化成多种格式来对比，就能直接看到各格式的实际差异，而不必依赖\"字符数 × 0.75\"的粗略经验值。"
 ---
 
 我需要把一份50行的商品目录作为上下文交给智能体。出于习惯，我用 `json.dumps(records, indent=2)` 漂亮地格式化后塞了进去，结果token计数器一看竟超过4000。数据本身很小。我开始怀疑：是不是缩进和引号吃掉了将近一半的token？于是我把同样的数据序列化成9种格式，用真实分词器逐一数了一遍。
@@ -126,5 +135,12 @@ CSV、TSV、Markdown表彻底出局。因为没有办法把变长的条目数组
 - 若换格式大幅削了token，就验证一次该格式下模型精度是否保持。
 
 数据格式是代码里几乎自动决定的值，平时不会去留意。可它进入LLM上下文的那一刻，那个随手的 `indent=2` 就可能造出半张token账单。在亲自测量之前，我也低估了它的分量。
+
+## 参考资料
+
+- [tiktoken (OpenAI)](https://github.com/openai/tiktoken) — OpenAI官方的BPE分词器。本文所有token计数以及 `o200k_base`、`cl100k_base` 编码都用它完成。
+- [JSON规范 (json.org)](https://www.json.org/json-en.html) — JSON交换格式的权威参考，本实验的基线格式。
+- [YAML 1.2.2规范 (yaml.org)](https://yaml.org) — YAML官方规范，有助于理解推高其token成本的缩进规则。
+- [TOML规范 (toml.io)](https://toml.io) — TOML官方规范，本次测量的9种格式之一。
 
 > 测量代码与完整日志在沙箱中运行一次后，保存于 `docs/evidence/llm-token-cost-data-format-experiment.md`。基于 tiktoken 0.12.0、Python 3.12.8。

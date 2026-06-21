@@ -29,6 +29,15 @@ relatedPosts:
       ja: 出力を構造化JSONに強制する話の裏で、この記事は入力データの形式コストを扱う。入出力の両面を見るとトークン家計簿が完成する。
       en: That post forces output into structured JSON; this one measures the cost of the data going in. Seeing both sides completes your token budget.
       zh: 那篇讲把输出强制为结构化JSON，本文衡量输入数据的格式成本。看清输入输出两端，token账本才算完整。
+faq:
+  - question: "LLMトークンが最も安いデータ形式はどれか?"
+    answer: "データの形による。平坦で均一なレコードなら、この実測ではTSVがpretty JSON比62%少ないトークンで最も安く、CSVとMarkdown表がすぐ後に続いた。ネストデータでは表系が使えず、compact JSONがpretty JSONより45.7%安く1位になる。XMLはどのケースでも最も高かった。"
+  - question: "なぜTSVやCSVはJSONより安いのか?"
+    answer: "表系はフィールド名をヘッダ1行だけに書き、行では値だけを並べる。一方JSONは `\"warehouse\":` のようなキーをレコードごとに繰り返すため、50件なら全キーが50回繰り返され、それを包むクォートと波括弧まで付く。50件の平坦レコードではpretty JSONが1件あたり約82トークン、TSVが31トークンと、同じデータで2倍以上の差が出た。"
+  - question: "平坦データとネストデータで最も安い形式は変わるのか?"
+    answer: "変わる。結論が逆転する。CSV・TSV・Markdown表は可変長配列やネストオブジェクトを表現できず候補から外れる。ネストデータではcompact JSON(separatorsを渡したjson.dumps)がpretty JSON比45.7%安く最も安かった。規則は単純だ。均一な行は表系、ネスト構造はcompact JSON。"
+  - question: "トークンコストを自分で測るにはどうすればいいか?"
+    answer: "OpenAIのtiktokenライブラリを使えばいい。モデルに合う符号化を読み込み(GPT-4o・GPT-5系はo200k_base、旧GPT-4・3.5はcl100k_base)、len(enc.encode(直列化文字列))で数える。同じデータを複数形式に直列化して比べれば、「文字数 × 0.75」の目安ではなく形式ごとの実差を直接確認できる。"
 ---
 
 エージェントに商品カタログ50行をコンテキストとして渡す必要があった。いつもの癖で `json.dumps(records, indent=2)` ときれいに整形して入れたら、トークンカウンタが4,000を超えていた。データ自体は小さい。インデントとクォートがトークンの半分近くを食っているのではと疑った。そこで同じデータを9形式に直列化し、実際のトークナイザで数えてみた。
@@ -126,5 +135,12 @@ CSV・TSV・Markdown表は候補から完全に外れる。可変長の品目配
 - 形式を変えてトークンを大きく削ったら、その形式でモデル精度が保たれるか一度は確認する。
 
 データ形式はコードでほぼ自動で決まる値なので、普段は意識しない。ところがLLMコンテキストに入る瞬間、その無造作な `indent=2` 一つがトークン請求書の半分を作りかねない。自分で測るまでは、私もその大きさを過小評価していた。
+
+## 参考資料
+
+- [tiktoken (OpenAI)](https://github.com/openai/tiktoken) — OpenAI公式のBPEトークナイザ。本記事の全トークン計測と `o200k_base`・`cl100k_base` 符号化に使ったライブラリだ。
+- [JSON仕様 (json.org)](https://www.json.org/json-en.html) — JSON交換形式の標準リファレンス。この実験の基準形式だ。
+- [YAML 1.2.2仕様 (yaml.org)](https://yaml.org) — YAML公式仕様。トークンコストを押し上げるインデント規則を理解するのに役立つ。
+- [TOML仕様 (toml.io)](https://toml.io) — TOML公式仕様。計測した9形式のうちの一つ。
 
 > 計測コードと全ログはサンドボックスで1回実行後、`docs/evidence/llm-token-cost-data-format-experiment.md` に保存した。tiktoken 0.12.0、Python 3.12.8 基準。
