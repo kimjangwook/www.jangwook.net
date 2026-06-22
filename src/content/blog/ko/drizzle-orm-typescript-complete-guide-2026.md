@@ -1,8 +1,8 @@
 ---
 title: Drizzle ORM 완전 가이드 — Prisma 없이 타입 안전한 TypeScript DB 레이어 만들기
 description: >-
-  Drizzle ORM 0.45와 drizzle-kit으로 SQLite·PostgreSQL을 TypeScript에서 타입 안전하게 다루는
-  방법. 스키마 정의부터 마이그레이션, 트랜잭션의 async 함정까지 실제 실행 로그와 함께.
+  Drizzle ORM 0.45와 drizzle-kit으로 SQLite·PostgreSQL을 TypeScript에서 타입 안전하게 다루는 완전 가이드(Prisma 대안).
+  스키마 정의와 마이그레이션부터 트랜잭션의 async 함정, 쿼리 빌더 패턴까지 실제 실행 로그와 함께 정리했다.
 pubDate: '2026-06-10'
 heroImage: ../../../assets/blog/drizzle-orm-typescript-complete-guide-2026-hero.png
 tags:

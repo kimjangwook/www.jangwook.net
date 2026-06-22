@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-21",
+  "updated_at": "2026-06-22",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4030,6 +4030,42 @@
       "added_at": "2026-06-21",
       "status": "queued",
       "notes": "내일(월) How-to 1순위 후보. 기존 claude-code-subagent-parallel-execution 글과 차별화: 'Dynamic Workflows'는 6월 신규 기능명으로, 자동 오케스트레이션 스크립트 생성+내장 검증이 핵심 차별점. How-to 과대편중 상태이므로 추가는 1건으로 제한.",
+      "published_at": null
+    },
+    {
+      "slug": "promptfoo-llm-regression-testing-ci-github-actions-2026",
+      "title_idea": "promptfoo로 LLM 출력 회귀 테스트를 CI에 붙이기 — 프롬프트 바뀔 때마다 자동 검증",
+      "content_type": "how-to",
+      "target_keyword": "promptfoo LLM 회귀 테스트",
+      "secondary_keywords": [
+        "LLM CI 파이프라인",
+        "promptfoo eval",
+        "GitHub Actions LLM 테스트"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "DataCamp/promptfoo 공식 튜토리얼, contextqa LLM testing tools 2026. promptfoo eval 단일 명령으로 골든 데이터셋 회귀 검증 + GitHub Actions 연동.",
+      "added_at": "2026-06-22",
+      "status": "queued",
+      "notes": "내일(화) How-to 1순위. 오늘 발행한 llm-determinism-temperature-seed-experiment(재현성 측정)의 자연스러운 후속편 — '재현성을 측정했으니 이제 CI로 회귀를 막는다'로 내부링크 연결 가능. 기존 MCP 편중 백로그와 주제 차별화.",
+      "published_at": null
+    },
+    {
+      "slug": "deepeval-llm-as-judge-eval-pipeline-python-pytest-2026",
+      "title_idea": "DeepEval로 LLM-as-Judge 평가 파이프라인 만들기 — PyTest 스타일로 품질 게이트 세우기",
+      "content_type": "how-to",
+      "target_keyword": "DeepEval LLM 평가",
+      "secondary_keywords": [
+        "LLM-as-Judge",
+        "deepeval test run",
+        "LLM 품질 게이트"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "DeepEval 공식 가이드(guides-llm-as-a-judge), Codecademy DeepEval Python 튜토리얼. assert_test/deepeval test run으로 CI에서 LLM 판정 실행.",
+      "added_at": "2026-06-22",
+      "status": "queued",
+      "notes": "화 How-to 2순위(promptfoo가 채택되면 대안). LLM-as-Judge를 PyTest 관례로 다루는 실전 가이드. promptfoo 글과 묶어 '평가 시리즈'로 확장 여지.",
       "published_at": null
     }
   ]

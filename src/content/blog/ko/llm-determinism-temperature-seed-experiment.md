@@ -1,8 +1,8 @@
 ---
 title: '로컬 LLM은 같은 답을 두 번 줄까 — temperature와 seed로 출력 재현성 직접 측정'
 description: >-
-  같은 프롬프트를 로컬 Gemma 4에 수십 번 던져 출력이 얼마나 재현되는지 측정했다. temperature=0은 결정적이었고,
-  temperature를 올려도 seed를 고정하면 출력이 한 줄로 수렴했다. 평가와 CI에 바로 쓸 결론까지 정리한다.
+  같은 프롬프트를 로컬 Gemma 4에 수십 번 던져 LLM 출력 재현성을 직접 측정한 실험 기록이다. temperature=0은 완전히 결정적이었고,
+  온도를 올려도 seed를 고정하면 출력이 한 줄로 수렴했다. 평가와 CI 테스트에 바로 적용할 결론과 권장 설정값까지 정리한다.
 pubDate: '2026-06-22'
 heroImage: '../../../assets/blog/llm-determinism-temperature-seed-experiment/hero.png'
 tags:
