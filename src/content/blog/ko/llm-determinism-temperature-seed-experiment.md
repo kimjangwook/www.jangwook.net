@@ -107,7 +107,7 @@ def count_unique(model, prompt, temperature, seed, n):
 
 ![조건별 측정 결과 로그](../../../assets/blog/llm-determinism-temperature-seed-experiment/results-table.png)
 
-읽히는 이야기는 이렇다. temperature=0에서는 두 모델 다 출력이 한 종류뿐이었다. 15번, 12번을 던져도 글자 하나 안 틀리고 같은 문장이 나왔다. seed를 줘도 안 줘도 결과는 같았다. greedy 디코딩에서는 seed가 할 일이 없다는 게 그대로 확인됐다.
+표가 말하는 건 이렇다. temperature=0에서는 두 모델 다 출력이 한 종류뿐이었다. 15번, 12번을 던져도 글자 하나 안 틀리고 같은 문장이 나왔다. seed를 줘도 안 줘도 결과는 같았다. greedy 디코딩에서는 seed가 할 일이 없다는 게 그대로 확인됐다.
 
 흩어진 건 정확히 한 칸, temperature>0에 seed가 없을 때뿐이다. 2GB 모델은 15번 중 5종, 9.6GB 모델은 12번 중 7종으로 갈라졌다. 그런데 같은 temperature에서 seed만 42로 고정하자 다시 1종으로 붙었다. 더 인상적인 건 마지막 줄이다. 파이썬 프로세스를 완전히 새로 띄워 다시 돌렸는데도 seed가 같으니 똑같은 문장이 나왔다. "Code faster, effortlessly smart." 두 번의 독립 실행이 글자 단위로 일치했다.
 
