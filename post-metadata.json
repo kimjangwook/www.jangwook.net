@@ -2812,5 +2812,16 @@
     },
     "difficulty": 2,
     "pubDate": "2026-06-21"
+  },
+  "llm-determinism-temperature-seed-experiment": {
+    "pubDate": "2026-06-22",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.15,
+      "ai-ml": 0.9,
+      "devops": 0.55,
+      "architecture": 0.4
+    }
   }
 }
