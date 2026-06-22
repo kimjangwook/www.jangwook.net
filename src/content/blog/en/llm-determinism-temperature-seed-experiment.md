@@ -1,9 +1,7 @@
 ---
 title: 'Does a Local LLM Ever Repeat Itself? Measuring Output Reproducibility with Temperature and Seed'
 description: >-
-  I sent the same prompt to local Gemma 4 dozens of times to measure how reproducible the output is.
-  temperature=0 was deterministic, and even at higher temperature a fixed seed collapsed the output to one line.
-  Includes takeaways you can apply to evaluation and CI right away.
+  I sent the same prompt to local Gemma 4 dozens of times. temperature=0 was deterministic, and even at higher temperature a fixed seed collapsed output to one line.
 pubDate: '2026-06-22'
 heroImage: '../../../assets/blog/llm-determinism-temperature-seed-experiment/hero.png'
 tags:
@@ -168,3 +166,10 @@ Pin the expected hash once and CI catches the moment a model version or an ollam
 It extends to agents the same way. To regression-test an agent's sequence of tool calls, that sequence has to reproduce. If you have built a [fully offline MCP server on a local model](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp), fixing the seed on top of it to reproduce tool calls is relatively controllable. An agent on a cloud LLM, by contrast, struggles to get the same guarantee because of batch non-determinism. In the end, "where you run inference" decides "how tightly you can write the test," and that was the most practical takeaway from this experiment.
 
 Next I plan to build an environment that applies concurrent load and check directly whether batch non-determinism reproduces even on local ollama. If it does, my tentative conclusion that "local is safe" will earn a footnote.
+
+## References
+
+- [Ollama API docs — generation options](https://github.com/ollama/ollama/blob/main/docs/api.md): the `options` object covering `temperature` and `seed`, with the note that you set `seed` to a number for reproducible outputs.
+- [Ollama Modelfile reference](https://docs.ollama.com/modelfile): the `PARAMETER` instruction defining `seed` ("make the model generate the same text for the same prompt") and `temperature`.
+- [OpenAI Cookbook — reproducible outputs with the seed parameter](https://developers.openai.com/cookbook/examples/reproducible_outputs_with_the_seed_parameter): why a cloud `seed` plus `system_fingerprint` only gives "mostly identical" outputs, not a guarantee.
+- [Thinking Machines — Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/): the batch-invariance argument behind cloud non-determinism that I cite but did not reproduce.

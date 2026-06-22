@@ -167,3 +167,10 @@ def assert_reproducible(model, prompt, expected_hash, n=5):
 エージェントに広げても同じだ。エージェントのツール呼び出しシーケンスを回帰テストするには、そのシーケンスが再現される必要がある。ローカルモデルで[完全オフラインのMCPサーバーを作った経験](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp)があるなら、その上でseedを固定してツール呼び出しを再現するのは比較的制御可能だ。一方クラウドLLM上のエージェントはバッチ非決定性のため同じ保証を得にくい。結局「どこで推論するか」が「テストをどれだけ堅く組めるか」を決めるというのが、今回の実験の最も実用的な収穫だった。
 
 次は同時リクエストをかける環境を作り、ローカルollamaでもバッチ非決定性が再現するか直接確かめるつもりだ。それができれば「ローカルは安全だ」という私の暫定結論にも但し書きが付くだろう。
+
+## 参考資料
+
+- [Ollama API ドキュメント — 生成オプション](https://github.com/ollama/ollama/blob/main/docs/api.md): `temperature`と`seed`を含む`options`オブジェクト、そして再現可能な出力のために`seed`に数値を指定するよう案内している。
+- [Ollama Modelfile リファレンス](https://docs.ollama.com/modelfile): `PARAMETER`命令で`seed`(「同じプロンプトに同じテキストを生成する」)と`temperature`を定義する。
+- [OpenAI Cookbook — seedパラメータによる再現可能な出力](https://developers.openai.com/cookbook/examples/reproducible_outputs_with_the_seed_parameter): クラウドで`seed`と`system_fingerprint`が一致しても出力は「ほぼ同一」にとどまり保証ではない、その理由を説明する。
+- [Thinking Machines — Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/): 本文で引用したが直接再現できなかった、クラウド非決定性のバッチ不変性の論拠。

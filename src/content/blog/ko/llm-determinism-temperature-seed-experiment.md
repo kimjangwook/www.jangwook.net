@@ -169,3 +169,10 @@ def assert_reproducible(model, prompt, expected_hash, n=5):
 에이전트로 넓혀 봐도 같다. 에이전트의 도구 호출 시퀀스를 회귀 테스트하려면 그 시퀀스가 재현돼야 한다. 로컬 모델로 [완전 오프라인 MCP 서버를 만든 경험](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)이 있다면, 그 위에서 seed를 고정해 도구 호출을 재현하는 건 비교적 통제 가능하다. 반면 클라우드 LLM 위의 에이전트는 배치 비결정성 때문에 같은 보증을 받기 어렵다. 결국 "어디서 추론하느냐"가 "테스트를 얼마나 단단하게 짤 수 있느냐"를 정한다는 게 이번 실험의 가장 실용적인 수확이었다.
 
 다음엔 동시 요청을 거는 환경을 만들어 로컬 ollama에서도 배치 비결정성이 재현되는지 직접 확인해 볼 생각이다. 그게 되면 "로컬은 안전하다"는 내 잠정 결론에도 단서가 붙을 것이다.
+
+## 참고자료
+
+- [Ollama API 문서 — 생성 옵션](https://github.com/ollama/ollama/blob/main/docs/api.md): `temperature`와 `seed`를 담는 `options` 객체, 그리고 재현 가능한 출력을 위해 `seed`에 숫자를 지정하라는 안내가 있다.
+- [Ollama Modelfile 레퍼런스](https://docs.ollama.com/modelfile): `PARAMETER` 지시어로 `seed`("같은 프롬프트에 같은 텍스트를 생성")와 `temperature`를 정의한다.
+- [OpenAI Cookbook — seed 파라미터로 재현 가능한 출력](https://developers.openai.com/cookbook/examples/reproducible_outputs_with_the_seed_parameter): 클라우드에서 `seed`와 `system_fingerprint`가 맞아도 출력이 "대체로 동일"할 뿐 보장은 아니라는 이유를 설명한다.
+- [Thinking Machines — Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/): 본문에서 인용했지만 직접 재현하지 못한 클라우드 비결정성의 배치 불변성 논거.

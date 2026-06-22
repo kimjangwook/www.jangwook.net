@@ -167,3 +167,10 @@ def assert_reproducible(model, prompt, expected_hash, n=5):
 推广到代理也一样。要对代理的工具调用序列做回归测试，那个序列就得能复现。如果你有用本地模型[搭建完全离线MCP服务器的经验](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)，在它之上固定seed来复现工具调用相对可控。而云端LLM上的代理则因批不确定性难以获得同样的保证。归根结底，『在哪里推理』决定了『测试能写得多牢』，这是这次实验最实用的收获。
 
 接下来我打算搭建施加并发负荷的环境，直接确认本地ollama上是否也会复现批不确定性。如果会，那我『本地是安全的』这个暂定结论也得加上一条注脚。
+
+## 参考资料
+
+- [Ollama API 文档 — 生成选项](https://github.com/ollama/ollama/blob/main/docs/api.md)：包含`temperature`和`seed`的`options`对象，并说明为获得可复现的输出应把`seed`设为一个数字。
+- [Ollama Modelfile 参考](https://docs.ollama.com/modelfile)：用`PARAMETER`指令定义`seed`（「对同一提示词生成相同文本」）和`temperature`。
+- [OpenAI Cookbook — 用seed参数获得可复现输出](https://developers.openai.com/cookbook/examples/reproducible_outputs_with_the_seed_parameter)：解释为何在云端即便`seed`和`system_fingerprint`都匹配，输出也只是「基本一致」而非保证。
+- [Thinking Machines — Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/)：本文引用但未直接复现的、关于云端不确定性的批不变性论证。
