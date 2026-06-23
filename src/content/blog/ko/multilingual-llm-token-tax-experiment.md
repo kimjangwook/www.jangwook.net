@@ -18,13 +18,13 @@ relatedPosts:
       ja: あの記事はJSONやCSVなどデータ形式がトークン費用をどれだけ変えるかを測った。ここで言語が費用を変えることを見たなら、形式という別の軸も併せて見ると削減ポイントが見えやすい。
       en: That post measured how data formats like JSON and CSV move token cost. If you saw here that language moves it, format is the other axis worth measuring together.
       zh: 那篇文章测量了JSON、CSV等数据格式对token费用的影响。如果你在这里看到语言会改变费用，那么格式这另一个维度值得一起衡量。
-  - slug: claude-api-prompt-caching-cost-optimization-guide
+  - slug: llm-determinism-temperature-seed-experiment
     score: 0.71
     reason:
-      ko: 비영어 토큰세가 매 호출마다 붙는다면, 같은 컨텍스트를 반복해서 보내는 워크로드에선 프롬프트 캐싱이 그 세금을 가장 크게 깎아준다.
-      ja: 非英語のトークン税が呼び出しごとに付くなら、同じコンテキストを繰り返し送るワークロードではプロンプトキャッシュがその税を最も大きく削る。
-      en: If the non-English token tax lands on every call, prompt caching cuts it most on workloads that resend the same context repeatedly.
-      zh: 如果非英语token税附加在每次调用上，那么在反复发送相同上下文的工作负载中，提示缓存能最大幅度地削减这笔税。
+      ko: 같은 결의 로컬 LLM 실측 시리즈로, temperature·seed로 출력 재현성을 직접 측정한 자매 실험이다.
+      ja: 同じ流れのローカルLLM実測シリーズで、temperature・seedで出力の再現性を直接測った姉妹実験だ。
+      en: A sibling experiment in the same local-LLM measurement series, testing output reproducibility across temperature and seed.
+      zh: 同一脉络的本地 LLM 实测系列，用 temperature 和 seed 直接测量输出可复现性的姊妹实验。
   - slug: sentence-transformers-korean-rag-embedding-guide-2026
     score: 0.68
     reason:
