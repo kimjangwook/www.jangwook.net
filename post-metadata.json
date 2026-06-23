@@ -2823,5 +2823,16 @@
       "devops": 0.55,
       "architecture": 0.4
     }
+  },
+  "multilingual-llm-token-tax-experiment": {
+    "pubDate": "2026-06-23",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.45,
+      "web-development": 0.2,
+      "ai-ml": 0.9,
+      "devops": 0.4,
+      "architecture": 0.45
+    }
   }
 }

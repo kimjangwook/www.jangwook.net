@@ -1,0 +1,134 @@
+{
+  "summary": {
+    "n_articles": 285,
+    "aggregate": {
+      "ko": {
+        "o200k": 1256718,
+        "cl100k": 1668007,
+        "claude": 1882800,
+        "chars": 3076489
+      },
+      "ja": {
+        "o200k": 1217284,
+        "cl100k": 1502403,
+        "claude": 1579075,
+        "chars": 2584255
+      },
+      "en": {
+        "o200k": 908938,
+        "cl100k": 915128,
+        "claude": 1003948,
+        "chars": 3859685
+      },
+      "zh": {
+        "o200k": 1045977,
+        "cl100k": 1267007,
+        "claude": 1340943,
+        "chars": 2493687
+      }
+    },
+    "ratio_vs_en": {
+      "o200k": {
+        "ko": 1.383,
+        "ja": 1.339,
+        "en": 1.0,
+        "zh": 1.151
+      },
+      "cl100k": {
+        "ko": 1.823,
+        "ja": 1.642,
+        "en": 1.0,
+        "zh": 1.385
+      },
+      "claude": {
+        "ko": 1.875,
+        "ja": 1.573,
+        "en": 1.0,
+        "zh": 1.336
+      }
+    },
+    "tok_per_char": {
+      "ko": 0.4085,
+      "ja": 0.471,
+      "en": 0.2355,
+      "zh": 0.4194
+    }
+  },
+  "per_article": [
+    {
+      "slug": "45-day-analytics-report-2025-11",
+      "o200k": {
+        "ko": 11291,
+        "ja": 11841,
+        "en": 9255,
+        "zh": 10415
+      },
+      "ratio_vs_en_o200k": {
+        "ko": 1.22,
+        "ja": 1.279,
+        "en": 1.0,
+        "zh": 1.125
+      }
+    },
+    {
+      "slug": "a2a-mcp-hybrid-architecture-production-guide",
+      "o200k": {
+        "ko": 2357,
+        "ja": 2695,
+        "en": 1712,
+        "zh": 1947
+      },
+      "ratio_vs_en_o200k": {
+        "ko": 1.377,
+        "ja": 1.574,
+        "en": 1.0,
+        "zh": 1.137
+      }
+    },
+    {
+      "slug": "accounting-ai-transformation-real-data",
+      "o200k": {
+        "ko": 3447,
+        "ja": 3923,
+        "en": 2742,
+        "zh": 3085
+      },
+      "ratio_vs_en_o200k": {
+        "ko": 1.257,
+        "ja": 1.431,
+        "en": 1.0,
+        "zh": 1.125
+      }
+    },
+    {
+      "slug": "adding-chinese-support",
+      "o200k": {
+        "ko": 6914,
+        "ja": 7212,
+        "en": 6030,
+        "zh": 6413
+      },
+      "ratio_vs_en_o200k": {
+        "ko": 1.147,
+        "ja": 1.196,
+        "en": 1.0,
+        "zh": 1.064
+      }
+    },
+    {
+      "slug": "adl-agent-definition-language-governance",
+      "o200k": {
+        "ko": 3856,
+        "ja": 4211,
+        "en": 3170,
+        "zh": 3366
+      },
+      "ratio_vs_en_o200k": {
+        "ko": 1.216,
+        "ja": 1.328,
+        "en": 1.0,
+        "zh": 1.062
+      }
+    }
+  ]
+}
