@@ -104,6 +104,23 @@ is_transient_failure() {
     tail -n 120 "$LOG_FILE" | grep -qiE 'Invalid authentication|Failed to authenticate|API Error: (401|429|500|503|529)|overloaded_error|Too Many Requests|ETIMEDOUT|ECONNRESET|rate.?limit'
 }
 
+# 실패 원인을 사람이 읽을 라벨로 추정(알림 가시성). 세션 한도는 120초 재시도가
+# 무의미(고정 시각 리셋)하므로 transient 에 넣지 않고 여기서 명시만 한다.
+failure_cause() {
+    local t; t="$(tail -n 120 "$LOG_FILE")"
+    if printf '%s' "$t" | grep -qiE "session limit|usage limit|hit your (session|usage)"; then
+        echo "Claude 세션/사용량 한도 도달 — opus 사용량 점검 권장(다음 주기 자동 재실행)"
+    elif printf '%s' "$t" | grep -qiE "Invalid authentication|Failed to authenticate|API Error: 401"; then
+        echo "인증 실패(401)"
+    elif printf '%s' "$t" | grep -qiE "overloaded|529|Too Many Requests|429|rate.?limit"; then
+        echo "API 과부하/레이트리밋"
+    elif printf '%s' "$t" | grep -qiE "validate:publishing|astro -- check|npm run build"; then
+        echo "발행 검증/빌드 실패"
+    else
+        echo "원인 미상 — 로그 확인 필요"
+    fi
+}
+
 # Run Claude Code
 claude "$@" >> "$LOG_FILE" 2>&1
 EXIT_CODE=$?
@@ -163,6 +180,7 @@ if [ "$EXIT_CODE" -ne 0 ]; then
     tg_send "[jangwook.net] 작업 실패
 작업: ${TASK_NAME}
 종료코드: ${EXIT_CODE}
+추정 원인: $(failure_cause)
 소요: $((ELAPSED / 60))분
 조치: ~/.jangwook-net/logs/${TASK_NAME}.log 확인 필요"
 fi
