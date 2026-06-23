@@ -217,7 +217,7 @@ async function callToolSafe(client, name, args) {
 }
 ```
 
-这是 MCP 规范中的有意设计。工具执行错误通过内容返回，而非抛出异常。这与 Claude 智能体将工具执行失败作为"文本消息"接收并继续推理的方式完全吻合。
+这是 MCP 规范中的有意设计。工具执行错误通过内容返回，而非抛出异常。这与 Claude 智能体将工具执行失败作为"文本消息"接收并继续推理的方式完全吻合。而你用什么格式序列化这个结果再传回去，直接决定了输入 token 成本。由于[同一份数据因格式不同最多会差出 62% 的 token](/zh/blog/zh/llm-token-cost-data-format-experiment)，把平坦结果用 CSV、TSV 而非 JSON 返回这个小决定，会改变整个智能体的成本。
 
 ## Promise.all 并行调用 — 4个请求仅需 1ms
 

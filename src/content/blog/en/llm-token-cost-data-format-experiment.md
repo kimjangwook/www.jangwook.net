@@ -46,7 +46,7 @@ Up front: **for flat data, TSV is 62% cheaper than pretty JSON.** But the moment
 
 ## The setup: count with tiktoken, don't guess
 
-Token cost gets tossed around as "roughly chars × 0.75," but that heuristic completely misses per-format differences. So I used OpenAI's own [tiktoken](https://github.com/openai/tiktoken). I ran two encodings side by side: `o200k_base` (GPT-4o, the o-series, the GPT-5 family) and the older `cl100k_base` (GPT-4 and 3.5).
+Token cost gets tossed around as "roughly chars × 0.75," but that heuristic completely misses per-format differences. How the same heuristic breaks once you switch languages is something I measured separately in [the non-English token tax, where the same article costs 1.4x the tokens in Korean](/en/blog/en/multilingual-llm-token-tax-experiment). So I used OpenAI's own [tiktoken](https://github.com/openai/tiktoken). I ran two encodings side by side: `o200k_base` (GPT-4o, the o-series, the GPT-5 family) and the older `cl100k_base` (GPT-4 and 3.5).
 
 The test data mimics a realistic "tool result." Fifty product records, each a flat object with nine fields: `id`, `sku`, `name`, `category`, `price`, `stock`, `warehouse`, `status`, `rating`.
 

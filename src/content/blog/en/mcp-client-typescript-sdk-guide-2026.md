@@ -260,7 +260,7 @@ async function callToolSafe(client, name, args) {
 }
 ```
 
-This is intentional per the MCP spec. Tool execution errors and protocol errors are kept separate: protocol-level errors might throw, but tool-level errors come back in the content. Once I understood this, it made sense — it matches how Claude agents receive tool output. Even when a tool fails, the LLM gets the error text as part of the context and can reason about it.
+This is intentional per the MCP spec. Tool execution errors and protocol errors are kept separate: protocol-level errors might throw, but tool-level errors come back in the content. Once I understood this, it made sense — it matches how Claude agents receive tool output. Even when a tool fails, the LLM gets the error text as part of the context and can reason about it. And the format you serialize that result in becomes your input token bill directly. Since [the same data can cost up to 62% more tokens depending on format](/en/blog/en/llm-token-cost-data-format-experiment), the small choice to return flat results as CSV or TSV instead of JSON shifts the agent's whole cost.
 
 ## Parallel callTool — 4 calls in 1ms
 

@@ -58,7 +58,7 @@ All of that is straight from the docs. The question is whether the theory actual
 
 ## The experiment: the same prompt, dozens of times
 
-I built the test environment in a temporary directory outside the repo. Ollama 0.30.7, Apple Silicon, two models: a small 2GB Gemma 4 build and the 9.6GB `gemma4:e4b`. The point of using two sizes was to see whether the same pattern shows up regardless of model scale.
+I built the test environment in a temporary directory outside the repo. Measuring it myself rather than guessing is the same approach I took when [benchmarking token cost across nine data formats](/en/blog/en/llm-token-cost-data-format-experiment). Ollama 0.30.7, Apple Silicon, two models: a small 2GB Gemma 4 build and the 9.6GB `gemma4:e4b`. The point of using two sizes was to see whether the same pattern shows up regardless of model scale.
 
 The method is simple. Send the same prompt 12 to 15 times per condition, hash each output with SHA-256, and count how many distinct hashes appear. One means fully deterministic; a larger number means the output is scattering.
 

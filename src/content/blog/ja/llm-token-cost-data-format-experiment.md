@@ -46,7 +46,7 @@ faq:
 
 ## 計測環境：推測でなくtiktokenで数える
 
-トークンコストは「だいたい文字数 × 0.75」と語られがちだが、その目安では形式ごとの差はまったく拾えない。だからOpenAIが公開している [tiktoken](https://github.com/openai/tiktoken) をそのまま使った。GPT-4o・o系・GPT-5系が使う `o200k_base` と、旧GPT-4系の `cl100k_base` の2つを並べて回した。
+トークンコストは「だいたい文字数 × 0.75」と語られがちだが、その目安では形式ごとの差はまったく拾えない。同じ目安が言語を変えるとどう崩れるかは、[同じ記事でも韓国語はトークンが1.4倍かかる非英語トークン税の実測](/ja/blog/ja/multilingual-llm-token-tax-experiment)で別途測った。だからOpenAIが公開している [tiktoken](https://github.com/openai/tiktoken) をそのまま使った。GPT-4o・o系・GPT-5系が使う `o200k_base` と、旧GPT-4系の `cl100k_base` の2つを並べて回した。
 
 テストデータは現実的な「ツール結果」を模した。商品レコード50件、それぞれ `id`・`sku`・`name`・`category`・`price`・`stock`・`warehouse`・`status`・`rating` の9フィールドを持つ平坦な配列だ。
 

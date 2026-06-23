@@ -1,6 +1,6 @@
 ---
 title: 'JSON을 그대로 LLM에 넣지 마라 — 데이터 포맷 9종 토큰 비용 실측'
-description: '같은 50개 레코드를 JSON·YAML·CSV·TSV·XML 등 9가지 포맷으로 직렬화해 tiktoken으로 토큰을 직접 측정했다. 평탄한 데이터는 TSV가 pretty JSON 대비 62% 저렴했고, 중첩 데이터는 결론이 뒤집힌다.'
+description: '같은 50개 레코드를 JSON·YAML·CSV·TSV 등 9가지 포맷으로 직렬화해 tiktoken으로 토큰을 측정했다. 평탄한 데이터는 TSV가 pretty JSON 대비 62% 저렴했고, 중첩 데이터는 compact JSON으로 결론이 뒤집힌다. 포맷 하나가 토큰 비용을 가른다.'
 pubDate: '2026-06-21'
 heroImage: ../../../assets/blog/llm-token-cost-data-format-experiment.png
 tags:
@@ -46,7 +46,7 @@ faq:
 
 ## 측정 환경: 추측 대신 tiktoken으로 센다
 
-토큰 비용은 "대충 글자 수 × 0.75" 같은 어림으로 자주 이야기되는데, 포맷별 차이는 그렇게 잡히지 않는다. 그래서 OpenAI가 공개한 [tiktoken](https://github.com/openai/tiktoken)을 그대로 썼다. GPT-4o·o-series·GPT-5 계열이 쓰는 `o200k_base`와, 구형 GPT-4 계열의 `cl100k_base` 두 인코딩을 같이 돌렸다.
+토큰 비용은 "대충 글자 수 × 0.75" 같은 어림으로 자주 이야기되는데, 포맷별 차이는 그렇게 잡히지 않는다. 같은 어림이 언어를 바꾸면 또 어떻게 깨지는지는 [같은 글도 한국어는 토큰이 1.4배 든다는 비영어 토큰세 실측](/ko/blog/ko/multilingual-llm-token-tax-experiment)에서 따로 쟀다. 그래서 OpenAI가 공개한 [tiktoken](https://github.com/openai/tiktoken)을 그대로 썼다. GPT-4o·o-series·GPT-5 계열이 쓰는 `o200k_base`와, 구형 GPT-4 계열의 `cl100k_base` 두 인코딩을 같이 돌렸다.
 
 테스트 데이터는 현실적인 "툴 결과"를 흉내 냈다. 상품 레코드 50개, 각각 `id`·`sku`·`name`·`category`·`price`·`stock`·`warehouse`·`status`·`rating` 9개 필드를 갖는 평탄한 배열이다. 이걸 9가지 포맷으로 찍어 각각 토큰을 셌다.
 

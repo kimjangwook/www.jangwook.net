@@ -2,7 +2,7 @@
 title: 'Ollama 구조화 출력 실전 — Pydantic으로 로컬 LLM 응답을 타입 안전하게 받는 법'
 description: >-
   Ollama 0.3+의 JSON schema 강제 모드와 Pydantic을 연결해 로컬 LLM 응답을 타입 안전하게 파싱하는 실전 가이드.
-  직접 측정한 결과, 구조화 출력은 일반 텍스트보다 6배 빠르고 파싱 성공률이 100%에 가깝다.
+  직접 측정하니 구조화 출력은 일반 텍스트 파싱보다 6배 빠르고 성공률이 100%에 가까웠다. 재시도 없는 로컬 LLM 파이프라인.
 pubDate: '2026-06-17'
 heroImage: '../../../assets/blog/ollama-structured-outputs-pydantic-local-llm-guide-2026/hero.png'
 tags:

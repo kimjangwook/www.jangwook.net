@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-22",
+  "updated_at": "2026-06-23",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4066,6 +4066,42 @@
       "added_at": "2026-06-22",
       "status": "queued",
       "notes": "화 How-to 2순위(promptfoo가 채택되면 대안). LLM-as-Judge를 PyTest 관례로 다루는 실전 가이드. promptfoo 글과 묶어 '평가 시리즈'로 확장 여지.",
+      "published_at": null
+    },
+    {
+      "slug": "ollama-tool-calling-function-local-llm-guide-2026",
+      "title_idea": "Ollama 도구 호출 실전 — 로컬 LLM에 실제 함수를 붙여 에이전트로 만들기",
+      "content_type": "how-to",
+      "target_keyword": "Ollama 도구 호출",
+      "secondary_keywords": [
+        "Ollama function calling",
+        "로컬 LLM tool use",
+        "Qwen 2.5 tool calling"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Ollama 공식 docs(capabilities/tool-calling), Ollama 0.4.x 네이티브 tool 지원. 개발용 Llama 3.1 8B, 프로덕션 Qwen 2.5 14B+ 권장(2026-03 기준). tools 배열 스키마로 함수 등록, 모델은 호출 요청만 반환하고 실행은 코드가 결정.",
+      "added_at": "2026-06-23",
+      "status": "queued",
+      "notes": "수 How-to 1순위. 로컬 LLM 시리즈(ollama-structured-outputs, llm-determinism, local-llm-private-mcp)와 직결되는 빈틈. 구조화 출력 글이 '출력'을, 이 글이 '행동(도구 실행)'을 다뤄 시리즈 완성. tiktoken 토큰세 실험과 달리 클라우드 없이 재현 가능.",
+      "published_at": null
+    },
+    {
+      "slug": "langgraph-checkpointer-durable-agent-state-guide-2026",
+      "title_idea": "LangGraph 체크포인터로 죽어도 이어지는 에이전트 만들기 — 상태 영속화와 재개",
+      "content_type": "how-to",
+      "target_keyword": "LangGraph 체크포인터",
+      "secondary_keywords": [
+        "LangGraph persistence",
+        "에이전트 상태 영속화",
+        "PostgresSaver checkpoint"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "LangChain 공식 persistence 문서. 노드 전이마다 thread ID로 체크포인트 저장, MemorySaver(RAM)·SqliteSaver·PostgresSaver 선택. crash 후 재개·time-travel·human-in-the-loop이 1급 기능.",
+      "added_at": "2026-06-23",
+      "status": "queued",
+      "notes": "수 How-to 2순위(ollama-tool 채택 시 대안). langgraph 비교 글들이 다룬 적 없는 '영속성/내결함성' 각도. ai-agent-cost-reality·python-ai-agent-library-comparison과 내부링크 묶음 여지.",
       "published_at": null
     }
   ]

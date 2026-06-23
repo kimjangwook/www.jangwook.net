@@ -46,7 +46,7 @@ faq:
 
 ## 测量环境：用tiktoken数，而不是猜
 
-token成本常被粗略说成"大约字符数 × 0.75"，但这个经验值根本捕捉不到格式间的差异。所以我直接用了OpenAI公开的 [tiktoken](https://github.com/openai/tiktoken)。我并排跑了两套编码：GPT-4o、o系列、GPT-5系列所用的 `o200k_base`，以及旧版GPT-4系的 `cl100k_base`。
+token成本常被粗略说成"大约字符数 × 0.75"，但这个经验值根本捕捉不到格式间的差异。同样的经验值一旦换了语言会怎样崩掉，我在[同一篇文章韩语却要1.4倍token的非英语token税实测](/zh/blog/zh/multilingual-llm-token-tax-experiment)里另作了测量。所以我直接用了OpenAI公开的 [tiktoken](https://github.com/openai/tiktoken)。我并排跑了两套编码：GPT-4o、o系列、GPT-5系列所用的 `o200k_base`，以及旧版GPT-4系的 `cl100k_base`。
 
 测试数据模仿了真实的"工具结果"。50条商品记录，每条是含9个字段的平坦对象：`id`、`sku`、`name`、`category`、`price`、`stock`、`warehouse`、`status`、`rating`。
 
