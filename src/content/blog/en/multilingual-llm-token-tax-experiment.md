@@ -1,8 +1,7 @@
 ---
 title: 'Same Article, 1.4x the Tokens in Korean: Measuring the Non-English Token Tax Across 285 of My Posts'
 description: >-
-  I tokenized 285 articles from my blog, each published in ko/ja/en/zh, with three real tokenizers to measure the non-English token cost.
-  Korean ran 1.38x English, Japanese 1.34x, and the tokenizer generation jump turned out to be mostly a discount for non-English text.
+  I tokenized 285 of my posts across ko/ja/en/zh with three tokenizers. Korean ran 1.38x English tokens, Japanese 1.34x. The non-English token tax, measured.
 pubDate: '2026-06-23'
 heroImage: '../../../assets/blog/multilingual-llm-token-tax-experiment/hero.png'
 tags:
@@ -187,3 +186,9 @@ Third, my corpus is a tech blog, so the bodies are heavy with English code, prop
 Fourth, models keep changing. If the next tokenizer generation grows its CJK vocabulary, this gap narrows again. So the real conclusion here isn't "Korean is 1.38x." It's "don't estimate; run your own text through your own model's tokenizer." The code is all above. Wiring it to your own corpus takes about ten minutes.
 
 Why this token-level sense of measuring and reproducing output matters runs through my [experiment on output reproducibility with temperature and seed](/en/blog/en/llm-determinism-temperature-seed-experiment) in the same spirit. Working with an LLM is, in the end, counting tokens. Knowing the counting unit differs by language before you start, versus finding out later, is the difference your monthly bill remembers.
+
+## References
+
+- [openai/tiktoken (GitHub)](https://github.com/openai/tiktoken) — OpenAI's official fast BPE tokenizer. The `o200k_base` and `cl100k_base` encodings I measured come straight from this library.
+- [Anthropic — Token counting](https://platform.claude.com/docs/en/build-with-claude/token-counting) — official docs for counting tokens before a request, the right way to measure the Claude-side cost on your own text.
+- [Petrov et al., "Language Model Tokenizers Introduce Unfairness Between Languages" (arXiv:2305.15425)](https://arxiv.org/abs/2305.15425) — NeurIPS 2023 paper showing the same text can cost up to 15x more tokens in some languages, the academic backbone for the tax measured here.

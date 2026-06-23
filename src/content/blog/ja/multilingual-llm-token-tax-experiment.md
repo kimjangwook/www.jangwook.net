@@ -187,3 +187,9 @@ w = "에이전트"   # = agent
 第四に、モデルは変わり続ける。次世代のトークナイザーがCJK語彙をさらに増やせば、この差はまた縮む。だからこの記事の本当の結論は「韓国語は1.38倍だ」ではない。「見積もるな、自分のテキストを自分のモデルのトークナイザーで直接回せ」が結論だ。コードは上に全部ある。自分のコーパスに付けるのに10分あれば足りる。
 
 トークン単位で出力を再現し測る感覚がなぜ重要かは、[temperatureとseedで出力再現性を測った実験](/ja/blog/ja/llm-determinism-temperature-seed-experiment)でも同じ文脈で扱った。LLMを使う仕事は、結局トークンを数える仕事だ。その数える単位が言語ごとに違うと数字で知って始めるのと、知らずに始めるのとでは、毎月の請求書で差が出る。
+
+## 参考資料
+
+- [openai/tiktoken (GitHub)](https://github.com/openai/tiktoken) — OpenAI公式のBPEトークナイザー。この記事で測った`o200k_base`・`cl100k_base`エンコーディングはすべてこのライブラリから来ている。
+- [Anthropic — トークンカウント文書](https://platform.claude.com/docs/en/build-with-claude/token-counting) — リクエスト前にトークン数を数える公式ドキュメント。Claude側のコストを自分のテキストで直接測る正確な方法だ。
+- [Petrov 他「Language Model Tokenizers Introduce Unfairness Between Languages」(arXiv:2305.15425)](https://arxiv.org/abs/2305.15425) — 同じ文章が言語によって最大15倍までトークンが増えることを示したNeurIPS 2023論文。この記事で測ったトークン税の学術的な裏付けだ。

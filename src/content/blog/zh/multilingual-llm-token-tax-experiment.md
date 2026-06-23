@@ -187,3 +187,9 @@ w = "에이전트"   # = agent
 第四，模型一直在变。下一代分词器若再扩充CJK词汇，这个差距会再次收窄。所以这篇真正的结论不是"韩语是1.38倍"。而是"别估算，用你自己的模型分词器跑你自己的文本"。代码全在上面。接到你自己的语料上，十分钟就够。
 
 为什么按token去复现和测量输出的这种感觉很重要，我在[用temperature和seed测输出可复现性的实验](/zh/blog/zh/llm-determinism-temperature-seed-experiment)里也是同一脉络处理的。用LLM这件事，归根到底是数token。在开始前就用数字知道这个计数单位因语言而异，和事后才发现，差别会写进你每月的账单。
+
+## 参考资料
+
+- [openai/tiktoken (GitHub)](https://github.com/openai/tiktoken) — OpenAI官方BPE分词器。本文测量的`o200k_base`、`cl100k_base`编码都来自这个库。
+- [Anthropic — Token计数文档](https://platform.claude.com/docs/en/build-with-claude/token-counting) — 在发送请求前计数token的官方文档，用你自己的文本直接测量Claude侧成本的正确方法。
+- [Petrov 等，"Language Model Tokenizers Introduce Unfairness Between Languages"（arXiv:2305.15425）](https://arxiv.org/abs/2305.15425) — NeurIPS 2023论文，证明同一段文字在某些语言下token最多可多达15倍。本文所测token税的学术依据。

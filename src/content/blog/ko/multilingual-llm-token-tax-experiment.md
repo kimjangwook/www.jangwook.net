@@ -187,3 +187,9 @@ w = "에이전트"   # = agent
 넷째, 모델은 계속 바뀐다. 다음 세대 토크나이저가 CJK 어휘를 더 키우면 이 격차는 또 좁아질 것이다. 그래서 이 글의 진짜 결론은 "한국어는 1.38배다"가 아니다. "추정하지 말고, 네 텍스트를 네 모델 토크나이저로 직접 돌려보라"가 결론이다. 코드는 위에 다 있다. 자기 코퍼스에 붙이는 데 10분이면 된다.
 
 토큰 단위로 출력을 재현하고 측정하는 감각이 왜 중요한지는 [temperature와 seed로 출력 재현성을 쟀던 실험](/ko/blog/ko/llm-determinism-temperature-seed-experiment)에서도 같은 맥락으로 다뤘다. LLM을 쓰는 일은 결국 토큰을 세는 일이다. 그 세는 단위가 언어마다 다르다는 걸 숫자로 알고 시작하는 것과 모르고 시작하는 것은, 매달 청구서에서 갈린다.
+
+## 참고자료
+
+- [openai/tiktoken (GitHub)](https://github.com/openai/tiktoken) — OpenAI 공식 BPE 토크나이저. 이 글에서 잰 `o200k_base`·`cl100k_base` 인코딩이 모두 이 라이브러리에서 나온다.
+- [Anthropic — 토큰 카운팅 문서](https://platform.claude.com/docs/en/build-with-claude/token-counting) — 요청 전에 토큰 수를 세는 공식 문서. Claude 쪽 비용을 내 텍스트로 직접 재는 정확한 방법이다.
+- [Petrov 외, "Language Model Tokenizers Introduce Unfairness Between Languages" (arXiv:2305.15425)](https://arxiv.org/abs/2305.15425) — 같은 글이 언어에 따라 최대 15배까지 토큰이 더 든다는 걸 보인 NeurIPS 2023 논문. 이 글에서 잰 토큰세의 학술적 근거다.
