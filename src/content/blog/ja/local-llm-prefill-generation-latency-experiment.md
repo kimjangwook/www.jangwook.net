@@ -182,3 +182,10 @@ def call(prompt):
 ローカルLLMを「遅い/速い」で一括りにせず、最初のトークンまでのprefillとトークンあたりのgenerationに割って見ると、どこを直せばいいかがはっきりする。そしてその直しどころの大半は、モデルを替えることではなく、プロンプトをキャッシュされるように並べることだった。
 
 今回の実験で得た一番実用的な一行はこれだ。ローカルでエージェントを組むとき、最初に点検すべきはGPUでもモデルサイズでもなく、「自分のプロンプトの先頭が毎ターン同じまま保たれているか」だ。先頭を固定するだけで、同じハードウェアでも2ターン目からprefillがほぼ消える。お金も追加のGPUも一切かけずに得られるタダの加速だ。測るまで、私はこれをただの「体感」として片付けて見過ごしていた。
+
+## 参考資料
+
+- [Ollama APIドキュメント](https://github.com/ollama/ollama/blob/main/docs/api.md) — 本実験が依拠する応答のタイミングフィールド(`prompt_eval_count`、`prompt_eval_duration`、`eval_count`、`eval_duration`)を定義。すべてナノ秒単位だ。
+- [Ollama コンテキスト長ドキュメント](https://docs.ollama.com/context-length) — VRAM別のデフォルトコンテキスト値と`OLLAMA_CONTEXT_LENGTH`設定を公式にまとめたもの。「入る≠使える」の箇所の背景資料。
+- [llama.cpp KVキャッシュ再利用 (discussion #13606)](https://github.com/ggml-org/llama.cpp/discussions/13606) — 共通の接頭区間を再利用するprefix KVキャッシュの挙動。2回目の呼び出しが396倍速くなった仕組みだ。
+- [WEKA: Prefill vs Decode in LLM Inference](https://www.weka.io/learn/ai-ml/prefill-and-decode/) — prefillがなぜ計算バウンドで最初のトークン時間を左右し、decodeがなぜメモリバウンドなのかの背景解説。

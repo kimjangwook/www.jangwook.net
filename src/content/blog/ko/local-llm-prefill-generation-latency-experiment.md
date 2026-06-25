@@ -183,3 +183,10 @@ def call(prompt):
 로컬 LLM을 "느리다/빠르다"로 뭉뚱그리지 말고, 첫 토큰까지의 prefill과 토큰당 generation으로 쪼개서 보면 어디를 손봐야 할지가 분명해진다. 그리고 그 손볼 지점의 대부분은, 모델을 바꾸는 게 아니라 프롬프트를 캐시되게 배치하는 일이었다.
 
 이번 실험으로 내가 얻은 가장 실용적인 한 줄은 이거다. 로컬에서 에이전트를 짤 때 가장 먼저 점검할 건 GPU도 모델 크기도 아니고, "내 프롬프트의 앞부분이 매 턴 그대로 유지되는가"다. 앞부분만 고정해두면 같은 하드웨어로도 두 번째 턴부터 prefill이 거의 사라진다. 돈 한 푼, GPU 한 장 더 들이지 않고 얻는 공짜 가속이다. 측정해보기 전까지 나는 이걸 그냥 "체감"으로만 알고 흘려보내고 있었다.
+
+## 참고자료
+
+- [Ollama API 문서](https://github.com/ollama/ollama/blob/main/docs/api.md) — 이 실험이 의존하는 응답 타이밍 필드(`prompt_eval_count`, `prompt_eval_duration`, `eval_count`, `eval_duration`)를 정의한다. 모두 나노초 단위다.
+- [Ollama 컨텍스트 길이 문서](https://docs.ollama.com/context-length) — VRAM별 기본 컨텍스트 값과 `OLLAMA_CONTEXT_LENGTH` 설정을 공식 문서로 정리. "들어간다 ≠ 쓸 만하다" 대목의 배경 자료.
+- [llama.cpp KV 캐시 재사용 (discussion #13606)](https://github.com/ggml-org/llama.cpp/discussions/13606) — 공통 접두 구간을 재사용하는 prefix KV 캐시 동작. 두 번째 호출이 396배 빨라진 메커니즘이다.
+- [WEKA: Prefill vs Decode in LLM Inference](https://www.weka.io/learn/ai-ml/prefill-and-decode/) — prefill이 왜 연산 바운드라 첫 토큰 시간을 좌우하고, decode가 왜 메모리 바운드인지에 대한 배경 설명.

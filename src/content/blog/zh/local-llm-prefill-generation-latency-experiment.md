@@ -182,3 +182,10 @@ def call(prompt):
 别再把本地LLM笼统地说成"快"或"慢"。把它拆成到第一个token的prefill、和每token的generation，该修哪里就一目了然。而那些该修的地方，大多不是去换模型，而是把提示词摆成可缓存的样子。
 
 这次实验给我的最实用的一句话是：在本地搭代理时，第一个要检查的不是GPU、也不是模型大小，而是"我的提示词前半段在每轮里是否保持原样"。只要把前半段固定住，同样的硬件，从第二轮起prefill就几乎消失。这是一分钱不花、一张GPU不加就能拿到的免费加速。在动手测量之前，我只把它当成一种模糊的"体感"，就这么放过了。
+
+## 参考资料
+
+- [Ollama API文档](https://github.com/ollama/ollama/blob/main/docs/api.md) — 定义了本实验依赖的响应计时字段(`prompt_eval_count`、`prompt_eval_duration`、`eval_count`、`eval_duration`)，单位均为纳秒。
+- [Ollama 上下文长度文档](https://docs.ollama.com/context-length) — 官方整理的按VRAM划分的默认上下文值与`OLLAMA_CONTEXT_LENGTH`设置，是"放得下≠用得了"一节的背景资料。
+- [llama.cpp KV缓存复用 (discussion #13606)](https://github.com/ggml-org/llama.cpp/discussions/13606) — 复用共同前缀区段的prefix KV缓存行为，正是第二次调用快396倍的机制。
+- [WEKA: Prefill vs Decode in LLM Inference](https://www.weka.io/learn/ai-ml/prefill-and-decode/) — 关于prefill为何是计算受限、决定首个token时间，以及decode为何是内存受限的背景说明。

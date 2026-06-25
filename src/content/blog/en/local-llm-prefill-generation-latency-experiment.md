@@ -1,10 +1,8 @@
 ---
 title: 'Why a Local LLM Slows Down as the Conversation Grows — I Split Prefill From Generation'
 description: >-
-  The same 9,700-token prompt took 55 seconds to reach its first token on my
-  laptop, but the second identical call took 65 milliseconds. I pulled apart
-  Ollama's timing fields to measure prefill vs generation, why the prefix cache
-  was 396x faster, and how to apply it to agent context design.
+  A 9,700-token prompt took 55s to its first token, then 65ms on the identical
+  second call. I split Ollama's timings into prefill vs generation to see why.
 pubDate: '2026-06-25'
 heroImage: '../../../assets/blog/local-llm-prefill-generation-latency-experiment/hero.png'
 tags:
@@ -185,3 +183,10 @@ What I trust is the <strong>shape</strong>, not the absolutes. Prefill grows nea
 Stop lumping local LLMs into "fast" or "slow." Split them into prefill-to-first-token and per-token generation, and where to fix things becomes obvious. And most of the fixes, it turned out, were not about changing the model. They were about laying out the prompt so it stays cached.
 
 The single most useful line I took from this experiment: when building a local agent, the first thing to check is not the GPU or the model size, it is whether the front of my prompt stays identical every turn. Pin the front and prefill nearly vanishes from the second turn on, on the same hardware. It is free acceleration that costs not one dollar and not one extra GPU. Until I measured it, I had filed this away as a vague "feeling" and let it slide.
+
+## References
+
+- [Ollama API reference](https://github.com/ollama/ollama/blob/main/docs/api.md) — documents the response timing fields (`prompt_eval_count`, `prompt_eval_duration`, `eval_count`, `eval_duration`) this experiment relies on, all in nanoseconds.
+- [Ollama context length docs](https://docs.ollama.com/context-length) — official defaults by VRAM and the `OLLAMA_CONTEXT_LENGTH` setting, useful context for the "fits is not usable" point.
+- [llama.cpp KV cache reuse (discussion #13606)](https://github.com/ggml-org/llama.cpp/discussions/13606) — how the prefix KV cache reuses a shared leading span, the mechanism behind the 396x warm-call speedup.
+- [WEKA: Prefill vs Decode in LLM Inference](https://www.weka.io/learn/ai-ml/prefill-and-decode/) — background on why prefill is compute-bound and sets time-to-first-token while decode is memory-bound.
