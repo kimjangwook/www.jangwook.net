@@ -1,8 +1,8 @@
 ---
 title: '로컬 LLM은 왜 대화가 길어질수록 느려질까 — prefill과 generation 비용을 직접 분해해봤다'
 description: >-
-  같은 9,700토큰 프롬프트가 내 노트북에서 첫 토큰까지 55초가 걸렸는데, 두 번째 호출은 65밀리초였다. Ollama 타임스탬프를 직접 뜯어
-  prefill과 generation 비용을 분리 측정하고, prefix 캐시가 왜 396배 빨랐는지, 에이전트 컨텍스트 설계에 어떻게 적용할지 정리했다.
+  같은 9,700토큰 프롬프트가 내 노트북에서 첫 토큰까지 55초 걸렸는데, 두 번째 호출은 65밀리초였다. Ollama 타임스탬프를 뜯어
+  prefill과 generation을 분리 측정하고, prefix 캐시가 왜 396배 빨랐는지, 에이전트 컨텍스트 설계에 어떻게 적용할지 정리했다.
 pubDate: '2026-06-25'
 heroImage: '../../../assets/blog/local-llm-prefill-generation-latency-experiment/hero.png'
 tags:
