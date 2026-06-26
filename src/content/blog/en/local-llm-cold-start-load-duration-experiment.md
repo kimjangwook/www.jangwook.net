@@ -1,9 +1,8 @@
 ---
 title: 'Why a local LLM''s first reply sometimes takes 10 seconds — I measured the cold start (load_duration)'
 description: >-
-  After stepping away and calling my agent again, the first reply dragged. I pulled the load_duration that
-  Ollama returns on every response and measured it across model sizes: 1.5s for a 2GB model, up to 9.7s for
-  a 9.6GB one. And there turned out to be two kinds of "cold." Here is how keep_alive splits that bill.
+  After idling, my agent's first reply dragged. I pulled Ollama's load_duration across model sizes: 1.5s
+  for 2GB up to 9.7s for 9.6GB, and split it by keep_alive.
 pubDate: '2026-06-26'
 heroImage: '../../../assets/blog/local-llm-cold-start-load-duration-experiment/hero.png'
 tags:
@@ -152,3 +151,9 @@ Let me draw the boundary honestly. These numbers come from one MacBook (Apple Si
 Also, I did not dig deep enough into Ollama internals to claim exactly what `load_duration` sums up. It may include initialization like graph construction, not just the file read. What I can observe is the number the API returns and how it responds to model size, page cache, and keep_alive. That range is the scope of today's measurement. The 0.37 seconds that shows up even when warm is something I guessed at, not confirmed.
 
 Finally, page cache behavior depends on how much free RAM you have. On a memory-tight server, even Cold #2 and #3 could get their cache flushed quickly and slow back down toward Cold #1. My measurement leans toward the optimistic case with ample RAM. Next I want to apply artificial memory pressure and see how long the cache holds. Cold start is not a measure-once topic; it is the kind of cost you have to re-measure per environment.
+
+## References
+
+- [Ollama API docs](https://github.com/ollama/ollama/blob/main/docs/api.md) — the response fields, including `load_duration`, and the `keep_alive` parameter.
+- [Ollama FAQ: keeping a model loaded in memory](https://docs.ollama.com/faq) — the 5-minute default and how `keep_alive` and `OLLAMA_KEEP_ALIVE` control eviction.
+- [Linux kernel: memory management concepts](https://www.kernel.org/doc/html/latest/admin-guide/mm/concepts.html) — how the OS page cache holds file data read from disk in RAM, which is what splits cold into two kinds.

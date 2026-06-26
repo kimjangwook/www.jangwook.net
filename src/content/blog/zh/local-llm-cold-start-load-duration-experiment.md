@@ -151,3 +151,9 @@ curl -s http://localhost:11434/api/generate -d '{
 还有，`load_duration`到底是哪些操作的总和，我没深挖Ollama内部，不下断言。除了读文件，可能还混了构建计算图之类的初始化。我能观测的是API返回的那个数字，以及这个数字对模型大小、页缓存、keep_alive的反应，今天测量的范围到此为止。热态下也会出现0.37秒，这个我只是推测，没法确证。
 
 最后，页缓存的行为取决于空闲RAM多少。内存紧张的服务器上，冷#2、#3的缓存也可能很快被挤掉，慢回冷#1的水平。我的测量更接近RAM充裕的乐观情形。下一步我想人为施加内存压力，看缓存能撑多久。冷启动不是测一次就完的话题，而是要按环境反复重测的那类成本。
+
+## 参考资料
+
+- [Ollama API文档](https://github.com/ollama/ollama/blob/main/docs/api.md) — 包含`load_duration`在内的响应字段，以及`keep_alive`参数。
+- [Ollama FAQ：把模型保留在内存里](https://docs.ollama.com/faq) — 默认5分钟保留，以及如何用`keep_alive`和`OLLAMA_KEEP_ALIVE`控制卸载。
+- [Linux内核：内存管理概念](https://www.kernel.org/doc/html/latest/admin-guide/mm/concepts.html) — 操作系统把从磁盘读到的文件数据留在RAM页缓存里的机制，正是它把冷分成了两种。

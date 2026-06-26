@@ -152,3 +152,9 @@ curl -s http://localhost:11434/api/generate -d '{
 또 하나, `load_duration`이 정확히 어떤 작업들의 합인지는 Ollama 내부를 깊게 파지 않아서 단정하지 않는다. 파일 읽기만이 아니라 연산 그래프 구성 같은 초기화도 섞여 있을 수 있다. 내가 관측할 수 있는 건 API가 돌려주는 그 숫자고, 그 숫자가 모델 크기·페이지 캐시·keep_alive에 어떻게 반응하는지까지가 오늘 측정의 범위다. 워밍 상태에서도 0.37초가 찍히는 정체도 추정만 했지 확정은 못 했다.
 
 마지막으로, 페이지 캐시 거동은 빈 RAM 양에 달려 있다. 메모리가 빠듯한 서버라면 콜드 #2, #3조차 캐시가 금방 밀려나 콜드 #1처럼 느려질 수 있다. 내 측정은 RAM이 넉넉한 상태에서의 낙관적 케이스에 가깝다. 다음엔 메모리 압박을 인위적으로 걸어두고 캐시가 얼마나 버티는지 재보고 싶다. 콜드 스타트는 한 번 측정으로 끝나는 주제가 아니라, 환경마다 다시 재야 하는 종류의 비용이다.
+
+## 참고자료
+
+- [Ollama API 문서](https://github.com/ollama/ollama/blob/main/docs/api.md) — `load_duration`을 비롯한 응답 필드와 `keep_alive` 파라미터.
+- [Ollama FAQ: 모델을 메모리에 유지하기](https://docs.ollama.com/faq) — 기본 5분 유지와 `keep_alive`·`OLLAMA_KEEP_ALIVE`로 언로드를 제어하는 방법.
+- [Linux 커널: 메모리 관리 개념](https://www.kernel.org/doc/html/latest/admin-guide/mm/concepts.html) — 디스크에서 읽은 파일 데이터를 OS가 RAM의 페이지 캐시에 들고 있는 동작. 콜드를 두 종류로 가르는 바로 그 메커니즘이다.
