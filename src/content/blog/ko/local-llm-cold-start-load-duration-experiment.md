@@ -1,9 +1,9 @@
 ---
 title: '로컬 LLM의 첫 응답은 왜 가끔 10초씩 걸릴까 — 콜드 스타트(load_duration)를 직접 재봤다'
 description: >-
-  잠깐 쉬었다가 에이전트를 다시 부르면 첫 응답이 유독 굼떴다. Ollama가 응답마다 돌려주는 load_duration을 모델 크기별로
-  뜯어보니, 2GB는 1.5초, 9.6GB는 최대 9.7초였다. 게다가 '콜드'에도 두 종류가 있었다. keep_alive 하나로 이 비용이
-  어떻게 갈리는지 직접 측정해 정리했다.
+  잠깐 쉬었다가 에이전트를 다시 부르면 첫 응답이 유독 굼떴다. Ollama가 응답마다 주는 load_duration을 모델 크기별로
+  뜯어보니 2GB는 1.5초, 9.6GB는 최대 9.7초였다. keep_alive 하나로 이 콜드 스타트 비용이 어떻게 갈리는지 직접 측정해
+  정리했다.
 pubDate: '2026-06-26'
 heroImage: '../../../assets/blog/local-llm-cold-start-load-duration-experiment/hero.png'
 tags:

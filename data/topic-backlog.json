@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-25",
+  "updated_at": "2026-06-26",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4154,6 +4154,40 @@
       "added_at": "2026-06-25",
       "status": "queued",
       "notes": "기능 소개에 그치지 않고, 100만 토큰 컨텍스트가 prefill 비용·지연에 미치는 영향을 local-llm-prefill-generation-latency 실험과 연결해 '긴 컨텍스트의 숨은 비용' 관점으로 차별화."
+    },
+    {
+      "slug": "gguf-quantization-q4-q5-q8-quality-speed-vram-tradeoff-2026",
+      "title_idea": "GGUF 양자화 Q4 vs Q5 vs Q8 직접 측정 — 품질·속도·VRAM 트레이드오프",
+      "content_type": "comparison",
+      "target_keyword": "GGUF 양자화 비교",
+      "secondary_keywords": [
+        "Q4_K_M Q5_K_M Q8_0",
+        "로컬 LLM 양자화 선택",
+        "perplexity 속도 트레이드오프"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "runaihome.com, vucense.com, dev.to/pat9000 (2026 GGUF quantization benchmarks)",
+      "added_at": "2026-06-26",
+      "status": "queued",
+      "notes": "최근 로컬 LLM 실측 시리즈(load_duration, prefill/generation) 연장선. Q4_K_M=92% perplexity·100tok/s, Q8_0는 29% 느림 등 실측 수치를 직접 재현. VRAM 구간별 권장(8-12GB→Q4_K_M 등) 표로 정리. 차별화: 벤더 글이 아닌 직접 측정 로그 + 한국어 모델 관점."
+    },
+    {
+      "slug": "mlx-vs-ollama-gguf-apple-silicon-local-llm-speed-benchmark-2026",
+      "title_idea": "Apple Silicon에서 MLX vs Ollama(GGUF) 토큰/초 직접 비교 — M칩 로컬 LLM 실측",
+      "content_type": "comparison",
+      "target_keyword": "MLX Ollama 비교",
+      "secondary_keywords": [
+        "Apple Silicon 로컬 LLM",
+        "MLX 토큰 속도",
+        "M칩 LLM 추론 벤치마크"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "codersera.com, glukhov.org (Ollama 0.19+ MLX backend on M-series, 2026)",
+      "added_at": "2026-06-26",
+      "status": "queued",
+      "notes": "Ollama 0.19+가 M시리즈에서 MLX를 내부 사용한다는 점을 실측으로 검증. 동일 모델·동일 머신에서 MLX 직접 실행 vs Ollama GGUF의 prefill/generation 속도 비교. 차별화: 콜드 스타트(load_duration) 시리즈와 연계해 'M칩 사용자 최적 경로' 결론 제시."
     }
   ]
 }
