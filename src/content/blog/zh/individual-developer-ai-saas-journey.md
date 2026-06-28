@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript类型定义
    - Zod schema验证
    
-   借助AI工具将副业项目发展为公司规模的做法,在Effloow：从副业到AI公司中也有详细介绍。把多个智能体串联起来自动化工作的实战经验,我整理在[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)中。
+   借助AI工具将副业项目发展为公司规模的做法,在effloow：从副业到AI公司中也有详细介绍。把多个智能体串联起来自动化工作的实战经验,我整理在[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)中。
 
 3. <strong>Vercel Preview Deployments</strong>
    - 每个PR自动部署URL

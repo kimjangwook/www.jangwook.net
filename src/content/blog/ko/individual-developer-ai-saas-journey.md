@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript 타입 정의
    - Zod 스키마 검증
    
-   솔로 개발자로 AI 도구를 활용해 사이드 프로젝트를 회사 수준으로 키우는 접근법은 효로우(Effloow) 사이드 프로젝트를 AI 컴퍼니로에서도 자세히 다뤘습니다. 여러 에이전트를 묶어 작업을 자동화하는 실전 노하우는 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)에 정리해 뒀습니다.
+   솔로 개발자로 AI 도구를 활용해 사이드 프로젝트를 회사 수준으로 키우는 접근법은 효로우(effloow) 사이드 프로젝트를 AI 컴퍼니로에서도 자세히 다뤘습니다. 여러 에이전트를 묶어 작업을 자동화하는 실전 노하우는 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)에 정리해 뒀습니다.
 
 3. <strong>Vercel Preview Deployments</strong>
    - PR마다 자동 배포 URL

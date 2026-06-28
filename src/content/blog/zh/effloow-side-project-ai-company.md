@@ -1,6 +1,6 @@
 ---
 draft: true
-title: Effloow — 用14个AI Agent运营公司的Side Project
+title: effloow — 用14个AI Agent运营公司的Side Project
 description: 基于Paperclip搭建了由14个AI Agent组成的内容业务。分享Laravel、Markdown、Git驱动的站点自动化架构与Day 1的实战经验。
 pubDate: '2026-04-02'
 heroImage: ../../../assets/blog/effloow-side-project-ai-company-hero.png
@@ -60,9 +60,9 @@ relatedPosts:
 
 所以我干脆造了一家真正的公司。
 
-## Effloow是什么
+## effloow是什么
 
-[Effloow](https://www.effloow.com)是一个打着"完全由AI Agent运营的内容业务"旗号的Side Project。听起来很厉害，实际是这样的：
+[effloow](https://www.effloow.com)是一个打着"完全由AI Agent运营的内容业务"旗号的Side Project。听起来很厉害，实际是这样的：
 
 - 一个基于Laravel的网站
 - 通过Paperclip连接的14个AI Agent
@@ -70,7 +70,7 @@ relatedPosts:
 
 没有CMS。没有管理后台。Agent们创建`.md`文件并提交，Laravel读取后渲染成HTML。就这么简单。
 
-![Effloow首页 — 内容自动渲染](../../../assets/blog/effloow-side-project-ai-company-home.png)
+![effloow首页 — 内容自动渲染](../../../assets/blog/effloow-side-project-ai-company-home.png)
 
 ## 为什么要做这个
 
@@ -80,7 +80,7 @@ relatedPosts:
 
 ## 组织架构：5个团队，14个Agent
 
-Effloow的Agent分为5个业务单元。
+effloow的Agent分为5个业务单元。
 
 ![Paperclip Agent列表 — CEO下方14个Agent按层级排列](../../../assets/blog/effloow-side-project-ai-company-agents.png)
 
@@ -100,7 +100,7 @@ Effloow的Agent分为5个业务单元。
 
 ## 技术栈的有趣之处
 
-Effloow架构中我最喜欢的部分是"Markdown就是数据库"这一点。
+effloow架构中我最喜欢的部分是"Markdown就是数据库"这一点。
 
 Agent写文章时做的事情就是这个：
 
@@ -159,6 +159,6 @@ tags: [ai, paperclip, orchestration]
 
 但有一点是确定的：<strong>初期搭建速度碾压式地快</strong>。一天之内就搞出了网站 + 内容 + 工具 + GA4集成 + Live Dashboard。一个人做的话至少得一周。
 
-我打算继续运营Effloow。下一个目标是让Agent自主创建Issue——Trend Scout发现选题，Board创建Issue，自动分配给Writer的循环。目前还是我手动创建Issue，离真正的"无人公司"还有距离。结合定时任务和API事件实现Agent自动化循环的方法，可参考[Claude Code Routines实战指南](/zh/blog/zh/claude-code-routines-practical-guide-2026)。
+我打算继续运营effloow。下一个目标是让Agent自主创建Issue——Trend Scout发现选题，Board创建Issue，自动分配给Writer的循环。目前还是我手动创建Issue，离真正的"无人公司"还有距离。结合定时任务和API事件实现Agent自动化循环的方法，可参考[Claude Code Routines实战指南](/zh/blog/zh/claude-code-routines-practical-guide-2026)。
 
-代码暂未开源，但站点可以在[effloow.com](https://www.effloow.com)查看。我计划每周通过Effloow Weekly记录进展。
+代码暂未开源，但站点可以在[effloow.com](https://www.effloow.com)查看。我计划每周通过effloow Weekly记录进展。

@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript型定義
    - Zodスキーマ検証
    
-   AIツールを活用してサイドプロジェクトを会社レベルに育てるアプローチはEffloow：サイドプロジェクトからAIカンパニーへでも詳しく解説しています。複数のエージェントを連携させて作業を自動化する実践ノウハウは[マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)にまとめてあります。
+   AIツールを活用してサイドプロジェクトを会社レベルに育てるアプローチはeffloow：サイドプロジェクトからAIカンパニーへでも詳しく解説しています。複数のエージェントを連携させて作業を自動化する実践ノウハウは[マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)にまとめてあります。
 
 3. <strong>Vercel Preview Deployments</strong>
    - PRごとに自動デプロイURL

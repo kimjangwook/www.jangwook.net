@@ -1,6 +1,6 @@
 ---
 draft: true
-title: Effloow — I Built a Company Run by 14 AI Agents as a Side Project
+title: effloow — I Built a Company Run by 14 AI Agents as a Side Project
 description: >-
   I built a content business powered by 14 AI agents on top of Paperclip. Here
   is how the site runs itself using Laravel, Markdown, and Git, plus lessons
@@ -63,9 +63,9 @@ In my last post, I installed Paperclip — an AI agent orchestration platform �
 
 So I went ahead and built an actual company.
 
-## What Is Effloow
+## What Is effloow
 
-[Effloow](https://www.effloow.com) is a side project that bills itself as "a content business operated entirely by AI agents." Sounds grandiose, but the reality is pretty straightforward:
+[effloow](https://www.effloow.com) is a side project that bills itself as "a content business operated entirely by AI agents." Sounds grandiose, but the reality is pretty straightforward:
 
 - One Laravel-based website
 - 14 AI agents connected through Paperclip
@@ -73,7 +73,7 @@ So I went ahead and built an actual company.
 
 No CMS. No admin panel. Agents create `.md` files and commit them; Laravel reads those files and spits out HTML. That's the whole thing.
 
-![Effloow homepage — content is rendered automatically](../../../assets/blog/effloow-side-project-ai-company-home.png)
+![effloow homepage — content is rendered automatically](../../../assets/blog/effloow-side-project-ai-company-home.png)
 
 ## Why I Built This
 
@@ -83,7 +83,7 @@ I was also curious. <strong>Can a company actually run on AI alone?</strong> Rev
 
 ## Org Structure: 5 Teams, 14 Agents
 
-Effloow's agents are organized into five business units.
+effloow's agents are organized into five business units.
 
 ![Paperclip agent list — 14 agents arranged in a hierarchy under the CEO](../../../assets/blog/effloow-side-project-ai-company-agents.png)
 
@@ -103,7 +103,7 @@ Here is what it looks like on the Paperclip dashboard:
 
 ## What Makes the Tech Stack Interesting
 
-My favorite part of Effloow's architecture is that Markdown <strong>is</strong> the database.
+My favorite part of effloow's architecture is that Markdown <strong>is</strong> the database.
 
 When an agent writes an article, here is what it does:
 
@@ -162,6 +162,6 @@ When you manage people, you do 1-on-1s and code reviews. When you manage agents,
 
 What's undeniable, though, is that <strong>the initial build speed is overwhelming</strong>. In a single day, I had a site + content + tools + GA4 integration + a live dashboard. Doing this solo would have taken at least a week.
 
-I plan to keep running Effloow. The next goal is having agents generate their own issues — the Trend Scout finds topics, the Board creates issues, and they get auto-assigned to the Writer. Right now I still have to create every issue myself, so it's a long way from a truly "unmanned company." For implementing agent automation loops combining schedules and API events, see the [Claude Code Routines Practical Guide](/en/blog/en/claude-code-routines-practical-guide-2026).
+I plan to keep running effloow. The next goal is having agents generate their own issues — the Trend Scout finds topics, the Board creates issues, and they get auto-assigned to the Writer. Right now I still have to create every issue myself, so it's a long way from a truly "unmanned company." For implementing agent automation loops combining schedules and API events, see the [Claude Code Routines Practical Guide](/en/blog/en/claude-code-routines-practical-guide-2026).
 
-The code isn't open-sourced yet, but you can see the site at [effloow.com](https://www.effloow.com). I'll be documenting progress in a weekly Effloow Weekly series.
+The code isn't open-sourced yet, but you can see the site at [effloow.com](https://www.effloow.com). I'll be documenting progress in a weekly effloow Weekly series.

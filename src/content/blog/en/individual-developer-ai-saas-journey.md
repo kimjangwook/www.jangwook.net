@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript type definitions
    - Zod schema validation
    
-   The broader approach of using AI tools to grow a side project to company scale is covered in Effloow: from side project to AI company. The hands-on details of chaining several agents to automate the work live in [my notes on improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement).
+   The broader approach of using AI tools to grow a side project to company scale is covered in effloow: from side project to AI company. The hands-on details of chaining several agents to automate the work live in [my notes on improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement).
 
 3. <strong>Vercel Preview Deployments</strong>
    - Automatic deployment URL per PR
