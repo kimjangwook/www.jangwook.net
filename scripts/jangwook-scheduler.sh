@@ -171,6 +171,34 @@ if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
     fi
 fi
 
+# --- 크로스포스트 결정적 enforcement (2026-06-28) ---
+# 배경: daily-post 에이전트 프롬프트/SKILL 에 "crosspost.js 호출"이 있으나 긴 자율 실행
+# 끝의 소프트 스텝이라 조용히 누락 → crosspost-log 가 2026-05-21 이후 6주 공백.
+# 에이전트 재량에 맡기지 않고 스케줄러가 직접 실행한다.
+# 대상: '오늘 새로 추가된'(--diff-filter=A) 영문 글만 → 과거 글 백필(스팸) 방지.
+# 안전: crosspost.js 의 dedup 가드가 2차 방어, 본 단계는 완전 비치명적(EXIT_CODE 불변).
+if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
+    NEW_EN_POSTS=$(git log --since="$(date +%Y-%m-%d)T00:00:00" --diff-filter=A \
+        --name-only --pretty=format: -- 'src/content/blog/en/*.md' 2>/dev/null \
+        | grep '\.md$' | sort -u)
+    if [ -n "$NEW_EN_POSTS" ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Crosspost gate: 신규 영문 글 감지" >> "$LOG_FILE"
+        while IFS= read -r enfile; do
+            [ -z "$enfile" ] && continue
+            cpslug=$(basename "$enfile" .md)
+            echo "[$(date '+%Y-%m-%d %H:%M:%S')] crosspost: $cpslug" >> "$LOG_FILE"
+            node scripts/crosspost.js "$cpslug" >> "$LOG_FILE" 2>&1 \
+                || echo "[$(date '+%Y-%m-%d %H:%M:%S')] crosspost 비치명 실패: $cpslug (로그/crosspost-log.json 확인)" >> "$LOG_FILE"
+        done <<< "$NEW_EN_POSTS"
+        # 크로스포스트 후 로그(data/crosspost-log.json) 변경분만 커밋 (있을 때만)
+        if ! git diff --quiet -- data/crosspost-log.json 2>/dev/null; then
+            git add data/crosspost-log.json 2>/dev/null || true
+            git commit -m "chore(crosspost): log cross-post results" >> "$LOG_FILE" 2>&1 || true
+            git push origin main >> "$LOG_FILE" 2>&1 || true
+        fi
+    fi
+fi
+
 ELAPSED=$(( $(date +%s) - START_TIME ))
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] DONE: $TASK_NAME (exit: $EXIT_CODE, ${ELAPSED}s)" >> "$LOG_FILE"
 

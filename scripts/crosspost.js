@@ -38,6 +38,7 @@ const slug = args.find(a => !a.startsWith('--'));
 const dryRun = args.includes('--dry-run');
 const platformArg = args.find(a => a.startsWith('--platform='));
 const platform = platformArg ? platformArg.split('=')[1] : 'all';
+const force = args.includes('--force');
 
 if (!slug) {
   console.error('Usage: node scripts/crosspost.js <slug> [--dry-run] [--platform=all|devto|hashnode]');
@@ -62,15 +63,51 @@ function parseArticle(slug) {
   const frontmatter = match[1];
   const body = match[2].trim();
 
-  // Simple YAML parsing for the fields we need
+  // YAML 파싱 — 한 줄 스칼라 + 블록 스칼라(>- > | |- 등) 모두 지원.
+  // (현행 영문 글은 description 에 folded scalar `>-` 를 쓰므로 한 줄 정규식으론 지시자만 잡힌다)
+  const flines = frontmatter.split('\n');
   const getField = (key) => {
-    const m = frontmatter.match(new RegExp(`^${key}:\\s*["']?(.+?)["']?\\s*$`, 'm'));
-    return m ? m[1] : '';
+    for (let i = 0; i < flines.length; i++) {
+      const m = flines[i].match(new RegExp(`^${key}:\\s*(.*)$`));
+      if (!m) continue;
+      let val = m[1].trim();
+      // 블록 스칼라 지시자(>, |, 옵션 +/-)면 다음 들여쓰기 줄들을 본문으로 수집
+      if (/^[>|][+-]?$/.test(val)) {
+        const collected = [];
+        let baseIndent = null;
+        for (let j = i + 1; j < flines.length; j++) {
+          if (flines[j].trim() === '') { collected.push(''); continue; }
+          const indent = flines[j].match(/^(\s*)/)[1].length;
+          if (indent === 0) break;                 // 다음 최상위 키 → 블록 종료
+          if (baseIndent === null) baseIndent = indent;
+          if (indent < baseIndent) break;
+          collected.push(flines[j].slice(baseIndent));
+        }
+        const folded = val.startsWith('>');        // > 는 공백 결합, | 는 줄바꿈 보존
+        return collected.join(folded ? ' ' : '\n').trim();
+      }
+      // 한 줄 스칼라: 둘러싼 따옴표 제거 + YAML 단일따옴표 이스케이프('' → ')
+      val = val.replace(/^"(.*)"$/s, '$1').replace(/^'(.*)'$/s, '$1').replace(/''/g, "'");
+      return val;
+    }
+    return '';
   };
   const getTags = () => {
-    const m = frontmatter.match(/^tags:\s*\[([^\]]*)\]/m);
-    if (!m) return [];
-    return m[1].split(',').map(t => t.trim().replace(/["']/g, '')).filter(Boolean);
+    // 인라인: tags: [a, b]
+    const inline = frontmatter.match(/^tags:\s*\[([^\]]*)\]/m);
+    if (inline) {
+      return inline[1].split(',').map(t => t.trim().replace(/["']/g, '')).filter(Boolean);
+    }
+    // 블록 리스트: tags:\n  - a\n  - b  (현행 글의 형식)
+    const idx = flines.findIndex(l => /^tags:\s*$/.test(l));
+    if (idx === -1) return [];
+    const out = [];
+    for (let j = idx + 1; j < flines.length; j++) {
+      const m = flines[j].match(/^\s+-\s+(.+?)\s*$/);
+      if (!m) break;                                  // 들여쓴 `- ` 항목이 끝나면 종료
+      out.push(m[1].replace(/["']/g, '').trim());
+    }
+    return out.filter(Boolean);
   };
 
   return {
@@ -179,6 +216,15 @@ async function postToHashnode(article) {
   return { success: false, error: `HTTP ${res.status}: ${detail}` };
 }
 
+// --- Dedup guard: 같은 slug 가 이미 해당 플랫폼에 성공 발행됐는지 (멱등 재실행/중복방지) ---
+function alreadyPosted(slug, plat) {
+  if (force || !existsSync(LOG_PATH)) return false;
+  try {
+    const log = JSON.parse(readFileSync(LOG_PATH, 'utf-8'));
+    return log.some(e => e.slug === slug && e.results?.[plat]?.success === true);
+  } catch { return false; }
+}
+
 // --- Log results ---
 function logResults(slug, results) {
   let log = [];
@@ -214,22 +260,32 @@ async function main() {
   const results = {};
 
   if (platform === 'all' || platform === 'devto') {
-    console.log('Posting to dev.to...');
-    results.devto = await postToDevTo(article);
-    if (results.devto.success) {
-      console.log(`  OK dev.to: ${results.devto.url}`);
+    if (alreadyPosted(slug, 'devto')) {
+      console.log('  SKIP dev.to: 이미 발행됨 (--force 로 재발행)');
+      results.devto = { success: true, skipped: true };
     } else {
-      console.error(`  FAIL dev.to: ${results.devto.error}`);
+      console.log('Posting to dev.to...');
+      results.devto = await postToDevTo(article);
+      if (results.devto.success) {
+        console.log(`  OK dev.to: ${results.devto.url}`);
+      } else {
+        console.error(`  FAIL dev.to: ${results.devto.error}`);
+      }
     }
   }
 
   if (platform === 'all' || platform === 'hashnode') {
-    console.log('Posting to Hashnode...');
-    results.hashnode = await postToHashnode(article);
-    if (results.hashnode.success) {
-      console.log(`  OK Hashnode: ${results.hashnode.url}`);
+    if (alreadyPosted(slug, 'hashnode')) {
+      console.log('  SKIP Hashnode: 이미 발행됨 (--force 로 재발행)');
+      results.hashnode = { success: true, skipped: true };
     } else {
-      console.error(`  FAIL Hashnode: ${results.hashnode.error}`);
+      console.log('Posting to Hashnode...');
+      results.hashnode = await postToHashnode(article);
+      if (results.hashnode.success) {
+        console.log(`  OK Hashnode: ${results.hashnode.url}`);
+      } else {
+        console.error(`  FAIL Hashnode: ${results.hashnode.error}`);
+      }
     }
   }
 
