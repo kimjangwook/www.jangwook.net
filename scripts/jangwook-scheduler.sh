@@ -192,12 +192,7 @@ if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
             node scripts/crosspost.js "$cpslug" --platform="${CROSSPOST_PLATFORMS:-devto}" >> "$LOG_FILE" 2>&1 \
                 || echo "[$(date '+%Y-%m-%d %H:%M:%S')] crosspost 비치명 실패: $cpslug (로그/crosspost-log.json 확인)" >> "$LOG_FILE"
         done <<< "$NEW_EN_POSTS"
-        # 크로스포스트 후 로그(data/crosspost-log.json) 변경분만 커밋 (있을 때만)
-        if ! git diff --quiet -- data/crosspost-log.json 2>/dev/null; then
-            git add data/crosspost-log.json 2>/dev/null || true
-            git commit -m "chore(crosspost): log cross-post results" >> "$LOG_FILE" 2>&1 || true
-            git push origin main >> "$LOG_FILE" 2>&1 || true
-        fi
+        # crosspost-log.json 은 data/ 가 .gitignore 라 커밋하지 않음(로컬 상태로 dedup 충분, launchd 동일 머신).
     fi
 fi
 
