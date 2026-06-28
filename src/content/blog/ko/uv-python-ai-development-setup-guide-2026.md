@@ -583,4 +583,4 @@ uv self update
 
 **이미지 brief** (Codex 이미지 생성용): uv의 병렬 다운로드 아키텍처를 보여주는 다이어그램. pip의 순차적 패키지 해결(직렬 화살표)과 uv의 병렬 해결(동시 화살표 여러 개)을 나란히 배치. 배경은 어두운 터미널 테마. 제목은 "uv vs pip: Parallel Resolution". 색상: uv는 보라/인디고, pip은 회색.
 
-관련 깊이 있는 글: LLM 코딩 환경을 최적화할 때 의존성 관리가 왜 중요한지도 참고하면 전체 개발 워크플로우를 맥락에서 이해하는 데 도움이 된다.
+uv로 환경을 깔끔하게 잡았다면 그다음 자연스러운 단계는 로컬 관측성이다. 직접 띄운 환경 위에 LLM 트레이싱을 얹는 방법은 [Langfuse v3 셀프호스팅 완전 가이드](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026)에서 이어서 다룬다.

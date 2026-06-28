@@ -1050,7 +1050,7 @@ Skills と Commands は万能の道具ではない。実際に回してみると
 - [anthropics/skills (GitHub)](https://github.com/anthropics/skills) — Anthropic が公開したオープンソース Skill 集
 - [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — Skills のアーキテクチャを扱った Anthropic エンジニアリングブログ
 
-このシリーズを初めて読むなら、まず [Part 1: メタデータで 71% コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1)で 3-Tier アーキテクチャの全体像をつかむほうがよい。ここで扱った Agent 委任パターンをさらに掘りたいなら、[Claude Code マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)と [Claude Agent Teams 実践ガイド](/ja/blog/ja/claude-agent-teams-guide)が自然な次の記事だ。
+このシリーズを初めて読むなら、まず [Part 1: メタデータで 71% コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1)で 3-Tier アーキテクチャの全体像をつかむほうがよい。ここで扱った Agent 委任パターンをさらに掘りたいなら、[Claude Code マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)と [Claude Agent Teams 実践ガイド](/ja/blog/ja/claude-agent-teams-guide)が自然な次の記事だ。トークンをここまで削っても、エージェントを何台も回せば結局コストはかかる。実運用の費用が気になるなら、[AIエージェントのコスト vs 人件費の現実](/ja/blog/ja/ai-agent-cost-reality)で実際の数字を確かめてほしい。
 
 ## まとめ:Skills と Commands が噛み合う場所
 

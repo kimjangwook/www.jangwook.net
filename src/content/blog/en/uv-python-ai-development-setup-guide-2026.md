@@ -549,3 +549,5 @@ Every command and behavior in this post was cross-checked against the official u
 - [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/) — official per-OS install instructions
 - [Using uv in GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/) — CI integration and the `astral-sh/setup-uv` action
 - [Astral documentation hub](https://docs.astral.sh/) — docs from the Astral team behind uv, Ruff, and ty
+
+Once uv has your environment sorted, the natural next step is local observability. For wiring LLM tracing on top of the setup you just built, the [Langfuse v3 Self-Hosting Guide](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026) picks up right where this leaves off.

@@ -519,3 +519,5 @@ uv self update
 - [uvインストールガイド](https://docs.astral.sh/uv/getting-started/installation/) — OS別インストール方法の公式ドキュメント
 - [GitHub Actionsでuvを使う](https://docs.astral.sh/uv/guides/integration/github/) — CI統合と`astral-sh/setup-uv`アクション
 - [Astral公式ドキュメントハブ](https://docs.astral.sh/) — uv、Ruff、tyを開発するAstralチームのドキュメント集
+
+uvで環境をきれいに整えたら、次の自然なステップはローカルの可観測性だ。自分で立てた環境の上にLLMトレーシングを載せる方法は、[Langfuse v3 セルフホスティング完全ガイド](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026)で続けて扱っている。

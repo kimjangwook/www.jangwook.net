@@ -326,7 +326,7 @@ A feature table clouds the decision. The real call narrows to "does this tool fi
 - You want deployment, eval, and UI from a single tool but cannot assemble separate infrastructure. LangGraph gives you the runtime only.
 - Your team has zero LangChain experience and works mainly in a language other than Python.
 
-If the call is hard, looking at a wider set of options in the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026) helps. For RAG-centric workflows, the [LlamaIndex vs LangChain vs Haystack comparison](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) shows another axis of the framework decision.
+If the call is hard, looking at a wider set of options in the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026) helps. For RAG-centric workflows, the [LlamaIndex vs LangChain vs Haystack comparison](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) shows another axis of the framework decision. And if type safety is your priority, the [PydanticAI Practical Tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) lays out yet another approach worth weighing.
 
 ## Primary Sources
 

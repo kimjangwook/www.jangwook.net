@@ -541,3 +541,5 @@ uv self update
 - [uv 安装指南](https://docs.astral.sh/uv/getting-started/installation/) — 各操作系统安装方式的官方文档
 - [在 GitHub Actions 中使用 uv](https://docs.astral.sh/uv/guides/integration/github/) — CI 集成与 `astral-sh/setup-uv` action
 - [Astral 官方文档中心](https://docs.astral.sh/) — uv、Ruff、ty 背后 Astral 团队的文档集
+
+用 uv 把环境理顺之后，下一个自然的步骤是本地可观测性。如何在你刚搭好的环境之上接入 LLM 链路追踪，[Langfuse v3 自托管完整指南](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026)正好接着这一步展开。

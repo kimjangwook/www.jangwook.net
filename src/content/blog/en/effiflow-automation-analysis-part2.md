@@ -1050,7 +1050,7 @@ If you want to verify any of this, the official docs are the most accurate refer
 - [anthropics/skills (GitHub)](https://github.com/anthropics/skills) — Anthropic's open-source Skills repository
 - [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — Anthropic engineering blog on Skills architecture
 
-New to this series? Start with [Part 1: cutting cost 71% with metadata](/en/blog/en/effiflow-automation-analysis-part1) to get the full 3-Tier picture first. If you want to push deeper on the Agent delegation pattern covered here, [Improving Claude Code multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement) and the [Claude Agent Teams hands-on guide](/en/blog/en/claude-agent-teams-guide) are the natural next reads.
+New to this series? Start with [Part 1: cutting cost 71% with metadata](/en/blog/en/effiflow-automation-analysis-part1) to get the full 3-Tier picture first. If you want to push deeper on the Agent delegation pattern covered here, [Improving Claude Code multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement) and the [Claude Agent Teams hands-on guide](/en/blog/en/claude-agent-teams-guide) are the natural next reads. Even after trimming tokens this much, running a fleet of agents still costs money. To see what that actually adds up to, check [AI Agent Cost vs Human Labor](/en/blog/en/ai-agent-cost-reality).
 
 ## Where Skills and Commands Click Together
 

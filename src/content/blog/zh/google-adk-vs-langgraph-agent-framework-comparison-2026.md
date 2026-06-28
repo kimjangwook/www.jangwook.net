@@ -305,7 +305,7 @@ ADK优化的是"快速构建智能体系统并部署到GCP"，LangGraph优化的
 - 想用一个工具搞定部署、评估和 UI，却没有余力另外搭建基础设施。LangGraph 只提供运行时。
 - 团队完全没有 LangChain 经验，主力语言又不是 Python。
 
-如果难以抉择，可以在[Python AI 智能体库对比](/zh/blog/zh/python-ai-agent-library-comparison-2026)中一并查看更广的选项。如果是以 RAG 为中心的工作流，[LlamaIndex vs LangChain vs Haystack 对比](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026)展示了框架决策的另一个维度。
+如果难以抉择，可以在[Python AI 智能体库对比](/zh/blog/zh/python-ai-agent-library-comparison-2026)中一并查看更广的选项。如果是以 RAG 为中心的工作流，[LlamaIndex vs LangChain vs Haystack 对比](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026)展示了框架决策的另一个维度。如果你把类型安全放在首位，[PydanticAI实战教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)则给出了另一种思路，值得一并对比。
 
 ## 一手来源
 

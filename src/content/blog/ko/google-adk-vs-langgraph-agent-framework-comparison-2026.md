@@ -484,7 +484,7 @@ AI 에이전트 프레임워크 비교를 할 때 자주 보는 실수가 있다
 - 배포·평가·UI까지 한 도구로 끝내고 싶은데 별도 인프라를 조립할 여력이 없다. LangGraph는 런타임만 제공한다.
 - 팀에 LangChain 경험이 전혀 없고 Python 외 언어가 주력이다.
 
-판단이 어렵다면 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 더 넓은 선택지를 함께 보는 것도 방법이다. RAG 중심 워크플로우라면 [LlamaIndex vs LangChain vs Haystack 비교](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)가 프레임워크 결정의 또 다른 축을 보여준다.
+판단이 어렵다면 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 더 넓은 선택지를 함께 보는 것도 방법이다. RAG 중심 워크플로우라면 [LlamaIndex vs LangChain vs Haystack 비교](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)가 프레임워크 결정의 또 다른 축을 보여준다. 타입 안정성을 우선순위에 둔다면 [PydanticAI 실전 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)이 또 다른 접근법을 제시하니 함께 비교해볼 만하다.
 
 ## 1차 출처
 

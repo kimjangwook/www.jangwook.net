@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-26",
+  "updated_at": "2026-06-28",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4290,6 +4290,40 @@
       "added_at": "2026-06-28",
       "status": "queued",
       "notes": "뉴스 장르 — 시의성. truncation 실험과 '로컬 vs 클라우드 컨텍스트 관리' 대비로 cross-link."
+    },
+    {
+      "slug": "vllm-structured-outputs-production-serving-guide-2026",
+      "title_idea": "vLLM 구조화 출력 실전 — Pydantic 스키마로 프로덕션 LLM 서빙하기",
+      "content_type": "how-to",
+      "target_keyword": "vllm structured outputs",
+      "secondary_keywords": [
+        "vllm guided decoding",
+        "llm json schema serving",
+        "pydantic vllm"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "HPE Developer Portal: Using structured outputs in vLLM; Agenta structured outputs guide (2026)",
+      "added_at": "2026-06-28",
+      "status": "queued",
+      "notes": "사이트의 Ollama 편중에서 벗어나 고처리량 서빙 관점으로 차별화. guided decoding/outlines 기반 JSON 스키마 강제, 배치 서빙 성능까지 실측 코드로. ollama-structured-outputs 글과 자연 내부링크."
+    },
+    {
+      "slug": "biome-2-eslint-prettier-migration-guide-2026",
+      "title_idea": "Biome 2로 ESLint+Prettier 걷어내기 — 단일 툴체인 마이그레이션 실전",
+      "content_type": "how-to",
+      "target_keyword": "biome eslint prettier migration",
+      "secondary_keywords": [
+        "biome 2 setup",
+        "biome vs eslint",
+        "javascript lint format toolchain"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Biome 2.x 릴리스 노트, JS 툴링 생태계 동향 2026",
+      "added_at": "2026-06-28",
+      "status": "queued",
+      "notes": "LLM 단일 장르에서 벗어나 JS 툴링으로 다각화(주간 리뷰 진단 반영). 에버그린: lint+format 단일화는 신규/레거시 모두 수요. drizzle-orm·hono·node-sqlite 등 기존 TS 글과 내부링크 고리 형성."
     }
   ]
 }
