@@ -151,13 +151,22 @@ async function postToDevTo(article) {
     body: JSON.stringify(payload),
   });
 
+  const bodyText = await res.text();
   if (res.ok) {
-    const data = await res.json();
-    return { success: true, url: data.url, id: data.id };
+    // 2xx 라도 본문이 JSON 이 아닐 수 있다(안티봇/프록시 HTML) → throw 로 죽지 말고 실패 기록.
+    try {
+      const data = JSON.parse(bodyText);
+      return { success: true, url: data.url, id: data.id };
+    } catch {
+      return { success: false, error: `HTTP ${res.status}: non-JSON 응답 (안티봇/프록시 추정)` };
+    }
   }
 
-  const errBody = await res.text();
-  return { success: false, error: `HTTP ${res.status}: ${errBody}` };
+  // 422 canonical-taken = 이미 발행됨 → 멱등 성공으로 처리(중복 발행 아님).
+  if (res.status === 422 && /canonical url has already been taken/i.test(bodyText)) {
+    return { success: true, alreadyExists: true, note: 'dev.to: canonical 이미 등록됨(기발행)' };
+  }
+  return { success: false, error: `HTTP ${res.status}: ${bodyText.slice(0, 300)}` };
 }
 
 // --- Hashnode API ---
@@ -197,19 +206,24 @@ async function postToHashnode(article) {
     body: JSON.stringify({ query: mutation, variables }),
   });
 
-  if (res.ok) {
-    const data = await res.json();
-    if (data.errors?.length > 0) {
-      return { success: false, error: data.errors[0].message };
-    }
-    const post = data.data?.publishPost?.post;
-    return { success: true, url: post?.url, id: post?.id };
-  }
-
   const errBody = await res.text();
   // HTML(비-JSON) 응답이면 전체 페이지를 덤프하지 말고 원인을 짚어준다.
   // 보통 API 키 무효/엔드포인트 변경/Cloudflare 안티봇 → 코드가 아니라 환경 문제.
+  // 주의: Hashnode 는 2xx 로도 HTML 챌린지를 반환할 수 있어 res.ok 분기에서도 throw 가 났다
+  // (스크립트 전체 Fatal → 로그 미기록). JSON 파싱을 try/catch 로 감싸 깔끔히 실패 기록한다.
   const looksHtml = /^\s*<(?:!doctype|html)/i.test(errBody);
+  if (res.ok) {
+    try {
+      const data = JSON.parse(errBody);
+      if (data.errors?.length > 0) {
+        return { success: false, error: data.errors[0].message };
+      }
+      const post = data.data?.publishPost?.post;
+      return { success: true, url: post?.url, id: post?.id };
+    } catch {
+      return { success: false, error: `HTTP ${res.status}: non-JSON(HTML) 200 응답 — HASHNODE_API_KEY 유효성/엔드포인트/안티봇(Cloudflare) 확인 필요` };
+    }
+  }
   const detail = looksHtml
     ? 'non-JSON(HTML) 응답 — HASHNODE_API_KEY 유효성/엔드포인트/안티봇(Cloudflare) 확인 필요'
     : errBody.slice(0, 300);

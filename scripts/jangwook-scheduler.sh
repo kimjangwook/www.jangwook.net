@@ -186,8 +186,10 @@ if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
         while IFS= read -r enfile; do
             [ -z "$enfile" ] && continue
             cpslug=$(basename "$enfile" .md)
-            echo "[$(date '+%Y-%m-%d %H:%M:%S')] crosspost: $cpslug" >> "$LOG_FILE"
-            node scripts/crosspost.js "$cpslug" >> "$LOG_FILE" 2>&1 \
+            echo "[$(date '+%Y-%m-%d %H:%M:%S')] crosspost: $cpslug (platform=${CROSSPOST_PLATFORMS:-devto})" >> "$LOG_FILE"
+            # Hashnode 는 2026-06 정책변경으로 GraphQL API 가 Pro 구독 전용(gql.hashnode.com → 공지 301).
+            # 자동화 기본은 작동하는 dev.to 만. Hashnode Pro 업그레이드 후 plist 에 CROSSPOST_PLATFORMS=all 설정.
+            node scripts/crosspost.js "$cpslug" --platform="${CROSSPOST_PLATFORMS:-devto}" >> "$LOG_FILE" 2>&1 \
                 || echo "[$(date '+%Y-%m-%d %H:%M:%S')] crosspost 비치명 실패: $cpslug (로그/crosspost-log.json 확인)" >> "$LOG_FILE"
         done <<< "$NEW_EN_POSTS"
         # 크로스포스트 후 로그(data/crosspost-log.json) 변경분만 커밋 (있을 때만)
