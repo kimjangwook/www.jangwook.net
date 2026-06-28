@@ -156,3 +156,10 @@ def guarded_generate(prompt, num_ctx=8192, model="melavisions/gemma4:latest"):
 そして正直、解けなかったものが一つ残った。OpenAI互換エンドポイント(`/v1/chat/completions`)でも同じテストを回したが、ここでは`options.num_ctx`をリクエストごとに渡す方法がなく、`usage.prompt_tokens`が`/api/generate`の`prompt_eval_count`と違う数(同じテキストなのに3464対2384)で出た。しかも私のマシンでは長い入力でもheadが生き残ってrecallできた。トークン集計方式が違うので二つのエンドポイントを1:1で比べられないところまではわかるが、なぜ切り落としの挙動まで違って見えたのかは綺麗に説明できない。ただ[OpenAI互換APIでnum_ctxが効かず4096で無言に切られるという報告](https://github.com/ollama/ollama/issues/2714)が実際にあるので、`/v1`経路を使うならサーバー既定値(`OLLAMA_CONTEXT_LENGTH`)に全面的に依存する点は覚えておくといい。
 
 [コールドスタート時にload_durationを追跡した](/ja/blog/ja/local-llm-cold-start-load-duration-experiment)ときと同じ筋だ。Ollamaが応答にそっと添えて返す数字たちは、ドキュメントにあまり書かれていなくても、実挙動を追う一番正直な手がかりだ。`load_duration`がコールドスタートを密告したように、`prompt_eval_count`は切り落としを密告する。ローカルモデルを本気で回すなら、この数字たちを一度のぞいてみることをすすめる。
+
+## 参考資料
+
+- [Ollama APIリファレンス](https://github.com/ollama/ollama/blob/main/docs/api.md) — リクエストの`options`内の`num_ctx`でModelfileのコンテキストサイズをリクエストごとに上書きする方法。
+- [Ollamaコンテキスト長ドキュメント](https://docs.ollama.com/context-length) — 既定のコンテキストウィンドウが利用可能メモリに応じてどう決まるか(24GiB VRAM未満で4k、それ以上はより大きく)。
+- [Ollama FAQ](https://docs.ollama.com/faq) — 既定のコンテキストウィンドウ設定と、コンテキストが溢れると最も古いメッセージから落ちるという記述。
+- [Ollama Modelfileリファレンス](https://docs.ollama.com/modelfile) — `PARAMETER num_ctx`で固定のコンテキストサイズをモデルに焼き込む方法。

@@ -1,9 +1,8 @@
 ---
 title: 'Why My Local Agent Forgot Its System Prompt — Measuring Ollama num_ctx Silent Truncation'
 description: >-
-  My local agent started ignoring its instructions on long inputs. I hid a secret code at the top of the
-  prompt and grew the length until recall broke. Past num_ctx, Ollama trims the front of your prompt with no
-  error. And the "default is 4096" lore was wrong on my MacBook.
+  My local agent kept ignoring its system prompt on long inputs. Past num_ctx, Ollama silently trims the
+  front of the prompt — no error. I measured where it breaks.
 pubDate: '2026-06-28'
 heroImage: '../../../assets/blog/ollama-num-ctx-silent-truncation-experiment/hero.png'
 tags:
@@ -157,3 +156,10 @@ Third, the default num_ctx landing on 16384 is a product of my 16GB M1 plus Olla
 And honestly, one thing I couldn't resolve remains. I ran the same test through the OpenAI-compatible endpoint (`/v1/chat/completions`) too, where there's no way to pass `options.num_ctx` per request, and `usage.prompt_tokens` reported a different number from `/api/generate`'s `prompt_eval_count` (3464 versus 2384 for the same text). On top of that, on my machine the head survived even on long input and recall worked. I get that the token accounting differs so the two endpoints can't be compared one-to-one, but why the truncation behavior looked different too, I can't cleanly explain. Either way, [a reported issue where num_ctx isn't honored on the OpenAI-compatible API and it silently truncates at 4096](https://github.com/ollama/ollama/issues/2714) does exist, so if you go through `/v1`, remember you're fully at the mercy of the server default (`OLLAMA_CONTEXT_LENGTH`).
 
 It's the same thread as [tracking load_duration during cold starts](/en/blog/en/local-llm-cold-start-load-duration-experiment). The numbers Ollama quietly tucks into each response, however thinly documented, are the most honest clues to its real behavior. Just as `load_duration` snitched on cold starts, `prompt_eval_count` snitches on truncation. If you're running local models seriously, give these numbers a look.
+
+## References
+
+- [Ollama API reference](https://github.com/ollama/ollama/blob/main/docs/api.md) — Shows `num_ctx` inside the request `options`, which overrides the Modelfile's context size per request.
+- [Ollama context length docs](https://docs.ollama.com/context-length) — How the default context window scales with available memory (4k under 24 GiB VRAM, larger above).
+- [Ollama FAQ](https://docs.ollama.com/faq) — Default context window settings and the note that the oldest messages drop first when context overflows.
+- [Ollama Modelfile reference](https://docs.ollama.com/modelfile) — Using `PARAMETER num_ctx` to bake a fixed context size into a model.

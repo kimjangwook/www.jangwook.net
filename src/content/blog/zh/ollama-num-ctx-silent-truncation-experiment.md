@@ -156,3 +156,10 @@ def guarded_generate(prompt, num_ctx=8192, model="melavisions/gemma4:latest"):
 还有一件，老实说我没解开。我也用 OpenAI 兼容端点(`/v1/chat/completions`)跑了同一套测试，那里没法每次请求传 `options.num_ctx`，而且 `usage.prompt_tokens` 报出来的数和 `/api/generate` 的 `prompt_eval_count` 不一样(同一段文本，3464 对 2384)。更怪的是，在我机器上即便长输入 head 也活了下来，recall 成功。我能想通的是 token 计数方式不同、两个端点没法一比一对照，但为什么连截断行为看起来都不一样，我没法干净地解释。不过 [OpenAI 兼容 API 不认 num_ctx、在 4096 处无声截断的问题](https://github.com/ollama/ollama/issues/2714)确实有人报过，所以走 `/v1` 这条路的话，要记住你完全受制于服务端默认值(`OLLAMA_CONTEXT_LENGTH`)。
 
 这跟[冷启动时追踪 load_duration](/zh/blog/zh/local-llm-cold-start-load-duration-experiment) 是一个路子。Ollama 悄悄塞进每个响应里的那些数字，哪怕文档写得稀薄，也是追踪它真实行为最诚实的线索。就像 `load_duration` 供出了冷启动，`prompt_eval_count` 供出了截断。要是你认真在跑本地模型，不妨把这些数字一个个翻出来看看。
+
+## 参考资料
+
+- [Ollama API 参考](https://github.com/ollama/ollama/blob/main/docs/api.md) — 展示请求 `options` 里的 `num_ctx`，可在每次请求中覆盖 Modelfile 的上下文大小。
+- [Ollama 上下文长度文档](https://docs.ollama.com/context-length) — 默认上下文窗口如何随可用内存伸缩(24GiB VRAM 以下为 4k，更高则更大)。
+- [Ollama FAQ](https://docs.ollama.com/faq) — 默认上下文窗口设置，以及上下文溢出时从最旧消息开始丢弃的说明。
+- [Ollama Modelfile 参考](https://docs.ollama.com/modelfile) — 用 `PARAMETER num_ctx` 把固定的上下文大小烧进模型。

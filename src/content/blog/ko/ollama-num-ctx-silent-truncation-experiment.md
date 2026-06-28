@@ -158,3 +158,10 @@ def guarded_generate(prompt, num_ctx=8192, model="melavisions/gemma4:latest"):
 그리고 솔직히 못 푼 게 하나 남았다. OpenAI 호환 엔드포인트(`/v1/chat/completions`)로도 같은 테스트를 돌려봤는데, 여기선 `options.num_ctx`를 요청마다 줄 방법이 없고 `usage.prompt_tokens`가 `/api/generate`의 `prompt_eval_count`와 다른 숫자(같은 텍스트인데 3464 대 2384)로 찍혔다. 게다가 내 머신에선 긴 입력에서도 head가 살아남아 recall이 됐다. 토큰 집계 방식이 달라서 두 엔드포인트를 1:1로 비교할 수 없다는 것까진 알겠는데, 왜 잘림 거동까지 달라 보였는지는 깔끔하게 설명하지 못하겠다. 다만 [OpenAI 호환 API에서 num_ctx가 안 먹혀 4096으로 조용히 잘린다는 이슈](https://github.com/ollama/ollama/issues/2714)가 실제로 보고돼 있으니, `/v1` 경로를 쓴다면 서버 기본값(`OLLAMA_CONTEXT_LENGTH`)에 전적으로 의존한다는 점은 기억해두는 게 좋다.
 
 [콜드 스타트 때 load_duration을 추적](/ko/blog/ko/local-llm-cold-start-load-duration-experiment)했던 것과 결이 같다. Ollama가 응답에 슬쩍 끼워 돌려주는 숫자들은 문서엔 잘 안 적혀 있어도, 실제 거동을 추적하는 가장 정직한 단서다. `load_duration`이 콜드 스타트를 일러바쳤듯, `prompt_eval_count`는 잘림을 일러바친다. 로컬 모델을 진지하게 굴릴 거면 이 숫자들을 한 번씩 들여다보길 권한다.
+
+## 참고자료
+
+- [Ollama API 레퍼런스](https://github.com/ollama/ollama/blob/main/docs/api.md) — 요청 `options` 안의 `num_ctx`로 Modelfile 컨텍스트 크기를 요청마다 덮어쓰는 방법.
+- [Ollama 컨텍스트 길이 문서](https://docs.ollama.com/context-length) — 기본 컨텍스트 윈도우가 가용 메모리에 따라 어떻게 잡히는지(24GiB VRAM 미만이면 4k, 그 이상은 더 크게).
+- [Ollama FAQ](https://docs.ollama.com/faq) — 기본 컨텍스트 윈도우 설정과, 컨텍스트가 넘치면 가장 오래된 메시지부터 떨어진다는 설명.
+- [Ollama Modelfile 레퍼런스](https://docs.ollama.com/modelfile) — `PARAMETER num_ctx`로 고정 컨텍스트 크기를 모델에 굽는 방법.
