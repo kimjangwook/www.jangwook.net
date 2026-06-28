@@ -4188,6 +4188,108 @@
       "added_at": "2026-06-26",
       "status": "queued",
       "notes": "Ollama 0.19+가 M시리즈에서 MLX를 내부 사용한다는 점을 실측으로 검증. 동일 모델·동일 머신에서 MLX 직접 실행 vs Ollama GGUF의 prefill/generation 속도 비교. 차별화: 콜드 스타트(load_duration) 시리즈와 연계해 'M칩 사용자 최적 경로' 결론 제시."
+    },
+    {
+      "slug": "ollama-quantization-quality-speed-tradeoff-experiment",
+      "title_idea": "양자화를 낮추면 진짜 멍청해질까 — Q4 vs Q8 로컬 LLM 품질·속도를 같은 프롬프트로 실측",
+      "content_type": "how-to",
+      "target_keyword": "로컬 LLM 양자화 품질 비교",
+      "secondary_keywords": [
+        "Ollama 양자화 속도",
+        "Q4 Q8 차이",
+        "gguf quantization 실측"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "이번 주 로컬 LLM 실측 5편 클러스터의 자연스러운 후속. prefill/콜드스타트/재현성/truncation에 이어 '양자화 레벨이 품질에 미치는 영향'을 같은 측정 프레임으로. 클러스터 내부링크 시너지 확보.",
+      "added_at": "2026-06-28",
+      "status": "queued",
+      "notes": "실측 실험 장르. 같은 프롬프트셋을 Q4_K_M vs Q8_0로 돌려 출력 일치율·tok/s 비교. 클러스터 cross-link 5편과 연결."
+    },
+    {
+      "slug": "ollama-concurrent-requests-batch-nondeterminism-experiment",
+      "title_idea": "동시 요청을 걸면 로컬 LLM도 답이 흔들릴까 — 배치 비결정성과 KV 캐시 경합 실측",
+      "content_type": "how-to",
+      "target_keyword": "로컬 LLM 동시 요청 비결정성",
+      "secondary_keywords": [
+        "Ollama 병렬 추론",
+        "배치 비결정성",
+        "KV 캐시 경합"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "determinism 실험과 prefill 실험이 둘 다 '다음엔 동시 요청 환경에서 재보겠다'고 약속한 후속편. 약속한 실험을 실제로 집행 → 시리즈 연속성과 독자 신뢰.",
+      "added_at": "2026-06-28",
+      "status": "queued",
+      "notes": "실측 실험 장르. determinism + prefill 두 글이 명시적으로 예고한 실험. 본문에서 두 글 직접 인용."
+    },
+    {
+      "slug": "local-llm-runtime-comparison-ollama-llamacpp-lmstudio-2026",
+      "title_idea": "로컬 LLM 런타임 3종 직접 비교 — Ollama vs llama.cpp vs LM Studio 같은 모델 실측",
+      "content_type": "comparison",
+      "target_keyword": "로컬 LLM 런타임 비교 2026",
+      "secondary_keywords": [
+        "Ollama llama.cpp 차이",
+        "LM Studio 비교",
+        "로컬 LLM 추론 속도"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "비교 콘텐츠 2주 연속 0% 교정. 실측 클러스터 독자가 자연히 궁금해할 '어떤 런타임이 더 빠른가'를 동일 모델·동일 프롬프트로 측정. 장르는 비교지만 측정 방식은 클러스터와 동일.",
+      "added_at": "2026-06-28",
+      "status": "queued",
+      "notes": "비교 장르 — 믹스 복구용. 시나리오 서사형 도입으로 비교 포스트 구조 고착 회피."
+    },
+    {
+      "slug": "korean-embedding-model-comparison-rag-recall-experiment-2026",
+      "title_idea": "한국어 RAG에 어떤 임베딩이 맞나 — 임베딩 모델 3종을 내 블로그 285편으로 recall 실측",
+      "content_type": "comparison",
+      "target_keyword": "한국어 임베딩 모델 비교",
+      "secondary_keywords": [
+        "한국어 RAG 임베딩",
+        "embedding recall 측정",
+        "multilingual embedding 한국어"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "토큰세 실험에서 쓴 '내 블로그 285편 코퍼스'를 재활용해 임베딩 recall을 실측. 데이터 자산 재사용 + sentence-transformers 한국어 RAG 가이드와 cross-link.",
+      "added_at": "2026-06-28",
+      "status": "queued",
+      "notes": "비교 장르. 기존 multilingual-token-tax / sentence-transformers 포스트와 코퍼스·내부링크 공유."
+    },
+    {
+      "slug": "local-llm-measurement-series-1-why-measure-not-guess",
+      "title_idea": "로컬 LLM 실측 시리즈 #1 — 추측 대신 재는 습관: 응답 JSON의 숨은 숫자로 모델을 읽는 법",
+      "content_type": "series",
+      "target_keyword": "로컬 LLM 측정 방법",
+      "secondary_keywords": [
+        "Ollama 응답 타이밍 필드",
+        "LLM 벤치마크 측정",
+        "load_duration eval_duration"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "이번 주 5편이 이미 '로컬 LLM 실측'이라는 비공식 시리즈를 형성. 이를 명시적 시리즈로 격상하면 (1) 시리즈 장르 만성 공백 해소 (2) 5편을 하나의 허브로 묶어 내부링크·체류시간 강화.",
+      "added_at": "2026-06-28",
+      "status": "queued",
+      "notes": "시리즈 장르. 이번 주 5편(determinism/prefill/cold-start/token-tax/truncation)을 묶는 인덱스 겸 방법론 도입부. 토요일 시리즈 슬롯 후보."
+    },
+    {
+      "slug": "anthropic-context-editing-tool-results-clearing-developer-guide-2026",
+      "title_idea": "긴 에이전트 루프에서 컨텍스트를 비우는 법 — Claude API context editing 실전 적용기",
+      "content_type": "news",
+      "target_keyword": "Claude context editing",
+      "secondary_keywords": [
+        "Claude API 컨텍스트 관리",
+        "tool result clearing",
+        "긴 에이전트 컨텍스트"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "이번 주 truncation 실험이 '컨텍스트가 넘치면 앞이 잘린다'를 로컬에서 보였다면, 클라우드 쪽 대응책(context editing)을 짝으로. 로컬↔클라우드 대비 서사로 클러스터 확장.",
+      "added_at": "2026-06-28",
+      "status": "queued",
+      "notes": "뉴스 장르 — 시의성. truncation 실험과 '로컬 vs 클라우드 컨텍스트 관리' 대비로 cross-link."
     }
   ]
 }
