@@ -1,8 +1,8 @@
 ---
-title: '로컬 에이전트가 시스템 프롬프트를 까먹은 이유 — Ollama num_ctx 무음 truncation을 직접 재봤다'
+title: '로컬 에이전트가 시스템 프롬프트를 까먹은 이유 — Ollama num_ctx 무음 truncation 실측'
 description: >-
   로컬 에이전트가 긴 대화에서 갑자기 지시를 무시하길래, 프롬프트 맨 앞에 비밀 코드를 숨기고 길이를 늘여가며 recall을 측정했다.
-  num_ctx를 넘기면 Ollama는 에러 없이 프롬프트 앞쪽을 잘라낸다. 그리고 기본값이 4096이라는 통설도 내 맥북에선 틀렸다.
+  num_ctx를 넘기면 Ollama는 에러 없이 프롬프트 앞쪽을 잘라낸다. 그리고 기본값이 4096이라는 통설도 내 맥북에선 사실과 달랐다.
 pubDate: '2026-06-28'
 heroImage: '../../../assets/blog/ollama-num-ctx-silent-truncation-experiment/hero.png'
 tags:

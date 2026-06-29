@@ -1,5 +1,5 @@
 ---
-title: TypeScriptで自分だけのMCPサーバーを作る — @modelcontextprotocol/sdk 実践チュートリアル
+title: TypeScriptでMCPサーバーを作る — @modelcontextprotocol/sdk 実践チュートリアル
 description: >-
   @modelcontextprotocol/sdk v1.29.0とZod v4でTypeScript
   MCPサーバーをゼロから構築する実践チュートリアル。ツール登録、InMemoryTransportテスト、公開API連携まで30分以内に動作するサーバーを完成させる手順をステップごとに解説します。

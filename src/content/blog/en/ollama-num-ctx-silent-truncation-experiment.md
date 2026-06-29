@@ -1,5 +1,5 @@
 ---
-title: 'Why My Local Agent Forgot Its System Prompt — Measuring Ollama num_ctx Silent Truncation'
+title: 'Why My Local Agent Forgot Its System Prompt — Ollama num_ctx Silent Truncation'
 description: >-
   My local agent kept ignoring its system prompt on long inputs. Past num_ctx, Ollama silently trims the
   front of the prompt — no error. I measured where it breaks.

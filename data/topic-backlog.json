@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-28",
+  "updated_at": "2026-06-29",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4324,6 +4324,40 @@
       "added_at": "2026-06-28",
       "status": "queued",
       "notes": "LLM 단일 장르에서 벗어나 JS 툴링으로 다각화(주간 리뷰 진단 반영). 에버그린: lint+format 단일화는 신규/레거시 모두 수요. drizzle-orm·hono·node-sqlite 등 기존 TS 글과 내부링크 고리 형성."
+    },
+    {
+      "slug": "open-webui-ollama-self-hosted-chat-rag-setup-guide-2026",
+      "title_idea": "Open WebUI + Ollama로 사내용 ChatGPT 만들기 — 문서 RAG·모델 전환·멀티유저까지",
+      "content_type": "how-to",
+      "target_keyword": "Open WebUI Ollama 셀프호스팅",
+      "secondary_keywords": [
+        "로컬 LLM 웹 UI",
+        "문서 RAG 업로드",
+        "멀티유저 로컬 챗봇"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "WebSearch 2026-06 LLM dev tools — Open WebUI(Ollama/vLLM/OpenAI 호환 엔드포인트, 대화 기록·RAG 문서 업로드·모델 스위칭)",
+      "added_at": "2026-06-29",
+      "status": "queued",
+      "notes": "기존 백로그는 Ollama CLI/측정 중심. 팀이 실제로 쓰는 '웹 UI 레이어'는 공백. 도커 컴포즈로 30분 셀프호스팅 + 사내 문서 RAG 연결까지 실측 스크린샷 포함. 로컬 LLM 시리즈와 내부링크 연결."
+    },
+    {
+      "slug": "vercel-ai-sdk-agent-tool-calling-streaming-guide-2026",
+      "title_idea": "Vercel AI SDK로 도구 호출 에이전트 만들기 — 스트리밍 UI와 구조화 출력 실전",
+      "content_type": "how-to",
+      "target_keyword": "Vercel AI SDK 에이전트",
+      "secondary_keywords": [
+        "AI SDK tool calling",
+        "Next.js 스트리밍 UI",
+        "TypeScript 에이전트"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "WebSearch 2026-06 — Vercel AI SDK가 TS 에이전트의 기본 출발점(모델 불가지론·React/Next.js 훅·tool calling·structured generation)",
+      "added_at": "2026-06-29",
+      "status": "queued",
+      "notes": "백로그에 Mastra는 있으나 그 하위 레이어인 Vercel AI SDK 직접 가이드는 없음. useChat 훅 + tool calling + Zod 구조화 출력을 Next.js에서 끝까지 연결. mcp-client-typescript-sdk 글과 상호링크 가능."
     }
   ]
 }

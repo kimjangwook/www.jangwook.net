@@ -1,5 +1,5 @@
 ---
-title: TypeScript로 나만의 MCP 서버 만들기 — @modelcontextprotocol/sdk 실전 튜토리얼
+title: TypeScript로 MCP 서버 만들기 — @modelcontextprotocol/sdk 실전 튜토리얼
 description: >-
   @modelcontextprotocol/sdk v1.29.0과 Zod v4로 TypeScript MCP 서버를 처음부터 구축하는 실전
   튜토리얼. 도구 등록, InMemoryTransport 테스트, 공개 API 연동까지 30분 안에 동작하는 서버를 완성하는 방법을 단계별로
