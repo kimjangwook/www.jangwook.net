@@ -2834,5 +2834,16 @@
       "devops": 0.4,
       "architecture": 0.45
     }
+  },
+  "local-llm-reasoning-mode-token-cost-experiment": {
+    "pubDate": "2026-06-30",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.45,
+      "web-development": 0.15,
+      "ai-ml": 0.92,
+      "devops": 0.5,
+      "architecture": 0.4
+    }
   }
 }
