@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-06-30",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4358,6 +4358,40 @@
       "added_at": "2026-06-29",
       "status": "queued",
       "notes": "백로그에 Mastra는 있으나 그 하위 레이어인 Vercel AI SDK 직접 가이드는 없음. useChat 훅 + tool calling + Zod 구조화 출력을 Next.js에서 끝까지 연결. mcp-client-typescript-sdk 글과 상호링크 가능."
+    },
+    {
+      "slug": "voltagent-typescript-ai-agent-framework-guide-2026",
+      "title_idea": "VoltAgent 실전 가이드 — 메모리·RAG·MCP를 갖춘 오픈소스 TypeScript 에이전트 프레임워크 입문",
+      "content_type": "how-to",
+      "target_keyword": "VoltAgent TypeScript 에이전트",
+      "secondary_keywords": [
+        "VoltAgent 튜토리얼",
+        "TypeScript AI 에이전트 프레임워크",
+        "VoltAgent MCP"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "WebSearch 2026-06-30: VoltAgent는 메모리·RAG·가드레일·MCP·음성·워크플로우를 내장한 오픈소스 TS 에이전트 프레임워크로 부상. 블로그의 Mastra/Agno/ADK/OpenAI AgentKit 시리즈와 같은 축이지만 아직 미커버.",
+      "added_at": "2026-06-30",
+      "status": "queued",
+      "notes": "기존 TS 에이전트 프레임워크 비교 시리즈와 내부링크 강력 연결(mastra-ai-typescript-agent-framework-guide-2026, google-adk-vs-langgraph, openai-agentkit-tutorial). 실제 코드 예제 중심 how-to로 차별화."
+    },
+    {
+      "slug": "ollama-openai-compatible-api-migration-guide-2026",
+      "title_idea": "OpenAI에서 로컬 Ollama로 — /v1 호환 엔드포인트로 코드 변경 없이 옮기는 실전 가이드",
+      "content_type": "how-to",
+      "target_keyword": "Ollama OpenAI 호환 API",
+      "secondary_keywords": [
+        "Ollama /v1 엔드포인트",
+        "OpenAI 호환 로컬 LLM",
+        "Ollama 마이그레이션"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "WebSearch 2026-06-30: 2026년 Ollama의 가장 실용적 변화는 OpenAI 호환 /v1/chat/completions 엔드포인트로, 기존 OpenAI 코드를 거의 그대로 로컬로 옮길 수 있음. CI/내부도구/RAG 프로토타입에서 인프라로 자리잡는 흐름.",
+      "added_at": "2026-06-30",
+      "status": "queued",
+      "notes": "로컬 LLM 측정 시리즈(local-llm-*)와 ollama-fastapi-production-deployment 포스트로 내부링크 연결. 비용 절감 관점은 ai-agent-cost-reality와 교차. 코드 diff 중심 실측 how-to."
     }
   ]
 }

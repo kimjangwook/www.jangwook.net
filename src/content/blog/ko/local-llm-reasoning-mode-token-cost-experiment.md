@@ -1,9 +1,9 @@
 ---
 title: '로컬 추론 모델은 추론값을 하는가 — gemma4:12b로 thinking ON/OFF를 직접 잰 기록'
 description: >-
-  지난 글에서 gemma4:12b의 빈 응답을 패키징 버그로 단정했다가, 사실은 추론(thinking) 모델이었다는 걸 뒤늦게 알았다. 그래서
-  추론 ON/OFF로 13문제를 직접 돌려봤다. 추론은 정답 1개를 더 맞혔지만 출력 토큰을 68배, 시간을 19배 더 썼다. 에이전트에서
-  언제 켜고 끌지 실측으로 정리한다.
+  gemma4:12b의 빈 응답을 패키징 버그로 단정했다가 사실은 추론(thinking) 모델이었음을 뒤늦게 알았다. 추론 ON/OFF로
+  13문제를 돌려보니 정답은 1개 더 맞혔지만 출력 토큰을 68배, 시간을 19배 더 썼다. 에이전트에서 추론을 언제 켜고 끌지 실측으로
+  정리한다.
 pubDate: '2026-06-30'
 heroImage: '../../../assets/blog/local-llm-reasoning-mode-token-cost-experiment/hero.png'
 tags:

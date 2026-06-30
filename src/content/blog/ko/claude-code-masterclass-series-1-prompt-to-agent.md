@@ -1,5 +1,5 @@
 ---
-title: 'Claude Code 실전 마스터클래스 #1 — 슬래시 명령어·훅·서브에이전트 3단계로 워크플로우 자동화하기'
+title: 'Claude Code 실전 마스터클래스 #1 — 슬래시 명령어·훅·서브에이전트 3단계 워크플로우 자동화'
 description: >-
   슬래시 명령어(.claude/commands/)로 작업을 정의하고, settings.json 훅으로 이벤트에 연결하고,
   서브에이전트(.claude/agents/)에게 위임하는 3단계 Claude Code 자동화 패턴을 실제 블로그 자동화 시스템 구축 사례와
