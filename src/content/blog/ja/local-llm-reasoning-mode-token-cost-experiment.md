@@ -174,3 +174,10 @@ ANSWER: 5
 正直に書く。これはgemma4:12b一モデル、13問、一問一回の計測だ。統計というより一人がノートPCで一日触った記録に近い。CRT問題が学習データにあったかは私に確かめる術がなく、「公算が大きい」までしか言えない。より大きな推論モデルやより難しいベンチマークでは、推論の利得は確実にもっと大きく出るだろう。この記事の数字を「推論は無用」と読まれては困る。私の結論はそれではなく、「推論はタダではなく、点ける場所を選ばねばならない」だ。
 
 元々やろうとしたのは長いコンテキストで情報位置による検索精度(いわゆるlost-in-the-middle)を測ることだったが、1.5kトークンのプリフィルに26秒かかり、単発実行の中で終えられなかった。それは次の機会に回す。代わりに今日は空応答の真因を突き止め、推論の元を測れたので十分な商売だった。少なくとも前回の記事の誤診を一つ正したのだから。
+
+## 参考資料
+
+- [Ollama — Thinking 機能ドキュメント](https://docs.ollama.com/capabilities/thinking) — `think` パラメータと、推論トレースを保持する別フィールド `thinking` を扱う公式ドキュメント。
+- [Ollama ブログ — Thinking](https://ollama.com/blog/thinking) — 推論のオン・オフ切り替えを最初に紹介した2025年5月の記事。
+- [Ollama API リファレンス](https://github.com/ollama/ollama/blob/main/docs/api.md) — `/api/chat`・`/api/generate` の `think` オプション(ブール、または low/medium/high/max のレベル)。
+- [Google Gemma 公式ドキュメント](https://ai.google.dev/gemma/docs) — Gemmaモデルファミリーの公式ドキュメント。

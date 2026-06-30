@@ -1,10 +1,7 @@
 ---
 title: 'Does a Local Reasoning Model Earn Its Keep? Measuring thinking ON/OFF on gemma4:12b'
 description: >-
-  In an earlier post I wrote off gemma4:12b's empty replies as a packaging bug. They weren't:
-  it's a reasoning model. So I ran 13 questions with thinking ON and OFF. Reasoning got one more
-  answer right while spending 68× the output tokens and 19× the wall-clock. Here's when I now
-  turn it on in an agent, measured.
+  I ran 13 questions on gemma4:12b with thinking ON and OFF. Reasoning got one more right while spending 68x the output tokens and 19x the wall-clock.
 pubDate: '2026-06-30'
 heroImage: '../../../assets/blog/local-llm-reasoning-mode-token-cost-experiment/hero.png'
 tags:
@@ -176,3 +173,10 @@ Third, **I give reasoning steps a generous `num_predict`.** The empty reply I go
 To be straight: this is one model (gemma4:12b), 13 questions, one measurement each. It's closer to one person's notebook-day notes than a statistic. I can't verify whether the CRT questions were in the training data, so I can only say "likely." Bigger reasoning models or harder benchmarks would surely show a larger reasoning payoff. Don't read these numbers as "reasoning is useless." My conclusion isn't that. It's "reasoning isn't free, and you have to pick the spots where you turn it on."
 
 What I originally set out to do was measure retrieval accuracy by position in a long context (the so-called lost-in-the-middle effect), but a 1.5k-token prefill took 26 seconds, so it wouldn't finish inside a single run. That waits for another day. Today, finding the real cause of the empty replies and measuring the value of reasoning was a good enough trade. At least I corrected one misdiagnosis from the earlier post.
+
+## References
+
+- [Ollama — Thinking (capabilities docs)](https://docs.ollama.com/capabilities/thinking) — official docs for the `think` parameter and the separate `thinking` field that holds the reasoning trace.
+- [Ollama Blog — Thinking](https://ollama.com/blog/thinking) — the May 2025 post that introduced toggling reasoning on and off.
+- [Ollama API reference](https://github.com/ollama/ollama/blob/main/docs/api.md) — `think` on `/api/chat` and `/api/generate`, accepted as a boolean or a level (low/medium/high/max).
+- [Google Gemma documentation](https://ai.google.dev/gemma/docs) — official model docs for the Gemma family.

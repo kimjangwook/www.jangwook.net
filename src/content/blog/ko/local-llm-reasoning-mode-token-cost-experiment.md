@@ -179,3 +179,10 @@ ANSWER: 5
 정직하게 적는다. 이건 gemma4:12b 한 모델, 13문제, 문제당 1회 측정이다. 통계라기보다 한 사람이 노트북에서 하루 동안 만진 기록에 가깝다. CRT 문제가 학습 데이터에 있었는지는 내가 확인할 방법이 없어 "가능성이 크다"까지만 말할 수 있다. 더 큰 추론 모델이나 더 어려운 벤치마크에서는 추론의 이득이 분명 더 크게 나올 것이다. 이 글의 숫자를 "추론은 쓸모없다"로 읽으면 곤란하다. 내 결론은 그게 아니라 "추론은 공짜가 아니고, 켜는 자리를 골라야 한다"이다.
 
 원래 하려던 건 긴 컨텍스트에서 정보 위치에 따른 검색 정확도(이른바 lost-in-the-middle) 측정이었는데, 1.5k 토큰 프리필에 26초가 걸려 단발 실행 안에 끝낼 수 없었다. 그건 다음 기회로 미룬다. 대신 오늘은 빈 응답의 진짜 원인을 찾고, 추론값을 잰 것으로 충분히 남는 장사였다. 적어도 이전 글의 오진 하나는 바로잡았으니까.
+
+## 참고자료
+
+- [Ollama — Thinking 기능 문서](https://docs.ollama.com/capabilities/thinking) — `think` 파라미터와 추론 트레이스를 담는 별도 `thinking` 필드를 다룬 공식 문서.
+- [Ollama 블로그 — Thinking](https://ollama.com/blog/thinking) — 추론을 켜고 끄는 기능을 처음 소개한 2025년 5월 글.
+- [Ollama API 레퍼런스](https://github.com/ollama/ollama/blob/main/docs/api.md) — `/api/chat`·`/api/generate`의 `think` 옵션(불리언 또는 low/medium/high/max 레벨).
+- [Google Gemma 공식 문서](https://ai.google.dev/gemma/docs) — Gemma 모델 패밀리 공식 문서.

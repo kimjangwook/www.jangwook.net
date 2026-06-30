@@ -174,3 +174,10 @@ ANSWER: 5
 老实说。这是一个模型(gemma4:12b)、13道题、每题测一次。与其说是统计，不如说更接近一个人用笔记本电脑折腾一天的记录。CRT题是否在训练数据里，我没法核实，只能说"可能性很大"。更大的推理模型或更难的基准上，推理的收益肯定会更明显。别把这些数字读成"推理没用"。我的结论不是那个，而是"推理不是免费的，得挑好开它的地方"。
 
 我本来要做的，是测量长上下文里信息位置对检索准确率的影响(所谓lost-in-the-middle)，但1.5k token的预填充就花了26秒，一次运行里跑不完。那留到下次。今天能找出空回复的真因、量出推理的票价，已经是笔划算的买卖。至少我纠正了上一篇里的一处误诊。
+
+## 参考资料
+
+- [Ollama — Thinking 功能文档](https://docs.ollama.com/capabilities/thinking) — 介绍 `think` 参数与承载推理轨迹的独立 `thinking` 字段的官方文档。
+- [Ollama 博客 — Thinking](https://ollama.com/blog/thinking) — 2025年5月首次介绍推理开关功能的文章。
+- [Ollama API 参考](https://github.com/ollama/ollama/blob/main/docs/api.md) — `/api/chat`、`/api/generate` 的 `think` 选项(布尔，或 low/medium/high/max 级别)。
+- [Google Gemma 官方文档](https://ai.google.dev/gemma/docs) — Gemma 模型家族的官方文档。
