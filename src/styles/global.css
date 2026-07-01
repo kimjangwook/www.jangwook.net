@@ -8,6 +8,17 @@
 @tailwind utilities;
 
 /*
+  Skip-link target: <main tabindex="-1"> receives focus after activating the
+  skip link. Suppress the container outline so a full-width box doesn't flash;
+  interactive elements inside still show their own focus rings.
+*/
+@layer base {
+	#main-content:focus {
+		outline: none;
+	}
+}
+
+/*
   Google Fonts는 BaseHead.astro에서 preconnect + link로 로딩
   (렌더링 차단 방지를 위해 CSS @import 제거)
 */

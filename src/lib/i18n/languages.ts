@@ -35,6 +35,7 @@ export const ui = {
     "contact.description": "김장욱에게 연락하기. 협업, 기술 문의, AI 에이전트 및 자동화 프로젝트에 관한 문의를 환영합니다.",
     "social.description": "김장욱의 소셜 채널 모음. GitHub와 기술 블로그 등에서 AI 에이전트와 개발 관련 콘텐츠를 팔로우하세요.",
     "footer.allRightsReserved": "모든 권리 보유",
+    "a11y.skipToContent": "본문으로 건너뛰기",
   },
   en: {
     "nav.home": "Home",
@@ -56,6 +57,7 @@ export const ui = {
     "contact.description": "Get in touch with Kim Jangwook. Open to collaboration, technical questions, and inquiries about AI agents and automation projects.",
     "social.description": "Find Kim Jangwook across the web: GitHub, the tech blog, and other channels sharing AI agents and developer content.",
     "footer.allRightsReserved": "All rights reserved",
+    "a11y.skipToContent": "Skip to main content",
   },
   ja: {
     "nav.home": "ホーム",
@@ -77,6 +79,7 @@ export const ui = {
     "contact.description": "Kim Jangwook への連絡。コラボレーション、技術的な質問、AIエージェントや自動化プロジェクトに関するお問い合わせを歓迎します。",
     "social.description": "Kim Jangwook のソーシャルチャンネル。GitHubや技術ブログなどでAIエージェントと開発関連のコンテンツをフォローできます。",
     "footer.allRightsReserved": "全著作権所有",
+    "a11y.skipToContent": "本文へスキップ",
   },
   zh: {
     "nav.home": "首页",
@@ -98,6 +101,7 @@ export const ui = {
     "contact.description": "联系 Kim Jangwook。欢迎合作、技术咨询，以及有关 AI 代理和自动化项目的问询。",
     "social.description": "Kim Jangwook 的社交频道。在 GitHub、技术博客等渠道关注 AI 代理与开发相关内容。",
     "footer.allRightsReserved": "保留所有权利",
+    "a11y.skipToContent": "跳转到主要内容",
   },
 } as const;
 
