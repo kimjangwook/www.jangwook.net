@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
+import { filterPostsByDate } from '../lib/content';
 
 // V3: Props 정의
 interface RelatedPostItem {
@@ -31,36 +32,43 @@ const headings = {
 
 const heading = headings[language];
 
-// V3: Fetch full post data for each recommendation (top 3 only)
-const relatedPosts = await Promise.all(
-  items.slice(0, 3).map(async (item) => {
+// Fetch full entries for ALL recommendations, keeping their metadata (score/reason).
+// We fetch the whole list (not just the top 3) so that if a higher-ranked pick is
+// unbuildable (draft/future), a lower-ranked public post can still fill the slot.
+const fetched = await Promise.all(
+  items.map(async (item) => {
     try {
-      const fullPostId = `${language}/${item.slug}`;
-      const post = await getEntry('blog', fullPostId);
-
+      const post = await getEntry('blog', `${language}/${item.slug}`);
       if (!post) {
-        console.warn(`[RelatedPosts] Post not found: ${fullPostId}`);
+        console.warn(`[RelatedPosts] Post not found: ${language}/${item.slug}`);
         return null;
       }
-
-      return {
-        slug: item.slug,
-        score: item.score,
-        title: post.data.title,
-        description: post.data.description,
-        heroImage: post.data.heroImage,
-        url: `/${language}/blog/${language}/${item.slug}`,
-        reason: item.reason[language]
-      };
+      return { post, item };
     } catch (error) {
       console.error(`[RelatedPosts] Error fetching post ${item.slug}:`, error);
       return null;
     }
   })
 );
+const pairs = fetched.filter((entry) => entry !== null);
 
-// Filter out null entries
-const validPosts = relatedPosts.filter(post => post !== null);
+// Keep only recommendations whose target page is actually built. This mirrors the
+// blog route's getStaticPaths (same filterPostsByDate), so a related link can never
+// point at a draft/future post that 404s. Order is preserved; take the top 3.
+const builtIds = new Set(filterPostsByDate(pairs.map((p) => p.post)).map((p) => p.id));
+
+const validPosts = pairs
+  .filter((p) => builtIds.has(p.post.id))
+  .slice(0, 3)
+  .map(({ post, item }) => ({
+    slug: item.slug,
+    score: item.score,
+    title: post.data.title,
+    description: post.data.description,
+    heroImage: post.data.heroImage,
+    url: `/${language}/blog/${language}/${item.slug}`,
+    reason: item.reason[language]
+  }));
 
 // Don't render if no recommendations
 if (validPosts.length === 0) {
