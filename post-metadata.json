@@ -2845,5 +2845,16 @@
       "devops": 0.5,
       "architecture": 0.4
     }
+  },
+  "local-llm-concurrent-requests-num-parallel-experiment": {
+    "pubDate": "2026-07-01",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.15,
+      "ai-ml": 0.85,
+      "devops": 0.55,
+      "architecture": 0.6
+    }
   }
 }
