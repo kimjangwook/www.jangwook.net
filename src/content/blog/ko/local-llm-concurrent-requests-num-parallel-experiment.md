@@ -177,3 +177,9 @@ OLLAMA_NUM_PARALLEL=4 ollama serve
 또 하나. 집계 처리량 1.8배는 이 하드웨어에서 GPU가 놀고 있던 여유가 있었다는 뜻이기도 하다. 단일 스트림이 GPU를 이미 100% 쓰고 있었다면 병렬로 묶어도 이득이 거의 없었을 것이다. 이득의 크기는 기기마다 다르니, 결론은 하나다. 설정을 바꿨으면 반드시 자기 기기에서 다시 재라. 30줄짜리 스크립트면 충분하다.
 
 다음엔 큰 모델(gemma4:12b)로 같은 실험을 돌려서, 모델이 커질 때 병렬 슬롯이 몇 개까지 버티는지와 그 지점에서 GPU가 포화하는 경계를 재볼 생각이다. 로컬에서 에이전트를 여러 개 굴리는 이상, 이 경계값이 곧 내 파이프라인의 실질 상한이 된다.
+
+## 참고자료
+
+- [Ollama FAQ — 동시 요청 처리 방식](https://docs.ollama.com/faq) — `OLLAMA_NUM_PARALLEL`, `OLLAMA_MAX_LOADED_MODELS`, `OLLAMA_MAX_QUEUE` 공식 문서. 병렬 요청이 슬롯 수만큼 컨텍스트 크기를 곱한다는 설명 포함.
+- [Ollama API 문서 — /api/generate](https://github.com/ollama/ollama/blob/main/docs/api.md) — 벤치마크에 사용한 엔드포인트. 요청별 생성 속도를 읽어낸 `eval_count`, `eval_duration` 필드 설명.
+- [Ollama v0.2.0 릴리스 노트](https://github.com/ollama/ollama/releases/tag/v0.2.0) — 동시성(병렬 요청, 다중 모델 로드) 지원을 처음 도입한 릴리스.

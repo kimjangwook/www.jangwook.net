@@ -177,3 +177,9 @@ OLLAMA_NUM_PARALLEL=4 ollama serve
 もう一つ。集計スループット1.8倍は、このハードウェアでGPUが遊んでいた余裕があったという意味でもある。単一ストリームがGPUをすでに100%使っていたら、並列にまとめても利得はほぼ無かっただろう。利得の大きさは機器ごとに違うので、結論は一つだ。設定を変えたら必ず自分の機器で測り直せ。30行のスクリプトで十分だ。
 
 次は大きいモデル(gemma4:12b)で同じ実験を回して、モデルが大きくなるとき並列スロットが何個まで耐えるかと、その地点でGPUが飽和する境界を測るつもりだ。ローカルでエージェントを複数回す以上、この境界値がそのまま私のパイプラインの実質上限になる。
+
+## 参考資料
+
+- [Ollama FAQ — 同時リクエストの扱い方](https://docs.ollama.com/faq) — `OLLAMA_NUM_PARALLEL`、`OLLAMA_MAX_LOADED_MODELS`、`OLLAMA_MAX_QUEUE`の公式ドキュメント。並列リクエストがスロット数だけコンテキストサイズを掛け算するという説明を含む。
+- [Ollama APIドキュメント — /api/generate](https://github.com/ollama/ollama/blob/main/docs/api.md) — ベンチマークで使ったエンドポイント。リクエストごとの生成速度を読み取った`eval_count`と`eval_duration`フィールドの説明。
+- [Ollama v0.2.0 リリースノート](https://github.com/ollama/ollama/releases/tag/v0.2.0) — 同時実行（並列リクエストと複数モデルのロード）サポートを初めて導入したリリース。

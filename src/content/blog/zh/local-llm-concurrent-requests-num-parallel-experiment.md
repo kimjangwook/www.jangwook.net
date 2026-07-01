@@ -177,3 +177,9 @@ OLLAMA_NUM_PARALLEL=4 ollama serve
 还有一点。那1.8倍的集计增益也说明这台硬件的GPU还有闲置余量。如果单流已经把GPU用到100%，并行成批也几乎不会有增益。增益的大小因机器而异，所以结论只有一个：改了设置，一定要在自己的机器上重测。30行的脚本就够了。
 
 下一步我打算用大模型(gemma4:12b)跑同样的实验，测量模型变大时并行槽位能撑到几个，以及在那个点GPU饱和的边界。只要我在本地跑多个代理，这个边界值就是我流水线的实质上限。
+
+## 参考资料
+
+- [Ollama FAQ — 如何处理并发请求](https://docs.ollama.com/faq) — `OLLAMA_NUM_PARALLEL`、`OLLAMA_MAX_LOADED_MODELS`、`OLLAMA_MAX_QUEUE`的官方文档，包含并行请求会按槽位数把上下文大小翻倍的说明。
+- [Ollama API 文档 — /api/generate](https://github.com/ollama/ollama/blob/main/docs/api.md) — 基准测试所用的端点，包含用于读取每请求生成速度的 `eval_count` 与 `eval_duration` 字段。
+- [Ollama v0.2.0 发布说明](https://github.com/ollama/ollama/releases/tag/v0.2.0) — 首次引入并发（并行请求与多模型加载）支持的版本。

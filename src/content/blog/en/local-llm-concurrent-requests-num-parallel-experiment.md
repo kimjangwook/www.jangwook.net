@@ -1,9 +1,7 @@
 ---
 title: 'I Pointed 8 Agents at One Local LLM — Measuring Ollama Concurrency Throughput'
 description: >-
-  I assumed firing sub-agents in parallel would speed up a local model too. Measuring it, the default Ollama
-  serializes requests, so eight at once gave the same total throughput as one. I benchmarked the throughput
-  gain from raising OLLAMA_NUM_PARALLEL, and what it costs, on an M1 with 16GB.
+  I fired 8 agents at one local model expecting a speedup. Default Ollama serializes requests, so eight at once matched one. I benchmarked OLLAMA_NUM_PARALLEL.
 pubDate: '2026-07-01'
 heroImage: '../../../assets/blog/local-llm-concurrent-requests-num-parallel-experiment/hero.png'
 tags:
@@ -178,3 +176,9 @@ To be honest about it: these are numbers for one specific setup, a small gemma4 
 One more thing. That 1.8x aggregate gain also means the GPU had idle headroom on this hardware. If the single stream had already been using 100% of the GPU, batching in parallel would have gained almost nothing. The size of the gain differs per machine, so the conclusion is singular: if you change the setting, always re-measure on your own machine. A 30-line script is enough.
 
 Next I plan to rerun the same experiment with a large model (gemma4:12b) to measure how many parallel slots survive as the model grows, and where the GPU saturates at that point. As long as I run several agents locally, that boundary becomes the real ceiling of my pipeline.
+
+## References
+
+- [Ollama FAQ — How does Ollama handle concurrent requests?](https://docs.ollama.com/faq) — Official docs for `OLLAMA_NUM_PARALLEL`, `OLLAMA_MAX_LOADED_MODELS`, `OLLAMA_MAX_QUEUE`, and the note that parallel requests multiply the context size by the slot count.
+- [Ollama API reference — /api/generate](https://github.com/ollama/ollama/blob/main/docs/api.md) — The endpoint used in the benchmark, including the `eval_count` and `eval_duration` fields read for per-request generation speed.
+- [Ollama v0.2.0 release notes](https://github.com/ollama/ollama/releases/tag/v0.2.0) — The release that introduced concurrency support (parallel requests and multiple loaded models).
