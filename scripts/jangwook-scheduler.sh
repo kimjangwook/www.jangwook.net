@@ -100,8 +100,10 @@ WATCHDOG_PID=$!
 
 # 일시적 실패(인증/과부하/네트워크) 감지 — 이 run 의 로그 꼬리에서만 확인.
 # 빌드 진행 카운터 "(401/798)" 같은 오탐을 피하려 정밀 패턴 사용.
+# 2026-07-01 daily-closing: claude 가 출력 0으로 ~3.9h 행업 후 "An internal error occurred (EINTR)"
+# 로 사망했으나 이 패턴에 없어 재시도가 발동하지 않았다 → CLI 내부 오류도 transient 로 포함.
 is_transient_failure() {
-    tail -n 120 "$LOG_FILE" | grep -qiE 'Invalid authentication|Failed to authenticate|API Error: (401|429|500|503|529)|overloaded_error|Too Many Requests|ETIMEDOUT|ECONNRESET|rate.?limit'
+    tail -n 120 "$LOG_FILE" | grep -qiE 'Invalid authentication|Failed to authenticate|API Error: (401|429|500|503|529)|overloaded_error|Too Many Requests|ETIMEDOUT|ECONNRESET|rate.?limit|An internal error occurred|EINTR'
 }
 
 # 실패 원인을 사람이 읽을 라벨로 추정(알림 가시성). 세션 한도는 120초 재시도가
@@ -114,6 +116,8 @@ failure_cause() {
         echo "인증 실패(401)"
     elif printf '%s' "$t" | grep -qiE "overloaded|529|Too Many Requests|429|rate.?limit"; then
         echo "API 과부하/레이트리밋"
+    elif printf '%s' "$t" | grep -qiE "An internal error occurred|EINTR"; then
+        echo "claude CLI 내부 오류(행업 후 EINTR 등) — 재시도로 복구 시도됨"
     elif printf '%s' "$t" | grep -qiE "validate:publishing|astro -- check|npm run build"; then
         echo "발행 검증/빌드 실패"
     else
