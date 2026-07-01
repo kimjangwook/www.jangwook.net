@@ -14,6 +14,9 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
+<!-- Skip link: WCAG 2.4.1 (Bypass Blocks) — first focusable element, visible only on keyboard focus -->
+<a href="#main-content" class="skip-link">{t("a11y.skipToContent")}</a>
+
 <header
   class="site-header sticky top-0 z-50 backdrop-blur-sm border-b"
 >
@@ -100,6 +103,28 @@ const t = useTranslations(lang);
 </header>
 
 <style>
+  /* Skip link — off-screen until focused, then anchored top-left above the sticky header */
+  .skip-link {
+    position: absolute;
+    left: 0.75rem;
+    top: -3rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.15s ease-in-out;
+  }
+
+  .skip-link:focus {
+    top: 0.75rem;
+    outline: 2px solid var(--paper);
+    outline-offset: 2px;
+  }
+
   .site-header {
     background: color-mix(in oklch, var(--paper) 92%, transparent);
     border-color: var(--paper-rule);
