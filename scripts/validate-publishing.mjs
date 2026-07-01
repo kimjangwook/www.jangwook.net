@@ -222,6 +222,21 @@ function validateRelatedPosts(posts) {
       `indexable posts missing relatedPosts: ${missingRelated.length}\n${limitList(missingRelated)}`
     );
   }
+
+  const indexableSlugsByLang = new Map(languages.map((lang) => [lang, new Set()]));
+  for (const post of posts.filter((item) => item.indexable)) {
+    indexableSlugsByLang.get(post.lang).add(post.slug);
+  }
+
+  for (const post of posts.filter((item) => item.indexable)) {
+    const related = Array.isArray(post.data.relatedPosts) ? post.data.relatedPosts : [];
+    for (const rec of related) {
+      if (!rec?.slug) continue;
+      if (!indexableSlugsByLang.get(post.lang).has(rec.slug)) {
+        errors.push(`${post.relPath}: relatedPosts references non-indexable post "${rec.slug}" (draft/noindex/future/missing)`);
+      }
+    }
+  }
 }
 
 async function validateCrawlerSurfaces() {

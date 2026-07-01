@@ -10,27 +10,27 @@ tags:
   - JSON-LD
   - web-development
 relatedPosts:
-  - slug: llm-seo-aeo-practical-implementation
-    score: 0.74
+  - slug: multilingual-llm-token-tax-experiment
+    score: 0.58
     reason:
-      ko: SEO/AEO를 실무 로드맵으로 정리한 글이다. 이 글은 그 로드맵의 한 조각인 "구조화 데이터를 어떻게 확실히 크롤러에 전달하는가"를 코드 레벨로 파고든 셈이다.
-      ja: SEO/AEOを実務ロードマップとして整理した記事だ。本記事はそのロードマップの一片である「構造化データをどう確実にクローラーへ届けるか」をコードレベルで掘り下げた形になる。
-      en: That post lays out SEO/AEO as a practical roadmap. This one drills into one piece of it at the code level, on how to actually get structured data to the crawler reliably.
-      zh: 那篇文章把SEO/AEO整理成实务路线图。本文则在代码层面深入其中一环——如何把结构化数据可靠地送达爬虫。
-  - slug: astro-scheduled-publishing
-    score: 0.6
+      ko: 이 블로그 전체를 실측 대상으로 삼아 가설을 숫자로 검증한 글이다. 렌더링 방식을 curl로 직접 확인한 이 글과 "내 사이트에서 직접 재본다"는 접근이 같다.
+      ja: このブログ全体を実測対象にして仮説を数字で検証した記事だ。レンダリング方式をcurlで直接確かめた本記事と「自分のサイトで直接測る」というアプローチが同じだ。
+      en: That post used this very blog as a testbed and verified a hypothesis with numbers. It shares this article's approach of measuring things directly on my own site instead of trusting claims.
+      zh: 那篇文章把整个博客当作实测对象，用数字验证假设。与本文用curl直接确认渲染方式一样，都是"在自己的网站上亲自测量"的思路。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.55
     reason:
-      ko: 정적 사이트가 빌드 시점에 HTML을 확정해 내보내는 구조를 다룬 글이다. 구조화 데이터를 서버사이드로 "미리 박아 두는" 이 글의 원리와 뿌리가 같다.
-      ja: 静的サイトがビルド時にHTMLを確定して出力する仕組みを扱った記事だ。構造化データをサーバーサイドで「あらかじめ埋め込む」本記事の原理と根が同じだ。
-      en: That post covers how a static site finalizes HTML at build time. It shares a root with this piece's idea of baking structured data into the server output ahead of time.
-      zh: 那篇文章讲静态站点在构建时就确定并输出HTML。它与本文"预先把结构化数据写入服务端输出"的原理同源。
-  - slug: metadata-based-recommendation-optimization
-    score: 0.53
+      ko: 메타데이터를 기계가 읽기 좋게 구조화하는 것이 시스템 효율을 어떻게 바꾸는지 다룬 사례다. 페이지 정보를 크롤러에게 명시적으로 전달하는 구조화 데이터 설계와 문제의식이 겹친다.
+      ja: メタデータを機械が読みやすく構造化することがシステム効率をどう変えるかを扱った事例だ。ページ情報をクローラーへ明示的に届ける構造化データ設計と問題意識が重なる。
+      en: A case study on how structuring metadata for machines changes a system's efficiency. The mindset overlaps with structured-data design, where page information is made explicit for crawlers.
+      zh: 一个讲"为机器结构化元数据"如何改变系统效率的案例。与本文把页面信息明确传达给爬虫的结构化数据设计思路相通。
+  - slug: llm-token-cost-data-format-experiment
+    score: 0.52
     reason:
-      ko: 메타데이터를 어떻게 구조화해 다루느냐가 시스템 전체 효율을 바꾼 사례다. 페이지 메타를 기계가 읽기 좋게 명시한다는 점에서 구조화 데이터 설계와 문제의식이 겹친다.
-      ja: メタデータをどう構造化して扱うかがシステム全体の効率を変えた事例だ。ページのメタを機械が読みやすく明示するという点で、構造化データ設計と問題意識が重なる。
-      en: A case where how metadata is structured changed a whole system's efficiency. Making page meta explicit for machines overlaps with the mindset behind structured-data design.
-      zh: 一个"如何组织元数据"改变整个系统效率的案例。让页面元信息对机器清晰可读，与结构化数据设计的思路相通。
+      ko: 같은 정보라도 어떤 포맷으로 기계에 전달하느냐에 따라 비용이 달라진다는 것을 실측한 글이다. JSON-LD라는 포맷 선택이 크롤러 인식을 좌우하는 이 글의 주제와 맞닿아 있다.
+      ja: 同じ情報でもどのフォーマットで機械に渡すかによってコストが変わることを実測した記事だ。JSON-LDというフォーマット選択がクローラーの認識を左右する本記事のテーマと接している。
+      en: That experiment measured how the format you feed machines changes the cost of the same information. It connects to this article's theme, where the choice of JSON-LD determines what crawlers actually see.
+      zh: 那篇文章实测了同样的信息用不同格式喂给机器时成本的差异。这与本文"JSON-LD格式选择决定爬虫认知"的主题相通。
 faq:
   - question: "Can Google read structured data injected with JavaScript?"
     answer: "Yes. Google's docs state it processes JSON-LD dynamically injected into the DOM after rendering. But rendering is a resource-dependent second pass, so the block is absent from the raw HTML that the first crawl fetches. I built the same markup two ways and parsed only the raw HTML: server-side had one ld+json block, JS injection had zero."

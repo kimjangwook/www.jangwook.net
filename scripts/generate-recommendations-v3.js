@@ -7,6 +7,51 @@ import {
   generateReason
 } from './similarity.js';
 
+function toJstDateKey(date) {
+  return new Intl.DateTimeFormat('sv-SE', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(date);
+}
+
+function normalizeDateKey(value) {
+  if (!value) return null;
+  if (value instanceof Date) return toJstDateKey(value);
+
+  const stringValue = String(value).trim();
+  const dateOnly = stringValue.match(/^(\d{4}-\d{2}-\d{2})/);
+  if (dateOnly) return dateOnly[1];
+
+  const parsed = new Date(stringValue);
+  if (Number.isNaN(parsed.valueOf())) return null;
+  return toJstDateKey(parsed);
+}
+
+/**
+ * 추천 후보로 허용되는 슬러그 집합.
+ * validate-publishing.mjs의 indexable 기준과 동일:
+ * draft 아님, noindex 아님, JST 기준 오늘 이전 발행.
+ */
+function loadIndexableSlugs() {
+  const todayJst = toJstDateKey(new Date());
+  const indexable = new Set();
+  const koDir = path.join('src', 'content', 'blog', 'ko');
+
+  for (const file of fs.readdirSync(koDir)) {
+    if (!/\.(md|mdx)$/.test(file)) continue;
+    const parsed = matter(fs.readFileSync(path.join(koDir, file), 'utf-8'));
+    const pubDateKey = normalizeDateKey(parsed.data.pubDate);
+    if (parsed.data.draft === true) continue;
+    if (parsed.data.noindex === true) continue;
+    if (!pubDateKey || pubDateKey > todayJst) continue;
+    indexable.add(file.replace(/\.(md|mdx)$/, ''));
+  }
+
+  return indexable;
+}
+
 /**
  * V3 추천 생성 메인 함수
  */
@@ -17,6 +62,9 @@ async function generateRecommendationsV3() {
   const metadata = JSON.parse(fs.readFileSync('post-metadata.json', 'utf-8'));
   console.log(`✓ Loaded metadata for ${Object.keys(metadata).length} posts\n`);
 
+  const indexableSlugs = loadIndexableSlugs();
+  console.log(`✓ ${indexableSlugs.size} indexable posts eligible as recommendation targets\n`);
+
   // 2. 각 포스트마다 추천 계산
   const recommendations = {};
 
@@ -24,9 +72,10 @@ async function generateRecommendationsV3() {
     const source = metadata[slug];
     const sourcePubDate = new Date(source.pubDate);
 
-    // 후보 포스트 필터링 (시간 역행 방지)
+    // 후보 포스트 필터링 (시간 역행 방지 + draft/noindex/미래 발행 글 제외)
     const candidates = Object.entries(metadata)
       .filter(([candidateSlug, _]) => candidateSlug !== slug)
+      .filter(([candidateSlug, _]) => indexableSlugs.has(candidateSlug))
       .filter(([_, candidate]) => new Date(candidate.pubDate) <= sourcePubDate)
       .map(([candidateSlug, candidate]) => ({
         slug: candidateSlug,
