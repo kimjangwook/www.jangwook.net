@@ -40,14 +40,22 @@ export const AUTHOR = {
 		'https://medium.com/@kim-jangwook'
 	],
 	knowsAbout: [
+		// Web development foundation + AI-era search expertise (primary positioning)
+		'Web Development',
+		'Technical SEO',
+		'Search Engine Optimization (SEO)',
+		'Web Accessibility (WCAG)',
+		'Structured Data (Schema.org)',
+		'Core Web Vitals',
+		'Generative Engine Optimization (GEO)',
+		'TypeScript',
+		'Astro',
+		// AI specialization
 		'AI/LLM',
 		'Claude Code',
-		'MCP (Model Context Protocol)',
+		'Model Context Protocol (MCP)',
 		'RAG Systems',
-		'Web Development',
-		'TypeScript',
-		'Python',
-		'Astro'
+		'Python'
 	]
 };
 
