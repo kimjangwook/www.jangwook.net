@@ -418,6 +418,32 @@ app.get('/tasks', (c) => {
 
 `c.get('userId')` returns `string`. TypeScript infers this from the `Variables` declaration. With Express, that inference didn't happen automatically.
 
+## Error Handling and the Global Handler
+
+```typescript
+// Global error handler
+app.onError((err, c) => {
+  console.error(`Error: ${err.message}`, {
+    path: c.req.path,
+    method: c.req.method,
+  })
+  
+  // Handle HTTP error codes (hono/http-exception)
+  if (err instanceof HTTPException) {
+    return c.json({ error: err.message }, err.status)
+  }
+  
+  return c.json({ error: 'Internal Server Error' }, 500)
+})
+
+// 404 handler
+app.notFound((c) => {
+  return c.json({ error: `Route ${c.req.path} not found` }, 404)
+})
+```
+
+HTTPException is Hono's built-in error class. Throw `throw new HTTPException(403, { message: 'Forbidden' })` from any route handler and the global handler picks it up.
+
 ## What I Found Frustrating
 
 There are real limitations worth naming.

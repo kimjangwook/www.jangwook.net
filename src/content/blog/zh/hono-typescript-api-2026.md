@@ -407,6 +407,32 @@ app.get('/tasks', (c) => {
 })
 ```
 
+## 错误处理与全局处理器
+
+```typescript
+// 全局错误处理器
+app.onError((err, c) => {
+  console.error(`Error: ${err.message}`, {
+    path: c.req.path,
+    method: c.req.method,
+  })
+  
+  // 处理 HTTP 错误码 (hono/http-exception)
+  if (err instanceof HTTPException) {
+    return c.json({ error: err.message }, err.status)
+  }
+  
+  return c.json({ error: 'Internal Server Error' }, 500)
+})
+
+// 404 处理器
+app.notFound((c) => {
+  return c.json({ error: `Route ${c.req.path} not found` }, 404)
+})
+```
+
+HTTPException 是 Hono 内置的错误类。在任何路由处理器里 `throw new HTTPException(403, { message: 'Forbidden' })`，全局处理器都会接住它。
+
 ## 我觉得不足的地方
 
 实际用下来，也有值得说的限制。

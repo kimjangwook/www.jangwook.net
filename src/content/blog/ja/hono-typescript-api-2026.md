@@ -421,6 +421,32 @@ app.get('/tasks', (c) => {
 })
 ```
 
+## エラー処理とグローバルハンドラー
+
+```typescript
+// グローバルエラーハンドラー
+app.onError((err, c) => {
+  console.error(`Error: ${err.message}`, {
+    path: c.req.path,
+    method: c.req.method,
+  })
+  
+  // HTTPエラーコードの処理 (hono/http-exception)
+  if (err instanceof HTTPException) {
+    return c.json({ error: err.message }, err.status)
+  }
+  
+  return c.json({ error: 'Internal Server Error' }, 500)
+})
+
+// 404ハンドラー
+app.notFound((c) => {
+  return c.json({ error: `Route ${c.req.path} not found` }, 404)
+})
+```
+
+HTTPExceptionはHono内蔵のエラークラスだ。ルートハンドラーのどこからでも`throw new HTTPException(403, { message: 'Forbidden' })`のように投げれば、グローバルハンドラーが受け止めてくれる。
+
 ## 気になった点
 
 Hono を実際に使ってみて感じた限界もある。

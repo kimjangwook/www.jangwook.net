@@ -304,6 +304,20 @@ Three scenarios where I'd reach for Agno:
 
 Where I wouldn't use Agno: real-time streaming UIs, production workflows requiring precise error handling and retry guarantees, or systems where you need to audit exactly what each agent decided and why at every step.
 
+## A Quick Comparison with PydanticAI
+
+Among frameworks in a similar position, there is [PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026). Having written real code with both, the biggest differences I felt are these.
+
+<strong>Tool ecosystem</strong>: Agno ships 100+ built-in tools; PydanticAI has you register your own functions with the `@agent.tool` decorator. Agno wins on "fast start"; PydanticAI is better when you want explicit control over tool logic.
+
+<strong>Type safety</strong>: PydanticAI is stronger. Agent response types are declared as generics, so the IDE catches mistakes easily. Agno's `output_schema` works too, but the API naming is not as clear as PydanticAI's.
+
+<strong>Multi-agent</strong>: Agno is more natural with its built-in `Team` class. PydanticAI makes you wire up inter-agent communication yourself.
+
+<strong>Dependencies</strong>: Similarly light. Both are far lighter than LangChain.
+
+If the decision still feels complicated, reading the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026) alongside should get you to a clearer conclusion.
+
 ## What's Next to Explore
 
 Two things I didn't test today:

@@ -302,6 +302,28 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 **単一エージェントまたは小規模チーム。** Agent 2〜3個をTeamとして束ねる程度はAgnoがすっきりしている。数十個のエージェントを複雑な依存関係でオーケストレーションする必要があるなら、LangGraphやMicrosoft AutoGenのような状態グラフベースのフレームワークの方が適している可能性がある。
 
+## PydanticAIとの簡単な比較
+
+似たポジションのフレームワークに[PydanticAI](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)がある。実際に両方のコードを書いた立場から、最も大きく感じた違いを整理するとこうなる。
+
+<strong>ツールエコシステム</strong>：Agnoは100個以上の内蔵ツールがあり、PydanticAIは自分の関数を`@agent.tool`デコレーターで登録する方式だ。Agnoは「速いスタート」に有利で、PydanticAIはツールロジックをより明確に制御したいときに向く。
+
+<strong>型安全性</strong>：PydanticAIのほうが強い。エージェントの応答型がジェネリクスで宣言されているため、IDEでエラーを捕まえやすい。Agnoの`output_schema`も動作するが、APIの命名はPydanticAIほど明確ではない。
+
+<strong>マルチエージェント</strong>：Agnoが内蔵の`Team`クラスでより自然だ。PydanticAIはエージェント間の通信を自分で構成する必要がある。
+
+<strong>依存関係</strong>：どちらも同じくらい軽い。両方ともLangChainよりはるかに軽い。
+
+選択基準が複雑だと感じたら、[Python AIエージェントライブラリ比較の記事](/ja/blog/ja/python-ai-agent-library-comparison-2026)をあわせて読むと、より明確な結論に到達できる。
+
+## 次に試すこと
+
+今日の実験で試せなかったことが二つある。
+
+一つはAgnoのAgent Memoryシステムだ。`enable_agentic_memory=True`とともにSQLiteベースのメモリをエージェントに付ける機能があり、マルチセッションにわたって情報を保持するエージェントを作るときの核心になりそうだ。特にユーザーの好みや以前の会話の文脈を覚える必要があるチャットボット系エージェントで有用だと思う。
+
+もう一つはMCPツール統合だ。`agno.tools.mcp`がある。AgnoエージェントがMCPサーバーに接続してツールを呼び出す構成が可能なら、既に作ってあるMCPサーバーをそのまま再利用できるという意味だ。現在進行中のプロジェクトでMCPサーバーを複数運用しているが、その上にAgnoエージェントを載せられるなら統合コストが大きく減る。これは実際にやってみたい。
+
 ## 参考資料
 
 - [Agno公式ドキュメント](https://docs.agno.com) — エージェント・チーム・ワークフローの設計とAgentOSランタイムを扱う公式ドキュメント。パラメータ名で迷ったときに最初に確認する一次情報。

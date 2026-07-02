@@ -304,6 +304,28 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 不适合使用 Agno 的场景：实时流式响应 UI、需要精细错误处理和重试保障的生产工作流、需要完整审计每步 Agent 决策的系统。
 
+## 与 PydanticAI 的简单比较
+
+定位相近的框架里有 [PydanticAI](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)。作为两边都写过真实代码的人，我感受到的最大差异如下。
+
+<strong>工具生态</strong>：Agno 有 100 多个内置工具，PydanticAI 则是用 `@agent.tool` 装饰器注册自己的函数。Agno 在"快速起步"上占优，想更明确地控制工具逻辑时 PydanticAI 更好。
+
+<strong>类型安全</strong>：PydanticAI 更强。智能体的响应类型以泛型声明，IDE 里容易抓住错误。Agno 的 `output_schema` 也能用，但 API 命名不如 PydanticAI 清晰。
+
+<strong>多智能体</strong>：Agno 凭内置的 `Team` 类更自然。PydanticAI 需要自己搭建智能体之间的通信。
+
+<strong>依赖</strong>：都很轻。两者都远比 LangChain 轻。
+
+如果还是觉得难以取舍，可以搭配阅读 [Python AI 智能体库比较](/zh/blog/zh/python-ai-agent-library-comparison-2026)，会得到更清晰的结论。
+
+## 接下来要尝试的
+
+今天的实验里有两件事没能尝试。
+
+一是 Agno 的 Agent Memory 系统。有一个配合 `enable_agentic_memory=True` 给智能体挂载基于 SQLite 的内存的功能，做需要跨会话保持信息的智能体时，这应该是核心。尤其是需要记住用户偏好、以往对话上下文的聊天机器人类智能体会很有用。
+
+二是 MCP 工具集成。有 `agno.tools.mcp`。如果 Agno 智能体能连接 MCP 服务器并调用工具，就意味着已经做好的 MCP 服务器可以直接复用。我目前的项目里在运营多个 MCP 服务器，如果能在其上架 Agno 智能体，集成成本会大幅下降。这个我真的想试试。
+
 ## 参考资料
 
 - [Agno 官方文档](https://docs.agno.com) — 涵盖 Agent、Team、Workflow 设计以及 AgentOS 运行时的官方文档。参数命名拿不准时，这里是首选的一手来源。
