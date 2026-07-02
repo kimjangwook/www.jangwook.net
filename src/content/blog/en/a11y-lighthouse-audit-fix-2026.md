@@ -1,6 +1,6 @@
 ---
-title: 'Accessibility 55 to 100: Fixing Real WCAG Failures with Lighthouse'
-description: 'I ran a fake bakery landing page through a Lighthouse accessibility audit and got 55. Here is the real log of fixing six WCAG failures to reach 100, plus the keyboard trap the automated tool never caught.'
+title: 'Lighthouse Accessibility 55 to 100: Fixing WCAG Failures'
+description: "A demo bakery page scored 55 on a Lighthouse accessibility audit. Here's the log of fixing six WCAG failures to reach 100, plus a keyboard trap the tool missed."
 pubDate: '2026-07-02'
 heroImage: '../../../assets/blog/a11y-lighthouse-audit-fix-2026/hero.png'
 tags:

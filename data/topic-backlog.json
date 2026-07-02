@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-30",
+  "updated_at": "2026-07-02",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4392,6 +4392,40 @@
       "added_at": "2026-06-30",
       "status": "queued",
       "notes": "로컬 LLM 측정 시리즈(local-llm-*)와 ollama-fastapi-production-deployment 포스트로 내부링크 연결. 비용 절감 관점은 ai-agent-cost-reality와 교차. 코드 diff 중심 실측 how-to."
+    },
+    {
+      "slug": "mcp-enterprise-managed-authorization-zero-touch-oauth-2026",
+      "title_idea": "MCP 엔터프라이즈 관리 인증(EMA) 정식 채택 — 조직 단위 제로터치 OAuth의 의미",
+      "content_type": "news",
+      "target_keyword": "MCP enterprise authorization",
+      "secondary_keywords": [
+        "MCP OAuth",
+        "제로터치 인증",
+        "MCP 커넥터"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "MCP team announcement 2026-06-17 (EMA promoted to stable); Okta IdP provisioning; Asana/Atlassian/Figma/Linear/Supabase 지원",
+      "added_at": "2026-07-02",
+      "status": "queued",
+      "notes": "블로그의 MCP 클라이언트/서버 가이드 시리즈와 직접 연결. 개인 개발자 관점에서 per-user OAuth 대비 IdP 그룹 상속 방식이 실제로 무엇을 바꾸는지, 커스텀 커넥터가 이 확장을 채택하는 실무 절차까지 분석. 뉴스+실무 결합으로 차별화."
+    },
+    {
+      "slug": "microsoft-agent-framework-1-ga-autogen-semantic-kernel-2026",
+      "title_idea": "Microsoft Agent Framework 1.0 GA — AutoGen과 Semantic Kernel 통합이 남긴 것",
+      "content_type": "news",
+      "target_keyword": "Microsoft Agent Framework GA",
+      "secondary_keywords": [
+        "AutoGen 통합",
+        "Semantic Kernel",
+        "에이전트 프레임워크 마이그레이션"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "BUILD 2026(6/2) 발표; RC 2026-02-19, 1.0 GA 2026-04-03, 안정 API + LTS 약속",
+      "added_at": "2026-07-02",
+      "status": "queued",
+      "notes": "기존 google-adk-vs-langgraph, python-ai-agent-library-comparison 등 프레임워크 비교 글과 내부링크 연결 가능. 두 프레임워크를 쓰던 개발자의 마이그레이션 부담과 LTS 약속의 실질을 냉정하게 평가하는 각도. LangGraph/CrewAI 대비 위치 분석."
     }
   ]
 }

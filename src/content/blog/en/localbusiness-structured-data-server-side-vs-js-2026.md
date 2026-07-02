@@ -1,6 +1,6 @@
 ---
-title: 'LocalBusiness Structured Data: Server-Side Beats JS Injection'
-description: "Inject LocalBusiness JSON-LD with JavaScript and the raw HTML holds zero ld+json blocks. I compared it against server-side output, with Google's official stance and the ranking limits."
+title: 'LocalBusiness JSON-LD: Server-Side Beats JS Injection'
+description: "Inject LocalBusiness JSON-LD with JavaScript and the raw HTML has zero ld+json blocks. I compare it with server-side output, Google's stance and ranking limits."
 pubDate: '2026-07-01'
 heroImage: '../../../assets/blog/localbusiness-structured-data-server-side-vs-js-2026/hero.png'
 tags:
@@ -59,7 +59,7 @@ So even if you attach an `application/ld+json` block later with `document.create
 
 A crawler looks at a page twice. First it fetches the raw HTML as-is (first wave); when resources allow, it executes the JS with a headless Chromium and looks again (second wave). So whether the structured data is already present in the raw HTML at first-wave time is what makes the practical difference.
 
-I built the same LocalBusiness markup two ways. One is static HTML emitted by the server; the other injects it at runtime with JS.
+Taking the same approach I've used to [verify hypotheses with numbers by treating this blog as the test bench](/en/blog/en/multilingual-llm-token-tax-experiment), this time I measured the rendering directly. I built the same LocalBusiness markup two ways. One is static HTML emitted by the server; the other injects it at runtime with JS.
 
 ```html
 <!-- (A) Server-side: present in the raw HTML as-is -->
@@ -144,8 +144,10 @@ For store name, address, and phone — values that rarely change and where accur
 - Emit the store's NAP, coordinates, and URL statically from the server (route/template). Don't depend on JS injection.
 - Match those values exactly with GBP. Don't include inconsistent, dummy, or unverified values (a placeholder social URL, for instance).
 - Don't mark up information that isn't visible on the page.
-- After deploying, verify both the raw and the rendered HTML with the Rich Results Test and URL Inspection. Don't stop at "I injected it with JS, it'll be fine."
+- After deploying, verify both the raw and the rendered HTML with the Rich Results Test and URL Inspection. Just as I did when I [pushed a Lighthouse accessibility score from 55 to 100 by measuring it](/en/blog/en/a11y-lighthouse-audit-fix-2026), settle it with measurement rather than the assumption that "I injected it with JS, it'll be fine."
 - Don't promise a ranking effect. Hold the line that markup is an aid to the crawler's understanding.
+
+I've [measured, token by token, how the format you feed a machine changes both cost and recognition](/en/blog/en/llm-token-cost-data-format-experiment) — and the server-side-vs-JS choice for structured data is the same kind of problem.
 
 To sum up: JS structured data is not a wrong method. But for data like local store info, where certainty is trust, emitting it from the server beforehand is more defensive and predictable than leaving it to the render queue.
 
