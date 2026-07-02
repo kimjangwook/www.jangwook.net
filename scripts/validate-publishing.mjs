@@ -117,6 +117,8 @@ async function loadPosts() {
       const published = Boolean(pubDateKey && !draft && pubDateKey <= todayJst);
       const indexable = published && !noindex;
       const markdownImages = extractMarkdownImages(parsed.content);
+      const h2Count = (parsed.content.match(/^## /gm) || []).length;
+      const mermaidCount = (parsed.content.match(/```mermaid/g) || []).length;
 
       posts.push({
         lang,
@@ -130,6 +132,8 @@ async function loadPosts() {
         published,
         indexable,
         markdownImages,
+        h2Count,
+        mermaidCount,
       });
     }
   }
@@ -239,6 +243,38 @@ function validateRelatedPosts(posts) {
   }
 }
 
+function validateTranslationParity(posts) {
+  const bySlug = new Map();
+  for (const post of posts.filter((item) => item.indexable)) {
+    if (!bySlug.has(post.slug)) bySlug.set(post.slug, new Map());
+    bySlug.get(post.slug).set(post.lang, post);
+  }
+
+  const drifted = [];
+  for (const [slug, byLang] of bySlug) {
+    if (byLang.size < languages.length) continue; // 언어 누락은 별도 에러로 잡힌다
+    const counts = languages.map((lang) => {
+      const post = byLang.get(lang);
+      return { h2: post.h2Count, imgs: post.markdownImages.length, mermaid: post.mermaidCount };
+    });
+    const spread = (key) => {
+      const values = counts.map((c) => c[key]);
+      return Math.max(...values) - Math.min(...values);
+    };
+    if (spread('h2') > 0 || spread('imgs') > 0 || spread('mermaid') > 0) {
+      drifted.push(
+        `${slug} (h2 ${counts.map((c) => c.h2).join('/')}, imgs ${counts.map((c) => c.imgs).join('/')}, mermaid ${counts.map((c) => c.mermaid).join('/')})`
+      );
+    }
+  }
+
+  if (drifted.length > 0) {
+    warnings.push(
+      `translation structure drift (${languages.join('/')}): ${drifted.length}\n${limitList(drifted)}`
+    );
+  }
+}
+
 async function validateCrawlerSurfaces() {
   const rssFiles = [
     'src/pages/rss.xml.js',
@@ -278,6 +314,7 @@ async function main() {
 
   await validateImages(posts);
   validateRelatedPosts(posts);
+  validateTranslationParity(posts);
   await validateCrawlerSurfaces();
 
   const hiddenPastPosts = posts.filter((post) => post.pubDateKey && post.pubDateKey <= todayJst && (post.draft || post.noindex));

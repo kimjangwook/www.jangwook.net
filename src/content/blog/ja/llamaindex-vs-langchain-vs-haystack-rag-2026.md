@@ -216,6 +216,8 @@ yaml_str = p.dumps()
 
 LlamaIndexのcore依存が28個で最多だ。音声処理、画像処理などのパッケージも基本含まれているためだ。LangChain coreは9個で最少だが、実際の使用には統合パッケージを別途インストールする必要がある。
 
+![実測比較チャート：レーダーと数値比較](../../../assets/blog/llamaindex-vs-langchain-vs-haystack-rag-2026/comparison-chart.png)
+
 ## どの状況にどのフレームワークが合うか
 
 正直、決まった答えはない。それでも私が見た基準を共有する。
