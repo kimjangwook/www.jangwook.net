@@ -100,6 +100,19 @@ I want to correct a likely misread here. The accurate framing isn't "JSON is slo
 
 On `o200k_base`, a two-space indent is itself a single token (id 220). When 50 records each indent nine fields, that whitespace token alone gets laid down hundreds of times. Add a newline per line and an opening and closing brace per object. To a human that's readability; to the model it's pure cost. So I've made "no pretty-printing unless a human is going to read it" my default.
 
+## TSV beating CSV is closer to luck than signal
+
+Look at the table again: TSV (1,568) comes in 82 tokens under CSV (1,650). The character counts are identical at 3,742 — only the tokens differ. My first thought was "are tabs cheaper than commas?", so I measured that separately.
+
+```text
+comma row -> "in_stock,4521,electronics,12.5"   -> 12 tokens
+tab row   -> "in_stock\t4521\telectronics\t12.5" -> 12 tokens
+```
+
+Line by line, comma and tab both cost exactly 12 tokens. The delimiter itself isn't cheaper. The gap comes from BPE (Byte Pair Encoding) merging adjacent bytes across the whole document, and tabs happened to merge slightly better with their neighboring values. So I don't generalize this 5% gap into "use TSV". <strong>Choosing a table-shaped format — one header row plus bare values — is 95% of the decision; tab versus comma is the remaining 5% of noise.</strong> Honestly, that 5% could flip on different data.
+
+One practical tip is solid, though. Indentation is expensive. The two-space indent in pretty JSON (`"  "`) costs a token by itself, and with 50 records × 9 fields that token gets laid down hundreds of times. If no human needs to read it, dropping `indent` alone cuts 37.5% off JSON.
+
 ## With nested data, the conclusion flips
 
 If I'd stopped here I'd have walked away with the wrong lesson, "always CSV." So I measured a differently shaped dataset. Twenty orders, where each order holds a customer object (with a nested address) and a variable-length array of line items.

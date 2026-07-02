@@ -52,6 +52,15 @@ Part 1 covered the basics. The moment you push past a demo and put real traffic 
 
 Part 2 is about those questions. We'll work through enterprise-grade architecture patterns, the way real companies have actually deployed them, with code you can lift straight into your own project.
 
+## Key Takeaways (TL;DR)
+
+- 🏗️ <strong>3 enterprise architecture patterns</strong>: hierarchical, event-driven, and graph-based orchestration
+- 🔧 <strong>Custom MCP server development</strong>: build your own and plug it into AgentKit
+- 📊 <strong>Production monitoring</strong>: performance optimization and A/B testing with Evals
+- 🛡️ <strong>Enterprise security</strong>: data isolation, audit logs, compliance
+- 💼 <strong>3 real-world cases</strong>: SaaS automation, data pipelines, DevOps workflows
+- ⚡ <strong>Performance optimization</strong>: parallelism, caching, streaming responses
+
 ## 1. Enterprise Architecture Patterns
 
 ### 1.1 Hierarchical Manager-Worker Pattern
@@ -1000,6 +1009,33 @@ print(f"Audit log:\n{audit_trail}")
 <strong>Company</strong>: ProjectManage Pro (fictional project management SaaS)
 
 <strong>Challenge</strong>: Slow new user onboarding process (average 7 days), high churn rate (40% leave within 30 days)
+
+The onboarding flow looks like this:
+
+```mermaid
+sequenceDiagram
+    participant User as New customer
+    participant Onboarding as Onboarding agent
+    participant Setup as Setup agent
+    participant Training as Training agent
+    participant Support as Support agent
+
+    User->>Onboarding: Sign-up complete
+    Onboarding->>Setup: Initialize account
+    Setup->>Setup: Create default project
+    Setup->>Setup: Invite team members
+    Setup-->>Onboarding: Setup complete
+
+    Onboarding->>Training: Start tailored tutorial
+    Training->>User: Step-by-step guidance
+    User->>Training: Tutorial complete
+    Training-->>Onboarding: Training complete
+
+    Onboarding->>Support: Activate first-week support
+    Support->>User: Proactive help
+
+    Onboarding->>User: Onboarding complete 🎉
+```
 
 <strong>AgentKit Implementation</strong>:
 

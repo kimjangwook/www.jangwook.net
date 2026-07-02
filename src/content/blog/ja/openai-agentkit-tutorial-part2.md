@@ -51,6 +51,15 @@ faq:
 
 パート2はまさにそこを扱います。エンタープライズグレードのアーキテクチャパターンを、実際の企業がどう運用してきたかという視点で追い、そのまま自分のプロジェクトに移せるコードまで示します。
 
+## 要点まとめ（TL;DR）
+
+- 🏗️ <strong>3つのエンタープライズアーキテクチャパターン</strong>：階層型・イベント駆動・グラフベースのオーケストレーション
+- 🔧 <strong>カスタムMCPサーバー構築</strong>：自作してAgentKitに統合
+- 📊 <strong>本番モニタリング</strong>：Evalsを活用した性能最適化とA/Bテスト
+- 🛡️ <strong>エンタープライズセキュリティ</strong>：データ分離・監査ログ・コンプライアンス
+- 💼 <strong>3つの実践ケース</strong>：SaaS自動化・データパイプライン・DevOpsワークフロー
+- ⚡ <strong>パフォーマンス最適化</strong>：並列処理・キャッシング・ストリーミング応答
+
 ## 1. エンタープライズアーキテクチャパターン
 
 ### 1.1 階層型マネージャー・ワーカーパターン
@@ -999,6 +1008,33 @@ print(f"監査ログ:\n{audit_trail}")
 <strong>企業</strong>：ProjectManage Pro（架空のプロジェクト管理SaaS）
 
 <strong>課題</strong>：新規ユーザーのオンボーディングプロセスが遅く（平均7日）、チャーン率が高い（30日以内に40%離脱）
+
+オンボーディングの流れはこうなる。
+
+```mermaid
+sequenceDiagram
+    participant User as 新規顧客
+    participant Onboarding as オンボーディングエージェント
+    participant Setup as セットアップエージェント
+    participant Training as トレーニングエージェント
+    participant Support as サポートエージェント
+
+    User->>Onboarding: 登録完了
+    Onboarding->>Setup: アカウント初期化
+    Setup->>Setup: 基本プロジェクト作成
+    Setup->>Setup: チームメンバー招待
+    Setup-->>Onboarding: セットアップ完了
+
+    Onboarding->>Training: カスタムチュートリアル開始
+    Training->>User: ステップごとのガイド提供
+    User->>Training: チュートリアル完了
+    Training-->>Onboarding: トレーニング完了
+
+    Onboarding->>Support: 初週の集中サポート有効化
+    Support->>User: プロアクティブなヘルプ
+
+    Onboarding->>User: オンボーディング完了 🎉
+```
 
 <strong>AgentKit実装</strong>：
 
