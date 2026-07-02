@@ -59,6 +59,18 @@ git worktree add ../project-feature feature/new-login  # 分离到独立目录
 
 这对 Claude Code 为何重要？因为**可以在每个 worktree 目录中运行独立的 Claude Code 会话**。无文件冲突，无上下文污染。
 
+用一张图看结构，理解更快。
+
+```mermaid
+graph TD
+    A["一个 git 仓库 (.git)"] --> B["main worktree<br/>~/project/my-app"]
+    A --> C["feature worktree<br/>~/project/my-app-feature"]
+    A --> D["bugfix worktree<br/>~/project/my-app-bugfix"]
+    B --> E["Claude Code 会话 1"]
+    C --> F["Claude Code 会话 2"]
+    D --> G["Claude Code 会话 3"]
+```
+
 ## 实际配置方法
 
 假设项目在 `~/project/my-app`。
@@ -223,6 +235,18 @@ git worktree prune
 - 几下就完成的小修改，**隔离的搭建成本大于任务本身**时。
 
 把判断标准压成一句话：任务在文件层面是否独立？是，则 worktree 大放异彩；否，就别硬拆。配合[Claude Code 大师课第一篇](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)里讲的提示词分配原则一起读，更容易判断哪些工作该如何拆分。
+
+把判断标准整理成表：
+
+| 情况 | worktree 并行化 |
+|---|---|
+| 任务修改互不相同的文件、目录 | 适合 |
+| 长任务中并行处理紧急热修复 | 适合 |
+| 用多种方案实验、比较同一份代码 | 适合 |
+| 两个任务修改同一文件 | 不适合 — 顺序处理 |
+| 会话超过 4 个 | 不适合 — 跟踪开销大 |
+| 本地 DB 等共享状态依赖顺序 | 不适合 |
+| 隔离成本大于任务本身的小修改 | 不适合 |
 
 ## 命令速查
 

@@ -246,6 +246,16 @@ build().catch(console.error);
 
 このスクリプトを`scripts/build.ts`として保存して`bun run scripts/build.ts`で実行する。Node.js + ts-nodeの組み合わせが不要になる点が体感として楽だ。このビルドスクリプトをGitHub ActionsのCI/CDパイプラインと連携するのも自然な次のステップだ。
 
+Bun Shellが最も比較されるのはzxだ。並べて整理すると：
+
+| 項目 | Bun Shell | zx |
+|---|---|---|
+| ランタイム | Bun内蔵（追加依存0） | Node.js + npmパッケージ |
+| Windows | 独自シェル内蔵でそのまま動く | Git Bash・WSLが必要 |
+| TypeScript実行 | 直接実行（設定0） | ts-nodeなど別途構成 |
+| エコシステム成熟度 | 比較的新しい | 成熟、ダウンロード数で優位 |
+| 自然な選択 | Bunベースのプロジェクト | 既存のNode.jsプロジェクト |
+
 ## 実験で見つけた罠たち
 
 正直に書く。
@@ -316,6 +326,16 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 Bun Shellがzxより「優れている」という主張には同意しない。エコシステムの成熟度とダウンロード数でzxが上だ。Bun Shellは「Bunを使う人には自然な選択」であって「すべてのプロジェクトでzxの代わりに使うべき」ということではない。ランタイムそのものを選ぶときの判断基準は[Deno 2とBun、Node.jsを比較した記事](/ja/blog/ja/deno-2-vs-bun-nodejs-runtime-2026-comparison)で詳しく扱っているので、ツールを決める前に参考にしてほしい。
 
 個人的には、`.stdin()` APIがまだ安定していない点が残念だ。これが安定したらstdinベースのパイプ処理がずっとすっきりするはずなのだが。
+
+選択の流れを図に整理すると：
+
+```mermaid
+graph TD
+    A{"プロジェクトはすでに<br/>Bunベースか"} -->|"はい"| B["Bun Shellを使う<br/>追加依存なし"]
+    A -->|"いいえ"| C{"Windowsのチームメイトと<br/>クロスプラットフォームシェルが必要か"}
+    C -->|"はい"| D["Bun導入とあわせて<br/>Bun Shellを検討"]
+    C -->|"いいえ"| E["zx維持が現実的"]
+```
 
 ## 結局、いま使う価値はあるか
 

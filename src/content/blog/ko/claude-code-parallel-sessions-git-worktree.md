@@ -59,6 +59,18 @@ git worktree add ../project-feature feature/new-login  # 별도 디렉토리로 
 
 Claude Code 입장에서 이게 왜 중요하냐면: **각 worktree 디렉토리에서 독립적인 Claude Code 세션을 실행할 수 있기 때문**이다. 파일 충돌 없음, 컨텍스트 오염 없음.
 
+구조를 그림으로 보면 이해가 빠르다.
+
+```mermaid
+graph TD
+    A["하나의 git 저장소 (.git)"] --> B["main worktree<br/>~/project/my-app"]
+    A --> C["feature worktree<br/>~/project/my-app-feature"]
+    A --> D["bugfix worktree<br/>~/project/my-app-bugfix"]
+    B --> E["Claude Code 세션 1"]
+    C --> F["Claude Code 세션 2"]
+    D --> G["Claude Code 세션 3"]
+```
+
 ## 실제 설정 방법
 
 프로젝트가 `~/project/my-app`에 있다고 가정한다.
@@ -223,6 +235,18 @@ git worktree remove --force ../my-app-feature
 - 잠깐 끝나는 작은 수정이라 **격리 설정 비용이 작업 자체보다 큰** 경우.
 
 판단 기준을 한 줄로 줄이면 이렇다. 작업들이 파일 수준에서 독립적인가? 그렇다면 worktree가 빛난다. 아니라면 굳이 나누지 마라. [Claude Code 마스터클래스 1편](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent)에서 다룬 프롬프트 분배 원칙과 함께 보면, 어떤 작업을 어떻게 쪼갤지 감을 잡기 쉽다.
+
+판단 기준을 표로 정리하면:
+
+| 상황 | worktree 병렬화 |
+|---|---|
+| 작업이 서로 다른 파일·디렉토리를 수정 | 적합 |
+| 긴 작업 중 긴급 핫픽스 병행 | 적합 |
+| 같은 코드를 여러 접근으로 실험·비교 | 적합 |
+| 두 작업이 같은 파일을 수정 | 부적합 — 순차 처리 |
+| 세션 4개 이상 | 부적합 — 추적 오버헤드 |
+| 로컬 DB 등 공유 상태에 순서 의존 | 부적합 |
+| 격리 설정 비용이 작업보다 큰 소규모 수정 | 부적합 |
 
 ## 명령어 요약
 

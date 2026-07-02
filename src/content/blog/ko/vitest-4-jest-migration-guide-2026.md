@@ -80,6 +80,18 @@ npm install --save-dev vitest
 
 다만 아쉬운 점도 있다. **Vitest는 Node.js 생태계 전체를 지원하는 게 아니라 Vite 생태계에 최적화**되어 있다. Next.js나 Express 같은 서버 중심 프레임워크에서 Jest를 쓰던 사람이라면, 프로젝트 규모에 따라 마이그레이션 비용이 생각보다 클 수 있다. Browser Mode를 쓰지 않는 순수 Node.js 테스트라면 마이그레이션 장점이 줄어든다는 점도 솔직히 말해두고 싶다.
 
+본격적으로 시작하기 전에, 이 글이 다루는 마이그레이션 경로를 미리 보면 이렇다.
+
+```mermaid
+graph TD
+    A["Step 1-2: 설치와 vitest.config.ts"] --> B["Step 3: 코드 변환<br/>jest.fn → vi.fn 등"]
+    B --> C["Step 4-5: 신규 매처·라인 번호 필터"]
+    C --> D["Step 6: Inline Workspace"]
+    D --> E["Step 7: Browser Mode"]
+    E --> F["Step 8: CI 설정"]
+    F --> G["샌드박스 전체 실행으로 검증"]
+```
+
 ## Prerequisites
 
 - Node.js 18 이상 (22 권장)
@@ -542,6 +554,18 @@ npx vitest --ui
 - 마감이 코앞이다. 마이그레이션은 안정적인 스프린트에서 하는 게 좋다. 테스트 인프라를 바꾸면서 기능까지 만들면 두 가지 변수가 섞여 디버깅이 어려워진다.
 
 판단이 서지 않으면, 작은 테스트 파일 하나만 Vitest로 옮겨 병행 실행해보는 걸 추천한다. `globals: true`만 켜두면 대부분 그대로 통과하므로, 30분이면 실제 호환성을 확인할 수 있다.
+
+판단 기준을 표로 압축하면:
+
+| 상황 | 판단 |
+|---|---|
+| Vite·SvelteKit·Nuxt·Astro 기반 프로젝트 | 지금 이관 |
+| ts-jest·ESM/CJS 충돌을 반복 디버깅 중 | 지금 이관 |
+| 실제 브라우저에서 컴포넌트 테스트 필요 | 지금 이관 (Browser Mode) |
+| Next.js·Express 대형 서버 스위트 | 보류 |
+| jest.config 자산·스냅샷 의존이 깊음 | 보류 |
+| 순수 Node 라이브러리, Browser Mode 불필요 | 이득 작음 |
+| 마감 직전 | 안정적인 스프린트로 연기 |
 
 ## 그래서, 마이그레이션할 가치가 있나
 

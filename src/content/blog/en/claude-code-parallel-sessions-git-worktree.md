@@ -59,6 +59,18 @@ git worktree add ../project-feature feature/new-login  # separate directory
 
 Why does this matter for Claude Code? Because **you can run an independent Claude Code session in each worktree directory**. No file conflicts. No context contamination.
 
+A picture makes the structure click.
+
+```mermaid
+graph TD
+    A["One git repository (.git)"] --> B["main worktree<br/>~/project/my-app"]
+    A --> C["feature worktree<br/>~/project/my-app-feature"]
+    A --> D["bugfix worktree<br/>~/project/my-app-bugfix"]
+    B --> E["Claude Code session 1"]
+    C --> F["Claude Code session 2"]
+    D --> G["Claude Code session 3"]
+```
+
 ## Setting It Up
 
 Assume your project lives at `~/project/my-app`.
@@ -224,6 +236,18 @@ I won't pretend this pattern fits everywhere. In practice, some situations clear
 - For a quick one-line fix where the **setup cost outweighs the task** itself.
 
 The whole decision compresses to one question: are the tasks independent at the file level? If yes, worktrees shine. If not, don't split them. Read alongside the prompt-distribution principles from [Claude Code Masterclass Part 1](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent) and it gets easier to judge which work to break apart and how.
+
+The criteria in one table:
+
+| Situation | Parallel worktrees? |
+|---|---|
+| Tasks touch different files and directories | Good fit |
+| Urgent hotfix alongside a long-running task | Good fit |
+| Comparing multiple approaches to the same code | Good fit |
+| Two tasks modify the same files | Poor fit — go sequential |
+| Four or more sessions | Poor fit — tracking overhead |
+| Order-sensitive shared state such as a local DB | Poor fit |
+| Tiny fix where isolation costs more than the work | Poor fit |
 
 ## Quick Reference
 

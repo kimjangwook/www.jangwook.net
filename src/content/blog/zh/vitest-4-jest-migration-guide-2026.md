@@ -78,6 +78,18 @@ npm install --save-dev vitest
 
 不过也要说一个缺点：**Vitest 针对 Vite 生态优化，而非整个 Node.js。** 如果你在 Next.js 或 Express 等服务端框架的大型测试套件上使用 Jest，迁移成本可能比预想的要高。
 
+正式开始之前，先预览这篇文章走过的迁移路径。
+
+```mermaid
+graph TD
+    A["Step 1-2: 安装与 vitest.config.ts"] --> B["Step 3: 代码转换<br/>jest.fn → vi.fn 等"]
+    B --> C["Step 4-5: 新断言器、按行号过滤"]
+    C --> D["Step 6: Inline Workspace"]
+    D --> E["Step 7: Browser Mode"]
+    E --> F["Step 8: CI 配置"]
+    F --> G["沙箱完整运行验证"]
+```
+
 ## 前置条件
 
 - Node.js 18 以上（推荐 22）
@@ -416,6 +428,18 @@ export default defineConfig({
 - 截止日期就在眼前。迁移最好放在稳定的迭代周期里做。一边改测试基础设施一边赶功能，会把两个变量混在一起，使调试更困难。
 
 如果拿不定主意，建议先把一个小测试文件迁到 Vitest 并行运行。只要开启 `globals: true`，大部分代码都能原样通过，大约 30 分钟即可验证实际兼容性。
+
+把判断标准压缩成一张表：
+
+| 情况 | 判断 |
+|---|---|
+| 项目已基于 Vite、SvelteKit、Nuxt、Astro | 现在迁移 |
+| 反复调试 ts-jest、ESM/CJS 冲突 | 现在迁移 |
+| 组件测试需要真实浏览器 | 现在迁移（Browser Mode） |
+| Next.js、Express 大型服务端套件 | 暂缓 |
+| 深度依赖 jest.config 资产、快照 | 暂缓 |
+| 纯 Node 库，不需要 Browser Mode | 收益有限 |
+| 截止日期临近 | 推迟到稳定的迭代 |
 
 ## 那么，到底值不值得迁移
 

@@ -108,6 +108,18 @@ const methods = Object.getOwnPropertyNames(Object.getPrototypeOf(db));
 
 `better-sqlite3`를 써봤다면 대부분 낯익을 것이다. 아래에서 실제로 사용하며 각 메서드를 살펴본다.
 
+메서드 전체의 사용 흐름을 그림으로 보면 이렇다.
+
+```mermaid
+graph TD
+    A["new DatabaseSync(path)"] --> B["db.exec()<br/>DDL·BEGIN/COMMIT/ROLLBACK"]
+    A --> C["db.prepare(SQL)<br/>StatementSync 생성"]
+    A --> D["db.function()·db.aggregate()<br/>사용자 정의 함수 등록"]
+    C --> E["run() — 쓰기"]
+    C --> F["get() — 단일 행"]
+    C --> G["all() — 전체 행"]
+```
+
 ## 기본 CRUD 패턴
 
 ```js
@@ -476,6 +488,17 @@ SQLite 에러 코드 전체 목록은 [공식 문서](https://www.sqlite.org/res
 - 이미 잘 돌아가는 코드베이스. 빌드가 깨진 적 없다면 굳이 갈아탈 이유가 없다
 
 한 문장으로 줄이면 이렇다. 새 프로젝트나 내부 툴이라면 `node:sqlite`부터 시도하고, 막히는 기능이 나올 때 `better-sqlite3`로 돌아가면 된다. 반대로 기존 프로덕션 코드를 굳이 마이그레이션할 이유는 아직 없다. 세부 동작은 [공식 node:sqlite 문서](https://nodejs.org/api/sqlite.html)와 [better-sqlite3 저장소](https://github.com/WiseLibs/better-sqlite3)를 직접 비교해보는 게 가장 확실하다.
+
+두 라이브러리의 차이를 표로 압축하면:
+
+| 항목 | node:sqlite | better-sqlite3 |
+|---|---|---|
+| 설치 | Node 22.5+ 내장, 의존성 0 | npm 설치 + 네이티브 빌드 |
+| CI·Alpine 빌드 실패 | 없음 | 발생 가능 |
+| 트랜잭션 API | exec('BEGIN'/'COMMIT') 직접 관리 | db.transaction() 헬퍼·savepoint |
+| serialize/deserialize | 미지원 | 지원 |
+| 안정성 | experimental (마이너 변경 가능) | 프로덕션 검증됨 |
+| 적합한 곳 | 내부 CLI·빌드 스크립트·캐시 | 기존 프로덕션·고급 트랜잭션 |
 
 ## 현재 한계와 내 판단
 

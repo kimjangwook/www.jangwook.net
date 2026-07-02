@@ -100,6 +100,18 @@ I queried the prototype chain directly:
 
 Familiar if you've used better-sqlite3. The gaps become visible only when you need them.
 
+Here is the whole method surface as one picture.
+
+```mermaid
+graph TD
+    A["new DatabaseSync(path)"] --> B["db.exec()<br/>DDL and BEGIN/COMMIT/ROLLBACK"]
+    A --> C["db.prepare(SQL)<br/>creates a StatementSync"]
+    A --> D["db.function() / db.aggregate()<br/>user-defined functions"]
+    C --> E["run() — writes"]
+    C --> F["get() — single row"]
+    C --> G["all() — all rows"]
+```
+
 ## Basic CRUD
 
 ```js
@@ -420,6 +432,17 @@ If you're torn between `node:sqlite` and `better-sqlite3`, the decision is simpl
 - The codebase already works. If builds have never broken for you, there's no reason to switch
 
 In one sentence: for a new project or internal tool, start with `node:sqlite` and fall back to `better-sqlite3` the moment you hit a missing feature. There's no urgency to migrate existing production code the other way. To compare the specifics yourself, read the [official node:sqlite docs](https://nodejs.org/api/sqlite.html) against the [better-sqlite3 repository](https://github.com/WiseLibs/better-sqlite3).
+
+The differences, compressed into one table:
+
+| Aspect | node:sqlite | better-sqlite3 |
+|---|---|---|
+| Install | Built into Node 22.5+, zero deps | npm install + native build |
+| CI/Alpine build failures | None | Possible |
+| Transaction API | Manual exec('BEGIN'/'COMMIT') | db.transaction() helper, savepoints |
+| serialize/deserialize | Not supported | Supported |
+| Stability | Experimental (minor-version changes) | Production-proven |
+| Best fit | Internal CLIs, build scripts, caches | Existing production, advanced transactions |
 
 ## Current Limitations and My Take
 

@@ -287,6 +287,16 @@ for (const file of ["a.ts", "b.ts", "c.ts"]) {
 
 zx도 좋은 도구다. 생태계가 성숙하고, Node.js 프로젝트에선 자연스럽다. 나는 기존 Node.js 프로젝트에서는 zx를 유지하고, 새 Bun 프로젝트에서는 Bun Shell을 쓴다.
 
+차이를 표로 압축하면:
+
+| 항목 | Bun Shell | zx |
+|---|---|---|
+| 런타임 | Bun 내장 (추가 의존성 0) | Node.js + npm 패키지 |
+| Windows | 자체 쉘 내장, 그대로 동작 | Git Bash·WSL 필요 |
+| TypeScript 실행 | 직접 실행 (설정 0) | ts-node 등 별도 조합 |
+| 생태계 성숙도 | 상대적으로 신생 | 성숙, 다운로드 수 우위 |
+| 자연스러운 선택 | Bun 기반 프로젝트 | 기존 Node.js 프로젝트 |
+
 ## 내가 실험하면서 발견한 함정들
 
 솔직하게 정리한다.
@@ -357,6 +367,16 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 Bun Shell이 zx보다 "더 좋다"는 주장에는 동의하지 않는다. 생태계 성숙도와 다운로드 수에서 zx가 앞선다. Bun Shell은 "Bun을 쓰는 사람에게는 자연스러운 선택"이지 "모든 프로젝트에 zx 대신 써야 한다"는 게 아니다. 런타임 자체를 고를 때의 판단 기준은 [Deno 2와 Bun, Node.js를 비교한 글](/ko/blog/ko/deno-2-vs-bun-nodejs-runtime-2026-comparison)에서 더 자세히 다뤘으니, 도구 선택 전에 참고하면 좋다.
 
 그리고 개인적으로, `.stdin()` API가 아직 안정적이지 않은 점이 아쉽다. 이게 안정화되면 stdin 기반 파이프 처리가 훨씬 깔끔해질 텐데.
+
+선택 흐름을 그림으로 정리하면:
+
+```mermaid
+graph TD
+    A{"프로젝트가 이미<br/>Bun 기반인가"} -->|"예"| B["Bun Shell 사용<br/>추가 의존성 없음"]
+    A -->|"아니오"| C{"Windows 팀원과<br/>크로스플랫폼 쉘이 필요한가"}
+    C -->|"예"| D["Bun 도입과 함께<br/>Bun Shell 검토"]
+    C -->|"아니오"| E["zx 유지가 현실적"]
+```
 
 ## 배포 환경에서 주의할 점
 

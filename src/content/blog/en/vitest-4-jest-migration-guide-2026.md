@@ -81,6 +81,18 @@ That's it.
 
 One honest caveat: **Vitest is optimized for the Vite ecosystem, not for all of Node.js.** If you're running large server-side test suites in Next.js or Express, migration could be more work than expected. The "just works" story is strongest for Vite-based frontend and TypeScript library projects.
 
+Before diving in, here is the migration path this guide walks through.
+
+```mermaid
+graph TD
+    A["Steps 1-2: install and vitest.config.ts"] --> B["Step 3: code conversion<br/>jest.fn → vi.fn and friends"]
+    B --> C["Steps 4-5: new matchers, line filters"]
+    C --> D["Step 6: Inline Workspace"]
+    D --> E["Step 7: Browser Mode"]
+    E --> F["Step 8: CI configuration"]
+    F --> G["Verified with a full sandbox run"]
+```
+
 ## Prerequisites
 
 - Node.js 18 or higher (22 recommended)
@@ -460,6 +472,18 @@ Before you copy the install commands, decide whether this switch fits your proje
 - You're against a deadline. Migrate during a stable sprint. Changing test infrastructure while shipping features mixes two variables and makes debugging harder.
 
 If you're unsure, move a single small test file to Vitest and run it in parallel. With `globals: true` on, most of it passes as-is, so you can confirm real compatibility in about 30 minutes.
+
+The decision, compressed into one table:
+
+| Situation | Call |
+|---|---|
+| Project already on Vite, SvelteKit, Nuxt, or Astro | Migrate now |
+| Repeatedly debugging ts-jest or ESM/CJS conflicts | Migrate now |
+| Component tests belong in a real browser | Migrate now (Browser Mode) |
+| Large Next.js or Express server suite | Hold off |
+| Deep investment in jest.config assets and snapshots | Hold off |
+| Pure Node library, no Browser Mode needed | Marginal gain |
+| Deadline looming | Defer to a calm sprint |
 
 ## Should You Migrate?
 

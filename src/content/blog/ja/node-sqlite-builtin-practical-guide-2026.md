@@ -101,6 +101,18 @@ const fileDb = new DatabaseSync('./my-app.db');
 //  'setReadBigInts', 'setReturnArrays']
 ```
 
+メソッド全体の使用フローを図にするとこうなる。
+
+```mermaid
+graph TD
+    A["new DatabaseSync(path)"] --> B["db.exec()<br/>DDL・BEGIN/COMMIT/ROLLBACK"]
+    A --> C["db.prepare(SQL)<br/>StatementSync 生成"]
+    A --> D["db.function()・db.aggregate()<br/>ユーザー定義関数の登録"]
+    C --> E["run() — 書き込み"]
+    C --> F["get() — 単一行"]
+    C --> G["all() — 全行"]
+```
+
 ## 基本的な CRUD パターン
 
 ```js
@@ -372,6 +384,17 @@ try {
 - すでに問題なく動いているコードベース。ビルドが壊れたことがないなら、乗り換える理由はない
 
 一文にまとめるとこうだ。新規プロジェクトや内部ツールなら `node:sqlite` から始め、足りない機能に当たった時点で `better-sqlite3` に戻ればいい。逆に既存の本番コードを急いで移行する理由はまだない。細部は[公式 node:sqlite ドキュメント](https://nodejs.org/api/sqlite.html)と [better-sqlite3 リポジトリ](https://github.com/WiseLibs/better-sqlite3)を自分で見比べるのが一番確実だ。
+
+二つのライブラリの違いを表に圧縮すると：
+
+| 項目 | node:sqlite | better-sqlite3 |
+|---|---|---|
+| インストール | Node 22.5+ 内蔵、依存0 | npmインストール + ネイティブビルド |
+| CI・Alpineのビルド失敗 | 無し | 起こりうる |
+| トランザクションAPI | exec('BEGIN'/'COMMIT')を直接管理 | db.transaction()ヘルパー・savepoint |
+| serialize/deserialize | 未対応 | 対応 |
+| 安定性 | experimental（マイナー変更ありうる） | プロダクション実績あり |
+| 適した場所 | 社内CLI・ビルドスクリプト・キャッシュ | 既存プロダクション・高度なトランザクション |
 
 ## 現在の限界と私の判断
 

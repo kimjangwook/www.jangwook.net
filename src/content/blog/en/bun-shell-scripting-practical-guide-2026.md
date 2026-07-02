@@ -244,6 +244,16 @@ build().catch(console.error);
 
 Save this as `scripts/build.ts` and run it with `bun run scripts/build.ts`. No Node.js or ts-node needed. Wiring this build script into a GitHub Actions CI/CD pipeline is a natural next step once local automation is working.
 
+Bun Shell is most often weighed against zx. Side by side:
+
+| Aspect | Bun Shell | zx |
+|---|---|---|
+| Runtime | Built into Bun (zero extra deps) | Node.js + npm package |
+| Windows | Ships its own shell, works as is | Needs Git Bash or WSL |
+| Running TypeScript | Direct execution, zero config | ts-node or similar setup |
+| Ecosystem maturity | Relatively young | Mature, ahead in downloads |
+| Natural fit | Bun-based projects | Existing Node.js projects |
+
 ## Pitfalls I Found While Experimenting
 
 Here's the honest part.
@@ -311,6 +321,16 @@ My conclusion: **if your project is already Bun-based, Bun Shell is a natural fi
 I'd push back on the framing that Bun Shell is "better than zx." In terms of ecosystem maturity and download numbers, zx is ahead. Bun Shell is the right choice for Bun projects specifically. It isn't a universal upgrade recommendation. If you're still deciding on the runtime itself, my [Deno 2 vs Bun vs Node.js comparison](/en/blog/en/deno-2-vs-bun-nodejs-runtime-2026-comparison) goes deeper into that decision, and it's worth reading before you lock in a tool.
 
 And honestly, the missing `.stdin()` API bothers me. Once that's stable, stdin-based pipe processing will be significantly cleaner. There's a workaround for now, but it adds friction.
+
+The decision flow, in one picture:
+
+```mermaid
+graph TD
+    A{"Is the project<br/>already on Bun?"} -->|"yes"| B["Use Bun Shell<br/>zero extra deps"]
+    A -->|"no"| C{"Windows teammates and<br/>a cross-platform shell needed?"}
+    C -->|"yes"| D["Consider Bun Shell<br/>along with adopting Bun"]
+    C -->|"no"| E["Staying on zx is realistic"]
+```
 
 ## Deployment Considerations
 

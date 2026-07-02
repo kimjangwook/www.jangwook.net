@@ -243,6 +243,16 @@ build().catch(console.error);
 
 将这个脚本保存为`scripts/build.ts`，用`bun run scripts/build.ts`执行。不需要Node.js或ts-node，体感上轻松很多。将这个构建脚本接入GitHub Actions CI/CD流水线是本地自动化跑通后自然的下一步。
 
+Bun Shell 最常被拿来与 zx 比较。并排整理如下：
+
+| 项目 | Bun Shell | zx |
+|---|---|---|
+| 运行时 | Bun 内置（零额外依赖） | Node.js + npm 包 |
+| Windows | 内置自有 shell，直接可用 | 需要 Git Bash、WSL |
+| 运行 TypeScript | 直接执行（零配置） | 需 ts-node 等组合 |
+| 生态成熟度 | 相对年轻 | 成熟，下载量领先 |
+| 自然的选择 | Bun 项目 | 现有 Node.js 项目 |
+
 ## 实验中发现的陷阱
 
 诚实地说。
@@ -310,6 +320,16 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 我不认同"Bun Shell比zx更好"这种说法。从生态成熟度和下载量来看，zx更占优。Bun Shell是"用Bun的人的自然选择"，而不是"所有项目都应该弃用zx"。如果你还在纠结运行时本身怎么选，我在[Deno 2、Bun与Node.js对比一文](/zh/blog/zh/deno-2-vs-bun-nodejs-runtime-2026-comparison)里更深入地讲了这个取舍，定工具之前值得一读。
 
 还有一点，`.stdin()` API尚不稳定让我觉得遗憾。一旦稳定下来，基于stdin的管道处理会简洁很多，现在还需要绕路。
+
+把选择流程画成一张图：
+
+```mermaid
+graph TD
+    A{"项目是否已经<br/>基于 Bun"} -->|"是"| B["使用 Bun Shell<br/>零额外依赖"]
+    A -->|"否"| C{"是否有 Windows 队友、<br/>需要跨平台 shell"}
+    C -->|"是"| D["随引入 Bun 一起<br/>考虑 Bun Shell"]
+    C -->|"否"| E["继续用 zx 更现实"]
+```
 
 ## 现在到底值不值得用
 
