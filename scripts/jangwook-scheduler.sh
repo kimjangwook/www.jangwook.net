@@ -132,13 +132,19 @@ EXIT_CODE=$?
 # 일시적 실패면 1회만 재시도. 인증/과부하 실패는 claude 가 실제 작업 전에 죽으므로
 # (2026-06-20 daily-post 401 사례) 재시도해도 중복 발행 위험이 없다. 발행 게이트
 # 실패는 claude 가 이미 작업한 경우라 여기서 재시도하지 않는다(아래 게이트에서 처리).
-if [ "$EXIT_CODE" -ne 0 ] && is_transient_failure; then
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] claude 일시적 실패(인증/과부하 추정) 감지 — 120초 후 1회 재시도" >> "$LOG_FILE"
-    tg_send "[jangwook.net] ${TASK_NAME}: 일시적 실패 감지, 120초 후 1회 재시도"
-    sleep 120
-    claude "$@" >> "$LOG_FILE" 2>&1
-    EXIT_CODE=$?
-fi
+# 2026-07-02: 529 장애 창이 ~20분 지속돼 120초 단일 재시도가 창 안에서 소진되는 사례 확인
+# (effloow 동일 시간대 2스텝 연속 실패) → 백오프 재시도(120초 → 600초, 최대 2회)로 확장.
+for RETRY_DELAY in 120 600; do
+    if [ "$EXIT_CODE" -ne 0 ] && is_transient_failure; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] claude 일시적 실패(인증/과부하 추정) 감지 — ${RETRY_DELAY}초 후 재시도" >> "$LOG_FILE"
+        tg_send "[jangwook.net] ${TASK_NAME}: 일시적 실패 감지, ${RETRY_DELAY}초 후 재시도"
+        sleep "$RETRY_DELAY"
+        claude "$@" >> "$LOG_FILE" 2>&1
+        EXIT_CODE=$?
+    else
+        break
+    fi
+done
 
 # Kill watchdog
 kill $WATCHDOG_PID 2>/dev/null || true
