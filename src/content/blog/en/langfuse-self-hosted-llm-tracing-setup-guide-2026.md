@@ -1,7 +1,5 @@
 ---
-title: >-
-  Langfuse v3 Self-Hosting Complete Guide — Building LLM Tracing on Your Own
-  Infrastructure
+title: 'Langfuse v3 Self-Hosting — Complete LLM Tracing Guide'
 description: >-
   Run Langfuse v3 on your own infrastructure with Docker Compose: Python SDK 4.x
   instrumentation, RAG tracing, cost dashboards, and no cloud vendor lock-in.

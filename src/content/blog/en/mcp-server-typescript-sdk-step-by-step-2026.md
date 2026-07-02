@@ -1,7 +1,5 @@
 ---
-title: >-
-  Building Your Own MCP Server with TypeScript —
-  @modelcontextprotocol/sdk Tutorial
+title: 'Build an MCP Server in TypeScript — Official SDK Tutorial'
 description: >-
   Build a working TypeScript MCP server in 30 minutes with
   @modelcontextprotocol/sdk and Zod v4: tool registration, transport testing,

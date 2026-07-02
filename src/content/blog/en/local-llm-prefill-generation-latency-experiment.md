@@ -1,5 +1,5 @@
 ---
-title: 'Why a Local LLM Slows Down as the Conversation Grows — I Split Prefill From Generation'
+title: 'Why Local LLMs Slow Down in Long Chats — Prefill vs Generation'
 description: >-
   A 9,700-token prompt took 55s to its first token, then 65ms on the identical
   second call. I split Ollama's timings into prefill vs generation to see why.

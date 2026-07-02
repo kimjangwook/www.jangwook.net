@@ -1,5 +1,5 @@
 ---
-title: 'Same Article, 1.4x the Tokens in Korean: Measuring the Non-English Token Tax Across 285 of My Posts'
+title: 'The Non-English Token Tax — Korean Costs 1.4x, Measured'
 description: >-
   I tokenized 285 of my posts across ko/ja/en/zh with three tokenizers. Korean ran 1.38x English tokens, Japanese 1.34x. The non-English token tax, measured.
 pubDate: '2026-06-23'

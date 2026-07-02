@@ -1,7 +1,5 @@
 ---
-title: >-
-  Building a Python MCP Server in 30 Minutes with FastMCP 3.x — One @tool
-  Decorator Is All You Need
+title: 'FastMCP 3.x: Build a Python MCP Server in 30 Minutes'
 description: >-
   Ship a Python MCP server in 30 lines with FastMCP 3.2.4. The @mcp.tool(),
   @mcp.resource(), and @mcp.prompt() decorators expose tools Claude and Cursor

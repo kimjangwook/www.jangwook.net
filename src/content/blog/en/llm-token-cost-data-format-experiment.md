@@ -1,5 +1,5 @@
 ---
-title: "Stop Feeding Raw JSON to Your LLM — I Measured Token Cost Across 9 Data Formats"
+title: 'Stop Feeding Raw JSON to LLMs — 9 Data Formats Measured'
 description: "I serialized 50 records into 9 formats (JSON, YAML, CSV, TSV, XML...) and counted tokens with tiktoken. For flat data, TSV ran 62% cheaper than pretty JSON."
 pubDate: '2026-06-21'
 heroImage: ../../../assets/blog/llm-token-cost-data-format-experiment.png

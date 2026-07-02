@@ -1,5 +1,5 @@
 ---
-title: "Building AI Agents with Agno — I Actually Ran It with Gemini and Built-in Tools"
+title: 'Building AI Agents with Agno and Gemini — Hands-On Guide'
 description: "I ran Agno v2.6.17 (formerly Phidata) with Gemini: Calculator, Wikipedia, structured output, and multi-agent teams, plus the real traps I hit along the way."
 pubDate: '2026-06-18'
 heroImage: ../../../assets/blog/agno-python-agent-framework-gemini-guide-2026-hero.png

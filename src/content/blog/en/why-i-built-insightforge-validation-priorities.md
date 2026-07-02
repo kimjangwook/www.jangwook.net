@@ -1,5 +1,5 @@
 ---
-title: 'Why I Built InsightForge: Turning AI Consumer Research Into Validation Priorities'
+title: 'Why I Built InsightForge: AI Research to Validation Priorities'
 description: 'A founder-style build log on what InsightForge is, why I built it, and the hard parts of turning synthetic research panels into a responsible product.'
 pubDate: '2026-06-15'
 heroImage: ../../../assets/blog/llm-consumer-research-hero.jpg

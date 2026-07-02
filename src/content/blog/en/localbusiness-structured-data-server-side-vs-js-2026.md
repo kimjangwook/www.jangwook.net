@@ -1,5 +1,5 @@
 ---
-title: "LocalBusiness Structured Data: JS Injection Works, but Server-Side Is Safer"
+title: 'LocalBusiness Structured Data: Server-Side Beats JS Injection'
 description: "Inject LocalBusiness JSON-LD with JavaScript and the raw HTML holds zero ld+json blocks. I compared it against server-side output, with Google's official stance and the ranking limits."
 pubDate: '2026-07-01'
 heroImage: '../../../assets/blog/localbusiness-structured-data-server-side-vs-js-2026/hero.png'

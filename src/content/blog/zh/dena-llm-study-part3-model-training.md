@@ -1,6 +1,6 @@
 ---
 title: 'DeNA LLM研究Part 3: 模型训练方法论 - 从预训练到RLHF/DPO'
-description: 基于DeNA LLM研究资料Part 3，深入分析预训练、微调和强化学习的差异，以及LoRA、QLoRA、DPO等最新高效学习技术。
+description: 基于DeNA LLM研究资料Part 3，深入分析预训练、微调和强化学习的差异，以及LoRA、QLoRA、DPO等最新高效学习技术，帮助你理解各训练阶段的成本与适用场景。
 pubDate: '2025-12-10'
 heroImage: ../../../assets/blog/dena-llm-study-part3-model-training-hero.jpg
 tags:

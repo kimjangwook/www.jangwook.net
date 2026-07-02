@@ -1,7 +1,5 @@
 ---
-title: >-
-  DeNA LLM Study Part 3: Model Training Methodologies - From Pre-training to
-  RLHF/DPO
+title: 'DeNA LLM Study Part 3: Model Training, Pre-training to RLHF'
 description: >-
   Deep dive into pre-training, fine-tuning, and RLHF from DeNA LLM Study Part 3,
   covering efficient techniques like LoRA, QLoRA, and DPO.

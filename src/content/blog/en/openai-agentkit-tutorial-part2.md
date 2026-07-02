@@ -1,7 +1,5 @@
 ---
-title: >-
-  OpenAI AgentKit Complete Guide Part 2: Production Deployment and Advanced
-  Patterns
+title: 'OpenAI AgentKit Guide Part 2: Production and Advanced Patterns'
 description: >-
   OpenAI AgentKit Part 2: orchestration, handoffs, error recovery, and
   production deploy. Architecture with code for enterprise-grade AgentKit

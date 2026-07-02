@@ -1,5 +1,5 @@
 ---
-title: 'I Pointed 8 Agents at One Local LLM — Measuring Ollama Concurrency Throughput'
+title: '8 Agents, One Local LLM — Ollama Concurrency Measured'
 description: >-
   I fired 8 agents at one local model expecting a speedup. Default Ollama serializes requests, so eight at once matched one. I benchmarked OLLAMA_NUM_PARALLEL.
 pubDate: '2026-07-01'

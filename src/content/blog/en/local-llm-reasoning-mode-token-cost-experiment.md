@@ -1,5 +1,5 @@
 ---
-title: 'Does a Local Reasoning Model Earn Its Keep? Measuring thinking ON/OFF on gemma4:12b'
+title: 'Local Reasoning Model Token Cost — thinking ON/OFF Measured'
 description: >-
   I ran 13 questions on gemma4:12b with thinking ON and OFF. Reasoning got one more right while spending 68x the output tokens and 19x the wall-clock.
 pubDate: '2026-06-30'

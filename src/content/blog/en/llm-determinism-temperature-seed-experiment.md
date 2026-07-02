@@ -1,5 +1,5 @@
 ---
-title: 'Does a Local LLM Ever Repeat Itself? Measuring Output Reproducibility with Temperature and Seed'
+title: 'Local LLM Reproducibility: Testing Temperature and Seed'
 description: >-
   I sent the same prompt to local Gemma 4 dozens of times. temperature=0 was deterministic, and even at higher temperature a fixed seed collapsed output to one line.
 pubDate: '2026-06-22'

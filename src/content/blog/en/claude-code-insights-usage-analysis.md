@@ -1,7 +1,5 @@
 ---
-title: >-
-  Claude Code /insights Review: What 4,516 Messages Reveal About My AI Coding
-  Patterns
+title: 'Claude Code /insights: What 4,516 Messages Reveal'
 description: >-
   4,516 messages, 1,042 sessions, and 6,267 file edits analyzed with Claude Code
   /insights, exposing my real AI coding bottlenecks and the fixes I now use.

@@ -1,6 +1,6 @@
 ---
 title: 使用多代理编排改进博客自动化系统
-description: 使用Claude Code的多代理编排模式分析48个文件并修复61个问题的大规模系统改进完整指南
+description: 使用Claude Code的多代理编排模式分析48个文件并修复61个问题的大规模系统改进完整指南，涵盖任务分解、并行执行与质量验证的实战经验。
 pubDate: '2025-12-04'
 heroImage: ../../../assets/blog/multi-agent-orchestration-improvement-hero.jpg
 tags:

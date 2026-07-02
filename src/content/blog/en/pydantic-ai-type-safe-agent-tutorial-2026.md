@@ -1,5 +1,5 @@
 ---
-title: PydanticAI Practical Tutorial — Building Type-Safe AI Agents the FastAPI Way
+title: 'PydanticAI Tutorial — Type-Safe AI Agents the FastAPI Way'
 description: >-
   Build type-safe AI agents with PydanticAI 1.88.0: TestModel without an API
   key, output_type and @agent.tool wiring, multi-provider switching, all run

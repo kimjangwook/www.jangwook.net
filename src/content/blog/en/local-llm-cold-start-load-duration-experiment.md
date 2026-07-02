@@ -1,5 +1,5 @@
 ---
-title: 'Why a local LLM''s first reply sometimes takes 10 seconds — I measured the cold start (load_duration)'
+title: 'Local LLM Cold Starts — Why First Replies Take 10 Seconds'
 description: >-
   After idling, my agent's first reply dragged. I pulled Ollama's load_duration across model sizes: 1.5s
   for 2GB up to 9.7s for 9.6GB, and split it by keep_alive.

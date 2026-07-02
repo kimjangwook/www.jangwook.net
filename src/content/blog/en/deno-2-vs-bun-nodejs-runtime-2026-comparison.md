@@ -1,7 +1,5 @@
 ---
-title: >-
-  Deno 2 vs Bun 1.3 — Node.js Runtime Alternatives Compared in 2026: TypeScript,
-  Speed, and Security
+title: 'Deno 2 vs Bun 1.3 — 2026 Node.js Alternative Comparison'
 description: >-
   Deno 2.8.2 and Bun 1.3.14 benchmarked head to head: startup time, HTTP
   throughput, npm compatibility, and security model, plus which one I actually
