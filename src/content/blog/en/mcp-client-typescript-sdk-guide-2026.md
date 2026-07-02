@@ -232,6 +232,22 @@ Found 1 resource(s): mcp://demo/info
 
 The server was never started separately. The client spawned `node server.mjs`, communicated with it, and terminated both processes cleanly when `client.close()` was called.
 
+Here is the whole flow so far as a sequence.
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as MCP server process
+    C->>S: connect() — spawns node server.mjs
+    C->>S: initialize (JSON-RPC 2.0)
+    S-->>C: capabilities response
+    C->>S: tools/list
+    S-->>C: tool list + inputSchema
+    C->>S: tools/call (name, arguments)
+    S-->>C: content array (may carry isError)
+    C->>S: close() — process exits
+```
+
 ## Errors come back as isError, not as exceptions
 
 This is the behavior that surprised me. When you call a tool that doesn't exist, `callTool()` doesn't throw — it returns a response object with `isError: true`.
@@ -293,6 +309,15 @@ Parallel calls (4 ops) in 1ms:
 ```
 
 Even over stdio, the SDK handles request multiplexing internally. Four concurrent calls go out and get matched to their responses correctly. Keep in mind that with stdio the server still processes them one at a time — if your tools are CPU-heavy, parallel calling has limited upside.
+
+Going through a host app like Claude Desktop versus driving a custom client yourself:
+
+| Aspect | Via Claude Desktop | Custom client |
+|---|---|---|
+| Execution | Manual, in the desktop app | Automated, from scripts and CI/CD |
+| LLM coupling | Fixed to Claude | Any LLM, or direct calls with no LLM at all |
+| Parallel-call control | Decided by the host | Yours via Promise.all (4 calls in 1ms, measured) |
+| Main use | Interactive sessions | Pipelines, your own agents, server testing |
 
 ## Three real-world situations where a custom client is useful
 

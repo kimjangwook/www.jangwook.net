@@ -203,6 +203,17 @@ return {
 
 即使发生错误，MCP惯例也是不抛出异常，而是将错误信息包装在`content`中返回。抛出异常会导致不同客户端的处理方式不同。
 
+进入代码之前，先一览三步模式与传输层的选项。
+
+```mermaid
+graph TD
+    A["第1步: 创建McpServer实例"] --> B["第2步: 用server.tool()注册工具<br/>名称、描述、Zod模式、处理函数"]
+    B --> C["第3步: 连接Transport"]
+    C --> D["InMemoryTransport<br/>同进程测试"]
+    C --> E["StdioServerTransport<br/>对接Claude Desktop、Code"]
+    C --> F["HTTP/SSE<br/>远程部署"]
+```
+
 ## 使用InMemoryTransport在同一进程中测试
 
 在将MCP服务器连接到实际的Claude或Cursor之前，有一种方法可以在同一进程内测试服务器-客户端往返通信。只需使用`InMemoryTransport`。
@@ -558,6 +569,14 @@ app.listen(3000, () => {
 以这种方式部署后，Cursor或Claude Desktop可以将`http://localhost:3000/sse`注册为MCP服务器URL。不过HTTP方式配置更复杂，安全（认证、HTTPS）处理也需要单独进行。如果只是团队内部工具，stdio要简单得多。
 
 正如在MCP vs A2A vs Open Responses协议比较中讨论的，远程MCP服务器架构在成熟度和安全方面还有很多需要整理的地方。如果现在计划远程部署，认证令牌、CORS和会话管理是必须认真考虑的问题。
+
+三种传输层的选择标准整理如下：
+
+| 传输层 | 通信方式 | 适合场景 | 部署形态 |
+|---|---|---|---|
+| InMemoryTransport | 同一进程内直接连接 | 单元测试、演示 | 无（代码内部） |
+| StdioServerTransport | stdin/stdout JSON-RPC | 本地对接 Claude Desktop、Code | 本地进程 |
+| Streamable HTTP/SSE | HTTP 流式传输 | 远程服务器、多客户端 | 服务器托管 |
 
 ## 实际可用的工具创意
 

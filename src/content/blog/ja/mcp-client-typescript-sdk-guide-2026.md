@@ -221,6 +221,22 @@ Found 1 resource(s): mcp://demo/info
 
 サーバーを別ターミナルで起動しなかった。クライアントが`node server.mjs`を直接スポーンし、通信終了後`client.close()`でプロセスをまとめて終了させた。
 
+ここまでの全体の流れをシーケンスで整理するとこうなる。
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as MCPサーバープロセス
+    C->>S: connect() — node server.mjs をスポーン
+    C->>S: initialize (JSON-RPC 2.0)
+    S-->>C: capabilities 応答
+    C->>S: tools/list
+    S-->>C: ツール一覧 + inputSchema
+    C->>S: tools/call (name, arguments)
+    S-->>C: content 配列 (isError を含みうる)
+    C->>S: close() — プロセス終了
+```
+
 ## エラーはexceptionではなくisErrorフィールドで返る
 
 MCPのエラー処理の仕方が当初の予想と違った。存在しないツールを呼び出してみると、exceptionが発生しなかった。
@@ -279,6 +295,15 @@ Parallel calls (4 ops) in 1ms:
 ```
 
 stdioトランスポートでもSDK内部でリクエストの多重化を処理している。4件を同時に送っても応答が正しくマッピングされる。ただしstdioベースのため、サーバー側の処理は順番に行われる可能性がある。ツールの処理コストが高い場合、並列呼び出しのメリットは限定的になりうる。
+
+Claude Desktopのようなホストアプリを使う場合と、カスタムクライアントを直接使う場合の違いを整理すると：
+
+| 観点 | Claude Desktop経由 | カスタムクライアント |
+|---|---|---|
+| 実行方式 | デスクトップアプリで手動 | スクリプト・CI/CDで自動 |
+| LLM依存 | Claude固定 | 任意のLLM、あるいはLLM無しで直接呼び出し |
+| 並列呼び出し制御 | ホストが決定 | Promise.allで直接制御（4件1ms実測） |
+| 主な用途 | 対話的な利用 | パイプライン・自作エージェント・サーバーテスト |
 
 ## カスタムMCPクライアントが本当に役立つ3つの場面
 

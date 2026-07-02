@@ -233,6 +233,22 @@ Found 1 resource(s): mcp://demo/info
 
 서버를 별도 터미널에서 실행하지 않았다. 클라이언트가 `node server.mjs`를 직접 스폰했고, 통신이 끝난 후 `client.close()`로 프로세스를 함께 종료했다.
 
+여기까지의 전체 흐름을 시퀀스로 정리하면 이렇다.
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as MCP 서버 프로세스
+    C->>S: connect() — node server.mjs 스폰
+    C->>S: initialize (JSON-RPC 2.0)
+    S-->>C: capabilities 응답
+    C->>S: tools/list
+    S-->>C: 도구 목록 + inputSchema
+    C->>S: tools/call (name, arguments)
+    S-->>C: content 배열 (isError 포함 가능)
+    C->>S: close() — 프로세스 종료
+```
+
 ## 에러는 exception이 아니라 isError 필드로 돌아온다
 
 MCP 에러 처리 방식이 내가 처음 예상했던 것과 달랐다. 없는 도구를 호출해보니 exception이 발생하지 않았다.
@@ -296,6 +312,15 @@ Parallel calls (4 ops) in 1ms:
 ```
 
 stdio 트랜스포트라도 MCP SDK 내부에서 request multiplexing을 처리한다. 4개 호출을 동시에 날려도 응답을 올바르게 매핑한다. 다만 stdio 기반이라 실제 처리는 서버 측에서 순서대로 일어날 수 있다. 서버 측 처리 비용이 높은 도구라면 병렬 호출의 이점이 제한적일 수 있다.
+
+Claude Desktop 같은 호스트 앱을 쓸 때와 커스텀 클라이언트를 직접 쓸 때의 차이를 정리하면:
+
+| 관점 | Claude Desktop 경유 | 커스텀 클라이언트 |
+|---|---|---|
+| 실행 방식 | 데스크톱 앱에서 수동 | 스크립트·CI/CD에서 자동 |
+| LLM 종속 | Claude 고정 | 원하는 LLM, 또는 LLM 없이 직접 호출 |
+| 병렬 호출 제어 | 호스트가 결정 | Promise.all로 직접 제어 (4건 1ms 실측) |
+| 주 용도 | 대화형 사용 | 파이프라인·자체 에이전트·서버 테스트 |
 
 ## 커스텀 MCP 클라이언트가 실제로 유용한 세 가지 상황
 

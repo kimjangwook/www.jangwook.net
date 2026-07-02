@@ -207,6 +207,17 @@ return {
 
 오류가 발생했을 때도 예외를 던지지 않고 오류 메시지를 `content`에 담아 반환하는 것이 MCP 관례다. 예외를 던지면 클라이언트에서 처리 방식이 달라질 수 있다.
 
+코드로 들어가기 전에, 3단계 패턴과 트랜스포트 선택지를 한눈에 보면 이렇다.
+
+```mermaid
+graph TD
+    A["1단계: McpServer 인스턴스 생성"] --> B["2단계: server.tool()로 도구 등록<br/>이름·설명·Zod 스키마·핸들러"]
+    B --> C["3단계: Transport 연결"]
+    C --> D["InMemoryTransport<br/>같은 프로세스 테스트"]
+    C --> E["StdioServerTransport<br/>Claude Desktop·Code 연동"]
+    C --> F["HTTP/SSE<br/>원격 서버 배포"]
+```
+
 ## InMemoryTransport로 같은 프로세스에서 테스트하기
 
 MCP 서버를 실제 Claude나 Cursor에 연결하기 전에, 같은 프로세스 안에서 서버-클라이언트 라운드트립을 테스트하는 방법이 있다. `InMemoryTransport`를 쓰면 된다.
@@ -562,6 +573,14 @@ app.listen(3000, () => {
 이 방식으로 배포하면 Cursor나 Claude Desktop에서 `http://localhost:3000/sse`를 MCP 서버 URL로 등록할 수 있다. 다만 HTTP 방식은 설정이 더 복잡하고, 보안(인증, HTTPS) 처리도 별도로 필요하다. 팀 내부 도구 수준이라면 stdio가 훨씬 간단하다.
 
 MCP vs A2A vs Open Responses 프로토콜 비교에서 다뤘듯, 원격 MCP 서버 아키텍처는 성숙도와 보안 측면에서 아직 정리 중인 부분이 많다. 지금 당장 원격 배포를 계획한다면 인증 토큰, CORS, 세션 관리를 꼭 신경 써야 한다.
+
+세 가지 트랜스포트의 선택 기준을 정리하면:
+
+| 트랜스포트 | 통신 방식 | 적합한 용도 | 배포 형태 |
+|---|---|---|---|
+| InMemoryTransport | 같은 프로세스 내 직접 연결 | 단위 테스트·데모 | 배포 없음 (코드 내부) |
+| StdioServerTransport | stdin/stdout JSON-RPC | Claude Desktop·Code 로컬 연동 | 로컬 프로세스 |
+| Streamable HTTP/SSE | HTTP 스트리밍 | 원격 서버·다중 클라이언트 | 서버 호스팅 |
 
 ## 실제로 쓸 수 있는 도구 아이디어
 

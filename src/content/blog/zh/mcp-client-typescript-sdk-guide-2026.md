@@ -189,6 +189,22 @@ Found 1 resource(s): mcp://demo/info
 
 我没有在单独的终端中启动服务器。客户端直接生成了 `node server.mjs`，通信结束后通过 `client.close()` 同时终止了两个进程。
 
+把到目前为止的完整流程整理成时序图是这样的。
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as MCP服务器进程
+    C->>S: connect() — 启动 node server.mjs
+    C->>S: initialize (JSON-RPC 2.0)
+    S-->>C: capabilities 响应
+    C->>S: tools/list
+    S-->>C: 工具列表 + inputSchema
+    C->>S: tools/call (name, arguments)
+    S-->>C: content 数组（可能带 isError）
+    C->>S: close() — 进程退出
+```
+
 ## 错误以 isError 字段返回，而非抛出异常
 
 MCP 的错误处理方式出乎我的意料。调用不存在的工具时，并不会抛出异常：
@@ -246,6 +262,15 @@ Parallel calls (4 ops) in 1ms:
 ```
 
 即使是 stdio 传输，SDK 内部也处理了请求多路复用。4个请求同时发出，响应被正确匹配。不过 stdio 模式下服务器仍可能顺序处理，如果工具处理成本较高，并行调用的收益可能有限。
+
+把经由 Claude Desktop 这类宿主应用与直接使用自定义客户端的差异整理如下：
+
+| 视角 | 经由 Claude Desktop | 自定义客户端 |
+|---|---|---|
+| 执行方式 | 桌面应用中手动 | 脚本、CI/CD 中自动 |
+| LLM 依赖 | 固定为 Claude | 任意 LLM，或完全不经 LLM 直接调用 |
+| 并行调用控制 | 由宿主决定 | 用 Promise.all 自行控制（实测4个请求1ms） |
+| 主要用途 | 交互式使用 | 流水线、自建代理、服务器测试 |
 
 ## 自定义 MCP 客户端真正有价值的三个场景
 

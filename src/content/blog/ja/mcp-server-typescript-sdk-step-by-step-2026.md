@@ -203,6 +203,17 @@ return {
 
 エラーが発生した場合も例外を投げずに、エラーメッセージを `content` に含めて返すのがMCPの慣例だ。クライアントによって例外の処理方法が異なる可能性があるためだ。
 
+コードに入る前に、3ステップのパターンとトランスポートの選択肢を一目で見るとこうなる。
+
+```mermaid
+graph TD
+    A["ステップ1: McpServerインスタンス生成"] --> B["ステップ2: server.tool()でツール登録<br/>名前・説明・Zodスキーマ・ハンドラー"]
+    B --> C["ステップ3: Transport接続"]
+    C --> D["InMemoryTransport<br/>同一プロセステスト"]
+    C --> E["StdioServerTransport<br/>Claude Desktop・Code連携"]
+    C --> F["HTTP/SSE<br/>リモートデプロイ"]
+```
+
 ## InMemoryTransport で同一プロセス内テスト
 
 MCPサーバーを実際のClaudeやCursorに接続する前に、同じプロセス内でサーバー・クライアントのラウンドトリップをテストする方法がある。`InMemoryTransport` を使えばいい。
@@ -558,6 +569,14 @@ app.listen(3000, () => {
 この方法でデプロイすると、CursorやClaude Desktopから `http://localhost:3000/sse` をMCPサーバーURLとして登録できる。ただしHTTP方式は設定がより複雑で、セキュリティ(認証、HTTPS)の処理も別途必要だ。社内ツール程度であればstdioのほうがはるかにシンプルだ。
 
 MCP vs A2A vs Open Responses プロトコル比較で触れたように、リモートMCPサーバーアーキテクチャは成熟度とセキュリティの面でまだ整理中の部分が多い。今すぐリモートデプロイを計画しているなら、認証トークン、CORS、セッション管理には必ず気を配る必要がある。
+
+三つのトランスポートの選択基準を整理すると：
+
+| トランスポート | 通信方式 | 適した用途 | デプロイ形態 |
+|---|---|---|---|
+| InMemoryTransport | 同一プロセス内の直接接続 | 単体テスト・デモ | 無し（コード内部） |
+| StdioServerTransport | stdin/stdout JSON-RPC | Claude Desktop・Codeのローカル連携 | ローカルプロセス |
+| Streamable HTTP/SSE | HTTPストリーミング | リモートサーバー・複数クライアント | サーバーホスティング |
 
 ## 実際に使えるツールのアイデア
 

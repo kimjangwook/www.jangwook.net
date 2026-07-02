@@ -213,6 +213,17 @@ Each item in the `content` array has a `type` and the corresponding data. You ca
 
 When errors happen, MCP convention is to return the error message inside `content` rather than throwing an exception. Throwing can cause inconsistent behavior depending on which client is consuming the server.
 
+Before diving into code, here is the three-step pattern and the transport options at a glance.
+
+```mermaid
+graph TD
+    A["Step 1: create the McpServer instance"] --> B["Step 2: register tools with server.tool()<br/>name, description, Zod schema, handler"]
+    B --> C["Step 3: connect a transport"]
+    C --> D["InMemoryTransport<br/>same-process testing"]
+    C --> E["StdioServerTransport<br/>Claude Desktop and Code"]
+    C --> F["HTTP/SSE<br/>remote deployment"]
+```
+
 ## Testing with InMemoryTransport in the Same Process
 
 Before connecting your MCP server to actual Claude or Cursor, there's a cleaner way to test server-client round trips within the same process. That's what `InMemoryTransport` is for.
@@ -568,6 +579,14 @@ app.listen(3000, () => {
 With this setup, you register `http://localhost:3000/sse` as the MCP server URL in Cursor or Claude Desktop. That said, HTTP mode adds more configuration complexity and requires you to handle security separately (auth tokens, HTTPS). For internal team tools, stdio is far simpler.
 
 As I covered in MCP vs A2A vs Open Responses Protocol Comparison, the remote MCP server architecture still has rough edges around maturity and security. If you're planning a remote deployment right now, pay close attention to auth tokens, CORS, and session management.
+
+How to choose between the three transports:
+
+| Transport | Communication | Best for | Deployment |
+|---|---|---|---|
+| InMemoryTransport | Direct, same process | Unit tests and demos | None (in code) |
+| StdioServerTransport | stdin/stdout JSON-RPC | Local Claude Desktop and Code | Local process |
+| Streamable HTTP/SSE | HTTP streaming | Remote servers, many clients | Server hosting |
 
 ## Practical Tool Ideas
 
