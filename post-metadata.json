@@ -2856,5 +2856,16 @@
       "devops": 0.55,
       "architecture": 0.6
     }
+  },
+  "a11y-lighthouse-audit-fix-2026": {
+    "pubDate": "2026-07-02",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.95,
+      "ai-ml": 0.15,
+      "devops": 0.4,
+      "architecture": 0.4
+    }
   }
 }
