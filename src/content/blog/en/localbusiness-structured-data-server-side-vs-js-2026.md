@@ -85,6 +85,30 @@ I parsed only the actual `<script type="application/ld+json">` blocks out of the
 
 The server-side version already carries the block in the raw HTML the first wave fetches. The JS-injection version has zero blocks in the raw HTML. That block only appears in the DOM after the browser runs the JS. To the crawler, it's data that exists only once the second-wave render happens.
 
+Here is how the two paths look from the crawler's side.
+
+```mermaid
+graph TD
+    A["Crawler requests the page"] --> B["1st pass: fetch raw HTML"]
+    B --> C{"Does the raw HTML<br/>contain an ld+json block?"}
+    C -->|"(A) server-side output"| D["Structured data seen immediately"]
+    C -->|"(B) JS injection"| E["0 blocks — nothing to read"]
+    E --> F["Waits in the render queue<br/>(resource-bound)"]
+    F --> G["2nd pass: headless rendering"]
+    G -->|"success"| H["ld+json read from the DOM"]
+    G -->|"delay or failure"| I["No data that day"]
+```
+
+Measured results and characteristics side by side:
+
+| | (A) Server-side output | (B) JS injection |
+|---|---|---|
+| ld+json blocks in raw HTML | 1 (measured) | 0 (measured) |
+| Visible at first crawl | Immediately | No |
+| Depends on the render queue | No | Yes (resource-bound) |
+| Failure mode | Practically none | Render delay or a JS error drops the data |
+| Best fit | NAP and coordinates, where accuracy is the trust signal | Widgets and third-party markup the server cannot emit |
+
 ## Why this gap matters most for local
 
 Google itself acknowledges the risk of dynamically generated markup. The guidance is framed for commerce, but the principle is the same.
@@ -104,6 +128,16 @@ One more thing. Structured data must faithfully reflect what's visible on the pa
 > — Google Search Central
 
 If the address registered in GBP and the address in your page markup disagree, it doesn't help. It just chips away at trust.
+
+## When JS injection is good enough
+
+This is not an argument to move everything server-side. JS injection is a practical choice when:
+
+- <strong>A third-party widget owns the markup.</strong> If a booking or review widget injects its own JSON-LD, porting that to the server can cost more than it returns.
+- <strong>You cannot touch the server templates.</strong> On a legacy CMS where only Google Tag Manager is available, injection is the only option, and Google documents GTM-based injection as a supported path.
+- <strong>The value is computed on the client anyway.</strong> If a number is calculated in the browser and drawn on screen there, generating the markup in the same code path reduces screen-to-markup mismatches.
+
+For store name, address, and phone — values that rarely change and where accuracy is the trust signal — server-side stays the default. The test is simple: can this data afford to wait for the second rendering pass, and must it still exist on a day when rendering fails?
 
 ## What you can do today
 
