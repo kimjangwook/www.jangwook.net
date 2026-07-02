@@ -129,6 +129,18 @@ Example of implementing the ReAct (Reasoning and Acting) pattern in n8n:
 
 According to DeNA study materials and recent research, the key trend for agent systems in 2025 is a <strong>shift from "full autonomy" to "orchestration"</strong>.
 
+```mermaid
+graph TD
+    A[2023: Fully autonomous agents] --> B[2024: Hybrid approaches]
+    B --> C[2025: Orchestration first]
+
+    C --> D[Clear separation of duties]
+    C --> E[Predictable costs]
+    C --> F[Improved reliability]
+
+    style C fill:#0066CC,color:#fff
+```
+
 <strong>Reasons</strong>:
 
 1. <strong>Cost Explosion</strong>: Unlimited API calls from autonomous agents
@@ -276,6 +288,18 @@ Patterns for distributed processing of complex tasks across multiple agents.
 
 Linear structure where one agent's output becomes the next agent's input.
 
+```mermaid
+graph LR
+    Input[Input] --> A1[Agent 1<br/>Research]
+    A1 --> A2[Agent 2<br/>Analysis]
+    A2 --> A3[Agent 3<br/>Report writing]
+    A3 --> Output[Output]
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+```
+
 <strong>Use Cases</strong>:
 
 - Blog post creation: Research → Draft → Edit → Publish
@@ -291,6 +315,23 @@ Linear structure where one agent's output becomes the next agent's input.
 
 Structure where multiple agents work independently and simultaneously.
 
+```mermaid
+graph TD
+    Input[Input] --> A1[Agent 1<br/>Text analysis]
+    Input --> A2[Agent 2<br/>Image processing]
+    Input --> A3[Agent 3<br/>Metadata extraction]
+
+    A1 --> Merge[Merge results]
+    A2 --> Merge
+    A3 --> Merge
+
+    Merge --> Output[Output]
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+```
+
 <strong>Use Cases</strong>:
 
 - Content review: Quality check + Legal review + Fact checking in parallel
@@ -299,6 +340,26 @@ Structure where multiple agents work independently and simultaneously.
 #### 3. Supervisor
 
 Structure where a central supervisor distributes tasks and integrates results.
+
+```mermaid
+graph TD
+    Input[Input] --> Supervisor[Supervisor agent]
+
+    Supervisor --> |Task 1| Worker1[Worker 1<br/>Data collection]
+    Supervisor --> |Task 2| Worker2[Worker 2<br/>Computation]
+    Supervisor --> |Task 3| Worker3[Worker 3<br/>Verification]
+
+    Worker1 --> |Result 1| Supervisor
+    Worker2 --> |Result 2| Supervisor
+    Worker3 --> |Result 3| Supervisor
+
+    Supervisor --> Output[Final output]
+
+    style Supervisor fill:#F77F00,color:#fff
+    style Worker1 fill:#7B2CBF,color:#fff
+    style Worker2 fill:#0066CC,color:#fff
+    style Worker3 fill:#00A896,color:#fff
+```
 
 <strong>Use Cases</strong>:
 
@@ -309,6 +370,24 @@ Structure where a central supervisor distributes tasks and integrates results.
 
 Multiple levels of supervisor-worker relationships forming a tree structure.
 
+```mermaid
+graph TD
+    Root[Top-level supervisor]
+
+    Root --> M1[Mid-level supervisor 1<br/>Backend]
+    Root --> M2[Mid-level supervisor 2<br/>Frontend]
+
+    M1 --> W1[Worker 1-1<br/>API]
+    M1 --> W2[Worker 1-2<br/>DB]
+
+    M2 --> W3[Worker 2-1<br/>UI]
+    M2 --> W4[Worker 2-2<br/>UX]
+
+    style Root fill:#F77F00,color:#fff
+    style M1 fill:#E9C46A,color:#000
+    style M2 fill:#E9C46A,color:#000
+```
+
 <strong>Use Cases</strong>:
 
 - Large-scale project management: PM → Team Leaders → Developers
@@ -317,6 +396,21 @@ Multiple levels of supervisor-worker relationships forming a tree structure.
 #### 5. Network
 
 Structure where agents communicate freely in a P2P manner.
+
+```mermaid
+graph TD
+    A1[Agent 1<br/>Researcher] <--> A2[Agent 2<br/>Analyst]
+    A2 <--> A3[Agent 3<br/>Writer]
+    A3 <--> A1
+    A1 <--> A4[Agent 4<br/>Reviewer]
+    A2 <--> A4
+    A3 <--> A4
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+    style A4 fill:#F77F00,color:#fff
+```
 
 <strong>Use Cases</strong>:
 
@@ -411,6 +505,25 @@ Analysis of how pattern selection affects costs in real projects.
 - <strong>External Storage</strong>: Vector DB, Relational DB
 - <strong>Memory Manager</strong>: Swap in/out based on importance
 
+```mermaid
+graph TD
+    Query[User query] --> Manager[Memory Manager]
+
+    Manager --> Main[Main Context<br/>Recent chat + key facts]
+    Manager --> External[External Storage<br/>Vector DB]
+
+    Main --> LLM[LLM]
+
+    LLM --> |store key info| External
+    External --> |load on demand| Main
+
+    LLM --> Response[Response]
+
+    style Manager fill:#F77F00,color:#fff
+    style Main fill:#0066CC,color:#fff
+    style External fill:#7B2CBF,color:#fff
+```
+
 #### Push vs Pull Hybrid
 
 MemGPT combines two memory strategies.
@@ -460,6 +573,32 @@ L3: Long-term Memory (Long-term storage)
 #### A-MEM Architecture
 
 The core of A-MEM is that <strong>agents organize memory themselves</strong>.
+
+```mermaid
+graph TD
+    Agent[LLM agent]
+
+    Agent --> Create[Create note<br/>create_note]
+    Agent --> Link[Link notes<br/>link_notes]
+    Agent --> Search[Search notes<br/>search_notes]
+    Agent --> Traverse[Traverse graph<br/>traverse_graph]
+
+    Create --> Graph[Knowledge graph]
+    Link --> Graph
+    Search --> Graph
+    Traverse --> Graph
+
+    Graph --> Note1["Note 1<br/>Topic: LLM"]
+    Graph --> Note2["Note 2<br/>Topic: Agent"]
+    Graph --> Note3["Note 3<br/>Topic: RAG"]
+
+    Note1 -.->|related| Note2
+    Note2 -.->|needs| Note3
+    Note3 -.->|improves| Note1
+
+    style Agent fill:#F77F00,color:#fff
+    style Graph fill:#0066CC,color:#fff
+```
 
 <strong>Implementation Example</strong>:
 

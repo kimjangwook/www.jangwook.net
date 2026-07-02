@@ -126,6 +126,18 @@ faq:
 
 根据 DeNA 研究资料和最新研究，2025 年智能体系统的核心趋势是<strong>从"完全自主"向"编排"转变</strong>。
 
+```mermaid
+graph TD
+    A[2023: 完全自主智能体] --> B[2024: 混合方式]
+    B --> C[2025: 编排优先]
+
+    C --> D[明确的职责分离]
+    C --> E[成本可预测]
+    C --> F[可靠性提升]
+
+    style C fill:#0066CC,color:#fff
+```
+
 <strong>原因</strong>:
 
 1. <strong>成本爆炸</strong>：自主智能体的无限 API 调用
@@ -273,6 +285,18 @@ class SelfHealingAgent {
 
 一个智能体的输出成为下一个智能体输入的线性结构。
 
+```mermaid
+graph LR
+    Input[输入] --> A1[智能体 1<br/>研究]
+    A1 --> A2[智能体 2<br/>分析]
+    A2 --> A3[智能体 3<br/>撰写报告]
+    A3 --> Output[输出]
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+```
+
 <strong>用例</strong>:
 
 - 博客文章创建：研究 → 草稿 → 编辑 → 发布
@@ -288,6 +312,23 @@ class SelfHealingAgent {
 
 多个智能体同时独立工作的结构。
 
+```mermaid
+graph TD
+    Input[输入] --> A1[智能体 1<br/>文本分析]
+    Input --> A2[智能体 2<br/>图像处理]
+    Input --> A3[智能体 3<br/>元数据提取]
+
+    A1 --> Merge[合并结果]
+    A2 --> Merge
+    A3 --> Merge
+
+    Merge --> Output[输出]
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+```
+
 <strong>用例</strong>:
 
 - 内容审核：质量检查 + 法律审查 + 事实核查并行执行
@@ -296,6 +337,26 @@ class SelfHealingAgent {
 #### 3. Supervisor（监督者）
 
 中央监督者分配任务并整合结果的结构。
+
+```mermaid
+graph TD
+    Input[输入] --> Supervisor[监督者智能体]
+
+    Supervisor --> |任务 1| Worker1[工作者 1<br/>数据收集]
+    Supervisor --> |任务 2| Worker2[工作者 2<br/>计算]
+    Supervisor --> |任务 3| Worker3[工作者 3<br/>验证]
+
+    Worker1 --> |结果 1| Supervisor
+    Worker2 --> |结果 2| Supervisor
+    Worker3 --> |结果 3| Supervisor
+
+    Supervisor --> Output[最终输出]
+
+    style Supervisor fill:#F77F00,color:#fff
+    style Worker1 fill:#7B2CBF,color:#fff
+    style Worker2 fill:#0066CC,color:#fff
+    style Worker3 fill:#00A896,color:#fff
+```
 
 <strong>用例</strong>:
 
@@ -306,6 +367,24 @@ class SelfHealingAgent {
 
 多级监督者-工作者关系形成树结构的方式。
 
+```mermaid
+graph TD
+    Root[顶层监督者]
+
+    Root --> M1[中层监督者 1<br/>后端]
+    Root --> M2[中层监督者 2<br/>前端]
+
+    M1 --> W1[工作者 1-1<br/>API]
+    M1 --> W2[工作者 1-2<br/>DB]
+
+    M2 --> W3[工作者 2-1<br/>UI]
+    M2 --> W4[工作者 2-2<br/>UX]
+
+    style Root fill:#F77F00,color:#fff
+    style M1 fill:#E9C46A,color:#000
+    style M2 fill:#E9C46A,color:#000
+```
+
 <strong>用例</strong>:
 
 - 大规模项目管理：PM → 团队负责人 → 开发者
@@ -314,6 +393,21 @@ class SelfHealingAgent {
 #### 5. Network（网络）
 
 智能体以 P2P 方式自由通信的结构。
+
+```mermaid
+graph TD
+    A1[智能体 1<br/>研究者] <--> A2[智能体 2<br/>分析者]
+    A2 <--> A3[智能体 3<br/>撰写者]
+    A3 <--> A1
+    A1 <--> A4[智能体 4<br/>审阅者]
+    A2 <--> A4
+    A3 <--> A4
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+    style A4 fill:#F77F00,color:#fff
+```
 
 <strong>用例</strong>:
 
@@ -408,6 +502,25 @@ class SelfHealingAgent {
 - <strong>External Storage（外部存储）</strong>：向量数据库、关系型数据库
 - <strong>Memory Manager（内存管理器）</strong>：根据重要性进行 swap in/out
 
+```mermaid
+graph TD
+    Query[用户查询] --> Manager[Memory Manager]
+
+    Manager --> Main[Main Context<br/>近期对话 + 关键信息]
+    Manager --> External[External Storage<br/>向量数据库]
+
+    Main --> LLM[LLM]
+
+    LLM --> |存储关键信息| External
+    External --> |按需加载| Main
+
+    LLM --> Response[响应]
+
+    style Manager fill:#F77F00,color:#fff
+    style Main fill:#0066CC,color:#fff
+    style External fill:#7B2CBF,color:#fff
+```
+
 #### Push vs Pull 混合
 
 MemGPT 结合两种内存策略。
@@ -457,6 +570,32 @@ L3: Long-term Memory（长期存储）
 #### A-MEM 架构
 
 A-MEM 的核心是<strong>智能体自己组织内存</strong>。
+
+```mermaid
+graph TD
+    Agent[LLM 智能体]
+
+    Agent --> Create[创建笔记<br/>create_note]
+    Agent --> Link[连接笔记<br/>link_notes]
+    Agent --> Search[搜索笔记<br/>search_notes]
+    Agent --> Traverse[遍历图谱<br/>traverse_graph]
+
+    Create --> Graph[知识图谱]
+    Link --> Graph
+    Search --> Graph
+    Traverse --> Graph
+
+    Graph --> Note1["笔记 1<br/>主题: LLM"]
+    Graph --> Note2["笔记 2<br/>主题: Agent"]
+    Graph --> Note3["笔记 3<br/>主题: RAG"]
+
+    Note1 -.->|相关| Note2
+    Note2 -.->|需要| Note3
+    Note3 -.->|提升| Note1
+
+    style Agent fill:#F77F00,color:#fff
+    style Graph fill:#0066CC,color:#fff
+```
 
 <strong>实现示例</strong>:
 

@@ -126,6 +126,18 @@ n8nでReAct（Reasoning and Acting）パターンを実装する例です：
 
 DeNAスタディ資料と最新研究によると、2025年のエージェントシステムの核心トレンドは<strong>「完全自律」から「オーケストレーション」への転換</strong>です。
 
+```mermaid
+graph TD
+    A[2023: 完全自律エージェント] --> B[2024: ハイブリッドアプローチ]
+    B --> C[2025: オーケストレーション優先]
+
+    C --> D[明確な責任分離]
+    C --> E[コスト予測可能]
+    C --> F[信頼性向上]
+
+    style C fill:#0066CC,color:#fff
+```
+
 <strong>理由</strong>:
 
 1. <strong>コスト爆発</strong>：自律エージェントの無制限API呼び出し
@@ -273,6 +285,18 @@ class SelfHealingAgent {
 
 1つのエージェントの出力が次のエージェントの入力になる線形構造です。
 
+```mermaid
+graph LR
+    Input[入力] --> A1[エージェント 1<br/>リサーチ]
+    A1 --> A2[エージェント 2<br/>分析]
+    A2 --> A3[エージェント 3<br/>レポート作成]
+    A3 --> Output[出力]
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+```
+
 <strong>使用事例</strong>:
 
 - ブログ投稿作成：リサーチ → 下書き → 編集 → 公開
@@ -288,6 +312,23 @@ class SelfHealingAgent {
 
 複数のエージェントが同時に独立して作業する構造です。
 
+```mermaid
+graph TD
+    Input[入力] --> A1[エージェント 1<br/>テキスト分析]
+    Input --> A2[エージェント 2<br/>画像処理]
+    Input --> A3[エージェント 3<br/>メタデータ抽出]
+
+    A1 --> Merge[結果の統合]
+    A2 --> Merge
+    A3 --> Merge
+
+    Merge --> Output[出力]
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+```
+
 <strong>使用事例</strong>:
 
 - コンテンツ検査：品質検査 + 法的レビュー + 事実確認を同時実行
@@ -296,6 +337,26 @@ class SelfHealingAgent {
 #### 3. Supervisor（監督者）
 
 中央監督者がタスクを分配し、結果を統合する構造です。
+
+```mermaid
+graph TD
+    Input[入力] --> Supervisor[監督者エージェント]
+
+    Supervisor --> |タスク 1| Worker1[ワーカー 1<br/>データ収集]
+    Supervisor --> |タスク 2| Worker2[ワーカー 2<br/>計算]
+    Supervisor --> |タスク 3| Worker3[ワーカー 3<br/>検証]
+
+    Worker1 --> |結果 1| Supervisor
+    Worker2 --> |結果 2| Supervisor
+    Worker3 --> |結果 3| Supervisor
+
+    Supervisor --> Output[最終出力]
+
+    style Supervisor fill:#F77F00,color:#fff
+    style Worker1 fill:#7B2CBF,color:#fff
+    style Worker2 fill:#0066CC,color:#fff
+    style Worker3 fill:#00A896,color:#fff
+```
 
 <strong>使用事例</strong>:
 
@@ -306,6 +367,24 @@ class SelfHealingAgent {
 
 複数段階の監督者-ワーカー関係がツリー構造を成す方式です。
 
+```mermaid
+graph TD
+    Root[最上位監督者]
+
+    Root --> M1[中間監督者 1<br/>バックエンド]
+    Root --> M2[中間監督者 2<br/>フロントエンド]
+
+    M1 --> W1[ワーカー 1-1<br/>API]
+    M1 --> W2[ワーカー 1-2<br/>DB]
+
+    M2 --> W3[ワーカー 2-1<br/>UI]
+    M2 --> W4[ワーカー 2-2<br/>UX]
+
+    style Root fill:#F77F00,color:#fff
+    style M1 fill:#E9C46A,color:#000
+    style M2 fill:#E9C46A,color:#000
+```
+
 <strong>使用事例</strong>:
 
 - 大規模プロジェクト管理：PM → チームリーダー → 開発者
@@ -314,6 +393,21 @@ class SelfHealingAgent {
 #### 5. Network（ネットワーク）
 
 エージェント間がP2P方式で自由に通信する構造です。
+
+```mermaid
+graph TD
+    A1[エージェント 1<br/>研究者] <--> A2[エージェント 2<br/>分析者]
+    A2 <--> A3[エージェント 3<br/>作成者]
+    A3 <--> A1
+    A1 <--> A4[エージェント 4<br/>レビュアー]
+    A2 <--> A4
+    A3 <--> A4
+
+    style A1 fill:#7B2CBF,color:#fff
+    style A2 fill:#0066CC,color:#fff
+    style A3 fill:#00A896,color:#fff
+    style A4 fill:#F77F00,color:#fff
+```
 
 <strong>使用事例</strong>:
 
@@ -408,6 +502,25 @@ class SelfHealingAgent {
 - <strong>External Storage（外部ストレージ）</strong>：ベクトルDB、リレーショナルDB
 - <strong>Memory Manager（メモリマネージャー）</strong>：重要度によってswap in/out
 
+```mermaid
+graph TD
+    Query[ユーザークエリ] --> Manager[Memory Manager]
+
+    Manager --> Main[Main Context<br/>最近の会話 + 重要情報]
+    Manager --> External[External Storage<br/>ベクトルDB]
+
+    Main --> LLM[LLM]
+
+    LLM --> |重要情報を保存| External
+    External --> |必要時にロード| Main
+
+    LLM --> Response[応答]
+
+    style Manager fill:#F77F00,color:#fff
+    style Main fill:#0066CC,color:#fff
+    style External fill:#7B2CBF,color:#fff
+```
+
 #### Push vs Pull ハイブリッド
 
 MemGPTは2つのメモリ戦略を結合します。
@@ -457,6 +570,32 @@ L3: Long-term Memory（長期保存）
 #### A-MEMアーキテクチャ
 
 A-MEMの核心は<strong>エージェントが自らメモリを組織化</strong>する点です。
+
+```mermaid
+graph TD
+    Agent[LLMエージェント]
+
+    Agent --> Create[メモ作成<br/>create_note]
+    Agent --> Link[メモ接続<br/>link_notes]
+    Agent --> Search[メモ検索<br/>search_notes]
+    Agent --> Traverse[グラフ探索<br/>traverse_graph]
+
+    Create --> Graph[知識グラフ]
+    Link --> Graph
+    Search --> Graph
+    Traverse --> Graph
+
+    Graph --> Note1["ノート 1<br/>主題: LLM"]
+    Graph --> Note2["ノート 2<br/>主題: Agent"]
+    Graph --> Note3["ノート 3<br/>主題: RAG"]
+
+    Note1 -.->|関連| Note2
+    Note2 -.->|必要| Note3
+    Note3 -.->|向上| Note1
+
+    style Agent fill:#F77F00,color:#fff
+    style Graph fill:#0066CC,color:#fff
+```
 
 <strong>実装例</strong>:
 
