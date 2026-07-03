@@ -328,6 +328,38 @@ async def stream_chat(message: str):
 
 对于不需要流式传输的批量处理场景，这个模式也是过度设计。如果要批量处理1000个文档，Anthropic Message Batches API要便宜和合适得多。
 
+## 性能监控：流式传输该测量什么
+
+流式 API 需要传统响应时间之外的指标。我在实际服务中监控的三个核心指标：
+
+<strong>TTFT (Time to First Token)</strong>：从发出请求到第一个 token 到达的时间。这是用户感觉"响应快"的最直观指标。Claude API 的 TTFT 通常在 0.5〜2 秒之间。一旦开始超过 5 秒，就说明有问题了。
+
+<strong>TPS (Tokens Per Second)</strong>：流式传输期间每秒生成的 token 数。人的阅读速度通常是每分钟 200〜300 词，TPS 太快 UI 跟不上文本；太慢则会收到"看起来一卡一卡"的反馈。
+
+<strong>流式错误率</strong>：所有流式请求中没有 `done` 事件就结束的比例。要把客户端断连和服务端错误分开跟踪，否则找不到根因。
+
+用一个简单的中间件就能把这些指标写进日志：
+
+```python
+import time
+from fastapi import Request
+
+
+@app.middleware("http")
+async def log_streaming_metrics(request: Request, call_next):
+    if request.url.path == "/chat/stream":
+        start = time.perf_counter()
+        response = await call_next(request)
+        elapsed = time.perf_counter() - start
+        # 真正的流式完成时间在中间件里很难测
+        # 建议在生成器内部、done 事件之前记录时间
+        print(f"[metrics] stream_request elapsed={elapsed:.2f}s")
+        return response
+    return await call_next(request)
+```
+
+接上 OpenTelemetry 可以用分布式追踪做得更精细，但起步阶段这种程度的日志已经够用。追踪 token 用量的细节可以看 Anthropic SDK 的 `usage` 对象。
+
 ## 故障排除FAQ
 
 **Q：SSE不是流式到达，而是一次性全部到来**
@@ -345,6 +377,26 @@ async def stream_chat(message: str):
 **Q：触发限速，重试一直失败**
 
 要么`BASE_DELAY`太短，要么突发流量集中在同一时间窗口。查看Anthropic的限速页面确认你计划的TPM/RPM上限，将`BASE_DELAY`至少设为5秒以上。
+
+## 生产环境检查清单
+
+整理一下部署前要确认的事项：
+
+<strong>安全</strong>：
+- 绝不把 `ANTHROPIC_API_KEY` 硬编码进代码。使用环境变量，或 AWS Secrets Manager、GCP Secret Manager 之类的密钥管理服务。
+- 确认 `/chat/stream` 端点有认证中间件。没有 API key 或 JWT 就公开的话，外部可以无限调用。
+- 检查 CORS 配置是否开得过大。
+
+<strong>性能</strong>：
+- `AsyncAnthropic` 客户端在应用启动时创建一次并复用。每个请求都新建客户端会浪费连接池。
+- `uvicorn --workers` 一般从 CPU 核数的 2 倍起步。流式响应是 I/O 密集型，asyncio 事件循环比多进程更有效。
+- GZIP 压缩和 SSE 不搭。按块流式传输的文本几乎享受不到 GZIP 的收益，反而可能拖慢第一个块的送达。
+
+<strong>可观测性</strong>：
+- 从 `done` 事件提取 token 用量并记录日志。可以及早发现输入 token 消耗超预期的请求模式。
+- 把按错误类型的计数器推到 Prometheus 或 CloudWatch。`rate_limit` 错误激增就是升级套餐的信号。
+
+如果你看着这份清单觉得"都知道，但实际部署时就是会漏"——这很正常。我第一次部署时也在 CORS 和 GZIP 上各栽过一次。
 
 ## 何时使用、何时避免
 

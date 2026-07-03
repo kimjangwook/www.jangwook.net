@@ -329,6 +329,38 @@ Here are the honest limitations I hit when using this stack in real projects.
 
 This pattern is also overkill for bulk processing where streaming isn't the point. If you're processing 1,000 documents in batch, the Anthropic Message Batches API is far cheaper and more appropriate.
 
+## Performance Monitoring: What to Measure in Streaming
+
+A streaming API needs metrics beyond traditional response time. The three I actually monitor in production:
+
+<strong>TTFT (Time to First Token)</strong>: Time from sending the request until the first token arrives. It's the most intuitive proxy for "the response feels fast". With the Claude API, TTFT usually lands between 0.5s and 2s. Once it starts exceeding 5 seconds, something is wrong.
+
+<strong>TPS (Tokens Per Second)</strong>: Tokens generated per second during streaming. People read at roughly 200〜300 words per minute — if TPS is too high the UI can't keep up with the text; too low and users report it "looks choppy".
+
+<strong>Streaming error rate</strong>: The share of streaming requests that ended without a `done` event. Track client-side disconnects separately from server-side errors, or you won't find the root cause.
+
+A simple middleware can log these:
+
+```python
+import time
+from fastapi import Request
+
+
+@app.middleware("http")
+async def log_streaming_metrics(request: Request, call_next):
+    if request.url.path == "/chat/stream":
+        start = time.perf_counter()
+        response = await call_next(request)
+        elapsed = time.perf_counter() - start
+        # True streaming completion time is hard to measure in middleware
+        # Prefer recording the time before the done event inside the generator
+        print(f"[metrics] stream_request elapsed={elapsed:.2f}s")
+        return response
+    return await call_next(request)
+```
+
+Wiring in OpenTelemetry gives you much finer distributed tracing, but at the start this level of logging is already useful. The Anthropic SDK's `usage` object is the place to look for tracking token consumption in more detail.
+
 ## Troubleshooting FAQ
 
 **Q: SSE arrives all at once instead of streaming**
@@ -346,6 +378,26 @@ This can happen when using the synchronous `anthropic.Anthropic()` client inside
 **Q: Rate limited, retries keep failing**
 
 Either `BASE_DELAY` is too short or burst traffic is hammering the same window. Check Anthropic's Rate Limits page for your plan's TPM/RPM limits and set `BASE_DELAY` to at least 5 seconds.
+
+## Production Checklist
+
+Things to verify before deploying:
+
+<strong>Security</strong>:
+- Never hardcode `ANTHROPIC_API_KEY`. Use environment variables or a secrets manager such as AWS Secrets Manager or GCP Secret Manager.
+- Confirm the `/chat/stream` endpoint sits behind auth middleware. Left public without an API key or JWT, anyone outside can call it without limit.
+- Check that CORS isn't open wider than it needs to be.
+
+<strong>Performance</strong>:
+- Create the `AsyncAnthropic` client once at app startup and reuse it. A new client per request wastes the connection pool.
+- `uvicorn --workers` at 2× CPU cores is the usual starting point. Streaming responses are I/O-bound, so the asyncio event loop matters more than multiprocessing.
+- GZIP and SSE don't mix. Chunked streaming text gains almost nothing from GZIP, and it can delay the first chunk.
+
+<strong>Observability</strong>:
+- Extract token usage from the `done` event and log it. You'll catch request patterns that burn more input tokens than expected.
+- Push per-error-type counters to Prometheus or CloudWatch. A spike in `rate_limit` errors tells you when to upgrade your plan.
+
+If you read this list thinking "I know all of this, yet it slips through at deploy time" — that's normal. I fumbled CORS and GZIP once each on my first deployment.
 
 ## When to Use It and When to Avoid It
 

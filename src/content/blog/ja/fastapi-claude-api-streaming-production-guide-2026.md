@@ -328,6 +328,38 @@ Vercel AI SDKを使うフロントエンドがある場合、Vercel AI SDKでCla
 
 このパターンはストリーミングレスポンスが不要な大量処理シナリオにはオーバーエンジニアリングだ。1,000件のドキュメントをバッチ処理するならAnthropic Message Batches APIの方がずっと安くて適切だ。
 
+## パフォーマンスモニタリング：ストリーミングで何を測るべきか
+
+ストリーミングAPIでは従来のレスポンスタイム以外に追加の指標が必要だ。私が実サービスで監視している核心指標は三つ：
+
+<strong>TTFT (Time to First Token)</strong>：リクエスト送信から最初のトークンが届くまでの時間。ユーザーが「応答が速い」と感じる最も直感的な指標だ。Claude APIのTTFTは通常0.5秒〜2秒。この値が5秒を超え始めたら何かがおかしい。
+
+<strong>TPS (Tokens Per Second)</strong>：ストリーミング中に毎秒生成されるトークン数。人がテキストを読む速度は通常毎分200〜300単語で、TPSが速すぎるとUIがテキストに追いつけない。逆に遅すぎると「途切れて見える」というフィードバックが来る。
+
+<strong>ストリーミングエラー率</strong>：全ストリーミングリクエストのうち`done`イベントなしに終了した割合。クライアント側の接続断とサーバー側のエラーを分けて追跡しないと根本原因が見つからない。
+
+シンプルなミドルウェアでこれらの指標をログに残せる：
+
+```python
+import time
+from fastapi import Request
+
+
+@app.middleware("http")
+async def log_streaming_metrics(request: Request, call_next):
+    if request.url.path == "/chat/stream":
+        start = time.perf_counter()
+        response = await call_next(request)
+        elapsed = time.perf_counter() - start
+        # 実際のストリーミング完了時間はミドルウェアでは測定しにくい
+        # ジェネレーター内部でdoneイベント前に時間を記録するのがおすすめ
+        print(f"[metrics] stream_request elapsed={elapsed:.2f}s")
+        return response
+    return await call_next(request)
+```
+
+OpenTelemetryと連携すれば分散トレーシングでもっと精密に追跡できるが、始めの段階ではこの程度のログでも十分有用だ。トークン使用量の追跡はAnthropic SDKの`usage`オブジェクトを見るとより詳しく分かる。
+
 ## トラブルシューティング FAQ
 
 **Q: SSEがクライアントに届かず一気に来る**
@@ -345,6 +377,26 @@ Nginxの`proxy_buffering off`が抜けている場合がほとんどだ。もし
 **Q: レートリミットに引っかかり、リトライしても失敗し続ける**
 
 `BASE_DELAY`が短すぎるか、短時間にリクエストが集中するバーストトラフィックが原因だ。AnthropicのRate LimitsページでプランごとのTPM/RPM上限を確認し、`BASE_DELAY`を最低5秒以上に上げることを推奨する。
+
+## プロダクションチェックリスト
+
+デプロイ前に確認すべき項目を整理した：
+
+<strong>セキュリティ</strong>：
+- `ANTHROPIC_API_KEY`は絶対にコードへハードコードしない。環境変数、またはAWS Secrets Manager・GCP Secret Managerのようなシークレット管理サービスを使う。
+- `/chat/stream`エンドポイントに認証ミドルウェアがあるか確認する。APIキーやJWTトークンなしでパブリックに開けると、外部から無制限に呼び出せてしまう。
+- CORS設定が必要以上に開いていないか点検する。
+
+<strong>パフォーマンス</strong>：
+- `AsyncAnthropic`クライアントはアプリ起動時に一度だけ生成して再利用する。リクエストごとに新しいクライアントを作るとコネクションプールが無駄になる。
+- `uvicorn --workers`はCPUコア数の2倍が一般的な出発点。ストリーミング応答はI/Oバウンドなので、マルチプロセスよりasyncioイベントループのほうが効く。
+- GZIP圧縮はSSEと相性が悪い。チャンク単位でストリーミングされるテキストにGZIPの効果はほぼなく、むしろ最初のチャンクの到達を遅らせうる。
+
+<strong>可観測性</strong>：
+- `done`イベントからトークン使用量を抽出してログに残す。想定より入力トークンを多く使うリクエストパターンを早期に発見できる。
+- エラータイプ別カウンターをPrometheusやCloudWatchに送る。`rate_limit`エラーが急増したらプランのアップグレード時期だ。
+
+このチェックリストを見て「全部知っているのに実際のデプロイで抜ける」と感じたなら、それが普通だ。私も最初のデプロイでCORSとGZIPの設定を一度ずつ間違えた。
 
 ## いつ使い、いつ避けるべきか
 
