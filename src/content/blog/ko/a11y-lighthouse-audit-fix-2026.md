@@ -1,6 +1,6 @@
 ---
 title: '접근성 점수 55에서 100까지 — Lighthouse로 WCAG 위반 직접 잡아 고치기'
-description: '가상의 베이커리 랜딩 페이지를 Lighthouse 접근성 감사에 돌려 55점을 받았다. 6개 WCAG 위반을 하나씩 고쳐 100점을 만든 실측 로그와, 자동 도구가 놓친 키보드 함정까지 정리했다.'
+description: '가상의 베이커리 랜딩 페이지를 Lighthouse 접근성 감사에 돌려 55점을 받았다. 색상 대비부터 폼 레이블과 ARIA 속성까지 6개 WCAG 위반을 하나씩 직접 고쳐 100점으로 만든 실측 로그와, 자동 감사 도구가 놓친 키보드 내비게이션 함정까지 단계별로 정리했다.'
 pubDate: '2026-07-02'
 heroImage: '../../../assets/blog/a11y-lighthouse-audit-fix-2026/hero.png'
 tags:

@@ -1,6 +1,6 @@
 ---
 title: 'LocalBusiness 구조화 데이터, JS로 넣어도 되지만 서버사이드가 더 확실한 이유'
-description: '매장 검색 페이지의 LocalBusiness JSON-LD를 JS로 주입하면 원시 HTML엔 블록이 0개다. 서버사이드 출력과 직접 비교하고, Google 공식 견해와 순위 한계까지 정리했다.'
+description: '매장 검색 페이지의 LocalBusiness JSON-LD를 JavaScript로 주입하면 원시 HTML엔 구조화 데이터 블록이 0개로 잡힌다. 서버사이드 렌더링 출력과 직접 비교하고, Google 공식 견해와 리치 결과·검색 순위에 미치는 한계까지 실측으로 정리했다.'
 pubDate: '2026-07-01'
 heroImage: '../../../assets/blog/localbusiness-structured-data-server-side-vs-js-2026/hero.png'
 tags:

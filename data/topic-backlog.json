@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-02",
+  "updated_at": "2026-07-03",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4426,6 +4426,40 @@
       "added_at": "2026-07-02",
       "status": "queued",
       "notes": "기존 google-adk-vs-langgraph, python-ai-agent-library-comparison 등 프레임워크 비교 글과 내부링크 연결 가능. 두 프레임워크를 쓰던 개발자의 마이그레이션 부담과 LTS 약속의 실질을 냉정하게 평가하는 각도. LangGraph/CrewAI 대비 위치 분석."
+    },
+    {
+      "slug": "llm-inference-engine-vllm-sglang-tensorrt-comparison-2026",
+      "title_idea": "vLLM vs SGLang vs TensorRT-LLM — 2026 프로덕션 추론 엔진 실측 비교",
+      "content_type": "comparison",
+      "target_keyword": "LLM 추론 엔진 비교",
+      "secondary_keywords": [
+        "vLLM SGLang 비교",
+        "TensorRT-LLM 처리량",
+        "프로덕션 LLM 서빙"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Spheron/LeetLLM 2026 H100 벤치마크",
+      "added_at": "2026-07-03",
+      "status": "queued",
+      "notes": "세 엔진 모두 continuous batching·paged KV·FP8 수렴 → 차별점은 PagedAttention(vLLM) vs RadixAttention/prefix caching(SGLang) vs 고정형상 최고속(TensorRT). 기존 local-llm-runtime-comparison(ollama/llamacpp/lmstudio)과 GPU 프로덕션 서빙 관점으로 차별화. local-llm 실험 시리즈와 내부링크 가능."
+    },
+    {
+      "slug": "typescript-orm-prisma7-drizzle-kysely-comparison-2026",
+      "title_idea": "Prisma 7 vs Drizzle v1 vs Kysely — 2026 TypeScript ORM 선택 가이드",
+      "content_type": "comparison",
+      "target_keyword": "TypeScript ORM 비교",
+      "secondary_keywords": [
+        "Drizzle Prisma 비교",
+        "Prisma 7 WASM 엔진",
+        "Kysely 쿼리 빌더"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "PkgPulse/Encore 2026 ORM 벤치마크",
+      "added_at": "2026-07-03",
+      "status": "queued",
+      "notes": "Prisma 7가 Rust 엔진 버리고 TS/WASM 쿼리 컴파일러로 재작성(번들 85~90%↓, 대형 결과셋 3.4배↑)이 핵심 뉴스 포인트. 벤치: raw 100K→Kysely 92K→Drizzle 88K→Prisma 71K req/s. 엣지 런타임 호환성·번들 크기 비교. 기존 drizzle-orm-typescript-complete-guide와 내부링크 강함."
     }
   ]
 }
