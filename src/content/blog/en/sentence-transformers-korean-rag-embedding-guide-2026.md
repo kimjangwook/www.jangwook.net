@@ -88,6 +88,32 @@ The L2 norm being exactly 1.0 is interesting. sentence-transformers normalizes e
 
 384 dimensions is a deliberate tradeoff. Modern large embedding models use 1536〜3072 dimensions, which is more expressive but costs more to store and search. For most semantic search use cases, 384 is plenty.
 
+## How the model tokenizes Korean
+
+Before generating an embedding, the model first splits text into tokens. all-MiniLM-L6-v2 uses a WordPiece tokenizer. What's interesting is how much the token count varies by language for the same text.
+
+```python
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+
+texts = [
+    "AI agent uses tools to complete tasks",          # English
+    "AIエージェントがツールを使ってタスクを完了する",              # Japanese
+    "AI 에이전트가 도구를 사용해 작업을 완료한다",               # Korean
+]
+
+for text in texts:
+    tokens = tokenizer.tokenize(text)
+    print(f"Token count: {len(tokens):2d} | {text[:35]}")
+    print(f"  Tokens: {tokens[:8]}...")
+    print()
+```
+
+I didn't run this exact snippet, but from the known behavior of WordPiece tokenizers, English sentences split into word-level tokens, while Korean and Japanese — having no matching characters in the vocabulary — largely fall into unknown subwords (UNK handling or per-character splits). As a result, the Korean or Japanese version of the same sentence takes up more tokens and exhausts the model's maximum input length (256) faster.
+
+This is the second cause of degraded Korean query accuracy. The first is the skew in training data; the second is that subword tokenization loses the semantic information carried by Korean morphemes. Multilingual models include Korean in their vocabulary so Korean text splits into meaningful subword units.
+
 ## Cosine similarity: what the numbers actually look like
 
 ```python

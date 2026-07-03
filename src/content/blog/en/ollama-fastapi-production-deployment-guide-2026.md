@@ -377,6 +377,53 @@ FastAPI sits between your clients and Ollama as a stable adapter. When you switc
 
 This approach differs from [wrapping local LLMs with FastMCP as an MCP server](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp). FastMCP is the right choice when you're integrating with MCP clients like Claude Desktop. FastAPI is the right choice for general HTTP clients like web apps, mobile, and CLI tools. They're complementary, not competing.
 
+## Multi-Model Routing: Different Models per Request
+
+Pinning a single model is fine, but if you want a fast small model for light requests and a bigger model for complex ones, you can add routing logic.
+
+The simple approach is selecting a model by prompt length or an explicit `quality` parameter.
+
+```python
+MODEL_REGISTRY = {
+    "fast": "llama3.2:3b",       # short requests, fast responses
+    "balanced": "llama3.2:8b",   # general requests
+    "quality": "llama3.1:70b",   # complex reasoning, slow but accurate
+    "code": "qwen2.5-coder:7b",  # code generation
+}
+
+class GenerateRequest(BaseModel):
+    prompt: str
+    model: str = "fast"          # pick a tier, not a model name
+    stream: bool = False
+
+@app.post("/generate")
+async def generate(req: GenerateRequest):
+    actual_model = MODEL_REGISTRY.get(req.model, DEFAULT_MODEL)
+    payload = {"model": actual_model, "prompt": req.prompt, "stream": False}
+    ...
+```
+
+The advantage: clients never need to know which models Ollama has installed. Ask for "code" and FastAPI picks the qwen model. When a better coding model ships, you only change `MODEL_REGISTRY`.
+
+The practical limit is that every model occupies memory. llama3.1:70b (Q4) needs roughly 40GB of RAM, which constrains the options on my MacBook. On a production server Ollama manages model load/unload automatically, but frequent swapping raises latency.
+
+## Local LLM vs Cloud API: Which One, When
+
+Here is the honest conclusion I reached while building this server.
+
+Where a local LLM wins:
+- Saving token costs during repetitive development and testing
+- Processing internal documents or personal data that must not leave the machine
+- Operating offline without a network connection
+- Running a model fine-tuned for a specific domain
+
+Where a cloud API wins:
+- When you need top-tier response quality (local model quality still has limits)
+- Latency-sensitive, user-facing features
+- When the team has no capacity to maintain GPU infrastructure
+
+I prefer a hybrid: Ollama during development, Claude API in deployment. With the FastAPI adapter, switching is just two environment variables — `OLLAMA_BASE` and `DEFAULT_MODEL`. That is the core point this post is trying to show.
+
 ## Troubleshooting
 
 **`httpx.ConnectError: Connection refused`**

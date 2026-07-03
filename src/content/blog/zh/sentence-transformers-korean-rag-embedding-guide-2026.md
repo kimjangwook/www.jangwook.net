@@ -88,6 +88,32 @@ L2范数: 1.000000
 
 384维是有意为之的设计。与最新大型嵌入模型使用的1536〜3072维相比较小，但对基于余弦相似度的检索已经足够，存储成本也低。
 
+## 模型是如何对韩语做分词的
+
+在生成嵌入之前，模型会先把文本切分为 token。all-MiniLM-L6-v2 使用 WordPiece 分词器。有趣的是，同样的文本在不同语言下 token 数差别很大。
+
+```python
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
+
+texts = [
+    "AI agent uses tools to complete tasks",          # 英语
+    "AIエージェントがツールを使ってタスクを完了する",              # 日语
+    "AI 에이전트가 도구를 사용해 작업을 완료한다",               # 韩语
+]
+
+for text in texts:
+    tokens = tokenizer.tokenize(text)
+    print(f"token 数: {len(tokens):2d} | {text[:35]}")
+    print(f"  token: {tokens[:8]}...")
+    print()
+```
+
+我没有原样运行这段代码，但根据 WordPiece 分词器的已知特性，英文句子按单词切分，而韩语、日语由于词表中没有对应字符，大量落入未知子词（UNK 处理或按字符切分）。结果是同样含义的句子，韩语、日语版本占用更多 token，也更快耗尽模型的最大输入长度（256）。
+
+这是韩语查询精度下降的第二个原因。第一个是训练数据的偏斜，第二个是子词切分过程中韩语语素携带的语义信息丢失。多语言模型的词表包含韩语，因此能把韩语文本切成有意义的子词单元。
+
 ## 余弦相似度：数字让一切变得清晰
 
 ```python

@@ -513,6 +513,31 @@ async def generate(req: GenerateRequest, token: str = Depends(verify_token)):
 
 在`.env`中添加`API_KEY=your-secret-here`，并通过docker-compose.yml的环境变量传入。不是企业级安全，但比完全无防护要好得多。
 
+## 速率限制：防止模型过载
+
+本地 LLM 不擅长处理并发请求。多个请求同时打到一块 GPU 上，会导致内存超限或推理速度骤降。用 `slowapi` 可以简单地加上速率限制。
+
+```bash
+pip install slowapi
+```
+
+```python
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+@app.post("/generate")
+@limiter.limit("5/minute")  # 每 IP 每分钟 5 次
+async def generate(request: Request, req: GenerateRequest):
+    ...
+```
+
+`5/minute` 是纯 CPU 环境下合适的起点。GPU 环境可以提高到 `30/minute`。
+
 ## 模型预热：首次请求为何较慢
 
 Ollama在首次调用模型时会将模型从磁盘加载到VRAM（或RAM）中。根据模型大小，这个过程需要数秒到数十秒。启动时发送预热请求，可以消除真实用户感受到的首次响应延迟。

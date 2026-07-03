@@ -216,6 +216,34 @@ LlamaIndex的28个core依赖最多，因为默认就带上了音频和图像处�
 
 ![三个框架的雷达图和柱状图对比](../../../assets/blog/llamaindex-vs-langchain-vs-haystack-rag-2026/comparison-chart.png)
 
+## 向量存储集成现状
+
+三个框架都支持主流向量存储，但方式不同。
+
+<strong>LlamaIndex</strong>：集成以 `llama-index-vector-stores-{name}` 的形式拆分。
+```bash
+pip install llama-index-vector-stores-qdrant  # Qdrant
+pip install llama-index-vector-stores-chroma  # Chroma
+pip install llama-index-vector-stores-weaviate  # Weaviate
+```
+
+<strong>LangChain</strong>：随着 `langchain-community` 被弃用，正在向独立包迁移。
+```bash
+pip install langchain-chroma   # ✅ 独立包（推荐）
+pip install langchain-qdrant   # ✅ 独立包（推荐）
+# from langchain_community.vectorstores import Chroma  # ⚠️ deprecated
+```
+
+<strong>Haystack</strong>：通过 `haystack-integrations` 包提供官方集成。
+```bash
+pip install haystack-integrations  # 完整集成包
+# 或单独安装
+pip install chroma-haystack
+pip install qdrant-haystack
+```
+
+在[向量数据库比较 2026](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector)里我实测了 Qdrant、ChromaDB、pgvector 的性能——无论用哪个框架，向量存储的选择都要单独考量。
+
 ## 选择指南
 
 没有唯一正确答案，但以下是我的思考框架。
@@ -269,6 +297,15 @@ LlamaIndex的28个core依赖最多，因为默认就带上了音频和图像处�
 - langchain-community弃用说明：[GitHub Issue #674](https://github.com/langchain-ai/langchain-community/issues/674)
 
 如果想在动手之前重温RAG的基础概念，[DeNA LLM学习第4部 — RAG](/zh/blog/zh/dena-llm-study-part4-rag)与本对比搭配阅读效果更好。
+
+## 生态与社区
+
+GitHub 星标数（截至 2026 年 6 月的估计）：
+- LangChain: 90,000+
+- LlamaIndex: 35,000+
+- Haystack: 18,000+
+
+生态规模上 LangChain 遥遥领先。但数字不是全部。Haystack 由 deepset 公司全职维护，企业级支持和稳定性是其强项。LlamaIndex 经历 2023〜2024 年的高速增长后，社区依然活跃。
 
 ## 我的结论
 

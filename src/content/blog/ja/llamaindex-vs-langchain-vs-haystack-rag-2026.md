@@ -218,6 +218,34 @@ LlamaIndexのcore依存が28個で最多だ。音声処理、画像処理など�
 
 ![実測比較チャート：レーダーと数値比較](../../../assets/blog/llamaindex-vs-langchain-vs-haystack-rag-2026/comparison-chart.png)
 
+## ベクトルストア統合の現状
+
+3つのフレームワークはいずれも主要なベクトルストアをサポートするが、方式が異なる。
+
+<strong>LlamaIndex</strong>: 統合が`llama-index-vector-stores-{name}`という形で分離されている。
+```bash
+pip install llama-index-vector-stores-qdrant  # Qdrant
+pip install llama-index-vector-stores-chroma  # Chroma
+pip install llama-index-vector-stores-weaviate  # Weaviate
+```
+
+<strong>LangChain</strong>: `langchain-community`のdeprecatedに伴い、独立パッケージへ移行中だ。
+```bash
+pip install langchain-chroma   # ✅ 独立パッケージ（推奨）
+pip install langchain-qdrant   # ✅ 独立パッケージ（推奨）
+# from langchain_community.vectorstores import Chroma  # ⚠️ deprecated
+```
+
+<strong>Haystack</strong>: `haystack-integrations`パッケージで公式統合を提供する。
+```bash
+pip install haystack-integrations  # 統合パッケージ全体
+# または個別インストール
+pip install chroma-haystack
+pip install qdrant-haystack
+```
+
+[ベクトルDB比較2026](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector)でQdrant・ChromaDB・pgvectorの性能を実測したが、どのフレームワークを使うにせよベクトルストアの選択は別途検討すべきだ。
+
 ## どの状況にどのフレームワークが合うか
 
 正直、決まった答えはない。それでも私が見た基準を共有する。
@@ -271,6 +299,15 @@ LlamaIndexのcore依存が28個で最多だ。音声処理、画像処理など�
 - langchain-community deprecation案内: [GitHub Issue #674](https://github.com/langchain-ai/langchain-community/issues/674)
 
 RAGの基礎概念から見直したいなら、[DeNA LLMスタディ第4部 — RAG](/ja/blog/ja/dena-llm-study-part4-rag)を合わせて読むとこの比較がより鮮明になる。
+
+## エコシステムとコミュニティ
+
+GitHubスター数（2026年6月時点の推定）：
+- LangChain: 90,000+
+- LlamaIndex: 35,000+
+- Haystack: 18,000+
+
+エコシステムの規模ではLangChainが圧倒的だ。だが数字がすべてではない。Haystackはdeepsetという会社がフルタイムで管理しており、エンタープライズサポートと安定性が強みだ。LlamaIndexは2023〜2024年の急成長を経てコミュニティが活発である。
 
 ## 私の結論
 

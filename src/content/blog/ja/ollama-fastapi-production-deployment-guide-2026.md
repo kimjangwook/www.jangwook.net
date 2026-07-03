@@ -514,6 +514,31 @@ async def generate(req: GenerateRequest, token: str = Depends(verify_token)):
 
 `.env`に`API_KEY=your-secret-here`を追加し、docker-compose.ymlの環境変数として渡す。完璧なセキュリティではないが、無防備よりはずっとましだ。
 
+## レートリミット：モデル過負荷の防止
+
+ローカルLLMは同時リクエストに弱い。1つのGPUに複数のリクエストが同時に入るとメモリが溢れるか、推論速度が急落する。`slowapi`で簡単にレートリミットをかけられる。
+
+```bash
+pip install slowapi
+```
+
+```python
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+@app.post("/generate")
+@limiter.limit("5/minute")  # IPあたり毎分5回
+async def generate(request: Request, req: GenerateRequest):
+    ...
+```
+
+`5/minute`はCPU専用環境で適切な出発点だ。GPU環境なら`30/minute`まで上げてもよい。
+
 ## モデルウォームアップ：初回リクエストが遅い理由
 
 Ollamaは最初のモデル呼び出し時にディスクからVRAM（またはRAM）にモデルをロードする。このプロセスがモデルサイズに応じて数秒〜数十秒かかる。起動時にウォームアップリクエストを送っておくと、実ユーザーが感じる初回レスポンス遅延をなくせる。
