@@ -314,6 +314,44 @@ def analyze_node(state):
 
 **Pattern 3: Smolagents standalone for research/code execution agents with E2B sandboxing**
 
+## Testing Strategy Comparison
+
+The three libraries take different approaches to testing, and team testing culture may drive the preference.
+
+<strong>Instructor</strong>: Unit testing is easy. Validate the Pydantic model you passed to `response_model` on its own, and mock the LLM response to exercise the retry logic.
+
+```python
+# Instructor unit test — fast with a mocked LLM
+from unittest.mock import MagicMock
+
+mock_response = UserProfile(name="test", age=25, skills=["Python"])
+mock_client = MagicMock()
+mock_client.chat.completions.create.return_value = mock_response
+
+result = process_user(mock_client, "test input")
+assert result.name == "test"
+```
+
+<strong>Pydantic AI</strong>: Dependency injection keeps integration tests structurally clean. Inject mock dependencies into `RunContext` and verify tool logic without an LLM.
+
+<strong>Smolagents</strong>: Whole-agent tests dominate. Since generated code can vary, end-to-end tests that check "does the agent produce the desired outcome" are more realistic than unit tests.
+
+Production AI agent design principles cover these patterns from a higher architectural view — recommended if you're thinking about the overall agent system design.
+
+## When These Three Libraries Aren't Enough
+
+Having covered all three, there are areas none of them solve.
+
+<strong>Distributed agent systems</strong>: If you need agents deployed across machines, work distributed via message queues, and infrastructure-level durable execution, consider an infrastructure layer like Dapr Agents. Instructor and Smolagents don't touch this layer.
+
+<strong>Multi-agent collaboration</strong>: For scenarios where ten or more agents share state and divide roles, you need the systematic orchestration of CrewAI or LangGraph. Pydantic AI's multi-agent support isn't yet enough for that level of complexity.
+
+<strong>Long-running workflows</strong>: Workflows that run for hours or days, with intermediate state checkpointing, fit LangGraph's persistence features or a workflow engine like Temporal.
+
+These three libraries are optimized for work close to the LLM layer. If you're building an infrastructure-level agent system, use them as components but design the higher architecture separately.
+
+One practical piece of advice: don't adopt all three at once. Teams need time to absorb a new paradigm. Start with Instructor alone to solve structured output, add Pydantic AI when you need an agent loop, and evaluate Smolagents only when a code-execution task appears. That staged approach keeps the maintenance burden down.
+
 ## My Conclusion: I Use All Three, Depending on Context
 
 Honestly? I use all three. They're good at different things.

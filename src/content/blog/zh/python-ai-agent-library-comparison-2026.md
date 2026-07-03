@@ -272,6 +272,96 @@ smolagents的核心逻辑约1000行，这是有意为之的设计决策。易于
 
 [AI 智能体的成本现实](/zh/blog/zh/ai-agent-cost-reality)也值得参考。无论选择哪个库，模型选择都会对成本产生巨大影响，特别是在预估Instructor的重试成本或Smolagents代码生成循环成本时大有帮助。
 
+## 实战组合模式
+
+这三个库也可以一起用。实际上我正在同一个项目里运营同时使用三个库的架构。
+
+<strong>模式1: Instructor + LangGraph</strong>
+- LangGraph 管理状态和流程
+- Instructor 在每个节点的 LLM 调用中保证结构化输出
+
+```python
+from langgraph.graph import StateGraph
+import instructor
+
+client = instructor.from_anthropic(anthropic_client)
+
+def analyze_node(state):
+    result = client.messages.create(
+        model="claude-sonnet-4-6",
+        response_model=AnalysisResult,
+        messages=[...]
+    )
+    return {"analysis": result}
+```
+
+这个组合实用的原因：LangGraph 擅长错误恢复、条件分支、检查点（状态保存）；而 Instructor 专注于"把 LLM 输出转换为可信的 Pydantic 对象"。把两个关注点分开，每一层都会更简单。
+
+<strong>模式2: Pydantic AI + Instructor</strong>
+- Pydantic AI 管理智能体循环和工具
+- 在特定工具内部用 Instructor 抽取复杂嵌套结构
+
+适合这个组合的情况：存在 Pydantic AI 原生输出模式难以处理的超复杂 schema（5 层以上嵌套、条件字段）时，只在那个工具里用 Instructor。
+
+<strong>模式3: Smolagents 单独使用</strong>
+- 需要检索、分析、代码执行的独立智能体
+- 用 E2B 沙箱隔离代码执行
+
+E2B 沙箱配置示例：
+
+```python
+from smolagents import CodeAgent, DuckDuckGoSearchTool
+from smolagents.models import LiteLLMModel
+from e2b_code_interpreter import Sandbox
+
+# 用 E2B 沙箱隔离执行
+agent = CodeAgent(
+    tools=[DuckDuckGoSearchTool()],
+    model=LiteLLMModel(model_id="gpt-4o"),
+    executor_type="e2b",  # 在隔离的云 VM 中执行
+)
+```
+
+E2B 在隔离的云 VM 中执行代码，不会影响本地文件系统或环境。如果生产环境要把用户自定义查询交给智能体，这个配置几乎是必需的。
+
+## 测试策略比较
+
+三个库的测试方式各不相同，团队的测试文化会影响偏好。
+
+<strong>Instructor</strong>：单元测试很容易。单独验证传给 `response_model` 的 Pydantic 模型即可，还可以用 mock 替换 LLM 响应来测试重试逻辑。
+
+```python
+# Instructor 单元测试 — 用 LLM mock 快速验证
+from unittest.mock import MagicMock
+
+mock_response = UserProfile(name="测试", age=25, skills=["Python"])
+mock_client = MagicMock()
+mock_client.chat.completions.create.return_value = mock_response
+
+result = process_user(mock_client, "测试输入")
+assert result.name == "测试"
+```
+
+<strong>Pydantic AI</strong>：得益于依赖注入，集成测试在结构上很干净。往 `RunContext` 注入 mock 依赖，不用 LLM 就能验证工具逻辑。
+
+<strong>Smolagents</strong>：以整个智能体的测试为主。代码生成结果可能变化，所以比起单元测试，验证"智能体是否产出期望结果"的端到端测试更现实。
+
+生产级 AI 智能体设计原则从更高的架构视角讨论了这些模式，推荐给在思考整体智能体系统设计的读者。
+
+## 当这三个库也不够用的时候
+
+三个库都看完了，但也有它们解决不了的领域。
+
+<strong>分布式智能体系统</strong>：如果需要把智能体部署到多台机器、用消息队列分发任务、要求基础设施级的持久执行（durable execution），就该考虑 Dapr Agents 这类基础设施层。Instructor 和 Smolagents 不涉及这一层。
+
+<strong>多智能体协作</strong>：10 个以上智能体共享状态、分工协作的场景，需要 CrewAI 或 LangGraph 的体系化编排。Pydantic AI 的多智能体支持还不足以应对这个复杂度。
+
+<strong>长时间运行的工作流</strong>：以小时或天为单位运行、需要把中间状态存为检查点的任务，适合 LangGraph 的 persistence 功能或 Temporal 这样的工作流引擎。
+
+这三个库都为"靠近 LLM 层的工作"做了优化。如果要构建基础设施级的智能体系统，可以把它们当作组件，但上层架构要单独设计。
+
+一条现实的建议：不要一开始就同时引入三个库。团队适应新范式也需要时间。先用 Instructor 解决"LLM 结构化输出"问题，需要智能体循环时再加 Pydantic AI，出现需要代码执行的特殊任务时再评估 Smolagents。这种分阶段推进能降低维护负担。
+
 ## 何时使用、何时避免
 
 选择库时，"能用"和"现在就该用"是两回事。下面分别说明三个库各自值得采用的场景，以及应当暂缓的场景。

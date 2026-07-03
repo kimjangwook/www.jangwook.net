@@ -276,6 +276,96 @@ smolagentsのコアロジックは約1,000行だ。これは意図的な設計�
 
 重要な前提：**GPT-4oまたはClaude Sonnet以上のモデルを使用すること。** コード生成品質がエージェントのパフォーマンスを左右するためだ。
 
+## 実践的な組み合わせパターン
+
+3つのライブラリは一緒に使うこともできる。実際に私は同一プロジェクトで3つすべてを使うアーキテクチャを運用中だ。
+
+<strong>パターン1: Instructor + LangGraph</strong>
+- LangGraphが状態とフローを管理
+- Instructorが各ノードのLLM呼び出しで構造化出力を保証
+
+```python
+from langgraph.graph import StateGraph
+import instructor
+
+client = instructor.from_anthropic(anthropic_client)
+
+def analyze_node(state):
+    result = client.messages.create(
+        model="claude-sonnet-4-6",
+        response_model=AnalysisResult,
+        messages=[...]
+    )
+    return {"analysis": result}
+```
+
+この組み合わせが実用的な理由：LangGraphはエラー復旧・条件分岐・チェックポイント（状態保存）に強い。一方Instructorは「LLM出力を信頼できるPydanticオブジェクトへ変換する」ことに集中する。二つの関心事を分離すれば各レイヤーが単純になる。
+
+<strong>パターン2: Pydantic AI + Instructor</strong>
+- Pydantic AIがエージェントループとツール管理
+- 特定のツール内でInstructorを使い、複雑なネスト構造を抽出
+
+この組み合わせが合う状況：Pydantic AIのネイティブ出力モードで扱いにくい非常に複雑なスキーマ（5段階以上のネスト、条件付きフィールド）があるとき、そのツールの中だけでInstructorを使う選択をする。
+
+<strong>パターン3: Smolagents単独</strong>
+- リサーチ・分析・コード実行が必要な独立エージェント
+- E2Bサンドボックスでコード実行を隔離
+
+E2Bサンドボックス設定の例：
+
+```python
+from smolagents import CodeAgent, DuckDuckGoSearchTool
+from smolagents.models import LiteLLMModel
+from e2b_code_interpreter import Sandbox
+
+# E2Bサンドボックスで実行を隔離
+agent = CodeAgent(
+    tools=[DuckDuckGoSearchTool()],
+    model=LiteLLMModel(model_id="gpt-4o"),
+    executor_type="e2b",  # 隔離されたクラウドVMで実行
+)
+```
+
+E2Bはコードを隔離されたクラウドVMで実行するため、ローカルのファイルシステムや環境に影響を与えない。プロダクションでユーザー指定のクエリをエージェントに渡す状況なら、この設定は事実上必須だ。
+
+## テスト戦略の比較
+
+3つのライブラリはテストのアプローチが異なる。チームのテスト文化によって好みが分かれうる。
+
+<strong>Instructor</strong>：単体テストが容易だ。`response_model`に指定したPydanticモデルを個別に検証すればよい。LLM応答をmockに置き換えてリトライロジックもテストできる。
+
+```python
+# Instructor単体テスト — LLMのmockで高速に
+from unittest.mock import MagicMock
+
+mock_response = UserProfile(name="テスト", age=25, skills=["Python"])
+mock_client = MagicMock()
+mock_client.chat.completions.create.return_value = mock_response
+
+result = process_user(mock_client, "テスト入力")
+assert result.name == "テスト"
+```
+
+<strong>Pydantic AI</strong>：依存性注入のおかげで統合テストが構造的にきれいだ。`RunContext`にmock依存を注入し、LLMなしでツールロジックを検証する。
+
+<strong>Smolagents</strong>：エージェント全体のテストが中心になる。コード生成の結果が変わりうるため、単体テストより「エージェントが望む結果を出すか」を検証するエンドツーエンドテストが現実的だ。
+
+プロダクションAIエージェントの設計原則ではこうしたパターンを上位アーキテクチャの観点から扱っているので、エージェントシステム全体の設計を考える読者に薦める。
+
+## この3つのライブラリでも足りないとき
+
+3つすべてを見てきたが、これらが解決できない領域もある。
+
+<strong>分散エージェントシステム</strong>：複数マシンにエージェントをデプロイし、メッセージキューで作業を分配し、インフラレベルの耐久実行（durable execution）が必要なら、Dapr Agentsのようなインフラレイヤーを検討すべきだ。InstructorやSmolagentsはこのレイヤーを扱わない。
+
+<strong>マルチエージェント協業</strong>：10個以上のエージェントが共有状態を持って役割分担するシナリオなら、CrewAIやLangGraphの体系的なオーケストレーションが必要だ。Pydantic AIのマルチエージェント対応は、この複雑度を扱うにはまだ十分ではない。
+
+<strong>長時間実行ワークフロー</strong>：時間単位・日単位で実行されるワークフロー、中間状態をチェックポイントとして保存すべき作業には、LangGraphのpersistence機能やTemporalのようなワークフローエンジンが適する。
+
+この3つのライブラリは「LLMレイヤーに近い作業」に最適化されている。インフラレベルのエージェントシステムを構築するなら、これらを構成要素として活用しつつ、上位アーキテクチャは別途設計すべきだ。
+
+一つ現実的なアドバイス：最初から3つすべてを導入しようとしないこと。チームが新しいパラダイムに適応するにも時間がかかる。まずInstructor一つで「LLM構造化出力」の問題を解決し、エージェントループが必要になったらPydantic AIを追加し、コード実行が必要な特殊タスクが出てきたらそのときSmolagentsを検討する。この段階的アプローチが保守負担を減らす。
+
 ## 私の結論: 状況に応じて3つ全部使う
 
 率直に言うと、私はこの3つのライブラリを全て使っている。それぞれ得意なことが違うからだ。
