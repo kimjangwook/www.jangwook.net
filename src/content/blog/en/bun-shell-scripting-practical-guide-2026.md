@@ -244,7 +244,47 @@ build().catch(console.error);
 
 Save this as `scripts/build.ts` and run it with `bun run scripts/build.ts`. No Node.js or ts-node needed. Wiring this build script into a GitHub Actions CI/CD pipeline is a natural next step once local automation is working.
 
-Bun Shell is most often weighed against zx. Side by side:
+## Bun Shell vs zx: What Actually Differs in Practice
+
+Tool comparisons matter less as benchmark numbers and more as day-to-day usage patterns. Putting the two side by side makes the differences clearer.
+
+### Same task, different code
+
+```typescript
+// zx (Node.js-based)
+import { $ } from "zx";
+
+// Copy several files
+for (const file of ["a.ts", "b.ts", "c.ts"]) {
+  await $`cp src/${file} dist/`;
+}
+
+// Bun Shell (Bun-based)
+import { $ } from "bun";
+
+// Same task
+for (const file of ["a.ts", "b.ts", "c.ts"]) {
+  await $`cp src/${file} dist/`;
+}
+```
+
+The code is nearly identical. Up to this point, either works. The differences show up in the runtime environment.
+
+### The differences you actually feel
+
+<strong>Project bootstrap speed</strong>: Bun installs dependencies fast. Where `bun` is already installed, using `import { $ } from "bun"` directly beats `npm install zx`. You save a minute or two on initial setup.
+
+<strong>Windows teammates</strong>: Using zx on Windows requires Git Bash or WSL. Bun Shell ships its own shell and behaves the same on Windows. If half your team is on Windows, this difference is real.
+
+<strong>TypeScript integration</strong>: Bun executes TypeScript directly, no separate compile step. No zx + ts-node + tsconfig combo — just `bun run script.ts`. In CI, that removes a runtime installation step.
+
+### When I pick Bun Shell over zx right now
+
+As my team projects started using Bun, moving to Bun Shell happened naturally. The biggest thing I felt: writing scripts in TypeScript with zero extra setup. Start a new repo with `bun init` and you write and run TypeScript scripts immediately.
+
+zx is a good tool too. Its ecosystem is mature, and it feels natural in Node.js projects. I keep zx in existing Node.js projects and use Bun Shell in new Bun projects.
+
+The differences, compressed into one table:
 
 | Aspect | Bun Shell | zx |
 |---|---|---|

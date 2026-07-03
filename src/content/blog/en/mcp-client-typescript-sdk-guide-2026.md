@@ -335,6 +335,59 @@ If you're writing your own agent loop without LangGraph or LlamaIndex, a custom 
 
 During MCP server development, a custom client lets you verify tool behavior quickly without Claude Desktop. Call `listTools()` to check the generated `inputSchema`, then fire `callTool()` with various parameter combinations.
 
+## Hands-on pattern — building a simple agent loop
+
+The most natural real-world use of an MCP client is an "agent loop": hand the LLM a list of available tools, let it decide which one to use, and have the client actually execute it.
+
+Below is a simplified example you can follow without a Claude API key. In a real system, an LLM call goes where the hardcoded decision sits.
+
+```javascript
+// agent-loop.mjs (conceptual example)
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+
+async function runAgentLoop(userRequest) {
+  const transport = new StdioClientTransport({
+    command: "node",
+    args: ["server.mjs"],
+    cwd: process.cwd(),
+  });
+  const client = new Client({ name: "agent", version: "1.0.0" }, { capabilities: {} });
+  await client.connect(transport);
+
+  // Step 1: list the available tools
+  const { tools } = await client.listTools();
+  
+  // Step 2: pass the tool list and user request to the LLM (hardcoded here)
+  // In reality: const llmResponse = await callLLM(userRequest, tools);
+  const llmDecision = {
+    tool: "calculate",
+    arguments: { operation: "multiply", a: 7, b: 6 },
+  };
+
+  // Step 3: execute the tool the LLM picked
+  const result = await client.callTool({
+    name: llmDecision.tool,
+    arguments: llmDecision.arguments,
+  });
+
+  // Step 4: feed the result back to the LLM for the final answer
+  const toolOutput = result.isError
+    ? `Error: ${result.content[0]?.text}`
+    : result.content[0]?.text;
+
+  console.log(`User request: ${userRequest}`);
+  console.log(`Tool executed: ${llmDecision.tool}`);
+  console.log(`Tool result: ${toolOutput}`);
+
+  await client.close();
+}
+
+await runAgentLoop("What is 7 times 6?");
+```
+
+In this pattern the client is purely a "tool execution layer". The LLM decides, the client executes. Structurally, this is exactly what Claude Desktop and Claude Code do internally.
+
 ## Connecting to an existing public MCP server
 
 So far I've only connected to my own server. The same client works with any public MCP server package.

@@ -246,7 +246,47 @@ build().catch(console.error);
 
 このスクリプトを`scripts/build.ts`として保存して`bun run scripts/build.ts`で実行する。Node.js + ts-nodeの組み合わせが不要になる点が体感として楽だ。このビルドスクリプトをGitHub ActionsのCI/CDパイプラインと連携するのも自然な次のステップだ。
 
-Bun Shellが最も比較されるのはzxだ。並べて整理すると：
+## Bun Shell vs zx、実務で何が違うか
+
+ツール比較はベンチマークの数字より実際の使用パターンが重要だ。二つを並べてみると違いがより明確になる。
+
+### 同じ作業、違うコード
+
+```typescript
+// zx (Node.jsベース)
+import { $ } from "zx";
+
+// 複数ファイルをコピー
+for (const file of ["a.ts", "b.ts", "c.ts"]) {
+  await $`cp src/${file} dist/`;
+}
+
+// Bun Shell (Bunベース)
+import { $ } from "bun";
+
+// 同じ作業
+for (const file of ["a.ts", "b.ts", "c.ts"]) {
+  await $`cp src/${file} dist/`;
+}
+```
+
+コードはほぼ同一だ。ここまでならどちらでも使える。違いはランタイム環境で現れる。
+
+### 実際に体感する違い
+
+<strong>プロジェクト初期化速度</strong>：Bunは依存関係のインストールが速い。`bun`がインストール済みの環境なら、`npm install zx`より`import { $ } from "bun"`をそのまま使うほうが速い。初期設定で1〜2分を節約できる。
+
+<strong>Windowsのチームメイト</strong>：zxをWindowsで使うにはGit BashやWSLが必要だ。Bun Shellは独自シェルを内蔵し、Windowsでも同じように動く。チームの半分がWindowsならこの差は現実に効く。
+
+<strong>TypeScript統合</strong>：BunはTypeScriptを別途コンパイルせず直接実行する。zx + ts-node + tsconfigの組み合わせなしに`bun run script.ts`で即実行できる。CI環境ではランタイムのインストール手順を減らせる。
+
+### 私が今すぐzxの代わりにBun Shellを選ぶ場合
+
+チームのプロジェクトでBunを使い始めてから、自然にBun Shellへ移った。最も大きく感じたのは「TypeScriptでスクリプトを書くのに追加設定がない」という点だ。新しいリポジトリを`bun init`で始めれば、すぐにTypeScriptスクリプトを書いて実行できる。
+
+zxも良いツールだ。エコシステムが成熟しており、Node.jsプロジェクトでは自然だ。私は既存のNode.jsプロジェクトではzxを維持し、新しいBunプロジェクトではBun Shellを使う。
+
+違いを表に圧縮すると：
 
 | 項目 | Bun Shell | zx |
 |---|---|---|
@@ -336,6 +376,48 @@ graph TD
     C -->|"はい"| D["Bun導入とあわせて<br/>Bun Shellを検討"]
     C -->|"いいえ"| E["zx維持が現実的"]
 ```
+
+## デプロイ環境で注意すべき点
+
+Bun Shellスクリプトを実際のサーバーやCIで使うときに見落としやすい点を整理した。
+
+### Bunバージョンの固定
+
+ローカルとCIでBunのバージョンが違うと動作が変わりうる。`package.json`にエンジン要件を明示するか、`.bun-version`ファイルでバージョンを固定するのがよい：
+
+```json
+// package.json
+{
+  "engines": {
+    "bun": ">=1.3.0"
+  }
+}
+```
+
+GitHub ActionsでBunをインストールするときは：
+
+```yaml
+- uses: oven-sh/setup-bun@v2
+  with:
+    bun-version: "1.3.14"
+```
+
+特定バージョンを固定しないと、マイナーアップデートでAPI変更があったとき予期しないエラーが起きうる。
+
+### エラーロギングのパターン
+
+`.nothrow()`を使うときはstderrまで拾う習慣が重要だ：
+
+```typescript
+const result = await $`some-command`.nothrow();
+if (result.exitCode !== 0) {
+  // stderrも一緒にログ
+  console.error(`Command failed (code ${result.exitCode}): ${result.stderr.toString().trim()}`);
+  process.exit(1);  // CIで失敗として認識されるように
+}
+```
+
+`process.exit(1)`を明示しないと、CIでスクリプトが失敗してもパイプラインが進み続けることがある。
 
 ## 結局、いま使う価値はあるか
 

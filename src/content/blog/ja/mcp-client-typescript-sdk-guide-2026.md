@@ -321,6 +321,59 @@ LangGraphやLlamaIndexなしで独自のエージェントを書く場合、MCP�
 
 MCPサーバーを開発する際、Claude Desktopなしでツールの動作を素早く検証できる。`listTools()`の結果でinputSchemaを確認し、様々なパラメータで`callTool()`を呼び出してみる使い方だ。
 
+## 実践パターン — シンプルなエージェントループを作る
+
+MCPクライアントを実際に応用する最も自然な形は「エージェントループ」だ。LLMに使用可能なツール一覧を渡し、LLMがどのツールを使うか決めたら、クライアントが実際に実行する構造である。
+
+以下はClaude APIなしでも流れを理解できる簡略化した例だ。実際にはこの部分にLLM呼び出しが入る。
+
+```javascript
+// agent-loop.mjs (概念例)
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+
+async function runAgentLoop(userRequest) {
+  const transport = new StdioClientTransport({
+    command: "node",
+    args: ["server.mjs"],
+    cwd: process.cwd(),
+  });
+  const client = new Client({ name: "agent", version: "1.0.0" }, { capabilities: {} });
+  await client.connect(transport);
+
+  // ステップ1: 使用可能なツール一覧を取得
+  const { tools } = await client.listTools();
+  
+  // ステップ2: LLMにツール一覧とユーザー要求を渡す（ここではハードコード）
+  // 実際は: const llmResponse = await callLLM(userRequest, tools);
+  const llmDecision = {
+    tool: "calculate",
+    arguments: { operation: "multiply", a: 7, b: 6 },
+  };
+
+  // ステップ3: LLMが選んだツールを実行
+  const result = await client.callTool({
+    name: llmDecision.tool,
+    arguments: llmDecision.arguments,
+  });
+
+  // ステップ4: 結果を再びLLMへ渡して最終応答を生成
+  const toolOutput = result.isError
+    ? `エラー: ${result.content[0]?.text}`
+    : result.content[0]?.text;
+
+  console.log(`ユーザー要求: ${userRequest}`);
+  console.log(`実行ツール: ${llmDecision.tool}`);
+  console.log(`ツール結果: ${toolOutput}`);
+
+  await client.close();
+}
+
+await runAgentLoop("7かける6は？");
+```
+
+このパターンでクライアントは単に「ツール実行レイヤー」の役割を果たす。LLMが決定し、クライアントが実行する。これはClaude DesktopやClaude Codeが内部でやっていることと構造的に同じだ。
+
 ## 既存のMCPサーバーへの接続
 
 ここまでは自分で作ったサーバーに接続してきた。公開されているMCPサーバーパッケージも同じクライアントで使える。

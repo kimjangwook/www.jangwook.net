@@ -288,6 +288,59 @@ Parallel calls (4 ops) in 1ms:
 
 开发 MCP 服务器时，无需 Claude Desktop 就能快速验证工具行为。用 `listTools()` 检查生成的 `inputSchema`，再用不同参数调用 `callTool()`。
 
+## 实战模式 — 构建一个简单的智能体循环
+
+MCP 客户端最自然的实际应用形态是"智能体循环"：把可用工具列表交给 LLM，由 LLM 决定用哪个工具，再由客户端实际执行。
+
+下面是不需要 Claude API 也能理解流程的简化示例。真实系统中，硬编码的决策处会换成 LLM 调用。
+
+```javascript
+// agent-loop.mjs (概念示例)
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+
+async function runAgentLoop(userRequest) {
+  const transport = new StdioClientTransport({
+    command: "node",
+    args: ["server.mjs"],
+    cwd: process.cwd(),
+  });
+  const client = new Client({ name: "agent", version: "1.0.0" }, { capabilities: {} });
+  await client.connect(transport);
+
+  // 第1步: 查询可用工具列表
+  const { tools } = await client.listTools();
+  
+  // 第2步: 把工具列表和用户请求交给 LLM（这里硬编码）
+  // 实际上: const llmResponse = await callLLM(userRequest, tools);
+  const llmDecision = {
+    tool: "calculate",
+    arguments: { operation: "multiply", a: 7, b: 6 },
+  };
+
+  // 第3步: 执行 LLM 选中的工具
+  const result = await client.callTool({
+    name: llmDecision.tool,
+    arguments: llmDecision.arguments,
+  });
+
+  // 第4步: 把结果交回 LLM 生成最终回答
+  const toolOutput = result.isError
+    ? `错误: ${result.content[0]?.text}`
+    : result.content[0]?.text;
+
+  console.log(`用户请求: ${userRequest}`);
+  console.log(`执行工具: ${llmDecision.tool}`);
+  console.log(`工具结果: ${toolOutput}`);
+
+  await client.close();
+}
+
+await runAgentLoop("7 乘 6 是多少？");
+```
+
+在这个模式里，客户端纯粹扮演"工具执行层"。LLM 决策，客户端执行。这在结构上与 Claude Desktop、Claude Code 内部所做的事完全相同。
+
 ## 连接已有的公开 MCP 服务器
 
 目前只连接了自己的服务器。同一个客户端也可以连接公开的 MCP 服务器包。

@@ -243,7 +243,47 @@ build().catch(console.error);
 
 将这个脚本保存为`scripts/build.ts`，用`bun run scripts/build.ts`执行。不需要Node.js或ts-node，体感上轻松很多。将这个构建脚本接入GitHub Actions CI/CD流水线是本地自动化跑通后自然的下一步。
 
-Bun Shell 最常被拿来与 zx 比较。并排整理如下：
+## Bun Shell vs zx：实务中到底差在哪
+
+工具比较，实际使用模式比基准数字更重要。把两者摆在一起看，差异会更清楚。
+
+### 同样的任务，不同的代码
+
+```typescript
+// zx (基于 Node.js)
+import { $ } from "zx";
+
+// 复制多个文件
+for (const file of ["a.ts", "b.ts", "c.ts"]) {
+  await $`cp src/${file} dist/`;
+}
+
+// Bun Shell (基于 Bun)
+import { $ } from "bun";
+
+// 同样的任务
+for (const file of ["a.ts", "b.ts", "c.ts"]) {
+  await $`cp src/${file} dist/`;
+}
+```
+
+代码几乎一样。到这里为止，两个都能用。差异出现在运行时环境。
+
+### 实际能感受到的差异
+
+<strong>项目初始化速度</strong>：Bun 安装依赖很快。在已装好 `bun` 的环境里，直接 `import { $ } from "bun"` 比 `npm install zx` 更快。初始设置能省 1〜2 分钟。
+
+<strong>Windows 队友</strong>：在 Windows 上用 zx 需要 Git Bash 或 WSL。Bun Shell 内置自有 shell，在 Windows 上同样可用。如果团队一半人用 Windows，这个差异是实打实的。
+
+<strong>TypeScript 集成</strong>：Bun 无需单独编译即可直接运行 TypeScript。不用 zx + ts-node + tsconfig 组合，`bun run script.ts` 直接执行。CI 环境里能省掉一个运行时安装步骤。
+
+### 我现在就会用 Bun Shell 替代 zx 的情况
+
+团队项目开始用 Bun 之后，自然而然转向了 Bun Shell。感受最深的是"用 TypeScript 写脚本不需要任何额外配置"。用 `bun init` 新建仓库，马上就能写并运行 TypeScript 脚本。
+
+zx 也是好工具。生态成熟，在 Node.js 项目里很自然。我在现有 Node.js 项目里继续用 zx，在新的 Bun 项目里用 Bun Shell。
+
+把差异压缩成一张表：
 
 | 项目 | Bun Shell | zx |
 |---|---|---|
@@ -330,6 +370,48 @@ graph TD
     C -->|"是"| D["随引入 Bun 一起<br/>考虑 Bun Shell"]
     C -->|"否"| E["继续用 zx 更现实"]
 ```
+
+## 部署环境中的注意事项
+
+整理一下在真实服务器或 CI 上使用 Bun Shell 脚本时容易忽略的点。
+
+### 固定 Bun 版本
+
+本地和 CI 的 Bun 版本不一致时行为可能不同。最好在 `package.json` 里声明引擎要求，或用 `.bun-version` 文件固定版本：
+
+```json
+// package.json
+{
+  "engines": {
+    "bun": ">=1.3.0"
+  }
+}
+```
+
+在 GitHub Actions 里安装 Bun 时：
+
+```yaml
+- uses: oven-sh/setup-bun@v2
+  with:
+    bun-version: "1.3.14"
+```
+
+不固定具体版本的话，小版本更新带来 API 变化时可能出现意料之外的错误。
+
+### 错误日志模式
+
+用 `.nothrow()` 时，连 stderr 一起记录的习惯很重要：
+
+```typescript
+const result = await $`some-command`.nothrow();
+if (result.exitCode !== 0) {
+  // 连同 stderr 一起记录
+  console.error(`Command failed (code ${result.exitCode}): ${result.stderr.toString().trim()}`);
+  process.exit(1);  // 让 CI 识别为失败
+}
+```
+
+不显式调用 `process.exit(1)` 的话，脚本失败时 CI 流水线可能继续往下走。
 
 ## 现在到底值不值得用
 
