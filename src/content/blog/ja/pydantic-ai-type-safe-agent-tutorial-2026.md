@@ -373,6 +373,68 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 
 同じPythonスタックで続けて読むなら、[FastMCPでMCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)と[FastAPI + Claude APIストリーミング本番ガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026)をおすすめする。
 
+## まとめ: 核心パターンを一気に見る
+
+ここまで扱った内容を一箇所に整理する。
+
+```python
+from pydantic import BaseModel, Field
+from pydantic_ai import Agent, RunContext
+from pydantic_ai.models.test import TestModel
+from pydantic_ai.models.function import FunctionModel
+from pydantic_ai.messages import ModelMessage, ModelResponse, TextPart
+from pydantic_ai.settings import ModelSettings
+import json
+
+# 1. 構造化出力モデル
+class ReviewResult(BaseModel):
+    score: int = Field(ge=0, le=100)
+    verdict: str  # 'approve', 'request_changes'
+    summary: str
+
+# 2. 依存型
+class AgentDeps:
+    def __init__(self, repo_name: str, author: str):
+        self.repo_name = repo_name
+        self.author = author
+
+# 3. エージェント定義
+agent = Agent(
+    system_prompt='コードレビューエージェントです。',
+    output_type=ReviewResult,   # v1.88.0: output_type (旧: result_type)
+    deps_type=AgentDeps,
+    retries=3,
+)
+
+# 4. ツール登録
+@agent.tool
+def get_code_context(ctx: RunContext[AgentDeps]) -> dict:
+    """リポジトリコンテキストの取得"""
+    return {"repo": ctx.deps.repo_name, "author": ctx.deps.author}
+
+# 5. テスト
+## 構造テスト (API不要)
+result = agent.run_sync("コードレビューして",
+    deps=AgentDeps("my-repo", "jangwook"),
+    model=TestModel())
+
+## 応答ロジックテスト (FunctionModel)
+def mock(messages: list[ModelMessage], settings: ModelSettings) -> ModelResponse:
+    return ModelResponse(parts=[TextPart(content=json.dumps({
+        "score": 85, "verdict": "approve", "summary": "きれいなコード"
+    }))])
+
+result = agent.run_sync("コードレビューして",
+    deps=AgentDeps("my-repo", "jangwook"),
+    model=FunctionModel(mock))
+assert result.output.verdict == "approve"
+
+# 6. プロダクション: モデルだけ差し替え
+result = agent.run_sync("コードレビューして",
+    deps=AgentDeps("my-repo", "jangwook"),
+    model='anthropic:claude-sonnet-4-6')
+```
+
 ## 次のステップ
 
 TypeScriptスタックならVercel AI SDKでClaudeストリーミングエージェントを作る方法がPythonと似たアプローチを提供する。

@@ -241,6 +241,81 @@ LLMを呼び出し、ツール実行の判断をする。一度の`generate()`�
 **4. Observability**
 OpenTelemetryベースでエージェント実行のトレース、スパン、ログを記録する。
 
+## Mastra Studio
+
+`npm run dev`を実行すると`http://localhost:4111`でMastra Studioが開く。エージェントと会話し、ツール呼び出しの過程を視覚的に確認し、ワークフローをテストできるWeb UIだ。
+
+実際に動かしてみると、開発段階でエージェントの挙動を素早く確認するのに有用だ。各LLM呼び出しとツール実行が段階別に表示され、どこで何が起きているか追跡しやすい。
+
+Studioで最も有用な機能は<strong>ツール呼び出しトレース</strong>だ。エージェントがどのツールをどの引数で呼び、ツールが何を返し、その結果LLMがどう反応したかを段階別に見られる。デバッグでログを掘るよりずっと直感的だ。
+
+ただし、Studioはあくまで開発ツールだ。プロダクションのデプロイ経路とは分離されている。`npm run build`でビルドした成果物をどうサーバーに載せるかは、Vercel以外のドキュメントがまだ薄い。
+
+## Mastra Workflow: エージェントをグラフで組み合わせる
+
+Mastraの独特な強みの一つがワークフローシステムだ。単体のエージェントだけでなく、複数のステップをグラフでつなぐ複雑なパイプラインを構成できる。
+
+基本のワークフロー構造はこうだ：
+
+```typescript
+import { createWorkflow, createStep } from '@mastra/core/workflows';
+import { z } from 'zod';
+
+const step1 = createStep({
+  id: 'fetch-weather',
+  description: '天気データの収集',
+  inputSchema: z.object({ city: z.string() }),
+  outputSchema: z.object({ 
+    temperature: z.number(),
+    conditions: z.string()
+  }),
+  execute: async ({ inputData }) => {
+    // 天気APIを呼び出す
+    return { temperature: 27.3, conditions: 'Mainly clear' };
+  },
+});
+
+const step2 = createStep({
+  id: 'generate-advice',
+  description: '天気に基づく活動の提案',
+  inputSchema: z.object({ 
+    temperature: z.number(),
+    conditions: z.string()
+  }),
+  outputSchema: z.object({ advice: z.string() }),
+  execute: async ({ inputData, mastra }) => {
+    const agent = mastra?.getAgent('advisorAgent');
+    const result = await agent?.generate(
+      `Temperature: ${inputData.temperature}°C, ${inputData.conditions}. Suggest 3 activities.`
+    );
+    return { advice: result?.text || '' };
+  },
+});
+
+export const weatherAdviceWorkflow = createWorkflow({
+  id: 'weather-advice',
+  inputSchema: z.object({ city: z.string() }),
+  outputSchema: z.object({ advice: z.string() }),
+})
+  .then(step1)
+  .then(step2)
+  .commit();
+```
+
+`.then()`チェーンでステップをつなぎ、`.branch()`で分岐を作り、`.parallel()`で並列実行もできる。エージェントが単にLLMを呼ぶだけでなく、複雑なマルチステッププロセスを型安全に構成できるのが核心だ。
+
+このワークフローAPIは私はかなり気に入っている。LangGraphのようにグラフベースだが、TypeScriptのイディオムにずっと近い形で表現される。`createStep`の`inputSchema`・`outputSchema`がZodで定義されており、ステップ間のデータフローがコンパイル時に検証される。
+
+## 実践ヒント: Geminiモデルの選択
+
+MastraでGoogle Geminiを使うとき、モデル選択が性能とコストに直接影響する。
+
+- `google/gemini-2.5-pro`: 最も能力が高いが応答が遅くコストも高い。複雑な推論が必要なエージェント向き。
+- `google/gemini-2.5-flash`: 速くて安い。私がテストした天気エージェントはFlashで5.8秒以内に完了した。単純なツール呼び出し中心のエージェントならFlashから始めるのを薦める。
+- `google/gemini-2.0-flash-exp`: まだ実験的だがより速く、無料ティアで使える。
+
+Anthropic APIキーがあれば`anthropic/claude-sonnet-4-6`に替えてもそのまま動く。モデル文字列を変えるだけだ。この抽象化がMastraの強みの一つだ。
+
 ## 他フレームワークとの比較
 
 TypeScriptエコシステムでMastraと最も近いのはVercel AI SDKだ。Vercel AI SDKがLLM呼び出しとストリーミングに特化しているなら、Mastraはそのうえにエージェントのライフサイクル管理、メモリ、オブザーバビリティを加えたレイヤーだ。

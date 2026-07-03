@@ -249,6 +249,71 @@ OpenTelemetry-based tracing, spans, and logging for every agent execution. `Mast
 
 Running `npm run dev` opens Mastra Studio at `http://localhost:4111`. It's a web UI for chatting with agents, inspecting tool call traces, and testing workflows. During development, it's genuinely useful. You can see exactly which tools fired and what they returned, without digging through logs.
 
+## Mastra Workflow: Composing Agents as Graphs
+
+One of Mastra's distinctive strengths is its workflow system. Beyond a single agent, you can compose complex pipelines that connect multiple steps as a graph.
+
+The basic workflow structure:
+
+```typescript
+import { createWorkflow, createStep } from '@mastra/core/workflows';
+import { z } from 'zod';
+
+const step1 = createStep({
+  id: 'fetch-weather',
+  description: 'Collect weather data',
+  inputSchema: z.object({ city: z.string() }),
+  outputSchema: z.object({ 
+    temperature: z.number(),
+    conditions: z.string()
+  }),
+  execute: async ({ inputData }) => {
+    // Call the weather API
+    return { temperature: 27.3, conditions: 'Mainly clear' };
+  },
+});
+
+const step2 = createStep({
+  id: 'generate-advice',
+  description: 'Recommend activities based on weather',
+  inputSchema: z.object({ 
+    temperature: z.number(),
+    conditions: z.string()
+  }),
+  outputSchema: z.object({ advice: z.string() }),
+  execute: async ({ inputData, mastra }) => {
+    const agent = mastra?.getAgent('advisorAgent');
+    const result = await agent?.generate(
+      `Temperature: ${inputData.temperature}°C, ${inputData.conditions}. Suggest 3 activities.`
+    );
+    return { advice: result?.text || '' };
+  },
+});
+
+export const weatherAdviceWorkflow = createWorkflow({
+  id: 'weather-advice',
+  inputSchema: z.object({ city: z.string() }),
+  outputSchema: z.object({ advice: z.string() }),
+})
+  .then(step1)
+  .then(step2)
+  .commit();
+```
+
+Chain steps with `.then()`, branch with `.branch()`, and run in parallel with `.parallel()`. The point is that an agent goes beyond a single LLM call to a complex multi-step process, composed type-safely.
+
+I genuinely like this workflow API. It's graph-based like LangGraph, but expressed much closer to TypeScript idiom. `createStep`'s `inputSchema` and `outputSchema` are Zod definitions, so data flow between steps is validated at compile time.
+
+## Practical Tip: Choosing a Gemini Model
+
+When using Google Gemini with Mastra, model choice directly affects performance and cost.
+
+- `google/gemini-2.5-pro`: The most capable, but slow to respond and pricier. Fits agents that need complex reasoning.
+- `google/gemini-2.5-flash`: Fast and cheap. My weather agent test completed in 5.8 seconds on Flash. For simple tool-calling agents, start with Flash.
+- `google/gemini-2.0-flash-exp`: Still experimental, but faster and available on the free tier.
+
+With an Anthropic API key, switching to `anthropic/claude-sonnet-4-6` just works — change the model string and you're done. That abstraction is one of Mastra's strengths.
+
 ## How It Compares
 
 The closest comparison in TypeScript is Vercel AI SDK. Vercel AI SDK handles LLM calls and streaming well; Mastra adds agent lifecycle management, memory, and observability on top. It's not a replacement. It's a higher-level abstraction that uses AI SDK underneath.

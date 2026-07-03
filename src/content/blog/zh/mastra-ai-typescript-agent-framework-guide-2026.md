@@ -245,6 +245,81 @@ Zod类型化的外部API、数据库、文件系统接口。LLM按照schema填�
 **4. 可观察性**
 基于OpenTelemetry记录代理执行的跟踪、span和日志。
 
+## Mastra Studio
+
+运行 `npm run dev` 后，`http://localhost:4111` 会打开 Mastra Studio。这是一个可以与智能体对话、可视化查看工具调用过程、测试工作流的 Web UI。
+
+实际用下来，它在开发阶段快速确认智能体行为很有用。每次 LLM 调用和工具执行都分步显示，容易追踪哪里发生了什么。
+
+Studio 里最有用的功能是<strong>工具调用跟踪</strong>：智能体用什么参数调了哪个工具、工具返回了什么、LLM 又如何响应，都能分步查看。比翻日志调试直观得多。
+
+不过，Studio 终究是开发工具，与生产部署路径是分离的。`npm run build` 构建出的产物怎么部署到服务器，除 Vercel 之外的文档还很薄。
+
+## Mastra Workflow：把智能体组合成图
+
+Mastra 独特的优势之一是工作流系统。不只是单个智能体，还能把多个步骤连成图，构成复杂的流水线。
+
+基本的工作流结构如下：
+
+```typescript
+import { createWorkflow, createStep } from '@mastra/core/workflows';
+import { z } from 'zod';
+
+const step1 = createStep({
+  id: 'fetch-weather',
+  description: '收集天气数据',
+  inputSchema: z.object({ city: z.string() }),
+  outputSchema: z.object({ 
+    temperature: z.number(),
+    conditions: z.string()
+  }),
+  execute: async ({ inputData }) => {
+    // 调用天气 API
+    return { temperature: 27.3, conditions: 'Mainly clear' };
+  },
+});
+
+const step2 = createStep({
+  id: 'generate-advice',
+  description: '基于天气推荐活动',
+  inputSchema: z.object({ 
+    temperature: z.number(),
+    conditions: z.string()
+  }),
+  outputSchema: z.object({ advice: z.string() }),
+  execute: async ({ inputData, mastra }) => {
+    const agent = mastra?.getAgent('advisorAgent');
+    const result = await agent?.generate(
+      `Temperature: ${inputData.temperature}°C, ${inputData.conditions}. Suggest 3 activities.`
+    );
+    return { advice: result?.text || '' };
+  },
+});
+
+export const weatherAdviceWorkflow = createWorkflow({
+  id: 'weather-advice',
+  inputSchema: z.object({ city: z.string() }),
+  outputSchema: z.object({ advice: z.string() }),
+})
+  .then(step1)
+  .then(step2)
+  .commit();
+```
+
+用 `.then()` 链接步骤，用 `.branch()` 分支，用 `.parallel()` 并行执行。核心在于：智能体不再只是调用一次 LLM，而是能以类型安全的方式组合复杂的多步流程。
+
+我很喜欢这套工作流 API。它像 LangGraph 一样基于图，但表达方式更贴近 TypeScript 习惯。`createStep` 的 `inputSchema`、`outputSchema` 用 Zod 定义，步骤之间的数据流在编译期就能校验。
+
+## 实用建议：Gemini 模型选择
+
+在 Mastra 里用 Google Gemini 时，模型选择直接影响性能和成本。
+
+- `google/gemini-2.5-pro`：能力最强，但响应慢、成本高。适合需要复杂推理的智能体。
+- `google/gemini-2.5-flash`：又快又便宜。我测试的天气智能体用 Flash 在 5.8 秒内完成。以简单工具调用为主的智能体，建议从 Flash 起步。
+- `google/gemini-2.0-flash-exp`：还在实验阶段，但更快，而且免费层可用。
+
+有 Anthropic API key 的话，换成 `anthropic/claude-sonnet-4-6` 也能直接跑——只改模型字符串就行。这层抽象是 Mastra 的强项之一。
+
 ## 与其他框架的比较
 
 在TypeScript生态中，与Mastra最接近的是Vercel AI SDK。如果说Vercel AI SDK专注于LLM调用和流式传输，那么Mastra在其基础上增加了代理生命周期管理、内存和可观察性。

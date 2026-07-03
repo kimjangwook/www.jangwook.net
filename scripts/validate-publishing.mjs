@@ -116,9 +116,11 @@ async function loadPosts() {
       const noindex = parsed.data.noindex === true;
       const published = Boolean(pubDateKey && !draft && pubDateKey <= todayJst);
       const indexable = published && !noindex;
-      const markdownImages = extractMarkdownImages(parsed.content);
-      const h2Count = (parsed.content.match(/^## /gm) || []).length;
+      // 코드 펜스 내부의 ## 주석·이미지 예제가 구조 지표를 오염시키지 않도록 제거 후 계산
       const mermaidCount = (parsed.content.match(/```mermaid/g) || []).length;
+      const proseOnly = parsed.content.replace(/^(`{3,})[\s\S]*?^\1`*\s*$/gm, '');
+      const markdownImages = extractMarkdownImages(proseOnly);
+      const h2Count = (proseOnly.match(/^## /gm) || []).length;
 
       posts.push({
         lang,
