@@ -224,6 +224,40 @@ Dispatch: OK (type-safe)
 
 按照[Ollama FastAPI生产部署指南](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026)将Ollama部署为API服务器后，可以考虑根据Schema复杂度在运行时切换模型。
 
+## 嵌套 Schema 实战示例：注意事项
+
+请求更复杂的结构——比如带多个字段的报告对象——时，就要在 schema 设计上花心思了。智能体里实际用的就是这类结构。
+
+```python
+from pydantic import BaseModel, Field
+from typing import List, Optional, Literal
+
+class ActionItem(BaseModel):
+    priority: Literal["high", "medium", "low"]
+    task: str
+    deadline_days: Optional[int] = None
+
+class MeetingNotes(BaseModel):
+    summary: str
+    key_decisions: List[str]
+    action_items: List[ActionItem]
+    sentiment: Literal["positive", "neutral", "negative"]
+
+# 使用
+schema = MeetingNotes.model_json_schema()
+notes = ollama_structured(
+    "Summarize: 'Team agreed on Q3 launch. John to finish API by Friday. Mary to review docs in 3 days.'",
+    MeetingNotes
+)
+print(f"Summary: {notes.summary}")
+for item in notes.action_items:
+    print(f"  [{item.priority.upper()}] {item.task} ({item.deadline_days}d)")
+```
+
+这个复杂度在 Gemma4:e4b 上也运行良好。`Optional[int]` 的 `None` 偶尔会以空字符串返回，显式声明 `Field(default=None)` 更稳定。
+
+<strong>嵌套数组里的对象尽量保持扁平。</strong>相比 `List[List[str]]` 这种二重数组，`List[SomeModel]` 的形态在小型本地模型上可靠得多。我自己测试时，两层以上的数组嵌套偶尔会返回空列表。
+
 ## 模式参考：何时用什么
 
 | 场景 | 推荐方式 | 原因 |
@@ -293,6 +327,75 @@ print(f"Key phrases: {result.key_phrases}")
 **模型切换策略。** 简单提取用 `gemma4:e4b`（速度快），复杂嵌套Schema用 `gemma4:12b-it-qat`（更准确），在运行时按需切换，是成本与质量平衡的优选方案。[用Pydantic AI构建完整Agent](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)展示了如何在框架层面抽象这个判断。
 
 如果你已经在本地运行基于Gemma4的Agent，今天只需添加一个 `format` 参数，就能显著提升解析稳定性。尤其是在Agent循环中，错误响应会直接导致下游错误的路径上，效果更为明显。
+
+## 通过 OpenAI 兼容 API 也能同样工作
+
+Ollama 也提供 `/v1/chat/completions` 端点。如果你已经在用 OpenAI SDK，只改 `base_url` 就能套用同样的结构化输出模式。
+
+```python
+from openai import OpenAI
+from pydantic import BaseModel
+from typing import List
+
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"  # 值随便填一个字符串即可
+)
+
+class Recommendation(BaseModel):
+    item: str
+    reason: str
+    score: float
+
+class RecommendationList(BaseModel):
+    recommendations: List[Recommendation]
+    total_count: int
+
+# 通过 OpenAI SDK 的 response_format 传入 Pydantic schema
+completion = client.beta.chat.completions.parse(
+    model="gemma4:e4b",
+    messages=[{"role": "user", "content": "Recommend 2 Python testing libraries"}],
+    response_format=RecommendationList
+)
+result = completion.choices[0].message.parsed
+print(f"Got {result.total_count} recommendations:")
+for rec in result.recommendations:
+    print(f"  {rec.item}: {rec.reason} (score: {rec.score})")
+```
+
+`client.beta.chat.completions.parse()` 是 OpenAI SDK 1.50+ 的功能，可以把 Pydantic 模型直接传给 `response_format`。它内部调用 `model_json_schema()`，并用 `model_validate()` 解析响应。如果团队已经在用 OpenAI SDK，把 Ollama 切换为本地后端所需的代码改动最小。
+
+一个差别：直接调用 `api/generate` 有时比 `chat/completions` 略快，因为它绕过系统提示词处理开销，直接调用补全 API。对速度敏感的流水线，选择直接调用 `api/generate` 是对的。
+
+## 环境配置与快速开始
+
+要亲自运行本文的示例，需要以下环境。
+
+```bash
+# 1. 安装 Ollama (macOS)
+curl -fsSL https://ollama.com/install.sh | sh
+
+# 2. 下载 Gemma4 模型（4B，约 3GB）
+ollama pull gemma4:e4b
+
+# 3. 启动 Ollama 服务（后台）
+ollama serve &
+
+# 4. 安装 Python 包
+pip install pydantic>=2.0
+```
+
+Ollama 需要 0.3.0 以上版本，`format` 参数才能工作。本文在 Ollama 0.30.7 上测试。
+
+```bash
+# 检查版本
+ollama --version
+# 输出: ollama version is 0.30.7
+```
+
+不需要 API key。Ollama 完全在本地运行，不与外部服务器通信——处理私人数据或在意网络成本时这是优势。
+
+`urllib.request` 是 Python 标准库，无需额外安装。生产环境换成 `httpx` 或 `requests` 也一样工作。
 
 ## 参考资料
 

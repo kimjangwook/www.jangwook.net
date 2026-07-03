@@ -229,6 +229,40 @@ Dispatch: OK (type-safe)
 
 [OllamaをFastAPI本番環境で使う方法](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)で扱った通りOllamaをAPIサーバーとして配備した後にこのパターンを使う場合、スキーマ複雑度によってモデルをランタイムで切り替えることも検討できる。
 
+## ネストスキーマの実践例: 注意すべき点
+
+もう少し複雑な構造、例えば複数のフィールドを持つレポートオブジェクトを要求するときは、スキーマ設計に気を配る必要がある。実際にこういう構造がエージェントで使われる。
+
+```python
+from pydantic import BaseModel, Field
+from typing import List, Optional, Literal
+
+class ActionItem(BaseModel):
+    priority: Literal["high", "medium", "low"]
+    task: str
+    deadline_days: Optional[int] = None
+
+class MeetingNotes(BaseModel):
+    summary: str
+    key_decisions: List[str]
+    action_items: List[ActionItem]
+    sentiment: Literal["positive", "neutral", "negative"]
+
+# 使用
+schema = MeetingNotes.model_json_schema()
+notes = ollama_structured(
+    "Summarize: 'Team agreed on Q3 launch. John to finish API by Friday. Mary to review docs in 3 days.'",
+    MeetingNotes
+)
+print(f"Summary: {notes.summary}")
+for item in notes.action_items:
+    print(f"  [{item.priority.upper()}] {item.task} ({item.deadline_days}d)")
+```
+
+この程度の複雑さならGemma4:e4bでも問題なく動く。`Optional[int]`の`None`がたまに空文字列で返ることがあるので、`Field(default=None)`を明示するほうが安定する。
+
+<strong>ネストした配列内のオブジェクトはできるだけフラットに保つのがよい。</strong>`List[List[str]]`のような二重配列より`List[SomeModel]`の形のほうが、小型ローカルモデルでははるかに信頼性が高い。私のテストでも2段以上の配列ネストで空リストが返ることがあった。
+
 ## パターン整理: いつ何を使うか
 
 | 状況 | 推奨方法 | 理由 |
@@ -298,6 +332,75 @@ print(f"Key phrases: {result.key_phrases}")
 **モデル選択戦略。** シンプルな抽出は `gemma4:e4b`（速い）、複雑なネストスキーマは `gemma4:12b-it-qat`（正確）でランタイムに分岐するパターンがコスト品質のバランス上有利だ。[Pydantic AIでエージェント全体を構造化する方法](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を見ると、この判断をフレームワークレベルで抽象化する方法が確認できる。
 
 Gemma4ベースのエージェントを実行しているなら、今日すぐ `format` パラメーター一つ追加するだけでパース安定性が大きく変わる。特にエージェントのツール選択のように、間違ったレスポンスがすぐエラーにつながるパスでより顕著だ。
+
+## OpenAI互換APIでも同じように動く
+
+Ollamaは`/v1/chat/completions`エンドポイントも提供する。すでにOpenAI SDKを使っているなら、`base_url`を変えるだけで同じstructured outputパターンを適用できる。
+
+```python
+from openai import OpenAI
+from pydantic import BaseModel
+from typing import List
+
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"  # 値は任意の文字列でよい
+)
+
+class Recommendation(BaseModel):
+    item: str
+    reason: str
+    score: float
+
+class RecommendationList(BaseModel):
+    recommendations: List[Recommendation]
+    total_count: int
+
+# OpenAI SDKのresponse_formatにPydanticスキーマを渡す
+completion = client.beta.chat.completions.parse(
+    model="gemma4:e4b",
+    messages=[{"role": "user", "content": "Recommend 2 Python testing libraries"}],
+    response_format=RecommendationList
+)
+result = completion.choices[0].message.parsed
+print(f"Got {result.total_count} recommendations:")
+for rec in result.recommendations:
+    print(f"  {rec.item}: {rec.reason} (score: {rec.score})")
+```
+
+`client.beta.chat.completions.parse()`はOpenAI SDK 1.50+の機能で、Pydanticモデルを直接`response_format`に渡せる。内部的に`model_json_schema()`を呼び、応答を`model_validate()`でパースしてくれる。チームがすでにOpenAI SDKを使っているなら、Ollamaをローカルバックエンドに切り替えるときのコード変更が最小で済む。
+
+一つ違いがある。`api/generate`を直接呼ぶ方式が`chat/completions`より少し速い場合がある。システムプロンプト処理のオーバーヘッドなしに補完APIを直接呼ぶためだ。速度が重要なパイプラインなら`api/generate`直接呼び出しを選ぶのが正しい。
+
+## 環境設定とクイックスタート
+
+この記事の例を実際に動かすには次の環境が必要だ。
+
+```bash
+# 1. Ollamaのインストール (macOS)
+curl -fsSL https://ollama.com/install.sh | sh
+
+# 2. Gemma4モデルのダウンロード (4B - 約3GB)
+ollama pull gemma4:e4b
+
+# 3. Ollamaサーバーの起動（バックグラウンド）
+ollama serve &
+
+# 4. Pythonパッケージのインストール
+pip install pydantic>=2.0
+```
+
+`format`パラメーターが動くにはOllamaが0.3.0以上である必要がある。この記事はOllama 0.30.7でテストした。
+
+```bash
+# バージョン確認
+ollama --version
+# 出力: ollama version is 0.30.7
+```
+
+APIキーは不要だ。Ollamaはローカルだけで動き、外部サーバーと通信しない。個人データを扱う場合やネットワークコストが気になる状況で利点になる。
+
+`urllib.request`はPython標準ライブラリなので追加インストールはない。実プロダクションでは`httpx`や`requests`に替えても同じように動く。
 
 ## 参考資料
 

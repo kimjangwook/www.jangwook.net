@@ -224,6 +224,40 @@ Honestly, it doesn't work perfectly in every case. Testing with Gemma4:e4b (4-bi
 
 Once you've deployed Ollama as an API server (covered in the [Ollama FastAPI production guide](/en/blog/en/ollama-fastapi-production-deployment-guide-2026)), switching models at runtime based on schema complexity becomes a viable optimization.
 
+## Nested Schemas in Practice: What to Watch For
+
+When you request a more complex structure — say a report object with several fields — schema design starts to matter. This is exactly the kind of shape agents use.
+
+```python
+from pydantic import BaseModel, Field
+from typing import List, Optional, Literal
+
+class ActionItem(BaseModel):
+    priority: Literal["high", "medium", "low"]
+    task: str
+    deadline_days: Optional[int] = None
+
+class MeetingNotes(BaseModel):
+    summary: str
+    key_decisions: List[str]
+    action_items: List[ActionItem]
+    sentiment: Literal["positive", "neutral", "negative"]
+
+# Usage
+schema = MeetingNotes.model_json_schema()
+notes = ollama_structured(
+    "Summarize: 'Team agreed on Q3 launch. John to finish API by Friday. Mary to review docs in 3 days.'",
+    MeetingNotes
+)
+print(f"Summary: {notes.summary}")
+for item in notes.action_items:
+    print(f"  [{item.priority.upper()}] {item.task} ({item.deadline_days}d)")
+```
+
+This level of complexity works fine even on Gemma4:e4b. `Optional[int]`'s `None` occasionally comes back as an empty string, so declaring `Field(default=None)` explicitly is more stable.
+
+<strong>Keep objects inside nested arrays as flat as possible.</strong> A `List[SomeModel]` shape is far more reliable on small local models than a double array like `List[List[str]]`. In my own tests, arrays nested two or more levels deep sometimes came back as empty lists.
+
 ## Pattern Reference: When to Use What
 
 | Situation | Approach | Why |
@@ -293,6 +327,75 @@ This only covers the simplest cases. A real agent needs a bit more.
 **Model switching.** Route simple extractions to `gemma4:e4b` (fast) and complex nested schemas to `gemma4:12b-it-qat` (accurate) at runtime. [Structuring an entire agent with Pydantic AI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) shows how to abstract this decision to the framework level.
 
 If you're already running a Gemma4-based agent locally, adding the `format` parameter today is a one-line change with a measurable reliability improvement. Especially anywhere in the agent loop where an invalid response immediately causes a downstream error.
+
+## The Same Pattern Works via the OpenAI-Compatible API
+
+Ollama also serves a `/v1/chat/completions` endpoint. If you already use the OpenAI SDK, changing only `base_url` gives you the same structured-output pattern.
+
+```python
+from openai import OpenAI
+from pydantic import BaseModel
+from typing import List
+
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"  # any string works
+)
+
+class Recommendation(BaseModel):
+    item: str
+    reason: str
+    score: float
+
+class RecommendationList(BaseModel):
+    recommendations: List[Recommendation]
+    total_count: int
+
+# pass the Pydantic schema through the OpenAI SDK's response_format
+completion = client.beta.chat.completions.parse(
+    model="gemma4:e4b",
+    messages=[{"role": "user", "content": "Recommend 2 Python testing libraries"}],
+    response_format=RecommendationList
+)
+result = completion.choices[0].message.parsed
+print(f"Got {result.total_count} recommendations:")
+for rec in result.recommendations:
+    print(f"  {rec.item}: {rec.reason} (score: {rec.score})")
+```
+
+`client.beta.chat.completions.parse()` is an OpenAI SDK 1.50+ feature that accepts a Pydantic model directly as `response_format`. Internally it calls `model_json_schema()` and parses the response with `model_validate()`. If your team is already on the OpenAI SDK, switching to Ollama as a local backend needs minimal code changes.
+
+One difference: calling `api/generate` directly is sometimes slightly faster than `chat/completions`, because it hits the completion API without system-prompt handling overhead. For speed-sensitive pipelines, direct `api/generate` calls are the right choice.
+
+## Environment Setup and Quick Start
+
+To run this post's examples yourself, you need the following.
+
+```bash
+# 1. Install Ollama (macOS)
+curl -fsSL https://ollama.com/install.sh | sh
+
+# 2. Download the Gemma4 model (4B — about 3GB)
+ollama pull gemma4:e4b
+
+# 3. Run the Ollama server (background)
+ollama serve &
+
+# 4. Install Python packages
+pip install pydantic>=2.0
+```
+
+Ollama must be 0.3.0 or later for the `format` parameter to work. This post was tested on Ollama 0.30.7.
+
+```bash
+# Check the version
+ollama --version
+# Output: ollama version is 0.30.7
+```
+
+No API key needed. Ollama runs entirely locally and talks to no external server — an advantage when handling private data or worrying about network costs.
+
+`urllib.request` is in the Python standard library, so there is nothing extra to install. In production, swapping in `httpx` or `requests` works the same.
 
 ## References
 
