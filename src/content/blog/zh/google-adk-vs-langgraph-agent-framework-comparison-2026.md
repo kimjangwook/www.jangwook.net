@@ -262,6 +262,131 @@ ADK在MCP工具服务器集成方面胜过LangGraph。`MCPToolset`开箱即用�
 
 话说回来，对于已经在GCP上的团队，ADK工具链是真的好用。`adk deploy`到Cloud Run加上`adk eval`回归测试，在LangGraph生态里复现这套体验要花不少力气。
 
+## 用两个框架各跑一个最小智能体
+
+只做对比意义不大，这里简单交代一下实际怎么上手。
+
+<strong>用 ADK 起步</strong>：
+
+`adk create` 命令以交互方式选择模型，不适合脚本自动化。不如自己建目录结构。
+
+```bash
+mkdir my_agent_project
+cd my_agent_project
+touch __init__.py
+touch agent.py
+```
+
+`agent.py` 最小示例：
+
+```python
+from google.adk.agents import Agent
+
+def simple_tool(text: str) -> dict:
+    """处理文本的简单工具"""
+    return {"result": f"Processed: {text}", "length": len(text)}
+
+root_agent = Agent(
+    name="my_agent",
+    model="gemini-2.5-flash",
+    description="简单的文本处理智能体",
+    instruction="You are a helpful assistant. Use simple_tool to process text.",
+    tools=[simple_tool],
+)
+```
+
+之后运行 `adk web .` 会弹出本地 Web UI，也可以用 `adk run .` 在终端里直接测试。结构简单，新加入团队的人马上就能读懂代码。
+
+<strong>用 LangGraph 起步</strong>：
+
+LangGraph 从一张空图出发。
+
+```python
+from typing import TypedDict, Annotated
+from langgraph.graph import StateGraph, END
+from langgraph.graph.message import add_messages
+from langchain_core.messages import HumanMessage, AIMessage
+from langchain_openai import ChatOpenAI  # 或 ChatAnthropic
+
+class AgentState(TypedDict):
+    messages: Annotated[list, add_messages]
+
+llm = ChatOpenAI(model="gpt-4o")  # 可以换成任意 LLM
+
+def agent_node(state: AgentState):
+    response = llm.invoke(state["messages"])
+    return {"messages": [response]}
+
+builder = StateGraph(AgentState)
+builder.add_node("agent", agent_node)
+builder.set_entry_point("agent")
+builder.add_edge("agent", END)
+
+graph = builder.compile()
+
+# 运行
+result = graph.invoke({
+    "messages": [HumanMessage(content="你好！")]
+})
+print(result["messages"][-1].content)
+```
+
+LangGraph 可以用单独的 `langgraph-cli` 包启动本地开发服务器，但它不在主包里。Web UI 也要用 LangGraph Studio，需要另外安装。
+
+简单的聊天机器人两边都能在 10 分钟内跑起来。但智能体越复杂，LangGraph 的显式图越容易推理和调试。ADK 的代码声明方式起初直观，但嵌套的智能体越深，就越难在脑子里追踪执行流。
+
+## 用代码看 ADK 的 MCP 集成，以及生态差异
+
+前面提到的 MCP 优势值得具体看一眼——内置的 `MCPToolset` 实际写起来是这样。
+
+```python
+from google.adk.tools.mcp_tool import MCPToolset, StdioServerParameters
+
+mcp_tools = MCPToolset(
+    connection_params=StdioServerParameters(
+        command="python",
+        args=["-m", "my_mcp_server"],
+    )
+)
+
+agent = Agent(
+    name="mcp_agent",
+    model="gemini-2.5-flash",
+    toolsets=[mcp_tools],
+    instruction="Use MCP tools to complete tasks."
+)
+```
+
+只需指定服务器启动参数，MCP 工具就能直接挂到智能体上；LangGraph 要达到同样效果需要 `langchain-mcp-adapters` 加适配代码。
+
+另一方面，LangGraph 的生态更丰富：`langchain-anthropic`、`langchain-openai`、`langchain-google-genai` 等 LLM 适配器齐全，社区工具集成也多。ADK 为 Gemini 生态做了优化，用其他 LLM 需要额外配置。
+
+从上下文工程的角度看，ADK 默认按会话注入状态，LangGraph 则在图层面用 TypedDict 显式声明全部上下文。如果生产系统需要追踪智能体之间流动的数据，LangGraph 的显式 State 定义对调试有利得多。
+
+## 如果已经有 LangChain 代码库
+
+已有 LangChain 代码的团队，选 LangGraph 自然得多。LangGraph 就是设计在 LangChain 之上运行的，现有的 `ChatOpenAI`、`ChatAnthropic`、`ChatGoogleGenerativeAI` 等 LLM 包装器可以原样复用。提示词模板、记忆类、输出解析器也都兼容。
+
+ADK 则独立于 LangChain 生态运作。把现有 LangChain 代码迁到 ADK 几乎等于重写——ADK 的 `Agent` 类与 LangChain 的链、智能体抽象概念不同，移植并不容易。
+
+选 ADK 的话，现实的做法是当作新项目开始。从一开始就以 Gemini API 和 Google Cloud 服务为中心来设计，才能发挥它的价值。
+
+## 可观测性与调试体验对比
+
+生产环境中智能体行为异常时，定位原因的难易程度在实务中非常重要。
+
+<strong>ADK 的可观测性</strong>：
+ADK 内置 OpenTelemetry，支持自动导出到 GCP 的 Cloud Trace、Cloud Monitoring。无需额外代码，智能体执行时间线就出现在 GCP 控制台。已经在用 Google Cloud 的话，零配置即可使用。
+
+`adk web` 启动的本地 UI 也能查看执行历史和事件流。开发阶段能边看智能体流程边调试，是 ADK 的实用优势。
+
+<strong>LangGraph 的可观测性</strong>：
+LangGraph 提供自家 UI——LangGraph Studio。按节点可视化图的执行流，尤其有用的是时间旅行功能：回退到某个检查点重新执行。追查"为什么在这个节点分支到了这边"时非常强大。
+
+集成 LangSmith（LangChain 的付费服务）可以获得更详细的追踪，但需要付费方案。想免费用就得自己配置 OpenTelemetry。
+
+两个工具都没有完全内置全栈可观测性。已经在 GCP 技术栈上的话 ADK 占优；供应商中立的环境下，LangGraph 加独立可观测性工具的组合更好。
+
 ## 我的结论：设计哲学决定选择
 
 2026年，两个框架都达到了生产可用的水平。区别在于各自优化的方向不同。

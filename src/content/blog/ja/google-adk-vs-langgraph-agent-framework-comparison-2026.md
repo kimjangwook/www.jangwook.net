@@ -262,6 +262,131 @@ LangGraphのチェックポイントシステムはより柔軟だ。`MemorySave
 
 ただ、GCPをすでに使っているチームにとってADKのツールチェーンは本当に魅力的だ。`adk deploy`でCloud Runに上げて`adk eval`で回帰テストまで回せるのは、LangGraphエコシステムで同じことをしようとするとかなりの手間がかかる。
 
+## 各フレームワークで最初のエージェントを作る方法
+
+比較だけでは意味が薄いので、実際にどう始めるかを簡単に押さえておく。
+
+<strong>ADKで始める方法</strong>：
+
+`adk create`コマンドは対話式でモデルを選ばせる仕組みで、スクリプト自動化には向かない。代わりに自分でディレクトリ構造を作るほうがよい。
+
+```bash
+mkdir my_agent_project
+cd my_agent_project
+touch __init__.py
+touch agent.py
+```
+
+`agent.py`の最小例：
+
+```python
+from google.adk.agents import Agent
+
+def simple_tool(text: str) -> dict:
+    """テキストを処理するシンプルなツール"""
+    return {"result": f"Processed: {text}", "length": len(text)}
+
+root_agent = Agent(
+    name="my_agent",
+    model="gemini-2.5-flash",
+    description="シンプルなテキスト処理エージェント",
+    instruction="You are a helpful assistant. Use simple_tool to process text.",
+    tools=[simple_tool],
+)
+```
+
+その後`adk web .`を実行するとローカルWeb UIが立ち上がる。`adk run .`でターミナルから直接テストもできる。構造が単純なので、チームに加わった人がコードをすぐ読んで理解しやすい。
+
+<strong>LangGraphで始める方法</strong>：
+
+LangGraphは空のグラフから出発する。
+
+```python
+from typing import TypedDict, Annotated
+from langgraph.graph import StateGraph, END
+from langgraph.graph.message import add_messages
+from langchain_core.messages import HumanMessage, AIMessage
+from langchain_openai import ChatOpenAI  # または ChatAnthropic
+
+class AgentState(TypedDict):
+    messages: Annotated[list, add_messages]
+
+llm = ChatOpenAI(model="gpt-4o")  # 好きなLLMに差し替え可能
+
+def agent_node(state: AgentState):
+    response = llm.invoke(state["messages"])
+    return {"messages": [response]}
+
+builder = StateGraph(AgentState)
+builder.add_node("agent", agent_node)
+builder.set_entry_point("agent")
+builder.add_edge("agent", END)
+
+graph = builder.compile()
+
+# 実行
+result = graph.invoke({
+    "messages": [HumanMessage(content="こんにちは！")]
+})
+print(result["messages"][-1].content)
+```
+
+LangGraphは`langgraph-cli`という別パッケージでローカル開発サーバーを立てられるが、メインパッケージには含まれていない。Web UIもLangGraph Studioが必要で、別途インストールになる。
+
+シンプルなチャットボットならどちらも10分以内に動く。しかしエージェントが複雑になるほど、LangGraphの明示的なグラフのほうが推論もデバッグもしやすい。ADKのコード宣言方式は最初は直感的だが、ネストしたエージェントが深くなるほど実行フローを頭の中で追いにくくなる。
+
+## ADKのMCP統合をコードで見る、そしてエコシステムの差
+
+先に触れたMCPの優位性を具体的に見ておこう。組み込みの`MCPToolset`は実際こう書く。
+
+```python
+from google.adk.tools.mcp_tool import MCPToolset, StdioServerParameters
+
+mcp_tools = MCPToolset(
+    connection_params=StdioServerParameters(
+        command="python",
+        args=["-m", "my_mcp_server"],
+    )
+)
+
+agent = Agent(
+    name="mcp_agent",
+    model="gemini-2.5-flash",
+    toolsets=[mcp_tools],
+    instruction="Use MCP tools to complete tasks."
+)
+```
+
+サーバー起動パラメータを指定するだけでMCPツールをエージェントに直接つなげられる。LangGraphで同じ結果を得るには`langchain-mcp-adapters`とアダプターコードが要る。
+
+一方、LangGraphのエコシステムは幅広い。`langchain-anthropic`・`langchain-openai`・`langchain-google-genai`などLLMアダプターが豊富で、コミュニティのツール統合も多い。ADKはGeminiエコシステムに最適化されており、他のLLMを使うには追加設定が要る。
+
+コンテキストエンジニアリングの観点では、ADKはセッション単位の状態注入が基本で、LangGraphはグラフレベルで全コンテキストをTypedDictで明示する。どのデータがエージェント間を流れるか追跡すべきプロダクションシステムなら、LangGraphの明示的なState定義がデバッグにずっと有利だ。
+
+## 既存のLangChainコードベースがあるなら
+
+すでにLangChainベースのコードを持つチームには、LangGraphの選択がはるかに自然だ。LangGraphはLangChainの上で動くよう設計されているため、既存の`ChatOpenAI`・`ChatAnthropic`・`ChatGoogleGenerativeAI`のようなLLMラッパーがそのまま再利用できる。プロンプトテンプレート、メモリクラス、出力パーサーも互換だ。
+
+一方ADKはLangChainエコシステムとは別個に動く。既存のLangChainコードをADKへ移行するにはほぼ書き直しレベルの変換が必要だ。ADKの`Agent`クラスはLangChainのチェーンやエージェント抽象と概念が異なり、移植は容易ではない。
+
+ADKを選ぶなら、実質的に新規プロジェクトとして始めるのが現実的だ。Gemini APIとGoogle Cloudサービスを最初から中心に据えて設計してこそ真価を発揮する。
+
+## 可観測性とデバッグ体験の比較
+
+プロダクションでエージェントが異常動作したとき、原因究明がどれだけ容易かが実務では重要だ。
+
+<strong>ADKのオブザーバビリティ</strong>：
+ADKはOpenTelemetryを内蔵し、GCPのCloud Trace・Cloud Monitoringへの自動エクスポートをサポートする。追加コードなしでエージェント実行のタイムラインがGCPコンソールに表示される。Google Cloudを使っているなら設定なしですぐ使える点で便利だ。
+
+`adk web`で立ち上げたローカルUIでも実行履歴とイベントストリームを確認できる。開発段階でエージェントのフローを目で見ながらデバッグできるのはADKの実用的な利点だ。
+
+<strong>LangGraphのオブザーバビリティ</strong>：
+LangGraphは独自UIのLangGraph Studioを提供する。グラフ実行フローをノード単位で可視化し、特定のチェックポイントへ巻き戻して再実行するタイムトラベル機能が特に有用だ。「なぜこのノードでこちらに分岐した？」を追うときに強力である。
+
+LangSmith（LangChainの有料サービス）と統合すればより詳細なトレーシングが可能だが、有料プランが要る。無料で使うならOpenTelemetryの設定を自分でやることになる。
+
+どちらもフルスタックの可観測性を完全には内蔵していない。GCPスタックをすでに使っているならADKが有利で、ベンダー中立の環境ならLangGraph + 別途オブザーバビリティツールの組み合わせがよい。
+
 ## 結局、設計思想の違いが選択を決める
 
 2026年の時点で両フレームワークともプロダクション利用に耐えうるレベルだ。違いは何を最適化しているかだ。

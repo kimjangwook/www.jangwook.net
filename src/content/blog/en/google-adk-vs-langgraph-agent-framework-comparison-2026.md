@@ -283,6 +283,131 @@ If I were starting a new project today, I'd reach for LangGraph. The reason is p
 
 That said, for teams already on GCP, the ADK toolchain is genuinely compelling. `adk deploy` to Cloud Run plus `adk eval` for regression testing would take real work to replicate in the LangGraph ecosystem.
 
+## Getting a First Agent Running in Each Framework
+
+Comparison alone isn't worth much, so here's a quick note on how you actually start.
+
+<strong>Starting with ADK</strong>:
+
+The `adk create` command selects a model interactively, which makes it a poor fit for scripted automation. Creating the directory structure yourself is better.
+
+```bash
+mkdir my_agent_project
+cd my_agent_project
+touch __init__.py
+touch agent.py
+```
+
+Minimal `agent.py`:
+
+```python
+from google.adk.agents import Agent
+
+def simple_tool(text: str) -> dict:
+    """A simple tool that processes text"""
+    return {"result": f"Processed: {text}", "length": len(text)}
+
+root_agent = Agent(
+    name="my_agent",
+    model="gemini-2.5-flash",
+    description="A simple text-processing agent",
+    instruction="You are a helpful assistant. Use simple_tool to process text.",
+    tools=[simple_tool],
+)
+```
+
+Run `adk web .` and a local web UI comes up; `adk run .` tests it straight from the terminal. The structure is simple enough that someone joining the team can read and understand the code immediately.
+
+<strong>Starting with LangGraph</strong>:
+
+LangGraph starts from an empty graph.
+
+```python
+from typing import TypedDict, Annotated
+from langgraph.graph import StateGraph, END
+from langgraph.graph.message import add_messages
+from langchain_core.messages import HumanMessage, AIMessage
+from langchain_openai import ChatOpenAI  # or ChatAnthropic
+
+class AgentState(TypedDict):
+    messages: Annotated[list, add_messages]
+
+llm = ChatOpenAI(model="gpt-4o")  # swap in any LLM you like
+
+def agent_node(state: AgentState):
+    response = llm.invoke(state["messages"])
+    return {"messages": [response]}
+
+builder = StateGraph(AgentState)
+builder.add_node("agent", agent_node)
+builder.set_entry_point("agent")
+builder.add_edge("agent", END)
+
+graph = builder.compile()
+
+# Run
+result = graph.invoke({
+    "messages": [HumanMessage(content="Hello!")]
+})
+print(result["messages"][-1].content)
+```
+
+LangGraph can serve a local dev server via the separate `langgraph-cli` package, but it's not in the main package. The web UI requires LangGraph Studio, installed separately.
+
+For a simple chatbot, both run within 10 minutes. But as agents grow complex, LangGraph's explicit graph is easier to reason about and debug. ADK's code-declaration style feels intuitive at first, yet the deeper the nested agents, the harder it becomes to trace execution flow in your head.
+
+## ADK's MCP Integration in Code, and the Ecosystem Gap
+
+The MCP advantage mentioned above deserves a concrete look — here is what the built-in `MCPToolset` actually looks like.
+
+```python
+from google.adk.tools.mcp_tool import MCPToolset, StdioServerParameters
+
+mcp_tools = MCPToolset(
+    connection_params=StdioServerParameters(
+        command="python",
+        args=["-m", "my_mcp_server"],
+    )
+)
+
+agent = Agent(
+    name="mcp_agent",
+    model="gemini-2.5-flash",
+    toolsets=[mcp_tools],
+    instruction="Use MCP tools to complete tasks."
+)
+```
+
+Specify the server launch parameters and the MCP tools attach straight to the agent, while LangGraph needs `langchain-mcp-adapters` plus adapter code for the same result.
+
+LangGraph's ecosystem, on the other hand, is broad: rich LLM adapters (`langchain-anthropic`, `langchain-openai`, `langchain-google-genai`) and plenty of community tool integrations. ADK is optimized for the Gemini ecosystem, so other LLMs need extra configuration.
+
+From a context-engineering angle, ADK defaults to session-scoped state injection, while LangGraph declares the whole context as a TypedDict at graph level. For production systems where you must trace what data flows between agents, LangGraph's explicit State definition is far better for debugging.
+
+## If You Already Have a LangChain Codebase
+
+Teams with existing LangChain code will find LangGraph the far more natural choice. LangGraph is designed to run on top of LangChain, so existing LLM wrappers like `ChatOpenAI`, `ChatAnthropic`, and `ChatGoogleGenerativeAI` are reused as is. Prompt templates, memory classes, and output parsers stay compatible.
+
+ADK operates independently of the LangChain ecosystem. Migrating existing LangChain code to ADK is close to a rewrite — ADK's `Agent` class differs conceptually from LangChain's chain and agent abstractions, so porting isn't easy.
+
+If you pick ADK, realistically treat it as a new project. It shines when you design around the Gemini API and Google Cloud services from the start.
+
+## Observability and Debugging Experience
+
+How easily you can diagnose a misbehaving agent in production matters a lot in practice.
+
+<strong>ADK's observability</strong>:
+ADK embeds OpenTelemetry and supports automatic export to GCP's Cloud Trace and Cloud Monitoring. Agent execution timelines appear in the GCP console with no extra code. If you're on Google Cloud, it works out of the box.
+
+The local UI from `adk web` also shows execution history and the event stream. Being able to watch the agent flow while developing is one of ADK's practical advantages.
+
+<strong>LangGraph's observability</strong>:
+LangGraph offers its own UI, LangGraph Studio. It visualizes graph execution node by node, and the time-travel feature — rewinding to a checkpoint and re-running — is especially useful for tracing "why did it branch this way at this node?".
+
+Integrating LangSmith (LangChain's paid service) enables more detailed tracing, but it needs a paid plan. For free usage you configure OpenTelemetry yourself.
+
+Neither tool fully embeds full-stack observability. If you already run on the GCP stack, ADK wins; in a vendor-neutral environment, LangGraph plus a separate observability tool is the better combination.
+
 ## My Take: Design Philosophy Decides the Choice
 
 Both frameworks are production-ready in 2026. The difference is what they optimize for.
