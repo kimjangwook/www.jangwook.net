@@ -362,6 +362,97 @@ if final_message.stop_reason == "tool_use":
 
 Vercel AI SDK方式を参考にすると、フロントエンド統合でこの部分がどのように抽象化されるか比較できる。
 
+## プロダクションパターン: GitHubイシュー監視エージェント
+
+全体の流れを一つにまとめた実用的な例だ。GitHubのイシューを取得して要約するシンプルなエージェントである:
+
+```python
+import anthropic
+import json
+from typing import Any
+
+client = anthropic.Anthropic()  # ANTHROPIC_API_KEY 環境変数を使用
+
+tools = [
+    {
+        "name": "list_github_issues",
+        "description": "GitHubリポジトリのイシュー一覧を取得します。",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "repo": {"type": "string", "description": "owner/repo 形式"},
+                "state": {"type": "string", "enum": ["open", "closed", "all"]},
+                "limit": {"type": "integer", "description": "最大イシュー数（デフォルト: 10）"}
+            },
+            "required": ["repo"]
+        }
+    },
+    {
+        "name": "get_issue_detail",
+        "description": "特定のGitHubイシューの詳細を取得します。",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "repo": {"type": "string", "description": "owner/repo 形式"},
+                "issue_number": {"type": "integer", "description": "イシュー番号"}
+            },
+            "required": ["repo", "issue_number"]
+        }
+    }
+]
+
+def process_tool_call(tool_name: str, tool_input: dict[str, Any]) -> str:
+    """実際の実装ではGitHub APIを呼び出せばよい"""
+    if tool_name == "list_github_issues":
+        # 実際は: requests.get(f"https://api.github.com/repos/{repo}/issues", ...)
+        return json.dumps([
+            {"number": 42, "title": "TypeError in data processor", "state": "open"},
+            {"number": 41, "title": "Add streaming support", "state": "open"},
+        ])
+    elif tool_name == "get_issue_detail":
+        return json.dumps({
+            "number": tool_input["issue_number"],
+            "body": "エラー再現方法: 空のリストを入力すると発生。スタックトレース添付。",
+            "comments": 3
+        })
+    return "Unknown tool"
+
+def run_issue_agent(query: str) -> str:
+    messages = [{"role": "user", "content": query}]
+    
+    for _ in range(10):  # 最大10回ループ
+        response = client.messages.create(
+            model="claude-opus-4-7",
+            max_tokens=4096,
+            tools=tools,
+            messages=messages,
+        )
+        
+        if response.stop_reason == "end_turn":
+            return next(
+                (block.text for block in response.content if hasattr(block, "text")),
+                "応答なし"
+            )
+        
+        if response.stop_reason == "tool_use":
+            messages.append({"role": "assistant", "content": response.content})
+            tool_results = []
+            for block in response.content:
+                if block.type == "tool_use":
+                    result = process_tool_call(block.name, block.input)
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": result,
+                    })
+            messages.append({"role": "user", "content": tool_results})
+    
+    return "ループ上限超過"
+
+# 使用例
+# result = run_issue_agent("anthropic/anthropic-sdk-python リポジトリのオープンイシューからバグ関連を要約して")
+```
+
 ## まだ解決されていないこと: 率直な限界
 
 Tool Useを実際に使ってみて感じた限界をまとめる。

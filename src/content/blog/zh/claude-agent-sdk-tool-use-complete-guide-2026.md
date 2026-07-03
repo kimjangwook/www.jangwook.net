@@ -383,6 +383,97 @@ if final_message.stop_reason == "tool_use":
 
 参考Vercel AI SDK方式，可以了解这部分在前端集成中是如何被抽象化的。
 
+## 生产模式：GitHub issue 监控智能体
+
+这是把完整流程串成一体的实用示例。一个获取并总结 GitHub issue 的简单智能体：
+
+```python
+import anthropic
+import json
+from typing import Any
+
+client = anthropic.Anthropic()  # 使用 ANTHROPIC_API_KEY 环境变量
+
+tools = [
+    {
+        "name": "list_github_issues",
+        "description": "获取 GitHub 仓库的 issue 列表。",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "repo": {"type": "string", "description": "owner/repo 格式"},
+                "state": {"type": "string", "enum": ["open", "closed", "all"]},
+                "limit": {"type": "integer", "description": "最大 issue 数（默认: 10）"}
+            },
+            "required": ["repo"]
+        }
+    },
+    {
+        "name": "get_issue_detail",
+        "description": "获取特定 GitHub issue 的详细内容。",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "repo": {"type": "string", "description": "owner/repo 格式"},
+                "issue_number": {"type": "integer", "description": "issue 编号"}
+            },
+            "required": ["repo", "issue_number"]
+        }
+    }
+]
+
+def process_tool_call(tool_name: str, tool_input: dict[str, Any]) -> str:
+    """实际实现中调用 GitHub API 即可"""
+    if tool_name == "list_github_issues":
+        # 实际: requests.get(f"https://api.github.com/repos/{repo}/issues", ...)
+        return json.dumps([
+            {"number": 42, "title": "TypeError in data processor", "state": "open"},
+            {"number": 41, "title": "Add streaming support", "state": "open"},
+        ])
+    elif tool_name == "get_issue_detail":
+        return json.dumps({
+            "number": tool_input["issue_number"],
+            "body": "错误重现方法：输入空列表时发生。附堆栈跟踪。",
+            "comments": 3
+        })
+    return "Unknown tool"
+
+def run_issue_agent(query: str) -> str:
+    messages = [{"role": "user", "content": query}]
+    
+    for _ in range(10):  # 最多循环10次
+        response = client.messages.create(
+            model="claude-opus-4-7",
+            max_tokens=4096,
+            tools=tools,
+            messages=messages,
+        )
+        
+        if response.stop_reason == "end_turn":
+            return next(
+                (block.text for block in response.content if hasattr(block, "text")),
+                "无响应"
+            )
+        
+        if response.stop_reason == "tool_use":
+            messages.append({"role": "assistant", "content": response.content})
+            tool_results = []
+            for block in response.content:
+                if block.type == "tool_use":
+                    result = process_tool_call(block.name, block.input)
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": result,
+                    })
+            messages.append({"role": "user", "content": tool_results})
+    
+    return "超出循环上限"
+
+# 使用示例
+# result = run_issue_agent("总结 anthropic/anthropic-sdk-python 仓库开放 issue 中与 bug 相关的内容")
+```
+
 ## 仍未解决的问题：诚实的局限性
 
 以下是我在实际使用Tool Use过程中感受到的真实限制。
