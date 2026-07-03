@@ -87,8 +87,9 @@ graph TD
     A["Step 1-2: インストールとvitest.config.ts"] --> B["Step 3: コード変換<br/>jest.fn → vi.fn など"]
     B --> C["Step 4-5: 新マッチャー・行番号フィルター"]
     C --> D["Step 6: Inline Workspace"]
-    D --> E["Step 7: CI設定"]
-    E --> F["サンドボックス全体実行で検証"]
+    D --> E["Step 7: Browser Mode"]
+    E --> F["Step 8: CI設定"]
+    F --> G["サンドボックス全体実行で検証"]
 ```
 
 ## 前提条件
@@ -313,7 +314,38 @@ export default defineConfig({
 })
 ```
 
-## Step 7: CI設定 (GitHub Actions)
+## Step 7: Browser Mode (Vitest 4 stable)
+
+Vitest 4の最大の変化は、Browser Modeがexperimentalからstableに昇格したことだ。コンポーネントテストをJSDOMのシミュレーションなしで、実際のChromiumで実行できる。
+
+インストール：
+
+```bash
+npm install --save-dev @vitest/browser-playwright playwright
+```
+
+設定：
+
+```ts
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  test: {
+    browser: {
+      enabled: true,
+      provider: 'playwright',
+      instances: [
+        { browser: 'chromium' },
+        { browser: 'firefox' },  // マルチブラウザ設定も可能
+      ],
+    },
+  },
+})
+```
+
+私は今回の記事の範囲ではBrowser Modeを直接実験していない — ブラウザ環境のテストは別途CIセットアップが必要で、単純なNode.jsの移行よりはるかに大きい作業だ。ただ安定化したことで、Playwrightベースの E2E テストをVitestへ統合する試みに意味が出てきたのは確かだ。
+
+## Step 8: CI設定 (GitHub Actions)
 
 ```yaml
 name: Test
@@ -367,6 +399,60 @@ export default defineConfig({
   test: { globals: true },
 })
 ```
+
+## TypeScriptグローバル型の設定
+
+`globals: true`を有効にするとランタイムでは`describe`や`expect`などがグローバルに注入されるが、TypeScriptが型を知らない場合がある。`tsconfig.json`に次を追加する。
+
+```json
+{
+  "compilerOptions": {
+    "types": ["vitest/globals"]
+  }
+}
+```
+
+これで`describe`・`it`・`expect`・`vi`をimportなしで型安全に使える。`@types/jest`を消してこれに置き換えればよい。
+
+## カバレッジ設定
+
+VitestはV8ベースのカバレッジを標準サポートする。JestはデフォルトでIstanbul（babelベース）を使うが、V8はNode.jsランタイム内蔵の機能を活用するためbabel transformなしで動く。
+
+```bash
+# カバレッジパッケージのインストール
+npm install --save-dev @vitest/coverage-v8
+
+# 実行
+npm run test:coverage
+```
+
+`vitest.config.ts`にしきい値を設定：
+
+```ts
+coverage: {
+  provider: 'v8',
+  thresholds: {
+    lines: 80,
+    functions: 80,
+    branches: 70,
+    statements: 80,
+  },
+  reporter: ['text', 'json', 'html'],
+}
+```
+
+`html`レポーターを使うと`coverage/index.html`にビジュアルレポートが生成される。ブラウザで開けばどの行がカバーされていないか一目で分かる。
+
+## UIモード（開発中のテストフィードバック）
+
+`vitest --ui`を実行すると、ブラウザでテストを管理できるダッシュボードが開く。`@vitest/ui`パッケージのインストールが必要だ。
+
+```bash
+npx vitest --ui
+# http://localhost:51204/__vitest__/ で開く
+```
+
+テストツリー、実行時間、エラースタックトレースが可視化される。長いテストスイートで特定のファイルだけ集中的に回すときに便利だ。個人的には`--ui`よりCLI + Claude Codeを活用した並列テスト自動化を好むが、協業環境ではUIのほうが直感的な場合がある。
 
 ## サンドボックス検証結果
 

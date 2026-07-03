@@ -395,6 +395,60 @@ export default defineConfig({
 
 遗留的 jest 配置文件可能引发冲突。
 
+## TypeScript 全局类型配置
+
+开启 `globals: true` 后，运行时 `describe`、`expect` 等会被全局注入，但 TypeScript 可能不认识这些类型。在 `tsconfig.json` 里加上：
+
+```json
+{
+  "compilerOptions": {
+    "types": ["vitest/globals"]
+  }
+}
+```
+
+这样 `describe`、`it`、`expect`、`vi` 不用 import 也能类型安全地使用。删掉 `@types/jest` 换成它即可。
+
+## 覆盖率配置
+
+Vitest 默认支持基于 V8 的覆盖率。Jest 默认用 Istanbul（基于 babel），而 V8 利用 Node.js 运行时内置能力，不需要 babel transform 也能工作。
+
+```bash
+# 安装覆盖率包
+npm install --save-dev @vitest/coverage-v8
+
+# 运行
+npm run test:coverage
+```
+
+在 `vitest.config.ts` 里设置阈值：
+
+```ts
+coverage: {
+  provider: 'v8',
+  thresholds: {
+    lines: 80,
+    functions: 80,
+    branches: 70,
+    statements: 80,
+  },
+  reporter: ['text', 'json', 'html'],
+}
+```
+
+用 `html` 报告器会在 `coverage/index.html` 生成可视化报告。浏览器打开就能直接看到哪些行没被覆盖。
+
+## UI 模式（开发中的测试反馈）
+
+运行 `vitest --ui` 会在浏览器里打开一个管理测试的仪表盘。需要安装 `@vitest/ui` 包。
+
+```bash
+npx vitest --ui
+# 在 http://localhost:51204/__vitest__/ 打开
+```
+
+测试树、执行时间、错误堆栈都可视化了。在长测试套件里只专注跑某些文件时很有用。我个人更偏好 CLI 加 Claude Code 的并行测试自动化，但协作环境下 UI 往往更直观。
+
 ## 沙箱完整运行结果
 
 ```

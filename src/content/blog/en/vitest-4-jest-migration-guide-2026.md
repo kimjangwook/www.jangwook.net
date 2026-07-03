@@ -436,6 +436,60 @@ export default defineConfig({
 
 Leaving it around can cause conflicts. Once you're fully migrated, remove it.
 
+## TypeScript Global Types
+
+With `globals: true`, `describe` and `expect` are injected globally at runtime, but TypeScript may not know their types. Add this to `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "types": ["vitest/globals"]
+  }
+}
+```
+
+Now `describe`, `it`, `expect`, and `vi` are type-safe without imports. Delete `@types/jest` and replace it with this.
+
+## Coverage Configuration
+
+Vitest supports V8-based coverage out of the box. Jest defaults to Istanbul (babel-based); V8 leans on the Node.js runtime's built-in capability and works without a babel transform.
+
+```bash
+# Install the coverage package
+npm install --save-dev @vitest/coverage-v8
+
+# Run
+npm run test:coverage
+```
+
+Thresholds in `vitest.config.ts`:
+
+```ts
+coverage: {
+  provider: 'v8',
+  thresholds: {
+    lines: 80,
+    functions: 80,
+    branches: 70,
+    statements: 80,
+  },
+  reporter: ['text', 'json', 'html'],
+}
+```
+
+With the `html` reporter, a visual report lands in `coverage/index.html` — open it in a browser and uncovered lines are immediately visible.
+
+## UI Mode (Test Feedback While Developing)
+
+Run `vitest --ui` and a dashboard for managing tests opens in the browser. The `@vitest/ui` package must be installed.
+
+```bash
+npx vitest --ui
+# opens at http://localhost:51204/__vitest__/
+```
+
+It visualizes the test tree, run times, and error stack traces. Useful for focusing on specific files in a long suite. Personally I prefer CLI plus Claude Code for parallel test automation over `--ui`, but in collaborative settings the UI can be the more intuitive choice.
+
 ## Full Sandbox Run Results
 
 ```
