@@ -228,6 +228,38 @@ find . -name "*.py" -exec sed -i \
   's/from langfuse.decorators import observe, langfuse_context/from langfuse import observe, get_client/g' {} +
 ```
 
+## LangChain・OpenAI SDK統合
+
+v4 SDKはLangChainとOpenAI SDKの統合も維持している。
+
+```python
+# LangChain統合
+from langfuse.langchain import CallbackHandler
+
+handler = CallbackHandler()
+chain = your_langchain_chain
+
+result = chain.invoke(
+    {"query": "質問"},
+    config={"callbacks": [handler]}
+)
+```
+
+```python
+# OpenAI SDKのラッピング
+from langfuse.openai import openai
+
+# 既存のopenaiクライアントをそのまま差し替え
+client = openai.OpenAI()
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "こんにちは"}]
+)
+# トレースが自動的にLangfuseへ送信される
+```
+
+この統合方式は実際に便利だ。コード構造を変えずimportを一行変えるだけで、すべてのLLM呼び出しが自動でトレーシングされる。
+
 ## プロンプトバージョニングとデータセット
 
 Langfuseが単純なトレーシングツールを超える点が2つある。プロンプトバージョニングとデータセットベースの評価だ。
@@ -247,6 +279,24 @@ compiled = prompt.compile(
 プロンプトをこのように管理すると「バージョン2のプロンプトを使った日になぜ応答品質が下がったのか」という質問にすぐ答えられる。
 
 [FastMCPでMCPサーバーを直接構築した経験](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)があれば、そのサーバーで発生するLLM呼び出しにLangfuseトレーシングを追加することが自然な次のステップだ。MCPサーバーはツール呼び出しチェーンが長くなる傾向があり、トレースウォーターフォールの価値が特に高い。
+
+## セルフホスティングを勧めない場合
+
+私がセルフホスティングを勧めないケースがある。率直に書く。
+
+<strong>セルフホスティングが合う場合：</strong>
+- トレースデータに機微なユーザー情報が含まれる（医療、金融）
+- 月間トレース数が10万件以上でCloud費用が負担になる
+- Kubernetesベースのインフラをすでに運用中
+
+<strong>Cloudをそのまま使うほうがよい場合：</strong>
+- チームが3人以下でインフラ管理のリソースがない
+- トレースが月5万件以下（Langfuse Cloud無料ティアの範囲）
+- バックアップ・スケーリング・アップデートを自分で管理したくない
+
+私は二つのプロジェクトを同時運用していて、一つはCloud、一つはセルフホスティングを使っている。ClickHouseのせいでメモリを2GB以上食うのが今も惜しく感じる、というのが正直な感想だ。
+
+[FastMCPでMCPサーバーを直接構築した経験](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)があるなら、そのサーバーで発生するLLM呼び出しにLangfuseトレーシングを付けるのが自然な次のステップだ。MCPサーバーはツール呼び出しチェーンが長くなりがちで、トレースウォーターフォールの価値が特に高い。
 
 ## いつセルフホスティングを使い、いつ避けるべきか
 
@@ -269,6 +319,24 @@ compiled = prompt.compile(
 判断が曖昧な中間地帯なら、まずコンテナデプロイの運用感覚を点検してほしい。[OllamaとFastAPIをプロダクションにデプロイする記事](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)で扱ったヘルスチェック、リソース制限、再起動ポリシーを難なく扱えるなら、Langfuseのフルスタックも問題なく運用できる。逆にその記事が重く感じるなら、Cloudで始めて規模が大きくなってから移すのが現実的だ。
 
 私の場合は2つのプロジェクトを分けて運用している。機密データのないブログ自動化パイプラインはCloud、クライアントデータを扱う方はセルフホスティング。同じツールでもデータの性質に応じてデプロイ方法を変えるのが、最も後悔の少ない選択だった。ClickHouseのせいでメモリを2GB以上食うのは今でも惜しいというのが正直な感想だ。
+
+## トラブルシューティング FAQ
+
+<strong>Q. docker-compose up 後に langfuse-web が再起動を繰り返す</strong>
+
+ClickHouseやRedisの初期化が完了する前にwebが起動しようとするケースだ。1〜2分待てばほとんど解決する。それでもだめなら`docker-compose logs langfuse-web`でエラーメッセージを確認する。
+
+<strong>Q. データがLangfuse UIに表示されない</strong>
+
+SDKのflushが完了する前にプロセスが終了した場合が多い。スクリプトの最後に`get_client().flush()`を明示的に呼ぶか、非同期環境では`await get_client().async_flush()`を使う。
+
+<strong>Q. プロダクションデプロイ時のNEXTAUTH_SECRET設定</strong>
+
+セルフホスティングで`NEXTAUTH_SECRET`をデフォルト値のままにするとセキュリティリスクがある。`openssl rand -base64 32`で生成した値を必ず環境変数に入れる。
+
+<strong>Q. ClickHouseのディスク使用量が急増する</strong>
+
+Langfuseがデフォルトですべてのトレースの入出力テキストを保存するためだ。SDKで`capture_input=False`・`capture_output=False`を指定して特定spanのデータを省略するか、`mask`パラメータで機微情報をマスキングできる。
 
 ## LLMオブザーバビリティを導入すべきタイミング
 

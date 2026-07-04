@@ -239,6 +239,38 @@ find . -name "*.py" -exec sed -i \
 # This part requires manual editing per call site
 ```
 
+## LangChain and OpenAI SDK Integration
+
+The v4 SDK keeps its LangChain and OpenAI SDK integrations.
+
+```python
+# LangChain integration
+from langfuse.langchain import CallbackHandler
+
+handler = CallbackHandler()
+chain = your_langchain_chain
+
+result = chain.invoke(
+    {"query": "question"},
+    config={"callbacks": [handler]}
+)
+```
+
+```python
+# Wrapping the OpenAI SDK
+from langfuse.openai import openai
+
+# Swap in for your existing openai client as is
+client = openai.OpenAI()
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "hello"}]
+)
+# The trace is sent to Langfuse automatically
+```
+
+This integration style is genuinely convenient: change one import line, keep the code structure, and every LLM call gets traced automatically.
+
 ## Prompt Versioning and Datasets
 
 Two features push Langfuse past plain tracing: prompt versioning and dataset-based evaluation.
@@ -260,6 +292,24 @@ compiled = prompt.compile(
 Managing prompts this way means "why did response quality drop on the day we used version 2?" becomes a question you can answer immediately in the Langfuse UI.
 
 If you've [built an MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026), adding Langfuse tracing to its LLM calls is the natural next step. MCP servers tend to have long tool invocation chains, which is exactly where trace waterfalls are most valuable.
+
+## When I Don't Recommend Self-Hosting
+
+There are cases where I don't recommend self-hosting. Here it is, honestly.
+
+<strong>Self-hosting fits when:</strong>
+- Trace data contains sensitive user information (healthcare, finance)
+- You run 100k+ traces per month and Cloud pricing hurts
+- You already operate Kubernetes-based infrastructure
+
+<strong>Just using Cloud is better when:</strong>
+- The team is three people or fewer with no infra bandwidth
+- Traces stay under 50k per month (within Langfuse Cloud's free tier)
+- You'd rather not own backups, scaling, and updates
+
+I run two projects side by side — one on Cloud, one self-hosted. Honest impression: ClickHouse eating 2GB+ of memory still feels wasteful.
+
+If you've [built an MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026), attaching Langfuse tracing to the LLM calls from that server is the natural next step. MCP servers tend to grow long tool-call chains, which makes the trace waterfall especially valuable.
 
 ## When to Self-Host and When to Avoid It
 

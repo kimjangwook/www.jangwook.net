@@ -236,6 +236,38 @@ find . -name "*.py" -exec sed -i \
   's/from langfuse.decorators import observe, langfuse_context/from langfuse import observe, get_client/g' {} +
 ```
 
+## LangChain、OpenAI SDK 集成
+
+v4 SDK 同样保留了 LangChain 和 OpenAI SDK 集成。
+
+```python
+# LangChain 集成
+from langfuse.langchain import CallbackHandler
+
+handler = CallbackHandler()
+chain = your_langchain_chain
+
+result = chain.invoke(
+    {"query": "问题"},
+    config={"callbacks": [handler]}
+)
+```
+
+```python
+# 包装 OpenAI SDK
+from langfuse.openai import openai
+
+# 直接替换现有的 openai 客户端
+client = openai.OpenAI()
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "你好"}]
+)
+# 追踪会自动发送到 Langfuse
+```
+
+这种集成方式确实方便：不改代码结构，只换一行 import，所有 LLM 调用就都自动被追踪。
+
 ## 提示词版本管理与数据集
 
 Langfuse超越简单追踪工具的地方有两个：提示词版本管理和基于数据集的评估。
@@ -255,6 +287,24 @@ compiled = prompt.compile(
 这样管理提示词，"为什么用版本2提示词那天响应质量下降了？"这个问题在Langfuse UI中就能立即得到答案。
 
 如果你已经[用FastMCP直接构建了MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)，为其LLM调用添加Langfuse追踪是自然的下一步。MCP服务器往往有较长的工具调用链，追踪瀑布图在这里价值尤为突出。
+
+## 我不推荐自托管的情况
+
+有些情况我并不推荐自托管。坦白写下来。
+
+<strong>适合自托管的情况：</strong>
+- 追踪数据包含敏感用户信息（医疗、金融）
+- 月追踪量超过 10 万条，Cloud 费用成为负担
+- 已经在运营基于 Kubernetes 的基础设施
+
+<strong>直接用 Cloud 更好的情况：</strong>
+- 团队 3 人以下，没有基础设施管理资源
+- 追踪量每月 5 万条以下（Langfuse Cloud 免费层范围内）
+- 不想自己管备份、扩容、升级
+
+我同时运营两个项目，一个用 Cloud，一个自托管。老实说，因为 ClickHouse 要吃掉 2GB 以上内存，至今仍觉得心疼。
+
+如果你有[用 FastMCP 自建 MCP 服务器的经验](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)，给那台服务器上的 LLM 调用挂上 Langfuse 追踪就是自然的下一步。MCP 服务器的工具调用链往往很长，追踪瀑布图的价值尤其高。
 
 ## 何时该自托管，何时该避开
 
