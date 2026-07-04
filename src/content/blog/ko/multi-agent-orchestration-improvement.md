@@ -392,7 +392,7 @@ sequenceDiagram
 
 <strong>수정 적용 후 2차 리뷰</strong>:
 
-```markdown
+````markdown
 ## Editor 수정사항
 ✅ 문제 1 해결:
    Before: "Never use force push to main"
@@ -414,7 +414,7 @@ sequenceDiagram
 ✅ 개선 3 적용:
    - Conventional Commits 예제 5개 → 12개
    - 각 type별 실제 프로젝트 사례
-```
+````
 
 ### 피드백 루프의 효과
 
@@ -436,7 +436,7 @@ iterations = [
 
 <strong>image-generator.md 경로 이식성</strong>:
 
-```markdown
+````markdown
 # Before (하드코딩)
 ---
 ## 사용법
@@ -493,11 +493,11 @@ if (!outputPath.match(/\.(jpg|png|webp)$/)) {
 - ✅ 다양한 경로 지원 (assets, public, custom)
 - ✅ 에러 메시지 명확화 (디버깅 시간 50% 단축)
 - ✅ 재사용성 증가 (블로그 외 용도 가능)
-```
+````
 
 <strong>orchestrator.md 실제 예제 추가</strong>:
 
-```markdown
+````markdown
 # Before (추상적 설명)
 ---
 ## Multi-Agent Orchestration
@@ -658,11 +658,11 @@ SEO-optimizer:
 /orchestrate refactor "48 files analysis"
 /orchestrate seo-optimization "all posts"
 ```
-```
+````
 
 <strong>analytics 역할 명확화</strong>:
 
-```markdown
+````markdown
 # Before (역할 중복)
 ---
 # analytics.md
@@ -740,13 +740,13 @@ SEO-optimizer:
 |-----------|---------------|-----------|-----------|
 | 즉석 질문 | analytics.md | 30초 | 텍스트 |
 | 공식 리포트 | analytics-reporter.md | 5-10분 | Markdown 문서 |
-```
+````
 
 ### Commands: 대규모 개선
 
 <strong>commit.md 완전 재작성 (12줄 → 528줄)</strong>:
 
-```markdown
+````markdown
 # Before (12줄)
 ---
 # Commit Guidelines
@@ -996,11 +996,11 @@ git log  # 커밋이 feature 브랜치에 있어야 함
 4. <strong>Amend는 신중히</strong>: 본인 커밋 & 미푸시 & 1회 제한
 5. <strong>작은 단위 커밋</strong>: 하나의 논리적 변경 = 하나의 커밋
 ---
-```
+````
 
 <strong>write-post.md 4개 언어 표준화</strong>:
 
-```markdown
+````markdown
 # Before
 ---
 ## 블로그 포스트 작성
@@ -1120,7 +1120,7 @@ ls src/content/blog/ko/existing-post.md
 npm run build
 ```
 ---
-```
+````
 
 ### Skills: 타입 안전성 강화
 
