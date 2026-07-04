@@ -18,7 +18,9 @@
     "codex:next-post-recommendation": "node scripts/codex-compat.mjs next-post-recommendation",
     "codex:write-post": "node scripts/codex-compat.mjs write-post",
     "codex:write-ga-post": "node scripts/codex-compat.mjs write-ga-post",
-    "codex:commit": "node scripts/codex-compat.mjs commit"
+    "codex:commit": "node scripts/codex-compat.mjs commit",
+    "postbuild": "node scripts/validate-hreflang.mjs",
+    "validate:hreflang": "node scripts/validate-hreflang.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

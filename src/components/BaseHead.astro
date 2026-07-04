@@ -95,13 +95,17 @@ const hreflangTags: HreflangTag[] = languages.map(lang => {
 	};
 });
 
-// x-default는 영어 버전으로 설정
+// x-default 설정
+// 홈 클러스터: 중립 루트(/)가 언어 선택 랜딩이므로 x-default의 진짜 타깃.
+// 루트가 자체 hreflang 허브를 내보내는 구조에서 x-default를 /en/으로 두면
+// 루트의 self-reference가 없고 언어 홈들이 루트를 되가리키지 않아
+// 리시프로시티가 깨진다 (hreflang-reciprocity-audit 글에서 실측한 버그).
 let xDefaultPath = pathWithoutLang;
 if (xDefaultPath.startsWith('/blog/')) {
 	xDefaultPath = xDefaultPath.replace(/^\/blog\/(ko|en|ja|zh)\//, '/blog/en/');
 }
 const xDefaultUrl = pathWithoutLang === '/' || pathWithoutLang === ''
-	? `${siteUrl}/en/`
+	? `${siteUrl}/`
 	: `${siteUrl}/en${xDefaultPath}`;
 
 // WebSite Schema (모든 페이지)
