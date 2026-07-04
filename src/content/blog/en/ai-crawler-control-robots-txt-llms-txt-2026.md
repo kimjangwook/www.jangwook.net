@@ -49,6 +49,21 @@ Anthropic splits its bots the same way in its [official help center](https://sup
 
 Here's the first real judgment call. <strong>Don't treat training bots and search bots as one lump.</strong> The moment you `Disallow` GPTBot, OAI-SearchBot, ClaudeBot, and Claude-SearchBot all together in an "I hate AI" reflex, you succeed at blocking training but also close the only channel by which your site gets cited in ChatGPT and Claude search answers. For a publisher who wants traffic, that's a loss.
 
+The three layers and the default strategy in one picture:
+
+```mermaid
+graph TD
+    A["AI crawlers"] --> B["Training<br/>GPTBot·ClaudeBot·CCBot"]
+    A --> C["Search / citation<br/>OAI-SearchBot·Claude-SearchBot"]
+    A --> D["User-triggered fetch<br/>ChatGPT-User·Claude-User"]
+    B --> E["Disallow<br/>no free training corpus"]
+    C --> F["Allow<br/>keep the citation channel open"]
+    D --> G["robots.txt may<br/>not apply"]
+
+    style E fill:#C1121F,color:#fff
+    style F fill:#2D6A4F,color:#fff
+```
+
 ## The default 2026 publisher strategy: block training, allow citation
 
 So the default I recommend is clear. <strong>Refuse training, allow search and citation.</strong> Don't hand your content over as a free training corpus, but keep open the path where an AI answer cites you and a reader clicks through. Translated into robots.txt, it looks like this:

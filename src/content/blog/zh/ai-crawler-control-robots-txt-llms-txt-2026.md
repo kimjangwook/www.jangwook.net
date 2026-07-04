@@ -49,6 +49,21 @@ Anthropic 在其[官方帮助中心](https://support.claude.com/en/articles/8896
 
 这里出现第一个实务判断。<strong>不能把训练机器人和搜索机器人当成一坨。</strong>一旦你出于"AI 全都讨厌"的反应，把 GPTBot、OAI-SearchBot、ClaudeBot、Claude-SearchBot 全部 `Disallow`，你成功挡住了训练，却也关掉了让自己在 ChatGPT、Claude 搜索回答里被引用的唯一通道。对想要流量的发布者来说，这是亏的。
 
+把三个层次和默认策略画成一张图：
+
+```mermaid
+graph TD
+    A["AI 爬虫"] --> B["训练 (training)<br/>GPTBot·ClaudeBot·CCBot"]
+    A --> C["搜索、引用 (search)<br/>OAI-SearchBot·Claude-SearchBot"]
+    A --> D["用户请求 (user fetch)<br/>ChatGPT-User·Claude-User"]
+    B --> E["Disallow<br/>不做免费训练语料"]
+    C --> F["Allow<br/>保留引用与流量入口"]
+    D --> G["robots.txt<br/>可能不适用"]
+
+    style E fill:#C1121F,color:#fff
+    style F fill:#2D6A4F,color:#fff
+```
+
 ## 2026 年发布者的默认策略：拒绝训练，放行引用
 
 所以我推荐的默认策略很明确。<strong>拒绝训练（training），放行搜索与引用（search）。</strong>不把内容当免费训练语料交出去，但保留一条路：让 AI 回答引用你、让读者点进来。落到 robots.txt 上就是这样：

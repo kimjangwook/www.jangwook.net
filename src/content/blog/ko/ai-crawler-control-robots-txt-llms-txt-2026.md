@@ -49,6 +49,21 @@ Anthropic도 [공식 도움말](https://support.claude.com/en/articles/8896518-d
 
 여기서 첫 번째 실무 판단이 나온다. <strong>학습 봇과 검색 봇을 한 덩어리로 취급하면 안 된다.</strong> "AI 다 싫어"라며 GPTBot·OAI-SearchBot·ClaudeBot·Claude-SearchBot을 전부 `Disallow` 하는 순간, 학습을 막는 데는 성공하지만 ChatGPT·Claude 검색 답변에서 내 사이트가 인용될 통로까지 닫는다. 트래픽을 원하는 퍼블리셔에게 이건 손해다.
 
+세 계층과 기본 전략을 그림으로 정리하면 이렇다.
+
+```mermaid
+graph TD
+    A["AI 크롤러"] --> B["학습 (training)<br/>GPTBot·ClaudeBot·CCBot"]
+    A --> C["검색·인용 (search)<br/>OAI-SearchBot·Claude-SearchBot"]
+    A --> D["사용자 요청 (user fetch)<br/>ChatGPT-User·Claude-User"]
+    B --> E["Disallow<br/>학습 코퍼스로 내주지 않음"]
+    C --> F["Allow<br/>인용·유입 통로 유지"]
+    D --> G["robots.txt가<br/>적용되지 않을 수 있음"]
+
+    style E fill:#C1121F,color:#fff
+    style F fill:#2D6A4F,color:#fff
+```
+
 ## 2026년 퍼블리셔의 기본 전략: 학습은 막고 인용은 허용
 
 그래서 내가 기본값으로 추천하는 전략은 명확하다. <strong>학습(training)은 거부, 검색·인용(search)은 허용.</strong> 콘텐츠를 공짜 학습 코퍼스로는 내주지 않되, AI 검색 답변에 인용되어 방문자가 넘어올 길은 열어둔다. 이걸 robots.txt로 옮기면 이렇게 된다.

@@ -197,6 +197,22 @@ first broken return links:
 
 修复方向有三选一。(1) 把根301重定向到某个语言首页，让它彻底退出集群；(2) 把根的`canonical`让给语言首页，理清重复信号；(3) 把根当作真正的x-default目标，让所有语言首页都用x-default指向根，恢复相互性。我认为(3)在语义上最诚实。不过它动的是线上站点的canonical和重定向，所以我打算先在预发环境复核那248个健康集群不受影响，再单独上线。这篇文章里我没有临时改动线上SEO行为。检查器会充当回归测试：修完之后再跑一次同样的脚本，确认绿灯即可。
 
+<strong>2026-07-04 后续</strong>：该修复已上线。按方法(3)把首页集群的x-default改为中立根`/`，并把上面的检查器常设为构建流水线的postbuild门禁。重跑结果：253个页面，broken pairs 0，missing self 0 — 全部绿灯。
+
+把修复前后画在一起，问题一目了然。
+
+```mermaid
+graph TD
+    subgraph BROKEN["修复前 — 握手失败"]
+        R1["/ 根"] -->|"hreflang 指向"| K1["/ko/ · /en/ · /ja/ · /zh/"]
+        K1 -.->|"没有 return link"| R1
+    end
+    subgraph FIXED["修复后 — 相互性成立"]
+        K2["/ko/ · /en/ · /ja/ · /zh/"] -->|"x-default"| R2["/ 根 = 语言选择页"]
+        R2 -->|"ko·en·ja·zh + x-default 自我引用"| K2
+    end
+```
+
 ## 三种实现方式 — 何时用哪个
 
 输出hreflang有三种方式，Google坚决表示"三种方式等价"。等价应当理解为<strong>任选其一，但绝不混用</strong>。如果对同一个页面，HTML标签和站点地图说的不一样，你只是给自己造了一个验证地狱。

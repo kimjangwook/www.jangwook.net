@@ -49,6 +49,21 @@ Anthropicも[公式ヘルプ](https://support.claude.com/en/articles/8896518-doe
 
 ここで最初の実務判断が出てくる。<strong>学習ボットと検索ボットを一括りにしてはいけない。</strong>「AI全部いや」とGPTBot・OAI-SearchBot・ClaudeBot・Claude-SearchBotをすべて `Disallow` した瞬間、学習の遮断には成功するが、ChatGPTやClaudeの検索回答で自サイトが引用される通り道まで閉じてしまう。トラフィックを望むパブリッシャーにとって、これは損だ。
 
+三つの層とデフォルト戦略を図に整理するとこうなる。
+
+```mermaid
+graph TD
+    A["AIクローラー"] --> B["学習 (training)<br/>GPTBot·ClaudeBot·CCBot"]
+    A --> C["検索・引用 (search)<br/>OAI-SearchBot·Claude-SearchBot"]
+    A --> D["ユーザー要求 (user fetch)<br/>ChatGPT-User·Claude-User"]
+    B --> E["Disallow<br/>学習コーパスに渡さない"]
+    C --> F["Allow<br/>引用・流入経路を維持"]
+    D --> G["robots.txtが<br/>適用されない場合がある"]
+
+    style E fill:#C1121F,color:#fff
+    style F fill:#2D6A4F,color:#fff
+```
+
 ## 2026年のパブリッシャーのデフォルト戦略: 学習は拒否、引用は許可
 
 だから私がデフォルトとして薦める戦略は明確だ。<strong>学習（training）は拒否、検索・引用（search）は許可。</strong>コンテンツを無料の学習コーパスとしては渡さないが、AIの回答に引用されて訪問者が流れてくる道は開けておく。これをrobots.txtに落とすとこうなる。

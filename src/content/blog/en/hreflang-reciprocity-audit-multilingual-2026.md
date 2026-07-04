@@ -197,6 +197,22 @@ I reproduced the mechanic minimally to be sure. Two pages where hub A names B, b
 
 The fix is one of three. (1) 301-redirect the root to a language home so it leaves the cluster entirely; (2) hand the root's `canonical` to a language home to clean up the duplicate signal; or (3) make the root the real x-default target and have every language home name the root via x-default, restoring reciprocity. I think (3) is the most honest semantically. But it touches a live site's canonical and redirects, so I plan to re-verify in staging that the 248 healthy clusters stay intact, then roll it out separately. I did not improvise a live SEO change in this post. The checker becomes the regression test: after the fix, run the same script and confirm green.
 
+<strong>Update, 2026-07-04</strong>: The fix has shipped. Following option (3), the home cluster's x-default now points to the neutral root `/`, and the checker above is a permanent postbuild gate in the build pipeline. Re-run result: 253 pages, 0 broken pairs, 0 missing self-references — all green.
+
+Before and after, side by side, the problem is obvious at a glance.
+
+```mermaid
+graph TD
+    subgraph BROKEN["Before — handshake fails"]
+        R1["/ root"] -->|"hreflang points to"| K1["/ko/ · /en/ · /ja/ · /zh/"]
+        K1 -.->|"no return link"| R1
+    end
+    subgraph FIXED["After — reciprocity holds"]
+        K2["/ko/ · /en/ · /ja/ · /zh/"] -->|"x-default"| R2["/ root = language selector"]
+        R2 -->|"ko·en·ja·zh + x-default self-reference"| K2
+    end
+```
+
 ## The three implementation methods — when to use which
 
 There are three ways to emit hreflang, and Google is firm that "the three methods are equivalent." Equivalent should be read as <strong>pick one, but never mix them</strong>. If HTML tags and a sitemap say different things about the same page, you have only built yourself a validation nightmare.
