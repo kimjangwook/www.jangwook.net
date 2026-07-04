@@ -269,4 +269,4 @@ git worktree prune  # 이미 삭제된 디렉토리의 참조 정리
 
 핵심은 간단하다: **독립적인 브랜치 → 독립적인 디렉토리 → 독립적인 Claude Code 세션**. 이 세 가지가 맞아떨어지면 서로 방해하지 않고 동시에 작업이 진행된다.
 
-처음에는 두 개의 worktree로 시작해서, 패턴이 익숙해지면 세 개로 늘려보는 걸 권한다. [에이전트 팀 구성을 더 체계적으로 하고 싶다면](/ko/blog/ko/claude-agent-teams-guide) 그 다음 단계로 넘어가면 된다.
+처음에는 두 개의 worktree로 시작해서, 패턴이 익숙해지면 세 개로 늘려보는 걸 권한다. [에이전트 팀 구성을 더 체계적으로 하고 싶다면](/ko/blog/ko/claude-agent-teams-guide) 그 다음 단계로 넘어가면 된다. 그리고 이 병렬화가 실제로 내 작업 시간을 줄였는지는 감이 아니라 [Claude Code 사용량을 직접 뜯어본 기록](/ko/blog/ko/claude-code-insights-usage-analysis)처럼 숫자로 확인하는 게 좋다.

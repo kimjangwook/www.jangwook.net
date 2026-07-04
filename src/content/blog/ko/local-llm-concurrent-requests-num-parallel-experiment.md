@@ -1,8 +1,8 @@
 ---
 title: '로컬 LLM에 에이전트 8개를 동시에 붙였더니 — Ollama 동시성 처리량 실측'
 description: >-
-  서브에이전트를 병렬로 돌리면 로컬 모델도 그만큼 빨라질 줄 알았다. 직접 재보니 기본 Ollama는 요청을 줄 세워 처리해서 8개를 붙여도
-  총 처리량이 그대로였다. OLLAMA_NUM_PARALLEL을 올렸을 때의 처리량 이득과 그 대가를 M1 16GB에서 실측했다.
+  서브에이전트를 병렬로 돌리면 로컬 모델도 그만큼 빨라질 줄 알았다. 직접 재보니 기본 Ollama는 요청을 한 줄로 세워 처리해서 8개를 붙여도
+  총 처리량이 그대로였다. OLLAMA_NUM_PARALLEL을 올렸을 때의 처리량 이득과 VRAM 대가를 M1 맥북 16GB에서 실측했다.
 pubDate: '2026-07-01'
 heroImage: '../../../assets/blog/local-llm-concurrent-requests-num-parallel-experiment/hero.png'
 tags:

@@ -270,4 +270,4 @@ Honestly, my first reaction was "is this really worth the setup?" After using it
 
 The core idea is simple: **independent branch → independent directory → independent Claude Code session**. When those three align, sessions don't interfere with each other.
 
-Start with two worktrees, get comfortable with the pattern, then expand to three. If you want to push further into structured multi-agent patterns, [the Claude Code Agent Teams guide](/en/blog/en/claude-agent-teams-guide) is the natural next step.
+Start with two worktrees, get comfortable with the pattern, then expand to three. If you want to push further into structured multi-agent patterns, [the Claude Code Agent Teams guide](/en/blog/en/claude-agent-teams-guide) is the natural next step. And whether this parallelization actually cut your working time is worth confirming with numbers, the way I did in [my breakdown of Claude Code usage](/en/blog/en/claude-code-insights-usage-analysis), rather than by gut feel.

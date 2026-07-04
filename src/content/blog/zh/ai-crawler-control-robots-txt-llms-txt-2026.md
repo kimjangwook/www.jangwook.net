@@ -122,6 +122,8 @@ Sitemap: https://example.com/sitemap.xml
 当然，这是"<strong>想要</strong>引用流量的站点"的默认值。如果你运营的是付费内容或社区档案，连引用都不想要，那把搜索机器人也屏蔽才对。答案不止一个。不过对大多数博客和文档站来说，"拒绝训练＋放行引用"这个组合是个合理的起点。
 
 爬虫到达之后实际读取什么，是另一个层面的问题。那部分我在[把 LocalBusiness 结构化数据从服务端输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)那篇里另作讨论。如果 robots.txt 是"让谁进来"，标记就是"给进来的机器人看什么"。
+而如果你运营多语言站点，还得另外确认上述 robots.txt 的 Sitemap 指令所携带的 hreflang 信号是否真正双向对应。那次审计的过程我整理在[亲自审计我自己 4 语言博客 hreflang 的记录](/zh/blog/zh/hreflang-reciprocity-audit-multilingual-2026)里。
+
 
 ## 我做了验证: 规则真的按意图生效了吗
 

@@ -122,6 +122,8 @@ Sitemap: https://example.com/sitemap.xml
 This is the default for a site that <strong>wants</strong> citation traffic, of course. If you run paid content or a community archive where you don't even want citation, blocking the search bots too is the right call. There isn't one universal answer. That said, for most blogs and docs sites, "refuse training + allow citation" is a reasonable starting point.
 
 What a crawler actually reads once it arrives is a separate layer. I covered that in the post on [emitting LocalBusiness structured data server-side](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026). If robots.txt is "who do I let in," markup is "what do I show the bot once it's in."
+And if you run a multilingual site, you also need to check whether the hreflang signals carried by that Sitemap directive actually reciprocate. I walked through that audit in [the record of auditing hreflang across my own 4-language blog](/en/blog/en/hreflang-reciprocity-audit-multilingual-2026).
+
 
 ## I verified it: do the rules actually fire the way I meant?
 

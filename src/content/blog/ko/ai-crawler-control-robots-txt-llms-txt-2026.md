@@ -122,6 +122,8 @@ Sitemap: https://example.com/sitemap.xml
 물론 이건 "인용 트래픽을 원하는 사이트"의 기본값이다. 유료 콘텐츠나 커뮤니티 아카이브처럼 인용조차 원치 않는 사이트라면 검색 봇도 막는 게 맞다. 정답이 하나는 아니다. 다만 대부분의 블로그·문서 사이트는 이 "학습 거부 + 인용 허용" 조합이 합리적인 출발점이라고 본다.
 
 크롤러가 페이지에 도착한 뒤 실제로 무엇을 읽어가느냐는 또 다른 층위의 문제다. 그 부분은 [LocalBusiness 구조화 데이터를 서버사이드로 내보내는 이야기](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026)에서 따로 다뤘다. robots.txt가 "누구를 들일까"라면, 마크업은 "들어온 봇에게 무엇을 보여줄까"다.
+그리고 여러 언어로 운영하는 사이트라면, 위 robots.txt의 Sitemap 지시문이 실어 나르는 hreflang 신호가 실제로 양방향으로 맞물리는지도 따로 확인해야 한다. 그 감사 과정은 [내 4개 언어 블로그의 hreflang을 직접 감사한 기록](/ko/blog/ko/hreflang-reciprocity-audit-multilingual-2026)에 정리했다.
+
 
 ## 직접 검증했다: 규칙이 정말 의도대로 먹는가
 

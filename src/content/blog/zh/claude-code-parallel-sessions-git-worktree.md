@@ -269,4 +269,4 @@ git worktree prune  # 清理已删除目录的引用
 
 核心思路很简单：**独立分支 → 独立目录 → 独立 Claude Code 会话**。三者对齐，会话间互不干扰，并行推进。
 
-建议从两个 worktree 开始，熟悉模式后再扩展到三个。如果想进一步构建系统化的多智能体模式，[Claude Code Agent Teams 指南](/zh/blog/zh/claude-agent-teams-guide)是自然的下一步。
+建议从两个 worktree 开始，熟悉模式后再扩展到三个。如果想进一步构建系统化的多智能体模式，[Claude Code Agent Teams 指南](/zh/blog/zh/claude-agent-teams-guide)是自然的下一步。 而这种并行化是否真的减少了你的工作时间，最好像[我拆解 Claude Code 使用量的记录](/zh/blog/zh/claude-code-insights-usage-analysis)那样用数字来确认，而不是凭感觉。
