@@ -95,6 +95,26 @@ const hreflangTags: HreflangTag[] = languages.map(lang => {
 	};
 });
 
+// Google Fonts: 페이지 언어에 필요한 CJK 패밀리만 로드
+// 전체 9패밀리 CSS는 전송 405KB(gzip)로 렌더 블로킹 비용이 큼 —
+// 언어별 서브셋으로 ko 137KB, en 1KB까지 감소 (실측 2026-07-05).
+// currentLang이 없는 페이지(루트 언어 선택 랜딩, 404)는 4개 언어 텍스트를
+// 모두 표시하므로 전체 세트를 유지한다.
+const fontBase =
+	'family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500';
+const fontCjkByLang: Record<string, string> = {
+	ko: '&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600',
+	en: '',
+	ja: '&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600',
+	zh: '&family=Noto+Serif+SC:wght@400;500;600',
+};
+const fontCjkAll =
+	'&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600';
+const fontCjk = currentLang !== null && currentLang in fontCjkByLang
+	? fontCjkByLang[currentLang]
+	: fontCjkAll;
+const fontsHref = `https://fonts.googleapis.com/css2?${fontBase}${fontCjk}&display=swap`;
+
 // x-default 설정
 // 홈 클러스터: 중립 루트(/)가 언어 선택 랜딩이므로 x-default의 진짜 타깃.
 // 루트가 자체 hreflang 허브를 내보내는 구조에서 x-default를 /en/으로 두면
@@ -285,10 +305,7 @@ const articleSchema = articleData ? {
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <!-- Quiet Flow design system: Newsreader, Geist, Geist Mono with CJK fallbacks -->
-<link
-	href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap"
-	rel="stylesheet"
-/>
+<link href={fontsHref} rel="stylesheet" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
