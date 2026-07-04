@@ -40,7 +40,7 @@ const posts = filterPostsByDate(allPosts)
 				</header>
 				<div class="blog-archive__list">
 					{
-						posts.map((post) => (
+						posts.map((post, postIndex) => (
 							<BlogCard
 								href={`/${lang}/blog/${post.id}/`}
 								title={post.data.title}
@@ -51,6 +51,7 @@ const posts = filterPostsByDate(allPosts)
 								readingTime={calculateReadingTime(post.body || '')}
 								readingTimeLabel={t('blog.readTime')}
 								readMoreLabel={t('blog.readMore')}
+								eager={postIndex === 0}
 							/>
 						))
 					}

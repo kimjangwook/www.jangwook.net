@@ -13,6 +13,8 @@ interface Props {
 	readingTime: number;
 	readingTimeLabel?: string;
 	readMoreLabel?: string;
+	/** 뷰포트 상단(LCP 후보) 카드에만 true — lazy 대신 eager + fetchpriority로 로드 */
+	eager?: boolean;
 }
 
 const {
@@ -25,6 +27,7 @@ const {
 	readingTime,
 	readingTimeLabel = 'min read',
 	readMoreLabel = 'Read more',
+	eager = false,
 } = Astro.props;
 ---
 
@@ -38,7 +41,8 @@ const {
 					width={680}
 					height={430}
 					class="post-card__image"
-					loading="lazy"
+					loading={eager ? 'eager' : 'lazy'}
+					fetchpriority={eager ? 'high' : 'auto'}
 					decoding="async"
 					format="webp"
 					quality={82}
