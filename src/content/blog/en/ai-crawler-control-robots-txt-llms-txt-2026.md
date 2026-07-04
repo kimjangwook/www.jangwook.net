@@ -216,6 +216,8 @@ To sum up, an AI-era robots.txt isn't "block or allow" — it's "how do I treat 
 
 robots.txt is a voluntary convention, not a legal wall. Polite bots obey it; malicious crawlers ignore it. Try to block by IP and you can even stop a bot from reading robots.txt at all, which backfires. So think of it less as an impenetrable barrier and more as an explicit statement of intent. Used with that limit in mind, it's the most standard way to tell the bots exactly what you want: refuse training, allow citation.
 
+<strong>Update, 2026-07-04</strong>: This strategy is now live in this blog's own robots.txt — the four training bots (GPTBot, ClaudeBot, CCBot, Google-Extended) disallowed, the three search bots (OAI-SearchBot, Claude-SearchBot, PerplexityBot) allowed. While applying it I stepped on exactly the parser gap this post warns about: under a first-match parser, `Allow: /` shadowed the later Disallows, so I placed the Disallow lines before Allow and verified identical behavior across both parser families with 12 scenarios.
+
 ---
 
 If you want structured data emitted reliably server-side, or want a check on whether your existing site's robots.txt, structured markup, and GEO setup actually behave the way you intended, I take on consulting and implementation work personally. Feel free to reach out through the contact link on my profile.

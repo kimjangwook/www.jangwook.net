@@ -216,6 +216,8 @@ llms.txt 是一份提案中的 markdown 文件，让站点告诉 LLM"这里有�
 
 robots.txt 是自愿遵守的约定，不是法律强制。守规矩的机器人会遵守，恶意爬虫会无视。想靠 IP 屏蔽，反而可能让机器人连 robots.txt 都读不到，适得其反。所以它更像"明确的意愿声明"，而不是"密不透风的屏障"。带着这个限度去用，它就是把"拒绝训练、放行引用"这份意愿准确传达给各机器人的、最标准的手段。
 
+<strong>2026-07-04 后续</strong>：该策略已原样应用到本博客的 robots.txt——4 个训练机器人（GPTBot、ClaudeBot、CCBot、Google-Extended）Disallow，3 个搜索机器人（OAI-SearchBot、Claude-SearchBot、PerplexityBot）Allow。应用时恰好踩中了正文警告的解析器差异：first-match 解析器下 `Allow: /` 会遮住后面的 Disallow，于是把 Disallow 放到 Allow 之前，并用 12 个场景验证了两类解析器下行为一致。
+
 ---
 
 如果你想把结构化数据稳妥地从服务端输出，或者想检查现有站点的 robots.txt、结构化标记、GEO 配置是否真的按意图运作，我个人承接咨询与实现方面的委托。欢迎通过我资料页上的联系方式随时留言。

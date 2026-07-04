@@ -1,6 +1,32 @@
-User-agent: *
+# AI 학습(training) 크롤러: 모델 학습 사용 거부
+# 전략 근거: /ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Google-Extended
+Disallow: /
+
+# AI 검색/인용(search) 크롤러: 인용·유입 허용
+# 교차 언어 안전망을 이 그룹에도 복제 (그룹 매칭 특성).
+# Disallow를 Allow보다 앞에 둬 first-match·longest-match 파서 모두에서 동일 동작.
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+Disallow: /ko/blog/en/
+Disallow: /ko/blog/ja/
+Disallow: /ko/blog/zh/
+Disallow: /en/blog/ko/
+Disallow: /en/blog/ja/
+Disallow: /en/blog/zh/
+Disallow: /ja/blog/ko/
+Disallow: /ja/blog/en/
+Disallow: /ja/blog/zh/
+Disallow: /zh/blog/ko/
+Disallow: /zh/blog/en/
+Disallow: /zh/blog/ja/
 Allow: /
 
+User-agent: *
 # Block cross-language content mismatch URLs (safety net)
 Disallow: /ko/blog/en/
 Disallow: /ko/blog/ja/
@@ -14,5 +40,6 @@ Disallow: /ja/blog/zh/
 Disallow: /zh/blog/ko/
 Disallow: /zh/blog/en/
 Disallow: /zh/blog/ja/
+Allow: /
 
 Sitemap: https://jangwook.net/sitemap.xml
