@@ -22,6 +22,7 @@ interface Props {
 		tags?: string[];
 	};
 	faqData?: FAQItem[];
+	breadcrumbs?: { name: string; item: string }[];
 	isHomePage?: boolean;
 	enableAds?: boolean;
 	noindex?: boolean;
@@ -36,6 +37,7 @@ const {
 	image = FallbackImage,
 	articleData,
 	faqData,
+	breadcrumbs,
 	enableAds = false,
 	noindex = false,
 	robots,
@@ -237,13 +239,30 @@ const ORG_ID = `${siteOrigin}#organization`;
 const AUTHOR_ID = `${siteOrigin}#author`;
 const WEBSITE_ID = `${siteOrigin}#website`;
 
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+	'@type': 'BreadcrumbList',
+	'@id': `${canonicalURL}#breadcrumb`,
+	'itemListElement': breadcrumbs.map((crumb, index) => ({
+		'@type': 'ListItem',
+		'position': index + 1,
+		'name': crumb.name,
+		'item': crumb.item,
+	})),
+} : null;
+
 const graphNodes = [
 	organizationSchema,
 	{ ...personSchema, worksFor: { '@id': ORG_ID } },
 	{ ...websiteSchema, '@id': WEBSITE_ID, publisher: { '@id': ORG_ID } },
 	...(speakableSchema
-		? [{ ...speakableSchema, '@id': canonicalURL.toString(), isPartOf: { '@id': WEBSITE_ID } }]
+		? [{
+				...speakableSchema,
+				'@id': canonicalURL.toString(),
+				isPartOf: { '@id': WEBSITE_ID },
+				...(breadcrumbSchema ? { breadcrumb: { '@id': `${canonicalURL}#breadcrumb` } } : {}),
+			}]
 		: []),
+	...(breadcrumbSchema ? [breadcrumbSchema] : []),
 	...(articleSchema
 		? [{
 				...articleSchema,

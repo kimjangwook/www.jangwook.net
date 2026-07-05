@@ -190,4 +190,6 @@ function buildGraph({ pageUrl, article }) {
 
 到这里就是「我把关系写明了」的可实测终点。没有排名保证。但你稳住了丰富结果的资格，也为机器无误读地读懂你网站的实体模型打好了底。我认为这是结构化数据里最被低估的活儿。大家都盯着加新的 schema 类型，却跳过了把已经上线的碎片<strong>互相接起来</strong>这件事。
 
+<strong>2026-07-06 后续</strong>：该处方已原样应用到本博客。把分散的 JSON-LD 块合并成了单个 `@graph`（Organization、Person、WebSite、WebPage、BreadcrumbList、BlogPosting 共 6 个节点），author、publisher、isPartOf、breadcrumb 全部换成 `@id` 引用。按清单第 6 条跑连通性检查：文章页未解决引用 0，连通分量 <strong>1 个</strong>——三个碎片变成了一张图。
+
 如果你想把结构化数据从服务端稳妥输出，或想把既有网站的 JSON-LD 梳理成一个实体图谱，我个人接受咨询与实现委托，会基于这类实测来诊断。

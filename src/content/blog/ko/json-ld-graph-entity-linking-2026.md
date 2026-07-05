@@ -190,4 +190,6 @@ function buildGraph({ pageUrl, article }) {
 
 여기까지가 "관계를 명시했다"의 실측 가능한 끝이다. 순위 보장은 없다. 하지만 리치 결과 자격을 안정화하고, 사이트의 엔티티 모델을 기계가 오해 없이 읽을 토대는 만들어진다. 나는 구조화 데이터에서 이게 가장 저평가된 작업이라고 본다. 다들 새 스키마 타입을 추가하는 데 집중하는데, 정작 이미 넣은 조각들을 <strong>서로 잇는</strong> 일은 건너뛴다.
 
+<strong>2026-07-06 후속</strong>: 이 처방을 이 블로그에 그대로 적용했다. 분리돼 있던 JSON-LD 블록을 하나의 `@graph`로 통합하고(Organization·Person·WebSite·WebPage·BreadcrumbList·BlogPosting 6노드), author·publisher·isPartOf·breadcrumb을 전부 `@id` 참조로 교체했다. 체크리스트 6항의 연결성 검사 결과: 글 페이지 기준 미해결 참조 0, 연결 컴포넌트 <strong>1개</strong> — 조각 세 개가 그래프 하나가 됐다.
+
 구조화 데이터를 서버사이드로 확실히 내보내거나 기존 사이트의 JSON-LD를 하나의 엔티티 그래프로 정리하는 작업을 점검하고 싶다면, 개인적으로 상담과 구현 의뢰를 받습니다. 이런 실측 기반으로 진단합니다.

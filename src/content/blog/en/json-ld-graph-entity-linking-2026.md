@@ -190,4 +190,6 @@ If you're applying this to your own site today, do it in this order.
 
 That's the measurable end of "I stated the relationships." No ranking guarantee. But you stabilize rich-result eligibility and lay the groundwork for machines to read your site's entity model without misreading it. I think this is the most undervalued job in structured data. Everyone focuses on adding new schema types, and skips the work of actually <strong>connecting</strong> the pieces they already shipped.
 
+<strong>Update, 2026-07-06</strong>: This prescription is now applied to this blog. The separate JSON-LD blocks were merged into a single `@graph` (six nodes: Organization, Person, WebSite, WebPage, BreadcrumbList, BlogPosting), with author, publisher, isPartOf, and breadcrumb all switched to `@id` references. Running the checklist's connectivity test on a post page: 0 unresolved references, <strong>one</strong> connected component — three fragments became one graph.
+
 If you want to get structured data out server-side reliably, or audit an existing site's JSON-LD into a single entity graph, I take on consulting and implementation work personally. I diagnose from measurements like these.
