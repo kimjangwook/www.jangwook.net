@@ -1,6 +1,6 @@
 ---
-title: 'Controlling AI Crawlers with robots.txt — Block Training, Allow Citation (2026)'
-description: 'Plenty of sites block GPTBot in one line and call it "AI blocked." I built a robots.txt that treats training, search, and user-fetch crawlers separately, then verified it with a standard parser. Includes the Google-Extended trap that does not stop AI Overviews, and an honest read on llms.txt.'
+title: 'Control AI Crawlers with robots.txt: Block vs. Allow (2026)'
+description: 'Many sites block GPTBot in one line and call it done. I built a robots.txt that separates training, search, and fetch crawlers, then verified it with a parser.'
 pubDate: '2026-07-03'
 heroImage: '../../../assets/blog/ai-crawler-control-robots-txt-llms-txt-2026/hero.png'
 tags:

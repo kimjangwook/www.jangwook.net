@@ -192,7 +192,7 @@ When this works inside Claude Desktop, users see real-time feedback about what t
 
 ## Testing with FastMCP Client
 
-You don't need an actual Claude Desktop to test. FastMCP provides an in-process client. This is also handy when implementing agentic workflow patterns, since tests stay self-contained.
+You don't need an actual Claude Desktop to test. FastMCP provides an in-process client. This is also handy when implementing agentic workflow patterns, since tests stay self-contained. When you need to go past this in-process test and build a standalone client that consumes the MCP server from your own application, [building an MCP client with the TypeScript SDK](/en/blog/en/mcp-client-typescript-sdk-guide-2026) is a useful reference.
 
 ```python
 import asyncio

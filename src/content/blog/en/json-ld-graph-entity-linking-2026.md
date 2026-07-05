@@ -1,6 +1,6 @@
 ---
-title: 'Tie Your JSON-LD Into One @graph — Turn Scattered Structured Data Into an Entity Model Search and AI Can Read'
-description: 'I ran my own JSON-LD through a validator and it came back as three separate islands. Here is how @id node references stitch Organization, WebSite, and Article into one @graph, measured with jsonld — three components collapsing into one, plus what Google does not guarantee.'
+title: 'Tie Your JSON-LD Into One @graph Search and AI Can Read'
+description: "My JSON-LD validated as three disconnected islands. Here's how @id references stitch Organization, WebSite, and Article into one @graph, measured with jsonld."
 pubDate: '2026-07-05'
 heroImage: '../../../assets/blog/json-ld-graph-entity-linking-2026/hero.png'
 tags:
@@ -186,7 +186,7 @@ If you're applying this to your own site today, do it in this order.
 3. Replace inline objects with <strong>`{"@id": ...}` references</strong> for `WebSite.publisher`, `Article.author`, `Article.publisher`, `Person.worksFor`, and the like.
 4. Wire the page hierarchy: `WebPage.isPartOf` → `WebSite`, and `BreadcrumbList` → `WebPage.breadcrumb`.
 5. Run the markup through the [Schema Markup Validator](https://validator.schema.org/) and Google's Rich Results Test to confirm validity.
-6. (Optional) `flatten` it with `jsonld` and check via script that the connected components equal <strong>1</strong>. Two or more means a reference is missing somewhere.
+6. (Optional) `flatten` it with `jsonld` and check via script that the connected components equal <strong>1</strong>. Two or more means a reference is missing somewhere. On a multilingual site, the same "verify it yourself, not the docs" stance is worth running against [hreflang reciprocity, audited with a 30-line script](/en/blog/en/hreflang-reciprocity-audit-multilingual-2026).
 
 That's the measurable end of "I stated the relationships." No ranking guarantee. But you stabilize rich-result eligibility and lay the groundwork for machines to read your site's entity model without misreading it. I think this is the most undervalued job in structured data. Everyone focuses on adding new schema types, and skips the work of actually <strong>connecting</strong> the pieces they already shipped.
 

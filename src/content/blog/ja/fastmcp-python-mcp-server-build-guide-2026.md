@@ -176,7 +176,7 @@ Claude Desktopで動作すると、ユーザーはツールがどの段階を実
 
 ## FastMCP Clientでテストする
 
-実際のClaude Desktopなしにサーバーをテストできる。FastMCPはin-processクライアントを提供している。MCPエージェントワークフローパターンを実装するときもこの方式でテストがシンプルになる。
+実際のClaude Desktopなしにサーバーをテストできる。FastMCPはin-processクライアントを提供している。MCPエージェントワークフローパターンを実装するときもこの方式でテストがシンプルになる。このin-processテストを超えて、アプリケーションからMCPサーバーを直接消費する独立クライアントが必要なら、[MCPクライアントをTypeScript SDKで実装する方法](/ja/blog/ja/mcp-client-typescript-sdk-guide-2026)が参考になる。
 
 ```python
 import asyncio

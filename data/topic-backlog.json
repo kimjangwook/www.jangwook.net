@@ -4586,6 +4586,23 @@
       "status": "queued",
       "notes": "자체 운영 문제 해결이 곧 콘텐츠. dev.to 정상(23/24)이라 대조군.",
       "published_at": null
+    },
+    {
+      "slug": "google-adk-typescript-code-first-agent-build-tutorial-2026",
+      "title_idea": "Google ADK for TypeScript로 코드 우선 AI 에이전트 만들기 — 프롬프트 엔지니어링 대신 테스트 가능한 모듈로",
+      "content_type": "how-to",
+      "target_keyword": "Google ADK TypeScript 튜토리얼",
+      "secondary_keywords": [
+        "Agent Development Kit TypeScript",
+        "코드 우선 AI 에이전트",
+        "ADK 에이전트 만들기"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Google Developers Blog — Agent Development Kit(ADK) for TypeScript 정식 발표(2026). 프롬프트 대신 모듈화된 코드로 에이전트를 짜고 테스트하는 code-first 접근. 기존 발행글 google-adk-vs-langgraph는 '비교'였고, 이 글은 실제 손으로 빌드하는 how-to로 차별화.",
+      "added_at": "2026-07-05",
+      "status": "queued",
+      "notes": "월요일(how-to) 슬롯. 기존 Mastra/OpenAI Agents/LangGraph 가이드와 벤더 다양성 확보. 차별화 포인트: 단순 소개가 아니라 tool 정의→테스트→실행까지 실측 로그 포함, code-first를 '프롬프트 엔지니어링 대비 유지보수성'이라는 축으로 검증."
     }
   ]
 }

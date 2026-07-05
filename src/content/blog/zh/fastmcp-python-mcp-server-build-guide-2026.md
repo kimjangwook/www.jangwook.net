@@ -174,7 +174,7 @@ INFO  Received INFO from server: {'msg': '正在读取目录: /tmp', 'extra': No
 
 ## 用FastMCP Client测试
 
-不需要实际的Claude Desktop就能测试服务器。FastMCP提供了进程内客户端。在实现智能体工作流模式时，这种方式也能让测试保持自包含。
+不需要实际的Claude Desktop就能测试服务器。FastMCP提供了进程内客户端。在实现智能体工作流模式时，这种方式也能让测试保持自包含。如果要越过这种进程内测试，构建一个从自己应用中直接消费 MCP 服务器的独立客户端，[用 TypeScript SDK 实现 MCP 客户端的方法](/zh/blog/zh/mcp-client-typescript-sdk-guide-2026)会很有参考价值。
 
 ```python
 import asyncio

@@ -1,6 +1,6 @@
 ---
 title: 'JSON-LD를 @graph 하나로 묶기 — 흩어진 구조화 데이터를 검색·AI가 읽는 엔티티 모델로'
-description: '내 페이지의 JSON-LD를 검증기에 넣었더니 세 조각으로 흩어져 있었다. @id 노드 참조로 Organization·WebSite·Article을 하나의 @graph로 잇고, jsonld로 연결성을 실측했다. 3개 컴포넌트가 1개로 합쳐지는 과정과 Google이 보장하지 않는 지점까지.'
+description: '내 페이지의 JSON-LD를 검증기에 넣었더니 세 조각으로 흩어져 있었다. @id 참조로 Organization·WebSite·Article을 하나의 @graph로 잇고 jsonld로 연결성을 실측했다. 3개 컴포넌트가 1개로 합쳐지는 과정과 Google이 보장하지 않는 지점까지.'
 pubDate: '2026-07-05'
 heroImage: '../../../assets/blog/json-ld-graph-entity-linking-2026/hero.png'
 tags:
@@ -186,7 +186,7 @@ function buildGraph({ pageUrl, article }) {
 3. `WebSite.publisher`, `Article.author`, `Article.publisher`, `Person.worksFor` 등을 인라인 객체 대신 <strong>`{"@id": ...}` 참조</strong>로 바꾼다.
 4. `WebPage.isPartOf` → `WebSite`, `BreadcrumbList` → `WebPage.breadcrumb`로 페이지 계층을 잇는다.
 5. 마크업을 [Schema Markup Validator](https://validator.schema.org/)와 Google Rich Results Test에 넣어 유효성을 확인한다.
-6. (선택) `jsonld`로 `flatten` 한 뒤 연결 컴포넌트가 <strong>1개</strong>인지 스크립트로 검증한다. 2개 이상이면 어딘가 참조가 빠진 것이다.
+6. (선택) `jsonld`로 `flatten` 한 뒤 연결 컴포넌트가 <strong>1개</strong>인지 스크립트로 검증한다. 2개 이상이면 어딘가 참조가 빠진 것이다. 다국어 사이트라면 같은 "문서 말고 직접 검증" 태도로 [hreflang 상호참조를 30줄 스크립트로 감사한 방법](/ko/blog/ko/hreflang-reciprocity-audit-multilingual-2026)도 함께 돌려볼 만하다.
 
 여기까지가 "관계를 명시했다"의 실측 가능한 끝이다. 순위 보장은 없다. 하지만 리치 결과 자격을 안정화하고, 사이트의 엔티티 모델을 기계가 오해 없이 읽을 토대는 만들어진다. 나는 구조화 데이터에서 이게 가장 저평가된 작업이라고 본다. 다들 새 스키마 타입을 추가하는 데 집중하는데, 정작 이미 넣은 조각들을 <strong>서로 잇는</strong> 일은 건너뛴다.
 

@@ -175,7 +175,7 @@ INFO  Received INFO from server: {'msg': '디렉터리 읽는 중: /tmp', 'extra
 
 ## FastMCP Client로 테스트하기
 
-실제 Claude Desktop 없이도 서버를 테스트할 수 있다. FastMCP는 in-process 클라이언트를 제공한다. MCP 에이전트 워크플로우 패턴을 구현할 때도 이 방식이 테스트를 단순하게 만들어준다.
+실제 Claude Desktop 없이도 서버를 테스트할 수 있다. FastMCP는 in-process 클라이언트를 제공한다. MCP 에이전트 워크플로우 패턴을 구현할 때도 이 방식이 테스트를 단순하게 만들어준다. 이 in-process 테스트를 넘어 애플리케이션에서 MCP 서버를 직접 소비하는 독립 클라이언트가 필요하면 [MCP 클라이언트를 TypeScript SDK로 구현하는 방법](/ko/blog/ko/mcp-client-typescript-sdk-guide-2026)이 참고가 된다.
 
 ```python
 import asyncio

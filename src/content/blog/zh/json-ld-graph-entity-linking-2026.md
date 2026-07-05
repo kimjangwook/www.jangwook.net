@@ -186,7 +186,7 @@ function buildGraph({ pageUrl, article }) {
 3. 把 `WebSite.publisher`、`Article.author`、`Article.publisher`、`Person.worksFor` 等，从内联对象换成<strong>`{"@id": ...}` 引用</strong>。
 4. 接上页面层级：`WebPage.isPartOf` → `WebSite`，`BreadcrumbList` → `WebPage.breadcrumb`。
 5. 把标记送进 [Schema Markup Validator](https://validator.schema.org/) 和 Google Rich Results Test，确认有效性。
-6. (可选)用 `jsonld` 做 `flatten` 后，用脚本校验连通分量是否为 <strong>1</strong>。若大于等于 2，说明某处漏了引用。
+6. (可选)用 `jsonld` 做 `flatten` 后，用脚本校验连通分量是否为 <strong>1</strong>。若大于等于 2，说明某处漏了引用。多语言站点也值得用同样"不信文档、自己验证"的态度，去跑一遍[用 30 行脚本审计 hreflang 相互引用的方法](/zh/blog/zh/hreflang-reciprocity-audit-multilingual-2026)。
 
 到这里就是「我把关系写明了」的可实测终点。没有排名保证。但你稳住了丰富结果的资格，也为机器无误读地读懂你网站的实体模型打好了底。我认为这是结构化数据里最被低估的活儿。大家都盯着加新的 schema 类型，却跳过了把已经上线的碎片<strong>互相接起来</strong>这件事。
 
