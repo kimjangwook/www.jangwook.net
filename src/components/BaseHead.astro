@@ -229,6 +229,37 @@ const articleSchema = articleData ? {
 	'inLanguage': currentLang || 'en',
 	...(articleData.tags && { 'keywords': articleData.tags.join(', ') }),
 } : null;
+
+// JSON-LD를 단일 @graph로 조립 (json-ld-graph-entity-linking-2026 글의 처방 적용)
+// 전역 엔티티(Organization·Person·WebSite)는 불변 @id, 페이지 엔티티는 @id 참조로 연결.
+const siteOrigin = Astro.site?.toString() ?? 'https://jangwook.net/';
+const ORG_ID = `${siteOrigin}#organization`;
+const AUTHOR_ID = `${siteOrigin}#author`;
+const WEBSITE_ID = `${siteOrigin}#website`;
+
+const graphNodes = [
+	organizationSchema,
+	{ ...personSchema, worksFor: { '@id': ORG_ID } },
+	{ ...websiteSchema, '@id': WEBSITE_ID, publisher: { '@id': ORG_ID } },
+	...(speakableSchema
+		? [{ ...speakableSchema, '@id': canonicalURL.toString(), isPartOf: { '@id': WEBSITE_ID } }]
+		: []),
+	...(articleSchema
+		? [{
+				...articleSchema,
+				'@id': `${canonicalURL}#article`,
+				author: { '@id': AUTHOR_ID },
+				publisher: { '@id': ORG_ID },
+				mainEntityOfPage: { '@id': canonicalURL.toString() },
+			}]
+		: []),
+	...(faqSchema ? [faqSchema] : []),
+].map((node) => {
+	const { '@context': _context, ...rest } = node;
+	return rest;
+});
+
+const schemaGraph = { '@context': 'https://schema.org', '@graph': graphNodes };
 ---
 
 <!-- Theme initialization script (prevent flicker) -->
@@ -340,12 +371,7 @@ const articleSchema = articleData ? {
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
 
 <!-- Schema.org Structured Data (AEO Optimized) -->
-<script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-<script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-<script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-{articleSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
-{faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
-{speakableSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(speakableSchema)} />}
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
 
 <!-- Google Analytics (프로덕션 환경에서만 로드) -->
 {!isLocalhost && (
