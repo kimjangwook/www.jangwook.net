@@ -1,7 +1,27 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-05",
+  "updated_at": "2026-07-06",
   "topics": [
+    {
+      "slug": "multilingual-blog-technical-audit-campaign-2026",
+      "title_idea": "다국어 블로그를 3일간 기술 감사했다 — hreflang 파손, 렌더 블로킹 405KB, 404 내부링크를 실측으로 잡은 기록",
+      "content_type": "how-to",
+      "target_keyword": "블로그 기술 SEO 감사",
+      "secondary_keywords": [
+        "hreflang 검증",
+        "렌더 블로킹 리소스 제거",
+        "JSON-LD @graph",
+        "Lighthouse 접근성 100",
+        "다국어 블로그 SEO"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "이 블로그에서 2026-07-02〜06 실제 수행한 개선 캠페인. 소스 데이터: src/data/improvements/2026-07-*.json (5건, before/after 실측 포함) + improvement-history 페이지. 커밋 이력으로 재현 가능: relatedPosts 3중 방어(404 링크 12→0), 홈 hreflang 상호성(broken pairs 4→0, postbuild 게이트), 번역 드리프트 21→1 슬러그, 성능 4부작(폰트 CSS 405KB→언어별 1〜137KB, 렌더 블로킹 0, a11y 91→100), JSON-LD 7블록→단일 @graph(연결 컴포넌트 1). 각 항목의 검증 스크립트(validate-hreflang.mjs 등)도 저장소에 있어 코드 인용 가능. 앵글: 개별 기법이 아니라 '측정→최대 항목 수정→게이트로 상설화' 루프 자체를 가르치는 글. 기존 hreflang·json-ld·robots 글들과 내부 링크로 클러스터 형성. 주의: 최근 실측 장르 고착 진단이 있었으므로 LLM 실험이 아닌 사이트 운영 실측이라는 소재 다양성을 강조.",
+      "added_at": "2026-07-06",
+      "status": "queued",
+      "notes": "우선 발행 권장 — 소재가 저장소 안에 전부 있어 샌드박스 불필요, Lab Publish 레인 조건 충족. improvement-history 페이지와 상호 링크할 것.",
+      "published_at": null
+    },
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
       "title_idea": "Claude Code 2026년 6월 업데이트 완전 분석 — Hooks 자동화, 서브에이전트 개선, MCP 확장까지",
