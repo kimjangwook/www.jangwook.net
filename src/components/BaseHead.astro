@@ -305,7 +305,11 @@ const articleSchema = articleData ? {
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <!-- Quiet Flow design system: Newsreader, Geist, Geist Mono with CJK fallbacks -->
-<link href={fontsHref} rel="stylesheet" />
+<!-- 폰트 CSS 비동기 로드: display=swap과 폴백 스택이 있어 FOUT 후 교체되는 편이
+     렌더 블로킹(ko 기준 전송 ~137KB)보다 FCP/LCP에 유리하다 -->
+<link rel="preload" href={fontsHref} as="style" />
+<link href={fontsHref} rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href={fontsHref} rel="stylesheet" /></noscript>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
