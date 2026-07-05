@@ -46,6 +46,8 @@
 		--flow: oklch(0.72 0.13 200);
 		--flow-deep: oklch(0.50 0.14 220);
 		--flow-soft: oklch(0.93 0.04 200);
+		/* flow-soft 배경 위 소형 텍스트용 — WCAG AA(4.5:1) 충족 명도 */
+		--flow-ink: oklch(0.42 0.13 220);
 		--ember: oklch(0.62 0.13 45);
 		--ember-soft: oklch(0.94 0.04 60);
 
@@ -82,6 +84,7 @@
 		--flow: oklch(0.76 0.12 200);
 		--flow-deep: oklch(0.84 0.10 200);
 		--flow-soft: oklch(0.30 0.04 220);
+		--flow-ink: oklch(0.84 0.10 200);
 		--accent: #8bd9e7;
 		--accent-dark: #57bed3;
 		--bg-primary: var(--paper);

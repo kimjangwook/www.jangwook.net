@@ -90,6 +90,7 @@ const t = useTranslations(lang);
       id="mobile-menu"
       class="mobile-menu lg:hidden border-t"
       aria-hidden="true"
+      inert
     >
       <div class="flex flex-col gap-2 py-4">
         <HeaderLink href={`/${lang}/`}>{t("nav.home")}</HeaderLink>
@@ -174,6 +175,7 @@ const t = useTranslations(lang);
         mobileMenu.classList.remove("open");
         mobileMenuButton.setAttribute("aria-expanded", "false");
         mobileMenu.setAttribute("aria-hidden", "true");
+        mobileMenu.setAttribute("inert", "");
         menuIconOpen?.classList.remove("hidden");
         menuIconClose?.classList.add("hidden");
       } else {
@@ -181,6 +183,7 @@ const t = useTranslations(lang);
         mobileMenu.classList.add("open");
         mobileMenuButton.setAttribute("aria-expanded", "true");
         mobileMenu.setAttribute("aria-hidden", "false");
+        mobileMenu.removeAttribute("inert");
         menuIconOpen?.classList.add("hidden");
         menuIconClose?.classList.remove("hidden");
       }
@@ -192,6 +195,7 @@ const t = useTranslations(lang);
         mobileMenu.classList.remove("open");
         mobileMenuButton.setAttribute("aria-expanded", "false");
         mobileMenu.setAttribute("aria-hidden", "true");
+        mobileMenu.setAttribute("inert", "");
         menuIconOpen?.classList.remove("hidden");
         menuIconClose?.classList.add("hidden");
       });
@@ -203,6 +207,7 @@ const t = useTranslations(lang);
         mobileMenu.classList.remove("open");
         mobileMenuButton.setAttribute("aria-expanded", "false");
         mobileMenu.setAttribute("aria-hidden", "true");
+        mobileMenu.setAttribute("inert", "");
         menuIconOpen?.classList.remove("hidden");
         menuIconClose?.classList.add("hidden");
         mobileMenuButton.focus();
