@@ -280,6 +280,17 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 ただし、すべてのツールが追加インストールなしにすぐ使えるわけではない。`ddgs`、`wikipedia`、`google-genai`、`yfinance`など各ツールが依存するパッケージを別途インストールする必要がある。
 
+実務でよく使いそうなツールをカテゴリー別に整理してみた。
+
+| カテゴリー | 主なツール | 必要パッケージ |
+|---------|---------|----------|
+| 検索 | bravesearch, duckduckgo, tavily | ddgs, brave SDK |
+| データ | postgres, sql, duckdb, csv_toolkit | 各DBドライバー |
+| コラボレーション | slack, notion, jira, github | 各APIキー |
+| LLM/AI | mem0, mcp, dalle | 各SDK |
+| 金融 | yfinance, financial_datasets | yfinance |
+| コード | python, shell, docker | — |
+
 ## 感じた限界と惜しい点
 
 良いことばかりではなかった。

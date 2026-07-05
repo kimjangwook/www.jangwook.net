@@ -121,6 +121,7 @@ async function loadPosts() {
       const proseOnly = parsed.content.replace(/^(`{3,})[\s\S]*?^\1`*\s*$/gm, '');
       const markdownImages = extractMarkdownImages(proseOnly);
       const h2Count = (proseOnly.match(/^## /gm) || []).length;
+      const tableLineCount = (proseOnly.match(/^\|.*\|$/gm) || []).length;
 
       posts.push({
         lang,
@@ -136,6 +137,7 @@ async function loadPosts() {
         markdownImages,
         h2Count,
         mermaidCount,
+        tableLineCount,
       });
     }
   }
@@ -167,14 +169,16 @@ async function validateImages(posts) {
       }
     }
 
-    if (localImages.length === 0) {
+    // 전략 기준: 본문에 시각적 보조 자료(이미지·mermaid·표)가 하나도 없으면 경고.
+    // 히어로만 있는 글이라도 다이어그램·표가 있으면 품질 기준 충족으로 본다.
+    if (localImages.length === 0 && post.mermaidCount === 0 && post.tableLineCount === 0) {
       singleImagePosts.push(`${post.lang}/${post.slug}`);
     }
   }
 
   if (singleImagePosts.length > 0) {
     warnings.push(
-      `indexable posts with only a hero image: ${singleImagePosts.length}\n${limitList(singleImagePosts)}`
+      `indexable posts with no supporting visuals (image/diagram/table): ${singleImagePosts.length}\n${limitList(singleImagePosts)}`
     );
   }
 }

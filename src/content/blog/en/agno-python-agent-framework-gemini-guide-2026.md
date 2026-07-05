@@ -282,6 +282,17 @@ In practice: give Agno a `BRAVE_API_KEY` and you have a web search agent running
 
 The catch: not all tools are zero-install. Each tool module has its own dependency. `agno.tools.duckduckgo` needs `ddgs`, `agno.tools.wikipedia` needs `wikipedia`, and so on. If you import before installing, you get `ImportError` at the import line for some tools and at first use for others. Inconsistent behavior across modules.
 
+Here are the tools I expect to use most in practice, by category:
+
+| Category | Key tools | Required packages |
+|---------|---------|----------|
+| Search | bravesearch, duckduckgo, tavily | ddgs, brave SDK |
+| Data | postgres, sql, duckdb, csv_toolkit | each DB driver |
+| Collaboration | slack, notion, jira, github | each API key |
+| LLM/AI | mem0, mcp, dalle | each SDK |
+| Finance | yfinance, financial_datasets | yfinance |
+| Code | python, shell, docker | — |
+
 ## What I Think Are the Actual Limitations
 
 The latency is real. 9 seconds for a single Calculator call, 14 for a two-agent team — this is Gemini API round-trip cost compounded by tool calls, not an Agno inefficiency per se. But it matters for production APIs where users expect sub-second responses.

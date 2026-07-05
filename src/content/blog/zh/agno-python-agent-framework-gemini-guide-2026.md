@@ -282,6 +282,17 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 注意：并非所有工具都是零安装即用。每个工具模块都有自己的依赖，需要单独安装。不同模块的报错时机也不一致——有些在 import 时报错，有些在实际调用时才报错。
 
+把实务中常用的工具按类别整理如下：
+
+| 类别 | 主要工具 | 所需包 |
+|---------|---------|----------|
+| 搜索 | bravesearch, duckduckgo, tavily | ddgs, brave SDK |
+| 数据 | postgres, sql, duckdb, csv_toolkit | 各数据库驱动 |
+| 协作 | slack, notion, jira, github | 各 API key |
+| LLM/AI | mem0, mcp, dalle | 各 SDK |
+| 金融 | yfinance, financial_datasets | yfinance |
+| 代码 | python, shell, docker | — |
+
 ## 我认为的实际局限
 
 **延迟是真实存在的。** 单次 Calculator 调用 9 秒，双 Agent 团队 14 秒。这更多是 Gemini API 往返成本的问题，而非 Agno 本身的低效。但对于需要低延迟响应的生产服务，必须纳入考量。
