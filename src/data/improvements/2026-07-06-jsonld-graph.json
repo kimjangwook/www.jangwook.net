@@ -1,0 +1,79 @@
+{
+  "date": "2026-07-06",
+  "completedDate": "2026-07-06",
+  "status": "completed",
+  "title": {
+    "ko": "JSON-LD 단일 @graph 엔티티 모델",
+    "en": "Single @graph JSON-LD Entity Model",
+    "ja": "JSON-LD単一@graphエンティティモデル",
+    "zh": "JSON-LD单一@graph实体模型"
+  },
+  "category": "SEO",
+  "before": {
+    "metric": {
+      "ko": "글 페이지 ld+json 블록",
+      "en": "ld+json blocks per post page",
+      "ja": "記事ページのld+jsonブロック",
+      "zh": "文章页ld+json块"
+    },
+    "value": {
+      "ko": "7개 (조각남)",
+      "en": "7 (fragmented)",
+      "ja": "7個（断片化）",
+      "zh": "7个（碎片化）"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "글 페이지 ld+json 블록",
+      "en": "ld+json blocks per post page",
+      "ja": "記事ページのld+jsonブロック",
+      "zh": "文章页ld+json块"
+    },
+    "value": {
+      "ko": "1개, 6노드 연결",
+      "en": "1, six linked nodes",
+      "ja": "1個・6ノード連結",
+      "zh": "1个，6节点连通"
+    }
+  },
+  "impact": "1 connected component",
+  "impactType": "positive",
+  "effort": {
+    "ko": "낮음",
+    "en": "Low",
+    "ja": "低",
+    "zh": "低"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高",
+    "zh": "高"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/json-ld-graph-entity-linking-2026",
+  "description": {
+    "ko": "분리돼 있던 스키마 블록을 @id 상호 참조 기반의 단일 @graph로 통합 (Organization·Person·WebSite·WebPage·BreadcrumbList·BlogPosting), 연결성은 그래프 알고리즘으로 검증",
+    "en": "Merged separate schema blocks into one @graph with @id cross-references (Organization, Person, WebSite, WebPage, BreadcrumbList, BlogPosting), connectivity verified algorithmically",
+    "ja": "分離していたスキーマブロックを@id相互参照ベースの単一@graphに統合（Organization・Person・WebSite・WebPage・BreadcrumbList・BlogPosting）、連結性はグラフアルゴリズムで検証",
+    "zh": "把分散的schema块合并为基于@id互相引用的单一@graph（Organization、Person、WebSite、WebPage、BreadcrumbList、BlogPosting），连通性用图算法验证"
+  },
+  "lessons": {
+    "ko": [
+      "전역 엔티티는 값이 아니라 @id 참조로 재사용",
+      "스키마 조립 책임을 BaseHead 한 곳으로 모아 @id 규칙 어긋남을 구조적으로 차단"
+    ],
+    "en": [
+      "Reuse global entities by @id reference, not by value",
+      "Owning graph assembly in one component makes @id mismatches structurally impossible"
+    ],
+    "ja": [
+      "グローバルエンティティは値でなく@id参照で再利用",
+      "グラフ組み立てをBaseHeadに集約し@id不一致を構造的に防止"
+    ],
+    "zh": [
+      "全局实体按@id引用而非按值复用",
+      "把图的组装集中到BaseHead，从结构上杜绝@id错位"
+    ]
+  }
+}

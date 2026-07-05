@@ -1,0 +1,79 @@
+{
+  "date": "2026-07-04",
+  "completedDate": "2026-07-04",
+  "status": "completed",
+  "title": {
+    "ko": "hreflang 상호성 복원 + AI 크롤러 차등 제어",
+    "en": "hreflang Reciprocity + AI Crawler Policy",
+    "ja": "hreflang相互性の回復 + AIクローラー制御",
+    "zh": "hreflang相互性修复 + AI爬虫分级控制"
+  },
+  "category": "SEO",
+  "before": {
+    "metric": {
+      "ko": "홈 클러스터 hreflang",
+      "en": "Home cluster hreflang",
+      "ja": "ホームクラスターhreflang",
+      "zh": "首页集群hreflang"
+    },
+    "value": {
+      "ko": "broken pairs 4, self-ref 누락",
+      "en": "4 broken pairs, no self-ref",
+      "ja": "broken pairs 4・self-ref欠落",
+      "zh": "4个断链、缺自引用"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "전 사이트 253페이지",
+      "en": "All 253 pages",
+      "ja": "全サイト253ページ",
+      "zh": "全站253页"
+    },
+    "value": {
+      "ko": "파손 0 + postbuild 게이트",
+      "en": "0 broken + postbuild gate",
+      "ja": "破損0 + postbuildゲート",
+      "zh": "0损坏 + postbuild门禁"
+    }
+  },
+  "impact": "SEO 100",
+  "impactType": "positive",
+  "effort": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中",
+    "zh": "中"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高",
+    "zh": "高"
+  },
+  "sourceReport": "/{lang}/blog/${lang}/hreflang-reciprocity-audit-multilingual-2026",
+  "description": {
+    "ko": "x-default를 중립 루트로 교체해 홈 클러스터 상호성 복원, robots.txt에 학습 차단·인용 허용 봇 정책 적용, hreflang 검증을 postbuild 게이트로 상설화",
+    "en": "Restored home-cluster reciprocity by pointing x-default at the neutral root, applied block-training/allow-citation bot policy in robots.txt, made hreflang validation a permanent postbuild gate",
+    "ja": "x-defaultを中立ルートに変更してホームクラスターの相互性を回復、robots.txtに学習拒否・引用許可のボットポリシーを適用、hreflang検証をpostbuildゲートとして常設化",
+    "zh": "把x-default改为中立根以修复首页集群相互性，在robots.txt应用拒绝训练、放行引用的爬虫策略，并将hreflang校验常设为postbuild门禁"
+  },
+  "lessons": {
+    "ko": [
+      "블로그 글이 처방한 수정을 사이트에 적용하고 결과를 글에 회귀 기록하는 폐루프 운영",
+      "robots.txt는 Disallow를 Allow 앞에 둬야 파서 계열 간 동작이 일치"
+    ],
+    "en": [
+      "Closed loop: apply what a post prescribes, then write the results back into the post",
+      "Put Disallow before Allow in robots.txt so first-match and longest-match parsers agree"
+    ],
+    "ja": [
+      "記事の処方をサイトに適用し結果を記事へ還元する閉ループ運用",
+      "robots.txtはDisallowをAllowの前に置くとパーサー系統間で動作が一致"
+    ],
+    "zh": [
+      "闭环运营：把文章的处方应用到网站，再把结果写回文章",
+      "robots.txt中Disallow放在Allow之前可保证不同解析器行为一致"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "date": "2026-07-05",
+  "completedDate": "2026-07-05",
+  "status": "completed",
+  "title": {
+    "ko": "성능 4부작: 크리티컬 패스 정리",
+    "en": "Performance Quartet: Critical Path Cleanup",
+    "ja": "パフォーマンス4部作：クリティカルパス整理",
+    "zh": "性能四部曲：关键路径清理"
+  },
+  "category": "Performance",
+  "before": {
+    "metric": {
+      "ko": "렌더 블로킹 리소스",
+      "en": "Render-blocking resources",
+      "ja": "レンダーブロッキングリソース",
+      "zh": "渲染阻塞资源"
+    },
+    "value": {
+      "ko": "폰트 CSS 405KB 외",
+      "en": "Font CSS 405KB+",
+      "ja": "フォントCSS 405KBほか",
+      "zh": "字体CSS 405KB等"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "렌더 블로킹 리소스",
+      "en": "Render-blocking resources",
+      "ja": "レンダーブロッキングリソース",
+      "zh": "渲染阻塞资源"
+    },
+    "value": {
+      "ko": "0개",
+      "en": "0",
+      "ja": "0個",
+      "zh": "0个"
+    }
+  },
+  "impact": "Observed LCP 2.4s",
+  "impactType": "positive",
+  "effort": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中",
+    "zh": "中"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高",
+    "zh": "高"
+  },
+  "description": {
+    "ko": "목록 LCP 이미지 eager 승격, 미사용 폰트 preload 제거, Google Fonts 언어별 서브셋(405KB→1〜137KB), 폰트 CSS 비동기화로 렌더 블로킹 0 달성. 접근성도 91→100",
+    "en": "Eager-loaded list LCP images, removed unused font preloads, per-language Google Fonts subsets (405KB→1–137KB), async font CSS for zero render-blocking. Accessibility 91→100",
+    "ja": "リストLCP画像のeager化、未使用フォントpreload削除、Google Fontsの言語別サブセット（405KB→1〜137KB）、フォントCSS非同期化でレンダーブロッキング0を達成。アクセシビリティも91→100",
+    "zh": "列表LCP图片eager加载、移除未使用字体preload、Google Fonts按语言子集（405KB→1〜137KB）、字体CSS异步化实现零渲染阻塞。无障碍分数91→100"
+  },
+  "lessons": {
+    "ko": [
+      "최적화의 첫 질문은 '더 빠르게'가 아니라 '로드할 필요가 있나'",
+      "랩 시뮬레이션과 실관측(2.4s)의 괴리를 알아야 과최적화를 피함"
+    ],
+    "en": [
+      "The first optimization question is 'do we need to load this at all'",
+      "Knowing the lab-vs-field gap (observed 2.4s) prevents over-optimization"
+    ],
+    "ja": [
+      "最適化の最初の問いは『速く』ではなく『そもそも読み込む必要があるか』",
+      "ラボと実測(2.4s)の乖離を知ることが過剰最適化を防ぐ"
+    ],
+    "zh": [
+      "优化的第一问不是'如何更快'而是'是否需要加载'",
+      "了解实验室与实测(2.4s)的差距可避免过度优化"
+    ]
+  }
+}

@@ -28,7 +28,8 @@ credentials
 _sandbox/
 
 # automation data (operational data, API responses, strategy reports)
-data/
+# 루트 data/만 무시 — src/data(사이트 콘텐츠 데이터)는 추적 대상
+/data/
 # 단, 주간 잡이 매주 커밋하는 운영 산출물은 추적 유지(인덱스에서 빠져도 재추가되도록 예외).
 !data/strategy-report.md
 !data/topic-backlog.json
