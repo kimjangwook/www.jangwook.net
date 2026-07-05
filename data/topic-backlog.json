@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-03",
+  "updated_at": "2026-07-05",
   "topics": [
     {
       "slug": "claude-code-june-2026-new-features-changelog-developer-guide",
@@ -4460,6 +4460,132 @@
       "added_at": "2026-07-03",
       "status": "queued",
       "notes": "Prisma 7가 Rust 엔진 버리고 TS/WASM 쿼리 컴파일러로 재작성(번들 85~90%↓, 대형 결과셋 3.4배↑)이 핵심 뉴스 포인트. 벤치: raw 100K→Kysely 92K→Drizzle 88K→Prisma 71K req/s. 엣지 런타임 호환성·번들 크기 비교. 기존 drizzle-orm-typescript-complete-guide와 내부링크 강함."
+    },
+    {
+      "slug": "local-llm-measurement-series-2-quantization-quality-drift",
+      "title_idea": "로컬 LLM 실측 시리즈 #2 — 양자화 단계별 품질 드리프트를 같은 프롬프트 100개로 재기",
+      "content_type": "series",
+      "target_keyword": "로컬 LLM 양자화 품질 실측",
+      "secondary_keywords": [
+        "Q4 Q8 품질 비교",
+        "GGUF 양자화 실측",
+        "로컬 LLM 벤치마크"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "지난 5주간 로컬 LLM 실측 글이 사실상 라벨 없는 시리즈를 형성. 정식 시리즈로 승격해 시리즈 라벨 0% 문제를 해소하면서 검증된 강점 프랜차이즈를 이어간다.",
+      "added_at": "2026-07-05",
+      "status": "queued",
+      "notes": "시리즈 라벨 보충(현재 8개로 최약). 기존 로컬 LLM 실측 글과 강한 내부링크 시너지.",
+      "published_at": null
+    },
+    {
+      "slug": "seo-measurement-series-1-structured-data-crawl-reality",
+      "title_idea": "SEO 실측 시리즈 #1 — 구조화 데이터가 실제 크롤·색인에 반영되기까지 로그로 추적하기",
+      "content_type": "series",
+      "target_keyword": "구조화 데이터 색인 실측",
+      "secondary_keywords": [
+        "JSON-LD 크롤 검증",
+        "Googlebot 렌더링 로그",
+        "SEO 실측"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "이번 주 SEO 글 5편이 라벨 없는 SEO 실측 클러스터를 형성. 정식 시리즈화로 첫 화면 카드 동형화 완화 + 시리즈 비율 채움.",
+      "added_at": "2026-07-05",
+      "status": "queued",
+      "notes": "SEO 실측 글을 시리즈로 묶어 상호 인용 강화. CTA 회전 실험 대상.",
+      "published_at": null
+    },
+    {
+      "slug": "local-embedding-models-korean-rag-recall-benchmark-2026",
+      "title_idea": "한국어 RAG 임베딩 3종 recall 실측 — 내 블로그 296편으로 직접 측정한 검색 정확도",
+      "content_type": "comparison",
+      "target_keyword": "한국어 임베딩 모델 비교",
+      "secondary_keywords": [
+        "한국어 RAG recall",
+        "임베딩 모델 실측",
+        "multilingual-e5 bge-m3"
+      ],
+      "search_intent": "commercial",
+      "priority": 1,
+      "source": "비교 라벨 3주+ 연속 0%. 실측 강점을 비교 장르에 적용 — 실제 296편 코퍼스로 recall 측정.",
+      "added_at": "2026-07-05",
+      "status": "queued",
+      "notes": "비교 카테고리 보충. 실측 기반이라 일반 비교글과 차별화.",
+      "published_at": null
+    },
+    {
+      "slug": "ollama-vs-llamacpp-vs-lmstudio-same-model-throughput-2026",
+      "title_idea": "Ollama vs llama.cpp vs LM Studio — 같은 모델·같은 하드웨어 토큰/초 직접 비교",
+      "content_type": "comparison",
+      "target_keyword": "로컬 LLM 런타임 비교",
+      "secondary_keywords": [
+        "Ollama llama.cpp 속도",
+        "LM Studio 벤치마크",
+        "로컬 LLM 처리량 실측"
+      ],
+      "search_intent": "commercial",
+      "priority": 2,
+      "source": "비교 장르 보충 + 로컬 LLM 실측 프랜차이즈 연장. 동일 조건 실측으로 추측성 비교글과 차별화.",
+      "added_at": "2026-07-05",
+      "status": "queued",
+      "notes": "비교 카테고리. 로컬 LLM 실측 시리즈와 자연스러운 내부링크.",
+      "published_at": null
+    },
+    {
+      "slug": "core-web-vitals-real-field-data-vs-lab-lighthouse-gap-2026",
+      "title_idea": "Lighthouse 점수와 실제 필드 데이터(CrUX)가 왜 다른가 — 내 블로그 실측으로 격차 추적",
+      "content_type": "how-to",
+      "target_keyword": "Core Web Vitals 필드 데이터 실측",
+      "secondary_keywords": [
+        "CrUX Lighthouse 차이",
+        "필드 데이터 vs 랩 데이터",
+        "Core Web Vitals 개선"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "이번 주 a11y·성능 글 후속. 랩 점수와 실제 필드 데이터 괴리를 실측으로 다루는 How-to.",
+      "added_at": "2026-07-05",
+      "status": "queued",
+      "notes": "How-to지만 성능/SEO 실측 축. a11y-lighthouse 글과 직접 연결.",
+      "published_at": null
+    },
+    {
+      "slug": "ai-search-citation-tracking-llms-txt-referrer-analysis-2026",
+      "title_idea": "AI 검색이 내 글을 정말 인용하나 — llms.txt 도입 후 AI 크롤러 리퍼러를 로그로 추적하기",
+      "content_type": "news",
+      "target_keyword": "AI 검색 인용 추적",
+      "secondary_keywords": [
+        "llms.txt 효과 측정",
+        "AI 크롤러 리퍼러",
+        "ChatGPT 인용 트래픽"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "이번 주 ai-crawler-control 글의 시의성 후속. 크롤러 허용 정책 실제 효과를 로그로 검증하는 뉴스+실측 하이브리드.",
+      "added_at": "2026-07-05",
+      "status": "queued",
+      "notes": "뉴스 라벨 보충(0% 해소). robots.txt 글과 직접 후속.",
+      "published_at": null
+    },
+    {
+      "slug": "hashnode-crossposting-api-debug-fix-2026",
+      "title_idea": "Hashnode 크로스포스팅이 조용히 실패하는 이유 — GraphQL API 응답을 로그로 파고들기",
+      "content_type": "how-to",
+      "target_keyword": "Hashnode API 크로스포스팅",
+      "secondary_keywords": [
+        "Hashnode GraphQL 오류",
+        "크로스포스팅 자동화 디버깅",
+        "dev.to Hashnode 비교"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "운영 이슈를 콘텐츠로 전환: Hashnode 0/24 실패 디버깅 과정을 실측 How-to로 기록.",
+      "added_at": "2026-07-05",
+      "status": "queued",
+      "notes": "자체 운영 문제 해결이 곧 콘텐츠. dev.to 정상(23/24)이라 대조군.",
+      "published_at": null
     }
   ]
 }
