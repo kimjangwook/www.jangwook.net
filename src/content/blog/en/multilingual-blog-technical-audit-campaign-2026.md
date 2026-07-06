@@ -60,6 +60,19 @@ So I ran the audit as a three-step loop. Measure. Fix the biggest item first. Th
 
 This isn't a new invention. It's the same logic by which tests prevent bug regressions, applied to the content and markup layer. It's just oddly rare in SEO, where most teams leave "SEO checks" as a quarterly manual task.
 
+The loop this post is about, in one picture:
+
+```mermaid
+graph TD
+    A["Measure everything<br/>pin the baseline in numbers"] --> B["Fix the biggest item first"]
+    B --> C["Re-measure to confirm"]
+    C --> D["Turn the checker into a gate<br/>prebuild·postbuild"]
+    D --> E["Hold warnings at zero"]
+    E -->|"new violation"| A
+
+    style D fill:#0066CC,color:#fff
+```
+
 ## The five items I actually ran over five days
 
 Measurement first. Each item got a before/after in numbers, not a vibe that "things feel better" but reproducible figures. (The raw log of all five lives on the [improvement history page](/en/improvement-history) too.)
