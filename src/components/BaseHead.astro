@@ -281,7 +281,7 @@ const graphNodes = [
 		: []),
 	...(faqSchema ? [faqSchema] : []),
 ].map((node) => {
-	const { '@context': _context, ...rest } = node;
+	const { '@context': _context, ...rest } = node as Record<string, unknown>;
 	return rest;
 });
 
