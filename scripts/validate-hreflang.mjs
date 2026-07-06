@@ -41,13 +41,44 @@ function extractHreflangs(html) {
   return tags;
 }
 
+// 의도적으로 내부 링크 없이 운영하는 페이지 (직접 유입·외부 참조 전용)
+const ORPHAN_ALLOWLIST = [
+  /^https:\/\/jangwook\.net\/$/,            // 언어 선택 랜딩 (hreflang x-default 타깃)
+  /^https:\/\/jangwook\.net\/deepdiner\//, // 앱 스토어용 독립 문서 (noindex)
+];
+
+function checkOrphans(files, htmlByFile) {
+  const pages = new Map(files.map((f) => [pageUrl(f), f]));
+  const inbound = new Map();
+  for (const [url, file] of pages) {
+    const html = htmlByFile.get(file);
+    for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
+      let target = match[1];
+      if (!target.endsWith('/')) target += '/';
+      const abs = `${SITE}${target}`;
+      if (pages.has(abs) && abs !== url) inbound.set(abs, (inbound.get(abs) ?? 0) + 1);
+    }
+  }
+  const orphans = [...pages.keys()].filter(
+    (url) => !inbound.has(url) && !ORPHAN_ALLOWLIST.some((re) => re.test(url))
+  );
+  console.log(`[orphan-check] pages: ${pages.size}, orphans (allowlist 제외): ${orphans.length}`);
+  if (orphans.length > 0) {
+    console.warn('Warning: 내부 링크가 0개인 페이지 (사이트맵 외 도달 불가):');
+    for (const url of orphans.slice(0, 10)) console.warn(`- ${url}`);
+  }
+  return orphans;
+}
+
 async function main() {
   const files = await collectHtmlFiles(distRoot);
   const annotations = new Map(); // url -> Set of hrefs it points to
 
   const relativeHrefs = [];
+  const htmlByFile = new Map();
   for (const file of files) {
     const html = await fs.readFile(file, 'utf8');
+    htmlByFile.set(file, html);
     const tags = extractHreflangs(html);
     if (tags.length === 0) continue;
     const url = pageUrl(file);
@@ -86,6 +117,8 @@ async function main() {
     if (failures.length > 20) console.error(`...and ${failures.length - 20} more`);
     process.exit(1);
   }
+
+  checkOrphans(files, htmlByFile);
 
   console.log('[hreflang-check] OK');
 }
