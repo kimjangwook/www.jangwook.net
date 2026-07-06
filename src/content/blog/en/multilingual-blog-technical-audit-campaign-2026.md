@@ -1,6 +1,6 @@
 ---
-title: 'I Ran a Technical SEO Audit for Five Days: the Gates Mattered More Than the Five Fixes'
-description: 'A five-day audit of my four-language blog. relatedPosts 404s: 12. Broken hreflang pairs: 4. Render-blocking font CSS: 405KB. Translation drift: 21 slugs. Fragmented JSON-LD: 7 blocks. All fixed. But the real result was the build gates that keep them from coming back, with real run logs and the checker code.'
+title: 'A Five-Day Technical SEO Audit: Gates Mattered More Than Fixes'
+description: 'A five-day audit of my four-language blog: 12 broken links, 4 hreflang pairs, 405KB blocking CSS, 21 drifted translations — all fixed, then locked in with build gates. Run logs and checker code included.'
 pubDate: '2026-07-06'
 heroImage: '../../../assets/blog/multilingual-blog-technical-audit-campaign-2026/hero.png'
 tags:

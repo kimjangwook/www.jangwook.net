@@ -1,6 +1,6 @@
 ---
-title: 'hreflang Has to Be Bidirectional — Auditing My Own 4-Language Blog Turned Up a Homepage Bug'
-description: 'I pointed a 30-line checker at my own build output. All 248 blog posts passed their hreflang clusters; the homepage failed. Here are Google''s official reciprocity rules, the real run logs, a comparison of the three implementation methods, and the exact fix a developer can apply.'
+title: 'hreflang Must Be Bidirectional — My 4-Language Blog Audit'
+description: 'I pointed a 30-line checker at my own build output: all 248 posts passed their hreflang clusters, the homepage failed. Google''s reciprocity rules, real run logs, and the exact fix.'
 pubDate: '2026-07-04'
 heroImage: '../../../assets/blog/hreflang-reciprocity-audit-multilingual-2026/hero.png'
 tags:

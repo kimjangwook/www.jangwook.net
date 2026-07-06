@@ -249,6 +249,27 @@ function validateRelatedPosts(posts) {
   }
 }
 
+function validateTitleLengths(posts) {
+  // SERP 절단 방지: seo-guidelines.md의 언어별 권장 상한 + 현실 코퍼스 여유분.
+  // 기준 초과는 경고 — 신규 자동발행 글의 이탈을 빌드 로그에서 즉시 노출한다.
+  const TITLE_MAX = { ko: 65, en: 70, ja: 66, zh: 65 };
+  const DESC_MAX = 220;
+  const offenders = [];
+  for (const post of posts.filter((item) => item.indexable)) {
+    const title = String(post.data.title ?? '');
+    const desc = String(post.data.description ?? '');
+    if (title.length > (TITLE_MAX[post.lang] ?? 70)) {
+      offenders.push(`${post.lang}/${post.slug}: title ${title.length}자`);
+    }
+    if (desc.length > DESC_MAX) {
+      offenders.push(`${post.lang}/${post.slug}: description ${desc.length}자`);
+    }
+  }
+  if (offenders.length > 0) {
+    warnings.push(`title/description over length: ${offenders.length}\n${limitList(offenders)}`);
+  }
+}
+
 function validateTranslationParity(posts) {
   const bySlug = new Map();
   for (const post of posts.filter((item) => item.indexable)) {
@@ -320,6 +341,7 @@ async function main() {
 
   await validateImages(posts);
   validateRelatedPosts(posts);
+  validateTitleLengths(posts);
   validateTranslationParity(posts);
   await validateCrawlerSurfaces();
 
