@@ -335,7 +335,25 @@ async function validateCrawlerSurfaces() {
   }
 }
 
+async function validateTestFlag() {
+  // TEST_FLG=true는 dev 서버의 미래글 미리보기 전용.
+  // 프로덕션 빌드에 섞이면 draft 전체(~1,000페이지)가 라이브로 새는 사고가 되므로
+  // (2026-06-14 실제 발생 이력) 빌드 자체를 차단한다.
+  const envFlag = process.env.TEST_FLG;
+  let fileFlag;
+  try {
+    const envFile = await fs.readFile(path.join(repoRoot, '.env'), 'utf8');
+    fileFlag = envFile.match(/^TEST_FLG=(.*)$/m)?.[1]?.trim();
+  } catch {
+    fileFlag = undefined; // .env 없음(CI 등)은 정상
+  }
+  if (envFlag === 'true' || fileFlag === 'true') {
+    errors.push('TEST_FLG=true 상태로 빌드 시도 — draft·미래글이 전부 노출됩니다. 미리보기는 `TEST_FLG=true npm run dev`를 사용하세요.');
+  }
+}
+
 async function main() {
+  await validateTestFlag();
   const posts = await loadPosts();
   const counts = validateLanguageParity(posts);
 
