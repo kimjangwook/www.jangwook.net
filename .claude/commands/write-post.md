@@ -225,7 +225,7 @@ The content generation follows a **two-stage process**:
   tags: [tag1, tag2, ...]
   ---
   ```
-- This becomes the **source of truth** for all translations
+- 한국어판은 4개 판 중 하나일 뿐, 다른 언어의 원본이 아니다 — 모든 판의 공통 원천은 **Stage 0 FACT CORE**다
 - Apply Korean technical writing style (존댓말, mix of Korean/English terms)
 - Include all code examples with Korean comments
 - **글쓰기 톤 가이드 (필수 준수)** — 아래 규칙을 반드시 따른다:
@@ -426,28 +426,26 @@ The content generation follows a **two-stage process**:
 - FAIL 항목 발견 시: 해당 부분만 수정 후 재검증 (2회차)
 - 10회차까지 PASS 안 되면: FAIL 항목을 사용자에게 리포트하고 수동 검토 요청
 
-**Stage 2: Natural Translation to Other Languages**
+**Stage 2: Independent Authoring per Language (from FACT CORE — 번역 금지)**
 
-Based on the completed Korean post:
+각 언어 에이전트에게 주는 집필 브리프:
 
-- **Japanese (ja)**: Naturally translate to Japanese
-  - Use です/ます体 (polite form)
-  - Convert to katakana for technical terms
-  - Maintain code structure, translate comments
+- **Japanese (ja)**: 日本のWeb業界の実務者向けに最初から執筆
+  - 시장 용어: MEO・構造化データ・GBP운용 등 일본 관행 용어 사용
+  - 논지 전개: 배경/맥락 → 검증 → 결론의 일본형 전개도 허용 — 자연스러운 쪽으로
+  - 文体: ですます体 또는 だ体 중 택일해 기사 내 통일, 文末単調 회피(体言止め・問いかけ 활용)
+  - 기술 용어는 일본 커뮤니티 관행(카타카나/영어 병기)
 
-- **English (en)**: Naturally translate to English
-  - Use American English spelling
-  - Standard technical documentation style
-  - Professional but accessible tone
+- **English (en)**: Write for a global/US developer audience from scratch
+  - BLUF: lead with the conclusion/finding, then evidence
+  - Market terms: "Local SEO" (not MEO), schema.org ecosystem framing
+  - Idiomatic, contractions, active voice; American spelling
 
-- **Chinese (zh)**: Naturally translate to Chinese
-  - Use simplified Chinese (简体中文)
-  - Mix Chinese and English technical terms appropriately
-  - Professional technical writing style
+- **Chinese (zh)**: 为中文开发者读者从头撰写
+  - 地道한 简体中文 (翻译腔 금지), 现地 용어(本地SEO 등)
+  - 중국어 기술 커뮤니티 관행대로 중·영 용어 혼용
 
-- Preserve all code examples and formatting
-- Maintain technical term consistency across languages
-- Keep Mermaid diagrams but translate labels
+- 공통: 코드 예제는 FACT CORE 원본 유지(주석만 해당 언어), Mermaid 라벨은 해당 언어, 사실·수치·인용은 FACT CORE 밖으로 나가지 않는다
 
 #### Phase 5: File Operations
 
@@ -846,50 +844,52 @@ Requirements:
    - Reference in-content images in markdown: `![descriptive alt text](../../../assets/blog/[slug]-[name].[ext])`
    - **Minimum**: Every post must have hero image + at least 1 in-content image
 
-4. Write complete blog post using **KOREAN-FIRST APPROACH**:
+4. Write the blog post using the **FACT-CORE TRANSCREATION APPROACH** (2026-07-07 — 번역 구조 폐지):
 
-   **CRITICAL - Two-Stage Process**:
+   > 배경: "한국어 원문 → 3언어 번역" 구조는 문장을 아무리 다듬어도 4언어가 구조적으로 동형(같은 문단 순서·논지·예시)이라 번역투와 시장 부적합(예: ja의 MEO ↔ en의 Local SEO)을 벗어날 수 없었다. 이제 각 언어는 **번역이 아니라, 공유 사실 코어에서 독립적으로 집필**한다.
 
-   The Korean-First approach ensures consistency and natural translation:
+   **Stage 0: FACT CORE 작성 (모든 판의 유일한 사실 원천)**
 
-   **Stage 1: Write Korean Post First**
+   리서치·샌드박스 검증을 마친 뒤, 4개 판이 공유할 사실 코어를 하나의 텍스트 블록으로 정리한다:
+   - 주제와 핵심 주장(무엇을 검증했고 무엇을 말하려는가)
+   - 실측 증거: 로그·수치·표 데이터(그대로 인용할 원본)
+   - 공식 출처 인용문(원문 그대로) + URL
+   - 코드/스키마 스니펫
+   - 정직한 한계(공식이 보장하지 않는 것 등)
+   - slug, pubDate, heroImage 경로, relatedPosts 대상 slug 목록
 
-   - Write the complete Korean blog post
-   - This is the **source of truth** for all translations
-   - Include full content, code examples, Mermaid diagrams
-   - Save to `/src/content/blog/ko/[slug].md`
-   - Verify the Korean post is complete before proceeding
+   **사실 규율**: 모든 판의 사실적 주장·수치·인용은 이 FACT CORE에서만 나온다. 어떤 언어판도 새로운 사실·측정치·지역 사례를 지어내지 않는다(지역 맥락은 일반 상식 수준까지만).
 
-   **Stage 2: Natural Translation to Other Languages (IN PARALLEL)**
+   **Stage 1: 한국어판 집필** — FACT CORE 기반으로 한국어 독자를 위해 처음부터 집필(아래 톤 가이드·QA 적용). `/src/content/blog/ko/[slug].md` 저장.
 
-   After Korean post is complete:
-   - Create 3 separate agents for translation (ja, en, zh)
-   - Delegate to **ALL 3 agents** in a single message with 3 Task tool calls
-   - Each agent receives the completed Korean post as source
-   - Each agent naturally translates to their target language
+   **Stage 2: ja/en/zh 독립 집필 (IN PARALLEL — 번역 아님)**
+
+   - 3개 에이전트를 한 메시지에서 병렬 spawn (Task ×3)
+   - **각 에이전트는 한국어판을 받지 않는다.** FACT CORE + 그 언어의 집필 브리프만 받는다
+   - 각 에이전트는 그 언어권 독자를 위해 도입·논지 전개 순서·예시·용어·소제목을 **자유롭게 재구성**해 처음부터 쓴다
 
    **Agent Delegation Pattern**:
 ```
 
 Stage 1 (Sequential):
-- Task: Korean writing agent (ko) - FIRST, write complete post
+- Task: Korean author agent (ko) — write from FACT CORE
 
 Stage 2 (Parallel, after Stage 1 completes):
-- Task 1: Japanese translation agent (ja) - translate from Korean
-- Task 2: English translation agent (en) - translate from Korean
-- Task 3: Chinese translation agent (zh) - translate from Korean
+- Task 1: Japanese author agent (ja) — write independently from FACT CORE
+- Task 2: English author agent (en) — write independently from FACT CORE
+- Task 3: Chinese author agent (zh) — write independently from FACT CORE
 
 ````
 
-**Each translation agent must**:
-- Receive the complete Korean post as input
-- Naturally translate content (NOT machine-translate)
+**Each language author agent must**:
+- Receive the FACT CORE + language brief as input (NOT the Korean post)
+- Write natively from scratch for that market's readers — reorder the argument, choose local terminology and intro style freely
+- Never add facts/numbers/claims beyond the FACT CORE; never fabricate regional specifics
 - Follow Astro Content Collections schema
-- Include frontmatter (title, description, pubDate, heroImage, tags)
-- **Use the same pubDate as Korean version**
-- Preserve code examples (translate comments only)
-- Translate Mermaid diagram labels
-- Apply language-specific SEO optimization
+- Include frontmatter (title/description localized freely; same slug, same pubDate, same heroImage, same relatedPosts slugs)
+- Preserve code examples from the FACT CORE (comments in target language)
+- Apply language-specific SEO (localized title/description keywords — e.g., ja「MEO」 ↔ en "Local SEO")
+- Run the 언어별 네이티브 편집자 패스 (SKILL 참조) as the final polish
 - Save to correct language folder upon completion
 
 5. Save files to **ALL 4 language-specific folders**:
