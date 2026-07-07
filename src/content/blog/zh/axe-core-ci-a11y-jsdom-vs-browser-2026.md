@@ -187,6 +187,20 @@ writeFileSync('a11y-deferred.json', JSON.stringify(deferred));
 
 这个思路本身并不新。我在[把 SEO 审计常设成构建门禁的那场行动](/zh/blog/zh/multilingual-blog-technical-audit-campaign-2026)里用的是同一个原理：别把一次修好的东西交给人的自律，而是钉在流水线里。可访问性完全一样。审计应该是循环，不是一次性事件。
 
+把两层结构画成一张图：
+
+```mermaid
+graph TD
+    A["每次提交·PR"] --> B["第1层: jsdom + axe-core<br/>只查结构规则，毫秒级"]
+    B -->|"violations > 0"| C["构建失败"]
+    B -->|"通过"| D["把 incomplete 规则清单<br/>写入 a11y-deferred.json"]
+    D --> E["第2层: 真实浏览器<br/>全部规则 + color-contrast"]
+    E -->|"合并前·夜间"| F["与 deferred 清单对照<br/>让覆盖缺口显式化"]
+
+    style C fill:#C1121F,color:#fff
+    style E fill:#0066CC,color:#fff
+```
+
 ## 工具亮绿之后仍然剩下的
 
 说实话，把上面两层都过了，也不能保证这个页面就无障碍了。这不是 axe-core 的局限，而是自动检查整体的局限。

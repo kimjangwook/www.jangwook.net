@@ -187,6 +187,20 @@ writeFileSync('a11y-deferred.json', JSON.stringify(deferred));
 
 이 발상 자체는 새롭지 않다. 나는 [SEO 감사를 빌드 게이트로 상설화한 캠페인](/ko/blog/ko/multilingual-blog-technical-audit-campaign-2026)에서 같은 원리를 썼다. 한 번 고친 걸 사람의 규율에 맡기지 않고 파이프라인에 고정하는 것. 접근성도 정확히 같다. 감사는 이벤트가 아니라 루프여야 한다.
 
+2단 구조를 그림으로 정리하면 이렇다.
+
+```mermaid
+graph TD
+    A["모든 커밋·PR"] --> B["1단: jsdom + axe-core<br/>구조 규칙만, 밀리초"]
+    B -->|"violations > 0"| C["빌드 실패"]
+    B -->|"통과"| D["incomplete 규칙 목록을<br/>a11y-deferred.json으로 기록"]
+    D --> E["2단: 실제 브라우저<br/>전 규칙 + color-contrast"]
+    E -->|"머지 전·야간"| F["deferred 목록과 대조<br/>커버리지 구멍 명시화"]
+
+    style C fill:#C1121F,color:#fff
+    style E fill:#0066CC,color:#fff
+```
+
 ## 자동 도구가 초록불을 줘도 남는 것들
 
 솔직히 말하면, 위 2단을 다 통과해도 그 페이지가 접근성을 지켰다는 보장은 없다. 이건 axe-core의 한계가 아니라 자동 검사 전체의 한계다.

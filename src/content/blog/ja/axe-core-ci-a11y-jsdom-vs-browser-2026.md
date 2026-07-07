@@ -187,6 +187,20 @@ writeFileSync('a11y-deferred.json', JSON.stringify(deferred));
 
 発想自体は新しくない。私は[SEO監査をビルドゲートとして常設化したキャンペーン](/ja/blog/ja/multilingual-blog-technical-audit-campaign-2026)で同じ原理を使った。一度直したものを人の規律に任せず、パイプラインに固定する。アクセシビリティもまったく同じだ。監査はイベントではなくループであるべきだ。
 
+2段構造を図に整理するとこうなる。
+
+```mermaid
+graph TD
+    A["すべてのコミット·PR"] --> B["1段: jsdom + axe-core<br/>構造ルールのみ、ミリ秒"]
+    B -->|"violations > 0"| C["ビルド失敗"]
+    B -->|"通過"| D["incompleteルール一覧を<br/>a11y-deferred.jsonに記録"]
+    D --> E["2段: 実ブラウザ<br/>全ルール + color-contrast"]
+    E -->|"マージ前·夜間"| F["deferred一覧と照合<br/>カバレッジの穴を明示化"]
+
+    style C fill:#C1121F,color:#fff
+    style E fill:#0066CC,color:#fff
+```
+
 ## ツールが緑になっても残るもの
 
 正直に言えば、上の2段を全部通しても、そのページがアクセシブルだという保証はない。これはaxe-coreの限界ではなく、自動検査全体の限界だ。

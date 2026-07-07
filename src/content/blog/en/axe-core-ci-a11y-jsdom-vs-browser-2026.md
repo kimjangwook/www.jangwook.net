@@ -187,6 +187,20 @@ writeFileSync('a11y-deferred.json', JSON.stringify(deferred));
 
 The idea itself isn't new. I used the same principle in [the campaign that turned SEO audits into a standing build gate](/en/blog/en/multilingual-blog-technical-audit-campaign-2026): don't leave a fix to human discipline, pin it in the pipeline. Accessibility is exactly the same. An audit should be a loop, not an event.
 
+The two-tier structure in one picture:
+
+```mermaid
+graph TD
+    A["Every commit·PR"] --> B["Tier 1: jsdom + axe-core<br/>structural rules only, milliseconds"]
+    B -->|"violations > 0"| C["Build fails"]
+    B -->|"pass"| D["Record incomplete rules<br/>to a11y-deferred.json"]
+    D --> E["Tier 2: real browser<br/>all rules + color-contrast"]
+    E -->|"pre-merge·nightly"| F["Cross-check against deferred list<br/>coverage gaps made explicit"]
+
+    style C fill:#C1121F,color:#fff
+    style E fill:#0066CC,color:#fff
+```
+
 ## What survives even after the tools go green
 
 Honestly, passing both tiers still doesn't guarantee the page is accessible. That's not an axe-core limitation, it's a limit on automated checking as a whole.
