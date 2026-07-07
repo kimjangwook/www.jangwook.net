@@ -1,0 +1,210 @@
+---
+title: 'Why color-contrast Disappears When You Put axe-core in CI'
+description: 'axe-core in jsdom catches structural a11y violations without a browser, but color-contrast comes back incomplete, not pass. Why it happens, and how to split CI into two tiers.'
+pubDate: '2026-07-07'
+heroImage: '../../../assets/blog/axe-core-ci-a11y-jsdom-vs-browser-2026/hero.png'
+tags:
+  - a11y
+  - axe-core
+  - WCAG
+  - CI
+  - web-development
+faq:
+  - question: 'Why does color-contrast come back as incomplete instead of pass when I run axe-core in jsdom?'
+    answer: 'Because jsdom does no layout and no rendering. The color-contrast rule needs to know what color an element actually paints in and what background sits behind it, which requires layout APIs like document.createRange().getClientRects(). jsdom does not implement those. So axe-core gives up on a verdict and returns incomplete — neither pass nor fail. Deque documents this limitation in axe-core issue #595, and jest-axe disables the rule by default for the same reason.'
+  - question: 'Can I treat an incomplete result as a pass?'
+    answer: 'No. Incomplete does not mean "no violation." It means "cannot be checked in this environment." Run the same page in headless Chromium and color-contrast can come back as a clear failure — in my experiment it reported 2.4:1. If you glance at the jsdom result and mark it green, contrast coverage drops out entirely.'
+  - question: 'How should I split accessibility testing in CI?'
+    answer: 'Two tiers. Tier one runs jsdom plus axe-core at unit-test speed to block structural violations like button-name, image-alt, link-name, label, and html-has-lang. Tier two runs a real browser (Playwright or Puppeteer) for the full rule set including color-contrast. The key is to log which rules came back incomplete in tier one and confirm tier two actually covers them.'
+  - question: 'If axe-core passes, does that mean the page is WCAG compliant?'
+    answer: 'No. Automated tools, axe-core included, are strong at violations you can judge from markup alone — missing labels, missing alt text, low contrast. They cannot tell you whether every function works by keyboard, whether focus moves in a logical order, or whether the flow makes sense through a screen reader. Automated checks are a floor, not a ceiling.'
+relatedPosts:
+  - slug: a11y-lighthouse-audit-fix-2026
+    score: 0.72
+    reason:
+      ko: 그 글은 Lighthouse UI로 한 페이지를 55점에서 100점까지 손으로 고친 기록이고, 이 글은 같은 위반들을 코드 한 줄로 CI에서 막는 쪽이다. 감사에서 회귀 방지로 넘어가고 싶다면 두 글을 이어 읽으면 된다.
+      ja: あちらはLighthouse UIで1ページを55点から100点まで手で直した記録、こちらは同じ違反をコード1本でCIで止める話だ。監査から回帰防止ゲートへ進みたいなら2本を続けて読むといい。
+      en: That post is a hand-fix log taking one page from 55 to 100 in the Lighthouse UI; this one blocks the same violations in CI with code. Read them back to back to move from a one-off audit to a regression gate.
+      zh: 那篇是用 Lighthouse UI 把一个页面从 55 分手动修到 100 分的记录，本文则用一行代码在 CI 里拦下同样的违规。想从一次性审计走向回归防线，两篇连着读即可。
+  - slug: multilingual-blog-technical-audit-campaign-2026
+    score: 0.6
+    reason:
+      ko: 감사를 이벤트가 아니라 빌드 게이트라는 루프로 만든 사례를 다뤘다. 이 글의 jsdom axe 테스트도 결국 같은 철학이다.
+      ja: 監査をイベントではなくビルドゲートというループにした事例を扱った。本記事のjsdom axeテストも結局同じ思想だ。
+      en: It covers turning audits from events into a build-gate loop. The jsdom axe test here follows the same philosophy, pinning a fix behind a gate so it can't silently regress.
+      zh: 那篇讲的是把审计从一次性事件变成构建门禁的循环。本文的 jsdom axe 测试是同一套思路：把修好的可访问性钉在门禁后面，防止悄悄回退。
+  - slug: localbusiness-structured-data-server-side-vs-js-2026
+    score: 0.5
+    reason:
+      ko: 둘 다 화면에 보이는 것보다 기계가 읽어가는 마크업이 진짜 승부처라는 관점이다. 그쪽은 크롤러가 읽는 JSON-LD, 이 글은 자동 도구가 읽는 접근성 트리를 다룬다.
+      ja: どちらも画面に見えるものより機械が読むマークアップが本当の勝負どころという視点だ。あちらはクローラーが読むJSON-LD、こちらは自動ツールが読むアクセシビリティツリーを扱う。
+      en: Both treat the markup machines parse as the real battleground, not what shows on screen. That post is about JSON-LD crawlers read; this one is about the accessibility tree screen readers and audit tools read.
+      zh: 两篇都把机器读取的标记视为真正的关键，而非屏幕上看到的内容。那篇讲爬虫读取的 JSON-LD，本文讲屏幕阅读器和自动化工具读取的可访问性树。
+---
+
+I ran the same HTML through axe-core twice and got two different verdicts. One run called `color-contrast` `incomplete`; the other flagged it as a hard failure at `2.4:1`. I hadn't touched a single character of the markup. The only thing that changed was the runtime.
+
+This looks like a footnote, but it's the exact landmine teams step on when they wire accessibility checks into CI. Bolt `axe-core` onto Jest or Vitest and you get accessibility testing at unit-test speed, no browser required. Tempting. The catch is that the price of that convenience is a specific rule that **silently falls out** of coverage, and most people trust the green check without knowing it happened. Today I reproduced it in a sandbox, dug into why, and worked out how the pipeline has to be shaped so the hole never opens.
+
+## Four violations that keep showing up in AI-generated components
+
+A lot of components get generated by tooling these days. Mine included. But when you inspect that generated markup through an accessibility lens, the same mistakes land in the same spots over and over: icon-only buttons, images with no alt, links with no text, a document with no `lang`. It all looks fine on screen, so a human eye never catches it.
+
+I built a "booking widget" to test with. It's exactly the shape a generator would spit out.
+
+```html
+<!DOCTYPE html>
+<html>
+<head><title>Booking widget</title></head>
+<body>
+  <div class="card">
+    <h3>Reserve a table</h3>
+    <img src="restaurant.jpg" width="320" height="120">
+    <p class="muted">Popular near you. Book in seconds.</p>
+
+    <input type="text" placeholder="Your name">
+    <input type="email" placeholder="Email">
+
+    <button class="icon-btn">
+      <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20" stroke="black"/></svg>
+    </button>
+    <a href="/help">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+    </a>
+  </div>
+</body>
+</html>
+```
+
+To your eyes it's an ordinary card: two inputs, an icon button, a help link. Through a screen reader it becomes something else. The button announces only as "button" with no clue what it does. The link has no destination text. The inputs lose their only hint the moment focus lands and the `placeholder` vanishes. A placeholder is not a label. That's not a matter of taste, it's a W3C-defined violation.
+
+## Running axe-core without a browser
+
+Start with the CI-friendly side. With just `axe-core` and `jsdom` you can run accessibility checks inside Node without launching a browser, dropping them straight into your unit tests.
+
+```javascript
+import { readFileSync } from 'node:fs';
+import { JSDOM } from 'jsdom';
+import axe from 'axe-core';
+
+async function auditFile(path) {
+  const html = readFileSync(path, 'utf8');
+  const dom = new JSDOM(html, { runScripts: 'dangerously', pretendToBeVisual: true });
+  const { window } = dom;
+  window.eval(axe.source); // inject axe into this window
+  return window.axe.run(window.document, {
+    resultTypes: ['violations', 'incomplete'],
+    runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] },
+  });
+}
+```
+
+The trick is `window.eval(axe.source)`. The `axe-core` package ships the whole library as a string on `axe.source`. Inject it into the `window` jsdom builds and you can call `axe.run()` inside it just like a real browser would. I scoped `runOnly` to WCAG 2.1 A/AA tags, the baseline most teams treat as their compliance target.
+
+Here's the actual output from running the before page. Nothing dressed up.
+
+![Real terminal output from running axe-core 4.12 in jsdom. The before page reports four violations plus one incomplete; the after page reports zero violations.](../../../assets/blog/axe-core-ci-a11y-jsdom-vs-browser-2026/axe-run-log.png)
+
+```text
+===== BEFORE (AI-generated markup) =====
+violations: 4 | incomplete: 1 | passes: 7
+  [critical] button-name (1)   — Buttons must have discernible text
+  [serious]  html-has-lang (1) — <html> element must have a lang attribute
+  [critical] image-alt (1)     — Images must have alternative text
+  [serious]  link-name (1)     — Links must have discernible text
+  incomplete:
+     ~ color-contrast (1)      — Elements must meet minimum contrast ratio
+```
+
+Four structural violations, caught precisely. `button-name` says the icon button has no accessible name; `link-name` says the link has no text; `image-alt` and `html-has-lang` are what they sound like. None of this needed a browser. These rules can be judged from markup structure alone, and that's the real value of the jsdom approach. You can block regressions like this on every `git push` in a few milliseconds.
+
+I ran the fixed after page through the same code. The icon button got an `aria-label`, the SVGs got `aria-hidden="true"`, the image got an `alt`, the inputs got real `<label for>` elements.
+
+```text
+===== AFTER (fixed) =====
+violations: 0 | incomplete: 1 | passes: 19
+  incomplete:
+     ~ color-contrast (1)      — Elements must meet minimum contrast ratio
+```
+
+Zero violations, nineteen passes. Clean. But that one `color-contrast` line still sitting in `incomplete` bugs me. In both the before and the after run, this rule alone never returned a verdict. That's the trap.
+
+## Why only color-contrast lands in incomplete
+
+`incomplete` is not a pass. It doesn't mean "no violation," it means **"cannot be checked in this environment."** It's axe-core signaling that it gave up on the verdict.
+
+The reason lives in what jsdom fundamentally is. jsdom builds a DOM tree but does no layout and no rendering. It doesn't compute where an element paints, in what color, or what background sits behind it. And contrast judgment needs exactly that: the foreground and background colors that actually get painted. axe-core's contrast check internally uses `document.createRange()` and `getClientRects()` to find the region text really occupies, and jsdom doesn't implement those APIs. The limitation is recorded verbatim in [issue #595](https://github.com/dequelabs/axe-core/issues/595) on Deque's axe-core repo, and the popular [jest-axe](https://github.com/nickcolley/jest-axe) disables the `color-contrast` rule by default precisely because of it.
+
+So here's the shape of it. In jsdom, contrast checking doesn't "pass," it doesn't exist. And teams new to axe-core often skip reading `incomplete` entirely, or drop it from `resultTypes` altogether. The moment they do, one of the most commonly failed WCAG criteria vanishes from test coverage.
+
+So I ran the same before page again, this time in a real browser engine (headless Chromium), scoped to the contrast rule only.
+
+```javascript
+// runs inside a real browser page context
+const r = await window.axe.run(document, {
+  runOnly: { type: 'rule', values: ['color-contrast'] }
+});
+```
+
+The result was a clear violation.
+
+```json
+{
+  "id": "color-contrast",
+  "impact": "serious",
+  "message": "Element has insufficient color contrast of 2.4
+              (foreground #a7a7a7, background #ffffff, 16px).
+              Expected contrast ratio of 4.5:1"
+}
+```
+
+`2.4:1`. W3C's [WCAG 2.1 SC 1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) requires at least `4.5:1` for body text (`3:1` for large text). That pale grey helper line at `#a7a7a7` sat at roughly half the requirement. The very element jsdom waved through as "can't tell," the browser caught in one shot. After I darkened the color to `#595959`, contrast cleared `7:1` and the browser reported zero violations too.
+
+Same axe-core, same markup, different runtime. The verdict splits. That single picture is the whole point of today's post.
+
+## So the pipeline runs in two tiers
+
+The wrong lesson here would be "then never use jsdom, always launch a browser." Browser startup is slow, and spinning up Chromium for every unit test makes CI crawl. I split the roles instead.
+
+<strong>Tier one — jsdom plus axe-core (the fast gate).</strong> Runs on every commit and every PR as a unit test. It blocks structural violations judged from markup alone: `button-name`, `image-alt`, `link-name`, `label`, `html-has-lang`. It's a matter of milliseconds, so there's no cost. Drop it right next to your component snapshot tests.
+
+<strong>Tier two — a real browser (the full rule set).</strong> Playwright or Puppeteer renders the page, then runs every rule including `color-contrast`. An adapter like `@axe-core/playwright` keeps the wiring short. This tier doesn't need to run on every commit; pointing it at your key pages before merge or in a nightly pipeline is plenty.
+
+There's one device you must add where the tiers meet: **log the rules that came back `incomplete` in tier one, and cross-check that tier two actually covers them.** That makes "which rules jsdom couldn't judge" explicit in the pipeline. Without it, `incomplete` stays a log line nobody reads and the coverage hole stays open.
+
+The gate logic can be this simple.
+
+```javascript
+const results = await runAxeInJsdom(html);
+if (results.violations.length > 0) {
+  console.error('structural a11y violations:', results.violations.map(v => v.id));
+  process.exit(1); // tier-one gate: fail the build here
+}
+// don't fail on incomplete, but hand it off as tier two's must-cover list
+const deferred = results.incomplete.map(v => v.id);
+writeFileSync('a11y-deferred.json', JSON.stringify(deferred));
+```
+
+The idea itself isn't new. I used the same principle in [the campaign that turned SEO audits into a standing build gate](/en/blog/en/multilingual-blog-technical-audit-campaign-2026): don't leave a fix to human discipline, pin it in the pipeline. Accessibility is exactly the same. An audit should be a loop, not an event.
+
+## What survives even after the tools go green
+
+Honestly, passing both tiers still doesn't guarantee the page is accessible. That's not an axe-core limitation, it's a limit on automated checking as a whole.
+
+There's a well-known set of things axe-core can't catch. Can you reach and operate every button and link with the keyboard alone? Does `Tab` order match the visual and logical order? When a modal opens, does focus get trapped inside it and return to where it was on close? Does the flow read sensibly start to finish through a screen reader? None of these can be judged by static markup analysis. In fact, on [the page I pushed to a Lighthouse accessibility score of 100](/en/blog/en/a11y-lighthouse-audit-fix-2026), a fake button that was just a `div` with an `onclick` scored full marks and still couldn't be pressed by keyboard.
+
+So I treat automated tools as a floor, not a ceiling. The violations axe-core catches are the lower bound that must be zero, the ones nobody should have to spend time confirming by hand. Pin that floor with CI and spend the freed-up time on keyboard walkthroughs and screen-reader read-alongs. The moment you believe the tool does all of it, the half the tool can't see ships straight to production.
+
+## A checklist you can apply today
+
+- If you've bolted `axe-core` onto unit tests, always include `'incomplete'` in `resultTypes` and actually read the list. If `color-contrast` is in there, that's not a pass, it's unchecked.
+- Scope the jsdom stage explicitly to structural rules (`button-name`, `image-alt`, `link-name`, `label`, `html-has-lang`). Don't mistake rules that need rendering, like contrast or focus visibility, for having passed there.
+- Promote contrast checking to a real browser stage, without exception. Playwright/Puppeteer plus an `@axe-core/*` adapter keeps the wiring short.
+- Icon buttons get `aria-label`, decorative SVGs get `aria-hidden="true"`, inputs get a real `<label for>` rather than a `placeholder`. Those three alone erase most of the common violations in generated markup.
+- After the automated gate goes green, operate the screen once with the keyboard only. A green check from the tool is the start, not the finish.
+
+Accessibility isn't about fixing something once, it's about stopping the regression. It starts with not skipping past `incomplete`.
+
+---
+
+I take on consulting and commission work around emitting structured data reliably server-side, and auditing an existing site's accessibility and search readiness on measured evidence, then pinning it behind a gate. If you've hit a wall building a similar pipeline, the contact details on my [profile](/en/about) are open.
