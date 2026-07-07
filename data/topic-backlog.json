@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-06",
+  "updated_at": "2026-07-07",
   "topics": [
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
@@ -4623,6 +4623,40 @@
       "added_at": "2026-07-05",
       "status": "queued",
       "notes": "월요일(how-to) 슬롯. 기존 Mastra/OpenAI Agents/LangGraph 가이드와 벤더 다양성 확보. 차별화 포인트: 단순 소개가 아니라 tool 정의→테스트→실행까지 실측 로그 포함, code-first를 '프롬프트 엔지니어링 대비 유지보수성'이라는 축으로 검증."
+    },
+    {
+      "slug": "mcp-sse-to-streamable-http-migration-guide-2026",
+      "title_idea": "기존 SSE 기반 MCP 서버를 새 Streamable HTTP transport로 마이그레이션하기 — Mcp-Method/Mcp-Name 헤더 라우팅과 stateless 전환 실전",
+      "content_type": "how-to",
+      "target_keyword": "MCP Streamable HTTP 마이그레이션",
+      "secondary_keywords": [
+        "MCP stateless transport",
+        "Mcp-Method 헤더 라우팅",
+        "MCP 서버 수평 확장"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "MCP 2026-07-28 spec RC(출시 이후 최대 개정). Streamable HTTP transport가 Mcp-Method·Mcp-Name 헤더를 요구해 로드밸런서가 body 없이 라우팅, stateless core로 수평 확장. blog.modelcontextprotocol.io RC 문서 기반.",
+      "added_at": "2026-07-07",
+      "status": "queued",
+      "notes": "수요일(how-to) 슬롯. 백로그 mcp-2-1-rc-stateless-specification-analysis-2026(개념 분석)과 각도 차별화: 실제 SSE→Streamable HTTP 코드 마이그레이션 diff와 헤더 라우팅 배선까지 손으로 보여주는 실전 가이드. 발행 mcp-remote-http-deployment-pattern 후속으로 내부링크 연결 가능."
+    },
+    {
+      "slug": "fastmcp-tasks-long-running-async-mcp-guide-2026",
+      "title_idea": "FastMCP 3.0 + MCP Tasks primitive로 20분짜리 장기 작업을 비동기로 처리하기 — 폴링 기반 에이전트 워크플로 구현",
+      "content_type": "how-to",
+      "target_keyword": "MCP Tasks primitive 구현",
+      "secondary_keywords": [
+        "FastMCP 3.0 장기 실행",
+        "MCP 비동기 작업",
+        "에이전트 폴링 워크플로"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "MCP 2026-07-28 RC의 Tasks 확장 — 동기 request/response를 넘어 장기 실행 작업을 dispatch 후 폴링. FastMCP 3.0(2026-01 출시)이 데코레이터 하나로 스키마·검증 처리. dev.to·essamamdani MCP 2026 가이드 기반.",
+      "added_at": "2026-07-07",
+      "status": "queued",
+      "notes": "수요일(how-to) 대안 슬롯. 발행 fastmcp-python-mcp-server-build-guide-2026 심화 후속. 차별화: 서버 빌드가 아니라 '동기 도구 호출의 타임아웃 한계'를 장기 파이프라인 예제로 돌파. 실측 폴링 지연·상태 전이 로그 포함."
     }
   ]
 }

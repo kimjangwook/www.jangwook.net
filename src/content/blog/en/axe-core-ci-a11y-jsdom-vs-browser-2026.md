@@ -160,7 +160,7 @@ The result was a clear violation.
 
 `2.4:1`. W3C's [WCAG 2.1 SC 1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) requires at least `4.5:1` for body text (`3:1` for large text). That pale grey helper line at `#a7a7a7` sat at roughly half the requirement. The very element jsdom waved through as "can't tell," the browser caught in one shot. After I darkened the color to `#595959`, contrast cleared `7:1` and the browser reported zero violations too.
 
-Same axe-core, same markup, different runtime. The verdict splits. That single picture is the whole point of today's post.
+Same axe-core, same markup, different runtime. The verdict splits. This trap, where the moment of rendering decides what an automated tool can see, isn't unique to accessibility. Whether you [render structured data server-side or inject it with client JS](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026) decides whether a crawler reads the schema or misses it entirely, and that is the exact same structure. That single picture is the whole point of today's post.
 
 ## So the pipeline runs in two tiers
 

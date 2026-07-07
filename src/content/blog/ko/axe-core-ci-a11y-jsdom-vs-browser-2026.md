@@ -160,7 +160,7 @@ const r = await window.axe.run(document, {
 
 `2.4:1`. W3C의 [WCAG 2.1 SC 1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)은 본문 텍스트에 최소 `4.5:1`(큰 텍스트는 `3:1`)을 요구한다. `#a7a7a7`의 연회색 안내문은 절반 수준이었다. jsdom이 "확인 불가"라고 넘긴 바로 그 요소를, 브라우저는 단칼에 잡아냈다. 고친 뒤 색을 `#595959`로 진하게 바꾸자 대비는 `7:1`을 넘겼고 브라우저에서도 위반 0이 됐다.
 
-같은 axe-core, 같은 마크업, 다른 런타임. 판정이 갈린다. 이 그림 하나가 오늘 글의 전부다.
+같은 axe-core, 같은 마크업, 다른 런타임. 판정이 갈린다. 렌더링 시점이 자동 도구의 시야를 결정하는 이 함정은 접근성에만 있는 게 아니다. [구조화 데이터를 서버에서 렌더링하느냐 클라이언트 JS로 주입하느냐](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026)에 따라 크롤러가 스키마를 읽거나 통째로 놓치는 것도 정확히 같은 구조다. 이 그림 하나가 오늘 글의 전부다.
 
 ## 그래서 파이프라인을 2단으로 짠다
 

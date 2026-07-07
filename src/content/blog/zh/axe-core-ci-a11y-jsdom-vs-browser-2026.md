@@ -160,7 +160,7 @@ const r = await window.axe.run(document, {
 
 `2.4:1`。W3C 的 [WCAG 2.1 SC 1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) 要求正文文字至少 `4.5:1`（大字号 `3:1`）。`#a7a7a7` 那行浅灰提示，大约只有要求的一半。jsdom 以"判不了"放过的那个元素，浏览器一击就抓住了。我把颜色加深到 `#595959` 后，对比度越过了 `7:1`，浏览器里也变成违规 0。
 
-同样的 axe-core，同样的标记，不同的运行时，判定就分道扬镳。这一张图就是今天全文的要点。
+同样的 axe-core，同样的标记，不同的运行时，判定就分道扬镳。渲染时机决定自动化工具视野的这个陷阱，并不只存在于无障碍领域。[结构化数据是在服务端渲染还是用客户端 JS 注入](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)，决定了爬虫能读到 schema 还是彻底错过，这与本文完全是同一种结构。这一张图就是今天全文的要点。
 
 ## 所以流水线分两层来组
 
