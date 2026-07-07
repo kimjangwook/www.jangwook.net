@@ -34,7 +34,7 @@
     "ja": "非常に高い",
     "zh": "非常高"
   },
-  "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
+  "sourceReport": "/{lang}/blog/{lang}/weekly-analytics-2025-10-14",
   "description": {
     "ko": "10개 타겟 기술 블로그 선정 및 아웃리치, 월 1개 guest post 기고",
     "en": "Select 10 target tech blogs and outreach, publish 1 guest post per month",

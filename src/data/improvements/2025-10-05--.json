@@ -51,7 +51,7 @@
     "ja": "中程度",
     "zh": "中等"
   },
-  "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
+  "sourceReport": "/{lang}/blog/{lang}/blog-launch-analysis-report",
   "description": {
     "ko": "Chrome DevTools Device Mode 및 실제 디바이스에서 반응형 디자인 검증 완료. 모바일, 태블릿, 데스크톱 모든 해상도에서 정상 작동 확인",
     "en": "Completed responsive design validation using Chrome DevTools Device Mode and real devices. Confirmed proper functionality across mobile, tablet, and desktop resolutions",

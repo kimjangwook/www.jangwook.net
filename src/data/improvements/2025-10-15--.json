@@ -51,7 +51,7 @@
     "ja": "高",
     "zh": "高"
   },
-  "sourceReport": "/{lang}/blog/${lang}/three-week-analytics-2025-11-04",
+  "sourceReport": "/{lang}/blog/{lang}/three-week-analytics-2025-11-04",
   "description": {
     "ko": "Google Search Console 연동으로 상위 포스트의 검색 순위, 클릭률, 노출수 추적. 데이터 기반 SEO 개선 가능",
     "en": "Integrated Google Search Console to track search rankings, click-through rates, and impressions of top posts. Enables data-driven SEO improvements",

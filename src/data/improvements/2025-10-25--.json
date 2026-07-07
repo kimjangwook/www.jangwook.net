@@ -51,7 +51,7 @@
     "ja": "高",
     "zh": "高"
   },
-  "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
+  "sourceReport": "/{lang}/blog/{lang}/weekly-analytics-2025-10-14",
   "description": {
     "ko": "Claude LLM 기반 의미론적 콘텐츠 추천 시스템을 구축하여 각 블로그 포스트에 관련 글 자동 추천 기능 추가",
     "en": "Built Claude LLM-based semantic content recommendation system to automatically suggest related posts on each blog post",

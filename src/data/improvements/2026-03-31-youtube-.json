@@ -34,7 +34,7 @@
     "ja": "優秀",
     "zh": "优秀"
   },
-  "sourceReport": "/{lang}/blog/${lang}/weekly-analytics-2025-10-14",
+  "sourceReport": "/{lang}/blog/{lang}/weekly-analytics-2025-10-14",
   "description": {
     "ko": "블로그 포스트 요약 + 데모 영상 (5-10분 튜토리얼 형식) 제작 및 배포",
     "en": "Create and publish blog post summaries + demo videos (5-10 min tutorial format)",

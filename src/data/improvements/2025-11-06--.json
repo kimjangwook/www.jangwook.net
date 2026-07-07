@@ -34,7 +34,7 @@
     "ja": "中",
     "zh": "中等"
   },
-  "sourceReport": "/{lang}/blog/${lang}/three-week-analytics-2025-11-04",
+  "sourceReport": "/{lang}/blog/{lang}/three-week-analytics-2025-11-04",
   "description": {
     "ko": "Substack, Mailchimp, ConvertKit 중 선택하여 뉴스레터 가입 폼 구현. 블로그 포스트 하단 및 홈페이지 상단 배치. 독자 재방문 유도",
     "en": "Implement newsletter subscription form using Substack, Mailchimp, or ConvertKit. Place at blog post bottom and homepage top. Encourage reader revisits",

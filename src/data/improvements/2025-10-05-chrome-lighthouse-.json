@@ -51,7 +51,7 @@
     "ja": "高",
     "zh": "高"
   },
-  "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
+  "sourceReport": "/{lang}/blog/{lang}/blog-launch-analysis-report",
   "description": {
     "ko": "Chrome Lighthouse로 실제 성능 측정 완료. PC는 98점으로 목표 초과 달성, Mobile은 72점으로 네트워크 환경에 따른 개선 필요",
     "en": "Completed performance measurement with Chrome Lighthouse. PC achieved 98 points exceeding target, Mobile at 72 points needs improvement due to network conditions",

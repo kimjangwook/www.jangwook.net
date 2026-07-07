@@ -51,7 +51,7 @@
     "ja": "非常に高い",
     "zh": "非常高"
   },
-  "sourceReport": "/{lang}/blog/${lang}/blog-launch-analysis-report",
+  "sourceReport": "/{lang}/blog/{lang}/blog-launch-analysis-report",
   "description": {
     "ko": "Google Fonts 렌더링 차단 제거, 이미지 WebP 변환, lazy loading 적용으로 LCP 2초 개선 및 페이지 크기 57% 감소",
     "en": "Eliminated Google Fonts render-blocking, converted images to WebP, applied lazy loading - improved LCP by 2s and reduced page size by 57%",

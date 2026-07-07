@@ -47,6 +47,40 @@ const ORPHAN_ALLOWLIST = [
   /^https:\/\/jangwook\.net\/deepdiner\//, // 앱 스토어용 독립 문서 (noindex)
 ];
 
+function checkBrokenInternalLinks(files, htmlByFile) {
+  // 빌드된 페이지·자산으로 해석되지 않는 내부 href를 경고.
+  // 본문 코드 예시(<pre>/<code>) 안의 경로 문자열은 제외한다.
+  const pages = new Set(files.map((f) => {
+    const rel = path.relative(distRoot, path.dirname(f));
+    return rel === '' ? '/' : `/${rel.split(path.sep).join('/')}/`;
+  }));
+  const broken = new Map();
+  for (const file of files) {
+    const src = pageUrl(file);
+    const prose = htmlByFile.get(file)
+      .replace(/<pre[\s\S]*?<\/pre>/g, '')
+      .replace(/<code[\s\S]*?<\/code>/g, '');
+    for (const match of prose.matchAll(/href="(\/[^"#?]+)"/g)) {
+      const target = match[1];
+      if (/\.[a-z0-9]+$/i.test(target)) continue; // 파일 자산(xml·webp 등)은 별도 존재 검증 대상 아님
+      const dir = target.endsWith('/') ? target : `${target}/`;
+      if (!pages.has(dir)) {
+        if (!broken.has(target)) broken.set(target, src);
+      }
+    }
+  }
+  console.log(`[link-check] broken internal links: ${broken.size}`);
+  if (broken.size > 0) {
+    console.warn('Warning: 빌드된 페이지로 해석되지 않는 내부 링크:');
+    let i = 0;
+    for (const [target, src] of broken) {
+      if (i++ >= 10) break;
+      console.warn(`- ${target} (예: ${src})`);
+    }
+  }
+  return broken;
+}
+
 function checkOrphans(files, htmlByFile) {
   const pages = new Map(files.map((f) => [pageUrl(f), f]));
   const inbound = new Map();
@@ -119,6 +153,7 @@ async function main() {
   }
 
   checkOrphans(files, htmlByFile);
+  checkBrokenInternalLinks(files, htmlByFile);
 
   console.log('[hreflang-check] OK');
 }

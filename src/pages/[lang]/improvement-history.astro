@@ -4,6 +4,8 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
 import { useTranslations, type Language } from '../../lib/i18n/languages';
+import { getCollection } from 'astro:content';
+import { filterPostsByDate } from '../../lib/content';
 
 export function getStaticPaths() {
 	return getI18nStaticPaths();
@@ -15,13 +17,22 @@ const t = useTranslations(lang);
 // Load all improvement JSON files
 const improvementFiles = import.meta.glob('../../data/improvements/*.json', { eager: true });
 
+// 링크 타깃이 실제로 빌드되는 글인지 검증하기 위한 슬러그 집합
+// (RelatedPosts와 동일한 렌더 방어 — draft로 전환된 리포트 글 링크가 404가 되지 않도록)
+const builtPosts = filterPostsByDate(await getCollection('blog'));
+const builtSlugs = new Set(builtPosts.map((post) => post.id.split('/').pop()));
+
 // Extract improvements and add sourceReport with lang variable
 const improvements = Object.values(improvementFiles).map((file: any) => {
-  const improvement = file.default;
+  const improvement = { ...file.default };
 
   // Replace {lang} placeholder in sourceReport with actual lang
   if (improvement.sourceReport && typeof improvement.sourceReport === 'string') {
-    improvement.sourceReport = improvement.sourceReport.replace('{lang}', lang);
+    improvement.sourceReport = improvement.sourceReport.replaceAll('{lang}', lang);
+    const slugMatch = improvement.sourceReport.match(/\/blog\/[a-z]{2}\/([^/]+)\/?$/);
+    if (slugMatch && !builtSlugs.has(slugMatch[1])) {
+      improvement.sourceReport = undefined; // 타깃 미빌드(draft) — 링크 생략
+    }
   }
 
   return improvement;
