@@ -249,6 +249,30 @@ function validateRelatedPosts(posts) {
   }
 }
 
+function validateSharedFrontmatterParity(posts) {
+  // FACT-CORE 정책의 명시 불변식: slug·pubDate·heroImage·relatedPosts는 4언어 동일.
+  // (slug·pubDate 불일치는 기존 언어별 발행 수 검사가 잡으므로 여기선 나머지 둘을 본다.)
+  const bySlug = new Map();
+  for (const post of posts.filter((item) => item.indexable)) {
+    if (!bySlug.has(post.slug)) bySlug.set(post.slug, new Map());
+    bySlug.get(post.slug).set(post.lang, post);
+  }
+  const mismatches = [];
+  for (const [slug, byLang] of bySlug) {
+    if (byLang.size < languages.length) continue;
+    const heroes = new Set(languages.map((lang) => String(byLang.get(lang).data.heroImage ?? '')));
+    if (heroes.size > 1) mismatches.push(`${slug}: heroImage가 언어별로 다름`);
+    const relatedKeys = new Set(languages.map((lang) => {
+      const related = byLang.get(lang).data.relatedPosts;
+      return Array.isArray(related) ? related.map((r) => r?.slug).join(',') : '';
+    }));
+    if (relatedKeys.size > 1) mismatches.push(`${slug}: relatedPosts 목록이 언어별로 다름`);
+  }
+  if (mismatches.length > 0) {
+    warnings.push(`shared frontmatter parity (FACT-CORE 불변식): ${mismatches.length}\n${limitList(mismatches)}`);
+  }
+}
+
 function validateTitleLengths(posts) {
   // SERP 절단 방지: seo-guidelines.md의 언어별 권장 상한 + 현실 코퍼스 여유분.
   // 기준 초과는 경고 — 신규 자동발행 글의 이탈을 빌드 로그에서 즉시 노출한다.
@@ -270,9 +294,15 @@ function validateTitleLengths(posts) {
   }
 }
 
+// 2026-07-07 FACT-CORE TRANSCREATION 전환: 이후 발행 글은 언어판별 독립 집필이
+// 정책이므로 구조(h2·다이어그램 수) 패리티를 요구하지 않는다.
+// 구체제(번역 구조) 글에만 구조 검사를 유지하고,
+// 신체제의 명시 불변식(relatedPosts·heroImage 4언어 동일)은 별도로 검증한다.
+const TRANSCREATION_CUTOFF = '2026-07-07';
+
 function validateTranslationParity(posts) {
   const bySlug = new Map();
-  for (const post of posts.filter((item) => item.indexable)) {
+  for (const post of posts.filter((item) => item.indexable && item.pubDateKey <= TRANSCREATION_CUTOFF)) {
     if (!bySlug.has(post.slug)) bySlug.set(post.slug, new Map());
     bySlug.get(post.slug).set(post.lang, post);
   }
@@ -360,6 +390,7 @@ async function main() {
   await validateImages(posts);
   validateRelatedPosts(posts);
   validateTitleLengths(posts);
+  validateSharedFrontmatterParity(posts);
   validateTranslationParity(posts);
   await validateCrawlerSurfaces();
 
