@@ -1,6 +1,6 @@
 ---
 title: '기술 SEO 감사를 닷새간 돌려봤다 — 고친 다섯 항목보다 중요했던 건 게이트였다'
-description: '내 4개 언어 블로그를 5일간 실측 감사했다. relatedPosts 404 12개, hreflang 파손 4쌍, 렌더 블로킹 405KB, 번역 드리프트 21건, JSON-LD 조각 7개. 다 고쳤다. 그런데 진짜 성과는 이 수정들이 다시는 되돌아오지 못하게 만든 빌드 게이트다. 실측 로그와 검사기 코드까지.'
+description: '4개 언어 블로그를 닷새간 실측 감사했다. relatedPosts 404 12개, hreflang 파손 4쌍, 렌더 블로킹 405KB, 번역 드리프트 21건, JSON-LD 조각 7개를 다 고쳤다. 진짜 성과는 이 수정들이 다시 되돌아오지 못하게 막은 빌드 게이트였다.'
 pubDate: '2026-07-06'
 heroImage: '../../../assets/blog/multilingual-blog-technical-audit-campaign-2026/hero.png'
 tags:

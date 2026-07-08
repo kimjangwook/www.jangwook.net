@@ -123,7 +123,7 @@ langgraph-prebuilt, langgraph-sdk,
 pydantic, xxhash
 ```
 
-整整差了39个。ADK这么重的原因很明确：它从一开始就包含了整个Google Cloud栈（BigQuery、Spanner、Pub/Sub、Speech等）。如果不使用Google Cloud，这39个额外依赖全是死重。
+整整差了39个。ADK这么重的原因很明确：它从一开始就包含了整个Google Cloud栈（BigQuery、Spanner、Pub/Sub、Speech等）。如果不使用Google Cloud，这39个额外依赖全是死重。从依赖列表里有`mcp`就能看出，ADK原生支持MCP服务器接入；至于自己动手做一个MCP服务器再接上去，我在[用FastMCP构建Python MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)里另作了整理。
 
 LangGraph的哲学是"按需取用"。LLM客户端自己注入，检查点后端自己选。更轻量，但要配置的事也更多。
 

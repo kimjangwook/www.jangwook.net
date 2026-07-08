@@ -138,7 +138,7 @@ langgraph-prebuilt, langgraph-sdk,
 pydantic, xxhash
 ```
 
-A 39-package gap. ADK bundles Google Cloud services (BigQuery, Spanner, Pub/Sub, Speech, etc.), OpenTelemetry exporters, a FastAPI server, and SQLAlchemy ORM. If you're not using Google Cloud, those 39 extra packages are pure dead weight.
+A 39-package gap. ADK bundles Google Cloud services (BigQuery, Spanner, Pub/Sub, Speech, etc.), OpenTelemetry exporters, a FastAPI server, and SQLAlchemy ORM. If you're not using Google Cloud, those 39 extra packages are pure dead weight. The `mcp` entry in that list hints at it: ADK supports MCP server integration out of the box, and building your own MCP server to plug in is something I covered separately in [building a Python MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026).
 
 LangGraph's "bring what you need" philosophy is lighter but requires more configuration. You inject your own LLM client, choose your own checkpoint backend. Less magic, more control.
 

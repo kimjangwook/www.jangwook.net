@@ -383,6 +383,8 @@ graph LR
 - <strong>유지보수</strong>: 각 컴포넌트 독립적 수정 가능
 - <strong>테스트</strong>: 각 레이어별 테스트 가능
 
+이 오케스트레이터-에이전트 분리는 특정 프레임워크에 매인 개념이 아니다. 같은 구도를 OpenAI 쪽 도구로 짤 때 어떻게 달라지는지는 [OpenAI AgentKit 실전 튜토리얼 Part 2](/ko/blog/ko/openai-agentkit-tutorial-part2)에서 나란히 비교해볼 수 있다.
+
 ## 캐싱 전략: 58% 토큰 절감 메커니즘
 
 ### trend-analyzer의 3-Tier 캐싱

@@ -144,7 +144,7 @@ langgraph-prebuilt, langgraph-sdk,
 pydantic, xxhash
 ```
 
-39개 차이다. ADK가 무거운 이유는 명확하다. Google Cloud 스택(BigQuery, Spanner, Pub/Sub, Speech 등)을 처음부터 포함하기 때문이다. OpenTelemetry 내보내기, FastAPI 기반 서버, SQLAlchemy ORM까지 내장되어 있다.
+39개 차이다. ADK가 무거운 이유는 명확하다. Google Cloud 스택(BigQuery, Spanner, Pub/Sub, Speech 등)을 처음부터 포함하기 때문이다. OpenTelemetry 내보내기, FastAPI 기반 서버, SQLAlchemy ORM까지 내장되어 있다. 의존성 목록에 `mcp`가 들어 있는 데서 보이듯 ADK는 MCP 서버 연동을 기본 지원하는데, MCP 서버를 직접 만들어 붙이는 쪽은 [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)에 따로 정리해 뒀다.
 
 솔직히 처음 봤을 때 좀 과하다고 느꼈다. ADK로 간단한 에이전트를 만들고 싶은데 Google Cloud Spanner 드라이버까지 같이 딸려오는 건 좀 아니다 싶다. Google Cloud를 쓰지 않는 프로젝트라면 이 의존성들이 전부 죽은 무게다.
 

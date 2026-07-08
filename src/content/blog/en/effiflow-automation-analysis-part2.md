@@ -383,6 +383,8 @@ graph LR
 - <strong>Maintainability</strong>: Independent modification of each component
 - <strong>Testability</strong>: Testing possible per layer
 
+This orchestrator-to-agent split isn't tied to one framework. How the same layout shifts when you build it with OpenAI's tooling is something you can compare side by side in [the OpenAI AgentKit tutorial Part 2](/en/blog/en/openai-agentkit-tutorial-part2).
+
 ## Caching Strategy: 58% Token Reduction Mechanism
 
 ### trend-analyzer's 3-Tier Caching

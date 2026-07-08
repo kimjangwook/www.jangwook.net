@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-07",
+  "updated_at": "2026-07-08",
   "topics": [
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
@@ -4657,6 +4657,40 @@
       "added_at": "2026-07-07",
       "status": "queued",
       "notes": "수요일(how-to) 대안 슬롯. 발행 fastmcp-python-mcp-server-build-guide-2026 심화 후속. 차별화: 서버 빌드가 아니라 '동기 도구 호출의 타임아웃 한계'를 장기 파이프라인 예제로 돌파. 실측 폴링 지연·상태 전이 로그 포함."
+    },
+    {
+      "slug": "mcp-2026-07-28-spec-stateless-what-changed-breaks",
+      "title_idea": "MCP 2026-07-28 스펙 확정 — stateless 코어로 sticky session이 사라지고, 무엇이 깨지는가",
+      "content_type": "news",
+      "target_keyword": "MCP 2026-07-28 스펙 변경",
+      "secondary_keywords": [
+        "MCP stateless 아키텍처",
+        "MCP Apps 확장",
+        "MCP deprecation 정책"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "blog.modelcontextprotocol.io 2026-07-28 릴리스, stacktr.ee 'what changed, what breaks', InfoQ Enterprise-Managed Auth stable. RC 2026-05-21 락, 최종 2026-07-28 — 런칭 이후 최대 개정.",
+      "added_at": "2026-07-08",
+      "status": "queued",
+      "notes": "목요일 뉴스 분석 1순위. stateless 코어(round-robin LB 뒤 동작), MCP Apps(SEP-1865 샌드박스 iframe UI), Tasks 확장, OAuth/OIDC 정렬 인증, 공식 deprecation 정책. 차별화: 기존 sticky-session·세션스토어 서버가 무엇이 깨지고 어떻게 마이그레이션하는지 실무 관점. mcp-server/client TypeScript SDK 글과 상호링크."
+    },
+    {
+      "slug": "claude-sonnet-5-agentic-model-developer-analysis-2026",
+      "title_idea": "Claude Sonnet 5 출시 분석 — near-Opus 4.8 성능을 더 싸게, '가장 에이전틱한 모델'이 개발자에게 뜻하는 것",
+      "content_type": "news",
+      "target_keyword": "Claude Sonnet 5 분석",
+      "secondary_keywords": [
+        "Claude Sonnet 5 성능",
+        "에이전틱 LLM 비용",
+        "Sonnet 5 vs Opus 4.8"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "anthropic.com/news, llm-stats.com 2026-07. Sonnet 5는 브라우저·터미널 등 도구를 자율 사용, near-Opus 4.8 성능을 크게 낮은 비용에.",
+      "added_at": "2026-07-08",
+      "status": "queued",
+      "notes": "목요일 뉴스 분석 대안. 차별화: 벤치마크 나열이 아니라 에이전트 운영 개발자 입장의 비용/성능 곡선 변화. ai-agent-cost-reality, google-adk-vs-langgraph 글과 상호링크."
     }
   ]
 }

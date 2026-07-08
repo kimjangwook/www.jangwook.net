@@ -383,6 +383,8 @@ graph LR
 - <strong>メンテナンス</strong>: 各コンポーネント独立修正可能
 - <strong>テスト</strong>: 各レイヤー別テスト可能
 
+このオーケストレーター・エージェント分離は、特定のフレームワークに縛られた概念ではない。同じ構図をOpenAI側のツールで組むとどう変わるかは、[OpenAI AgentKit実践チュートリアル Part 2](/ja/blog/ja/openai-agentkit-tutorial-part2)で並べて比較できる。
+
 ## キャッシング戦略: 58%トークン削減メカニズム
 
 ### trend-analyzer の 3-Tier キャッシング

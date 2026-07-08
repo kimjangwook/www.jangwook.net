@@ -1,6 +1,6 @@
 ---
-title: '같은 마크업, 다른 판정 — axe-core를 CI에 넣을 때 color-contrast가 조용히 사라지는 이유'
-description: 'AI가 뽑아준 예약 위젯 하나를 jsdom과 실제 브라우저에서 각각 axe-core로 돌려봤다. 구조적 위반 4개는 브라우저 없이도 잡혔지만 color-contrast만 jsdom에서 incomplete로 빠졌다. 왜 그런지, CI 파이프라인을 어떻게 2단으로 짜야 커버리지 구멍이 안 생기는지 실측 로그와 함께 정리했다.'
+title: 'axe-core를 CI에 넣으면 color-contrast만 조용히 사라지는 이유'
+description: 'AI가 만든 예약 위젯을 jsdom과 실제 브라우저에서 axe-core로 돌려봤다. 구조적 위반 4개는 브라우저 없이 잡혔지만 color-contrast만 jsdom에서 incomplete로 빠졌다. CI를 2단으로 짜야 커버리지 구멍이 안 생기는지 실측 로그와 함께 정리했다.'
 pubDate: '2026-07-07'
 heroImage: '../../../assets/blog/axe-core-ci-a11y-jsdom-vs-browser-2026/hero.png'
 tags:

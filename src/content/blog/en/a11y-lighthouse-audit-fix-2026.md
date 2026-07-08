@@ -193,7 +193,7 @@ Honestly, I think this is the biggest trap in accessibility scoring. A 100 means
 
 The working order I took away from this experiment.
 
-- **Put automated audits in CI, but do not mistake a pass for final sign-off.** Wire Lighthouse CI or `axe-core` into the build to guard against regressions. Machine-judgeable violations like `lang`, `alt`, contrast, headings, and link names get caught entirely at this layer.
+- **Put automated audits in CI, but do not mistake a pass for final sign-off.** Wire Lighthouse CI or `axe-core` into the build to guard against regressions. Machine-judgeable violations like `lang`, `alt`, contrast, headings, and link names get caught entirely at this layer. Which violations that same `axe-core` catches differently under jsdom versus a real browser is something I measured separately in [a run wiring axe-core into CI across both environments](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026).
 - **Even at 100, run one keyboard pass by hand.** Check that Tab reaches and activates every interactive element and that focus order matches visual order. Fake controls like `<div onclick>` are caught only here.
 - **Always give icon-only buttons an accessible name**, whether via `aria-label` or visually hidden text. A button holding only a 🛒 is read as plain "button."
 - **Measure contrast when the design is locked**, not later. Fixing it afterward means reworking the whole brand palette. AA is 4.5:1 for body, 3:1 for large text.

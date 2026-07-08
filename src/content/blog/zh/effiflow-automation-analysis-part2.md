@@ -384,6 +384,8 @@ graph LR
 - <strong>可维护性</strong>: 各组件可独立修改
 - <strong>可测试性</strong>: 可按层测试
 
+这种编排器与智能体的分离并不绑定于某一个框架。同样的结构换成OpenAI的工具来搭会有什么不同，可以在[OpenAI AgentKit实战教程 Part 2](/zh/blog/zh/openai-agentkit-tutorial-part2)里并排对照。
+
 ## 缓存策略：58% Token 节省机制
 
 ### trend-analyzer 的三层缓存
