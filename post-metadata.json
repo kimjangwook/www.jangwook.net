@@ -2867,5 +2867,16 @@
       "devops": 0.4,
       "architecture": 0.4
     }
+  },
+  "sitemap-lastmod-crawl-scheduling-2026": {
+    "pubDate": "2026-07-08",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.9,
+      "ai-ml": 0.05,
+      "devops": 0.5,
+      "architecture": 0.4
+    }
   }
 }
