@@ -2878,5 +2878,16 @@
       "devops": 0.5,
       "architecture": 0.4
     }
+  },
+  "ai-crawlers-dont-render-javascript-csr-2026": {
+    "pubDate": "2026-07-09",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.2,
+      "web-development": 0.95,
+      "ai-ml": 0.55,
+      "devops": 0.35,
+      "architecture": 0.55
+    }
   }
 }
