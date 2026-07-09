@@ -1,8 +1,9 @@
 ---
 title: AI 크롤러는 당신의 자바스크립트를 실행하지 않는다
 description: >-
-  GPTBot·ClaudeBot은 JS를 렌더링하지 않는다. CSR 페이지가 AI 검색에 안 보이는 이유를 curl로 직접 재현하고,
-  서버사이드로 고치는 법을 정리했다.
+  GPTBot·ClaudeBot 같은 AI 크롤러는 자바스크립트를 실행하지 않아, CSR로만 렌더링한 페이지는 AI 검색과 인용에서
+  통째로 사라진다. 그 원인을 curl 요청으로 직접 재현해 확인하고, 서버사이드 렌더링과 프리렌더링으로 콘텐츠를 다시 노출시키는
+  구체적 방법까지 정리했다.
 pubDate: '2026-07-09'
 heroImage: ../../../assets/blog/ai-crawlers-csr-invisible-2026-hero.png
 tags:
