@@ -193,3 +193,7 @@ function buildGraph({ pageUrl, article }) {
 <strong>2026-07-06 追記</strong>: この処方を当ブログにそのまま適用した。分かれていたJSON-LDブロックを一つの`@graph`に統合し（Organization・Person・WebSite・WebPage・BreadcrumbList・BlogPostingの6ノード）、author・publisher・isPartOf・breadcrumbをすべて`@id`参照に置き換えた。チェックリスト6項の連結性検査の結果：記事ページ基準で未解決参照0、連結コンポーネント<strong>1個</strong> — 三つの断片が一つのグラフになった。
 
 構造化データをサーバーサイドで確実に出したい、あるいは既存サイトのJSON-LDを一つのエンティティグラフに整理したい、という点検をお考えなら、個人的に相談と実装のご依頼を承ります。こうした実測をもとに診断します。
+
+---
+
+本記事のようなAI引用・GEOの実測は、noteの連載[「AIに引用されるブログの作り方」](https://note.com/jw_effloow/n/n91d7682a8aff)でも扱っている。検索露出56万回・AI引用19.6万回という当ブログの生データから始まる日本語シリーズだ（一部有料）。

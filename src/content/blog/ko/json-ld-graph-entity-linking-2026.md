@@ -193,3 +193,7 @@ function buildGraph({ pageUrl, article }) {
 <strong>2026-07-06 후속</strong>: 이 처방을 이 블로그에 그대로 적용했다. 분리돼 있던 JSON-LD 블록을 하나의 `@graph`로 통합하고(Organization·Person·WebSite·WebPage·BreadcrumbList·BlogPosting 6노드), author·publisher·isPartOf·breadcrumb을 전부 `@id` 참조로 교체했다. 체크리스트 6항의 연결성 검사 결과: 글 페이지 기준 미해결 참조 0, 연결 컴포넌트 <strong>1개</strong> — 조각 세 개가 그래프 하나가 됐다.
 
 구조화 데이터를 서버사이드로 확실히 내보내거나 기존 사이트의 JSON-LD를 하나의 엔티티 그래프로 정리하는 작업을 점검하고 싶다면, 개인적으로 상담과 구현 의뢰를 받습니다. 이런 실측 기반으로 진단합니다.
+
+---
+
+이 글과 같은 AI 인용·GEO 실측은 일본어 note 연재 [「AIに引用されるブログの作り方」](https://note.com/jw_effloow/n/n91d7682a8aff)에서도 다룬다. 검색 노출 56만 회·AI 인용 19.6만 회라는 이 블로그의 원데이터에서 출발하는 시리즈다(일부 유료).

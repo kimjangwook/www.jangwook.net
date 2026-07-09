@@ -37,7 +37,8 @@ export const AUTHOR = {
 		'https://github.com/kimjangwook',
 		'https://linkedin.com/in/jangwook-kim-2590a1174',
 		'https://x.com/Kim_Jangwook',
-		'https://medium.com/@kim-jangwook'
+		'https://medium.com/@kim-jangwook',
+		'https://note.com/jw_effloow'
 	],
 	knowsAbout: [
 		// Web development foundation + AI-era search expertise (primary positioning)
