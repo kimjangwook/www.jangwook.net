@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-09",
+  "updated_at": "2026-07-10",
   "topics": [
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
@@ -4725,6 +4725,42 @@
       "added_at": "2026-07-09",
       "status": "queued",
       "notes": "금요일 뉴스 분석 대안. 차별화: 기능 소개가 아니라 에이전트 함대 운영자 관점의 관리 오버헤드 변화. multi-agent-orchestration-improvement, google-adk-vs-langgraph-agent-framework-comparison-2026, claude-agent-teams-guide와 상호링크."
+    },
+    {
+      "slug": "ollama-vllm-llamacpp-inference-engine-comparison-2026",
+      "title_idea": "Ollama vs vLLM vs llama.cpp: 로컬 LLM 서빙 엔진 실측 비교 (동시성·처리량·언제 무엇을)",
+      "content_type": "comparison",
+      "target_keyword": "ollama vllm llama.cpp 비교",
+      "secondary_keywords": [
+        "로컬 LLM 서빙",
+        "vLLM 처리량",
+        "동시 요청 벤치마크"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Red Hat Developer, SitePoint, TechPlained (2026)",
+      "added_at": "2026-07-10",
+      "status": "queued",
+      "notes": "기존 local-llm-*-experiment 시리즈의 상위 비교편. 단일 사용자(Ollama/llama.cpp)와 5+ 동시 사용자(vLLM PagedAttention·continuous batching)의 분기점을 실측 로그로. num_parallel·prefill·cold-start 실험 데이터와 상호 링크로 세션당 PV 상승 기대. 토요일 비교 슬롯 적합.",
+      "published_at": null
+    },
+    {
+      "slug": "axe-wave-pa11y-lighthouse-accessibility-tools-comparison-2026",
+      "title_idea": "axe vs WAVE vs Pa11y vs Lighthouse: WCAG 2.2 자동 검사 도구 어떻게 조합할까",
+      "content_type": "comparison",
+      "target_keyword": "접근성 테스트 도구 비교",
+      "secondary_keywords": [
+        "axe-core",
+        "pa11y CI",
+        "WCAG 2.2 자동 검사"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "Crosscheck, inclly, W3C WAI (2026)",
+      "added_at": "2026-07-10",
+      "status": "queued",
+      "notes": "모든 자동 도구는 WCAG 이슈의 30~50%만 잡는다는 핵심 메시지. axe-core가 Lighthouse·Pa11y 엔진이라는 계층 구조. a11y-lighthouse-audit-fix, axe-core-ci-a11y-jsdom-vs-browser 글과 강하게 상호 링크되는 접근성 클러스터 확장편. 대체 후보(우선순위 2).",
+      "published_at": null
     }
   ]
 }
