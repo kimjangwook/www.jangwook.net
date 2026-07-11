@@ -1,8 +1,8 @@
 ---
 title: "A wrong accessible name breaks voice control and AI agents"
 description: >-
-  aria-label can make the accessibility tree announce a word no one sees. A WCAG 2.5.3 Label in Name
-  failure, reproduced, with Lighthouse's new Agentic Browsing score going from 0 to 100.
+  aria-label can make the accessibility tree announce a word no one sees. A reproduced WCAG 2.5.3
+  Label in Name failure, with Agentic Browsing going 0 to 100.
 pubDate: '2026-07-10'
 heroImage: ../../../assets/blog/accessible-name-agents-2026/hero.png
 tags:

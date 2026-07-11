@@ -1,9 +1,9 @@
 ---
 title: 접근성 이름이 틀리면 음성 제어도 AI 에이전트도 버튼을 못 누른다
 description: >-
-  버튼에 aria-label을 붙였는데 접근성 트리는 화면에 안 보이는 글자를 읽고 있다. WCAG 2.5.3 Label in Name
-  위반을 샌드박스에서 재현해 접근성 트리로 직접 확인하고, Lighthouse 13.3.0의 새 Agentic Browsing 점수로
-  0점이 100점으로 바뀌는 과정을 실측했다.
+  버튼에 aria-label을 붙였는데 접근성 트리는 화면에 없는 글자를 읽는다. WCAG 2.5.3 Label in Name 위반을
+  샌드박스에서 재현해 확인하고, Lighthouse 13.3.0의 Agentic Browsing 점수가 0점에서 100점으로 바뀌는 과정을
+  실측했다.
 pubDate: '2026-07-10'
 heroImage: ../../../assets/blog/accessible-name-agents-2026/hero.png
 tags:

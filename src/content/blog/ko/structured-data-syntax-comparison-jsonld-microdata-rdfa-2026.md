@@ -1,6 +1,6 @@
 ---
 title: 'JSON-LD vs Microdata vs RDFa — 구조화 데이터 문법, 무엇을 언제 쓸까 (실측 비교)'
-description: '같은 Product 엔티티를 세 문법으로 짜서 파서에 넣고 바이트 수와 취약성을 실측했다. Google은 셋 다 동등하게 취급한다. 그렇다면 JSON-LD를 권하는 진짜 이유는 순위가 아니라 재설계에서 살아남는 결합도였다. 공식 문서와 재현 로그로 정리한 선택 기준.'
+description: '같은 Product 엔티티를 세 문법으로 각각 짜서 파서에 넣고 바이트 수와 취약성을 실측했다. Google은 셋 다 동등하게 취급한다. 그렇다면 JSON-LD를 권하는 진짜 이유는 순위가 아니라 재설계에서 살아남는 결합도였다. 공식 문서와 재현 로그로 정리한 실전 선택 기준.'
 pubDate: '2026-07-11'
 heroImage: '../../../assets/blog/structured-data-syntax-comparison-jsonld-microdata-rdfa-2026/hero.png'
 tags:

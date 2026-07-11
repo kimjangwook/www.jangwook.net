@@ -1,6 +1,6 @@
 ---
 title: 'JSON-LD vs Microdata vs RDFa: Which Structured Data Syntax, and Why'
-description: 'I wrote the same Product entity in all three syntaxes, parsed each, and measured bytes and fragility. Google treats them equally, so the real reason to pick JSON-LD is coupling, not ranking: which survives a redesign.'
+description: 'The same Product entity in three syntaxes, bytes and fragility measured. Google treats them equally, so the reason to choose JSON-LD is coupling, not ranking.'
 pubDate: '2026-07-11'
 heroImage: '../../../assets/blog/structured-data-syntax-comparison-jsonld-microdata-rdfa-2026/hero.png'
 tags:
