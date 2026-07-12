@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-10",
+  "updated_at": "2026-07-12",
   "topics": [
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
@@ -4761,6 +4761,125 @@
       "status": "queued",
       "notes": "모든 자동 도구는 WCAG 이슈의 30~50%만 잡는다는 핵심 메시지. axe-core가 Lighthouse·Pa11y 엔진이라는 계층 구조. a11y-lighthouse-audit-fix, axe-core-ci-a11y-jsdom-vs-browser 글과 강하게 상호 링크되는 접근성 클러스터 확장편. 대체 후보(우선순위 2).",
       "published_at": null
+    },
+    {
+      "slug": "bun-sql-transactions-migrations-2026",
+      "title_idea": "Bun SQL로 트랜잭션·프리페어드 스테이트먼트·마이그레이션을 실전 코드로 돌려봤다",
+      "content_type": "how-to",
+      "target_keyword": "Bun SQL 트랜잭션",
+      "secondary_keywords": [
+        "Bun 마이그레이션",
+        "prepared statements",
+        "Bun 데이터베이스",
+        "Node 대비 Bun"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "믹스 리밸런싱: SEO/a11y 테마 탈피, 런타임 실측 소재."
+    },
+    {
+      "slug": "claude-agent-sdk-typescript-production-2026",
+      "title_idea": "Claude Agent SDK(TypeScript)로 프로덕션 에이전트를 직접 만들어봤다 — 툴 정의부터 스트리밍까지",
+      "content_type": "how-to",
+      "target_keyword": "Claude Agent SDK TypeScript",
+      "secondary_keywords": [
+        "AI 에이전트 구현",
+        "tool use",
+        "MCP 통합",
+        "에이전트 스트리밍"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "How-to 비중 회복용. claude-api 스킬 참조."
+    },
+    {
+      "slug": "cloudflare-workers-ai-edge-llm-hono-2026",
+      "title_idea": "Cloudflare Workers AI로 엣지 LLM 추론을 붙였다 — Hono.js 통합과 지연 시간 실측",
+      "content_type": "how-to",
+      "target_keyword": "Cloudflare Workers AI",
+      "secondary_keywords": [
+        "엣지 LLM",
+        "Hono.js",
+        "edge inference",
+        "지연 시간 최적화"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "인프라 테마로 다양성."
+    },
+    {
+      "slug": "js-runtime-landscape-2026-h1-node-bun-deno",
+      "title_idea": "2026년 상반기 JS 런타임 지형 — Node vs Bun vs Deno, 실제 벤치와 채택 현황으로 본 승자",
+      "content_type": "news",
+      "target_keyword": "JS 런타임 비교 2026",
+      "secondary_keywords": [
+        "Node.js Bun Deno",
+        "런타임 벤치마크",
+        "Bun 채택률",
+        "서버 런타임 트렌드"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "뉴스 비중 상향. 벤치 수치 web-researcher 검증."
+    },
+    {
+      "slug": "anthropic-economic-index-2026-dev-jobs",
+      "title_idea": "Anthropic Economic Index 2026 — AI가 개발자 직업 시장을 실제로 어떻게 바꾸고 있나 데이터로 읽기",
+      "content_type": "news",
+      "target_keyword": "AI 개발자 직업 시장",
+      "secondary_keywords": [
+        "Anthropic Economic Index",
+        "AI 고용 영향",
+        "개발자 자동화",
+        "AI 코딩 통계"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "1인칭·비판 시각 강조 가능. 원 데이터 출처 명시."
+    },
+    {
+      "slug": "claude-agent-sdk-vs-openai-agents-sdk-2026",
+      "title_idea": "Claude Agent SDK vs OpenAI Agents SDK — 멀티에이전트 프레임워크를 같은 과제로 나란히 구현",
+      "content_type": "comparison",
+      "target_keyword": "Claude Agent SDK vs OpenAI",
+      "secondary_keywords": [
+        "멀티에이전트 프레임워크",
+        "AI SDK 비교",
+        "에이전트 오케스트레이션",
+        "tool calling 비교"
+      ],
+      "search_intent": "commercial",
+      "priority": 2,
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "비교는 다음 주 1편만."
+    },
+    {
+      "slug": "self-healing-e2e-tests-ai-2026",
+      "title_idea": "AI 기반 셀프힐링 E2E 테스트를 실제 프로젝트에 붙여봤다 — 유지보수 비용은 정말 줄었나",
+      "content_type": "how-to",
+      "target_keyword": "셀프힐링 테스트",
+      "secondary_keywords": [
+        "AI E2E 테스트",
+        "Playwright 자동복구",
+        "테스트 유지보수",
+        "flaky 테스트"
+      ],
+      "search_intent": "informational",
+      "priority": 3,
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "예비 슬롯. QA 테마."
     }
   ]
 }
