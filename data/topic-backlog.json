@@ -4880,6 +4880,42 @@
       "added_at": "2026-07-12",
       "status": "queued",
       "notes": "예비 슬롯. QA 테마."
+    },
+    {
+      "slug": "keyboard-focus-order-testing-tabindex-experiment-2026",
+      "title_idea": "마우스를 치우고 Tab만 눌러봤다 — 자동 도구가 통과시킨 페이지의 포커스 순서가 무너지는 지점",
+      "content_type": "how-to",
+      "target_keyword": "키보드 접근성 테스트",
+      "secondary_keywords": [
+        "포커스 순서",
+        "WCAG 2.4.3",
+        "tabindex",
+        "포커스 표시"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "WebSearch 2026-07-12: keyboard navigation focus order testing WCAG 2.4.3",
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "axe 커버리지 공백 글의 자연스러운 다음 편. 자동 도구가 못 잡는 '경험형' 층을 손으로 검증하는 실측형 튜토리얼. 샌드박스에 positive tabindex/시각-DOM 순서 불일치를 심고 Tab·Shift+Tab만으로 재현. 기존 a11y 클러스터(axe, accessible-name)와 상호 링크 강함. 차별화: 리스트가 아니라 재현 로그."
+    },
+    {
+      "slug": "screen-reader-manual-review-workflow-nvda-voiceover-2026",
+      "title_idea": "스크린 리더로 결제 페이지를 위에서 아래로 읽어봤다 — 초록불 뒤에 남는 문장들",
+      "content_type": "how-to",
+      "target_keyword": "스크린 리더 테스트",
+      "secondary_keywords": [
+        "NVDA",
+        "VoiceOver",
+        "수동 접근성 검사",
+        "링크 목록 탐색"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "WebSearch 2026-07-12: WCAG 2.2 manual testing screen reader workflow",
+      "added_at": "2026-07-12",
+      "status": "queued",
+      "notes": "axe-coverage-gap 글의 '수동 리뷰 체크리스트'를 실제 워크플로우로 확장. 링크 목록/헤딩 탐색/폼 라벨을 스크린 리더로 흉내 내 검증하는 절차. priority 1의 키보드 편과 소형 시리즈로 묶을 수 있음. 우선순위는 키보드 편이 먼저."
     }
   ]
 }
