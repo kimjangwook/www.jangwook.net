@@ -2900,5 +2900,16 @@
       "devops": 0.15,
       "architecture": 0.4
     }
+  },
+  "axe-automated-a11y-coverage-gap-2026": {
+    "pubDate": "2026-07-12",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.35,
+      "web-development": 0.9,
+      "ai-ml": 0.1,
+      "devops": 0.4,
+      "architecture": 0.3
+    }
   }
 }
