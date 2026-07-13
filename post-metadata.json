@@ -2911,5 +2911,16 @@
       "devops": 0.4,
       "architecture": 0.3
     }
+  },
+  "validate-structured-data-ci-jsonld-2026": {
+    "pubDate": "2026-07-13",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.9,
+      "ai-ml": 0.15,
+      "devops": 0.6,
+      "architecture": 0.45
+    }
   }
 }
