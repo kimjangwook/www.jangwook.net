@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-12",
+  "updated_at": "2026-07-13",
   "topics": [
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
@@ -4916,6 +4916,40 @@
       "added_at": "2026-07-12",
       "status": "queued",
       "notes": "axe-coverage-gap 글의 '수동 리뷰 체크리스트'를 실제 워크플로우로 확장. 링크 목록/헤딩 탐색/폼 라벨을 스크린 리더로 흉내 내 검증하는 절차. priority 1의 키보드 편과 소형 시리즈로 묶을 수 있음. 우선순위는 키보드 편이 먼저."
+    },
+    {
+      "slug": "measure-ai-crawler-traffic-server-logs-crawl-to-refer-2026",
+      "title_idea": "AI 크롤러가 내 사이트를 얼마나 긁어가나 — 서버 로그로 crawl-to-refer 비율 실측하기",
+      "content_type": "how-to",
+      "target_keyword": "AI 크롤러 서버 로그 분석",
+      "secondary_keywords": [
+        "crawl-to-refer 비율",
+        "GPTBot ClaudeBot 로그",
+        "LLM 봇 트래픽 측정"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Passion Digital / Similarweb / SEOmator GEO Data Report 2026",
+      "added_at": "2026-07-13",
+      "status": "queued",
+      "notes": "측정 시리즈 연장선. GA는 AI 봇을 안 잡는다는 사실에서 출발해 nginx/access.log를 파싱, User-Agent별 요청수·고유 URL·에러율 집계, crawl-to-refer 비율 산출까지 실제 로그로 재현. 오늘의 JSON-LD CI 검증 글과 GEO 전략 글로 내부링크 연결. 차별화: 대부분 글이 SaaS 툴 홍보인데 여기선 awk/파이썬 스크립트로 직접 계산."
+    },
+    {
+      "slug": "nginx-log-format-json-structured-logging-analysis-2026",
+      "title_idea": "nginx 로그를 JSON으로 바꾸면 분석이 쉬워진다 — 구조화 로깅 실전 설정",
+      "content_type": "how-to",
+      "target_keyword": "nginx JSON 로그 포맷",
+      "secondary_keywords": [
+        "구조화 로깅",
+        "access.log jq 분석",
+        "봇 트래픽 필터링"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "press.farm / Honeylog 서버 로그 최적화 자료",
+      "added_at": "2026-07-13",
+      "status": "queued",
+      "notes": "위 crawl-to-refer 글의 선행/보조 글. 기본 combined 포맷 대신 log_format을 JSON escape=json으로 바꾸고 jq로 봇별 집계하는 실측. 정규식 파싱의 취약함 vs 구조화 로깅의 안정성을 실제 예제로 대비."
     }
   ]
 }

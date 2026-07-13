@@ -1,6 +1,6 @@
 ---
 title: '구조화 데이터를 배포 전에 잡아라 — JSON-LD를 CI에서 자동 검증하는 법'
-description: 'JSON-LD 파서가 통과시켜도 검색엔진은 못 읽는 마크업이 있다. schema.org의 @vocab 때문에 오타와 대소문자 오류가 멀쩡한 JSON-LD로 확장된다. 60줄짜리 스키마 인지 검증기를 만들어 CI에서 배포 전에 잡은 실측 기록.'
+description: 'JSON-LD 파서가 통과시켜도 검색엔진은 못 읽는 마크업이 있다. schema.org의 @vocab 때문에 오타와 대소문자 오류가 정상 JSON-LD로 조용히 확장된다. 60줄짜리 스키마 인지 검증기를 GitHub Actions CI에 넣어 배포 전에 자동으로 잡은 실측 기록이다.'
 pubDate: '2026-07-13'
 heroImage: '../../../assets/blog/validate-structured-data-ci-jsonld-2026/hero.png'
 tags:
