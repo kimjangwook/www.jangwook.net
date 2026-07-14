@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-13",
+  "updated_at": "2026-07-14",
   "topics": [
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
@@ -4950,6 +4950,40 @@
       "added_at": "2026-07-13",
       "status": "queued",
       "notes": "위 crawl-to-refer 글의 선행/보조 글. 기본 combined 포맷 대신 log_format을 JSON escape=json으로 바꾸고 jq로 봇별 집계하는 실측. 정규식 파싱의 취약함 vs 구조화 로깅의 안정성을 실제 예제로 대비."
+    },
+    {
+      "slug": "view-transitions-speculation-rules-instant-navigation-2026",
+      "title_idea": "크로스 도큐먼트 View Transitions + Speculation Rules로 즉시 페이지 전환 구현하기",
+      "content_type": "how-to",
+      "target_keyword": "View Transitions API Speculation Rules",
+      "secondary_keywords": [
+        "cross-document view transitions",
+        "instant navigation",
+        "prerender"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome for Developers, Web Perf Clinic, Frontend Masters (2026)",
+      "added_at": "2026-07-15",
+      "status": "queued",
+      "notes": "최근 LCP 발견 지연 실측 글의 자연스러운 후속. Chromium 프로덕션 레디 API 2종 결합으로 네이티브 앱급 내비게이션. 실제 코드 + Core Web Vitals 함정 회피까지 다루면 차별화."
+    },
+    {
+      "slug": "speculation-rules-hover-prerender-budget-tuning-2026",
+      "title_idea": "Speculation Rules 프리렌더 예산 튜닝: hover/eagerness로 과다 프리렌더 막기",
+      "content_type": "how-to",
+      "target_keyword": "speculation rules eagerness prerender budget",
+      "secondary_keywords": [
+        "prerender limit",
+        "eagerness moderate",
+        "chrome prerender"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "developer.chrome.com implementing-speculation-rules (2026)",
+      "added_at": "2026-07-15",
+      "status": "queued",
+      "notes": "1순위 글에서 파생. 프리렌더 남발 시 서버 부하·데이터 낭비 문제를 eagerness(conservative/moderate/eager)와 예산 한도로 제어하는 실전 튜닝. 실측 로그 기반 접근이면 evergreen."
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 title: 'A 117KB hero with a 1.2s LCP: the browser found it too late'
-description: 'Slow LCP is rarely about image weight — it is about when the browser discovers the image. I traced a CSS background hero going invisible to the preload scanner, then cut LCP from 1247ms to 109ms.'
+description: 'Slow LCP is rarely about image weight — it is about when the browser finds it. I traced a CSS hero invisible to the preload scanner and cut LCP 1247ms to 109ms.'
 pubDate: '2026-07-14'
 heroImage: '../../../assets/blog/lcp-image-preload-scanner-fetchpriority-2026/hero.png'
 tags:

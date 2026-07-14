@@ -81,7 +81,7 @@ Anthropic Agent Skills 표준은 AI 에이전트가 필요에 따라 동적으�
 - <strong>개방형 표준</strong>: 이 표준은 특정 플랫폼에 종속되지 않는 개방형 사양으로 설계되어, 모든 AI 플랫폼이 자유롭게 채택하고 통합할 수 있습니다. 이는 AI 에이전트 생태계의 상호운용성을 크게 향상시킬 것입니다.
 - <strong>광범위한 산업 채택</strong>: 이미 Microsoft, OpenAI, Atlassian, Figma, Cursor, GitHub와 같은 주요 기술 기업들이 이 표준을 도입했습니다. 또한 Canva, Stripe, Notion, Zapier와 같은 파트너사들은 이 표준을 기반으로 사전 구축된 다양한 스킬을 개발하여 에이전트의 활용 범위를 넓히고 있습니다.
 - <strong>강력한 기능성</strong>: 스킬은 AI 에이전트가 전문화된 작업을 수행하고, 반복 가능한 워크플로우를 이해하며, 심지어 새로운 소프트웨어와도 효과적으로 상호작용할 수 있도록 지원합니다. 스킬은 공유하기 쉽고, 구현이 간단하며, 강력하고, 다양한 환경에서 이식 가능하도록 설계되었습니다.
-- <strong>지능형 컨텍스트 관리 (Progressive Disclosure)</strong>: 이 표준은 LLM의 제한된 컨텍스트 윈도우 문제를 해결하기 위해 "점진적 공개(Progressive Disclosure)"라는 혁신적인 방식을 채택합니다. 에이전트는 우선 설치된 모든 스킬의 메타데이터를 미리 로드한 다음, 사용자의 현재 요청이 특정 스킬의 도메인과 일치한다고 판단될 때만 해당 스킬의 전체 `SKILL.md` 파일을 로드합니다. 이를 통해 필요한 정보만 효율적으로 사용하여 컨텍스트 윈도우의 제약을 최소화합니다.
+- <strong>지능형 컨텍스트 관리 (Progressive Disclosure)</strong>: 이 표준은 LLM의 제한된 컨텍스트 윈도우 문제를 해결하기 위해 "점진적 공개(Progressive Disclosure)"라는 혁신적인 방식을 채택합니다. 에이전트는 우선 설치된 모든 스킬의 메타데이터를 미리 로드한 다음, 사용자의 현재 요청이 특정 스킬의 도메인과 일치한다고 판단될 때만 해당 스킬의 전체 `SKILL.md` 파일을 로드합니다. 이를 통해 필요한 정보만 효율적으로 사용하여 컨텍스트 윈도우의 제약을 최소화합니다. 이러한 컨텍스트 관리 원리를 실제 코드로 구현하는 방법은 [Claude Skills 구현 가이드](/ko/blog/ko/claude-skills-implementation-guide)에서 단계별로 확인할 수 있습니다.
 
 ### 3. 기업용 기능
 
@@ -95,7 +95,7 @@ Agent Skills 표준은 2025년 10월 개발자 기능으로 처음 선보였으�
 
 ### 1. 개발자를 위한 Agent Skills SDK
 
-개발자는 `agentskills.io`에서 제공되는 Agent Skills SDK를 활용하여 커스텀 스킬을 개발할 수 있습니다. `SKILL.md` 파일은 YAML 기반의 메타데이터와 Markdown 기반의 상세 지침을 혼합하여 작성되며, 에이전트가 스킬의 목적과 사용법을 쉽게 파악하도록 돕습니다. 이를 통해 에이전트가 새로운 도구 및 서비스에 쉽게 연동될 수 있는 길을 열어줍니다.
+개발자는 `agentskills.io`에서 제공되는 Agent Skills SDK를 활용하여 커스텀 스킬을 개발할 수 있습니다. `SKILL.md` 파일은 YAML 기반의 메타데이터와 Markdown 기반의 상세 지침을 혼합하여 작성되며, 에이전트가 스킬의 목적과 사용법을 쉽게 파악하도록 돕습니다. 이를 통해 에이전트가 새로운 도구 및 서비스에 쉽게 연동될 수 있는 길을 열어줍니다. 스킬을 직접 작성하는 구체적인 절차와 실전 팁은 [Anthropic Agent Skills 실전 가이드](/ko/blog/ko/anthropic-agent-skills-practical-guide)에서 자세히 다룹니다.
 
 ### 2. 기업에서의 Agent Skills 활용
 

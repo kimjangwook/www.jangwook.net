@@ -82,7 +82,7 @@ The Anthropic Agent Skills standard defines a collection of modular "skills" tha
 - <strong>Open Standard</strong>: Designed as a platform-agnostic open specification, this standard allows any AI platform to freely adopt and integrate it. This will significantly improve interoperability within the AI agent ecosystem.
 - <strong>Widespread Industry Adoption</strong>: Leading technology companies such as Microsoft, OpenAI, Atlassian, Figma, Cursor, and GitHub have already adopted this standard. Furthermore, partners like Canva, Stripe, Notion, and Zapier have developed various pre-built skills based on this standard, expanding the range of agent applications.
 - <strong>Powerful Functionality</strong>: Skills empower AI agents to perform specialized tasks, understand repeatable workflows, and even effectively interact with new software. Skills are designed to be shareable, simple to implement, powerful, and portable across diverse environments.
-- <strong>Intelligent Context Management (Progressive Disclosure)</strong>: To address the limitations of LLM context windows, this standard adopts an innovative approach called "Progressive Disclosure." Agents first pre-load metadata for all installed skills. Then, only when a user's current request aligns with a specific skill's domain, the agent loads the full `SKILL.md` file for that skill. This minimizes context window constraints by efficiently using only necessary information.
+- <strong>Intelligent Context Management (Progressive Disclosure)</strong>: To address the limitations of LLM context windows, this standard adopts an innovative approach called "Progressive Disclosure." Agents first pre-load metadata for all installed skills. Then, only when a user's current request aligns with a specific skill's domain, the agent loads the full `SKILL.md` file for that skill. This minimizes context window constraints by efficiently using only necessary information. For a step-by-step look at implementing this context management principle in real code, see the [Claude Skills implementation guide](/en/blog/en/claude-skills-implementation-guide).
 
 ### 3. Enterprise Features
 
@@ -96,7 +96,7 @@ The Agent Skills standard was initially introduced as a developer feature in Oct
 
 ### 1. Agent Skills SDK for Developers
 
-Developers can leverage the Agent Skills SDK, available at `agentskills.io`, to develop custom skills. The `SKILL.md` file combines YAML-based metadata with Markdown-based detailed instructions, helping agents easily understand the skill's purpose and usage. This paves the way for agents to be seamlessly integrated with new tools and services.
+Developers can leverage the Agent Skills SDK, available at `agentskills.io`, to develop custom skills. The `SKILL.md` file combines YAML-based metadata with Markdown-based detailed instructions, helping agents easily understand the skill's purpose and usage. This paves the way for agents to be seamlessly integrated with new tools and services. For the concrete steps and practical tips on authoring skills yourself, see the [Anthropic Agent Skills practical guide](/en/blog/en/anthropic-agent-skills-practical-guide).
 
 ### 2. Agent Skills in Enterprise Applications
 

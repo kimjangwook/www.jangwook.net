@@ -1,6 +1,6 @@
 ---
 title: '히어로 이미지는 117KB였는데 LCP는 1.2초 — 브라우저가 이미지를 늦게 찾는 진짜 이유'
-description: 'LCP가 느린 건 이미지가 무거워서가 아니다. 브라우저가 그 이미지를 언제 "발견"하느냐의 문제다. CSS 배경 이미지가 프리로드 스캐너에 안 보이는 현상을 Chrome DevTools로 실측하고, fetchpriority·preload·렌더 차단 제거로 LCP 1247ms를 109ms까지 내린 기록.'
+description: 'LCP가 느린 건 이미지가 무거워서가 아니라 브라우저가 언제 그 이미지를 발견하느냐의 문제다. CSS 배경 이미지가 프리로드 스캐너에 안 보이는 현상을 Chrome DevTools로 실측하고 fetchpriority로 LCP 1247ms를 109ms까지 내린 실전 기록.'
 pubDate: '2026-07-14'
 heroImage: '../../../assets/blog/lcp-image-preload-scanner-fetchpriority-2026/hero.png'
 tags:

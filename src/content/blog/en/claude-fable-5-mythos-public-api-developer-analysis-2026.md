@@ -1,6 +1,6 @@
 ---
 title: 'Claude Fable 5 Release Analysis'
-description: 'Anthropic released Claude Fable 5 on June 9, 2026 — SWE-bench Pro 80.3%, $10/$50 per MTok. Is it worth the cost over Opus 4.8? API changes, safety routing, and the real cost structure.'
+description: 'Claude Fable 5 landed June 9, 2026: SWE-bench Pro 80.3%, $10/$50 per MTok. Worth more than Opus 4.8? API changes, safety routing, and cost structure, analyzed.'
 pubDate: '2026-06-12'
 heroImage: '../../../assets/blog/claude-fable-5-mythos-public-api-developer-analysis-2026-hero.png'
 tags:

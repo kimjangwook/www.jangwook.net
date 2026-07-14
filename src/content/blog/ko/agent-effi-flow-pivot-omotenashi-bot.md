@@ -67,7 +67,7 @@ relatedPosts:
 - 크레딧 기반 결제 시스템 (Stripe 연동)
 - 5개 언어 다국어 지원
 
-하지만 런칭 후 일주일, 냉정한 현실을 마주해야 했습니다.
+하지만 런칭 후 일주일, 냉정한 현실을 마주해야 했습니다. 이 서비스의 초기 자동화 구조를 어떻게 설계했는지는 [Agent Effi Flow 자동화 분석 1편](/ko/blog/ko/effiflow-automation-analysis-part1)에서 자세히 다뤘습니다.
 
 ---
 
@@ -301,6 +301,8 @@ const CREDIT_COSTS = {
 - 면세/과세 자동 분류
 - Duty-Free, Tax-Free 키워드 감지
 - 야요이, freee CSV 포맷 지원
+
+이러한 자동화 파이프라인을 실제로 어떻게 운영하고 개선해 왔는지는 [Agent Effi Flow 자동화 분석 3편](/ko/blog/ko/effiflow-automation-analysis-part3)에서 이어집니다.
 
 ---
 

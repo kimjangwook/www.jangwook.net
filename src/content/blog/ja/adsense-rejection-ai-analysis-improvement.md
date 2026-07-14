@@ -168,6 +168,8 @@ AIの分析結果に基づいて、次のような改善作業を行いました
 <link rel="alternate" hreflang="x-default" href="https://jangwook.net/en/..." />
 ```
 
+「価値のないコンテンツ」判定をコードレベルでどう解決したかは、[AdSense低品質コンテンツ問題を技術的に解決する](/ja/blog/ja/adsense-low-value-content-technical-fix)でより具体的にまとめています。
+
 これにより、Googleは<strong>同じコンテンツの言語バージョン</strong>として正しく認識できるようになりました。
 
 ### 3. 自動言語検出の実装
@@ -194,6 +196,8 @@ export function getRecommendedLanguage(): SupportedLanguage {
 - <strong>About Authorセクション</strong>：経歴、専門性、実績
 - <strong>Featured Projects</strong>：実際のプロジェクトポートフォリオ
 - <strong>Statisticsセクション</strong>：232件以上の投稿、8つ以上のトピック
+
+検索エンジンとAI検索（AEO）の両方で信頼信号を強化する方法は、[LLM時代のSEO・AEO実践](/ja/blog/ja/llm-seo-aeo-practical-implementation)に続きます。
 
 これにより、Googleに「<strong>実際の専門家が運営する信頼できるリソース</strong>」という信号を明確に伝えることができました。
 
