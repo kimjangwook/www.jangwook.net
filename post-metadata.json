@@ -2922,5 +2922,16 @@
       "devops": 0.6,
       "architecture": 0.45
     }
+  },
+  "lcp-image-preload-scanner-fetchpriority-2026": {
+    "categoryScores": {
+      "ai-ml": 0.05,
+      "architecture": 0.4,
+      "automation": 0.35,
+      "devops": 0.55,
+      "web-development": 0.95
+    },
+    "difficulty": 3,
+    "pubDate": "2026-07-14"
   }
 }
