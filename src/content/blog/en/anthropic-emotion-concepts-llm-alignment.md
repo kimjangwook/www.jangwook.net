@@ -1,7 +1,5 @@
 ---
-title: >-
-  There Are Emotions Inside LLMs — Anthropic Found 171 Emotion Representations
-  in Claude
+title: 'There Are Emotions Inside LLMs'
 description: >-
   Anthropic's interpretability team discovered 171 emotion-like representations
   inside Claude and proved they causally affect model output. Practical

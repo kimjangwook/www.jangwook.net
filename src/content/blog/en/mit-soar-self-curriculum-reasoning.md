@@ -1,12 +1,6 @@
 ---
-title: >-
-  MIT SOAR: How LLMs Generate Their Own Curriculum to Break Through Reasoning
-  Plateaus
-description: >-
-  MIT's SOAR framework enables LLMs to self-generate training curricula, solving
-  the learning plateau problem in reinforcement learning. Explore the core
-  principles of this meta-RL self-improvement approach and its experimental
-  results.
+title: 'MIT SOAR: LLMs That Write Their Own Curriculum'
+description: 'MIT''s SOAR framework enables LLMs to self-generate training curricula, solving the learning plateau problem in reinforcement learning.'
 pubDate: '2026-02-13'
 heroImage: ../../../assets/blog/mit-soar-self-curriculum-reasoning-hero.jpg
 tags:

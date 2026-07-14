@@ -1,7 +1,6 @@
 ---
 title: mcp2cli — Cut MCP Token Costs by 96–99% with CLI-Based Tool Discovery
-description: >-
-  Connecting MCP servers injects all tool schemas into context every turn—362,000 tokens wasted for 120 tools over 25 turns. mcp2cli solves this with CLI-based on-demand discovery, cutting costs by 96–99%. Here's how it works and when to use it.
+description: 'Connecting MCP servers injects all tool schemas into context every turn—362,000 tokens wasted for 120 tools over 25 turns. mcp2cli solves this with CLI-based on-demand discovery, cutting costs by 96–99%.'
 pubDate: '2026-03-12'
 heroImage: ../../../assets/blog/mcp2cli-token-cost-optimization-hero.jpg
 tags:

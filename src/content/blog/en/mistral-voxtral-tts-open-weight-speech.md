@@ -1,5 +1,5 @@
 ---
-title: 'Mistral Voxtral TTS — 3-Second Voice Cloning, Open Weight, But No Japanese'
+title: 'Mistral Voxtral TTS — 3-Second Voice Cloning, Open Weight'
 description: >-
   Analyzing Mistral's 4B open-weight TTS model Voxtral. It beat ElevenLabs in
   human evaluations but lacks Japanese support, a dealbreaker for Asian markets.

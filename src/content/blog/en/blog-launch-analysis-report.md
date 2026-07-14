@@ -1,7 +1,5 @@
 ---
-title: >-
-  jangwook.net Blog Launch Analysis Report: The Beginning of a Data-Driven
-  Technical Blog
+title: 'jangwook.net Blog Launch Analysis Report'
 description: >-
   Blog launch GA4 data analysis, practical MCP query examples, and 3-month
   growth strategy - transparently sharing the journey of starting a technical

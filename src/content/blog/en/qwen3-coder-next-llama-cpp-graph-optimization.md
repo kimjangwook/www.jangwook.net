@@ -1,5 +1,5 @@
 ---
-title: Qwen3 Coder Next llama.cpp Graph Optimization — Up to 38% Inference Speedup
+title: 'Qwen3 Coder Next llama.cpp Graph Optimization'
 description: >-
   ggerganov restructures the llama.cpp compute graph to achieve up to 38%
   inference speedup for the Qwen3 Coder Next 80B model. Detailed benchmark

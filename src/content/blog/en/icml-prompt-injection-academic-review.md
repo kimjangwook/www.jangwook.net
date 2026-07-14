@@ -1,7 +1,5 @@
 ---
-title: >-
-  Prompt Injection Found in ICML Papers — Exposing AI Peer Review
-  Vulnerabilities
+title: 'Prompt Injection Found in ICML Papers'
 description: >-
   Prompt injection text was discovered embedded in ICML submission PDFs. We
   analyze the security risks of AI-dependent academic peer review systems.

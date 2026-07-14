@@ -1,5 +1,5 @@
 ---
-title: IBM Triples Entry-Level Hiring After Finding the Limits of AI Replacement
+title: 'IBM Triples Entry-Level Hiring at the Limits of AI'
 description: >-
   IBM is tripling Gen Z entry-level hiring after realizing AI's limits. An EM's
   analysis of AI replacement reality, enterprise workforce planning, and

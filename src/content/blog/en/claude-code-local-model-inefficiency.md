@@ -1,7 +1,5 @@
 ---
-title: >-
-  Claude Code with Local Models Triggers Full Prompt Reprocessing — An
-  Architecture Inefficiency
+title: 'Claude Code with Local Models Triggers Full Prompt Reprocessing'
 description: >-
   Analyzing the full prompt reprocessing issue when running Claude Code with
   local LLMs. Learn about KV cache invalidation mechanics and developer tool

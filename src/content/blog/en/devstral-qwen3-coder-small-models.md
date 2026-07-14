@@ -1,5 +1,5 @@
 ---
-title: Devstral Small 2 24B & Qwen3 Coder 30B — The Small Coding Model Era Begins
+title: 'Devstral Small 2 24B & Qwen3 Coder 30B'
 description: >-
   Mistral Devstral Small 2 24B and Qwen3 Coder 30B arrive simultaneously. A
   comparative analysis of small coding models that run on Raspberry Pi and the

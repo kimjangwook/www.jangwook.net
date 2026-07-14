@@ -1,7 +1,5 @@
 ---
-title: >-
-  Paperclip — I Installed the Open-Source Platform That Manages AI Agents Like
-  Employees
+title: 'I Installed Paperclip — AI Agents Managed Like Employees'
 description: >-
   Paperclip manages AI agents like employees. I installed this open-source
   platform, hired a Claude Code agent, and tested the dashboard, Org Chart, and

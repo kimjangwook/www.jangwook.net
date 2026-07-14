@@ -1,7 +1,5 @@
 ---
-title: >-
-  $30 Radio + Local AI = Internet-Free Smart Home — A Practical Edge AI Case
-  Study
+title: '$30 Radio + Local AI = Internet-Free Smart Home'
 description: >-
   Analyzing a real-world project that achieves voice control and smart home
   automation without internet using just a Mac mini and a $30 LoRa radio. A deep

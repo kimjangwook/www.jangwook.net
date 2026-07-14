@@ -1,5 +1,5 @@
 ---
-title: 'Switching OpenClaw to OpenAI Codex — A Practical Guide After the Claude/Gemini ToS Confusion'
+title: 'Switching OpenClaw to OpenAI Codex'
 description: >-
   OpenClaw migration guide: switch from Claude/Gemini OAuth to OpenAI Codex in 15 minutes.
   Covers backup, model config, per-agent settings, provider layer strategy, and cost comparison.

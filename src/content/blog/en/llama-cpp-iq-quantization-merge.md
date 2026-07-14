@@ -1,7 +1,5 @@
 ---
-title: >-
-  IQ*_K/IQ*_KS Quantization Merged into llama.cpp — ik_llama.cpp Contributions
-  Go Mainline
+title: 'IQ*_K/IQ*_KS Quantization Merged into llama.cpp'
 description: >-
   IQ-series quantization methods developed in ik_llama.cpp are being merged into
   llama.cpp mainline. Learn about IQ2_K through IQ4_KS precision improvements

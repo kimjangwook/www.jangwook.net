@@ -1,6 +1,6 @@
 ---
 title: 'Amazon Kiro Analysis — Can a Spec-Driven AI IDE Replace Claude Code?'
-description: "A deep look at AWS's spec-driven AI IDE Kiro using official docs and community reviews. Covers EARS-notation requirements, Agent Hooks, Steering Files, and an honest comparison with Claude Code — including where Kiro wins and where it falls short."
+description: 'A deep look at AWS''s spec-driven AI IDE Kiro via official docs and community reviews: EARS requirements, Agent Hooks, Steering Files, and an honest Claude Code comparison.'
 pubDate: '2026-06-05'
 heroImage: ../../../assets/blog/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026/hero.png
 tags:

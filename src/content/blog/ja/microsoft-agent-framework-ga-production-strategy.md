@@ -1,7 +1,5 @@
 ---
-title: >-
-  Microsoft Agent Framework GA: AutoGen + Semantic Kernel統合完成 — EM/CTO
-  プロダクション導入戦略
+title: 'Microsoft Agent Framework GA: AutoGen + Semantic Kernel統合完成'
 description: >-
   AutoGenとSemantic Kernelが統合されたMicrosoft Agent FrameworkがQ1
   2026のGA(一般提供)を前に控えています。EM/CTO視点から主要機能、マイグレーション戦略、プロダクション導入ロードマップを解説します。

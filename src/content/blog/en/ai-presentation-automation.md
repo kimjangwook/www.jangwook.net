@@ -1,5 +1,5 @@
 ---
-title: 'Automating Semi-Annual Presentation Creation with AI: From 60 Hours to 10'
+title: 'Automating Semi-Annual Presentation Creation with AI'
 description: >-
   Learn how we reduced semi-annual reporting preparation from over 60 hours to
   just 10 hours using AI agent systems and automation tools in this practical

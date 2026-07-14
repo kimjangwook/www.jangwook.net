@@ -1,7 +1,5 @@
 ---
-title: >-
-  GPT-5.2 Derives New Result in Theoretical Physics — The Turning Point Where AI
-  Becomes a Discoverer
+title: 'GPT-5.2 Derives New Result in Theoretical Physics'
 description: >-
   OpenAI's GPT-5.2 derived and proved a new formula for gluon scattering
   amplitudes. We analyze this historic turning point where AI transitions from

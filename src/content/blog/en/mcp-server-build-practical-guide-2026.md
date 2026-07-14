@@ -1,7 +1,5 @@
 ---
-title: >-
-  Building Your Own MCP Server — Implementing Real AI Tools with Streamable HTTP
-  Transport
+title: 'Build an MCP Server with Streamable HTTP Transport'
 description: >-
   A hands-on tutorial for building an MCP server from scratch using Python
   FastMCP. Covers Streamable HTTP transport setup, tool implementation, and

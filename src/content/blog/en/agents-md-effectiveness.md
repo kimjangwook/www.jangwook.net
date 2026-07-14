@@ -1,7 +1,5 @@
 ---
-title: >-
-  Does AGENTS.md Actually Work? The First Empirical Study Reveals Surprising
-  Results
+title: 'Does AGENTS.md Actually Work? The First Empirical Study'
 description: >-
   The first empirical study evaluating AGENTS.md effectiveness has been
   published. We analyze its impact on coding agent success rates and inference

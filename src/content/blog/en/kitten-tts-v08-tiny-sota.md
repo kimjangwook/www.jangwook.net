@@ -1,7 +1,5 @@
 ---
-title: >-
-  Kitten TTS V0.8: The Sub-25MB TTS Model Achieving SOTA Quality for Edge
-  Devices
+title: 'Kitten TTS V0.8: Sub-25MB SOTA Speech for Edge Devices'
 description: >-
   A deep dive into Kitten TTS V0.8 — a 14M parameter, sub-25MB text-to-speech
   model matching cloud TTS quality. Analysis of edge deployment potential and

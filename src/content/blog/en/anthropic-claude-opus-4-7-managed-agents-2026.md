@@ -1,6 +1,6 @@
 ---
-title: "Anthropic's April Double Release — How Opus 4.7 and Managed Agents Change Agent Development"
-description: "Claude Opus 4.7 (April 16) and Managed Agents beta (April 8) landed in the same month. Benchmarks are record-breaking but the community reaction is split. I break down the new tokenizer cost shock, task_budget, and what the $0.08-per-session model actually means for engineers."
+title: 'Anthropic''s April Double Release'
+description: 'Claude Opus 4.7 (April 16) and Managed Agents beta (April 8) landed in the same month. Benchmarks are record-breaking but the community reaction is split.'
 pubDate: '2026-05-01'
 heroImage: '../../../assets/blog/anthropic-claude-opus-4-7-managed-agents-2026-hero.png'
 tags: ['Claude', 'AI Agents', 'Anthropic', 'LLM']

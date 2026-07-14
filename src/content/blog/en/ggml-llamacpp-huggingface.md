@@ -1,7 +1,5 @@
 ---
-title: >-
-  GGML/llama.cpp Joins Hugging Face — A Structural Turning Point for Local AI
-  Infrastructure
+title: 'GGML/llama.cpp Joins Hugging Face'
 description: >-
   The ggml.ai team joins Hugging Face to secure the long-term sustainability of
   llama.cpp. We analyze the structural changes and technical implications for

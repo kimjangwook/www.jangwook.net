@@ -1,7 +1,5 @@
 ---
-title: >-
-  Olmo Hybrid — Achieving 2x Data Efficiency with a Transformer + Linear RNN
-  Hybrid
+title: 'Olmo Hybrid — 2x Data Efficiency with Transformer + RNN'
 description: >-
   AI2's Olmo Hybrid pairs Transformer and DeltaNet in a 3:1 mix for 49% token
   savings at equal accuracy. Architecture deep-dive and LLM engineering

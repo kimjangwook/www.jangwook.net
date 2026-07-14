@@ -1,7 +1,5 @@
 ---
-title: >-
-  Automating Large-Scale Website Page Generation with Claude Code: Parts Library
-  and SubAgent Parallel Processing
+title: 'Automating Large-Scale Website Page Generation with Claude Code'
 description: >-
   A practical case study of auto-generating 31 HTML pages using a parts
   library-based approach. Complete guide covering CSV metadata management,

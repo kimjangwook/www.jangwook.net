@@ -294,43 +294,10 @@ function validateTitleLengths(posts) {
   }
 }
 
-// 2026-07-07 FACT-CORE TRANSCREATION 전환: 이후 발행 글은 언어판별 독립 집필이
-// 정책이므로 구조(h2·다이어그램 수) 패리티를 요구하지 않는다.
-// 구체제(번역 구조) 글에만 구조 검사를 유지하고,
-// 신체제의 명시 불변식(relatedPosts·heroImage 4언어 동일)은 별도로 검증한다.
-const TRANSCREATION_CUTOFF = '2026-07-07';
-
-function validateTranslationParity(posts) {
-  const bySlug = new Map();
-  for (const post of posts.filter((item) => item.indexable && item.pubDateKey <= TRANSCREATION_CUTOFF)) {
-    if (!bySlug.has(post.slug)) bySlug.set(post.slug, new Map());
-    bySlug.get(post.slug).set(post.lang, post);
-  }
-
-  const drifted = [];
-  for (const [slug, byLang] of bySlug) {
-    if (byLang.size < languages.length) continue; // 언어 누락은 별도 에러로 잡힌다
-    const counts = languages.map((lang) => {
-      const post = byLang.get(lang);
-      return { h2: post.h2Count, imgs: post.markdownImages.length, mermaid: post.mermaidCount };
-    });
-    const spread = (key) => {
-      const values = counts.map((c) => c[key]);
-      return Math.max(...values) - Math.min(...values);
-    };
-    if (spread('h2') > 0 || spread('imgs') > 0 || spread('mermaid') > 0) {
-      drifted.push(
-        `${slug} (h2 ${counts.map((c) => c.h2).join('/')}, imgs ${counts.map((c) => c.imgs).join('/')}, mermaid ${counts.map((c) => c.mermaid).join('/')})`
-      );
-    }
-  }
-
-  if (drifted.length > 0) {
-    warnings.push(
-      `translation structure drift (${languages.join('/')}): ${drifted.length}\n${limitList(drifted)}`
-    );
-  }
-}
+// 2026-07-14: 번역 구조 패리티 검사(validateTranslationParity) 은퇴.
+// 번역 시대(〜2026-07-07) 계약이었던 언어 간 구조 동형성은 FACT-CORE TRANSCREATION
+// 정책(언어판 독립 집필)과 전량 재발행으로 사문화됨. 살아 있는 계약은
+// validateSharedFrontmatterParity(heroImage·relatedPosts 4언어 동일)가 담당한다.
 
 async function validateCrawlerSurfaces() {
   const rssFiles = [
@@ -391,7 +358,6 @@ async function main() {
   validateRelatedPosts(posts);
   validateTitleLengths(posts);
   validateSharedFrontmatterParity(posts);
-  validateTranslationParity(posts);
   await validateCrawlerSurfaces();
 
   const hiddenPastPosts = posts.filter((post) => post.pubDateKey && post.pubDateKey <= todayJst && (post.draft || post.noindex));

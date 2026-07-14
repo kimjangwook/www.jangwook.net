@@ -1,6 +1,6 @@
 ---
-title: 'AI Reliability Engineer: The New Engineering Team Paradigm and the Centaur Pod Model in 2026'
-description: 'Junior developer roles are evolving into AI Reliability Engineers (AREs). From Centaur Pod team structures to Code Audit hiring and Defect Capture Rate metrics — the AI-native team design strategy every Engineering Manager needs to act on now'
+title: 'AI Reliability Engineer and the Centaur Pod Model in 2026'
+description: 'Junior roles are evolving into AI Reliability Engineers. Centaur Pod team structures, Code Audit hiring, Defect Capture Rate — the AI-native team design brief for Engineering Managers.'
 pubDate: '2026-03-10'
 heroImage: '../../../assets/blog/ai-reliability-engineer-centaur-pod-2026-hero.png'
 tags:

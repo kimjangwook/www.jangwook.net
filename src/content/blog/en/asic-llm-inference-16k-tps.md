@@ -1,7 +1,5 @@
 ---
-title: >-
-  ASIC Inference Chip Runs Llama 3.1 8B at 16,000 tok/s — The GPU-Free AI
-  Inference Era
+title: 'ASIC Inference Chip Runs Llama 3.1 8B at 16,000 tok/s'
 description: >-
   Startup Taalas achieves 16,000 tok/s on Llama 3.1 8B using custom ASIC chips
   without GPUs. We analyze the shift away from GPU dependency and the inference

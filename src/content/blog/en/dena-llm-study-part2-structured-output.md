@@ -1,5 +1,5 @@
 ---
-title: 'DeNA LLM Study Part 2: Structured Output and Multi-LLM Composition Patterns'
+title: 'DeNA LLM Study Part 2: Structured Output and Multi-LLM'
 description: >-
   From structured outputs using JSON Schema and Pydantic to practical Multi-LLM
   pipeline design patterns like Sequential, Parallel, and Cascade for production

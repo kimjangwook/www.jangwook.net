@@ -1,5 +1,5 @@
 ---
-title: 'Qwen 3.5 Goes Bankrupt on Vending-Bench 2: The Pitfall of Benchmark Obsession'
+title: 'Qwen 3.5 Goes Bankrupt on Vending-Bench 2'
 description: >-
   Qwen 3.5, a top performer on standard benchmarks, goes bankrupt on
   Vending-Bench 2's vending machine simulation. Exploring the blind spots of

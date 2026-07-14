@@ -1,7 +1,5 @@
 ---
-title: >-
-  Implementing Scheduled Publishing on Static Sites: Automating Astro + GitHub
-  Actions
+title: 'Implementing Scheduled Publishing on Static Sites'
 description: >-
   A practical guide to implementing WordPress-like scheduled post publishing on
   static blogs using Astro and GitHub Pages. Complete automation with pubDate

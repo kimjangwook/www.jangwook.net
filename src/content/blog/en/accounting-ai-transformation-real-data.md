@@ -1,11 +1,6 @@
 ---
-title: >-
-  AI Transformation in Accounting Firms — Invoice Processing Cost from $7 to
-  $0.20
-description: >-
-  Analyzing 6 months of real data from an accounting firm's AI agent deployment.
-  Behind the 97% cost reduction and 80%→98% accuracy improvement lies a
-  realistic journey of adoption challenges and organizational transformation.
+title: 'AI Transformation in Accounting Firms'
+description: 'Six months of real data from an accounting firm''s AI agent rollout: behind the 97% cost cut and 80%→98% accuracy gain lies a realistic story of adoption hurdles and organizational change.'
 pubDate: '2026-02-10'
 heroImage: ../../../assets/blog/accounting-ai-transformation-real-data-hero.png
 tags:

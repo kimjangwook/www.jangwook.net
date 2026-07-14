@@ -1,5 +1,5 @@
 ---
-title: MCP Joins the Linux Foundation — An Adoption Roadmap for Engineering Teams
+title: 'MCP Joins the Linux Foundation'
 description: >-
   Anthropic donated MCP to the Linux Foundation, with OpenAI, Google, and
   Microsoft on board. With 76% of companies exploring adoption, here is a

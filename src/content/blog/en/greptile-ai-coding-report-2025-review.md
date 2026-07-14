@@ -1,5 +1,5 @@
 ---
-title: 'Greptile AI Coding Report 2025 Review: Has AI Really Improved Productivity?'
+title: 'Greptile AI Coding Report 2025 Review'
 description: >-
   Analyzing Greptile's State of AI Coding 2025 report and examining the real
   productivity changes AI has brought to development, combined with personal

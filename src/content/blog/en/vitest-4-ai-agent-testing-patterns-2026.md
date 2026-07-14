@@ -1,6 +1,6 @@
 ---
-title: 'Testing AI Agents with Vitest 4 — Mocking LLM Calls and Streaming Responses in Practice'
-description: 'I verified practical patterns for mocking Anthropic SDK messages.create() and streaming responses in Vitest 4.1.7. This covers why vi.fn().mockImplementation(function(){...}) differs from arrow functions, how to reproduce SSE streams with async function* generators, and how 9 tests pass in 142ms without a single API call.'
+title: 'Testing AI Agents with Vitest 4'
+description: 'I verified practical patterns for mocking Anthropic SDK messages.create() and streaming responses in Vitest 4.1.7.'
 pubDate: '2026-06-01'
 heroImage: '../../../assets/blog/vitest-4-ai-agent-testing-patterns-2026/vitest-4-ai-agent-testing-patterns-2026-hero.png'
 tags: ['Vitest', 'AI Agent', 'TypeScript']

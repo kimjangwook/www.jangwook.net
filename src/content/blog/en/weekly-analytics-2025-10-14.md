@@ -1,5 +1,5 @@
 ---
-title: 'First Week Analysis Report: A Journey Begun with 31 Passionate Early Adopters'
+title: 'First Week Analysis: 31 Passionate Early Adopters'
 description: >-
   GA4 data analysis, content performance, and improvement impact one week after
   blog launch - transparently sharing our blog growth journey (2025-10-07~10-14)

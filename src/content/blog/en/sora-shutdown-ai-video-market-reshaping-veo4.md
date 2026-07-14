@@ -1,12 +1,6 @@
 ---
-title: >-
-  Sora Shutdown and the Rapid Reshaping of the AI Video Market — Google Veo 4
-  Eyes the Vacuum
-description: >-
-  OpenAI announced the shutdown of the Sora app. With $1M daily losses and
-  sub-500K users, we analyze the fallout alongside Google Veo 4's imminent
-  launch and the rise of Runway and Kling, from a practical workflow
-  perspective.
+title: 'Sora Shutdown and the Rapid Reshaping of the AI Video Market'
+description: 'OpenAI is shutting down the Sora app. With $1M daily losses and under 500K users, we analyze the fallout alongside Google Veo 4''s launch and the rise of Runway and Kling.'
 pubDate: '2026-04-01'
 heroImage: ../../../assets/blog/sora-shutdown-ai-video-market-reshaping-veo4-hero.jpg
 tags:

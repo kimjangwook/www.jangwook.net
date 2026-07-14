@@ -1,7 +1,5 @@
 ---
-title: >-
-  GPT-4o Retirement and Model Dependency Risk: Claude Overtakes in Enterprise
-  Market
+title: 'GPT-4o Retirement and Model Dependency Risk'
 description: >-
   GPT-4o retires in February 2026. We analyze model dependency risks, how Claude
   overtook OpenAI in enterprise market share, and why multi-model strategy is

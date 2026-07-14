@@ -1,5 +1,5 @@
 ---
-title: The Anthropic Claude Performance Decline Controversy — What Actually Happened
+title: 'The Anthropic Claude Performance Decline Controversy'
 description: >-
   In March 2026, Anthropic quietly lowered Claude default effort to "medium,"
   triggering power user backlash. A CTO-level analysis of the pricing

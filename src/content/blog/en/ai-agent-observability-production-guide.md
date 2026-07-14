@@ -1,5 +1,5 @@
 ---
-title: 'AI Agent Observability in Production: Making Your LLM Systems Transparent'
+title: 'AI Agent Observability in Production'
 description: 'A practical guide for Engineering Managers on monitoring multi-agent LLM systems in production. Covers distributed tracing, metrics, logging, OpenTelemetry, and a comparison of Langfuse, LangSmith, and Braintrust.'
 pubDate: '2026-03-12'
 heroImage: ../../../assets/blog/ai-agent-observability-production-guide-hero.jpg

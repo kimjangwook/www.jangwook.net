@@ -1,7 +1,5 @@
 ---
-title: >-
-  Claude Sonnet 4.6 Release: Anthropic's Mid-Tier Model Strategy and Performance
-  Analysis
+title: 'Claude Sonnet 4.6: Anthropic''s Mid-Tier Model Strategy'
 description: >-
   Claude Sonnet 4.6 analysis: model versioning strategy, performance vs Opus and
   Haiku, API cost changes, and upgrade guidance for developers building on

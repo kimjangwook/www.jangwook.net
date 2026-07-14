@@ -1,7 +1,5 @@
 ---
-title: >-
-  AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized
-  Agents
+title: 'AI Agent Collaboration Patterns'
 description: >-
   Orchestrate Architecture, Coding, Testing, Security, and DevOps agents to
   build production-grade applications

@@ -1,5 +1,5 @@
 ---
-title: 'The February 2026 AI Model Rush: 7 Major Models Launching in a Single Month'
+title: 'The February 2026 AI Model Rush'
 description: >-
   Gemini 3 Pro GA, Sonnet 5, GPT-5.3, Qwen 3.5, GLM 5, Deepseek v4, and Grok
   4.20 are all scheduled for February 2026. An analysis of the largest AI model

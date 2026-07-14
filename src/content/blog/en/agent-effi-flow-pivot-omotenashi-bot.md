@@ -1,7 +1,5 @@
 ---
-title: >-
-  Agent Effi Flow Strategic Pivot: Launching OmotenashiBot for the Japanese
-  Inbound Market
+title: 'Agent Effi Flow Strategic Pivot'
 description: >-
   A strategic transition from AI efficiency tools to the Japanese inbound
   tourism market. Sharing market analysis and the OmotenashiBot service

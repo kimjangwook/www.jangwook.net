@@ -1,7 +1,5 @@
 ---
-title: >-
-  Anthropic Agent Skills Standard: A New Open Standard for Expanding AI Agent
-  Capabilities
+title: 'Anthropic Agent Skills Standard'
 description: >-
   Anthropic's Agent Skills standard provides a universal method for AI agents to
   acquire and utilize new capabilities, fostering innovation and accelerating AI

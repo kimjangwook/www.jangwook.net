@@ -1,12 +1,6 @@
 ---
-title: >-
-  Claude Managed Agents' Dreaming, Outcomes, and Orchestration — How Agents
-  Self-Improve While You Sleep
-description: >-
-  A technical analysis of Dreaming, Outcomes, and Multiagent Orchestration
-  announced at Code with Claude SF 2026. Breaking down Harvey's 6x claim, the
-  productization of LLM-as-judge, and the governance risks of self-improving
-  agents.
+title: 'Claude Managed Agents'' Dreaming, Outcomes, and Orchestration'
+description: 'A technical analysis of Dreaming, Outcomes, and Multiagent Orchestration announced at Code with Claude SF 2026.'
 pubDate: '2026-05-16'
 heroImage: >-
   ../../../assets/blog/claude-managed-agents-dreaming-outcomes-code-with-claude-2026-hero.png

@@ -1,7 +1,5 @@
 ---
-title: >-
-  How LLMs Are Disrupting Patent Strategy — Mark Cuban's Warning on Patents as
-  AI Training Data
+title: 'How LLMs Are Disrupting Patent Strategy'
 description: >-
   Mark Cuban warns that published patents become LLM training material. As AI
   absorbs patent knowledge at scale, how should companies rethink their

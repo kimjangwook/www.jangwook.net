@@ -1,7 +1,5 @@
 ---
-title: >-
-  Verbalized Sampling: A Training-Free Prompting Technique to Restore LLM
-  Diversity
+title: 'Verbalized Sampling: Restoring LLM Diversity via Prompts'
 description: >-
   Verbalized Sampling tackles mode collapse after alignment by prompting models
   to verbalize probability distributions, achieving 1.6-2.1x diversity gains

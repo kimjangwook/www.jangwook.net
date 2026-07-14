@@ -1,7 +1,5 @@
 ---
-title: >-
-  AI Self-Generated Skills Are Useless — Research Debunking the LLM
-  Self-Improvement Myth
+title: 'AI Self-Generated Skills Are Useless'
 description: >-
   SkillsBench proves AI agents cannot author useful skills for themselves.
   Across 7,308 trajectories, self-generated skills showed zero benefit while

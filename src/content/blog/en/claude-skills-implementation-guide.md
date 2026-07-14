@@ -1,11 +1,6 @@
 ---
-title: >-
-  Claude Skills Complete Guide: From Project Implementation to Practical
-  Know-How
-description: >-
-  A practical guide documenting the journey from introducing Claude Agent Skills
-  to real-world implementation, including trials, errors, and achievements.
-  Learn how to specialize AI agents through folder-based modularization.
+title: 'Claude Skills Complete Guide: Implementation to Know-How'
+description: 'A practical guide documenting the journey from introducing Claude Agent Skills to real-world implementation, including trials, errors, and achievements.'
 pubDate: '2025-10-22'
 heroImage: ../../../assets/blog/claude-skills-guide-hero.jpg
 tags:

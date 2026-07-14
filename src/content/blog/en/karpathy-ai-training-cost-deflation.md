@@ -1,7 +1,5 @@
 ---
-title: >-
-  Karpathy: AI Training Costs Drop 40% Per Year — How Deflation Is Reshaping the
-  Industry
+title: 'Karpathy: AI Training Costs Drop 40% Per Year'
 description: >-
   Karpathy's analysis reveals AI model training costs fall 40% annually. We
   examine the structural factors — hardware evolution, algorithm efficiency, and

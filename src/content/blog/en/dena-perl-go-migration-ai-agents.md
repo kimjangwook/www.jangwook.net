@@ -1,5 +1,5 @@
 ---
-title: 'DeNA''s Perl-to-Go Migration: Two AI Agent Types Cut 6 Months Down to 1 Month'
+title: 'DeNA''s Perl-to-Go Migration: AI Agents Cut 6 Months to 1'
 description: >-
   How DeNA migrated 6,000 lines of Perl to Go using two specialized AI agents —
   one for conversion, one for verification — completing a 6-month project in

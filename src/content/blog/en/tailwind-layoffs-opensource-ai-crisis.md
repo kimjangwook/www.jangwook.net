@@ -1,5 +1,5 @@
 ---
-title: 'Tailwind CSS 75% Layoffs: The Crisis of Open Source Monetization in the AI Era'
+title: 'Tailwind CSS 75% Layoffs: Open Source in the AI Era'
 description: >-
   Analyzing how AI is destroying documentation-based revenue models through the
   Tailwind Labs layoffs, the worsening unpaid labor problem for open source

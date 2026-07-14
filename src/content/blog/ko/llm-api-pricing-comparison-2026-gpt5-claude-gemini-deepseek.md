@@ -1,5 +1,5 @@
 ---
-title: LLM API 가격 비교 2026 — GPT-5 vs Claude vs Gemini vs DeepSeek 실제 비용 계산
+title: 'LLM API 가격 비교 2026 — GPT-5·Claude·Gemini·DeepSeek 실비용'
 description: >-
   2026년 4월 기준 주요 LLM API 가격을 실제 프로덕션 시나리오별로 비교합니다. GPT-5.4, Claude Opus 4.6,
   Gemini 3.1 Pro, DeepSeek V4의 토큰 비용과 캐시 할인, 배치 API 활용까지 정리했습니다.

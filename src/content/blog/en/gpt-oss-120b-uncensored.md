@@ -1,7 +1,5 @@
 ---
-title: >-
-  GPT-OSS 120B Uncensored — The Rise of Uncensored Open-Source LLMs and the AI
-  Safety Debate
+title: 'GPT-OSS 120B Uncensored — Open LLMs and the Safety Debate'
 description: >-
   Analyzing the technical features of GPT-OSS 120B Uncensored and the safety
   guardrail debate sparked by uncensored open-source LLMs from both technical

@@ -1,12 +1,6 @@
 ---
-title: >-
-  4 of OpenRouter's Top 5 Models Are Open Source — The End of Proprietary
-  Dominance
-description: >-
-  Four of the top five most-used models on OpenRouter are open source
-  (Qwen3-Coder, DeepSeek R2, MiniMax M2.5, etc.). We analyze the end of
-  proprietary model dominance and why open-source models are winning in
-  real-world usage.
+title: '4 of OpenRouter''s Top 5 Models Are Open Source'
+description: 'Four of the top five most-used models on OpenRouter are open source (Qwen3-Coder, DeepSeek R2, MiniMax M2.5, etc.).'
 pubDate: '2026-02-17'
 heroImage: ../../../assets/blog/openrouter-oss-dominance-hero.png
 tags:

@@ -1,7 +1,5 @@
 ---
-title: >-
-  MiniMax M2.5: The Performance Gap Between Open-Weight and Proprietary Models
-  Hits an All-Time Low
+title: 'MiniMax M2.5: Open-Weight Closes In on Proprietary Models'
 description: >-
   MiniMax M2.5 achieves 80.2% on SWE-Bench Verified, surpassing Claude Opus 4.6.
   We analyze how the performance gap between open-weight and proprietary models

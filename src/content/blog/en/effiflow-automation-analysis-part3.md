@@ -1,7 +1,5 @@
 ---
-title: >-
-  EffiFlow Part 3: Real-World Improvements in 38 Minutes - 99% Stability and
-  100% Completion
+title: 'EffiFlow Part 3: Real-World Improvements in 38 Minutes'
 description: >-
   3 Quick Wins implemented in 38 minutes: Claude Code automation improvements
   that took completion to 100% and stability to 99%. Step-by-step methods, ROI

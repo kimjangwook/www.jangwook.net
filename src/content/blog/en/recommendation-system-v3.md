@@ -1,7 +1,5 @@
 ---
-title: >-
-  Recommendation System V3: 100% Build Performance Improvement with
-  Frontmatter-Embedded Architecture
+title: 'Recommendation System V3: 100% Faster Builds'
 description: >-
   Removing the bloated recommendations.json and embedding recommendation data
   directly in frontmatter eliminates runtime file I/O by 100%. Here is our V3

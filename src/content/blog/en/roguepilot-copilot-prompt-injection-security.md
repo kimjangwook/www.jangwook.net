@@ -1,7 +1,5 @@
 ---
-title: >-
-  RoguePilot — GitHub Copilot Prompt Injection Vulnerability and AI Coding Tool
-  Security
+title: 'RoguePilot — Copilot Prompt Injection and AI Tool Security'
 description: >-
   Analysis of the RoguePilot vulnerability found in GitHub Codespaces, passive
   prompt injection risks in AI coding tools, and security guidelines for

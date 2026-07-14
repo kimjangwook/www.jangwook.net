@@ -1,7 +1,5 @@
 ---
-title: >-
-  How to Run Qwen3-Coder-Next 80B on 8GB VRAM — Quantization Techniques
-  Explained
+title: 'How to Run Qwen3-Coder-Next 80B on 8GB VRAM'
 description: >-
   Analyzing quantization and lazy loading techniques to run an 80B parameter
   coding AI model on consumer 8GB VRAM GPUs. Exploring the practicality and

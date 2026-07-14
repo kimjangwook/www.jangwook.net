@@ -1,9 +1,6 @@
 ---
-title: "AI Agent Identity Dark Matter: Why 80% of Enterprises Can't Control Their Own AI"
-description: >-
-  70% of enterprises already run AI agents in production, yet 80% can't track their real-time
-  behavior. Explore the Identity Dark Matter concept, the governance gap, and a 5-step action
-  plan for engineering managers and CTOs.
+title: 'AI Agent Identity Dark Matter: Why Enterprises Lose Control'
+description: '70% of enterprises already run AI agents in production, yet 80% can''t track their real-time behavior.'
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/ai-agent-identity-dark-matter-enterprise-hero.jpg
 tags:

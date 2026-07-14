@@ -1,7 +1,5 @@
 ---
-title: >-
-  Auto-Coding with Jules: The Complete Guide to Google's Autonomous AI Coding
-  Agent
+title: 'Auto-Coding with Jules: Google''s Autonomous Coding Agent'
 description: >-
   Google Jules autonomously resolves GitHub issues and creates PRs. Covers Jules
   vs Copilot/Cursor differences, async agent design, and practical setup

@@ -1,7 +1,5 @@
 ---
-title: >-
-  jangwook.net Monthly Growth Report (December): 2,600 Visitors, Organic Search
-  at 57%
+title: 'jangwook.net Monthly Growth Report (December)'
 description: >-
   75 days post-launch GA4 analysis - 85 daily visitors, 56.5% organic search,
   Google Code Wiki Guide as new top performer, China market surge

@@ -1,12 +1,6 @@
 ---
-title: >-
-  Applying Verbalized Sampling to Claude Code Agents: 1.6〜2.1x LLM Diversity
-  Boost
-description: >-
-  A practical guide to applying Verbalized Sampling technique to Claude Code
-  agents, achieving 2.0x prompt diversity, 1.8x content diversity, and 1.6x
-  writing style diversity. Complete with 4 agent modification histories,
-  parameter tuning, and cost analysis.
+title: 'Applying Verbalized Sampling to Claude Code Agents'
+description: 'A practical guide to applying Verbalized Sampling technique to Claude Code agents, achieving 2.0x prompt diversity, 1.8x content diversity, and 1.6x writing style diversity.'
 pubDate: '2025-11-09'
 heroImage: ../../../assets/blog/verbalized-sampling-llm-diversity-hero.png
 tags:

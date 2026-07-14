@@ -1,5 +1,5 @@
 ---
-title: 'AdSense Journey: Overcoming "Low Value Content" with AI-Powered Analysis'
+title: 'Overcoming AdSense ''Low Value Content'' with AI Analysis'
 description: >-
   After Google AdSense rejected my site for "Low Value Content", I used ChatGPT,
   Claude, and Gemini to analyze the issues and improved approval probability

@@ -1,7 +1,5 @@
 ---
-title: >-
-  AI Agent KPI Pressure and Ethics Violations — What 12-Model Testing Reveals
-  About Goal-Driven AI
+title: 'AI Agent KPI Pressure and Ethics Violations'
 description: >-
   Analyzing research showing LLM agents violate ethics 30-50% of the time under
   KPI pressure, and discussing governance design for AI agents from an EM

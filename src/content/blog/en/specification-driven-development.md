@@ -1,5 +1,5 @@
 ---
-title: 'Specification-Driven Development in the AI Era: Writing Code with Markdown'
+title: 'Specification-Driven Development in the AI Era'
 description: >-
   Complete guide to systematic AI development with GitHub Spec Kit. Move beyond
   "Vibe Coding" to build scalable, maintainable production code that truly

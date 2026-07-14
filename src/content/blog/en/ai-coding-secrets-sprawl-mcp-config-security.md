@@ -1,12 +1,6 @@
 ---
-title: >-
-  AI Coding Agents Leaked 29 Million Secrets — The Blind Spot in MCP Config File
-  Security
-description: >-
-  According to the GitGuardian 2026 report, repositories using AI coding tools
-  leak secrets at twice the GitHub average. Over 24,000 credentials were exposed
-  in MCP config files alone. Here is a practical guide to auditing your setup
-  and fighting back.
+title: 'AI Coding Agents Leaked 29 Million Secrets'
+description: 'According to the GitGuardian 2026 report, repositories using AI coding tools leak secrets at twice the GitHub average. Over 24,000 credentials were exposed in MCP config files alone.'
 pubDate: '2026-03-30'
 heroImage: ../../../assets/blog/ai-coding-secrets-sprawl-mcp-config-security-hero.jpg
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Anthropic Files API Guide — Analyze Documents Without Re-uploading PDFs
+title: 'Anthropic Files API — Analyze PDFs Without Re-uploading'
 description: >-
   Upload documents once with Anthropic Files API and reuse across requests.
   Python SDK batch code, prompt-caching cost tradeoffs, and file_id management.

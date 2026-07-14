@@ -1,5 +1,5 @@
 ---
-title: Claude Managed Agents的Dreaming、Outcomes与Orchestration — 代理在睡眠中自我改进的结构分析
+title: 'Claude Managed Agents的Dreaming、Outcomes与Orchestration'
 description: >-
   深度解析2026年5月Code with Claude SF大会发布的Dreaming、Outcomes和多代理编排技术架构。剖析Harvey
   6倍数据的背景、LLM-as-judge的产品化，以及自我改进循环的治理风险。

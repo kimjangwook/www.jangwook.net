@@ -1,5 +1,5 @@
 ---
-title: 'Anthropic''s Code Execution with MCP: A Paradigm Shift in AI Tool Integration'
+title: 'Anthropic''s Code Execution with MCP'
 description: >-
   Explore how Anthropic's Code Execution with MCP achieves 98.7% token reduction
   and 60% faster execution through sandboxed code-based tool orchestration.

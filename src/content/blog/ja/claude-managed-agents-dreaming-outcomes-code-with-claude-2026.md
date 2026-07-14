@@ -1,7 +1,5 @@
 ---
-title: >-
-  Claude Managed AgentsのDreaming・Outcomes・Orchestration —
-  エージェントが眠りながら自己改善する仕組みの分析
+title: 'Claude Managed AgentsのDreaming・Outcomes・Orchestration'
 description: >-
   2026年5月Code with Claude SFで発表されたDreaming・Outcomes・Multiagent
   Orchestrationの技術構造を分析する。Harvey 6倍数値の文脈、LLM-as-judge製品化、自己改善ループのガバナンスリスクまで。

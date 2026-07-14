@@ -1,7 +1,5 @@
 ---
-title: >-
-  Implementing Site Search with Vertex AI Search: Cloud Functions and Automated
-  Deployment
+title: 'Implementing Site Search with Vertex AI Search'
 description: >-
   Learn how to implement AI-powered search on your website using Google Vertex
   AI Search. This guide covers Cloud Functions API server setup to shell script

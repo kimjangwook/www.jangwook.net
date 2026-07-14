@@ -1,5 +1,5 @@
 ---
-title: Training an LLM on CPU in 1.2 Hours — The Promise of MatMul-Free Architecture
+title: 'Training an LLM on CPU in 1.2 Hours'
 description: >-
   Explore how MatMul-Free architecture with ternary weights enables language
   model training on CPU alone, and its implications for edge AI and low-cost

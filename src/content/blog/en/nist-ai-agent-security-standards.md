@@ -1,5 +1,5 @@
 ---
-title: 'NIST AI Agent Security Standards: The Framework Every EM Must Prepare Now'
+title: 'NIST AI Agent Security Standards'
 description: >-
   Understanding NIST AI Agent Standards Initiative and an actionable security
   checklist for Engineering Managers to strengthen AI agent security within

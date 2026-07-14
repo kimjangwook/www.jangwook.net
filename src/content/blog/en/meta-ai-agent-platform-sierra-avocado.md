@@ -1,5 +1,5 @@
 ---
-title: 'Meta''s AI Agent Platform Transformation — Sierra, Avocado, and Big Brain'
+title: 'Meta''s AI Agent Platform Transformation'
 description: >-
   Meta is shifting from social media to AI agent platform: Sierra partnerships,
   Avocado model, Big Brain reasoning, and what it all means for developers.

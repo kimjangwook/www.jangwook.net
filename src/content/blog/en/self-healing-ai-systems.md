@@ -1,7 +1,5 @@
 ---
-title: >-
-  Self-Healing AI Systems: Building Agents That Automatically Fix Bugs Without
-  Human Intervention
+title: 'Self-Healing AI Systems: Agents That Fix Their Own Bugs'
 description: >-
   Complete guide to Self-Healing Systems deployed by GitHub, Google, and
   Netflix. Full implementation from error detection to automatic patching with

@@ -1,7 +1,5 @@
 ---
-title: >-
-  FunctionGemma 270M — Achieving 90-97% Multi-Turn Tool Calling Accuracy with an
-  Ultra-Small Model
+title: 'FunctionGemma 270M — 90-97% Tool Calling in a Tiny Model'
 description: >-
   Analysis of how fine-tuning FunctionGemma 270M improved multi-turn tool
   calling accuracy from 10-39% to 90-97%, matching a 120B teacher model. More

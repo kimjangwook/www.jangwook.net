@@ -1,7 +1,5 @@
 ---
-title: >-
-  Implementing RLM (Recursive Language Models) in Coding Agents — Breaking
-  Single Model Limits
+title: 'Implementing RLM (Recursive Language Models) in Coding Agents'
 description: >-
   Analyzing a real implementation of MIT's RLM paper in coding agents. Learn how
   recursive self-invocation overcomes context limits and boosts single model

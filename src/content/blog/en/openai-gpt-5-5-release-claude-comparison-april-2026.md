@@ -1,7 +1,5 @@
 ---
-title: >-
-  GPT-5.5 Released — OpenAI Bets on the Agent Runtime, and How It Compares to
-  Claude
+title: 'GPT-5.5 Released — OpenAI Bets on the Agent Runtime'
 description: >-
   GPT-5.5 dropped yesterday with SWE-bench 88.7% and a 2x price hike. OpenAI
   calls it an agent runtime, not a chat model. Here is what that actually means

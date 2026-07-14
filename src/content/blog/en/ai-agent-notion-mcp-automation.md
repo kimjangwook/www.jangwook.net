@@ -1,12 +1,6 @@
 ---
-title: >-
-  Building AI Agent Systems: A Practical Guide to Automation Pipelines with
-  Notion API MCP and Claude Code
-description: >-
-  Complete guide to building production-ready AI agent automation systems using
-  Model Context Protocol (MCP) and Claude Code with Notion integration.
-  Expert-verified tutorial covering capabilities, limitations, benefits, and
-  best practices from SEO and content management perspectives.
+title: 'Building AI Agent Pipelines with Notion MCP and Claude Code'
+description: 'Complete guide to building production-ready AI agent automation systems using Model Context Protocol (MCP) and Claude Code with Notion integration.'
 pubDate: '2025-10-10'
 heroImage: ../../../assets/blog/ai-agent-notion-mcp-hero.jpg
 tags:

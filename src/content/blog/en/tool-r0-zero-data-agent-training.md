@@ -1,7 +1,5 @@
 ---
-title: >-
-  Tool-R0: A Self-Play RL Framework for Training Tool-Using AI Agents with Zero
-  Data
+title: 'Tool-R0: Self-Play RL for Tool-Using Agents, Zero Data'
 description: >-
   The arXiv paper Tool-R0 achieves 92.5% improvement in LLM tool-calling via
   Self-Play RL alone, with no training data. We analyze its Generator-Solver

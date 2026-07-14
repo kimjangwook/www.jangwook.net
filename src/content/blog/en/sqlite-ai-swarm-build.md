@@ -1,7 +1,5 @@
 ---
-title: >-
-  Building SQLite with an AI Swarm — The Reality of Multi-Agent Division of
-  Labor
+title: 'Building SQLite with an AI Swarm'
 description: >-
   Six AI agents (Claude, Codex, Gemini) built a 19,000-line Rust SQLite clone in
   parallel. Analyzing the real costs of multi-agent coordination and task

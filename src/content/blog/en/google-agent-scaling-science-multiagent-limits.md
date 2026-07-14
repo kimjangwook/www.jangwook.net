@@ -1,12 +1,6 @@
 ---
-title: >-
-  The Science of Agent Scaling — Google Research Debunks the "More Agents =
-  Better" Myth
-description: >-
-  Google Research's 180-configuration quantitative experiment exposes the
-  multi-agent paradox: 39–70% performance degradation on sequential tasks, 17.2×
-  error amplification, and what 87% predictive accuracy means for your
-  architecture decisions.
+title: 'Agent Scaling Science — Google Debunks ''More Agents = Better'''
+description: 'Google Research''s 180-configuration experiment exposes the multi-agent paradox: 39–70% degradation on sequential tasks, 17.2× error amplification, and what it means for your architecture.'
 pubDate: '2026-03-10'
 heroImage: ../../../assets/blog/google-agent-scaling-science-multiagent-limits-hero.jpg
 tags:

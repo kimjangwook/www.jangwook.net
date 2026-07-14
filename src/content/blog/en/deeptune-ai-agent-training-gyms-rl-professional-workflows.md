@@ -1,7 +1,5 @@
 ---
-title: >-
-  Deeptune: 'Training Gyms' for AI Agents — What a16z's $43M Bet Tells Us About
-  the Future of Agent Training
+title: 'Deeptune: ''Training Gyms'' for AI Agents'
 description: >-
   Deeptune raised a $43M Series A led by a16z. Their approach — training AI
   agents through RL environments that simulate professional workflows — signals

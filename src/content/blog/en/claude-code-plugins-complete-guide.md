@@ -1,7 +1,5 @@
 ---
-title: >-
-  Complete Guide to Claude Code Plugins: From Official Plugins to Community
-  Marketplaces
+title: 'Complete Guide to Claude Code Plugins'
 description: >-
   A deep dive into the Claude Code plugin system. Explore 13 official plugins in
   detail, 100+ community marketplace plugins, actual plugin.json structure and

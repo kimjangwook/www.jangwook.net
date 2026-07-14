@@ -1,5 +1,5 @@
 ---
-title: 'MIT EnCompass: Boosting AI Agent Accuracy by 40% with Search Algorithms'
+title: 'MIT EnCompass: +40% AI Agent Accuracy via Search'
 description: >-
   Discover how MIT CSAIL's EnCompass framework applies search strategies to AI
   agent execution paths, dramatically improving reliability and accuracy in

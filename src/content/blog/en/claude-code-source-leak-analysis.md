@@ -1,5 +1,5 @@
 ---
-title: Claude Code Source Leak — What 510K Lines Reveal About Agent Architecture
+title: 'Claude Code Source Leak — 510K Lines of Agent Architecture'
 description: >-
   Anthropic's npm packaging error exposed Claude Code's full source. Agent
   loops, memory systems, cost optimization — what developers can learn from 510K

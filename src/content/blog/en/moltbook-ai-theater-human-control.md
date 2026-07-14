@@ -1,7 +1,5 @@
 ---
-title: >-
-  The Truth Behind Moltbook's "AI Society" — Forbes/MIT Tech Review Exposé and
-  the AI Theater Problem
+title: 'The Truth Behind Moltbook''s "AI Society"'
 description: >-
   Moltbook's AI autonomous society was revealed to be controlled by human
   operators. We analyze the AI Theater phenomenon and its implications for

@@ -1,12 +1,6 @@
 ---
-title: >-
-  Coding via Telegram with Claude Code Channels — An Honest Comparison from an
-  OpenClaw User
-description: >-
-  Claude Code now has a Channels feature. Send a message on Telegram, and Claude
-  running in your local terminal executes code and replies. It borrows the
-  channel concept from OpenClaw but takes a completely different approach to the
-  security model — and that's what makes it interesting.
+title: 'Coding via Telegram with Claude Code Channels'
+description: 'Claude Code now has a Channels feature. Send a message on Telegram, and Claude running in your local terminal executes code and replies.'
 pubDate: '2026-03-21'
 heroImage: ../../../assets/blog/claude-code-channels-telegram-bridge-hero.jpg
 tags:

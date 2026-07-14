@@ -1,7 +1,5 @@
 ---
-title: >-
-  Microsoft Agent Framework GA: AutoGen + Semantic Kernel Unified — EM/CTO
-  Production Adoption Strategy
+title: 'Microsoft Agent Framework GA: AutoGen + Semantic Kernel Unified'
 description: >-
   Microsoft Agent Framework, unifying AutoGen and Semantic Kernel, is
   approaching Q1 2026 GA. From an EM/CTO perspective, this post covers key

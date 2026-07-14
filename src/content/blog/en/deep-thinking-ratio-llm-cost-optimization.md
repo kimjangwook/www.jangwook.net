@@ -1,9 +1,6 @@
 ---
-title: 'Deep-Thinking Ratio: Cut LLM Inference Costs by 50% Without Sacrificing Quality'
-description: >-
-  Google & UVA research overturns the "longer = better" assumption for LLM reasoning.
-  The Deep-Thinking Ratio (DTR) can cut inference costs in half while improving accuracy.
-  Essential insights for Engineering Managers and VPoEs managing AI infrastructure.
+title: 'Deep-Thinking Ratio: Cut LLM Inference Costs by 50%'
+description: 'Google & UVA research overturns the "longer = better" assumption for LLM reasoning. The Deep-Thinking Ratio (DTR) can cut inference costs in half while improving accuracy.'
 pubDate: '2026-03-05'
 heroImage: ../../../assets/blog/deep-thinking-ratio-llm-cost-optimization-hero.png
 tags:

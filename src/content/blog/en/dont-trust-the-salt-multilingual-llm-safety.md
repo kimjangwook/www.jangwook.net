@@ -1,5 +1,5 @@
 ---
-title: Don't Trust the Salt — Multilingual LLM Safety and the Guardrail Blind Spots
+title: 'Don''t Trust the Salt — Multilingual LLM Guardrail Gaps'
 description: >-
   An analysis of how LLM guardrails fail in multilingual environments. We
   examine the structural issues causing safety verification failures in

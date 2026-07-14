@@ -1,7 +1,5 @@
 ---
-title: >-
-  Building Real-Time Voice Agents with Gemini 3.1 Flash Live — Hands-On
-  Impressions
+title: 'Building Real-Time Voice Agents with Gemini 3.1 Flash Live'
 description: >-
   Analyzing Google's Gemini 3.1 Flash Live for building real-time voice and
   vision agents. Covers API structure, tool calling, 90+ language support, and

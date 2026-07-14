@@ -1,5 +1,5 @@
 ---
-title: LLM Coding Harness Optimization — Boost 15 Models by Changing the Harness
+title: 'LLM Coding Harness Optimization'
 description: >-
   LLM coding harness (edit formats, tool interfaces) beats model swaps with
   5-14% gains. Grok Code Fast: 6.7%→68.3%. Harness engineering guide for EMs and

@@ -1,10 +1,6 @@
 ---
-title: Claude Mythos Preview — Does "Too Capable to Release" Actually Make Sense?
-description: >-
-  Anthropic decided not to publicly release Claude Mythos Preview, which scored
-  93.9% on SWE-bench. The model found a 27-year-old OpenBSD vulnerability and is
-  only available to 12 companies through Project Glasswing. Is this genuine
-  responsibility, or clever marketing?
+title: 'Claude Mythos Preview — Does ''Too Capable to Release'' Hold?'
+description: 'Anthropic decided not to publicly release Claude Mythos Preview, which scored 93.9% on SWE-bench. The model found a 27-year-old OpenBSD vulnerability and is only available to 12 companies through Project Glasswing.'
 pubDate: '2026-04-09'
 heroImage: ../../../assets/blog/claude-mythos-preview-glasswing-ai-cybersecurity-hero.jpg
 tags:

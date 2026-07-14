@@ -1,6 +1,6 @@
 ---
-title: 'Meta Llama 4 Deep Dive — How Maverick & Scout Are Reshaping Enterprise AI Strategy'
-description: 'A technical and strategic analysis of Meta Llama 4 Maverick (400B MoE) and Scout (10M context window): architecture, benchmarks, cost structure, and what engineering leaders need to know to update their open-source AI strategy.'
+title: 'Meta Llama 4 Deep Dive — Maverick & Scout for Enterprise'
+description: 'A technical and strategic analysis of Meta Llama 4 Maverick (400B MoE) and Scout (10M context): architecture, benchmarks, cost structure, and what it means for open-source AI strategy.'
 pubDate: '2026-03-06'
 heroImage: ../../../assets/blog/llama4-maverick-scout-enterprise-strategy-hero.jpg
 tags: ['LLM', 'OpenSourceAI', 'EnterpriseStrategy']

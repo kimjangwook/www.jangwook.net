@@ -1,10 +1,6 @@
 ---
 title: PrismML Bonsai — Does a 1.15GB 8B Model Actually Make Sense?
-description: >-
-  PrismML Bonsai, built by a Caltech-founded team, is a 1-bit LLM that
-  represents weights using only {-1, +1}. An 8B model fits in 1.15GB and
-  reportedly runs 8x faster than full precision. I looked into whether any of
-  this holds up.
+description: 'PrismML Bonsai, built by a Caltech-founded team, is a 1-bit LLM that represents weights using only {-1, +1}. An 8B model fits in 1.15GB and reportedly runs 8x faster than full precision.'
 pubDate: '2026-04-08'
 heroImage: ../../../assets/blog/prismml-bonsai-1bit-llm-edge-ai-hero.jpg
 tags:

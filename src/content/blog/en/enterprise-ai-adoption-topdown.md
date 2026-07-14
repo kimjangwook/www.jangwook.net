@@ -1,5 +1,5 @@
 ---
-title: 'Why Top-Down AI Adoption Works: The Real Reason Behind the 42% Failure Rate'
+title: 'Why Top-Down AI Adoption Works'
 description: >-
   Limits of bottom-up AI adoption and organizational change management
   strategies. A systematic approach through workflow documentation and

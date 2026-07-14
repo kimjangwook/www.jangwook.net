@@ -1,5 +1,5 @@
 ---
-title: GPT-5.3 Codex Rollout Pause — GitHub/VSCode Platform Reliability Analysis
+title: 'GPT-5.3 Codex Rollout Pause — Platform Reliability Analysis'
 description: >-
   Analyzing GitHub's temporary rollback of GPT-5.3-based Codex. Explores
   platform reliability, AI model upgrade risks, and countermeasures from an EM

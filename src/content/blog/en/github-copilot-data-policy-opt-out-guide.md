@@ -1,7 +1,5 @@
 ---
-title: >-
-  GitHub Copilot Will Train AI on Your Code Starting April — Opt Out or You
-  Agreed
+title: 'GitHub Copilot Will Train AI on Your Code Starting April'
 description: >-
   GitHub announced that Copilot Free/Pro/Pro+ interaction data will be used for
   AI model training by default. Here is how to opt out and what it actually

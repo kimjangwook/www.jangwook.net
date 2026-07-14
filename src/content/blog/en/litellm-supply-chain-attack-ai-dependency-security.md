@@ -1,7 +1,5 @@
 ---
-title: >-
-  LiteLLM Supply Chain Attack — The Security Blind Spot in AI Infrastructure
-  Dependencies
+title: 'LiteLLM Supply Chain Attack — AI Dependency Blind Spots'
 description: >-
   Deep analysis of the LiteLLM supply chain attack on PyPI: dependency
   vulnerabilities, malicious package detection, and a defense checklist for AI

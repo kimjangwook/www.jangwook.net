@@ -1,5 +1,5 @@
 ---
-title: 'Building a Modern Project Management Stack: Notion, Backlog, Slack & Claude'
+title: 'Building a Modern Project Management Stack'
 description: >-
   Learn how to standardize project management with Notion, Backlog, Slack, and
   Claude Code to boost team productivity by 50% and project success rates by

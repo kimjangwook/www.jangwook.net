@@ -1,7 +1,5 @@
 ---
-title: >-
-  Streamlining Project Manager Workflows with LLMs: 3x Productivity Boost with
-  AI
+title: 'Streamlining Project Manager Workflows with LLMs'
 description: >-
   A practical guide to automating project management tasks and maximizing
   productivity using cutting-edge LLM tools like ChatGPT, Claude, and Gemini.

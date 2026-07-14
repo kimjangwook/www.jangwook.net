@@ -1,5 +1,5 @@
 ---
-title: Blog Automation with LLM and Claude Code - The Future of Content Creation
+title: 'Blog Automation with LLM and Claude Code'
 description: >-
   How to build a fully automated blog pipeline with Claude Code and 11 AI agents
   — covering MCP integration, multilingual content, AI image generation, SEO,

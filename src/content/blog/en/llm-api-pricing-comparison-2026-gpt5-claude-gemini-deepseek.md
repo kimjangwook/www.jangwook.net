@@ -1,11 +1,6 @@
 ---
-title: >-
-  LLM API Pricing Comparison 2026 — GPT-5 vs Claude vs Gemini vs DeepSeek Real
-  Cost Breakdown
-description: >-
-  A practical comparison of major LLM API pricing as of April 2026, with real
-  production scenario cost calculations. Covers GPT-5.4, Claude Opus 4.6, Gemini
-  3.1 Pro, and DeepSeek V4 including cache discounts and batch API strategies.
+title: 'LLM API Pricing Comparison 2026'
+description: 'A practical comparison of major LLM API pricing as of April 2026, with real production scenario cost calculations.'
 pubDate: '2026-04-18'
 heroImage: >-
   ../../../assets/blog/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek-hero.jpg

@@ -1,7 +1,5 @@
 ---
-title: >-
-  I Ran Gemma 4 Locally — We're in an Era Where an 8B Model Can Do Function
-  Calling
+title: 'I Ran Gemma 4 Locally — 8B Models Can Do Function Calling'
 description: >-
   I installed Google's Gemma 4 (Apache 2.0) via Ollama and tested Korean
   language, structured output, and function calling firsthand. Can a 9.6GB local

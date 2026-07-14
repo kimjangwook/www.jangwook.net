@@ -1,5 +1,5 @@
 ---
-title: 'Overcoming AdSense "Low Value Content" Rejection: A Technical Audit Guide'
+title: 'Overcoming AdSense "Low Value Content" Rejection'
 description: >-
   A hands-on guide to diagnosing and fixing the technical issues behind AdSense
   rejections on a multilingual Astro blog—ads.txt conflicts, 996 ghost pages,

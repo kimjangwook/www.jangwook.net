@@ -1,7 +1,5 @@
 ---
-title: >-
-  Multi-Agent Parallel Execution Outperforms Single Models on SWE-bench —
-  Verdent AI 76.1%
+title: 'Multi-Agent Parallel Execution Outperforms Single Models on SWE-bench'
 description: >-
   Verdent AI achieves 76.1% on SWE-bench Verified using multi-agent parallel
   execution architecture, not a single large model. A new paradigm for software

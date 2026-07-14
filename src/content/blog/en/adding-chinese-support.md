@@ -1,7 +1,5 @@
 ---
-title: >-
-  Adding Chinese Support to Your Blog: A Practical Guide to Multilingual Website
-  Expansion
+title: 'Adding Chinese Support to Your Blog'
 description: >-
   Experience report on adding Chinese support to 40 posts. Parallel agent
   processing to update 120 files, SEO optimization, automation strategies -

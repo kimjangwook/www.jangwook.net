@@ -1,7 +1,5 @@
 ---
-title: >-
-  Consistency Diffusion Language Models: 14x Faster Inference Without Quality
-  Loss
+title: 'Consistency Diffusion Language Models'
 description: >-
   Together AI introduces CDLM, boosting diffusion language model inference up to
   14x faster while maintaining quality. Block-wise parallel generation with KV

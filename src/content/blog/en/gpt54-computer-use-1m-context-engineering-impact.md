@@ -1,5 +1,5 @@
 ---
-title: 'GPT-5.4 Launch — Native Computer Use and 1M Context Window Will Transform Engineering Teams'
+title: 'GPT-5.4 — Native Computer Use and the 1M Context Window'
 description: >-
   OpenAI released GPT-5.4 on March 5, 2026. Computer use surpassing humans (75% vs 72.4% on OSWorld), 1M token context window, 47% token savings via tool search — here's what engineering managers need to know.
 pubDate: '2026-03-13'
