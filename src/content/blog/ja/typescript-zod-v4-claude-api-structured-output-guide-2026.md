@@ -59,6 +59,17 @@ Claude APIから受け取ったJSON文字列を`JSON.parse()`だけで信用し�
 
 マイグレーション計画を立てる際は、ドキュメントより実際のバージョンで確認するのが安全だ。
 
+体感できる変化を表に圧縮すると：
+
+| 項目 | v3 | v4 |
+|---|---|---|
+| 文字列パース | 基準 | 最大14倍高速（公式値） |
+| バンドルサイズ | 基準 | 57%削減 |
+| エラーカスタム | required_error | 単一のerrorパラメータ |
+| Infinity | z.number()を通過 | 拒否（success: false） |
+| メール検証 | z.string().email() | z.email() |
+| 交差型 | .and() | z.intersection() + .check()新設 |
+
 ## インストールと基本設定
 
 ```bash
@@ -491,6 +502,20 @@ async function analyzeWithRetry(
 ```
 
 リトライ回数を増やしすぎるとAPI費用が上がる。2回以下が現実的だ。
+
+ここまでのパースパイプラインを図に整理すると：
+
+```mermaid
+graph TD
+    A["Claude APIレスポンステキスト"] --> B["JSON.parse"]
+    B -->|"失敗"| E["JSON修復を試行<br/>または再リクエスト"]
+    B --> C["schema.safeParse"]
+    C -->|"success: true"| D["型安全なオブジェクト<br/>後続ロジックへ"]
+    C -->|"success: false"| F["ZodErrorを分類<br/>リトライ·フォールバック·ログ"]
+
+    style D fill:#2D6A4F,color:#fff
+    style F fill:#C1121F,color:#fff
+```
 
 ## パフォーマンス: Zod v4の実際の速度は
 

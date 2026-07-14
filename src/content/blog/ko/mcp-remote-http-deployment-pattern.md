@@ -95,6 +95,21 @@ JSON을 직접 파싱하는 게 아니라 `data:` 줄을 추출해야 한다. �
 
 [MCP 서버를 Python FastMCP로 처음 구축하는 방법](/ko/blog/ko/mcp-server-build-practical-guide-2026)을 먼저 읽었다면 기본 개념은 익숙할 것이다. 여기서는 TypeScript SDK를 써서 HTTP 레이어를 직접 구성한다.
 
+프로토콜 흐름을 시퀀스로 정리하면:
+
+```mermaid
+sequenceDiagram
+    participant C as 클라이언트
+    participant S as MCP 서버 (POST /mcp)
+    C->>S: initialize (Accept: application/json, text/event-stream)
+    S-->>C: Mcp-Session-Id 헤더 + SSE (event: message)
+    C->>S: tools/call (Mcp-Session-Id 포함)
+    S-->>C: SSE 스트림 또는 동기 JSON
+    C->>S: DELETE /mcp — 세션 종료
+```
+
+Accept 헤더에 두 타입을 모두 넣지 않으면 Not Acceptable이 돌아온다는 점만 기억해도 첫 삽질을 건너뛸 수 있다.
+
 ## 실전 구현: TypeScript SDK로 HTTP 서버 만들기
 
 환경: Node.js v22.22.0, `@modelcontextprotocol/sdk` v1.29.0, Express.
@@ -291,6 +306,16 @@ new StreamableHTTPServerTransport({
 단일 인스턴스 VM이나 컨테이너라면 stateful이 편하다. 프로세스가 하나이고 세션 Map이 안전하게 살아있다. 반면 서버리스 환경(AWS Lambda, Cloudflare Workers)은 요청마다 실행 컨텍스트가 초기화되므로 메모리 세션 Map이 유지되지 않는다. 이 경우 반드시 stateless 모드를 써야 한다. stateful로 서버리스에 배포하면 세션 ID가 발급은 되는데 두 번째 요청부터 404가 날아온다.
 
 솔직히 말하면 stateful 모드의 인메모리 세션 Map도 장기적으로는 문제가 있다. 서버를 재시작하면 모든 세션이 사라진다. 프로덕션에서 Rolling Update를 하거나 크래시 후 재시작이 일어나면 클라이언트가 갑자기 "세션 없음"을 받게 된다. 이를 해결하려면 Redis 같은 외부 세션 스토어가 필요한데, SDK가 기본 제공하는 건 아니라 직접 구현해야 한다.
+
+두 모드를 표로 압축하면:
+
+| 항목 | Stateful | Stateless |
+|---|---|---|
+| sessionIdGenerator | randomUUID() | undefined 명시 |
+| 상태 | 메모리 세션 Map | 없음 — 매 요청 독립 |
+| 적합한 용도 | 다중 턴 대화·구독 SSE | 수평 확장·단순 도구 호출 |
+| 배포 대상 | 단일 VM·컨테이너 | Lambda·Cloudflare Workers |
+| 리스크 | 재시작 시 세션 소실 (외부 스토어 직접 구현 필요) | 중간 상태 보관 불가 |
 
 ## 배포 환경별 선택 기준
 

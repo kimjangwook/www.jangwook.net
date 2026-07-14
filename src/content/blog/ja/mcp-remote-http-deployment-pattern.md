@@ -94,6 +94,21 @@ JSONを直接パースするのではなく `data:` 行を抽出する必要が�
 
 [Python FastMCPでMCPサーバーを最初から構築する方法](/ja/blog/ja/mcp-server-build-practical-guide-2026)を先に読んでいれば基本概念は馴染みがあるはずだ。ここではTypeScript SDKを使いHTTPレイヤーを直接構成する。
 
+プロトコルの流れをシーケンスで整理すると：
+
+```mermaid
+sequenceDiagram
+    participant C as クライアント
+    participant S as MCPサーバー (POST /mcp)
+    C->>S: initialize (Accept: application/json, text/event-stream)
+    S-->>C: Mcp-Session-Id ヘッダー + SSE (event: message)
+    C->>S: tools/call (Mcp-Session-Id 付き)
+    S-->>C: SSEストリームまたは同期JSON
+    C->>S: DELETE /mcp — セッション終了
+```
+
+Acceptヘッダーに両方のタイプを入れないとNot Acceptableが返る、これだけ覚えておけば最初のつまずきを回避できる。
+
 ## 実践実装: TypeScript SDKでHTTPサーバーを作る
 
 環境: Node.js v22.22.0、`@modelcontextprotocol/sdk` v1.29.0、Express。
@@ -279,6 +294,16 @@ new StreamableHTTPServerTransport({
 単一インスタンスのVMやコンテナならstatefulが楽だ。プロセスが一つでセッションMapが安全に生き続ける。一方、サーバーレス環境(AWS Lambda、Cloudflare Workers)はリクエストごとに実行コンテキストが初期化されるのでメモリのセッションMapが維持されない。この場合は必ずstatelessモードを使わなければならない。statefulでサーバーレスにデプロイするとセッションIDは発行されるが二回目のリクエストから404が返ってくる。
 
 正直に言うと、statefulモードのインメモリセッションMapも長期的には問題がある。サーバーを再起動するとすべてのセッションが消える。本番環境でRolling Updateやクラッシュ後の再起動が起きると、クライアントが突然「セッションなし」を受け取る。これを解決するにはRedisのような外部セッションストアが必要だが、SDKが標準提供するわけではないので自分で実装する必要がある。
+
+二つのモードを表に圧縮すると：
+
+| 項目 | Stateful | Stateless |
+|---|---|---|
+| sessionIdGenerator | randomUUID() | undefinedを明示 |
+| 状態 | メモリ内セッションMap | 無し — 毎リクエスト独立 |
+| 適した用途 | マルチターン対話·購読SSE | 水平スケーリング·単純なツール呼び出し |
+| デプロイ先 | 単一VM·コンテナ | Lambda·Cloudflare Workers |
+| リスク | 再起動でセッション消失（外部ストアは自前実装） | 中間状態を保持できない |
 
 ## デプロイ環境別の選択基準
 

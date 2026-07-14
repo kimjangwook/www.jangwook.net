@@ -59,6 +59,17 @@ relatedPosts:
 
 制定迁移计划时，与其相信文档，不如在实际版本上亲自验证更稳妥。
 
+把可感知的变化压缩成一张表：
+
+| 项目 | v3 | v4 |
+|---|---|---|
+| 字符串解析 | 基准 | 最快提升14倍（官方数据） |
+| 包体积 | 基准 | 减少57% |
+| 自定义错误 | required_error | 单一 error 参数 |
+| Infinity | 通过 z.number() | 拒绝（success: false） |
+| 邮箱校验 | z.string().email() | z.email() |
+| 交叉类型 | .and() | z.intersection() + 新增 .check() |
+
 ## 安装与基本配置
 
 ```bash
@@ -491,6 +502,20 @@ async function analyzeWithRetry(
 ```
 
 重试次数太多会推高 API 成本。2 次以下比较现实。
+
+把到这里的解析流水线画成一张图：
+
+```mermaid
+graph TD
+    A["Claude API 响应文本"] --> B["JSON.parse"]
+    B -->|"失败"| E["尝试修复 JSON<br/>或重新请求"]
+    B --> C["schema.safeParse"]
+    C -->|"success: true"| D["类型安全对象<br/>进入业务逻辑"]
+    C -->|"success: false"| F["归类 ZodError<br/>重试·降级·记录"]
+
+    style D fill:#2D6A4F,color:#fff
+    style F fill:#C1121F,color:#fff
+```
 
 ## 性能：Zod v4 的实际速度
 

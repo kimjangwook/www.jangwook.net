@@ -94,6 +94,21 @@ data: {"result":{...},"jsonrpc":"2.0","id":1}
 
 如果已读过[用Python FastMCP从零构建MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026)的指南，基本概念应该已经熟悉。这里使用TypeScript SDK直接构建HTTP层。
 
+把协议流程整理成时序图：
+
+```mermaid
+sequenceDiagram
+    participant C as 客户端
+    participant S as MCP 服务器 (POST /mcp)
+    C->>S: initialize (Accept: application/json, text/event-stream)
+    S-->>C: Mcp-Session-Id 头 + SSE (event: message)
+    C->>S: tools/call（带 Mcp-Session-Id）
+    S-->>C: SSE 流或同步 JSON
+    C->>S: DELETE /mcp — 关闭会话
+```
+
+只要记住一点就能跳过第一个坑：Accept 头必须同时列出两种类型，否则会收到 Not Acceptable。
+
 ## 实践实现：用TypeScript SDK构建HTTP服务器
 
 环境：Node.js v22.22.0、`@modelcontextprotocol/sdk` v1.29.0、Express。
@@ -272,6 +287,16 @@ new StreamableHTTPServerTransport({
 单实例VM或容器用stateful很方便。进程持续运行，会话Map稳定存在。而Serverless环境（AWS Lambda、Cloudflare Workers）每次请求都重置执行上下文——内存会话Map无法持久化。这种情况必须使用stateless模式。将stateful部署到Serverless，会话ID会被发放，但第二次请求命中全新实例，不知道这个ID，返回404或400。看起来像SDK的bug，实际上是架构不匹配。
 
 坦率地说，即使在长期运行的实例上，stateful模式的内存会话Map也有可靠性问题。服务器重启、实例替换、崩溃恢复——任何一种都会清空会话Map。持有有效会话ID的客户端突然收到"会话不存在"。解决这个问题需要Redis等外部会话存储，而SDK并不开箱即提供。
+
+把两种模式压缩成一张表：
+
+| 项目 | Stateful | Stateless |
+|---|---|---|
+| sessionIdGenerator | randomUUID() | 显式 undefined |
+| 状态 | 内存会话 Map | 无 — 每个请求独立 |
+| 适合场景 | 多轮对话、订阅 SSE | 水平扩展、简单工具调用 |
+| 部署目标 | 单一 VM、容器 | Lambda、Cloudflare Workers |
+| 风险 | 重启丢失会话（外部存储需自行实现） | 无法保存中间状态 |
 
 ## 各部署环境的选择标准
 

@@ -95,6 +95,21 @@ You're not parsing JSON directly — you extract the `data:` line. Official MCP 
 
 If you've read the guide on [building an MCP server from scratch with Python FastMCP](/en/blog/en/mcp-server-build-practical-guide-2026), the core concepts will be familiar. Here we're using the TypeScript SDK and wiring up the HTTP layer directly.
 
+The protocol flow as a sequence:
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as MCP server (POST /mcp)
+    C->>S: initialize (Accept: application/json, text/event-stream)
+    S-->>C: Mcp-Session-Id header + SSE (event: message)
+    C->>S: tools/call (with Mcp-Session-Id)
+    S-->>C: SSE stream or sync JSON
+    C->>S: DELETE /mcp — close session
+```
+
+Remember one thing and you skip the first faceplant: the Accept header must list both types, or you get Not Acceptable.
+
 ## Implementation: Building the HTTP Server with TypeScript SDK
 
 Environment: Node.js v22.22.0, `@modelcontextprotocol/sdk` v1.29.0, Express.
@@ -272,6 +287,16 @@ My rule of thumb: **where you deploy determines which mode you use.**
 Single-instance VM or container? Stateful works fine. The process stays alive, the session Map persists. Serverless (AWS Lambda, Cloudflare Workers)? The execution context resets per request — an in-memory session Map doesn't survive. Use stateless mode, full stop. If you deploy stateful to serverless, the session ID gets issued but the second request hits a fresh instance that has no record of it. You get a 404 (or 400), and it'll look like an SDK bug until you trace it back to the architecture mismatch.
 
 I'll also be honest that stateful mode's in-memory session Map has production-level reliability problems even on long-running instances. Server restarts, rolling updates, crash recovery — any of these wipe the session Map. Clients holding valid session IDs suddenly get "session not found." Solving this properly requires an external session store like Redis, which isn't something the SDK provides out of the box.
+
+The two modes, compressed into a table:
+
+| Aspect | Stateful | Stateless |
+|---|---|---|
+| sessionIdGenerator | randomUUID() | explicitly undefined |
+| State | in-memory session Map | none — each request independent |
+| Best for | multi-turn chats, subscription SSE | horizontal scaling, simple tool calls |
+| Deploy to | single VM/container | Lambda, Cloudflare Workers |
+| Risk | sessions lost on restart (BYO external store) | no intermediate state |
 
 ## Deployment Patterns by Environment
 

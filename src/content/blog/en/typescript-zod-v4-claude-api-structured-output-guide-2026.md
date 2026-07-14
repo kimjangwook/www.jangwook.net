@@ -59,6 +59,17 @@ The migration docs say `.and()` was removed. In practice, testing against 4.4.3,
 
 When planning a migration, verify against the actual version you're running rather than taking the docs at face value.
 
+The tangible changes, compressed into a table:
+
+| Aspect | v3 | v4 |
+|---|---|---|
+| String parsing | baseline | up to 14x faster (official) |
+| Bundle size | baseline | 57% smaller |
+| Custom errors | required_error | single error param |
+| Infinity | passes z.number() | rejected (success: false) |
+| Email validation | z.string().email() | z.email() |
+| Intersections | .and() | z.intersection() + new .check() |
+
 ## Installation and Basic Setup
 
 ```bash
@@ -491,6 +502,20 @@ async function analyzeWithRetry(
 ```
 
 Keep retries at 2 or fewer. API costs add up quickly.
+
+The parsing pipeline so far, in one picture:
+
+```mermaid
+graph TD
+    A["Claude API response text"] --> B["JSON.parse"]
+    B -->|"fails"| E["Attempt JSON repair<br/>or re-request"]
+    B --> C["schema.safeParse"]
+    C -->|"success: true"| D["Type-safe object<br/>on to business logic"]
+    C -->|"success: false"| F["Classify ZodError<br/>retry·fallback·log"]
+
+    style D fill:#2D6A4F,color:#fff
+    style F fill:#C1121F,color:#fff
+```
 
 ## Performance: What Zod v4 Speed Actually Looks Like
 

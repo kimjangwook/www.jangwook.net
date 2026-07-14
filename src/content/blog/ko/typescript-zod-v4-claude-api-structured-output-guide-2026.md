@@ -59,6 +59,17 @@ Claude API에서 받은 JSON 문자열을 `JSON.parse()`만으로 믿고 쓰다�
 
 마이그레이션 계획을 세울 때 문서보다 실제 버전에서 확인하는 것이 안전하다.
 
+체감 변화를 표로 압축하면:
+
+| 항목 | v3 | v4 |
+|---|---|---|
+| 문자열 파싱 | 기준 | 최대 14배 빠름 (공식 수치) |
+| 번들 크기 | 기준 | 57% 감소 |
+| 에러 커스텀 | required_error | 단일 error 파라미터 |
+| Infinity | z.number() 통과 | 거부 (success: false) |
+| 이메일 검증 | z.string().email() | z.email() |
+| 교차 타입 | .and() | z.intersection() + .check() 신설 |
+
 ## 설치와 기본 설정
 
 ```bash
@@ -491,6 +502,20 @@ async function analyzeWithRetry(
 ```
 
 재시도 횟수를 너무 늘리면 API 비용이 올라간다. 2회 이하가 현실적이다.
+
+여기까지의 파싱 파이프라인을 그림으로 정리하면:
+
+```mermaid
+graph TD
+    A["Claude API 응답 텍스트"] --> B["JSON.parse"]
+    B -->|"실패"| E["JSON 복구 시도<br/>또는 재요청"]
+    B --> C["schema.safeParse"]
+    C -->|"success: true"| D["타입 안전 객체<br/>이후 로직으로"]
+    C -->|"success: false"| F["ZodError 분류<br/>재시도·폴백·로깅"]
+
+    style D fill:#2D6A4F,color:#fff
+    style F fill:#C1121F,color:#fff
+```
 
 ## 성능: Zod v4의 실제 속도는
 
