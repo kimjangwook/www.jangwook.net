@@ -7,7 +7,6 @@ description: >-
   growth strategy - transparently sharing the journey of starting a technical
   blog
 pubDate: '2025-10-06'
-noindex: true
 heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
 tags:
   - Analytics
@@ -32,7 +31,6 @@ relatedPosts:
         Covers similar topics in automation, web development, architecture with
         comparable difficulty.
       zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net Blog Launch Analysis Report
@@ -665,6 +663,6 @@ If this article was helpful:
 
 - 🔗 <strong>Share</strong>: With fellow developers facing similar challenges
 - 💭 <strong>Leave comments</strong>: Your blog analysis experience and tips
-- 📧 <strong>Contact</strong>: 1-on-1 questions at [Contact](/contact)
+- 📧 <strong>Contact</strong>: 1-on-1 questions at [Contact](/en/contact)
 
 <strong>Let's learn and grow together. Looking forward to your first analysis report!</strong> 🚀

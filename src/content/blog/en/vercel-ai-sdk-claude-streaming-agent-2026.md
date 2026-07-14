@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Building a Claude Streaming Agent with Vercel AI SDK
 description: >-
   Build Claude streaming and tool-calling agents in Next.js App Router using

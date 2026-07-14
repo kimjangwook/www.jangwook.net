@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'AWS MCP Server GA: CloudWatch & IAM Tools for Claude Code'
 description: 'AWS MCP Server went GA May 2026. Connect 31 CloudWatch and 29 IAM tools to Claude Code. IAM condition-key architecture and honest real-world evaluation included.'
 pubDate: '2026-05-14'

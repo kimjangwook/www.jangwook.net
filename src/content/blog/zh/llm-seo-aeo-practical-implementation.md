@@ -1,5 +1,4 @@
 ---
-draft: true
 title: LLM时代的SEO/AEO实战应用：B2B SaaS优化路线图
 description: 从SEO基础到AEO战略：Agent Effi Flow项目的真实实施案例与可量化成果
 pubDate: '2025-11-28'
@@ -446,7 +445,7 @@ const relatedPosts = await Promise.all(
 ```markdown
 我们的[收据OCR API](/api-docs/receipt-ocr)使用Google Gemini 2.5 Flash
 进行结构化数据提取。与返回纯文本的传统OCR不同，
-我们使用[结构化输出](/blog/structured-output-guide)返回经过验证模式的JSON。
+我们使用[结构化输出]返回经过验证模式的JSON。
 
 对于会计工作流程，将此与我们的[批处理功能](/features/batch)结合使用
 可以同时处理数百张收据。

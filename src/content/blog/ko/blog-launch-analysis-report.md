@@ -2,7 +2,6 @@
 title: 'jangwook.net 블로그 런칭 분석 리포트: 데이터 기반 기술 블로그의 시작'
 description: '블로그 런칭 초기 GA4 데이터 분석, 실전 MCP 쿼리 예제, 그리고 3개월 성장 전략까지 - 투명하게 공유하는 기술 블로그 여정의 시작'
 pubDate: '2025-10-06'
-noindex: true
 heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
 tags:
   - Analytics
@@ -27,7 +26,6 @@ relatedPosts:
         Covers similar topics in automation, web development, architecture with
         comparable difficulty.
       zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net 블로그 런칭 분석 리포트
@@ -660,6 +658,6 @@ jangwook.net 블로그는 기술적으로 성공적으로 런칭되었습니다:
 
 - 🔗 <strong>공유하기</strong>: 같은 고민을 하는 동료 개발자에게
 - 💭 <strong>댓글 남기기</strong>: 여러분의 블로그 분석 경험과 팁
-- 📧 <strong>문의하기</strong>: [Contact](/contact)에서 1:1 질문
+- 📧 <strong>문의하기</strong>: [Contact](/ko/contact)에서 1:1 질문
 
 <strong>함께 배우고 성장합시다. 당신의 첫 분석 리포트를 기대합니다!</strong> 🚀

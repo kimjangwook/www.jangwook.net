@@ -1,5 +1,4 @@
 ---
-draft: true
 title: The Anthropic Claude Performance Decline Controversy — What Actually Happened
 description: >-
   In March 2026, Anthropic quietly lowered Claude default effort to "medium,"

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Claude Codeでページ E2E テストを自動化する
 description: >-
   Claude

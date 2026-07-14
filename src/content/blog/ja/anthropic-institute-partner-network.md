@@ -1,5 +1,4 @@
 ---
-draft: true
 title: AnthropicのAI生態系大転換 — 研究所と1億ドル投資
 description: >-
   Anthropic Institute設立とClaude Partner Network

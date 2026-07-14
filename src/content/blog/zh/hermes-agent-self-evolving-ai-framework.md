@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Hermes Agent — 每完成一个任务就自我进化的开源AI代理
 description: >-
   安装了NousResearch的Hermes Agent v0.7.0。它在每次任务完成后自动生成技能文档，

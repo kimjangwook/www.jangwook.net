@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Blog Automation with LLM and Claude Code - The Future of Content Creation
 description: >-
   How to build a fully automated blog pipeline with Claude Code and 11 AI agents

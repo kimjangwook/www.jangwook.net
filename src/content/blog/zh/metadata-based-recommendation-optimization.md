@@ -55,7 +55,6 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, DevOps, architecture topics.
       zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
-draft: true
 ---
 
 ## 引言：成本如滚雪球
@@ -858,9 +857,9 @@ LLM令人惊叹。但并非所有问题都需要LLM。有时候，经过验证�
 ---
 
 <strong>相关文章：</strong>
-- [使用Claude LLM构建智能内容推荐系统](/ko/blog/ai-content-recommendation-system) - 初始基于LLM的推荐系统构建
-- [利用LLM和Claude Code实现博客自动化](/ko/blog/llm-blog-automation) - 博客自动化整体系统
-- [Claude Code最佳实践](/ko/blog/claude-code-best-practices) - AI开发生产力优化
+- [使用Claude LLM构建智能内容推荐系统](/ko/blog/ko/ai-content-recommendation-system) - 初始基于LLM的推荐系统构建
+- [利用LLM和Claude Code实现博客自动化](/ko/blog/ko/llm-blog-automation) - 博客自动化整体系统
+- [Claude Code最佳实践](/ko/blog/ko/claude-code-best-practices) - AI开发生产力优化
 
 <strong>参考资料：</strong>
 - [Jaccard相似度](https://en.wikipedia.org/wiki/Jaccard_index)

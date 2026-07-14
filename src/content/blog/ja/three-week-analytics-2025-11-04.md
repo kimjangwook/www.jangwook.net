@@ -4,7 +4,6 @@ description: >-
   2025-10-15〜11-04 GA4データ分析、オーガニック検索4.3%→54.4%への飛躍、20記事の新規公開、韓国が1位国に浮上 -
   透明に共有するブログ成長記録
 pubDate: '2025-11-06'
-noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics
@@ -46,7 +45,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # 3週間分析レポート: オーガニック検索1266%爆発的成長、そして20記事公開の旅

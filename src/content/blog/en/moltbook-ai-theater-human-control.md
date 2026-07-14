@@ -1,5 +1,4 @@
 ---
-draft: true
 title: >-
   The Truth Behind Moltbook's "AI Society" — Forbes/MIT Tech Review Exposé and
   the AI Theater Problem

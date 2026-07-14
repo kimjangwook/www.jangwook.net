@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Claude Code Channelsでテレグラムからコーディングを指示する — OpenClawユーザーから見た率直な比較
 description: >-
   Claude

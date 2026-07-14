@@ -1,5 +1,4 @@
 ---
-draft: true
 title: MCP Security Crisis — 30 CVEs in 60 Days
 description: >-
   The MCP attack surface is expanding fast. Here's an analysis of 30 CVEs, a

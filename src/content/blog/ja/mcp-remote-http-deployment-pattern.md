@@ -1,5 +1,4 @@
 ---
-draft: true
 title: MCPリモートHTTPサーバーデプロイパターン — stdioからStreamable HTTPへ移行する実践ガイド
 description: >-
   MCP Streamable HTTPトランスポートでstdioサーバーをリモート配備可能なHTTPサービスへ移行する実践ガイド。TypeScript

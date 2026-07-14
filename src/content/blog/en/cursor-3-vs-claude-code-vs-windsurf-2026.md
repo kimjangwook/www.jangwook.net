@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Cursor 3 vs Claude Code vs Windsurf: Best AI Tool in 2026'
 description: >-
   Real comparison of Cursor 3.1, Claude Code, and Windsurf 2.0.67. Async

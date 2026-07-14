@@ -1,5 +1,4 @@
 ---
-draft: true
 title: >-
   Streamlining Project Manager Workflows with LLMs: 3x Productivity Boost with
   AI

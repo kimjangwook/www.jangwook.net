@@ -1,5 +1,4 @@
 ---
-draft: true
 title: MCP Joins the Linux Foundation — An Adoption Roadmap for Engineering Teams
 description: >-
   Anthropic donated MCP to the Linux Foundation, with OpenAI, Google, and

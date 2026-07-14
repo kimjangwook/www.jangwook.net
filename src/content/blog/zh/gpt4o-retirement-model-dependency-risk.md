@@ -48,7 +48,6 @@ relatedPosts:
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
       zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 ## 概述
@@ -227,7 +226,7 @@ graph LR
 
 ### 长期视角
 
-AI模型市场未来将变化更快。[仅2026年2月就有7个以上主要模型同时发布](/zh/blog/ai-model-rush-february-2026)。在这样的环境中，<strong>全押单一模型就是在积累技术债务</strong>。
+AI模型市场未来将变化更快。[仅2026年2月就有7个以上主要模型同时发布](/zh/blog/zh/ai-model-rush-february-2026)。在这样的环境中，<strong>全押单一模型就是在积累技术债务</strong>。
 
 ## 结论
 
@@ -244,4 +243,4 @@ AI模型是工具。真正的竞争力不是依赖某个工具，而是拥有<st
 
 - [OpenAI Model Deprecation Policy](https://platform.openai.com/docs/deprecations)
 - [Anthropic Claude Enterprise](https://www.anthropic.com/enterprise)
-- [2026年2月AI模型大战分析](/zh/blog/ai-model-rush-february-2026)
+- [2026年2月AI模型大战分析](/zh/blog/zh/ai-model-rush-february-2026)

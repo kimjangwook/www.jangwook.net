@@ -2,7 +2,6 @@
 title: 博客第一周分析报告：与31位热情早期采用者共同开启的旅程
 description: 博客上线一周后的GA4数据分析、内容表现、改进效果 - 透明分享博客成长记录 (2025-10-07~10-14)
 pubDate: '2025-10-14'
-noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics
@@ -52,7 +51,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # 博客第一周分析报告：与31位热情早期采用者共同开启的旅程

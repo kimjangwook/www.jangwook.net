@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Claude API提示缓存实战 — 4种模式将LLM成本降低70%'
 description: >-
   基于真实生产环境经验的Claude API提示缓存完全实战指南。涵盖系统提示、RAG文档、工具定义和多轮对话四种缓存模式，

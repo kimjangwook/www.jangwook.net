@@ -2,7 +2,6 @@
 title: 'jangwook.netブログローンチ分析レポート: データ駆動型技術ブログの始まり'
 description: ブログローンチ初期のGA4データ分析、実践的なMCPクエリ例、そして3ヶ月成長戦略まで - 透明性を持って共有する技術ブログの旅の始まり
 pubDate: '2025-10-06'
-noindex: true
 heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
 tags:
   - Analytics
@@ -27,7 +26,6 @@ relatedPosts:
         Covers similar topics in automation, web development, architecture with
         comparable difficulty.
       zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net ブログローンチ分析レポート
@@ -660,6 +658,6 @@ jangwook.net ブログは技術的に成功裏にローンチされました:
 
 - 🔗 <strong>シェア</strong>: 同じ悩みを持つ仲間の開発者へ
 - 💭 <strong>コメント</strong>: あなたのブログ分析経験とヒント
-- 📧 <strong>お問い合わせ</strong>: [Contact](/contact)で 1 対 1 の質問
+- 📧 <strong>お問い合わせ</strong>: [Contact](/ja/contact)で 1 対 1 の質問
 
 <strong>一緒に学び、成長しましょう。あなたの最初の分析レポートを楽しみにしています!</strong> 🚀

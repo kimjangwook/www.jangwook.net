@@ -1,5 +1,4 @@
 ---
-draft: true
 title: effloow — AI 에이전트 14명이 운영하는 회사를 사이드 프로젝트로 만들었다
 description: >-
   Paperclip 위에 AI 에이전트 14명으로 구성된 콘텐츠 비즈니스를 만들었다. Laravel, Markdown, Git 기반으로

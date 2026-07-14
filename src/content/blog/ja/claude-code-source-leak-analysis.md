@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Claude Codeソース流出 — 51万行から読み解くエージェントアーキテクチャの内側
 description: >-
   Anthropicのnpmパッケージ配布ミスでClaude

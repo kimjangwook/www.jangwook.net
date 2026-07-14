@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Gemma 4をローカルで動かしてみた — 8Bモデルが関数呼び出しまでこなす時代
 description: >-
   GoogleがApache 2.0で公開したGemma 4をOllamaで実際にインストールし、日本語・構造化出力・関数呼び出しまでテストした。

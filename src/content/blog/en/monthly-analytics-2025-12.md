@@ -6,7 +6,6 @@ description: >-
   75 days post-launch GA4 analysis - 85 daily visitors, 56.5% organic search,
   Google Code Wiki Guide as new top performer, China market surge
 pubDate: '2025-12-24'
-noindex: true
 heroImage: ../../../assets/blog/monthly-analytics-2025-12-hero.png
 tags:
   - Analytics
@@ -48,7 +47,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net Monthly Growth Report: 57% Organic Search, The Secret Behind 3.5x Growth

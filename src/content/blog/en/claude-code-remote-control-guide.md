@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Claude Code Remote Control Complete Guide — From Setup to Mobile Control'
 description: >-
   A complete guide to setting up and using Claude Code Remote Control. Learn how to monitor and control desktop tasks from your phone with practical workflow examples.

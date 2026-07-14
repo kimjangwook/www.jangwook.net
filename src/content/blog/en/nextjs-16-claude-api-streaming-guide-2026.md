@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Next.js 16 + Claude API Streaming: Complete App Router Guide'
 description: 'Guide to Claude API streaming in Next.js 16 App Router: Route Handler, SSE handling, React 19 client hooks, error recovery — with real build code and logs.'
 pubDate: '2026-05-20'

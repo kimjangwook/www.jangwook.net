@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Perplexity Computer：全天候AI智能体
 description: >-
   分析Perplexity发布的Personal Computer与Enterprise。24/7

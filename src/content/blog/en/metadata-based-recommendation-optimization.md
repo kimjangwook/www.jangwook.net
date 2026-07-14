@@ -57,7 +57,6 @@ relatedPosts:
         Suitable as a next-step learning resource, connecting through
         automation, AI/ML, DevOps, architecture topics.
       zh: 适合作为下一步学习资源，通过自动化、AI/ML、DevOps、架构主题进行连接。
-draft: true
 ---
 
 ## Introduction: The Cost Snowball
@@ -614,9 +613,9 @@ LLMs are amazing. But not every problem needs an LLM. Sometimes old, proven algo
 ---
 
 <strong>Related Posts:</strong>
-- [Building an Intelligent Content Recommendation System with Claude LLM](/en/blog/ai-content-recommendation-system) - Initial LLM-based recommendation system
-- [Blog Automation with LLM and Claude Code](/en/blog/llm-blog-automation) - Complete blog automation system
-- [Claude Code Best Practices](/en/blog/claude-code-best-practices) - AI development productivity optimization
+- [Building an Intelligent Content Recommendation System with Claude LLM](/en/blog/en/ai-content-recommendation-system) - Initial LLM-based recommendation system
+- [Blog Automation with LLM and Claude Code](/en/blog/en/llm-blog-automation) - Complete blog automation system
+- [Claude Code Best Practices](/en/blog/en/claude-code-best-practices) - AI development productivity optimization
 
 <strong>References:</strong>
 - [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index)

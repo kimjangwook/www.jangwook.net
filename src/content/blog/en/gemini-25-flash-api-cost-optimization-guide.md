@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Gemini 2.5 Flash API Cost Optimization Guide — 99% Savings Confirmed by Real Experiments'
 description: 'Gemini 2.5 Flash API: 4 cost-cutting techniques from direct experiments. Thinking tokens, Context Caching, Flash-Lite, Batch API. Real data proves 99% savings.'
 pubDate: '2026-05-06'

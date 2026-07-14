@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Claude Code 最佳实践：开发生产力革命指南
 description: >-
   基于 Anthropic 官方最佳实践深度优化 Claude Code 的实战指南。系统讲解 CLAUDE.md

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'GLM-5: MIT Open-Source Frontier Model for Enterprise'
 description: 'Zhipu AI released GLM-5 with 744B MoE trained on Huawei Ascend without NVIDIA. A cost-effective MIT-licensed alternative for enterprise deployments.'
 pubDate: '2026-03-14'

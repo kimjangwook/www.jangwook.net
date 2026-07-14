@@ -2,7 +2,6 @@
 title: 'jangwook.net 月度增长报告（12月）：2,600名访客，自然搜索占比57%'
 description: 博客上线75天GA4数据分析 - 日均85名访客，自然搜索达56.5%，Google Code Wiki指南成为新热门文章，中国市场急速增长
 pubDate: '2025-12-24'
-noindex: true
 heroImage: ../../../assets/blog/monthly-analytics-2025-12-hero.png
 tags:
   - Analytics
@@ -44,7 +43,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net 月度增长报告：自然搜索57%，3.5倍增长的秘密

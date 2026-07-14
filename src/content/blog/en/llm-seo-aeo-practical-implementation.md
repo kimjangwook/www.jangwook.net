@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'SEO/AEO in the LLM Era: B2B SaaS Optimization Roadmap'
 description: >-
   From SEO foundation to AEO strategy: real implementation case study with
@@ -448,7 +447,7 @@ const relatedPosts = await Promise.all(
 ```markdown
 Our [receipt OCR API](/api-docs/receipt-ocr) uses Google Gemini 2.5 Flash
 for structured data extraction. Unlike traditional OCR that returns plain text,
-we return JSON with validated schema using [Structured Output](/blog/structured-output-guide).
+we return JSON with validated schema using [Structured Output].
 
 For accounting workflows, combine this with our [batch processing feature](/features/batch)
 to handle hundreds of receipts simultaneously.

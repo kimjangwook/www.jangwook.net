@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Hindsight — AI 에이전트에 학습하는 기억을 부여하는 오픈소스 MCP 메모리
 description: >-
   AI 에이전트에 학습하는 기억을 부여하는 오픈소스 MCP 메모리 시스템 Hindsight. LongMemEval 91.4% 달성의 3계층

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 智能体扩展的科学 — Google研究揭穿"更多智能体=更好"的神话
 description: >-
   Google

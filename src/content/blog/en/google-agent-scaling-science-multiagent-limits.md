@@ -1,5 +1,4 @@
 ---
-draft: true
 title: >-
   The Science of Agent Scaling — Google Research Debunks the "More Agents =
   Better" Myth

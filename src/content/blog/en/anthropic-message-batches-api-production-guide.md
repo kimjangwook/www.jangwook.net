@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Anthropic Message Batches API — Cut LLM Costs 50% at Scale
 description: >-
   Batch 100,000 Claude requests in one call, cutting LLM costs 50%. Covers async

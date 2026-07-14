@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Why Top-Down AI Adoption Works: The Real Reason Behind the 42% Failure Rate'
 description: >-
   Limits of bottom-up AI adoption and organizational change management

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'OpenAI Open Responses: A Common Standard for Agentic AI'
 description: >-
   OpenAI Open Responses spec standardizes agentic AI workflows. We analyze its

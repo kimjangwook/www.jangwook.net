@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Anthropic Files API 実践ガイド — PDF再アップロードなしでドキュメントを一括分析する
 description: >-
   Anthropic Files APIでPDF・画像を一度アップロードし複数のAPIリクエストで再利用する実践ガイド。Python SDKバッチ

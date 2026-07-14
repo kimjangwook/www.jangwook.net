@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Chrome DevTools MCPでウェブパフォーマンス最適化を自動化する
 description: >-
   AIアシスタントが実際のブラウザデータでパフォーマンスを測定・最適化。Chrome DevTools MCPの完全ガイド - Core Web

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Claude Code June 2026 Update: Safe Mode, Opus 4.8, and Doubled Rate Limits'
 description: >-
   Complete breakdown of Claude Code June 2026: Safe Mode isolation, /cd command,

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: OpenClaw dev版更新错误解决：unknown command doctor的处理方法
 description: >-
   OpenClaw dev版执行openclaw update时出现error: unknown command

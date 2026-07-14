@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Optimizing AI Agent Systems with the Deep Agents Paradigm
 description: >-
   Deep Agents: 100-step tasks, explicit planning, auto-recovery for AI agent

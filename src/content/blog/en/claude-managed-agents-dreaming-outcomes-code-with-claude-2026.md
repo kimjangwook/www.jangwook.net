@@ -1,5 +1,4 @@
 ---
-draft: true
 title: >-
   Claude Managed Agents' Dreaming, Outcomes, and Orchestration — How Agents
   Self-Improve While You Sleep

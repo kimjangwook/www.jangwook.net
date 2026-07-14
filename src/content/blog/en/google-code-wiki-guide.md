@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Google Code Wiki: Complete Guide to AI-Powered Code Documentation'
 description: >-
   Gemini AI builds a living wiki from your code automatically. Complete Google

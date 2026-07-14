@@ -1,5 +1,4 @@
 ---
-draft: true
 title: OpenAI Open Responses — エージェンティックAIワークフローの共通標準が登場
 description: >-
   OpenAIが公開したOpen

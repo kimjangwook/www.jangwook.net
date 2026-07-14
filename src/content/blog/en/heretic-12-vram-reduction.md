@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Heretic 1.2: 70% VRAM Reduction via Quantization and MPOA Explained'
 description: >-
   Heretic 1.2 is here with 4-bit quantization cutting VRAM usage by up to 70%

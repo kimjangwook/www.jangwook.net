@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Dapr Agents v1.0 GA — How to Make AI Agents Survive in Kubernetes
 description: >-
   Analyzing Dapr Agents v1.0 announced at KubeCon Europe 2026 — its durable

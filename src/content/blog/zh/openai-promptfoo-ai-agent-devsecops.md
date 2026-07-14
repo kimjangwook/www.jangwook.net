@@ -1,5 +1,4 @@
 ---
-draft: true
 title: OpenAI收购Promptfoo——AI智能体DevSecOps时代开启
 description: >-
   OpenAI收购AI安全测试平台Promptfoo，这一被Fortune

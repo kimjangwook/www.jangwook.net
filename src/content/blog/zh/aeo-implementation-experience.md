@@ -56,7 +56,6 @@ relatedPosts:
         Covers similar topics in automation, web development, AI/ML,
         architecture with comparable difficulty.
       zh: 在自动化、Web开发、AI/ML、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # AI搜索时代的AEO实施经验：Agent Effi Flow实战案例
@@ -1488,6 +1487,6 @@ AI搜索时代才刚刚开始，现在投入AEO优化，未来将获得巨大的
 - GitHub：[@yourusername](https://github.com/yourusername)
 
 <strong>相关阅读</strong>：
-- [AI搜索引擎的崛起与SEO的未来](/blog/ai-search-engines-and-seo-future)
-- [Svelte 5新特性详解](/blog/svelte-5-features)
-- [Schema.org结构化数据完全指南](/blog/schema-org-complete-guide)
+- [AI搜索引擎的崛起与SEO的未来]
+- [Svelte 5新特性详解]
+- [Schema.org结构化数据完全指南]

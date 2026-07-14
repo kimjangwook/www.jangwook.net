@@ -4,7 +4,6 @@ description: >-
   블로그 런칭 45일 GA4 데이터 전격 분석 - 오가닉 검색 44.3% 달성, SEO 최적화 ROI, 트래픽 급증 원인 분석, 영어 콘텐츠
   91% 이탈률 해결 전략
 pubDate: '2025-11-20'
-noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
 tags:
   - Analytics
@@ -46,7 +45,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net 45일 성장 리포트: 데이터가 말해주는 진실

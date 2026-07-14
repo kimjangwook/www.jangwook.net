@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Automating Blog Analytics with Google Analytics MCP and AI Agents
 description: >-
   Learn how to connect Google Analytics MCP with Claude AI agents to fully

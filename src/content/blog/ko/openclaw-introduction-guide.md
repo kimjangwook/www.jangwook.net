@@ -1,5 +1,4 @@
 ---
-draft: true
 title: OpenClaw 완전 소개 — 나만의 AI 비서를 만들자
 description: >-
   오픈소스 AI 비서 플랫폼 OpenClaw 완전 소개 가이드. Telegram·Discord·Slack 멀티채널 지원,
@@ -53,7 +52,7 @@ relatedPosts:
 > 📚 <strong>시리즈: OpenClaw 완전 정복</strong>
 > - <strong>1편: 소개편 (현재 글)</strong> — OpenClaw이 뭔지, 왜 특별한지
 > - [2편: 튜토리얼편](/ko/blog/ko/openclaw-installation-tutorial/) — 설치부터 첫 대화까지
-> - [3편: 실전 활용편](/ko/blog/ko/openclaw-practical-usage/) — 스킬, 자동화, 고급 워크플로우
+> - [3편: 실전 활용편](/ko/blog/ko/openclaw-advanced-usage) — 스킬, 자동화, 고급 워크플로우
 
 ---
 

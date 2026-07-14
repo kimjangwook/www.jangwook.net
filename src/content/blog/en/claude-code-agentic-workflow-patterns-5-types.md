@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 5 Claude Code Agentic Workflow Patterns — Which One Fits Your Work?
 description: >-
   5 Claude Code agentic workflow patterns — Sequential, Operator, Parallel,

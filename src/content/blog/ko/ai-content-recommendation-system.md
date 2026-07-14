@@ -56,7 +56,6 @@ relatedPosts:
         Useful as prerequisite knowledge, covering automation, web development
         fundamentals.
       zh: 作为先修知识很有用，涵盖自动化、Web开发基础。
-draft: true
 ---
 
 ## 콘텐츠 추천의 새로운 패러다임
@@ -724,7 +723,7 @@ Claude LLM 기반 콘텐츠 추천 시스템은 단순한 태그 매칭을 넘�
 
 ## 다음 글
 
-<strong>[추천 시스템 혁신: 78,000 토큰을 제로로 만든 메타데이터 최적화 여정](/ko/blog/metadata-based-recommendation-optimization)</strong>에서는 이 LLM 기반 추천 시스템을 메타데이터 기반 알고리즘으로 최적화하여 토큰 사용량을 100% 제거하고 실행 시간을 99% 단축한 사례를 다룹니다.
+<strong>[추천 시스템 혁신: 78,000 토큰을 제로로 만든 메타데이터 최적화 여정](/ko/blog/ko/metadata-based-recommendation-optimization)</strong>에서는 이 LLM 기반 추천 시스템을 메타데이터 기반 알고리즘으로 최적화하여 토큰 사용량을 100% 제거하고 실행 시간을 99% 단축한 사례를 다룹니다.
 
 ## 참고 자료
 

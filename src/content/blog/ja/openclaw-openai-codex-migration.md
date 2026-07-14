@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'OpenClawのモデルをOpenAI Codexに切り替える — ToS混乱後の実践ガイド'
 description: >-
   Claude・GeminiのToS変更後、OpenClawユーザー向けのOpenAI Codex移行ガイド。バックアップからモデル設定、エージェント別構成まで一気に解説します。

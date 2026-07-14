@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Why I Left OpenClaw for a Codex + Nanobot Stack
 description: >-
   A hands-on migration from OpenClaw to Codex+Nanobot. launchd scheduling,

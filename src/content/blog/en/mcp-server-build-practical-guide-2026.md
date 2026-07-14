@@ -1,5 +1,4 @@
 ---
-draft: true
 title: >-
   Building Your Own MCP Server — Implementing Real AI Tools with Streamable HTTP
   Transport

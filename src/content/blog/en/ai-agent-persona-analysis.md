@@ -1,5 +1,4 @@
 ---
-draft: true
 title: What Happens When You Assign Gender and Personas to AI Agents?
 description: >-
   Does assigning a gender or persona to an AI agent affect its performance?

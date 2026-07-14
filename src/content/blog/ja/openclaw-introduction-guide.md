@@ -1,5 +1,4 @@
 ---
-draft: true
 title: OpenClaw 完全ガイド — 自分だけのAIアシスタントを作ろう
 description: >-
   オープンソースAIアシスタントプラットフォーム OpenClaw
@@ -52,7 +51,7 @@ relatedPosts:
 > 📚 <strong>シリーズ：OpenClaw 完全攻略</strong>
 > - <strong>第1回：紹介編（この記事）</strong> — OpenClawとは？なぜ特別なのか？
 > - [第2回：チュートリアル編](/ja/blog/ja/openclaw-installation-tutorial/) — インストールから最初の会話まで
-> - [第3回：実践活用編](/ja/blog/ja/openclaw-practical-usage/) — スキル、自動化、上級ワークフロー
+> - [第3回：実践活用編](/ja/blog/ja/openclaw-advanced-usage) — スキル、自動化、上級ワークフロー
 
 ---
 

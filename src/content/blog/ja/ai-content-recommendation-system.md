@@ -56,7 +56,6 @@ relatedPosts:
         Useful as prerequisite knowledge, covering automation, web development
         fundamentals.
       zh: 作为先修知识很有用，涵盖自动化、Web开发基础。
-draft: true
 ---
 
 ## コンテンツ推薦の新しいパラダイム
@@ -708,7 +707,7 @@ Claude LLMベースのコンテンツ推薦システムは、単純なタグマ�
 
 ## 次回記事
 
-<strong>[レコメンデーションシステム革新：78,000トークンをゼロにしたメタデータ最適化の旅](/ja/blog/metadata-based-recommendation-optimization)</strong>では、このLLMベース推薦システムをメタデータベースアルゴリズムに最適化し、トークン使用量を100%削減し、実行時間を99%短縮した事例をご紹介します。
+<strong>[レコメンデーションシステム革新：78,000トークンをゼロにしたメタデータ最適化の旅](/ja/blog/ja/metadata-based-recommendation-optimization)</strong>では、このLLMベース推薦システムをメタデータベースアルゴリズムに最適化し、トークン使用量を100%削減し、実行時間を99%短縮した事例をご紹介します。
 
 ## 参考資料
 

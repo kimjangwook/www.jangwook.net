@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Claude Codeのエージェントワークフローパターン5選 — 自分の作業に合うパターンは?
 description: >-
   Claude Codeのエージェントワークフローパターン5選 —

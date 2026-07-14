@@ -56,7 +56,6 @@ relatedPosts:
         Covers similar topics in automation, AI/ML, architecture with comparable
         difficulty.
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 ## 概述
@@ -674,5 +673,5 @@ research/anthropic-code-execution-with-mcp/
 ### 相关文章
 
 - [上一篇：Anthropic Code Execution with MCP 深度解析](/zh/blog/zh/anthropic-code-execution-mcp)
-- [EffiFlow 自动化分析 Part 1](/blog/zh/effiflow-automation-analysis-part1)
-- [EffiFlow 自动化分析 Part 2](/blog/zh/effiflow-automation-analysis-part2)
+- [EffiFlow 自动化分析 Part 1](/zh/blog/zh/effiflow-automation-analysis-part1)
+- [EffiFlow 自动化分析 Part 2](/zh/blog/zh/effiflow-automation-analysis-part2)

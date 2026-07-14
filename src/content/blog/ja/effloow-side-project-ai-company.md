@@ -1,5 +1,4 @@
 ---
-draft: true
 title: effloow — AIエージェント14名が運営する会社をサイドプロジェクトで作った
 description: >-
   Paperclip上にAIエージェント14名で構成されたコンテンツビジネスを構築。Laravel、Markdown、Git基盤でサイトが自動運営される仕組みとDay

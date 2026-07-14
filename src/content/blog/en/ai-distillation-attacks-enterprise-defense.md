@@ -1,5 +1,4 @@
 ---
-draft: true
 title: AI Model Distillation Attacks — IP Protection for CTOs
 description: >-
   Analyzing Anthropic's detection of large-scale AI model distillation attacks

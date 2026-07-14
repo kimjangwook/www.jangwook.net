@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Perplexity Computer：24時間AIエージェント時代
 description: >-
   Perplexity

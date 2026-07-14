@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Automating Page E2E Testing with Claude Code
 description: >-
   Build an automated page quality verification system for web publishers. Test 8

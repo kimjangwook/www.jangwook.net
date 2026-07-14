@@ -2,7 +2,6 @@
 title: jangwook.net 博客启动分析报告：数据驱动技术博客的开端
 description: 博客启动初期 GA4 数据分析、实战 MCP 查询示例、以及 3 个月增长战略——透明分享技术博客旅程的起点
 pubDate: '2025-10-06'
-noindex: true
 heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
 tags:
   - Analytics
@@ -27,7 +26,6 @@ relatedPosts:
         Covers similar topics in automation, web development, architecture with
         comparable difficulty.
       zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net 博客启动分析报告
@@ -660,6 +658,6 @@ jangwook.net 博客在技术上成功启动：
 
 - 🔗 <strong>分享</strong>：给有同样困扰的同事开发者
 - 💭 <strong>留言</strong>：您的博客分析经验和技巧
-- 📧 <strong>联系</strong>：在 [Contact](/contact) 进行 1:1 提问
+- 📧 <strong>联系</strong>：在 [Contact](/zh/contact) 进行 1:1 提问
 
 <strong>让我们一起学习和成长。期待您的第一份分析报告！</strong> 🚀

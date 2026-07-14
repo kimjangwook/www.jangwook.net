@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Anthropic Message Batches API 实战指南 — 大规模LLM请求成本降低50%的方法
 description: >-
   深入讲解Anthropic Message Batches API：将最多100,000个请求合并为单次批量处理，成本立降50%。结合Prompt

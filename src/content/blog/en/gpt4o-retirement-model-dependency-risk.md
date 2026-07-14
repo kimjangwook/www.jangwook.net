@@ -53,7 +53,6 @@ relatedPosts:
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
       zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 ## Overview
@@ -232,7 +231,7 @@ graph LR
 
 ### Long-Term Perspective
 
-The AI model market will change even faster going forward. [In February 2026 alone, more than 7 major models are launching simultaneously](/en/blog/ai-model-rush-february-2026). In this environment, <strong>going all-in on a single model is accumulating technical debt</strong>.
+The AI model market will change even faster going forward. [In February 2026 alone, more than 7 major models are launching simultaneously](/en/blog/en/ai-model-rush-february-2026). In this environment, <strong>going all-in on a single model is accumulating technical debt</strong>.
 
 ## Conclusion
 
@@ -249,4 +248,4 @@ AI models are tools. The real competitive advantage isn't depending on any singl
 
 - [OpenAI Model Deprecation Policy](https://platform.openai.com/docs/deprecations)
 - [Anthropic Claude Enterprise](https://www.anthropic.com/enterprise)
-- [February 2026 AI Model Rush Analysis](/en/blog/ai-model-rush-february-2026)
+- [February 2026 AI Model Rush Analysis](/en/blog/en/ai-model-rush-february-2026)

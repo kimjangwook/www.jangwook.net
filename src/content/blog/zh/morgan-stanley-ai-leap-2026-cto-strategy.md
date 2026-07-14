@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Morgan Stanley警告2026 AI飞跃——CTO现在必须准备的5件事
 description: >-
   Morgan

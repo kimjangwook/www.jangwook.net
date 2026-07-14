@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Olmo Hybrid——Transformer + Linear RNN 混合架构实现2倍数据效率
 description: >-
   AI2的Olmo

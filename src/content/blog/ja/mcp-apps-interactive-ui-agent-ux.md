@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'MCP Apps: AIチャット内でインタラクティブUIが動作する'
 description: >-
   MCP AppsがAIエージェントUXをどう変えるか、sandboxed

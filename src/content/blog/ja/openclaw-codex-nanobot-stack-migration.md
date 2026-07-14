@@ -1,5 +1,4 @@
 ---
-draft: true
 title: OpenClawをやめてCodex+Nanobotに乗り換えた理由
 description: >-
   OpenClawからCodex+Nanobotへの実践マイグレーション体験記。launchdスケジューリング、Telegramブリッジ、MCPホスト

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: >-
   Claude Managed AgentsのDreaming・Outcomes・Orchestration —
   エージェントが眠りながら自己改善する仕組みの分析

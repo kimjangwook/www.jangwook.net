@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Hermes Agent — The Open-Source AI Agent That Evolves With Every Task
 description: >-
   I installed NousResearch's Hermes Agent v0.7.0. It auto-generates skill

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Claude Mythos Preview — AI"太强了所以不公开"，这说得通吗
 description: >-
   Anthropic决定不公开发布SWE-bench得分93.9%的Claude Mythos Preview。

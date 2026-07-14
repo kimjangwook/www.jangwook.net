@@ -1,5 +1,4 @@
 ---
-draft: true
 title: What I Want to Tell Juniors in the Age of AI
 description: >-
   In an era where AI is shrinking hiring, here are honest survival strategies

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Claude Code Remote Control 完全ガイド — セットアップからモバイル遠隔操作まで'
 description: >-
   Claude Code Remote Controlの設定方法と活用法を解説します。デスクトップで始めたタスクをモバイルからモニタリング・操作するワークフローを実例とともに紹介します。

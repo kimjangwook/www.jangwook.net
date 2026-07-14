@@ -1,5 +1,4 @@
 ---
-draft: true
 title: OpenAI Codexクラウドエージェント vs Claude Code — 2026年5月、どちらを選ぶか
 description: >-
   OpenAI Codexが4月にクラウドエージェント専用に転換。Claude Codeとのアーキテクチャ・ベンチマーク・コストの違いをSource

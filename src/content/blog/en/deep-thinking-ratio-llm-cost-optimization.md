@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Deep-Thinking Ratio: Cut LLM Inference Costs by 50% Without Sacrificing Quality'
 description: >-
   Google & UVA research overturns the "longer = better" assumption for LLM reasoning.

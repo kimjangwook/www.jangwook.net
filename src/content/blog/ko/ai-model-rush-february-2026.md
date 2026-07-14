@@ -1,5 +1,4 @@
 ---
-draft: true
 title: '2026년 2월 AI 모델 러시: 7개 모델이 동시 출시 예정인 역대급 경쟁'
 description: >-
   Gemini 3 Pro GA, Sonnet 5, GPT-5.3, Qwen 3.5, GLM 5, Deepseek v4, Grok 4.20이

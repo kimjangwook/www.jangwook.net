@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Automate Web Performance Optimization with Chrome DevTools MCP
 description: >-
   Complete guide to Chrome DevTools MCP: AI assistants measure and optimize

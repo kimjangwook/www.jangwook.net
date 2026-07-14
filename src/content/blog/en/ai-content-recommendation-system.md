@@ -57,7 +57,6 @@ relatedPosts:
         Useful as prerequisite knowledge, covering automation, web development
         fundamentals.
       zh: 作为先修知识很有用，涵盖自动化、Web开发基础。
-draft: true
 ---
 
 ## A New Paradigm for Content Recommendations
@@ -709,7 +708,7 @@ Implementing this system will increase reader engagement time, improve content d
 
 ## Next Article
 
-<strong>[Recommendation System Optimization: From 78K Tokens to Zero](/en/blog/metadata-based-recommendation-optimization)</strong> covers how we optimized this LLM-based recommendation system with a metadata-based algorithm, eliminating 100% of token usage and reducing execution time by 99%.
+<strong>[Recommendation System Optimization: From 78K Tokens to Zero](/en/blog/en/metadata-based-recommendation-optimization)</strong> covers how we optimized this LLM-based recommendation system with a metadata-based algorithm, eliminating 100% of token usage and reducing execution time by 99%.
 
 ## References
 

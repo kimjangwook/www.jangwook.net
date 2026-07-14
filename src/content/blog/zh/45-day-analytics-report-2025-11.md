@@ -2,7 +2,6 @@
 title: jangwook.net 45天增长报告：从750名访客中学到的7个洞察
 description: 博客启动45天GA4数据深度分析 - 自然搜索占比44.3%达成、SEO优化ROI、流量激增原因分析、英文内容91%跳出率解决方案
 pubDate: '2025-11-20'
-noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
 tags:
   - Analytics
@@ -44,7 +43,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net 45天增长报告：数据揭示的真相

@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Olmo Hybrid — Transformer + リニアRNNハイブリッドでデータ効率2倍を達成
 description: >-
   AI2のOlmo

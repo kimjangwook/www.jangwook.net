@@ -4,7 +4,6 @@ description: >-
   블로그 런칭 일주일 후 GA4 데이터 분석, 콘텐츠 성과, 개선 효과 - 투명하게 공유하는 블로그 성장 기록
   (2025-10-07~10-14)
 pubDate: '2025-10-14'
-noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics
@@ -54,7 +53,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # 블로그 첫 주 분석 리포트: 31명의 열정적인 얼리어답터와 함께 시작한 여정

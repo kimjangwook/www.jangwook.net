@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'AIエージェント協業パターン: 5つの専門エージェントでフルスタックアプリを構築'
 description: >-
   Architecture、Coding、Testing、Security、DevOpsエージェントをオーケストレーションして本番環境アプリを構築する実践ガイド

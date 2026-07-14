@@ -48,7 +48,6 @@ relatedPosts:
       ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
       en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
       zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 ## 概要
@@ -227,7 +226,7 @@ graph LR
 
 ### 長期的な視点
 
-AIモデル市場は今後さらに速く変化するでしょう。[2026年2月だけでも7つ以上の主要モデルが同時リリース](/ja/blog/ai-model-rush-february-2026)される状況です。このような環境で<strong>特定モデルにオールインすることは技術的負債を積む行為</strong>です。
+AIモデル市場は今後さらに速く変化するでしょう。[2026年2月だけでも7つ以上の主要モデルが同時リリース](/ja/blog/ja/ai-model-rush-february-2026)される状況です。このような環境で<strong>特定モデルにオールインすることは技術的負債を積む行為</strong>です。
 
 ## 結論
 
@@ -244,4 +243,4 @@ AIモデルはツールです。ツールに依存するのではなく、<stron
 
 - [OpenAI Model Deprecation Policy](https://platform.openai.com/docs/deprecations)
 - [Anthropic Claude Enterprise](https://www.anthropic.com/enterprise)
-- [2026年2月AIモデルラッシュ分析](/ja/blog/ai-model-rush-february-2026)
+- [2026年2月AIモデルラッシュ分析](/ja/blog/ja/ai-model-rush-february-2026)

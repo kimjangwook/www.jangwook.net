@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Morgan Stanleyが警告した2026年AI飛躍 — CTOが今準備すべき5つの戦略
 description: >-
   Morgan Stanleyが警告した2026年上半期のAI能力の非線形飛躍に備え、AIロードマップの四半期再設計、Centaur

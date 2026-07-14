@@ -5,7 +5,6 @@ description: >-
   achieved, SEO optimization ROI proven, traffic spike investigation, 91% bounce
   rate crisis on English homepage
 pubDate: '2025-11-20'
-noindex: true
 heroImage: ../../../assets/blog/45-day-analytics-report-hero.png
 tags:
   - Analytics
@@ -47,7 +46,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net 45-Day Growth Report: What the Data Really Says

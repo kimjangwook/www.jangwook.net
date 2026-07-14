@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 使用 Claude Code 自动化页面 E2E 测试
 description: >-
   使用 Claude Code 与 Playwright 构建 Web 页面 E2E 测试自动化系统的实战指南。通过单一命令验证跨浏览器兼容性、WCAG

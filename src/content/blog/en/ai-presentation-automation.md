@@ -1,5 +1,4 @@
 ---
-draft: true
 title: 'Automating Semi-Annual Presentation Creation with AI: From 60 Hours to 10'
 description: >-
   Learn how we reduced semi-annual reporting preparation from over 60 hours to

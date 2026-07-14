@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Anthropic Batches API 実践ガイド — LLMコストを50%削減する方法
 description: >-
   Anthropic Message Batches

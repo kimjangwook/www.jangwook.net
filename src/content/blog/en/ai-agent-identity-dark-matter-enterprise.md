@@ -1,5 +1,4 @@
 ---
-draft: true
 title: "AI Agent Identity Dark Matter: Why 80% of Enterprises Can't Control Their Own AI"
 description: >-
   70% of enterprises already run AI agents in production, yet 80% can't track their real-time

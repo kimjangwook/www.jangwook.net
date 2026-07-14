@@ -1,5 +1,4 @@
 ---
-draft: true
 title: OpenClaw Installation to First Conversation — Complete Tutorial
 description: >-
   Step-by-step guide to installing OpenClaw, connecting Telegram, and having

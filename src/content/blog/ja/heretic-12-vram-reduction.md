@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Heretic 1.2 — 量子化でVRAM 70%削減とMPOA技術の全貌
 description: >-
   Heretic

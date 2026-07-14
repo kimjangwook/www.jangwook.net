@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Claude Cowork 엔터프라이즈 출시 — 개발자 도구에서 전사 생산성 플랫폼으로
 description: >-
   Anthropic Claude Cowork 엔터프라이즈 버전의 핵심 기능 분석. Plugin Marketplace, MCP 커넥터,

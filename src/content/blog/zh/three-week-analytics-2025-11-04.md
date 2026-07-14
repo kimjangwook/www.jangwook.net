@@ -2,7 +2,6 @@
 title: 三周分析报告：自然搜索爆炸增长1266%，以及发布20篇文章的旅程
 description: 2025年10月15日〜11月4日GA4数据分析，自然搜索从4.3%飙升至54.4%，发布20篇新文章，韩国成为第一访问国家 - 透明分享博客增长记录
 pubDate: '2025-11-06'
-noindex: true
 heroImage: ../../../assets/blog/ga-analytics-report-hero.png
 tags:
   - Analytics
@@ -44,7 +43,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # 三周分析报告：自然搜索爆炸增长1266%，以及发布20篇文章的旅程
@@ -204,24 +202,24 @@ draft: true
 
 | 发布日期 | 标题 | 主题 | 表现 |
 |--------|------|------|------|
-| 10-15 | [AI时代的规范驱动开发](/ko/blog/ko/spec-driven-development-ai-era/) | 开发方法论 | 数据不足 |
+| 10-15 | [AI时代的规范驱动开发](/ko/blog/ko/specification-driven-development) | 开发方法论 | 数据不足 |
 | 10-16 | [AI代理协作模式](/ko/blog/ko/ai-agent-collaboration-patterns/) | AI Agents | 数据不足 |
-| 10-17 | [自我修复AI系统](/ko/blog/ko/self-healing-ai-system/) | AI Engineering | 数据不足 |
-| 10-18 | [推荐系统创新](/ko/blog/ko/recommendation-system-optimization/) | Technical | 数据不足 |
-| 10-19 | [AI代理性别与角色](/ko/blog/ko/ai-agent-gender-persona/) | AI Ethics | 数据不足 |
+| 10-17 | [自我修复AI系统](/ko/blog/ko/self-healing-ai-systems) | AI Engineering | 数据不足 |
+| 10-18 | [推荐系统创新](/ko/blog/ko/metadata-based-recommendation-optimization) | Technical | 数据不足 |
+| 10-19 | [AI代理性别与角色](/ko/blog/ko/ai-agent-persona-analysis) | AI Ethics | 数据不足 |
 | 10-20 | [OpenAI AgentKit第1部分](/ko/blog/ko/openai-agentkit-tutorial-part1/) | AI Agents | <strong>Top 5</strong>（9次浏览） |
 | 10-21 | [OpenAI AgentKit第2部分](/ko/blog/ko/openai-agentkit-tutorial-part2/) | AI Agents | 数据不足 |
 | 10-22 | [Claude Skills完整指南](/ko/blog/ko/claude-skills-implementation-guide/) | Claude Code | <strong>Top 1</strong>（31次浏览）🥇 |
-| 10-23 | [AI消费者行为预测](/ko/blog/ko/ai-consumer-behavior-prediction/) | AI Research | 数据不足 |
+| 10-23 | [AI消费者行为预测] | AI Research | 数据不足 |
 | 10-24 | [SSR方法论调查分析](/ko/blog/ko/ssr-survey-analysis/) | Research | <strong>Top 6</strong>（8次浏览） |
 | 10-25 | [Playwright AI测试](/ko/blog/ko/playwright-ai-testing/) | Testing | <strong>Top 9</strong>（7次浏览） |
 | 10-26 | [LangGraph多代理](/ko/blog/ko/langgraph-multi-agent/) | AI Agents | 英文版Top 10（6次浏览） |
 | 10-27 | [Jules自动编码](/ko/blog/ko/jules-autocoding/) | AI Tools | <strong>Top 7, 13</strong>（7+6次浏览） |
-| 10-28 | [BigQuery MCP服务器构建](/ko/blog/ko/bigquery-mcp-server-guide/) | MCP | 数据不足 |
-| 10-29 | [Claude Code Hook自动化审查](/ko/blog/ko/claude-code-hook-automated-review/) | Claude Code | 数据不足 |
-| 10-30 | [LLM网页迁移标准化](/ko/blog/ko/llm-webpage-migration-standardization/) | LLM | 数据不足 |
+| 10-28 | [BigQuery MCP服务器构建](/ko/blog/ko/bigquery-mcp-prefix-filtering) | MCP | 数据不足 |
+| 10-29 | [Claude Code Hook自动化审查](/ko/blog/ko/claude-code-hooks-workflow) | Claude Code | 数据不足 |
+| 10-30 | [LLM网页迁移标准化](/ko/blog/ko/llm-page-migration-standardization) | LLM | 数据不足 |
 | 10-31 | [Claude Code大规模测试并行自动化](/ko/blog/ko/claude-code-parallel-testing/) | Testing | 数据不足 |
-| 11-01 | [LLM PM工作效率提升](/ko/blog/ko/llm-pm-productivity/) | Project Management | 数据不足 |
+| 11-01 | [LLM PM工作效率提升](/ko/blog/ko/llm-pm-workflow-automation) | Project Management | 数据不足 |
 | 11-03 | [Notion+Backlog+Slack+Claude项目管理](/ko/blog/ko/notion-backlog-slack-claude-project-management/) | Project Management | 数据不足 |
 | 11-04 | [Slack MCP团队沟通分析](/ko/blog/ko/slack-mcp-team-communication/) | MCP | 数据不足 |
 

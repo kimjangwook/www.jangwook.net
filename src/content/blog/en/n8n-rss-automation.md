@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Automate Blog Publishing with n8n RSS Feed and AI Agents
 description: >-
   Automate blog-to-social with n8n, RSS, and GitHub Actions. Gemini AI writes X

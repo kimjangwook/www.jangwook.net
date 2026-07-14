@@ -4,7 +4,6 @@ description: >-
   블로그 런칭 75일 GA4 데이터 분석 - 일일 평균 85명 방문, 오가닉 검색 56.5% 달성, Google Code Wiki 가이드 신규
   인기 포스트 등극, 중국 시장 급성장
 pubDate: '2025-12-24'
-noindex: true
 heroImage: ../../../assets/blog/monthly-analytics-2025-12-hero.png
 tags:
   - Analytics
@@ -46,7 +45,6 @@ relatedPosts:
       ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
       en: Covers similar topics in automation with comparable difficulty.
       zh: 在自动化领域涵盖类似主题，难度相当。
-draft: true
 ---
 
 # jangwook.net 월간 성장 리포트: 오가닉 검색 57%, 3배 성장의 비밀

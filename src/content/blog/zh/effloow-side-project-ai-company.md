@@ -1,5 +1,4 @@
 ---
-draft: true
 title: effloow — 用14个AI Agent运营公司的Side Project
 description: 基于Paperclip搭建了由14个AI Agent组成的内容业务。分享Laravel、Markdown、Git驱动的站点自动化架构与Day 1的实战经验。
 pubDate: '2026-04-02'
