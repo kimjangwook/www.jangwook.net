@@ -114,7 +114,7 @@ relatedPosts:
 
 ### 3.1 즉시 실행 가능한 분석 쿼리
 
-블로그 분석을 시작하는 독자들을 위해, <strong>실제로 사용 가능한 MCP 쿼리 예제</strong>를 공유합니다.
+블로그 분석을 시작하는 독자들을 위해, <strong>실제로 사용 가능한 MCP 쿼리 예제</strong>를 공유합니다. GA4를 MCP로 연결하는 전체 설정 과정은 [Google Analytics MCP 자동화 가이드](/ko/blog/ko/google-analytics-mcp-automation)에서 단계별로 다룹니다.
 
 #### 쿼리 1: 실시간 방문자 현황
 
@@ -372,6 +372,8 @@ mcp__analytics -
 - Newsletter 구독 CTA 추가
 - 프로젝트 문의 전환 경로 최적화
 - 관련 포스트 추천 알고리즘 구현
+
+이 단계에서 콘텐츠 생산을 지속하려면 작성 파이프라인 자체를 자동화하는 것이 현실적입니다. LLM으로 초안부터 발행까지 연결한 방법은 [LLM 기반 블로그 자동화](/ko/blog/ko/llm-blog-automation)에 정리해 두었습니다.
 
 ### 6.3 장기 비전 (3-6개월)
 

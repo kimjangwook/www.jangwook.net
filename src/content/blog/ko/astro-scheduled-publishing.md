@@ -65,7 +65,7 @@ Astro + GitHub Pages로 블로그를 운영하면서 얻는 장점은 명확합�
 
 여유 시간에 미리 여러 글을 작성하고, 매일 오전 9시에 자동으로 공개하고 싶은데, 정적 사이트 생성기는 빌드 시점의 파일만 배포합니다. 미래 날짜의 포스트는? 빌드 시점에 이미 HTML로 생성되어 즉시 공개됩니다.
 
-이 글에서는 <strong>Astro의 Content Collections와 GitHub Actions의 스케줄 워크플로우를 조합하여</strong> 정적 사이트에서 완전한 예약 공개 시스템을 구현하는 방법을 다룹니다. 실제로 제 블로그에 적용한 코드를 기반으로 설명하니, 바로 적용할 수 있습니다.
+이 글에서는 <strong>Astro의 Content Collections와 GitHub Actions의 스케줄 워크플로우를 조합하여</strong> 정적 사이트에서 완전한 예약 공개 시스템을 구현하는 방법을 다룹니다. 실제로 제 블로그에 적용한 코드를 기반으로 설명하니, 바로 적용할 수 있습니다. 이 블로그를 어떻게 데이터로 운영하는지는 [블로그 런칭 분석 리포트](/ko/blog/ko/blog-launch-analysis-report)에 함께 정리했습니다.
 
 ## 해결책 개요: 세 가지 핵심 요소
 
@@ -733,7 +733,7 @@ Astro와 GitHub Actions를 조합하면, 정적 블로그에서도 WordPress처�
 4. <strong>개발 친화적</strong>: 테스트 모드로 미리보기 가능
 5. <strong>플랫폼 독립적</strong>: GitHub Pages 외에도 Netlify, Vercel 등 어디서나 작동
 
-이제 여유 시간에 미리 포스트를 작성하고, 매일 아침 자동으로 독자들에게 새 글을 선사할 수 있습니다. 정적 사이트의 속도와 WordPress의 편의성을 동시에 누리세요!
+이제 여유 시간에 미리 포스트를 작성하고, 매일 아침 자동으로 독자들에게 새 글을 선사할 수 있습니다. 정적 사이트의 속도와 WordPress의 편의성을 동시에 누리세요! 예약 공개에서 한발 더 나아가 글 작성 자체를 자동화하고 싶다면 [Claude Code 웹 자동화](/ko/blog/ko/claude-code-web-automation)를 참고하세요.
 
 ## 참고 자료
 

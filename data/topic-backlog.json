@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-14",
+  "updated_at": "2026-07-15",
   "topics": [
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
@@ -4984,6 +4984,40 @@
       "added_at": "2026-07-15",
       "status": "queued",
       "notes": "1순위 글에서 파생. 프리렌더 남발 시 서버 부하·데이터 낭비 문제를 eagerness(conservative/moderate/eager)와 예산 한도로 제어하는 실전 튜닝. 실측 로그 기반 접근이면 evergreen."
+    },
+    {
+      "slug": "claude-apps-gateway-self-hosted-control-plane-2026",
+      "title_idea": "Claude apps gateway 실전 분석: 자체 호스팅 제어 평면으로 Claude Code 거버넌스 잡기",
+      "content_type": "news",
+      "target_keyword": "claude apps gateway self-hosted",
+      "secondary_keywords": [
+        "claude code sso",
+        "per-user cost attribution",
+        "bedrock vertex claude governance"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Anthropic release notes / Releasebot (2026-07)",
+      "added_at": "2026-07-15",
+      "status": "queued",
+      "notes": "Anthropic이 Bedrock/Vertex용 자체 호스팅 제어 평면(SSO, 정책 강제, RBAC, 사용자별 비용 귀속)을 발표. 팀에서 Claude Code를 도입할 때 실제로 걸리는 거버넌스·비용 통제 문제를 뉴스+실무 관점으로 분석. 개인 블로그에서 흔치 않은 엔터프라이즈 각도라 차별화."
+    },
+    {
+      "slug": "agent-skills-open-standard-cross-platform-2026",
+      "title_idea": "Agent Skills 오픈 표준 등장: 스킬이 플랫폼을 넘나드는 시대의 의미",
+      "content_type": "news",
+      "target_keyword": "agent skills open standard",
+      "secondary_keywords": [
+        "claude skills directory",
+        "cross-platform ai skills",
+        "organization-wide skill management"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Anthropic Skills announcement / support.claude.com (2026-07)",
+      "added_at": "2026-07-15",
+      "status": "queued",
+      "notes": "스킬이 조직 단위 관리·파트너 디렉터리·오픈 표준(Agent Skills)으로 확장. AI 플랫폼 간 이식성이 콘텐츠·자동화 워크플로우에 주는 영향을 분석. 내 블로그의 Claude Code/자동화 니치와 직결되고, note.com 연재와도 상호 링크 가능."
     }
   ]
 }

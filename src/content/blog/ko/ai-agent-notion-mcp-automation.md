@@ -1,5 +1,5 @@
 ---
-title: 'AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기'
+title: 'AI 에이전트 구축 실전 가이드: Notion MCP와 Claude Code 자동화 파이프라인'
 description: >-
   Model Context Protocol(MCP)과 Claude Code를 활용하여 Notion과 연동된 실전 AI 에이전트 자동화 시스템을
   구축하는 완벽 가이드. 가능한 것, 불가능한 것, 도입 장점과 유의사항을 SEO 전문가와 콘텐츠 매니저 시선으로 검증한 실무 중심 튜토리얼.

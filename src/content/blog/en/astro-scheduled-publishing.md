@@ -66,7 +66,7 @@ Running a blog with Astro + GitHub Pages offers clear advantages: blazing-fast p
 
 I wanted to write multiple posts during my free time and have them automatically publish at 9 AM every day. But static site generators only deploy files that exist at build time. Posts with future dates? They get generated as HTML during the build and publish immediately.
 
-In this post, I'll show you how to combine <strong>Astro's Content Collections with GitHub Actions' scheduled workflows</strong> to implement a complete scheduled publishing system for static sites. The code examples are based on what I actually use on my blog, so you can apply them immediately.
+In this post, I'll show you how to combine <strong>Astro's Content Collections with GitHub Actions' scheduled workflows</strong> to implement a complete scheduled publishing system for static sites. The code examples are based on what I actually use on my blog, so you can apply them immediately. How I run this blog with data is covered in the [blog launch analysis report](/en/blog/en/blog-launch-analysis-report).
 
 ## Solution Overview: Three Core Components
 
@@ -734,7 +734,7 @@ By combining Astro and GitHub Actions, you can build a <strong>fully automated s
 4. <strong>Developer-Friendly</strong>: Test mode for previewing
 5. <strong>Platform-Independent</strong>: Works anywhere beyond GitHub Pages—Netlify, Vercel, etc.
 
-Now you can write posts ahead of time and automatically deliver fresh content to readers every morning. Enjoy the speed of static sites with the convenience of WordPress!
+Now you can write posts ahead of time and automatically deliver fresh content to readers every morning. Enjoy the speed of static sites with the convenience of WordPress! If you want to go beyond scheduling and automate the writing itself, see [Claude Code web automation](/en/blog/en/claude-code-web-automation).
 
 ## References
 

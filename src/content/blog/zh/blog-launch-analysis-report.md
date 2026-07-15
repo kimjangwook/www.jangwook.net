@@ -114,7 +114,7 @@ relatedPosts:
 
 ### 3.1 可立即执行的分析查询
 
-为开始博客分析的读者提供<strong>实际可用的 MCP 查询示例</strong>。
+为开始博客分析的读者提供<strong>实际可用的 MCP 查询示例</strong>。将 GA4 连接到 MCP 的完整设置流程，[Google Analytics MCP 自动化指南](/zh/blog/zh/google-analytics-mcp-automation)有分步讲解。
 
 #### 查询 1：实时访客状况
 
@@ -372,6 +372,8 @@ mcp__analytics -
 - 添加 Newsletter 订阅 CTA
 - 优化项目咨询转化路径
 - 实现相关文章推荐算法
+
+要在这个阶段持续产出内容，把写作流水线本身自动化才现实。我用 LLM 把从草稿到发布串联起来的做法，整理在[基于 LLM 的博客自动化](/zh/blog/zh/llm-blog-automation)一文中。
 
 ### 6.3 长期愿景（3〜6 个月）
 

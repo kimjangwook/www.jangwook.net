@@ -1,8 +1,8 @@
 ---
-title: 'Deeptune: AI 에이전트를 위한 ''트레이닝 짐'' — a16z $43M 투자가 말해주는 에이전트 훈련의 미래'
+title: 'Deeptune: AI 에이전트 ''트레이닝 짐'' — a16z $43M 투자와 에이전트 훈련의 미래'
 description: >-
-  Deeptune이 a16z 주도로 $43M Series A 투자를 유치했습니다. 전문 업무 워크플로우를 시뮬레이션하는 RL 환경으로 AI
-  에이전트를 훈련하는 이 접근법이 엔지니어링 조직에 미칠 영향을 분석합니다.
+  Deeptune이 a16z 주도로 $43M Series A 투자를 유치했습니다. 전문 업무 워크플로우를 시뮬레이션하는 RL 환경에서 AI
+  에이전트를 훈련하는 '트레이닝 짐' 접근법의 작동 원리와, 이것이 엔지니어링 조직의 채용·자동화 전략에 미칠 실질적 영향을 함께 분석합니다.
 pubDate: '2026-03-21'
 heroImage: >-
   ../../../assets/blog/deeptune-ai-agent-training-gyms-rl-professional-workflows-hero.jpg
