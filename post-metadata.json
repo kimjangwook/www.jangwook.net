@@ -2933,5 +2933,16 @@
     },
     "difficulty": 3,
     "pubDate": "2026-07-14"
+  },
+  "cls-layout-shift-reserve-space-measure-2026": {
+    "categoryScores": {
+      "ai-ml": 0.05,
+      "architecture": 0.35,
+      "automation": 0.3,
+      "devops": 0.5,
+      "web-development": 0.95
+    },
+    "difficulty": 3,
+    "pubDate": "2026-07-15"
   }
 }
