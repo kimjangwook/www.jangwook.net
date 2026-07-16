@@ -1,8 +1,6 @@
 ---
 title: '정적 블로그의 예약 공개 구현법: Astro + GitHub Actions로 자동화하기'
-description: >-
-  Astro와 GitHub Pages를 사용한 정적 블로그에서 WordPress처럼 포스트 예약 공개를 구현하는 실전 가이드. pubDate
-  필터링과 스케줄 워크플로우를 활용한 완전 자동화 솔루션
+description: 'Astro와 GitHub Actions로 정적 블로그에 WordPress 같은 예약 공개를 구현하는 실전 가이드. pubDate 필터링과 cron 스케줄 워크플로우를 활용해, 서버 없이도 원하는 시각에 포스트를 자동 발행하는 방법을 실제 코드와 함께 단계별로 설명한다.'
 pubDate: '2025-10-13'
 heroImage: ../../../assets/blog/scheduled-publishing-hero.jpg
 tags:

@@ -126,7 +126,7 @@ AI는 수집한 데이터를 "Overview → 성과 중심 Review → 과제 도�
 - 나중에 검색 가능한 구조화된 데이터 확보
 
 ### 2. Notion API MCP로 자동 문서화
-[Notion API MCP(Model Context Protocol)](https://modelcontextprotocol.io/introduction)를 활용하여, 코드베이스에서 자동으로 문서를 추출하여 Notion에 정리합니다.
+[Notion API MCP(Model Context Protocol)](https://modelcontextprotocol.io/introduction)를 활용하여, 코드베이스에서 자동으로 문서를 추출하여 Notion에 정리합니다. MCP 서버를 직접 구축하는 방법은 [MCP 서버 구축 실전 가이드](/ko/blog/ko/mcp-server-build-practical-guide-2026)에서 단계별로 설명합니다.
 
 <strong>자동화된 항목</strong>:
 - 개발 진척 상황
@@ -162,7 +162,7 @@ Claude Code, ChatGPT, Gemini 등 다양한 AI 도구를 코드 리뷰와 인프�
 
 ## AI 에이전트 기반 자동화 시스템
 
-이제 핵심인 반기별 자료 생성 자동화 시스템을 소개합니다. 4개의 전문 AI 에이전트가 병렬로 작업하며 각자의 영역을 담당합니다.
+이제 핵심인 반기별 자료 생성 자동화 시스템을 소개합니다. 4개의 전문 AI 에이전트가 병렬로 작업하며 각자의 영역을 담당합니다. 이런 다중 에이전트 분업 패턴은 [LLM 기반 PM 워크플로우 자동화](/ko/blog/ko/llm-pm-workflow-automation)에서 다룬 접근과 맥을 같이합니다.
 
 ### 전체 아키텍처
 

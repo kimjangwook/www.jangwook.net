@@ -1,6 +1,6 @@
 ---
 title: 'クリック1回に264ms — 同じ処理を刻んだら56ms、INP実測記'
-description: 'INPは2024年3月にFIDを置き換えてCore Web Vitals入りした応答性の指標。同じ220msの処理を一気に回した場合と、scheduler.yieldで刻んだ場合をEvent Timing APIで直接測った。264ms(改善が必要)が56ms(良好)まで落ちる過程をログとコードで残す。順位は保証しないという公式の限界まで。'
+description: 'INPは2024年にFIDを置き換えたCore Web Vitalsの応答性指標だ。同じ220msの処理を一気に回す場合とscheduler.yieldで刻む場合をEvent Timing APIで直接測定し、264ms(改善が必要)が56ms(良好)まで落ちる過程をコードとログで詳しく記録した。'
 pubDate: '2026-07-16'
 heroImage: '../../../assets/blog/inp-yielding-measure-2026/hero.png'
 tags:

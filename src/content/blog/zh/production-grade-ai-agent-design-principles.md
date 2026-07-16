@@ -51,7 +51,7 @@ relatedPosts:
 
 IBM的Kate Blair曾说：*"2026年应该成为多智能体系统正式进入生产环境的一年。"*
 
-然而现实并不乐观。O'Reilly的2026年报告指出，2024〜2025年的智能体工作流实验"陷入停滞，远未达到企业级部署所需的成熟度"。问题的核心不是模型能力不足，而是**设计原则的缺失**。
+然而现实并不乐观。O'Reilly的2026年报告指出，2024〜2025年的智能体工作流实验"陷入停滞，远未达到企业级部署所需的成熟度"。问题的核心不是模型能力不足，而是**设计原则的缺失**。如果在框架选型阶段就需要权衡，可一并参考 [LangGraph·CrewAI·Dapr 生产环境对比](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)。
 
 本文基于arXiv论文 *"A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows"*(2512.08769)，从Engineering Manager视角梳理**9项核心设计原则**。
 
@@ -63,7 +63,7 @@ IBM的Kate Blair曾说：*"2026年应该成为多智能体系统正式进入生�
 
 **1. 缺乏对不确定性的设计**：POC只验证"快乐路径"，而生产环境中网络错误、模型超时和异常情况层出不穷。
 
-**2. 无法审计与追踪**：无法重建发生了什么，就无法修复问题。
+**2. 无法审计与追踪**：无法重建发生了什么，就无法修复问题。这一课题在 [AI 智能体可观测性(Observability)生产指南](/zh/blog/zh/ai-agent-observability-production-guide)中有更深入的探讨。
 
 **3. 单点故障(SPOF)**：一个大型智能体负责所有事情，一旦失败，整个系统就会崩溃。
 

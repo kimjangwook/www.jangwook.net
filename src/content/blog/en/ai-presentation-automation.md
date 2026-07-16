@@ -127,7 +127,7 @@ Leveraging [Notion AI's meeting notes feature](https://www.notion.so/help/guides
 - Structured, searchable data for future reference
 
 ### 2. Automated Documentation with Notion API MCP
-Using [Notion API MCP (Model Context Protocol)](https://modelcontextprotocol.io/introduction) to automatically extract documentation from the codebase and organize it in Notion.
+Using [Notion API MCP (Model Context Protocol)](https://modelcontextprotocol.io/introduction) to automatically extract documentation from the codebase and organize it in Notion. If you want to build your own MCP server, the [practical MCP server build guide](/en/blog/en/mcp-server-build-practical-guide-2026) walks through it step by step.
 
 <strong>Automated Items</strong>:
 - Development progress status
@@ -163,7 +163,7 @@ Actively using various AI tools like Claude Code, ChatGPT, and Gemini for code r
 
 ## AI Agent-Based Automation System
 
-Now for the core: the semi-annual report generation automation system. Four specialized AI agents work in parallel, each handling their domain.
+Now for the core: the semi-annual report generation automation system. Four specialized AI agents work in parallel, each handling their domain. This kind of multi-agent division of labor echoes the approach covered in [LLM-based PM workflow automation](/en/blog/en/llm-pm-workflow-automation).
 
 ### Overall Architecture
 

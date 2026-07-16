@@ -124,7 +124,7 @@ AI会自动将收集的数据按照"概览 → 以成果为中心的回顾 → �
 - 获得可检索的结构化数据
 
 ### 2. 使用Notion API MCP自动文档化
-利用[Notion API MCP（Model Context Protocol，模型上下文协议）](https://modelcontextprotocol.io/introduction)，自动从代码库提取文档并整理到Notion。
+利用[Notion API MCP（Model Context Protocol，模型上下文协议）](https://modelcontextprotocol.io/introduction)，自动从代码库提取文档并整理到Notion。如果想自建 MCP 服务器，[MCP 服务器构建实战指南](/zh/blog/zh/mcp-server-build-practical-guide-2026)提供了分步讲解。
 
 <strong>自动化项目</strong>：
 - 开发进度
@@ -160,7 +160,7 @@ export class CacheService {
 
 ## 基于AI代理的自动化系统
 
-现在介绍核心的半年度资料生成自动化系统。4个专业AI代理并行工作，各自负责各自的领域。
+现在介绍核心的半年度资料生成自动化系统。4个专业AI代理并行工作，各自负责各自的领域。这种多代理分工模式与[基于 LLM 的 PM 工作流自动化](/zh/blog/zh/llm-pm-workflow-automation)所讨论的方法一脉相承。
 
 ### 整体架构
 

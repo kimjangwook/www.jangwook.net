@@ -1,8 +1,6 @@
 ---
 title: '静的ブログで予約投稿を実装する方法: Astro + GitHub Actionsによる完全自動化'
-description: >-
-  AstroとGitHub
-  Pagesを使用した静的ブログでWordPressのような予約投稿機能を実装する実践ガイド。pubDateフィルタリングとスケジュールワークフローを活用した完全自動化ソリューション
+description: 'AstroとGitHub Actionsで静的ブログにWordPressのような予約投稿を実装する実践ガイド。pubDateフィルタリングとcronスケジュールワークフローを活用し、サーバーなしでも指定した時刻に記事を自動公開する仕組みを、実際のコードとともに段階的に詳しく解説する。'
 pubDate: '2025-10-13'
 heroImage: ../../../assets/blog/scheduled-publishing-hero.jpg
 tags:

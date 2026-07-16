@@ -61,7 +61,7 @@ relatedPosts:
 
 2025 年初，Andrej Karpathy 创造了"Vibe Coding"一词。向 AI 抛出提示词，复制生成的代码，然后期待它能正常运行。这种方式对原型开发很有效，但在大型项目中很快就会崩溃。
 
-现在，<strong>规范驱动开发（Specification-Driven Development, SDD）</strong>登场了。用 Markdown 编写清晰的规范，AI 编程代理就会将其"编译"为可执行代码。这不仅是方法论的变化，而是与 AI 共同构建软件方式的根本性转变。
+现在，<strong>规范驱动开发（Specification-Driven Development, SDD）</strong>登场了。用 Markdown 编写清晰的规范，AI 编程代理就会将其"编译"为可执行代码。这种方式也正在被[像 Amazon Kiro 这样的规范驱动 AI IDE](/zh/blog/zh/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026)产品化。这不仅是方法论的变化，而是与 AI 共同构建软件方式的根本性转变。
 
 ### Vibe Coding 的局限
 
@@ -102,7 +102,7 @@ function login(username: string, password: string) {
 
 2. <strong>结构化工作流</strong>
    - 编写规范（Specify）→ 制定计划（Plan）→ 分解任务（Task）→ 实施（Implement）
-   - 每个步骤都清晰分离，可追踪
+   - 每个步骤都清晰分离，可追踪（这也与 [Claude Code 的 5 种智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)相衔接）
 
 3. <strong>AI 作为工具，开发者作为设计师</strong>
    - 开发者决定"构建什么"（架构、业务逻辑）

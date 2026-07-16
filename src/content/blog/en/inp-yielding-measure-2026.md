@@ -1,6 +1,6 @@
 ---
 title: 'Measuring INP: one click cost 264ms, chunking it got 56ms'
-description: 'INP replaced FID in Core Web Vitals in 2024. I measured the same 220ms of work run in one blocking task vs. sliced with scheduler.yield, via the Event Timing API: 264ms drops to 56ms, with logs and code.'
+description: 'INP replaced FID in Core Web Vitals in 2024. I ran 220ms of work as one blocking task versus sliced with scheduler.yield: 264ms fell to 56ms, in code and logs.'
 pubDate: '2026-07-16'
 heroImage: '../../../assets/blog/inp-yielding-measure-2026/hero.png'
 tags:

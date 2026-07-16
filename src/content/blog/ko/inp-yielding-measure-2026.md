@@ -1,6 +1,6 @@
 ---
 title: '클릭 한 번에 264ms — 같은 일을 쪼갰더니 56ms, INP 실측기'
-description: 'INP는 2024년 3월 FID를 밀어내고 Core Web Vitals에 들어온 응답성 지표다. 같은 220ms짜리 작업을 통짜로 돌릴 때와 scheduler.yield로 쪼갤 때를 Event Timing API로 직접 재봤다. 264ms(개선 필요)가 56ms(양호)로 떨어지는 과정을 로그와 코드로 남긴다. 순위 보장은 없다는 공식 한계까지.'
+description: 'INP는 2024년 FID를 대체한 Core Web Vitals 응답성 지표다. 같은 220ms 작업을 통짜로 돌릴 때와 scheduler.yield로 쪼갤 때를 Event Timing API로 측정했다. 264ms(개선 필요)가 56ms(양호)로 떨어지는 과정을 코드와 로그로 기록한다.'
 pubDate: '2026-07-16'
 heroImage: '../../../assets/blog/inp-yielding-measure-2026/hero.png'
 tags:

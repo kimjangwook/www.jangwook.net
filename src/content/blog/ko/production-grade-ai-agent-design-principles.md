@@ -51,7 +51,7 @@ relatedPosts:
 
 IBM의 Kate Blair는 이렇게 말했습니다: *"2026년은 멀티 에이전트 시스템이 프로덕션에 본격적으로 배포되는 해가 되어야 한다."*
 
-그러나 현실은 냉혹합니다. O'Reilly의 2026년 보고서에 따르면, 2024〜2025년의 에이전트 워크플로우 실험들이 "기업 전체 도입 수준의 성숙도에 도달하지 못하고 막혀 있다"고 지적합니다. 문제의 핵심은 모델 성능이 아니라 **설계 원칙의 부재**입니다.
+그러나 현실은 냉혹합니다. O'Reilly의 2026년 보고서에 따르면, 2024〜2025년의 에이전트 워크플로우 실험들이 "기업 전체 도입 수준의 성숙도에 도달하지 못하고 막혀 있다"고 지적합니다. 문제의 핵심은 모델 성능이 아니라 **설계 원칙의 부재**입니다. 프레임워크 선택 단계에서 이미 고민이 필요하다면 [LangGraph·CrewAI·Dapr 프로덕션 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)를 함께 참고하세요.
 
 이 포스트에서는 arXiv에 게재된 논문 *"A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows"*(2512.08769)에서 제시하는 **9가지 핵심 설계 원칙**을 Engineering Manager 관점에서 정리합니다.
 
@@ -63,7 +63,7 @@ IBM의 Kate Blair는 이렇게 말했습니다: *"2026년은 멀티 에이전트
 
 **1. 불확실성에 대한 설계 부족**: POC는 "행복한 경로"만 검증하지만, 프로덕션에서는 네트워크 오류, 모델 타임아웃, 예외 상황이 끊임없이 발생합니다.
 
-**2. 감사(Audit)와 추적 불가**: 무엇이 잘못되었는지 파악할 수 없으면 수정도 불가능합니다.
+**2. 감사(Audit)와 추적 불가**: 무엇이 잘못되었는지 파악할 수 없으면 수정도 불가능합니다. 이 문제는 [AI 에이전트 관측성(Observability) 프로덕션 가이드](/ko/blog/ko/ai-agent-observability-production-guide)에서 더 깊이 다룹니다.
 
 **3. 단일 장애점(Single Point of Failure)**: 하나의 대형 에이전트가 모든 것을 담당하면, 그것이 실패하면 전체가 멈춥니다.
 

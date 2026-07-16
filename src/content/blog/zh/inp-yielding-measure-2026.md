@@ -1,6 +1,6 @@
 ---
 title: '点一下花了264ms — 同样的活儿切碎后只要56ms：一次INP实测'
-description: 'INP在2024年3月取代FID进入Core Web Vitals。我用Event Timing API直接测了同样220ms的工作：一口气跑完，和用scheduler.yield切碎两种做法。264ms（需要改进）如何降到56ms（良好），全程有日志和代码。还有一句诚实的话：这些都不保证排名。'
+description: 'INP在2024年取代FID成为Core Web Vitals的响应性指标。我用Event Timing API直接测量同样220ms的工作在一口气跑完与用scheduler.yield切碎两种做法下的差异，并用代码和日志完整记录264ms(需改进)如何降到56ms(良好)的全过程。'
 pubDate: '2026-07-16'
 heroImage: '../../../assets/blog/inp-yielding-measure-2026/hero.png'
 tags:

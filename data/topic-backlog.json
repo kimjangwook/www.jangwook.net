@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-15",
+  "updated_at": "2026-07-16",
   "topics": [
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
@@ -5018,6 +5018,40 @@
       "added_at": "2026-07-15",
       "status": "queued",
       "notes": "스킬이 조직 단위 관리·파트너 디렉터리·오픈 표준(Agent Skills)으로 확장. AI 플랫폼 간 이식성이 콘텐츠·자동화 워크플로우에 주는 영향을 분석. 내 블로그의 Claude Code/자동화 니치와 직결되고, note.com 연재와도 상호 링크 가능."
+    },
+    {
+      "slug": "llamaindex-workflows-1-0-event-driven-agents-2026",
+      "title_idea": "LlamaIndex Workflows 1.0 등장: 이벤트 드리븐 방식이 에이전트 설계를 바꾼다",
+      "content_type": "news",
+      "target_keyword": "llamaindex workflows 1.0",
+      "secondary_keywords": [
+        "event-driven agent framework",
+        "async agent orchestration",
+        "step-based llm workflow"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "LlamaIndex Workflows 1.0 announcement (2026-06-22) / alicelabs, awesome-ai-agents-2026",
+      "added_at": "2026-07-16",
+      "status": "queued",
+      "notes": "기존 llamaindex-vs-langchain RAG 비교글과 차별화 — RAG가 아닌 '이벤트 드리븐 워크플로우 엔진' 관점. LangGraph 그래프 모델 대비 async/step 기반 접근의 장단점을 실무 코드로 분석. 에이전트 오케스트레이션 니치와 직결."
+    },
+    {
+      "slug": "glm-5-2-open-weight-coding-model-swebench-2026",
+      "title_idea": "GLM 5.2, 오픈웨이트 코딩 모델 정상 탈환 — Claude·GPT와 실전 비교",
+      "content_type": "news",
+      "target_keyword": "glm 5.2 open weight coding model",
+      "secondary_keywords": [
+        "strongest open-weight coding llm",
+        "glm 5.2 vs claude",
+        "self-hosted coding model 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "Zhipu GLM 5.2 release (2026-07) / llm-stats.com, pricepertoken.com",
+      "added_at": "2026-07-16",
+      "status": "queued",
+      "notes": "백로그의 glm-5-1과 차별 — 5.2 신규 릴리스, '현존 최강 오픈웨이트 코딩 모델' 주장 검증. 자가 호스팅 코딩 워크플로우에서 상용 API 대비 비용/성능을 실측 관점으로. AdSense 회생기 draft 전용으로 작성."
     }
   ]
 }

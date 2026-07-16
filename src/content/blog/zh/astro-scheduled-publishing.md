@@ -1,8 +1,6 @@
 ---
 title: 静态博客的定时发布实现：Astro + GitHub Actions 自动化
-description: >-
-  使用 Astro 和 GitHub Pages 的静态博客中，如何像 WordPress 一样实现文章定时发布。利用 pubDate
-  过滤和定时工作流的完全自动化解决方案
+description: '用 Astro 和 GitHub Actions 在静态博客上实现类似 WordPress 的定时发布实战指南。详细讲解如何借助 pubDate 过滤和 cron 定时工作流，在无服务器的情况下于指定时刻自动发布文章，并附带完整可用的示例代码和分步操作说明。'
 pubDate: '2025-10-13'
 heroImage: ../../../assets/blog/scheduled-publishing-hero.jpg
 tags:

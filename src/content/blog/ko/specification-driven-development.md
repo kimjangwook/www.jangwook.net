@@ -63,7 +63,7 @@ relatedPosts:
 
 2025년 초, Andrej Karpathy가 "Vibe Coding"이라는 용어를 만들었습니다. AI에게 프롬프트를 던지고, 생성된 코드를 복사하고, 작동하길 바라는 방식. 프로토타입에는 효과적이지만, 대규모 프로젝트에서는 빠르게 무너집니다.
 
-이제 <strong>사양 주도 개발(Specification-Driven Development, SDD)</strong>이 등장했습니다. Markdown으로 명확한 사양을 작성하면, AI 코딩 에이전트가 그것을 실행 가능한 코드로 "컴파일"합니다. 단순한 방법론의 변화가 아니라, AI와 함께 소프트웨어를 구축하는 방식의 근본적인 전환입니다.
+이제 <strong>사양 주도 개발(Specification-Driven Development, SDD)</strong>이 등장했습니다. Markdown으로 명확한 사양을 작성하면, AI 코딩 에이전트가 그것을 실행 가능한 코드로 "컴파일"합니다. 이 접근은 [Amazon Kiro 같은 사양 주도 AI IDE](/ko/blog/ko/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026)로도 제품화되고 있습니다. 단순한 방법론의 변화가 아니라, AI와 함께 소프트웨어를 구축하는 방식의 근본적인 전환입니다.
 
 ### Vibe Coding의 한계
 
@@ -104,7 +104,7 @@ function login(username: string, password: string) {
 
 2. <strong>구조화된 워크플로우</strong>
    - 사양 작성(Specify) → 계획 수립(Plan) → 작업 분해(Task) → 구현(Implement)
-   - 각 단계가 명확히 분리되어 추적 가능
+   - 각 단계가 명확히 분리되어 추적 가능 ([Claude Code의 5가지 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)과도 연결됩니다)
 
 3. <strong>AI를 도구로, 개발자를 설계자로</strong>
    - 개발자는 "무엇을" 결정 (아키텍처, 비즈니스 로직)
