@@ -2944,5 +2944,16 @@
     },
     "difficulty": 3,
     "pubDate": "2026-07-15"
+  },
+  "content-visibility-auto-render-cost-measure-2026": {
+    "categoryScores": {
+      "ai-ml": 0.02,
+      "architecture": 0.25,
+      "automation": 0.15,
+      "devops": 0.4,
+      "web-development": 0.98
+    },
+    "difficulty": 3,
+    "pubDate": "2026-07-17"
   }
 }
