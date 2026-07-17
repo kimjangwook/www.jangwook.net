@@ -38,7 +38,7 @@ relatedPosts:
 
 ## CLS 量的是"总移动量"，不是"移动了几次"
 
-先把地基打好。Core Web Vitals 由三个指标构成：LCP（最大元素何时绘制）、INP（对交互反应多快）、还有 CLS（画面偏移了多少）。前两个是时间，以毫秒计；唯独 CLS 是一个没有单位的分数。这一点，恰恰是 CLS 最容易被误读的原因。
+先把地基打好。Core Web Vitals 由三个指标构成：LCP（最大元素何时绘制）、[INP（对交互反应多快）](/zh/blog/zh/inp-yielding-measure-2026)、还有 CLS（画面偏移了多少）。前两个是时间，以毫秒计；唯独 CLS 是一个没有单位的分数。这一点，恰恰是 CLS 最容易被误读的原因。
 
 CLS 把页面存活期间发生的<strong>意外布局偏移</strong>累加起来。单次偏移的分数，是两个值相乘得到的：屏幕上有多大区域动了（impact fraction），以及这块区域移动了多远（distance fraction）。一个占据视口一半的元素，往下挪了视口高度的一半，分数大约是 0.5 × 0.5 = 0.25。一条小脚注挪几像素，和半个屏幕整块下沉，分量完全不同。
 
@@ -151,7 +151,7 @@ CLS 不是简单求和，而是按<strong>会话窗口（session window）</stro
 
 其三，<strong>我的测量方法本身就带着一层近似。</strong> 我把 `layout-shift` 的值简单相加。这次所有偏移都落进了同一个会话窗口，和真实 CLS 对上了；但在偏移相隔好几秒才发生的长寿命页面（无限滚动、SPA）上，简单求和与会话窗口值会分道扬镳。需要准确值时，就该用 Google 发布的 `web-vitals` JavaScript 库，它把会话窗口的逻辑替你实现好了。另外，这个实验没涉及 Web 字体替换（FOUT）引起的偏移，那也是常见的 CLS 来源。
 
-想通了这些局限，实测的用处反而更清楚了。实验室测量不是排名预言，而是一件<strong>调试工具</strong>：亲眼看清什么在动、动了多少，再把原因一个个剥掉。这就是这套工作流的全部，也是它的核心。同样的姿态，也支撑着[用 trace 把 LCP 瓶颈拆开的那次记录](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026)。别猜，去测。
+想通了这些局限，实测的用处反而更清楚了。实验室测量不是排名预言，而是一件<strong>调试工具</strong>：亲眼看清什么在动、动了多少，再把原因一个个剥掉。这就是这套工作流的全部，也是它的核心。同样的姿态，也支撑着[用 trace 把 LCP 瓶颈拆开的那次记录](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026)和[实测 content-visibility 渲染成本的那次记录](/zh/blog/zh/content-visibility-auto-render-cost-measure-2026)。别猜，去测。
 
 ## 今天就能跑一遍的清单
 

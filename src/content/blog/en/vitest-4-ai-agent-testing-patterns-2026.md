@@ -1,6 +1,6 @@
 ---
 title: 'Testing AI Agents with Vitest 4'
-description: 'I verified practical patterns for mocking Anthropic SDK messages.create() and streaming responses in Vitest 4.1.7.'
+description: 'I verified practical patterns for mocking the Anthropic SDK messages.create() and streaming responses in Vitest 4.1.7, keeping agent tests fast and reliable.'
 pubDate: '2026-06-01'
 heroImage: '../../../assets/blog/vitest-4-ai-agent-testing-patterns-2026/vitest-4-ai-agent-testing-patterns-2026-hero.png'
 tags: ['Vitest', 'AI Agent', 'TypeScript']

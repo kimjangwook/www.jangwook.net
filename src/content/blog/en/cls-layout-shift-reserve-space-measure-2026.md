@@ -38,7 +38,7 @@ So I built the same HTML page twice. One version carries the mistakes I see most
 
 ## CLS measures total movement, not how many times things moved
 
-Start with the ground floor. Core Web Vitals are three metrics: LCP (when the largest element paints), INP (how fast the page responds to input), and CLS (how much the screen shifts). The first two are measured in time, milliseconds. CLS alone is a unitless score, and that's exactly what makes it easy to misread.
+Start with the ground floor. Core Web Vitals are three metrics: LCP (when the largest element paints), [INP (how fast the page responds to input)](/en/blog/en/inp-yielding-measure-2026), and CLS (how much the screen shifts). The first two are measured in time, milliseconds. CLS alone is a unitless score, and that's exactly what makes it easy to misread.
 
 CLS sums up the <strong>unexpected layout shifts</strong> that happen while a page is alive. Each individual shift scores as the product of two fractions: how much of the viewport moved (impact fraction), and how far it traveled (distance fraction). An element covering half the viewport that drops by half the viewport height scores roughly 0.5 × 0.5 = 0.25. A tiny footnote nudging a few pixels and half the screen sinking at once carry completely different weight.
 
@@ -151,7 +151,7 @@ Second, <strong>good Core Web Vitals don't lift your ranking on their own.</stro
 
 Third, <strong>my measurement method has an approximation baked in.</strong> I summed the `layout-shift` values naively. This time every shift landed in one session window and matched the real CLS, but on long-lived pages where shifts fire seconds apart (infinite scroll, SPAs), the naive sum and the session-window value diverge. When you need the accurate figure, reach for Google's `web-vitals` JavaScript library, which implements the session-window logic for you. This experiment also skipped shifts from web-font swaps (FOUT), another common CLS source.
 
-Once you know those limits, the point of measuring gets sharper, not weaker. Lab measurement isn't a ranking oracle. It's a <strong>debugging tool</strong>: see what moves and by how much, then peel off the causes one by one. That's the whole workflow, and its core. The same posture drove [taking an LCP bottleneck apart with a trace](/en/blog/en/lcp-image-preload-scanner-fetchpriority-2026). Don't guess. Measure.
+Once you know those limits, the point of measuring gets sharper, not weaker. Lab measurement isn't a ranking oracle. It's a <strong>debugging tool</strong>: see what moves and by how much, then peel off the causes one by one. That's the whole workflow, and its core. The same posture drove [taking an LCP bottleneck apart with a trace](/en/blog/en/lcp-image-preload-scanner-fetchpriority-2026) and [measuring content-visibility's render cost](/en/blog/en/content-visibility-auto-render-cost-measure-2026). Don't guess. Measure.
 
 ## A checklist you can run today
 

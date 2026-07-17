@@ -131,7 +131,7 @@ Here's the order I'd work in.
 
 <strong>4. Audit for forced layout.</strong> Any `getBoundingClientRect` or `offsetTop` call on off-screen elements erases the savings.
 
-<strong>5. Measure again, and confirm it's still reachable.</strong> Time forced layout or scroll response before and after. Then check with a screen reader and Ctrl+F in your target browsers that off-screen text is still findable. Faster but unreachable is not an improvement.
+<strong>5. Measure again, and confirm it's still reachable.</strong> Time forced layout or [scroll and interaction response](/en/blog/en/inp-yielding-measure-2026) before and after. Then check with a screen reader and Ctrl+F in your target browsers that off-screen text is still findable. Faster but unreachable is not an improvement.
 
 The 15x number came from a deliberately extreme sandbox, and your real-site gain depends entirely on page structure. But the principle is solid: don't paint what nobody can see and the page gets faster. And `content-visibility` is one of the few ways to do that without breaking accessibility.
 

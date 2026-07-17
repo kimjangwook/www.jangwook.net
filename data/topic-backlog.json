@@ -5052,6 +5052,40 @@
       "added_at": "2026-07-16",
       "status": "queued",
       "notes": "백로그의 glm-5-1과 차별 — 5.2 신규 릴리스, '현존 최강 오픈웨이트 코딩 모델' 주장 검증. 자가 호스팅 코딩 워크플로우에서 상용 API 대비 비용/성능을 실측 관점으로. AdSense 회생기 draft 전용으로 작성."
+    },
+    {
+      "slug": "core-web-vitals-measurement-tools-lab-vs-field-2026",
+      "title_idea": "Core Web Vitals 측정 도구, 뭘 언제 쓰나 — Lighthouse·WebPageTest·web-vitals·CrUX 실전 비교",
+      "content_type": "comparison",
+      "target_keyword": "core web vitals measurement tools comparison",
+      "secondary_keywords": [
+        "lab data vs field data",
+        "lighthouse vs webpagetest",
+        "web-vitals library crux inp"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "web.dev vitals-tools, webvitals.tools (Lighthouse vs WebPageTest 2026), wp-rocket CWV tools 2026",
+      "added_at": "2026-07-17",
+      "status": "queued",
+      "notes": "최근 LCP·CLS·INP·content-visibility 실측 4부작의 캡스톤 비교글. 각 글에서 반복 언급한 '랩 vs 필드', 'Lighthouse는 INP를 못 잡는다', 'web-vitals 라이브러리가 세션 윈도우를 구현한다'를 한 장의 의사결정 표로 정리. Identify(CrUX)→Diagnose(랩)→Monitor(RUM) 워크플로우로 도구를 배치. 시리즈 4편으로 내부링크가 자연스럽게 모이는 허브 역할."
+    },
+    {
+      "slug": "web-vitals-library-field-measurement-crux-2026",
+      "title_idea": "랩 숫자는 예언이 아니다 — web-vitals 라이브러리로 실사용자 CWV를 필드에서 재는 법",
+      "content_type": "how-to",
+      "target_keyword": "web-vitals library field measurement",
+      "secondary_keywords": [
+        "measure real user core web vitals",
+        "crux field data collection",
+        "session window cls inp attribution"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "web.dev vitals-measurement-getting-started, github web-vitals attribution build",
+      "added_at": "2026-07-17",
+      "status": "queued",
+      "notes": "실측 4부작이 모두 '랩 측정은 디버깅 도구일 뿐, 배포 후 필드로 재확인하라'로 끝난다 — 그 필드 측정을 실제로 구현하는 후속편. web-vitals attribution build로 어느 요소가 CLS/INP를 유발했는지 실사용자 세션에서 수집·전송하는 코드. 시리즈의 '측정 → 배포 → 재측정' 루프를 완성."
     }
   ]
 }
