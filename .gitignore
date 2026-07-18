@@ -35,4 +35,4 @@ _sandbox/
 !data/topic-backlog.json
 
 # scheduler logs
-logs/
+logs/ops/loop_state.json
