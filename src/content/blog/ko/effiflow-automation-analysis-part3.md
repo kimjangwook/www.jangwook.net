@@ -70,9 +70,9 @@ relatedPosts:
 
 ## 들어가며
 
-Part 1-2에서는 EffiFlow의 3-Tier 아키텍처와 71% 비용 절감, Skills/Commands 통합 전략을 살펴보았습니다. 하지만 분석만으로는 부족합니다. <strong>실제로 개선을 실행하고 그 효과를 측정</strong>해야 합니다.
+Part 1-2에서는 EffiFlow의 3-Tier 아키텍처와 71% 비용 절감, Skills/Commands 통합 전략을 살펴봤다. 하지만 분석만으로는 부족하다. <strong>실제로 개선을 실행하고 그 효과를 측정</strong>해야 한다.
 
-Part 3에서는 EVALUATION.md에서 제안된 Priority 1 개선사항 중 <strong>Top 3 Quick Wins를 실제로 구현</strong>한 과정과 결과를 공유합니다. 계획은 3시간이었지만 실제로는 38분 만에 완료했으며, 그 결과 시스템 완성도 100%, 안정성 99%를 달성했습니다.
+Part 3에서는 EVALUATION.md에서 제안된 Priority 1 개선사항 중 <strong>Top 3 Quick Wins를 실제로 구현</strong>한 과정과 결과를 공유한다. 계획은 3시간이었지만 실제로는 38분 만에 완료했고, 그 결과 시스템 완성도 100%, 안정성 99%를 달성했다.
 
 ## Top 3 Quick Wins: 38분의 기적
 
@@ -83,7 +83,7 @@ Part 3에서는 EVALUATION.md에서 제안된 Priority 1 개선사항 중 <stron
 | <strong>총 투자 시간</strong> | 3시간 | 38분 | -84% |
 | <strong>완료된 개선</strong> | 3개 | 3개 | 100% |
 
-어떻게 이것이 가능했을까요? 핵심은 <strong>작은 것부터 시작</strong>하고, <strong>리스크가 낮은 개선</strong>에 집중하며, <strong>즉시 효과가 나타나는 것</strong>을 우선순위로 둔 것입니다.
+어떻게 이것이 가능했나. 핵심은 <strong>작은 것부터 시작</strong>하고, <strong>리스크가 낮은 개선</strong>에 집중하며, <strong>즉시 효과가 나타나는 것</strong>을 우선순위로 둔 것이다.
 
 ---
 
@@ -91,7 +91,7 @@ Part 3에서는 EVALUATION.md에서 제안된 Priority 1 개선사항 중 <stron
 
 ### 문제 분석
 
-`.claude/skills/` 디렉토리를 확인했을 때 다음과 같은 상황이었습니다:
+`.claude/skills/` 디렉토리를 확인했을 때 상황은 이랬다:
 
 ```
 .claude/skills/
@@ -147,7 +147,7 @@ ls .claude/skills/
 <strong>투자</strong>: 3분
 <strong>ROI</strong>: ∞ (거의 제로 투자로 즉시 효과)
 
-"완벽함보다 실행"의 완벽한 예시입니다. 미구현 계획 4개보다 완료된 구현 4개가 훨씬 가치 있습니다.
+"완벽함보다 실행"의 완벽한 예시다. 미구현 계획 4개보다 완료된 구현 4개가 훨씬 가치 있다.
 
 ---
 
@@ -155,7 +155,7 @@ ls .claude/skills/
 
 ### 문제 분석
 
-`.claude/` 디렉토리에는 17개 Agents, 4개 Skills, 7개 Commands가 있지만 <strong>전체 개요를 제공하는 단일 진입점이 없었습니다</strong>.
+`.claude/` 디렉토리에는 17개 Agents, 4개 Skills, 7개 Commands가 있지만 <strong>전체 개요를 제공하는 단일 진입점이 없었다</strong>.
 
 <strong>영향</strong>:
 - 신규 사용자 온보딩: 2-3시간
@@ -190,7 +190,7 @@ ls .claude/skills/
 
 #### 2. 내용 작성 (15분)
 
-기존 분석 결과(AGENTS.md, SKILLS.md, COMMANDS.md)를 요약하고 실전 예시를 추가했습니다:
+기존 분석 결과(AGENTS.md, SKILLS.md, COMMANDS.md)를 요약하고 실전 예시를 추가했다:
 
 ```markdown
 ## 빠른 시작
@@ -243,7 +243,7 @@ ls .claude/skills/
 <strong>1회 절감</strong>: 180분 (2-3시간 → 15-30분)
 <strong>ROI</strong>: 7.2배 (180분 절감 / 25분 투자)
 
-팀원이 6명이라면? 연간 18시간 절감 (180분 × 6명 = 1,080분). ROI는 43배로 증가합니다.
+팀원이 6명이라면? 연간 18시간 절감 (180분 × 6명 = 1,080분). ROI는 43배로 증가한다.
 
 ---
 
@@ -251,7 +251,7 @@ ls .claude/skills/
 
 ### 문제 분석
 
-`web-researcher` Agent는 Brave Search API를 사용하는데, 다음과 같은 문제가 있었습니다:
+`web-researcher` Agent는 Brave Search API를 사용하는데, 다음과 같은 문제가 있었다:
 
 <strong>문제점</strong>:
 - Brave Search API 실패 시 전체 리서치 실패
@@ -326,7 +326,7 @@ Attempt 3: brave_web_search "[query]"
 
 <strong>소요 시간</strong>: 10분 (계획 2-3시간 대비 -94%)
 
-<strong>왜 이렇게 빠를 수 있었나?</strong> 코드 구현 대신 가이드만 추가했기 때문입니다. Agent가 실행 시 자동으로 따르는 가이드로 충분했습니다.
+<strong>왜 이렇게 빠를 수 있었나?</strong> 코드 구현 대신 가이드만 추가했기 때문이다. Agent가 실행 시 자동으로 따르는 가이드로 충분했다.
 
 ### Before/After 비교
 
@@ -646,14 +646,14 @@ Month 3: 40시간 → 9.5 → 9.8 (+0.3)
 ### 사용자 경험
 
 <strong>Before</strong>:
-- "복잡해 보여서 시작하기 어렵네" 😟
-- "가끔 실패해서 불안해" 😰
-- "뭘 어떻게 쓰는 거지?" 🤔
+- "복잡해 보여서 시작하기 어렵네"
+- "가끔 실패해서 불안해"
+- "뭘 어떻게 쓰는 거지?"
 
 <strong>After</strong>:
-- "README 보니까 금방 이해됐어!" 😊
-- "거의 항상 성공하네, 믿을 만해" 😌
-- "Commands 사용법 바로 찾음!" 🎯
+- "README 보니까 금방 이해됐어!"
+- "거의 항상 성공하네, 믿을 만해"
+- "Commands 사용법 바로 찾음!"
 
 ---
 
@@ -699,4 +699,4 @@ EffiFlow 자동화 구조 분석/평가 및 개선 시리즈를 마치며:
 - 효과: 연 364시간 절감 + $4.07 절감
 - ROI: 292배
 
-감사합니다! 
+분석에서 실행까지, 이 세 편이 같은 시도를 하려는 사람에게 실전 지도가 되면 충분하다.

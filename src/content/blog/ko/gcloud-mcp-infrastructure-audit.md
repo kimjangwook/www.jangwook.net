@@ -47,9 +47,9 @@ relatedPosts:
 
 ## 개요
 
-클라우드 인프라 관리는 시간이 지날수록 복잡해집니다. 수십 개의 서비스, 수백 개의 리소스, 그리고 끊임없이 변화하는 구성들. 인프라 관리자는 매일 보안 취약점, 비용 낭비, 구성 오류와 싸워야 합니다. 하지만 수동 점검은 시간이 오래 걸리고, 중요한 문제를 놓치기 쉽습니다.
+클라우드 인프라 관리는 시간이 지날수록 복잡해진다. 수십 개의 서비스, 수백 개의 리소스, 그리고 끊임없이 변화하는 구성들. 인프라 관리자는 매일 보안 취약점, 비용 낭비, 구성 오류와 싸워야 한다. 하지만 수동 점검은 시간이 오래 걸리고, 중요한 문제를 놓치기 쉽다.
 
-이 문제를 해결하기 위해 <strong>gcloud MCP(Model Context Protocol)</strong>와 AI 에이전트를 활용한 자동화된 인프라 감사 시스템을 구축했습니다. 병렬 에이전트 아키텍처를 통해 16개의 GCP 서비스를 동시에 분석하고, 보안 위험, 비용 최적화 기회, 운영 문제점을 자동으로 식별합니다.
+이 문제를 해결하기 위해 <strong>gcloud MCP(Model Context Protocol)</strong>와 AI 에이전트를 활용한 자동화된 인프라 감사 시스템을 구축했다. 병렬 에이전트 아키텍처를 통해 16개의 GCP 서비스를 동시에 분석하고, 보안 위험, 비용 최적화 기회, 운영 문제점을 자동으로 식별한다.
 
 ## 문제 배경
 
@@ -62,7 +62,7 @@ relatedPosts:
 - <strong>비용 누수</strong>: 사용하지 않는 리소스, 과잉 프로비저닝된 인스턴스
 - <strong>기술 부채</strong>: 지원 종료된 OS, 비권장 런타임 버전
 
-전통적인 접근 방식은 각 서비스를 개별적으로 점검하는 것입니다. 하지만 이는 다음과 같은 한계가 있습니다:
+전통적인 접근 방식은 각 서비스를 개별적으로 점검하는 것이다. 하지만 이는 다음과 같은 한계가 있다:
 
 ```bash
 # 전통적인 방식: 서비스별 순차 점검
@@ -73,11 +73,11 @@ gcloud sql instances list
 # ... 수십 개의 명령어를 수동으로 실행
 ```
 
-이 방식으로 전체 인프라를 점검하려면 몇 시간, 심지어 며칠이 걸릴 수 있습니다.
+이 방식으로 전체 인프라를 점검하려면 몇 시간, 심지어 며칠이 걸릴 수 있다.
 
 ### 기존 도구의 한계
 
-Google Cloud의 Security Command Center나 Cloud Asset Inventory도 훌륭한 도구입니다. 하지만:
+Google Cloud의 Security Command Center나 Cloud Asset Inventory도 훌륭한 도구다. 하지만:
 
 - 정적인 규칙 기반 탐지에 의존
 - 서비스 간 연관 관계 분석이 제한적
@@ -88,7 +88,7 @@ Google Cloud의 Security Command Center나 Cloud Asset Inventory도 훌륭한 �
 
 ### gcloud MCP 소개
 
-<strong>MCP(Model Context Protocol)</strong>는 AI 모델이 외부 도구와 상호작용할 수 있게 해주는 프로토콜입니다. gcloud MCP는 Google Cloud CLI를 MCP 서버로 래핑하여 AI 에이전트가 GCP 리소스를 직접 조회하고 관리할 수 있게 합니다.
+<strong>MCP(Model Context Protocol)</strong>는 AI 모델이 외부 도구와 상호작용할 수 있게 해주는 프로토콜이다. gcloud MCP는 Google Cloud CLI를 MCP 서버로 래핑하여 AI 에이전트가 GCP 리소스를 직접 조회하고 관리할 수 있게 한다.
 
 핵심 장점:
 
@@ -96,11 +96,11 @@ Google Cloud의 Security Command Center나 Cloud Asset Inventory도 훌륭한 �
 2. <strong>컨텍스트 인식</strong>: AI가 리소스 간 관계를 이해하고 분석
 3. <strong>자동화된 보고서</strong>: 구조화된 분석 결과와 개선 권고사항 생성
 
-같은 맥락에서 AWS 환경의 MCP 활용은 [AWS MCP Server GA 실전 가이드](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026)에서 CloudWatch·IAM 에이전트 연동 방법을 확인할 수 있습니다.
+같은 맥락에서 AWS 환경의 MCP 활용은 [AWS MCP Server GA 실전 가이드](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026)에서 CloudWatch·IAM 에이전트 연동 방법을 확인할 수 있다.
 
 ### 병렬 에이전트 아키텍처
 
-단일 에이전트로 모든 서비스를 순차적으로 점검하는 대신, [병렬 서브에이전트 패턴](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026)을 적용했습니다:
+단일 에이전트로 모든 서비스를 순차적으로 점검하는 대신, [병렬 서브에이전트 패턴](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026)을 적용했다:
 
 ```mermaid
 flowchart TB
@@ -129,7 +129,7 @@ flowchart TB
     Expert --> Report
 ```
 
-각 서브에이전트는 독립적으로 특정 서비스를 분석합니다:
+각 서브에이전트는 독립적으로 특정 서비스를 분석한다:
 
 | 에이전트 | 담당 서비스 | 분석 항목 |
 |---------|------------|----------|
@@ -144,7 +144,7 @@ flowchart TB
 
 ### 1단계: gcloud MCP 설정
 
-먼저 gcloud MCP 서버를 설정합니다. Claude Desktop이나 다른 MCP 호환 클라이언트에서 사용할 수 있습니다:
+먼저 gcloud MCP 서버를 설정한다. Claude Desktop이나 다른 MCP 호환 클라이언트에서 사용할 수 있다:
 
 ```json
 {
@@ -162,7 +162,7 @@ flowchart TB
 
 ### 2단계: 서비스별 분석 에이전트 정의
 
-각 GCP 서비스에 대해 전문화된 분석 프롬프트를 작성합니다:
+각 GCP 서비스에 대해 전문화된 분석 프롬프트를 작성한다:
 
 ```markdown
 # Compute Engine 분석 에이전트
@@ -186,7 +186,7 @@ flowchart TB
 
 ### 3단계: 병렬 실행 오케스트레이션
 
-메인 오케스트레이터가 모든 서브에이전트를 동시에 실행합니다:
+메인 오케스트레이터가 모든 서브에이전트를 동시에 실행한다:
 
 ```python
 # 개념적 코드 예시
@@ -209,7 +209,7 @@ async def run_infrastructure_audit():
 
 ### 4단계: 결과 집계 및 보고서 생성
 
-인프라 전문가 에이전트가 모든 결과를 종합하여 우선순위가 지정된 보고서를 생성합니다:
+인프라 전문가 에이전트가 모든 결과를 종합하여 우선순위가 지정된 보고서를 생성한다:
 
 ```markdown
 # 위험도 평가 기준
@@ -234,7 +234,7 @@ async def run_infrastructure_audit():
 
 ### 실제 분석 결과 샘플
 
-병렬 에이전트 시스템을 실행하면 다음과 같은 형태의 보고서가 생성됩니다:
+병렬 에이전트 시스템을 실행하면 다음과 같은 형태의 보고서가 생성된다:
 
 #### 인프라 개요
 
@@ -274,7 +274,7 @@ async def run_infrastructure_audit():
 
 ### 자동 생성된 Mermaid 다이어그램
 
-시스템은 인프라 구조를 시각화하는 Mermaid 다이어그램도 자동 생성합니다:
+시스템은 인프라 구조를 시각화하는 Mermaid 다이어그램도 자동 생성한다:
 
 ```mermaid
 graph TB
@@ -315,11 +315,11 @@ graph TB
 
 ### 주기적 감사의 필요성
 
-인프라는 매일 변화합니다. 새로운 서비스가 배포되고, 구성이 변경되며, 새로운 취약점이 발견됩니다. 일회성 감사로는 충분하지 않습니다.
+인프라는 매일 변화한다. 새로운 서비스가 배포되고, 구성이 변경되며, 새로운 취약점이 발견된다. 일회성 감사로는 충분하지 않다.
 
 ### Cloud Scheduler를 통한 자동화
 
-정기적인 인프라 감사를 자동화할 수 있습니다:
+정기적인 인프라 감사를 자동화할 수 있다:
 
 ```yaml
 # 주간 인프라 감사 스케줄
@@ -343,7 +343,7 @@ notification:
 
 ## 즉각적인 개선 조치
 
-gcloud MCP의 또 다른 강점은 발견된 문제를 즉시 수정할 수 있다는 점입니다.
+gcloud MCP의 또 다른 강점은 발견된 문제를 즉시 수정할 수 있다는 점이다.
 
 ### 예시: Secret Manager 마이그레이션
 
@@ -361,7 +361,7 @@ gcloud run services update my-service \
   --update-secrets=OPENAI_API_KEY=openai-api-key:latest
 ```
 
-AI 에이전트는 이러한 수정 명령어를 자동으로 생성하고, 승인 후 실행할 수 있습니다. 시크릿 유출 위험의 실태는 [AI 코딩 에이전트가 2,900만 시크릿을 유출시킨 사례](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security)에서 구체적으로 확인할 수 있습니다.
+AI 에이전트는 이러한 수정 명령어를 자동으로 생성하고, 승인 후 실행할 수 있다. 시크릿 유출 위험의 실태는 [AI 코딩 에이전트가 2,900만 시크릿을 유출시킨 사례](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security)에서 구체적으로 확인할 수 있다.
 
 ### 예시: 방화벽 규칙 강화
 
@@ -385,7 +385,7 @@ gcloud MCP와 병렬 에이전트 아키텍처를 결합하면:
 - <strong>포괄성</strong>: 서비스 간 연관 관계까지 분석
 - <strong>즉시 조치</strong>: 발견된 문제에 대한 수정 명령어 자동 생성
 
-인프라 관리자는 반복적인 점검 작업에서 해방되어 더 중요한 아키텍처 결정과 전략적 업무에 집중할 수 있습니다.
+인프라 관리자는 반복적인 점검 작업에서 해방되어 더 중요한 아키텍처 결정과 전략적 업무에 집중할 수 있다.
 
 ### 다음 단계
 
@@ -394,4 +394,4 @@ gcloud MCP와 병렬 에이전트 아키텍처를 결합하면:
 3. <strong>정기 스캔 설정</strong>: Cloud Scheduler로 주간/월간 자동 감사 구성
 4. <strong>알림 통합</strong>: Slack, Email, PagerDuty 등과 연동하여 즉시 대응
 
-클라우드 인프라 관리의 새로운 패러다임, AI 에이전트와 함께 시작해보세요.
+클라우드 인프라 관리의 새로운 패러다임은 AI 에이전트에서 시작된다.

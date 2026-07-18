@@ -964,7 +964,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "effloow-side-project-ai-company.md",
@@ -973,7 +973,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "enterprise-ai-adoption-topdown.md",
@@ -982,7 +982,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "fastapi-claude-api-streaming-production-guide-2026.md",
@@ -991,7 +991,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "fastmcp-python-mcp-server-build-guide-2026.md",
@@ -1000,7 +1000,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "figma-mcp-web-components-sync.md",
@@ -1010,7 +1010,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "functiongemma-270m-tool-calling.md",
@@ -1020,7 +1020,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "gcloud-mcp-infrastructure-audit.md",
@@ -1029,7 +1029,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "gemini-25-flash-api-cost-optimization-guide.md",
@@ -1038,7 +1038,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "gemini-31-pro-release.md",
@@ -1048,7 +1048,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "gemini-embedding-2-multimodal-rag-pipeline.md",
