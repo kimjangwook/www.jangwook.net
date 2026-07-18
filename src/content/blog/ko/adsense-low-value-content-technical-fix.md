@@ -61,29 +61,29 @@ relatedPosts:
 
 ## 개요
 
-Google AdSense에 여러 차례 신청했지만 <strong>"가치가 별로 없는 콘텐츠(Low Value Content)"</strong>라는 이유로 계속 거절당한 경험이 있으신가요? 저도 그랬습니다. 83개 포스트를 4개 국어(한국어·영어·일본어·중국어)로 운영하며 316개 이상의 기술 아티클을 보유한 블로그인데도 말이죠.
+Google AdSense에 여러 차례 신청했지만 <strong>"가치가 별로 없는 콘텐츠(Low Value Content)"</strong>라는 이유로 계속 거절당한 적 있는가? 나도 그랬다. 83개 포스트를 4개 국어(한국어·영어·일본어·중국어)로 운영하며 316개 이상의 기술 아티클을 보유한 블로그인데도 그랬다.
 
-콘텐츠 양과 질의 문제가 아니었습니다. <strong>사이트의 기술적 결함이 Google에게 "저품질 사이트"로 보이게 만들고 있었습니다.</strong> 이 글에서는 실제로 발견하고 수정한 8가지 문제를 공유합니다. 같은 고민을 하고 있는 개발자분들께 실질적인 도움이 되기를 바랍니다.
+콘텐츠 양과 질의 문제가 아니었다. <strong>사이트의 기술적 결함이 Google에게 "저품질 사이트"로 보이게 만들고 있었다.</strong> 실제로 발견하고 수정한 8가지 문제를 공유한다. 같은 고민을 하는 개발자에게 실질적인 도움이 되면 좋겠다.
 
 ## 배경: 왜 거절당했나
 
-이 블로그는 [Astro](https://astro.build) 프레임워크 기반의 다국어 기술 블로그입니다.
+이 블로그는 [Astro](https://astro.build) 프레임워크 기반의 다국어 기술 블로그다.
 
 - <strong>콘텐츠</strong>: 83개 포스트 × 4개 언어 = 316+ 기술 아티클
 - <strong>필수 페이지</strong>: 개인정보처리방침, 이용약관, 연락처(Contact) 모두 구비
 - <strong>기술 스택</strong>: Astro SSG, Cloudflare Pages, Content Collections
 
-겉보기에는 AdSense 승인 조건을 충분히 갖추고 있었습니다. 그런데 수차례 신청할 때마다 돌아오는 답변은 항상 같았습니다:
+겉보기에는 AdSense 승인 조건을 충분히 갖추고 있었다. 그런데 수차례 신청할 때마다 돌아오는 답변은 항상 같았다.
 
 > <strong>"가치가 별로 없는 콘텐츠"</strong> — 사이트에 유용한 콘텐츠가 충분하지 않습니다.
 
-문제의 원인을 찾기 위해 사이트 전체를 기술적으로 감사(audit)한 결과, <strong>콘텐츠 자체가 아닌 기술적 결함</strong> 3가지가 핵심 원인이었고, 부가적으로 5가지 문제를 추가 발견했습니다.
+문제의 원인을 찾으려고 사이트 전체를 기술적으로 감사(audit)한 결과, <strong>콘텐츠 자체가 아닌 기술적 결함</strong> 3가지가 핵심 원인이었고, 부가적으로 5가지 문제를 추가로 발견했다.
 
 ## 핵심 문제 1: Ezoic ads.txt 충돌 (가장 직접적 원인)
 
 ### 발견 과정
 
-라이브 사이트의 `ads.txt`를 직접 확인해보니, 제가 작성한 AdSense 엔트리가 없었습니다. 대신 80개 이상의 Ezoic 관리 광고 네트워크 엔트리만 존재했습니다.
+라이브 사이트의 `ads.txt`를 직접 확인해보니, 내가 작성한 AdSense 엔트리가 없었다. 대신 80개 이상의 Ezoic 관리 광고 네트워크 엔트리만 존재했다.
 
 ```bash
 # 라이브 사이트의 ads.txt 확인
@@ -94,7 +94,7 @@ curl https://jangwook.net/ads.txt | head -5
 
 ### 원인 분석
 
-GitHub Actions의 `deploy.yml`에 이런 코드가 있었습니다:
+GitHub Actions의 `deploy.yml`에 이런 코드가 있었다.
 
 ```yaml
 # deploy.yml (문제의 코드)
@@ -104,7 +104,7 @@ GitHub Actions의 `deploy.yml`에 이런 코드가 있었습니다:
     curl -L https://srv.adstxtmanager.com/19390/jangwook.net > public/ads.txt
 ```
 
-빌드할 때마다 Ezoic의 `adstxtmanager`에서 `ads.txt`를 다운로드해 덮어쓰고 있었습니다. 로컬의 `public/ads.txt`에는 올바른 Google AdSense 엔트리가 있었지만, <strong>배포 시 완전히 대체</strong>되고 있었던 것입니다.
+빌드할 때마다 Ezoic의 `adstxtmanager`에서 `ads.txt`를 다운로드해 덮어쓰고 있었다. 로컬의 `public/ads.txt`에는 올바른 Google AdSense 엔트리가 있었지만, <strong>배포 시 완전히 대체</strong>되고 있었다.
 
 ```
 # 로컬 public/ads.txt (올바른 내용)
@@ -115,7 +115,7 @@ google.com, pub-7556938384772610, DIRECT, f08c47fec0942fa0
 # → pub-7556938384772610 엔트리는 존재하지 않음!
 ```
 
-<strong>추가로</strong>, `BaseHead.astro`에 Ezoic의 CMP(동의 관리 플랫폼) 및 광고 스크립트 3개가 모든 페이지에 로드되고 있었습니다:
+<strong>추가로</strong>, `BaseHead.astro`에 Ezoic의 CMP(동의 관리 플랫폼) 및 광고 스크립트 3개가 모든 페이지에 로드되고 있었다.
 
 ```astro
 <!-- BaseHead.astro (문제의 스크립트) -->
@@ -139,7 +139,7 @@ graph TD
     G --> H[❌ AdSense 신청 거절]
 ```
 
-AdSense는 사이트의 `ads.txt`에 자신의 pub ID가 없으면, <strong>해당 사이트가 AdSense를 사용할 의사가 없거나 다른 서비스가 이미 관리 중</strong>이라고 판단합니다.
+AdSense는 사이트의 `ads.txt`에 자신의 pub ID가 없으면, <strong>해당 사이트가 AdSense를 사용할 의사가 없거나 다른 서비스가 이미 관리 중</strong>이라고 판단한다.
 
 ### 해결 방법
 
@@ -164,11 +164,11 @@ google.com, pub-7556938384772610, DIRECT, f08c47fec0942fa0
 
 ### 발견 과정
 
-빌드 로그를 분석해보니, <strong>1,365개의 페이지</strong>가 생성되고 있었습니다. 83개 포스트 × 4개 언어 = 332개여야 하는데, 정적 페이지 수가 비정상적으로 많았습니다.
+빌드 로그를 분석해보니, <strong>1,365개의 페이지</strong>가 생성되고 있었다. 83개 포스트 × 4개 언어 = 332개여야 하는데, 정적 페이지 수가 비정상적으로 많았다.
 
 ### 원인 분석
 
-`[...slug].astro`의 `getStaticPaths` 함수에 문제가 있었습니다:
+`[...slug].astro`의 `getStaticPaths` 함수에 문제가 있었다.
 
 ```typescript
 // [...slug].astro (문제의 코드)
@@ -185,7 +185,7 @@ export async function getStaticPaths() {
 }
 ```
 
-이 코드의 문제점은 <strong>모든 포스트를 모든 언어 경로에 매핑</strong>한다는 것입니다. `post.slug`에 이미 언어 접두사(`ko/`, `en/` 등)가 포함되어 있는데, 이를 4개 언어 각각의 경로에 넣으면서 <strong>교차 언어 URL</strong>이 대량으로 생성되었습니다.
+이 코드의 문제점은 <strong>모든 포스트를 모든 언어 경로에 매핑</strong>한다는 것이다. `post.slug`에 이미 언어 접두사(`ko/`, `en/` 등)가 포함되어 있는데, 이를 4개 언어 각각의 경로에 넣으면서 <strong>교차 언어 URL</strong>이 대량으로 생성됐다.
 
 ```
 # 정상적인 URL (332개)
@@ -209,11 +209,11 @@ graph LR
     D --> E[❌ 사이트 전체가<br/>Low Value Content]
 ```
 
-Google은 사이트 전체의 콘텐츠 품질을 평가합니다. 전체 페이지의 <strong>약 73%가 언어 불일치 중복 콘텐츠</strong>라면, 사이트 전체가 "가치가 별로 없는 콘텐츠"로 판정되는 것은 당연합니다.
+Google은 사이트 전체의 콘텐츠 품질을 평가한다. 전체 페이지의 <strong>약 73%가 언어 불일치 중복 콘텐츠</strong>라면, 사이트 전체가 "가치가 별로 없는 콘텐츠"로 판정되는 것은 당연하다.
 
 ### 해결 방법
 
-각 포스트를 해당 언어의 경로에만 매핑하도록 수정했습니다:
+각 포스트를 해당 언어의 경로에만 매핑하도록 수정했다.
 
 ```typescript
 // [...slug].astro (수정 후)
@@ -233,11 +233,11 @@ export async function getStaticPaths() {
 
 ### 발견 과정
 
-Google Search Console에서 사이트맵을 제출했지만, 인덱싱된 페이지가 극히 적었습니다. 사이트맵의 URL을 실제로 브라우저에서 열어보니 <strong>모두 404</strong>였습니다.
+Google Search Console에서 사이트맵을 제출했지만, 인덱싱된 페이지가 극히 적었다. 사이트맵의 URL을 실제로 브라우저에서 열어보니 <strong>모두 404</strong>였다.
 
 ### 원인 분석
 
-사이트맵 생성 로직과 실제 라우팅 간에 URL 형식이 불일치했습니다:
+사이트맵 생성 로직과 실제 라우팅 간에 URL 형식이 불일치했다.
 
 ```
 # 사이트맵이 생성하는 URL
@@ -247,7 +247,7 @@ https://jangwook.net/ko/blog/my-post-title/
 https://jangwook.net/ko/blog/ko/my-post-title/
 ```
 
-사이트맵은 `/{lang}/blog/{slug}/` 형식으로 URL을 만들었지만, `slug`에 이미 `ko/` 같은 언어 접두사가 포함되어 있어서 실제 URL은 `/{lang}/blog/{lang}/{slug}/`였습니다. <strong>사이트맵의 블로그 URL 332개 전부가 404</strong>를 반환하고 있었습니다.
+사이트맵은 `/{lang}/blog/{slug}/` 형식으로 URL을 만들었지만, `slug`에 이미 `ko/` 같은 언어 접두사가 포함되어 있어서 실제 URL은 `/{lang}/blog/{lang}/{slug}/`였다. <strong>사이트맵의 블로그 URL 332개 전부가 404</strong>를 반환하고 있었다.
 
 ```mermaid
 graph TD
@@ -260,7 +260,7 @@ graph TD
 
 ### 해결 방법
 
-사이트맵 생성 로직에서 슬러그의 언어 접두사를 고려하도록 수정했습니다:
+사이트맵 생성 로직에서 슬러그의 언어 접두사를 고려하도록 수정했다.
 
 ```typescript
 // sitemap 설정 (수정 후)
@@ -273,11 +273,11 @@ const url = `/${lang}/blog/${post.slug}/`;
 
 ### 문제
 
-83개 포스트의 <strong>39%</strong>(약 32개)가 4개 언어 버전에서 H2, H3 제목 수와 코드 블록 수가 완벽하게 동일했습니다. 이는 Google에게 <strong>기계 번역으로 자동 생성된 콘텐츠</strong>로 인식될 수 있습니다.
+83개 포스트의 <strong>39%</strong>(약 32개)가 4개 언어 버전에서 H2, H3 제목 수와 코드 블록 수가 완벽하게 동일했다. 이건 Google에게 <strong>기계 번역으로 자동 생성된 콘텐츠</strong>로 인식될 수 있다.
 
 ### 해결 방법
 
-이 경우 콘텐츠 자체를 전부 다시 쓰는 것보다, Google에게 <strong>"이것은 같은 콘텐츠의 공식 번역본"</strong>이라고 명시적으로 알려주는 것이 효과적입니다.
+이 경우 콘텐츠 자체를 전부 다시 쓰는 것보다, Google에게 <strong>"이것은 같은 콘텐츠의 공식 번역본"</strong>이라고 명시적으로 알려주는 것이 효과적이다.
 
 ```html
 <!-- hreflang 올바르게 설정 -->
@@ -288,13 +288,13 @@ const url = `/${lang}/blog/${post.slug}/`;
 <link rel="alternate" hreflang="x-default" href="https://jangwook.net/en/blog/en/my-post/" />
 ```
 
-hreflang을 올바르게 설정하면 Google이 각 언어 페이지를 <strong>독립적인 번역본으로 인식</strong>하여 중복 콘텐츠 패널티를 피할 수 있습니다.
+hreflang을 올바르게 설정하면 Google이 각 언어 페이지를 <strong>독립적인 번역본으로 인식</strong>하여 중복 콘텐츠 패널티를 피할 수 있다.
 
 ## 부가 문제 5: Contact 페이지 크롤러 접근 불가
 
 ### 문제
 
-연락처 페이지가 Google Form의 `<iframe>`만으로 구성되어 있었습니다. 크롤러는 iframe 내부를 읽지 못하므로, 이 페이지는 <strong>사실상 빈 페이지</strong>였습니다.
+연락처 페이지가 Google Form의 `<iframe>`만으로 구성되어 있었다. 크롤러는 iframe 내부를 읽지 못하므로, 이 페이지는 <strong>사실상 빈 페이지</strong>였다.
 
 ```html
 <!-- 기존 Contact 페이지 (크롤러에겐 빈 페이지) -->
@@ -307,7 +307,7 @@ hreflang을 올바르게 설정하면 Google이 각 언어 페이지를 <strong>
 
 ### 해결 방법
 
-크롤러가 읽을 수 있는 구조화된 콘텐츠를 추가했습니다:
+크롤러가 읽을 수 있는 구조화된 콘텐츠를 추가했다.
 
 ```html
 <!-- 수정 후 Contact 페이지 -->
@@ -336,7 +336,7 @@ hreflang을 올바르게 설정하면 Google이 각 언어 페이지를 <strong>
 
 ### 문제
 
-블로그 포스트의 `x-default`가 잘못된 URL을 가리키고 있었습니다. 영어를 기본 언어로 설정했지만, URL 변환 시 블로그 경로 내의 언어 코드를 변환하지 않아 <strong>영어 URL에 한국어 콘텐츠</strong>가 연결되었습니다.
+블로그 포스트의 `x-default`가 잘못된 URL을 가리키고 있었다. 영어를 기본 언어로 설정했지만, URL 변환 시 블로그 경로 내의 언어 코드를 변환하지 않아 <strong>영어 URL에 한국어 콘텐츠</strong>가 연결됐다.
 
 ```html
 <!-- 잘못된 x-default -->
@@ -347,7 +347,7 @@ hreflang을 올바르게 설정하면 Google이 각 언어 페이지를 <strong>
 
 ### 해결 방법
 
-hreflang 생성 로직에서 블로그 경로 내부의 언어 코드도 함께 변환하도록 수정했습니다:
+hreflang 생성 로직에서 블로그 경로 내부의 언어 코드도 함께 변환하도록 수정했다.
 
 ```typescript
 // hreflang URL 생성 (수정 후)
@@ -364,26 +364,26 @@ function getAlternateUrl(currentUrl: string, targetLang: string): string {
 
 ### 문제
 
-블로그 자체의 운영 리포트 6개(주간 분석, 월간 분석, AdSense 거절 분석 등)가 존재했습니다. 이런 포스트는 <strong>블로그 자기 자신에 대한 분석</strong>이므로, 외부 방문자에게는 가치가 없는 "자기 참조적 저가치 콘텐츠"로 분류될 수 있습니다.
+블로그 자체의 운영 리포트 6개(주간 분석, 월간 분석, AdSense 거절 분석 등)가 존재했다. 이런 포스트는 <strong>블로그 자기 자신에 대한 분석</strong>이므로, 외부 방문자에게는 가치가 없는 "자기 참조적 저가치 콘텐츠"로 분류될 수 있다.
 
 ### 해결 방법
 
-이런 포스트에 `noindex` 메타 태그를 적용하여 검색 엔진 인덱싱에서 제외했습니다:
+이런 포스트에 `noindex` 메타 태그를 적용하여 검색 엔진 인덱싱에서 제외했다.
 
 ```html
 <!-- 메타 분석 포스트에 noindex 적용 -->
 <meta name="robots" content="noindex, follow" />
 ```
 
-이렇게 하면 Google이 이 페이지들을 인덱싱하지 않으므로, 사이트 전체의 콘텐츠 품질 평가에서 제외됩니다. 내부 링크의 `follow`는 유지하여 크롤링 자체는 허용합니다.
+이렇게 하면 Google이 이 페이지들을 인덱싱하지 않으므로, 사이트 전체의 콘텐츠 품질 평가에서 빠진다. 내부 링크의 `follow`는 유지하여 크롤링 자체는 허용한다.
 
 ## 부가 문제 8: 기타 기술적 수정
 
-나머지 발견한 문제들과 해결 방법을 정리합니다.
+나머지 발견한 문제들과 해결 방법을 정리한다.
 
 ### 8-1. 커스텀 404 페이지 미존재
 
-기본 404 페이지가 없어서 사용자가 잘못된 URL에 접근했을 때 빈 페이지나 서버 기본 에러가 표시되었습니다.
+기본 404 페이지가 없어서 사용자가 잘못된 URL에 접근했을 때 빈 페이지나 서버 기본 에러가 표시됐다.
 
 ```astro
 ---
@@ -402,7 +402,7 @@ const messages = {
 
 ### 8-2. og:type 미분기
 
-모든 페이지에서 `og:type`이 `"website"`으로 설정되어 있었습니다. 블로그 포스트는 `"article"`이어야 합니다.
+모든 페이지에서 `og:type`이 `"website"`으로 설정되어 있었다. 블로그 포스트는 `"article"`이어야 한다.
 
 ```astro
 <!-- 수정 후 -->
@@ -411,7 +411,7 @@ const messages = {
 
 ### 8-3. sitemap 링크 불일치
 
-`robots.txt`에서 참조하는 사이트맵 파일명이 실제 파일명과 달랐습니다.
+`robots.txt`에서 참조하는 사이트맵 파일명이 실제 파일명과 달랐다.
 
 ```
 # robots.txt (수정 전)
@@ -426,11 +426,11 @@ Sitemap: https://jangwook.net/sitemap.xml
 
 ### 8-4. 중국어 RSS hreflang 누락
 
-한국어, 영어, 일본어 RSS 피드에는 hreflang이 올바르게 설정되어 있었지만, 중국어(zh)만 누락되어 있었습니다.
+한국어, 영어, 일본어 RSS 피드에는 hreflang이 올바르게 설정되어 있었지만, 중국어(zh)만 누락되어 있었다.
 
 ### 8-5. robots.txt에 교차 언어 URL 차단 규칙 추가
 
-유령 페이지가 수정되기 전에 이미 인덱싱된 교차 언어 URL이 있을 수 있으므로, `robots.txt`에 차단 규칙을 추가했습니다:
+유령 페이지가 수정되기 전에 이미 인덱싱된 교차 언어 URL이 있을 수 있으므로, `robots.txt`에 차단 규칙을 추가했다.
 
 ```
 # robots.txt에 추가
@@ -452,7 +452,7 @@ Disallow: /zh/blog/ja/
 
 ![수정 전후 사이트 건강 상태 비교: 1,365개 페이지에서 370개로 개선](../../../assets/blog/adsense-low-value-content-technical-fix-before-after.png)
 
-모든 수정 사항을 적용한 후의 결과입니다:
+모든 수정 사항을 적용한 후의 결과다.
 
 | 항목 | 수정 전 | 수정 후 |
 |------|---------|---------|
@@ -483,7 +483,7 @@ graph LR
 
 ## 다국어 블로그 운영자를 위한 체크리스트
 
-이 경험을 바탕으로, AdSense 신청 전에 확인해야 할 기술적 체크리스트를 정리했습니다:
+이 경험을 바탕으로, AdSense 신청 전에 확인해야 할 기술적 체크리스트를 정리했다.
 
 ### ads.txt 관련
 - [ ] 라이브 사이트의 `ads.txt`를 직접 확인했는가?
@@ -508,16 +508,16 @@ graph LR
 
 ## 결론
 
-AdSense "가치가 별로 없는 콘텐츠" 거절은 <strong>콘텐츠의 문제가 아니라 기술적 결함인 경우</strong>가 많습니다. 특히 다국어 사이트에서는 URL 라우팅, 사이트맵, hreflang 설정의 복잡도가 높아 이런 문제가 발생하기 쉽습니다.
+AdSense "가치가 별로 없는 콘텐츠" 거절은 <strong>콘텐츠의 문제가 아니라 기술적 결함인 경우</strong>가 많다. 특히 다국어 사이트에서는 URL 라우팅, 사이트맵, hreflang 설정의 복잡도가 높아 이런 문제가 생기기 쉽다.
 
 핵심 교훈을 정리하면:
 
-1. <strong>ads.txt는 반드시 라이브 사이트에서 직접 확인하세요.</strong> CI/CD 파이프라인에서 덮어쓰기가 발생할 수 있습니다.
-2. <strong>빌드 페이지 수를 정기적으로 모니터링하세요.</strong> 예상보다 많으면 유령 페이지가 생성되고 있을 수 있습니다.
-3. <strong>사이트맵의 URL을 실제로 접속해보세요.</strong> 사이트맵과 라우팅 간의 불일치는 흔한 문제입니다.
-4. <strong>Google의 관점에서 사이트를 바라보세요.</strong> 개발자에게는 당연한 것도 크롤러에게는 다르게 보일 수 있습니다.
+1. <strong>ads.txt는 반드시 라이브 사이트에서 직접 확인한다.</strong> CI/CD 파이프라인에서 덮어쓰기가 일어날 수 있다.
+2. <strong>빌드 페이지 수를 정기적으로 모니터링한다.</strong> 예상보다 많으면 유령 페이지가 생성되고 있을 수 있다.
+3. <strong>사이트맵의 URL을 실제로 접속해본다.</strong> 사이트맵과 라우팅 간의 불일치는 흔한 문제다.
+4. <strong>Google의 관점에서 사이트를 바라본다.</strong> 개발자에게는 당연한 것도 크롤러에게는 다르게 보일 수 있다.
 
-이 글이 같은 문제로 고민하고 있는 개발자분들께 도움이 되기를 바랍니다.
+같은 문제로 고민하는 개발자에게 이 기록이 도움이 되면 좋겠다.
 
 ## 참고 자료
 

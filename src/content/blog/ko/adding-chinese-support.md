@@ -59,11 +59,11 @@ relatedPosts:
 
 ## 들어가며
 
-2025년 11월, 제 블로그는 중요한 전환점을 맞이했습니다. 한국어, 영어, 일본어로 운영되던 기술 블로그에 <strong>중국어(간체자) 지원을 추가</strong>하기로 결정한 것입니다.
+2025년 11월, 내 블로그는 중요한 전환점을 맞이했다. 한국어, 영어, 일본어로 운영되던 기술 블로그에 <strong>중국어(간체자) 지원을 추가</strong>하기로 결정했다.
 
-중국에서 유입되는 트래픽이 꾸준히 증가하고 있었고, 중국어권 개발자들에게도 양질의 콘텐츠를 제공하고 싶었습니다. 하지만 40개의 포스트에 중국어 버전을 추가하고, 모든 UI 컴포넌트를 다국어화하며, SEO를 최적화하는 작업은 만만치 않았습니다.
+중국에서 유입되는 트래픽이 꾸준히 늘고 있었고, 중국어권 개발자에게도 양질의 콘텐츠를 주고 싶었다. 하지만 40개 포스트에 중국어 버전을 추가하고, 모든 UI 컴포넌트를 다국어화하며, SEO를 최적화하는 작업은 만만치 않았다.
 
-이 글에서는 <strong>Astro 기반 다국어 블로그에 새로운 언어를 추가하는 전 과정</strong>을 상세히 공유합니다. 파일 구조 설계부터 대규모 번역 자동화, SEO 최적화까지 - 실전에서 마주친 문제와 해결책을 투명하게 기록했습니다. 콘텐츠 생산 전반을 LLM으로 자동화한 배경은 [LLM 기반 블로그 자동화](/ko/blog/ko/llm-blog-automation)에서 다뤘습니다.
+<strong>Astro 기반 다국어 블로그에 새 언어를 추가하는 전 과정</strong>을 상세히 기록한다. 파일 구조 설계부터 대규모 번역 자동화, SEO 최적화까지, 실전에서 마주친 문제와 해결책을 투명하게 남겼다. 콘텐츠 생산 전반을 LLM으로 자동화한 배경은 [LLM 기반 블로그 자동화](/ko/blog/ko/llm-blog-automation)에서 다뤘다.
 
 ### 이 글을 읽으면 알 수 있는 것
 
@@ -75,7 +75,7 @@ relatedPosts:
 
 ## Section 1: 파일 구조 설계
 
-다국어 블로그를 확장할 때 가장 중요한 것은 <strong>명확하고 확장 가능한 파일 구조</strong>입니다. Astro Content Collections는 이를 위한 완벽한 도구입니다.
+다국어 블로그를 확장할 때 가장 중요한 것은 <strong>명확하고 확장 가능한 파일 구조</strong>다. Astro Content Collections는 이걸 위한 완벽한 도구다.
 
 ### 언어별 폴더 구조
 
@@ -131,7 +131,7 @@ export async function getStaticPaths() {
 
 ## Section 2: 콘텐츠 컬렉션 스키마
 
-Astro Content Collections는 Frontmatter의 <strong>타입 안전성을 보장</strong>하고, 다국어 필드를 체계적으로 관리할 수 있게 합니다.
+Astro Content Collections는 Frontmatter의 <strong>타입 안전성을 보장</strong>하고, 다국어 필드를 체계적으로 관리할 수 있게 해준다.
 
 ### Frontmatter 구조
 
@@ -158,7 +158,7 @@ relatedPosts:
 
 ### relatedPosts의 다국어 reason 필드
 
-제 블로그의 특징은 <strong>각 추천 포스트에 4개 언어로 추천 이유를 제공</strong>한다는 것입니다. 이는 사용자 경험과 SEO 모두에 긍정적입니다.
+내 블로그의 특징은 <strong>각 추천 포스트에 4개 언어로 추천 이유를 제공</strong>한다는 점이다. 사용자 경험과 SEO 모두에 긍정적이다.
 
 ```typescript
 // src/content.config.ts
@@ -199,7 +199,7 @@ export const collections = { blog: blogCollection };
 
 ## Section 3: UI 컴포넌트 다국어화
 
-콘텐츠뿐만 아니라 <strong>UI 컴포넌트도 다국어화</strong>해야 완전한 사용자 경험을 제공할 수 있습니다.
+콘텐츠뿐 아니라 <strong>UI 컴포넌트도 다국어화</strong>해야 완전한 사용자 경험이 나온다.
 
 ### BuyMeACoffee 컴포넌트
 
@@ -308,7 +308,7 @@ const sectionTitles = {
 
 ## Section 4: 데이터 파일 번역
 
-블로그의 개선 이력(Improvement History) 같은 <strong>구조화된 데이터도 다국어화</strong>가 필요합니다.
+블로그의 개선 이력(Improvement History) 같은 <strong>구조화된 데이터도 다국어화</strong>가 필요하다.
 
 ### Improvement JSON 구조
 
@@ -376,7 +376,7 @@ const sectionTitles = {
 
 ## Section 5: SEO 최적화
 
-다국어 웹사이트의 SEO는 <strong>언어별로 독립적인 최적화</strong>가 필요합니다.
+다국어 웹사이트의 SEO는 <strong>언어별로 독립적인 최적화</strong>가 필요하다.
 
 ### 언어별 사이트맵 생성
 
@@ -503,7 +503,7 @@ export const SITE_META = {
 
 ## Section 6: 대규모 번역 자동화
 
-40개의 포스트에 중국어 버전을 추가하고, 기존 한국어/영어/일본어 버전의 relatedPosts에 중국어 reason을 추가하는 작업은 <strong>수작업으로는 불가능</strong>했습니다. 여러 에이전트에 작업을 나눠 병렬 처리하는 패턴은 [AI 에이전트와 Notion MCP 자동화](/ko/blog/ko/ai-agent-notion-mcp-automation)에서도 같은 방식으로 활용했습니다.
+40개 포스트에 중국어 버전을 추가하고, 기존 한국어/영어/일본어 버전의 relatedPosts에 중국어 reason을 추가하는 작업은 <strong>수작업으로는 불가능</strong>했다. 여러 에이전트에 작업을 나눠 병렬 처리하는 패턴은 [AI 에이전트와 Notion MCP 자동화](/ko/blog/ko/ai-agent-notion-mcp-automation)에서도 같은 방식으로 썼다.
 
 ### 문제 정의
 
@@ -541,7 +541,7 @@ graph TD
 
 ### 에이전트 워크플로우
 
-각 에이전트는 다음 단계를 수행합니다:
+각 에이전트는 다음 단계를 수행한다.
 
 1. <strong>중국어 버전 읽기</strong>: `zh/[post-name].md`의 relatedPosts 파싱
 2. <strong>reason.zh 추출</strong>:
@@ -577,7 +577,7 @@ graph TD
 
 ## Section 7: 번역 전략
 
-단순 번역이 아닌 <strong>현지화(Localization)</strong>를 목표로 했습니다.
+단순 번역이 아닌 <strong>현지화(Localization)</strong>를 목표로 삼았다.
 
 ### 번역 로직
 
@@ -625,7 +625,7 @@ function extractOrTranslateReason(post, relatedPost) {
 
 ## Section 8: 검증 및 테스트
 
-다국어 사이트는 <strong>철저한 검증</strong>이 필수입니다.
+다국어 사이트는 <strong>철저한 검증</strong>이 필수다.
 
 ### 타입 체크
 
@@ -735,7 +735,7 @@ Error: Could not find image at ../../../assets/blog/image.jpg
 
 ## 결론
 
-Astro 기반 블로그에 중국어 지원을 추가하는 작업은 <strong>체계적인 계획과 자동화</strong>가 핵심이었습니다.
+Astro 기반 블로그에 중국어 지원을 추가하는 작업은 <strong>체계적인 계획과 자동화</strong>가 핵심이었다.
 
 ### 핵심 요약
 
@@ -748,9 +748,9 @@ Astro 기반 블로그에 중국어 지원을 추가하는 작업은 <strong>체
 
 ### 마치며
 
-다국어 웹사이트 확장은 단순히 번역을 추가하는 것이 아닙니다. <strong>아키텍처, SEO, 사용자 경험, 자동화</strong>를 모두 고려해야 하는 종합적인 작업입니다.
+다국어 웹사이트 확장은 단순히 번역을 얹는 일이 아니다. <strong>아키텍처, SEO, 사용자 경험, 자동화</strong>를 모두 고려해야 하는 종합적인 작업이다.
 
-이 글이 여러분의 다국어 프로젝트에 실질적인 도움이 되길 바랍니다. 질문이나 피드백은 언제든 환영합니다!
+같은 언어 확장을 앞둔 사람에게 이 기록이 참고가 되면 좋겠다. 질문이나 반론은 언제든 환영한다.
 
 ---
 

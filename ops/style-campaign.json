@@ -11,7 +11,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "accounting-ai-transformation-real-data.md",
@@ -21,7 +21,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "adding-chinese-support.md",
@@ -30,7 +30,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "adl-agent-definition-language-governance.md",
@@ -40,7 +40,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "adsense-low-value-content-technical-fix.md",
@@ -50,7 +50,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "adsense-rejection-ai-analysis-improvement.md",
@@ -59,7 +59,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "aeo-implementation-experience.md",
@@ -68,7 +68,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "agent-effi-flow-pivot-omotenashi-bot.md",
@@ -77,7 +77,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "agent-washing-detection-em-checklist.md",
@@ -87,7 +87,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "agentic-workflow-meta-tools-optimization.md",
@@ -97,7 +97,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "agents-md-effectiveness.md",
