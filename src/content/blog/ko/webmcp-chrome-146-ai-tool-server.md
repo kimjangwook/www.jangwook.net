@@ -61,13 +61,13 @@ relatedPosts:
 
 ## 개요
 
-Google Chrome 146에서 <strong>WebMCP</strong>가 도입됩니다. 이것은 브라우저 자체가 MCP(Model Context Protocol) 서버로 동작하여, AI 에이전트가 브라우저를 직접 툴 서버로 활용할 수 있게 하는 혁신적인 기능입니다.
+Google Chrome 146에서 <strong>WebMCP</strong>가 도입된다. 이것은 브라우저 자체가 MCP(Model Context Protocol) 서버로 동작하여, AI 에이전트가 브라우저를 직접 툴 서버로 활용할 수 있게 하는 혁신적인 기능이다.
 
-기존에는 AI 에이전트가 웹 페이지와 상호작용하려면 Puppeteer, Playwright 같은 별도의 자동화 도구가 필요했습니다. WebMCP는 이 패러다임을 완전히 바꿉니다. 브라우저가 스스로 <strong>MCP 서버</strong>가 되어, AI 에이전트에게 구조화된 툴과 데이터를 직접 제공하는 것입니다.
+기존에는 AI 에이전트가 웹 페이지와 상호작용하려면 Puppeteer, Playwright 같은 별도의 자동화 도구가 필요했다. WebMCP는 이 패러다임을 완전히 바꾼다. 브라우저가 스스로 <strong>MCP 서버</strong>가 되어, AI 에이전트에게 구조화된 툴과 데이터를 직접 제공하는 것이다.
 
 ## MCP(Model Context Protocol)란?
 
-MCP는 Anthropic이 제안한 오픈 프로토콜로, AI 모델과 외부 도구·데이터 소스 간의 표준화된 통신 규격입니다.
+MCP는 Anthropic이 제안한 오픈 프로토콜로, AI 모델과 외부 도구·데이터 소스 간의 표준화된 통신 규격이다.
 
 ```mermaid
 graph LR
@@ -77,17 +77,17 @@ graph LR
     Server -->|리소스 제공| Agent
 ```
 
-MCP의 핵심 구성 요소는 다음과 같습니다:
+MCP의 핵심 구성 요소는 다음과 같다:
 
 - <strong>Tools</strong>: AI가 호출할 수 있는 함수 (검색, 폼 입력, 페이지 조작 등)
 - <strong>Resources</strong>: AI가 읽을 수 있는 구조화된 데이터
 - <strong>Prompts</strong>: 사전 정의된 프롬프트 템플릿
 
-MCP 서버를 직접 구현해보고 싶다면 [MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기](/ko/blog/ko/mcp-server-build-practical-guide-2026)를 참고하세요.
+MCP 서버를 직접 구현해보고 싶다면 [MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기](/ko/blog/ko/mcp-server-build-practical-guide-2026)를 참고하면 된다.
 
 ## WebMCP의 작동 원리
 
-WebMCP는 웹 페이지가 자신의 기능을 MCP 서버로 노출할 수 있게 합니다. 웹 개발자는 자신의 사이트에서 AI 에이전트가 사용할 수 있는 툴과 데이터를 선언적으로 정의합니다.
+WebMCP는 웹 페이지가 자신의 기능을 MCP 서버로 노출할 수 있게 한다. 웹 개발자는 자신의 사이트에서 AI 에이전트가 사용할 수 있는 툴과 데이터를 선언적으로 정의한다.
 
 ### 아키텍처
 
@@ -119,7 +119,7 @@ sequenceDiagram
 
 ## 웹 개발자를 위한 WebMCP 구현
 
-웹 개발자는 자신의 사이트에 WebMCP를 구현하여 AI 에이전트가 활용할 수 있는 기능을 노출할 수 있습니다.
+웹 개발자는 자신의 사이트에 WebMCP를 구현하여 AI 에이전트가 활용할 수 있는 기능을 노출할 수 있다.
 
 ### 예시: 전자상거래 사이트
 
@@ -180,7 +180,7 @@ navigator.mcp.registerTool({
 
 ## AI 에이전트 생태계에 미치는 영향
 
-WebMCP는 AI 에이전트의 웹 활용 방식을 근본적으로 변화시킵니다.
+WebMCP는 AI 에이전트의 웹 활용 방식을 근본적으로 변화시킨다.
 
 ```mermaid
 graph TD
@@ -199,35 +199,35 @@ graph TD
 
 ### 1. 스크래핑의 종말
 
-웹 사이트가 직접 구조화된 인터페이스를 제공하므로, 불안정한 DOM 스크래핑이 필요 없어집니다. 사이트 UI가 변경되어도 MCP 인터페이스는 유지됩니다.
+웹 사이트가 직접 구조화된 인터페이스를 제공하므로, 불안정한 DOM 스크래핑이 필요 없어진다. 사이트 UI가 변경되어도 MCP 인터페이스는 유지된다.
 
 ### 2. 에이전트 개발 간소화
 
-AI 에이전트 개발자는 각 사이트별 커스텀 스크래핑 로직을 작성할 필요 없이, 표준화된 MCP 프로토콜로 모든 WebMCP 지원 사이트와 통신할 수 있습니다.
+AI 에이전트 개발자는 각 사이트별 커스텀 스크래핑 로직을 작성할 필요 없이, 표준화된 MCP 프로토콜로 모든 WebMCP 지원 사이트와 통신할 수 있다.
 
 ### 3. 보안과 권한 관리
 
-브라우저가 중간 레이어로 동작하므로, 사용자의 동의 하에 안전하게 AI 에이전트의 접근을 제어할 수 있습니다. 기존 브라우저 보안 모델(CORS, CSP 등)이 그대로 적용됩니다.
+브라우저가 중간 레이어로 동작하므로, 사용자의 동의 하에 안전하게 AI 에이전트의 접근을 제어할 수 있다. 기존 브라우저 보안 모델(CORS, CSP 등)이 그대로 적용된다.
 
 ### 4. 새로운 비즈니스 모델
 
-웹 서비스가 AI 에이전트를 위한 <strong>MCP 엔드포인트</strong>를 제공하는 것이 SEO만큼 중요한 전략이 될 수 있습니다. "AI 에이전트 최적화(AEO)"라는 새로운 영역이 등장할 것입니다.
+웹 서비스가 AI 에이전트를 위한 <strong>MCP 엔드포인트</strong>를 제공하는 것이 SEO만큼 중요한 전략이 될 수 있다. "AI 에이전트 최적화(AEO)"라는 새로운 영역이 등장할 것이다.
 
 ## 다른 브라우저와 표준화 전망
 
-현재 WebMCP는 Chrome 146에서 먼저 도입되지만, 웹 표준화를 통해 다른 브라우저로 확산될 가능성이 높습니다.
+현재 WebMCP는 Chrome 146에서 먼저 도입되지만, 웹 표준화를 통해 다른 브라우저로 확산될 가능성이 높다.
 
 - <strong>Firefox</strong>: Mozilla의 AI 전략과 맞물려 도입 검토 가능성
 - <strong>Safari</strong>: Apple Intelligence와의 통합 관점에서 주목
 - <strong>Edge</strong>: Copilot과의 자연스러운 연동이 예상됨
 
-MCP가 이미 오픈 프로토콜로 설계되어 있어, 브라우저 간 호환성 확보가 비교적 용이할 것으로 보입니다. MCP의 오픈 표준화 과정과 엔지니어링 팀의 도입 전략은 [MCP가 오픈 표준이 되었다 — Linux Foundation 합류와 도입 로드맵](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide)에서 자세히 살펴볼 수 있습니다.
+MCP가 이미 오픈 프로토콜로 설계되어 있어, 브라우저 간 호환성 확보가 비교적 용이할 것으로 보다. MCP의 오픈 표준화 과정과 엔지니어링 팀의 도입 전략은 [MCP가 오픈 표준이 되었다 — Linux Foundation 합류와 도입 로드맵](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide)에서 자세히 살펴볼 수 있다.
 
 ## 개발자가 준비해야 할 것
 
 ### 단기 (3-6개월)
 
-1. MCP 프로토콜 스펙 학습 — [로컬 LLM으로 프라이빗 MCP 서버 구축하기](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)에서 오프라인 환경에서 MCP를 직접 실험해볼 수 있습니다
+1. MCP 프로토콜 스펙 학습 — [로컬 LLM으로 프라이빗 MCP 서버 구축하기](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)에서 오프라인 환경에서 MCP를 직접 실험해볼 수 있다
 2. 자사 서비스의 AI 에이전트 활용 시나리오 도출
 3. Chrome 146 베타에서 WebMCP 실험
 
@@ -245,11 +245,11 @@ MCP가 이미 오픈 프로토콜로 설계되어 있어, 브라우저 간 호�
 
 ## 결론
 
-WebMCP는 웹의 다음 진화 단계입니다. 웹 페이지가 단순히 사람이 보는 UI에서, <strong>AI 에이전트가 활용하는 구조화된 서비스</strong>로 변모합니다.
+WebMCP는 웹의 다음 진화 단계다. 웹 페이지가 단순히 사람이 보는 UI에서, <strong>AI 에이전트가 활용하는 구조화된 서비스</strong>로 변모한다.
 
-Chrome 146의 WebMCP 도입은 시작에 불과합니다. 앞으로 모든 웹 서비스가 "사람을 위한 UI"와 "AI를 위한 MCP 인터페이스"를 동시에 제공하는 시대가 올 것입니다.
+Chrome 146의 WebMCP 도입은 시작에 불과하다. 앞으로 모든 웹 서비스가 "사람을 위한 UI"와 "AI를 위한 MCP 인터페이스"를 동시에 제공하는 시대가 올 것이다.
 
-웹 개발자에게 이것은 단순한 새 기능이 아닌, <strong>웹의 존재 목적 자체를 재정의하는 전환점</strong>입니다.
+웹 개발자에게 이것은 단순한 새 기능이 아닌, <strong>웹의 존재 목적 자체를 재정의하는 전환점</strong>이다.
 
 ## 참고 자료
 

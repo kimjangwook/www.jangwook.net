@@ -2397,7 +2397,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "vector-db-comparison-2026-qdrant-chroma-pgvector.md",
@@ -2406,7 +2406,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "verbalized-sampling-llm-diversity.md",
@@ -2415,7 +2415,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "vercel-ai-sdk-claude-streaming-agent-2026.md",
@@ -2424,7 +2424,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "vertex-ai-search-site-implementation.md",
@@ -2433,7 +2433,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "vitest-4-jest-migration-guide-2026.md",
@@ -2442,7 +2442,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "webmcp-chrome-146-ai-tool-server.md",
@@ -2452,7 +2452,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "weekly-analytics-2025-10-14.md",
@@ -2461,7 +2461,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "why-i-built-insightforge-validation-priorities.md",
@@ -2470,7 +2470,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "windsurf-arena-mode-speed-over-accuracy.md",
@@ -2480,7 +2480,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   }
  ]
 }

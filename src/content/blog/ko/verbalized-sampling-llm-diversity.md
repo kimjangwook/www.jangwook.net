@@ -55,22 +55,22 @@ relatedPosts:
 
 # Verbalized Sampling: LLM 다양성을 되찾는 훈련 불필요 프롬프팅 기법
 
-최신 대형 언어 모델(LLM)은 놀라운 성능을 보여주지만, 동시에 중요한 문제를 안고 있습니다. 바로 <strong>출력 다양성의 감소</strong>입니다. 특히 RLHF(Reinforcement Learning from Human Feedback)와 같은 정렬(alignment) 과정을 거친 후, 모델은 안전하고 정확해지지만 창의성이 떨어지는 경향이 있습니다.
+최신 대형 언어 모델(LLM)은 놀라운 성능을 보여주지만, 동시에 중요한 문제를 안고 있다. 바로 <strong>출력 다양성의 감소</strong>다. 특히 RLHF(Reinforcement Learning from Human Feedback)와 같은 정렬(alignment) 과정을 거친 후, 모델은 안전하고 정확해지지만 창의성이 떨어지는 경향이 있다.
 
-스탠퍼드 대학교와 조지아 공과대학교 연구팀이 발표한 최신 논문 "Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity"는 이 문제에 대한 혁신적인 해결책을 제시합니다. 가장 흥미로운 점은 <strong>모델을 재훈련할 필요 없이</strong> 프롬프팅만으로 다양성을 1.6〜2.1배 향상시킬 수 있다는 것입니다.
+스탠퍼드 대학교와 조지아 공과대학교 연구팀이 발표한 최신 논문 "Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity"는 이 문제에 대한 혁신적인 해결책을 제시한다. 가장 흥미로운 점은 <strong>모델을 재훈련할 필요 없이</strong> 프롬프팅만으로 다양성을 1.6〜2.1배 향상시킬 수 있다는 것이다.
 
-이 글에서는 Verbalized Sampling의 원리, 구현 방법, 그리고 실전 활용 사례를 상세히 다룹니다.
+이 글에서는 Verbalized Sampling의 원리, 구현 방법, 그리고 실전 활용 사례를 상세히 다룬다.
 
 ## 문제의 본질: 모드 붕괴(Mode Collapse)란?
 
 ### 정렬 과정의 역설
 
-현대 LLM은 일반적으로 두 단계를 거쳐 개발됩니다:
+현대 LLM은 일반적으로 두 단계를 거쳐 개발된다:
 
 1. <strong>사전 훈련(Pre-training)</strong>: 방대한 텍스트 데이터로 언어 패턴 학습
 2. <strong>정렬(Alignment)</strong>: 인간의 선호도에 맞춰 출력 조정 (RLHF, DPO 등)
 
-정렬 과정은 모델을 더 유용하고 안전하게 만들지만, 예상치 못한 부작용이 있습니다. 바로 <strong>모드 붕괴(mode collapse)</strong>입니다.
+정렬 과정은 모델을 더 유용하고 안전하게 만들지만, 예상치 못한 부작용이 있다. 바로 <strong>모드 붕괴(mode collapse)</strong>이다.
 
 ```mermaid
 graph LR
@@ -86,17 +86,17 @@ graph LR
 
 ### 전형성 편향(Typicality Bias)
 
-연구팀은 이 현상의 근본 원인을 <strong>선호 데이터의 전형성 편향</strong>으로 규명했습니다. 인간 평가자들은 다음과 같은 경향이 있습니다:
+연구팀은 이 현상의 근본 원인을 <strong>선호 데이터의 전형성 편향</strong>으로 규명했다. 인간 평가자들은 다음과 같은 경향이 있다:
 
 - 익숙한 패턴을 선호
 - 예측 가능한 응답에 높은 점수 부여
 - 창의적이지만 비전형적인 답변 평가절하
 
-결과적으로 정렬된 모델은 "안전한" 답변만 생성하게 되고, 출력 분포의 꼬리 부분(tail distribution)을 무시하게 됩니다.
+결과적으로 정렬된 모델은 "안전한" 답변만 생성하게 되고, 출력 분포의 꼬리 부분(tail distribution)을 무시하게 된다.
 
 ### 실제 영향
 
-이러한 다양성 감소는 다음과 같은 작업에서 특히 문제가 됩니다:
+이러한 다양성 감소는 다음과 같은 작업에서 특히 문제가 된다:
 
 - <strong>창의적 글쓰기</strong>: 시, 소설, 농담 생성
 - <strong>합성 데이터 생성</strong>: 학습용 다양한 예제 필요
@@ -107,7 +107,7 @@ graph LR
 
 ### 핵심 아이디어
 
-Verbalized Sampling(VS)은 모델에게 단순히 답변을 생성하도록 요청하는 대신, <strong>가능한 응답의 확률 분포를 언어로 표현</strong>하도록 요청합니다. 이는 다음과 같은 과정으로 이루어집니다:
+Verbalized Sampling(VS)은 모델에게 단순히 답변을 생성하도록 요청하는 대신, <strong>가능한 응답의 확률 분포를 언어로 표현</strong>하도록 요청한다. 이는 다음과 같은 과정으로 이루어진다:
 
 1. 모델에게 k개의 가능한 응답 생성 요청
 2. 각 응답에 확률값 할당 요청
@@ -131,7 +131,7 @@ sequenceDiagram
 
 ### 왜 효과적인가?
 
-Verbalized Sampling이 작동하는 이유는 다음과 같습니다:
+Verbalized Sampling이 작동하는 이유는 다음과 같다:
 
 1. <strong>명시적 다양성 유도</strong>: 모델에게 직접 다양한 응답을 요청
 2. <strong>확률적 제어</strong>: tau 파라미터로 희귀도 조절
@@ -142,7 +142,7 @@ Verbalized Sampling이 작동하는 이유는 다음과 같습니다:
 
 ### Python 라이브러리 사용
 
-연구팀은 사용하기 쉬운 Python 라이브러리를 제공합니다:
+연구팀은 사용하기 쉬운 Python 라이브러리를 제공한다:
 
 ```python
 from verbalized_sampling import verbalize
@@ -167,7 +167,7 @@ for response in dist.responses:
 
 ### 직접 프롬프팅
 
-라이브러리 없이도 직접 프롬프트를 작성할 수 있습니다:
+라이브러리 없이도 직접 프롬프트를 작성할 수 있다:
 
 ```python
 prompt = """<instructions>
@@ -221,7 +221,7 @@ print(chosen['text'])
 
 ### 다양성 향상 지표
 
-연구팀은 다양한 작업에서 Verbalized Sampling의 효과를 측정했습니다:
+연구팀은 다양한 작업에서 Verbalized Sampling의 효과를 측정했다:
 
 ```python
 # 다양성 측정 예제 (Self-BLEU 사용)
@@ -353,7 +353,7 @@ sentiment_data = generate_training_data(
 print(f"생성된 데이터: {len(sentiment_data)}개")
 ```
 
-Pydantic AI, Instructor 같은 AI 에이전트 라이브러리와 결합하면 합성 데이터 파이프라인을 더욱 효율적으로 구축할 수 있습니다. [Python AI 에이전트 라이브러리 비교(Pydantic AI vs Instructor vs Smolagents)](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 각 라이브러리의 특징을 확인해보세요.
+Pydantic AI, Instructor 같은 AI 에이전트 라이브러리와 결합하면 합성 데이터 파이프라인을 더욱 효율적으로 구축할 수 있다. [Python AI 에이전트 라이브러리 비교(Pydantic AI vs Instructor vs Smolagents)](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 각 라이브러리의 특징을 확인해보면 된다.
 
 ### 3. 대화 시뮬레이션: 다양한 페르소나
 
@@ -403,7 +403,7 @@ for turn in dialogue:
     print(f"{turn['speaker']}: {turn['text']}\n")
 ```
 
-멀티에이전트 환경에서 페르소나 간 협업 패턴을 설계하는 방법은 [AI 에이전트 협업 패턴: 프로덕션 시스템 구조화 가이드](/ko/blog/ko/ai-agent-collaboration-patterns)에서 더 자세히 다루고 있습니다.
+멀티에이전트 환경에서 페르소나 간 협업 패턴을 설계하는 방법은 [AI 에이전트 협업 패턴: 프로덕션 시스템 구조화 가이드](/ko/blog/ko/ai-agent-collaboration-patterns)에서 더 자세히 다루고 있다.
 
 ### 4. 다관점 답변 생성
 
@@ -560,7 +560,7 @@ def evaluate_quality(text):
 
 ### 언제 사용하지 말아야 할까?
 
-Verbalized Sampling이 모든 상황에 적합한 것은 아닙니다:
+Verbalized Sampling이 모든 상황에 적합한 것은 아니다:
 
 1. <strong>사실적 정확성이 중요한 경우</strong>
    - 의료 진단, 법률 자문 등
@@ -671,7 +671,7 @@ diverse_jokes = ensemble_sampling(
 
 ## 결론: 다양성과 품질의 균형
 
-Verbalized Sampling은 LLM의 근본적인 문제를 우아하게 해결합니다. 재훈련이나 복잡한 설정 없이, 단순한 프롬프팅 기법만으로 출력 다양성을 크게 향상시킬 수 있습니다.
+Verbalized Sampling은 LLM의 근본적인 문제를 우아하게 해결한다. 재훈련이나 복잡한 설정 없이, 단순한 프롬프팅 기법만으로 출력 다양성을 크게 향상시킬 수 있다.
 
 ### 핵심 요약
 
@@ -715,7 +715,7 @@ print(dist.sample().text)
 - <strong>데모</strong>: [Hugging Face Space](https://huggingface.co/spaces/stanford-oval/verbalized-sampling-demo)
 - <strong>Claude Code 실전 적용</strong>: [Claude Code에서 Verbalized Sampling 활용하기](/ko/blog/ko/claude-code-verbalized-sampling)
 
-Verbalized Sampling은 LLM의 창의적 잠재력을 끌어내는 강력한 도구입니다. 여러분의 프로젝트에서 다양성이 필요한 순간이 있다면, 이 기법을 시도해보시기 바랍니다. 간단한 프롬프트 변경만으로 놀라운 결과를 얻을 수 있을 것입니다.
+Verbalized Sampling은 LLM의 창의적 잠재력을 끌어내는 강력한 도구다. 여러분의 프로젝트에서 다양성이 필요한 순간이 있다면, 이 기법을 시도해보시기 바란다. 간단한 프롬프트 변경만으로 놀라운 결과를 얻을 수 있을 것이다.
 
 ---
 

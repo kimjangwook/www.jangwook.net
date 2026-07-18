@@ -60,21 +60,21 @@ relatedPosts:
 
 ## 개요
 
-웹사이트에 검색 기능을 추가하는 것은 사용자 경험을 크게 향상시키지만, 전통적인 검색 엔진을 직접 구축하는 것은 많은 노력이 필요합니다. Google의 <strong>Vertex AI Search</strong>는 이러한 문제를 해결하는 관리형 검색 솔루션입니다. 단순한 키워드 매칭을 넘어 <strong>의미론적 검색(Semantic Search)</strong>과 <strong>AI 요약 기능</strong>을 제공하여, 사용자가 원하는 정보를 더 빠르고 정확하게 찾을 수 있도록 도와줍니다.
+웹사이트에 검색 기능을 추가하는 것은 사용자 경험을 크게 향상시키지만, 전통적인 검색 엔진을 직접 구축하는 것은 많은 노력이 필요하다. Google의 <strong>Vertex AI Search</strong>는 이러한 문제를 해결하는 관리형 검색 솔루션이다. 단순한 키워드 매칭을 넘어 <strong>의미론적 검색(Semantic Search)</strong>과 <strong>AI 요약 기능</strong>을 제공하여, 사용자가 원하는 정보를 더 빠르고 정확하게 찾을 수 있도록 도와준다.
 
 ### 기존 검색 솔루션과의 차별점
 
-전통적인 검색 엔진은 키워드 기반 검색에 의존하지만, Vertex AI Search는 다음과 같은 차별화된 기능을 제공합니다:
+전통적인 검색 엔진은 키워드 기반 검색에 의존하지만, Vertex AI Search는 다음과 같은 차별화된 기능을 제공한다:
 
-- 🧠 <strong>세맨틱 검색</strong>: 키워드 매칭이 아닌 의미 기반 검색
-- 📝 <strong>AI 요약</strong>: 검색 결과를 자동으로 요약하여 제공
-- 🔍 <strong>자동 인덱싱</strong>: 웹사이트 크롤링 및 콘텐츠 자동 수집
+- <strong>세맨틱 검색</strong>: 키워드 매칭이 아닌 의미 기반 검색
+- <strong>AI 요약</strong>: 검색 결과를 자동으로 요약하여 제공
+- <strong>자동 인덱싱</strong>: 웹사이트 크롤링 및 콘텐츠 자동 수집
 - <strong>검색 분석</strong>: 사용자 검색 패턴 및 성능 지표 제공
 - <strong>완전 관리형</strong>: 인프라 관리 불필요
 
 ### 아키텍처 개요
 
-이 글에서 구현할 시스템의 전체 아키텍처는 다음과 같습니다:
+이 글에서 구현할 시스템의 전체 아키텍처는 다음과 같다:
 
 ```mermaid
 graph LR
@@ -97,7 +97,7 @@ graph LR
 
 ### Google Cloud 프로젝트 설정
 
-먼저 Google Cloud Console에서 새 프로젝트를 생성하거나 기존 프로젝트를 선택합니다. GCP 인프라를 체계적으로 관리하고 싶다면 [gcloud MCP로 GCP 인프라 자동 감사 구현하기](/ko/blog/ko/gcloud-mcp-infrastructure-audit)도 함께 살펴보세요.
+먼저 Google Cloud Console에서 새 프로젝트를 생성하거나 기존 프로젝트를 선택한다. GCP 인프라를 체계적으로 관리하고 싶다면 [gcloud MCP로 GCP 인프라 자동 감사 구현하기](/ko/blog/ko/gcloud-mcp-infrastructure-audit)도 함께 살펴보면 된다.
 
 ```bash
 # gcloud CLI 설치 (아직 없다면)
@@ -113,31 +113,31 @@ gcloud config set project YOUR_PROJECT_ID
 
 ### Vertex AI Search 엔진 생성
 
-Google Cloud Console에서 <strong>Agent Builder</strong>를 통해 검색 엔진을 생성합니다:
+Google Cloud Console에서 <strong>Agent Builder</strong>를 통해 검색 엔진을 생성한다:
 
 1. <strong>Agent Builder 접속</strong>
-   - Google Cloud Console → "Vertex AI" → "Agent Builder" 메뉴
-   - 또는 직접 URL: `https://console.cloud.google.com/gen-app-builder`
+ - Google Cloud Console → "Vertex AI" → "Agent Builder" 메뉴
+ - 또는 직접 URL: `https://console.cloud.google.com/gen-app-builder`
 
 2. <strong>새 앱 생성</strong>
-   - "Create App" 버튼 클릭
-   - App type: "Search" 선택
-   - Content: "Website content" 선택
+ - "Create App" 버튼 클릭
+ - App type: "Search" 선택
+ - Content: "Website content" 선택
 
 3. <strong>데이터 소스 설정</strong>
-   - Data source name 입력 (예: `my-website`)
-   - Website URLs 입력 (크롤링할 도메인)
-   - Advanced options:
-     - Crawling frequency: 매일 또는 매주
-     - Max pages: 제한 없음 또는 특정 값
+ - Data source name 입력 (예: `my-website`)
+ - Website URLs 입력 (크롤링할 도메인)
+ - Advanced options:
+ - Crawling frequency: 매일 또는 매주
+ - Max pages: 제한 없음 또는 특정 값
 
 4. <strong>엔진 생성 완료</strong>
-   - 생성 후 <strong>Engine ID</strong> 확인 및 기록
-   - 초기 크롤링은 몇 시간 소요될 수 있음
+ - 생성 후 <strong>Engine ID</strong> 확인 및 기록
+ - 초기 크롤링은 몇 시간 소요될 수 있음
 
 ### 필요한 API 활성화
 
-다음 API들을 활성화해야 합니다:
+다음 API들을 활성화해야 한다:
 
 ```bash
 # Discovery Engine API (Vertex AI Search)
@@ -153,7 +153,7 @@ gcloud services enable cloudbuild.googleapis.com
 gcloud services enable run.googleapis.com
 ```
 
-또는 Google Cloud Console에서 직접 활성화할 수 있습니다:
+또는 Google Cloud Console에서 직접 활성화할 수 있다:
 - APIs & Services → Library → 각 API 검색 후 "Enable"
 
 ## Cloud Functions API 서버 구현
@@ -171,7 +171,7 @@ vertex-ai-search-api/
 
 ### package.json
 
-먼저 필요한 의존성을 정의합니다:
+먼저 필요한 의존성을 정의한다:
 
 ```json
 {
@@ -199,7 +199,7 @@ vertex-ai-search-api/
 
 ### index.js - 핵심 코드
 
-Cloud Functions의 메인 로직입니다:
+Cloud Functions의 메인 로직이다:
 
 ```javascript
 const { SearchServiceClient } = require('@google-cloud/discoveryengine').v1alpha;
@@ -355,31 +355,31 @@ exports.search = async (req, res) => {
 <strong>핵심 기능 설명</strong>:
 
 1. <strong>CORS 설정</strong>
-   - 환경변수로 허용 도메인 제한 가능
-   - 도메인 제한이 없으면 모든 도메인 허용 (개발 환경용)
+ - 환경변수로 허용 도메인 제한 가능
+ - 도메인 제한이 없으면 모든 도메인 허용 (개발 환경용)
 
 2. <strong>Discovery Engine API 연동</strong>
-   - `SearchServiceClient`를 통한 검색 요청
-   - `servingConfig` 경로 구성: `projects/{number}/locations/{location}/collections/default_collection/engines/{engine_id}/servingConfigs/default_config`
+ - `SearchServiceClient`를 통한 검색 요청
+ - `servingConfig` 경로 구성: `projects/{number}/locations/{location}/collections/default_collection/engines/{engine_id}/servingConfigs/default_config`
 
 3. <strong>AI 요약 기능</strong>
-   - `summarySpec`을 통해 검색 결과 자동 요약
-   - 요약에 사용할 결과 수 지정 (`summaryResultCount`)
-   - 출처 인용 포함 (`includeCitations`)
+ - `summarySpec`을 통해 검색 결과 자동 요약
+ - 요약에 사용할 결과 수 지정 (`summaryResultCount`)
+ - 출처 인용 포함 (`includeCitations`)
 
 4. <strong>검색 결과 정제</strong>
-   - 제목, 링크, 스니펫, 썸네일 추출
-   - 메타데이터 (pubDate, tags) 포함
+ - 제목, 링크, 스니펫, 썸네일 추출
+ - 메타데이터 (pubDate, tags) 포함
 
 5. <strong>에러 처리</strong>
-   - 쿼터 초과 시 429 상태 코드 반환
-   - Fallback 플래그로 클라이언트에서 대체 검색 가능
+ - 쿼터 초과 시 429 상태 코드 반환
+ - Fallback 플래그로 클라이언트에서 대체 검색 가능
 
 ## 환경변수 설정
 
 ### .env.example
 
-환경변수 템플릿을 작성합니다:
+환경변수 템플릿을 작성한다:
 
 ```bash
 # === 필수 설정 ===
@@ -441,7 +441,7 @@ gcloud discovery-engine engines list \
 
 ## 자동화된 배포 스크립트 (deploy.sh)
 
-이 프로젝트의 핵심은 <strong>배포 자동화</strong>입니다. 셸 스크립트를 사용하여 복잡한 배포 과정을 단순화합니다.
+이 프로젝트의 핵심은 <strong>배포 자동화</strong>다. 셸 스크립트를 사용하여 복잡한 배포 과정을 단순화한다.
 
 ### deploy.sh 전체 코드
 
@@ -874,29 +874,29 @@ fi
 ### 스크립트의 주요 기능
 
 1. <strong>.env 파일 읽기 및 파싱</strong>
-   - `source` 명령어로 환경변수 로드
-   - 필수 변수 누락 시 에러 메시지 출력
+ - `source` 명령어로 환경변수 로드
+ - 필수 변수 누락 시 에러 메시지 출력
 
 2. <strong>gcloud 프로젝트 자동 확인/전환</strong>
-   - 현재 설정된 프로젝트와 배포 대상 프로젝트 비교
-   - 다르면 사용자에게 확인 후 자동 전환
+ - 현재 설정된 프로젝트와 배포 대상 프로젝트 비교
+ - 다르면 사용자에게 확인 후 자동 전환
 
 3. <strong>필요한 API 자동 활성화</strong>
-   - Discovery Engine, Cloud Functions, Cloud Build, Cloud Run API
-   - 비활성화 상태면 자동으로 활성화
+ - Discovery Engine, Cloud Functions, Cloud Build, Cloud Run API
+ - 비활성화 상태면 자동으로 활성화
 
 4. <strong>Cloud Functions 배포</strong>
-   - Gen2 함수 사용 (더 빠르고 강력함)
-   - 환경변수 자동 설정
-   - 인증 없이 접근 가능하도록 설정 (`--allow-unauthenticated`)
+ - Gen2 함수 사용 (더 빠르고 강력함)
+ - 환경변수 자동 설정
+ - 인증 없이 접근 가능하도록 설정 (`--allow-unauthenticated`)
 
 5. <strong>엔드포인트 URL 자동 저장</strong>
-   - 배포 완료 후 함수 URL 조회
-   - `.env.deployed` 파일에 저장하여 재사용 가능
+ - 배포 완료 후 함수 URL 조회
+ - `.env.deployed` 파일에 저장하여 재사용 가능
 
 6. <strong>테스트 HTML 자동 생성</strong>
-   - 배포된 API를 바로 테스트할 수 있는 HTML 파일 생성
-   - API URL이 자동으로 포함됨
+ - 배포된 API를 바로 테스트할 수 있는 HTML 파일 생성
+ - API URL이 자동으로 포함됨
 
 ### 사용법
 
@@ -932,7 +932,7 @@ chmod +x deploy.sh
 
 ### 다중 환경 관리
 
-여러 환경을 관리하기 위해 환경별 .env 파일을 생성할 수 있습니다:
+여러 환경을 관리하기 위해 환경별 .env 파일을 생성할 수 있다:
 
 ```
 .env.development   # 개발 환경
@@ -940,7 +940,7 @@ chmod +x deploy.sh
 .env.production    # 프로덕션 환경
 ```
 
-각 환경별로 다른 설정을 사용할 수 있습니다:
+각 환경별로 다른 설정을 사용할 수 있다:
 
 ```bash
 # .env.development
@@ -962,7 +962,7 @@ MAX_INSTANCES=10
 
 ### 기본 검색 구현
 
-Cloud Functions API를 호출하는 JavaScript 코드입니다:
+Cloud Functions API를 호출하는 JavaScript 코드다:
 
 ```javascript
 // 검색 함수
@@ -998,7 +998,7 @@ searchSite('Vertex AI')
 
 ### 검색 UI 컴포넌트
 
-React/Vue/Vanilla JS 등에서 사용할 수 있는 검색 UI 예시입니다:
+React/Vue/Vanilla JS 등에서 사용할 수 있는 검색 UI 예시다:
 
 ```javascript
 // 검색 결과 렌더링
@@ -1067,7 +1067,7 @@ function displayResults(data) {
 
 ### Astro 통합 예시
 
-Astro 프레임워크에서 사용하는 예시입니다:
+Astro 프레임워크에서 사용하는 예시다:
 
 ```astro
 ---
@@ -1201,7 +1201,7 @@ Astro 프레임워크에서 사용하는 예시입니다:
 
 ### 환경변수 설정 (.env)
 
-Astro 프로젝트의 `.env` 파일에 API URL을 추가합니다:
+Astro 프로젝트의 `.env` 파일에 API URL을 추가한다:
 
 ```bash
 # Public variables (클라이언트에서 접근 가능)
@@ -1212,7 +1212,7 @@ PUBLIC_SEARCH_API_URL=https://YOUR_REGION-YOUR_PROJECT_ID.cloudfunctions.net/ver
 
 ### 디바운싱 (Debouncing)
 
-사용자가 입력할 때마다 검색하는 것을 방지하여 API 호출 횟수를 줄입니다:
+사용자가 입력할 때마다 검색하는 것을 방지하여 API 호출 횟수를 줄이다:
 
 ```javascript
 // 디바운스 함수
@@ -1238,7 +1238,7 @@ searchInput.addEventListener('input', () => {
 
 ### 결과 캐싱
 
-동일한 검색어에 대해 반복 요청을 방지합니다:
+동일한 검색어에 대해 반복 요청을 방지한다:
 
 ```javascript
 // 간단한 인메모리 캐시
@@ -1339,16 +1339,16 @@ CSS 스피너:
 Vertex AI Search의 주요 비용 요소:
 
 1. <strong>인덱싱 비용</strong>
-   - 웹사이트 크롤링 및 인덱싱
-   - 문서 개수와 크기에 비례
+ - 웹사이트 크롤링 및 인덱싱
+ - 문서 개수와 크기에 비례
 
 2. <strong>쿼리 비용</strong>
-   - 검색 요청당 과금
-   - AI 요약 사용 시 추가 비용
+ - 검색 요청당 과금
+ - AI 요약 사용 시 추가 비용
 
 3. <strong>Cloud Functions 비용</strong>
-   - 함수 호출 횟수
-   - 실행 시간 및 메모리 사용량
+ - 함수 호출 횟수
+ - 실행 시간 및 메모리 사용량
 
 ### 비용 절감 전략
 
@@ -1514,16 +1514,16 @@ exports.search = async (req, res) => {
 Google Cloud Console에서 확인할 수 있는 메트릭:
 
 - <strong>Cloud Functions</strong>:
-  - 호출 횟수
-  - 평균 실행 시간
-  - 메모리 사용량
-  - 오류율
+ - 호출 횟수
+ - 평균 실행 시간
+ - 메모리 사용량
+ - 오류율
 
 - <strong>Vertex AI Search</strong>:
-  - 검색 쿼리 수
-  - 평균 응답 시간
-  - 인덱싱된 문서 수
-  - AI 요약 사용 횟수
+ - 검색 쿼리 수
+ - 평균 응답 시간
+ - 인덱싱된 문서 수
+ - AI 요약 사용 횟수
 
 ### 알림 설정
 
@@ -1673,7 +1673,7 @@ async function getAutocompleteSuggestions(query) {
 
 <strong>3. 검색 분석 대시보드</strong>
 
-Google Analytics와 통합하여 검색 패턴 분석할 수 있습니다. AI 에이전트로 분석을 자동화하고 싶다면 [Google Analytics MCP와 AI 에이전트로 블로그 분석 자동화하기](/ko/blog/ko/google-analytics-mcp-automation)를 참고하세요.
+Google Analytics와 통합하여 검색 패턴 분석할 수 있다. AI 에이전트로 분석을 자동화하고 싶다면 [Google Analytics MCP와 AI 에이전트로 블로그 분석 자동화하기](/ko/blog/ko/google-analytics-mcp-automation)를 참고하면 된다.
 
 ```javascript
 // Google Analytics 이벤트 트래킹
@@ -1703,24 +1703,24 @@ async function searchSite(query, language = 'ko') {
 ### 다음 단계
 
 1. <strong>프로덕션 배포</strong>
-   - `.env.production` 파일 생성
-   - 도메인 제한 활성화
-   - 모니터링 알림 설정
+ - `.env.production` 파일 생성
+ - 도메인 제한 활성화
+ - 모니터링 알림 설정
 
 2. <strong>성능 최적화</strong>
-   - CDN을 통한 API 응답 캐싱
-   - 검색 결과 페이지네이션
-   - 레이지 로딩 구현
+ - CDN을 통한 API 응답 캐싱
+ - 검색 결과 페이지네이션
+ - 레이지 로딩 구현
 
 3. <strong>사용자 경험 개선</strong>
-   - 검색어 하이라이팅
-   - 검색 히스토리 저장
-   - 즐겨찾기 기능
+ - 검색어 하이라이팅
+ - 검색 히스토리 저장
+ - 즐겨찾기 기능
 
 4. <strong>보안 강화</strong>
-   - API 키 기반 인증 추가
-   - Rate limiting 구현
-   - HTTPS 강제
+ - API 키 기반 인증 추가
+ - Rate limiting 구현
+ - HTTPS 강제
 
 ### 참고 자료
 
@@ -1740,4 +1740,4 @@ async function searchSite(query, language = 'ko') {
 
 ---
 
-<strong>이제 웹사이트에 강력한 AI 검색 기능을 추가해보세요! </strong>
+<strong>이제 웹사이트에 강력한 AI 검색 기능을 추가할 수 있다.</strong>
