@@ -59,15 +59,15 @@ relatedPosts:
 
 ## 개요
 
-2025년 10월 16일, Anthropic은 <strong>Agent Skills</strong>라는 혁신적인 기능을 발표했습니다. 이는 단순한 프롬프트 엔지니어링을 넘어, <strong>파일과 폴더로 AI 에이전트의 전문성을 구조화</strong>하는 새로운 패러다임입니다.
+2025년 10월 16일, Anthropic은 <strong>Agent Skills</strong>라는 혁신적인 기능을 발표했다. 이는 단순한 프롬프트 엔지니어링을 넘어, <strong>파일과 폴더로 AI 에이전트의 전문성을 구조화</strong>하는 새로운 패러다임이다.
 
-이 글에서는 Claude Skills를 내 블로그 자동화 프로젝트에 적용하면서 겪은 <strong>시행착오, 해결 과정, 그리고 실전 노하우</strong>를 공유합니다. 단순한 기능 소개가 아닌, <strong>실제 코드와 함께 배운 교훈</strong>을 담았습니다. Anthropic이 공식 정의한 스킬 명세와 표준 아키텍처는 [Anthropic Agent Skills 표준](/ko/blog/ko/anthropic-agent-skills-standard)에서 먼저 확인하면 이 글을 더 잘 이해할 수 있습니다.
+이 글에서는 Claude Skills를 내 블로그 자동화 프로젝트에 적용하면서 겪은 <strong>시행착오, 해결 과정, 그리고 실전 노하우</strong>를 공유한다. 단순한 기능 소개가 아닌, <strong>실제 코드와 함께 배운 교훈</strong>을 담았다. Anthropic이 공식 정의한 스킬 명세와 표준 아키텍처는 [Anthropic Agent Skills 표준](/ko/blog/ko/anthropic-agent-skills-standard)에서 먼저 확인하면 이 글을 더 잘 이해할 수 있다.
 
 ## Agent Skills란 무엇인가?
 
 ### 핵심 개념
 
-Agent Skills는 <strong>전문성을 파일 시스템으로 패키징</strong>하는 방법입니다. 기존에는 시스템 프롬프트에 모든 지시사항을 넣었다면, 이제는:
+Agent Skills는 <strong>전문성을 파일 시스템으로 패키징</strong>하는 방법이다. 기존에는 시스템 프롬프트에 모든 지시사항을 넣었다면, 이제는:
 
 ```
 my-skill/
@@ -80,7 +80,7 @@ my-skill/
     └── template.txt
 ```
 
-이렇게 <strong>조직화된 폴더</strong>로 관리합니다.
+이렇게 <strong>조직화된 폴더</strong>로 관리한다.
 
 ### 기존 방식과의 차이점
 
@@ -120,11 +120,11 @@ python scripts/validate_frontmatter.py post.md
 - <strong>코드 실행</strong>: Python/Bash 스크립트 직접 실행 가능
 - <strong>재사용성</strong>: 팀 전체가 공유 가능
 
-이처럼 Markdown으로 AI 에이전트의 행동을 구조화하는 접근법은 [AI 시대의 사양 주도 개발](/ko/blog/ko/specification-driven-development)에서 다루는 개념과 깊이 연결됩니다.
+이처럼 Markdown으로 AI 에이전트의 행동을 구조화하는 접근법은 [AI 시대의 사양 주도 개발](/ko/blog/ko/specification-driven-development)에서 다루는 개념과 깊이 연결된다.
 
 ### Progressive Disclosure (점진적 공개)
 
-Skills의 핵심 철학은 <strong>3단계 정보 공개</strong>입니다:
+Skills의 핵심 철학은 <strong>3단계 정보 공개</strong>다:
 
 ```mermaid
 graph TD
@@ -157,13 +157,13 @@ For form filling, see [FORMS.md](FORMS.md)
 Detailed form filling instructions...
 ```
 
-이 구조 덕분에 <strong>컨텍스트 윈도우를 효율적으로 활용</strong>하면서도 무제한에 가까운 정보를 제공할 수 있습니다.
+이 구조 덕분에 <strong>컨텍스트 윈도우를 효율적으로 활용</strong>하면서도 무제한에 가까운 정보를 제공할 수 있다.
 
 ## 프로젝트 배경: 왜 Skills가 필요했나?
 
 ### 기존 시스템의 한계
 
-내 블로그 자동화 시스템은 `.claude/agents/` 디렉토리에 여러 서브에이전트를 두는 방식이었습니다:
+내 블로그 자동화 시스템은 `.claude/agents/` 디렉토리에 여러 서브에이전트를 두는 방식이었다:
 
 ```
 .claude/agents/
@@ -664,7 +664,7 @@ Claude가 읽고 참고할 코드 예제
 claude --debug
 ```
 
-Skill 로딩 오류를 상세히 표시합니다.
+Skill 로딩 오류를 상세히 표시한다.
 
 ### Skill 목록 확인
 
@@ -704,7 +704,7 @@ Anthropic Engineering Blog에 따르면:
 
 ## 결론
 
-Claude Skills는 <strong>AI 에이전트 개발의 새로운 표준</strong>이 될 잠재력을 가지고 있습니다. [Anthropic Agent Skills 실전 가이드](/ko/blog/ko/anthropic-agent-skills-practical-guide)에서는 실제 프로젝트에 적용한 구현 사례와 ROI 측정 방법을 확인할 수 있습니다.
+Claude Skills는 <strong>AI 에이전트 개발의 새로운 표준</strong>이 될 잠재력을 가지고 있다. [Anthropic Agent Skills 실전 가이드](/ko/blog/ko/anthropic-agent-skills-practical-guide)에서는 실제 프로젝트에 적용한 구현 사례와 ROI 측정 방법을 확인할 수 있다.
 
 <strong>핵심 장점</strong>:
 - ✅ 폴더 기반의 직관적인 구조
@@ -725,4 +725,4 @@ Claude Skills는 <strong>AI 에이전트 개발의 새로운 표준</strong>이 
 - [Skills Cookbook](https://github.com/anthropics/claude-cookbooks/tree/main/skills)
 - [Skills GitHub Repo](https://github.com/anthropics/skills)
 
-Skills를 활용하여 더 강력하고 효율적인 AI 에이전트를 만들어보세요!
+Skills를 활용하여 더 강력하고 효율적인 AI 에이전트를 만들어보라!

@@ -678,7 +678,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-managed-agents-dreaming-outcomes-code-with-claude-2026.md",
@@ -687,7 +687,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-managed-agents-production-deployment-guide.md",
@@ -696,7 +696,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-mythos-preview-glasswing-ai-cybersecurity.md",
@@ -705,7 +705,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-opus-4-8-dynamic-workflows-parallel-agents-guide.md",
@@ -714,7 +714,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-skills-implementation-guide.md",
@@ -723,7 +723,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-sonnet-46-release.md",
@@ -733,7 +733,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "consistency-diffusion-lm.md",
@@ -743,7 +743,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "cursor-agent-trace-ai-code-attribution.md",
@@ -753,7 +753,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "dapr-agents-v1-cncf-production-ai-framework.md",
@@ -762,7 +762,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "data-driven-pm-framework.md",
