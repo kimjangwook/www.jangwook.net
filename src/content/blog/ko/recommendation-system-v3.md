@@ -60,17 +60,17 @@ relatedPosts:
 
 ## 들어가며
 
-블로그 포스트 추천 시스템의 세 번째 주요 개선 버전인 <strong>V3</strong>를 성공적으로 배포했습니다. 이번 마이그레이션의 핵심은 <strong>1,750줄에 달하는 거대한 recommendations.json 파일을 완전히 제거</strong>하고, 추천 데이터를 각 포스트의 frontmatter에 직접 임베딩하는 것이었습니다.
+블로그 포스트 추천 시스템의 세 번째 주요 개선 버전인 <strong>V3</strong>를 성공적으로 배포했다. 이번 마이그레이션의 핵심은 <strong>1,750줄에 달하는 거대한 recommendations.json 파일을 완전히 제거</strong>하고, 추천 데이터를 각 포스트의 frontmatter에 직접 임베딩하는 것이었다.
 
-V2 시스템은 알고리즘 기반 추천으로 LLM 토큰 비용을 제로화하는 데 성공했지만, 여전히 <strong>런타임 파일 I/O 오버헤드</strong>와 <strong>비대한 중앙 집중식 JSON 파일</strong>이라는 문제를 안고 있었습니다. 39개 페이지를 빌드할 때마다 recommendations.json을 39번 읽고 파싱하는 비효율이 발생했고, Git diff 관리도 복잡했습니다.
+V2 시스템은 알고리즘 기반 추천으로 LLM 토큰 비용을 제로화하는 데 성공했지만, 여전히 <strong>런타임 파일 I/O 오버헤드</strong>와 <strong>비대한 중앙 집중식 JSON 파일</strong>이라는 문제를 안고 있었다. 39개 페이지를 빌드할 때마다 recommendations.json을 39번 읽고 파싱하는 비효율이 발생했고, Git diff 관리도 복잡했다.
 
-V3에서는 이 모든 문제를 <strong>Frontmatter 임베디드 아키텍처</strong>로 해결했습니다. 추천 데이터가 각 포스트의 일부가 되어 런타임 파일 I/O가 완전히 사라졌고, 빌드 성능이 크게 개선되었습니다.
+V3에서는 이 모든 문제를 <strong>Frontmatter 임베디드 아키텍처</strong>로 해결했다. 추천 데이터가 각 포스트의 일부가 되어 런타임 파일 I/O가 완전히 사라졌고, 빌드 성능이 크게 개선되었다.
 
 ## V2 시스템의 문제점
 
 ### 1. 비대한 recommendations.json
 
-V2 시스템은 모든 추천 데이터를 하나의 거대한 JSON 파일에 저장했습니다:
+V2 시스템은 모든 추천 데이터를 하나의 거대한 JSON 파일에 저장했다:
 
 ```json
 // recommendations.json (1,750줄)
@@ -102,7 +102,7 @@ V2 시스템은 모든 추천 데이터를 하나의 거대한 JSON 파일에 �
 
 ### 2. 런타임 파일 I/O 오버헤드
 
-모든 페이지 빌드 시 recommendations.json을 읽고 파싱했습니다:
+모든 페이지 빌드 시 recommendations.json을 읽고 파싱했다:
 
 ```typescript
 // RelatedPosts.astro (V2)
@@ -134,7 +134,7 @@ $ git diff recommendations.json
 
 ### 4. 메타데이터 과다
 
-post-metadata.json도 불필요한 필드가 많았습니다:
+post-metadata.json도 불필요한 필드가 많았다:
 
 ```json
 {
@@ -153,13 +153,13 @@ post-metadata.json도 불필요한 필드가 많았습니다:
 }
 ```
 
-<strong>9개 필드 중 실제로 필요한 것은 3개뿐</strong>이었습니다.
+<strong>9개 필드 중 실제로 필요한 것은 3개뿐</strong>이었다.
 
 ## V3 아키텍처 설계
 
 ### 핵심 전략: Frontmatter 임베디드
 
-V3의 핵심 아이디어는 간단합니다: <strong>"추천 데이터를 콘텐츠의 일부로 취급하자"</strong>
+V3의 핵심 아이디어는 간단하다: <strong>"추천 데이터를 콘텐츠의 일부로 취급하자"</strong>
 
 ```yaml
 ---
@@ -646,7 +646,7 @@ $ npm run build
 | 100개 | 0줄 |
 | 500개 | 0줄 |
 
-각 포스트는 자신의 추천만 관리 (~25줄)하므로, 전체 규모와 무관합니다.
+각 포스트는 자신의 추천만 관리 (~25줄)하므로, 전체 규모와 무관한다.
 
 ## 교훈과 향후 계획
 
@@ -704,11 +704,11 @@ $ npm run build
 
 2. <strong>하이브리드 추천 시스템</strong>
    - Content-based (현재) + Collaborative Filtering
-   - "이 글을 읽은 사람은 이것도 읽었습니다"
+   - "이 글을 읽은 사람은 이것도 읽었다"
 
 ## 결론
 
-V3 추천 시스템은 <strong>성능, 유지보수성, 확장성</strong> 모든 측면에서 V2를 능가합니다:
+V3 추천 시스템은 <strong>성능, 유지보수성, 확장성</strong> 모든 측면에서 V2를 능가한다:
 
 - ✅ <strong>빌드 성능 100% 개선</strong> (파일 I/O 제거)
 - ✅ <strong>메타데이터 67% 경량화</strong> (9개 필드 → 3개 필드)
@@ -716,9 +716,9 @@ V3 추천 시스템은 <strong>성능, 유지보수성, 확장성</strong> 모�
 - ✅ <strong>확장성 O(n) → O(1)</strong>
 - ✅ <strong>Git 관리 명확성 향상</strong>
 
-가장 중요한 것은, 이 모든 개선이 <strong>사용자 경험에 직접적인 영향</strong>을 미친다는 점입니다. 더 빠른 페이지 로딩, 더 정확한 추천, 더 쉬운 유지보수는 결국 더 나은 블로그 경험으로 이어집니다.
+가장 중요한 것은, 이 모든 개선이 <strong>사용자 경험에 직접적인 영향</strong>을 미친다는 점이다. 더 빠른 페이지 로딩, 더 정확한 추천, 더 쉬운 유지보수는 결국 더 나은 블로그 경험으로 이어진다.
 
-<strong>추천 사항</strong>: 유사한 추천 시스템을 구축 중이거나 중앙 집중식 JSON 파일에 의존하고 있다면, Frontmatter 임베디드 아키텍처로의 마이그레이션을 강력히 권장합니다. ROI는 약 5.3개월, 투자 대비 효과가 매우 높습니다.
+<strong>추천 사항</strong>: 유사한 추천 시스템을 구축 중이거나 중앙 집중식 JSON 파일에 의존하고 있다면, Frontmatter 임베디드 아키텍처로의 마이그레이션을 강력히 권장한다. ROI는 약 5.3개월, 투자 대비 효과가 매우 높다.
 
 ---
 

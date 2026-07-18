@@ -2108,7 +2108,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "production-grade-ai-agent-design-principles.md",
@@ -2118,7 +2118,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "prompt-engineering-agent-improvements.md",
@@ -2128,7 +2128,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "python-ai-agent-library-comparison-2026.md",
@@ -2137,7 +2137,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "qwen3-coder-8gb-vram.md",
@@ -2147,7 +2147,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "qwen3-coder-next-llama-cpp-graph-optimization.md",
@@ -2157,7 +2157,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "qwen35-vending-bench-bankruptcy.md",
@@ -2167,7 +2167,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "recommendation-system-v3.md",
@@ -2176,7 +2176,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "rlm-recursive-language-model-coding-agent.md",
@@ -2186,7 +2186,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "robots-snippet-controls-ai-overviews-2026.md",
@@ -2195,7 +2195,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "roguepilot-copilot-prompt-injection-security.md",
