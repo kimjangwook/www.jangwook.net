@@ -60,13 +60,13 @@ relatedPosts:
 
 ## 개요
 
-2025년 11월, Anthropic은 AI 에이전트의 효율성을 근본적으로 개선하는 <strong>Code Execution with MCP (Model Context Protocol)</strong>를 발표했습니다. 이 혁신적인 접근법은 기존 도구 호출 방식의 한계를 극복하고, 토큰 사용량을 <strong>98.7% 감소</strong>시키며(150,000개 → 2,000개), 실행 속도를 <strong>60% 개선</strong>하는 놀라운 성과를 달성했습니다.
+2025년 11월, Anthropic은 AI 에이전트의 효율성을 근본적으로 개선하는 <strong>Code Execution with MCP (Model Context Protocol)</strong>를 발표했다. 이 혁신적인 접근법은 기존 도구 호출 방식의 한계를 극복하고, 토큰 사용량을 <strong>98.7% 감소</strong>시키며(150,000개 → 2,000개), 실행 속도를 <strong>60% 개선</strong>하는 놀라운 성과를 달성했다.
 
-이 글에서는 Code Execution with MCP의 핵심 아이디어, 기술 아키텍처, 실전 활용 사례, 그리고 한계점까지 개발자 관점에서 상세히 살펴보겠습니다.
+Code Execution with MCP의 핵심 아이디어, 기술 아키텍처, 실전 활용 사례, 그리고 한계점까지 개발자 관점에서 상세히 살펴본다.
 
 ## Model Context Protocol (MCP)란?
 
-Model Context Protocol은 2024년 11월 Anthropic이 발표한 <strong>AI 시스템 통합을 위한 표준화된 인터페이스</strong>입니다. MCP는 AI 애플리케이션이 다양한 데이터 소스 및 도구와 통신할 수 있는 개방형 프로토콜로, 마치 USB-C가 여러 장치를 연결하는 것처럼 AI 에이전트와 외부 시스템을 연결합니다.
+Model Context Protocol은 2024년 11월 Anthropic이 발표한 <strong>AI 시스템 통합을 위한 표준화된 인터페이스</strong>다. MCP는 AI 애플리케이션이 다양한 데이터 소스 및 도구와 통신할 수 있는 개방형 프로토콜로, 마치 USB-C가 여러 장치를 연결하는 것처럼 AI 에이전트와 외부 시스템을 연결한다.
 
 MCP의 주요 특징:
 
@@ -75,15 +75,15 @@ MCP의 주요 특징:
 - <strong>확장 가능성</strong>: 새로운 도구를 쉽게 추가하고 통합
 - <strong>오픈 소스</strong>: 커뮤니티 주도 개발과 투명성
 
-MCP 서버를 직접 구현해보고 싶다면 [MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기](/ko/blog/ko/mcp-server-build-practical-guide-2026)에서 Python FastMCP로 커스텀 도구를 만드는 실전 과정을 확인할 수 있습니다.
+MCP 서버를 직접 구현해보고 싶다면 [MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기](/ko/blog/ko/mcp-server-build-practical-guide-2026)에서 Python FastMCP로 커스텀 도구를 만드는 실전 과정을 확인할 수 있다.
 
 ## 기존 방식의 한계
 
-전통적인 도구 호출(Tool Calling) 방식은 다음과 같은 심각한 문제점을 가지고 있었습니다.
+전통적인 도구 호출(Tool Calling) 방식은 다음과 같은 심각한 문제점을 가지고 있었다.
 
 ### 1. 토큰 소비 폭발
 
-AI 모델이 도구를 호출할 때마다 <strong>전체 도구 정의를 컨텍스트에 포함</strong>해야 합니다. 예를 들어:
+AI 모델이 도구를 호출할 때마다 <strong>전체 도구 정의를 컨텍스트에 포함</strong>해야 한다. 예를 들면 이렇다.
 
 ```typescript
 // 도구 정의 예시 (매번 전송됨)
@@ -98,11 +98,11 @@ AI 모델이 도구를 호출할 때마다 <strong>전체 도구 정의를 컨�
 }
 ```
 
-15개의 도구를 사용하는 워크플로우에서는 각 호출마다 10,000개 이상의 토큰이 반복적으로 전송되어, <strong>총 150,000개의 토큰</strong>을 소비합니다.
+15개의 도구를 사용하는 워크플로우에서는 각 호출마다 10,000개 이상의 토큰이 반복적으로 전송되어, <strong>총 150,000개의 토큰</strong>을 소비한다.
 
 ### 2. 높은 레이턴시
 
-각 도구 호출은 <strong>별도의 API 왕복</strong>을 필요로 합니다:
+각 도구 호출은 <strong>별도의 API 왕복</strong>을 필요로 한다.
 
 1. 클라이언트 → 모델: "다음에 무엇을 할까요?"
 2. 모델 → 클라이언트: "도구 A를 호출하세요"
@@ -111,15 +111,15 @@ AI 모델이 도구를 호출할 때마다 <strong>전체 도구 정의를 컨�
 5. 클라이언트 → 모델: 결과 전송
 6. 반복...
 
-15번의 도구 호출이 필요한 작업은 <strong>30개 이상의 네트워크 왕복</strong>을 발생시킵니다. 이 문제를 해결하기 위한 에이전트 아키텍처 선택은 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 비교해볼 수 있습니다.
+15번의 도구 호출이 필요한 작업은 <strong>30개 이상의 네트워크 왕복</strong>을 발생시킨다. 이 문제를 해결하기 위한 에이전트 아키텍처 선택은 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 비교해볼 수 있다.
 
 ### 3. 컨텍스트 창 오염
 
-중간 결과물까지 모두 컨텍스트에 누적되어, 실제로 필요하지 않은 데이터가 메모리를 차지하고 토큰을 낭비합니다.
+중간 결과물까지 모두 컨텍스트에 누적되어, 실제로 필요하지 않은 데이터가 메모리를 차지하고 토큰을 낭비한다.
 
 ## Code Execution with MCP의 핵심 아이디어
 
-Code Execution with MCP는 패러다임을 전환합니다: <strong>"도구를 직접 호출하는 대신, 도구를 호출하는 코드를 작성하라"</strong>
+Code Execution with MCP는 패러다임을 전환한다. <strong>"도구를 직접 호출하는 대신, 도구를 호출하는 코드를 작성하라"</strong>
 
 ### 작동 방식
 
@@ -146,13 +146,13 @@ Code Execution with MCP는 패러다임을 전환합니다: <strong>"도구를 �
 └─────────────┘
 ```
 
-기존 방식에서는 모델이 15번의 개별 도구 호출을 순차적으로 요청했다면, 이제는 <strong>한 번에 전체 로직을 포함한 코드를 생성</strong>하고, 샌드박스에서 실행한 후 <strong>요약된 결과만</strong> 반환합니다.
+기존 방식에서는 모델이 15번의 개별 도구 호출을 순차적으로 요청했다면, 이제는 <strong>한 번에 전체 로직을 포함한 코드를 생성</strong>하고, 샌드박스에서 실행한 후 <strong>요약된 결과만</strong> 반환한다.
 
 ## 기술 아키텍처
 
 ### 파일시스템 기반 도구 검색
 
-Code Execution with MCP는 복잡한 API 대신 <strong>디렉토리 구조</strong>를 사용합니다:
+Code Execution with MCP는 복잡한 API 대신 <strong>디렉토리 구조</strong>를 사용한다.
 
 ```bash
 mcp-tools/
@@ -166,7 +166,7 @@ mcp-tools/
     └── http-request.ts  # HTTP 요청
 ```
 
-AI 모델은 필요한 도구를 파일 경로로 참조합니다:
+AI 모델은 필요한 도구를 파일 경로로 참조한다.
 
 ```typescript
 // AI가 생성한 코드
@@ -179,7 +179,7 @@ const results = await query(config.dbUrl, 'SELECT * FROM users');
 
 ### 도구 래퍼 생성
 
-각 MCP 도구는 TypeScript 함수로 래핑됩니다:
+각 MCP 도구는 TypeScript 함수로 래핑된다.
 
 ```typescript
 // mcp-tools/database/query.ts
@@ -203,11 +203,11 @@ export async function query(
 }
 ```
 
-AI 모델은 복잡한 MCP 프로토콜을 알 필요 없이, <strong>일반적인 TypeScript 함수처럼</strong> 도구를 사용합니다.
+AI 모델은 복잡한 MCP 프로토콜을 알 필요 없이, <strong>일반적인 TypeScript 함수처럼</strong> 도구를 사용한다.
 
 ### 샌드박스 실행 환경
 
-생성된 코드는 <strong>격리된 샌드박스</strong>에서 실행됩니다:
+생성된 코드는 <strong>격리된 샌드박스</strong>에서 실행된다.
 
 #### Linux: Bubblewrap
 
@@ -349,7 +349,7 @@ return summary;
 // 출력: { total: 10000, activeUsers: 7500, avgAge: 34.5 }
 ```
 
-<strong>원본 데이터는 절대 모델로 전송되지 않습니다.</strong>
+<strong>원본 데이터는 절대 모델로 전송되지 않는다.</strong>
 
 ### 상태 유지 (State Persistence)
 
@@ -369,7 +369,7 @@ for (let i = 0; i < 100; i++) {
 await dbConnection.close();
 ```
 
-기존 방식에서는 각 호출마다 연결을 새로 생성해야 했지만, Code Execution에서는 <strong>한 번 생성한 리소스를 재사용</strong>할 수 있습니다.
+기존 방식에서는 각 호출마다 연결을 새로 생성해야 했지만, Code Execution에서는 <strong>한 번 생성한 리소스를 재사용</strong>할 수 있다.
 
 ## 실전 활용 사례
 
@@ -377,7 +377,7 @@ await dbConnection.close();
 
 #### Zed Editor
 
-Zed는 Code Execution with MCP를 사용하여 <strong>멀티파일 리팩토링</strong>을 구현했습니다:
+Zed는 Code Execution with MCP를 사용하여 <strong>멀티파일 리팩토링</strong>을 구현했다.
 
 ```typescript
 // Zed AI가 생성한 코드
@@ -921,7 +921,7 @@ console.log(result);
 
 ### 1. 인프라 복잡성
 
-Code Execution with MCP는 추가 인프라를 필요로 합니다:
+Code Execution with MCP는 추가 인프라를 필요로 한다.
 
 - <strong>샌드박스 런타임</strong>: Docker, Kubernetes 등 컨테이너 오케스트레이션
 - <strong>MCP 서버 관리</strong>: 여러 도구 서버의 배포 및 모니터링
@@ -933,7 +933,7 @@ Code Execution with MCP는 추가 인프라를 필요로 합니다:
 
 ### 2. 성능 오버헤드 (단순 작업)
 
-단일 도구 호출에서는 오히려 느릴 수 있습니다:
+단일 도구 호출에서는 오히려 느릴 수 있다.
 
 ```
 단순 작업 (1개 도구 호출):
@@ -1057,7 +1057,7 @@ Gartner 예측 (2025년 1월 보고서):
 
 ## 결론
 
-Code Execution with MCP는 AI 에이전트의 작동 방식을 근본적으로 변화시키는 <strong>패러다임 전환</strong>입니다. "도구를 호출하라"에서 "도구를 호출하는 코드를 작성하라"로의 전환은 단순한 기술적 개선이 아니라, AI가 더 효율적이고 안전하며 프라이버시를 보호하는 방식으로 작업을 수행할 수 있게 합니다.
+Code Execution with MCP는 AI 에이전트의 작동 방식을 근본적으로 변화시키는 <strong>패러다임 전환</strong>이다. "도구를 호출하라"에서 "도구를 호출하는 코드를 작성하라"로의 전환은 단순한 기술적 개선이 아니라, AI가 더 효율적이고 안전하며 프라이버시를 보호하는 방식으로 작업을 수행할 수 있게 한다.
 
 ### 핵심 요약
 
@@ -1081,9 +1081,9 @@ Code Execution with MCP는 AI 에이전트의 작동 방식을 근본적으로 �
 
 ### 미래 가능성
 
-Code Execution with MCP는 아직 초기 단계이지만, 빠르게 성숙하고 있습니다. 원격 실행 지원, 다중 언어 확장, 엔터프라이즈 기능이 추가되면 <strong>AI 에이전트의 사실상 표준</strong>이 될 가능성이 높습니다.
+Code Execution with MCP는 아직 초기 단계이지만, 빠르게 성숙하고 있다. 원격 실행 지원, 다중 언어 확장, 엔터프라이즈 기능이 추가되면 <strong>AI 에이전트의 사실상 표준</strong>이 될 가능성이 높다.
 
-개발자라면 지금이 MCP 생태계에 참여할 최적의 시기입니다. 자신만의 도구 서버를 구축하고, 커뮤니티에 기여하며, 차세대 AI 애플리케이션을 만드는 여정에 동참해보세요.
+개발자라면 지금이 MCP 생태계에 참여할 최적의 시기다. 자신만의 도구 서버를 구축하고, 커뮤니티에 기여하며, 차세대 AI 애플리케이션을 만드는 여정에 동참해보면 된다.
 
 ## 참고 자료
 

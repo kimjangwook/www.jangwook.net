@@ -300,7 +300,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-claude-performance-decline-controversy-april-2026.md",
@@ -309,7 +309,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-code-execution-mcp.md",
@@ -319,7 +319,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-emotion-concepts-llm-alignment.md",
@@ -328,7 +328,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-files-api-batch-document-processing-guide.md",
@@ -337,7 +337,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-institute-partner-network.md",
@@ -347,7 +347,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-pentagon-ai-governance-cto-lessons.md",
@@ -357,7 +357,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026.md",
@@ -366,7 +366,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-usage-caps-llm-pricing-disruption-analysis-2026.md",
@@ -375,7 +375,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-vibe-physics-ai-research-assistant.md",
@@ -384,7 +384,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "asic-llm-inference-16k-tps.md",
