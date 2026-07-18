@@ -1,0 +1,2486 @@
+{
+ "campaign": "style-video-2026-07",
+ "goal": "해라체 통일 + 영상 전개규격(맺음말·H2>=3) — AdSense 재도전",
+ "batch_size": 10,
+ "posts": [
+  {
+   "slug": "45-day-analytics-report-2025-11.md",
+   "register": "formal",
+   "formal_endings": 7,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "accounting-ai-transformation-real-data.md",
+   "register": "formal",
+   "formal_endings": 43,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "adding-chinese-support.md",
+   "register": "formal",
+   "formal_endings": 22,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "adl-agent-definition-language-governance.md",
+   "register": "formal",
+   "formal_endings": 16,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "adsense-low-value-content-technical-fix.md",
+   "register": "formal",
+   "formal_endings": 46,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "adsense-rejection-ai-analysis-improvement.md",
+   "register": "formal",
+   "formal_endings": 39,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "aeo-implementation-experience.md",
+   "register": "formal",
+   "formal_endings": 52,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "agent-effi-flow-pivot-omotenashi-bot.md",
+   "register": "formal",
+   "formal_endings": 25,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "agent-washing-detection-em-checklist.md",
+   "register": "formal",
+   "formal_endings": 36,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "agentic-workflow-meta-tools-optimization.md",
+   "register": "formal",
+   "formal_endings": 30,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "agents-md-effectiveness.md",
+   "register": "formal",
+   "formal_endings": 13,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-agent-collaboration-patterns.md",
+   "register": "formal",
+   "formal_endings": 7,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-agent-cost-reality.md",
+   "register": "formal",
+   "formal_endings": 41,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-agent-identity-dark-matter-enterprise.md",
+   "register": "formal",
+   "formal_endings": 34,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-agent-kpi-ethics.md",
+   "register": "formal",
+   "formal_endings": 22,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-agent-notion-mcp-automation.md",
+   "register": "formal",
+   "formal_endings": 11,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-agent-persona-analysis.md",
+   "register": "formal",
+   "formal_endings": 4,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-content-recommendation-system.md",
+   "register": "formal",
+   "formal_endings": 6,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-convenience-loop-reshaping-language-choices.md",
+   "register": "formal",
+   "formal_endings": 15,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-crawlers-dont-render-javascript-csr-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-distillation-attacks-enterprise-defense.md",
+   "register": "formal",
+   "formal_endings": 20,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-era-career-advice-for-juniors.md",
+   "register": "formal",
+   "formal_endings": 42,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-model-rush-february-2026.md",
+   "register": "formal",
+   "formal_endings": 27,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-presentation-automation.md",
+   "register": "formal",
+   "formal_endings": 71,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-reliability-engineer-centaur-pod-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ai-self-generated-skills-myth.md",
+   "register": "formal",
+   "formal_endings": 32,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "alphaevolve-ramsey-ai-research-partner.md",
+   "register": "formal",
+   "formal_endings": 35,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-agent-skills-practical-guide.md",
+   "register": "formal",
+   "formal_endings": 30,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-agent-skills-standard.md",
+   "register": "formal",
+   "formal_endings": 27,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-claude-opus-4-7-managed-agents-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-claude-performance-decline-controversy-april-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-code-execution-mcp.md",
+   "register": "formal",
+   "formal_endings": 20,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-emotion-concepts-llm-alignment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-files-api-batch-document-processing-guide.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-institute-partner-network.md",
+   "register": "formal",
+   "formal_endings": 49,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-pentagon-ai-governance-cto-lessons.md",
+   "register": "formal",
+   "formal_endings": 22,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-usage-caps-llm-pricing-disruption-analysis-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "anthropic-vibe-physics-ai-research-assistant.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "asic-llm-inference-16k-tps.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "astro-scheduled-publishing.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "banana-x-image-prompt-guide.md",
+   "register": "formal",
+   "formal_endings": 28,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "barracuda-cuda-amd-compiler.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "bigquery-mcp-prefix-filtering.md",
+   "register": "formal",
+   "formal_endings": 12,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "blog-launch-analysis-report.md",
+   "register": "formal",
+   "formal_endings": 16,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "bun-shell-scripting-practical-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ccc-vs-gcc-ai-compiled-c-compiler.md",
+   "register": "formal",
+   "formal_endings": 25,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "chrome-devtools-mcp-performance.md",
+   "register": "formal",
+   "formal_endings": 15,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-agent-sdk-tool-use-complete-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-agent-teams-guide.md",
+   "register": "formal",
+   "formal_endings": 59,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-api-prompt-caching-cost-optimization-guide.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-agentic-workflow-patterns-5-types.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-best-practices.md",
+   "register": "formal",
+   "formal_endings": 16,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-channels-telegram-bridge.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-cli-migration-guide.md",
+   "register": "formal",
+   "formal_endings": 15,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-hooks-workflow.md",
+   "register": "formal",
+   "formal_endings": 9,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-insights-usage-analysis.md",
+   "register": "formal",
+   "formal_endings": 80,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-june-2026-new-features-changelog-developer-guide.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-local-model-inefficiency.md",
+   "register": "formal",
+   "formal_endings": 20,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-masterclass-series-1-prompt-to-agent.md",
+   "register": "plain",
+   "formal_endings": 1,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-parallel-sessions-git-worktree.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-parallel-testing.md",
+   "register": "formal",
+   "formal_endings": 6,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-plugins-complete-guide.md",
+   "register": "formal",
+   "formal_endings": 7,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-remote-control-guide.md",
+   "register": "formal",
+   "formal_endings": 26,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-source-leak-analysis.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-verbalized-sampling.md",
+   "register": "formal",
+   "formal_endings": 12,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-code-web-automation.md",
+   "register": "formal",
+   "formal_endings": 10,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-cowork-enterprise-productivity-platform.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-fable-5-mythos-public-api-developer-analysis-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-firefox-22-cves-ai-security-audit.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-managed-agents-dreaming-outcomes-code-with-claude-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-managed-agents-production-deployment-guide.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-mythos-preview-glasswing-ai-cybersecurity.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-opus-4-8-dynamic-workflows-parallel-agents-guide.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-skills-implementation-guide.md",
+   "register": "formal",
+   "formal_endings": 11,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "claude-sonnet-46-release.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "consistency-diffusion-lm.md",
+   "register": "formal",
+   "formal_endings": 20,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "cursor-agent-trace-ai-code-attribution.md",
+   "register": "formal",
+   "formal_endings": 51,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "dapr-agents-v1-cncf-production-ai-framework.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "data-driven-pm-framework.md",
+   "register": "formal",
+   "formal_endings": 18,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ddr5-rdimm-vs-rtx3090-local-llm.md",
+   "register": "formal",
+   "formal_endings": 18,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "deep-agents-architecture-optimization.md",
+   "register": "formal",
+   "formal_endings": 14,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "deep-thinking-ratio-llm-cost-optimization.md",
+   "register": "formal",
+   "formal_endings": 28,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "deepseek-v4-release.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "deeptune-ai-agent-training-gyms-rl-professional-workflows.md",
+   "register": "formal",
+   "formal_endings": 44,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "deloitte-agentic-ai-operations-2026.md",
+   "register": "formal",
+   "formal_endings": 32,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "dena-llm-study-part1-fundamentals.md",
+   "register": "formal",
+   "formal_endings": 18,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "dena-llm-study-part2-structured-output.md",
+   "register": "formal",
+   "formal_endings": 6,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "dena-llm-study-part3-model-training.md",
+   "register": "plain",
+   "formal_endings": 3,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "dena-llm-study-part4-rag.md",
+   "register": "formal",
+   "formal_endings": 21,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "dena-llm-study-part5-agent-design.md",
+   "register": "formal",
+   "formal_endings": 52,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "dena-perl-go-migration-ai-agents.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "deno-2-vs-bun-nodejs-runtime-2026-comparison.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "devstral-qwen3-coder-small-models.md",
+   "register": "formal",
+   "formal_endings": 25,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "dont-trust-the-salt-multilingual-llm-safety.md",
+   "register": "formal",
+   "formal_endings": 29,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "drizzle-orm-typescript-complete-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "e2e-page-test-automation-claude-code.md",
+   "register": "formal",
+   "formal_endings": 11,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "effiflow-automation-analysis-part1.md",
+   "register": "formal",
+   "formal_endings": 21,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "effiflow-automation-analysis-part2.md",
+   "register": "mixed",
+   "formal_endings": 9,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "effiflow-automation-analysis-part3.md",
+   "register": "formal",
+   "formal_endings": 12,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "effloow-side-project-ai-company.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "enterprise-ai-adoption-topdown.md",
+   "register": "formal",
+   "formal_endings": 43,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "fastapi-claude-api-streaming-production-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "fastmcp-python-mcp-server-build-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "figma-mcp-web-components-sync.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "functiongemma-270m-tool-calling.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "gcloud-mcp-infrastructure-audit.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "gemini-25-flash-api-cost-optimization-guide.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "gemini-31-pro-release.md",
+   "register": "formal",
+   "formal_endings": 14,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "gemini-embedding-2-multimodal-rag-pipeline.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ggml-llamacpp-huggingface.md",
+   "register": "formal",
+   "formal_endings": 14,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "github-agentic-workflows-cicd-ai.md",
+   "register": "formal",
+   "formal_endings": 29,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "glm-5-mit-opensource-frontier-enterprise.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "google-adk-vs-langgraph-agent-framework-comparison-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "google-agent-scaling-science-multiagent-limits.md",
+   "register": "formal",
+   "formal_endings": 41,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "google-analytics-mcp-automation.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "google-code-wiki-guide.md",
+   "register": "formal",
+   "formal_endings": 20,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "google-gemini-file-search-rag-tutorial.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "google-io-2026-antigravity-2-agent-platform-analysis.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "google-turboquant-kv-cache-3bit-compression.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "gpt-oss-120b-uncensored.md",
+   "register": "formal",
+   "formal_endings": 12,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "gpt4o-retirement-model-dependency-risk.md",
+   "register": "formal",
+   "formal_endings": 20,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "gpt52-theoretical-physics-discovery.md",
+   "register": "formal",
+   "formal_endings": 31,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "gpt53-codex-rollout-pause.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "greptile-ai-coding-report-2025-review.md",
+   "register": "formal",
+   "formal_endings": 26,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "heretic-12-vram-reduction.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "hindsight-mcp-agent-memory-learning.md",
+   "register": "formal",
+   "formal_endings": 35,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "hono-typescript-api-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "hreflang-reciprocity-audit-multilingual-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ibm-confluent-realtime-data-ai-agents.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ibm-gen-z-hiring-ai-limits.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "icml-prompt-injection-academic-review.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "individual-developer-ai-saas-journey.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "inp-yielding-measure-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "iterative-review-cycle-methodology.md",
+   "register": "formal",
+   "formal_endings": 45,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "jira-ai-agents-mcp-engineering-management.md",
+   "register": "formal",
+   "formal_endings": 27,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "jules-autocoding.md",
+   "register": "formal",
+   "formal_endings": 38,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "kanitts2-voice-cloning.md",
+   "register": "formal",
+   "formal_endings": 16,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "karpathy-ai-training-cost-deflation.md",
+   "register": "formal",
+   "formal_endings": 18,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "karpathy-autoresearch-overnight-ml-experiments.md",
+   "register": "formal",
+   "formal_endings": 21,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "kitten-tts-v08-tiny-sota.md",
+   "register": "formal",
+   "formal_endings": 26,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "langfuse-self-hosted-llm-tracing-setup-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "langgraph-multi-agent.md",
+   "register": "formal",
+   "formal_endings": 16,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "lcp-image-preload-scanner-fetchpriority-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "litellm-supply-chain-attack-ai-dependency-security.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llama-cpp-iq-quantization-merge.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-blog-automation.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-coding-harness-optimization.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-consumer-research-ssr.md",
+   "register": "formal",
+   "formal_endings": 13,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-deanonymization-privacy-risk-defense.md",
+   "register": "formal",
+   "formal_endings": 42,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-determinism-temperature-seed-experiment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-page-migration-standardization.md",
+   "register": "formal",
+   "formal_endings": 35,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-pm-workflow-automation.md",
+   "register": "formal",
+   "formal_endings": 6,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-seo-aeo-practical-implementation.md",
+   "register": "formal",
+   "formal_endings": 16,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "llm-token-cost-data-format-experiment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "local-ai-radio-smart-home.md",
+   "register": "formal",
+   "formal_endings": 21,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "local-llm-cold-start-load-duration-experiment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "local-llm-concurrent-requests-num-parallel-experiment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "local-llm-prefill-generation-latency-experiment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "local-llm-reasoning-mode-token-cost-experiment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "localbusiness-structured-data-server-side-vs-js-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mastra-ai-typescript-agent-framework-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "matmulfree-cpu-llm-training.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mcp-apps-interactive-ui-agent-ux.md",
+   "register": "formal",
+   "formal_endings": 48,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mcp-client-typescript-sdk-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mcp-code-execution-practical-implementation.md",
+   "register": "formal",
+   "formal_endings": 10,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mcp-gateway-agent-traffic-control.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mcp-open-standard-linux-foundation-engineering-guide.md",
+   "register": "formal",
+   "formal_endings": 30,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mcp-remote-http-deployment-pattern.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mcp-security-crisis-30-cves-enterprise-hardening.md",
+   "register": "formal",
+   "formal_endings": 26,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mcp-server-production-deployment-kubernetes-guide.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "meta-ai-agent-platform-sierra-avocado.md",
+   "register": "formal",
+   "formal_endings": 20,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "metadata-based-recommendation-optimization.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "microsoft-agent-framework-ga-production-strategy.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "minimax-m25-open-weight-vs-proprietary.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mistral-voxtral-tts-open-weight-speech.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mit-encompass-agent-search-reliability.md",
+   "register": "formal",
+   "formal_endings": 27,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mit-soar-self-curriculum-reasoning.md",
+   "register": "formal",
+   "formal_endings": 26,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "mit-tlt-adaptive-drafter-reasoning-training.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "moltbook-ai-theater-human-control.md",
+   "register": "formal",
+   "formal_endings": 27,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "monthly-analytics-2025-12.md",
+   "register": "formal",
+   "formal_endings": 11,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "morgan-stanley-ai-leap-2026-cto-strategy.md",
+   "register": "formal",
+   "formal_endings": 31,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "multi-agent-orchestration-improvement.md",
+   "register": "formal",
+   "formal_endings": 25,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "multi-agent-orchestration-routing.md",
+   "register": "formal",
+   "formal_endings": 15,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "multi-agent-swe-bench-verdent.md",
+   "register": "formal",
+   "formal_endings": 29,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "multilingual-llm-token-tax-experiment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "n8n-rss-automation.md",
+   "register": "formal",
+   "formal_endings": 14,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "nist-ai-agent-security-standards.md",
+   "register": "formal",
+   "formal_endings": 33,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "node-sqlite-builtin-practical-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "notion-backlog-slack-claude-project-management.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "nvidia-dgx-spark-cuda-compatibility.md",
+   "register": "formal",
+   "formal_endings": 17,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "nvidia-llm-inference-cost-reduction.md",
+   "register": "formal",
+   "formal_endings": 22,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "nvidia-nemoclaw-openclaw-enterprise-agent-platform.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ollama-fastapi-production-deployment-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ollama-num-ctx-silent-truncation-experiment.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ollama-structured-outputs-pydantic-local-llm-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 2,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "olmo-hybrid-transformer-rnn-data-efficiency.md",
+   "register": "formal",
+   "formal_endings": 26,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openai-agentkit-tutorial-part1.md",
+   "register": "formal",
+   "formal_endings": 22,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openai-agentkit-tutorial-part2.md",
+   "register": "plain",
+   "formal_endings": 1,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openai-atlas-ai-app-hub.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openai-codex-api-release-vs-claude-code-comparison-may-2026.md",
+   "register": "plain",
+   "formal_endings": 3,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openai-gpt-5-5-release-claude-comparison-april-2026.md",
+   "register": "plain",
+   "formal_endings": 1,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openai-open-responses-agentic-standard.md",
+   "register": "formal",
+   "formal_endings": 41,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openai-promptfoo-ai-agent-devsecops.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-advanced-usage.md",
+   "register": "formal",
+   "formal_endings": 16,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-codex-nanobot-stack-migration.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-cron-fix-guide.md",
+   "register": "formal",
+   "formal_endings": 8,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-e2e-test-automation-guide.md",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-installation-tutorial.md",
+   "register": "formal",
+   "formal_endings": 21,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-introduction-guide.md",
+   "register": "formal",
+   "formal_endings": 22,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-openai-codex-migration.md",
+   "register": "formal",
+   "formal_endings": 29,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-opus-4-6-setup-guide.md",
+   "register": "formal",
+   "formal_endings": 9,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openclaw-update-doctor-error-fix.md",
+   "register": "formal",
+   "formal_endings": 14,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "openrouter-oss-dominance.md",
+   "register": "formal",
+   "formal_endings": 15,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "paperclip-zero-human-company-agent-orchestration.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "patent-strategy-llm-era.md",
+   "register": "formal",
+   "formal_endings": 11,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "perplexity-computer-always-on-ai-agent.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "playwright-ai-testing.md",
+   "register": "formal",
+   "formal_endings": 14,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "prismml-bonsai-1bit-llm-edge-ai.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "production-grade-ai-agent-design-principles.md",
+   "register": "formal",
+   "formal_endings": 29,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "prompt-engineering-agent-improvements.md",
+   "register": "formal",
+   "formal_endings": 6,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "python-ai-agent-library-comparison-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "qwen3-coder-8gb-vram.md",
+   "register": "formal",
+   "formal_endings": 18,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "qwen3-coder-next-llama-cpp-graph-optimization.md",
+   "register": "formal",
+   "formal_endings": 22,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "qwen35-vending-bench-bankruptcy.md",
+   "register": "formal",
+   "formal_endings": 12,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "recommendation-system-v3.md",
+   "register": "formal",
+   "formal_endings": 11,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "rlm-recursive-language-model-coding-agent.md",
+   "register": "formal",
+   "formal_endings": 27,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "robots-snippet-controls-ai-overviews-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "roguepilot-copilot-prompt-injection-security.md",
+   "register": "formal",
+   "formal_endings": 34,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "rtk-rust-token-killer-llm-cost-optimization-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "self-healing-ai-systems.md",
+   "register": "formal",
+   "formal_endings": 7,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "sentence-transformers-korean-rag-embedding-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "slack-mcp-team-communication.md",
+   "register": "formal",
+   "formal_endings": 40,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "software-factory-zero-code-development.md",
+   "register": "formal",
+   "formal_endings": 33,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "sora-shutdown-ai-video-market-reshaping-veo4.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "specification-driven-development.md",
+   "register": "formal",
+   "formal_endings": 9,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "sqlite-ai-swarm-build.md",
+   "register": "formal",
+   "formal_endings": 24,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ssr-survey-analysis.md",
+   "register": "formal",
+   "formal_endings": 11,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "stripe-minions-autonomous-coding-agents-1300-prs.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "tailwind-layoffs-opensource-ai-crisis.md",
+   "register": "formal",
+   "formal_endings": 26,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "tauri-ios-admob-rewarded-ads.mdx",
+   "register": "formal",
+   "formal_endings": 23,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "tauri-pixijs-ios-game-development.mdx",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "terraform-ai-batch-infrastructure.md",
+   "register": "formal",
+   "formal_endings": 15,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "three-week-analytics-2025-11-04.md",
+   "register": "formal",
+   "formal_endings": 40,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "tool-r0-zero-data-agent-training.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "uv-python-ai-development-setup-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ux-psychology-frontend-design-skill.md",
+   "register": "formal",
+   "formal_endings": 4,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "ux-psychology-implementation-case-study.md",
+   "register": "formal",
+   "formal_endings": 13,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "validate-structured-data-ci-jsonld-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "vector-db-comparison-2026-qdrant-chroma-pgvector.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "verbalized-sampling-llm-diversity.md",
+   "register": "formal",
+   "formal_endings": 15,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "vercel-ai-sdk-claude-streaming-agent-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "vertex-ai-search-site-implementation.md",
+   "register": "formal",
+   "formal_endings": 6,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "vitest-4-jest-migration-guide-2026.md",
+   "register": "plain",
+   "formal_endings": 0,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "webmcp-chrome-146-ai-tool-server.md",
+   "register": "formal",
+   "formal_endings": 19,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "weekly-analytics-2025-10-14.md",
+   "register": "formal",
+   "formal_endings": 48,
+   "needs": [
+    "register"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "why-i-built-insightforge-validation-priorities.md",
+   "register": "plain",
+   "formal_endings": 1,
+   "needs": [
+    "closing"
+   ],
+   "status": "pending"
+  },
+  {
+   "slug": "windsurf-arena-mode-speed-over-accuracy.md",
+   "register": "formal",
+   "formal_endings": 15,
+   "needs": [
+    "register",
+    "closing"
+   ],
+   "status": "pending"
+  }
+ ]
+}

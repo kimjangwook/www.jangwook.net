@@ -91,6 +91,14 @@ try {
   }
 } catch { out.backlog_queued = null; }
 
+// ── style_campaign_due: 문체·전개 캠페인 잔량 (2026-07-18, AdSense 재도전) ──
+try {
+  const campaign = JSON.parse(fs.readFileSync(path.join(repoRoot, 'ops/style-campaign.json'), 'utf8'));
+  const pending = campaign.posts.filter((p) => p.status === 'pending').length;
+  out.style_pending = pending;
+  if (pending > 0) out.flags.push('style_campaign_due'); // 매 틱 발화 — 배치 진행은 매니페스트가 관리 (실패 시 자동 재시도)
+} catch { /* 캠페인 종료 후 파일 제거 시 무시 */ }
+
 // ── review_due: 23:30 이후 1회 ──────────────────────────────────
 if ((hour === 23 && minute >= 30) || (hour < 7 && state.last_review !== today)) {
   // 23:30 이후 또는 자정 넘긴 첫 틱 (전날 리뷰 미실행분 회수)
