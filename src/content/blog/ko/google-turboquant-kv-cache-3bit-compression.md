@@ -127,6 +127,10 @@ LLM 추론 비용의 상당 부분이 GPU 메모리에서 온다. 모델 자체�
 
 개인적으로 가장 기대되는 적용 시나리오는 로컬 LLM이다. [24GB VRAM의 소비자 GPU](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)에서 128K 컨텍스트를 돌리는 것은 현재로서는 거의 불가능한데, KV cache를 6배 줄일 수 있다면 이야기가 완전히 달라진다. [llama.cpp](/ko/blog/ko/llama-cpp-iq-quantization-merge) 생태계에서 이걸 구현한다면 정말 재미있어질 것이다.
 
+## 정리
+
+TurboQuant는 KV cache를 3비트로 줄이면서도 정확도를 지킨다고 주장한다. 핵심은 극좌표 변환으로 정규화를 없앤 PolarQuant와 1비트 부호 보정으로 편향을 잡는 QJL, 두 기법의 결합이다. 재학습 없이 기존 모델에 끼워넣을 수 있다는 점이 실무에서 가장 크다. 다만 "정확도 손실 제로"가 장문 생성과 복잡한 추론에서도 성립하는지, 프로덕션 프레임워크에 통합되는 커스텀 커널 부담은 어느 정도인지는 아직 독립 검증이 없다. ICLR 2026 리뷰와 vLLM·TensorRT-LLM 통합 여부를 지켜보되, 로컬 LLM에서 긴 컨텍스트를 노린다면 지금부터 주시할 만한 기법이다.
+
 ## 참고 자료
 
 - [TurboQuant: Redefining AI efficiency with extreme compression — Google Research Blog](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/)
