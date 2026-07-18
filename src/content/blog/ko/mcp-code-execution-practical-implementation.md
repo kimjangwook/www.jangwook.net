@@ -60,15 +60,15 @@ relatedPosts:
 
 ## 개요
 
-이전 포스트 [Anthropic MCP 코드 실행: AI 에이전트 효율성 98.7% 향상](/ko/blog/ko/anthropic-code-execution-mcp)에서 MCP Code Execution의 이론적 배경과 성능 개선 원리를 살펴보았습니다. 이번 포스트에서는 해당 패턴을 실제 프로젝트에 적용하여 <strong>Claude Code 프로젝트 구조를 개선한 사례</strong>를 공유합니다.
+이전 포스트 [Anthropic MCP 코드 실행: AI 에이전트 효율성 98.7% 향상](/ko/blog/ko/anthropic-code-execution-mcp)에서 MCP Code Execution의 이론적 배경과 성능 개선 원리를 살펴보았다. 이번 포스트에서는 해당 패턴을 실제 프로젝트에 적용하여 <strong>Claude Code 프로젝트 구조를 개선한 사례</strong>를 공유한다.
 
-Anthropic의 Code Execution with MCP는 토큰 사용량을 98.7% 감소시키고 실행 속도를 60% 개선하는 혁신적인 접근법입니다. 이를 실제로 적용하기 위해 `.claude/` 디렉토리에 3개의 새로운 디렉토리를 추가하고, 관련 문서를 작성했습니다.
+Anthropic의 Code Execution with MCP는 토큰 사용량을 98.7% 감소시키고 실행 속도를 60% 개선하는 혁신적인 접근법이다. 이를 실제로 적용하기 위해 `.claude/` 디렉토리에 3개의 새로운 디렉토리를 추가하고, 관련 문서를 작성했다.
 
 ## 구조 개선 개요
 
 ### 새로운 디렉토리 구조
 
-기존 `.claude/` 디렉토리에 3개의 새로운 디렉토리를 추가했습니다:
+기존 `.claude/` 디렉토리에 3개의 새로운 디렉토리를 추가했다:
 
 ```
 .claude/
@@ -84,7 +84,7 @@ Anthropic의 Code Execution with MCP는 토큰 사용량을 98.7% 감소시키�
 
 ### 아키텍처 흐름
 
-새로운 구조는 기존 3-Tier 아키텍처를 강화합니다:
+새로운 구조는 기존 3-Tier 아키텍처를 강화한다:
 
 ```mermaid
 flowchart TD
@@ -103,11 +103,11 @@ flowchart TD
 
 ## tools/ 디렉토리: MCP Tool Wrapper
 
-`tools/` 디렉토리는 MCP Code Execution의 핵심인 <strong>Tool Wrapper 패턴</strong>을 구현합니다.
+`tools/` 디렉토리는 MCP Code Execution의 핵심인 <strong>Tool Wrapper 패턴</strong>을 구현한다.
 
 ### Filesystem-based Tool Discovery
 
-파일시스템 구조를 통해 도구를 조직화하고 자동으로 발견합니다:
+파일시스템 구조를 통해 도구를 조직화하고 자동으로 발견한다:
 
 ```
 .claude/tools/
@@ -127,7 +127,7 @@ flowchart TD
 
 ### Tool Wrapper 패턴
 
-각 도구는 표준화된 인터페이스와 메타데이터를 가집니다:
+각 도구는 표준화된 인터페이스와 메타데이터를 가진다:
 
 ```typescript
 // tools/database/query.ts
@@ -155,7 +155,7 @@ export const query = {
 
 ### Progressive Loading (95% 컨텍스트 절감)
 
-필요한 도구만 import하여 컨텍스트 소비를 최소화합니다:
+필요한 도구만 import하여 컨텍스트 소비를 최소화한다:
 
 ```typescript
 // 전통적 방식: 모든 도구 로드
@@ -192,11 +192,11 @@ import { fetch } from './tools/api';        // 400 tokens
 
 ## patterns/ 디렉토리: Code Execution 패턴
 
-`patterns/` 디렉토리에는 Code Execution과 Progressive Loading 패턴 문서가 있습니다.
+`patterns/` 디렉토리에는 Code Execution과 Progressive Loading 패턴 문서가 있다.
 
 ### Code Execution 패턴 (98.7% 토큰 절감)
 
-전통적인 순차적 도구 호출 대신 코드 생성 방식을 사용합니다:
+전통적인 순차적 도구 호출 대신 코드 생성 방식을 사용한다:
 
 ```mermaid
 flowchart LR
@@ -248,7 +248,7 @@ return `Updated ${successCount} active users`;
 
 ### Progressive Loading 패턴
 
-`patterns/progressive-loading.md`에 상세 구현 방법을 문서화했습니다:
+`patterns/progressive-loading.md`에 상세 구현 방법을 문서화했다:
 
 ```typescript
 // Lazy Loading 구현
@@ -288,7 +288,7 @@ export const getNextPubdate = {
 
 ## security/ 디렉토리: 보안 가이드라인
 
-`security/` 디렉토리에는 샌드박스 설정과 입력 검증 패턴이 있습니다.
+`security/` 디렉토리에는 샌드박스 설정과 입력 검증 패턴이 있다.
 
 ### 샌드박스 설정 (Process Isolation)
 
@@ -379,7 +379,7 @@ const blogSandbox = createSandbox({
 
 ### 입력 검증 (43% 취약점 완화)
 
-Anthropic의 보안 연구에 따르면 AI 생성 코드의 <strong>43%가 명령어 주입 취약점</strong>을 포함합니다. Zod 스키마를 사용하여 이를 방지합니다:
+Anthropic의 보안 연구에 따르면 AI 생성 코드의 <strong>43%가 명령어 주입 취약점</strong>을 포함한다. Zod 스키마를 사용하여 이를 방지한다:
 
 ```typescript
 import { z } from 'zod';
@@ -445,7 +445,7 @@ const BlogPostPathSchema = z.string()
 
 ### 기존 최적화와의 시너지
 
-이 프로젝트는 이미 여러 최적화를 적용하고 있습니다:
+이 프로젝트는 이미 여러 최적화를 적용하고 있다:
 
 1. <strong>메타데이터 우선 아키텍처</strong>: 60〜70% 토큰 절감
 2. <strong>증분 처리</strong>: 79% 토큰 절감 (변경 없을 때)
@@ -502,7 +502,7 @@ Code Execution 패턴을 추가하면:
 
 ## 결론
 
-이번 구조 개선을 통해 Anthropic의 MCP Code Execution 패턴을 실제 프로젝트에 적용할 수 있는 기반을 마련했습니다.
+이번 구조 개선을 통해 Anthropic의 MCP Code Execution 패턴을 실제 프로젝트에 적용할 수 있는 기반을 마련했다.
 
 ### 주요 성과
 
@@ -516,7 +516,7 @@ Code Execution 패턴을 추가하면:
 - <strong>속도 향상</strong>: 실행 시간 60% 단축 예상
 - <strong>보안 강화</strong>: AI 생성 코드 실행 안전성 확보
 
-이 구조는 현재 문서화 단계이며, 실제 구현과 벤치마크는 향후 진행할 예정입니다. Code Execution with MCP의 이론적 배경이 궁금하시다면 [이전 포스트](/ko/blog/ko/anthropic-code-execution-mcp)를 참고해주세요.
+이 구조는 현재 문서화 단계이며, 실제 구현과 벤치마크는 향후 진행할 예정이다. Code Execution with MCP의 이론적 배경이 궁금하다면 [이전 포스트](/ko/blog/ko/anthropic-code-execution-mcp)를 참고하면 된다.
 
 ## 참고 자료
 

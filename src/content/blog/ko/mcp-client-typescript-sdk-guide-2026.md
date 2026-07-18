@@ -461,6 +461,10 @@ for (const item of result.content) {
 
 SDK의 타입 정의 파일(`.d.ts`)을 직접 열어보면 `TextContent`, `ImageContent`, `EmbeddedResource` 타입이 분리되어 있다. TypeScript를 쓴다면 이 타입을 import해서 타입 좁히기(type narrowing)를 명시적으로 작성하는 게 낫다.
 
+## 정리
+
+TypeScript MCP 클라이언트는 `Client`와 `StdioClientTransport`를 연결하는 것에서 시작한다. 서버에 붙은 뒤에는 `listTools()`로 도구 목록을 받고, `callTool()`과 `readResource()`로 실제 호출을 한다. 실무에서 가장 자주 발이 걸리는 지점은 두 가지다. 하나는 zod를 peer dependency로 맞추는 버전 문제, 다른 하나는 `content` 배열의 `type` 필드를 확인하지 않고 `text`만 가정하는 것이다. 외부 서버를 붙일 때는 반환 타입을 항상 좁혀서 처리하는 습관을 들이는 게 안전하다. 먼저 공식 SDK 저장소의 타입 정의를 열어보고, 예제를 그대로 돌려 연결이 되는지부터 확인한 뒤 자기 코드에 이식하면 된다.
+
 ## 참고자료
 
 - [Model Context Protocol 공식 사이트](https://modelcontextprotocol.io) — MCP의 개념, 아키텍처, 클라이언트/서버 빌드 가이드를 모아둔 공식 문서 사이트.

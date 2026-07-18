@@ -1537,7 +1537,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "local-llm-reasoning-mode-token-cost-experiment.md",
@@ -1546,7 +1546,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "localbusiness-structured-data-server-side-vs-js-2026.md",
@@ -1555,7 +1555,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mastra-ai-typescript-agent-framework-guide-2026.md",
@@ -1564,7 +1564,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "matmulfree-cpu-llm-training.md",
@@ -1574,7 +1574,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mcp-apps-interactive-ui-agent-ux.md",
@@ -1584,7 +1584,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mcp-client-typescript-sdk-guide-2026.md",
@@ -1593,7 +1593,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mcp-code-execution-practical-implementation.md",
@@ -1603,7 +1603,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mcp-gateway-agent-traffic-control.md",
@@ -1612,7 +1612,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mcp-open-standard-linux-foundation-engineering-guide.md",
@@ -1622,7 +1622,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mcp-remote-http-deployment-pattern.md",
