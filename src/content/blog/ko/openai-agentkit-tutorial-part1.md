@@ -47,18 +47,18 @@ faq:
 > 1. <strong>OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기</strong> ← 현재 글
 > 2. [OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴](/ko/blog/ko/openai-agentkit-tutorial-part2)
 
-2025년 10월 6일, 샌프란시스코에서 열린 OpenAI DevDay에서 Sam Altman은 개발자 생태계를 완전히 바꿀 발표를 했습니다. 바로 <strong>AgentKit</strong>입니다.
+2025년 10월 6일, 샌프란시스코에서 열린 OpenAI DevDay에서 Sam Altman은 개발자 생태계를 완전히 바꿀 발표를 했다. 바로 <strong>AgentKit</strong>이다.
 
-"프로토타입에서 프로덕션까지, 훨씬 적은 마찰로 에이전트를 구축, 배포, 최적화할 수 있는 모든 것." 샘 알트먼의 이 한 문장에 AgentKit의 야심이 다 담겨 있습니다. 단순한 API 업데이트가 아니라는 뜻입니다. 이건 <strong>AI가 워크플로우의 중심에 서는 새로운 패러다임</strong>입니다.
+"프로토타입에서 프로덕션까지, 훨씬 적은 마찰로 에이전트를 구축, 배포, 최적화할 수 있는 모든 것." 샘 알트먼의 이 한 문장에 AgentKit의 야심이 다 담겨 있다. 단순한 API 업데이트가 아니라는 뜻이다. 이건 <strong>AI가 워크플로우의 중심에 서는 새로운 패러다임</strong>이다.
 
-핵심 개념을 하나씩 짚고, 첫 에이전트를 직접 손으로 짜보겠습니다. 코드는 전부 실행 가능한 형태로 넣었습니다.
+핵심 개념을 하나씩 짚고, 첫 에이전트를 직접 손으로 짜보겠다. 코드는 전부 실행 가능한 형태로 넣었다.
 
 ## 핵심 요약 (TL;DR)
 
-- 🎯 <strong>AgentKit = AI 워크플로우 플랫폼</strong>: Zapier/n8n과 경쟁하지만, AI 추론이 핵심
-- 🧩 <strong>4개 핵심 컴포넌트</strong>: Agent Builder (비주얼), ChatKit (UI), Connector Registry (도구), Evals (성능)
-- 🐍 <strong>Python SDK 제공</strong>: `openai-agents` 패키지로 코드 우선 개발 가능
-- 🔌 <strong>MCP 네이티브 지원</strong>: "AI 앱을 위한 USB-C"로 도구 통합 표준화
+- <strong>AgentKit = AI 워크플로우 플랫폼</strong>: Zapier/n8n과 경쟁하지만, AI 추론이 핵심
+- <strong>4개 핵심 컴포넌트</strong>: Agent Builder (비주얼), ChatKit (UI), Connector Registry (도구), Evals (성능)
+- <strong>Python SDK 제공</strong>: `openai-agents` 패키지로 코드 우선 개발 가능
+- <strong>MCP 네이티브 지원</strong>: "AI 앱을 위한 USB-C"로 도구 통합 표준화
 - <strong>베타 단계</strong>: Agent Builder는 현재 베타, 2025년 11월 1일부터 과금 시작
 - <strong>언제 사용?</strong>: AI 중심 워크플로우, 멀티 에이전트 협업, 복잡한 의사결정 자동화
 
@@ -66,9 +66,9 @@ faq:
 
 ### OpenAI의 전략적 전환
 
-OpenAI는 이제 더 이상 "API 제공자"가 아닙니다. AgentKit을 통해 <strong>플랫폼 기업</strong>으로 진화하고 있습니다.
+OpenAI는 이제 더 이상 "API 제공자"가 아니다. AgentKit을 통해 <strong>플랫폼 기업</strong>으로 진화하고 있다.
 
-기존의 워크플로우 자동화 도구들(Zapier, n8n, Make)이 <strong>"API를 연결하는 것"</strong>에 집중했다면, AgentKit은 <strong>"AI가 추론하며 조율하는 워크플로우"</strong>를 만듭니다.
+기존의 워크플로우 자동화 도구들(Zapier, n8n, Make)이 <strong>"API를 연결하는 것"</strong>에 집중했다면, AgentKit은 <strong>"AI가 추론하며 조율하는 워크플로우"</strong>를 만든다.
 
 ```mermaid
 graph TB
@@ -98,7 +98,7 @@ graph TB
 
 ### 4개의 핵심 컴포넌트
 
-AgentKit은 4개의 통합 시스템으로 구성됩니다:
+AgentKit은 4개의 통합 시스템으로 구성된다:
 
 #### 1️⃣ Agent Builder (베타)
 
@@ -164,7 +164,7 @@ AgentKit은 4개의 통합 시스템으로 구성됩니다:
 
 ## 핵심 개념: Agents, Handoffs, Guardrails
 
-AgentKit의 철학을 이해하려면 3가지 핵심 원칙을 알아야 합니다:
+AgentKit의 철학을 이해하려면 3가지 핵심 원칙을 알아야 한다:
 
 ### 1. Agents (에이전트)
 
@@ -186,7 +186,7 @@ agent = Agent(
 )
 ```
 
-<strong>핵심</strong>: 에이전트는 단순한 프롬프트가 아닙니다. 이들은 <strong>역할, 도구, 제약</strong>을 가진 자율적 행위자입니다.
+<strong>핵심</strong>: 에이전트는 단순한 프롬프트가 아니다. 이들은 <strong>역할, 도구, 제약</strong>을 가진 자율적 행위자다.
 
 ### 2. Handoffs (핸드오프)
 
@@ -320,7 +320,7 @@ def get_weather(location: str) -> str:
     )
 ```
 
-<strong>핵심</strong>: `@function_tool` 데코레이터가 함수를 에이전트가 사용할 수 있는 도구로 변환합니다. Docstring이 에이전트에게 도구 사용법을 알려줍니다.
+<strong>핵심</strong>: `@function_tool` 데코레이터가 함수를 에이전트가 사용할 수 있는 도구로 변환한다. Docstring이 에이전트에게 도구 사용법을 알려준다.
 
 #### Step 2: 에이전트 생성
 
@@ -508,7 +508,7 @@ for user_message in turns:
 
 ## Agent Builder: 비주얼 개발
 
-코드가 부담스럽다면? Agent Builder의 비주얼 캔버스를 사용하세요.
+코드가 부담스럽다면? Agent Builder의 비주얼 캔버스를 사용하면 된다.
 
 ### Agent Builder 접근
 
@@ -793,7 +793,7 @@ agent = Agent(
 
 ### 세션의 중요성
 
-에이전트와 <strong>여러 턴 대화</strong>를 할 때, 이전 맥락을 기억해야 합니다.
+에이전트와 <strong>여러 턴 대화</strong>를 할 때, 이전 맥락을 기억해야 한다.
 
 ```python
 # 세션 없이 (맥락 없음)
@@ -852,7 +852,7 @@ session = Session.from_dict(json.loads(session_data))
 
 ## 비용 최적화 전략
 
-AgentKit은 강력하지만, 잘못 사용하면 비용이 급증할 수 있습니다.
+AgentKit은 강력하지만, 잘못 사용하면 비용이 급증할 수 있다.
 
 ### 1. 적절한 모델 선택
 
@@ -1145,27 +1145,27 @@ research_agent = Agent(
 
 ## 언제 AgentKit을 쓰고, 언제 피해야 하는가
 
-AgentKit이 모든 상황의 정답은 아닙니다. 도입을 결정하기 전에 다음 기준을 따져보세요.
+AgentKit이 모든 상황의 정답은 아니다. 도입을 결정하기 전에 다음 기준을 따져보면 된다.
 
 ### 쓰면 좋은 경우
 
-- <strong>이미 OpenAI 모델을 메인으로 쓰는 팀</strong>: GPT 계열을 기본으로 두고 트레이싱, Evals, 가드레일까지 한 생태계 안에서 묶고 싶다면 마찰이 가장 적습니다.
-- <strong>멀티 에이전트 라우팅이 필요한 워크플로우</strong>: 핸드오프 모델이 SDK에 1급 시민으로 들어가 있어, 트리아지 → 전문 에이전트 패턴을 직접 구현하는 것보다 코드가 훨씬 짧아집니다.
-- <strong>비개발자와 협업하는 프로토타이핑</strong>: Agent Builder의 비주얼 캔버스로 PM이나 도메인 전문가가 흐름을 직접 보고 수정할 수 있습니다.
-- <strong>MCP 도구를 표준 방식으로 붙이고 싶을 때</strong>: Connector Registry와 MCP 네이티브 지원으로 도구 통합이 일관됩니다. MCP 서버를 직접 만드는 흐름은 [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)에서 더 깊이 다룹니다.
+- <strong>이미 OpenAI 모델을 메인으로 쓰는 팀</strong>: GPT 계열을 기본으로 두고 트레이싱, Evals, 가드레일까지 한 생태계 안에서 묶고 싶다면 마찰이 가장 적다.
+- <strong>멀티 에이전트 라우팅이 필요한 워크플로우</strong>: 핸드오프 모델이 SDK에 1급 시민으로 들어가 있어, 트리아지 → 전문 에이전트 패턴을 직접 구현하는 것보다 코드가 훨씬 짧아진다.
+- <strong>비개발자와 협업하는 프로토타이핑</strong>: Agent Builder의 비주얼 캔버스로 PM이나 도메인 전문가가 흐름을 직접 보고 수정할 수 있다.
+- <strong>MCP 도구를 표준 방식으로 붙이고 싶을 때</strong>: Connector Registry와 MCP 네이티브 지원으로 도구 통합이 일관된다. MCP 서버를 직접 만드는 흐름은 [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)에서 더 깊이 다룬다.
 
 ### 피하거나 신중해야 하는 경우
 
-- <strong>OpenAI 외 모델이 핵심인 경우</strong>: Anthropic, Google, 오픈 웨이트 모델을 주력으로 쓴다면 벤더 종속이 부담입니다. 이때는 프레임워크 자체가 모델 중립적인 쪽이 안전합니다. 도구 호출 설계가 핵심이라면 [Claude Agent SDK 도구 사용 완벽 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)를, 타입 안전성이 중요하면 [Pydantic AI 타입 안전 에이전트 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 함께 비교해 보세요.
-- <strong>단순한 단일 호출 작업</strong>: 분류 한 번, 요약 한 번이면 에이전트 추상화가 오히려 과합니다. Chat Completions API 직접 호출이 더 싸고 빠릅니다.
-- <strong>엄격한 비용 상한이 있는 대량 트래픽</strong>: 에이전트 루프는 토큰 소비가 예측하기 어렵습니다. 가드레일로 반복 횟수를 묶더라도, 사전에 부하 테스트로 비용을 검증해야 합니다.
-- <strong>베타 안정성을 감당하기 어려운 프로덕션</strong>: Agent Builder는 베타이고 API 표면이 바뀔 수 있습니다. 장기 계약이 걸린 시스템이라면 GA 전까지는 핵심 경로에 두지 않는 편이 안전합니다.
+- <strong>OpenAI 외 모델이 핵심인 경우</strong>: Anthropic, Google, 오픈 웨이트 모델을 주력으로 쓴다면 벤더 종속이 부담이다. 이때는 프레임워크 자체가 모델 중립적인 쪽이 안전하다. 도구 호출 설계가 핵심이라면 [Claude Agent SDK 도구 사용 완벽 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)를, 타입 안전성이 중요하면 [Pydantic AI 타입 안전 에이전트 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 함께 비교해 보면 된다.
+- <strong>단순한 단일 호출 작업</strong>: 분류 한 번, 요약 한 번이면 에이전트 추상화가 오히려 과하다. Chat Completions API 직접 호출이 더 싸고 빠르다.
+- <strong>엄격한 비용 상한이 있는 대량 트래픽</strong>: 에이전트 루프는 토큰 소비가 예측하기 어렵다. 가드레일로 반복 횟수를 묶더라도, 사전에 부하 테스트로 비용을 검증해야 한다.
+- <strong>베타 안정성을 감당하기 어려운 프로덕션</strong>: Agent Builder는 베타이고 API 표면이 바뀔 수 있다. 장기 계약이 걸린 시스템이라면 GA 전까지는 핵심 경로에 두지 않는 편이 안전하다.
 
-<strong>한 줄 정리</strong>: OpenAI 중심 + 멀티 에이전트 + 빠른 반복이면 강점이 살고, 멀티 벤더 + 단순 호출 + 엄격한 비용 통제가 필요하면 다른 선택지를 먼저 검토하세요.
+<strong>한 줄 정리</strong>: OpenAI 중심 + 멀티 에이전트 + 빠른 반복이면 강점이 살고, 멀티 벤더 + 단순 호출 + 엄격한 비용 통제가 필요하면 다른 선택지를 먼저 검토하는 게 낫다.
 
 ## 1부에서 챙긴 것, 그리고 2부에서 다룰 것
 
-여기까지 따라왔다면 에이전트, 핸드오프, 가드레일이라는 세 축과 첫 에이전트 코드가 손에 익었을 겁니다. 나머지는 실전에서 갈립니다.
+여기까지 따라왔다면 에이전트, 핸드오프, 가드레일이라는 세 축과 첫 에이전트 코드가 손에 익었을 건다. 나머지는 실전에서 갈린다.
 
 <strong>다음 글 예고</strong>: [OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴](/ko/blog/ko/openai-agentkit-tutorial-part2)에서는:
 
@@ -1198,6 +1198,6 @@ AgentKit이 모든 상황의 정답은 아닙니다. 도입을 결정하기 전�
 
 ---
 
-<strong>2부에서 이어집니다.</strong> 실전 사례를 놓고 AgentKit을 한 단계 더 파봅시다.
+<strong>2부에서 이어진다.</strong> 실전 사례를 놓고 AgentKit을 한 단계 더 파봅시다.
 
-_질문이나 피드백이 있다면 댓글로 남겨주세요. 모든 의견에 답변드리겠습니다!_
+_질문이나 피드백이 있다면 댓글로 남겨줘도 좋다. 되도록 답하겠다._

@@ -413,6 +413,10 @@ ollama --version
 
 `urllib.request`는 Python 표준 라이브러리이므로 추가 설치가 없다. 실제 프로덕션에서는 `httpx`나 `requests`로 바꿔도 동일하게 동작한다.
 
+## 정리
+
+로컬 LLM에서 구조화 출력을 안정적으로 뽑는 핵심은 프롬프트로 "JSON만 달라"고 부탁하는 게 아니라, Ollama의 `format` 파라미터에 JSON schema를 직접 넘기는 것이다. Pydantic 모델을 정의하고 `model_json_schema()`로 스키마를 만들면, 코드 블록으로 감싸거나 사족을 붙이는 문제 없이 파싱 가능한 JSON이 나온다. 같은 방식이 OpenAI 호환 엔드포인트에서도 동일하게 동작하므로 기존 코드에 그대로 얹을 수 있다. 실행 전 확인할 것은 두 가지다. Ollama 0.3.0 이상인지, 그리고 받은 JSON을 다시 Pydantic으로 검증해 타입까지 보장하는지다. 스키마를 먼저 세우고 그 스키마로 출력과 검증을 함께 묶는 습관을 들이면, 로컬 모델을 프로덕션 파이프라인에 넣어도 흔들리지 않는다.
+
 ## 참고 자료
 
 - [Ollama Structured outputs (공식 블로그)](https://ollama.com/blog/structured-outputs) — `format` 파라미터와 JSON schema, Pydantic 예제를 다루는 1차 문서

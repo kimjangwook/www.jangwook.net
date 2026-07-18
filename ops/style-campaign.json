@@ -1823,7 +1823,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "notion-backlog-slack-claude-project-management.md",
@@ -1833,7 +1833,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "nvidia-dgx-spark-cuda-compatibility.md",
@@ -1843,7 +1843,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "nvidia-llm-inference-cost-reduction.md",
@@ -1853,7 +1853,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "nvidia-nemoclaw-openclaw-enterprise-agent-platform.md",
@@ -1862,7 +1862,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ollama-fastapi-production-deployment-guide-2026.md",
@@ -1871,7 +1871,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ollama-num-ctx-silent-truncation-experiment.md",
@@ -1880,7 +1880,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ollama-structured-outputs-pydantic-local-llm-guide-2026.md",
@@ -1889,7 +1889,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "olmo-hybrid-transformer-rnn-data-efficiency.md",
@@ -1899,7 +1899,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openai-agentkit-tutorial-part1.md",
@@ -1909,7 +1909,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openai-agentkit-tutorial-part2.md",
