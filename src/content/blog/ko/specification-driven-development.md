@@ -61,13 +61,13 @@ relatedPosts:
 
 ## AI 코딩의 새로운 패러다임
 
-2025년 초, Andrej Karpathy가 "Vibe Coding"이라는 용어를 만들었습니다. AI에게 프롬프트를 던지고, 생성된 코드를 복사하고, 작동하길 바라는 방식. 프로토타입에는 효과적이지만, 대규모 프로젝트에서는 빠르게 무너집니다.
+2025년 초, Andrej Karpathy가 "Vibe Coding"이라는 용어를 만들었다. AI에게 프롬프트를 던지고, 생성된 코드를 복사하고, 작동하길 바라는 방식. 프로토타입에는 효과적이지만, 대규모 프로젝트에서는 빠르게 무너진다.
 
-이제 <strong>사양 주도 개발(Specification-Driven Development, SDD)</strong>이 등장했습니다. Markdown으로 명확한 사양을 작성하면, AI 코딩 에이전트가 그것을 실행 가능한 코드로 "컴파일"합니다. 이 접근은 [Amazon Kiro 같은 사양 주도 AI IDE](/ko/blog/ko/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026)로도 제품화되고 있습니다. 단순한 방법론의 변화가 아니라, AI와 함께 소프트웨어를 구축하는 방식의 근본적인 전환입니다.
+이제 <strong>사양 주도 개발(Specification-Driven Development, SDD)</strong>이 등장했다. Markdown으로 명확한 사양을 작성하면, AI 코딩 에이전트가 그것을 실행 가능한 코드로 "컴파일"한다. 이 접근은 [Amazon Kiro 같은 사양 주도 AI IDE](/ko/blog/ko/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026)로도 제품화되고 있다. 단순한 방법론의 변화가 아니라, AI와 함께 소프트웨어를 구축하는 방식의 근본적인 전환이다.
 
 ### Vibe Coding의 한계
 
-Vibe Coding의 문제점을 실제 시나리오로 살펴보겠습니다:
+Vibe Coding의 문제점을 실제 시나리오로 살펴보겠다:
 
 ```typescript
 // Vibe Coding 방식
@@ -94,7 +94,7 @@ function login(username: string, password: string) {
 
 ## 사양 주도 개발이란?
 
-사양 주도 개발은 <strong>"무엇을(What)" 구축할지를 명확히 정의한 뒤, AI가 "어떻게(How)"를 구현하도록</strong> 하는 방법론입니다.
+사양 주도 개발은 <strong>"무엇을(What)" 구축할지를 명확히 정의한 뒤, AI가 "어떻게(How)"를 구현하도록</strong> 하는 방법론이다.
 
 ### 핵심 원칙
 
@@ -104,7 +104,7 @@ function login(username: string, password: string) {
 
 2. <strong>구조화된 워크플로우</strong>
    - 사양 작성(Specify) → 계획 수립(Plan) → 작업 분해(Task) → 구현(Implement)
-   - 각 단계가 명확히 분리되어 추적 가능 ([Claude Code의 5가지 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)과도 연결됩니다)
+   - 각 단계가 명확히 분리되어 추적 가능 ([Claude Code의 5가지 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)과도 연결된다)
 
 3. <strong>AI를 도구로, 개발자를 설계자로</strong>
    - 개발자는 "무엇을" 결정 (아키텍처, 비즈니스 로직)
@@ -123,7 +123,7 @@ function login(username: string, password: string) {
 
 ## 실전 예제: 사양 주도로 인증 시스템 구축하기
 
-실제 GitHub Spec Kit을 사용한 예제를 단계별로 살펴보겠습니다.
+실제 GitHub Spec Kit을 사용한 예제를 단계별로 살펴보겠다.
 
 ### 1단계: 사양 작성 (Specification)
 
@@ -488,7 +488,7 @@ describe('PasswordHasher', () => {
 
 ## GitHub Spec Kit: 사양 주도 개발 도구
 
-GitHub이 오픈소스로 공개한 Spec Kit은 사양 주도 개발을 실천하기 위한 완전한 툴킷입니다.
+GitHub이 오픈소스로 공개한 Spec Kit은 사양 주도 개발을 실천하기 위한 완전한 툴킷이다.
 
 ### 설치 및 설정
 
@@ -526,7 +526,7 @@ my-project/
 
 ### constitution.md: 프로젝트의 헌법
 
-`constitution.md`는 AI 에이전트가 따라야 할 불변의 원칙을 정의합니다:
+`constitution.md`는 AI 에이전트가 따라야 할 불변의 원칙을 정의한다:
 
 ````markdown
 <!-- spec/constitution.md -->
@@ -596,7 +596,7 @@ spec-kit tasks plan/user-profile-plan.md --output tasks/user-profile-tasks.md
 
 ### 실시간 사양 업데이트
 
-사양 주도 개발의 강력한 점은 <strong>변경이 쉽다</strong>는 것입니다:
+사양 주도 개발의 강력한 점은 <strong>변경이 쉽다</strong>는 것이다:
 
 ```markdown
 <!-- spec/features/auth.md 수정 -->
@@ -716,7 +716,7 @@ The system should be fast.
 
 ### 2. constitution.md 작성 가이드
 
-프로젝트의 불변 원칙을 정의하세요:
+프로젝트의 불변 원칙을 정의한다:
 
 ````markdown
 # 프로젝트 헌법
@@ -981,7 +981,7 @@ try {
 
 ## 결론: 개발자의 역할 재정의
 
-사양 주도 개발은 단순한 방법론이 아니라, <strong>AI 시대 개발자 역할의 근본적 변화</strong>를 의미합니다.
+사양 주도 개발은 단순한 방법론이 아니라, <strong>AI 시대 개발자 역할의 근본적 변화</strong>를 의미한다.
 
 ### 변화하는 개발자의 역할
 
@@ -1047,4 +1047,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-<strong>다음 글</strong>: [AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기](/ko/blog/ko/ai-agent-collaboration-patterns)에서는 Architecture Agent, Coding Agent, Testing Agent, Security Agent, DevOps Agent를 오케스트레이션하여 복잡한 애플리케이션을 구축하는 실전 사례를 다룹니다.
+<strong>다음 글</strong>: [AI 에이전트 협업 패턴: 5개의 전문 에이전트로 풀스택 앱 구축하기](/ko/blog/ko/ai-agent-collaboration-patterns)에서는 Architecture Agent, Coding Agent, Testing Agent, Security Agent, DevOps Agent를 오케스트레이션하여 복잡한 애플리케이션을 구축하는 실전 사례를 다룬다.

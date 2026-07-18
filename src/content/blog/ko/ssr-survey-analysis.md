@@ -54,21 +54,21 @@ relatedPosts:
 
 ## 개요
 
-설문조사는 사용자 의견을 수집하는 강력한 도구이지만, 전통적인 Likert 척도 방식은 응답자마다 다른 기준으로 평가하는 문제(reference points bias)가 있습니다. 한 사람에게 "보통"은 다른 사람에게 "좋음"일 수 있죠.
+설문조사는 사용자 의견을 수집하는 강력한 도구이지만, 전통적인 Likert 척도 방식은 응답자마다 다른 기준으로 평가하는 문제(reference points bias)가 있다. 한 사람에게 "보통"은 다른 사람에게 "좋음"일 수 있다.
 
-이 문제를 해결하기 위해 <strong>SSR (Semantic Similarity Rating)</strong> 방법론을 활용하여 블로그 재방문 의향을 분석하는 실험을 진행했습니다. LLM이 생성한 자유 응답을 의미론적으로 분석하여 정량적 평점으로 변환하는 혁신적인 접근법입니다.
+이 문제를 해결하기 위해 <strong>SSR (Semantic Similarity Rating)</strong> 방법론을 활용하여 블로그 재방문 의향을 분석하는 실험을 진행했다. LLM이 생성한 자유 응답을 의미론적으로 분석하여 정량적 평점으로 변환하는 혁신적인 접근법이다.
 
 <strong>핵심 질문</strong>: 블로그의 5개 카테고리별 콘텐츠가 15명의 다양한 페르소나에게 얼마나 재방문 의향을 유발할까?
 
-이번 포스트에서는 225개 평가를 수행한 실험 결과와 통계 분석, 그리고 시각화를 공유합니다.
+이번 포스트에서는 225개 평가를 수행한 실험 결과와 통계 분석, 그리고 시각화를 공유한다.
 
 ## SSR 방법론이란?
 
-SSR은 2024년 10월 arXiv에 게재된 ["LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings"](https://arxiv.org/abs/2510.08338) 논문에서 제안된 방법론입니다.
+SSR은 2024년 10월 arXiv에 게재된 ["LLMs Reproduce Human Purchase Intent via Semantic Similarity Elicitation of Likert Ratings"](https://arxiv.org/abs/2510.08338) 논문에서 제안된 방법론이다.
 
 ### 전통적 LLM 설문의 문제점
 
-초기 LLM 기반 설문 연구들은 LLM에게 직접 "1부터 5까지 중 하나를 선택하세요"라고 물었습니다. 하지만 이 방식은 심각한 문제가 있었습니다:
+초기 LLM 기반 설문 연구들은 LLM에게 직접 "1부터 5까지 중 하나를 선택하세요"라고 물었다. 하지만 이 방식은 심각한 문제가 있었다:
 
 <strong>문제 1: 비현실적인 분포</strong>
 - 실제 인간: 정규분포에 가까운 응답 (2, 3, 4점에 집중)
@@ -84,7 +84,7 @@ SSR은 2024년 10월 arXiv에 게재된 ["LLMs Reproduce Human Purchase Intent v
 
 ### SSR의 혁신적 해결책
 
-SSR은 LLM의 강점인 <strong>자연어 생성</strong>을 활용하면서, 구조화된 설문 데이터의 필요성을 충족시키는 영리한 접근법입니다.
+SSR은 LLM의 강점인 <strong>자연어 생성</strong>을 활용하면서, 구조화된 설문 데이터의 필요성을 충족시키는 영리한 접근법이다.
 
 ```mermaid
 graph TB
@@ -194,7 +194,7 @@ expected_rating = sum(r * p for r, p in zip(ratings, probabilities))
 
 ### 페르소나 구성 (15명)
 
-다양한 국가와 직군의 페르소나를 생성했습니다:
+다양한 국가와 직군의 페르소나를 생성했다:
 
 | 이름 | 국가 | 직군 |
 |------|------|------|
@@ -214,7 +214,7 @@ expected_rating = sum(r * p for r, p in zip(ratings, probabilities))
 | 박지훈 | 한국 | Full-Stack Developer |
 | Li Wei | 중국 | AI Student |
 
-각 페르소나는 다음 정보를 포함합니다:
+각 페르소나는 다음 정보를 포함한다:
 - 인구통계: 나이, 국가, 직업
 - 관심사: AI/ML, 데이터 엔지니어링, 웹 개발 등
 - 검색 쿼리: Google Search Console 기반 실제 검색어
@@ -240,7 +240,7 @@ expected_rating = sum(r * p for r, p in zip(ratings, probabilities))
 
 ## 구현 코드
 
-전체 시스템은 Python으로 구현했으며, 주요 모듈은 다음과 같습니다:
+전체 시스템은 Python으로 구현했으며, 주요 모듈은 다음과 같다:
 
 ### OpenAI 클라이언트
 
@@ -517,7 +517,7 @@ class SurveyRunner:
 
 ### Test-Retest 신뢰도
 
-각 persona × content 조합을 3회 반복 측정하여 일관성을 검증했습니다.
+각 persona × content 조합을 3회 반복 측정하여 일관성을 검증했다.
 
 #### ICC (Intraclass Correlation Coefficient)
 
@@ -747,7 +747,7 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 
 ### SSR 방법론의 가능성
 
-SSR은 단순한 설문 도구를 넘어서 <strong>콘텐츠 전략 수립의 혁신적 도구</strong>입니다:
+SSR은 단순한 설문 도구를 넘어서 <strong>콘텐츠 전략 수립의 혁신적 도구</strong>다:
 
 <strong>활용 가능 영역</strong>:
 - 블로그 콘텐츠 재방문 의향 (본 연구)
@@ -762,7 +762,7 @@ SSR은 단순한 설문 도구를 넘어서 <strong>콘텐츠 전략 수립의 �
 - ✓ 정량적 평가 + 질적 인사이트 결합
 - ✓ 높은 신뢰도 (ICC 0.833)
 
-소비자 조사 및 콘텐츠 전략 분야는 AI 시대의 새로운 전환점을 맞이하고 있습니다. SSR과 같은 기술은 블로그 운영자와 마케터가 더 나은 콘텐츠를 만들고, 독자를 더 깊이 이해하는 데 강력한 도구가 될 것입니다.
+소비자 조사 및 콘텐츠 전략 분야는 AI 시대의 새로운 전환점을 맞이하고 있다. SSR과 같은 기술은 블로그 운영자와 마케터가 더 나은 콘텐츠를 만들고, 독자를 더 깊이 이해하는 데 강력한 도구가 될 것이다.
 
 ## 참고 자료
 
@@ -782,4 +782,4 @@ SSR은 단순한 설문 도구를 넘어서 <strong>콘텐츠 전략 수립의 �
 
 ---
 
-<strong>코드 및 데이터</strong>: 본 분석에 사용된 전체 코드와 데이터는 [GitHub 저장소](https://github.com/kimjangwook/ssr-repeater)에서 확인하실 수 있습니다.
+<strong>코드 및 데이터</strong>: 본 분석에 사용된 전체 코드와 데이터는 [GitHub 저장소](https://github.com/kimjangwook/ssr-repeater)에서 확인하실 수 있다.

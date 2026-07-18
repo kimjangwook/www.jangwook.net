@@ -61,13 +61,13 @@ relatedPosts:
 
 ## 자가 치유의 시대
 
-2025년 10월, GitHub가 공개한 AI 에이전트는 개발자 없이 코드베이스를 스캔하고, 버그를 발견하고, 수정 사항을 Pull Request로 제출합니다. Google DeepMind의 CodeMender는 지난 6개월간 <strong>72개의 보안 패치를 오픈소스 프로젝트에 자동으로 기여</strong>했습니다.
+2025년 10월, GitHub가 공개한 AI 에이전트는 개발자 없이 코드베이스를 스캔하고, 버그를 발견하고, 수정 사항을 Pull Request로 제출한다. Google DeepMind의 CodeMender는 지난 6개월간 <strong>72개의 보안 패치를 오픈소스 프로젝트에 자동으로 기여</strong>했다.
 
-이것은 더 이상 SF가 아닙니다. <strong>자가 치유 AI 시스템(Self-Healing AI Systems)</strong>의 시대가 도래했습니다. 이러한 시스템의 기반이 되는 [AI 에이전트 협업 패턴](/ko/blog/ko/ai-agent-collaboration-patterns)을 먼저 이해하면, 자가 치유 아키텍처 설계에 훨씬 도움이 됩니다.
+이것은 더 이상 SF가 아니다. <strong>자가 치유 AI 시스템(Self-Healing AI Systems)</strong>의 시대가 도래했다. 이러한 시스템의 기반이 되는 [AI 에이전트 협업 패턴](/ko/blog/ko/ai-agent-collaboration-patterns)을 먼저 이해하면, 자가 치유 아키텍처 설계에 훨씬 도움이 된다.
 
 ### 자가 치유 시스템이란?
 
-자가 치유 시스템은 다음 사이클을 <strong>완전 자율적으로</strong> 실행합니다:
+자가 치유 시스템은 다음 사이클을 <strong>완전 자율적으로</strong> 실행한다:
 
 ```mermaid
 graph LR
@@ -249,7 +249,7 @@ class RootCauseAnalyzer:
 
 #### 멀티 에이전트 방식 (SWE-bench 33.6%)
 
-[Claude Code의 5가지 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 다루는 Plan → Execute 사이클과 동일한 구조입니다.
+[Claude Code의 5가지 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 다루는 Plan → Execute 사이클과 동일한 구조다.
 
 ```python
 from langgraph.graph import StateGraph
@@ -323,7 +323,7 @@ class AgentlessFixGenerator:
 - <strong>Agentless</strong>: 더 빠르고 (1회 호출), 성공률 높음 (50.8%)
 - <strong>Multi-Agent</strong>: 더 복잡하지만, 대규모 시스템에서 유연함
 
-프로덕션 환경에서 이 에이전트들을 안정적으로 운영하려면 [FastAPI + Claude API 스트리밍 프로덕션 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)를 참고하세요.
+프로덕션 환경에서 이 에이전트들을 안정적으로 운영하려면 [FastAPI + Claude API 스트리밍 프로덕션 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)를 참고하면 된다.
 
 ### 4. 테스트 및 검증 (Testing & Validation)
 
@@ -1361,7 +1361,7 @@ class RegulatoryCompliance:
 
 ## 결론
 
-자가 치유 AI 시스템은 <strong>소프트웨어 개발의 패러다임을 근본적으로 변화</strong>시키고 있습니다.
+자가 치유 AI 시스템은 <strong>소프트웨어 개발의 패러다임을 근본적으로 변화</strong>시키고 있다.
 
 ### 핵심 요약
 
@@ -1403,9 +1403,9 @@ python examples/self_healing_demo.py
 
 ---
 
-<strong>다음 단계</strong>: 이제 여러분의 시스템에 자가 치유 메커니즘을 추가할 차례입니다. 에러가 발생하면 사람을 깨우지 말고, AI 에이전트가 자동으로 수정하도록 하세요.
+<strong>다음 단계</strong>: 이제 여러분의 시스템에 자가 치유 메커니즘을 추가할 차례다. 에러가 발생하면 사람을 깨우지 말고, AI 에이전트가 자동으로 수정하도록 한다.
 
-<strong>미래는 자율적이고, 적응적이며, 자가 치유하는 시스템입니다.</strong>
+<strong>미래는 자율적이고, 적응적이며, 자가 치유하는 시스템이다.</strong>
 
 ## 참고 자료
 

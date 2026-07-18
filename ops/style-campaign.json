@@ -2205,7 +2205,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "rtk-rust-token-killer-llm-cost-optimization-guide-2026.md",
@@ -2214,7 +2214,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "self-healing-ai-systems.md",
@@ -2224,7 +2224,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "sentence-transformers-korean-rag-embedding-guide-2026.md",
@@ -2233,7 +2233,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "slack-mcp-team-communication.md",
@@ -2243,7 +2243,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "software-factory-zero-code-development.md",
@@ -2253,7 +2253,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "sora-shutdown-ai-video-market-reshaping-veo4.md",
@@ -2262,7 +2262,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "specification-driven-development.md",
@@ -2272,7 +2272,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "sqlite-ai-swarm-build.md",
@@ -2282,7 +2282,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ssr-survey-analysis.md",
@@ -2292,7 +2292,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "stripe-minions-autonomous-coding-agents-1300-prs.md",
