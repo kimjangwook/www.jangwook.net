@@ -147,7 +147,7 @@ graph TD
 
 ### PEFT의 핵심 아이디어
 
-Parameter-Efficient Fine-Tuning (PEFT)는 <strong>전체 파라미터의 일부만 학습</strong>하여 효율성을 극대화합니다:
+Parameter-Efficient Fine-Tuning (PEFT)는 <strong>전체 파라미터의 일부만 학습</strong>하여 효율성을 극대화한다:
 
 ```mermaid
 graph TD
@@ -173,7 +173,7 @@ graph TD
 
 ### 수학적 배경
 
-LoRA(Low-Rank Adaptation)는 다음과 같은 수학적 통찰에 기반합니다:
+LoRA(Low-Rank Adaptation)는 다음과 같은 수학적 통찰에 기반한다:
 
 ```python
 # 원본 가중치 업데이트 (Full Fine-tuning)
@@ -254,7 +254,7 @@ lr_B = lr        # B는 기본 학습률
 
 ### 4bit 양자화의 혁신
 
-QLoRA는 <strong>4bit 양자화</strong>와 LoRA를 결합하여 메모리 사용량을 극적으로 줄입니다:
+QLoRA는 <strong>4bit 양자화</strong>와 LoRA를 결합하여 메모리 사용량을 극적으로 줄인다:
 
 ```mermaid
 graph TD
@@ -325,7 +325,7 @@ print(f"훈련 가능 파라미터: {trainable_params:,} ({trainable_params/7e9*
 
 ### RLHF의 복잡성
 
-Reinforcement Learning from Human Feedback (RLHF)는 강력하지만 복잡합니다:
+Reinforcement Learning from Human Feedback (RLHF)는 강력하지만 복잡하다:
 
 ```mermaid
 graph TD
@@ -348,7 +348,7 @@ graph TD
 
 ### DPO: 직접 선호도 최적화
 
-Direct Preference Optimization (DPO)는 <strong>리워드 모델 없이</strong> 인간 선호도를 직접 학습합니다:
+Direct Preference Optimization (DPO)는 <strong>리워드 모델 없이</strong> 인간 선호도를 직접 학습한다:
 
 ```mermaid
 graph TD
@@ -519,13 +519,13 @@ DeNA 자료를 보며 가장 크게 와닿은 건 <strong>LLM 파인튜닝이 �
 
 ### 효율성의 패러다임 전환
 
-최근 <strong>효율성(Efficiency)</strong>이 화두가 되고 있습니다:
+최근 <strong>효율성(Efficiency)</strong>이 화두가 되고 있다:
 
 - LoRA: 파라미터 0.1% 학습으로 Full Fine-tuning의 98% 성능
 - QLoRA: 메모리 1/4로 동일 성능
 - DPO: RLHF 복잡도 1/3로 동등 성능
 
-이는 단순한 최적화가 아니라 <strong>새로운 수학적 통찰</strong>의 결과입니다. 저랭크 가설, 양자화 이론, 암묵적 리워드 모델 등 학계의 연구가 실무로 빠르게 이전되고 있습니다.
+이는 단순한 최적화가 아니라 <strong>새로운 수학적 통찰</strong>의 결과다. 저랭크 가설, 양자화 이론, 암묵적 리워드 모델 등 학계의 연구가 실무로 빠르게 이전되고 있다.
 
 ### 실무자에게 주는 교훈
 
@@ -537,7 +537,7 @@ DeNA 자료를 보며 가장 크게 와닿은 건 <strong>LLM 파인튜닝이 �
 
 ### 2025년 전망
 
-다음과 같은 트렌드가 예상됩니다:
+다음과 같은 트렌드가 예상된다:
 
 - <strong>더 작고 강력한 모델</strong>: Phi-3, Gemma 2 같은 소형 모델의 약진
 - <strong>온디바이스 파인튜닝</strong>: 스마트폰에서도 파인튜닝 가능한 시대
@@ -569,4 +569,4 @@ DeNA 자료를 보며 가장 크게 와닿은 건 <strong>LLM 파인튜닝이 �
 
 ---
 
-<strong>다음 글 예고</strong>: "DeNA LLM 스터디 Part 4: 프로덕션 배포와 모니터링"에서는 파인튜닝된 모델을 실제 서비스에 배포하는 전략, 모니터링 방법, 비용 최적화 기법을 다룰 예정입니다.
+<strong>다음 글 예고</strong>: "DeNA LLM 스터디 Part 4: 프로덕션 배포와 모니터링"에서는 파인튜닝된 모델을 실제 서비스에 배포하는 전략, 모니터링 방법, 비용 최적화 기법을 다룰 예정이다.

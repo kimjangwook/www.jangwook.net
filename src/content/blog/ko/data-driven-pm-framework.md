@@ -52,16 +52,16 @@ relatedPosts:
 
 ## 개요: 왜 데이터 기반 의사결정이 중요한가
 
-제품 관리자(PM)는 매일 수십 가지 결정을 내립니다. 어떤 기능을 우선 개발할지, 사용자 경험을 어떻게 개선할지, 리소스를 어디에 투자할지 등 중요한 선택의 연속입니다. 직관과 경험도 중요하지만, <strong>데이터에 기반한 의사결정</strong>은 성공 확률을 크게 높여줍니다.
+제품 관리자(PM)는 매일 수십 가지 결정을 내린다. 어떤 기능을 우선 개발할지, 사용자 경험을 어떻게 개선할지, 리소스를 어디에 투자할지 등 중요한 선택의 연속이다. 직관과 경험도 중요하지만, <strong>데이터에 기반한 의사결정</strong>은 성공 확률을 크게 높여준다.
 
-Netflix, Spotify, Amazon과 같은 글로벌 기업들이 데이터 중심 문화로 시장을 선도하는 이유는 명확합니다. 데이터는 다음을 가능하게 합니다:
+Netflix, Spotify, Amazon과 같은 글로벌 기업들이 데이터 중심 문화로 시장을 선도하는 이유는 명확하다. 데이터는 다음을 가능하게 한다:
 
 - <strong>객관적인 우선순위 결정</strong>: 주관적 의견이 아닌 실제 사용자 행동 기반
 - <strong>빠른 실험과 검증</strong>: A/B 테스트로 가설을 신속하게 테스트
 - <strong>리스크 최소화</strong>: 큰 투자 전 데이터로 방향성 검증
 - <strong>팀 정렬</strong>: 공통 지표로 이해관계자 간 합의 도출
 
-이 글에서는 PM이 실무에서 바로 활용할 수 있는 핵심 지표, 의사결정 프레임워크, 분석 도구, 그리고 실전 사례를 상세히 다룹니다.
+이 글에서는 PM이 실무에서 바로 활용할 수 있는 핵심 지표, 의사결정 프레임워크, 분석 도구, 그리고 실전 사례를 상세히 다룬다.
 
 ## 핵심 지표: 제품의 건강 상태 측정하기
 
@@ -69,7 +69,7 @@ Netflix, Spotify, Amazon과 같은 글로벌 기업들이 데이터 중심 문�
 
 #### DAU/MAU Ratio (Daily Active Users / Monthly Active Users)
 
-<strong>DAU/MAU 비율</strong>은 사용자 참여도를 측정하는 가장 기본적인 지표입니다.
+<strong>DAU/MAU 비율</strong>은 사용자 참여도를 측정하는 가장 기본적인 지표다.
 
 ```
 DAU/MAU Ratio = (일일 활성 사용자 수 / 월간 활성 사용자 수) × 100%
@@ -87,7 +87,7 @@ DAU/MAU Ratio = (일일 활성 사용자 수 / 월간 활성 사용자 수) × 1
 
 #### Retention Rate (재방문율)
 
-사용자가 얼마나 오래 제품을 사용하는지 측정합니다.
+사용자가 얼마나 오래 제품을 사용하는지 측정한다.
 
 <strong>측정 시점별 분류</strong>:
 - <strong>Day 1 Retention</strong>: 가입 다음 날 재방문율 (30〜40% 이상 목표)
@@ -132,7 +132,7 @@ ORDER BY cohort_month, activity_month;
 
 #### NPS (Net Promoter Score)
 
-사용자 만족도와 추천 의향을 측정하는 지표입니다.
+사용자 만족도와 추천 의향을 측정하는 지표다.
 
 ```
 NPS = (추천 고객 비율) - (비추천 고객 비율)
@@ -150,7 +150,7 @@ NPS = (추천 고객 비율) - (비추천 고객 비율)
 
 #### Conversion Rate & Funnel Analysis
 
-사용자 여정의 각 단계별 전환율을 측정합니다.
+사용자 여정의 각 단계별 전환율을 측정한다.
 
 <strong>E-commerce 깔때기 예시</strong>:
 ```
@@ -205,7 +205,7 @@ FROM funnel_events;
 
 ### 1. RICE Framework
 
-RICE는 <strong>Reach</strong>, <strong>Impact</strong>, <strong>Confidence</strong>, <strong>Effort</strong>의 약자로, 기능 우선순위를 정량적으로 평가합니다.
+RICE는 <strong>Reach</strong>, <strong>Impact</strong>, <strong>Confidence</strong>, <strong>Effort</strong>의 약자로, 기능 우선순위를 정량적으로 평가한다.
 
 ```
 RICE Score = (Reach × Impact × Confidence) / Effort
@@ -246,7 +246,7 @@ graph TD
 
 ### 2. ICE Framework (간소화 버전)
 
-빠른 의사결정이 필요할 때 사용하는 경량 프레임워크입니다.
+빠른 의사결정이 필요할 때 사용하는 경량 프레임워크다.
 
 ```
 ICE Score = (Impact + Confidence + Ease) / 3
@@ -260,7 +260,7 @@ ICE Score = (Impact + Confidence + Ease) / 3
 
 ### 3. Kano Model (사용자 만족도 분석)
 
-기능을 사용자 만족도 기준으로 분류합니다.
+기능을 사용자 만족도 기준으로 분류한다.
 
 ```mermaid
 graph LR
@@ -284,7 +284,7 @@ graph LR
 
 ### 4. Value vs Effort Matrix (2x2 매트릭스)
 
-시각적으로 빠르게 우선순위를 파악합니다.
+시각적으로 빠르게 우선순위를 파악한다.
 
 ```
 높은 가치
@@ -329,7 +329,7 @@ graph TD
 
 ### SQL 기반 자체 분석 스택 구축
 
-많은 기업이 <strong>Data Warehouse + SQL + BI 도구</strong> 조합을 선호합니다.
+많은 기업이 <strong>Data Warehouse + SQL + BI 도구</strong> 조합을 선호한다.
 
 <strong>장점</strong>:
 - 완전한 데이터 통제권
@@ -415,7 +415,7 @@ E: 허용 오차
 
 #### 4. 세그먼트별 분석
 
-전체 평균만 보지 말고 세그먼트별로 분석하세요.
+전체 평균만 보지 말고 세그먼트별로 분석하라.
 
 ```sql
 -- 세그먼트별 A/B 테스트 결과 분석
@@ -545,7 +545,7 @@ p < 0.05 달성해도 <strong>효과 크기가 작으면 실행 가치 없을 �
 
 ### 2. Vanity Metrics (허영 지표)
 
-의미 없는 숫자에 집착하지 마세요.
+의미 없는 숫자에 집착하지 마라.
 
 | Vanity Metric | Actionable Metric |
 |--------------|------------------|
@@ -605,7 +605,7 @@ GROUP BY user_status;
 
 ### 1. Data Literacy 교육
 
-<strong>모든 팀원이 데이터를 읽고 해석할 수 있어야 합니다.</strong>
+<strong>모든 팀원이 데이터를 읽고 해석할 수 있어야 한다.</strong>
 
 <strong>교육 프로그램</strong>:
 - 기초 SQL 교육 (2주 과정)
@@ -619,7 +619,7 @@ GROUP BY user_status;
 
 ### 2. 셀프 서비스 분석 인프라
 
-PM이 데이터 팀에 의존하지 않고 직접 분석할 수 있어야 합니다.
+PM이 데이터 팀에 의존하지 않고 직접 분석할 수 있어야 한다.
 
 <strong>구축 요소</strong>:
 - 표준화된 데이터 웨어하우스
@@ -646,7 +646,7 @@ PM이 데이터 팀에 의존하지 않고 직접 분석할 수 있어야 합니
 
 ### 4. 실험 중심 문화
 
-<strong>"의견"이 아닌 "데이터"로 논쟁을 해결하세요.</strong>
+<strong>"의견"이 아닌 "데이터"로 논쟁을 해결하라.</strong>
 
 <strong>실천 방법</strong>:
 - 모든 기능 출시 전 A/B 테스트 의무화
@@ -677,7 +677,7 @@ graph LR
 
 ## 결론: PM이 오늘부터 할 수 있는 것
 
-데이터 기반 의사결정은 하루아침에 만들어지지 않습니다. 하지만 <strong>작은 습관부터 시작</strong>하면 점진적으로 역량을 키울 수 있습니다.
+데이터 기반 의사결정은 하루아침에 만들어지지 않는다. 하지만 <strong>작은 습관부터 시작</strong>하면 점진적으로 역량을 키울 수 있다.
 
 ### 즉시 실천 가능한 액션 플랜
 
@@ -703,9 +703,9 @@ graph LR
 
 ### 핵심 원칙 3가지
 
-1. <strong>완벽함보다 실행</strong>: 80% 확신으로 시작하고, 반복하며 개선하세요.
-2. <strong>데이터는 시작점</strong>: 수치가 모든 것을 말해주지 않습니다. 사용자 인터뷰와 병행하세요.
-3. <strong>문화가 전부</strong>: 도구보다 중요한 것은 팀 전체가 데이터를 신뢰하고 활용하는 문화입니다.
+1. <strong>완벽함보다 실행</strong>: 80% 확신으로 시작하고, 반복하며 개선하라.
+2. <strong>데이터는 시작점</strong>: 수치가 모든 것을 말해주지 않는다. 사용자 인터뷰와 병행하라.
+3. <strong>문화가 전부</strong>: 도구보다 중요한 것은 팀 전체가 데이터를 신뢰하고 활용하는 문화다.
 
 ### 추천 학습 자료
 
@@ -726,4 +726,4 @@ graph LR
 
 ---
 
-데이터는 PM의 의사결정을 <strong>더 빠르고, 정확하고, 자신감 있게</strong> 만들어줍니다. [AI 에이전트에게 페르소나를 부여했을 때 나타나는 의사결정 패턴](/ko/blog/ko/ai-agent-persona-analysis)처럼, 데이터 기반 접근이 AI 시대에도 핵심 경쟁력이 됩니다. 오늘부터 작은 지표 하나를 추적하는 것으로 시작해보세요. 3개월 후, 여러분은 완전히 다른 수준의 PM이 되어 있을 것입니다.
+데이터는 PM의 의사결정을 <strong>더 빠르고, 정확하고, 자신감 있게</strong> 만들어준다. [AI 에이전트에게 페르소나를 부여했을 때 나타나는 의사결정 패턴](/ko/blog/ko/ai-agent-persona-analysis)처럼, 데이터 기반 접근이 AI 시대에도 핵심 경쟁력이 된다. 오늘부터 작은 지표 하나를 추적하는 것으로 시작해보라. 3개월 후, 완전히 다른 수준의 PM이 되어 있을 것이다.

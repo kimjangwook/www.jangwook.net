@@ -68,9 +68,9 @@ relatedPosts:
 
 ## 개요
 
-DeNA의 LLM 스터디 시리즈 Part 2에서는 LLM 출력을 안정적으로 제어하는 <strong>구조화 출력(Structured Output)</strong> 기법과 여러 LLM을 조합하여 더 강력한 시스템을 만드는 <strong>Multi-LLM 파이프라인 패턴</strong>을 다룹니다.
+DeNA의 LLM 스터디 시리즈 Part 2에서는 LLM 출력을 안정적으로 제어하는 <strong>구조화 출력(Structured Output)</strong> 기법과 여러 LLM을 조합하여 더 강력한 시스템을 만드는 <strong>Multi-LLM 파이프라인 패턴</strong>을 다룬다.
 
-이번 글에서는 DeNA 스터디 자료를 기반으로 최신 정보를 추가하여, 실무에서 즉시 활용할 수 있는 패턴과 베스트 프랙티스를 정리했습니다.
+이번 글에서는 DeNA 스터디 자료를 기반으로 최신 정보를 추가하여, 실무에서 즉시 활용할 수 있는 패턴과 베스트 프랙티스를 정리했다.
 
 ### 이 글에서 다룰 내용
 
@@ -96,7 +96,7 @@ DeNA의 LLM 스터디 시리즈 Part 2에서는 LLM 출력을 안정적으로 �
 
 ### 1.1 구조화 출력이 필요한 이유
 
-LLM은 기본적으로 자유 형식의 텍스트를 생성합니다. 하지만 실무 애플리케이션에서는 다음과 같은 요구사항이 있습니다:
+LLM은 기본적으로 자유 형식의 텍스트를 생성한다. 하지만 실무 애플리케이션에서는 다음과 같은 요구사항이 있다:
 
 - <strong>파싱 가능한 데이터</strong>: JSON, YAML 등 표준 형식
 - <strong>타입 안전성</strong>: 필드 타입 검증 (string, number, boolean 등)
@@ -126,7 +126,7 @@ response = llm.generate_structured(
 
 ### 1.2 JSON Schema 기반 구조화
 
-JSON Schema는 JSON 데이터의 구조를 정의하는 표준입니다.
+JSON Schema는 JSON 데이터의 구조를 정의하는 표준이다.
 
 #### 기본 예제
 
@@ -155,7 +155,7 @@ JSON Schema는 JSON 데이터의 구조를 정의하는 표준입니다.
 
 #### OpenAI Structured Outputs API (2024년 8월 출시)
 
-OpenAI는 JSON Schema를 직접 지원하는 API를 제공합니다:
+OpenAI는 JSON Schema를 직접 지원하는 API를 제공한다:
 
 ```python
 from openai import OpenAI
@@ -198,7 +198,7 @@ data = json.loads(response.choices[0].message.content)
 
 ### 1.3 Pydantic을 활용한 타입 안전 구조화
 
-Pydantic은 Python의 데이터 검증 라이브러리로, LLM 출력 검증에 이상적입니다.
+Pydantic은 Python의 데이터 검증 라이브러리로, LLM 출력 검증에 이상적이다.
 
 #### 기본 Pydantic 모델
 
@@ -219,7 +219,7 @@ schema = UserInfo.model_json_schema()
 
 #### Instructor 라이브러리 활용
 
-Instructor는 Pydantic과 LLM API를 완벽하게 통합합니다:
+Instructor는 Pydantic과 LLM API를 완벽하게 통합한다:
 
 ```python
 import instructor
@@ -292,7 +292,7 @@ print(person.companies[0].name)  # "Google"
 
 ### 1.4 Constrained Decoding 원리
 
-Constrained Decoding은 LLM이 토큰을 생성할 때, <strong>스키마에 맞지 않는 토큰을 실시간으로 차단</strong>하는 기법입니다.
+Constrained Decoding은 LLM이 토큰을 생성할 때, <strong>스키마에 맞지 않는 토큰을 실시간으로 차단</strong>하는 기법이다.
 
 #### 작동 원리
 
@@ -361,7 +361,7 @@ graph TD
 
 #### Anthropic Claude Tool Use 방식
 
-Claude는 직접적인 JSON Schema 지원 대신 Tool Use를 활용합니다:
+Claude는 직접적인 JSON Schema 지원 대신 Tool Use를 활용한다:
 
 ```python
 import anthropic
@@ -472,7 +472,7 @@ print(f"Quality: {result.quality_score}")  # 0.92
 
 ## 2. 복수 LLM 조합 패턴
 
-단일 LLM만으로는 해결하기 어려운 문제를 여러 LLM을 조합하여 해결합니다.
+단일 LLM만으로는 해결하기 어려운 문제를 여러 LLM을 조합하여 해결한다.
 
 ### 2.1 패턴 개요
 
@@ -757,7 +757,7 @@ improved = await iterative_improvement(
 
 ### 2.8 실전 구현: 하이브리드 패턴
 
-실무에서는 여러 패턴을 조합합니다:
+실무에서는 여러 패턴을 조합한다:
 
 ```python
 async def hybrid_pipeline(text: str) -> str:
@@ -810,7 +810,7 @@ async def hybrid_pipeline(text: str) -> str:
 
 ### 4.1 2025년 구조화 출력 표준
 
-<strong>OpenAI Structured Outputs</strong>가 사실상 표준으로 자리잡았습니다:
+<strong>OpenAI Structured Outputs</strong>가 사실상 표준으로 자리잡았다:
 
 - <strong>Constrained Decoding 기반</strong>: 100% 스키마 준수
 - <strong>추가 비용 없음</strong>: 기존 API와 동일한 가격
@@ -879,7 +879,7 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 ### Part 3 예고: RAG와 벡터 데이터베이스
 
-다음 글에서는 <strong>외부 지식을 LLM에 주입</strong>하는 RAG(Retrieval-Augmented Generation) 기법을 다룹니다:
+다음 글에서는 <strong>외부 지식을 LLM에 주입</strong>하는 RAG(Retrieval-Augmented Generation) 기법을 다룬다:
 
 1. <strong>벡터 데이터베이스 기초</strong>
    - Embedding 모델 선택
@@ -914,7 +914,7 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 ## 결론
 
-DeNA LLM 스터디 Part 2에서는 LLM을 실무에 적용하기 위한 두 가지 핵심 기법을 배웠습니다:
+DeNA LLM 스터디 Part 2에서는 LLM을 실무에 적용하기 위한 두 가지 핵심 기법을 배웠다:
 
 1. <strong>구조화 출력</strong>
    - JSON Schema, Pydantic으로 타입 안전한 출력 보장
@@ -932,7 +932,7 @@ DeNA LLM 스터디 Part 2에서는 LLM을 실무에 적용하기 위한 두 가�
 - 단일 LLM보다 <strong>복수 LLM 조합이 더 강력</strong>
 - 비용, 속도, 품질의 <strong>균형점을 찾는 것이 실무의 핵심</strong>
 
-다음 Part 3에서는 RAG를 통해 LLM의 지식을 확장하는 방법을 배웁니다!
+다음 Part 3에서는 RAG를 통해 LLM의 지식을 확장하는 방법을 배운다!
 
 ## 참고 자료
 

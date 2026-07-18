@@ -60,9 +60,9 @@ relatedPosts:
 
 ## AI 에이전트의 진화: Shallow에서 Deep으로
 
-2025년, AI 에이전트 시스템은 중요한 전환점을 맞이하고 있습니다. 단순한 도구 호출과 반응형 응답을 넘어, <strong>계획적이고 지속적인 작업 수행이 가능한 "Deep Agents"</strong> 패러다임이 등장했습니다.
+2025년, AI 에이전트 시스템은 중요한 전환점을 맞이하고 있다. 단순한 도구 호출과 반응형 응답을 넘어, <strong>계획적이고 지속적인 작업 수행이 가능한 "Deep Agents"</strong> 패러다임이 등장했다.
 
-이 글에서는 LangChain과 AWS의 Philipp Schmid가 제안한 Deep Agents 개념을 분석하고, 실제 블로그 자동화 시스템의 `.claude/` 디렉토리 구조를 이 패러다임에 맞게 최적화한 과정을 공유합니다.
+이 글에서는 LangChain과 AWS의 Philipp Schmid가 제안한 Deep Agents 개념을 분석하고, 실제 블로그 자동화 시스템의 `.claude/` 디렉토리 구조를 이 패러다임에 맞게 최적화한 과정을 공유한다.
 
 ### Deep Agents vs Shallow Agents
 
@@ -103,11 +103,11 @@ graph TD
 
 ## Deep Agents의 4가지 핵심 기둥
 
-Philipp Schmid의 연구와 LangChain의 구현을 분석한 결과, Deep Agents 패러다임은 4가지 핵심 기둥으로 구성됩니다.
+Philipp Schmid의 연구와 LangChain의 구현을 분석한 결과, Deep Agents 패러다임은 4가지 핵심 기둥으로 구성된다.
 
 ### 1. Explicit Planning (명시적 계획)
 
-Deep Agents는 암묵적 추론이 아닌 <strong>명시적이고 구조화된 계획</strong>을 생성합니다.
+Deep Agents는 암묵적 추론이 아닌 <strong>명시적이고 구조화된 계획</strong>을 생성한다.
 
 ```markdown
 ## 작업 계획
@@ -137,7 +137,7 @@ TypeScript 5.0 심층 분석 다국어 블로그 포스트 완성
 
 ### 2. Hierarchical Delegation (계층적 위임)
 
-복잡한 작업은 <strong>계층 구조를 통해 적합한 전문 에이전트에게 위임</strong>됩니다.
+복잡한 작업은 <strong>계층 구조를 통해 적합한 전문 에이전트에게 위임</strong>된다.
 
 <strong>오케스트레이터 → 클러스터:</strong>
 
@@ -161,7 +161,7 @@ graph LR
     CC --> IG[image-generator]
 ```
 
-각 클러스터는 명확한 책임과 리더십을 가집니다. 이런 다중 에이전트 팀 구조를 Claude Code에서 직접 구현하는 방법은 [Claude Code Agent Teams 완벽 가이드](/ko/blog/ko/claude-agent-teams-guide)에서 확인할 수 있습니다:
+각 클러스터는 명확한 책임과 리더십을 가진다. 이런 다중 에이전트 팀 구조를 Claude Code에서 직접 구현하는 방법은 [Claude Code Agent Teams 완벽 가이드](/ko/blog/ko/claude-agent-teams-guide)에서 확인할 수 있다:
 - <strong>content-creation</strong>: 콘텐츠 생성 (리더: writing-assistant)
 - <strong>research-analysis</strong>: 조사 및 분석 (리더: web-researcher)
 - <strong>seo-marketing</strong>: SEO 및 마케팅 (리더: seo-optimizer)
@@ -170,7 +170,7 @@ graph LR
 
 ### 3. Persistent Memory (지속적 메모리)
 
-Deep Agents는 <strong>세션 간에도 컨텍스트와 상태를 유지</strong>합니다.
+Deep Agents는 <strong>세션 간에도 컨텍스트와 상태를 유지</strong>한다.
 
 ```json
 {
@@ -217,7 +217,7 @@ Deep Agents는 <strong>세션 간에도 컨텍스트와 상태를 유지</strong
 
 ### 4. Extreme Context Engineering (극단적 컨텍스트 엔지니어링)
 
-Deep Agents는 <strong>가능한 모든 관련 정보를 컨텍스트에 포함</strong>시킵니다.
+Deep Agents는 <strong>가능한 모든 관련 정보를 컨텍스트에 포함</strong>시킨다.
 
 ```markdown
 ## 위임 컨텍스트
@@ -241,7 +241,7 @@ Deep Agents는 <strong>가능한 모든 관련 정보를 컨텍스트에 포함<
 
 ## 현재 시스템 분석: 65% 준수율
 
-기존 `.claude/` 디렉토리 구조를 Deep Agents 패러다임 기준으로 분석했습니다.
+기존 `.claude/` 디렉토리 구조를 Deep Agents 패러다임 기준으로 분석했다.
 
 ### 준수 항목 (65%)
 
@@ -286,7 +286,7 @@ Deep Agents는 <strong>가능한 모든 관련 정보를 컨텍스트에 포함<
 
 ### 2. 오케스트레이터 에이전트 구현
 
-오케스트레이터는 전체 시스템의 <strong>중앙 조율자</strong> 역할을 합니다.
+오케스트레이터는 전체 시스템의 <strong>중앙 조율자</strong> 역할을 한다.
 
 ```typescript
 // Orchestrator의 핵심 워크플로우
@@ -339,7 +339,7 @@ interface OrchestratorWorkflow {
 
 ### 3. Planning Protocol 구현
 
-모든 복잡한 작업은 명시적 계획을 따릅니다:
+모든 복잡한 작업은 명시적 계획을 따른다:
 
 ```markdown
 ## Planning Protocol
@@ -520,7 +520,7 @@ operations:
 | 컨텍스트 재사용 | 0% | 80%+ | - |
 | 병렬 실행 효율 | 10% | 60%+ | 6배 |
 
-병렬 실행 효율을 실전에서 극대화하는 방법은 [AI 에이전트 워크플로우를 메타 도구로 최적화하기: AWO 프레임워크 실전 가이드](/ko/blog/ko/agentic-workflow-meta-tools-optimization)에서 확인할 수 있습니다.
+병렬 실행 효율을 실전에서 극대화하는 방법은 [AI 에이전트 워크플로우를 메타 도구로 최적화하기: AWO 프레임워크 실전 가이드](/ko/blog/ko/agentic-workflow-meta-tools-optimization)에서 확인할 수 있다.
 
 ### 정성적 개선
 
@@ -586,7 +586,7 @@ TypeScript 5.0 심층 분석 3개 언어 버전 완성
 
 ### 1. 점진적 도입
 
-전체 시스템을 한 번에 바꾸지 말고 단계적으로 도입하세요:
+전체 시스템을 한 번에 바꾸지 말고 단계적으로 도입하라:
 
 1. <strong>Phase 1</strong>: orchestrator.md 추가 및 기본 위임 구현
 2. <strong>Phase 2</strong>: planning-protocol.md 추가
@@ -595,7 +595,7 @@ TypeScript 5.0 심층 분석 3개 언어 버전 완성
 
 ### 2. 성능 균형
 
-Deep Agents는 더 많은 토큰을 사용합니다. 다음을 고려하세요:
+Deep Agents는 더 많은 토큰을 사용한다. 다음을 고려하라:
 
 - 작업 복잡도에 따른 동적 계획 깊이
 - 캐싱을 통한 반복 조회 최소화
@@ -603,7 +603,7 @@ Deep Agents는 더 많은 토큰을 사용합니다. 다음을 고려하세요:
 
 ### 3. 모니터링
 
-상태 관리 시스템을 통해 다음을 추적하세요:
+상태 관리 시스템을 통해 다음을 추적하라:
 
 - 평균 작업 완료 시간
 - 실패율 및 복구 성공률
@@ -611,7 +611,7 @@ Deep Agents는 더 많은 토큰을 사용합니다. 다음을 고려하세요:
 
 ## 참고 자료
 
-이 구현은 다음 연구를 기반으로 합니다:
+이 구현은 다음 연구를 기반으로 한다:
 
 1. <strong>Philipp Schmid</strong> - "Deep Agents" / "Agents 2.0" 개념
    - 장기 작업 수행을 위한 에이전트 아키텍처
@@ -628,13 +628,13 @@ Deep Agents는 더 많은 토큰을 사용합니다. 다음을 고려하세요:
 
 ## 마치며
 
-Deep Agents 패러다임은 AI 에이전트 시스템의 <strong>다음 단계</strong>입니다. 단순한 도구 호출을 넘어, 복잡하고 장기적인 작업을 자율적으로 수행할 수 있는 시스템으로 진화하고 있습니다.
+Deep Agents 패러다임은 AI 에이전트 시스템의 <strong>다음 단계</strong>다. 단순한 도구 호출을 넘어, 복잡하고 장기적인 작업을 자율적으로 수행할 수 있는 시스템으로 진화하고 있다.
 
 이번 `.claude/` 디렉토리 최적화를 통해:
 - 65%에서 95%+ 준수율로 향상
 - 5〜15 스텝에서 100+ 스텝 지원
 - 90%+ 자동 복구율 달성 예상
 
-핵심은 <strong>명시적 계획</strong>, <strong>계층적 위임</strong>, <strong>지속적 상태</strong>, <strong>극단적 컨텍스트 엔지니어링</strong>입니다. 이 4가지 기둥을 중심으로 에이전트 시스템을 구축하면, 진정한 자율적 AI 협업 파트너를 만들 수 있습니다.
+핵심은 <strong>명시적 계획</strong>, <strong>계층적 위임</strong>, <strong>지속적 상태</strong>, <strong>극단적 컨텍스트 엔지니어링</strong>이다. 이 4가지 기둥을 중심으로 에이전트 시스템을 구축하면, 진정한 자율적 AI 협업 파트너를 만들 수 있다.
 
-다음 단계로는 실제 100+ 스텝 작업을 수행해보고, 복구 프로토콜의 효과를 측정하며, 지속적으로 시스템을 개선해 나갈 예정입니다.
+다음 단계로는 실제 100+ 스텝 작업을 수행해보고, 복구 프로토콜의 효과를 측정하며, 지속적으로 시스템을 개선해 나갈 예정이다.

@@ -52,7 +52,7 @@ faq:
 
 ## 이 글이 유용한 독자 / 건너뛰어도 되는 경우
 
-기초 정리 글이다 보니, 누구에게나 똑같이 필요한 내용은 아닙니다. 자기 상황에 맞게 읽는 깊이를 조절하면 됩니다.
+기초 정리 글이다 보니, 누구에게나 똑같이 필요한 내용은 아니다. 자기 상황에 맞게 읽는 깊이를 조절하면 된다.
 
 <strong>이 글이 특히 유용한 경우</strong>
 
@@ -63,15 +63,15 @@ faq:
 
 <strong>건너뛰고 다음 편으로 가도 되는 경우</strong>
 
-- 이미 Transformer, Next Token Prediction, RLHF를 설명할 수 있다면 이 편은 복습용으로만 훑고, 구조화 출력을 다루는 Part 2나 검색 결합을 다루는 [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag)로 바로 넘어가도 됩니다.
-- 단일 호출이 아니라 도구를 쓰는 에이전트를 설계하는 게 목표라면 [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design)이 더 직접적입니다.
-- 모델 내부 학습 과정을 깊게 파려는 거라면 기초 비교보다 Part 3 학습 방법론이 맞습니다.
+- 이미 Transformer, Next Token Prediction, RLHF를 설명할 수 있다면 이 편은 복습용으로만 훑고, 구조화 출력을 다루는 Part 2나 검색 결합을 다루는 [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag)로 바로 넘어가도 된다.
+- 단일 호출이 아니라 도구를 쓰는 에이전트를 설계하는 게 목표라면 [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design)이 더 직접적이다.
+- 모델 내부 학습 과정을 깊게 파려는 거라면 기초 비교보다 Part 3 학습 방법론이 맞다.
 
-요약하면, 개념 지도를 한 번 그려두고 싶을 때 읽고, 이미 지도가 있다면 필요한 편으로 건너뛰세요.
+요약하면, 개념 지도를 한 번 그려두고 싶을 때 읽고, 이미 지도가 있다면 필요한 편으로 건너뛰면 된다.
 
 ## GPT, Claude, Gemini가 뒤엉킨 2025년 AI 지형
 
-작년 이맘때와 지금의 LLM 판도는 완전히 다릅니다. DeNA 사내 스터디 자료를 정리하면서 새삼 느낀 점입니다. 이 시리즈는 그 자료를 바탕으로 LLM의 기초 원리부터 실전 활용까지 다섯 편에 걸쳐 풀어냅니다. 첫 편인 여기서는 LLM이 실제로 어떻게 동작하는지, 그리고 2025년 말 기준 주요 모델들이 어떤 위치에 서 있는지부터 짚습니다.
+작년 이맘때와 지금의 LLM 판도는 완전히 다르다. DeNA 사내 스터디 자료를 정리하면서 새삼 느낀 점이다. 이 시리즈는 그 자료를 바탕으로 LLM의 기초 원리부터 실전 활용까지 다섯 편에 걸쳐 풀어낸다. 첫 편인 여기서는 LLM이 실제로 어떻게 동작하는지, 그리고 2025년 말 기준 주요 모델들이 어떤 위치에 서 있는지부터 짚는다.
 
 > <strong>자료 출처</strong>: 본 포스트는 [DeNA 社内勉強会資料](https://dena.github.io/llm-study20251201/)을 기반으로 작성되었습니다.
 
@@ -79,7 +79,7 @@ faq:
 
 ### 성능 비교: GPT vs Claude vs Gemini
 
-차세대 모델 경쟁이 본격화됐습니다. 주요 제공업체들의 라인업을 한눈에 비교해 보면 이렇습니다.
+차세대 모델 경쟁이 본격화됐다. 주요 제공업체들의 라인업을 한눈에 비교해 보면 이렇다.
 
 ```markdown
 | 모델                               | 개발사    | 특징            | 강점                    |
@@ -145,7 +145,7 @@ graph TD
 
 ### Transformer 아키텍처
 
-LLM의 기반이 되는 Transformer는 2017년 Google의 "Attention is All You Need" 논문에서 처음 소개되었습니다.
+LLM의 기반이 되는 Transformer는 2017년 Google의 "Attention is All You Need" 논문에서 처음 소개됐다.
 
 ```mermaid
 graph TD
@@ -199,7 +199,7 @@ def predict_next_token(context: str, model: LLM) -> str:
 
 ### 최신 연구 동향: Mixture of Experts (MoE)
 
-2024년 들어 대형 모델 대부분이 MoE 아키텍처로 넘어갔습니다. 구조는 단순합니다.
+2024년 들어 대형 모델 대부분이 MoE 아키텍처로 넘어갔다. 구조는 단순하다.
 
 ```mermaid
 graph TD
@@ -272,7 +272,7 @@ graph TD
 
 ### o1, o3와 DeepSeek-R1의 등장
 
-2024년 9월 OpenAI가 "생각하는" 모델 o1을 내놓았습니다. 2025년에는 o3로 이어졌죠. 여기에 DeepSeek-R1이 오픈소스로 공개되면서 판이 또 한 번 흔들렸습니다.
+2024년 9월 OpenAI가 "생각하는" 모델 o1을 내놓았다. 2025년에는 o3로 이어졌다. 여기에 DeepSeek-R1이 오픈소스로 공개되면서 판이 또 한 번 흔들렸다.
 
 ```mermaid
 graph TD
@@ -302,7 +302,7 @@ graph TD
 
 ### Chain of Thought (CoT) 프롬프팅
 
-추론 전용 모델이 아니어도 CoT 한 줄이면 정답률이 눈에 띄게 올라갑니다.
+추론 전용 모델이 아니어도 CoT 한 줄이면 정답률이 눈에 띄게 올라간다.
 
 ```markdown
 # ❌ 일반 프롬프트
@@ -519,7 +519,7 @@ graph TD
 
 ## 다음 회차 예고
 
-Part 2에서는 <strong>구조화 출력과 멀티 LLM 파이프라인</strong>을 다룹니다:
+Part 2에서는 <strong>구조화 출력과 멀티 LLM 파이프라인</strong>을 다룬다:
 
 - JSON 모드와 Function Calling
 - 구조화 출력의 실전 활용
