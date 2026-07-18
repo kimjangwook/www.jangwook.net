@@ -61,9 +61,9 @@ relatedPosts:
 
 ## 개요
 
-AI 기반 코딩 어시스턴트가 생산성을 크게 향상시키지만, <strong>일관된 코드 품질과 규칙 준수</strong>를 보장하는 것은 여전히 어려운 과제입니다. Claude Code의 <strong>Hook 시스템</strong>은 이 문제를 해결하는 강력한 솔루션입니다.
+AI 기반 코딩 어시스턴트가 생산성을 크게 향상시키지만, <strong>일관된 코드 품질과 규칙 준수</strong>를 보장하는 것은 여전히 어려운 과제다. Claude Code의 <strong>Hook 시스템</strong>은 이 문제를 해결하는 강력한 솔루션이다.
 
-Hook은 특정 워크플로우 단계에서 자동으로 실행되는 스크립트로, 코드 작성, 파일 저장, 커밋 전후 등 다양한 시점에 커스텀 검증 로직을 삽입할 수 있습니다. 이를 통해 코드 리뷰, 테스트, 보안 스캔, 규정 준수 등을 완전히 자동화할 수 있습니다.
+Hook은 특정 워크플로우 단계에서 자동으로 실행되는 스크립트로, 코드 작성, 파일 저장, 커밋 전후 등 다양한 시점에 커스텀 검증 로직을 삽입할 수 있다. 이를 통해 코드 리뷰, 테스트, 보안 스캔, 규정 준수 등을 완전히 자동화할 수 있다.
 
 ### 이 글에서 다룰 내용
 
@@ -78,7 +78,7 @@ Hook은 특정 워크플로우 단계에서 자동으로 실행되는 스크립�
 
 ### Hook이란?
 
-Claude Code Hook은 <strong>워크플로우의 특정 시점에서 실행되는 사용자 정의 스크립트</strong>입니다. Git hook과 유사한 개념이지만, Claude의 AI 코딩 워크플로우에 특화되어 있습니다.
+Claude Code Hook은 <strong>워크플로우의 특정 시점에서 실행되는 사용자 정의 스크립트</strong>다. Git hook과 유사한 개념이지만, Claude의 AI 코딩 워크플로우에 특화되어 있다.
 
 ```mermaid
 graph LR
@@ -92,7 +92,7 @@ graph LR
 
 ### Hook 실행 메커니즘
 
-Hook은 종료 코드(exit code)로 Claude의 동작을 제어합니다:
+Hook은 종료 코드(exit code)로 Claude의 동작을 제어한다:
 
 ```bash
 # 성공 (작업 계속)
@@ -121,7 +121,7 @@ exit 2
 
 ### 1. 기본 Hook 생성
 
-가장 간단한 Hook부터 시작해 봅시다:
+가장 간단한 Hook부터 시작해 보자:
 
 ````bash
 #!/bin/bash
@@ -147,7 +147,7 @@ exit 0
 
 ### 2. 실행 권한 설정
 
-Hook 스크립트는 실행 가능해야 합니다:
+Hook 스크립트는 실행 가능해야 한다:
 
 ```bash
 chmod +x .claude/hooks/pre-file-write.sh
@@ -159,7 +159,7 @@ chmod +x .claude/hooks/*.py
 
 ### 3. Hook 데이터 구조
 
-Claude는 Hook에 JSON 형식으로 컨텍스트 정보를 전달합니다:
+Claude는 Hook에 JSON 형식으로 컨텍스트 정보를 전달한다:
 
 ```json
 {
@@ -435,7 +435,7 @@ exit 0
 
 ## CI/CD 통합 전략
 
-Hook 시스템을 CI/CD 파이프라인과 연결하면 자동화 범위를 로컬 환경 밖까지 확장할 수 있습니다. [GitHub Agentic Workflows — CI/CD에 AI 에이전트가 합류하다](/ko/blog/ko/github-agentic-workflows-cicd-ai)에서는 AI 에이전트가 Pull Request 검토와 병합 결정에 직접 참여하는 패턴을 다룹니다.
+Hook 시스템을 CI/CD 파이프라인과 연결하면 자동화 범위를 로컬 환경 밖까지 확장할 수 있다. [GitHub Agentic Workflows — CI/CD에 AI 에이전트가 합류하다](/ko/blog/ko/github-agentic-workflows-cicd-ai)에서는 AI 에이전트가 Pull Request 검토와 병합 결정에 직접 참여하는 패턴을 다룬다.
 
 ### 1. GitHub Actions 통합
 
@@ -575,7 +575,7 @@ if __name__ == '__main__':
 
 ### 1. 점진적 Hook 도입 전략
 
-Hook을 한 번에 모두 적용하면 워크플로우가 느려질 수 있습니다. 점진적 도입 전략 외에도, [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)에서 전체 개발 워크플로우에서 Claude Code를 효율적으로 운용하는 방법을 확인하세요.
+Hook을 한 번에 모두 적용하면 워크플로우가 느려질 수 있다. 점진적 도입 전략 외에도, [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)에서 전체 개발 워크플로우에서 Claude Code를 효율적으로 운용하는 방법을 확인하라.
 
 ```mermaid
 graph TD
@@ -645,7 +645,7 @@ exit 0
 
 ### 2. Hook 조건부 실행
 
-모든 파일에 모든 Hook을 실행할 필요는 없습니다:
+모든 파일에 모든 Hook을 실행할 필요는 없다:
 
 ```bash
 #!/bin/bash
@@ -678,7 +678,7 @@ exit 0
 
 ### 3. Hook 성능 최적화
 
-Hook이 너무 느리면 개발 경험이 저해됩니다:
+Hook이 너무 느리면 개발 경험이 저해된다:
 
 ```bash
 #!/bin/bash
@@ -1100,7 +1100,7 @@ exit 0
 
 ## 결론
 
-Claude Code Hook 시스템은 AI 기반 코딩 워크플로우에 <strong>일관성, 품질, 보안</strong>을 보장하는 강력한 도구입니다. 이 글에서 다룬 내용을 요약하면:
+Claude Code Hook 시스템은 AI 기반 코딩 워크플로우에 <strong>일관성, 품질, 보안</strong>을 보장하는 강력한 도구다. 이 글에서 다룬 내용을 요약하면:
 
 ### 핵심 요점
 
@@ -1131,9 +1131,9 @@ Claude Code Hook 시스템은 AI 기반 코딩 워크플로우에 <strong>일관
 3. CI/CD 파이프라인 통합
 4. 팀 전체로 확산 및 개선
 
-Hook 수준에서 나아가 인간 개입 없이 버그를 자동 수정하는 방향이 목표라면, [자가 치유 AI 시스템](/ko/blog/ko/self-healing-ai-systems)에서 에이전트 기반 자동 복구 아키텍처를 참고하세요.
+Hook 수준에서 나아가 인간 개입 없이 버그를 자동 수정하는 방향이 목표라면, [자가 치유 AI 시스템](/ko/blog/ko/self-healing-ai-systems)에서 에이전트 기반 자동 복구 아키텍처를 참고하라.
 
-Hook 시스템을 효과적으로 활용하면 코드 품질은 향상되고, 리뷰 시간은 단축되며, 규정 준수는 자동화됩니다. 작은 Hook부터 시작하여 점진적으로 확장해 나가세요.
+Hook 시스템을 효과적으로 활용하면 코드 품질은 향상되고, 리뷰 시간은 단축되며, 규정 준수는 자동화된다. 작은 Hook부터 시작하여 점진적으로 확장해 나가면 된다.
 
 ## 참고 자료
 

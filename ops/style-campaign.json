@@ -489,7 +489,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-api-prompt-caching-cost-optimization-guide.md",
@@ -498,7 +498,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-agentic-workflow-patterns-5-types.md",
@@ -507,7 +507,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-best-practices.md",
@@ -517,7 +517,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-channels-telegram-bridge.md",
@@ -526,7 +526,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-cli-migration-guide.md",
@@ -535,7 +535,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-hooks-workflow.md",
@@ -545,7 +545,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-insights-usage-analysis.md",
@@ -555,7 +555,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-june-2026-new-features-changelog-developer-guide.md",
@@ -564,7 +564,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-local-model-inefficiency.md",
@@ -574,7 +574,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-masterclass-series-1-prompt-to-agent.md",
