@@ -56,15 +56,15 @@ relatedPosts:
 
 ## Google Code Wiki란?
 
-Google Code Wiki는 2025년 11월 13일에 공개 프리뷰로 발표된 <strong>AI 기반 코드 문서화 플랫폼</strong>입니다. Gemini 모델을 활용하여 GitHub 퍼블릭 레포지토리의 코드를 자동으로 분석하고, 구조화된 문서와 다이어그램을 생성합니다.
+Google Code Wiki는 2025년 11월 13일에 공개 프리뷰로 발표된 <strong>AI 기반 코드 문서화 플랫폼</strong>이다. Gemini 모델을 활용하여 GitHub 퍼블릭 레포지토리의 코드를 자동으로 분석하고, 구조화된 문서와 다이어그램을 생성한다.
 
-기존의 정적인 README나 수동으로 관리하는 문서와 달리, Code Wiki는 코드베이스의 변경 사항을 자동으로 반영하여 항상 최신 상태의 문서를 유지합니다. 이는 개발자들이 새로운 프로젝트를 이해하거나, 대규모 코드베이스를 탐색할 때 겪는 어려움을 크게 줄여줍니다.
+기존의 정적인 README나 수동으로 관리하는 문서와 달리, Code Wiki는 코드베이스의 변경 사항을 자동으로 반영하여 항상 최신 상태의 문서를 유지한다. 이는 개발자들이 새로운 프로젝트를 이해하거나, 대규모 코드베이스를 탐색할 때 겪는 어려움을 크게 줄여준다.
 
 ## 핵심 기능
 
 ### 1. 자동 업데이트되는 구조화된 위키
 
-Code Wiki는 레포지토리를 분석하여 다음과 같은 정보를 자동으로 생성합니다:
+Code Wiki는 레포지토리를 분석하여 다음과 같은 정보를 자동으로 생성한다:
 
 - <strong>프로젝트 개요</strong>: 레포지토리의 목적과 주요 기능 요약
 - <strong>아키텍처 설명</strong>: 시스템 구조와 컴포넌트 간의 관계
@@ -83,7 +83,7 @@ Code Wiki는 레포지토리를 분석하여 다음과 같은 정보를 자동�
 
 ### 2. Gemini 기반 채팅 에이전트
 
-Code Wiki의 가장 강력한 기능 중 하나는 <strong>대화형 채팅 에이전트</strong>입니다. 자연어로 질문하면 코드베이스에 대한 구체적인 답변을 받을 수 있습니다.
+Code Wiki의 가장 강력한 기능 중 하나는 <strong>대화형 채팅 에이전트</strong>다. 자연어로 질문하면 코드베이스에 대한 구체적인 답변을 받을 수 있다.
 
 <strong>질문 예시:</strong>
 
@@ -92,25 +92,25 @@ Code Wiki의 가장 강력한 기능 중 하나는 <strong>대화형 채팅 에�
 - "데이터베이스 스키마 구조를 설명해주세요."
 - "이 함수의 동작 원리를 알려주세요."
 
-채팅 에이전트는 단순히 텍스트 답변만 제공하는 것이 아니라, <strong>관련 코드 위치를 하이퍼링크로 연결</strong>하여 직접 소스 코드를 확인할 수 있게 해줍니다.
+채팅 에이전트는 단순히 텍스트 답변만 제공하는 것이 아니라, <strong>관련 코드 위치를 하이퍼링크로 연결</strong>하여 직접 소스 코드를 확인할 수 있게 해준다.
 
 ### 3. 하이퍼링크 연결된 코드 참조
 
-모든 문서화된 내용은 실제 코드와 연결됩니다:
+모든 문서화된 내용은 실제 코드와 연결된다:
 
 - 클릭 한 번으로 관련 소스 파일로 이동
 - 특정 함수나 클래스의 정의 위치 즉시 확인
 - 코드 변경 이력 추적 가능
 
-이 기능은 특히 대규모 프로젝트에서 <strong>코드 네비게이션 시간을 획기적으로 단축</strong>시킵니다.
+이 기능은 특히 대규모 프로젝트에서 <strong>코드 네비게이션 시간을 획기적으로 단축</strong>한다.
 
 ### 4. 자동 생성 다이어그램
 
-Code Wiki는 코드 분석을 통해 다양한 종류의 다이어그램을 자동으로 생성합니다:
+Code Wiki는 코드 분석을 통해 다양한 종류의 다이어그램을 자동으로 생성한다:
 
 #### 아키텍처 다이어그램
 
-시스템의 전체 구조와 컴포넌트 간의 관계를 시각화합니다.
+시스템의 전체 구조와 컴포넌트 간의 관계를 시각화한다.
 
 ```mermaid
 graph TB
@@ -138,7 +138,7 @@ graph TB
 
 #### 클래스 다이어그램
 
-객체 지향 코드의 클래스 구조와 상속 관계를 표현합니다.
+객체 지향 코드의 클래스 구조와 상속 관계를 표현한다.
 
 ```mermaid
 classDiagram
@@ -167,7 +167,7 @@ classDiagram
 
 #### 시퀀스 다이어그램
 
-함수 호출 흐름과 컴포넌트 간의 상호작용을 순차적으로 보여줍니다.
+함수 호출 흐름과 컴포넌트 간의 상호작용을 순차적으로 보여준다.
 
 ```mermaid
 sequenceDiagram
@@ -188,11 +188,11 @@ sequenceDiagram
 
 ### Step 1: Code Wiki 접속
 
-[codewiki.google](https://codewiki.google)에 접속합니다. Google 계정으로 로그인하면 즉시 사용할 수 있습니다.
+[codewiki.google](https://codewiki.google)에 접속한다. Google 계정으로 로그인하면 즉시 사용할 수 있다.
 
 ### Step 2: 레포지토리 검색
 
-검색창에 GitHub 레포지토리 이름이나 URL을 입력합니다:
+검색창에 GitHub 레포지토리 이름이나 URL을 입력한다:
 
 ```
 예시:
@@ -202,11 +202,11 @@ sequenceDiagram
 - https://github.com/owner/repo
 ```
 
-<strong>참고</strong>: 현재 공개 프리뷰 단계에서는 퍼블릭 레포지토리만 지원됩니다.
+<strong>참고</strong>: 현재 공개 프리뷰 단계에서는 퍼블릭 레포지토리만 지원된다.
 
 ### Step 3: 위키 탐색
 
-레포지토리를 선택하면 자동으로 생성된 위키 페이지가 표시됩니다:
+레포지토리를 선택하면 자동으로 생성된 위키 페이지가 표시된다:
 
 1. <strong>Overview</strong>: 프로젝트 개요 및 시작하기 가이드
 2. <strong>Architecture</strong>: 시스템 아키텍처 설명
@@ -215,7 +215,7 @@ sequenceDiagram
 
 ### Step 4: 채팅 에이전트 활용
 
-우측 하단의 채팅 아이콘을 클릭하여 Gemini 에이전트와 대화를 시작합니다.
+우측 하단의 채팅 아이콘을 클릭하여 Gemini 에이전트와 대화를 시작한다.
 
 ```
 효과적인 질문 방법:
@@ -230,7 +230,7 @@ sequenceDiagram
 
 ### Step 5: 다이어그램 탐색
 
-Diagrams 탭에서 자동 생성된 다이어그램을 확인할 수 있습니다:
+Diagrams 탭에서 자동 생성된 다이어그램을 확인할 수 있다:
 
 - <strong>확대/축소</strong>: 마우스 휠 또는 핀치 제스처
 - <strong>노드 클릭</strong>: 해당 코드로 바로 이동
@@ -238,11 +238,11 @@ Diagrams 탭에서 자동 생성된 다이어그램을 확인할 수 있습니�
 
 ## Gemini CLI 확장
 
-Google은 Code Wiki의 기능을 <strong>Gemini CLI</strong>로 확장하여, 터미널에서도 코드 문서화 기능을 사용할 수 있도록 준비하고 있습니다. 이와 유사하게, Claude AI 생태계에서는 [MCP(Model Context Protocol) 서버 툴킷](/ko/blog/ko/mcp-servers-toolkit-introduction)이 AI 어시스턴트와 개발 도구를 연결하는 표준 인터페이스로 자리잡고 있습니다.
+Google은 Code Wiki의 기능을 <strong>Gemini CLI</strong>로 확장하여, 터미널에서도 코드 문서화 기능을 사용할 수 있도록 준비하고 있다. 이와 유사하게, Claude AI 생태계에서는 [MCP(Model Context Protocol) 서버 툴킷](/ko/blog/ko/mcp-servers-toolkit-introduction)이 AI 어시스턴트와 개발 도구를 연결하는 표준 인터페이스로 자리잡고 있다.
 
 ### 프라이빗 레포 지원 예정
 
-현재 공개 프리뷰에서는 퍼블릭 레포지토리만 지원하지만, Gemini CLI를 통해 <strong>프라이빗 레포지토리 지원</strong>이 예정되어 있습니다.
+현재 공개 프리뷰에서는 퍼블릭 레포지토리만 지원하지만, Gemini CLI를 통해 <strong>프라이빗 레포지토리 지원</strong>이 예정되어 있다.
 
 ```bash
 # 예상되는 사용 방법 (대기자 명단 등록 후)
@@ -253,15 +253,15 @@ gemini codewiki diagram --type architecture
 
 ### 대기자 명단 등록
 
-프라이빗 레포 지원을 원하신다면 [Google AI Studio](https://aistudio.google.com)에서 대기자 명단에 등록할 수 있습니다.
+프라이빗 레포 지원을 원한다면 [Google AI Studio](https://aistudio.google.com)에서 대기자 명단에 등록할 수 있다.
 
 ## 실제 활용 예시: Next.js 레포지토리
 
-Code Wiki의 실제 활용도를 보여드리기 위해 `vercel/next.js` 레포지토리를 예시로 살펴보겠습니다.
+Code Wiki의 실제 활용도를 보여주기 위해 `vercel/next.js` 레포지토리를 예시로 살펴본다.
 
 ### 프로젝트 구조 이해
 
-Code Wiki는 Next.js의 복잡한 모노레포 구조를 다음과 같이 정리합니다:
+Code Wiki는 Next.js의 복잡한 모노레포 구조를 다음과 같이 정리한다:
 
 ```
 next.js/
@@ -286,7 +286,7 @@ next.js/
 
 ### 자동 생성 다이어그램
 
-Code Wiki는 Next.js의 빌드 프로세스를 다음과 같은 시퀀스 다이어그램으로 시각화합니다:
+Code Wiki는 Next.js의 빌드 프로세스를 다음과 같은 시퀀스 다이어그램으로 시각화한다:
 
 ```mermaid
 sequenceDiagram
@@ -372,7 +372,7 @@ sequenceDiagram
 4. 다이어그램으로 아키텍처 이해
 ```
 
-기존에 1〜2주 걸리던 온보딩이 2〜3일로 단축됩니다.
+기존에 1〜2주 걸리던 온보딩이 2〜3일로 단축된다.
 
 ### 2. 오픈소스 기여 준비
 
@@ -398,16 +398,16 @@ sequenceDiagram
 
 ## 마무리
 
-Google Code Wiki는 <strong>AI를 활용한 코드 문서화의 새로운 패러다임</strong>을 제시합니다. AI 에이전트가 코드를 이해하고 도구를 호출하는 원리가 궁금하다면, [Claude Agent SDK의 Tool Use 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 에이전틱 루프 구현을 확인할 수 있습니다. 아직 공개 프리뷰 단계이지만, 이미 많은 개발자들이 그 유용성을 체험하고 있습니다.
+Google Code Wiki는 <strong>AI를 활용한 코드 문서화의 새로운 패러다임</strong>을 제시한다. AI 에이전트가 코드를 이해하고 도구를 호출하는 원리가 궁금하다면, [Claude Agent SDK의 Tool Use 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 에이전틱 루프 구현을 확인할 수 있다. 아직 공개 프리뷰 단계이지만, 이미 많은 개발자들이 그 유용성을 체험하고 있다.
 
-특히 다음과 같은 상황에서 Code Wiki를 적극 활용하시길 권장합니다:
+특히 다음과 같은 상황에서 Code Wiki가 특히 힘을 발휘한다:
 
 - 대규모 오픈소스 프로젝트 분석
 - 새로운 코드베이스 학습
 - 아키텍처 문서화 자동화
 - 기술 면접 준비 (유명 프로젝트 구조 이해)
 
-앞으로 프라이빗 레포 지원과 Gemini CLI 통합이 완료되면, 기업 환경에서도 더욱 폭넓게 활용될 것으로 기대됩니다. 한편 현업에서 AI 코딩 도구를 팀 워크플로우에 정착시키려면, [Claude Code 베스트 프랙티스](/ko/blog/ko/claude-code-best-practices)도 함께 살펴보시길 권장합니다.
+앞으로 프라이빗 레포 지원과 Gemini CLI 통합이 완료되면, 기업 환경에서도 더욱 폭넓게 활용될 것으로 기대된다. 한편 현업에서 AI 코딩 도구를 팀 워크플로우에 정착시키려면, [Claude Code 베스트 프랙티스](/ko/blog/ko/claude-code-best-practices)도 함께 살펴보면 좋다.
 
 <strong>Code Wiki 바로가기</strong>: [codewiki.google](https://codewiki.google)
 

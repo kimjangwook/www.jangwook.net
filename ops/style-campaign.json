@@ -1057,7 +1057,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ggml-llamacpp-huggingface.md",
@@ -1067,7 +1067,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "github-agentic-workflows-cicd-ai.md",
@@ -1077,7 +1077,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "glm-5-mit-opensource-frontier-enterprise.md",
@@ -1087,7 +1087,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "google-adk-vs-langgraph-agent-framework-comparison-2026.md",
@@ -1096,7 +1096,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "google-agent-scaling-science-multiagent-limits.md",
@@ -1106,7 +1106,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "google-analytics-mcp-automation.md",
@@ -1115,7 +1115,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "google-code-wiki-guide.md",
@@ -1125,7 +1125,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "google-gemini-file-search-rag-tutorial.md",
@@ -1135,7 +1135,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "google-io-2026-antigravity-2-agent-platform-analysis.md",
@@ -1144,7 +1144,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "google-turboquant-kv-cache-3bit-compression.md",

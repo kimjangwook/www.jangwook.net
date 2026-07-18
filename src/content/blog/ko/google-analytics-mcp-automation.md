@@ -23,15 +23,15 @@ relatedPosts:
 
 # Google Analytics MCP와 AI 에이전트로 블로그 분석 자동화하기
 
-블로그를 운영하다 보면 가장 궁금한 것이 바로 "내 콘텐츠가 얼마나 잘 읽히고 있을까?"입니다. Google Analytics는 강력한 도구지만, 매번 대시보드에 접속해서 데이터를 확인하고 분석하는 것은 번거로운 일입니다. 이번 글에서는 <strong>Model Context Protocol(MCP)</strong>와 <strong>AI 에이전트</strong>를 활용해 블로그 분석을 완전히 자동화하는 방법을 소개합니다.
+블로그를 운영하다 보면 가장 궁금한 것이 바로 "내 콘텐츠가 얼마나 잘 읽히고 있을까?"다. Google Analytics는 강력한 도구지만, 매번 대시보드에 접속해서 데이터를 확인하고 분석하는 것은 번거로운 일이다. <strong>Model Context Protocol(MCP)</strong>와 <strong>AI 에이전트</strong>를 활용해 블로그 분석을 완전히 자동화하는 방법을 정리한다.
 
-이 가이드에서는 실제 운영 중인 블로그에 적용한 분석 자동화 시스템을 단계별로 설명하고, 즉시 사용 가능한 코드와 쿼리 예제를 제공합니다.
+실제 운영 중인 블로그에 적용한 분석 자동화 시스템을 단계별로 설명하고, 즉시 사용 가능한 코드와 쿼리 예제를 제공한다.
 
 ## 왜 블로그 분석 자동화가 필요한가?
 
 ### 기존 방식의 한계
 
-Google Analytics 대시보드는 데이터는 많지만, 실제로 필요한 인사이트를 얻기까지는 여러 단계를 거쳐야 합니다:
+Google Analytics 대시보드는 데이터는 많지만, 실제로 필요한 인사이트를 얻기까지는 여러 단계를 거쳐야 한다:
 
 1. <strong>수동 데이터 수집</strong>: 대시보드에 접속해서 원하는 메트릭을 찾아야 함
 2. <strong>복잡한 쿼리 작성</strong>: 커스텀 리포트를 만들려면 GA의 복잡한 인터페이스를 이해해야 함
@@ -40,7 +40,7 @@ Google Analytics 대시보드는 데이터는 많지만, 실제로 필요한 인
 
 ### MCP와 AI 에이전트가 제시하는 해결책
 
-<strong>Model Context Protocol(MCP)</strong>는 AI가 외부 데이터 소스와 통신할 수 있게 해주는 표준 프로토콜입니다. Google Analytics MCP를 사용하면:
+<strong>Model Context Protocol(MCP)</strong>는 AI가 외부 데이터 소스와 통신할 수 있게 해주는 표준 프로토콜이다. Google Analytics MCP를 사용하면:
 
 - <strong>자연어 질문</strong>: "지난 주 가장 인기 있었던 포스트는?"이라고 물어보면 즉시 답변
 - <strong>자동화된 분석</strong>: AI 에이전트가 정기적으로 데이터를 분석하고 리포트 생성
@@ -50,7 +50,7 @@ Google Analytics 대시보드는 데이터는 많지만, 실제로 필요한 인
 
 ### MCP의 작동 원리
 
-MCP는 AI 모델과 데이터 소스 사이의 표준화된 통신 프로토콜입니다. 생각해보면 API와 비슷하지만, AI가 직접 이해하고 활용할 수 있도록 설계되었습니다. [Notion API와 MCP를 연결하는 자동화 파이프라인](/ko/blog/ko/ai-agent-notion-mcp-automation)에서도 같은 원리를 확인할 수 있습니다.
+MCP는 AI 모델과 데이터 소스 사이의 표준화된 통신 프로토콜이다. 생각해보면 API와 비슷하지만, AI가 직접 이해하고 활용할 수 있도록 설계됐다. [Notion API와 MCP를 연결하는 자동화 파이프라인](/ko/blog/ko/ai-agent-notion-mcp-automation)에서도 같은 원리를 확인할 수 있다.
 
 ```
 ┌─────────────┐      MCP Protocol      ┌──────────────────┐
@@ -63,7 +63,7 @@ MCP는 AI 모델과 데이터 소스 사이의 표준화된 통신 프로토콜�
 
 ### Google Analytics MCP의 기능
 
-Google Analytics MCP는 다음과 같은 기능을 제공합니다:
+Google Analytics MCP는 다음과 같은 기능을 제공한다:
 
 - <strong>리포트 조회</strong>: GA4의 Data API를 통해 다양한 메트릭과 차원 조회
 - <strong>실시간 데이터</strong>: 실시간 방문자 수, 이벤트 추적
@@ -74,7 +74,7 @@ Google Analytics MCP는 다음과 같은 기능을 제공합니다:
 
 ### 1. Google Analytics MCP 설치
 
-먼저 Google Analytics MCP 서버를 설치합니다. 이는 npx를 통해 실행할 수 있는 독립 서버입니다.
+먼저 Google Analytics MCP 서버를 설치한다. 이는 npx를 통해 실행할 수 있는 독립 서버다.
 
 ```bash
 # MCP 서버는 별도 설치가 필요 없습니다
@@ -83,7 +83,7 @@ Google Analytics MCP는 다음과 같은 기능을 제공합니다:
 
 ### 2. Google Cloud 프로젝트 설정
 
-Google Analytics API를 사용하기 위해서는 Google Cloud 프로젝트가 필요합니다:
+Google Analytics API를 사용하려면 Google Cloud 프로젝트가 필요하다:
 
 <strong>단계별 설정:</strong>
 
@@ -105,11 +105,11 @@ gcloud iam service-accounts keys create ~/credentials/ga-credentials.json \
   --iam-account=ga-mcp-reader@PROJECT_ID.iam.gserviceaccount.com
 ```
 
-<strong>중요</strong>: `PROJECT_ID`를 실제 Google Cloud 프로젝트 ID로 변경하세요.
+<strong>중요</strong>: `PROJECT_ID`를 실제 Google Cloud 프로젝트 ID로 변경한다.
 
 ### 3. Google Analytics 권한 설정
 
-서비스 계정에 GA4 속성 읽기 권한을 부여합니다:
+서비스 계정에 GA4 속성 읽기 권한을 부여한다:
 
 1. GA4 속성 → 관리자 → 속성 액세스 관리
 2. 우측 상단 "+" 버튼 클릭
@@ -117,11 +117,11 @@ gcloud iam service-accounts keys create ~/credentials/ga-credentials.json \
 4. 역할: <strong>뷰어(Viewer)</strong> 선택
 5. 추가 클릭
 
-<strong>보안 팁</strong>: 읽기 전용 권한만 부여하여 데이터 변경을 방지합니다.
+<strong>보안 팁</strong>: 읽기 전용 권한만 부여하여 데이터 변경을 방지한다.
 
 ### 3. Claude Code MCP 설정
 
-`.mcp.json` 파일을 프로젝트 루트에 생성하거나 수정합니다:
+`.mcp.json` 파일을 프로젝트 루트에 생성하거나 수정한다:
 
 ```json
 {
@@ -137,7 +137,7 @@ gcloud iam service-accounts keys create ~/credentials/ga-credentials.json \
 }
 ```
 
-<strong>중요</strong>: `GOOGLE_APPLICATION_CREDENTIALS` 경로를 실제 서비스 계정 키 파일 경로로 변경하세요.
+<strong>중요</strong>: `GOOGLE_APPLICATION_CREDENTIALS` 경로를 실제 서비스 계정 키 파일 경로로 변경한다.
 
 <strong>보안 주의사항</strong>:
 
@@ -149,18 +149,18 @@ echo "*.json" >> .gitignore
 
 ### 4. 설정 확인
 
-Claude Code를 재시작하고 MCP 연결을 확인합니다:
+Claude Code를 재시작하고 MCP 연결을 확인한다:
 
 ```bash
 # Claude Code에서 다음 명령으로 테스트
 "Google Analytics 계정 정보를 보여줘"
 ```
 
-성공하면 속성 ID, 속성 이름 등이 표시됩니다.
+성공하면 속성 ID, 속성 이름 등이 표시된다.
 
 ## 즉시 사용 가능한 8가지 쿼리
 
-설정이 완료되면 다음 쿼리들을 바로 실행할 수 있습니다. 실제 블로그 운영에 필요한 핵심 인사이트를 얻을 수 있는 쿼리들입니다.
+설정이 완료되면 다음 쿼리들을 바로 실행할 수 있다. 실제 블로그 운영에 필요한 핵심 인사이트를 얻을 수 있는 쿼리들이다.
 
 ### 1. 실시간 활동 현황
 
@@ -354,13 +354,13 @@ mcp__analytics -
 - 이탈률 높은 랜딩 페이지 → 내용-제목 불일치 의심
 - 체류 시간 긴 랜딩 페이지 → 관련 포스트 내부 링크 추가
 
-<strong>Tip</strong>: 각 쿼리의 `property_id`를 본인의 GA4 속성 ID로 변경하세요. GA4 관리자 페이지에서 확인할 수 있습니다.
+<strong>Tip</strong>: 각 쿼리의 `property_id`를 본인의 GA4 속성 ID로 변경한다. GA4 관리자 페이지에서 확인할 수 있다.
 
 ## AI 에이전트 기반 분석 시스템 구축
 
 ### Analytics 에이전트 설계
 
-블로그 분석을 위한 전문 AI 에이전트를 만들어봅시다. `.claude/agents/analytics.md` 파일을 생성합니다. 데이터 규모가 커지면 [BigQuery MCP 서버와 Dataset Prefix 필터링](/ko/blog/ko/bigquery-mcp-prefix-filtering)을 병행해 대용량 쿼리도 처리할 수 있습니다:
+블로그 분석을 위한 전문 AI 에이전트를 만들어본다. `.claude/agents/analytics.md` 파일을 생성한다. 데이터 규모가 커지면 [BigQuery MCP 서버와 Dataset Prefix 필터링](/ko/blog/ko/bigquery-mcp-prefix-filtering)을 병행해 대용량 쿼리도 처리할 수 있다:
 
 ```markdown
 # Analytics Agent
@@ -416,7 +416,7 @@ Always structure reports as:
 
 ### 자동화된 리포트 생성
 
-이제 이 에이전트를 활용해 자동 리포트를 생성할 수 있습니다. 예를 들어:
+이제 이 에이전트를 활용해 자동 리포트를 생성할 수 있다. 예를 들어:
 
 <strong>질문</strong>: "지난 7일간 블로그 트래픽을 분석하고 인사이트를 제공해줘"
 
@@ -460,11 +460,11 @@ Always structure reports as:
 
 ### KPI 모니터링 자동화
 
-실제 운영 환경에서 사용하는 자동화 스크립트들을 공유합니다.
+실제 운영 환경에서 사용하는 자동화 스크립트들을 공유한다.
 
 #### 1. 일일 스냅샷 스크립트
 
-매일 아침 전날 데이터를 요약해주는 스크립트입니다:
+매일 아침 전날 데이터를 요약해주는 스크립트다:
 
 ```javascript
 // scripts/daily-snapshot.js
@@ -1053,7 +1053,7 @@ node scripts/analyze-content.js 365
 
 ### 1. 트래픽 분석 자동화
 
-<strong>시나리오</strong>: 매일 아침 전날 트래픽 요약을 받고 싶습니다.
+<strong>시나리오</strong>: 매일 아침 전날 트래픽 요약을 받고 싶다.
 
 ```javascript
 // .claude/prompts/daily-traffic.md
@@ -1082,7 +1082,7 @@ node scripts/analyze-content.js 365
 
 ### 2. 콘텐츠 성과 측정
 
-<strong>시나리오</strong>: 새로 발행한 포스트의 첫 주 성과를 분석합니다.
+<strong>시나리오</strong>: 새로 발행한 포스트의 첫 주 성과를 분석한다.
 
 <strong>Claude에게 질문</strong>:
 
@@ -1125,7 +1125,7 @@ node scripts/analyze-content.js 365
 
 ### 3. 인사이트 도출 및 액션 아이템 생성
 
-<strong>시나리오</strong>: 월간 데이터를 분석해서 다음 달 콘텐츠 전략을 수립합니다.
+<strong>시나리오</strong>: 월간 데이터를 분석해서 다음 달 콘텐츠 전략을 수립한다.
 
 <strong>프롬프트</strong>:
 
@@ -1192,7 +1192,7 @@ node scripts/analyze-content.js 365
 
 ## 고급 활용: 커스텀 대시보드 구축
 
-MCP를 활용하면 자신만의 분석 대시보드를 만들 수 있습니다.
+MCP를 활용하면 자신만의 분석 대시보드를 만들 수 있다.
 
 ### Astro 통합 예시
 
@@ -1281,7 +1281,7 @@ monitorRealtime();
 
 ### 1. 데이터 프라이버시
 
-- 서비스 계정 키는 절대 Git에 커밋하지 마세요
+- 서비스 계정 키는 절대 Git에 커밋하지 않는다
 - 환경 변수 또는 시크릿 매니저 사용
 - 최소 권한 원칙: GA에서 읽기 권한만 부여
 
@@ -1294,7 +1294,7 @@ credentials/
 
 ### 2. API 할당량 관리
 
-Google Analytics Data API는 일일 할당량이 있습니다:
+Google Analytics Data API는 일일 할당량이 있다:
 
 - 기본: 하루 25,000 요청
 - 프로젝트당 초당 10 요청
@@ -1323,7 +1323,7 @@ async function fetchWithCache(query, ttl = 3600) {
 
 ### 3. 효과적인 프롬프트 작성
 
-AI 에이전트에게 명확한 지시를 주세요:
+AI 에이전트에게 명확한 지시를 준다:
 
 <strong>나쁜 예</strong>:
 
@@ -1438,7 +1438,7 @@ jobs:
 
 ## 결론: 데이터 기반 블로그 운영의 시작
 
-Google Analytics MCP와 AI 에이전트를 결합하면 블로그 운영이 완전히 달라집니다:
+Google Analytics MCP와 AI 에이전트를 결합하면 블로그 운영이 완전히 달라진다:
 
 ### 기대 효과
 
@@ -1449,7 +1449,7 @@ Google Analytics MCP와 AI 에이전트를 결합하면 블로그 운영이 완�
 
 ### 확장 가능성
 
-이 시스템은 블로그 분석을 넘어 확장할 수 있습니다:
+이 시스템은 블로그 분석을 넘어 확장할 수 있다:
 
 - <strong>A/B 테스트 자동화</strong>: 제목, 이미지 등의 효과 자동 측정
 - <strong>경쟁사 분석</strong>: 유사한 블로그와 비교 분석
@@ -1472,9 +1472,6 @@ Google Analytics MCP와 AI 에이전트를 결합하면 블로그 운영이 완�
 
 ---
 
-데이터는 단순한 숫자가 아닙니다. 제대로 분석하고 활용하면 블로그 성장의 나침반이 됩니다. MCP와 AI 에이전트가 그 과정을 자동화하고 가속화해줄 것입니다.
+데이터는 단순한 숫자가 아니다. 제대로 분석하고 활용하면 블로그 성장의 나침반이 된다. MCP와 AI 에이전트는 그 과정을 자동화하고 가속화한다.
 
-이제 여러분의 차례입니다. 오늘부터 데이터 기반 블로그 운영을 시작해보세요!
-
-<strong>Questions? Feedback?</strong>
-이 가이드에 대한 질문이나 실제 적용 경험이 있다면 댓글로 공유해주세요. 함께 더 나은 블로그 자동화 시스템을 만들어갑시다.
+이 글의 가이드대로 MCP를 연동하고, "지난 주 트래픽 분석해줘"로 첫 리포트를 만들어보는 것부터 시작하면 된다. 데이터 기반 블로그 운영은 거기서 출발한다.
