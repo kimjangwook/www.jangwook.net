@@ -1631,7 +1631,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mcp-security-crisis-30-cves-enterprise-hardening.md",
@@ -1641,7 +1641,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mcp-server-production-deployment-kubernetes-guide.md",
@@ -1650,7 +1650,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "meta-ai-agent-platform-sierra-avocado.md",
@@ -1660,7 +1660,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "metadata-based-recommendation-optimization.md",
@@ -1669,7 +1669,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "microsoft-agent-framework-ga-production-strategy.md",
@@ -1678,7 +1678,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "minimax-m25-open-weight-vs-proprietary.md",
@@ -1688,7 +1688,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mistral-voxtral-tts-open-weight-speech.md",
@@ -1697,7 +1697,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mit-encompass-agent-search-reliability.md",
@@ -1707,7 +1707,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mit-soar-self-curriculum-reasoning.md",
@@ -1717,7 +1717,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "mit-tlt-adaptive-drafter-reasoning-training.md",
