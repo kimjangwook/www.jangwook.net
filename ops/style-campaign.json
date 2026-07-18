@@ -107,7 +107,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-agent-collaboration-patterns.md",
@@ -117,7 +117,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-agent-cost-reality.md",
@@ -127,7 +127,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-agent-identity-dark-matter-enterprise.md",
@@ -136,7 +136,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-agent-kpi-ethics.md",
@@ -146,7 +146,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-agent-notion-mcp-automation.md",
@@ -156,7 +156,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-agent-persona-analysis.md",
@@ -166,7 +166,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-content-recommendation-system.md",
@@ -176,7 +176,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-convenience-loop-reshaping-language-choices.md",
@@ -186,7 +186,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-crawlers-dont-render-javascript-csr-2026.md",
@@ -195,7 +195,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-distillation-attacks-enterprise-defense.md",

@@ -49,9 +49,9 @@ relatedPosts:
 
 ## 개요
 
-Cursor, Claude Code, Codex 등 코딩 에이전트가 확산되면서, 리포지토리에 <strong>AGENTS.md</strong>(또는 CLAUDE.md, CURSOR.md) 파일을 두어 에이전트에게 프로젝트 컨텍스트를 제공하는 관행이 빠르게 퍼지고 있습니다. 현재 GitHub에만 6만 개 이상의 리포지토리가 이 파일을 포함하고 있죠.
+Cursor, Claude Code, Codex 등 코딩 에이전트가 확산되면서, 리포지토리에 <strong>AGENTS.md</strong>(또는 CLAUDE.md, CURSOR.md) 파일을 두어 에이전트에게 프로젝트 컨텍스트를 제공하는 관행이 빠르게 퍼지고 있다. 현재 GitHub에만 6만 개 이상의 리포지토리가 이 파일을 포함한다.
 
-그런데 이 파일이 <strong>정말로</strong> 에이전트의 작업 성공률을 높여줄까요? ETH Zürich 연구팀이 이 질문에 대한 <strong>최초의 실증적 답변</strong>을 내놓았습니다.
+그런데 이 파일이 <strong>정말로</strong> 에이전트의 작업 성공률을 높여줄까? ETH Zürich 연구팀이 이 질문에 대한 <strong>최초의 실증적 답변</strong>을 내놓았다.
 
 > 📄 논문: [Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?](https://arxiv.org/abs/2602.11988) (arXiv 2602.11988, 2026년 2월)
 
@@ -59,7 +59,7 @@ Cursor, Claude Code, Codex 등 코딩 에이전트가 확산되면서, 리포지
 
 ### LLM 생성 컨텍스트 파일은 오히려 성공률을 낮춘다
 
-연구팀은 세 가지 설정에서 코딩 에이전트를 평가했습니다:
+연구팀은 세 가지 설정에서 코딩 에이전트를 평가했다.
 
 1. <strong>컨텍스트 파일 없음</strong> (기준선)
 2. <strong>LLM이 자동 생성한 컨텍스트 파일</strong> (에이전트 개발사 권장 방식)
@@ -83,7 +83,7 @@ Cursor, Claude Code, Codex 등 코딩 에이전트가 확산되면서, 리포지
 
 ### 왜 이런 결과가 나왔을까?
 
-연구팀은 에이전트의 행동 패턴을 상세히 분석했습니다:
+연구팀은 에이전트의 행동 패턴을 상세히 분석했다.
 
 ```mermaid
 graph TD
@@ -97,11 +97,11 @@ graph TD
     F --> G[비용 증가 + 성공률 저하]
 ```
 
-에이전트는 컨텍스트 파일의 지시를 <strong>충실히 따르는</strong> 경향이 있었습니다. 문제는 그 지시 중 상당수가 해당 작업에 <strong>불필요한 요구사항</strong>이었다는 점입니다. 스타일 가이드 준수, 특정 테스트 패턴 사용 등의 지시가 오히려 작업을 복잡하게 만들었습니다.
+에이전트는 컨텍스트 파일의 지시를 <strong>충실히 따르는</strong> 경향이 있었다. 문제는 그 지시 중 상당수가 해당 작업에 <strong>불필요한 요구사항</strong>이었다는 점이다. 스타일 가이드 준수, 특정 테스트 패턴 사용 등의 지시가 오히려 작업을 복잡하게 만들었다.
 
 ## AGENTbench: 새로운 벤치마크
 
-연구팀은 이 평가를 위해 <strong>AGENTbench</strong>라는 새로운 벤치마크를 구축했습니다.
+연구팀은 이 평가를 위해 <strong>AGENTbench</strong>라는 새로운 벤치마크를 구축했다.
 
 | 항목 | 내용 |
 |------|------|
@@ -110,7 +110,7 @@ graph TD
 | 작업 유형 | 버그 수정 + 기능 추가 |
 | 보완 벤치마크 | SWE-bench Lite (유명 리포지토리 대상) |
 
-기존 SWE-bench는 유명 대형 리포지토리 위주라 AGENTS.md가 포함되어 있지 않았습니다. AGENTbench는 <strong>실제로 컨텍스트 파일을 사용하는 리포지토리</strong>에서 태스크를 수집한 최초의 벤치마크입니다.
+기존 SWE-bench는 유명 대형 리포지토리 위주라 AGENTS.md가 포함되어 있지 않았다. AGENTbench는 <strong>실제로 컨텍스트 파일을 사용하는 리포지토리</strong>에서 태스크를 수집한 최초의 벤치마크다.
 
 ## 실전 시사점: 어떻게 활용해야 할까?
 
@@ -122,7 +122,7 @@ graph TD
 
 ### ✅ 해야 할 것
 
-연구팀의 권장사항은 명확합니다: <strong>"최소한의 요구사항만 기술하라"</strong>
+연구팀의 권장사항은 명확하다. <strong>"최소한의 요구사항만 기술하라"</strong>
 
 효과적인 AGENTS.md 작성 원칙:
 
@@ -163,7 +163,7 @@ Conventional Commits를 따르며...
 
 ## 개발 커뮤니티의 반응
 
-이 논문은 Hacker News에서 58포인트를 기록하며 활발한 토론을 이끌어냈습니다. 주요 반응은:
+이 논문은 Hacker News에서 58포인트를 기록하며 활발한 토론을 이끌어냈다. 주요 반응은 이렇다.
 
 - <strong>"직감적으로 맞는 결과"</strong>: 과도한 지시가 에이전트를 오히려 혼란스럽게 한다는 경험적 공감
 - <strong>"컨텍스트 윈도우 낭비"</strong>: 긴 AGENTS.md가 실제 코드 컨텍스트를 밀어낸다는 우려
@@ -171,12 +171,12 @@ Conventional Commits를 따르며...
 
 ## 한계와 향후 전망
 
-이 연구에는 몇 가지 한계가 있습니다:
+이 연구에는 몇 가지 한계가 있다.
 
 - <strong>Python 중심</strong>: AGENTbench는 Python 프로젝트만 대상
 - <strong>니치 리포지토리</strong>: 개발자가 컨텍스트 파일을 사용하는 리포지토리는 상대적으로 소규모
 - <strong>정적 평가</strong>: 컨텍스트 파일이 반복 작업에서 누적 효과를 내는지는 미검증
-- <strong>거버넌스 공백</strong>: 에이전트가 지시를 충실히 따르다 역효과를 낸다는 패턴은 [AI 에이전트의 KPI 압박과 윤리 위반 연구](/ko/blog/ko/ai-agent-kpi-ethics)와도 연결됩니다
+- <strong>거버넌스 공백</strong>: 에이전트가 지시를 충실히 따르다 역효과를 낸다는 패턴은 [AI 에이전트의 KPI 압박과 윤리 위반 연구](/ko/blog/ko/ai-agent-kpi-ethics)와도 연결된다
 
 향후 연구 방향으로는:
 
@@ -186,15 +186,15 @@ Conventional Commits를 따르며...
 
 ## 결론
 
-AGENTS.md는 코딩 에이전트 생태계에서 사실상의 표준이 되어가고 있지만, 이번 논문은 <strong>"많이 쓸수록 좋다"는 통념에 제동</strong>을 걸었습니다.
+AGENTS.md는 코딩 에이전트 생태계에서 사실상의 표준이 되어가고 있지만, 이번 논문은 <strong>"많이 쓸수록 좋다"는 통념에 제동</strong>을 걸었다.
 
-핵심 메시지는 간단합니다:
+핵심 메시지는 간단하다.
 
 > <strong>컨텍스트 파일은 최소한으로, 빌드와 테스트 명령어 중심으로 작성하라.</strong>
 
-에이전트 개발사의 권장대로 `/init`으로 자동 생성하는 것은 현재로서는 오히려 역효과를 낼 수 있습니다. 직접 작성하되, 꼭 필요한 정보만 담는 것이 가장 효과적인 전략입니다.
+에이전트 개발사의 권장대로 `/init`으로 자동 생성하는 것은 현재로서는 오히려 역효과를 낼 수 있다. 직접 작성하되 꼭 필요한 정보만 담는 것이 가장 효과적인 전략이다.
 
-자동 생성의 비효율은 AGENTS.md에만 국한된 문제가 아닙니다. [AI가 스스로 생성한 스킬도 효과가 없다는 SkillsBench 벤치마크](/ko/blog/ko/ai-self-generated-skills-myth)는 같은 패턴을 다른 각도에서 증명합니다.
+자동 생성의 비효율은 AGENTS.md에만 국한된 문제가 아니다. [AI가 스스로 생성한 스킬도 효과가 없다는 SkillsBench 벤치마크](/ko/blog/ko/ai-self-generated-skills-myth)는 같은 패턴을 다른 각도에서 증명한다.
 
 ## 참고 자료
 
