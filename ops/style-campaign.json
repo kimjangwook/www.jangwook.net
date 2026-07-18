@@ -2011,7 +2011,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-introduction-guide.md",
@@ -2021,7 +2021,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-openai-codex-migration.md",
@@ -2031,7 +2031,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-opus-4-6-setup-guide.md",
@@ -2041,7 +2041,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-update-doctor-error-fix.md",
@@ -2051,7 +2051,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openrouter-oss-dominance.md",
@@ -2061,7 +2061,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "paperclip-zero-human-company-agent-orchestration.md",
@@ -2070,7 +2070,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "patent-strategy-llm-era.md",
@@ -2080,7 +2080,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "perplexity-computer-always-on-ai-agent.md",
@@ -2089,7 +2089,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "playwright-ai-testing.md",
@@ -2099,7 +2099,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "prismml-bonsai-1bit-llm-edge-ai.md",

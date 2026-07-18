@@ -51,23 +51,23 @@ relatedPosts:
 > 2. <strong>튜토리얼편</strong> ← 현재 글
 > 3. [활용법편](/ko/blog/ko/openclaw-advanced-usage/)
 
-지난 글에서 OpenClaw이 무엇인지 살펴봤습니다. 이번에는 <strong>직접 설치하고, 첫 대화를 나누는 것</strong>까지 한 번에 해보겠습니다. 터미널을 열고 따라오세요! 
+지난 글에서 OpenClaw이 무엇인지 살펴봤다. 이번에는 <strong>직접 설치하고, 첫 대화를 나누는 것</strong>까지 한 번에 해보겠다. 터미널을 열고 따라오면 된다. 
 
 ---
 
 ## 1. 사전 준비
 
-OpenClaw은 Node.js 런타임 위에서 동작합니다.
+OpenClaw은 Node.js 런타임 위에서 동작한다.
 
 | 항목 | 요구사항 |
 |------|----------|
 | <strong>Node.js</strong> | v22 이상 (`node -v`로 확인) |
 | <strong>OS</strong> | Windows · macOS · Linux 모두 지원 |
 
-- <strong>macOS / Linux</strong> — 별도 준비 없이 바로 시작할 수 있습니다.
-- <strong>Windows</strong> — 네이티브 환경에서도 동작합니다. WSL2도 지원되지만 필수는 아닙니다.
+- <strong>macOS / Linux</strong> — 별도 준비 없이 바로 시작할 수 있다.
+- <strong>Windows</strong> — 네이티브 환경에서도 동작한다. WSL2도 지원되지만 필수는 아니다.
 
-Node.js가 없다면 [공식 사이트](https://nodejs.org/)에서 LTS 버전(22+)을 받거나, 버전 관리자를 사용하세요:
+Node.js가 없다면 [공식 사이트](https://nodejs.org/)에서 LTS 버전(22+)을 받거나, 버전 관리자를 사용한다:
 
 ```bash
 # Volta (추천 — 프로젝트별 버전 관리)
@@ -93,7 +93,7 @@ fnm use 22
 
 ## 2. 설치 — 3가지 방법
 
-취향에 맞는 방법을 하나 골라주세요.
+취향에 맞는 방법을 하나 고르면 된다.
 
 ### 방법 1: npm 글로벌 설치 (가장 추천) 
 
@@ -120,7 +120,7 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 iwr -useb https://openclaw.ai/install.ps1 | iex
 ```
 
-스크립트가 의존성 확인부터 PATH 등록까지 전부 처리해 줍니다.
+스크립트가 의존성 확인부터 PATH 등록까지 전부 처리해 준다.
 
 ### 방법 3: 소스 빌드 (기여하고 싶은 개발자용)
 
@@ -139,13 +139,13 @@ openclaw onboard --install-daemon
 
 ## 3. 온보딩 마법사 — 핵심 설정 한번에
 
-설치 후 첫 실행 시 온보딩 마법사가 핵심 설정을 안내합니다.
+설치 후 첫 실행 시 온보딩 마법사가 핵심 설정을 안내한다.
 
 ```bash
 openclaw onboard --install-daemon
 ```
 
-대화형 프롬프트를 따라가며 아래 항목들을 설정합니다:
+대화형 프롬프트를 따라가며 아래 항목들을 설정한다:
 
 | 설정 항목 | 설명 |
 |---|---|
@@ -155,16 +155,16 @@ openclaw onboard --install-daemon
 | <strong>워크스페이스</strong> | 에이전트의 파일 작업 공간 경로 |
 | <strong>Gateway 토큰</strong> | 마법사가 기본으로 생성 (loopback에서도) |
 
-`--install-daemon` 플래그를 붙이면 Gateway가 OS 서비스로 등록됩니다:
+`--install-daemon` 플래그를 붙이면 Gateway가 OS 서비스로 등록된다:
 - <strong>macOS</strong>: launchd
 - <strong>Linux</strong>: systemd 사용자 서비스
 - <strong>Windows</strong>: Windows 서비스
 
-재부팅 후에도 자동 실행되니 걱정하지 마세요.
+재부팅 후에도 자동 실행되니 걱정하지 않아도 된다.
 
 ### 마법사 없이 수동으로 설정하기
 
-마법사 대신 직접 `~/.openclaw/openclaw.json`을 편집할 수도 있습니다:
+마법사 대신 직접 `~/.openclaw/openclaw.json`을 편집할 수도 있다:
 
 ```json5
 {
@@ -199,17 +199,17 @@ openclaw onboard --install-daemon
 
 ## 4. Telegram 봇 연동 — 가장 쉬운 채널
 
-여러 채널 중 진입 장벽이 가장 낮은 <strong>Telegram</strong>으로 시작해 보겠습니다.
+여러 채널 중 진입 장벽이 가장 낮은 <strong>Telegram</strong>으로 시작해 보겠다.
 
 ### 4-1. 봇 생성
 
-1. Telegram에서 [@BotFather](https://t.me/BotFather)에게 `/newbot` 명령을 보냅니다.
-2. 봇 이름과 username을 정하면 <strong>API 토큰</strong>이 발급됩니다.
-3. 이 토큰을 복사해 두세요.
+1. Telegram에서 [@BotFather](https://t.me/BotFather)에게 `/newbot` 명령을 보낸다.
+2. 봇 이름과 username을 정하면 <strong>API 토큰</strong>이 발급된다.
+3. 이 토큰을 복사해 둔다.
 
 ### 4-2. 설정 파일에 토큰 등록
 
-온보딩 마법사에서 이미 등록했다면 건너뛰세요. 수동 설정:
+온보딩 마법사에서 이미 등록했다면 건너뛴다. 수동 설정:
 
 ```json5
 {
@@ -232,7 +232,7 @@ openclaw onboard --install-daemon
 
 ### 4-3. 페어링 승인
 
-봇에게 처음 DM을 보내면 <strong>페어링 요청</strong>이 발생합니다. 터미널에서 승인:
+봇에게 처음 DM을 보내면 <strong>페어링 요청</strong>이 발생한다. 터미널에서 승인:
 
 ```bash
 # 대기 중인 페어링 목록 확인
@@ -242,11 +242,11 @@ openclaw pairing list
 openclaw pairing approve <요청ID>
 ```
 
-또는 대시보드(`http://127.0.0.1:18789/`)에서 시각적으로 승인할 수도 있습니다.
+또는 대시보드(`http://127.0.0.1:18789/`)에서 시각적으로 승인할 수도 있다.
 
 ### 4-4. Telegram 그룹에서도 사용하기
 
-그룹에 봇을 초대하면 <strong>멘션 기반</strong>으로 동작합니다:
+그룹에 봇을 초대하면 <strong>멘션 기반</strong>으로 동작한다:
 
 ```json5
 {
@@ -289,7 +289,7 @@ openclaw pairing approve <요청ID>
 
 ## 5. Gateway 실행 및 확인
 
-온보딩에서 데몬을 설치했다면 이미 실행 중일 수 있습니다.
+온보딩에서 데몬을 설치했다면 이미 실행 중일 수 있다.
 
 ### 서비스 관리
 
@@ -309,7 +309,7 @@ openclaw gateway restart
 openclaw gateway --port 18789 --verbose
 ```
 
-`--verbose` 플래그는 요청·응답 로그를 실시간으로 출력합니다.
+`--verbose` 플래그는 요청·응답 로그를 실시간으로 출력한다.
 
 ### 원격 접속 (Tailscale)
 
@@ -319,7 +319,7 @@ openclaw gateway --port 18789 --verbose
 openclaw gateway --bind tailnet --token <토큰>
 ```
 
-토큰은 비-로컬 바인딩 시 <strong>필수</strong>입니다.
+토큰은 비-로컬 바인딩 시 <strong>필수</strong>다.
 
 ### 상태 확인
 
@@ -334,17 +334,17 @@ openclaw doctor
 openclaw health
 ```
 
-브라우저에서 <strong>http://127.0.0.1:18789/</strong> 에 접속하면 대시보드를 통해 실행 상태, 채널 연결, 최근 대화 등을 시각적으로 확인할 수 있습니다.
+브라우저에서 <strong>http://127.0.0.1:18789/</strong> 에 접속하면 대시보드를 통해 실행 상태, 채널 연결, 최근 대화 등을 시각적으로 확인할 수 있다.
 
 ---
 
 ## 6. 첫 대화 테스트 
 
-모든 준비가 끝났습니다. 이제 실제로 대화를 나눠 봅시다.
+모든 준비가 끝났다. 이제 실제로 대화를 나눠 봅시다.
 
 ### Telegram에서 직접 대화
 
-페어링이 완료된 계정으로 봇에게 아무 메시지나 보내 보세요. AI 에이전트가 응답하면 성공입니다! 🎊
+페어링이 완료된 계정으로 봇에게 아무 메시지나 보내 본다. AI 에이전트가 응답하면 성공이다!
 
 ### CLI로 테스트
 
@@ -395,7 +395,7 @@ Telegram 채팅에서 바로 사용할 수 있는 기본 명령어들:
 
 ### SOUL.md — 에이전트의 인격 정의
 
-이 파일에 에이전트의 성격을 정의합니다:
+이 파일에 에이전트의 성격을 정의한다:
 
 ```markdown
 # SOUL.md
@@ -434,7 +434,7 @@ Telegram 채팅에서 바로 사용할 수 있는 기본 명령어들:
 
 ### HEARTBEAT.md — 자동 체크리스트
 
-에이전트가 주기적으로 자동 확인할 항목을 정의합니다:
+에이전트가 주기적으로 자동 확인할 항목을 정의한다:
 
 ```markdown
 # HEARTBEAT.md
@@ -465,7 +465,7 @@ openclaw config set agents.defaults.models.default "anthropic/claude-opus-4-2025
 
 ## 8. Skills 설치하기
 
-ClawHub에서 커뮤니티 스킬을 설치해 보세요:
+ClawHub에서 커뮤니티 스킬을 설치해 본다:
 
 ![ClawHub — 스킬 검색 및 설치. Trello, Calendar, Slack 등 인기 스킬 확인 가능](../../../assets/blog/clawhub-main.png)
 
@@ -480,7 +480,7 @@ npx clawhub@latest install trello
 ls ~/.openclaw/workspace/skills/
 ```
 
-설치된 스킬은 자동으로 인식됩니다. Gateway 재시작 없이 <strong>핫 리로드</strong>됩니다.
+설치된 스킬은 자동으로 인식된다. Gateway 재시작 없이 <strong>핫 리로드</strong>된다.
 
 ---
 
@@ -496,7 +496,7 @@ openclaw doctor
 openclaw status --all
 ```
 
-`openclaw doctor`는 Node.js 버전, 설정 파일 유효성, 채널 연결, API 키 상태 등을 한 번에 점검합니다.
+`openclaw doctor`는 Node.js 버전, 설정 파일 유효성, 채널 연결, API 키 상태 등을 한 번에 점검한다.
 
 ### 자주 겪는 문제와 해결법
 
@@ -522,9 +522,9 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ## 10. 다음 단계 — 더 깊이 들어가기
 
-설치와 첫 대화까지 완료했습니다! 
+설치와 첫 대화까지 완료했다! 
 
-기본 설정이 끝났으니, 이제 진짜 재미있는 것들을 해볼 차례입니다:
+기본 설정이 끝났으니, 이제 진짜 재미있는 것들을 해볼 차례다:
 
 ### 바로 해볼 만한 것들
 
@@ -535,7 +535,7 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ### 3편에서 다룰 내용
 
-<strong>[3편 (활용법편)](/ko/blog/ko/openclaw-advanced-usage/)</strong> 에서는 실제로 OpenClaw을 <strong>강력한 자동화 도구</strong>로 활용하는 고급 사례를 다룹니다:
+<strong>[3편 (활용법편)](/ko/blog/ko/openclaw-advanced-usage/)</strong> 에서는 실제로 OpenClaw을 <strong>강력한 자동화 도구</strong>로 활용하는 고급 사례를 다룬다:
 
 - n8n/Make 연동 웹훅 워크플로우
 - MCP 서버 연동
@@ -545,8 +545,8 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 - Node 시스템으로 보안 카메라 모니터링
 - 커스텀 스킬 개발 완전 가이드
 
-> 🦞 설치한 OpenClaw을 이것저것 만져보면서 기다려 주세요. 곧 찾아오겠습니다! 🐾
+> 설치한 OpenClaw을 이것저것 만져보면서 기다려 주세요. 곧 찾아오겠습니다!
 
 ---
 
-*질문이나 피드백은 [GitHub Issues](https://github.com/openclaw/openclaw/issues)나 [Discord](https://discord.gg/clawd)에서 환영합니다.*
+*질문이나 피드백은 [GitHub Issues](https://github.com/openclaw/openclaw/issues)나 [Discord](https://discord.gg/clawd)에서 환영한다.*

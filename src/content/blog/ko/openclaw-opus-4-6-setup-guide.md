@@ -52,22 +52,22 @@ relatedPosts:
 
 ## 왜 「긴급」인가
 
-2026년 2월 5일, Anthropic이 Claude Opus 4.6을 출시했습니다. <strong>100만 토큰 컨텍스트</strong>, <strong>128K 토큰 출력</strong>, 강화된 계획 능력과 자기 수정 능력.
+2026년 2월 5일, Anthropic이 Claude Opus 4.6을 출시했다. <strong>100만 토큰 컨텍스트</strong>, <strong>128K 토큰 출력</strong>, 강화된 계획 능력과 자기 수정 능력.
 
-OpenClaw 사용자라면 지금 바로 설정해서 쓰고 싶을 겁니다. Claude Opus 4.6의 도구 호출 기능을 최대한 활용하는 방법은 [Claude Agent SDK 툴 유즈 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 다룹니다.
+OpenClaw 사용자라면 지금 바로 설정해서 쓰고 싶을 것이다. Claude Opus 4.6의 도구 호출 기능을 최대한 활용하는 방법은 [Claude Agent SDK 툴 유즈 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 다룬다.
 
-이 글에서는 <strong>설정 파일을 그대로 복붙해서 바로 실행할 수 있는</strong> 최단 경로를 소개합니다.
+이 글에서는 <strong>설정 파일을 그대로 복붙해서 바로 실행할 수 있는</strong> 최단 경로를 소개한다.
 
 ## 사전 조건
 
 - OpenClaw 설치 완료 (`npm install -g openclaw@latest`)
 - Anthropic API 키 설정 완료 (`claude setup-token`)
 
-아직이라면 [공식 문서](https://docs.openclaw.ai/start/getting-started)를 참고하세요. Claude Code와 병행해서 사용 중이라면 [Claude Code 베스트 프랙티스](/ko/blog/ko/claude-code-best-practices)도 워크플로우 설계에 도움이 됩니다.
+아직이라면 [공식 문서](https://docs.openclaw.ai/start/getting-started)를 참고하면 된다. Claude Code와 병행해서 사용 중이라면 [Claude Code 베스트 프랙티스](/ko/blog/ko/claude-code-best-practices)도 워크플로우 설계에 도움이 된다.
 
 ## 설정 파일 편집
 
-`~/.openclaw/openclaw.json` 파일을 열고, 다음 2개 섹션을 추가/수정합니다.
+`~/.openclaw/openclaw.json` 파일을 열고, 다음 2개 섹션을 추가/수정한다.
 
 ### 1. models — Opus 4.6 모델 정의
 
@@ -122,7 +122,7 @@ OpenClaw 사용자라면 지금 바로 설정해서 쓰고 싶을 겁니다. Cla
 
 ## 설정 적용
 
-설정을 저장한 후, <strong>2단계</strong>가 필요합니다.
+설정을 저장한 후, <strong>2단계</strong>가 필요하다.
 
 ### Step 1: Gateway 재시작
 
@@ -130,29 +130,29 @@ OpenClaw 사용자라면 지금 바로 설정해서 쓰고 싶을 겁니다. Cla
 openclaw gateway restart
 ```
 
-설정 파일이 다시 로드됩니다.
+설정 파일이 다시 로드된다.
 
 ### Step 2: 새 세션 시작
 
-기존 세션에는 이전 모델 설정이 남아 있습니다. 채팅에서 다음을 입력하세요:
+기존 세션에는 이전 모델 설정이 남아 있다. 채팅에서 다음을 입력한다:
 
 ```
 /new
 ```
 
-`/reset`도 가능합니다. <strong>새 세션을 시작하지 않으면 새 모델이 적용되지 않습니다.</strong>
+`/reset`도 가능하다. <strong>새 세션을 시작하지 않으면 새 모델이 적용되지 않다.</strong>
 
 ## 설정 확인
 
-올바르게 설정됐는지 확인합니다:
+올바르게 설정됐는지 확인한다:
 
 ```bash
 openclaw models status
 ```
 
-`anthropic/claude-opus-4-6`이 primary 모델로 표시되면 성공입니다.
+`anthropic/claude-opus-4-6`이 primary 모델로 표시되면 성공이다.
 
-채팅에서도 확인 가능합니다:
+채팅에서도 확인 가능하다:
 
 ```
 /model status
@@ -165,7 +165,7 @@ openclaw models status
 3. `/new`로 새 세션 시작
 4. `openclaw models status`로 확인
 
-끝. 100만 토큰 컨텍스트의 세계에 오신 것을 환영합니다. 사용량과 비용을 지속적으로 추적하고 싶다면 [Claude Code 사용량 인사이트 분석](/ko/blog/ko/claude-code-insights-usage-analysis)을 참고하세요.
+끝. 100만 토큰 컨텍스트의 세계에 오신 것을 환영한다. 사용량과 비용을 지속적으로 추적하고 싶다면 [Claude Code 사용량 인사이트 분석](/ko/blog/ko/claude-code-insights-usage-analysis)을 참고하면 된다.
 
 ## 참고 자료
 

@@ -61,7 +61,7 @@ relatedPosts:
 
 ## 개요
 
-현대 웹 애플리케이션 개발에서 E2E(End-to-End) 테스트는 필수불가결한 요소입니다. 하지만 테스트 코드 작성은 시간이 많이 걸리고, 유지보수가 어려우며, 복잡한 사용자 시나리오를 재현하기 까다롭습니다. <strong>Playwright와 AI 기술의 결합</strong> 은 이러한 문제를 혁신적으로 해결합니다.
+현대 웹 애플리케이션 개발에서 E2E(End-to-End) 테스트는 필수불가결한 요소다. 하지만 테스트 코드 작성은 시간이 많이 걸리고, 유지보수가 어려우며, 복잡한 사용자 시나리오를 재현하기 까다롭다. <strong>Playwright와 AI 기술의 결합</strong> 은 이러한 문제를 혁신적으로 해결한다.
 
 ### 왜 Playwright + AI인가?
 
@@ -78,7 +78,7 @@ relatedPosts:
 - ✅ <strong>자동 대기</strong>: Smart Auto-waiting으로 안정적인 테스트
 - ✅ <strong>멀티 브라우저</strong>: Chromium, Firefox, WebKit 동시 지원
 
-이 가이드에서는 <strong>Playwright MCP</strong>, <strong>AI Codegen</strong>, <strong>GitHub Actions 통합</strong>, <strong>시각적 회귀 테스트</strong>까지 실무에서 바로 적용할 수 있는 완벽한 자동화 테스트 시스템을 구축합니다.
+이 가이드에서는 <strong>Playwright MCP</strong>, <strong>AI Codegen</strong>, <strong>GitHub Actions 통합</strong>, <strong>시각적 회귀 테스트</strong>까지 실무에서 바로 적용할 수 있는 완벽한 자동화 테스트 시스템을 구축한다.
 
 ---
 
@@ -86,7 +86,7 @@ relatedPosts:
 
 ### 1. Playwright란?
 
-Microsoft에서 개발한 <strong>크로스 브라우저 E2E 테스트 프레임워크</strong>입니다. Puppeteer의 후속작으로, 더 강력하고 안정적인 기능을 제공합니다.
+Microsoft에서 개발한 <strong>크로스 브라우저 E2E 테스트 프레임워크</strong>다. Puppeteer의 후속작으로, 더 강력하고 안정적인 기능을 제공한다.
 
 <strong>핵심 특징</strong>:
 
@@ -106,7 +106,7 @@ const browser3 = await webkit.launch();
 
 ### 2. Auto-waiting 메커니즘
 
-Playwright의 가장 강력한 기능은 <strong>자동 대기(Auto-waiting)</strong>입니다. 수동으로 `sleep()`이나 `waitFor()`를 작성할 필요가 없습니다.
+Playwright의 가장 강력한 기능은 <strong>자동 대기(Auto-waiting)</strong>이다. 수동으로 `sleep()`이나 `waitFor()`를 작성할 필요가 없다.
 
 ```typescript
 // ❌ 전통적인 방식 (Selenium)
@@ -127,7 +127,7 @@ await page.click("#submit"); // 요소가 준비될 때까지 자동 대기
 
 ### 3. 강력한 Selector 엔진
 
-Playwright는 다양한 Selector 전략을 제공합니다:
+Playwright는 다양한 Selector 전략을 제공한다:
 
 ```typescript
 // CSS Selector
@@ -177,7 +177,7 @@ graph TB
 
 ### 1. Playwright Codegen
 
-Playwright에 내장된 <strong>코드 생성기</strong>로, 브라우저 조작을 자동으로 TypeScript 코드로 변환합니다.
+Playwright에 내장된 <strong>코드 생성기</strong>로, 브라우저 조작을 자동으로 TypeScript 코드로 변환한다.
 
 #### 기본 사용법
 
@@ -229,7 +229,7 @@ test("GitHub 로그인 테스트", async ({ page }) => {
 
 ### 2. Playwright MCP (Model Context Protocol)
 
-<strong>Claude와 Playwright를 연결</strong>하여 자연어로 테스트를 생성하는 혁신적인 방법입니다.
+<strong>Claude와 Playwright를 연결</strong>하여 자연어로 테스트를 생성하는 혁신적인 방법이다.
 
 #### MCP 설치 및 설정
 
@@ -688,7 +688,7 @@ test("대시보드 접근", async ({ page }) => {
 
 ## GitHub Actions CI/CD 통합
 
-CI 환경에서 대규모 페이지를 효율적으로 검증하려면 병렬 실행이 핵심입니다. [Claude Code로 대규모 페이지 테스트 병렬 자동화하기](/ko/blog/ko/claude-code-parallel-testing)에서는 수백 개 페이지를 동시에 처리하는 병렬 테스트 패턴을 자세히 다룹니다.
+CI 환경에서 대규모 페이지를 효율적으로 검증하려면 병렬 실행이 핵심이다. [Claude Code로 대규모 페이지 테스트 병렬 자동화하기](/ko/blog/ko/claude-code-parallel-testing)에서는 수백 개 페이지를 동시에 처리하는 병렬 테스트 패턴을 자세히 다룬다.
 
 ### 1. 기본 워크플로우
 
@@ -1212,7 +1212,7 @@ export default defineConfig({
 
 ## 결론
 
-<strong>Playwright + AI</strong>는 E2E 테스트 자동화의 패러다임을 바꿨습니다. 이 가이드에서 다룬 내용을 정리하면:
+<strong>Playwright + AI</strong>는 E2E 테스트 자동화의 패러다임을 바꿨다. 이 가이드에서 다룬 내용을 정리하면:
 
 ### 핵심 요약
 
@@ -1240,14 +1240,14 @@ npx playwright codegen https://your-app.com
 
 ### 다음 단계
 
-Playwright 테스트를 Claude Code 에이전트와 결합하는 실전 사례는 [Claude Code로 페이지 E2E 테스트 자동화하기](/ko/blog/ko/e2e-page-test-automation-claude-code)에서 확인할 수 있습니다.
+Playwright 테스트를 Claude Code 에이전트와 결합하는 실전 사례는 [Claude Code로 페이지 E2E 테스트 자동화하기](/ko/blog/ko/e2e-page-test-automation-claude-code)에서 확인할 수 있다.
 
 - <strong>고급 패턴</strong>: Custom Fixtures, Global Setup, Test Sharding
 - <strong>성능 테스트</strong>: Lighthouse CI 통합
 - <strong>접근성 테스트</strong>: axe-core 통합
 - <strong>모바일 테스트</strong>: 실제 디바이스 클라우드 연동
 
-<strong>Playwright + AI</strong>는 단순한 테스트 도구를 넘어, <strong>개발 생산성을 혁신하는 필수 도구</strong>입니다. 지금 바로 시작하세요!
+<strong>Playwright + AI</strong>는 단순한 테스트 도구를 넘어, <strong>개발 생산성을 혁신하는 필수 도구</strong>다. 지금 바로 시작하면 된다.
 
 ---
 
