@@ -69,7 +69,7 @@ relatedPosts:
 
 ### 1.2 Overall Assessment: 🟢 폭발적 성장
 
-<strong>한 달 만에 트래픽이 3.5배 성장했습니다.</strong>
+<strong>한 달 만에 트래픽이 3.5배 성장했다.</strong>
 
 이번 31일 동안의 주요 성과:
 
@@ -113,7 +113,7 @@ relatedPosts:
 | linkedin.com / referral | 12 | 3 | B2B 전문가 유입 |
 | t.co / referral | 11 | 10 | Twitter/X 유입 |
 
-<strong>인사이트</strong>: AI 플랫폼(ChatGPT, Perplexity, Gemini)에서의 레퍼럴이 총 100세션 이상으로, 전통적인 소셜 미디어(27세션)보다 <strong>3.7배 높습니다</strong>. AEO(Answer Engine Optimization) 전략이 효과를 발휘하고 있습니다.
+<strong>인사이트</strong>: AI 플랫폼(ChatGPT, Perplexity, Gemini)에서의 레퍼럴이 총 100세션 이상으로, 전통적인 소셜 미디어(27세션)보다 <strong>3.7배 높다</strong>. AEO(Answer Engine Optimization) 전략이 효과를 발휘하고 있다.
 
 ---
 
@@ -182,7 +182,7 @@ relatedPosts:
 | 12-13~14 | UX Psychology Implementation (2편) | UX 심리학 |
 | 12-19 | Greptile AI Coding Report Review | AI 코딩 리뷰 |
 
-<strong>콘텐츠 전략 성과</strong>: 31일간 21개 포스트 게시 (일 0.68개), 꾸준한 콘텐츠 발행이 오가닉 성장의 핵심 동력입니다.
+<strong>콘텐츠 전략 성과</strong>: 31일간 21개 포스트 게시 (일 0.68개), 꾸준한 콘텐츠 발행이 오가닉 성장의 핵심 동력이다.
 
 ---
 
@@ -401,7 +401,7 @@ relatedPosts:
 
 ## 11. 마무리: 75일의 여정
 
-블로그를 시작한 지 75일이 지났습니다.
+블로그를 시작한 지 75일이 지났다.
 
 - <strong>10월 6일</strong>: 블로그 런칭, 첫 날 34명 방문
 - <strong>11월 20일</strong>: 45일 리포트, 750명 누적 방문, 일 16명
@@ -409,11 +409,11 @@ relatedPosts:
 
 <strong>숫자 너머의 의미:</strong>
 
-53개국에서 2,600명이 이 블로그를 찾아와 평균 3분씩 머물렀습니다. AI 도구들이 제 글을 인용하고, 중국에서 21분간 튜토리얼을 읽는 분이 계십니다.
+53개국에서 2,600명이 이 블로그를 찾아와 평균 3분씩 머물렀다. AI 도구들이 제 글을 인용하고, 중국에서 21분간 튜토리얼을 읽는 분이 계신다.
 
-데이터는 거짓말하지 않습니다. 꾸준히 쓰면, 꾸준히 성장합니다.
+데이터는 거짓말하지 않다. 꾸준히 쓰면, 꾸준히 성장한다.
 
-다음 리포트에서 더 나은 숫자로 찾아뵙겠습니다.
+다음 리포트에서 더 나은 숫자로 찾아뵙겠다.
 
 ---
 

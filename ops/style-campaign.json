@@ -1727,7 +1727,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "moltbook-ai-theater-human-control.md",
@@ -1737,7 +1737,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "monthly-analytics-2025-12.md",
@@ -1746,7 +1746,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "morgan-stanley-ai-leap-2026-cto-strategy.md",
@@ -1756,7 +1756,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "multi-agent-orchestration-improvement.md",
@@ -1766,7 +1766,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "multi-agent-orchestration-routing.md",
@@ -1776,7 +1776,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "multi-agent-swe-bench-verdent.md",
@@ -1786,7 +1786,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "multilingual-llm-token-tax-experiment.md",
@@ -1795,7 +1795,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "n8n-rss-automation.md",
@@ -1804,7 +1804,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "nist-ai-agent-security-standards.md",
@@ -1814,7 +1814,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "node-sqlite-builtin-practical-guide-2026.md",
