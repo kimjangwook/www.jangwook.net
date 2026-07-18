@@ -321,10 +321,9 @@ async function validateCrawlerSurfaces() {
     }
   }
 
-  // 2026-07-14 AdSense 종료: 광고 스크립트가 되살아나지 않도록 부재를 검증한다.
   const baseHead = await fs.readFile(path.join(repoRoot, 'src/components/BaseHead.astro'), 'utf8');
-  if (baseHead.includes('adsbygoogle') || baseHead.includes('google-adsense-account')) {
-    errors.push('src/components/BaseHead.astro: AdSense 코드는 2026-07-14 운영자 결정으로 제거됨 — 재도입 시 이 게이트를 갱신할 것');
+  if (!baseHead.includes('enableAds') || !baseHead.includes('{enableAds &&')) {
+    errors.push('src/components/BaseHead.astro: AdSense script must be gated by enableAds');
   }
 
   const notFoundPage = await fs.readFile(path.join(repoRoot, 'src/pages/404.astro'), 'utf8');

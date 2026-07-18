@@ -24,6 +24,7 @@ interface Props {
 	faqData?: FAQItem[];
 	breadcrumbs?: { name: string; item: string }[];
 	isHomePage?: boolean;
+	enableAds?: boolean;
 	noindex?: boolean;
 	robots?: string;
 }
@@ -37,6 +38,7 @@ const {
 	articleData,
 	faqData,
 	breadcrumbs,
+	enableAds = false,
 	noindex = false,
 	robots,
 } = Astro.props;
@@ -344,6 +346,17 @@ const schemaGraph = { '@context': 'https://schema.org', '@graph': graphNodes };
 
 <meta name="generator" content={Astro.generator} />
 {robotsContent && <meta name="robots" content={robotsContent} />}
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-7556938384772610">
+{enableAds && (
+	<script
+		is:inline
+		async
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7556938384772610"
+		crossorigin="anonymous"
+	></script>
+)}
 
 <!-- Google Fonts Optimization (preconnect + async load) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
