@@ -394,7 +394,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "astro-scheduled-publishing.md",
@@ -404,7 +404,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "banana-x-image-prompt-guide.md",
@@ -413,7 +413,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "barracuda-cuda-amd-compiler.md",
@@ -423,7 +423,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "bigquery-mcp-prefix-filtering.md",
@@ -433,7 +433,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "blog-launch-analysis-report.md",
@@ -442,7 +442,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "bun-shell-scripting-practical-guide-2026.md",
@@ -451,7 +451,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ccc-vs-gcc-ai-compiled-c-compiler.md",
@@ -461,7 +461,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "chrome-devtools-mcp-performance.md",
@@ -471,7 +471,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-agent-sdk-tool-use-complete-guide-2026.md",
@@ -480,7 +480,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-agent-teams-guide.md",

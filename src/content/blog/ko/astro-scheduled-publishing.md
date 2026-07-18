@@ -59,19 +59,19 @@ relatedPosts:
 
 ## 정적 사이트의 딜레마: 예약 공개
 
-Astro + GitHub Pages로 블로그를 운영하면서 얻는 장점은 명확합니다. 빠른 페이지 로딩, 제로 서버 비용, 뛰어난 SEO 최적화. 하지만 WordPress 같은 CMS에서 당연하게 사용하던 <strong>포스트 예약 공개 기능</strong>이 없다는 것이 불편했습니다.
+Astro + GitHub Pages로 블로그를 운영하면서 얻는 장점은 명확하다. 빠른 페이지 로딩, 제로 서버 비용, 뛰어난 SEO 최적화. 하지만 WordPress 같은 CMS에서 당연하게 사용하던 <strong>포스트 예약 공개 기능</strong>이 없다는 것이 불편했다.
 
-여유 시간에 미리 여러 글을 작성하고, 매일 오전 9시에 자동으로 공개하고 싶은데, 정적 사이트 생성기는 빌드 시점의 파일만 배포합니다. 미래 날짜의 포스트는? 빌드 시점에 이미 HTML로 생성되어 즉시 공개됩니다.
+여유 시간에 미리 여러 글을 작성하고, 매일 오전 9시에 자동으로 공개하고 싶은데, 정적 사이트 생성기는 빌드 시점의 파일만 배포한다. 미래 날짜의 포스트는? 빌드 시점에 이미 HTML로 생성되어 즉시 공개된다.
 
-이 글에서는 <strong>Astro의 Content Collections와 GitHub Actions의 스케줄 워크플로우를 조합하여</strong> 정적 사이트에서 완전한 예약 공개 시스템을 구현하는 방법을 다룹니다. 실제로 제 블로그에 적용한 코드를 기반으로 설명하니, 바로 적용할 수 있습니다. 이 블로그를 어떻게 데이터로 운영하는지는 [블로그 런칭 분석 리포트](/ko/blog/ko/blog-launch-analysis-report)에 함께 정리했습니다.
+<strong>Astro의 Content Collections와 GitHub Actions의 스케줄 워크플로우를 조합하여</strong> 정적 사이트에서 완전한 예약 공개 시스템을 구현하는 방법을 다룬다. 실제로 내 블로그에 적용한 코드를 기반으로 설명하니, 바로 적용할 수 있다. 이 블로그를 어떻게 데이터로 운영하는지는 [블로그 런칭 분석 리포트](/ko/blog/ko/blog-launch-analysis-report)에 함께 정리했다.
 
 ## 해결책 개요: 세 가지 핵심 요소
 
-예약 공개를 구현하는 핵심은 다음 세 가지입니다:
+예약 공개를 구현하는 핵심은 다음 세 가지다.
 
 ### 1. pubDate 기반 콘텐츠 필터링
 
-Astro의 Content Collections 스키마에 `pubDate` 필드를 정의하고, 빌드 시 현재 날짜보다 미래인 포스트를 필터링합니다.
+Astro의 Content Collections 스키마에 `pubDate` 필드를 정의하고, 빌드 시 현재 날짜보다 미래인 포스트를 필터링한다.
 
 ```typescript
 // src/content.config.ts
@@ -93,7 +93,7 @@ export const collections = { blog };
 
 ### 2. 스마트 필터링 유틸리티
 
-프로덕션 빌드에서는 오늘 날짜 이전 포스트만 보여주고, 개발 환경에서는 모든 포스트를 보여줍니다.
+프로덕션 빌드에서는 오늘 날짜 이전 포스트만 보여주고, 개발 환경에서는 모든 포스트를 보여준다.
 
 ```typescript
 // src/lib/content.ts
@@ -149,7 +149,7 @@ export function filterPostsByDate(
 
 ### 3. GitHub Actions 스케줄 워크플로우
 
-매일 정해진 시간에 자동으로 사이트를 재빌드하여 해당 날짜의 포스트를 공개합니다.
+매일 정해진 시간에 자동으로 사이트를 재빌드하여 해당 날짜의 포스트를 공개한다.
 
 ```yaml
 # .github/workflows/deploy.yml
@@ -203,7 +203,7 @@ jobs:
 
 ### 1단계: Content Collections 스키마 정의
 
-먼저 블로그 포스트의 타입 스키마를 정의합니다.
+먼저 블로그 포스트의 타입 스키마를 정의한다.
 
 ```typescript
 // src/content.config.ts
@@ -229,7 +229,7 @@ const blog = defineCollection({
 export const collections = { blog };
 ```
 
-이제 블로그 포스트를 작성할 때 다음과 같은 frontmatter를 사용합니다:
+이제 블로그 포스트를 작성할 때 다음과 같은 frontmatter를 사용한다.
 
 ```markdown
 ---
@@ -245,7 +245,7 @@ tags: ['test', 'scheduled']
 
 ### 2단계: 필터링 유틸리티 생성
 
-모든 페이지에서 재사용할 필터링 로직을 `src/lib/content.ts`에 작성합니다.
+모든 페이지에서 재사용할 필터링 로직을 `src/lib/content.ts`에 작성한다.
 
 ```typescript
 // src/lib/content.ts
@@ -302,7 +302,7 @@ export function filterPostsByDate(
 
 ### 3단계: 블로그 인덱스 페이지 업데이트
 
-필터링 함수를 적용하여 공개된 포스트만 표시합니다.
+필터링 함수를 적용하여 공개된 포스트만 표시한다.
 
 ```astro
 ---
@@ -339,7 +339,7 @@ const posts = filterPostsByDate(allPosts)
 
 ### 4단계: 동적 포스트 페이지 업데이트
 
-개별 포스트 페이지도 동일하게 필터링합니다.
+개별 포스트 페이지도 동일하게 필터링한다.
 
 ```astro
 ---
@@ -373,11 +373,11 @@ const { Content } = await render(post);
 </BlogPost>
 ```
 
-<strong>중요</strong>: `getStaticPaths()`에서 필터링하지 않으면, 미래 포스트의 경로도 생성되어 직접 URL로 접근 가능합니다. 반드시 여기서도 필터링해야 합니다.
+<strong>중요</strong>: `getStaticPaths()`에서 필터링하지 않으면, 미래 포스트의 경로도 생성되어 직접 URL로 접근 가능하다. 반드시 여기서도 필터링해야 한다.
 
 ### 5단계: GitHub Actions 워크플로우 설정
 
-`.github/workflows/deploy.yml` 파일을 생성합니다.
+`.github/workflows/deploy.yml` 파일을 생성한다.
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -442,7 +442,7 @@ jobs:
 
 ### 6단계: 로컬 테스트
 
-미래 포스트를 작성하고 로컬에서 테스트합니다.
+미래 포스트를 작성하고 로컬에서 테스트한다.
 
 ```bash
 # 1. 미래 날짜 포스트 작성
@@ -516,7 +516,7 @@ schedule:
   - cron: "0 12 * * *"  # JST 21:00 (저녁)
 ```
 
-<strong>주의</strong>: GitHub Actions 무료 플랜은 월 2,000분 제한이 있습니다. 빌드 시간이 5분이라면, 하루 3회 빌드 시 월 450분 사용 (여유 있음).
+<strong>주의</strong>: GitHub Actions 무료 플랜은 월 2,000분 제한이 있다. 빌드 시간이 5분이라면, 하루 3회 빌드 시 월 450분 사용 (여유 있음).
 
 ### RSS 피드 필터링
 
@@ -550,7 +550,7 @@ export async function GET(context) {
 
 ### 사이트맵 필터링
 
-Astro의 `@astrojs/sitemap` 통합은 자동으로 생성된 페이지를 사이트맵에 추가합니다. `getStaticPaths()`에서 필터링하면 사이트맵도 자동으로 필터링됩니다.
+Astro의 `@astrojs/sitemap` 통합은 자동으로 생성된 페이지를 사이트맵에 추가한다. `getStaticPaths()`에서 필터링하면 사이트맵도 자동으로 필터링된다.
 
 ```javascript
 // astro.config.mjs
@@ -712,7 +712,7 @@ export default defineConfig({
 
 ## 결론
 
-Astro와 GitHub Actions를 조합하면, 정적 블로그에서도 WordPress처럼 <strong>완전 자동화된 예약 공개 시스템</strong>을 구축할 수 있습니다.
+Astro와 GitHub Actions를 조합하면, 정적 블로그에서도 WordPress처럼 <strong>완전 자동화된 예약 공개 시스템</strong>을 구축할 수 있다.
 
 ### 핵심 포인트 정리
 
@@ -731,7 +731,7 @@ Astro와 GitHub Actions를 조합하면, 정적 블로그에서도 WordPress처�
 4. <strong>개발 친화적</strong>: 테스트 모드로 미리보기 가능
 5. <strong>플랫폼 독립적</strong>: GitHub Pages 외에도 Netlify, Vercel 등 어디서나 작동
 
-이제 여유 시간에 미리 포스트를 작성하고, 매일 아침 자동으로 독자들에게 새 글을 선사할 수 있습니다. 정적 사이트의 속도와 WordPress의 편의성을 동시에 누리세요! 예약 공개에서 한발 더 나아가 글 작성 자체를 자동화하고 싶다면 [Claude Code 웹 자동화](/ko/blog/ko/claude-code-web-automation)를 참고하세요.
+이제 여유 시간에 미리 포스트를 작성하고, 매일 아침 자동으로 독자들에게 새 글을 선사할 수 있다. 정적 사이트의 속도와 WordPress의 편의성을 동시에 누릴 수 있다. 예약 공개에서 한발 더 나아가 글 작성 자체를 자동화하고 싶다면 [Claude Code 웹 자동화](/ko/blog/ko/claude-code-web-automation)를 참고하면 된다.
 
 ## 참고 자료
 

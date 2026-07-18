@@ -51,13 +51,13 @@ relatedPosts:
 
 ## 개요
 
-GPU 컴퓨팅 세계에서 NVIDIA의 CUDA는 사실상의 표준입니다. 하지만 이는 동시에 <strong>벤더 종속(vendor lock-in)</strong>을 의미합니다. CUDA로 작성된 코드는 NVIDIA GPU에서만 실행할 수 있었습니다. 실제로 [NVIDIA DGX Spark에서도 CUDA 호환성 문제](/ko/blog/ko/nvidia-dgx-spark-cuda-compatibility)가 보고되며, 하드웨어 의존성의 현실이 드러납니다.
+GPU 컴퓨팅 세계에서 NVIDIA의 CUDA는 사실상의 표준이다. 하지만 이는 동시에 <strong>벤더 종속(vendor lock-in)</strong>을 의미한다. CUDA로 작성된 코드는 NVIDIA GPU에서만 실행할 수 있었다. 실제로 [NVIDIA DGX Spark에서도 CUDA 호환성 문제](/ko/blog/ko/nvidia-dgx-spark-cuda-compatibility)가 보고되며, 하드웨어 의존성의 현실이 드러난다.
 
-<strong>BarraCUDA</strong>는 이 벽을 허물기 위해 탄생한 오픈소스 컴파일러입니다. `.cu` 파일을 받아 AMD RDNA 3(GFX11) 머신 코드로 직접 컴파일합니다. LLVM 의존성 없이 15,000줄의 C99로 작성되었으며, HIP 변환 레이어도 필요하지 않습니다.
+<strong>BarraCUDA</strong>는 이 벽을 허물기 위해 탄생한 오픈소스 컴파일러다. `.cu` 파일을 받아 AMD RDNA 3(GFX11) 머신 코드로 직접 컴파일한다. LLVM 의존성 없이 15,000줄의 C99로 작성됐으며, HIP 변환 레이어도 필요하지 않다.
 
 ## BarraCUDA의 아키텍처
 
-BarraCUDA의 컴파일 파이프라인은 전통적인 컴파일러 구조를 따르면서도, AMD GPU를 직접 타겟으로 합니다.
+BarraCUDA의 컴파일 파이프라인은 전통적인 컴파일러 구조를 따르면서도, AMD GPU를 직접 타겟으로 한다.
 
 ```mermaid
 graph TD
@@ -73,7 +73,7 @@ graph TD
     J --> K[ELF 출력 .hsaco]
 ```
 
-핵심적인 특징은 다음과 같습니다:
+핵심적인 특징은 다음과 같다.
 
 - <strong>LLVM 제로 의존성</strong>: 약 1,700줄의 직접 작성된 명령어 선택 로직
 - <strong>SSA 기반 IR</strong>: BIR(BarraCUDA IR)이라는 자체 중간 표현 사용
@@ -82,7 +82,7 @@ graph TD
 
 ## 지원하는 CUDA 기능
 
-BarraCUDA는 이미 상당히 많은 CUDA 기능을 지원합니다:
+BarraCUDA는 이미 상당히 많은 CUDA 기능을 지원한다.
 
 ### 코어 언어 기능
 
@@ -105,7 +105,7 @@ BarraCUDA는 이미 상당히 많은 CUDA 기능을 지원합니다:
 
 ## 사용 방법
 
-빌드는 놀라울 정도로 간단합니다:
+빌드는 놀라울 정도로 간단하다.
 
 ```bash
 # 빌드 — C99 컴파일러만 있으면 됩니다
@@ -123,36 +123,36 @@ make
 
 ## GPU 민주화의 의미
 
-BarraCUDA의 등장은 단순한 기술적 성과를 넘어, GPU 생태계의 구조적 변화를 시사합니다.
+BarraCUDA의 등장은 단순한 기술적 성과를 넘어, GPU 생태계의 구조적 변화를 시사한다.
 
 ### NVIDIA 독점에 대한 도전
 
-현재 GPU 컴퓨팅 시장에서 CUDA의 위치는 절대적입니다. AI/ML 워크로드의 대부분이 CUDA 기반이며, 이는 NVIDIA GPU 없이는 실행이 불가능했습니다. [GPT-4o 은퇴에서 확인된 모델 의존 리스크](/ko/blog/ko/gpt4o-retirement-model-dependency-risk)처럼, 특정 기술에 대한 과도한 의존은 장기적으로 큰 리스크를 안겨줍니다. BarraCUDA는 이 구도에 균열을 만듭니다.
+현재 GPU 컴퓨팅 시장에서 CUDA의 위치는 절대적이다. AI/ML 워크로드의 대부분이 CUDA 기반이며, 이는 NVIDIA GPU 없이는 실행이 불가능했다. [GPT-4o 은퇴에서 확인된 모델 의존 리스크](/ko/blog/ko/gpt4o-retirement-model-dependency-risk)처럼, 특정 기술에 대한 과도한 의존은 장기적으로 큰 리스크를 안긴다. BarraCUDA는 이 구도에 균열을 만든다.
 
 ### AMD GPU 활용 가능성 확대
 
-AMD의 ROCm/HIP 생태계는 성장하고 있지만, 기존 CUDA 코드를 변환하는 데 여전히 마찰이 존재합니다. BarraCUDA는 <strong>코드 변환 없이 직접 컴파일</strong>하는 접근법으로 이 마찰을 최소화합니다.
+AMD의 ROCm/HIP 생태계는 성장하고 있지만, 기존 CUDA 코드를 변환하는 데 여전히 마찰이 존재한다. BarraCUDA는 <strong>코드 변환 없이 직접 컴파일</strong>하는 접근법으로 이 마찰을 최소화한다.
 
 ### 오픈소스의 힘
 
-15,000줄의 C99로 CUDA 컴파일러를 구현했다는 사실 자체가, 오픈소스 커뮤니티의 역량을 보여줍니다. Hacker News에서 66포인트를 기록하며 개발자 커뮤니티의 관심을 모았습니다. [AI가 작성한 C 컴파일러 CCC와 GCC 비교](/ko/blog/ko/ccc-vs-gcc-ai-compiled-c-compiler)에서도 볼 수 있듯이, 소규모 오픈소스 컴파일러가 주목받는 시대입니다.
+15,000줄의 C99로 CUDA 컴파일러를 구현했다는 사실 자체가, 오픈소스 커뮤니티의 역량을 보여준다. Hacker News에서 66포인트를 기록하며 개발자 커뮤니티의 관심을 모았다. [AI가 작성한 C 컴파일러 CCC와 GCC 비교](/ko/blog/ko/ccc-vs-gcc-ai-compiled-c-compiler)에서도 볼 수 있듯이, 소규모 오픈소스 컴파일러가 주목받는 시대다.
 
 ## 현재 한계와 전망
 
-물론 아직 초기 단계인 만큼 한계도 있습니다:
+물론 아직 초기 단계인 만큼 한계도 있다.
 
 - <strong>GFX11(RDNA 3) 전용</strong>: 현재 AMD의 최신 아키텍처만 지원
 - <strong>런타임 미포함</strong>: `cudaMalloc`, `cudaMemcpy` 등 호스트 API는 별도 구현 필요
 - <strong>최적화 제한적</strong>: nvcc 수준의 최적화에는 아직 미치지 못함
 - <strong>Tenstorrent 지원 진행 중</strong>: AMD 이외의 아키텍처로 확장 계획
 
-그러나 프로젝트의 방향성은 명확합니다. CUDA 코드의 포터빌리티를 높이고, GPU 선택의 자유를 개발자에게 돌려주는 것입니다.
+그러나 프로젝트의 방향성은 명확하다. CUDA 코드의 포터빌리티를 높이고, GPU 선택의 자유를 개발자에게 돌려주는 것이다.
 
 ## 결론
 
-BarraCUDA는 GPU 컴퓨팅의 미래를 엿볼 수 있는 프로젝트입니다. NVIDIA의 CUDA 독점에 대한 오픈소스의 대안으로서, <strong>코드 변경 없이 AMD GPU에서 CUDA 코드를 실행</strong>할 수 있는 가능성을 보여줍니다.
+BarraCUDA는 GPU 컴퓨팅의 미래를 엿볼 수 있는 프로젝트다. NVIDIA의 CUDA 독점에 대한 오픈소스의 대안으로서, <strong>코드 변경 없이 AMD GPU에서 CUDA 코드를 실행</strong>할 수 있는 가능성을 보여준다.
 
-AI/ML 워크로드가 폭발적으로 증가하는 지금, GPU 선택의 다양성은 비용 절감과 공급망 안정성 측면에서도 중요합니다. BarraCUDA와 같은 프로젝트가 성숙해진다면, GPU 생태계의 경쟁 구도가 한층 건강해질 것입니다.
+AI/ML 워크로드가 폭발적으로 증가하는 지금, GPU 선택의 다양성은 비용 절감과 공급망 안정성 측면에서도 중요하다. BarraCUDA와 같은 프로젝트가 성숙해진다면, GPU 생태계의 경쟁 구도가 한층 건강해질 것이다.
 
 ## 참고 자료
 

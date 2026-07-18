@@ -61,23 +61,23 @@ relatedPosts:
 
 ## 개요
 
-Model Context Protocol(MCP)은 AI 에이전트가 외부 시스템과 안전하게 상호작용할 수 있도록 설계된 표준 프로토콜입니다. [A2A·MCP 하이브리드 아키텍처 실전 가이드](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide)에서 MCP의 더 넓은 활용 패턴을 확인할 수 있습니다. 이 글에서는 BigQuery를 MCP 서버로 통합하면서, Dataset Prefix 필터링 기능을 구현하여 AI 에이전트의 데이터 접근 범위를 제어하는 방법을 다룹니다.
+Model Context Protocol(MCP)은 AI 에이전트가 외부 시스템과 안전하게 상호작용할 수 있도록 설계된 표준 프로토콜이다. [A2A·MCP 하이브리드 아키텍처 실전 가이드](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide)에서 MCP의 더 넓은 활용 패턴을 확인할 수 있다. BigQuery를 MCP 서버로 통합하면서, Dataset Prefix 필터링 기능을 구현하여 AI 에이전트의 데이터 접근 범위를 제어하는 방법을 다룬다.
 
 ### 왜 Dataset Prefix 필터링이 필요한가?
 
-대규모 BigQuery 환경에서는 수백 개의 데이터셋이 존재할 수 있습니다. AI 에이전트에게 모든 데이터셋을 노출하는 것은:
+대규모 BigQuery 환경에서는 수백 개의 데이터셋이 존재할 수 있다. AI 에이전트에게 모든 데이터셋을 노출하면 다음 문제가 생긴다.
 
 - <strong>보안 리스크</strong>: 민감한 데이터에 대한 불필요한 접근 권한 부여
 - <strong>성능 저하</strong>: 대량의 메타데이터 로딩으로 인한 응답 지연
 - <strong>사용성 문제</strong>: 불필요한 정보로 인한 컨텍스트 오염
 
-Dataset Prefix 필터링을 통해 특정 prefix(예: `analytics_`, `marketing_`)를 가진 데이터셋만 노출하여 이러한 문제를 해결할 수 있습니다.
+Dataset Prefix 필터링을 통해 특정 prefix(예: `analytics_`, `marketing_`)를 가진 데이터셋만 노출하여 이러한 문제를 해결할 수 있다.
 
 ## MCP 서버 기본 구조
 
 ### MCP 아키텍처
 
-MCP는 클라이언트-서버 아키텍처를 기반으로 하며, JSON-RPC 2.0 프로토콜을 사용하여 통신합니다.
+MCP는 클라이언트-서버 아키텍처를 기반으로 하며, JSON-RPC 2.0 프로토콜을 사용하여 통신한다.
 
 ```mermaid
 graph LR
@@ -93,7 +93,7 @@ graph LR
 
 ### 핵심 컴포넌트
 
-MCP 서버는 다음 세 가지 핵심 요소로 구성됩니다:
+MCP 서버는 다음 세 가지 핵심 요소로 구성된다.
 
 1. <strong>Server</strong>: MCP 프로토콜 구현 및 클라이언트 연결 관리
 2. <strong>Tools</strong>: AI 에이전트가 호출할 수 있는 함수 정의
@@ -125,7 +125,7 @@ await server.connect(transport);
 
 ### 인증 설정
 
-BigQuery API를 사용하기 위해서는 Google Cloud 서비스 계정 인증이 필요합니다.
+BigQuery API를 사용하려면 Google Cloud 서비스 계정 인증이 필요하다.
 
 ````typescript
 import { BigQuery } from "@google-cloud/bigquery";
@@ -143,7 +143,7 @@ const bigquery = new BigQuery({
 
 ### 환경 변수 설정
 
-`.env` 파일에 다음 정보를 설정합니다:
+`.env` 파일에 다음 정보를 설정한다.
 
 ```bash
 GOOGLE_CLOUD_PROJECT=your-project-id
@@ -153,7 +153,7 @@ DATASET_PREFIX=analytics_  # 필터링할 prefix
 
 ### 기본 API 작업
 
-BigQuery 클라이언트는 다음과 같은 기본 작업을 지원합니다:
+BigQuery 클라이언트는 다음과 같은 기본 작업을 지원한다.
 
 ````typescript
 // 데이터셋 목록 조회
@@ -183,7 +183,7 @@ async function executeQuery(query: string) {
 
 ### 필터링 로직
 
-Dataset Prefix 필터링은 두 가지 수준에서 구현됩니다:
+Dataset Prefix 필터링은 두 가지 수준에서 구현된다.
 
 1. <strong>데이터셋 목록 필터링</strong>: API 응답에서 prefix와 일치하는 데이터셋만 반환
 2. <strong>접근 제어</strong>: prefix와 일치하지 않는 데이터셋에 대한 직접 접근 차단
@@ -222,7 +222,7 @@ function validateDatasetAccess(datasetId: string): void {
 
 ### 보안 강화
 
-접근 제어를 모든 도구에 일관되게 적용합니다:
+접근 제어를 모든 도구에 일관되게 적용한다.
 
 ````typescript
 // 테이블 목록 조회 시 접근 검증
@@ -263,7 +263,7 @@ function extractDatasetsFromQuery(query: string): string[] {
 
 ### 도구 정의 원칙
 
-효과적인 MCP 도구는 다음 원칙을 따릅니다. [AWS MCP 서버 GA 실전 가이드](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026)에서도 유사한 도구 설계 패턴을 볼 수 있습니다:
+효과적인 MCP 도구는 다음 원칙을 따른다. [AWS MCP 서버 GA 실전 가이드](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026)에서도 유사한 도구 설계 패턴을 볼 수 있다.
 
 1. <strong>단일 책임</strong>: 각 도구는 하나의 명확한 작업 수행
 2. <strong>명확한 입출력</strong>: JSON Schema로 파라미터와 반환값 정의
@@ -272,11 +272,11 @@ function extractDatasetsFromQuery(query: string): string[] {
 
 ### 도구 목록
 
-BigQuery MCP 서버는 다음 네 가지 도구를 제공합니다:
+BigQuery MCP 서버는 다음 네 가지 도구를 제공한다.
 
 #### 1. list_datasets
 
-필터링된 데이터셋 목록을 반환합니다.
+필터링된 데이터셋 목록을 반환한다.
 
 ````typescript
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
@@ -297,7 +297,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 
 #### 2. list_tables
 
-특정 데이터셋의 테이블 목록을 반환합니다.
+특정 데이터셋의 테이블 목록을 반환한다.
 
 ````typescript
 {
@@ -318,7 +318,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 
 #### 3. get_schema
 
-테이블의 스키마 정보를 반환합니다.
+테이블의 스키마 정보를 반환한다.
 
 ````typescript
 {
@@ -343,7 +343,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 
 #### 4. execute_query
 
-BigQuery SQL 쿼리를 실행합니다.
+BigQuery SQL 쿼리를 실행한다.
 
 ````typescript
 {
@@ -371,7 +371,7 @@ BigQuery SQL 쿼리를 실행합니다.
 
 ### 완전한 MCP 서버 코드
 
-다음은 Dataset Prefix 필터링이 적용된 완전한 BigQuery MCP 서버 구현입니다:
+다음은 Dataset Prefix 필터링이 적용된 완전한 BigQuery MCP 서버 구현이다.
 
 ````typescript
 #!/usr/bin/env node
@@ -697,7 +697,7 @@ const bigquery = new BigQuery({
 
 #### 2. 최소 권한 원칙
 
-서비스 계정에 필요한 최소한의 권한만 부여합니다:
+서비스 계정에 필요한 최소한의 권한만 부여한다.
 
 ```bash
 # BigQuery Data Viewer (읽기 전용)
@@ -713,7 +713,7 @@ gcloud projects add-iam-policy-binding PROJECT_ID \
 
 #### 3. SQL Injection 방지
 
-BigQuery 파라미터화된 쿼리를 사용합니다:
+BigQuery 파라미터화된 쿼리를 사용한다.
 
 ````typescript
 // ❌ 문자열 연결 (SQL Injection 위험)
@@ -732,7 +732,7 @@ const [rows] = await bigquery.query(query);
 
 #### 1. 결과 캐싱
 
-BigQuery는 기본적으로 쿼리 결과를 24시간 캐싱하지만, MCP 서버 레벨에서도 캐싱을 구현할 수 있습니다:
+BigQuery는 기본적으로 쿼리 결과를 24시간 캐싱하지만, MCP 서버 레벨에서도 캐싱을 구현할 수 있다.
 
 ````typescript
 import { LRUCache } from "lru-cache";
@@ -784,7 +784,7 @@ async function executeOptimizedQuery(query: string, maxResults = 100) {
 
 #### 3. 병렬 처리
 
-여러 데이터셋의 테이블 목록을 조회할 때 병렬 처리를 활용합니다:
+여러 데이터셋의 테이블 목록을 조회할 때 병렬 처리를 활용한다.
 
 ````typescript
 async function listAllTables(datasetIds: string[]) {
@@ -883,7 +883,7 @@ npm start
 
 ### Claude Desktop 통합
 
-MCP 서버를 Claude Desktop에 연결하려면 설정 파일을 수정합니다:
+MCP 서버를 Claude Desktop에 연결하려면 설정 파일을 수정한다.
 
 <strong>macOS</strong>: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
@@ -980,7 +980,7 @@ required prefix 'analytics_'
 
 ## 결론
 
-Dataset Prefix 필터링이 적용된 BigQuery MCP 서버를 구현함으로써 다음과 같은 이점을 얻을 수 있습니다:
+Dataset Prefix 필터링이 적용된 BigQuery MCP 서버를 구현하면 다음과 같은 이점을 얻을 수 있다.
 
 ### 핵심 성과
 
@@ -991,7 +991,7 @@ Dataset Prefix 필터링이 적용된 BigQuery MCP 서버를 구현함으로써 
 
 ### 확장 가능성
 
-이 구현을 기반으로 다음과 같은 기능을 추가할 수 있습니다:
+이 구현을 기반으로 다음과 같은 기능을 추가할 수 있다.
 
 - <strong>다중 Prefix 지원</strong>: 여러 개의 prefix 패턴 허용 (예: `analytics_*`, `marketing_*`)
 - <strong>역할 기반 접근 제어(RBAC)</strong>: 사용자/그룹별로 다른 prefix 적용
@@ -1006,7 +1006,7 @@ Dataset Prefix 필터링이 적용된 BigQuery MCP 서버를 구현함으로써 
 3. <strong>통합 테스트</strong>: 다양한 시나리오에 대한 자동화된 테스트 작성
 4. <strong>문서화</strong>: API 문서 및 사용자 가이드 작성
 
-MCP를 활용한 BigQuery 통합은 AI 에이전트가 안전하고 효율적으로 데이터를 분석할 수 있는 기반을 제공합니다. Dataset Prefix 필터링은 이러한 통합의 보안과 성능을 크게 향상시키는 핵심 기능입니다. 분석 자동화까지 확장하려면 [Google Analytics MCP 자동화 가이드](/ko/blog/ko/google-analytics-mcp-automation)를 참고하세요.
+MCP를 활용한 BigQuery 통합은 AI 에이전트가 안전하고 효율적으로 데이터를 분석할 수 있는 기반을 제공한다. Dataset Prefix 필터링은 이러한 통합의 보안과 성능을 크게 향상시키는 핵심 기능이다. 분석 자동화까지 확장하려면 [Google Analytics MCP 자동화 가이드](/ko/blog/ko/google-analytics-mcp-automation)를 참고하면 된다.
 
 ## 참고 자료
 

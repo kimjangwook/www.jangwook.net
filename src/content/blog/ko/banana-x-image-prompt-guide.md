@@ -50,9 +50,9 @@ relatedPosts:
 
 ## 서론: "그냥 예쁜 이미지"는 이제 그만
 
-AI 이미지 생성 도구에 "modern clean blog hero image"라고 입력해본 적 있으신가요? 결과는 어디서나 본 듯한, 특색 없는 이미지였을 겁니다. 프롬프트가 모호하면 AI도 모호한 이미지를 생성합니다. ([LLM이 프롬프트를 처리하는 메커니즘](/ko/blog/ko/dena-llm-study-part1-fundamentals)을 이해하면 이 현상의 이유가 명확해집니다.)
+AI 이미지 생성 도구에 "modern clean blog hero image"라고 입력해본 적 있는가? 결과는 어디서나 본 듯한, 특색 없는 이미지였을 것이다. 프롬프트가 모호하면 AI도 모호한 이미지를 생성한다. ([LLM이 프롬프트를 처리하는 메커니즘](/ko/blog/ko/dena-llm-study-part1-fundamentals)을 이해하면 이 현상의 이유가 명확해진다.)
 
-이 문제를 해결하기 위해, <strong>Banana X 프로젝트에서 300건 이상의 인포그래픽 디자인을 5가지 기준으로 평가한 데이터</strong>를 분석했습니다. 그 결과, 고득점 디자인에는 뚜렷한 공통 패턴이 있었고, 이를 체계적인 프롬프트 구조로 정리한 것이 바로 <strong>YAML 7-Part Structure</strong>입니다.
+이 문제를 해결하기 위해, <strong>Banana X 프로젝트에서 300건 이상의 인포그래픽 디자인을 5가지 기준으로 평가한 데이터</strong>를 분석했다. 그 결과, 고득점 디자인에는 뚜렷한 공통 패턴이 있었고, 이를 체계적인 프롬프트 구조로 정리한 것이 바로 <strong>YAML 7-Part Structure</strong>다.
 
 ### 5가지 평가 기준 (총 50점 만점)
 
@@ -64,13 +64,13 @@ AI 이미지 생성 도구에 "modern clean blog hero image"라고 입력해본 
 | <strong>Atmosphere</strong> (분위기) | 10점 | 스타일이 콘텐츠의 의미를 강화하는가 |
 | <strong>Theme Fit</strong> (테마 적합) | 10점 | 포스트 주제와 비주얼이 정합하는가 |
 
-45점 이상을 받은 디자인들의 공통점을 추출하여, <strong>누구나 따라 할 수 있는 프롬프트 작성 프레임워크</strong>를 만들었습니다.
+45점 이상을 받은 디자인들의 공통점을 추출하여, <strong>누구나 따라 할 수 있는 프롬프트 작성 프레임워크</strong>를 만들었다.
 
 ---
 
 ## 1. YAML 7-Part Structure: 프롬프트의 뼈대
 
-모든 이미지 프롬프트는 다음 7개 요소를 반드시 포함해야 합니다. 각 파트가 어떤 역할을 하는지, BAD vs GOOD 예시와 함께 살펴보겠습니다.
+모든 이미지 프롬프트는 다음 7개 요소를 반드시 포함해야 한다. 각 파트가 어떤 역할을 하는지, BAD vs GOOD 예시와 함께 살펴본다.
 
 ### Part 1: Tone — 분위기 키워드 5개
 
@@ -78,19 +78,19 @@ AI 이미지 생성 도구에 "modern clean blog hero image"라고 입력해본 
 Tone: "키워드1, 키워드2, 키워드3, 키워드4, 키워드5"
 ```
 
-5개의 형용사 또는 명사로 이미지의 전체 세계관을 정의합니다. <strong>구체적일수록</strong> 좋습니다.
+5개의 형용사 또는 명사로 이미지의 전체 세계관을 정의한다. <strong>구체적일수록</strong> 좋다.
 
 <strong>❌ BAD:</strong>
 ```yaml
 Tone: "modern, clean, professional"
 ```
-→ 세상 모든 디자인에 해당하는 키워드. AI가 참고할 방향이 없습니다.
+→ 세상 모든 디자인에 해당하는 키워드. AI가 참고할 방향이 없다.
 
 <strong>✅ GOOD:</strong>
 ```yaml
 Tone: "知的, 計画的, 精密, エンジニアリング, 設計図"
 ```
-→ "지적이고 계획적인 엔지니어링 설계도" — 명확한 세계관이 잡힙니다.
+→ "지적이고 계획적인 엔지니어링 설계도" — 명확한 세계관이 잡힌다.
 
 <strong>고득점(45+점) Tone 패턴 모음:</strong>
 
@@ -114,7 +114,7 @@ Visual Identity:
     - "#HEX (Name) — 용도"
 ```
 
-색상을 지정할 때 <strong>반드시 HEX 코드 + 색상명</strong>을 함께 기재합니다. AI가 색상을 정확히 해석하도록 돕는 것이죠.
+색상을 지정할 때 <strong>반드시 HEX 코드 + 색상명</strong>을 함께 기재한다. AI가 색상을 정확히 해석하도록 돕는 장치다.
 
 <strong>❌ BAD:</strong>
 ```yaml
@@ -123,7 +123,7 @@ Visual Identity:
   Accent Colors:
     - "yellow"
 ```
-→ "blue"가 어떤 blue인지 AI가 판단할 수 없습니다.
+→ "blue"가 어떤 blue인지 AI가 판단할 수 없다.
 
 <strong>✅ GOOD:</strong>
 ```yaml
@@ -134,7 +134,7 @@ Visual Identity:
     - "#FFD700 (Gold) — 핵심 하이라이트"
     - "#ADD8E6 (Light Blue) — 보조선"
 ```
-→ 정확한 색상 코드 + 역할까지 명시하여 AI가 일관된 색상 체계를 유지합니다.
+→ 정확한 색상 코드 + 역할까지 명시하여 AI가 일관된 색상 체계를 유지한다.
 
 <strong>고득점 색상 조합 패턴:</strong>
 
@@ -148,7 +148,7 @@ Visual Identity:
 
 ### Part 3: Image Style — 핵심 비주얼 접근법
 
-이 파트가 이미지의 실제 모습을 결정합니다. 5~6개의 하위 필드로 구성됩니다.
+이 파트가 이미지의 실제 모습을 결정한다. 5~6개의 하위 필드로 구성된다.
 
 ```yaml
 Image Style:
@@ -223,7 +223,7 @@ Content Connection:
   Key Elements: "포스트에서 추출한 2-3개의 핵심 시각 요소"
 ```
 
-<strong>이것이 가장 중요한 차별점입니다.</strong> 이 섹션이 없으면 어떤 포스트에나 쓸 수 있는 generic한 이미지가 됩니다.
+<strong>이것이 가장 중요한 차별점이다.</strong> 이 섹션이 없으면 어떤 포스트에나 쓸 수 있는 generic한 이미지가 된다.
 
 <strong>❌ BAD (Content Connection 없음):</strong>
 → "React" 포스트의 히어로 이미지가 "Vue" 포스트에도 쓸 수 있는 일반적 디자인
@@ -254,7 +254,7 @@ Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealisti
 
 ### Part 7: Self-Check — 3점 자가 검증
 
-프롬프트 작성 후 반드시 다음 3가지를 확인하세요:
+프롬프트 작성 후 반드시 다음 3가지를 확인한다.
 
 1. <strong>유일성 테스트</strong>: "이 프롬프트가 완전히 다른 포스트에도 사용될 수 있는가?" → <strong>Yes</strong>라면 Content Connection이 부족
 2. <strong>시각 구체성 테스트</strong>: "이 프롬프트를 읽고 두 사람이 그리면 비슷한 이미지가 나오는가?" → <strong>No</strong>라면 Shapes/Texture/Composition이 부족
@@ -264,11 +264,11 @@ Constraints: "No text overlay. No watermarks. 2:1 aspect ratio. No photorealisti
 
 ## 2. 고득점 디자인의 공통법칙
 
-300건 평가 데이터에서 45점 이상을 받은 디자인들의 공통 특성을 정리했습니다.
+300건 평가 데이터에서 45점 이상을 받은 디자인들의 공통 특성을 정리했다.
 
 ### Consistency 10/10의 비결: "디자인 문법"의 통일
 
-만점 일관성을 달성한 디자인들은 <strong>모든 요소에 동일한 디자인 문법을 적용</strong>합니다:
+만점 일관성을 달성한 디자인들은 <strong>모든 요소에 동일한 디자인 문법을 적용</strong>한다.
 
 - 선의 굵기가 전체에서 통일
 - 아이콘의 추상화 수준이 동일
@@ -291,7 +291,7 @@ Image Style:
 
 ### Atmosphere 10/10의 비결: "정보의 그릇"으로서의 스타일
 
-단순한 장식이 아니라, <strong>콘텐츠의 의미를 강화하는 비주얼</strong>이 만점을 받습니다. 읽는 사람의 감정 상태를 변화시키는 디자인이 핵심입니다.
+단순한 장식이 아니라, <strong>콘텐츠의 의미를 강화하는 비주얼</strong>이 만점을 받는다. 읽는 사람의 감정 상태를 변화시키는 디자인이 핵심이다.
 
 | 득점 | 패턴 | 왜 고득점인가 |
 |------|------|-------------|
@@ -302,7 +302,7 @@ Image Style:
 
 ### Theme Fit 10/10의 비결: 스타일의 본질 전용
 
-스타일의 본질을 이해하고, 이를 정보 표현에 전용하는 것이 핵심입니다:
+스타일의 본질을 이해하고, 이를 정보 표현에 전용하는 것이 핵심이다.
 
 - <strong>Blueprint</strong> → "설계"라는 메타포로 정보 구축 과정을 표현
 - <strong>Newspaper</strong> → "보도"라는 형식으로 정보의 중대성을 강조
@@ -321,7 +321,7 @@ Image Style:
 
 ## 3. 도메인별 프롬프트 템플릿
 
-5개 기술 도메인에 최적화된 프롬프트 템플릿입니다. 각 도메인의 특성에 맞는 비주얼 언어를 정의해두었으므로, Content Connection만 포스트에 맞게 채워 넣으면 됩니다.
+5개 기술 도메인에 최적화된 프롬프트 템플릿이다. 각 도메인의 특성에 맞는 비주얼 언어를 정의해두었으므로, Content Connection만 포스트에 맞게 채워 넣으면 된다.
 
 ### 3.1 Web Development / Frontend
 
@@ -344,7 +344,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-<strong>키포인트:</strong> 컴포넌트 블록이 쌓이는 건축적 구성으로, 프론트엔드의 "조립" 특성을 표현합니다.
+<strong>키포인트:</strong> 컴포넌트 블록이 쌓이는 건축적 구성으로, 프론트엔드의 "조립" 특성을 표현한다.
 
 ### 3.2 AI / Machine Learning
 
@@ -368,7 +368,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-<strong>키포인트:</strong> 딥 스페이스 블루 배경에 발광하는 노드 네트워크. AI/ML의 "연결과 학습" 본질을 시각화합니다.
+<strong>키포인트:</strong> 딥 스페이스 블루 배경에 발광하는 노드 네트워크. AI/ML의 "연결과 학습" 본질을 시각화한다.
 
 ### 3.3 DevOps / Infrastructure
 
@@ -391,7 +391,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-<strong>키포인트:</strong> 청사진 미학. DevOps의 "인프라 설계" 본질을 건축 도면으로 표현합니다.
+<strong>키포인트:</strong> 청사진 미학. DevOps의 "인프라 설계" 본질을 건축 도면으로 표현한다.
 
 ### 3.4 Performance / Optimization
 
@@ -414,7 +414,7 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-<strong>키포인트:</strong> 극한의 미니멀리즘. "최적화 = 불필요한 것을 제거"라는 본질을 여백으로 표현합니다.
+<strong>키포인트:</strong> 극한의 미니멀리즘. "최적화 = 불필요한 것을 제거"라는 본질을 여백으로 표현한다.
 
 ### 3.5 Security
 
@@ -438,13 +438,13 @@ Typography:
 Constraints: "No text overlay. No watermarks. 2:1 aspect ratio."
 ```
 
-<strong>키포인트:</strong> 다크 배경 + 터미널 그린. 보안의 "다층 방어" 본질을 동심원 레이어로 표현합니다.
+<strong>키포인트:</strong> 다크 배경 + 터미널 그린. 보안의 "다층 방어" 본질을 동심원 레이어로 표현한다.
 
 ---
 
 ## 4. YAML → 영어 프롬프트 변환
 
-YAML 구조로 설계한 프롬프트를 실제 AI 이미지 생성 API에 넣으려면 <strong>영어 자연어 프롬프트</strong>로 변환해야 합니다.
+YAML 구조로 설계한 프롬프트를 실제 AI 이미지 생성 API에 넣으려면 <strong>영어 자연어 프롬프트</strong>로 변환해야 한다.
 
 ### 변환 규칙
 
@@ -511,7 +511,7 @@ with subtle glow. Technical annotation style labels. Clean, architectural,
 precise. No text overlay. No watermarks. 2:1 aspect ratio.
 ```
 
-YAML 구조에서 설계한 내용을 빠짐없이 자연어로 압축한 것이 포인트입니다.
+YAML 구조에서 설계한 내용을 빠짐없이 자연어로 압축한 것이 포인트다.
 
 ---
 
@@ -524,11 +524,11 @@ YAML 구조에서 설계한 내용을 빠짐없이 자연어로 압축한 것이
 - <strong>Before</strong>: 프롬프트 "modern tech blog hero" → 어디서나 본 듯한 그라데이션 이미지
 - <strong>After</strong>: YAML 7-Part Structure 적용 → 포스트 내용과 정합하는, 유일무이한 이미지
 
-특히 <strong>Content Connection</strong> 파트를 도입한 후 Theme Fit 점수가 평균 6점에서 9점으로 크게 향상되었습니다. [Figma MCP를 활용한 디자인 시스템 동기화](/ko/blog/ko/figma-mcp-web-components-sync)와 결합하면 이미지와 컴포넌트 전반에 걸쳐 더 일관된 비주얼 아이덴티티를 유지할 수 있습니다.
+특히 <strong>Content Connection</strong> 파트를 도입한 후 Theme Fit 점수가 평균 6점에서 9점으로 크게 향상됐다. [Figma MCP를 활용한 디자인 시스템 동기화](/ko/blog/ko/figma-mcp-web-components-sync)와 결합하면 이미지와 컴포넌트 전반에 걸쳐 더 일관된 비주얼 아이덴티티를 유지할 수 있다.
 
 ### 최종 체크리스트
 
-프롬프트를 완성한 후, 다음 체크리스트로 최종 확인하세요:
+프롬프트를 완성한 후, 다음 체크리스트로 최종 확인한다.
 
 - [ ] <strong>Tone</strong>: 5개 키워드가 구체적이고 서로 일관되는가?
 - [ ] <strong>Visual Identity</strong>: HEX 코드 + 색상명 + 용도가 모두 명시되었는가?
@@ -538,4 +538,4 @@ YAML 구조에서 설계한 내용을 빠짐없이 자연어로 압축한 것이
 - [ ] <strong>Constraints</strong>: 4가지 필수 제약(텍스트, 워터마크, 비율, 얼굴)이 포함되었는가?
 - [ ] <strong>Self-Check 3점</strong>: 유일성 / 시각 구체성 / 일관성 테스트를 통과했는가?
 
-이 구조를 따르면, AI가 여러분의 블로그 포스트와 완벽하게 정합하는 고품질 히어로 이미지를 생성해줄 것입니다. 더 이상 "그냥 예쁜 이미지"에 만족하지 마세요. <strong>데이터가 증명한 고득점 패턴</strong>으로, 정확하고 의미 있는 이미지를 만들어보세요.
+이 구조를 따르면, AI가 블로그 포스트와 완벽하게 정합하는 고품질 히어로 이미지를 생성해줄 것이다. 더 이상 "그냥 예쁜 이미지"에 만족하지 말자. <strong>데이터가 증명한 고득점 패턴</strong>으로, 정확하고 의미 있는 이미지를 만들어보자.
