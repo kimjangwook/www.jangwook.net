@@ -44,6 +44,13 @@ if (hour >= 8 && xCount < 10 && state.last_xgen_alert !== today) {
   mark('last_xgen_alert');
 }
 
+// ── scout_due: 07/12/18시 이후 각 1회 (X 상호작용 수집 — wbai 모델) ──
+const scoutSlot = hour >= 18 ? 'evening' : hour >= 12 ? 'noon' : hour >= 7 ? 'morning' : null;
+if (scoutSlot && state[`last_scout_${scoutSlot}`] !== today) {
+  out.flags.push(`scout_due:${scoutSlot}`);
+  mark(`last_scout_${scoutSlot}`);
+}
+
 // ── catchup_due: 08시/18시 이후 각 1회 ──────────────────────────
 const slot = hour >= 18 ? 'pm' : hour >= 8 ? 'am' : null;
 if (slot && state[`last_catchup_${slot}`] !== today) {
