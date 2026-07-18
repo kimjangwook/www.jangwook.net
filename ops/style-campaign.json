@@ -205,7 +205,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-era-career-advice-for-juniors.md",
@@ -214,7 +214,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-model-rush-february-2026.md",
@@ -224,7 +224,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-presentation-automation.md",
@@ -233,7 +233,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-reliability-engineer-centaur-pod-2026.md",
@@ -242,7 +242,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ai-self-generated-skills-myth.md",
@@ -252,7 +252,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "alphaevolve-ramsey-ai-research-partner.md",
@@ -262,7 +262,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026.md",
@@ -271,7 +271,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-agent-skills-practical-guide.md",
@@ -281,7 +281,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-agent-skills-standard.md",
@@ -291,7 +291,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "anthropic-claude-opus-4-7-managed-agents-2026.md",
