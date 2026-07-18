@@ -1153,7 +1153,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "gpt-oss-120b-uncensored.md",
@@ -1163,7 +1163,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "gpt4o-retirement-model-dependency-risk.md",
@@ -1173,7 +1173,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "gpt52-theoretical-physics-discovery.md",
@@ -1183,7 +1183,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "gpt53-codex-rollout-pause.md",
@@ -1193,7 +1193,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "greptile-ai-coding-report-2025-review.md",
@@ -1203,7 +1203,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "heretic-12-vram-reduction.md",
@@ -1213,7 +1213,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "hindsight-mcp-agent-memory-learning.md",
@@ -1223,7 +1223,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "hono-typescript-api-2026.md",
@@ -1232,7 +1232,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "hreflang-reciprocity-audit-multilingual-2026.md",
@@ -1241,7 +1241,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ibm-confluent-realtime-data-ai-agents.md",
