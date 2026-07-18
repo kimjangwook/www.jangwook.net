@@ -51,21 +51,21 @@ faq:
 
 ## 추천 한 번 돌릴 때마다 9만 토큰을 태우고 있었다
 
-블로그 자동화를 1년 가까이 돌리다 보니 한 가지가 계속 걸렸습니다. "이거 더 줄일 수 있지 않나?" 결국 7.5시간을 들여 `.claude/` 디렉토리의 28개 파일을 전부 뜯어봤습니다. 17개 Agents, 4개 Skills, 7개 Commands. 숫자만 보면 별것 아닌데, 막상 토큰 사용량을 추적해 보니 생각보다 새는 곳이 많았습니다. 여기서 말하는 Agents, Skills, Commands가 각각 무엇인지는 [Claude Code 공식 문서](https://code.claude.com/docs/en/overview)에서 확인할 수 있습니다.
+블로그 자동화를 1년 가까이 돌리다 보니 한 가지가 계속 걸렸다. "이거 더 줄일 수 있지 않나?" 결국 7.5시간을 들여 `.claude/` 디렉토리의 28개 파일을 전부 뜯어봤다. 17개 Agents, 4개 Skills, 7개 Commands. 숫자만 보면 별것 아닌데, 막상 토큰 사용량을 추적해 보니 생각보다 새는 곳이 많았다. 여기서 말하는 Agents, Skills, Commands가 각각 무엇인지는 [Claude Code 공식 문서](https://code.claude.com/docs/en/overview)에서 확인할 수 있다.
 
-이 분석은 이전에 정리했던 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)의 연장선이기도 합니다. 거기서 다룬 협업 구조를 비용 관점에서 다시 들여다본 셈입니다.
+이 분석은 이전에 정리했던 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)의 연장선이기도 하다. 거기서 다룬 협업 구조를 비용 관점에서 다시 들여다본 셈이다.
 
-분석 결과는 놀라웠습니다:
+분석 결과는 놀라웠다:
 - <strong>60〜70% 토큰 절감</strong>을 달성한 메타데이터 우선 아키텍처
 - <strong>연간 71% 비용 절감</strong> ($5.72 → $1.65)
 - <strong>90% 이상 자동화</strong>로 연 364시간 절감
 - <strong>업계 최고 수준</strong> (A 등급, 8.98/10)
 
-이번 Part 1에서는 시스템의 핵심 아키텍처와 주요 발견 사항을 공유합니다.
+이번 Part 1에서는 시스템의 핵심 아키텍처와 주요 발견 사항을 공유한다.
 
 ## Commands → Agents → Skills로 쪼갠 3계층 구조
 
-EffiFlow는 <strong>Commands → Agents → Skills</strong>의 3계층 구조로 설계되었습니다:
+EffiFlow는 <strong>Commands → Agents → Skills</strong>의 3계층 구조로 설계됐다:
 
 ```mermaid
 graph TB
@@ -132,13 +132,13 @@ graph TB
 - 재사용 가능한 로직
 - 도구 접근 제어 가능
 
-Skill의 구조와 자동 발견 메커니즘은 [Claude Code Skills 공식 문서](https://code.claude.com/docs/en/skills)에 자세히 정리되어 있습니다. 외부 데이터·도구를 끌어오는 MCP 연동은 [Model Context Protocol](https://modelcontextprotocol.io) 표준을 따릅니다.
+Skill의 구조와 자동 발견 메커니즘은 [Claude Code Skills 공식 문서](https://code.claude.com/docs/en/skills)에 자세히 정리되어 있다. 외부 데이터·도구를 끌어오는 MCP 연동은 [Model Context Protocol](https://modelcontextprotocol.io) 표준을 따른다.
 
 ## 핵심 발견 1: 메타데이터 우선 아키텍처
 
 ### 혁신의 배경
 
-초기에는 <strong>모든 블로그 포스트의 전체 콘텐츠</strong>를 분석했습니다:
+초기에는 <strong>모든 블로그 포스트의 전체 콘텐츠</strong>를 분석했다:
 
 ```
 추천 생성 1회당:
@@ -147,11 +147,11 @@ Skill의 구조와 자동 발견 메커니즘은 [Claude Code Skills 공식 문�
 - 연간 (주 1회): 52주 × $0.11 = $5.72
 ```
 
-누가 봐도 낭비였습니다. 추천 알고리즘이 실제로 쓰는 건 제목과 설명, 태그, 카테고리 점수 정도가 전부인데, 매번 본문 전체를 통째로 읽어들이고 있었으니까요.
+누가 봐도 낭비였다. 추천 알고리즘이 실제로 쓰는 건 제목과 설명, 태그, 카테고리 점수 정도가 전부인데, 매번 본문 전체를 통째로 읽어들이고 있었다.
 
 ### 메타데이터 우선 설계
 
-해결책은 간단하지만 강력했습니다:
+해결책은 간단하지만 강력했다:
 
 1. <strong>1회 메타데이터 추출</strong> (한국어 포스트만, 3개 언어는 내용 동일)
 2. <strong>post-metadata.json 생성</strong> (재사용)
@@ -226,18 +226,18 @@ if (existingMeta[slug]?.contentHash === newHash) {
 
 ### TF-IDF vs Claude LLM
 
-전통적인 추천 시스템은 <strong>키워드 빈도(TF-IDF)</strong>에 의존합니다:
+전통적인 추천 시스템은 <strong>키워드 빈도(TF-IDF)</strong>에 의존한다:
 
 | 방식 | 장점 | 단점 |
 |------|------|------|
 | <strong>TF-IDF</strong> | 빠름, 저렴 | 의미 이해 부족, 동의어 미처리 |
 | <strong>Claude LLM</strong> | 의미 이해, 맥락 고려 | 느림, 비용 발생 |
 
-EffiFlow는 <strong>Claude LLM</strong>을 선택했지만, 메타데이터 우선 아키텍처로 비용 문제를 해결했습니다.
+EffiFlow는 <strong>Claude LLM</strong>을 선택했지만, 메타데이터 우선 아키텍처로 비용 문제를 해결했다.
 
 ### 6차원 유사도 분석
 
-Claude LLM은 다음 6가지 차원으로 유사도를 평가합니다:
+Claude LLM은 다음 6가지 차원으로 유사도를 평가한다:
 
 ```javascript
 const similarityDimensions = {
@@ -263,7 +263,7 @@ const similarityDimensions = {
 }
 ```
 
-<strong>다국어 추론</strong>의 핵심: LLM은 각 언어로 <strong>독립적인 이유</strong>를 생성합니다(단순 번역이 아님).
+<strong>다국어 추론</strong>의 핵심: LLM은 각 언어로 <strong>독립적인 이유</strong>를 생성한다(단순 번역이 아님).
 
 ### 성과 지표
 
@@ -274,7 +274,7 @@ const similarityDimensions = {
 
 ## 핵심 발견 3: 8-Phase 완전 자동화
 
-`/write-post` 명령은 <strong>단일 명령으로 블로그 포스트 생성부터 배포까지</strong> 모든 과정을 자동화합니다:
+`/write-post` 명령은 <strong>단일 명령으로 블로그 포스트 생성부터 배포까지</strong> 모든 과정을 자동화한다:
 
 ```mermaid
 graph TD
@@ -391,7 +391,7 @@ GA 리포트:         $1.20  (월 1회 × 12개월)
 
 ## 베스트 프랙티스 준수도
 
-[Claude Code 공식 베스트 프랙티스](https://code.claude.com/docs/en/best-practices)와 비교한 결과:
+[Claude Code 공식 베스트 프랙티스](https://code.claude.com/docs/en/best-practices)와 비교한 결과다:
 
 ### Agents (17개)
 
@@ -508,21 +508,21 @@ def test_generate_slug():
 
 ## 언제 쓰고, 언제 피해야 하나
 
-이 정도 규모의 멀티 에이전트 자동화가 모든 블로그에 정답은 아닙니다. 직접 1년을 돌려본 입장에서 솔직하게 적자면 이렇습니다.
+이 정도 규모의 멀티 에이전트 자동화가 모든 블로그에 정답은 아니다. 직접 1년을 돌려본 입장에서 솔직하게 적자면 이렇다.
 
-<strong>이런 경우에 잘 맞습니다</strong>:
-- 발행 빈도가 꾸준할 때. 주 1〜2회 이상 글을 올린다면 자동화에 들인 초기 시간이 금방 회수됩니다.
-- 다국어 운영이 전제일 때. 4개 언어를 사람이 매번 손으로 맞추는 건 현실적으로 지치는 일입니다. 여기서 자동화의 체감 효과가 가장 큽니다.
-- 메타데이터·추천처럼 반복 작업이 명확히 정의돼 있을 때. 입력과 출력이 정해진 작업일수록 에이전트가 안정적으로 처리합니다.
-- 토큰 비용을 실제로 추적하고 줄일 의지가 있을 때. 메타데이터 우선 설계의 이점은 비용을 들여다보는 사람에게만 보입니다.
+<strong>이런 경우에 잘 맞는다</strong>:
+- 발행 빈도가 꾸준할 때. 주 1〜2회 이상 글을 올린다면 자동화에 들인 초기 시간이 금방 회수된다.
+- 다국어 운영이 전제일 때. 4개 언어를 사람이 매번 손으로 맞추는 건 현실적으로 지치는 일이다. 여기서 자동화의 체감 효과가 가장 크다.
+- 메타데이터·추천처럼 반복 작업이 명확히 정의돼 있을 때. 입력과 출력이 정해진 작업일수록 에이전트가 안정적으로 처리한다.
+- 토큰 비용을 실제로 추적하고 줄일 의지가 있을 때. 메타데이터 우선 설계의 이점은 비용을 들여다보는 사람에게만 보인다.
 
-<strong>이런 경우엔 오히려 피하는 게 낫습니다</strong>:
-- 한 달에 글 한두 편 쓰는 정도라면, 17개 에이전트를 세팅하고 유지하는 비용이 절감액을 넘어섭니다. 그냥 직접 쓰는 편이 빠릅니다.
-- 글마다 형식과 톤이 크게 달라 정형화가 어려운 경우. 자동화는 패턴이 반복될 때 빛나지, 매번 새로 판단해야 하는 작업에는 약합니다.
-- 한 가지 언어만 운영하고 SEO 메타데이터도 손으로 충분히 관리되는 경우. 추가 복잡도만 떠안게 됩니다.
-- 팀에 이 시스템을 유지보수할 사람이 없을 때. 에이전트 정의가 바뀌면 누군가는 디버깅을 해야 합니다. 비용 자체보다 운영 부담을 먼저 따져봐야 합니다.
+<strong>이런 경우엔 오히려 피하는 게 낫다</strong>:
+- 한 달에 글 한두 편 쓰는 정도라면, 17개 에이전트를 세팅하고 유지하는 비용이 절감액을 넘어선다. 그냥 직접 쓰는 편이 빠르다.
+- 글마다 형식과 톤이 크게 달라 정형화가 어려운 경우. 자동화는 패턴이 반복될 때 빛나지, 매번 새로 판단해야 하는 작업에는 약하다.
+- 한 가지 언어만 운영하고 SEO 메타데이터도 손으로 충분히 관리되는 경우. 추가 복잡도만 떠안게 된다.
+- 팀에 이 시스템을 유지보수할 사람이 없을 때. 에이전트 정의가 바뀌면 누군가는 디버깅을 해야 한다. 비용 자체보다 운영 부담을 먼저 따져봐야 한다.
 
-요약하면, 자동화의 손익분기점은 "빈도 × 반복성 × 언어 수"입니다. 셋 중 둘 이상이 높으면 도입을, 둘 이상이 낮으면 보류를 권합니다. 비슷한 고민은 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality)에서도 다뤘으니 함께 읽으면 판단에 도움이 됩니다.
+요약하면, 자동화의 손익분기점은 "빈도 × 반복성 × 언어 수"다. 셋 중 둘 이상이 높으면 도입을, 둘 이상이 낮으면 보류를 권한다. 비슷한 고민은 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality)에서도 다뤘으니 함께 읽으면 판단에 도움이 된다.
 
 ## 실전 적용 가이드
 
@@ -626,7 +626,7 @@ cat post-metadata.json
 
 ### 핵심 요점 요약
 
-EffiFlow 블로그 자동화 시스템은 <strong>3가지 핵심 혁신</strong>으로 업계 최고 수준을 달성했습니다:
+EffiFlow 블로그 자동화 시스템은 <strong>3가지 핵심 혁신</strong>으로 업계 최고 수준을 달성했다:
 
 1. <strong>메타데이터 우선 아키텍처</strong>: 60〜70% 토큰 절감, 연간 71% 비용 절감
 2. <strong>LLM 기반 의미론적 추천</strong>: 6차원 유사도 분석, 다국어 추론
@@ -646,11 +646,11 @@ EffiFlow 블로그 자동화 시스템은 <strong>3가지 핵심 혁신</strong>
 
 ### 다음 편 티저
 
-Part 2에서는 <strong>4개 구현 Skill의 상세 워크플로우</strong>와 <strong>Commands의 Agent 위임 패턴</strong>을 깊이 다룹니다. 특히 <strong>캐싱 전략</strong>(24h/7d/48h)과 <strong>Rate Limiting 처리</strong> 방법을 실제 코드와 함께 공유할 예정입니다.
+Part 2에서는 <strong>4개 구현 Skill의 상세 워크플로우</strong>와 <strong>Commands의 Agent 위임 패턴</strong>을 깊이 다룬다. 특히 <strong>캐싱 전략</strong>(24h/7d/48h)과 <strong>Rate Limiting 처리</strong> 방법을 실제 코드와 함께 공유할 예정이다.
 
 <strong>독자 질문 환영</strong>:
-- 궁금한 부분이 있다면 댓글로 남겨주세요
-- 다음 편에서 상세히 다루겠습니다
+- 궁금한 부분이 있다면 댓글로 남겨달라
+- 다음 편에서 상세히 다룬다
 
 ---
 

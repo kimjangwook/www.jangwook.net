@@ -59,11 +59,11 @@ relatedPosts:
 
 ## 왜 페이지 테스트 자동화가 필요한가?
 
-웹 퍼블리셔가 페이지를 개발한 후, 품질 검증에 얼마나 많은 시간을 투자하고 계신가요? 크로스 브라우저 테스트, 링크 확인, 접근성 검증, SEO 체크, 이미지 최적화... 수동으로 이 모든 항목을 확인하려면 페이지당 <strong>30분 이상</strong>이 소요됩니다.
+웹 퍼블리셔가 페이지를 개발한 후, 품질 검증에 얼마나 많은 시간을 투자하고 있는가? 크로스 브라우저 테스트, 링크 확인, 접근성 검증, SEO 체크, 이미지 최적화... 수동으로 이 모든 항목을 확인하려면 페이지당 <strong>30분 이상</strong>이 소요된다.
 
-더 큰 문제는 <strong>일관성</strong>입니다. 바쁜 일정 속에서 특정 항목을 누락하거나, 담당자마다 검증 기준이 달라질 수 있습니다.
+더 큰 문제는 <strong>일관성</strong>이다. 바쁜 일정 속에서 특정 항목을 누락하거나, 담당자마다 검증 기준이 달라질 수 있다.
 
-이 문제를 해결하기 위해 Claude Code와 [Playwright](/ko/blog/ko/playwright-ai-testing)를 활용한 <strong>페이지 E2E 테스트 자동화 시스템</strong>을 구축했습니다.
+이 문제를 해결하기 위해 Claude Code와 [Playwright](/ko/blog/ko/playwright-ai-testing)를 활용한 <strong>페이지 E2E 테스트 자동화 시스템</strong>을 구축했다.
 
 ## 시스템 개요
 
@@ -72,7 +72,7 @@ relatedPosts:
 /test-page https://jangwook.net/en/
 ```
 
-이 커맨드 하나로 다음 항목들이 자동으로 테스트됩니다:
+이 커맨드 하나로 다음 항목들이 자동으로 테스트된다:
 
 | 우선순위 | 테스트 항목 | 설명 |
 |---------|------------|------|
@@ -126,7 +126,7 @@ graph TB
     COLLECT --> RPT["리포트 생성"]
 ```
 
-핵심 구성 요소는 세 가지입니다:
+핵심 구성 요소는 세 가지다:
 
 1. <strong>Commands</strong> (`/test-page`): 사용자 인터페이스
 2. <strong>Agents</strong> (`page-tester`): 테스트 오케스트레이션
@@ -136,7 +136,7 @@ graph TB
 
 ### 1. 슬래시 커맨드 정의
 
-`.claude/commands/test-page.md` 파일을 생성합니다:
+`.claude/commands/test-page.md` 파일을 생성한다:
 
 ````markdown
 # 페이지 테스트 커맨드
@@ -162,7 +162,7 @@ graph TB
 
 ### 2. 에이전트 구현
 
-`page-tester` 에이전트는 다음 워크플로우를 수행합니다:
+`page-tester` 에이전트는 다음 워크플로우를 수행한다:
 
 ```mermaid
 sequenceDiagram
@@ -230,7 +230,7 @@ sequenceDiagram
 
 ### 3. MCP 도구 활용
 
-[Chrome DevTools MCP](/ko/blog/ko/chrome-devtools-mcp-performance)와 Playwright를 조합하여 강력한 테스트 환경을 구축합니다:
+[Chrome DevTools MCP](/ko/blog/ko/chrome-devtools-mcp-performance)와 Playwright를 조합하여 강력한 테스트 환경을 구축한다:
 
 ```typescript
 // Chrome DevTools MCP로 성능 분석
@@ -248,7 +248,7 @@ const screenshot = await mcp_chrome_devtools_take_screenshot({
 
 ## 실제 테스트 결과
 
-`https://jangwook.net/en/` 페이지에 대한 실제 테스트 결과입니다:
+`https://jangwook.net/en/` 페이지에 대한 실제 테스트 결과다:
 
 ### 총합 평가: <strong>조건부 합격</strong> (75/100점)
 
@@ -344,7 +344,7 @@ hero-image.webp: 600×600px → 382×192px (약 75% 절감 가능)
 
 <strong>2. 터치 타겟 크기 미달</strong>
 
-WCAG 권장 최소 사이즈는 44×44px입니다. 현재 네비게이션 링크 높이가 36px로 부족합니다.
+WCAG 권장 최소 사이즈는 44×44px다. 현재 네비게이션 링크 높이가 36px로 부족하다.
 
 ```css
 /* 개선 방안 */
@@ -359,19 +359,19 @@ a, button {
 
 ## 핵심 인사이트
 
-이 자동화 시스템을 구축하면서 얻은 인사이트입니다:
+이 자동화 시스템을 구축하면서 얻은 인사이트다:
 
 ### 1. 80/20 법칙 적용
 
-모든 테스트를 완벽하게 구현하려 하지 마세요. <strong>P0 항목 6개만으로도 80%의 품질 이슈를 발견</strong>할 수 있습니다.
+모든 테스트를 완벽하게 구현하려 하지 마라. <strong>P0 항목 6개만으로도 80%의 품질 이슈를 발견</strong>할 수 있다.
 
 ### 2. AI 분석의 가치
 
-단순히 "이미지가 큽니다"가 아닌, <strong>"어떻게 수정해야 하는지"</strong>까지 제안하는 것이 진정한 자동화입니다. Claude의 분석 능력이 여기서 빛을 발합니다. Claude Code의 전반적인 활용법은 [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)에서 자세히 다룹니다.
+단순히 "이미지가 큽니다"가 아닌, <strong>"어떻게 수정해야 하는지"</strong>까지 제안하는 것이 진정한 자동화다. Claude의 분석 능력이 여기서 빛을 발한다. Claude Code의 전반적인 활용법은 [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)에서 자세히 다룬다.
 
 ### 3. 점진적 개선
 
-처음부터 완벽한 시스템을 만들 필요 없습니다:
+처음부터 완벽한 시스템을 만들 필요 없다:
 
 ```
 Week 1: 기본 프레임워크 + P0 테스트 3개
@@ -390,7 +390,7 @@ Week 4: AI 분석 + 개선 제안
 
 ## 확장 가능성
 
-이 시스템은 다양한 방향으로 확장할 수 있습니다:
+이 시스템은 다양한 방향으로 확장할 수 있다:
 
 ```mermaid
 graph LR
@@ -418,14 +418,14 @@ graph LR
 
 ## 결론
 
-Claude Code를 활용한 페이지 E2E 테스트 자동화는 단순한 시간 절약 이상의 가치를 제공합니다:
+Claude Code를 활용한 페이지 E2E 테스트 자동화는 단순한 시간 절약 이상의 가치를 제공한다:
 
 1. <strong>일관된 품질 기준</strong> 적용
 2. <strong>즉각적인 피드백</strong>으로 빠른 개선
 3. <strong>AI 기반 인사이트</strong>로 더 나은 의사결정
 4. <strong>문서화된 품질 이력</strong> 축적
 
-다음 프로젝트에서 이 시스템을 적용해 보세요. 처음 설정에 시간이 들지만, 장기적으로 팀의 생산성과 웹사이트 품질 모두를 향상시킬 수 있습니다.
+다음 프로젝트에서 이 시스템을 적용해 보라. 처음 설정에 시간이 들지만, 장기적으로 팀의 생산성과 웹사이트 품질 모두를 향상시킬 수 있다.
 
 ## 참고 자료
 

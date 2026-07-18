@@ -62,13 +62,13 @@ Part 1에서 EffiFlow의 3-Tier 아키텍처(Agents → Skills → Commands)와 
 
 ### Model-Invoked란?
 
-Skills는 <strong>Model-Invoked</strong> 방식으로 동작합니다. 이는 사용자가 명시적으로 호출하지 않아도 Claude가 컨텍스트를 기반으로 자동으로 활성화한다는 의미입니다.
+Skills는 <strong>Model-Invoked</strong> 방식으로 동작한다. 이는 사용자가 명시적으로 호출하지 않아도 Claude가 컨텍스트를 기반으로 자동으로 활성화한다는 의미다.
 
-예를 들어, 사용자가 "blog post"나 "frontmatter"와 같은 키워드를 언급하면 Claude는 자동으로 `blog-writing` Skill을 로드합니다. 이는 마치 전문가가 대화 주제를 듣고 관련 도구를 자동으로 꺼내는 것과 같습니다.
+예를 들어, 사용자가 "blog post"나 "frontmatter"와 같은 키워드를 언급하면 Claude는 자동으로 `blog-writing` Skill을 로드한다. 이는 마치 전문가가 대화 주제를 듣고 관련 도구를 자동으로 꺼내는 것과 같다.
 
 ### SKILL.md 구조 분석
 
-모든 Skill은 YAML frontmatter를 포함한 `SKILL.md` 파일로 정의됩니다:
+모든 Skill은 YAML frontmatter를 포함한 `SKILL.md` 파일로 정의된다:
 
 ```yaml
 ---
@@ -84,7 +84,7 @@ allowed-tools: [Read, Write, Edit, Bash, Grep, Glob]
 - <strong>description</strong>: 기능 설명 + 사용 시점 ("Use when...")
 - <strong>allowed-tools</strong>: 도구 제한으로 보안 강화 및 읽기 전용 Skills 구현 가능
 
-description의 "Use when..." 구문이 특히 중요합니다. Claude는 이 구문을 통해 Skill을 언제 활성화해야 하는지 판단합니다.
+description의 "Use when..." 구문이 특히 중요하다. Claude는 이 구문을 통해 Skill을 언제 활성화해야 하는지 판단한다.
 
 ### 구현된 4개 Skills 상세
 
@@ -141,7 +141,7 @@ description의 "Use when..." 구문이 특히 중요합니다. Claude는 이 구
 
 <strong>LLM 기반 의미론적 추천</strong>:
 
-전통적인 TF-IDF 방식 대신 Claude LLM을 사용하여 진정한 의미 이해를 구현합니다:
+전통적인 TF-IDF 방식 대신 Claude LLM을 사용하여 진정한 의미 이해를 구현한다:
 
 ```
 TF-IDF (전통적)         →  LLM (현대적)
@@ -208,7 +208,7 @@ sleep 2
 
 ### Progressive Disclosure 패턴
 
-Skills는 레이어드 컨텍스트 제공 방식을 사용합니다:
+Skills는 레이어드 컨텍스트 제공 방식을 사용한다:
 
 ```mermaid
 graph TD
@@ -226,7 +226,7 @@ graph TD
 
 ### User-Invoked란?
 
-Commands는 <strong>User-Invoked</strong> 방식으로 동작합니다. 사용자가 `/command` 슬래시로 명시적으로 호출하며, `$ARGUMENTS`를 통해 인자를 전달할 수 있습니다.
+Commands는 <strong>User-Invoked</strong> 방식으로 동작한다. 사용자가 `/command` 슬래시로 명시적으로 호출하며, `$ARGUMENTS`를 통해 인자를 전달할 수 있다.
 
 ```bash
 /write-post "Claude Code MCP 통합 가이드"
@@ -244,7 +244,7 @@ Commands는 <strong>User-Invoked</strong> 방식으로 동작합니다. 사용�
 
 ### Phase-Based Execution 패턴
 
-복잡한 Commands는 명확한 Phase로 구분됩니다. 가장 복잡한 `write-post`의 8 Phases를 하나씩 따라가 봅니다.
+복잡한 Commands는 명확한 Phase로 구분된다. 가장 복잡한 `write-post`의 8 Phases를 하나씩 따라가 본다.
 
 ```mermaid
 sequenceDiagram
@@ -351,7 +351,7 @@ sequenceDiagram
 
 ### Agent Orchestration 패턴
 
-Commands는 오케스트레이터 역할을 하며, 실제 작업은 Agents에게 위임합니다:
+Commands는 오케스트레이터 역할을 하며, 실제 작업은 Agents에게 위임한다:
 
 ```mermaid
 graph LR
@@ -389,7 +389,7 @@ graph LR
 
 ### trend-analyzer의 3-Tier 캐싱
 
-trend-analyzer Skill은 3가지 유형의 데이터를 각기 다른 기간 동안 캐싱합니다:
+trend-analyzer Skill은 3가지 유형의 데이터를 각기 다른 기간 동안 캐싱한다:
 
 ```typescript
 // 캐싱 알고리즘 (의사 코드)
@@ -619,7 +619,7 @@ sequenceDiagram
 
 ## $ARGUMENTS 활용 패턴
 
-Commands는 `$ARGUMENTS`를 통해 유연한 인자 전달을 지원합니다.
+Commands는 `$ARGUMENTS`를 통해 유연한 인자 전달을 지원한다.
 
 ### 단순 패턴 (analyze-posts)
 
@@ -1072,6 +1072,6 @@ Skills와 Commands는 만능 도구가 아니다. 직접 굴려 보면서 "이�
 - `/analyze-posts`: 증분 처리로 70% 절감
 - `/next-post-recommendation`: 캐싱으로 58% 절감
 
-Part 3에서는 이러한 아키텍처를 더욱 개선하여 처리 시간을 75% 단축하고, 테스트 커버리지를 80%로 높이며, 안정성을 99%까지 향상시키는 실전 개선 사례를 다룹니다.
+Part 3에서는 이러한 아키텍처를 더욱 개선하여 처리 시간을 75% 단축하고, 테스트 커버리지를 80%로 높이며, 안정성을 99%까지 향상시키는 실전 개선 사례를 다룬다.
 
-EffiFlow의 혁신은 계속됩니다. 다음 편에서 만나요! 
+EffiFlow의 혁신은 계속된다. 다음 편에서 만나자!

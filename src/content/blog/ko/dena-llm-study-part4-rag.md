@@ -54,21 +54,21 @@ faq:
 
 ## RAG는 결국 검색 엔지니어링이다
 
-스터디 Part 4의 주제는 RAG(Retrieval-Augmented Generation)였습니다. 처음에는 "프롬프트에 문서 몇 개 붙이는 것" 정도로 가볍게 봤는데, 자료를 따라가다 보니 생각이 완전히 바뀌었습니다. 검색 품질이 곧 답변 품질이고, 그 검색을 어떻게 설계하느냐가 전부였습니다.
+스터디 Part 4의 주제는 RAG(Retrieval-Augmented Generation)였다. 처음에는 "프롬프트에 문서 몇 개 붙이는 것" 정도로 가볍게 봤는데, 자료를 따라가다 보니 생각이 완전히 바뀌었다. 검색 품질이 곧 답변 품질이고, 그 검색을 어떻게 설계하느냐가 전부였다.
 
-이 글에 정리한 건 그날 다룬 내용입니다. RAG의 전체 아키텍처, 하이브리드 검색, Reranking, 그리고 GraphRAG와 Agentic RAG 같은 비교적 최근에 나온 방향까지. DeNA 스터디 자료를 기준으로 삼되, 직접 손대보며 느낀 점도 함께 적었습니다.
+이 글에 정리한 건 그날 다룬 내용이다. RAG의 전체 아키텍처, 하이브리드 검색, Reranking, 그리고 GraphRAG와 Agentic RAG 같은 비교적 최근에 나온 방향까지. DeNA 스터디 자료를 기준으로 삼되, 직접 손대보며 느낀 점도 함께 적었다.
 
 ## 컨텍스트 엔지니어링: LLM은 인터페이스
 
-DeNA 스터디에서 강조하는 핵심 개념은 <strong>"LLM은 인터페이스일 뿐, 검색 시스템이 진짜 핵심"</strong>이라는 점입니다.
+DeNA 스터디에서 강조하는 핵심 개념은 <strong>"LLM은 인터페이스일 뿐, 검색 시스템이 진짜 핵심"</strong>이라는 점이다.
 
 ### 프롬프트 엔지니어링을 넘어서
 
-전통적인 프롬프트 엔지니어링은 LLM에게 더 나은 지시를 내리는 데 집중했습니다. 하지만 RAG 시스템에서는:
+전통적인 프롬프트 엔지니어링은 LLM에게 더 나은 지시를 내리는 데 집중했다. 하지만 RAG 시스템에서는:
 
-- <strong>검색 품질</strong>이 응답 품질을 결정합니다
-- <strong>컨텍스트 선택</strong>이 환각(hallucination)을 방지합니다
-- <strong>시스템 설계</strong>가 성능과 비용을 최적화합니다
+- <strong>검색 품질</strong>이 응답 품질을 결정한다
+- <strong>컨텍스트 선택</strong>이 환각(hallucination)을 방지한다
+- <strong>시스템 설계</strong>가 성능과 비용을 최적화한다
 
 ```mermaid
 graph TD
@@ -94,7 +94,7 @@ graph TD
 
 ## RAG 아키텍처 전체 구성
 
-DeNA 스터디에서는 RAG를 다음 5단계로 구분합니다.
+DeNA 스터디에서는 RAG를 다음 5단계로 구분한다.
 
 ### 1. 문서 인덱싱 (Indexing)
 
@@ -354,7 +354,7 @@ colbert_vecs = model.encode(
 
 ## Grounding: 환각 방지 전략
 
-RAG의 가장 중요한 목표 중 하나는 <strong>환각(hallucination) 방지</strong>입니다.
+RAG의 가장 중요한 목표 중 하나는 <strong>환각(hallucination) 방지</strong>다.
 
 ### 1. 인용 강제 (Citation Enforcement)
 
@@ -389,7 +389,7 @@ def generate_with_confidence(query, context):
 
 ### 3. Self-RAG: 자가 검증
 
-Self-RAG는 LLM이 스스로 검색 필요성을 판단하고 응답을 검증합니다.
+Self-RAG는 LLM이 스스로 검색 필요성을 판단하고 응답을 검증한다.
 
 ```mermaid
 graph TD
@@ -808,7 +808,7 @@ def sanitize_response(response):
 
 ## 언제 어떤 RAG 전략을 쓰고, 언제 피할지
 
-스터디 자료를 정리하면서 가장 자주 받은 질문이 "그래서 우리 프로젝트엔 뭘 써야 하나요?"였습니다. 정답은 하나가 아니라 상황에 따라 다릅니다. 아래 기준은 DeNA 스터디와 실제로 손대본 경험을 합쳐 정리한 것입니다.
+스터디 자료를 정리하면서 가장 자주 받은 질문이 "그래서 우리 프로젝트엔 뭘 써야 하나요?"였다. 정답은 하나가 아니라 상황에 따라 다르다. 아래 기준은 DeNA 스터디와 실제로 손대본 경험을 합쳐 정리한 것이다.
 
 ### 기본 RAG (Dense 단독)를 쓸 때
 
@@ -816,7 +816,7 @@ def sanitize_response(response):
 - 프로토타입을 빠르게 만들어 베이스라인을 잡아야 할 때
 - 검색 인프라에 투자할 여력이 없을 때
 
-<strong>피해야 할 때</strong>: 정확한 키워드(제품 코드, 법조항 번호, 함수명)가 중요한 도메인. Dense 임베딩은 이런 토큰을 놓치기 쉽습니다. 이 경우는 곧바로 하이브리드로 가는 편이 낫습니다.
+<strong>피해야 할 때</strong>: 정확한 키워드(제품 코드, 법조항 번호, 함수명)가 중요한 도메인. Dense 임베딩은 이런 토큰을 놓치기 쉽다. 이 경우는 곧바로 하이브리드로 가는 편이 낫다.
 
 ### 하이브리드 검색 + Reranking을 쓸 때
 
@@ -824,9 +824,9 @@ def sanitize_response(response):
 - 키워드 매칭과 의미 검색이 모두 필요한 혼합 질의가 많을 때
 - Recall은 나오는데 상위 결과의 정밀도가 부족할 때 (Reranking이 특효)
 
-벡터 저장소 선택이 고민이라면 [2026 벡터 DB 비교: Qdrant vs Chroma vs pgvector](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector)에서 하이브리드 검색 지원 여부와 운영 부담을 비교해두었습니다.
+벡터 저장소 선택이 고민이라면 [2026 벡터 DB 비교: Qdrant vs Chroma vs pgvector](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector)에서 하이브리드 검색 지원 여부와 운영 부담을 비교해두었다.
 
-<strong>피해야 할 때</strong>: 응답 지연이 수십 ms 단위로 빡빡한 실시간 경로. Cross-Encoder Reranking은 지연을 늘리므로, 이럴 땐 ColBERT처럼 가벼운 방식이나 Reranking 생략을 검토합니다.
+<strong>피해야 할 때</strong>: 응답 지연이 수십 ms 단위로 빡빡한 실시간 경로. Cross-Encoder Reranking은 지연을 늘리므로, 이럴 땐 ColBERT처럼 가벼운 방식이나 Reranking 생략을 검토한다.
 
 ### GraphRAG를 쓸 때
 
@@ -834,14 +834,14 @@ def sanitize_response(response):
 - 문서 전체를 가로지르는 요약형 질문("이 보고서들의 공통 리스크는?")이 많을 때
 - 조직도, 판례, 인용 네트워크처럼 엔티티 관계가 본질인 데이터
 
-<strong>피해야 할 때</strong>: [Microsoft GraphRAG 문서](https://microsoft.github.io/graphrag/)도 명시하듯 그래프 인덱싱은 비용이 큽니다. 문서가 자주 바뀌거나 단순 사실 조회 위주라면 인덱싱 비용 대비 효과가 떨어집니다. 작게 시작해 효과를 검증한 뒤 확장하세요.
+<strong>피해야 할 때</strong>: [Microsoft GraphRAG 문서](https://microsoft.github.io/graphrag/)도 명시하듯 그래프 인덱싱은 비용이 크다. 문서가 자주 바뀌거나 단순 사실 조회 위주라면 인덱싱 비용 대비 효과가 떨어진다. 작게 시작해 효과를 검증한 뒤 확장하라.
 
 ### Agentic RAG를 쓸 때
 
 - 한 번의 검색으로는 답이 안 나오고, 검색 → 평가 → 재검색 루프가 필요할 때
 - 여러 도구(벡터 검색, 키워드, 웹, SQL)를 질문에 따라 골라 써야 할 때
 
-<strong>피해야 할 때</strong>: 비용과 지연에 민감한 대량 트래픽 경로. 반복 호출은 토큰과 시간을 곱으로 늘립니다. 프레임워크 선택이 고민이라면 [LlamaIndex vs LangChain vs Haystack RAG 프레임워크 비교 2026](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)에서 에이전트형 검색 추상화가 어떻게 다른지 정리했으니 참고하세요.
+<strong>피해야 할 때</strong>: 비용과 지연에 민감한 대량 트래픽 경로. 반복 호출은 토큰과 시간을 곱으로 늘린다. 프레임워크 선택이 고민이라면 [LlamaIndex vs LangChain vs Haystack RAG 프레임워크 비교 2026](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)에서 에이전트형 검색 추상화가 어떻게 다른지 정리했으니 참고하라.
 
 ### 한 장 요약
 
@@ -854,7 +854,7 @@ def sanitize_response(response):
 
 ## RAG를 다시 보게 된 이유
 
-스터디를 듣기 전과 후의 가장 큰 차이는 시각이었습니다. "검색 후 생성"이라는 한 줄 요약으로는 부족합니다. 검색 단계 하나하나가 작은 엔지니어링 문제였고, 그 합이 시스템의 성패를 갈랐습니다.
+스터디를 듣기 전과 후의 가장 큰 차이는 시각이었다. "검색 후 생성"이라는 한 줄 요약으로는 부족하다. 검색 단계 하나하나가 작은 엔지니어링 문제였고, 그 합이 시스템의 성패를 갈랐다.
 
 ### 핵심 인사이트
 
@@ -866,7 +866,7 @@ def sanitize_response(response):
 
 ### 실무 적용 계획
 
-이번 학습을 바탕으로 지금 운영 중인 시스템에 손볼 부분을 정리해봤습니다.
+이번 학습을 바탕으로 지금 운영 중인 시스템에 손볼 부분을 정리해봤다.
 
 1. <strong>하이브리드 검색 도입</strong>
    - 현재 Dense 벡터만 사용 → BM25 추가
@@ -893,7 +893,7 @@ DeNA 스터디 시리즈의 마지막 Part 5에서는:
 - A/B 테스트와 지속적 개선
 - 비용 최적화와 확장성
 
-을 다룰 예정입니다.
+을 다룰 예정이다.
 
 ## 참고 자료
 

@@ -867,7 +867,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "dena-llm-study-part5-agent-design.md",
@@ -877,7 +877,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "dena-perl-go-migration-ai-agents.md",
@@ -887,7 +887,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "deno-2-vs-bun-nodejs-runtime-2026-comparison.md",
@@ -896,7 +896,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "devstral-qwen3-coder-small-models.md",
@@ -906,7 +906,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "dont-trust-the-salt-multilingual-llm-safety.md",
@@ -916,7 +916,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "drizzle-orm-typescript-complete-guide-2026.md",
@@ -925,7 +925,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "e2e-page-test-automation-claude-code.md",
@@ -935,7 +935,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "effiflow-automation-analysis-part1.md",
@@ -945,7 +945,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "effiflow-automation-analysis-part2.md",
@@ -954,7 +954,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "effiflow-automation-analysis-part3.md",
