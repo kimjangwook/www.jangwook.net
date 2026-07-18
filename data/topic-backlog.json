@@ -1,7 +1,43 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-16",
+  "updated_at": "2026-07-18",
   "topics": [
+    {
+      "slug": "prompt-injection-regression-gate-model-updates",
+      "title_idea": "모델 버전을 올릴 때마다 인젝션 테스트를 다시 돌려야 하는 이유 — GPT-Red가 보여준 공방 자동화 시대의 게이트 설계",
+      "content_type": "how-to",
+      "target_keyword": "프롬프트 인젝션 회귀 테스트",
+      "secondary_keywords": [
+        "GPT-Red",
+        "LLM 파이프라인 보안",
+        "인젝션 게이트"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "OpenAI 2026-07-16 GPT-Red (openai.com/index/unlocking-self-improvement-gpt-red). 공격 성공률 84% vs 인간 13%, Fake CoT 95%→10% 미만. 앵글: 자기 파이프라인(daily-post 등 LLM 자동화)에 인젝션 스위트를 실제로 돌려 '측정→수정→게이트' 루프로 착지. 기둥 ③→②. pm 캐치업 2026-07-18 발굴.",
+      "added_at": "2026-07-18",
+      "status": "queued",
+      "notes": "Lab Publish 레인 — 자기 자동화 파이프라인 대상 실측 가능.",
+      "published_at": null
+    },
+    {
+      "slug": "string-lang-dir-metadata-multilingual-web",
+      "title_idea": "JSON으로 문자열을 나르면 언어와 방향이 사라진다 — W3C FPWD 2건으로 4언어 블로그의 문자열 처리를 감사해봤다",
+      "content_type": "how-to",
+      "target_keyword": "문자열 언어 메타데이터 다국어",
+      "secondary_keywords": [
+        "W3C string-meta",
+        "lang dir 메타데이터",
+        "다국어 JSON-LD inLanguage"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "W3C 2026-07-16 FPWD 2건: 'Character Model: String Matching' + 'Strings on the Web: Language and Direction Metadata'. 앵글: 이 블로그(ko/ja/en/zh)의 RSS·JSON-LD inLanguage·슬러그 정규화·bidi 처리를 실측 감사하고 게이트화. 기둥 ①×4언어 운영 실전 — 스펙 원문 인용 + 자기 사이트 측정. pm 캐치업 2026-07-18 발굴.",
+      "added_at": "2026-07-18",
+      "status": "queued",
+      "notes": "시의성(FPWD 직후) — 우선 발행 권장. 샌드박스 불필요(자기 사이트 감사).",
+      "published_at": null
+    },
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",
       "title_idea": "다국어 블로그를 3일간 기술 감사했다 — hreflang 파손, 렌더 블로킹 405KB, 404 내부링크를 실측으로 잡은 기록",
