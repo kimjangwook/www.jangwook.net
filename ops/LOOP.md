@@ -29,7 +29,7 @@
 | `improve_due` — 수요일 첫 틱 (주 1) | ⑥ 웹 개선 | GEO/AIO/SEO/a11y 축 중 하나를 골라 사이트 실측 감사 1건 → 개선 커밋 → 글감이 되면 백로그 적재 (7월 캠페인 플레이북: 측정→수정→게이트) | 감사 요약 |
 | `service_pulse_due` — 월요일 첫 틱 (주 1) | ⑦ 서비스 펄스 | 운영 서비스(jangwook.net·effloow·InsightForge·심해식당)의 헬스·지표 훑기. 이상 발견 시만 상세, 콘텐츠 소재(운영 실측 데이터) 후보 채집 | 한 줄/서비스 |
 | `scout_due:morning/noon/evening` — 07/12/18시 이후 첫 틱 | ⑧ X 상호작용 스카우트 | `scripts/x-scout.sh`(Grok X 검색)로 일본 웹개발 클러스터 수집 — morning: 리플/인용 초안 + 좋아요 / noon: 팔로우 추천 + 좋아요 / evening: 저녁 피크용 리플 초안 최대 5건 + 좋아요. 리플 활동은 소형 계정 성장의 주 엔진(wbai 검증) | 텔레그램 (아래 ⑧ 형식) |
-| `style_campaign_due` — ops/style-campaign.json pending>0 (매 틱) | ⑨ 문체·전개 캠페인 | pending 상위 batch_size(10)편을 해라체 전환 + 맺음말 보강 (아래 ⑨ 프롬프트). 에이전트 1명이 순차 처리·매니페스트 갱신·커밋까지 (병렬 금지 — 매니페스트 레이스) | `N편 완료\|잔량 M` |
+| `style_campaign_due` — ops/style-campaign.json pending>0 (매 틱) | ⑨ 문체·전개 캠페인 — <strong>완주 2026-07-19</strong> (260/260, 배치 26회, 최종 감사: ko 311편 전부 해라체 우세·구어 파편 0·풀 빌드 그린) | pending 상위 batch_size(10)편을 해라체 전환 + 맺음말 보강 (아래 ⑨ 프롬프트). 에이전트 1명이 순차 처리·매니페스트 갱신·커밋까지 (병렬 금지 — 매니페스트 레이스) | `N편 완료\|잔량 M` |
 | `repo_changed` — HEAD 변화 감지 | (에이전트 불필요) | 병행 자동화 커밋 확인용 정보 플래그. 게이트 이상 시에만 ③ 스폰 | — |
 
 ## 에이전트 프롬프트 공통 헤더
