@@ -107,7 +107,7 @@ openclaw update
 
 <strong>결과: 여전히 실패.</strong> 빌드를 다시 해도 구조적인 문제라 해결되지 않았습니다.
 
-### 세번째 방법: register.subclis.ts 수정 → 성공 🎉
+### 세번째 방법: register.subclis.ts 수정 → 성공 
 
 직접 소스를 수정하기로 했습니다. 먼저 `maintenance`가 `register.subclis.ts`에서 참조되는지 확인:
 

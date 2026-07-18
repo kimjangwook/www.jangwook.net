@@ -195,7 +195,7 @@ compelling storytelling.
 - 역할 중복 방지
 - 실수 90% 감소 예상
 
-### 3. 불확실성 처리 (Uncertainty Handling) ⭐
+### 3. 불확실성 처리 (Uncertainty Handling) 
 
 <strong>원칙</strong>: "모르는 것은 모른다" - 가장 중요한 개선
 

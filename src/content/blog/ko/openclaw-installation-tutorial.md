@@ -51,7 +51,7 @@ relatedPosts:
 > 2. <strong>튜토리얼편</strong> ← 현재 글
 > 3. [활용법편](/ko/blog/ko/openclaw-advanced-usage/)
 
-지난 글에서 OpenClaw이 무엇인지 살펴봤습니다. 이번에는 <strong>직접 설치하고, 첫 대화를 나누는 것</strong>까지 한 번에 해보겠습니다. 터미널을 열고 따라오세요! 🚀
+지난 글에서 OpenClaw이 무엇인지 살펴봤습니다. 이번에는 <strong>직접 설치하고, 첫 대화를 나누는 것</strong>까지 한 번에 해보겠습니다. 터미널을 열고 따라오세요! 
 
 ---
 
@@ -95,7 +95,7 @@ fnm use 22
 
 취향에 맞는 방법을 하나 골라주세요.
 
-### 방법 1: npm 글로벌 설치 (가장 추천) ⭐
+### 방법 1: npm 글로벌 설치 (가장 추천) 
 
 ```bash
 npm install -g openclaw@latest
@@ -226,7 +226,7 @@ openclaw onboard --install-daemon
 
 | 정책 | 동작 |
 |---|---|
-| `pairing` | 페어링 승인 필요 (보안상 <strong>강력 추천</strong> ⭐) |
+| `pairing` | 페어링 승인 필요 (보안상 <strong>강력 추천</strong> ) |
 | `open` | 아무나 DM 가능 (테스트 용도) |
 | `deny` | DM 차단 |
 
@@ -338,7 +338,7 @@ openclaw health
 
 ---
 
-## 6. 첫 대화 테스트 🎉
+## 6. 첫 대화 테스트 
 
 모든 준비가 끝났습니다. 이제 실제로 대화를 나눠 봅시다.
 
@@ -522,7 +522,7 @@ Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
 
 ## 10. 다음 단계 — 더 깊이 들어가기
 
-설치와 첫 대화까지 완료했습니다! 🎉
+설치와 첫 대화까지 완료했습니다! 
 
 기본 설정이 끝났으니, 이제 진짜 재미있는 것들을 해볼 차례입니다:
 

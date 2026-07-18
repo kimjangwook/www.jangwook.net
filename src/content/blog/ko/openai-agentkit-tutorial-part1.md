@@ -59,8 +59,8 @@ faq:
 - 🧩 <strong>4개 핵심 컴포넌트</strong>: Agent Builder (비주얼), ChatKit (UI), Connector Registry (도구), Evals (성능)
 - 🐍 <strong>Python SDK 제공</strong>: `openai-agents` 패키지로 코드 우선 개발 가능
 - 🔌 <strong>MCP 네이티브 지원</strong>: "AI 앱을 위한 USB-C"로 도구 통합 표준화
-- 📊 <strong>베타 단계</strong>: Agent Builder는 현재 베타, 2025년 11월 1일부터 과금 시작
-- 💡 <strong>언제 사용?</strong>: AI 중심 워크플로우, 멀티 에이전트 협업, 복잡한 의사결정 자동화
+- <strong>베타 단계</strong>: Agent Builder는 현재 베타, 2025년 11월 1일부터 과금 시작
+- <strong>언제 사용?</strong>: AI 중심 워크플로우, 멀티 에이전트 협업, 복잡한 의사결정 자동화
 
 ## AgentKit이란 무엇인가?
 
@@ -1171,7 +1171,7 @@ AgentKit이 모든 상황의 정답은 아닙니다. 도입을 결정하기 전�
 
 - 🏗️ <strong>실전 아키텍처 패턴</strong>: 엔터프라이즈급 멀티 에이전트 시스템 설계
 - 🔧 <strong>고급 도구 통합</strong>: MCP 서버 직접 만들기, 외부 API 연동
-- 📊 <strong>성능 최적화</strong>: Evals를 활용한 A/B 테스트 및 프롬프트 최적화
+- <strong>성능 최적화</strong>: Evals를 활용한 A/B 테스트 및 프롬프트 최적화
 - 🛡️ <strong>보안과 컴플라이언스</strong>: 프로덕션 환경의 안전 장치
 - 💼 <strong>실제 케이스 스터디</strong>: 3가지 산업별 완전한 구현 예제
 

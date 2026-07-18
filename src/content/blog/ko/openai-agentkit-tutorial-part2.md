@@ -56,7 +56,7 @@ faq:
 
 - 🏗️ <strong>3가지 엔터프라이즈 아키텍처 패턴</strong>: 계층적, 이벤트 주도, 그래프 기반 오케스트레이션
 - 🔧 <strong>커스텀 MCP 서버 구축</strong>: 직접 만들어 AgentKit에 통합
-- 📊 <strong>프로덕션 모니터링</strong>: Evals를 활용한 성능 최적화 및 A/B 테스트
+- <strong>프로덕션 모니터링</strong>: Evals를 활용한 성능 최적화 및 A/B 테스트
 - 🛡️ <strong>엔터프라이즈 보안</strong>: 데이터 격리, 감사 로그, 컴플라이언스
 - 💼 <strong>3가지 실전 케이스</strong>: SaaS 자동화, 데이터 파이프라인, DevOps 워크플로우
 - ⚡ <strong>성능 최적화</strong>: 병렬 처리, 캐싱, 스트리밍 응답
@@ -1614,7 +1614,7 @@ async def batch_process(requests: list):
 
 ---
 
-<strong>시리즈 완료!</strong> 🎉
+<strong>시리즈 완료!</strong> 
 
 [1부](/ko/blog/ko/openai-agentkit-tutorial-part1)는 기초였고, 2부는 실전이었다. 두 편을 합치면 AgentKit으로 무언가를 만들기 시작하기에 충분하다.
 

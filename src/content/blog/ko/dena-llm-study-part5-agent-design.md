@@ -668,7 +668,7 @@ const workflow = {
 | <strong>오케스트레이션</strong>   | 개발자 정의 DAG                     | 에이전트 간 대화   | 역할 계층 구조                 |
 | <strong>학습 곡선</strong>        | 중간                                | 높음               | 낮음                           |
 | <strong>커스터마이징</strong>     | 매우 높음                           | 높음               | 중간                           |
-| <strong>프로덕션 준비도</strong>  | ⭐⭐⭐⭐⭐                          | ⭐⭐⭐⭐           | ⭐⭐⭐                         |
+| <strong>프로덕션 준비도</strong>  |                          |           |                         |
 | <strong>적합한 사용 사례</strong> | 복잡한 워크플로우, 명확한 제어 필요 | 창의적 협업, 연구  | 빠른 프로토타입, 팀 시뮬레이션 |
 
 #### LangGraph

@@ -782,4 +782,4 @@ SSR은 단순한 설문 도구를 넘어서 <strong>콘텐츠 전략 수립의 �
 
 ---
 
-<strong>📊 코드 및 데이터</strong>: 본 분석에 사용된 전체 코드와 데이터는 [GitHub 저장소](https://github.com/kimjangwook/ssr-repeater)에서 확인하실 수 있습니다.
+<strong>코드 및 데이터</strong>: 본 분석에 사용된 전체 코드와 데이터는 [GitHub 저장소](https://github.com/kimjangwook/ssr-repeater)에서 확인하실 수 있습니다.

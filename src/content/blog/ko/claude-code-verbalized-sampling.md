@@ -162,7 +162,7 @@ graph LR
 
 ## 4개 에이전트 수정 내역
 
-### 1. prompt-engineer.md ⭐⭐⭐⭐⭐
+### 1. prompt-engineer.md 
 
 <strong>다양성 향상: 2.0배</strong> | 추가 라인: ~150
 
@@ -246,7 +246,7 @@ Use a mentoring tone.
 </response>
 ```
 
-### 2. content-planner.md ⭐⭐⭐⭐⭐
+### 2. content-planner.md 
 
 <strong>다양성 향상: 1.8배</strong> | 추가 라인: ~120
 
@@ -312,7 +312,7 @@ Use a mentoring tone.
 
 독창적이고 틈새 키워드를 활용한 주제들이 발굴됩니다!
 
-### 3. writing-assistant.md ⭐⭐⭐⭐
+### 3. writing-assistant.md 
 
 <strong>다양성 향상: 1.6배</strong> | 추가 라인: ~180
 
@@ -398,7 +398,7 @@ Use a mentoring tone.
 </response>
 ```
 
-### 4. image-generator.md ⭐⭐⭐
+### 4. image-generator.md 
 
 <strong>다양성 향상: 1.5배</strong> | 추가 라인: ~90
 

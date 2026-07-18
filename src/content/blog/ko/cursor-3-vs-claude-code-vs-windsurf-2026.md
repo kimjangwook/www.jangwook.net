@@ -168,8 +168,8 @@ Windsurf가 2025〜2026년에 걸쳐 Wave 릴리즈를 14번 진행했다는 것
 |  | <strong>Cursor 3.1</strong> | <strong>Claude Code 2.1.119</strong> | <strong>Windsurf 2.0.67</strong> |
 |---|---|---|---|
 | 인터페이스 | GUI (IDE) | 터미널 CLI | GUI (IDE) |
-| 인라인 자동완성 | ⭐⭐⭐⭐⭐ 최강 | 없음 | ⭐⭐⭐⭐ |
-| 아키텍처 추론 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| 인라인 자동완성 | 최강 | 없음 | |
+| 아키텍처 추론 | | | |
 | 멀티레포 | ✅ (네이티브 지원) | ✅ (Worktree 조합) | ⚠️ (제한적) |
 | 비동기 에이전트 | ✅ (서브에이전트) | ✅ (루프/훅) | ✅ (Devin 통합) |
 | 모델 선택 | Composer 2 + 일부 | Claude 계열 | 다양 (Arena Mode) |

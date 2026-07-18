@@ -956,7 +956,7 @@ code_here()
 <strong>내용:</strong>
 
 - ✅ 11월 17-20 급증 원인 규명 결과
-- 📊 급증 후 기준선 확립 (진짜 지속 가능 DAU)
+- 급증 후 기준선 확립 (진짜 지속 가능 DAU)
 - 🔧 영어 홈페이지 UX 개선 전후 비교
 - 🤖 중국 트래픽 봇 필터링 결과
 - 📈 한국어 콘텐츠 10-15개 추가 효과
@@ -974,11 +974,11 @@ code_here()
 - 💭 <strong>댓글</strong>: 여러분의 블로그 분석 경험과 팁 공유
 - 📧 <strong>문의</strong>: 1:1 질문은 [Contact](/ko/contact)
 
-<strong>함께 배우고 성장합시다. 여러분의 첫 분석 리포트를 기대합니다!</strong> 🚀
+<strong>함께 배우고 성장합시다. 여러분의 첫 분석 리포트를 기대합니다!</strong> 
 
 ---
 
-### 📊 리소스
+### 리소스
 
 <strong>공식 문서:</strong>
 - [GA4 API Schema](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema)

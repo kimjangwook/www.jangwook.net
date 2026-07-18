@@ -922,9 +922,9 @@ answer = search_company_knowledge(
 ```
 
 <strong>예상 효과</strong>:
-- 🚀 정보 검색 시간 90% 단축
+- 정보 검색 시간 90% 단축
 - 🤝 부서 간 지식 공유 활성화
-- 💡 숨겨진 정보 자산 활용
+- 숨겨진 정보 자산 활용
 
 ### 4. 기술 문서 검색
 
@@ -1099,7 +1099,7 @@ Google Gemini File Search Tool은 RAG 시스템 구축의 <strong>패러다임 �
 Google은 다음과 같은 개선 사항을 로드맵에 포함했습니다:
 
 - 🔍 고급 메타데이터 필터링 쿼리
-- 📊 멀티모달 검색 (이미지, 표 인식)
+- 멀티모달 검색 (이미지, 표 인식)
 - ⚡ 실시간 문서 업데이트 (증분 인덱싱)
 - 🌐 더 많은 파일 형식 지원
 
@@ -1114,7 +1114,7 @@ export GEMINI_API_KEY="your-key"
 python your_first_rag.py
 ```
 
-<strong>문서 검색의 미래는 이미 여기 있습니다. 🚀</strong>
+<strong>문서 검색의 미래는 이미 여기 있습니다. </strong>
 
 ## 참고 자료
 

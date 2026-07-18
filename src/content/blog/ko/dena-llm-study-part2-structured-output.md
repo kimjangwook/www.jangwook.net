@@ -869,11 +869,11 @@ async def cost_optimized_pipeline(query: str) -> str:
 
 | 도구           | 용도                        | 추천도     |
 | -------------- | --------------------------- | ---------- |
-| <strong>Instructor</strong> | Pydantic ↔ LLM 통합         | ⭐⭐⭐⭐⭐ |
-| <strong>Outlines</strong>   | Constrained Decoding (로컬) | ⭐⭐⭐⭐   |
-| <strong>LangChain</strong>  | 파이프라인 오케스트레이션   | ⭐⭐⭐     |
-| <strong>LlamaIndex</strong> | RAG + Structured Outputs    | ⭐⭐⭐⭐   |
-| <strong>Guidance</strong>   | Template-based 출력 제어    | ⭐⭐⭐     |
+| <strong>Instructor</strong> | Pydantic ↔ LLM 통합         | |
+| <strong>Outlines</strong>   | Constrained Decoding (로컬) |   |
+| <strong>LangChain</strong>  | 파이프라인 오케스트레이션   |     |
+| <strong>LlamaIndex</strong> | RAG + Structured Outputs    |   |
+| <strong>Guidance</strong>   | Template-based 출력 제어    |     |
 
 ## 5. 다음 단계
 

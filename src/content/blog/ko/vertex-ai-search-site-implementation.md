@@ -69,8 +69,8 @@ relatedPosts:
 - 🧠 <strong>세맨틱 검색</strong>: 키워드 매칭이 아닌 의미 기반 검색
 - 📝 <strong>AI 요약</strong>: 검색 결과를 자동으로 요약하여 제공
 - 🔍 <strong>자동 인덱싱</strong>: 웹사이트 크롤링 및 콘텐츠 자동 수집
-- 📊 <strong>검색 분석</strong>: 사용자 검색 패턴 및 성능 지표 제공
-- 🚀 <strong>완전 관리형</strong>: 인프라 관리 불필요
+- <strong>검색 분석</strong>: 사용자 검색 패턴 및 성능 지표 제공
+- <strong>완전 관리형</strong>: 인프라 관리 불필요
 
 ### 아키텍처 개요
 
@@ -1740,4 +1740,4 @@ async function searchSite(query, language = 'ko') {
 
 ---
 
-<strong>이제 웹사이트에 강력한 AI 검색 기능을 추가해보세요! 🚀</strong>
+<strong>이제 웹사이트에 강력한 AI 검색 기능을 추가해보세요! </strong>

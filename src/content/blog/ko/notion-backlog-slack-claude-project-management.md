@@ -601,7 +601,7 @@ Slack Workflow Builder를 사용하면 코딩 없이 자동화를 구축할 수 
    - `#proj-mobile-app-renewal` 채널에 메시지 전송
    - 스프린트 시작 체크리스트 표시
    ```
-   🚀 Sprint 23 시작!
+   Sprint 23 시작!
 
    [ ] Backlog 마일스톤 생성
    [ ] Notion 스프린트 페이지 생성
@@ -2515,7 +2515,7 @@ def check_data_consistency():
 - 3개월 후: 눈에 띄는 변화 경험하기
 - 1년 후: 표준화가 당연한 문화로 자리 잡기
 
-<strong>여러분의 프로젝트가 성공하기를 응원합니다!</strong> 🚀
+<strong>여러분의 프로젝트가 성공하기를 응원합니다!</strong> 
 
 ## 참고 자료
 
