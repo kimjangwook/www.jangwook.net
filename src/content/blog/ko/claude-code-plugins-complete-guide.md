@@ -58,9 +58,9 @@ relatedPosts:
 ---
 ## 개요
 
-Claude Code는 Anthropic이 개발한 에이전틱 코딩 도구입니다. 플러그인 시스템을 통해 슬래시 커맨드, [전문 에이전트와 스킬](/ko/blog/ko/anthropic-agent-skills-practical-guide), 훅을 <strong>하나의 패키지로 설치</strong>할 수 있습니다.
+Claude Code는 Anthropic이 개발한 에이전틱 코딩 도구다. 플러그인 시스템을 통해 슬래시 커맨드, [전문 에이전트와 스킬](/ko/blog/ko/anthropic-agent-skills-practical-guide), 훅을 <strong>하나의 패키지로 설치</strong>할 수 있다.
 
-이 포스트에서는 <strong>공식 플러그인 13개</strong>의 상세 기능, <strong>커뮤니티 마켓플레이스</strong>의 100개 이상 플러그인, 그리고 <strong>실제 플러그인 구조</strong>를 심층적으로 분석합니다.
+이 포스트에서는 <strong>공식 플러그인 13개</strong>의 상세 기능, <strong>커뮤니티 마켓플레이스</strong>의 100개 이상 플러그인, 그리고 <strong>실제 플러그인 구조</strong>를 심층적으로 분석한다.
 
 > <strong>★ Insight</strong>
 >
@@ -72,7 +72,7 @@ Claude Code는 Anthropic이 개발한 에이전틱 코딩 도구입니다. 플�
 
 ### 마켓플레이스 추가
 
-Claude Code는 Git 저장소 기반의 마켓플레이스 시스템을 사용합니다.
+Claude Code는 Git 저장소 기반의 마켓플레이스 시스템을 사용한다.
 
 ```bash
 # 커뮤니티 마켓플레이스 추가
@@ -108,7 +108,7 @@ Claude Code는 Git 저장소 기반의 마켓플레이스 시스템을 사용합
 
 ## 공식 플러그인 13개 상세 분석
 
-Anthropic이 관리하는 [anthropics/claude-code](https://github.com/anthropics/claude-code/tree/main/plugins) 저장소의 공식 플러그인입니다.
+Anthropic이 관리하는 [anthropics/claude-code](https://github.com/anthropics/claude-code/tree/main/plugins) 저장소의 공식 플러그인이다.
 
 ### 1. commit-commands - Git 워크플로우 자동화
 
@@ -315,7 +315,7 @@ action: block  # warn 또는 block
 /plugin install frontend-design
 ```
 
-프론트엔드 작업 시 <strong>자동으로 활성화</strong>되는 스킬입니다.
+프론트엔드 작업 시 <strong>자동으로 활성화</strong>되는 스킬이다.
 
 <strong>핵심 원칙</strong>:
 
@@ -677,7 +677,7 @@ export API_KEY="sk-..."
 
 ## 마무리
 
-Claude Code 플러그인 시스템은 <strong>공식 13개 플러그인</strong>과 <strong>커뮤니티 100개 이상 플러그인</strong>으로 구성된 풍부한 생태계를 제공합니다.
+Claude Code 플러그인 시스템은 <strong>공식 13개 플러그인</strong>과 <strong>커뮤니티 100개 이상 플러그인</strong>으로 구성된 풍부한 생태계를 제공한다.
 
 `<strong>`핵심 정리`</strong>`:
 

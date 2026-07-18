@@ -61,9 +61,9 @@ relatedPosts:
 
 ## 개요
 
-[이전 글](/ko/blog/ko/llm-page-migration-standardization)에서는 LLM을 활용한 웹페이지 마이그레이션의 전체 전략을 다뤘습니다. 이번 글에서는 <strong>Claude Code의 병렬 실행 기능을 활용해 테스트 자동화를 5-8배 빠르게 수행하는 실전 구현 방법</strong>을 소개합니다.
+[이전 글](/ko/blog/ko/llm-page-migration-standardization)에서는 LLM을 활용한 웹페이지 마이그레이션의 전체 전략을 다뤘다. 이번 글에서는 <strong>Claude Code의 병렬 실행 기능을 활용해 테스트 자동화를 5-8배 빠르게 수행하는 실전 구현 방법</strong>을 소개한다.
 
-50〜500페이지 이상의 대규모 마이그레이션 프로젝트에서 가장 큰 병목은 <strong>테스트 단계</strong>입니다. 각 페이지마다 E2E, 접근성, 성능, SEO 테스트를 순차적으로 실행하면 수십 시간이 소요됩니다.
+50〜500페이지 이상의 대규모 마이그레이션 프로젝트에서 가장 큰 병목은 <strong>테스트 단계</strong>다. 각 페이지마다 E2E, 접근성, 성능, SEO 테스트를 순차적으로 실행하면 수십 시간이 소요된다.
 
 <strong>이 글에서 다룰 내용</strong>:
 - Claude Code 에이전트 병렬 실행 패턴
@@ -76,7 +76,7 @@ relatedPosts:
 
 ### 기존 테스트 워크플로우
 
-대부분의 마이그레이션 프로젝트는 다음과 같이 순차적으로 테스트를 실행합니다:
+대부분의 마이그레이션 프로젝트는 다음과 같이 순차적으로 테스트를 실행한다:
 
 ```
 페이지 1 → Web Component 테스트 → E2E 테스트 → A11y 테스트 → 성능 테스트 → SEO 테스트
@@ -111,7 +111,7 @@ Claude Code의 에이전트 시스템과 Playwright의 병렬 실행을 결합�
 
 ### 핵심 개념: Task Tool의 병렬 호출
 
-Claude Code는 <strong>단일 메시지에서 여러 Task tool을 동시에 호출</strong>할 수 있습니다. 이를 활용하면 서로 독립적인 작업을 병렬로 실행할 수 있습니다.
+Claude Code는 <strong>단일 메시지에서 여러 Task tool을 동시에 호출</strong>할 수 있다. 이를 활용하면 서로 독립적인 작업을 병렬로 실행할 수 있다.
 
 <strong>잘못된 방법(순차 실행)</strong>:
 
@@ -1358,7 +1358,7 @@ jobs:
 
 ### 다음 단계
 
-[이전 글](/ko/blog/ko/llm-page-migration-standardization)에서 소개한 전체 마이그레이션 전략과 이번 글의 병렬 테스트 자동화를 결합하면 <strong>완전 자동화된 대규모 웹페이지 마이그레이션 시스템</strong>을 구축할 수 있습니다.
+[이전 글](/ko/blog/ko/llm-page-migration-standardization)에서 소개한 전체 마이그레이션 전략과 이번 글의 병렬 테스트 자동화를 결합하면 <strong>완전 자동화된 대규모 웹페이지 마이그레이션 시스템</strong>을 구축할 수 있다.
 
 다음 글 예고: "Claude Code 에이전트 최적화: 토큰 효율성과 응답 속도 개선"
 

@@ -62,9 +62,9 @@ relatedPosts:
 
 ## 개요
 
-LLM(Large Language Model)은 놀라운 성능을 보여주지만, 정렬(alignment) 과정을 거치면서 <strong>모드 붕괴(mode collapse)</strong> 문제를 겪습니다. 안전하고 예측 가능한 응답만 생성하게 되어 창의성과 다양성이 감소하는 것이죠.
+LLM(Large Language Model)은 놀라운 성능을 보여주지만, 정렬(alignment) 과정을 거치면서 <strong>모드 붕괴(mode collapse)</strong> 문제를 겪는다. 안전하고 예측 가능한 응답만 생성하게 되어 창의성과 다양성이 감소한다.
 
-이 글에서는 Stanford 연구팀이 제안한 <strong>Verbalized Sampling</strong> 기법을 Claude Code 에이전트 시스템에 적용하여 출력 다양성을 1.6〜2.1배 향상시킨 실전 경험을 공유합니다.
+이 글에서는 Stanford 연구팀이 제안한 <strong>Verbalized Sampling</strong> 기법을 Claude Code 에이전트 시스템에 적용하여 출력 다양성을 1.6〜2.1배 향상시킨 실전 경험을 공유한다.
 
 ### 주요 성과
 
@@ -80,7 +80,7 @@ LLM(Large Language Model)은 놀라운 성능을 보여주지만, 정렬(alignme
 
 ### LLM의 전형성 편향
 
-정렬된 LLM은 다음과 같은 패턴으로 수렴합니다:
+정렬된 LLM은 다음과 같은 패턴으로 수렴한다:
 
 ```
 질문: "웹 개발 트렌드 주제 5개 제안해주세요"
@@ -93,7 +93,7 @@ LLM(Large Language Model)은 놀라운 성능을 보여주지만, 정렬(alignme
 5. 성능 최적화 베스트 프랙티스
 ```
 
-이러한 주제들은 안전하고 검증되었지만, <strong>독창성이 부족</strong>합니다. 수백 개의 블로그가 이미 다룬 내용이죠.
+이러한 주제들은 안전하고 검증되었지만, <strong>독창성이 부족</strong>하다. 수백 개의 블로그가 이미 다룬 내용이다.
 
 ### 왜 모드 붕괴가 발생하는가?
 
@@ -119,7 +119,7 @@ graph TD
 
 ### 핵심 아이디어
 
-Verbalized Sampling은 LLM에게 확률 분포를 명시적으로 생성하도록 요청하고, 낮은 확률 영역에서 샘플링합니다.
+Verbalized Sampling은 LLM에게 확률 분포를 명시적으로 생성하도록 요청하고, 낮은 확률 영역에서 샘플링한다.
 
 ```mermaid
 graph LR
@@ -136,7 +136,7 @@ graph LR
 
 ### 프롬프트 템플릿
 
-이처럼 구조화된 프롬프트 설계는 [사양 주도 개발(Spec-Driven Development)](/ko/blog/ko/specification-driven-development) 패러다임과 맥락을 같이 합니다.
+이처럼 구조화된 프롬프트 설계는 [사양 주도 개발(Spec-Driven Development)](/ko/blog/ko/specification-driven-development) 패러다임과 맥락을 같이 한다.
 
 ````markdown
 <instructions>
@@ -310,7 +310,7 @@ Use a mentoring tone.
 </response>
 ```
 
-독창적이고 틈새 키워드를 활용한 주제들이 발굴됩니다!
+독창적이고 틈새 키워드를 활용한 주제들이 발굴된다!
 
 ### 3. writing-assistant.md 
 
@@ -407,7 +407,7 @@ Use a mentoring tone.
 ````markdown
 ## Verbalized Sampling for Visual Diversity
 
-히어로 이미지 생성 시 다양한 시각적 스타일을 탐색합니다.
+히어로 이미지 생성 시 다양한 시각적 스타일을 탐색한다.
 
 ### 언제 사용하는가?
 - 블로그 주제에 여러 시각적 접근이 가능할 때
@@ -464,7 +464,7 @@ Use a mentoring tone.
 </response>
 ```
 
-일반적인 코드 스크린샷이 아닌 <strong>독창적인 시각적 메타포</strong>를 발굴합니다!
+일반적인 코드 스크린샷이 아닌 <strong>독창적인 시각적 메타포</strong>를 발굴한다!
 
 ## 실전 적용 사례
 
@@ -524,7 +524,7 @@ graph TD
     style E fill:#6bcf7f
 ```
 
-각 계층에서 Verbalized Sampling을 적용하여 <strong>복합적 다양성</strong>을 확보합니다.
+각 계층에서 Verbalized Sampling을 적용하여 <strong>복합적 다양성</strong>을 확보한다.
 
 ## 파라미터 조정 가이드
 
@@ -636,11 +636,11 @@ Generate k=10 blog topic ideas...
 | <strong>가치</strong> | 7.5점 | 9.5점 | +27% |
 | <strong>Cost per Quality Point</strong> | $0.187 | $0.537 | +187% |
 
-<strong>결론</strong>: 비용은 증가하지만, 품질과 독창성 향상을 고려하면 충분히 가치 있는 투자입니다.
+<strong>결론</strong>: 비용은 증가하지만, 품질과 독창성 향상을 고려하면 충분히 가치 있는 투자다.
 
 ## 핵심 인사이트
 
-### 1. 모든 에이전트에 적용하지 마세요
+### 1. 모든 에이전트에 적용하지 마라
 
 <strong>적합한 에이전트</strong>:
 - ✅ prompt-engineer (창의성 중요)
@@ -654,16 +654,16 @@ Generate k=10 blog topic ideas...
 - ❌ site-manager (표준화 필요)
 - ❌ editor (일관성 중요)
 
-### 2. 파라미터는 작업에 맞게 조정하세요
+### 2. 파라미터는 작업에 맞게 조정하라
 
-일률적인 설정은 효과적이지 않습니다:
+일률적인 설정은 효과적이지 않다:
 - 프롬프트 엔지니어링: k=5, tau=0.10 (균형)
 - 콘텐츠 계획: k=8, tau=0.12 (더 많은 옵션)
 - 이미지 프롬프트: k=5, tau=0.12, temperature=0.95 (최대 창의성)
 
-### 3. 품질 관리는 필수입니다
+### 3. 품질 관리는 필수다
 
-Verbalized Sampling으로 다양성은 확보되지만, 품질 관리가 필요합니다:
+Verbalized Sampling으로 다양성은 확보되지만, 품질 관리가 필요하다:
 
 #### 후처리 필터링
 
@@ -702,21 +702,21 @@ graph LR
     style C fill:#6bcf7f
 ```
 
-### 4. 비용 최적화가 가능합니다
+### 4. 비용 최적화가 가능하다
 
 k=5로 API 비용이 5배 증가하지만:
 - 캐싱 전략으로 완화
 - 선택적 적용으로 관리
 - 재작업 감소로 장기 ROI 긍정적
 
-### 5. 다국어 콘텐츠에 특히 효과적입니다
+### 5. 다국어 콘텐츠에 특히 효과적이다
 
 각 언어별 문화적 맥락을 고려한 다양성 확보:
 - 한국어: 한국 독자 맥락
 - 일본어: 일본 독자 맥락
 - 영어: 글로벌 맥락
 
-### 6. 에이전트 협업에서 빛을 발합니다
+### 6. 에이전트 협업에서 빛을 발한다
 
 ```mermaid
 graph TD
@@ -731,9 +731,9 @@ graph TD
     style E fill:#6bcf7f
 ```
 
-각 단계에서 Verbalized Sampling을 적용하여 <strong>계층적 다양성</strong>을 확보합니다. 멀티 에이전트 워크플로우를 더 체계적으로 설계하고 싶다면 [LangGraph 멀티 에이전트 시스템 완전 가이드](/ko/blog/ko/langgraph-multi-agent)를 함께 읽어보세요.
+각 단계에서 Verbalized Sampling을 적용하여 <strong>계층적 다양성</strong>을 확보한다. 멀티 에이전트 워크플로우를 더 체계적으로 설계하고 싶다면 [LangGraph 멀티 에이전트 시스템 완전 가이드](/ko/blog/ko/langgraph-multi-agent)를 함께 읽어보라.
 
-### 7. 실패 패턴을 피하세요
+### 7. 실패 패턴을 피하라
 
 <strong>과도한 다양성</strong>:
 ```
@@ -751,7 +751,7 @@ SEO 최적화에 VS 적용
 → 효과 없음
 ```
 
-### 8. 측정 가능한 지표로 개선하세요
+### 8. 측정 가능한 지표로 개선하라
 
 #### Self-BLEU (다양성 측정)
 
@@ -785,7 +785,7 @@ def calculate_self_bleu(responses):
 - 만족도 향상: 41%
 ```
 
-### 9. 장기적 영향을 고려하세요
+### 9. 장기적 영향을 고려하라
 
 <strong>블로그 콘텐츠 품질</strong>:
 - 독창성 증가 → 경쟁 블로그와 차별화
@@ -801,23 +801,23 @@ def calculate_self_bleu(responses):
 
 ### 핵심 교훈
 
-1. <strong>Verbalized Sampling은 창의적 작업에 강력합니다</strong>
+1. <strong>Verbalized Sampling은 창의적 작업에 강력하다</strong>
    - 프롬프트 다양성 2.0배, 콘텐츠 다양성 1.8배 향상 달성
    - 독창적이고 비전형적인 아이디어 발굴 가능
 
-2. <strong>모든 곳에 적용하지 마세요</strong>
+2. <strong>모든 곳에 적용하지 마라</strong>
    - 창의성이 중요한 작업에만 사용
    - 정확성이나 일관성이 중요한 작업은 기존 방식 유지
 
-3. <strong>파라미터 조정이 성공의 열쇠입니다</strong>
+3. <strong>파라미터 조정이 성공의 열쇠다</strong>
    - k=5, tau=0.10, temperature=0.9가 기본
    - 작업 특성에 맞게 조정 필요
 
-4. <strong>품질 관리는 필수입니다</strong>
+4. <strong>품질 관리는 필수다</strong>
    - 후처리 필터링으로 품질 보장
    - 하이브리드 접근으로 다양성과 품질 균형
 
-5. <strong>비용은 관리 가능합니다</strong>
+5. <strong>비용은 관리 가능하다</strong>
    - 캐싱, 선택적 적용, 배치 처리로 최적화
    - 장기적으로 ROI 긍정적
 
@@ -856,7 +856,7 @@ cat .claude/agents/prompt-engineer.md
 # - 파라미터 미세 조정
 ```
 
-에이전트 배포 및 실전 활용 패턴에 대해서는 [OpenAI AgentKit 실전 가이드 2부](/ko/blog/ko/openai-agentkit-tutorial-part2)도 함께 참고하세요.
+에이전트 배포 및 실전 활용 패턴에 대해서는 [OpenAI AgentKit 실전 가이드 2부](/ko/blog/ko/openai-agentkit-tutorial-part2)도 함께 참고하라.
 
 ### 다음 단계
 
@@ -867,7 +867,7 @@ cat .claude/agents/prompt-engineer.md
 
 ### 마무리
 
-Verbalized Sampling은 LLM의 창의적 잠재력을 끌어내는 강력한 기법입니다. 하지만 마법의 해결책은 아닙니다. <strong>올바른 상황에서 올바른 방식으로 사용할 때</strong> 진정한 가치를 발휘합니다.
+Verbalized Sampling은 LLM의 창의적 잠재력을 끌어내는 강력한 기법이다. 하지만 마법의 해결책은 아니다. <strong>올바른 상황에서 올바른 방식으로 사용할 때</strong> 진정한 가치를 발휘한다.
 
 이 기법을 Claude Code 에이전트 시스템에 적용하여:
 - 더 독창적인 콘텐츠 생성
@@ -875,7 +875,7 @@ Verbalized Sampling은 LLM의 창의적 잠재력을 끌어내는 강력한 기�
 - 독자 참여도 향상
 - 틈새 키워드 발굴
 
-을 경험해보세요. 여러분의 블로그가 한 단계 더 성장하는 계기가 될 것입니다.
+을 경험해보라. 블로그가 한 단계 더 성장하는 계기가 될 것이다.
 
 ---
 

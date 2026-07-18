@@ -583,7 +583,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-parallel-sessions-git-worktree.md",
@@ -592,7 +592,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-parallel-testing.md",
@@ -602,7 +602,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-plugins-complete-guide.md",
@@ -612,7 +612,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-remote-control-guide.md",
@@ -621,7 +621,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-source-leak-analysis.md",
@@ -630,7 +630,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-verbalized-sampling.md",
@@ -640,7 +640,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-code-web-automation.md",
@@ -650,7 +650,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-cowork-enterprise-productivity-platform.md",
@@ -659,7 +659,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-fable-5-mythos-public-api-developer-analysis-2026.md",
@@ -668,7 +668,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "claude-firefox-22-cves-ai-security-audit.md",
