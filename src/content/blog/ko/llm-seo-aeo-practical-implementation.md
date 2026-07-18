@@ -54,18 +54,18 @@ relatedPosts:
 
 ## 개요
 
-최근 3일간 B2B SaaS 프로젝트인 <strong>Agent Effi Flow</strong>(면세처리/경리 OCR 서비스)에서 포괄적인 SEO 최적화 작업을 진행했습니다. 이 글에서는 실제 구현 과정과 성과, 그리고 LLM 시대에 필수적인 AEO(Answer Engine Optimization) 전략까지 공유합니다.
+최근 3일간 B2B SaaS 프로젝트인 <strong>Agent Effi Flow</strong>(면세처리/경리 OCR 서비스)에서 포괄적인 SEO 최적화 작업을 진행했다. 이 글에서는 실제 구현 과정과 성과, 그리고 LLM 시대에 필수적인 AEO(Answer Engine Optimization) 전략까지 공유한다.
 
 ### 왜 B2B SaaS에 SEO/AEO가 중요한가?
 
-B2B 의사결정자들은 구매 전 평균 12개 이상의 검색을 수행합니다. 하지만 2024년부터 검색 환경이 급격히 변화하고 있습니다:
+B2B 의사결정자들은 구매 전 평균 12개 이상의 검색을 수행한다. 하지만 2024년부터 검색 환경이 급격히 변화하고 있다:
 
 - <strong>62%의 마케터</strong>가 AI 답변 엔진으로 인한 클릭 감소 경험
 - <strong>Google AI Overviews</strong>가 검색 결과 최상단 점유
 - <strong>ChatGPT Search</strong>, <strong>Perplexity</strong> 등 AI 검색 엔진 급부상
 - 전통적인 SEO만으로는 불충분한 시대 도래
 
-하지만 위기는 곧 기회입니다. AEO를 조기에 도입한 기업들은 <strong>50〜200%의 트래픽 성장</strong>을 경험하고 있습니다.
+하지만 위기는 곧 기회다. AEO를 조기에 도입한 기업들은 <strong>50〜200%의 트래픽 성장</strong>을 경험하고 있다.
 
 ### 3일간의 Phase 1 최적화 여정
 
@@ -84,7 +84,7 @@ B2B 의사결정자들은 구매 전 평균 12개 이상의 검색을 수행합�
 
 #### 프로젝트 구조 분석
 
-SvelteKit 프로젝트의 라우팅 구조와 기존 SEO 상태를 파악했습니다:
+SvelteKit 프로젝트의 라우팅 구조와 기존 SEO 상태를 파악했다:
 
 ```bash
 src/routes/
@@ -107,7 +107,7 @@ src/routes/
 
 #### 일본어 키워드 리서치
 
-B2B SaaS 특성상 롱테일 키워드와 의도 파악이 중요합니다:
+B2B SaaS 특성상 롱테일 키워드와 의도 파악이 중요하다:
 
 <strong>핵심 키워드 예시</strong>:
 - 상업적 의도: "経費精算システム 比較" (검색량: 1,300/월, 경쟁도: 중)
@@ -139,7 +139,7 @@ B2B SaaS 특성상 롱테일 키워드와 의도 파악이 중요합니다:
 
 #### 재사용 가능한 SEO 컴포넌트 설계
 
-모든 페이지에서 일관된 SEO를 유지하기 위해 컴포넌트화했습니다:
+모든 페이지에서 일관된 SEO를 유지하기 위해 컴포넌트화했다:
 
 **`lib/components/SEO.svelte`**:
 
@@ -218,7 +218,7 @@ B2B SaaS 특성상 롱테일 키워드와 의도 파악이 중요합니다:
 
 #### 구조화 데이터 구현
 
-Schema.org 표준을 따르는 JSON-LD 형식으로 구현했습니다:
+Schema.org 표준을 따르는 JSON-LD 형식으로 구현했다:
 
 **`lib/components/StructuredData.svelte`**:
 
@@ -350,7 +350,7 @@ const faqSchema = {
 
 #### 동적 사이트맵 자동 생성
 
-유지보수가 필요 없는 사이트맵 시스템을 구현했습니다:
+유지보수가 필요 없는 사이트맵 시스템을 구현했다:
 
 **`src/routes/sitemap.xml/+server.ts`**:
 
@@ -537,7 +537,7 @@ Crawl-delay: 1
 
 ### AEO란 무엇인가?
 
-<strong>AEO (Answer Engine Optimization)</strong>는 AI 검색 엔진(ChatGPT Search, Perplexity, Google AI Overviews 등)에서 콘텐츠가 답변 소스로 선택되도록 최적화하는 전략입니다. 실제 B2B SaaS 프로젝트에 AEO를 적용한 구체적인 구현 사례는 [AEO 구현기: Agent Effi Flow 실전 적용](/ko/blog/ko/aeo-implementation-experience)에서 확인할 수 있습니다.
+<strong>AEO (Answer Engine Optimization)</strong>는 AI 검색 엔진(ChatGPT Search, Perplexity, Google AI Overviews 등)에서 콘텐츠가 답변 소스로 선택되도록 최적화하는 전략이다. 실제 B2B SaaS 프로젝트에 AEO를 적용한 구체적인 구현 사례는 [AEO 구현기: Agent Effi Flow 실전 적용](/ko/blog/ko/aeo-implementation-experience)에서 확인할 수 있다.
 
 #### SEO vs AEO: 핵심 차이점
 
@@ -557,7 +557,7 @@ Crawl-delay: 1
 - 하지만 <strong>조기 AEO 도입자</strong>는 50〜200% 트래픽 성장
 - 2026년까지 검색의 <strong>50%가 AI 모드</strong>로 전환 예상
 
-AI 기반 사이트 검색 기능을 직접 구현하고 싶다면, [Vertex AI Search로 사이트 내 검색 구현하기](/ko/blog/ko/vertex-ai-search-site-implementation)에서 Cloud Functions와 자동화 배포 방법을 다루고 있습니다.
+AI 기반 사이트 검색 기능을 직접 구현하고 싶다면, [Vertex AI Search로 사이트 내 검색 구현하기](/ko/blog/ko/vertex-ai-search-site-implementation)에서 Cloud Functions와 자동화 배포 방법을 다루고 있다.
 
 <strong>주요 플랫폼별 특성</strong>:
 
@@ -585,7 +585,7 @@ AI 기반 사이트 검색 기능을 직접 구현하고 싶다면, [Vertex AI S
 
 #### 1. E-E-A-T 강화 (경험, 전문성, 권위성, 신뢰성)
 
-<strong>Google의 E-E-A-T는 이제 랭킹 팩터</strong>입니다 (단순 가이드라인이 아님):
+<strong>Google의 E-E-A-T는 이제 랭킹 팩터</strong>다 (단순 가이드라인이 아님):
 
 <strong>Experience (경험)</strong>:
 ```markdown
@@ -649,7 +649,7 @@ AI 기반 사이트 검색 기능을 직접 구현하고 싶다면, [Vertex AI S
 
 #### 2. 종합적 답변 콘텐츠 (Comprehensive Content)
 
-AI는 짧고 단편적인 콘텐츠보다 <strong>종합적이고 깊이 있는 가이드</strong>를 선호합니다.
+AI는 짧고 단편적인 콘텐츠보다 <strong>종합적이고 깊이 있는 가이드</strong>를 선호한다.
 
 <strong>최적 길이</strong>:
 - 일반 블로그: 1,500〜2,000 단어
@@ -711,7 +711,7 @@ AI는 짧고 단편적인 콘텐츠보다 <strong>종합적이고 깊이 있는 
 
 #### 3. Position Zero 최적화 (Featured Snippet)
 
-<strong>Position Zero</strong>는 검색 결과 최상단에 표시되는 요약 답변입니다. Google뿐만 아니라 음성 검색에서도 읽혀집니다.
+<strong>Position Zero</strong>는 검색 결과 최상단에 표시되는 요약 답변이다. Google뿐만 아니라 음성 검색에서도 읽혀진다.
 
 <strong>Featured Snippet 유형</strong>:
 
@@ -771,7 +771,7 @@ const faqSchema = {
 
 #### 4. 멀티 플랫폼 최적화
 
-각 AI 플랫폼은 고유한 알고리즘과 선호도를 가지고 있습니다:
+각 AI 플랫폼은 고유한 알고리즘과 선호도를 가지고 있다:
 
 <strong>Google (E-E-A-T + 구조화 데이터)</strong>:
 - ✓ 저자 바이오 추가
@@ -799,7 +799,7 @@ const faqSchema = {
 
 ### Perplexity 최적화: B2B SaaS의 골드마인
 
-Perplexity는 B2B 의사결정자들이 가장 많이 사용하는 AI 검색 엔진입니다. 특히 기술 평가 단계에서 선호됩니다.
+Perplexity는 B2B 의사결정자들이 가장 많이 사용하는 AI 검색 엔진이다. 특히 기술 평가 단계에서 선호된다.
 
 #### 왜 Perplexity인가?
 
@@ -812,7 +812,7 @@ Perplexity는 B2B 의사결정자들이 가장 많이 사용하는 AI 검색 엔
 
 <strong>1. 연구 등급 출처 우선</strong>:
 
-Perplexity는 다음 출처를 선호합니다:
+Perplexity는 다음 출처를 선호한다:
 - 학술 논문 (arXiv, IEEE)
 - 업계 리포트 (Gartner, Forrester)
 - 기술 블로그 (Hacker News 상위 랭크)
@@ -843,7 +843,7 @@ Perplexity는 다음 출처를 선호합니다:
 
 <strong>2. 제3자 인용 > 백링크</strong>:
 
-전통적인 SEO는 백링크에 집중하지만, Perplexity는 <strong>얼마나 많은 제3자가 당신을 인용하는가</strong>를 중시합니다.
+전통적인 SEO는 백링크에 집중하지만, Perplexity는 <strong>얼마나 많은 제3자가 당신을 인용하는가</strong>를 중시한다.
 
 <strong>PR 아웃리치 전략</strong>:
 ```
@@ -862,7 +862,7 @@ Perplexity는 다음 출처를 선호합니다:
 
 <strong>3. 원본 연구 발행</strong>:
 
-독자적인 데이터는 Perplexity에서 가장 높이 평가됩니다:
+독자적인 데이터는 Perplexity에서 가장 높이 평가된다:
 
 ```markdown
 # 2025 경비 정산 자동화 트렌드 리포트
@@ -1168,7 +1168,7 @@ const weeklyKPIs = {
 
 #### 1. 오케스트레이션형 접근
 
-복수 전문 에이전트를 병렬로 실행하여 효율성을 극대화했습니다. 이런 AI 에이전트 기반 자동화 워크플로우를 콘텐츠 제작에 적용하는 방법은 [LLM과 Claude Code를 활용한 블로그 자동화](/ko/blog/ko/llm-blog-automation)에서 자세히 설명합니다.
+복수 전문 에이전트를 병렬로 실행하여 효율성을 극대화했다. 이런 AI 에이전트 기반 자동화 워크플로우를 콘텐츠 제작에 적용하는 방법은 [LLM과 Claude Code를 활용한 블로그 자동화](/ko/blog/ko/llm-blog-automation)에서 자세히 설명한다.
 
 ```
 Day 1:
@@ -1499,7 +1499,7 @@ describe('SEO Component', () => {
 
 ### Search Everywhere Optimization (SEO)
 
-전통적인 SEO는 <strong>Search Everywhere Optimization</strong>으로 진화하고 있습니다.
+전통적인 SEO는 <strong>Search Everywhere Optimization</strong>으로 진화하고 있다.
 
 <strong>플랫폼별 최적화</strong>:
 
@@ -1535,7 +1535,7 @@ graph TD
 
 ### Generative Engine Optimization (GEO)
 
-<strong>GEO</strong>는 생성형 AI 엔진(ChatGPT, Gemini)에 최적화하는 새로운 분야입니다.
+<strong>GEO</strong>는 생성형 AI 엔진(ChatGPT, Gemini)에 최적화하는 새로운 분야다.
 
 <strong>핵심 원칙</strong>:
 1. <strong>인용 가능성</strong>: AI가 인용하기 쉬운 형식

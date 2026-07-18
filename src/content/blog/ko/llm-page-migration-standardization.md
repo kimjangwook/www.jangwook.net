@@ -59,21 +59,21 @@ relatedPosts:
 
 ## 개요
 
-웹사이트 리뉴얼이나 프레임워크 마이그레이션은 많은 개발팀이 겪는 큰 도전 과제입니다. 특히 50〜500페이지 이상의 중대규모 사이트를 이행하는 경우, 수작업으로는 수백 시간이 소요되며 일관성 유지와 테스트 커버리지 확보가 어렵습니다.
+웹사이트 리뉴얼이나 프레임워크 마이그레이션은 많은 개발팀이 겪는 큰 도전 과제다. 특히 50〜500페이지 이상의 중대규모 사이트를 이행하는 경우, 수작업으로는 수백 시간이 소요되며 일관성 유지와 테스트 커버리지 확보가 어렵다.
 
-<strong>2024년부터 2025년까지 Google, Airbnb, Zalando 같은 글로벌 기업들은 LLM(Large Language Model)을 활용한 대규모 코드 마이그레이션에 성공</strong>했습니다. 이들의 사례를 통해 다음을 알 수 있습니다:
+<strong>2024년부터 2025년까지 Google, Airbnb, Zalando 같은 글로벌 기업들은 LLM(Large Language Model)을 활용한 대규모 코드 마이그레이션에 성공</strong>했다. 이들의 사례를 통해 다음을 알 수 있다:
 
 - <strong>자동화 가능 범위</strong>: 전체 마이그레이션 작업의 70〜80%
 - <strong>시간 절약</strong>: 수백 시간의 개발 시간 단축
 - <strong>품질 향상</strong>: 일관된 코드 패턴 및 자동 테스트 생성
 
-이 글에서는 Claude Code를 중심으로 한 LLM 기반 웹페이지 이행 작업의 표준화된 워크플로우를 소개합니다. 웹 컴포넌트 파츠 라이브러리, CMS 템플릿 시스템, 그리고 종합적인 테스트 자동화 전략까지 프로덕션 환경에서 검증된 베스트 프랙티스를 다룹니다.
+이 글에서는 Claude Code를 중심으로 한 LLM 기반 웹페이지 이행 작업의 표준화된 워크플로우를 소개한다. 웹 컴포넌트 파츠 라이브러리, CMS 템플릿 시스템, 그리고 종합적인 테스트 자동화 전략까지 프로덕션 환경에서 검증된 베스트 프랙티스를 다룬다.
 
 ## 기존 방식 vs LLM 기반 접근법
 
 ### 기존 트랜스파일러 방식의 한계
 
-전통적인 코드 마이그레이션은 구문 수준의 1:1 매핑에 의존합니다. 예를 들어 React 클래스 컴포넌트를 함수형 컴포넌트로 변환하는 도구는 단순히 `class` 키워드를 `function`으로 바꾸는 수준에 그칩니다.
+전통적인 코드 마이그레이션은 구문 수준의 1:1 매핑에 의존한다. 예를 들어 React 클래스 컴포넌트를 함수형 컴포넌트로 변환하는 도구는 단순히 `class` 키워드를 `function`으로 바꾸는 수준에 그친다.
 
 <strong>문제점</strong>:
 - 비즈니스 로직의 맥락을 이해하지 못함
@@ -83,7 +83,7 @@ relatedPosts:
 
 ### LLM 기반 접근법의 장점
 
-LLM은 단순 변환을 넘어 <strong>의미론적 이해와 지능형 리팩토링</strong>을 수행합니다.
+LLM은 단순 변환을 넘어 <strong>의미론적 이해와 지능형 리팩토링</strong>을 수행한다.
 
 | 구분 | 기존 트랜스파일러 | LLM 기반 접근법 |
 |------|----------------|----------------|
@@ -96,7 +96,7 @@ LLM은 단순 변환을 넘어 <strong>의미론적 이해와 지능형 리팩�
 
 #### Google의 대규모 코드 마이그레이션
 
-Google은 2024년 논문 "Migrating Code At Scale With LLMs At Google"에서 LLM 기반 마이그레이션 성과를 공개했습니다.
+Google은 2024년 논문 "Migrating Code At Scale With LLMs At Google"에서 LLM 기반 마이그레이션 성과를 공개했다.
 
 <strong>주요 성과</strong>:
 - 추상 데이터 타입(Abstract Data Type) 리팩토링 자동화
@@ -105,7 +105,7 @@ Google은 2024년 논문 "Migrating Code At Scale With LLMs At Google"에서 LLM
 
 #### Airbnb의 테스트 마이그레이션
 
-Airbnb는 2024년 "Accelerating Large-Scale Test Migration with LLMs" 프로젝트를 통해 React Testing Library로의 대규모 테스트 마이그레이션을 수행했습니다.
+Airbnb는 2024년 "Accelerating Large-Scale Test Migration with LLMs" 프로젝트를 통해 React Testing Library로의 대규모 테스트 마이그레이션을 수행했다.
 
 <strong>결과</strong>:
 - 개발 시간 수백 시간 절약
@@ -114,7 +114,7 @@ Airbnb는 2024년 "Accelerating Large-Scale Test Migration with LLMs" 프로젝�
 
 #### Zalando의 UI 컴포넌트 라이브러리 마이그레이션
 
-Zalando는 2024년 9월 GPT-4o를 활용해 UI 컴포넌트 라이브러리를 마이그레이션했습니다.
+Zalando는 2024년 9월 GPT-4o를 활용해 UI 컴포넌트 라이브러리를 마이그레이션했다.
 
 <strong>특징</strong>:
 - Python + LLM API 기반 자동화
@@ -125,7 +125,7 @@ Zalando는 2024년 9월 GPT-4o를 활용해 UI 컴포넌트 라이브러리를 �
 
 ### 왜 웹 컴포넌트인가?
 
-웹 컴포넌트(Web Components)는 재사용 가능하고 캡슐화된 HTML 요소를 생성하는 웹 표준 기술입니다. 2025년 현재 Chrome, Edge, Safari, Firefox 모두 네이티브 지원하며, <strong>폴리필(Polyfill) 없이 프로덕션 환경에서 사용 가능</strong>합니다.
+웹 컴포넌트(Web Components)는 재사용 가능하고 캡슐화된 HTML 요소를 생성하는 웹 표준 기술이다. 2025년 현재 Chrome, Edge, Safari, Firefox 모두 네이티브 지원하며, <strong>폴리필(Polyfill) 없이 프로덕션 환경에서 사용 가능</strong>한다.
 
 <strong>핵심 기술 3가지</strong>:
 1. <strong>Custom Elements</strong>: 사용자 정의 HTML 태그
@@ -136,7 +136,7 @@ Zalando는 2024년 9월 GPT-4o를 활용해 UI 컴포넌트 라이브러리를 �
 
 #### Lit 3.0 (2024-2025 권장)
 
-Lit는 Google이 개발한 초경량 웹 컴포넌트 프레임워크입니다.
+Lit는 Google이 개발한 초경량 웹 컴포넌트 프레임워크다.
 
 <strong>특징</strong>:
 - 초경량 메모리 사용(4.3MB)
@@ -190,7 +190,7 @@ export class MyCounter extends LitElement {
 
 #### Stencil 4.0
 
-Stencil은 Ionic 팀이 개발한 컴파일러 기반 웹 컴포넌트 프레임워크입니다.
+Stencil은 Ionic 팀이 개발한 컴파일러 기반 웹 컴포넌트 프레임워크다.
 
 <strong>특징</strong>:
 - JSX 템플릿 지원(React 스타일)
@@ -249,7 +249,7 @@ export class MyCounter {
 
 ### Shadow DOM 설계 패턴
 
-Shadow DOM은 스타일과 DOM의 완전한 격리를 제공합니다. 외부 CSS가 컴포넌트 내부에 영향을 주지 않으며, 컴포넌트의 스타일이 외부로 누출되지 않습니다.
+Shadow DOM은 스타일과 DOM의 완전한 격리를 제공한다. 외부 CSS가 컴포넌트 내부에 영향을 주지 않으며, 컴포넌트의 스타일이 외부로 누출되지 않다.
 
 <strong>기본 구조</strong>:
 
@@ -322,11 +322,11 @@ customElements.define('advanced-tooltip', AdvancedTooltip);
 
 ### 정적 사이트 생성기(SSG) 비교
 
-웹페이지 이행 작업에서 SSG는 정적 HTML을 빌드 타임에 생성하므로 <strong>보안, 성능, 비용 면에서 큰 장점</strong>을 제공합니다.
+웹페이지 이행 작업에서 SSG는 정적 HTML을 빌드 타임에 생성하므로 <strong>보안, 성능, 비용 면에서 큰 장점</strong>을 제공한다.
 
 #### Astro 5.14+ (2024-2025)
 
-Astro는 Islands Architecture를 도입해 필요한 부분만 JavaScript를 로드합니다.
+Astro는 Islands Architecture를 도입해 필요한 부분만 JavaScript를 로드한다.
 
 <strong>특징</strong>:
 - Islands Architecture(부분 하이드레이션)
@@ -375,7 +375,7 @@ const { Content } = await post.render();
 
 #### Hugo (Go 기반)
 
-Hugo는 압도적인 빌드 속도가 장점입니다.
+Hugo는 압도적인 빌드 속도가 장점이다.
 
 <strong>특징</strong>:
 - 수천 페이지를 초 단위로 빌드
@@ -394,7 +394,7 @@ Hugo는 압도적인 빌드 속도가 장점입니다.
 
 #### Eleventy (11ty)
 
-Eleventy는 JavaScript 기반의 유연한 SSG입니다.
+Eleventy는 JavaScript 기반의 유연한 SSG다.
 
 <strong>특징</strong>:
 - JavaScript 기반(Node.js)
@@ -464,7 +464,7 @@ import Footer from '../components/Footer.astro';
 
 ### E2E 테스팅: Playwright
 
-<strong>2024-2025년 현재 Playwright가 E2E 테스팅의 사실상 표준</strong>이 되었습니다. Microsoft가 개발하고 적극적으로 유지보수하며, 크로스 브라우저(Chromium, Firefox, WebKit) 지원과 자동 대기 메커니즘으로 안정성이 높습니다. AI Codegen을 활용한 E2E 테스트 작성 방법은 [Playwright + AI 자동화 가이드](/ko/blog/ko/playwright-ai-testing)에서 더 자세히 다룹니다.
+<strong>2024-2025년 현재 Playwright가 E2E 테스팅의 사실상 표준</strong>이 되었다. Microsoft가 개발하고 적극적으로 유지보수하며, 크로스 브라우저(Chromium, Firefox, WebKit) 지원과 자동 대기 메커니즘으로 안정성이 높다. AI Codegen을 활용한 E2E 테스트 작성 방법은 [Playwright + AI 자동화 가이드](/ko/blog/ko/playwright-ai-testing)에서 더 자세히 다룬다.
 
 <strong>장점</strong>:
 - 크로스 브라우저 테스트(Chromium, Firefox, WebKit)
@@ -496,7 +496,7 @@ test('페이지 마이그레이션 후 동작 검증', async ({ page }) => {
 
 ### 링크 체크
 
-깨진 링크는 SEO와 사용자 경험에 악영향을 미칩니다. Playwright로 커스텀 링크 체커를 구현할 수 있습니다.
+깨진 링크는 SEO와 사용자 경험에 악영향을 미친다. Playwright로 커스텀 링크 체커를 구현할 수 있다.
 
 <strong>커스텀 Playwright 링크 체커</strong>:
 
@@ -532,7 +532,7 @@ test('모든 링크 검증', async ({ page }) => {
 
 ### UI 테스팅(Visual Regression)
 
-시각적 회귀 테스팅은 디자인 변경을 감지합니다.
+시각적 회귀 테스팅은 디자인 변경을 감지한다.
 
 <strong>Playwright 네이티브 Visual Testing</strong>:
 
@@ -560,7 +560,7 @@ test('비주얼 회귀 테스트', async ({ page }) => {
 
 ### SEO 체크(Lighthouse)
 
-Lighthouse는 Google의 공식 성능 측정 도구입니다.
+Lighthouse는 Google의 공식 성능 측정 도구다.
 
 <strong>CLI 사용</strong>:
 
@@ -594,7 +594,7 @@ test('Lighthouse 성능 테스트', async ({ page }) => {
 
 ### 접근성(a11y) 체크
 
-<strong>axe-core는 2024-2025년 접근성 테스팅의 표준</strong>입니다. WCAG 2.1/2.2 준수 검사를 자동화합니다.
+<strong>axe-core는 2024-2025년 접근성 테스팅의 표준</strong>이다. WCAG 2.1/2.2 준수 검사를 자동화한다.
 
 <strong>Playwright 통합</strong>:
 
@@ -617,7 +617,7 @@ test('접근성 검사', async ({ page }) => {
 
 ### AEO(Answer Engine Optimization) 체크
 
-AEO는 AI 검색 시대의 새로운 SEO입니다. Schema.org 구조화 데이터가 필수입니다. B2B SaaS 관점에서 LLM 시대 SEO/AEO를 실전 구현한 사례는 [LLM 시대의 SEO/AEO 실전 적용](/ko/blog/ko/llm-seo-aeo-practical-implementation)을 참고하세요.
+AEO는 AI 검색 시대의 새로운 SEO다. Schema.org 구조화 데이터가 필수다. B2B SaaS 관점에서 LLM 시대 SEO/AEO를 실전 구현한 사례는 [LLM 시대의 SEO/AEO 실전 적용](/ko/blog/ko/llm-seo-aeo-practical-implementation)을 참고하면 된다.
 
 <strong>Structured Data 검증</strong>:
 
@@ -696,7 +696,7 @@ export default [
 
 #### Biome.js (ESLint + Prettier 통합 대안)
 
-Biome.js는 <strong>10배 이상 빠른 속도</strong>의 Rust 기반 린터 겸 포매터입니다.
+Biome.js는 <strong>10배 이상 빠른 속도</strong>의 Rust 기반 린터 겸 포매터다.
 
 <strong>설정 예시</strong>:
 
@@ -718,7 +718,7 @@ Biome.js는 <strong>10배 이상 빠른 속도</strong>의 Rust 기반 린터 �
 
 ### LLM 기반 코드 리뷰
 
-GitHub Actions에서 LLM을 활용해 자동 코드 리뷰를 수행할 수 있습니다.
+GitHub Actions에서 LLM을 활용해 자동 코드 리뷰를 수행할 수 있다.
 
 <strong>GitHub Actions 워크플로우</strong>:
 
@@ -1109,15 +1109,15 @@ React 컴포넌트 재사용?
 
 ### 핵심 요약
 
-1. <strong>LLM 기반 마이그레이션</strong>은 단순 변환을 넘어 의미론적 이해와 리팩토링이 가능하며, 2024〜2025년 Google, Airbnb, Zalando 등 주요 기업들이 프로덕션 환경에서 검증했습니다.
+1. <strong>LLM 기반 마이그레이션</strong>은 단순 변환을 넘어 의미론적 이해와 리팩토링이 가능하며, 2024〜2025년 Google, Airbnb, Zalando 등 주요 기업들이 프로덕션 환경에서 검증했다.
 
-2. <strong>웹 컴포넌트</strong>는 Lit과 Stencil이 2025년 표준으로 자리잡았으며, 브라우저 네이티브 지원으로 폴리필이 불필요합니다.
+2. <strong>웹 컴포넌트</strong>는 Lit과 Stencil이 2025년 표준으로 자리잡았으며, 브라우저 네이티브 지원으로 폴리필이 불필요하다.
 
-3. <strong>SSG 선택</strong>은 프로젝트 규모와 요구사항에 따라 달라집니다. Astro는 개발 경험, Hugo는 빌드 속도, 11ty는 유연성에서 각각 강점이 있습니다.
+3. <strong>SSG 선택</strong>은 프로젝트 규모와 요구사항에 따라 달라진다. Astro는 개발 경험, Hugo는 빌드 속도, 11ty는 유연성에서 각각 강점이 있다.
 
-4. <strong>테스트 자동화</strong>는 Playwright가 E2E 테스팅 표준이 되었으며, axe-core가 접근성 테스팅의 사실상 표준입니다.
+4. <strong>테스트 자동화</strong>는 Playwright가 E2E 테스팅 표준이 되었으며, axe-core가 접근성 테스팅의 사실상 표준이다.
 
-5. <strong>AEO 최적화</strong>는 Schema.org 구조화 데이터가 AI 검색 시대의 필수 요소로 부상했습니다.
+5. <strong>AEO 최적화</strong>는 Schema.org 구조화 데이터가 AI 검색 시대의 필수 요소로 부상했다.
 
 ### 실전 적용 로드맵
 
@@ -1143,15 +1143,15 @@ React 컴포넌트 재사용?
 
 ### 베스트 프랙티스
 
-1. <strong>점진적 마이그레이션</strong>: 전체 코드베이스를 한 번에 변환하지 말고 모듈/컴포넌트 단위로 진행하세요.
+1. <strong>점진적 마이그레이션</strong>: 전체 코드베이스를 한 번에 변환하지 말고 모듈/컴포넌트 단위로 진행한다.
 
-2. <strong>하이브리드 접근법</strong>: LLM으로 70〜80% 자동화하고, 인간 개발자가 20〜30% 검토 및 최적화하세요.
+2. <strong>하이브리드 접근법</strong>: LLM으로 70〜80% 자동화하고, 인간 개발자가 20〜30%를 검토·최적화한다.
 
-3. <strong>자동화된 롤백</strong>: Git 커밋 단위로 변경사항을 추적하고, 실패 시 즉시 이전 버전으로 복원하세요.
+3. <strong>자동화된 롤백</strong>: Git 커밋 단위로 변경사항을 추적하고, 실패 시 즉시 이전 버전으로 복원한다.
 
-4. <strong>종합 테스트</strong>: E2E, Visual, A11y, SEO, AEO를 모두 자동화하여 품질을 보장하세요.
+4. <strong>종합 테스트</strong>: E2E, Visual, A11y, SEO, AEO를 모두 자동화해 품질을 보장한다.
 
-5. <strong>문서화</strong>: 마이그레이션 과정과 의사결정을 상세히 문서화하여 팀 지식을 공유하세요.
+5. <strong>문서화</strong>: 마이그레이션 과정과 의사결정을 상세히 문서화해 팀 지식을 공유한다.
 
 ## 참고 자료
 

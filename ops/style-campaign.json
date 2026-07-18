@@ -1442,7 +1442,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-deanonymization-privacy-risk-defense.md",
@@ -1452,7 +1452,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-determinism-temperature-seed-experiment.md",
@@ -1461,7 +1461,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-page-migration-standardization.md",
@@ -1471,7 +1471,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-pm-workflow-automation.md",
@@ -1481,7 +1481,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-seo-aeo-practical-implementation.md",
@@ -1491,7 +1491,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-token-cost-data-format-experiment.md",
@@ -1500,7 +1500,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "local-ai-radio-smart-home.md",
@@ -1510,7 +1510,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "local-llm-cold-start-load-duration-experiment.md",
@@ -1519,7 +1519,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "local-llm-concurrent-requests-num-parallel-experiment.md",
@@ -1528,7 +1528,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "local-llm-prefill-generation-latency-experiment.md",
