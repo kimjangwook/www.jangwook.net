@@ -2301,7 +2301,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "tailwind-layoffs-opensource-ai-crisis.md",
@@ -2311,7 +2311,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "tauri-ios-admob-rewarded-ads.mdx",
@@ -2321,7 +2321,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "tauri-pixijs-ios-game-development.mdx",
@@ -2331,7 +2331,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "terraform-ai-batch-infrastructure.md",
@@ -2341,7 +2341,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "three-week-analytics-2025-11-04.md",
@@ -2350,7 +2350,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "tool-r0-zero-data-agent-training.md",
@@ -2359,7 +2359,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "uv-python-ai-development-setup-guide-2026.md",
@@ -2368,7 +2368,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ux-psychology-frontend-design-skill.md",
@@ -2378,7 +2378,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ux-psychology-implementation-case-study.md",
@@ -2388,7 +2388,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "validate-structured-data-ci-jsonld-2026.md",

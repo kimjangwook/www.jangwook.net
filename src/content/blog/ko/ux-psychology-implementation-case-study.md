@@ -55,15 +55,15 @@ relatedPosts:
 
 ## 개요
 
-UX 심리학 원칙을 실제 웹사이트에 적용하여 사용자 경험을 개선한 사례를 소개합니다. 이번 개선에서는 <strong>Goal Gradient Effect</strong>, <strong>Von Restorff Effect</strong>, <strong>Fitts's Law</strong>, <strong>Doherty Threshold</strong> 등 10가지 핵심 UX 심리학 원칙을 기반으로 컴포넌트를 개선했습니다.
+UX 심리학 원칙을 실제 웹사이트에 적용하여 사용자 경험을 개선한 사례를 소개한다. 이번 개선에서는 <strong>Goal Gradient Effect</strong>, <strong>Von Restorff Effect</strong>, <strong>Fitts's Law</strong>, <strong>Doherty Threshold</strong> 등 10가지 핵심 UX 심리학 원칙을 기반으로 컴포넌트를 개선했다.
 
-각 원칙의 이론적 배경과 Claude Code 스킬 통합 방법은 [UX 심리학으로 프론트엔드 디자인 스킬 강화하기](/ko/blog/ko/ux-psychology-frontend-design-skill)를 먼저 읽어보시면 도움이 됩니다.
+각 원칙의 이론적 배경과 Claude Code 스킬 통합 방법은 [UX 심리학으로 프론트엔드 디자인 스킬 강화하기](/ko/blog/ko/ux-psychology-frontend-design-skill)를 먼저 읽어보시면 도움이 된다.
 
 ## 구현된 UX 개선 사항
 
 ### 1. BlogCard 읽기 시간 계산 개선
 
-기존에는 description 텍스트 길이를 기반으로 읽기 시간을 추정했으나, 이번 개선에서는 <strong>실제 포스트 본문의 단어 수를 빌드 타임에 계산</strong>하여 정확한 읽기 시간을 표시합니다.
+기존에는 description 텍스트 길이를 기반으로 읽기 시간을 추정했으나, 이번 개선에서는 <strong>실제 포스트 본문의 단어 수를 빌드 타임에 계산</strong>하여 정확한 읽기 시간을 표시한다.
 
 ```typescript
 // src/lib/content.ts
@@ -95,13 +95,13 @@ export function calculateReadingTime(content: string): number {
 }
 ```
 
-<strong>적용된 UX 원칙</strong>: Cognitive Load Reduction - 사용자가 콘텐츠 소비에 필요한 시간을 미리 파악하여 의사결정을 돕습니다.
+<strong>적용된 UX 원칙</strong>: Cognitive Load Reduction - 사용자가 콘텐츠 소비에 필요한 시간을 미리 파악하여 의사결정을 돕다.
 
 ![BlogCard with reading time badge](../../../assets/blog/en-blog-list.webp)
 
 ### 2. 카드 호버 효과 (Card Lift)
 
-BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하여 현재 상호작용 중인 요소를 명확히 합니다.
+BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하여 현재 상호작용 중인 요소를 명확히 한다.
 
 ```css
 /* src/styles/global.css */
@@ -116,11 +116,11 @@ BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하�
 }
 ```
 
-<strong>적용된 UX 원칙</strong>: Von Restorff Effect - 호버된 카드가 다른 카드들 사이에서 시각적으로 두드러지게 표시됩니다.
+<strong>적용된 UX 원칙</strong>: Von Restorff Effect - 호버된 카드가 다른 카드들 사이에서 시각적으로 두드러지게 표시된다.
 
 ### 3. 태그 필 (Tag Pills)
 
-블로그 카드의 태그를 시각적으로 그룹화하여 표시합니다.
+블로그 카드의 태그를 시각적으로 그룹화하여 표시한다.
 
 ```css
 .tag-pill {
@@ -134,11 +134,11 @@ BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하�
 }
 ```
 
-<strong>적용된 UX 원칙</strong>: Law of Similarity - 유사한 스타일의 태그들이 시각적으로 그룹화되어 인식됩니다.
+<strong>적용된 UX 원칙</strong>: Law of Similarity - 유사한 스타일의 태그들이 시각적으로 그룹화되어 인식된다.
 
 ### 4. 읽기 진행 표시줄 (Reading Progress)
 
-블로그 포스트 상단에 고정된 진행 표시줄로 현재 읽기 진행률을 표시합니다.
+블로그 포스트 상단에 고정된 진행 표시줄로 현재 읽기 진행률을 표시한다.
 
 ```astro
 <!-- src/components/ReadingProgress.astro -->
@@ -174,7 +174,7 @@ BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하�
 
 ### 5. Back to Top 버튼
 
-긴 페이지에서 빠르게 상단으로 이동할 수 있는 버튼입니다.
+긴 페이지에서 빠르게 상단으로 이동할 수 있는 버튼이다.
 
 ```astro
 <!-- src/components/BackToTop.astro -->
@@ -214,7 +214,7 @@ BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하�
 
 ### 6. 터치 타겟 최적화
 
-모바일 사용자를 위해 모든 인터랙티브 요소의 터치 영역을 최소 44x44px로 확보했습니다.
+모바일 사용자를 위해 모든 인터랙티브 요소의 터치 영역을 최소 44x44px로 확보했다.
 
 ```css
 .touch-target {
@@ -223,7 +223,7 @@ BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하�
 }
 ```
 
-<strong>적용된 UX 원칙</strong>: Fitts's Law - 큰 타겟은 더 빠르고 정확하게 클릭/터치할 수 있습니다.
+<strong>적용된 UX 원칙</strong>: Fitts's Law - 큰 타겟은 더 빠르고 정확하게 클릭/터치할 수 있다.
 
 ## 구현 결과 스크린샷
 
@@ -231,19 +231,19 @@ BlogCard에 호버 시 <strong>살짝 떠오르는 효과</strong>를 적용하�
 
 ![Home page with blog cards](../../../assets/blog/en-home.webp)
 
-BlogCard에 읽기 시간 뱃지와 태그 필이 적용된 모습입니다. 카드 호버 시 lift 효과가 나타납니다.
+BlogCard에 읽기 시간 뱃지와 태그 필이 적용된 모습이다. 카드 호버 시 lift 효과가 나타난다.
 
 ### 블로그 포스트 페이지
 
 ![Blog post with reading progress](../../../assets/blog/en-blog-post.webp)
 
-상단에 읽기 진행 표시줄이 고정되어 있으며, 스크롤에 따라 진행률이 업데이트됩니다.
+상단에 읽기 진행 표시줄이 고정되어 있으며, 스크롤에 따라 진행률이 업데이트된다.
 
 ### 포스트 하단 영역
 
 ![Blog post bottom with back to top](../../../assets/blog/en-blog-post-bottom.webp)
 
-포스트를 끝까지 읽으면 읽기 진행 표시줄이 녹색으로 변하고, Back to Top 버튼이 나타납니다.
+포스트를 끝까지 읽으면 읽기 진행 표시줄이 녹색으로 변하고, Back to Top 버튼이 나타난다.
 
 ## 적용된 UX 심리학 원칙 요약
 
@@ -270,9 +270,9 @@ npm run build
 
 ## 결론
 
-UX 심리학 원칙을 실제 코드로 구현함으로써 사용자 경험을 체계적으로 개선할 수 있습니다. 특히 <strong>읽기 시간 정확도 개선</strong>, <strong>카드 호버 효과</strong>, <strong>진행 표시줄</strong> 등은 비교적 간단한 구현으로 큰 UX 향상을 가져옵니다.
+UX 심리학 원칙을 실제 코드로 구현함으로써 사용자 경험을 체계적으로 개선할 수 있다. 특히 <strong>읽기 시간 정확도 개선</strong>, <strong>카드 호버 효과</strong>, <strong>진행 표시줄</strong> 등은 비교적 간단한 구현으로 큰 UX 향상을 가져온다.
 
-다음 단계로는 실제 사용자 데이터(체류 시간, 완독률, 클릭률)를 분석하여 개선 효과를 정량적으로 측정할 예정입니다. SEO와 AEO 관점에서의 최적화 사례는 [LLM SEO·AEO 실전 구현 가이드](/ko/blog/ko/llm-seo-aeo-practical-implementation)에서 확인하세요.
+다음 단계로는 실제 사용자 데이터(체류 시간, 완독률, 클릭률)를 분석하여 개선 효과를 정량적으로 측정할 예정이다. SEO와 AEO 관점에서의 최적화 사례는 [LLM SEO·AEO 실전 구현 가이드](/ko/blog/ko/llm-seo-aeo-practical-implementation)에서 확인하면 된다.
 
 ## 참고 자료
 

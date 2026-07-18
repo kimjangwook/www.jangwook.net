@@ -47,9 +47,9 @@ import screenshot04 from '../../../assets/portfolio/shadow-dash/shadow-dash-04_i
 
 ## 공식 플러그인이 없는 상태에서 시작하기
 
-Shadow Dash를 App Store에 올리고 나니 다음 숙제는 수익화였습니다. 보상형 광고를 붙이려고 Tauri 플러그인 생태계를 뒤졌는데, AdMob을 다루는 공식 플러그인이 하나도 없었습니다.
+Shadow Dash를 App Store에 올리고 나니 다음 숙제는 수익화였다. 보상형 광고를 붙이려고 Tauri 플러그인 생태계를 뒤졌는데, AdMob을 다루는 공식 플러그인이 하나도 없었다.
 
-결국 **GoogleMobileAds SDK를 감싸는 Swift 플러그인을 직접 만들어야** 했습니다. 아래 내용은 그 과정에서 막혔던 지점과 해결 코드를 순서대로 정리한 것입니다. Tauri CLI 업그레이드부터 권한 설정, 링커 에러까지 실제로 부딪힌 순서 그대로 따라갑니다.
+결국 **GoogleMobileAds SDK를 감싸는 Swift 플러그인을 직접 만들어야** 했다. 아래 내용은 그 과정에서 막혔던 지점과 해결 코드를 순서대로 정리한 것이다. Tauri CLI 업그레이드부터 권한 설정, 링커 에러까지 실제로 부딪힌 순서 그대로 따라간다.
 
 > 이 글은 [Tauri + PixiJS로 iOS 게임 개발](/ko/blog/ko/tauri-pixijs-ios-game-development) 포스트의 후속편입니다. Shadow Dash 게임에 광고를 연동한 실제 경험을 바탕으로 작성했습니다.
 
@@ -67,7 +67,7 @@ Shadow Dash를 App Store에 올리고 나니 다음 숙제는 수익화였습니
 
 ### 보상형 광고를 선택한 이유
 
-Shadow Dash에서는 **컨티뉴 시스템**에 보상형 광고를 적용했습니다:
+Shadow Dash에서는 **컨티뉴 시스템**에 보상형 광고를 적용했다:
 
 ```mermaid
 graph LR
@@ -76,29 +76,29 @@ graph LR
     C --> D[게임 재개]
 ```
 
-사용자가 **자발적으로** 광고를 시청하고 보상(게임 계속)을 받는 구조로, 사용자 경험을 해치지 않습니다.
+사용자가 **자발적으로** 광고를 시청하고 보상(게임 계속)을 받는 구조로, 사용자 경험을 해치지 않다.
 
 ## 리워드 광고가 맞는 게임, 맞지 않는 게임
 
-광고 SDK를 붙이기 전에 보상형 광고가 내 게임에 어울리는지부터 따져봐야 합니다. 무작정 넣으면 수익도 안 나고 리뷰만 나빠집니다.
+광고 SDK를 붙이기 전에 보상형 광고가 내 게임에 어울리는지부터 따져봐야 한다. 무작정 넣으면 수익도 안 나고 리뷰만 나빠진다.
 
 **리워드 광고가 잘 맞는 경우:**
 
-- 짧은 세션을 반복하는 아케이드/캐주얼 게임. Shadow Dash처럼 게임오버가 자주 발생하고, "한 번 더"라는 욕구가 강한 구조가 이상적입니다.
+- 짧은 세션을 반복하는 아케이드/캐주얼 게임. Shadow Dash처럼 게임오버가 자주 발생하고, "한 번 더"라는 욕구가 강한 구조가 이상적이다.
 - 컨티뉴, 코인 2배, 힌트 공개처럼 광고 시청에 대한 보상이 명확하고 즉각적인 경우.
-- 무과금 유저 비중이 높아 인앱 결제만으로는 수익이 어려운 개인 개발자 앱. [개인 개발자의 AI SaaS 수익화 여정](/ko/blog/ko/individual-developer-ai-saas-journey)에서 다룬 것처럼, 작은 앱일수록 진입 장벽 없는 수익원이 중요합니다.
+- 무과금 유저 비중이 높아 인앱 결제만으로는 수익이 어려운 개인 개발자 앱. [개인 개발자의 AI SaaS 수익화 여정](/ko/blog/ko/individual-developer-ai-saas-journey)에서 다룬 것처럼, 작은 앱일수록 진입 장벽 없는 수익원이 중요하다.
 
 **피하는 게 나은 경우:**
 
-- 몰입형 내러티브 게임이나 결제 의향이 높은 코어 게임. 전면 광고든 보상형이든 광고가 몰입을 끊으면 오히려 이탈을 부릅니다.
-- DAU가 수백 명 수준인 초기 앱. eCPM이 아무리 높아도 노출 수가 적으면 의미 있는 수익이 나지 않습니다. 이 경우엔 광고 연동보다 유저 확보가 먼저입니다.
-- 광고 SDK가 게임 용량과 빌드 복잡도를 키우는 게 부담되는 미니멀 프로젝트. 광고로 버는 돈보다 유지보수 비용이 클 수 있습니다. AI 도구를 쓰는 프로젝트라면 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 다룬 비용 대비 효과 관점을 그대로 적용해 판단하면 좋습니다.
+- 몰입형 내러티브 게임이나 결제 의향이 높은 코어 게임. 전면 광고든 보상형이든 광고가 몰입을 끊으면 오히려 이탈을 부른다.
+- DAU가 수백 명 수준인 초기 앱. eCPM이 아무리 높아도 노출 수가 적으면 의미 있는 수익이 나지 않다. 이 경우엔 광고 연동보다 유저 확보가 먼저다.
+- 광고 SDK가 게임 용량과 빌드 복잡도를 키우는 게 부담되는 미니멀 프로젝트. 광고로 버는 돈보다 유지보수 비용이 클 수 있다. AI 도구를 쓰는 프로젝트라면 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 다룬 비용 대비 효과 관점을 그대로 적용해 판단하면 좋다.
 
-정리하면, **세션이 짧고 재시도 동기가 강한 게임**에 보상형 광고가 가장 잘 맞습니다. Shadow Dash의 구조와 비슷한 게임을 만들고 있다면 [Tauri + PixiJS iOS 게임 개발](/ko/blog/ko/tauri-pixijs-ios-game-development) 글에서 게임 루프 설계부터 확인해보세요.
+정리하면, **세션이 짧고 재시도 동기가 강한 게임**에 보상형 광고가 가장 잘 맞다. Shadow Dash의 구조와 비슷한 게임을 만들고 있다면 [Tauri + PixiJS iOS 게임 개발](/ko/blog/ko/tauri-pixijs-ios-game-development) 글에서 게임 루프 설계부터 확인해보면 된다.
 
 ### 광고 SDK 선택 과정
 
-Tauri 앱에서 사용할 수 있는 광고 SDK를 검토했습니다:
+Tauri 앱에서 사용할 수 있는 광고 SDK를 검토했다:
 
 | SDK | 장점 | 단점 | 채택 여부 |
 |-----|------|------|----------|
@@ -127,7 +127,7 @@ AdMob과 AppLixir의 성능을 비교하면:
 | 연동 난이도 | 높음 (네이티브 필요) | 낮음 (JS SDK) |
 | 진입 장벽 | 없음 | DAU 5,000명 이상 |
 
-**결론**: 네이티브 플러그인 개발이 필요하지만, AdMob은 진입 장벽이 없고 높은 eCPM과 Fill Rate를 제공합니다.
+**결론**: 네이티브 플러그인 개발이 필요하지만, AdMob은 진입 장벽이 없고 높은 eCPM과 Fill Rate를 제공한다.
 
 ---
 
@@ -135,7 +135,7 @@ AdMob과 AppLixir의 성능을 비교하면:
 
 ### XCFramework 지원 필요
 
-Tauri v2에서 iOS 플러그인을 개발하려면 Swift Package Manager(SPM)를 사용해야 합니다. GoogleMobileAds SDK처럼 외부 프레임워크 의존성이 필요한 플러그인을 만들려면 **XCFramework 지원**이 필요합니다.
+Tauri v2에서 iOS 플러그인을 개발하려면 Swift Package Manager(SPM)를 사용해야 한다. GoogleMobileAds SDK처럼 외부 프레임워크 의존성이 필요한 플러그인을 만들려면 **XCFramework 지원**이 필요하다.
 
 ### Tauri CLI 2.9.6+ 업그레이드
 
@@ -150,7 +150,7 @@ cargo tauri --version
 
 ### --ios-framework 옵션
 
-플러그인 생성 시 iOS 프레임워크 타입을 지정할 수 있습니다:
+플러그인 생성 시 iOS 프레임워크 타입을 지정할 수 있다:
 
 ```bash
 # Xcode 프로젝트 방식 (SPM 의존성 추가 용이) - 권장
@@ -165,7 +165,7 @@ cargo tauri plugin new admob --ios --ios-framework xcframework
 | `xcode` | Xcode 프로젝트 생성 | SPM으로 의존성 추가 용이 | 프로젝트 파일 관리 필요 |
 | `xcframework` | XCFramework 생성 | 배포 용이 | 외부 의존성 추가 복잡 |
 
-**AdMob 플러그인에는 `xcode` 옵션 권장**: GoogleMobileAds SDK를 SPM으로 쉽게 추가할 수 있습니다.
+**AdMob 플러그인에는 `xcode` 옵션 권장**: GoogleMobileAds SDK를 SPM으로 쉽게 추가할 수 있다.
 
 ---
 
@@ -376,7 +376,7 @@ func initPlugin() -> Plugin {
 
 ### 핵심 포인트
 
-1. **`@objc` 어노테이션**: Rust에서 호출하려면 Objective-C 런타임에 노출해야 합니다
+1. **`@objc` 어노테이션**: Rust에서 호출하려면 Objective-C 런타임에 노출해야 한다
 2. **`pendingInvoke` 패턴**: 비동기 광고 콜백을 Tauri의 동기 invoke 패턴에 맞추기 위해 사용
 3. **`GADFullScreenContentDelegate`**: 광고 닫힘/에러 이벤트 처리
 4. **`@_cdecl("init_plugin_admob")`**: Rust에서 플러그인을 로드하기 위한 C 함수 내보내기
@@ -496,7 +496,7 @@ fn main() {
 }
 ```
 
-**주의**: `#[cfg(target_os = "ios")]`는 build.rs에서 작동하지 않습니다. build.rs는 **호스트 머신**(macOS)에서 실행되므로, `std::env::var("TARGET")`으로 타겟을 확인해야 합니다.
+**주의**: `#[cfg(target_os = "ios")]`는 build.rs에서 작동하지 않다. build.rs는 **호스트 머신**(macOS)에서 실행되므로, `std::env::var("TARGET")`으로 타겟을 확인해야 한다.
 
 ---
 
@@ -696,7 +696,7 @@ async function handleWatchAd() {
 
 ### Swift 타입 에러: "cannot find type 'RewardedAd' in scope"
 
-**원인**: GoogleMobileAds SDK는 Objective-C 기반으로, Swift에서 사용할 때 `GAD` 접두사가 필요합니다.
+**원인**: GoogleMobileAds SDK는 Objective-C 기반으로, Swift에서 사용할 때 `GAD` 접두사가 필요하다.
 
 ```swift
 // ❌ 잘못된 코드
@@ -817,15 +817,15 @@ graph TD
 
 ## Shadow Dash 다운로드
 
-이 글에서 다룬 기술로 개발한 **Shadow Dash**를 직접 플레이해보세요!
+이 글에서 다룬 기술로 개발한 **Shadow Dash**를 직접 플레이해볼 수 있다.
 
 <a href="https://apps.apple.com/jp/app/shadow-dash/id6757754262" target="_blank" rel="noopener noreferrer">
   <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;" />
 </a>
 
-**피드백 환영합니다!** 앱을 플레이하시고 개선점이나 버그가 있다면 App Store 리뷰나 이메일로 알려주세요.
+**피드백을 환영한다.** 앱을 써보고 개선점이나 버그가 있다면 App Store 리뷰나 이메일로 알려주면 좋겠다.
 
-> 📱 **Shadow Dash 상세 정보**: [포트폴리오 페이지](/ko/portfolio/shadow-dash)에서 게임의 핵심 메커니즘과 더 많은 스크린샷을 확인하세요.
+> **Shadow Dash 상세 정보**: [포트폴리오 페이지](/ko/portfolio/shadow-dash)에서 게임의 핵심 메커니즘과 더 많은 스크린샷을 확인하세요.
 
 ## 참고 자료
 

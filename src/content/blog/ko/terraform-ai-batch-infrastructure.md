@@ -60,9 +60,9 @@ relatedPosts:
 
 ## 개요
 
-AI 시스템을 운영 환경에 배포할 때 가장 큰 고민 중 하나는 <strong>인프라 비용</strong>입니다. 특히 배치 처리 특성의 AI 워크로드는 상시 서버가 필요 없지만, 작업 실행 시에는 충분한 컴퓨팅 리소스가 필요합니다.
+AI 시스템을 운영 환경에 배포할 때 가장 큰 고민 중 하나는 <strong>인프라 비용</strong>이다. 특히 배치 처리 특성의 AI 워크로드는 상시 서버가 필요 없지만, 작업 실행 시에는 충분한 컴퓨팅 리소스가 필요하다.
 
-이 글에서는 실제 프로젝트에서 구축한 <strong>서버리스 AI 배치 시스템</strong>의 아키텍처를 분석하고, Terraform을 활용한 인프라 관리의 장점을 살펴봅니다.
+이 글에서는 실제 프로젝트에서 구축한 <strong>서버리스 AI 배치 시스템</strong>의 아키텍처를 분석하고, Terraform을 활용한 인프라 관리의 장점을 살펴본다.
 
 ## 아키텍처 설계
 
@@ -95,7 +95,7 @@ graph TD
 
 ### 1. LLM과의 뛰어난 친화성
 
-Terraform의 HCL(HashiCorp Configuration Language)은 <strong>선언적이고 구조화된 문법</strong>을 가지고 있어 LLM이 코드를 생성하고 이해하기 매우 쉽습니다.
+Terraform의 HCL(HashiCorp Configuration Language)은 <strong>선언적이고 구조화된 문법</strong>을 가지고 있어 LLM이 코드를 생성하고 이해하기 매우 쉽다.
 
 ```hcl
 # LLM이 생성하기 쉬운 명확한 구조
@@ -115,11 +115,11 @@ resource "aws_lambda_function" "api_handler" {
 }
 ```
 
-2025년 현재, [Claude](/ko/blog/ko/anthropic-code-execution-mcp)나 GPT-4 같은 LLM들은 Terraform 코드 생성에서 <strong>거의 프로덕션 수준</strong>의 결과물을 만들어냅니다. 자연어로 요구사항을 설명하면 완성도 높은 IaC 설정을 얻을 수 있습니다.
+2025년 현재, [Claude](/ko/blog/ko/anthropic-code-execution-mcp)나 GPT-4 같은 LLM들은 Terraform 코드 생성에서 <strong>거의 프로덕션 수준</strong>의 결과물을 만들어낸다. 자연어로 요구사항을 설명하면 완성도 높은 IaC 설정을 얻을 수 있다.
 
 ### 2. 인프라 상태 관리
 
-Terraform의 State 파일은 실제 인프라와 코드 사이의 <strong>정합성을 보장</strong>합니다.
+Terraform의 State 파일은 실제 인프라와 코드 사이의 <strong>정합성을 보장</strong>한다.
 
 ```bash
 # 현재 인프라 상태 확인
@@ -134,7 +134,7 @@ terraform apply
 
 ### 3. 재현 가능한 환경
 
-동일한 Terraform 코드로 <strong>개발/스테이징/프로덕션</strong> 환경을 일관되게 구축할 수 있습니다.
+동일한 Terraform 코드로 <strong>개발/스테이징/프로덕션</strong> 환경을 일관되게 구축할 수 있다.
 
 ```hcl
 # variables.tf
@@ -155,7 +155,7 @@ variable "allowed_ips" {
 
 ### 배포 자동화
 
-복잡한 배포 과정을 단일 스크립트로 추상화합니다. [GitHub Actions와 조합](/ko/blog/ko/github-actions-claude-code-ci-automation)하면 완전 자동화된 CI/CD 파이프라인을 구성할 수 있습니다.
+복잡한 배포 과정을 단일 스크립트로 추상화한다. [GitHub Actions와 조합](/ko/blog/ko/github-actions-claude-code-ci-automation)하면 완전 자동화된 CI/CD 파이프라인을 구성할 수 있다.
 
 ```bash
 #!/bin/bash
@@ -214,7 +214,7 @@ aws dynamodb scan --table-name ai-batch-jobs \
 | 월 1,000 작업 | ~$150 | ~$5 |
 | 월 100 작업 | ~$150 | ~$1 |
 
-배치 작업 특성상 <strong>사용한 만큼만 과금</strong>되는 서버리스 모델이 압도적으로 유리합니다.
+배치 작업 특성상 <strong>사용한 만큼만 과금</strong>되는 서버리스 모델이 압도적으로 유리하다.
 
 ### Fargate Spot 활용
 
@@ -230,7 +230,7 @@ resource "aws_ecs_service" "worker" {
 }
 ```
 
-Fargate Spot을 사용하면 <strong>최대 70% 비용 절감</strong>이 가능합니다. AI 배치 작업은 대부분 재시도가 가능하므로 Spot 인스턴스에 적합합니다.
+Fargate Spot을 사용하면 <strong>최대 70% 비용 절감</strong>이 가능하다. AI 배치 작업은 대부분 재시도가 가능하므로 Spot 인스턴스에 적합하다.
 
 ## 알림 및 Notion 연계
 
@@ -273,7 +273,7 @@ def notify_job_completion(job_id, status, result_url=None):
 
 ### Notion 데이터베이스 연동
 
-작업 결과를 Notion 데이터베이스에 자동 기록하여 <strong>프로젝트 관리와 통합</strong>합니다.
+작업 결과를 Notion 데이터베이스에 자동 기록하여 <strong>프로젝트 관리와 통합</strong>한다.
 
 ```python
 from notion_client import Client
@@ -311,7 +311,7 @@ workers/
 4. Lambda 큐 매핑 업데이트
 5. `./deploy.sh` 실행
 
-Terraform의 모듈화 덕분에 <strong>새로운 서비스 추가가 매우 간단</strong>합니다. 각 워커에 [타입 안전한 AI 에이전트 로직](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 적용하면 더욱 안정적인 시스템을 구축할 수 있습니다.
+Terraform의 모듈화 덕분에 <strong>새로운 서비스 추가가 매우 간단</strong>한다. 각 워커에 [타입 안전한 AI 에이전트 로직](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 적용하면 더욱 안정적인 시스템을 구축할 수 있다.
 
 ## 실전 적용 결과
 
@@ -331,14 +331,14 @@ Terraform의 모듈화 덕분에 <strong>새로운 서비스 추가가 매우 �
 
 ## 결론
 
-Terraform을 활용한 서버리스 AI 배치 시스템은 다음과 같은 이점을 제공합니다:
+Terraform을 활용한 서버리스 AI 배치 시스템은 다음과 같은 이점을 제공한다:
 
 - <strong>비용 효율성</strong>: 사용량 기반 과금으로 배치 작업에 최적
 - <strong>LLM 친화적</strong>: AI 도구로 인프라 코드 생성 및 관리 용이
 - <strong>운영 편의성</strong>: 쉘 스크립트로 복잡한 작업 자동화
 - <strong>확장성</strong>: 모듈화된 구조로 새로운 서비스 추가 간편
 
-AI 시스템 구축 시 초기부터 IaC를 도입하면 <strong>장기적인 운영 효율성</strong>을 크게 높일 수 있습니다.
+AI 시스템 구축 시 초기부터 IaC를 도입하면 <strong>장기적인 운영 효율성</strong>을 크게 높일 수 있다.
 
 ## 참고 자료
 

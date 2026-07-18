@@ -42,11 +42,11 @@ faq:
 
 ## 웹 개발자의 iOS 게임, 어떤 길이 현실적인가
 
-웹 개발자가 iOS 앱을 만들고 싶다면 어떤 선택지가 있을까요? React Native, Flutter, 또는 네이티브 Swift를 배워야 할까요? 매번 새 프레임워크를 배우는 대신 이미 가진 TypeScript와 Canvas 지식을 그대로 쓰는 길이 있습니다.
+웹 개발자가 iOS 앱을 만들고 싶다면 어떤 선택지가 있을까요? React Native, Flutter, 또는 네이티브 Swift를 배워야 할까요? 매번 새 프레임워크를 배우는 대신 이미 가진 TypeScript와 Canvas 지식을 그대로 쓰는 길이 있다.
 
-**Shadow Dash**라는 낮밤 전환 러너 게임을 **Tauri 2.x + PixiJS + SvelteKit** 조합으로 만들어 App Store에 올렸습니다. 아래는 그 실제 코드를 기반으로 환경 설정부터 심사 제출까지 거친 과정을 그대로 정리한 기록입니다.
+**Shadow Dash**라는 낮밤 전환 러너 게임을 **Tauri 2.x + PixiJS + SvelteKit** 조합으로 만들어 App Store에 올렸다. 아래는 그 실제 코드를 기반으로 환경 설정부터 심사 제출까지 거친 과정을 그대로 정리한 기록이다.
 
-> 🎮 **Shadow Dash** 상세 정보: [포트폴리오 페이지](/ko/portfolio/shadow-dash)에서 게임의 핵심 메커니즘, 기술 스택, 스크린샷을 확인할 수 있습니다.
+> **Shadow Dash** 상세 정보: [포트폴리오 페이지](/ko/portfolio/shadow-dash)에서 게임의 핵심 메커니즘, 기술 스택, 스크린샷을 확인할 수 있습니다.
 
 import { Image } from 'astro:assets';
 import screenshot01 from '../../../assets/portfolio/shadow-dash/shadow-dash-01_iphone.png';
@@ -68,7 +68,7 @@ import screenshot05 from '../../../assets/portfolio/shadow-dash/shadow-dash-05_i
 
 ### PixiJS vs Phaser
 
-게임 개발에 자주 비교되는 두 라이브러리입니다.
+게임 개발에 자주 비교되는 두 라이브러리다.
 
 | 항목 | PixiJS | Phaser |
 |------|--------|--------|
@@ -102,21 +102,21 @@ import screenshot05 from '../../../assets/portfolio/shadow-dash/shadow-dash-05_i
 
 ## 언제 Tauri+PixiJS를 쓰고, 언제 피해야 하는가
 
-이 조합이 모든 iOS 게임에 정답은 아닙니다. 선택을 갈라야 할 기준을 정리하면 다음과 같습니다.
+이 조합이 모든 iOS 게임에 정답은 아니다. 선택을 갈라야 할 기준을 정리하면 다음과 같다.
 
 **적합한 경우:**
 - 이미 웹/TypeScript에 익숙하고 2D 캐주얼 게임(러너, 퍼즐, 탭 반응)을 만들 때
 - 같은 코드베이스로 iOS와 Android, 웹까지 동시에 노리고 싶을 때
 - 번들 크기와 빠른 반복 개발이 중요한 1인 또는 소규모 팀
-- 광고나 인앱 결제로 수익화하는 가벼운 앱. 광고 연동은 [Tauri iOS 앱에 AdMob 보상형 광고 붙이기](/ko/blog/ko/tauri-ios-admob-rewarded-ads)에서 같은 Shadow Dash 기준으로 다뤘습니다.
+- 광고나 인앱 결제로 수익화하는 가벼운 앱. 광고 연동은 [Tauri iOS 앱에 AdMob 보상형 광고 붙이기](/ko/blog/ko/tauri-ios-admob-rewarded-ads)에서 같은 Shadow Dash 기준으로 다뤘다.
 
 **네이티브나 다른 엔진이 나은 경우:**
-- 60fps 이상에서 수백 개 스프라이트를 굴리는 3D나 고밀도 액션 게임. 이럴 땐 Unity나 네이티브 Metal이 안전합니다.
+- 60fps 이상에서 수백 개 스프라이트를 굴리는 3D나 고밀도 액션 게임. 이럴 땐 Unity나 네이티브 Metal이 안전하다.
 - ARKit, 고급 햅틱, 백그라운드 오디오처럼 iOS 전용 프레임워크에 깊이 의존하는 경우
 - 콘솔 수준의 그래픽 품질이나 물리 시뮬레이션이 핵심 셀링 포인트인 경우
-- WebView 렌더링 한 겹이 추가되는 만큼, 입력 지연에 극도로 민감한 리듬 게임 등은 사전 벤치마크가 필요합니다.
+- WebView 렌더링 한 겹이 추가되는 만큼, 입력 지연에 극도로 민감한 리듬 게임 등은 사전 벤치마크가 필요하다.
 
-정리하면 "웹 기술 자산을 살려 빠르게 출시하고 가볍게 운영"이 목표면 이 조합이 강하고, "성능 한계까지 밀어붙이는 대작"이면 네이티브가 맞습니다.
+정리하면 "웹 기술 자산을 살려 빠르게 출시하고 가볍게 운영"이 목표면 이 조합이 강하고, "성능 한계까지 밀어붙이는 대작"이면 네이티브가 맞다.
 
 ## 개발 환경 설정
 
@@ -164,7 +164,7 @@ bunx tauri ios init
 
 ### SvelteKit 설정 (Tauri용)
 
-Tauri는 Node.js 서버 없이 동작하므로 정적 어댑터로 SPA 모드 설정이 필요합니다.
+Tauri는 Node.js 서버 없이 동작하므로 정적 어댑터로 SPA 모드 설정이 필요하다.
 
 `svelte.config.js`:
 ```javascript
@@ -190,7 +190,7 @@ export const ssr = false;
 
 ## 게임 아키텍처
 
-Shadow Dash의 핵심 구조를 살펴보겠습니다.
+Shadow Dash의 핵심 구조를 살펴보겠다.
 
 ### 프로젝트 구조
 
@@ -217,7 +217,7 @@ src-tauri/
 
 ### 핵심 게임 클래스: Game.ts
 
-게임의 메인 클래스는 PixiJS Application을 초기화하고 모든 시스템을 연결합니다.
+게임의 메인 클래스는 PixiJS Application을 초기화하고 모든 시스템을 연결한다.
 
 ```typescript
 import { Application, Container } from 'pixi.js';
@@ -277,7 +277,7 @@ export class Game extends EventEmitter<GameEvents> {
 
 ### 낮/밤 전환 시스템: TimeCycleManager.ts
 
-Shadow Dash의 핵심 메커니즘인 낮/밤 전환 시스템입니다.
+Shadow Dash의 핵심 메커니즘인 낮/밤 전환 시스템이다.
 
 ```typescript
 export type TimeState = 'day' | 'night' | 'toNight' | 'toDay';
@@ -335,7 +335,7 @@ export class TimeCycleManager extends EventEmitter<TimeCycleEvents> {
 
 ### 플레이어 시스템: Player.ts
 
-PixiJS Graphics로 절차적 캐릭터를 렌더링합니다.
+PixiJS Graphics로 절차적 캐릭터를 렌더링한다.
 
 ```typescript
 export class Player {
@@ -386,7 +386,7 @@ export const PHYSICS = {
 
 ### 10단계 난이도 시스템
 
-점수에 따라 게임 난이도가 점진적으로 상승합니다.
+점수에 따라 게임 난이도가 점진적으로 상승한다.
 
 ```typescript
 export const DIFFICULTY = {
@@ -465,7 +465,7 @@ bun tauri ios dev
 
 ### Vite 서버 설정
 
-실제 기기 테스트를 위해 모든 IP에서 접근을 허용해야 합니다.
+실제 기기 테스트를 위해 모든 IP에서 접근을 허용해야 한다.
 
 `vite.config.ts`:
 ```typescript
@@ -521,7 +521,7 @@ open src-tauri/gen/apple/*.xcodeproj
 
 ### Build Rust Code 스크립트 수정
 
-Archive 시 에러 방지를 위해 **Build Phases → Build Rust Code** 스크립트를 수정합니다:
+Archive 시 에러 방지를 위해 **Build Phases → Build Rust Code** 스크립트를 수정한다:
 
 ```bash
 export PATH="$HOME/.nvm/versions/node/v22.22.0/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH"
@@ -607,7 +607,7 @@ rustup target add aarch64-apple-ios-sim
 
 ## 첫 배포 이후 무엇이 달라지나
 
-Tauri 2.x + PixiJS + SvelteKit 조합으로 iOS 앱을 개발하는 것은 웹 개발자에게 매우 매력적인 선택입니다. 처음 한 번은 환경 설정과 Archive 에러에서 시간을 잡아먹지만, 한 번 길을 뚫어 두면 다음 앱은 같은 파이프라인을 복사하면 됩니다.
+Tauri 2.x + PixiJS + SvelteKit 조합으로 iOS 앱을 개발하는 것은 웹 개발자에게 매우 매력적인 선택이다. 처음 한 번은 환경 설정과 Archive 에러에서 시간을 잡아먹지만, 한 번 길을 뚫어 두면 다음 앱은 같은 파이프라인을 복사하면 된다.
 
 **핵심 포인트:**
 1. **SvelteKit + PixiJS** - 가볍고 빠른 게임 개발
@@ -615,19 +615,19 @@ Tauri 2.x + PixiJS + SvelteKit 조합으로 iOS 앱을 개발하는 것은 웹 �
 3. **터미널에서 빌드** - Xcode 직접 빌드보다 안정적
 4. **Build Script 수정** - Archive 시 에러 방지
 
-이렇게 1인 개발자가 웹 기술로 제품을 출시하는 더 넓은 맥락은 [개인 개발자의 AI SaaS 개발 여정](/ko/blog/ko/individual-developer-ai-saas-journey)에서, 여러 작업을 병렬로 돌리며 개발 속도를 끌어올리는 방법은 [Claude Code 병렬 세션과 Git Worktree](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)에서 이어집니다. 첫 앱을 성공적으로 배포하면 두 번째부터는 훨씬 수월해집니다.
+이렇게 1인 개발자가 웹 기술로 제품을 출시하는 더 넓은 맥락은 [개인 개발자의 AI SaaS 개발 여정](/ko/blog/ko/individual-developer-ai-saas-journey)에서, 여러 작업을 병렬로 돌리며 개발 속도를 끌어올리는 방법은 [Claude Code 병렬 세션과 Git Worktree](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)에서 이어진다. 첫 앱을 성공적으로 배포하면 두 번째부터는 훨씬 수월해진다.
 
 ## Shadow Dash 다운로드
 
-이 글에서 다룬 기술로 개발한 **Shadow Dash**를 직접 플레이해보세요!
+이 글에서 다룬 기술로 개발한 **Shadow Dash**를 직접 플레이해볼 수 있다.
 
 <a href="https://apps.apple.com/jp/app/shadow-dash/id6757754262" target="_blank" rel="noopener noreferrer">
   <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;" />
 </a>
 
-**피드백 환영합니다!** 앱을 플레이하시고 개선점이나 버그가 있다면 App Store 리뷰나 이메일로 알려주세요.
+**피드백을 환영한다.** 앱을 써보고 개선점이나 버그가 있다면 App Store 리뷰나 이메일로 알려주면 좋겠다.
 
-> 📱 **Shadow Dash 상세 정보**: [포트폴리오 페이지](/ko/portfolio/shadow-dash)에서 게임의 핵심 메커니즘과 더 많은 스크린샷을 확인하세요.
+> **Shadow Dash 상세 정보**: [포트폴리오 페이지](/ko/portfolio/shadow-dash)에서 게임의 핵심 메커니즘과 더 많은 스크린샷을 확인하세요.
 
 ## 참고 자료
 

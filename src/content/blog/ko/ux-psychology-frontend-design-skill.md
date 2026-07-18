@@ -55,19 +55,19 @@ relatedPosts:
 
 ## 배경: AI가 만든 UI의 한계
 
-Claude Code를 사용해본 개발자라면 AI가 생성하는 UI가 종종 "AI 냄새"가 난다는 것을 느꼈을 것입니다. Inter 폰트, 보라색 그라데이션, 예측 가능한 레이아웃... 기능적으로는 동작하지만 어딘가 밋밋하고 기억에 남지 않는 디자인.
+Claude Code를 사용해본 개발자라면 AI가 생성하는 UI가 종종 "AI 냄새"가 난다는 것을 느꼈을 것이다. Inter 폰트, 보라색 그라데이션, 예측 가능한 레이아웃... 기능적으로는 동작하지만 어딘가 밋밋하고 기억에 남지 않는 디자인.
 
-이 스킬을 실제 블로그에 적용한 구체적인 구현 사례는 [UX 심리학 기반 프론트엔드 개선 실전 사례](/ko/blog/ko/ux-psychology-implementation-case-study)에서 확인할 수 있습니다.
+이 스킬을 실제 블로그에 적용한 구체적인 구현 사례는 [UX 심리학 기반 프론트엔드 개선 실전 사례](/ko/blog/ko/ux-psychology-implementation-case-study)에서 확인할 수 있다.
 
-이 문제를 해결하기 위해 Qiita의 [nori0724님 글](https://qiita.com/nori0724/items/5c1aa2a5d5327bb68b6c)에서 힌트를 얻었습니다. UX 심리학 컨텍스트를 AI에게 제공하면 생성되는 UI 품질이 획기적으로 향상된다는 것이죠.
+이 문제를 해결하기 위해 Qiita의 [nori0724님 글](https://qiita.com/nori0724/items/5c1aa2a5d5327bb68b6c)에서 힌트를 얻었다. UX 심리학 컨텍스트를 AI에게 제공하면 생성되는 UI 품질이 획기적으로 향상된다는 것이다.
 
 ## 조사: 70개 이상의 UX 심리학 원칙
 
-두 가지 주요 소스를 조사했습니다:
+두 가지 주요 소스를 조사했다:
 
 ### 1. shokasonjuku.com - 40개 UX 심리학 개념
 
-일본어 소스에서 다음 카테고리의 개념들을 정리했습니다:
+일본어 소스에서 다음 카테고리의 개념들을 정리했다:
 
 | 카테고리 | 주요 개념 |
 |---------|----------|
@@ -106,7 +106,7 @@ Jon Yablonski가 정리한 과학적 근거 있는 UX 법칙들:
 접근성 (Accessibility)   ❌ 미포함
 ```
 
-<strong>핵심 문제</strong>: 아름답지만 사용하기 어려운 UI가 생성될 수 있었습니다.
+<strong>핵심 문제</strong>: 아름답지만 사용하기 어려운 UI가 생성될 수 있었다.
 
 ## 구현: UX 심리학 통합 스킬
 
@@ -203,7 +203,7 @@ const ProductCard = ({ isLoading }) => {
 
 <strong>Beauty without usability is art. Usability without beauty is engineering. Great design is both.</strong>
 
-AEO(Answer Engine Optimization) 관점에서 블로그 콘텐츠를 최적화하는 방법은 [AEO 구현 경험: AI 검색 시대의 새로운 SEO 전략](/ko/blog/ko/aeo-implementation-experience)을 참고하세요.
+AEO(Answer Engine Optimization) 관점에서 블로그 콘텐츠를 최적화하는 방법은 [AEO 구현 경험: AI 검색 시대의 새로운 SEO 전략](/ko/blog/ko/aeo-implementation-experience)을 참고하면 된다.
 
 UX 심리학을 frontend-design 스킬에 통합함으로써:
 
@@ -212,7 +212,7 @@ UX 심리학을 frontend-design 스킬에 통합함으로써:
 3. 실용적인 코드 예시와 체크리스트 제공
 4. 측정 가능한 성과 지표 정의
 
-이제 Claude Code가 생성하는 UI는 단순히 "예쁜" 것이 아니라 "효과적인" 것이 됩니다.
+이제 Claude Code가 생성하는 UI는 단순히 "예쁜" 것이 아니라 "효과적인" 것이 된다.
 
 ## 참고 자료
 
