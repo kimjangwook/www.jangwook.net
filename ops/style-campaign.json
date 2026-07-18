@@ -1918,7 +1918,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openai-atlas-ai-app-hub.md",
@@ -1928,7 +1928,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openai-codex-api-release-vs-claude-code-comparison-may-2026.md",
@@ -1937,7 +1937,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openai-gpt-5-5-release-claude-comparison-april-2026.md",
@@ -1946,7 +1946,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openai-open-responses-agentic-standard.md",
@@ -1956,7 +1956,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openai-promptfoo-ai-agent-devsecops.md",
@@ -1965,7 +1965,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-advanced-usage.md",
@@ -1974,7 +1974,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-codex-nanobot-stack-migration.md",
@@ -1983,7 +1983,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-cron-fix-guide.md",
@@ -1992,7 +1992,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-e2e-test-automation-guide.md",
@@ -2002,7 +2002,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "openclaw-installation-tutorial.md",

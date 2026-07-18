@@ -61,15 +61,15 @@ relatedPosts:
 
 ## 개요
 
-Selenium, Cypress, [Playwright](/ko/blog/ko/playwright-ai-testing) 같은 전통적인 E2E 테스트 도구는 CSS 셀렉터와 명령형 코드로 테스트를 작성합니다. UI가 변경되면 셀렉터가 깨지고, 수십 개의 테스트 파일을 수정해야 합니다.
+Selenium, Cypress, [Playwright](/ko/blog/ko/playwright-ai-testing) 같은 전통적인 E2E 테스트 도구는 CSS 셀렉터와 명령형 코드로 테스트를 작성한다. UI가 변경되면 셀렉터가 깨지고, 수십 개의 테스트 파일을 수정해야 한다.
 
-<strong>OpenClaw</strong>는 이 문제를 근본적으로 다른 방식으로 해결합니다. AI 에이전트가 접근성 트리(Accessibility Tree) 기반으로 웹 페이지를 이해하고, 자연어로 작성된 테스트 시나리오를 해석하여 실행합니다. 브라우저 자동화, 디바이스 관리, 크론 스케줄링, 멀티 에이전트 오케스트레이션을 하나의 플랫폼에서 통합 운용할 수 있습니다.
+<strong>OpenClaw</strong>는 이 문제를 근본적으로 다른 방식으로 해결한다. AI 에이전트가 접근성 트리(Accessibility Tree) 기반으로 웹 페이지를 이해하고, 자연어로 작성된 테스트 시나리오를 해석하여 실행한다. 브라우저 자동화, 디바이스 관리, 크론 스케줄링, 멀티 에이전트 오케스트레이션을 하나의 플랫폼에서 통합 운용할 수 있다.
 
-이 글에서는 OpenClaw의 핵심 기능을 E2E 테스트 관점에서 분석하고, 실제로 테스트 자동화 시스템을 구축하는 방법을 다룹니다.
+이 글에서는 OpenClaw의 핵심 기능을 E2E 테스트 관점에서 분석하고, 실제로 테스트 자동화 시스템을 구축하는 방법을 다룬다.
 
 ## OpenClaw 아키텍처 이해
 
-OpenClaw는 <strong>Gateway 중심 구조</strong>를 채택합니다. Gateway는 모든 메시징 채널과 WebSocket 제어 평면을 관리하는 단일 장기 실행 프로세스입니다.
+OpenClaw는 <strong>Gateway 중심 구조</strong>를 채택한다. Gateway는 모든 메시징 채널과 WebSocket 제어 평면을 관리하는 단일 장기 실행 프로세스다.
 
 ```mermaid
 graph TD
@@ -92,7 +92,7 @@ graph TD
     Report --> 메시징채널
 ```
 
-E2E 테스트 관점에서 각 구성 요소의 역할은 다음과 같습니다:
+E2E 테스트 관점에서 각 구성 요소의 역할은 다음과 같다:
 
 | 구성 요소 | 역할 | 테스트에서의 용도 |
 |----------|------|------------------|
@@ -107,7 +107,7 @@ E2E 테스트 관점에서 각 구성 요소의 역할은 다음과 같습니다
 
 ### 스냅샷과 Ref 시스템
 
-OpenClaw 브라우저 자동화의 핵심은 <strong>스냅샷 기반 상호작용</strong>입니다. CSS 셀렉터 대신 접근성 트리를 사용하므로, UI 구조가 변경되어도 의미적으로 동일한 요소를 찾아낼 수 있습니다.
+OpenClaw 브라우저 자동화의 핵심은 <strong>스냅샷 기반 상호작용</strong>이다. CSS 셀렉터 대신 접근성 트리를 사용하므로, UI 구조가 변경되어도 의미적으로 동일한 요소를 찾아낼 수 있다.
 
 ```bash
 # AI 스냅샷 생성 — 페이지 요소에 숫자 ref 할당
@@ -122,11 +122,11 @@ openclaw browser snapshot --interactive
 openclaw browser click e12         # 역할 ref 기반 클릭
 ```
 
-이 접근법의 장점은 <strong>셀프 힐링(Self-healing)</strong>입니다. 버튼의 클래스명이 `btn-primary`에서 `button-main`으로 바뀌더라도, 접근성 트리에서 "Submit" 역할의 버튼은 여전히 동일하게 식별됩니다.
+이 접근법의 장점은 <strong>셀프 힐링(Self-healing)</strong>이다. 버튼의 클래스명이 `btn-primary`에서 `button-main`으로 바뀌더라도, 접근성 트리에서 "Submit" 역할의 버튼은 여전히 동일하게 식별된다.
 
 ### 로그인 플로우 테스트 예시
 
-에이전트에게 자연어로 테스트 시나리오를 전달합니다:
+에이전트에게 자연어로 테스트 시나리오를 전달한다:
 
 ```bash
 openclaw agent --message "다음 순서로 로그인 플로우를 테스트하세요:
@@ -139,7 +139,7 @@ openclaw agent --message "다음 순서로 로그인 플로우를 테스트하�
   결과를 스크린샷과 함께 보고하세요."
 ```
 
-에이전트는 내부적으로 다음과 같은 도구 호출을 실행합니다:
+에이전트는 내부적으로 다음과 같은 도구 호출을 실행한다:
 
 ```bash
 browser open https://myapp.com/login
@@ -154,7 +154,7 @@ browser snapshot
 
 ### 상태 관리와 환경 설정
 
-E2E 테스트에서 환경 설정은 필수입니다. OpenClaw는 풍부한 상태 관리 API를 제공합니다:
+E2E 테스트에서 환경 설정은 필수다. OpenClaw는 풍부한 상태 관리 API를 제공한다:
 
 ```bash
 # 쿠키로 인증 세션 설정
@@ -175,7 +175,7 @@ openclaw browser set timezone America/New_York
 
 ### 대기(Wait) 기능
 
-비동기 UI 변화를 기다리는 다양한 전략을 지원합니다:
+비동기 UI 변화를 기다리는 다양한 전략을 지원한다:
 
 ```bash
 # 복합 조건 대기
@@ -186,11 +186,11 @@ openclaw browser wait "#main" \
   --timeout-ms 15000
 ```
 
-텍스트, URL 패턴(glob), 네트워크 유휴 상태, JavaScript 조건, CSS 셀렉터를 조합하여 정교한 대기 로직을 구성할 수 있습니다.
+텍스트, URL 패턴(glob), 네트워크 유휴 상태, JavaScript 조건, CSS 셀렉터를 조합하여 정교한 대기 로직을 구성할 수 있다.
 
 ### 리모트 브라우저 통합
 
-CI/CD 환경에서는 Browserless 같은 리모트 브라우저를 연결할 수 있습니다:
+CI/CD 환경에서는 Browserless 같은 리모트 브라우저를 연결할 수 있다:
 
 ```json5
 {
@@ -210,7 +210,7 @@ CI/CD 환경에서는 Browserless 같은 리모트 브라우저를 연결할 수
 
 ### 노드 유형과 기능
 
-노드는 Gateway에 WebSocket으로 연결되는 컴패니언 디바이스입니다.
+노드는 Gateway에 WebSocket으로 연결되는 컴패니언 디바이스다.
 
 | 노드 유형 | 지원 기능 |
 |----------|----------|
@@ -238,7 +238,7 @@ openclaw nodes run --node "Build Node" -- npm test
 
 ### 물리적 디바이스 검증
 
-카메라 기능을 활용하면 IoT 디바이스의 LED 상태 확인이나 물리적 UI 변화 검증 같은 작업도 가능합니다:
+카메라 기능을 활용하면 IoT 디바이스의 LED 상태 확인이나 물리적 UI 변화 검증 같은 작업도 가능하다:
 
 ```bash
 # 카메라로 실물 상태 캡처
@@ -278,7 +278,7 @@ openclaw cron add \
   --to "DevTeam"
 ```
 
-핵심은 `--session isolated`입니다. 격리 세션에서 실행되므로 메인 에이전트의 컨텍스트를 오염시키지 않습니다.
+핵심은 `--session isolated`인다. 격리 세션에서 실행되므로 메인 에이전트의 컨텍스트를 오염시키지 않다.
 
 ### 패턴 2: 배포 후 스모크 테스트
 
@@ -297,7 +297,7 @@ openclaw cron add \
   --delete-after-run
 ```
 
-`--delete-after-run` 플래그로 일회성 실행 후 크론 작업이 자동 삭제됩니다.
+`--delete-after-run` 플래그로 일회성 실행 후 크론 작업이 자동 삭제된다.
 
 ### 패턴 3: 주간 심층 분석
 
@@ -318,7 +318,7 @@ openclaw cron add \
   --deliver
 ```
 
-심층 분석에는 `claude-opus-4-5`와 `--thinking high` 옵션을 사용하여 더 깊은 추론을 수행합니다.
+심층 분석에는 `claude-opus-4-5`와 `--thinking high` 옵션을 사용하여 더 깊은 추론을 수행한다.
 
 ### 크론 vs 하트비트
 
@@ -329,13 +329,13 @@ openclaw cron add \
 | 모델 오버라이드 | × | ○ |
 | 비용 효율 | ○ (배치 처리) | △ (작업당 비용) |
 
-<strong>권장</strong>: 정기 E2E 테스트는 크론(isolated), 가벼운 상태 모니터링은 하트비트를 사용합니다.
+<strong>권장</strong>: 정기 E2E 테스트는 크론(isolated), 가벼운 상태 모니터링은 하트비트를 사용한다.
 
 ## 서브에이전트를 활용한 테스트 오케스트레이션
 
 ### 병렬 테스트 실행
 
-[서브에이전트](/ko/blog/ko/ai-agent-collaboration-patterns)는 백그라운드에서 독립적으로 실행되는 에이전트입니다. 여러 테스트를 동시에 실행하고, 완료 시 결과를 자동으로 보고합니다.
+[서브에이전트](/ko/blog/ko/ai-agent-collaboration-patterns)는 백그라운드에서 독립적으로 실행되는 에이전트다. 여러 테스트를 동시에 실행하고, 완료 시 결과를 자동으로 보고한다.
 
 ```mermaid
 graph TD
@@ -365,7 +365,7 @@ graph TD
 
 ### 단계별 검증 파이프라인
 
-실전에서는 단순 병렬이 아니라 <strong>단계별 파이프라인</strong>이 필요합니다:
+실전에서는 단순 병렬이 아니라 <strong>단계별 파이프라인</strong>이 필요하다:
 
 ```mermaid
 graph TD
@@ -383,7 +383,7 @@ graph TD
 
 ### 멀티 에이전트 환경 구성
 
-에이전트별로 다른 환경을 타겟팅할 수 있습니다:
+에이전트별로 다른 환경을 타겟팅할 수 있다:
 
 ```json5
 {
@@ -414,7 +414,7 @@ graph TD
 
 ### 시각적 회귀 테스트
 
-캔버스는 macOS 앱에 내장된 에이전트 제어 시각적 작업 공간입니다:
+캔버스는 macOS 앱에 내장된 에이전트 제어 시각적 작업 공간이다:
 
 ```bash
 # 테스트 대상 URL 로드
@@ -427,11 +427,11 @@ openclaw nodes canvas snapshot --node <id> --format png --max-width 1200
 openclaw nodes canvas eval --node <id> --js "document.querySelectorAll('.error').length"
 ```
 
-AI 에이전트가 캡처된 스냅샷을 분석하여 레이아웃 변경, 시각적 요소 누락, 색상 일관성 등을 검증합니다.
+AI 에이전트가 캡처된 스냅샷을 분석하여 레이아웃 변경, 시각적 요소 누락, 색상 일관성 등을 검증한다.
 
 ### 테스트 결과 대시보드
 
-A2UI(Agent-to-UI) 프로토콜을 통해 실시간 테스트 대시보드를 구성할 수 있습니다:
+A2UI(Agent-to-UI) 프로토콜을 통해 실시간 테스트 대시보드를 구성할 수 있다:
 
 ```bash
 cat > /tmp/test-dashboard.jsonl <<'EOF'
@@ -446,7 +446,7 @@ EOF
 openclaw nodes canvas a2ui push --jsonl /tmp/test-dashboard.jsonl --node <id>
 ```
 
-캔버스에서 에이전트 실행을 트리거하여 대시보드에서 직접 테스트를 재실행하는 것도 가능합니다.
+캔버스에서 에이전트 실행을 트리거하여 대시보드에서 직접 테스트를 재실행하는 것도 가능하다.
 
 ## 실전 활용 패턴
 
@@ -569,7 +569,7 @@ openclaw devices approve <requestId>
 
 ## 결론
 
-OpenClaw를 E2E 테스트에 활용하는 핵심 장점은 다음과 같습니다:
+OpenClaw를 E2E 테스트에 활용하는 핵심 장점은 다음과 같다:
 
 1. <strong>자연어 기반 테스트 정의</strong> — 테스트 코드를 작성할 필요 없이 시나리오를 자연어로 기술
 2. <strong>셀프 힐링</strong> — 접근성 트리 기반으로 UI 변경에 강한 내성
@@ -577,7 +577,7 @@ OpenClaw를 E2E 테스트에 활용하는 핵심 장점은 다음과 같습니�
 4. <strong>지능적 보고</strong> — AI가 결과를 분석하고 원인을 추론하여 보고
 5. <strong>유연한 스케줄링</strong> — 크론 + 하트비트로 다양한 테스트 주기 지원
 
-전통적인 테스트 도구를 완전히 대체하기보다는, <strong>스모크 테스트, 비주얼 회귀 테스트, 크로스 디바이스 검증</strong> 같은 시나리오에서 강점을 발휘합니다. 대량 반복 테스트나 복잡한 비즈니스 로직 검증에는 기존 도구와의 상호 보완이 적절합니다.
+전통적인 테스트 도구를 완전히 대체하기보다는, <strong>스모크 테스트, 비주얼 회귀 테스트, 크로스 디바이스 검증</strong> 같은 시나리오에서 강점을 발휘한다. 대량 반복 테스트나 복잡한 비즈니스 로직 검증에는 기존 도구와의 상호 보완이 적절하다.
 
 ## 참고 자료
 

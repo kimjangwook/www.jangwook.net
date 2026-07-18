@@ -160,4 +160,4 @@ Codex를 직접 써볼 수 있는 환경이 생기면 그 경험을 별도로 �
 
 ---
 
-*이 글은 공개 자료 기반 Source Review입니다. OpenAI 공식 changelog([developers.openai.com/codex/changelog](https://developers.openai.com/codex/changelog)), 릴리스 블로그([openai.com/index/introducing-upgrades-to-codex/](https://openai.com/index/introducing-upgrades-to-codex/)), morphllm.com 벤치마크 분석, DataCamp 비교 기사를 바탕으로 한 Source Review입니다. Codex 클라우드 에이전트는 직접 실행하지 않았으며, 실행하지 않은 내용은 실행했다고 쓰지 않았습니다.*
+*이 글은 공개 자료 기반 Source Review다. OpenAI 공식 changelog([developers.openai.com/codex/changelog](https://developers.openai.com/codex/changelog)), 릴리스 블로그([openai.com/index/introducing-upgrades-to-codex/](https://openai.com/index/introducing-upgrades-to-codex/)), morphllm.com 벤치마크 분석, DataCamp 비교 기사를 바탕으로 한 Source Review다. Codex 클라우드 에이전트는 직접 실행하지 않았으며, 실행하지 않은 내용은 실행했다고 쓰지 않았다.*
