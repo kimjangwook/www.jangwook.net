@@ -1348,7 +1348,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "kitten-tts-v08-tiny-sota.md",
@@ -1358,7 +1358,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "langfuse-self-hosted-llm-tracing-setup-guide-2026.md",
@@ -1367,7 +1367,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "langgraph-multi-agent.md",
@@ -1377,7 +1377,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "lcp-image-preload-scanner-fetchpriority-2026.md",
@@ -1386,7 +1386,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "litellm-supply-chain-attack-ai-dependency-security.md",
@@ -1395,7 +1395,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llama-cpp-iq-quantization-merge.md",
@@ -1405,7 +1405,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek.md",
@@ -1414,7 +1414,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-blog-automation.md",
@@ -1423,7 +1423,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-coding-harness-optimization.md",
@@ -1432,7 +1432,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "llm-consumer-research-ssr.md",
