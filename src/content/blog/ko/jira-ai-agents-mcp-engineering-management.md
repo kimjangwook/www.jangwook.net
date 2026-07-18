@@ -59,17 +59,17 @@ relatedPosts:
 
 ## 개요
 
-2026년 2월 25일, Atlassian이 <strong>Jira에 AI 에이전트를 공식 도입</strong>했습니다. 단순한 챗봇이 아닙니다. AI 에이전트가 Jira 워크플로우 안에서 <strong>작업을 할당받고, 댓글로 협업하고, 워크플로우 스텝을 자동 실행</strong>하는 구조입니다.
+2026년 2월 25일, Atlassian이 <strong>Jira에 AI 에이전트를 공식 도입</strong>했다. 단순한 챗봇이 아니다. AI 에이전트가 Jira 워크플로우 안에서 <strong>작업을 할당받고, 댓글로 협업하고, 워크플로우 스텝을 자동 실행</strong>하는 구조다.
 
-동시에 Atlassian은 <strong>Model Context Protocol(MCP)</strong>을 전면 채택하여, Rovo(자체 AI)뿐 아니라 GitHub Copilot, Claude, Gemini 등 외부 AI 에이전트도 Jira와 직접 연결할 수 있게 됐습니다.
+동시에 Atlassian은 <strong>Model Context Protocol(MCP)</strong>을 전면 채택하여, Rovo(자체 AI)뿐 아니라 GitHub Copilot, Claude, Gemini 등 외부 AI 에이전트도 Jira와 직접 연결할 수 있게 됐다.
 
-Engineering Manager 입장에서 이건 단순한 기능 업데이트가 아닙니다. <strong>팀 운영 방식 자체가 바뀌는 신호</strong>입니다. 이 글에서는 EM 관점에서 무엇이 달라지고, 어떻게 준비해야 하는지 정리합니다.
+Engineering Manager 입장에서 이건 단순한 기능 업데이트가 아니다. <strong>팀 운영 방식 자체가 바뀌는 신호</strong>다. 이 글에서는 EM 관점에서 무엇이 달라지고, 어떻게 준비해야 하는지 정리한다.
 
 ## 무엇이 바뀌었나 — Jira AI 에이전트 3가지 핵심 기능
 
 ### 1. 에이전트를 팀원처럼 할당
 
-이제 Jira 이슈의 담당자(Assignee)에 AI 에이전트를 지정할 수 있습니다. 사람과 동일한 필드 패턴을 사용하므로, 기존 워크플로우를 깨지 않고 AI를 투입할 수 있습니다.
+이제 Jira 이슈의 담당자(Assignee)에 AI 에이전트를 지정할 수 있다. 사람과 동일한 필드 패턴을 사용하므로, 기존 워크플로우를 깨지 않고 AI를 투입할 수 있다.
 
 ```
 # 기존 워크플로우
@@ -81,11 +81,11 @@ Engineering Manager 입장에서 이건 단순한 기능 업데이트가 아닙�
 
 ### 2. 댓글 기반 @mention 협업
 
-AI 에이전트를 댓글에서 @mention하면, 해당 이슈의 컨텍스트 안에서 요약, 리서치, 솔루션 제안을 받을 수 있습니다. 별도 도구를 열 필요 없이 Jira 안에서 바로 AI와 협업합니다.
+AI 에이전트를 댓글에서 @mention하면, 해당 이슈의 컨텍스트 안에서 요약, 리서치, 솔루션 제안을 받을 수 있다. 별도 도구를 열 필요 없이 Jira 안에서 바로 AI와 협업한다.
 
 ### 3. 워크플로우 자동 트리거
 
-Jira 워크플로우의 특정 상태(Status)에 AI 에이전트를 배치하여, 상태 전환 시 자동으로 작업을 수행하게 할 수 있습니다.
+Jira 워크플로우의 특정 상태(Status)에 AI 에이전트를 배치하여, 상태 전환 시 자동으로 작업을 수행하게 할 수 있다.
 
 ```mermaid
 graph TD
@@ -99,11 +99,11 @@ graph TD
 
 ## MCP가 왜 중요한가 — 도구 잠금에서 해방
 
-Atlassian의 MCP 채택은 단순한 기술적 선택이 아닙니다. <strong>벤더 잠금(Vendor Lock-in)에서의 해방</strong>을 의미합니다.
+Atlassian의 MCP 채택은 단순한 기술적 선택이 아니다. <strong>벤더 잠금(Vendor Lock-in)에서의 해방</strong>을 의미한다.
 
 ### MCP 통합 현황
 
-Atlassian이 호스팅하는 MCP 서버를 통해 다음 AI 클라이언트가 Jira/Confluence에 직접 연결됩니다:
+Atlassian이 호스팅하는 MCP 서버를 통해 다음 AI 클라이언트가 Jira/Confluence에 직접 연결된다:
 
 | AI 클라이언트 | 연결 방식 |
 |---|---|
@@ -116,7 +116,7 @@ Atlassian이 호스팅하는 MCP 서버를 통해 다음 AI 클라이언트가 J
 
 ### Rovo MCP Gallery
 
-Atlassian의 Rovo MCP Gallery를 통해 GitHub, Box, Figma, [Slack](/ko/blog/ko/slack-mcp-team-communication) 등 서드파티 도구의 에이전트도 Jira 안에서 동작합니다. 현재 <strong>MCP 사용량의 약 1/3이 쓰기(Write) 작업</strong>이라는 점이 주목할 만합니다. 단순 데이터 조회가 아니라 실제로 작업을 수행하고 있다는 의미입니다.
+Atlassian의 Rovo MCP Gallery를 통해 GitHub, Box, Figma, [Slack](/ko/blog/ko/slack-mcp-team-communication) 등 서드파티 도구의 에이전트도 Jira 안에서 동작한다. 현재 <strong>MCP 사용량의 약 1/3이 쓰기(Write) 작업</strong>이라는 점이 주목할 만하다. 단순 데이터 조회가 아니라 실제로 작업을 수행하고 있다는 의미다.
 
 ### 엔터프라이즈 채택 현황
 
@@ -128,7 +128,7 @@ Atlassian의 Rovo MCP Gallery를 통해 GitHub, Box, Figma, [Slack](/ko/blog/ko/
 
 ### 1. AI 에이전트 거버넌스 체계 수립
 
-AI 에이전트가 팀원으로 들어오면, <strong>권한과 책임의 경계</strong>를 명확히 해야 합니다.
+AI 에이전트가 팀원으로 들어오면, <strong>권한과 책임의 경계</strong>를 명확히 해야 한다.
 
 ```yaml
 # AI 에이전트 거버넌스 체크리스트
@@ -150,16 +150,16 @@ escalation:
 
 ### 2. 팀 역할 재정의
 
-AI 에이전트가 반복 작업을 맡으면, 팀원의 역할이 변합니다.
+AI 에이전트가 반복 작업을 맡으면, 팀원의 역할이 변한다.
 
 <strong>Before</strong>: 개발자가 이슈 트리아지, 코드 리뷰 초안, 문서 업데이트를 직접 수행
 <strong>After</strong>: AI가 초안을 생성하고, 개발자는 검증과 의사결정에 집중
 
-EM으로서 이 전환을 <strong>위협이 아닌 기회</strong>로 포지셔닝하는 것이 중요합니다. 팀원들이 더 가치 있는 작업에 집중할 수 있도록 AI가 맡을 작업과 사람이 맡을 작업의 경계를 명확히 설계하세요.
+EM으로서 이 전환을 <strong>위협이 아닌 기회</strong>로 포지셔닝하는 것이 중요하다. 팀원들이 더 가치 있는 작업에 집중할 수 있도록 AI가 맡을 작업과 사람이 맡을 작업의 경계를 명확히 설계해야 한다.
 
 ### 3. MCP 기반 도구 통합 전략
 
-[MCP는 이제 사실상의 표준](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide)(de facto standard)입니다. Anthropic이 만들었지만, Linux Foundation에 기부되었고, OpenAI, Google, Microsoft, AWS가 모두 지원합니다.
+[MCP는 이제 사실상의 표준](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide)(de facto standard)이다. Anthropic이 만들었지만, Linux Foundation에 기부되었고, OpenAI, Google, Microsoft, AWS가 모두 지원한다.
 
 ```mermaid
 graph TD
@@ -183,7 +183,7 @@ graph TD
 
 ### 4. 점진적 도입 로드맵
 
-한 번에 모든 것을 바꾸려 하지 마세요. 단계별로 도입합니다.
+한 번에 모든 것을 바꾸려 해선 안 된다. 단계별로 도입한다.
 
 <strong>Phase 1 (1〜2주)</strong>: 읽기 전용 에이전트로 시작
 - 이슈 요약, 스프린트 리포트 자동 생성
@@ -200,7 +200,7 @@ graph TD
 
 ### 5. 측정 지표 설계
 
-AI 에이전트 도입의 성과를 정량적으로 측정할 수 있어야 합니다.
+AI 에이전트 도입의 성과를 정량적으로 측정할 수 있어야 한다.
 
 | 지표 | 측정 방법 | 목표 |
 |---|---|---|
@@ -234,35 +234,35 @@ AI 에이전트 도입의 성과를 정량적으로 측정할 수 있어야 합�
 14:30 - 절약된 시간으로 1:1 미팅, 기술 부채 정리
 ```
 
-<strong>핵심 변화</strong>: EM의 역할이 '작업 관리자'에서 '의사결정자'로 전환됩니다.
+<strong>핵심 변화</strong>: EM의 역할이 '작업 관리자'에서 '의사결정자'로 전환된다.
 
 ## 주의할 점
 
 ### AI 에이전트 ≠ 만능
 
-- 에이전트는 도구입니다. <strong>판단은 여전히 사람의 몫</strong>입니다
-- 초기에는 에이전트 출력의 품질이 불안정할 수 있습니다. [에이전트 워싱 체크리스트](/ko/blog/ko/agent-washing-detection-em-checklist)를 활용한 검증 프로세스를 갖춰두세요
-- 팀원들의 심리적 안전감을 고려하세요. "AI가 내 일을 대체한다"는 불안감에 선제적으로 대응하세요
+- 에이전트는 도구다. <strong>판단은 여전히 사람의 몫</strong>이다
+- 초기에는 에이전트 출력의 품질이 불안정할 수 있다. [에이전트 워싱 체크리스트](/ko/blog/ko/agent-washing-detection-em-checklist)를 활용한 검증 프로세스를 갖춰둬야 한다
+- 팀원들의 심리적 안전감을 고려해야 한다. "AI가 내 일을 대체한다"는 불안감에 선제적으로 대응해야 한다
 
 ### 보안과 컴플라이언스
 
-- Jira의 기존 권한 체계를 그대로 존중합니다
-- 모든 에이전트 활동은 감사 추적(Audit Trail)이 남습니다
-- 프로덕션 수정은 반드시 인간 승인이 필요합니다
-- 개발자별 격리된 샌드박스 환경에서 에이전트가 동작합니다
+- Jira의 기존 권한 체계를 그대로 존중한다
+- 모든 에이전트 활동은 감사 추적(Audit Trail)이 남다
+- 프로덕션 수정은 반드시 인간 승인이 필요하다
+- 개발자별 격리된 샌드박스 환경에서 에이전트가 동작한다
 
 ## 결론
 
-Atlassian의 Jira AI 에이전트 + MCP 도입은 <strong>프로젝트 관리 도구의 패러다임 전환</strong>입니다. MCP가 사실상의 표준으로 자리 잡으면서, AI 에이전트가 개발 도구 전반에 통합되는 속도는 더욱 빨라질 것입니다.
+Atlassian의 Jira AI 에이전트 + MCP 도입은 <strong>프로젝트 관리 도구의 패러다임 전환</strong>이다. MCP가 사실상의 표준으로 자리 잡으면서, AI 에이전트가 개발 도구 전반에 통합되는 속도는 더욱 빨라질 것이다.
 
-Engineering Manager로서 지금 해야 할 일은 명확합니다:
+Engineering Manager로서 지금 해야 할 일은 명확하다:
 
-1. <strong>MCP 생태계를 이해</strong>하고 팀에 적합한 AI 에이전트 조합을 찾으세요
-2. <strong>거버넌스 체계를 먼저 설계</strong>한 후에 도입하세요
-3. <strong>점진적으로 도입</strong>하되, 측정 가능한 지표와 함께 진행하세요
-4. <strong>팀원의 역할 전환</strong>을 기회로 포지셔닝하세요
+1. <strong>MCP 생태계를 이해</strong>하고 팀에 적합한 AI 에이전트 조합을 찾는다
+2. <strong>거버넌스 체계를 먼저 설계</strong>한 후에 도입한다
+3. <strong>점진적으로 도입</strong>하되, 측정 가능한 지표와 함께 진행한다
+4. <strong>팀원의 역할 전환</strong>을 기회로 포지셔닝한다
 
-2026년은 AI 에이전트가 데모에서 실무로 넘어가는 해입니다. Jira라는 수백만 팀이 사용하는 플랫폼에서의 이 변화는, 그 전환의 가장 명확한 신호입니다.
+2026년은 AI 에이전트가 데모에서 실무로 넘어가는 해다. Jira라는 수백만 팀이 사용하는 플랫폼에서의 이 변화는, 그 전환의 가장 명확한 신호다.
 
 ## 참고 자료
 

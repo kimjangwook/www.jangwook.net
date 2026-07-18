@@ -1250,7 +1250,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "ibm-gen-z-hiring-ai-limits.md",
@@ -1260,7 +1260,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "icml-prompt-injection-academic-review.md",
@@ -1270,7 +1270,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "individual-developer-ai-saas-journey.md",
@@ -1280,7 +1280,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "inp-yielding-measure-2026.md",
@@ -1289,7 +1289,7 @@
    "needs": [
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "iterative-review-cycle-methodology.md",
@@ -1299,7 +1299,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "jira-ai-agents-mcp-engineering-management.md",
@@ -1309,7 +1309,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "jules-autocoding.md",
@@ -1318,7 +1318,7 @@
    "needs": [
     "register"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "kanitts2-voice-cloning.md",
@@ -1328,7 +1328,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "karpathy-ai-training-cost-deflation.md",
@@ -1338,7 +1338,7 @@
     "register",
     "closing"
    ],
-   "status": "pending"
+   "status": "done"
   },
   {
    "slug": "karpathy-autoresearch-overnight-ml-experiments.md",
