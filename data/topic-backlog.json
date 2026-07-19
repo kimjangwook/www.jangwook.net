@@ -5149,6 +5149,25 @@
       "added_at": "2026-07-19",
       "status": "queued",
       "notes": "차별화: '무엇인가' 설명형 글이 포화. 반대로 '실제로 읽히는지'를 서버 로그(awk/grep)로 실측하는 데이터 주도 how-to. crawl-to-refer 실측 글과 상호 링크. 반증 데이터를 앵커로."
+    },
+    {
+      "slug": "gsc-platform-properties-social-video-search-measurement-2026",
+      "title_ko": "내 소셜·영상은 구글 검색에서 어떻게 뜨나 — Search Console Platform Property로 실측",
+      "title_idea": "Measuring how your Instagram/TikTok/X/YouTube content actually surfaces in Google Search via the new Search Console Platform Property",
+      "content_type": "how-to",
+      "target_keyword": "Search Console Platform Properties",
+      "secondary_keywords": [
+        "소셜 콘텐츠 검색 성과 측정",
+        "Instagram TikTok YouTube Google Search 유입",
+        "GSC 플랫폼 속성 verification"
+      ],
+      "search_intent": "how-to/informational — 자기 브랜드의 소셜·영상 콘텐츠가 구글 검색·Discover에서 어떤 쿼리로 노출·유입되는지 실측하려는 웹개발자·SEO·EM",
+      "priority": 1,
+      "source": "pm 캐치업 스카우트 2026-07-19. Google Search Central 공식 블로그 \"See how content from social and video platforms performs on Google Search\" (developers.google.com/search/blog/2026/07/search-console-social-video-platforms). 신규 property type \"Platform Properties\": Instagram/TikTok/X/YouTube 중 하나를 verify하면 해당 계정 콘텐츠가 구글 검색·Discover에서 받는 clicks/impressions/query를 Performance·Insights 리포트로 확인. coming weeks 점진 롤아웃. 2025-12 social channels, 2026-06 Gen AI performance reports의 연장선상 productized 버전. [기둥①=웹개발자/기술SEO 착지, ③=검색 표면 확장 캐치업 부수] 통찰: 내가 소유·제어하는 사이트의 GSC 데이터만으로는 브랜드의 검색 존재감을 더 이상 온전히 못 잡는다 — 소셜·영상 콘텐츠가 독립적으로 랭크·유입을 만든다. 즉 조직의 오가닉 발견 측정 표면이 소유 사이트 밖으로 확장됨. 실험 설계 가능: platform property 연결 → 같은 브랜드 쿼리에서 사이트 vs 소셜 콘텐츠 중 무엇이 뜨는지 실측 → 온사이트 콘텐츠 투자 vs 소셜 투자 판단 기준 도출. 한계 명시 필요: 순위·유입 보장 아님, 롤아웃 점진적이라 계정별 데이터 지연 가능, 검증은 각자 property로.",
+      "added": "2026-07-19",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "pm 캐치업. 24h 창 내 유일 유효건(웹개발/EM에 실측 착지). ChatGPT 데스크톱 Chat/Work/Codex 스위처(7/18)·MCP 2026-07-28 스테이트리스 RC(6월 발표, 창밖)는 통찰/신선도 미달로 드롭. 글은 measure→decide 루프 형태 권장, 실제 property 연결 스크린샷·쿼리 실측 데이터 필수."
     }
   ]
 }
