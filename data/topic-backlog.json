@@ -3,6 +3,14 @@
   "updated_at": "2026-07-18",
   "topics": [
     {
+      "slug": "ai-citation-variance-n10-median-multi-model",
+      "title_ko": "AI 인용 측정은 몇 번 돌려야 안정되나 — n=10 중앙값·모델별 편차 실측",
+      "status": "queued",
+      "priority": "high",
+      "added": "2026-07-19",
+      "source": "X 스레드(@Yoshima_manga, SEO 10년 컨설턴트)에서 촉발: 그가 '10회 측정이면 통계적으로 유의, 정밀도는 15회'라 검증 주장, 타 모델은 미검증. 본인이 '数モデルで10回計測を回して結果をブログで共有する'고 공개 약속함. 실험 설계: 동일 질의를 ChatGPT/Gemini/Perplexity 등 2〜3모델에 n=10 반복, 인용원 변동(자기 사이트 인용 여부·인용 도메인 집합)의 회차별 분산과 중앙값 수렴 시점을 실측. n=5/10/15 비교로 '10회면 충분한가'를 검증. 발행 후 스레드에 결과 멘션(재접촉). 페르소나 기둥 ①③ 교차."
+    },
+    {
       "slug": "prompt-injection-regression-gate-model-updates",
       "title_idea": "모델 버전을 올릴 때마다 인젝션 테스트를 다시 돌려야 하는 이유 — GPT-Red가 보여준 공방 자동화 시대의 게이트 설계",
       "content_type": "how-to",
