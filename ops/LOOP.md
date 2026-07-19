@@ -39,7 +39,7 @@
 먼저 docs/persona-kim-jangwook.md를 읽고 4기둥·DNA·금지 목록을 장착할 것.
 텔레그램: ~/Documents/workspace/claude-controller/sh/send-telegram.sh "텍스트".
 빌드 검증 시 npm run validate:publishing && npm run build (게이트 10종 통과 필수).
-최종 응답은 한 줄 요약만.
+완료 시 반드시 SendMessage 도구로 team-lead에게 한 줄 요약을 보고할 것 (최종 텍스트 응답만으로는 메인 루프에 전달되지 않음 — 2026-07-19 실측).
 ```
 
 ## 유형별 프롬프트 요점
