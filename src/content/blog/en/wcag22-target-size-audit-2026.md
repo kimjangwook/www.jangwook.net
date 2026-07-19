@@ -1,6 +1,6 @@
 ---
 title: "WCAG 2.2 Minimum Target Size: the AA Failure Hiding Behind a Green 92"
-description: A row of 22×22 pagination links your thumb keeps missing still scored 92 on Lighthouse. I planted WCAG 2.2's SC 2.5.8 (24×24 min) in a sandbox, measured it with a custom script and Lighthouse, and worked through the spacing-circle exception with real logs and CSS fixes.
+description: A row of 22×22 pagination links your thumb keeps missing still scored 92 on Lighthouse. I planted WCAG 2.2's SC 2.5.8 (24×24 min) in a sandbox, measured it two ways, and worked the spacing-circle exception in code.
 pubDate: '2026-07-19'
 heroImage: ../../../assets/blog/wcag22-target-size-audit-2026/target-size-demo.png
 tags:
