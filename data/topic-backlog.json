@@ -8,7 +8,9 @@
       "status": "queued",
       "priority": "high",
       "added": "2026-07-19",
-      "source": "X 스레드(@Yoshima_manga, SEO 10년 컨설턴트)에서 촉발: 그가 '10회 측정이면 통계적으로 유의, 정밀도는 15회'라 검증 주장, 타 모델은 미검증. 리플은 좋아요로 마감(운영자 결정 — 공개 약속 없이 결과로 재접촉). 실험 설계: 동일 질의를 ChatGPT/Gemini/Perplexity 등 2〜3모델에 n=10 반복, 인용원 변동(자기 사이트 인용 여부·인용 도메인 집합)의 회차별 분산과 중앙값 수렴 시점을 실측. n=5/10/15 비교로 '10회면 충분한가'를 검증. 발행 후 스레드에 결과 멘션(재접촉). 페르소나 기둥 ①③ 교차."
+      "source": "X 스레드(@Yoshima_manga, SEO 10년 컨설턴트)에서 촉발: 그가 '10회 측정이면 통계적으로 유의, 정밀도는 15회'라 검증 주장, 타 모델은 미검증. 리플은 좋아요로 마감(운영자 결정 — 공개 약속 없이 결과로 재접촉). 실험 설계: 동일 질의를 ChatGPT/Gemini/Perplexity 등 2〜3모델에 n=10 반복, 인용원 변동(자기 사이트 인용 여부·인용 도메인 집합)의 회차별 분산과 중앙값 수렴 시점을 실측. n=5/10/15 비교로 '10회면 충분한가'를 검증. 발행 후 스레드에 결과 멘션(재접촉). 페르소나 기둥 ①③ 교차.",
+      "content_type": "how-to",
+      "title_idea": "AI 인용 측정은 몇 번 돌려야 안정되나 — n=10 중앙값·모델별 편차 실측"
     },
     {
       "slug": "prompt-injection-regression-gate-model-updates",
@@ -5168,6 +5170,114 @@
       "added_at": "2026-07-19",
       "status": "queued",
       "notes": "pm 캐치업. 24h 창 내 유일 유효건(웹개발/EM에 실측 착지). ChatGPT 데스크톱 Chat/Work/Codex 스위처(7/18)·MCP 2026-07-28 스테이트리스 RC(6월 발표, 창밖)는 통찰/신선도 미달로 드롭. 글은 measure→decide 루프 형태 권장, 실제 property 연결 스크린샷·쿼리 실측 데이터 필수."
+    },
+    {
+      "slug": "typescript-native-compiler-go-port-benchmark-2026",
+      "title_idea": "TypeScript 네이티브 컴파일러(Go 포팅)를 실제 프로젝트에 붙여 tsc 속도를 재봤다",
+      "content_type": "news",
+      "target_keyword": "TypeScript 네이티브 컴파일러 벤치마크",
+      "secondary_keywords": [
+        "tsc 속도",
+        "TypeScript Go 포팅",
+        "타입체크 성능"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "TS 네이티브 포팅 진행 상황 실측 앵글. 뉴스 비중 보강용.",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "뉴스 30% 목표 보강. 런타임/툴체인 도메인 다양화.",
+      "published_at": null
+    },
+    {
+      "slug": "bun-deno-node-runtime-benchmark-2026-h2",
+      "title_idea": "Bun vs Deno vs Node 2026 하반기 — 콜드스타트·HTTP 처리량 직접 재본 런타임 비교",
+      "content_type": "comparison",
+      "target_keyword": "Bun Deno Node 벤치마크 2026",
+      "secondary_keywords": [
+        "JS 런타임 비교",
+        "콜드스타트",
+        "HTTP 처리량"
+      ],
+      "search_intent": "commercial",
+      "priority": 2,
+      "source": "성능 소재를 CWV에서 런타임으로 이동. 비교 15% 목표 보강.",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "비교 가이드. Core Web Vitals 편중 상쇄.",
+      "published_at": null
+    },
+    {
+      "slug": "geo-citation-engine-comparison-perplexity-chatgpt-aio-2026",
+      "title_idea": "같은 글이 Perplexity·ChatGPT Search·Google AI Overview에 인용되는 방식을 나란히 재봤다",
+      "content_type": "comparison",
+      "target_keyword": "AI 검색 인용 비교",
+      "secondary_keywords": [
+        "GEO",
+        "Perplexity 인용",
+        "AI Overview 인용"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "GEO 기둥. note 연재 상호링크 후보. 인용 엔진별 편차 실측.",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "note.com 연재 상호링크 검토. GEO 도메인.",
+      "published_at": null
+    },
+    {
+      "slug": "sqlite-local-vector-search-related-posts-2026",
+      "title_idea": "SQLite 하나로 블로그 관련글 추천 — 로컬 벡터 검색을 직접 붙여봤다",
+      "content_type": "how-to",
+      "target_keyword": "SQLite 벡터 검색",
+      "secondary_keywords": [
+        "로컬 임베딩",
+        "관련글 추천",
+        "sqlite-vec"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "자기 파이프라인(recommendations) 대상 실측. how-to를 성능 외 도메인으로 확장.",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "Lab Publish 레인. how-to 소재 다양화.",
+      "published_at": null
+    },
+    {
+      "slug": "mcp-ecosystem-2026-h2-status-review",
+      "title_idea": "MCP 생태계 2026 하반기 점검 — 실제로 쓸 만한 서버는 어디까지 왔나",
+      "content_type": "news",
+      "target_keyword": "MCP 생태계 2026",
+      "secondary_keywords": [
+        "Model Context Protocol",
+        "MCP 서버",
+        "Claude Code 통합"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Claude Code 진영 후속. 뉴스 비중 보강. 직접 연결해본 서버 실측 앵글.",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "뉴스 30% 목표 보강.",
+      "published_at": null
+    },
+    {
+      "slug": "multilang-blog-translation-drift-series-2026",
+      "title_idea": "4언어 블로그를 혼자 굴리며 번역 드리프트를 잡아온 기록 — 운영 시리즈",
+      "content_type": "series",
+      "target_keyword": "다국어 블로그 번역 관리",
+      "secondary_keywords": [
+        "번역 드리프트",
+        "4언어 운영",
+        "콘텐츠 일관성"
+      ],
+      "search_intent": "informational",
+      "priority": 3,
+      "source": "시리즈 15% 목표 보강. 실제 운영 회고 기반, 재현 가능.",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "시리즈물. 운영 경험 자산화.",
+      "published_at": null
     }
   ]
 }
