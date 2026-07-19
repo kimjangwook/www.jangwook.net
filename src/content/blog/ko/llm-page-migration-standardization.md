@@ -1,6 +1,6 @@
 ---
 title: LLM을 활용한 웹페이지 이행 작업의 표준화
-description: Claude Code와 LLM 기반 자동화로 레거시 웹사이트를 최신 웹 컴포넌트와 정적 사이트로 안전하게 마이그레이션하는 완벽 가이드
+description: 50〜500페이지 규모의 레거시 웹사이트를 Claude Code와 LLM으로 마이그레이션하는 표준화 워크플로우를 정리했다. Google·Airbnb·Zalando 사례에서 자동화 가능 범위 70〜80%, 웹 컴포넌트 라이브러리 구축, 테스트 자동화까지 프로덕션 검증 전략을 다룬다.
 pubDate: '2025-10-30'
 heroImage: ../../../assets/blog/llm-page-migration-standardization-hero.jpg
 tags:

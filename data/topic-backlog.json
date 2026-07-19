@@ -5278,6 +5278,44 @@
       "status": "queued",
       "notes": "시리즈물. 운영 경험 자산화.",
       "published_at": null
+    },
+    {
+      "slug": "postgres18-async-io-uuidv7-hands-on-2026",
+      "title_idea": "Postgres 18 실전: 비동기 I/O·UUIDv7·가상 생성 컬럼을 직접 켜보고 벤치마크",
+      "content_type": "how-to",
+      "target_keyword": "PostgreSQL 18 새 기능",
+      "secondary_keywords": [
+        "비동기 I/O",
+        "UUIDv7",
+        "가상 생성 컬럼",
+        "B-tree skip scan"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "PostgreSQL 18 릴리스(2025-09-25) 200+ 신기능. neon.com·bytebase·xata.io 실전 가이드 다수.",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "도메인 다양화(백엔드/DB). AI·에이전트 소재 편중에서 벗어난 신규 축. AIO 2~3배 성능·UUIDv7 인덱싱을 로컬 Docker로 실측 재현 가능.",
+      "published_at": null
+    },
+    {
+      "slug": "inp-optimization-long-tasks-react-hands-on-2026",
+      "title_idea": "INP 200ms 벽 넘기: long task 분해와 React 리렌더 제거를 실측으로",
+      "content_type": "how-to",
+      "target_keyword": "INP 최적화",
+      "secondary_keywords": [
+        "long task 분해",
+        "React.memo useTransition",
+        "main thread blocking",
+        "Core Web Vitals 2026"
+      ],
+      "search_intent": "how-to",
+      "priority": 3,
+      "source": "web.dev INP 임계 200ms, 사이트 43%가 미달. 기존 백로그 CWV 3건은 '측정' 각도 → 본 건은 '최적화 실행' 각도로 차별화.",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "기존 core-web-vitals-* 3건과 중복 회피: 측정이 아닌 코드 레벨 최적화(장기 태스크 yield, React 리렌더) 실전에 한정.",
+      "published_at": null
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 title: 利用LLM实现网页迁移作业标准化
-description: 通过Claude Code和基于LLM的自动化，安全地将遗留网站迁移到最新Web组件和静态站点的完整指南
+description: 整理了使用Claude Code和LLM将50〜500页规模的遗留网站迁移到最新Web组件的标准化工作流程。结合Google、Airbnb、Zalando的真实案例，涵盖70〜80%的自动化范围、Web组件库构建以及测试自动化等经过生产验证的最佳实践。
 pubDate: '2025-10-30'
 heroImage: ../../../assets/blog/llm-page-migration-standardization-hero.jpg
 tags:

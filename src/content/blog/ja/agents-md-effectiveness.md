@@ -1,6 +1,6 @@
 ---
 title: AGENTS.mdは本当に効果的か？初の実証論文が明かした意外な結果
-description: AGENTS.mdの効果を実証的に検証した初の論文が公開されました。コーディングエージェントの成功率とコストへの影響を分析します。
+description: GitHubで6万以上のリポジトリが使うAGENTS.mdは本当に効果があるのか。ETH Zürichの初の実証論文は、LLM生成ファイルが成功率を3%下げ、開発者作成ファイルも4%向上にとどまり、推論コストは20%以上増えたと明らかにした。その結果と原因を分析する。
 pubDate: '2026-02-17'
 heroImage: ../../../assets/blog/agents-md-effectiveness-hero.png
 tags:

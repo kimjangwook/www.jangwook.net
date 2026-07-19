@@ -1,6 +1,6 @@
 ---
 title: AGENTS.md는 정말 효과가 있을까? 첫 실증 논문이 밝힌 의외의 결과
-description: AGENTS.md의 효과를 실증적으로 검증한 최초의 논문이 공개되었습니다. 코딩 에이전트의 성공률과 비용에 미치는 영향을 분석합니다.
+description: GitHub 6만 개 이상 리포지토리가 쓰는 AGENTS.md, 정말 효과가 있을까. ETH Zürich의 첫 실증 논문은 LLM 생성 파일이 성공률을 3% 낮추고 개발자 작성 파일도 4% 오르는 데 그쳤으며 추론 비용은 20% 늘었다고 밝혔다. 결과와 원인을 분석한다.
 pubDate: '2026-02-17'
 heroImage: ../../../assets/blog/agents-md-effectiveness-hero.png
 tags:

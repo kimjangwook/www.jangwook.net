@@ -1,6 +1,6 @@
 ---
 title: AGENTS.md真的有效吗？首篇实证论文揭示了意外的结果
-description: 首篇实证评估AGENTS.md效果的论文已发布。我们分析了其对编码代理成功率和推理成本的影响。
+description: GitHub上已有超过6万个仓库使用AGENTS.md，它真的有效吗。ETH Zürich的首篇实证论文发现，LLM生成的文件反而让成功率下降3%，开发者手写文件也仅提升4%，而推理成本增加超过20%。本文分析这一结果及其原因。
 pubDate: '2026-02-17'
 heroImage: ../../../assets/blog/agents-md-effectiveness-hero.png
 tags:
