@@ -78,7 +78,7 @@ relatedPosts:
 - <strong>확장성</strong>: 새로운 에이전트 추가로 기능 확장 가능
 - <strong>복원력</strong>: 한 에이전트 실패가 전체 시스템에 영향 주지 않음
 
-실제 도요타는 멀티 에이전트 시스템으로 <strong>연간 10,000시간 이상 절감</strong>했고, 전자상거래 API 프로젝트에서는 <strong>버그 70% 감소, 리팩토링 시간 75% 단축</strong>이라는 성과를 거뒀다.
+실제 도요타는 멀티 에이전트 시스템으로 <strong>연간 10,000시간 이상 절감</strong>했고, 전자상거래 API 프로젝트에서는 <strong>버그 70% 감소, 리팩토링 시간 75% 단축</strong>이라는 성과를 거뒀다. 다만 이런 성과는 오케스트레이션에 맞는 도구 선택이 전제다. 프로덕션 투입 전에 [LangGraph·CrewAI·Dapr 프레임워크 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)를 함께 검토하면 뒤늦은 재설계를 줄일 수 있다.
 
 ## 5개 전문 에이전트 아키텍처
 
@@ -658,6 +658,8 @@ graph TB
 <strong>차이점</strong>:
 - MCP: 에이전트가 도구나 메모리에 접근할 때
 - A2A: 에이전트끼리 직접 소통할 때
+
+MCP와 A2A를 실제로 조합해 운영하는 방법은 [A2A·MCP 하이브리드 아키텍처 프로덕션 가이드](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide)에서 더 깊이 다룬다.
 
 <strong>A2A 메시지 예시</strong>:
 ```json

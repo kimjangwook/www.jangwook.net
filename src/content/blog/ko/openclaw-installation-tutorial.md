@@ -1,6 +1,6 @@
 ---
 title: OpenClaw 설치부터 첫 대화까지 — 완벽 튜토리얼
-description: 'OpenClaw 설치, Telegram 연결, 첫 AI 대화까지 단계별로 안내합니다. Node.js 설정부터 워크스페이스 구조까지.'
+description: 'OpenClaw 설치부터 Telegram 연결, 첫 AI 대화까지 초보자도 따라 할 수 있게 단계별로 안내합니다. Node.js 환경 설정, 워크스페이스 구조, 자주 겪는 오류 해결까지 한 번에 정리했습니다.'
 pubDate: '2026-02-04'
 heroImage: ../../../assets/blog/openclaw-installation-tutorial-hero.png
 tags:

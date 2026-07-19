@@ -2,7 +2,7 @@
 title: Multi-Agent Orchestration — The Essence of Routing Design
 description: >-
   When running multiple AI agents like Claude and Codex, task routing is the
-  hardest challenge — and it mirrors delegation in engineering management.
+  hardest challenge. It mirrors how engineering managers delegate work.
 pubDate: '2026-02-09'
 heroImage: ../../../assets/blog/multi-agent-orchestration-routing-hero.png
 tags:

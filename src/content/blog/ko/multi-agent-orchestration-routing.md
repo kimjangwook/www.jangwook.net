@@ -1,6 +1,6 @@
 ---
 title: 멀티에이전트 오케스트레이션 — 라우팅 설계의 본질
-description: 'Claude와 Codex 등 복수 AI 에이전트를 운용할 때, 태스크 라우팅이 왜 가장 어렵고 EM의 권한 위임과 같은 구조인지 해부합니다.'
+description: 'Claude와 Codex 등 복수 AI 에이전트를 운용할 때 태스크 라우팅이 왜 가장 어려운지, 그리고 이것이 EM의 권한 위임과 같은 구조인 이유를 해부합니다. 라우팅 설계 원칙과 흔한 실패 패턴까지 실전 관점으로 정리했습니다.'
 pubDate: '2026-02-09'
 heroImage: ../../../assets/blog/multi-agent-orchestration-routing-hero.png
 tags:

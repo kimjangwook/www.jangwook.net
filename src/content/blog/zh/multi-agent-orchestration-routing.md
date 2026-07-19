@@ -1,6 +1,6 @@
 ---
 title: 多智能体编排 — 路由设计的本质
-description: 运用Claude和Codex等多个AI智能体时，任务路由为何是最大难题，以及它与工程管理中的权限委派有何相同结构。
+description: 运用Claude和Codex等多个AI智能体时，任务路由为何是最大难题，以及它为何与工程管理中的权限委派有着相同结构。本文还实战梳理了路由设计原则与常见的失败模式。
 pubDate: '2026-02-09'
 heroImage: ../../../assets/blog/multi-agent-orchestration-routing-hero.png
 tags:

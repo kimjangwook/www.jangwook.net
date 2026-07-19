@@ -1,6 +1,6 @@
 ---
 title: マルチエージェントオーケストレーション — ルーティング設計の本質
-description: ClaudeやCodexなど複数AIエージェント運用時、タスクルーティングがなぜ最難関でEMの権限委譲と同じ構造なのかを解剖します。
+description: ClaudeやCodexなど複数AIエージェントを運用する際、タスクルーティングがなぜ最難関なのか、そしてそれがEMの権限委譲と同じ構造である理由を解剖します。ルーティング設計の原則とよくある失敗パターンまで実践的に整理しました。
 pubDate: '2026-02-09'
 heroImage: ../../../assets/blog/multi-agent-orchestration-routing-hero.png
 tags:

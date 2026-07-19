@@ -77,7 +77,7 @@ relatedPosts:
 - <strong>拡張性</strong>: 新エージェント追加で機能拡張可能
 - <strong>復元力</strong>: 1つのエージェント失敗がシステム全体に影響しない
 
-実際、トヨタはマルチエージェントシステムで<strong>年間10,000時間以上削減</strong>、eコマースAPIプロジェクトでは<strong>バグ70%減少、リファクタリング時間75%短縮</strong>という成果を達成しました。
+実際、トヨタはマルチエージェントシステムで<strong>年間10,000時間以上削減</strong>、eコマースAPIプロジェクトでは<strong>バグ70%減少、リファクタリング時間75%短縮</strong>という成果を達成しました。ただしこうした成果は、オーケストレーションに合ったツール選定が前提です。本番投入の前に[LangGraph・CrewAI・Daprフレームワーク比較](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)も併せて検討すると、後からの再設計を減らせます。
 
 ## 5つの専門エージェントアーキテクチャ
 
@@ -659,6 +659,8 @@ graph TB
 <strong>違い</strong>:
 - MCP: エージェントがツールやメモリにアクセスする時
 - A2A: エージェント同士が直接通信する時
+
+MCPとA2Aを実際に組み合わせて運用する方法は、[A2A・MCPハイブリッドアーキテクチャ本番ガイド](/ja/blog/ja/a2a-mcp-hybrid-architecture-production-guide)でさらに詳しく扱っています。
 
 <strong>A2Aメッセージ例</strong>:
 ```json

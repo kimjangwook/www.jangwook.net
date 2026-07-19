@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-18",
+  "updated_at": "2026-07-19",
   "topics": [
     {
       "slug": "ai-citation-variance-n10-median-multi-model",
@@ -5130,6 +5130,25 @@
       "added_at": "2026-07-17",
       "status": "queued",
       "notes": "실측 4부작이 모두 '랩 측정은 디버깅 도구일 뿐, 배포 후 필드로 재확인하라'로 끝난다 — 그 필드 측정을 실제로 구현하는 후속편. web-vitals attribution build로 어느 요소가 CLS/INP를 유발했는지 실사용자 세션에서 수집·전송하는 코드. 시리즈의 '측정 → 배포 → 재측정' 루프를 완성."
+    },
+    {
+      "slug": "llms-txt-crawler-fetch-reality-server-log-audit-2026",
+      "title_ko": "AI 크롤러는 정말 llms.txt를 읽을까 — 서버 로그로 직접 감사하는 법",
+      "title_idea": "AI 크롤러는 정말 llms.txt를 읽을까 — 서버 로그로 직접 감사하기",
+      "content_type": "how-to",
+      "target_keyword": "llms.txt 서버 로그 감사",
+      "secondary_keywords": [
+        "AI 크롤러 트래픽",
+        "llms.txt 효과 측정",
+        "GEO 로그 분석"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "web-research 2026-07-19 (limy.ai, airanklab, seeklab llms.txt 2026 가이드 — 515M 봇 이벤트 중 /llms.txt 요청 무시할 수준, 채택률 3.2%)",
+      "added": "2026-07-19",
+      "added_at": "2026-07-19",
+      "status": "queued",
+      "notes": "차별화: '무엇인가' 설명형 글이 포화. 반대로 '실제로 읽히는지'를 서버 로그(awk/grep)로 실측하는 데이터 주도 how-to. crawl-to-refer 실측 글과 상호 링크. 반증 데이터를 앵커로."
     }
   ]
 }

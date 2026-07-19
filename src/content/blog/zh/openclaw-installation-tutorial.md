@@ -1,6 +1,6 @@
 ---
 title: 从安装 OpenClaw 到首次对话 — 完整教程
-description: 手把手教你安装 OpenClaw、连接 Telegram、完成首次 AI 对话。涵盖 Node.js 配置到工作区结构的全流程。
+description: 手把手教你从安装 OpenClaw、连接 Telegram 到完成首次 AI 对话，新手也能跟着做。涵盖 Node.js 环境配置、工作区结构，以及常见报错的排查解决。
 pubDate: '2026-02-04'
 heroImage: ../../../assets/blog/openclaw-installation-tutorial-hero.png
 tags:

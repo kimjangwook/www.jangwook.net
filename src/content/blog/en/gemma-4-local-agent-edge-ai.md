@@ -85,7 +85,7 @@ Grammatically correct. They claim support for 140 languages, but Korean quality 
 
 ## The Real Surprise Is Function Calling
 
-I think the most meaningful change in Gemma 4 is native function calling. I tested it through the Ollama API:
+I think the most meaningful change in Gemma 4 is native function calling. Looking at how [even the far smaller FunctionGemma 270M handles tool calling](/en/blog/en/functiongemma-270m-tool-calling), function calling is no longer a large-model-only capability. I tested it through the Ollama API:
 
 ```bash
 curl -s http://localhost:11434/api/chat -d '{
@@ -145,7 +145,7 @@ Personally, I think this is good enough to use as a [local backend for an MCP se
 
 ## So What Can You Actually Build With This?
 
-I see three realistic use cases:
+I see three realistic use cases. Whichever one you pursue, shipping it as an actual service starts with the [guide to deploying local LLMs to production with Ollama and FastAPI](/en/blog/en/ollama-fastapi-production-deployment-guide-2026).
 
 **1. Offline Code Review Agent**
 — A local agent that takes Git diffs as input and generates code review comments. Useful in environments where source code can't leave the premises.
