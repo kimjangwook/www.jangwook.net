@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-19",
+  "updated_at": "2026-07-20",
   "topics": [
     {
       "slug": "ai-citation-variance-n10-median-multi-model",
@@ -5315,6 +5315,42 @@
       "added_at": "2026-07-19",
       "status": "queued",
       "notes": "기존 core-web-vitals-* 3건과 중복 회피: 측정이 아닌 코드 레벨 최적화(장기 태스크 yield, React 리렌더) 실전에 한정.",
+      "published_at": null
+    },
+    {
+      "slug": "deploy-stale-cache-anon-volume-route-config",
+      "title_idea": "배포했는데 옛날 코드가 살아있었다 — 익명 볼륨에 눌어붙은 라우트·설정 캐시가 새 코드를 가린 사건",
+      "content_type": "how-to",
+      "target_keyword": "배포 캐시 무효화 stale",
+      "secondary_keywords": [
+        "route config cache",
+        "docker anon volume",
+        "laravel 배포 캐시"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "InsightForge 운영 커밋 9ef9cab(2026-07-09) 'Renew anon volumes on deploy so stale route/config cache can't shadow new code'. 배포는 성공했는데 컨테이너 익명 볼륨에 남은 라우트/설정 캐시가 새 코드를 덮어써 옛 동작이 유지된 실제 함정. 앵글: 재현 절차(캐시 남긴 배포 vs 볼륨 갱신 배포) + '배포=코드 교체'라는 착각을 깨는 실측. 착지: 볼륨 갱신을 배포 파이프라인 게이트로 상설화. 페르소나 기둥 ④→①, 함정·삽질 서사(48% 시그니처) 직격. 서비스 펄스 ⑦(2026-07-20) 채집.",
+      "added_at": "2026-07-20",
+      "status": "queued",
+      "notes": "④ 서비스 빌더 기둥 실종 처방. 자기 운영 서비스 실측 — 날조 위험 0. deploy-checklist 형태로 체크리스트 마감 가능.",
+      "published_at": null
+    },
+    {
+      "slug": "public-page-nplus1-benchmark-index-detail",
+      "title_idea": "공개 목록·상세 페이지가 조용히 DB를 100번 때리고 있었다 — 벤치마크 페이지 N+1을 실측으로 잡은 기록",
+      "content_type": "how-to",
+      "target_keyword": "N+1 쿼리 공개 페이지",
+      "secondary_keywords": [
+        "eager loading",
+        "ssrQuestion N+1",
+        "벤치마크 인덱스 성능"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "InsightForge 신뢰성 커밋 클러스터(2026-07-08): c90e7a4 'Fix N+1 on the public benchmark index and detail pages', 0f466d0 'Fix the benchmark topic shelf N+1 on ssrQuestion'. 앵글: 트래픽 없을 때 안 보이다가 공개 인덱스/상세에서 터진 N+1을 쿼리 카운트로 측정 → eager load로 수정 → 쿼리 상한 회귀 테스트로 게이트화. 기둥 ④→①. 서비스 펄스 ⑦(2026-07-20) 채집.",
+      "added_at": "2026-07-20",
+      "status": "queued",
+      "notes": "위 배포-캐시 글의 자매편. 두 건 모두 '측정→수정→게이트' 루프 착지 가능. 우선순위는 캐시 글이 위.",
       "published_at": null
     }
   ]
