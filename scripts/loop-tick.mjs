@@ -35,11 +35,12 @@ const xDir = path.join(effloow, `contents/${ymd}/x/daily`);
 let xCount = 0;
 try { xCount = fs.readdirSync(xDir).filter((f) => /^post-\d+\.md$/.test(f)).length; } catch { /* 미생성 */ }
 out.x_queue_today = xCount;
-if (hour >= 7 && xCount >= 10 && state.last_xqa !== today) {
+// 2026-07-20: 하루 12본 → 3본 축소 (운영자 지시) — 임계값도 3으로 내림
+if (hour >= 7 && xCount >= 3 && state.last_xqa !== today) {
   out.flags.push('xqa_due');
   mark('last_xqa');
 }
-if (hour >= 8 && xCount < 10 && state.last_xgen_alert !== today) {
+if (hour >= 8 && xCount < 3 && state.last_xgen_alert !== today) {
   out.flags.push('xgen_missing'); // 07:00 생성 실패 의심 — morning-daily-x 로그 확인 필요
   mark('last_xgen_alert');
 }
