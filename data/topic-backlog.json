@@ -5352,6 +5352,42 @@
       "status": "queued",
       "notes": "위 배포-캐시 글의 자매편. 두 건 모두 '측정→수정→게이트' 루프 착지 가능. 우선순위는 캐시 글이 위.",
       "published_at": null
+    },
+    {
+      "slug": "css-anchor-positioning-tooltip-js-removal-2026",
+      "title_idea": "CSS Anchor Positioning으로 툴팁 JS를 걷어내기 — 제거한 바이트와 남은 예외",
+      "content_type": "how-to",
+      "target_keyword": "CSS anchor positioning 사용법",
+      "secondary_keywords": [
+        "floating-ui 대체",
+        "CSS만으로 툴팁",
+        "Baseline 2026"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "web.dev Baseline 2026 — anchor positioning이 4개 엔진 newly available 진입(https://web.dev/baseline/2026). 앵글: 자체 사이트의 툴팁·팝오버를 순수 CSS로 옮기고 제거된 JS 바이트를 실측.",
+      "added_at": "2026-07-20",
+      "status": "queued",
+      "notes": "'되더라'로 끝내지 말 것 — @supports fallback, 스크롤 컨테이너·overflow 예외, 키보드 포커스 동작까지 측정 로그로 남긴다.",
+      "published_at": null
+    },
+    {
+      "slug": "baseline-2026-ci-gate-web-features",
+      "title_idea": "web-features 데이터로 CI에 Baseline 게이트 걸기 — 쓸 수 있는 기능만 통과시키기",
+      "content_type": "how-to",
+      "target_keyword": "Baseline CI 검사",
+      "secondary_keywords": [
+        "web-features npm",
+        "browserslist baseline",
+        "CSS 린트 게이트"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "web-platform-dx/web-features docs, web.dev/how-to-use-baseline. 앵글: baseline 상태를 빌드에서 강제해 회귀를 막는 구성.",
+      "added_at": "2026-07-20",
+      "status": "queued",
+      "notes": "hreflang·언어 메타데이터 빌드 게이트 시리즈의 후속. 실제 사이트 CSS를 스캔한 위반 목록을 근거로 제시하고, 예외 허용 목록 운영 방식까지.",
+      "published_at": null
     }
   ]
 }

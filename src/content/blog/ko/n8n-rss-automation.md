@@ -66,6 +66,8 @@ relatedPosts:
 
 ## 전체 자동화 흐름
 
+MCP를 통해 에이전트가 직접 외부 서비스를 호출하는 구성과 비교하고 싶다면 [Notion MCP와 Claude Code 자동화 파이프라인](/ko/blog/ko/ai-agent-notion-mcp-automation)을 함께 보면 차이가 분명해진다.
+
 ```mermaid
 graph TD
     A[Git Push] --> B[GitHub Actions]
@@ -491,6 +493,8 @@ API 사용량 제한 초과 여부 검토
 - 꾸준한 콘텐츠 발행으로 팔로워 <strong>50% 증가</strong>
 
 ## 확장 가능성
+
+배포 이전 단계인 글 작성 자체를 자동화하는 이야기는 [LLM과 Claude Code를 활용한 블로그 자동화](/ko/blog/ko/llm-blog-automation)에 있다.
 
 이 시스템은 다음과 같이 확장할 수 있다:
 

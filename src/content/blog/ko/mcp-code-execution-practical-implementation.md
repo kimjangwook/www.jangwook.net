@@ -288,6 +288,8 @@ export const getNextPubdate = {
 
 ## security/ 디렉토리: 보안 가이드라인
 
+MCP 설정 파일 자체가 시크릿 유출 경로가 된 사례는 [AI 코딩 에이전트가 2,900만 시크릿을 유출시켰다](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security)에 정리해두었다. 샌드박스를 설계하기 전에 한 번 보면 좋다.
+
 `security/` 디렉토리에는 샌드박스 설정과 입력 검증 패턴이 있다.
 
 ### 샌드박스 설정 (Process Isolation)
@@ -466,6 +468,8 @@ Code Execution 패턴을 추가하면:
 - 감사 로깅으로 추적성 확보
 
 ## 향후 계획
+
+도구를 늘리는 대신 메타 도구로 묶어 컨텍스트를 줄이는 접근은 [AI 에이전트 워크플로우를 메타 도구로 최적화하기](/ko/blog/ko/agentic-workflow-meta-tools-optimization)에서 다뤘다.
 
 ### 1. Tool Wrapper 변환
 

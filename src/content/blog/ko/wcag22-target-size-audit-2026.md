@@ -1,6 +1,6 @@
 ---
 title: WCAG 2.2 최소 타깃 크기, 초록불 92점 뒤에 숨은 AA 실패
-description: 손끝이 빗나가는 22×22 버튼에 Lighthouse는 접근성 92점을 줬다. WCAG 2.2가 새로 넣은 SC 2.5.8(최소 24×24)을 샌드박스에 심어 직접 재보니, 자동 도구는 크기 위반은 잡아도 예외 조항은 사람에게 떠넘겼다. 24px 원 두 개가 겹치는지 계산하는 스페이싱 예외까지, 실측 로그와 CSS 수정으로 정리한다.
+description: 손끝이 빗나가는 22×22 버튼에 Lighthouse는 접근성 92점을 줬다. WCAG 2.2 SC 2.5.8(최소 24×24)을 샌드박스에 심어 재보니 자동 도구는 크기 위반만 잡고 예외 조항은 사람에게 넘겼다. 스페이싱 예외 계산과 CSS 수정을 실측 로그로 정리한다.
 pubDate: '2026-07-19'
 heroImage: ../../../assets/blog/wcag22-target-size-audit-2026/target-size-demo.png
 tags:

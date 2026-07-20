@@ -1,6 +1,6 @@
 ---
 title: 내 피드에 네 언어 1,248건이 섞여 있었고, 언어 표시는 하나도 없었다
-description: W3C가 2026-07-16에 문자열의 언어·방향 메타데이터 초안을 공개했다. 그 기준으로 4개 언어 블로그를 감사해보니 통합 RSS 1,248건이 언어 표시 없이 나가고 있었다. dir="auto" 휴리스틱이 14건 중 4건을 틀리는 실측, dc:language로 고친 코드, 회귀를 막는 빌드 게이트까지 정리한다.
+description: W3C가 공개한 문자열 언어·방향 메타데이터 초안을 기준으로 4개 언어 블로그를 감사했다. 통합 RSS 1,248건이 언어 표시 없이 나갔고 dir="auto" 휴리스틱은 14건 중 4건을 틀렸다. dc:language 수정 코드와 회귀를 막는 빌드 게이트까지 정리한다.
 pubDate: '2026-07-20'
 heroImage: ../../../assets/blog/string-lang-dir-metadata-multilingual-web/audit-summary.png
 tags:

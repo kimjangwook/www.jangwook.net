@@ -288,6 +288,8 @@ graph LR
 
 ## security/ディレクトリ
 
+MCP設定ファイル自体がシークレット漏洩の経路になった事例は[AIコーディングエージェントが2,900万件のシークレットを漏洩させた](/ja/blog/ja/ai-coding-secrets-sprawl-mcp-config-security)にまとめた。サンドボックスを設計する前に目を通しておきたい。
+
 AI生成コードを安全に実行するためのセキュリティガイドラインです。
 
 ### サンドボックス設定
@@ -475,6 +477,8 @@ Code Executionパターンを追加適用することで、<strong>累積削減�
 ---
 
 ## 今後の計画
+
+ツールを増やす代わりにメタツールへまとめてコンテキストを削る方法は[AIエージェントワークフローをメタツールで最適化](/ja/blog/ja/agentic-workflow-meta-tools-optimization)で扱った。
 
 ### 短期（1〜2週間）
 

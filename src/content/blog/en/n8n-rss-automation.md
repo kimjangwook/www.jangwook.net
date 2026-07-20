@@ -87,6 +87,8 @@ By combining several technologies, we can create a fully automated pipeline:
 
 ## Complete Automation Flow
 
+For contrast with an agent that calls external services directly over MCP, read this alongside [Building AI Agent Pipelines with Notion MCP and Claude Code](/en/blog/en/ai-agent-notion-mcp-automation).
+
 Here's how the entire system works together:
 
 ```mermaid
@@ -694,6 +696,8 @@ $http.post('YOUR_SLACK_WEBHOOK_URL', {
 ```
 
 ## Part 5: Advanced Configurations
+
+The step before distribution, writing the post itself, is covered in [Blog Automation with LLM and Claude Code](/en/blog/en/llm-blog-automation).
 
 ### Multiple Platform Support
 

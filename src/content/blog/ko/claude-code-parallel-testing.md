@@ -109,6 +109,8 @@ Claude Code의 에이전트 시스템과 Playwright의 병렬 실행을 결합�
 
 ## Claude Code 병렬 실행 아키텍처
 
+병렬화의 단위를 테스트가 아니라 작업 세션 자체로 넓히는 방법은 [Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)에서 따로 정리했다. 여기서는 한 세션 안에서의 병렬 실행에 집중한다.
+
 ### 핵심 개념: Task Tool의 병렬 호출
 
 Claude Code는 <strong>단일 메시지에서 여러 Task tool을 동시에 호출</strong>할 수 있다. 이를 활용하면 서로 독립적인 작업을 병렬로 실행할 수 있다.
@@ -1185,6 +1187,8 @@ jobs:
 | 500 페이지 | 208.3시간 | 26.0시간 | 182.3시간 | 8.0배 |
 
 ## 모범 사례
+
+테스트 코드를 사람이 아니라 AI에게 맡길 때의 함정과 검증 절차는 [Playwright + AI: 자동화된 E2E 테스트 작성하기](/ko/blog/ko/playwright-ai-testing)에 자세히 적어두었다.
 
 ### 1. 테스트 격리
 

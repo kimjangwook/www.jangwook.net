@@ -108,6 +108,8 @@ All pages ──────────┼─ A11y tests (Agent 3)
 
 ## Claude Code Parallel Execution Architecture
 
+Widening the unit of parallelism from tests to entire work sessions is covered separately in [Running Claude Code in Parallel with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree). This article stays inside a single session.
+
 ### Core Concept: Parallel Task Tool Invocation
 
 Claude Code can <strong>invoke multiple Task tools simultaneously in a single message</strong>. This enables parallel execution of independent tasks.
@@ -359,6 +361,8 @@ jobs:
 ```
 
 ## Best Practices
+
+If you hand test authoring itself to an AI, the pitfalls and review steps are written up in [Playwright + AI: Building Automated E2E Tests](/en/blog/en/playwright-ai-testing).
 
 ### 1. Test Isolation
 

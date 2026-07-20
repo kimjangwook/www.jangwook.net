@@ -88,6 +88,8 @@ relatedPosts:
 
 ## システムアーキテクチャ: GitHub Actions → RSS → n8n → AI → SNS
 
+エージェントがMCP経由で外部サービスを直接呼ぶ構成と比べたい場合は[Notion API MCPとClaude Codeで自動化パイプラインを作る](/ja/blog/ja/ai-agent-notion-mcp-automation)を並べて読むと違いがはっきりする。
+
 全体のワークフローは以下の通りです:
 
 ```mermaid
@@ -513,6 +515,8 @@ const cleanHTML = (html: string): string => {
 ```
 
 ## Step 5: 実際の動作フロー
+
+配信の前段、つまり記事執筆そのものの自動化は[LLMとClaude Codeを活用したブログ自動化](/ja/blog/ja/llm-blog-automation)で扱っている。
 
 ### タイムライン
 

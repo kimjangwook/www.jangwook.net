@@ -107,6 +107,8 @@ Claude Code のエージェントシステムと Playwright の並列実行を�
 
 ## Claude Code 並列実行アーキテクチャ
 
+並列化の単位をテストではなく作業セッションそのものに広げる方法は[Claude Code 並列セッション運用ガイド](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)で扱った。ここでは単一セッション内の並列実行に絞る。
+
 ### 核心概念: Task Tool の並列呼び出し
 
 Claude Code は<strong>単一メッセージで複数の Task tool を同時に呼び出す</strong>ことができます。これにより、互いに独立した作業を並列実行できます。
@@ -358,6 +360,8 @@ jobs:
 ```
 
 ## ベストプラクティス
+
+テストコードの生成そのものをAIに任せる場合の落とし穴と検証手順は[Playwright + AI: 自動化されたE2Eテスト作成](/ja/blog/ja/playwright-ai-testing)に書いた。
 
 ### 1. テストの分離
 

@@ -109,6 +109,8 @@ relatedPosts:
 
 ## Claude Code并行执行架构
 
+把并行的单位从测试扩大到整个工作会话的做法，另见[Claude Code 并行会话运行指南](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)。本文只聚焦单个会话内部的并行执行。
+
 ### 核心概念: Task Tool的并行调用
 
 Claude Code可以<strong>在单个消息中同时调用多个Task tool</strong>。利用这一点可以并行执行相互独立的任务。
@@ -1185,6 +1187,8 @@ jobs:
 | 500页 | 208.3小时 | 26.0小时 | 182.3小时 | 8.0倍 |
 
 ## 最佳实践
+
+如果把测试代码的编写本身交给AI，其陷阱与验证步骤记录在[Playwright + AI：编写自动化E2E测试](/zh/blog/zh/playwright-ai-testing)。
 
 ### 1. 测试隔离
 

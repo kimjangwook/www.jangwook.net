@@ -342,6 +342,8 @@ export * from './update';
 
 ## security/ 目录：安全配置
 
+MCP配置文件本身成为密钥泄露通道的事故，记录在[AI编程代理泄露了2900万个密钥](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security)。在设计沙箱之前值得一读。
+
 ### Sandbox Configuration（沙箱配置）
 
 <strong>security/sandbox-config.md</strong> 提供了 AI 生成代码的安全执行指南。
@@ -625,6 +627,8 @@ research/anthropic-code-execution-with-mcp/
 - 未来改进计划
 
 ## 未来计划
+
+与其增加工具，不如用元工具收拢以压缩上下文，这一思路见[用元工具优化AI代理工作流](/zh/blog/zh/agentic-workflow-meta-tools-optimization)。
 
 ### 短期计划（1〜2周）
 

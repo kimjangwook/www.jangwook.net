@@ -67,6 +67,8 @@ relatedPosts:
 
 ## 整体自动化流程
 
+如果想与代理通过MCP直接调用外部服务的方案对比，可以一并阅读[使用Notion API MCP与Claude Code构建自动化流水线](/zh/blog/zh/ai-agent-notion-mcp-automation)。
+
 ```mermaid
 graph TD
     A[Git Push] --> B[GitHub Actions]
@@ -492,6 +494,8 @@ docker run -it --rm \
 - 通过持续发布内容使粉丝<strong>增加50%</strong>
 
 ## 扩展可能性
+
+分发之前的一步，也就是文章写作本身的自动化，写在[利用LLM与Claude Code实现博客自动化](/zh/blog/zh/llm-blog-automation)。
 
 此系统可以通过以下方式扩展:
 

@@ -270,6 +270,8 @@ Best practices documented:
 
 ## The security/ Directory: Protection Configurations
 
+MCP config files have themselves become a secret-leak vector; the incident is written up in [AI Coding Agents Leaked 29 Million Secrets](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security). Worth reading before you design the sandbox.
+
 Security is critical when AI generates and executes code. The security directory provides two essential guides.
 
 ### Sandbox Configuration
@@ -507,6 +509,8 @@ Combined with existing optimizations:
 | Resource exhaustion | Medium | Low | CPU/memory/timeout limits |
 
 ## Future Plans
+
+Folding tools into meta-tools instead of adding more of them is covered in [Optimizing AI Agent Workflows with Meta-Tools](/en/blog/en/agentic-workflow-meta-tools-optimization).
 
 ### Short-term (1〜2 weeks)
 
