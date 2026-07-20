@@ -44,9 +44,9 @@
       "priority": 1,
       "source": "W3C 2026-07-16 FPWD 2건: 'Character Model: String Matching' + 'Strings on the Web: Language and Direction Metadata'. 앵글: 이 블로그(ko/ja/en/zh)의 RSS·JSON-LD inLanguage·슬러그 정규화·bidi 처리를 실측 감사하고 게이트화. 기둥 ①×4언어 운영 실전 — 스펙 원문 인용 + 자기 사이트 측정. pm 캐치업 2026-07-18 발굴.",
       "added_at": "2026-07-18",
-      "status": "queued",
+      "status": "done",
       "notes": "시의성(FPWD 직후) — 우선 발행 권장. 샌드박스 불필요(자기 사이트 감사).",
-      "published_at": null
+      "published_at": "2026-07-20"
     },
     {
       "slug": "multilingual-blog-technical-audit-campaign-2026",

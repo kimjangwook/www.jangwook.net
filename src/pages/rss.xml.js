@@ -8,10 +8,14 @@ export async function GET(context) {
 	const posts = filterIndexablePosts(await getCollection('blog'))
 		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
+	// This feed interleaves all four languages, so a channel-level <language> would be
+	// wrong. RSS 2.0 has no per-item language element, so each item declares its own
+	// language via Dublin Core — the reader must not have to guess from the characters.
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		site: context.site,
+		xmlns: { dc: 'http://purl.org/dc/elements/1.1/' },
 		items: posts.map((post) => {
 			const [lang, ...slugParts] = post.id.split('/');
 			const slug = slugParts.join('/');
@@ -20,6 +24,7 @@ export async function GET(context) {
 				description: post.data.description,
 				pubDate: post.data.pubDate,
 				link: `/${lang}/blog/${lang}/${slug}/`,
+				customData: `<dc:language>${lang}</dc:language>`,
 			};
 		}),
 	});

@@ -2966,5 +2966,16 @@
     },
     "difficulty": 3,
     "pubDate": "2026-07-18"
+  },
+  "string-lang-dir-metadata-multilingual-web": {
+    "categoryScores": {
+      "ai-ml": 0.05,
+      "architecture": 0.2,
+      "automation": 0.3,
+      "devops": 0.4,
+      "web-development": 0.98
+    },
+    "difficulty": 3,
+    "pubDate": "2026-07-20"
   }
 }
