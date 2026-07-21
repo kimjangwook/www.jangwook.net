@@ -2977,5 +2977,16 @@
     },
     "difficulty": 3,
     "pubDate": "2026-07-20"
+  },
+  "bfcache-notrestoredreasons-audit-2026": {
+    "categoryScores": {
+      "ai-ml": 0.02,
+      "architecture": 0.25,
+      "automation": 0.35,
+      "devops": 0.45,
+      "web-development": 0.98
+    },
+    "difficulty": 3,
+    "pubDate": "2026-07-21"
   }
 }
