@@ -266,6 +266,9 @@ const graphNodes = [
 				...speakableSchema,
 				'@id': canonicalURL.toString(),
 				isPartOf: { '@id': WEBSITE_ID },
+				inLanguage: currentLang || 'en',
+				...(articleSchema ? { mainEntity: { '@id': `${canonicalURL}#article` } } : {}),
+				...(faqSchema ? { hasPart: { '@id': `${canonicalURL}#faq` } } : {}),
 				...(breadcrumbSchema ? { breadcrumb: { '@id': `${canonicalURL}#breadcrumb` } } : {}),
 			}]
 		: []),
@@ -279,7 +282,14 @@ const graphNodes = [
 				mainEntityOfPage: { '@id': canonicalURL.toString() },
 			}]
 		: []),
-	...(faqSchema ? [faqSchema] : []),
+	...(faqSchema
+		? [{
+				...faqSchema,
+				'@id': `${canonicalURL}#faq`,
+				inLanguage: currentLang || 'en',
+				isPartOf: { '@id': canonicalURL.toString() },
+			}]
+		: []),
 ].map((node) => {
 	const { '@context': _context, ...rest } = node as Record<string, unknown>;
 	return rest;
