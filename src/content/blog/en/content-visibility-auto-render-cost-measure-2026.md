@@ -1,6 +1,6 @@
 ---
-title: 'content-visibility Measured: One CSS Line, 15x Less Forced Layout'
-description: 'Same HTML, same bytes, one extra CSS line — and forced layout dropped from 27.3ms to 1.8ms. I measured content-visibility: auto with a Chrome trace, plus its contain-intrinsic-size and accessibility traps.'
+title: 'content-visibility Measured: One CSS Line, 15x Less Layout'
+description: 'Same HTML, same bytes, one CSS line, and forced layout dropped from 27.3ms to 1.8ms. I traced content-visibility: auto in Chrome and mapped its a11y traps.'
 pubDate: '2026-07-17'
 heroImage: '../../../assets/blog/content-visibility-auto-render-cost-measure-2026/hero.png'
 tags:

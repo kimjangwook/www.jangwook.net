@@ -1,6 +1,6 @@
 ---
 title: 'CSS 한 줄로 강제 레이아웃 27.3ms를 1.8ms로 — content-visibility 실측'
-description: '같은 HTML, 같은 바이트인데 CSS 한 줄만 넣었더니 강제 레이아웃 비용이 15배 줄었다. 400개 섹션짜리 페이지를 두 벌 만들어 Chrome 트레이스와 Performance API로 content-visibility: auto의 실제 렌더링 절감을 재고, contain-intrinsic-size와 접근성 함정까지 정리한다.'
+description: '같은 HTML, 같은 바이트인데 CSS 한 줄만 넣었더니 강제 레이아웃이 27.3ms에서 1.8ms로 줄었다. 400개 섹션 페이지 두 벌을 Chrome 트레이스로 재고, content-visibility: auto의 절감분과 contain-intrinsic-size 함정까지 정리한다.'
 pubDate: '2026-07-17'
 heroImage: '../../../assets/blog/content-visibility-auto-render-cost-measure-2026/hero.png'
 tags:

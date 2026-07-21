@@ -1,6 +1,6 @@
 ---
 title: 'AI Overview に引用されるかを決める meta 一行 — robots スニペット指示子を実測する'
-description: 'nosnippet の一行は、もう検索スニペットを消すだけではない。Google 公式ドキュメントは、この指示子が AI Overview・AI Mode への引用入力まで遮断すると明記した。壊したページと直したページを作り、パーサーで監査して max-snippet・data-nosnippet の実効果と「最も制限的なものが勝つ」ルールを測り直した。'
+description: 'nosnippet の一行は、もう検索スニペットを消すだけではない。Google 公式ドキュメントは、この指示子が AI Overview・AI Mode への引用入力まで遮断すると明記した。二つのページを作り、パーサーで max-snippet・data-nosnippet の実効果を測り直した。'
 pubDate: '2026-07-18'
 heroImage: '../../../assets/blog/robots-snippet-controls-ai-overviews-2026/hero.png'
 tags:

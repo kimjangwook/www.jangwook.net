@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-20",
+  "updated_at": "2026-07-21",
   "topics": [
     {
       "slug": "ai-citation-variance-n10-median-multi-model",
@@ -5387,6 +5387,42 @@
       "added_at": "2026-07-20",
       "status": "queued",
       "notes": "hreflang·언어 메타데이터 빌드 게이트 시리즈의 후속. 실제 사이트 CSS를 스캔한 위반 목록을 근거로 제시하고, 예외 허용 목록 운영 방식까지.",
+      "published_at": null
+    },
+    {
+      "slug": "soft-navigations-api-spa-cwv-measure-2026",
+      "title_idea": "SPA에서 두 번째 화면의 LCP를 재는 법 — Soft Navigations API 실측",
+      "content_type": "how-to",
+      "target_keyword": "Soft Navigations API",
+      "secondary_keywords": [
+        "SPA Core Web Vitals",
+        "soft navigation LCP",
+        "PerformanceObserver interaction-contentful-paint"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome for Developers — Soft Navigations API (Chrome at I/O 2026). 앵글: SPA 라우팅 후 CWV가 측정되지 않는 공백을 실제 앱에서 재현하고 메꾼다.",
+      "added_at": "2026-07-21",
+      "status": "queued",
+      "notes": "content-visibility·INP 실측 시리즈의 연장. 라우터 전환 3종(해시/History/View Transition)에서 soft navigation 엔트리가 잡히는지·안 잡히는지 표로 비교하고, web-vitals 라이브러리 연동과 RUM 전송까지.",
+      "published_at": null
+    },
+    {
+      "slug": "prerender-until-script-measure-2026",
+      "title_idea": "prerender until script는 실제로 뭘 아끼나 — Chrome 144 예측 로딩 실측",
+      "content_type": "how-to",
+      "target_keyword": "prerender until script",
+      "secondary_keywords": [
+        "speculation rules 디버깅",
+        "DevTools Speculative loads",
+        "prerender 비용 측정"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Chrome for Developers — Prerender pages / Debug speculation rules with DevTools (Chrome 144, 2026-01). 앵글: 전체 prerender와 script 직전 정지 모드의 비용·이득을 같은 페이지에서 대조.",
+      "added_at": "2026-07-21",
+      "status": "queued",
+      "notes": "bfcache 실측 글의 후속으로 '두 번째 이후 내비게이션' 축을 잇는다. DevTools Speculative loads 탭의 실패 사유 코드와 서버 로그를 대조해 낭비된 prerender를 정량화.",
       "published_at": null
     }
   ]

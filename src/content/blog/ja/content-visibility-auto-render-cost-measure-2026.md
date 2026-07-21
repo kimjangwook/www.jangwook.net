@@ -1,6 +1,6 @@
 ---
 title: 'CSS一行で強制レイアウトが27.3ms→1.8msに — content-visibility実測'
-description: '同じHTML・同じバイト数なのに、CSSを一行足しただけで強制レイアウトのコストが15倍縮んだ。400セクションのページを二つ作り、ChromeトレースとPerformance APIで content-visibility: auto の実際のレンダリング削減を測り、contain-intrinsic-size とアクセシビリティの落とし穴まで整理する。'
+description: '同じHTML・同じバイト数なのに、CSSを一行足しただけで強制レイアウトが27.3msから1.8msに縮んだ。400セクションのページを二つ作りChromeトレースで content-visibility: auto の削減量を測り、contain-intrinsic-size と落とし穴まで整理する。'
 pubDate: '2026-07-17'
 heroImage: '../../../assets/blog/content-visibility-auto-render-cost-measure-2026/hero.png'
 tags:

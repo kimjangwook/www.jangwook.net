@@ -1,6 +1,6 @@
 ---
 title: 'The meta Line That Decides If AI Overviews Can Quote You'
-description: 'A stray nosnippet no longer just hides your snippet. Google says it also blocks your page as AI Overview input. I built broken vs fixed pages and a parser to audit max-snippet and data-nosnippet.'
+description: 'A stray nosnippet no longer hides your snippet only. Google says it blocks the page as AI Overview input. I built broken and fixed pages and a parser to audit.'
 pubDate: '2026-07-18'
 heroImage: '../../../assets/blog/robots-snippet-controls-ai-overviews-2026/hero.png'
 tags:

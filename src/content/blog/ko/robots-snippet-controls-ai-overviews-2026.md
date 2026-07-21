@@ -1,6 +1,6 @@
 ---
 title: 'AI Overview가 내 페이지를 인용할지 정하는 meta 한 줄 — robots 스니펫 지시자 실측'
-description: 'nosnippet 한 줄은 이제 검색 스니펫만 끄지 않는다. Google 공식 문서는 이 지시자가 AI Overview·AI Mode의 인용 입력까지 막는다고 못박았다. 두 페이지를 만들어 파서로 감사하며 max-snippet·data-nosnippet의 실제 효과와 "가장 제한적인 것이 이긴다" 규칙을 재봤다.'
+description: 'nosnippet 한 줄은 이제 검색 스니펫만 끄지 않는다. Google 공식 문서는 이 지시자가 AI Overview·AI Mode의 인용 입력까지 막는다고 못박았다. 두 페이지를 만들어 파서로 max-snippet·data-nosnippet의 실제 효과를 다시 재봤다.'
 pubDate: '2026-07-18'
 heroImage: '../../../assets/blog/robots-snippet-controls-ai-overviews-2026/hero.png'
 tags:
