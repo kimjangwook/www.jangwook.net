@@ -21,6 +21,29 @@ if [ -f "$PROJECT_DIR/.env" ]; then
     set +a
 fi
 
+# Claude Telegram 플러그인 MCP(bun server.ts) 차단 (2026-07-21).
+# 헤드리스 run 은 인바운드 텔레그램이 불필요(알림은 TG_BOT_TOKEN+curl 경로)한데,
+# claude 비정상 종료(SIGKILL/EINTR 행업 사망) 시 bun 폴러가 고아로 남아 CPU 를 점유한다.
+# 빈 값이면 플러그인이 토큰 검사에서 즉시 exit(1) 해 폴러 자체가 뜨지 않는다.
+export TELEGRAM_BOT_TOKEN=""
+
+# 이전 세션이 남긴 고아 bun 폴러 정리. 플러그인(0.0.6) 자체 워치독은 ppid 변화만
+# 검사하는데, server.ts 의 부모는 claude 가 아니라 bun run 래퍼라 claude 가 죽어도
+# ppid 가 안 바뀌어 발동하지 않는다. 래퍼가 launchd(pid 1)로 재부모화된 체인만 죽인다.
+cleanup_orphan_telegram_bun() {
+    local pid ppid gppid
+    for pid in $(pgrep -f 'bun server\.ts' 2>/dev/null); do
+        ppid=$(ps -o ppid= -p "$pid" 2>/dev/null | tr -d ' ')
+        [ -n "$ppid" ] || continue
+        gppid=$(ps -o ppid= -p "$ppid" 2>/dev/null | tr -d ' ')
+        if [ "$ppid" = "1" ] || [ "$gppid" = "1" ]; then
+            echo "[$(date '+%Y-%m-%d %H:%M:%S')] orphan telegram bun 정리: pid=$pid wrapper=$ppid" >> "${LOG_FILE:-/dev/null}" 2>/dev/null || true
+            kill "$pid" "$ppid" 2>/dev/null || true
+        fi
+    done
+}
+cleanup_orphan_telegram_bun
+
 # Telegram notification function
 tg_send() {
     local message="$1"
@@ -149,6 +172,9 @@ done
 # Kill watchdog
 kill $WATCHDOG_PID 2>/dev/null || true
 wait $WATCHDOG_PID 2>/dev/null || true
+
+# claude 종료 직후 고아 bun 폴러 재점검 (비정상 종료 대비 백스톱)
+cleanup_orphan_telegram_bun
 
 if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Publishing validation gate..." >> "$LOG_FILE"
