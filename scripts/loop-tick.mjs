@@ -27,7 +27,9 @@ const dow = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[parts.wee
 let state = {};
 try { state = JSON.parse(fs.readFileSync(statePath, 'utf8')); } catch { /* 첫 실행 */ }
 
-const out = { ts: `${today}T${parts.hour}:${parts.minute}`, flags: [] };
+// 요일은 여기 실측값만 신뢰 — 스폰 프롬프트에 요일을 하드코딩하지 말 것 (2026-07-22 교훈: 오케스트레이션 층 요일 오류)
+const weekdayKo = { Sun: '일', Mon: '월', Tue: '화', Wed: '수', Thu: '목', Fri: '금', Sat: '토' }[parts.weekday];
+const out = { ts: `${today}T${parts.hour}:${parts.minute}`, weekday: `${parts.weekday}(${weekdayKo})`, flags: [] };
 const mark = (key, value = today) => { state[key] = value; };
 
 // ── xqa_due: 07:00 X 생성 후 첫 틱 ──────────────────────────────
