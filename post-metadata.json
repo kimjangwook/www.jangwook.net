@@ -2988,5 +2988,16 @@
     },
     "difficulty": 3,
     "pubDate": "2026-07-21"
+  },
+  "restaurant-jsonld-opening-hours-validation-2026": {
+    "categoryScores": {
+      "ai-ml": 0.05,
+      "architecture": 0.3,
+      "automation": 0.4,
+      "devops": 0.35,
+      "web-development": 0.97
+    },
+    "difficulty": 3,
+    "pubDate": "2026-07-22"
   }
 }
