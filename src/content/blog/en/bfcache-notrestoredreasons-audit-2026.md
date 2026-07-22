@@ -2,6 +2,7 @@
 title: 'One listener costs you the back button: six bfcache probes'
 description: Six pages, one bfcache blocker each, real back navigations measured with pageshow.persisted and notRestoredReasons. unload blocked the restore. beforeunload and Cache-Control no-store did not.
 pubDate: '2026-07-21'
+updatedDate: '2026-07-22'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png
 tags:
   - performance
@@ -136,6 +137,8 @@ The conditions matter here, so let me copy them across carefully. Per Chrome's o
 The practical read: using `no-store` as your bfcache opt-out no longer rests on much. That doesn't mean sensitive pages now sit exposed in memory, either. Responsibility moved from a header string to a sharper signal, the change in authentication state. I won't push the conclusion harder than that, since it's browser behavior and it moved once already. But if you have code built on "we send `no-store`, so we're obviously not cached," go measure it again this week.
 
 ## An open connection blocks, WebSocket code doesn't
+
+> **[Update 2026-07-22]** Per a web.dev announcement in June 2026 ("New to the web platform in June 2026"), browser behavior may have shifted so that a page with an active WebSocket connection can now enter bfcache. The measurement in the section below was taken on Chrome 150, before that announcement, so I plan to rerun the same probe and update the result. Until then, read this section's WebSocket-blocking conclusion as reflecting the older behavior.
 
 I got the WebSocket probe wrong the first time. The initial version pointed at `ws://127.0.0.1:8099` with nothing listening on that port. Result: `persisted: true`. Not blocked at all.
 

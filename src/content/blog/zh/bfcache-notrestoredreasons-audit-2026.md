@@ -2,6 +2,7 @@
 title: 'unload被拦，beforeunload放行：bfcache实测六轮'
 description: 「后退」能不能瞬间打开，不是口味问题，是可以量的。我做了六个页面，每个只埋一种阻断条件，逐一执行真实的后退导航，读取 pageshow.persisted 与 notRestoredReasons。unload 被拦，beforeunload 和 no-store 都放行了。
 pubDate: '2026-07-21'
+updatedDate: '2026-07-22'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png
 tags:
   - performance
@@ -136,6 +137,8 @@ Chrome 文档这样解释这个值："For all the cross-origin iframes, we repor
 读法归纳一下。拿 `no-store` 当 bfcache 的关闭开关，现在依据已经很薄。但这不等于敏感页面就裸露在内存里。防护的责任从一行响应头，移到了认证状态变化这个更准的信号上。这毕竟依赖浏览器行为，结论我不说死。可如果你有代码建立在「我们发了 `no-store`，当然不会被缓存」这个前提上，这周就该重新量一次。
 
 ## 挡住的是开着的连接，不是代码
+
+> **【追记 2026-07-22】** 据 web.dev 2026 年 6 月的公告（「New to the web platform in June 2026」），浏览器行为可能已经改变，带有活动 WebSocket 连接的页面现在也能进入 bfcache。下面这一节的测量是在那次公告之前的环境（Chrome 150）里测的，所以我打算用同一套探针重新测量后再更新结论。在那之前，本节关于 WebSocket 阻断的结论请按旧版本行为来读。
 
 WebSocket 这轮我先做砸了一次。最初没起服务端，只埋了 `new WebSocket('ws://127.0.0.1:8099')` 就跑。结果是 `persisted: true`，根本没被拦。
 

@@ -2,6 +2,7 @@
 title: 'beforeunload는 통과했고 unload는 막혔다: bfcache 실측 6판'
 description: 뒤로 가기가 즉시 열리는지 아닌지는 취향이 아니라 측정 대상이다. 차단 조건을 하나씩 심은 페이지 여섯 개에 back 내비게이션을 걸어 pageshow.persisted와 notRestoredReasons를 받아냈다. unload는 막혔고 beforeunload와 no-store는 통과했다.
 pubDate: '2026-07-21'
+updatedDate: '2026-07-22'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png
 tags:
   - performance
@@ -138,6 +139,8 @@ Chrome 문서는 이 값을 이렇게 설명한다. "For all the cross-origin if
 정리하면 이렇다. `no-store`를 bfcache 차단용 스위치로 쓰던 관행은 이제 근거가 약하다. 하지만 그렇다고 민감한 페이지가 무방비로 캐시에 남는 것도 아니다. 보호 책임이 헤더 한 줄에서 쿠키·인증 상태 변화라는 더 정확한 신호로 옮겨간 것에 가깝다. 브라우저 동작에 기대는 부분이므로 결론을 세게 내리지는 않겠다. 다만 "`no-store`니까 당연히 안 걸린다"는 전제로 짜둔 코드가 있다면 지금 다시 재보는 게 맞다.
 
 ## 열린 연결이 문제지 코드가 문제가 아니다
+
+> **【추기 2026-07-22】** web.dev의 2026년 6월 발표(「New to the web platform in June 2026」)에 따르면, 활성 WebSocket 연결이 있는 페이지도 bfcache에 진입하는 방향으로 브라우저 동작이 바뀌었을 가능성이 있다. 아래 절의 측정은 그 발표 이전 환경(Chrome 150)에서 잰 값이므로, 같은 프로브로 재측정한 뒤 결과를 갱신할 예정이다. 그때까지 이 절의 WebSocket 차단 결론은 구버전 기준으로 읽어야 한다.
 
 WebSocket 판은 한 번 실패하고 다시 했다. 처음에는 서버 없이 `new WebSocket('ws://127.0.0.1:8099')`만 심어두고 돌렸다. 결과는 `persisted: true`. 차단되지 않았다.
 

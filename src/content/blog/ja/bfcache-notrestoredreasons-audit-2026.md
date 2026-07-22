@@ -2,6 +2,7 @@
 title: 'unloadは弾かれ、beforeunloadは通った: bfcache実測6本'
 description: 「戻る」が一瞬で開くかどうかは好みではなく計測対象だ。阻害要因を一つずつだけ仕込んだページを6枚用意し、実際にback遷移をかけてpageshow.persistedとnotRestoredReasonsを受け取った。unloadは弾かれ、beforeunloadとno-storeは通った。
 pubDate: '2026-07-21'
+updatedDate: '2026-07-22'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png
 tags:
   - performance
@@ -126,6 +127,8 @@ const routes = {
 読み方をまとめる。`no-store` をbfcache無効化のスイッチとして使う運用は、もう根拠が薄い。かといって機微なページが無防備にメモリへ残るわけでもない。守りの責任がヘッダー1行から、認証状態の変化という、より正確な信号へ移った。ブラウザ挙動に依存する話なので結論は強く置かない。ただ「`no-store` だから当然キャッシュされない」という前提で書いたコードがあるなら、今週のうちに測り直すのが妥当だ。
 
 ## 開いている接続が問題であって、コードではない
+
+> **【追記 2026-07-22】** web.dev の2026年6月の発表(「New to the web platform in June 2026」)によれば、接続中のWebSocketがあるページも bfcache に入る方向へブラウザの挙動が変わった可能性がある。以下の節の計測はその発表より前の環境(Chrome 150)で測った値なので、同じプローブで測り直したうえで結果を更新する予定だ。それまで、この節のWebSocket阻害の結論は旧バージョン基準として読んでほしい。
 
 WebSocketの回は一度失敗してやり直した。最初は待ち受けサーバーを立てないまま `new WebSocket('ws://127.0.0.1:8099')` だけ仕込んで実行した。結果は `persisted: true`。阻害されない。
 
