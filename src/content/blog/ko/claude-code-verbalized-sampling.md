@@ -1,5 +1,5 @@
 ---
-title: 'Claude Code 에이전트에 Verbalized Sampling 적용하기: LLM 다양성 1.6〜2.1배 향상'
+title: 'Claude Code에 Verbalized Sampling 적용: LLM 다양성 1.6〜2.1배 향상'
 description: >-
   Verbalized Sampling 기법을 Claude Code 에이전트에 적용하여 프롬프트 다양성 2.0배, 콘텐츠 다양성 1.8배,
   글쓰기 스타일 1.6배 향상을 달성한 실전 가이드. 4개 에이전트 수정 내역, 파라미터 조정, 비용 분석까지 완벽 정리.

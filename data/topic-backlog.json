@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-21",
+  "updated_at": "2026-07-22",
   "topics": [
     {
       "slug": "ai-citation-variance-n10-median-multi-model",
@@ -5423,6 +5423,60 @@
       "added_at": "2026-07-21",
       "status": "queued",
       "notes": "bfcache 실측 글의 후속으로 '두 번째 이후 내비게이션' 축을 잇는다. DevTools Speculative loads 탭의 실패 사유 코드와 서버 로그를 대조해 낭비된 prerender를 정량화.",
+      "published_at": null
+    },
+    {
+      "slug": "claude-artifacts-mcp-connectors-security-model-2026",
+      "title_idea": "Claude Artifacts가 MCP 커넥터를 호출한다 — 뷰어 권한 위임 모델이 바꾸는 것",
+      "content_type": "news",
+      "target_keyword": "Claude Artifacts MCP 커넥터",
+      "secondary_keywords": [
+        "MCP connector artifacts",
+        "뷰어 권한 위임",
+        "artifact 자격증명 격리"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Anthropic 발표 2026-07-16 — Artifacts가 뷰어 자신의 MCP 커넥터로 리하이드레이트, 게시자 자격증명 비노출",
+      "added_at": "2026-07-22",
+      "status": "queued",
+      "notes": "앵글: 공유 대시보드/리포트가 라이브 데이터 셸이 되는 구조 변화. 게시자 credential leak 없이 뷰어별 데이터 격리라는 보안 모델을 기존 MCP 운영 경험(블로그 다수 글)과 연결. 실제 artifact+커넥터 데모 재현 시도.",
+      "published_at": null
+    },
+    {
+      "slug": "github-copilot-ai-credits-pricing-shift-2026",
+      "title_idea": "GitHub Copilot 전 플랜 AI Credits 전환 — 사용량 과금이 에이전트 워크플로 설계에 미치는 영향",
+      "content_type": "news",
+      "target_keyword": "GitHub Copilot AI Credits",
+      "secondary_keywords": [
+        "Copilot 요금제 변경 2026",
+        "에이전트 사용량 과금",
+        "AI 코딩 비용 최적화"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "GitHub 발표 2026-07 — 전 플랜 usage-based AI Credits 전환, 코드 완성은 무제한 유지",
+      "added_at": "2026-07-22",
+      "status": "queued",
+      "notes": "앵글: anthropic-openclaw-agent-credits-policy-change-2026 글과 묶어 업계 전반의 크레딧化 흐름으로 분석. 에이전트 다중 호출 워크플로의 비용 산정 실례 포함.",
+      "published_at": null
+    },
+    {
+      "slug": "claude-code-manual-permission-default-2026",
+      "title_idea": "Claude Code 기본 권한 모드가 Manual로 — 자율 에이전트 운영자가 점검할 것",
+      "content_type": "news",
+      "target_keyword": "Claude Code 권한 모드",
+      "secondary_keywords": [
+        "permission mode Manual",
+        "자율 에이전트 보안",
+        "launchd 무인 실행 권한"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Claude Code 2026-07 업데이트 — CLI/VS Code/JetBrains 전반 기본 권한 모드 Manual 전환 + 파일시스템 격리 컨트롤",
+      "added_at": "2026-07-22",
+      "status": "queued",
+      "notes": "앵글: 이 블로그의 3-스케줄 무인 자동화 체제에 미치는 실제 영향을 자기 사례로 검증. 격리 컨트롤·백그라운드 MCP 호출 변화까지 운영자 체크리스트로 정리.",
       "published_at": null
     }
   ]
