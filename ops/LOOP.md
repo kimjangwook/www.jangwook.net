@@ -77,6 +77,8 @@
 
 ## 운영 교훈 (append-only, 최신이 위)
 
+- 2026-07-22 (틱 운영, 원인 확정): **launchd exit 78의 정체는 TCC — 로그 경로가 ~/Documents 하위면 잡이 실행조차 안 된다**. StandardOutPath가 ~/Documents(TCC 보호영역) 하위라 파일별 com.apple.macl 라벨이 launchd-spawn 프로세스의 로그 열기를 거부 → EX_CONFIG(78), 스크립트 미실행·로그 미기록. launchd는 exec 전에 로그 fd를 먼저 열기 때문에 스크립트 내용과 무관하게 죽는다. 수복: morning-daily-x·x-reminders plist의 StandardOut/ErrorPath를 ~/Library/Logs/effloow/(TCC 비보호)로 이전, bootout+bootstrap 재적재, kickstart로 exit 0 검증. 규칙: **launchd 잡의 로그·작업 경로는 TCC 보호영역(~/Documents·Desktop·Downloads) 밖에 둘 것**. 07-21 rc=1은 별개 건(claude 헤드리스 개별 실패)으로 잔존 — 내일 07:00 결과로 판정.
+
 - 2026-07-22 (틱 운영): **07:00 X 자동 생성 2일 연속 실패 — 타임아웃이 아니라 환경 문제**. 07-21·07-22 모두 claude 헤드리스가 즉시 rc=1 fast-fail(07-22는 launchd exit 78 config로 로그조차 미생성). 워치독 타임아웃 계열이 아니라 claude CLI 설정/인증 계열로 의심 — 폴백 수동 재생성으로 배달은 지켰으나(07-22: 3본, 07:30 결번·12:30부터 정상) 근본 원인 미해결 상태로는 매일 아침 결번이 반복된다. `xgen_missing` 플래그가 뜨면 재생성과 동시에 원인 진단을 별도 에이전트로 스폰할 것. 진단 포인트: launchd plist 환경(PATH·HOME), claude CLI 인증 토큰 만료, exit 78의 EX_CONFIG 의미.
 
 - 2026-07-22 (틱 운영): **SendMessage 무보고 재발 — 하니스 의심 확정 단계로**. ⑧ 스카우트가 작업·텔레그램 전송(200×7)을 정상 완료하고도 최종 텍스트로만 보고해 메인 루프에는 idle 알림만 도착했다(07-19 교훈의 재발 조건 충족). 같은 틱의 ⑥ 개선 에이전트는 SendMessage 보고에 성공 — 즉 도구 자체는 노출되며, 프롬프트의 "완료 시 반드시 SendMessage" 문구 유무가 갈랐다(⑧ 스폰 프롬프트가 공통 헤더의 해당 줄을 누락). 처방: 스폰 시 공통 헤더를 요약·발췌하지 말고 전문 포함할 것. 무보고 idle을 받으면 트랜스크립트 tail 확인이 재촉 메시지보다 싸고 확실하다.
