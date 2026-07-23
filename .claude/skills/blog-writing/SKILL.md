@@ -64,6 +64,7 @@ python scripts/validate_frontmatter.py <language>/post-name.md
 - pubDate always latest post + 1 day
 - heroImage uses ../../../assets/blog/ path
 - Use quadruple backticks when code blocks contain triple backticks
+- Direct quotes (quoted or block-quoted with an attributed source) must pass a WebFetch verbatim comparison against the original before publishing; if it can't be matched, demote to paraphrase + source link. Fabricated quotes violate persona section 5.
 - Create all three language versions simultaneously (ko, en, ja)
 - Same filename across all language folders
 - Hero images are shared across all languages
