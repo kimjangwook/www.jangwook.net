@@ -150,7 +150,7 @@ Tab 3에서 포커스가 브라우저 주소창으로 잠깐 나가는 것은 �
 
 | 순위 | 방법 | 배경 차단 | 근거 |
 |---|---|---|---|
-| 1 | `<dialog>` + `showModal()` | 브라우저가 자동 처리 | MDN: 다이얼로그 밖 요소는 "become inert (as if the inert attribute is specified)" |
+| 1 | `<dialog>` + `showModal()` | 브라우저가 자동 처리 | MDN: `showModal()` 사용 시 다이얼로그 밖을 전부 inert 처리하는 "동작을 브라우저가 제공한다" |
 | 2 | 커스텀 오버레이 + 배경 `inert` | 한 줄로 명시적 처리 | 이번 실측 — 배경 진입 0회 |
 | 3 | JS 포커스 트랩 루프 | 코드가 keydown을 가로챔 | 구형 브라우저 지원이 꼭 필요할 때만 |
 

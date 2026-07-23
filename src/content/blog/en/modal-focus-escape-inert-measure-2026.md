@@ -148,7 +148,7 @@ Based on this measurement, my order of preference:
 
 | Rank | Approach | Background blocking | Basis |
 |---|---|---|---|
-| 1 | `<dialog>` + `showModal()` | Browser does it | MDN: elements outside the dialog "become inert (as if the inert attribute is specified)" |
+| 1 | `<dialog>` + `showModal()` | Browser does it | MDN: with `showModal()`, rendering everything else inert is "provided by the browser" |
 | 2 | Custom overlay + background `inert` | One explicit line | This measurement — zero background landings |
 | 3 | JS focus-trap loop | Code intercepts keydown | Only when legacy support demands it |
 

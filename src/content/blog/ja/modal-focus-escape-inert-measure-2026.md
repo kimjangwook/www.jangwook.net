@@ -148,7 +148,7 @@ Tab 3でフォーカスが一度アドレスバーへ出るのは正常だ。APG
 
 | 順位 | 方法 | 背景の遮断 | 根拠 |
 |---|---|---|---|
-| 1 | `<dialog>` + `showModal()` | ブラウザが自動処理 | MDN: ダイアログ外の要素は "become inert (as if the inert attribute is specified)" |
+| 1 | `<dialog>` + `showModal()` | ブラウザが自動処理 | MDN: `showModal()` 使用時、ダイアログ外を inert 化する「この動作をブラウザーが提供する」 |
 | 2 | カスタムオーバーレイ + 背景`inert` | 1行で明示的に遮断 | 今回の実測 — 背景着地0回 |
 | 3 | JSフォーカストラップ | keydownを横取り | レガシー対応が必須のときだけ |
 

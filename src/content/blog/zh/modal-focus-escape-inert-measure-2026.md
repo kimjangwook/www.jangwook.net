@@ -146,7 +146,7 @@ Tab 3 时焦点短暂跑到地址栏，这是正常行为。APG 要求的循环�
 
 | 顺位 | 方案 | 背景阻断 | 依据 |
 |---|---|---|---|
-| 1 | `<dialog>` + `showModal()` | 浏览器自动处理 | MDN：对话框外的元素 "become inert (as if the inert attribute is specified)" |
+| 1 | `<dialog>` + `showModal()` | 浏览器自动处理 | MDN：使用 `showModal()` 时，将对话框外全部置为 inert「由浏览器提供这一行为」 |
 | 2 | 自定义遮罩 + 背景 `inert` | 一行显式阻断 | 本次实测——背景落点零次 |
 | 3 | JS 焦点陷阱循环 | 代码拦截 keydown | 只在必须兼容老浏览器时 |
 
