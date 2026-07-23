@@ -1,6 +1,6 @@
 ---
 title: gcloud MCP로 GCP 인프라 자동 감사 구현하기
-description: AI 에이전트와 gcloud MCP를 활용하여 GCP 인프라의 보안 취약점과 구성 문제를 자동으로 탐지하고 개선하는 방법을 소개합니다.
+description: 'AI 에이전트와 gcloud MCP를 연결해 GCP 인프라의 보안 취약점과 구성 문제를 자동 감사하는 방법을 다룹니다. 서비스별 병렬 에이전트 아키텍처 설계부터 gcloud MCP 설정, 분석 오케스트레이션, 보고서 자동 생성까지 실전 구현 4단계를 코드 예제와 함께 정리했습니다.'
 pubDate: '2025-11-29'
 heroImage: ../../../assets/blog/gcloud-mcp-infrastructure-audit.jpg
 tags:

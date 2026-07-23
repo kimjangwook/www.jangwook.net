@@ -5478,6 +5478,54 @@
       "status": "queued",
       "notes": "앵글: 이 블로그의 3-스케줄 무인 자동화 체제에 미치는 실제 영향을 자기 사례로 검증. 격리 컨트롤·백그라운드 MCP 호출 변화까지 운영자 체크리스트로 정리.",
       "published_at": null
+    },
+    {
+      "slug": "browser-two-week-release-cycle-2026",
+      "title_idea": "Chrome·Edge에 이어 Firefox까지 — 3대 브라우저 2주 릴리스 주기 전환이 웹 개발자에게 뜻하는 것",
+      "content_type": "news",
+      "target_keyword": "브라우저 2주 릴리스 주기",
+      "secondary_keywords": [
+        "Firefox 155 릴리스 주기",
+        "브라우저 호환성 테스트 자동화"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "how2shout.com/news/firefox-chrome-edge-two-week-release-cycle-2026",
+      "added_at": "2026-07-23",
+      "status": "queued",
+      "notes": "3대 브라우저가 모두 2주 주기로 전환. 기능 출시 가속이 Baseline/Interop·호환성 테스트 전략에 미치는 영향을 실무 관점(CI 브라우저 매트릭스, 회귀 감시)으로 분석. 블로그의 실측 시리즈와 연결 가능."
+    },
+    {
+      "slug": "gpt-5-6-sol-terra-luna-tier-strategy-2026",
+      "title_idea": "GPT-5.6 Sol·Terra·Luna 3계층 전략 — 모델 티어링 시대의 API 비용 설계",
+      "content_type": "news",
+      "target_keyword": "GPT-5.6 티어 비교",
+      "secondary_keywords": [
+        "GPT-5.6 API 가격",
+        "LLM 모델 티어 선택"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "buildfastwithai.com/blogs/ai-news-today-july-7-2026",
+      "added_at": "2026-07-23",
+      "status": "queued",
+      "notes": "7/9 GPT-5.6 전면 출시. 플래그십/균형/저비용 3계층 구조를 Claude 라인업과 비교, 워크로드별 티어 선택 가이드로 차별화. 기존 llm-api-pricing 글과 내부링크 시너지."
+    },
+    {
+      "slug": "alibaba-agent-native-cloud-architecture-2026",
+      "title_idea": "Alibaba 'Agent Native Cloud' 발표 — 에이전트 전용 클라우드 아키텍처는 무엇이 다른가",
+      "content_type": "news",
+      "target_keyword": "Agent Native Cloud",
+      "secondary_keywords": [
+        "AgentTeams 멀티 에이전트",
+        "에이전트 샌드박스 실행 환경"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "WAIC 2026-07-18 발표, aiagentstore.ai 주간 뉴스",
+      "added_at": "2026-07-23",
+      "status": "queued",
+      "notes": "멀티 에이전트 오케스트레이션(AgentTeams)·보안 샌드박스(Agentic Computer)를 클라우드 인프라 계층으로 내린 첫 사례. 블로그의 멀티 에이전트 실전 글들과 연결해 아키텍처 관점 분석."
     }
   ]
 }

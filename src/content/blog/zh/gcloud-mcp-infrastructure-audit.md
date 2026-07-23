@@ -1,6 +1,6 @@
 ---
 title: 使用 gcloud MCP 自动化 GCP 基础设施审计
-description: 学习如何使用 AI 代理和 gcloud MCP 自动检测 GCP 基础设施中的安全漏洞和配置问题。
+description: '使用 AI 代理和 gcloud MCP 自动审计 GCP 基础设施的安全漏洞与配置问题。从并行代理架构设计、MCP 配置、分析编排到报告自动生成，附代码示例的四步实战指南。'
 pubDate: '2025-11-29'
 heroImage: ../../../assets/blog/gcloud-mcp-infrastructure-audit.jpg
 tags:

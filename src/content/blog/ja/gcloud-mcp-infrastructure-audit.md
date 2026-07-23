@@ -1,6 +1,6 @@
 ---
 title: gcloud MCPでGCPインフラ自動監査を実装する
-description: AIエージェントとgcloud MCPを活用して、GCPインフラのセキュリティ脆弱性と構成問題を自動的に検出・改善する方法を紹介します。
+description: 'AIエージェントとgcloud MCPを連携し、GCPインフラのセキュリティ脆弱性や構成問題を自動監査する方法を解説します。サービス別の並列エージェント設計からgcloud MCPの設定、分析オーケストレーション、レポート自動生成まで、実装4段階を豊富なコード例付きで詳しく整理した完全実践ガイドです。'
 pubDate: '2025-11-29'
 heroImage: ../../../assets/blog/gcloud-mcp-infrastructure-audit.jpg
 tags:

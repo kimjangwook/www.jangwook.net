@@ -1,8 +1,6 @@
 ---
 title: Automated GCP Infrastructure Auditing with gcloud MCP
-description: >-
-  Learn how to automatically detect security vulnerabilities and configuration
-  issues in GCP infrastructure using AI agents and gcloud MCP.
+description: 'Automate GCP infrastructure security audits with AI agents and gcloud MCP: a 4-step guide to parallel agent architecture, setup, orchestration, and reports.'
 pubDate: '2025-11-29'
 heroImage: ../../../assets/blog/gcloud-mcp-infrastructure-audit.jpg
 tags:
