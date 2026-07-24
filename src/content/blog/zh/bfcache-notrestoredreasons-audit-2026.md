@@ -2,7 +2,7 @@
 title: 'unload被拦，beforeunload放行：bfcache实测六轮'
 description: 「后退」能不能瞬间打开，不是口味问题，是可以量的。我做了六个页面，每个只埋一种阻断条件，逐一执行真实的后退导航，读取 pageshow.persisted 与 notRestoredReasons。unload 被拦，beforeunload 和 no-store 都放行了。
 pubDate: '2026-07-21'
-updatedDate: '2026-07-22'
+updatedDate: '2026-07-24'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png
 tags:
   - performance
@@ -139,6 +139,8 @@ Chrome 文档这样解释这个值："For all the cross-origin iframes, we repor
 ## 挡住的是开着的连接，不是代码
 
 > **【追记 2026-07-22】** 据 web.dev 2026 年 6 月的公告（「New to the web platform in June 2026」），浏览器行为可能已经改变，带有活动 WebSocket 连接的页面现在也能进入 bfcache。下面这一节的测量是在那次公告之前的环境（Chrome 150）里测的，所以我打算用同一套探针重新测量后再更新结论。在那之前，本节关于 WebSocket 阻断的结论请按旧版本行为来读。
+>
+> **【追记 2026-07-24 · 已重测】** 我把同一套探针在 Chrome 150 的三个环境（自动化构建、正式版 headless、标志尝试）里重跑了一遍。打开的 WebSocket 三次都以 `reason: "websocket"` 被拦，只有对照组复原。也就是说本节结论在**我的自动化、无头测量环境里仍然成立**。不过官方发布是真的，拿到种子的真实用户环境很可能已经切到复原。发布与实测为何分叉（分阶段放量、新配置文件、无头）以及 CI 关卡会怎样误判，都写在了 [WebSocket bfcache 重测那篇](/zh/blog/zh/websocket-bfcache-eligibility-remeasure)里。
 
 WebSocket 这轮我先做砸了一次。最初没起服务端，只埋了 `new WebSocket('ws://127.0.0.1:8099')` 就跑。结果是 `persisted: true`，根本没被拦。
 

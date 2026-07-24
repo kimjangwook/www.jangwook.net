@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-23",
+  "updated_at": "2026-07-24",
   "topics": [
     {
       "slug": "websocket-bfcache-eligibility-remeasure",
@@ -16,9 +16,9 @@
       "priority": 1,
       "source": "web.dev 2026-06 발표 '활성 WebSocket 연결이 열린 페이지도 bfcache 진입을 허용'. 기존 글 bfcache-notrestoredreasons-audit-2026의 'WS=차단' 실측 결론이 뒤집힘. 앵글: 동일 6프로브 notRestoredReasons 측정을 재실행해 차단→허용 전환을 확인하고, 기존 글 정오표(2026-07-22 추기, '재측정 예정' 공언)를 회수한다. '실측은 시효가 있다'는 자기 반증 서사 — 과거 자기 측정을 뒤집는 것이 핵심. 기둥①. 07-22 오후 캐치업 제안.",
       "added_at": "2026-07-23",
-      "status": "queued",
+      "status": "done",
       "notes": "기존 글 bfcache-notrestoredreasons-audit-2026와 상호 링크 필수 — 정오표 회수가 목적. 자기 사이트/브라우저 실측이라 샌드박스 조건 충족.",
-      "published_at": null
+      "published_at": "2026-07-24"
     },
     {
       "slug": "ai-citation-variance-n10-median-multi-model",

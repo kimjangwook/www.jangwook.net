@@ -2,7 +2,7 @@
 title: 'One listener costs you the back button: six bfcache probes'
 description: Six pages, one bfcache blocker each, real back navigations measured with pageshow.persisted and notRestoredReasons. unload blocked the restore. beforeunload and Cache-Control no-store did not.
 pubDate: '2026-07-21'
-updatedDate: '2026-07-22'
+updatedDate: '2026-07-24'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png
 tags:
   - performance
@@ -139,6 +139,8 @@ The practical read: using `no-store` as your bfcache opt-out no longer rests on 
 ## An open connection blocks, WebSocket code doesn't
 
 > **[Update 2026-07-22]** Per a web.dev announcement in June 2026 ("New to the web platform in June 2026"), browser behavior may have shifted so that a page with an active WebSocket connection can now enter bfcache. The measurement in the section below was taken on Chrome 150, before that announcement, so I plan to rerun the same probe and update the result. Until then, read this section's WebSocket-blocking conclusion as reflecting the older behavior.
+>
+> **[Update 2026-07-24 · re-measured]** I re-ran the same probe across three Chrome 150 environments (automation build, stable headless, and a flag attempt). The open WebSocket was blocked with `reason: "websocket"` all three times, and only the control restored. So this section's conclusion still holds **in my automation/headless measurement environment**. The announcement is true, though, and seeded real-user environments have likely already flipped to restoring. Why the announcement and my measurement diverged (staged rollout, fresh profile, headless) and how a CI gate misreads it are written up in the [WebSocket bfcache re-measurement post](/en/blog/en/websocket-bfcache-eligibility-remeasure).
 
 I got the WebSocket probe wrong the first time. The initial version pointed at `ws://127.0.0.1:8099` with nothing listening on that port. Result: `persisted: true`. Not blocked at all.
 

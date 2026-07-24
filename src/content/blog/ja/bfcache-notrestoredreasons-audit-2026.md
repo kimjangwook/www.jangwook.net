@@ -2,7 +2,7 @@
 title: 'unloadは弾かれ、beforeunloadは通った: bfcache実測6本'
 description: 「戻る」が一瞬で開くかどうかは好みではなく計測対象だ。阻害要因を一つずつだけ仕込んだページを6枚用意し、実際にback遷移をかけてpageshow.persistedとnotRestoredReasonsを受け取った。unloadは弾かれ、beforeunloadとno-storeは通った。
 pubDate: '2026-07-21'
-updatedDate: '2026-07-22'
+updatedDate: '2026-07-24'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png
 tags:
   - performance
@@ -129,6 +129,8 @@ const routes = {
 ## 開いている接続が問題であって、コードではない
 
 > **【追記 2026-07-22】** web.dev の2026年6月の発表(「New to the web platform in June 2026」)によれば、接続中のWebSocketがあるページも bfcache に入る方向へブラウザの挙動が変わった可能性がある。以下の節の計測はその発表より前の環境(Chrome 150)で測った値なので、同じプローブで測り直したうえで結果を更新する予定だ。それまで、この節のWebSocket阻害の結論は旧バージョン基準として読んでほしい。
+>
+> **【追記 2026-07-24・再測定済み】** 同じプローブをChrome 150の三環境(自動化ビルド・正規headless・フラグ試行)で回し直した。開いたWebSocketは三度とも`reason: "websocket"`でブロックされ、対照群だけ復元された。つまりこの節の結論は<strong>私の自動化・ヘッドレス測定環境ではまだ有効</strong>だ。ただし公式発表は真であり、シードを受けた実ユーザー環境ではすでに復元される公算が高い。発表と実測が割れた理由(段階的ロールアウト・新規プロファイル・ヘッドレス)とCIゲートが誤判定する点は、[WebSocket bfcache 再測定の記事](/ja/blog/ja/websocket-bfcache-eligibility-remeasure)にまとめた。
 
 WebSocketの回は一度失敗してやり直した。最初は待ち受けサーバーを立てないまま `new WebSocket('ws://127.0.0.1:8099')` だけ仕込んで実行した。結果は `persisted: true`。阻害されない。
 

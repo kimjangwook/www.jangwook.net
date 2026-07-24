@@ -2,7 +2,7 @@
 title: 'beforeunload는 통과했고 unload는 막혔다: bfcache 실측 6판'
 description: 뒤로 가기가 즉시 열리는지 아닌지는 취향이 아니라 측정 대상이다. 차단 조건을 하나씩 심은 페이지 여섯 개에 back 내비게이션을 걸어 pageshow.persisted와 notRestoredReasons를 받아냈다. unload는 막혔고 beforeunload와 no-store는 통과했다.
 pubDate: '2026-07-21'
-updatedDate: '2026-07-22'
+updatedDate: '2026-07-24'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png
 tags:
   - performance
@@ -141,6 +141,8 @@ Chrome 문서는 이 값을 이렇게 설명한다. "For all the cross-origin if
 ## 열린 연결이 문제지 코드가 문제가 아니다
 
 > **【추기 2026-07-22】** web.dev의 2026년 6월 발표(「New to the web platform in June 2026」)에 따르면, 활성 WebSocket 연결이 있는 페이지도 bfcache에 진입하는 방향으로 브라우저 동작이 바뀌었을 가능성이 있다. 아래 절의 측정은 그 발표 이전 환경(Chrome 150)에서 잰 값이므로, 같은 프로브로 재측정한 뒤 결과를 갱신할 예정이다. 그때까지 이 절의 WebSocket 차단 결론은 구버전 기준으로 읽어야 한다.
+>
+> **【추기 2026-07-24 · 재측정 완료】** 같은 프로브를 Chrome 150 세 환경(자동화 빌드·정식 headless·플래그 시도)에서 다시 돌렸다. 열린 WebSocket은 세 번 다 `reason: "websocket"`으로 차단됐고, 대조군만 복원됐다. 즉 이 절의 결론은 <strong>내 자동화·헤드리스 측정 환경에서는 아직 유효</strong>하다. 다만 공식 발표는 참이며, 시드를 받은 실사용자 환경에서는 이미 복원될 가능성이 높다. 발표와 실측이 갈린 이유(단계적 롤아웃·새 프로필·헤드리스)와 CI 게이트가 이를 오판하는 지점은 [WebSocket bfcache 재측정 글](/ko/blog/ko/websocket-bfcache-eligibility-remeasure)에 정리했다.
 
 WebSocket 판은 한 번 실패하고 다시 했다. 처음에는 서버 없이 `new WebSocket('ws://127.0.0.1:8099')`만 심어두고 돌렸다. 결과는 `persisted: true`. 차단되지 않았다.
 
