@@ -1,6 +1,6 @@
 ---
 title: CPU에서 1.2시간 만에 LLM 훈련 — MatMul-Free 아키텍처의 가능성
-description: 행렬 곱셈 없이 삼진 가중치로 CPU만으로 언어 모델을 훈련하는 MatMul-Free 아키텍처의 원리와 엣지 AI 활용 가능성을 분석합니다.
+description: GPU 없이 CPU만으로 1.2시간 만에 1,360만 파라미터 언어 모델을 훈련한 FlashLM v3 사례를 분석합니다. 곱셈을 제거한 삼진 가중치 기반 MatMul-Free 아키텍처의 원리와 메모리·에너지 효율, 엣지 AI와 저비용 학습에 주는 시사점까지 짚어봅니다.
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/matmulfree-cpu-llm-training-hero.png
 tags:

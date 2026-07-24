@@ -1,9 +1,8 @@
 ---
 title: 'Training an LLM on CPU in 1.2 Hours'
 description: >-
-  Explore how MatMul-Free architecture with ternary weights enables language
-  model training on CPU alone, and its implications for edge AI and low-cost
-  learning.
+  How FlashLM v3 trained a 13.6M-parameter LLM on CPU alone in 1.2 hours with
+  MatMul-Free ternary-weight architecture, and its implications for edge AI.
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/matmulfree-cpu-llm-training-hero.png
 tags:

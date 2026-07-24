@@ -1,6 +1,6 @@
 ---
 title: ICML论文中嵌入提示注入 — 学术AI审稿的脆弱性
-description: ICML投稿论文中被发现嵌入了提示注入文本。本文从技术角度分析依赖AI审稿的学术界面临的安全风险。
+description: ICML投稿论文的PDF中被发现隐藏着"在评审中包含特定短语"的提示注入文本。本文从技术角度剖析这一攻击的原理，以及依赖AI审稿的学术同行评审所面临的结构性安全风险与可行的防御思路。
 pubDate: '2026-02-14'
 heroImage: ../../../assets/blog/icml-prompt-injection-academic-review-hero.png
 tags:

@@ -5544,6 +5544,57 @@
       "added_at": "2026-07-23",
       "status": "queued",
       "notes": "멀티 에이전트 오케스트레이션(AgentTeams)·보안 샌드박스(Agentic Computer)를 클라우드 인프라 계층으로 내린 첫 사례. 블로그의 멀티 에이전트 실전 글들과 연결해 아키텍처 관점 분석."
+    },
+    {
+      "slug": "declarative-partial-updates-chrome148-framework-primitive-2026",
+      "title_idea": "서버 부분 렌더링이 브라우저 원시기능이 됐다 — Declarative Partial Updates를 자체 페이지에서 프레임워크 없이 재측정한 기록",
+      "content_type": "how-to",
+      "target_keyword": "Declarative Partial Updates",
+      "secondary_keywords": [
+        "Chrome 148 부분 렌더링",
+        "HTML 스트리밍 브라우저 원시기능",
+        "프레임워크 없는 partial update"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Chrome for Developers — Declarative Partial Updates (Chrome 148, chrome://flags/#enable-experimental-web-platform-features). https://developer.chrome.com/blog/declarative-partial-updates",
+      "added_at": "2026-07-24",
+      "status": "queued",
+      "notes": "프레임워크가 제공하던 서버측 부분 렌더링(HTML 스트리밍 조각 교체)이 브라우저 primitive로 내려온 첫 사례. 앵글: 자체 사이트의 목록/댓글 갱신 UI를 JS 프레임워크 조각 → 선언적 partial update로 옮기고 제거된 JS 바이트·상호작용 지연을 실측. 착지: 측정→수정→게이트 루프로 baseline 게이트에 편입. 기둥① 웹 실측. 아직 flag 뒤 실험 단계라 한계(미배포) 명시가 페르소나 한계명시 시그니처와 부합. 2026-07-24 pm 캐치업 발굴."
+    },
+    {
+      "slug": "ai-coding-agent-cost-per-task-benchmark-2026",
+      "title_idea": "성능 1위가 아니라 가성비 1위 — AI 코딩 에이전트를 '태스크당 비용'으로 다시 줄 세우기 (2026)",
+      "content_type": "comparison",
+      "target_keyword": "AI 코딩 에이전트 비용 비교",
+      "secondary_keywords": [
+        "Cursor Composer 2.5 가격",
+        "코딩 에이전트 태스크당 비용",
+        "Coding Agent Index 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Artificial Analysis Coding Agent Index / faros.ai / firecrawl.dev 2026 벤치마크",
+      "added_at": "2026-07-24",
+      "status": "queued",
+      "notes": "기존 백로그는 기능 비교 위주로 포화. 차별화는 '태스크당 비용' 축. Composer 2.5가 지수 62(3위)를 태스크당 $0.07로 달성, 상위 리더 대비 10~60배 저렴하다는 실측을 중심으로, SWE-bench/Terminal-Bench 상위 모델의 비용-성능 트레이드오프를 표로 정리. 개인·소규모 팀의 예산 관점 의사결정 가이드."
+    },
+    {
+      "slug": "swe-bench-vs-terminal-bench-what-benchmark-measures-2026",
+      "title_idea": "Opus 4.8는 SWE-bench 1위, GPT-5.5는 Terminal-Bench 1위 — 두 벤치마크는 서로 다른 무엇을 재는가",
+      "content_type": "comparison",
+      "target_keyword": "SWE-bench Terminal-Bench 차이",
+      "secondary_keywords": [
+        "코딩 에이전트 벤치마크 해석",
+        "SWE-bench Verified 2026",
+        "Terminal-Bench 2.0"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Artificial Analysis / SWE-bench Verified 88.6% / Terminal-Bench 2.0 82.7% 2026",
+      "added_at": "2026-07-24",
+      "status": "queued",
+      "notes": "모델 선택 시 '어느 리더보드를 믿을까' 혼란 해소. SWE-bench는 리포지토리 패치 정확도, Terminal-Bench는 셸 환경에서의 자율 작업 완수를 잰다는 측정 대상 차이를 실제 태스크 예시로 대조. 벤치마크 점수를 자기 워크플로에 맞게 읽는 법. 기능 나열형 비교와 겹치지 않는 '방법론' 각도."
     }
   ]
 }

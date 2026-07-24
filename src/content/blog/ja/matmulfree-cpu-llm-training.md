@@ -1,6 +1,6 @@
 ---
 title: CPUだけで1.2時間でLLM訓練 — MatMul-Freeアーキテクチャの可能性
-description: 行列乗算なしの三値重みでCPUのみで言語モデルを訓練するMatMul-Freeアーキテクチャの原理とエッジAI活用の可能性を分析します。
+description: GPUなしCPUのみで1.2時間、1,360万パラメータの言語モデルを訓練したFlashLM v3を分析します。乗算を排した三値重みによるMatMul-Freeアーキテクチャの原理とメモリ・省エネ効果、エッジAIや低コスト学習への示唆までを整理しました。
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/matmulfree-cpu-llm-training-hero.png
 tags:

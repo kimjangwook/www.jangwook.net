@@ -1,6 +1,6 @@
 ---
 title: ICML論文にプロンプトインジェクション埋め込み — 学術AI査読の脆弱性
-description: ICML投稿論文にプロンプトインジェクションが埋め込まれた事件が発覚。AI査読に依存する学術界のセキュリティリスクを技術的に解説します。
+description: ICMLに投稿された論文PDFに「特定の語句をレビューに含めよ」というプロンプトインジェクションが隠されていた事件が発覚しました。AI査読に依存する学術peer reviewの構造的脆弱性と攻撃の仕組み、学界が講じるべき防御策までを技術的に解説します。
 pubDate: '2026-02-14'
 heroImage: ../../../assets/blog/icml-prompt-injection-academic-review-hero.png
 tags:

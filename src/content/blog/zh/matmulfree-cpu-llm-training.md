@@ -1,6 +1,6 @@
 ---
 title: 仅用CPU在1.2小时内训练LLM — MatMul-Free架构的可能性
-description: 分析无需矩阵乘法、仅用三值权重在CPU上训练语言模型的MatMul-Free架构原理及其在边缘AI和低成本训练中的应用前景。
+description: 分析仅用CPU在1.2小时内训练出1360万参数语言模型的FlashLM v3案例。深入解读消除矩阵乘法、采用三值权重的MatMul-Free架构原理，及其在内存与能耗效率、边缘AI和低成本训练方面的意义与应用前景。
 pubDate: '2026-02-18'
 heroImage: ../../../assets/blog/matmulfree-cpu-llm-training-hero.png
 tags:
