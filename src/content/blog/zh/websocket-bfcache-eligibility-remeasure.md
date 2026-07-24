@@ -1,6 +1,6 @@
 ---
 title: '官方说「WebSocket 不再拦截 bfcache」，我重测了三次，次次都被拦'
-description: Chrome 149 官方宣布，活动中的 WebSocket 连接不再让页面无法进入 bfcache。三天前我在旧测量里留了条勘误，说要重测。今天测了，Chrome 150 的自动化与无头三种环境里，notRestoredReasons 照旧返回 websocket。本文说清发布与实测为何分叉，以及 CI 的 bfcache 关卡会怎样误判。
+description: Chrome 149 官方宣布，活动中的 WebSocket 连接不再让页面无法进入 bfcache。7月22日我在旧测量里留了条勘误，说要重测。今天测了，Chrome 150 的自动化与无头三种环境里，notRestoredReasons 照旧返回 websocket。本文说清发布与实测为何分叉，以及 CI 的 bfcache 关卡会怎样误判。
 pubDate: '2026-07-24'
 heroImage: ../../../assets/blog/websocket-bfcache-eligibility-remeasure/hero.png
 tags:
@@ -39,7 +39,7 @@ relatedPosts:
       zh: "两篇都用实测收窄『官方文档一行』与『自己页面实际表现』之间的差距。那边是摘要指令，这边是 bfcache 资格。"
 ---
 
-官方说变了。Chrome 149 的发行说明写得清清楚楚：「活动中的 WebSocket 连接不再阻止页面进入 Back/Forward Cache（bfcache）」。三天前，我在旧测量那篇文章里附了条勘误，承诺在新行为下用同一套探针重跑一遍并更新结果。等于我提前认定自己会被推翻。
+官方说变了。Chrome 149 的发行说明写得清清楚楚：「活动中的 WebSocket 连接不再阻止页面进入 Back/Forward Cache（bfcache）」。7月22日，我在旧测量那篇文章里附了条勘误，承诺在新行为下用同一套探针重跑一遍并更新结果。等于我提前认定自己会被推翻。
 
 今天重测了。没被推翻。或者说，在我看的地方没有翻。我用三种方式跑了 Chrome 150，抱着一个活动 WebSocket 的页面三次都没能复原。`notRestoredReasons` 每一次都返回 `websocket`。本文如实记下这道分叉：发布与实测为什么会裂开，以及这道裂缝对于从 CI 里盯 bfcache 的人来说，为什么是个真会咬人的陷阱。
 

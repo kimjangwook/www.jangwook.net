@@ -39,7 +39,7 @@ relatedPosts:
       zh: "两篇都用实测收窄『官方文档一行』与『自己页面实际表现』之间的差距。那边是摘要指令，这边是 bfcache 资格。"
 ---
 
-The platform announced the change. Chrome 149's release notes say plainly: "Active WebSocket connections no longer prevent a page from entering the Back/Forward Cache (bfcache)." Three days ago I appended an errata to my old measurement post, promising to re-run the same probe under the new behavior and update the result. I had already pre-committed to being wrong.
+The platform announced the change. Chrome 149's release notes say plainly: "Active WebSocket connections no longer prevent a page from entering the Back/Forward Cache (bfcache)." In the July 22 erratum I appended to my old measurement post, I promised to re-run the same probe under the new behavior and update the result. I had already pre-committed to being wrong.
 
 Today I re-measured. I wasn't wrong — or rather, the flip didn't happen where I looked. I drove Chrome 150 three different ways, and a page holding an open WebSocket failed to restore in all three. `notRestoredReasons` came back with `websocket` every single time. This post records that gap honestly: why the announcement and my measurement split apart, and why that split is a real trap for anyone who watches bfcache from CI.
 

@@ -1,6 +1,6 @@
 ---
 title: '공식은 "WebSocket이 bfcache를 막지 않는다"고 했다 — 다시 재보니 세 번 다 막혔다'
-description: Chrome 149가 열린 WebSocket의 bfcache 차단을 풀었다고 공식 발표했다. 사흘 전 내 옛 측정에 "재측정 예정"이라 적어둔 그 항목을 오늘 다시 쟀다. Chrome 150 자동화·헤드리스 세 환경에서 notRestoredReasons는 여전히 websocket을 돌려줬다. 발표와 실측이 어긋나는 이유와, CI bfcache 게이트가 이걸 어떻게 오판하는지 정리했다.
+description: Chrome 149가 열린 WebSocket의 bfcache 차단을 풀었다고 공식 발표했다. 지난 7월 22일 옛 측정에 "재측정 예정"이라 적어둔 그 항목을 오늘 다시 쟀다. Chrome 150 자동화·헤드리스 세 환경에서 notRestoredReasons는 여전히 websocket을 돌려줬다. 발표와 실측이 어긋나는 이유와, CI bfcache 게이트가 이걸 어떻게 오판하는지 정리했다.
 pubDate: '2026-07-24'
 heroImage: ../../../assets/blog/websocket-bfcache-eligibility-remeasure/hero.png
 tags:
@@ -39,7 +39,7 @@ relatedPosts:
       zh: "两篇都用实测收窄『官方文档一行』与『自己页面实际表现』之间的差距。那边是摘要指令，这边是 bfcache 资格。"
 ---
 
-공식은 바뀌었다고 발표했다. Chrome 149 릴리스 노트에 "열린 WebSocket 연결은 더 이상 페이지의 bfcache 진입을 막지 않는다"고 적혀 있다. 나는 사흘 전, 내 옛 측정 글에 "그 발표 이후 환경에서 같은 프로브로 재측정한 뒤 결과를 갱신할 예정"이라는 정오표를 달아뒀다. 뒤집힐 것을 예고까지 해둔 셈이다.
+공식은 바뀌었다고 발표했다. Chrome 149 릴리스 노트에 "열린 WebSocket 연결은 더 이상 페이지의 bfcache 진입을 막지 않는다"고 적혀 있다. 나는 지난 7월 22일 정오표에서, 옛 측정 글에 "그 발표 이후 환경에서 같은 프로브로 재측정한 뒤 결과를 갱신할 예정"이라고 적어뒀다. 뒤집힐 것을 예고까지 해둔 셈이다.
 
 오늘 다시 쟀다. 뒤집히지 않았다. Chrome 150을 세 가지 방식으로 돌렸고, 열린 WebSocket이 걸린 페이지는 세 번 다 복원되지 않았다. `notRestoredReasons`는 매번 `websocket`을 돌려줬다. 이 글은 그 어긋남을 정직하게 기록하고, 왜 발표와 실측이 갈렸는지, 그리고 이게 bfcache를 CI로 감시하는 사람에게 왜 실질적인 함정인지를 정리한 것이다.
 
