@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-24",
+  "updated_at": "2026-07-25",
   "topics": [
     {
       "slug": "websocket-bfcache-eligibility-remeasure",
@@ -45,7 +45,7 @@
       "source": "OpenAI 2026-07-16 GPT-Red (openai.com/index/unlocking-self-improvement-gpt-red). 공격 성공률 84% vs 인간 13%, Fake CoT 95%→10% 미만. 앵글: 자기 파이프라인(daily-post 등 LLM 자동화)에 인젝션 스위트를 실제로 돌려 '측정→수정→게이트' 루프로 착지. 기둥 ③→②. pm 캐치업 2026-07-18 발굴.",
       "added_at": "2026-07-18",
       "status": "queued",
-      "notes": "Lab Publish 레인 — 자기 자동화 파이프라인 대상 실측 가능.",
+      "notes": "Lab Publish 레인 — 자기 자동화 파이프라인 대상 실측 가능. [2026-07-25 캐치업 보강] Claude Opus 5(07-24 공식 출시)가 '모델 버전 올리면 회귀가 필요하다'의 살아있는 사례를 제공: thinking:disabled를 effort xhigh/max와 함께 보내면 400 에러(4.8에서는 허용되던 조합) — 드롭인 교체가 아니라 config 회귀가 깨지는 실측 진입점. 가격은 4.8과 동일($5/$25), 1M 컨텍스트 기본, thinking 기본 on. 앵글에 '인젝션 회귀 + config 회귀'를 한 게이트로 묶는 것으로 확장. 출처: platform.claude.com 릴리스 노트 2026-07-24.",
       "published_at": null
     },
     {
