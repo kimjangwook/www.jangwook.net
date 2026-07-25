@@ -1,6 +1,6 @@
 ---
 title: 'FAQPage 리치 결과는 끝났다. 그런데 Q&A 마크업은 지우지 마라'
-description: Google이 2026년 5월 7일 FAQ 리치 결과를 완전히 종료했다. 오프라인 검증기로 FAQPage JSON-LD를 실측하니 스키마는 통과하는데 리치 결과는 DEPRECATED로 나온다. 검증 통과와 노출이 갈라진 지점에서, 웹 개발자가 지금 코드와 콘텐츠를 어떻게 바꿔야 하는지 공식 문서 기준으로 정리했다.
+description: Google이 2026년 5월 7일 FAQ 리치 결과를 완전히 종료했다. 오프라인 검증기로 FAQPage JSON-LD를 실측하면 스키마는 통과하지만 리치 결과는 DEPRECATED다. 검증 통과와 노출이 갈라진 지금 코드와 콘텐츠를 어떻게 바꿀지 공식 문서로 정리했다.
 pubDate: '2026-07-25'
 heroImage: ../../../assets/blog/faqpage-deprecation-ai-citation-2026/hero.png
 tags:

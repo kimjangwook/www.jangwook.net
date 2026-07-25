@@ -1,6 +1,6 @@
 ---
 title: 'FAQPageのリッチリザルトは終わった。それでもQ&Aマークアップを消すな'
-description: Googleが2026年5月7日にFAQリッチリザルトを完全終了した。オフライン検証器でFAQPage JSON-LDを実測すると、スキーマは通るのにリッチリザルトはDEPRECATEDと返る。検証通過と露出が分かれるこの地点で、Web開発者が今コードとコンテンツをどう変えるべきかを公式文書に沿って整理した。
+description: Googleが2026年5月7日にFAQリッチリザルトを完全終了した。オフライン検証器でFAQPage JSON-LDを測るとスキーマは通るのにリッチリザルトはDEPRECATEDと返る。検証通過と露出が分かれたこの地点で、Web開発者がコードとコンテンツをどう変えるべきかを公式文書に沿って整理した。
 pubDate: '2026-07-25'
 heroImage: ../../../assets/blog/faqpage-deprecation-ai-citation-2026/hero.png
 tags:

@@ -1,6 +1,6 @@
 ---
 title: '公式は「WebSocketはbfcacheを妨げない」と発表した。測り直すと三度とも妨げられた'
-description: Chrome 149で、アクティブなWebSocket接続はもうbfcache入りを妨げないと公式が発表した。7月22日の訂正記事で旧測定に「再測定予定」と残していた項目を今日測り直した。Chrome 150の自動化・ヘッドレス三環境で、notRestoredReasonsは変わらずwebsocketを返した。発表と実測がズレる理由と、CIのbfcacheゲートがそれをどう誤判定するかをまとめた。
+description: Chrome 149でアクティブなWebSocketはもうbfcache入りを妨げないと公式が発表した。7月22日の訂正記事で再測定予定と残した項目を測り直すと、Chrome 150の三環境でnotRestoredReasonsは変わらずwebsocketを返した。発表と実測がズレる理由を整理した。
 pubDate: '2026-07-24'
 heroImage: ../../../assets/blog/websocket-bfcache-eligibility-remeasure/hero.png
 tags:
