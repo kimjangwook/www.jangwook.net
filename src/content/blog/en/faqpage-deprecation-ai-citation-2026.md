@@ -79,14 +79,14 @@ This wasn't Google's first pass at FAQ rich results. Here's the timeline.
 
 In August 2023, Google announced [changes to HowTo and FAQ rich results](https://developers.google.com/search/blog/2023/08/howto-faq-changes). The official wording: FAQ rich results would show only for "well-known, authoritative government and health websites," and would no longer appear regularly for anyone else. HowTo rich results were dropped altogether. By that point, the FAQ accordion had already vanished from most ordinary sites.
 
-Then in 2026 the remaining steps landed. Pulling the deprecation notes straight from the FAQPage docs:
+Then in 2026 the remaining steps landed. Consolidating Google's official changelog and the FAQPage docs:
 
 | Date | What was retired |
 |---|---|
 | 2023-08 | FAQ rich results limited to authoritative gov/health sites; HowTo removed entirely |
-| 2026-01 | FAQ support dropped from Search Console rich result reporting, the Rich Results Test, and search appearance filters |
-| 2026-05-07 | FAQ rich results stop appearing in Google Search completely |
-| 2026-06-15 | FAQ rich result documentation removed |
+| 2026-05-07 | FAQ rich results stop appearing in Google Search completely (docs marked deprecated) |
+| 2026-06 | FAQ support dropped from Search Console rich result reporting, the Rich Results Test, and search appearance filters; FAQPage docs removed |
+| 2026-08 | Search Console API support for FAQ rich result data removed |
 
 Net result: no site can get a results-page accordion from FAQPage JSON-LD anymore. Even the testing tools no longer report the type.
 
@@ -152,7 +152,7 @@ So the real asset in FAQPage was never the JSON-LD type name. It was the discipl
 
 - Mark up questions as real heading elements (`<h2>`/`<h3>`) or a definition list (`<dl><dt>`). AI crawlers read them straight from the body.
 - Make the answer self-contained in the paragraph right after the question. An answer that leans on context ("as explained above") falls apart the moment it's sliced into an extraction unit.
-- One question, one answer. Keep FAQPage's original character — (the publisher's single authoritative answer) at the content level.
+- One question, one answer. Keep FAQPage's original character (the publisher's single authoritative answer) at the content level.
 
 Now the honest limit. That AI engines actually quote this structure more readily is my practitioner's judgment plus a synthesis of observations, not an official number Google has guaranteed (reference, not official). The selection logic behind AI Overviews is undisclosed, and I don't make claims about the internals of ranking systems. What I will state flatly is this: the channel machines read has moved from JSON-LD to the rendered body, so it's rational to move your investment there too.
 

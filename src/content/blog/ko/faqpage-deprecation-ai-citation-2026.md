@@ -79,14 +79,14 @@ Google이 FAQ 리치 결과를 손본 건 이번이 처음이 아니다. 시간�
 
 2023년 8월, Google은 [HowTo와 FAQ 리치 결과 변경](https://developers.google.com/search/blog/2023/08/howto-faq-changes)을 공지했다. 공식 문장은 이렇다. FAQ 리치 결과는 "잘 알려진 권위 있는 정부 및 보건(government and health) 사이트"에만 표시되며, 그 외 사이트에는 더 이상 정기적으로 나오지 않는다. HowTo 리치 결과는 아예 전면 폐지됐다. 이때 이미 대부분의 일반 사이트에서 FAQ 아코디언은 사라졌다.
 
-그 뒤 2026년에 남은 절차가 마무리됐다. FAQPage 공식 문서의 지원 종료 안내를 그대로 옮기면 이렇다.
+그 뒤 2026년에 남은 절차가 마무리됐다. Google 공식 changelog와 FAQPage 문서 기준으로 정리하면 이렇다.
 
 | 시점 | 무엇이 종료됐나 |
 |---|---|
 | 2023-08 | FAQ 리치 결과를 정부·보건 권위 사이트로 제한, HowTo 전면 폐지 |
-| 2026-01 | Search Console 리치 결과 보고서·Rich Results Test·검색 표현 필터에서 FAQ 지원 종료 |
-| 2026-05-07 | FAQ 리치 결과가 Google 검색에서 완전히 표시 중단 |
-| 2026-06-15 | FAQ 리치 결과 공식 문서 자체를 제거 |
+| 2026-05-07 | FAQ 리치 결과가 Google 검색에서 완전히 표시 중단(공식 문서에 지원 종료 명시) |
+| 2026-06 | Search Console 리치 결과 보고서·Rich Results Test·검색 표현 필터에서 FAQ 지원 종료, FAQPage 공식 문서 제거 |
+| 2026-08 | Search Console API의 FAQ 리치 결과 데이터 지원 종료 |
 
 정리하면, 이제 어떤 사이트든 FAQPage JSON-LD로 검색결과 아코디언을 얻을 수 없다. 검증 도구에서조차 이 타입을 더는 리포트하지 않는다.
 

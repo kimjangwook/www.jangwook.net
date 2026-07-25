@@ -79,14 +79,14 @@ Google对FAQ富媒体结果动手，这不是头一回。按时间顺序捋一�
 
 2023年8月，Google公告了[HowTo和FAQ富媒体结果的变更](https://developers.google.com/search/blog/2023/08/howto-faq-changes)。官方原话是：FAQ富媒体结果只对"知名且权威的政府和医疗（government and health）网站"展示，其余站点不再常规出现。HowTo富媒体结果则被整个取消。到那时，大多数普通站点上的FAQ折叠框其实已经消失了。
 
-随后到2026年，剩下的流程走完。把FAQPage官方文档里的停用说明直接搬过来，是这样：
+随后到2026年，剩下的流程走完。依据Google官方changelog和FAQPage文档整理，是这样：
 
 | 时间 | 停用了什么 |
 |---|---|
 | 2023-08 | FAQ富媒体结果限定给政府/医疗权威站点，HowTo整体移除 |
-| 2026-01 | Search Console富媒体结果报告、Rich Results Test、搜索呈现筛选中的FAQ支持停止 |
-| 2026-05-07 | FAQ富媒体结果在Google搜索中完全停止展示 |
-| 2026-06-15 | FAQ富媒体结果的官方文档本身被删除 |
+| 2026-05-07 | FAQ富媒体结果在Google搜索中完全停止展示（官方文档标注停用） |
+| 2026-06 | Search Console富媒体结果报告、Rich Results Test、搜索呈现筛选中的FAQ支持停止，FAQPage官方文档被删除 |
+| 2026-08 | Search Console API对FAQ富媒体结果数据的支持停止 |
 
 结论是：如今任何站点都无法再靠FAQPage JSON-LD拿到搜索结果里的折叠框。连测试工具都不再报告这个类型了。
 
