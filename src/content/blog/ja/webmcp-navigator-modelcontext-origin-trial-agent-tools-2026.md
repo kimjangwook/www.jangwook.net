@@ -1,6 +1,6 @@
 ---
 title: 'WebMCPがオリジントライアルに入った — provideContextが半年で消えた理由'
-description: WebMCPがChrome 149のオリジントライアルとして実際に配備された。だが2月に紹介されたAPIはもう変わっている。navigator.modelContextはdocument.modelContextへ移り、provideContextはセキュリティ上の理由で削除された。公式文書と仕様Issueを根拠に、今登録すべきツールの形と安全のためのアノテーションを整理する。
+description: WebMCPがChrome 149のオリジントライアルとして配備されたが、2月のAPIはもう変わった。navigator.modelContextはdocument.modelContextへ移り、provideContextはセキュリティ上の理由で削除された。今登録すべきツールの形と注釈を公式文書に基づいて整理する。
 pubDate: '2026-07-26'
 heroImage: ../../../assets/blog/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026/hero.png
 tags:

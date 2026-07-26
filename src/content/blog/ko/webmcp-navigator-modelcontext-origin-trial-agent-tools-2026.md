@@ -1,6 +1,6 @@
 ---
 title: 'WebMCP가 오리진 트라이얼에 들어왔다 — provideContext는 왜 반년 만에 사라졌나'
-description: WebMCP가 Chrome 149 오리진 트라이얼로 실제 배포됐다. 그런데 2월에 소개된 API는 이미 바뀌었다. navigator.modelContext는 document.modelContext로 옮겨졌고 provideContext는 보안 문제로 제거됐다. 공식 문서와 스펙 이슈를 근거로 지금 등록해야 할 툴 형태와 보안 주석을 정리했다.
+description: WebMCP가 Chrome 149 오리진 트라이얼로 배포됐지만 2월 API는 이미 바뀌었다. navigator.modelContext는 document.modelContext로 옮겨졌고 provideContext는 보안 문제로 사라졌다. 지금 등록해야 할 툴 형태를 정리했다.
 pubDate: '2026-07-26'
 heroImage: ../../../assets/blog/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026/hero.png
 tags:

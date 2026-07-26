@@ -1,6 +1,6 @@
 ---
 title: ICML 논문에 프롬프트 인젝션 삽입 — 학술 AI 심사의 취약성
-description: ICML에 제출된 논문 PDF에 "특정 문구를 리뷰에 포함하라"는 프롬프트 인젝션이 숨겨진 사건이 발각됐습니다. AI 심사에 의존하는 학술 peer review의 구조적 취약성과 공격 원리, 학계가 마련해야 할 방어책까지 기술적으로 해설합니다.
+description: ICML에 제출된 논문 PDF에 "특정 문구를 리뷰에 포함하라"는 프롬프트 인젝션이 숨겨진 사건이 발각됐습니다. AI 심사에 의존하는 학술 peer review의 구조적 취약성과 공격 원리, 실제 위험 시나리오, 그리고 학계가 마련해야 할 방어책까지 기술적으로 해설합니다.
 pubDate: '2026-02-14'
 heroImage: ../../../assets/blog/icml-prompt-injection-academic-review-hero.png
 tags:

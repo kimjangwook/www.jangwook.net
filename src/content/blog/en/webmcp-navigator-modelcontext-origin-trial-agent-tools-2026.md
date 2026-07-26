@@ -1,6 +1,6 @@
 ---
 title: "WebMCP's Origin Trial: provideContext Is Already Gone"
-description: 'WebMCP shipped as a Chrome 149 origin trial, but its API already moved: navigator.modelContext to document.modelContext, and provideContext removed for security. Here is the tool shape now.'
+description: 'WebMCP shipped as a Chrome 149 origin trial, but its API already moved: navigator.modelContext is now document.modelContext and provideContext is gone.'
 pubDate: '2026-07-26'
 heroImage: ../../../assets/blog/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026/hero.png
 tags:
