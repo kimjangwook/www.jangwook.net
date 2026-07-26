@@ -3010,5 +3010,16 @@
     },
     "difficulty": 3,
     "pubDate": "2026-07-23"
+  },
+  "webmcp-navigator-modelcontext-origin-trial-agent-tools-2026": {
+    "pubDate": "2026-07-26",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.9,
+      "ai-ml": 0.6,
+      "devops": 0.2,
+      "architecture": 0.6
+    }
   }
 }
