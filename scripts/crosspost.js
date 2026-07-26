@@ -267,7 +267,7 @@ async function main() {
   console.log('');
 
   if (dryRun) {
-    console.log(`[dry-run] Would cross-post to: ${platform === 'all' ? 'dev.to + Hashnode' : platform}`);
+    console.log(`[dry-run] Would cross-post to: ${platform === 'all' ? 'dev.to' : platform}`);
     process.exit(0);
   }
 
@@ -288,19 +288,11 @@ async function main() {
     }
   }
 
-  if (platform === 'all' || platform === 'hashnode') {
-    if (alreadyPosted(slug, 'hashnode')) {
-      console.log('  SKIP Hashnode: 이미 발행됨 (--force 로 재발행)');
-      results.hashnode = { success: true, skipped: true };
-    } else {
-      console.log('Posting to Hashnode...');
-      results.hashnode = await postToHashnode(article);
-      if (results.hashnode.success) {
-        console.log(`  OK Hashnode: ${results.hashnode.url}`);
-      } else {
-        console.error(`  FAIL Hashnode: ${results.hashnode.error}`);
-      }
-    }
+  // Hashnode 제거 (2026-07-26, 운영자 지시 07-24의 일관 적용): 발행 API가
+  // Pro 요금제 전용化 — 4주 연속 0/22 실패의 근본 원인. 명시 호출은 실패 처리.
+  if (platform === 'hashnode') {
+    console.error('Hashnode cross-posting was removed (API requires Pro plan).');
+    process.exit(1);
   }
 
   logResults(slug, results);
