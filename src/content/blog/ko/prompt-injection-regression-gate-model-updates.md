@@ -146,9 +146,9 @@ GATE: RED (exit 1)
 
 ## config도 회귀한다: Opus 5의 thinking과 effort
 
-지금까지가 공격 쪽 회귀였다면, 방어 쪽 모델을 올릴 때 터지는 다른 종류의 회귀가 있다. API 요청 계약의 파손이다. 2026년 7월 24일 출시된 Claude Opus 5가 살아 있는 사례를 준다. 공식 문서의 표현을 그대로 옮기면 이렇다.
+지금까지가 공격 쪽 회귀였다면, 방어 쪽 모델을 올릴 때 터지는 다른 종류의 회귀가 있다. API 요청 계약의 파손이다. 2026년 7월 24일 출시된 Claude Opus 5가 살아 있는 사례를 준다. [공식 마이그레이션 가이드](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5#behavior-changes)의 표현을 그대로 옮기면 이렇다.
 
-> Disabling thinking is capped at `high` effort: You can still turn thinking off with `thinking: {type: "disabled"}`, but only at an effort level of `high` or below. A request that combines `thinking: {type: "disabled"}` with effort `xhigh` or `max` returns a 400 error. Claude Opus 4.8 accepts this combination, so audit requests that disable thinking before you migrate.
+> On Claude Opus 5, `thinking: {"type": "disabled"}` is accepted only when the effort level is `high` or below. Setting `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. This is generally available behavior on Claude Opus 5 onward, enforced on each request, and it is a breaking change from Claude Opus 4.8, where disabling thinking was independent of the effort level.
 
 번역하면, thinking을 끈 상태는 effort가 high 이하일 때만 받아준다. xhigh나 max와 함께 thinking을 끄면 400을 돌려준다. 4.8에서는 thinking을 끄는 것과 effort 레벨이 서로 독립이었으니, 이건 명백한 파괴적 변경이다. 참고로 가격은 입력 100만 토큰당 5달러, 출력 25달러로 4.8과 같고, 컨텍스트는 기본이자 최대가 100만 토큰이며, thinking이 기본으로 켜져 있다. 즉 모델 ID만 `claude-opus-4-8`에서 `claude-opus-5`로 바꾸는 드롭인 교체를 하면, 4.8 시절 잘 돌던 "thinking 끄고 effort는 xhigh" 조합이 있던 배치 작업이 배포 직후 400으로 무너진다.
 

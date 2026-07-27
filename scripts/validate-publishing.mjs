@@ -129,6 +129,7 @@ async function loadPosts() {
         file,
         relPath,
         data: parsed.data,
+        content: parsed.content,
         pubDateKey,
         draft,
         noindex,
@@ -299,6 +300,37 @@ function validateTitleLengths(posts) {
 // 정책(언어판 독립 집필)과 전량 재발행으로 사문화됨. 살아 있는 계약은
 // validateSharedFrontmatterParity(heroImage·relatedPosts 4언어 동일)가 담당한다.
 
+// 2026-07-27 ⑤: 직접 인용 축자 위반 3회 재발(07-23 생성 날조·07-25 귀속·07-27 QA 재작성)의 구조 처방.
+// 원문 축자를 주장하는 블록인용("그대로 옮기면"/verbatim/そのまま引く/原文照录 등)에는
+// 검증 가능한 출처 URL이 인용 바로 곁에 있어야 한다. 없으면 독자도 다음 리뷰어도 축자 대조가
+// 불가능하므로(=날조가 통과하는 노출면) 빌드를 막는다. 게이트는 '링크 존재'만 결정론적으로
+// 오프라인 검사한다 — 축자 '일치' 여부는 생성/QA 단계의 WebFetch 대조 책임(SKILL·write-post).
+const VERBATIM_CLAIM = /그대로 옮기|원문 그대로|한 자 그대로|그대로 인용|원문을 그대로|공식 문서의 표현을|공식 문서를 그대로|原文のまま|原文どおり|そのまま(引|載|転|記)|表現をそのまま|逐語|逐字|原样|照录|照搬|documentation verbatim|\bverbatim\b|word[- ]for[- ]word|quote it directly|the official (docs|documentation)[^.\n]{0,40}(reads|says|states)|here'?s the official (docs|documentation)/i;
+
+function validateVerbatimCitations(posts) {
+  const LINK = /https?:\/\//;
+  for (const post of posts) {
+    const lines = post.content.split('\n');
+    for (let i = 0; i < lines.length; i++) {
+      if (!VERBATIM_CLAIM.test(lines[i])) continue;
+      // 축자 주장 문장 다음 3줄 이내에 블록인용(>)이 오는 경우만 대상
+      let bqStart = -1;
+      for (let j = i + 1; j <= i + 3 && j < lines.length; j++) {
+        if (/^\s*>/.test(lines[j])) { bqStart = j; break; }
+      }
+      if (bqStart < 0) continue;
+      let bqEnd = bqStart;
+      while (bqEnd + 1 < lines.length && /^\s*>/.test(lines[bqEnd + 1])) bqEnd++;
+      // 검사 범위: 도입문 ~ 블록인용 + 바로 다음 출처행 1줄
+      const scope = lines.slice(i, bqEnd + 2).join('\n');
+      if (!LINK.test(scope)) {
+        const claim = lines[i].trim().slice(0, 48);
+        errors.push(`${post.relPath}: 축자 인용 블록에 인접 출처 링크 없음 ("${claim}...") — 원문 URL을 인용 곁에 넣거나, 대조 불가 시 의역+링크로 강등`);
+      }
+    }
+  }
+}
+
 async function validateCrawlerSurfaces() {
   const rssFiles = [
     'src/pages/rss.xml.js',
@@ -358,6 +390,7 @@ async function main() {
   validateRelatedPosts(posts);
   validateTitleLengths(posts);
   validateSharedFrontmatterParity(posts);
+  validateVerbatimCitations(posts);
   await validateCrawlerSurfaces();
 
   const hiddenPastPosts = posts.filter((post) => post.pubDateKey && post.pubDateKey <= todayJst && (post.draft || post.noindex));

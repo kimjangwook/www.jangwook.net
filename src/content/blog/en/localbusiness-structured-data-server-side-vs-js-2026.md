@@ -51,7 +51,7 @@ First, let's clear up one misconception. "If you inject structured data with JS,
 Google says so explicitly. In the words of the official docs:
 
 > "Google can read JSON-LD data when it is dynamically injected into the page's contents, such as by JavaScript code or embedded widgets."
-> — Google Search Central, *Intro to Structured Data*
+> — Google Search Central, [*Intro to Structured Data*](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data)
 
 So even if you attach an `application/ld+json` block later with `document.createElement('script')`, Google reads it from the DOM after rendering. Taken this far, "JS is fine" holds. The question is when, and how reliably, it gets read.
 

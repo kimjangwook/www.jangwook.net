@@ -51,7 +51,7 @@ faq:
 Google明确表示支持。照搬官方文档的原话：
 
 > "Google can read JSON-LD data when it is dynamically injected into the page's contents, such as by JavaScript code or embedded widgets."
-> — Google Search Central, *Intro to Structured Data*
+> — Google Search Central, [*Intro to Structured Data*](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data)
 
 也就是说，即便你用`document.createElement('script')`事后附加`application/ld+json`块，Google也会在渲染后从DOM里读取它。到这一步，"JS也行"是成立的。问题是：何时读、读得多可靠。
 

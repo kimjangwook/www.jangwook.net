@@ -144,9 +144,9 @@ GATE: RED (exit 1)
 
 ## config 也会回归：Opus 5 的 thinking 与 effort
 
-如果说上面是攻击侧的回归，那么升级自己这边的防御模型时，还有另一种回归会爆掉：API 请求契约的破坏。2026 年 7 月 24 日发布的 Claude Opus 5 给了一个活例子。官方文档原文照录如下。
+如果说上面是攻击侧的回归，那么升级自己这边的防御模型时，还有另一种回归会爆掉：API 请求契约的破坏。2026 年 7 月 24 日发布的 Claude Opus 5 给了一个活例子。[官方迁移指南](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5#behavior-changes)原文照录如下。
 
-> Disabling thinking is capped at `high` effort: You can still turn thinking off with `thinking: {type: "disabled"}`, but only at an effort level of `high` or below. A request that combines `thinking: {type: "disabled"}` with effort `xhigh` or `max` returns a 400 error. Claude Opus 4.8 accepts this combination, so audit requests that disable thinking before you migrate.
+> On Claude Opus 5, `thinking: {"type": "disabled"}` is accepted only when the effort level is `high` or below. Setting `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. This is generally available behavior on Claude Opus 5 onward, enforced on each request, and it is a breaking change from Claude Opus 4.8, where disabling thinking was independent of the effort level.
 
 翻成白话：关掉 thinking 只有在 effort 为 high 或更低时才被接受。把 thinking 关掉、同时 effort 用 xhigh 或 max，就会返回 400。在 4.8 里，关 thinking 和 effort 级别互不相干，所以这是一处明确的破坏性变更。顺带说明，价格是每百万输入 token 5 美元、输出 25 美元，与 4.8 一致；上下文的默认值和最大值都是 100 万 token；thinking 默认开启。也就是说，如果你只把模型 ID 从 `claude-opus-4-8` 直接换成 `claude-opus-5`，那些在 4.8 上跑得好好的、带着「关 thinking、effort 用 xhigh」组合的批处理，部署完立刻就会以 400 崩掉。
 

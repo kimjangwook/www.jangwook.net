@@ -145,9 +145,9 @@ This is exactly the skeleton I used to [harden structured-data validation into a
 
 ## Config regresses too: Opus 5's thinking and effort
 
-If that was the attacker-side regression, there's a different kind that fires when you upgrade your own defending model: a break in the API request contract. Claude Opus 5, shipped on July 24, 2026, gives a live example. Here is the official documentation verbatim.
+If that was the attacker-side regression, there's a different kind that fires when you upgrade your own defending model: a break in the API request contract. Claude Opus 5, shipped on July 24, 2026, gives a live example. Here is the [official migration guide](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5#behavior-changes) verbatim.
 
-> Disabling thinking is capped at `high` effort: You can still turn thinking off with `thinking: {type: "disabled"}`, but only at an effort level of `high` or below. A request that combines `thinking: {type: "disabled"}` with effort `xhigh` or `max` returns a 400 error. Claude Opus 4.8 accepts this combination, so audit requests that disable thinking before you migrate.
+> On Claude Opus 5, `thinking: {"type": "disabled"}` is accepted only when the effort level is `high` or below. Setting `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. This is generally available behavior on Claude Opus 5 onward, enforced on each request, and it is a breaking change from Claude Opus 4.8, where disabling thinking was independent of the effort level.
 
 In plain terms: disabled thinking is only accepted when effort is high or below. Turn thinking off together with xhigh or max and you get a 400. On 4.8, disabling thinking was independent of the effort level, so this is a clear breaking change. For context, pricing is $5 per million input tokens and $25 per million output, unchanged from 4.8; context is 1M tokens as both the default and the maximum; and thinking is on by default. So if you do a drop-in swap of just the model ID from `claude-opus-4-8` to `claude-opus-5`, any batch job carrying the "thinking off, effort xhigh" combo that ran fine on 4.8 breaks with a 400 right after deploy.
 

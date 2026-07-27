@@ -51,7 +51,7 @@ faq:
 구글은 명시적으로 지원한다고 밝히고 있다. 공식 문서의 표현을 그대로 옮기면:
 
 > "Google can read JSON-LD data when it is dynamically injected into the page's contents, such as by JavaScript code or embedded widgets."
-> — Google Search Central, *Intro to Structured Data*
+> — Google Search Central, [*Intro to Structured Data*](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data)
 
 즉 `document.createElement('script')`로 `application/ld+json` 블록을 나중에 붙여도 구글은 렌더링 후 DOM에서 그걸 읽는다. 여기까지만 보면 "그럼 JS로 넣어도 되네"가 맞다. 문제는 언제, 얼마나 확실하게 읽히느냐다.
 

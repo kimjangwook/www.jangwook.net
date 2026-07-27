@@ -144,9 +144,9 @@ GATE: RED (exit 1)
 
 ## configも回帰する：Opus 5のthinkingとeffort
 
-ここまでが攻撃側の回帰なら、防御側のモデルを上げるときに起きる別種の回帰がある。APIリクエスト契約の破壊だ。2026年7月24日に出たClaude Opus 5が生きた事例をくれる。公式ドキュメントの表現をそのまま引くとこうだ。
+ここまでが攻撃側の回帰なら、防御側のモデルを上げるときに起きる別種の回帰がある。APIリクエスト契約の破壊だ。2026年7月24日に出たClaude Opus 5が生きた事例をくれる。[公式移行ガイド](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5#behavior-changes)の表現をそのまま引くとこうだ。
 
-> Disabling thinking is capped at `high` effort: You can still turn thinking off with `thinking: {type: "disabled"}`, but only at an effort level of `high` or below. A request that combines `thinking: {type: "disabled"}` with effort `xhigh` or `max` returns a 400 error. Claude Opus 4.8 accepts this combination, so audit requests that disable thinking before you migrate.
+> On Claude Opus 5, `thinking: {"type": "disabled"}` is accepted only when the effort level is `high` or below. Setting `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. This is generally available behavior on Claude Opus 5 onward, enforced on each request, and it is a breaking change from Claude Opus 4.8, where disabling thinking was independent of the effort level.
 
 訳せば、thinkingを切った状態はeffortがhigh以下のときだけ受け付ける。xhighやmaxと一緒にthinkingを切ると400を返す。4.8ではthinkingを切ることとeffortレベルが互いに独立だったので、これは明白な破壊的変更だ。ちなみに価格は入力100万トークンあたり5ドル、出力25ドルで4.8と同じ、コンテキストは既定かつ最大が100万トークン、thinkingは既定でオンになっている。つまりモデルIDだけを`claude-opus-4-8`から`claude-opus-5`へ変えるドロップイン差し替えをすると、4.8時代に問題なく回っていた「thinkingを切りeffortはxhigh」の組み合わせを持つバッチ処理が、デプロイ直後に400で崩れる。
 
