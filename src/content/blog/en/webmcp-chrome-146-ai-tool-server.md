@@ -230,7 +230,7 @@ Since MCP is already designed as an open protocol, achieving cross-browser compa
 
 1. Learn the MCP protocol specification — [Building a Private MCP Server with Local LLM](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp) lets you experiment with MCP in a fully offline environment
 2. Identify AI agent use cases for your services
-3. Experiment with WebMCP in Chrome 146 beta
+3. Experiment with WebMCP in Chrome 146 beta — though the API surface was reshuffled afterward. I traced how `provideContext` disappeared and `navigator.modelContext` took over in [WebMCP's Origin Trial](/en/blog/en/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026)
 
 ### Mid-term (6-12 months)
 

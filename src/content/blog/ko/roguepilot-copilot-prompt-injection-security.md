@@ -234,7 +234,7 @@ graph TD
 
 Microsoft는 Orca Security의 책임 있는 공개 이후 해당 취약점을 패치했다. 하지만 <strong>근본적인 문제는 해결되지 않았다</strong>.
 
-AI 코딩 도구가 외부 데이터를 컨텍스트로 자동 수집하는 아키텍처 자체가 패시브 프롬프트 인젝션의 공격 표면을 만들기 때문이다. RoguePilot은 하나의 사례일 뿐, 유사한 취약점은 모든 AI 코딩 도구에서 발생할 수 있다.
+AI 코딩 도구가 외부 데이터를 컨텍스트로 자동 수집하는 아키텍처 자체가 패시브 프롬프트 인젝션의 공격 표면을 만들기 때문이다. RoguePilot은 하나의 사례일 뿐, 유사한 취약점은 모든 AI 코딩 도구에서 발생할 수 있다. 게다가 한 번 막아둔 방어가 계속 유효한지도 별개의 문제다. 모델 버전을 올릴 때마다 인젝션 방어가 그대로 버티는지 CI에서 확인하는 방법은 [모델 버전을 올릴 때마다 인젝션 테스트를 다시 돌리는 이유](/ko/blog/ko/prompt-injection-regression-gate-model-updates)에 정리해 두었다.
 
 <strong>[Claude Code](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)의 접근 방식</strong>은 이 문제에 대한 하나의 해답을 제시한다. Claude Code는 외부 데이터를 자동으로 실행하지 않고, 사용자의 명시적 승인을 요구하는 설계를 채택했다. `.claude/settings.json`의 허용 목록 기반 권한 관리와, Hook 시스템을 통한 실행 전 검증이 대표적이다.
 

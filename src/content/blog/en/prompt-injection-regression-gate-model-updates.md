@@ -1,6 +1,6 @@
 ---
 title: "Why I Re-Run My Injection Tests Every Time I Bump the Model"
-description: "I ran a prompt-injection regression suite on my own LLM pipeline: a naive guard caught 2 of 11, a structural one caught all, and the gate pinpointed a dropped detector. Opus 5's breaking config change folds in too."
+description: "I ran a prompt-injection regression suite on my LLM pipeline. A naive guard caught 2 of 11, a structural guard caught all 11, and it flagged my own regression."
 pubDate: '2026-07-27'
 heroImage: ../../../assets/blog/prompt-injection-regression-gate-model-updates/hero.png
 tags:

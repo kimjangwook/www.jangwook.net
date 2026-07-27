@@ -1,6 +1,6 @@
 ---
-title: "WebSockets No Longer Block bfcache? Chrome 150 Still Said 'websocket'"
-description: Chrome 149 said active WebSockets no longer block bfcache. I re-measured on three Chrome 150 builds and notRestoredReasons still returned 'websocket'. Here is the gap.
+title: "WebSockets and bfcache: Chrome 150 Still Said 'websocket'"
+description: Chrome 149 said active WebSockets no longer block bfcache. I re-measured on three Chrome 150 builds and notRestoredReasons still returned 'websocket'. Why?
 pubDate: '2026-07-24'
 heroImage: ../../../assets/blog/websocket-bfcache-eligibility-remeasure/hero.png
 tags:

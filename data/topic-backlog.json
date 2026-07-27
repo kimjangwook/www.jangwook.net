@@ -5719,7 +5719,58 @@
       "source": "blog.modelcontextprotocol.io RC 원문(2026-07-28 최종 발표), theregister/microsoft techcommunity 교차 확인",
       "added_at": "2026-07-27",
       "status": "queued",
-      "notes": "내일(07-28) 최종 발표 — 시의성 최상. RC 확정 변경: initialize/initialized·Mcp-Session-Id 제거, 요청마다 self-contained(_meta에 클라이언트 정보), server/discover가 사전 capability 협상 대체, Mcp-Method·Mcp-Name 헤더 필수(바디 검사 없이 라우팅), Tasks가 core→extension으로 재편(tasks/get·update·cancel), 인증 6개 SEP(iss 검증 필수·application_type 선언), 12개월 최소 deprecation 정책(Roots·Sampling·Logging deprecated). 마이그레이션: 에러코드 -32002→-32602, 2025-11-25 Tasks API 사용자는 새 extension 라이프사이클로 이전. 페르소나 착지: 자기 MCP 서버에서 세션 의존 부분 재점검·스티키 세션 제거로 라운드로빈 LB 수평확장(팀 인프라·게이트웨이 단순화). 뉴스 요약 금지, 고쳐야 할 체크리스트로 착지. mcp-server-build-practical-guide-2026·mcp-server-production-deployment-kubernetes-guide 내부링크."
+      "notes": "내일(07-28) 최종 발표 — 시의성 최상. RC 확정 변경: initialize/initialized·Mcp-Session-Id 제거, 요청마다 self-contained(_meta에 클라이언트 정보), server/discover가 사전 capability 협상 대체, Mcp-Method·Mcp-Name 헤더 필수(바디 검사 없이 라우팅), Tasks가 core→extension으로 재편(tasks/get·update·cancel), 인증 6개 SEP(iss 검증 필수·application_type 선언), 12개월 최소 deprecation 정책(Roots·Sampling·Logging deprecated). 마이그레이션: 에러코드 -32002→-32602, 2025-11-25 Tasks API 사용자는 새 extension 라이프사이클로 이전. 페르소나 착지: 자기 MCP 서버에서 세션 의존 부분 재점검·스티키 세션 제거로 라운드로빈 LB 수평확장(팀 인프라·게이트웨이 단순화). 뉴스 요약 금지, 고쳐야 할 체크리스트로 착지. mcp-server-build-practical-guide-2026·mcp-server-production-deployment-kubernetes-guide 내부링크. [2026-07-27 pm 캐치업 확인] 내일(07-28) 최종 발표 재확인. 선행 문서 이미 공개: RC 블로그(blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate, 5/21 락)+베타 SDK 공지(6/29). 베타 버전 실측 진입점: Python mcp[cli]==2.0.0b1, TS @modelcontextprotocol/server@beta+codemod(npx @modelcontextprotocol/codemod@beta v1-to-v2 .), Go v1.7.0-pre.1, C# 2.0.0-preview.1. 프레이밍 교정 필수(공식 원문): '07-28은 스위치오버가 아니라 스펙 확정일 — 오늘도 07-28에도 기존 서버는 안 깨진다'. 앵글을 '재앙'이 아니라 '지금 베타를 브랜치에 깔고 실트래픽으로 돌려 initialize/Mcp-Session-Id 의존·tasks/list(제거됨)·에러코드 -32002 매칭부를 감사'하는 measure→gate 루프로 착지. 추가 확정 SEP: 멀티라운드 InputRequiredResult(SEP-2322, 영속 SSE 제거), 캐싱 ttlMs·cacheScope(SEP-2549, 스트림 변경알림 대체)."
+    },
+    {
+      "slug": "chrome-151-ruby-overhang-furigana-css",
+      "title_idea": "CSS ruby-overhang 한 줄로 일본어 후리가나 오버행을 제어한다 — Chrome 151에서 4언어 블로그의 ja 렌더를 실측",
+      "content_type": "how-to",
+      "target_keyword": "CSS ruby-overhang",
+      "secondary_keywords": [
+        "furigana CSS",
+        "ruby 주석 오버행",
+        "Chrome 151 CSS"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Chrome 151 stable(2026-07-28) 릴리스. CSS ruby-overhang 프로퍼티(auto/spaces/none) 추가로 ruby 주석(후리가나) 텍스트가 인접 문자 위로 넘치는 동작을 제어. + AnimationEvent/TransitionEvent에 read-only animation 속성 추가. + MV2 잔여 코드 최종 삭제(확장 유지보수자 신호). developer.chrome.com/blog/chrome-151-beta.",
+      "added_at": "2026-07-27",
+      "status": "queued",
+      "notes": "2026-07-27 pm 캐치업 발굴. 기둥①×4언어 정중앙: 이 블로그 ja 콘텐츠의 후리가나(기술용어 요미가나) 렌더를 Chrome 151에서 auto/spaces/none 비교 실측하고, 지원 브라우저 폴백까지 게이트화. 뉴스 요약이 아니라 자기 사이트 ja 렌더 실측으로 착지. 한계 명시: Chrome 151+ 한정·타 브라우저 미지원 시 폴백. 소재 다양성(LLM 실험 아님, 브라우저 API 실측). string-lang-dir-metadata-multilingual-web와 4언어 운영 클러스터 내부링크."
+    },
+    {
+      "slug": "soft-navigations-api-spa-inp-route-measure-2026",
+      "title_idea": "SPA의 INP는 첫 화면만 재고 있었다 — Chrome 151 Soft Navigations로 라우트 단위 실측을 붙인다",
+      "content_type": "how-to",
+      "target_keyword": "Soft Navigations API",
+      "secondary_keywords": [
+        "SPA INP 측정",
+        "soft navigation CrUX",
+        "PerformanceObserver soft-navigation"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome 151(2026-07)부터 Soft Navigations가 플래그 없이 전 사이트 사용 가능. Chrome 147부터 최종 오리진 트라이얼 진행. CrUX가 SPA 소프트 내비게이션을 인식하기 시작하면서 CWV가 페이지 수명 전체가 아니라 라우트 단위로 슬라이스됨. developer.chrome.com/docs/web-platform/soft-navigations",
+      "added_at": "2026-07-27",
+      "status": "queued",
+      "notes": "2026-07-27 daily-closing 선정. 기둥: '남이 발표한 수치를 믿지 말고 직접 재라' 시리즈 정중앙(bfcache·notRestoredReasons·CLS·INP 계보). 착지: PerformanceObserver로 soft-navigation 엔트리를 잡아 라우트별 INP/LCP를 직접 뽑고, 하드 내비 기준 수치와 어긋나는 지점을 실측 표로 제시. 한계 명시 — Chrome 151+ 한정, 휴리스틱 기반이라 모든 라우트 전환을 잡지 못함, CrUX 반영 시차. 내부링크: inp-yielding-measure-2026, bfcache-notrestoredreasons-audit-2026, websocket-bfcache-eligibility-remeasure."
+    },
+    {
+      "slug": "element-pseudo-event-pseudotarget-css-js-2026",
+      "title_idea": "::before를 JS에서 직접 잡는다 — Element.pseudo()와 Event.pseudoTarget으로 의사요소를 테스트 가능하게",
+      "content_type": "how-to",
+      "target_keyword": "Element.pseudo()",
+      "secondary_keywords": [
+        "Event.pseudoTarget",
+        "CSSPseudoElement",
+        "의사요소 테스트"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Chrome 최신 릴리스에서 CSS 의사요소가 JS에 노출됨. Element.pseudo(type)로 CSSPseudoElement 인스턴스를 얻고, Event.pseudoTarget으로 어떤 의사요소가 이벤트를 유발했는지 확인 가능. developer.chrome.com/blog/new-in-web-ui-io26",
+      "added_at": "2026-07-27",
+      "status": "queued",
+      "notes": "2026-07-27 daily-closing 선정. 그동안 ::before/::after는 getComputedStyle로 문자열만 긁어보는 수밖에 없어 자동 테스트의 사각지대였다. 착지: 아이콘·포커스 링·툴팁을 의사요소로 그린 컴포넌트에서 pseudo() 기반 단언을 axe/Playwright 검사에 붙여, 기존 방식으로는 못 잡던 회귀를 실제로 잡아 보인다. 한계 명시 — 지원 브라우저 한정, 폴백 필요. 내부링크: axe-automated-a11y-coverage-gap-2026, modal-focus-escape-inert-measure-2026, wcag22-target-size-audit-2026."
     }
   ]
 }

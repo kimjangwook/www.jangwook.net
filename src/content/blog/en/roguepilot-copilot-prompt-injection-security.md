@@ -235,7 +235,7 @@ graph TD
 
 Microsoft patched the vulnerability following Orca Security's responsible disclosure. However, <strong>the fundamental issue remains unresolved</strong>.
 
-The architecture itself—where AI coding tools automatically collect external data as context—creates the attack surface for passive prompt injection. RoguePilot is just one example; similar vulnerabilities can occur in any AI coding tool.
+The architecture itself—where AI coding tools automatically collect external data as context—creates the attack surface for passive prompt injection. RoguePilot is just one example; similar vulnerabilities can occur in any AI coding tool. And whether a defense you shipped once still holds is a separate question. I wrote up how to check that injection defenses survive a model bump, straight from CI, in [Why I Re-Run My Injection Tests Every Time I Bump the Model](/en/blog/en/prompt-injection-regression-gate-model-updates).
 
 <strong>[Claude Code](/en/blog/en/claude-code-agentic-workflow-patterns-5-types)'s approach</strong> offers one answer to this problem. Claude Code adopts a design that doesn't automatically execute external data and instead requires explicit user approval. This is exemplified by allowlist-based permission management in `.claude/settings.json` and validation through the Hook system before execution.
 

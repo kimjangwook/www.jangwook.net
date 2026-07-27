@@ -1,6 +1,6 @@
 ---
 title: "모델 버전을 올릴 때마다 인젝션 테스트를 다시 돌리는 이유: 게이트를 직접 짜봤다"
-description: "LLM 자동화 파이프라인에 인젝션 회귀 스위트를 실제로 돌렸다. 순진한 가드는 11건 중 2건만 잡았고, 구조적 가드는 전부 잡았다. 그리고 가드를 리팩터링하다 fake_cot 탐지를 떨어뜨리자 게이트가 그 회귀를 정확히 집어냈다. Opus 5의 config 파손까지 한 게이트로 묶은 기록."
+description: "LLM 파이프라인에 인젝션 회귀 스위트를 돌렸다. 순진한 가드는 11건 중 2건, 구조적 가드는 11건 전부를 잡았고, 리팩터링이 떨어뜨린 탐지도 게이트가 집어냈다."
 pubDate: '2026-07-27'
 heroImage: ../../../assets/blog/prompt-injection-regression-gate-model-updates/hero.png
 tags:

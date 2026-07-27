@@ -229,7 +229,7 @@ MCP가 이미 오픈 프로토콜로 설계되어 있어, 브라우저 간 호�
 
 1. MCP 프로토콜 스펙 학습 — [로컬 LLM으로 프라이빗 MCP 서버 구축하기](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)에서 오프라인 환경에서 MCP를 직접 실험해볼 수 있다
 2. 자사 서비스의 AI 에이전트 활용 시나리오 도출
-3. Chrome 146 베타에서 WebMCP 실험
+3. Chrome 146 베타에서 WebMCP 실험 — 다만 그 뒤로 API 표면이 한 번 갈렸다. `provideContext`가 사라지고 `navigator.modelContext`로 재편된 경위는 [WebMCP가 오리진 트라이얼에 들어왔다](/ko/blog/ko/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026)에 정리해 두었다
 
 ### 중기 (6-12개월)
 

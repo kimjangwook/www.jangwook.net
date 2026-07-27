@@ -232,7 +232,7 @@ graph TD
 
 Microsoft 在 Orca Security 的负责任披露后修补了该漏洞。但<strong>根本问题未被解决</strong>。
 
-AI 编码工具自动收集外部数据作为上下文的架构本身就为被动提示注入创造了攻击面。RoguePilot 只是一个案例，类似的漏洞可能出现在所有 AI 编码工具中。
+AI 编码工具自动收集外部数据作为上下文的架构本身就为被动提示注入创造了攻击面。RoguePilot 只是一个案例，类似的漏洞可能出现在所有 AI 编码工具中。而且，曾经堵上的防御是否一直有效，这是另一个问题。如何在 CI 里确认升级模型后注入防御依然成立，我写在[每次升级模型都要重跑注入测试](/zh/blog/zh/prompt-injection-regression-gate-model-updates)一文中。
 
 <strong>[Claude Code](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types) 的方法</strong>为这个问题提供了一个解决方案。Claude Code 采用了不自动执行外部数据、要求用户明确批准的设计。基于 `.claude/settings.json` 的白名单权限管理和通过 Hook 系统进行执行前验证都是典型例子。
 

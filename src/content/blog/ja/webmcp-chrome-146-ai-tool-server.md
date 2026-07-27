@@ -227,7 +227,7 @@ MCPがすでにオープンプロトコルとして設計されているため�
 
 1. MCPプロトコル仕様の学習 — [ローカルLLMでプライベートMCPサーバーを構築する](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp)でオフライン環境でのMCP実験が可能です
 2. 自社サービスのAIエージェント活用シナリオ策定
-3. Chrome 146ベータでのWebMCP実験
+3. Chrome 146ベータでのWebMCP実験 — ただしその後、APIの表面は一度組み替えられた。`provideContext`が消えて`navigator.modelContext`に再編された経緯は[WebMCPがオリジントライアルに入った](/ja/blog/ja/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026)にまとめてある
 
 ### 中期（6〜12ヶ月）
 

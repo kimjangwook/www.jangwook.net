@@ -1,6 +1,6 @@
 ---
 title: "每次升级模型都要重跑注入测试：我把这道关卡亲手搭了出来"
-description: "我把一套注入回归测试真正跑在自己的 LLM 自动化流水线上。朴素守卫 11 条里只拦下 2 条，结构化守卫全部拦下。而当我在重构中漏掉一个 fake_cot 检测器，关卡精准地点出了泄漏的两条并给出 exit 1。连同 Opus 5 的 config 破坏性变更，我把它们收进同一道关卡。"
+description: "我把注入回归测试跑在自己的 LLM 流水线上。朴素守卫 11 条只拦 2 条，结构化守卫全部拦下，重构漏掉的检测器也被关卡精准点出。"
 pubDate: '2026-07-27'
 heroImage: ../../../assets/blog/prompt-injection-regression-gate-model-updates/hero.png
 tags:

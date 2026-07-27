@@ -1,6 +1,6 @@
 ---
 title: "モデルを上げるたびに注入テストを回し直す理由：ゲートを実際に組んでみた"
-description: "LLM自動化パイプラインに注入回帰スイートを実際に回した。素朴なガードは11件中2件しか止められず、構造的なガードは全部止めた。そしてガードをリファクタする途中でfake_cot検知を落とすと、ゲートが漏れた2件を正確に指してexit 1を出した。Opus 5のconfig破壊まで一つのゲートに束ねた記録。"
+description: "LLMパイプラインに注入回帰スイートを実際に回した。素朴なガードは11件中2件、構造的なガードは11件すべてを止め、リファクタで落ちた検知もゲートが指し当てた。"
 pubDate: '2026-07-27'
 heroImage: ../../../assets/blog/prompt-injection-regression-gate-model-updates/hero.png
 tags:

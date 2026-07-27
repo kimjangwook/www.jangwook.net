@@ -227,7 +227,7 @@ AI代理开发者无需为每个网站编写定制爬取逻辑，通过标准化
 
 1. 学习MCP协议规范 — [使用本地LLM构建私有MCP服务器](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)支持在完全离线环境中实验MCP
 2. 梳理自有服务的AI代理应用场景
-3. 在Chrome 146 Beta中试验WebMCP
+3. 在Chrome 146 Beta中试验WebMCP — 不过此后API表面被重排过一次。`provideContext`消失、`navigator.modelContext`接手的来龙去脉，我整理在[WebMCP进入origin trial](/zh/blog/zh/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026)一文里
 
 ### 中期（6-12个月）
 
