@@ -56,7 +56,7 @@ relatedPosts:
 
 那这为什么会变成「每次升级模型」的问题？因为有两条轴在同时移动。
 
-第一，攻击方的模型变强，攻击的分布本身就会变。OpenAI 在 2026 年 7 月中旬公开的 GPT-Red 正面展示了这一点。这是一种让模型（而非人）自动去攻击其他模型、从而磨炼防御的做法。在一项间接提示注入基准上，OpenAI 表示 GPT-Red 的攻击成功率达到 84%，远高于同等条件下人类红队的 13%。更要紧的是，这个过程挖出了一类被命名为 Fake Chain-of-Thought 的新攻击。据称它在上一代模型上的成功率超过 95%，而在用这些样本重新训练的下一代模型上降到了 10% 以下（这些数字是 OpenAI 发布口径的参考值。我试图直接抓取原文页面但被拦下，所以只放链接，不做逐字引用）。含义只有一个：攻击不是静态的。自动化攻击者会不断生成新的攻击类别，所以去年没被绕过的防御，今年不一定还能挡住。
+第一，攻击方的模型变强，攻击的分布本身就会变。OpenAI 在 2026 年 7 月中旬公开的 [GPT-Red](https://openai.com/index/unlocking-self-improvement-gpt-red/) 正面展示了这一点。这是一种让模型（而非人）自动去攻击其他模型、从而磨炼防御的做法。在一项间接提示注入基准上，OpenAI 表示 GPT-Red 的攻击成功率达到 84%，远高于同等条件下人类红队的 13%。更要紧的是，这个过程挖出了一类被命名为 Fake Chain-of-Thought 的新攻击。据称它在上一代模型上的成功率超过 95%，而在用这些样本重新训练的下一代模型上降到了 10% 以下（这些数字是 OpenAI 发布口径的参考值。我试图直接抓取原文页面但被拦下，所以只放链接，不做逐字引用）。含义只有一个：攻击不是静态的。自动化攻击者会不断生成新的攻击类别，所以去年没被绕过的防御，今年不一定还能挡住。
 
 第二，升级自己这边的防御模型，这次变的是 API 契约。这个我在后半用 Opus 5 的例子来实测。这里先说结论：注入脆弱性和 config 有效性，都是「依赖模型版本」的值。既然依赖版本，那版本一变就该重新测。如果你在 [ICML 评审 PDF 里藏着注入的案例](/zh/blog/zh/icml-prompt-injection-academic-review)里看到了攻击面，那么本文讲的是我这边如何用可重复的检查把这种攻击挡住。
 
@@ -146,7 +146,7 @@ GATE: RED (exit 1)
 
 如果说上面是攻击侧的回归，那么升级自己这边的防御模型时，还有另一种回归会爆掉：API 请求契约的破坏。2026 年 7 月 24 日发布的 Claude Opus 5 给了一个活例子。官方文档原文照录如下。
 
-> On Claude Opus 5, `thinking: {"type": "disabled"}` is accepted only when the effort level is `high` or below. Setting `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. This is generally available behavior on Claude Opus 5 onward, enforced on each request, and it is a breaking change from Claude Opus 4.8, where disabling thinking was independent of the effort level.
+> Disabling thinking is capped at `high` effort: You can still turn thinking off with `thinking: {type: "disabled"}`, but only at an effort level of `high` or below. A request that combines `thinking: {type: "disabled"}` with effort `xhigh` or `max` returns a 400 error. Claude Opus 4.8 accepts this combination, so audit requests that disable thinking before you migrate.
 
 翻成白话：关掉 thinking 只有在 effort 为 high 或更低时才被接受。把 thinking 关掉、同时 effort 用 xhigh 或 max，就会返回 400。在 4.8 里，关 thinking 和 effort 级别互不相干，所以这是一处明确的破坏性变更。顺带说明，价格是每百万输入 token 5 美元、输出 25 美元，与 4.8 一致；上下文的默认值和最大值都是 100 万 token；thinking 默认开启。也就是说，如果你只把模型 ID 从 `claude-opus-4-8` 直接换成 `claude-opus-5`，那些在 4.8 上跑得好好的、带着「关 thinking、effort 用 xhigh」组合的批处理，部署完立刻就会以 400 崩掉。
 
@@ -181,7 +181,7 @@ CONFIG GATE: RED (exit 1)
 
 ## 这道关卡做不到的事
 
-先老实把边界削出来。别把这个实验读成「注入被解决了」。
+别把这个实验读成「注入被解决了」。
 
 第一，拦截率的数字是针对我亲手写的这套测试的值。它不是绝对安全水平，而是衡量有没有发生回归的相对指标。100% 的意思是「我知道的攻击类别全都拦下了」，不是「攻不破」。基于正则的检测器天然有误报和漏报的余地。新的编码、多语言混淆、绕开特定措辞的语义级攻击，都能轻松溜过这套测试。提示注入至今仍是未解的问题，OWASP 也把它列为 LLM 应用风险之首（LLM01）。
 
@@ -200,4 +200,4 @@ CONFIG GATE: RED (exit 1)
 - 给每个目标模型加一个 config 契约测试，放进同一道关卡。像 Opus 5 的 thinking 与 effort 组合那样，把发布说明里的破坏性变更写成规则，在本地预测出 400。
 - 关卡不是防御的全部。让最小权限和输出校验与它并行，关卡用来守住它们不倒退。
 
-我个人接 LLM 自动化流水线的注入防御体检，以及模型替换时把回归关卡接进 CI 的实现工作。如果你想先测一测自己的流水线里哪些攻击类别会漏，欢迎通过我个人资料里的联系方式直接找我聊。
+自己的流水线里哪一类攻击会先漏、升级模型时 config 会在哪儿崩——这两件事要一起测出来、并固化成一道关卡的团队，可以通过我个人资料里的联系方式找到我。咨询和实现都接。

@@ -56,7 +56,7 @@ relatedPosts:
 
 これがなぜ「モデルを上げるたび」の問題になるのか。二つの軸が同時に動くからだ。
 
-一つ目。攻撃側のモデルが強くなれば、攻撃の分布そのものが変わる。OpenAIが2026年7月中旬に公開したGPT-Redがこれを正面から見せた。人ではなくモデルが別のモデルを自動で攻撃し、防御を鍛える手法だ。間接プロンプトインジェクションのベンチマークで、GPT-Redの攻撃成功率は84%に達し、同条件の人間レッドチームの13%を大きく上回ったとOpenAIは述べている。さらに重いのは、この過程でFake Chain-of-Thoughtと名付けられた新しい攻撃群が発掘された点だ。前世代のモデルでは成功率が95%を超えていたのに、その事例で再学習した次世代では10%を下回ったという(数値はOpenAI発表基準の参考値。私は原文ページを直接取得しようとしてアクセスが弾かれたため、引用ではなくリンクだけ残す)。含意は一つ。攻撃は静的ではない。自動化された攻撃者が新しい攻撃群を作り続けるので、去年すり抜けなかった防御が今年もすり抜けない保証はない。
+一つ目。攻撃側のモデルが強くなれば、攻撃の分布そのものが変わる。OpenAIが2026年7月中旬に公開した[GPT-Red](https://openai.com/index/unlocking-self-improvement-gpt-red/)がこれを正面から見せた。人ではなくモデルが別のモデルを自動で攻撃し、防御を鍛える手法だ。間接プロンプトインジェクションのベンチマークで、GPT-Redの攻撃成功率は84%に達し、同条件の人間レッドチームの13%を大きく上回ったとOpenAIは述べている。さらに重いのは、この過程でFake Chain-of-Thoughtと名付けられた新しい攻撃群が発掘された点だ。前世代のモデルでは成功率が95%を超えていたのに、その事例で再学習した次世代では10%を下回ったという(数値はOpenAI発表基準の参考値。私は原文ページを直接取得しようとしてアクセスが弾かれたため、引用ではなくリンクだけ残す)。含意は一つ。攻撃は静的ではない。自動化された攻撃者が新しい攻撃群を作り続けるので、去年すり抜けなかった防御が今年もすり抜けない保証はない。
 
 二つ目。防御側のモデルを上げると、今度はAPIの契約が変わる。これは後半でOpus 5の事例として実測する。ここでは結論だけ言えば、注入への脆弱性もconfigの妥当性も、どちらも「モデルの版に従属する値」だということ。従属する値なら、版を上げるときに測り直すのが筋だ。[ICML査読PDFに潜んだ注入の事例](/ja/blog/ja/icml-prompt-injection-academic-review)で攻撃面を見たなら、本稿はその攻撃を自分の側でどう反復検査で止めるかを扱う。
 
@@ -146,7 +146,7 @@ GATE: RED (exit 1)
 
 ここまでが攻撃側の回帰なら、防御側のモデルを上げるときに起きる別種の回帰がある。APIリクエスト契約の破壊だ。2026年7月24日に出たClaude Opus 5が生きた事例をくれる。公式ドキュメントの表現をそのまま引くとこうだ。
 
-> On Claude Opus 5, `thinking: {"type": "disabled"}` is accepted only when the effort level is `high` or below. Setting `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. This is generally available behavior on Claude Opus 5 onward, enforced on each request, and it is a breaking change from Claude Opus 4.8, where disabling thinking was independent of the effort level.
+> Disabling thinking is capped at `high` effort: You can still turn thinking off with `thinking: {type: "disabled"}`, but only at an effort level of `high` or below. A request that combines `thinking: {type: "disabled"}` with effort `xhigh` or `max` returns a 400 error. Claude Opus 4.8 accepts this combination, so audit requests that disable thinking before you migrate.
 
 訳せば、thinkingを切った状態はeffortがhigh以下のときだけ受け付ける。xhighやmaxと一緒にthinkingを切ると400を返す。4.8ではthinkingを切ることとeffortレベルが互いに独立だったので、これは明白な破壊的変更だ。ちなみに価格は入力100万トークンあたり5ドル、出力25ドルで4.8と同じ、コンテキストは既定かつ最大が100万トークン、thinkingは既定でオンになっている。つまりモデルIDだけを`claude-opus-4-8`から`claude-opus-5`へ変えるドロップイン差し替えをすると、4.8時代に問題なく回っていた「thinkingを切りeffortはxhigh」の組み合わせを持つバッチ処理が、デプロイ直後に400で崩れる。
 
@@ -181,7 +181,7 @@ CONFIG GATE: RED (exit 1)
 
 ## このゲートにできないこと
 
-正直に、限界を先に削っておく。この実験を「注入を解決した」と読んではいけない。
+この実験を「注入を解決した」と読んではいけない。
 
 一つ。検知率の数値は、私が手で組んだスイートに対する値だ。絶対的なセキュリティ水準ではなく、回帰の有無を測る相対指標である。100%は「私が知る攻撃群を全部止めた」の意味であって、「破られない」の意味ではない。正規表現ベースの検知器には原理的に誤検知と見逃しの余地がある。新しいエンコード、多言語の難読化、文言を回避する意味レベルの攻撃は、いくらでもこのスイートを抜ける。プロンプトインジェクションはまだ未解決の問題で、OWASPもこれをLLMアプリケーション最上位のリスク(LLM01)に置いている。
 
@@ -200,4 +200,4 @@ CONFIG GATE: RED (exit 1)
 - 対象モデルごとのconfig契約テストを同じゲートに足す。Opus 5のthinkingとeffortの組み合わせのように、リリースノートのbreaking changeを規則として書き、400をローカルで予測する。
 - ゲートは防御の全部ではない。最小権限と出力検証を一緒に置き、ゲートはそれらが後退しないよう守る役に使う。
 
-私はLLM自動化パイプラインの注入対策の点検や、モデル差し替え時の回帰ゲートをCIへ組み込む仕事を、個人で相談・実装として受けている。自分のパイプラインでどの攻撃群が漏れるかをまず測ってみたいなら、プロフィールの連絡先から気軽に声をかけてほしい。
+自分のパイプラインでどの攻撃群が先に漏れるのか、モデルを上げたときconfigがどこで壊れるのか——この二つをまとめて測り、ゲートとして残す作業が要るチームは、プロフィールの連絡先から届く。相談も実装も受けている。

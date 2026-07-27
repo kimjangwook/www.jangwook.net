@@ -56,7 +56,7 @@ relatedPosts:
 
 이게 왜 "모델을 올릴 때마다"의 문제가 되는가. 두 축이 동시에 움직이기 때문이다.
 
-첫째, 공격 쪽 모델이 강해지면 공격 분포 자체가 바뀐다. OpenAI가 2026년 7월 중순 공개한 GPT-Red가 이걸 정면으로 보여준다. 사람이 아니라 모델이 다른 모델을 자동으로 공격해 방어를 단련시키는 접근인데, 간접 프롬프트 인젝션 벤치마크에서 GPT-Red의 공격 성공률이 84%로, 같은 조건의 인간 레드팀 13%를 크게 앞섰다고 OpenAI는 밝혔다. 더 중요한 건 이 과정에서 Fake Chain-of-Thought라 이름 붙은 새로운 공격군이 발굴됐다는 대목이다. 이전 세대 모델에서는 성공률이 95%를 넘겼는데, 그 예제로 다시 훈련한 다음 세대에서는 10% 아래로 떨어졌다고 한다(수치는 OpenAI 발표 기준의 참고값이다. 나는 원문 페이지를 직접 긁으려다 접근이 막혀, 인용 대신 링크로만 남긴다). 핵심 함의는 하나다. 공격은 정적이지 않다. 자동화된 공격자가 새 공격군을 계속 생성하므로, 작년에 통과한 방어가 올해도 통과한다는 보장은 없다.
+첫째, 공격 쪽 모델이 강해지면 공격 분포 자체가 바뀐다. OpenAI가 2026년 7월 중순 공개한 [GPT-Red](https://openai.com/index/unlocking-self-improvement-gpt-red/)가 이걸 정면으로 보여준다. 사람이 아니라 모델이 다른 모델을 자동으로 공격해 방어를 단련시키는 접근인데, 간접 프롬프트 인젝션 벤치마크에서 GPT-Red의 공격 성공률이 84%로, 같은 조건의 인간 레드팀 13%를 크게 앞섰다고 OpenAI는 밝혔다. 더 중요한 건 이 과정에서 Fake Chain-of-Thought라 이름 붙은 새로운 공격군이 발굴됐다는 대목이다. 이전 세대 모델에서는 성공률이 95%를 넘겼는데, 그 예제로 다시 훈련한 다음 세대에서는 10% 아래로 떨어졌다고 한다(수치는 OpenAI 발표 기준의 참고값이다. 나는 원문 페이지를 직접 긁으려다 접근이 막혀, 인용 대신 링크로만 남긴다). 핵심 함의는 하나다. 공격은 정적이지 않다. 자동화된 공격자가 새 공격군을 계속 생성하므로, 작년에 통과한 방어가 올해도 통과한다는 보장은 없다.
 
 둘째, 방어 쪽 모델을 올리면 이번엔 API 계약이 바뀐다. 이건 뒤에서 Opus 5 사례로 실측한다. 지금은 결론만 말하면, 인젝션 취약성과 config 유효성이 둘 다 "모델 버전에 종속된 값"이라는 점이다. 종속된 값이라면 버전을 올릴 때 다시 재는 게 맞다. [ICML 심사 PDF에 숨은 인젝션 사례](/ko/blog/ko/icml-prompt-injection-academic-review)에서 공격면을 봤다면, 이 글은 그 공격을 내 쪽에서 어떻게 반복 검사로 막는지를 다룬다.
 
@@ -148,7 +148,7 @@ GATE: RED (exit 1)
 
 지금까지가 공격 쪽 회귀였다면, 방어 쪽 모델을 올릴 때 터지는 다른 종류의 회귀가 있다. API 요청 계약의 파손이다. 2026년 7월 24일 출시된 Claude Opus 5가 살아 있는 사례를 준다. 공식 문서의 표현을 그대로 옮기면 이렇다.
 
-> On Claude Opus 5, `thinking: {"type": "disabled"}` is accepted only when the effort level is `high` or below. Setting `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. This is generally available behavior on Claude Opus 5 onward, enforced on each request, and it is a breaking change from Claude Opus 4.8, where disabling thinking was independent of the effort level.
+> Disabling thinking is capped at `high` effort: You can still turn thinking off with `thinking: {type: "disabled"}`, but only at an effort level of `high` or below. A request that combines `thinking: {type: "disabled"}` with effort `xhigh` or `max` returns a 400 error. Claude Opus 4.8 accepts this combination, so audit requests that disable thinking before you migrate.
 
 번역하면, thinking을 끈 상태는 effort가 high 이하일 때만 받아준다. xhigh나 max와 함께 thinking을 끄면 400을 돌려준다. 4.8에서는 thinking을 끄는 것과 effort 레벨이 서로 독립이었으니, 이건 명백한 파괴적 변경이다. 참고로 가격은 입력 100만 토큰당 5달러, 출력 25달러로 4.8과 같고, 컨텍스트는 기본이자 최대가 100만 토큰이며, thinking이 기본으로 켜져 있다. 즉 모델 ID만 `claude-opus-4-8`에서 `claude-opus-5`로 바꾸는 드롭인 교체를 하면, 4.8 시절 잘 돌던 "thinking 끄고 effort는 xhigh" 조합이 있던 배치 작업이 배포 직후 400으로 무너진다.
 
@@ -183,7 +183,7 @@ CONFIG GATE: RED (exit 1)
 
 ## 이 게이트가 하지 못하는 것
 
-정직하게 한계를 먼저 깎아둔다. 이 실험을 "인젝션을 풀었다"로 읽으면 안 된다.
+이 실험을 "인젝션을 풀었다"로 읽으면 안 된다.
 
 첫째, 탐지율 수치는 내가 손으로 짠 스위트에 대한 값이다. 절대 보안 수준이 아니라 회귀 여부를 재는 상대 지표다. 100%는 "내가 아는 공격군을 다 잡았다"는 뜻이지 "안 뚫린다"는 뜻이 아니다. 정규식 기반 탐지기에는 원리적으로 오탐과 미탐의 여지가 있다. 새로운 인코딩, 다국어 난독화, 문구를 우회하는 의미 수준 공격은 얼마든지 이 스위트를 빠져나간다. 프롬프트 인젝션은 아직 미해결 문제이고, OWASP도 이걸 LLM 애플리케이션 최상위 위험(LLM01)으로 둔다.
 
@@ -202,4 +202,4 @@ CONFIG GATE: RED (exit 1)
 - 대상 모델별 config 계약 테스트를 같은 게이트에 붙인다. Opus 5의 thinking·effort 조합처럼 릴리스 노트의 breaking change를 규칙으로 적어 400을 로컬에서 예측한다.
 - 게이트는 방어의 전부가 아니다. 최소권한과 출력 검증을 함께 두고, 게이트는 그것들이 후퇴하지 않게 지키는 역할로 쓴다.
 
-나는 LLM 자동화 파이프라인의 인젝션 방어를 점검하거나, 모델 교체 시의 회귀 게이트를 CI에 붙이는 작업을 개인적으로 상담·구현으로 받는다. 자기 파이프라인에서 어느 공격군이 새는지부터 재보고 싶다면, 프로필의 연락 경로로 편하게 말을 걸어도 좋다.
+자기 파이프라인에서 어느 공격군이 먼저 새는지, 모델을 올렸을 때 config가 어디서 깨지는지 — 이 둘을 함께 재보고 게이트로 남기는 작업이 필요한 팀이라면 프로필의 연락 경로로 닿을 수 있다. 상담과 구현 모두 받는다.

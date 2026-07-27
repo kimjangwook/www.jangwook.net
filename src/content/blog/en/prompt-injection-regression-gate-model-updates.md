@@ -56,7 +56,7 @@ Prompt injection is an attack where untrusted text masquerades as a command to t
 
 Why does this become a "every model bump" problem? Because two axes move at once.
 
-First, when the attacking model gets stronger, the distribution of attacks itself changes. OpenAI's GPT-Red, published in mid-July 2026, shows this head-on. It's an approach where a model, not a human, automatically attacks other models to harden their defenses. On an indirect prompt-injection benchmark, OpenAI reports GPT-Red hit an 84% attack success rate, well ahead of human red-teamers at 13% under the same conditions. What matters more is that the process surfaced a new attack class they call Fake Chain-of-Thought. It reportedly succeeded over 95% of the time on a prior-generation model, and dropped below 10% on the next generation trained on those examples. (Those figures are reference values per OpenAI's announcement. I tried to fetch the source page directly, got blocked, and so I link it rather than quote it.) The implication is simple: attacks are not static. An automated attacker keeps generating new classes, so a defense that held last year isn't guaranteed to hold this year.
+First, when the attacking model gets stronger, the distribution of attacks itself changes. OpenAI's [GPT-Red](https://openai.com/index/unlocking-self-improvement-gpt-red/), published in mid-July 2026, shows this head-on. It's an approach where a model, not a human, automatically attacks other models to harden their defenses. On an indirect prompt-injection benchmark, OpenAI reports GPT-Red hit an 84% attack success rate, well ahead of human red-teamers at 13% under the same conditions. What matters more is that the process surfaced a new attack class they call Fake Chain-of-Thought. It reportedly succeeded over 95% of the time on a prior-generation model, and dropped below 10% on the next generation trained on those examples. (Those figures are reference values per OpenAI's announcement. I tried to fetch the source page directly, got blocked, and so I link it rather than quote it.) The implication is simple: attacks are not static. An automated attacker keeps generating new classes, so a defense that held last year isn't guaranteed to hold this year.
 
 Second, when you upgrade your own defending model, the API contract changes. I measure this later with Opus 5. For now, the point is that both injection susceptibility and config validity are values that depend on the model version. If a value depends on the version, you re-measure it when the version changes. If [the ICML review PDFs with injections buried in them](/en/blog/en/icml-prompt-injection-academic-review) showed you the attack surface, this post covers how I block that attack with a repeatable check on my side.
 
@@ -147,7 +147,7 @@ This is exactly the skeleton I used to [harden structured-data validation into a
 
 If that was the attacker-side regression, there's a different kind that fires when you upgrade your own defending model: a break in the API request contract. Claude Opus 5, shipped on July 24, 2026, gives a live example. Here is the official documentation verbatim.
 
-> On Claude Opus 5, `thinking: {"type": "disabled"}` is accepted only when the effort level is `high` or below. Setting `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. This is generally available behavior on Claude Opus 5 onward, enforced on each request, and it is a breaking change from Claude Opus 4.8, where disabling thinking was independent of the effort level.
+> Disabling thinking is capped at `high` effort: You can still turn thinking off with `thinking: {type: "disabled"}`, but only at an effort level of `high` or below. A request that combines `thinking: {type: "disabled"}` with effort `xhigh` or `max` returns a 400 error. Claude Opus 4.8 accepts this combination, so audit requests that disable thinking before you migrate.
 
 In plain terms: disabled thinking is only accepted when effort is high or below. Turn thinking off together with xhigh or max and you get a 400. On 4.8, disabling thinking was independent of the effort level, so this is a clear breaking change. For context, pricing is $5 per million input tokens and $25 per million output, unchanged from 4.8; context is 1M tokens as both the default and the maximum; and thinking is on by default. So if you do a drop-in swap of just the model ID from `claude-opus-4-8` to `claude-opus-5`, any batch job carrying the "thinking off, effort xhigh" combo that ran fine on 4.8 breaks with a 400 right after deploy.
 
@@ -182,7 +182,7 @@ Two were caught before deploy. No live API call; just mirroring the documented r
 
 ## What this gate cannot do
 
-Let me shave down the limits up front. Don't read this experiment as "injection solved."
+Don't read this experiment as "injection solved."
 
 First, the catch-rate numbers are values against a suite I wrote by hand. They aren't an absolute security level; they're a relative indicator of whether something regressed. 100% means "I caught every attack class I know about," not "unbreakable." Regex-based detectors have inherent room for both false positives and false negatives. Novel encodings, multilingual obfuscation, semantic-level attacks that route around specific phrasing, all slip past this suite easily. Prompt injection is still an unsolved problem, and OWASP places it at the top of its LLM application risks (LLM01).
 
@@ -201,4 +201,4 @@ What I confirmed is simple. Injection susceptibility and config validity are bot
 - Add a per-model config-contract test to the same gate. Write breaking changes from the release notes as rules (like Opus 5's thinking-and-effort combo) and predict the 400 locally.
 - The gate isn't the whole defense. Keep least privilege and output validation alongside it, and use the gate to keep those from sliding back.
 
-I take on injection-defense reviews for LLM automation pipelines and CI regression gates for model swaps, personally, as consulting and implementation. If you'd like to start by measuring which attack classes leak in your own pipeline, feel free to reach out through the contact link on my profile.
+Which attack classes leak first in your own pipeline, and where the config breaks when you bump the model — if your team needs those two measured together and pinned down as a gate, the contact link on my profile reaches me. Consulting and implementation both.
