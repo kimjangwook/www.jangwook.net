@@ -9,7 +9,6 @@ import { execFileSync } from 'node:child_process';
 
 const repoRoot = process.cwd();
 const statePath = path.join(repoRoot, 'ops/loop_state.json');
-const effloow = path.join(process.env.HOME, 'Documents/workspace/web.effloow.com');
 
 // JST 성분을 Intl로 직접 추출 (Date 왕복 변환은 머신 타임존에 따라 오차 — 2026-07-18 수정)
 const fmt = new Intl.DateTimeFormat('en-CA', {
@@ -19,7 +18,6 @@ const fmt = new Intl.DateTimeFormat('en-CA', {
 });
 const parts = Object.fromEntries(fmt.formatToParts(new Date()).map((p) => [p.type, p.value]));
 const today = `${parts.year}-${parts.month}-${parts.day}`;
-const ymd = today.slice(2).replaceAll('-', '');
 const hour = Number(parts.hour) % 24;
 const minute = Number(parts.minute);
 const dow = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[parts.weekday];
@@ -32,27 +30,9 @@ const weekdayKo = { Sun: '일', Mon: '월', Tue: '화', Wed: '수', Thu: '목', 
 const out = { ts: `${today}T${parts.hour}:${parts.minute}`, weekday: `${parts.weekday}(${weekdayKo})`, flags: [] };
 const mark = (key, value = today) => { state[key] = value; };
 
-// ── xqa_due: 07:00 X 생성 후 첫 틱 ──────────────────────────────
-const xDir = path.join(effloow, `contents/${ymd}/x/daily`);
-let xCount = 0;
-try { xCount = fs.readdirSync(xDir).filter((f) => /^post-\d+\.md$/.test(f)).length; } catch { /* 미생성 */ }
-out.x_queue_today = xCount;
-// 2026-07-20: 하루 12본 → 3본 축소 (운영자 지시) — 임계값도 3으로 내림
-if (hour >= 7 && xCount >= 3 && state.last_xqa !== today) {
-  out.flags.push('xqa_due');
-  mark('last_xqa');
-}
-if (hour >= 8 && xCount < 3 && state.last_xgen_alert !== today) {
-  out.flags.push('xgen_missing'); // 07:00 생성 실패 의심 — morning-daily-x 로그 확인 필요
-  mark('last_xgen_alert');
-}
-
-// ── scout_due: 07/12/18시 이후 각 1회 (X 상호작용 수집 — wbai 모델) ──
-const scoutSlot = hour >= 18 ? 'evening' : hour >= 12 ? 'noon' : hour >= 7 ? 'morning' : null;
-if (scoutSlot && state[`last_scout_${scoutSlot}`] !== today) {
-  out.flags.push(`scout_due:${scoutSlot}`);
-  mark(`last_scout_${scoutSlot}`);
-}
+// ── X 운영 폐지 (2026-07-27 운영자 지시: "X 운영 메리트를 못 느낀다") ──
+// xqa_due / xgen_missing / scout_due 플래그 및 X 관련 launchd 잡
+// (morning-daily-x, x-reminders) 전부 철거. 복구 시 git 이력 참조.
 
 // ── catchup_due: 08시/18시 이후 각 1회 ──────────────────────────
 const slot = hour >= 18 ? 'pm' : hour >= 8 ? 'am' : null;
