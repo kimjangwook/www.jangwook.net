@@ -71,7 +71,7 @@ INP를 챙길 이유는 두 가지다. 하나는 사람, 하나는 검색이다.
 
 검색 쪽은 정직하게 말해야 한다. Core Web Vitals는 Google의 페이지 경험 신호의 일부이고 INP도 그 안에 있다. 다만 Google은 이걸 "비슷하게 관련성 높은 페이지들 사이의 판가름 요소" 정도로 설명하지, 관련성을 뒤집는 결정타로 말하지 않는다. <strong>INP를 200ms 밑으로 내렸다고 순위가 오른다는 보장은 없다.</strong> 이건 내 의견이 아니라 공식 입장이 그렇다. 그래도 재고 고칠 값어치가 있는 이유는, 같은 노력이 검색 신호와 실제 사용자 체감을 동시에 건드리기 때문이다. 한쪽만 봐도 남는 장사다.
 
-여기서 한 가지 성질을 기억해야 한다. INP는 근본적으로 필드(field) 지표다. 실제 사용자의 크롬에서 수집된 데이터(CrUX)로 판정된다. 랩(lab) 도구에서도 추정할 수는 있지만, 그 값은 "당신이 어떤 상호작용을 눌렀느냐"에 전적으로 달려 있다. 그래서 이번 실험도 "내가 무엇을 눌렀는지"를 명확히 통제하고, 그 조건에서 나온 숫자로만 이야기한다. 실제 방문자의 느린 기기까지 대신할 수는 없다는 뜻이다. 이 한계는 뒤에서 다시 짚는다. 이 성질은 [LCP를 실측한 글](/ko/blog/ko/lcp-image-preload-scanner-fetchpriority-2026)에서 다룬 "로딩 완료 속도"와 짝을 이룬다. LCP가 앞을 맡고 INP가 뒤를 맡는 셈이다. 같은 Core Web Vitals 묶음에서 [화면 밀림(CLS)을 실측해 잡은 기록](/ko/blog/ko/cls-layout-shift-reserve-space-measure-2026)과 [렌더 비용을 CSS 한 줄로 줄인 content-visibility 실험](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026)도 같은 태도로 다뤘다.
+여기서 한 가지 성질을 기억해야 한다. INP는 근본적으로 필드(field) 지표다. 실제 사용자의 크롬에서 수집된 데이터(CrUX)로 판정된다. 랩(lab) 도구에서도 추정할 수는 있지만, 그 값은 "당신이 어떤 상호작용을 눌렀느냐"에 전적으로 달려 있다. 그래서 이번 실험도 "내가 무엇을 눌렀는지"를 명확히 통제하고, 그 조건에서 나온 숫자로만 이야기한다. 실제 방문자의 느린 기기까지 대신할 수는 없다는 뜻이다. 이 한계는 뒤에서 다시 짚는다. 이 성질은 [LCP를 실측한 글](/ko/blog/ko/lcp-image-preload-scanner-fetchpriority-2026)에서 다룬 "로딩 완료 속도"와 짝을 이룬다. LCP가 앞을 맡고 INP가 뒤를 맡는 셈이다. 같은 Core Web Vitals 묶음에서 [화면 밀림(CLS)을 실측해 잡은 기록](/ko/blog/ko/cls-layout-shift-reserve-space-measure-2026)과 [렌더 비용을 CSS 한 줄로 줄인 content-visibility 실험](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026)도 같은 태도로 다뤘다. 다만 필드 지표는 재는 코드가 틀리면 조용히 거짓말을 한다. [prerender를 켰더니 LCP가 6.2초로 찍혔던 실측](/ko/blog/ko/prerender-activationstart-cwv-measurement-2026)이 그 사례다.
 
 ## 샌드박스: 같은 일을, 두 방식으로
 

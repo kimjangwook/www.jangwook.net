@@ -186,7 +186,7 @@ function buildGraph({ pageUrl, article }) {
 3. `WebSite.publisher`、`Article.author`、`Article.publisher`、`Person.worksFor`などを、インラインオブジェクトではなく<strong>`{"@id": ...}`参照</strong>に置き換える。
 4. ページ階層を繋ぐ。`WebPage.isPartOf` → `WebSite`、`BreadcrumbList` → `WebPage.breadcrumb`。
 5. マークアップを[Schema Markup Validator](https://validator.schema.org/)とGoogle Rich Results Testにかけ、有効性を確認する。
-6. (任意)`jsonld`で`flatten`した後、連結コンポーネントが<strong>1</strong>かをスクリプトで検証する。2以上ならどこかで参照が抜けている。多言語サイトなら、同じ「ドキュメントではなく自分で検証」の姿勢で[hreflangの相互参照を30行スクリプトで監査した方法](/ja/blog/ja/hreflang-reciprocity-audit-multilingual-2026)も併せて回してみるとよい。
+6. (任意)`jsonld`で`flatten`した後、連結コンポーネントが<strong>1</strong>かをスクリプトで検証する。2以上ならどこかで参照が抜けている。多言語サイトなら、同じ「ドキュメントではなく自分で検証」の姿勢で[hreflangの相互参照を30行スクリプトで監査した方法](/ja/blog/ja/hreflang-reciprocity-audit-multilingual-2026)も併せて回してみるとよい。連結の検査を通っても、各ノードの値が正しい保証はない。値の層の穴は[飲食店の営業時間を3層で検証した記録](/ja/blog/ja/restaurant-jsonld-opening-hours-validation-2026)で別途扱った。
 
 ここまでが「関係を明示した」の実測可能な終点だ。順位保証はない。だがリッチリザルトの資格を安定させ、サイトのエンティティモデルを機械が誤解なく読む土台ができる。私は構造化データの中でこれが最も過小評価された作業だと思う。皆が新しいスキーマ型の追加に集中する一方、すでに入れた断片を<strong>互いに繋ぐ</strong>仕事は飛ばしてしまう。
 

@@ -128,7 +128,7 @@ function validateFaqPage(doc) {
     - mainEntity[1] 缺 name — 必填
 ```
 
-正常样本过了结构检查（`PASS`）。可紧挨着的那一行是 `DEPRECATED`。你的校验器再怎么亮绿灯，Google搜索去渲染它的那道口子已经关了。这就是全文的一句话总结：schema有效性和曝光价值是两条轴，而CI门禁只看得到前一条。谁在跑[CI里自动校验结构化数据的流水线](/zh/blog/zh/validate-structured-data-ci-jsonld-2026)，谁就越要记住这个盲区。门禁通过，不等于流量价值附上来。
+正常样本过了结构检查（`PASS`）。可紧挨着的那一行是 `DEPRECATED`。你的校验器再怎么亮绿灯，Google搜索去渲染它的那道口子已经关了。这就是全文的一句话总结：schema有效性和曝光价值是两条轴，而CI门禁只看得到前一条。谁在跑[CI里自动校验结构化数据的流水线](/zh/blog/zh/validate-structured-data-ci-jsonld-2026)，谁就越要记住这个盲区。门禁通过，不等于流量价值附上来。校验器漏掉的还有第二条轴：值本身讲不讲得通。我[把餐厅营业时间的标记过了三层校验](/zh/blog/zh/restaurant-jsonld-opening-hours-validation-2026)，`opens: "eleven"` 这种值一层都没被拦下。
 
 第二个样本里还有一点要看。校验器照样能精准抓出必填字段缺失。也就是说，结构检查本身没死。死的是它后面原本挂着的Google富媒体结果这份奖励。这个区分，决定了下一步怎么判断。
 

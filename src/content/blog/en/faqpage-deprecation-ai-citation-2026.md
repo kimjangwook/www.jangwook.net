@@ -128,7 +128,7 @@ The run came back like this:
     - mainEntity[1] missing name (required)
 ```
 
-The clean sample passes the structural check (`PASS`). The line right next to it says `DEPRECATED`. However green your validator turns, the stage where Google Search would render that has already closed. That's the one-line summary: schema validity and visibility are separate axes, and a CI gate only sees the first one. Anyone running a [CI pipeline that auto-validates structured data](/en/blog/en/validate-structured-data-ci-jsonld-2026) should keep this blind spot in mind. A passing gate does not mean traffic value attaches.
+The clean sample passes the structural check (`PASS`). The line right next to it says `DEPRECATED`. However green your validator turns, the stage where Google Search would render that has already closed. That's the one-line summary: schema validity and visibility are separate axes, and a CI gate only sees the first one. Anyone running a [CI pipeline that auto-validates structured data](/en/blog/en/validate-structured-data-ci-jsonld-2026) should keep this blind spot in mind. A passing gate does not mean traffic value attaches. There's a second axis validators miss: whether the value itself makes any sense. When I [ran restaurant opening-hours markup through three layers of validation](/en/blog/en/restaurant-jsonld-opening-hours-validation-2026), a value like `opens: "eleven"` sailed through every one of them.
 
 There's a second thing to notice in the broken sample. The validator still catches missing required fields precisely. The structural check itself isn't dead. What died is the Google rich-result reward that used to ride on top of it. That distinction drives the next decision.
 

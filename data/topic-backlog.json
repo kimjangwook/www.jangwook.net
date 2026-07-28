@@ -5737,7 +5737,7 @@
       "source": "blog.modelcontextprotocol.io RC 원문(2026-07-28 최종 발표), theregister/microsoft techcommunity 교차 확인",
       "added_at": "2026-07-27",
       "status": "queued",
-      "notes": "내일(07-28) 최종 발표 — 시의성 최상. RC 확정 변경: initialize/initialized·Mcp-Session-Id 제거, 요청마다 self-contained(_meta에 클라이언트 정보), server/discover가 사전 capability 협상 대체, Mcp-Method·Mcp-Name 헤더 필수(바디 검사 없이 라우팅), Tasks가 core→extension으로 재편(tasks/get·update·cancel), 인증 6개 SEP(iss 검증 필수·application_type 선언), 12개월 최소 deprecation 정책(Roots·Sampling·Logging deprecated). 마이그레이션: 에러코드 -32002→-32602, 2025-11-25 Tasks API 사용자는 새 extension 라이프사이클로 이전. 페르소나 착지: 자기 MCP 서버에서 세션 의존 부분 재점검·스티키 세션 제거로 라운드로빈 LB 수평확장(팀 인프라·게이트웨이 단순화). 뉴스 요약 금지, 고쳐야 할 체크리스트로 착지. mcp-server-build-practical-guide-2026·mcp-server-production-deployment-kubernetes-guide 내부링크. [2026-07-27 pm 캐치업 확인] 내일(07-28) 최종 발표 재확인. 선행 문서 이미 공개: RC 블로그(blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate, 5/21 락)+베타 SDK 공지(6/29). 베타 버전 실측 진입점: Python mcp[cli]==2.0.0b1, TS @modelcontextprotocol/server@beta+codemod(npx @modelcontextprotocol/codemod@beta v1-to-v2 .), Go v1.7.0-pre.1, C# 2.0.0-preview.1. 프레이밍 교정 필수(공식 원문): '07-28은 스위치오버가 아니라 스펙 확정일 — 오늘도 07-28에도 기존 서버는 안 깨진다'. 앵글을 '재앙'이 아니라 '지금 베타를 브랜치에 깔고 실트래픽으로 돌려 initialize/Mcp-Session-Id 의존·tasks/list(제거됨)·에러코드 -32002 매칭부를 감사'하는 measure→gate 루프로 착지. 추가 확정 SEP: 멀티라운드 InputRequiredResult(SEP-2322, 영속 SSE 제거), 캐싱 ttlMs·cacheScope(SEP-2549, 스트림 변경알림 대체). [2026-07-28 am 캐치업] 최종 스펙 URL 아직 미발표(JST 09:08 기준): blog.modelcontextprotocol.io는 여전히 RC 포스트만, modelcontextprotocol.io/specification/2026-07-28은 404. 최종 공개는 미국 07-28 진행 중 예상 → JST 저녁/야간, 15:23 daily-post보다 늦을 가능성. 단 RC는 '2026-05-21 락'으로 콘텐츠 확정(10주 창은 SDK/클라이언트 검증용, 내용 변경 아님) → daily-post는 RC 원문에서 그대로 집필 가능, 최종 URL 대기 불필요. ★프레이밍 교정(중요): 07-27 pm의 '스위치오버 아님·기존 서버 안 깨짐'은 공식 문구와 충돌. RC 원문 명시 'This release contains breaking changes'·런칭 이후 최대 개정=사실상 hard switchover. 확정 제거: initialize/initialized 핸드셰이크, Mcp-Session-Id+프로토콜 세션. Mcp-Method/Mcp-Name 헤더 필수. Tasks는 extension으로 승격. 12개월 deprecation 정책은 '향후' 변경 대상이지 이번 릴리스엔 미적용. '안 깨짐'은 오직 MCP-Protocol-Version 버전 핀 협상으로만 방어 가능한데 RC 블로그는 이를 명시 보장하지 않음 → 페르소나(기대치를 깎는 것이 신뢰) 준수: '당신 서버는 안전' 단정 금지, '공식적으로 breaking change이며, 2026-07-28 채택 여부/버전 핀 유지 여부에 따라 깨짐이 갈린다, 스펙이 호환 심을 주지 않는다'로 착지. 중복 주의: mcp-2-1-rc-stateless-specification-analysis-2026(05-27)·mcp-2026-07-28-spec-stateless-what-changed-breaks(07-08)와 3중 중복 — 본 항목(07-27, 가장 상세)이 P1 대상. daily-post는 하나만 집필."
+      "notes": "내일(07-28) 최종 발표 — 시의성 최상. RC 확정 변경: initialize/initialized·Mcp-Session-Id 제거, 요청마다 self-contained(_meta에 클라이언트 정보), server/discover가 사전 capability 협상 대체, Mcp-Method·Mcp-Name 헤더 필수(바디 검사 없이 라우팅), Tasks가 core→extension으로 재편(tasks/get·update·cancel), 인증 6개 SEP(iss 검증 필수·application_type 선언), 12개월 최소 deprecation 정책(Roots·Sampling·Logging deprecated). 마이그레이션: 에러코드 -32002→-32602, 2025-11-25 Tasks API 사용자는 새 extension 라이프사이클로 이전. 페르소나 착지: 자기 MCP 서버에서 세션 의존 부분 재점검·스티키 세션 제거로 라운드로빈 LB 수평확장(팀 인프라·게이트웨이 단순화). 뉴스 요약 금지, 고쳐야 할 체크리스트로 착지. mcp-server-build-practical-guide-2026·mcp-server-production-deployment-kubernetes-guide 내부링크. [2026-07-27 pm 캐치업 확인] 내일(07-28) 최종 발표 재확인. 선행 문서 이미 공개: RC 블로그(blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate, 5/21 락)+베타 SDK 공지(6/29). 베타 버전 실측 진입점: Python mcp[cli]==2.0.0b1, TS @modelcontextprotocol/server@beta+codemod(npx @modelcontextprotocol/codemod@beta v1-to-v2 .), Go v1.7.0-pre.1, C# 2.0.0-preview.1. 프레이밍 교정 필수(공식 원문): '07-28은 스위치오버가 아니라 스펙 확정일 — 오늘도 07-28에도 기존 서버는 안 깨진다'. 앵글을 '재앙'이 아니라 '지금 베타를 브랜치에 깔고 실트래픽으로 돌려 initialize/Mcp-Session-Id 의존·tasks/list(제거됨)·에러코드 -32002 매칭부를 감사'하는 measure→gate 루프로 착지. 추가 확정 SEP: 멀티라운드 InputRequiredResult(SEP-2322, 영속 SSE 제거), 캐싱 ttlMs·cacheScope(SEP-2549, 스트림 변경알림 대체). [2026-07-28 am 캐치업] 최종 스펙 URL 아직 미발표(JST 09:08 기준): blog.modelcontextprotocol.io는 여전히 RC 포스트만, modelcontextprotocol.io/specification/2026-07-28은 404. 최종 공개는 미국 07-28 진행 중 예상 → JST 저녁/야간, 15:23 daily-post보다 늦을 가능성. 단 RC는 '2026-05-21 락'으로 콘텐츠 확정(10주 창은 SDK/클라이언트 검증용, 내용 변경 아님) → daily-post는 RC 원문에서 그대로 집필 가능, 최종 URL 대기 불필요. ★프레이밍 교정(중요): 07-27 pm의 '스위치오버 아님·기존 서버 안 깨짐'은 공식 문구와 충돌. RC 원문 명시 'This release contains breaking changes'·런칭 이후 최대 개정=사실상 hard switchover. 확정 제거: initialize/initialized 핸드셰이크, Mcp-Session-Id+프로토콜 세션. Mcp-Method/Mcp-Name 헤더 필수. Tasks는 extension으로 승격. 12개월 deprecation 정책은 '향후' 변경 대상이지 이번 릴리스엔 미적용. '안 깨짐'은 오직 MCP-Protocol-Version 버전 핀 협상으로만 방어 가능한데 RC 블로그는 이를 명시 보장하지 않음 → 페르소나(기대치를 깎는 것이 신뢰) 준수: '당신 서버는 안전' 단정 금지, '공식적으로 breaking change이며, 2026-07-28 채택 여부/버전 핀 유지 여부에 따라 깨짐이 갈린다, 스펙이 호환 심을 주지 않는다'로 착지. 중복 주의: mcp-2-1-rc-stateless-specification-analysis-2026(05-27)·mcp-2026-07-28-spec-stateless-what-changed-breaks(07-08)와 3중 중복 — 본 항목(07-27, 가장 상세)이 P1 대상. daily-post는 하나만 집필. [2026-07-28 pm 캐치업 JST~18:15] 최종 스펙 여전히 미발표 3중 확인: (1) /specification/versioning의 Current는 아직 2025-11-25 (2026-07-28은 Draft/RC로도 Current 승격 안 됨), (2) GitHub releases 최신은 'MCP 2026-07-28 RC'(pre-release)뿐 최종 태그 없음, (3) /specification/2026-07-28 여전히 404, 블로그 최신 포스트는 6/29 베타 SDK 공지. 즉 오전 판정 유지 — 미국 07-28 진행 중이라 JST 야간 발표 가능성, 15:23 daily-post보다 늦음. 부수 확정 사실: 공개 라이브 문서(versioning·lifecycle)는 여전히 stateful 모델(초기화 중 버전협상·세션당 단일버전 합의)을 기술 → RC의 stateless 서술과 라이브 문서가 아직 불일치, 글에서 '현재 공개 스펙은 여전히 세션 기반, RC가 이를 뒤집는다'로 대비 프레이밍 가능. daily-post는 RC 원문(05-21 락)에서 집필 가능하되 '최종 미발표·Current 미승격' 상태를 정직하게 명시할 것."
     },
     {
       "slug": "chrome-151-ruby-overhang-furigana-css",
@@ -5789,6 +5789,40 @@
       "added_at": "2026-07-27",
       "status": "queued",
       "notes": "2026-07-27 daily-closing 선정. 그동안 ::before/::after는 getComputedStyle로 문자열만 긁어보는 수밖에 없어 자동 테스트의 사각지대였다. 착지: 아이콘·포커스 링·툴팁을 의사요소로 그린 컴포넌트에서 pseudo() 기반 단언을 axe/Playwright 검사에 붙여, 기존 방식으로는 못 잡던 회귀를 실제로 잡아 보인다. 한계 명시 — 지원 브라우저 한정, 폴백 필요. 내부링크: axe-automated-a11y-coverage-gap-2026, modal-focus-escape-inert-measure-2026, wcag22-target-size-audit-2026."
+    },
+    {
+      "slug": "css-text-fit-auto-font-scaling-measure-2026",
+      "title_idea": "제목 글자를 컨테이너에 딱 맞춘다 — CSS text-fit으로 JS 폰트 스케일러를 걷어낸 실측",
+      "content_type": "how-to",
+      "target_keyword": "CSS text-fit",
+      "secondary_keywords": [
+        "자동 폰트 크기 조절",
+        "fitty 대체",
+        "반응형 타이포그래피"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome 150에서 CSS text-fit 프로퍼티 지원 시작(자동 폰트 스케일링). developer.chrome.com/blog/new-in-chrome-150",
+      "added_at": "2026-07-28",
+      "status": "queued",
+      "notes": "2026-07-28 daily-closing 선정. 차별화: fitty 같은 JS 라이브러리를 걷어냈을 때의 번들 크기·레이아웃 재계산 비용을 before/after로 실측. 폴백(@supports) 경로와 CLS 영향까지 재는 것이 핵심. 기존 CWV 실측 시리즈(cls/inp/content-visibility)와 자연스럽게 이어짐"
+    },
+    {
+      "slug": "css-url-integrity-crossorigin-modifiers-2026",
+      "title_idea": "CSS가 불러오는 파일에도 SRI를 건다 — url()의 integrity()·crossorigin() 모디파이어 실측",
+      "content_type": "how-to",
+      "target_keyword": "CSS url() integrity",
+      "secondary_keywords": [
+        "Subresource Integrity CSS",
+        "crossorigin() 모디파이어",
+        "referrer-policy() CSS"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Chrome 150에서 CSS url()이 cross-origin()·integrity()·referrer-policy() 모디파이어를 수용. developer.chrome.com/blog/new-in-chrome-150",
+      "added_at": "2026-07-28",
+      "status": "queued",
+      "notes": "2026-07-28 daily-closing 선정. 차별화: 지금까지 SRI는 script/link 태그에만 걸렸고 CSS가 참조하는 폰트·이미지는 무방비였다는 사각지대를 실측으로 보여줄 것. 해시 불일치 시 실제로 로드가 차단되는지, 미지원 브라우저에서 조용히 무시되는지를 직접 확인하는 구성"
     }
   ]
 }

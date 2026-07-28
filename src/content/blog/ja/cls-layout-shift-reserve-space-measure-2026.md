@@ -151,7 +151,7 @@ CLSは単純な総和ではなく<strong>セッションウィンドウ</strong>
 
 三つ目、<strong>私の計測方法そのものに近似が入っている。</strong> 私は`layout-shift`値を単純に合算した。今回はすべての移動が一つのセッションウィンドウに収まって実際のCLSと一致したが、移動が数秒ずつ離れて起きる長寿命ページ(無限スクロール、SPA)では、単純合計とセッションウィンドウ値がずれる。正確な値が必要なら、Googleが配布する`web-vitals`JavaScriptライブラリを使うのが正しい。それがセッションウィンドウのロジックをそのまま実装してくれる。加えて今回の実験は、Webフォント差し替え(FOUT)による移動は扱っていない。それもよくあるCLSの原因だ。
 
-これらの限界を知ると、かえって実測の使いどころがはっきりする。ラボ計測は順位の予言ではなく<strong>デバッグの道具</strong>だ。「何がどれだけずれるか」を目で見て、原因を一つずつ剥がしていく。それがこのワークフローの全てであり核心だ。同じやり方で[LCPのボトルネックをトレースで分解した記録](/ja/blog/ja/lcp-image-preload-scanner-fetchpriority-2026)や[content-visibilityのレンダーコストを実測した記録](/ja/blog/ja/content-visibility-auto-render-cost-measure-2026)も、結局は同じ姿勢だ。推測するな、測れ。
+これらの限界を知ると、かえって実測の使いどころがはっきりする。ラボ計測は順位の予言ではなく<strong>デバッグの道具</strong>だ。「何がどれだけずれるか」を目で見て、原因を一つずつ剥がしていく。それがこのワークフローの全てであり核心だ。同じやり方で[LCPのボトルネックをトレースで分解した記録](/ja/blog/ja/lcp-image-preload-scanner-fetchpriority-2026)や[content-visibilityのレンダーコストを実測した記録](/ja/blog/ja/content-visibility-auto-render-cost-measure-2026)も、結局は同じ姿勢だ。測った瞬間に計測器そのものを疑うべき場面もある。[prerenderしたページのLCPが6.2秒と出た件](/ja/blog/ja/prerender-activationstart-cwv-measurement-2026)は、ページが遅かったのではなく起点を引いていなかったせいだった。推測するな、測れ。
 
 ## 今日すぐできるチェックリスト
 

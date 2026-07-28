@@ -151,7 +151,7 @@ CLS는 단순 총합이 아니라 <strong>세션 윈도우</strong> 방식으로
 
 셋째, <strong>내 측정 방식 자체에 근사가 들어있다.</strong> 나는 `layout-shift` 값을 단순 합산했다. 이번엔 모든 이동이 한 세션 윈도우에 들어와 실제 CLS와 일치했지만, 이동이 몇 초씩 떨어져 발생하는 오래 사는 페이지(무한 스크롤, SPA)에서는 단순 합과 세션 윈도우 값이 벌어진다. 정확한 값이 필요하면 구글이 배포하는 `web-vitals` 자바스크립트 라이브러리를 쓰는 게 맞다. 그게 세션 윈도우 로직을 그대로 구현해준다. 또한 이번 실험은 웹폰트 교체(FOUT)로 인한 이동은 다루지 않았다. 그것도 흔한 CLS 원인이다.
 
-이 한계들을 알고 나면 오히려 실측의 쓸모가 분명해진다. 랩 측정은 순위 예언이 아니라 <strong>디버깅 도구</strong>다. "무엇이 얼마나 밀리는가"를 눈으로 보고 원인을 하나씩 걷어내는 것. 그게 이 워크플로우의 전부이자 핵심이다. 같은 방식으로 [LCP 병목을 트레이스로 분해했던 기록](/ko/blog/ko/lcp-image-preload-scanner-fetchpriority-2026)이나 [content-visibility의 렌더 비용을 실측한 기록](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026)도 결국 같은 태도다. 추측하지 말고 재라.
+이 한계들을 알고 나면 오히려 실측의 쓸모가 분명해진다. 랩 측정은 순위 예언이 아니라 <strong>디버깅 도구</strong>다. "무엇이 얼마나 밀리는가"를 눈으로 보고 원인을 하나씩 걷어내는 것. 그게 이 워크플로우의 전부이자 핵심이다. 같은 방식으로 [LCP 병목을 트레이스로 분해했던 기록](/ko/blog/ko/lcp-image-preload-scanner-fetchpriority-2026)이나 [content-visibility의 렌더 비용을 실측한 기록](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026)도 결국 같은 태도다. 재는 순간 계측기 자체를 의심해야 하는 경우도 있다. [prerender 페이지의 LCP가 6.2초로 잡혔던 건](/ko/blog/ko/prerender-activationstart-cwv-measurement-2026) 페이지가 느려서가 아니라 시작점을 빼지 않아서였다. 추측하지 말고 재라.
 
 ## 오늘 바로 할 수 있는 체크리스트
 

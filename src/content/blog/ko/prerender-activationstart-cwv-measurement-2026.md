@@ -1,6 +1,6 @@
 ---
-title: 'prerender을 켰더니 LCP가 6.2초로 찍혔다 — activationStart를 빼지 않은 RUM의 거짓말'
-description: Speculation Rules로 페이지를 미리 렌더링하면 LCP 원본값에 대기 시간이 통째로 들어간다. Chrome 150에서 6244ms와 103.5ms의 간극을 실측하고 보정 지점을 정리했다.
+title: 'prerender에서 LCP가 6.2초로 찍힌 이유 — activationStart를 뺀 RUM만 맞다'
+description: Speculation Rules로 페이지를 미리 렌더링하면 LCP 원본값에 사용자 대기 시간이 통째로 들어간다. Chrome 150에서 6244ms와 103.5ms의 간극을 실측하고, activationStart로 보정해야 할 지점을 RUM 계측 코드 기준으로 하나씩 정리했다.
 pubDate: '2026-07-28'
 heroImage: ../../../assets/blog/prerender-activationstart-cwv-measurement-2026/hero.png
 tags:
