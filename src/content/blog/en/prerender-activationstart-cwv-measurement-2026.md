@@ -129,7 +129,7 @@ My snapshot taken right after `load` held exactly 0. Six seconds later activatio
 
 The rule is short. **Read `activationStart` at report time.** Not at script evaluation, not at `DOMContentLoaded`, not at `load`.
 
-For the same reason, hold the beacon itself until after activation. Chrome's docs flag this directly: "However—particularly when using the Speculation Rules API—prerendered pages may have an impact on analytics and site owners may wish to add extra code to only enable analytics for prerendered pages on activation, as not all analytics providers may do this by default." (source: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
+For the same reason, hold the beacon itself until after activation. Chrome's docs flag this directly: "However—particularly when using the Speculation Rules API—prerendered pages may have an impact on analytics and site owners may need to add extra code to only enable analytics for prerendered pages on activation, as not all analytics providers may do this by default." (source: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
 
 ## Four launch configurations, and what web-vitals already does
 
@@ -200,7 +200,7 @@ Honestly, I never isolated it. The flags weren't the culprit. Same binary, and p
 
 The practical conclusion is already sitting there, though. **Don't validate Speculation Rules through Playwright or Puppeteer.** Correct rules will hand you a false negative. It's the same species of trap as [running axe-core under jsdom and missing real violations](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026): the test environment gives you a wrong answer quietly, with a green check next to it.
 
-Two things worked instead. One is the harness behind this post: let the page beacon its own results back, and just launch Chrome normally. The other is the quick check Chrome's docs recommend: "The easiest way to see if a page was prerendered is to open DevTools after the prerender has happened, and type `performance.getEntriesByType('navigation')[0].activationStart` in the console." (source: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
+Two things worked instead. One is the harness behind this post: let the page beacon its own results back, and just launch Chrome normally. The other is the quick check Chrome's docs recommend: "The easiest way to see if a page was prerendered (either in full or partially) is to open DevTools after the page is activated and type `performance.getEntriesByType('navigation')[0].activationStart` in the console." (source: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
 
 ## What this measurement doesn't claim
 

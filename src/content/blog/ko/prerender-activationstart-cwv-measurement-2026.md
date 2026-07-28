@@ -129,7 +129,7 @@ report('LCP', lcpEntry.startTime - activationStart);   // activationStart는 0�
 
 규칙은 단순하다. **`activationStart`는 보고하는 순간에 읽어라.** 스크립트 평가 시점도, `DOMContentLoaded`도, `load`도 아니다.
 
-같은 이유로 비콘 자체를 활성화 이후로 미뤄야 한다. 크롬 문서도 이 점을 짚는다. "However—particularly when using the Speculation Rules API—prerendered pages may have an impact on analytics and site owners may wish to add extra code to only enable analytics for prerendered pages on activation, as not all analytics providers may do this by default." (출처: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
+같은 이유로 비콘 자체를 활성화 이후로 미뤄야 한다. 크롬 문서도 이 점을 짚는다. "However—particularly when using the Speculation Rules API—prerendered pages may have an impact on analytics and site owners may need to add extra code to only enable analytics for prerendered pages on activation, as not all analytics providers may do this by default." (출처: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
 
 패턴은 이렇게 된다.
 
@@ -215,7 +215,7 @@ whenActivated(() => {
 
 다만 실무적으로 필요한 결론은 이미 나와 있다. **Speculation Rules를 Playwright나 Puppeteer로 검증하지 마라.** 규칙이 멀쩡해도 "동작 안 함"이라는 거짓 음성을 받는다. 이건 [jsdom에서 axe-core를 돌렸을 때 실제 위반을 놓쳤던 일](/ko/blog/ko/axe-core-ci-a11y-jsdom-vs-browser-2026)과 정확히 같은 종류의 함정이다. 테스트 환경이 틀린 답을 조용히, 초록불로 준다.
 
-내가 결국 쓴 방법은 두 가지다. 하나는 이 글의 하네스처럼 페이지가 스스로 `sendBeacon`으로 결과를 되쏘게 하고 크롬을 그냥 띄우는 것. 다른 하나는 크롬 문서가 권하는 손쉬운 확인법이다. "The easiest way to see if a page was prerendered is to open DevTools after the prerender has happened, and type `performance.getEntriesByType('navigation')[0].activationStart` in the console." (출처: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
+내가 결국 쓴 방법은 두 가지다. 하나는 이 글의 하네스처럼 페이지가 스스로 `sendBeacon`으로 결과를 되쏘게 하고 크롬을 그냥 띄우는 것. 다른 하나는 크롬 문서가 권하는 손쉬운 확인법이다. "The easiest way to see if a page was prerendered (either in full or partially) is to open DevTools after the page is activated and type `performance.getEntriesByType('navigation')[0].activationStart` in the console." (출처: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
 
 ## 이 측정이 말하지 않는 것
 

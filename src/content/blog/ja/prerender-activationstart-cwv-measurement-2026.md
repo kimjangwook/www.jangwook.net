@@ -129,7 +129,7 @@ report('LCP', lcpEntry.startTime - activationStart);   // activationStartは0の
 
 規則は単純だ。**`activationStart`は報告する瞬間に読む**。スクリプト評価時でも、`DOMContentLoaded`でも、`load`でもない。
 
-同じ理由で、ビーコンの送信自体もアクティブ化以降に遅らせる必要がある。Chromeのドキュメントもこの点に触れている。"However—particularly when using the Speculation Rules API—prerendered pages may have an impact on analytics and site owners may wish to add extra code to only enable analytics for prerendered pages on activation, as not all analytics providers may do this by default."（出典: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
+同じ理由で、ビーコンの送信自体もアクティブ化以降に遅らせる必要がある。Chromeのドキュメントもこの点に触れている。"However—particularly when using the Speculation Rules API—prerendered pages may have an impact on analytics and site owners may need to add extra code to only enable analytics for prerendered pages on activation, as not all analytics providers may do this by default."（出典: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
 
 ## 四つの起動条件での実測と、web-vitalsの扱い
 
@@ -198,7 +198,7 @@ whenActivated(() => {
 
 ただし実務に必要な結論はもう出ている。**Speculation RulesをPlaywrightやPuppeteerで検証してはいけない**。規則が正しくても「動いていません」という偽陰性が返る。これは[jsdomでaxe-coreを回して実際の違反を取りこぼした件](/ja/blog/ja/axe-core-ci-a11y-jsdom-vs-browser-2026)とまったく同じ種類の罠だ。テスト環境が、静かに、しかも緑のランプで間違った答えを返す。
 
-結局使った手は二つ。一つはこの記事のハーネスのように、ページ自身に`sendBeacon`で結果を投げ返させ、Chromeはただ起動するだけにすること。もう一つはChromeのドキュメントが薦める手軽な確認法だ。"The easiest way to see if a page was prerendered is to open DevTools after the prerender has happened, and type `performance.getEntriesByType('navigation')[0].activationStart` in the console."（出典: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
+結局使った手は二つ。一つはこの記事のハーネスのように、ページ自身に`sendBeacon`で結果を投げ返させ、Chromeはただ起動するだけにすること。もう一つはChromeのドキュメントが薦める手軽な確認法だ。"The easiest way to see if a page was prerendered (either in full or partially) is to open DevTools after the page is activated and type `performance.getEntriesByType('navigation')[0].activationStart` in the console."（出典: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
 
 ## この測定が言っていないこと
 

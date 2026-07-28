@@ -129,7 +129,7 @@ report('LCP', lcpEntry.startTime - activationStart);   // activationStart 早被
 
 规则很短：**在上报的那一刻去读 `activationStart`。** 不是脚本求值时，不是 `DOMContentLoaded`，也不是 `load`。
 
-同理，信标本身也要推迟到激活之后再发。Chrome 文档直接点了这一条："However—particularly when using the Speculation Rules API—prerendered pages may have an impact on analytics and site owners may wish to add extra code to only enable analytics for prerendered pages on activation, as not all analytics providers may do this by default."（出处：[Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
+同理，信标本身也要推迟到激活之后再发。Chrome 文档直接点了这一条："However—particularly when using the Speculation Rules API—prerendered pages may have an impact on analytics and site owners may need to add extra code to only enable analytics for prerendered pages on activation, as not all analytics providers may do this by default."（出处：[Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
 
 ## 四种启动条件下的实测，以及 web-vitals 已经做了什么
 
@@ -200,7 +200,7 @@ whenActivated(() => {
 
 不过实务上要的结论已经摆在那儿了：**别用 Playwright 或 Puppeteer 去验证 Speculation Rules。** 规则明明是对的，你却会拿到一个"没生效"的假阴性。这和[在 jsdom 里跑 axe-core、结果漏掉真实违规](/zh/blog/zh/axe-core-ci-a11y-jsdom-vs-browser-2026)是同一类陷阱：测试环境安安静静地给你一个错误答案，旁边还打着绿勾。
 
-最后管用的是两招。一是本文这套装置：让页面自己用 `sendBeacon` 把结果回传，Chrome 只管正常启动。二是 Chrome 文档推荐的快速确认法："The easiest way to see if a page was prerendered is to open DevTools after the prerender has happened, and type `performance.getEntriesByType('navigation')[0].activationStart` in the console."（出处：[Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
+最后管用的是两招。一是本文这套装置：让页面自己用 `sendBeacon` 把结果回传，Chrome 只管正常启动。二是 Chrome 文档推荐的快速确认法："The easiest way to see if a page was prerendered (either in full or partially) is to open DevTools after the page is activated and type `performance.getEntriesByType('navigation')[0].activationStart` in the console."（出处：[Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
 
 ## 这次测量没有主张的事
 
