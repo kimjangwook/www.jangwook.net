@@ -204,8 +204,6 @@ Two things worked instead. One is the harness behind this post: let the page bea
 
 ## What this measurement doesn't claim
 
-Time to set expectations down where they belong.
-
 One run per configuration, on a single laptop, against a local server. The millisecond figures illustrate a mechanism; they aren't a benchmark. The six-second gap is a number I invented in a `setTimeout`, unrelated to how real users hesitate. The longer that gap runs, though, the larger the uncorrected error grows, exactly in proportion.
 
 I also didn't benchmark prerendered against non-prerendered loads. My control run opened the same page directly and reported LCP at 532ms, but that number carries the cost of spinning up a browser window on a fresh profile. It isn't a like-for-like comparison, so nothing here supports a claim like "prerendering is five times faster."
