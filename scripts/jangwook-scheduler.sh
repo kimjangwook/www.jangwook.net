@@ -88,6 +88,45 @@ echo "========================================" >> "$LOG_FILE"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] START: $TASK_NAME" >> "$LOG_FILE"
 echo "========================================" >> "$LOG_FILE"
 
+# ── claude 헤드리스 새니티 프리플라이트 (2026-07-29 ⑥) ──
+# 07-26~27 행업 9건 전례: claude-code 자동 업데이트 후 Documents(TCC) 권한 미부여 또는
+# 세션·인증 문제로 claude 가 무응답이면, 워치독이 20분 이상 낭비되고 작업은 0 진척으로 끝난다.
+# 본 작업 전 60초 핑으로 즉시 판별 → 실패 시 경보 후 종료(다음 주기 자동 재시도).
+run_timeout() {
+    local secs="$1"; shift
+    "$@" &
+    local cmd_pid=$!
+    ( sleep "$secs"; kill -TERM "$cmd_pid" 2>/dev/null ) &
+    local killer_pid=$!
+    wait "$cmd_pid" 2>/dev/null
+    local rc=$?
+    kill -TERM "$killer_pid" 2>/dev/null
+    wait "$killer_pid" 2>/dev/null
+    [ "$rc" -eq 143 ] && rc=124
+    return $rc
+}
+
+claude_preflight() {
+    local tmp rc
+    tmp="$(mktemp -t claude-preflight 2>/dev/null || echo /tmp/claude-preflight.$$)"
+    run_timeout 60 claude -p 'Reply with exactly: OK' --model haiku </dev/null >"$tmp" 2>&1
+    rc=$?
+    if [ "$rc" -eq 0 ] && grep -qi 'OK' "$tmp"; then
+        rm -f "$tmp"; return 0
+    fi
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT: claude 무응답(rc=${rc}): $(tr '\n' ' ' < "$tmp" 2>/dev/null | tail -c 300)" >> "$LOG_FILE"
+    rm -f "$tmp"; return 1
+}
+
+if ! claude_preflight; then
+    tg_send "[jangwook.net] ${TASK_NAME}: claude 헤드리스 무응답(60초 프리플라이트 실패)
+원인 후보: claude-code 업데이트 후 Documents(TCC) 권한 미부여 / 세션·인증 문제.
+조치: 이번 주기 건너뜀(다음 주기 자동 재시도). 반복 시 터미널에서 claude 1회 실행해 접근 허용,
+또는 /bin/bash 에 전체 디스크 접근 권한 부여."
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: claude 무응답 — 작업 스킵" >> "$LOG_FILE"
+    exit 1
+fi
+
 # Sync with remote before running
 if ! git pull --rebase origin main >> "$LOG_FILE" 2>&1; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] git pull --rebase failed, attempting recovery..." >> "$LOG_FILE"
