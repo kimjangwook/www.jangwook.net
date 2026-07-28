@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-27",
+  "updated_at": "2026-07-28",
   "topics": [
+    {
+      "slug": "prerender-activationstart-cwv-measurement-2026",
+      "title_idea": "prerender을 켰더니 LCP가 6.2초로 찍혔다 — activationStart를 빼지 않은 RUM의 거짓말",
+      "content_type": "how-to",
+      "target_keyword": "prerender activationStart LCP 보정",
+      "secondary_keywords": [
+        "Speculation Rules",
+        "Core Web Vitals 계측",
+        "web-vitals navigationType prerender"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "자체 샌드박스 실측(Chrome 150.0.7871.187). Speculation Rules prerender 활성화 시 LCP 원본 startTime 6244ms vs activationStart 보정 후 103.5ms. 4개 기동 조건 web-vitals v5.1.0 검증 + Playwright 구동 시 prerender 미발생(원인 미특정) 함정. 1차 출처: developer.chrome.com prerender-pages, WICG nav-speculation. 기둥①.",
+      "added_at": "2026-07-28",
+      "status": "done",
+      "notes": "Playwright/Puppeteer로는 Speculation Rules 검증 불가(거짓 음성) — 플래그(--disable-features 전체·RenderDocument·OptimizationHints·--enable-automation·--remote-debugging-port·--incognito)는 모두 무관함을 격리 확인. 원인 미특정으로 정직하게 남김. 후속 소재: 실사이트 RUM에 navigationType 분리 적용 후 분포 변화 실측.",
+      "published_at": "2026-07-28"
+    },
     {
       "slug": "websocket-bfcache-eligibility-remeasure",
       "title_idea": "WebSocket가 열려 있어도 bfcache에 들어간다 — notRestoredReasons 6프로브로 차단→허용 전환을 재측정한 기록",
@@ -5719,7 +5737,7 @@
       "source": "blog.modelcontextprotocol.io RC 원문(2026-07-28 최종 발표), theregister/microsoft techcommunity 교차 확인",
       "added_at": "2026-07-27",
       "status": "queued",
-      "notes": "내일(07-28) 최종 발표 — 시의성 최상. RC 확정 변경: initialize/initialized·Mcp-Session-Id 제거, 요청마다 self-contained(_meta에 클라이언트 정보), server/discover가 사전 capability 협상 대체, Mcp-Method·Mcp-Name 헤더 필수(바디 검사 없이 라우팅), Tasks가 core→extension으로 재편(tasks/get·update·cancel), 인증 6개 SEP(iss 검증 필수·application_type 선언), 12개월 최소 deprecation 정책(Roots·Sampling·Logging deprecated). 마이그레이션: 에러코드 -32002→-32602, 2025-11-25 Tasks API 사용자는 새 extension 라이프사이클로 이전. 페르소나 착지: 자기 MCP 서버에서 세션 의존 부분 재점검·스티키 세션 제거로 라운드로빈 LB 수평확장(팀 인프라·게이트웨이 단순화). 뉴스 요약 금지, 고쳐야 할 체크리스트로 착지. mcp-server-build-practical-guide-2026·mcp-server-production-deployment-kubernetes-guide 내부링크. [2026-07-27 pm 캐치업 확인] 내일(07-28) 최종 발표 재확인. 선행 문서 이미 공개: RC 블로그(blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate, 5/21 락)+베타 SDK 공지(6/29). 베타 버전 실측 진입점: Python mcp[cli]==2.0.0b1, TS @modelcontextprotocol/server@beta+codemod(npx @modelcontextprotocol/codemod@beta v1-to-v2 .), Go v1.7.0-pre.1, C# 2.0.0-preview.1. 프레이밍 교정 필수(공식 원문): '07-28은 스위치오버가 아니라 스펙 확정일 — 오늘도 07-28에도 기존 서버는 안 깨진다'. 앵글을 '재앙'이 아니라 '지금 베타를 브랜치에 깔고 실트래픽으로 돌려 initialize/Mcp-Session-Id 의존·tasks/list(제거됨)·에러코드 -32002 매칭부를 감사'하는 measure→gate 루프로 착지. 추가 확정 SEP: 멀티라운드 InputRequiredResult(SEP-2322, 영속 SSE 제거), 캐싱 ttlMs·cacheScope(SEP-2549, 스트림 변경알림 대체)."
+      "notes": "내일(07-28) 최종 발표 — 시의성 최상. RC 확정 변경: initialize/initialized·Mcp-Session-Id 제거, 요청마다 self-contained(_meta에 클라이언트 정보), server/discover가 사전 capability 협상 대체, Mcp-Method·Mcp-Name 헤더 필수(바디 검사 없이 라우팅), Tasks가 core→extension으로 재편(tasks/get·update·cancel), 인증 6개 SEP(iss 검증 필수·application_type 선언), 12개월 최소 deprecation 정책(Roots·Sampling·Logging deprecated). 마이그레이션: 에러코드 -32002→-32602, 2025-11-25 Tasks API 사용자는 새 extension 라이프사이클로 이전. 페르소나 착지: 자기 MCP 서버에서 세션 의존 부분 재점검·스티키 세션 제거로 라운드로빈 LB 수평확장(팀 인프라·게이트웨이 단순화). 뉴스 요약 금지, 고쳐야 할 체크리스트로 착지. mcp-server-build-practical-guide-2026·mcp-server-production-deployment-kubernetes-guide 내부링크. [2026-07-27 pm 캐치업 확인] 내일(07-28) 최종 발표 재확인. 선행 문서 이미 공개: RC 블로그(blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate, 5/21 락)+베타 SDK 공지(6/29). 베타 버전 실측 진입점: Python mcp[cli]==2.0.0b1, TS @modelcontextprotocol/server@beta+codemod(npx @modelcontextprotocol/codemod@beta v1-to-v2 .), Go v1.7.0-pre.1, C# 2.0.0-preview.1. 프레이밍 교정 필수(공식 원문): '07-28은 스위치오버가 아니라 스펙 확정일 — 오늘도 07-28에도 기존 서버는 안 깨진다'. 앵글을 '재앙'이 아니라 '지금 베타를 브랜치에 깔고 실트래픽으로 돌려 initialize/Mcp-Session-Id 의존·tasks/list(제거됨)·에러코드 -32002 매칭부를 감사'하는 measure→gate 루프로 착지. 추가 확정 SEP: 멀티라운드 InputRequiredResult(SEP-2322, 영속 SSE 제거), 캐싱 ttlMs·cacheScope(SEP-2549, 스트림 변경알림 대체). [2026-07-28 am 캐치업] 최종 스펙 URL 아직 미발표(JST 09:08 기준): blog.modelcontextprotocol.io는 여전히 RC 포스트만, modelcontextprotocol.io/specification/2026-07-28은 404. 최종 공개는 미국 07-28 진행 중 예상 → JST 저녁/야간, 15:23 daily-post보다 늦을 가능성. 단 RC는 '2026-05-21 락'으로 콘텐츠 확정(10주 창은 SDK/클라이언트 검증용, 내용 변경 아님) → daily-post는 RC 원문에서 그대로 집필 가능, 최종 URL 대기 불필요. ★프레이밍 교정(중요): 07-27 pm의 '스위치오버 아님·기존 서버 안 깨짐'은 공식 문구와 충돌. RC 원문 명시 'This release contains breaking changes'·런칭 이후 최대 개정=사실상 hard switchover. 확정 제거: initialize/initialized 핸드셰이크, Mcp-Session-Id+프로토콜 세션. Mcp-Method/Mcp-Name 헤더 필수. Tasks는 extension으로 승격. 12개월 deprecation 정책은 '향후' 변경 대상이지 이번 릴리스엔 미적용. '안 깨짐'은 오직 MCP-Protocol-Version 버전 핀 협상으로만 방어 가능한데 RC 블로그는 이를 명시 보장하지 않음 → 페르소나(기대치를 깎는 것이 신뢰) 준수: '당신 서버는 안전' 단정 금지, '공식적으로 breaking change이며, 2026-07-28 채택 여부/버전 핀 유지 여부에 따라 깨짐이 갈린다, 스펙이 호환 심을 주지 않는다'로 착지. 중복 주의: mcp-2-1-rc-stateless-specification-analysis-2026(05-27)·mcp-2026-07-28-spec-stateless-what-changed-breaks(07-08)와 3중 중복 — 본 항목(07-27, 가장 상세)이 P1 대상. daily-post는 하나만 집필."
     },
     {
       "slug": "chrome-151-ruby-overhang-furigana-css",
@@ -5736,7 +5754,7 @@
       "source": "Chrome 151 stable(2026-07-28) 릴리스. CSS ruby-overhang 프로퍼티(auto/spaces/none) 추가로 ruby 주석(후리가나) 텍스트가 인접 문자 위로 넘치는 동작을 제어. + AnimationEvent/TransitionEvent에 read-only animation 속성 추가. + MV2 잔여 코드 최종 삭제(확장 유지보수자 신호). developer.chrome.com/blog/chrome-151-beta.",
       "added_at": "2026-07-27",
       "status": "queued",
-      "notes": "2026-07-27 pm 캐치업 발굴. 기둥①×4언어 정중앙: 이 블로그 ja 콘텐츠의 후리가나(기술용어 요미가나) 렌더를 Chrome 151에서 auto/spaces/none 비교 실측하고, 지원 브라우저 폴백까지 게이트화. 뉴스 요약이 아니라 자기 사이트 ja 렌더 실측으로 착지. 한계 명시: Chrome 151+ 한정·타 브라우저 미지원 시 폴백. 소재 다양성(LLM 실험 아님, 브라우저 API 실측). string-lang-dir-metadata-multilingual-web와 4언어 운영 클러스터 내부링크."
+      "notes": "2026-07-27 pm 캐치업 발굴. 기둥①×4언어 정중앙: 이 블로그 ja 콘텐츠의 후리가나(기술용어 요미가나) 렌더를 Chrome 151에서 auto/spaces/none 비교 실측하고, 지원 브라우저 폴백까지 게이트화. 뉴스 요약이 아니라 자기 사이트 ja 렌더 실측으로 착지. 한계 명시: Chrome 151+ 한정·타 브라우저 미지원 시 폴백. 소재 다양성(LLM 실험 아님, 브라우저 API 실측). string-lang-dir-metadata-multilingual-web와 4언어 운영 클러스터 내부링크. [2026-07-28 am 캐치업] Chrome 151 STABLE 오늘(2026-07-28) 출시 확정 — ruby-overhang stable 진입 확정(auto/spaces/none; CSSWG 규범대로 none은 spaces로 aliased, 공백·CJK 구두점 위에만 오버행 허용). P2 유지. 이제 실측 가능."
     },
     {
       "slug": "soft-navigations-api-spa-inp-route-measure-2026",
