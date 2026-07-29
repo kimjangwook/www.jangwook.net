@@ -3021,5 +3021,16 @@
       "devops": 0.2,
       "architecture": 0.6
     }
+  },
+  "table-markup-a11y-llm-extraction-2026": {
+    "pubDate": "2026-07-29",
+    "difficulty": 2,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.95,
+      "ai-ml": 0.35,
+      "devops": 0.4,
+      "architecture": 0.5
+    }
   }
 }
