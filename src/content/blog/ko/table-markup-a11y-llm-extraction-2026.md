@@ -1,5 +1,5 @@
 ---
-title: 'div 그리드로 만든 표가 조용히 잃는 것 — 접근성 트리와 텍스트 추출 동시 실측'
+title: 'div 그리드로 만든 표가 조용히 잃는 것: 접근성 트리와 텍스트 추출 동시 실측'
 description: '같은 영업시간 표를 네 가지 마크업으로 만들어 axe-core와 추출기 다섯 벌에 통과시켰다. axe는 네 개 모두 위반 0건을 줬지만, HTML을 마크다운·텍스트로 바꾸는 순간 7행 중 0행만 살아남는 마크업이 셋이었다. role="table"이 구해주지 못하는 층이 어디인지 실측 로그로 정리했다.'
 pubDate: '2026-07-29'
 heroImage: '../../../assets/blog/table-markup-a11y-llm-extraction-2026/hero.png'

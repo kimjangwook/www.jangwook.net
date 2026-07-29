@@ -1,6 +1,6 @@
 ---
-title: 'What a div grid quietly loses: measuring the a11y tree and text extraction on the same table'
-description: 'I built the same opening-hours table four ways and ran it through axe-core plus five extractors. axe reported zero violations on all four. But once the HTML was reduced to Markdown or plain text, three of those markups recovered 0 of 7 rows. Here is where role="table" stops helping, with the run log.'
+title: 'What a div grid quietly loses: the a11y tree vs. text extraction'
+description: 'I built one opening-hours table four ways and ran it through axe-core and five extractors. axe passed all four, yet three markups lost every row once the HTML was reduced to text.'
 pubDate: '2026-07-29'
 heroImage: '../../../assets/blog/table-markup-a11y-llm-extraction-2026/hero.png'
 tags:
