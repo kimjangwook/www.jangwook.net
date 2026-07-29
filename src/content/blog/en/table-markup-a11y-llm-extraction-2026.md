@@ -1,6 +1,6 @@
 ---
-title: 'What a div grid quietly loses: the a11y tree vs. text extraction'
-description: 'I built one opening-hours table four ways and ran it through axe-core and five extractors. axe passed all four, yet three markups lost every row once the HTML was reduced to text.'
+title: 'What a div grid loses: a11y tree vs. text extraction'
+description: 'I built one opening-hours table four ways, then ran axe-core and five extractors over it. axe passed all four, yet three lost all 7 rows once HTML became text.'
 pubDate: '2026-07-29'
 heroImage: '../../../assets/blog/table-markup-a11y-llm-extraction-2026/hero.png'
 tags:
@@ -198,7 +198,7 @@ It also runs in the same direction as a principle W3C wrote down long ago, the f
 
 That rule normally gets cited on accessibility grounds alone. This measurement adds a second one. Use the native element and the non-accessibility consumers come along free. Imitate the semantics with ARIA and those semantics never leave the accessibility tree.
 
-I've made the same argument at a different layer before. [Injecting LocalBusiness JSON-LD with JavaScript left the raw HTML showing zero structured-data blocks](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026): correct in the browser, absent at the moment a machine carried the page away. Table markup has the identical shape. What you verified on screen and what the machine took home are two different results.
+I've made the same argument at a different layer before. [Injecting LocalBusiness JSON-LD with JavaScript left the raw HTML showing zero structured-data blocks](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026): correct in the browser, absent at the moment a machine carried the page away. Table markup has the identical shape. What you verified on screen and what the machine took home are two different results. Metadata attached to strings leaks at the same seam. I measured separately [where things break when language and direction never travel with the string itself](/en/blog/en/string-lang-dir-metadata-multilingual-web).
 
 ## What this experiment does not claim
 

@@ -1,6 +1,6 @@
 ---
 title: "Why Prerendered LCP Reads 6.2s Without activationStart"
-description: Speculation Rules prerendering folds the entire user wait into raw LCP. I measured the 6244ms vs 103.5ms gap on Chrome 150 and mapped every place your RUM needs correcting.
+description: Speculation Rules prerendering folds the whole pre-click wait into raw LCP. I measured a 6244ms vs 103.5ms gap on Chrome 150 and mapped where RUM needs fixing.
 pubDate: '2026-07-28'
 heroImage: ../../../assets/blog/prerender-activationstart-cwv-measurement-2026/hero.png
 tags:

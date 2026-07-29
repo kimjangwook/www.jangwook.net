@@ -1,6 +1,6 @@
 ---
 title: 'div 그리드로 만든 표가 조용히 잃는 것: 접근성 트리와 텍스트 추출 동시 실측'
-description: '같은 영업시간 표를 네 가지 마크업으로 만들어 axe-core와 추출기 다섯 벌에 통과시켰다. axe는 네 개 모두 위반 0건을 줬지만, HTML을 마크다운·텍스트로 바꾸는 순간 7행 중 0행만 살아남는 마크업이 셋이었다. role="table"이 구해주지 못하는 층이 어디인지 실측 로그로 정리했다.'
+description: '같은 영업시간 표를 네 가지 마크업으로 만들어 axe-core와 추출기 다섯 벌에 통과시켰다. axe는 네 개 모두 위반 0건을 줬지만, HTML을 텍스트로 바꾸는 순간 7행이 통째로 사라지는 마크업이 셋이었다. role="table"이 못 구하는 층을 실측 로그로 정리했다.'
 pubDate: '2026-07-29'
 heroImage: '../../../assets/blog/table-markup-a11y-llm-extraction-2026/hero.png'
 tags:
@@ -198,7 +198,7 @@ Readability 0.6 textContent   0/7   0/7   0/7   0/7
 
 이 규칙은 보통 접근성 근거로만 인용된다. 이번 측정은 근거를 하나 더한다. 네이티브 요소를 쓰면 접근성 외의 소비자들도 덤으로 따라온다. 반대로 ARIA로 의미를 흉내 내면 그 의미는 접근성 트리 밖으로 나가지 못한다.
 
-같은 얘기를 다른 층에서도 한 적이 있다. [LocalBusiness JSON-LD를 JS로 주입했더니 원시 HTML에서는 0개로 잡혔던 실험](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026)이 그렇다. 브라우저에서 확인하면 멀쩡한데 기계가 가져가는 단계에서는 없는 것과 같았다. 표 마크업도 구조는 동일하다. 화면에서 확인한 결과와 기계가 가져간 결과가 다르다.
+같은 얘기를 다른 층에서도 한 적이 있다. [LocalBusiness JSON-LD를 JS로 주입했더니 원시 HTML에서는 0개로 잡혔던 실험](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026)이 그렇다. 브라우저에서 확인하면 멀쩡한데 기계가 가져가는 단계에서는 없는 것과 같았다. 표 마크업도 구조는 동일하다. 화면에서 확인한 결과와 기계가 가져간 결과가 다르다. 문자열에 붙는 메타데이터도 같은 자리에서 새어나간다. [언어와 방향 정보를 문자열과 함께 나르지 않으면 어디서 깨지는지](/ko/blog/ko/string-lang-dir-metadata-multilingual-web) 따로 재본 적이 있다.
 
 ## 이 실험이 말하지 않는 것
 

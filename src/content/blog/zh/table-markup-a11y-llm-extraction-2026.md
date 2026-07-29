@@ -198,7 +198,7 @@ Readability 0.6 textContent   0/7   0/7   0/7   0/7
 
 这条规则通常只被当作无障碍依据引用。这次的测量给它添了第二条依据：用原生元素，无障碍之外的读者会一并跟过来；用 ARIA 模仿语义，那份语义就走不出无障碍树。
 
-同样的道理我在另一层说过。[用 JS 注入 LocalBusiness JSON-LD，原始 HTML 里结构化数据块是 0 个](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)——浏览器里查验一切正常，到机器取走的那一步却形同不存在。表格标记的结构完全一样：你在屏幕上验过的结果，和机器带走的结果，是两回事。
+同样的道理我在另一层说过。[用 JS 注入 LocalBusiness JSON-LD，原始 HTML 里结构化数据块是 0 个](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)——浏览器里查验一切正常，到机器取走的那一步却形同不存在。表格标记的结构完全一样：你在屏幕上验过的结果，和机器带走的结果，是两回事。挂在字符串上的元数据也在同一处漏掉。[语言和方向信息不跟着字符串一起走，会在哪一步崩掉](/zh/blog/zh/string-lang-dir-metadata-multilingual-web)，我另外测过。
 
 ## 这个实验没有主张的事
 
