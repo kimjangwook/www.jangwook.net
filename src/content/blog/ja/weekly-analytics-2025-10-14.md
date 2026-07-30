@@ -176,7 +176,7 @@ relatedPosts:
 - <strong>エンゲージメント率</strong>: 94%
 - <strong>平均滞在時間</strong>: 6分10秒
 
-<strong>なぜ高パフォーマンス</strong>: 技術的な実装詳細と実際のコード例を提供。「どのようにやるか」を示す実践的なガイド。
+<strong>なぜ高パフォーマンス</strong>: 技術的な実装詳細と実際のコード例を提供している。[LLMによるブログ自動化の記事](/ja/blog/ja/llm-blog-automation/)は「どのようにやるか」を示す実践的なガイドになっている。
 
 #### 🥉 3位: ブログローンチ分析レポート
 - <strong>ページビュー</strong>: 12
@@ -191,14 +191,14 @@ relatedPosts:
 - <strong>エンゲージメント率</strong>: 91%
 - <strong>平均滞在時間</strong>: 4分50秒
 
-<strong>強み</strong>: 実装パターンと実用例を提供する技術深度の高いコンテンツ。
+<strong>強み</strong>: 技術深度が高い。[自己修復AIシステムの記事](/ja/blog/ja/self-healing-ai-systems/)は実装パターンと動く実例を並べて提示している。
 
 #### 5位: AIエージェント協働パターンポスト
 - <strong>ページビュー</strong>: 10
 - <strong>エンゲージメント率</strong>: 90%
 - <strong>平均滞在時間</strong>: 5分00秒
 
-<strong>強み</strong>: マルチエージェントアーキテクチャへの実践的なアプローチ。
+<strong>強み</strong>: マルチエージェントアーキテクチャへの実践的なアプローチを[AIエージェント協調パターンの記事](/ja/blog/ja/ai-agent-collaboration-patterns/)で整理している。
 
 ### コンテンツ洞察
 

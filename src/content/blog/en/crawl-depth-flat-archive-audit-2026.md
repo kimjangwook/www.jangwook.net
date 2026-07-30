@@ -1,6 +1,6 @@
 ---
 title: 'I removed one archive page and 296 posts became unreachable'
-description: 'A breadth-first crawl of my 1,330 built HTML pages put 1,276 of 1,288 posts at depth 2. Then I dropped the archive from the link graph, and 296 posts became unreachable from the homepage.'
+description: 'A breadth-first crawl of 1,330 built pages put 1,276 posts at depth 2. Dropping one flat archive left 296 of them unreachable from the homepage.'
 pubDate: '2026-07-30'
 heroImage: '../../../assets/blog/crawl-depth-flat-archive-audit-2026/hero.png'
 tags:

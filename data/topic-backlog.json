@@ -5910,6 +5910,40 @@
       "added_at": "2026-07-29",
       "status": "queued",
       "notes": "2026-07-29 daily-closing 선정. 착지: 노출만 있는 지표에서 무엇이 추론 가능하고 무엇이 불가능한지 선을 긋고, 자체 로그(레퍼러·크롤러 UA)와 교차 검증하는 절차를 제시. 한계 명시: 리포트 롤아웃 지역·시차, 노출 정의 불투명. 내부링크: robots-snippet-controls-ai-overviews-2026, faqpage-deprecation-ai-citation-2026, sitemap-lastmod-crawl-scheduling-2026."
+    },
+    {
+      "slug": "wcag-em-2-sampling-audit-2026",
+      "title_idea": "사이트 전체가 AA라고 말하려면 어떤 표본이 필요한가 — WCAG-EM 2.0 표본 추출을 321편 사이트에 적용해 본다",
+      "content_type": "news",
+      "target_keyword": "WCAG-EM 2.0",
+      "secondary_keywords": [
+        "접근성 평가 방법론",
+        "대표 표본 추출",
+        "WCAG 준수 선언"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "W3C WAI, WCAG-EM 2.0 first Draft Note (2026). w3.org/WAI/update/",
+      "added_at": "2026-07-30",
+      "status": "queued",
+      "notes": "2026-07-30 daily-closing 선정(금=뉴스 분석). 기둥 유지: 발표 요약이 아니라 본 블로그 321편 사이트에 WCAG-EM 2.0의 구조화 표본 추출을 실제로 적용해, 표본 크기별로 놓치는 위반 유형을 표로 제시. 한계 명시: Draft Note 단계라 변경 가능, 자동 검사로 잡히는 범위 한정. 내부링크: wcag22-target-size-audit-2026, axe-automated-a11y-coverage-gap-2026, modal-focus-escape-inert-measure-2026."
+    },
+    {
+      "slug": "lighthouse-for-agents-health-check-2026",
+      "title_idea": "에이전트가 돌리는 Lighthouse는 사람이 보던 점수와 다른 것을 본다 — DevTools 에이전트 헬스체크 실측",
+      "content_type": "news",
+      "target_keyword": "Lighthouse for agents",
+      "secondary_keywords": [
+        "Modern Web Guidance",
+        "agentic browsing 점검",
+        "DevTools MCP 품질 검사"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Google I/O 2026 Chrome 발표: Modern Web Guidance, Lighthouse in DevTools for agents. developer.chrome.com/blog/chrome-at-io26",
+      "added_at": "2026-07-30",
+      "status": "queued",
+      "notes": "2026-07-30 daily-closing 선정. 착지: 같은 페이지를 사람 UI Lighthouse와 에이전트 헬스체크로 각각 돌려 결과가 갈라지는 항목(agentic browsing, SEO)을 대조. 한계 명시: 롤아웃 채널 제한, 점수 산식 비공개. 내부링크: axe-automated-a11y-coverage-gap-2026, ai-crawlers-dont-render-javascript-csr-2026, validate-structured-data-ci-jsonld-2026."
     }
   ]
 }

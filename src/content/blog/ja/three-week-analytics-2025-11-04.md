@@ -115,6 +115,8 @@ relatedPosts:
 
 3週間で20記事を公開し、平均1.05記事/日という圧倒的な生産速度を達成しました。このコンテンツ生産がSEO複利効果の燃料となりました。
 
+流入を牽引したのは技術の実装過程をそのまま書いた記事です。[Claude Skills完全ガイド](/ja/blog/ja/claude-skills-implementation-guide/)は期間中の単独トップで、[OpenAI AgentKitチュートリアル 第1部](/ja/blog/ja/openai-agentkit-tutorial-part1/)と[SSR方法論の調査分析](/ja/blog/ja/ssr-survey-analysis/)がそれに続きました。逆に、公開から日が浅い記事は検索の露出そのものが立ち上がっていません。
+
 ---
 
 ## 🌍 オーディエンスインサイト (Audience Insights)

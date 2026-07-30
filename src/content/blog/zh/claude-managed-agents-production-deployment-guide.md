@@ -245,7 +245,7 @@ with client.beta.sessions.events.stream(session.id) as stream:
 - 多智能体协调是核心需求的情况——公开测试版暂不支持
 - 依赖Batch API折扣的大批量处理管道
 
-我目前还没有在生产环境中使用。原因很简单。我运行的智能体是[基于tmux同时运行多个的架构](/zh/blog/zh/claude-agent-teams-guide)，而Managed Agents目前的公开测试版只支持单个智能体。等多智能体功能正式开放后会重新评估。
+我目前还没有在生产环境中使用。原因很简单。我运行的智能体是基于tmux同时运行多个的架构，而Managed Agents目前的公开测试版只支持单个智能体。等多智能体功能正式开放后会重新评估。
 
 ## 接下来打算做什么
 

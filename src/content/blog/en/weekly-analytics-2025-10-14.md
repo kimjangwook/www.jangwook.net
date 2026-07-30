@@ -178,7 +178,7 @@ This clearly indicates <strong>SEO is essentially non-functional</strong>.
 - <strong>Engagement Rate</strong>: 94%
 - <strong>Average Time</strong>: 6m 10s
 
-<strong>Why High Performance</strong>: Technical implementation details with actual code examples. Shows "how to do it" as a practical guide.
+<strong>Why High Performance</strong>: Technical implementation details with actual code examples. The [LLM blog automation walkthrough](/en/blog/en/llm-blog-automation/) shows "how to do it" as a practical guide rather than a concept piece.
 
 #### 🥉 #3: Blog Launch Analysis Report
 - <strong>Page Views</strong>: 12
@@ -193,14 +193,14 @@ This clearly indicates <strong>SEO is essentially non-functional</strong>.
 - <strong>Engagement Rate</strong>: 91%
 - <strong>Average Time</strong>: 4m 50s
 
-<strong>Strength</strong>: High technical depth with implementation patterns and practical examples.
+<strong>Strength</strong>: High technical depth. The [self-healing AI systems post](/en/blog/en/self-healing-ai-systems/) pairs implementation patterns with runnable examples, which keeps readers on the page.
 
 #### #5: AI Agent Collaboration Patterns Post
 - <strong>Page Views</strong>: 10
 - <strong>Engagement Rate</strong>: 90%
 - <strong>Average Time</strong>: 5m 00s
 
-<strong>Strength</strong>: Practical approach to multi-agent architectures.
+<strong>Strength</strong>: A practical approach to multi-agent architectures, laid out in [AI agent collaboration patterns](/en/blog/en/ai-agent-collaboration-patterns/).
 
 ### Content Insights
 

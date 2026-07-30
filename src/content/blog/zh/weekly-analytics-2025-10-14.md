@@ -187,13 +187,13 @@ relatedPosts:
 
 | 发布日期 | 标题 | 主题 | 表现 |
 |--------|------|------|------|
-| 10-07 | [Claude Code最佳实践](/ko/blog/ko/claude-code-best-practices/) | 生产力 | 未进入Top 10（数据不足）|
-| 10-08 | [大规模网站自动生成](/ko/blog/ko/claude-code-web-automation/) | 自动化 | <strong>Top 6</strong>（11次浏览，0:55）|
-| 10-09 | [AI演示自动化](/ko/blog/ko/ai-presentation-automation/) | 自动化 | <strong>Top 1</strong>（39次浏览，5:04）🥇 |
-| 10-10 | [Notion API MCP](/ko/blog/ko/ai-agent-notion-mcp-automation/) | AI Agent | <strong>Top 5</strong>（14次浏览，6:36）|
-| 10-11 | [Chrome DevTools MCP](/ko/blog/ko/chrome-devtools-mcp-performance/) | 性能优化 | 未进入Top 10 |
-| 10-12 | [内容推荐系统](/ko/blog/ko/ai-content-recommendation-system/) | AI LLM | 未进入Top 10 |
-| 10-13 | [静态博客定时发布](/ko/blog/ko/astro-scheduled-publishing/) | Astro | 未进入Top 10 |
+| 10-07 | [Claude Code最佳实践](/zh/blog/zh/claude-code-best-practices/) | 生产力 | 未进入Top 10（数据不足）|
+| 10-08 | [大规模网站自动生成](/zh/blog/zh/claude-code-web-automation/) | 自动化 | <strong>Top 6</strong>（11次浏览，0:55）|
+| 10-09 | [AI演示自动化](/zh/blog/zh/ai-presentation-automation/) | 自动化 | <strong>Top 1</strong>（39次浏览，5:04）🥇 |
+| 10-10 | [Notion API MCP](/zh/blog/zh/ai-agent-notion-mcp-automation/) | AI Agent | <strong>Top 5</strong>（14次浏览，6:36）|
+| 10-11 | [Chrome DevTools MCP](/zh/blog/zh/chrome-devtools-mcp-performance/) | 性能优化 | 未进入Top 10 |
+| 10-12 | [内容推荐系统](/zh/blog/zh/ai-content-recommendation-system/) | AI LLM | 未进入Top 10 |
+| 10-13 | [静态博客定时发布](/zh/blog/zh/astro-scheduled-publishing/) | Astro | 未进入Top 10 |
 
 <strong>发布分析</strong>：
 - <strong>7篇文章中3篇进入Top 10</strong> → 44%成功率（第一周表现优秀）
