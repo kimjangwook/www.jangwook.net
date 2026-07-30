@@ -1,6 +1,6 @@
 ---
-title: 'I removed one archive page and 296 posts became unreachable'
-description: 'A breadth-first crawl of 1,330 built pages put 1,276 posts at depth 2. Dropping one flat archive left 296 of them unreachable from the homepage.'
+title: 'I removed the archive pages and 296 posts became unreachable'
+description: 'A breadth-first crawl of 1,330 built pages put 1,276 posts at depth 2. Dropping the four flat archives left 296 of them unreachable from the homepage.'
 pubDate: '2026-07-30'
 heroImage: '../../../assets/blog/crawl-depth-flat-archive-audit-2026/hero.png'
 tags:
@@ -134,8 +134,8 @@ So I re-ran the same traversal with the four per-language archive pages excluded
 | Condition | Max depth | Posts by depth | Unreachable |
 |---|---|---|---|
 | Current structure | 3 | 1: 12 / 2: 1,276 | 0 |
-| Archive pages excluded | 9 | 2: 52 / 3: 129 / 4: 253 / 5: 274 / 6: 154 / 7: 83 / 8: 25 / 9: 10 | **296** |
-| Archive shows latest 10 only | 9 | 2: 64 / 3: 121 / 4: 249 / 5: 274 / 6: 154 / 7: 83 / 8: 25 / 9: 10 | **296** |
+| Archive pages excluded | 9 | 1: 12 / 2: 52 / 3: 129 / 4: 253 / 5: 274 / 6: 154 / 7: 83 / 8: 25 / 9: 10 | **296** |
+| Archive shows latest 10 only | 9 | 1: 12 / 2: 64 / 3: 121 / 4: 249 / 5: 274 / 6: 154 / 7: 83 / 8: 25 / 9: 10 | **296** |
 
 296 posts. That's 23% of the site. On a site where every post has inbound links and the median is eight, dropping one page per language stranded nearly one post in four.
 
