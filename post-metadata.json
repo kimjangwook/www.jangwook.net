@@ -3032,5 +3032,16 @@
       "devops": 0.4,
       "architecture": 0.5
     }
+  },
+  "crawl-depth-flat-archive-audit-2026": {
+    "pubDate": "2026-07-30",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.35,
+      "web-development": 0.97,
+      "ai-ml": 0.2,
+      "devops": 0.45,
+      "architecture": 0.7
+    }
   }
 }

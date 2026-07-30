@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-29",
+  "updated_at": "2026-07-30",
   "topics": [
+    {
+      "slug": "crawl-depth-flat-archive-audit-2026",
+      "title_idea": "아카이브 한 장을 지웠더니 296편이 도달 불가가 됐다 — 크롤 깊이 실측",
+      "content_type": "how-to",
+      "target_keyword": "크롤 깊이 내부 링크 도달성",
+      "secondary_keywords": [
+        "내부링크 감사",
+        "페이지네이션 크롤",
+        "고아 페이지"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "자체 빌드 산출물 실측. dist/ 1,330장 BFS(<a href>만, nofollow 제외): 글 1,288편 중 깊이1=12, 깊이2=1,276, 도달불가 0, 인바운드 중앙값 8. 언어별 목록 허브 4장 제거 시 깊이 최대 9로 퍼지고 296편 도달 불가. 목록에 최근 10편만 노출(next 링크 없음) 조건도 296편 동일. 평면 목록 비용: /ko/blog/ 전송 86,431B, 디코드 670,699B, DOM 7,257, 앵커 349, 이미지 320중 319 lazy, DCL 387ms. 1차 출처: Google Search Central links-crawlable, pagination-and-incremental-page-loading, crawl-budget. 기둥①④.",
+      "added_at": "2026-07-30",
+      "status": "done",
+      "notes": "핵심 발견: 인바운드 개수는 도달성 지표가 아니다(강하게 연결된 섬). 후속 소재: (1) 허브 제거 시뮬레이션을 CI 게이트로 만들어 '도달 불가 0' 유지, (2) 태그·카테고리 허브별 단일 장애점 순위 매기기, (3) 실제 사이트맵 페이지 도입 전후 깊이 분포 비교.",
+      "published_at": "2026-07-30"
+    },
     {
       "slug": "table-markup-a11y-llm-extraction-2026",
       "title_idea": "div 그리드로 만든 표가 조용히 잃는 것 — 접근성 트리와 텍스트 추출 동시 실측",
