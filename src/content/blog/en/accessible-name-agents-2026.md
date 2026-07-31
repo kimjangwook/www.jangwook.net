@@ -71,7 +71,7 @@ Those names, gathered together, form the <strong>accessibility tree</strong>. Th
 
 So when markup produces the wrong name, all three break together. To me that's the signal that accessibility crossed over from a kindness into a functional requirement. It used to be "for screen reader users." Now it's also "because the voice interface and the AI agent can't press this button." Same work, more reasons to do it.
 
-I've written before about how [AI crawlers don't run your JavaScript and read only raw HTML](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026). Agents go one step further. Where a crawler scrapes text, an agent picks the "clickable controls" out of the tree and actually tries to operate them. Either way, the markup your server ships is all they get.
+I've written before about how [AI crawlers don't run your JavaScript and read only raw HTML](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026/). Agents go one step further. Where a crawler scrapes text, an agent picks the "clickable controls" out of the tree and actually tries to operate them. Either way, the markup your server ships is all they get.
 
 ## Same button, different name — I opened the tree myself
 
@@ -133,7 +133,7 @@ Accessibility moved a modest ten points, 90 to 100. Agentic Browsing jumped from
 - `button-name` — the unnamed icon button.
 - `landmark-one-main` — no `<main>` landmark.
 
-What I did in the fixed version was nothing clever. I changed the `aria-label` to wording that contains the visible text, gave the icon button a name, turned `<div class="btn">` into a real `<button>`, tied the input to a `<label for>`, and wrapped the body in `<main>`. A few lines of markup. But those few lines open the page to all three consumers. I've written up the [full flow of catching and fixing a11y violations with Lighthouse](/en/blog/en/a11y-lighthouse-audit-fix-2026) separately, so here I'm staying on the one name.
+What I did in the fixed version was nothing clever. I changed the `aria-label` to wording that contains the visible text, gave the icon button a name, turned `<div class="btn">` into a real `<button>`, tied the input to a `<label for>`, and wrapped the body in `<main>`. A few lines of markup. But those few lines open the page to all three consumers. I've written up the [full flow of catching and fixing a11y violations with Lighthouse](/en/blog/en/a11y-lighthouse-audit-fix-2026/) separately, so here I'm staying on the one name.
 
 Honestly, I'm both glad and cautious about this Agentic Browsing category. Glad because the claim "get accessibility right and you're set up for the AI era too" finally has a tool behind it. The cautious part comes next.
 
@@ -145,7 +145,7 @@ Second, the Agentic Browsing category is <strong>new and experimental</strong>. 
 
 Third, fixing accessible names does not guarantee better search rankings or AI citations. No such guarantee exists anywhere. Accessibility isn't a trick for buying rank; it's the foundation that lets users and agents who've already arrived (or are trying to act) actually use the page. The moment you sell it as rank points, it stops being accessibility and becomes a slogan.
 
-Fourth, for a case like line six, where a placeholder acts as the name, Lighthouse can show it as a pass. But as noted, a placeholder is not a label and assistive tech handles it inconsistently. It's another reminder that "the tool passed it" is not "it's safe." That gap between automated checks and real accessibility bites in CI too, which is the same thread as [why running axe-core in a real browser vs jsdom changes the result](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026).
+Fourth, for a case like line six, where a placeholder acts as the name, Lighthouse can show it as a pass. But as noted, a placeholder is not a label and assistive tech handles it inconsistently. It's another reminder that "the tool passed it" is not "it's safe." That gap between automated checks and real accessibility bites in CI too, which is the same thread as [why running axe-core in a real browser vs jsdom changes the result](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026/).
 
 ## A checklist you can apply today
 

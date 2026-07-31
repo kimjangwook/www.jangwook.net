@@ -108,7 +108,7 @@ OpenAI在Codex中使用的基于diff的补丁格式。模型以unified diff形�
 
 ### 2. string_replace（Claude Code、Gemini方式）
 
-精确指定要查找的字符串和替换字符串的方式。[Claude Code](/zh/blog/zh/openai-codex-api-release-vs-claude-code-comparison-may-2026)的`str_replace`工具是典型代表。
+精确指定要查找的字符串和替换字符串的方式。[Claude Code](/zh/blog/zh/openai-codex-api-release-vs-claude-code-comparison-may-2026/)的`str_replace`工具是典型代表。
 
 <strong>优点</strong>：直观且实现简单。
 <strong>缺点</strong>：哪怕一个空格、一个缩进不对，就会出现"String to replace not found"错误。要求<strong>完美的字符串复现</strong>。
@@ -220,7 +220,7 @@ Can Bölük的核心论点之一：<strong>开源工具链因为社区中不同�
 
 3. <strong>推理策略分层</strong>：为规划-实现-验证各阶段分配不同的推理级别。
 
-4. <strong>基于Trace的调试</strong>：使用LangSmith等工具追踪Agent的所有行为、延迟和token消耗，进行系统化改进。作为开源替代方案，可以考虑 [Langfuse自托管](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026)。
+4. <strong>基于Trace的调试</strong>：使用LangSmith等工具追踪Agent的所有行为、延迟和token消耗，进行系统化改进。作为开源替代方案，可以考虑 [Langfuse自托管](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026/)。
 
 ### HN社区分享的实用工具
 
@@ -239,7 +239,7 @@ Can Bölük的核心论点之一：<strong>开源工具链因为社区中不同�
 - 仅靠工具链优化就实现了<strong>Top 30 → Top 5</strong>（13.7个百分点）
 - 输出token<strong>减少20~61%</strong>
 
-作为Engineering Manager，如果想提升团队的AI编码生产力，在等待下一个模型发布之前，不妨先<strong>衡量一下当前工具链的编辑成功率</strong>。这个数字可能会告诉你意想不到的信息。如果您的团队使用基于Python的AI工具，[使用uv快速搭建开发环境](/zh/blog/zh/uv-python-ai-development-setup-guide-2026)是一个很好的起点。
+作为Engineering Manager，如果想提升团队的AI编码生产力，在等待下一个模型发布之前，不妨先<strong>衡量一下当前工具链的编辑成功率</strong>。这个数字可能会告诉你意想不到的信息。如果您的团队使用基于Python的AI工具，[使用uv快速搭建开发环境](/zh/blog/zh/uv-python-ai-development-setup-guide-2026/)是一个很好的起点。
 
 ## 参考资料
 

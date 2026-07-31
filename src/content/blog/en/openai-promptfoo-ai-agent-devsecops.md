@@ -95,7 +95,7 @@ What stands out is Promptfoo's approach to red teaming. Rather than cycling thro
 
 ### 1. A Paradigm Shift in AI Agent Security
 
-Through 2025, AI security largely focused on "model safety" — aligning models with RLHF, adding output filters, and configuring guardrails. But in 2026, AI agents <strong>call tools, access data, and interact with external systems</strong>. The [attack surface](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security) has fundamentally changed.
+Through 2025, AI security largely focused on "model safety" — aligning models with RLHF, adding output filters, and configuring guardrails. But in 2026, AI agents <strong>call tools, access data, and interact with external systems</strong>. The [attack surface](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security/) has fundamentally changed.
 
 ```mermaid
 graph TD
@@ -230,7 +230,7 @@ escalation_triggers:
 
 ### 3. Establish Security Testing Benchmarks
 
-Using the [NIST AI Risk Management Framework](/en/blog/en/nist-ai-agent-security-standards) as a foundation, define security testing thresholds that fit your team's context.
+Using the [NIST AI Risk Management Framework](/en/blog/en/nist-ai-agent-security-standards/) as a foundation, define security testing thresholds that fit your team's context.
 
 | Test Category | Minimum Threshold | Recommended Threshold |
 |---------------|-------------------|-----------------------|

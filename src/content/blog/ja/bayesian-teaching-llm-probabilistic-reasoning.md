@@ -86,7 +86,7 @@ Engineering ManagerやCTOの立場から、この研究はいくつかの実質�
 
 ### 2. 不確実性定量化(Uncertainty Quantification)の可能性
 
-ベイズ的推論の核心は不確実性を数値で表現することだ。「このオプションが70%で最も適切です」のように。現在のLLMはこのようなキャリブレーション(calibration)が弱い。Bayesian Teachingはこれを改善できる。LLMが確率分布を言語で表現する方法を探る[Verbalized Sampling研究](/ja/blog/ja/verbalized-sampling-llm-diversity)も同じ課題への補完的なアプローチを示している。
+ベイズ的推論の核心は不確実性を数値で表現することだ。「このオプションが70%で最も適切です」のように。現在のLLMはこのようなキャリブレーション(calibration)が弱い。Bayesian Teachingはこれを改善できる。LLMが確率分布を言語で表現する方法を探る[Verbalized Sampling研究](/ja/blog/ja/verbalized-sampling-llm-diversity/)も同じ課題への補完的なアプローチを示している。
 
 エンタープライズ意思決定支援システムで「確信度82%」と「確信度51%」の違いは非常に重要だ。
 
@@ -114,7 +114,7 @@ Oracle方式(正解データセットfine-tuning)から脱却し、ベイズア�
 - **医療診断支援**：症状と検査結果を累積して最も可能性の高い診断を推論するAI
 - **金融リスク分析**：市場データを継続的に反映してポートフォリオリスクを動的に評価するシステム
 
-Gartnerが2027年までにエージェンティックAIプロジェクトの40%以上が失敗すると警告している状況で、[MITの自己カリキュラム推論研究](/ja/blog/ja/mit-soar-self-curriculum-reasoning)やBayesian Teachingのような根本的な推論能力改善研究は、この失敗率を下げる中核技術になり得る。
+Gartnerが2027年までにエージェンティックAIプロジェクトの40%以上が失敗すると警告している状況で、[MITの自己カリキュラム推論研究](/ja/blog/ja/mit-soar-self-curriculum-reasoning/)やBayesian Teachingのような根本的な推論能力改善研究は、この失敗率を下げる中核技術になり得る。
 
 ## まとめ
 

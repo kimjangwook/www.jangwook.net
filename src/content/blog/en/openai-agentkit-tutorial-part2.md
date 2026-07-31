@@ -45,7 +45,7 @@ faq:
 
 > <strong>Series: Master OpenAI AgentKit</strong> (2/2)
 >
-> 1. [OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started](/en/blog/en/openai-agentkit-tutorial-part1)
+> 1. [OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started](/en/blog/en/openai-agentkit-tutorial-part1/)
 > 2. <strong>OpenAI AgentKit Complete Guide Part 2: Production Deployment and Advanced Patterns</strong> ← Current Article
 
 Part 1 covered the basics. The moment you push past a demo and put real traffic on an agent system, a different set of problems shows up. How do you coordinate several agents at once? What happens when one of them fails mid-task? How do you keep one tenant's data from leaking into another's session?
@@ -1376,9 +1376,9 @@ The patterns and API notation here follow OpenAI's official docs. Exact signatur
 
 ### Worth reading next
 
-- [OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started](/en/blog/en/openai-agentkit-tutorial-part1) — the foundation this article builds on
-- [Building a Python MCP Server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026) — for when you go past the Slack example and design your own MCP server
-- [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) — to compare tool and handoff design in a different framework
+- [OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started](/en/blog/en/openai-agentkit-tutorial-part1/) — the foundation this article builds on
+- [Building a Python MCP Server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/) — for when you go past the Slack example and design your own MCP server
+- [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/) — to compare tool and handoff design in a different framework
 
 ---
 

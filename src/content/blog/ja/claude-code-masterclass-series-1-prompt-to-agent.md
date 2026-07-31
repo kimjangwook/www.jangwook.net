@@ -212,7 +212,7 @@ frontmatterの`description`フィールドが重要だ。オーケストレー�
 - `content-recommender`: relatedPostsの生成
 - `image-generator`: ヒーロー画像ブリーフの作成
 
-エージェントをチームとして組織するより複雑なパターンは、[Claude Code Agent Teams完全ガイド](/ja/blog/ja/claude-agent-teams-guide)で扱った。
+エージェントをチームとして組織するより複雑なパターンは、[Claude Code Agent Teams完全ガイド](/ja/blog/ja/claude-agent-teams-guide/)で扱った。
 
 ## 3ステップ統合: 実際の自動化パイプライン
 
@@ -344,7 +344,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 判断基準を一行にまとめるとこうだ。<strong>「この手順を来月もほぼ同じ形で繰り返すか、そして結果を自動で検証する方法があるか」</strong>。両方「はい」なら自動化し、どちらか1つでも「いいえ」なら手でやるほうがたいてい速く安全だ。
 
-並列で複数の作業を同時に回したい段階まで来たなら、[git worktreeでClaude Codeセッションを並列実行するパターン](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)が次の拡張方向として自然だ。
+並列で複数の作業を同時に回したい段階まで来たなら、[git worktreeでClaude Codeセッションを並列実行するパターン](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/)が次の拡張方向として自然だ。
 
 ## 正直な評価: うまくいかないこと
 
@@ -366,7 +366,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 第2回ではさらに一歩進む。<strong>MCPサーバーを自作してClaude Codeに外部ツールを接続する方法</strong>だ。Notionデータベースを読み込み、Slackにメッセージを送り、PostgreSQLにクエリを投げる。こうした外部システム連携がスラッシュコマンド1つで可能になる構造を解説する。
 
-MCPサーバーを構築した経験があるなら、[TypeScript SDKでMCPサーバーをゼロから作るガイド](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)が良い事前読書になる。
+MCPサーバーを構築した経験があるなら、[TypeScript SDKでMCPサーバーをゼロから作るガイド](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026/)が良い事前読書になる。
 
 ## 公式ドキュメントで確認する
 

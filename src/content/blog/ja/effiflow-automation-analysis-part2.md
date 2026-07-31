@@ -48,7 +48,7 @@ faq:
 
 > <strong>EffiFlow 自動化構造分析/評価および改善シリーズ</strong> (2/3)
 >
-> 1. [Part 1: メタデータで 71%コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1) - 3-Tier アーキテクチャと全体システム概要
+> 1. [Part 1: メタデータで 71%コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1/) - 3-Tier アーキテクチャと全体システム概要
 > 2. <strong>Part 2: Skills と Commands の統合戦略</strong> ← 現在の記事
 > 3. Part 3: 実践改善事例と ROI 分析
 
@@ -383,7 +383,7 @@ graph LR
 - <strong>メンテナンス</strong>: 各コンポーネント独立修正可能
 - <strong>テスト</strong>: 各レイヤー別テスト可能
 
-このオーケストレーター・エージェント分離は、特定のフレームワークに縛られた概念ではない。同じ構図をOpenAI側のツールで組むとどう変わるかは、[OpenAI AgentKit実践チュートリアル Part 2](/ja/blog/ja/openai-agentkit-tutorial-part2)で並べて比較できる。
+このオーケストレーター・エージェント分離は、特定のフレームワークに縛られた概念ではない。同じ構図をOpenAI側のツールで組むとどう変わるかは、[OpenAI AgentKit実践チュートリアル Part 2](/ja/blog/ja/openai-agentkit-tutorial-part2/)で並べて比較できる。
 
 ## キャッシング戦略: 58%トークン削減メカニズム
 
@@ -1052,7 +1052,7 @@ Skills と Commands は万能の道具ではない。実際に回してみると
 - [anthropics/skills (GitHub)](https://github.com/anthropics/skills) — Anthropic が公開したオープンソース Skill 集
 - [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — Skills のアーキテクチャを扱った Anthropic エンジニアリングブログ
 
-このシリーズを初めて読むなら、まず [Part 1: メタデータで 71% コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1)で 3-Tier アーキテクチャの全体像をつかむほうがよい。ここで扱った Agent 委任パターンをさらに掘りたいなら、[Claude Code マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)と [Claude Agent Teams 実践ガイド](/ja/blog/ja/claude-agent-teams-guide)が自然な次の記事だ。トークンをここまで削っても、エージェントを何台も回せば結局コストはかかる。実運用の費用が気になるなら、[AIエージェントのコスト vs 人件費の現実](/ja/blog/ja/ai-agent-cost-reality)で実際の数字を確かめてほしい。
+このシリーズを初めて読むなら、まず [Part 1: メタデータで 71% コスト削減](/ja/blog/ja/effiflow-automation-analysis-part1/)で 3-Tier アーキテクチャの全体像をつかむほうがよい。ここで扱った Agent 委任パターンをさらに掘りたいなら、[Claude Code マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement/)と [Claude Agent Teams 実践ガイド](/ja/blog/ja/claude-agent-teams-guide/)が自然な次の記事だ。トークンをここまで削っても、エージェントを何台も回せば結局コストはかかる。実運用の費用が気になるなら、[AIエージェントのコスト vs 人件費の現実](/ja/blog/ja/ai-agent-cost-reality/)で実際の数字を確かめてほしい。
 
 ## まとめ:Skills と Commands が噛み合う場所
 

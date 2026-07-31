@@ -138,7 +138,7 @@ langgraph-prebuilt, langgraph-sdk,
 pydantic, xxhash
 ```
 
-A 39-package gap. ADK bundles Google Cloud services (BigQuery, Spanner, Pub/Sub, Speech, etc.), OpenTelemetry exporters, a FastAPI server, and SQLAlchemy ORM. If you're not using Google Cloud, those 39 extra packages are pure dead weight. The `mcp` entry in that list hints at it: ADK supports MCP server integration out of the box, and building your own MCP server to plug in is something I covered separately in [building a Python MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026).
+A 39-package gap. ADK bundles Google Cloud services (BigQuery, Spanner, Pub/Sub, Speech, etc.), OpenTelemetry exporters, a FastAPI server, and SQLAlchemy ORM. If you're not using Google Cloud, those 39 extra packages are pure dead weight. The `mcp` entry in that list hints at it: ADK supports MCP server integration out of the box, and building your own MCP server to plug in is something I covered separately in [building a Python MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/).
 
 LangGraph's "bring what you need" philosophy is lighter but requires more configuration. You inject your own LLM client, choose your own checkpoint backend. Less magic, more control.
 
@@ -207,7 +207,7 @@ Commands:
 
 The downside: this CLI is entirely Google-ecosystem bound. `adk deploy` is useless on AWS or Azure. The built-in tracing outputs to GCP Cloud Trace — connecting to other observability stacks requires extra configuration.
 
-That's where a vendor-agnostic tool like [Langfuse for LLM tracing](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026) fits more naturally with LangGraph's approach.
+That's where a vendor-agnostic tool like [Langfuse for LLM tracing](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026/) fits more naturally with LangGraph's approach.
 
 ## State Management: Sessions vs Checkpoints
 
@@ -451,7 +451,7 @@ A feature table clouds the decision. The real call narrows to "does this tool fi
 - You want deployment, eval, and UI from a single tool but cannot assemble separate infrastructure. LangGraph gives you the runtime only.
 - Your team has zero LangChain experience and works mainly in a language other than Python.
 
-If the call is hard, looking at a wider set of options in the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026) helps. For RAG-centric workflows, the [LlamaIndex vs LangChain vs Haystack comparison](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) shows another axis of the framework decision. And if type safety is your priority, the [PydanticAI Practical Tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) lays out yet another approach worth weighing.
+If the call is hard, looking at a wider set of options in the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026/) helps. For RAG-centric workflows, the [LlamaIndex vs LangChain vs Haystack comparison](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026/) shows another axis of the framework decision. And if type safety is your priority, the [PydanticAI Practical Tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) lays out yet another approach worth weighing.
 
 ## Primary Sources
 

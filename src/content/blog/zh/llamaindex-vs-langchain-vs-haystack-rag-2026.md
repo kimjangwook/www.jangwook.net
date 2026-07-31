@@ -142,7 +142,7 @@ for details and migration guidance toward standalone integration packages.
 
 截至1.3.4，`langchain-core`(1.4.1)和主`langchain`包都在积极维护。community包的废弃并不意味着LangChain本身即将消亡。但如果你有大量`langchain-community`导入，现在就值得制定迁移计划。
 
-在[Python AI智能体库对比2026](/zh/blog/zh/python-ai-agent-library-comparison-2026)中我讨论过更广泛的Python AI生态。LangChain的集成广度仍然无可匹敌，community包废弃只是一个动荡点，而非终结信号。
+在[Python AI智能体库对比2026](/zh/blog/zh/python-ai-agent-library-comparison-2026/)中我讨论过更广泛的Python AI生态。LangChain的集成广度仍然无可匹敌，community包废弃只是一个动荡点，而非终结信号。
 
 ## Haystack 2.30：显式图的优势
 
@@ -242,7 +242,7 @@ pip install chroma-haystack
 pip install qdrant-haystack
 ```
 
-在[向量数据库比较 2026](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector)里我实测了 Qdrant、ChromaDB、pgvector 的性能——无论用哪个框架，向量存储的选择都要单独考量。
+在[向量数据库比较 2026](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector/)里我实测了 Qdrant、ChromaDB、pgvector 的性能——无论用哪个框架，向量存储的选择都要单独考量。
 
 ## 选择指南
 
@@ -296,7 +296,7 @@ pip install qdrant-haystack
 - Haystack官方网站（deepset）：[https://haystack.deepset.ai](https://haystack.deepset.ai)（文档在`docs.haystack.deepset.ai`）
 - langchain-community弃用说明：[GitHub Issue #674](https://github.com/langchain-ai/langchain-community/issues/674)
 
-如果想在动手之前重温RAG的基础概念，[DeNA LLM学习第4部 — RAG](/zh/blog/zh/dena-llm-study-part4-rag)与本对比搭配阅读效果更好。
+如果想在动手之前重温RAG的基础概念，[DeNA LLM学习第4部 — RAG](/zh/blog/zh/dena-llm-study-part4-rag/)与本对比搭配阅读效果更好。
 
 ## 生态与社区
 

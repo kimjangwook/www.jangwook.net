@@ -71,7 +71,7 @@ The most important item on the 2026 MCP roadmap is solving **horizontal scaling*
 
 The second priority is **discovery standardization** via `.well-known`. Right now you have to connect to an MCP server to know what it offers. The goal is to serve capability metadata without a live connection.
 
-[My earlier post on WebMCP](/en/blog/en/webmcp-chrome-146-ai-tool-server) gets into how MCP server implementation works under the hood, if you want a concrete picture.
+[My earlier post on WebMCP](/en/blog/en/webmcp-chrome-146-ai-tool-server/) gets into how MCP server implementation works under the hood, if you want a concrete picture.
 
 ---
 
@@ -97,7 +97,7 @@ By April 2026, 150+ organizations have adopted A2A, with production deployments 
 
 Honest take: when I first read the A2A spec, I was skeptical about practical safety. Agents delegating directly to other agents sounds elegant, but the trust model gets complicated fast. v1.0's Signed Agent Cards are moving in the right direction, but I'd want to see more production validation before treating it as battle-hardened infrastructure.
 
-[A separate post covers A2A + MCP production hybrid architectures](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide) — specifically how to layer these two protocols without creating a mess.
+[A separate post covers A2A + MCP production hybrid architectures](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide/) — specifically how to layer these two protocols without creating a mess.
 
 ---
 
@@ -149,7 +149,7 @@ Orchestrator Agent
 
 The orchestrator delegates via A2A; each specialist accesses its own tools via MCP. Open Responses could sit at the orchestrator's external API interface if you need OpenAI-compatible endpoint exposure.
 
-[My breakdown of Claude Code agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) goes deeper on implementing this kind of layered architecture.
+[My breakdown of Claude Code agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/) goes deeper on implementing this kind of layered architecture.
 
 ---
 
@@ -163,7 +163,7 @@ If you're building agents, start here. Reasons:
 - 5,000++ server ecosystem already exists
 - Claude Code, OpenAI Agents SDK, LangGraph all support it natively
 - Streamable HTTP is the settled standard; spec is stable enough for production
-- [Anthropic's Agent Skills standard](/en/blog/en/anthropic-agent-skills-standard) builds directly on MCP, creating increasingly powerful patterns
+- [Anthropic's Agent Skills standard](/en/blog/en/anthropic-agent-skills-standard/) builds directly on MCP, creating increasingly powerful patterns
 
 **Medium-term: A2A**
 
@@ -183,4 +183,4 @@ MCP is the tool to use right now. It's the layer that gives agents access to the
 
 Stop thinking about these as competing standards. They solve different problems and most serious systems need all three eventually. My working heuristic: MCP first, A2A when you need multi-agent delegation, Open Responses when the ecosystem catches up.
 
-And [your choice of AI agent framework](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) is tightly coupled to this — different frameworks have significantly different levels of MCP and A2A support.
+And [your choice of AI agent framework](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/) is tightly coupled to this — different frameworks have significantly different levels of MCP and A2A support.

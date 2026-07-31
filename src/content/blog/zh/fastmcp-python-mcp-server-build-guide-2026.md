@@ -49,7 +49,7 @@ faq:
 
 FastMCP正是为了解决这个问题而生的框架。今天，我在沙盒中用pip安装，并在30分钟内启动了一个实际可用的MCP服务器。
 
-本文讲的是FastMCP这个工具，而不是MCP协议本身。如果想了解协议背景，可以同时打开[Model Context Protocol官方网站](https://modelcontextprotocol.io)；FastMCP的源码与变更历史则以[jlowin/fastmcp GitHub仓库](https://github.com/jlowin/fastmcp)为准。顺带一提，用TypeScript构建同样的MCP服务器是另一条路径，我在[MCP服务器TypeScript SDK分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)中单独做了整理。
+本文讲的是FastMCP这个工具，而不是MCP协议本身。如果想了解协议背景，可以同时打开[Model Context Protocol官方网站](https://modelcontextprotocol.io)；FastMCP的源码与变更历史则以[jlowin/fastmcp GitHub仓库](https://github.com/jlowin/fastmcp)为准。顺带一提，用TypeScript构建同样的MCP服务器是另一条路径，我在[MCP服务器TypeScript SDK分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/)中单独做了整理。
 
 ## 它到底是什么：MCP SDK之上的一层
 
@@ -174,7 +174,7 @@ INFO  Received INFO from server: {'msg': '正在读取目录: /tmp', 'extra': No
 
 ## 用FastMCP Client测试
 
-不需要实际的Claude Desktop就能测试服务器。FastMCP提供了进程内客户端。在实现智能体工作流模式时，这种方式也能让测试保持自包含。如果要越过这种进程内测试，构建一个从自己应用中直接消费 MCP 服务器的独立客户端，[用 TypeScript SDK 实现 MCP 客户端的方法](/zh/blog/zh/mcp-client-typescript-sdk-guide-2026)会很有参考价值。
+不需要实际的Claude Desktop就能测试服务器。FastMCP提供了进程内客户端。在实现智能体工作流模式时，这种方式也能让测试保持自包含。如果要越过这种进程内测试，构建一个从自己应用中直接消费 MCP 服务器的独立客户端，[用 TypeScript SDK 实现 MCP 客户端的方法](/zh/blog/zh/mcp-client-typescript-sdk-guide-2026/)会很有参考价值。
 
 ```python
 import asyncio
@@ -440,8 +440,8 @@ FastMCP有一点令人遗憾。3.x版本代码变化快，文档没有完全跟�
 **最好避开FastMCP的场景**
 
 - 需要直接处理底层MCP消息，或需要非标准传输时。这种情况下抽象反而碍事，直接用MCP Python SDK才对。
-- 主力运行时不是Python时。在Node/TypeScript环境里，[MCP服务器TypeScript SDK分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)更自然。
-- 想完全本地、私有运行，不把服务器暴露到外部时。把模型也绑到本地的方案我在[用Gemma 3和FastMCP搭建私有MCP服务器](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)里讲过。
+- 主力运行时不是Python时。在Node/TypeScript环境里，[MCP服务器TypeScript SDK分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/)更自然。
+- 想完全本地、私有运行，不把服务器暴露到外部时。把模型也绑到本地的方案我在[用Gemma 3和FastMCP搭建私有MCP服务器](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp/)里讲过。
 - 在必须100%追踪框架抽象内部行为的合规或审计环境中。这种情况下保持依赖更薄更安全。
 
 一句话总结：要和标准客户端快速对接就选FastMCP，要直接触碰协议底层就选SDK。

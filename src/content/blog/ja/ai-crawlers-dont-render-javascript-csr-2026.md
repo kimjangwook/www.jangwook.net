@@ -137,7 +137,7 @@ curl -A "GPTBot" https://example.com/my-page | grep "ここに核心フレーズ
 - <strong>Astro</strong>: 静的生成が既定なので大抵は安全。ただし`client:only`アイランド内だけにあるテキストは初期HTMLに入らないので注意。
 - <strong>SvelteKit / Angular</strong>: SvelteKitは`load`関数のサーバー実行を、AngularはAngular Universal(SSR)を有効にする。
 
-とくに気をつけたいものが一つ。構造化データ(JSON-LD)やメタタグを、Google Tag Managerのようなクライアントスクリプトで注入するパターンだ。人の目にはちゃんと入るが、AIクローラーはそのスクリプトを回さないので、JSON-LDごと消える。この落とし穴は[LocalBusiness構造化データをJSで入れる場合とサーバーサイドで入れる場合の違い](/ja/blog/ja/localbusiness-structured-data-server-side-vs-js-2026)で実測したことがあるが、AIクローラーの時代には「サーバーサイドのほうが確実」という原則の重みがずっと増した。エンティティを正しくつなぐ[JSON-LDの@graph構造](/ja/blog/ja/json-ld-graph-entity-linking-2026)を使っても、それがサーバー応答にあってこそ意味がある。
+とくに気をつけたいものが一つ。構造化データ(JSON-LD)やメタタグを、Google Tag Managerのようなクライアントスクリプトで注入するパターンだ。人の目にはちゃんと入るが、AIクローラーはそのスクリプトを回さないので、JSON-LDごと消える。この落とし穴は[LocalBusiness構造化データをJSで入れる場合とサーバーサイドで入れる場合の違い](/ja/blog/ja/localbusiness-structured-data-server-side-vs-js-2026/)で実測したことがあるが、AIクローラーの時代には「サーバーサイドのほうが確実」という原則の重みがずっと増した。エンティティを正しくつなぐ[JSON-LDの@graph構造](/ja/blog/ja/json-ld-graph-entity-linking-2026/)を使っても、それがサーバー応答にあってこそ意味がある。
 
 全面SSR移行が重いなら、ハイブリッドでいい。器と核心テキストはサーバーで描き、操作が必要なウィジェットだけクライアントでハイドレーションする。判断基準はただ一つ。<strong>意味のある本文テキストが初期HTMLに入っているか。</strong>
 
@@ -151,7 +151,7 @@ curl -A "GPTBot" https://example.com/my-page | grep "ここに核心フレーズ
 
 llms.txtは、サイトのコンテンツをMarkdownで要約してクローラーに提供しようというコミュニティ提案だ。着想自体は悪くない。問題は現実のほう。Googleは公式に非対応だと明言し(2025年7月のSearch Central Live、Gary Illyes)、John Muellerはこれを、もう10年以上無視され続けているkeywordsメタタグになぞらえた。サイト運営者が「うちはこういう内容です」と自称するファイルなので、操作に弱いという論理だ。主要なAIサービスでこのファイルを推論に使うと公式に認めたところはない。採用率は30万ドメイン調査で10%ほど、有効なllms.txtの97%が2026年5月の一か月間に一件のリクエストも受けなかった、という集計もある(参考値、公式ではない)。
 
-まとめると、AIクローラーが読めない根本原因は「要約ファイルがないから」ではなく「本文がJSの後ろに隠れているから」だ。原因を放置して迂回路から敷く格好になる。AIクローラーのアクセスそのものをどう制御するかは[robots.txtでAIクローラーを制御する戦略](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026)で別に扱ったので、許可・遮断のポリシーはそちらを見てほしい。ただ「引用させる」の一番目は、いつだってサーバーサイドの可視性だ。
+まとめると、AIクローラーが読めない根本原因は「要約ファイルがないから」ではなく「本文がJSの後ろに隠れているから」だ。原因を放置して迂回路から敷く格好になる。AIクローラーのアクセスそのものをどう制御するかは[robots.txtでAIクローラーを制御する戦略](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026/)で別に扱ったので、許可・遮断のポリシーはそちらを見てほしい。ただ「引用させる」の一番目は、いつだってサーバーサイドの可視性だ。
 
 ## 正直に残す限界
 

@@ -44,11 +44,11 @@ faq:
 
 > <strong>시리즈: DeNA LLM 스터디</strong> (3/5)
 >
-> 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 구조화 출력과 멀티 LLM 파이프라인
-> 3. <strong>[Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training)</strong> ← 현재 글
-> 4. [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag)
-> 5. [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design)
+> 3. <strong>[Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training/)</strong> ← 현재 글
+> 4. [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag/)
+> 5. [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design/)
 
 ## 파인튜닝, 어디서부터 손대야 할까
 
@@ -56,7 +56,7 @@ faq:
 
 DeNA의 LLM 스터디 자료 Part 3가 정확히 이 지점을 짚는다. 세 가지 학습 방식의 차이, 그리고 LoRA, QLoRA, DPO 같은 효율적 기법의 원리와 실무 적용까지. 여기에 2025년 시점의 트렌드와 내가 직접 돌려본 경험을 얹어 정리했다.
 
-이 글은 시리즈의 중간 편이다. 모델 자체가 어떻게 동작하는지 먼저 보고 싶다면 [Part 1: LLM 기초](/ko/blog/ko/dena-llm-study-part1-fundamentals)를, 학습 대신 외부 지식을 붙이는 방향이 궁금하다면 [Part 4: RAG 아키텍처](/ko/blog/ko/dena-llm-study-part4-rag)를 함께 읽으면 흐름이 이어진다.
+이 글은 시리즈의 중간 편이다. 모델 자체가 어떻게 동작하는지 먼저 보고 싶다면 [Part 1: LLM 기초](/ko/blog/ko/dena-llm-study-part1-fundamentals/)를, 학습 대신 외부 지식을 붙이는 방향이 궁금하다면 [Part 4: RAG 아키텍처](/ko/blog/ko/dena-llm-study-part4-rag/)를 함께 읽으면 흐름이 이어진다.
 
 ## 언제 이 내용이 유용하고, 언제 건너뛰어도 되나
 

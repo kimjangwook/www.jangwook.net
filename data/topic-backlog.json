@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-30",
+  "updated_at": "2026-07-31",
   "topics": [
+    {
+      "slug": "internal-link-trailing-slash-redirect-audit-2026",
+      "title_idea": "내부 링크 46,382개 중 24,948개가 301로 튕기고 있었다",
+      "content_type": "how-to",
+      "target_keyword": "내부 링크 트레일링 슬래시 리다이렉트",
+      "secondary_keywords": [
+        "canonical 내부링크",
+        "301 리다이렉트 감사",
+        "빌드 산출물 링크 검사"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "자체 빌드 산출물 실측. dist/ HTML 1,334장, 내부 경로 링크 46,382개 중 24,948개(53.8%)가 슬래시 없는 URL→301. 그중 24,944개는 슬래시 경로에 실제 페이지 존재. 영향 페이지 1,330/1,334. canonical은 1,330/1,330이 슬래시 형태. 위치: 템플릿 10,640 / 본문 14,300 / 기타 8. 수정 4단계: 템플릿 13파일 29줄→7,808, 마크다운 1,276파일→3,905, RelatedPosts 1줄→85, 잔여(생HTML 앵커·improvement JSON·404.astro)→0. 지연 curl 7회 중앙값 301=33.6ms, 200=43.0ms. 1차 출처: Google consolidate-duplicate-urls, crawl-budget. 기둥①.",
+      "added_at": "2026-07-31",
+      "status": "done",
+      "notes": "발견 경위가 핵심: WCAG 2.4.4 \"같은 이름 다른 목적지\" 자동 지표를 만들다 URL 정규화 버그를 잡았다. 언어 스위처는 구조적 오탐(한 이름에 323 목적지)으로 분리 필요. 기존 link-check(broken=0)는 301을 통과시킨다. 후속 소재: (1) 이 감사를 scripts/에 CI 게이트로 상설화, (2) sitemap·RSS·JSON-LD url 필드의 형태 일치까지 확장 검사, (3) 링크 텍스트 감사 본편(오탐 제거 후 남는 진짜 a11y 지표).",
+      "published_at": "2026-07-31"
+    },
     {
       "slug": "crawl-depth-flat-archive-audit-2026",
       "title_idea": "아카이브 한 장을 지웠더니 296편이 도달 불가가 됐다 — 크롤 깊이 실측",

@@ -39,7 +39,7 @@ relatedPosts:
       zh: "了解Anthropic模型从Opus 4.7到Fable 5的演进，有助于掌握新模型中task_budget设计和managed agent架构的变化"
 ---
 
-[AnthropicがProject GlasswingでMythos Previewを公開した2026年4月](/ja/blog/ja/claude-mythos-preview-glasswing-ai-cybersecurity)、私はこのモデルがいつ一般公開されるのか正直なところ半信半疑だった。SWE-bench 93.9%という数字を持ちながら12社限定の制限配布という決断が、巧みなマーケティングなのか本物の安全懸念なのか判断しかねていた。
+[AnthropicがProject GlasswingでMythos Previewを公開した2026年4月](/ja/blog/ja/claude-mythos-preview-glasswing-ai-cybersecurity/)、私はこのモデルがいつ一般公開されるのか正直なところ半信半疑だった。SWE-bench 93.9%という数字を持ちながら12社限定の制限配布という決断が、巧みなマーケティングなのか本物の安全懸念なのか判断しかねていた。
 
 それから2か月。2026年6月9日、Anthropicが<strong>Claude Fable 5</strong>を一般公開した。Mythosの大衆化バージョンだ。`claude-fable-5`というモデルIDでAPIから直接使えるようになった。
 
@@ -133,7 +133,7 @@ response = client.messages.create(
 )
 ```
 
-[Opus 4.8のDynamic Workflowsのように並列エージェントを運用する場合](/ja/blog/ja/claude-opus-4-8-dynamic-workflows-parallel-agents-guide)、サブエージェントに`effort: "low"`を適用し、最終合成ステップのみ`high`を使う戦略でコスト効率を高められる。
+[Opus 4.8のDynamic Workflowsのように並列エージェントを運用する場合](/ja/blog/ja/claude-opus-4-8-dynamic-workflows-parallel-agents-guide/)、サブエージェントに`effort: "low"`を適用し、最終合成ステップのみ`high`を使う戦略でコスト効率を高められる。
 
 ## Fable 5 vs Opus 4.8：いつ乗り換えるか
 

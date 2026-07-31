@@ -352,9 +352,9 @@ Files API适用的场景：
 
 ## 与Message Batches API结合使用
 
-[Anthropic Message Batches API](/zh/blog/zh/anthropic-message-batches-api-production-guide)通过异步批量处理请求来降低50%的成本。与Files API结合使用，可以同时获得两种节省效果。
+[Anthropic Message Batches API](/zh/blog/zh/anthropic-message-batches-api-production-guide/)通过异步批量处理请求来降低50%的成本。与Files API结合使用，可以同时获得两种节省效果。
 
-100个文档×10个问题=1000个API请求。没有Files API时，每个请求都需要发送完整的文档内容。两个API结合使用，可以同时获得文件传输节省+批量50%折扣。[通过Langfuse追踪LLM成本](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026)可以用数字看到实际节省了多少。
+100个文档×10个问题=1000个API请求。没有Files API时，每个请求都需要发送完整的文档内容。两个API结合使用，可以同时获得文件传输节省+批量50%折扣。[通过Langfuse追踪LLM成本](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026/)可以用数字看到实际节省了多少。
 
 ---
 

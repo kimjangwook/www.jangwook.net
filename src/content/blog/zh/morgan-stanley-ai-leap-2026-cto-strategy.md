@@ -70,7 +70,7 @@ relatedPosts:
 
 - <strong>季度AI能力重新评估</strong>：每季度初查看最新模型的基准测试结果，重新识别当前工作流程中可自动化的领域。
 - <strong>"AI-Ready"待办管理</strong>：单独维护一份当前仍手动操作但随着AI性能提升可实现自动化的任务清单。
-- <strong>避免厂商锁定</strong>：设计抽象层以避免对单一AI厂商的依赖。MCP（Model Context Protocol）等标准以及[LangGraph、CrewAI、Dapr等可替换框架](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)可以帮助实现这一目标。
+- <strong>避免厂商锁定</strong>：设计抽象层以避免对单一AI厂商的依赖。MCP（Model Context Protocol）等标准以及[LangGraph、CrewAI、Dapr等可替换框架](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)可以帮助实现这一目标。
 
 ```typescript
 // AI厂商抽象层示例
@@ -96,7 +96,7 @@ class AIService {
 ### 执行方案
 
 - <strong>引入Centaur Pod模型</strong>：通过2〜3名高级工程师 + AI Agent的组合，实现原来5〜6人团队的产出。
-- <strong>新设AI编排师角色</strong>：在团队中创建专门负责设计[AI Agent工作流程](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)并管理质量的角色。
+- <strong>新设AI编排师角色</strong>：在团队中创建专门负责设计[AI Agent工作流程](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)并管理质量的角色。
 - <strong>更新代码审查流程</strong>：为AI生成的代码单独定义审查标准和流程。
 
 ```mermaid
@@ -125,7 +125,7 @@ Morgan Stanley报告提到了<strong>"15-15-15"动态</strong>：15年数据中�
 ### 执行方案
 
 - <strong>混合AI基础设施战略</strong>：不要将所有AI工作负载都迁移到云端。考虑推理（inference）在本地/边缘端执行、训练（training）在云端进行的分离策略。
-- <strong>构建成本监控仪表板</strong>：实时追踪[AI API调用成本](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)，按模型和功能衡量ROI。
+- <strong>构建成本监控仪表板</strong>：实时追踪[AI API调用成本](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)，按模型和功能衡量ROI。
 - <strong>开源模型利用规划</strong>：持续基准测试Mistral 3、GLM-5等能以15%成本实现专有模型92%性能的开源替代方案。
 
 | 策略 | 成本节约效果 | 适用工作负载 |

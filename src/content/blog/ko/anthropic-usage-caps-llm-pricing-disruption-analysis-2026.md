@@ -113,7 +113,7 @@ Sonnet 4.6 최적화 없음:   $20.25/월
 
 이 숫자를 보면 한 가지가 명확해진다. 에이전트 사용 패턴이 실제로 어느 수준인지 측정해본 적이 없다면, 지금 당장 로깅부터 해야 한다. 막연히 "매달 요청이 많다"는 감각으로 비용을 예측하는 시대는 끝났다.
 
-[Claude API 프롬프트 캐싱 최적화 패턴](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide)에서 캐시 적중률을 70〜80%로 끌어올리는 실제 구현 방법을 확인할 수 있다. 이번 정책 전환에서 캐싱은 단순한 최적화가 아니라 생존 전략이다.
+[Claude API 프롬프트 캐싱 최적화 패턴](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide/)에서 캐시 적중률을 70〜80%로 끌어올리는 실제 구현 방법을 확인할 수 있다. 이번 정책 전환에서 캐싱은 단순한 최적화가 아니라 생존 전략이다.
 
 ## 비용을 낮추는 3가지 실질적 전략
 
@@ -174,7 +174,7 @@ cache_hit_rate = usage.cache_read_input_tokens / (
 print(f"캐시 적중률: {cache_hit_rate:.1%}")
 ```
 
-[AI 에이전트 비용 현실 분석](/ko/blog/ko/ai-agent-cost-reality)에서 다뤘던 것처럼, 에이전트 비용이 인건비를 넘는 시나리오는 캐싱 없이 Opus를 전방위로 쓸 때 현실이 된다. 캐싱 적중률을 로깅해서 추적하는 것 자체가 비용 가시화의 첫 단계다.
+[AI 에이전트 비용 현실 분석](/ko/blog/ko/ai-agent-cost-reality/)에서 다뤘던 것처럼, 에이전트 비용이 인건비를 넘는 시나리오는 캐싱 없이 Opus를 전방위로 쓸 때 현실이 된다. 캐싱 적중률을 로깅해서 추적하는 것 자체가 비용 가시화의 첫 단계다.
 
 **전략 3: Batch API로 비실시간 워크로드 분리**
 
@@ -216,7 +216,7 @@ print(f"처리 상태: {batch.processing_status}")
 
 **Gemini 3.1 Flash**는 가격 경쟁력이 있고 Google 인프라의 신뢰성을 갖는다. 한국어 처리 품질은 개선됐지만 복잡한 코드 추론에서 Opus 4.7보다 아직 한 단계 아래다.
 
-내 권장안은 **핵심 에이전트는 Claude API 유지, 볼륨이 많은 단순 태스크는 Haiku 또는 DeepSeek 혼용**이다. 이미 [LLM API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 시나리오별로 상세 계산을 해뒀으니, 자신의 워크로드 패턴에 맞춰 비교해보길 권한다.
+내 권장안은 **핵심 에이전트는 Claude API 유지, 볼륨이 많은 단순 태스크는 Haiku 또는 DeepSeek 혼용**이다. 이미 [LLM API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)에서 시나리오별로 상세 계산을 해뒀으니, 자신의 워크로드 패턴에 맞춰 비교해보길 권한다.
 
 ## 엔터프라이즈 사용자의 상황은 더 복잡하다
 

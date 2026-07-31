@@ -63,7 +63,7 @@ relatedPosts:
 
 더 큰 문제는 <strong>일관성</strong>이다. 바쁜 일정 속에서 특정 항목을 누락하거나, 담당자마다 검증 기준이 달라질 수 있다.
 
-이 문제를 해결하기 위해 Claude Code와 [Playwright](/ko/blog/ko/playwright-ai-testing)를 활용한 <strong>페이지 E2E 테스트 자동화 시스템</strong>을 구축했다.
+이 문제를 해결하기 위해 Claude Code와 [Playwright](/ko/blog/ko/playwright-ai-testing/)를 활용한 <strong>페이지 E2E 테스트 자동화 시스템</strong>을 구축했다.
 
 ## 시스템 개요
 
@@ -230,7 +230,7 @@ sequenceDiagram
 
 ### 3. MCP 도구 활용
 
-[Chrome DevTools MCP](/ko/blog/ko/chrome-devtools-mcp-performance)와 Playwright를 조합하여 강력한 테스트 환경을 구축한다:
+[Chrome DevTools MCP](/ko/blog/ko/chrome-devtools-mcp-performance/)와 Playwright를 조합하여 강력한 테스트 환경을 구축한다:
 
 ```typescript
 // Chrome DevTools MCP로 성능 분석
@@ -367,7 +367,7 @@ a, button {
 
 ### 2. AI 분석의 가치
 
-단순히 "이미지가 큽니다"가 아닌, <strong>"어떻게 수정해야 하는지"</strong>까지 제안하는 것이 진정한 자동화다. Claude의 분석 능력이 여기서 빛을 발한다. Claude Code의 전반적인 활용법은 [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)에서 자세히 다룬다.
+단순히 "이미지가 큽니다"가 아닌, <strong>"어떻게 수정해야 하는지"</strong>까지 제안하는 것이 진정한 자동화다. Claude의 분석 능력이 여기서 빛을 발한다. Claude Code의 전반적인 활용법은 [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices/)에서 자세히 다룬다.
 
 ### 3. 점진적 개선
 

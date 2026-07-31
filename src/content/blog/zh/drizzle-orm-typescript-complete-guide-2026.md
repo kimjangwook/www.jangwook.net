@@ -213,7 +213,7 @@ const db = drizzle(sqlite);
 migrate(db, { migrationsFolder: "./migrations" });
 ```
 
-如果用 Node.js 内置 SQLite，可以结合 [Node.js 内置 SQLite 完全指南](/zh/blog/zh/node-sqlite-builtin-practical-guide-2026) 一起阅读。Drizzle 通过 `drizzle-orm/node-sqlite3` 也支持内置 SQLite。
+如果用 Node.js 内置 SQLite，可以结合 [Node.js 内置 SQLite 完全指南](/zh/blog/zh/node-sqlite-builtin-practical-guide-2026/) 一起阅读。Drizzle 通过 `drizzle-orm/node-sqlite3` 也支持内置 SQLite。
 
 ## 基础 CRUD：实际运行结果
 
@@ -401,7 +401,7 @@ await db.transaction(async (tx) => {
 });
 ```
 
-如果在本地开发或 edge 环境中使用 SQLite，一定要记住这个同步/异步的差异。在 [用 Hono.js 和 TypeScript 构建 REST API](/zh/blog/zh/hono-typescript-api-2026) 中如果用到 SQLite，很可能会遇到这个陷阱。
+如果在本地开发或 edge 环境中使用 SQLite，一定要记住这个同步/异步的差异。在 [用 Hono.js 和 TypeScript 构建 REST API](/zh/blog/zh/hono-typescript-api-2026/) 中如果用到 SQLite，很可能会遇到这个陷阱。
 
 ## 聚合查询与 Raw SQL
 
@@ -564,9 +564,9 @@ function validatePost(data: unknown): NewPost {
 - 需要非常成熟的文档、教程和第三方指南。Drizzle 进步很快，但部分边界情况还没有 Prisma 整理得那么完善。
 - 迁移的数据保留自动化（如列 rename 检测）或丰富的 GUI 工作流是核心需求。
 
-**Drizzle vs Prisma 一句话判断**："想掌控 SQL → Drizzle，想忘掉 SQL → Prisma。" 两者都提供足够的类型安全。真正的差别在于抽象层级和迁移透明度。同样的思路也适用于在 [Vitest 4 迁移指南](/zh/blog/zh/vitest-4-jest-migration-guide-2026) 中挑选测试工具。更换工具的决定，总是从"我当前的工作流哪里疼"开始。
+**Drizzle vs Prisma 一句话判断**："想掌控 SQL → Drizzle，想忘掉 SQL → Prisma。" 两者都提供足够的类型安全。真正的差别在于抽象层级和迁移透明度。同样的思路也适用于在 [Vitest 4 迁移指南](/zh/blog/zh/vitest-4-jest-migration-guide-2026/) 中挑选测试工具。更换工具的决定，总是从"我当前的工作流哪里疼"开始。
 
-如果你想看类型安全一路延伸到 API 层的做法，[MCP 服务器 TypeScript SDK 分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026) 在另一个场景下讲的是同一个理念。
+如果你想看类型安全一路延伸到 API 层的做法，[MCP 服务器 TypeScript SDK 分步指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/) 在另一个场景下讲的是同一个理念。
 
 ## 参考资料（一手来源）
 

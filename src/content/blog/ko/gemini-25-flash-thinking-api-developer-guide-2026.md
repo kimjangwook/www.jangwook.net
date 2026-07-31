@@ -52,7 +52,7 @@ thinking 기능은 Gemini 2.5 시리즈에서 처음 도입됐다. 모델이 답
 
 `thinking_budget`은 모델이 답변 전에 얼마나 많은 "숨겨진 추론"을 할 수 있는지 토큰 수로 제한하는 파라미터다. Budget=0이면 thinking을 완전히 비활성화한다. Budget=-1이면 모델이 스스로 필요한 만큼 추론한다. 양의 정수를 주면 그 토큰 수가 상한선이 된다(최대 24576).
 
-중요한 점이 있다. thinking 토큰은 응답으로 출력되지 않지만 **비용은 동일하게 청구된다.** 출력 토큰과 같은 요금이다. [LLM API 가격 비교 포스트](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 확인할 수 있듯이, Gemini 2.5 Flash의 출력 토큰 요금은 $0.0035/1K 토큰이다. thinking 토큰 1024개를 쓰면 그만큼 추가 비용이 발생한다.
+중요한 점이 있다. thinking 토큰은 응답으로 출력되지 않지만 **비용은 동일하게 청구된다.** 출력 토큰과 같은 요금이다. [LLM API 가격 비교 포스트](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)에서 확인할 수 있듯이, Gemini 2.5 Flash의 출력 토큰 요금은 $0.0035/1K 토큰이다. thinking 토큰 1024개를 쓰면 그만큼 추가 비용이 발생한다.
 
 API 사용법은 2024년까지 쓰던 `google.generativeai` 패키지가 아니라 새 `google-genai` 패키지를 써야 한다. 이건 놓치기 쉬운 부분이다.
 
@@ -154,7 +154,7 @@ Budget=0에서 단순 작업이 1.4초 응답했다. 이 작업에 1024 budget�
 
 Budget=8000 수학 문제에서 4036 thinking 토큰을 소비했다. 응답 시간은 26초. 일반적인 대화형 앱에서 이 지연은 받아들이기 어렵다. 배치 처리나 백그라운드 분석에만 쓸 것이다.
 
-[Gemini 2.5 Flash 비용 최적화 가이드](/ko/blog/ko/gemini-25-flash-api-cost-optimization-guide)에서 언급했지만, thinking 토큰 요금이 출력 토큰과 동일하다는 점을 꼭 기억해야 한다. Budget=8000을 무분별하게 쓰면 비용이 몇 배로 늘어난다.
+[Gemini 2.5 Flash 비용 최적화 가이드](/ko/blog/ko/gemini-25-flash-api-cost-optimization-guide/)에서 언급했지만, thinking 토큰 요금이 출력 토큰과 동일하다는 점을 꼭 기억해야 한다. Budget=8000을 무분별하게 쓰면 비용이 몇 배로 늘어난다.
 
 ## 실제 비용 계산: thinking이 손해인 구간과 이득인 구간
 
@@ -276,7 +276,7 @@ print(f"총 비용 토큰: {result['total_tokens']}")
 
 둘째, **thinking_budget과 thinking_level을 동시에 설정하면 400 에러**가 난다. Gemini 3.x 계열은 `thinking_level`을 사용하고, 2.5 계열은 `thinking_budget`을 사용한다. 마이그레이션 중인 코드에서 이 부분을 혼용하면 에러가 발생한다. 공식 문서에는 명시돼 있지만 에러 메시지가 직관적이지 않아서 처음 마주치면 당황한다.
 
-셋째, **thinking 토큰이 캐싱 안 된다.** Context Caching을 써서 긴 시스템 프롬프트 비용을 줄이더라도, thinking 토큰은 매번 새로 청구된다. [AI 에이전트 비용 현실 분석](/ko/blog/ko/ai-agent-cost-reality)에서 다뤘듯이 에이전트 루프를 돌리다 보면 thinking 비용이 예상보다 빨리 불어난다.
+셋째, **thinking 토큰이 캐싱 안 된다.** Context Caching을 써서 긴 시스템 프롬프트 비용을 줄이더라도, thinking 토큰은 매번 새로 청구된다. [AI 에이전트 비용 현실 분석](/ko/blog/ko/ai-agent-cost-reality/)에서 다뤘듯이 에이전트 루프를 돌리다 보면 thinking 비용이 예상보다 빨리 불어난다.
 
 ## 내 최종 입장
 

@@ -88,7 +88,7 @@ This is where `contain-intrinsic-size` earns its keep. Skip rendering an off-scr
 
 `contain-intrinsic-size` reserves that space in advance — a placeholder size the browser uses while it's skipping the render. In the doc's phrasing, it "specifies the natural size of the element if the element is affected by size containment." Add the `auto` keyword (as in `auto 480px`) and the browser remembers the actual rendered size after the first render and reuses it from then on.
 
-This is the exact same instinct as [setting width/height on images to stop layout shift](/en/blog/en/cls-layout-shift-reserve-space-measure-2026): reserve the space up front so real content, when it arrives, doesn't shove everything around it. The measurement showed it plainly. The `content-visibility` page reported a `scrollHeight` of 206,294px against baseline's 302,454px. The gap isn't a bug — the `auto` version is holding not-yet-rendered sections at the 480px estimate. The further that estimate drifts from reality, the odder scrolling feels, so it pays to measure a few representative sections and set a close approximation.
+This is the exact same instinct as [setting width/height on images to stop layout shift](/en/blog/en/cls-layout-shift-reserve-space-measure-2026/): reserve the space up front so real content, when it arrives, doesn't shove everything around it. The measurement showed it plainly. The `content-visibility` page reported a `scrollHeight` of 206,294px against baseline's 302,454px. The gap isn't a bug — the `auto` version is holding not-yet-rendered sections at the 480px estimate. The further that estimate drifts from reality, the odder scrolling feels, so it pays to measure a few representative sections and set a close approximation.
 
 ## What about accessibility? auto is not display:none
 
@@ -108,7 +108,7 @@ Bad fits: applying it to content that's always in the first viewport buys nothin
 
 The quietest trap is <strong>forced layout</strong>. As web.dev warns, the browser can only skip the work if you avoid calling DOM APIs that force rendering on a skipped subtree. Call `getBoundingClientRect()`, `offsetTop`, or `scrollHeight` on an off-screen element and the browser synchronously lays it out on the spot — and your savings evaporate. If your scroll-position math or animation hooks reach for those APIs by habit, audit them. Chromium prints a console message when you call one of these on a `content-visibility: hidden` subtree.
 
-One more honest note: this saves <strong>rendering CPU, not downloaded bytes</strong>. The full HTML still comes down the wire. Initial paint and scroll responsiveness improve; network transfer does not. If bytes are your problem, you need [real lazy loading or server-side pagination](/en/blog/en/lcp-image-preload-scanner-fetchpriority-2026) as a separate move. The two optimizations solve different things.
+One more honest note: this saves <strong>rendering CPU, not downloaded bytes</strong>. The full HTML still comes down the wire. Initial paint and scroll responsiveness improve; network transfer does not. If bytes are your problem, you need [real lazy loading or server-side pagination](/en/blog/en/lcp-image-preload-scanner-fetchpriority-2026/) as a separate move. The two optimizations solve different things.
 
 ## A checklist you can apply today
 
@@ -131,7 +131,7 @@ Here's the order I'd work in.
 
 <strong>4. Audit for forced layout.</strong> Any `getBoundingClientRect` or `offsetTop` call on off-screen elements erases the savings.
 
-<strong>5. Measure again, and confirm it's still reachable.</strong> Time forced layout or [scroll and interaction response](/en/blog/en/inp-yielding-measure-2026) before and after. Then check with a screen reader and Ctrl+F in your target browsers that off-screen text is still findable. Faster but unreachable is not an improvement.
+<strong>5. Measure again, and confirm it's still reachable.</strong> Time forced layout or [scroll and interaction response](/en/blog/en/inp-yielding-measure-2026/) before and after. Then check with a screen reader and Ctrl+F in your target browsers that off-screen text is still findable. Faster but unreachable is not an improvement.
 
 The 15x number came from a deliberately extreme sandbox, and your real-site gain depends entirely on page structure. But the principle is solid: don't paint what nobody can see and the page gets faster. And `content-visibility` is one of the few ways to do that without breaking accessibility.
 

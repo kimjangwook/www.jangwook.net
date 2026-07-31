@@ -68,7 +68,7 @@ The tech stack was solid:
 - Credit-based payment system (Stripe integration)
 - 5-language multilingual support
 
-But one week after launch, I had to face a sobering reality. How I designed the service's initial automation architecture is covered in detail in [Agent Effi Flow automation analysis, part 1](/en/blog/en/effiflow-automation-analysis-part1).
+But one week after launch, I had to face a sobering reality. How I designed the service's initial automation architecture is covered in detail in [Agent Effi Flow automation analysis, part 1](/en/blog/en/effiflow-automation-analysis-part1/).
 
 ---
 
@@ -303,7 +303,7 @@ Accounting OCR will be reborn not as simple receipt recognition, but as <strong>
 - Duty-Free, Tax-Free keyword detection
 - Yayoi, freee CSV format support
 
-How I actually run and iterate on this automation pipeline continues in [Agent Effi Flow automation analysis, part 3](/en/blog/en/effiflow-automation-analysis-part3).
+How I actually run and iterate on this automation pipeline continues in [Agent Effi Flow automation analysis, part 3](/en/blog/en/effiflow-automation-analysis-part3/).
 
 ---
 

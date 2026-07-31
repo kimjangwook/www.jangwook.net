@@ -117,7 +117,7 @@ Real-time data collected at the time of analysis:
 
 ### 3.1 Ready-to-Execute Analysis Queries
 
-For readers starting blog analysis, I'm sharing <strong>actually usable MCP query examples</strong>. The full setup for connecting GA4 to MCP is covered step by step in the [Google Analytics MCP automation guide](/en/blog/en/google-analytics-mcp-automation).
+For readers starting blog analysis, I'm sharing <strong>actually usable MCP query examples</strong>. The full setup for connecting GA4 to MCP is covered step by step in the [Google Analytics MCP automation guide](/en/blog/en/google-analytics-mcp-automation/).
 
 #### Query 1: Real-time Visitor Status
 
@@ -376,7 +376,7 @@ Paradoxically, this moment without data is the most important:
 - Optimize project inquiry conversion path
 - Implement related post recommendation algorithm
 
-Sustaining content output at this stage is realistic only if you automate the writing pipeline itself. How I connected drafting through to publishing with an LLM is documented in [LLM-based blog automation](/en/blog/en/llm-blog-automation).
+Sustaining content output at this stage is realistic only if you automate the writing pipeline itself. How I connected drafting through to publishing with an LLM is documented in [LLM-based blog automation](/en/blog/en/llm-blog-automation/).
 
 ### 6.3 Long-term Vision (3-6 months)
 
@@ -663,6 +663,6 @@ If this article was helpful:
 
 - 🔗 <strong>Share</strong>: With fellow developers facing similar challenges
 - 💭 <strong>Leave comments</strong>: Your blog analysis experience and tips
-- 📧 <strong>Contact</strong>: 1-on-1 questions at [Contact](/en/contact)
+- 📧 <strong>Contact</strong>: 1-on-1 questions at [Contact](/en/contact/)
 
 <strong>Let's learn and grow together. Looking forward to your first analysis report!</strong> 🚀

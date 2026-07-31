@@ -79,7 +79,7 @@ MCP 서버가 왜 이렇게 많이 죽는지 파악하고, 내 것은 살려두�
 
 ## 준비물
 
-이 가이드는 FastMCP(Python)로 작성한 MCP 서버를 기준으로 한다. [MCP 서버를 처음 만드는 방법은 이전 포스트](/ko/blog/ko/mcp-server-build-practical-guide-2026)에서 다뤘으니 여기서는 배포 부분만 다룬다.
+이 가이드는 FastMCP(Python)로 작성한 MCP 서버를 기준으로 한다. [MCP 서버를 처음 만드는 방법은 이전 포스트](/ko/blog/ko/mcp-server-build-practical-guide-2026/)에서 다뤘으니 여기서는 배포 부분만 다룬다.
 
 필요한 것:
 - Kubernetes 클러스터 (1.28 이상 권장)
@@ -304,7 +304,7 @@ nginx ingress에서 프록시 타임아웃을 늘려야 한다. 기본값(60초)
 
 ## Step 5: OAuth 2.1로 자격증명 관리하기
 
-정적 API 키에 의존하는 게 가장 큰 장기 리스크다. 키가 GitHub에 노출되거나, 담당자가 바뀌거나, 서비스가 키를 교체하면 조용히 깨진다. [MCP 보안 관련 CVE 사례들을 보면](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening) 자격증명 관리 실패가 반복 패턴이다.
+정적 API 키에 의존하는 게 가장 큰 장기 리스크다. 키가 GitHub에 노출되거나, 담당자가 바뀌거나, 서비스가 키를 교체하면 조용히 깨진다. [MCP 보안 관련 CVE 사례들을 보면](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening/) 자격증명 관리 실패가 반복 패턴이다.
 
 Kubernetes Secret에서 환경변수로 주입하는 기본 방법부터:
 
@@ -382,7 +382,7 @@ spec:
 
 **업스트림 API 변경 감지**: 의존하는 외부 API가 응답 스키마를 바꾸면 MCP 서버는 살아있지만 엉뚱한 값을 돌려준다. 정기적으로 실제 도구를 호출해서 결과를 검증하는 통합 테스트가 필요하다.
 
-[MCP Gateway를 쓰면](/ko/blog/ko/mcp-gateway-agent-traffic-control) 여러 MCP 서버 앞에 단일 진입점을 두고 중앙에서 헬스 상태를 관리할 수 있다. 서버가 여러 개라면 고려할 만하다.
+[MCP Gateway를 쓰면](/ko/blog/ko/mcp-gateway-agent-traffic-control/) 여러 MCP 서버 앞에 단일 진입점을 두고 중앙에서 헬스 상태를 관리할 수 있다. 서버가 여러 개라면 고려할 만하다.
 
 ## 실제로 배포해보니
 

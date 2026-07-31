@@ -107,7 +107,7 @@ graph TD
 | phi4-mini | インテント分類器 | ~2B | 「スマートホームコマンドか質問か」の判別 |
 | gemma3:12b | 応答生成 | 12B | 実際の回答と推論 |
 
-軽量モデルでまず意図を分類し、大きなモデルは必要な時だけ呼び出す構造で、<strong>Mac mini M4 16GB</strong>でも十分にリアルタイム応答が可能です。OllamaによるオフラインAIパイプラインをMCPツールと連携させる方法は、[Gemma 4 + FastMCPを使ったプライベートMCPサーバー構築ガイド](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp)で詳しく解説しています。
+軽量モデルでまず意図を分類し、大きなモデルは必要な時だけ呼び出す構造で、<strong>Mac mini M4 16GB</strong>でも十分にリアルタイム応答が可能です。OllamaによるオフラインAIパイプラインをMCPツールと連携させる方法は、[Gemma 4 + FastMCPを使ったプライベートMCPサーバー構築ガイド](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp/)で詳しく解説しています。
 
 ### Home Assistant連携
 
@@ -187,7 +187,7 @@ Meshtasticはメッシュプロトコルのため、ノードを追加すれば�
 
 <strong>30ドルラジオ + ローカルAI = インターネット不要スマートホーム</strong>。この等式はシンプルですが、エッジAIの実用的な未来を明確に示しています。
 
-クラウドに依存しないAIシステムはもはや理論ではありません。16GBメモリのMac miniと30ドルのラジオがあれば、今日すぐに実現できる現実です。ローカルLLMの性能が向上し続ける今、<strong>エッジAI × IoT</strong>の組み合わせは最も実用的なAI活用領域の一つになるでしょう。ローカル推論ハードウェアの選択には[DDR5 RDIMM対RTX 3090のコスト比較](/ja/blog/ja/ddr5-rdimm-vs-rtx3090-local-llm)も参考にすると、最適な構成が見えてきます。
+クラウドに依存しないAIシステムはもはや理論ではありません。16GBメモリのMac miniと30ドルのラジオがあれば、今日すぐに実現できる現実です。ローカルLLMの性能が向上し続ける今、<strong>エッジAI × IoT</strong>の組み合わせは最も実用的なAI活用領域の一つになるでしょう。ローカル推論ハードウェアの選択には[DDR5 RDIMM対RTX 3090のコスト比較](/ja/blog/ja/ddr5-rdimm-vs-rtx3090-local-llm/)も参考にすると、最適な構成が見えてきます。
 
 ## 参考資料
 

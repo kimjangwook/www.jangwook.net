@@ -57,7 +57,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-你有没有同时开过20个Claude Code终端？我有。用4种语言写博客文章的时候，同时跑Research Agent、图片生成Agent、翻译Agent，某个瞬间就会开始迷糊——"现在谁在干什么来着？"靠终端标签名来区分终究有局限，各个Agent的费用也不一样，月底算账的时候很麻烦。如果想用Git Worktree更系统地管理并行Claude Code会话，[用Git Worktree运营Claude Code并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)值得一读。
+你有没有同时开过20个Claude Code终端？我有。用4种语言写博客文章的时候，同时跑Research Agent、图片生成Agent、翻译Agent，某个瞬间就会开始迷糊——"现在谁在干什么来着？"靠终端标签名来区分终究有局限，各个Agent的费用也不一样，月底算账的时候很麻烦。如果想用Git Worktree更系统地管理并行Claude Code会话，[用Git Worktree运营Claude Code并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)值得一读。
 
 [Paperclip](https://github.com/paperclipai/paperclip)正面解决了这个问题。它的口号很大胆——"Open-source orchestration for zero-human companies." 把Agent当员工管理，把Agent组当公司来运营。
 
@@ -133,7 +133,7 @@ Costs页面相当详细。可以按时间段（Month to Date、Last 7 Days、Las
 
 只用一个Agent的人没有使用理由。多学一个任务管理器，如果Agent只有1〜2个，直接在终端管理更快。而且"zero-human company"这个口号与实际情况有差距。根据我的使用经验，Agent失败了最终还是要人来调试，任务定义也需要人来做。这是"管理Agent的工具"，而不是"替代人的工具"——至少目前还不是。
 
-还有一点需要理解的是，Paperclip本身<strong>不是</strong>Agent框架或Prompt管理器。它不是帮你创建Agent的工具，而是把已有的Agent组织化的工具。Claude Code、Codex这样的CLI Agent已经在运行，它才有意义。想了解哪种工作流模式适合自己，可以参考[Claude Code 5种工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)。
+还有一点需要理解的是，Paperclip本身<strong>不是</strong>Agent框架或Prompt管理器。它不是帮你创建Agent的工具，而是把已有的Agent组织化的工具。Claude Code、Codex这样的CLI Agent已经在运行，它才有意义。想了解哪种工作流模式适合自己，可以参考[Claude Code 5种工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)。
 
 ## 谁应该用
 

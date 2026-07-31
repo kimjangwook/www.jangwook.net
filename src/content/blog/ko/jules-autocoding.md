@@ -71,7 +71,7 @@ Jules는 단순한 코드 자동완성 도구가 아니다. GitHub 이슈를 할
 
 - <strong>GitHub Copilot</strong>: 실시간 코드 자동완성 및 제안
 - <strong>Cursor</strong>: AI 기반 IDE로 대화형 코드 편집
-- <strong>Claude Code</strong>: [터미널 기반 AI 코딩 어시스턴트](/ko/blog/ko/claude-code-best-practices)
+- <strong>Claude Code</strong>: [터미널 기반 AI 코딩 어시스턴트](/ko/blog/ko/claude-code-best-practices/)
 
 Jules의 핵심 차별점은 <strong>비동기성</strong>이다. 다른 도구들이 개발자의 IDE에서 실시간으로 작동하는 반면, Jules는 Google Cloud의 격리된 가상 머신에서 독립적으로 작업을 수행한다. 개발자는 GitHub 이슈를 할당하고 계획을 승인한 후, 다른 일을 하면서 Jules가 작업을 완료하기를 기다릴 수 있다.
 
@@ -675,7 +675,7 @@ Jules를 실제 개발 워크플로우에 어떻게 활용할 수 있는지 구�
 
 <strong>추천 조합 2: Jules + Claude Code</strong>
 - <strong>Jules</strong>: GitHub 이슈 기반 자동화
-- <strong>Claude Code</strong>: [로컬에서 복잡한 코드 탐색 및 수정](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)
+- <strong>Claude Code</strong>: [로컬에서 복잡한 코드 탐색 및 수정](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)
 - <strong>장점</strong>: 두 가지 모두 자율적이며 강력한 코드베이스 이해
 
 <strong>추천 조합 3: Jules + Cursor</strong>
@@ -1118,7 +1118,7 @@ Jules는 다음과 같은 상황에서 가장 효과적이다:
 
 <strong>대규모 팀 (10명 이상)</strong>:
 - <strong>Jules Ultra</strong>: 대량 작업 처리
-- <strong>Claude Code</strong>: [복잡한 리팩토링](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent)
+- <strong>Claude Code</strong>: [복잡한 리팩토링](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent/)
 - <strong>GitHub Copilot Enterprise</strong>: 팀 전체 실시간 지원
 - <strong>총 비용</strong>: $124.99 + ($39 × 팀원 수)
 

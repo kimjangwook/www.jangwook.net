@@ -102,7 +102,7 @@ User: (Maybe) Clicks one recommended link to try the product
 
 This post shares real-world implementation experience from <a href="https://agent-effi-flow.jangwook.net" target="_blank" rel="noopener noreferrer">Agent Effi Flow</a>, a B2B SaaS platform offering AI-powered business automation tools, focusing on practical AEO strategies that work.
 
-For a detailed 9-step roadmap applying these AEO strategies to B2B SaaS, see the [LLM-era SEO/AEO Practical Implementation Guide](/en/blog/en/llm-seo-aeo-practical-implementation).
+For a detailed 9-step roadmap applying these AEO strategies to B2B SaaS, see the [LLM-era SEO/AEO Practical Implementation Guide](/en/blog/en/llm-seo-aeo-practical-implementation/).
 
 ## Agent Effi Flow: Service Overview
 
@@ -1085,7 +1085,7 @@ Instead of testimonials, we provide <strong>verifiable technical details</strong
 
 <strong>For AEO, transparency beats marketing hype</strong>. LLMs are trained to detect inconsistent or fabricated information. Better to under-promise and over-deliver than risk credibility damage.
 
-For a real-world account of navigating Google's content quality standards using AI analysis, see [AdSense Challenge: Overcoming "Low-Value Content" Rejection](/en/blog/en/adsense-rejection-ai-analysis-improvement).
+For a real-world account of navigating Google's content quality standards using AI analysis, see [AdSense Challenge: Overcoming "Low-Value Content" Rejection](/en/blog/en/adsense-rejection-ai-analysis-improvement/).
 
 ## Measuring AEO Success
 

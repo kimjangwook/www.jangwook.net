@@ -204,7 +204,7 @@ Batches API:
 節約額: $47.50（50.0%）
 ```
 
-Prompt Cachingと組み合わせると、キャッシュヒットした入力トークンにさらに90%割引が適用される。[Prompt Cachingガイド](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide)で紹介した手法と組み合わせると、Batch割引（50%）+ キャッシュ割引（90%）で**最大95%削減**も現実的だ。
+Prompt Cachingと組み合わせると、キャッシュヒットした入力トークンにさらに90%割引が適用される。[Prompt Cachingガイド](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide/)で紹介した手法と組み合わせると、Batch割引（50%）+ キャッシュ割引（90%）で**最大95%削減**も現実的だ。
 
 ## 知っておくべき制約と落とし穴
 
@@ -279,7 +279,7 @@ const batch = await client.messages.batches.create(
 
 100件未満のバッチは正直あまり効果がない。ポーリングのオーバーヘッドがあるため、処理量が少ない場合は標準APIをそのまま順次実行する方が速いこともある。
 
-[異種LLMフリートコスト最適化](/ja/blog/ja/heterogeneous-llm-agent-fleet-cost-optimization)で紹介したように、高価なモデル（Opus）はバッチで夜間処理し、安価で高速なモデル（Haiku）はリアルタイムで使うハイブリッド戦略が効果的だ。私が実際にプロジェクトで推薦するパターンでもある。
+[異種LLMフリートコスト最適化](/ja/blog/ja/heterogeneous-llm-agent-fleet-cost-optimization/)で紹介したように、高価なモデル（Opus）はバッチで夜間処理し、安価で高速なモデル（Haiku）はリアルタイムで使うハイブリッド戦略が効果的だ。私が実際にプロジェクトで推薦するパターンでもある。
 
 Webhookの不在と進捗ダッシュボードの欠如は引き続きストレスだが、プロダクションに使い始めても十分に安定している。
 

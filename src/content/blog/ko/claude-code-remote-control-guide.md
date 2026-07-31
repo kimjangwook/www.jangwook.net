@@ -49,7 +49,7 @@ relatedPosts:
 
 ## Remote Control이란?
 
-Claude Code Remote Control은 <strong>로컬 머신에서 실행 중인 Claude Code 세션을 모바일 앱이나 웹 브라우저에서 원격으로 제어</strong>하는 기능이다. 2026년 2월 25일에 리서치 프리뷰로 출시됐다. [Claude Code를 처음 시작하는 분이라면](/ko/blog/ko/claude-code-best-practices) 기본 설정과 모범 사례를 먼저 확인하길 권한다.
+Claude Code Remote Control은 <strong>로컬 머신에서 실행 중인 Claude Code 세션을 모바일 앱이나 웹 브라우저에서 원격으로 제어</strong>하는 기능이다. 2026년 2월 25일에 리서치 프리뷰로 출시됐다. [Claude Code를 처음 시작하는 분이라면](/ko/blog/ko/claude-code-best-practices/) 기본 설정과 모범 사례를 먼저 확인하길 권한다.
 
 핵심 포인트를 짚어본다.
 
@@ -194,7 +194,7 @@ CI 파이프라인처럼 테스트 스위트를 실행하고, 결과를 원격�
 
 ### 시나리오 4: 멀티 프로젝트 관리
 
-여러 프로젝트의 Claude Code 세션을 각각 이름을 붙여서 관리한다. [Claude 에이전트 팀 운영 가이드](/ko/blog/ko/claude-agent-teams-guide)와 함께 활용하면 복잡한 멀티 에이전트 워크플로우도 원격에서 제어할 수 있다.
+여러 프로젝트의 Claude Code 세션을 각각 이름을 붙여서 관리한다. [Claude 에이전트 팀 운영 가이드](/ko/blog/ko/claude-agent-teams-guide/)와 함께 활용하면 복잡한 멀티 에이전트 워크플로우도 원격에서 제어할 수 있다.
 
 ```bash
 # 프로젝트별로 세션 이름 설정
@@ -266,6 +266,6 @@ claude --resume "api-refactoring"
 
 Claude Code Remote Control은 "내 책상 앞에 앉아 있어야만 코딩할 수 있다"는 제약을 제거한다. 코드는 로컬에 안전하게 유지하면서, 어디서든 AI 에이전트에게 작업을 지시하고 모니터링할 수 있다.
 
-설정은 `/config` 한 줄이면 충분하다. [Claude Code 훅과 자동화 워크플로우](/ko/blog/ko/claude-code-hooks-workflow)를 결합하면 개발 파이프라인 전체를 원격에서 제어하는 수준으로 확장된다. 리서치 프리뷰 단계라 간헐적 불안정이 있을 수 있지만, 기본 워크플로우는 충분히 실용적이다.
+설정은 `/config` 한 줄이면 충분하다. [Claude Code 훅과 자동화 워크플로우](/ko/blog/ko/claude-code-hooks-workflow/)를 결합하면 개발 파이프라인 전체를 원격에서 제어하는 수준으로 확장된다. 리서치 프리뷰 단계라 간헐적 불안정이 있을 수 있지만, 기본 워크플로우는 충분히 실용적이다.
 
 <strong>시작하기</strong>: 지금 터미널에서 `/config`을 실행하고 "Enable Remote Control for all sessions"를 켜보라.

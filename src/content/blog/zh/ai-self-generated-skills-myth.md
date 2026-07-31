@@ -79,7 +79,7 @@ Skills包结构
 | 可执行资源 | ✗ | ✗ | ✗ | <strong>✓</strong> |
 | 可移植性 | ✗ | △ | △ | <strong>✓</strong> |
 
-Claude Code的`CLAUDE.md`、Gemini CLI、Codex CLI等最新代理工具已采用此Skills概念。关于这些文件是否真正提升代理性能，[验证AGENTS.md效果的首项实证研究](/zh/blog/zh/agents-md-effectiveness)得出了出人意料的结论。
+Claude Code的`CLAUDE.md`、Gemini CLI、Codex CLI等最新代理工具已采用此Skills概念。关于这些文件是否真正提升代理性能，[验证AGENTS.md效果的首项实证研究](/zh/blog/zh/agents-md-effectiveness/)得出了出人意料的结论。
 
 ## 实验设计：3种条件对比
 
@@ -157,7 +157,7 @@ graph TD
 
 <strong>1. 重新审视技能自动生成流程</strong>
 
-"AI生成并改进自己的技能"这一方法在当前阶段无效。人类专家的策划仍然不可或缺。关于如何在实际项目中设计和部署Agent Skills，请参考[Anthropic Agent Skills实战指南](/zh/blog/zh/anthropic-agent-skills-practical-guide)。
+"AI生成并改进自己的技能"这一方法在当前阶段无效。人类专家的策划仍然不可或缺。关于如何在实际项目中设计和部署Agent Skills，请参考[Anthropic Agent Skills实战指南](/zh/blog/zh/anthropic-agent-skills-practical-guide/)。
 
 <strong>2. 技能要小而集中</strong>
 

@@ -67,7 +67,7 @@ Building an MCP (Model Context Protocol) server from scratch is more work than i
 
 FastMCP exists to fix that. Today I installed it in a sandbox via pip and had a working MCP server running in under 30 minutes.
 
-This post is about the FastMCP tool, not the MCP protocol itself. If you want the protocol background, keep the [Model Context Protocol official site](https://modelcontextprotocol.io) open, and for FastMCP's source and changelog the [jlowin/fastmcp GitHub repo](https://github.com/jlowin/fastmcp) is the canonical reference. Building the same kind of server in TypeScript follows a different path, which I wrote up separately in the [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026).
+This post is about the FastMCP tool, not the MCP protocol itself. If you want the protocol background, keep the [Model Context Protocol official site](https://modelcontextprotocol.io) open, and for FastMCP's source and changelog the [jlowin/fastmcp GitHub repo](https://github.com/jlowin/fastmcp) is the canonical reference. Building the same kind of server in TypeScript follows a different path, which I wrote up separately in the [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026/).
 
 ## What FastMCP Actually Is
 
@@ -192,7 +192,7 @@ When this works inside Claude Desktop, users see real-time feedback about what t
 
 ## Testing with FastMCP Client
 
-You don't need an actual Claude Desktop to test. FastMCP provides an in-process client. This is also handy when implementing agentic workflow patterns, since tests stay self-contained. When you need to go past this in-process test and build a standalone client that consumes the MCP server from your own application, [building an MCP client with the TypeScript SDK](/en/blog/en/mcp-client-typescript-sdk-guide-2026) is a useful reference.
+You don't need an actual Claude Desktop to test. FastMCP provides an in-process client. This is also handy when implementing agentic workflow patterns, since tests stay self-contained. When you need to go past this in-process test and build a standalone client that consumes the MCP server from your own application, [building an MCP client with the TypeScript SDK](/en/blog/en/mcp-client-typescript-sdk-guide-2026/) is a useful reference.
 
 ```python
 import asyncio
@@ -457,8 +457,8 @@ Plenty of posts recommend a tool. Few are honest about when not to use it. Here'
 **You're better off skipping it when**
 
 - You have to touch low-level MCP messages or need a non-standard transport. Here the abstraction gets in the way, and using the MCP Python SDK directly is the right call.
-- Your primary runtime isn't Python. On Node/TypeScript the [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) is the more natural fit.
-- You want to keep everything local and private, model included. I covered that setup in [building a private MCP server with Gemma 3 and FastMCP](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp).
+- Your primary runtime isn't Python. On Node/TypeScript the [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026/) is the more natural fit.
+- You want to keep everything local and private, model included. I covered that setup in [building a private MCP server with Gemma 3 and FastMCP](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp/).
 - You're in a regulated or audited environment where every behavior inside the framework abstraction has to be traceable. Thin dependencies are safer there.
 
 One line: standard clients and speed, pick FastMCP; raw protocol control, pick the SDK.

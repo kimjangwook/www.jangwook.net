@@ -200,7 +200,7 @@ graph TD
 | 項目 | 説明 | ツール例 |
 |------|------|----------|
 | 実行追跡 | エージェントがどのツールをどの順序で使用したか | LangSmith、Braintrust |
-| [コスト監視](/ja/blog/ja/ai-agent-cost-reality) | トークン使用量、API 呼び出しコスト | Helicone、OpenMeter |
+| [コスト監視](/ja/blog/ja/ai-agent-cost-reality/) | トークン使用量、API 呼び出しコスト | Helicone、OpenMeter |
 | ポリシー準拠 | ガードレール違反検出と阻止 | Guardrails AI、NeMo |
 | 監査ログ | すべての入出力の改ざん不可能な記録 | 自家構築または Langfuse |
 
@@ -212,7 +212,7 @@ graph TD
 
 <strong>ステップ 2：マルチベンダー移行計画の策定(2〜4 週間)</strong>
 
-Primary/Secondary/Fallback 構造を設計し、抽象化レイヤーの導入を検討します。[LiteLLM や LangChain のようなツール](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)が迅速なスタート地点になります。
+Primary/Secondary/Fallback 構造を設計し、抽象化レイヤーの導入を検討します。[LiteLLM や LangChain のようなツール](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)が迅速なスタート地点になります。
 
 <strong>ステップ 3：AI ガバナンス草案の作成(1 か月)</strong>
 
@@ -225,7 +225,7 @@ Anthropic vs ペンタゴン事態は、AI 技術が純粋な技術的ツール�
 CTO/VPoE として我々が行うべきことは明確です：
 
 1. 単一ベンダー依存から脱却し、マルチベンダー戦略を確立すること
-2. [AI ガバナンス フレームワーク](/ja/blog/ja/adl-agent-definition-language-governance)を組織文化の一部として内在化させること
+2. [AI ガバナンス フレームワーク](/ja/blog/ja/adl-agent-definition-language-governance/)を組織文化の一部として内在化させること
 3. 観測可能性と監査システムを最初から設計すること
 
 AI がビジネスの中核となった 2026 年、<strong>「AI を上手に使うこと」と同じくらい「AI を安全に管理すること」</strong>が技術リーダーの核となる能力になったのです。

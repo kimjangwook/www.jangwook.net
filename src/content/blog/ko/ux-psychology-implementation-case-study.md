@@ -57,7 +57,7 @@ relatedPosts:
 
 UX 심리학 원칙을 실제 웹사이트에 적용하여 사용자 경험을 개선한 사례를 소개한다. 이번 개선에서는 <strong>Goal Gradient Effect</strong>, <strong>Von Restorff Effect</strong>, <strong>Fitts's Law</strong>, <strong>Doherty Threshold</strong> 등 10가지 핵심 UX 심리학 원칙을 기반으로 컴포넌트를 개선했다.
 
-각 원칙의 이론적 배경과 Claude Code 스킬 통합 방법은 [UX 심리학으로 프론트엔드 디자인 스킬 강화하기](/ko/blog/ko/ux-psychology-frontend-design-skill)를 먼저 읽어보시면 도움이 된다.
+각 원칙의 이론적 배경과 Claude Code 스킬 통합 방법은 [UX 심리학으로 프론트엔드 디자인 스킬 강화하기](/ko/blog/ko/ux-psychology-frontend-design-skill/)를 먼저 읽어보시면 도움이 된다.
 
 ## 구현된 UX 개선 사항
 
@@ -272,7 +272,7 @@ npm run build
 
 UX 심리학 원칙을 실제 코드로 구현함으로써 사용자 경험을 체계적으로 개선할 수 있다. 특히 <strong>읽기 시간 정확도 개선</strong>, <strong>카드 호버 효과</strong>, <strong>진행 표시줄</strong> 등은 비교적 간단한 구현으로 큰 UX 향상을 가져온다.
 
-다음 단계로는 실제 사용자 데이터(체류 시간, 완독률, 클릭률)를 분석하여 개선 효과를 정량적으로 측정할 예정이다. SEO와 AEO 관점에서의 최적화 사례는 [LLM SEO·AEO 실전 구현 가이드](/ko/blog/ko/llm-seo-aeo-practical-implementation)에서 확인하면 된다.
+다음 단계로는 실제 사용자 데이터(체류 시간, 완독률, 클릭률)를 분석하여 개선 효과를 정량적으로 측정할 예정이다. SEO와 AEO 관점에서의 최적화 사례는 [LLM SEO·AEO 실전 구현 가이드](/ko/blog/ko/llm-seo-aeo-practical-implementation/)에서 확인하면 된다.
 
 ## 참고 자료
 

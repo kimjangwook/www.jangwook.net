@@ -198,7 +198,7 @@ graph TD
 | 项目 | 说明 | 工具示例 |
 |------|------|---------|
 | 执行跟踪 | Agent使用了哪些工具以及使用顺序 | LangSmith, Braintrust |
-| [成本监控](/zh/blog/zh/ai-agent-cost-reality) | 代币使用量、API调用成本 | Helicone, OpenMeter |
+| [成本监控](/zh/blog/zh/ai-agent-cost-reality/) | 代币使用量、API调用成本 | Helicone, OpenMeter |
 | 政策遵从 | 检测并阻止护栏违反 | Guardrails AI, NeMo |
 | 审计日志 | 所有输入输出的不可变记录 | 自建或Langfuse |
 
@@ -210,7 +210,7 @@ graph TD
 
 <strong>第2阶段：制定多供应商切换计划（2〜4周）</strong>
 
-设计Primary/Secondary/Fallback结构，审查抽象化层的采用。[LiteLLM或LangChain等工具](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)可以作为快速入门点。
+设计Primary/Secondary/Fallback结构，审查抽象化层的采用。[LiteLLM或LangChain等工具](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)可以作为快速入门点。
 
 <strong>第3阶段：起草AI治理初稿（1个月）</strong>
 
@@ -223,7 +223,7 @@ Anthropic vs 五角大楼事件生动地展示，AI技术已超越纯粹的技�
 作为CTO/VPoE，我们的任务是明确的：
 
 1. 摆脱单一供应商依赖，建立多供应商战略
-2. 将[AI治理框架](/zh/blog/zh/adl-agent-definition-language-governance)内化为组织文化的一部分
+2. 将[AI治理框架](/zh/blog/zh/adl-agent-definition-language-governance/)内化为组织文化的一部分
 3. 从一开始就设计可观测性和审计体系
 
 在AI成为业务核心的2026年，<strong>"正确使用AI"同样重要的是"安全管理AI"</strong>已成为技术领导者的核心能力。

@@ -145,7 +145,7 @@ DeepSeek V4于2026年3月发布，在SWE-bench Verified上达到81%（V3.2为69%
 - OpenAI和Anthropic都提供50%折扣（24小时内异步处理）
 - 适合不需要实时响应的任务：批量翻译、分类、摘要
 
-在这个自动化流水线上应用Batch API后，我发现缓存命中率低时，折扣效果比预期小。系统提示随任务变化的结构会降低缓存效率。在[LLM推理成本降低50%的Deep-Thinking Ratio指标](/zh/blog/zh/deep-thinking-ratio-llm-cost-optimization)这篇文章中我也谈到了类似问题——成本优化从任务结构设计开始，而不是折扣率，这个结论在这里同样适用。
+在这个自动化流水线上应用Batch API后，我发现缓存命中率低时，折扣效果比预期小。系统提示随任务变化的结构会降低缓存效率。在[LLM推理成本降低50%的Deep-Thinking Ratio指标](/zh/blog/zh/deep-thinking-ratio-llm-cost-optimization/)这篇文章中我也谈到了类似问题——成本优化从任务结构设计开始，而不是折扣率，这个结论在这里同样适用。
 
 ## 选择模型前应避免的三个错误
 
@@ -235,7 +235,7 @@ DeepSeek比Claude Sonnet便宜8倍。但对于代码审查，先确认DeepSeek�
 
 ## 决策矩阵 — 何时选择哪个模型
 
-正如我在[AI智能体实际运营成本](/zh/blog/zh/ai-agent-cost-reality)分析文章中提到的，AI智能体的总成本远不止Token价格。但模型选择标准可以整理得比较清晰。
+正如我在[AI智能体实际运营成本](/zh/blog/zh/ai-agent-cost-reality/)分析文章中提到的，AI智能体的总成本远不止Token价格。但模型选择标准可以整理得比较清晰。
 
 | 使用场景 | 推荐模型 | 原因 |
 |---------|---------|------|
@@ -246,7 +246,7 @@ DeepSeek比Claude Sonnet便宜8倍。但对于代码审查，先确认DeepSeek�
 | 批量翻译、分类、摘要 | DeepSeek V4 + 缓存 | 输入成本接近于零 |
 | 安全敏感的内部代码处理 | Claude或GPT-5（美国数据中心） | 数据处理政策安全 |
 
-比模型选择更重要的是任务分离。即使在同一个流水线中，将"需要判断的步骤"路由到高端模型，将"重复处理步骤"路由到低价模型，可以大幅降低成本。我在[异构LLM智能体集群成本优化](/zh/blog/zh/heterogeneous-llm-agent-fleet-cost-optimization)中从架构层面探讨了这种方法。
+比模型选择更重要的是任务分离。即使在同一个流水线中，将"需要判断的步骤"路由到高端模型，将"重复处理步骤"路由到低价模型，可以大幅降低成本。我在[异构LLM智能体集群成本优化](/zh/blog/zh/heterogeneous-llm-agent-fleet-cost-optimization/)中从架构层面探讨了这种方法。
 
 还有一点值得一提："2026年很便宜"不是可以粗心的理由。使用量线性扩展成本。每月$50感觉微不足道，直到工作量扩大10倍变成$500。
 

@@ -79,7 +79,7 @@ Anthropic Agent Skills标准定义了一系列模块化的“技能”，AI代�
 - <strong>开放标准</strong>：该标准设计为独立于特定平台的开放规范，允许任何AI平台自由采用和集成。这将显著提高AI代理生态系统内的互操作性。
 - <strong>广泛的行业采用</strong>：微软、OpenAI、Atlassian、Figma、Cursor和GitHub等领先科技公司已采用该标准。此外，Canva、Stripe、Notion和Zapier等合作伙伴已基于该标准开发了各种预构建技能，扩展了代理的应用范围。
 - <strong>强大的功能性</strong>：技能赋予AI代理执行专业任务、理解可重复工作流程、甚至有效与新软件交互的能力。技能设计为易于共享、易于实现、功能强大且可在不同环境中移植。
-- <strong>智能上下文管理（渐进式披露）</strong>：为解决LLM上下文窗口的限制，该标准采用了名为“渐进式披露”（Progressive Disclosure）的创新方法。代理首先预加载所有已安装技能的元数据。然后，只有当用户的当前请求与特定技能的领域对齐时，代理才会加载该技能的完整`SKILL.md`文件。这通过高效利用所需信息，最大程度地减少了上下文窗口的限制。如何用实际代码实现这种上下文管理原理，可以在[Claude Skills实现指南](/zh/blog/zh/claude-skills-implementation-guide)中逐步查看。
+- <strong>智能上下文管理（渐进式披露）</strong>：为解决LLM上下文窗口的限制，该标准采用了名为“渐进式披露”（Progressive Disclosure）的创新方法。代理首先预加载所有已安装技能的元数据。然后，只有当用户的当前请求与特定技能的领域对齐时，代理才会加载该技能的完整`SKILL.md`文件。这通过高效利用所需信息，最大程度地减少了上下文窗口的限制。如何用实际代码实现这种上下文管理原理，可以在[Claude Skills实现指南](/zh/blog/zh/claude-skills-implementation-guide/)中逐步查看。
 
 ### 3. 企业功能
 
@@ -93,7 +93,7 @@ Agent Skills标准最初于2025年10月作为开发者功能推出，并在两�
 
 ### 1. 面向开发者的Agent Skills SDK
 
-开发者可以利用`agentskills.io`上提供的Agent Skills SDK开发自定义技能。`SKILL.md`文件结合了基于YAML的元数据和基于Markdown的详细说明，帮助代理轻松理解技能的目的和用法。这为代理与新工具和服务的无缝集成铺平了道路。自己编写技能的具体步骤和实用技巧，在[Anthropic Agent Skills实战指南](/zh/blog/zh/anthropic-agent-skills-practical-guide)中有详细介绍。
+开发者可以利用`agentskills.io`上提供的Agent Skills SDK开发自定义技能。`SKILL.md`文件结合了基于YAML的元数据和基于Markdown的详细说明，帮助代理轻松理解技能的目的和用法。这为代理与新工具和服务的无缝集成铺平了道路。自己编写技能的具体步骤和实用技巧，在[Anthropic Agent Skills实战指南](/zh/blog/zh/anthropic-agent-skills-practical-guide/)中有详细介绍。
 
 ### 2. Agent Skills在企业应用中的使用
 

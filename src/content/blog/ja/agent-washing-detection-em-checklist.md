@@ -166,7 +166,7 @@ class WashedAgent:
 
 <strong>質問:</strong> リソース制約がある場合、システムはトレードオフを認識しますか?
 
-真のエージェントは与えられた<strong>時間、トークン、[APIコスト](/ja/blog/ja/ai-agent-cost-reality)の制約内で最適な結果を導き出す</strong>ために戦略を調整します。エージェントウォッシングはリソース制約を認識せず、常に同じ方法で実行されます。
+真のエージェントは与えられた<strong>時間、トークン、[APIコスト](/ja/blog/ja/ai-agent-cost-reality/)の制約内で最適な結果を導き出す</strong>ために戦略を調整します。エージェントウォッシングはリソース制約を認識せず、常に同じ方法で実行されます。
 
 ```python
 # 真のエージェント: リソース認識
@@ -195,7 +195,7 @@ async def run_with_budget(self, task, token_budget=10000):
 
 <strong>質問:</strong> システムがなぜ特定の行動を選んだかを説明できますか?
 
-真のエージェントは<strong>[意思決定プロセスの透明なトレース](/ja/blog/ja/ai-agent-observability-production-guide)</strong>を提供します。エージェントウォッシングは「ブラックボックス」として機能するか、事前に作成された説明のみを返します。
+真のエージェントは<strong>[意思決定プロセスの透明なトレース](/ja/blog/ja/ai-agent-observability-production-guide/)</strong>を提供します。エージェントウォッシングは「ブラックボックス」として機能するか、事前に作成された説明のみを返します。
 
 ```mermaid
 graph TD

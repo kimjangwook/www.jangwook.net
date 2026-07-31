@@ -64,7 +64,7 @@ relatedPosts:
 
 In early 2025, Andrej Karpathy coined the term "Vibe Coding" - throw prompts at AI, copy the generated code, and hope it works. Great for prototypes, but it falls apart fast on larger projects.
 
-Enter <strong>Specification-Driven Development (SDD)</strong>. Write clear specifications in Markdown, and AI coding agents "compile" them into executable code. This approach is now being productized in [spec-driven AI IDEs like Amazon Kiro](/en/blog/en/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026). This isn't just a methodology shift - it's a fundamental transformation in how we build software with AI.
+Enter <strong>Specification-Driven Development (SDD)</strong>. Write clear specifications in Markdown, and AI coding agents "compile" them into executable code. This approach is now being productized in [spec-driven AI IDEs like Amazon Kiro](/en/blog/en/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026/). This isn't just a methodology shift - it's a fundamental transformation in how we build software with AI.
 
 ### The Limits of Vibe Coding
 
@@ -105,7 +105,7 @@ Specification-Driven Development is a methodology where you <strong>clearly defi
 
 2. <strong>Structured Workflow</strong>
    - Specify → Plan → Task → Implement
-   - Each phase clearly separated and traceable (it also connects to [Claude Code's 5 agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types))
+   - Each phase clearly separated and traceable (it also connects to [Claude Code's 5 agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/))
 
 3. <strong>AI as Tool, Developer as Designer</strong>
    - Developer decides "what" (architecture, business logic)
@@ -790,4 +790,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-<strong>Next Article</strong>: [AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized Agents](/en/blog/en/ai-agent-collaboration-patterns) covers orchestrating Architecture Agent, Coding Agent, Testing Agent, Security Agent, and DevOps Agent to build complex applications with real-world case studies.
+<strong>Next Article</strong>: [AI Agent Collaboration Patterns: Building Full-Stack Apps with 5 Specialized Agents](/en/blog/en/ai-agent-collaboration-patterns/) covers orchestrating Architecture Agent, Coding Agent, Testing Agent, Security Agent, and DevOps Agent to build complex applications with real-world case studies.

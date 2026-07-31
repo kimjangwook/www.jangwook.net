@@ -72,7 +72,7 @@ Claude, Cursor, Windsurf, Zed 등 주요 AI 코딩 도구들이 MCP를 표준 �
 
 물론 아직 생태계가 완전히 성숙하지는 않았다. 하지만 MCP 오픈 표준과 Linux Foundation 참여에서 확인했듯이, 이 방향성은 이미 업계 표준으로 굳어지는 중이다. 프로토콜 자체의 동작 원리가 궁금하다면 [공식 명세 페이지](https://modelcontextprotocol.io/specification)를 한 번 읽어보는 것이 좋다. 호스트, 클라이언트, 서버의 역할 구분과 JSON-RPC 2.0 메시지 흐름이 정리돼 있다.
 
-참고로 이 글은 TypeScript SDK를 다루지만, Python 쪽 진영도 비슷한 패턴을 따른다. Python으로 같은 작업을 해보고 싶다면 [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026) 글이 도움이 된다. 두 언어의 SDK 설계를 비교해보면 MCP 프로토콜의 공통 구조가 더 명확하게 보인다.
+참고로 이 글은 TypeScript SDK를 다루지만, Python 쪽 진영도 비슷한 패턴을 따른다. Python으로 같은 작업을 해보고 싶다면 [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/) 글이 도움이 된다. 두 언어의 SDK 설계를 비교해보면 MCP 프로토콜의 공통 구조가 더 명확하게 보인다.
 
 ## 환경 설정과 패키지 설치
 
@@ -316,7 +316,7 @@ await client.close();
 
 ## StdioServerTransport로 Claude와 실제 연동하기
 
-`InMemoryTransport`는 테스트와 개발 디버깅에는 완벽하지만, 실제 Claude Desktop이나 Cursor에 연결하려면 `StdioServerTransport`로 바꿔야 한다. 이게 MCP 서버의 표준 배포 방식이다. MCP가 아닌 Claude SDK에서 직접 도구를 정의하고 호출하는 방식이 궁금하다면 [Claude Agent SDK 도구 활용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)를 참고할 수 있다.
+`InMemoryTransport`는 테스트와 개발 디버깅에는 완벽하지만, 실제 Claude Desktop이나 Cursor에 연결하려면 `StdioServerTransport`로 바꿔야 한다. 이게 MCP 서버의 표준 배포 방식이다. MCP가 아닌 Claude SDK에서 직접 도구를 정의하고 호출하는 방식이 궁금하다면 [Claude Agent SDK 도구 활용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)를 참고할 수 있다.
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -619,7 +619,7 @@ MCP vs A2A vs Open Responses 프로토콜 비교에서 다뤘듯, 원격 MCP 서
 - 응답이 수십 KB를 넘는 대용량 데이터. AI 컨텍스트 윈도우를 잡아먹어 오히려 역효과가 난다. 이 경우는 도구 대신 리소스로 노출하거나, 결과를 페이지네이션하는 설계를 먼저 고민해야 한다.
 - 보안 경계가 엄격한 프로덕션 환경에서 인증·권한 관리를 직접 구현할 여력이 없을 때. 원격 HTTP 배포는 [공식 명세의 Security 섹션](https://modelcontextprotocol.io/specification)이 강조하듯 사용자 동의와 접근 제어를 별도로 설계해야 한다.
 
-판단이 애매하다면, AI가 **그 도구를 스스로 골라 호출할 필요가 있는가**를 먼저 물어보면 된다. 답이 "그렇다"면 MCP 서버가 맞고, "내가 코드에서 직접 부르면 된다"면 일반 함수나 라이브러리가 낫다. 로컬에서 프라이빗하게 운영하는 구체적 사례는 [로컬 LLM과 프라이빗 MCP 서버 구축](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp) 글에서 더 다뤘다.
+판단이 애매하다면, AI가 **그 도구를 스스로 골라 호출할 필요가 있는가**를 먼저 물어보면 된다. 답이 "그렇다"면 MCP 서버가 맞고, "내가 코드에서 직접 부르면 된다"면 일반 함수나 라이브러리가 낫다. 로컬에서 프라이빗하게 운영하는 구체적 사례는 [로컬 LLM과 프라이빗 MCP 서버 구축](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp/) 글에서 더 다뤘다.
 
 ## 정리: 나는 이게 AI 도구 배포의 현실적인 표준이 될 것이라고 본다
 
@@ -629,7 +629,7 @@ MCP vs A2A vs Open Responses 프로토콜 비교에서 다뤘듯, 원격 MCP 서
 
 그럼에도 불구하고, 공개 REST API 하나를 MCP 도구로 래핑해 실제 데이터 조회까지 동작하는 end-to-end 파이프라인을 API 키 없이 30분 안에 완성할 수 있다는 것은 분명히 매력적이다. Claude, Cursor, Windsurf 등이 MCP를 표준으로 채택한 상황에서, 자신만의 도구를 여러 AI 플랫폼에 동시에 노출하는 가장 현실적인 방법이 MCP 서버다.
 
-다음 단계로는 실제 사내 시스템 하나를 골라서 MCP 도구로 래핑해보는 것을 권한다. 코드 구조는 이 글에서 다룬 것이 전부다. 나머지는 해당 시스템의 API를 이해하는 일이다. Claude Code에서 MCP와 슬래시 커맨드, 훅을 조합해 자동화 워크플로우를 구성하는 더 넓은 그림은 [Claude Code 마스터클래스 1편: 프롬프트에서 에이전트로](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent)에서 확인할 수 있다.
+다음 단계로는 실제 사내 시스템 하나를 골라서 MCP 도구로 래핑해보는 것을 권한다. 코드 구조는 이 글에서 다룬 것이 전부다. 나머지는 해당 시스템의 API를 이해하는 일이다. Claude Code에서 MCP와 슬래시 커맨드, 훅을 조합해 자동화 워크플로우를 구성하는 더 넓은 그림은 [Claude Code 마스터클래스 1편: 프롬프트에서 에이전트로](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent/)에서 확인할 수 있다.
 
 ---
 

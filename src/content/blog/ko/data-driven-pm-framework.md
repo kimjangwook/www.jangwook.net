@@ -489,7 +489,7 @@ p < 0.05 달성해도 <strong>효과 크기가 작으면 실행 가치 없을 �
 - Effective Catalog Size: 실제 시청되는 콘텐츠 비율
 - Take Rate: 추천 클릭 후 시청 전환율
 
-<strong>결과</strong>: 추천 알고리즘이 연간 <strong>$1B 이상의 가치</strong> 창출 (이탈 방지). 이러한 추천 시스템을 직접 구축하는 방법은 [Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템](/ko/blog/ko/ai-content-recommendation-system)에서 자세히 다룹니다.
+<strong>결과</strong>: 추천 알고리즘이 연간 <strong>$1B 이상의 가치</strong> 창출 (이탈 방지). 이러한 추천 시스템을 직접 구축하는 방법은 [Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템](/ko/blog/ko/ai-content-recommendation-system/)에서 자세히 다룹니다.
 
 ### 2. Spotify: Discover Weekly
 
@@ -726,4 +726,4 @@ graph LR
 
 ---
 
-데이터는 PM의 의사결정을 <strong>더 빠르고, 정확하고, 자신감 있게</strong> 만들어준다. [AI 에이전트에게 페르소나를 부여했을 때 나타나는 의사결정 패턴](/ko/blog/ko/ai-agent-persona-analysis)처럼, 데이터 기반 접근이 AI 시대에도 핵심 경쟁력이 된다. 오늘부터 작은 지표 하나를 추적하는 것으로 시작해보라. 3개월 후, 완전히 다른 수준의 PM이 되어 있을 것이다.
+데이터는 PM의 의사결정을 <strong>더 빠르고, 정확하고, 자신감 있게</strong> 만들어준다. [AI 에이전트에게 페르소나를 부여했을 때 나타나는 의사결정 패턴](/ko/blog/ko/ai-agent-persona-analysis/)처럼, 데이터 기반 접근이 AI 시대에도 핵심 경쟁력이 된다. 오늘부터 작은 지표 하나를 추적하는 것으로 시작해보라. 3개월 후, 완전히 다른 수준의 PM이 되어 있을 것이다.

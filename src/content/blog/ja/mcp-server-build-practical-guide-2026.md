@@ -57,7 +57,7 @@ MCPサーバーを「使う」記事は山ほどあるが、「自分で作る�
 
 ## なぜ自分で作るのか
 
-[MCPサーバーツールキット完全ガイド](/ja/blog/ja/mcp-servers-toolkit-introduction)で紹介したように、すでに何百もの公開MCPサーバーが存在する。それでも自分で作るべき理由がある。
+[MCPサーバーツールキット完全ガイド](/ja/blog/ja/mcp-servers-toolkit-introduction/)で紹介したように、すでに何百もの公開MCPサーバーが存在する。それでも自分で作るべき理由がある。
 
 まず、社内システムとの連携。公開サーバーが社内のJIRA、ビルドシステム、デプロイパイプラインを知るはずがない。
 
@@ -282,7 +282,7 @@ def get_app_settings() -> str:
 
 正直に言うと、Streamable HTTP MCPサーバーを本番環境に上げるのはまだ注意が必要な領域だ。
 
-[MCP セキュリティ危機 — 60日で30のCVE](/ja/blog/ja/mcp-security-crisis-30-cves-enterprise-hardening)で触れたように、MCPエコシステムはセキュリティ面でまだ成熟していない。自作サーバーで特に注意すべき点:
+[MCP セキュリティ危機 — 60日で30のCVE](/ja/blog/ja/mcp-security-crisis-30-cves-enterprise-hardening/)で触れたように、MCPエコシステムはセキュリティ面でまだ成熟していない。自作サーバーで特に注意すべき点:
 
 <strong>認証未実装のリスク</strong>: FastMCPのデフォルト設定には認証がない。社内ネットワーク限定なら問題ないが、インターネットに公開する場合は必ずAPIキーやOAuthを追加すること。
 
@@ -299,7 +299,7 @@ mcp = FastMCP("secure-server", auth=auth)
 
 <strong>入力検証</strong>: ユーザーの入力をシステムコマンドやクエリに直接渡さないよう注意が必要だ。Pydanticモデルで型を強制すると基本的な入力検証になる。
 
-<strong>ロギング</strong>: どのAIエージェントがいつどのツールを呼んだか必ずログを残すこと。[MCP Gateway — AIエージェントのツール呼び出しを誰が制御するか](/ja/blog/ja/mcp-gateway-agent-traffic-control)で触れたように、エージェントトラフィックの監視は運用の必須要件だ。
+<strong>ロギング</strong>: どのAIエージェントがいつどのツールを呼んだか必ずログを残すこと。[MCP Gateway — AIエージェントのツール呼び出しを誰が制御するか](/ja/blog/ja/mcp-gateway-agent-traffic-control/)で触れたように、エージェントトラフィックの監視は運用の必須要件だ。
 
 ## ローカルテスト方法
 

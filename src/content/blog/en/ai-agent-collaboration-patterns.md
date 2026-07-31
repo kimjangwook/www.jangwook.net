@@ -78,7 +78,7 @@ One developer orchestrating five specialized agents to build a full-stack applic
 - <strong>Scalability</strong>: Functionality expands by adding new agents
 - <strong>Resilience</strong>: One agent's failure doesn't affect the entire system
 
-In practice, Toyota saved <strong>over 10,000 hours annually</strong> with multi-agent systems, while an e-commerce API project achieved <strong>70% bug reduction and 75% faster refactoring</strong>. Results like these hinge on picking the right orchestration tooling, though. Before going to production, it helps to weigh the [LangGraph, CrewAI, and Dapr framework comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) so you avoid costly redesigns later.
+In practice, Toyota saved <strong>over 10,000 hours annually</strong> with multi-agent systems, while an e-commerce API project achieved <strong>70% bug reduction and 75% faster refactoring</strong>. Results like these hinge on picking the right orchestration tooling, though. Before going to production, it helps to weigh the [LangGraph, CrewAI, and Dapr framework comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/) so you avoid costly redesigns later.
 
 ## Architecture of 5 Specialized Agents
 
@@ -661,7 +661,7 @@ graph TB
 - MCP: When agents access tools or memory
 - A2A: When agents communicate directly with each other
 
-For a deeper look at running MCP and A2A together in production, see the [A2A and MCP hybrid architecture production guide](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide).
+For a deeper look at running MCP and A2A together in production, see the [A2A and MCP hybrid architecture production guide](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide/).
 
 <strong>A2A Message Example</strong>:
 ```json
@@ -1067,4 +1067,4 @@ A new era has arrived where you can orchestrate 5 AI agents to build full-stack 
 
 ---
 
-<strong>Next Article</strong>: [Self-Healing AI Systems: Building Agents That Automatically Fix Bugs Without Human Intervention](/en/blog/en/self-healing-ai-systems) will cover implementation methods for Self-Healing Systems, one of the core trends of 2025, with practical code examples.
+<strong>Next Article</strong>: [Self-Healing AI Systems: Building Agents That Automatically Fix Bugs Without Human Intervention](/en/blog/en/self-healing-ai-systems/) will cover implementation methods for Self-Healing Systems, one of the core trends of 2025, with practical code examples.

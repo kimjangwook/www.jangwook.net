@@ -292,7 +292,7 @@ with client.chat.completions.stream(
     final = stream.get_final_completion()
 ```
 
-`stream.text_stream` on the Anthropic side is ergonomically nicer for pure text output. The [Vercel AI SDK approach to Claude streaming agents](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026) builds on a similar pattern and is worth reading if you're taking streaming to production.
+`stream.text_stream` on the Anthropic side is ergonomically nicer for pure text output. The [Vercel AI SDK approach to Claude streaming agents](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026/) builds on a similar pattern and is worth reading if you're taking streaming to production.
 
 ## Anthropic-Exclusive: Prompt Caching, Extended Thinking, Citations
 
@@ -314,7 +314,7 @@ client.messages.create(
 )
 ```
 
-The practical impact is real — repeated API calls against the same large document see significant token cost reductions on cached portions. The [Claude API Prompt Caching guide](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide) covers the four patterns for applying this in production.
+The practical impact is real — repeated API calls against the same large document see significant token cost reductions on cached portions. The [Claude API Prompt Caching guide](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide/) covers the four patterns for applying this in production.
 
 **Extended Thinking**
 
@@ -370,7 +370,7 @@ The honest answer: it depends on which model you're using, and which features yo
 
 **Pick OpenAI SDK when**: you need voice interfaces or live interaction (Realtime API), you want the Assistants API's file search + code interpreter combination, you need org/project-level billing separation, or you're fine-tuning and managing custom models.
 
-**Running both?** Put an abstraction layer in front. [PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) handles multi-provider routing at the agent level, which lets you avoid propagating tool format differences throughout your codebase.
+**Running both?** Put an abstraction layer in front. [PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) handles multi-provider routing at the agent level, which lets you avoid propagating tool format differences throughout your codebase.
 
 ## What This Comparison Actually Reveals
 

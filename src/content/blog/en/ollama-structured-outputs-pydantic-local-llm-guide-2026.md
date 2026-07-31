@@ -210,7 +210,7 @@ Dispatch: OK (type-safe)
 
 Because `tool_name` is typed as `Literal["web_search", "read_file", ...]`, `tool_call.tool_name` is always one of those four values. If the model invents a nonexistent tool name, Pydantic throws `ValidationError`. The `if tool_call.tool_name == "web_search"` branch is safe to write.
 
-This is architecturally the same as function calling in cloud APIs. Comparing it with [Claude Agent SDK's Tool Use patterns](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) shows an interesting design difference. Cloud LLMs handle tool selection natively at the model level, while local Ollama needs an explicit JSON schema plus a Pydantic validation layer.
+This is architecturally the same as function calling in cloud APIs. Comparing it with [Claude Agent SDK's Tool Use patterns](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/) shows an interesting design difference. Cloud LLMs handle tool selection natively at the model level, while local Ollama needs an explicit JSON schema plus a Pydantic validation layer.
 
 ## Gemma4 and Schema Complexity: Limitations I Found
 
@@ -222,7 +222,7 @@ Honestly, it doesn't work perfectly in every case. Testing with Gemma4:e4b (4-bi
 
 **Schema size.** A large Pydantic model's JSON schema can reach hundreds of tokens. That occupies context window space, reducing the room available for the actual prompt. Complex schemas need stronger models.
 
-Once you've deployed Ollama as an API server (covered in the [Ollama FastAPI production guide](/en/blog/en/ollama-fastapi-production-deployment-guide-2026)), switching models at runtime based on schema complexity becomes a viable optimization.
+Once you've deployed Ollama as an API server (covered in the [Ollama FastAPI production guide](/en/blog/en/ollama-fastapi-production-deployment-guide-2026/)), switching models at runtime based on schema complexity becomes a viable optimization.
 
 ## Nested Schemas in Practice: What to Watch For
 
@@ -324,7 +324,7 @@ This only covers the simplest cases. A real agent needs a bit more.
 
 **Streaming.** With `stream: true`, you can receive the JSON incrementally as it generates. Pair with a streaming JSON parser like `ijson` for memory-efficient handling of large responses.
 
-**Model switching.** Route simple extractions to `gemma4:e4b` (fast) and complex nested schemas to `gemma4:12b-it-qat` (accurate) at runtime. [Structuring an entire agent with Pydantic AI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) shows how to abstract this decision to the framework level.
+**Model switching.** Route simple extractions to `gemma4:e4b` (fast) and complex nested schemas to `gemma4:12b-it-qat` (accurate) at runtime. [Structuring an entire agent with Pydantic AI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) shows how to abstract this decision to the framework level.
 
 If you're already running a Gemma4-based agent locally, adding the `format` parameter today is a one-line change with a measurable reliability improvement. Especially anywhere in the agent loop where an invalid response immediately causes a downstream error.
 

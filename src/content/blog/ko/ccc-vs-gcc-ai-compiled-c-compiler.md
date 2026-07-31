@@ -61,7 +61,7 @@ Anthropic이 2026년 2월 5일에 공개한 <strong>CCC(Claude's C Compiler)</st
 
 ## CCC란 무엇인가
 
-CCC는 Anthropic Safeguards팀의 Nicholas Carlini가 설계한 <strong>에이전트 팀(Agent Teams)</strong> 방식으로 개발됐다. [Claude Code의 에이전트 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 다루는 것처럼, 핵심 아이디어는 간단하다.
+CCC는 Anthropic Safeguards팀의 Nicholas Carlini가 설계한 <strong>에이전트 팀(Agent Teams)</strong> 방식으로 개발됐다. [Claude Code의 에이전트 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 다루는 것처럼, 핵심 아이디어는 간단하다.
 
 > 16개의 Claude 인스턴스가 공유 코드베이스에서 병렬로 작업하며, 사람의 개입 없이 컴파일러를 완성한다.
 
@@ -151,7 +151,7 @@ CCC 프로젝트의 진짜 의미는 "GCC를 이겼다"가 아니다. 핵심은 
 
 ### 2. 병렬화의 힘
 
-16개 에이전트가 병렬로 작업한다는 건 단순히 속도가 빨라진다는 의미가 아니다. [Git Worktree를 활용한 Claude Code 병렬 세션](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)에서 실제 적용법을 볼 수 있듯이, 각 에이전트가 <strong>전문 역할을 분담</strong>한다.
+16개 에이전트가 병렬로 작업한다는 건 단순히 속도가 빨라진다는 의미가 아니다. [Git Worktree를 활용한 Claude Code 병렬 세션](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)에서 실제 적용법을 볼 수 있듯이, 각 에이전트가 <strong>전문 역할을 분담</strong>한다.
 
 - 기능 구현 에이전트
 - 중복 코드 통합 에이전트
@@ -212,7 +212,7 @@ Linux 커널 컴파일 단계에서 흥미로운 문제가 발생했다. 수백 
 1. <strong>테스트가 핵심이다</strong>: AI 에이전트의 품질은 테스트 환경의 품질에 직결된다
 2. <strong>아키텍처 설계는 아직 사람의 몫이다</strong>: SSA IR 같은 고수준 설계 결정은 여전히 사람이 내렸다
 3. <strong>80% 완성도의 가치를 과소평가하지 마라</strong>: 완벽하지 않아도 동작하는 결과물은 그 자체로 가치가 있다
-4. <strong>병렬 에이전트 시대가 왔다</strong>: 하나의 AI가 아니라 팀으로 동작하는 AI의 가능성이 열렸다. [멀티 에이전트 오케스트레이션 개선 사례](/ko/blog/ko/multi-agent-orchestration-improvement)에서 더 구체적인 패턴을 확인할 수 있다
+4. <strong>병렬 에이전트 시대가 왔다</strong>: 하나의 AI가 아니라 팀으로 동작하는 AI의 가능성이 열렸다. [멀티 에이전트 오케스트레이션 개선 사례](/ko/blog/ko/multi-agent-orchestration-improvement/)에서 더 구체적인 패턴을 확인할 수 있다
 
 ## 결론
 

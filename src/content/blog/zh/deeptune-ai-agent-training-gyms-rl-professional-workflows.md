@@ -109,11 +109,11 @@ RL通过**基于经验的学习**来解决这些问题。通过数千次模拟�
 
 长期以来，AI Agent落地的最大瓶颈是**"模型性能"**。但随着GPT-4、Claude、Gemini等Foundation Model的性能趋于收敛，瓶颈正在转向**"特定业务的适配（Adaptation）"**。
 
-Deeptune的方法旨在从结构上解决这一适配问题。对工程组织而言，这意味着我们正在从用Prompt"说服"通用LLM的时代，迈向**部署经RL训练的专业Agent**的时代。选择合适的[Agent编排框架](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)成为这一新范式下的关键设计决策。
+Deeptune的方法旨在从结构上解决这一适配问题。对工程组织而言，这意味着我们正在从用Prompt"说服"通用LLM的时代，迈向**部署经RL训练的专业Agent**的时代。选择合适的[Agent编排框架](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)成为这一新范式下的关键设计决策。
 
 ### 2. "AI Agent DevOps"时代的到来
 
-正如CI/CD流水线已成为软件开发的标配，**[AI Agent的训练-评估-部署流水线](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)**也将很快成为必需品。Deeptune的RL环境承担的正是该流水线中的"训练"环节。
+正如CI/CD流水线已成为软件开发的标配，**[AI Agent的训练-评估-部署流水线](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)**也将很快成为必需品。Deeptune的RL环境承担的正是该流水线中的"训练"环节。
 
 ```mermaid
 graph TB
@@ -192,7 +192,7 @@ graph TB
 
 5. **评估模拟环境解决方案**：评估Deeptune等第三方解决方案，同时验证它们能否处理自身业务环境的特殊性。拥有大量自研系统的组织需要谨慎评估环境构建成本。
 
-6. **构建Agent评估框架**：在将RL训练的Agent部署到生产环境之前，准备系统性的基准测试和安全性测试框架。[Managed Agent生产部署指南](/zh/blog/zh/claude-managed-agents-production-deployment-guide)提供了真实案例中的评估方法。
+6. **构建Agent评估框架**：在将RL训练的Agent部署到生产环境之前，准备系统性的基准测试和安全性测试框架。[Managed Agent生产部署指南](/zh/blog/zh/claude-managed-agents-production-deployment-guide/)提供了真实案例中的评估方法。
 
 ### 长期（18个月以上）
 

@@ -340,7 +340,7 @@ jobs:
         run: uv run pytest
 ```
 
-PythonでMCPサーバーを構築する際も同じCIパターンが使える。[FastMCP](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)の依存関係を`uv add fastmcp`で追加し、GitHub Actionsで`uv sync`インストールすれば一貫したビルド環境を維持できる。
+PythonでMCPサーバーを構築する際も同じCIパターンが使える。[FastMCP](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)の依存関係を`uv add fastmcp`で追加し、GitHub Actionsで`uv sync`インストールすれば一貫したビルド環境を維持できる。
 
 ## uv toolでCLIツールを管理する
 
@@ -460,7 +460,7 @@ uv remove openai
 
 - torch、CUDA、tensorflowのようにcondaチャンネルでビルドされたバイナリに依存するディープラーニングプロジェクト。uvはPyPIベースなのでこの領域は直接扱えない。CUDAバージョン合わせが肝心なら、conda（またはconda + uv併用）が現実的だ。
 
-一言でまとめると、**APIを呼び出すエージェント/バックエンド寄りのPythonプロジェクトならuv、GPUバイナリに深く依存するML学習プロジェクトならconda**が出発点だ。ライブラリ選定の観点は[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)で詳しく扱っており、型安全なエージェントを作る際の依存関係選択は[Pydantic AI型安全エージェントチュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)が参考になる。
+一言でまとめると、**APIを呼び出すエージェント/バックエンド寄りのPythonプロジェクトならuv、GPUバイナリに深く依存するML学習プロジェクトならconda**が出発点だ。ライブラリ選定の観点は[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026/)で詳しく扱っており、型安全なエージェントを作る際の依存関係選択は[Pydantic AI型安全エージェントチュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)が参考になる。
 
 ## 正直に言うと、uvがまだ手当てできないこと
 
@@ -520,4 +520,4 @@ uv self update
 - [GitHub Actionsでuvを使う](https://docs.astral.sh/uv/guides/integration/github/) — CI統合と`astral-sh/setup-uv`アクション
 - [Astral公式ドキュメントハブ](https://docs.astral.sh/) — uv、Ruff、tyを開発するAstralチームのドキュメント集
 
-uvで環境をきれいに整えたら、次の自然なステップはローカルの可観測性だ。自分で立てた環境の上にLLMトレーシングを載せる方法は、[Langfuse v3 セルフホスティング完全ガイド](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026)で続けて扱っている。
+uvで環境をきれいに整えたら、次の自然なステップはローカルの可観測性だ。自分で立てた環境の上にLLMトレーシングを載せる方法は、[Langfuse v3 セルフホスティング完全ガイド](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026/)で続けて扱っている。

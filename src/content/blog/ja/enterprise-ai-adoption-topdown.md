@@ -94,7 +94,7 @@ relatedPosts:
 
 ### 18%pの信頼格差
 
-Writer Reportの調査によると、AI導入に関する企業への信頼度において、<strong>シニアレベルとフロントライン従業員の間に18ポイントの格差</strong>が存在しています。[AI時代に働く開発者・従業員が抱える現実的な不安と向き合い方](/ja/blog/ja/ai-era-career-advice-for-juniors)を理解しておくと、変革管理コミュニケーションの質を高めることができます：
+Writer Reportの調査によると、AI導入に関する企業への信頼度において、<strong>シニアレベルとフロントライン従業員の間に18ポイントの格差</strong>が存在しています。[AI時代に働く開発者・従業員が抱える現実的な不安と向き合い方](/ja/blog/ja/ai-era-career-advice-for-juniors/)を理解しておくと、変革管理コミュニケーションの質を高めることができます：
 
 ```mermaid
 graph LR
@@ -181,7 +181,7 @@ McKinseyの調査が示すように、<strong>AI成功の最大の障壁はリ�
 2. <strong>強制力と標準化</strong>
    - 組織全体での統一基準
    - 抵抗の克服
-   - 変革の推進力([KPI圧力がAIエージェントに倫理違反を起こさせるリスク](/ja/blog/ja/ai-agent-kpi-ethics)を事前に認識し、ガバナンスフレームワークを設計することも重要です)
+   - 変革の推進力([KPI圧力がAIエージェントに倫理違反を起こさせるリスク](/ja/blog/ja/ai-agent-kpi-ethics/)を事前に認識し、ガバナンスフレームワークを設計することも重要です)
 
 3. <strong>リスク管理</strong>
    - 体系的なリスク評価
@@ -359,7 +359,7 @@ graph LR
 2. <strong>現実的な期待値設定</strong>
    - 短期的な失敗を許容
    - 長期的なビジョンを持つ
-   - ROIの測定方法を事前に定義([AIエージェント運用の実際のコスト構造](/ja/blog/ja/ai-agent-cost-reality)を参照すると予算超過リスクを事前に把握できます)
+   - ROIの測定方法を事前に定義([AIエージェント運用の実際のコスト構造](/ja/blog/ja/ai-agent-cost-reality/)を参照すると予算超過リスクを事前に把握できます)
 
 3. <strong>組織文化の変革</strong>
    - 実験と学習を奨励

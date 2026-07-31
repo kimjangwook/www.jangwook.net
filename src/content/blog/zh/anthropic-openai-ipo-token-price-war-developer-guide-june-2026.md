@@ -64,7 +64,7 @@ OpenAI在一周后的6月8日完成了同样的程序。OpenAI基于2026年3月�
 
 在上市前提升企业价值需要三个指标：营收规模、增长率，以及市场主导地位的叙事。目前两家公司在第三项上都受到中国开源模型的压制。
 
-[之前分析Anthropic定价政策转变的文章](/zh/blog/zh/anthropic-usage-caps-llm-pricing-disruption-analysis-2026)中提到，Anthropic今年初封锁了OpenClaw等第三方Agent的订阅API访问，转向消费型变现。API消费量越多，ARR就越高。让开发者用得更多，就能强化IPO故事。
+[之前分析Anthropic定价政策转变的文章](/zh/blog/zh/anthropic-usage-caps-llm-pricing-disruption-analysis-2026/)中提到，Anthropic今年初封锁了OpenClaw等第三方Agent的订阅API访问，转向消费型变现。API消费量越多，ARR就越高。让开发者用得更多，就能强化IPO故事。
 
 DeepSeek V3.2目前以输入$0.28/MTok、输出$0.42/MTok提供GPT-5级别的编码性能。这比Claude Sonnet 4.6（$3.00/$15.00）在输入端便宜约10倍，比Opus 4.8（$5.00/$25.00）便宜约18倍。Qwen3-Max也处于类似价位。如果西方模型维持现价，企业客户就有动力将非敏感工作流迁移到中国模型。
 
@@ -74,7 +74,7 @@ DeepSeek V3.2目前以输入$0.28/MTok、输出$0.42/MTok提供GPT-5级别的编
 
 约$470亿ARR这个数字不只是一个大数，它揭示了Anthropic在迈向上市的过程中如何构建其收入结构。
 
-Anthropic目前有三个主要收入来源：API消费型、企业合同和Claude.ai订阅。增长最快的是API消费型。这与年初[封锁第三方工具订阅访问](/zh/blog/zh/anthropic-usage-caps-llm-pricing-disruption-analysis-2026)的战略直接相关。切断廉价订阅路由，迫使开发者直接走API计费，消耗的每个token都直接体现在ARR中。
+Anthropic目前有三个主要收入来源：API消费型、企业合同和Claude.ai订阅。增长最快的是API消费型。这与年初[封锁第三方工具订阅访问](/zh/blog/zh/anthropic-usage-caps-llm-pricing-disruption-analysis-2026/)的战略直接相关。切断廉价订阅路由，迫使开发者直接走API计费，消耗的每个token都直接体现在ARR中。
 
 对于IPO，投资者重视的不只是当前收入，而是收入增速及其可持续性。如果半年前ARR是$200亿，现在是$470亿，那就是2.35倍的增长。在IPO路演中维持这种势头非常有价值，而实现这一点的手段之一就是通过适度降价来扩大用量。
 
@@ -91,7 +91,7 @@ Anthropic目前有三个主要收入来源：API消费型、企业合同和Claud
 - **无缓存**：Claude Sonnet 4.6 → $0.18 / Claude Haiku 4.5 → $0.06
 - **80%缓存命中**：Claude Sonnet 4.6 → 约$0.072 / Claude Haiku 4.5 → 约$0.024
 
-对于反复使用大型代码库或长系统提示的工作流，实际成本可以降至标价的30〜40%。结合[Claude Fable 5的$10/$50定价](/zh/blog/zh/claude-fable-5-mythos-public-api-developer-analysis-2026)一起看，可以发现Anthropic在用高端模型维持溢价的同时，也在低端通过Haiku保持竞争力。
+对于反复使用大型代码库或长系统提示的工作流，实际成本可以降至标价的30〜40%。结合[Claude Fable 5的$10/$50定价](/zh/blog/zh/claude-fable-5-mythos-public-api-developer-analysis-2026/)一起看，可以发现Anthropic在用高端模型维持溢价的同时，也在低端通过Haiku保持竞争力。
 
 ## 上市后开发者真正需要警惕的风险
 
@@ -99,7 +99,7 @@ Anthropic目前有三个主要收入来源：API消费型、企业合同和Claud
 
 **第一，股东压力会改变价格策略。** 非上市公司可以通过降价来扩大市场份额，但上市公司面临季度利润率改善的压力。AWS、Azure、GCP都经历了上市初期激进降价、掌控市场后再提价的过程。没有理由认为两家公司上市后不会走同样的路。
 
-**第二，锁定风险是真实的。** Claude Code、Cursor、Windsurf等AI编程工具都高度依赖Anthropic Claude。代码库和工作流越是针对特定模型优化，日后价格上涨时的切换成本就越高。[Claude Code 6月更新](/zh/blog/zh/claude-code-june-2026-new-features-changelog-developer-guide)中可以看到这种深度集成还在进一步加深。
+**第二，锁定风险是真实的。** Claude Code、Cursor、Windsurf等AI编程工具都高度依赖Anthropic Claude。代码库和工作流越是针对特定模型优化，日后价格上涨时的切换成本就越高。[Claude Code 6月更新](/zh/blog/zh/claude-code-june-2026-new-features-changelog-developer-guide/)中可以看到这种深度集成还在进一步加深。
 
 **第三，中国模型的数据信任问题尚未解决。** 无论DeepSeek多便宜，将企业内部代码库或客户数据放在中国服务器上处理，在现实中会遭到法务和安全团队的反对。在欧盟GDPR、美国国防/医疗监管环境下，选择余地更窄。在这一点上，Anthropic和OpenAI具备中国模型难以替代的企业级可信度。
 

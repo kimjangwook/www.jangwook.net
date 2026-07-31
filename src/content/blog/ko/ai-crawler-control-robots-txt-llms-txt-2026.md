@@ -121,8 +121,8 @@ Sitemap: https://example.com/sitemap.xml
 
 물론 이건 "인용 트래픽을 원하는 사이트"의 기본값이다. 유료 콘텐츠나 커뮤니티 아카이브처럼 인용조차 원치 않는 사이트라면 검색 봇도 막는 게 맞다. 정답이 하나는 아니다. 다만 대부분의 블로그·문서 사이트는 이 "학습 거부 + 인용 허용" 조합이 합리적인 출발점이라고 본다.
 
-크롤러가 페이지에 도착한 뒤 실제로 무엇을 읽어가느냐는 또 다른 층위의 문제다. 그 부분은 [LocalBusiness 구조화 데이터를 서버사이드로 내보내는 이야기](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026)에서 따로 다뤘다. robots.txt가 "누구를 들일까"라면, 마크업은 "들어온 봇에게 무엇을 보여줄까"다.
-그리고 여러 언어로 운영하는 사이트라면, 위 robots.txt의 Sitemap 지시문이 실어 나르는 hreflang 신호가 실제로 양방향으로 맞물리는지도 따로 확인해야 한다. 그 감사 과정은 [내 4개 언어 블로그의 hreflang을 직접 감사한 기록](/ko/blog/ko/hreflang-reciprocity-audit-multilingual-2026)에 정리했다.
+크롤러가 페이지에 도착한 뒤 실제로 무엇을 읽어가느냐는 또 다른 층위의 문제다. 그 부분은 [LocalBusiness 구조화 데이터를 서버사이드로 내보내는 이야기](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026/)에서 따로 다뤘다. robots.txt가 "누구를 들일까"라면, 마크업은 "들어온 봇에게 무엇을 보여줄까"다.
+그리고 여러 언어로 운영하는 사이트라면, 위 robots.txt의 Sitemap 지시문이 실어 나르는 hreflang 신호가 실제로 양방향으로 맞물리는지도 따로 확인해야 한다. 그 감사 과정은 [내 4개 언어 블로그의 hreflang을 직접 감사한 기록](/ko/blog/ko/hreflang-reciprocity-audit-multilingual-2026/)에 정리했다.
 
 
 ## 직접 검증했다: 규칙이 정말 의도대로 먹는가
@@ -184,7 +184,7 @@ Disallow: /admin/
 
 즉 같은 robots.txt를 두고 표준 파서는 "허용", 진짜 Googlebot은 "차단"이라고 답한다. 이 불일치는 사소해 보이지만 실무에서 위험하다. 로컬 스크립트나 어떤 라이브러리로 robots.txt를 "테스트했더니 통과"라고 안심했는데, 정작 그 파서가 Google의 최장 일치 규칙을 구현하지 않았다면, 실제로는 막히거나 열려버릴 수 있다는 뜻이다.
 
-여기서 내 결론은 이렇다. <strong>robots.txt 검증은 반드시 그 크롤러가 실제로 쓰는 규칙으로 확인해야 한다.</strong> Google이라면 Search Console의 robots.txt 테스터, OpenAI라면 공식 문서의 봇별 동작을 기준으로 봐야 한다. 범용 파서 하나로 "됐다"고 넘기지 마라. 내가 오늘 발견한 이 한 줄이 그 증거다. (참고로 이런 "도구가 통과시켰다고 다 통과가 아니다"라는 함정은 접근성에서도 똑같이 나타난다. [Lighthouse 100점이 WCAG 준수를 뜻하지 않는 것](/ko/blog/ko/a11y-lighthouse-audit-fix-2026)과 정확히 같은 종류의 착시다.)
+여기서 내 결론은 이렇다. <strong>robots.txt 검증은 반드시 그 크롤러가 실제로 쓰는 규칙으로 확인해야 한다.</strong> Google이라면 Search Console의 robots.txt 테스터, OpenAI라면 공식 문서의 봇별 동작을 기준으로 봐야 한다. 범용 파서 하나로 "됐다"고 넘기지 마라. 내가 오늘 발견한 이 한 줄이 그 증거다. (참고로 이런 "도구가 통과시켰다고 다 통과가 아니다"라는 함정은 접근성에서도 똑같이 나타난다. [Lighthouse 100점이 WCAG 준수를 뜻하지 않는 것](/ko/blog/ko/a11y-lighthouse-audit-fix-2026/)과 정확히 같은 종류의 착시다.)
 
 ## Google-Extended의 함정: AI Overviews는 못 막는다
 

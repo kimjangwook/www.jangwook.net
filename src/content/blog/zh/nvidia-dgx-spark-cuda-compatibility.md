@@ -102,7 +102,7 @@ graph TD
 
 - <strong>Triton</strong>：已打补丁回退到sm_80代码路径（[GitHub Issue #8335](https://github.com/triton-lang/triton/issues/8335)）
 - <strong>众多CUDA库</strong>：无法识别sm_121，导致构建失败或运行时错误
-- <strong>Blackwell优化功能</strong>：[FP4/FP6量化](/zh/blog/zh/nvidia-llm-inference-cost-reduction)等Blackwell专属功能不可用
+- <strong>Blackwell优化功能</strong>：[FP4/FP6量化](/zh/blog/zh/nvidia-llm-inference-cost-reduction/)等Blackwell专属功能不可用
 
 更令人担忧的是，NVIDIA论坛工作人员引用了<strong>不存在的软件版本和发布</strong>来声称问题已解决。这被怀疑是LLM幻觉，也引发了对NVIDIA客户支持质量的担忧。
 
@@ -123,7 +123,7 @@ graph TD
 3. <strong>必须验证软件生态系统</strong>：实际想用的软件能否运行比硬件规格更重要
 4. <strong>等待早期用户评测</strong>：特别是新品类产品，确认实际使用评测后再做购买决定
 
-进行本地LLM硬件选择时，[DDR5与GPU显存成本分析](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm)也值得参考。
+进行本地LLM硬件选择时，[DDR5与GPU显存成本分析](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm/)也值得参考。
 
 ## 与Apple Silicon的对比
 
@@ -137,7 +137,7 @@ graph TD
 | 软件兼容性 | 部分 | MLX生态系统成熟 |
 | 价格 | ~$3,000 | ~$4,000+ |
 
-Apple Silicon虽然不支持CUDA，但MLX框架生态系统正在快速成熟，在本地LLM推理方面反而提供了更稳定的体验。如果目标是利用消费级GPU，[8GB显存运行80B模型的方法](/zh/blog/zh/qwen3-coder-8gb-vram)也值得参考。
+Apple Silicon虽然不支持CUDA，但MLX框架生态系统正在快速成熟，在本地LLM推理方面反而提供了更稳定的体验。如果目标是利用消费级GPU，[8GB显存运行80B模型的方法](/zh/blog/zh/qwen3-coder-8gb-vram/)也值得参考。
 
 ## 结论
 

@@ -48,7 +48,7 @@ MCP(Model Context Protocol) 서버를 처음부터 직접 구현하려면 생각
 
 FastMCP는 그 답답함을 해소하기 위해 만들어진 프레임워크다. 나는 오늘 샌드박스에서 pip로 설치하고 실제로 동작하는 MCP 서버를 30분 안에 올렸다.
 
-이 글은 MCP 프로토콜 자체보다 FastMCP라는 도구를 다룬다. 프로토콜의 배경이 궁금하다면 [Model Context Protocol 공식 사이트](https://modelcontextprotocol.io)를, FastMCP의 소스와 변경 이력은 [jlowin/fastmcp 깃허브 저장소](https://github.com/jlowin/fastmcp)를 같이 열어두면 이해가 빠르다. 참고로 같은 MCP를 TypeScript로 만드는 흐름은 [MCP 서버 TypeScript SDK 단계별 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)에 따로 정리해뒀다.
+이 글은 MCP 프로토콜 자체보다 FastMCP라는 도구를 다룬다. 프로토콜의 배경이 궁금하다면 [Model Context Protocol 공식 사이트](https://modelcontextprotocol.io)를, FastMCP의 소스와 변경 이력은 [jlowin/fastmcp 깃허브 저장소](https://github.com/jlowin/fastmcp)를 같이 열어두면 이해가 빠르다. 참고로 같은 MCP를 TypeScript로 만드는 흐름은 [MCP 서버 TypeScript SDK 단계별 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026/)에 따로 정리해뒀다.
 
 ## FastMCP가 뭔지 먼저 확인하고 갔다
 
@@ -175,7 +175,7 @@ INFO  Received INFO from server: {'msg': '디렉터리 읽는 중: /tmp', 'extra
 
 ## FastMCP Client로 테스트하기
 
-실제 Claude Desktop 없이도 서버를 테스트할 수 있다. FastMCP는 in-process 클라이언트를 제공한다. MCP 에이전트 워크플로우 패턴을 구현할 때도 이 방식이 테스트를 단순하게 만들어준다. 이 in-process 테스트를 넘어 애플리케이션에서 MCP 서버를 직접 소비하는 독립 클라이언트가 필요하면 [MCP 클라이언트를 TypeScript SDK로 구현하는 방법](/ko/blog/ko/mcp-client-typescript-sdk-guide-2026)이 참고가 된다.
+실제 Claude Desktop 없이도 서버를 테스트할 수 있다. FastMCP는 in-process 클라이언트를 제공한다. MCP 에이전트 워크플로우 패턴을 구현할 때도 이 방식이 테스트를 단순하게 만들어준다. 이 in-process 테스트를 넘어 애플리케이션에서 MCP 서버를 직접 소비하는 독립 클라이언트가 필요하면 [MCP 클라이언트를 TypeScript SDK로 구현하는 방법](/ko/blog/ko/mcp-client-typescript-sdk-guide-2026/)이 참고가 된다.
 
 ```python
 import asyncio
@@ -484,8 +484,8 @@ FastMCP가 아쉬운 점이 하나 있다. 3.x로 올라오면서 문서가 코�
 **FastMCP를 피하는 게 나은 경우**
 
 - 저수준 MCP 메시지를 직접 손봐야 하거나, 비표준 트랜스포트가 필요할 때. 이때는 추상화가 오히려 방해가 된다. MCP Python SDK를 직접 쓰는 편이 맞다.
-- 파이썬이 아닌 런타임이 주력일 때. Node/TypeScript 환경이라면 [MCP 서버 TypeScript SDK 단계별 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026) 쪽이 더 자연스럽다.
-- 외부에 서버를 노출하지 않고 완전히 로컬·프라이빗하게 돌리고 싶을 때. 모델까지 로컬로 묶는 구성은 [Gemma 3와 FastMCP로 만드는 프라이빗 MCP 서버](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)에서 다뤘다.
+- 파이썬이 아닌 런타임이 주력일 때. Node/TypeScript 환경이라면 [MCP 서버 TypeScript SDK 단계별 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026/) 쪽이 더 자연스럽다.
+- 외부에 서버를 노출하지 않고 완전히 로컬·프라이빗하게 돌리고 싶을 때. 모델까지 로컬로 묶는 구성은 [Gemma 3와 FastMCP로 만드는 프라이빗 MCP 서버](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp/)에서 다뤘다.
 - 프레임워크 추상화 안에서 발생하는 동작을 100% 추적해야 하는 규제·감사 환경. 이런 경우엔 의존성을 얇게 가져가는 게 안전하다.
 
 한 줄로 요약하면, 표준 클라이언트와 빠르게 연동할 거면 FastMCP, 프로토콜 바닥을 직접 만져야 하면 SDK다.

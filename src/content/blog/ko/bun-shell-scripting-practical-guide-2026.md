@@ -50,7 +50,7 @@ faq:
 
 ## Bun Shell이 뭔지, 왜 지금 쓰임이 생기는지
 
-Bun은 JavaScript 런타임이면서 동시에 패키지 매니저, 번들러, 테스트 러너다. Node.js가 여러 도구로 쪼개져 있는 생태계를 하나로 합치려는 프로젝트다. [Python의 uv가 pip, pyenv, poetry를 통합하듯](/ko/blog/ko/uv-python-ai-development-setup-guide-2026), Bun은 npm/yarn/pnpm + 테스트러너 + 번들러를 하나로 합친다.
+Bun은 JavaScript 런타임이면서 동시에 패키지 매니저, 번들러, 테스트 러너다. Node.js가 여러 도구로 쪼개져 있는 생태계를 하나로 합치려는 프로젝트다. [Python의 uv가 pip, pyenv, poetry를 통합하듯](/ko/blog/ko/uv-python-ai-development-setup-guide-2026/), Bun은 npm/yarn/pnpm + 테스트러너 + 번들러를 하나로 합친다.
 
 Bun Shell은 이 통합의 연장선이다. `bun`을 설치하면 별도 설정 없이 `$` 템플릿 리터럴을 사용해서 쉘 명령을 TypeScript 안에서 직접 실행할 수 있다.
 
@@ -364,7 +364,7 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 - 복잡한 bash 스크립트가 이미 많고, Bun Shell의 bash 호환성이 불확실하다.
 - `zx`가 이미 잘 동작하고 팀이 익숙하다.
 
-Bun Shell이 zx보다 "더 좋다"는 주장에는 동의하지 않는다. 생태계 성숙도와 다운로드 수에서 zx가 앞선다. Bun Shell은 "Bun을 쓰는 사람에게는 자연스러운 선택"이지 "모든 프로젝트에 zx 대신 써야 한다"는 게 아니다. 런타임 자체를 고를 때의 판단 기준은 [Deno 2와 Bun, Node.js를 비교한 글](/ko/blog/ko/deno-2-vs-bun-nodejs-runtime-2026-comparison)에서 더 자세히 다뤘으니, 도구 선택 전에 참고하면 좋다.
+Bun Shell이 zx보다 "더 좋다"는 주장에는 동의하지 않는다. 생태계 성숙도와 다운로드 수에서 zx가 앞선다. Bun Shell은 "Bun을 쓰는 사람에게는 자연스러운 선택"이지 "모든 프로젝트에 zx 대신 써야 한다"는 게 아니다. 런타임 자체를 고를 때의 판단 기준은 [Deno 2와 Bun, Node.js를 비교한 글](/ko/blog/ko/deno-2-vs-bun-nodejs-runtime-2026-comparison/)에서 더 자세히 다뤘으니, 도구 선택 전에 참고하면 좋다.
 
 그리고 개인적으로, `.stdin()` API가 아직 안정적이지 않은 점이 아쉽다. 이게 안정화되면 stdin 기반 파이프 처리가 훨씬 깔끔해질 텐데.
 
@@ -424,7 +424,7 @@ if (result.exitCode !== 0) {
 
 실제로 설치하고 돌려보면서 느낀 점은 Bun Shell의 개발자 경험이 생각보다 좋다는 것이다. 변수 자동 이스케이프, `.nothrow()` 패턴, `.lines()` 같은 편의 메서드는 zx에서도 볼 수 없는 디테일이다.
 
-다만 아직 1.x 버전이고, API가 안정적이지 않은 부분이 있다. 프로덕션 CI/CD 스크립트에 쓰기 전에 실제 환경에서 충분히 검증하고 쓰는 걸 권한다. Claude Code 훅처럼 [자동화 파이프라인에 통합](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent)할 때도 마찬가지다.
+다만 아직 1.x 버전이고, API가 안정적이지 않은 부분이 있다. 프로덕션 CI/CD 스크립트에 쓰기 전에 실제 환경에서 충분히 검증하고 쓰는 걸 권한다. Claude Code 훅처럼 [자동화 파이프라인에 통합](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent/)할 때도 마찬가지다.
 
 Bun이 계속 발전하면서 Shell API도 안정화될 거라고 본다. 지금 당장 zx를 버릴 이유는 없지만, 새 Bun 프로젝트라면 내장 쉘을 먼저 써보는 게 맞다.
 

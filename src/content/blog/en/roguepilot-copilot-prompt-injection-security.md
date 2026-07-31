@@ -61,7 +61,7 @@ relatedPosts:
 
 In February 2026, security firm Orca Security disclosed a vulnerability called <strong>RoguePilot</strong>. It demonstrated a critical flaw where GitHub Copilot running in GitHub Codespaces automatically processes malicious prompts hidden in Issues, allowing attackers to <strong>steal repositories without requiring any special permissions</strong>.
 
-This vulnerability exemplifies a new attack type called <strong>passive prompt injection</strong>, reminding us that as [AI coding tools](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026) become deeply integrated into team development workflows, security risks grow proportionally.
+This vulnerability exemplifies a new attack type called <strong>passive prompt injection</strong>, reminding us that as [AI coding tools](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026/) become deeply integrated into team development workflows, security risks grow proportionally.
 
 This article analyzes the technical mechanics of RoguePilot and outlines AI coding tool security guidelines that engineering managers should implement for their teams.
 
@@ -143,7 +143,7 @@ This pattern isn't limited to AI coding tools. The same risk exists in any syste
 
 <strong>Automated Document Analysis</strong>: Causing data leaks through malicious commands embedded in document metadata.
 
-<strong>[Automated Code Review](/en/blog/en/github-actions-claude-code-ci-automation)</strong>: Manipulating CI/CD pipelines through prompts injected into PR comments.
+<strong>[Automated Code Review](/en/blog/en/github-actions-claude-code-ci-automation/)</strong>: Manipulating CI/CD pipelines through prompts injected into PR comments.
 
 ## Security Guidelines Engineering Managers Should Implement
 
@@ -235,9 +235,9 @@ graph TD
 
 Microsoft patched the vulnerability following Orca Security's responsible disclosure. However, <strong>the fundamental issue remains unresolved</strong>.
 
-The architecture itself—where AI coding tools automatically collect external data as context—creates the attack surface for passive prompt injection. RoguePilot is just one example; similar vulnerabilities can occur in any AI coding tool. And whether a defense you shipped once still holds is a separate question. I wrote up how to check that injection defenses survive a model bump, straight from CI, in [Why I Re-Run My Injection Tests Every Time I Bump the Model](/en/blog/en/prompt-injection-regression-gate-model-updates).
+The architecture itself—where AI coding tools automatically collect external data as context—creates the attack surface for passive prompt injection. RoguePilot is just one example; similar vulnerabilities can occur in any AI coding tool. And whether a defense you shipped once still holds is a separate question. I wrote up how to check that injection defenses survive a model bump, straight from CI, in [Why I Re-Run My Injection Tests Every Time I Bump the Model](/en/blog/en/prompt-injection-regression-gate-model-updates/).
 
-<strong>[Claude Code](/en/blog/en/claude-code-agentic-workflow-patterns-5-types)'s approach</strong> offers one answer to this problem. Claude Code adopts a design that doesn't automatically execute external data and instead requires explicit user approval. This is exemplified by allowlist-based permission management in `.claude/settings.json` and validation through the Hook system before execution.
+<strong>[Claude Code](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/)'s approach</strong> offers one answer to this problem. Claude Code adopts a design that doesn't automatically execute external data and instead requires explicit user approval. This is exemplified by allowlist-based permission management in `.claude/settings.json` and validation through the Hook system before execution.
 
 ## Conclusion
 

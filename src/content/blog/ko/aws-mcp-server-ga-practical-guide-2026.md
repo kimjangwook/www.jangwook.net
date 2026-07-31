@@ -56,7 +56,7 @@ AWS MCP Server는 Claude Code, Cursor, Codex 같은 AI 코딩 에이전트가 AW
 
 `uvx awslabs.cloudwatch-mcp-server@latest` 한 줄이면 Claude Code가 CloudWatch Logs를 직접 조회하고, 알람 상태를 확인하고, Logs Insights 쿼리를 실행할 수 있다. IAM 콘솔에 들어가서 수동으로 설정을 확인할 필요가 없다.
 
-[MCP 서버를 직접 만들어본 경험](/ko/blog/ko/mcp-server-build-practical-guide-2026)이 있다면 이해가 빠를 것이다. AWS MCP Server는 AWS가 공식적으로 관리하는 MCP 서버 컬렉션이다. `awslabs/mcp` GitHub 저장소에 공개돼 있고, PyPI에서 설치할 수 있다.
+[MCP 서버를 직접 만들어본 경험](/ko/blog/ko/mcp-server-build-practical-guide-2026/)이 있다면 이해가 빠를 것이다. AWS MCP Server는 AWS가 공식적으로 관리하는 MCP 서버 컬렉션이다. `awslabs/mcp` GitHub 저장소에 공개돼 있고, PyPI에서 설치할 수 있다.
 
 ### GA가 의미하는 것
 
@@ -253,7 +253,7 @@ add_user_to_group / remove_user_from_group
 put_role_policy / get_role_policy
 ```
 
-여기서 내가 가장 주목한 것은 `simulate_principal_policy`다. 특정 IAM 주체(사용자/역할)가 특정 액션을 수행할 수 있는지 실제 AWS에 요청하지 않고 시뮬레이션한다. [MCP 보안 취약점 문제를 60개 CVE와 함께 다룬 글](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening)을 쓰면서 느낀 건데, MCP 에이전트가 IAM 권한을 미리 검증하고 실행할 수 있다면 권한 초과 실행 사고를 예방할 수 있다.
+여기서 내가 가장 주목한 것은 `simulate_principal_policy`다. 특정 IAM 주체(사용자/역할)가 특정 액션을 수행할 수 있는지 실제 AWS에 요청하지 않고 시뮬레이션한다. [MCP 보안 취약점 문제를 60개 CVE와 함께 다룬 글](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening/)을 쓰면서 느낀 건데, MCP 에이전트가 IAM 권한을 미리 검증하고 실행할 수 있다면 권한 초과 실행 사고를 예방할 수 있다.
 
 실제 테스트 결과:
 
@@ -312,7 +312,7 @@ IAM 정책에서 이 키를 활용해 에이전트 권한을 별도로 제한할
 
 이 정책을 추가하면 사람은 IAM 사용자를 만들 수 있지만, Claude Code(MCP를 통한 에이전트)는 IAM 사용자 생성을 할 수 없다. 동일한 AWS 자격증명을 쓰면서도 에이전트의 권한을 추가로 제한할 수 있다. 솔직히 이 기능이 GA에서 가장 잘 설계된 부분이라고 생각한다.
 
-[Claude Agent SDK에서 Tool Use를 구현할 때](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026) 에이전트 권한 제어가 얼마나 복잡한지 느꼈는데, 이 조건 키는 AWS 자체 인프라 수준에서 그 문제를 해결한다.
+[Claude Agent SDK에서 Tool Use를 구현할 때](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/) 에이전트 권한 제어가 얼마나 복잡한지 느꼈는데, 이 조건 키는 AWS 자체 인프라 수준에서 그 문제를 해결한다.
 
 ## 아키텍처 다이어그램
 
@@ -334,7 +334,7 @@ IAM 정책에서 이 키를 활용해 에이전트 권한을 별도로 제한할
 | AWS Pricing MCP Server | 비용 추정 | 별도 |
 | EKS MCP Server | EKS 클러스터 관리 | 별도 |
 
-`aws-api-mcp-server`는 특히 주목할 만하다. 단일 도구로 모든 AWS API를 호출할 수 있다는 의미인데, 이는 [FastMCP로 Python MCP 서버를 만들 때](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026) 각 API마다 도구를 따로 정의해야 했던 것과 대비된다.
+`aws-api-mcp-server`는 특히 주목할 만하다. 단일 도구로 모든 AWS API를 호출할 수 있다는 의미인데, 이는 [FastMCP로 Python MCP 서버를 만들 때](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/) 각 API마다 도구를 따로 정의해야 했던 것과 대비된다.
 
 ## 솔직한 평가 — 좋은 것과 아쉬운 것
 

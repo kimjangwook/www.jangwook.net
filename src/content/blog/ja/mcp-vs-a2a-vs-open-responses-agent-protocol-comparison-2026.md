@@ -71,7 +71,7 @@ MCPが標準化するのは三つだ:
 
 もう一つは`.well-known`エンドポイントによる**ディスカバリーの標準化**だ。今はMCPサーバーに実際に接続しないと何を提供しているか分からないが、今後は接続なしにメタデータだけでサーバー機能を把握できるようになる。
 
-[WebMCPを通じてMCPサーバーの実装詳細を確認した記事](/ja/blog/ja/webmcp-chrome-146-ai-tool-server)も参考になる。
+[WebMCPを通じてMCPサーバーの実装詳細を確認した記事](/ja/blog/ja/webmcp-chrome-146-ai-tool-server/)も参考になる。
 
 ---
 
@@ -97,7 +97,7 @@ A2Aが解決しようとする問題はこうだ。旅行予約エージェン�
 
 正直に言うと、A2A仕様書を初めて読んだとき「これはどれだけ実用的なのか」と懐疑的だった。エージェントが互いに直接通信するという概念自体は面白いが、これを安全に運用するには信頼モデルが複雑になる。v1.0のSigned Agent Cardsがその方向を固めつつあるが、プロダクションで完全に信頼するにはまだ初期段階だと見ている。
 
-[A2AとMCPをプロダクション環境で組み合わせるアーキテクチャパターン](/ja/blog/ja/a2a-mcp-hybrid-architecture-production-guide)を別途まとめたが、レイヤーをどう分けるかが核心だ。
+[A2AとMCPをプロダクション環境で組み合わせるアーキテクチャパターン](/ja/blog/ja/a2a-mcp-hybrid-architecture-production-guide/)を別途まとめたが、レイヤーをどう分けるかが核心だ。
 
 ---
 
@@ -153,7 +153,7 @@ OpenAIのResponses APIをベースに作られた仕様で、基本的な考え�
 
 オーケストレーターがA2Aで専門エージェントに委任し、各専門エージェントはMCPで自分のツールにアクセスする。
 
-[Claude Codeのエージェンティックワークフローパターン5種](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)で、この階層構造の実装例をより詳しく扱っている。
+[Claude Codeのエージェンティックワークフローパターン5種](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)で、この階層構造の実装例をより詳しく扱っている。
 
 ---
 
@@ -167,7 +167,7 @@ OpenAIのResponses APIをベースに作られた仕様で、基本的な考え�
 - 5,000個を超えるサーバー生態系がすでに存在
 - Claude Code、OpenAI Agents SDK、LangGraphなど主要フレームワークがすべてサポート
 - Streamable HTTPが標準となり、仕様が十分安定
-- [Anthropic Agent Skillsの標準](/ja/blog/ja/anthropic-agent-skills-standard)と組み合わさって、より強力なパターンが生まれている
+- [Anthropic Agent Skillsの標準](/ja/blog/ja/anthropic-agent-skills-standard/)と組み合わさって、より強力なパターンが生まれている
 
 **中期的に: A2A**
 
@@ -187,4 +187,4 @@ MCPは今すぐ使うべきツールだ。エージェントに外部世界へ�
 
 三つを「プロトコル標準戦争」として見ると疲弊する。それぞれ異なる問題を解いており、三つすべてが必要なシステムも十分にある。私の実用的な結論: MCPから始め、A2Aは必要なときに、Open Responsesはアップデートを購読するレベルでフォロー。
 
-そして[AIエージェントフレームワーク選定](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)も、このプロトコル選択と絡み合う問題だ。どのフレームワークを使うかによってMCPとA2Aのサポートレベルが異なるためだ。
+そして[AIエージェントフレームワーク選定](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)も、このプロトコル選択と絡み合う問題だ。どのフレームワークを使うかによってMCPとA2Aのサポートレベルが異なるためだ。

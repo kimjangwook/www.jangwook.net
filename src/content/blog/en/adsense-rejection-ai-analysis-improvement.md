@@ -231,7 +231,7 @@ I updated `BaseHead.astro` to automatically generate hreflang tags for every pag
 <link rel="alternate" hreflang="x-default" href="https://jangwook.net/en/blog/post-slug/" />
 ```
 
-The `x-default` tag is crucial—it tells Google which version to show users whose language doesn't match any specific version. How I resolved the "low-value content" verdict at the code level is laid out in more detail in [Fixing AdSense low-value content, technically](/en/blog/en/adsense-low-value-content-technical-fix).
+The `x-default` tag is crucial—it tells Google which version to show users whose language doesn't match any specific version. How I resolved the "low-value content" verdict at the code level is laid out in more detail in [Fixing AdSense low-value content, technically](/en/blog/en/adsense-low-value-content-technical-fix/).
 
 ## E-E-A-T Signal Enhancement
 
@@ -252,7 +252,7 @@ Made credentials and technical background more prominent:
 - Technical certifications and work experience
 - Specific tech stack expertise (SvelteKit, Terraform, GCP, etc.)
 
-Strengthening trust signals for both search engines and AI search (AEO) continues in [Practical SEO and AEO for the LLM era](/en/blog/en/llm-seo-aeo-practical-implementation).
+Strengthening trust signals for both search engines and AI search (AEO) continues in [Practical SEO and AEO for the LLM era](/en/blog/en/llm-seo-aeo-practical-implementation/).
 
 ### Authoritativeness
 

@@ -107,7 +107,7 @@ LLMを導入した組織では、以下のような成果が報告されてい�
 
 <strong>強み</strong>:
 - <strong>200Kトークンのコンテキストウィンドウ</strong>で大容量文書を処理
-- [Claude SkillsでPM専用のカスタマイズが可能](/ja/blog/ja/claude-skills-implementation-guide)
+- [Claude SkillsでPM専用のカスタマイズが可能](/ja/blog/ja/claude-skills-implementation-guide/)
 - Artifacts機能で構造化された出力を生成
 - 安全で倫理的なAI応答
 
@@ -393,11 +393,11 @@ graph LR
 
 3. <strong>Zoom → Claude → Notion</strong>
    - 会議の文字起こしを自動要約
-   - [Notionプロジェクトページに更新](/ja/blog/ja/ai-agent-notion-mcp-automation)
+   - [Notionプロジェクトページに更新](/ja/blog/ja/ai-agent-notion-mcp-automation/)
 
 ### Phase 3: 高度な自動化 (1〜2ヶ月)
 
-<strong>目標</strong>: [AIエージェントベースの自律ワークフローを構築](/ja/blog/ja/llm-blog-automation)
+<strong>目標</strong>: [AIエージェントベースの自律ワークフローを構築](/ja/blog/ja/llm-blog-automation/)
 
 <strong>Claude Skills活用</strong>:
 ```markdown

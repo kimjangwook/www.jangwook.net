@@ -115,7 +115,7 @@ claude "src/ 폴더의 모든 TypeScript 파일을 분석해서
 
 **언제 쓰나**: 맥락이 명확하고 범위가 잘 정의된 단일 복잡 작업. 예: "이 모듈의 모든 함수에 JSDoc 추가", "이 디렉토리의 파일명을 모두 kebab-case로 변환"
 
-[Claude Code 모범 사례](/ko/blog/ko/claude-code-best-practices)에서 CLAUDE.md를 통한 권한 설계를 상세히 다루고 있으니 함께 보면 좋다.
+[Claude Code 모범 사례](/ko/blog/ko/claude-code-best-practices/)에서 CLAUDE.md를 통한 권한 설계를 상세히 다루고 있으니 함께 보면 좋다.
 
 ## 패턴 3: Parallel (병렬)
 
@@ -136,7 +136,7 @@ cd ../docs-update && claude "API 문서 최신화해줘"
 
 이 방식으로 전환한 뒤 개인 생산성이 눈에 띄게 달라졌다. 특히 CI 파이프라인을 기다리는 시간에 다른 브랜치 작업을 진행할 수 있다는 게 실질적으로 크다.
 
-[Git Worktree로 병렬 세션을 운영하는 구체적인 방법](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)은 별도 포스트에서 단계별로 다뤘다. 처음 설정하는 거라면 그쪽을 먼저 보는 게 빠르다.
+[Git Worktree로 병렬 세션을 운영하는 구체적인 방법](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)은 별도 포스트에서 단계별로 다뤘다. 처음 설정하는 거라면 그쪽을 먼저 보는 게 빠르다.
 
 **언제 쓰나**: 독립적인 피처 개발, 다국어 번역, 테스트 코드 작성 등 서로 코드베이스를 공유하지 않아도 되는 작업들.
 
@@ -159,11 +159,11 @@ cd ../docs-update && claude "API 문서 최신화해줘"
 
 실제로 이 방식은 한 에이전트의 컨텍스트 길이 한계를 분산시키는 효과도 있다. 큰 작업을 한 에이전트에게 맡기면 컨텍스트 창이 폭발하는데, 팀으로 나누면 각자 자신의 작업 맥락만 유지하면 된다.
 
-[OpenClaw 환경에서 에이전트 팀을 실제로 구성하고 운용한 경험](/ko/blog/ko/claude-agent-teams-guide)을 담은 포스트가 있다. 역할 설계부터 tmux 기반 모니터링까지 구체적으로 나와 있다.
+[OpenClaw 환경에서 에이전트 팀을 실제로 구성하고 운용한 경험](/ko/blog/ko/claude-agent-teams-guide/)을 담은 포스트가 있다. 역할 설계부터 tmux 기반 모니터링까지 구체적으로 나와 있다.
 
 **언제 쓰나**: 순차적이지만 복잡한 멀티스텝 작업. 콘텐츠 파이프라인, 코드 리뷰 → 수정 → 테스트 → 배포 사이클 등.
 
-실제로 [멀티 에이전트 오케스트레이션을 블로그 시스템에 적용했을 때 겪은 실패와 개선 과정](/ko/blog/ko/multi-agent-orchestration-improvement)을 보면, 역할 경계가 불명확하면 에이전트들이 서로 충돌하거나 무한 루프에 빠질 수 있다는 걸 실감했다.
+실제로 [멀티 에이전트 오케스트레이션을 블로그 시스템에 적용했을 때 겪은 실패와 개선 과정](/ko/blog/ko/multi-agent-orchestration-improvement/)을 보면, 역할 경계가 불명확하면 에이전트들이 서로 충돌하거나 무한 루프에 빠질 수 있다는 걸 실감했다.
 
 ## 패턴 5: Autonomous (자율)
 

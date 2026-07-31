@@ -50,7 +50,7 @@ relatedPosts:
 
 - <strong>프롬프트 호환성</strong>: Claude와 GPT-5.x-Codex는 같은 프롬프트에 다르게 반응한다. `SOUL.md`, `AGENTS.md`를 며칠간 손봐야 안정된다
 - <strong>모델별 강점 차이</strong>: Codex는 코드와 도구 호출(Tool Use)에 강한다. 반면 에세이나 SNS 포스트처럼 자연스러운 문장이 필요한 작업에서는 Claude 쪽 평가가 높다
-- <strong>API 키 방식이라는 선택지</strong>: Claude를 계속 쓰고 싶다면 구독 OAuth 대신 API 키 방식(`console.anthropic.com`)을 쓸 수 있다. 단, Opus 에이전트 루프를 돌릴 경우 월 $100 이상 나오는 사례가 많다. [AI 에이전트 비용 vs 인건비의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 실제 운영 비용을 비교 분석한 자료를 참고할 수 있다
+- <strong>API 키 방식이라는 선택지</strong>: Claude를 계속 쓰고 싶다면 구독 OAuth 대신 API 키 방식(`console.anthropic.com`)을 쓸 수 있다. 단, Opus 에이전트 루프를 돌릴 경우 월 $100 이상 나오는 사례가 많다. [AI 에이전트 비용 vs 인건비의 현실](/ko/blog/ko/ai-agent-cost-reality/)에서 실제 운영 비용을 비교 분석한 자료를 참고할 수 있다
 
 ## 전환 절차 (4단계)
 
@@ -186,7 +186,7 @@ graph TD
 | <strong>Layer 2</strong> | 추론, 계획, 사용자 대면 | OpenAI Codex 구독 | 월정액 |
 | <strong>Layer 3</strong> | Claude만의 강점이 필요할 때 | Anthropic API 키 | 토큰당 과금 |
 
-이 구조에서는 프로바이더가 정책을 바꾸더라도 <strong>설정 파일 한 줄만 수정</strong>하면 된다. [LangGraph·CrewAI·Dapr 프레임워크 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)에서 멀티 에이전트 아키텍처 설계에 대한 더 넓은 관점을 확인할 수 있다.
+이 구조에서는 프로바이더가 정책을 바꾸더라도 <strong>설정 파일 한 줄만 수정</strong>하면 된다. [LangGraph·CrewAI·Dapr 프레임워크 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)에서 멀티 에이전트 아키텍처 설계에 대한 더 넓은 관점을 확인할 수 있다.
 
 ## 전환 후 체감
 
@@ -217,7 +217,7 @@ openclaw onboard --auth-choice anthropic
 | 코드/도구 | | | |
 | 전환 난이도 | — | 쉬움 (15분) | 쉬움 |
 
-가장 중요한 건 <strong>특정 프로바이더에 종속되지 않는 구조</strong>를 만들어 두는 것이다. OpenClaw의 설정 기반 아키텍처를 활용하면, 어떤 프로바이더가 정책을 바꾸더라도 유연하게 대응할 수 있다. AI 코딩 도구 선택 자체가 고민이라면 [Cursor 3 vs Claude Code vs Windsurf 비교](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026)도 함께 읽어보면 된다.
+가장 중요한 건 <strong>특정 프로바이더에 종속되지 않는 구조</strong>를 만들어 두는 것이다. OpenClaw의 설정 기반 아키텍처를 활용하면, 어떤 프로바이더가 정책을 바꾸더라도 유연하게 대응할 수 있다. AI 코딩 도구 선택 자체가 고민이라면 [Cursor 3 vs Claude Code vs Windsurf 비교](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026/)도 함께 읽어보면 된다.
 
 ## 참고 자료
 

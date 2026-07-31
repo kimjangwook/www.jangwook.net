@@ -213,7 +213,7 @@ const db = drizzle(sqlite);
 migrate(db, { migrationsFolder: "./migrations" });
 ```
 
-Node.js의 내장 SQLite를 쓰는 경우라면 [Node.js 내장 SQLite 완전 가이드](/ko/blog/ko/node-sqlite-builtin-practical-guide-2026)와 함께 읽으면 좋다. Drizzle은 `drizzle-orm/node-sqlite3`을 통해 내장 SQLite도 지원한다.
+Node.js의 내장 SQLite를 쓰는 경우라면 [Node.js 내장 SQLite 완전 가이드](/ko/blog/ko/node-sqlite-builtin-practical-guide-2026/)와 함께 읽으면 좋다. Drizzle은 `drizzle-orm/node-sqlite3`을 통해 내장 SQLite도 지원한다.
 
 ## 기본 CRUD를 실제 실행 결과로 확인하기
 
@@ -401,7 +401,7 @@ await db.transaction(async (tx) => {
 });
 ```
 
-SQLite를 로컬 개발이나 엣지 환경에서 쓴다면, 이 동기/비동기 차이를 꼭 기억해두자. [Hono.js와 TypeScript로 REST API 만들기](/ko/blog/ko/hono-typescript-api-2026)에서 SQLite를 쓴다면 이 함정을 만날 가능성이 높다.
+SQLite를 로컬 개발이나 엣지 환경에서 쓴다면, 이 동기/비동기 차이를 꼭 기억해두자. [Hono.js와 TypeScript로 REST API 만들기](/ko/blog/ko/hono-typescript-api-2026/)에서 SQLite를 쓴다면 이 함정을 만날 가능성이 높다.
 
 ## 집계 쿼리와 Raw SQL
 
@@ -564,9 +564,9 @@ function validatePost(data: unknown): NewPost {
 - 매우 성숙한 문서·튜토리얼·서드파티 가이드가 필요하다. Drizzle은 빠르게 좋아지고 있지만, 일부 엣지 케이스는 아직 Prisma만큼 정리돼 있지 않다.
 - 마이그레이션의 데이터 보존 자동화(예: 컬럼 rename 감지)나 풍부한 GUI 워크플로우가 핵심 요구사항이다.
 
-**Drizzle vs Prisma 한 줄 판단**: "SQL을 통제하고 싶다 → Drizzle, SQL을 잊고 싶다 → Prisma." 둘 다 타입 안전성은 충분히 제공한다. 차이는 추상화 레벨과 마이그레이션 투명성이다. 비슷한 고민을 [Vitest 4 마이그레이션 가이드](/ko/blog/ko/vitest-4-jest-migration-guide-2026)에서 테스트 도구 선택에도 똑같이 적용해볼 수 있다. 도구를 바꾸는 결정은 늘 "내 워크플로우의 어디가 아픈가"에서 출발한다.
+**Drizzle vs Prisma 한 줄 판단**: "SQL을 통제하고 싶다 → Drizzle, SQL을 잊고 싶다 → Prisma." 둘 다 타입 안전성은 충분히 제공한다. 차이는 추상화 레벨과 마이그레이션 투명성이다. 비슷한 고민을 [Vitest 4 마이그레이션 가이드](/ko/blog/ko/vitest-4-jest-migration-guide-2026/)에서 테스트 도구 선택에도 똑같이 적용해볼 수 있다. 도구를 바꾸는 결정은 늘 "내 워크플로우의 어디가 아픈가"에서 출발한다.
 
-타입 안전성을 API 레이어까지 끌고 가는 흐름이 궁금하다면 [MCP 서버 TypeScript SDK 단계별 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)도 같은 맥락에서 도움이 된다.
+타입 안전성을 API 레이어까지 끌고 가는 흐름이 궁금하다면 [MCP 서버 TypeScript SDK 단계별 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026/)도 같은 맥락에서 도움이 된다.
 
 ## 참고 자료 (1차 출처)
 

@@ -93,7 +93,7 @@ data: {"result":{...},"jsonrpc":"2.0","id":1}
 
 JSON을 직접 파싱하는 게 아니라 `data:` 줄을 추출해야 한다. 공식 MCP 클라이언트 라이브러리는 이걸 자동으로 처리하지만, curl로 직접 테스트할 때는 알아야 한다.
 
-[MCP 서버를 Python FastMCP로 처음 구축하는 방법](/ko/blog/ko/mcp-server-build-practical-guide-2026)을 먼저 읽었다면 기본 개념은 익숙할 것이다. 여기서는 TypeScript SDK를 써서 HTTP 레이어를 직접 구성한다.
+[MCP 서버를 Python FastMCP로 처음 구축하는 방법](/ko/blog/ko/mcp-server-build-practical-guide-2026/)을 먼저 읽었다면 기본 개념은 익숙할 것이다. 여기서는 TypeScript SDK를 써서 HTTP 레이어를 직접 구성한다.
 
 프로토콜 흐름을 시퀀스로 정리하면:
 
@@ -364,7 +364,7 @@ export default {
 
 Workers는 Node.js HTTP API 대신 Web Standard API를 쓴다. SDK가 `NodeStreamableHTTPServerTransport`(Node.js용)와 `WebStandardStreamableHTTPServerTransport`(Web Standard용)를 모두 제공한다.
 
-[MCP 서버를 Kubernetes에서 안정적으로 운영하는 방법](/ko/blog/ko/mcp-server-production-deployment-kubernetes-guide)을 다룬 글에서도 비슷한 이야기가 나오는데, 결국 어떤 레이어에서 세션 상태를 관리할지가 핵심 설계 결정이다.
+[MCP 서버를 Kubernetes에서 안정적으로 운영하는 방법](/ko/blog/ko/mcp-server-production-deployment-kubernetes-guide/)을 다룬 글에서도 비슷한 이야기가 나오는데, 결국 어떤 레이어에서 세션 상태를 관리할지가 핵심 설계 결정이다.
 
 **OAuth 2.1 인증 추가**
 
@@ -430,7 +430,7 @@ mcp_call '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' | python3 
 
 **SDK 버전 추적 필요.** `@modelcontextprotocol/sdk`는 빠르게 변화하고 있다. v1.29.0 기준으로 이 글의 모든 예제가 동작하는 걸 확인했지만, 다음 마이너 버전에서 API가 바뀔 수 있다. 특히 `StreamableHTTPServerTransport` 생성자 옵션과 `handleRequest` 시그니처가 변경 이력이 있는 부분이다. 의존성 업데이트 전에 CHANGELOG를 확인하는 습관이 필요하다.
 
-이 부분은 [MCP Gateway로 에이전트 트래픽을 중앙에서 제어하는 방법](/ko/blog/ko/mcp-gateway-agent-traffic-control)에서 더 자세히 다루고 있다. 세션 관리 복잡성을 게이트웨이 레이어에서 추상화하는 방법도 하나의 해법이다.
+이 부분은 [MCP Gateway로 에이전트 트래픽을 중앙에서 제어하는 방법](/ko/blog/ko/mcp-gateway-agent-traffic-control/)에서 더 자세히 다루고 있다. 세션 관리 복잡성을 게이트웨이 레이어에서 추상화하는 방법도 하나의 해법이다.
 
 ## 실행 가능성 판단
 

@@ -65,7 +65,7 @@ Before optimizing, understand what's consuming money. Gemini 2.5 Flash has three
 
 One more: `gemini-2.5-flash-lite` costs $0.10 input and $0.40 output. It looks dramatically cheaper, but it isn't always. I'll explain with actual data in Step 3.
 
-Setup first. For a broader view of model pricing across providers, check the [LLM API pricing comparison 2026](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek). Today we're focused on Flash.
+Setup first. For a broader view of model pricing across providers, check the [LLM API pricing comparison 2026](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/). Today we're focused on Flash.
 
 ```bash
 pip install google-genai
@@ -196,7 +196,7 @@ Cache reads cost $0.075/1M tokens — 25% of normal input. Break-even point: rou
 - RAG systems reusing retrieved documents across multiple questions
 - Coding assistants with a full codebase or manual in context
 
-Conceptually similar to [Claude API Prompt Caching](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide), but the implementation differs. Anthropic uses explicit cache markers in request headers; Gemini requires creating a separate cache object. Gemini's approach is more explicit about lifecycle but adds more boilerplate.
+Conceptually similar to [Claude API Prompt Caching](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide/), but the implementation differs. Anthropic uses explicit cache markers in request headers; Gemini requires creating a separate cache object. Gemini's approach is more explicit about lifecycle but adds more boilerplate.
 
 ## Step 3: Flash vs Flash-Lite — Lite Isn't Always Cheaper
 
@@ -235,11 +235,11 @@ response = client.models.generate_content(
 | Complex reasoning | Flash | Thinking quality difference |
 | High-volume batch | Batch API + decide | Recalculate after 50% discount |
 
-This task-based model routing connects directly to the multi-model routing patterns in the [heterogeneous LLM fleet cost optimization post](/en/blog/en/heterogeneous-llm-agent-fleet-cost-optimization).
+This task-based model routing connects directly to the multi-model routing patterns in the [heterogeneous LLM fleet cost optimization post](/en/blog/en/heterogeneous-llm-agent-fleet-cost-optimization/).
 
 ## Step 4: Batch API for 50% Off Non-Urgent Work
 
-If you have tasks that don't need real-time responses, the Batch API cuts costs in half. Google applies a 50% discount for batch processing — same philosophy as the [Anthropic Message Batches API](/en/blog/en/anthropic-message-batches-api-production-guide).
+If you have tasks that don't need real-time responses, the Batch API cuts costs in half. Google applies a 50% discount for batch processing — same philosophy as the [Anthropic Message Batches API](/en/blog/en/anthropic-message-batches-api-production-guide/).
 
 ```python
 import json

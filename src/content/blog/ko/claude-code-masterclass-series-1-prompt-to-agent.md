@@ -219,7 +219,7 @@ frontmatter의 `description` 필드가 중요하다. 오케스트레이터 Claud
 - `content-recommender`: relatedPosts 생성
 - `image-generator`: 히어로 이미지 브리프 작성
 
-에이전트 팀을 체계적으로 구성하는 더 복잡한 패턴은 [Claude Code Agent Teams 완벽 가이드](/ko/blog/ko/claude-agent-teams-guide)에서 다뤘다.
+에이전트 팀을 체계적으로 구성하는 더 복잡한 패턴은 [Claude Code Agent Teams 완벽 가이드](/ko/blog/ko/claude-agent-teams-guide/)에서 다뤘다.
 
 ## 3단계 통합: 실제 자동화 파이프라인
 
@@ -360,7 +360,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 판단 기준을 한 줄로 줄이면 이렇다. <strong>"이 절차를 다음 달에도 거의 같은 형태로 반복할 것인가, 그리고 결과를 자동으로 검증할 방법이 있는가."</strong> 둘 다 "예"면 자동화하고, 하나라도 "아니오"면 손으로 하는 편이 보통 더 빠르고 안전하다.
 
-병렬로 여러 작업을 동시에 굴리고 싶은 단계까지 왔다면, [git worktree로 Claude Code 세션을 병렬 실행하는 패턴](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)이 다음 확장 방향으로 자연스럽다.
+병렬로 여러 작업을 동시에 굴리고 싶은 단계까지 왔다면, [git worktree로 Claude Code 세션을 병렬 실행하는 패턴](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)이 다음 확장 방향으로 자연스럽다.
 
 ## 솔직한 평가: 뭐가 잘 안 되는가
 
@@ -397,7 +397,7 @@ fi
 
 #2편에서는 한 단계 더 나간다. <strong>MCP(Model Context Protocol) 서버를 직접 만들어서 Claude Code에 외부 도구를 연결하는 법</strong>이다. Notion 데이터베이스를 읽고, Slack으로 메시지를 보내고, PostgreSQL을 쿼리하는 외부 시스템 연동이 슬래시 명령어 하나로 가능해지는 구조를 다룬다.
 
-이미 MCP 서버를 구축해본 경험이 있다면 [TypeScript SDK로 MCP 서버를 처음부터 만드는 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)가 좋은 사전 읽기다.
+이미 MCP 서버를 구축해본 경험이 있다면 [TypeScript SDK로 MCP 서버를 처음부터 만드는 가이드](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026/)가 좋은 사전 읽기다.
 
 ## 공식 문서로 확인하기
 

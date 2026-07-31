@@ -350,9 +350,9 @@ Agent Teamsで最も注意すべき点は、<strong>複数のチームメイト�
 
 同じマルチエージェントの流れを別角度から扱った記事です。
 
-- [マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement) — エージェントを調律するパターンをもう一歩深く掘り下げます。
-- [Git WorktreeでClaude Codeの並列セッションを回す](/ja/blog/ja/claude-code-parallel-sessions-git-worktree) — Agent Teamsなしで手動の並列セッションを運用する代替案です。
-- [AIエージェントコストの現実](/ja/blog/ja/ai-agent-cost-reality) — トークンコストが急増するマルチエージェント運用の経済性を検証します。
+- [マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement/) — エージェントを調律するパターンをもう一歩深く掘り下げます。
+- [Git WorktreeでClaude Codeの並列セッションを回す](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/) — Agent Teamsなしで手動の並列セッションを運用する代替案です。
+- [AIエージェントコストの現実](/ja/blog/ja/ai-agent-cost-reality/) — トークンコストが急増するマルチエージェント運用の経済性を検証します。
 
 ## 参照した一次情報
 

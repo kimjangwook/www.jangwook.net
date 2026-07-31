@@ -59,7 +59,7 @@ AIバックエンドを構築していると、必ず一つの問いに突き当
 pip install fastapi uvicorn anthropic httpx
 ```
 
-Python環境の構成が初めてなら、[uvでPython AI開発環境をセットアップする方法](/ja/blog/ja/uv-python-ai-development-setup-guide-2026)を先に読むといい。仮想環境と依存関係の衝突問題をきれいに解決してくれる。
+Python環境の構成が初めてなら、[uvでPython AI開発環境をセットアップする方法](/ja/blog/ja/uv-python-ai-development-setup-guide-2026/)を先に読むといい。仮想環境と依存関係の衝突問題をきれいに解決してくれる。
 
 ## Step 1: プロジェクト構造と基本設定
 
@@ -414,7 +414,7 @@ Nginxの`proxy_buffering off`が抜けている場合がほとんどだ。もし
 - レスポンスを一括で受け取ってもUXに支障がない短い分類・抽出タスク。この場合は単純なリクエスト-レスポンスのほうがコードもシンプルでデバッグも楽だ。
 - 1,000件以上のドキュメントを一括処理するバッチ作業。ストリーミングは意味がなく、Anthropic Message Batches APIがコスト面で半分程度になる。
 - 双方向リアルタイム操作（タイピングインジケーター、同時編集）が必要な場合。SSEは単方向なのでWebSocketが適切だ。
-- ローカル・オンプレミス環境で外部API呼び出し自体がブロックされている場合。まずはセルフホストモデルが先になる。セルフホストの選択肢は[OllamaとFastAPIでプロダクションデプロイする方法](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)で扱った。
+- ローカル・オンプレミス環境で外部API呼び出し自体がブロックされている場合。まずはセルフホストモデルが先になる。セルフホストの選択肢は[OllamaとFastAPIでプロダクションデプロイする方法](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026/)で扱った。
 
 つまり「長い出力 + リアルタイム表示」という二つの条件が同時に成立するときだけ、このパターンの複雑さが正当化される。どちらか一方が欠ければ、より単純な方法がある。
 
@@ -426,7 +426,7 @@ Nginxの`proxy_buffering off`が抜けている場合がほとんどだ。もし
 - [Anthropic — Streaming Messages](https://docs.claude.com/en/docs/build-with-claude/streaming): Claude APIのSSEストリーミングイベント構造とSDKごとの使い方。
 - [MDN — Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events): SSEイベントフォーマット（`data:`、`event:`、`id:`、`retry:`）と`EventSource` APIの標準定義。
 
-型安全なリクエストスキーマをより厳密にしたいなら、[Pydantic AIで型安全なエージェントを作る](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)も併せて読むと役立つ。
+型安全なリクエストスキーマをより厳密にしたいなら、[Pydantic AIで型安全なエージェントを作る](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)も併せて読むと役立つ。
 
 正直に言うと、このスタックがすべての状況で最善ではない。Node.jsチームならVercel AI SDKの方が速く、大規模なリアルタイム接続が必要ならWebSocketやgRPC Streamingが良い選択肢になる。しかしPython AIバックエンドを素早く立ち上げたいなら、このパターンは自分が実際に検証した最も実用的な出発点だ。
 

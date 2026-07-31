@@ -142,7 +142,7 @@ Problems the routing layer must solve:
 - <strong>Error Handling</strong>: How do you recover when an agent fails?
 - <strong>Cost Optimization</strong>: How do you mix expensive and cheap models effectively?
 
-The time spent building and stabilizing this routing layer exceeds all other costs combined. The multi-agent orchestration patterns covered in the [Claude agent team building guide](/en/blog/en/claude-agent-teams-guide) offer a practical starting point for reducing this routing complexity.
+The time spent building and stabilizing this routing layer exceeds all other costs combined. The multi-agent orchestration patterns covered in the [Claude agent team building guide](/en/blog/en/claude-agent-teams-guide/) offer a practical starting point for reducing this routing complexity.
 
 ## The Over-Engineering Trap: 40 Hours vs 1 Prompt
 
@@ -233,7 +233,7 @@ Model allocation by task complexity:
 └── Low complexity (60%): Claude Haiku / GPT-4o-mini → Classification, summarization, formatting
 ```
 
-This strategy alone can reduce API costs by <strong>40-60%</strong>. For how per-model rates and tool-call costs are handled at the code level, the [Claude Agent SDK tool use complete guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) walks through concrete implementations.
+This strategy alone can reduce API costs by <strong>40-60%</strong>. For how per-model rates and tool-call costs are handled at the code level, the [Claude Agent SDK tool use complete guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/) walks through concrete implementations.
 
 ### 2. Caching and Batch Processing
 
@@ -256,7 +256,7 @@ AI agents aren't magic. They're <strong>engineering tools with clear tradeoffs</
 Here's what the past year of running them drove home:
 
 1. <strong>API costs are only part of the total cost.</strong> You must include engineering time, maintenance, and incident response.
-2. <strong>The routing layer is the biggest technical challenge.</strong> The real difficulty in multi-agent systems isn't the individual agents. It's the [orchestration](/en/blog/en/multi-agent-orchestration-improvement).
+2. <strong>The routing layer is the biggest technical challenge.</strong> The real difficulty in multi-agent systems isn't the individual agents. It's the [orchestration](/en/blog/en/multi-agent-orchestration-improvement/).
 3. <strong>Beware over-engineering.</strong> A single well-crafted prompt can beat 40 hours of complex pipeline work.
 4. <strong>Use them for the right purpose.</strong> Excellent for personal productivity scaling, but may cost more than humans for simple labor replacement.
 

@@ -46,11 +46,11 @@ faq:
 
 > <strong>系列: DeNA LLM 研究</strong> (4/5)
 >
-> 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 结构化输出与多LLM管道
-> 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training)
+> 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training/)
 > 4. <strong>Part 4: RAG架构与最新趋势</strong> ← 当前文章
-> 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
+> 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design/)
 
 ## RAG 说到底是检索工程
 
@@ -824,7 +824,7 @@ def sanitize_response(response):
 - 同时需要关键词匹配与语义检索的混合查询较多时
 - Recall 没问题但头部结果精度不足时(重排序在此特别见效)
 
-如果纠结于向量库的选择，[2026 向量数据库对比: Qdrant vs Chroma vs pgvector](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector)对混合检索支持与运维负担做了比较。
+如果纠结于向量库的选择，[2026 向量数据库对比: Qdrant vs Chroma vs pgvector](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector/)对混合检索支持与运维负担做了比较。
 
 <strong>应当避免的情况</strong>：响应延迟卡在数十毫秒的实时路径。Cross-Encoder 重排序会增加延迟，此时应考虑 ColBERT 这类轻量方式，或干脆省略重排序。
 
@@ -841,7 +841,7 @@ def sanitize_response(response):
 - 单次检索无法得出答案，需要检索 → 评估 → 再检索的循环时
 - 需要根据问题在多种工具(向量检索、关键词、Web、SQL)间挑选时
 
-<strong>应当避免的情况</strong>：对成本和延迟敏感的大流量路径。反复调用会让 token 和时间成倍增加。如果纠结于框架选择，[LlamaIndex vs LangChain vs Haystack RAG 框架对比 2026](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026)梳理了智能体式检索抽象的差异。
+<strong>应当避免的情况</strong>：对成本和延迟敏感的大流量路径。反复调用会让 token 和时间成倍增加。如果纠结于框架选择，[LlamaIndex vs LangChain vs Haystack RAG 框架对比 2026](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026/)梳理了智能体式检索抽象的差异。
 
 ### 一表总结
 
@@ -927,4 +927,4 @@ def sanitize_response(response):
 
 ---
 
-<strong>系列继续</strong>: [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
+<strong>系列继续</strong>: [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design/)

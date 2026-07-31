@@ -84,7 +84,7 @@ The core components of MCP include:
 - <strong>Resources</strong>: Structured data that AI can read
 - <strong>Prompts</strong>: Pre-defined prompt templates
 
-If you want to build your own MCP server, [Building Your Own MCP Server — Implementing Real AI Tools with Streamable HTTP Transport](/en/blog/en/mcp-server-build-practical-guide-2026) provides a step-by-step guide.
+If you want to build your own MCP server, [Building Your Own MCP Server — Implementing Real AI Tools with Streamable HTTP Transport](/en/blog/en/mcp-server-build-practical-guide-2026/) provides a step-by-step guide.
 
 ## How WebMCP Works
 
@@ -222,15 +222,15 @@ While WebMCP launches first in Chrome 146, it's expected to spread to other brow
 - <strong>Safari</strong>: Notable from Apple Intelligence integration perspective
 - <strong>Edge</strong>: Natural integration with Copilot expected
 
-Since MCP is already designed as an open protocol, achieving cross-browser compatibility should be relatively straightforward. For a deep dive into MCP's open standardization journey, see [MCP Becomes an Open Standard — Linux Foundation Membership and Engineering Adoption Roadmap](/en/blog/en/mcp-open-standard-linux-foundation-engineering-guide).
+Since MCP is already designed as an open protocol, achieving cross-browser compatibility should be relatively straightforward. For a deep dive into MCP's open standardization journey, see [MCP Becomes an Open Standard — Linux Foundation Membership and Engineering Adoption Roadmap](/en/blog/en/mcp-open-standard-linux-foundation-engineering-guide/).
 
 ## What Developers Should Prepare
 
 ### Short-term (3-6 months)
 
-1. Learn the MCP protocol specification — [Building a Private MCP Server with Local LLM](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp) lets you experiment with MCP in a fully offline environment
+1. Learn the MCP protocol specification — [Building a Private MCP Server with Local LLM](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp/) lets you experiment with MCP in a fully offline environment
 2. Identify AI agent use cases for your services
-3. Experiment with WebMCP in Chrome 146 beta — though the API surface was reshuffled afterward. I traced how `provideContext` disappeared and `navigator.modelContext` took over in [WebMCP's Origin Trial](/en/blog/en/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026)
+3. Experiment with WebMCP in Chrome 146 beta — though the API surface was reshuffled afterward. I traced how `provideContext` disappeared and `navigator.modelContext` took over in [WebMCP's Origin Trial](/en/blog/en/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026/)
 
 ### Mid-term (6-12 months)
 

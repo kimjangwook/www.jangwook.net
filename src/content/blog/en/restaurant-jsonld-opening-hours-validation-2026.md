@@ -136,7 +136,7 @@ Fed the real stored data, seven days collapsed into three objects: Monday throug
 
 The service is multilingual, so I had to pick a naming policy: the local script (Japanese shop name) goes in `name`, the romanized form in `alternateName`. Local search and maps match against the local script, not the transliteration. The full block came back from the schema.org validator with zero errors and zero warnings.
 
-Delivery is server-side, no debate. In SvelteKit that means running the converter in the page's server load and serializing into `svelte:head`, escaping `<` as `\u003c` so a stray character in a shop name can't break out of the script tag. Why not inject client-side? [I measured that earlier](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026): structured data that isn't in the raw HTML simply doesn't exist for any collector that skips rendering.
+Delivery is server-side, no debate. In SvelteKit that means running the converter in the page's server load and serializing into `svelte:head`, escaping `<` as `\u003c` so a stray character in a shop name can't break out of the script tag. Why not inject client-side? [I measured that earlier](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026/): structured data that isn't in the raw HTML simply doesn't exist for any collector that skips rendering.
 
 ## What the model can't say: split shifts, last order, coordinate precision
 
@@ -185,7 +185,7 @@ The property typo gets caught by both layers, each with a helpful "did you mean 
 
 The third row is the problem. A value that isn't a time at all clears every layer. In schema-dts, `Time` is ultimately an alias for string, so the compiler has nothing to say. The validator doesn't check value formats. The single most damaging defect an hours markup can have (a time that isn't a time) is the one that travels furthest. Which means the `TIME_RE` regex in my converter isn't decoration; it's the <strong>only line of defense</strong>. Remove it and "eleven" compiles, validates, and ships to production HTML.
 
-The shape of this finding matches what I saw [comparing axe-core under jsdom and a real browser](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026): every tool catches a different slice, the gaps only show up when you measure, and the gaps you find need custom gates wired into CI.
+The shape of this finding matches what I saw [comparing axe-core under jsdom and a real browser](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026/): every tool catches a different slice, the gaps only show up when you measure, and the gaps you find need custom gates wired into CI.
 
 ## Honest limits: this markup won't move your local ranking
 
@@ -212,4 +212,4 @@ Wrong structured data is worse than none. If bad hours surface in search results
 
 ---
 
-If you need Restaurant or LocalBusiness structured data designed properly, or an existing markup pipeline audited with this kind of measurement, I take on consulting and implementation work individually. [Get in touch here](/en/contact).
+If you need Restaurant or LocalBusiness structured data designed properly, or an existing markup pipeline audited with this kind of measurement, I take on consulting and implementation work individually. [Get in touch here](/en/contact/).

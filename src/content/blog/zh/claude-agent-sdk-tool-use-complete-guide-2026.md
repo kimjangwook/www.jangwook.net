@@ -278,7 +278,7 @@ calculate(divide, 100, 4) = 25.0
 输入验证（缺少必填字段）: False, Missing required field: location
 ```
 
-[FastAPI + Claude API流式传输指南](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026)中涉及的错误分类策略同样适用于工具错误，可以提高生产环境稳定性。
+[FastAPI + Claude API流式传输指南](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026/)中涉及的错误分类策略同样适用于工具错误，可以提高生产环境稳定性。
 
 ## 处理多工具调用：能并行执行吗？
 
@@ -484,7 +484,7 @@ def run_issue_agent(query: str) -> str:
 
 <strong>工具定义质量直接决定效果</strong>：`description`含糊就会导致选错工具或根本不用工具。写好工具描述本身就是独立的提示工程工作，没有框架能自动解决这个问题。
 
-我认为Tool Use被低估了。代理框架提供了华丽的抽象，但归根结底底层运行的就是这个模式。像[PydanticAI的类型安全工具定义方式](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)这样的框架自动生成JSON Schema很方便，但只有理解底层机制，才能在出问题时找到根因。
+我认为Tool Use被低估了。代理框架提供了华丽的抽象，但归根结底底层运行的就是这个模式。像[PydanticAI的类型安全工具定义方式](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)这样的框架自动生成JSON Schema很方便，但只有理解底层机制，才能在出问题时找到根因。
 
 ## 什么时候用Tool Use，什么时候避免
 
@@ -504,7 +504,7 @@ def run_issue_agent(query: str) -> str:
 - 成本上限很紧的大批量任务。每个工具定义约250 token的固定开销和上下文累积会乘以调用次数。数百万条的批处理，无工具的单次调用可能更经济。
 - 必须确定性的流水线。工具选择本身是非确定的，如果工作流需要每次都保证相同的调用顺序，规则化代码更合适。
 
-判断标准很简单：自问"模型直接回答会不会出错，或者它是否需要去取自己不知道的东西"。两者之一就用Tool Use，否则普通调用即可。需要更重的多代理编排的时间点，是在[用Claude Agent Teams组建多代理](/zh/blog/zh/claude-agent-teams-guide)时，但在那之前先把单代理的Tool Use吃透才是正确顺序。
+判断标准很简单：自问"模型直接回答会不会出错，或者它是否需要去取自己不知道的东西"。两者之一就用Tool Use，否则普通调用即可。需要更重的多代理编排的时间点，是在[用Claude Agent Teams组建多代理](/zh/blog/zh/claude-agent-teams-guide/)时，但在那之前先把单代理的Tool Use吃透才是正确顺序。
 
 ## 参考的官方文档
 
@@ -515,7 +515,7 @@ def run_issue_agent(query: str) -> str:
 - [Claude Agent SDK 概览](https://platform.claude.com/docs/en/agent-sdk/overview)：无需自己实现工具循环、由SDK抽象化的上层。
 - [anthropic/claude-agent-sdk-python (GitHub)](https://github.com/anthropics/claude-agent-sdk-python)：官方Python SDK仓库与可运行的示例代码。
 
-如果想用MCP把工具服务化并复用，[用FastMCP构建Python MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)这篇文章介绍了把这个Tool Use模式搬到标准协议上的下一步。
+如果想用MCP把工具服务化并复用，[用FastMCP构建Python MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)这篇文章介绍了把这个Tool Use模式搬到标准协议上的下一步。
 
 ## 浓缩成五条的Tool Use要点
 

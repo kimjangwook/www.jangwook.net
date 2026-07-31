@@ -85,7 +85,7 @@ As part of this strategy, the server asset management API modernization was sele
 
 ## Core Strategy: Two-Agent Division of Labor
 
-The most innovative aspect of this project was the decision to <strong>deploy two types of AI agents with distinct specializations</strong>. For a comprehensive look at structuring multi-agent teams, see [Claude Code Agent Teams: 5-Team Setup and Production Guide](/en/blog/en/claude-agent-teams-guide).
+The most innovative aspect of this project was the decision to <strong>deploy two types of AI agents with distinct specializations</strong>. For a comprehensive look at structuring multi-agent teams, see [Claude Code Agent Teams: 5-Team Setup and Production Guide](/en/blog/en/claude-agent-teams-guide/).
 
 ```mermaid
 graph LR
@@ -150,7 +150,7 @@ This case study is particularly relevant for:
 2. <strong>Large-scale codebase transformations</strong>: Projects involving thousands to tens of thousands of lines
 3. <strong>Resolving technical debt blocked by resource constraints</strong>: AI dramatically improves the cost-benefit equation
 
-For real-world numbers on AI agent costs versus human labor, [AI Agent Cost vs Human Labor: A Honest Analysis from Running 8 Agents](/en/blog/en/ai-agent-cost-reality) offers concrete data.
+For real-world numbers on AI agent costs versus human labor, [AI Agent Cost vs Human Labor: A Honest Analysis from Running 8 Agents](/en/blog/en/ai-agent-cost-reality/) offers concrete data.
 
 ### Important Considerations
 

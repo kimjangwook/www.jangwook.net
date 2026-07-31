@@ -76,7 +76,7 @@ nineninesix-ai团队以Apache 2.0许可证发布了该项目，不仅包含模�
 
 传统高质量TTS模型通常需要数十亿参数和10GB以上的VRAM。KaniTTS2用400M参数实现了这一目标，可在<strong>消费级GPU（如RTX 3060）</strong>上运行。
 
-类似的轻量化趋势还体现在[8GB VRAM上运行的Qwen3-Coder](/zh/blog/zh/qwen3-coder-8gb-vram)，展示了代码特化模型的同类方法。
+类似的轻量化趋势还体现在[8GB VRAM上运行的Qwen3-Coder](/zh/blog/zh/qwen3-coder-8gb-vram/)，展示了代码特化模型的同类方法。
 
 ### 2. 完全开源的预训练框架
 
@@ -86,7 +86,7 @@ nineninesix-ai团队以Apache 2.0许可证发布了该项目，不仅包含模�
 - 构建特定领域（医疗、法律等）的语音模型
 - 针对特定口音和方言进行定制
 
-开源AI竞争加速的趋势，可以在[2026年2月AI模型热潮](/zh/blog/zh/ai-model-rush-february-2026)分析中从更宏观的视角加以理解。
+开源AI竞争加速的趋势，可以在[2026年2月AI模型热潮](/zh/blog/zh/ai-model-rush-february-2026/)分析中从更宏观的视角加以理解。
 
 ### 3. 内置语音克隆
 
@@ -165,7 +165,7 @@ KaniTTS2的发布超越了简单的模型发布，是语音AI民主化的重要�
 3. <strong>加速研究</strong>：完整训练管线的公开提高了TTS研究的可重复性和发展速度
 4. <strong>个人隐私</strong>：可在本地运行而非通过云API，确保语音数据隐私
 
-这一趋势不局限于语音AI。[DeepSeek V4即将发布](/zh/blog/zh/deepseek-v4-release)等消息表明，开源权重LLM生态系统整体也在延续同样的民主化路径。
+这一趋势不局限于语音AI。[DeepSeek V4即将发布](/zh/blog/zh/deepseek-v4-release/)等消息表明，开源权重LLM生态系统整体也在延续同样的民主化路径。
 
 ## 结论
 

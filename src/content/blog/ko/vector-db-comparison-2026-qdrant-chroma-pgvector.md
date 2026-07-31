@@ -51,7 +51,7 @@ RAG(Retrieval-Augmented Generation) 파이프라인에서 벡터 검색은 사�
 
 또 하나, 벡터 DB는 단순한 저장소 그 이상의 설계 결정이다. 어떤 DB를 쓰느냐에 따라 인프라 구성, 배포 복잡도, 운영 비용, 그리고 나중에 데이터를 옮기는 마이그레이션 난이도가 달라진다.
 
-DeNA LLM 스터디에서 RAG 아키텍처를 체계적으로 다루는 내용이 있는데, 벡터 DB 선택 이전에 [RAG 아키텍처 전체 설계를 먼저 파악](/ko/blog/ko/dena-llm-study-part4-rag)해두면 이 비교가 더 맥락 있게 읽힌다.
+DeNA LLM 스터디에서 RAG 아키텍처를 체계적으로 다루는 내용이 있는데, 벡터 DB 선택 이전에 [RAG 아키텍처 전체 설계를 먼저 파악](/ko/blog/ko/dena-llm-study-part4-rag/)해두면 이 비교가 더 맥락 있게 읽힌다.
 
 ## ChromaDB: 설치 5분, 그런데 프로덕션은?
 
@@ -88,7 +88,7 @@ API가 직관적이다. `add`, `query`, `delete` 세 개면 기본 기능은 다
 
 인메모리 모드가 기본이라 테스트가 빠르다. `chromadb.PersistentClient(path="./db")`로 로컬 파일 저장도 간단하다. 클라이언트-서버 모드도 지원해서 `chromadb.HttpClient(host="localhost")`로 전환하면 된다.
 
-Python 생태계와의 통합이 좋다. [LangChain, LlamaIndex, Haystack RAG 프레임워크 비교](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)에서 확인할 수 있듯이 ChromaDB 지원이 가장 성숙하다. 레퍼런스 자료도 많아서 막히면 Stack Overflow나 GitHub 이슈에서 빠르게 해결된다.
+Python 생태계와의 통합이 좋다. [LangChain, LlamaIndex, Haystack RAG 프레임워크 비교](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026/)에서 확인할 수 있듯이 ChromaDB 지원이 가장 성숙하다. 레퍼런스 자료도 많아서 막히면 Stack Overflow나 GitHub 이슈에서 빠르게 해결된다.
 
 ### ChromaDB의 한계, 솔직히 말하면
 
@@ -343,7 +343,7 @@ pgvector: numpy 근사 기준 1〜3ms (실제 환경은 +10〜50ms 네트워크 
 
 ### 임베딩 차원(dim)과 DB 성능의 관계
 
-dim=384는 sentence-transformers 기본 설정이지만([한국어 특화 sentence-transformers 임베딩 가이드](/ko/blog/ko/sentence-transformers-korean-rag-embedding-guide-2026) 참고), 2026년 기준으로 더 높은 차원(1536, 3072)을 쓰는 임베딩 모델이 많다. OpenAI의 `text-embedding-3-large`는 3072차원, Gemini Embedding 2는 최대 3072차원을 지원한다. 차원이 높아질수록 벡터 DB의 메모리 사용량과 인덱스 생성 시간이 증가한다.
+dim=384는 sentence-transformers 기본 설정이지만([한국어 특화 sentence-transformers 임베딩 가이드](/ko/blog/ko/sentence-transformers-korean-rag-embedding-guide-2026/) 참고), 2026년 기준으로 더 높은 차원(1536, 3072)을 쓰는 임베딩 모델이 많다. OpenAI의 `text-embedding-3-large`는 3072차원, Gemini Embedding 2는 최대 3072차원을 지원한다. 차원이 높아질수록 벡터 DB의 메모리 사용량과 인덱스 생성 시간이 증가한다.
 
 Qdrant는 `quantization`(양자화)로 high-dim 벡터의 메모리 사용량을 줄일 수 있다. Scalar Quantization만으로도 4배 압축이 가능하다. ChromaDB는 2026년 초 기준으로 이 기능이 없다. dim이 1536 이상인 임베딩을 대규모로 저장해야 한다면 Qdrant의 양자화가 실질적인 비용 절감으로 이어진다.
 
@@ -404,6 +404,6 @@ Qdrant는 `quantization`(양자화)로 high-dim 벡터의 메모리 사용량을
 
 ChromaDB는 프로토타입에서 여전히 1순위다. `pip install chromadb` 한 줄로 시작하는 편의성은 여전히 압도적이다. 다만 프로덕션 전환 시점에는 진지하게 Qdrant를 검토해야 한다.
 
-벡터 DB를 고른 다음 단계는 그것을 감싸는 AI 에이전트 라이브러리 선택이다. [Python AI 에이전트 라이브러리 비교 가이드](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 그 결정을 이어서 할 수 있다.
+벡터 DB를 고른 다음 단계는 그것을 감싸는 AI 에이전트 라이브러리 선택이다. [Python AI 에이전트 라이브러리 비교 가이드](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에서 그 결정을 이어서 할 수 있다.
 
 결국 "어떤 DB가 최고인가"는 의미 없는 질문이다. 내 규모, 팀 역량, 기존 인프라, 그리고 얼마나 빨리 시작해야 하는지에 따라 답이 달라진다. 이 글의 숫자가 그 결정에 구체적인 근거를 하나 더 제공해줬으면 한다.

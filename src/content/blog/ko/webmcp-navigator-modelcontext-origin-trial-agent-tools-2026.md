@@ -46,7 +46,7 @@ navigator.modelContext.provideContext({ tools: [ /* 이 배열이 전부를 덮�
 
 WebMCP(Web Model Context Protocol)는 웹페이지가 자기 기능을 AI 에이전트에게 "호출 가능한 툴"로 노출하는 브라우저 표준이다. 서버사이드 MCP가 로컬 앱이나 원격 서버를 에이전트에 연결했다면, WebMCP는 그 연결점을 브라우저 안, 문서 그 자체로 옮긴다. 페이지가 "상품 필터", "장바구니 담기" 같은 동작을 구조화된 툴로 등록하면, 브라우저에 붙은 에이전트가 그 툴을 스키마대로 호출한다. 사람이 클릭하던 버튼을 에이전트가 함수처럼 부르는 셈이다.
 
-이 아이디어 자체는 새롭지 않다. W3C Web Machine Learning Community Group이 2026년 2월 10일 Google·Microsoft 엔지니어를 중심으로 처음 공개했고, 나도 그 무렵 [브라우저가 에이전트의 툴 서버가 되는 구조](/ko/blog/ko/webmcp-chrome-146-ai-tool-server)를 개념 중심으로 한 번 다뤘다. 그때는 초안이었다. 지금은 다르다. Chrome 공식 문서는 "Join the WebMCP origin trial from Chrome 149"라고 명시하며, 실제 오리진 트라이얼 토큰을 받아 프로덕션 도메인에서 켜볼 수 있는 단계로 넘어왔다. 개념이 실물이 되면 늘 그렇듯, 설계도와 시공 결과가 어긋나는 지점이 생긴다. 그 어긋남이 이 글의 핵심이다.
+이 아이디어 자체는 새롭지 않다. W3C Web Machine Learning Community Group이 2026년 2월 10일 Google·Microsoft 엔지니어를 중심으로 처음 공개했고, 나도 그 무렵 [브라우저가 에이전트의 툴 서버가 되는 구조](/ko/blog/ko/webmcp-chrome-146-ai-tool-server/)를 개념 중심으로 한 번 다뤘다. 그때는 초안이었다. 지금은 다르다. Chrome 공식 문서는 "Join the WebMCP origin trial from Chrome 149"라고 명시하며, 실제 오리진 트라이얼 토큰을 받아 프로덕션 도메인에서 켜볼 수 있는 단계로 넘어왔다. 개념이 실물이 되면 늘 그렇듯, 설계도와 시공 결과가 어긋나는 지점이 생긴다. 그 어긋남이 이 글의 핵심이다.
 
 왜 브라우저 안이어야 하는가라는 질문이 남는다. 서버사이드 MCP만으로도 에이전트에 툴을 줄 수 있기 때문이다. 답은 상태에 있다. 로그인 세션, 장바구니, 화면에 지금 떠 있는 필터 조건 같은 것들은 브라우저 탭 안에서만 온전하다. 서버 툴이 그 상태에 닿으려면 별도의 인증과 동기화를 다시 쌓아야 한다. 반면 페이지가 자기 툴을 직접 노출하면, 에이전트는 사용자가 이미 로그인한 그 세션 그대로 동작을 부른다. 로컬 앱 설치도, 별도 API 키 교환도 없다. 이 "이미 열려 있는 맥락을 그대로 쓴다"는 점이 WebMCP의 존재 이유이자, 동시에 다음 절에서 볼 보안 긴장의 근원이다.
 
@@ -104,7 +104,7 @@ controller.abort();
 
 눈여겨볼 대목은 툴 제거 방식이다. 별도의 `unregisterTool` 메서드가 문서에 보이지 않는다. 대신 등록할 때 두 번째 인자로 `{ signal }`을 넘기고, 나중에 `controller.abort()`를 호출해 걷어낸다. 페이지 라우팅에 따라 툴을 켜고 끄려면 각 라우트에서 컨트롤러를 새로 만들어 관리하는 패턴이 자연스럽다. 반대편에서 에이전트 쪽 코드는 `getTools({ fromOrigins: [...] })`로 노출된 툴을 조회하고 `executeTool(tool, '{"category":"shoes"}', { signal })`로 호출한다.
 
-`inputSchema`를 JSON Schema로 강제한다는 점은 서버사이드 MCP를 다뤄본 사람에게 익숙할 것이다. [MCP·A2A·Open Responses가 각자 어떻게 툴을 기술하는지](/ko/blog/ko/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026) 비교해두면, WebMCP가 왜 굳이 브라우저 안에서 같은 스키마 계약을 요구하는지 맥락이 잡힌다. 계약이 같아야 에이전트가 서버 툴이든 페이지 툴이든 동일한 방식으로 다룰 수 있다.
+`inputSchema`를 JSON Schema로 강제한다는 점은 서버사이드 MCP를 다뤄본 사람에게 익숙할 것이다. [MCP·A2A·Open Responses가 각자 어떻게 툴을 기술하는지](/ko/blog/ko/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026/) 비교해두면, WebMCP가 왜 굳이 브라우저 안에서 같은 스키마 계약을 요구하는지 맥락이 잡힌다. 계약이 같아야 에이전트가 서버 툴이든 페이지 툴이든 동일한 방식으로 다룰 수 있다.
 
 Chrome 문서는 이 명령형(imperative) 방식 외에 선언형(declarative) 방식도 함께 소개한다. 폼처럼 이미 존재하는 DOM 요소에 속성을 붙여 툴을 노출하는 접근이다. JS로 `execute`를 직접 쓰는 대신, 기존 마크업에 에이전트가 읽을 수 있는 힌트를 얹는 셈이다. 어느 쪽이 맞는지는 상황에 달렸다. 이미 서버 렌더링된 폼과 링크로 동작하는 사이트라면 선언형이 코드를 덜 늘리고, 클라이언트 상태를 세밀하게 조작해야 하는 동작이라면 명령형 `registerTool`이 통제력을 준다. 나는 대부분의 실사이트가 둘을 섞어 쓰게 될 것이라 본다. 조회성 동작은 선언형으로 가볍게, 상태를 바꾸는 동작은 명령형으로 주석까지 붙여서.
 

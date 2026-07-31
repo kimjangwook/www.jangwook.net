@@ -99,7 +99,7 @@ AI 벤더를 선택할 때 성능과 비용뿐 아니라, <strong>증류 공격 
 - 계정 검증 및 인증 강화 수준
 - 사용량 제한(rate limiting) 정교함
 
-AI 벤더 의존도 자체가 안고 있는 리스크는 [GPT-4o 은퇴와 모델 의존 리스크](/ko/blog/ko/gpt4o-retirement-model-dependency-risk)에서 다룬다. 단일 모델 의존이 기업에 미치는 영향과 다중 벤더 전략을 참고하면 된다.
+AI 벤더 의존도 자체가 안고 있는 리스크는 [GPT-4o 은퇴와 모델 의존 리스크](/ko/blog/ko/gpt4o-retirement-model-dependency-risk/)에서 다룬다. 단일 모델 의존이 기업에 미치는 영향과 다중 벤더 전략을 참고하면 된다.
 
 <strong>3. 오픈소스 모델의 출처 리스크</strong>
 
@@ -164,7 +164,7 @@ graph TD
 
 <strong>1. 산업 전반의 협력 강화</strong>
 
-Anthropic은 OpenAI와 함께 증류 공격에 대한 산업 전체의 대응을 촉구하고 있다. 개별 기업의 방어만으로는 부족하며, AI 산업, 클라우드 제공자, 정책 입안자의 공조가 필요하다. AI 거버넌스를 국가 안보 맥락에서 살펴보려면 [Anthropic vs 펜타곤 — CTO가 준비해야 할 벤더 전략](/ko/blog/ko/anthropic-pentagon-ai-governance-cto-lessons)을 참고하면 된다.
+Anthropic은 OpenAI와 함께 증류 공격에 대한 산업 전체의 대응을 촉구하고 있다. 개별 기업의 방어만으로는 부족하며, AI 산업, 클라우드 제공자, 정책 입안자의 공조가 필요하다. AI 거버넌스를 국가 안보 맥락에서 살펴보려면 [Anthropic vs 펜타곤 — CTO가 준비해야 할 벤더 전략](/ko/blog/ko/anthropic-pentagon-ai-governance-cto-lessons/)을 참고하면 된다.
 
 <strong>2. Microsoft의 오픈 웨이트 모델 백도어 스캐너</strong>
 

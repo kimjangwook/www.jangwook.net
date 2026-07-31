@@ -156,8 +156,8 @@ relatedPosts:
 | 4 | [일본어 홈페이지](/ja/) | 16 | 3:40 | 100% |
 | 5 | [Notion API MCP 가이드](/ko/blog/ko/ai-agent-notion-mcp-automation/) | 14 | 6:36 | 100% |
 | 6 | [Claude Code 웹 자동화](/ko/blog/ko/claude-code-web-automation/) | 11 | 0:55 | 100% |
-| 7 | [개선 히스토리](/ko/improvement-history) | 8 | 16:12 | 100% |
-| 8 | [소셜 페이지](/ko/social) | 5 | 3:31 | 100% |
+| 7 | [개선 히스토리](/ko/improvement-history/) | 8 | 16:12 | 100% |
+| 8 | [소셜 페이지](/ko/social/) | 5 | 3:31 | 100% |
 | 9 | [블로그 런칭 리포트 (일본어)](/ja/blog/ja/blog-launch-analysis-report/) | 4 | 0:57 | 100% |
 | 10 | [Claude Code 웹 자동화 (일본어)](/ja/blog/ja/claude-code-web-automation/) | 4 | 1:54 | 67% |
 

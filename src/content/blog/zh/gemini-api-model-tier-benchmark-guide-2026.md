@@ -91,7 +91,7 @@ Flash-Lite以65 TPS遥遥领先。比Pro快4.9倍，比2.5 Flash快2.4倍。TTFT
 
 3.5 Flash让我感兴趣。它比2.5 Flash略快，输出token更多（186 vs 170）——相同提示词得到了更丰富的回答，说明质量有所提升。但由于无法确认官方价格，成本比较暂时只能粗略估算。
 
-Pro延迟11秒的原因是[thinking模式默认开启](/zh/blog/zh/deep-thinking-ratio-llm-cost-optimization)。即使是短提示词也会经历内部推理步骤，导致TTFT偏长。对于简单任务来说是明显的浪费，但在需要复杂推理的场景下，这种延迟是有意义的。
+Pro延迟11秒的原因是[thinking模式默认开启](/zh/blog/zh/deep-thinking-ratio-llm-cost-optimization/)。即使是短提示词也会经历内部推理步骤，导致TTFT偏长。对于简单任务来说是明显的浪费，但在需要复杂推理的场景下，这种延迟是有意义的。
 
 ## 成本对比：官方价格（2026年5月）
 
@@ -106,7 +106,7 @@ Pro延迟11秒的原因是[thinking模式默认开启](/zh/blog/zh/deep-thinking
 
 Flash-Lite相比Flash的输入成本低67%，输出成本低84%。速度还快2.4倍。这不禁让人思考：对于简单任务，继续用Flash真的合理吗？
 
-Pro的输入成本是Flash-Lite的12.5倍。正如[跨提供商LLM价格对比文章](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)中提到的，这个差距看起来很大，但总成本取决于实际的输入/输出token比例。
+Pro的输入成本是Flash-Lite的12.5倍。正如[跨提供商LLM价格对比文章](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)中提到的，这个差距看起来很大，但总成本取决于实际的输入/输出token比例。
 
 *Gemini 3.5 Flash的官方价格尚未公布。我无法从API响应中获取价格信息，根据社区估算，大约是2.5 Flash的1.5〜2倍。这不是精确数据，请注意。
 
@@ -179,7 +179,7 @@ Flash是务实的默认选择。比Flash-Lite慢2.5倍、贵3倍，但在更复�
 - 需要从长文档中提取细微内容的RAG
 - 准确性损失的代价远超模型溢价的B2B场景
 
-用Pro做普通聊天机器人是浪费。但当我分析[AI智能体的实际成本结构](/zh/blog/zh/ai-agent-cost-reality)时，成本炸弹往往不是来自错误的模型选择，而是来自错误的智能体设计。在需要Pro的地方用Flash-Lite导致准确性下降，重新处理的成本可能比节省的钱更多。
+用Pro做普通聊天机器人是浪费。但当我分析[AI智能体的实际成本结构](/zh/blog/zh/ai-agent-cost-reality/)时，成本炸弹往往不是来自错误的模型选择，而是来自错误的智能体设计。在需要Pro的地方用Flash-Lite导致准确性下降，重新处理的成本可能比节省的钱更多。
 
 ## 超越模型选择的三个成本杠杆
 

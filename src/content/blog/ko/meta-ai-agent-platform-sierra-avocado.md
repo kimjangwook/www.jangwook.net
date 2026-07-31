@@ -59,7 +59,7 @@ relatedPosts:
 
 Meta가 단순한 소셜 미디어 기업에서 <strong>AI 에이전트 플랫폼 기업</strong>으로 대전환을 시도하고 있다. 2025년 말부터 본격화된 이 전략은 세 가지 핵심 키워드로 요약된다: 외부 에이전트 파트너십인 <strong>Sierra</strong>, 차세대 프론티어 모델의 내부 코드네임인 <strong>Avocado</strong>, 그리고 고급 추론 능력을 의미하는 <strong>Big Brain</strong>이다.
 
-이 글에서는 Meta의 AI 전략이 어떻게 변화하고 있는지, 그리고 이것이 개발자와 비즈니스에 어떤 의미를 갖는지 분석한다. 기업의 AI 에이전트 도입 전략에 관심 있다면 [기업 AI 도입의 탑다운 전략](/ko/blog/ko/enterprise-ai-adoption-topdown)도 함께 참고하면 좋다.
+이 글에서는 Meta의 AI 전략이 어떻게 변화하고 있는지, 그리고 이것이 개발자와 비즈니스에 어떤 의미를 갖는지 분석한다. 기업의 AI 에이전트 도입 전략에 관심 있다면 [기업 AI 도입의 탑다운 전략](/ko/blog/ko/enterprise-ai-adoption-topdown/)도 함께 참고하면 좋다.
 
 ## Llama에서 Avocado로 — 전략의 대전환
 
@@ -199,7 +199,7 @@ graph TB
 | <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
 | <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
 
-Anthropic의 에이전트 표준화 접근 방식은 [Anthropic 에이전트 스킬 표준](/ko/blog/ko/anthropic-agent-skills-standard)에서 자세히 살펴볼 수 있다.
+Anthropic의 에이전트 표준화 접근 방식은 [Anthropic 에이전트 스킬 표준](/ko/blog/ko/anthropic-agent-skills-standard/)에서 자세히 살펴볼 수 있다.
 
 ## 결론
 

@@ -75,7 +75,7 @@ MCP의 주요 특징:
 - <strong>확장 가능성</strong>: 새로운 도구를 쉽게 추가하고 통합
 - <strong>오픈 소스</strong>: 커뮤니티 주도 개발과 투명성
 
-MCP 서버를 직접 구현해보고 싶다면 [MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기](/ko/blog/ko/mcp-server-build-practical-guide-2026)에서 Python FastMCP로 커스텀 도구를 만드는 실전 과정을 확인할 수 있다.
+MCP 서버를 직접 구현해보고 싶다면 [MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기](/ko/blog/ko/mcp-server-build-practical-guide-2026/)에서 Python FastMCP로 커스텀 도구를 만드는 실전 과정을 확인할 수 있다.
 
 ## 기존 방식의 한계
 
@@ -111,7 +111,7 @@ AI 모델이 도구를 호출할 때마다 <strong>전체 도구 정의를 컨�
 5. 클라이언트 → 모델: 결과 전송
 6. 반복...
 
-15번의 도구 호출이 필요한 작업은 <strong>30개 이상의 네트워크 왕복</strong>을 발생시킨다. 이 문제를 해결하기 위한 에이전트 아키텍처 선택은 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 비교해볼 수 있다.
+15번의 도구 호출이 필요한 작업은 <strong>30개 이상의 네트워크 왕복</strong>을 발생시킨다. 이 문제를 해결하기 위한 에이전트 아키텍처 선택은 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 비교해볼 수 있다.
 
 ### 3. 컨텍스트 창 오염
 

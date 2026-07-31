@@ -47,7 +47,7 @@ faq:
 
 My blog automation had grown to 17 specialized agents, 6 slash commands, and 4 skills. Each piece worked. Together, they were a mess I was afraid to edit, because changing one file might quietly break three others.
 
-So I stopped patching things by hand. Instead, I pointed Claude Code's multi-agent pattern at the whole thing: 48 files, analyzed in one pass, with 61 issues coming out the other end. Documentation quality went from 78 to 92, and token costs dropped 60-70%. This post is the record of how that went. For a practical breakdown of actual Claude Code usage costs and efficiency, see the [Claude Code Usage Insights Analysis](/en/blog/en/claude-code-insights-usage-analysis). For a structured overview of the five core agentic workflow patterns in Claude Code, see the [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026).
+So I stopped patching things by hand. Instead, I pointed Claude Code's multi-agent pattern at the whole thing: 48 files, analyzed in one pass, with 61 issues coming out the other end. Documentation quality went from 78 to 92, and token costs dropped 60-70%. This post is the record of how that went. For a practical breakdown of actual Claude Code usage costs and efficiency, see the [Claude Code Usage Insights Analysis](/en/blog/en/claude-code-insights-usage-analysis/). For a structured overview of the five core agentic workflow patterns in Claude Code, see the [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/).
 
 <strong>Key Achievements</strong>:
 - 48 files analyzed across 4 domains
@@ -754,7 +754,7 @@ This pattern isn't a silver bullet. Working through 48 files by hand, I hit seve
 - <strong>It's exploratory and the scope keeps shifting</strong>: when you don't yet know what to fix, the basis for splitting keeps moving. Sweep the whole thing with a single agent first, then split.
 - <strong>You're cost or latency sensitive</strong>: running many agents at once can multiply tokens and calls. Parallelizing without metadata caching often turns out more expensive.
 
-In short, multi-agent shines on <strong>large, independent</strong> work and struggles on <strong>small, coupled</strong> work. When in doubt, start single-agent and split only once context overflows. If you want the team-level collaboration model, the [Claude Code agent teams guide](/en/blog/en/claude-agent-teams-guide) covers it in depth.
+In short, multi-agent shines on <strong>large, independent</strong> work and struggles on <strong>small, coupled</strong> work. When in doubt, start single-agent and split only once context overflows. If you want the team-level collaboration model, the [Claude Code agent teams guide](/en/blog/en/claude-agent-teams-guide/) covers it in depth.
 
 ## Key Takeaways
 
@@ -781,7 +781,7 @@ In short, multi-agent shines on <strong>large, independent</strong> work and str
 
 ## What I'd Tell Myself Before Starting
 
-Large-scale cleanups don't finish in a single pass. The pattern here (analyze 48 files, surface 61 issues, then grind through them with iterative feedback) is not glamorous, but it produced numbers I could point to. That's the whole argument for doing it this way. For parallel execution with Git Worktree, [Claude Code Parallel Sessions and Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) covers the setup in detail.
+Large-scale cleanups don't finish in a single pass. The pattern here (analyze 48 files, surface 61 issues, then grind through them with iterative feedback) is not glamorous, but it produced numbers I could point to. That's the whole argument for doing it this way. For parallel execution with Git Worktree, [Claude Code Parallel Sessions and Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree/) covers the setup in detail.
 
 <strong>Final Statistics</strong>:
 - 17 files improved across 4 domains

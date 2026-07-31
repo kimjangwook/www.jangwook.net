@@ -128,7 +128,7 @@ Reddit r/LocalLLaMAでの議論では、以下のような意見が見られま�
 - <strong>アーキテクチャの重要性</strong>：MoE（Mixture of Experts）のルーティング効率が結果を左右する
 - <strong>学習データの質</strong>：量だけでなく、データの質と多様性が重要
 
-GLM-5が$8,000以上の利益を出してトップだった点も注目されています。標準ベンチマークでQwen 3.5より下位に位置するモデルが、実践的なタスクでは圧倒的に優れている場合があることを示しています。2026年2月のAIモデルリリース競争の全体動向は[2026年2月 AIモデルラッシュ分析](/ja/blog/ja/ai-model-rush-february-2026)で詳しくまとめています。
+GLM-5が$8,000以上の利益を出してトップだった点も注目されています。標準ベンチマークでQwen 3.5より下位に位置するモデルが、実践的なタスクでは圧倒的に優れている場合があることを示しています。2026年2月のAIモデルリリース競争の全体動向は[2026年2月 AIモデルラッシュ分析](/ja/blog/ja/ai-model-rush-february-2026/)で詳しくまとめています。
 
 ## AI評価の今後の方向性
 
@@ -154,7 +154,7 @@ graph LR
 3. <strong>ドメイン特化評価</strong>：利用目的に合わせた専門的なテスト
 4. <strong>継続的なモニタリング</strong>：一度のテストではなく、様々な条件下での評価
 
-コーディングツール評価でも同様のジレンマが見られます。[Windsurf Arena Mode 速度vs精度分析](/ja/blog/ja/windsurf-arena-mode-speed-over-accuracy)は、性能数値と実運用の信頼性のトレードオフを実証的に示しています。AIセキュリティの評価脆弱性については[ICMLプロンプトインジェクション学術レビュー](/ja/blog/ja/icml-prompt-injection-academic-review)も参照ください。
+コーディングツール評価でも同様のジレンマが見られます。[Windsurf Arena Mode 速度vs精度分析](/ja/blog/ja/windsurf-arena-mode-speed-over-accuracy/)は、性能数値と実運用の信頼性のトレードオフを実証的に示しています。AIセキュリティの評価脆弱性については[ICMLプロンプトインジェクション学術レビュー](/ja/blog/ja/icml-prompt-injection-academic-review/)も参照ください。
 
 ## 結論
 

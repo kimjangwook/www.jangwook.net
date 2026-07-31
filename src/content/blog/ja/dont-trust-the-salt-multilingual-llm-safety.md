@@ -91,7 +91,7 @@ Abeer et al.の研究によると、LLMが生成した要約は<strong>26.5%の�
 
 ### 655件の評価で明らかになった格差
 
-Mozilla Foundationで構築された[多言語AI安全性評価ラボ](https://www.multilingualailab.com/)は、GPT-4o、Gemini 2.5 Flash、Mistral Smallを対象に、難民・亡命シナリオにおける英語 vs アラビア語/ペルシャ語/パシュトー語/クルド語のパフォーマンスを比較しました。各モデルの[API価格と性能スペック比較](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)も合わせて確認すると、モデル選択の参考になります。
+Mozilla Foundationで構築された[多言語AI安全性評価ラボ](https://www.multilingualailab.com/)は、GPT-4o、Gemini 2.5 Flash、Mistral Smallを対象に、難民・亡命シナリオにおける英語 vs アラビア語/ペルシャ語/パシュトー語/クルド語のパフォーマンスを比較しました。各モデルの[API価格と性能スペック比較](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)も合わせて確認すると、モデル選択の参考になります。
 
 ### 評価結果の要約
 
@@ -105,7 +105,7 @@ Mozilla Foundationで構築された[多言語AI安全性評価ラボ](https://w
 
 ### LLM-as-Judgeの過信問題
 
-LLM自動評価（LLM-as-a-Judge）は、ファクトチェックツールなしでも<strong>一度も「不確実」と回答しませんでした</strong>。人間の評価者が指摘した格差を過小報告し、原文に存在しない免責事項をハルシネーションすることさえありました。評価パイプラインの信頼性を高めるには、[LangfuseなどのLLMトレーシングツール](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026)を導入してモデルごとの応答を体系的に追跡する方法が現実的です。
+LLM自動評価（LLM-as-a-Judge）は、ファクトチェックツールなしでも<strong>一度も「不確実」と回答しませんでした</strong>。人間の評価者が指摘した格差を過小報告し、原文に存在しない免責事項をハルシネーションすることさえありました。評価パイプラインの信頼性を高めるには、[LangfuseなどのLLMトレーシングツール](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026/)を導入してモデルごとの応答を体系的に追跡する方法が現実的です。
 
 ## ガードレールが崩壊する瞬間
 
@@ -161,7 +161,7 @@ Q&Aよりも要約の方がバイアス操作が容易です。要約ベース�
 
 <strong>5. 評価からガードレールまでの連続パイプラインを構築してください</strong>
 
-評価結果がガードレールポリシーに直接反映される連続的なプロセスが必要です。評価とガードレールを別々に運用すると、発見された問題が修正されません。[LangGraph・CrewAI・DAPRなどのエージェントフレームワーク](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)は、評価とガードレールを接続する自動化パイプラインの構築に活用できます。
+評価結果がガードレールポリシーに直接反映される連続的なプロセスが必要です。評価とガードレールを別々に運用すると、発見された問題が修正されません。[LangGraph・CrewAI・DAPRなどのエージェントフレームワーク](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)は、評価とガードレールを接続する自動化パイプラインの構築に活用できます。
 
 ### 技術実装の推奨事項
 

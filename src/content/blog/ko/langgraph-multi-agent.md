@@ -379,7 +379,7 @@ app = workflow.compile(checkpointer=checkpointer)
 4. <strong>비용 관리</strong>
    - LLM 호출 횟수 최적화
    - 캐싱 전략 활용
-   - 에이전트 워크플로우의 메타 도구 최적화 패턴은 [에이전트 워크플로우 메타 도구 최적화](/ko/blog/ko/agentic-workflow-meta-tools-optimization) 참고
+   - 에이전트 워크플로우의 메타 도구 최적화 패턴은 [에이전트 워크플로우 메타 도구 최적화](/ko/blog/ko/agentic-workflow-meta-tools-optimization/) 참고
 
 ### 모범 사례
 
@@ -401,7 +401,7 @@ app = workflow.compile(checkpointer=checkpointer)
 
 ## 다른 프레임워크와의 비교
 
-LangGraph 외에도 CrewAI, Dapr 등 다양한 에이전트 프레임워크가 존재한다. 각 프레임워크의 상세 비교는 [2026년 AI 에이전트 프레임워크 비교: LangGraph vs CrewAI vs Dapr 프로덕션 가이드](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)에서 확인할 수 있다.
+LangGraph 외에도 CrewAI, Dapr 등 다양한 에이전트 프레임워크가 존재한다. 각 프레임워크의 상세 비교는 [2026년 AI 에이전트 프레임워크 비교: LangGraph vs CrewAI vs Dapr 프로덕션 가이드](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)에서 확인할 수 있다.
 
 ### LangGraph vs CrewAI
 
@@ -473,7 +473,7 @@ Replit은 LangGraph를 활용하여 AI 기반 코딩 어시스턴트를 개발�
 
 ## 결론
 
-LangGraph는 프로덕션급 멀티 에이전트 시스템을 구축하기 위한 강력하고 유연한 프레임워크다. 그래프 기반 아키텍처, 강력한 상태 관리, 다양한 아키텍처 패턴을 통해 복잡한 AI 워크플로우를 효과적으로 구현할 수 있다. Claude SDK를 활용한 멀티 에이전트 오케스트레이션 구현에 관심이 있다면 [Claude Agent SDK 서브에이전트 오케스트레이션 튜토리얼](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026)도 함께 참고하면 된다.
+LangGraph는 프로덕션급 멀티 에이전트 시스템을 구축하기 위한 강력하고 유연한 프레임워크다. 그래프 기반 아키텍처, 강력한 상태 관리, 다양한 아키텍처 패턴을 통해 복잡한 AI 워크플로우를 효과적으로 구현할 수 있다. Claude SDK를 활용한 멀티 에이전트 오케스트레이션 구현에 관심이 있다면 [Claude Agent SDK 서브에이전트 오케스트레이션 튜토리얼](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026/)도 함께 참고하면 된다.
 
 <strong>LangGraph를 사용해야 하는 경우</strong>:
 - 복잡한 멀티 스텝 워크플로우가 필요한 경우

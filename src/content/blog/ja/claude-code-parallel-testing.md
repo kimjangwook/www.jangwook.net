@@ -61,7 +61,7 @@ relatedPosts:
 
 ## 概要
 
-[前回の記事](/ja/blog/ja/llm-page-migration-standardization)では、LLM を活用した Web ページマイグレーションの全体戦略を紹介しました。今回は、<strong>Claude Code の並列実行機能を活用してテスト自動化を 5-8 倍高速化する実践的な実装方法</strong>を解説します。
+[前回の記事](/ja/blog/ja/llm-page-migration-standardization/)では、LLM を活用した Web ページマイグレーションの全体戦略を紹介しました。今回は、<strong>Claude Code の並列実行機能を活用してテスト自動化を 5-8 倍高速化する実践的な実装方法</strong>を解説します。
 
 50〜500 ページ以上の大規模マイグレーションプロジェクトで最大のボトルネックは<strong>テストフェーズ</strong>です。各ページに対して E2E、アクセシビリティ、パフォーマンス、SEO テストを順次実行すると数十時間かかります。
 
@@ -107,7 +107,7 @@ Claude Code のエージェントシステムと Playwright の並列実行を�
 
 ## Claude Code 並列実行アーキテクチャ
 
-並列化の単位をテストではなく作業セッションそのものに広げる方法は[Claude Code 並列セッション運用ガイド](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)で扱った。ここでは単一セッション内の並列実行に絞る。
+並列化の単位をテストではなく作業セッションそのものに広げる方法は[Claude Code 並列セッション運用ガイド](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/)で扱った。ここでは単一セッション内の並列実行に絞る。
 
 ### 核心概念: Task Tool の並列呼び出し
 
@@ -361,7 +361,7 @@ jobs:
 
 ## ベストプラクティス
 
-テストコードの生成そのものをAIに任せる場合の落とし穴と検証手順は[Playwright + AI: 自動化されたE2Eテスト作成](/ja/blog/ja/playwright-ai-testing)に書いた。
+テストコードの生成そのものをAIに任せる場合の落とし穴と検証手順は[Playwright + AI: 自動化されたE2Eテスト作成](/ja/blog/ja/playwright-ai-testing/)に書いた。
 
 ### 1. テストの分離
 
@@ -433,4 +433,4 @@ export default defineConfig({
 
 - [Playwright Documentation](https://playwright.dev)
 - [Claude Code Documentation](https://docs.claude.com/claude-code)
-- [前回の記事: LLM を活用した Web ページマイグレーション](/ja/blog/ja/llm-page-migration-standardization)
+- [前回の記事: LLM を活用した Web ページマイグレーション](/ja/blog/ja/llm-page-migration-standardization/)

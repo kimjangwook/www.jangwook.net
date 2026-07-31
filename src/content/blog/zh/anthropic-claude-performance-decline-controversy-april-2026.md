@@ -97,7 +97,7 @@ Claude Code开发者之间分享了具体案例。多文件重构中跳过了以
 
 Anthropic在没有通知的情况下改变了这个预期水平。不是用户自己设置的。公司降低了默认值，将这一事实埋在了changelog里。
 
-正如我在[Claude Code使用量分析](/zh/blog/zh/claude-code-insights-usage-analysis)中整理的那样，Claude Code越是整合到生产工作流中，模型行为的可预测性就越是关键要素。如果昨天和今天的结果不同，调试是我的代码问题还是模型变更就需要花费时间。对于自动化管道来说，这个成本更大。
+正如我在[Claude Code使用量分析](/zh/blog/zh/claude-code-insights-usage-analysis/)中整理的那样，Claude Code越是整合到生产工作流中，模型行为的可预测性就越是关键要素。如果昨天和今天的结果不同，调试是我的代码问题还是模型变更就需要花费时间。对于自动化管道来说，这个成本更大。
 
 Boris Cherny的反驳产生了反效果。在他说"obvious and explicit"的时候，已经有数百名用户公开表示"不知道"。从公司的角度来看，"已经公开"这一事实可能很重要，但它是否真正传达给了用户才是更重要的问题。这是两回事。
 
@@ -129,7 +129,7 @@ LLM基础设施业务是烧钱的生意。Anthropic、OpenAI、Google DeepMind�
 
 我无法确认这一点。但"因成本压力而悄悄调整服务质量"在这个行业几乎是不被讨论的领域，这是事实。
 
-在撰写[Claude Code的5种智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)时也有所体会，智能体系统构建得越复杂，模型的细微性能变化对整个工作流的影响就呈指数级增长。将多层orchestrator-subagent结构叠加，一个effort级别的变化就可能降低整个管道的可靠性。这次许多Claude Code用户亲身证实了这一点。
+在撰写[Claude Code的5种智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)时也有所体会，智能体系统构建得越复杂，模型的细微性能变化对整个工作流的影响就呈指数级增长。将多层orchestrator-subagent结构叠加，一个effort级别的变化就可能降低整个管道的可靠性。这次许多Claude Code用户亲身证实了这一点。
 
 用户期待"模型升级会越来越好"。实际上，成本压力可能导致服务质量发生变化。这两个事实可以同时成立。新版本模型可能变得更强大，同时，当前运行版本的服务质量也可能因成本原因而被调整。版本没有升级，只是基本行为方式悄悄改变——AI服务行业如何应对这个结构性差距，将成为决定这个行业未来可信度的关键变量。
 

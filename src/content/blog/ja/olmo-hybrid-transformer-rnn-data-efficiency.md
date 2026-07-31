@@ -117,14 +117,14 @@ Base、SFT、DPOの各段階別モデル、すべての重み、中間チェッ�
 ## EM/CTO視点での示唆
 
 1. <strong>同じ予算でより高性能なモデルの学習が可能</strong>
-2. <strong>64Kトークンでの性能向上</strong> → [長文コンテキスト活用](/ja/blog/ja/anthropic-files-api-batch-document-processing-guide)の拡大
-3. <strong>学習コスト[50%削減](/ja/blog/ja/gemini-25-flash-api-cost-optimization-guide)の可能性</strong>
+2. <strong>64Kトークンでの性能向上</strong> → [長文コンテキスト活用](/ja/blog/ja/anthropic-files-api-batch-document-processing-guide/)の拡大
+3. <strong>学習コスト[50%削減](/ja/blog/ja/gemini-25-flash-api-cost-optimization-guide/)の可能性</strong>
 4. <strong>オープンソースエコシステムの成熟</strong>
 
 ## 今後の展望
 1. Pure Transformerの時代は終わりつつあります
 2. スケーリング則がハイブリッドに有利です
-3. オープンソースモデルの[競争力が強化されています](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)
+3. オープンソースモデルの[競争力が強化されています](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)
 
 ## 参考資料
 - [AI2公式ブログ](https://allenai.org/blog/olmohybrid)

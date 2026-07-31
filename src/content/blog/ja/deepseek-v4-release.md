@@ -55,7 +55,7 @@ relatedPosts:
 
 2026年初頭、中国AI業界で大規模言語モデル（LLM）の新たな波が押し寄せています。Reddit r/LocalLLaMAコミュニティで<strong>DeepSeek V4のリリースが間近</strong>というニュースが伝わり、大きな注目を集めています。Qwen3.5、GLM-5に続いてDeepSeek V4まで — 中国AI企業の次世代モデル競争が本格的に加速しています。
 
-[2026年2月のAIモデルラッシュ](/ja/blog/ja/ai-model-rush-february-2026)の分析は、中国AIモデル発表の重要な転換点となったこの時期を詳しく解説しています。
+[2026年2月のAIモデルラッシュ](/ja/blog/ja/ai-model-rush-february-2026/)の分析は、中国AIモデル発表の重要な転換点となったこの時期を詳しく解説しています。
 
 ## DeepSeekの軌跡
 
@@ -85,7 +85,7 @@ DeepSeekの核心的な競争力の一つは<strong>オープンウェイトポ�
 | <strong>GLM-5</strong> | Zhipu AI | マルチモーダル統合、エージェント機能強化 |
 | <strong>Yi-Lightning</strong> | 01.AI | 推論最適化、コスト効率 |
 
-とりわけQwen3.5は[VendingBenchでの驚くべき成果と商用AI市場への破壊的インパクト](/ja/blog/ja/qwen35-vending-bench-bankruptcy)で注目を集めています。
+とりわけQwen3.5は[VendingBenchでの驚くべき成果と商用AI市場への破壊的インパクト](/ja/blog/ja/qwen35-vending-bench-bankruptcy/)で注目を集めています。
 
 ### 競争の核心軸
 
@@ -137,7 +137,7 @@ Reddit r/LocalLLaMAコミュニティでDeepSeek V4のニュースは308ポイ�
 3. <strong>イノベーションの加速</strong>：コミュニティベースのモデル改善と応用分野の拡大
 4. <strong>地政学的影響</strong>：AI技術覇権競争の新たな局面
 
-この民主化の波は音声AIにも及んでいます。[KaniTTS2のように3GB VRAMでボイスクローニングが可能な軽量モデル](/ja/blog/ja/kanitts2-voice-cloning)の登場もその延長線上にあります。
+この民主化の波は音声AIにも及んでいます。[KaniTTS2のように3GB VRAMでボイスクローニングが可能な軽量モデル](/ja/blog/ja/kanitts2-voice-cloning/)の登場もその延長線上にあります。
 
 ## 結論
 

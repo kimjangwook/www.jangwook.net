@@ -126,13 +126,13 @@ Antigravity CLI（`agy`）は 2026-05-21 時点でまだ公開されていない
 - **Testing Agent**: ユニットテスト、回帰テスト
 - **Documentation Agent**: 技術ドキュメントの自動更新
 
-これは [Claude Code でサブエージェントを並列実行する方法](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)と本質的に同じパターンだ。違いは Google がこれを IDE の GUI として提供している点だ。
+これは [Claude Code でサブエージェントを並列実行する方法](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/)と本質的に同じパターンだ。違いは Google がこれを IDE の GUI として提供している点だ。
 
 ### GEMINI.md と .agents/ ディレクトリ
 
 プロジェクトルートに `GEMINI.md` を置くと、すべてのエージェントが共通ルールを参照する。`.agents/` ディレクトリに `agents.md` と `skills.md` を置くと、サブエージェント定義と再利用可能なスキルを宣言できる。
 
-[マルチエージェントオーケストレーションのルーティングパターン](/ja/blog/ja/multi-agent-orchestration-routing)で整理した概念がここでも直接適用される。
+[マルチエージェントオーケストレーションのルーティングパターン](/ja/blog/ja/multi-agent-orchestration-routing/)で整理した概念がここでも直接適用される。
 
 ### Antigravity CLI（agy）
 
@@ -170,7 +170,7 @@ Antigravity のエージェントパネルの名前は Cascade だ。Windsurf �
 
 Windsurf は元々 Codeium が作った IDE で、Cascade によるエージェントコーディングで Cursor と差別化した。Antigravity が同じ名前を使うということは、Google が Windsurf のユーザー層を直接狙っているというシグナルだ。確認した設定インポートリストに `antigravity.importWindsurfSettings` があることも同じ文脈だ。
 
-この IDE 戦争がどこへ向かうか予測は難しいが、競争激化は開発者にとっていいことだ。[Cursor、Claude Code、Windsurf の比較分析](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026)を書いた時は 3 社だったが、今や Antigravity が 4 番目として参入した。次の比較分析が必要になりそうだ。
+この IDE 戦争がどこへ向かうか予測は難しいが、競争激化は開発者にとっていいことだ。[Cursor、Claude Code、Windsurf の比較分析](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026/)を書いた時は 3 社だったが、今や Antigravity が 4 番目として参入した。次の比較分析が必要になりそうだ。
 
 ## Gemini Code Assist エンタープライズユーザーは例外
 

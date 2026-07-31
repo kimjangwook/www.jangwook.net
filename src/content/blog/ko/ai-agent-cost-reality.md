@@ -141,7 +141,7 @@ graph LR
 - <strong>에러 처리</strong>: 에이전트가 실패하면 어떻게 복구할 것인가?
 - <strong>비용 최적화</strong>: 비싼 모델과 저렴한 모델을 어떻게 혼합할 것인가?
 
-이 라우팅 레이어를 구축하고 안정화하는 데 드는 시간이 다른 모든 비용을 합친 것보다 크다. [Claude 에이전트 팀 구성 가이드](/ko/blog/ko/claude-agent-teams-guide)에서 다루는 멀티 에이전트 오케스트레이션 패턴은 이 라우팅 복잡도를 줄이는 실용적인 출발점이 된다.
+이 라우팅 레이어를 구축하고 안정화하는 데 드는 시간이 다른 모든 비용을 합친 것보다 크다. [Claude 에이전트 팀 구성 가이드](/ko/blog/ko/claude-agent-teams-guide/)에서 다루는 멀티 에이전트 오케스트레이션 패턴은 이 라우팅 복잡도를 줄이는 실용적인 출발점이 된다.
 
 ## 과잉 엔지니어링의 함정: 40시간 vs 1프롬프트
 
@@ -232,7 +232,7 @@ graph TD
 └── 낮은 복잡도 (60%): Claude Haiku / GPT-4o-mini → 분류, 요약, 포맷팅
 ```
 
-이 전략만으로 API 비용을 <strong>40-60% 절감</strong>할 수 있다. 모델별 단가와 도구 호출 비용을 코드 레벨에서 어떻게 다루는지는 [Claude Agent SDK 도구 사용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 구체적인 구현과 함께 확인할 수 있다.
+이 전략만으로 API 비용을 <strong>40-60% 절감</strong>할 수 있다. 모델별 단가와 도구 호출 비용을 코드 레벨에서 어떻게 다루는지는 [Claude Agent SDK 도구 사용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 구체적인 구현과 함께 확인할 수 있다.
 
 ### 2. 캐싱과 배치 처리
 
@@ -255,7 +255,7 @@ AI 에이전트는 마법이 아니다. <strong>명확한 트레이드오프가 
 지난 운용에서 건진 교훈을 정리하면 이렇다.
 
 1. <strong>API 비용은 총 비용의 일부일 뿐이다.</strong> 엔지니어링 시간, 유지보수, 장애 대응까지 포함해야 한다.
-2. <strong>라우팅 레이어가 가장 큰 기술적 난관이다.</strong> 멀티 에이전트 시스템의 진짜 어려움은 개별 에이전트가 아니라 [오케스트레이션](/ko/blog/ko/multi-agent-orchestration-improvement)이다.
+2. <strong>라우팅 레이어가 가장 큰 기술적 난관이다.</strong> 멀티 에이전트 시스템의 진짜 어려움은 개별 에이전트가 아니라 [오케스트레이션](/ko/blog/ko/multi-agent-orchestration-improvement/)이다.
 3. <strong>과잉 엔지니어링을 경계하라.</strong> 40시간의 복잡한 파이프라인보다 1개의 잘 작성된 프롬프트가 나을 수 있다.
 4. <strong>용도에 맞게 써라.</strong> 개인 생산성 확장에는 탁월하지만, 단순 인건비 대체 목적으로는 비용이 더 들 수 있다.
 

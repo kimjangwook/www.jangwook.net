@@ -53,7 +53,7 @@ back/forward cache（bfcache）是浏览器的一项功能：用户离开页面�
 
 麻烦在于，不是随便哪个页面都能冻。页面若还攥着活的连接或回调，浏览器就把它丢掉，而不是缓存。长期挂在这份「不合格」名单上的，就有打开着的 WebSocket。带实时聊天挂件、通知流、行情跳动的页面，每次后退都得整页重载。
 
-这个状态不用猜，浏览器用两个 API 给答案。`pageshow` 事件的 `event.persisted` 为 `true`，说明页面是从 bfcache 复原的。当它**没能**复原，`PerformanceNavigationTiming.notRestoredReasons` 会带上原因。这个 API 从 Chrome 123 起就发布了。我在[上一篇的六探针测量](/zh/blog/zh/bfcache-notrestoredreasons-audit-2026)里，用这两个 API 把六个拦截候选逐个拆开，确认了打开的 WebSocket 会以 `reason: "websocket"` 拦住页面。
+这个状态不用猜，浏览器用两个 API 给答案。`pageshow` 事件的 `event.persisted` 为 `true`，说明页面是从 bfcache 复原的。当它**没能**复原，`PerformanceNavigationTiming.notRestoredReasons` 会带上原因。这个 API 从 Chrome 123 起就发布了。我在[上一篇的六探针测量](/zh/blog/zh/bfcache-notrestoredreasons-audit-2026/)里，用这两个 API 把六个拦截候选逐个拆开，确认了打开的 WebSocket 会以 `reason: "websocket"` 拦住页面。
 
 ## 发布说得很明白：不再拦了
 
@@ -112,7 +112,7 @@ window.addEventListener('pageshow', (e) => {
 
 ## 那开发者该做什么
 
-这道裂缝不是空谈。上一篇里我建议把 bfcache 测量搬进无头脚本，[每次部署当作 CI 关卡跑一遍](/zh/blog/zh/validate-structured-data-ci-jsonld-2026)。今天这次测量正好戳中那条建议的盲点。你 CI 里的浏览器，十有八九是新配置文件的无头实例。这种环境，如刚才所见，反映平台放量比真实用户要慢。平台宣布「修好了」之后，你的关卡还可能有一阵子照吐 `websocket` 当拦截原因。
+这道裂缝不是空谈。上一篇里我建议把 bfcache 测量搬进无头脚本，[每次部署当作 CI 关卡跑一遍](/zh/blog/zh/validate-structured-data-ci-jsonld-2026/)。今天这次测量正好戳中那条建议的盲点。你 CI 里的浏览器，十有八九是新配置文件的无头实例。这种环境，如刚才所见，反映平台放量比真实用户要慢。平台宣布「修好了」之后，你的关卡还可能有一阵子照吐 `websocket` 当拦截原因。
 
 按能立刻上手的顺序整理：
 
@@ -145,4 +145,4 @@ window.addEventListener('pageshow', (event) => {
 
 限制也照实写。这三轮是在一台 macOS 机器上用 Chrome 150 系测的。Safari 和 Firefox 的拦截条件不同，`notRestoredReasons` 本身也是 Chromium 系的 API。我没复现拿到种子的有头 stable 配置文件，也没敲定功能确切的标志名。把这个结果读成「Chrome 150 会拦 WebSocket」就错了；准确地读成「我测的三个自动化环境里，还在拦」才对。复现步骤都留着，各自在自己的目标环境里跑同样三轮，就能得到自己放量阶段的答案。
 
-测量去确认一条发布，和那条发布在你面前的浏览器里是否真被点亮，是两个问题。后者不是意见，只有测量能回答，而答案因环境而异。我个人接这类活：实测线上站点的 bfcache 资格，再把结果落成一道不会跟真实用户现场数据跑偏的关卡。若用得上，可以通过[联系页面](/zh/contact)找我。
+测量去确认一条发布，和那条发布在你面前的浏览器里是否真被点亮，是两个问题。后者不是意见，只有测量能回答，而答案因环境而异。我个人接这类活：实测线上站点的 bfcache 资格，再把结果落成一道不会跟真实用户现场数据跑偏的关卡。若用得上，可以通过[联系页面](/zh/contact/)找我。

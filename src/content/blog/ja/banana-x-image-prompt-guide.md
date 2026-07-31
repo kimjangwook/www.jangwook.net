@@ -50,7 +50,7 @@ relatedPosts:
 
 ## はじめに：「なんとなく綺麗な画像」はもう卒業
 
-AI画像生成ツールに「modern clean blog hero image」と入力したことはありませんか？ 結果はどこかで見たような、特徴のない画像だったはずです。プロンプトが曖昧だと、AIも曖昧な画像を生成します。（[LLMがプロンプトを処理する仕組み](/ja/blog/ja/dena-llm-study-part1-fundamentals)を理解すると、この現象の理由が明確になります。）
+AI画像生成ツールに「modern clean blog hero image」と入力したことはありませんか？ 結果はどこかで見たような、特徴のない画像だったはずです。プロンプトが曖昧だと、AIも曖昧な画像を生成します。（[LLMがプロンプトを処理する仕組み](/ja/blog/ja/dena-llm-study-part1-fundamentals/)を理解すると、この現象の理由が明確になります。）
 
 この問題を解決するために、<strong>Banana Xプロジェクトで300件以上のインフォグラフィックデザインを5つの基準で評価したデータ</strong>を分析しました。その結果、高得点デザインには明確な共通パターンがあり、それを体系的なプロンプト構造にまとめたのが<strong>YAML 7-Part Structure</strong>です。
 
@@ -524,7 +524,7 @@ YAML構造で設計した内容を漏れなく自然言語に圧縮するのが�
 - <strong>Before</strong>：プロンプト「modern tech blog hero」→ どこにでもあるグラデーション画像
 - <strong>After</strong>：YAML 7-Part Structure適用 → 記事内容と整合する唯一無二の画像
 
-特に<strong>Content Connection</strong>パートの導入後、Theme Fitスコアが平均6点から9点へ大幅に向上しました。[Figma MCPを活用したデザインシステムの同期](/ja/blog/ja/figma-mcp-web-components-sync)と組み合わせることで、ヒーロー画像とUIコンポーネント全体でより一貫したビジュアルアイデンティティを維持できます。
+特に<strong>Content Connection</strong>パートの導入後、Theme Fitスコアが平均6点から9点へ大幅に向上しました。[Figma MCPを活用したデザインシステムの同期](/ja/blog/ja/figma-mcp-web-components-sync/)と組み合わせることで、ヒーロー画像とUIコンポーネント全体でより一貫したビジュアルアイデンティティを維持できます。
 
 ### 最終チェックリスト
 

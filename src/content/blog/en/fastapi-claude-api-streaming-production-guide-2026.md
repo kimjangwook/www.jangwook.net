@@ -60,7 +60,7 @@ You only need four dependencies:
 pip install fastapi uvicorn anthropic httpx
 ```
 
-If you're new to Python environment setup, [setting up a Python AI development environment with uv](/en/blog/en/uv-python-ai-development-setup-guide-2026) is a good first read. It cleanly solves virtual environment and dependency conflict issues.
+If you're new to Python environment setup, [setting up a Python AI development environment with uv](/en/blog/en/uv-python-ai-development-setup-guide-2026/) is a good first read. It cleanly solves virtual environment and dependency conflict issues.
 
 ## Step 1: Project Structure and Basic Setup
 
@@ -415,7 +415,7 @@ Reaching for SSE + FastAPI isn't always the right call. Here's how I decide, bas
 - The task is a short classification or extraction where receiving the answer all at once doesn't hurt UX. A plain request-response is simpler to write and easier to debug.
 - You're batch-processing 1,000+ documents. Streaming buys you nothing, and the Anthropic Message Batches API runs at roughly half the cost.
 - You need bidirectional real-time interaction (typing indicators, collaborative editing). SSE is one-directional, so WebSocket is the right tool.
-- You're in a local or on-prem environment where outbound API calls are blocked. Self-hosting a model comes first there. I covered the self-hosted route in [deploying a production backend with Ollama and FastAPI](/en/blog/en/ollama-fastapi-production-deployment-guide-2026).
+- You're in a local or on-prem environment where outbound API calls are blocked. Self-hosting a model comes first there. I covered the self-hosted route in [deploying a production backend with Ollama and FastAPI](/en/blog/en/ollama-fastapi-production-deployment-guide-2026/).
 
 In short, the complexity of this pattern is only justified when "long output" and "real-time display" hold at the same time. Drop either one and a simpler approach exists.
 
@@ -427,7 +427,7 @@ The code here was written and tested against the following official docs. Behavi
 - [Anthropic — Streaming Messages](https://docs.claude.com/en/docs/build-with-claude/streaming): the SSE streaming event structure for the Claude API and per-SDK usage.
 - [MDN — Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events): the standard definition of the SSE event format (`data:`, `event:`, `id:`, `retry:`) and the `EventSource` API.
 
-If you want stricter, type-safe request schemas, [building type-safe agents with Pydantic AI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) is a useful companion read.
+If you want stricter, type-safe request schemas, [building type-safe agents with Pydantic AI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) is a useful companion read.
 
 To be honest, this isn't the right stack for every situation. If you have a Node.js team, the Vercel AI SDK is faster to ship. If you need massive concurrent real-time connections, WebSocket or gRPC Streaming might be better. But for getting a Python AI streaming backend running quickly, this is the most practical starting point I've personally verified.
 

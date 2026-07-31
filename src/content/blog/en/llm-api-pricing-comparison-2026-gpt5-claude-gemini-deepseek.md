@@ -143,7 +143,7 @@ Pricing tables alone lead to bad decisions. In actual production, cache and batc
 - OpenAI and Anthropic both offer 50% off (async processing within 24 hours)
 - Best for tasks that don't need real-time responses: batch translation, classification, summarization
 
-What I learned when applying batch APIs to this pipeline: if cache hit rate is low, the discount effect is smaller than expected. Workflows where the system prompt changes per task see low cache efficiency. I wrote about a related issue in [Deep-Thinking Ratio: Cutting LLM Reasoning Costs by 50%](/en/blog/en/deep-thinking-ratio-llm-cost-optimization) — the conclusion there also holds: cost optimization starts with task structure design, not discount rates.
+What I learned when applying batch APIs to this pipeline: if cache hit rate is low, the discount effect is smaller than expected. Workflows where the system prompt changes per task see low cache efficiency. I wrote about a related issue in [Deep-Thinking Ratio: Cutting LLM Reasoning Costs by 50%](/en/blog/en/deep-thinking-ratio-llm-cost-optimization/) — the conclusion there also holds: cost optimization starts with task structure design, not discount rates.
 
 ## Three Mistakes to Avoid Before Choosing a Model
 
@@ -232,7 +232,7 @@ In this scenario, Gemini 2.5 Flash is the most compelling on price-to-performanc
 
 ## Decision Matrix — Which Model, When
 
-As I analyzed in my post on [real AI agent operational costs](/en/blog/en/ai-agent-cost-reality), the total cost of running an AI agent goes beyond token prices. But model selection criteria can be laid out clearly.
+As I analyzed in my post on [real AI agent operational costs](/en/blog/en/ai-agent-cost-reality/), the total cost of running an AI agent goes beyond token prices. But model selection criteria can be laid out clearly.
 
 | Use Case | Recommended Model | Reason |
 |----------|------------------|--------|
@@ -243,7 +243,7 @@ As I analyzed in my post on [real AI agent operational costs](/en/blog/en/ai-age
 | Batch translation, classification, summarization | DeepSeek V4 + cache | Input costs approach zero |
 | Security-sensitive internal code | Claude or GPT-5 (US data centers) | Data handling policy safety |
 
-More important than model selection is task separation. Even within the same pipeline, routing "judgment-intensive steps" to premium models and "repetitive processing steps" to budget models dramatically reduces cost. I explored this at the architecture level in [Heterogeneous LLM Agent Fleet Cost Optimization](/en/blog/en/heterogeneous-llm-agent-fleet-cost-optimization).
+More important than model selection is task separation. Even within the same pipeline, routing "judgment-intensive steps" to premium models and "repetitive processing steps" to budget models dramatically reduces cost. I explored this at the architecture level in [Heterogeneous LLM Agent Fleet Cost Optimization](/en/blog/en/heterogeneous-llm-agent-fleet-cost-optimization/).
 
 One more point worth making: "2026 is cheap" is not a reason to be careless. Usage scales cost linearly. $50/month feels trivial until you 10x the workload and it becomes $500.
 

@@ -111,11 +111,11 @@ RL은 이 문제를 **경험 기반 학습**으로 해결한다. 수천 번의 �
 
 지금까지 AI 에이전트 도입의 최대 병목은 **"모델 성능"** 이었다. 하지만 GPT-4, Claude, Gemini 등 Foundation Model의 성능이 수렴하면서, 병목이 **"특정 업무에 대한 적응(adaptation)"** 으로 이동하고 있다.
 
-Deeptune의 접근법은 이 적응 문제를 구조적으로 풀겠다는 것이다. 엔지니어링 조직 입장에서는, 범용 LLM을 프롬프트로 "설득"하는 것이 아니라, **RL로 "훈련된" 에이전트를 배치**하는 시대가 온다는 의미다. 이를 위한 [에이전트 프레임워크 선택과 아키텍처 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)가 엔지니어링 팀의 새로운 과제로 부상하고 있다.
+Deeptune의 접근법은 이 적응 문제를 구조적으로 풀겠다는 것이다. 엔지니어링 조직 입장에서는, 범용 LLM을 프롬프트로 "설득"하는 것이 아니라, **RL로 "훈련된" 에이전트를 배치**하는 시대가 온다는 의미다. 이를 위한 [에이전트 프레임워크 선택과 아키텍처 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)가 엔지니어링 팀의 새로운 과제로 부상하고 있다.
 
 ### 2. "AI 에이전트 DevOps" 시대의 도래
 
-현재 소프트웨어 개발에서 CI/CD 파이프라인이 필수인 것처럼, 곧 **[AI 에이전트의 훈련-평가-배포 파이프라인](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)**이 필수가 될 것이다. Deeptune의 RL 환경은 그 파이프라인의 "훈련" 단계를 담당한다.
+현재 소프트웨어 개발에서 CI/CD 파이프라인이 필수인 것처럼, 곧 **[AI 에이전트의 훈련-평가-배포 파이프라인](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)**이 필수가 될 것이다. Deeptune의 RL 환경은 그 파이프라인의 "훈련" 단계를 담당한다.
 
 ```mermaid
 graph TB
@@ -194,7 +194,7 @@ Atari 게임이나 로봇 제어에 사용되는 RL과 비교했을 때, 전문 
 
 5. **시뮬레이션 환경 파이프라인 검토**: Deeptune과 같은 서드파티 솔루션을 평가하되, 자사 업무 환경의 특수성을 시뮬레이션할 수 있는지 확인하라. 특히 사내 독자 시스템이 많은 조직은 환경 구축 비용을 신중히 평가해야 한다.
 
-6. **에이전트 평가 프레임워크 구축**: RL 훈련된 에이전트를 프로덕션에 배포하기 전, 체계적으로 성능을 평가할 수 있는 벤치마크와 안전성 테스트 프레임워크를 준비하라. [Managed Agent 프로덕션 배포 전략](/ko/blog/ko/claude-managed-agents-production-deployment-guide)에서 실제 적용 사례를 확인하라.
+6. **에이전트 평가 프레임워크 구축**: RL 훈련된 에이전트를 프로덕션에 배포하기 전, 체계적으로 성능을 평가할 수 있는 벤치마크와 안전성 테스트 프레임워크를 준비하라. [Managed Agent 프로덕션 배포 전략](/ko/blog/ko/claude-managed-agents-production-deployment-guide/)에서 실제 적용 사례를 확인하라.
 
 ### 장기 (18개월+)
 

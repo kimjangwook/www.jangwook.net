@@ -46,9 +46,9 @@ faq:
 
 "클라우드 AI를 쓰면 안 되는 환경에서 일한다." 이 말을 처음 들었을 때 솔직히 와닿지 않았다. 그런데 병원 의무기록을 다루는 팀, 법률 내부 문서를 검토하는 팀, 금융 고객 데이터를 분석하는 팀을 만나보니 생각보다 훨씬 많았다. 이런 팀에게 "Claude나 GPT에 붙여넣기 해보세요"는 애초에 선택지가 아니다.
 
-지난주에 [FastMCP로 MCP 서버를 직접 만드는 글](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)을 썼다. 그 글에서 Claude Code를 클라이언트로 연결하는 부분을 다뤘는데, 그 직후 받은 질문이 이것이었다: "Claude 대신 로컬 LLM을 클라이언트로 쓸 수 있을까요?"
+지난주에 [FastMCP로 MCP 서버를 직접 만드는 글](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/)을 썼다. 그 글에서 Claude Code를 클라이언트로 연결하는 부분을 다뤘는데, 그 직후 받은 질문이 이것이었다: "Claude 대신 로컬 LLM을 클라이언트로 쓸 수 있을까요?"
 
-이 글은 그 질문에 대한 답이다. Ollama + Gemma 4 + FastMCP로, 인터넷 연결 없이 완전히 오프라인에서 동작하는 AI 도구 파이프라인을 직접 구현해봤다. Ollama로 Gemma 4를 서빙하는 운영 측면은 [Ollama + FastAPI 프로덕션 배포 가이드](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026)에서 더 자세히 다뤘으니 함께 보면 좋다.
+이 글은 그 질문에 대한 답이다. Ollama + Gemma 4 + FastMCP로, 인터넷 연결 없이 완전히 오프라인에서 동작하는 AI 도구 파이프라인을 직접 구현해봤다. Ollama로 Gemma 4를 서빙하는 운영 측면은 [Ollama + FastAPI 프로덕션 배포 가이드](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026/)에서 더 자세히 다뤘으니 함께 보면 좋다.
 
 > **공식 문서 먼저**: 이 글에 나오는 도구들의 1차 출처를 정리해둔다. 시작 전에 각 프로젝트의 현재 권장 설정을 확인하는 게 좋다.
 > - Ollama 공식 사이트: [ollama.com](https://ollama.com)
@@ -290,6 +290,6 @@ Gemma 4는 `list_directory` → `read_file("README.md")` 순서로 호출했다.
 
 이 파이프라인이 프로덕션으로 갈 때는, MCP 보안 이슈도 체크하길 권한다. 로컬이라도 툴 인젝션, 과도한 권한 같은 MCP 특유의 위험은 그대로 존재한다.
 
-Python 오케스트레이터 대신 TypeScript로 MCP 클라이언트를 구현하고 싶다면 [@modelcontextprotocol/sdk로 TypeScript MCP 클라이언트를 만드는 방법](/ko/blog/ko/mcp-client-typescript-sdk-guide-2026)을 참고하면 된다. 로컬 모델에서 구조화된 JSON 출력을 안정적으로 받는 기법은 [Ollama structured outputs + Pydantic 가이드](/ko/blog/ko/ollama-structured-outputs-pydantic-local-llm-guide-2026)에서 따로 다뤘다.
+Python 오케스트레이터 대신 TypeScript로 MCP 클라이언트를 구현하고 싶다면 [@modelcontextprotocol/sdk로 TypeScript MCP 클라이언트를 만드는 방법](/ko/blog/ko/mcp-client-typescript-sdk-guide-2026/)을 참고하면 된다. 로컬 모델에서 구조화된 JSON 출력을 안정적으로 받는 기법은 [Ollama structured outputs + Pydantic 가이드](/ko/blog/ko/ollama-structured-outputs-pydantic-local-llm-guide-2026/)에서 따로 다뤘다.
 
 코드는 모두 위에 있다. 설치 의존성은 `pip install fastmcp uvicorn openai requests` 하나면 끝이다. 돌려보고 막히는 부분이 있으면 각 스텝별로 따로 테스트해보는 게 빠르다.

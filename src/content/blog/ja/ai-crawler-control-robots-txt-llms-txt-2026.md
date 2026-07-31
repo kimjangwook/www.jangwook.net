@@ -121,8 +121,8 @@ Sitemap: https://example.com/sitemap.xml
 
 もちろんこれは「引用トラフィックを<strong>望む</strong>サイト」のデフォルトだ。有料コンテンツやコミュニティアーカイブのように引用すら望まないサイトなら、検索ボットもブロックするのが正しい。正解は一つではない。ただ、たいていのブログやドキュメントサイトなら、この「学習拒否＋引用許可」の組み合わせが合理的な出発点だと思う。
 
-クローラーが到着した後、実際に何を読み取るかは別の層の話だ。その部分は[LocalBusiness構造化データをサーバーサイドで出力する話](/ja/blog/ja/localbusiness-structured-data-server-side-vs-js-2026)で別に扱った。robots.txtが「誰を入れるか」なら、マークアップは「入ってきたボットに何を見せるか」だ。
-そして複数の言語で運営するサイトなら、上記robots.txtのSitemapディレクティブが運ぶhreflangシグナルが実際に双方向でかみ合っているかも別途確認すべきだ。その監査の過程は[自分の4言語ブログのhreflangを直接監査した記録](/ja/blog/ja/hreflang-reciprocity-audit-multilingual-2026)にまとめた。
+クローラーが到着した後、実際に何を読み取るかは別の層の話だ。その部分は[LocalBusiness構造化データをサーバーサイドで出力する話](/ja/blog/ja/localbusiness-structured-data-server-side-vs-js-2026/)で別に扱った。robots.txtが「誰を入れるか」なら、マークアップは「入ってきたボットに何を見せるか」だ。
+そして複数の言語で運営するサイトなら、上記robots.txtのSitemapディレクティブが運ぶhreflangシグナルが実際に双方向でかみ合っているかも別途確認すべきだ。その監査の過程は[自分の4言語ブログのhreflangを直接監査した記録](/ja/blog/ja/hreflang-reciprocity-audit-multilingual-2026/)にまとめた。
 
 
 ## 実際に検証した: ルールは本当に意図どおり効くのか
@@ -184,7 +184,7 @@ Pythonの標準パーサーは `Allow: /` を先に満たして通した。だ�
 
 つまり同じrobots.txtを前に、標準パーサーは「許可」、本物のGooglebotは「ブロック」と答える。この不一致は些細に見えるが実務では危険だ。ローカルスクリプトや何かのライブラリでrobots.txtを「テストしたら通った」と安心したのに、そのパーサーがGoogleの最長一致ルールを実装していなければ、実際にはブロックされたり開いてしまったりする、という意味だからだ。
 
-ここでの私の結論はこうだ。<strong>robots.txtの検証は、必ずそのクローラーが実際に使うルールで確認すべきだ。</strong>Googleならサーチコンソールのrobots.txtテスター、OpenAIなら公式ドキュメントのボット別挙動を基準に見る。汎用パーサー一つで「OK」と流すな。今日私が見つけたこの一行が、その証拠だ。（ちなみに、この「ツールが通したから全部OK」という落とし穴はアクセシビリティでも同じように現れる。[Lighthouse 100点がWCAG準拠を意味しないこと](/ja/blog/ja/a11y-lighthouse-audit-fix-2026)と、まったく同じ種類の錯覚だ。）
+ここでの私の結論はこうだ。<strong>robots.txtの検証は、必ずそのクローラーが実際に使うルールで確認すべきだ。</strong>Googleならサーチコンソールのrobots.txtテスター、OpenAIなら公式ドキュメントのボット別挙動を基準に見る。汎用パーサー一つで「OK」と流すな。今日私が見つけたこの一行が、その証拠だ。（ちなみに、この「ツールが通したから全部OK」という落とし穴はアクセシビリティでも同じように現れる。[Lighthouse 100点がWCAG準拠を意味しないこと](/ja/blog/ja/a11y-lighthouse-audit-fix-2026/)と、まったく同じ種類の錯覚だ。）
 
 ## Google-Extendedの落とし穴: AI Overviewsは止められない
 

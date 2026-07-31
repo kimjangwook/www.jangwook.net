@@ -63,7 +63,7 @@ AI 에이전트를 프로덕션에 배포해본 Engineering Manager라면 한 �
 
 RAG(Retrieval-Augmented Generation)나 단순한 벡터 DB로 이 문제를 해결하려는 시도는 많았지만, 대부분 "검색"에 그칠 뿐 "학습"까지 나아가지 못했다. 단순히 과거 대화를 검색하는 것과, 경험에서 패턴을 추출하고 mental model을 형성하는 것은 본질적으로 다르다.
 
-<strong>Hindsight</strong>는 이 문제에 정면으로 도전하는 오픈소스 프로젝트다. [MCP(Model Context Protocol)](/ko/blog/ko/mcp-server-build-practical-guide-2026) 호환으로 Claude, Cursor, VS Code 등 주요 AI 도구와 즉시 연동되며, LongMemEval 벤치마크에서 91.4%를 달성해 에이전트 메모리 시스템 최초로 90%를 돌파했다.
+<strong>Hindsight</strong>는 이 문제에 정면으로 도전하는 오픈소스 프로젝트다. [MCP(Model Context Protocol)](/ko/blog/ko/mcp-server-build-practical-guide-2026/) 호환으로 Claude, Cursor, VS Code 등 주요 AI 도구와 즉시 연동되며, LongMemEval 벤치마크에서 91.4%를 달성해 에이전트 메모리 시스템 최초로 90%를 돌파했다.
 
 ## Hindsight의 아키텍처
 
@@ -159,7 +159,7 @@ result = client.recall(
 
 ### Reflect — 성찰과 학습
 
-Reflect는 Hindsight를 단순 메모리 시스템에서 "[학습하는 시스템](/ko/blog/ko/hermes-agent-self-evolving-ai-framework)"으로 격상시키는 핵심 기능이다.
+Reflect는 Hindsight를 단순 메모리 시스템에서 "[학습하는 시스템](/ko/blog/ko/hermes-agent-self-evolving-ai-framework/)"으로 격상시키는 핵심 기능이다.
 
 ```python
 # 기존 기억을 분석하여 새로운 인사이트 도출
@@ -222,7 +222,7 @@ Hindsight 내부의 사실 추출과 mental model 생성에 사용되는 LLM은 
 | Anthropic | `anthropic` | Claude 모델 사용 |
 | Google | `gemini` | Gemini 모델 |
 | Groq | `groq` | 빠른 추론 |
-| Ollama | `ollama` | [로컬 모델](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp) |
+| Ollama | `ollama` | [로컬 모델](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp/) |
 | LM Studio | `lmstudio` | 로컬 모델 |
 
 에이전트가 사용하는 LLM과 Hindsight 내부 LLM은 독립적으로 설정할 수 있다는 점이 중요하다. 예를 들어, 에이전트는 Claude Opus를 사용하면서 Hindsight 내부 처리는 비용 효율적인 gpt-4o-mini를 사용하는 구성이 가능하다.

@@ -64,7 +64,7 @@ MCP（Model Context Protocol）的增长势头惊人。Python + TypeScript SDK�
 
 问题在于，这个协议专注于**连接**，对**控制**关注甚少。
 
-[创建MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026)时定义工具（tool），客户端调用这些工具。认证？OAuth 2.1已经进入规范。但"这个Agent每天能调用这个工具多少次"、"返回敏感数据的工具必须经过审批才能调用"这样的策略层，MCP协议本身并不包含。那是实现方的责任。
+[创建MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026/)时定义工具（tool），客户端调用这些工具。认证？OAuth 2.1已经进入规范。但"这个Agent每天能调用这个工具多少次"、"返回敏感数据的工具必须经过审批才能调用"这样的策略层，MCP协议本身并不包含。那是实现方的责任。
 
 于是MCP Gateway的概念应运而生。
 
@@ -262,7 +262,7 @@ FROM audit_log GROUP BY hour ORDER BY hour;
 
 "我们团队还没怎么用MCP"——这个借口快要过期了。
 
-说一个我亲身经历的案例：在用[Claude Code](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)通过Notion MCP编辑页面时，我不小心碰到了另一个团队的页面。Agent从搜索结果中选了一个标题相似的页面，我没多想就按了批准按钮。数据没丢，但挺尴尬的。
+说一个我亲身经历的案例：在用[Claude Code](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)通过Notion MCP编辑页面时，我不小心碰到了另一个团队的页面。Agent从搜索结果中选了一个标题相似的页面，我没多想就按了批准按钮。数据没丢，但挺尴尬的。
 
 这事发生在一个开发者的本地环境里，也就尴尬一下。但如果团队50人都在用Agent，每个Agent连接了5到10个MCP服务器呢？没有审计日志？无法追踪谁调用了什么？
 

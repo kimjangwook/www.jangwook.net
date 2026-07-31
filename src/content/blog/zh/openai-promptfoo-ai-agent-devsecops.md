@@ -95,7 +95,7 @@ Enterprise:
 
 ### 1. AI智能体安全的范式转变
 
-2025年之前，AI安全大多聚焦于"模型安全性"——通过RLHF对齐模型、添加输出过滤器、设置护栏。然而，2026年的AI智能体已经可以<strong>调用工具、访问数据、与外部系统交互</strong>，[攻击面](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security)已发生根本性变化。
+2025年之前，AI安全大多聚焦于"模型安全性"——通过RLHF对齐模型、添加输出过滤器、设置护栏。然而，2026年的AI智能体已经可以<strong>调用工具、访问数据、与外部系统交互</strong>，[攻击面](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security/)已发生根本性变化。
 
 ```mermaid
 graph TD
@@ -230,7 +230,7 @@ escalation_triggers:
 
 ### 3. 建立安全测试基准
 
-基于[NIST AI风险管理框架](/zh/blog/zh/nist-ai-agent-security-standards)，结合团队实际情况制定安全测试基准。
+基于[NIST AI风险管理框架](/zh/blog/zh/nist-ai-agent-security-standards/)，结合团队实际情况制定安全测试基准。
 
 | 测试类别 | 最低基准 | 推荐基准 |
 |-------------|---------|---------|

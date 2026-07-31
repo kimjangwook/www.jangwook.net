@@ -76,7 +76,7 @@ Glasswing은 투명한 날개를 가진 나비 종류다. "투명하게 운영�
 
 ## 벤치마크를 좀 뜯어보면
 
-Mythos Preview의 숫자들은 확실히 인상적이다. Claude 모델의 [소스코드 유출 사건으로 드러난 내부 아키텍처 분석](/ko/blog/ko/claude-code-source-leak-analysis)과 함께 보면, 이 성능 점프가 어디서 왔는지 더 잘 이해된다.
+Mythos Preview의 숫자들은 확실히 인상적이다. Claude 모델의 [소스코드 유출 사건으로 드러난 내부 아키텍처 분석](/ko/blog/ko/claude-code-source-leak-analysis/)과 함께 보면, 이 성능 점프가 어디서 왔는지 더 잘 이해된다.
 
 - <strong>SWE-bench Verified</strong>: 93.9% (Opus 4.6은 80.8%, GPT-5.4는 대략 73%)
 - **SWE-bench Pro**: 77.8%
@@ -106,7 +106,7 @@ Picus Security가 이걸 잘 짚었다. ["모든 것을 부술 수 있는 것이
 
 Mythos가 찾아낸 취약점들은 진짜다. 27년 된 OpenBSD 버그가 지금까지 살아있었다는 건, 기존의 보안 감사 체계가 놓치고 있었다는 뜻이다. 그리고 이런 버그를 AI가 자동으로 찾을 수 있다면, 공격자 쪽에서도 비슷한 능력을 가진 모델을 만드는 건 시간문제일 뿐이다.
 
-AI 시스템에서 의도치 않은 정보가 노출되는 위험은 [AI 디스틸레이션 공격과 엔터프라이즈 방어 전략](/ko/blog/ko/ai-distillation-attacks-enterprise-defense)에서 다룬 것처럼 이미 현실적인 위협이 됐다. 그래서 Anthropic의 선택지는 사실 두 가지밖에 없었다고 본다:
+AI 시스템에서 의도치 않은 정보가 노출되는 위험은 [AI 디스틸레이션 공격과 엔터프라이즈 방어 전략](/ko/blog/ko/ai-distillation-attacks-enterprise-defense/)에서 다룬 것처럼 이미 현실적인 위협이 됐다. 그래서 Anthropic의 선택지는 사실 두 가지밖에 없었다고 본다:
 
 1. 공개해서 모두가 방어 도구로 쓸 수 있게 하되, 공격에도 쓰일 위험을 감수한다
 2. 제한 공개해서 방어자에게 먼저 시간을 준다
@@ -117,7 +117,7 @@ Anthropic은 2번을 골랐다. 합리적인 선택이지만, 이건 "방어자"
 
 Claude가 Firefox에서 22개 CVE를 찾아낸 게 몇 달 전이다. 그때도 "AI가 보안 감사를 바꾼다"는 이야기가 나왔는데, Mythos는 그 수준을 완전히 다른 차원으로 끌어올렸다.
 
-개인적으로 기대되는 건, 이런 능력이 결국 민주화될 수밖에 없다는 점이다. 지금은 Project Glasswing 참여 기업만 쓸 수 있지만, 1〜2년 안에 비슷한 수준의 오픈소스 보안 에이전트가 나올 거라고 본다. 이미 Opus 4.6 수준에서도 상당한 보안 감사가 가능하니까. AI 모델 공급망 보안이 실제로 어떻게 공격받을 수 있는지는 [LiteLLM 공급망 공격 분석](/ko/blog/ko/litellm-supply-chain-attack-ai-dependency-security)에서 구체적인 사례를 확인할 수 있다.
+개인적으로 기대되는 건, 이런 능력이 결국 민주화될 수밖에 없다는 점이다. 지금은 Project Glasswing 참여 기업만 쓸 수 있지만, 1〜2년 안에 비슷한 수준의 오픈소스 보안 에이전트가 나올 거라고 본다. 이미 Opus 4.6 수준에서도 상당한 보안 감사가 가능하니까. AI 모델 공급망 보안이 실제로 어떻게 공격받을 수 있는지는 [LiteLLM 공급망 공격 분석](/ko/blog/ko/litellm-supply-chain-attack-ai-dependency-security/)에서 구체적인 사례를 확인할 수 있다.
 
 그때까지 해야 할 건, 자기 코드베이스의 보안 부채를 줄이는 거다. 27년 된 버그가 OpenBSD에도 있었다면, 우리 프로젝트에 없다고 장담할 수 있는 사람은 아무도 없다.
 

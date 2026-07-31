@@ -59,7 +59,7 @@ relatedPosts:
 
 Metaが単なるソーシャルメディア企業から<strong>AIエージェントプラットフォーム企業</strong>への大転換を図っています。2025年末から本格化したこの戦略は、3つのキーワードで要約されます：外部エージェントパートナーシップの<strong>Sierra</strong>、次世代フロンティアモデルの内部コードネーム<strong>Avocado</strong>、そして高度な推論能力を意味する<strong>Big Brain</strong>です。
 
-この記事では、MetaのAI戦略がどのように変化しているのか、そしてそれが開発者やビジネスにどのような意味を持つのかを分析します。企業のAIエージェント採用動向については[企業AI導入のトップダウン戦略](/ja/blog/ja/enterprise-ai-adoption-topdown)も合わせて参照ください。
+この記事では、MetaのAI戦略がどのように変化しているのか、そしてそれが開発者やビジネスにどのような意味を持つのかを分析します。企業のAIエージェント採用動向については[企業AI導入のトップダウン戦略](/ja/blog/ja/enterprise-ai-adoption-topdown/)も合わせて参照ください。
 
 ## LlamaからAvocadoへ — 戦略の大転換
 
@@ -199,7 +199,7 @@ graph TB
 | <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
 | <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
 
-Anthropicのエージェント標準化アプローチについては[Anthropicエージェントスキル標準](/ja/blog/ja/anthropic-agent-skills-standard)で詳しく解説しています。
+Anthropicのエージェント標準化アプローチについては[Anthropicエージェントスキル標準](/ja/blog/ja/anthropic-agent-skills-standard/)で詳しく解説しています。
 
 ## まとめ
 

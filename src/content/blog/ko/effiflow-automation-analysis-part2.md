@@ -48,7 +48,7 @@ faq:
 
 > <strong>EffiFlow 자동화 구조 분석/평가 및 개선 시리즈</strong> (2/3)
 >
-> 1. [Part 1: 메타데이터로 71% 비용 절감](/ko/blog/ko/effiflow-automation-analysis-part1) - 3-Tier 아키텍처와 전체 시스템 개요
+> 1. [Part 1: 메타데이터로 71% 비용 절감](/ko/blog/ko/effiflow-automation-analysis-part1/) - 3-Tier 아키텍처와 전체 시스템 개요
 > 2. <strong>Part 2: Skills와 Commands 통합 전략</strong> ← 현재 글
 > 3. Part 3: 실전 개선 사례 및 ROI 분석
 
@@ -383,7 +383,7 @@ graph LR
 - <strong>유지보수</strong>: 각 컴포넌트 독립적 수정 가능
 - <strong>테스트</strong>: 각 레이어별 테스트 가능
 
-이 오케스트레이터-에이전트 분리는 특정 프레임워크에 매인 개념이 아니다. 같은 구도를 OpenAI 쪽 도구로 짤 때 어떻게 달라지는지는 [OpenAI AgentKit 실전 튜토리얼 Part 2](/ko/blog/ko/openai-agentkit-tutorial-part2)에서 나란히 비교해볼 수 있다.
+이 오케스트레이터-에이전트 분리는 특정 프레임워크에 매인 개념이 아니다. 같은 구도를 OpenAI 쪽 도구로 짤 때 어떻게 달라지는지는 [OpenAI AgentKit 실전 튜토리얼 Part 2](/ko/blog/ko/openai-agentkit-tutorial-part2/)에서 나란히 비교해볼 수 있다.
 
 ## 캐싱 전략: 58% 토큰 절감 메커니즘
 
@@ -1052,7 +1052,7 @@ Skills와 Commands는 만능 도구가 아니다. 직접 굴려 보면서 "이�
 - [anthropics/skills (GitHub)](https://github.com/anthropics/skills) — Anthropic이 공개한 오픈소스 Skill 모음
 - [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — Skills 아키텍처를 다룬 Anthropic 엔지니어링 블로그
 
-이 시리즈를 처음 본다면 [Part 1: 메타데이터로 71% 비용 절감](/ko/blog/ko/effiflow-automation-analysis-part1)에서 3-Tier 아키텍처 전체 그림을 먼저 잡는 편이 낫다. 여기서 다룬 Agent 위임 패턴을 더 파고들고 싶다면 [Claude Code 멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)와 [Claude Agent Teams 실전 가이드](/ko/blog/ko/claude-agent-teams-guide)가 자연스러운 다음 글이다. 토큰을 이만큼 줄여도 에이전트를 여러 개 돌리면 결국 돈이 든다. 실제 운영 비용이 궁금하다면 [AI 에이전트 비용 vs 인건비의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 숫자를 직접 확인해보면 좋다.
+이 시리즈를 처음 본다면 [Part 1: 메타데이터로 71% 비용 절감](/ko/blog/ko/effiflow-automation-analysis-part1/)에서 3-Tier 아키텍처 전체 그림을 먼저 잡는 편이 낫다. 여기서 다룬 Agent 위임 패턴을 더 파고들고 싶다면 [Claude Code 멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement/)와 [Claude Agent Teams 실전 가이드](/ko/blog/ko/claude-agent-teams-guide/)가 자연스러운 다음 글이다. 토큰을 이만큼 줄여도 에이전트를 여러 개 돌리면 결국 돈이 든다. 실제 운영 비용이 궁금하다면 [AI 에이전트 비용 vs 인건비의 현실](/ko/blog/ko/ai-agent-cost-reality/)에서 숫자를 직접 확인해보면 좋다.
 
 ## 정리하며: Skills와 Commands가 맞물리는 지점
 

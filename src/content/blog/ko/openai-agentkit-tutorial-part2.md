@@ -45,10 +45,10 @@ faq:
 
 > <strong>시리즈: OpenAI AgentKit 마스터하기</strong> (2/2)
 >
-> 1. [OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기](/ko/blog/ko/openai-agentkit-tutorial-part1)
+> 1. [OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기](/ko/blog/ko/openai-agentkit-tutorial-part1/)
 > 2. <strong>OpenAI AgentKit 완벽 가이드 2부: 실전 적용과 고급 패턴</strong> ← 현재 글
 
-[1부](/ko/blog/ko/openai-agentkit-tutorial-part1)에서 핵심 개념과 기본 사용법을 다뤘다. 데모를 넘어 실제 트래픽이 들어오는 프로덕션에 올리는 순간, 단일 에이전트로는 감당이 안 되는 문제들이 쏟아진다. 여러 에이전트를 어떻게 조율할지, 장애가 나면 어떻게 복구할지, 테넌트 데이터는 어떻게 격리할지.
+[1부](/ko/blog/ko/openai-agentkit-tutorial-part1/)에서 핵심 개념과 기본 사용법을 다뤘다. 데모를 넘어 실제 트래픽이 들어오는 프로덕션에 올리는 순간, 단일 에이전트로는 감당이 안 되는 문제들이 쏟아진다. 여러 에이전트를 어떻게 조율할지, 장애가 나면 어떻게 복구할지, 테넌트 데이터는 어떻게 격리할지.
 
 그래서 2부에서는 <strong>고급 아키텍처 패턴</strong>과 <strong>엔터프라이즈급 시스템 설계</strong>를 다룬다. 실제 기업들이 AgentKit으로 복잡한 문제를 푼 방식, 그리고 그대로 가져다 쓸 수 있는 <strong>완전한 코드 예제</strong>를 담았다.
 
@@ -1587,9 +1587,9 @@ async def batch_process(requests: list):
 
 ### 이어서 읽으면 좋은 글
 
-- [OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기](/ko/blog/ko/openai-agentkit-tutorial-part1) — 이 글의 전제가 되는 기초편
-- [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026) — 본문 Slack 예제를 넘어 직접 MCP 서버를 설계할 때
-- [Claude Agent SDK 도구 사용 완벽 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026) — 다른 프레임워크의 도구·핸드오프 설계와 비교해 보기
+- [OpenAI AgentKit 완벽 가이드 1부: 핵심 개념과 시작하기](/ko/blog/ko/openai-agentkit-tutorial-part1/) — 이 글의 전제가 되는 기초편
+- [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/) — 본문 Slack 예제를 넘어 직접 MCP 서버를 설계할 때
+- [Claude Agent SDK 도구 사용 완벽 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/) — 다른 프레임워크의 도구·핸드오프 설계와 비교해 보기
 
 ---
 
@@ -1616,6 +1616,6 @@ async def batch_process(requests: list):
 
 <strong>시리즈 완료!</strong> 
 
-[1부](/ko/blog/ko/openai-agentkit-tutorial-part1)는 기초였고, 2부는 실전이었다. 두 편을 합치면 AgentKit으로 무언가를 만들기 시작하기에 충분하다.
+[1부](/ko/blog/ko/openai-agentkit-tutorial-part1/)는 기초였고, 2부는 실전이었다. 두 편을 합치면 AgentKit으로 무언가를 만들기 시작하기에 충분하다.
 
 막히는 부분이나 다르게 풀어본 경험이 있으면 댓글로 남겨주길 바란다. 어떤 프로젝트가 나올지 궁금하다.

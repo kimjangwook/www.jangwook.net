@@ -82,7 +82,7 @@ DeNA IT本部IT基础设施部副部长小池启辅表示："很明显需要投�
 
 ## 核心策略：两种AI Agent的分工体制
 
-本项目最具创新性的是<strong>根据特性将AI Agent分为两种类型运用</strong>。关于多智能体团队的通用构建方法，可参考[Claude Code Agent Teams 完全指南](/zh/blog/zh/claude-agent-teams-guide)。
+本项目最具创新性的是<strong>根据特性将AI Agent分为两种类型运用</strong>。关于多智能体团队的通用构建方法，可参考[Claude Code Agent Teams 完全指南](/zh/blog/zh/claude-agent-teams-guide/)。
 
 ```mermaid
 graph LR
@@ -147,7 +147,7 @@ graph TD
 2. <strong>大规模代码库转换</strong>：涉及数千至数万行的代码迁移
 3. <strong>因工时问题无法解决的技术债务</strong>：AI显著改善成本效益比
 
-关于AI Agent引入的实际成本与ROI，[AI Agent成本 vs 人工成本的现实](/zh/blog/zh/ai-agent-cost-reality)提供了具体的数据分析。
+关于AI Agent引入的实际成本与ROI，[AI Agent成本 vs 人工成本的现实](/zh/blog/zh/ai-agent-cost-reality/)提供了具体的数据分析。
 
 ### 需要注意的要点
 

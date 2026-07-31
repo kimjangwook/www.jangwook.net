@@ -301,7 +301,7 @@ function extractJsonFromResponse(text: string): string {
 
 ### Pattern 2: Force Structured Output via Tool Use
 
-As covered in [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026), using `tool_use` lets you enforce JSON structure. The LLM "calls" a tool and returns structured data as the tool input.
+As covered in [Claude Agent SDK Tool Use Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/), using `tool_use` lets you enforce JSON structure. The LLM "calls" a tool and returns structured data as the tool input.
 
 ```typescript
 import Anthropic from '@anthropic-ai/sdk';
@@ -632,9 +632,9 @@ You must follow this exact format:
 }
 ```
 
-The same pattern drops directly into MCP tool handlers from [TypeScript MCP Server Step-by-Step](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026). Call an LLM inside the handler, validate the response with Zod, return structured output.
+The same pattern drops directly into MCP tool handlers from [TypeScript MCP Server Step-by-Step](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026/). Call an LLM inside the handler, validate the response with Zod, return structured output.
 
-When unit testing this function as described in [Vitest 4 AI Agent Testing Patterns](/en/blog/en/vitest-4-ai-agent-testing-patterns-2026), mock `client.messages.create()` and assert on the `safeParse()` result. Having a Zod schema makes it easy to build test fixtures that match the schema exactly.
+When unit testing this function as described in [Vitest 4 AI Agent Testing Patterns](/en/blog/en/vitest-4-ai-agent-testing-patterns-2026/), mock `client.messages.create()` and assert on the `safeParse()` result. Having a Zod schema makes it easy to build test fixtures that match the schema exactly.
 
 ### Migration Checklist: v3 to v4
 

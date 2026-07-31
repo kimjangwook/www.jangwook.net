@@ -64,7 +64,7 @@ Any Engineering Manager who has deployed AI agents to production has likely expe
 
 There have been many attempts to solve this problem with RAG (Retrieval-Augmented Generation) or simple vector databases, but most stopped at "retrieval" without advancing to "learning." Simply searching past conversations is fundamentally different from extracting patterns from experience and forming mental models.
 
-<strong>Hindsight</strong> is an open-source project that tackles this problem head-on. Compatible with [MCP (Model Context Protocol)](/en/blog/en/mcp-server-build-practical-guide-2026), it integrates immediately with major AI tools like Claude, Cursor, and VS Code. It achieved 91.4% on the LongMemEval benchmark, making it the first agent memory system to break the 90% barrier.
+<strong>Hindsight</strong> is an open-source project that tackles this problem head-on. Compatible with [MCP (Model Context Protocol)](/en/blog/en/mcp-server-build-practical-guide-2026/), it integrates immediately with major AI tools like Claude, Cursor, and VS Code. It achieved 91.4% on the LongMemEval benchmark, making it the first agent memory system to break the 90% barrier.
 
 ## Hindsight's Architecture
 
@@ -157,7 +157,7 @@ The results from all four strategies are merged using <strong>Reciprocal Rank Fu
 
 ### Reflect — Reflection and Learning
 
-Reflect is the core capability that elevates Hindsight from a simple memory system to a "[learning system](/en/blog/en/hermes-agent-self-evolving-ai-framework)."
+Reflect is the core capability that elevates Hindsight from a simple memory system to a "[learning system](/en/blog/en/hermes-agent-self-evolving-ai-framework/)."
 
 ```python
 insight = client.reflect(
@@ -208,7 +208,7 @@ docker run --rm -it --pull always \
 | Anthropic | `anthropic` | Claude |
 | Google | `gemini` | Gemini |
 | Groq | `groq` | Fast inference |
-| Ollama | `ollama` | [Local model](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp) |
+| Ollama | `ollama` | [Local model](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp/) |
 | LM Studio | `lmstudio` | Local |
 
 ## Deployment Strategy from an Engineering Manager's Perspective

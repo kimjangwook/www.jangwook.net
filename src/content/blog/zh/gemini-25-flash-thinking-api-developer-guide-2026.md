@@ -48,7 +48,7 @@ relatedPosts:
 
 `thinking_budget` 限制模型在给出回答前能花多少 token 进行"内部推理"。Budget=0 完全禁用 thinking。Budget=-1 让模型自行决定推理深度。正整数设置上限（最大 24576）。
 
-有一点很重要：thinking token 不会出现在响应中，但**收费标准与输出 token 完全相同**。正如[LLM API 定价比较文章](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)所示，Gemini 2.5 Flash 输出 token 为 $0.0035/1K。使用 1024 个 thinking token，就要额外付这部分费用。
+有一点很重要：thinking token 不会出现在响应中，但**收费标准与输出 token 完全相同**。正如[LLM API 定价比较文章](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)所示，Gemini 2.5 Flash 输出 token 为 $0.0035/1K。使用 1024 个 thinking token，就要额外付这部分费用。
 
 另一个实用提示：旧版 `google.generativeai` 包已弃用，必须使用新版 `google-genai` 包。
 
@@ -140,7 +140,7 @@ for part in response.candidates[0].content.parts:
 
 Budget=8000 数学问题消耗了 4036 个 thinking token，耗时 26 秒。这种延迟在任何交互式应用中都无法接受。仅用于离线批处理或后台异步分析。
 
-[Gemini 2.5 Flash 成本优化指南](/zh/blog/zh/gemini-25-flash-api-cost-optimization-guide)也提到：thinking token 与输出 token 定价相同。盲目使用 Budget=8000 会让成本翻倍。
+[Gemini 2.5 Flash 成本优化指南](/zh/blog/zh/gemini-25-flash-api-cost-optimization-guide/)也提到：thinking token 与输出 token 定价相同。盲目使用 Budget=8000 会让成本翻倍。
 
 ## 生产代码：tracking thinking 使用量
 
@@ -213,7 +213,7 @@ print(f"总计费 token：{result['total_tokens']}")
 
 **thinking_budget 和 thinking_level 不能同时设置。**Gemini 3.x 使用 `thinking_level`，2.5 系列使用 `thinking_budget`。同一个调用中混用会得到 400 错误。这在文档中有说明，但错误信息不够直观，第一次遇到容易困惑。
 
-**Thinking token 不受上下文缓存影响。**即使用 Context Caching 降低了长系统提示的成本，thinking token 每次仍单独计费。正如[AI 智能体成本现实分析](/zh/blog/zh/ai-agent-cost-reality)所述，在智能体循环中 thinking 成本会比预期累积得更快。
+**Thinking token 不受上下文缓存影响。**即使用 Context Caching 降低了长系统提示的成本，thinking token 每次仍单独计费。正如[AI 智能体成本现实分析](/zh/blog/zh/ai-agent-cost-reality/)所述，在智能体循环中 thinking 成本会比预期累积得更快。
 
 ## 我的最终立场
 

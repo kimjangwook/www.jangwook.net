@@ -114,7 +114,7 @@ relatedPosts:
 
 ### 3.1 即座に実行可能な分析クエリ
 
-ブログ分析を始める読者のために、<strong>実際に使用可能な MCP クエリ例</strong>を共有します。GA4 を MCP に接続する全体のセットアップ手順は[Google Analytics MCP 自動化ガイド](/ja/blog/ja/google-analytics-mcp-automation)で段階的に解説しています。
+ブログ分析を始める読者のために、<strong>実際に使用可能な MCP クエリ例</strong>を共有します。GA4 を MCP に接続する全体のセットアップ手順は[Google Analytics MCP 自動化ガイド](/ja/blog/ja/google-analytics-mcp-automation/)で段階的に解説しています。
 
 #### クエリ 1: リアルタイム訪問者の状況
 
@@ -373,7 +373,7 @@ mcp__analytics -
 - プロジェクトお問い合わせコンバージョンパス最適化
 - 関連投稿推奨アルゴリズム実装
 
-この段階でコンテンツ生産を継続するには、執筆パイプライン自体を自動化するのが現実的です。LLM で下書きから公開までつないだ方法は[LLM ベースのブログ自動化](/ja/blog/ja/llm-blog-automation)にまとめています。
+この段階でコンテンツ生産を継続するには、執筆パイプライン自体を自動化するのが現実的です。LLM で下書きから公開までつないだ方法は[LLM ベースのブログ自動化](/ja/blog/ja/llm-blog-automation/)にまとめています。
 
 ### 6.3 長期ビジョン (3-6 ヶ月)
 
@@ -660,6 +660,6 @@ jangwook.net ブログは技術的に成功裏にローンチされました:
 
 - 🔗 <strong>シェア</strong>: 同じ悩みを持つ仲間の開発者へ
 - 💭 <strong>コメント</strong>: あなたのブログ分析経験とヒント
-- 📧 <strong>お問い合わせ</strong>: [Contact](/ja/contact)で 1 対 1 の質問
+- 📧 <strong>お問い合わせ</strong>: [Contact](/ja/contact/)で 1 対 1 の質問
 
 <strong>一緒に学び、成長しましょう。あなたの最初の分析レポートを楽しみにしています!</strong> 🚀

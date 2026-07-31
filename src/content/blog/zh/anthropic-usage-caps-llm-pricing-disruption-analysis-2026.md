@@ -113,7 +113,7 @@ Sonnet 4.6 无优化:       $20.25/月
 
 这张表说明了一件事：如果你还不知道实际的每日会话量，首先需要做的就是埋点监控。凭借"请求很多"的模糊感觉来预测成本已经行不通了。
 
-[Claude API提示缓存优化模式](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)有详细的实现方法。将缓存命中率提升到70〜80%是目前性价比最高的改变。
+[Claude API提示缓存优化模式](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide/)有详细的实现方法。将缓存命中率提升到70〜80%是目前性价比最高的改变。
 
 ## 降低成本的3个实用策略
 
@@ -145,7 +145,7 @@ def route_to_model(task_type: str) -> str:
 
 系统提示、RAG文档等重复使用的上下文元素可以添加缓存标记，使输入令牌成本降低90%。5分钟的TTL意味着即使是高频工作流也有效。
 
-如[AI代理成本现实分析](/zh/blog/zh/ai-agent-cost-reality)所述，代理成本超过人工成本最常发生在团队全面使用Opus且没有缓存的情况下。监控缓存命中率是成本可视化的第一步。
+如[AI代理成本现实分析](/zh/blog/zh/ai-agent-cost-reality/)所述，代理成本超过人工成本最常发生在团队全面使用Opus且没有缓存的情况下。监控缓存命中率是成本可视化的第一步。
 
 **策略3：非实时工作负载使用Batch API**
 
@@ -187,7 +187,7 @@ print(f"批次ID: {batch.id}")
 
 <strong>GPT-5.5</strong>定价与Claude Opus 4.7相近，但在SWE-bench等编码基准测试中逊于Opus 4.7。没有强烈的经济理由切换。
 
-我的建议：<strong>核心代理保留Claude API，高量简单任务使用Haiku或DeepSeek混合</strong>。[LLM API价格比较](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)中已经按场景做了详细计算，可以参照自己的工作负载模式进行比较。
+我的建议：<strong>核心代理保留Claude API，高量简单任务使用Haiku或DeepSeek混合</strong>。[LLM API价格比较](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)中已经按场景做了详细计算，可以参照自己的工作负载模式进行比较。
 
 ## Anthropic Managed Agents是认真的替代方案吗
 

@@ -59,7 +59,7 @@ relatedPosts:
 
 Meta is attempting a major pivot from a social media company to an <strong>AI agent platform company</strong>. This strategy, which accelerated from late 2025, can be summarized in three key terms: <strong>Sierra</strong> for external agent partnerships, <strong>Avocado</strong> as the internal codename for the next-generation frontier model, and <strong>Big Brain</strong> representing advanced reasoning capabilities.
 
-In this article, we analyze how Meta's AI strategy is evolving and what it means for developers and businesses. For context on enterprise AI agent adoption trends, see our [Top-Down Enterprise AI Adoption](/en/blog/en/enterprise-ai-adoption-topdown) guide.
+In this article, we analyze how Meta's AI strategy is evolving and what it means for developers and businesses. For context on enterprise AI agent adoption trends, see our [Top-Down Enterprise AI Adoption](/en/blog/en/enterprise-ai-adoption-topdown/) guide.
 
 ## From Llama to Avocado — A Strategic Pivot
 
@@ -199,7 +199,7 @@ graph TB
 | <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
 | <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
 
-For a deep dive on Anthropic's agent standardization approach, see [Anthropic Agent Skills Standard](/en/blog/en/anthropic-agent-skills-standard).
+For a deep dive on Anthropic's agent standardization approach, see [Anthropic Agent Skills Standard](/en/blog/en/anthropic-agent-skills-standard/).
 
 ## Conclusion
 

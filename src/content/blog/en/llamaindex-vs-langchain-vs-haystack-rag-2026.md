@@ -192,7 +192,7 @@ As of 1.3.4, the package breakdown:
 - `langchain` 1.3.4 — chain implementations (actively maintained)
 - `langchain-community` 0.4.2 — **deprecated**, migrating to standalone packages
 
-I covered this ecosystem in [Python AI agent library comparison 2026](/en/blog/en/python-ai-agent-library-comparison-2026). LangChain's integration breadth is still unmatched. The community sunset is turbulence, not a death sentence.
+I covered this ecosystem in [Python AI agent library comparison 2026](/en/blog/en/python-ai-agent-library-comparison-2026/). LangChain's integration breadth is still unmatched. The community sunset is turbulence, not a death sentence.
 
 ### InMemory test
 
@@ -375,7 +375,7 @@ pip install chroma-haystack
 pip install qdrant-haystack
 ```
 
-I benchmarked Qdrant, ChromaDB, and pgvector directly in the [Vector DB comparison 2026](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector). Whichever framework you choose, the vector store decision is a separate concern that matters a lot.
+I benchmarked Qdrant, ChromaDB, and pgvector directly in the [Vector DB comparison 2026](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector/). Whichever framework you choose, the vector store decision is a separate concern that matters a lot.
 
 ## Decision guide
 
@@ -436,7 +436,7 @@ These are the primary sources I checked directly. They're also the first places 
 - Haystack site by deepset: [https://haystack.deepset.ai](https://haystack.deepset.ai) (docs at `docs.haystack.deepset.ai`)
 - langchain-community deprecation notice: [GitHub Issue #674](https://github.com/langchain-ai/langchain-community/issues/674)
 
-If you want to revisit RAG fundamentals before applying any of this, [DeNA LLM Study Part 4 — RAG](/en/blog/en/dena-llm-study-part4-rag) pairs well with this comparison.
+If you want to revisit RAG fundamentals before applying any of this, [DeNA LLM Study Part 4 — RAG](/en/blog/en/dena-llm-study-part4-rag/) pairs well with this comparison.
 
 ## Community and ecosystem
 

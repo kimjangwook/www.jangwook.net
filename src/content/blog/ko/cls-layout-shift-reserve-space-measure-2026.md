@@ -38,7 +38,7 @@ relatedPosts:
 
 ## CLS가 재는 건 "총 이동량"이지 "이동 횟수"가 아니다
 
-먼저 토대부터. Core Web Vitals는 세 지표로 이뤄진다. LCP(가장 큰 요소가 언제 그려지는가), [INP(상호작용에 얼마나 빨리 반응하는가)](/ko/blog/ko/inp-yielding-measure-2026), 그리고 CLS(화면이 얼마나 밀리는가)다. 앞의 둘은 시간(밀리초)이지만 CLS만은 단위 없는 점수다. 이 점 때문에 CLS를 오해하기 쉽다.
+먼저 토대부터. Core Web Vitals는 세 지표로 이뤄진다. LCP(가장 큰 요소가 언제 그려지는가), [INP(상호작용에 얼마나 빨리 반응하는가)](/ko/blog/ko/inp-yielding-measure-2026/), 그리고 CLS(화면이 얼마나 밀리는가)다. 앞의 둘은 시간(밀리초)이지만 CLS만은 단위 없는 점수다. 이 점 때문에 CLS를 오해하기 쉽다.
 
 CLS는 페이지가 살아있는 동안 발생한 <strong>예상치 못한 레이아웃 이동</strong>을 모아 계산한다. 개별 이동 하나의 점수는 두 값을 곱해서 나온다. 화면에서 얼마나 넓은 영역이 움직였는가(impact fraction), 그리고 그 영역이 얼마나 멀리 움직였는가(distance fraction). 뷰포트의 절반을 차지하는 요소가 뷰포트 높이의 절반만큼 아래로 밀리면 대략 0.5 × 0.5 = 0.25가 된다. 작은 각주 하나가 몇 픽셀 움직이는 것과, 화면 절반이 통째로 내려앉는 건 전혀 다른 무게를 갖는다.
 
@@ -137,7 +137,7 @@ CLS는 단순 총합이 아니라 <strong>세션 윈도우</strong> 방식으로
 
 `min-height`로 최소 높이를 확보하고 `:empty`일 때 `visibility:hidden`으로 감추면, 콘텐츠가 없을 때도 레이아웃은 흔들리지 않는다. 광고나 임베드처럼 크기를 미리 알 수 있는 자리는 전부 이 방식이 먹힌다([Google Publisher Tag, minimize layout shift](https://developers.google.com/publisher-tag/guides/minimize-layout-shift)).
 
-<strong>3) 기존 콘텐츠 위에 무언가를 끼워 넣지 않는다.</strong> 정말 필요하면 사용자 상호작용에 대한 반응으로만 한다. 이건 앞서 말한 500ms 규칙과 맞물린다. 사용자가 버튼을 눌러서 열리는 이동은 예상된 것이라 CLS에서 빠지지만, 아무 입력 없이 스크립트가 밀어내는 이동은 고스란히 점수에 잡힌다. 이 페이지가 자바스크립트로 콘텐츠를 나중에 그리는 구조라면, [크롤러가 자바스크립트를 렌더하지 않는 문제](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026)까지 함께 겪고 있을 가능성이 높다. 렌더 타이밍은 성능과 크롤러빌리티에 동시에 영향을 준다.
+<strong>3) 기존 콘텐츠 위에 무언가를 끼워 넣지 않는다.</strong> 정말 필요하면 사용자 상호작용에 대한 반응으로만 한다. 이건 앞서 말한 500ms 규칙과 맞물린다. 사용자가 버튼을 눌러서 열리는 이동은 예상된 것이라 CLS에서 빠지지만, 아무 입력 없이 스크립트가 밀어내는 이동은 고스란히 점수에 잡힌다. 이 페이지가 자바스크립트로 콘텐츠를 나중에 그리는 구조라면, [크롤러가 자바스크립트를 렌더하지 않는 문제](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026/)까지 함께 겪고 있을 가능성이 높다. 렌더 타이밍은 성능과 크롤러빌리티에 동시에 영향을 준다.
 
 결과는 표 그대로다. 세 수정 중 이미지 하나만 잡아도 CLS의 80%가 사라졌고, 나머지 둘까지 처리하니 0.014만 남았다. 이 잔여 0.014는 공지 삽입에서 나온 작은 이동인데, GOOD 기준의 7분의 1 수준이라 실사용에선 체감되지 않는다.
 
@@ -151,7 +151,7 @@ CLS는 단순 총합이 아니라 <strong>세션 윈도우</strong> 방식으로
 
 셋째, <strong>내 측정 방식 자체에 근사가 들어있다.</strong> 나는 `layout-shift` 값을 단순 합산했다. 이번엔 모든 이동이 한 세션 윈도우에 들어와 실제 CLS와 일치했지만, 이동이 몇 초씩 떨어져 발생하는 오래 사는 페이지(무한 스크롤, SPA)에서는 단순 합과 세션 윈도우 값이 벌어진다. 정확한 값이 필요하면 구글이 배포하는 `web-vitals` 자바스크립트 라이브러리를 쓰는 게 맞다. 그게 세션 윈도우 로직을 그대로 구현해준다. 또한 이번 실험은 웹폰트 교체(FOUT)로 인한 이동은 다루지 않았다. 그것도 흔한 CLS 원인이다.
 
-이 한계들을 알고 나면 오히려 실측의 쓸모가 분명해진다. 랩 측정은 순위 예언이 아니라 <strong>디버깅 도구</strong>다. "무엇이 얼마나 밀리는가"를 눈으로 보고 원인을 하나씩 걷어내는 것. 그게 이 워크플로우의 전부이자 핵심이다. 같은 방식으로 [LCP 병목을 트레이스로 분해했던 기록](/ko/blog/ko/lcp-image-preload-scanner-fetchpriority-2026)이나 [content-visibility의 렌더 비용을 실측한 기록](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026)도 결국 같은 태도다. 재는 순간 계측기 자체를 의심해야 하는 경우도 있다. [prerender 페이지의 LCP가 6.2초로 잡혔던 건](/ko/blog/ko/prerender-activationstart-cwv-measurement-2026) 페이지가 느려서가 아니라 시작점을 빼지 않아서였다. 추측하지 말고 재라.
+이 한계들을 알고 나면 오히려 실측의 쓸모가 분명해진다. 랩 측정은 순위 예언이 아니라 <strong>디버깅 도구</strong>다. "무엇이 얼마나 밀리는가"를 눈으로 보고 원인을 하나씩 걷어내는 것. 그게 이 워크플로우의 전부이자 핵심이다. 같은 방식으로 [LCP 병목을 트레이스로 분해했던 기록](/ko/blog/ko/lcp-image-preload-scanner-fetchpriority-2026/)이나 [content-visibility의 렌더 비용을 실측한 기록](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026/)도 결국 같은 태도다. 재는 순간 계측기 자체를 의심해야 하는 경우도 있다. [prerender 페이지의 LCP가 6.2초로 잡혔던 건](/ko/blog/ko/prerender-activationstart-cwv-measurement-2026/) 페이지가 느려서가 아니라 시작점을 빼지 않아서였다. 추측하지 말고 재라.
 
 ## 오늘 바로 할 수 있는 체크리스트
 

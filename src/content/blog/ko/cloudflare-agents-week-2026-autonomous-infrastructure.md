@@ -89,7 +89,7 @@ OAuth + OIDC로 에이전트를 "신뢰할 수 있는 행위자"로 인증하는
 
 컨테이너 스핀업 시간이 밀리초 단위라는 점도 중요하다. 코드 생성 에이전트가 "코드 작성 → 실행 → 결과 확인 → 수정" 루프를 빠르게 돌릴 수 있다는 의미다.
 
-[LangGraph나 CrewAI 같은 프레임워크에서 에이전트 코드 실행 환경을 따로 구성](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)해야 했다면, Sandboxes는 그 부분을 Cloudflare가 관리해주는 방식이다. 프레임워크를 선택하는 것보다 인프라 레이어를 선택하는 결정에 가깝다. 이 차이가 아직 익숙하지 않을 수 있다.
+[LangGraph나 CrewAI 같은 프레임워크에서 에이전트 코드 실행 환경을 따로 구성](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)해야 했다면, Sandboxes는 그 부분을 Cloudflare가 관리해주는 방식이다. 프레임워크를 선택하는 것보다 인프라 레이어를 선택하는 결정에 가깝다. 이 차이가 아직 익숙하지 않을 수 있다.
 
 ### Artifacts
 
@@ -227,7 +227,7 @@ env.TASK_AGENT (TaskAgent)      Durable Object      local
 [wrangler:info] GET / 200 OK (7ms)
 ```
 
-Cloudflare 계정 없이도 로컬 개발은 가능하다. 중요한 점 하나: `@cloudflare/agents`는 `cloudflare:workers` 런타임 전용이라 일반 Node.js로는 실행이 안 된다. `ERR_UNSUPPORTED_ESM_URL_SCHEME` 에러가 뜬다. Wrangler를 통해서만 실행해야 한다. [Claude Agent SDK처럼 Python/Node에서 직접 import하는 방식](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에 익숙한 개발자라면 이 점이 처음엔 낯설다.
+Cloudflare 계정 없이도 로컬 개발은 가능하다. 중요한 점 하나: `@cloudflare/agents`는 `cloudflare:workers` 런타임 전용이라 일반 Node.js로는 실행이 안 된다. `ERR_UNSUPPORTED_ESM_URL_SCHEME` 에러가 뜬다. Wrangler를 통해서만 실행해야 한다. [Claude Agent SDK처럼 Python/Node에서 직접 import하는 방식](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에 익숙한 개발자라면 이 점이 처음엔 낯설다.
 
 ## 아키텍처적으로 인상적인 설계 선택들
 
@@ -241,7 +241,7 @@ Cloudflare 계정 없이도 로컬 개발은 가능하다. 중요한 점 하나:
 
 **Voice Pipeline (실험적)**: 약 30줄의 서버 코드로 WebSocket 기반 실시간 음성 상호작용을 구현할 수 있다고 한다. STT + TTS를 에이전트 안에서 처리하는 구조다. 아직 실험적이지만 방향이 흥미롭다.
 
-[Dapr Agents가 Kubernetes에서 사이드카 패턴으로 상태와 메시지를 관리하는 방식](/ko/blog/ko/dapr-agents-v1-cncf-production-ai-framework)과 비교하면, Cloudflare의 접근은 인프라를 덜 만지고 코드를 더 쓰는 쪽이다. Dapr은 인프라 독립성이 높지만 설정이 복잡하고, Cloudflare는 간단하지만 플랫폼에 깊이 묶인다. 팀의 상황에 따라 선택이 달라진다.
+[Dapr Agents가 Kubernetes에서 사이드카 패턴으로 상태와 메시지를 관리하는 방식](/ko/blog/ko/dapr-agents-v1-cncf-production-ai-framework/)과 비교하면, Cloudflare의 접근은 인프라를 덜 만지고 코드를 더 쓰는 쪽이다. Dapr은 인프라 독립성이 높지만 설정이 복잡하고, Cloudflare는 간단하지만 플랫폼에 깊이 묶인다. 팀의 상황에 따라 선택이 달라진다.
 
 ## 솔직한 평가
 
@@ -253,7 +253,7 @@ Cloudflare 계정 없이도 로컬 개발은 가능하다. 중요한 점 하나:
 
 불안한 점은 두 가지다.
 
-**첫째, 벤더 락인이 강하다.** `cloudflare:workers`에서만 돌아가고, Durable Object의 설계를 그대로 따른다. 나중에 플랫폼을 바꾸고 싶으면 에이전트 코드를 상당 부분 다시 써야 한다. [MCP 서버를 Kubernetes에 올리는 방식](/ko/blog/ko/mcp-server-production-deployment-kubernetes-guide)처럼 컨테이너 기반으로 가면 이 문제는 없는데, 그 대신 인프라 복잡도가 올라간다. 이 트레이드오프를 의식적으로 선택해야 한다.
+**첫째, 벤더 락인이 강하다.** `cloudflare:workers`에서만 돌아가고, Durable Object의 설계를 그대로 따른다. 나중에 플랫폼을 바꾸고 싶으면 에이전트 코드를 상당 부분 다시 써야 한다. [MCP 서버를 Kubernetes에 올리는 방식](/ko/blog/ko/mcp-server-production-deployment-kubernetes-guide/)처럼 컨테이너 기반으로 가면 이 문제는 없는데, 그 대신 인프라 복잡도가 올라간다. 이 트레이드오프를 의식적으로 선택해야 한다.
 
 **둘째, 에이전트 간 통신 패턴이 아직 얕다.** 발표된 내용을 보면 단일 에이전트가 훨씬 강해졌는데, 여러 에이전트가 복잡하게 협력하는 패턴은 SDK 레벨에서 아직 얇다. A 에이전트가 B 에이전트에게 작업을 위임하고 결과를 받는 패턴, 에이전트 간 공유 메모리 같은 구조는 직접 만들어야 한다. Project Think 프레임워크로 개선 중이라고 하는데 아직 초기다.
 

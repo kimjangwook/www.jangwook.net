@@ -140,7 +140,7 @@ Chrome 文档这样解释这个值："For all the cross-origin iframes, we repor
 
 > **【追记 2026-07-22】** 据 web.dev 2026 年 6 月的公告（「New to the web platform in June 2026」），浏览器行为可能已经改变，带有活动 WebSocket 连接的页面现在也能进入 bfcache。下面这一节的测量是在那次公告之前的环境（Chrome 150）里测的，所以我打算用同一套探针重新测量后再更新结论。在那之前，本节关于 WebSocket 阻断的结论请按旧版本行为来读。
 >
-> **【追记 2026-07-24 · 已重测】** 我把同一套探针在 Chrome 150 的三个环境（自动化构建、正式版 headless、标志尝试）里重跑了一遍。打开的 WebSocket 三次都以 `reason: "websocket"` 被拦，只有对照组复原。也就是说本节结论在**我的自动化、无头测量环境里仍然成立**。不过官方发布是真的，拿到种子的真实用户环境很可能已经切到复原。发布与实测为何分叉（分阶段放量、新配置文件、无头）以及 CI 关卡会怎样误判，都写在了 [WebSocket bfcache 重测那篇](/zh/blog/zh/websocket-bfcache-eligibility-remeasure)里。
+> **【追记 2026-07-24 · 已重测】** 我把同一套探针在 Chrome 150 的三个环境（自动化构建、正式版 headless、标志尝试）里重跑了一遍。打开的 WebSocket 三次都以 `reason: "websocket"` 被拦，只有对照组复原。也就是说本节结论在**我的自动化、无头测量环境里仍然成立**。不过官方发布是真的，拿到种子的真实用户环境很可能已经切到复原。发布与实测为何分叉（分阶段放量、新配置文件、无头）以及 CI 关卡会怎样误判，都写在了 [WebSocket bfcache 重测那篇](/zh/blog/zh/websocket-bfcache-eligibility-remeasure/)里。
 
 WebSocket 这轮我先做砸了一次。最初没起服务端，只埋了 `new WebSocket('ws://127.0.0.1:8099')` 就跑。结果是 `persisted: true`，根本没被拦。
 
@@ -210,7 +210,7 @@ window.addEventListener('pageshow', (event) => {
 
 读数字时还有一个坑。线上那篇文章复原之后，我去读 navigation 条目，`type` 仍是 `"navigate"`，`duration` 是 1315.2ms，`transferSize` 是 22218 字节。这些是<strong>首次加载的数据，不是复原的性能</strong>。bfcache 复原不会新建 navigation 条目，想用 `nav.duration` 量复原速度，等于在看一个不存在的数。判定复原与否，交给 `event.persisted`。
 
-量完、改完之后让它不再退回去的办法，永远是同一个：自动化，留成关卡。跟当初[把 JSON-LD 校验固化成 CI 关卡](/zh/blog/zh/validate-structured-data-ci-jsonld-2026)的结构没有区别。这六轮说到底就是「打开、跳转、后退、读 `persisted`」的重复，完全可以搬进无头浏览器脚本，对主要模板每次部署都跑一遍。如果说[用 `content-visibility` 实测渲染成本那次](/zh/blog/zh/content-visibility-auto-render-cost-measure-2026)管的是首屏，这次管的是首屏之后的每一次跳转。
+量完、改完之后让它不再退回去的办法，永远是同一个：自动化，留成关卡。跟当初[把 JSON-LD 校验固化成 CI 关卡](/zh/blog/zh/validate-structured-data-ci-jsonld-2026/)的结构没有区别。这六轮说到底就是「打开、跳转、后退、读 `persisted`」的重复，完全可以搬进无头浏览器脚本，对主要模板每次部署都跑一遍。如果说[用 `content-visibility` 实测渲染成本那次](/zh/blog/zh/content-visibility-auto-render-cost-measure-2026/)管的是首屏，这次管的是首屏之后的每一次跳转。
 
 ## 收尾：一行代码换掉的后退体验
 
@@ -230,4 +230,4 @@ window.addEventListener('pageshow', (event) => {
 
 ---
 
-线上站点的「后退」到底有没有从缓存复原、哪些模板因为什么原因丢了资格，这类问题靠量而不靠讨论就能有答案。这种实测，以及把结果固化成 CI 关卡的落地工作，我个人接咨询与实现。有需要可以从[联系页面](/zh/contact)找我。
+线上站点的「后退」到底有没有从缓存复原、哪些模板因为什么原因丢了资格，这类问题靠量而不靠讨论就能有答案。这种实测，以及把结果固化成 CI 关卡的落地工作，我个人接咨询与实现。有需要可以从[联系页面](/zh/contact/)找我。

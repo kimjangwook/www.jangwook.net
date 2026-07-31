@@ -46,11 +46,11 @@ faq:
 
 > <strong>シリーズ: DeNA LLMスタディ</strong> (4/5)
 >
-> 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 構造化出力とマルチLLMパイプライン
-> 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training)
+> 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training/)
 > 4. <strong>Part 4: RAGアーキテクチャと最新トレンド</strong> ← 現在の記事
-> 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design)
+> 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design/)
 
 ## RAGは結局のところ検索エンジニアリングだ
 
@@ -824,7 +824,7 @@ def sanitize_response(response):
 - キーワードマッチと意味検索の両方が必要な混合クエリが多いとき
 - Recallは出るが上位結果の精度が足りないとき(Rerankingが特効)
 
-ベクトルストア選びで迷うなら、[2026 ベクトルDB比較: Qdrant vs Chroma vs pgvector](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector)でハイブリッド検索対応と運用負担を比較しています。
+ベクトルストア選びで迷うなら、[2026 ベクトルDB比較: Qdrant vs Chroma vs pgvector](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector/)でハイブリッド検索対応と運用負担を比較しています。
 
 <strong>避けるべきとき</strong>: 応答遅延が数十ms単位で厳しいリアルタイム経路。Cross-Encoder Rerankingは遅延を増やすため、ColBERTのような軽量な方式やReranking省略を検討します。
 
@@ -841,7 +841,7 @@ def sanitize_response(response):
 - 一度の検索では答えが出ず、検索 → 評価 → 再検索のループが必要なとき
 - 複数のツール(ベクトル検索、キーワード、Web、SQL)を質問に応じて選び分けるとき
 
-<strong>避けるべきとき</strong>: コストと遅延に敏感な大量トラフィック経路。反復呼び出しはトークンと時間を掛け算で増やします。フレームワーク選びで迷うなら、[LlamaIndex vs LangChain vs Haystack RAGフレームワーク比較 2026](/ja/blog/ja/llamaindex-vs-langchain-vs-haystack-rag-2026)でエージェント型検索の抽象化の違いを整理しています。
+<strong>避けるべきとき</strong>: コストと遅延に敏感な大量トラフィック経路。反復呼び出しはトークンと時間を掛け算で増やします。フレームワーク選びで迷うなら、[LlamaIndex vs LangChain vs Haystack RAGフレームワーク比較 2026](/ja/blog/ja/llamaindex-vs-langchain-vs-haystack-rag-2026/)でエージェント型検索の抽象化の違いを整理しています。
 
 ### 一枚まとめ
 
@@ -929,4 +929,4 @@ DeNAスタディシリーズの最後のPart 5では:
 
 ---
 
-<strong>シリーズ続き</strong>: [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design)
+<strong>シリーズ続き</strong>: [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design/)

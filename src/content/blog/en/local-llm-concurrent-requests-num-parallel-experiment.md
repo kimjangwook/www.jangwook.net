@@ -114,7 +114,7 @@ The third column is the key. Per-request generation speed stays near 24 tokens p
 
 Check the arithmetic and it lines up. At eight concurrent, wall-clock is 32 seconds, and one request making 100 tokens at 24 tokens per second takes about 4.2 seconds. 4.2s × 8 = 33.6s, nearly the observed 32s. The eight requests didn't overlap; they ran one after another. The first arrival gets served right away, but the request that queued eighth just waits, purely idle, until the seven ahead finish, then spends its own 4.2 seconds last. That wait is what pushes each request's perceived latency straight up.
 
-At this point I remembered [the experiment where num_ctx silently truncated instructions off long inputs](/en/blog/en/ollama-num-ctx-silent-truncation-experiment). That time too it was "not a dumb model, a config problem." Same smell here. The model can't do parallel? No, the server was configured not to.
+At this point I remembered [the experiment where num_ctx silently truncated instructions off long inputs](/en/blog/en/ollama-num-ctx-silent-truncation-experiment/). That time too it was "not a dumb model, a config problem." Same smell here. The model can't do parallel? No, the server was configured not to.
 
 ## Why it was 1 — confirmed in the docs
 
@@ -146,7 +146,7 @@ Drawn as one figure it looks like this. Left is aggregate throughput, right is w
 
 ## So how many agents do I attach?
 
-This measurement immediately changed my [multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement) design. To summarize:
+This measurement immediately changed my [multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement/) design. To summarize:
 
 First, at the default, concurrency doesn't raise throughput. With one slot, growing to eight agents only lengthens the queue and total time goes 8x. "I fired them in parallel, so it's fast" is the wrong intuition locally. Don't carry the cloud-API instinct over.
 
@@ -171,7 +171,7 @@ If Ollama starts automatically as an app, you'll need to put this variable into 
 
 ## The limits of this measurement
 
-To be honest about it: these are numbers for one specific setup, a small gemma4 on an M1 with 16GB. On a memory-rich machine or one with a discrete GPU, the default num_parallel would land at 4, and a large model has such a big KV cache per slot that you can only stand up a few parallel slots to begin with. Because parallel slots multiply context memory, the longer an agent's context, the harder it is to raise concurrency. So the weight of long inputs I saw in [the post measuring single-request prefill cost](/en/blog/en/local-llm-prefill-generation-latency-experiment) comes back to bite here.
+To be honest about it: these are numbers for one specific setup, a small gemma4 on an M1 with 16GB. On a memory-rich machine or one with a discrete GPU, the default num_parallel would land at 4, and a large model has such a big KV cache per slot that you can only stand up a few parallel slots to begin with. Because parallel slots multiply context memory, the longer an agent's context, the harder it is to raise concurrency. So the weight of long inputs I saw in [the post measuring single-request prefill cost](/en/blog/en/local-llm-prefill-generation-latency-experiment/) comes back to bite here.
 
 One more thing. That 1.8x aggregate gain also means the GPU had idle headroom on this hardware. If the single stream had already been using 100% of the GPU, batching in parallel would have gained almost nothing. The size of the gain differs per machine, so the conclusion is singular: if you change the setting, always re-measure on your own machine. A 30-line script is enough.
 

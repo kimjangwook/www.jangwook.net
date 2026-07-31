@@ -147,7 +147,7 @@ TodoWriteツールとThinkモードを活用して作業計画を立てます。
 @image-generator "ブログヒーローイメージ生成"
 ```
 
-サブエージェントを活用した実際のブログ自動化事例は[LLMベースのブログ自動化アーキテクチャ](/ja/blog/ja/llm-blog-automation)で確認できます。
+サブエージェントを活用した実際のブログ自動化事例は[LLMベースのブログ自動化アーキテクチャ](/ja/blog/ja/llm-blog-automation/)で確認できます。
 
 ## 実際のプロジェクト適用: 改善前後の比較
 
@@ -233,7 +233,7 @@ GEMINI_API_KEY=your_api_key_here
 
 <strong>追加内容</strong>:
 - Context7: 最新ライブラリドキュメント照会
-- [Playwright](/ja/blog/ja/claude-code-web-automation): Web自動化とテスト
+- [Playwright](/ja/blog/ja/claude-code-web-automation/): Web自動化とテスト
 - Chrome DevTools: パフォーマンス分析
 - Google Analytics: トラフィック分析
 

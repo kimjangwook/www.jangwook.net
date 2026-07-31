@@ -44,11 +44,11 @@ faq:
 
 > <strong>シリーズ: DeNA LLM スタディ</strong> (1/5)
 >
-> 1. <strong>[Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)</strong> ← 現在の記事
+> 1. <strong>[Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals/)</strong> ← 現在の記事
 > 2. Part 2: 構造化出力とマルチLLMパイプライン
-> 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag)
-> 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design)
+> 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag/)
+> 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design/)
 
 ## この記事が役立つ読者 / 飛ばしてよい場合
 
@@ -63,8 +63,8 @@ faq:
 
 <strong>飛ばして次回へ進んでよい場合</strong>
 
-- すでにTransformer、Next Token Prediction、RLHFを説明できるなら、本記事は復習として眺める程度にして、構造化出力を扱うPart 2や、検索連携を扱う[Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag)へ直接進んで構いません。
-- 単一呼び出しではなくツールを使うエージェントを設計するのが目的なら、[Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design)のほうが直接的です。
+- すでにTransformer、Next Token Prediction、RLHFを説明できるなら、本記事は復習として眺める程度にして、構造化出力を扱うPart 2や、検索連携を扱う[Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag/)へ直接進んで構いません。
+- 単一呼び出しではなくツールを使うエージェントを設計するのが目的なら、[Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design/)のほうが直接的です。
 - モデル内部の学習過程を深く掘りたいなら、基礎比較よりPart 3の学習方法論が合っています。
 
 まとめると、概念地図を一度描いておきたいときに読み、すでに地図があるなら必要な回へ飛ばしてください。

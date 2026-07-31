@@ -93,7 +93,7 @@ Webブラウザは1990年代に設計された<strong>ドキュメントビュ�
 
 2025〜2026年はAIエージェントが本格的に実用化される時期です。ClaudeのComputer Use、OpenAIのOperator、GoogleのMarinerなど、<strong>AIが直接コンピュータを操作する</strong>技術が登場しました。
 
-こうした環境では、ユーザーがブラウザを開いて自分で検索し、複数のサイトを行き来する行為がますます非効率に感じられるようになります。一方、[Chrome 146のWebMCP](/ja/blog/ja/webmcp-chrome-146-ai-tool-server)のように、ブラウザ自体がAIエージェントのツールサーバーに進化する動きも同時に進んでいます。
+こうした環境では、ユーザーがブラウザを開いて自分で検索し、複数のサイトを行き来する行為がますます非効率に感じられるようになります。一方、[Chrome 146のWebMCP](/ja/blog/ja/webmcp-chrome-146-ai-tool-server/)のように、ブラウザ自体がAIエージェントのツールサーバーに進化する動きも同時に進んでいます。
 
 ### 3. スーパーアプリトレンドのAI版
 
@@ -139,7 +139,7 @@ graph LR
 
 ### 1. プラットフォーム戦略の再考
 
-WebベースSaaSを作る開発者であれば、AIハブプラットフォームにも対応する戦略が必要です。[MCP（Model Context Protocol）](/ja/blog/ja/mcp-open-standard-linux-foundation-engineering-guide)のような標準がすでにAIツール連携のインターフェースとして定着しつつあります。
+WebベースSaaSを作る開発者であれば、AIハブプラットフォームにも対応する戦略が必要です。[MCP（Model Context Protocol）](/ja/blog/ja/mcp-open-standard-linux-foundation-engineering-guide/)のような標準がすでにAIツール連携のインターフェースとして定着しつつあります。
 
 ### 2. AIネイティブUX設計
 
@@ -161,7 +161,7 @@ Atlasはopen AIだけの戦略ではありません。主要プレイヤーの�
 | Apple | Apple Intelligence | デバイスネイティブAI統合 |
 | Microsoft | Copilot | Windows + Officeエコシステム統合 |
 
-[Google I/O 2026](/ja/blog/ja/google-io-2026-antigravity-2-agent-platform-analysis)では、この競争がエージェントIDEレベルにまで拡大していることが確認されました。
+[Google I/O 2026](/ja/blog/ja/google-io-2026-antigravity-2-agent-platform-analysis/)では、この競争がエージェントIDEレベルにまで拡大していることが確認されました。
 
 ## 結論
 

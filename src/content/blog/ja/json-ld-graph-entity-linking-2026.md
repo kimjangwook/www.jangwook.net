@@ -45,7 +45,7 @@ relatedPosts:
 
 AI Overviewやチャットボット型検索は、ページ一つだけを見るのではなく、<strong>エンティティ同士の関係</strong>を読もうとする。「この記事の著者は誰で、その著者はどの組織に属し、その組織の公式サイトは何か」。この関係がマークアップに明示されていれば、機械は推論せずそのまま受け取る。逆に`Article`の`author`がただ`{"@type": "Person", "name": "Jane Doe"}`と書いてあるだけなら、そのJane Doeがサイトの`Organization`とどう関係するかは、マークアップのどこにも書かれていない。機械が勝手に繋いでくれるのを願うしかない。
 
-ここで開発者がやるべきことは明確だと思う。推論に頼らず、関係を明示的に書き下すこと。それこそが`@graph`と`@id`の存在理由だ。AIクローラーに何をどう見せるかは[robots.txtで学習と引用を分けて制御する戦略](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026)で扱ったが、この記事はその次の段階だ。読むことを許可したクローラーに、<strong>正確なエンティティモデル</strong>を手渡す方法。
+ここで開発者がやるべきことは明確だと思う。推論に頼らず、関係を明示的に書き下すこと。それこそが`@graph`と`@id`の存在理由だ。AIクローラーに何をどう見せるかは[robots.txtで学習と引用を分けて制御する戦略](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026/)で扱ったが、この記事はその次の段階だ。読むことを許可したクローラーに、<strong>正確なエンティティモデル</strong>を手渡す方法。
 
 ## @idとノード参照 — W3Cが定義した繋ぎ方
 
@@ -126,7 +126,7 @@ const graph = flat['@graph'] || flat;
 
 ![Disconnected islands versus connected @graph: 測定した連結コンポーネント数を可視化した図](../../../assets/blog/json-ld-graph-entity-linking-2026/graph-comparison.png)
 
-ここで一つ誤解を正しておく。「三つの島」は「構造化データが無効」という意味ではない。散らばった版も各断片は有効で、Googleは別々のスクリプトブロックを複数でもちゃんと読む。私が測ったのは有効性ではなく<strong>関係の明示性</strong>だ。断片化したマークアップはエンティティ関係を機械の推論に委ね、繋がった`@graph`はそれを釘打ちして手渡す。[LocalBusinessマークアップをサーバーサイドで確実に出す問題](/ja/blog/ja/localbusiness-structured-data-server-side-vs-js-2026)が「クローラーがそもそもマークアップを見るか」だったなら、この記事は「見たマークアップが互いに繋がっているか」だ。
+ここで一つ誤解を正しておく。「三つの島」は「構造化データが無効」という意味ではない。散らばった版も各断片は有効で、Googleは別々のスクリプトブロックを複数でもちゃんと読む。私が測ったのは有効性ではなく<strong>関係の明示性</strong>だ。断片化したマークアップはエンティティ関係を機械の推論に委ね、繋がった`@graph`はそれを釘打ちして手渡す。[LocalBusinessマークアップをサーバーサイドで確実に出す問題](/ja/blog/ja/localbusiness-structured-data-server-side-vs-js-2026/)が「クローラーがそもそもマークアップを見るか」だったなら、この記事は「見たマークアップが互いに繋がっているか」だ。
 
 ## Googleが保証すること、しないこと
 
@@ -186,7 +186,7 @@ function buildGraph({ pageUrl, article }) {
 3. `WebSite.publisher`、`Article.author`、`Article.publisher`、`Person.worksFor`などを、インラインオブジェクトではなく<strong>`{"@id": ...}`参照</strong>に置き換える。
 4. ページ階層を繋ぐ。`WebPage.isPartOf` → `WebSite`、`BreadcrumbList` → `WebPage.breadcrumb`。
 5. マークアップを[Schema Markup Validator](https://validator.schema.org/)とGoogle Rich Results Testにかけ、有効性を確認する。
-6. (任意)`jsonld`で`flatten`した後、連結コンポーネントが<strong>1</strong>かをスクリプトで検証する。2以上ならどこかで参照が抜けている。多言語サイトなら、同じ「ドキュメントではなく自分で検証」の姿勢で[hreflangの相互参照を30行スクリプトで監査した方法](/ja/blog/ja/hreflang-reciprocity-audit-multilingual-2026)も併せて回してみるとよい。連結の検査を通っても、各ノードの値が正しい保証はない。値の層の穴は[飲食店の営業時間を3層で検証した記録](/ja/blog/ja/restaurant-jsonld-opening-hours-validation-2026)で別途扱った。
+6. (任意)`jsonld`で`flatten`した後、連結コンポーネントが<strong>1</strong>かをスクリプトで検証する。2以上ならどこかで参照が抜けている。多言語サイトなら、同じ「ドキュメントではなく自分で検証」の姿勢で[hreflangの相互参照を30行スクリプトで監査した方法](/ja/blog/ja/hreflang-reciprocity-audit-multilingual-2026/)も併せて回してみるとよい。連結の検査を通っても、各ノードの値が正しい保証はない。値の層の穴は[飲食店の営業時間を3層で検証した記録](/ja/blog/ja/restaurant-jsonld-opening-hours-validation-2026/)で別途扱った。
 
 ここまでが「関係を明示した」の実測可能な終点だ。順位保証はない。だがリッチリザルトの資格を安定させ、サイトのエンティティモデルを機械が誤解なく読む土台ができる。私は構造化データの中でこれが最も過小評価された作業だと思う。皆が新しいスキーマ型の追加に集中する一方、すでに入れた断片を<strong>互いに繋ぐ</strong>仕事は飛ばしてしまう。
 

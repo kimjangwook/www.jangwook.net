@@ -105,7 +105,7 @@ node --version  # v22.22.0
 npm --version   # 10.9.4
 ```
 
-Node.js 22で追加された機能の中でテストに役立つものもある。[Node.js内蔵SQLiteモジュール](/ja/blog/ja/node-sqlite-builtin-practical-guide-2026)を使えば外部ドライバなしでインメモリDBを使えるため、Vitestと組み合わせることでCI上で高速なデータレイヤー統合テストが実現できる。
+Node.js 22で追加された機能の中でテストに役立つものもある。[Node.js内蔵SQLiteモジュール](/ja/blog/ja/node-sqlite-builtin-practical-guide-2026/)を使えば外部ドライバなしでインメモリDBを使えるため、Vitestと組み合わせることでCI上で高速なデータレイヤー統合テストが実現できる。
 
 ## Step 1: Vitest 4のインストール
 
@@ -510,9 +510,9 @@ TypeScriptを使うViteベースのプロジェクトでJestを維持するの�
 
 npm週次ダウンロード数は4.8Mから7.7Mに増えた。それだけ多くのプロジェクトが乗り換えたわけだが、全員がすんなり移行できたわけではないだろう。
 
-[BunでTypeScriptスクリプトを自動化する](/ja/blog/ja/bun-shell-scripting-practical-guide-2026)構成と組み合わせて、VitestをBunで走らせる試みも今やっている最中だ。これは次の記事で書く予定だ。今は4.xで移行しておくのが無難な選択だと思う。
+[BunでTypeScriptスクリプトを自動化する](/ja/blog/ja/bun-shell-scripting-practical-guide-2026/)構成と組み合わせて、VitestをBunで走らせる試みも今やっている最中だ。これは次の記事で書く予定だ。今は4.xで移行しておくのが無難な選択だと思う。
 
-TypeScriptのツールチェーンをさらに磨きたいなら、[TypeScript SDKでMCPサーバーを段階的に構築する記事](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)や[Honoで型安全なAPIを作る記事](/ja/blog/ja/hono-typescript-api-2026)も同じ流れで併せて読んでおくといい。テスト、ランタイム、APIレイヤーをすべてVite生態系に揃えると、設定ファイルが目に見えて減る。
+TypeScriptのツールチェーンをさらに磨きたいなら、[TypeScript SDKでMCPサーバーを段階的に構築する記事](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026/)や[Honoで型安全なAPIを作る記事](/ja/blog/ja/hono-typescript-api-2026/)も同じ流れで併せて読んでおくといい。テスト、ランタイム、APIレイヤーをすべてVite生態系に揃えると、設定ファイルが目に見えて減る。
 
 ## 参考資料（一次ソース）
 

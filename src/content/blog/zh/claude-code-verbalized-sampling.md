@@ -136,7 +136,7 @@ graph LR
 
 ### 提示词模板
 
-这种结构化的提示设计与[规范驱动开发(Spec-Driven Development)](/zh/blog/zh/specification-driven-development)范式一脉相承。
+这种结构化的提示设计与[规范驱动开发(Spec-Driven Development)](/zh/blog/zh/specification-driven-development/)范式一脉相承。
 
 ````markdown
 <instructions>
@@ -731,7 +731,7 @@ graph TD
     style E fill:#6bcf7f
 ```
 
-在每个阶段应用 Verbalized Sampling，确保<strong>分层多样性</strong>。如果想更系统地设计多智能体工作流，请参阅[LangGraph多智能体系统完全指南](/zh/blog/zh/langgraph-multi-agent)。
+在每个阶段应用 Verbalized Sampling，确保<strong>分层多样性</strong>。如果想更系统地设计多智能体工作流，请参阅[LangGraph多智能体系统完全指南](/zh/blog/zh/langgraph-multi-agent/)。
 
 ### 7. 避免失败模式
 
@@ -856,7 +856,7 @@ cat .claude/agents/prompt-engineer.md
 # - 微调参数
 ```
 
-有关实际的智能体部署模式，[OpenAI AgentKit完全指南第2部分](/zh/blog/zh/openai-agentkit-tutorial-part2)也值得参考。
+有关实际的智能体部署模式，[OpenAI AgentKit完全指南第2部分](/zh/blog/zh/openai-agentkit-tutorial-part2/)也值得参考。
 
 ### 下一步
 

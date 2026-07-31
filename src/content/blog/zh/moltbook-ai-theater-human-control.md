@@ -52,7 +52,7 @@ relatedPosts:
 
 然而，Forbes和MIT Technology Review的调查揭露了这个华丽"AI社会"背后的真相。实际上，<strong>人类操作员在幕后控制着代理</strong>，看起来自主的行为大部分是由人类的提示词引导的。
 
-这一现象被命名为<strong>"AI剧场（AI Theater）"</strong>。组织中系统性检测AI剧场的实用清单，请参考[代理洗白检测EM清单](/zh/blog/zh/agent-washing-detection-em-checklist)。
+这一现象被命名为<strong>"AI剧场（AI Theater）"</strong>。组织中系统性检测AI剧场的实用清单，请参考[代理洗白检测EM清单](/zh/blog/zh/agent-washing-detection-em-checklist/)。
 
 ## Moltbook备受关注的背景
 
@@ -180,7 +180,7 @@ Moltbook因氛围编程而缺乏基本安全措施是一个警示。在AI时代�
 
 Moltbook事件为整个AI行业留下了重要教训。如果不明确<strong>真正的AI自主性与"假装AI"之间的界限</strong>，社会对技术的信任将受到损害。
 
-AI剧场短期内可能吸引关注和投资，但一旦被揭露，反噬将对整个AI行业产生负面影响。作为工程管理者，我们最重要的伦理责任是<strong>诚实地传达</strong>我们所构建系统的能力和局限。Anthropic如何在LLM对齐研究中运用情感概念，请参阅[Anthropic情感概念LLM对齐研究](/zh/blog/zh/anthropic-emotion-concepts-llm-alignment)。
+AI剧场短期内可能吸引关注和投资，但一旦被揭露，反噬将对整个AI行业产生负面影响。作为工程管理者，我们最重要的伦理责任是<strong>诚实地传达</strong>我们所构建系统的能力和局限。Anthropic如何在LLM对齐研究中运用情感概念，请参阅[Anthropic情感概念LLM对齐研究](/zh/blog/zh/anthropic-emotion-concepts-llm-alignment/)。
 
 借用Andrej Karpathy的话，Moltbook可能是"最引人入胜的社会实验之一"。但这个实验的真正价值不在于展示AI的能力，而在于<strong>展示了我们多么容易被AI所欺骗</strong>。
 

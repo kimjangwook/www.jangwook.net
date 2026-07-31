@@ -121,8 +121,8 @@ Sitemap: https://example.com/sitemap.xml
 
 This is the default for a site that <strong>wants</strong> citation traffic, of course. If you run paid content or a community archive where you don't even want citation, blocking the search bots too is the right call. There isn't one universal answer. That said, for most blogs and docs sites, "refuse training + allow citation" is a reasonable starting point.
 
-What a crawler actually reads once it arrives is a separate layer. I covered that in the post on [emitting LocalBusiness structured data server-side](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026). If robots.txt is "who do I let in," markup is "what do I show the bot once it's in."
-And if you run a multilingual site, you also need to check whether the hreflang signals carried by that Sitemap directive actually reciprocate. I walked through that audit in [the record of auditing hreflang across my own 4-language blog](/en/blog/en/hreflang-reciprocity-audit-multilingual-2026).
+What a crawler actually reads once it arrives is a separate layer. I covered that in the post on [emitting LocalBusiness structured data server-side](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026/). If robots.txt is "who do I let in," markup is "what do I show the bot once it's in."
+And if you run a multilingual site, you also need to check whether the hreflang signals carried by that Sitemap directive actually reciprocate. I walked through that audit in [the record of auditing hreflang across my own 4-language blog](/en/blog/en/hreflang-reciprocity-audit-multilingual-2026/).
 
 
 ## I verified it: do the rules actually fire the way I meant?
@@ -184,7 +184,7 @@ Python's standard parser satisfied `Allow: /` first and let it through. But <str
 
 So for the same robots.txt, the standard parser says "allowed" and actual Googlebot says "blocked." The mismatch looks trivial but it's dangerous in practice. You test your robots.txt with some local script or library, see "passes," and relax. But if that parser doesn't implement Google's longest-match rule, the real crawler may block or open a path you didn't expect.
 
-My conclusion: <strong>always verify robots.txt against the rules the crawler actually uses.</strong> For Google that's Search Console's robots.txt tester; for OpenAI, the per-bot behavior in the official docs. Don't wave it through on one generic parser. The single line I turned up today is the evidence. (This "the tool passed it, so it must be fine" trap shows up in accessibility too. It's exactly the same illusion as [a Lighthouse 100 not meaning WCAG compliance](/en/blog/en/a11y-lighthouse-audit-fix-2026).)
+My conclusion: <strong>always verify robots.txt against the rules the crawler actually uses.</strong> For Google that's Search Console's robots.txt tester; for OpenAI, the per-bot behavior in the official docs. Don't wave it through on one generic parser. The single line I turned up today is the evidence. (This "the tool passed it, so it must be fine" trap shows up in accessibility too. It's exactly the same illusion as [a Lighthouse 100 not meaning WCAG compliance](/en/blog/en/a11y-lighthouse-audit-fix-2026/).)
 
 ## The Google-Extended trap: it does not stop AI Overviews
 

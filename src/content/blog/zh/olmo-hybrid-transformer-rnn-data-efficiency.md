@@ -117,14 +117,14 @@ Base、SFT、DPO各阶段模型、全部权重、中间检查点、完整训练�
 ## EM/CTO视角下的启示
 
 1. <strong>相同预算下可训练出更高性能的模型</strong>
-2. <strong>64K token下性能提升</strong> → 扩大[长上下文应用场景](/zh/blog/zh/anthropic-files-api-batch-document-processing-guide)
-3. <strong>训练成本可能[削减50%](/zh/blog/zh/gemini-25-flash-api-cost-optimization-guide)</strong>
+2. <strong>64K token下性能提升</strong> → 扩大[长上下文应用场景](/zh/blog/zh/anthropic-files-api-batch-document-processing-guide/)
+3. <strong>训练成本可能[削减50%](/zh/blog/zh/gemini-25-flash-api-cost-optimization-guide/)</strong>
 4. <strong>开源生态系统日趋成熟</strong>
 
 ## 未来展望
 1. Pure Transformer的时代正在走向终结
 2. 扩展定律对混合架构更为有利
-3. 开源模型[竞争力持续增强](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)
+3. 开源模型[竞争力持续增强](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)
 
 ## 参考资料
 - [AI2 官方博客](https://allenai.org/blog/olmohybrid)

@@ -69,7 +69,7 @@ relatedPosts:
 
 - <strong>四半期ごとのAI能力再評価</strong>：各四半期の開始時に最新モデルのベンチマークを確認し、現在のワークフローで自動化可能な領域を再特定します。
 - <strong>「AI-Ready」バックログ管理</strong>：現在は手動で行っていますが、AI性能が向上すれば自動化できるタスクリストを別途管理します。
-- <strong>ベンダーロックイン回避</strong>：単一のAIベンダーに依存しないよう、抽象化レイヤーを設計します。MCP（Model Context Protocol）などの標準、そして[LangGraph、CrewAI、Daprのような交換可能なフレームワーク](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)がこれを支援します。
+- <strong>ベンダーロックイン回避</strong>：単一のAIベンダーに依存しないよう、抽象化レイヤーを設計します。MCP（Model Context Protocol）などの標準、そして[LangGraph、CrewAI、Daprのような交換可能なフレームワーク](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)がこれを支援します。
 
 ```typescript
 // AIベンダー抽象化レイヤーの例
@@ -95,7 +95,7 @@ Morgan Stanleyのレポートが予測するレベルのAI飛躍が実現する�
 ### 実行方法
 
 - <strong>Centaur Podモデルの導入</strong>：2〜3名のシニアエンジニア＋AIエージェントの組み合わせで、従来の5〜6名チームの産出量を達成します。
-- <strong>AIオーケストレーター役割の新設</strong>：チーム内で[AIエージェントの作業フロー](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)を設計し、品質を管理する専門的な役割を設けます。
+- <strong>AIオーケストレーター役割の新設</strong>：チーム内で[AIエージェントの作業フロー](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)を設計し、品質を管理する専門的な役割を設けます。
 - <strong>コードレビュープロセスの更新</strong>：AIが生成したコードに対するレビュー基準とプロセスを別途定義します。
 
 ```mermaid
@@ -124,7 +124,7 @@ Morgan Stanleyのレポートは<strong>「15-15-15」ダイナミクス</strong
 ### 実行方法
 
 - <strong>ハイブリッドAIインフラ戦略</strong>：すべてのAIワークロードをクラウドに載せるべきではありません。推論（inference）はローカル/エッジで、学習（training）はクラウドで行う分離戦略を検討します。
-- <strong>コストモニタリングダッシュボードの構築</strong>：[AI APIの呼び出しコスト](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)をリアルタイムで追跡し、モデル別・機能別のROIを測定します。
+- <strong>コストモニタリングダッシュボードの構築</strong>：[AI APIの呼び出しコスト](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)をリアルタイムで追跡し、モデル別・機能別のROIを測定します。
 - <strong>オープンソースモデル活用計画</strong>：Mistral 3、GLM-5などプロプライエタリモデルの92%の性能を15%のコストで達成するオープンソース代替案を常にベンチマークします。
 
 | 戦略 | コスト削減効果 | 適したワークロード |

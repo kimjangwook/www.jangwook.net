@@ -65,7 +65,7 @@ relatedPosts:
 - 积分制支付系统（Stripe集成）
 - 5种语言多语言支持
 
-然而上线一周后，我不得不面对冷酷的现实。这项服务最初的自动化架构是如何设计的，在[Agent Effi Flow自动化分析 第1篇](/zh/blog/zh/effiflow-automation-analysis-part1)中有详细介绍。
+然而上线一周后，我不得不面对冷酷的现实。这项服务最初的自动化架构是如何设计的，在[Agent Effi Flow自动化分析 第1篇](/zh/blog/zh/effiflow-automation-analysis-part1/)中有详细介绍。
 
 ---
 
@@ -300,7 +300,7 @@ const CREDIT_COSTS = {
 - Duty-Free、Tax-Free关键词检测
 - 弥生、freee CSV格式支持
 
-这套自动化流程实际上是如何运营和迭代的，在[Agent Effi Flow自动化分析 第3篇](/zh/blog/zh/effiflow-automation-analysis-part3)中继续讲述。
+这套自动化流程实际上是如何运营和迭代的，在[Agent Effi Flow自动化分析 第3篇](/zh/blog/zh/effiflow-automation-analysis-part3/)中继续讲述。
 
 ---
 

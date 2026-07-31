@@ -181,7 +181,7 @@ crew = Crew(
 )
 ```
 
-With this, you can have a working multi-agent system in under 30 minutes. This is a very similar approach to the role-based agent patterns covered in [Claude Code Agentic Workflow Patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types).
+With this, you can have a working multi-agent system in under 30 minutes. This is a very similar approach to the role-based agent patterns covered in [Claude Code Agentic Workflow Patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/).
 
 New in CrewAI v1.10.1:
 - **Native MCP support**: Connect MCP servers directly as tools
@@ -258,7 +258,7 @@ result = await workflow.run("Handle customer support ticket #4521")
 
 The key differentiator is the **workflow ID**. Even if a process dies, even if a Pod restarts, the same `workflow_id` resumes execution from where it stopped. This is possible because state is persisted to external stores like Redis or PostgreSQL. Dapr supports 30+ state stores as plugins.
 
-As covered in detail in the [Dapr Agents v1.0 GA analysis](/en/blog/en/dapr-agents-v1-cncf-production-ai-framework), the core is CNCF ecosystem integration: Prometheus, OpenTelemetry, Kubernetes RBAC — teams already running Dapr can add the agent layer at very low cost.
+As covered in detail in the [Dapr Agents v1.0 GA analysis](/en/blog/en/dapr-agents-v1-cncf-production-ai-framework/), the core is CNCF ecosystem integration: Prometheus, OpenTelemetry, Kubernetes RBAC — teams already running Dapr can add the agent layer at very low cost.
 
 But there are clear situations where I wouldn't recommend Dapr Agents. **For teams not yet on Kubernetes, it's overkill.** Installing Dapr itself, understanding the sidecar pattern, and configuring a state store can take weeks. Also, **agent logic is Python-only** and writing agents directly in TypeScript or Go is still limited.
 
@@ -298,7 +298,7 @@ Yes: seriously evaluate Dapr Agents. If Dapr is already deployed, adding the age
 
 The former needs LangGraph's graph model. The latter works with either CrewAI or Dapr Agents.
 
-I currently reference the **LangGraph-based approach** most for this blog's automation system. Looking at [how Stripe processed 1,300 PRs with autonomous agents](/en/blog/en/stripe-minions-autonomous-coding-agents-1300-prs), they also chose graph-based approaches where complex branching was needed. The ground truth is always "how you use it," not "which framework you pick."
+I currently reference the **LangGraph-based approach** most for this blog's automation system. Looking at [how Stripe processed 1,300 PRs with autonomous agents](/en/blog/en/stripe-minions-autonomous-coding-agents-1300-prs/), they also chose graph-based approaches where complex branching was needed. The ground truth is always "how you use it," not "which framework you pick."
 
 ## Cost and Operations Considerations
 

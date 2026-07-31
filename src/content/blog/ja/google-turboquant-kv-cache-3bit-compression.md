@@ -63,7 +63,7 @@ LLM推論で最大のメモリボトルネックはモデルの重みではな�
 - H100 80GB VRAMにモデル本体を載せると、KVキャッシュに使えるスペースが逼迫
 - バッチサイズを増やしてスループットを上げたくてもメモリが不足
 
-従来も量子化でこの問題を解決しようとする試みは多くありました。[INT8やINT4量子化](/ja/blog/ja/prismml-bonsai-1bit-llm-edge-ai)が代表的ですが、3ビット以下に下げると精度が目に見えて低下するのが限界でした。
+従来も量子化でこの問題を解決しようとする試みは多くありました。[INT8やINT4量子化](/ja/blog/ja/prismml-bonsai-1bit-llm-edge-ai/)が代表的ですが、3ビット以下に下げると精度が目に見えて低下するのが限界でした。
 
 ## TurboQuantの核心アイデア2つ
 
@@ -125,7 +125,7 @@ def turboquant_attention(Q, K, V):
 
 LLM推論コストのかなりの部分がGPUメモリから来ています。モデル自体はすでにさまざまな量子化（GPTQ、AWQ、GGUFなど）で圧縮されていますが、KVキャッシュは相対的に手をつけられないままでした。TurboQuantが示しているのは<strong>「ハードウェアのスケールアップなしに、長いコンテキストを効率的に処理できる道」</strong>です。
 
-個人的に最も期待している適用シナリオはローカルLLMです。[24GB VRAMの消費者向けGPU](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp)で128Kコンテキストを動かすことは現状ではほぼ不可能ですが、KVキャッシュを6分の1にできるなら話は全く変わります。[llama.cpp](/ja/blog/ja/llama-cpp-iq-quantization-merge)のエコシステムでこれが実装されれば、本当に面白いことになるでしょう。
+個人的に最も期待している適用シナリオはローカルLLMです。[24GB VRAMの消費者向けGPU](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp/)で128Kコンテキストを動かすことは現状ではほぼ不可能ですが、KVキャッシュを6分の1にできるなら話は全く変わります。[llama.cpp](/ja/blog/ja/llama-cpp-iq-quantization-merge/)のエコシステムでこれが実装されれば、本当に面白いことになるでしょう。
 
 ## 参考資料
 

@@ -50,7 +50,7 @@ relatedPosts:
 
 2週間で理論物理学の論文が1本完成した。通常なら1年かかる作業だ。
 
-3月23日、AnthropicがScience ブログを新たに開設した。最初の記事のタイトルがなかなか挑発的だ — 「Vibe Physics: The AI Grad Student」。ハーバード大学の物理学教授 Matthew Schwartz が [Claude Opus 4.5](/ja/blog/ja/anthropic-claude-performance-decline-controversy-april-2026) を直接指導し、理論物理学の計算を実行させた実験記録である。
+3月23日、AnthropicがScience ブログを新たに開設した。最初の記事のタイトルがなかなか挑発的だ — 「Vibe Physics: The AI Grad Student」。ハーバード大学の物理学教授 Matthew Schwartz が [Claude Opus 4.5](/ja/blog/ja/anthropic-claude-performance-decline-controversy-april-2026/) を直接指導し、理論物理学の計算を実行させた実験記録である。
 
 正直、タイトルを見て「またAIが科学を革新するという話か」と思ったが、読んでみるとかなり違うテイストの記事だった。成功談ではなく、**指導日誌**に近い。
 
@@ -71,7 +71,7 @@ Schwartz は現在のLLMの理論物理能力を**G2（大学院2年生）**レ�
 
 私はこの評価が物理学だけに当てはまるとは思わない。コードを書かせても、文章を書かせても似た感触を受ける。80%までは驚くほど速いが、残りの20%で専門家の目が必要になる。「vibe coding」という表現が流行しているのも同じ文脈だ — なんとなく動いているようだが、本当に正しいかは人間が確認しなければならない。
 
-これは重要な示唆を含む。AIが研究を「代行」するのではなく、**[専門家の生産性を増幅](/ja/blog/ja/ai-agent-cost-reality)**するツールだということだ。物理学を知らない人がClaudeに論文を書かせれば、もっともらしいが間違った結果が出る可能性が高い。
+これは重要な示唆を含む。AIが研究を「代行」するのではなく、**[専門家の生産性を増幅](/ja/blog/ja/ai-agent-cost-reality/)**するツールだということだ。物理学を知らない人がClaudeに論文を書かせれば、もっともらしいが間違った結果が出る可能性が高い。
 
 ## 同時公開された実践パターン：Ralph Loop
 
@@ -112,6 +112,6 @@ Anthropicにはすでに Research ブログがある。それなのに別途 Sci
 
 物理学の論文を書く予定はなくても、この実験から学べることは明確だ。
 
-**AIに長時間の作業を任せるパターンが確立されつつある。** [CLAUDE.md](/ja/blog/ja/agents-md-effectiveness)でプロジェクトコンテキストを与え、CHANGELOG.mdで状態を追跡し、test oracleで品質を検証する構造。これは物理研究でも、データパイプラインでも、大規模リファクタリングでも同様に適用できる。
+**AIに長時間の作業を任せるパターンが確立されつつある。** [CLAUDE.md](/ja/blog/ja/agents-md-effectiveness/)でプロジェクトコンテキストを与え、CHANGELOG.mdで状態を追跡し、test oracleで品質を検証する構造。これは物理研究でも、データパイプラインでも、大規模リファクタリングでも同様に適用できる。
 
 ただし「G2レベル」という評価を忘れてはいけない。熱心だが監督が必要な大学院生。その前提なしに成果物をそのまま使えば、速く作った分だけ速く問題が発生する。

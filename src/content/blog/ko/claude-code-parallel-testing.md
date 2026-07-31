@@ -61,7 +61,7 @@ relatedPosts:
 
 ## 개요
 
-[이전 글](/ko/blog/ko/llm-page-migration-standardization)에서는 LLM을 활용한 웹페이지 마이그레이션의 전체 전략을 다뤘다. 이번 글에서는 <strong>Claude Code의 병렬 실행 기능을 활용해 테스트 자동화를 5-8배 빠르게 수행하는 실전 구현 방법</strong>을 소개한다.
+[이전 글](/ko/blog/ko/llm-page-migration-standardization/)에서는 LLM을 활용한 웹페이지 마이그레이션의 전체 전략을 다뤘다. 이번 글에서는 <strong>Claude Code의 병렬 실행 기능을 활용해 테스트 자동화를 5-8배 빠르게 수행하는 실전 구현 방법</strong>을 소개한다.
 
 50〜500페이지 이상의 대규모 마이그레이션 프로젝트에서 가장 큰 병목은 <strong>테스트 단계</strong>다. 각 페이지마다 E2E, 접근성, 성능, SEO 테스트를 순차적으로 실행하면 수십 시간이 소요된다.
 
@@ -109,7 +109,7 @@ Claude Code의 에이전트 시스템과 Playwright의 병렬 실행을 결합�
 
 ## Claude Code 병렬 실행 아키텍처
 
-병렬화의 단위를 테스트가 아니라 작업 세션 자체로 넓히는 방법은 [Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)에서 따로 정리했다. 여기서는 한 세션 안에서의 병렬 실행에 집중한다.
+병렬화의 단위를 테스트가 아니라 작업 세션 자체로 넓히는 방법은 [Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)에서 따로 정리했다. 여기서는 한 세션 안에서의 병렬 실행에 집중한다.
 
 ### 핵심 개념: Task Tool의 병렬 호출
 
@@ -1188,7 +1188,7 @@ jobs:
 
 ## 모범 사례
 
-테스트 코드를 사람이 아니라 AI에게 맡길 때의 함정과 검증 절차는 [Playwright + AI: 자동화된 E2E 테스트 작성하기](/ko/blog/ko/playwright-ai-testing)에 자세히 적어두었다.
+테스트 코드를 사람이 아니라 AI에게 맡길 때의 함정과 검증 절차는 [Playwright + AI: 자동화된 E2E 테스트 작성하기](/ko/blog/ko/playwright-ai-testing/)에 자세히 적어두었다.
 
 ### 1. 테스트 격리
 
@@ -1362,7 +1362,7 @@ jobs:
 
 ### 다음 단계
 
-[이전 글](/ko/blog/ko/llm-page-migration-standardization)에서 소개한 전체 마이그레이션 전략과 이번 글의 병렬 테스트 자동화를 결합하면 <strong>완전 자동화된 대규모 웹페이지 마이그레이션 시스템</strong>을 구축할 수 있다.
+[이전 글](/ko/blog/ko/llm-page-migration-standardization/)에서 소개한 전체 마이그레이션 전략과 이번 글의 병렬 테스트 자동화를 결합하면 <strong>완전 자동화된 대규모 웹페이지 마이그레이션 시스템</strong>을 구축할 수 있다.
 
 다음 글 예고: "Claude Code 에이전트 최적화: 토큰 효율성과 응답 속도 개선"
 
@@ -1379,4 +1379,4 @@ jobs:
 - [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
 
 ### 참고 블로그 포스트
-- [LLM을 활용한 웹페이지 이행 작업의 표준화](/ko/blog/ko/llm-page-migration-standardization)
+- [LLM을 활용한 웹페이지 이행 작업의 표준화](/ko/blog/ko/llm-page-migration-standardization/)

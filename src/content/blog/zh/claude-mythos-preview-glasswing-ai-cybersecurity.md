@@ -75,7 +75,7 @@ Glasswing是一种拥有透明翅膀的蝴蝶。大概是想表达"透明运营"
 
 ## 拆解基准测试数据
 
-Mythos Preview的数字确实令人印象深刻。同期发布的[Claude Code源代码泄露分析](/zh/blog/zh/claude-code-source-leak-analysis)揭示了架构细节，有助于理解这次性能跳跃从何而来。
+Mythos Preview的数字确实令人印象深刻。同期发布的[Claude Code源代码泄露分析](/zh/blog/zh/claude-code-source-leak-analysis/)揭示了架构细节，有助于理解这次性能跳跃从何而来。
 
 - **SWE-bench Verified**: 93.9%（Opus 4.6为80.8%，GPT-5.4大约73%）
 - **SWE-bench Pro**: 77.8%
@@ -105,7 +105,7 @@ Picus Security精准地指出了这一点：["能摧毁一切的东西，也是�
 
 Mythos发现的漏洞是真实存在的。27年前的OpenBSD漏洞至今存活，意味着现有的安全审计体系遗漏了它。如果AI能自动找到这类漏洞，那攻击者构建具有类似能力的模型只是时间问题。
 
-AI系统中意外信息泄露的风险已经是现实威胁——[AI蒸馏攻击与企业防御策略](/zh/blog/zh/ai-distillation-attacks-enterprise-defense)详细介绍了这类威胁。因此Anthropic实际上只有两个选项：
+AI系统中意外信息泄露的风险已经是现实威胁——[AI蒸馏攻击与企业防御策略](/zh/blog/zh/ai-distillation-attacks-enterprise-defense/)详细介绍了这类威胁。因此Anthropic实际上只有两个选项：
 
 1. 公开发布让所有人都能用于防御，但承担被用于攻击的风险
 2. 限制发布，先给防御方争取时间
@@ -116,7 +116,7 @@ Anthropic选择了第2个。合理的选择，但前提是"防御方"指的是12
 
 几个月前Claude在Firefox中发现了22个CVE。当时就有人说"AI正在改变安全审计"。Mythos把这件事提升到了完全不同的维度。
 
-我个人期待的是，这种能力终将不可避免地民主化。现在只有Glasswing参与企业能使用，但我预计1-2年内会出现同等水平的开源安全代理。Opus 4.6级别已经能做相当程度的安全审计了。关于AI供应链攻击的具体机制，[LiteLLM供应链攻击分析](/zh/blog/zh/litellm-supply-chain-attack-ai-dependency-security)记录了一个真实案例，值得对照阅读。
+我个人期待的是，这种能力终将不可避免地民主化。现在只有Glasswing参与企业能使用，但我预计1-2年内会出现同等水平的开源安全代理。Opus 4.6级别已经能做相当程度的安全审计了。关于AI供应链攻击的具体机制，[LiteLLM供应链攻击分析](/zh/blog/zh/litellm-supply-chain-attack-ai-dependency-security/)记录了一个真实案例，值得对照阅读。
 
 在那之前，该做的是减少自己代码库的安全债务。如果OpenBSD都有27年的老漏洞，没人能保证自己的项目是干净的。
 

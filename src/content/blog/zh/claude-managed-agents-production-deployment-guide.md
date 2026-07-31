@@ -80,7 +80,7 @@ Anthropic于4月8日开放了Claude Managed Agents公开测试版。这是一项
 
 一旦上到生产环境，就进入了另一个世界。工具执行结果回传给模型的循环状态管理、网络中断时的恢复策略、上下文窗口快满时该丢弃哪些消息保留哪些的压缩逻辑、API超时处理，以及防止智能体执行 `rm -rf /` 之类命令的沙箱隔离。这些全是在"构建智能体"之前就要解决的基础设施问题。
 
-根据我的经验，实际的智能体逻辑——比如"找出这个PR中的安全漏洞"这样的业务代码——远没有这些周边基础设施代码耗时。后者至少多花3倍时间。在[Claude Code的5种智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)中我介绍过编排器-子智能体模式，但无论模式设计得多么清晰，把它转化为可维护的代码完全是另一回事。尤其是错误处理简直是噩梦。工具调用失败时要重试、要询问用户、还是直接跳过——写了几十个这样的分支之后，智能体逻辑就被埋在了条件判断的丛林里。
+根据我的经验，实际的智能体逻辑——比如"找出这个PR中的安全漏洞"这样的业务代码——远没有这些周边基础设施代码耗时。后者至少多花3倍时间。在[Claude Code的5种智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)中我介绍过编排器-子智能体模式，但无论模式设计得多么清晰，把它转化为可维护的代码完全是另一回事。尤其是错误处理简直是噩梦。工具调用失败时要重试、要询问用户、还是直接跳过——写了几十个这样的分支之后，智能体逻辑就被埋在了条件判断的丛林里。
 
 Managed Agents就是Anthropic宣布接管这个基础设施层的声明。你只管写业务逻辑。
 
@@ -221,9 +221,9 @@ with client.beta.sessions.events.stream(session.id) as stream:
 
 <strong>供应商锁定程度很深。</strong>智能体定义、环境配置、会话管理API全部是Anthropic专属的。与OpenAI Assistants API不兼容，与LangChain、CrewAI等框架也无法直接对接。日后如果想迁移到Gemini或GPT，就得重新实现智能体逻辑。
 
-这不是理论上的风险。就在这个月，Anthropic修改了Claude Pro/Max订阅用户的第三方工具访问策略。把基础设施托管出去，意味着也要接受这类策略变更。NVIDIA NemoClaw这样的[自有基础设施智能体平台](/zh/blog/zh/nvidia-nemoclaw-openclaw-enterprise-agent-platform)作为替代方案出现，也正是这个背景。
+这不是理论上的风险。就在这个月，Anthropic修改了Claude Pro/Max订阅用户的第三方工具访问策略。把基础设施托管出去，意味着也要接受这类策略变更。NVIDIA NemoClaw这样的[自有基础设施智能体平台](/zh/blog/zh/nvidia-nemoclaw-openclaw-enterprise-agent-platform/)作为替代方案出现，也正是这个背景。
 
-<strong>多智能体协调缺席。</strong>发布会上最令人兴奋的功能——智能体创建其他智能体并行分配任务——不在公开测试版中。需要另外申请研究预览权限，审批要多久也不确定。当前的Managed Agents只支持单个智能体的托管执行。与[直接组建智能体团队运作的方式](/zh/blog/zh/claude-agent-teams-guide)相比，功能范围要窄得多。
+<strong>多智能体协调缺席。</strong>发布会上最令人兴奋的功能——智能体创建其他智能体并行分配任务——不在公开测试版中。需要另外申请研究预览权限，审批要多久也不确定。当前的Managed Agents只支持单个智能体的托管执行。与[直接组建智能体团队运作的方式](/zh/blog/zh/claude-agent-teams-guide/)相比，功能范围要窄得多。
 
 <strong>Batch API折扣不适用。</strong>如果之前在用Batch API做大批量处理，需要注意。Managed Agents会话内的Token消耗不享受Batch API的50%折扣。把批处理任务迁移到Managed Agents，Token成本可能翻倍。
 

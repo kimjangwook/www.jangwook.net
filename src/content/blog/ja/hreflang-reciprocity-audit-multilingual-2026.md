@@ -104,7 +104,7 @@ const target = pages.get(a.href);
 if (target && !target.alts.some(t => t.href === url)) brokenReturn++;
 ````
 
-まず記事1本の4言語版だけを検査した。アクセシビリティ監査を扱った[Lighthouseアクセシビリティの記事](/ja/blog/ja/a11y-lighthouse-audit-fix-2026)を対象にした。
+まず記事1本の4言語版だけを検査した。アクセシビリティ監査を扱った[Lighthouseアクセシビリティの記事](/ja/blog/ja/a11y-lighthouse-audit-fix-2026/)を対象にした。
 
 ```text
 $ node hreflang-audit.mjs dist a11y-lighthouse-audit-fix-2026
@@ -223,7 +223,7 @@ hreflangを出す方法は三つで、Googleは「3つの方法は同等」と�
 | HTTP `Link:`ヘッダー | レスポンスヘッダー | PDF・画像など非HTML文書にも適用可 | サーバー・CDN設定が必要。目視確認が面倒 | 非HTMLリソース、ヘッダー制御が容易な環境 |
 | サイトマップ `xhtml:link` | XMLサイトマップ | HTMLを触らない。大規模に有利、一箇所で管理 | サイトマップが肥大化、生成パイプラインが必要 | 数万ページ、マークアップ修正が困難なCMS |
 
-私のブログは静的ビルドなのでHTMLタグ方式が合う。ページ数が数百の今は、タグ方式の「HTMLが重くなる」弱点はまだ負担にならない。もし数万ページに育てば、サイトマップ方式へ移すことを考える。その場合は[LocalBusiness構造化データをサーバーサイドで出した経験](/ja/blog/ja/localbusiness-structured-data-server-side-vs-js-2026)と同じで、シグナルはビルド時点で決定論的に刻む方が、人が手で管理するよりずっと安全だ。
+私のブログは静的ビルドなのでHTMLタグ方式が合う。ページ数が数百の今は、タグ方式の「HTMLが重くなる」弱点はまだ負担にならない。もし数万ページに育てば、サイトマップ方式へ移すことを考える。その場合は[LocalBusiness構造化データをサーバーサイドで出した経験](/ja/blog/ja/localbusiness-structured-data-server-side-vs-js-2026/)と同じで、シグナルはビルド時点で決定論的に刻む方が、人が手で管理するよりずっと安全だ。
 
 ## よく踏む地雷 — 特に中国語
 
@@ -235,7 +235,7 @@ hreflangを出す方法は三つで、Googleは「3つの方法は同等」と�
 - <strong>相対パス</strong>: `href="/en/..."`は駄目。絶対URLでなければならない。
 - <strong>noindexとの同時使用</strong>: hreflang対象が`noindex`だと、シグナル同士が矛盾する。インデックスするなと言いながら代替版へ案内する格好だ。
 
-最後の項目は特に[AIクローラーをrobots.txtで制御した記事](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026)とつながる。インデックス・クロール・言語のシグナルはそれぞれ別のファイルやタグに散らばっているが、互いに矛盾するとクローラーは最も保守的に解釈するか、そのまま無視する。シグナルを入れることより、<strong>シグナル同士を衝突させないこと</strong>が実務の半分だ。
+最後の項目は特に[AIクローラーをrobots.txtで制御した記事](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026/)とつながる。インデックス・クロール・言語のシグナルはそれぞれ別のファイルやタグに散らばっているが、互いに矛盾するとクローラーは最も保守的に解釈するか、そのまま無視する。シグナルを入れることより、<strong>シグナル同士を衝突させないこと</strong>が実務の半分だ。
 
 ## だから開発者がすぐやること
 

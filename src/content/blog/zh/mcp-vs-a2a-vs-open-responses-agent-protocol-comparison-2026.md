@@ -71,7 +71,7 @@ MCP标准化的内容有三类：
 
 另一个重点是通过`.well-known`端点实现**服务发现标准化**。目前需要实际连接到MCP服务器才能知道它提供什么功能，未来将可以在不建立连接的情况下通过元数据了解服务器能力。
 
-[关于WebMCP的详细分析文章](/zh/blog/zh/webmcp-chrome-146-ai-tool-server)介绍了MCP服务器实现的底层细节，值得参考。
+[关于WebMCP的详细分析文章](/zh/blog/zh/webmcp-chrome-146-ai-tool-server/)介绍了MCP服务器实现的底层细节，值得参考。
 
 ---
 
@@ -97,7 +97,7 @@ A2A要解决的问题是这样的：假设有一个旅行预订智能体，还�
 
 坦率地说，第一次读A2A规范时，我对"这有多实用"持怀疑态度。智能体直接相互通信的概念本身很有趣，但要安全地运行它，信任模型会变得复杂。v1.0的签名Agent Cards正在朝这个方向推进，但要在生产环境中完全信任它，我认为还处于早期阶段。
 
-[关于在生产环境中结合使用A2A和MCP的架构模式](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide)单独整理了一篇文章，层级如何划分是核心关键。
+[关于在生产环境中结合使用A2A和MCP的架构模式](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide/)单独整理了一篇文章，层级如何划分是核心关键。
 
 ---
 
@@ -153,7 +153,7 @@ Open Responses是OpenAI于2026年2月发布的开放规范。其性质与MCP和A
 
 编排器通过A2A委派给专业智能体，各专业智能体通过MCP访问自己的工具。
 
-[Claude Code智能体工作流模式的5种类型](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)中对这种层次结构的实现示例有更详细的介绍。
+[Claude Code智能体工作流模式的5种类型](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)中对这种层次结构的实现示例有更详细的介绍。
 
 ---
 
@@ -167,7 +167,7 @@ Open Responses是OpenAI于2026年2月发布的开放规范。其性质与MCP和A
 - 已有超过5,000个服务器的生态系统
 - Claude Code、OpenAI Agents SDK、LangGraph等主流框架都支持
 - Streamable HTTP已成为标准，规范足够稳定
-- [Anthropic Agent Skills标准](/zh/blog/zh/anthropic-agent-skills-standard)与MCP相辅相成，正在形成更强大的模式
+- [Anthropic Agent Skills标准](/zh/blog/zh/anthropic-agent-skills-standard/)与MCP相辅相成，正在形成更强大的模式
 
 **中期目标：A2A**
 
@@ -187,4 +187,4 @@ MCP是现在就应该使用的工具。它是赋予智能体访问外部世界�
 
 不要把这三者看作竞争的标准。它们解决的是不同的问题，很多系统最终都需要全部三个。我的实用结论：先MCP，需要时再A2A，Open Responses订阅关注即可。
 
-另外，[AI智能体框架的选择](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)与这个协议选择是紧密相关的问题——不同框架对MCP和A2A的支持程度差异显著。
+另外，[AI智能体框架的选择](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)与这个协议选择是紧密相关的问题——不同框架对MCP和A2A的支持程度差异显著。

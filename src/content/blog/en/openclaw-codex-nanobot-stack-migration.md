@@ -105,7 +105,7 @@ I had been putting off launchd because someone said it was fussier than cron. Tu
 
 Anthropic announced Claude Code Channels in March. You send a message from Telegram and Claude on your local terminal answers. The UX was almost identical to the OpenClaw Telegram channel I had been using. I treated it as a temporary bridge. The reasoning was simple: if I can still reach Claude through Telegram without OpenClaw, the immediate pain of the OAuth cutoff drops a lot.
 
-It actually worked well. While out and about, I'd send "run today's analytics report" from Telegram, the Mac mini at home would pick it up, do the work, and send results back to Telegram. I lived this way for almost a month. It's exactly what I wrote up in my [Channels review](/en/blog/en/claude-code-channels-telegram-bridge).
+It actually worked well. While out and about, I'd send "run today's analytics report" from Telegram, the Mac mini at home would pick it up, do the work, and send results back to Telegram. I lived this way for almost a month. It's exactly what I wrote up in my [Channels review](/en/blog/en/claude-code-channels-telegram-bridge/).
 
 The problem with Channels is that it's a message-response model. There's no state. Ask "where did the backfill job from last night get to," and Channels has no idea that backfill job exists. Every interaction starts a fresh session from zero. OpenClaw kept context per channel; Channels does not.
 
@@ -123,7 +123,7 @@ OpenClaw is heavy not because of its model dependencies. It's heavy because it c
 
 This isn't OpenClaw's fault. I was using OpenClaw wrong. OpenClaw is a tool for orchestrating [channel integrations and multi-agent routing](https://docs.openclaw.ai/concepts/multi-agent) in one place. What I actually used it for was "write posts with Claude, get results on Telegram." I was carrying 100% of the weight while using maybe 5% of the features.
 
-Please don't read this as me saying OpenClaw is a bad tool. I still stand by everything I wrote in the [OpenClaw installation guide](/en/blog/en/openclaw-installation-tutorial). Multi-model support, the channel system, the node graph — all real. They just weren't things my work needed.
+Please don't read this as me saying OpenClaw is a bad tool. I still stand by everything I wrote in the [OpenClaw installation guide](/en/blog/en/openclaw-installation-tutorial/). Multi-model support, the channel system, the node graph — all real. They just weren't things my work needed.
 
 ## After switching to Nanobot
 

@@ -286,7 +286,7 @@ for result in client.messages.batches.results(message_batch.id):
 
 ![Batches API 처리 흐름과 비용 절감 구조](../../../assets/blog/anthropic-message-batches-api-flow-diagram.png)
 
-이 수치는 [LLM API 가격 비교 2026 포스트](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 다룬 표준 정가를 기준으로 한다. 실제 배치 비용 계산 예시를 보자.
+이 수치는 [LLM API 가격 비교 2026 포스트](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)에서 다룬 표준 정가를 기준으로 한다. 실제 배치 비용 계산 예시를 보자.
 
 **시나리오 A**: Claude Haiku 4.5로 상품 설명 10만 건 생성. 요청당 평균 200 input tokens + 150 output tokens.
 
@@ -320,7 +320,7 @@ Batches API/월:
 월 절감액: $1,260.00 / 연간 절감: $15,120.00
 ```
 
-Prompt Caching까지 조합하면 어떻게 되는가. [Prompt Caching 실전 가이드](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide)에서 다룬 것처럼, 캐시 히트된 입력 토큰은 90% 할인이 추가로 적용된다. 배치 내 모든 요청에 동일한 시스템 프롬프트가 들어가는 경우라면:
+Prompt Caching까지 조합하면 어떻게 되는가. [Prompt Caching 실전 가이드](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide/)에서 다룬 것처럼, 캐시 히트된 입력 토큰은 90% 할인이 추가로 적용된다. 배치 내 모든 요청에 동일한 시스템 프롬프트가 들어가는 경우라면:
 
 ```
 Batches API (50% 할인) + Prompt Caching (90% 할인) 조합:
@@ -444,7 +444,7 @@ const batchWithCaching = await client.messages.batches.create({
 
 100건 미만의 배치는 솔직히 효과가 제한적이다. Batches API는 폴링 오버헤드가 있기 때문에, 처리량이 작으면 표준 API를 그냥 순차 실행하는 게 오히려 빠를 수 있다.
 
-반대로, [이종 LLM 플릿 비용 최적화](/ko/blog/ko/heterogeneous-llm-agent-fleet-cost-optimization)에서 다룬 것처럼 비싼 모델(Opus)은 배치로 야간 처리하고, 저렴하고 빠른 모델(Haiku)은 실시간으로 쓰는 하이브리드 전략은 꽤 효과적이다. 내가 실제로 프로젝트에서 추천하는 패턴도 이것이다. 에이전트나 채팅처럼 실시간성이 필요한 부분은 Haiku로 빠르게 처리하고, 야간 분석·평가·콘텐츠 생성은 Opus나 Sonnet으로 배치 처리하면 비용과 품질 두 마리 토끼를 잡을 수 있다.
+반대로, [이종 LLM 플릿 비용 최적화](/ko/blog/ko/heterogeneous-llm-agent-fleet-cost-optimization/)에서 다룬 것처럼 비싼 모델(Opus)은 배치로 야간 처리하고, 저렴하고 빠른 모델(Haiku)은 실시간으로 쓰는 하이브리드 전략은 꽤 효과적이다. 내가 실제로 프로젝트에서 추천하는 패턴도 이것이다. 에이전트나 채팅처럼 실시간성이 필요한 부분은 Haiku로 빠르게 처리하고, 야간 분석·평가·콘텐츠 생성은 Opus나 Sonnet으로 배치 처리하면 비용과 품질 두 마리 토끼를 잡을 수 있다.
 
 다만 내가 이 API에서 아쉬운 점이 두 가지 있다. 첫째는 웹훅 부재다. 완료 알림을 폴링으로만 받아야 한다는 게 운영 관점에서 번거롭다. 둘째는 실시간 진행률 대시보드가 없다는 점. `request_counts`를 폴링하면 수치는 볼 수 있지만, 이 정도면 충분하다고 느끼기엔 약간 아쉽다. 앞으로 개선될 것이라 기대한다.
 

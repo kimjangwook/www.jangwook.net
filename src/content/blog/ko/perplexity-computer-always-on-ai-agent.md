@@ -166,7 +166,7 @@ AI 에이전트가 24시간 작동한다는 것은 <strong>비동기 업무의 �
 
 - <strong>작업 분해 능력</strong>: AI에게 위임할 수 있는 작업과 인간이 해야 할 작업을 구분하는 능력
 - <strong>결과 리뷰 역량</strong>: AI 산출물의 품질을 빠르게 검증하는 스킬
-- <strong>비동기 오케스트레이션</strong>: [AI 에이전트의 작업 대기열](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)을 관리하고 우선순위를 조정하는 역할
+- <strong>비동기 오케스트레이션</strong>: [AI 에이전트의 작업 대기열](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)을 관리하고 우선순위를 조정하는 역할
 
 ### 3. 비용 대비 효과 계산
 
@@ -188,7 +188,7 @@ Perplexity Computer는 단독으로 존재하지 않는다. 현재 '상시 AI �
 |---|---|---|
 | Perplexity Personal Computer | Mac mini 기반 24/7 에이전트 | 전용 하드웨어 + 클라우드 AI |
 | OpenClaw | 오픈소스 AI 어시스턴트 (21만 스타) | 자체 하드웨어에서 실행 |
-| [Claude Managed Agents](/ko/blog/ko/claude-managed-agents-production-deployment-guide) | MCP 기반 툴 연동 에이전트 | API + 프로토콜 표준화 |
+| [Claude Managed Agents](/ko/blog/ko/claude-managed-agents-production-deployment-guide/) | MCP 기반 툴 연동 에이전트 | API + 프로토콜 표준화 |
 | OpenAI Codex | 코딩 특화 에이전트 | 클라우드 전용 |
 
 Gartner는 <strong>2026년 말까지 엔터프라이즈 앱의 40%에 AI 에이전트가 탑재</strong>될 것으로 전망한다(2025년 5% 미만에서 급증). 상시 AI 에이전트는 이 흐름의 가장 앞단에 있다.
@@ -199,7 +199,7 @@ Gartner는 <strong>2026년 말까지 엔터프라이즈 앱의 40%에 AI 에이�
 
 1. <strong>AI 위임 가능 업무 목록 작성</strong>: 팀 내에서 반복적으로 수행되는 조사, 분석, 리포트 생성 업무를 리스트업하라.
 2. <strong>거버넌스 프레임워크 설계</strong>: AI 에이전트가 어떤 수준의 권한을 가질지, 어떤 작업에 인간 승인이 필요한지 정의하라.
-3. <strong>비동기 워크플로우 설계</strong>: [AI 에이전트](/ko/blog/ko/python-ai-agent-library-comparison-2026)에게 작업을 위임하고, 결과를 리뷰하는 프로세스를 설계하라.
+3. <strong>비동기 워크플로우 설계</strong>: [AI 에이전트](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에게 작업을 위임하고, 결과를 리뷰하는 프로세스를 설계하라.
 4. <strong>보안 정책 검토</strong>: 로컬 파일 접근, 클라우드 데이터 전송, 감사 로그 관리에 대한 보안 정책을 점검하라.
 
 ## 결론

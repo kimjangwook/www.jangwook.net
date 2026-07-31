@@ -80,7 +80,7 @@ relatedPosts: []
 
 ### 핵심 기술 스택
 
-- <strong>Claude Code</strong>: Anthropic의 CLI 기반 AI 개발 환경 ([Claude Code Best Practices 가이드](/ko/blog/ko/claude-code-best-practices) 참고)
+- <strong>Claude Code</strong>: Anthropic의 CLI 기반 AI 개발 환경 ([Claude Code Best Practices 가이드](/ko/blog/ko/claude-code-best-practices/) 참고)
 - <strong>Astro 5</strong>: Islands Architecture 기반 정적 사이트 생성기
 - <strong>MCP (Model Context Protocol)</strong>: AI와 외부 시스템 연결
 - <strong>TypeScript</strong>: 타입 안전한 코드
@@ -468,7 +468,7 @@ Example: Similar to Vercel, Stripe design aesthetics
 
 ## MCP 통합: AI의 슈퍼파워
 
-MCP (Model Context Protocol)는 Claude가 외부 시스템과 상호작용할 수 있게 해줍니다. [Claude Code Hooks 워크플로우 자동화](/ko/blog/ko/claude-code-hooks-workflow)에서 실제 MCP 통합 사례와 자동화 패턴을 더 자세히 확인할 수 있습니다.
+MCP (Model Context Protocol)는 Claude가 외부 시스템과 상호작용할 수 있게 해줍니다. [Claude Code Hooks 워크플로우 자동화](/ko/blog/ko/claude-code-hooks-workflow/)에서 실제 MCP 통합 사례와 자동화 패턴을 더 자세히 확인할 수 있습니다.
 
 ### 1. Context7 - 최신 문서 자동 검색
 

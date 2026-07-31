@@ -215,7 +215,7 @@ git worktree prune
 
 I like this pattern, but it's not universal. It works best when your tasks touch different files. If two sessions both need to modify the same component, you'll end up with more merge conflicts, not fewer. And once you're managing more than three sessions, tracking what each one has done starts generating its own overhead.
 
-Pairing this with multi-agent PR review lets you automatically review the PR from each worktree branch. For team-scale use, that combination has been the most practical setup I've found. The official docs go a step further and show how to isolate subagents in their own worktrees: add `isolation: worktree` to a custom subagent's frontmatter, and each agent gets a temporary worktree that's removed automatically when it finishes without changes. [If you've built out agent teams before](/en/blog/en/claude-agent-teams-guide), you'll immediately feel how much this isolation cuts down on parallel-work collisions.
+Pairing this with multi-agent PR review lets you automatically review the PR from each worktree branch. For team-scale use, that combination has been the most practical setup I've found. The official docs go a step further and show how to isolate subagents in their own worktrees: add `isolation: worktree` to a custom subagent's frontmatter, and each agent gets a temporary worktree that's removed automatically when it finishes without changes. [If you've built out agent teams before](/en/blog/en/claude-agent-teams-guide/), you'll immediately feel how much this isolation cuts down on parallel-work collisions.
 
 ## When to Use It, When to Avoid It
 
@@ -235,7 +235,7 @@ I won't pretend this pattern fits everywhere. In practice, some situations clear
 - For work where **shared state order matters** — database migrations against one local DB, for example. Running them at once tangles your data.
 - For a quick one-line fix where the **setup cost outweighs the task** itself.
 
-The whole decision compresses to one question: are the tasks independent at the file level? If yes, worktrees shine. If not, don't split them. Read alongside the prompt-distribution principles from [Claude Code Masterclass Part 1](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent) and it gets easier to judge which work to break apart and how.
+The whole decision compresses to one question: are the tasks independent at the file level? If yes, worktrees shine. If not, don't split them. Read alongside the prompt-distribution principles from [Claude Code Masterclass Part 1](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent/) and it gets easier to judge which work to break apart and how.
 
 The criteria in one table:
 
@@ -270,4 +270,4 @@ Honestly, my first reaction was "is this really worth the setup?" After using it
 
 The core idea is simple: **independent branch → independent directory → independent Claude Code session**. When those three align, sessions don't interfere with each other.
 
-Start with two worktrees, get comfortable with the pattern, then expand to three. If you want to push further into structured multi-agent patterns, [the Claude Code Agent Teams guide](/en/blog/en/claude-agent-teams-guide) is the natural next step. And whether this parallelization actually cut your working time is worth confirming with numbers, the way I did in [my breakdown of Claude Code usage](/en/blog/en/claude-code-insights-usage-analysis), rather than by gut feel.
+Start with two worktrees, get comfortable with the pattern, then expand to three. If you want to push further into structured multi-agent patterns, [the Claude Code Agent Teams guide](/en/blog/en/claude-agent-teams-guide/) is the natural next step. And whether this parallelization actually cut your working time is worth confirming with numbers, the way I did in [my breakdown of Claude Code usage](/en/blog/en/claude-code-insights-usage-analysis/), rather than by gut feel.

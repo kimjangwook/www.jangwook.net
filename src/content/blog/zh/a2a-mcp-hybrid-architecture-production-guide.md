@@ -53,7 +53,7 @@ relatedPosts:
 
 2025年以前，大多数组织还在试验AI智能体。但截至2026年，约63%的企业正在试点AI智能体，而成功扩展至生产环境的比例却不足25%。填补这一差距的核心关键正是**协议架构**。
 
-截至2026年2月，MCP的月SDK下载量达9700万次（Python+TypeScript合计），已成为事实上的智能体-工具连接标准。而A2A由Google于2025年发布，目前已有100多家企业公开表示支持。实现A2A的主要框架的实际对比，请参阅[Google ADK vs LangGraph深度对比](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026)。Anthropic将MCP捐赠给Linux Foundation，Google也将A2A捐赠给同一基金会——这一事实暗示着"统一生态系统"的方向。
+截至2026年2月，MCP的月SDK下载量达9700万次（Python+TypeScript合计），已成为事实上的智能体-工具连接标准。而A2A由Google于2025年发布，目前已有100多家企业公开表示支持。实现A2A的主要框架的实际对比，请参阅[Google ADK vs LangGraph深度对比](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026/)。Anthropic将MCP捐赠给Linux Foundation，Google也将A2A捐赠给同一基金会——这一事实暗示着"统一生态系统"的方向。
 
 ## MCP vs A2A：不在同一层次
 
@@ -141,7 +141,7 @@ A2A设计要求每个智能体拥有**Agent Card**——以JSON格式声明智�
 
 ### 2. MCP服务器治理
 
-随着MCP服务器数量增加，安全、成本和可靠性问题变得复杂。2026年初披露的30多个CVE证明了这一点。如果您正在自建服务器，请先查阅[MCP服务器构建实战指南](/zh/blog/zh/mcp-server-build-practical-guide-2026)中的安全配置检查清单。
+随着MCP服务器数量增加，安全、成本和可靠性问题变得复杂。2026年初披露的30多个CVE证明了这一点。如果您正在自建服务器，请先查阅[MCP服务器构建实战指南](/zh/blog/zh/mcp-server-build-practical-guide-2026/)中的安全配置检查清单。
 
 - **中央MCP网关**：将所有智能体的MCP调用路由到单一网关
 - **最小权限范围**：仅允许每个智能体访问所需工具
@@ -157,7 +157,7 @@ A2A设计要求每个智能体拥有**Agent Card**——以JSON格式声明智�
 
 ### 4. 回滚与隔离策略
 
-在多智能体系统中，故障可能会级联传播。[Dapr Agents v1](/zh/blog/zh/dapr-agents-v1-cncf-production-ai-framework)等内置熔断器的CNCF认证框架可以大幅简化这一层的实现。
+在多智能体系统中，故障可能会级联传播。[Dapr Agents v1](/zh/blog/zh/dapr-agents-v1-cncf-production-ai-framework/)等内置熔断器的CNCF认证框架可以大幅简化这一层的实现。
 
 - **熔断器**：特定智能体连续失败时将其隔离
 - **超时策略**：为A2A任务委派设置明确的超时时间

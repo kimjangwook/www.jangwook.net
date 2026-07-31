@@ -63,7 +63,7 @@ relatedPosts:
 
 想在空闲时间提前写好多篇文章，然后每天早上 9 点自动发布，但静态网站生成器只会部署构建时的文件。未来日期的文章呢？在构建时就已经生成为 HTML 并立即发布了。
 
-本文将介绍如何通过<strong>结合 Astro 的 Content Collections 和 GitHub Actions 的定时工作流</strong>，在静态网站上实现完整的定时发布系统。基于实际应用在我博客上的代码进行说明，可以直接使用。我如何用数据运营这个博客，[博客启动分析报告](/zh/blog/zh/blog-launch-analysis-report)中有整理。
+本文将介绍如何通过<strong>结合 Astro 的 Content Collections 和 GitHub Actions 的定时工作流</strong>，在静态网站上实现完整的定时发布系统。基于实际应用在我博客上的代码进行说明，可以直接使用。我如何用数据运营这个博客，[博客启动分析报告](/zh/blog/zh/blog-launch-analysis-report/)中有整理。
 
 ## 解决方案概述：三个核心要素
 
@@ -731,7 +731,7 @@ export default defineConfig({
 4. <strong>开发友好</strong>：可在测试模式下预览
 5. <strong>平台独立</strong>：除 GitHub Pages 外，在 Netlify、Vercel 等任何平台都可运行
 
-现在可以在空闲时间提前写好文章，每天早上自动为读者献上新文章。同时享受静态网站的速度和 WordPress 的便利性！如果想在定时发布之外进一步把写作本身也自动化，可以参考[Claude Code 网页自动化](/zh/blog/zh/claude-code-web-automation)。
+现在可以在空闲时间提前写好文章，每天早上自动为读者献上新文章。同时享受静态网站的速度和 WordPress 的便利性！如果想在定时发布之外进一步把写作本身也自动化，可以参考[Claude Code 网页自动化](/zh/blog/zh/claude-code-web-automation/)。
 
 ## 参考资料
 

@@ -53,7 +53,7 @@ relatedPosts:
 
 2025년까지는 AI 에이전트를 실험하는 조직이 대부분이었다. 그런데 2026년 현재, 전체 기업 중 약 63%가 AI 에이전트 도입을 시험 중이면서도, 프로덕션으로 스케일아웃에 성공한 비율은 25%도 안 된다. 이 간극을 줄이는 핵심 열쇠가 바로 **프로토콜 아키텍처**다.
 
-MCP는 2026년 2월 기준 월 9,700만 SDK 다운로드(Python+TypeScript 합산)를 기록하며 사실상 에이전트-도구 연결의 표준이 되었다. 반면 A2A는 Google이 2025년 발표했고, 현재 100개 이상의 기업이 공식 지지를 표명하고 있다. A2A를 구현한 대표 프레임워크의 실제 차이는 [Google ADK vs LangGraph 심층 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026)에서 확인할 수 있다. Anthropic이 MCP를 Linux Foundation에 기증했고 Google도 A2A를 기증했다 — 둘 다 같은 재단 산하에 있다는 사실이 '통합 생태계'의 방향을 시사한다.
+MCP는 2026년 2월 기준 월 9,700만 SDK 다운로드(Python+TypeScript 합산)를 기록하며 사실상 에이전트-도구 연결의 표준이 되었다. 반면 A2A는 Google이 2025년 발표했고, 현재 100개 이상의 기업이 공식 지지를 표명하고 있다. A2A를 구현한 대표 프레임워크의 실제 차이는 [Google ADK vs LangGraph 심층 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026/)에서 확인할 수 있다. Anthropic이 MCP를 Linux Foundation에 기증했고 Google도 A2A를 기증했다 — 둘 다 같은 재단 산하에 있다는 사실이 '통합 생태계'의 방향을 시사한다.
 
 ## MCP vs A2A: 같은 레이어가 아니다
 
@@ -141,7 +141,7 @@ A2A는 각 에이전트가 **Agent Card**를 갖도록 설계되어 있다. 이�
 
 ### 2. MCP 서버 거버넌스
 
-MCP 서버 수가 증가하면 보안·비용·신뢰성 문제가 복잡해진다. 2026년 초 발표된 30개 이상의 CVE가 이를 증명한다. 서버를 직접 구축한다면 [MCP 서버 구축 실전 가이드](/ko/blog/ko/mcp-server-build-practical-guide-2026)의 보안 설정 체크리스트를 먼저 확인하라.
+MCP 서버 수가 증가하면 보안·비용·신뢰성 문제가 복잡해진다. 2026년 초 발표된 30개 이상의 CVE가 이를 증명한다. 서버를 직접 구축한다면 [MCP 서버 구축 실전 가이드](/ko/blog/ko/mcp-server-build-practical-guide-2026/)의 보안 설정 체크리스트를 먼저 확인하라.
 
 - **중앙 MCP 게이트웨이**: 모든 에이전트의 MCP 호출을 단일 게이트웨이로 라우팅
 - **스코프 최소화**: 각 에이전트에게 필요한 도구만 접근 허용
@@ -157,7 +157,7 @@ MCP 서버 수가 증가하면 보안·비용·신뢰성 문제가 복잡해진�
 
 ### 4. 롤백 및 격리 전략
 
-멀티에이전트 시스템에서 장애는 연쇄적으로 전파될 수 있다. [Dapr Agents v1](/ko/blog/ko/dapr-agents-v1-cncf-production-ai-framework)처럼 서킷 브레이커를 내장한 CNCF 인증 프레임워크를 쓰면 이 레이어 구현을 크게 단순화할 수 있다.
+멀티에이전트 시스템에서 장애는 연쇄적으로 전파될 수 있다. [Dapr Agents v1](/ko/blog/ko/dapr-agents-v1-cncf-production-ai-framework/)처럼 서킷 브레이커를 내장한 CNCF 인증 프레임워크를 쓰면 이 레이어 구현을 크게 단순화할 수 있다.
 
 - **서킷 브레이커**: 특정 에이전트의 연속 실패 시 해당 에이전트를 격리
 - **타임아웃 정책**: A2A 태스크 위임에 명시적 타임아웃 설정

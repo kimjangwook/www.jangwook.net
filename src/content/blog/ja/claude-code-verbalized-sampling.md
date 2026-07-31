@@ -136,7 +136,7 @@ graph LR
 
 ### プロンプトテンプレート
 
-このような構造化されたプロンプト設計は、[仕様駆動開発(Spec-Driven Development)](/ja/blog/ja/specification-driven-development)のパラダイムと一致しています。
+このような構造化されたプロンプト設計は、[仕様駆動開発(Spec-Driven Development)](/ja/blog/ja/specification-driven-development/)のパラダイムと一致しています。
 
 ````markdown
 <instructions>
@@ -731,7 +731,7 @@ graph TD
     style E fill:#6bcf7f
 ```
 
-各段階でVerbalized Samplingを適用して<strong>階層的多様性</strong>を確保します。マルチエージェントワークフローをより体系的に設計したい場合は、[LangGraphマルチエージェントシステム完全ガイド](/ja/blog/ja/langgraph-multi-agent)を参照してください。
+各段階でVerbalized Samplingを適用して<strong>階層的多様性</strong>を確保します。マルチエージェントワークフローをより体系的に設計したい場合は、[LangGraphマルチエージェントシステム完全ガイド](/ja/blog/ja/langgraph-multi-agent/)を参照してください。
 
 ### 7. 失敗パターンを避けてください
 
@@ -856,7 +856,7 @@ cat .claude/agents/prompt-engineer.md
 # - パラメータ微調整
 ```
 
-実践的なエージェント展開パターンについては、[OpenAI AgentKit完全ガイド第2部](/ja/blog/ja/openai-agentkit-tutorial-part2)も参考にしてください。
+実践的なエージェント展開パターンについては、[OpenAI AgentKit完全ガイド第2部](/ja/blog/ja/openai-agentkit-tutorial-part2/)も参考にしてください。
 
 ### 次のステップ
 

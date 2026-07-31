@@ -97,7 +97,7 @@ SWE-bench 88.7% is genuinely impressive. But using it to conclude "GPT-5.5 is wa
 
 **GDPval 84.9%** — OpenAI's own benchmark, which most developers had not heard of before yesterday. Self-designed benchmarks can favor the model that designed them. Cite the source when you cite the number.
 
-This pattern is familiar from [the LLM API pricing comparison I did earlier this year](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek): every major lab leads with the benchmarks that favor them. The situation has gotten worse, not better.
+This pattern is familiar from [the LLM API pricing comparison I did earlier this year](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/): every major lab leads with the benchmarks that favor them. The situation has gotten worse, not better.
 
 ## The Price Doubled — Who Can Absorb That?
 
@@ -125,11 +125,11 @@ There is no universal answer. But the decision factors are concrete enough to be
 
 <strong>When GPT-5.5 makes more sense.</strong> If your team is already deep in the OpenAI ecosystem — Azure OpenAI, Vercel AI SDK on OpenAI, GitHub Copilot integration — switching costs are lower. If raw coding performance on SWE-bench style tasks is your primary metric, GPT-5.5 has the higher self-reported numbers. If you are building a product on top of ChatGPT, GPT-5.5 aligns with what your end users already have access to through their ChatGPT subscription.
 
-<strong>When Claude still makes more sense.</strong> As covered in [Claude Code's 5 agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types), Claude's tool-use behavior is more granular and context handling is more stable across long sessions. Claude Managed Agents combined with the Advisor Tool offers meaningful cost efficiency: Sonnet 4.6 as the executor plus Opus as the advisor improves task success rates while reducing per-task cost by 11.9%, according to Anthropic's data. For agent workflows that run for minutes or hours, Claude's infrastructure layer — checkpointing, credential management, scoped permissions — makes a practical difference that model benchmarks do not capture.
+<strong>When Claude still makes more sense.</strong> As covered in [Claude Code's 5 agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/), Claude's tool-use behavior is more granular and context handling is more stable across long sessions. Claude Managed Agents combined with the Advisor Tool offers meaningful cost efficiency: Sonnet 4.6 as the executor plus Opus as the advisor improves task success rates while reducing per-task cost by 11.9%, according to Anthropic's data. For agent workflows that run for minutes or hours, Claude's infrastructure layer — checkpointing, credential management, scoped permissions — makes a practical difference that model benchmarks do not capture.
 
 <strong>The bigger factor: ecosystem and workflow integration.</strong> A few percentage points on a benchmark matters less than which SDK your existing codebase depends on and which tooling your team already understands. Switching models is not an API key swap. Prompt engineering, error handling patterns, tool schema design, retry strategies — all of these are model-specific and require rework. I have seen teams underestimate this and lose days to re-engineering what was already working.
 
-For my own projects, I am staying with Claude for now. The [Vercel AI SDK + Claude streaming agent work](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026) I did recently confirmed that Claude's streaming behavior is stable even when tool calls are interleaved with generation — a common requirement in production agents that is easy to underestimate until it breaks. Once GPT-5.5 API access opens up, I plan to run the same tasks and compare directly.
+For my own projects, I am staying with Claude for now. The [Vercel AI SDK + Claude streaming agent work](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026/) I did recently confirmed that Claude's streaming behavior is stable even when tool calls are interleaved with generation — a common requirement in production agents that is easy to underestimate until it breaks. Once GPT-5.5 API access opens up, I plan to run the same tasks and compare directly.
 
 ### Decision Framework
 
@@ -150,7 +150,7 @@ OpenAI positioned GPT-5.5 as an "agent runtime." But what Anthropic shipped with
 
 If GPT-5.5 is "a model optimized for agent runtimes," Managed Agents is "the infrastructure for running agents." Smarter engine versus more reliable rails. Both matter, but conflating them is a category error.
 
-My read — and I hold this with appropriate uncertainty — is that whoever establishes the infrastructure standard for production agents will have a durable advantage over whoever just has the best benchmark scores. Benchmarks are quarterly. Infrastructure lock-in is much stickier. As I explored in [the 2026 AI agent framework comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production), the agent ecosystem is converging toward integrated framework-plus-infrastructure stacks, and early positioning there tends to be self-reinforcing.
+My read — and I hold this with appropriate uncertainty — is that whoever establishes the infrastructure standard for production agents will have a durable advantage over whoever just has the best benchmark scores. Benchmarks are quarterly. Infrastructure lock-in is much stickier. As I explored in [the 2026 AI agent framework comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/), the agent ecosystem is converging toward integrated framework-plus-infrastructure stacks, and early positioning there tends to be self-reinforcing.
 
 ## The Questions This Release Leaves Open
 

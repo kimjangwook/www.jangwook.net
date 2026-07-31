@@ -128,13 +128,13 @@ Antigravity CLI（`agy`）截至 2026 年 5 月 21 日尚未公开发布。npm �
 - **Testing Agent**：单元测试和回归测试
 - **Documentation Agent**：自动更新技术文档
 
-这本质上与[用 Claude Code 的 Git worktree 并行运行智能体](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)是相同的模式。区别在于 Google 用 GUI 将这一切包装起来，可以可视化看到智能体并行工作。
+这本质上与[用 Claude Code 的 Git worktree 并行运行智能体](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)是相同的模式。区别在于 Google 用 GUI 将这一切包装起来，可以可视化看到智能体并行工作。
 
 ### GEMINI.md 和 .agents/ 目录
 
 在项目根目录放置 `GEMINI.md` 后，所有智能体都会参照共同规则。在 `.agents/agents.md` 中定义子智能体行为，在 `.agents/skills.md` 中声明可复用的技能。
 
-[多智能体编排路由模式](/zh/blog/zh/multi-agent-orchestration-routing)中整理的概念在这里同样直接适用。业界似乎正在收敛于这种基于文件的智能体配置模型。
+[多智能体编排路由模式](/zh/blog/zh/multi-agent-orchestration-routing/)中整理的概念在这里同样直接适用。业界似乎正在收敛于这种基于文件的智能体配置模型。
 
 ### Antigravity CLI（agy）— 已发布但尚未部署
 
@@ -176,7 +176,7 @@ Antigravity 的智能体面板叫 Cascade。Windsurf 的 AI 智能体功能也�
 
 Windsurf（原 Codeium）正是靠 Cascade 建立了市场地位——通过智能体编码与 Cursor 的自动补全形成差异化。Antigravity 使用相同的名称，是在直接瞄准 Windsurf 的用户群。内置命令列表中出现 `antigravity.importWindsurfSettings` 也印证了这一意图。
 
-[当我比较 Cursor、Claude Code 和 Windsurf 时](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026)，分析的是三方竞争。现在那篇分析需要更新了——IDE 战争迎来了由 Google 基础设施和 Gemini 模型定价支撑的第四个严肃玩家。
+[当我比较 Cursor、Claude Code 和 Windsurf 时](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026/)，分析的是三方竞争。现在那篇分析需要更新了——IDE 战争迎来了由 Google 基础设施和 Gemini 模型定价支撑的第四个严肃玩家。
 
 ## 企业用户获得豁免
 

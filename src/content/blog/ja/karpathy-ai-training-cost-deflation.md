@@ -88,7 +88,7 @@ Karpathyは、コスト下落が単一要因ではなく<strong>4つの軸の同
 
 ### 1. ハードウェアの進化（Hardware）
 
-TPU v3からH100への移行は、単なる世代交代を超えた根本的な演算効率の向上を意味します。一方で[毎秒16,000トークンを処理するASICベースの推論チップ](/ja/blog/ja/asic-llm-inference-16k-tps)のように、GPUを代替しようとするハードウェア革新も急速に進んでいます。
+TPU v3からH100への移行は、単なる世代交代を超えた根本的な演算効率の向上を意味します。一方で[毎秒16,000トークンを処理するASICベースの推論チップ](/ja/blog/ja/asic-llm-inference-16k-tps/)のように、GPUを代替しようとするハードウェア革新も急速に進んでいます。
 
 - <strong>FP8演算サポート</strong>：学習精度を下げつつ品質を維持
 - <strong>HBM3メモリ</strong>：帯域幅3TB/sでメモリボトルネックを解消
@@ -143,11 +143,11 @@ Karpathyは効果が<strong>なかった</strong>技法も透明に公開し、�
 
 - <strong>データ品質</strong>：いかに良いデータを確保するか
 - <strong>ファインチューニングのノウハウ</strong>：ドメイン特化の最適化能力
-- <strong>推論効率</strong>：学習よりサービング（推論）コストが核心に — [NVIDIA NVFP4がLLM推論コストを8分の1に削減する仕組み](/ja/blog/ja/nvidia-llm-inference-cost-reduction)はその典型例です
+- <strong>推論効率</strong>：学習よりサービング（推論）コストが核心に — [NVIDIA NVFP4がLLM推論コストを8分の1に削減する仕組み](/ja/blog/ja/nvidia-llm-inference-cost-reduction/)はその典型例です
 
 ### オープンソースエコシステムの強化
 
-$100以下でGPT-2級モデルを学習できるということは、<strong>オープンソースコミュニティ</strong>の実験とイノベーションが大幅に加速することを意味します。[行列積なしでCPUのみでLLMを1.2時間で訓練するMatMul-Freeアーキテクチャ](/ja/blog/ja/matmulfree-cpu-llm-training)のような試みも、この流れから生まれています。nanochat自体が約1,000行のコードで構成されており、教育的価値も大きいです。
+$100以下でGPT-2級モデルを学習できるということは、<strong>オープンソースコミュニティ</strong>の実験とイノベーションが大幅に加速することを意味します。[行列積なしでCPUのみでLLMを1.2時間で訓練するMatMul-Freeアーキテクチャ](/ja/blog/ja/matmulfree-cpu-llm-training/)のような試みも、この流れから生まれています。nanochat自体が約1,000行のコードで構成されており、教育的価値も大きいです。
 
 ### ムーアの法則を超える下落率
 

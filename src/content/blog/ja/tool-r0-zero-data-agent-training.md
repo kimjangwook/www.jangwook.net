@@ -62,7 +62,7 @@ AIエージェントの核心的な能力は<strong>「外部ツールを正確�
 
 ## なぜ今この論文が重要なのか
 
-現在、[AIエージェント](/ja/blog/ja/multi-agent-orchestration-routing)市場はツール呼び出し（Function Calling / Tool Use）の能力を中心に急成長しています。OpenAIのFunction Calling、AnthropicのTool Use、GoogleのGemini Function Calling — フロンティアモデルはすべてこの能力をコア機能として搭載しています。
+現在、[AIエージェント](/ja/blog/ja/multi-agent-orchestration-routing/)市場はツール呼び出し（Function Calling / Tool Use）の能力を中心に急成長しています。OpenAIのFunction Calling、AnthropicのTool Use、GoogleのGemini Function Calling — フロンティアモデルはすべてこの能力をコア機能として搭載しています。
 
 しかし、オープンソースモデルやドメイン特化モデルでこの能力を確保するには、<strong>高コストの学習データ構築</strong>が不可避でした：
 
@@ -217,13 +217,13 @@ graph TD
 
 ### 2. 小型モデルの再評価
 
-Tool-R0は0.5Bモデルでも2倍の性能向上を達成しました。これは<strong>エッジデバイスやコスト敏感な環境でも有効な[ツール呼び出しエージェント](/ja/blog/ja/prompt-engineering-agent-improvements)を構築</strong>できることを意味します。GPU費用が限られたスタートアップやプライベートクラウド環境で特に有意義です。
+Tool-R0は0.5Bモデルでも2倍の性能向上を達成しました。これは<strong>エッジデバイスやコスト敏感な環境でも有効な[ツール呼び出しエージェント](/ja/blog/ja/prompt-engineering-agent-improvements/)を構築</strong>できることを意味します。GPU費用が限られたスタートアップやプライベートクラウド環境で特に有意義です。
 
 ### 3. カリキュラムラーニングの自動化
 
 最も印象的な側面は、<strong>学習カリキュラムが自動的に生成される</strong>点です。従来は人間が「簡単な例から難しい例の順」にデータをソートする必要がありましたが、Tool-R0のGeneratorはSolverの現在の能力水準を自動的に検知し、適切な難易度の問題を生成します。
 
-これは<strong>[AIシステム](/ja/blog/ja/self-healing-ai-systems)の<strong>学習パイプラインを自律的に運用</strong>できる可能性を開きます。
+これは<strong>[AIシステム](/ja/blog/ja/self-healing-ai-systems/)の<strong>学習パイプラインを自律的に運用</strong>できる可能性を開きます。
 
 ## ICLR 2026 エージェント研究動向との文脈
 

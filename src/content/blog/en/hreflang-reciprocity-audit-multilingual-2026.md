@@ -104,7 +104,7 @@ const target = pages.get(a.href);
 if (target && !target.alts.some(t => t.href === url)) brokenReturn++;
 ````
 
-First I checked a single post's four language versions. I used the [Lighthouse accessibility post](/en/blog/en/a11y-lighthouse-audit-fix-2026) as the target.
+First I checked a single post's four language versions. I used the [Lighthouse accessibility post](/en/blog/en/a11y-lighthouse-audit-fix-2026/) as the target.
 
 ```text
 $ node hreflang-audit.mjs dist a11y-lighthouse-audit-fix-2026
@@ -223,7 +223,7 @@ There are three ways to emit hreflang, and Google is firm that "the three method
 | HTTP `Link:` header | response headers | works for non-HTML files (PDF, images) | needs server/CDN config; awkward to eyeball | non-HTML resources, easy header control |
 | Sitemap `xhtml:link` | XML sitemap | leaves HTML untouched; good at scale, managed in one place | sitemap bloats; needs a generation pipeline | tens of thousands of pages, hard-to-edit CMS |
 
-My blog is a static build, so HTML tags fit. At a few hundred pages the "heavy HTML" weakness of the tag method is not a burden yet. If it grew to tens of thousands, I would consider moving to the sitemap method. In that case, as with [emitting LocalBusiness structured data server-side](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026), stamping the signal deterministically at build time is far safer than managing it by hand.
+My blog is a static build, so HTML tags fit. At a few hundred pages the "heavy HTML" weakness of the tag method is not a burden yet. If it grew to tens of thousands, I would consider moving to the sitemap method. In that case, as with [emitting LocalBusiness structured data server-side](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026/), stamping the signal deterministically at build time is far safer than managing it by hand.
 
 ## The mines people step on — especially Chinese
 
@@ -235,7 +235,7 @@ My site passed the language-code check, but the rule has several common traps, s
 - <strong>Relative paths</strong>: `href="/en/..."` will not do. It must be an absolute URL.
 - <strong>Combining with noindex</strong>: if an hreflang target is `noindex`, the signals contradict each other. You are telling the engine not to index a page while pointing users to it as an alternate.
 
-That last item ties directly into [controlling AI crawlers with robots.txt](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026). Indexing, crawling, and language signals live scattered across different files and tags, but when they contradict, a crawler either reads them in the most conservative way or ignores them. Half the job is not adding signals; it is keeping the signals from fighting each other.
+That last item ties directly into [controlling AI crawlers with robots.txt](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026/). Indexing, crawling, and language signals live scattered across different files and tags, but when they contradict, a crawler either reads them in the most conservative way or ignores them. Half the job is not adding signals; it is keeping the signals from fighting each other.
 
 ## So, what a developer should do now
 

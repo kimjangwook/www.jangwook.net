@@ -36,7 +36,7 @@ Google I/O 2026が終わってちょうど10日が経った。毎年そうだが
 
 ## Gemini Managed Agentsとは何か、まず整理する
 
-Anthropicが先に[Claude Managed Agents](/ja/blog/ja/anthropic-claude-opus-4-7-managed-agents-2026)を発表し、OpenAIも同じ方向に動いている。Googleは今回のGoogle I/O 2026で`Gemini API Managed Agents`を正式公開した。
+Anthropicが先に[Claude Managed Agents](/ja/blog/ja/anthropic-claude-opus-4-7-managed-agents-2026/)を発表し、OpenAIも同じ方向に動いている。Googleは今回のGoogle I/O 2026で`Gemini API Managed Agents`を正式公開した。
 
 一言でまとめると、<strong>SDKに`client.interactions`というネームスペースが追加され、`create()`を一度呼び出すだけでエージェントを実行できるようになった</strong>、ということだ。
 
@@ -264,7 +264,7 @@ Claude Managed Agentsを先に触っていたので、比較が自然にでき�
 
 <strong>課金体系が把握しにくい。</strong> Claude Managed Agentsは`task_budget`を明示的に設定でき、コストが比較的予測しやすい。Gemini Managed Agentsのインタラクションあたりの費用は、現在の公開ドキュメントで明確に示されていない。EXPERIMENTAL状態である以上、課金体系もまだ確定していないとみられる。本番のコスト計画が立てにくいというのが現時点での現実的なデメリットだ。
 
-[AIエージェントのフレームワーク選択](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)で触れたように、エージェントコストのコントロール可能性は導入判断の重要な軸だ。今のGemini Managed Agentsはこの点で弱い。
+[AIエージェントのフレームワーク選択](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)で触れたように、エージェントコストのコントロール可能性は導入判断の重要な軸だ。今のGemini Managed Agentsはこの点で弱い。
 
 <strong>SDKの成熟度がまだ違う。</strong> Anthropic SDKはManaged Agents関連の機能がかなり整理されており、エラーメッセージも明確だ。google-genai SDKのinteractionsネームスペースは現在EXPERIMENTALの警告が付いており、パラメータ名が公式ブログの説明と実際の実装で異なる部分がある（environment_id vs previous_interaction_id）。これは速いリリースサイクルの中で生まれたズレとみられ、そのうち整理されるだろうとは思う。
 
@@ -291,7 +291,7 @@ Claude Managed Agentsを先に触っていたので、比較が自然にでき�
 
 一つ目、EXPERIMENTAL状態だ。SDK自体が警告を出している。APIインターフェースが次のバージョンで変わる可能性があるということだ。主要なパラメータ名がすでに外部のドキュメントと実装で食い違っている状況なので、この可能性は低くない。
 
-二つ目、コストが予測できない。エージェントが何回ツールを呼び出してどれだけ使うのか制御しにくい。[AIエージェントのコスト現実](/ja/blog/ja/ai-agent-cost-reality)で書いたように、エージェント費用の核心はツール呼び出し回数とトークン消費量だ。Managed Agentsはこの実行過程がブラックボックスに近いため、コスト制御がさらに難しくなる可能性がある。
+二つ目、コストが予測できない。エージェントが何回ツールを呼び出してどれだけ使うのか制御しにくい。[AIエージェントのコスト現実](/ja/blog/ja/ai-agent-cost-reality/)で書いたように、エージェント費用の核心はツール呼び出し回数とトークン消費量だ。Managed Agentsはこの実行過程がブラックボックスに近いため、コスト制御がさらに難しくなる可能性がある。
 
 三つ目、公開されているツールの水準が発表資料より制限されている。Linuxサンドボックスへのアクセスや4コア/16GB環境といった内容が、現在の公開APIでは確認できない。発表内容を額面通りに受け取ると、実際の体験と乖離が生まれる。
 

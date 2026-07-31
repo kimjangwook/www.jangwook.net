@@ -143,7 +143,7 @@ blocks containing inLanguage: 1248
   rss.xml       xml:lang=False  <language>=False  items=1248
 ```
 
-좋은 소식부터. `html[lang]`은 1,248개 페이지 전부에 있었다. JSON-LD도 1,248블록 전부가 `inLanguage`를 싣고 있었고 파싱 오류는 0이었다. 언어별 피드 네 개도 채널 `<language>`를 갖고 있다. [예전에 hreflang 상호성을 감사하면서](/ko/blog/ko/hreflang-reciprocity-audit-multilingual-2026) 다국어 배선을 한 차례 훑어둔 게 여기서 값을 했다.
+좋은 소식부터. `html[lang]`은 1,248개 페이지 전부에 있었다. JSON-LD도 1,248블록 전부가 `inLanguage`를 싣고 있었고 파싱 오류는 0이었다. 언어별 피드 네 개도 채널 `<language>`를 갖고 있다. [예전에 hreflang 상호성을 감사하면서](/ko/blog/ko/hreflang-reciprocity-audit-multilingual-2026/) 다국어 배선을 한 차례 훑어둔 게 여기서 값을 했다.
 
 문제는 마지막 줄이다. `rss.xml`. 항목 1,248건, 언어 표시 0건.
 
@@ -188,7 +188,7 @@ $ grep -o '<dc:language>[a-z]*</dc:language>' dist/rss.xml | sort | uniq -c
 
 312건씩 네 언어, 합계 1,248건. 0에서 전부로 올라왔다.
 
-여기서 멈추면 반쪽이다. 이런 종류의 수정은 반년쯤 뒤 다른 리팩터링에 조용히 쓸려나가고, 아무도 모른다. [닷새짜리 기술 감사를 돌렸을 때](/ko/blog/ko/multilingual-blog-technical-audit-campaign-2026) 배운 게 그거였다. 고친 항목보다 고친 상태를 붙잡아두는 장치가 오래 간다. 그래서 검사기를 `scripts/validate-string-meta.mjs`로 남기고 `postbuild`에 hreflang 게이트 뒤로 이어 붙였다.
+여기서 멈추면 반쪽이다. 이런 종류의 수정은 반년쯤 뒤 다른 리팩터링에 조용히 쓸려나가고, 아무도 모른다. [닷새짜리 기술 감사를 돌렸을 때](/ko/blog/ko/multilingual-blog-technical-audit-campaign-2026/) 배운 게 그거였다. 고친 항목보다 고친 상태를 붙잡아두는 장치가 오래 간다. 그래서 검사기를 `scripts/validate-string-meta.mjs`로 남기고 `postbuild`에 hreflang 게이트 뒤로 이어 붙였다.
 
 ```json
 "postbuild": "node scripts/validate-hreflang.mjs && node scripts/validate-string-meta.mjs"
@@ -233,7 +233,7 @@ exit=1
 
 `/ko/` 경로의 페이지인데 Organization의 `description`은 영어다. Person의 `jobTitle`도 마찬가지다. 사이트 전역 엔티티라서 언어판마다 번역하지 않고 영어로 고정해뒀기 때문이다. 이 상태에서 `@context`에 `@language: "ko"`를 선언하면, 문서 안의 모든 문자열이 한국어라고 **선언**된다. 실제로는 영어인 문자열에 한국어 딱지가 붙는다.
 
-없는 메타데이터보다 틀린 메타데이터가 나쁘다. 없으면 소비하는 쪽이 최소한 조심하지만, 틀린 값은 그대로 믿는다. 게다가 나는 `inLanguage`를 이미 항목 단위로 1,248블록 전부에 싣고 있다. 문서 전역 기본값보다 정확한 층위다. [구조화 데이터를 @graph 하나로 묶으면서](/ko/blog/ko/json-ld-graph-entity-linking-2026) 만들어둔 구조가 여기서 유리하게 작동했다.
+없는 메타데이터보다 틀린 메타데이터가 나쁘다. 없으면 소비하는 쪽이 최소한 조심하지만, 틀린 값은 그대로 믿는다. 게다가 나는 `inLanguage`를 이미 항목 단위로 1,248블록 전부에 싣고 있다. 문서 전역 기본값보다 정확한 층위다. [구조화 데이터를 @graph 하나로 묶으면서](/ko/blog/ko/json-ld-graph-entity-linking-2026/) 만들어둔 구조가 여기서 유리하게 작동했다.
 
 제대로 하려면 두 갈래다. 전역 엔티티의 다국어 문자열을 초안이 말하는 language map 형태로 바꾸거나, 아니면 `@context` 기본값을 건드리지 않고 항목 단위 `inLanguage`를 유지하는 것. 오늘은 후자를 택했다. 전자는 스키마 소비자들이 language map을 어떻게 다루는지 확인하지 않은 채로 손댈 영역이 아니고, 애초에 초안이 아직 초안이다.
 
@@ -271,4 +271,4 @@ exit=1
 
 ---
 
-다국어 사이트의 언어·방향 메타데이터나 구조화 데이터 배선을 점검하고, 그 결과를 CI 게이트로 상설화하는 작업을 개인적으로 상담·구현 의뢰로 받고 있다. 지금 운영 중인 사이트의 어느 출력물이 언어 표시 없이 나가고 있는지 궁금하다면 [문의 페이지](/ko/contact)로 연락 주면 된다.
+다국어 사이트의 언어·방향 메타데이터나 구조화 데이터 배선을 점검하고, 그 결과를 CI 게이트로 상설화하는 작업을 개인적으로 상담·구현 의뢰로 받고 있다. 지금 운영 중인 사이트의 어느 출력물이 언어 표시 없이 나가고 있는지 궁금하다면 [문의 페이지](/ko/contact/)로 연락 주면 된다.

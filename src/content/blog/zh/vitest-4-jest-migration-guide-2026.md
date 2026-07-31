@@ -103,7 +103,7 @@ node --version  # v22.22.0
 npm --version   # 10.9.4
 ```
 
-Node.js 22新增了一个对测试很有用的功能：[Node.js内置SQLite模块](/zh/blog/zh/node-sqlite-builtin-practical-guide-2026)无需外部驱动即可使用内存数据库，与Vitest结合可在CI中快速运行数据层集成测试。
+Node.js 22新增了一个对测试很有用的功能：[Node.js内置SQLite模块](/zh/blog/zh/node-sqlite-builtin-practical-guide-2026/)无需外部驱动即可使用内存数据库，与Vitest结合可在CI中快速运行数据层集成测试。
 
 ## Step 1: 安装 Vitest 4
 
@@ -505,9 +505,9 @@ Next.js 或 Express 的大型服务端测试套件则需要谨慎评估。Vitest
 
 npm 周下载量从 480 万增长到 770 万，说明大量项目已经完成迁移。但并非所有人都顺利过渡。请根据项目复杂度做出决策。
 
-[用 Bun 自动化 TypeScript 脚本](/zh/blog/zh/bun-shell-scripting-practical-guide-2026)与 Vitest 结合运行是我目前正在探索的组合，将在下一篇文章中介绍。Vitest 5.0 beta 已经在 npm 上了，现在迁移到 4.x 是稳妥的选择。
+[用 Bun 自动化 TypeScript 脚本](/zh/blog/zh/bun-shell-scripting-practical-guide-2026/)与 Vitest 结合运行是我目前正在探索的组合，将在下一篇文章中介绍。Vitest 5.0 beta 已经在 npm 上了，现在迁移到 4.x 是稳妥的选择。
 
-如果想进一步打磨 TypeScript 工具链，[用 TypeScript SDK 逐步构建 MCP 服务器](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)和[用 Hono 编写类型安全的 API](/zh/blog/zh/hono-typescript-api-2026)同属一条脉络，可一并阅读。把测试、运行时和 API 层都对齐到 Vite 生态后，配置文件会明显减少。
+如果想进一步打磨 TypeScript 工具链，[用 TypeScript SDK 逐步构建 MCP 服务器](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/)和[用 Hono 编写类型安全的 API](/zh/blog/zh/hono-typescript-api-2026/)同属一条脉络，可一并阅读。把测试、运行时和 API 层都对齐到 Vite 生态后，配置文件会明显减少。
 
 ## 参考资料（一手来源）
 

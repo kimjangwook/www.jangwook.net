@@ -59,7 +59,7 @@ relatedPosts:
 
 ## 왜 지금 에이전틱 AI에 "표준"이 필요한가
 
-2026년 3월 현재, 에이전틱 AI 생태계는 폭발적으로 성장하고 있다. Anthropic의 Claude Agent SDK([Anthropic Agent Skills 표준: AI 에이전트 역량 확장](/ko/blog/ko/anthropic-agent-skills-standard) 참고), OpenAI의 AgentKit, Google의 Agent Development Kit, LangChain, CrewAI 등 수많은 프레임워크가 경쟁하면서 개발 팀에게 선택의 자유를 주었지만, 동시에 심각한 파편화 문제를 만들었다.
+2026년 3월 현재, 에이전틱 AI 생태계는 폭발적으로 성장하고 있다. Anthropic의 Claude Agent SDK([Anthropic Agent Skills 표준: AI 에이전트 역량 확장](/ko/blog/ko/anthropic-agent-skills-standard/) 참고), OpenAI의 AgentKit, Google의 Agent Development Kit, LangChain, CrewAI 등 수많은 프레임워크가 경쟁하면서 개발 팀에게 선택의 자유를 주었지만, 동시에 심각한 파편화 문제를 만들었다.
 
 각 프레임워크마다 도구 호출 방식, 응답 형식, 에이전트 루프 처리 방법이 제각각이다 보니, 모델을 교체하거나 여러 모델을 병행 운용하려면 통합 코드를 처음부터 다시 작성해야 하는 상황이 반복되었다. 한 개발자의 표현을 빌리면, <strong>"래퍼를 위한 래퍼를 또 작성하는"</strong> 악순환이었다.
 
@@ -130,7 +130,7 @@ Open Responses의 가장 큰 강점은 출시와 동시에 확보한 광범위�
 |--------|------|------|
 | Hugging Face | 오픈소스 허브 | 수천 개 모델에 대한 표준 API 접근 |
 | OpenRouter | 모델 라우터 | 다중 프로바이더 간 원활한 전환 |
-| [Vercel](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026) | 프론트엔드 플랫폼 | AI SDK 통합으로 프론트엔드 개발 표준화 |
+| [Vercel](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026/) | 프론트엔드 플랫폼 | AI SDK 통합으로 프론트엔드 개발 표준화 |
 | LM Studio | 로컬 추론 | 로컬 모델에서도 동일한 API 사용 |
 | Ollama | 로컬 추론 | 자체 호스팅 환경에서의 표준화 |
 | vLLM | 추론 엔진 | 고성능 추론 서버와의 호환 |
@@ -267,7 +267,7 @@ Reasoning Visibility는 단순한 디버깅 도구가 아니라 <strong>AI 거�
 
 ### Anthropic과 Google은?
 
-현재 Open Responses 스펙에 Anthropic과 Google은 공식 파트너로 참여하지 않았다. OpenRouter의 오픈소스 모델 지배 흐름과 멀티 프로바이더 전략에 대해서는 [OpenRouter 주간 TOP5 중 4개가 오픈소스 — 프로프라 모델 시대의 종말](/ko/blog/ko/openrouter-oss-dominance)을 참고하면 된다. 이 두 회사가 각각의 에이전트 프레임워크(Claude Agent SDK, Google ADK)를 보유하고 있어, Open Responses를 수용할지 독자 표준을 밀고 갈지는 아직 불확실하다.
+현재 Open Responses 스펙에 Anthropic과 Google은 공식 파트너로 참여하지 않았다. OpenRouter의 오픈소스 모델 지배 흐름과 멀티 프로바이더 전략에 대해서는 [OpenRouter 주간 TOP5 중 4개가 오픈소스 — 프로프라 모델 시대의 종말](/ko/blog/ko/openrouter-oss-dominance/)을 참고하면 된다. 이 두 회사가 각각의 에이전트 프레임워크(Claude Agent SDK, Google ADK)를 보유하고 있어, Open Responses를 수용할지 독자 표준을 밀고 갈지는 아직 불확실하다.
 
 다만, OpenAI와 Anthropic 직원 30명 이상이 최근 공동으로 국방부 소송에서 협력한 사례에서 보듯, AI 업계의 협력 관계는 경쟁 관계와 공존하고 있다. 표준화에 대한 업계의 필요성이 커지면 합류할 가능성은 충분하다.
 

@@ -147,7 +147,7 @@ npm run preview        # 预览构建结果
 @image-generator "生成博客英雄图片"
 ```
 
-有关子代理在实际博客运营中的自动化案例，请参阅 [基于 LLM 的博客自动化架构](/zh/blog/zh/llm-blog-automation)。
+有关子代理在实际博客运营中的自动化案例，请参阅 [基于 LLM 的博客自动化架构](/zh/blog/zh/llm-blog-automation/)。
 
 ## 实际项目应用：改进前后对比
 
@@ -233,7 +233,7 @@ GEMINI_API_KEY=your_api_key_here
 
 <strong>新增内容</strong>：
 - Context7: 查询最新库文档
-- [Playwright](/zh/blog/zh/claude-code-web-automation): Web 自动化及测试
+- [Playwright](/zh/blog/zh/claude-code-web-automation/): Web 自动化及测试
 - Chrome DevTools: 性能分析
 - Google Analytics: 流量分析
 

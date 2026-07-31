@@ -92,7 +92,7 @@ data: {"result":{...},"jsonrpc":"2.0","id":1}
 
 JSONを直接パースするのではなく `data:` 行を抽出する必要がある。公式MCPクライアントライブラリはこれを自動処理するが、curlで直接テストする際は知っておく必要がある。
 
-[Python FastMCPでMCPサーバーを最初から構築する方法](/ja/blog/ja/mcp-server-build-practical-guide-2026)を先に読んでいれば基本概念は馴染みがあるはずだ。ここではTypeScript SDKを使いHTTPレイヤーを直接構成する。
+[Python FastMCPでMCPサーバーを最初から構築する方法](/ja/blog/ja/mcp-server-build-practical-guide-2026/)を先に読んでいれば基本概念は馴染みがあるはずだ。ここではTypeScript SDKを使いHTTPレイヤーを直接構成する。
 
 プロトコルの流れをシーケンスで整理すると：
 
@@ -351,7 +351,7 @@ export default {
 
 WorkersはNode.js HTTP APIの代わりにWeb Standard APIを使う。SDKが `NodeStreamableHTTPServerTransport`(Node.js用)と `WebStandardStreamableHTTPServerTransport`(Web Standard用)の両方を提供している。
 
-[MCPサーバーをKubernetesで安定運用する方法](/ja/blog/ja/mcp-server-production-deployment-kubernetes-guide)の記事でも似た話が出てくるが、結局どのレイヤーでセッション状態を管理するかが核心的な設計決定だ。
+[MCPサーバーをKubernetesで安定運用する方法](/ja/blog/ja/mcp-server-production-deployment-kubernetes-guide/)の記事でも似た話が出てくるが、結局どのレイヤーでセッション状態を管理するかが核心的な設計決定だ。
 
 ## 既知の制限と注意事項
 
@@ -363,7 +363,7 @@ WorkersはNode.js HTTP APIの代わりにWeb Standard APIを使う。SDKが `Nod
 
 **デバッグの難しさ:** SSEストリーム形式の応答は一般的なREST APIよりデバッグが不便だ。curlの出力が `event: message\ndata: {...}` 形式でJSONパーサーに直接入れにくい。MCP Inspectorのような専用ツールを使うか、応答をパイプ処理するスクリプトを用意しておく方が良い。
 
-[MCPゲートウェイでエージェントトラフィックを一元管理する方法](/ja/blog/ja/mcp-gateway-agent-traffic-control)でセッション管理の複雑さをゲートウェイレイヤーで抽象化するアプローチも解決策の一つとして紹介されている。
+[MCPゲートウェイでエージェントトラフィックを一元管理する方法](/ja/blog/ja/mcp-gateway-agent-traffic-control/)でセッション管理の複雑さをゲートウェイレイヤーで抽象化するアプローチも解決策の一つとして紹介されている。
 
 ## まとめ
 

@@ -44,10 +44,10 @@ faq:
 
 > <strong>系列：掌握OpenAI AgentKit</strong> (2/2)
 >
-> 1. [OpenAI AgentKit完全指南第1部：核心概念与入门](/zh/blog/zh/openai-agentkit-tutorial-part1)
+> 1. [OpenAI AgentKit完全指南第1部：核心概念与入门](/zh/blog/zh/openai-agentkit-tutorial-part1/)
 > 2. <strong>OpenAI AgentKit完全指南第2部：实战应用与高级模式</strong> ← 当前文章
 
-[第1部](/zh/blog/zh/openai-agentkit-tutorial-part1)讲清了核心概念和基本用法。可一旦走出demo、把真实流量压上生产环境，单个智能体扛不住的问题立刻就冒出来了。多个智能体怎么协调？中途挂了怎么恢复？租户之间的数据怎么隔离？
+[第1部](/zh/blog/zh/openai-agentkit-tutorial-part1/)讲清了核心概念和基本用法。可一旦走出demo、把真实流量压上生产环境，单个智能体扛不住的问题立刻就冒出来了。多个智能体怎么协调？中途挂了怎么恢复？租户之间的数据怎么隔离？
 
 第2部就是冲着这些问题来的。我们会一路走完可用于生产环境的<strong>高级架构模式</strong>和<strong>企业级系统设计</strong>，结合真实企业的落地方式，附上能直接搬进自己项目的<strong>完整代码示例</strong>。
 
@@ -1586,9 +1586,9 @@ async def batch_process(requests: list):
 
 ### 接着读
 
-- [OpenAI AgentKit 完全指南 第1部：核心概念与上手](/zh/blog/zh/openai-agentkit-tutorial-part1) — 本文的基础前提
-- [用 FastMCP 构建 Python MCP 服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026) — 当你超越正文的 Slack 示例、要自己设计 MCP 服务器时
-- [Claude Agent SDK 工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026) — 对比另一个框架的工具与交接设计
+- [OpenAI AgentKit 完全指南 第1部：核心概念与上手](/zh/blog/zh/openai-agentkit-tutorial-part1/) — 本文的基础前提
+- [用 FastMCP 构建 Python MCP 服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/) — 当你超越正文的 Slack 示例、要自己设计 MCP 服务器时
+- [Claude Agent SDK 工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/) — 对比另一个框架的工具与交接设计
 
 ---
 
@@ -1615,6 +1615,6 @@ async def batch_process(requests: list):
 
 <strong>系列完结！</strong> 🎉
 
-[第1部](/zh/blog/zh/openai-agentkit-tutorial-part1)打底，第2部上实战。两篇合起来，足够你拿AgentKit真正动手做点东西了。
+[第1部](/zh/blog/zh/openai-agentkit-tutorial-part1/)打底，第2部上实战。两篇合起来，足够你拿AgentKit真正动手做点东西了。
 
 哪里卡住了，或者你有不一样的解法，欢迎在评论里聊。挺好奇大家会做出什么。

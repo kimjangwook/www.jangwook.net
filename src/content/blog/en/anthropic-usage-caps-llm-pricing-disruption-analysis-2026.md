@@ -113,7 +113,7 @@ At this scale, the subscription block actually reduces costs. If you were using 
 
 This table makes one thing clear: if you don't know your actual daily session volume, you need to instrument that before anything else. Guessing at cost based on a vague sense of "we have a lot of requests" doesn't work anymore.
 
-[Claude API prompt caching optimization patterns](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide) covers the implementation in detail. Hitting 70-80% cache rate is the highest-leverage change you can make right now.
+[Claude API prompt caching optimization patterns](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide/) covers the implementation in detail. Hitting 70-80% cache rate is the highest-leverage change you can make right now.
 
 ## Three Strategies That Actually Reduce Your Bill
 
@@ -170,7 +170,7 @@ hit_rate = usage.cache_read_input_tokens / max(
 print(f"Cache hit rate: {hit_rate:.1%}")
 ```
 
-As I covered in [AI agent cost reality analysis](/en/blog/en/ai-agent-cost-reality), agent costs crossing human labor costs most often happens when teams run Opus everywhere with no caching. Monitoring cache hit rate is cost visibility step one.
+As I covered in [AI agent cost reality analysis](/en/blog/en/ai-agent-cost-reality/), agent costs crossing human labor costs most often happens when teams run Opus everywhere with no caching. Monitoring cache hit rate is cost visibility step one.
 
 **Strategy 3: Batch API for non-realtime workloads**
 
@@ -212,7 +212,7 @@ This is the most practical question, and I'll address it directly.
 
 <strong>Gemini 3.1 Flash</strong> is cost-competitive with solid Google infrastructure reliability. Korean/Japanese language processing has improved but lags Opus 4.7 on complex code reasoning.
 
-My recommendation: <strong>keep core agents on Claude API, use Haiku or DeepSeek for high-volume simple tasks</strong>. I've already run detailed scenario comparisons in the [LLM API pricing comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek) post — worth reading before making any switching decisions.
+My recommendation: <strong>keep core agents on Claude API, use Haiku or DeepSeek for high-volume simple tasks</strong>. I've already run detailed scenario comparisons in the [LLM API pricing comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/) post — worth reading before making any switching decisions.
 
 ## Is Managed Agents Worth Considering?
 

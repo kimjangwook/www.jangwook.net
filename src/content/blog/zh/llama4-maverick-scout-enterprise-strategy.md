@@ -30,7 +30,7 @@ relatedPosts:
 
 
 ![Llama 4企业战略图 - Scout, Maverick, MoE routing](../../../assets/blog/llama4-maverick-scout-enterprise-strategy-moe-map.jpg)
-Meta正式发布了Llama 4。两个立即可用的模型——Maverick和Scout——以及仍在训练中的超大型模型Behemoth（2万亿参数）的预告，这次发布绝非简单的模型更新。**这是开源AI真正追上前沿商业模型的转折点**。了解这一发布的竞争背景，可先参阅[2026年2月AI模型大爆发](/zh/blog/zh/ai-model-rush-february-2026)。作为工程总监或CTO，我们来理清这一发布意味着什么。
+Meta正式发布了Llama 4。两个立即可用的模型——Maverick和Scout——以及仍在训练中的超大型模型Behemoth（2万亿参数）的预告，这次发布绝非简单的模型更新。**这是开源AI真正追上前沿商业模型的转折点**。了解这一发布的竞争背景，可先参阅[2026年2月AI模型大爆发](/zh/blog/zh/ai-model-rush-february-2026/)。作为工程总监或CTO，我们来理清这一发布意味着什么。
 
 ## Llama 4的两个模型：Scout与Maverick
 
@@ -103,7 +103,7 @@ Scout在推理性能上比Maverick低8〜12个百分点，但在编码辅助和�
 | Llama 4 Maverick | **$0.19〜$0.49** |
 | Llama 4 Scout | **$0.10〜$0.20** |
 
-对于每月处理1亿tokens的企业而言，从GPT-4o切换到Maverick可节省**数百万元人民币的年度成本**。[AI Agent成本vs人力成本的现实分析](/zh/blog/zh/ai-agent-cost-reality)提供了AI运营成本结构的详细框架，可以对照参考。
+对于每月处理1亿tokens的企业而言，从GPT-4o切换到Maverick可节省**数百万元人民币的年度成本**。[AI Agent成本vs人力成本的现实分析](/zh/blog/zh/ai-agent-cost-reality/)提供了AI运营成本结构的详细框架，可以对照参考。
 
 当然，这并不意味着简单的"成本替代"。模型选择需要综合考虑任务特性、质量要求和基础设施能力。
 
@@ -128,7 +128,7 @@ Tier 3 — 大批量处理/简单分类/日志分析
 
 两个模型均支持自托管。通过与IBM和Dell的合作，Fortune 500企业已开始进行本地化部署。
 
-处理内部代码库、客户数据或财务数据时，**将数据发送到外部API本身就是一种风险**。在这类使用场景中，自托管开源LLM在合规性和安全性方面具有明显优势。同一主题下，[GLM-5：MIT许可证前沿模型与企业战略](/zh/blog/zh/glm-5-mit-opensource-frontier-enterprise)也值得对比参考。
+处理内部代码库、客户数据或财务数据时，**将数据发送到外部API本身就是一种风险**。在这类使用场景中，自托管开源LLM在合规性和安全性方面具有明显优势。同一主题下，[GLM-5：MIT许可证前沿模型与企业战略](/zh/blog/zh/glm-5-mit-opensource-frontier-enterprise/)也值得对比参考。
 
 ### 3. 摆脱供应商依赖
 

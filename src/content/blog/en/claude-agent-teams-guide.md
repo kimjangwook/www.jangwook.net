@@ -348,9 +348,9 @@ If you're starting out, begin with review and research tasks that don't write co
 
 A few posts that approach the same multi-agent territory from other angles.
 
-- [Improving Multi-Agent Orchestration](/en/blog/en/multi-agent-orchestration-improvement) — goes a level deeper into the patterns for coordinating agents.
-- [Running Parallel Claude Code Sessions with Git Worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree) — the manual alternative to running parallel sessions without Agent Teams.
-- [The Reality of AI Agent Costs](/en/blog/en/ai-agent-cost-reality) — weighs the economics of multi-agent setups where token costs spike.
+- [Improving Multi-Agent Orchestration](/en/blog/en/multi-agent-orchestration-improvement/) — goes a level deeper into the patterns for coordinating agents.
+- [Running Parallel Claude Code Sessions with Git Worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree/) — the manual alternative to running parallel sessions without Agent Teams.
+- [The Reality of AI Agent Costs](/en/blog/en/ai-agent-cost-reality/) — weighs the economics of multi-agent setups where token costs spike.
 
 ## Primary Sources
 

@@ -62,7 +62,7 @@ relatedPosts:
 
 ## Overview
 
-In the [previous article](/en/blog/en/llm-page-migration-standardization), we covered the overall strategy for LLM-powered web page migration. This article focuses on <strong>how to accelerate test automation by 5-8x using Claude Code's parallel execution capabilities</strong>.
+In the [previous article](/en/blog/en/llm-page-migration-standardization/), we covered the overall strategy for LLM-powered web page migration. This article focuses on <strong>how to accelerate test automation by 5-8x using Claude Code's parallel execution capabilities</strong>.
 
 For large-scale migration projects with 50-500+ pages, the biggest bottleneck is the <strong>testing phase</strong>. Running E2E, accessibility, performance, and SEO tests sequentially for each page can take dozens of hours.
 
@@ -108,7 +108,7 @@ All pages ──────────┼─ A11y tests (Agent 3)
 
 ## Claude Code Parallel Execution Architecture
 
-Widening the unit of parallelism from tests to entire work sessions is covered separately in [Running Claude Code in Parallel with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree). This article stays inside a single session.
+Widening the unit of parallelism from tests to entire work sessions is covered separately in [Running Claude Code in Parallel with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree/). This article stays inside a single session.
 
 ### Core Concept: Parallel Task Tool Invocation
 
@@ -362,7 +362,7 @@ jobs:
 
 ## Best Practices
 
-If you hand test authoring itself to an AI, the pitfalls and review steps are written up in [Playwright + AI: Building Automated E2E Tests](/en/blog/en/playwright-ai-testing).
+If you hand test authoring itself to an AI, the pitfalls and review steps are written up in [Playwright + AI: Building Automated E2E Tests](/en/blog/en/playwright-ai-testing/).
 
 ### 1. Test Isolation
 
@@ -434,4 +434,4 @@ export default defineConfig({
 
 - [Playwright Documentation](https://playwright.dev)
 - [Claude Code Documentation](https://docs.claude.com/claude-code)
-- [Previous article: LLM-Powered Web Page Migration](/en/blog/en/llm-page-migration-standardization)
+- [Previous article: LLM-Powered Web Page Migration](/en/blog/en/llm-page-migration-standardization/)

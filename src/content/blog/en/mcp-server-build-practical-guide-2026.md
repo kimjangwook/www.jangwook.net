@@ -58,7 +58,7 @@ This guide is the result of working through that frustration. It covers <strong>
 
 ## Why build your own?
 
-As covered in the [MCP Servers Toolkit Introduction](/en/blog/en/mcp-servers-toolkit-introduction), hundreds of public MCP servers already exist. So why build your own?
+As covered in the [MCP Servers Toolkit Introduction](/en/blog/en/mcp-servers-toolkit-introduction/), hundreds of public MCP servers already exist. So why build your own?
 
 **Internal systems integration.** No public MCP server knows about your company's internal JIRA, build systems, or deployment pipelines.
 
@@ -283,7 +283,7 @@ Resources are read-only context that the AI can pull in, as opposed to tools whi
 
 I'll be honest: deploying a Streamable HTTP MCP server to production requires care.
 
-As covered in [MCP Security Crisis — 30 CVEs in 60 Days](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening), the MCP ecosystem is still maturing on the security front. Key things to watch when building your own server:
+As covered in [MCP Security Crisis — 30 CVEs in 60 Days](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening/), the MCP ecosystem is still maturing on the security front. Key things to watch when building your own server:
 
 <strong>No authentication by default.</strong> FastMCP ships with no auth. Fine for internal networks, but if your server is internet-accessible, you need to add API key or OAuth validation:
 
@@ -300,7 +300,7 @@ mcp = FastMCP("secure-server", auth=auth)
 
 <strong>Input validation.</strong> Don't pass user-controlled input directly to system commands or raw queries. Use Pydantic models to enforce types — that gives you basic validation essentially for free.
 
-<strong>Logging.</strong> Track which AI agent called which tool, and when. As covered in [MCP Gateway — Who Controls Your Agent's Tool Calls](/en/blog/en/mcp-gateway-agent-traffic-control), monitoring agent traffic is a production requirement, not an optional extra.
+<strong>Logging.</strong> Track which AI agent called which tool, and when. As covered in [MCP Gateway — Who Controls Your Agent's Tool Calls](/en/blog/en/mcp-gateway-agent-traffic-control/), monitoring agent traffic is a production requirement, not an optional extra.
 
 ## Local testing
 

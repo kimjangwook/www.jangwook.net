@@ -148,7 +148,7 @@ TodoWrite 도구와 Think 모드를 활용해 작업 계획을 수립한다.
 @image-generator "블로그 히어로 이미지 생성"
 ```
 
-실제 블로그 운영에서 서브에이전트를 활용한 자동화 사례는 [LLM 기반 블로그 자동화 아키텍처](/ko/blog/ko/llm-blog-automation)에서 확인하라.
+실제 블로그 운영에서 서브에이전트를 활용한 자동화 사례는 [LLM 기반 블로그 자동화 아키텍처](/ko/blog/ko/llm-blog-automation/)에서 확인하라.
 
 ## 실제 프로젝트 적용: 개선 전후 비교
 
@@ -234,7 +234,7 @@ GEMINI_API_KEY=your_api_key_here
 
 <strong>추가 내용</strong>:
 - Context7: 최신 라이브러리 문서 조회
-- [Playwright](/ko/blog/ko/claude-code-web-automation): 웹 자동화 및 테스트
+- [Playwright](/ko/blog/ko/claude-code-web-automation/): 웹 자동화 및 테스트
 - Chrome DevTools: 성능 분석
 - Google Analytics: 트래픽 분석
 

@@ -71,7 +71,7 @@ MCP(Model Context Protocol)는 Anthropic이 2024년 말 공개하고, 2025년 12
 
 또 하나는 `.well-known` 엔드포인트를 통한 **디스커버리 표준화**다. 지금은 MCP 서버에 실제로 연결해봐야 뭘 제공하는지 알 수 있는데, 앞으로는 연결 없이도 메타데이터만으로 서버 기능을 파악할 수 있게 된다.
 
-[MCP 서버를 직접 구현하는 방법이 궁금하다면 내가 이전에 정리한 WebMCP 분석 글](/ko/blog/ko/webmcp-chrome-146-ai-tool-server)도 참고할 만하다.
+[MCP 서버를 직접 구현하는 방법이 궁금하다면 내가 이전에 정리한 WebMCP 분석 글](/ko/blog/ko/webmcp-chrome-146-ai-tool-server/)도 참고할 만하다.
 
 ### MCP를 쓰면서 느낀 한계
 
@@ -107,7 +107,7 @@ A2A가 해결하려는 문제는 이렇다. 예를 들어 여행 예약 에이�
 
 솔직히 말하면, A2A 스펙 문서를 처음 읽었을 때 "이게 얼마나 실용적인가"를 회의적으로 봤다. 에이전트가 서로 직접 소통한다는 개념 자체는 멋지지만, 실제로 이걸 안전하게 운영하려면 신뢰 모델이 복잡해진다. v1.0의 Signed Agent Cards가 그 방향을 잡아가고 있지만, 프로덕션에서 완전히 신뢰하기엔 아직 초기 단계라고 본다.
 
-실제로 [A2A와 MCP를 프로덕션 환경에서 함께 쓰는 아키텍처 패턴](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide)을 따로 정리했는데, 레이어를 어떻게 나누는지가 핵심이다.
+실제로 [A2A와 MCP를 프로덕션 환경에서 함께 쓰는 아키텍처 패턴](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide/)을 따로 정리했는데, 레이어를 어떻게 나누는지가 핵심이다.
 
 ### A2A의 현실적 고민: "믿어도 되는 에이전트인가"
 
@@ -177,7 +177,7 @@ OpenAI의 Responses API를 기반으로 만들어진 스펙인데, 기본 개념
 
 한 가지 실용적인 팁: 지금 당장 A2A를 쓰지 않더라도, 에이전트 간 인터페이스를 처음부터 A2A 친화적으로 설계해두는 게 낫다. 구체적으로는 에이전트 간 통신을 함수 호출이 아닌 명시적인 Task 객체 단위로 추상화해두면, 나중에 A2A로 마이그레이션할 때 리팩토링 범위가 훨씬 줄어든다.
 
-[Claude Code에서 에이전틱 워크플로우 패턴을 설계하는 5가지 방식](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 이 계층 구조의 구현 예시를 좀 더 상세히 다뤘다.
+[Claude Code에서 에이전틱 워크플로우 패턴을 설계하는 5가지 방식](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 이 계층 구조의 구현 예시를 좀 더 상세히 다뤘다.
 
 ---
 
@@ -191,7 +191,7 @@ OpenAI의 Responses API를 기반으로 만들어진 스펙인데, 기본 개념
 - 5,000개 넘는 서버 생태계가 이미 존재
 - Claude Code, OpenAI Agents SDK, LangGraph 등 주요 프레임워크가 모두 지원
 - Streamable HTTP가 표준이 됐고, 스펙이 충분히 안정적
-- [Anthropic Agent Skills 표준](/ko/blog/ko/anthropic-agent-skills-standard)과 맞물려 더 강력한 패턴이 만들어지고 있다
+- [Anthropic Agent Skills 표준](/ko/blog/ko/anthropic-agent-skills-standard/)과 맞물려 더 강력한 패턴이 만들어지고 있다
 
 MCP를 배우는 최선의 방법은 직접 간단한 서버 하나를 만들어보는 것이다. 파일 시스템 조회 서버나 특정 API 래퍼 서버를 30분 안에 만들 수 있다. 그 경험이 MCP가 무엇을 표준화하는지를 이론보다 훨씬 명확하게 이해하게 해준다. 직접 만들어보기 전과 후의 이해도 차이가 꽤 크다는 걸 경험했다.
 
@@ -227,7 +227,7 @@ MCP는 지금 당장 써야 하는 도구다. 에이전트에게 외부 세계�
 
 세 개를 "프로토콜 표준 전쟁"으로 보면 피로해진다. 각각 다른 문제를 풀고 있고, 세 개가 다 필요한 시스템이 충분히 많다. 내가 내린 실용적 결론은: MCP 먼저, A2A는 필요할 때, Open Responses는 업데이트 구독 수준으로 팔로우.
 
-그리고 [AI 에이전트 프레임워크 선택](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)도 이 프로토콜 선택과 맞물리는 문제다 — 어떤 프레임워크를 쓰느냐에 따라 MCP와 A2A 지원 수준이 다르기 때문이다.
+그리고 [AI 에이전트 프레임워크 선택](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)도 이 프로토콜 선택과 맞물리는 문제다 — 어떤 프레임워크를 쓰느냐에 따라 MCP와 A2A 지원 수준이 다르기 때문이다.
 
 2026년 현재, 에이전트 개발자에게 가장 유용한 멘탈 모델은 이렇다. MCP는 이미 인프라다 — 선택의 문제가 아니라 씁쓸 수밖에 없는 표준이다. A2A는 곧 인프라가 될 것 같다 — 준비할 때다. Open Responses는 흥미로운 실험이지만, 아직은 하나의 벤더가 만든 API 스펙에 불과하다.
 

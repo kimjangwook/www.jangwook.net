@@ -3043,5 +3043,16 @@
       "devops": 0.45,
       "architecture": 0.7
     }
+  },
+  "internal-link-trailing-slash-redirect-audit-2026": {
+    "pubDate": "2026-07-31",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.98,
+      "ai-ml": 0.1,
+      "devops": 0.5,
+      "architecture": 0.6
+    }
   }
 }

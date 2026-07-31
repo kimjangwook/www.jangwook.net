@@ -60,7 +60,7 @@ relatedPosts:
 
 ## 概述
 
-在[上一篇文章](/zh/blog/zh/anthropic-code-execution-mcp)中，我们深入探讨了 Anthropic 的 <strong>Code Execution with MCP</strong> 技术，了解了它如何实现 <strong>98.7% 的 token 减少</strong>和 <strong>60% 的执行速度提升</strong>。今天，我们将从理论转向实践，展示如何将这些模式实际应用于 Claude Code 项目中。
+在[上一篇文章](/zh/blog/zh/anthropic-code-execution-mcp/)中，我们深入探讨了 Anthropic 的 <strong>Code Execution with MCP</strong> 技术，了解了它如何实现 <strong>98.7% 的 token 减少</strong>和 <strong>60% 的执行速度提升</strong>。今天，我们将从理论转向实践，展示如何将这些模式实际应用于 Claude Code 项目中。
 
 本文将介绍我们对 `.claude/` 目录结构的具体改进，包括三个新增目录：<strong>tools/</strong>（MCP Tool Wrapper）、<strong>patterns/</strong>（实现模式）和 <strong>security/</strong>（安全配置）。这些改进旨在将 Anthropic 的最佳实践直接融入项目架构中。
 
@@ -342,7 +342,7 @@ export * from './update';
 
 ## security/ 目录：安全配置
 
-MCP配置文件本身成为密钥泄露通道的事故，记录在[AI编程代理泄露了2900万个密钥](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security)。在设计沙箱之前值得一读。
+MCP配置文件本身成为密钥泄露通道的事故，记录在[AI编程代理泄露了2900万个密钥](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security/)。在设计沙箱之前值得一读。
 
 ### Sandbox Configuration（沙箱配置）
 
@@ -628,7 +628,7 @@ research/anthropic-code-execution-with-mcp/
 
 ## 未来计划
 
-与其增加工具，不如用元工具收拢以压缩上下文，这一思路见[用元工具优化AI代理工作流](/zh/blog/zh/agentic-workflow-meta-tools-optimization)。
+与其增加工具，不如用元工具收拢以压缩上下文，这一思路见[用元工具优化AI代理工作流](/zh/blog/zh/agentic-workflow-meta-tools-optimization/)。
 
 ### 短期计划（1〜2周）
 
@@ -658,7 +658,7 @@ research/anthropic-code-execution-with-mcp/
 
 这些改进与现有的元数据优先架构、增量处理和缓存策略协同工作，使整个系统的效率提升达到新的高度。
 
-如果您对 MCP Code Execution 的理论基础感兴趣，请参阅我们的[上一篇文章](/zh/blog/zh/anthropic-code-execution-mcp)。如果您有任何问题或想分享您自己的实现经验，欢迎交流讨论。
+如果您对 MCP Code Execution 的理论基础感兴趣，请参阅我们的[上一篇文章](/zh/blog/zh/anthropic-code-execution-mcp/)。如果您有任何问题或想分享您自己的实现经验，欢迎交流讨论。
 
 ## 参考资源
 
@@ -676,6 +676,6 @@ research/anthropic-code-execution-with-mcp/
 
 ### 相关文章
 
-- [上一篇：Anthropic Code Execution with MCP 深度解析](/zh/blog/zh/anthropic-code-execution-mcp)
-- [EffiFlow 自动化分析 Part 1](/zh/blog/zh/effiflow-automation-analysis-part1)
-- [EffiFlow 自动化分析 Part 2](/zh/blog/zh/effiflow-automation-analysis-part2)
+- [上一篇：Anthropic Code Execution with MCP 深度解析](/zh/blog/zh/anthropic-code-execution-mcp/)
+- [EffiFlow 自动化分析 Part 1](/zh/blog/zh/effiflow-automation-analysis-part1/)
+- [EffiFlow 自动化分析 Part 2](/zh/blog/zh/effiflow-automation-analysis-part2/)

@@ -120,7 +120,7 @@ Keys: @context, @type, name, brand, offers
 
 The rating fell clean off the Product. Only `name`, `brand`, and `offers` remained. That's the scenario where the star rich result quietly disappears from search. Nobody wrote invalid syntax. `itemprop="aggregateRating"` is still sitting right there on the page. It just lost its parent. And because the build doesn't break, review won't catch it either.
 
-With JSON-LD, none of this happens. Move the rating widget to the sidebar, the footer, wherever. The `<script>` block is untouched. Meaning is decoupled from DOM position, so a redesign can't reach it. This is the real reason Google recommends JSON-LD, and it's not ranking. It's that JSON-LD is, in Google's own words, "the easiest to implement and maintain." Today I saw what that phrase means in practice. It means it survives the redesign. That coupling problem connects straight to [getting structured data out server-side reliably](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026). Once you pick the syntax, the next gate is whether it actually reaches the crawler.
+With JSON-LD, none of this happens. Move the rating widget to the sidebar, the footer, wherever. The `<script>` block is untouched. Meaning is decoupled from DOM position, so a redesign can't reach it. This is the real reason Google recommends JSON-LD, and it's not ranking. It's that JSON-LD is, in Google's own words, "the easiest to implement and maintain." Today I saw what that phrase means in practice. It means it survives the redesign. That coupling problem connects straight to [getting structured data out server-side reliably](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026/). Once you pick the syntax, the next gate is whether it actually reaches the crawler.
 
 ## Valid markup still doesn't guarantee a rich result
 
@@ -156,7 +156,7 @@ If all three are equal to Google, the decision belongs to engineering, not searc
 
 The things to avoid are just as clear. **Don't double-mark the same entity in two syntaxes on one page.** Write a Product in JSON-LD and then layer the same thing in Microdata, and a crawler may read it as duplicate or conflicting. Pick one and stay consistent.
 
-And whatever the syntax, **validate it in CI.** I expand the JSON-LD to RDF at build time and check the triple count and connected components. As today's experiment showed, markup can silently lose meaning without a single syntax error, and human eyes won't catch it. That "wire the scattered pieces together and verify" story runs deeper in the piece on [merging JSON-LD into a single @graph](/en/blog/en/json-ld-graph-entity-linking-2026). And it's worth checking up front whether the markup is [buried in JS that AI crawlers never execute](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026).
+And whatever the syntax, **validate it in CI.** I expand the JSON-LD to RDF at build time and check the triple count and connected components. As today's experiment showed, markup can silently lose meaning without a single syntax error, and human eyes won't catch it. That "wire the scattered pieces together and verify" story runs deeper in the piece on [merging JSON-LD into a single @graph](/en/blog/en/json-ld-graph-entity-linking-2026/). And it's worth checking up front whether the markup is [buried in JS that AI crawlers never execute](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026/).
 
 ## Questions that keep coming up
 

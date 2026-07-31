@@ -78,7 +78,7 @@ MCPは、AIエージェントが外部システムと対話するための「共
 
 発表から1年で、すでに<strong>10,000以上のMCPサーバー</strong>が作成され、Zed、Replit、Codeium、Sourcegraphなどの主要開発ツールに統合されています。
 
-MCPサーバーを自分で構築したい場合は、[MCPサーバーを自作する — Streamable HTTPトランスポートで実際のAIツールを実装](/ja/blog/ja/mcp-server-build-practical-guide-2026)でPython FastMCPを使った実践的な実装手順を確認できます。
+MCPサーバーを自分で構築したい場合は、[MCPサーバーを自作する — Streamable HTTPトランスポートで実際のAIツールを実装](/ja/blog/ja/mcp-server-build-practical-guide-2026/)でPython FastMCPを使った実践的な実装手順を確認できます。
 
 ## 従来の手法の限界
 
@@ -97,7 +97,7 @@ AIモデルがツールを呼び出すたびに、すべての中間結果をコ
 
 ### 逐次的な実行による遅延
 
-各ツール呼び出しがAPIラウンドトリップを必要とするため、15回のツール呼び出しで15回のネットワーク往復が発生します。これにより、実行時間が大幅に増加しました。エージェントアーキテクチャの選択がこの問題にどう影響するかは、[Claude Codeエージェンティックワークフローパターン5選](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)で詳しく比較できます。
+各ツール呼び出しがAPIラウンドトリップを必要とするため、15回のツール呼び出しで15回のネットワーク往復が発生します。これにより、実行時間が大幅に増加しました。エージェントアーキテクチャの選択がこの問題にどう影響するかは、[Claude Codeエージェンティックワークフローパターン5選](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)で詳しく比較できます。
 
 ### コンテキストウィンドウの浪費
 

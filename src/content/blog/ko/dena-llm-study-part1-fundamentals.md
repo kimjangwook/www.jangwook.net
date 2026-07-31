@@ -44,11 +44,11 @@ faq:
 
 > <strong>시리즈: DeNA LLM 스터디</strong> (1/5)
 >
-> 1. <strong>[Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)</strong> ← 현재 글
+> 1. <strong>[Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals/)</strong> ← 현재 글
 > 2. Part 2: 구조화 출력과 멀티 LLM 파이프라인
-> 3. [Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag)
-> 5. [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design)
+> 3. [Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag/)
+> 5. [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design/)
 
 ## 이 글이 유용한 독자 / 건너뛰어도 되는 경우
 
@@ -63,8 +63,8 @@ faq:
 
 <strong>건너뛰고 다음 편으로 가도 되는 경우</strong>
 
-- 이미 Transformer, Next Token Prediction, RLHF를 설명할 수 있다면 이 편은 복습용으로만 훑고, 구조화 출력을 다루는 Part 2나 검색 결합을 다루는 [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag)로 바로 넘어가도 된다.
-- 단일 호출이 아니라 도구를 쓰는 에이전트를 설계하는 게 목표라면 [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design)이 더 직접적이다.
+- 이미 Transformer, Next Token Prediction, RLHF를 설명할 수 있다면 이 편은 복습용으로만 훑고, 구조화 출력을 다루는 Part 2나 검색 결합을 다루는 [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag/)로 바로 넘어가도 된다.
+- 단일 호출이 아니라 도구를 쓰는 에이전트를 설계하는 게 목표라면 [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design/)이 더 직접적이다.
 - 모델 내부 학습 과정을 깊게 파려는 거라면 기초 비교보다 Part 3 학습 방법론이 맞다.
 
 요약하면, 개념 지도를 한 번 그려두고 싶을 때 읽고, 이미 지도가 있다면 필요한 편으로 건너뛰면 된다.

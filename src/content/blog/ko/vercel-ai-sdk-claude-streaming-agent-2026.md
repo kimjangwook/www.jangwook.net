@@ -113,7 +113,7 @@ Vercel AI SDK의 실질적 장점은 세 가지다:
 
 단점도 있다. Vercel 플랫폼에 최적화되어 있어서 다른 배포 환경에서는 제약이 생긴다. 에이전트 루프의 세세한 제어가 필요할 때 Anthropic SDK 직접 쓰는 것보다 확장성이 떨어지는 부분도 있다. 이 부분은 뒤에서 구체적으로 얘기한다.
 
-[Claude Managed Agents를 직접 구축하는 방법](/ko/blog/ko/claude-managed-agents-production-deployment-guide)과 비교하면, Managed Agents는 인프라 없이 시작하기 편하지만 커스터마이징 한계가 명확했다. Vercel AI SDK는 그 중간 어딘가다 — 직접 구현보다는 추상화되어 있고, Managed Agents보다는 제어권이 많다.
+[Claude Managed Agents를 직접 구축하는 방법](/ko/blog/ko/claude-managed-agents-production-deployment-guide/)과 비교하면, Managed Agents는 인프라 없이 시작하기 편하지만 커스터마이징 한계가 명확했다. Vercel AI SDK는 그 중간 어딘가다 — 직접 구현보다는 추상화되어 있고, Managed Agents보다는 제어권이 많다.
 
 ## 환경 설정 — 패키지 설치부터
 
@@ -357,7 +357,7 @@ export async function POST(req: Request) {
 
 "서울 날씨 알려주고, 저녁 운동 할 일 추가해줘"라고 입력하면 Claude가 `getWeather`와 `addTodo`를 순서대로 또는 병렬로 호출하고, 결과를 조합해서 자연어로 답변한다.
 
-[AI 에이전트가 여러 도구를 조합해서 작업을 수행하는 패턴](/ko/blog/ko/ai-agent-collaboration-patterns)은 `maxSteps` 설정과 각 도구의 `description` 품질에 크게 의존한다. 도구 설명이 모호하면 Claude가 언제 어떤 도구를 써야 할지 판단하지 못한다. 실제로 처음에는 날씨와 할 일이 섞이는 경우가 있었는데, 시스템 프롬프트에 각 도구 사용 시나리오를 명시했더니 안정적으로 동작했다.
+[AI 에이전트가 여러 도구를 조합해서 작업을 수행하는 패턴](/ko/blog/ko/ai-agent-collaboration-patterns/)은 `maxSteps` 설정과 각 도구의 `description` 품질에 크게 의존한다. 도구 설명이 모호하면 Claude가 언제 어떤 도구를 써야 할지 판단하지 못한다. 실제로 처음에는 날씨와 할 일이 섞이는 경우가 있었는데, 시스템 프롬프트에 각 도구 사용 시나리오를 명시했더니 안정적으로 동작했다.
 
 ## generateObject로 구조화된 출력 추출하기
 
@@ -410,7 +410,7 @@ ${content}
 - 긴 문서에서 구조화된 정보 추출
 - 폼 자동 완성
 
-이 블로그의 카테고리 스코어 추출에서 실제로 유사한 패턴을 쓰고 있다. Zod 스키마에 `describe()`를 잘 작성하는 게 출력 품질을 올리는 핵심이다. [컨텍스트 엔지니어링을 제대로 적용하면](/ko/blog/ko/context-engineering-production-ai-agents) 스키마 설계와 프롬프트 품질이 추출 정확도의 80%를 결정한다.
+이 블로그의 카테고리 스코어 추출에서 실제로 유사한 패턴을 쓰고 있다. Zod 스키마에 `describe()`를 잘 작성하는 게 출력 품질을 올리는 핵심이다. [컨텍스트 엔지니어링을 제대로 적용하면](/ko/blog/ko/context-engineering-production-ai-agents/) 스키마 설계와 프롬프트 품질이 추출 정확도의 80%를 결정한다.
 
 `streamObject()`도 있다. 대형 스키마에서 필드가 하나씩 채워지는 걸 실시간으로 보여줄 때 쓴다. 분석 결과를 로딩 없이 점진적으로 표시하고 싶을 때 유용하다.
 
@@ -433,7 +433,7 @@ export const runtime = 'nodejs'; // Edge 대신 Node.js 런타임 사용
 
 Vercel 무료 플랜에서 서버리스 함수 타임아웃은 10초다. Claude가 긴 텍스트를 생성하거나 복잡한 도구 루프를 돌리면 초과할 수 있다. Pro 이상이면 60초까지 늘어난다.
 
-이보다 오래 걸리는 작업이 필요하면 구조 자체를 바꿔야 한다. [MCP 서버를 별도로 구축해서 장시간 실행 작업을 분리하는 방법](/ko/blog/ko/mcp-server-build-practical-guide-2026)이 하나의 대안이다.
+이보다 오래 걸리는 작업이 필요하면 구조 자체를 바꿔야 한다. [MCP 서버를 별도로 구축해서 장시간 실행 작업을 분리하는 방법](/ko/blog/ko/mcp-server-build-practical-guide-2026/)이 하나의 대안이다.
 
 <strong>컨텍스트 누적 비용</strong>
 

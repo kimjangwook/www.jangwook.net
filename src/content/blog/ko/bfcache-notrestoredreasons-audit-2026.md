@@ -142,7 +142,7 @@ Chrome 문서는 이 값을 이렇게 설명한다. "For all the cross-origin if
 
 > **【추기 2026-07-22】** web.dev의 2026년 6월 발표(「New to the web platform in June 2026」)에 따르면, 활성 WebSocket 연결이 있는 페이지도 bfcache에 진입하는 방향으로 브라우저 동작이 바뀌었을 가능성이 있다. 아래 절의 측정은 그 발표 이전 환경(Chrome 150)에서 잰 값이므로, 같은 프로브로 재측정한 뒤 결과를 갱신할 예정이다. 그때까지 이 절의 WebSocket 차단 결론은 구버전 기준으로 읽어야 한다.
 >
-> **【추기 2026-07-24 · 재측정 완료】** 같은 프로브를 Chrome 150 세 환경(자동화 빌드·정식 headless·플래그 시도)에서 다시 돌렸다. 열린 WebSocket은 세 번 다 `reason: "websocket"`으로 차단됐고, 대조군만 복원됐다. 즉 이 절의 결론은 <strong>내 자동화·헤드리스 측정 환경에서는 아직 유효</strong>하다. 다만 공식 발표는 참이며, 시드를 받은 실사용자 환경에서는 이미 복원될 가능성이 높다. 발표와 실측이 갈린 이유(단계적 롤아웃·새 프로필·헤드리스)와 CI 게이트가 이를 오판하는 지점은 [WebSocket bfcache 재측정 글](/ko/blog/ko/websocket-bfcache-eligibility-remeasure)에 정리했다.
+> **【추기 2026-07-24 · 재측정 완료】** 같은 프로브를 Chrome 150 세 환경(자동화 빌드·정식 headless·플래그 시도)에서 다시 돌렸다. 열린 WebSocket은 세 번 다 `reason: "websocket"`으로 차단됐고, 대조군만 복원됐다. 즉 이 절의 결론은 <strong>내 자동화·헤드리스 측정 환경에서는 아직 유효</strong>하다. 다만 공식 발표는 참이며, 시드를 받은 실사용자 환경에서는 이미 복원될 가능성이 높다. 발표와 실측이 갈린 이유(단계적 롤아웃·새 프로필·헤드리스)와 CI 게이트가 이를 오판하는 지점은 [WebSocket bfcache 재측정 글](/ko/blog/ko/websocket-bfcache-eligibility-remeasure/)에 정리했다.
 
 WebSocket 판은 한 번 실패하고 다시 했다. 처음에는 서버 없이 `new WebSocket('ws://127.0.0.1:8099')`만 심어두고 돌렸다. 결과는 `persisted: true`. 차단되지 않았다.
 
@@ -212,7 +212,7 @@ window.addEventListener('pageshow', (event) => {
 
 측정 결과를 해석할 때 걸려 넘어지기 쉬운 지점이 하나 더 있다. 운영 중인 블로그 글을 복원한 직후 navigation 항목을 읽어보니 `type`은 여전히 `"navigate"`였고 `duration`은 1315.2ms, `transferSize`는 22218바이트로 남아 있었다. 이건 <strong>복원 성능이 아니라 최초 로드 때의 값</strong>이다. bfcache 복원은 새 navigation 항목을 만들지 않는다. `nav.duration`으로 복원 속도를 재려고 하면 존재하지 않는 숫자를 보게 된다. 복원 여부는 `event.persisted`로 판정하는 게 맞다.
 
-이렇게 측정하고 고친 것을 한 번 더 깨지지 않게 만드는 방법은 늘 같다. 자동화해서 게이트로 남기는 것이다. 구조화 데이터를 [CI에서 JSON-LD를 검증하는 게이트로 상설화한 방식](/ko/blog/ko/validate-structured-data-ci-jsonld-2026)과 구조가 똑같다. 이 글의 여섯 판도 결국 "페이지를 연다 → 이동한다 → 뒤로 간다 → `persisted`를 읽는다"의 반복이라, 헤드리스 브라우저 스크립트로 옮겨 주요 템플릿에 대해 매 배포마다 돌릴 수 있다. 렌더링 시점의 비용을 [`content-visibility`로 실측했던 작업](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026)이 최초 로드를 다뤘다면, 이쪽은 두 번째 이후의 내비게이션을 다룬다.
+이렇게 측정하고 고친 것을 한 번 더 깨지지 않게 만드는 방법은 늘 같다. 자동화해서 게이트로 남기는 것이다. 구조화 데이터를 [CI에서 JSON-LD를 검증하는 게이트로 상설화한 방식](/ko/blog/ko/validate-structured-data-ci-jsonld-2026/)과 구조가 똑같다. 이 글의 여섯 판도 결국 "페이지를 연다 → 이동한다 → 뒤로 간다 → `persisted`를 읽는다"의 반복이라, 헤드리스 브라우저 스크립트로 옮겨 주요 템플릿에 대해 매 배포마다 돌릴 수 있다. 렌더링 시점의 비용을 [`content-visibility`로 실측했던 작업](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026/)이 최초 로드를 다뤘다면, 이쪽은 두 번째 이후의 내비게이션을 다룬다.
 
 ## 정리: 뒤로 가기를 잃는 두 줄
 
@@ -232,4 +232,4 @@ window.addEventListener('pageshow', (event) => {
 
 ---
 
-운영 중인 사이트에서 뒤로 가기가 실제로 캐시에서 복원되는지, 어느 템플릿이 어떤 이유로 자격을 잃는지는 의견이 아니라 측정으로 답할 수 있는 질문이다. 이런 종류의 실측과 그 결과를 CI 게이트로 남기는 작업을 개인적으로 상담·구현 의뢰로 받고 있다. 필요하다면 [문의 페이지](/ko/contact)로 연락 주면 된다.
+운영 중인 사이트에서 뒤로 가기가 실제로 캐시에서 복원되는지, 어느 템플릿이 어떤 이유로 자격을 잃는지는 의견이 아니라 측정으로 답할 수 있는 질문이다. 이런 종류의 실측과 그 결과를 CI 게이트로 남기는 작업을 개인적으로 상담·구현 의뢰로 받고 있다. 필요하다면 [문의 페이지](/ko/contact/)로 연락 주면 된다.

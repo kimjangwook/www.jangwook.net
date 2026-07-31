@@ -123,7 +123,7 @@ langgraph-prebuilt, langgraph-sdk,
 pydantic, xxhash
 ```
 
-39個の差だ。ADKがこれほど重い理由は明確で、Google Cloudスタック全体（BigQuery、Spanner、Pub/Sub、Speech等）を最初から含んでいるからだ。Google Cloudを使わないプロジェクトでは、これらの依存パッケージはすべて無駄な重荷になる。依存リストに`mcp`が含まれていることからわかるように、ADKはMCPサーバー連携を標準サポートする。MCPサーバーを自前で作って繋ぐ方は[FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)に別途まとめてある。
+39個の差だ。ADKがこれほど重い理由は明確で、Google Cloudスタック全体（BigQuery、Spanner、Pub/Sub、Speech等）を最初から含んでいるからだ。Google Cloudを使わないプロジェクトでは、これらの依存パッケージはすべて無駄な重荷になる。依存リストに`mcp`が含まれていることからわかるように、ADKはMCPサーバー連携を標準サポートする。MCPサーバーを自前で作って繋ぐ方は[FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)に別途まとめてある。
 
 LangGraphは「必要なものだけ持ってくる」哲学だ。LLMクライアントも自分で注入し、チェックポイントのバックエンドも選択する。軽量だが設定することも多い。
 
@@ -188,7 +188,7 @@ Commands:
 
 ただ、このCLI群が完全にGoogleエコシステムに縛られているのが残念な点だ。AWSやAzureを使うチームには`adk deploy`は使えない。内蔵トレーシングもGCPのCloud Traceに出力するよう設計されているため、他のオブザーバビリティスタックと連携するには別途設定が必要になる。
 
-その点では、[LangfuseによるLLMトレーシング](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026)のような独立したツールとより自然に組み合わせられるLangGraphの方が柔軟性は高い。
+その点では、[LangfuseによるLLMトレーシング](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026/)のような独立したツールとより自然に組み合わせられるLangGraphの方が柔軟性は高い。
 
 ## 状態管理の比較：セッション vs チェックポイント
 
@@ -430,7 +430,7 @@ ADKが登場する前のLangGraph vs CrewAI vs Daprの比較についてはこ�
 - デプロイ・評価・UIまで一つのツールで終わらせたいが、別途インフラを組む余力がない。LangGraphはランタイムのみを提供する。
 - チームにLangChainの経験がまったくなく、Python以外の言語が主力だ。
 
-判断に迷うなら、[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)でより広い選択肢を一緒に見るのも手だ。RAG中心のワークフローなら、[LlamaIndex vs LangChain vs Haystack比較](/ja/blog/ja/llamaindex-vs-langchain-vs-haystack-rag-2026)がフレームワーク決定のもう一つの軸を示してくれる。型安全性を最優先するなら、[PydanticAI実践チュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)がまた別のアプローチを見せてくれるので、あわせて比べてみるとよい。
+判断に迷うなら、[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026/)でより広い選択肢を一緒に見るのも手だ。RAG中心のワークフローなら、[LlamaIndex vs LangChain vs Haystack比較](/ja/blog/ja/llamaindex-vs-langchain-vs-haystack-rag-2026/)がフレームワーク決定のもう一つの軸を示してくれる。型安全性を最優先するなら、[PydanticAI実践チュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)がまた別のアプローチを見せてくれるので、あわせて比べてみるとよい。
 
 ## 一次情報源
 

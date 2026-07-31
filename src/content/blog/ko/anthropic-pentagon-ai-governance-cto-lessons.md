@@ -200,7 +200,7 @@ graph TD
 | 항목 | 설명 | 도구 예시 |
 |------|------|----------|
 | 실행 추적 | 에이전트가 어떤 도구를 어떤 순서로 사용했는지 | LangSmith, Braintrust |
-| [비용 모니터링](/ko/blog/ko/ai-agent-cost-reality) | 토큰 사용량, API 호출 비용 | Helicone, OpenMeter |
+| [비용 모니터링](/ko/blog/ko/ai-agent-cost-reality/) | 토큰 사용량, API 호출 비용 | Helicone, OpenMeter |
 | 정책 준수 | 가드레일 위반 감지 및 차단 | Guardrails AI, NeMo |
 | 감사 로그 | 모든 입출력의 변경 불가능한 기록 | 자체 구축 또는 Langfuse |
 
@@ -212,7 +212,7 @@ graph TD
 
 <strong>2단계: 멀티 벤더 전환 계획 수립 (2〜4주)</strong>
 
-Primary/Secondary/Fallback 구조를 설계하고, 추상화 레이어 도입을 검토한다. [LiteLLM이나 LangChain 같은 도구](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)가 빠른 시작점이 된다.
+Primary/Secondary/Fallback 구조를 설계하고, 추상화 레이어 도입을 검토한다. [LiteLLM이나 LangChain 같은 도구](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)가 빠른 시작점이 된다.
 
 <strong>3단계: AI 거버넌스 초안 작성 (1개월)</strong>
 
@@ -225,7 +225,7 @@ Anthropic vs 펜타곤 사태는 AI 기술이 순수한 기술적 도구를 넘�
 CTO/VPoE로서 우리가 할 일은 명확하다.
 
 1. 단일 벤더 의존을 탈피하고 멀티 벤더 전략을 수립할 것
-2. [AI 거버넌스 프레임워크](/ko/blog/ko/adl-agent-definition-language-governance)를 조직 문화의 일부로 내재화할 것
+2. [AI 거버넌스 프레임워크](/ko/blog/ko/adl-agent-definition-language-governance/)를 조직 문화의 일부로 내재화할 것
 3. 관찰 가능성과 감사 체계를 처음부터 설계할 것
 
 AI가 비즈니스의 핵심이 된 2026년, <strong>"AI를 잘 쓰는 것"만큼 "AI를 안전하게 관리하는 것"</strong>이 기술 리더의 핵심 역량이 됐다.

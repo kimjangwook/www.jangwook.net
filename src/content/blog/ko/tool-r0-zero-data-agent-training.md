@@ -63,7 +63,7 @@ AI 에이전트의 핵심 역량은 <strong>"외부 도구를 정확하게 호�
 
 ## 왜 지금 이 논문이 중요한가
 
-현재 [AI 에이전트](/ko/blog/ko/multi-agent-orchestration-routing) 시장은 도구 호출(Function Calling / Tool Use) 역량을 중심으로 급성장하고 있다. OpenAI의 Function Calling, Anthropic의 Tool Use, Google의 Gemini Function Calling — 프론티어 모델들은 모두 이 능력을 핵심으로 탑재하고 있다.
+현재 [AI 에이전트](/ko/blog/ko/multi-agent-orchestration-routing/) 시장은 도구 호출(Function Calling / Tool Use) 역량을 중심으로 급성장하고 있다. OpenAI의 Function Calling, Anthropic의 Tool Use, Google의 Gemini Function Calling — 프론티어 모델들은 모두 이 능력을 핵심으로 탑재하고 있다.
 
 그러나 오픈소스 모델이나 도메인 특화 모델에서 이 능력을 확보하려면 <strong>고비용의 학습 데이터 구축</strong>이 불가피했다:
 
@@ -218,13 +218,13 @@ graph TD
 
 ### 2. 소형 모델의 재평가
 
-Tool-R0는 0.5B 모델에서도 2배의 성능 향상을 달성했다. 이는 <strong>에지 디바이스나 비용 민감 환경에서도 유효한 [도구 호출 에이전트](/ko/blog/ko/prompt-engineering-agent-improvements)를 구축</strong>할 수 있음을 의미한다. GPU 비용이 제한된 스타트업이나 프라이빗 클라우드 환경에서 특히 유의미하다.
+Tool-R0는 0.5B 모델에서도 2배의 성능 향상을 달성했다. 이는 <strong>에지 디바이스나 비용 민감 환경에서도 유효한 [도구 호출 에이전트](/ko/blog/ko/prompt-engineering-agent-improvements/)를 구축</strong>할 수 있음을 의미한다. GPU 비용이 제한된 스타트업이나 프라이빗 클라우드 환경에서 특히 유의미하다.
 
 ### 3. 커리큘럼 러닝의 자동화
 
 가장 인상적인 측면은 <strong>학습 커리큘럼이 자동으로 생성</strong>된다는 점이다. 기존에는 인간이 "쉬운 예시부터 어려운 예시 순"으로 데이터를 정렬해야 했지만, Tool-R0의 Generator는 Solver의 현재 능력 수준을 자동으로 감지하고 적절한 난이도의 문제를 생성한다.
 
-이는 [AI 시스템](/ko/blog/ko/self-healing-ai-systems)의 <strong>학습 파이프라인을 자율적으로 운영</strong>할 수 있는 가능성을 열어준다.
+이는 [AI 시스템](/ko/blog/ko/self-healing-ai-systems/)의 <strong>학습 파이프라인을 자율적으로 운영</strong>할 수 있는 가능성을 열어준다.
 
 ## ICLR 2026 에이전트 연구 동향과의 맥락
 

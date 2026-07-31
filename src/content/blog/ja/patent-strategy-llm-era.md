@@ -62,7 +62,7 @@ Mark CubanがX（旧Twitter）で興味深い指摘をしました。<strong>「
 Cubanの主張を整理すると以下のとおりです：
 
 1. <strong>特許は公開文書である</strong>：特許庁に出願すると技術内容が詳細に公開される
-2. <strong>LLMは公開データを学習する</strong>：特許文書も学習データに含まれる — LLMがテキストから多様性をどのように抽出するかは [Verbalized Sampling: LLMの多様性を取り戻すトレーニング不要のプロンプティング技法](/ja/blog/ja/verbalized-sampling-llm-diversity) を参照してください。
+2. <strong>LLMは公開データを学習する</strong>：特許文書も学習データに含まれる — LLMがテキストから多様性をどのように抽出するかは [Verbalized Sampling: LLMの多様性を取り戻すトレーニング不要のプロンプティング技法](/ja/blog/ja/verbalized-sampling-llm-diversity/) を参照してください。
 3. <strong>結果的にAIが特許技術を「知る」ことになる</strong>：独占権はあるが、技術知識自体はAIに吸収される
 
 これは単なる特許侵害の問題を超え、<strong>特許制度の根本的な価値交換が崩れる状況</strong>を意味します。
@@ -175,7 +175,7 @@ Mark Cubanの指摘は単なる懸念ではなく、<strong>特許制度の根�
 2. <strong>営業秘密と特許の最適な組み合わせの再設計</strong>
 3. <strong>AI時代に適した知財戦略ロードマップの策定</strong>
 
-特許戦略のパラダイムが変わりつつあります。迅速に適応する企業だけが技術的優位性を維持できるでしょう。AI エージェントの能力を標準化しようとする Anthropic のアプローチは [Anthropic Agent Skills 標準：AI エージェント能力の拡張](/ja/blog/ja/anthropic-agent-skills-standard) で取り上げています。
+特許戦略のパラダイムが変わりつつあります。迅速に適応する企業だけが技術的優位性を維持できるでしょう。AI エージェントの能力を標準化しようとする Anthropic のアプローチは [Anthropic Agent Skills 標準：AI エージェント能力の拡張](/ja/blog/ja/anthropic-agent-skills-standard/) で取り上げています。
 
 ## 参考資料
 

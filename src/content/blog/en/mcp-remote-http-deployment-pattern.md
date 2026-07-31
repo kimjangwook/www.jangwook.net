@@ -93,7 +93,7 @@ data: {"result":{...},"jsonrpc":"2.0","id":1}
 
 You're not parsing JSON directly — you extract the `data:` line. Official MCP client libraries handle this automatically, but if you're testing with curl you need to know this.
 
-If you've read the guide on [building an MCP server from scratch with Python FastMCP](/en/blog/en/mcp-server-build-practical-guide-2026), the core concepts will be familiar. Here we're using the TypeScript SDK and wiring up the HTTP layer directly.
+If you've read the guide on [building an MCP server from scratch with Python FastMCP](/en/blog/en/mcp-server-build-practical-guide-2026/), the core concepts will be familiar. Here we're using the TypeScript SDK and wiring up the HTTP layer directly.
 
 The protocol flow as a sequence:
 
@@ -358,7 +358,7 @@ const app = createMcpExpressApp({
 
 DNS rebinding protection activates automatically when binding to localhost. For `0.0.0.0`, explicitly pass `allowedHosts`.
 
-The article on [running MCP servers on Kubernetes](/en/blog/en/mcp-server-production-deployment-kubernetes-guide) digs into the same core question: at which layer do you manage session state? The answer shapes everything above it.
+The article on [running MCP servers on Kubernetes](/en/blog/en/mcp-server-production-deployment-kubernetes-guide/) digs into the same core question: at which layer do you manage session state? The answer shapes everything above it.
 
 ## Known Limitations
 
@@ -370,7 +370,7 @@ Being straightforward about the rough edges:
 
 **SSE debugging friction.** The `event: message\ndata: {...}` format makes standard tooling awkward. You can't pipe the output directly into `jq`. Worth having a small helper script for test sessions, or using MCP Inspector.
 
-[MCP Gateway for centralized agent traffic management](/en/blog/en/mcp-gateway-agent-traffic-control) covers abstracting session complexity at the gateway layer — another valid approach once you're running multiple MCP servers.
+[MCP Gateway for centralized agent traffic management](/en/blog/en/mcp-gateway-agent-traffic-control/) covers abstracting session complexity at the gateway layer — another valid approach once you're running multiple MCP servers.
 
 ## Feasibility Assessment
 

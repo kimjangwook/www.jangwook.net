@@ -176,7 +176,7 @@ result = call_llm("오늘 날씨 어때?")
 
 ## 실전 RAG 파이프라인 트레이싱
 
-[PydanticAI로 타입 안전한 에이전트를 만드는 방법](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 다뤘을 때처럼, 실제 에이전트 코드에 Langfuse를 붙이면 어느 단계에서 비용이 발생하는지 바로 파악할 수 있다. 벡터 검색 단계에 어떤 DB를 붙일지 아직 정하지 않았다면 [Qdrant, Chroma, pgvector 비교](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector)를 먼저 확인해두면 선택이 빨라진다. 아래 코드가 내가 프로젝트에서 실제로 쓰는 패턴이다.
+[PydanticAI로 타입 안전한 에이전트를 만드는 방법](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)을 다뤘을 때처럼, 실제 에이전트 코드에 Langfuse를 붙이면 어느 단계에서 비용이 발생하는지 바로 파악할 수 있다. 벡터 검색 단계에 어떤 DB를 붙일지 아직 정하지 않았다면 [Qdrant, Chroma, pgvector 비교](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector/)를 먼저 확인해두면 선택이 빨라진다. 아래 코드가 내가 프로젝트에서 실제로 쓰는 패턴이다.
 
 ```python
 from langfuse import observe, get_client
@@ -317,7 +317,7 @@ response = client.chat.completions.create(
 
 나는 두 가지 프로젝트를 동시에 운영하면서 하나는 Cloud, 하나는 셀프호스팅을 쓴다. ClickHouse 때문에 메모리를 2GB 이상 잡아먹는 게 여전히 아깝게 느껴지는 게 솔직한 감상이다.
 
-[FastMCP로 MCP 서버를 직접 구축해본 경험](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)이 있다면, 그 서버에서 발생하는 LLM 호출에 Langfuse 트레이싱을 붙이는 것이 자연스러운 다음 단계다. MCP 서버는 도구 호출 체인이 길어지는 경향이 있어서 트레이스 워터폴의 가치가 특히 높다.
+[FastMCP로 MCP 서버를 직접 구축해본 경험](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/)이 있다면, 그 서버에서 발생하는 LLM 호출에 Langfuse 트레이싱을 붙이는 것이 자연스러운 다음 단계다. MCP 서버는 도구 호출 체인이 길어지는 경향이 있어서 트레이스 워터폴의 가치가 특히 높다.
 
 ## 언제 셀프호스팅을 쓰고 언제 피해야 하나
 
@@ -337,7 +337,7 @@ response = client.chat.completions.create(
 - 백업, 버전 업그레이드, 스케일링을 직접 책임지고 싶지 않다
 - 프로토타입 단계라 빠르게 붙였다 떼었다 반복할 예정이다
 
-판단이 애매한 중간 지대라면, 컨테이너 기반 배포 운영 감각을 먼저 점검해보길 권한다. [Ollama와 FastAPI를 프로덕션에 배포하는 글](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026)에서 다룬 헬스체크·리소스 제한·재시작 정책을 편하게 다룰 수 있다면 Langfuse 풀스택도 무리 없이 운영할 수 있다. 반대로 그 글의 내용이 버겁게 느껴진다면 Cloud로 시작해서 규모가 커진 뒤 옮기는 편이 현실적이다.
+판단이 애매한 중간 지대라면, 컨테이너 기반 배포 운영 감각을 먼저 점검해보길 권한다. [Ollama와 FastAPI를 프로덕션에 배포하는 글](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026/)에서 다룬 헬스체크·리소스 제한·재시작 정책을 편하게 다룰 수 있다면 Langfuse 풀스택도 무리 없이 운영할 수 있다. 반대로 그 글의 내용이 버겁게 느껴진다면 Cloud로 시작해서 규모가 커진 뒤 옮기는 편이 현실적이다.
 
 내 경우는 두 프로젝트를 나눠서 운영한다. 민감 데이터가 없는 블로그 자동화 파이프라인은 Cloud, 클라이언트 데이터를 다루는 쪽은 셀프호스팅. 같은 도구라도 데이터 성격에 따라 배포 방식을 다르게 가져가는 게 가장 덜 후회하는 선택이었다.
 

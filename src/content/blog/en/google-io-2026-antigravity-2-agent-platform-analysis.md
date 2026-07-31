@@ -130,13 +130,13 @@ A lead agent takes a high-level goal and delegates to specialist subagents runni
 - **Testing Agent**: Unit and regression tests
 - **Documentation Agent**: Auto-updating technical docs
 
-This is essentially the same pattern as [running parallel agents with Claude Code using Git worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree). The difference is that Google wraps it in a GUI where you can watch the agents work side-by-side.
+This is essentially the same pattern as [running parallel agents with Claude Code using Git worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree/). The difference is that Google wraps it in a GUI where you can watch the agents work side-by-side.
 
 ### GEMINI.md and the .agents/ Directory
 
 `GEMINI.md` at the project root gives all agents shared context. `.agents/agents.md` defines subagent behaviors. `.agents/skills.md` declares reusable capabilities across agents.
 
-If you've been following [multi-agent orchestration routing patterns](/en/blog/en/multi-agent-orchestration-routing), these conventions are familiar. The industry appears to be converging on this file-based agent configuration model regardless of which platform you're on.
+If you've been following [multi-agent orchestration routing patterns](/en/blog/en/multi-agent-orchestration-routing/), these conventions are familiar. The industry appears to be converging on this file-based agent configuration model regardless of which platform you're on.
 
 ### The agy CLI — Announced, Not Yet Deployed
 
@@ -178,7 +178,7 @@ Antigravity's agent panel is called Cascade. Windsurf's is also called Cascade. 
 
 Windsurf (originally Codeium) built its market position on Cascade — agentic coding differentiated from Cursor's autocomplete-focused approach. Antigravity using the same name is a direct signal that Google is targeting Windsurf's user base. The `antigravity.importWindsurfSettings` command in the built-in list confirms the intent.
 
-[When I compared Cursor, Claude Code, and Windsurf](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026), I wrote about a three-way competition. That analysis needs updating now. The IDE war just added a fourth serious player backed by Google infrastructure and Gemini model pricing.
+[When I compared Cursor, Claude Code, and Windsurf](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026/), I wrote about a three-way competition. That analysis needs updating now. The IDE war just added a fourth serious player backed by Google infrastructure and Gemini model pricing.
 
 ## Enterprise Users Get a Pass
 

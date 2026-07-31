@@ -54,7 +54,7 @@ relatedPosts:
 ### 1.1 核心指标一览
 
 <strong>分析期间</strong>：2025年10月7日〜11月20日（45天）
-<strong>上一篇报告</strong>：[博客启动分析报告](/ko/blog/ko/blog-launch-analysis-report)（10月6日，仅有实时数据）
+<strong>上一篇报告</strong>：[博客启动分析报告](/ko/blog/ko/blog-launch-analysis-report/)（10月6日，仅有实时数据）
 
 | 核心指标 | 实际表现 | 1个月目标 | 达成率 | 状态 |
 |---------|----------|----------|--------|------|
@@ -970,7 +970,7 @@ code_here()
 
 - 🔗 <strong>分享</strong>：给有类似困扰的开发者同行
 - 💭 <strong>评论</strong>：分享您的博客分析经验和技巧
-- 📧 <strong>联系</strong>：1对1问题请访问[Contact](/ko/contact)
+- 📧 <strong>联系</strong>：1对1问题请访问[Contact](/ko/contact/)
 
 <strong>让我们一起学习和成长。期待您的第一份分析报告！</strong> 🚀
 

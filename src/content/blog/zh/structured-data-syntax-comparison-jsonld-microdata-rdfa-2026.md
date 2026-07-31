@@ -120,7 +120,7 @@ Keys: @context, @type, name, brand, offers
 
 评分从 Product 上整块脱落了。只剩 `name`、`brand`、`offers`。这正是搜索结果里星级富媒体结果悄悄消失的场景。没人写错语法。`itemprop="aggregateRating"` 此刻仍好端端地在页面某处,只是丢了父节点。而且这种事构建不会报错,评审也逮不到。
 
-换成 JSON-LD 呢?把评分组件挪去侧边栏、挪去页脚,随便挪,`<script>` 块纹丝不动。含义跟 DOM 位置是解耦的,改版碰不到它。这才是 Google 推荐 JSON-LD 的真正理由,不是排名,是「好维护」。用官方文档的原话就是「最容易实现和维护」。这一句在实务里到底意味着什么,我今天亲眼看到了:意味着它能在改版里活下来。这个耦合度问题,和[把结构化数据从服务端确实输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)是连着的。语法定了,它是否真的抵达爬虫,是下一道关。
+换成 JSON-LD 呢?把评分组件挪去侧边栏、挪去页脚,随便挪,`<script>` 块纹丝不动。含义跟 DOM 位置是解耦的,改版碰不到它。这才是 Google 推荐 JSON-LD 的真正理由,不是排名,是「好维护」。用官方文档的原话就是「最容易实现和维护」。这一句在实务里到底意味着什么,我今天亲眼看到了:意味着它能在改版里活下来。这个耦合度问题,和[把结构化数据从服务端确实输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026/)是连着的。语法定了,它是否真的抵达爬虫,是下一道关。
 
 ## 但有效的标记并不保证富媒体结果
 
@@ -156,7 +156,7 @@ _:b0 <http://schema.org/offers> _:b3 .
 
 要避开的也很清楚。**别在同一页面用两种语法给同一个实体重复打标记。** 用 JSON-LD 写了 Product,又用 Microdata 把同一份再贴一遍,爬虫可能读成重复或冲突。选一种,一贯到底。
 
-而且不管哪种语法,**都要在 CI 里验证。** 我在构建阶段把 JSON-LD 展开成 RDF,核对三元组数量和连通分量。正如今天的实验所示,标记可以在没有任何语法错误的情况下悄悄丢掉含义,人眼逮不到。这个「把散落的碎片连成一体再验证」的话题,我在[把 JSON-LD 归并成单个 @graph](/zh/blog/zh/json-ld-graph-entity-linking-2026)那篇里讲得更深。另外还得一并检查这份标记是不是[埋在了 AI 爬虫根本不执行的 JS 里](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026)。
+而且不管哪种语法,**都要在 CI 里验证。** 我在构建阶段把 JSON-LD 展开成 RDF,核对三元组数量和连通分量。正如今天的实验所示,标记可以在没有任何语法错误的情况下悄悄丢掉含义,人眼逮不到。这个「把散落的碎片连成一体再验证」的话题,我在[把 JSON-LD 归并成单个 @graph](/zh/blog/zh/json-ld-graph-entity-linking-2026/)那篇里讲得更深。另外还得一并检查这份标记是不是[埋在了 AI 爬虫根本不执行的 JS 里](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/)。
 
 ## 实务中常被问到的问题
 

@@ -101,7 +101,7 @@ Sonnet 4.6 最適化なし:   $20.25/月
 
 この規模ではサブスクブロックによってむしろコストが下がる。$200 Maxプランでブログ自動化程度しか動かしていなかったなら、API直接課金のほうがずっと合理的だ。
 
-[Claude APIプロンプトキャッシング最適化パターン](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide)でキャッシュヒット率を70〜80%に引き上げる実際の実装方法を確認できる。今回の方針転換でキャッシングは単なる最適化ではなく生存戦略だ。
+[Claude APIプロンプトキャッシング最適化パターン](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide/)でキャッシュヒット率を70〜80%に引き上げる実際の実装方法を確認できる。今回の方針転換でキャッシングは単なる最適化ではなく生存戦略だ。
 
 ## コストを下げる3つの実践的戦略
 
@@ -133,7 +133,7 @@ def route_to_model(task_type: str) -> str:
 
 システムプロンプトや繰り返し使うコンテキストにキャッシュマーカーをつけると入力トークンのコストが90%下がる。キャッシュTTLは5分なので短いセッションでも効果がある。
 
-[AIエージェントのコスト現実分析](/ja/blog/ja/ai-agent-cost-reality)で取り上げたように、エージェントコストが人件費を上回るシナリオはキャッシングなしにOpusを全方位で使うときに現実になる。キャッシュヒット率をロギングして追跡することがコスト可視化の第一歩だ。
+[AIエージェントのコスト現実分析](/ja/blog/ja/ai-agent-cost-reality/)で取り上げたように、エージェントコストが人件費を上回るシナリオはキャッシングなしにOpusを全方位で使うときに現実になる。キャッシュヒット率をロギングして追跡することがコスト可視化の第一歩だ。
 
 **戦略3: リアルタイム不要なワークロードはBatch APIで分離**
 
@@ -157,7 +157,7 @@ def route_to_model(task_type: str) -> str:
 
 <strong>GPT-5.5</strong>はClaude Opus 4.7と価格が似ている。SWE-benchなどのコーディングベンチマークではOpus 4.7に劣る。わざわざ乗り換える経済的理由がない。
 
-私の推奨は<strong>コアエージェントはClaude APIを維持、ボリュームが多い単純タスクはHaikuまたはDeepSeekを混用</strong>することだ。すでに[LLM API価格比較](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)でシナリオ別の詳細計算をしてあるので、自分のワークロードパターンに合わせて比較してほしい。
+私の推奨は<strong>コアエージェントはClaude APIを維持、ボリュームが多い単純タスクはHaikuまたはDeepSeekを混用</strong>することだ。すでに[LLM API価格比較](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)でシナリオ別の詳細計算をしてあるので、自分のワークロードパターンに合わせて比較してほしい。
 
 ## Anthropic Managed Agentsは真剣な代替案か
 

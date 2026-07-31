@@ -375,7 +375,7 @@ If you're on a CPU-only server, remove the `deploy.resources.reservations` block
 
 FastAPI sits between your clients and Ollama as a stable adapter. When you switch models or upgrade Ollama, client code stays unchanged. This is the primary reason to not expose Ollama directly.
 
-This approach differs from [wrapping local LLMs with FastMCP as an MCP server](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp). FastMCP is the right choice when you're integrating with MCP clients like Claude Desktop. FastAPI is the right choice for general HTTP clients like web apps, mobile, and CLI tools. They're complementary, not competing.
+This approach differs from [wrapping local LLMs with FastMCP as an MCP server](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp/). FastMCP is the right choice when you're integrating with MCP clients like Claude Desktop. FastAPI is the right choice for general HTTP clients like web apps, mobile, and CLI tools. They're complementary, not competing.
 
 ## Multi-Model Routing: Different Models per Request
 
@@ -473,7 +473,7 @@ Streaming is especially important here. Blocking clients until the full response
 - `llama3.1:70b` (Q4 quantized): production-quality responses
 - Bump `--workers` to 4+ when you have VRAM to spare
 
-If you want to reason about model size against actual operating cost, my [breakdown of what AI agents really cost to run](/en/blog/en/ai-agent-cost-reality) pairs well with this. It helps you see how far local inference pushes down token spend before GPU overhead eats the savings.
+If you want to reason about model size against actual operating cost, my [breakdown of what AI agents really cost to run](/en/blog/en/ai-agent-cost-reality/) pairs well with this. It helps you see how far local inference pushes down token spend before GPU overhead eats the savings.
 
 ## When to Use This Setup, and When to Avoid It
 
@@ -582,7 +582,7 @@ To make this production-ready:
 
 The code in this guide is minimal by design. Each addition above is straightforward once the base structure works. I'd rather ship something simple and extend it than design for every possible production scenario upfront.
 
-Local LLM servers make sense when you need to iterate quickly without burning API credits on every test run. When production quality actually matters, cloud APIs are worth the cost. The natural next step is wiring this same interface to a hosted model: my guide on [streaming the Claude API to production with FastAPI](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026) reuses exactly this adapter pattern, swapping only the backend. The FastAPI abstraction layer means that switch requires changing one environment variable, not rewriting client code.
+Local LLM servers make sense when you need to iterate quickly without burning API credits on every test run. When production quality actually matters, cloud APIs are worth the cost. The natural next step is wiring this same interface to a hosted model: my guide on [streaming the Claude API to production with FastAPI](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026/) reuses exactly this adapter pattern, swapping only the backend. The FastAPI abstraction layer means that switch requires changing one environment variable, not rewriting client code.
 
 ## References (Primary Sources)
 

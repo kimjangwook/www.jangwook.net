@@ -204,11 +204,11 @@ relatedPosts:
 
 | 발행일 | 제목 | 주제 | 성과 |
 |--------|------|------|------|
-| 10-15 | [AI 시대의 사양 주도 개발](/ko/blog/ko/specification-driven-development) | 개발 방법론 | 데이터 부족 |
+| 10-15 | [AI 시대의 사양 주도 개발](/ko/blog/ko/specification-driven-development/) | 개발 방법론 | 데이터 부족 |
 | 10-16 | [AI 에이전트 협업 패턴](/ko/blog/ko/ai-agent-collaboration-patterns/) | AI Agents | 데이터 부족 |
-| 10-17 | [자가 치유 AI 시스템](/ko/blog/ko/self-healing-ai-systems) | AI Engineering | 데이터 부족 |
-| 10-18 | [추천 시스템 혁신](/ko/blog/ko/metadata-based-recommendation-optimization) | Technical | 데이터 부족 |
-| 10-19 | [AI 에이전트 성별과 페르소나](/ko/blog/ko/ai-agent-persona-analysis) | AI Ethics | 데이터 부족 |
+| 10-17 | [자가 치유 AI 시스템](/ko/blog/ko/self-healing-ai-systems/) | AI Engineering | 데이터 부족 |
+| 10-18 | [추천 시스템 혁신](/ko/blog/ko/metadata-based-recommendation-optimization/) | Technical | 데이터 부족 |
+| 10-19 | [AI 에이전트 성별과 페르소나](/ko/blog/ko/ai-agent-persona-analysis/) | AI Ethics | 데이터 부족 |
 | 10-20 | [OpenAI AgentKit 1부](/ko/blog/ko/openai-agentkit-tutorial-part1/) | AI Agents | <strong>Top 5</strong> (9뷰) |
 | 10-21 | [OpenAI AgentKit 2부](/ko/blog/ko/openai-agentkit-tutorial-part2/) | AI Agents | 데이터 부족 |
 | 10-22 | [Claude Skills 완벽 가이드](/ko/blog/ko/claude-skills-implementation-guide/) | Claude Code | <strong>Top 1</strong> (31뷰) 🥇 |
@@ -217,11 +217,11 @@ relatedPosts:
 | 10-25 | [Playwright AI 테스팅](/ko/blog/ko/playwright-ai-testing/) | Testing | <strong>Top 9</strong> (7뷰) |
 | 10-26 | [LangGraph 멀티 에이전트](/ko/blog/ko/langgraph-multi-agent/) | AI Agents | 영어 버전 Top 10 (6뷰) |
 | 10-27 | [Jules 오토코딩](/ko/blog/ko/jules-autocoding/) | AI Tools | <strong>Top 7, 13</strong> (7+6뷰) |
-| 10-28 | [BigQuery MCP 서버 구축](/ko/blog/ko/bigquery-mcp-prefix-filtering) | MCP | 데이터 부족 |
-| 10-29 | [Claude Code Hook 자동화 리뷰](/ko/blog/ko/claude-code-hooks-workflow) | Claude Code | 데이터 부족 |
-| 10-30 | [LLM 웹페이지 이행 작업 표준화](/ko/blog/ko/llm-page-migration-standardization) | LLM | 데이터 부족 |
+| 10-28 | [BigQuery MCP 서버 구축](/ko/blog/ko/bigquery-mcp-prefix-filtering/) | MCP | 데이터 부족 |
+| 10-29 | [Claude Code Hook 자동화 리뷰](/ko/blog/ko/claude-code-hooks-workflow/) | Claude Code | 데이터 부족 |
+| 10-30 | [LLM 웹페이지 이행 작업 표준화](/ko/blog/ko/llm-page-migration-standardization/) | LLM | 데이터 부족 |
 | 10-31 | [Claude Code 대규모 테스트 병렬 자동화](/ko/blog/ko/claude-code-parallel-testing/) | Testing | 데이터 부족 |
-| 11-01 | [LLM PM 업무 효율화](/ko/blog/ko/llm-pm-workflow-automation) | Project Management | 데이터 부족 |
+| 11-01 | [LLM PM 업무 효율화](/ko/blog/ko/llm-pm-workflow-automation/) | Project Management | 데이터 부족 |
 | 11-03 | [Notion+Backlog+Slack+Claude 프로젝트 매니징](/ko/blog/ko/notion-backlog-slack-claude-project-management/) | Project Management | 데이터 부족 |
 | 11-04 | [Slack MCP 팀 커뮤니케이션 분석](/ko/blog/ko/slack-mcp-team-communication/) | MCP | 데이터 부족 |
 

@@ -46,7 +46,7 @@ Up front: **for flat data, TSV is 62% cheaper than pretty JSON.** But the moment
 
 ## The setup: count with tiktoken, don't guess
 
-Token cost gets tossed around as "roughly chars × 0.75," but that heuristic completely misses per-format differences. How the same heuristic breaks once you switch languages is something I measured separately in [the non-English token tax, where the same article costs 1.4x the tokens in Korean](/en/blog/en/multilingual-llm-token-tax-experiment). So I used OpenAI's own [tiktoken](https://github.com/openai/tiktoken). I ran two encodings side by side: `o200k_base` (GPT-4o, the o-series, the GPT-5 family) and the older `cl100k_base` (GPT-4 and 3.5).
+Token cost gets tossed around as "roughly chars × 0.75," but that heuristic completely misses per-format differences. How the same heuristic breaks once you switch languages is something I measured separately in [the non-English token tax, where the same article costs 1.4x the tokens in Korean](/en/blog/en/multilingual-llm-token-tax-experiment/). So I used OpenAI's own [tiktoken](https://github.com/openai/tiktoken). I ran two encodings side by side: `o200k_base` (GPT-4o, the o-series, the GPT-5 family) and the older `cl100k_base` (GPT-4 and 3.5).
 
 The test data mimics a realistic "tool result." Fifty product records, each a flat object with nine fields: `id`, `sku`, `name`, `category`, `price`, `stock`, `warehouse`, `status`, `rating`.
 
@@ -63,7 +63,7 @@ print("compact:", tok(json.dumps(records, separators=(",",":"))))
 print("csv    :", tok(to_csv(records)))
 ```
 
-I ran the sandbox in a throwaway `mktemp -d` directory outside the repo, kept only the result logs and the chart, then wiped the environment. The habit of isolating one-off experiments like this hardened during the stretch where I [ran eight agents and tracked their real cost](/en/blog/en/ai-agent-cost-reality). Cutting tokens is, in the end, one line in that same ledger.
+I ran the sandbox in a throwaway `mktemp -d` directory outside the repo, kept only the result logs and the chart, then wiped the environment. The habit of isolating one-off experiments like this hardened during the stretch where I [ran eight agents and tracked their real cost](/en/blog/en/ai-agent-cost-reality/). Cutting tokens is, in the end, one line in that same ledger.
 
 ## Flat data: TSV wins by a mile
 
@@ -134,7 +134,7 @@ A few thousand tokens sounds like nothing, but an agent resends the same context
 
 Here's a likely objection: "Doesn't prompt caching make the same context cheap anyway?" It does. If the catalog is pinned in the system prompt, a cache hit cuts the cost sharply. But caching doesn't reduce the token count itself. Cached tokens still occupy the full context window, and caches usually expire after a short TTL and then refill at full price. On top of that, tool results that change every turn can't be cached in the first place. Trimming tokens via format isn't a technique that competes with caching, it's one that complements it. Turn both on and you win twice.
 
-This matters most when an MCP tool returns a large result. When a [server you built with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026) returns a DB query as raw JSON, that format is the model's input cost. One small decision on the server side, serializing a flat result as CSV or TSV, shifts the token ledger of the whole agent.
+This matters most when an MCP tool returns a large result. When a [server you built with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/) returns a DB query as raw JSON, that format is the model's input cost. One small decision on the server side, serializing a flat result as CSV or TSV, shifts the token ledger of the whole agent.
 
 The limits are real, of course. I only measured token counts; **I did not measure whether the model understands each format equally well.** That's as far as I could reproduce without API calls. My intuition is that a format like CSV, where the header sits far from the values, could confuse the model on field-heavy data. With the header only once at the top, the model has to count by position to know what the 7th value in the 30th row means. Save tokens and lose accuracy and you haven't gained anything. So before applying this for real, run token savings and response quality together as an A/B at least once. I'm deferring that check to the next experiment.
 

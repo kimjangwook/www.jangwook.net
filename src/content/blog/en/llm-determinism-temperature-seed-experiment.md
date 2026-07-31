@@ -58,7 +58,7 @@ All of that is straight from the docs. The question is whether the theory actual
 
 ## The experiment: the same prompt, dozens of times
 
-I built the test environment in a temporary directory outside the repo. Measuring it myself rather than guessing is the same approach I took when [benchmarking token cost across nine data formats](/en/blog/en/llm-token-cost-data-format-experiment). Ollama 0.30.7, Apple Silicon, two models: a small 2GB Gemma 4 build and the 9.6GB `gemma4:e4b`. The point of using two sizes was to see whether the same pattern shows up regardless of model scale.
+I built the test environment in a temporary directory outside the repo. Measuring it myself rather than guessing is the same approach I took when [benchmarking token cost across nine data formats](/en/blog/en/llm-token-cost-data-format-experiment/). Ollama 0.30.7, Apple Silicon, two models: a small 2GB Gemma 4 build and the 9.6GB `gemma4:e4b`. The point of using two sizes was to see whether the same pattern shows up regardless of model scale.
 
 The method is simple. Send the same prompt 12 to 15 times per condition, hash each output with SHA-256, and count how many distinct hashes appear. One means fully deterministic; a larger number means the output is scattering.
 
@@ -125,7 +125,7 @@ done_reason: length   eval_count: 200
 
 Tokens were clearly generated. The GPU spun for 28 seconds each time. But nothing reached the user-visible text. The chat template on this QAT build is probably broken, or the model emitted only invisible control tokens. The exact cause is outside my expertise, so I will not assert one.
 
-The lesson, though, is clear. "The model ran" and "the model answered" are different statements. A pipeline that treats a rising eval_count as success would have let this empty response slip straight into the evaluation data. Why you need one guard that rejects zero-length responses, this failure argued more convincingly than any line of code. Failure is content too, and I felt it again here. I have hit this kind of packaging variable before with local models, in a similar shape as the small-model schema limits I wrote about in the [post on Ollama structured outputs](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026).
+The lesson, though, is clear. "The model ran" and "the model answered" are different statements. A pipeline that treats a rising eval_count as success would have let this empty response slip straight into the evaluation data. Why you need one guard that rejects zero-length responses, this failure argued more convincingly than any line of code. Failure is content too, and I felt it again here. I have hit this kind of packaging variable before with local models, in a similar shape as the small-model schema limits I wrote about in the [post on Ollama structured outputs](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026/).
 
 ## Right locally does not mean right on the cloud
 
@@ -163,7 +163,7 @@ def assert_reproducible(model, prompt, expected_hash, n=5):
 
 Pin the expected hash once and CI catches the moment a model version or an ollama upgrade changes the output. That is my rebuttal to the common resignation that "you can't test an LLM." You can't test all of it, but the part where you control the reproducibility conditions, you certainly can.
 
-It extends to agents the same way. To regression-test an agent's sequence of tool calls, that sequence has to reproduce. If you have built a [fully offline MCP server on a local model](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp), fixing the seed on top of it to reproduce tool calls is relatively controllable. An agent on a cloud LLM, by contrast, struggles to get the same guarantee because of batch non-determinism. In the end, "where you run inference" decides "how tightly you can write the test," and that was the most practical takeaway from this experiment.
+It extends to agents the same way. To regression-test an agent's sequence of tool calls, that sequence has to reproduce. If you have built a [fully offline MCP server on a local model](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp/), fixing the seed on top of it to reproduce tool calls is relatively controllable. An agent on a cloud LLM, by contrast, struggles to get the same guarantee because of batch non-determinism. In the end, "where you run inference" decides "how tightly you can write the test," and that was the most practical takeaway from this experiment.
 
 Next I plan to build an environment that applies concurrent load and check directly whether batch non-determinism reproduces even on local ollama. If it does, my tentative conclusion that "local is safe" will earn a footnote.
 

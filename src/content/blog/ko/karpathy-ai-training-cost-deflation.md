@@ -89,7 +89,7 @@ Karpathy는 비용 하락이 단일 요인이 아닌 <strong>4가지 축의 동�
 
 ### 1. 하드웨어 진화 (Hardware)
 
-TPU v3에서 H100으로의 전환은 단순한 세대 교체를 넘어 근본적인 연산 효율성 향상을 의미한다. 한편 [초당 16,000 토큰을 처리하는 ASIC 기반 추론 칩](/ko/blog/ko/asic-llm-inference-16k-tps)처럼 GPU를 대체하려는 하드웨어 혁신도 빠르게 진행되고 있다.
+TPU v3에서 H100으로의 전환은 단순한 세대 교체를 넘어 근본적인 연산 효율성 향상을 의미한다. 한편 [초당 16,000 토큰을 처리하는 ASIC 기반 추론 칩](/ko/blog/ko/asic-llm-inference-16k-tps/)처럼 GPU를 대체하려는 하드웨어 혁신도 빠르게 진행되고 있다.
 
 - <strong>FP8 연산 지원</strong>: 학습 정밀도를 낮추면서도 품질을 유지
 - <strong>HBM3 메모리</strong>: 대역폭 3TB/s로 메모리 병목 해소
@@ -144,11 +144,11 @@ Karpathy는 효과가 <strong>없었던</strong> 기법들도 투명하게 공�
 
 - <strong>데이터 품질</strong>: 얼마나 좋은 데이터를 확보하느냐
 - <strong>파인튜닝 노하우</strong>: 도메인 특화 최적화 역량
-- <strong>추론 효율성</strong>: 학습보다 서빙 비용이 핵심 — [NVIDIA NVFP4가 LLM 추론 비용을 8분의 1로 줄이는 방식](/ko/blog/ko/nvidia-llm-inference-cost-reduction)이 대표적인 사례다
+- <strong>추론 효율성</strong>: 학습보다 서빙 비용이 핵심 — [NVIDIA NVFP4가 LLM 추론 비용을 8분의 1로 줄이는 방식](/ko/blog/ko/nvidia-llm-inference-cost-reduction/)이 대표적인 사례다
 
 ### 오픈소스 생태계 강화
 
-$100 이하로 GPT-2급 모델을 학습할 수 있다는 것은 <strong>오픈소스 커뮤니티</strong>의 실험과 혁신이 대폭 가속됨을 의미한다. [행렬 곱셈 없이 CPU만으로 LLM을 훈련하는 MatMul-Free 아키텍처](/ko/blog/ko/matmulfree-cpu-llm-training) 같은 시도도 이 흐름에서 나왔다. nanochat 자체가 약 1,000줄의 코드로 구성되어 있어 교육적 가치도 크다.
+$100 이하로 GPT-2급 모델을 학습할 수 있다는 것은 <strong>오픈소스 커뮤니티</strong>의 실험과 혁신이 대폭 가속됨을 의미한다. [행렬 곱셈 없이 CPU만으로 LLM을 훈련하는 MatMul-Free 아키텍처](/ko/blog/ko/matmulfree-cpu-llm-training/) 같은 시도도 이 흐름에서 나왔다. nanochat 자체가 약 1,000줄의 코드로 구성되어 있어 교육적 가치도 크다.
 
 ### 무어의 법칙을 넘어서는 하락률
 

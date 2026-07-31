@@ -144,7 +144,7 @@ graph TD
 | Q4_K_M | 기준 | 기준 | 기준 |
 | <strong>IQ4_K</strong> | 2-5% 개선 | 동등 | 동등~소폭 감소 |
 
-<strong>같은 비트 수로 퍼플렉시티가 개선</strong>되는 것이 가장 큰 장점이다. 특히 저비트 양자화(2-3비트)에서의 개선 폭이 두드러진다. 클라우드 API 대신 로컬 추론을 선택하는 경우의 비용 효과는 [LLM API 가격 비교 가이드](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 확인할 수 있다.
+<strong>같은 비트 수로 퍼플렉시티가 개선</strong>되는 것이 가장 큰 장점이다. 특히 저비트 양자화(2-3비트)에서의 개선 폭이 두드러진다. 클라우드 API 대신 로컬 추론을 선택하는 경우의 비용 효과는 [LLM API 가격 비교 가이드](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)에서 확인할 수 있다.
 
 ## 로컬 LLM 추론에 대한 영향
 
@@ -156,7 +156,7 @@ IQ 계열 양자화의 통합으로 다음 시나리오에서 혜택이 기대�
 - <strong>Apple Silicon Mac</strong>: 통합 메모리 제약 내에서 더 큰 모델을 더 높은 품질로 실행
 - <strong>엣지 디바이스</strong>: IQ2_K/IQ2_KS로 2-3GB 메모리에서도 LLM 추론이 실용적으로
 
-로컬 LLM 추론 환경을 처음 구축한다면 [uv로 Python AI 개발 환경 세팅하기](/ko/blog/ko/uv-python-ai-development-setup-guide-2026)가 시작점으로 좋다.
+로컬 LLM 추론 환경을 처음 구축한다면 [uv로 Python AI 개발 환경 세팅하기](/ko/blog/ko/uv-python-ai-development-setup-guide-2026/)가 시작점으로 좋다.
 
 ### 양자화 에코시스템의 진화
 
@@ -168,7 +168,7 @@ graph LR
     B -->|통합| D[ollama / LM Studio<br/>엔드유저 툴]
 ```
 
-llama.cpp 본체로의 통합은 <strong>ollama</strong>나 <strong>LM Studio</strong> 등의 엔드유저 도구로의 파급을 의미한다. 사용자는 특별한 설정 없이 더 고품질의 양자화 모델을 활용할 수 있게 된다. 추론 품질을 지속적으로 모니터링하려면 [Langfuse 셀프 호스팅 LLM 트레이싱](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026)으로 요청과 응답을 로그하고 비교하는 방식이 효과적이다.
+llama.cpp 본체로의 통합은 <strong>ollama</strong>나 <strong>LM Studio</strong> 등의 엔드유저 도구로의 파급을 의미한다. 사용자는 특별한 설정 없이 더 고품질의 양자화 모델을 활용할 수 있게 된다. 추론 품질을 지속적으로 모니터링하려면 [Langfuse 셀프 호스팅 LLM 트레이싱](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026/)으로 요청과 응답을 로그하고 비교하는 방식이 효과적이다.
 
 ## 실전: IQ 양자화 사용법
 

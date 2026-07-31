@@ -76,7 +76,7 @@ response = client.messages.create(
 )
 ```
 
-没有Anthropic API密钥，我无法直接运行这段代码。以上代码基于官方文档和发布说明编写。task_budget的advisory行为是我结合[Managed Agents生产部署文章](/zh/blog/zh/claude-managed-agents-production-deployment-guide)探索的内容。
+没有Anthropic API密钥，我无法直接运行这段代码。以上代码基于官方文档和发布说明编写。task_budget的advisory行为是我结合[Managed Agents生产部署文章](/zh/blog/zh/claude-managed-agents-production-deployment-guide/)探索的内容。
 
 ## Managed Agents有何不同
 
@@ -99,7 +99,7 @@ Notion、Rakuten和Sentry已将其应用于生产环境。Notion报告成本降�
 
 如果Managed Agents真的能减轻这一负担——Sentry"数周内上线"的故事是真实的——那它的价值就很清晰了。
 
-我曾在[五种Agent工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)中介绍过编排器-子Agent结构。将这种结构运行在Managed Agents之上，意味着平台会处理原本需要自己编写的恢复逻辑和状态同步。
+我曾在[五种Agent工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)中介绍过编排器-子Agent结构。将这种结构运行在Managed Agents之上，意味着平台会处理原本需要自己编写的恢复逻辑和状态同步。
 
 task_budget的方向也是对的。让模型在预算内自行确定优先级，通常比硬截断能产生更好的完成率。
 
@@ -117,7 +117,7 @@ task_budget的方向也是对的。让模型在预算内自行确定优先级，
 
 我最关注的问题另有其物——<strong>新分词器</strong>。Opus 4.7搭载了新分词器，对相同文本会使用比之前多1〜1.35倍的令牌。公布的价格没有变化，但实际成本最多可能上涨35%。
 
-我曾在[AI Agent运营成本的现实](/zh/blog/zh/ai-agent-cost-reality)中分析过生产Agent的运营成本，分词器更换是需要完全重新计算预算模拟的重大变量。Anthropic没有在发布时明确提示这一点，理应受到批评。
+我曾在[AI Agent运营成本的现实](/zh/blog/zh/ai-agent-cost-reality/)中分析过生产Agent的运营成本，分词器更换是需要完全重新计算预算模拟的重大变量。Anthropic没有在发布时明确提示这一点，理应受到批评。
 
 ## 成本现实：到底涨了多少
 
@@ -159,7 +159,7 @@ Sentry"数周内上线"的故事也许并不夸张——有些团队自己构建
 
 ## 四月发布的更大图景
 
-将四月Anthropic的发布作为一个整体来解读很有意思。[上个月性能下降争议](/zh/blog/zh/anthropic-claude-performance-decline-controversy-april-2026)令社区信任动摇，Anthropic一个月后带着基准测试数字和新基础设施服务回来了。
+将四月Anthropic的发布作为一个整体来解读很有意思。[上个月性能下降争议](/zh/blog/zh/anthropic-claude-performance-decline-controversy-april-2026/)令社区信任动摇，Anthropic一个月后带着基准测试数字和新基础设施服务回来了。
 
 但开发者的反应正在向"基准测试不如实际表现重要"的方向成熟。SWE-bench Pro再高，也不保证在你的具体代码库上表现良好，高级用户的"legendarily bad"反馈难以忽视。
 

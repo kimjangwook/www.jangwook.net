@@ -65,7 +65,7 @@ relatedPosts:
 
 ## 概述
 
-[Anthropic Agent Skills标准](/zh/blog/zh/anthropic-agent-skills-standard)发布后，许多开发者和企业都在思考如何将这一强大工具集成到实际工作流程中并加以利用。本教程将重点关注Anthropic Agent Skills的实际使用，提供具体的实现示例、执行方法，以及对预测效果和投资回报率（ROI）的深入分析。我们的目标是为那些希望最大限度发挥AI代理潜力的人提供一份实用指南。
+[Anthropic Agent Skills标准](/zh/blog/zh/anthropic-agent-skills-standard/)发布后，许多开发者和企业都在思考如何将这一强大工具集成到实际工作流程中并加以利用。本教程将重点关注Anthropic Agent Skills的实际使用，提供具体的实现示例、执行方法，以及对预测效果和投资回报率（ROI）的深入分析。我们的目标是为那些希望最大限度发挥AI代理潜力的人提供一份实用指南。
 
 ## 核心内容：深入理解Agent Skills
 
@@ -343,7 +343,7 @@ Agent Skills将组织的特定工作流程、最佳实践和积累的知识封�
 
 ### 4. 可扩展性和可移植性
 
-一旦开发完成，Agent Skills可以在各种Claude应用程序、[Claude Code环境](/zh/blog/zh/claude-code-cli-migration-guide)和API中重复使用和部署。
+一旦开发完成，Agent Skills可以在各种Claude应用程序、[Claude Code环境](/zh/blog/zh/claude-code-cli-migration-guide/)和API中重复使用和部署。
 
 -   <strong>效果</strong>：当出现新需求时，可以利用现有技能快速响应，节省开发时间和资源。这导致上市时间缩短，并提供长期竞争优势。
 -   <strong>长期ROI</strong>：提高开发效率，快速适应市场变化，减少技术债务。

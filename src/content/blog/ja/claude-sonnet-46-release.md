@@ -87,7 +87,7 @@ Sonnet 3.5 → Sonnet 4 → Sonnet 4.5 → Sonnet 4.6
 Opus 4 → Opus 4.5 → Opus 4.6
 ```
 
-<strong>0.1単位のポイントリリース</strong>は、アーキテクチャを維持しながらトレーニングデータとファインチューニングを改善するアプローチを示唆しています。これはユーザーに「破壊的変更のない改善」という信頼を与えます。ただし、アップデートが常に全面的な改善をもたらすとは限りません。[Anthropic Claude性能低下論争](/ja/blog/ja/anthropic-claude-performance-decline-controversy-april-2026)で確認できるように、一部ユーザーは実際の性能低下を経験したと報告しています。
+<strong>0.1単位のポイントリリース</strong>は、アーキテクチャを維持しながらトレーニングデータとファインチューニングを改善するアプローチを示唆しています。これはユーザーに「破壊的変更のない改善」という信頼を与えます。ただし、アップデートが常に全面的な改善をもたらすとは限りません。[Anthropic Claude性能低下論争](/ja/blog/ja/anthropic-claude-performance-decline-controversy-april-2026/)で確認できるように、一部ユーザーは実際の性能低下を経験したと報告しています。
 
 ### 中間モデル戦略の意味
 
@@ -114,7 +114,7 @@ Sonnet 4.6の核心メッセージは<strong>「Opus級の性能をSonnet価格�
 | Box推論Q&A | +15pp | エンタープライズ文書 |
 | 保険ベンチマーク | 94% | コンピュータ使用で最高性能 |
 
-他のAIモデルとの比較については、[Gemini APIモデルティアベンチマークガイド](/ja/blog/ja/gemini-api-model-tier-benchmark-guide-2026)で最新のクロスモデル性能データを確認できます。
+他のAIモデルとの比較については、[Gemini APIモデルティアベンチマークガイド](/ja/blog/ja/gemini-api-model-tier-benchmark-guide-2026/)で最新のクロスモデル性能データを確認できます。
 
 ### Vending-Bench Arena：戦略的思考能力
 
@@ -165,7 +165,7 @@ Anthropicは、Sonnet 4.5からのマイグレーション時に<strong>思考�
 
 ### モデル選択ガイド
 
-- <strong>Opus 4.6</strong>：最深層の推論が必要な場合（コードベースリファクタリング、[マルチエージェントワークフロー](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026)）
+- <strong>Opus 4.6</strong>：最深層の推論が必要な場合（コードベースリファクタリング、[マルチエージェントワークフロー](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026/)）
 - <strong>Sonnet 4.6</strong>：ほとんどのプロダクションタスク（コーディング、ドキュメント分析、エージェントタスク）
 - API識別子：`claude-sonnet-4-6`
 

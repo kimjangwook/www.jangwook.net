@@ -113,7 +113,7 @@ First, `streamText()` + `useChat()` gets server-to-client streaming wired up in 
 
 The downsides: it's optimized for Vercel's platform, which creates friction in other deployment environments. When you need fine-grained control over the agent loop, you lose some flexibility compared to the Anthropic SDK directly. More on that later.
 
-[Compared to building directly with Claude Managed Agents](/en/blog/en/claude-managed-agents-production-deployment-guide), Managed Agents are easier to start without infrastructure but hit customization ceilings quickly. Vercel AI SDK sits between the two — more abstracted than raw SDK, more controllable than Managed Agents.
+[Compared to building directly with Claude Managed Agents](/en/blog/en/claude-managed-agents-production-deployment-guide/), Managed Agents are easier to start without infrastructure but hit customization ceilings quickly. Vercel AI SDK sits between the two — more abstracted than raw SDK, more controllable than Managed Agents.
 
 ## Environment Setup
 
@@ -319,7 +319,7 @@ export async function POST(req: Request) {
 
 `maxSteps: 5` matters. Without it, Claude receives tool results but doesn't loop back to generate another response. The SDK handles this loop automatically — `maxSteps` caps the maximum iterations.
 
-[The pattern of agents combining multiple tools to solve problems](/en/blog/en/ai-agent-collaboration-patterns) depends heavily on `maxSteps` and the quality of each tool's `description`. Vague descriptions mean Claude can't decide when to use which tool. I had an early version where weather and todos were getting mixed up — adding explicit usage scenarios to the system prompt fixed it.
+[The pattern of agents combining multiple tools to solve problems](/en/blog/en/ai-agent-collaboration-patterns/) depends heavily on `maxSteps` and the quality of each tool's `description`. Vague descriptions mean Claude can't decide when to use which tool. I had an early version where weather and todos were getting mixed up — adding explicit usage scenarios to the system prompt fixed it.
 
 Real-time tool call progress in the frontend:
 
@@ -386,7 +386,7 @@ The response comes back as a type-safe object matching the Zod schema. No JSON p
 
 This pattern works well for: automated blog post tagging, user input classification, structured information extraction from documents, and form auto-completion.
 
-I'm using a similar pattern for this blog's category score extraction. Writing good `describe()` text on Zod schema fields is the key to better output quality. [Good context engineering](/en/blog/en/context-engineering-production-ai-agents) means schema design and prompt quality determine 80% of extraction accuracy.
+I'm using a similar pattern for this blog's category score extraction. Writing good `describe()` text on Zod schema fields is the key to better output quality. [Good context engineering](/en/blog/en/context-engineering-production-ai-agents/) means schema design and prompt quality determine 80% of extraction accuracy.
 
 `streamObject()` is also available — useful when you want fields in a large schema to appear progressively in the UI without waiting for the full response.
 
@@ -409,7 +409,7 @@ For most cases, setting `runtime = 'nodejs'` is the practical choice.
 
 Vercel's free tier serverless function timeout is 10 seconds. Long Claude outputs or complex tool loops can exceed this. Pro tier raises it to 60 seconds.
 
-For longer-running tasks, the architecture needs to change. [Building a separate MCP server to offload long-running work](/en/blog/en/mcp-server-build-practical-guide-2026) is one approach.
+For longer-running tasks, the architecture needs to change. [Building a separate MCP server to offload long-running work](/en/blog/en/mcp-server-build-practical-guide-2026/) is one approach.
 
 <strong>Context Accumulation Cost</strong>
 

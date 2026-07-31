@@ -362,7 +362,7 @@ jobs:
         run: uv run pytest
 ```
 
-官方提供了`astral-sh/setup-uv` action，自动处理CI缓存。用Python构建MCP服务器时也可以直接套用这个CI模式。先用`uv add fastmcp`添加依赖（详见[FastMCP服务器构建指南](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)），再在GitHub Actions中用`uv sync`安装。
+官方提供了`astral-sh/setup-uv` action，自动处理CI缓存。用Python构建MCP服务器时也可以直接套用这个CI模式。先用`uv add fastmcp`添加依赖（详见[FastMCP服务器构建指南](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)），再在GitHub Actions中用`uv sync`安装。
 
 ## 用uv tool管理CLI工具
 
@@ -482,7 +482,7 @@ uv remove openai
 
 - 依赖 torch、CUDA、tensorflow 等从 conda 频道构建的二进制的深度学习项目。uv 基于 PyPI，无法直接触及这一层。如果核心就是匹配 CUDA 版本，conda（或 conda 与 uv 并用）才是现实路径。
 
-一句话总结：**调用 API 的代理/后端类 Python 项目，从 uv 起步；深度绑定 GPU 二进制的 ML 训练项目，从 conda 起步。** 库选型的视角我在[Python AI 代理库对比](/zh/blog/zh/python-ai-agent-library-comparison-2026)里讲得更细，而构建类型安全代理时的依赖选择，可以参考[Pydantic AI 类型安全代理教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)。
+一句话总结：**调用 API 的代理/后端类 Python 项目，从 uv 起步；深度绑定 GPU 二进制的 ML 训练项目，从 conda 起步。** 库选型的视角我在[Python AI 代理库对比](/zh/blog/zh/python-ai-agent-library-comparison-2026/)里讲得更细，而构建类型安全代理时的依赖选择，可以参考[Pydantic AI 类型安全代理教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)。
 
 ## 坦率地说，uv还有几处帮不上忙
 
@@ -542,4 +542,4 @@ uv self update
 - [在 GitHub Actions 中使用 uv](https://docs.astral.sh/uv/guides/integration/github/) — CI 集成与 `astral-sh/setup-uv` action
 - [Astral 官方文档中心](https://docs.astral.sh/) — uv、Ruff、ty 背后 Astral 团队的文档集
 
-用 uv 把环境理顺之后，下一个自然的步骤是本地可观测性。如何在你刚搭好的环境之上接入 LLM 链路追踪，[Langfuse v3 自托管完整指南](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026)正好接着这一步展开。
+用 uv 把环境理顺之后，下一个自然的步骤是本地可观测性。如何在你刚搭好的环境之上接入 LLM 链路追踪，[Langfuse v3 自托管完整指南](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026/)正好接着这一步展开。

@@ -128,7 +128,7 @@ TaskCreate: 1,276 次
 
 ### 2. 自定义斜杠命令的活用
 
-创建像 `/write-post` 这样的自定义斜杠命令来自动化重复任务也获得了高度评价。撰写一篇博客文章需要调研 → 韩语撰写 → 3 种语言翻译 → 图片生成 → 元数据更新等 10 个以上的步骤，而将这些编码为一个命令是一个显著的优势。[EffiFlow Part 2：技能自动发现与58%令牌缓存节省](/zh/blog/zh/effiflow-automation-analysis-part2)展示了这种命令结构如何转化为缓存效率的提升。
+创建像 `/write-post` 这样的自定义斜杠命令来自动化重复任务也获得了高度评价。撰写一篇博客文章需要调研 → 韩语撰写 → 3 种语言翻译 → 图片生成 → 元数据更新等 10 个以上的步骤，而将这些编码为一个命令是一个显著的优势。[EffiFlow Part 2：技能自动发现与58%令牌缓存节省](/zh/blog/zh/effiflow-automation-analysis-part2/)展示了这种命令结构如何转化为缓存效率的提升。
 
 > "将复杂的多步骤内容生成转换为可重复的单命令操作"
 > — /insights 分析结果
@@ -324,7 +324,7 @@ graph TD
 - <strong>把数值当作绝对标准时</strong>：会话分类、满意度等定性评估是辅助模型估算出的值。把它当作确定方向的参考即可，不要把一次结果当成绩效评价。
 - <strong>个人信息敏感的环境</strong>：报告会读取本地使用记录。在共享屏幕上展示或分享截图时，要注意项目路径和文件名可能会原样暴露。
 
-如果你经常使用并行会话，结合[用 Git Worktree 运行 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)一起阅读，就能进一步看到如何通过拆分会话来解决上下文限制导致中断的具体做法。
+如果你经常使用并行会话，结合[用 Git Worktree 运行 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)一起阅读，就能进一步看到如何通过拆分会话来解决上下文限制导致中断的具体做法。
 
 ## 推荐给其他开发者的原因
 
@@ -357,6 +357,6 @@ Claude Code `/insights` 不仅仅是一个统计功能。它更像一个<strong>
 
 ### 推荐一并阅读
 
-- [Claude Code 代理团队组建指南](/zh/blog/zh/claude-agent-teams-guide)
-- [用 Git Worktree 运行 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)
-- [EffiFlow Part 2：Skills 自动发现与节省 Token 的缓存](/zh/blog/zh/effiflow-automation-analysis-part2)
+- [Claude Code 代理团队组建指南](/zh/blog/zh/claude-agent-teams-guide/)
+- [用 Git Worktree 运行 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)
+- [EffiFlow Part 2：Skills 自动发现与节省 Token 的缓存](/zh/blog/zh/effiflow-automation-analysis-part2/)

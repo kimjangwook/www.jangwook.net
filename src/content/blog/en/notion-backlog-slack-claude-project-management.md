@@ -74,7 +74,7 @@ This guide introduces a powerful four-tool ecosystem that addresses every aspect
 - <strong>Slack</strong>: Real-time collaboration and notifications
 - <strong>Claude Code</strong>: AI-powered development assistance
 
-Claude Code's Hook system can automate code review and linting directly in your workflow. See [Claude Code Hook: Building an Automated Code Review System](/en/blog/en/claude-code-hooks-workflow) for a practical setup guide.
+Claude Code's Hook system can automate code review and linting directly in your workflow. See [Claude Code Hook: Building an Automated Code Review System](/en/blog/en/claude-code-hooks-workflow/) for a practical setup guide.
 
 When properly integrated, this stack can reduce tool-switching time by <strong>50%</strong>, increase sprint velocity by <strong>30%</strong>, and boost on-time delivery rates to over <strong>80%</strong>.
 
@@ -82,7 +82,7 @@ When properly integrated, this stack can reduce tool-switching time by <strong>5
 
 ### Notion: Strategic Planning Hub
 
-Notion serves as the single source of truth for strategic planning, project documentation, and organizational knowledge. Its database-centric architecture makes it ideal for managing high-level project information. For advanced automation pipelines connecting Notion API with AI agents, check out [Building AI Agent Systems: Automation Pipeline with Notion API MCP and Claude Code](/en/blog/en/ai-agent-notion-mcp-automation).
+Notion serves as the single source of truth for strategic planning, project documentation, and organizational knowledge. Its database-centric architecture makes it ideal for managing high-level project information. For advanced automation pipelines connecting Notion API with AI agents, check out [Building AI Agent Systems: Automation Pipeline with Notion API MCP and Claude Code](/en/blog/en/ai-agent-notion-mcp-automation/).
 
 <strong>Key Capabilities</strong>:
 - Multi-view databases (table, board, calendar, gallery)

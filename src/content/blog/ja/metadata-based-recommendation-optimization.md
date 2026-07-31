@@ -59,7 +59,7 @@ relatedPosts:
 
 ## はじめに：コストの雪だるま
 
-ブログに[関連記事推薦機能](/ja/blog/ja/ai-content-recommendation-system)を追加する際に始まった旅でした。最初は簡単だと思っていました。「LLMに記事の内容を見せて、類似した記事を探してもらえばいいだろう。」しかし、13記事の推薦を生成するのに<strong>78,000トークン</strong>が消費され、<strong>2.7分</strong>かかりました。
+ブログに[関連記事推薦機能](/ja/blog/ja/ai-content-recommendation-system/)を追加する際に始まった旅でした。最初は簡単だと思っていました。「LLMに記事の内容を見せて、類似した記事を探してもらえばいいだろう。」しかし、13記事の推薦を生成するのに<strong>78,000トークン</strong>が消費され、<strong>2.7分</strong>かかりました。
 
 記事が30に増えたら？180,000トークン、約6.5分。100になったら？ほぼ600,000トークンで20分以上。スケーラビリティのないシステムでした。
 
@@ -411,7 +411,7 @@ graph LR
 - 高速レスポンスが重要な場合
 - <strong>コスト最小化が必須の場合</strong>
 
-私たちの推薦システムは[AIエージェント協調パターン](/ja/blog/ja/ai-agent-collaboration-patterns)の役割分離原則と同じ考え方から出発しています：
+私たちの推薦システムは[AIエージェント協調パターン](/ja/blog/ja/ai-agent-collaboration-patterns/)の役割分離原則と同じ考え方から出発しています：
 1. <strong>分析（LLM）</strong>: 非構造化テキスト → 構造化メタデータ
 2. <strong>推薦（アルゴリズム）</strong>: 構造化メタデータ → 類似度スコア
 
@@ -611,9 +611,9 @@ LLMは素晴らしいです。しかし、すべての問題がLLMを必要と�
 ---
 
 <strong>関連記事：</strong>
-- [Claude LLMで構築する知能型コンテンツ推薦システム](/ja/blog/ja/ai-content-recommendation-system) - 初期LLMベース推薦システム構築
-- [LLMとClaude Codeを活用したブログ自動化](/ja/blog/ja/llm-blog-automation) - ブログ自動化全体システム
-- [Claude Code Best Practices](/ja/blog/ja/claude-code-best-practices) - AI開発生産性最適化
+- [Claude LLMで構築する知能型コンテンツ推薦システム](/ja/blog/ja/ai-content-recommendation-system/) - 初期LLMベース推薦システム構築
+- [LLMとClaude Codeを活用したブログ自動化](/ja/blog/ja/llm-blog-automation/) - ブログ自動化全体システム
+- [Claude Code Best Practices](/ja/blog/ja/claude-code-best-practices/) - AI開発生産性最適化
 
 <strong>参考資料：</strong>
 - [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index)

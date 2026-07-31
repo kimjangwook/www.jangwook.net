@@ -76,7 +76,7 @@ relatedPosts:
 
 ### LLM을 활용한 합성 소비자의 등장
 
-LLM은 다양한 인구통계학적 특성을 가진 '합성 소비자'를 시뮬레이션할 수 있는 가능성을 제시했다. [AI 에이전트에 성별·연령 등 페르소나를 부여했을 때 어떤 심리적 효과가 나타나는지](/ko/blog/ko/ai-agent-persona-analysis)는 120개 이상의 연구로 검증된 주제이며, 합성 소비자 프로파일 설계에도 같은 원리가 적용된다. 하지만 초기 연구들은 중요한 문제에 직면했다:
+LLM은 다양한 인구통계학적 특성을 가진 '합성 소비자'를 시뮬레이션할 수 있는 가능성을 제시했다. [AI 에이전트에 성별·연령 등 페르소나를 부여했을 때 어떤 심리적 효과가 나타나는지](/ko/blog/ko/ai-agent-persona-analysis/)는 120개 이상의 연구로 검증된 주제이며, 합성 소비자 프로파일 설계에도 같은 원리가 적용된다. 하지만 초기 연구들은 중요한 문제에 직면했다:
 
 <strong>직접적인 수치 평가 요청 시 문제점</strong>:
 - LLM에게 "1부터 5까지 중 하나를 선택하세요"라고 직접 물으면
@@ -222,7 +222,7 @@ print(f"주요 구매 동기: {results.top_reasons}")
 - <strong>버전 A</strong>: "친환경 대나무 칫솔"
 - <strong>버전 B</strong>: "지속가능한 미래를 위한 대나무 칫솔"
 
-수천 명의 합성 소비자로 테스트하여 어떤 메시지가 더 효과적인지 즉시 확인 가능하다. 이 규모의 LLM 호출을 효율적으로 처리하려면 [Anthropic Message Batches API](/ko/blog/ko/anthropic-message-batches-api-production-guide)를 활용해 요청을 배치로 묶으면 비용을 최대 50% 절감할 수 있다.
+수천 명의 합성 소비자로 테스트하여 어떤 메시지가 더 효과적인지 즉시 확인 가능하다. 이 규모의 LLM 호출을 효율적으로 처리하려면 [Anthropic Message Batches API](/ko/blog/ko/anthropic-message-batches-api-production-guide/)를 활용해 요청을 배치로 묶으면 비용을 최대 50% 절감할 수 있다.
 
 ### 3. 세분화된 타겟 분석
 
@@ -257,7 +257,7 @@ LLM 자체가 가진 편향성이 합성 소비자 응답에도 반영될 수 �
 
 SSR과 같은 기술이 성숙해지면:
 
-1. <strong>비용 절감</strong>: 기존 조사 비용의 10% 이하로 대규모 조사 가능([Claude API Prompt Caching](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide) 적용 시 반복 LLM 호출 비용 추가 70% 절감)
+1. <strong>비용 절감</strong>: 기존 조사 비용의 10% 이하로 대규모 조사 가능([Claude API Prompt Caching](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide/) 적용 시 반복 LLM 호출 비용 추가 70% 절감)
 2. <strong>속도 향상</strong>: 몇 주가 걸리던 조사를 몇 시간 내에 완료
 3. <strong>규모 확대</strong>: 수백 명이 아닌 수만 명의 합성 응답자로 테스트
 4. <strong>반복 실험</strong>: 빠른 반복을 통한 제품 최적화

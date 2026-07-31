@@ -44,11 +44,11 @@ faq:
 
 > <strong>Series: DeNA LLM Study</strong> (1/5)
 >
-> 1. <strong>[Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)</strong> ← Current Article
+> 1. <strong>[Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals/)</strong> ← Current Article
 > 2. Part 2: Structured Output and Multi-LLM Pipelines
-> 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag)
-> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design)
+> 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag/)
+> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design/)
 
 ## Who This Is For / When to Skip Ahead
 
@@ -63,8 +63,8 @@ This is a fundamentals piece, so it isn't equally useful to everyone. Adjust how
 
 <strong>You can skip ahead if you</strong>
 
-- Can already explain Transformers, Next Token Prediction, and RLHF. Skim this one as review and jump to Part 2 on structured output, or to [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag) if retrieval is what you care about.
-- Are designing tool-using agents rather than single calls. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design) speaks to that directly.
+- Can already explain Transformers, Next Token Prediction, and RLHF. Skim this one as review and jump to Part 2 on structured output, or to [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag/) if retrieval is what you care about.
+- Are designing tool-using agents rather than single calls. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design/) speaks to that directly.
 - Want to dig into how models are actually trained. Part 3 on training methodology fits better than this basic comparison.
 
 In short: read this when you want to draw the concept map once. If you already have the map, jump to the part you need.

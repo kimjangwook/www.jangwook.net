@@ -50,7 +50,7 @@ RAG（Retrieval-Augmented Generation）パイプラインでは、ベクター�
 
 もう一つ、ベクターDBは単なるストレージ以上の設計判断だ。どのDBを使うかによってインフラ構成、デプロイの複雑さ、運用コスト、そして後でデータを移すマイグレーションの難易度が変わる。
 
-RAGアーキテクチャ全体の設計を先に把握しておくと、この比較がより文脈をもって読める。[RAGアーキテクチャの全体像](/ja/blog/ja/dena-llm-study-part4-rag)を確認してからここに戻ってくるのもいい。
+RAGアーキテクチャ全体の設計を先に把握しておくと、この比較がより文脈をもって読める。[RAGアーキテクチャの全体像](/ja/blog/ja/dena-llm-study-part4-rag/)を確認してからここに戻ってくるのもいい。
 
 ## ChromaDB: 5分でセットアップ、でもプロダクションは?
 
@@ -87,7 +87,7 @@ APIが直感的だ。`add`、`query`、`delete`の3つで基本機能は揃う�
 
 インメモリモードがデフォルトなのでテストが速い。`chromadb.PersistentClient(path="./db")`でローカルファイル保存も簡単だ。クライアント-サーバーモードも対応していて、`chromadb.HttpClient(host="localhost")`に切り替えるだけでいい。
 
-[LangChain・LlamaIndex・Haystack RAGフレームワーク比較](/ja/blog/ja/llamaindex-vs-langchain-vs-haystack-rag-2026)を見るとわかるように、PythonエコシステムとのインテグレーションはChromaDBが最も成熟している。参考資料も多く、詰まってもStack OverflowやGitHub Issuesですぐ解決できる。
+[LangChain・LlamaIndex・Haystack RAGフレームワーク比較](/ja/blog/ja/llamaindex-vs-langchain-vs-haystack-rag-2026/)を見るとわかるように、PythonエコシステムとのインテグレーションはChromaDBが最も成熟している。参考資料も多く、詰まってもStack OverflowやGitHub Issuesですぐ解決できる。
 
 ### ChromaDBの限界、正直に言うと
 
@@ -216,7 +216,7 @@ cur.execute(
 以下の環境で計測した結果だ。
 
 - **ベクター数**: 1,000件
-- **次元数(dim)**: 384（[sentence-transformers](/ja/blog/ja/sentence-transformers-korean-rag-embedding-guide-2026)基準）
+- **次元数(dim)**: 384（[sentence-transformers](/ja/blog/ja/sentence-transformers-korean-rag-embedding-guide-2026/)基準）
 - **クエリ繰り返し**: 50回
 - **ハードウェア**: MacBook Pro M2、ローカル実行
 - **ChromaDB**: インメモリモード
@@ -387,6 +387,6 @@ pgvector: numpy近似で1〜3ms（実際の環境は+10〜50msのネットワー
 
 ChromaDBはプロトタイプでは依然1番手だ。`pip install chromadb`一行で始められる手軽さは圧倒的だ。ただしプロダクション移行のタイミングでは、Qdrantを真剣に検討すべきだ。
 
-ベクターDBを選んだ次のステップは、それを包むAIエージェントライブラリの選択だ。[Python AIエージェントライブラリ比較ガイド](/ja/blog/ja/python-ai-agent-library-comparison-2026)でその判断を続けることができる。
+ベクターDBを選んだ次のステップは、それを包むAIエージェントライブラリの選択だ。[Python AIエージェントライブラリ比較ガイド](/ja/blog/ja/python-ai-agent-library-comparison-2026/)でその判断を続けることができる。
 
 結局「どのDBが最高か」は意味のない質問だ。自分のスケール、チームの能力、既存インフラ、そしてどれだけ早く始める必要があるかによって答えが変わる。この記事の数字がその判断に具体的な根拠を一つ追加できれば十分だ。

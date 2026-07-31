@@ -49,7 +49,7 @@ faq:
 
 ## Bun Shell是什么，为什么现在值得关注
 
-Bun是JavaScript运行时，同时也是包管理器、打包工具和测试运行器。整个项目的目标是把碎片化的生态系统整合成一个工具。[就像Python的uv整合了pip、pyenv和poetry一样](/zh/blog/zh/uv-python-ai-development-setup-guide-2026)，Bun把npm/yarn/pnpm加测试运行器加打包工具合并成了一个。
+Bun是JavaScript运行时，同时也是包管理器、打包工具和测试运行器。整个项目的目标是把碎片化的生态系统整合成一个工具。[就像Python的uv整合了pip、pyenv和poetry一样](/zh/blog/zh/uv-python-ai-development-setup-guide-2026/)，Bun把npm/yarn/pnpm加测试运行器加打包工具合并成了一个。
 
 Bun Shell是这种整合哲学在shell脚本领域的延伸。安装`bun`之后，不需要额外配置，就可以在TypeScript内用`$`模板字面量直接执行shell命令。
 
@@ -357,7 +357,7 @@ await $`printf "apple\nbanana\ncherry\n" | sort`;
 - 已有复杂bash脚本，Bun Shell的兼容性不确定。
 - `zx`已经运行良好，团队也很熟悉。
 
-我不认同"Bun Shell比zx更好"这种说法。从生态成熟度和下载量来看，zx更占优。Bun Shell是"用Bun的人的自然选择"，而不是"所有项目都应该弃用zx"。如果你还在纠结运行时本身怎么选，我在[Deno 2、Bun与Node.js对比一文](/zh/blog/zh/deno-2-vs-bun-nodejs-runtime-2026-comparison)里更深入地讲了这个取舍，定工具之前值得一读。
+我不认同"Bun Shell比zx更好"这种说法。从生态成熟度和下载量来看，zx更占优。Bun Shell是"用Bun的人的自然选择"，而不是"所有项目都应该弃用zx"。如果你还在纠结运行时本身怎么选，我在[Deno 2、Bun与Node.js对比一文](/zh/blog/zh/deno-2-vs-bun-nodejs-runtime-2026-comparison/)里更深入地讲了这个取舍，定工具之前值得一读。
 
 还有一点，`.stdin()` API尚不稳定让我觉得遗憾。一旦稳定下来，基于stdin的管道处理会简洁很多，现在还需要绕路。
 
@@ -417,7 +417,7 @@ if (result.exitCode !== 0) {
 
 实际安装运行之后，Bun Shell的开发体验比我想象的好。变量自动转义、`.nothrow()`模式、`.lines()`这样的便利方法，这些细节设计在zx里也见不到。
 
-不过目前仍是1.x版本，部分API还不稳定。在生产CI/CD脚本中使用之前，建议在实际环境中充分验证。与[Claude Code hooks等自动化流水线](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)集成时也同样如此。
+不过目前仍是1.x版本，部分API还不稳定。在生产CI/CD脚本中使用之前，建议在实际环境中充分验证。与[Claude Code hooks等自动化流水线](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent/)集成时也同样如此。
 
 Bun在快速发展，Shell API也会逐渐稳定。现在没有迫切需要放弃zx的理由，但新的Bun项目不妨先试试内置shell。
 

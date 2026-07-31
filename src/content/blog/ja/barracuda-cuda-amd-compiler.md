@@ -51,7 +51,7 @@ relatedPosts:
 
 ## 概要
 
-GPUコンピューティングの世界で、NVIDIAのCUDAは事実上の標準です。しかし、これは同時に<strong>ベンダーロックイン</strong>を意味します。CUDAで書かれたコードはNVIDIA GPUでしか実行できませんでした。[NVIDIA DGX SparkのCUDA互換性問題](/ja/blog/ja/nvidia-dgx-spark-cuda-compatibility)が示すように、このハードウェア依存性の現実は深刻です。
+GPUコンピューティングの世界で、NVIDIAのCUDAは事実上の標準です。しかし、これは同時に<strong>ベンダーロックイン</strong>を意味します。CUDAで書かれたコードはNVIDIA GPUでしか実行できませんでした。[NVIDIA DGX SparkのCUDA互換性問題](/ja/blog/ja/nvidia-dgx-spark-cuda-compatibility/)が示すように、このハードウェア依存性の現実は深刻です。
 
 <strong>BarraCUDA</strong>は、この壁を打ち破るために生まれたオープンソースコンパイラです。`.cu`ファイルを受け取り、AMD RDNA 3（GFX11）マシンコードに直接コンパイルします。LLVM依存なし、15,000行のC99で書かれており、HIP変換レイヤーも不要です。
 
@@ -127,7 +127,7 @@ BarraCUDAの登場は、単なる技術的成果を超え、GPUエコシステ�
 
 ### NVIDIA独占への挑戦
 
-現在のGPUコンピューティング市場におけるCUDAの地位は絶対的です。AI/MLワークロードの大半がCUDAベースであり、NVIDIA GPUなしでは実行が不可能でした。[GPT-4oの引退から見えたモデル依存リスク](/ja/blog/ja/gpt4o-retirement-model-dependency-risk)と同様に、特定の技術への過度な依存は長期的に大きなリスクをもたらします。BarraCUDAはこの構図に亀裂を入れます。
+現在のGPUコンピューティング市場におけるCUDAの地位は絶対的です。AI/MLワークロードの大半がCUDAベースであり、NVIDIA GPUなしでは実行が不可能でした。[GPT-4oの引退から見えたモデル依存リスク](/ja/blog/ja/gpt4o-retirement-model-dependency-risk/)と同様に、特定の技術への過度な依存は長期的に大きなリスクをもたらします。BarraCUDAはこの構図に亀裂を入れます。
 
 ### AMD GPU活用の可能性拡大
 
@@ -135,7 +135,7 @@ AMDのROCm/HIPエコシステムは成長していますが、既存のCUDAコ�
 
 ### オープンソースの力
 
-15,000行のC99でCUDAコンパイラを実装したという事実自体が、オープンソースコミュニティの実力を示しています。Hacker Newsで66ポイントを記録し、開発者コミュニティの注目を集めました。[AIが作成したCコンパイラCCCとGCCの比較](/ja/blog/ja/ccc-vs-gcc-ai-compiled-c-compiler)からも分かるように、小規模なオープンソースコンパイラが注目される時代です。
+15,000行のC99でCUDAコンパイラを実装したという事実自体が、オープンソースコミュニティの実力を示しています。Hacker Newsで66ポイントを記録し、開発者コミュニティの注目を集めました。[AIが作成したCコンパイラCCCとGCCの比較](/ja/blog/ja/ccc-vs-gcc-ai-compiled-c-compiler/)からも分かるように、小規模なオープンソースコンパイラが注目される時代です。
 
 ## 現在の制限と展望
 

@@ -296,7 +296,7 @@ Input validation (required field present): True
 Input validation (missing required field): False — Missing required field: location
 ```
 
-The error classification strategy from the [FastAPI + Claude API streaming guide](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026) applies here too. Categorize tool errors as retryable versus non-retryable for better production stability.
+The error classification strategy from the [FastAPI + Claude API streaming guide](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026/) applies here too. Categorize tool errors as retryable versus non-retryable for better production stability.
 
 ## Handling Multiple Tool Calls: Can We Run in Parallel?
 
@@ -502,7 +502,7 @@ Here's what I find genuinely frustrating about Tool Use in practice.
 
 <strong>Description quality is everything</strong>: Vague `description` → wrong tool selection or no tool use at all. Writing good tool descriptions is its own prompt engineering discipline. No framework solves this for you.
 
-I think Tool Use is underappreciated. Agent frameworks offer impressive abstractions, but this pattern is what's running underneath all of them. [PydanticAI's type-safe tool definitions](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) are a convenient layer that auto-generates the JSON schema, but understanding the underlying mechanism is what gets you unstuck when things break.
+I think Tool Use is underappreciated. Agent frameworks offer impressive abstractions, but this pattern is what's running underneath all of them. [PydanticAI's type-safe tool definitions](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) are a convenient layer that auto-generates the JSON schema, but understanding the underlying mechanism is what gets you unstuck when things break.
 
 ## When to Use Tool Use, and When to Avoid It
 
@@ -522,7 +522,7 @@ Here's the decision rule I landed on after building with it. You don't need to b
 - High-volume batches under a tight cost ceiling. The ~250-token fixed overhead per tool definition and the accumulating context multiply across every call. For millions of records, a single tool-free call can be cheaper.
 - Pipelines that require determinism. Tool selection itself is non-deterministic. If your workflow needs the exact same call sequence every time, rule-based code beats it.
 
-The test is simple. Ask yourself whether the model would get it wrong by answering directly, or whether it needs to fetch something it doesn't know. Either one points to Tool Use; otherwise a plain call is fine. The point where you graduate to heavier multi-agent orchestration is when you [compose multiple agents with Claude Agent Teams](/en/blog/en/claude-agent-teams-guide), but nail single-agent Tool Use first.
+The test is simple. Ask yourself whether the model would get it wrong by answering directly, or whether it needs to fetch something it doesn't know. Either one points to Tool Use; otherwise a plain call is fine. The point where you graduate to heavier multi-agent orchestration is when you [compose multiple agents with Claude Agent Teams](/en/blog/en/claude-agent-teams-guide/), but nail single-agent Tool Use first.
 
 ## Official Sources I Relied On
 
@@ -533,7 +533,7 @@ Every pattern in this post was validated against Anthropic's official docs. Prim
 - [Claude Agent SDK overview](https://platform.claude.com/docs/en/agent-sdk/overview): the higher layer that abstracts the tool loop instead of hand-rolling it.
 - [anthropic/claude-agent-sdk-python (GitHub)](https://github.com/anthropics/claude-agent-sdk-python): the official Python SDK repo with runnable example code.
 
-If you want to package tools as a reusable server over MCP, [building a Python MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026) covers the next step: putting this Tool Use pattern on a standard protocol.
+If you want to package tools as a reusable server over MCP, [building a Python MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/) covers the next step: putting this Tool Use pattern on a standard protocol.
 
 ## The Five Things That Matter
 

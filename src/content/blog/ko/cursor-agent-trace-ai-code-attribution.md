@@ -66,7 +66,7 @@ Agent Trace는 버전 관리되는 코드베이스에서 <strong>AI 기여와 �
 
 <strong>4가지 기여자 유형 분류</strong>: `human`(인간 직접 작성), `ai`(AI 생성), `mixed`(인간이 AI 출력을 편집하거나 그 반대), `unknown`(출처 불명)으로 분류한다.
 
-<strong>벤더 중립적 설계</strong>: Cursor, Copilot, [Claude Code](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026) 등 어떤 도구에서든 동일한 포맷으로 기록할 수 있다.
+<strong>벤더 중립적 설계</strong>: Cursor, Copilot, [Claude Code](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026/) 등 어떤 도구에서든 동일한 포맷으로 기록할 수 있다.
 
 <strong>저장소 비종속</strong>: 로컬 파일, git notes, 데이터베이스 등 원하는 어디에나 저장할 수 있다.
 
@@ -168,7 +168,7 @@ AI 도구 활용률이 높다고 해서 생산성이 높은 것은 아니다. Ag
 
 ### 3. 컴플라이언스와 감사 대응
 
-금융, 의료, 방산 등 규제 산업에서는 코드의 출처를 명확히 해야 하는 요구사항이 늘어나고 있다([NIST AI 에이전트 보안 표준](/ko/blog/ko/nist-ai-agent-security-standards) 참조). Agent Trace는 다음에 도움된다.
+금융, 의료, 방산 등 규제 산업에서는 코드의 출처를 명확히 해야 하는 요구사항이 늘어나고 있다([NIST AI 에이전트 보안 표준](/ko/blog/ko/nist-ai-agent-security-standards/) 참조). Agent Trace는 다음에 도움된다.
 
 <strong>감사 추적(Audit Trail)</strong>: 코드의 AI 기여 비율을 정량적으로 보고할 수 있다.
 
@@ -256,7 +256,7 @@ graph TD
     실행환경 --> 추적감사
 ```
 
-Agent Trace는 이 생태계에서 <strong>"실행 후(post-execution)"</strong> 단계를 담당한다. 에이전트가 [정의되고(ADL/AGENTS.md)](/ko/blog/ko/adl-agent-definition-language-governance), 통신하고(MCP/Open Responses), 실행한(Skills) 후의 결과물을 추적하는 역할이다.
+Agent Trace는 이 생태계에서 <strong>"실행 후(post-execution)"</strong> 단계를 담당한다. 에이전트가 [정의되고(ADL/AGENTS.md)](/ko/blog/ko/adl-agent-definition-language-governance/), 통신하고(MCP/Open Responses), 실행한(Skills) 후의 결과물을 추적하는 역할이다.
 
 ## 현재 한계와 미해결 과제
 

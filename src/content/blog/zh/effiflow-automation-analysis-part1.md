@@ -46,14 +46,14 @@ faq:
 
 > <strong>系列指南</strong>：本文是"EffiFlow 自动化架构分析/评估与改进"系列的第 1/3 部分。
 > - <strong>第 1 部分</strong>（当前）：核心架构与指标分析
-> - [第 2 部分](/zh/blog/zh/effiflow-automation-analysis-part2)：Skills 与 Commands 整合策略
+> - [第 2 部分](/zh/blog/zh/effiflow-automation-analysis-part2/)：Skills 与 Commands 整合策略
 > - 第 3 部分：实战改进案例及 ROI 分析
 
 ## 每跑一次推荐，就烧掉 9 万 Token
 
 博客自动化系统跑了快一年，有件事一直让我放不下：这套东西，还能不能再瘦一点？于是我花了 7.5 小时，把 `.claude/` 目录下的文件挨个翻了一遍。一共 28 个，其中 17 个 Agents、4 个 Skills、7 个 Commands。数字看着不起眼，可一旦真去追踪 Token 用量，漏的地方比想象中多得多。这里说的 Agents、Skills、Commands 各自是什么，可以在 [Claude Code 官方文档](https://code.claude.com/docs/en/overview)中查阅。
 
-这次分析其实也是之前那篇[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)的延续。我把那里讲过的协作结构，这回换成成本的角度重新审视了一遍。
+这次分析其实也是之前那篇[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement/)的延续。我把那里讲过的协作结构，这回换成成本的角度重新审视了一遍。
 
 分析结果令人惊喜：
 - <strong>节省 60〜70% Token</strong> 的元数据优先架构
@@ -523,7 +523,7 @@ def test_generate_slug():
 - 只运营一种语言，SEO 元数据手动管理也够用。那只会平白多扛一层复杂度。
 - 团队里没人能维护这套系统。智能体定义一变，总得有人来调试。在算成本之前，先掂量运维负担。
 
-简单说，自动化的盈亏平衡点是"频率 × 重复性 × 语言数量"。三项里有两项偏高，就值得做；有两项偏低，就先放一放。类似的取舍我在[AI 智能体的成本真相](/zh/blog/zh/ai-agent-cost-reality)里也聊过，正在做决定的话可以一并参考。
+简单说，自动化的盈亏平衡点是"频率 × 重复性 × 语言数量"。三项里有两项偏高，就值得做；有两项偏低，就先放一放。类似的取舍我在[AI 智能体的成本真相](/zh/blog/zh/ai-agent-cost-reality/)里也聊过，正在做决定的话可以一并参考。
 
 ## 实战应用指南
 

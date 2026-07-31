@@ -83,7 +83,7 @@ MCP의 핵심 구성 요소는 다음과 같다:
 - <strong>Resources</strong>: AI가 읽을 수 있는 구조화된 데이터
 - <strong>Prompts</strong>: 사전 정의된 프롬프트 템플릿
 
-MCP 서버를 직접 구현해보고 싶다면 [MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기](/ko/blog/ko/mcp-server-build-practical-guide-2026)를 참고하면 된다.
+MCP 서버를 직접 구현해보고 싶다면 [MCP 서버 직접 만들기 — Streamable HTTP 트랜스포트로 실제 AI 도구 구현하기](/ko/blog/ko/mcp-server-build-practical-guide-2026/)를 참고하면 된다.
 
 ## WebMCP의 작동 원리
 
@@ -221,15 +221,15 @@ AI 에이전트 개발자는 각 사이트별 커스텀 스크래핑 로직을 �
 - <strong>Safari</strong>: Apple Intelligence와의 통합 관점에서 주목
 - <strong>Edge</strong>: Copilot과의 자연스러운 연동이 예상됨
 
-MCP가 이미 오픈 프로토콜로 설계되어 있어, 브라우저 간 호환성 확보가 비교적 용이할 것으로 보다. MCP의 오픈 표준화 과정과 엔지니어링 팀의 도입 전략은 [MCP가 오픈 표준이 되었다 — Linux Foundation 합류와 도입 로드맵](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide)에서 자세히 살펴볼 수 있다.
+MCP가 이미 오픈 프로토콜로 설계되어 있어, 브라우저 간 호환성 확보가 비교적 용이할 것으로 보다. MCP의 오픈 표준화 과정과 엔지니어링 팀의 도입 전략은 [MCP가 오픈 표준이 되었다 — Linux Foundation 합류와 도입 로드맵](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide/)에서 자세히 살펴볼 수 있다.
 
 ## 개발자가 준비해야 할 것
 
 ### 단기 (3-6개월)
 
-1. MCP 프로토콜 스펙 학습 — [로컬 LLM으로 프라이빗 MCP 서버 구축하기](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp)에서 오프라인 환경에서 MCP를 직접 실험해볼 수 있다
+1. MCP 프로토콜 스펙 학습 — [로컬 LLM으로 프라이빗 MCP 서버 구축하기](/ko/blog/ko/local-llm-private-mcp-server-gemma4-fastmcp/)에서 오프라인 환경에서 MCP를 직접 실험해볼 수 있다
 2. 자사 서비스의 AI 에이전트 활용 시나리오 도출
-3. Chrome 146 베타에서 WebMCP 실험 — 다만 그 뒤로 API 표면이 한 번 갈렸다. `provideContext`가 사라지고 `navigator.modelContext`로 재편된 경위는 [WebMCP가 오리진 트라이얼에 들어왔다](/ko/blog/ko/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026)에 정리해 두었다
+3. Chrome 146 베타에서 WebMCP 실험 — 다만 그 뒤로 API 표면이 한 번 갈렸다. `provideContext`가 사라지고 `navigator.modelContext`로 재편된 경위는 [WebMCP가 오리진 트라이얼에 들어왔다](/ko/blog/ko/webmcp-navigator-modelcontext-origin-trial-agent-tools-2026/)에 정리해 두었다
 
 ### 중기 (6-12개월)
 

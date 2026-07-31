@@ -102,7 +102,7 @@ Opus 4.8 shipped May 28. Claude Code switched it to the default on June 9 (v2.1.
 
 Anthropic calls it "a modest but tangible improvement" over 4.7 for coding and agentic tasks. Simon Willison's take was similar. In my own use, complex refactors and multi-file edits feel marginally better — fewer small mistakes — but nothing that makes me stop and notice.
 
-[The 5 agent workflow patterns for Claude Code](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) I covered earlier map directly onto what Opus 4.8's Dynamic Workflows enables.
+[The 5 agent workflow patterns for Claude Code](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/) I covered earlier map directly onto what Opus 4.8's Dynamic Workflows enables.
 
 Dynamic Workflows lets you say "turn this into a workflow" and Claude will coordinate tens to hundreds of agents in the background to handle large tasks. The headline numbers from Anthropic:
 
@@ -126,7 +126,7 @@ Now `/usage` breaks it down by category:
 - Per-plugin usage
 - Per-MCP-server usage
 
-The [Claude Code Plugins complete guide](/en/blog/en/claude-code-plugins-complete-guide) explains how a single plugin can bundle skills, hooks, and MCP servers together. The new /usage breakdown lets you see which component inside a plugin is actually consuming tokens — not just the plugin as a whole.
+The [Claude Code Plugins complete guide](/en/blog/en/claude-code-plugins-complete-guide/) explains how a single plugin can bundle skills, hooks, and MCP servers together. The new /usage breakdown lets you see which component inside a plugin is actually consuming tokens — not just the plugin as a whole.
 
 In my setup, I discovered my Google Analytics MCP server was consuming far more tokens than I expected — automatic calls on every session. Now that it's visible, I adjusted the call frequency in the MCP server config. I never would have caught that before.
 
@@ -166,7 +166,7 @@ Workflow tip: if the problem doesn't reproduce in Safe Mode, the cause is somewh
 
 ## Hooks: MCP Tool Direct Calls and MessageDisplay
 
-The [Claude Code hooks workflow](/en/blog/en/claude-code-hooks-workflow) I covered earlier got a meaningful extension in this update.
+The [Claude Code hooks workflow](/en/blog/en/claude-code-hooks-workflow/) I covered earlier got a meaningful extension in this update.
 
 <strong>MCP tool type in hooks</strong>
 

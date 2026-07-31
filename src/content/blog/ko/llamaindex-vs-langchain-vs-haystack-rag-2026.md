@@ -205,7 +205,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 - `langchain`: 1.3.4 (체인 구현체)
 - `langchain-community`: 0.4.2 (deprecated, 수백 개 통합)
 
-`langchain-core`와 `langchain` 자체는 활발히 유지보수되고 있다. [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 다뤘듯, LangChain의 생태계 크기는 여전히 압도적이다. 이 community 패키지 이슈가 전체 LangChain을 버릴 이유는 아니다.
+`langchain-core`와 `langchain` 자체는 활발히 유지보수되고 있다. [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에서 다뤘듯, LangChain의 생태계 크기는 여전히 압도적이다. 이 community 패키지 이슈가 전체 LangChain을 버릴 이유는 아니다.
 
 ### InMemory 테스트 결과
 
@@ -413,7 +413,7 @@ pip install chroma-haystack
 pip install qdrant-haystack
 ```
 
-[벡터 DB 비교 2026](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector)에서 Qdrant, ChromaDB, pgvector의 성능을 실측했는데, 어떤 프레임워크를 쓰든 벡터 스토어 선택은 별도로 고민해야 한다.
+[벡터 DB 비교 2026](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector/)에서 Qdrant, ChromaDB, pgvector의 성능을 실측했는데, 어떤 프레임워크를 쓰든 벡터 스토어 선택은 별도로 고민해야 한다.
 
 ## 어떤 상황에 어떤 프레임워크가 맞는가
 
@@ -485,7 +485,7 @@ result = pipeline.run({"retriever": {"query": query}})
 - Haystack 공식 사이트(deepset): [https://haystack.deepset.ai](https://haystack.deepset.ai) (문서는 `docs.haystack.deepset.ai`)
 - langchain-community deprecation 안내: [GitHub Issue #674](https://github.com/langchain-ai/langchain-community/issues/674)
 
-RAG의 기초 개념부터 다시 짚고 싶다면 [DeNA LLM 스터디 4부 — RAG](/ko/blog/ko/dena-llm-study-part4-rag)를 함께 읽으면 이 비교가 더 선명해진다.
+RAG의 기초 개념부터 다시 짚고 싶다면 [DeNA LLM 스터디 4부 — RAG](/ko/blog/ko/dena-llm-study-part4-rag/)를 함께 읽으면 이 비교가 더 선명해진다.
 
 ## 생태계와 커뮤니티
 

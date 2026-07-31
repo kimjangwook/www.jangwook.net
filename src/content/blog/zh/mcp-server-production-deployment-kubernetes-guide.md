@@ -79,7 +79,7 @@ relatedPosts:
 
 ## 准备工作
 
-本指南以FastMCP（Python）编写的MCP服务器为基准。[MCP服务器的初始构建方法请参考之前的文章](/zh/blog/zh/mcp-server-build-practical-guide-2026)，这里只讲部署部分。
+本指南以FastMCP（Python）编写的MCP服务器为基准。[MCP服务器的初始构建方法请参考之前的文章](/zh/blog/zh/mcp-server-build-practical-guide-2026/)，这里只讲部署部分。
 
 所需工具：
 - Kubernetes集群（推荐1.28以上）
@@ -299,7 +299,7 @@ spec:
 
 ## Step 5: 用OAuth 2.1管理凭据
 
-依赖静态API密钥是最大的长期风险。密钥泄露到GitHub、负责人变更、服务轮换密钥时，服务会悄然崩溃。[查看MCP相关的CVE案例](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening)，凭据管理失败是反复出现的模式。
+依赖静态API密钥是最大的长期风险。密钥泄露到GitHub、负责人变更、服务轮换密钥时，服务会悄然崩溃。[查看MCP相关的CVE案例](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening/)，凭据管理失败是反复出现的模式。
 
 从Kubernetes Secret注入为环境变量：
 
@@ -376,7 +376,7 @@ spec:
 
 <strong>上游API变更检测</strong>：依赖的外部API更改响应schema时，MCP服务器还活着但会返回错误数据。需要定期调用实际工具并验证结果的集成测试。
 
-[使用MCP Gateway](/zh/blog/zh/mcp-gateway-agent-traffic-control)可以在多个MCP服务器前设置单一入口点，集中管理健康状态。如果有多个服务器，值得考虑。
+[使用MCP Gateway](/zh/blog/zh/mcp-gateway-agent-traffic-control/)可以在多个MCP服务器前设置单一入口点，集中管理健康状态。如果有多个服务器，值得考虑。
 
 ## 实际部署时遇到的问题
 

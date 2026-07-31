@@ -104,9 +104,9 @@ GitHub이 수집하겠다고 밝힌 데이터 유형은 생각보다 광범위�
 
 ## 더 큰 맥락에서 보면
 
-이 정책 변경은 GitHub만의 일이 아니다. AI 도구를 무료나 저가로 제공하면서 사용자 데이터로 모델을 개선하는 패턴은 이제 업계 표준이 되어가고 있다. Google의 Gemini, Anthropic의 [Claude Code](/ko/blog/ko/claude-code-best-practices)도 비슷한 정책이 있거나 예정이다.
+이 정책 변경은 GitHub만의 일이 아니다. AI 도구를 무료나 저가로 제공하면서 사용자 데이터로 모델을 개선하는 패턴은 이제 업계 표준이 되어가고 있다. Google의 Gemini, Anthropic의 [Claude Code](/ko/blog/ko/claude-code-best-practices/)도 비슷한 정책이 있거나 예정이다.
 
-개발자 도구 시장에서 이게 특히 민감한 이유는, 코드가 곧 지적 재산이기 때문이다. [AI가 작성한 코드의 귀속을 추적하는 논의](/ko/blog/ko/cursor-agent-trace-ai-code-attribution)와도 맥락이 맞닿는다. 텍스트 대화와 코드는 성격이 다르다.
+개발자 도구 시장에서 이게 특히 민감한 이유는, 코드가 곧 지적 재산이기 때문이다. [AI가 작성한 코드의 귀속을 추적하는 논의](/ko/blog/ko/cursor-agent-trace-ai-code-attribution/)와도 맥락이 맞닿는다. 텍스트 대화와 코드는 성격이 다르다.
 
 결국 각자가 판단해야 할 문제다. 옵트아웃 설정이 있다는 것 자체는 다행이지만, **기본값이 옵트인(수집 동의)이라는 선택**에 대해서는 비판이 있을 수밖에 없다. 사용자에게 능동적으로 선택하게 하는 옵트인 방식이 아니라, 모르면 자동 동의가 되는 옵트아웃 방식을 택한 건 아쉽다.
 

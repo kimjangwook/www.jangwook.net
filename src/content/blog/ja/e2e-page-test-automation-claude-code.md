@@ -64,7 +64,7 @@ Webパブリッシャーがページ開発後、品質検証にどれだけの�
 
 より大きな問題は<strong>一貫性</strong>です。忙しいスケジュールの中で特定の項目を見落としたり、担当者によって検証基準が異なることがあります。
 
-この問題を解決するために、Claude Codeと[Playwright](/ja/blog/ja/playwright-ai-testing)を活用した<strong>ページE2Eテスト自動化システム</strong>を構築しました。
+この問題を解決するために、Claude Codeと[Playwright](/ja/blog/ja/playwright-ai-testing/)を活用した<strong>ページE2Eテスト自動化システム</strong>を構築しました。
 
 ## システム概要
 
@@ -231,7 +231,7 @@ Webページの品質を総合的にテストする専門エージェントで�
 
 ### 3. MCPツール活用
 
-[Chrome DevTools MCP](/ja/blog/ja/chrome-devtools-mcp-performance)とPlaywrightを組み合わせて強力なテスト環境を構築します：
+[Chrome DevTools MCP](/ja/blog/ja/chrome-devtools-mcp-performance/)とPlaywrightを組み合わせて強力なテスト環境を構築します：
 
 ```typescript
 // Chrome DevTools MCPでパフォーマンス分析
@@ -368,7 +368,7 @@ a, button {
 
 ### 2. AI分析の価値
 
-単に「画像が大きい」ではなく、<strong>「どう修正すべきか」</strong>まで提案することが真の自動化です。ここでClaudeの分析能力が輝きます。Claude Code全体の活用方法は[Claude Code Best Practices](/ja/blog/ja/claude-code-best-practices)で詳しく解説しています。
+単に「画像が大きい」ではなく、<strong>「どう修正すべきか」</strong>まで提案することが真の自動化です。ここでClaudeの分析能力が輝きます。Claude Code全体の活用方法は[Claude Code Best Practices](/ja/blog/ja/claude-code-best-practices/)で詳しく解説しています。
 
 ### 3. 段階的な改善
 

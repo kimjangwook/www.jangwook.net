@@ -71,7 +71,7 @@ graph TD
     JC --> AI
 ```
 
-<strong>Frontier Red Team</strong>は、AIシステムの極限能力をストレステストするチームです。最近ではClaudeを活用してFirefoxコードベースから22件のCVE（セキュリティ脆弱性）を自律的に発見したプロジェクトが代表的です。単に脆弱性を見つけるだけでなく、AIがその脆弱性を自律的にエクスプロイトできるかまでテストしました。このプロジェクトの技術的な詳細は[ClaudeがFirefoxで22件のCVEを発見 — AIセキュリティ監査の新パラダイム](/ja/blog/ja/claude-firefox-22-cves-ai-security-audit)で確認できます。
+<strong>Frontier Red Team</strong>は、AIシステムの極限能力をストレステストするチームです。最近ではClaudeを活用してFirefoxコードベースから22件のCVE（セキュリティ脆弱性）を自律的に発見したプロジェクトが代表的です。単に脆弱性を見つけるだけでなく、AIがその脆弱性を自律的にエクスプロイトできるかまでテストしました。このプロジェクトの技術的な詳細は[ClaudeがFirefoxで22件のCVEを発見 — AIセキュリティ監査の新パラダイム](/ja/blog/ja/claude-firefox-22-cves-ai-security-audit/)で確認できます。
 
 <strong>Societal Impacts</strong>チームは、AIが実世界でどのように使用されているかフィールドリサーチを行います。<strong>Economic Research</strong>チームは、AIが雇用市場とマクロ経済に与える影響をトラッキングします。
 
@@ -118,7 +118,7 @@ Claude Certified Architect、Foundations認証は、Claudeを活用したプロ�
 
 ### Code Modernization Starter Kit
 
-レガシーコードベースのマイグレーションと技術的負債の解消に向けた標準化されたスタートポイントをパートナー企業に提供します。Claudeを活用したエージェンティックコーディングパターンについては[Claude Codeエージェンティックワークフローパターン5種類](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)を参照してください。
+レガシーコードベースのマイグレーションと技術的負債の解消に向けた標準化されたスタートポイントをパートナー企業に提供します。Claudeを活用したエージェンティックコーディングパターンについては[Claude Codeエージェンティックワークフローパターン5種類](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)を参照してください。
 
 ## CTOが読むべき3つのシグナル
 
@@ -152,7 +152,7 @@ AWS認証がクラウド人材マーケットを構造的に変えたように�
 ## 実践：エンジニアリングチームが今やるべきこと
 
 ### 1. Claude Certified Architect準備の検討
-### 2. Partner Networkへの参加検討（無料） — パートナーエコシステムでClaudeエージェントを最大活用する方法は[Anthropic Agent Skills標準：AIエージェント能力の拡張](/ja/blog/ja/anthropic-agent-skills-standard)を参照
+### 2. Partner Networkへの参加検討（無料） — パートナーエコシステムでClaudeエージェントを最大活用する方法は[Anthropic Agent Skills標準：AIエージェント能力の拡張](/ja/blog/ja/anthropic-agent-skills-standard/)を参照
 ### 3. ベンダー評価フレームワークのアップデート
 
 ```yaml

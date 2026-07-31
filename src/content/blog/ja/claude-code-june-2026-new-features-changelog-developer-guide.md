@@ -104,7 +104,7 @@ Opus 4.8は5月28日にリリースされ、Claude Codeではv2.1.170（6月9日
 
 Anthropicの公式発表によると、Opus 4.7比でコーディング・エージェントタスク・専門業務での改善があるとのことだ。「控えめだが体感できる改善」という評価が多い。私が実際に使ってみた感覚では、複雑なリファクタリングやマルチファイル修正でミスが少し減った印象はあるが、劇的に変わったわけではない。
 
-[Claude Codeエージェントワークフロー5パターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)で紹介した並列エージェントパターンが、Opus 4.8のDynamic Workflowsと直結する。
+[Claude Codeエージェントワークフロー5パターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)で紹介した並列エージェントパターンが、Opus 4.8のDynamic Workflowsと直結する。
 
 Dynamic Workflowsは、Claudeに「この作業をワークフローにしてください」と依頼すると、数十〜数百のエージェントを調整してバックグラウンドで大規模な作業を処理する機能だ。Anthropicが今回強調したポイントは2つある：
 
@@ -128,7 +128,7 @@ Fast Mode価格の引き下げは思ったより意味がある。Opusシリー�
 - プラグイン別使用量
 - 個別MCPサーバー別使用量
 
-[Claude Codeプラグイン完全ガイド](/ja/blog/ja/claude-code-plugins-complete-guide)でプラグイン構造を詳しく扱ったが、プラグイン一つがスキル・フック・MCPサーバーをバンドルとして含めることができる。そのうちどのコンポーネントがどれだけトークンを使うかが、今や分離して見えるのが核心だ。
+[Claude Codeプラグイン完全ガイド](/ja/blog/ja/claude-code-plugins-complete-guide/)でプラグイン構造を詳しく扱ったが、プラグイン一つがスキル・フック・MCPサーバーをバンドルとして含めることができる。そのうちどのコンポーネントがどれだけトークンを使うかが、今や分離して見えるのが核心だ。
 
 自分の設定で実際に確認したら、Google Analytics MCPサーバーが予想より多くのトークンを消費していた。自動呼び出しが多かったためで、これがようやく見えたのでMCPサーバーの設定で呼び出し頻度を減らす調整をすぐに行えた。
 
@@ -170,7 +170,7 @@ Safe Modeを使うと良い状況と使うべきでない状況がある。
 
 ## HooksのMCPツール直接呼び出し — 実務でどう使うか
 
-[Claude Code Hooksワークフロー](/ja/blog/ja/claude-code-hooks-workflow)で扱ったフックシステムが今回のアップデートでさらに強力になった。注目すべき2つの変更がある。
+[Claude Code Hooksワークフロー](/ja/blog/ja/claude-code-hooks-workflow/)で扱ったフックシステムが今回のアップデートでさらに強力になった。注目すべき2つの変更がある。
 
 <strong>MCPツールタイプフック</strong>
 

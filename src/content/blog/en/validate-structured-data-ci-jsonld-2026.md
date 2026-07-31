@@ -53,11 +53,11 @@ The second is <strong>schema-semantic validation</strong>. Is the type name a re
 
 Here's the trap: the second can fail while the first passes without blinking. And Google's own validators, the Rich Results Test and the Schema Markup Validator (validator.schema.org), are both <strong>manual, browser-based tools</strong> where you paste a URL or a blob of code. Neither lives in your build. So unless a human opens one by hand, broken schema flows straight to production.
 
-If you've already decided [which syntax to use among JSON-LD, Microdata, and RDFa](/en/blog/en/structured-data-syntax-comparison-jsonld-microdata-rdfa-2026), the next question is this: who checks that the markup you write in that syntax is actually correct, on every commit?
+If you've already decided [which syntax to use among JSON-LD, Microdata, and RDFa](/en/blog/en/structured-data-syntax-comparison-jsonld-microdata-rdfa-2026/), the next question is this: who checks that the markup you write in that syntax is actually correct, on every commit?
 
 ## Why this gap costs more now
 
-There was a time when silently broken structured data cost you, at most, a rich-result snippet. Not anymore. Search is shifting, and the crawlers that build AI overviews and generative answers lean harder on structured data to work out what a page means. Many of those crawlers [don't run your JavaScript; they grab the raw HTML and leave](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026). The JSON-LD your server emits is nearly all they see.
+There was a time when silently broken structured data cost you, at most, a rich-result snippet. Not anymore. Search is shifting, and the crawlers that build AI overviews and generative answers lean harder on structured data to work out what a page means. Many of those crawlers [don't run your JavaScript; they grab the raw HTML and leave](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026/). The JSON-LD your server emits is nearly all they see.
 
 So what happens when that JSON-LD carries a lowercase `article`? To a human the page looks fine, and the parser waves it through, but to the machine reading it, that's an unidentified node with no author and no publish date. The price of a single slip has grown from "you miss a snippet" to "an AI misreads your page." Catching it before deploy pays off more than it used to.
 
@@ -101,7 +101,7 @@ This is the whole point. `article` expands to `http://schema.org/article`, and `
 
 The reason is that schema.org's hosted JSON-LD context sets `@vocab` to `https://schema.org/`. When `@vocab` is present, the processor <strong>just concatenates</strong> any undefined string onto that prefix. It never checks whether a property called `authour` exists in schema.org. It manufactures a nonexistent IRI, and that is entirely legal JSON-LD. The parser inspects syntax, not vocabulary.
 
-That's where the gap between "valid JSON-LD" and "readable by Google" opens up. The same gap runs through [wiring scattered blocks into one @graph](/en/blog/en/json-ld-graph-entity-linking-2026): before you talk about connecting nodes, each node has to be written with a valid type and valid properties in the first place.
+That's where the gap between "valid JSON-LD" and "readable by Google" opens up. The same gap runs through [wiring scattered blocks into one @graph](/en/blog/en/json-ld-graph-entity-linking-2026/): before you talk about connecting nodes, each node has to be written with a valid type and valid properties in the first place.
 
 ## A 60-line schema-aware validator
 
@@ -190,7 +190,7 @@ And one step in a GitHub Actions job.
   run: npm run validate:schema
 ```
 
-If the validator fails, the job fails, and a PR carrying broken schema doesn't merge. To sweep the whole site, scrape every `<script type="application/ld+json">` block out of the built HTML and pipe each into the same `checkNode`. Same principle. It's the same skeleton as [putting accessibility checks in CI](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026): take the thing a human used to eyeball by hand and turn it into a deterministic gate that goes red on failure.
+If the validator fails, the job fails, and a PR carrying broken schema doesn't merge. To sweep the whole site, scrape every `<script type="application/ld+json">` block out of the built HTML and pipe each into the same `checkNode`. Same principle. It's the same skeleton as [putting accessibility checks in CI](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026/): take the thing a human used to eyeball by hand and turn it into a deterministic gate that goes red on failure.
 
 ## What this validator can't do
 
@@ -198,7 +198,7 @@ The post is only honest if I draw the line clearly.
 
 <strong>This is not a replacement for the Rich Results Test.</strong> It knows a hand-picked slice of vocabulary (Article, BreadcrumbList, ListItem, Person). For real coverage you'd generate the type and property lists from schema.org's public dump and fill `VOCAB` from that. What you saw here is a proof of concept, not a finished product.
 
-<strong>Passing validation does not guarantee a rich result.</strong> That's not my opinion, it's Google's official stance. The General Structured Data Guidelines say it plainly: using structured data "enables a feature to be present, it does not guarantee that it will be present." Even with flawless markup, Google's algorithm may decide, based on the user, device, or location, that a plain text result is better. The same guidelines state that structured data "by itself is not a generic ranking factor." What the validator passes is "the shape is correct," not "a rich result will appear" and certainly not "your ranking will rise." Some types even lose their rich result eligibility outright. FAQPage did, and deleting the markup still wasn't the right move. I laid out that reasoning in [FAQ Rich Results Are Dead. Don't Delete the Q&A Markup](/en/blog/en/faqpage-deprecation-ai-citation-2026).
+<strong>Passing validation does not guarantee a rich result.</strong> That's not my opinion, it's Google's official stance. The General Structured Data Guidelines say it plainly: using structured data "enables a feature to be present, it does not guarantee that it will be present." Even with flawless markup, Google's algorithm may decide, based on the user, device, or location, that a plain text result is better. The same guidelines state that structured data "by itself is not a generic ranking factor." What the validator passes is "the shape is correct," not "a rich result will appear" and certainly not "your ranking will rise." Some types even lose their rich result eligibility outright. FAQPage did, and deleting the markup still wasn't the right move. I laid out that reasoning in [FAQ Rich Results Are Dead. Don't Delete the Q&A Markup](/en/blog/en/faqpage-deprecation-ai-citation-2026/).
 
 <strong>Expansion only sees syntax.</strong> As shown above, `@vocab` expands even a typo into a valid IRI. So don't mistake a successful expansion for validation. The two layers don't substitute for each other. Leave syntax to the parser and meaning to a schema-aware check.
 

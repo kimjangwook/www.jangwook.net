@@ -45,7 +45,7 @@ relatedPosts:
 
 AI Overview나 챗봇형 검색은 페이지 하나만 보는 게 아니라 <strong>엔티티들의 관계</strong>를 읽으려 한다. "이 글의 저자는 누구고, 그 저자는 어떤 조직 소속이며, 그 조직의 공식 사이트는 무엇인가." 이 관계가 마크업 안에 명시돼 있으면 기계가 추론할 필요 없이 그대로 가져간다. 반대로 `Article`에 `author`가 그냥 `{"@type": "Person", "name": "Jane Doe"}`로만 박혀 있으면, 그 Jane Doe가 사이트의 `Organization`과 무슨 관계인지 마크업 어디에도 없다. 기계가 알아서 이어주기를 바라는 수밖에 없다.
 
-나는 여기서 개발자가 할 일이 명확하다고 본다. 추론에 기대지 말고, 관계를 명시적으로 적어주는 것. 그게 `@graph`와 `@id`가 존재하는 이유다. AI 크롤러에게 무엇을 어떻게 노출할지는 [robots.txt로 학습·인용을 나눠 제어하는 전략](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026)에서 다뤘는데, 이 글은 그 다음 단계다. 읽게 허용한 크롤러에게 <strong>정확한 엔티티 모델</strong>을 건네는 방법.
+나는 여기서 개발자가 할 일이 명확하다고 본다. 추론에 기대지 말고, 관계를 명시적으로 적어주는 것. 그게 `@graph`와 `@id`가 존재하는 이유다. AI 크롤러에게 무엇을 어떻게 노출할지는 [robots.txt로 학습·인용을 나눠 제어하는 전략](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026/)에서 다뤘는데, 이 글은 그 다음 단계다. 읽게 허용한 크롤러에게 <strong>정확한 엔티티 모델</strong>을 건네는 방법.
 
 ## @id와 노드 참조 — W3C가 정의한 연결 방식
 
@@ -126,7 +126,7 @@ const graph = flat['@graph'] || flat;
 
 ![Disconnected islands versus connected @graph: 측정한 연결 컴포넌트 수를 시각화한 다이어그램](../../../assets/blog/json-ld-graph-entity-linking-2026/graph-comparison.png)
 
-여기서 오해를 하나 짚어야 한다. "3개의 섬"이라는 게 곧 "구조화 데이터가 무효"라는 뜻은 아니다. 흩어진 버전도 각 조각은 유효하고, Google은 별도 스크립트 블록 여러 개도 잘 읽는다. 내가 측정한 건 유효성이 아니라 <strong>관계의 명시성</strong>이다. 조각난 마크업은 엔티티 관계를 기계의 추론에 맡기고, 연결된 `@graph`는 그 관계를 못 박아 건넨다. [LocalBusiness 마크업을 서버사이드로 확실히 내보내는 문제](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026)가 "크롤러가 마크업을 보긴 하는가"였다면, 이 글은 "본 마크업이 서로 이어져 있는가"다.
+여기서 오해를 하나 짚어야 한다. "3개의 섬"이라는 게 곧 "구조화 데이터가 무효"라는 뜻은 아니다. 흩어진 버전도 각 조각은 유효하고, Google은 별도 스크립트 블록 여러 개도 잘 읽는다. 내가 측정한 건 유효성이 아니라 <strong>관계의 명시성</strong>이다. 조각난 마크업은 엔티티 관계를 기계의 추론에 맡기고, 연결된 `@graph`는 그 관계를 못 박아 건넨다. [LocalBusiness 마크업을 서버사이드로 확실히 내보내는 문제](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026/)가 "크롤러가 마크업을 보긴 하는가"였다면, 이 글은 "본 마크업이 서로 이어져 있는가"다.
 
 ## Google이 보장하는 것과 보장하지 않는 것
 
@@ -186,7 +186,7 @@ function buildGraph({ pageUrl, article }) {
 3. `WebSite.publisher`, `Article.author`, `Article.publisher`, `Person.worksFor` 등을 인라인 객체 대신 <strong>`{"@id": ...}` 참조</strong>로 바꾼다.
 4. `WebPage.isPartOf` → `WebSite`, `BreadcrumbList` → `WebPage.breadcrumb`로 페이지 계층을 잇는다.
 5. 마크업을 [Schema Markup Validator](https://validator.schema.org/)와 Google Rich Results Test에 넣어 유효성을 확인한다.
-6. (선택) `jsonld`로 `flatten` 한 뒤 연결 컴포넌트가 <strong>1개</strong>인지 스크립트로 검증한다. 2개 이상이면 어딘가 참조가 빠진 것이다. 다국어 사이트라면 같은 "문서 말고 직접 검증" 태도로 [hreflang 상호참조를 30줄 스크립트로 감사한 방법](/ko/blog/ko/hreflang-reciprocity-audit-multilingual-2026)도 함께 돌려볼 만하다. 연결 검사를 통과해도 각 노드의 값이 맞다는 보장은 없다. 값 층의 구멍은 [음식점 영업시간을 3계층으로 검증한 기록](/ko/blog/ko/restaurant-jsonld-opening-hours-validation-2026)에서 따로 다뤘다.
+6. (선택) `jsonld`로 `flatten` 한 뒤 연결 컴포넌트가 <strong>1개</strong>인지 스크립트로 검증한다. 2개 이상이면 어딘가 참조가 빠진 것이다. 다국어 사이트라면 같은 "문서 말고 직접 검증" 태도로 [hreflang 상호참조를 30줄 스크립트로 감사한 방법](/ko/blog/ko/hreflang-reciprocity-audit-multilingual-2026/)도 함께 돌려볼 만하다. 연결 검사를 통과해도 각 노드의 값이 맞다는 보장은 없다. 값 층의 구멍은 [음식점 영업시간을 3계층으로 검증한 기록](/ko/blog/ko/restaurant-jsonld-opening-hours-validation-2026/)에서 따로 다뤘다.
 
 여기까지가 "관계를 명시했다"의 실측 가능한 끝이다. 순위 보장은 없다. 하지만 리치 결과 자격을 안정화하고, 사이트의 엔티티 모델을 기계가 오해 없이 읽을 토대는 만들어진다. 나는 구조화 데이터에서 이게 가장 저평가된 작업이라고 본다. 다들 새 스키마 타입을 추가하는 데 집중하는데, 정작 이미 넣은 조각들을 <strong>서로 잇는</strong> 일은 건너뛴다.
 

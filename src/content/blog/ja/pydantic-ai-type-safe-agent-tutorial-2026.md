@@ -57,7 +57,7 @@ print(result.output)  # → success (no tool calls)
 
 ## なぜPydanticAIなのか: 比較記事とは別の角度から
 
-以前の[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)でPydanticAI・Instructor・Smolagentsを扱った。あのポストが「何を選ぶか」を扱うなら、今回のポストは「PydanticAIで実際にどう作るか」だ。実装方法が目的だ。
+以前の[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026/)でPydanticAI・Instructor・Smolagentsを扱った。あのポストが「何を選ぶか」を扱うなら、今回のポストは「PydanticAIで実際にどう作るか」だ。実装方法が目的だ。
 
 主な違いをまとめると:
 
@@ -357,7 +357,7 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 
 - Pydantic v1のレガシーコードベース。マイグレーションコストがフレームワーク導入の利益を上回ることがある。
 - ストリーミング構造化出力が製品の中核機能である場合。現在の実装はベータで安定性を保証しにくい。
-- 複雑なマルチエージェントのグラフオーケストレーションが主目的の場合。その領域はLangGraph側がより成熟している。[Google ADK vs LangGraph比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026)の基準が判断の助けになる。
+- 複雑なマルチエージェントのグラフオーケストレーションが主目的の場合。その領域はLangGraph側がより成熟している。[Google ADK vs LangGraph比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026/)の基準が判断の助けになる。
 - バージョン固定とCHANGELOG追跡を続ける余力がない場合。1.0以前なので非互換な変更が実際に発生する。
 
 まとめると、型中心の単一・少数エージェントには現在最良の選択肢だが、大規模なグラフワークフローやv1環境では他の道具を先に検討するのが妥当だ。
@@ -371,7 +371,7 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 - [pydantic/pydantic-ai (GitHub)](https://github.com/pydantic/pydantic-ai) — ソース、CHANGELOG、リリースノート
 - [pydantic/pydantic (GitHub)](https://github.com/pydantic/pydantic) — 基盤となるPydantic v2ライブラリ
 
-同じPythonスタックで続けて読むなら、[FastMCPでMCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)と[FastAPI + Claude APIストリーミング本番ガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026)をおすすめする。
+同じPythonスタックで続けて読むなら、[FastMCPでMCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)と[FastAPI + Claude APIストリーミング本番ガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026/)をおすすめする。
 
 ## まとめ: 核心パターンを一気に見る
 

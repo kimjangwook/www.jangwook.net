@@ -242,7 +242,7 @@ team = GraphFlow(participants=[planner, coder, tester], graph=graph)
 
 也支持条件边。测试失败时将执行重新路由到coder的反馈循环可以用图来表达。
 
-说实话，GraphFlow的API目前还略显冗长。没有LangGraph `add_conditional_edges` 那样的便捷方法，边的定义写起来比较长。不过在Python智能体框架中，显式支持图路由的目前只有AutoGen。我在[AI智能体框架对比文章](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)中对此进行了更详细的比较。
+说实话，GraphFlow的API目前还略显冗长。没有LangGraph `add_conditional_edges` 那样的便捷方法，边的定义写起来比较长。不过在Python智能体框架中，显式支持图路由的目前只有AutoGen。我在[AI智能体框架对比文章](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)中对此进行了更详细的比较。
 
 ### Swarm
 
@@ -291,7 +291,7 @@ outer_team = RoundRobinGroupChat(
 )
 ```
 
-从外部看，`coding_unit` 像一个普通智能体，但内部实际上在运行 developer → tester 的循环。只有摘要会暴露给外部团队。这与[Claude Agent SDK中编排子智能体的方式](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026)概念相似，但AutoGen在代码中更明确地表达了团队结构。
+从外部看，`coding_unit` 像一个普通智能体，但内部实际上在运行 developer → tester 的循环。只有摘要会暴露给外部团队。这与[Claude Agent SDK中编排子智能体的方式](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026/)概念相似，但AutoGen在代码中更明确地表达了团队结构。
 
 ## 实际使用中遇到的限制
 
@@ -299,7 +299,7 @@ outer_team = RoundRobinGroupChat(
 AutoGen 0.7.x的智能体记忆只在会话内保持。没有内置的跨会话记忆支持，需要自行接入外部数据库或记忆层。
 
 **2. 调试仍然不方便**  
-用 `run_stream()` 流式输出可以看到每个智能体的发言，但难以一目了然地看到中间工具调用结果。接入Langfuse等外部追踪工具在实际开发中是必要的。我在[Langfuse自托管追踪指南](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026)中介绍了配置方法。
+用 `run_stream()` 流式输出可以看到每个智能体的发言，但难以一目了然地看到中间工具调用结果。接入Langfuse等外部追踪工具在实际开发中是必要的。我在[Langfuse自托管追踪指南](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026/)中介绍了配置方法。
 
 **3. 仅支持异步代码**  
 所有API都基于 `async/await`。在同步代码中使用时需要用 `asyncio.run()` 包装，在FastAPI或Django中集成时需要考虑异步处理。
@@ -403,7 +403,7 @@ model_client = ReplayChatCompletionClient(
 
 我的直接判断：当**智能体间协作协议较复杂时**，AutoGen有优势。团队组合、跨团队路由、层级智能体结构在API中都是一等公民。
 
-对于只给单个智能体挂很多工具的场景，[PydanticAI](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026) 的代码更简洁——AutoGen的团队抽象反而显得多余。[Python AI智能体库对比文章](/zh/blog/zh/python-ai-agent-library-comparison-2026)梳理了各库的定位。
+对于只给单个智能体挂很多工具的场景，[PydanticAI](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/) 的代码更简洁——AutoGen的团队抽象反而显得多余。[Python AI智能体库对比文章](/zh/blog/zh/python-ai-agent-library-comparison-2026/)梳理了各库的定位。
 
 如果需要Kubernetes级别的基础设施持久性，应该看Dapr Agents。AutoGen专注于**智能体对话层**，而非基础设施层。
 

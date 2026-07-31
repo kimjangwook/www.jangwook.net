@@ -208,7 +208,7 @@ it("filters out non-text-delta events from the stream", async () => {
 
 LLMを分類器として使うパターンは一般的だ。「このユーザーメッセージは質問か、命令か」といった判断をモデルに委ねる方式だが、これがテストの難易度が一番高い。LLMの出力が常に予測可能ではないからだ。
 
-[Vercel AI SDKでストリーミングエージェントを実装する過程](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026)でも似た問題を扱ったが、核心は分類器ロジックをLLM呼び出しと切り離して、それぞれをテストすることだ。
+[Vercel AI SDKでストリーミングエージェントを実装する過程](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026/)でも似た問題を扱ったが、核心は分類器ロジックをLLM呼び出しと切り離して、それぞれをテストすることだ。
 
 ```javascript
 // エージェントコード: LLM出力を大文字に変換し有効値のみ許可
@@ -300,7 +300,7 @@ APIコールなし、環境変数なし、142ms。実際のClaude API呼び出�
 
 このモッキング手法が持つ限界についても正直に言っておく必要がある。
 
-**実際のAPI動作との乖離が生まれる可能性がある。** SDKの内部実装が変わると`fakeStream()`が再現するイベント構造も更新する必要がある。実際に[Claude Agent SDK Tool Use実践ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)で確認したように、SDKバージョンが上がるとストリームイベントフォーマットが少し変わることがある。
+**実際のAPI動作との乖離が生まれる可能性がある。** SDKの内部実装が変わると`fakeStream()`が再現するイベント構造も更新する必要がある。実際に[Claude Agent SDK Tool Use実践ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)で確認したように、SDKバージョンが上がるとストリームイベントフォーマットが少し変わることがある。
 
 **エッジケースはE2Eテストで補う必要がある。** レートリミット、ネットワークタイムアウト、トークン超過といったケースはモッキングでは完全に再現しにくい。ユニットテストはビジネスロジックの検証に集中し、実際のAPIを使う統合テストを別途用意するのが現実的だ。
 
@@ -314,6 +314,6 @@ Vitest 4でAnthropic SDKをモッキングするときに覚えておくべき�
 2. **`async function*`ジェネレーター** — ストリーミングレスポンスのモッキングは`mockReturnValue(fakeStream())`
 3. **`beforeEach(() => vi.clearAllMocks())`** — テスト間の状態汚染防止は必須
 
-TypeScriptを使っているなら[MCPサーバーTypeScript実践チュートリアル](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)とこの記事のパターンを組み合わせることで、MCPツールハンドラーを含むAIエージェント全体をユニットテストの下に置くことができる。
+TypeScriptを使っているなら[MCPサーバーTypeScript実践チュートリアル](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026/)とこの記事のパターンを組み合わせることで、MCPツールハンドラーを含むAIエージェント全体をユニットテストの下に置くことができる。
 
 AIエージェントコードにテストがない最大の理由が「どうモッキングするかわからない」という場合が多い。上のパターンがその参入障壁を下げることを願っている。

@@ -63,7 +63,7 @@ relatedPosts:
 
 虽然有很多尝试通过RAG（Retrieval-Augmented Generation）或简单的向量数据库来解决这个问题，但大多数只停留在"检索"层面，未能进阶到"学习"。单纯搜索过往对话，与从经验中提取模式并形成mental model，本质上是完全不同的。
 
-<strong>Hindsight</strong>正是一个正面挑战这一难题的开源项目。它兼容[MCP（Model Context Protocol）](/zh/blog/zh/mcp-server-build-practical-guide-2026)，可与Claude、Cursor、VS Code等主流AI工具即时集成，并在LongMemEval基准测试中达到91.4%，成为智能体记忆系统中首个突破90%大关的方案。
+<strong>Hindsight</strong>正是一个正面挑战这一难题的开源项目。它兼容[MCP（Model Context Protocol）](/zh/blog/zh/mcp-server-build-practical-guide-2026/)，可与Claude、Cursor、VS Code等主流AI工具即时集成，并在LongMemEval基准测试中达到91.4%，成为智能体记忆系统中首个突破90%大关的方案。
 
 ## Hindsight的架构
 
@@ -95,7 +95,7 @@ graph TD
 - <strong>Experiences</strong>：智能体自身的交互记录（"我碰了炉子，发现是烫的"）
 - <strong>Mental Models</strong>：通过对原始记忆进行反思（reflect）而形成的学习性理解
 
-与传统RAG系统的核心差异正在于这个Mental Models。它不只是存储和检索数据，而是分析记忆、形成模式，构建出让智能体"[从经验中学习](/zh/blog/zh/hermes-agent-self-evolving-ai-framework)"的结构。
+与传统RAG系统的核心差异正在于这个Mental Models。它不只是存储和检索数据，而是分析记忆、形成模式，构建出让智能体"[从经验中学习](/zh/blog/zh/hermes-agent-self-evolving-ai-framework/)"的结构。
 
 ## 三大核心操作
 
@@ -191,7 +191,7 @@ docker run --rm -it --pull always \
 | Anthropic | `anthropic` | Claude |
 | Google | `gemini` | Gemini |
 | Groq | `groq` | 快速推理 |
-| Ollama | `ollama` | [本地部署](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp) |
+| Ollama | `ollama` | [本地部署](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp/) |
 | LM Studio | `lmstudio` | 本地部署 |
 
 ## Engineering Manager视角的落地策略

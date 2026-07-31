@@ -105,7 +105,7 @@ node --version  # v22.22.0
 npm --version   # 10.9.4
 ```
 
-Node.js 22에서 새로 추가된 기능 중 테스트에 유용한 것도 있다. [Node.js 내장 SQLite 모듈](/ko/blog/ko/node-sqlite-builtin-practical-guide-2026)을 활용하면 외부 DB 없이 인메모리 DB로 데이터 레이어 통합 테스트를 빠르게 돌릴 수 있다.
+Node.js 22에서 새로 추가된 기능 중 테스트에 유용한 것도 있다. [Node.js 내장 SQLite 모듈](/ko/blog/ko/node-sqlite-builtin-practical-guide-2026/)을 활용하면 외부 DB 없이 인메모리 DB로 데이터 레이어 통합 테스트를 빠르게 돌릴 수 있다.
 
 ## Step 1: Vitest 4 설치
 
@@ -575,13 +575,13 @@ TypeScript를 쓰는 Vite 기반 프로젝트에서 Jest를 유지하는 건 점
 
 반면 Next.js나 Express 기반의 대형 서버 테스트 스위트라면 신중해야 한다. Vitest가 Vite 생태계에 최적화된 만큼, Node.js 모듈 시스템의 복잡한 케이스에서 예상치 못한 동작이 나올 수 있다. 실제로 npm 주간 다운로드가 4.8M에서 7.7M으로 늘었다는 건 그만큼 많은 프로젝트가 갈아탔다는 뜻이지만, 모두가 쉽게 전환한 건 아닐 것이다.
 
-[Bun으로 TypeScript 스크립트를 자동화](/ko/blog/ko/bun-shell-scripting-practical-guide-2026)하면서 Vitest를 Bun으로 돌리는 조합을 시도 중인데, 이건 다음 포스트에서 다룰 예정이다.
+[Bun으로 TypeScript 스크립트를 자동화](/ko/blog/ko/bun-shell-scripting-practical-guide-2026/)하면서 Vitest를 Bun으로 돌리는 조합을 시도 중인데, 이건 다음 포스트에서 다룰 예정이다.
 
 Vitest 5.0 beta가 이미 npm에 올라와 있다. 안정화되면 또 한 번 주요 변화가 있을 것 같다. 지금은 4.x로 마이그레이션해두는 게 무난한 선택이다.
 
 마이그레이션 자체는 생각보다 빠르게 끝난다. 내 경험으로는 소규모 TypeScript 프로젝트 기준으로 30〜60분이면 충분했다. 가장 오래 걸리는 건 `vi.importActual()` 패턴 찾기와 `moduleNameMapper`를 `resolve.alias`로 옮기는 작업이다. 이 두 가지만 미리 파악하고 들어가면 나머지는 거의 자동이다.
 
-TypeScript 도구 체인을 더 다듬고 싶다면, [MCP 서버를 TypeScript SDK로 단계별 구축](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)하거나 [Hono로 타입 안전한 API를 만드는 글](/ko/blog/ko/hono-typescript-api-2026)도 같은 흐름에서 함께 읽어두면 좋다. 테스트, 런타임, API 레이어를 모두 Vite 생태계로 정렬하면 설정 파일이 눈에 띄게 줄어든다.
+TypeScript 도구 체인을 더 다듬고 싶다면, [MCP 서버를 TypeScript SDK로 단계별 구축](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026/)하거나 [Hono로 타입 안전한 API를 만드는 글](/ko/blog/ko/hono-typescript-api-2026/)도 같은 흐름에서 함께 읽어두면 좋다. 테스트, 런타임, API 레이어를 모두 Vite 생태계로 정렬하면 설정 파일이 눈에 띄게 줄어든다.
 
 ## 참고 자료 (1차 출처)
 

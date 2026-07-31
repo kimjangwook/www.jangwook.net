@@ -57,7 +57,7 @@ relatedPosts:
 ### 1.1 Key Metrics at a Glance
 
 <strong>Analysis Period</strong>: October 7 〜 November 20, 2025 (45 days)
-<strong>Previous Report</strong>: [Blog Launch Analysis Report](/en/blog/en/blog-launch-analysis-report) (October 6, real-time data only)
+<strong>Previous Report</strong>: [Blog Launch Analysis Report](/en/blog/en/blog-launch-analysis-report/) (October 6, real-time data only)
 
 | Key Metric | Actual Performance | 1-Month Target | Achievement | Status |
 |-----------|------------------|--------------|------------|--------|
@@ -973,7 +973,7 @@ If this report was helpful:
 
 - 🔗 <strong>Share</strong>: With fellow developers facing similar challenges
 - 💭 <strong>Comment</strong>: Share your blog analytics experiences and tips
-- 📧 <strong>Contact</strong>: 1:1 questions at [Contact](/en/contact)
+- 📧 <strong>Contact</strong>: 1:1 questions at [Contact](/en/contact/)
 
 <strong>Let's learn and grow together. Looking forward to your first analytics report!</strong> 🚀
 

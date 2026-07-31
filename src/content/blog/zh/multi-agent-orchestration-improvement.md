@@ -43,7 +43,7 @@ faq:
 
 ## 系统大到不敢动的那一刻
 
-博客自动化系统攒到17个代理、6个命令、4个技能时，我开始害怕动它。改一个文件，不知道会在哪里悄悄弄坏另外三个。于是我不再一个个手动修，而是把整套系统交给Claude Code的多代理编排模式，让它一次性读完48个文件。最后吐出来61个问题。这篇文章就是那次改造的全程记录。Claude Code密集使用时的成本和效率分析，请参考[Claude Code实际使用分析洞察](/zh/blog/zh/claude-code-insights-usage-analysis)。Claude Code中五种核心代理工作流模式的详细解析，请参考[Claude Agent SDK工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)。
+博客自动化系统攒到17个代理、6个命令、4个技能时，我开始害怕动它。改一个文件，不知道会在哪里悄悄弄坏另外三个。于是我不再一个个手动修，而是把整套系统交给Claude Code的多代理编排模式，让它一次性读完48个文件。最后吐出来61个问题。这篇文章就是那次改造的全程记录。Claude Code密集使用时的成本和效率分析，请参考[Claude Code实际使用分析洞察](/zh/blog/zh/claude-code-insights-usage-analysis/)。Claude Code中五种核心代理工作流模式的详细解析，请参考[Claude Agent SDK工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)。
 
 ### 项目背景
 
@@ -1660,7 +1660,7 @@ graph TD
 - <strong>探索性强、范围反复变动</strong>：在还不清楚要改什么的阶段，拆分的依据本身就在摇摆。先用单一代理通览全局，再做拆分。
 - <strong>对成本或延迟敏感</strong>：同时运行多个代理会让令牌和调用成倍增长。没有元数据缓存就盲目并行，往往更贵。
 
-简而言之，多代理擅长<strong>独立的大型任务</strong>，而不擅长<strong>小而耦合的任务</strong>。拿不准时就从单一代理起步，等上下文溢出时再拆分。如果想了解团队层面的协作结构，可以参考[Claude Code 代理团队实战指南](/zh/blog/zh/claude-agent-teams-guide)。
+简而言之，多代理擅长<strong>独立的大型任务</strong>，而不擅长<strong>小而耦合的任务</strong>。拿不准时就从单一代理起步，等上下文溢出时再拆分。如果想了解团队层面的协作结构，可以参考[Claude Code 代理团队实战指南](/zh/blog/zh/claude-agent-teams-guide/)。
 
 ### 最后的思考
 
@@ -1672,7 +1672,7 @@ graph TD
 4. <strong>自动化验证</strong>：让机器做重复工作
 5. <strong>监控成本</strong>：优化令牌使用
 
-改造之前，这套系统能用，但乱。改造之后，它结构清楚、文档齐全，跑起来也快。最让我意外的是，整个过程本身反而成了多代理编排最有说服力的例子。想了解怎么用Git Worktree做并行执行，可以看[Claude Code并行会话与Git Worktree](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)。
+改造之前，这套系统能用，但乱。改造之后，它结构清楚、文档齐全，跑起来也快。最让我意外的是，整个过程本身反而成了多代理编排最有说服力的例子。想了解怎么用Git Worktree做并行执行，可以看[Claude Code并行会话与Git Worktree](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)。
 
 ---
 

@@ -63,7 +63,7 @@ relatedPosts:
 
 2025年10月、GitHubが公開したAIエージェントは、開発者なしでコードベースをスキャンし、バグを発見し、修正をPull Requestとして提出します。Google DeepMindのCodeMenderは、過去6ヶ月間に<strong>72件のセキュリティパッチをオープンソースプロジェクトに自動貢献</strong>しました。
 
-これはもはやSFではありません。<strong>セルフヒーリングAIシステム(Self-Healing AI Systems)</strong>の時代が到来しました。このようなシステムの基盤となる[AIエージェント協調パターン](/ja/blog/ja/ai-agent-collaboration-patterns)を理解することで、セルフヒーリングアーキテクチャ設計が大幅に楽になります。
+これはもはやSFではありません。<strong>セルフヒーリングAIシステム(Self-Healing AI Systems)</strong>の時代が到来しました。このようなシステムの基盤となる[AIエージェント協調パターン](/ja/blog/ja/ai-agent-collaboration-patterns/)を理解することで、セルフヒーリングアーキテクチャ設計が大幅に楽になります。
 
 ### セルフヒーリングシステムとは?
 
@@ -321,7 +321,7 @@ class AgentlessFixGenerator:
 - <strong>Agentless</strong>: より速く(1回呼び出し)、成功率高い(50.8%)
 - <strong>Multi-Agent</strong>: より複雑だが、大規模システムで柔軟
 
-本番環境でこれらのエージェントを安定運用するには、[FastAPI + Claude API ストリーミング本番ガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026)を参照してください。
+本番環境でこれらのエージェントを安定運用するには、[FastAPI + Claude API ストリーミング本番ガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026/)を参照してください。
 
 ### 4. テストと検証 (Testing & Validation)
 

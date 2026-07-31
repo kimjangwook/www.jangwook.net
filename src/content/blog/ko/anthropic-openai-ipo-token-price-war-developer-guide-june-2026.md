@@ -64,7 +64,7 @@ OpenAI는 그보다 일주일 늦은 6월 8일 같은 절차를 밟았다. OpenA
 
 상장 전에 기업 가치를 높이려면 세 가지 지표가 필요하다: 매출 규모, 성장률, 그리고 시장 지배력의 내러티브. 지금 두 회사 모두 세 번째 항목에서 중국 오픈소스 모델에 치이고 있다.
 
-[지난 Anthropic 가격 정책 분석](/ko/blog/ko/anthropic-usage-caps-llm-pricing-disruption-analysis-2026)에서도 다뤘지만, Anthropic은 올해 초 OpenClaw 같은 서드파티 에이전트의 구독 API 접근을 차단하면서 소비 기반 수익화로 방향을 틀었다. 이제 API 소비량이 더 많아질수록 ARR이 올라가는 구조가 됐다. 결과적으로 개발자가 더 많이 쓰게 만드는 것이 IPO 스토리를 강화한다.
+[지난 Anthropic 가격 정책 분석](/ko/blog/ko/anthropic-usage-caps-llm-pricing-disruption-analysis-2026/)에서도 다뤘지만, Anthropic은 올해 초 OpenClaw 같은 서드파티 에이전트의 구독 API 접근을 차단하면서 소비 기반 수익화로 방향을 틀었다. 이제 API 소비량이 더 많아질수록 ARR이 올라가는 구조가 됐다. 결과적으로 개발자가 더 많이 쓰게 만드는 것이 IPO 스토리를 강화한다.
 
 DeepSeek V3.2는 현재 입력 $0.28/MTok, 출력 $0.42/MTok에 GPT-5급 코딩 성능을 제공하고 있다. 이는 Claude Sonnet 4.6($3.00/$15.00) 대비 입력 기준 약 10배, Opus 4.8($5.00/$25.00) 대비 약 18배 저렴하다. Qwen3-Max도 비슷한 위치에 있다. 서방 모델들이 가격을 유지한다면 기업 고객이 중국 모델로 이동할 유인이 커진다.
 
@@ -74,7 +74,7 @@ DeepSeek V3.2는 현재 입력 $0.28/MTok, 출력 $0.42/MTok에 GPT-5급 코딩 
 
 Anthropic의 연환산 매출(ARR) $47B는 단순한 숫자가 아니다. 이걸 분해해보면 현재 AI API 시장의 구조가 보인다.
 
-Anthropic은 올해 초 세 가지 방향으로 수익화를 다각화했다. API 소비 기반, 기업 계약(엔터프라이즈 라이선스), 그리고 Claude.ai 구독이다. 그 중에서 성장 속도가 가장 빠른 건 API 소비 기반이다. 이는 Anthropic이 [OpenClaw 같은 서드파티 구독 접근을 차단](/ko/blog/ko/anthropic-usage-caps-llm-pricing-disruption-analysis-2026)한 결과와 맞닿아 있다. 값싼 구독 채널을 막고 개발자들이 API를 직접 쓰게 만들면, 소비량이 ARR로 직결된다.
+Anthropic은 올해 초 세 가지 방향으로 수익화를 다각화했다. API 소비 기반, 기업 계약(엔터프라이즈 라이선스), 그리고 Claude.ai 구독이다. 그 중에서 성장 속도가 가장 빠른 건 API 소비 기반이다. 이는 Anthropic이 [OpenClaw 같은 서드파티 구독 접근을 차단](/ko/blog/ko/anthropic-usage-caps-llm-pricing-disruption-analysis-2026/)한 결과와 맞닿아 있다. 값싼 구독 채널을 막고 개발자들이 API를 직접 쓰게 만들면, 소비량이 ARR로 직결된다.
 
 IPO를 앞두고 투자자에게 중요한 건 "이 기업이 얼마나 버느냐"가 아니라 "이 기업의 매출이 얼마나 빠르게 성장하고 있느냐"다. 6개월 전 ARR이 $20B였다면 지금 $47B는 2.3배 성장이다. 이 성장률을 IPO 로드쇼에서 핵심 내러티브로 쓴다면, 가격을 조금 낮춰서 사용량을 더 끌어올리는 전략이 논리적으로 맞는다.
 
@@ -91,13 +91,13 @@ sandbox에서 @anthropic-ai/sdk 0.104.1을 설치하고 실제 토큰 비용을 
 - **캐시 없음**: Claude Sonnet 4.6 → $0.18 / Claude Haiku 4.5 → $0.06
 - **80% 캐시 적중**: Claude Sonnet 4.6 → ~$0.072 / Claude Haiku 4.5 → ~$0.024
 
-코드베이스 분석이나 긴 시스템 프롬프트를 반복 사용하는 워크플로우라면, 실효 비용은 sticker price의 30~40% 수준까지 내려올 수 있다. [Claude 프롬프트 캐싱 최적화 가이드](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide)를 보면 실제 70% 절감을 달성한 사례가 있다.
+코드베이스 분석이나 긴 시스템 프롬프트를 반복 사용하는 워크플로우라면, 실효 비용은 sticker price의 30~40% 수준까지 내려올 수 있다. [Claude 프롬프트 캐싱 최적화 가이드](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide/)를 보면 실제 70% 절감을 달성한 사례가 있다.
 
 그래도 DeepSeek V3.2 대비로는 여전히 3~5배 비싸다. 캐싱으로 좁혀지긴 하지만 격차가 사라지지는 않는다.
 
 여기서 눈여겨볼 점이 있다. OpenAI가 가격을 인하한다면, 이것은 Anthropic에 직접적인 압박이 된다. OpenAI의 GPT-5.4가 현재 $2.50/MTok인데, 만약 $1.50으로 내려간다면 Claude Sonnet 4.6의 $3.00은 부담스러운 위치가 된다. Anthropic도 같이 내려야 한다는 압박을 받을 것이고, 이 연쇄 반응이 개발자에게는 유리한 환경을 만든다.
 
-반면 [Fable 5의 $10/$50 가격대](/ko/blog/ko/claude-fable-5-mythos-public-api-developer-analysis-2026)는 이 가격 경쟁의 영향을 덜 받을 가능성이 크다. 프리미엄 모델은 "가장 강력한 성능이 필요한" 사용 사례에서 소비되는데, 그런 워크로드는 가격보다 성능에 더 민감하다. Anthropic의 투트랙 전략은 이 차이를 노리고 있다.
+반면 [Fable 5의 $10/$50 가격대](/ko/blog/ko/claude-fable-5-mythos-public-api-developer-analysis-2026/)는 이 가격 경쟁의 영향을 덜 받을 가능성이 크다. 프리미엄 모델은 "가장 강력한 성능이 필요한" 사용 사례에서 소비되는데, 그런 워크로드는 가격보다 성능에 더 민감하다. Anthropic의 투트랙 전략은 이 차이를 노리고 있다.
 
 ## IPO 이후 개발자가 걱정해야 할 진짜 리스크
 
@@ -105,7 +105,7 @@ sandbox에서 @anthropic-ai/sdk 0.104.1을 설치하고 실제 토큰 비용을 
 
 **첫째, 주주 압력이 생기면 가격 전략이 바뀐다.** 비상장 기업은 성장을 위해 가격을 낮출 수 있지만, 상장 기업은 마진 개선 압박을 받는다. AWS, Azure, GCP도 상장 초기에는 적극적으로 가격을 낮추다가 시장 장악 이후 단가를 올렸다. 두 회사가 IPO 이후 같은 패턴을 반복하지 않는다는 보장은 없다.
 
-**둘째, 락인 위험이 현실적이다.** Claude Code, Cursor, Windsurf 같은 AI 코딩 도구들이 Anthropic Claude에 강하게 의존하고 있다. [Claude Code의 6월 업데이트](/ko/blog/ko/claude-code-june-2026-new-features-changelog-developer-guide)를 봐도 워크플로우가 Anthropic 생태계 안에서 점점 깊어지고 있다. 코드베이스와 워크플로우가 특정 모델에 최적화될수록, 나중에 가격이 올라도 이탈 비용이 커진다.
+**둘째, 락인 위험이 현실적이다.** Claude Code, Cursor, Windsurf 같은 AI 코딩 도구들이 Anthropic Claude에 강하게 의존하고 있다. [Claude Code의 6월 업데이트](/ko/blog/ko/claude-code-june-2026-new-features-changelog-developer-guide/)를 봐도 워크플로우가 Anthropic 생태계 안에서 점점 깊어지고 있다. 코드베이스와 워크플로우가 특정 모델에 최적화될수록, 나중에 가격이 올라도 이탈 비용이 커진다.
 
 **셋째, 중국 모델의 데이터 신뢰 문제는 여전히 해결되지 않았다.** DeepSeek이 아무리 저렴해도, 기업 내부 코드베이스나 고객 데이터를 중국 서버에서 처리하는 것에 대한 법무팀과 보안팀의 반대는 현실적이다. EU GDPR, 미국 방산/의료 규제 환경에서는 선택지가 더 좁다. 이 점에서 Anthropic과 OpenAI는 중국 모델이 대체하기 어려운 엔터프라이즈 신뢰도를 갖고 있다.
 

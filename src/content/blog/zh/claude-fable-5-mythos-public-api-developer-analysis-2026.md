@@ -39,7 +39,7 @@ relatedPosts:
       zh: "了解Anthropic模型从Opus 4.7到Fable 5的演进，有助于掌握新模型中task_budget设计和managed agent架构的变化"
 ---
 
-两个月前，[Anthropic通过Project Glasswing发布Mythos Preview时](/zh/blog/zh/claude-mythos-preview-glasswing-ai-cybersecurity)，我坦率地说，对这个模型何时正式公开持半信半疑的态度。SWE-bench评分93.9%，却只向12家企业限制发布——这究竟是谨慎的安全立场，还是精明的营销策略？当时很难判断。
+两个月前，[Anthropic通过Project Glasswing发布Mythos Preview时](/zh/blog/zh/claude-mythos-preview-glasswing-ai-cybersecurity/)，我坦率地说，对这个模型何时正式公开持半信半疑的态度。SWE-bench评分93.9%，却只向12家企业限制发布——这究竟是谨慎的安全立场，还是精明的营销策略？当时很难判断。
 
 两个月后答案揭晓。2026年6月9日，Anthropic正式发布了<strong>Claude Fable 5</strong>，模型ID为`claude-fable-5`，可通过Claude API、Bedrock、Vertex AI、Microsoft Foundry和GitHub Copilot直接使用。
 
@@ -145,7 +145,7 @@ response = client.messages.create(
 )
 ```
 
-[类似Opus 4.8 Dynamic Workflows的并行Agent架构](/zh/blog/zh/claude-opus-4-8-dynamic-workflows-parallel-agents-guide)中，实用的成本控制策略是对处理探索或内存检索的子Agent使用`effort: "low"`，只在综合和决策步骤使用`effort: "high"`。
+[类似Opus 4.8 Dynamic Workflows的并行Agent架构](/zh/blog/zh/claude-opus-4-8-dynamic-workflows-parallel-agents-guide/)中，实用的成本控制策略是对处理探索或内存检索的子Agent使用`effort: "low"`，只在综合和决策步骤使用`effort: "high"`。
 
 ## Fable 5 vs Opus 4.8：真实成本核算
 

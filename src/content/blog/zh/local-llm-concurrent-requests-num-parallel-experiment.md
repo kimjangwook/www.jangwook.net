@@ -115,7 +115,7 @@ def bench(concurrency):
 
 用数字再核对一遍就对得上。并发8时墙钟是32秒，而一个请求以每秒24个token生成100个token约需4.2秒。4.2秒 × 8 = 33.6秒，与观测到的32秒几乎吻合。八个请求没有重叠，是一个接一个跑的。先到的请求立刻被处理，但排在第八位的请求要等前面七个跑完，纯粹地干等，最后才用掉自己的4.2秒。这段等待时间会把单个请求的体感延迟直接抬高。
 
-到这里我想起[因为num_ctx而把长输入里的指令整段截掉的那次实验](/zh/blog/zh/ollama-num-ctx-silent-truncation-experiment)。那次也是"不是模型笨，是配置出了问题"。这回是同样的味道。不是模型不能并行，而是服务器被配置成不并行。
+到这里我想起[因为num_ctx而把长输入里的指令整段截掉的那次实验](/zh/blog/zh/ollama-num-ctx-silent-truncation-experiment/)。那次也是"不是模型笨，是配置出了问题"。这回是同样的味道。不是模型不能并行，而是服务器被配置成不并行。
 
 ## 为什么是1 — 用文档确认
 
@@ -147,7 +147,7 @@ concurrency=8  wall=22.30s aggregate=33.6 tok/s  per_req=10.0 tok/s
 
 ## 那到底接几个代理
 
-这次测量立刻改了我的[多代理编排](/zh/blog/zh/multi-agent-orchestration-improvement)设计。总结如下。
+这次测量立刻改了我的[多代理编排](/zh/blog/zh/multi-agent-orchestration-improvement/)设计。总结如下。
 
 第一，在默认设置下，并发不会提升吞吐量。槽位是1时，把代理增到8个只会让队列更长、总时间变成8倍。"我并行发了所以会快"在本地是错误的直觉。别把云API的感觉照搬过来。
 
@@ -172,7 +172,7 @@ OLLAMA_NUM_PARALLEL=4 ollama serve
 
 ## 这次测量的局限
 
-老实说：这是M1 16GB加载小gemma4这一特定条件下的数字。内存充裕的机器或有独立GPU的环境，默认num_parallel会是4；大模型每个槽位的KV缓存很大，本来就立不起几个并行槽位。因为并行槽位会把上下文内存翻倍，上下文越长的代理越难调高并发。所以[测量单请求prefill成本那篇](/zh/blog/zh/local-llm-prefill-generation-latency-experiment)里看到的长输入之重，在这里又来拖后腿。
+老实说：这是M1 16GB加载小gemma4这一特定条件下的数字。内存充裕的机器或有独立GPU的环境，默认num_parallel会是4；大模型每个槽位的KV缓存很大，本来就立不起几个并行槽位。因为并行槽位会把上下文内存翻倍，上下文越长的代理越难调高并发。所以[测量单请求prefill成本那篇](/zh/blog/zh/local-llm-prefill-generation-latency-experiment/)里看到的长输入之重，在这里又来拖后腿。
 
 还有一点。那1.8倍的集计增益也说明这台硬件的GPU还有闲置余量。如果单流已经把GPU用到100%，并行成批也几乎不会有增益。增益的大小因机器而异，所以结论只有一个：改了设置，一定要在自己的机器上重测。30行的脚本就够了。
 

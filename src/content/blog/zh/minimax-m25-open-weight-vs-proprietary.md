@@ -69,7 +69,7 @@ MiniMax M2.5是一个229B参数的开源权重模型，可从HuggingFace自由�
 
 ### SWE-Bench Verified（编码）
 
-SWE-Bench Verified衡量解决真实GitHub Issue的能力。[多智能体SWE-Bench性能分析](/zh/blog/zh/multi-agent-swe-bench-verdent)可提供有益的参考对比。
+SWE-Bench Verified衡量解决真实GitHub Issue的能力。[多智能体SWE-Bench性能分析](/zh/blog/zh/multi-agent-swe-bench-verdent/)可提供有益的参考对比。
 
 | 模型 | 得分 | 类型 |
 |------|------|------|
@@ -94,7 +94,7 @@ SWE-Bench Verified衡量解决真实GitHub Issue的能力。[多智能体SWE-Ben
 
 ## 成本革命：不仅是性能，价格上也占据压倒性优势
 
-M2.5的冲击不仅在于性能，<strong>性价比</strong>更是完全不同的级别。结合[2026年主要LLM API价格比较](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)来看，这一差距更加清晰。
+M2.5的冲击不仅在于性能，<strong>性价比</strong>更是完全不同的级别。结合[2026年主要LLM API价格比较](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)来看，这一差距更加清晰。
 
 | 项目 | M2.5 Lightning | M2.5 Standard |
 |------|---------------|---------------|

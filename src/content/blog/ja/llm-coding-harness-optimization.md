@@ -108,7 +108,7 @@ OpenAIがCodexで使用するdiffベースのパッチフォーマットです�
 
 ### 2. string_replace（Claude Code、Gemini方式）
 
-検索文字列と置換文字列を正確に指定する方式です。[Claude Code](/ja/blog/ja/openai-codex-api-release-vs-claude-code-comparison-may-2026)の`str_replace`ツールが代表的です。
+検索文字列と置換文字列を正確に指定する方式です。[Claude Code](/ja/blog/ja/openai-codex-api-release-vs-claude-code-comparison-may-2026/)の`str_replace`ツールが代表的です。
 
 <strong>メリット</strong>：直感的で実装がシンプルです。
 <strong>デメリット</strong>：スペース一つ、インデント一つでも間違えると「String to replace not found」エラーが発生します。<strong>完全な文字列の再現</strong>が求められます。
@@ -220,7 +220,7 @@ CTOとしてAIコーディングツールを評価する際、デモで見せる
 
 3. <strong>推論戦略の分化</strong>：計画-実装-検証の各フェーズに異なる推論レベルを割り当てます。
 
-4. <strong>トレースベースのデバッグ</strong>：LangSmithのようなツールでエージェントのすべてのアクション、遅延、トークン消費を追跡し、体系的に改善します。オープンソースの代替として[Langfuseセルフホスティング](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026)も検討できます。
+4. <strong>トレースベースのデバッグ</strong>：LangSmithのようなツールでエージェントのすべてのアクション、遅延、トークン消費を追跡し、体系的に改善します。オープンソースの代替として[Langfuseセルフホスティング](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026/)も検討できます。
 
 ### HNコミュニティで共有された実務ツール
 
@@ -239,7 +239,7 @@ CTOとしてAIコーディングツールを評価する際、デモで見せる
 - ハーネス最適化だけで<strong>Top 30 → Top 5</strong>（13.7ポイント）
 - 出力トークン<strong>20〜61%削減</strong>
 
-Engineering ManagerとしてチームのAIコーディング生産性を高めたいのであれば、次のモデルリリースを待つ前に<strong>現行ハーネスの編集成功率から測定</strong>してみましょう。その数字が意外と多くのことを教えてくれるはずです。PythonベースのAI開発環境であれば、[uvを使った素早いセットアップ方法](/ja/blog/ja/uv-python-ai-development-setup-guide-2026)も参考にしてください。
+Engineering ManagerとしてチームのAIコーディング生産性を高めたいのであれば、次のモデルリリースを待つ前に<strong>現行ハーネスの編集成功率から測定</strong>してみましょう。その数字が意外と多くのことを教えてくれるはずです。PythonベースのAI開発環境であれば、[uvを使った素早いセットアップ方法](/ja/blog/ja/uv-python-ai-development-setup-guide-2026/)も参考にしてください。
 
 ## 参考資料
 

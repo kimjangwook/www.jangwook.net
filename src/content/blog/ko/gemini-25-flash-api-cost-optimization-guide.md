@@ -65,7 +65,7 @@ relatedPosts:
 
 한 가지 더: `gemini-2.5-flash-lite`는 입력 $0.10, 출력 $0.40이다. 언뜻 훨씬 저렴해 보이지만, 항상 그런 건 아니다. 이 부분은 Step 3에서 실험 결과와 함께 설명하겠다.
 
-세팅부터 하자. [LLM API 가격 비교 2026](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서도 확인할 수 있지만, 오늘은 Gemini 2.5 Flash에 집중한다.
+세팅부터 하자. [LLM API 가격 비교 2026](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)에서도 확인할 수 있지만, 오늘은 Gemini 2.5 Flash에 집중한다.
 
 ```bash
 pip install google-genai
@@ -196,7 +196,7 @@ client.caches.delete(cache.name)
 - RAG에서 검색된 문서를 여러 질문에 걸쳐 재사용할 때
 - 코드베이스나 매뉴얼 전체를 컨텍스트로 쓰는 코딩 어시스턴트
 
-[Claude API의 Prompt Caching](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide)과 개념은 같지만 구현 세부사항이 다르다. Anthropic은 캐시 마커를 명시적으로 지정하는 반면, Gemini는 캐시 객체를 별도로 생성하는 방식이다.
+[Claude API의 Prompt Caching](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide/)과 개념은 같지만 구현 세부사항이 다르다. Anthropic은 캐시 마커를 명시적으로 지정하는 반면, Gemini는 캐시 객체를 별도로 생성하는 방식이다.
 
 ## Step 3: Flash vs Flash-Lite — 항상 Lite가 싸지 않다
 
@@ -237,13 +237,13 @@ response = client.models.generate_content(
 
 솔직히 이걸 모르고 Flash-Lite를 "항상 저렴하다"고 가정하면 실제 청구서에서 당황할 수 있다. 본인 워크로드의 평균 출력 토큰을 먼저 측정하는 게 순서다.
 
-이런 작업별 모델 선택은 [이종 LLM 아키텍처 비용 최적화](/ko/blog/ko/heterogeneous-llm-agent-fleet-cost-optimization)에서 다루는 멀티 모델 라우팅 패턴과 연결된다.
+이런 작업별 모델 선택은 [이종 LLM 아키텍처 비용 최적화](/ko/blog/ko/heterogeneous-llm-agent-fleet-cost-optimization/)에서 다루는 멀티 모델 라우팅 패턴과 연결된다.
 
 ## Step 4: Batch API로 비긴급 작업 50% 할인
 
 실시간 응답이 필요 없는 작업이 있다면 Batch API를 쓸 수 있다. Google은 배치 처리에 50% 할인을 제공한다 — Anthropic Message Batches API와 같은 맥락이다.
 
-[Anthropic Message Batches API 실전 가이드](/ko/blog/ko/anthropic-message-batches-api-production-guide)에서 배치 처리 패턴을 자세히 다뤘는데, Gemini도 동일한 원리다.
+[Anthropic Message Batches API 실전 가이드](/ko/blog/ko/anthropic-message-batches-api-production-guide/)에서 배치 처리 패턴을 자세히 다뤘는데, Gemini도 동일한 원리다.
 
 Gemini Batch API 사용 예시:
 

@@ -69,7 +69,7 @@ MiniMax M2.5는 229B 파라미터의 오픈 웨이트 모델로, HuggingFace에�
 
 ### SWE-Bench Verified (코딩)
 
-SWE-Bench Verified는 실제 GitHub 이슈를 해결하는 능력을 측정하는 벤치마크다. [멀티 에이전트 시스템의 SWE-Bench 성능](/ko/blog/ko/multi-agent-swe-bench-verdent)도 함께 참고해 보면 된다.
+SWE-Bench Verified는 실제 GitHub 이슈를 해결하는 능력을 측정하는 벤치마크다. [멀티 에이전트 시스템의 SWE-Bench 성능](/ko/blog/ko/multi-agent-swe-bench-verdent/)도 함께 참고해 보면 된다.
 
 | 모델 | 점수 | 유형 |
 |------|------|------|
@@ -94,7 +94,7 @@ SWE-Bench Verified는 실제 GitHub 이슈를 해결하는 능력을 측정하�
 
 ## 비용 혁명: 성능뿐 아니라 가격에서도 압도
 
-M2.5의 충격은 성능만이 아니다. <strong>비용 대비 성능</strong>이 차원이 다르다. [2026년 주요 LLM API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)와 함께 살펴보면 그 차이가 더욱 선명하게 드러난다.
+M2.5의 충격은 성능만이 아니다. <strong>비용 대비 성능</strong>이 차원이 다르다. [2026년 주요 LLM API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)와 함께 살펴보면 그 차이가 더욱 선명하게 드러난다.
 
 | 항목 | M2.5 Lightning | M2.5 Standard |
 |------|---------------|---------------|

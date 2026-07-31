@@ -108,7 +108,7 @@ OpenAI가 Codex에서 사용하는 diff 기반 패치 포맷이다. 모델이 �
 
 ### 2. string_replace (Claude Code, Gemini 방식)
 
-찾을 문자열과 대체할 문자열을 정확히 지정하는 방식이다. [Claude Code](/ko/blog/ko/openai-codex-api-release-vs-claude-code-comparison-may-2026)의 `str_replace` 도구가 대표적이다.
+찾을 문자열과 대체할 문자열을 정확히 지정하는 방식이다. [Claude Code](/ko/blog/ko/openai-codex-api-release-vs-claude-code-comparison-may-2026/)의 `str_replace` 도구가 대표적이다.
 
 <strong>장점</strong>: 직관적이고 구현이 단순하다.
 <strong>단점</strong>: 공백 하나, 들여쓰기 하나만 틀려도 "String to replace not found" 에러가 발생한다. <strong>완벽한 문자열 재현</strong>이 요구된다.
@@ -220,7 +220,7 @@ CTO로서 AI 코딩 도구를 평가할 때, 데모에서 보여주는 화려한
 
 3. <strong>추론 전략 분화</strong>: 계획-구현-검증 각 단계에 서로 다른 추론 수준을 할당한다.
 
-4. <strong>트레이스 기반 디버깅</strong>: LangSmith 같은 도구로 에이전트의 모든 행동, 지연, 토큰 소비를 추적하고 체계적으로 개선한다. 오픈소스 대안으로 [Langfuse 셀프호스팅](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026)도 고려할 수 있다.
+4. <strong>트레이스 기반 디버깅</strong>: LangSmith 같은 도구로 에이전트의 모든 행동, 지연, 토큰 소비를 추적하고 체계적으로 개선한다. 오픈소스 대안으로 [Langfuse 셀프호스팅](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026/)도 고려할 수 있다.
 
 ### HN 커뮤니티에서 공유된 실무 도구들
 
@@ -239,7 +239,7 @@ CTO로서 AI 코딩 도구를 평가할 때, 데모에서 보여주는 화려한
 - 하니스 최적화만으로 <strong>Top 30 → Top 5</strong> (13.7포인트)
 - 출력 토큰 <strong>20〜61% 절감</strong>
 
-Engineering Manager로서 팀의 AI 코딩 생산성을 높이고 싶다면, 다음 모델 출시를 기다리기 전에 <strong>현재 하니스의 편집 성공률부터 측정</strong>해 보자. 그 숫자가 의외로 많은 것을 알려줄 것이다. Python 기반 AI 개발 환경이라면 [uv로 빠르게 세팅하는 방법](/ko/blog/ko/uv-python-ai-development-setup-guide-2026)도 참고해 보자.
+Engineering Manager로서 팀의 AI 코딩 생산성을 높이고 싶다면, 다음 모델 출시를 기다리기 전에 <strong>현재 하니스의 편집 성공률부터 측정</strong>해 보자. 그 숫자가 의외로 많은 것을 알려줄 것이다. Python 기반 AI 개발 환경이라면 [uv로 빠르게 세팅하는 방법](/ko/blog/ko/uv-python-ai-development-setup-guide-2026/)도 참고해 보자.
 
 ## 참고 자료
 

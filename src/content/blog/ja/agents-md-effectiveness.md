@@ -176,7 +176,7 @@ Conventional Commitsに従い...
 - <strong>Python中心</strong>：AGENTbenchはPythonプロジェクトのみが対象
 - <strong>ニッチなリポジトリ</strong>：開発者がコンテキストファイルを使用しているリポジトリは比較的小規模
 - <strong>静的評価</strong>：コンテキストファイルが繰り返しタスクで累積効果を発揮するかは未検証
-- <strong>ガバナンスの空白</strong>：エージェントが指示を忠実に従うことで逆効果が生じるパターンは、[AIエージェントのKPIプレッシャーと倫理違反の研究](/ja/blog/ja/ai-agent-kpi-ethics)とも繋がります
+- <strong>ガバナンスの空白</strong>：エージェントが指示を忠実に従うことで逆効果が生じるパターンは、[AIエージェントのKPIプレッシャーと倫理違反の研究](/ja/blog/ja/ai-agent-kpi-ethics/)とも繋がります
 
 今後の研究方向としては：
 
@@ -194,7 +194,7 @@ AGENTS.mdはコーディングエージェントのエコシステムで事実�
 
 エージェント開発者の推奨通りに`/init`で自動生成するのは、現時点ではむしろ逆効果になり得ます。手動で作成し、本当に必要な情報だけを含めるのが最も効果的な戦略です。
 
-自動生成の非効率性はAGENTS.mdに限った問題ではありません。[AIが自己生成したスキルも効果がないというSkillsBenchの研究](/ja/blog/ja/ai-self-generated-skills-myth)は、同じパターンを別の角度から証明しています。
+自動生成の非効率性はAGENTS.mdに限った問題ではありません。[AIが自己生成したスキルも効果がないというSkillsBenchの研究](/ja/blog/ja/ai-self-generated-skills-myth/)は、同じパターンを別の角度から証明しています。
 
 ## 参考資料
 

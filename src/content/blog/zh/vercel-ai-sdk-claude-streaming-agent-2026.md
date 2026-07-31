@@ -113,7 +113,7 @@ Vercel AI SDK的实际优势有三点：
 
 缺点也有。它针对Vercel平台进行了优化，在其他部署环境中会产生限制。当需要对代理循环进行精细控制时，灵活性不如直接使用Anthropic SDK。这一点稍后会具体说明。
 
-[与直接构建Claude Managed Agents相比](/zh/blog/zh/claude-managed-agents-production-deployment-guide)，Managed Agents在没有基础设施的情况下更容易上手，但自定义限制很明显。Vercel AI SDK处于两者之间——比原始SDK更抽象，比Managed Agents控制权更多。
+[与直接构建Claude Managed Agents相比](/zh/blog/zh/claude-managed-agents-production-deployment-guide/)，Managed Agents在没有基础设施的情况下更容易上手，但自定义限制很明显。Vercel AI SDK处于两者之间——比原始SDK更抽象，比Managed Agents控制权更多。
 
 ## 环境设置 — 从安装包开始
 
@@ -317,7 +317,7 @@ export async function POST(req: Request) {
 
 `maxSteps: 5`很重要。没有它，Claude收到工具结果后不会继续生成响应。SDK自动处理这个循环——`maxSteps`限制最大迭代次数。
 
-[AI代理组合多个工具解决问题的模式](/zh/blog/zh/ai-agent-collaboration-patterns)在很大程度上依赖于`maxSteps`设置和每个工具`description`的质量。描述不清晰，Claude就无法判断何时使用哪个工具。早期版本中天气和待办事项会混淆，在系统提示中明确说明各工具使用场景后就稳定了。
+[AI代理组合多个工具解决问题的模式](/zh/blog/zh/ai-agent-collaboration-patterns/)在很大程度上依赖于`maxSteps`设置和每个工具`description`的质量。描述不清晰，Claude就无法判断何时使用哪个工具。早期版本中天气和待办事项会混淆，在系统提示中明确说明各工具使用场景后就稳定了。
 
 在前端实时显示工具调用进度：
 
@@ -388,7 +388,7 @@ ${content}
 - 从长文档中提取结构化信息
 - 表单自动填充
 
-这个博客的分类分数提取中实际使用了类似模式。在Zod schema字段上写好`describe()`是提升输出质量的关键。[做好上下文工程](/zh/blog/zh/context-engineering-production-ai-agents)意味着schema设计和提示质量决定了提取准确度的80%。
+这个博客的分类分数提取中实际使用了类似模式。在Zod schema字段上写好`describe()`是提升输出质量的关键。[做好上下文工程](/zh/blog/zh/context-engineering-production-ai-agents/)意味着schema设计和提示质量决定了提取准确度的80%。
 
 `streamObject()`也可用——当你想在UI中渐进式显示大型schema中的字段而不需要等待完整响应时很有用。
 
@@ -411,7 +411,7 @@ export const runtime = 'nodejs'; // 使用Node.js运行时而非Edge
 
 Vercel免费版serverless函数超时为10秒。Claude生成长文本或运行复杂工具循环可能会超时。Pro版可延长至60秒。
 
-对于需要更长时间的任务，架构本身需要改变。[单独构建MCP服务器来分离长时间运行任务](/zh/blog/zh/mcp-server-build-practical-guide-2026)是一种方案。
+对于需要更长时间的任务，架构本身需要改变。[单独构建MCP服务器来分离长时间运行任务](/zh/blog/zh/mcp-server-build-practical-guide-2026/)是一种方案。
 
 <strong>上下文累积成本</strong>
 

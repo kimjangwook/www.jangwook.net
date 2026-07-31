@@ -107,7 +107,7 @@ Claude强调了x-default的重要性：
 
 > "x-default标签告诉Google：'如果用户的语言不在这4种之内，就显示这个默认版本'。缺少这个标签会让爬虫困惑。"
 
-如何在代码层面解决"无价值内容"判定，在[从技术上解决AdSense低质量内容问题](/zh/blog/zh/adsense-low-value-content-technical-fix)中有更具体的整理。
+如何在代码层面解决"无价值内容"判定，在[从技术上解决AdSense低质量内容问题](/zh/blog/zh/adsense-low-value-content-technical-fix/)中有更具体的整理。
 
 ### 3. 无自动语言检测
 
@@ -286,7 +286,7 @@ function detectBrowserLanguage(): SupportedLanguage | null {
 </section>
 ```
 
-这让访问者（和爬虫）立即明白："这个人有资格谈论这些技术话题"。在搜索引擎和AI搜索（AEO）两端强化信任信号的方法，在[LLM时代的SEO与AEO实战](/zh/blog/zh/llm-seo-aeo-practical-implementation)中继续展开。
+这让访问者（和爬虫）立即明白："这个人有资格谈论这些技术话题"。在搜索引擎和AI搜索（AEO）两端强化信任信号的方法，在[LLM时代的SEO与AEO实战](/zh/blog/zh/llm-seo-aeo-practical-implementation/)中继续展开。
 
 ## Before/After对比：量化的改进
 

@@ -75,7 +75,7 @@ graph TD
 
 ## The five items I actually ran over five days
 
-Measurement first. Each item got a before/after in numbers, not a vibe that "things feel better" but reproducible figures. (The raw log of all five lives on the [improvement history page](/en/improvement-history) too.)
+Measurement first. Each item got a before/after in numbers, not a vibe that "things feel better" but reproducible figures. (The raw log of all five lives on the [improvement history page](/en/improvement-history/) too.)
 
 | Date | Item | Before | After | Gate |
 |---|---|---|---|---|
@@ -89,7 +89,7 @@ On the surface, five separate fixes. In practice they share one viewpoint: every
 
 I recorded before/after as numbers on purpose. "Feels better" isn't reproducible, and if it isn't reproducible you can't build a gate. A gate is ultimately a verdict: "if this number crosses a threshold, fail." If draft-referencing 404s were 12, the gate's condition becomes "fail the build on anything above 0." The moment you record a measurement as a number, that measurement becomes the baseline of a regression test. That's the first turn that converts an audit from an event into a loop. For context, of 298 published posts only 55 are indexable; the remaining 972 (summed across four languages) are drafts held out of the feed, a ratio that measurement itself surfaced. Without knowing it, you chase phantom bugs like "why are there so few posts in my sitemap."
 
-Each of the five already has its own deep dive, so I won't repeat them. Why hreflang reciprocity has to be bidirectional is in [the post where I audited hreflang and found a homepage bug](/en/blog/en/hreflang-reciprocity-audit-multilingual-2026); why I merge schema fragments into a single `@graph` is in [the JSON-LD @graph entity-linking post](/en/blog/en/json-ld-graph-entity-linking-2026). This post's focus is the loop that runs through all five, not the individual techniques.
+Each of the five already has its own deep dive, so I won't repeat them. Why hreflang reciprocity has to be bidirectional is in [the post where I audited hreflang and found a homepage bug](/en/blog/en/hreflang-reciprocity-audit-multilingual-2026/); why I merge schema fragments into a single `@graph` is in [the JSON-LD @graph entity-linking post](/en/blog/en/json-ld-graph-entity-linking-2026/). This post's focus is the loop that runs through all five, not the individual techniques.
 
 ## Biggest item first, but I doubted the measurement first
 
@@ -99,7 +99,7 @@ Here's a lesson I took away. <strong>Audit an outlier before you attack it.</str
 
 Had I trusted the number and gone straight to "let's re-translate," I'd have burned days in the wrong place. Auditing what the measurer counts first, the largest outlier of the 21 turned out to be the code-fence issue, and the rest resolved into restoring roughly 40 sections and 12 diagrams dropped during translation. When restoring, I didn't hand-carry each language; I fed a shared template and swapped only string parameters, which is what stops secondary drift.
 
-The performance item was similar. Render-blocking font CSS was 405KB, but the first optimization question wasn't "how do I load it faster." It was "do I need to load this at all." I was shipping glyphs no language even used. Splitting Google Fonts into per-language subsets took 405KB down to 1–137KB depending on language, and making the font CSS async brought render-blocking to zero. As a side effect the accessibility score went from 91 to 100. How I pin accessibility to a number is in [the post where I ran a Lighthouse accessibility audit and fixed it](/en/blog/en/a11y-lighthouse-audit-fix-2026).
+The performance item was similar. Render-blocking font CSS was 405KB, but the first optimization question wasn't "how do I load it faster." It was "do I need to load this at all." I was shipping glyphs no language even used. Splitting Google Fonts into per-language subsets took 405KB down to 1–137KB depending on language, and making the font CSS async brought render-blocking to zero. As a side effect the accessibility score went from 91 to 100. How I pin accessibility to a number is in [the post where I ran a Lighthouse accessibility audit and fixed it](/en/blog/en/a11y-lighthouse-audit-fix-2026/).
 
 ## You don't fix it — you make it unable to return
 
@@ -157,7 +157,7 @@ Run the build and both checkers pass like this. Below is the log from the build 
 [hreflang-check] OK
 ```
 
-`orphan-check` rides on the same post-build step. An orphan page (one no internal link reaches) is hard for crawlers to discover, and even when found it reads as an isolated signal. After the audit I linked one formerly-orphaned page from the Footer, then made this check permanent to stop it recurring. Accepting a limit is also part of the loop. I cut translation drift from 21 to 1, and I left that 1 on purpose: one very old legacy post has a different cross-language structure, and forcing it into line now would mean touching already-indexed URL structure at a risk larger than the payoff. So I registered that one slug explicitly in the checker's allowlist. Rather than "anything above 0 fails," the realistic stance is "exceptions you decide to accept pass, with their rationale left in code." The goal isn't zero on every metric; it's stopping unintended recurrence. How I control AI crawlers differently is covered in [the post on governing crawlers with robots.txt and llms.txt](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026).
+`orphan-check` rides on the same post-build step. An orphan page (one no internal link reaches) is hard for crawlers to discover, and even when found it reads as an isolated signal. After the audit I linked one formerly-orphaned page from the Footer, then made this check permanent to stop it recurring. Accepting a limit is also part of the loop. I cut translation drift from 21 to 1, and I left that 1 on purpose: one very old legacy post has a different cross-language structure, and forcing it into line now would mean touching already-indexed URL structure at a risk larger than the payoff. So I registered that one slug explicitly in the checker's allowlist. Rather than "anything above 0 fails," the realistic stance is "exceptions you decide to accept pass, with their rationale left in code." The goal isn't zero on every metric; it's stopping unintended recurrence. How I control AI crawlers differently is covered in [the post on governing crawlers with robots.txt and llms.txt](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026/).
 
 ## What Google does not guarantee
 
@@ -180,4 +180,4 @@ Generalizing what I applied to my blog, any site can start this loop like this.
 
 Looking back on the five days, the most valuable output wasn't the five fixes but the three checkers left in the repo. The five will be forgotten someday; the checkers remember for me every time I slip. Making an audit a loop instead of an event comes down to exactly that.
 
-If you want to reliably emit structured data server-side, or audit a multilingual site's hreflang, JSON-LD, and performance for real and wire regression gates onto the fixes, I take consulting and implementation work privately. Controlling what the server actually sends a crawler, in code, is my area. If you'd like to see your site from the angle of the markup the server emits, [the post on emitting LocalBusiness structured data server-side](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026) runs in the same vein.
+If you want to reliably emit structured data server-side, or audit a multilingual site's hreflang, JSON-LD, and performance for real and wire regression gates onto the fixes, I take consulting and implementation work privately. Controlling what the server actually sends a crawler, in code, is my area. If you'd like to see your site from the angle of the markup the server emits, [the post on emitting LocalBusiness structured data server-side](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026/) runs in the same vein.

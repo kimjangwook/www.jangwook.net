@@ -82,7 +82,7 @@ Load delay 是 1184ms。图片下载才 5ms，浏览器却花了 1.2 秒去**发
 
 这里要讲一个关键概念。浏览器里有个东西叫**预加载扫描器（preload scanner）**。当 HTML 响应字节一到，在主解析器跑起来之前，这个扫描器就先扫一遍原始 HTML，把 `<img src>`、`<script src>`、`<link href>` 这类资源提前发现、提前发请求。问题是，它只看 HTML。**CSS 里的 `background-image` URL，扫描器看不见**（[web.dev，Don't fight the browser preload scanner](https://web.dev/preload-scanner/)）。所以背景图要等 CSS 下载并解析完，才会开始请求。我的 CSS 加了 1 秒延迟，英雄图就精确地晚了这么多才被发现。Chrome 自己把这点点了出来，标成 "LCP request discovery" 洞察（[LCP discovery, Chrome for Developers](https://developer.chrome.com/docs/performance/insights/lcp-discovery)）。
 
-这现象和[AI 爬虫不执行 JavaScript、因此看不到你的内容那篇](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026)同根同源。资源被放在哪、怎么放，决定了它什么时候（甚至到底会不会）被处理。
+这现象和[AI 爬虫不执行 JavaScript、因此看不到你的内容那篇](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/)同根同源。资源被放在哪、怎么放，决定了它什么时候（甚至到底会不会）被处理。
 
 ## 加了 fetchpriority 和 preload——可 LCP 纹丝不动
 
@@ -155,7 +155,7 @@ LCP: 109 ms
 3. **绝对别给 LCP 图片加 `loading="lazy"`。**对首屏以下的图片有用，可给视口最顶部的英雄图加，就是自己拖慢自己的发现（[web.dev，关于 LCP 的误区](https://web.dev/blog/common-misconceptions-lcp)）。
 4. **内联关键 CSS，其余非阻塞。**图片收得再早，只要渲染阻塞 CSS 还卡着绘制，就白搭。
 5. **永远写上 `width`/`height`（或 `aspect-ratio`）。**这能防止布局偏移（CLS）。上面三个版本，CLS 都是 0.00。
-6. **最要紧的，先读 LCP 分解。**DevTools 的 Performance 面板会直接把 TTFB / Load delay / Load duration / Render delay 摆给你看。从最大那段下手。这套测量流程本身，我在[用 Lighthouse 直接抓出并修复无障碍问题那篇](/zh/blog/zh/a11y-lighthouse-audit-fix-2026)里挖得更深。
+6. **最要紧的，先读 LCP 分解。**DevTools 的 Performance 面板会直接把 TTFB / Load delay / Load duration / Render delay 摆给你看。从最大那段下手。这套测量流程本身，我在[用 Lighthouse 直接抓出并修复无障碍问题那篇](/zh/blog/zh/a11y-lighthouse-audit-fix-2026/)里挖得更深。
 
 ## 诚实的边界——别误读这些数字
 
@@ -167,7 +167,7 @@ LCP: 109 ms
 
 第三。preload 滥用也会变毒。什么都用 preload 给高优先级，反而抢了真正要紧资源的带宽，某些条件下还会把一张图下载两遍。preload 要省着用，只给**那一个 LCP 元素**。
 
-一句话总结这篇：LCP 慢的时候，别先怀疑图片体积，先打开那四段——看浏览器什么时候发现这个元素、什么时候画它。瓶颈通常藏在发现和渲染阻塞里，不在下载。我在实际审计一个多语言博客、剥掉渲染阻塞资源的[技术 SEO 审计记录](/zh/blog/zh/multilingual-blog-technical-audit-campaign-2026)里，也走到了同一个结论。
+一句话总结这篇：LCP 慢的时候，别先怀疑图片体积，先打开那四段——看浏览器什么时候发现这个元素、什么时候画它。瓶颈通常藏在发现和渲染阻塞里，不在下载。我在实际审计一个多语言博客、剥掉渲染阻塞资源的[技术 SEO 审计记录](/zh/blog/zh/multilingual-blog-technical-audit-campaign-2026/)里，也走到了同一个结论。
 
 ---
 

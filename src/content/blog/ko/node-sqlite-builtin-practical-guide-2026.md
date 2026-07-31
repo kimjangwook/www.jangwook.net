@@ -279,7 +279,7 @@ console.log('평균 점수:', avg.avg);  // 평균 점수: 1012.5
 db.close();
 ```
 
-데이터 정제, 암호화, 해시 등 순수 SQL로 처리하기 어려운 로직을 JS로 구현해서 쿼리에 바로 꽂을 수 있다. [Hono.js API 서버를 구성할 때](/ko/blog/ko/hono-typescript-api-2026) 날짜 포매팅이나 JSON 파싱을 DB 레벨에서 처리하는 용도로 쓰면 편리하다.
+데이터 정제, 암호화, 해시 등 순수 SQL로 처리하기 어려운 로직을 JS로 구현해서 쿼리에 바로 꽂을 수 있다. [Hono.js API 서버를 구성할 때](/ko/blog/ko/hono-typescript-api-2026/) 날짜 포매팅이나 JSON 파싱을 DB 레벨에서 처리하는 용도로 쓰면 편리하다.
 
 ## StatementSync 고급 옵션
 
@@ -436,7 +436,7 @@ const mode = db.prepare('PRAGMA journal_mode').get();
 console.log('journal_mode:', mode.journal_mode);  // wal
 ```
 
-[Deno 2 vs Bun 비교](/ko/blog/ko/deno-2-vs-bun-nodejs-runtime-2026-comparison)에서도 언급했지만, SQLite는 단일 서버 내 작업에는 충분히 빠르다. WAL 모드까지 켜면 대부분의 내부 툴링 시나리오에서 PostgreSQL이 필요한 이유가 사라진다.
+[Deno 2 vs Bun 비교](/ko/blog/ko/deno-2-vs-bun-nodejs-runtime-2026-comparison/)에서도 언급했지만, SQLite는 단일 서버 내 작업에는 충분히 빠르다. WAL 모드까지 켜면 대부분의 내부 툴링 시나리오에서 PostgreSQL이 필요한 이유가 사라진다.
 
 ## 에러 처리
 
@@ -516,7 +516,7 @@ SQLite 에러 코드 전체 목록은 [공식 문서](https://www.sqlite.org/res
 
 프로덕션 서버에 바로 쓰기엔 아직 이르다. Node.js v26 LTS가 나오고 experimental 딱지가 떨어질 때까지 기다리는 게 맞다. 하지만 내부 CLI 툴, 스크립트, 빌드 도구, 캐시 레이어, 단기 프로토타입에는 지금 당장 써도 된다. `better-sqlite3` 빌드 실패에 지쳐있다면 특히 그렇다.
 
-[Bun Shell 스크립트 자동화](/ko/blog/ko/bun-shell-scripting-practical-guide-2026)나 내부 개발 도구를 만들 때 외부 의존성을 최소화하고 싶다면, `node:sqlite`는 지금도 실용적인 선택이다.
+[Bun Shell 스크립트 자동화](/ko/blog/ko/bun-shell-scripting-practical-guide-2026/)나 내부 개발 도구를 만들 때 외부 의존성을 최소화하고 싶다면, `node:sqlite`는 지금도 실용적인 선택이다.
 
 ## 결국 내부 툴링에는 지금도 충분하다
 

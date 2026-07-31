@@ -164,7 +164,7 @@ export const weatherTool = createTool({
 });
 ```
 
-Zod 스키마로 입출력 타입을 정의하는 방식은 [PydanticAI의 타입 안전 에이전트](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)에서 Pydantic BaseModel을 사용하는 것과 구조적으로 비슷하다. 언어만 다를 뿐 "타입이 곧 문서이자 검증 로직"이라는 철학은 같다.
+Zod 스키마로 입출력 타입을 정의하는 방식은 [PydanticAI의 타입 안전 에이전트](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)에서 Pydantic BaseModel을 사용하는 것과 구조적으로 비슷하다. 언어만 다를 뿐 "타입이 곧 문서이자 검증 로직"이라는 철학은 같다.
 
 날씨 툴이 사용하는 Open-Meteo API는 무료이고 API 키가 없어서 좋다. geocoding으로 도시명 → 위경도로 변환하고, 날씨 예보 API로 현재 날씨를 가져오는 구조다.
 
@@ -336,7 +336,7 @@ Anthropic API 키가 있다면 `anthropic/claude-sonnet-4-6`으로 바꿔도 그
 
 TypeScript 생태계에서 Mastra와 가장 가깝게 비교할 수 있는 건 Vercel AI SDK다. Vercel AI SDK가 LLM 호출과 스트리밍에 특화되어 있다면, Mastra는 그 위에 에이전트 수명주기 관리, 메모리, 옵저버빌리티를 추가한 레이어다.
 
-[Google ADK vs LangGraph 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026)를 해봤을 때, 두 프레임워크는 모두 Python 중심이었다. Mastra는 그 공간을 TypeScript에서 메우려는 시도인데, v1.42에서 Mastra의 Workflow와 Memory가 이미 꽤 쓸만하다는 인상을 받았다.
+[Google ADK vs LangGraph 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026/)를 해봤을 때, 두 프레임워크는 모두 Python 중심이었다. Mastra는 그 공간을 TypeScript에서 메우려는 시도인데, v1.42에서 Mastra의 Workflow와 Memory가 이미 꽤 쓸만하다는 인상을 받았다.
 
 | | Mastra | Vercel AI SDK | LangGraph.js |
 |---|---|---|---|
@@ -363,16 +363,16 @@ TypeScript 생태계에서 Mastra와 가장 가깝게 비교할 수 있는 건 V
 - TypeScript/JavaScript 기반 프로젝트에서 에이전트를 처음 도입할 때. 팀이 이미 Node 생태계에 익숙하다면 Python 스택을 새로 들이는 것보다 진입 비용이 낮다.
 - 에이전트 루프, 메모리, 옵저버빌리티를 한 SDK 안에서 끝내고 싶을 때. 여러 라이브러리를 직접 엮는 작업을 줄여준다.
 - 워크플로우(그래프 기반 멀티스텝 파이프라인)가 필요한 경우. `.then()` / `.branch()` / `.parallel()`의 타입 안전한 조합이 강점이다.
-- LLM 제공자를 자주 바꿔가며 실험하는 단계. 모델 문자열만 교체하면 OpenAI, Anthropic, Gemini를 오갈 수 있다. 비용과 응답 속도 트레이드오프는 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 더 자세히 다뤘다.
+- LLM 제공자를 자주 바꿔가며 실험하는 단계. 모델 문자열만 교체하면 OpenAI, Anthropic, Gemini를 오갈 수 있다. 비용과 응답 속도 트레이드오프는 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality/)에서 더 자세히 다뤘다.
 
 **피하는 게 나은 경우**
 
 - 미션 크리티컬한 프로덕션 서비스에 당장 투입해야 할 때. v1.0이 나온 지 반년이 안 됐고, API 안정성과 서드파티 통합 생태계가 LangChain 수준에 못 미친다.
-- Python 라이브러리 생태계(LangGraph, CrewAI, PydanticAI)의 성숙도와 커뮤니티 플러그인이 결정적인 경우. 선택지 비교는 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)를 참고하면 좋다.
+- Python 라이브러리 생태계(LangGraph, CrewAI, PydanticAI)의 성숙도와 커뮤니티 플러그인이 결정적인 경우. 선택지 비교는 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026/)를 참고하면 좋다.
 - Vercel 외의 환경(Docker, 자체 서버)에 복잡한 배포 파이프라인을 즉시 구축해야 할 때. 공식 배포 문서가 아직 얇다.
 - 단순히 LLM 호출 한두 번이면 충분한 경우. 그럴 땐 Vercel AI SDK만으로도 충분하고, 에이전트 추상화의 오버헤드가 불필요하다.
 
-순수하게 툴 호출 패턴만 비교하고 싶다면 [Claude Agent SDK 툴 사용 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)와 나란히 놓고 보면 설계 차이가 분명해진다.
+순수하게 툴 호출 패턴만 비교하고 싶다면 [Claude Agent SDK 툴 사용 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)와 나란히 놓고 보면 설계 차이가 분명해진다.
 
 ## 지금 Mastra를 써볼 만한가
 

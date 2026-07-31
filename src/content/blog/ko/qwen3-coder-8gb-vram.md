@@ -179,13 +179,13 @@ RTX 5090의 32GB VRAM과 높은 메모리 대역폭으로 `max_gpu_cache=120` �
 
 1. <strong>모델 구조 분석이 최적화의 시작점</strong>: MoE 모델의 전문가 분포를 파악하면 선택적 로딩이 가능
 2. <strong>다계층 캐시가 핵심</strong>: VRAM → Pinned RAM → SSD 순서의 캐시 전략이 300배 속도 향상을 실현
-3. <strong>하드웨어 발전이 격차를 좁힌다</strong>: 차세대 GPU에서는 실용적 속도에 도달할 가능성. [llama.cpp의 컴퓨트 그래프 최적화](/ko/blog/ko/qwen3-coder-next-llama-cpp-graph-optimization)처럼 소프트웨어 수준의 접근법도 이 격차를 빠르게 좁히고 있다.
+3. <strong>하드웨어 발전이 격차를 좁힌다</strong>: 차세대 GPU에서는 실용적 속도에 도달할 가능성. [llama.cpp의 컴퓨트 그래프 최적화](/ko/blog/ko/qwen3-coder-next-llama-cpp-graph-optimization/)처럼 소프트웨어 수준의 접근법도 이 격차를 빠르게 좁히고 있다.
 
 ## 결론
 
 Qwen3-Coder-Next 80B를 8GB VRAM에서 실행하는 것은 기술적으로 인상적인 성과다. 현재 1.2 t/s의 속도는 실시간 코딩 보조에는 부족하지만, 차세대 GPU와 최적화 기법의 발전으로 소비자 하드웨어에서의 대형 코딩 모델 실행이 점점 현실에 가까워지고 있다.
 
-로컬 LLM에 관심 있는 개발자라면 [nalexand의 GitHub 저장소](https://github.com/nalexand/Qwen3-Coder-OPTIMIZED)를 확인하고, 자신의 하드웨어에서 직접 실험해보는 것을 추천한다. VRAM 사용량을 더욱 줄이려면 [4bit 양자화로 VRAM을 최대 70% 절감하는 Heretic 1.2 기법](/ko/blog/ko/heretic-12-vram-reduction)도 함께 참고해보면 된다.
+로컬 LLM에 관심 있는 개발자라면 [nalexand의 GitHub 저장소](https://github.com/nalexand/Qwen3-Coder-OPTIMIZED)를 확인하고, 자신의 하드웨어에서 직접 실험해보는 것을 추천한다. VRAM 사용량을 더욱 줄이려면 [4bit 양자화로 VRAM을 최대 70% 절감하는 Heretic 1.2 기법](/ko/blog/ko/heretic-12-vram-reduction/)도 함께 참고해보면 된다.
 
 ## 참고 자료
 

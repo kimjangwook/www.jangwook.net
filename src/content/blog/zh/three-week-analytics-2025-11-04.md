@@ -202,11 +202,11 @@ relatedPosts:
 
 | 发布日期 | 标题 | 主题 | 表现 |
 |--------|------|------|------|
-| 10-15 | [AI时代的规范驱动开发](/zh/blog/zh/specification-driven-development) | 开发方法论 | 数据不足 |
+| 10-15 | [AI时代的规范驱动开发](/zh/blog/zh/specification-driven-development/) | 开发方法论 | 数据不足 |
 | 10-16 | [AI代理协作模式](/zh/blog/zh/ai-agent-collaboration-patterns/) | AI Agents | 数据不足 |
-| 10-17 | [自我修复AI系统](/zh/blog/zh/self-healing-ai-systems) | AI Engineering | 数据不足 |
-| 10-18 | [推荐系统创新](/zh/blog/zh/metadata-based-recommendation-optimization) | Technical | 数据不足 |
-| 10-19 | [AI代理性别与角色](/zh/blog/zh/ai-agent-persona-analysis) | AI Ethics | 数据不足 |
+| 10-17 | [自我修复AI系统](/zh/blog/zh/self-healing-ai-systems/) | AI Engineering | 数据不足 |
+| 10-18 | [推荐系统创新](/zh/blog/zh/metadata-based-recommendation-optimization/) | Technical | 数据不足 |
+| 10-19 | [AI代理性别与角色](/zh/blog/zh/ai-agent-persona-analysis/) | AI Ethics | 数据不足 |
 | 10-20 | [OpenAI AgentKit第1部分](/zh/blog/zh/openai-agentkit-tutorial-part1/) | AI Agents | <strong>Top 5</strong>（9次浏览） |
 | 10-21 | [OpenAI AgentKit第2部分](/zh/blog/zh/openai-agentkit-tutorial-part2/) | AI Agents | 数据不足 |
 | 10-22 | [Claude Skills完整指南](/zh/blog/zh/claude-skills-implementation-guide/) | Claude Code | <strong>Top 1</strong>（31次浏览）🥇 |
@@ -215,11 +215,11 @@ relatedPosts:
 | 10-25 | [Playwright AI测试](/zh/blog/zh/playwright-ai-testing/) | Testing | <strong>Top 9</strong>（7次浏览） |
 | 10-26 | [LangGraph多代理](/zh/blog/zh/langgraph-multi-agent/) | AI Agents | 英文版Top 10（6次浏览） |
 | 10-27 | [Jules自动编码](/zh/blog/zh/jules-autocoding/) | AI Tools | <strong>Top 7, 13</strong>（7+6次浏览） |
-| 10-28 | [BigQuery MCP服务器构建](/zh/blog/zh/bigquery-mcp-prefix-filtering) | MCP | 数据不足 |
-| 10-29 | [Claude Code Hook自动化审查](/zh/blog/zh/claude-code-hooks-workflow) | Claude Code | 数据不足 |
-| 10-30 | [LLM网页迁移标准化](/zh/blog/zh/llm-page-migration-standardization) | LLM | 数据不足 |
+| 10-28 | [BigQuery MCP服务器构建](/zh/blog/zh/bigquery-mcp-prefix-filtering/) | MCP | 数据不足 |
+| 10-29 | [Claude Code Hook自动化审查](/zh/blog/zh/claude-code-hooks-workflow/) | Claude Code | 数据不足 |
+| 10-30 | [LLM网页迁移标准化](/zh/blog/zh/llm-page-migration-standardization/) | LLM | 数据不足 |
 | 10-31 | [Claude Code大规模测试并行自动化](/zh/blog/zh/claude-code-parallel-testing/) | Testing | 数据不足 |
-| 11-01 | [LLM PM工作效率提升](/zh/blog/zh/llm-pm-workflow-automation) | Project Management | 数据不足 |
+| 11-01 | [LLM PM工作效率提升](/zh/blog/zh/llm-pm-workflow-automation/) | Project Management | 数据不足 |
 | 11-03 | [Notion+Backlog+Slack+Claude项目管理](/zh/blog/zh/notion-backlog-slack-claude-project-management/) | Project Management | 数据不足 |
 | 11-04 | [Slack MCP团队沟通分析](/zh/blog/zh/slack-mcp-team-communication/) | MCP | 数据不足 |
 

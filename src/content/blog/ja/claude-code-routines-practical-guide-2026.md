@@ -168,7 +168,7 @@ curl -X POST \
 
 例えば、Sentryアラートを受け取ったらスタックトレースを分析して最近のコミットと関連付け、修正案のドラフトPRを開くルーティンを作ることができる。
 
-[MCP サーバーを直接構築したことがある](/ja/blog/ja/mcp-server-build-practical-guide-2026)なら、このコネクタエコシステムがどのように拡張されるかすでに体感しているはずだ。Routinesはそのコネクタを自動化された実行環境でそのまま活用する。
+[MCP サーバーを直接構築したことがある](/ja/blog/ja/mcp-server-build-practical-guide-2026/)なら、このコネクタエコシステムがどのように拡張されるかすでに体感しているはずだ。Routinesはそのコネクタを自動化された実行環境でそのまま活用する。
 
 ### GitHubイベントトリガー
 
@@ -214,7 +214,7 @@ Slack #bug-reportsチャンネルで過去24時間以内の新しいメッセー
 4. 不明瞭な場合はSlackで追加情報を求めるメッセージを送信
 ```
 
-[Claude Codeのエージェンティックワークフローの5つのパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)を知っているなら、Routinesはその中の「自律エージェント(Autonomous Agent)」パターンをクラウドで予約実行する方式と理解すれば正確だ。
+[Claude Codeのエージェンティックワークフローの5つのパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)を知っているなら、Routinesはその中の「自律エージェント(Autonomous Agent)」パターンをクラウドで予約実行する方式と理解すれば正確だ。
 
 ## 実践ユースケース4選
 
@@ -269,7 +269,7 @@ curl -X POST \
 
 ルーティングはデプロイされたバージョンの主要APIエンドポイントを呼び出し、エラーログをスキャンし、#releasesチャンネルにgo/no-go判定を送信する。
 
-[MCP サーバーをKubernetes にプロダクションデプロイする方法](/ja/blog/ja/mcp-server-production-deployment-kubernetes-guide)をすでに扱ったが、このスモークテストルーティングをそのパイプラインの最後のステップとして組み込むと自然につながる。
+[MCP サーバーをKubernetes にプロダクションデプロイする方法](/ja/blog/ja/mcp-server-production-deployment-kubernetes-guide/)をすでに扱ったが、このスモークテストルーティングをそのパイプラインの最後のステップとして組み込むと自然につながる。
 
 ### ケース4: 週次ドキュメントドリフト検出
 
@@ -291,7 +291,7 @@ Routinesが印象的なのは事実だが、まだリサーチプレビュー段
 
 **セッションの再利用ができない。** GitHubイベントが2回発生すると、2つの独立したセッションが開始される。前回実行のコンテキストを次の実行に引き継ぐ方法がない。
 
-[Claude Codeを並列セッションで運用する方法](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)をすでに習得しているなら、Routinesはその並列性を時間軸に拡張する概念として捉えることができる。今この瞬間自分が別の作業をしている間、ルーティングが別のリポジトリで別の作業を処理している。
+[Claude Codeを並列セッションで運用する方法](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/)をすでに習得しているなら、Routinesはその並列性を時間軸に拡張する概念として捉えることができる。今この瞬間自分が別の作業をしている間、ルーティングが別のリポジトリで別の作業を処理している。
 
 ## 結論 — どのチームに適しているか
 

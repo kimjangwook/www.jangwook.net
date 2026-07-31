@@ -49,7 +49,7 @@ faq:
 일본에서 일하면서 발견한 B2B 자동화 니즈:
 
 1. <strong>면세처리 업무의 수작업 의존</strong>: 여권과 면세 서류를 육안으로 확인하고 수기 입력
-2. <strong>경리 업무의 반복 작업</strong>: 영수증 OCR 후 수동 데이터 정리. [실제 데이터로 본 AI 경리 자동화의 효과](/ko/blog/ko/effiflow-automation-analysis-part1)에서 이 문제가 얼마나 심각한지 수치로 확인할 수 있다.
+2. <strong>경리 업무의 반복 작업</strong>: 영수증 OCR 후 수동 데이터 정리. [실제 데이터로 본 AI 경리 자동화의 효과](/ko/blog/ko/effiflow-automation-analysis-part1/)에서 이 문제가 얼마나 심각한지 수치로 확인할 수 있다.
 3. <strong>기존 솔루션의 한계</strong>: 고가의 엔터프라이즈 솔루션이거나 정확도가 낮은 범용 OCR
 
 개인 개발자로서 차별화 포인트는 <strong>AI를 활용한 구조화된 데이터 추출</strong>이다. 단순 텍스트 OCR을 넘어 Google Gemini API의 Structured Output 기능으로 타입 안전한 JSON 응답을 받아 즉시 비즈니스 로직에 활용 가능한 데이터를 제공한다. 이 서비스의 이후 방향성에 대해서는 Agent Effi Flow의 피벗 결정과 오모테나시 봇 구상에서 이어서 다룬다.
@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript 타입 정의
    - Zod 스키마 검증
    
-   솔로 개발자로 AI 도구를 활용해 사이드 프로젝트를 회사 수준으로 키우는 접근법은 효로우(effloow) 사이드 프로젝트를 AI 컴퍼니로에서도 자세히 다뤘다. 여러 에이전트를 묶어 작업을 자동화하는 실전 노하우는 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)에 정리해 뒀다.
+   솔로 개발자로 AI 도구를 활용해 사이드 프로젝트를 회사 수준으로 키우는 접근법은 효로우(effloow) 사이드 프로젝트를 AI 컴퍼니로에서도 자세히 다뤘다. 여러 에이전트를 묶어 작업을 자동화하는 실전 노하우는 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement/)에 정리해 뒀다.
 
 3. <strong>Vercel Preview Deployments</strong>
    - PR마다 자동 배포 URL
@@ -734,7 +734,7 @@ const optimized = await sharp(imageBuffer)
 <strong>이 접근이 잘 맞는 경우</strong>:
 
 - 솔로 또는 소규모 팀이 빠르게 MVP를 검증하려는 경우. 관리형 백엔드(Supabase)와 서버리스 배포(Vercel)가 인프라 운영 부담을 거의 없애준다.
-- AI 추론 비용이 단가에 직접 반영되는 종량제 서비스. Gemini 2.5 Flash의 저렴한 토큰 단가가 마진을 지켜준다. AI 운영 비용의 현실적인 구조는 <a href="/ko/blog/ko/ai-agent-cost-reality">AI 에이전트 비용의 현실</a>에서 더 깊이 다뤘다.
+- AI 추론 비용이 단가에 직접 반영되는 종량제 서비스. Gemini 2.5 Flash의 저렴한 토큰 단가가 마진을 지켜준다. AI 운영 비용의 현실적인 구조는 <a href="/ko/blog/ko/ai-agent-cost-reality/">AI 에이전트 비용의 현실</a>에서 더 깊이 다뤘다.
 - 트래픽이 불규칙하거나 초기에 거의 없는 서비스. 서버리스 과금은 유휴 상태에서 비용이 0에 가깝다.
 - 구조화된 데이터 추출이 핵심 가치인 경우. Structured Output이 파싱 레이어를 통째로 없애준다.
 
@@ -742,10 +742,10 @@ const optimized = await sharp(imageBuffer)
 
 - 엄격한 데이터 거버넌스나 온프레미스 요건이 있는 경우. 외부 LLM API에 이미지를 보내는 구조 자체가 컴플라이언스 문턱에 걸릴 수 있다.
 - 밀리초 단위 지연이 중요한 워크로드. LLM 추론은 수백 ms에서 수 초가 걸려 실시간 처리에는 부적합하다.
-- 월 수백만 건 이상의 고정적·예측 가능한 대량 처리. 이 규모에서는 서버리스·종량 API보다 전용 인프라나 자체 모델이 단가에서 유리해진다. 실제 운영 데이터로 검증한 비용·효과 분석은 <a href="/ko/blog/ko/effiflow-automation-analysis-part2">Effi Flow 자동화 분석</a>에서 확인할 수 있다.
+- 월 수백만 건 이상의 고정적·예측 가능한 대량 처리. 이 규모에서는 서버리스·종량 API보다 전용 인프라나 자체 모델이 단가에서 유리해진다. 실제 운영 데이터로 검증한 비용·효과 분석은 <a href="/ko/blog/ko/effiflow-automation-analysis-part2/">Effi Flow 자동화 분석</a>에서 확인할 수 있다.
 - OCR 오류가 곧 사고로 이어지는 고위험 도메인(의료 처방, 법적 계약 원본). 사람 검수 단계를 반드시 끼워야 하므로 "완전 자동화"라는 전제가 무너진다.
 
-도구를 새로 익히는 비용도 무시할 수 없다. React/Next.js에 이미 숙련된 팀이라면 SvelteKit으로 갈아타는 학습 비용이 번들 크기 절감 이득보다 클 수도 있다. 솔로 개발자가 AI 도구로 생산성을 끌어올린 실제 패턴은 <a href="/ko/blog/ko/claude-code-insights-usage-analysis">Claude Code 사용 분석</a>에 정리해 뒀다.
+도구를 새로 익히는 비용도 무시할 수 없다. React/Next.js에 이미 숙련된 팀이라면 SvelteKit으로 갈아타는 학습 비용이 번들 크기 절감 이득보다 클 수도 있다. 솔로 개발자가 AI 도구로 생산성을 끌어올린 실제 패턴은 <a href="/ko/blog/ko/claude-code-insights-usage-analysis/">Claude Code 사용 분석</a>에 정리해 뒀다.
 
 ## 참고 자료
 

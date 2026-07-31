@@ -66,7 +66,7 @@ Agent Traceは、バージョン管理されたコードベースで<strong>AI�
 
 <strong>4つの寄与者タイプ分類</strong>：`human`（人間による直接作成）、`ai`（AI生成）、`mixed`（人間がAI出力を編集、またはその逆）、`unknown`（出所不明）に分類します。
 
-<strong>ベンダー中立的設計</strong>：Cursor、Copilot、[Claude Code](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026)等、どのツールからでも同じフォーマットで記録できます。
+<strong>ベンダー中立的設計</strong>：Cursor、Copilot、[Claude Code](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026/)等、どのツールからでも同じフォーマットで記録できます。
 
 <strong>リポジトリ非依存</strong>：ローカルファイル、gitノート、データベース等、どこにでも保存できます。
 
@@ -168,7 +168,7 @@ AIツール利用率が高いからといって、生産性が高いわけでは
 
 ### 3. コンプライアンスと監査対応
 
-金融、医療、防衛等の規制業界では、コードの出所を明確にする要件が増えています（[NIST AIエージェントセキュリティ標準](/ja/blog/ja/nist-ai-agent-security-standards)参照）。Agent Traceは以下をサポートします。
+金融、医療、防衛等の規制業界では、コードの出所を明確にする要件が増えています（[NIST AIエージェントセキュリティ標準](/ja/blog/ja/nist-ai-agent-security-standards/)参照）。Agent Traceは以下をサポートします。
 
 <strong>監査証跡（Audit Trail）</strong>：コードのAI寄与率を定量的に報告できます。
 
@@ -256,7 +256,7 @@ graph TD
     実行環境 --> 追跡監査
 ```
 
-Agent Traceはこのエコシステムで<strong>「実行後（post-execution）」</strong>段階を担当します。エージェントが[定義され（ADL/AGENTS.md）](/ja/blog/ja/adl-agent-definition-language-governance)、通信し（MCP/Open Responses）、実行した（Skills）後の成果物を追跡する役割です。
+Agent Traceはこのエコシステムで<strong>「実行後（post-execution）」</strong>段階を担当します。エージェントが[定義され（ADL/AGENTS.md）](/ja/blog/ja/adl-agent-definition-language-governance/)、通信し（MCP/Open Responses）、実行した（Skills）後の成果物を追跡する役割です。
 
 ## 現在の限界と未解決の課題
 

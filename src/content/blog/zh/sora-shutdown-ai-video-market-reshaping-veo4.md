@@ -57,7 +57,7 @@ OpenAI将于4月26日关停Sora应用。API将维持到9月24日，但这实际�
 
 据TechCrunch报道，Sora在高峰期付费用户也未超过50万。日运营成本约100万美元，仅GPU基础设施成本就难以为继。
 
-有趣的是OpenAI的战略转向。他们从消费者视频生成领域撤出，转而专注于[企业级编程代理](/zh/blog/zh/openai-agentkit-tutorial-part1)（Codex）。配合GPT-5.4的发布，向"平台型公司"的转型正在加速。
+有趣的是OpenAI的战略转向。他们从消费者视频生成领域撤出，转而专注于[企业级编程代理](/zh/blog/zh/openai-agentkit-tutorial-part1/)（Codex）。配合GPT-5.4的发布，向"平台型公司"的转型正在加速。
 
 我个人认为这是合理的判断。AI视频生成距离成为独立"产品"还为时尚早。任何人都能用一行文字制作电影级视频的愿景很吸引人，但现实是：提示词工程30分钟、生成5分钟、修改又30分钟。
 
@@ -92,7 +92,7 @@ AI视频生成作为**集成到现有工作流中的功能**，其价值远大�
 **技术内容制作（博客→视频）**
 - NotebookLM Video Overview + Gemini TTS自动生成
 - Remotion添加品牌片头/片尾
-- 这个组合不需要专门的视频生成AI也能产出相当不错的成果（参考[AI演示自动化案例](/zh/blog/zh/ai-presentation-automation)）
+- 这个组合不需要专门的视频生成AI也能产出相当不错的成果（参考[AI演示自动化案例](/zh/blog/zh/ai-presentation-automation/)）
 
 **营销/广告视频**
 - Runway Gen-4目前最稳定

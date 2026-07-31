@@ -109,7 +109,7 @@ Format:
 
 <strong>Strengths</strong>:
 - <strong>200K token context window</strong> for processing large documents
-- [Claude Skills for PM-specific customization](/en/blog/en/claude-skills-implementation-guide)
+- [Claude Skills for PM-specific customization](/en/blog/en/claude-skills-implementation-guide/)
 - Artifacts feature for structured outputs
 - Safe and ethical AI responses
 
@@ -395,11 +395,11 @@ graph LR
 
 3. <strong>Zoom → Claude → Notion</strong>
    - Auto-summarize meeting transcripts
-   - [Update Notion project pages](/en/blog/en/ai-agent-notion-mcp-automation)
+   - [Update Notion project pages](/en/blog/en/ai-agent-notion-mcp-automation/)
 
 ### Phase 3: Advanced Automation (1-2 months)
 
-<strong>Goal</strong>: [Build AI agent-based autonomous workflows](/en/blog/en/llm-blog-automation)
+<strong>Goal</strong>: [Build AI agent-based autonomous workflows](/en/blog/en/llm-blog-automation/)
 
 <strong>Claude Skills Utilization</strong>:
 ```markdown

@@ -76,7 +76,7 @@ response = client.messages.create(
 )
 ```
 
-I couldn't run this directly without an Anthropic API key. The code above is based on official documentation and release notes. The advisory behavior is something I've been exploring alongside [Managed Agents production deployment](/en/blog/en/claude-managed-agents-production-deployment-guide).
+I couldn't run this directly without an Anthropic API key. The code above is based on official documentation and release notes. The advisory behavior is something I've been exploring alongside [Managed Agents production deployment](/en/blog/en/claude-managed-agents-production-deployment-guide/).
 
 ## What Makes Managed Agents Different
 
@@ -99,7 +99,7 @@ Running this blog's automation system myself, I know exactly how tedious agent s
 
 If Managed Agents genuinely removes that burden — and Sentry's "weeks to ship" story is real — the value proposition is clear.
 
-The [five agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) I've written about map naturally onto Managed Agents. Running an orchestrator-subagent structure on top of Managed Agents means the platform handles state recovery and context synchronization that you'd otherwise code yourself.
+The [five agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/) I've written about map naturally onto Managed Agents. Running an orchestrator-subagent structure on top of Managed Agents means the platform handles state recovery and context synchronization that you'd otherwise code yourself.
 
 task_budget also points in the right direction. Letting the model self-prioritize within a budget tends to produce better completion rates than hard cutoffs that leave tasks in broken intermediate states.
 
@@ -117,7 +117,7 @@ Based on developer feedback aggregated at byteiota.com, some power users describ
 
 The hidden cost I care about most isn't a behavior issue. It's the <strong>new tokenizer</strong>. Opus 4.7 ships a new tokenizer that uses 1〜1.35× more tokens for the same text. Published pricing didn't change, but real cost can increase up to 35%.
 
-I wrote about [the actual economics of running AI agents](/en/blog/en/ai-agent-cost-reality) and a tokenizer change of this magnitude requires completely redoing cost projections. Anthropic not foregrounding this in the launch announcement deserves criticism.
+I wrote about [the actual economics of running AI agents](/en/blog/en/ai-agent-cost-reality/) and a tokenizer change of this magnitude requires completely redoing cost projections. Anthropic not foregrounding this in the launch announcement deserves criticism.
 
 ## Cost Reality: How Much Did It Actually Go Up?
 
@@ -161,7 +161,7 @@ Community feedback and official docs together make the fit assessment fairly cle
 
 ## The Bigger Picture for April's Releases
 
-Reading April's Anthropic releases as a single narrative is interesting. [Last month's performance-decline controversy](/en/blog/en/anthropic-claude-performance-decline-controversy-april-2026) shook community confidence; Anthropic came back one month later with benchmark numbers and a new infrastructure offering.
+Reading April's Anthropic releases as a single narrative is interesting. [Last month's performance-decline controversy](/en/blog/en/anthropic-claude-performance-decline-controversy-april-2026/) shook community confidence; Anthropic came back one month later with benchmark numbers and a new infrastructure offering.
 
 But developer reactions are maturing toward "benchmarks matter less than real-world behavior." SWE-bench Pro doesn't guarantee performance on your specific codebase, and "legendarily bad" feedback from power users is hard to dismiss.
 

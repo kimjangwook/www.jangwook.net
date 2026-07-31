@@ -47,7 +47,7 @@ relatedPosts:
 
 先理清概念。**摘要（snippet）**是搜索结果里标题下方那句概述。以前它纯粹是"引你点击的预览"。**AI Overview** 和 **AI Mode** 是 Google 挂在搜索顶部（或对话界面）的生成式回答，它把多个页面的内容概括成一段话，并引用原页面作为依据。关键的变化就在这里：Google 决定，这些生成回答会不会把某个页面当作**输入**来用，由和旧摘要指令同一套开关控制。
 
-那个开关就是写在 `<meta name="robots">` 里的摘要指令。这里常有一个混淆点。`robots.txt` 和 robots meta 标签是完全不同的两个开关。[用 robots.txt 与 llms.txt 控制 AI 爬虫是否能进来](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026)决定"能不能进"，robots meta 标签决定"进来之后，索引和展示时能拿出什么、怎么展示"。所以次序很要命。如果你在 robots.txt 里挡掉抓取，Google 根本读不到这页的 meta 标签。摘要指令要生效，页面必须可抓取、可索引。把"挡访问"和"调展示"搞混，得到的结果会和你想要的正好相反。
+那个开关就是写在 `<meta name="robots">` 里的摘要指令。这里常有一个混淆点。`robots.txt` 和 robots meta 标签是完全不同的两个开关。[用 robots.txt 与 llms.txt 控制 AI 爬虫是否能进来](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026/)决定"能不能进"，robots meta 标签决定"进来之后，索引和展示时能拿出什么、怎么展示"。所以次序很要命。如果你在 robots.txt 里挡掉抓取，Google 根本读不到这页的 meta 标签。摘要指令要生效，页面必须可抓取、可索引。把"挡访问"和"调展示"搞混，得到的结果会和你想要的正好相反。
 
 为什么现在要盯这件事？因为相当一部分搜索流量正从"一串链接"转向"一段被概括的回答"。被 AI 回答当作依据引用，本身已经成了一条曝光路径。而这条路径的门,就挂在一行很老的标记上。
 
@@ -61,7 +61,7 @@ relatedPosts:
 
 `max-image-preview:[none|standard|large]`。搜索结果中图片预览的最大尺寸。要放到 `large` 才有大图预览的资格。默认往往是 `standard`，所以你想让首图大大地露出、却不动这个值，就只能停留在小缩略图。
 
-`data-nosnippet`。这个是加在 HTML 元素上的属性，不是 meta 标签。当你只想把**某一个区块**排除出摘要、而非整页时用它。这里有两个坑。第一，文档明确写明它只在 `span`、`div`、`section` 三种元素上生效。`<p data-nosnippet>` 会被直接忽略。第二，文档警告"不要通过 JavaScript 给已有节点增删 data-nosnippet 属性"。原因很直白：[很多 AI 爬虫不渲染 JavaScript](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026)，你在运行时挂上去的属性，在爬虫眼里等于不存在。它必须写死在服务器返回的初始 HTML 里。
+`data-nosnippet`。这个是加在 HTML 元素上的属性，不是 meta 标签。当你只想把**某一个区块**排除出摘要、而非整页时用它。这里有两个坑。第一，文档明确写明它只在 `span`、`div`、`section` 三种元素上生效。`<p data-nosnippet>` 会被直接忽略。第二，文档警告"不要通过 JavaScript 给已有节点增删 data-nosnippet 属性"。原因很直白：[很多 AI 爬虫不渲染 JavaScript](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/)，你在运行时挂上去的属性，在爬虫眼里等于不存在。它必须写死在服务器返回的初始 HTML 里。
 
 ## 一旦冲突，最严格的那条胜出
 
@@ -142,7 +142,7 @@ FILE: fixed.html
 
 审计时一定要针对**服务器实际返回的 HTML**。浏览器开发者工具的 Elements 面板显示的是 JavaScript 执行之后的 DOM，若有运行时改动过的 meta 标签，就会和爬虫看到的不一致。用 `curl -s <URL> | grep -i 'name="robots"'` 直接取原始响应更稳妥。我踩过的坑正是这个：开发者工具里显示得干干净净是 `max-snippet:-1`，服务器原始响应里却还留着 CMS 塞进去的 `nosnippet`。真相在最初的字节里，不在渲染后的画面里。
 
-别靠肉眼判断这些。就像我[在 CI 里校验 JSON-LD 结构化数据](/zh/blog/zh/validate-structured-data-ci-jsonld-2026)那样，摘要指令也该在构建流水线里让解析器自动检查。某个标签落错的那一瞬间，人眼会漏，解析器不会。
+别靠肉眼判断这些。就像我[在 CI 里校验 JSON-LD 结构化数据](/zh/blog/zh/validate-structured-data-ci-jsonld-2026/)那样，摘要指令也该在构建流水线里让解析器自动检查。某个标签落错的那一瞬间，人眼会漏，解析器不会。
 
 ## 诚实的边界 —— 是引用"资格"，不是引用"保证"
 

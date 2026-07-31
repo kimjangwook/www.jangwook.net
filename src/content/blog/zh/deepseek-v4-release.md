@@ -55,7 +55,7 @@ relatedPosts:
 
 2026年初，中国AI行业迎来了大语言模型（LLM）的新浪潮。Reddit r/LocalLLaMA社区传来<strong>DeepSeek V4即将发布</strong>的消息，引起了广泛关注。继Qwen3.5、GLM-5之后，DeepSeek V4的到来标志着中国AI企业的下一代模型竞争正在全面加速。
 
-[2026年2月AI模型热潮](/zh/blog/zh/ai-model-rush-february-2026)的分析，详细梳理了这一中国AI模型发布的重要转折点。
+[2026年2月AI模型热潮](/zh/blog/zh/ai-model-rush-february-2026/)的分析，详细梳理了这一中国AI模型发布的重要转折点。
 
 ## DeepSeek的发展历程
 
@@ -85,7 +85,7 @@ DeepSeek的核心竞争力之一是其<strong>开放权重政策</strong>。通�
 | <strong>GLM-5</strong> | 智谱AI | 多模态融合、智能体功能增强 |
 | <strong>Yi-Lightning</strong> | 零一万物 | 推理优化、成本效率 |
 
-Qwen3.5尤其因[在VendingBench上的惊人表现及对商用AI市场的颠覆](/zh/blog/zh/qwen35-vending-bench-bankruptcy)而备受关注。
+Qwen3.5尤其因[在VendingBench上的惊人表现及对商用AI市场的颠覆](/zh/blog/zh/qwen35-vending-bench-bankruptcy/)而备受关注。
 
 ### 竞争的核心维度
 
@@ -137,7 +137,7 @@ DeepSeek V4的消息在Reddit r/LocalLLaMA社区获得308点赞，引起了巨�
 3. <strong>创新加速</strong>：基于社区的模型改进和应用领域扩展
 4. <strong>地缘政治影响</strong>：AI技术霸权竞争的新阶段
 
-这一民主化浪潮同样延伸至语音AI领域。[KaniTTS2仅凭3GB VRAM即可实现语音克隆](/zh/blog/zh/kanitts2-voice-cloning)，正是这一趋势的典型体现。
+这一民主化浪潮同样延伸至语音AI领域。[KaniTTS2仅凭3GB VRAM即可实现语音克隆](/zh/blog/zh/kanitts2-voice-cloning/)，正是这一趋势的典型体现。
 
 ## 结论
 

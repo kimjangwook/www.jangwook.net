@@ -54,7 +54,7 @@ relatedPosts:
 ### 1.1 核心指标一览
 
 <strong>分析期间</strong>：2025年11月21日至12月21日（31天）
-<strong>上期报告</strong>：[45天增长报告](/zh/blog/zh/45-day-analytics-report-2025-11)（10月7日至11月20日）
+<strong>上期报告</strong>：[45天增长报告](/zh/blog/zh/45-day-analytics-report-2025-11/)（10月7日至11月20日）
 
 | 核心指标 | 本期 | 上期45天 | 变化 | 状态 |
 |---------|------|---------|------|------|

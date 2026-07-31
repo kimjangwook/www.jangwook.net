@@ -124,7 +124,7 @@ import _ from "npm:lodash@4";
 
 `npm:`指定子を使えば、パッケージを別途インストールする必要がない。初回実行時にDenoのグローバルキャッシュにダウンロードされ、以降はオフラインでも動く。node_modulesがないのは最初は違和感があるが、新しい環境でクローンしてすぐ実行できる利点は大きい。
 
-[Bun Shellスクリプトガイド](/ja/blog/ja/bun-shell-scripting-practical-guide-2026)を書いたときは、BunのNode.jsパッケージ互換性のおかげで既存のユーティリティライブラリをそのまま使えた。Denoの`npm:`方式は、スクリプトの実験や新しいプロジェクトで特に便利だ。
+[Bun Shellスクリプトガイド](/ja/blog/ja/bun-shell-scripting-practical-guide-2026/)を書いたときは、BunのNode.jsパッケージ互換性のおかげで既存のユーティリティライブラリをそのまま使えた。Denoの`npm:`方式は、スクリプトの実験や新しいプロジェクトで特に便利だ。
 
 ## セキュリティモデル：これが本当の違いだ
 
@@ -168,7 +168,7 @@ import { createHash } from "node:crypto";
 import { EventEmitter } from "node:events";
 ```
 
-直接テストした結果、BunとDenoの両方でこのコードが同様に動作した。`crypto.createHash("sha256")`、EventEmitter、`fs.existsSync`すべてパス。[Hono.jsをCloudflare Workersで実行するように](/ja/blog/ja/hono-typescript-api-2026)、HonoはBunとDenoどちらでも同様に動く。
+直接テストした結果、BunとDenoの両方でこのコードが同様に動作した。`crypto.createHash("sha256")`、EventEmitter、`fs.existsSync`すべてパス。[Hono.jsをCloudflare Workersで実行するように](/ja/blog/ja/hono-typescript-api-2026/)、HonoはBunとDenoどちらでも同様に動く。
 
 ## TypeScriptサポート：バージョンの差に注目
 
@@ -270,7 +270,7 @@ bun test counter.test.ts     # 特定ファイル
 bun test --watch             # 監視モード
 ```
 
-`bun:test`はJestと互換性がある。既存のJestテストがそのまま動くケースも多い。[JestからVitestへの移行](/ja/blog/ja/vitest-4-jest-migration-guide-2026)と同様に、describe/test/expectのAPIはBunでも同じだ。
+`bun:test`はJestと互換性がある。既存のJestテストがそのまま動くケースも多い。[JestからVitestへの移行](/ja/blog/ja/vitest-4-jest-migration-guide-2026/)と同様に、describe/test/expectのAPIはBunでも同じだ。
 
 **Deno test**
 
@@ -378,7 +378,7 @@ CLIツールの配布に便利だ。Denoのコンパイル時に`--allow-*`フ�
 **Denoを使うべきとき**
 
 - 新しいTypeScriptプロジェクト。型チェック、デフォルトのサンドボックス、インストール不要の`npm:`指定子が一度に手に入る。
-- CLIツールや短いスクリプト。コールドスタートが速く、単一バイナリで配布しやすい。たとえば[Node.js組み込みSQLiteでローカルデータツールを作る作業](/ja/blog/ja/node-sqlite-builtin-practical-guide-2026)をDenoに移すと、権限フラグでディスクアクセス範囲を絞れる。
+- CLIツールや短いスクリプト。コールドスタートが速く、単一バイナリで配布しやすい。たとえば[Node.js組み込みSQLiteでローカルデータツールを作る作業](/ja/blog/ja/node-sqlite-builtin-practical-guide-2026/)をDenoに移すと、権限フラグでディスクアクセス範囲を絞れる。
 - 未知のサードパーティパッケージを実行するサーバーやCI/CD。権限モデルが実質的な防御線になる。
 
 **Denoを避けるべきとき**
@@ -386,7 +386,7 @@ CLIツールの配布に便利だ。Denoのコンパイル時に`--allow-*`フ�
 - npm専用パッケージに深く依存する既存コードベース。互換性は向上したが、一部のネイティブアドオンは依然として摩擦がある。
 - 権限フラグ管理の初期摩擦をチームが許容しにくいとき。複雑なアプリでは`--allow-*`のリストが長くなる。
 
-型安全なデータ層まで一緒に設計するなら、[Drizzle ORMとTypeScriptの組み合わせ](/ja/blog/ja/drizzle-orm-typescript-complete-guide-2026)を両ランタイムで検証してみるのも一つの方法だ。DrizzleはBunとDenoで同じように動く。
+型安全なデータ層まで一緒に設計するなら、[Drizzle ORMとTypeScriptの組み合わせ](/ja/blog/ja/drizzle-orm-typescript-complete-guide-2026/)を両ランタイムで検証してみるのも一つの方法だ。DrizzleはBunとDenoで同じように動く。
 
 ## 出典と公式ドキュメント
 

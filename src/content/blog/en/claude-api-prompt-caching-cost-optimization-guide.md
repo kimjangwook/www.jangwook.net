@@ -199,7 +199,7 @@ def cached_rag_qa(docs: list[str], questions: list[str]) -> list[str]:
 
 Customer support example: a 50,000-token product manual referenced 1,000 times daily costs $150 without caching. With caching: ~$18.40. That's $131 saved per day.
 
-Understanding [how to design what goes into context from a context engineering perspective](/en/blog/en/context-engineering-production-ai-agents) makes RAG caching strategy much cleaner.
+Understanding [how to design what goes into context from a context engineering perspective](/en/blog/en/context-engineering-production-ai-agents/) makes RAG caching strategy much cleaner.
 
 ## Pattern 3: Tool Definition Caching
 
@@ -237,7 +237,7 @@ response = client.messages.create(
 )
 ```
 
-For MCP-based agents, combining this with [mcp2cli's token optimization approach](/en/blog/en/mcp2cli-token-cost-optimization) can nearly eliminate tool discovery costs altogether.
+For MCP-based agents, combining this with [mcp2cli's token optimization approach](/en/blog/en/mcp2cli-token-cost-optimization/) can nearly eliminate tool discovery costs altogether.
 
 ## Pattern 4: Multi-Turn Conversation Caching
 
@@ -354,7 +354,7 @@ Bundle those into a single continuous loop that completes within five minutes, a
 
 Input token costs dropped about 65%. Monthly API spend went from $40〜$60 to $15〜$20.
 
-To cut further, [as the LLM API pricing comparison covers](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek), you'd combine this with model routing — different models for different task types. Caching reduces input cost; model routing reduces the per-token price. Both strategies stack.
+To cut further, [as the LLM API pricing comparison covers](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/), you'd combine this with model routing — different models for different task types. Caching reduces input cost; model routing reduces the per-token price. Both strategies stack.
 
 ---
 

@@ -210,7 +210,7 @@ it("filters out non-text-delta events from the stream", async () => {
 
 LLM을 분류기로 쓰는 패턴은 흔하다. "이 사용자 메시지가 질문인지, 명령인지" 같은 판단을 모델에 맡기는 방식인데, 이게 테스트하기 가장 까다롭다. LLM 출력이 항상 예측 가능하지 않기 때문이다.
 
-[Vercel AI SDK로 스트리밍 에이전트를 구현하는 과정](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)에서도 비슷한 문제를 다뤘는데, 핵심은 분류기 로직을 LLM 호출과 분리해서 각각 테스트하는 것이다.
+[Vercel AI SDK로 스트리밍 에이전트를 구현하는 과정](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026/)에서도 비슷한 문제를 다뤘는데, 핵심은 분류기 로직을 LLM 호출과 분리해서 각각 테스트하는 것이다.
 
 ```javascript
 // 에이전트 코드: LLM 출력을 대문자로 변환하고 유효값만 허용
@@ -302,7 +302,7 @@ API 호출 없이, 환경 변수 없이, 142ms. 실제 Claude API 호출은 네�
 
 이 모킹 접근법이 가진 한계도 정직하게 말해야 한다.
 
-**실제 API 동작과 괴리가 생길 수 있다.** SDK의 내부 구현이 바뀌면 `fakeStream()`이 재현하는 이벤트 구조도 업데이트해야 한다. 실제로 [Claude Agent SDK의 Tool Use 실전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 확인했듯, SDK 버전이 올라가면 스트림 이벤트 포맷이 조금씩 달라진다.
+**실제 API 동작과 괴리가 생길 수 있다.** SDK의 내부 구현이 바뀌면 `fakeStream()`이 재현하는 이벤트 구조도 업데이트해야 한다. 실제로 [Claude Agent SDK의 Tool Use 실전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 확인했듯, SDK 버전이 올라가면 스트림 이벤트 포맷이 조금씩 달라진다.
 
 **엣지 케이스는 E2E 테스트로 보완해야 한다.** Rate limit, 네트워크 타임아웃, 토큰 초과 같은 케이스는 모킹으로는 완전히 재현하기 어렵다. 단위 테스트는 비즈니스 로직 검증에 집중하고, 실제 API를 쓰는 통합 테스트를 별도로 두는 것이 현실적이다.
 
@@ -391,6 +391,6 @@ Vitest 4로 Anthropic SDK를 모킹할 때 기억해야 할 핵심 세 가지다
 2. **`async function*` 제너레이터** — 스트리밍 응답 모킹은 `mockReturnValue(fakeStream())`
 3. **`beforeEach(() => vi.clearAllMocks())`** — 테스트 간 상태 오염 방지 필수
 
-프로젝트에 TypeScript를 쓰고 있다면 [MCP 서버 TypeScript 실전 튜토리얼](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)과 이 글의 패턴을 조합하면, MCP 도구 핸들러를 포함한 AI 에이전트 전체를 단위 테스트 아래 둘 수 있다.
+프로젝트에 TypeScript를 쓰고 있다면 [MCP 서버 TypeScript 실전 튜토리얼](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026/)과 이 글의 패턴을 조합하면, MCP 도구 핸들러를 포함한 AI 에이전트 전체를 단위 테스트 아래 둘 수 있다.
 
 AI 에이전트 코드에 테스트가 없는 가장 큰 이유가 "어떻게 모킹하는지 몰라서"인 경우가 많다. 위 패턴들이 그 진입장벽을 낮춰줬으면 좋겠다.

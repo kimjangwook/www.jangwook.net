@@ -63,7 +63,7 @@ MCP(Model Context Protocol)は、AIアシスタントが外部ツールやサー
 - <strong>ドキュメントは読めるがブラウザは操作できない</strong>
 - <strong>提案はできるがデータは測定できない</strong>
 
-MCPサーバーを接続すると、AIは実際のツールを直接使用できます。私の[Claude Code](/ja/blog/ja/claude-code-best-practices)には現在7つのMCPサーバーが設定されており、これらが開発生産性を根本的に変えています。
+MCPサーバーを接続すると、AIは実際のツールを直接使用できます。私の[Claude Code](/ja/blog/ja/claude-code-best-practices/)には現在7つのMCPサーバーが設定されており、これらが開発生産性を根本的に変えています。
 
 ## 私が使用するMCPサーバー
 
@@ -464,7 +464,7 @@ MCPサーバーを初めて導入する場合、以下の順序をお勧めし�
 
 ### 最後に
 
-MCPサーバーは設定に10分程度かかりますが、その投資は数百時間の節約として返ってきます。リモート環境でMCPサーバーを運用したい場合は[MCP Streamable HTTPサーバー本番デプロイガイド](/ja/blog/ja/mcp-remote-http-deployment-pattern)を参照してください。AIと一緒に開発する時代に、適切なツールを揃えることは必須です。
+MCPサーバーは設定に10分程度かかりますが、その投資は数百時間の節約として返ってきます。リモート環境でMCPサーバーを運用したい場合は[MCP Streamable HTTPサーバー本番デプロイガイド](/ja/blog/ja/mcp-remote-http-deployment-pattern/)を参照してください。AIと一緒に開発する時代に、適切なツールを揃えることは必須です。
 
 ぜひ今日からMCPサーバーを設定して、AIの真の力を体験してください。
 

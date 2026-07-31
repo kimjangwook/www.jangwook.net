@@ -233,7 +233,7 @@ sequenceDiagram
 
 ## Gemini CLI拡張機能
 
-Googleは、Code Wikiの機能を<strong>Gemini CLI</strong>にも拡張する予定です。これにより、ローカル環境からCode Wikiの機能を利用できるようになります。同様の概念として、Claude AIエコシステムでは[MCP（Model Context Protocol）サーバーツールキット](/ja/blog/ja/mcp-servers-toolkit-introduction)がAIアシスタントと開発ツールを標準インターフェースで接続する役割を担っています。
+Googleは、Code Wikiの機能を<strong>Gemini CLI</strong>にも拡張する予定です。これにより、ローカル環境からCode Wikiの機能を利用できるようになります。同様の概念として、Claude AIエコシステムでは[MCP（Model Context Protocol）サーバーツールキット](/ja/blog/ja/mcp-servers-toolkit-introduction/)がAIアシスタントと開発ツールを標準インターフェースで接続する役割を担っています。
 
 ### プライベートリポジトリサポート
 
@@ -389,7 +389,7 @@ Google Code Wikiは、AIを活用したコードドキュメント化の新し�
 - <strong>自動ダイアグラム</strong>: アーキテクチャ、クラス、シーケンス図を自動生成
 - <strong>ハイパーリンク</strong>: ドキュメントとコードをシームレスに接続
 
-現時点ではパブリックリポジトリ限定ですが、プライベートリポジトリサポートが追加されれば、企業での活用も期待できます。AIエージェントがコードを理解してツールを呼び出す仕組みに興味がある方は、[Claude Agent SDK Tool Use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)でエージェンティックループの実装を確認できます。チームへのAIコーディングツール導入については、[Claude Codeベストプラクティス](/ja/blog/ja/claude-code-best-practices)も参考になります。
+現時点ではパブリックリポジトリ限定ですが、プライベートリポジトリサポートが追加されれば、企業での活用も期待できます。AIエージェントがコードを理解してツールを呼び出す仕組みに興味がある方は、[Claude Agent SDK Tool Use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)でエージェンティックループの実装を確認できます。チームへのAIコーディングツール導入については、[Claude Codeベストプラクティス](/ja/blog/ja/claude-code-best-practices/)も参考になります。
 
 大規模なオープンソースプロジェクトに参加する際や、新しいフレームワークを学ぶ際に、Code Wikiは非常に有用なツールとなるでしょう。ぜひ [codewiki.google](https://codewiki.google) で試してみてください。
 

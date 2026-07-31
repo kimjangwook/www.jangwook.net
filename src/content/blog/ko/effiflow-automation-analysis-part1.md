@@ -46,14 +46,14 @@ faq:
 
 > <strong>시리즈 안내</strong>: 이 글은 "EffiFlow 자동화 구조 분석/평가 및 개선" 시리즈의 Part 1/3입니다.
 > - <strong>Part 1</strong> (현재): 핵심 아키텍처와 메트릭 분석
-> - [Part 2](/ko/blog/ko/effiflow-automation-analysis-part2): Skills와 Commands 통합 전략
+> - [Part 2](/ko/blog/ko/effiflow-automation-analysis-part2/): Skills와 Commands 통합 전략
 > - Part 3: 실전 개선 사례 및 ROI 분석
 
 ## 추천 한 번 돌릴 때마다 9만 토큰을 태우고 있었다
 
 블로그 자동화를 1년 가까이 돌리다 보니 한 가지가 계속 걸렸다. "이거 더 줄일 수 있지 않나?" 결국 7.5시간을 들여 `.claude/` 디렉토리의 28개 파일을 전부 뜯어봤다. 17개 Agents, 4개 Skills, 7개 Commands. 숫자만 보면 별것 아닌데, 막상 토큰 사용량을 추적해 보니 생각보다 새는 곳이 많았다. 여기서 말하는 Agents, Skills, Commands가 각각 무엇인지는 [Claude Code 공식 문서](https://code.claude.com/docs/en/overview)에서 확인할 수 있다.
 
-이 분석은 이전에 정리했던 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)의 연장선이기도 하다. 거기서 다룬 협업 구조를 비용 관점에서 다시 들여다본 셈이다.
+이 분석은 이전에 정리했던 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement/)의 연장선이기도 하다. 거기서 다룬 협업 구조를 비용 관점에서 다시 들여다본 셈이다.
 
 분석 결과는 놀라웠다:
 - <strong>60〜70% 토큰 절감</strong>을 달성한 메타데이터 우선 아키텍처
@@ -522,7 +522,7 @@ def test_generate_slug():
 - 한 가지 언어만 운영하고 SEO 메타데이터도 손으로 충분히 관리되는 경우. 추가 복잡도만 떠안게 된다.
 - 팀에 이 시스템을 유지보수할 사람이 없을 때. 에이전트 정의가 바뀌면 누군가는 디버깅을 해야 한다. 비용 자체보다 운영 부담을 먼저 따져봐야 한다.
 
-요약하면, 자동화의 손익분기점은 "빈도 × 반복성 × 언어 수"다. 셋 중 둘 이상이 높으면 도입을, 둘 이상이 낮으면 보류를 권한다. 비슷한 고민은 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality)에서도 다뤘으니 함께 읽으면 판단에 도움이 된다.
+요약하면, 자동화의 손익분기점은 "빈도 × 반복성 × 언어 수"다. 셋 중 둘 이상이 높으면 도입을, 둘 이상이 낮으면 보류를 권한다. 비슷한 고민은 [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality/)에서도 다뤘으니 함께 읽으면 판단에 도움이 된다.
 
 ## 실전 적용 가이드
 

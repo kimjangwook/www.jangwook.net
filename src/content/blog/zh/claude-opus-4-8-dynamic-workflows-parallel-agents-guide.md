@@ -91,7 +91,7 @@ messages_with_injection = [
 
 这种方式的实用优势在于<strong>不会破坏提示词缓存</strong>。修改顶层系统提示会使缓存失效导致成本飙升，而 mid-conversation 注入可以绕开这个问题。考虑到长时间智能体执行中缓存命中率对成本影响很大，这个差异不算小。
 
-与 [Claude Agent SDK 子智能体编排实战指南](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026) 中介绍的现有并行处理模式对比，可以看出这个变更多自然地扩展了那些模式。
+与 [Claude Agent SDK 子智能体编排实战指南](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026/) 中介绍的现有并行处理模式对比，可以看出这个变更多自然地扩展了那些模式。
 
 ## Fast Mode：数字背后的现实
 
@@ -105,7 +105,7 @@ Fast Mode 是一个将输出 token 每秒速度（OTPS）最高提升至标准�
 | Opus 4.8 Fast Mode | $10 | $50 |
 | Opus 4.7 Fast Mode | $30 | $150 |
 
-从 Opus 4.7 升到 Opus 4.8，Fast Mode 的价格降到了三分之一。虽然仍是标准模式的两倍，但与上一代 Fast Mode 相比这个数字确实有意义。结合 [Opus 4.7 与 Managed Agents 成本分析](/zh/blog/zh/anthropic-claude-opus-4-7-managed-agents-2026) 里讨论过的按任务成本结构来看，判断在哪个环节接入 Fast Mode 会更直观。
+从 Opus 4.7 升到 Opus 4.8，Fast Mode 的价格降到了三分之一。虽然仍是标准模式的两倍，但与上一代 Fast Mode 相比这个数字确实有意义。结合 [Opus 4.7 与 Managed Agents 成本分析](/zh/blog/zh/anthropic-claude-opus-4-7-managed-agents-2026/) 里讨论过的按任务成本结构来看，判断在哪个环节接入 Fast Mode 会更直观。
 
 使用方法很简单：
 
@@ -138,7 +138,7 @@ response = client.beta.messages.create(
 
 大规模迁移同样适合。Bun 的创始人 Jarred Sumner 公开了用 Dynamic Workflows 将 Bun 运行时从 Zig 迁移到 Rust 的案例，11 天写了约 75 万行 Rust 代码，原有测试套件通过率 99.8%。数百个智能体按文件并行作业，审查智能体每份文件配两名审阅者，自动循环执行构建/测试通过流程。
 
-用 [五种智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types) 里的分类来看，Dynamic Workflows 是把"并行模式"和"自主模式"的组合进行了代码化。
+用 [五种智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/) 里的分类来看，Dynamic Workflows 是把"并行模式"和"自主模式"的组合进行了代码化。
 
 <strong>不适合使用的情况：</strong>
 
@@ -162,7 +162,7 @@ response = client.beta.messages.create(
 
 ## 成本结构与实际影响
 
-用 [AI智能体成本的现实](/zh/blog/zh/ai-agent-cost-reality) 中的框架来分析，Dynamic Workflows 的成本结构由"token 量 × 智能体数量"主导。
+用 [AI智能体成本的现实](/zh/blog/zh/ai-agent-cost-reality/) 中的框架来分析，Dynamic Workflows 的成本结构由"token 量 × 智能体数量"主导。
 
 工作流运行时本身没有额外费用。只是子智能体消耗的 token 按标准 Opus 4.8 费率计费。问题在于接近 1000 个智能体上限的执行中，每个智能体的上下文规模会有多大。
 
@@ -174,7 +174,7 @@ response = client.beta.messages.create(
 
 这些原则如果不自然地落实，单次工作流执行超预算的情况就会发生。尤其是在 ultracode 模式下 Claude 自主连续触发多个工作流时更甚。
 
-将其与 [用 AWO 框架优化智能体工作流的方法](/zh/blog/zh/agentic-workflow-meta-tools-optimization) 结合，即把重复工具调用编译成元工具来减少 LLM 调用的方式，有空间从结构层面降低 Dynamic Workflows 的成本。
+将其与 [用 AWO 框架优化智能体工作流的方法](/zh/blog/zh/agentic-workflow-meta-tools-optimization/) 结合，即把重复工具调用编译成元工具来减少 LLM 调用的方式，有空间从结构层面降低 Dynamic Workflows 的成本。
 
 ## 适合哪些团队
 
@@ -202,4 +202,4 @@ Fast Mode 的降价是个令人欢迎的变化。价格降到上一代的三分�
 
 已知的 bug（提前终止、过度删除文件）是目前就投入生产需要谨慎的理由。我实际跑过，工作流中途停住，从日志里搞清楚为什么停花了不少时间。这些问题解决后，评价可能会改变。
 
-与 [LangGraph、CrewAI、Dapr 等第三方框架对比](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)，Dynamic Workflows 的定位是"在 Claude 生态内部、配合 Claude Code、可重复执行的大规模编排"。把它看作替代通用框架的方案不太准确，更贴切的理解是：在特定任务类型上，Claude 原生方案能带来的效率优势。
+与 [LangGraph、CrewAI、Dapr 等第三方框架对比](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)，Dynamic Workflows 的定位是"在 Claude 生态内部、配合 Claude Code、可重复执行的大规模编排"。把它看作替代通用框架的方案不太准确，更贴切的理解是：在特定任务类型上，Claude 原生方案能带来的效率优势。

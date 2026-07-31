@@ -88,7 +88,7 @@ claude --channels plugin:telegram@claude-plugins-official
 
 ## OpenClawから取り入れたもの、変えたもの
 
-私は[OpenClawの高度な機能](/ja/blog/ja/openclaw-advanced-usage)をかなり長く使ってきました。クロン連携やマルチチャネル設定など、このブログでも何度か取り上げています。だからClaude Code Channelsを見る目がどうしても違ってきます。
+私は[OpenClawの高度な機能](/ja/blog/ja/openclaw-advanced-usage/)をかなり長く使ってきました。クロン連携やマルチチャネル設定など、このブログでも何度か取り上げています。だからClaude Code Channelsを見る目がどうしても違ってきます。
 
 **取り入れた核心コンセプト：**
 - メッセージングプラットフォーム → AIエージェントへのメッセージインジェクション
@@ -125,7 +125,7 @@ OpenClawはWebhookベースのため、インバウンドポートを開ける�
 
 ## 実際に何ができるのか
 
-私は現在、このブログの[自動投稿パイプライン](/ja/blog/ja/effiflow-automation-analysis-part3)をClaude Code + launchdクロンで運用しています。ここにChannelsを接続すると面白くなるシナリオがいくつかあります。
+私は現在、このブログの[自動投稿パイプライン](/ja/blog/ja/effiflow-automation-analysis-part3/)をClaude Code + launchdクロンで運用しています。ここにChannelsを接続すると面白くなるシナリオがいくつかあります。
 
 **1. CI/CDアラート → 即座にデバッグ**
 
@@ -157,7 +157,7 @@ GitHub Actionsでビルドが失敗した際、Webhookでテレグラムに通�
 - すでにClaude Codeをメインで使っているとき
 - セットアップの時間を最小限にしたいとき（フラグ一つで完了）
 
-個人的には、両方を併用するつもりです。クロンベースの自動化は既存のOpenClawパイプラインを維持し、テレグラムベースの対話型コーディングリクエストはClaude Code Channelsに切り替えるのが現実的です。Claude Code CLIへの完全移行を検討している方は、[Claude Code CLIマイグレーションガイド](/ja/blog/ja/claude-code-cli-migration-guide)も参考になります。
+個人的には、両方を併用するつもりです。クロンベースの自動化は既存のOpenClawパイプラインを維持し、テレグラムベースの対話型コーディングリクエストはClaude Code Channelsに切り替えるのが現実的です。Claude Code CLIへの完全移行を検討している方は、[Claude Code CLIマイグレーションガイド](/ja/blog/ja/claude-code-cli-migration-guide/)も参考になります。
 
 ---
 

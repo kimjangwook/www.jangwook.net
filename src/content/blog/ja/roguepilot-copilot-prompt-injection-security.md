@@ -60,7 +60,7 @@ relatedPosts:
 
 2026年2月、セキュリティ企業のOrca Securityが<strong>RoguePilot</strong>という脆弱性を公表しました。GitHub Codespacesで動作するGitHub Copilotが、Issueに隠された悪意あるプロンプトを自動的に処理することで、攻撃者が<strong>特別な権限を持たなくても</strong>リポジトリを奪取できる深刻な脆弱性でした。
 
-この脆弱性は<strong>パッシブプロンプトインジェクション(Passive Prompt Injection)</strong>という新しい攻撃タイプを示し、[AIコーディングツール](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026)がチームの開発ワークフローに深く統合されるほど、セキュリティリスクが増加するという事実を認識させてくれます。
+この脆弱性は<strong>パッシブプロンプトインジェクション(Passive Prompt Injection)</strong>という新しい攻撃タイプを示し、[AIコーディングツール](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026/)がチームの開発ワークフローに深く統合されるほど、セキュリティリスクが増加するという事実を認識させてくれます。
 
 この記事では、RoguePilotの技術的なメカニズムを分析し、エンジニアリングマネージャーの観点からチームに適用すべきAIコーディングツールのセキュリティガイドラインをまとめます。
 
@@ -142,7 +142,7 @@ graph TD
 
 <strong>文書自動分析</strong>: 文書メタデータに挿入された悪意あるコマンドでデータ流出
 
-<strong>[コードレビュー自動化](/ja/blog/ja/github-actions-claude-code-ci-automation)</strong>: PR コメントに挿入されたプロンプトでCI/CDパイプラインを操作
+<strong>[コードレビュー自動化](/ja/blog/ja/github-actions-claude-code-ci-automation/)</strong>: PR コメントに挿入されたプロンプトでCI/CDパイプラインを操作
 
 ## EMがチームに適用すべきセキュリティガイドライン
 
@@ -234,9 +234,9 @@ graph TD
 
 Microsoftはorca Securityの責任ある公開の後、該当する脆弱性にパッチを当てました。しかし<strong>根本的な問題は解決されていません</strong>。
 
-AIコーディングツールが外部データをコンテキストとして自動的に収集するアーキテクチャ自体が、パッシブプロンプトインジェクションの攻撃表面を作成しているからです。RoguePilotは一つの事例に過ぎず、同様の脆弱性はすべてのAIコーディングツールで発生する可能性があります。さらに、一度塞いだ防御がその後も効いているかは別の問題です。モデルのバージョンを上げるたびに注入への防御が保たれているかをCIで確かめる方法は、[モデルを上げるたびに注入テストを回し直す理由](/ja/blog/ja/prompt-injection-regression-gate-model-updates)にまとめてあります。
+AIコーディングツールが外部データをコンテキストとして自動的に収集するアーキテクチャ自体が、パッシブプロンプトインジェクションの攻撃表面を作成しているからです。RoguePilotは一つの事例に過ぎず、同様の脆弱性はすべてのAIコーディングツールで発生する可能性があります。さらに、一度塞いだ防御がその後も効いているかは別の問題です。モデルのバージョンを上げるたびに注入への防御が保たれているかをCIで確かめる方法は、[モデルを上げるたびに注入テストを回し直す理由](/ja/blog/ja/prompt-injection-regression-gate-model-updates/)にまとめてあります。
 
-<strong>[Claude Code](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)のアプローチ</strong>は、この問題に対する一つの答えを示します。Claude Codeは外部データを自動的に実行せず、ユーザーの明示的な承認を要求する設計を採用しています。`.claude/settings.json`の許可リストベースの権限管理と、Hookシステムを通じた実行前検証がその典型です。
+<strong>[Claude Code](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)のアプローチ</strong>は、この問題に対する一つの答えを示します。Claude Codeは外部データを自動的に実行せず、ユーザーの明示的な承認を要求する設計を採用しています。`.claude/settings.json`の許可リストベースの権限管理と、Hookシステムを通じた実行前検証がその典型です。
 
 ## 結論
 

@@ -348,9 +348,9 @@ OpenClaw 代理（频道层级）
 
 从其他角度切入同一多代理脉络的文章。
 
-- [多代理编排改进实录](/zh/blog/zh/multi-agent-orchestration-improvement) — 更深入地剖析调度多个代理的模式。
-- [用 Git Worktree 跑 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree) — 不依赖 Agent Teams、手动运行并行会话的替代方案。
-- [AI 代理成本的现实](/zh/blog/zh/ai-agent-cost-reality) — 算一算 Token 成本飙升的多代理运维到底划不划算。
+- [多代理编排改进实录](/zh/blog/zh/multi-agent-orchestration-improvement/) — 更深入地剖析调度多个代理的模式。
+- [用 Git Worktree 跑 Claude Code 并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/) — 不依赖 Agent Teams、手动运行并行会话的替代方案。
+- [AI 代理成本的现实](/zh/blog/zh/ai-agent-cost-reality/) — 算一算 Token 成本飙升的多代理运维到底划不划算。
 
 ## 参考的一手来源
 

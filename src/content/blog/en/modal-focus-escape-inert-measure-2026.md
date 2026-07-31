@@ -78,7 +78,7 @@ Third press, gone. The dialog sits in the middle of the screen while focus walks
 
 ![Measured screenshot of the naive variant: the dialog is open, yet the orange focus ring sits on the Contact nav link behind the translucent overlay.](../../../assets/blog/modal-focus-escape-inert-measure-2026/focus-escape.png)
 
-axe's verdict on this state: one violation, `region` (a moderate landmark issue), and nothing about focus. That's not axe being lazy. "Where does focus go when Tab is pressed" is a dynamic property that no static DOM scan can settle. I mapped out what automated checkers structurally miss in [my axe coverage measurement](/en/blog/en/axe-automated-a11y-coverage-gap-2026), and this escape falls squarely into that blind spot.
+axe's verdict on this state: one violation, `region` (a moderate landmark issue), and nothing about focus. That's not axe being lazy. "Where does focus go when Tab is pressed" is a dynamic property that no static DOM scan can settle. I mapped out what automated checkers structurally miss in [my axe coverage measurement](/en/blog/en/axe-automated-a11y-coverage-gap-2026/), and this escape falls squarely into that blind spot.
 
 Honestly, I've seen this exact combination — `aria-modal="true"` on the dialog, background left alone — pass code review more than once. The markup is beyond reproach. Only someone who presses Tab three times finds out.
 
@@ -95,7 +95,7 @@ Tab 3  → nav-home       ← still escapes
 Tab 4  → nav-products
 ```
 
-`aria-hidden` removes elements from the accessibility tree and touches nothing else. Tab order is unaffected, so focus leaks exactly as before. Except now it's worse. The element focus lands on no longer exists in the accessibility tree. A screen reader user presses Tab and hears nothing — focus with no name, no role, a black hole. What assistive tech announces at the point of focus is a topic I measured in [the accessible name post](/en/blog/en/accessible-name-agents-2026); here, the name isn't merely wrong, it's been deleted from the tree.
+`aria-hidden` removes elements from the accessibility tree and touches nothing else. Tab order is unaffected, so focus leaks exactly as before. Except now it's worse. The element focus lands on no longer exists in the accessibility tree. A screen reader user presses Tab and hears nothing — focus with no name, no role, a black hole. What assistive tech announces at the point of focus is a topic I measured in [the accessible name post](/en/blog/en/accessible-name-agents-2026/); here, the name isn't merely wrong, it's been deleted from the tree.
 
 axe's reaction is the interesting part. There's a rule aimed at precisely this: `aria-hidden-focus`. In this measurement it came back not as a violation but as <strong>incomplete</strong>:
 
@@ -158,7 +158,7 @@ One position I'll state plainly: using `aria-hidden="true"` alone as background 
 
 ## Honest limits
 
-What this measurement doesn't tell you. First, this is a keyboard tab-order measurement, not a screen reader measurement. VoiceOver's and NVDA's reading cursors move independently of tab order, so how `aria-modal` and `inert` behave under reading navigation needs its own test — this post didn't run one. Second, don't read axe's incomplete as a defect. Refusing to settle a dynamic state with a static rule, and escalating to a human instead, is the honest side of rule design; the gap is operational, in pipelines with no human on the receiving end. Third, what I measured is one symptom in WCAG 2.4.3 (Focus Order) territory. Fixing it doesn't make a page conformant, the same conclusion as [the WCAG 2.2 target size audit](/en/blog/en/wcag22-target-size-audit-2026): the distance between a green automated score and conformance is longer than it looks. Fourth, this ran on a single browser, Chrome 150. Baseline says `inert` behaves identically everywhere, but I didn't verify tab order in Firefox or Safari this round — running the same probe across all three engines with something like Playwright is the natural next step.
+What this measurement doesn't tell you. First, this is a keyboard tab-order measurement, not a screen reader measurement. VoiceOver's and NVDA's reading cursors move independently of tab order, so how `aria-modal` and `inert` behave under reading navigation needs its own test — this post didn't run one. Second, don't read axe's incomplete as a defect. Refusing to settle a dynamic state with a static rule, and escalating to a human instead, is the honest side of rule design; the gap is operational, in pipelines with no human on the receiving end. Third, what I measured is one symptom in WCAG 2.4.3 (Focus Order) territory. Fixing it doesn't make a page conformant, the same conclusion as [the WCAG 2.2 target size audit](/en/blog/en/wcag22-target-size-audit-2026/): the distance between a green automated score and conformance is longer than it looks. Fourth, this ran on a single browser, Chrome 150. Baseline says `inert` behaves identically everywhere, but I didn't verify tab order in Firefox or Safari this round — running the same probe across all three engines with something like Playwright is the natural next step.
 
 ## Five lines before you ship a modal
 
@@ -168,4 +168,4 @@ What this measurement doesn't tell you. First, this is a keyboard tab-order meas
 - In axe/CI output, open the incomplete array, not just violations. If `focusable-modal-open` is in there, the Tab test above is its answer.
 - On close, confirm focus returns to the element that opened the modal (APG requirement).
 
-Keyboard focus is the one thing automated tooling never finishes pressing for you. Plenty of sites stack up green reports without anyone ever running the three-Tab check. I take on this kind of work personally — auditing modal and overlay keyboard behavior on production sites and turning the findings into CI gates that stop regressions. If that's useful to you, [get in touch](/en/contact).
+Keyboard focus is the one thing automated tooling never finishes pressing for you. Plenty of sites stack up green reports without anyone ever running the three-Tab check. I take on this kind of work personally — auditing modal and overlay keyboard behavior on production sites and turning the findings into CI gates that stop regressions. If that's useful to you, [get in touch](/en/contact/).

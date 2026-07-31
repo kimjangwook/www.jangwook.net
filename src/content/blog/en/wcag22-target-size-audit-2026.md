@@ -140,9 +140,9 @@ target-size: score=0, flagged 9 nodes
 
 Two things worth pinning down.
 
-The good news first. The trope that "automated tools only see the surface of accessibility" is out of date for this criterion. axe-core now ships a `target-size` rule, and it named the <strong>exact same nine</strong> my auditor did. That my verdict, spacing math included, matched axe's tells me the tool actually implements the 24px-circle-overlap logic. On size violations alone, axe is reliable. This is a counter-case to my earlier experiment on [the four things axe structurally misses](/en/blog/en/axe-automated-a11y-coverage-gap-2026). Back then, the checks that need human judgment stayed hidden behind the green; target size, being rule-shaped, is one the automation caught up to.
+The good news first. The trope that "automated tools only see the surface of accessibility" is out of date for this criterion. axe-core now ships a `target-size` rule, and it named the <strong>exact same nine</strong> my auditor did. That my verdict, spacing math included, matched axe's tells me the tool actually implements the 24px-circle-overlap logic. On size violations alone, axe is reliable. This is a counter-case to my earlier experiment on [the four things axe structurally misses](/en/blog/en/axe-automated-a11y-coverage-gap-2026/). Back then, the checks that need human judgment stayed hidden behind the green; target size, being rule-shaped, is one the automation caught up to.
 
-The bad news. The score was still 92. A page with one AA success criterion plainly broken gets a 92. The score is a weighted average, so one rule at zero still looks like a pass when the rest carry it. <strong>A score is not conformance.</strong> WCAG is a binary pass/fail, not a continuous value like 92. To claim AA you have to meet every AA criterion, 2.5.8 included, with no exceptions. That's why you don't hand a dashboard's green number over as evidence of conformance. This trap outlives even the [basic catch-and-fix flow with Lighthouse](/en/blog/en/a11y-lighthouse-audit-fix-2026).
+The bad news. The score was still 92. A page with one AA success criterion plainly broken gets a 92. The score is a weighted average, so one rule at zero still looks like a pass when the rest carry it. <strong>A score is not conformance.</strong> WCAG is a binary pass/fail, not a continuous value like 92. To claim AA you have to meet every AA criterion, 2.5.8 included, with no exceptions. That's why you don't hand a dashboard's green number over as evidence of conformance. This trap outlives even the [basic catch-and-fix flow with Lighthouse](/en/blog/en/a11y-lighthouse-audit-fix-2026/).
 
 ## The exceptions are the real exam
 
@@ -216,7 +216,7 @@ Second, overlapping hit areas. When you extend a 24×24 hit area with `::after`,
 
 Third, targets shrunk with `transform: scale()`. CSS `transform` shrinks the paint, not the layout size. So `getBoundingClientRect()` returns the on-screen size after the scale, which is easy to get wrong against your intent. If you scaled an icon down, remember to re-measure at the post-scale size.
 
-Fourth, trusting the focus ring and relaxing. A clearly visible keyboard focus doesn't mean the pointer target is big enough. 2.5.8 is about pointer inputs like mouse and touch, a separate axis from keyboard accessibility (2.1.1) or focus visibility (2.4.11). Accessibility doesn't roll one axis into the next; clearing one doesn't clear another. As with [an accessible name that quietly goes empty](/en/blog/en/accessible-name-agents-2026), size, name, and focus each need their own check.
+Fourth, trusting the focus ring and relaxing. A clearly visible keyboard focus doesn't mean the pointer target is big enough. 2.5.8 is about pointer inputs like mouse and touch, a separate axis from keyboard accessibility (2.1.1) or focus visibility (2.4.11). Accessibility doesn't roll one axis into the next; clearing one doesn't clear another. As with [an accessible name that quietly goes empty](/en/blog/en/accessible-name-agents-2026/), size, name, and focus each need their own check.
 
 ## Wrap-up: what a developer does about 24px
 

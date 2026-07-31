@@ -315,7 +315,7 @@ training_data = generate_diverse_training_data(
 )
 ```
 
-Pydantic AIやInstructorなどのAIエージェントライブラリと組み合わせることで、合成データパイプラインをさらに効率的に構築できます。[Python AIエージェントライブラリ比較2026: Pydantic AI vs Instructor vs Smolagents](/ja/blog/ja/python-ai-agent-library-comparison-2026)で各ライブラリの特徴を確認してください。
+Pydantic AIやInstructorなどのAIエージェントライブラリと組み合わせることで、合成データパイプラインをさらに効率的に構築できます。[Python AIエージェントライブラリ比較2026: Pydantic AI vs Instructor vs Smolagents](/ja/blog/ja/python-ai-agent-library-comparison-2026/)で各ライブラリの特徴を確認してください。
 
 ### 3. ペルソナベースの対話シミュレーション
 
@@ -364,7 +364,7 @@ print(f"生成された定義の数: {len(definitions)}")
 print(f"ユニークな表現の割合: {calculate_uniqueness(definitions):.2%}")
 ```
 
-マルチエージェント環境でのペルソナ間協調パターンについては、[AIエージェント協調パターン: プロダクションシステム設計ガイド](/ja/blog/ja/ai-agent-collaboration-patterns)でより詳しく解説しています。
+マルチエージェント環境でのペルソナ間協調パターンについては、[AIエージェント協調パターン: プロダクションシステム設計ガイド](/ja/blog/ja/ai-agent-collaboration-patterns/)でより詳しく解説しています。
 
 ## ベストプラクティスと注意点
 
@@ -615,7 +615,7 @@ Verbalized Samplingは、LLMのアライメント後に発生するモード崩�
 
 - Zhang, J., Yu, S., Chong, D., Sicilia, A., Tomz, M. R., Manning, C. D., & Shi, W. (2024). Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity. arXiv:2510.01171.
 - [Verbalized Sampling GitHub Repository](https://github.com/stanford-oval/verbalized-sampling)
-- [Claude CodeでのVerbalized Sampling実践ガイド](/ja/blog/ja/claude-code-verbalized-sampling)
+- [Claude CodeでのVerbalized Sampling実践ガイド](/ja/blog/ja/claude-code-verbalized-sampling/)
 - Anthropic. (2023). Constitutional AI: Harmlessness from AI Feedback.
 - Ouyang, L., et al. (2022). Training language models to follow instructions with human feedback.
 

@@ -67,7 +67,7 @@ relatedPosts:
 
 ## 概要
 
-[Anthropic Agent Skills標準](/ja/blog/ja/anthropic-agent-skills-standard)が発表されて以来、多くの開発者や企業がこの強力なツールを実際のワークフローに統合し、活用する方法について疑問を抱いています。本チュートリアルでは、Anthropic Agent Skillsの実際の使用方法に焦点を当て、具体的な実装例、実行方法、そしてそれを通じた効果予測と投資対効果（ROI）分析までを深く掘り下げます。AIエージェントの可能性を最大限に引き出したい方々に、実践的なガイドを提供します。
+[Anthropic Agent Skills標準](/ja/blog/ja/anthropic-agent-skills-standard/)が発表されて以来、多くの開発者や企業がこの強力なツールを実際のワークフローに統合し、活用する方法について疑問を抱いています。本チュートリアルでは、Anthropic Agent Skillsの実際の使用方法に焦点を当て、具体的な実装例、実行方法、そしてそれを通じた効果予測と投資対効果（ROI）分析までを深く掘り下げます。AIエージェントの可能性を最大限に引き出したい方々に、実践的なガイドを提供します。
 
 ## 主要な内容：Agent Skillsの深い理解
 
@@ -345,7 +345,7 @@ Agent Skillsは、企業の特定のワークフロー、ベストプラクテ�
 
 ### 4. 拡張性および移植性
 
-一度開発されたAgent Skillsは、さまざまなClaudeアプリケーション、[Claude Code環境](/ja/blog/ja/claude-code-cli-migration-guide)、およびAPIを通じて再利用および展開できます。
+一度開発されたAgent Skillsは、さまざまなClaudeアプリケーション、[Claude Code環境](/ja/blog/ja/claude-code-cli-migration-guide/)、およびAPIを通じて再利用および展開できます。
 
 -   <strong>効果</strong>: 新しい要件が発生した場合でも、既存のスキルを活用して迅速に対応でき、開発時間とリソースを節約します。これは市場投入期間の短縮につながり、長期的な競争優位性を提供します。
 -   <strong>長期的ROI</strong>: 開発効率の向上、市場変化への迅速な適応能力、技術的負債の削減

@@ -87,7 +87,7 @@ Karpathy分析指出，成本下降并非单一因素，而是<strong>四个维�
 
 ### 1. 硬件演进（Hardware）
 
-从TPU v3到H100的迁移代表了计算效率的根本性飞跃。与此同时，[每秒处理16,000个token的ASIC推理芯片](/zh/blog/zh/asic-llm-inference-16k-tps)等硬件创新表明，GPU未必会长期保持主导地位。
+从TPU v3到H100的迁移代表了计算效率的根本性飞跃。与此同时，[每秒处理16,000个token的ASIC推理芯片](/zh/blog/zh/asic-llm-inference-16k-tps/)等硬件创新表明，GPU未必会长期保持主导地位。
 
 - <strong>FP8运算支持</strong>：降低训练精度的同时保持质量
 - <strong>HBM3内存</strong>：3TB/s带宽消除内存瓶颈
@@ -142,11 +142,11 @@ Karpathy也透明地分享了<strong>未奏效</strong>的技术，为社区提�
 
 - <strong>数据质量</strong>：能否获取更优质的训练数据
 - <strong>微调专业知识</strong>：领域特化的优化能力
-- <strong>推理效率</strong>：服务成本比训练成本更为关键 — [NVIDIA NVFP4将LLM推理成本降低至八分之一的原理](/zh/blog/zh/nvidia-llm-inference-cost-reduction)正是这一竞争方向的典型案例
+- <strong>推理效率</strong>：服务成本比训练成本更为关键 — [NVIDIA NVFP4将LLM推理成本降低至八分之一的原理](/zh/blog/zh/nvidia-llm-inference-cost-reduction/)正是这一竞争方向的典型案例
 
 ### 开源生态系统的强化
 
-用不到$100就能训练GPT-2级别的模型，意味着<strong>开源社区</strong>的实验与创新将大幅加速。[无需矩阵乘法、仅用CPU在1.2小时内训练LLM的MatMul-Free架构](/zh/blog/zh/matmulfree-cpu-llm-training)正是这一民主化浪潮的产物。nanochat本身仅由约1,000行代码构成，教育价值也很高。
+用不到$100就能训练GPT-2级别的模型，意味着<strong>开源社区</strong>的实验与创新将大幅加速。[无需矩阵乘法、仅用CPU在1.2小时内训练LLM的MatMul-Free架构](/zh/blog/zh/matmulfree-cpu-llm-training/)正是这一民主化浪潮的产物。nanochat本身仅由约1,000行代码构成，教育价值也很高。
 
 ### 超越摩尔定律的下降速率
 

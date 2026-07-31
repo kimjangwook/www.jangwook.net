@@ -161,7 +161,7 @@ git log -1 --format=%cI -- content/about.html
 # 2026-07-08T15:26:11+09:00
 ```
 
-`%cI` 把提交时间以 ISO 8601(兼容 W3C Datetime)输出。不需要格式转换，也更贴近「这个文件最后一次有意义的改动」这个定义。我在多语言博客上用的就是这套。用构建门禁在 CI 里强制 sitemap 和 hreflang 的做法，我写在[审计多语言博客并让修复不再回退的那次行动](/zh/blog/zh/multilingual-blog-technical-audit-campaign-2026)里，那篇的核心也是把审计做成循环而非一次性事件。
+`%cI` 把提交时间以 ISO 8601(兼容 W3C Datetime)输出。不需要格式转换，也更贴近「这个文件最后一次有意义的改动」这个定义。我在多语言博客上用的就是这套。用构建门禁在 CI 里强制 sitemap 和 hreflang 的做法，我写在[审计多语言博客并让修复不再回退的那次行动](/zh/blog/zh/multilingual-blog-technical-audit-campaign-2026/)里，那篇的核心也是把审计做成循环而非一次性事件。
 
 还有一条。lastmod 只在<strong>有意义的</strong>改动时更新。改个错别字、把页脚年份换一下，不该动 lastmod。每次都喊「变了」的 sitemap 就成了狼来了。空跑几次之后，爬虫从此忽略你的 lastmod。只有正文、标题、核心结构真的变了，才抬时间。
 
@@ -171,7 +171,7 @@ git log -1 --format=%cI -- content/about.html
 
 而且 sitemap 与收录无关。被抓取不等于被收录，进了 sitemap 不等于进了索引。排名就更不用说了。无论结构化数据还是 sitemap,没有哪个 SEO 要素能保证排名——这是 Google 一贯的官方口径。lastmod 给你的，是让「对已发现页面的重访优先级」判断，多一点更准的依据。仅此而已。
 
-再补一条,2023 年起 sitemap 的 ping 端点已经废弃。以前 sitemap 一变就调用 `google.com/ping?sitemap=...` 去通知,现在那个端点已经死了。搜索引擎按自己的节奏来取 sitemap。sitemap 的位置，用 robots.txt 里的 `Sitemap:` 行或 Search Console 登记一次就够,如果还留着每次变更就 ping 的代码，删掉即可。让哪些爬虫看到 sitemap、拦住哪些，这个判断和[用 robots.txt 与 llms.txt 控制 AI 爬虫](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026)也是连着的。
+再补一条,2023 年起 sitemap 的 ping 端点已经废弃。以前 sitemap 一变就调用 `google.com/ping?sitemap=...` 去通知,现在那个端点已经死了。搜索引擎按自己的节奏来取 sitemap。sitemap 的位置，用 robots.txt 里的 `Sitemap:` 行或 Search Console 登记一次就够,如果还留着每次变更就 ping 的代码，删掉即可。让哪些爬虫看到 sitemap、拦住哪些，这个判断和[用 robots.txt 与 llms.txt 控制 AI 爬虫](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026/)也是连着的。
 
 ## 今天就能用的检查清单
 
@@ -186,4 +186,4 @@ git log -1 --format=%cI -- content/about.html
 
 单靠一份 sitemap，排名不会涨。但爬虫会不会<strong>及时且信任地</strong>跟上你站点的变化，拼的就是这个小信号的准确度。而这份准确度，靠的不是模式校验的绿灯，而是 lastmod 有没有和内容的真实状态对得上。
 
-无论结构化数据还是 sitemap，搜索与 AI 爬虫究竟怎样接收你服务器发出的信号，光读文档是抓不住的。比如[AI 爬虫不会执行你的 JavaScript，会把 CSR 页面整个漏掉](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026)这个事实，也得自己用 curl 打一遍才看得出来。如果你在权衡服务端渲染与爬虫处理，或想让多语言站点的 sitemap、hreflang 流水线经过审查并用 CI 门禁固定下来，我个人接咨询与实现的委托。通过我资料页上的联系方式，把你站点的情况告诉我就好。
+无论结构化数据还是 sitemap，搜索与 AI 爬虫究竟怎样接收你服务器发出的信号，光读文档是抓不住的。比如[AI 爬虫不会执行你的 JavaScript，会把 CSR 页面整个漏掉](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/)这个事实，也得自己用 curl 打一遍才看得出来。如果你在权衡服务端渲染与爬虫处理，或想让多语言站点的 sitemap、hreflang 流水线经过审查并用 CI 门禁固定下来，我个人接咨询与实现的委托。通过我资料页上的联系方式，把你站点的情况告诉我就好。

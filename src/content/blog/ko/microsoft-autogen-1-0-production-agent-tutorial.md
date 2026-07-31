@@ -261,7 +261,7 @@ team = GraphFlow(
 
 조건부 엣지도 지원한다. 예를 들어 tester가 실패 판정을 내리면 coder로 다시 보내는 피드백 루프를 그래프로 표현할 수 있다. 복잡한 워크플로우에는 이게 훨씬 명확하다.
 
-솔직히 GraphFlow는 아직 API가 약간 verbose하다는 느낌이 있다. LangGraph의 `add_conditional_edges` 같은 편의 메서드가 없어서 엣지 정의가 길어진다. 하지만 Python 에이전트 프레임워크 중에서 그래프 기반 라우팅을 명시적으로 지원하는 건 AutoGen뿐이다. [AI 에이전트 프레임워크를 LangGraph, CrewAI, Dapr와 비교한 글](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)에서 이 부분을 더 자세히 다뤘다.
+솔직히 GraphFlow는 아직 API가 약간 verbose하다는 느낌이 있다. LangGraph의 `add_conditional_edges` 같은 편의 메서드가 없어서 엣지 정의가 길어진다. 하지만 Python 에이전트 프레임워크 중에서 그래프 기반 라우팅을 명시적으로 지원하는 건 AutoGen뿐이다. [AI 에이전트 프레임워크를 LangGraph, CrewAI, Dapr와 비교한 글](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)에서 이 부분을 더 자세히 다뤘다.
 
 ### Swarm
 
@@ -317,7 +317,7 @@ outer_team = RoundRobinGroupChat(
 
 이렇게 하면 외부에서 보기에는 `coding_unit`이 단순한 에이전트처럼 보이지만, 실제로는 내부에서 developer → tester 루프가 돌고 있다. 중간 대화 내용은 노출되지 않고, 요약된 결과만 외부로 나간다.
 
-[Claude Agent SDK에서 서브에이전트를 오케스트레이션하는 방식](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026)과 개념은 비슷하지만, AutoGen은 팀 구조를 더 명시적으로 코드에 표현한다.
+[Claude Agent SDK에서 서브에이전트를 오케스트레이션하는 방식](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026/)과 개념은 비슷하지만, AutoGen은 팀 구조를 더 명시적으로 코드에 표현한다.
 
 ## API 키 없이 테스트하는 방법: ReplayChatCompletionClient
 
@@ -378,7 +378,7 @@ await new_team.load_state(state)
 현재 AutoGen 0.7.x에서 에이전트 메모리는 대화 세션 안에서만 유지된다. 장기 기억(cross-session memory)은 내장 지원이 없다. 외부 DB나 별도 메모리 레이어를 직접 붙여야 한다.
 
 **2. 디버깅이 아직 불편하다**  
-`run_stream()`으로 스트리밍하면 각 에이전트의 발언은 보이지만, 중간 도구 호출 결과까지 한눈에 보기가 어렵다. Langfuse 같은 외부 트레이싱 도구를 연결하는 게 실제 개발에서는 필수다. [Langfuse 셀프호스팅 가이드](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026)에서 설정 방법을 다뤘다.
+`run_stream()`으로 스트리밍하면 각 에이전트의 발언은 보이지만, 중간 도구 호출 결과까지 한눈에 보기가 어렵다. Langfuse 같은 외부 트레이싱 도구를 연결하는 게 실제 개발에서는 필수다. [Langfuse 셀프호스팅 가이드](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026/)에서 설정 방법을 다뤘다.
 
 **3. 비동기 코드만 지원**  
 모든 API가 `async/await` 기반이다. 동기 코드에서 쓰려면 `asyncio.run()`으로 감싸야 한다. 스크립트 레벨에서는 괜찮지만 FastAPI나 Django에서 쓸 때 비동기 처리를 고려해야 한다.
@@ -456,11 +456,11 @@ asyncio.run(main())
 
 내 판단을 솔직하게 말하면, **에이전트 간 협업 프로토콜이 복잡한 경우**에 AutoGen이 강하다. 팀 구성, 팀 간 라우팅, 계층적 에이전트 구조를 명시적으로 코드로 표현할 수 있다.
 
-반면 단일 에이전트에 도구만 많이 붙여서 쓰는 경우라면 [PydanticAI](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)가 오히려 코드가 더 간결하다. AutoGen의 팀 추상화가 필요 이상으로 복잡하게 느껴질 수 있다.
+반면 단일 에이전트에 도구만 많이 붙여서 쓰는 경우라면 [PydanticAI](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)가 오히려 코드가 더 간결하다. AutoGen의 팀 추상화가 필요 이상으로 복잡하게 느껴질 수 있다.
 
 Kubernetes 수준의 인프라 내구성이 필요하다면 Dapr Agents를 보는 게 맞다. AutoGen은 어디까지나 **에이전트 대화 레이어**에 집중하는 프레임워크다.
 
-[Python AI 에이전트 라이브러리 비교 글](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 각 라이브러리의 포지션을 정리해뒀다. AutoGen이 어디서 강하고 어디서 약한지를 다른 라이브러리와 비교하면서 보면 선택이 훨씬 쉬워진다.
+[Python AI 에이전트 라이브러리 비교 글](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에서 각 라이브러리의 포지션을 정리해뒀다. AutoGen이 어디서 강하고 어디서 약한지를 다른 라이브러리와 비교하면서 보면 선택이 훨씬 쉬워진다.
 
 ## 마무리
 

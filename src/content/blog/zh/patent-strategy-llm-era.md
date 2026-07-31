@@ -62,7 +62,7 @@ Mark Cuban在X（原Twitter）上发表了一个发人深省的观点：<strong>
 Cuban的主张可以归纳如下：
 
 1. <strong>专利是公开文件</strong>：向专利局申请后，技术内容将被详细公开
-2. <strong>LLM学习公开数据</strong>：专利文献也包含在训练数据中 — 关于 LLM 如何从文本中提取多样性，请参考 [Verbalized Sampling：无需训练恢复LLM多样性的提示技术](/zh/blog/zh/verbalized-sampling-llm-diversity)。
+2. <strong>LLM学习公开数据</strong>：专利文献也包含在训练数据中 — 关于 LLM 如何从文本中提取多样性，请参考 [Verbalized Sampling：无需训练恢复LLM多样性的提示技术](/zh/blog/zh/verbalized-sampling-llm-diversity/)。
 3. <strong>AI最终"掌握"了专利技术</strong>：虽然垄断权仍在，但技术知识本身已被AI吸收
 
 这不仅仅是简单的专利侵权问题，而是意味着<strong>专利制度根本性的价值交换正在崩塌</strong>。
@@ -175,7 +175,7 @@ Mark Cuban的观点不是简单的担忧，而是要求<strong>从根本上重�
 2. <strong>重新设计商业秘密与专利的最优组合</strong>
 3. <strong>制定适应AI时代的知识产权战略路线图</strong>
 
-专利战略的范式正在改变。只有快速适应的企业才能保持技术优势。Anthropic 致力于标准化 AI 代理能力的方法，请参阅 [Anthropic Agent Skills 标准：扩展AI代理能力](/zh/blog/zh/anthropic-agent-skills-standard)。
+专利战略的范式正在改变。只有快速适应的企业才能保持技术优势。Anthropic 致力于标准化 AI 代理能力的方法，请参阅 [Anthropic Agent Skills 标准：扩展AI代理能力](/zh/blog/zh/anthropic-agent-skills-standard/)。
 
 ## 参考资料
 

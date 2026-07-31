@@ -161,7 +161,7 @@ git log -1 --format=%cI -- content/about.html
 # 2026-07-08T15:26:11+09:00
 ```
 
-`%cI` はコミット時刻を ISO 8601(=W3C Datetime 互換)で出す。フォーマット変換が要らず、「このファイルの最後の意味ある変更」という定義にも近い。私は多言語ブログでこの手を使っている。sitemap や hreflang を CI で強制するビルドゲートのやり方は[多言語ブログを監査して二度と戻らないよう固めたキャンペーン](/ja/blog/ja/multilingual-blog-technical-audit-campaign-2026)にまとめた。そこでも、監査をイベントではなくループにするのが肝だった。
+`%cI` はコミット時刻を ISO 8601(=W3C Datetime 互換)で出す。フォーマット変換が要らず、「このファイルの最後の意味ある変更」という定義にも近い。私は多言語ブログでこの手を使っている。sitemap や hreflang を CI で強制するビルドゲートのやり方は[多言語ブログを監査して二度と戻らないよう固めたキャンペーン](/ja/blog/ja/multilingual-blog-technical-audit-campaign-2026/)にまとめた。そこでも、監査をイベントではなくループにするのが肝だった。
 
 もうひとつ。lastmod は<strong>意味のある</strong>変更のときだけ更新する。誤字ひとつ直した、フッターの年号を変えた、そんなことで lastmod を上げてはいけない。毎回「変わった」と叫ぶ sitemap は狼少年になる。何度か空振りしたクローラーは、その後あなたの lastmod を無視する。本文・見出し・主要な構造が変わったときだけ時刻を上げるのが正しい。
 
@@ -173,7 +173,7 @@ git log -1 --format=%cI -- content/about.html
 
 そして sitemap はインデックスとは無関係だ。クロールされたからインデックスされるわけでも、sitemap に入れたから索引に載るわけでもない。順位は言うまでもない。構造化データにせよ sitemap にせよ、順位を保証するSEO要素は存在しない、というのがGoogleの一貫した公式見解だ。lastmod で得られるのは「発見したページの再訪優先度を、もう少し正確な根拠で判断させること」、ちょうどそこまで。
 
-もうひとつ、2023年から sitemap の ping エンドポイントが廃止された。以前は sitemap が変わるたびに `google.com/ping?sitemap=...` を呼んで知らせたが、今そのエンドポイントは死んでいる。検索エンジンは自分のスケジュールで sitemap を取りに来る。sitemap の場所は robots.txt の `Sitemap:` 行か Search Console 登録で一度伝えれば十分で、変更ごとに ping するコードが残っているなら消していい。どのクローラーに sitemap を見せ、どれを止めるかの判断は、[robots.txt と llms.txt で AI クローラーを制御する話](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026)ともつながる。
+もうひとつ、2023年から sitemap の ping エンドポイントが廃止された。以前は sitemap が変わるたびに `google.com/ping?sitemap=...` を呼んで知らせたが、今そのエンドポイントは死んでいる。検索エンジンは自分のスケジュールで sitemap を取りに来る。sitemap の場所は robots.txt の `Sitemap:` 行か Search Console 登録で一度伝えれば十分で、変更ごとに ping するコードが残っているなら消していい。どのクローラーに sitemap を見せ、どれを止めるかの判断は、[robots.txt と llms.txt で AI クローラーを制御する話](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026/)ともつながる。
 
 ## すぐ使えるチェックリスト
 
@@ -188,4 +188,4 @@ git log -1 --format=%cI -- content/about.html
 
 sitemap ひとつで順位は上がらない。だがクローラーがあなたのサイトの変更を<strong>タイミングよく、信じて</strong>追ってくるかは、この小さな信号の正確さの勝負だ。そしてその正確さは、スキーマ検証の緑ではなく、lastmod が実際のコンテンツ状態とズレていないかにかかっている。
 
-構造化データにせよ sitemap にせよ、検索・AIクローラーがサーバーから出す信号を実際どう受け取るかは、ドキュメントを読むだけでは掴めない。たとえば[AIクローラーはJavaScriptを実行しないのでCSRページをまるごと取りこぼす](/ja/blog/ja/ai-crawlers-dont-render-javascript-csr-2026)という事実も、curlで直接叩いてみて初めて見えてくる。サーバーサイドレンダリングとクローラー対応、多言語サイトの sitemap・hreflang パイプラインの点検や CI ゲートでの固め込みを考えているなら、個人的に相談と実装の依頼を受けている。プロフィールの連絡先からサイトの状況を教えてほしい。
+構造化データにせよ sitemap にせよ、検索・AIクローラーがサーバーから出す信号を実際どう受け取るかは、ドキュメントを読むだけでは掴めない。たとえば[AIクローラーはJavaScriptを実行しないのでCSRページをまるごと取りこぼす](/ja/blog/ja/ai-crawlers-dont-render-javascript-csr-2026/)という事実も、curlで直接叩いてみて初めて見えてくる。サーバーサイドレンダリングとクローラー対応、多言語サイトの sitemap・hreflang パイプラインの点検や CI ゲートでの固め込みを考えているなら、個人的に相談と実装の依頼を受けている。プロフィールの連絡先からサイトの状況を教えてほしい。

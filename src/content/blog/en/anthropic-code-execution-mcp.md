@@ -80,7 +80,7 @@ The protocol standardizes how AI assistants discover, authenticate, and interact
 
 MCP quickly gained traction, with over <strong>10,000 community-built servers</strong> and integration into major platforms including Zed, Replit, Codeium, and Sourcegraph. However, as usage scaled, a critical limitation became apparent: the traditional tool-calling approach simply couldn't scale efficiently for complex, multi-step workflows.
 
-If you want to build your own MCP server from scratch, [Building Your Own MCP Server — Implementing Real AI Tools with Streamable HTTP Transport](/en/blog/en/mcp-server-build-practical-guide-2026) walks through a complete implementation with Python FastMCP.
+If you want to build your own MCP server from scratch, [Building Your Own MCP Server — Implementing Real AI Tools with Streamable HTTP Transport](/en/blog/en/mcp-server-build-practical-guide-2026/) walks through a complete implementation with Python FastMCP.
 
 ## Limitations of Traditional Tool Calling
 
@@ -102,7 +102,7 @@ For a simple task requiring 15 tool calls, this creates a cascade of problems:
 
 <strong>Token Explosion</strong>: Each tool's output is added to the context window, which must be re-read on every subsequent call. A workflow that processes 100 database records can balloon to 150,000 tokens—consuming the entire context window of most models.
 
-<strong>Latency Multiplication</strong>: Each tool call requires a full model inference cycle. With network latency and processing time, 15 tool calls can take 30-45 seconds, making real-time applications impossible. For a deeper look at how different agentic architectures handle this problem, see [5 Claude Code Agentic Workflow Patterns — Which One Fits Your Work?](/en/blog/en/claude-code-agentic-workflow-patterns-5-types).
+<strong>Latency Multiplication</strong>: Each tool call requires a full model inference cycle. With network latency and processing time, 15 tool calls can take 30-45 seconds, making real-time applications impossible. For a deeper look at how different agentic architectures handle this problem, see [5 Claude Code Agentic Workflow Patterns — Which One Fits Your Work?](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/).
 
 <strong>Context Pollution</strong>: Intermediate results (like individual database rows or file contents) permanently occupy context space, even when only summary information is needed for the final output.
 

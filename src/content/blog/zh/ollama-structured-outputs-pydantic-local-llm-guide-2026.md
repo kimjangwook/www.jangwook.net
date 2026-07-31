@@ -210,7 +210,7 @@ Dispatch: OK (type-safe)
 
 由于 `tool_name` 声明为 `Literal["web_search", "read_file", ...]`，`tool_call.tool_name` 始终是这四个值之一。如果模型捏造了不存在的工具名，Pydantic会抛出 `ValidationError`。这就是 `if tool_call.tool_name == "web_search"` 分支可以安全编写的原因。
 
-这个模式在架构上与云端API的函数调用相同。与[Claude Agent SDK的Tool Use模式](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)相比，可以发现一个有趣的设计差异：云端LLM在模型层面原生处理工具选择，而本地Ollama需要显式的JSON Schema加Pydantic验证层。
+这个模式在架构上与云端API的函数调用相同。与[Claude Agent SDK的Tool Use模式](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)相比，可以发现一个有趣的设计差异：云端LLM在模型层面原生处理工具选择，而本地Ollama需要显式的JSON Schema加Pydantic验证层。
 
 ## Gemma4与Schema复杂度：我发现的局限性
 
@@ -222,7 +222,7 @@ Dispatch: OK (type-safe)
 
 **Schema大小。** 大型Pydantic模型的JSON Schema可以达到数百个token，本身就占用上下文空间，减少了实际提示词可用的空间。复杂的Schema需要更强大的模型。
 
-按照[Ollama FastAPI生产部署指南](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026)将Ollama部署为API服务器后，可以考虑根据Schema复杂度在运行时切换模型。
+按照[Ollama FastAPI生产部署指南](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026/)将Ollama部署为API服务器后，可以考虑根据Schema复杂度在运行时切换模型。
 
 ## 嵌套 Schema 实战示例：注意事项
 
@@ -324,7 +324,7 @@ print(f"Key phrases: {result.key_phrases}")
 
 **流式传输。** 设置 `stream: true` 可以逐步接收生成中的JSON。配合 `ijson` 等流式JSON解析器，可以内存高效地处理大响应。
 
-**模型切换策略。** 简单提取用 `gemma4:e4b`（速度快），复杂嵌套Schema用 `gemma4:12b-it-qat`（更准确），在运行时按需切换，是成本与质量平衡的优选方案。[用Pydantic AI构建完整Agent](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)展示了如何在框架层面抽象这个判断。
+**模型切换策略。** 简单提取用 `gemma4:e4b`（速度快），复杂嵌套Schema用 `gemma4:12b-it-qat`（更准确），在运行时按需切换，是成本与质量平衡的优选方案。[用Pydantic AI构建完整Agent](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)展示了如何在框架层面抽象这个判断。
 
 如果你已经在本地运行基于Gemma4的Agent，今天只需添加一个 `format` 参数，就能显著提升解析稳定性。尤其是在Agent循环中，错误响应会直接导致下游错误的路径上，效果更为明显。
 

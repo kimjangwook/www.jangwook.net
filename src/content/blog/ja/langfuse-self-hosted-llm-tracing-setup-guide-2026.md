@@ -158,7 +158,7 @@ result = call_llm("今日の天気は？")
 
 ## 実践RAGパイプラインのトレーシング
 
-[PydanticAIでタイプセーフなエージェントを作る方法](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を扱ったときのように、実際のエージェントコードにLangfuseを追加すると、どのステップでコストが発生しているかがすぐわかる。使用するベクターDBがまだ決まっていなければ[Qdrant、Chroma、pgvectorの比較](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector)を先に確認しておくと選択が早まる。
+[PydanticAIでタイプセーフなエージェントを作る方法](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)を扱ったときのように、実際のエージェントコードにLangfuseを追加すると、どのステップでコストが発生しているかがすぐわかる。使用するベクターDBがまだ決まっていなければ[Qdrant、Chroma、pgvectorの比較](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector/)を先に確認しておくと選択が早まる。
 
 ```python
 from langfuse import observe, get_client
@@ -278,7 +278,7 @@ compiled = prompt.compile(
 
 プロンプトをこのように管理すると「バージョン2のプロンプトを使った日になぜ応答品質が下がったのか」という質問にすぐ答えられる。
 
-[FastMCPでMCPサーバーを直接構築した経験](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)があれば、そのサーバーで発生するLLM呼び出しにLangfuseトレーシングを追加することが自然な次のステップだ。MCPサーバーはツール呼び出しチェーンが長くなる傾向があり、トレースウォーターフォールの価値が特に高い。
+[FastMCPでMCPサーバーを直接構築した経験](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)があれば、そのサーバーで発生するLLM呼び出しにLangfuseトレーシングを追加することが自然な次のステップだ。MCPサーバーはツール呼び出しチェーンが長くなる傾向があり、トレースウォーターフォールの価値が特に高い。
 
 ## セルフホスティングを勧めない場合
 
@@ -296,7 +296,7 @@ compiled = prompt.compile(
 
 私は二つのプロジェクトを同時運用していて、一つはCloud、一つはセルフホスティングを使っている。ClickHouseのせいでメモリを2GB以上食うのが今も惜しく感じる、というのが正直な感想だ。
 
-[FastMCPでMCPサーバーを直接構築した経験](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)があるなら、そのサーバーで発生するLLM呼び出しにLangfuseトレーシングを付けるのが自然な次のステップだ。MCPサーバーはツール呼び出しチェーンが長くなりがちで、トレースウォーターフォールの価値が特に高い。
+[FastMCPでMCPサーバーを直接構築した経験](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)があるなら、そのサーバーで発生するLLM呼び出しにLangfuseトレーシングを付けるのが自然な次のステップだ。MCPサーバーはツール呼び出しチェーンが長くなりがちで、トレースウォーターフォールの価値が特に高い。
 
 ## いつセルフホスティングを使い、いつ避けるべきか
 
@@ -316,7 +316,7 @@ compiled = prompt.compile(
 - バックアップ、バージョンアップ、スケーリングを自分で背負いたくない
 - プロトタイプ段階で、付けたり外したりを繰り返す予定だ
 
-判断が曖昧な中間地帯なら、まずコンテナデプロイの運用感覚を点検してほしい。[OllamaとFastAPIをプロダクションにデプロイする記事](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)で扱ったヘルスチェック、リソース制限、再起動ポリシーを難なく扱えるなら、Langfuseのフルスタックも問題なく運用できる。逆にその記事が重く感じるなら、Cloudで始めて規模が大きくなってから移すのが現実的だ。
+判断が曖昧な中間地帯なら、まずコンテナデプロイの運用感覚を点検してほしい。[OllamaとFastAPIをプロダクションにデプロイする記事](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026/)で扱ったヘルスチェック、リソース制限、再起動ポリシーを難なく扱えるなら、Langfuseのフルスタックも問題なく運用できる。逆にその記事が重く感じるなら、Cloudで始めて規模が大きくなってから移すのが現実的だ。
 
 私の場合は2つのプロジェクトを分けて運用している。機密データのないブログ自動化パイプラインはCloud、クライアントデータを扱う方はセルフホスティング。同じツールでもデータの性質に応じてデプロイ方法を変えるのが、最も後悔の少ない選択だった。ClickHouseのせいでメモリを2GB以上食うのは今でも惜しいというのが正直な感想だ。
 

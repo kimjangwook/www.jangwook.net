@@ -376,7 +376,7 @@ CPUのみのサーバーなら`deploy.resources.reservations`ブロックを削�
 
 FastAPIはクライアントとOllamaの間で安定したアダプターとして機能する。モデルを変えてもOllamaをアップグレードしても、クライアントコードはそのままだ。これが直接Ollamaを公開しない主な理由だ。
 
-このアプローチは[FastMCPでローカルLLMをMCPサーバーとして公開する方法](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp)とは異なる。FastMCPはClaude DesktopなどのMCPクライアントとの統合に向いており、FastAPIは一般的なHTTPクライアント（Webアプリ、モバイル、CLIツール）との統合に向いている。
+このアプローチは[FastMCPでローカルLLMをMCPサーバーとして公開する方法](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp/)とは異なる。FastMCPはClaude DesktopなどのMCPクライアントとの統合に向いており、FastAPIは一般的なHTTPクライアント（Webアプリ、モバイル、CLIツール）との統合に向いている。
 
 ## マルチモデルルーティング：リクエストに応じてモデルを切り替える
 
@@ -468,7 +468,7 @@ async def generate(req: GenerateRequest):
 - `llama3.1:70b`（Q4量子化）：プロダクション品質
 - VRAMに余裕があれば`--workers 4`以上に増やせる
 
-モデルサイズと実運用コストの関係をさらに掘り下げたいなら、[AIエージェントの実際の運用コストを分析した記事](/ja/blog/ja/ai-agent-cost-reality)と併せて読むとよい。ローカル推論がトークンコストをどこまで下げてくれるかの感覚がつかめる。
+モデルサイズと実運用コストの関係をさらに掘り下げたいなら、[AIエージェントの実際の運用コストを分析した記事](/ja/blog/ja/ai-agent-cost-reality/)と併せて読むとよい。ローカル推論がトークンコストをどこまで下げてくれるかの感覚がつかめる。
 
 ## この構成をいつ使い、いつ避けるべきか
 
@@ -574,7 +574,7 @@ app = FastAPI(title="Ollama API Server", lifespan=lifespan)
 4. **モデルマルチプレキシング**：コーディングリクエストをコード特化モデル、一般リクエストを別モデルにルーティング
 5. **フォールバックルーティング**：プライマリモデルが過負荷の場合にバックアップモデルに切り替え
 
-ローカルLLMサーバーを作る理由は人それぞれだ。私の場合はAPIキーなしで実験できる環境が欲しかった。クラウドLLMの方が強力だが、反復実験フェーズでトークンコストが積み重なるのは避けたい。14.9秒の応答でも、コードが正しく動くかどうかを確認する用途には十分だ。Ollama + FastAPIの組み合わせはそのバランスをうまく取ってくれると思っている。デプロイ段階でクラウドへ切り替えるなら、[FastAPIでClaude APIのストリーミングをプロダクションに載せる方法](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026)がこの記事の自然な次のステップだ。同じFastAPIインターフェースを保ったままバックエンドだけ差し替えるパターンをそのまま適用できる。
+ローカルLLMサーバーを作る理由は人それぞれだ。私の場合はAPIキーなしで実験できる環境が欲しかった。クラウドLLMの方が強力だが、反復実験フェーズでトークンコストが積み重なるのは避けたい。14.9秒の応答でも、コードが正しく動くかどうかを確認する用途には十分だ。Ollama + FastAPIの組み合わせはそのバランスをうまく取ってくれると思っている。デプロイ段階でクラウドへ切り替えるなら、[FastAPIでClaude APIのストリーミングをプロダクションに載せる方法](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026/)がこの記事の自然な次のステップだ。同じFastAPIインターフェースを保ったままバックエンドだけ差し替えるパターンをそのまま適用できる。
 
 ## 参考資料（一次出典）
 

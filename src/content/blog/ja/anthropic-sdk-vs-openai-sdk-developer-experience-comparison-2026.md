@@ -269,7 +269,7 @@ with client.chat.completions.stream(
 
 Anthropicは`stream.text_stream`でテキストを直接抽出できる。OpenAIは`chunk.choices[0].delta.content`まで直接掘り下げる必要がある。シンプルなテキストストリーミングならAnthropicの方が使いやすい。
 
-[Vercel AI SDKでClaudeストリーミングエージェントを構築する](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026)ガイドもこのストリーミングパターンを応用した事例だ。
+[Vercel AI SDKでClaudeストリーミングエージェントを構築する](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026/)ガイドもこのストリーミングパターンを応用した事例だ。
 
 ## Anthropic SDKだけの機能：プロンプトキャッシングと拡張思考
 
@@ -340,7 +340,7 @@ OpenAIにもAnthropicにないものがある。
 
 **OpenAI SDKを選ぶべき時**: 音声インターフェースやリアルタイムインタラクション（Realtime API）、Assistants APIのファイル検索・コードインタープリター組み合わせ、組織/プロジェクト単位の課金分離、特定ドメインへのファインチューニング管理。
 
-マルチモデルアーキテクチャを運営するなら、[PydanticAI](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)のようにSDKを抽象化するレイヤーを置くのが管理しやすい。
+マルチモデルアーキテクチャを運営するなら、[PydanticAI](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)のようにSDKを抽象化するレイヤーを置くのが管理しやすい。
 
 ## SDK戦争の本当の意味
 

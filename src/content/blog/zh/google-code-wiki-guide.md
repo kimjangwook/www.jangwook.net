@@ -233,7 +233,7 @@ sequenceDiagram
 
 ### 私有仓库支持
 
-Google即将推出<strong>Gemini CLI扩展</strong>，允许团队在本地运行Code Wiki，为私有仓库生成文档。这对于企业级应用尤为重要。在Claude AI生态系统中，[MCP（模型上下文协议）服务器工具包](/zh/blog/zh/mcp-servers-toolkit-introduction)承担着类似的角色，通过标准化接口将AI助手与开发工具连接起来。
+Google即将推出<strong>Gemini CLI扩展</strong>，允许团队在本地运行Code Wiki，为私有仓库生成文档。这对于企业级应用尤为重要。在Claude AI生态系统中，[MCP（模型上下文协议）服务器工具包](/zh/blog/zh/mcp-servers-toolkit-introduction/)承担着类似的角色，通过标准化接口将AI助手与开发工具连接起来。
 
 ### 加入等待列表
 
@@ -417,7 +417,7 @@ Google Code Wiki是一个具有革命性潜力的工具，它通过AI技术解�
 - 技术债务评估
 - 开源项目探索
 
-虽然目前还存在一些局限（如仅支持公开仓库），但随着Gemini CLI扩展的推出，Code Wiki将成为企业级开发流程中不可或缺的一部分。对AI编程工具在团队中落地感兴趣的读者，可以参考[Claude Code最佳实践](/zh/blog/zh/claude-code-best-practices)；深入了解AI代理如何调用工具，则推荐阅读[Claude Agent SDK工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)。
+虽然目前还存在一些局限（如仅支持公开仓库），但随着Gemini CLI扩展的推出，Code Wiki将成为企业级开发流程中不可或缺的一部分。对AI编程工具在团队中落地感兴趣的读者，可以参考[Claude Code最佳实践](/zh/blog/zh/claude-code-best-practices/)；深入了解AI代理如何调用工具，则推荐阅读[Claude Agent SDK工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)。
 
 现在就访问 [codewiki.google](https://codewiki.google) 开始体验，并考虑为您的团队加入Gemini CLI扩展的等待列表。
 

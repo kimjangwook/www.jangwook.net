@@ -89,7 +89,7 @@ DDR5 RDIMM価格が急激に下落し、状況が変わりました。
 
 ## なぜGPUを使うのか：速度の問題
 
-GB単価だけ見ればRDIMMが圧倒的に有利ですが、核心は[<strong>推論速度</strong>](/ja/blog/ja/asic-llm-inference-16k-tps)です。
+GB単価だけ見ればRDIMMが圧倒的に有利ですが、核心は[<strong>推論速度</strong>](/ja/blog/ja/asic-llm-inference-16k-tps/)です。
 
 ### メモリ帯域幅比較
 
@@ -194,7 +194,7 @@ graph TD
     C --> E["非同期タスク<br/>70B〜405Bモデル"]
 ```
 
-- [小型モデル（7B〜13B）](/ja/blog/ja/devstral-qwen3-coder-small-models)はGPUで高速推論
+- [小型モデル（7B〜13B）](/ja/blog/ja/devstral-qwen3-coder-small-models/)はGPUで高速推論
 - 大型モデル（70B+）はCPUでコスト効率的に実行
 - llama.cppの`--n-gpu-layers`オプションで一部レイヤーのみGPUにオフロード可能
 
@@ -204,7 +204,7 @@ DDR5 RDIMM価格がRTX 3090 VRAMのGB単価を下回ったことは、単純な�
 
 1. <strong>大型モデルへのアクセシビリティ向上</strong>：405B級モデルも$2,500のシステムで実行可能
 2. <strong>コスト最適化オプションの多様化</strong>：用途に応じてGPU/CPU/ハイブリッドを選択
-3. <strong>参入障壁の低下</strong>：[ローカルLLM実験](/ja/blog/ja/prismml-bonsai-1bit-llm-edge-ai)のコストが大幅に減少
+3. <strong>参入障壁の低下</strong>：[ローカルLLM実験](/ja/blog/ja/prismml-bonsai-1bit-llm-edge-ai/)のコストが大幅に減少
 
 速度が最優先ならGPUが正解です。しかし、<strong>「最大のモデルを最も安価に」</strong>が目標なら、DDR5 RDIMM基盤のCPU推論が2026年の新しい最適解となりつつあります。
 

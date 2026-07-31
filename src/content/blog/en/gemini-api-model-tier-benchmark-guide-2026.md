@@ -91,7 +91,7 @@ Flash-Lite dominates at 65 TPS. It's 4.9x faster than Pro and 2.4x faster than 2
 
 3.5 Flash is interesting. It's slightly faster than 2.5 Flash and produced more output tokens (186 vs 170). Same prompt, richer response — which suggests some quality improvement. But I couldn't verify the official price, so cost comparisons stay rough.
 
-Pro's 11-second latency comes from [thinking mode being on by default](/en/blog/en/deep-thinking-ratio-llm-cost-optimization). Even on a short prompt, it runs internal reasoning steps. For simple tasks, that's wasted compute. For complex reasoning, it's the whole point.
+Pro's 11-second latency comes from [thinking mode being on by default](/en/blog/en/deep-thinking-ratio-llm-cost-optimization/). Even on a short prompt, it runs internal reasoning steps. For simple tasks, that's wasted compute. For complex reasoning, it's the whole point.
 
 ## Cost Comparison: Official Pricing (May 2026)
 
@@ -106,7 +106,7 @@ Prices verified from official documentation:
 
 Flash-Lite is 67% cheaper on input and 84% cheaper on output compared to Flash. It's also 2.4x faster. That combination raises the question: why use Flash at all for simple tasks?
 
-Pro runs 12.5x Flash-Lite's input cost. As covered in the [cross-provider LLM pricing comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek), the gap looks enormous but total cost depends on your actual input/output token ratio.
+Pro runs 12.5x Flash-Lite's input cost. As covered in the [cross-provider LLM pricing comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/), the gap looks enormous but total cost depends on your actual input/output token ratio.
 
 *Gemini 3.5 Flash pricing isn't officially published yet. I couldn't pull pricing from the API response, and community estimates suggest roughly 1.5x-2x Flash 2.5 pricing. Treat these as rough estimates.
 
@@ -179,7 +179,7 @@ Too early to recommend definitively — the price isn't confirmed. Today's measu
 - RAG over long documents where subtlety matters
 - B2B use cases where accuracy loss costs more than the model premium
 
-Using Pro for a general chatbot is wasteful. But when I look at [real AI agent cost structures](/en/blog/en/ai-agent-cost-reality), the bigger cost failure usually isn't wrong model selection — it's wrong agent design. Using Flash-Lite where Pro is needed can trigger reprocessing or human review that costs more than the savings.
+Using Pro for a general chatbot is wasteful. But when I look at [real AI agent cost structures](/en/blog/en/ai-agent-cost-reality/), the bigger cost failure usually isn't wrong model selection — it's wrong agent design. Using Flash-Lite where Pro is needed can trigger reprocessing or human review that costs more than the savings.
 
 ## Three Cost Levers Beyond Model Selection
 

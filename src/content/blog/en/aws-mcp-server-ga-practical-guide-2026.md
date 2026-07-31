@@ -56,7 +56,7 @@ AWS MCP Server gives AI coding agents — Claude Code, Cursor, Codex — a stand
 
 Instead of copying log group names from the console and pasting them into CLI commands, you can ask your agent: "Find the Lambda function with the highest error rate in the past hour and summarize the relevant logs." The agent runs the Logs Insights query itself and brings back results.
 
-If you've [built an MCP server from scratch](/en/blog/en/mcp-server-build-practical-guide-2026), you already understand the protocol. AWS MCP Server is the official, AWS-maintained collection of MCP servers for AWS services, published at `awslabs/mcp` on GitHub and installable from PyPI.
+If you've [built an MCP server from scratch](/en/blog/en/mcp-server-build-practical-guide-2026/), you already understand the protocol. AWS MCP Server is the official, AWS-maintained collection of MCP servers for AWS services, published at `awslabs/mcp` on GitHub and installable from PyPI.
 
 ### What Changed at GA
 
@@ -206,7 +206,7 @@ add_user_to_group / remove_user_from_group
 put_role_policy / get_role_policy / delete_role_policy
 ```
 
-I find `simulate_principal_policy` the most useful. It checks whether an IAM principal can perform specific actions without actually making those API calls. After reading about [MCP ecosystem security vulnerabilities and 30 CVEs](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening), having agents pre-validate their permissions before executing is a meaningful safety step.
+I find `simulate_principal_policy` the most useful. It checks whether an IAM principal can perform specific actions without actually making those API calls. After reading about [MCP ecosystem security vulnerabilities and 30 CVEs](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening/), having agents pre-validate their permissions before executing is a meaningful safety step.
 
 Test run against my account:
 
@@ -260,7 +260,7 @@ An IAM deny policy using these keys:
 }
 ```
 
-With this policy, a human using the AWS console can manage IAM users. Claude Code using the same credentials cannot. Same key pair, different effective permissions. When I was [implementing Tool Use in the Claude Agent SDK](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026), I had to build agent permission scoping into application logic. AWS is solving that at the infrastructure layer here.
+With this policy, a human using the AWS console can manage IAM users. Claude Code using the same credentials cannot. Same key pair, different effective permissions. When I was [implementing Tool Use in the Claude Agent SDK](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/), I had to build agent permission scoping into application logic. AWS is solving that at the infrastructure layer here.
 
 ## Architecture
 
@@ -280,7 +280,7 @@ Three layers: coding agent → AWS MCP Server (stdio) → AWS API (SigV4 auth). 
 | AWS Pricing MCP Server | Cost estimation | separate |
 | EKS MCP Server | EKS cluster management | separate |
 
-The `aws-api-mcp-server` is interesting. It exposes every AWS API through a single tool. When [building a FastMCP-based MCP server](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026), each API endpoint needed its own tool definition. The aws-api-mcp-server flips that — one tool, all APIs. The trade-off is that the agent needs more context to figure out which API to call.
+The `aws-api-mcp-server` is interesting. It exposes every AWS API through a single tool. When [building a FastMCP-based MCP server](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/), each API endpoint needed its own tool definition. The aws-api-mcp-server flips that — one tool, all APIs. The trade-off is that the agent needs more context to figure out which API to call.
 
 ## Honest Assessment — What Works, What Doesn't
 

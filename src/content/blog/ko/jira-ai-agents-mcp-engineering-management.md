@@ -116,7 +116,7 @@ Atlassian이 호스팅하는 MCP 서버를 통해 다음 AI 클라이언트가 J
 
 ### Rovo MCP Gallery
 
-Atlassian의 Rovo MCP Gallery를 통해 GitHub, Box, Figma, [Slack](/ko/blog/ko/slack-mcp-team-communication) 등 서드파티 도구의 에이전트도 Jira 안에서 동작한다. 현재 <strong>MCP 사용량의 약 1/3이 쓰기(Write) 작업</strong>이라는 점이 주목할 만하다. 단순 데이터 조회가 아니라 실제로 작업을 수행하고 있다는 의미다.
+Atlassian의 Rovo MCP Gallery를 통해 GitHub, Box, Figma, [Slack](/ko/blog/ko/slack-mcp-team-communication/) 등 서드파티 도구의 에이전트도 Jira 안에서 동작한다. 현재 <strong>MCP 사용량의 약 1/3이 쓰기(Write) 작업</strong>이라는 점이 주목할 만하다. 단순 데이터 조회가 아니라 실제로 작업을 수행하고 있다는 의미다.
 
 ### 엔터프라이즈 채택 현황
 
@@ -159,7 +159,7 @@ EM으로서 이 전환을 <strong>위협이 아닌 기회</strong>로 포지셔�
 
 ### 3. MCP 기반 도구 통합 전략
 
-[MCP는 이제 사실상의 표준](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide)(de facto standard)이다. Anthropic이 만들었지만, Linux Foundation에 기부되었고, OpenAI, Google, Microsoft, AWS가 모두 지원한다.
+[MCP는 이제 사실상의 표준](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide/)(de facto standard)이다. Anthropic이 만들었지만, Linux Foundation에 기부되었고, OpenAI, Google, Microsoft, AWS가 모두 지원한다.
 
 ```mermaid
 graph TD
@@ -241,7 +241,7 @@ AI 에이전트 도입의 성과를 정량적으로 측정할 수 있어야 한�
 ### AI 에이전트 ≠ 만능
 
 - 에이전트는 도구다. <strong>판단은 여전히 사람의 몫</strong>이다
-- 초기에는 에이전트 출력의 품질이 불안정할 수 있다. [에이전트 워싱 체크리스트](/ko/blog/ko/agent-washing-detection-em-checklist)를 활용한 검증 프로세스를 갖춰둬야 한다
+- 초기에는 에이전트 출력의 품질이 불안정할 수 있다. [에이전트 워싱 체크리스트](/ko/blog/ko/agent-washing-detection-em-checklist/)를 활용한 검증 프로세스를 갖춰둬야 한다
 - 팀원들의 심리적 안전감을 고려해야 한다. "AI가 내 일을 대체한다"는 불안감에 선제적으로 대응해야 한다
 
 ### 보안과 컴플라이언스

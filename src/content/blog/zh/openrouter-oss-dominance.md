@@ -64,8 +64,8 @@ AI模型路由平台<strong>OpenRouter</strong>的周使用量排行榜出现了
 
 | 排名 | 模型 | 类型 | 特点 |
 |------|------|------|------|
-| 1 | [Qwen3-Coder](/zh/blog/zh/devstral-qwen3-coder-small-models) | 🟢 开源 | 阿里巴巴的编程特化模型 |
-| 2 | [DeepSeek R2](/zh/blog/zh/deepseek-v4-release) | 🟢 开源 | 推理特化大模型 |
+| 1 | [Qwen3-Coder](/zh/blog/zh/devstral-qwen3-coder-small-models/) | 🟢 开源 | 阿里巴巴的编程特化模型 |
+| 2 | [DeepSeek R2](/zh/blog/zh/deepseek-v4-release/) | 🟢 开源 | 推理特化大模型 |
 | 3 | MiniMax M2.5 | 🟢 开源 | 高性价比通用模型 |
 | 4 | GPT-4.1 | 🔵 闭源 | OpenAI旗舰模型 |
 | 5 | Llama 4 Maverick | 🟢 开源 | Meta的开源大模型 |
@@ -80,7 +80,7 @@ OpenRouter是一个通过单一API访问各种AI模型的平台。用户自主�
 
 ### 1. 压倒性的成本优势
 
-开源模型得益于API提供商之间的激烈竞争，同等性能的[成本大幅降低](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)。Qwen3-Coder以GPT-4.1约<strong>1/10的价格</strong>提供同等的编程性能。
+开源模型得益于API提供商之间的激烈竞争，同等性能的[成本大幅降低](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)。Qwen3-Coder以GPT-4.1约<strong>1/10的价格</strong>提供同等的编程性能。
 
 ```
 成本对比（每1M token，估算）:

@@ -161,7 +161,7 @@ git log -1 --format=%cI -- content/about.html
 # 2026-07-08T15:26:11+09:00
 ```
 
-`%cI`는 커밋 시각을 ISO 8601(=W3C Datetime 호환)로 뽑아준다. 포맷 변환이 필요 없고, "이 파일의 마지막 의미 있는 변경"이라는 정의에도 더 가깝다. 나는 다국어 블로그에서 이 접근을 쓴다. 관련해서 빌드 게이트로 sitemap과 hreflang을 CI에서 강제하는 방식은 [다국어 블로그를 감사하고 되돌아오지 못하게 막은 캠페인](/ko/blog/ko/multilingual-blog-technical-audit-campaign-2026)에 정리해 뒀는데, 거기서도 감사를 이벤트가 아니라 루프로 만드는 게 핵심이었다.
+`%cI`는 커밋 시각을 ISO 8601(=W3C Datetime 호환)로 뽑아준다. 포맷 변환이 필요 없고, "이 파일의 마지막 의미 있는 변경"이라는 정의에도 더 가깝다. 나는 다국어 블로그에서 이 접근을 쓴다. 관련해서 빌드 게이트로 sitemap과 hreflang을 CI에서 강제하는 방식은 [다국어 블로그를 감사하고 되돌아오지 못하게 막은 캠페인](/ko/blog/ko/multilingual-blog-technical-audit-campaign-2026/)에 정리해 뒀는데, 거기서도 감사를 이벤트가 아니라 루프로 만드는 게 핵심이었다.
 
 한 가지 더. lastmod는 <strong>의미 있는</strong> 변경에만 갱신해야 한다. 오타 하나 고쳤다고, 푸터 연도를 바꿨다고 lastmod를 올리면 안 된다. 매번 "바뀌었다"고 외치는 sitemap은 양치기 소년이 된다. 몇 번 헛걸음한 크롤러는 그 다음부터 당신의 lastmod를 무시한다. 본문·제목·핵심 구조가 바뀔 때만 시각을 올리는 게 맞다.
 
@@ -173,7 +173,7 @@ git log -1 --format=%cI -- content/about.html
 
 그리고 sitemap은 인덱싱과 무관하다. 크롤링됐다고 인덱싱되는 게 아니고, sitemap에 넣었다고 색인에 오르는 게 아니다. 순위는 말할 것도 없다. 구조화 데이터든 sitemap이든, 순위를 보장하는 SEO 요소는 존재하지 않는다는 게 구글의 일관된 공식 입장이다. lastmod로 얻는 건 "발견한 페이지의 재방문 우선순위를 조금 더 정확한 근거로 판단하게 만드는 것", 딱 거기까지다.
 
-또 하나, 2023년부터 sitemap ping 엔드포인트가 폐지됐다. 예전엔 sitemap이 바뀔 때마다 `google.com/ping?sitemap=...`을 호출해 알렸는데, 이제 그 엔드포인트는 죽었다. 검색엔진은 자기 스케줄대로 sitemap을 가지러 온다. sitemap 위치는 robots.txt의 `Sitemap:` 줄이나 Search Console 등록으로 한 번 알리면 되고, 변경마다 ping하는 코드가 남아 있다면 지워도 된다. 어떤 크롤러에 sitemap을 노출하고 어떤 크롤러를 막을지의 판단은 [robots.txt와 llms.txt로 AI 크롤러를 제어하는 이야기](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026)와도 이어진다.
+또 하나, 2023년부터 sitemap ping 엔드포인트가 폐지됐다. 예전엔 sitemap이 바뀔 때마다 `google.com/ping?sitemap=...`을 호출해 알렸는데, 이제 그 엔드포인트는 죽었다. 검색엔진은 자기 스케줄대로 sitemap을 가지러 온다. sitemap 위치는 robots.txt의 `Sitemap:` 줄이나 Search Console 등록으로 한 번 알리면 되고, 변경마다 ping하는 코드가 남아 있다면 지워도 된다. 어떤 크롤러에 sitemap을 노출하고 어떤 크롤러를 막을지의 판단은 [robots.txt와 llms.txt로 AI 크롤러를 제어하는 이야기](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026/)와도 이어진다.
 
 ## 바로 적용할 체크리스트
 
@@ -188,4 +188,4 @@ git log -1 --format=%cI -- content/about.html
 
 sitemap 하나로 순위가 오르지는 않는다. 하지만 크롤러가 당신 사이트의 변경을 <strong>제때, 믿고</strong> 따라오게 만드는 건 이 작은 신호의 정확도 싸움이다. 그리고 그 정확도는 스키마 검증 초록불이 아니라, lastmod가 실제 콘텐츠 상태와 어긋나지 않는지에 달려 있다.
 
-구조화 데이터든 sitemap이든, 검색·AI 크롤러가 서버에서 내보내는 신호를 실제로 어떻게 받아들이는지는 문서만 읽어서는 안 잡힌다. 예컨대 [AI 크롤러는 자바스크립트를 실행하지 않아 CSR 페이지를 통째로 놓친다](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026)는 사실도 curl로 직접 찍어봐야 드러난다. 서버사이드 렌더링과 크롤러 대응, 다국어 사이트의 sitemap·hreflang 파이프라인을 점검하거나 CI 게이트로 굳히고 싶다면 개인적으로 상담과 구현 의뢰를 받는다. 프로필의 연락 경로로 사이트 상황을 알려주면 된다.
+구조화 데이터든 sitemap이든, 검색·AI 크롤러가 서버에서 내보내는 신호를 실제로 어떻게 받아들이는지는 문서만 읽어서는 안 잡힌다. 예컨대 [AI 크롤러는 자바스크립트를 실행하지 않아 CSR 페이지를 통째로 놓친다](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026/)는 사실도 curl로 직접 찍어봐야 드러난다. 서버사이드 렌더링과 크롤러 대응, 다국어 사이트의 sitemap·hreflang 파이프라인을 점검하거나 CI 게이트로 굳히고 싶다면 개인적으로 상담과 구현 의뢰를 받는다. 프로필의 연락 경로로 사이트 상황을 알려주면 된다.

@@ -45,7 +45,7 @@ faq:
 > <strong>Series: Mastering OpenAI AgentKit</strong> (1/2)
 >
 > 1. <strong>OpenAI AgentKit Complete Guide Part 1: Core Concepts and Getting Started</strong> ← Current article
-> 2. [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2)
+> 2. [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2/)
 
 On October 6, 2025, at OpenAI DevDay in San Francisco, Sam Altman announced something that reshapes how developers build. He called it <strong>AgentKit</strong>.
 
@@ -1152,11 +1152,11 @@ AgentKit is not the right answer for every situation. Weigh these criteria befor
 - <strong>Teams already standardized on OpenAI models</strong>: If GPT-family models are your default and you want tracing, Evals, and guardrails inside one ecosystem, friction is lowest here.
 - <strong>Workflows that need multi-agent routing</strong>: Handoffs are first-class citizens in the SDK, so the triage-to-specialist pattern takes far less code than rolling it yourself.
 - <strong>Prototyping alongside non-developers</strong>: Agent Builder's visual canvas lets a PM or domain expert see and edit the flow directly.
-- <strong>Connecting MCP tools in a standard way</strong>: The Connector Registry and native MCP support keep tool integration consistent. For building your own MCP server end to end, see [Building a Python MCP Server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026).
+- <strong>Connecting MCP tools in a standard way</strong>: The Connector Registry and native MCP support keep tool integration consistent. For building your own MCP server end to end, see [Building a Python MCP Server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/).
 
 ### Cases to avoid or approach carefully
 
-- <strong>Non-OpenAI models at the core</strong>: If Anthropic, Google, or open-weight models are your primary engine, vendor lock-in is a real cost. A model-neutral framework is safer. If tool-call design is the crux, compare [The Complete Guide to Claude Agent SDK Tool Use](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026); if type safety matters most, weigh [Pydantic AI Type-Safe Agent Tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026).
+- <strong>Non-OpenAI models at the core</strong>: If Anthropic, Google, or open-weight models are your primary engine, vendor lock-in is a real cost. A model-neutral framework is safer. If tool-call design is the crux, compare [The Complete Guide to Claude Agent SDK Tool Use](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/); if type safety matters most, weigh [Pydantic AI Type-Safe Agent Tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/).
 - <strong>Simple single-call tasks</strong>: One classification or one summary makes the agent abstraction overkill. A direct Chat Completions call is cheaper and faster.
 - <strong>High-traffic work under a hard cost ceiling</strong>: Agent loops have hard-to-predict token consumption. Even with guardrails capping iterations, validate cost with load tests up front.
 - <strong>Production that can't absorb beta instability</strong>: Agent Builder is in beta and its API surface may shift. For systems under long-term contracts, keep it off the critical path until GA.
@@ -1167,7 +1167,7 @@ AgentKit is not the right answer for every situation. Weigh these criteria befor
 
 If you made it here, the three pillars — agents, handoffs, guardrails — plus your first running agent should feel familiar now. The rest is where real projects diverge.
 
-<strong>Coming Next</strong>: [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2) will cover:
+<strong>Coming Next</strong>: [OpenAI AgentKit Complete Guide Part 2: Advanced Patterns and Real-World Applications](/en/blog/en/openai-agentkit-tutorial-part2/) will cover:
 
 - 🏗️ <strong>Production Architecture Patterns</strong>: Designing enterprise-grade multi-agent systems
 - 🔧 <strong>Advanced Tool Integration</strong>: Building your own MCP servers, external API integration

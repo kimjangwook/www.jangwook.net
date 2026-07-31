@@ -49,7 +49,7 @@ faq:
     answer: 'No. The classic Cognitive Reflection Test traps (bat-and-ball, machines-and-widgets, lily pads) were all answered correctly even with reasoning off. These are so famous the answers are likely baked into the training data. Reasoning only rescued an on-the-spot procedure (sort six numbers, take the third largest) that cannot be memorized.'
 ---
 
-Last month, in [my post measuring output reproducibility with temperature and seed](/en/blog/en/llm-determinism-temperature-seed-experiment), I confidently wrote one paragraph that was wrong. I saw gemma4:12b-it-qat return a rising `eval_count` while `content` came back as an empty string, declared it "a packaging problem where tokens don't map to visible text," and dropped the model from my determinism table.
+Last month, in [my post measuring output reproducibility with temperature and seed](/en/blog/en/llm-determinism-temperature-seed-experiment/), I confidently wrote one paragraph that was wrong. I saw gemma4:12b-it-qat return a rising `eval_count` while `content` came back as an empty string, declared it "a packaging problem where tokens don't map to visible text," and dropped the model from my determinism table.
 
 That wasn't it. While prepping a different experiment this week I hit the same empty reply, and this time I read the response JSON to the end. Inside `message`, alongside `content`, was another field: `thinking`. gemma4:12b is a reasoning model. The empty reply wasn't a bug. I had set `num_predict` too low, so the generation budget drained entirely into the reasoning channel and not a single token was left for the answer. I had misdiagnosed the whole thing.
 
@@ -85,7 +85,7 @@ Here is the result for "A shirt costs 40 dollars after a 20% discount. What was 
 | `think=true` | 37.0s | 252 | 551 | 50 (correct) |
 | `think=false` | 1.6s | 3 | 0 | 50 (correct) |
 
-Both produced exactly the same answer. The reasoning side was 23× slower and burned 84× the tokens. When I'd set `num_predict` to 24 in my earlier post, those 252 reasoning tokens got cut off before the answer "50" was ever generated. That's why `content` came back empty. Not the model, not packaging, my own setting. It is exactly the lesson from [the experiment where num_ctx silently truncated the instructions in long inputs](/en/blog/en/ollama-num-ctx-silent-truncation-experiment): when a model looks dumb, the culprit is usually my own options.
+Both produced exactly the same answer. The reasoning side was 23× slower and burned 84× the tokens. When I'd set `num_predict` to 24 in my earlier post, those 252 reasoning tokens got cut off before the answer "50" was ever generated. That's why `content` came back empty. Not the model, not packaging, my own setting. It is exactly the lesson from [the experiment where num_ctx silently truncated the instructions in long inputs](/en/blog/en/ollama-num-ctx-silent-truncation-experiment/): when a model looks dumb, the culprit is usually my own options.
 
 ## So I changed the question: where does reasoning earn its keep?
 
@@ -160,13 +160,13 @@ It sets up the equation and even checks its work. A textbook-correct derivation.
 
 Three changes to my local agent setup followed this run.
 
-First, **I made `think=false` the default for lookup, classification, and format-conversion steps.** Routing ("which tool does this request go to?"), short extraction, JSON shaping. There's almost no room for intuition to fail here. Turning reasoning on at these steps donates 20× latency and 60× tokens per step. An agent passes through dozens of these light steps, so the cumulative loss is large. As I saw in [the post breaking down where tokens leak in a single agent run](/en/blog/en/ai-agent-cost-reality), cost leaks not in one big hit but in the repetition of small steps.
+First, **I made `think=false` the default for lookup, classification, and format-conversion steps.** Routing ("which tool does this request go to?"), short extraction, JSON shaping. There's almost no room for intuition to fail here. Turning reasoning on at these steps donates 20× latency and 60× tokens per step. An agent passes through dozens of these light steps, so the cumulative loss is large. As I saw in [the post breaking down where tokens leak in a single agent run](/en/blog/en/ai-agent-cost-reality/), cost leaks not in one big hit but in the repetition of small steps.
 
 Put numbers on it and the call is easy. Say a routing/extraction step runs 10 times per request. Reasoning off: 1.4s each, 14s for ten. Reasoning on: 28s each, 280s for ten. The user stares at a blank screen for over four minutes. The accuracy gain in return, at least on these non-intuition steps, is near zero. A local model spends no cash per token, but time and power are real costs, so the math holds.
 
 Second, **I only turn reasoning on for multi-step computation the model hasn't seen.** Steps that aggregate user data on the spot, satisfy several constraints at once, or carry intermediate state. C4 was exactly that shape. You don't flip it on to solve a famous puzzle; you flip it on when there's a procedure to run with no memorized answer.
 
-Third, **I give reasoning steps a generous `num_predict`.** The empty reply I got at the start was precisely the result of not doing this. The reasoning channel eats ~189 tokens first, so the answer needs headroom above that. If you turn it on, raise the budget with it. I added this item to the recommended settings in [the determinism post](/en/blog/en/llm-determinism-temperature-seed-experiment).
+Third, **I give reasoning steps a generous `num_predict`.** The empty reply I got at the start was precisely the result of not doing this. The reasoning channel eats ~189 tokens first, so the answer needs headroom above that. If you turn it on, raise the budget with it. I added this item to the recommended settings in [the determinism post](/en/blog/en/llm-determinism-temperature-seed-experiment/).
 
 ## The limits of one model and 13 questions
 

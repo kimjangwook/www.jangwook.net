@@ -164,7 +164,7 @@ curl -X POST \
 
 `text` 字段可传入每次运行的特定上下文。监控系统在检测到异常时附带警报内容触发 Routine，是常见的使用模式。
 
-如果你[曾亲手构建过 MCP 服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026)，就已经体会过这个连接器生态的扩展能力。Routines 将相同的连接器带入了自动化执行环境。
+如果你[曾亲手构建过 MCP 服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026/)，就已经体会过这个连接器生态的扩展能力。Routines 将相同的连接器带入了自动化执行环境。
 
 ### GitHub 事件触发器
 
@@ -210,7 +210,7 @@ trigger:
 4. 信息不明确时，发送消息请求补充信息
 ```
 
-如果你了解 [Claude Code 的五种代理工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)，Routines 最接近其中的"自主代理（Autonomous Agent）"模式——在云端按计划执行，而非交互式运行。
+如果你了解 [Claude Code 的五种代理工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)，Routines 最接近其中的"自主代理（Autonomous Agent）"模式——在云端按计划执行，而非交互式运行。
 
 ## 四个实战用例
 
@@ -265,7 +265,7 @@ curl -X POST \
 
 Routine 调用关键 API 端点，扫描错误日志，并向 #releases 频道发送 go/no-go 判断。
 
-之前详细介绍过[如何将 MCP 服务器部署到 Kubernetes 生产环境](/zh/blog/zh/mcp-server-production-deployment-kubernetes-guide)。将此烟雾测试 Routine 作为该流水线的最后步骤，两者自然衔接。
+之前详细介绍过[如何将 MCP 服务器部署到 Kubernetes 生产环境](/zh/blog/zh/mcp-server-production-deployment-kubernetes-guide/)。将此烟雾测试 Routine 作为该流水线的最后步骤，两者自然衔接。
 
 ### 用例四：每周文档漂移检测
 
@@ -287,7 +287,7 @@ Routines 确实令人印象深刻，但研究预览阶段的标签不应被低�
 
 **无法复用会话状态。** GitHub 事件触发两次就会启动两个独立会话，没有办法将一次运行的上下文传递给下一次。
 
-如果你已[掌握使用 git worktree 并行运行 Claude Code 的方法](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)，可以将 Routines 理解为将并行性延伸到时间维度——当你在做某件事时，Routine 正在另一个代码库中处理另一件事。
+如果你已[掌握使用 git worktree 并行运行 Claude Code 的方法](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)，可以将 Routines 理解为将并行性延伸到时间维度——当你在做某件事时，Routine 正在另一个代码库中处理另一件事。
 
 我的原则：Routines 只用于"即使失败也无关紧要的工作"——出错后人类可以轻松回滚的任务，失败后下次运行自然修正的任务。在这个范围内，它始终能提供稳定价值。
 

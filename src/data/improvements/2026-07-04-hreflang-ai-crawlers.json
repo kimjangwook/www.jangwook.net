@@ -51,7 +51,7 @@
     "ja": "高",
     "zh": "高"
   },
-  "sourceReport": "/{lang}/blog/{lang}/hreflang-reciprocity-audit-multilingual-2026",
+  "sourceReport": "/{lang}/blog/{lang}/hreflang-reciprocity-audit-multilingual-2026/",
   "description": {
     "ko": "x-default를 중립 루트로 교체해 홈 클러스터 상호성 복원, robots.txt에 학습 차단·인용 허용 봇 정책 적용, hreflang 검증을 postbuild 게이트로 상설화",
     "en": "Restored home-cluster reciprocity by pointing x-default at the neutral root, applied block-training/allow-citation bot policy in robots.txt, made hreflang validation a permanent postbuild gate",

@@ -50,7 +50,7 @@ relatedPosts:
 
 ## Overview
 
-Manually creating dozens of pages for large-scale website renewal projects is inefficient and error-prone. This article shares a real-world case study of automatically generating 31 HTML pages using [Claude Code](/en/blog/en/claude-code-best-practices)'s SubAgent system.
+Manually creating dozens of pages for large-scale website renewal projects is inefficient and error-prone. This article shares a real-world case study of automatically generating 31 HTML pages using [Claude Code](/en/blog/en/claude-code-best-practices/)'s SubAgent system.
 
 ### Project Background
 
@@ -411,7 +411,7 @@ Output:
 <strong>2. SEO Optimization Automation</strong>
 - Bulk setup based on CSV metadata
 - Auto-generation of OG tags, meta descriptions
-- Track SEO performance automatically with [Google Analytics MCP Automation](/en/blog/en/google-analytics-mcp-automation)
+- Track SEO performance automatically with [Google Analytics MCP Automation](/en/blog/en/google-analytics-mcp-automation/)
 
 <strong>3. Improved Maintainability</strong>
 - Parts library modification → bulk update via re-execution
@@ -431,7 +431,7 @@ for lang in ['ko', 'en', 'ja']:
     create_page(metadata[lang])
 ```
 
-For a comprehensive look at extending this kind of multilingual automation into a full content pipeline, see [LLM Blog Automation with Claude Code](/en/blog/en/llm-blog-automation).
+For a comprehensive look at extending this kind of multilingual automation into a full content pipeline, see [LLM Blog Automation with Claude Code](/en/blog/en/llm-blog-automation/).
 
 ### 2. A/B Test Page Generation
 

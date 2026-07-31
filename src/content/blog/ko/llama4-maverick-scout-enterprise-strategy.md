@@ -30,7 +30,7 @@ relatedPosts:
 
 
 ![Llama 4 엔터프라이즈 전략 맵 - Scout, Maverick, MoE routing](../../../assets/blog/llama4-maverick-scout-enterprise-strategy-moe-map.jpg)
-Meta가 Llama 4를 공개했다. Maverick과 Scout라는 두 모델, 그리고 아직 출시 전인 초거대 모델 Behemoth(2조 파라미터)까지 포함된 이번 발표는 단순한 모델 업데이트가 아니다. **오픈소스 AI가 상용 최전선 모델과 동등한 수준에 도달한 전환점**이다. [2026년 2월 AI 모델 러시](/ko/blog/ko/ai-model-rush-february-2026)에서 정리한 경쟁 구도와 함께 읽으면 이번 발표의 맥락이 더 명확해진다. Engineering Manager 혹은 CTO로서 이 발표를 어떻게 읽어야 할지 정리한다.
+Meta가 Llama 4를 공개했다. Maverick과 Scout라는 두 모델, 그리고 아직 출시 전인 초거대 모델 Behemoth(2조 파라미터)까지 포함된 이번 발표는 단순한 모델 업데이트가 아니다. **오픈소스 AI가 상용 최전선 모델과 동등한 수준에 도달한 전환점**이다. [2026년 2월 AI 모델 러시](/ko/blog/ko/ai-model-rush-february-2026/)에서 정리한 경쟁 구도와 함께 읽으면 이번 발표의 맥락이 더 명확해진다. Engineering Manager 혹은 CTO로서 이 발표를 어떻게 읽어야 할지 정리한다.
 
 ## Llama 4의 두 모델: Scout와 Maverick
 
@@ -103,7 +103,7 @@ Scout는 Maverick 대비 8〜12%p 낮은 추론 성능을 보이지만, 코딩 �
 | Llama 4 Maverick | **$0.19〜$0.49** |
 | Llama 4 Scout | **$0.10〜$0.20** |
 
-월 1억 토큰을 처리하는 기업이라면 GPT-4o 대비 Maverick을 사용할 경우 **연간 수천만 원에서 수억 원의 비용 절감**이 가능하다. [AI 에이전트 비용 vs 인건비의 현실](/ko/blog/ko/ai-agent-cost-reality)에서 실제 에이전트 운용 비용 구조를 상세히 분석했으니 함께 참고하면 좋다.
+월 1억 토큰을 처리하는 기업이라면 GPT-4o 대비 Maverick을 사용할 경우 **연간 수천만 원에서 수억 원의 비용 절감**이 가능하다. [AI 에이전트 비용 vs 인건비의 현실](/ko/blog/ko/ai-agent-cost-reality/)에서 실제 에이전트 운용 비용 구조를 상세히 분석했으니 함께 참고하면 좋다.
 
 물론 이것이 단순한 "비용 대체"를 의미하는 것은 아니다. 모델 선택은 작업의 특성, 품질 요구사항, 인프라 역량을 고려해야 한다.
 
@@ -128,7 +128,7 @@ Tier 3 — 대량 처리/단순 분류/로그 분석
 
 Maverick과 Scout는 자체 호스팅이 가능하다. IBM, Dell과 파트너십을 통해 Fortune 500 기업들은 이미 온프레미스 배포를 시작했다.
 
-내부 코드베이스, 고객 데이터, 재무 데이터를 처리해야 하는 경우, **상용 API에 데이터를 전송하는 것 자체가 리스크**다. 이런 유스케이스에서 오픈소스 LLM의 자체 호스팅은 규정 준수(Compliance)와 보안 측면에서 명확한 장점을 가진다. 비슷한 관점에서 [GLM-5 MIT 라이선스 프런티어 모델의 엔터프라이즈 전략](/ko/blog/ko/glm-5-mit-opensource-frontier-enterprise)도 비교 검토할 만하다.
+내부 코드베이스, 고객 데이터, 재무 데이터를 처리해야 하는 경우, **상용 API에 데이터를 전송하는 것 자체가 리스크**다. 이런 유스케이스에서 오픈소스 LLM의 자체 호스팅은 규정 준수(Compliance)와 보안 측면에서 명확한 장점을 가진다. 비슷한 관점에서 [GLM-5 MIT 라이선스 프런티어 모델의 엔터프라이즈 전략](/ko/blog/ko/glm-5-mit-opensource-frontier-enterprise/)도 비교 검토할 만하다.
 
 ### 3. 벤더 의존도 탈피
 

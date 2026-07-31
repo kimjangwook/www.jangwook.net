@@ -126,7 +126,7 @@ AI는 수집한 데이터를 "Overview → 성과 중심 Review → 과제 도�
 - 나중에 검색 가능한 구조화된 데이터 확보
 
 ### 2. Notion API MCP로 자동 문서화
-[Notion API MCP(Model Context Protocol)](https://modelcontextprotocol.io/introduction)를 활용하여, 코드베이스에서 자동으로 문서를 추출하여 Notion에 정리한다. MCP 서버를 직접 구축하는 방법은 [MCP 서버 구축 실전 가이드](/ko/blog/ko/mcp-server-build-practical-guide-2026)에서 단계별로 설명한다.
+[Notion API MCP(Model Context Protocol)](https://modelcontextprotocol.io/introduction)를 활용하여, 코드베이스에서 자동으로 문서를 추출하여 Notion에 정리한다. MCP 서버를 직접 구축하는 방법은 [MCP 서버 구축 실전 가이드](/ko/blog/ko/mcp-server-build-practical-guide-2026/)에서 단계별로 설명한다.
 
 <strong>자동화된 항목</strong>:
 - 개발 진척 상황
@@ -162,7 +162,7 @@ Claude Code, ChatGPT, Gemini 등 다양한 AI 도구를 코드 리뷰와 인프�
 
 ## AI 에이전트 기반 자동화 시스템
 
-이제 핵심인 반기별 자료 생성 자동화 시스템을 소개한다. 4개의 전문 AI 에이전트가 병렬로 작업하며 각자의 영역을 담당한다. 이런 다중 에이전트 분업 패턴은 [LLM 기반 PM 워크플로우 자동화](/ko/blog/ko/llm-pm-workflow-automation)에서 다룬 접근과 맥을 같이한다.
+이제 핵심인 반기별 자료 생성 자동화 시스템을 소개한다. 4개의 전문 AI 에이전트가 병렬로 작업하며 각자의 영역을 담당한다. 이런 다중 에이전트 분업 패턴은 [LLM 기반 PM 워크플로우 자동화](/ko/blog/ko/llm-pm-workflow-automation/)에서 다룬 접근과 맥을 같이한다.
 
 ### 전체 아키텍처
 
@@ -571,6 +571,6 @@ AI 자동화의 핵심은 기술 자체가 아니라 <strong>프로세스 설계
 
 ---
 
-<strong>다음 글 예고</strong>: [AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기](/ko/blog/ko/ai-agent-notion-mcp-automation)
+<strong>다음 글 예고</strong>: [AI 에이전트 시스템 구축 실전 가이드: Notion API MCP와 Claude Code로 자동화 파이프라인 만들기](/ko/blog/ko/ai-agent-notion-mcp-automation/)
 
 궁금한 점이나 더 알고 싶은 내용이 있으면 댓글로 남겨주면 된다.

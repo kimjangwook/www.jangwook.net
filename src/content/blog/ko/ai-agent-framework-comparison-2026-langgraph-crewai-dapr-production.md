@@ -186,7 +186,7 @@ crew = Crew(
 )
 ```
 
-이 정도면 30분 안에 동작하는 멀티에이전트 시스템을 만들 수 있다. [Claude Code 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 다룬 역할 기반 에이전트 패턴과 매우 유사한 접근법이다.
+이 정도면 30분 안에 동작하는 멀티에이전트 시스템을 만들 수 있다. [Claude Code 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 다룬 역할 기반 에이전트 패턴과 매우 유사한 접근법이다.
 
 CrewAI v1.10.1에서 추가된 기능:
 - **MCP(Model Context Protocol) 지원**: MCP 서버를 도구로 직접 연결 가능
@@ -222,7 +222,7 @@ crew = Crew(
 
 Manager 에이전트가 들어오는 작업을 분해하고, 적절한 전문가에게 서브태스크를 할당한다. 이 패턴은 CrewAI가 단순 시퀀셜 파이프라인을 넘어 진정한 멀티에이전트 오케스트레이션을 구현할 수 있게 해준다.
 
-중요한 관찰 하나: CrewAI가 MCP를 네이티브로 지원하면서, 에이전트 도구와 외부 서비스 간 경계가 거의 사라졌다. 이전에는 별도로 래퍼를 만들어야 했던 외부 API 연동이 MCP 서버로 일원화된다. 이 변화가 실제로 얼마나 중요한지는 [MCP Gateway로 에이전트 트래픽을 제어하는 방법](/ko/blog/ko/mcp-gateway-agent-traffic-control)에서 다룬 아키텍처를 보면 감이 온다.
+중요한 관찰 하나: CrewAI가 MCP를 네이티브로 지원하면서, 에이전트 도구와 외부 서비스 간 경계가 거의 사라졌다. 이전에는 별도로 래퍼를 만들어야 했던 외부 API 연동이 MCP 서버로 일원화된다. 이 변화가 실제로 얼마나 중요한지는 [MCP Gateway로 에이전트 트래픽을 제어하는 방법](/ko/blog/ko/mcp-gateway-agent-traffic-control/)에서 다룬 아키텍처를 보면 감이 온다.
 
 **CrewAI가 맞는 상황:**
 - 빠르게 프로토타입을 만들어야 할 때
@@ -265,7 +265,7 @@ result = await workflow.run("Handle customer support ticket #4521")
 
 핵심 차별점은 **워크플로우 ID**다. 프로세스가 죽어도, Pod가 재시작되어도, 동일한 `workflow_id`로 실행하면 중단된 지점부터 재개된다. 이건 Redis나 PostgreSQL 같은 외부 스토어에 상태를 저장하기 때문에 가능한 일이다. Dapr는 30개 이상의 상태 저장소를 플러그인 방식으로 지원한다.
 
-[Dapr Agents v1.0 GA 분석 포스트](/ko/blog/ko/dapr-agents-v1-cncf-production-ai-framework)에서 더 자세히 다뤘지만, 핵심은 CNCF 생태계와의 통합이다. Prometheus, OpenTelemetry, Kubernetes RBAC — Dapr를 이미 쓰는 팀이라면 에이전트 레이어를 추가하는 비용이 매우 낮다.
+[Dapr Agents v1.0 GA 분석 포스트](/ko/blog/ko/dapr-agents-v1-cncf-production-ai-framework/)에서 더 자세히 다뤘지만, 핵심은 CNCF 생태계와의 통합이다. Prometheus, OpenTelemetry, Kubernetes RBAC — Dapr를 이미 쓰는 팀이라면 에이전트 레이어를 추가하는 비용이 매우 낮다.
 
 하지만 Dapr Agents를 권하지 않는 상황도 분명하다. **Kubernetes를 아직 안 쓰는 팀에겐 오버킬이다.** Dapr 자체를 설치하고, 사이드카 패턴을 이해하고, 상태 저장소를 구성하는 것만으로 주 단위 작업이 될 수 있다. 또 **Python 기반 에이전트 로직만 지원**하고 TypeScript나 Go로 직접 에이전트를 작성하는 것은 아직 제한적이다.
 
@@ -333,7 +333,7 @@ class CriticalHandler(Agent):
 
 전자라면 LangGraph의 그래프 모델이 필요하다. 후자라면 CrewAI나 Dapr Agents 둘 다 괜찮다.
 
-나는 현재 이 블로그 자동화 시스템에서 **LangGraph 기반 접근**을 가장 많이 참고하고 있다. [Stripe가 1,300개 PR을 자율 에이전트로 처리한 사례](/ko/blog/ko/stripe-minions-autonomous-coding-agents-1300-prs)를 보면 이들도 복잡한 분기 처리가 필요한 곳에는 그래프 기반 접근을 선택했다. 그라운드 트루스는 항상 "어떤 프레임워크를 쓰느냐"가 아니라 "어떻게 쓰느냐"에 있다.
+나는 현재 이 블로그 자동화 시스템에서 **LangGraph 기반 접근**을 가장 많이 참고하고 있다. [Stripe가 1,300개 PR을 자율 에이전트로 처리한 사례](/ko/blog/ko/stripe-minions-autonomous-coding-agents-1300-prs/)를 보면 이들도 복잡한 분기 처리가 필요한 곳에는 그래프 기반 접근을 선택했다. 그라운드 트루스는 항상 "어떤 프레임워크를 쓰느냐"가 아니라 "어떻게 쓰느냐"에 있다.
 
 ## 비용과 운영 고려사항
 

@@ -46,11 +46,11 @@ faq:
 ---
 > <strong>시리즈: DeNA LLM 스터디</strong> (5/5 - 최종회)
 >
-> 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 구조화 출력과 멀티 LLM 파이프라인
-> 3. [Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag)
-> 5. <strong>[Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design)</strong> ← 현재 글
+> 3. [Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag/)
+> 5. <strong>[Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design/)</strong> ← 현재 글
 
 ## 자율 에이전트에서 오케스트레이션으로
 
@@ -86,7 +86,7 @@ faq:
 - 프로토타입 단계에서 동작부터 확인하고 싶을 때. 멀티 에이전트는 디버깅 비용이 크니, 단일 호출로 먼저 검증한 뒤 필요할 때 쪼개라.
 - 비용 상한을 통제할 수 없는데 Network(자유 대화) 패턴을 쓰려는 경우. 대화 길이가 폭주하면 청구서도 같이 폭주한다.
 
-한 줄로 요약하면 이렇다. <strong>"여러 단계 + 도구 호출 + 기억"이 동시에 필요할 때만 에이전트를 꺼내고, 하나라도 빠지면 더 단순한 도구를 먼저 의심하라.</strong> 멀티 에이전트의 비용 함정은 [AI 에이전트의 비용 현실](/ko/blog/ko/ai-agent-cost-reality)에서, 오케스트레이션을 한 단계 더 깊이 파고드는 내용은 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement)에서 이어진다.
+한 줄로 요약하면 이렇다. <strong>"여러 단계 + 도구 호출 + 기억"이 동시에 필요할 때만 에이전트를 꺼내고, 하나라도 빠지면 더 단순한 도구를 먼저 의심하라.</strong> 멀티 에이전트의 비용 함정은 [AI 에이전트의 비용 현실](/ko/blog/ko/ai-agent-cost-reality/)에서, 오케스트레이션을 한 단계 더 깊이 파고드는 내용은 [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement/)에서 이어진다.
 
 ## 1. n8n을 활용한 LLM 워크플로우
 

@@ -82,7 +82,7 @@ Load delay가 1,184ms. 이미지 다운로드는 5ms인데, 브라우저가 그 
 
 여기서 핵심 개념 하나. 브라우저에는 **프리로드 스캐너(preload scanner)**라는 게 있다. HTML 응답 바이트가 도착하면, 메인 파서가 돌기도 전에 이 스캐너가 원시 HTML을 훑어 `<img src>`, `<script src>`, `<link href>` 같은 리소스를 미리 발견해 요청을 앞당긴다. 문제는 이 스캐너가 HTML만 본다는 것이다. **CSS 안의 `background-image` URL은 스캐너에 보이지 않는다**([web.dev, Don't fight the browser preload scanner](https://web.dev/preload-scanner/)). 그래서 배경 이미지는 CSS가 다운로드되고 파싱될 때까지 요청조차 시작되지 않는다. 내 실험에서 CSS에 1초를 걸어놨으니, 히어로는 정확히 그만큼 늦게 발견됐다. Chrome이 이걸 "LCP request discovery" 인사이트로 직접 짚어줬다([LCP discovery, Chrome for Developers](https://developer.chrome.com/docs/performance/insights/lcp-discovery)).
 
-이 현상은 [AI 크롤러가 자바스크립트를 실행하지 않아 콘텐츠를 못 본다는 이야기](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026)와 뿌리가 같다. 리소스가 어디에 어떻게 놓였느냐가 그것이 언제(혹은 아예) 처리되는지를 결정한다.
+이 현상은 [AI 크롤러가 자바스크립트를 실행하지 않아 콘텐츠를 못 본다는 이야기](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026/)와 뿌리가 같다. 리소스가 어디에 어떻게 놓였느냐가 그것이 언제(혹은 아예) 처리되는지를 결정한다.
 
 ## fetchpriority와 preload를 걸었더니 — 그런데 LCP는 그대로
 
@@ -155,7 +155,7 @@ LCP: 109 ms
 3. **LCP 이미지에는 절대 `loading="lazy"`를 걸지 마라.** 폴드 아래 이미지엔 좋지만, 뷰포트 최상단 히어로에 걸면 발견을 스스로 늦추는 자해다([web.dev, LCP 오해](https://web.dev/blog/common-misconceptions-lcp)).
 4. **크리티컬 CSS를 인라인하고 나머지는 비차단으로.** 이미지를 일찍 받아도 렌더 차단 CSS가 있으면 못 그린다.
 5. **`width`/`height`(또는 `aspect-ratio`)를 항상 명시하라.** 레이아웃 시프트(CLS)를 막는다. 위 실험에서 CLS는 세 버전 모두 0.00이었다.
-6. **무엇보다, LCP 분해를 먼저 읽어라.** DevTools Performance 패널이 TTFB / Load delay / Load duration / Render delay를 그대로 보여준다. 가장 큰 토막부터 잡는다. 이 측정 워크플로우 자체는 [Lighthouse로 접근성 점수를 직접 잡아 고친 글](/ko/blog/ko/a11y-lighthouse-audit-fix-2026)에서 더 다뤘다.
+6. **무엇보다, LCP 분해를 먼저 읽어라.** DevTools Performance 패널이 TTFB / Load delay / Load duration / Render delay를 그대로 보여준다. 가장 큰 토막부터 잡는다. 이 측정 워크플로우 자체는 [Lighthouse로 접근성 점수를 직접 잡아 고친 글](/ko/blog/ko/a11y-lighthouse-audit-fix-2026/)에서 더 다뤘다.
 
 ## 정직한 한계 — 이 숫자를 오해하지 말 것
 
@@ -167,7 +167,7 @@ LCP: 109 ms
 
 세 번째. preload도 남발하면 독이다. 아무거나 preload로 높은 우선순위를 주면 정작 중요한 리소스의 대역폭을 뺏고, 조건에 따라 이미지를 두 번 받는 일도 생긴다. preload는 **LCP 요소 하나**에만 아껴 쓰는 게 원칙이다.
 
-이 글을 요약하면 한 문장이다. LCP가 느리면 이미지 용량부터 의심하지 말고, 브라우저가 그걸 언제 발견하고 언제 그리는지 — 네 토막을 먼저 열어봐라. 병목은 대개 다운로드가 아니라 발견과 렌더 차단에 숨어 있다. 다국어 블로그를 실제로 감사하며 렌더 차단 리소스를 걷어낸 [기술 SEO 감사 기록](/ko/blog/ko/multilingual-blog-technical-audit-campaign-2026)에서도 같은 결론에 닿았다.
+이 글을 요약하면 한 문장이다. LCP가 느리면 이미지 용량부터 의심하지 말고, 브라우저가 그걸 언제 발견하고 언제 그리는지 — 네 토막을 먼저 열어봐라. 병목은 대개 다운로드가 아니라 발견과 렌더 차단에 숨어 있다. 다국어 블로그를 실제로 감사하며 렌더 차단 리소스를 걷어낸 [기술 SEO 감사 기록](/ko/blog/ko/multilingual-blog-technical-audit-campaign-2026/)에서도 같은 결론에 닿았다.
 
 ---
 

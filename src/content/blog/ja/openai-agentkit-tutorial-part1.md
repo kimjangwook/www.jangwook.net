@@ -46,7 +46,7 @@ faq:
 > <strong>シリーズ: OpenAI AgentKit マスター</strong> (1/2)
 >
 > 1. <strong>OpenAI AgentKit 完全ガイド第 1 部：コアコンセプトとはじめ方</strong> ← 現在の記事
-> 2. [OpenAI AgentKit 完全ガイド第 2 部：実践適用と高度なパターン](/ja/blog/ja/openai-agentkit-tutorial-part2)
+> 2. [OpenAI AgentKit 完全ガイド第 2 部：実践適用と高度なパターン](/ja/blog/ja/openai-agentkit-tutorial-part2/)
 
 2025 年 10 月 6 日、サンフランシスコで開催された OpenAI DevDay で、Sam Altman は開発者エコシステムを完全に変える発表を行いました。それが<strong>AgentKit</strong>です。
 
@@ -1153,11 +1153,11 @@ AgentKit はあらゆる状況の正解ではありません。導入を決め�
 - <strong>すでに OpenAI モデルをメインで使っているチーム</strong>: GPT 系を既定にして、トレーシング・Evals・ガードレールまで一つの生態系にまとめたいなら、摩擦が最も小さくなります。
 - <strong>マルチエージェントのルーティングが必要なワークフロー</strong>: ハンドオフが SDK の一級市民として組み込まれており、トリアージ → 専門エージェントのパターンを自前で実装するよりコードが大幅に短くなります。
 - <strong>非開発者と協業するプロトタイピング</strong>: Agent Builder のビジュアルキャンバスで、PM やドメイン専門家が流れを直接見て修正できます。
-- <strong>MCP ツールを標準的な方式で接続したいとき</strong>: Connector Registry と MCP ネイティブ対応でツール統合が一貫します。MCP サーバーを自分で作る流れは[FastMCP で Python MCP サーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)でより深く扱っています。
+- <strong>MCP ツールを標準的な方式で接続したいとき</strong>: Connector Registry と MCP ネイティブ対応でツール統合が一貫します。MCP サーバーを自分で作る流れは[FastMCP で Python MCP サーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)でより深く扱っています。
 
 ### 避ける、または慎重になるべきケース
 
-- <strong>OpenAI 以外のモデルが中核の場合</strong>: Anthropic、Google、オープンウェイトモデルを主力に使うなら、ベンダーロックインが現実的なコストになります。この場合はモデル中立のフレームワークが安全です。ツール呼び出し設計が要なら[Claude Agent SDK ツール使用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)を、型安全性が重要なら[Pydantic AI 型安全エージェントチュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を併せて比較してください。
+- <strong>OpenAI 以外のモデルが中核の場合</strong>: Anthropic、Google、オープンウェイトモデルを主力に使うなら、ベンダーロックインが現実的なコストになります。この場合はモデル中立のフレームワークが安全です。ツール呼び出し設計が要なら[Claude Agent SDK ツール使用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)を、型安全性が重要なら[Pydantic AI 型安全エージェントチュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)を併せて比較してください。
 - <strong>単純な単一呼び出しのタスク</strong>: 分類一回、要約一回ならエージェント抽象化はむしろ過剰です。Chat Completions API を直接呼ぶほうが安く速い。
 - <strong>厳格なコスト上限がある大量トラフィック</strong>: エージェントループはトークン消費が予測しづらいです。ガードレールで反復回数を縛っても、事前に負荷テストでコストを検証する必要があります。
 - <strong>ベータの不安定さを許容しづらいプロダクション</strong>: Agent Builder はベータで、API 表面が変わる可能性があります。長期契約のかかったシステムなら、GA までは中核経路に置かないほうが安全です。
@@ -1168,7 +1168,7 @@ AgentKit はあらゆる状況の正解ではありません。導入を決め�
 
 ここまで来たなら、エージェント・ハンドオフ・ガードレールという三本柱と、最初に動かしたエージェントのコードは手に馴染んだはずです。差が出るのはここから先、実戦です。
 
-<strong>次回予告</strong>: [OpenAI AgentKit 完全ガイド第 2 部: 実践適用と高度なパターン](/ja/blog/ja/openai-agentkit-tutorial-part2)では:
+<strong>次回予告</strong>: [OpenAI AgentKit 完全ガイド第 2 部: 実践適用と高度なパターン](/ja/blog/ja/openai-agentkit-tutorial-part2/)では:
 
 - 🏗️ <strong>実践アーキテクチャパターン</strong>: エンタープライズグレードのマルチエージェントシステム設計
 - 🔧 <strong>高度なツール統合</strong>: MCP サーバーを自分で作る、外部 API 連携

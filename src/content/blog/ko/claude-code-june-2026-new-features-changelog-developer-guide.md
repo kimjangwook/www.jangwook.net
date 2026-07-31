@@ -104,7 +104,7 @@ Opus 4.8은 5월 28일에 릴리스됐고, Claude Code에서는 v2.1.170(6월 9�
 
 Anthropic 공식 발표에 따르면 Opus 4.7 대비 코딩·에이전트 작업·전문 업무에서 개선이 있다고 한다. Simon Willison을 비롯한 여러 개발자들은 "모듈한 수준이지만 체감 가능한 개선"이라는 평가를 했다. 내가 직접 써봤을 때도 복잡한 리팩터링이나 멀티 파일 수정에서 실수가 약간 줄었다는 느낌은 있는데, 劇的으로 달라진 건 아니었다.
 
-[Claude Code 에이전트 워크플로우 5가지 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types) 글에서 다뤘던 병렬 에이전트 패턴이 Opus 4.8의 Dynamic Workflows와 직결된다.
+[Claude Code 에이전트 워크플로우 5가지 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/) 글에서 다뤘던 병렬 에이전트 패턴이 Opus 4.8의 Dynamic Workflows와 직결된다.
 
 Dynamic Workflows는 Claude에게 "이 작업을 워크플로우로 만들어줘"라고 요청하면, 수십〜수백 개의 에이전트를 조율해서 백그라운드에서 대규모 작업을 처리하는 기능이다. Anthropic이 이번 발표에서 강조한 포인트는 두 가지다:
 
@@ -128,7 +128,7 @@ Fast Mode 가격 인하는 생각보다 의미가 있다. Opus 계열은 원래 
 - 플러그인별 사용량
 - 개별 MCP 서버별 사용량
 
-[Claude Code 플러그인 완전 가이드](/ko/blog/ko/claude-code-plugins-complete-guide)에서 플러그인 구조를 자세히 다뤘는데, 플러그인 하나가 스킬·훅·MCP 서버를 번들로 포함할 수 있다. 이 중 어느 컴포넌트가 토큰을 얼마나 쓰는지가 이제 분리해서 보인다는 게 핵심이다. 플러그인 자체가 쓰는 게 아니라, 그 안의 특정 MCP 서버가 알게 모르게 많은 토큰을 쓰고 있었다면 이제 잡아낼 수 있다.
+[Claude Code 플러그인 완전 가이드](/ko/blog/ko/claude-code-plugins-complete-guide/)에서 플러그인 구조를 자세히 다뤘는데, 플러그인 하나가 스킬·훅·MCP 서버를 번들로 포함할 수 있다. 이 중 어느 컴포넌트가 토큰을 얼마나 쓰는지가 이제 분리해서 보인다는 게 핵심이다. 플러그인 자체가 쓰는 게 아니라, 그 안의 특정 MCP 서버가 알게 모르게 많은 토큰을 쓰고 있었다면 이제 잡아낼 수 있다.
 
 내 세팅에서 직접 돌려보니, Google Analytics MCP 서버가 예상보다 토큰을 많이 먹고 있었다. 자동 호출이 잦아서였는데, 이게 이제야 눈에 보이니 MCP 서버 설정에서 호출 빈도를 줄이는 조정을 바로 할 수 있었다. 이전엔 이걸 전혀 몰랐다.
 
@@ -156,7 +156,7 @@ API를 직접 쓰는 개발자에게도 의미가 있다. API Tier 1 기준 입�
 
 ## Hooks의 MCP 도구 직접 호출 — 실무에서 어떻게 쓰나
 
-[Claude Code Hooks 워크플로우](/ko/blog/ko/claude-code-hooks-workflow)에서 다뤘던 훅 시스템이 이번 업데이트에서 더 강해졌다. 두 가지 변경이 주목할 만하다.
+[Claude Code Hooks 워크플로우](/ko/blog/ko/claude-code-hooks-workflow/)에서 다뤘던 훅 시스템이 이번 업데이트에서 더 강해졌다. 두 가지 변경이 주목할 만하다.
 
 <strong>MCP 도구 타입 훅</strong>
 

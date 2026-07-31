@@ -56,7 +56,7 @@ AWS MCP Server是一套标准接口，让Claude Code、Cursor、Codex等AI编程
 
 一行 `uvx awslabs.cloudwatch-mcp-server@latest`，Claude Code就能直接查询CloudWatch Logs、确认告警状态、执行Logs Insights查询。不再需要进入IAM控制台手动核查配置。
 
-如果你曾经[从零构建过MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026)，理解起来会更快。AWS MCP Server是AWS官方维护的MCP服务器集合，在GitHub `awslabs/mcp`仓库公开，可通过PyPI安装。
+如果你曾经[从零构建过MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026/)，理解起来会更快。AWS MCP Server是AWS官方维护的MCP服务器集合，在GitHub `awslabs/mcp`仓库公开，可通过PyPI安装。
 
 ### GA意味着什么
 
@@ -199,7 +199,7 @@ add_user_to_group / remove_user_from_group
 put_role_policy / get_role_policy / delete_role_policy
 ```
 
-我最关注`simulate_principal_policy`。它能在不实际发起API调用的情况下，模拟验证某个IAM主体是否有权执行特定操作。读完[MCP生态系统30个CVE安全危机的分析](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening)之后，我认为让代理在执行前先预验证权限，是一个实质性的安全保障。
+我最关注`simulate_principal_policy`。它能在不实际发起API调用的情况下，模拟验证某个IAM主体是否有权执行特定操作。读完[MCP生态系统30个CVE安全危机的分析](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening/)之后，我认为让代理在执行前先预验证权限，是一个实质性的安全保障。
 
 实际测试结果：
 
@@ -255,7 +255,7 @@ response = iam.simulate_principal_policy(
 
 附加此策略后，人类可以通过控制台管理IAM用户，但Claude Code（经由MCP的代理）无法创建或删除IAM用户。使用相同AWS凭证，对代理施加额外限制。
 
-在[实现Claude Agent SDK的Tool Use时](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)，代理权限控制需要在应用层编写大量逻辑。AWS在这里将问题解决在了基础设施层面，这个思路我认为是对的。
+在[实现Claude Agent SDK的Tool Use时](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)，代理权限控制需要在应用层编写大量逻辑。AWS在这里将问题解决在了基础设施层面，这个思路我认为是对的。
 
 ## 架构图
 
@@ -275,7 +275,7 @@ response = iam.simulate_principal_policy(
 | AWS Pricing MCP Server | 成本估算 | 独立版本 |
 | EKS MCP Server | EKS集群管理 | 独立版本 |
 
-[用FastMCP构建Python MCP服务器时](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)，每个API端点都需要单独定义工具。`aws-api-mcp-server`翻转了这一逻辑——一个工具覆盖全部AWS API，但代理需要更多上下文来判断该调用哪个API。
+[用FastMCP构建Python MCP服务器时](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)，每个API端点都需要单独定义工具。`aws-api-mcp-server`翻转了这一逻辑——一个工具覆盖全部AWS API，但代理需要更多上下文来判断该调用哪个API。
 
 ## 坦率评价——优点与不足
 

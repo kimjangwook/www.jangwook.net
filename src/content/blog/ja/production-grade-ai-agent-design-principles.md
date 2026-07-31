@@ -51,7 +51,7 @@ relatedPosts:
 
 IBMのKate Blairはこう述べています: *「2026年は、マルチエージェントシステムが本格的にプロダクションに展開される年になるべきだ。」*
 
-しかし現実は厳しいものです。O'Reillyの2026年レポートによれば、2024〜2025年のエージェントワークフロー実験は「企業全体への展開に必要な成熟度に達していない」と指摘されています。問題の核心はモデルの性能ではなく、**設計原則の欠如**です。フレームワーク選定の段階から悩むなら、[LangGraph・CrewAI・Daprのプロダクション比較](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)も併せて参照してください。
+しかし現実は厳しいものです。O'Reillyの2026年レポートによれば、2024〜2025年のエージェントワークフロー実験は「企業全体への展開に必要な成熟度に達していない」と指摘されています。問題の核心はモデルの性能ではなく、**設計原則の欠如**です。フレームワーク選定の段階から悩むなら、[LangGraph・CrewAI・Daprのプロダクション比較](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)も併せて参照してください。
 
 この記事では、arXivに掲載された論文 *"A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows"*(2512.08769)が提示する**9つの核心設計原則**を、Engineering Manager視点でまとめます。
 
@@ -63,7 +63,7 @@ IBMのKate Blairはこう述べています: *「2026年は、マルチエージ
 
 **1. 不確実性への設計不足**: POCは「ハッピーパス」のみを検証しますが、プロダクションではネットワークエラー、モデルタイムアウト、例外状況が絶え間なく発生します。
 
-**2. 監査・追跡の不可能性**: 何が問題だったかを把握できなければ、修正も不可能です。この課題は[AIエージェントの可観測性(Observability)プロダクションガイド](/ja/blog/ja/ai-agent-observability-production-guide)でより深く扱います。
+**2. 監査・追跡の不可能性**: 何が問題だったかを把握できなければ、修正も不可能です。この課題は[AIエージェントの可観測性(Observability)プロダクションガイド](/ja/blog/ja/ai-agent-observability-production-guide/)でより深く扱います。
 
 **3. 単一障害点(SPOF)**: 一つの大型エージェントがすべてを担当する場合、それが失敗すれば全体が止まります。
 

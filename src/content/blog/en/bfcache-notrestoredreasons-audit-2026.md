@@ -140,7 +140,7 @@ The practical read: using `no-store` as your bfcache opt-out no longer rests on 
 
 > **[Update 2026-07-22]** Per a web.dev announcement in June 2026 ("New to the web platform in June 2026"), browser behavior may have shifted so that a page with an active WebSocket connection can now enter bfcache. The measurement in the section below was taken on Chrome 150, before that announcement, so I plan to rerun the same probe and update the result. Until then, read this section's WebSocket-blocking conclusion as reflecting the older behavior.
 >
-> **[Update 2026-07-24 · re-measured]** I re-ran the same probe across three Chrome 150 environments (automation build, stable headless, and a flag attempt). The open WebSocket was blocked with `reason: "websocket"` all three times, and only the control restored. So this section's conclusion still holds **in my automation/headless measurement environment**. The announcement is true, though, and seeded real-user environments have likely already flipped to restoring. Why the announcement and my measurement diverged (staged rollout, fresh profile, headless) and how a CI gate misreads it are written up in the [WebSocket bfcache re-measurement post](/en/blog/en/websocket-bfcache-eligibility-remeasure).
+> **[Update 2026-07-24 · re-measured]** I re-ran the same probe across three Chrome 150 environments (automation build, stable headless, and a flag attempt). The open WebSocket was blocked with `reason: "websocket"` all three times, and only the control restored. So this section's conclusion still holds **in my automation/headless measurement environment**. The announcement is true, though, and seeded real-user environments have likely already flipped to restoring. Why the announcement and my measurement diverged (staged rollout, fresh profile, headless) and how a CI gate misreads it are written up in the [WebSocket bfcache re-measurement post](/en/blog/en/websocket-bfcache-eligibility-remeasure/).
 
 I got the WebSocket probe wrong the first time. The initial version pointed at `ws://127.0.0.1:8099` with nothing listening on that port. Result: `persisted: true`. Not blocked at all.
 
@@ -210,7 +210,7 @@ If most of the `reasons` values come back `"masked"`, the data is still doing it
 
 One more trap when you read the numbers. Right after the live blog page restored, its navigation entry still reported `type: "navigate"`, `duration: 1315.2`, `transferSize: 22218`. Those are the <strong>original load's</strong> figures. A bfcache restore doesn't create a new navigation entry, so `nav.duration` will never tell you how fast the restore was. Judge restores by `event.persisted` and nothing else.
 
-The last step is the one that makes the fix survive future commits: automate it. The shape is the same as [wiring JSON-LD validation into CI as a build gate](/en/blog/en/validate-structured-data-ci-jsonld-2026). Six probes of open-navigate-back-read translate cleanly into a headless browser script you run against your key templates on every deploy. And where [measuring `content-visibility` render cost](/en/blog/en/content-visibility-auto-render-cost-measure-2026) dealt with the first paint, this work covers every navigation after it.
+The last step is the one that makes the fix survive future commits: automate it. The shape is the same as [wiring JSON-LD validation into CI as a build gate](/en/blog/en/validate-structured-data-ci-jsonld-2026/). Six probes of open-navigate-back-read translate cleanly into a headless browser script you run against your key templates on every deploy. And where [measuring `content-visibility` render cost](/en/blog/en/content-visibility-auto-render-cost-measure-2026/) dealt with the first paint, this work covers every navigation after it.
 
 ## What to change this week
 
@@ -230,4 +230,4 @@ The honest boundary: six probes, one machine, one Chrome build. Safari and Firef
 
 ---
 
-Whether your site's back navigations really restore from cache, and which templates quietly lose eligibility, is a measurable question rather than a matter of taste. I take on this kind of work personally: measuring the current state, fixing what the measurement exposes, then leaving behind a CI gate so the fix doesn't silently regress twenty commits later. If that's useful to you, [get in touch](/en/contact).
+Whether your site's back navigations really restore from cache, and which templates quietly lose eligibility, is a measurable question rather than a matter of taste. I take on this kind of work personally: measuring the current state, fixing what the measurement exposes, then leaving behind a CI gate so the fix doesn't silently regress twenty commits later. If that's useful to you, [get in touch](/en/contact/).

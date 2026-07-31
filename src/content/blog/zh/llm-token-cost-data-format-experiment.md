@@ -46,7 +46,7 @@ faq:
 
 ## 测量环境：用tiktoken数，而不是猜
 
-token成本常被粗略说成"大约字符数 × 0.75"，但这个经验值根本捕捉不到格式间的差异。同样的经验值一旦换了语言会怎样崩掉，我在[同一篇文章韩语却要1.4倍token的非英语token税实测](/zh/blog/zh/multilingual-llm-token-tax-experiment)里另作了测量。所以我直接用了OpenAI公开的 [tiktoken](https://github.com/openai/tiktoken)。我并排跑了两套编码：GPT-4o、o系列、GPT-5系列所用的 `o200k_base`，以及旧版GPT-4系的 `cl100k_base`。
+token成本常被粗略说成"大约字符数 × 0.75"，但这个经验值根本捕捉不到格式间的差异。同样的经验值一旦换了语言会怎样崩掉，我在[同一篇文章韩语却要1.4倍token的非英语token税实测](/zh/blog/zh/multilingual-llm-token-tax-experiment/)里另作了测量。所以我直接用了OpenAI公开的 [tiktoken](https://github.com/openai/tiktoken)。我并排跑了两套编码：GPT-4o、o系列、GPT-5系列所用的 `o200k_base`，以及旧版GPT-4系的 `cl100k_base`。
 
 测试数据模仿了真实的"工具结果"。50条商品记录，每条是含9个字段的平坦对象：`id`、`sku`、`name`、`category`、`price`、`stock`、`warehouse`、`status`、`rating`。
 
@@ -63,7 +63,7 @@ print("compact:", tok(json.dumps(records, separators=(",",":"))))
 print("csv    :", tok(to_csv(records)))
 ```
 
-沙箱在repo之外的一次性 `mktemp -d` 目录里运行，只保留结果日志和图表，环境随后清除。这种把一次性验证环境隔离开的习惯，是在[同时运行8个智能体并核算成本的那段经历](/zh/blog/zh/ai-agent-cost-reality)中固化下来的。削减token，归根到底是那本费用账上的一行。
+沙箱在repo之外的一次性 `mktemp -d` 目录里运行，只保留结果日志和图表，环境随后清除。这种把一次性验证环境隔离开的习惯，是在[同时运行8个智能体并核算成本的那段经历](/zh/blog/zh/ai-agent-cost-reality/)中固化下来的。削减token，归根到底是那本费用账上的一行。
 
 ## 平坦数据：TSV遥遥领先
 
@@ -134,7 +134,7 @@ CSV、TSV、Markdown表彻底出局。因为没有办法把变长的条目数组
 
 这里可能有人反驳："用了提示缓存，同样的上下文不就便宜了吗？"确实。如果目录钉在系统提示里，缓存命中会大幅降本。但缓存并不减少token数量本身。缓存的token照样占满上下文窗口的上限，而且缓存通常过了较短的TTL就失效，再以全价重新填充。更何况像工具结果这种每轮都变的数据，根本就进不了缓存。用格式削token，不是和缓存竞争的手段，而是互补的手段。两个都开，两头都赚。
 
-这在MCP工具返回大结果时尤其明显。当[你用FastMCP搭的服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)把数据库查询结果原样以JSON返回时，那个格式就是模型的输入成本。服务器端把平坦结果序列化为CSV/TSV再返回这一个小决定，会改变整个智能体的token账本。
+这在MCP工具返回大结果时尤其明显。当[你用FastMCP搭的服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)把数据库查询结果原样以JSON返回时，那个格式就是模型的输入成本。服务器端把平坦结果序列化为CSV/TSV再返回这一个小决定，会改变整个智能体的token账本。
 
 当然，局限也很清楚。我只测了token数量，**并没有测模型是否同样能读懂每种格式。** 不调API能复现的范围就到这里。凭直觉，像CSV这种表头与值距离很远的格式，在字段多的数据上可能让模型犯糊涂。表头只在顶部出现一次，模型得靠位置去数第30行第7个值是哪个字段。为省token而丢精度，那就得不偿失。所以真正落地前，至少要把token节省和回答质量放在一起做一次A/B。这个验证留到下个实验。
 

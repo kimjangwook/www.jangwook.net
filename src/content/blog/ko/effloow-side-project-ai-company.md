@@ -75,7 +75,7 @@ CMS 없다. 관리자 패널 없다. 에이전트들이 `.md` 파일을 만들�
 
 ## 왜 이걸 만들었나
 
-Paperclip을 설치하고 나서 "이거 실제로 뭔가 만들어봐야 감이 오겠다"는 생각이었다. 에이전트 하나를 CLI에서 돌리는 것과 14개를 조직처럼 운영하는 건 완전히 다른 문제거든. 에이전트 스킬 구성과 오케스트레이션 전략의 실전 사례는 [Anthropic Agent Skills 실전 가이드](/ko/blog/ko/anthropic-agent-skills-practical-guide)에서 체계적으로 다룬다.
+Paperclip을 설치하고 나서 "이거 실제로 뭔가 만들어봐야 감이 오겠다"는 생각이었다. 에이전트 하나를 CLI에서 돌리는 것과 14개를 조직처럼 운영하는 건 완전히 다른 문제거든. 에이전트 스킬 구성과 오케스트레이션 전략의 실전 사례는 [Anthropic Agent Skills 실전 가이드](/ko/blog/ko/anthropic-agent-skills-practical-guide/)에서 체계적으로 다룬다.
 
 그리고 궁금했다. <strong>회사가 AI만으로 돌아갈 수 있을까?</strong> 수익은 0원이어도 좋으니, 콘텐츠가 생산되고 사이트가 유지되고 품질이 관리되는 — 그 루프가 사람 없이 돌 수 있는지.
 
@@ -89,7 +89,7 @@ effloow의 에이전트들은 5개 비즈니스 유닛으로 나뉜다.
 
 <strong>Content Factory</strong> — SEO를 노린 장문 아티클을 생산한다. Trend Scout가 주제를 발굴하고, Writer가 초안을 쓰고, Lead Researcher가 사실 검증을 한다.
 
-<strong>Tool Forge</strong> — 무료 웹 도구를 만든다. 지금까지 나온 건 twMerge Playground — Tailwind CSS 클래스 충돌을 디버깅하는 인터랙티브 도구다. Builder 에이전트가 담당. 인터랙티브 AI 도구에 실시간 스트리밍을 더하는 방법은 [Vercel AI SDK로 Claude 스트리밍 에이전트 만들기](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)에서 확인할 수 있다.
+<strong>Tool Forge</strong> — 무료 웹 도구를 만든다. 지금까지 나온 건 twMerge Playground — Tailwind CSS 클래스 충돌을 디버깅하는 인터랙티브 도구다. Builder 에이전트가 담당. 인터랙티브 AI 도구에 실시간 스트리밍을 더하는 방법은 [Vercel AI SDK로 Claude 스트리밍 에이전트 만들기](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026/)에서 확인할 수 있다.
 
 <strong>Experiment Lab</strong> — 수익화 실험을 돌린다. AdSense, 제휴 링크 같은 걸 A/B 테스트하려고 만들었는데, 아직 실험 0건이다.
 
@@ -160,6 +160,6 @@ Paperclip에서 이슈 12개를 만들고 에이전트에게 배정했다. 결�
 
 다만 확실한 건, <strong>초기 구축 속도가 압도적</strong>이라는 점이다. 하루 만에 사이트 + 콘텐츠 + 도구 + GA4 연동 + Live 대시보드가 나왔다. 혼자서 이걸 하면 일주일은 걸렸을 거다.
 
-effloow는 계속 돌릴 생각이다. 다음 목표는 에이전트들이 자체적으로 이슈를 생성하게 하는 것 — Trend Scout가 주제를 찾고, Board가 이슈를 만들고, Writer에게 자동 배정되는 루프. 지금은 내가 이슈를 만들어야 하니까, 진짜 "무인 회사"와는 거리가 있다. 스케줄과 API 이벤트를 조합한 에이전트 자동화 루프 구현은 [Claude Code Routines 실전 구현 가이드](/ko/blog/ko/claude-code-routines-practical-guide-2026)에서 다루고 있다.
+effloow는 계속 돌릴 생각이다. 다음 목표는 에이전트들이 자체적으로 이슈를 생성하게 하는 것 — Trend Scout가 주제를 찾고, Board가 이슈를 만들고, Writer에게 자동 배정되는 루프. 지금은 내가 이슈를 만들어야 하니까, 진짜 "무인 회사"와는 거리가 있다. 스케줄과 API 이벤트를 조합한 에이전트 자동화 루프 구현은 [Claude Code Routines 실전 구현 가이드](/ko/blog/ko/claude-code-routines-practical-guide-2026/)에서 다루고 있다.
 
 코드는 아직 공개하지 않았지만, 사이트는 [effloow.com](https://www.effloow.com)에서 볼 수 있다. 매주 effloow Weekly로 진행 상황을 기록할 예정이다.

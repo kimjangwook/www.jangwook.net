@@ -64,7 +64,7 @@ AIエージェントをプロダクションにデプロイした経験のある
 
 RAG（Retrieval-Augmented Generation）や単純なベクトルDBでこの問題を解決しようとする試みは多くありましたが、そのほとんどは「検索」にとどまり、「学習」にまで至っていませんでした。単に過去の会話を検索することと、経験からパターンを抽出してメンタルモデルを形成することは、本質的に異なります。
 
-<strong>Hindsight</strong>は、この問題に正面から挑むオープンソースプロジェクトです。[MCP（Model Context Protocol）](/ja/blog/ja/mcp-server-build-practical-guide-2026)互換でClaude、Cursor、VS Codeなどの主要AIツールと即座に連携でき、LongMemEvalベンチマークで91.4%を達成し、エージェントメモリシステムとして初めて90%の壁を突破しました。
+<strong>Hindsight</strong>は、この問題に正面から挑むオープンソースプロジェクトです。[MCP（Model Context Protocol）](/ja/blog/ja/mcp-server-build-practical-guide-2026/)互換でClaude、Cursor、VS Codeなどの主要AIツールと即座に連携でき、LongMemEvalベンチマークで91.4%を達成し、エージェントメモリシステムとして初めて90%の壁を突破しました。
 
 ## Hindsightのアーキテクチャ
 
@@ -160,7 +160,7 @@ result = client.recall(
 
 ### Reflect — 振り返りと学習
 
-Reflectは、Hindsightを単なるメモリシステムから「[学習するシステム](/ja/blog/ja/hermes-agent-self-evolving-ai-framework)」へと昇格させるコア機能です。
+Reflectは、Hindsightを単なるメモリシステムから「[学習するシステム](/ja/blog/ja/hermes-agent-self-evolving-ai-framework/)」へと昇格させるコア機能です。
 
 ```python
 # 既存の記憶を分析して新たなインサイトを導出
@@ -220,7 +220,7 @@ Claude Desktop、Cursor、VS Codeなどで以下のように設定します：
 | Anthropic | `anthropic` | Claudeモデルを使用 |
 | Google | `gemini` | Geminiモデル |
 | Groq | `groq` | 高速推論 |
-| Ollama | `ollama` | [ローカルモデル](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp) |
+| Ollama | `ollama` | [ローカルモデル](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp/) |
 | LM Studio | `lmstudio` | ローカルモデル |
 
 エージェントが使用するLLMとHindsight内部のLLMは独立して設定できます。

@@ -61,7 +61,7 @@ Here's how many teams use AI coding tools today: you type "build user authentica
 
 Kiro's answer: don't go from prompt to code directly. Generate a requirements document first, review a technical design, assemble a task list, then write the code. The developer approves each stage before the next one starts.
 
-This approach has real value in specific contexts. When I wrote about [spec-driven development methodology](/en/blog/en/specification-driven-development), the biggest advantage I identified was exactly this: traceability. Knowing why a decision was made, months later, is worth more than people realize until they need it.
+This approach has real value in specific contexts. When I wrote about [spec-driven development methodology](/en/blog/en/specification-driven-development/), the biggest advantage I identified was exactly this: traceability. Knowing why a decision was made, months later, is worth more than people realize until they need it.
 
 ## How the Spec Workflow Actually Works
 
@@ -119,7 +119,7 @@ When you click "Run all Tasks," Kiro analyzes task dependencies and runs indepen
 
 This is the part that I found genuinely interesting. Both Claude Code and Kiro have Hooks concepts, but they approach it differently.
 
-[Claude Code's Hooks system](/en/blog/en/claude-code-hooks-workflow) ties shell commands to Claude Code execution events. It's powerful, but the configuration is JSON and shell scripts — there's a technical floor to entry.
+[Claude Code's Hooks system](/en/blog/en/claude-code-hooks-workflow/) ties shell commands to Claude Code execution events. It's powerful, but the configuration is JSON and shell scripts — there's a technical floor to entry.
 
 Kiro's Agent Hooks work in natural language. You define hook behavior as prose:
 
@@ -146,7 +146,7 @@ Free tier's 50 credits is enough to evaluate the workflow but not for daily use 
 
 Compare that to Claude Code Max at $100/month. Kiro Pro looks much cheaper. But since the working style is fundamentally different, it's not an apples-to-apples comparison.
 
-MCP (Model Context Protocol) is supported — configured via `.kiro/mcp.json`, same pattern as other MCP clients. But as I noted when [comparing OpenAI Codex and Claude Code](/en/blog/en/openai-codex-api-release-vs-claude-code-comparison-may-2026), the maturity and breadth of Claude Code's MCP ecosystem is in a different league right now.
+MCP (Model Context Protocol) is supported — configured via `.kiro/mcp.json`, same pattern as other MCP clients. But as I noted when [comparing OpenAI Codex and Claude Code](/en/blog/en/openai-codex-api-release-vs-claude-code-comparison-may-2026/), the maturity and breadth of Claude Code's MCP ecosystem is in a different league right now.
 
 One honest complaint: Kiro is a VS Code fork. The upside is full VS Code extension compatibility. The downside is that it's essentially useless for terminal-centric workflows. If you're a Neovim user or you prefer terminal-first development, Kiro is a hard sell as a primary tool.
 
@@ -160,7 +160,7 @@ My answer is no — not now, anyway. Here's why specifically.
 
 **Speed and flexibility**: Claude Code skips the spec phase entirely. For bug fixes, quick refactoring, and exploratory coding, Claude Code is dramatically faster. Kiro's spec generation process has value, but it takes time. Adding a spec step to a 10-minute change is overhead, not process.
 
-**Workflow integration**: [Claude Code's agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) are mature. Connections to GitHub, Jira, Slack, and internal APIs flow through MCP without custom setup. Kiro supports MCP too, but the ecosystem isn't there yet.
+**Workflow integration**: [Claude Code's agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/) are mature. Connections to GitHub, Jira, Slack, and internal APIs flow through MCP without custom setup. Kiro supports MCP too, but the ecosystem isn't there yet.
 
 **The core philosophy**: This is the real split. Claude Code says "I'll implement what you want." Kiro says "let's work through what you actually need before we write any code." Speed versus rigor. Neither is wrong; they optimize for different things.
 

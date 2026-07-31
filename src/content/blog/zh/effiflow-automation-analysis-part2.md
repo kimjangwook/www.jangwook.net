@@ -48,7 +48,7 @@ faq:
 
 > <strong>EffiFlow 自动化架构分析/评估及改进系列</strong> (2/3)
 >
-> 1. [第一部分：通过元数据实现 71% 成本节省](/zh/blog/zh/effiflow-automation-analysis-part1) - 三层架构与整体系统概述
+> 1. [第一部分：通过元数据实现 71% 成本节省](/zh/blog/zh/effiflow-automation-analysis-part1/) - 三层架构与整体系统概述
 > 2. <strong>第二部分：Skills 与 Commands 集成策略</strong> ← 当前文章
 > 3. 第三部分：实战改进案例与 ROI 分析
 
@@ -384,7 +384,7 @@ graph LR
 - <strong>可维护性</strong>: 各组件可独立修改
 - <strong>可测试性</strong>: 可按层测试
 
-这种编排器与智能体的分离并不绑定于某一个框架。同样的结构换成OpenAI的工具来搭会有什么不同，可以在[OpenAI AgentKit实战教程 Part 2](/zh/blog/zh/openai-agentkit-tutorial-part2)里并排对照。
+这种编排器与智能体的分离并不绑定于某一个框架。同样的结构换成OpenAI的工具来搭会有什么不同，可以在[OpenAI AgentKit实战教程 Part 2](/zh/blog/zh/openai-agentkit-tutorial-part2/)里并排对照。
 
 ## 缓存策略：58% Token 节省机制
 
@@ -1053,7 +1053,7 @@ Skills 与 Commands 并非万能工具。实际跑下来,「这个很合适」�
 - [anthropics/skills (GitHub)](https://github.com/anthropics/skills) — Anthropic 公开的开源 Skill 合集
 - [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — 讲解 Skills 架构的 Anthropic 工程博客
 
-第一次读这个系列的话,建议先看 [第一部分:用元数据节省 71% 成本](/zh/blog/zh/effiflow-automation-analysis-part1),先把 3-Tier 架构的全貌理清。若想进一步深入本文讲的 Agent 委派模式,[Claude Code 多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)和 [Claude Agent Teams 实战指南](/zh/blog/zh/claude-agent-teams-guide)是顺理成章的下一篇。即便把 token 压到这个程度,同时跑多个 agent 终究还是要花钱。想知道实际运营成本是多少,可以在 [AI Agent成本 vs 人工成本的现实](/zh/blog/zh/ai-agent-cost-reality)里看看真实的数字。
+第一次读这个系列的话,建议先看 [第一部分:用元数据节省 71% 成本](/zh/blog/zh/effiflow-automation-analysis-part1/),先把 3-Tier 架构的全貌理清。若想进一步深入本文讲的 Agent 委派模式,[Claude Code 多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement/)和 [Claude Agent Teams 实战指南](/zh/blog/zh/claude-agent-teams-guide/)是顺理成章的下一篇。即便把 token 压到这个程度,同时跑多个 agent 终究还是要花钱。想知道实际运营成本是多少,可以在 [AI Agent成本 vs 人工成本的现实](/zh/blog/zh/ai-agent-cost-reality/)里看看真实的数字。
 
 ## Skills 与 Commands 的咬合之处
 

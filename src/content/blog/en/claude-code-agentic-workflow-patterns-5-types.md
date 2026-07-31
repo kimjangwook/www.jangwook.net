@@ -116,7 +116,7 @@ The key is **precisely defining permission scope upfront**. Your `.claude/settin
 
 **When to use it**: A single complex task with a clear context and well-defined scope. Examples: "add JSDoc to all functions in this module," "rename all files in this directory to kebab-case."
 
-The [Claude Code best practices guide](/en/blog/en/claude-code-best-practices) covers permission design through CLAUDE.md in depth — worth reading alongside this.
+The [Claude Code best practices guide](/en/blog/en/claude-code-best-practices/) covers permission design through CLAUDE.md in depth — worth reading alongside this.
 
 ## Pattern 3: Parallel
 
@@ -136,7 +136,7 @@ cd ../docs-update && claude "bring the API docs up to date"
 
 Switching to this approach made a noticeable difference in my personal throughput. The most concrete win: running other branch work while waiting for a CI pipeline to finish.
 
-[The step-by-step guide to running parallel sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) is in a dedicated post. If you're setting this up for the first time, that's the faster path.
+[The step-by-step guide to running parallel sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree/) is in a dedicated post. If you're setting this up for the first time, that's the faster path.
 
 **When to use it**: Independent feature development, multi-language translations, writing test suites — anything that doesn't require shared state between tasks.
 
@@ -159,11 +159,11 @@ The core of the Teams pattern is **role separation**. Each agent only knows its 
 
 In practice, this approach also distributes the context length limits of individual agents. Handing a large task to one agent tends to blow up the context window. Splitting into a team means each agent only needs to hold the context for its own piece of work.
 
-I wrote about [actually setting up and running an agent team in OpenClaw](/en/blog/en/claude-agent-teams-guide) — role design through tmux-based monitoring, with specifics.
+I wrote about [actually setting up and running an agent team in OpenClaw](/en/blog/en/claude-agent-teams-guide/) — role design through tmux-based monitoring, with specifics.
 
 **When to use it**: Sequential but complex multi-step pipelines. Content pipelines, code review → fix → test → deploy cycles, and similar flows.
 
-Looking back at [the failures and improvements when I applied the orchestrator pattern to this blog's automation system](/en/blog/en/multi-agent-orchestration-improvement) — unclear role boundaries led to agents conflicting with each other or spinning in infinite loops. That was more instructive than any documentation.
+Looking back at [the failures and improvements when I applied the orchestrator pattern to this blog's automation system](/en/blog/en/multi-agent-orchestration-improvement/) — unclear role boundaries led to agents conflicting with each other or spinning in infinite loops. That was more instructive than any documentation.
 
 ## Pattern 5: Autonomous
 

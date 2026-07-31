@@ -279,7 +279,7 @@ claude -p \
   --dangerously-skip-permissions
 ```
 
-[Claude Codeフック自動化](/ja/blog/ja/claude-code-hooks-workflow)と比較すると: フックはコミット前のローカル検査に最適化されていて、GitHub ActionsはチームのPRゲートとして使う違いがある。
+[Claude Codeフック自動化](/ja/blog/ja/claude-code-hooks-workflow/)と比較すると: フックはコミット前のローカル検査に最適化されていて、GitHub ActionsはチームのPRゲートとして使う違いがある。
 
 ## CLAUDE.mdでプロジェクトルールを注入する
 
@@ -296,7 +296,7 @@ claude -p \
 - ナイトリー監査（ファイル20件）: $0.80〜1.50
 - 月間（PR 50件 + ナイトリー30回）: $20〜60
 
-[AnthropicのネイティブClaude Code Review機能](/ja/blog/ja/claude-code-review-multi-agent-pr)がPR当たり$15〜25と発表しているのと比べるとはるかに安い。マルチエージェントレビューより深さは劣るが、バグ検出とセキュリティ問題のフラグ付け用途としては十分だ。
+[AnthropicのネイティブClaude Code Review機能](/ja/blog/ja/claude-code-review-multi-agent-pr/)がPR当たり$15〜25と発表しているのと比べるとはるかに安い。マルチエージェントレビューより深さは劣るが、バグ検出とセキュリティ問題のフラグ付け用途としては十分だ。
 
 `--max-budget-usd`が最も重要なセーフティネットだ。設定しておけば異常に大きなdiffや予期しない反復処理があっても指定した金額で自動的に止まる。
 

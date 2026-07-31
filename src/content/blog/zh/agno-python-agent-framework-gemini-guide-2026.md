@@ -145,7 +145,7 @@ of each component in a sequence relative to the other components...
 
 有趣的地方在于：第一次搜索失败后，Agent 自动将查询词改为 `attention (machine learning)` 并重试，这一切都不需要额外代码。Agno 在内部运行 ReAct 循环——计划、行动、观察、调整。工具失败会被优雅处理。
 
-与 [Python AI Agent 库对比文章](/zh/blog/zh/python-ai-agent-library-comparison-2026) 中 Smolagents 的代码执行方式相比，Agno 更偏向工具组合而非代码生成。两者各有适用场景，没有绝对优劣。
+与 [Python AI Agent 库对比文章](/zh/blog/zh/python-ai-agent-library-comparison-2026/) 中 Smolagents 的代码执行方式相比，Agno 更偏向工具组合而非代码生成。两者各有适用场景，没有绝对优劣。
 
 ## 结构化输出：用 `output_schema`，不是 `output_model`
 
@@ -205,7 +205,7 @@ print(response.content.name)   # Kim Jangwook
 
 使用 `output_schema` 后，`response.content` 返回实际的 Pydantic 实例，而非字符串。解析在内部完成，IDE 自动补全也能完整覆盖结果字段。延迟仅 4 秒（对比 Calculator Agent 的 9 秒），原因是省去了工具调用往返。
 
-这与 [PydanticAI 教程中的 `output_type`](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026) 在理念上相似，但参数名不同——在不同框架间切换时，这种词汇差异会积累成认知摩擦。
+这与 [PydanticAI 教程中的 `output_type`](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/) 在理念上相似，但参数名不同——在不同框架间切换时，这种词汇差异会积累成认知摩擦。
 
 ## 多 Agent 团队：`members=`，不是 `agents=`
 
@@ -301,7 +301,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 **文档滞后于 API。** `show_tool_calls`、`output_model`、`agents=` 等参数在文档中仍有记载，但实际代码已更改或删除。始终以 GitHub `examples/` 目录的最新版本为准。
 
-**Team 的 `coordinate` 模式是顺序执行。** 需要并行 Agent 执行或复杂条件分支时，[Google ADK 或 LangGraph](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026) 是更合适的选择。
+**Team 的 `coordinate` 模式是顺序执行。** 需要并行 Agent 执行或复杂条件分支时，[Google ADK 或 LangGraph](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026/) 是更合适的选择。
 
 ## Agno 适合哪些场景
 
@@ -317,7 +317,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 ## 与 PydanticAI 的简单比较
 
-定位相近的框架里有 [PydanticAI](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)。作为两边都写过真实代码的人，我感受到的最大差异如下。
+定位相近的框架里有 [PydanticAI](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)。作为两边都写过真实代码的人，我感受到的最大差异如下。
 
 <strong>工具生态</strong>：Agno 有 100 多个内置工具，PydanticAI 则是用 `@agent.tool` 装饰器注册自己的函数。Agno 在"快速起步"上占优，想更明确地控制工具逻辑时 PydanticAI 更好。
 
@@ -327,7 +327,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 <strong>依赖</strong>：都很轻。两者都远比 LangChain 轻。
 
-如果还是觉得难以取舍，可以搭配阅读 [Python AI 智能体库比较](/zh/blog/zh/python-ai-agent-library-comparison-2026)，会得到更清晰的结论。
+如果还是觉得难以取舍，可以搭配阅读 [Python AI 智能体库比较](/zh/blog/zh/python-ai-agent-library-comparison-2026/)，会得到更清晰的结论。
 
 ## 接下来要尝试的
 

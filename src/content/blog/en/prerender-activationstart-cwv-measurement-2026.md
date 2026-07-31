@@ -174,7 +174,7 @@ whenActivated(() => {
 
 Keeping `navType` is the part people skip. With that field you can separate "our prerender hit rate went up" from "our pages got faster" after the fact. Without it, you can't.
 
-One value never appears in that table. `domContentLoadedEventStart` at 46.8ms gets **no correction whatsoever**. Navigation Timing marks still run on the prerender clock. Put a corrected LCP next to an uncorrected "load time" on one dashboard and the two numbers are reading different clocks. That mismatch gets especially annoying when you're trying to verify [resource-priority work meant to pull LCP forward](/en/blog/en/lcp-image-preload-scanner-fetchpriority-2026), because your baseline moves while you're measuring against it.
+One value never appears in that table. `domContentLoadedEventStart` at 46.8ms gets **no correction whatsoever**. Navigation Timing marks still run on the prerender clock. Put a corrected LCP next to an uncorrected "load time" on one dashboard and the two numbers are reading different clocks. That mismatch gets especially annoying when you're trying to verify [resource-priority work meant to pull LCP forward](/en/blog/en/lcp-image-preload-scanner-fetchpriority-2026/), because your baseline moves while you're measuring against it.
 
 ## Playwright couldn't run this experiment at all
 
@@ -198,7 +198,7 @@ So I went after the launch flags. I copied Playwright's entire `--disable-featur
 
 Honestly, I never isolated it. The flags weren't the culprit. Same binary, and prerendering only got suppressed when Playwright was actually **driving** it. I couldn't narrow it further inside this run.
 
-The practical conclusion is already sitting there, though. **Don't validate Speculation Rules through Playwright or Puppeteer.** Correct rules will hand you a false negative. It's the same species of trap as [running axe-core under jsdom and missing real violations](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026): the test environment gives you a wrong answer quietly, with a green check next to it.
+The practical conclusion is already sitting there, though. **Don't validate Speculation Rules through Playwright or Puppeteer.** Correct rules will hand you a false negative. It's the same species of trap as [running axe-core under jsdom and missing real violations](/en/blog/en/axe-core-ci-a11y-jsdom-vs-browser-2026/): the test environment gives you a wrong answer quietly, with a green check next to it.
 
 Two things worked instead. One is the harness behind this post: let the page beacon its own results back, and just launch Chrome normally. The other is the quick check Chrome's docs recommend: "The easiest way to see if a page was prerendered (either in full or partially) is to open DevTools after the page is activated and type `performance.getEntriesByType('navigation')[0].activationStart` in the console." (source: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
 
@@ -227,4 +227,4 @@ Six lines:
 
 None of these hurt a site that never prerenders anything. Put them in now and your dashboard won't lurch on the day you switch it on.
 
-If you want a second pair of eyes on whether your RUM pipeline survives page-lifecycle changes like prerendering or bfcache, or you're rebuilding Core Web Vitals instrumentation from scratch, I take on consulting and implementation work independently. Contact details are on my [profile](/en/about).
+If you want a second pair of eyes on whether your RUM pipeline survives page-lifecycle changes like prerendering or bfcache, or you're rebuilding Core Web Vitals instrumentation from scratch, I take on consulting and implementation work independently. Contact details are on my [profile](/en/about/).

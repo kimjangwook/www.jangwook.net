@@ -68,7 +68,7 @@ Claude、Cursor、Windsurf、ZedといったAIコーディングツールの主�
 
 もちろん、まだエコシステムが完全に成熟しているとは言えない。しかし MCPオープン標準とLinux Foundation参加 で確認したように、この方向性はすでに業界標準として固まりつつある。プロトコル自体の仕組みが気になるなら、[公式仕様ページ](https://modelcontextprotocol.io/specification)を一度読んでおくとよい。ホスト、クライアント、サーバーの役割分担と、JSON-RPC 2.0のメッセージフローが整理されている。
 
-なお、この記事はTypeScript SDKを扱うが、Python陣営も似たパターンに従う。Pythonで同じことを試したいなら、[FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)の記事が役立つ。2つの言語のSDK設計を比べると、MCPプロトコルの共通構造がより明確に見えてくる。
+なお、この記事はTypeScript SDKを扱うが、Python陣営も似たパターンに従う。Pythonで同じことを試したいなら、[FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)の記事が役立つ。2つの言語のSDK設計を比べると、MCPプロトコルの共通構造がより明確に見えてくる。
 
 ## 環境設定とパッケージのインストール
 
@@ -312,7 +312,7 @@ await client.close();
 
 ## StdioServerTransport でClaudeと実際に連携する
 
-`InMemoryTransport` はテストや開発デバッグには最適だが、実際のClaude DesktopやCursorに接続するには `StdioServerTransport` に切り替える必要がある。これがMCPサーバーの標準デプロイ方法だ。MCPではなくClaude SDKで直接ツールを定義・呼び出す方法は [Claude Agent SDK ツール活用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026) で詳しく説明している。
+`InMemoryTransport` はテストや開発デバッグには最適だが、実際のClaude DesktopやCursorに接続するには `StdioServerTransport` に切り替える必要がある。これがMCPサーバーの標準デプロイ方法だ。MCPではなくClaude SDKで直接ツールを定義・呼び出す方法は [Claude Agent SDK ツール活用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/) で詳しく説明している。
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -615,7 +615,7 @@ MCP vs A2A vs Open Responses プロトコル比較で触れたように、リモ
 - レスポンスが数十KBを超える大容量データ。AIのコンテキストウィンドウを圧迫して逆効果になる。この場合はツールではなくリソースとして公開するか、結果をページネーションする設計を先に考えるべきだ。
 - セキュリティ境界が厳格な本番環境で、認証・権限管理を自前で実装する余力がないとき。リモートHTTPデプロイは[公式仕様のSecurityセクション](https://modelcontextprotocol.io/specification)が強調するように、ユーザー同意とアクセス制御を別途設計する必要がある。
 
-判断が曖昧なら、AIが**そのツールを自分で選んで呼び出す必要があるか**をまず問えばよい。答えが「はい」ならMCPサーバーが合っており、「自分のコードから直接呼べばいい」なら通常の関数やライブラリのほうがよい。ローカルでプライベートに運用する具体例は、[ローカルLLMとプライベートMCPサーバーの構築](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp)の記事でさらに扱った。
+判断が曖昧なら、AIが**そのツールを自分で選んで呼び出す必要があるか**をまず問えばよい。答えが「はい」ならMCPサーバーが合っており、「自分のコードから直接呼べばいい」なら通常の関数やライブラリのほうがよい。ローカルでプライベートに運用する具体例は、[ローカルLLMとプライベートMCPサーバーの構築](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp/)の記事でさらに扱った。
 
 ## まとめ: AIツールデプロイの現実的な標準になると思う
 
@@ -625,7 +625,7 @@ MCP vs A2A vs Open Responses プロトコル比較で触れたように、リモ
 
 それでも、公開REST APIひとつをMCPツールとしてラップして実際のデータ取得まで動作するエンドツーエンドのパイプラインをAPIキーなしで30分以内に完成できるのは、明らかに魅力的だ。Claude、Cursor、Windsurfなどが標準としてMCPを採用している状況で、自分だけのツールを複数のAIプラットフォームに同時に公開する最も現実的な方法がMCPサーバーだ。
 
-次のステップとして、実際の社内システムをひとつ選んでMCPツールとしてラップしてみることを勧める。コードの構造はこの記事で扱ったものがすべてだ。残りはそのシステムのAPIを理解することだ。Claude CodeでMCPとスラッシュコマンド、フックを組み合わせて自動化ワークフローを構築する全体像は [Claude Code マスタークラス第1回](/ja/blog/ja/claude-code-masterclass-series-1-prompt-to-agent) で確認できる。
+次のステップとして、実際の社内システムをひとつ選んでMCPツールとしてラップしてみることを勧める。コードの構造はこの記事で扱ったものがすべてだ。残りはそのシステムのAPIを理解することだ。Claude CodeでMCPとスラッシュコマンド、フックを組み合わせて自動化ワークフローを構築する全体像は [Claude Code マスタークラス第1回](/ja/blog/ja/claude-code-masterclass-series-1-prompt-to-agent/) で確認できる。
 
 ---
 

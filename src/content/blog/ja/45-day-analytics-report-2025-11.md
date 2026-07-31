@@ -56,7 +56,7 @@ relatedPosts:
 ### 1.1 主要指標一覧
 
 <strong>分析期間</strong>:2025年10月7日〜11月20日(45日間)
-<strong>前回レポート</strong>:[ブログ立ち上げ分析レポート](/ja/blog/ja/blog-launch-analysis-report)(10月6日、リアルタイムデータのみ)
+<strong>前回レポート</strong>:[ブログ立ち上げ分析レポート](/ja/blog/ja/blog-launch-analysis-report/)(10月6日、リアルタイムデータのみ)
 
 | 主要指標 | 実績 | 1ヶ月目標 | 達成率 | ステータス |
 |---------|------|---------|--------|---------|
@@ -972,7 +972,7 @@ code_here()
 
 - 🔗 <strong>共有</strong>:似た悩みを持つ同僚開発者に
 - 💭 <strong>コメント</strong>:皆様のブログ分析経験とティップス共有
-- 📧 <strong>お問い合わせ</strong>:1:1質問は[Contact](/ja/contact)
+- 📧 <strong>お問い合わせ</strong>:1:1質問は[Contact](/ja/contact/)
 
 <strong>一緒に学び成長しましょう。皆様の初分析レポートを期待しています!</strong> 🚀
 

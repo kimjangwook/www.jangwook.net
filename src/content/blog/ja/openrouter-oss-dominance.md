@@ -64,8 +64,8 @@ Redditのr/LocalLLAMAコミュニティで共有されたデータによると�
 
 | 順位 | モデル | 種類 | 特徴 |
 |------|--------|------|------|
-| 1 | [Qwen3-Coder](/ja/blog/ja/devstral-qwen3-coder-small-models) | 🟢 OSS | Alibabaのコーディング特化モデル |
-| 2 | [DeepSeek R2](/ja/blog/ja/deepseek-v4-release) | 🟢 OSS | 推論特化の大規模モデル |
+| 1 | [Qwen3-Coder](/ja/blog/ja/devstral-qwen3-coder-small-models/) | 🟢 OSS | Alibabaのコーディング特化モデル |
+| 2 | [DeepSeek R2](/ja/blog/ja/deepseek-v4-release/) | 🟢 OSS | 推論特化の大規模モデル |
 | 3 | MiniMax M2.5 | 🟢 OSS | コスト効率の高い汎用モデル |
 | 4 | GPT-4.1 | 🔵 プロプラ | OpenAIのフラッグシップ |
 | 5 | Llama 4 Maverick | 🟢 OSS | Metaのオープンソース大規模モデル |
@@ -80,7 +80,7 @@ OpenRouterは、様々なAIモデルを単一APIでアクセスできるプラ�
 
 ### 1. 圧倒的なコスト効率
 
-オープンソースモデルはAPIプロバイダー間の競争が活発で、同等性能に対する[コストが大幅に低くなっています](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)。Qwen3-CoderはGPT-4.1比で<strong>約1/10の価格</strong>で同等のコーディング性能を提供します。
+オープンソースモデルはAPIプロバイダー間の競争が活発で、同等性能に対する[コストが大幅に低くなっています](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)。Qwen3-CoderはGPT-4.1比で<strong>約1/10の価格</strong>で同等のコーディング性能を提供します。
 
 ```
 コスト比較（1Mトークン基準、推定）:

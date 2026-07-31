@@ -156,7 +156,7 @@ export const weatherTool = createTool({
 });
 ```
 
-ZodスキーマでI/Oの型を定義する方式は、[PydanticAIのタイプセーフエージェント](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)でPydantic BaseModelを使うのと構造的に似ている。言語は違うが「型がすなわちドキュメントであり検証ロジック」という哲学は同じだ。
+ZodスキーマでI/Oの型を定義する方式は、[PydanticAIのタイプセーフエージェント](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)でPydantic BaseModelを使うのと構造的に似ている。言語は違うが「型がすなわちドキュメントであり検証ロジック」という哲学は同じだ。
 
 天気ツールが使うOpen-Meteo APIは無料でAPIキーが不要なのが良い。geocodingで都市名→緯経度に変換し、天気予報APIで現在の天気を取得する仕組みだ。
 
@@ -320,7 +320,7 @@ Anthropic APIキーがあれば`anthropic/claude-sonnet-4-6`に替えてもそ�
 
 TypeScriptエコシステムでMastraと最も近いのはVercel AI SDKだ。Vercel AI SDKがLLM呼び出しとストリーミングに特化しているなら、Mastraはそのうえにエージェントのライフサイクル管理、メモリ、オブザーバビリティを加えたレイヤーだ。
 
-[Google ADK vs LangGraph比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026)では両方ともPython中心だったが、MastraはそのポジションをTypeScriptで狙っている。
+[Google ADK vs LangGraph比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026/)では両方ともPython中心だったが、MastraはそのポジションをTypeScriptで狙っている。
 
 | | Mastra | Vercel AI SDK | LangGraph.js |
 |---|---|---|---|
@@ -346,16 +346,16 @@ TypeScriptエコシステムでMastraと最も近いのはVercel AI SDKだ。Ver
 - TypeScript/JavaScriptベースのプロジェクトで初めてエージェントを導入するとき。チームがすでにNodeエコシステムに慣れているなら、Pythonスタックを新たに持ち込むより導入コストが低い。
 - エージェントループ、メモリ、オブザーバビリティを1つのSDK内で完結させたいとき。複数ライブラリを自分で繋ぎ合わせる手間を減らせる。
 - ワークフロー（グラフベースのマルチステップパイプライン）が必要な場合。`.then()` / `.branch()` / `.parallel()`のタイプセーフな組み合わせが強みだ。
-- LLMプロバイダを頻繁に切り替えて実験する段階。モデル文字列を変えるだけでOpenAI、Anthropic、Geminiを行き来できる。コストと応答速度のトレードオフは[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality)で詳しく扱った。
+- LLMプロバイダを頻繁に切り替えて実験する段階。モデル文字列を変えるだけでOpenAI、Anthropic、Geminiを行き来できる。コストと応答速度のトレードオフは[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality/)で詳しく扱った。
 
 **避けたほうがよいケース**
 
 - ミッションクリティカルな本番サービスに今すぐ投入する必要があるとき。v1.0が出てから半年経っておらず、API安定性とサードパーティ統合のエコシステムがLangChainの水準に届いていない。
-- Pythonライブラリのエコシステム（LangGraph、CrewAI、PydanticAI）の成熟度やコミュニティプラグインが決め手になる場合。選択肢の比較は[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)を参考にするとよい。
+- Pythonライブラリのエコシステム（LangGraph、CrewAI、PydanticAI）の成熟度やコミュニティプラグインが決め手になる場合。選択肢の比較は[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026/)を参考にするとよい。
 - Vercel以外の環境（Docker、自前サーバー）に複雑なデプロイパイプラインを即座に構築する必要があるとき。公式デプロイドキュメントがまだ薄い。
 - 単にLLMを1〜2回呼ぶだけで十分な場合。それならVercel AI SDKだけで足りるし、エージェント抽象化のオーバーヘッドは不要だ。
 
-純粋にツール呼び出しのパターンだけを比べたいなら、[Claude Agent SDKツール使用ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)と並べて見ると設計の違いがはっきりする。
+純粋にツール呼び出しのパターンだけを比べたいなら、[Claude Agent SDKツール使用ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)と並べて見ると設計の違いがはっきりする。
 
 ## 今この時点でMastraを試す価値はあるか
 

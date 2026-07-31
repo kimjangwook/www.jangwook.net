@@ -57,7 +57,7 @@ relatedPosts:
 
 ## 为什么智能体AI现在需要"标准"
 
-截至2026年3月，智能体AI生态正在爆发式增长。Anthropic的Claude Agent SDK（参阅[Anthropic Agent Skills标准：AI智能体能力扩展](/zh/blog/zh/anthropic-agent-skills-standard)）、OpenAI的AgentKit、Google的Agent Development Kit、LangChain、CrewAI等众多框架竞相涌现，虽然给开发团队带来了选择自由，但同时也造成了严重的碎片化问题。
+截至2026年3月，智能体AI生态正在爆发式增长。Anthropic的Claude Agent SDK（参阅[Anthropic Agent Skills标准：AI智能体能力扩展](/zh/blog/zh/anthropic-agent-skills-standard/)）、OpenAI的AgentKit、Google的Agent Development Kit、LangChain、CrewAI等众多框架竞相涌现，虽然给开发团队带来了选择自由，但同时也造成了严重的碎片化问题。
 
 由于每个框架的工具调用方式、响应格式、Agent循环处理方法各不相同，要更换模型或同时运行多个模型，往往需要从零开始重写集成代码。用一位开发者的话来说，这是一种<strong>"为wrapper再写wrapper"</strong>的恶性循环。
 
@@ -128,7 +128,7 @@ Open Responses最大的优势在于发布之初就获得了广泛的生态支持
 |----------|------|------|
 | Hugging Face | 开源Hub | 数千个模型的标准API访问 |
 | OpenRouter | 模型路由 | 多提供商间的无缝切换 |
-| [Vercel](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026) | 前端平台 | 通过AI SDK集成实现前端开发标准化 |
+| [Vercel](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026/) | 前端平台 | 通过AI SDK集成实现前端开发标准化 |
 | LM Studio | 本地推理 | 本地模型也可使用相同API |
 | Ollama | 本地推理 | 自托管环境下的标准化 |
 | vLLM | 推理引擎 | 与高性能推理服务器的兼容 |
@@ -265,7 +265,7 @@ Reasoning Visibility不仅仅是调试工具，更是<strong>AI治理的核心�
 
 ### Anthropic和Google呢？
 
-目前Anthropic和Google尚未作为官方合作伙伴参与Open Responses规范。有关开源模型主导趋势与多提供商策略，请参阅[OpenRouter周榜TOP5中4个是开源 — 专有模型时代的终结](/zh/blog/zh/openrouter-oss-dominance)。由于这两家公司各自拥有智能体框架（Claude Agent SDK、Google ADK），它们是接受Open Responses还是推行独立标准，目前仍不确定。
+目前Anthropic和Google尚未作为官方合作伙伴参与Open Responses规范。有关开源模型主导趋势与多提供商策略，请参阅[OpenRouter周榜TOP5中4个是开源 — 专有模型时代的终结](/zh/blog/zh/openrouter-oss-dominance/)。由于这两家公司各自拥有智能体框架（Claude Agent SDK、Google ADK），它们是接受Open Responses还是推行独立标准，目前仍不确定。
 
 不过，正如OpenAI和Anthropic超过30名员工近期在国防部诉讼中共同合作所显示的，AI行业的合作关系与竞争关系是共存的。随着行业对标准化的需求日益增长，它们加入的可能性是充分存在的。
 

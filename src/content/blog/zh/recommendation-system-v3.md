@@ -723,6 +723,6 @@ V3推荐系统在<strong>性能、可维护性、可扩展性</strong>各方面�
 ---
 
 <strong>相关链接</strong>：
-- [V2推荐系统：基于元数据的优化](/ko/blog/ko/metadata-based-recommendation-optimization)
-- [V1推荐系统：基于LLM的内容推荐](/ko/blog/ko/ai-content-recommendation-system)
+- [V2推荐系统：基于元数据的优化](/ko/blog/ko/metadata-based-recommendation-optimization/)
+- [V1推荐系统：基于LLM的内容推荐](/ko/blog/ko/ai-content-recommendation-system/)
 - [Astro Content Collections官方文档](https://docs.astro.build/en/guides/content-collections/)

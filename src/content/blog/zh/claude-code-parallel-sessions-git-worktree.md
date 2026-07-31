@@ -214,7 +214,7 @@ git worktree prune
 
 我很喜欢这个模式，但它不是万能的。任务之间修改不同文件时效果最好；如果两个会话都需要修改同一组件，反而会产生更多合并冲突。另外，会话超过三个后，开始追踪各会话进度时就会产生额外的管理开销。
 
-与多智能体 PR 审查模式结合，可以自动审查从各 worktree 分支产生的 PR。在团队规模的使用中，这种组合是我发现的最实用的配置。官方文档还进一步介绍了如何把子智能体隔离到各自的 worktree 中运行：在自定义子智能体的 frontmatter 里加上 `isolation: worktree`，每个智能体就会获得一个临时 worktree，在没有改动地结束时自动删除。[如果你搭建过智能体团队](/zh/blog/zh/claude-agent-teams-guide)，会立刻体会到这个隔离选项对并行工作冲突的削减有多明显。
+与多智能体 PR 审查模式结合，可以自动审查从各 worktree 分支产生的 PR。在团队规模的使用中，这种组合是我发现的最实用的配置。官方文档还进一步介绍了如何把子智能体隔离到各自的 worktree 中运行：在自定义子智能体的 frontmatter 里加上 `isolation: worktree`，每个智能体就会获得一个临时 worktree，在没有改动地结束时自动删除。[如果你搭建过智能体团队](/zh/blog/zh/claude-agent-teams-guide/)，会立刻体会到这个隔离选项对并行工作冲突的削减有多明显。
 
 ## 何时使用，何时避免
 
@@ -234,7 +234,7 @@ git worktree prune
 - 像数据库迁移那样**共享状态（本地 DB 等）顺序很重要**的工作。同时运行会把数据搞乱。
 - 几下就完成的小修改，**隔离的搭建成本大于任务本身**时。
 
-把判断标准压成一句话：任务在文件层面是否独立？是，则 worktree 大放异彩；否，就别硬拆。配合[Claude Code 大师课第一篇](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)里讲的提示词分配原则一起读，更容易判断哪些工作该如何拆分。
+把判断标准压成一句话：任务在文件层面是否独立？是，则 worktree 大放异彩；否，就别硬拆。配合[Claude Code 大师课第一篇](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent/)里讲的提示词分配原则一起读，更容易判断哪些工作该如何拆分。
 
 把判断标准整理成表：
 
@@ -269,4 +269,4 @@ git worktree prune  # 清理已删除目录的引用
 
 核心思路很简单：**独立分支 → 独立目录 → 独立 Claude Code 会话**。三者对齐，会话间互不干扰，并行推进。
 
-建议从两个 worktree 开始，熟悉模式后再扩展到三个。如果想进一步构建系统化的多智能体模式，[Claude Code Agent Teams 指南](/zh/blog/zh/claude-agent-teams-guide)是自然的下一步。 而这种并行化是否真的减少了你的工作时间，最好像[我拆解 Claude Code 使用量的记录](/zh/blog/zh/claude-code-insights-usage-analysis)那样用数字来确认，而不是凭感觉。
+建议从两个 worktree 开始，熟悉模式后再扩展到三个。如果想进一步构建系统化的多智能体模式，[Claude Code Agent Teams 指南](/zh/blog/zh/claude-agent-teams-guide/)是自然的下一步。 而这种并行化是否真的减少了你的工作时间，最好像[我拆解 Claude Code 使用量的记录](/zh/blog/zh/claude-code-insights-usage-analysis/)那样用数字来确认，而不是凭感觉。

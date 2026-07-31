@@ -166,7 +166,7 @@ AIエージェントが24時間稼働するということは、<strong>非同�
 
 - <strong>タスク分解能力</strong>：AIに委任できるタスクと人間が行うべきタスクを区別する能力
 - <strong>結果レビュー能力</strong>：AIのアウトプットの品質を迅速に検証するスキル
-- <strong>非同期オーケストレーション</strong>：[AIエージェントのタスクキュー](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)を管理し、優先順位を調整する役割
+- <strong>非同期オーケストレーション</strong>：[AIエージェントのタスクキュー](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)を管理し、優先順位を調整する役割
 
 ### 3. コスト対効果の計算
 
@@ -188,7 +188,7 @@ Perplexity Computerは単独で存在しているわけではありません。�
 |---|---|---|
 | Perplexity Personal Computer | Mac miniベースの24/7エージェント | 専用ハードウェア + クラウドAI |
 | OpenClaw | オープンソースAIアシスタント（21万スター） | 自前のハードウェアで実行 |
-| [Claude Managed Agents](/ja/blog/ja/claude-managed-agents-production-deployment-guide) | MCPベースのツール連携エージェント | API + プロトコル標準化 |
+| [Claude Managed Agents](/ja/blog/ja/claude-managed-agents-production-deployment-guide/) | MCPベースのツール連携エージェント | API + プロトコル標準化 |
 | OpenAI Codex | コーディング特化エージェント | クラウド専用 |
 
 Gartnerは<strong>2026年末までにエンタープライズアプリの40%にAIエージェントが搭載される</strong>と予測しています（2025年の5%未満から急増）。常時AIエージェントはこの流れの最前線に位置しています。
@@ -199,7 +199,7 @@ Gartnerは<strong>2026年末までにエンタープライズアプリの40%にA
 
 1. <strong>AI委任可能な業務リストの作成</strong>：チーム内で反復的に行われている調査、分析、レポート作成業務をリストアップしましょう。
 2. <strong>ガバナンスフレームワークの設計</strong>：AIエージェントにどのレベルの権限を与えるか、どの作業に人間の承認が必要かを定義しましょう。
-3. <strong>非同期ワークフローの設計</strong>：[AIエージェント](/ja/blog/ja/python-ai-agent-library-comparison-2026)にタスクを委任し、結果をレビューするプロセスを設計しましょう。
+3. <strong>非同期ワークフローの設計</strong>：[AIエージェント](/ja/blog/ja/python-ai-agent-library-comparison-2026/)にタスクを委任し、結果をレビューするプロセスを設計しましょう。
 4. <strong>セキュリティポリシーの見直し</strong>：ローカルファイルへのアクセス、クラウドへのデータ転送、監査ログ管理に関するセキュリティポリシーを点検しましょう。
 
 ## まとめ

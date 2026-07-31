@@ -149,7 +149,7 @@ of the input.
 
 面白い部分がある。最初の検索語(`attention mechanism neural networks`)でWikipediaのページが見つからないと、エージェントが自分で検索語を`attention (machine learning)`に変えて再試行した。これはAgnoが内部でReActループを実行してツールの失敗を自動処理し、次のアクションを決定するということだ。コードを一行も追加せずに。
 
-[Python AIエージェントライブラリ比較記事](/ja/blog/ja/python-ai-agent-library-comparison-2026)でSmolagentsのコード実行エージェントと比べると、Agnoはコード生成よりもツール組み合わせに強みがあることが感じられる。
+[Python AIエージェントライブラリ比較記事](/ja/blog/ja/python-ai-agent-library-comparison-2026/)でSmolagentsのコード実行エージェントと比べると、Agnoはコード生成よりもツール組み合わせに強みがあることが感じられる。
 
 ## 構造化出力: output_schemaが正しい、output_modelではない
 
@@ -206,7 +206,7 @@ Skills:
   - TypeScript: Intermediate (since 2020)
 ```
 
-`output_schema`を使うと`response.content`が文字列ではなく実際のPydanticインスタンスを返す。パースが内部で処理され、型ヒントがそのままIDEのオートコンプリートで使える。[PydanticAIチュートリアルで扱った`output_type`](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)と似た方向だが、パラメータ名が違う。
+`output_schema`を使うと`response.content`が文字列ではなく実際のPydanticインスタンスを返す。パースが内部で処理され、型ヒントがそのままIDEのオートコンプリートで使える。[PydanticAIチュートリアルで扱った`output_type`](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)と似た方向だが、パラメータ名が違う。
 
 ## マルチエージェントチーム: members=とmode="coordinate"
 
@@ -301,7 +301,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 **ドキュメントとAPIのバージョン不一致。** `show_tool_calls`、`output_model`、`agents=`などのパラメータ名がドキュメントには残っているが、実際のコードでは消えていたり意味が変わっていたりするケースがあった。
 
-**TeamのcoordinateモードはV2.6.17では常に順次実行だ。** 並列実行はできないようだった。複雑な条件分岐が必要なら[Google ADK vs LangGraph比較記事](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026)を参考にすることをすすめる。
+**TeamのcoordinateモードはV2.6.17では常に順次実行だ。** 並列実行はできないようだった。複雑な条件分岐が必要なら[Google ADK vs LangGraph比較記事](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026/)を参考にすることをすすめる。
 
 ## Agnoを使うべき場面
 
@@ -315,7 +315,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 ## PydanticAIとの簡単な比較
 
-似たポジションのフレームワークに[PydanticAI](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)がある。実際に両方のコードを書いた立場から、最も大きく感じた違いを整理するとこうなる。
+似たポジションのフレームワークに[PydanticAI](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)がある。実際に両方のコードを書いた立場から、最も大きく感じた違いを整理するとこうなる。
 
 <strong>ツールエコシステム</strong>：Agnoは100個以上の内蔵ツールがあり、PydanticAIは自分の関数を`@agent.tool`デコレーターで登録する方式だ。Agnoは「速いスタート」に有利で、PydanticAIはツールロジックをより明確に制御したいときに向く。
 
@@ -325,7 +325,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 <strong>依存関係</strong>：どちらも同じくらい軽い。両方ともLangChainよりはるかに軽い。
 
-選択基準が複雑だと感じたら、[Python AIエージェントライブラリ比較の記事](/ja/blog/ja/python-ai-agent-library-comparison-2026)をあわせて読むと、より明確な結論に到達できる。
+選択基準が複雑だと感じたら、[Python AIエージェントライブラリ比較の記事](/ja/blog/ja/python-ai-agent-library-comparison-2026/)をあわせて読むと、より明確な結論に到達できる。
 
 ## 次に試すこと
 

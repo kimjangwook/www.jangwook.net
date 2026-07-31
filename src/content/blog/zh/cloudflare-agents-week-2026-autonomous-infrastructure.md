@@ -59,7 +59,7 @@ Cloudflare于2026年4月宣布了"智能体专属周"，每天都发布多项公
 
 **Sandboxes GA**：从2025年6月的Beta到9个月后的GA。这是智能体专用的隔离Linux环境，有Shell、文件系统和后台进程，按需启动。关键特性是"picks up exactly where it left off"——智能体中断后恢复时，能接续之前的环境状态。容器启动时间在毫秒级。代码生成智能体可以真正执行代码并测试，形成完整闭环。
 
-[如果之前在LangGraph或CrewAI等框架旁边单独配置智能体代码执行环境](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)，那么Sandboxes就是让Cloudflare帮你管理这部分。这更接近于选择基础设施层，而非选择框架。
+[如果之前在LangGraph或CrewAI等框架旁边单独配置智能体代码执行环境](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)，那么Sandboxes就是让Cloudflare帮你管理这部分。这更接近于选择基础设施层，而非选择框架。
 
 **Artifacts**：面向智能体的Git兼容版本管理存储。可创建数千万个仓库，支持从远程源fork，支持标准Git客户端访问。从私有Beta到5月初的公开Beta。用途是让智能体生成的代码有持久化存储和版本管理，即使上下文丢失，成果物依然保留。
 
@@ -140,7 +140,7 @@ Your Worker has access to the following bindings:
 [wrangler:info] GET / 200 OK (7ms)
 ```
 
-不需要Cloudflare账户也可以本地开发。有一个重要注意事项：`@cloudflare/agents`是Workers运行时专用的，在普通Node.js中无法运行，会抛出`ERR_UNSUPPORTED_ESM_URL_SCHEME`错误，因为它使用了`cloudflare:`协议导入。只能通过Wrangler运行。[如果你习惯于像Claude Agent SDK那样直接在Python/Node.js中导入使用的方式](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)，这一点一开始会比较陌生。
+不需要Cloudflare账户也可以本地开发。有一个重要注意事项：`@cloudflare/agents`是Workers运行时专用的，在普通Node.js中无法运行，会抛出`ERR_UNSUPPORTED_ESM_URL_SCHEME`错误，因为它使用了`cloudflare:`协议导入。只能通过Wrangler运行。[如果你习惯于像Claude Agent SDK那样直接在Python/Node.js中导入使用的方式](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)，这一点一开始会比较陌生。
 
 ## 值得关注的架构设计选择
 
@@ -152,7 +152,7 @@ Your Worker has access to the following bindings:
 
 **邮件处理器**：一个`onEmail`方法就能让智能体直接处理邮件，通过Workers Email Routing集成。智能体接收邮件并将其转化为任务的模式，写起来非常自然。
 
-[Dapr智能体通过Kubernetes Sidecar模式管理状态和消息的方式](/zh/blog/zh/dapr-agents-v1-cncf-production-ai-framework)与此形成有趣的对比。Cloudflare的方式更注重代码，Dapr则更注重基础设施。两者各有适用场景。
+[Dapr智能体通过Kubernetes Sidecar模式管理状态和消息的方式](/zh/blog/zh/dapr-agents-v1-cncf-production-ai-framework/)与此形成有趣的对比。Cloudflare的方式更注重代码，Dapr则更注重基础设施。两者各有适用场景。
 
 ## 坦诚的评价
 
@@ -160,7 +160,7 @@ Your Worker has access to the following bindings:
 
 有两点让我担忧。
 
-第一，**厂商锁定相当强**。只能在`cloudflare:workers`运行时上运行，且与Durable Object的设计深度绑定。如果以后想换平台，需要大幅重写智能体代码。[像在Kubernetes上部署MCP服务器](/zh/blog/zh/mcp-server-production-deployment-kubernetes-guide)这样的容器化方案没有这个问题，代价是基础设施复杂度上升。
+第一，**厂商锁定相当强**。只能在`cloudflare:workers`运行时上运行，且与Durable Object的设计深度绑定。如果以后想换平台，需要大幅重写智能体代码。[像在Kubernetes上部署MCP服务器](/zh/blog/zh/mcp-server-production-deployment-kubernetes-guide/)这样的容器化方案没有这个问题，代价是基础设施复杂度上升。
 
 第二，**多智能体协作模式尚浅**。单个智能体的功能大幅增强，但多个智能体进行复杂协作的模式在SDK层面还比较薄弱。如果要认真构建多智能体编排，需要额外搭建大量结构。Project Think框架正在改善这一问题，但目前仍处于初期阶段。
 

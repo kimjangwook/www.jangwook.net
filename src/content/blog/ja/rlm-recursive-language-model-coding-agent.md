@@ -52,7 +52,7 @@ relatedPosts:
 
 LLMを活用したコーディングエージェントを運用していると、必ずぶつかる壁があります。<strong>コンテキストウィンドウの限界</strong>です。128Kトークンであれ200Kトークンであれ、大規模コードベースを扱うとモデルが重要な情報を見落とし始めます。いわゆる「Context Rot」— コンテキストが長くなるほどパフォーマンスが急激に低下する現象です。
 
-MITが発表した<strong>Recursive Language Models（RLM）</strong>論文（arXiv:2512.24601）は、この問題に対する根本的な解決策を提示しています。そして最近、Tenobrusという開発者がこのアイデアを[Claude Code](/ja/blog/ja/claude-managed-agents-production-deployment-guide)に直接実装して話題になりました。コーディングエージェントの内部でRLMを「スキル」として実装したのです。
+MITが発表した<strong>Recursive Language Models（RLM）</strong>論文（arXiv:2512.24601）は、この問題に対する根本的な解決策を提示しています。そして最近、Tenobrusという開発者がこのアイデアを[Claude Code](/ja/blog/ja/claude-managed-agents-production-deployment-guide/)に直接実装して話題になりました。コーディングエージェントの内部でRLMを「スキル」として実装したのです。
 
 AIで仕組みを作るエンジニアリングマネージャーの視点から、このアプローチがなぜ重要なのか、そして実務でどう活用できるのか分析します。
 
@@ -153,7 +153,7 @@ graph TB
 
 ### マルチエージェント vs RLM
 
-最近のAI業界では、単体モデルの限界を克服するために[<strong>マルチエージェントシステム</strong>](/ja/blog/ja/multi-agent-orchestration-routing)が注目されています。複数のモデルが協業する方式です。
+最近のAI業界では、単体モデルの限界を克服するために[<strong>マルチエージェントシステム</strong>](/ja/blog/ja/multi-agent-orchestration-routing/)が注目されています。複数のモデルが協業する方式です。
 
 RLMはこれとは異なるアプローチです。<strong>同じモデルが自分自身を再帰的に呼び出す</strong>ため、モデル間のコミュニケーションオーバーヘッドがなく、一貫した「思考方式」を維持できます。
 
@@ -222,7 +222,7 @@ claude --task "以下の要約に基づいて全体アーキテクチャを分�
 3. <strong>Phase 3</strong>：デバッグワークフローに統合
 4. <strong>Phase 4</strong>：開発パイプライン全体に適用
 
-エージェントアーキテクチャの最適化についての深掘り分析は[ディープエージェントアーキテクチャ最適化ガイド](/ja/blog/ja/deep-agents-architecture-optimization)をご参照ください。
+エージェントアーキテクチャの最適化についての深掘り分析は[ディープエージェントアーキテクチャ最適化ガイド](/ja/blog/ja/deep-agents-architecture-optimization/)をご参照ください。
 
 ## 論文の示唆：今後の展望
 

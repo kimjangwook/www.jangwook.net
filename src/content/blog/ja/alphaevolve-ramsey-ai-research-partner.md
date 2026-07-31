@@ -141,7 +141,7 @@ AlphaEvolve以前にも、AIが科学研究に貢献した事例はありまし�
 | システム | アプローチ | 特徴 |
 |---------|----------|------|
 | AlphaFold | タンパク質構造予測 | 特定ドメインに特化したモデル |
-| [GPT-5.2](/ja/blog/ja/gpt52-theoretical-physics-discovery) | 理論物理学の推論 | 大規模モデルの推論能力を活用 |
+| [GPT-5.2](/ja/blog/ja/gpt52-theoretical-physics-discovery/) | 理論物理学の推論 | 大規模モデルの推論能力を活用 |
 | AlphaEvolve | アルゴリズムの自動発見 | <strong>ドメイン非依存のメタアルゴリズム</strong> |
 
 AlphaEvolveの核心的な差別化ポイントは<strong>汎用性</strong>です。ラムゼー数だけでなく：
@@ -182,7 +182,7 @@ AlphaEvolveはすでにGoogle社内でプロダクション最適化に活用さ
 - <strong>データセンタースケジューリング</strong>：リソース割り当てアルゴリズムの改善
 - <strong>コンパイラ最適化</strong>：自動コード最適化の探索
 
-エンジニアリングチームがすぐに適用できる領域（[Claude Codeエージェンティックワークフローパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)と組み合わせるとさらに効果的です）：
+エンジニアリングチームがすぐに適用できる領域（[Claude Codeエージェンティックワークフローパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)と組み合わせるとさらに効果的です）：
 
 - パフォーマンスクリティカルなアルゴリズムの自動最適化
 - A/Bテスト戦略の進化的改善
@@ -190,7 +190,7 @@ AlphaEvolveはすでにGoogle社内でプロダクション最適化に活用さ
 
 ### 3. 「AIがAIを改善する」フィードバックループ
 
-AlphaEvolveがGeminiの学習効率を改善し、改善されたGeminiが再びAlphaEvolveの性能を高める構造は、<strong>自己強化ループ（self-reinforcing loop）</strong>の初期形態です。[KarpathyのAutoresearchフレームワーク](/ja/blog/ja/karpathy-autoresearch-overnight-ml-experiments)も同様の自律的実験反復パターンを示しています：
+AlphaEvolveがGeminiの学習効率を改善し、改善されたGeminiが再びAlphaEvolveの性能を高める構造は、<strong>自己強化ループ（self-reinforcing loop）</strong>の初期形態です。[KarpathyのAutoresearchフレームワーク](/ja/blog/ja/karpathy-autoresearch-overnight-ml-experiments/)も同様の自律的実験反復パターンを示しています：
 
 ```mermaid
 graph TD

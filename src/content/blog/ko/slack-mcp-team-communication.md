@@ -76,7 +76,7 @@ relatedPosts:
 
 ### 핵심 개념
 
-<strong>Model Context Protocol(MCP)</strong>은 Anthropic이 2024년 11월에 공개한 오픈 프로토콜로, AI 모델이 외부 데이터 소스 및 도구와 표준화된 방식으로 상호작용할 수 있게 한다. 기존 Slack API는 개발자가 직접 HTTP 요청을 작성하고 응답을 파싱해야 했지만, MCP는 이러한 복잡성을 추상화하여 자연어로 데이터를 요청하고 분석할 수 있다. Notion 같은 다른 협업 도구와의 MCP 자동화 사례는 [AI 에이전트 Notion MCP 자동화 가이드](/ko/blog/ko/ai-agent-notion-mcp-automation)에서 확인할 수 있다.
+<strong>Model Context Protocol(MCP)</strong>은 Anthropic이 2024년 11월에 공개한 오픈 프로토콜로, AI 모델이 외부 데이터 소스 및 도구와 표준화된 방식으로 상호작용할 수 있게 한다. 기존 Slack API는 개발자가 직접 HTTP 요청을 작성하고 응답을 파싱해야 했지만, MCP는 이러한 복잡성을 추상화하여 자연어로 데이터를 요청하고 분석할 수 있다. Notion 같은 다른 협업 도구와의 MCP 자동화 사례는 [AI 에이전트 Notion MCP 자동화 가이드](/ko/blog/ko/ai-agent-notion-mcp-automation/)에서 확인할 수 있다.
 
 <strong>기존 Slack API vs Slack MCP</strong>:
 
@@ -1197,7 +1197,7 @@ setInterval(triageSupportTickets, 15 * 60 * 1000);
 
 <strong>배경</strong>:
 
-5개 타임존에 분산된 200명 규모의 엔지니어링 팀이 원격 근무 중 팀 문화와 소속감 유지에 어려움을 겪고 있었다. Slack과 Notion을 Claude로 연결하여 프로젝트 백로그를 관리하는 방법은 [Notion 백로그와 Slack Claude 프로젝트 관리](/ko/blog/ko/notion-backlog-slack-claude-project-management)에서 다루고 있다.
+5개 타임존에 분산된 200명 규모의 엔지니어링 팀이 원격 근무 중 팀 문화와 소속감 유지에 어려움을 겪고 있었다. Slack과 Notion을 Claude로 연결하여 프로젝트 백로그를 관리하는 방법은 [Notion 백로그와 Slack Claude 프로젝트 관리](/ko/blog/ko/notion-backlog-slack-claude-project-management/)에서 다루고 있다.
 
 <strong>구현 방법</strong>:
 
@@ -1660,7 +1660,7 @@ async function notifyDataCollection() {
 
 ### 다중 MCP 통합
 
-여러 MCP 서버를 연결하여 강력한 자동화 워크플로우를 구축할 수 있다. [AWS MCP 서버 GA 이후 엔터프라이즈 환경에서의 실전 활용법](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026)도 다중 MCP 통합의 좋은 참고 사례다.
+여러 MCP 서버를 연결하여 강력한 자동화 워크플로우를 구축할 수 있다. [AWS MCP 서버 GA 이후 엔터프라이즈 환경에서의 실전 활용법](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026/)도 다중 MCP 통합의 좋은 참고 사례다.
 
 <strong>Slack + GitHub + Postgres 예제</strong>:
 

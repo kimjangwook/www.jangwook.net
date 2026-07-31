@@ -62,7 +62,7 @@ AI Agent的核心能力是<strong>"准确调用外部工具的能力"</strong>�
 
 ## 为什么这篇论文现在如此重要
 
-当前[AI Agent](/zh/blog/zh/multi-agent-orchestration-routing)市场正以工具调用（Function Calling / Tool Use）能力为核心快速增长。OpenAI的Function Calling、Anthropic的Tool Use、Google的Gemini Function Calling——前沿模型都将这一能力作为核心功能。
+当前[AI Agent](/zh/blog/zh/multi-agent-orchestration-routing/)市场正以工具调用（Function Calling / Tool Use）能力为核心快速增长。OpenAI的Function Calling、Anthropic的Tool Use、Google的Gemini Function Calling——前沿模型都将这一能力作为核心功能。
 
 然而，开源模型或领域专用模型要获得这一能力，就不可避免地需要<strong>高成本的训练数据构建</strong>：
 
@@ -217,13 +217,13 @@ graph TD
 
 ### 2. 小型模型的重新评估
 
-Tool-R0在0.5B模型上也实现了2倍的性能提升。这意味着<strong>在边缘设备或成本敏感环境中也能构建有效的[工具调用Agent](/zh/blog/zh/prompt-engineering-agent-improvements)</strong>。对于GPU预算有限的初创公司或私有云环境尤为有意义。
+Tool-R0在0.5B模型上也实现了2倍的性能提升。这意味着<strong>在边缘设备或成本敏感环境中也能构建有效的[工具调用Agent](/zh/blog/zh/prompt-engineering-agent-improvements/)</strong>。对于GPU预算有限的初创公司或私有云环境尤为有意义。
 
 ### 3. 课程学习的自动化
 
 最令人印象深刻的方面是<strong>学习课程能够自动生成</strong>。以往需要人工将数据从"简单示例到困难示例"进行排序，而Tool-R0的Generator能够自动感知Solver当前的能力水平，并生成适当难度的问题。
 
-这为<strong>自主运行[AI系统](/zh/blog/zh/self-healing-ai-systems)的学习Pipeline</strong>开辟了可能性。
+这为<strong>自主运行[AI系统](/zh/blog/zh/self-healing-ai-systems/)的学习Pipeline</strong>开辟了可能性。
 
 ## ICLR 2026 Agent研究趋势的背景
 

@@ -97,7 +97,7 @@ graph TD
 - 账户验证与身份认证强化程度
 - 速率限制（rate limiting）的精细化水平
 
-AI供应商依赖风险的另一面，在[GPT-4o退役与模型依赖风险](/zh/blog/zh/gpt4o-retirement-model-dependency-risk)中有详细探讨。了解单一模型依赖对企业的影响以及多供应商战略的重要性，可以参考该文。
+AI供应商依赖风险的另一面，在[GPT-4o退役与模型依赖风险](/zh/blog/zh/gpt4o-retirement-model-dependency-risk/)中有详细探讨。了解单一模型依赖对企业的影响以及多供应商战略的重要性，可以参考该文。
 
 <strong>3. 开源模型的来源风险</strong>
 
@@ -162,7 +162,7 @@ graph TD
 
 <strong>1. 行业全面协作加强</strong>
 
-Anthropic正与OpenAI共同呼吁行业对蒸馏攻击进行整体性应对。单靠个别企业的防御远远不够，需要AI产业、云服务商和政策制定者的协同合作。若想从国家安全视角深入了解AI治理，请参阅[Anthropic vs 五角大楼 — AI治理时代的CTO供应商战略](/zh/blog/zh/anthropic-pentagon-ai-governance-cto-lessons)。
+Anthropic正与OpenAI共同呼吁行业对蒸馏攻击进行整体性应对。单靠个别企业的防御远远不够，需要AI产业、云服务商和政策制定者的协同合作。若想从国家安全视角深入了解AI治理，请参阅[Anthropic vs 五角大楼 — AI治理时代的CTO供应商战略](/zh/blog/zh/anthropic-pentagon-ai-governance-cto-lessons/)。
 
 <strong>2. Microsoft的开放权重模型后门扫描器</strong>
 

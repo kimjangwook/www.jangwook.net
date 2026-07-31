@@ -76,7 +76,7 @@ relatedPosts:
 - <strong>可扩展性</strong>：可通过添加新智能体扩展功能
 - <strong>弹性（Resilience）</strong>：单个智能体故障不影响整体系统
 
-实际上，丰田通过多智能体系统<strong>每年节省10,000小时以上</strong>，在电子商务API项目中实现了<strong>bug减少70%、重构时间缩短75%</strong>的成果。不过这些成果的前提是选对了适合编排的工具。投入生产之前，不妨一并参考[LangGraph、CrewAI、Dapr框架对比](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)，可以减少后期的重新设计。
+实际上，丰田通过多智能体系统<strong>每年节省10,000小时以上</strong>，在电子商务API项目中实现了<strong>bug减少70%、重构时间缩短75%</strong>的成果。不过这些成果的前提是选对了适合编排的工具。投入生产之前，不妨一并参考[LangGraph、CrewAI、Dapr框架对比](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)，可以减少后期的重新设计。
 
 ## 5个专业智能体架构
 
@@ -657,7 +657,7 @@ graph TB
 - MCP：智能体访问工具或内存时
 - A2A：智能体间直接通信时
 
-关于如何在生产环境中实际组合运行MCP与A2A，[A2A与MCP混合架构生产指南](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide)有更深入的讲解。
+关于如何在生产环境中实际组合运行MCP与A2A，[A2A与MCP混合架构生产指南](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide/)有更深入的讲解。
 
 <strong>A2A消息示例</strong>：
 ```json
@@ -1623,4 +1623,4 @@ export OPENAI_API_KEY="your-api-key"
 
 ---
 
-<strong>下一篇</strong>：[自我修复AI系统：构建无需人工介入自动修复bug的智能体](/zh/blog/zh/self-healing-ai-systems)将介绍2025年核心趋势Self-Healing Systems的实现方法，包含实战代码。
+<strong>下一篇</strong>：[自我修复AI系统：构建无需人工介入自动修复bug的智能体](/zh/blog/zh/self-healing-ai-systems/)将介绍2025年核心趋势Self-Healing Systems的实现方法，包含实战代码。

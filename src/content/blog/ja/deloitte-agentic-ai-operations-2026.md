@@ -160,7 +160,7 @@ Gartnerの警告は明確です。
 **CIO.comの2026年エンジニアリングレポート**によると、先導的な企業のエンジニアはもはや「コードを書く」に時間を費やしていません。代わりに:
 
 - <strong>データエンジニアリング</strong>(時間の50%以上): エージェントがアクセスできるデータ構造の設計
-- <strong>[エージェントオーケストレーション](/ja/blog/ja/multi-agent-orchestration-routing)</strong>(20〜30%): 複数のエージェント間の調整
+- <strong>[エージェントオーケストレーション](/ja/blog/ja/multi-agent-orchestration-routing/)</strong>(20〜30%): 複数のエージェント間の調整
 - <strong>ガバナンスおよび規制準拠</strong>(20%以上): エージェントが何ができて何ができないかを定義
 - <strong>コーディング</strong>(10%以下): 以前はほとんどの時間を費やしていた活動
 
@@ -191,7 +191,7 @@ Deloitteのレポートからの驚くべき発見:
 これは単なるコストの問題ではなく、<strong>運用モデル設計の失敗</strong>を露呈しています。
 
 **事実:**
-- [Claude/GPT-4のトークンコスト](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)は2年間で280倍低下しました ✓
+- [Claude/GPT-4のトークンコスト](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)は2年間で280倍低下しました ✓
 - しかし、エンタープライズの月間 AI請求書は$10M〜$50Mです ✗
 
 **なぜですか?**
@@ -755,4 +755,4 @@ HBR の言葉は正しいです: <strong>「シニアリーダーシップが AI
 **関連記事:**
 - 「生成型 AI の導入、なぜトップダウン方式が必要なのか」(戦略的観点)
 - 「AI エージェント KPI と倫理: 成果測定をどのように行うか」(ガバナンス深掘り)
-- 「[NIST AI エージェントセキュリティ標準](/ja/blog/ja/nist-ai-agent-security-standards)」(セキュリティ観点)
+- 「[NIST AI エージェントセキュリティ標準](/ja/blog/ja/nist-ai-agent-security-standards/)」(セキュリティ観点)

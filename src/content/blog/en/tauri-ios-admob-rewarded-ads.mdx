@@ -51,7 +51,7 @@ Once Shadow Dash was live on the App Store, monetization became the next chore. 
 
 So I had to **build a Swift plugin that wraps the GoogleMobileAds SDK myself**. What follows is an ordered account of where I got stuck and the code that got me unstuck. It walks through the actual sequence I hit, from upgrading the Tauri CLI to permission setup and linker errors.
 
-> This post is a follow-up to [iOS Game Development with Tauri + PixiJS](/en/blog/en/tauri-pixijs-ios-game-development). It's based on real experience integrating ads into the Shadow Dash game.
+> This post is a follow-up to [iOS Game Development with Tauri + PixiJS](/en/blog/en/tauri-pixijs-ios-game-development/). It's based on real experience integrating ads into the Shadow Dash game.
 
 <Image src={screenshot04} alt="Shadow Dash game over screen" width={300} class="mx-auto rounded-lg shadow-lg" />
 
@@ -86,15 +86,15 @@ Before wiring up an ad SDK, decide whether rewarded ads even suit your game. Dro
 
 - Arcade and casual games built around short, repeating sessions. A structure like Shadow Dash, where game-over happens often and the "one more run" urge is strong, is the sweet spot.
 - Cases where the reward for watching is clear and immediate, such as a continue, doubled coins, or a revealed hint.
-- Solo-developer apps with a high share of non-paying users, where in-app purchases alone won't sustain revenue. As [an individual developer's AI SaaS monetization journey](/en/blog/en/individual-developer-ai-saas-journey) shows, the smaller the app, the more a low-barrier revenue source matters.
+- Solo-developer apps with a high share of non-paying users, where in-app purchases alone won't sustain revenue. As [an individual developer's AI SaaS monetization journey](/en/blog/en/individual-developer-ai-saas-journey/) shows, the smaller the app, the more a low-barrier revenue source matters.
 
 **Where you're better off avoiding them:**
 
 - Immersive narrative games or core games with high willingness to pay. Whether interstitial or rewarded, an ad that breaks immersion tends to drive churn instead.
 - Early-stage apps with only a few hundred DAU. However high the eCPM, too few impressions won't produce meaningful revenue. Here, acquiring users comes before integrating ads.
-- Minimal projects where the SDK's added build size and complexity are a burden. The maintenance cost can outweigh the ad income. If your project leans on AI tooling, the cost-versus-benefit lens from [the reality of AI agent costs](/en/blog/en/ai-agent-cost-reality) applies directly to this call.
+- Minimal projects where the SDK's added build size and complexity are a burden. The maintenance cost can outweigh the ad income. If your project leans on AI tooling, the cost-versus-benefit lens from [the reality of AI agent costs](/en/blog/en/ai-agent-cost-reality/) applies directly to this call.
 
-In short, rewarded ads fit best in **games with short sessions and a strong retry motive**. If you're building something similar to Shadow Dash, start with the game-loop design in [iOS game development with Tauri + PixiJS](/en/blog/en/tauri-pixijs-ios-game-development).
+In short, rewarded ads fit best in **games with short sessions and a strong retry motive**. If you're building something similar to Shadow Dash, start with the game-loop design in [iOS game development with Tauri + PixiJS](/en/blog/en/tauri-pixijs-ios-game-development/).
 
 ### Ad SDK Selection Process
 
@@ -825,7 +825,7 @@ Try **Shadow Dash**, developed with the technologies covered in this article!
 
 **Feedback welcome!** If you find any improvements or bugs while playing, please let us know via App Store review or email.
 
-> 📱 **Shadow Dash Details**: Check out the [portfolio page](/en/portfolio/shadow-dash) for core game mechanics and more screenshots.
+> 📱 **Shadow Dash Details**: Check out the [portfolio page](/en/portfolio/shadow-dash/) for core game mechanics and more screenshots.
 
 ## References
 

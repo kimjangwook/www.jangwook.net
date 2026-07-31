@@ -67,7 +67,7 @@ Why does that beat inbound link count? Because link following is how search engi
 
 What Google does *not* say is where depth becomes a problem. There's no published click-depth threshold, and no promise that link structure moves rankings. What the crawl budget guide gives you is the framing: "Google defines a site's crawl budget as the set of URLs that Google can and wants to crawl." That same guide then narrows its own audience: "If your site doesn't have a large number of pages that change rapidly, or if your pages seem to be crawled the same day that they are published, you don't need to read this guide." ([Large site owner's guide to managing your crawl budget](https://developers.google.com/search/docs/crawling-indexing/large-site-managing-crawl-budget))
 
-My site is squarely in the "you don't need to read this" bucket. So I don't treat depth as a budget question. I use it for something simpler. **Does this post exist for a visitor who only follows links?** That visitor might be a person, might be Googlebot, might be an AI crawler that never executes JavaScript. I measured what survives for that last group in [what's left when AI crawlers don't render JavaScript](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026). Reachability only means anything on top of that premise.
+My site is squarely in the "you don't need to read this" bucket. So I don't treat depth as a budget question. I use it for something simpler. **Does this post exist for a visitor who only follows links?** That visitor might be a person, might be Googlebot, might be an AI crawler that never executes JavaScript. I measured what survives for that last group in [what's left when AI crawlers don't render JavaScript](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026/). Reachability only means anything on top of that premise.
 
 ## Sixty lines over the build output
 
@@ -165,7 +165,7 @@ So what's the bill for listing 322 posts on one page? I served the production bu
 
 The 7,257 DOM nodes do bother me. That's more than ten times a post page. But the cushion is already in place: 319 of the 320 thumbnails carry `loading="lazy"`, so nothing outside the initial viewport gets requested. DOMContentLoaded came in at 387ms, faster than the post page's 423ms. Local serving with a warm cache means you shouldn't take those absolute numbers to production. What I can say is that under these conditions the archive showed no sign of being the slow page.
 
-Here's my call. That bill is **local to one page, measurable, and bounded.** The damage from 296 posts losing their link path is neither local nor bounded, and nothing tells you when it heals. I'll pay the first one. What actually hurts on a page like this is layout stability and render cost rather than bytes, and reserving space up front (the approach in [dropping CLS from 0.559 to 0.014](/en/blog/en/cls-layout-shift-reserve-space-measure-2026)) keeps most of that under control.
+Here's my call. That bill is **local to one page, measurable, and bounded.** The damage from 296 posts losing their link path is neither local nor bounded, and nothing tells you when it heals. I'll pay the first one. What actually hurts on a page like this is layout stability and render cost rather than bytes, and reserving space up front (the approach in [dropping CLS from 0.559 to 0.014](/en/blog/en/cls-layout-shift-reserve-space-measure-2026/)) keeps most of that under control.
 
 ## If you do paginate, here's the depth arithmetic
 
@@ -208,7 +208,7 @@ The checklist I'm keeping. Any size of site, about thirty minutes.
 5. **Avoid next-only pagers.** Ten posts per page turns 322 posts into a worst-case depth of 33; the same page count through a numbered pager gives you 9. Depth is a consequence of a UI choice.
 6. **Price the flat list instead of guessing.** Mine came in at 86KB transferred, 7,257 DOM nodes, 319 of 320 thumbnails lazy-loaded. I'll pay that. The point is to look at the numbers before deciding, rather than assuming "that must be heavy" and restructuring on a hunch.
 
-So how many posts is your site currently losing? Turning that question into a number is what I do: information-architecture audits, internal-link redesign, crawler reachability measurement. If the answer interests you, the contact route on my [profile](/en/about) is open.
+So how many posts is your site currently losing? Turning that question into a number is what I do: information-architecture audits, internal-link redesign, crawler reachability measurement. If the answer interests you, the contact route on my [profile](/en/about/) is open.
 
 ---
 

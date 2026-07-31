@@ -61,7 +61,7 @@ relatedPosts:
 
 来自中国的流量一直在稳步增长，我希望也能为中文圈的开发者提供优质内容。然而，为40篇文章添加中文版本，将所有UI组件多语言化，并优化SEO，这项工作并不简单。
 
-本文将详细分享<strong>为基于Astro的多语言博客添加新语言的全过程</strong>。从文件结构设计到大规模翻译自动化、SEO优化 - 透明地记录在实践中遇到的问题和解决方案。用 LLM 自动化整个内容生产的背景，[基于 LLM 的博客自动化](/zh/blog/zh/llm-blog-automation)中有介绍。
+本文将详细分享<strong>为基于Astro的多语言博客添加新语言的全过程</strong>。从文件结构设计到大规模翻译自动化、SEO优化 - 透明地记录在实践中遇到的问题和解决方案。用 LLM 自动化整个内容生产的背景，[基于 LLM 的博客自动化](/zh/blog/zh/llm-blog-automation/)中有介绍。
 
 ### 阅读本文您将了解
 
@@ -501,7 +501,7 @@ export const SITE_META = {
 
 ## 第六节：大规模翻译自动化
 
-为40篇文章添加中文版本，并在现有韩语/英语/日语版本的relatedPosts中添加中文reason，<strong>手工操作是不可能的</strong>。把工作拆分给多个智能体并行处理的模式，我在[AI 智能体与 Notion MCP 自动化](/zh/blog/zh/ai-agent-notion-mcp-automation)中也用了同样的方式。
+为40篇文章添加中文版本，并在现有韩语/英语/日语版本的relatedPosts中添加中文reason，<strong>手工操作是不可能的</strong>。把工作拆分给多个智能体并行处理的模式，我在[AI 智能体与 Notion MCP 自动化](/zh/blog/zh/ai-agent-notion-mcp-automation/)中也用了同样的方式。
 
 ### 问题定义
 

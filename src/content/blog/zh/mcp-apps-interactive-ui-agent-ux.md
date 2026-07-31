@@ -94,7 +94,7 @@ MCP App可以调用MCP服务器上的任何工具，宿主（host）也可以将
 
 <strong>4. 安全保障</strong>
 
-MCP Apps在沙箱iframe中运行。它们无法访问父页面、窃取cookie或逃出容器。宿主可以安全渲染第三方应用，而无需完全信任服务器开发者。有关MCP生态系统整体安全威胁与企业级强化方法，请参阅[MCP安全危机 — 60天内30个CVE：企业级强化指南](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening)。
+MCP Apps在沙箱iframe中运行。它们无法访问父页面、窃取cookie或逃出容器。宿主可以安全渲染第三方应用，而无需完全信任服务器开发者。有关MCP生态系统整体安全威胁与企业级强化方法，请参阅[MCP安全危机 — 60天内30个CVE：企业级强化指南](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening/)。
 
 ## 工作原理：架构详解
 
@@ -359,7 +359,7 @@ export default function App() {
 | ChatGPT | ⏳ 未知 | 无官方公告 |
 | Cursor | ⏳ 未知 | 路线图讨论中 |
 
-在VS Code中，可通过 `/mcp` 聊天命令启用/禁用服务器并管理OAuth认证。有关在浏览器中直接运行MCP服务器的方式，请参阅[WebMCP：Chrome 146让浏览器成为AI智能体的工具服务器](/zh/blog/zh/webmcp-chrome-146-ai-tool-server)。
+在VS Code中，可通过 `/mcp` 聊天命令启用/禁用服务器并管理OAuth认证。有关在浏览器中直接运行MCP服务器的方式，请参阅[WebMCP：Chrome 146让浏览器成为AI智能体的工具服务器](/zh/blog/zh/webmcp-chrome-146-ai-tool-server/)。
 
 ## 实务应用：Engineering Manager视角
 
@@ -418,7 +418,7 @@ MCP Apps解决了AI智能体界面的根本性局限。原本只能通过文字�
 
 从Engineering Manager的视角来看，这项技术的价值非常明确：团队成员向AI提问，在对话中直接获得交互工具并完成工作——无需切换到单独的仪表盘标签页或其他工具。
 
-现在不必为所有MCP服务器都添加UI。但不妨从团队最常用的一个工具入手，试用MCP Apps。这一经验将改变你未来设计AI工作流的思路。有关AI智能体可利用的标准化技能系统，请参阅[Anthropic Agent Skills标准：AI智能体能力扩展](/zh/blog/zh/anthropic-agent-skills-standard)。
+现在不必为所有MCP服务器都添加UI。但不妨从团队最常用的一个工具入手，试用MCP Apps。这一经验将改变你未来设计AI工作流的思路。有关AI智能体可利用的标准化技能系统，请参阅[Anthropic Agent Skills标准：AI智能体能力扩展](/zh/blog/zh/anthropic-agent-skills-standard/)。
 
 ## 参考资料
 

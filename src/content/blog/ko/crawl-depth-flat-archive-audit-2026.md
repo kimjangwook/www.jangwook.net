@@ -67,7 +67,7 @@ relatedPosts:
 
 깊이가 커질 때 무엇이 나빠지는지도 공식 문서에 단정적으로 적혀 있지는 않다. Google은 클릭 깊이 임계값을 공개하지 않고, 링크 구조가 순위를 보장한다고 말하지도 않는다. 대신 크롤 예산 문서가 전제를 알려준다. "Google defines a site's crawl budget as the set of URLs that Google can and wants to crawl." 그리고 같은 문서는 대상을 좁힌다. "If your site doesn't have a large number of pages that change rapidly, or if your pages seem to be crawled the same day that they are published, you don't need to read this guide."([Large site owner's guide to managing your crawl budget](https://developers.google.com/search/docs/crawling-indexing/large-site-managing-crawl-budget))
 
-내 사이트는 이 문서가 말하는 "읽을 필요 없는" 규모다. 그래서 나는 깊이를 예산 문제로 다루지 않는다. 대신 훨씬 단순한 질문으로 쓴다. **링크만 따라가는 방문자에게 이 글이 존재하는가.** 여기서 방문자는 사람일 수도, Googlebot일 수도, JS를 실행하지 않는 AI 크롤러일 수도 있다. 실행 없이 HTML만 읽는 쪽에 대해서는 [AI 크롤러가 JavaScript를 렌더링하지 않을 때 남는 것](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026)에서 따로 쟀다. 도달성은 그 전제 위에서만 의미가 있는 지표다.
+내 사이트는 이 문서가 말하는 "읽을 필요 없는" 규모다. 그래서 나는 깊이를 예산 문제로 다루지 않는다. 대신 훨씬 단순한 질문으로 쓴다. **링크만 따라가는 방문자에게 이 글이 존재하는가.** 여기서 방문자는 사람일 수도, Googlebot일 수도, JS를 실행하지 않는 AI 크롤러일 수도 있다. 실행 없이 HTML만 읽는 쪽에 대해서는 [AI 크롤러가 JavaScript를 렌더링하지 않을 때 남는 것](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026/)에서 따로 쟀다. 도달성은 그 전제 위에서만 의미가 있는 지표다.
 
 ## 빌드 산출물을 너비 우선으로 훑는 60줄
 
@@ -165,7 +165,7 @@ while (q.length) {
 
 솔직히 DOM 노드 7,257개는 마음에 걸린다. 글 페이지의 열 배가 넘는다. 다만 여기엔 완충 장치가 이미 걸려 있다. 이미지 320장 중 319장이 `loading="lazy"`이므로 초기 뷰포트 밖 썸네일은 요청되지 않는다. DOMContentLoaded 387ms는 글 페이지(423ms)보다 오히려 빨랐다. 이 비교는 로컬 서빙·따뜻한 캐시 조건이라 절대값을 그대로 믿을 수는 없다. 다만 "목록 페이지가 특별히 느려지는 조짐"은 이 조건에서 관측되지 않았다.
 
-내 판단은 이렇다. 이 청구서는 **한 장에 국소적으로 청구되고, 계측 가능하며, 상한이 보인다.** 반대로 296편이 링크 경로를 잃는 손해는 국소적이지 않고, 언제 회복되는지도 알 수 없다. 나는 전자를 낸다. 이런 페이지에서 실제로 위험한 것은 바이트가 아니라 레이아웃 안정성과 렌더 비용인데, 그쪽은 [CLS를 0.559에서 0.014로 내린 실측](/ko/blog/ko/cls-layout-shift-reserve-space-measure-2026)에서 다룬 방식대로 공간을 미리 잡아두면 대체로 통제된다.
+내 판단은 이렇다. 이 청구서는 **한 장에 국소적으로 청구되고, 계측 가능하며, 상한이 보인다.** 반대로 296편이 링크 경로를 잃는 손해는 국소적이지 않고, 언제 회복되는지도 알 수 없다. 나는 전자를 낸다. 이런 페이지에서 실제로 위험한 것은 바이트가 아니라 레이아웃 안정성과 렌더 비용인데, 그쪽은 [CLS를 0.559에서 0.014로 내린 실측](/ko/blog/ko/cls-layout-shift-reserve-space-measure-2026/)에서 다룬 방식대로 공간을 미리 잡아두면 대체로 통제된다.
 
 ## 페이지네이션을 넣으면 깊이가 어떻게 늘어나는가
 
@@ -208,7 +208,7 @@ while (q.length) {
 5. **페이저는 next-only를 피하라.** 322편을 10편씩 쪼개면 최악 깊이가 33이 되고, 같은 페이지 수를 번호 페이저로 노출하면 9로 준다. 깊이는 UI 선택의 결과다.
 6. **평면 목록의 비용은 계측해서 상한을 알아라.** 내 경우 전송 86KB, DOM 7,257개, 썸네일 320장 중 319장 지연 로딩이었다. 이 정도면 낸다. 대신 감으로 "무겁겠지"라고 넘기지 말고 숫자를 확인한 다음 결정한다.
 
-그럼 우리 사이트는 지금 몇 편을 잃고 있을까. 이 질문을 숫자로 바꾸는 일이 내 작업이다. 정보 구조 감사, 내부 링크 재설계, 크롤러 도달성 계측. 답이 궁금하면 [프로필](/ko/about)의 경로로 물어봐도 된다.
+그럼 우리 사이트는 지금 몇 편을 잃고 있을까. 이 질문을 숫자로 바꾸는 일이 내 작업이다. 정보 구조 감사, 내부 링크 재설계, 크롤러 도달성 계측. 답이 궁금하면 [프로필](/ko/about/)의 경로로 물어봐도 된다.
 
 ---
 

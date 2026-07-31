@@ -44,11 +44,11 @@ faq:
 
 > <strong>シリーズ: DeNA LLMスタディ</strong> (3/5)
 >
-> 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 構造化出力とマルチLLMパイプライン
 > 3. <strong>Part 3: モデル学習方法論</strong> ← 現在の記事
-> 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag)
-> 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design)
+> 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag/)
+> 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design/)
 
 ## ファインチューニング、どこから手をつける?
 
@@ -56,7 +56,7 @@ faq:
 
 DeNAのLLMスタディ資料Part 3は、まさにそこを突いてくる。3つの学習方式がどう違うのか、そしてLoRA、QLoRA、DPOといった効率的な手法の仕組みと実務での使い方まで踏み込む。ここに2025年時点のトレンドと、自分が実際に回してみて得た感触を足して整理した。
 
-この記事はシリーズの中間にあたる。モデル自体の動き方を先に知りたいなら[Part 1: LLM基礎](/ja/blog/ja/dena-llm-study-part1-fundamentals)を、学習ではなく外部知識を接続する方向が気になるなら[Part 4: RAGアーキテクチャ](/ja/blog/ja/dena-llm-study-part4-rag)を併せて読むと流れがつながる。
+この記事はシリーズの中間にあたる。モデル自体の動き方を先に知りたいなら[Part 1: LLM基礎](/ja/blog/ja/dena-llm-study-part1-fundamentals/)を、学習ではなく外部知識を接続する方向が気になるなら[Part 4: RAGアーキテクチャ](/ja/blog/ja/dena-llm-study-part4-rag/)を併せて読むと流れがつながる。
 
 ## この内容が役立つとき、読み飛ばしていいとき
 

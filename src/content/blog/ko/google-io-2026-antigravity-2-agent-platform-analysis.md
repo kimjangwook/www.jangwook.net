@@ -140,13 +140,13 @@ $ brew install antigravity
 - **Testing Agent**: 단위 테스트, 회귀 테스트
 - **Documentation Agent**: 기술 문서 자동 업데이트
 
-이건 [Claude Code에서 서브에이전트로 병렬 작업을 나누는 방식](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)과 본질적으로 같은 패턴이다. 차이는 Google이 이걸 IDE 내에 GUI로 제공한다는 것.
+이건 [Claude Code에서 서브에이전트로 병렬 작업을 나누는 방식](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)과 본질적으로 같은 패턴이다. 차이는 Google이 이걸 IDE 내에 GUI로 제공한다는 것.
 
 ### GEMINI.md와 .agents/ 디렉터리
 
 프로젝트 루트에 `GEMINI.md`를 두면 모든 에이전트가 공통 규칙을 참조한다. `.agents/` 디렉터리에 `agents.md`와 `skills.md`를 놓으면 서브에이전트 정의와 재사용 가능한 스킬을 선언한다.
 
-Claude Code를 쓰는 사람이라면 `CLAUDE.md`, `.claude/agents/`, `.claude/skills/` 구조가 떠오를 것이다. 구조가 사실상 동일하다. 이 컨벤션이 AI 에이전트 개발의 표준이 되어가고 있다는 걸 느낀다. [멀티 에이전트 오케스트레이션 라우팅 패턴](/ko/blog/ko/multi-agent-orchestration-routing)을 이미 다룬 적 있는데, 그때 정리한 개념들이 여기서도 그대로 적용된다.
+Claude Code를 쓰는 사람이라면 `CLAUDE.md`, `.claude/agents/`, `.claude/skills/` 구조가 떠오를 것이다. 구조가 사실상 동일하다. 이 컨벤션이 AI 에이전트 개발의 표준이 되어가고 있다는 걸 느낀다. [멀티 에이전트 오케스트레이션 라우팅 패턴](/ko/blog/ko/multi-agent-orchestration-routing/)을 이미 다룬 적 있는데, 그때 정리한 개념들이 여기서도 그대로 적용된다.
 
 ### Antigravity CLI (agy) — 발표는 됐지만
 
@@ -166,7 +166,7 @@ Antigravity 2.0의 엔진은 Gemini 3.5 Flash다. 2026년 5월 19일 GA.
 | 최대 출력 | 65,536 토큰 |
 | 속도 | 비교 모델 대비 4x 빠름 |
 
-[2026년 LLM API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 다룬 Claude Opus 4.7($15/$75 per MTok)과 비교하면 입력 기준 10배 저렴하다. 물론 모델 성능 격차가 있지만, Gemini 3.5 Flash는 Gemini 3.1 Pro를 다섯 개 벤치마크에서 앞선다.
+[2026년 LLM API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)에서 다룬 Claude Opus 4.7($15/$75 per MTok)과 비교하면 입력 기준 10배 저렴하다. 물론 모델 성능 격차가 있지만, Gemini 3.5 Flash는 Gemini 3.1 Pro를 다섯 개 벤치마크에서 앞선다.
 
 Terminal-Bench 2.1에서 76.2%, MCP Atlas 83.6%를 기록했다는 공개 수치를 보면, 코딩 에이전트용 모델로서는 경쟁력 있는 위치다. Antigravity 내부 최적화 버전은 공개 API 대비 12배 빠르다는 설명도 있었다.
 
@@ -220,7 +220,7 @@ Antigravity의 에이전트 패널 이름이 Cascade다. Windsurf의 AI 에이�
 
 Windsurf는 원래 Codeium이 만든 IDE로, Cascade를 통한 에이전트 코딩으로 Cursor와 차별화했다. Antigravity가 같은 이름을 쓴다는 건, Google이 Windsurf 사용자층을 직접 겨냥하고 있다는 신호다. 내가 확인한 설정 임포트 목록에 `antigravity.importWindsurfSettings`가 있는 것도 같은 맥락이다.
 
-이 IDE 전쟁이 어디로 흘러갈지 예측하기 어렵지만, 경쟁 심화는 개발자에게 좋다. [Cursor, Claude Code, Windsurf 비교 분석](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026)을 작성했을 때는 세 경쟁자를 다뤘는데, 이제 Antigravity가 네 번째로 진입했다. 다음 비교 분석이 필요해진 것 같다.
+이 IDE 전쟁이 어디로 흘러갈지 예측하기 어렵지만, 경쟁 심화는 개발자에게 좋다. [Cursor, Claude Code, Windsurf 비교 분석](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026/)을 작성했을 때는 세 경쟁자를 다뤘는데, 이제 Antigravity가 네 번째로 진입했다. 다음 비교 분석이 필요해진 것 같다.
 
 ## Gemini Code Assist 엔터프라이즈 사용자는 예외
 

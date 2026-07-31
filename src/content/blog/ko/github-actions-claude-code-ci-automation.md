@@ -287,7 +287,7 @@ claude -p \
 
 로컬 테스트에서는 `--bare` 없이 실행해도 되지만, `--dangerously-skip-permissions`는 넣어야 한다. 넣지 않으면 "이 디렉터리를 신뢰하십니까?" 프롬프트가 뜨면서 파이프가 멈춘다.
 
-[Claude Code 훅으로 구축하는 자동화 코드 리뷰 시스템](/ko/blog/ko/claude-code-hooks-workflow)도 비슷한 접근이지만, 훅은 커밋 전 로컬 검사에 최적화되어 있고 GitHub Actions는 팀 전체의 PR 게이트로 쓰는 차이가 있다.
+[Claude Code 훅으로 구축하는 자동화 코드 리뷰 시스템](/ko/blog/ko/claude-code-hooks-workflow/)도 비슷한 접근이지만, 훅은 커밋 전 로컬 검사에 최적화되어 있고 GitHub Actions는 팀 전체의 PR 게이트로 쓰는 차이가 있다.
 
 ## Step 4: 비용 관리와 현실적인 기대치
 
@@ -298,7 +298,7 @@ claude -p \
 - 나이틀리 감사 (파일 20개): $0.80〜1.50
 - 월 기준 (PR 50건 + 나이틀리 30회): $20〜60
 
-Anthropic의 네이티브 [Claude Code Review 기능](/ko/blog/ko/claude-code-review-multi-agent-pr)이 PR당 $15〜25라고 발표한 것과 비교하면 훨씬 저렴하다. 물론 멀티에이전트 리뷰보다 깊이는 얕지만, 버그 검출과 보안 이슈 플래그 용도로는 충분하다.
+Anthropic의 네이티브 [Claude Code Review 기능](/ko/blog/ko/claude-code-review-multi-agent-pr/)이 PR당 $15〜25라고 발표한 것과 비교하면 훨씬 저렴하다. 물론 멀티에이전트 리뷰보다 깊이는 얕지만, 버그 검출과 보안 이슈 플래그 용도로는 충분하다.
 
 `--max-budget-usd`가 핵심 안전망이다. 이걸 설정해두면 diff가 비정상적으로 크거나 Claude가 반복 호출을 시도해도 지정한 금액에서 자동으로 멈춘다.
 
@@ -382,7 +382,7 @@ fi
 
 **CLAUDE.md 활용**: 위에서 설명한 대로 프로젝트 규칙을 주입하면 리뷰 품질이 크게 개선된다.
 
-**병렬 처리**: 모노레포에서 서비스별로 다른 기준을 적용하고 싶다면, [Claude Code 병렬 세션 운영](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)에서 다룬 방식처럼 matrix 전략으로 서비스마다 별도 잡을 돌릴 수 있다.
+**병렬 처리**: 모노레포에서 서비스별로 다른 기준을 적용하고 싶다면, [Claude Code 병렬 세션 운영](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)에서 다룬 방식처럼 matrix 전략으로 서비스마다 별도 잡을 돌릴 수 있다.
 
 ```yaml
 strategy:

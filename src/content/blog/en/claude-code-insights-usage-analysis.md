@@ -128,7 +128,7 @@ The core principle is "plan first, execute in parallel."
 
 ### 2. Custom Slash Commands
 
-Creating custom slash commands like `/write-post` to automate repetitive tasks also received high praise. Writing a single blog post takes 10+ steps: research, Korean drafting, three-language translation, image generation, metadata updates. Encoding all of that into one command was flagged as a strength. [EffiFlow Part 2: Skills Auto-Discovery and 58% Token Savings with Caching](/en/blog/en/effiflow-automation-analysis-part2) shows how this command structure translates to caching efficiency.
+Creating custom slash commands like `/write-post` to automate repetitive tasks also received high praise. Writing a single blog post takes 10+ steps: research, Korean drafting, three-language translation, image generation, metadata updates. Encoding all of that into one command was flagged as a strength. [EffiFlow Part 2: Skills Auto-Discovery and 58% Token Savings with Caching](/en/blog/en/effiflow-automation-analysis-part2/) shows how this command structure translates to caching efficiency.
 
 > "Converting complex multi-step content generation into a repeatable one-command operation"
 > — /insights analysis result
@@ -324,7 +324,7 @@ Even a good tool only pays off when you reach for it at the right moment. After 
 - <strong>When treating numbers as absolute</strong>: Qualitative assessments like session category or satisfaction are estimated by a helper model. Use them to set direction, but don't treat a single run as a performance review.
 - <strong>In privacy-sensitive environments</strong>: The report reads your local usage history. If you put it on a shared screen or share a screenshot, project paths and filenames can show up verbatim.
 
-If you run parallel sessions often, reading this alongside [Running Parallel Claude Code Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) connects the dots to a concrete way of solving context-limit cutoffs by splitting sessions.
+If you run parallel sessions often, reading this alongside [Running Parallel Claude Code Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree/) connects the dots to a concrete way of solving context-limit cutoffs by splitting sessions.
 
 ## Why I Recommend This to Other Developers
 
@@ -357,6 +357,6 @@ If you haven't run `/insights` yet, open Claude Code right now and type `/insigh
 
 ### Worth reading alongside
 
-- [Claude Code Agent Teams Guide](/en/blog/en/claude-agent-teams-guide)
-- [Running Parallel Claude Code Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree)
-- [EffiFlow Part 2: Skills Auto-Discovery and Token-Saving Caching](/en/blog/en/effiflow-automation-analysis-part2)
+- [Claude Code Agent Teams Guide](/en/blog/en/claude-agent-teams-guide/)
+- [Running Parallel Claude Code Sessions with Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree/)
+- [EffiFlow Part 2: Skills Auto-Discovery and Token-Saving Caching](/en/blog/en/effiflow-automation-analysis-part2/)

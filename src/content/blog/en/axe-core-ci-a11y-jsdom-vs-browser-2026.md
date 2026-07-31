@@ -160,7 +160,7 @@ The result was a clear violation.
 
 `2.4:1`. W3C's [WCAG 2.1 SC 1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) requires at least `4.5:1` for body text (`3:1` for large text). That pale grey helper line at `#a7a7a7` sat at roughly half the requirement. The very element jsdom waved through as "can't tell," the browser caught in one shot. After I darkened the color to `#595959`, contrast cleared `7:1` and the browser reported zero violations too.
 
-Same axe-core, same markup, different runtime. The verdict splits. This trap, where the moment of rendering decides what an automated tool can see, isn't unique to accessibility. Whether you [render structured data server-side or inject it with client JS](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026) decides whether a crawler reads the schema or misses it entirely, and that is the exact same structure. That single picture is the whole point of today's post.
+Same axe-core, same markup, different runtime. The verdict splits. This trap, where the moment of rendering decides what an automated tool can see, isn't unique to accessibility. Whether you [render structured data server-side or inject it with client JS](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026/) decides whether a crawler reads the schema or misses it entirely, and that is the exact same structure. That single picture is the whole point of today's post.
 
 ## So the pipeline runs in two tiers
 
@@ -185,7 +185,7 @@ const deferred = results.incomplete.map(v => v.id);
 writeFileSync('a11y-deferred.json', JSON.stringify(deferred));
 ```
 
-The idea itself isn't new. I used the same principle in [the campaign that turned SEO audits into a standing build gate](/en/blog/en/multilingual-blog-technical-audit-campaign-2026): don't leave a fix to human discipline, pin it in the pipeline. Accessibility is exactly the same. An audit should be a loop, not an event.
+The idea itself isn't new. I used the same principle in [the campaign that turned SEO audits into a standing build gate](/en/blog/en/multilingual-blog-technical-audit-campaign-2026/): don't leave a fix to human discipline, pin it in the pipeline. Accessibility is exactly the same. An audit should be a loop, not an event.
 
 The two-tier structure in one picture:
 
@@ -205,7 +205,7 @@ graph TD
 
 Honestly, passing both tiers still doesn't guarantee the page is accessible. That's not an axe-core limitation, it's a limit on automated checking as a whole.
 
-There's a well-known set of things axe-core can't catch. Can you reach and operate every button and link with the keyboard alone? Does `Tab` order match the visual and logical order? When a modal opens, does focus get trapped inside it and return to where it was on close? Does the flow read sensibly start to finish through a screen reader? None of these can be judged by static markup analysis. In fact, on [the page I pushed to a Lighthouse accessibility score of 100](/en/blog/en/a11y-lighthouse-audit-fix-2026), a fake button that was just a `div` with an `onclick` scored full marks and still couldn't be pressed by keyboard.
+There's a well-known set of things axe-core can't catch. Can you reach and operate every button and link with the keyboard alone? Does `Tab` order match the visual and logical order? When a modal opens, does focus get trapped inside it and return to where it was on close? Does the flow read sensibly start to finish through a screen reader? None of these can be judged by static markup analysis. In fact, on [the page I pushed to a Lighthouse accessibility score of 100](/en/blog/en/a11y-lighthouse-audit-fix-2026/), a fake button that was just a `div` with an `onclick` scored full marks and still couldn't be pressed by keyboard.
 
 So I treat automated tools as a floor, not a ceiling. The violations axe-core catches are the lower bound that must be zero, the ones nobody should have to spend time confirming by hand. Pin that floor with CI and spend the freed-up time on keyboard walkthroughs and screen-reader read-alongs. The moment you believe the tool does all of it, the half the tool can't see ships straight to production.
 
@@ -221,4 +221,4 @@ Accessibility isn't about fixing something once, it's about stopping the regress
 
 ---
 
-I take on consulting and commission work around emitting structured data reliably server-side, and auditing an existing site's accessibility and search readiness on measured evidence, then pinning it behind a gate. If you've hit a wall building a similar pipeline, the contact details on my [profile](/en/about) are open.
+I take on consulting and commission work around emitting structured data reliably server-side, and auditing an existing site's accessibility and search readiness on measured evidence, then pinning it behind a gate. If you've hit a wall building a similar pipeline, the contact details on my [profile](/en/about/) are open.

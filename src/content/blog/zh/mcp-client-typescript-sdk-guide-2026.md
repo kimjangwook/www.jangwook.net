@@ -49,7 +49,7 @@ Claude Desktop 连接 MCP 服务器时，内部究竟发生了什么？我一直
 
 ## 亲自做一遍 Claude Desktop 所做的事
 
-MCP（Model Context Protocol）是 AI 智能体访问外部工具和数据的标准接口。此前我写了很多关于构建 MCP 服务器的文章，包括[用 TypeScript 构建 MCP 服务器](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)和[用 Python FastMCP 在30分钟内搭建服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)。但我从没写过自己实现客户端的文章。
+MCP（Model Context Protocol）是 AI 智能体访问外部工具和数据的标准接口。此前我写了很多关于构建 MCP 服务器的文章，包括[用 TypeScript 构建 MCP 服务器](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/)和[用 Python FastMCP 在30分钟内搭建服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)。但我从没写过自己实现客户端的文章。
 
 考虑生产场景，明确需要自定义 MCP 客户端的情况确实存在：
 
@@ -233,7 +233,7 @@ async function callToolSafe(client, name, args) {
 }
 ```
 
-这是 MCP 规范中的有意设计。工具执行错误通过内容返回，而非抛出异常。这与 Claude 智能体将工具执行失败作为"文本消息"接收并继续推理的方式完全吻合。而你用什么格式序列化这个结果再传回去，直接决定了输入 token 成本。由于[同一份数据因格式不同最多会差出 62% 的 token](/zh/blog/zh/llm-token-cost-data-format-experiment)，把平坦结果用 CSV、TSV 而非 JSON 返回这个小决定，会改变整个智能体的成本。
+这是 MCP 规范中的有意设计。工具执行错误通过内容返回，而非抛出异常。这与 Claude 智能体将工具执行失败作为"文本消息"接收并继续推理的方式完全吻合。而你用什么格式序列化这个结果再传回去，直接决定了输入 token 成本。由于[同一份数据因格式不同最多会差出 62% 的 token](/zh/blog/zh/llm-token-cost-data-format-experiment/)，把平坦结果用 CSV、TSV 而非 JSON 返回这个小决定，会改变整个智能体的成本。
 
 ## Promise.all 并行调用 — 4个请求仅需 1ms
 
@@ -282,7 +282,7 @@ Parallel calls (4 ops) in 1ms:
 
 **构建自定义智能体框架**
 
-不使用 LangGraph 或 LlamaIndex，直接写自己的智能体时，MCP 客户端可以作为工具执行层嵌入智能体循环。用 `listTools()` 获取工具列表注入 LLM 提示词，解析模型响应后用 `callTool()` 执行。如何系统地为 AI 智能体附加工具，[Claude Agent SDK tool use 完整指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)对此有详细说明。
+不使用 LangGraph 或 LlamaIndex，直接写自己的智能体时，MCP 客户端可以作为工具执行层嵌入智能体循环。用 `listTools()` 获取工具列表注入 LLM 提示词，解析模型响应后用 `callTool()` 执行。如何系统地为 AI 智能体附加工具，[Claude Agent SDK tool use 完整指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)对此有详细说明。
 
 **测试和调试 MCP 服务器**
 

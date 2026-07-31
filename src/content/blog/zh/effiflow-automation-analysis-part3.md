@@ -63,8 +63,8 @@ relatedPosts:
 
 > <strong>EffiFlow 自动化结构分析/评估与改进系列</strong> (3/3) - 最终篇
 >
-> 1. [Part 1: 通过元数据节省71%成本](/zh/blog/zh/effiflow-automation-analysis-part1)
-> 2. [Part 2: Skills自动发现与58%令牌节省](/zh/blog/zh/effiflow-automation-analysis-part2)
+> 1. [Part 1: 通过元数据节省71%成本](/zh/blog/zh/effiflow-automation-analysis-part1/)
+> 2. [Part 2: Skills自动发现与58%令牌节省](/zh/blog/zh/effiflow-automation-analysis-part2/)
 > 3. <strong>Part 3: 实战改进案例及ROI分析</strong> ← 当前文章
 
 ## 引言

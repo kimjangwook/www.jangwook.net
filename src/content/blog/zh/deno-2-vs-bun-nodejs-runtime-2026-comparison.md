@@ -122,7 +122,7 @@ import _ from "npm:lodash@4";
 
 使用`npm:`指定符不需要单独安装步骤。首次运行时下载到Deno的全局缓存，之后可离线使用。没有node_modules一开始会觉得陌生，但克隆项目后无需任何安装步骤就能运行的优势很大。
 
-当我写[Bun Shell脚本指南](/zh/blog/zh/bun-shell-scripting-practical-guide-2026)时，Bun的npm兼容性让我能直接使用现有的实用工具库，没有任何障碍。Deno的`npm:`方式在脚本实验和新项目中更方便。
+当我写[Bun Shell脚本指南](/zh/blog/zh/bun-shell-scripting-practical-guide-2026/)时，Bun的npm兼容性让我能直接使用现有的实用工具库，没有任何障碍。Deno的`npm:`方式在脚本实验和新项目中更方便。
 
 ## 安全模型：这才是真正的区别
 
@@ -166,7 +166,7 @@ import { createHash } from "node:crypto";
 import { EventEmitter } from "node:events";
 ```
 
-我直接测试了这段代码，Bun和Deno都能正常运行。`crypto.createHash("sha256")`、EventEmitter、`fs.existsSync`全部通过。就像[在Cloudflare Workers上运行Hono.js](/zh/blog/zh/hono-typescript-api-2026)一样，Hono在Bun和Deno上都能正常工作。
+我直接测试了这段代码，Bun和Deno都能正常运行。`crypto.createHash("sha256")`、EventEmitter、`fs.existsSync`全部通过。就像[在Cloudflare Workers上运行Hono.js](/zh/blog/zh/hono-typescript-api-2026/)一样，Hono在Bun和Deno上都能正常工作。
 
 ## TypeScript支持：版本差异值得关注
 
@@ -268,7 +268,7 @@ bun test counter.test.ts     # 特定文件
 bun test --watch             # 监视模式
 ```
 
-`bun:test`与Jest兼容。现有Jest测试往往无需修改即可运行。类似于[从Jest迁移到Vitest](/zh/blog/zh/vitest-4-jest-migration-guide-2026)，迁移到Bun时describe/test/expect API是相同的。
+`bun:test`与Jest兼容。现有Jest测试往往无需修改即可运行。类似于[从Jest迁移到Vitest](/zh/blog/zh/vitest-4-jest-migration-guide-2026/)，迁移到Bun时describe/test/expect API是相同的。
 
 **Deno测试**
 
@@ -376,7 +376,7 @@ bun build --compile index.ts --outfile server
 **应该使用 Deno 的场景**
 
 - 新的 TypeScript 项目。类型检查、默认沙箱和免安装的 `npm:` 指定符一次到位。
-- CLI 工具或短脚本。冷启动快，便于以单一二进制分发。例如把[用 Node.js 内置 SQLite 构建本地数据工具](/zh/blog/zh/node-sqlite-builtin-practical-guide-2026)的工作迁移到 Deno，就可以用权限标志收窄磁盘访问范围。
+- CLI 工具或短脚本。冷启动快，便于以单一二进制分发。例如把[用 Node.js 内置 SQLite 构建本地数据工具](/zh/blog/zh/node-sqlite-builtin-practical-guide-2026/)的工作迁移到 Deno，就可以用权限标志收窄磁盘访问范围。
 - 在服务器或 CI/CD 中运行未知的第三方包。权限模型成为实质性的防御线。
 
 **应该避免 Deno 的场景**
@@ -384,7 +384,7 @@ bun build --compile index.ts --outfile server
 - 深度依赖 npm 专属包的现有代码库。兼容性已改善，但部分原生插件仍有摩擦。
 - 团队难以承受管理权限标志的初期摩擦。复杂应用中 `--allow-*` 列表会变长。
 
-如果还要一并设计类型安全的数据层，不妨在两种运行时上都验证一下[Drizzle ORM 与 TypeScript 的组合](/zh/blog/zh/drizzle-orm-typescript-complete-guide-2026)。Drizzle 在 Bun 和 Deno 上表现一致。
+如果还要一并设计类型安全的数据层，不妨在两种运行时上都验证一下[Drizzle ORM 与 TypeScript 的组合](/zh/blog/zh/drizzle-orm-typescript-complete-guide-2026/)。Drizzle 在 Bun 和 Deno 上表现一致。
 
 ## 来源与官方文档
 

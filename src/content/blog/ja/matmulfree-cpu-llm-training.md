@@ -160,7 +160,7 @@ MatMul-Freeアーキテクチャは、GPUアクセスが制限された環境で
 - <strong>発展途上国</strong>：高価なGPUなしでもローカルAIモデル開発が可能
 - <strong>プロトタイピング</strong>：アイデアの素早い検証にGPU待ちが不要
 
-APIコスト削減を検討しているなら、[RTK: Rustベースのトークン圧縮でLLMコストを60%削減](/ja/blog/ja/rtk-rust-token-killer-llm-cost-optimization-guide-2026)も効果的な選択肢です。
+APIコスト削減を検討しているなら、[RTK: Rustベースのトークン圧縮でLLMコストを60%削減](/ja/blog/ja/rtk-rust-token-killer-llm-cost-optimization-guide-2026/)も効果的な選択肢です。
 
 ### 2. エッジデバイスでの推論
 
@@ -170,7 +170,7 @@ APIコスト削減を検討しているなら、[RTK: Rustベースのトーク�
 - <strong>モバイル</strong>：バッテリー消費を最小化しながらオンデバイス推論
 - <strong>ニューロモーフィックチップ</strong>：論文によると非同期処理でエッジGPU比4倍のスループット、10倍のエネルギー削減
 
-[8GB VRAMで動作するQwen3-Coder](/ja/blog/ja/qwen3-coder-8gb-vram)のように、コンシューマーグレードのハードウェアでも高性能AIモデルの実行が可能になりつつある流れと軌を一にしています。
+[8GB VRAMで動作するQwen3-Coder](/ja/blog/ja/qwen3-coder-8gb-vram/)のように、コンシューマーグレードのハードウェアでも高性能AIモデルの実行が可能になりつつある流れと軌を一にしています。
 
 ### 3. 現実的な限界
 
@@ -190,7 +190,7 @@ MatMul-Freeアーキテクチャはまだ初期段階ですが、いくつかの
 3. <strong>ハードウェア最適化</strong>：三値演算に特化したカスタムハードウェアやFPGAアクセラレーション
 4. <strong>ハイブリッドアプローチ</strong>：コアレイヤーはMatMul-Free、出力は従来方式の混合
 
-[NVIDIA DGX Spark](/ja/blog/ja/nvidia-dgx-spark-cuda-compatibility)のような個人向けAI専用ハードウェアの普及とあわせて、三値演算に特化したチップセット開発が加速する可能性があります。
+[NVIDIA DGX Spark](/ja/blog/ja/nvidia-dgx-spark-cuda-compatibility/)のような個人向けAI専用ハードウェアの普及とあわせて、三値演算に特化したチップセット開発が加速する可能性があります。
 
 ## 結論
 

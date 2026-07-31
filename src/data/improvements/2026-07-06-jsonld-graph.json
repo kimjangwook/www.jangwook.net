@@ -51,7 +51,7 @@
     "ja": "高",
     "zh": "高"
   },
-  "sourceReport": "/{lang}/blog/{lang}/json-ld-graph-entity-linking-2026",
+  "sourceReport": "/{lang}/blog/{lang}/json-ld-graph-entity-linking-2026/",
   "description": {
     "ko": "분리돼 있던 스키마 블록을 @id 상호 참조 기반의 단일 @graph로 통합 (Organization·Person·WebSite·WebPage·BreadcrumbList·BlogPosting), 연결성은 그래프 알고리즘으로 검증",
     "en": "Merged separate schema blocks into one @graph with @id cross-references (Organization, Person, WebSite, WebPage, BreadcrumbList, BlogPosting), connectivity verified algorithmically",

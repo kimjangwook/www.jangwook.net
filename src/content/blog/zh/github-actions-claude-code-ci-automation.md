@@ -279,7 +279,7 @@ claude -p \
   --dangerously-skip-permissions
 ```
 
-与[基于Claude Code钩子的代码审查自动化](/zh/blog/zh/claude-code-hooks-workflow)相比：钩子针对提交前的本地检查进行了优化，而GitHub Actions作为团队PR入口使用，两者互补。
+与[基于Claude Code钩子的代码审查自动化](/zh/blog/zh/claude-code-hooks-workflow/)相比：钩子针对提交前的本地检查进行了优化，而GitHub Actions作为团队PR入口使用，两者互补。
 
 ## 通过CLAUDE.md注入项目规则
 
@@ -296,7 +296,7 @@ claude -p \
 - 夜间审计（20个文件）：$0.80〜1.50
 - 月度（50个PR + 30次夜间）：$20〜60
 
-与[Anthropic原生Claude Code Review功能](/zh/blog/zh/claude-code-review-multi-agent-pr)每次PR $15〜25相比，要便宜得多。虽然深度不如多代理审查，但用于捕获bug和安全问题已经足够。
+与[Anthropic原生Claude Code Review功能](/zh/blog/zh/claude-code-review-multi-agent-pr/)每次PR $15〜25相比，要便宜得多。虽然深度不如多代理审查，但用于捕获bug和安全问题已经足够。
 
 `--max-budget-usd`是最重要的安全网。设置后，即使遇到异常大的diff或意外的重复调用，也会在指定金额时自动停止。
 

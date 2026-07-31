@@ -49,7 +49,7 @@ faq:
 在日本工作期间发现的B2B自动化需求:
 
 1. <strong>免税处理业务依赖人工操作</strong>:需要人工核对护照和免税单据并手工录入
-2. <strong>财务工作重复性高</strong>:收据OCR后仍需手动整理数据。[用真实数据看AI财务自动化的效果](/zh/blog/zh/effiflow-automation-analysis-part1)从数字角度展示了这一问题的严重程度。
+2. <strong>财务工作重复性高</strong>:收据OCR后仍需手动整理数据。[用真实数据看AI财务自动化的效果](/zh/blog/zh/effiflow-automation-analysis-part1/)从数字角度展示了这一问题的严重程度。
 3. <strong>现有解决方案的局限性</strong>:要么是昂贵的企业级方案,要么是精度低的通用OCR
 
 作为独立开发者,差异化的关键在于<strong>利用AI提取结构化数据</strong>。不仅仅是文字OCR,而是通过Google Gemini API的Structured Output功能获取类型安全的JSON响应,提供可以直接用于业务逻辑的数据。关于这个服务后续的方向调整,请参见Agent Effi Flow的转型决策与待客机器人构想。
@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript类型定义
    - Zod schema验证
    
-   借助AI工具将副业项目发展为公司规模的做法,在effloow：从副业到AI公司中也有详细介绍。把多个智能体串联起来自动化工作的实战经验,我整理在[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)中。
+   借助AI工具将副业项目发展为公司规模的做法,在effloow：从副业到AI公司中也有详细介绍。把多个智能体串联起来自动化工作的实战经验,我整理在[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement/)中。
 
 3. <strong>Vercel Preview Deployments</strong>
    - 每个PR自动部署URL
@@ -734,7 +734,7 @@ const optimized = await sharp(imageBuffer)
 <strong>适合采用这套方案的情况</strong>:
 
 - 独立开发者或小团队需要快速验证MVP。托管后端(Supabase)与无服务器部署(Vercel)几乎消除了所有基础设施运维负担。
-- AI推理成本直接计入单位经济的按量计费服务。Gemini 2.5 Flash低廉的token单价保护了利润率。关于AI运营成本的现实拆解,我在<a href="/zh/blog/zh/ai-agent-cost-reality">AI智能体成本的现实</a>中做了更深入的探讨。
+- AI推理成本直接计入单位经济的按量计费服务。Gemini 2.5 Flash低廉的token单价保护了利润率。关于AI运营成本的现实拆解,我在<a href="/zh/blog/zh/ai-agent-cost-reality/">AI智能体成本的现实</a>中做了更深入的探讨。
 - 流量波动大或早期几乎为零的服务。无服务器计费在空闲时成本接近于0。
 - 结构化数据提取是核心价值的场景。Structured Output直接省去了整个解析层。
 
@@ -742,10 +742,10 @@ const optimized = await sharp(imageBuffer)
 
 - 有严格数据治理或本地部署要求。把图像发送到外部LLM API这一结构本身就可能撞上合规壁垒。
 - 对毫秒级延迟敏感的工作负载。LLM推理需要数百毫秒到数秒,不适合实时处理。
-- 每月数百万次以上稳定且可预测的大批量处理。在这个规模下,专用基础设施或自托管模型在单价上会优于无服务器与按次API。基于真实运营数据验证的成本与效果分析,可参见<a href="/zh/blog/zh/effiflow-automation-analysis-part2">Effi Flow自动化分析</a>。
+- 每月数百万次以上稳定且可预测的大批量处理。在这个规模下,专用基础设施或自托管模型在单价上会优于无服务器与按次API。基于真实运营数据验证的成本与效果分析,可参见<a href="/zh/blog/zh/effiflow-automation-analysis-part2/">Effi Flow自动化分析</a>。
 - OCR错误会直接酿成事故的高风险领域(医疗处方、法律合同原件)。必须保留人工复核环节,"完全自动化"的前提随之瓦解。
 
-学习新工具的成本同样不可忽视。对已经精通React/Next.js的团队来说,切换到SvelteKit的学习成本有时会超过其在打包体积上的收益。独立开发者用AI工具提升生产力的实际模式,我整理在<a href="/zh/blog/zh/claude-code-insights-usage-analysis">Claude Code使用分析</a>中。
+学习新工具的成本同样不可忽视。对已经精通React/Next.js的团队来说,切换到SvelteKit的学习成本有时会超过其在打包体积上的收益。独立开发者用AI工具提升生产力的实际模式,我整理在<a href="/zh/blog/zh/claude-code-insights-usage-analysis/">Claude Code使用分析</a>中。
 
 ## 参考资料
 

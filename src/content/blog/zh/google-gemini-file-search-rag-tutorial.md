@@ -76,7 +76,7 @@ relatedPosts:
 
 ### RAG的基本概念
 
-RAG(检索增强生成)是克服LLM局限性的技术。LLM只知道训练数据,不了解最新信息或特定企业的内部文档。RAG通过以下方式解决这个问题。(如果你想了解嵌入质量对RAG管道检索精度的影响,请参阅 [Gemini Embedding 2 多模态RAG指南](/zh/blog/zh/gemini-embedding-2-multimodal-rag-pipeline)。)
+RAG(检索增强生成)是克服LLM局限性的技术。LLM只知道训练数据,不了解最新信息或特定企业的内部文档。RAG通过以下方式解决这个问题。(如果你想了解嵌入质量对RAG管道检索精度的影响,请参阅 [Gemini Embedding 2 多模态RAG指南](/zh/blog/zh/gemini-embedding-2-multimodal-rag-pipeline/)。)
 
 ```mermaid
 graph LR
@@ -709,7 +709,7 @@ streamlit run web_app.py
 
 ### LangChain + Vector DB vs 托管RAG
 
-自行构建时,向量DB的选择对性能影响很大。Qdrant、ChromaDB和pgvector的实测基准对比结果可在 [Vector DB比较2026选择指南](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector) 中查看。
+自行构建时,向量DB的选择对性能影响很大。Qdrant、ChromaDB和pgvector的实测基准对比结果可在 [Vector DB比较2026选择指南](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector/) 中查看。
 
 | 方面 | 自行构建(LangChain) | Gemini File Search |
 |------|---------------------|-------------------|

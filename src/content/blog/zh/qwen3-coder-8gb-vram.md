@@ -177,13 +177,13 @@ RTX 5090凭借32GB VRAM和高内存带宽，设置`max_gpu_cache=120`时有望�
 
 1. <strong>模型结构分析是优化的起点</strong>：了解MoE模型的专家分布可实现选择性加载
 2. <strong>多层缓存是关键</strong>：VRAM → Pinned RAM → SSD的缓存策略实现了300倍加速
-3. <strong>硬件进化缩小差距</strong>：下一代GPU可能达到实用速度。[llama.cpp的计算图优化](/zh/blog/zh/qwen3-coder-next-llama-cpp-graph-optimization)等软件层面的方法也在快速缩小这一差距。
+3. <strong>硬件进化缩小差距</strong>：下一代GPU可能达到实用速度。[llama.cpp的计算图优化](/zh/blog/zh/qwen3-coder-next-llama-cpp-graph-optimization/)等软件层面的方法也在快速缩小这一差距。
 
 ## 结论
 
 在8GB VRAM上运行Qwen3-Coder-Next 80B是一项技术上令人印象深刻的成就。虽然目前1.2 t/s的速度不足以支持实时编码辅助，但随着下一代GPU和优化技术的发展，在消费级硬件上运行大型编码模型正越来越接近现实。
 
-对本地LLM感兴趣的开发者可以查看[nalexand的GitHub仓库](https://github.com/nalexand/Qwen3-Coder-OPTIMIZED)，在自己的硬件上亲自实验。如果还想进一步减少VRAM占用，请参考[通过4bit量化将VRAM减少最多70%的Heretic 1.2方法](/zh/blog/zh/heretic-12-vram-reduction)。
+对本地LLM感兴趣的开发者可以查看[nalexand的GitHub仓库](https://github.com/nalexand/Qwen3-Coder-OPTIMIZED)，在自己的硬件上亲自实验。如果还想进一步减少VRAM占用，请参考[通过4bit量化将VRAM减少最多70%的Heretic 1.2方法](/zh/blog/zh/heretic-12-vram-reduction/)。
 
 ## 参考资料
 

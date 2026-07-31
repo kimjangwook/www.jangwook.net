@@ -203,7 +203,7 @@ graph TD
 
 具体来看：
 
-1. <strong>AI Agent编排</strong>: 设计使用哪些Agent、以何种组合运行，以及[Agent间的协作模式](/zh/blog/zh/multi-agent-orchestration-improvement)
+1. <strong>AI Agent编排</strong>: 设计使用哪些Agent、以何种组合运行，以及[Agent间的协作模式](/zh/blog/zh/multi-agent-orchestration-improvement/)
 2. <strong>质量阈值设定</strong>: 根据业务需求调整概率测试的通过标准。支付系统99.9%，管理后台95%等
 3. <strong>成本优化</strong>: 决定如何将每天$1000的计算预算分配到各个任务
 4. <strong>需求质量管理</strong>: AI要生成正确的代码，需求必须清晰。模糊的需求产生模糊的结果
@@ -243,10 +243,10 @@ Software Factory模式堪称软件开发的<strong>工业革命</strong>。正�
 
 重要的是，这一变化并非让开发者变得不必要，而是<strong>重新定义开发者的角色</strong>。从写代码的人变为设计和监督系统的人。EM从管理团队的人变为优化工厂流水线的人。
 
-每天$1000的计算成本是这一转型的入场券。[Claude Code智能体团队指南](/zh/blog/zh/claude-agent-teams-guide)提供了实际智能体团队编排案例参考。而且这一成本还将持续下降。真正的问题不是"这个模式是否可行？"，而是<strong>"我们的组织是否为这一转型做好了准备？"</strong>
+每天$1000的计算成本是这一转型的入场券。[Claude Code智能体团队指南](/zh/blog/zh/claude-agent-teams-guide/)提供了实际智能体团队编排案例参考。而且这一成本还将持续下降。真正的问题不是"这个模式是否可行？"，而是<strong>"我们的组织是否为这一转型做好了准备？"</strong>
 
 ## 参考资料
 
 - [Software Factories And The Agentic Moment — iwashi86](https://iwashi.co/2025/02/01/Software-Factories-And-The-Agentic-Moment)
-- [Claude Agent SDK — 通过Tool Use实现AI代理](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)
+- [Claude Agent SDK — 通过Tool Use实现AI代理](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)
 - [Statistical Quality Control in Manufacturing — ASQ](https://asq.org/quality-resources/statistical-quality-control)

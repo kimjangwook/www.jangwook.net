@@ -59,7 +59,7 @@ relatedPosts:
 ---
 ## 概述
 
-Selenium、Cypress、[Playwright](/zh/blog/zh/playwright-ai-testing) 等传统E2E测试工具通过CSS选择器和命令式代码来编写测试。一旦UI发生变更，选择器就会失效，需要修改大量测试文件。
+Selenium、Cypress、[Playwright](/zh/blog/zh/playwright-ai-testing/) 等传统E2E测试工具通过CSS选择器和命令式代码来编写测试。一旦UI发生变更，选择器就会失效，需要修改大量测试文件。
 
 `<strong>`OpenClaw`</strong>`从根本上采用了不同的方式来解决这个问题。AI代理基于无障碍树（Accessibility Tree）理解网页，解释并执行以自然语言编写的测试场景。浏览器自动化、设备管理、定时调度、多代理编排均可在同一平台上统一运行。
 
@@ -98,7 +98,7 @@ graph TD
 | `<strong>`Browser`</strong>`    | 基于Chromium的Web自动化       | Web应用功能·UI测试    |
 | `<strong>`Nodes`</strong>`      | 设备控制（macOS/iOS/Android） | 跨平台测试             |
 | `<strong>`Cron`</strong>`       | 调度引擎                      | 定期测试执行触发器     |
-| `<strong>`Sub-agents`</strong>` | 并行代理执行                  | [测试套件并行化](/zh/blog/zh/claude-code-parallel-testing)         |
+| `<strong>`Sub-agents`</strong>` | 并行代理执行                  | [测试套件并行化](/zh/blog/zh/claude-code-parallel-testing/)         |
 | `<strong>`Canvas`</strong>`     | 可视化工作空间                | UI回归测试·结果仪表盘 |
 
 ## 浏览器自动化：基于无障碍树的测试
@@ -333,7 +333,7 @@ openclaw cron add \
 
 ### 并行测试执行
 
-[子代理](/zh/blog/zh/ai-agent-collaboration-patterns)是在后台独立运行的代理。可以同时执行多个测试，完成后自动报告结果。
+[子代理](/zh/blog/zh/ai-agent-collaboration-patterns/)是在后台独立运行的代理。可以同时执行多个测试，完成后自动报告结果。
 
 ```mermaid
 graph TD

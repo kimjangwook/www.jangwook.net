@@ -42,7 +42,7 @@ faq:
     answer: "총 36시간을 투자했고 월 68시간을 절감해 약 0.53개월, 즉 16일 만에 투자를 회수했습니다."
 ---
 
-블로그 자동화 시스템에 서브에이전트가 17개, 커맨드가 6개, 스킬이 4개까지 쌓이자 어느 순간 손을 대기가 무서워졌다. 파일 하나를 고치면 어디서 다른 게 깨질지 알 수 없는 상태였다. 그래서 단일 AI로 하나씩 훑는 대신, Claude Code의 멀티 에이전트 오케스트레이션 패턴을 써서 48개 파일을 한꺼번에 분석하고 61개 이슈를 정리한 과정을 기록으로 남긴다. Claude Code를 실제로 집중 운용할 때의 비용과 효율에 대한 분석은 [Claude Code 실사용 분석 인사이트](/ko/blog/ko/claude-code-insights-usage-analysis)에서 별도로 다뤘다.
+블로그 자동화 시스템에 서브에이전트가 17개, 커맨드가 6개, 스킬이 4개까지 쌓이자 어느 순간 손을 대기가 무서워졌다. 파일 하나를 고치면 어디서 다른 게 깨질지 알 수 없는 상태였다. 그래서 단일 AI로 하나씩 훑는 대신, Claude Code의 멀티 에이전트 오케스트레이션 패턴을 써서 48개 파일을 한꺼번에 분석하고 61개 이슈를 정리한 과정을 기록으로 남긴다. Claude Code를 실제로 집중 운용할 때의 비용과 효율에 대한 분석은 [Claude Code 실사용 분석 인사이트](/ko/blog/ko/claude-code-insights-usage-analysis/)에서 별도로 다뤘다.
 
 ## 1. 왜 대규모 개선이 필요했는가
 
@@ -74,7 +74,7 @@ graph LR
     style H fill:#4CAF50
 ```
 
-목표는 단순히 버그를 수정하는 것이 아니라, <strong>시스템 전체의 품질을 체계적으로 향상</strong>시키는 것이었다. Claude Code에서 에이전트 워크플로우를 구조화하는 5가지 패턴은 [Claude Agent SDK 도구 사용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 체계적으로 다루고 있다.
+목표는 단순히 버그를 수정하는 것이 아니라, <strong>시스템 전체의 품질을 체계적으로 향상</strong>시키는 것이었다. Claude Code에서 에이전트 워크플로우를 구조화하는 5가지 패턴은 [Claude Agent SDK 도구 사용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 체계적으로 다루고 있다.
 
 ## 2. 48개 파일을 어떻게 나눠 분석했나
 
@@ -1562,7 +1562,7 @@ roi_months = investment["total"] / monthly_savings["total"]
 - <strong>탐색적이라 범위가 매번 바뀔 때</strong>: 무엇을 고칠지 아직 모르는 단계에서는 분할 기준 자체가 흔들린다. 먼저 단일 에이전트로 전체를 훑어 윤곽을 잡은 뒤에 분할한다.
 - <strong>비용·지연에 민감할 때</strong>: 여러 에이전트를 동시에 돌리면 토큰과 호출이 곱으로 늘 수 있다. 메타데이터 캐싱 없이 무작정 병렬화하면 오히려 비싸진다.
 
-요약하면, 멀티 에이전트는 <strong>독립적이고 큰 작업</strong>에 강하고 <strong>작고 얽힌 작업</strong>에 약하다. 의심스러우면 단일 에이전트로 시작해, 컨텍스트가 넘칠 때 비로소 분할한다. 에이전트팀 단위의 협업 구조가 더 궁금하다면 [Claude Code 에이전트 팀 실전 가이드](/ko/blog/ko/claude-agent-teams-guide)를 참고하면 좋다.
+요약하면, 멀티 에이전트는 <strong>독립적이고 큰 작업</strong>에 강하고 <strong>작고 얽힌 작업</strong>에 약하다. 의심스러우면 단일 에이전트로 시작해, 컨텍스트가 넘칠 때 비로소 분할한다. 에이전트팀 단위의 협업 구조가 더 궁금하다면 [Claude Code 에이전트 팀 실전 가이드](/ko/blog/ko/claude-agent-teams-guide/)를 참고하면 좋다.
 
 ## 7. 내 프로젝트에 그대로 적용하려면
 
@@ -1698,7 +1698,7 @@ ROI: 1주일 만에 회수
 
 오케스트레이션이라고 하면 여러 AI를 동시에 돌리는 그림부터 떠올리기 쉬운데, 핵심은 그게 아니었다. <strong>각 에이전트의 전문성을 최대한 활용</strong>하고, <strong>체계적인 피드백 루프</strong>로 품질을 끌어올리며, <strong>메타데이터 아키텍처</strong>로 효율을 짜내는 것. 동시 실행은 부수적인 결과일 뿐이다.
 
-48개 파일과 61개 이슈를 직접 만지면서 남은 교훈은 단순하다. 복잡한 문제는 작게 쪼개고, 전문가에게 맡기고, 될 때까지 다시 본다. 병렬 작업을 위한 Git Worktree 활용법은 [Claude Code 병렬 세션과 Git Worktree](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)에서 확인할 수 있다.
+48개 파일과 61개 이슈를 직접 만지면서 남은 교훈은 단순하다. 복잡한 문제는 작게 쪼개고, 전문가에게 맡기고, 될 때까지 다시 본다. 병렬 작업을 위한 Git Worktree 활용법은 [Claude Code 병렬 세션과 Git Worktree](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)에서 확인할 수 있다.
 
 여러분의 프로젝트에서도 이 패턴을 적용해보면 된다. 첫 달은 시행착오가 있겠지만, 두 번째 달부터는 놀라운 효율을 경험하게 될 것이다. 멀티 에이전트 시스템의 규모와 한계에 대해서는 구글의 에이전트 스케일링 과학 연구도 참고할 만하다.
 

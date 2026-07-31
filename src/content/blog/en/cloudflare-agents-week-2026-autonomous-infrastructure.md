@@ -59,7 +59,7 @@ Past the headline, here are the things I'd actually build with.
 
 **Sandboxes GA**: Nine months from beta (June 2025) to general availability. Each sandbox is an isolated Linux environment — real shell, real filesystem, background processes — that spins up on demand and, critically, picks up exactly where it left off after interruption. Sub-millisecond start times mean a code-generation agent can write, execute, observe output, and iterate in tight loops.
 
-[Compared to setting up a separate code execution environment alongside LangGraph or CrewAI](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production), Sandboxes shifts the question from "how do I configure the execution environment" to "which infrastructure layer do I trust to manage it." Those are meaningfully different decisions.
+[Compared to setting up a separate code execution environment alongside LangGraph or CrewAI](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/), Sandboxes shifts the question from "how do I configure the execution environment" to "which infrastructure layer do I trust to manage it." Those are meaningfully different decisions.
 
 **Artifacts**: Git-compatible versioned storage for agents. Create tens of millions of repos, fork from any remote, access with standard Git clients. Moved from private beta to public beta in early May. The practical use case: agents that produce code outputs now have a permanent home for those outputs, survives context resets, accessible from outside Cloudflare's stack.
 
@@ -140,7 +140,7 @@ Your Worker has access to the following bindings:
 [wrangler:info] GET / 200 OK (7ms)
 ```
 
-One important caveat: `@cloudflare/agents` is Workers runtime-only. Trying to run it with standard Node.js throws `ERR_UNSUPPORTED_ESM_URL_SCHEME` because of the `cloudflare:` protocol imports. You need Wrangler. [If you're used to SDKs like the Claude Agent SDK that run anywhere in Python or Node](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026), this is an adjustment.
+One important caveat: `@cloudflare/agents` is Workers runtime-only. Trying to run it with standard Node.js throws `ERR_UNSUPPORTED_ESM_URL_SCHEME` because of the `cloudflare:` protocol imports. You need Wrangler. [If you're used to SDKs like the Claude Agent SDK that run anywhere in Python or Node](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/), this is an adjustment.
 
 ## Architecture Choices Worth Understanding
 
@@ -152,13 +152,13 @@ A few design decisions in the SDK that reflect Cloudflare's broader approach:
 
 **Email handler**: `onEmail` lets agents receive email directly via Workers Email Routing. An agent that turns email into tasks is straightforward to write.
 
-[The way Dapr Agents handles state and messaging through Kubernetes sidecar patterns](/en/blog/en/dapr-agents-v1-cncf-production-ai-framework) contrasts interestingly here. Cloudflare's model is more code-centric; Dapr is more infrastructure-centric. Both have legitimate use cases.
+[The way Dapr Agents handles state and messaging through Kubernetes sidecar patterns](/en/blog/en/dapr-agents-v1-cncf-production-ai-framework/) contrasts interestingly here. Cloudflare's model is more code-centric; Dapr is more infrastructure-centric. Both have legitimate use cases.
 
 ## Where I'm Skeptical
 
 I'll be direct about the rough edges.
 
-**Vendor lock-in is significant.** The `cloudflare:workers` runtime dependency means your agent code doesn't run outside Cloudflare's stack. Migrating to a different platform later means substantial rewrites. [Containerized approaches like running MCP servers on Kubernetes](/en/blog/en/mcp-server-production-deployment-kubernetes-guide) don't have this problem — you trade operational simplicity now for portability.
+**Vendor lock-in is significant.** The `cloudflare:workers` runtime dependency means your agent code doesn't run outside Cloudflare's stack. Migrating to a different platform later means substantial rewrites. [Containerized approaches like running MCP servers on Kubernetes](/en/blog/en/mcp-server-production-deployment-kubernetes-guide/) don't have this problem — you trade operational simplicity now for portability.
 
 **Multi-agent orchestration is thin.** The single-agent story is compelling. But the SDK-level support for complex multi-agent coordination — handoffs, shared memory, hierarchical orchestration — is limited. Project Think is meant to address this but it's early. If your use case involves agents coordinating at scale, you'll need to build significant structure yourself.
 

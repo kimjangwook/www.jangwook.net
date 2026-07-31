@@ -123,7 +123,7 @@ langgraph-prebuilt, langgraph-sdk,
 pydantic, xxhash
 ```
 
-整整差了39个。ADK这么重的原因很明确：它从一开始就包含了整个Google Cloud栈（BigQuery、Spanner、Pub/Sub、Speech等）。如果不使用Google Cloud，这39个额外依赖全是死重。从依赖列表里有`mcp`就能看出，ADK原生支持MCP服务器接入；至于自己动手做一个MCP服务器再接上去，我在[用FastMCP构建Python MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)里另作了整理。
+整整差了39个。ADK这么重的原因很明确：它从一开始就包含了整个Google Cloud栈（BigQuery、Spanner、Pub/Sub、Speech等）。如果不使用Google Cloud，这39个额外依赖全是死重。从依赖列表里有`mcp`就能看出，ADK原生支持MCP服务器接入；至于自己动手做一个MCP服务器再接上去，我在[用FastMCP构建Python MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)里另作了整理。
 
 LangGraph的哲学是"按需取用"。LLM客户端自己注入，检查点后端自己选。更轻量，但要配置的事也更多。
 
@@ -188,7 +188,7 @@ Commands:
 
 不过，这个CLI完全绑定在Google生态系统内是个遗憾。用AWS或Azure的团队根本用不上`adk deploy`。内置的追踪也是输出到GCP的Cloud Trace，想接入其他可观测性栈需要额外配置。
 
-这方面，像[Langfuse这样的独立LLM追踪工具](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026)与LangGraph的结合会更自然、更灵活。
+这方面，像[Langfuse这样的独立LLM追踪工具](/zh/blog/zh/langfuse-self-hosted-llm-tracing-setup-guide-2026/)与LangGraph的结合会更自然、更灵活。
 
 ## 状态管理对比：会话 vs 检查点
 
@@ -430,7 +430,7 @@ ADK优化的是"快速构建智能体系统并部署到GCP"，LangGraph优化的
 - 想用一个工具搞定部署、评估和 UI，却没有余力另外搭建基础设施。LangGraph 只提供运行时。
 - 团队完全没有 LangChain 经验，主力语言又不是 Python。
 
-如果难以抉择，可以在[Python AI 智能体库对比](/zh/blog/zh/python-ai-agent-library-comparison-2026)中一并查看更广的选项。如果是以 RAG 为中心的工作流，[LlamaIndex vs LangChain vs Haystack 对比](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026)展示了框架决策的另一个维度。如果你把类型安全放在首位，[PydanticAI实战教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)则给出了另一种思路，值得一并对比。
+如果难以抉择，可以在[Python AI 智能体库对比](/zh/blog/zh/python-ai-agent-library-comparison-2026/)中一并查看更广的选项。如果是以 RAG 为中心的工作流，[LlamaIndex vs LangChain vs Haystack 对比](/zh/blog/zh/llamaindex-vs-langchain-vs-haystack-rag-2026/)展示了框架决策的另一个维度。如果你把类型安全放在首位，[PydanticAI实战教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)则给出了另一种思路，值得一并对比。
 
 ## 一手来源
 

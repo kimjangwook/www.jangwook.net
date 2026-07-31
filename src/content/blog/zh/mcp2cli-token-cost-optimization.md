@@ -156,7 +156,7 @@ mcp2cli在运行时读取规范并动态生成CLI，这意味着：
 以Claude Sonnet 4.6定价（$3/MTok）：每天节省约$711，每月约$21,000
 ```
 
-除成本外，保持上下文窗口整洁直接影响**模型推理质量和延迟**。如何在生产中系统性地追踪这些成本和质量指标，请参阅[AI智能体可观测性实践指南](/zh/blog/zh/ai-agent-observability-production-guide)。
+除成本外，保持上下文窗口整洁直接影响**模型推理质量和延迟**。如何在生产中系统性地追踪这些成本和质量指标，请参阅[AI智能体可观测性实践指南](/zh/blog/zh/ai-agent-observability-production-guide/)。
 
 ### 理解权衡取舍
 
@@ -233,7 +233,7 @@ mcp2cli解决的问题简单但实际。随着MCP生态系统的成熟，集成�
 - <strong>80个以上工具</strong>：月度成本差异开始变得显著
 - <strong>120个以上工具</strong>：这已成为生存策略，而非单纯的优化
 
-除了节省token，保持上下文窗口整洁对模型的实际推理质量也有积极影响。减少填充上下文窗口的噪声，与提示词工程同等重要的时代已经到来。作为降低LLM成本的另一个核心杠杆，[Claude API提示词缓存优化指南](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)也值得同步参考。
+除了节省token，保持上下文窗口整洁对模型的实际推理质量也有积极影响。减少填充上下文窗口的噪声，与提示词工程同等重要的时代已经到来。作为降低LLM成本的另一个核心杠杆，[Claude API提示词缓存优化指南](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide/)也值得同步参考。
 
 ---
 

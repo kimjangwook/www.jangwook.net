@@ -49,10 +49,10 @@ faq:
 
 > <strong>Series: DeNA LLM Study</strong> (5/5 - Final)
 >
-> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: Structured Output and Multi-LLM Pipelines
-> 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag)
+> 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag/)
 > 5. <strong>Part 5: Agent Design and Multi-Agent Orchestration</strong> ← Current Article
 
 ## From Autonomous Agents to Orchestration
@@ -89,7 +89,7 @@ Agent design and multi-agent setups look impressive, but they aren't the right t
 - The prototype stage, when you just want to confirm behavior. Multi-agent debugging is expensive, so validate with a single call first and split it out only when you have to.
 - A Network (free-form conversation) pattern with no cost ceiling. When conversation length runs away, so does the bill.
 
-In one line: <strong>reach for an agent only when "multiple stages plus tool calls plus memory" all show up at once. If even one is missing, suspect a simpler tool first.</strong> The cost trap of multi-agent setups is covered in [The Cost Reality of AI Agents](/en/blog/en/ai-agent-cost-reality), and a deeper take on orchestration continues in [Improving Multi-Agent Orchestration](/en/blog/en/multi-agent-orchestration-improvement).
+In one line: <strong>reach for an agent only when "multiple stages plus tool calls plus memory" all show up at once. If even one is missing, suspect a simpler tool first.</strong> The cost trap of multi-agent setups is covered in [The Cost Reality of AI Agents](/en/blog/en/ai-agent-cost-reality/), and a deeper take on orchestration continues in [Improving Multi-Agent Orchestration](/en/blog/en/multi-agent-orchestration-improvement/).
 
 ## 1. LLM Workflows with n8n
 

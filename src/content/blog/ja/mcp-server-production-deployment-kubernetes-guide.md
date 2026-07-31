@@ -79,7 +79,7 @@ MCPサーバーがなぜこれほど多く死ぬのかを把握し、自分の�
 
 ## 準備するもの
 
-このガイドはFastMCP（Python）で書いたMCPサーバーを基準にする。[MCPサーバーの最初の作り方は以前のポスト](/ja/blog/ja/mcp-server-build-practical-guide-2026)で扱ったので、ここではデプロイ部分だけを扱う。
+このガイドはFastMCP（Python）で書いたMCPサーバーを基準にする。[MCPサーバーの最初の作り方は以前のポスト](/ja/blog/ja/mcp-server-build-practical-guide-2026/)で扱ったので、ここではデプロイ部分だけを扱う。
 
 必要なもの：
 - Kubernetesクラスター（1.28以上推奨）
@@ -304,7 +304,7 @@ nginxのプロキシタイムアウトを延ばす必要がある。デフォル
 
 ## Step 5: OAuth 2.1で認証情報を管理する
 
-静的APIキーへの依存が最大の長期リスクだ。キーがGitHubに漏れたり、担当者が変わったり、サービスがキーを交換したりすると静かに壊れる。[MCPのセキュリティ関連CVE事例を見ると](/ja/blog/ja/mcp-security-crisis-30-cves-enterprise-hardening)、認証情報管理の失敗が繰り返しパターンになっている。
+静的APIキーへの依存が最大の長期リスクだ。キーがGitHubに漏れたり、担当者が変わったり、サービスがキーを交換したりすると静かに壊れる。[MCPのセキュリティ関連CVE事例を見ると](/ja/blog/ja/mcp-security-crisis-30-cves-enterprise-hardening/)、認証情報管理の失敗が繰り返しパターンになっている。
 
 Kubernetes Secretから環境変数として注入する基本的な方法：
 
@@ -382,7 +382,7 @@ spec:
 
 <strong>上流APIの変更検知</strong>：依存している外部APIがレスポンススキーマを変えるとMCPサーバーは生きているが엉뚱한値を返す。定期的に実際のツールを呼び出して結果を検証する統合テストが必要だ。
 
-[MCP Gatewayを使えば](/ja/blog/ja/mcp-gateway-agent-traffic-control)複数のMCPサーバーの前に単一の入り口を置き、一元的にヘルス状態を管理できる。サーバーが複数あるなら検討する価値がある。
+[MCP Gatewayを使えば](/ja/blog/ja/mcp-gateway-agent-traffic-control/)複数のMCPサーバーの前に単一の入り口を置き、一元的にヘルス状態を管理できる。サーバーが複数あるなら検討する価値がある。
 
 ## 実際にデプロイしてみると
 

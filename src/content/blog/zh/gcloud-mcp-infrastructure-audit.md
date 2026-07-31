@@ -96,11 +96,11 @@ Google Cloud 的 Security Command Center 和 Cloud Asset Inventory 是出色的�
 2. <strong>上下文感知</strong>：AI 理解并分析资源之间的关系
 3. <strong>自动化报告</strong>：生成结构化的分析结果和改进建议
 
-在AWS环境中使用MCP的方法，可参考[AWS MCP Server GA实战指南](/zh/blog/zh/aws-mcp-server-ga-practical-guide-2026)了解CloudWatch和IAM代理集成详情。
+在AWS环境中使用MCP的方法，可参考[AWS MCP Server GA实战指南](/zh/blog/zh/aws-mcp-server-ga-practical-guide-2026/)了解CloudWatch和IAM代理集成详情。
 
 ### 并行代理架构
 
-我没有使用单个代理顺序检查所有服务，而是应用了[并行子代理模式](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026)：
+我没有使用单个代理顺序检查所有服务，而是应用了[并行子代理模式](/zh/blog/zh/claude-agent-sdk-subagents-orchestration-tutorial-2026/)：
 
 ```mermaid
 flowchart TB
@@ -361,7 +361,7 @@ gcloud run services update my-service \
   --update-secrets=OPENAI_API_KEY=openai-api-key:latest
 ```
 
-AI 代理可以自动生成这些修复命令，并在批准后执行。关于密钥泄露风险的实际规模，可参考[AI编码代理泄露2900万个密钥的案例分析](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security)。
+AI 代理可以自动生成这些修复命令，并在批准后执行。关于密钥泄露风险的实际规模，可参考[AI编码代理泄露2900万个密钥的案例分析](/zh/blog/zh/ai-coding-secrets-sprawl-mcp-config-security/)。
 
 ### 示例：防火墙规则加固
 

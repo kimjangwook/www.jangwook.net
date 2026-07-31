@@ -49,7 +49,7 @@ What follows isn't a "this is theoretically possible" write-up. It's <strong>wha
 B2B automation needs discovered while working in Japan:
 
 1. <strong>Manual-dependent tax refund processing</strong>: Visual passport and tax refund document verification with manual data entry
-2. <strong>Repetitive accounting tasks</strong>: Manual data cleanup after receipt OCR. [AI accounting automation by the numbers](/en/blog/en/effiflow-automation-analysis-part1) shows just how significant this problem is with real data.
+2. <strong>Repetitive accounting tasks</strong>: Manual data cleanup after receipt OCR. [AI accounting automation by the numbers](/en/blog/en/effiflow-automation-analysis-part1/) shows just how significant this problem is with real data.
 3. <strong>Limitations of existing solutions</strong>: Either expensive enterprise solutions or low-accuracy generic OCR
 
 The differentiation point as an individual developer: <strong>Structured data extraction using AI</strong>. Beyond simple text OCR, using Google Gemini API's Structured Output feature to receive type-safe JSON responses immediately usable in business logic. For where the service headed next, see Agent Effi Flow's pivot decision and the Omotenashi bot concept.
@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript type definitions
    - Zod schema validation
    
-   The broader approach of using AI tools to grow a side project to company scale is covered in effloow: from side project to AI company. The hands-on details of chaining several agents to automate the work live in [my notes on improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement).
+   The broader approach of using AI tools to grow a side project to company scale is covered in effloow: from side project to AI company. The hands-on details of chaining several agents to automate the work live in [my notes on improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement/).
 
 3. <strong>Vercel Preview Deployments</strong>
    - Automatic deployment URL per PR
@@ -734,7 +734,7 @@ The 3-day launch worked because the problem and the stack lined up well. The sam
 <strong>When this approach fits well</strong>:
 
 - A solo developer or small team validating an MVP fast. A managed backend (Supabase) and serverless deployment (Vercel) remove almost all of the infrastructure overhead.
-- Usage-based services where AI inference cost flows straight into your unit economics. Gemini 2.5 Flash's cheap token pricing protects your margin. For a realistic breakdown of AI operating costs, see <a href="/en/blog/en/ai-agent-cost-reality">The Reality of AI Agent Costs</a>.
+- Usage-based services where AI inference cost flows straight into your unit economics. Gemini 2.5 Flash's cheap token pricing protects your margin. For a realistic breakdown of AI operating costs, see <a href="/en/blog/en/ai-agent-cost-reality/">The Reality of AI Agent Costs</a>.
 - Services with spiky or near-zero early traffic. Serverless billing drops to roughly zero when idle.
 - Cases where structured data extraction is the core value. Structured Output removes the entire parsing layer.
 
@@ -742,10 +742,10 @@ The 3-day launch worked because the problem and the stack lined up well. The sam
 
 - Strict data-governance or on-premise requirements. Sending images to an external LLM API can hit compliance walls on its own.
 - Latency-sensitive workloads where milliseconds matter. LLM inference takes hundreds of milliseconds to several seconds, so it is a poor fit for real-time processing.
-- Steady, predictable high-volume processing in the millions of calls per month. At that scale, dedicated infrastructure or a self-hosted model beats serverless and per-call APIs on unit cost. For a cost-and-impact analysis grounded in real operational data, see <a href="/en/blog/en/effiflow-automation-analysis-part2">Effi Flow Automation Analysis</a>.
+- Steady, predictable high-volume processing in the millions of calls per month. At that scale, dedicated infrastructure or a self-hosted model beats serverless and per-call APIs on unit cost. For a cost-and-impact analysis grounded in real operational data, see <a href="/en/blog/en/effiflow-automation-analysis-part2/">Effi Flow Automation Analysis</a>.
 - High-stakes domains where an OCR error becomes an incident (medical prescriptions, original legal contracts). You have to keep a human review step, which breaks the "fully automated" premise.
 
-The cost of learning a new tool is not trivial either. A team already fluent in React/Next.js may find that the learning cost of switching to SvelteKit outweighs the bundle-size savings. For the actual patterns of a solo developer raising productivity with AI tools, I wrote them up in <a href="/en/blog/en/claude-code-insights-usage-analysis">Claude Code Usage Analysis</a>.
+The cost of learning a new tool is not trivial either. A team already fluent in React/Next.js may find that the learning cost of switching to SvelteKit outweighs the bundle-size savings. For the actual patterns of a solo developer raising productivity with AI tools, I wrote them up in <a href="/en/blog/en/claude-code-insights-usage-analysis/">Claude Code Usage Analysis</a>.
 
 ## References
 

@@ -47,11 +47,11 @@ faq:
 
 "We work in an environment where cloud AI is not allowed." I honestly didn't get that at first. Then I started meeting the teams who live with it: people handling hospital medical records, reviewing legal documents, analyzing financial customer data. There are more of them than I assumed. Telling those teams to "just paste it into Claude or GPT" was never going to fly.
 
-Last week I wrote about [building an MCP server from scratch with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026). That post showed how to connect Claude Code as the client. Right after publishing, I got a question: "Can you use a local LLM as the client instead of Claude?"
+Last week I wrote about [building an MCP server from scratch with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/). That post showed how to connect Claude Code as the client. Right after publishing, I got a question: "Can you use a local LLM as the client instead of Claude?"
 
 Great question. And one I wanted to try myself.
 
-This post is the answer. Using Ollama + Gemma 4 + FastMCP, I built a fully offline AI tool pipeline that works without any internet connection. For the operational side of serving Gemma 4 with Ollama, my [Ollama + FastAPI production deployment guide](/en/blog/en/ollama-fastapi-production-deployment-guide-2026) goes deeper and pairs well with this.
+This post is the answer. Using Ollama + Gemma 4 + FastMCP, I built a fully offline AI tool pipeline that works without any internet connection. For the operational side of serving Gemma 4 with Ollama, my [Ollama + FastAPI production deployment guide](/en/blog/en/ollama-fastapi-production-deployment-guide-2026/) goes deeper and pairs well with this.
 
 > **Read the primary sources first.** Here are the official references for the tools used in this post. Check each project's current recommended setup before you start.
 > - Ollama official site: [ollama.com](https://ollama.com)
@@ -293,6 +293,6 @@ To take this further:
 
 Before moving this to production, check MCP security issues too. Being local doesn't eliminate tool injection or excessive permission risks — those are MCP-level concerns that persist regardless of deployment environment.
 
-If you'd prefer TypeScript over Python for the MCP client side, [@modelcontextprotocol/sdk TypeScript client guide](/en/blog/en/mcp-client-typescript-sdk-guide-2026) covers the same flow programmatically. For getting reliable structured JSON out of local models like Gemma 4, see the [Ollama structured outputs + Pydantic guide](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026).
+If you'd prefer TypeScript over Python for the MCP client side, [@modelcontextprotocol/sdk TypeScript client guide](/en/blog/en/mcp-client-typescript-sdk-guide-2026/) covers the same flow programmatically. For getting reliable structured JSON out of local models like Gemma 4, see the [Ollama structured outputs + Pydantic guide](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026/).
 
 All the code is above. Install everything with `pip install fastmcp uvicorn openai requests` and you're set. If anything breaks, test each step in isolation — that's faster than trying to debug the whole pipeline at once.

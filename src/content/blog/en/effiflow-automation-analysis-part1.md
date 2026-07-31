@@ -46,14 +46,14 @@ faq:
 
 > <strong>Series Guide</strong>: This is Part 1/3 of the "EffiFlow Automation Analysis/Evaluation and Improvements" series.
 > - <strong>Part 1</strong> (current): Core Architecture and Metrics Analysis
-> - [Part 2](/en/blog/en/effiflow-automation-analysis-part2): Skills and Commands Integration Strategy
+> - [Part 2](/en/blog/en/effiflow-automation-analysis-part2/): Skills and Commands Integration Strategy
 > - Part 3: Practical Improvement Cases and ROI Analysis
 
 ## I Was Burning 90,000 Tokens on Every Recommendation Run
 
 After running a blog automation system for the better part of a year, one thing kept nagging at me. Could this be leaner? So I sat down and spent 7.5 hours picking apart every file in the `.claude/` directory. Twenty-eight of them. 17 Agents, 4 Skills, 7 Commands. The count sounds modest, but once I started tracing actual token usage, the leaks were everywhere. If you're new to what Agents, Skills, and Commands actually are, the [official Claude Code documentation](https://code.claude.com/docs/en/overview) lays them out clearly.
 
-This analysis is really a continuation of my earlier write-up on [improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement). I went back to that same collaboration structure, this time through a cost lens.
+This analysis is really a continuation of my earlier write-up on [improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement/). I went back to that same collaboration structure, this time through a cost lens.
 
 The results were remarkable:
 - <strong>60-70% token reduction</strong> with metadata-first architecture
@@ -522,7 +522,7 @@ A multi-agent setup this size isn't the right answer for every blog. Having run 
 - You run a single language and your SEO metadata is already fine by hand. You'd be taking on complexity for no real gain.
 - Nobody on the team can maintain the system. When an agent definition changes, someone has to debug it. Weigh the operational burden before the dollar cost.
 
-In short, the break-even for automation is "frequency × repeatability × number of languages." If two of those three run high, build it. If two run low, hold off. I worked through similar tradeoffs in [the real cost of AI agents](/en/blog/en/ai-agent-cost-reality), which is worth reading alongside this if you're deciding.
+In short, the break-even for automation is "frequency × repeatability × number of languages." If two of those three run high, build it. If two run low, hold off. I worked through similar tradeoffs in [the real cost of AI agents](/en/blog/en/ai-agent-cost-reality/), which is worth reading alongside this if you're deciding.
 
 ## Practical Application Guide
 

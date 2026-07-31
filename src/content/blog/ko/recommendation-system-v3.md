@@ -723,6 +723,6 @@ V3 추천 시스템은 <strong>성능, 유지보수성, 확장성</strong> 모�
 ---
 
 <strong>관련 링크</strong>:
-- [V2 추천 시스템: 메타데이터 기반 최적화](/ko/blog/ko/metadata-based-recommendation-optimization)
-- [V1 추천 시스템: LLM 콘텐츠 기반 추천](/ko/blog/ko/ai-content-recommendation-system)
+- [V2 추천 시스템: 메타데이터 기반 최적화](/ko/blog/ko/metadata-based-recommendation-optimization/)
+- [V1 추천 시스템: LLM 콘텐츠 기반 추천](/ko/blog/ko/ai-content-recommendation-system/)
 - [Astro Content Collections 공식 문서](https://docs.astro.build/en/guides/content-collections/)

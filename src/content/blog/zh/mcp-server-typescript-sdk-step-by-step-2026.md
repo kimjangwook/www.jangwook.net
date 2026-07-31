@@ -68,7 +68,7 @@ Claude、Cursor、Windsurf、Zed等主流AI编码工具都已将MCP作为标准�
 
 当然，生态系统还没有完全成熟。但正如在MCP开放标准与Linux Foundation参与中所确认的，这个方向已经在成为行业标准。如果你对协议本身的工作原理感兴趣，建议先读一遍[官方规范页面](https://modelcontextprotocol.io/specification)。其中整理了主机、客户端、服务器的角色划分，以及它们之间的 JSON-RPC 2.0 消息流。
 
-另外，这篇文章讲的是 TypeScript SDK，但 Python 阵营也遵循类似的模式。如果你想用 Python 做同样的事情，[用 FastMCP 构建 Python MCP 服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)这篇文章会有帮助。对比两种语言的 SDK 设计，能更清楚地看到 MCP 协议的共通结构。
+另外，这篇文章讲的是 TypeScript SDK，但 Python 阵营也遵循类似的模式。如果你想用 Python 做同样的事情，[用 FastMCP 构建 Python MCP 服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)这篇文章会有帮助。对比两种语言的 SDK 设计，能更清楚地看到 MCP 协议的共通结构。
 
 ## 环境配置与包安装
 
@@ -312,7 +312,7 @@ await client.close();
 
 ## 使用StdioServerTransport与Claude实际集成
 
-`InMemoryTransport`非常适合测试和开发调试，但要连接到实际的Claude Desktop或Cursor，需要切换到`StdioServerTransport`。这是MCP服务器的标准部署方式。如果想直接在Claude SDK中定义和调用工具，而不是通过MCP，[Claude Agent SDK工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)有详细说明。
+`InMemoryTransport`非常适合测试和开发调试，但要连接到实际的Claude Desktop或Cursor，需要切换到`StdioServerTransport`。这是MCP服务器的标准部署方式。如果想直接在Claude SDK中定义和调用工具，而不是通过MCP，[Claude Agent SDK工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)有详细说明。
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -615,7 +615,7 @@ app.listen(3000, () => {
 - 响应超过几十 KB 的大体积数据。它会占用 AI 上下文窗口，反而适得其反。这种情况应当把数据作为资源而非工具暴露，或先设计好结果的分页。
 - 在安全边界严格的生产环境中，却无力自行实现认证与权限管理时。正如[官方规范的 Security 部分](https://modelcontextprotocol.io/specification)所强调，远程 HTTP 部署需要单独设计用户同意与访问控制。
 
-判断犹豫不定时，先问一句：AI **是否需要自己选择并调用那个工具**。如果答案是"是"，那么 MCP 服务器合适；如果是"我从代码里直接调用就行"，那普通函数或库更好。在本地私有运行的具体案例，我在[构建本地 LLM 与私有 MCP 服务器](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)这篇文章里有更多展开。
+判断犹豫不定时，先问一句：AI **是否需要自己选择并调用那个工具**。如果答案是"是"，那么 MCP 服务器合适；如果是"我从代码里直接调用就行"，那普通函数或库更好。在本地私有运行的具体案例，我在[构建本地 LLM 与私有 MCP 服务器](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp/)这篇文章里有更多展开。
 
 ## 总结：我认为这将成为AI工具部署的现实标准
 
@@ -625,7 +625,7 @@ app.listen(3000, () => {
 
 尽管如此，能够在无需API密钥的情况下，在30分钟内完成一个从公共REST API包装到实际数据查询的端到端可运行管道，这显然是有吸引力的。在Claude、Cursor、Windsurf等已将MCP作为标准采用的情况下，MCP服务器是将自己的工具同时暴露给多个AI平台的最现实方式。
 
-下一步，建议选择一个实际的内部系统，尝试将其包装为MCP工具。代码结构就是本文所涉及的全部内容。剩下的，就是理解那个系统的API了。如果想了解如何在Claude Code中将MCP与斜杠命令、钩子结合，构建完整的自动化工作流，可以参考 [Claude Code大师班第1期](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent)。
+下一步，建议选择一个实际的内部系统，尝试将其包装为MCP工具。代码结构就是本文所涉及的全部内容。剩下的，就是理解那个系统的API了。如果想了解如何在Claude Code中将MCP与斜杠命令、钩子结合，构建完整的自动化工作流，可以参考 [Claude Code大师班第1期](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent/)。
 
 ---
 

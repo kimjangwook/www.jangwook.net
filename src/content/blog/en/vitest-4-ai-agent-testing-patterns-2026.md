@@ -208,7 +208,7 @@ it("filters out non-text-delta events from the stream", async () => {
 
 Using an LLM as a classifier is a common pattern — things like "is this user message a question or a command?" delegated to the model. This is the hardest to test because LLM output isn't always predictable.
 
-I ran into a similar problem while [building a streaming agent with Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026). The key is separating the classifier logic from the LLM call, then testing each independently.
+I ran into a similar problem while [building a streaming agent with Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026/). The key is separating the classifier logic from the LLM call, then testing each independently.
 
 ```javascript
 // Agent code: normalize LLM output to uppercase, only allow known values
@@ -300,7 +300,7 @@ No API calls, no environment variables, 142ms. Real Claude API calls take at min
 
 I should be honest about the limitations too.
 
-**Divergence from real API behavior is possible.** If SDK internals change, the event structure that `fakeStream()` reproduces needs to be updated. As I found when working through the [Claude Agent SDK Tool Use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026), stream event formats shift slightly as SDK versions increment.
+**Divergence from real API behavior is possible.** If SDK internals change, the event structure that `fakeStream()` reproduces needs to be updated. As I found when working through the [Claude Agent SDK Tool Use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/), stream event formats shift slightly as SDK versions increment.
 
 **Edge cases need E2E tests.** Rate limits, network timeouts, and token overflows are hard to reproduce accurately with mocks. Keeping unit tests focused on business logic while maintaining a separate integration test suite using the real API is the practical approach.
 
@@ -314,6 +314,6 @@ Three things to remember when mocking the Anthropic SDK with Vitest 4:
 2. **`async function*` generator** — For streaming response mocks, use `mockReturnValue(fakeStream())`
 3. **`beforeEach(() => vi.clearAllMocks())`** — Preventing state pollution between tests is essential
 
-If you're using TypeScript, combining the [MCP server TypeScript tutorial](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) patterns with the ones in this article puts your entire AI agent codebase — including MCP tool handlers — under unit test coverage.
+If you're using TypeScript, combining the [MCP server TypeScript tutorial](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026/) patterns with the ones in this article puts your entire AI agent codebase — including MCP tool handlers — under unit test coverage.
 
 The most common reason AI agent code has no tests is simply "I didn't know how to mock this." I hope these patterns lower that barrier.

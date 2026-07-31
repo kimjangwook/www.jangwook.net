@@ -77,7 +77,7 @@ graph LR
 - <strong>API端点迁移</strong>：应对GPT-4o专用参数和响应格式变更
 - <strong>提示词重新优化</strong>：为新模型重写提示词的成本
 - <strong>性能回归测试</strong>：验证现有工作流在新模型上保持同等质量
-- <strong>成本结构变化</strong>：后继模型Token价格变动带来的预算重组（参见[LLM API定价比较：GPT-5 vs Claude vs Gemini vs DeepSeek](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)）
+- <strong>成本结构变化</strong>：后继模型Token价格变动带来的预算重组（参见[LLM API定价比较：GPT-5 vs Claude vs Gemini vs DeepSeek](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)）
 
 ## 什么是模型依赖风险
 
@@ -117,7 +117,7 @@ Anthropic的Claude自2025年下半年起在企业市场展现出显著增长。�
 
 <strong>1. 安全性与可靠性优先的理念</strong>
 
-Anthropic以企业友好的形式提供Constitutional AI等安全技术。在监管日趋严格的金融、医疗、法律领域，这一方法赢得了高度信任。实际上，[42%的生成式AI部署失败源于缺乏自上而下的治理机制](/zh/blog/zh/enterprise-ai-adoption-topdown)。
+Anthropic以企业友好的形式提供Constitutional AI等安全技术。在监管日趋严格的金融、医疗、法律领域，这一方法赢得了高度信任。实际上，[42%的生成式AI部署失败源于缺乏自上而下的治理机制](/zh/blog/zh/enterprise-ai-adoption-topdown/)。
 
 <strong>2. 一致的API策略</strong>
 
@@ -226,7 +226,7 @@ graph LR
 
 ### 长期视角
 
-AI模型市场未来将变化更快。[仅2026年2月就有7个以上主要模型同时发布](/zh/blog/zh/ai-model-rush-february-2026)。在这样的环境中，<strong>全押单一模型就是在积累技术债务</strong>。
+AI模型市场未来将变化更快。[仅2026年2月就有7个以上主要模型同时发布](/zh/blog/zh/ai-model-rush-february-2026/)。在这样的环境中，<strong>全押单一模型就是在积累技术债务</strong>。
 
 ## 结论
 
@@ -243,4 +243,4 @@ AI模型是工具。真正的竞争力不是依赖某个工具，而是拥有<st
 
 - [OpenAI Model Deprecation Policy](https://platform.openai.com/docs/deprecations)
 - [Anthropic Claude Enterprise](https://www.anthropic.com/enterprise)
-- [2026年2月AI模型大战分析](/zh/blog/zh/ai-model-rush-february-2026)
+- [2026年2月AI模型大战分析](/zh/blog/zh/ai-model-rush-february-2026/)

@@ -67,7 +67,7 @@ Anthropic方面向CNBC和VentureBeat表示，"这是部署打包过程中的人�
 
 本质上，Claude Code是一个响应式系统。用户发送消息，它做出回应。到这里都很常规。但代码中存在一个名为`PROACTIVE`的feature flag，开启后会激活`KAIROS`模式。KAIROS通过心跳机制周期性地评估"现在有没有值得做的事？"，即使没有用户输入也能自主行动。
 
-简单来说，就是一个7x24小时在后台运行的守护进程模式，自主判断"要不要整理内存？""要不要建议重构这段代码？"。这种自主执行模式后来被正式化为[Claude Code Routines实战指南](/zh/blog/zh/claude-code-routines-practical-guide-2026)。
+简单来说，就是一个7x24小时在后台运行的守护进程模式，自主判断"要不要整理内存？""要不要建议重构这段代码？"。这种自主执行模式后来被正式化为[Claude Code Routines实战指南](/zh/blog/zh/claude-code-routines-practical-guide-2026/)。
 
 我在这个架构中最关注的一点是"initiative（决定做什么）"和"execution（实际执行）"的明确分离。即使KAIROS判断"这件事值得做"，执行权限仍需通过独立的gate验证。构建自主Agent时最危险的场景就是"AI自作主张导致出了大问题"，这种分离设计在一定程度上缓解了这个风险。
 
@@ -90,7 +90,7 @@ const systemPrompt = [
 
 Reddit r/ClaudeAI上有人基于泄露代码找到了"缓存失效bug"，据报告将token消耗降低了10〜20倍。Theo Browne等开发者批评这个缓存失效bug将不必要的成本转嫁给了用户。
 
-这个模式本身在我的项目中也可以使用。调用LLM API时将system prompt的静态部分分离，利用prompt caching，尤其在长对话会话中能显著降低成本。Claude API成本优化和提示设计策略可在[Claude Code最佳实践指南](/zh/blog/zh/claude-code-best-practices)中深入了解。
+这个模式本身在我的项目中也可以使用。调用LLM API时将system prompt的静态部分分离，利用prompt caching，尤其在长对话会话中能显著降低成本。Claude API成本优化和提示设计策略可在[Claude Code最佳实践指南](/zh/blog/zh/claude-code-best-practices/)中深入了解。
 
 ## 三层内存 — 为什么Claude Code能记住上下文
 
@@ -147,7 +147,7 @@ System prompt中包含这样的内容：
 
 ## 从安全角度需要关注的问题
 
-比泄露本身更严重的问题是：CVE-2025-59536、CVE-2026-21852等漏洞已被识别，源码公开使得利用这些漏洞变得更加容易。AI Agent安全漏洞应对框架可参考[NIST AI Agent安全标准](/zh/blog/zh/nist-ai-agent-security-standards)。
+比泄露本身更严重的问题是：CVE-2025-59536、CVE-2026-21852等漏洞已被识别，源码公开使得利用这些漏洞变得更加容易。AI Agent安全漏洞应对框架可参考[NIST AI Agent安全标准](/zh/blog/zh/nist-ai-agent-security-standards/)。
 
 具体而言：
 - 克隆包含恶意`.claude/`配置文件的仓库可实现任意代码执行（RCE）

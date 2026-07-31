@@ -35,7 +35,7 @@ relatedPosts:
       zh: '将技能连接到子代理可以重用重复能力。如果想更深入理解AgentDefinition.skills字段的用法，这篇文章会有所帮助。'
 ---
 
-After I published the [Tool Use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026), a comment came in fairly quickly: "I get single agents now, but how do I run a code reviewer, security scanner, and doc writer at the same time?" I was actually mid-experiment at that point myself.
+After I published the [Tool Use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/), a comment came in fairly quickly: "I get single agents now, but how do I run a code reviewer, security scanner, and doc writer at the same time?" I was actually mid-experiment at that point myself.
 
 Installing `claude-agent-sdk 0.2.82` directly, I found the answer. One `AgentDefinition` dataclass and the `ClaudeAgentOptions.agents` dict is all it takes. I created the objects and explored the type structure hands-on. No API key meant I couldn't run actual queries, but the code structure and type system were fully testable.
 
@@ -294,7 +294,7 @@ I want to be direct here: subagents aren't always the right choice.
 - Total runtime would be under 5 seconds (spawn overhead exceeds benefit)
 - It's a simple question-answer pattern
 
-The same tradeoff comes up in the [A2A + MCP hybrid architecture post](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide): multi-agent structure adds complexity. More failure points, harder debugging, less predictable costs. Don't add subagents to a problem that a single agent can handle.
+The same tradeoff comes up in the [A2A + MCP hybrid architecture post](/en/blog/en/a2a-mcp-hybrid-architecture-production-guide/): multi-agent structure adds complexity. More failure points, harder debugging, less predictable costs. Don't add subagents to a problem that a single agent can handle.
 
 My personal threshold: "three or more independent tasks, each likely to consume 10K+ tokens with Opus." Below that, I stick with a single agent.
 

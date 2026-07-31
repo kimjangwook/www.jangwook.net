@@ -59,7 +59,7 @@ Cloudflareが2026年4月に「エージェント専用の一週間」を宣言�
 
 **Sandboxes GA**: 2025年6月のベータから9ヶ月でGAになった。エージェント専用の隔離Linux环境だ。シェル、ファイルシステム、バックグラウンドプロセスがあり、on-demandで起動する。注目すべき点は「picks up exactly where it left off」という動作 — エージェントが中断後に再開するとき、同じ環境の状態を引き継ぐ。コンテナのスピンアップがミリ秒単位という点も利点だ。コード生成エージェントが実際にコードを実行してテストするサイクルが可能になる。
 
-[LangGraphやCrewAIのようなフレームワークでエージェントのコード実行環境を別途構成](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)していたなら、Sandboxesはその部分をCloudflareが管理してくれる方式だ。フレームワークを選ぶよりもインフラ層を選ぶ決断に近い。
+[LangGraphやCrewAIのようなフレームワークでエージェントのコード実行環境を別途構成](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)していたなら、Sandboxesはその部分をCloudflareが管理してくれる方式だ。フレームワークを選ぶよりもインフラ層を選ぶ決断に近い。
 
 **Artifacts**: Git互換バージョン管理ストレージだ。数千万のリポジトリを作成でき、リモートソースからフォークもでき、標準のGitクライアントでアクセス可能だ。Private betaから5月初めにpublic betaになった。エージェントが作ったコードを永続的に保存してバージョン管理する用途だ。コンテキストが消えても成果物が残る。
 
@@ -138,7 +138,7 @@ Your Worker has access to the following bindings:
 [wrangler:info] GET / 200 OK (7ms)
 ```
 
-Cloudflareのアカウントなしでもローカル開発はできる。重要な点が一つ: `@cloudflare/agents`は`cloudflare:workers`ランタイム専用なので通常のNode.jsでは実行できない。`ERR_UNSUPPORTED_ESM_URL_SCHEME`エラーが出る。Wrangler経由でのみ実行可能だ。[Claude Agent SDKのようにPython/Node.jsから直接importする方式](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)に慣れた開発者には最初は戸惑うかもしれない。
+Cloudflareのアカウントなしでもローカル開発はできる。重要な点が一つ: `@cloudflare/agents`は`cloudflare:workers`ランタイム専用なので通常のNode.jsでは実行できない。`ERR_UNSUPPORTED_ESM_URL_SCHEME`エラーが出る。Wrangler経由でのみ実行可能だ。[Claude Agent SDKのようにPython/Node.jsから直接importする方式](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)に慣れた開発者には最初は戸惑うかもしれない。
 
 ## アーキテクチャ的に興味深い設計選択
 
@@ -150,7 +150,7 @@ Cloudflareのアカウントなしでもローカル開発はできる。重要�
 
 **メールハンドラー**: `onEmail`メソッド一つでメールを直接処理できる。Workers Email Routingとの連携だ。エージェントがメールを受け取ってタスクにするパターンが自然に書ける。
 
-[DaprエージェントがKubernetesでサイドカーパターンで状態とメッセージを管理する方式](/ja/blog/ja/dapr-agents-v1-cncf-production-ai-framework)と比べると、Cloudflareのアプローチはインフラをあまり触らずにコードに集中する方向性だ。どちらもトレードオフがある。
+[DaprエージェントがKubernetesでサイドカーパターンで状態とメッセージを管理する方式](/ja/blog/ja/dapr-agents-v1-cncf-production-ai-framework/)と比べると、Cloudflareのアプローチはインフラをあまり触らずにコードに集中する方向性だ。どちらもトレードオフがある。
 
 ## 正直な評価
 
@@ -158,7 +158,7 @@ Cloudflareのアカウントなしでもローカル開発はできる。重要�
 
 不安な点が二つある。
 
-一つ目は**ベンダーロックインが強い**こと。`cloudflare:workers`でしか動かず、Durable Objectの設計をそのまま踏まえる。後でプラットフォームを変えたいとなるとエージェントコードをかなり書き直す必要がある。[MCPサーバーをKubernetesに乗せる方式](/ja/blog/ja/mcp-server-production-deployment-kubernetes-guide)のようにコンテナベースで行けばこの問題はないが、その代わりインフラの複雑度が上がる。
+一つ目は**ベンダーロックインが強い**こと。`cloudflare:workers`でしか動かず、Durable Objectの設計をそのまま踏まえる。後でプラットフォームを変えたいとなるとエージェントコードをかなり書き直す必要がある。[MCPサーバーをKubernetesに乗せる方式](/ja/blog/ja/mcp-server-production-deployment-kubernetes-guide/)のようにコンテナベースで行けばこの問題はないが、その代わりインフラの複雑度が上がる。
 
 二つ目は**エージェント間通信のパターンがまだ薄い**こと。発表内容を見ると単一エージェントが大幅に強化されたが、複数エージェントが複雑に協力するパターンはSDKレベルでまだ薄い。マルチエージェントオーケストレーションを本格的に作るには追加の構造が必要だ。この部分はProject Thinkフレームワークで改善中とのことだが、まだ初期段階だ。
 

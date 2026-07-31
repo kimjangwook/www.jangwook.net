@@ -360,7 +360,7 @@ jobs:
         run: uv run pytest
 ```
 
-The official `astral-sh/setup-uv` action handles cache automatically. When building an MCP server in Python, this same CI pattern applies. Add the dependency with `uv add fastmcp` — see the [FastMCP server build guide](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026) for a complete example — then `uv sync` in GitHub Actions.
+The official `astral-sh/setup-uv` action handles cache automatically. When building an MCP server in Python, this same CI pattern applies. Add the dependency with `uv add fastmcp` — see the [FastMCP server build guide](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/) for a complete example — then `uv sync` in GitHub Actions.
 
 ## Managing CLI Tools with uv tool
 
@@ -488,7 +488,7 @@ Fast doesn't mean best for every situation. After splitting it across real proje
 
 - Your deep learning project depends on conda-channel binaries like torch, CUDA, or tensorflow. uv is PyPI-based and can't reach that layer. If matching a CUDA version is the whole game, conda (or conda plus uv side by side) is the realistic path.
 
-One line: for an API-calling agent or backend Python project, start with uv. For an ML training project bound tightly to GPU binaries, start with conda. For the library side of that choice, I went deeper in the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026), and for dependency choices when building type-safe agents, the [Pydantic AI type-safe agent tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) is a useful companion.
+One line: for an API-calling agent or backend Python project, start with uv. For an ML training project bound tightly to GPU binaries, start with conda. For the library side of that choice, I went deeper in the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026/), and for dependency choices when building type-safe agents, the [Pydantic AI type-safe agent tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) is a useful companion.
 
 ## Where uv Still Falls Short, Honestly
 
@@ -548,4 +548,4 @@ Every command and behavior in this post was cross-checked against the official u
 - [Using uv in GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/) — CI integration and the `astral-sh/setup-uv` action
 - [Astral documentation hub](https://docs.astral.sh/) — docs from the Astral team behind uv, Ruff, and ty
 
-Once uv has your environment sorted, the natural next step is local observability. For wiring LLM tracing on top of the setup you just built, the [Langfuse v3 Self-Hosting Guide](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026) picks up right where this leaves off.
+Once uv has your environment sorted, the natural next step is local observability. For wiring LLM tracing on top of the setup you just built, the [Langfuse v3 Self-Hosting Guide](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026/) picks up right where this leaves off.

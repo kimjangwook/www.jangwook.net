@@ -144,7 +144,7 @@ langgraph-prebuilt, langgraph-sdk,
 pydantic, xxhash
 ```
 
-39개 차이다. ADK가 무거운 이유는 명확하다. Google Cloud 스택(BigQuery, Spanner, Pub/Sub, Speech 등)을 처음부터 포함하기 때문이다. OpenTelemetry 내보내기, FastAPI 기반 서버, SQLAlchemy ORM까지 내장되어 있다. 의존성 목록에 `mcp`가 들어 있는 데서 보이듯 ADK는 MCP 서버 연동을 기본 지원하는데, MCP 서버를 직접 만들어 붙이는 쪽은 [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)에 따로 정리해 뒀다.
+39개 차이다. ADK가 무거운 이유는 명확하다. Google Cloud 스택(BigQuery, Spanner, Pub/Sub, Speech 등)을 처음부터 포함하기 때문이다. OpenTelemetry 내보내기, FastAPI 기반 서버, SQLAlchemy ORM까지 내장되어 있다. 의존성 목록에 `mcp`가 들어 있는 데서 보이듯 ADK는 MCP 서버 연동을 기본 지원하는데, MCP 서버를 직접 만들어 붙이는 쪽은 [FastMCP로 Python MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/)에 따로 정리해 뒀다.
 
 솔직히 처음 봤을 때 좀 과하다고 느꼈다. ADK로 간단한 에이전트를 만들고 싶은데 Google Cloud Spanner 드라이버까지 같이 딸려오는 건 좀 아니다 싶다. Google Cloud를 쓰지 않는 프로젝트라면 이 의존성들이 전부 죽은 무게다.
 
@@ -237,7 +237,7 @@ Commands:
 
 반대로 이 CLI들이 완전히 Google 생태계에 묶여있다는 게 아쉬운 점이다. AWS나 Azure 기반 인프라를 쓰는 팀이라면 `adk deploy`는 그림의 떡이다. 내장 트레이싱도 GCP의 Cloud Trace로 내보내도록 설계되어 있어서, 다른 옵저버빌리티 스택과 연결하려면 별도 설정이 필요하다.
 
-그 부분에서 [Langfuse 같은 독립 LLM 트레이싱 도구](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026)와의 통합이 더 유연한 LangGraph 쪽이 오히려 편할 수 있다.
+그 부분에서 [Langfuse 같은 독립 LLM 트레이싱 도구](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026/)와의 통합이 더 유연한 LangGraph 쪽이 오히려 편할 수 있다.
 
 ## 상태 관리 비교: 세션 vs 체크포인트
 
@@ -484,7 +484,7 @@ AI 에이전트 프레임워크 비교를 할 때 자주 보는 실수가 있다
 - 배포·평가·UI까지 한 도구로 끝내고 싶은데 별도 인프라를 조립할 여력이 없다. LangGraph는 런타임만 제공한다.
 - 팀에 LangChain 경험이 전혀 없고 Python 외 언어가 주력이다.
 
-판단이 어렵다면 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 더 넓은 선택지를 함께 보는 것도 방법이다. RAG 중심 워크플로우라면 [LlamaIndex vs LangChain vs Haystack 비교](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)가 프레임워크 결정의 또 다른 축을 보여준다. 타입 안정성을 우선순위에 둔다면 [PydanticAI 실전 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)이 또 다른 접근법을 제시하니 함께 비교해볼 만하다.
+판단이 어렵다면 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에서 더 넓은 선택지를 함께 보는 것도 방법이다. RAG 중심 워크플로우라면 [LlamaIndex vs LangChain vs Haystack 비교](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026/)가 프레임워크 결정의 또 다른 축을 보여준다. 타입 안정성을 우선순위에 둔다면 [PydanticAI 실전 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)이 또 다른 접근법을 제시하니 함께 비교해볼 만하다.
 
 ## 1차 출처
 

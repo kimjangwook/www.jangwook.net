@@ -558,7 +558,7 @@ git add recommendations.json
 git commit -m "chore: update recommendations for new post"
 ```
 
-記事作成から推薦生成、デプロイまでの自動化パイプライン全体の設計原則は、[LLMベースのブログ投稿自動化完全ガイド](/ja/blog/ja/llm-blog-automation)で詳しく解説しています。
+記事作成から推薦生成、デプロイまでの自動化パイプライン全体の設計原則は、[LLMベースのブログ投稿自動化完全ガイド](/ja/blog/ja/llm-blog-automation/)で詳しく解説しています。
 
 ## パフォーマンス最適化
 
@@ -634,7 +634,7 @@ const postsToProcess = posts.filter(post => {
 | 離脱率 | -15-25% |
 | 推薦クリック率（CTR） | 18-25% |
 
-推薦効果をリアルタイムで計測したい場合は、[Google Analytics MCPでブログ分析を自動化](/ja/blog/ja/google-analytics-mcp-automation)と組み合わせると効率的です。
+推薦効果をリアルタイムで計測したい場合は、[Google Analytics MCPでブログ分析を自動化](/ja/blog/ja/google-analytics-mcp-automation/)と組み合わせると効率的です。
 
 ### 定性的効果
 
@@ -703,11 +703,11 @@ Claude LLMベースのコンテンツ推薦システムは、単純なタグマ�
 ✅ <strong>自動化ワークフロー</strong>でメンテナンス最小化
 ✅ <strong>多言語自然サポート</strong>でグローバルブログ最適化
 
-このシステムを構築すれば、読者の滞在時間が延び、コンテンツ発見性が向上し、結果的にブログの価値が最大化されます。既存ブログにすぐに適用できるので、今すぐ始めましょう！[AIエージェントとNotion MCPを連携したコンテンツ管理自動化](/ja/blog/ja/ai-agent-notion-mcp-automation)も構築すれば、ブログ運営全体を一つのフローに統合できます。
+このシステムを構築すれば、読者の滞在時間が延び、コンテンツ発見性が向上し、結果的にブログの価値が最大化されます。既存ブログにすぐに適用できるので、今すぐ始めましょう！[AIエージェントとNotion MCPを連携したコンテンツ管理自動化](/ja/blog/ja/ai-agent-notion-mcp-automation/)も構築すれば、ブログ運営全体を一つのフローに統合できます。
 
 ## 次回記事
 
-<strong>[レコメンデーションシステム革新：78,000トークンをゼロにしたメタデータ最適化の旅](/ja/blog/ja/metadata-based-recommendation-optimization)</strong>では、このLLMベース推薦システムをメタデータベースアルゴリズムに最適化し、トークン使用量を100%削減し、実行時間を99%短縮した事例をご紹介します。
+<strong>[レコメンデーションシステム革新：78,000トークンをゼロにしたメタデータ最適化の旅](/ja/blog/ja/metadata-based-recommendation-optimization/)</strong>では、このLLMベース推薦システムをメタデータベースアルゴリズムに最適化し、トークン使用量を100%削減し、実行時間を99%短縮した事例をご紹介します。
 
 ## 参考資料
 

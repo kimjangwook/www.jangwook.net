@@ -214,7 +214,7 @@ function withTransaction(db, fn) {
 }
 ```
 
-[Hono.js で API サーバーを構成する際](/ja/blog/ja/hono-typescript-api-2026)も、このヘルパーをそのまま使える。
+[Hono.js で API サーバーを構成する際](/ja/blog/ja/hono-typescript-api-2026/)も、このヘルパーをそのまま使える。
 
 ## ユーザー定義関数と集計関数
 
@@ -345,7 +345,7 @@ const mode = db.prepare('PRAGMA journal_mode').get();
 console.log(mode.journal_mode);  // wal
 ```
 
-[Deno 2 vs Bun の比較](/ja/blog/ja/deno-2-vs-bun-nodejs-runtime-2026-comparison)でも触れたが、WAL モードまで有効にすれば、内部ツールの大半で PostgreSQL を使う理由がなくなる。
+[Deno 2 vs Bun の比較](/ja/blog/ja/deno-2-vs-bun-nodejs-runtime-2026-comparison/)でも触れたが、WAL モードまで有効にすれば、内部ツールの大半で PostgreSQL を使う理由がなくなる。
 
 ## エラー処理
 
@@ -407,7 +407,7 @@ try {
 
 **私の立場:**
 
-本番サーバーへの即時投入はまだ早い。Node.js v26 LTS が安定するまで待つべきだ。ただし内部 CLI ツール、スクリプト、プロトタイプには今すぐ使って問題ない。[Bun Shell スクリプト](/ja/blog/ja/bun-shell-scripting-practical-guide-2026)のような自動化ツールを作る際に外部依存を最小化したいなら特にそうだ。
+本番サーバーへの即時投入はまだ早い。Node.js v26 LTS が安定するまで待つべきだ。ただし内部 CLI ツール、スクリプト、プロトタイプには今すぐ使って問題ない。[Bun Shell スクリプト](/ja/blog/ja/bun-shell-scripting-practical-guide-2026/)のような自動化ツールを作る際に外部依存を最小化したいなら特にそうだ。
 
 ## 内部ツールなら今でも十分使える
 

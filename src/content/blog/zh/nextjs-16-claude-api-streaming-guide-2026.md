@@ -184,7 +184,7 @@ export async function POST(req: Request) {
 
 <strong>第一，`client.messages.stream()`返回`AsyncIterableStream`。</strong> `for await...of`逐个接收chunk并推送给客户端。流结束时发送`[DONE]`信号并关闭控制器。
 
-<strong>第二，`ReadableStream` + `TextEncoder`是Web Streams API标准。</strong> Next.js Route Handler使用Web Streams而非Node.js的`stream`模块。这就是为什么代码看起来与[FastAPI流式传输](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026)或Express实现不同。这个模式在Cloudflare Workers、Deno、Bun等现代JavaScript运行时中也完全适用。
+<strong>第二，`ReadableStream` + `TextEncoder`是Web Streams API标准。</strong> Next.js Route Handler使用Web Streams而非Node.js的`stream`模块。这就是为什么代码看起来与[FastAPI流式传输](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026/)或Express实现不同。这个模式在Cloudflare Workers、Deno、Bun等现代JavaScript运行时中也完全适用。
 
 ## Step 3: 环境变量与安全配置
 
@@ -384,12 +384,12 @@ data: [DONE]\n\n
 | 可调试性 | SSE流程透明 | 内部逻辑难以追踪 |
 | 学习价值 | 需理解Web Streams和SSE | 可立即使用 |
 
-我的建议是先用原始API实现一遍，再使用SDK。了解SDK替你做了什么，才能正确使用SDK。[用Vercel AI SDK构建Claude流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)可以直接对比两种方式。
+我的建议是先用原始API实现一遍，再使用SDK。了解SDK替你做了什么，才能正确使用SDK。[用Vercel AI SDK构建Claude流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026/)可以直接对比两种方式。
 
 ## 下一步
 
-1. **添加Tool Use** — 赋予Claude函数调用能力 → [Claude Agent SDK实战指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)
-2. **Prompt Caching** — API成本降低最多90% → [Claude API Prompt Caching实战](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)
+1. **添加Tool Use** — 赋予Claude函数调用能力 → [Claude Agent SDK实战指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)
+2. **Prompt Caching** — API成本降低最多90% → [Claude API Prompt Caching实战](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide/)
 3. **强化错误处理** — AbortController、重试逻辑、错误SSE事件
 4. **流取消** — 允许用户中途停止生成的取消按钮
 5. **Vercel部署** — 应用上述注意事项后上线

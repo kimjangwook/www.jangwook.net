@@ -64,7 +64,7 @@ relatedPosts:
 
 In October 2025, GitHub released an AI agent that scans codebases, identifies bugs, and submits fixes as Pull Requests—all without developers. Google DeepMind's CodeMender has <strong>automatically contributed 72 security patches to open-source projects</strong> in the last 6 months.
 
-This is no longer science fiction. The age of <strong>Self-Healing AI Systems</strong> has arrived. Understanding [AI Agent Collaboration Patterns](/en/blog/en/ai-agent-collaboration-patterns) first gives a strong foundation for designing self-healing architectures.
+This is no longer science fiction. The age of <strong>Self-Healing AI Systems</strong> has arrived. Understanding [AI Agent Collaboration Patterns](/en/blog/en/ai-agent-collaboration-patterns/) first gives a strong foundation for designing self-healing architectures.
 
 ### What is a Self-Healing System?
 
@@ -322,7 +322,7 @@ class AgentlessFixGenerator:
 - <strong>Agentless</strong>: Faster (1 call), higher success rate (50.8%)
 - <strong>Multi-Agent</strong>: More complex but flexible for large systems
 
-For running these agents reliably in production, see the [FastAPI + Claude API Streaming Production Guide](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026).
+For running these agents reliably in production, see the [FastAPI + Claude API Streaming Production Guide](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026/).
 
 ### 4. Testing & Validation
 

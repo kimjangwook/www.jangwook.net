@@ -96,7 +96,7 @@ SWE-bench 88.7%相当令人印象深刻。但用这个数据得出"GPT-5.5比Cla
 
 **GDPval 84.9%** — OpenAI自家的基准测试。很多开发者可能是第一次听说这个名字，我也是。自家设计的基准测试可能倾向于对自己有利，引用时注明出处是应有的诚实。
 
-之前整理[GPT-5与Claude、Gemini、DeepSeek的API价格比较](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)时也遇到过类似问题。每家公司都拿对自己有利的基准测试说话，比较基准不同，很难断定哪个模型"更好"。这次这个问题更加严重了。
+之前整理[GPT-5与Claude、Gemini、DeepSeek的API价格比较](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)时也遇到过类似问题。每家公司都拿对自己有利的基准测试说话，比较基准不同，很难断定哪个模型"更好"。这次这个问题更加严重了。
 
 ## 价格翻倍了 — 该怎么消化？
 
@@ -126,11 +126,11 @@ Agent任务中输出token占比很高。多步推理过程、工具调用结果�
 
 <strong>GPT-5.5更合适的情况。</strong>已经深度整合在OpenAI生态系统中的团队 — 正在使用Azure OpenAI、Vercel AI SDK的OpenAI后端、Copilot集成等 — 切换成本相对较低。以SWE-bench风格的纯编程性能为核心指标的团队，以及正在开发基于ChatGPT的产品的团队，GPT-5.5可能是合适的选择。因为ChatGPT Plus/Pro用户已经在默认使用GPT-5.5，从产品参考模型一致性角度来说更有利。
 
-<strong>Claude仍然保有优势的情况。</strong>正如在[Claude Code的5种Agent工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)中介绍的，Claude的工具使用模式更加细腻，上下文管理也更稳定。特别是Claude Managed Agents + Advisor Tool的组合在成本效率方面很有竞争力。Sonnet 4.6作为executor、Opus作为advisor运作，在提高任务成功率的同时，根据Anthropic数据可降低11.9%的成本。在需要长时间运行的复杂Agent pipeline中，Claude的基础设施层支持 — 检查点、凭证管理、作用域权限 — 会带来实质性的差异。
+<strong>Claude仍然保有优势的情况。</strong>正如在[Claude Code的5种Agent工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)中介绍的，Claude的工具使用模式更加细腻，上下文管理也更稳定。特别是Claude Managed Agents + Advisor Tool的组合在成本效率方面很有竞争力。Sonnet 4.6作为executor、Opus作为advisor运作，在提高任务成功率的同时，根据Anthropic数据可降低11.9%的成本。在需要长时间运行的复杂Agent pipeline中，Claude的基础设施层支持 — 检查点、凭证管理、作用域权限 — 会带来实质性的差异。
 
 <strong>更重要的差异在于生态系统和工作流集成。</strong>比起基准测试高几个百分点，现有代码库依赖哪个SDK、团队已经熟悉哪边，在实际工作中的影响要大得多。换模型不是换一个API密钥那么简单。提示工程设计、错误处理逻辑、工具schema设计、重试策略，都是相互关联的，实际切换成本比想象中要高。我见过"就先换个模型试试"结果导致好几天提示重新设计的案例，不止一次。
 
-就我自己的项目而言，暂时还是会继续使用Claude生态系统。最近进行了[用Vercel AI SDK构建Claude流式Agent的工作](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)，在流式传输过程中夹杂工具调用的复杂场景下，Claude的表现更加稳定一致。GPT-5.5 API开放后，计划用相同的任务进行实际比较。
+就我自己的项目而言，暂时还是会继续使用Claude生态系统。最近进行了[用Vercel AI SDK构建Claude流式Agent的工作](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026/)，在流式传输过程中夹杂工具调用的复杂场景下，Claude的表现更加稳定一致。GPT-5.5 API开放后，计划用相同的任务进行实际比较。
 
 ### 实际决策标准
 
@@ -153,7 +153,7 @@ OpenAI把GPT-5.5称为"Agent Runtime"。但Anthropic在Claude Managed Agents中�
 
 如果GPT-5.5是"针对Agent Runtime优化的模型"，那么Managed Agents就是"运行Agent的基础设施"。更聪明的引擎，还是更稳定的轨道。哪个更重要取决于团队的需求，但把两者放在同一层面比较是类别错误。
 
-我的理解是，从长期来看，谁掌握了生产级Agent的基础设施标准，可能比谁有更高的基准测试分数更有优势。正如在[AI Agent框架比较](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)中介绍的，Agent生态系统正朝着框架和基础设施相结合的形态收敛。
+我的理解是，从长期来看，谁掌握了生产级Agent的基础设施标准，可能比谁有更高的基准测试分数更有优势。正如在[AI Agent框架比较](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)中介绍的，Agent生态系统正朝着框架和基础设施相结合的形态收敛。
 
 ## 还没解决的问题
 

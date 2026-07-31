@@ -59,7 +59,7 @@ AI 백엔드를 구축하다 보면 결국 하나의 질문에 부딪힌다. "�
 pip install fastapi uvicorn anthropic httpx
 ```
 
-Python 환경 구성이 처음이라면, [uv로 Python AI 개발 환경 설정하는 방법](/ko/blog/ko/uv-python-ai-development-setup-guide-2026)을 먼저 보는 게 낫다. 가상환경과 의존성 충돌 문제를 깔끔하게 해결해준다.
+Python 환경 구성이 처음이라면, [uv로 Python AI 개발 환경 설정하는 방법](/ko/blog/ko/uv-python-ai-development-setup-guide-2026/)을 먼저 보는 게 낫다. 가상환경과 의존성 충돌 문제를 깔끔하게 해결해준다.
 
 ## Step 1: 프로젝트 구조와 기본 설정
 
@@ -435,7 +435,7 @@ Nginx의 `proxy_buffering off`가 빠진 경우가 대부분이다. 또는 `Cont
 - 응답을 한 번에 받아도 UX에 지장이 없는 짧은 분류·추출 작업. 이때는 그냥 단일 요청-응답이 코드도 단순하고 디버깅도 쉽다.
 - 1,000건 이상의 문서를 일괄 처리하는 배치 작업. 스트리밍은 의미가 없고 Anthropic Message Batches API가 비용 면에서 절반 수준이다.
 - 양방향 실시간 상호작용(타이핑 인디케이터, 동시 편집)이 필요한 경우. SSE는 단방향이므로 WebSocket이 맞다.
-- 로컬·온프레미스 환경에서 외부 API 호출 자체가 막혀 있을 때. 이 경우 자체 호스팅 모델이 먼저다. 자체 호스팅 옵션은 [Ollama와 FastAPI로 프로덕션 배포하기](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026)에서 다뤘다.
+- 로컬·온프레미스 환경에서 외부 API 호출 자체가 막혀 있을 때. 이 경우 자체 호스팅 모델이 먼저다. 자체 호스팅 옵션은 [Ollama와 FastAPI로 프로덕션 배포하기](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026/)에서 다뤘다.
 
 요컨대 "긴 출력 + 실시간 표시"라는 두 조건이 동시에 성립할 때만 이 패턴의 복잡도가 정당화된다. 한쪽이라도 빠지면 더 단순한 방법이 있다.
 
@@ -447,7 +447,7 @@ Nginx의 `proxy_buffering off`가 빠진 경우가 대부분이다. 또는 `Cont
 - [Anthropic — Streaming Messages](https://docs.claude.com/en/docs/build-with-claude/streaming): Claude API의 SSE 스트리밍 이벤트 구조와 SDK별 사용법.
 - [MDN — Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events): SSE 이벤트 포맷(`data:`, `event:`, `id:`, `retry:`)과 `EventSource` API의 표준 정의.
 
-타입 안전한 요청 스키마를 더 엄격하게 가져가고 싶다면 [Pydantic AI로 타입 세이프 에이전트 만들기](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)도 같이 보면 도움이 된다.
+타입 안전한 요청 스키마를 더 엄격하게 가져가고 싶다면 [Pydantic AI로 타입 세이프 에이전트 만들기](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)도 같이 보면 도움이 된다.
 
 솔직히 말하면, 이 스택이 모든 상황에서 최선은 아니다. Node.js 팀이라면 Vercel AI SDK가 더 빠르고, 대규모 실시간 연결이 필요하다면 WebSocket이나 gRPC Streaming이 더 나은 선택일 수 있다. 하지만 Python AI 백엔드를 빠르게 올리고 싶다면, 이 패턴은 내가 실제로 검증한 가장 실용적인 출발점이다.
 

@@ -63,7 +63,7 @@ Web 开发者在页面开发完成后，花多少时间进行质量验证？跨�
 
 更大的问题是<strong>一致性</strong>。在繁忙的日程中，某些项目可能会被遗漏，或者不同负责人的验证标准可能不同。
 
-为了解决这个问题，我使用 Claude Code 和 [Playwright](/zh/blog/zh/playwright-ai-testing) 构建了<strong>页面 E2E 测试自动化系统</strong>。
+为了解决这个问题，我使用 Claude Code 和 [Playwright](/zh/blog/zh/playwright-ai-testing/) 构建了<strong>页面 E2E 测试自动化系统</strong>。
 
 ## 系统概述
 
@@ -230,7 +230,7 @@ sequenceDiagram
 
 ### 3. MCP 工具集成
 
-结合 [Chrome DevTools MCP](/zh/blog/zh/chrome-devtools-mcp-performance) 和 Playwright 构建强大的测试环境：
+结合 [Chrome DevTools MCP](/zh/blog/zh/chrome-devtools-mcp-performance/) 和 Playwright 构建强大的测试环境：
 
 ```typescript
 // 使用 Chrome DevTools MCP 进行性能分析
@@ -367,7 +367,7 @@ a, button {
 
 ### 2. AI 分析的价值
 
-真正的自动化不仅是说"图片太大"，而是<strong>建议"如何修复"</strong>。这是 Claude 分析能力发挥作用的地方。更多 Claude Code 使用技巧，请参阅 [Claude Code Best Practices](/zh/blog/zh/claude-code-best-practices)。
+真正的自动化不仅是说"图片太大"，而是<strong>建议"如何修复"</strong>。这是 Claude 分析能力发挥作用的地方。更多 Claude Code 使用技巧，请参阅 [Claude Code Best Practices](/zh/blog/zh/claude-code-best-practices/)。
 
 ### 3. 渐进式改进
 

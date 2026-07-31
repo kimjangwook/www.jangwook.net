@@ -51,7 +51,7 @@
     "ja": "非常に高い",
     "zh": "非常高"
   },
-  "sourceReport": "/{lang}/blog/{lang}/blog-launch-analysis-report",
+  "sourceReport": "/{lang}/blog/{lang}/blog-launch-analysis-report/",
   "description": {
     "ko": "모든 블로그 포스트에 대해 키워드 리서치 및 메타데이터 최적화를 수행하여 자연 검색 트래픽 증대",
     "en": "Performed keyword research and metadata optimization for all blog posts to increase organic search traffic",

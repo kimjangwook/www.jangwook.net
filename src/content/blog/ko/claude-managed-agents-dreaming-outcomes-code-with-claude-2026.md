@@ -143,11 +143,11 @@ Anthropic 내부 벤치마크 결과: Word 문서 생성 품질 8.4% 향상, Pow
 
 Anthropic이 이 부분에 대해 더 많은 가이드라인을 공개하길 기대한다. 현재 Claude Cookbook에 Outcomes 구현 예제가 있지만, 운영 관점의 rubric 설계 가이드는 부족하다.
 
-4월에 다룬 [Managed Agents 기본 배포 가이드](/ko/blog/ko/claude-managed-agents-production-deployment-guide)에서 API 체인 설정과 세션당 $0.08 비용 구조를 분석했는데, Outcomes를 추가하면 grader 실행 비용이 추가되는 구조다. 실제 비용은 rubric 복잡도와 재시도 횟수에 따라 달라진다. 기준이 5개이고 각 시도에서 2개씩 실패하면 총 세션 수가 2배 이상이 될 수 있다.
+4월에 다룬 [Managed Agents 기본 배포 가이드](/ko/blog/ko/claude-managed-agents-production-deployment-guide/)에서 API 체인 설정과 세션당 $0.08 비용 구조를 분석했는데, Outcomes를 추가하면 grader 실행 비용이 추가되는 구조다. 실제 비용은 rubric 복잡도와 재시도 횟수에 따라 달라진다. 기준이 5개이고 각 시도에서 2개씩 실패하면 총 세션 수가 2배 이상이 될 수 있다.
 
 ## Multiagent Orchestration — 병렬 처리의 표준화
 
-복잡한 작업을 한 에이전트가 순차적으로 처리하는 것보다, 전문 에이전트 여러 개가 병렬로 분담하는 것이 더 빠르고 품질도 높다는 건 알려진 사실이다. [Claude Code의 에이전틱 워크플로우 5가지 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서도 이 구조를 다룬 적 있다.
+복잡한 작업을 한 에이전트가 순차적으로 처리하는 것보다, 전문 에이전트 여러 개가 병렬로 분담하는 것이 더 빠르고 품질도 높다는 건 알려진 사실이다. [Claude Code의 에이전틱 워크플로우 5가지 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서도 이 구조를 다룬 적 있다.
 
 Multiagent Orchestration이 추가하는 것:
 
@@ -173,7 +173,7 @@ graph TD
     F --> G["리드 에이전트\n결과 통합 & 최종 출력"]
 ```
 
-각 서브에이전트가 자체 모델과 도구를 가질 수 있다는 점이 중요하다. 예를 들어, 코드 생성 서브에이전트는 Claude Opus 4.7을, 빠른 검증 서브에이전트는 Claude Haiku 4.5를 사용하도록 구성할 수 있다. 성능과 비용을 동시에 최적화하는 [이기종 에이전트 플릿 구성](/ko/blog/ko/heterogeneous-llm-agent-fleet-cost-optimization)이 가능해진다.
+각 서브에이전트가 자체 모델과 도구를 가질 수 있다는 점이 중요하다. 예를 들어, 코드 생성 서브에이전트는 Claude Opus 4.7을, 빠른 검증 서브에이전트는 Claude Haiku 4.5를 사용하도록 구성할 수 있다. 성능과 비용을 동시에 최적화하는 [이기종 에이전트 플릿 구성](/ko/blog/ko/heterogeneous-llm-agent-fleet-cost-optimization/)이 가능해진다.
 
 공식 문서에 따르면 Orchestration은 각 서브에이전트 실행이 독립된 세션 스레드에서 이루어지며, 각자의 컨텍스트 윈도우와 대화 기록을 유지한다. 리드 에이전트는 서브에이전트들의 결과물을 파일시스템을 통해 받아 최종 출력으로 통합한다. 이 흐름 전체가 Claude Console에서 추적 가능하다는 점은 운영 가시성 측면에서 실질적인 장점이다.
 
@@ -206,7 +206,7 @@ Improve: Dreaming이 주기적으로 쌓인 세션 데이터를 검토하고 메
 
 이 사이클이 반복되면 에이전트는 새로운 기술을 습득한 게 아니라, "어떤 상황에서 무엇을 조심해야 하는가"에 대한 운영 지식이 축적된다. 모델은 그대로인데 성능이 나아지는 구조다.
 
-[에이전트 메모리 학습 패턴에 대한 더 깊은 분석은 Hindsight MCP 포스트](/ko/blog/ko/hindsight-mcp-agent-memory-learning)에서 다룬 적 있다. Dreaming이 추구하는 "경험 기반 메모리 갱신" 철학과 유사한 접근이다.
+[에이전트 메모리 학습 패턴에 대한 더 깊은 분석은 Hindsight MCP 포스트](/ko/blog/ko/hindsight-mcp-agent-memory-learning/)에서 다룬 적 있다. Dreaming이 추구하는 "경험 기반 메모리 갱신" 철학과 유사한 접근이다.
 
 ## 비판적으로 보면 — 아직 검증되지 않은 지점들
 
@@ -218,7 +218,7 @@ Improve: Dreaming이 주기적으로 쌓인 세션 데이터를 검토하고 메
 
 <strong>셋째, 거버넌스 긴장.</strong> 에이전트가 스스로 행동 패턴을 바꾸는 시스템은 감사(audit)가 어렵다. "6개월 전에 에이전트가 왜 그 결정을 내렸는가"를 추적하기 위해서는 메모리 스토어의 버전 관리가 필요하다. 이 부분에 대한 Anthropic의 공식 가이드가 아직 충분하지 않다.
 
-<strong>넷째, Research Preview 상태.</strong> Dreaming은 아직 Research Preview다. Public Beta인 Outcomes, Orchestration과 달리 프로덕션에서의 안정성은 검증이 더 필요하다. [에이전트 비용 현실을 분석한 글](/ko/blog/ko/ai-agent-cost-reality)에서도 강조했지만, 에이전트 시스템의 운영 비용은 토큰 비용만이 아니다. 거버넌스 비용, 모니터링 비용, 디버깅 비용이 함께 따라온다.
+<strong>넷째, Research Preview 상태.</strong> Dreaming은 아직 Research Preview다. Public Beta인 Outcomes, Orchestration과 달리 프로덕션에서의 안정성은 검증이 더 필요하다. [에이전트 비용 현실을 분석한 글](/ko/blog/ko/ai-agent-cost-reality/)에서도 강조했지만, 에이전트 시스템의 운영 비용은 토큰 비용만이 아니다. 거버넌스 비용, 모니터링 비용, 디버깅 비용이 함께 따라온다.
 
 다섯째로, Outcomes의 grader 실행 비용이다. grader도 에이전트 세션으로 실행되므로 rubric이 복잡하고 재시도가 많아질수록 비용이 선형적으로 증가한다. 이에 대한 비용 예측 도구가 아직 없다.
 

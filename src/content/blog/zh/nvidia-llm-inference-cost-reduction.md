@@ -122,7 +122,7 @@ NVFP4的核心创新之一是<strong>Microscaling</strong>技术。该方法将�
 
 <strong>关键发现</strong>：
 - Qwen3-8B：相比FP16，显存减少2.4倍，吞吐量损失约20-25%
-- Gemma3-27B（27B参数）：可在[RTX 4090](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm)单卡上运行
+- Gemma3-27B（27B参数）：可在[RTX 4090](/zh/blog/zh/ddr5-rdimm-vs-rtx3090-local-llm/)单卡上运行
 - 吞吐量损失来自<strong>计算效率</strong>而非内存，因此批量越大，成本效率越好
 
 ## 成本结构变化分析
@@ -231,14 +231,14 @@ NVIDIA的Blackwell GPU（B100、B200）在<strong>硬件层面原生支持FP4</s
 - 无吞吐量损失的FP4运算
 - 更大模型的单卡承载能力
 
-不过，[正如DGX Spark案例所示](/zh/blog/zh/nvidia-dgx-spark-cuda-compatibility)，即使同属Blackwell品牌，FP4支持程度也可能因产品而异。
+不过，[正如DGX Spark案例所示](/zh/blog/zh/nvidia-dgx-spark-cuda-compatibility/)，即使同属Blackwell品牌，FP4支持程度也可能因产品而异。
 
 ### 产业影响
 
 FP4量化的普及将带来以下变化：
 
 1. <strong>LLM服务降价</strong>：基于API的LLM服务价格可能降至当前的1/4至1/8
-2. <strong>边缘设备部署</strong>：70B模型可在消费级GPU上运行，加速本地LLM部署。[8GB显存运行80B参数模型的方法](/zh/blog/zh/qwen3-coder-8gb-vram)已经得到验证。
+2. <strong>边缘设备部署</strong>：70B模型可在消费级GPU上运行，加速本地LLM部署。[8GB显存运行80B参数模型的方法](/zh/blog/zh/qwen3-coder-8gb-vram/)已经得到验证。
 3. <strong>创业门槛降低</strong>：运营高性能LLM所需的初始投资大幅减少
 4. <strong>环境影响</strong>：GPU功耗降低将缩小AI行业的碳足迹
 

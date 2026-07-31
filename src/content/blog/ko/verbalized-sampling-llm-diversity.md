@@ -353,7 +353,7 @@ sentiment_data = generate_training_data(
 print(f"생성된 데이터: {len(sentiment_data)}개")
 ```
 
-Pydantic AI, Instructor 같은 AI 에이전트 라이브러리와 결합하면 합성 데이터 파이프라인을 더욱 효율적으로 구축할 수 있다. [Python AI 에이전트 라이브러리 비교(Pydantic AI vs Instructor vs Smolagents)](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 각 라이브러리의 특징을 확인해보면 된다.
+Pydantic AI, Instructor 같은 AI 에이전트 라이브러리와 결합하면 합성 데이터 파이프라인을 더욱 효율적으로 구축할 수 있다. [Python AI 에이전트 라이브러리 비교(Pydantic AI vs Instructor vs Smolagents)](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에서 각 라이브러리의 특징을 확인해보면 된다.
 
 ### 3. 대화 시뮬레이션: 다양한 페르소나
 
@@ -403,7 +403,7 @@ for turn in dialogue:
     print(f"{turn['speaker']}: {turn['text']}\n")
 ```
 
-멀티에이전트 환경에서 페르소나 간 협업 패턴을 설계하는 방법은 [AI 에이전트 협업 패턴: 프로덕션 시스템 구조화 가이드](/ko/blog/ko/ai-agent-collaboration-patterns)에서 더 자세히 다루고 있다.
+멀티에이전트 환경에서 페르소나 간 협업 패턴을 설계하는 방법은 [AI 에이전트 협업 패턴: 프로덕션 시스템 구조화 가이드](/ko/blog/ko/ai-agent-collaboration-patterns/)에서 더 자세히 다루고 있다.
 
 ### 4. 다관점 답변 생성
 
@@ -713,7 +713,7 @@ print(dist.sample().text)
 - <strong>논문</strong>: [arXiv:2510.01171](https://arxiv.org/abs/2510.01171)
 - <strong>GitHub</strong>: [stanford-oval/verbalized-sampling](https://github.com/stanford-oval/verbalized-sampling)
 - <strong>데모</strong>: [Hugging Face Space](https://huggingface.co/spaces/stanford-oval/verbalized-sampling-demo)
-- <strong>Claude Code 실전 적용</strong>: [Claude Code에서 Verbalized Sampling 활용하기](/ko/blog/ko/claude-code-verbalized-sampling)
+- <strong>Claude Code 실전 적용</strong>: [Claude Code에서 Verbalized Sampling 활용하기](/ko/blog/ko/claude-code-verbalized-sampling/)
 
 Verbalized Sampling은 LLM의 창의적 잠재력을 끌어내는 강력한 도구다. 여러분의 프로젝트에서 다양성이 필요한 순간이 있다면, 이 기법을 시도해보시기 바란다. 간단한 프롬프트 변경만으로 놀라운 결과를 얻을 수 있을 것이다.
 

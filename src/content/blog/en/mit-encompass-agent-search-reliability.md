@@ -90,7 +90,7 @@ Current industry strategies for agent reliability:
 | Simple Retry | Easy to implement | Can repeat same mistakes |
 | Chain of Thought | Improved reasoning quality | Cannot fix incorrect reasoning chains |
 | Self-Verification | Can detect errors | Cannot explore alternative paths |
-| [Multi-Agent](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) | Multiple perspectives | High coordination costs |
+| [Multi-Agent](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/) | Multiple perspectives | High coordination costs |
 
 The common limitation across all these approaches is that <strong>they cannot escape from an already-chosen path</strong>.
 
@@ -207,7 +207,7 @@ Actual cost per success:
   EnCompass: $8.00 / 0.85 = $9.41/success
 ```
 
-While EnCompass appears more expensive on surface, the equation changes when considering <strong>[post-failure remediation costs](/en/blog/en/ai-agent-cost-reality)</strong> (human manual fixes, rework, quality issues). For high-value tasks (code review, security analysis, etc.), the value of accuracy improvement easily justifies the additional cost.
+While EnCompass appears more expensive on surface, the equation changes when considering <strong>[post-failure remediation costs](/en/blog/en/ai-agent-cost-reality/)</strong> (human manual fixes, rework, quality issues). For high-value tasks (code review, security analysis, etc.), the value of accuracy improvement easily justifies the additional cost.
 
 ## Practical Implementation Strategies
 
@@ -259,7 +259,7 @@ Examples:
 
 Beyond EnCompass, several initiatives aim to improve agent reliability:
 
-- <strong>[Agent Definition Language (ADL)](/en/blog/en/adl-agent-definition-language-governance)</strong>: An open-source agent definition standard from Moca. Declaratively define agent permissions, tools, and security boundaries for governance
+- <strong>[Agent Definition Language (ADL)](/en/blog/en/adl-agent-definition-language-governance/)</strong>: An open-source agent definition standard from Moca. Declaratively define agent permissions, tools, and security boundaries for governance
 - <strong>OpenAI Open Responses</strong>: A specification that standardizes agentic AI workflows to facilitate transitions between models
 - <strong>GitHub Agentic Workflows</strong>: Describe automation goals in markdown and AI generates GitHub Actions workflows
 

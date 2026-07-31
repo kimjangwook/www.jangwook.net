@@ -238,7 +238,7 @@ Diagrams 탭에서 자동 생성된 다이어그램을 확인할 수 있다:
 
 ## Gemini CLI 확장
 
-Google은 Code Wiki의 기능을 <strong>Gemini CLI</strong>로 확장하여, 터미널에서도 코드 문서화 기능을 사용할 수 있도록 준비하고 있다. 이와 유사하게, Claude AI 생태계에서는 [MCP(Model Context Protocol) 서버 툴킷](/ko/blog/ko/mcp-servers-toolkit-introduction)이 AI 어시스턴트와 개발 도구를 연결하는 표준 인터페이스로 자리잡고 있다.
+Google은 Code Wiki의 기능을 <strong>Gemini CLI</strong>로 확장하여, 터미널에서도 코드 문서화 기능을 사용할 수 있도록 준비하고 있다. 이와 유사하게, Claude AI 생태계에서는 [MCP(Model Context Protocol) 서버 툴킷](/ko/blog/ko/mcp-servers-toolkit-introduction/)이 AI 어시스턴트와 개발 도구를 연결하는 표준 인터페이스로 자리잡고 있다.
 
 ### 프라이빗 레포 지원 예정
 
@@ -398,7 +398,7 @@ sequenceDiagram
 
 ## 마무리
 
-Google Code Wiki는 <strong>AI를 활용한 코드 문서화의 새로운 패러다임</strong>을 제시한다. AI 에이전트가 코드를 이해하고 도구를 호출하는 원리가 궁금하다면, [Claude Agent SDK의 Tool Use 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 에이전틱 루프 구현을 확인할 수 있다. 아직 공개 프리뷰 단계이지만, 이미 많은 개발자들이 그 유용성을 체험하고 있다.
+Google Code Wiki는 <strong>AI를 활용한 코드 문서화의 새로운 패러다임</strong>을 제시한다. AI 에이전트가 코드를 이해하고 도구를 호출하는 원리가 궁금하다면, [Claude Agent SDK의 Tool Use 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 에이전틱 루프 구현을 확인할 수 있다. 아직 공개 프리뷰 단계이지만, 이미 많은 개발자들이 그 유용성을 체험하고 있다.
 
 특히 다음과 같은 상황에서 Code Wiki가 특히 힘을 발휘한다:
 
@@ -407,7 +407,7 @@ Google Code Wiki는 <strong>AI를 활용한 코드 문서화의 새로운 패러
 - 아키텍처 문서화 자동화
 - 기술 면접 준비 (유명 프로젝트 구조 이해)
 
-앞으로 프라이빗 레포 지원과 Gemini CLI 통합이 완료되면, 기업 환경에서도 더욱 폭넓게 활용될 것으로 기대된다. 한편 현업에서 AI 코딩 도구를 팀 워크플로우에 정착시키려면, [Claude Code 베스트 프랙티스](/ko/blog/ko/claude-code-best-practices)도 함께 살펴보면 좋다.
+앞으로 프라이빗 레포 지원과 Gemini CLI 통합이 완료되면, 기업 환경에서도 더욱 폭넓게 활용될 것으로 기대된다. 한편 현업에서 AI 코딩 도구를 팀 워크플로우에 정착시키려면, [Claude Code 베스트 프랙티스](/ko/blog/ko/claude-code-best-practices/)도 함께 살펴보면 좋다.
 
 <strong>Code Wiki 바로가기</strong>: [codewiki.google](https://codewiki.google)
 

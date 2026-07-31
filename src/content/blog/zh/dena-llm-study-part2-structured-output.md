@@ -60,11 +60,11 @@ relatedPosts:
 
 > <strong>系列: DeNA LLM 研究</strong> (2/5)
 >
-> 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals/)
 > 2. <strong>Part 2: 结构化输出与多LLM管道</strong> ← 当前文章
-> 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)
-> 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
+> 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag/)
+> 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design/)
 
 ## 概述
 

@@ -82,7 +82,7 @@ DeNA IT本部IT基盤部の小池啓輔副部長は「工数がかかるのが�
 
 ## 核心戦略：AIエージェント2種分業体制
 
-本プロジェクトの最も革新的な点は、AIエージェントを<strong>特性に応じて2種類に分けて運用</strong>したことです。マルチエージェントチームの一般的な構成方法については[Claude Code Agent Teams 完全ガイド](/ja/blog/ja/claude-agent-teams-guide)で詳しく解説しています。
+本プロジェクトの最も革新的な点は、AIエージェントを<strong>特性に応じて2種類に分けて運用</strong>したことです。マルチエージェントチームの一般的な構成方法については[Claude Code Agent Teams 完全ガイド](/ja/blog/ja/claude-agent-teams-guide/)で詳しく解説しています。
 
 ```mermaid
 graph LR
@@ -147,7 +147,7 @@ graph TD
 2. <strong>大規模コードベースの変換</strong>：数千〜数万行規模のコード移行
 3. <strong>工数問題で着手できなかった技術的負債の解消</strong>：AIでコスト対効果を劇的に改善
 
-AIエージェント導入の実際のコストとROIについては[AIエージェントのコスト vs 人件費の現実](/ja/blog/ja/ai-agent-cost-reality)で具体的な数値を確認できます。
+AIエージェント導入の実際のコストとROIについては[AIエージェントのコスト vs 人件費の現実](/ja/blog/ja/ai-agent-cost-reality/)で具体的な数値を確認できます。
 
 ### 注意すべき点
 

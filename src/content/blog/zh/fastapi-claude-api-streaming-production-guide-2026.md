@@ -59,7 +59,7 @@ faq:
 pip install fastapi uvicorn anthropic httpx
 ```
 
-如果是第一次配置Python环境，可以先看[用uv配置Python AI开发环境](/zh/blog/zh/uv-python-ai-development-setup-guide-2026)。它能干净地解决虚拟环境和依赖冲突问题。
+如果是第一次配置Python环境，可以先看[用uv配置Python AI开发环境](/zh/blog/zh/uv-python-ai-development-setup-guide-2026/)。它能干净地解决虚拟环境和依赖冲突问题。
 
 ## Step 1：项目结构与基本配置
 
@@ -414,7 +414,7 @@ async def log_streaming_metrics(request: Request, call_next):
 - 一次性返回结果也不影响体验的短分类、抽取任务。这时简单的请求-响应代码更简洁、调试也更容易。
 - 批量处理1000份以上文档的场景。流式传输毫无意义，而Anthropic Message Batches API成本大约只有一半。
 - 需要双向实时交互（打字指示器、协同编辑）的场景。SSE是单向的，WebSocket才是合适的工具。
-- 在本地或私有化部署环境中外部API调用本身被屏蔽。此时应优先考虑自托管模型。自托管方案我在[用Ollama和FastAPI进行生产部署](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026)中讲过。
+- 在本地或私有化部署环境中外部API调用本身被屏蔽。此时应优先考虑自托管模型。自托管方案我在[用Ollama和FastAPI进行生产部署](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026/)中讲过。
 
 简而言之，只有当"长输出"和"实时显示"两个条件同时成立时，这套模式的复杂度才是值得的。少了任何一个，都有更简单的做法。
 
@@ -426,7 +426,7 @@ async def log_streaming_metrics(request: Request, call_next):
 - [Anthropic — Streaming Messages](https://docs.claude.com/en/docs/build-with-claude/streaming)：Claude API的SSE流式事件结构以及各SDK的用法。
 - [MDN — Using server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)：SSE事件格式（`data:`、`event:`、`id:`、`retry:`）和`EventSource` API的标准定义。
 
-如果你想让请求模式更严格、更类型安全，[用Pydantic AI构建类型安全的代理](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)也值得一并阅读。
+如果你想让请求模式更严格、更类型安全，[用Pydantic AI构建类型安全的代理](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)也值得一并阅读。
 
 说实话，这套技术栈并非在所有情况下都是最佳选择。如果是Node.js团队，Vercel AI SDK上手更快；如果需要大规模实时并发连接，WebSocket或gRPC Streaming可能是更好的选择。但对于想快速启动Python AI流式后端的人来说，这是我亲自验证过的最实用的起点。
 

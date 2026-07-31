@@ -161,7 +161,7 @@ graph LR
     CC --> IG[image-generator]
 ```
 
-각 클러스터는 명확한 책임과 리더십을 가진다. 이런 다중 에이전트 팀 구조를 Claude Code에서 직접 구현하는 방법은 [Claude Code Agent Teams 완벽 가이드](/ko/blog/ko/claude-agent-teams-guide)에서 확인할 수 있다:
+각 클러스터는 명확한 책임과 리더십을 가진다. 이런 다중 에이전트 팀 구조를 Claude Code에서 직접 구현하는 방법은 [Claude Code Agent Teams 완벽 가이드](/ko/blog/ko/claude-agent-teams-guide/)에서 확인할 수 있다:
 - <strong>content-creation</strong>: 콘텐츠 생성 (리더: writing-assistant)
 - <strong>research-analysis</strong>: 조사 및 분석 (리더: web-researcher)
 - <strong>seo-marketing</strong>: SEO 및 마케팅 (리더: seo-optimizer)
@@ -520,7 +520,7 @@ operations:
 | 컨텍스트 재사용 | 0% | 80%+ | - |
 | 병렬 실행 효율 | 10% | 60%+ | 6배 |
 
-병렬 실행 효율을 실전에서 극대화하는 방법은 [AI 에이전트 워크플로우를 메타 도구로 최적화하기: AWO 프레임워크 실전 가이드](/ko/blog/ko/agentic-workflow-meta-tools-optimization)에서 확인할 수 있다.
+병렬 실행 효율을 실전에서 극대화하는 방법은 [AI 에이전트 워크플로우를 메타 도구로 최적화하기: AWO 프레임워크 실전 가이드](/ko/blog/ko/agentic-workflow-meta-tools-optimization/)에서 확인할 수 있다.
 
 ### 정성적 개선
 
@@ -624,7 +624,7 @@ Deep Agents는 더 많은 토큰을 사용한다. 다음을 고려하라:
 3. <strong>Anthropic</strong> - Claude Code Best Practices
    - Explore → Plan → Code → Commit 워크플로우
    - 서브에이전트 활용 전략
-   - 5가지 실전 패턴: [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)
+   - 5가지 실전 패턴: [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)
 
 ## 마치며
 

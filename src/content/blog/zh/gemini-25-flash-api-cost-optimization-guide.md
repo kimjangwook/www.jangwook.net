@@ -65,7 +65,7 @@ relatedPosts:
 
 还有一点：`gemini-2.5-flash-lite`是输入$0.10、输出$0.40。看起来便宜很多，但并非总是如此。这一点将在Step 3中结合实验结果解释。
 
-先做好设置。如需了解跨服务商的价格对比，可参考[LLM API价格比较2026](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)。今天专注于Flash。
+先做好设置。如需了解跨服务商的价格对比，可参考[LLM API价格比较2026](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)。今天专注于Flash。
 
 ```bash
 pip install google-genai
@@ -196,7 +196,7 @@ client.caches.delete(cache.name)
 - RAG中跨多个问题复用检索到的文档
 - 将完整代码库或手册作为上下文的编程助手
 
-与[Claude API的Prompt Caching](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)概念相同，但实现细节不同。Anthropic通过明确的缓存标记指定，而Gemini需要单独创建缓存对象。
+与[Claude API的Prompt Caching](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide/)概念相同，但实现细节不同。Anthropic通过明确的缓存标记指定，而Gemini需要单独创建缓存对象。
 
 ## Step 3: Flash vs Flash-Lite — Lite并不总是更便宜
 
@@ -235,11 +235,11 @@ response = client.models.generate_content(
 | 复杂推理 | Flash | Thinking质量差异 |
 | 高量批处理 | Batch API + 判断 | 50%折扣后重新计算 |
 
-按任务选择模型的策略与[异构LLM架构成本优化](/zh/blog/zh/heterogeneous-llm-agent-fleet-cost-optimization)中介绍的多模型路由模式直接相关。
+按任务选择模型的策略与[异构LLM架构成本优化](/zh/blog/zh/heterogeneous-llm-agent-fleet-cost-optimization/)中介绍的多模型路由模式直接相关。
 
 ## Step 4: 使用Batch API享受50%折扣
 
-对不需要实时响应的任务，可以使用Batch API。Google对批处理提供50%折扣——与[Anthropic Message Batches API实战指南](/zh/blog/zh/anthropic-message-batches-api-production-guide)是同样的思路。
+对不需要实时响应的任务，可以使用Batch API。Google对批处理提供50%折扣——与[Anthropic Message Batches API实战指南](/zh/blog/zh/anthropic-message-batches-api-production-guide/)是同样的思路。
 
 ```python
 import json

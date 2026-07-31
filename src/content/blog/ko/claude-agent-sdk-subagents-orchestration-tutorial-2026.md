@@ -35,7 +35,7 @@ relatedPosts:
       zh: '将技能连接到子代理可以重用重复能力。如果想更深入理解AgentDefinition.skills字段的用法，这篇文章会有所帮助。'
 ---
 
-[Tool Use 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)를 쓰고 나서 얼마 지나지 않아 댓글이 달렸다. "단일 에이전트는 이제 알겠는데, 리뷰어·보안 스캐너·문서 작성기를 동시에 돌리려면 어떻게 해요?" 솔직히 나도 그 시점에 막 실험하던 중이었다.
+[Tool Use 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)를 쓰고 나서 얼마 지나지 않아 댓글이 달렸다. "단일 에이전트는 이제 알겠는데, 리뷰어·보안 스캐너·문서 작성기를 동시에 돌리려면 어떻게 해요?" 솔직히 나도 그 시점에 막 실험하던 중이었다.
 
 `claude-agent-sdk 0.2.82`를 직접 설치해보니 답이 있었다. `AgentDefinition` 데이터클래스 하나와 `ClaudeAgentOptions.agents` 딕셔너리면 된다. 실제로 객체를 생성하고 타입 구조를 확인해봤다. API 키가 없어서 실행까지는 못 했지만, 코드 구조와 타입 시스템은 손으로 만져볼 수 있었다.
 
@@ -352,7 +352,7 @@ async def get_review_details(session_id: str):
 - 전체 실행 시간이 5초 이하다 (서브에이전트 스폰 오버헤드가 더 크다)
 - 단순한 질문-답변 패턴이다
 
-[A2A + MCP 하이브리드 아키텍처를 다룬 포스트](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide)에서도 나왔지만, 멀티에이전트 구조는 복잡성을 추가한다. 디버깅이 어렵고, 실패 지점이 늘고, 비용 예측이 어렵다. 단일 에이전트로 충분한 문제에 서브에이전트를 붙이면 코드만 복잡해진다.
+[A2A + MCP 하이브리드 아키텍처를 다룬 포스트](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide/)에서도 나왔지만, 멀티에이전트 구조는 복잡성을 추가한다. 디버깅이 어렵고, 실패 지점이 늘고, 비용 예측이 어렵다. 단일 에이전트로 충분한 문제에 서브에이전트를 붙이면 코드만 복잡해진다.
 
 개인적으로는 "세 작업이 독립적이고, 각각 Opus 기준 1만 토큰 이상 쓴다"가 서브에이전트를 도입하는 내 기준이다.
 
@@ -384,7 +384,7 @@ API 키가 없어서 실제 실행 로그를 못 남긴 건 솔직히 아쉽다.
 
 ## Managed Agents vs SDK 서브에이전트 — 무엇을 선택할까
 
-[Managed Agents의 Dreaming과 Orchestration 발표](/ko/blog/ko/claude-managed-agents-dreaming-outcomes-code-with-claude-2026)를 봤다면 비슷한 기능처럼 느껴질 수 있다. 실제로 하는 일은 같다. 에이전트가 에이전트를 스폰한다. 차이는 어디서 실행되느냐다.
+[Managed Agents의 Dreaming과 Orchestration 발표](/ko/blog/ko/claude-managed-agents-dreaming-outcomes-code-with-claude-2026/)를 봤다면 비슷한 기능처럼 느껴질 수 있다. 실제로 하는 일은 같다. 에이전트가 에이전트를 스폰한다. 차이는 어디서 실행되느냐다.
 
 SDK 서브에이전트는 내 Python 프로세스 안에서 동작한다. API 키와 Claude Code 런타임만 있으면 된다. 컨트롤이 전부 내 코드에 있다. 세션 스토어를 직접 고를 수 있고, 훅으로 실행을 감시하고, 비용 예산을 코드에서 제어한다.
 

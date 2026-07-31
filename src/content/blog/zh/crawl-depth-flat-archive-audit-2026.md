@@ -67,7 +67,7 @@ relatedPosts:
 
 深度变深之后究竟坏在哪里，官方并没有给出断言。Google没有公开点击深度的阈值，也没说链接结构能保证排名。倒是抓取预算那份文档交代了前提：“Google defines a site's crawl budget as the set of URLs that Google can and wants to crawl.” 紧接着它自己划定了读者范围：“If your site doesn't have a large number of pages that change rapidly, or if your pages seem to be crawled the same day that they are published, you don't need to read this guide.”([Large site owner's guide to managing your crawl budget](https://developers.google.com/search/docs/crawling-indexing/large-site-managing-crawl-budget))
 
-我的站点正落在"不必读这份指南"那一档。所以我不把深度当成预算问题，而是拿它回答一个朴素得多的问题：**对只会跟着链接走的访客来说，这篇文章存在吗。** 那个访客可能是人，可能是Googlebot，也可能是一个从不执行JavaScript的AI爬虫。关于最后这类访客还能看到什么，我在[AI爬虫不渲染JavaScript时还剩下什么](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026)里单独测过。可达性只有建立在那个前提上才有意义。
+我的站点正落在"不必读这份指南"那一档。所以我不把深度当成预算问题，而是拿它回答一个朴素得多的问题：**对只会跟着链接走的访客来说，这篇文章存在吗。** 那个访客可能是人，可能是Googlebot，也可能是一个从不执行JavaScript的AI爬虫。关于最后这类访客还能看到什么，我在[AI爬虫不渲染JavaScript时还剩下什么](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/)里单独测过。可达性只有建立在那个前提上才有意义。
 
 ## 对着构建产物跑的六十行
 
@@ -165,7 +165,7 @@ while (q.length) {
 
 说实话，7,257个DOM节点让我有点在意，是文章页的十倍以上。不过缓冲已经在了：320张缩略图里319张带 `loading="lazy"`，首屏之外的图根本不会发起请求。DOMContentLoaded是387ms，反而比文章页的423ms更快。这组比较是本地服务加热缓存的条件，绝对值不能照搬到线上。能说的是，在这个条件下并没有观察到"列表页特别慢"的迹象。
 
-我的判断是这样：这份账单**只结在一张页面上，能被测量，上限看得见。** 而296篇丢掉链接路径的损失既不局部，也说不清什么时候恢复。我付前一笔。这类页面真正危险的不是字节，而是布局稳定性和渲染成本，那一侧按[把CLS从0.559降到0.014](/zh/blog/zh/cls-layout-shift-reserve-space-measure-2026)里的做法预留空间，基本就压住了。
+我的判断是这样：这份账单**只结在一张页面上，能被测量，上限看得见。** 而296篇丢掉链接路径的损失既不局部，也说不清什么时候恢复。我付前一笔。这类页面真正危险的不是字节，而是布局稳定性和渲染成本，那一侧按[把CLS从0.559降到0.014](/zh/blog/zh/cls-layout-shift-reserve-space-measure-2026/)里的做法预留空间，基本就压住了。
 
 ## 如果要做分页，深度的算术先摆出来
 
@@ -208,7 +208,7 @@ while (q.length) {
 5. **分页器避开"只有下一页"。** 322篇按10篇拆，最坏深度33；同样页数换成数字分页器，降到9。深度是UI选择的结果。
 6. **扁平列表的成本要测出来，别靠猜。** 我这边是传输86KB、DOM 7,257个、320张缩略图里319张懒加载。这个量级我付。关键是先看数字再决定，而不是凭"应该挺重"就动手改结构。
 
-那么你的站点现在正丢着多少篇？把这个问题换算成数字，就是我做的事：信息架构审计、内链重构、爬虫可达性测量。想知道答案的话，[个人页](/zh/about)上的联系方式一直开着。
+那么你的站点现在正丢着多少篇？把这个问题换算成数字，就是我做的事：信息架构审计、内链重构、爬虫可达性测量。想知道答案的话，[个人页](/zh/about/)上的联系方式一直开着。
 
 ---
 

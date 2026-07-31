@@ -259,7 +259,7 @@ console.log('Average:', avg.avg);  // Average: 1012.5
 db.close();
 ```
 
-Date formatting, hashing, JSON parsing, anything you'd normally handle in application code can be pushed into the query instead. When [building a Hono API server](/en/blog/en/hono-typescript-api-2026), this approach cuts down on post-query data transformation.
+Date formatting, hashing, JSON parsing, anything you'd normally handle in application code can be pushed into the query instead. When [building a Hono API server](/en/blog/en/hono-typescript-api-2026/), this approach cuts down on post-query data transformation.
 
 ## StatementSync Advanced Options
 
@@ -389,7 +389,7 @@ const mode = db.prepare('PRAGMA journal_mode').get();
 console.log(mode.journal_mode);  // wal
 ```
 
-As I covered in the [Deno 2 vs Bun comparison](/en/blog/en/deno-2-vs-bun-nodejs-runtime-2026-comparison), SQLite with WAL mode handles most internal tooling workloads well. You don't always need Postgres.
+As I covered in the [Deno 2 vs Bun comparison](/en/blog/en/deno-2-vs-bun-nodejs-runtime-2026-comparison/), SQLite with WAL mode handles most internal tooling workloads well. You don't always need Postgres.
 
 ## Error Handling
 
@@ -458,7 +458,7 @@ The differences, compressed into one table:
 
 Don't ship this to a production HTTP server yet. Wait for Node.js v26 LTS and the experimental flag to drop. But for internal scripts, CLI tools, build pipelines, caches, and prototypes, it's ready right now. If you've ever lost an hour to a `better-sqlite3` build failure in CI, this module is immediately worth switching to.
 
-If you build [shell automation scripts like with Bun Shell](/en/blog/en/bun-shell-scripting-practical-guide-2026) or internal developer tooling and want to minimize dependencies, `node:sqlite` is a practical choice today.
+If you build [shell automation scripts like with Bun Shell](/en/blog/en/bun-shell-scripting-practical-guide-2026/) or internal developer tooling and want to minimize dependencies, `node:sqlite` is a practical choice today.
 
 ## Good Enough for Internal Tooling Today
 

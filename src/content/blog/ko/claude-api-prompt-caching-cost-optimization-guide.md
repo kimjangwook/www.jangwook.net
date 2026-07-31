@@ -205,7 +205,7 @@ def cached_rag_qa(docs: list[str], questions: list[str]) -> list[str]:
 
 단, RAG 패턴에서 주의할 점이 있다. 검색으로 매번 다른 문서를 가져오면 캐시 히트율이 낮아진다. 세션 단위로 관련 문서를 묶어서 캐시하거나, 문서 청크를 고정하고 검색 쿼리만 바꾸는 방식이 더 효과적이다.
 
-[컨텍스트 엔지니어링 관점에서 무엇을 캐시할지 설계하는 방법](/ko/blog/ko/context-engineering-production-ai-agents)을 먼저 이해하면 RAG 캐싱 전략이 훨씬 명확해진다.
+[컨텍스트 엔지니어링 관점에서 무엇을 캐시할지 설계하는 방법](/ko/blog/ko/context-engineering-production-ai-agents/)을 먼저 이해하면 RAG 캐싱 전략이 훨씬 명확해진다.
 
 ## 패턴 3: 툴 정의 캐싱
 
@@ -244,7 +244,7 @@ response = client.messages.create(
 )
 ```
 
-MCP 기반 에이전트라면 [mcp2cli의 토큰 최적화 접근법](/ko/blog/ko/mcp2cli-token-cost-optimization)과 함께 쓰면 툴 디스커버리 비용을 거의 없앨 수 있다.
+MCP 기반 에이전트라면 [mcp2cli의 토큰 최적화 접근법](/ko/blog/ko/mcp2cli-token-cost-optimization/)과 함께 쓰면 툴 디스커버리 비용을 거의 없앨 수 있다.
 
 ## 패턴 4: 멀티턴 대화 캐싱
 
@@ -507,7 +507,7 @@ def calculate_cost(usage, model: str = "claude-sonnet-4-6") -> dict:
 
 결과적으로 입력 토큰 비용이 약 65% 감소했다. 월 API 비용이 $40〜$60 수준이었는데, 캐싱 최적화 후 $15〜$20으로 줄었다.
 
-이 수준에서 더 줄이려면 [LLM API 가격 비교 2026](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 다룬 것처럼 작업 유형별로 다른 모델을 쓰는 이종 아키텍처를 조합해야 한다. 캐싱이 입력 비용을 줄인다면, 모델 라우팅은 단위 비용 자체를 낮춘다.
+이 수준에서 더 줄이려면 [LLM API 가격 비교 2026](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)에서 다룬 것처럼 작업 유형별로 다른 모델을 쓰는 이종 아키텍처를 조합해야 한다. 캐싱이 입력 비용을 줄인다면, 모델 라우팅은 단위 비용 자체를 낮춘다.
 
 ---
 

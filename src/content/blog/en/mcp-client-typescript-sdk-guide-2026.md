@@ -49,7 +49,7 @@ The verdict: it's a lot simpler than I expected. There was also one behavior tha
 
 ## The idea: do what Claude Desktop does, manually
 
-MCP (Model Context Protocol) is the standard interface for AI agents to access external tools and data. I've written a lot about building MCP servers — including [how to build one in TypeScript](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) and [spinning one up with Python FastMCP in 30 minutes](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026). But I've never written about implementing the client side myself.
+MCP (Model Context Protocol) is the standard interface for AI agents to access external tools and data. I've written a lot about building MCP servers — including [how to build one in TypeScript](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026/) and [spinning one up with Python FastMCP in 30 minutes](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/). But I've never written about implementing the client side myself.
 
 Thinking about production use cases, there are clear situations where a custom MCP client makes sense:
 
@@ -276,7 +276,7 @@ async function callToolSafe(client, name, args) {
 }
 ```
 
-This is intentional per the MCP spec. Tool execution errors and protocol errors are kept separate: protocol-level errors might throw, but tool-level errors come back in the content. Once I understood this, it made sense — it matches how Claude agents receive tool output. Even when a tool fails, the LLM gets the error text as part of the context and can reason about it. And the format you serialize that result in becomes your input token bill directly. Since [the same data can cost up to 62% more tokens depending on format](/en/blog/en/llm-token-cost-data-format-experiment), the small choice to return flat results as CSV or TSV instead of JSON shifts the agent's whole cost.
+This is intentional per the MCP spec. Tool execution errors and protocol errors are kept separate: protocol-level errors might throw, but tool-level errors come back in the content. Once I understood this, it made sense — it matches how Claude agents receive tool output. Even when a tool fails, the LLM gets the error text as part of the context and can reason about it. And the format you serialize that result in becomes your input token bill directly. Since [the same data can cost up to 62% more tokens depending on format](/en/blog/en/llm-token-cost-data-format-experiment/), the small choice to return flat results as CSV or TSV instead of JSON shifts the agent's whole cost.
 
 ## Parallel callTool — 4 calls in 1ms
 
@@ -329,7 +329,7 @@ If your MCP server exposes code linting, file conversion, or external API lookup
 
 **Building a custom agent framework**
 
-If you're writing your own agent loop without LangGraph or LlamaIndex, a custom MCP client slots in as the tool execution layer. Pull the tool list with `listTools()`, inject it into your LLM prompt, parse the model's tool call decision, and run it with `callTool()`. For a more complete treatment of attaching tools to an AI agent, the [Claude Agent SDK tool use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) covers this pattern in depth.
+If you're writing your own agent loop without LangGraph or LlamaIndex, a custom MCP client slots in as the tool execution layer. Pull the tool list with `listTools()`, inject it into your LLM prompt, parse the model's tool call decision, and run it with `callTool()`. For a more complete treatment of attaching tools to an AI agent, the [Claude Agent SDK tool use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/) covers this pattern in depth.
 
 **Testing and debugging MCP servers**
 

@@ -190,7 +190,7 @@ export async function POST(req: Request) {
 
 <strong>첫째, `client.messages.stream()`은 `AsyncIterableStream`을 반환한다.</strong> `for await...of`로 청크를 하나씩 받아 클라이언트에 내보낸다. 스트림이 끝나면 `[DONE]` 시그널을 보내고 컨트롤러를 닫는다.
 
-<strong>둘째, `ReadableStream` + `TextEncoder` 조합이 Web Streams API 표준이다.</strong> Next.js Route Handler는 Node.js `stream` 모듈이 아닌 Web Streams를 사용한다. Express나 [FastAPI의 스트리밍](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)과 API가 다른 이유가 이것이다. `new ReadableStream`이 낯설게 느껴질 수 있지만, 이 패턴이 모던 JavaScript 런타임에서 표준이 됐다.
+<strong>둘째, `ReadableStream` + `TextEncoder` 조합이 Web Streams API 표준이다.</strong> Next.js Route Handler는 Node.js `stream` 모듈이 아닌 Web Streams를 사용한다. Express나 [FastAPI의 스트리밍](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026/)과 API가 다른 이유가 이것이다. `new ReadableStream`이 낯설게 느껴질 수 있지만, 이 패턴이 모던 JavaScript 런타임에서 표준이 됐다.
 
 `content_block_delta` 이벤트만 필터링하는 이유도 짚고 넘어가자. Anthropic의 스트리밍 이벤트에는 `message_start`, `content_block_start`, `content_block_delta`, `message_delta`, `message_stop` 등 여러 종류가 있다. 실제 텍스트가 들어있는 건 `text_delta` 타입의 `content_block_delta`뿐이다.
 
@@ -415,7 +415,7 @@ export async function POST(req: Request) {
 }
 ```
 
-<strong>대화 길이 제한이 없다.</strong> 위 코드는 대화 히스토리 전체를 매 요청마다 Claude API에 보낸다. 대화가 길어지면 컨텍스트 윈도우를 초과해 에러가 난다. claude-opus-4-7은 200K 토큰 컨텍스트를 지원하지만, 비용도 길이에 비례해서 오른다. 실제 서비스라면 최근 N개 메시지만 보내거나, [Anthropic Message Batches API](/ko/blog/ko/anthropic-message-batches-api-production-guide)와 조합해 비용을 관리해야 한다.
+<strong>대화 길이 제한이 없다.</strong> 위 코드는 대화 히스토리 전체를 매 요청마다 Claude API에 보낸다. 대화가 길어지면 컨텍스트 윈도우를 초과해 에러가 난다. claude-opus-4-7은 200K 토큰 컨텍스트를 지원하지만, 비용도 길이에 비례해서 오른다. 실제 서비스라면 최근 N개 메시지만 보내거나, [Anthropic Message Batches API](/ko/blog/ko/anthropic-message-batches-api-production-guide/)와 조합해 비용을 관리해야 한다.
 
 <strong>동시 요청 관리가 없다.</strong> 여러 탭을 동시에 열거나 사용자가 메시지를 빠르게 여러 번 보내면 스트림이 겹친다. AbortController를 써서 이전 요청을 취소하는 로직이 없다.
 
@@ -441,7 +441,7 @@ Vercel의 일부 설정에서는 Edge Runtime과 Node.js Runtime의 스트리밍
 
 ## Vercel AI SDK와의 비교: 언제 뭘 쓸까
 
-이 구현과 [Vercel AI SDK 방식](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)을 비교하면:
+이 구현과 [Vercel AI SDK 방식](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026/)을 비교하면:
 
 | 항목 | Raw Anthropic SDK | Vercel AI SDK |
 |---|---|---|
@@ -511,8 +511,8 @@ const text = decoder.decode(value);
 
 이 기본 구현에서 발전시킬 수 있는 방향:
 
-1. **Tool Use 추가** — Claude에게 함수 호출 능력 부여 → [Claude Agent SDK 실전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)
-2. **Prompt Caching** — API 비용 최대 90% 절감 → [Claude API Prompt Caching 실전](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide)
+1. **Tool Use 추가** — Claude에게 함수 호출 능력 부여 → [Claude Agent SDK 실전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)
+2. **Prompt Caching** — API 비용 최대 90% 절감 → [Claude API Prompt Caching 실전](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide/)
 3. **에러 핸들링 강화** — AbortController, retry 로직, 에러 SSE 이벤트
 4. **스트림 취소** — 사용자가 응답 생성을 중단할 수 있는 Cancel 버튼
 5. **Vercel 배포** — 위의 배포 주의사항 적용 후 프로덕션 공개

@@ -199,7 +199,7 @@ def cached_rag_qa(docs: list[str], questions: list[str]) -> list[str]:
 
 客户支持系统示例：50,000 token产品手册每天被引用1,000次，无缓存费用$150，有缓存约$18.4。每天节省$131。
 
-从[上下文工程角度理解如何设计缓存内容](/zh/blog/zh/context-engineering-production-ai-agents)，可以让RAG缓存策略更加清晰。
+从[上下文工程角度理解如何设计缓存内容](/zh/blog/zh/context-engineering-production-ai-agents/)，可以让RAG缓存策略更加清晰。
 
 ## 模式3：工具定义缓存
 
@@ -237,7 +237,7 @@ response = client.messages.create(
 )
 ```
 
-对于基于MCP的Agent，结合[mcp2cli的token优化方法](/zh/blog/zh/mcp2cli-token-cost-optimization)可以几乎消除工具发现成本。
+对于基于MCP的Agent，结合[mcp2cli的token优化方法](/zh/blog/zh/mcp2cli-token-cost-optimization/)可以几乎消除工具发现成本。
 
 ## 模式4：多轮对话缓存
 
@@ -351,7 +351,7 @@ def calculate_cost(usage, model: str = "claude-sonnet-4-6") -> dict:
 
 结果输入token成本降低约65%。月度API支出从$40〜$60降至$15〜$20。
 
-要进一步降低，可以结合[LLM API价格比较2026](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)中介绍的按任务类型使用不同模型的异构架构。缓存降低输入成本；模型路由降低单位token价格。两种策略可以叠加使用。
+要进一步降低，可以结合[LLM API价格比较2026](/zh/blog/zh/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)中介绍的按任务类型使用不同模型的异构架构。缓存降低输入成本；模型路由降低单位token价格。两种策略可以叠加使用。
 
 ---
 

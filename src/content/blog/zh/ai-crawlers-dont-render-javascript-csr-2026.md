@@ -137,7 +137,7 @@ curl -A "GPTBot" https://example.com/my-page | grep "这里放核心短语"
 - <strong>Astro</strong>：默认静态生成，通常安全。但要小心只存在于 `client:only` 岛屿里的文本，它不会进入初始 HTML。
 - <strong>SvelteKit / Angular</strong>：SvelteKit 打开 `load` 函数的服务端执行，Angular 启用 Angular Universal（SSR）。
 
-有一个模式特别要当心：用 Google Tag Manager 这类客户端脚本去注入结构化数据（JSON-LD）或 meta 标签。人眼看着好好的，可 AI 爬虫不会跑那段脚本，JSON-LD 就跟着一起消失。这个坑我在[LocalBusiness 结构化数据用 JS 注入与服务端注入的差别](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)里实测过，到了 AI 爬虫的时代，"服务端更可靠"这条原则的分量重了太多。哪怕你用了组织良好的 [JSON-LD @graph 实体模型](/zh/blog/zh/json-ld-graph-entity-linking-2026)，也得它出现在服务器响应里才算数。
+有一个模式特别要当心：用 Google Tag Manager 这类客户端脚本去注入结构化数据（JSON-LD）或 meta 标签。人眼看着好好的，可 AI 爬虫不会跑那段脚本，JSON-LD 就跟着一起消失。这个坑我在[LocalBusiness 结构化数据用 JS 注入与服务端注入的差别](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026/)里实测过，到了 AI 爬虫的时代，"服务端更可靠"这条原则的分量重了太多。哪怕你用了组织良好的 [JSON-LD @graph 实体模型](/zh/blog/zh/json-ld-graph-entity-linking-2026/)，也得它出现在服务器响应里才算数。
 
 如果全面迁到 SSR 太重，混合也行。壳和核心文本在服务端渲染，只把需要交互的组件放到客户端 hydration。判断标准只有一条：<strong>有意义的正文是否已在初始 HTML 里。</strong>
 
@@ -151,7 +151,7 @@ curl -A "GPTBot" https://example.com/my-page | grep "这里放核心短语"
 
 llms.txt 是一个社区提案，用 Markdown 把网站内容摘要出来递给爬虫。想法本身不坏。问题在现实。Google 已明确表示不支持 llms.txt，也没有计划支持（2025 年 7 月 Search Central Live，Gary Illyes），John Mueller 把它比作被搜索引擎无视了十多年的 keywords meta 标签——一个由站长自称"我这网站是讲什么的"的文件，天然容易被操纵。没有哪个主流 AI 服务官方确认在推理时使用它。在一项 30 万域名的调查里采用率约 10%，而有效的 llms.txt 中约 97% 在 2026 年 5 月整月没收到任何请求（参考值，非官方）。
 
-一句话：AI 爬虫读不到你，根源不是"缺一个摘要文件"，而是"正文藏在 JavaScript 后面"。llms.txt 是绕开病根去铺一条岔路。至于怎么从源头控制 AI 爬虫的访问，是另一个话题，我在[用 robots.txt 管控 AI 爬虫](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026)里单独写过，允许/拦截的策略看那篇就好。但"被引用"的第一步，永远是服务端可见性。
+一句话：AI 爬虫读不到你，根源不是"缺一个摘要文件"，而是"正文藏在 JavaScript 后面"。llms.txt 是绕开病根去铺一条岔路。至于怎么从源头控制 AI 爬虫的访问，是另一个话题，我在[用 robots.txt 管控 AI 爬虫](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026/)里单独写过，允许/拦截的策略看那篇就好。但"被引用"的第一步，永远是服务端可见性。
 
 ## 诚实交代局限
 

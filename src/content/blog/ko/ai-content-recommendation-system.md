@@ -574,7 +574,7 @@ git add recommendations.json
 git commit -m "chore: update recommendations for new post"
 ```
 
-포스트 작성부터 추천 생성, 배포까지 이어지는 전체 자동화 파이프라인의 설계 원칙은 [LLM 기반 블로그 포스팅 자동화 완전 가이드](/ko/blog/ko/llm-blog-automation)에서 더 자세히 다룬다.
+포스트 작성부터 추천 생성, 배포까지 이어지는 전체 자동화 파이프라인의 설계 원칙은 [LLM 기반 블로그 포스팅 자동화 완전 가이드](/ko/blog/ko/llm-blog-automation/)에서 더 자세히 다룬다.
 
 ## 성능 최적화
 
@@ -650,7 +650,7 @@ const postsToProcess = posts.filter(post => {
 | 이탈률 | -15-25% |
 | 추천 클릭률 (CTR) | 18-25% |
 
-추천 효과를 실시간으로 측정하고 싶다면 [Google Analytics MCP로 블로그 분석 자동화](/ko/blog/ko/google-analytics-mcp-automation)와 함께 설정하면 효율적이다.
+추천 효과를 실시간으로 측정하고 싶다면 [Google Analytics MCP로 블로그 분석 자동화](/ko/blog/ko/google-analytics-mcp-automation/)와 함께 설정하면 효율적이다.
 
 ### 정성적 효과
 
@@ -719,11 +719,11 @@ Claude LLM 기반 콘텐츠 추천 시스템은 단순한 태그 매칭을 넘�
 ✅ <strong>자동화된 워크플로우</strong>로 유지보수 최소화
 ✅ <strong>다국어 자연 지원</strong>으로 글로벌 블로그 최적화
 
-이 시스템을 구축하면 독자들의 체류 시간이 늘어나고, 콘텐츠 발견성이 향상되며, 결과적으로 블로그의 가치가 극대화된다. 기존 블로그에 바로 적용할 수 있으니 지금 시작해보면 된다. [AI 에이전트와 Notion MCP를 연동한 콘텐츠 관리 자동화](/ko/blog/ko/ai-agent-notion-mcp-automation)까지 구축하면 블로그 운영 전체를 하나의 플로우로 통합할 수 있다.
+이 시스템을 구축하면 독자들의 체류 시간이 늘어나고, 콘텐츠 발견성이 향상되며, 결과적으로 블로그의 가치가 극대화된다. 기존 블로그에 바로 적용할 수 있으니 지금 시작해보면 된다. [AI 에이전트와 Notion MCP를 연동한 콘텐츠 관리 자동화](/ko/blog/ko/ai-agent-notion-mcp-automation/)까지 구축하면 블로그 운영 전체를 하나의 플로우로 통합할 수 있다.
 
 ## 다음 글
 
-<strong>[추천 시스템 혁신: 78,000 토큰을 제로로 만든 메타데이터 최적화 여정](/ko/blog/ko/metadata-based-recommendation-optimization)</strong>에서는 이 LLM 기반 추천 시스템을 메타데이터 기반 알고리즘으로 최적화하여 토큰 사용량을 100% 제거하고 실행 시간을 99% 단축한 사례를 다룬다.
+<strong>[추천 시스템 혁신: 78,000 토큰을 제로로 만든 메타데이터 최적화 여정](/ko/blog/ko/metadata-based-recommendation-optimization/)</strong>에서는 이 LLM 기반 추천 시스템을 메타데이터 기반 알고리즘으로 최적화하여 토큰 사용량을 100% 제거하고 실행 시간을 99% 단축한 사례를 다룬다.
 
 ## 참고 자료
 

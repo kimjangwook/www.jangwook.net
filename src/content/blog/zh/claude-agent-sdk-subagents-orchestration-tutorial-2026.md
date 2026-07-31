@@ -35,7 +35,7 @@ relatedPosts:
       zh: '将技能连接到子代理可以重用重复能力。如果想更深入理解AgentDefinition.skills字段的用法，这篇文章会有所帮助。'
 ---
 
-发布完 [Tool Use指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)后不久，就收到了评论："单个代理我理解了，但如何同时运行代码审查员、安全扫描仪和文档编写器呢？"说实话，我那时候也正在做实验。
+发布完 [Tool Use指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)后不久，就收到了评论："单个代理我理解了，但如何同时运行代码审查员、安全扫描仪和文档编写器呢？"说实话，我那时候也正在做实验。
 
 直接安装`claude-agent-sdk 0.2.82`后，答案出现了。只需要一个`AgentDefinition`数据类和`ClaudeAgentOptions.agents`字典就够了。我实际创建了对象并验证了类型结构。没有API密钥，所以没能运行实际查询，但代码结构和类型系统都亲手确认过了。
 
@@ -294,7 +294,7 @@ opts = sdk.ClaudeAgentOptions(
 - 总运行时间不到5秒（子代理生成开销大于收益）
 - 简单的问答模式
 
-[A2A + MCP混合架构](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide)中也提到过这一点：多代理结构会增加复杂性。故障点更多，调试更难，成本更难预测。不要给单个代理就能解决的问题加上子代理。
+[A2A + MCP混合架构](/zh/blog/zh/a2a-mcp-hybrid-architecture-production-guide/)中也提到过这一点：多代理结构会增加复杂性。故障点更多，调试更难，成本更难预测。不要给单个代理就能解决的问题加上子代理。
 
 我个人的标准是："三个或更多独立任务，每个任务用Opus预计消耗1万Token以上。"低于这个标准，我就坚持用单个代理。
 

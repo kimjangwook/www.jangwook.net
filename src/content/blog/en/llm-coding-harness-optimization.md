@@ -109,7 +109,7 @@ This is the diff-based patch format used by OpenAI in Codex. The model outputs m
 
 ### 2. string_replace (Claude Code, Gemini Approach)
 
-This approach specifies the exact string to find and the exact string to replace it with. [Claude Code](/en/blog/en/openai-codex-api-release-vs-claude-code-comparison-may-2026)'s `str_replace` tool is a prime example.
+This approach specifies the exact string to find and the exact string to replace it with. [Claude Code](/en/blog/en/openai-codex-api-release-vs-claude-code-comparison-may-2026/)'s `str_replace` tool is a prime example.
 
 <strong>Pros</strong>: Intuitive and simple to implement.
 <strong>Cons</strong>: A single mismatched space or indent triggers a "String to replace not found" error. <strong>Perfect string reproduction</strong> is required.
@@ -221,7 +221,7 @@ When evaluating AI coding tools as a CTO, you should measure <strong>actual edit
 
 3. <strong>Differentiate reasoning strategies</strong>: Assign different reasoning levels to the planning, implementation, and verification phases.
 
-4. <strong>Trace-based debugging</strong>: Use tools like LangSmith to track all agent actions, latency, and token consumption, then systematically optimize. As an open-source alternative, [Langfuse self-hosting](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026) is worth considering.
+4. <strong>Trace-based debugging</strong>: Use tools like LangSmith to track all agent actions, latency, and token consumption, then systematically optimize. As an open-source alternative, [Langfuse self-hosting](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026/) is worth considering.
 
 ### Practical Tools Shared by the HN Community
 
@@ -240,7 +240,7 @@ In the 2026 AI coding tool competition, the deciding factor is not just "which m
 - Harness optimization alone: <strong>Top 30 to Top 5</strong> (13.7 points)
 - Output token reduction: <strong>20-61%</strong>
 
-As an Engineering Manager looking to boost your team's AI coding productivity, before waiting for the next model release, <strong>start by measuring your current harness's edit success rate</strong>. That number may reveal more than you expect. If your team works with Python-based AI tools, [setting up with uv](/en/blog/en/uv-python-ai-development-setup-guide-2026) is a good starting point for a solid dev environment.
+As an Engineering Manager looking to boost your team's AI coding productivity, before waiting for the next model release, <strong>start by measuring your current harness's edit success rate</strong>. That number may reveal more than you expect. If your team works with Python-based AI tools, [setting up with uv](/en/blog/en/uv-python-ai-development-setup-guide-2026/) is a good starting point for a solid dev environment.
 
 ## References
 

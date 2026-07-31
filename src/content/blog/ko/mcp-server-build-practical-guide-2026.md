@@ -57,7 +57,7 @@ MCP 서버를 쓰는 글은 넘쳐나는데, 직접 만드는 글은 의외로 �
 
 ## 왜 직접 만드는가
 
-[MCP 서버 도구 모음 완벽 가이드](/ko/blog/ko/mcp-servers-toolkit-introduction)에서 다룬 것처럼, 이미 수백 개의 공개 MCP 서버가 있다. 그런데도 직접 만들어야 하는 이유가 있다.
+[MCP 서버 도구 모음 완벽 가이드](/ko/blog/ko/mcp-servers-toolkit-introduction/)에서 다룬 것처럼, 이미 수백 개의 공개 MCP 서버가 있다. 그런데도 직접 만들어야 하는 이유가 있다.
 
 첫째, 사내 시스템 연동. 공개 MCP 서버가 우리 회사의 사내 JIRA, 빌드 시스템, 배포 파이프라인을 알 리 없다.
 
@@ -282,7 +282,7 @@ def get_app_settings() -> str:
 
 솔직히 말하면, Streamable HTTP MCP 서버를 프로덕션에 올리는 건 아직 주의가 필요한 영역이다.
 
-[MCP 보안 위기 — 60일 만에 30개 CVE](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening)에서 다룬 것처럼, MCP 생태계는 아직 보안 측면에서 성숙하지 않았다. 직접 서버를 만들 때 특히 주의할 점들:
+[MCP 보안 위기 — 60일 만에 30개 CVE](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening/)에서 다룬 것처럼, MCP 생태계는 아직 보안 측면에서 성숙하지 않았다. 직접 서버를 만들 때 특히 주의할 점들:
 
 **인증 미구현 위험**: FastMCP 기본 설정에는 인증이 없다. 내부망에서만 쓴다면 괜찮지만, 인터넷에 노출할 경우 반드시 API 키나 OAuth를 추가해야 한다.
 
@@ -299,7 +299,7 @@ mcp = FastMCP("secure-server", auth=auth)
 
 **도구 입력 검증**: 사용자 입력을 직접 시스템 명령이나 쿼리로 전달하지 않도록 주의해야 한다. Pydantic 모델로 타입을 강제하면 기본적인 입력 검증이 된다.
 
-**로깅**: 어떤 AI 에이전트가 어떤 도구를 언제 호출했는지 반드시 로깅해야 한다. [MCP Gateway — AI 에이전트의 도구 호출을 누가 통제하고 있는가](/ko/blog/ko/mcp-gateway-agent-traffic-control)에서 다룬 것처럼, 에이전트 트래픽 모니터링은 운영 필수 요건이다.
+**로깅**: 어떤 AI 에이전트가 어떤 도구를 언제 호출했는지 반드시 로깅해야 한다. [MCP Gateway — AI 에이전트의 도구 호출을 누가 통제하고 있는가](/ko/blog/ko/mcp-gateway-agent-traffic-control/)에서 다룬 것처럼, 에이전트 트래픽 모니터링은 운영 필수 요건이다.
 
 ## 빠른 로컬 테스트 방법
 

@@ -43,7 +43,7 @@ faq:
 
 A few days ago, a meeting-notes summarizer I run locally started misbehaving. Short transcripts were fine, but feed it a long transcript and it ignored the instruction I'd written at the top ("answer in JSON only") and rambled in plain prose. My first guess was that the model was just dumb. What nagged me was that the same model obeyed the instruction perfectly on short inputs. So maybe the model hadn't gotten dumber. Maybe it had never **seen** my instruction at all.
 
-In a [previous post that decomposed prefill and generation cost](/en/blog/en/local-llm-prefill-generation-latency-experiment), I measured how a longer context delays the first token. That was about speed. What I suspected this time was something else. Past a certain length, maybe it isn't speed that suffers but the **content** that vanishes. So I measured it.
+In a [previous post that decomposed prefill and generation cost](/en/blog/en/local-llm-prefill-generation-latency-experiment/), I measured how a longer context delays the first token. That was about speed. What I suspected this time was something else. Past a certain length, maybe it isn't speed that suffers but the **content** that vanishes. So I measured it.
 
 ## Hiding a secret at the front, then growing the length
 
@@ -103,7 +103,7 @@ There's a practical defense in this. Any instruction you truly cannot afford to 
 
 The most useful thing I got from this is elsewhere: **truncation leaves a trace in the response.** The `prompt_eval_count` that Ollama returns in the `/api/generate` response is the number of input tokens the model actually prefilled. If that value is smaller than your sent prompt's token count and clings to num_ctx, it was almost certainly truncated.
 
-Why it matters: nobody normally looks at this number. If the answer comes out plausible, you assume the whole input went in. But even if you've [stabilized answers with structured outputs](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026), if the model only saw half the input, you get an answer that's schema-clean but factually wrong. Schema validation passes while the facts are off, which is the nastiest kind of bug to debug.
+Why it matters: nobody normally looks at this number. If the answer comes out plausible, you assume the whole input went in. But even if you've [stabilized answers with structured outputs](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026/), if the model only saw half the input, you get an answer that's schema-clean but factually wrong. Schema validation passes while the facts are off, which is the nastiest kind of bug to debug.
 
 ## But the default wasn't 4096
 
@@ -155,7 +155,7 @@ Third, the default num_ctx landing on 16384 is a product of my 16GB M1 plus Olla
 
 And honestly, one thing I couldn't resolve remains. I ran the same test through the OpenAI-compatible endpoint (`/v1/chat/completions`) too, where there's no way to pass `options.num_ctx` per request, and `usage.prompt_tokens` reported a different number from `/api/generate`'s `prompt_eval_count` (3464 versus 2384 for the same text). On top of that, on my machine the head survived even on long input and recall worked. I get that the token accounting differs so the two endpoints can't be compared one-to-one, but why the truncation behavior looked different too, I can't cleanly explain. Either way, [a reported issue where num_ctx isn't honored on the OpenAI-compatible API and it silently truncates at 4096](https://github.com/ollama/ollama/issues/2714) does exist, so if you go through `/v1`, remember you're fully at the mercy of the server default (`OLLAMA_CONTEXT_LENGTH`).
 
-It's the same thread as [tracking load_duration during cold starts](/en/blog/en/local-llm-cold-start-load-duration-experiment). The numbers Ollama quietly tucks into each response, however thinly documented, are the most honest clues to its real behavior. Just as `load_duration` snitched on cold starts, `prompt_eval_count` snitches on truncation. If you're running local models seriously, give these numbers a look.
+It's the same thread as [tracking load_duration during cold starts](/en/blog/en/local-llm-cold-start-load-duration-experiment/). The numbers Ollama quietly tucks into each response, however thinly documented, are the most honest clues to its real behavior. Just as `load_duration` snitched on cold starts, `prompt_eval_count` snitches on truncation. If you're running local models seriously, give these numbers a look.
 
 ## References
 

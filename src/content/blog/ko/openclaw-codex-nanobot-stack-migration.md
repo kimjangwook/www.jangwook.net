@@ -104,7 +104,7 @@ OpenClaw 같은 묶음 도구의 함정이 여기 있다. 멀티에이전트, �
 
 3월에 Anthropic이 Claude Code Channels를 발표했다. 텔레그램에서 메시지를 보내면 로컬 터미널의 Claude가 응답하는 기능인데, 마침 OpenClaw의 텔레그램 채널과 거의 같은 UX를 제공했다. 나는 이걸 임시 다리로 썼다 — "OpenClaw 없이도 텔레그램에서 Claude를 부를 수 있다면, OAuth 차단의 즉각적인 통증은 줄어든다"는 계산이었다.
 
-실제로 잘 돌았다. 이동 중에 텔레그램으로 "오늘 분석 리포트 돌려줘"라고 보내면 집의 맥미니가 받아서 처리하고 결과를 텔레그램으로 다시 보낸다. 한 달 가까이 이렇게 썼다. [Channels 사용기](/ko/blog/ko/claude-code-channels-telegram-bridge)에 적어둔 그대로다.
+실제로 잘 돌았다. 이동 중에 텔레그램으로 "오늘 분석 리포트 돌려줘"라고 보내면 집의 맥미니가 받아서 처리하고 결과를 텔레그램으로 다시 보낸다. 한 달 가까이 이렇게 썼다. [Channels 사용기](/ko/blog/ko/claude-code-channels-telegram-bridge/)에 적어둔 그대로다.
 
 문제는 Channels가 "메시지-응답" 모델이라는 점이다. 상태가 없다. "어제 밤에 시작한 백필 잡 어디까지 갔어?"라고 물으면, Channels는 그 백필 잡의 존재를 모른다. 매번 새 세션으로 들어가서 처음부터 묻는 셈이다. OpenClaw는 채널마다 컨텍스트를 유지해 줬는데 Channels는 그렇지 않다.
 
@@ -122,7 +122,7 @@ OpenClaw가 무거운 이유는 모델 의존성이 아니다. 50개가 넘는 �
 
 이건 OpenClaw의 잘못이라기보다, 내가 OpenClaw를 잘못 쓰던 거였다. OpenClaw는 [채널 연동과 멀티에이전트 라우팅](https://docs.openclaw.ai/concepts/multi-agent)을 한 곳에서 오케스트레이션하는 도구다. 내가 거기서 실제로 쓰던 건 "Claude로 글 쓰기 + 텔레그램으로 결과 받기" 정도였다. 95%의 기능을 안 쓰면서 100%의 무게를 짊어지고 있었던 거다.
 
-이걸 OpenClaw가 잘 만들어진 도구다, 라는 걸 부정하는 의미로 받아들이지 말아 줬으면 한다. 나는 여전히 [OpenClaw 설치 가이드](/ko/blog/ko/openclaw-installation-tutorial)에 적은 그 좋은 점들 — 멀티 모델, 채널 시스템, 노드 그래프 — 을 인정한다. 다만 그 좋은 점들이 내 작업에 필요 없었던 거다.
+이걸 OpenClaw가 잘 만들어진 도구다, 라는 걸 부정하는 의미로 받아들이지 말아 줬으면 한다. 나는 여전히 [OpenClaw 설치 가이드](/ko/blog/ko/openclaw-installation-tutorial/)에 적은 그 좋은 점들 — 멀티 모델, 채널 시스템, 노드 그래프 — 을 인정한다. 다만 그 좋은 점들이 내 작업에 필요 없었던 거다.
 
 ## Nanobot으로 갈아탄 후
 

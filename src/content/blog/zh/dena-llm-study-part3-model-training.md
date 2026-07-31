@@ -42,11 +42,11 @@ faq:
 
 > <strong>系列: DeNA LLM 研究</strong> (3/5)
 >
-> 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 结构化输出与多LLM管道
 > 3. <strong>Part 3: 模型训练方法论</strong> ← 当前文章
-> 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)
-> 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
+> 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag/)
+> 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design/)
 
 ## 微调，到底该从哪儿下手?
 
@@ -54,7 +54,7 @@ faq:
 
 DeNA的LLM研究资料Part 3，恰好戳中了这个痛点。它先讲清三种训练方式的区别，再深入到LoRA、QLoRA、DPO这些高效方法的原理和实战用法。我又在此基础上补了2025年当下的趋势，以及自己亲手跑过之后的一些体会。
 
-这是系列的中间一篇。如果想先弄清模型本身怎么运作，可以从[Part 1: LLM基础](/zh/blog/zh/dena-llm-study-part1-fundamentals)读起；如果更关心不靠训练、而是接入外部知识的方向，[Part 4: RAG架构](/zh/blog/zh/dena-llm-study-part4-rag)正好接上这条脉络。
+这是系列的中间一篇。如果想先弄清模型本身怎么运作，可以从[Part 1: LLM基础](/zh/blog/zh/dena-llm-study-part1-fundamentals/)读起；如果更关心不靠训练、而是接入外部知识的方向，[Part 4: RAG架构](/zh/blog/zh/dena-llm-study-part4-rag/)正好接上这条脉络。
 
 ## 什么时候这些内容有用，什么时候可以跳过
 

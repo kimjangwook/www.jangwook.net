@@ -45,7 +45,7 @@ relatedPosts:
 
 AI Overview 和聊天式搜索不只看单个页面，而是要读<strong>实体之间的关系</strong>。「这篇文章的作者是谁，那位作者属于哪个组织，那个组织的官方网站是什么。」当这些关系在标记里被明确写出，机器就直接照单全收，不必推断。反过来，如果 `Article` 的 `author` 只写着 `{"@type": "Person", "name": "Jane Doe"}`，那这个 Jane Doe 与网站的 `Organization` 是什么关系，标记里哪儿都没说，只能指望机器自己把它们串起来。
 
-我认为开发者在这里该做的事很清楚：别依赖推断，把关系写下来。这正是 `@graph` 和 `@id` 存在的理由。给 AI 爬虫暴露什么、怎么暴露，我在[用 robots.txt 分开控制训练与引用的策略](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026)里讲过；这篇是下一步。当你已允许某个爬虫来读，如何递给它一个<strong>正确的实体模型</strong>。
+我认为开发者在这里该做的事很清楚：别依赖推断，把关系写下来。这正是 `@graph` 和 `@id` 存在的理由。给 AI 爬虫暴露什么、怎么暴露，我在[用 robots.txt 分开控制训练与引用的策略](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026/)里讲过；这篇是下一步。当你已允许某个爬虫来读，如何递给它一个<strong>正确的实体模型</strong>。
 
 ## @id 与节点引用：W3C 定义的连接方式
 
@@ -126,7 +126,7 @@ const graph = flat['@graph'] || flat;
 
 ![Disconnected islands versus connected @graph：将实测连通分量数可视化的示意图](../../../assets/blog/json-ld-graph-entity-linking-2026/graph-comparison.png)
 
-这里要澄清一个误读。「三座岛」不等于「结构化数据无效」。散落版的每块碎片都有效，Google 也能好好读取多段独立脚本块。我测的不是有效性，而是<strong>关系的显式程度</strong>。碎片化的标记把实体关系交给机器去推断，连通的 `@graph` 则把关系钉死后递过去。如果说[把 LocalBusiness 标记从服务端稳妥输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)讲的是「爬虫到底看不看得到标记」，这篇讲的就是「它看到的标记彼此连没连起来」。
+这里要澄清一个误读。「三座岛」不等于「结构化数据无效」。散落版的每块碎片都有效，Google 也能好好读取多段独立脚本块。我测的不是有效性，而是<strong>关系的显式程度</strong>。碎片化的标记把实体关系交给机器去推断，连通的 `@graph` 则把关系钉死后递过去。如果说[把 LocalBusiness 标记从服务端稳妥输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026/)讲的是「爬虫到底看不看得到标记」，这篇讲的就是「它看到的标记彼此连没连起来」。
 
 ## Google 保证什么，不保证什么
 
@@ -186,7 +186,7 @@ function buildGraph({ pageUrl, article }) {
 3. 把 `WebSite.publisher`、`Article.author`、`Article.publisher`、`Person.worksFor` 等，从内联对象换成<strong>`{"@id": ...}` 引用</strong>。
 4. 接上页面层级：`WebPage.isPartOf` → `WebSite`，`BreadcrumbList` → `WebPage.breadcrumb`。
 5. 把标记送进 [Schema Markup Validator](https://validator.schema.org/) 和 Google Rich Results Test，确认有效性。
-6. (可选)用 `jsonld` 做 `flatten` 后，用脚本校验连通分量是否为 <strong>1</strong>。若大于等于 2，说明某处漏了引用。多语言站点也值得用同样"不信文档、自己验证"的态度，去跑一遍[用 30 行脚本审计 hreflang 相互引用的方法](/zh/blog/zh/hreflang-reciprocity-audit-multilingual-2026)。连通性检查通过，也不代表每个节点的值是对的。值这一层的窟窿，我在[把餐厅营业时间过三层校验的记录](/zh/blog/zh/restaurant-jsonld-opening-hours-validation-2026)里单独写过。
+6. (可选)用 `jsonld` 做 `flatten` 后，用脚本校验连通分量是否为 <strong>1</strong>。若大于等于 2，说明某处漏了引用。多语言站点也值得用同样"不信文档、自己验证"的态度，去跑一遍[用 30 行脚本审计 hreflang 相互引用的方法](/zh/blog/zh/hreflang-reciprocity-audit-multilingual-2026/)。连通性检查通过，也不代表每个节点的值是对的。值这一层的窟窿，我在[把餐厅营业时间过三层校验的记录](/zh/blog/zh/restaurant-jsonld-opening-hours-validation-2026/)里单独写过。
 
 到这里就是「我把关系写明了」的可实测终点。没有排名保证。但你稳住了丰富结果的资格，也为机器无误读地读懂你网站的实体模型打好了底。我认为这是结构化数据里最被低估的活儿。大家都盯着加新的 schema 类型，却跳过了把已经上线的碎片<strong>互相接起来</strong>这件事。
 

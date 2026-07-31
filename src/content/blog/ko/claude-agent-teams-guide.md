@@ -377,9 +377,9 @@ Agent Teams의 가장 큰 함정은 <strong>여러 팀원이 같은 파일을 �
 
 같은 멀티에이전트 흐름을 다른 각도에서 다룬 글들이다.
 
-- [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement) — 에이전트들을 조율하는 패턴을 한 단계 더 깊이 파고든다.
-- [Git Worktree로 Claude Code 병렬 세션 돌리기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree) — Agent Teams 없이 수동으로 병렬 세션을 운영하는 대안이다.
-- [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality) — 토큰 비용이 급증하는 멀티에이전트 운용의 경제성을 따져본다.
+- [멀티 에이전트 오케스트레이션 개선기](/ko/blog/ko/multi-agent-orchestration-improvement/) — 에이전트들을 조율하는 패턴을 한 단계 더 깊이 파고든다.
+- [Git Worktree로 Claude Code 병렬 세션 돌리기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/) — Agent Teams 없이 수동으로 병렬 세션을 운영하는 대안이다.
+- [AI 에이전트 비용의 현실](/ko/blog/ko/ai-agent-cost-reality/) — 토큰 비용이 급증하는 멀티에이전트 운용의 경제성을 따져본다.
 
 ## 참고한 1차 출처
 

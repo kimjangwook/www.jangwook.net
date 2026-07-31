@@ -260,7 +260,7 @@ for result in client.messages.batches.results(batch.id):
 
 ![Batches API processing flow and cost reduction structure](../../../assets/blog/anthropic-message-batches-api-flow-diagram.png)
 
-These numbers use the standard pricing covered in the [LLM API Pricing Comparison 2026](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek) post.
+These numbers use the standard pricing covered in the [LLM API Pricing Comparison 2026](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/) post.
 
 **Scenario A**: 100,000 product descriptions with Claude Haiku 4.5. Average 200 input tokens + 150 output tokens per request.
 
@@ -294,7 +294,7 @@ Batches API/month:
 Annual savings: $15,120.00
 ```
 
-Stack Prompt Caching on top and the numbers get more interesting. As covered in the [Prompt Caching guide](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide), cached input tokens get an additional 90% discount. For a pipeline where all requests share the same system prompt:
+Stack Prompt Caching on top and the numbers get more interesting. As covered in the [Prompt Caching guide](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide/), cached input tokens get an additional 90% discount. For a pipeline where all requests share the same system prompt:
 
 ```
 Batch discount (50%) + Cache hit (90%):
@@ -377,7 +377,7 @@ Does this need a real-time response?
 
 Under 100 requests, the polling overhead often isn't worth it. The batch processing infrastructure is designed for volume — at small scale, sequential standard calls are simpler and often faster.
 
-The hybrid pattern I've found most effective in practice, which lines up with the [heterogeneous LLM fleet optimization approach](/en/blog/en/heterogeneous-llm-agent-fleet-cost-optimization): route expensive model (Opus) work through batch for overnight processing, keep the cheap and fast model (Haiku) on standard API for real-time interactions. You get quality where quality matters and cost savings where latency doesn't.
+The hybrid pattern I've found most effective in practice, which lines up with the [heterogeneous LLM fleet optimization approach](/en/blog/en/heterogeneous-llm-agent-fleet-cost-optimization/): route expensive model (Opus) work through batch for overnight processing, keep the cheap and fast model (Haiku) on standard API for real-time interactions. You get quality where quality matters and cost savings where latency doesn't.
 
 I still think the webhook gap is a real problem, and the lack of a progress dashboard is annoying for long-running batches. That said, the API itself is stable and well-supported — no reason to wait to adopt it.
 

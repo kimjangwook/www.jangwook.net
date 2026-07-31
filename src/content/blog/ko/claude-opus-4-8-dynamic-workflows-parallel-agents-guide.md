@@ -91,7 +91,7 @@ messages_with_injection = [
 
 이 방식의 실용적 장점은 <strong>프롬프트 캐시를 깨지 않는다</strong>는 것이다. 최상위 시스템 프롬프트를 변경하면 캐시가 무효화되어 비용이 튀는데, mid-conversation injection은 그 문제를 피한다. 장시간 에이전틱 실행에서 캐시 히트가 비용의 상당 부분을 결정한다는 점을 감안하면 작지 않은 차이다.
 
-[Claude Agent SDK 서브에이전트 오케스트레이션 실전 가이드](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026)에서 다룬 기존 병렬 처리 패턴과 비교하면, 이 변경이 얼마나 자연스럽게 그 패턴을 확장하는지 볼 수 있다.
+[Claude Agent SDK 서브에이전트 오케스트레이션 실전 가이드](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026/)에서 다룬 기존 병렬 처리 패턴과 비교하면, 이 변경이 얼마나 자연스럽게 그 패턴을 확장하는지 볼 수 있다.
 
 ## Fast Mode: 숫자로 보는 현실
 
@@ -105,7 +105,7 @@ Fast Mode는 출력 토큰당 초(OTPS)를 표준 대비 최대 2.5배 높이는
 | Opus 4.8 Fast Mode | $10 | $50 |
 | Opus 4.7 Fast Mode | $30 | $150 |
 
-Opus 4.7에서 Opus 4.8로 올라오면서 Fast Mode 가격이 3배 저렴해졌다. 여전히 표준의 2배지만, 직전 세대 Fast Mode와 비교하면 이 숫자는 확실히 의미 있다. [Opus 4.7과 Managed Agents 비용 분석](/ko/blog/ko/anthropic-claude-opus-4-7-managed-agents-2026)에서 따져봤던 per-task 비용 구조와 연결해서 보면, 실제 파이프라인에서 어느 지점에 Fast Mode를 끼워 넣을지 판단하기가 쉽다.
+Opus 4.7에서 Opus 4.8로 올라오면서 Fast Mode 가격이 3배 저렴해졌다. 여전히 표준의 2배지만, 직전 세대 Fast Mode와 비교하면 이 숫자는 확실히 의미 있다. [Opus 4.7과 Managed Agents 비용 분석](/ko/blog/ko/anthropic-claude-opus-4-7-managed-agents-2026/)에서 따져봤던 per-task 비용 구조와 연결해서 보면, 실제 파이프라인에서 어느 지점에 Fast Mode를 끼워 넣을지 판단하기가 쉽다.
 
 사용 방법은 간단하다:
 
@@ -138,7 +138,7 @@ response = client.beta.messages.create(
 
 대규모 마이그레이션도 마찬가지다. Bun 창업자 Jarred Sumner가 Dynamic Workflows를 사용해 Bun 런타임을 Zig에서 Rust로 포팅한 사례가 공개됐다 — 11일 동안 약 75만 줄의 Rust 코드, 기존 테스트 스위트 99.8% 통과. 수백 개의 에이전트가 파일별로 병렬 작업하고, 리뷰어 에이전트가 각 파일을 두 명씩 검토하고, 빌드/테스트 통과 루프를 자동으로 돌렸다고 한다.
 
-[에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 정리한 분류로 보면, Dynamic Workflows는 "병렬 패턴"과 "자율 패턴"의 조합을 코드화한 것이다.
+[에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 정리한 분류로 보면, Dynamic Workflows는 "병렬 패턴"과 "자율 패턴"의 조합을 코드화한 것이다.
 
 <strong>쓰지 말아야 할 경우:</strong>
 
@@ -162,7 +162,7 @@ response = client.beta.messages.create(
 
 ## 비용 구조와 실제 영향
 
-[AI 에이전트 비용 현실](/ko/blog/ko/ai-agent-cost-reality)에서 다룬 프레임을 여기 적용해보면, Dynamic Workflows의 비용 구조는 "토큰 볼륨 × 에이전트 수"가 지배한다.
+[AI 에이전트 비용 현실](/ko/blog/ko/ai-agent-cost-reality/)에서 다룬 프레임을 여기 적용해보면, Dynamic Workflows의 비용 구조는 "토큰 볼륨 × 에이전트 수"가 지배한다.
 
 워크플로우 런타임 자체에 추가 요금은 없다. 서브에이전트가 소비하는 토큰이 표준 Opus 4.8 요금으로 청구될 뿐이다. 문제는 1,000개 에이전트 한도에 가까운 실행에서 각 에이전트의 컨텍스트 크기가 어떻게 되냐는 것이다.
 
@@ -174,7 +174,7 @@ response = client.beta.messages.create(
 
 이 원칙들이 자연스럽게 따라오지 않으면 단일 워크플로우 실행이 예산을 초과하는 일이 생긴다. 특히 ultracode 모드에서 Claude가 자율적으로 여러 워크플로우를 연속 트리거하는 경우 더 그렇다.
 
-[AWO 프레임워크로 에이전트 워크플로우 최적화하는 방식](/ko/blog/ko/agentic-workflow-meta-tools-optimization)과 조합하면 — 반복 도구 호출을 메타 도구로 컴파일해서 LLM 호출을 줄이는 접근법 — Dynamic Workflows의 비용을 구조적으로 낮출 여지가 있다.
+[AWO 프레임워크로 에이전트 워크플로우 최적화하는 방식](/ko/blog/ko/agentic-workflow-meta-tools-optimization/)과 조합하면 — 반복 도구 호출을 메타 도구로 컴파일해서 LLM 호출을 줄이는 접근법 — Dynamic Workflows의 비용을 구조적으로 낮출 여지가 있다.
 
 ## 실제 구현 패턴: 코드 레벨에서 본 차이
 
@@ -209,7 +209,7 @@ return aggregateResults(results);
 
 이 차이가 의미하는 바는: <strong>오케스트레이터의 컨텍스트 창이 병렬 실행 동안 열려 있지 않아도 된다.</strong> 16개 에이전트가 동시에 실행되는 동안 오케스트레이터는 다른 작업을 받거나 대기 상태에 있을 수 있다. 컨텍스트 창 사용량이 O(n)에서 O(1)에 가깝게 변하는 것이다.
 
-[Claude Agent SDK 도구 사용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 다룬 에이전틱 루프 패턴을 이미 이해하고 있다면, Dynamic Workflows는 그 루프를 외부화하는 방법이라고 보면 된다.
+[Claude Agent SDK 도구 사용 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 다룬 에이전틱 루프 패턴을 이미 이해하고 있다면, Dynamic Workflows는 그 루프를 외부화하는 방법이라고 보면 된다.
 
 ## 누구에게 실제로 맞는가
 
@@ -237,4 +237,4 @@ Fast Mode의 가격 인하는 반가운 변화다. 이전 세대 대비 3분의 
 
 알려진 버그들(조기 종료, 과도한 파일 삭제)은 지금 당장 프로덕션에 투입하는 데 조심해야 할 이유다. 직접 써봤는데, 워크플로우가 중간에 멈추고 왜 멈췄는지 로그에서 파악하는 데 시간이 걸렸다. 이 부분이 해소되면 평가가 달라질 수 있다.
 
-[LangGraph, CrewAI, Dapr 같은 서드파티 프레임워크와 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)했을 때, Dynamic Workflows의 포지션은 "Claude 생태계 안에서, Claude Code와 함께, 일회성이 아닌 반복 가능한 대규모 오케스트레이션"이다. 범용 프레임워크를 대체하기보다는 특정 작업 유형에서 Claude 네이티브 접근법이 가져가는 효율성을 보여주는 기능으로 보는 게 정확하다.
+[LangGraph, CrewAI, Dapr 같은 서드파티 프레임워크와 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)했을 때, Dynamic Workflows의 포지션은 "Claude 생태계 안에서, Claude Code와 함께, 일회성이 아닌 반복 가능한 대규모 오케스트레이션"이다. 범용 프레임워크를 대체하기보다는 특정 작업 유형에서 Claude 네이티브 접근법이 가져가는 효율성을 보여주는 기능으로 보는 게 정확하다.

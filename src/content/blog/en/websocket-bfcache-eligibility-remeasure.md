@@ -53,7 +53,7 @@ Set expectations before we go further. bfcache is not a ranking factor. Fixing i
 
 The catch is that not every page can be frozen. If a page is holding a live connection or callback open, the browser discards it rather than caching it. An open WebSocket sat on that ineligibility list for a long time. Pages carrying a live chat widget, a notification stream, or a price ticker got a full reload on every back navigation.
 
-You don't have to guess at this state — the browser answers with two APIs. `event.persisted` on the `pageshow` event is `true` when the page came back from bfcache. When it did *not* restore, `PerformanceNavigationTiming.notRestoredReasons` carries the reason. That API shipped in Chrome 123. In [my earlier six-probe run](/en/blog/en/bfcache-notrestoredreasons-audit-2026) I used those two APIs to isolate six blocking candidates one at a time, and confirmed that an open WebSocket blocked the page with `reason: "websocket"`.
+You don't have to guess at this state — the browser answers with two APIs. `event.persisted` on the `pageshow` event is `true` when the page came back from bfcache. When it did *not* restore, `PerformanceNavigationTiming.notRestoredReasons` carries the reason. That API shipped in Chrome 123. In [my earlier six-probe run](/en/blog/en/bfcache-notrestoredreasons-audit-2026/) I used those two APIs to isolate six blocking candidates one at a time, and confirmed that an open WebSocket blocked the page with `reason: "websocket"`.
 
 ## The announcement is unambiguous: it no longer blocks
 
@@ -112,7 +112,7 @@ So the claim of this post is not "Chrome didn't honor its announcement." Read th
 
 ## What a developer should actually do
 
-This gap isn't abstract. In the last post I recommended porting bfcache measurement into a headless script and running it as a [CI gate on every deploy](/en/blog/en/validate-structured-data-ci-jsonld-2026). Today's measurement exposes the blind spot in that advice. Your CI browser is, nine times out of ten, a fresh-profile headless instance. As we just saw, that environment reflects platform rollouts later than real users do. After the platform announces "fixed," your gate may keep emitting `websocket` as a block reason for a while.
+This gap isn't abstract. In the last post I recommended porting bfcache measurement into a headless script and running it as a [CI gate on every deploy](/en/blog/en/validate-structured-data-ci-jsonld-2026/). Today's measurement exposes the blind spot in that advice. Your CI browser is, nine times out of ten, a fresh-profile headless instance. As we just saw, that environment reflects platform rollouts later than real users do. After the platform announces "fixed," your gate may keep emitting `websocket` as a block reason for a while.
 
 Here's the order I'd apply it in.
 
@@ -145,4 +145,4 @@ So I update the old errata this way. The WebSocket block is **being resolved at 
 
 The honest limits. These three probes came off one macOS machine on the Chrome 150 line. Safari and Firefox block on different conditions, and `notRestoredReasons` is itself a Chromium-family API. I did not reproduce a seeded headful stable profile, and I never confirmed the exact feature flag name. Read the result as "Chrome 150 blocks WebSockets" and you're wrong; read it precisely as "the three automation environments I tested still blocked" and you're right. The reproduction steps are all here, so run the same three probes in your target environment and you'll get the answer for your rollout stage.
 
-Confirming an announcement is one question; whether that announcement is actually switched on in the browser in front of you is another. The second isn't a matter of opinion — only measurement answers it, and the answer differs by environment. I take on this kind of work personally: measuring a live site's bfcache eligibility and hardening the result into a gate that won't drift from real-user field data. If that's useful, reach me through the [contact page](/en/contact).
+Confirming an announcement is one question; whether that announcement is actually switched on in the browser in front of you is another. The second isn't a matter of opinion — only measurement answers it, and the answer differs by environment. I take on this kind of work personally: measuring a live site's bfcache eligibility and hardening the result into a gate that won't drift from real-user field data. If that's useful, reach me through the [contact page](/en/contact/).

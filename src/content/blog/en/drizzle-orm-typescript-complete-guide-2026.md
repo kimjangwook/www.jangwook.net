@@ -205,7 +205,7 @@ const db = drizzle(sqlite);
 migrate(db, { migrationsFolder: "./migrations" });
 ```
 
-If you're working with Node.js's built-in SQLite, check out my [Node.js Built-in SQLite Guide](/en/blog/en/node-sqlite-builtin-practical-guide-2026). Drizzle supports it via `drizzle-orm/node-sqlite3`.
+If you're working with Node.js's built-in SQLite, check out my [Node.js Built-in SQLite Guide](/en/blog/en/node-sqlite-builtin-practical-guide-2026/). Drizzle supports it via `drizzle-orm/node-sqlite3`.
 
 ## Basic CRUD With Actual Execution Results
 
@@ -359,7 +359,7 @@ I tested this and confirmed the rollback works as expected.
 
 **PostgreSQL and MySQL** are different. Their drivers are async by design, so `async/await` inside transactions works fine.
 
-If you're building with SQLite and need [a TypeScript REST API with Hono.js](/en/blog/en/hono-typescript-api-2026), keep this async/sync constraint in mind from the start. It's a lot easier than refactoring later.
+If you're building with SQLite and need [a TypeScript REST API with Hono.js](/en/blog/en/hono-typescript-api-2026/), keep this async/sync constraint in mind from the start. It's a lot easier than refactoring later.
 
 ## Aggregate Queries and Raw SQL
 
@@ -478,9 +478,9 @@ What matters more than the feature list is whether the tool fits your situation.
 - You need very mature docs, tutorials, and third-party guides. Drizzle is improving fast, but some edge cases aren't as well-documented as Prisma yet.
 - Automated data-preserving migrations (like column-rename detection) or a rich GUI workflow are core requirements.
 
-**Drizzle vs Prisma in one line**: "Want to control the SQL → Drizzle. Want to forget the SQL → Prisma." Both give you enough type safety. The real difference is the abstraction level and migration transparency. The same reasoning applies to picking test tools in my [Vitest 4 migration guide](/en/blog/en/vitest-4-jest-migration-guide-2026) — switching tools always starts from "where does my current workflow hurt."
+**Drizzle vs Prisma in one line**: "Want to control the SQL → Drizzle. Want to forget the SQL → Prisma." Both give you enough type safety. The real difference is the abstraction level and migration transparency. The same reasoning applies to picking test tools in my [Vitest 4 migration guide](/en/blog/en/vitest-4-jest-migration-guide-2026/) — switching tools always starts from "where does my current workflow hurt."
 
-If you want to see type safety carried all the way to the API layer, my [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) covers the same idea in a different context.
+If you want to see type safety carried all the way to the API layer, my [MCP server TypeScript SDK step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026/) covers the same idea in a different context.
 
 ## References (primary sources)
 

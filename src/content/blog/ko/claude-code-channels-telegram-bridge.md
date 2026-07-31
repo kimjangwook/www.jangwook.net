@@ -88,7 +88,7 @@ claude --channels plugin:telegram@claude-plugins-official
 
 ## OpenClaw에서 가져온 것, 바꾼 것
 
-나는 [OpenClaw 고급 기능](/ko/blog/ko/openclaw-advanced-usage)을 꽤 오래 써왔다. 크론 연동, 멀티채널 설정 등을 이 블로그에서도 여러 번 다뤘다. 그래서 Claude Code Channels를 보는 눈이 좀 다를 수밖에 없다.
+나는 [OpenClaw 고급 기능](/ko/blog/ko/openclaw-advanced-usage/)을 꽤 오래 써왔다. 크론 연동, 멀티채널 설정 등을 이 블로그에서도 여러 번 다뤘다. 그래서 Claude Code Channels를 보는 눈이 좀 다를 수밖에 없다.
 
 **가져온 핵심 개념:**
 - 메시징 플랫폼 → AI 에이전트로의 메시지 주입
@@ -125,7 +125,7 @@ OpenClaw은 웹훅 기반이라 인바운드 포트를 열어야 하는 경우�
 
 ## 그래서 실제로 뭘 할 수 있나
 
-나는 현재 이 블로그의 [자동 포스팅 파이프라인](/ko/blog/ko/effiflow-automation-analysis-part3)을 Claude Code + launchd 크론으로 돌리고 있다. 여기에 Channels를 연결하면 재밌어지는 시나리오가 몇 가지 있다.
+나는 현재 이 블로그의 [자동 포스팅 파이프라인](/ko/blog/ko/effiflow-automation-analysis-part3/)을 Claude Code + launchd 크론으로 돌리고 있다. 여기에 Channels를 연결하면 재밌어지는 시나리오가 몇 가지 있다.
 
 **1. CI/CD 알림 → 즉시 디버깅**
 
@@ -157,7 +157,7 @@ GitHub Actions에서 빌드 실패 시 웹훅으로 텔레그램에 알림이 �
 - 이미 Claude Code를 주력으로 쓰고 있을 때
 - 세팅에 시간을 최소화하고 싶을 때 (플래그 하나로 끝)
 
-개인적으로 나는 두 가지를 병행할 생각이다. 크론 기반 자동화는 기존 OpenClaw 파이프라인을 유지하고, 텔레그램 기반 대화형 코딩 요청은 Claude Code Channels로 전환하는 게 현실적이다. Claude Code CLI 전환을 고려하고 있다면 [Claude Code CLI 마이그레이션 가이드](/ko/blog/ko/claude-code-cli-migration-guide)도 참고할 만하다.
+개인적으로 나는 두 가지를 병행할 생각이다. 크론 기반 자동화는 기존 OpenClaw 파이프라인을 유지하고, 텔레그램 기반 대화형 코딩 요청은 Claude Code Channels로 전환하는 게 현실적이다. Claude Code CLI 전환을 고려하고 있다면 [Claude Code CLI 마이그레이션 가이드](/ko/blog/ko/claude-code-cli-migration-guide/)도 참고할 만하다.
 
 ---
 

@@ -105,7 +105,7 @@ The left chart is nearly a straight line. As context grew 48x (200 to 9,716), pr
 
 The interesting bit is the prefill <strong>rate</strong> in tok/s. At short context it ran at 198 tok/s, but near 10k tokens it fell to 177, about 10% slower. So the cost of processing a single token itself rises with context. As I understand it, attention scales quadratically with sequence length, so reading one word at the end of a long document, while re-attending over everything before it, is heavier than reading a word in a short one. That makes prefill climb a touch steeper than linear.
 
-Here is the first practical lesson. The usual culprit behind a slow local agent is not generation speed, it is prefill. Cram five RAG documents in, or replay the last 20 turns wholesale, and tens of seconds evaporate before the model writes a single character. On cloud APIs this cost is [billed as tokens that vary with your data format](/en/blog/en/llm-token-cost-data-format-experiment); locally it is billed straight to my wall clock.
+Here is the first practical lesson. The usual culprit behind a slow local agent is not generation speed, it is prefill. Cram five RAG documents in, or replay the last 20 turns wholesale, and tens of seconds evaporate before the model writes a single character. On cloud APIs this cost is [billed as tokens that vary with your data format](/en/blog/en/llm-token-cost-data-format-experiment/); locally it is billed straight to my wall clock.
 
 If you use a streaming UI, think of this prefill time as exactly how long the user stares at a blank screen or a loading spinner. Once tokens start flowing, they fill in fairly briskly at 16 a second. The problem is everything up to that first character. The longer the context, the longer the user has to sit through a silence that feels like "did it freeze?" What governs the felt responsiveness of a local chatbot is the length of that silence, not the speed tokens stream at. If nothing appears for 55 seconds at 9,700 tokens of context, that is not a tool you can use conversationally.
 
@@ -144,7 +144,7 @@ After this measurement I changed how I assemble prompts for my local agents. The
 
 <strong>3. "Fits in the context window" is not "usable."</strong> A model can support 32k, but on my laptop even 10k tokens meant 55 seconds to the first token. For interactive use, size your context budget by measured prefill time, not by the supported limit. When I want conversational responsiveness locally, I keep context within a few thousand tokens.
 
-<strong>4. If you truly need long context, pay prefill once and reuse it.</strong> For RAG where you ask several questions about the same document, keep the document at a fixed position up front and vary only the question at the back. The first question pays the full prefill, but the rest nearly skip it thanks to the cache. The same ordering helps when you [wire a local model to an MCP server to build an agent](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp), so you do not re-prefill the system prompt on every tool-call round trip.
+<strong>4. If you truly need long context, pay prefill once and reuse it.</strong> For RAG where you ask several questions about the same document, keep the document at a fixed position up front and vary only the question at the back. The first question pays the full prefill, but the rest nearly skip it thanks to the cache. The same ordering helps when you [wire a local model to an MCP server to build an agent](/en/blog/en/local-llm-private-mcp-server-gemma4-fastmcp/), so you do not re-prefill the system prompt on every tool-call round trip.
 
 ## The prompt I actually changed
 
@@ -176,7 +176,7 @@ With the fixed block moved up front, from the second turn on the 2,000 tokens of
 
 ## Limits of this measurement
 
-Let me draw the boundary honestly. These numbers come from one MacBook, one model (`gemma4:e4b`), and one runtime (Ollama). The absolute figures (55 seconds, 16 tok/s) change wholesale with GPU, memory, quantization, and runtime. A bigger model, or [structured outputs that return typed objects](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026), would add their own variables.
+Let me draw the boundary honestly. These numbers come from one MacBook, one model (`gemma4:e4b`), and one runtime (Ollama). The absolute figures (55 seconds, 16 tok/s) change wholesale with GPU, memory, quantization, and runtime. A bigger model, or [structured outputs that return typed objects](/en/blog/en/ollama-structured-outputs-pydantic-local-llm-guide-2026/), would add their own variables.
 
 What I trust is the <strong>shape</strong>, not the absolutes. Prefill grows nearly in proportion to context, generation slows a little, and an identical prefix becomes nearly free through the cache. I expect all three trends to point the same direction in any environment. I have not yet measured how the cache contends under concurrent requests, or how quantization level affects prefill speed. I'm leaving those for the next experiment.
 

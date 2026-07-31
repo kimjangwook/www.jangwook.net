@@ -46,11 +46,11 @@ faq:
 
 「クラウドAIを使ってはいけない環境で働いている」。この話を初めて聞いたとき、正直ピンとこなかった。でも実際に会ってみると、病院の診療記録を扱うチーム、法律文書をレビューするチーム、金融顧客データを分析するチームが想像以上に多かった。そういうチームに「ClaudeかGPTに貼り付けてみてください」は、そもそも選択肢にならない。
 
-先週、[FastMCPでMCPサーバーを自作する記事](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)を書いた。その記事でClaude Codeをクライアントとして接続する部分を扱ったのだが、その直後にこんな質問が来た。「Claudeの代わりにローカルLLMをクライアントとして使えますか?」
+先週、[FastMCPでMCPサーバーを自作する記事](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)を書いた。その記事でClaude Codeをクライアントとして接続する部分を扱ったのだが、その直後にこんな質問が来た。「Claudeの代わりにローカルLLMをクライアントとして使えますか?」
 
 いい質問だった。試してみたかった。
 
-この記事はその答えだ。Ollama + Gemma 4 + FastMCPで、インターネット接続なしに完全オフラインで動作するAIツールパイプラインを実際に構築してみた。OllamaでGemma 4をサービングする運用面は[Ollama + FastAPI プロダクション デプロイガイド](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)で詳しく扱っているので、あわせて読むとよい。
+この記事はその答えだ。Ollama + Gemma 4 + FastMCPで、インターネット接続なしに完全オフラインで動作するAIツールパイプラインを実際に構築してみた。OllamaでGemma 4をサービングする運用面は[Ollama + FastAPI プロダクション デプロイガイド](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026/)で詳しく扱っているので、あわせて読むとよい。
 
 > **まず一次情報を読む。** この記事で使うツールの公式リファレンスをまとめておく。始める前に各プロジェクトの現在の推奨設定を確認してほしい。
 > - Ollama公式サイト: [ollama.com](https://ollama.com)
@@ -292,6 +292,6 @@ Gemma 4は`list_directory` → `read_file("README.md")`の順でコールした�
 
 このパイプラインをプロダクションに持っていく際は、MCPセキュリティ問題もチェックしてほしい。ローカルであってもツールインジェクション、過剰な権限といったMCP特有のリスクはそのまま存在する。
 
-PythonではなくTypeScriptでMCPクライアントを実装したい場合は、[@modelcontextprotocol/sdk TypeScript MCPクライアントガイド](/ja/blog/ja/mcp-client-typescript-sdk-guide-2026)が同じフローをカバーしている。Gemma 4などのローカルモデルから安定した構造化JSON出力を得る方法は、[Ollama structured outputs + Pydanticガイド](/ja/blog/ja/ollama-structured-outputs-pydantic-local-llm-guide-2026)で詳しく扱っている。
+PythonではなくTypeScriptでMCPクライアントを実装したい場合は、[@modelcontextprotocol/sdk TypeScript MCPクライアントガイド](/ja/blog/ja/mcp-client-typescript-sdk-guide-2026/)が同じフローをカバーしている。Gemma 4などのローカルモデルから安定した構造化JSON出力を得る方法は、[Ollama structured outputs + Pydanticガイド](/ja/blog/ja/ollama-structured-outputs-pydantic-local-llm-guide-2026/)で詳しく扱っている。
 
 コードはすべて上に記載している。インストール依存関係は`pip install fastmcp uvicorn openai requests`一つで済む。試して詰まる部分があれば、各ステップを個別にテストするのが近道だ。

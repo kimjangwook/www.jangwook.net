@@ -64,7 +64,7 @@ Web 性能优化一直很重要,但要一致地测量和改进却很困难。手
 
 ## 什么是 Chrome DevTools MCP?
 
-Chrome DevTools MCP 是一个官方 Model Context Protocol (MCP) 服务器,赋予 AI 编码助手控制 Chrome 浏览器的能力。简而言之,AI 现在可以直接使用你的开发者工具。关于MCP开放标准的完整生态系统，请参阅[MCP开放标准完整指南](/zh/blog/zh/mcp-open-standard-linux-foundation-engineering-guide)。
+Chrome DevTools MCP 是一个官方 Model Context Protocol (MCP) 服务器,赋予 AI 编码助手控制 Chrome 浏览器的能力。简而言之,AI 现在可以直接使用你的开发者工具。关于MCP开放标准的完整生态系统，请参阅[MCP开放标准完整指南](/zh/blog/zh/mcp-open-standard-linux-foundation-engineering-guide/)。
 
 ### 核心功能
 
@@ -535,7 +535,7 @@ Chrome DevTools MCP 将 Web 性能优化从猜测转变为基于数据的科学�
 
 ## 参考资料
 
-要在网页性能测量的同时自动化用户流量分析，请参阅[Google Analytics MCP自动化指南](/zh/blog/zh/google-analytics-mcp-automation)。
+要在网页性能测量的同时自动化用户流量分析，请参阅[Google Analytics MCP自动化指南](/zh/blog/zh/google-analytics-mcp-automation/)。
 
 - [Chrome DevTools MCP GitHub](https://github.com/ChromeDevTools/chrome-devtools-mcp)
 - [Chrome DevTools Protocol 文档](https://chromedevtools.github.io/devtools-protocol/)

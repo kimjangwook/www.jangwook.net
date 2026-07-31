@@ -108,7 +108,7 @@ graph TD
 - <strong>信任度要求高</strong>：AI引擎引用的内容更具权威性
 - <strong>竞争激烈</strong>：首个被AI引用的品牌将获得巨大优势
 
-关于将AEO战略分阶段应用于B2B SaaS的9步路线图，请参阅[LLM时代的SEO/AEO实战应用指南](/zh/blog/zh/llm-seo-aeo-practical-implementation)。
+关于将AEO战略分阶段应用于B2B SaaS的9步路线图，请参阅[LLM时代的SEO/AEO实战应用指南](/zh/blog/zh/llm-seo-aeo-practical-implementation/)。
 
 ## Agent Effi Flow服务介绍
 

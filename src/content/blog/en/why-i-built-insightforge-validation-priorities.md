@@ -64,7 +64,7 @@ Will this message actually work? Is this the right target customer? Is the price
 
 These questions are important, but they are often handled too late. Teams build a landing page, pick a message, implement features, and only then start asking whether the assumptions were right.
 
-I wanted a tool for the moment before formal validation. Not a tool that gives the answer, but a tool that identifies which assumptions are dangerous enough to test. I hit the same vague blocker repeatedly while building things solo, which I wrote about in [a solo developer's AI SaaS journey](/en/blog/en/individual-developer-ai-saas-journey).
+I wanted a tool for the moment before formal validation. Not a tool that gives the answer, but a tool that identifies which assumptions are dangerous enough to test. I hit the same vague blocker repeatedly while building things solo, which I wrote about in [a solo developer's AI SaaS journey](/en/blog/en/individual-developer-ai-saas-journey/).
 
 ## The first tempting version was much simpler
 
@@ -121,7 +121,7 @@ What I wanted was more specific:
 - which claim required proof before it could work
 - what the next customer interview should ask
 
-To get closer to that, I had to make the workflow more structured. Persona generation, question generation, response capture, scoring, insight generation, and reporting could not be one loose prompt. Each stage needed constraints, checks, and a clear role. The trial and error of splitting work across staged agents is something I covered in more depth in [improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement).
+To get closer to that, I had to make the workflow more structured. Persona generation, question generation, response capture, scoring, insight generation, and reporting could not be one loose prompt. Each stage needed constraints, checks, and a clear role. The trial and error of splitting work across staged agents is something I covered in more depth in [improving multi-agent orchestration](/en/blog/en/multi-agent-orchestration-improvement/).
 
 It was not just prompt engineering. It was deciding what status each generated artifact should have inside the product.
 
@@ -154,7 +154,7 @@ Some outputs were too smooth. Personas with different backgrounds still produced
 
 Market grounding was also harder than it looked. Adding web evidence makes a report look stronger, but evidence is only useful when it supports a specific conclusion. Otherwise, it is decoration.
 
-Then there were operational problems: payments, credits, queues, provider cost, failed runs, refunds, DeepSeek balance alerts, admin visibility. A research product is not only a report generator. If it is a real service, every run has cost, failure modes, and user expectations. Because each report fans out into many LLM calls, the bill adds up fast, which overlaps exactly with the problem I described in [the real cost of AI agents](/en/blog/en/ai-agent-cost-reality).
+Then there were operational problems: payments, credits, queues, provider cost, failed runs, refunds, DeepSeek balance alerts, admin visibility. A research product is not only a report generator. If it is a real service, every run has cost, failure modes, and user expectations. Because each report fans out into many LLM calls, the bill adds up fast, which overlaps exactly with the problem I described in [the real cost of AI agents](/en/blog/en/ai-agent-cost-reality/).
 
 These struggles pushed InsightForge away from demo and toward product.
 

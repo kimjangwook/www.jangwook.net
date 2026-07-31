@@ -62,7 +62,7 @@ AI가 존재하지 않는 API를 호출하거나, 잘못된 비즈니스 로직�
 단위 테스트는 AI가 자동 생성하지만, 시스템 전체의 통합 테스트와 엣지 케이스 검증은 여전히 인간의 판단력이 필요하다.
 
 **4. AI 에이전트 플릿 감독**
-여러 AI 에이전트가 병렬로 작업할 때, 어떤 에이전트가 어떤 작업을 맡고, 어떤 결과물이 서로 호환되는지 조율하는 역할. [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)는 이 조율 역할을 실제로 구현하는 구체적인 방법을 보여준다.
+여러 AI 에이전트가 병렬로 작업할 때, 어떤 에이전트가 어떤 작업을 맡고, 어떤 결과물이 서로 호환되는지 조율하는 역할. [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)는 이 조율 역할을 실제로 구현하는 구체적인 방법을 보여준다.
 
 ## Centaur Pod: 새로운 팀 단위
 
@@ -102,7 +102,7 @@ Code Audit 채용 방식:
 5. 개선된 기술 명세 재작성
 ```
 
-이 방식은 지원자의 실제 실무 역량을 훨씬 정확하게 측정한다. Anthropic이 도입한 [Claude Code Review — 멀티 에이전트 PR 리뷰 기능](/ko/blog/ko/claude-code-review-multi-agent-pr)을 과제 재료로 활용하면 실제 도구 환경에서 지원자의 AI 코드 감사 능력을 평가할 수 있다.
+이 방식은 지원자의 실제 실무 역량을 훨씬 정확하게 측정한다. Anthropic이 도입한 [Claude Code Review — 멀티 에이전트 PR 리뷰 기능](/ko/blog/ko/claude-code-review-multi-agent-pr/)을 과제 재료로 활용하면 실제 도구 환경에서 지원자의 AI 코드 감사 능력을 평가할 수 있다.
 
 ### 2. 성과 지표: LOC(Lines of Code) → DCR(Defect Capture Rate)
 

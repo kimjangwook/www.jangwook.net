@@ -107,7 +107,7 @@ Cursorをチーム環境で使う強みもある。BugbotがチームのPRフィ
 
 <strong>Monitor ツール</strong>も新しく入った。バックグラウンドで動いているプロセスをリアルタイムストリーミングで確認できる。ビルドログを見ながら次の作業を進めるパターンが自然にできるようになった。
 
-個人的に最もよく使うのは`/loop`機能だ。インターバルなしで自分のペースで繰り返し作業を実行する。[Claude CodeのGit Worktreeを使った並列セッション](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)と組み合わせれば、マルチレポ作業も効率的にこなせる。運用ルーティンを先に整えたいなら、[Claude Code実践ルーティンガイド](/ja/blog/ja/claude-code-routines-practical-guide-2026)も合わせて読むとよい。
+個人的に最もよく使うのは`/loop`機能だ。インターバルなしで自分のペースで繰り返し作業を実行する。[Claude CodeのGit Worktreeを使った並列セッション](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/)と組み合わせれば、マルチレポ作業も効率的にこなせる。運用ルーティンを先に整えたいなら、[Claude Code実践ルーティンガイド](/ja/blog/ja/claude-code-routines-practical-guide-2026/)も合わせて読むとよい。
 
 Claude Codeが他のツールと最も大きく異なる点は<strong>コードベース全体を理解する</strong>ことだ。ファイルをいくつか見るのではなく、リポジトリ全体の構造を読んでアーキテクチャレベルの判断を下す。
 
@@ -125,7 +125,7 @@ Claude Codeの真の力は<strong>HooksとSkillsシステム</strong>にある�
 
 Windsurfを最初に使ったとき、「ああ、これがバイブコーディングか」と実感した。コードを書く速度が他のツールより速く感じる。Cascadeエージェントが現在の作業の文脈をよく覚えていて、マルチステップ作業を自律処理する。
 
-<strong>Arena Mode</strong>が最も独創的な機能だ。2つのモデルに同じプロンプトを与えて、2つの応答を並べて見ながら一つを選ぶ。[Windsurf Arena Modeを使って発見した興味深いデータ](/ja/blog/ja/windsurf-arena-mode-speed-over-accuracy)がある。開発者はAIコーディングツールで正確さより速さを2倍以上重視するということだ。
+<strong>Arena Mode</strong>が最も独創的な機能だ。2つのモデルに同じプロンプトを与えて、2つの応答を並べて見ながら一つを選ぶ。[Windsurf Arena Modeを使って発見した興味深いデータ](/ja/blog/ja/windsurf-arena-mode-speed-over-accuracy/)がある。開発者はAIコーディングツールで正確さより速さを2倍以上重視するということだ。
 
 2026年のWindsurf 2.0は<strong>Devin統合</strong>を追加した。ローカルCascadeセッションとクラウドDevinセッションを一つのカンバン形式のダッシュボードで管理する。チーム単位でエージェントを運用するときに便利だ。
 
@@ -210,7 +210,7 @@ Windsurfが2025〜2026年にかけてWaveリリースを14回行ったことも�
 
 ## 私の結論 — 3つ全部使ってみて
 
-率直に言えば、私は今Claude Code中心で運用している。このブログの自動化ワークフロー、多言語ポスト作成、コードレビューまで全部Claude Codeベースだ。アーキテクチャを理解して長期的に保守可能なコードを書くという点が決め手だった。[Claude Codeのベストプラクティスを初めて整理したとき](/ja/blog/ja/claude-code-best-practices)、このツールが単純なコーディング補助ではなくシステム設計パートナーとして使えることを確認した。
+率直に言えば、私は今Claude Code中心で運用している。このブログの自動化ワークフロー、多言語ポスト作成、コードレビューまで全部Claude Codeベースだ。アーキテクチャを理解して長期的に保守可能なコードを書くという点が決め手だった。[Claude Codeのベストプラクティスを初めて整理したとき](/ja/blog/ja/claude-code-best-practices/)、このツールが単純なコーディング補助ではなくシステム設計パートナーとして使えることを確認した。
 
 かといってCursorを完全に離れたわけでもない。Tab補完はまだCursorが最強だ。コードを素早く入力しながら修正する作業でのCursorの体感は依然として他のツールと違う。
 
@@ -218,4 +218,4 @@ Windsurfは過大評価されていると思う。Arena Modeは新鮮で、Casca
 
 3つのツール全部、6ヶ月前と今では完全に別製品だ。この記事も数ヶ月後に書き直せば内容が変わるだろう。今最も確かなアドバイスは一つ：無料プランやトライアルで直接試して、自分のワークフローに合うものを選んでほしい。スペック表やレビュー記事ではなく、自分のコードで試すのが唯一の正解だ。
 
-最後にもう一点。この3つのうちどれかを選ぶことは、他の2つを完全に諦める決断ではない。AIコーディングツールはまだ「一つだけで十分」な段階にない。私もClaude Codeをメインに使いながら、ファイル編集にCursorを使い、簡単なプロトタイプにはWindsurfを試す。それぞれのツールが何に強いかを理解すれば、状況に応じて適切なツールを選ぶ感覚が身につく。それが2026年のAIコーディングツールをうまく活用する方法だ。より広いエージェントツールの選び方は、[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)と[MCP・A2A・Open Responsesプロトコル比較](/ja/blog/ja/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026)でも続けて扱っている。
+最後にもう一点。この3つのうちどれかを選ぶことは、他の2つを完全に諦める決断ではない。AIコーディングツールはまだ「一つだけで十分」な段階にない。私もClaude Codeをメインに使いながら、ファイル編集にCursorを使い、簡単なプロトタイプにはWindsurfを試す。それぞれのツールが何に強いかを理解すれば、状況に応じて適切なツールを選ぶ感覚が身につく。それが2026年のAIコーディングツールをうまく活用する方法だ。より広いエージェントツールの選び方は、[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026/)と[MCP・A2A・Open Responsesプロトコル比較](/ja/blog/ja/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026/)でも続けて扱っている。

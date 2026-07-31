@@ -95,7 +95,7 @@ graph TD
 
 2025-2026년은 AI 에이전트가 본격적으로 실용화되는 시기다. Claude의 Computer Use, OpenAI의 Operator, Google의 Mariner 등 <strong>AI가 직접 컴퓨터를 조작</strong>하는 기술이 등장했다.
 
-이런 환경에서 사용자가 브라우저를 열고 직접 검색하고 여러 사이트를 오가는 행위는 점점 비효율적으로 느껴지게 된다. 한편 [Chrome 146의 WebMCP](/ko/blog/ko/webmcp-chrome-146-ai-tool-server)처럼 브라우저 자체가 AI 에이전트의 툴 서버로 진화하는 흐름도 동시에 진행 중이다.
+이런 환경에서 사용자가 브라우저를 열고 직접 검색하고 여러 사이트를 오가는 행위는 점점 비효율적으로 느껴지게 된다. 한편 [Chrome 146의 WebMCP](/ko/blog/ko/webmcp-chrome-146-ai-tool-server/)처럼 브라우저 자체가 AI 에이전트의 툴 서버로 진화하는 흐름도 동시에 진행 중이다.
 
 ### 3. 슈퍼앱 트렌드의 AI 버전
 
@@ -141,7 +141,7 @@ graph LR
 
 ### 1. 플랫폼 전략의 재고
 
-웹 기반 SaaS를 만드는 개발자라면, AI 허브 플랫폼에도 대응하는 전략이 필요하다. [MCP(Model Context Protocol)](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide) 같은 표준이 이미 AI 도구 연동의 인터페이스로 자리잡고 있다.
+웹 기반 SaaS를 만드는 개발자라면, AI 허브 플랫폼에도 대응하는 전략이 필요하다. [MCP(Model Context Protocol)](/ko/blog/ko/mcp-open-standard-linux-foundation-engineering-guide/) 같은 표준이 이미 AI 도구 연동의 인터페이스로 자리잡고 있다.
 
 ### 2. AI 네이티브 UX 설계
 
@@ -163,7 +163,7 @@ Atlas는 OpenAI만의 전략이 아니다. 주요 플레이어의 움직임을 �
 | Apple | Apple Intelligence | 디바이스 네이티브 AI 통합 |
 | Microsoft | Copilot | Windows + Office 생태계 통합 |
 
-[Google I/O 2026](/ko/blog/ko/google-io-2026-antigravity-2-agent-platform-analysis)에서는 이 경쟁이 에이전트 IDE 수준으로까지 확대되고 있음이 확인되었다.
+[Google I/O 2026](/ko/blog/ko/google-io-2026-antigravity-2-agent-platform-analysis/)에서는 이 경쟁이 에이전트 IDE 수준으로까지 확대되고 있음이 확인되었다.
 
 ## 결론
 

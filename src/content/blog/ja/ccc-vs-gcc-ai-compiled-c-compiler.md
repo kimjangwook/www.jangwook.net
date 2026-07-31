@@ -61,7 +61,7 @@ Anthropicが2026年2月5日に公開した<strong>CCC（Claude's C Compiler）</
 
 ## CCCとは何か
 
-CCCはAnthropic Safeguardsチームの Nicholas Carliniが設計した<strong>エージェントチーム（Agent Teams）</strong>方式で開発されました。[Claude Codeの5つのエージェントワークフローパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)で詳しく解説しているように、核心アイデアはシンプルです：
+CCCはAnthropic Safeguardsチームの Nicholas Carliniが設計した<strong>エージェントチーム（Agent Teams）</strong>方式で開発されました。[Claude Codeの5つのエージェントワークフローパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)で詳しく解説しているように、核心アイデアはシンプルです：
 
 > 16個のClaudeインスタンスが共有コードベースで並列作業し、人間の介入なしにコンパイラを完成させる。
 
@@ -151,7 +151,7 @@ CCCプロジェクトの真の意義は「GCCに勝った」ことではあり�
 
 ### 2. 並列化の力
 
-16個のエージェントの並列作業は単純な速度向上ではありません。[Git Worktreeを活用したClaude Code並列セッション](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)での実践例のように、各エージェントが<strong>専門化された役割</strong>を担います：
+16個のエージェントの並列作業は単純な速度向上ではありません。[Git Worktreeを活用したClaude Code並列セッション](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/)での実践例のように、各エージェントが<strong>専門化された役割</strong>を担います：
 
 - 機能実装エージェント
 - 重複コード統合エージェント
@@ -212,7 +212,7 @@ Linuxカーネルのコンパイル段階で興味深い問題が発生しまし
 1. <strong>テストが核心</strong>: AIエージェントの品質はテスト環境の品質に直結します
 2. <strong>アーキテクチャ設計はまだ人間の役割</strong>: SSA IRのような高水準の設計決定は人間が行いました
 3. <strong>80%ソリューションの価値</strong>: 完璧でなくても動作する成果物の価値を過小評価しないでください
-4. <strong>並列エージェント時代</strong>: 一つのAIではなく、チームとして動作するAIの可能性。[マルチエージェントオーケストレーション改善事例](/ja/blog/ja/multi-agent-orchestration-improvement)で具体的なパターンを確認できます
+4. <strong>並列エージェント時代</strong>: 一つのAIではなく、チームとして動作するAIの可能性。[マルチエージェントオーケストレーション改善事例](/ja/blog/ja/multi-agent-orchestration-improvement/)で具体的なパターンを確認できます
 
 ## 結論
 

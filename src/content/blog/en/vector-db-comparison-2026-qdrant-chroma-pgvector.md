@@ -51,7 +51,7 @@ That's true for bare similarity search. But real production RAG always has metad
 
 There's also the architecture angle. Choosing a vector DB is not just a storage decision. It determines your infrastructure footprint, deployment complexity, operational overhead, and how hard it will be to migrate later if you change your mind.
 
-If you haven't settled on your RAG architecture yet, [the full RAG design overview](/en/blog/en/dena-llm-study-part4-rag) is worth reading before going deeper into DB comparisons.
+If you haven't settled on your RAG architecture yet, [the full RAG design overview](/en/blog/en/dena-llm-study-part4-rag/) is worth reading before going deeper into DB comparisons.
 
 ## ChromaDB: Five-Minute Setup, Then What?
 
@@ -88,7 +88,7 @@ The API is minimal in a good way. You need `add`, `query`, and `delete` and you'
 
 In-memory mode is the default, which makes testing trivially fast. Switching to disk persistence is `chromadb.PersistentClient(path="./db")` and switching to client-server mode is `chromadb.HttpClient(host="localhost")`. The surface area is intentionally small.
 
-The [LangChain, LlamaIndex, and Haystack comparison](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) shows ChromaDB integrations are the most mature among the three databases here. If you're following a tutorial or example repo, chances are it's using Chroma. That translates to fewer surprises and faster onboarding for your team.
+The [LangChain, LlamaIndex, and Haystack comparison](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026/) shows ChromaDB integrations are the most mature among the three databases here. If you're following a tutorial or example repo, chances are it's using Chroma. That translates to fewer surprises and faster onboarding for your team.
 
 ### The Honest Limitations
 
@@ -221,7 +221,7 @@ Proper HNSW tuning also requires PostgreSQL expertise. Running with default `m` 
 Setup:
 
 - **Vector count**: 1,000
-- **Dimensions**: 384 ([sentence-transformers](/en/blog/en/sentence-transformers-korean-rag-embedding-guide-2026) standard)
+- **Dimensions**: 384 ([sentence-transformers](/en/blog/en/sentence-transformers-korean-rag-embedding-guide-2026/) standard)
 - **Query repetitions**: 50
 - **Hardware**: MacBook Pro M2, running locally
 - **ChromaDB**: in-memory mode
@@ -395,6 +395,6 @@ That said, if your team is already running PostgreSQL, try pgvector first. It's 
 
 ChromaDB is still my first choice for prototypes. Nothing beats `pip install chromadb` for getting started. But when you're moving toward production, take Qdrant seriously.
 
-Once you've chosen a vector DB, the next decision is which AI agent library will wrap it. The [Python AI agent library comparison guide](/en/blog/en/python-ai-agent-library-comparison-2026) covers that next step.
+Once you've chosen a vector DB, the next decision is which AI agent library will wrap it. The [Python AI agent library comparison guide](/en/blog/en/python-ai-agent-library-comparison-2026/) covers that next step.
 
 "Which DB is the best" is the wrong question. The right answer depends on your current scale, team capacity, existing infrastructure, and how fast you need to ship. These numbers give you one more concrete data point for that call.

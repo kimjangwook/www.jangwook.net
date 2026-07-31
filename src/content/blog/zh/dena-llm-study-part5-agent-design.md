@@ -46,10 +46,10 @@ faq:
 ---
 > <strong>系列: DeNA LLM 研究</strong> (5/5 - 最终篇)
 >
-> 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 结构化输出与多LLM管道
-> 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)
+> 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag/)
 > 5. <strong>Part 5: 智能体设计与多智能体编排</strong> ← 当前文章
 
 ## 从自主智能体走向编排
@@ -86,7 +86,7 @@ faq:
 - 原型阶段，只想先确认能不能跑起来时。多智能体调试成本很高，先用单次调用验证，确有必要再拆分。
 - 无法控制成本上限却想用 Network（自由对话）模式的情况。对话长度一旦失控，账单也会跟着失控。
 
-一句话总结：<strong>只有当"多阶段 + 工具调用 + 记忆"同时出现时才掏出智能体，缺了任何一项，先怀疑是否有更简单的工具。</strong> 多智能体的成本陷阱见[AI 智能体的成本现实](/zh/blog/zh/ai-agent-cost-reality)，对编排更深入一层的探讨见[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)。
+一句话总结：<strong>只有当"多阶段 + 工具调用 + 记忆"同时出现时才掏出智能体，缺了任何一项，先怀疑是否有更简单的工具。</strong> 多智能体的成本陷阱见[AI 智能体的成本现实](/zh/blog/zh/ai-agent-cost-reality/)，对编排更深入一层的探讨见[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement/)。
 
 ## 1. 利用 n8n 的 LLM 工作流
 

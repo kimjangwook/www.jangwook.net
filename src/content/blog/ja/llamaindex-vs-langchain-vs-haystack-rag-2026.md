@@ -143,7 +143,7 @@ for details and migration guidance toward standalone integration packages.
 
 1.3.4時点で`langchain-core`(1.4.1)と`langchain`(1.3.4)自体は活発にメンテナンスされている。問題は既存コードで`from langchain_community import ...`をどれだけ使っているかだ。
 
-[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026)で触れたように、LangChainのエコシステムサイズ自体は依然として圧倒的だ。このcommunityパッケージの問題がLangChain全体を捨てる理由にはならないが、知っておいて始める必要がある。
+[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026/)で触れたように、LangChainのエコシステムサイズ自体は依然として圧倒的だ。このcommunityパッケージの問題がLangChain全体を捨てる理由にはならないが、知っておいて始める必要がある。
 
 ## Haystack 2.30：明示的グラフの利点
 
@@ -244,7 +244,7 @@ pip install chroma-haystack
 pip install qdrant-haystack
 ```
 
-[ベクトルDB比較2026](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector)でQdrant・ChromaDB・pgvectorの性能を実測したが、どのフレームワークを使うにせよベクトルストアの選択は別途検討すべきだ。
+[ベクトルDB比較2026](/ja/blog/ja/vector-db-comparison-2026-qdrant-chroma-pgvector/)でQdrant・ChromaDB・pgvectorの性能を実測したが、どのフレームワークを使うにせよベクトルストアの選択は別途検討すべきだ。
 
 ## どの状況にどのフレームワークが合うか
 
@@ -298,7 +298,7 @@ pip install qdrant-haystack
 - Haystack公式サイト（deepset）: [https://haystack.deepset.ai](https://haystack.deepset.ai)（ドキュメントは`docs.haystack.deepset.ai`）
 - langchain-community deprecation案内: [GitHub Issue #674](https://github.com/langchain-ai/langchain-community/issues/674)
 
-RAGの基礎概念から見直したいなら、[DeNA LLMスタディ第4部 — RAG](/ja/blog/ja/dena-llm-study-part4-rag)を合わせて読むとこの比較がより鮮明になる。
+RAGの基礎概念から見直したいなら、[DeNA LLMスタディ第4部 — RAG](/ja/blog/ja/dena-llm-study-part4-rag/)を合わせて読むとこの比較がより鮮明になる。
 
 ## エコシステムとコミュニティ
 

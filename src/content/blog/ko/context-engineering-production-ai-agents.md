@@ -109,7 +109,7 @@ RAG는 여전히 필수적이다. 단, 2026년에는 "얼마나 많이 검색할
 
 ### 3. 컨텍스트 격리 (Context Quarantine)
 
-멀티에이전트 시스템에서 서브에이전트 각각은 자신의 역할에 필요한 컨텍스트만 갖도록 설계한다. 오케스트레이터가 모든 정보를 보유하고 필요한 조각만 각 에이전트에게 전달하는 구조가 효과적이다. Claude Code에서 이 패턴을 실제로 구현하는 방법은 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 확인할 수 있다.
+멀티에이전트 시스템에서 서브에이전트 각각은 자신의 역할에 필요한 컨텍스트만 갖도록 설계한다. 오케스트레이터가 모든 정보를 보유하고 필요한 조각만 각 에이전트에게 전달하는 구조가 효과적이다. Claude Code에서 이 패턴을 실제로 구현하는 방법은 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 확인할 수 있다.
 
 실천 방법:
 - 에이전트 간 컨텍스트 전달 시 요약(summary)을 전달하고 원본 전체를 전달하지 않는다
@@ -184,7 +184,7 @@ Letta, Mem0 같은 프레임워크는 이 계층 구조를 운영체제의 가�
 
 **운영 단계:**
 - [ ] context-precision, context-recall 지표를 정기 측정하는가?
-- [ ] 컨텍스트 오염이 발생했을 때 감지하는 모니터링이 있는가? ([프로덕션 AI 에이전트 관찰 가능성 가이드](/ko/blog/ko/ai-agent-observability-production-guide)에서 구체적인 모니터링 구현 방법을 다룬다.)
+- [ ] 컨텍스트 오염이 발생했을 때 감지하는 모니터링이 있는가? ([프로덕션 AI 에이전트 관찰 가능성 가이드](/ko/blog/ko/ai-agent-observability-production-guide/)에서 구체적인 모니터링 구현 방법을 다룬다.)
 - [ ] 토큰 사용량 대비 성능 트레이드오프를 주기적으로 검토하는가?
 
 ---

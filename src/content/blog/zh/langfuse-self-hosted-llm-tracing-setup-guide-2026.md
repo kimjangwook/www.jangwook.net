@@ -163,7 +163,7 @@ result = call_llm("今天天气怎么样？")
 
 ## 追踪实际RAG管道
 
-就像我在[用PydanticAI构建类型安全智能体](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)中探索的那样，为实际智能体代码添加Langfuse，能立即看清哪些步骤在产生费用。如果还没确定使用哪个向量数据库，可以先参考[Qdrant、Chroma、pgvector对比](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector)再做决定。
+就像我在[用PydanticAI构建类型安全智能体](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)中探索的那样，为实际智能体代码添加Langfuse，能立即看清哪些步骤在产生费用。如果还没确定使用哪个向量数据库，可以先参考[Qdrant、Chroma、pgvector对比](/zh/blog/zh/vector-db-comparison-2026-qdrant-chroma-pgvector/)再做决定。
 
 ```python
 from langfuse import observe, get_client
@@ -286,7 +286,7 @@ compiled = prompt.compile(
 
 这样管理提示词，"为什么用版本2提示词那天响应质量下降了？"这个问题在Langfuse UI中就能立即得到答案。
 
-如果你已经[用FastMCP直接构建了MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)，为其LLM调用添加Langfuse追踪是自然的下一步。MCP服务器往往有较长的工具调用链，追踪瀑布图在这里价值尤为突出。
+如果你已经[用FastMCP直接构建了MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)，为其LLM调用添加Langfuse追踪是自然的下一步。MCP服务器往往有较长的工具调用链，追踪瀑布图在这里价值尤为突出。
 
 ## 我不推荐自托管的情况
 
@@ -304,7 +304,7 @@ compiled = prompt.compile(
 
 我同时运营两个项目，一个用 Cloud，一个自托管。老实说，因为 ClickHouse 要吃掉 2GB 以上内存，至今仍觉得心疼。
 
-如果你有[用 FastMCP 自建 MCP 服务器的经验](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)，给那台服务器上的 LLM 调用挂上 Langfuse 追踪就是自然的下一步。MCP 服务器的工具调用链往往很长，追踪瀑布图的价值尤其高。
+如果你有[用 FastMCP 自建 MCP 服务器的经验](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)，给那台服务器上的 LLM 调用挂上 Langfuse 追踪就是自然的下一步。MCP 服务器的工具调用链往往很长，追踪瀑布图的价值尤其高。
 
 ## 何时该自托管，何时该避开
 
@@ -324,7 +324,7 @@ compiled = prompt.compile(
 - 不想自己承担备份、版本升级和扩容
 - 处于原型阶段，打算反复接入和移除追踪
 
-如果你卡在模糊的中间地带，不妨先评估一下自己对容器部署的掌控感。如果我在[将Ollama和FastAPI部署到生产环境的文章](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026)里讲的健康检查、资源限制和重启策略对你来说轻车熟路，那么运营整套Langfuse全栈也不在话下。反之，如果那篇文章让你感到吃力，更现实的做法是先用Cloud起步，等规模上来再迁移。
+如果你卡在模糊的中间地带，不妨先评估一下自己对容器部署的掌控感。如果我在[将Ollama和FastAPI部署到生产环境的文章](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026/)里讲的健康检查、资源限制和重启策略对你来说轻车熟路，那么运营整套Langfuse全栈也不在话下。反之，如果那篇文章让你感到吃力，更现实的做法是先用Cloud起步，等规模上来再迁移。
 
 我自己把两个项目分开运营。没有敏感数据的博客自动化管道跑在Cloud上，处理客户数据的那边则自托管。即使是同一个工具，根据数据性质选择不同的部署方式，才是我最不后悔的决定。说实话，ClickHouse消耗2GB以上内存对我运营的规模来说还是感觉浪费。
 

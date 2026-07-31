@@ -149,7 +149,7 @@ of the input.
 
 재미있는 부분이 있다. 첫 검색어(`attention mechanism neural networks`)로 Wikipedia 페이지를 못 찾으면, 에이전트가 스스로 검색어를 `attention (machine learning)`으로 바꿔서 재시도했다. 이건 Agno가 도구 실패를 자동으로 처리하고 다음 행동을 결정하는 ReAct 루프를 내부적으로 실행한다는 뜻이다. 코드 한 줄 추가 없이.
 
-[Python AI 에이전트 라이브러리 비교 글](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 Smolagents의 코드 실행 에이전트와 비교해보면, Agno는 코드 생성보다는 도구 조합에 더 강점이 있다는 게 느껴진다.
+[Python AI 에이전트 라이브러리 비교 글](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에서 Smolagents의 코드 실행 에이전트와 비교해보면, Agno는 코드 생성보다는 도구 조합에 더 강점이 있다는 게 느껴진다.
 
 ## 구조화 출력: output_schema가 맞다, output_model이 아니다
 
@@ -207,7 +207,7 @@ Skills:
 Summary: Kim Jangwook is a dedicated Korean developer...
 ```
 
-`output_schema`를 사용하면 `response.content`가 문자열이 아니라 실제 Pydantic 인스턴스를 반환한다. 파싱이 내부에서 처리되고, 타입 힌트가 그대로 IDE에서 자동완성된다. [PydanticAI 튜토리얼에서 다룬 `output_type`](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)과 비슷한 방향이지만, 파라미터 이름이 다르다.
+`output_schema`를 사용하면 `response.content`가 문자열이 아니라 실제 Pydantic 인스턴스를 반환한다. 파싱이 내부에서 처리되고, 타입 힌트가 그대로 IDE에서 자동완성된다. [PydanticAI 튜토리얼에서 다룬 `output_type`](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)과 비슷한 방향이지만, 파라미터 이름이 다르다.
 
 레이턴시도 주목할 만하다. Calculator나 Wikipedia 호출이 들어간 에이전트는 9〜10초가 걸렸는데, 구조화 출력만 쓰는 에이전트는 4초였다. 도구 호출 왕복이 없으니 당연한 결과다.
 
@@ -311,7 +311,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 **문서와 API의 버전 불일치.** `show_tool_calls`, `output_model`, `agents=` 같은 파라미터 이름이 문서에는 남아 있는데 실제 코드에서는 사라졌거나 의미가 바뀐 경우가 있었다. Agno가 빠르게 발전하는 만큼 공식 GitHub의 examples/ 폴더를 항상 최신 버전 기준으로 확인하는 게 안전하다.
 
-**Team의 coordinate 모드는 항상 순차 실행이다.** 병렬 실행이 되는지 확인해봤는데, v2.6.17 기준으로 `coordinate` 모드는 순차적으로 에이전트를 호출한다. Google ADK나 LangGraph처럼 병렬 분기가 필요하면 [구글 ADK vs LangGraph 비교 글](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026)을 참고하길 권한다.
+**Team의 coordinate 모드는 항상 순차 실행이다.** 병렬 실행이 되는지 확인해봤는데, v2.6.17 기준으로 `coordinate` 모드는 순차적으로 에이전트를 호출한다. Google ADK나 LangGraph처럼 병렬 분기가 필요하면 [구글 ADK vs LangGraph 비교 글](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026/)을 참고하길 권한다.
 
 ## 언제 Agno를 쓰면 좋은가
 
@@ -327,7 +327,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 ## PydanticAI와 간략 비교
 
-비슷한 포지션의 프레임워크 중 [PydanticAI](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)가 있다. 실제 코드를 써본 입장에서 느낀 가장 큰 차이점을 정리하면 이렇다.
+비슷한 포지션의 프레임워크 중 [PydanticAI](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)가 있다. 실제 코드를 써본 입장에서 느낀 가장 큰 차이점을 정리하면 이렇다.
 
 **도구 생태계**: Agno는 100개 이상의 내장 도구가 있고, PydanticAI는 직접 함수를 `@agent.tool` 데코레이터로 등록하는 방식이다. Agno 쪽이 "빠른 시작"에 유리하고, PydanticAI는 도구 로직을 더 명확하게 제어하고 싶을 때 낫다.
 
@@ -337,7 +337,7 @@ tools = [name for _, name, _ in pkgutil.iter_modules(t.__path__)]
 
 **의존성**: 비슷하게 가볍다. 둘 다 LangChain보다 훨씬 가볍다.
 
-선택 기준이 복잡하다고 느낀다면 [Python AI 에이전트 라이브러리 비교 글](/ko/blog/ko/python-ai-agent-library-comparison-2026)을 함께 보면 더 명확한 결론에 도달할 수 있다.
+선택 기준이 복잡하다고 느낀다면 [Python AI 에이전트 라이브러리 비교 글](/ko/blog/ko/python-ai-agent-library-comparison-2026/)을 함께 보면 더 명확한 결론에 도달할 수 있다.
 
 ## 다음에 해볼 것
 

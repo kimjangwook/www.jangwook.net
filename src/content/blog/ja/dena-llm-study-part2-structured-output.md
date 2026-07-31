@@ -60,11 +60,11 @@ relatedPosts:
 
 > <strong>シリーズ: DeNA LLMスタディ</strong> (2/5)
 >
-> 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals/)
 > 2. <strong>Part 2: 構造化出力とマルチLLMパイプライン</strong> ← 現在の記事
-> 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag)
-> 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design)
+> 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag/)
+> 5. [Part 5: エージェント設計とマルチエージェントオーケストレーション](/ja/blog/ja/dena-llm-study-part5-agent-design/)
 
 ## 概要
 

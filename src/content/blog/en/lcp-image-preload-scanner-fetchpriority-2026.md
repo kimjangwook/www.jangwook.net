@@ -82,7 +82,7 @@ Load delay: 1,184ms. The image download took 5ms, but the browser spent 1.2 seco
 
 One key concept here. Browsers run a **preload scanner**. When the HTML response bytes arrive, before the main parser even runs, this scanner skims the raw HTML and finds resources like `<img src>`, `<script src>`, and `<link href>` so it can kick off those requests early. The catch: the scanner only reads HTML. **A `background-image` URL sitting in CSS is invisible to it** ([web.dev, Don't fight the browser preload scanner](https://web.dev/preload-scanner/)). So a background image cannot even be requested until the CSS downloads and parses. My CSS carried a 1-second delay, so the hero got discovered exactly that late. Chrome itself called this out as an "LCP request discovery" insight ([LCP discovery, Chrome for Developers](https://developer.chrome.com/docs/performance/insights/lcp-discovery)).
 
-This shares a root with the story about [AI crawlers not running your JavaScript and therefore never seeing your content](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026). Where and how a resource is placed decides when — or whether — it gets processed at all.
+This shares a root with the story about [AI crawlers not running your JavaScript and therefore never seeing your content](/en/blog/en/ai-crawlers-dont-render-javascript-csr-2026/). Where and how a resource is placed decides when — or whether — it gets processed at all.
 
 ## I added fetchpriority and preload — and LCP barely moved
 
@@ -155,7 +155,7 @@ Translated into practice, the experiment says:
 3. **Never put `loading="lazy"` on the LCP image.** Great for below-the-fold images, self-inflicted harm on a top-of-viewport hero — you are delaying your own discovery ([web.dev, LCP misconceptions](https://web.dev/blog/common-misconceptions-lcp)).
 4. **Inline critical CSS and make the rest non-blocking.** Receiving the image early does nothing if render-blocking CSS still gates the paint.
 5. **Always set `width`/`height` (or `aspect-ratio`).** It prevents layout shift (CLS). Across all three versions above, CLS was 0.00.
-6. **Above all, read the LCP breakdown first.** The DevTools Performance panel hands you TTFB / Load delay / Load duration / Render delay directly. Attack the biggest segment. I dug into this measure-then-fix workflow in the post on [reading Lighthouse to catch and fix accessibility violations](/en/blog/en/a11y-lighthouse-audit-fix-2026).
+6. **Above all, read the LCP breakdown first.** The DevTools Performance panel hands you TTFB / Load delay / Load duration / Render delay directly. Attack the biggest segment. I dug into this measure-then-fix workflow in the post on [reading Lighthouse to catch and fix accessibility violations](/en/blog/en/a11y-lighthouse-audit-fix-2026/).
 
 ## Honest limits — do not misread these numbers
 
@@ -167,7 +167,7 @@ Let me also log, honestly, the two traps that fooled me while reproducing this. 
 
 Third: preload backfires when overused. Hand high priority to everything via preload and you starve the resources that actually matter, and depending on conditions you can even double-download an image. Spend preload sparingly, on the **single LCP element**.
 
-One sentence sums it up. When LCP is slow, do not suspect image weight first — open the four segments and see when the browser discovers the element and when it paints it. The bottleneck usually hides in discovery and render-blocking, not download. I reached the same conclusion while auditing a multilingual blog and stripping out render-blocking resources in [this technical SEO audit log](/en/blog/en/multilingual-blog-technical-audit-campaign-2026).
+One sentence sums it up. When LCP is slow, do not suspect image weight first — open the four segments and see when the browser discovers the element and when it paints it. The bottleneck usually hides in discovery and render-blocking, not download. I reached the same conclusion while auditing a multilingual blog and stripping out render-blocking resources in [this technical SEO audit log](/en/blog/en/multilingual-blog-technical-audit-campaign-2026/).
 
 ---
 

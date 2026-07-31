@@ -132,11 +132,11 @@ Anthropicの内部ベンチマーク結果：Word文書生成品質8.4%向上、
 
 実際の導入では、rubricの設計が核心作業となる。緩すぎるrubricではOutcomesの効果がなく、厳しすぎるとエージェントが無限修正ループに陥る可能性がある。
 
-4月に取り上げた[Managed Agents基本デプロイガイド](/ja/blog/ja/claude-managed-agents-production-deployment-guide)でAPIチェーン設定とセッションあたり$0.08のコスト構造を分析したが、Outcomesを追加するとgrader実行コストが加わる構造だ。実際のコストはrubricの複雑さと再試行回数によって変わる。
+4月に取り上げた[Managed Agents基本デプロイガイド](/ja/blog/ja/claude-managed-agents-production-deployment-guide/)でAPIチェーン設定とセッションあたり$0.08のコスト構造を分析したが、Outcomesを追加するとgrader実行コストが加わる構造だ。実際のコストはrubricの複雑さと再試行回数によって変わる。
 
 ## Multiagent Orchestration — 並列処理の標準化
 
-複雑なタスクを一つのエージェントが順次処理するよりも、専門エージェント複数が並列で分担する方が速く品質も高いことは知られた事実だ。[Claude Codeのエージェントワークフロー5パターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)でもこの構造を取り上げたことがある。
+複雑なタスクを一つのエージェントが順次処理するよりも、専門エージェント複数が並列で分担する方が速く品質も高いことは知られた事実だ。[Claude Codeのエージェントワークフロー5パターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)でもこの構造を取り上げたことがある。
 
 Multiagent Orchestrationが追加するもの：
 
@@ -191,7 +191,7 @@ Improve：Dreamingが定期的に蓄積されたセッションデータを検�
 
 このサイクルが繰り返されると、エージェントは新しいスキルを習得したわけではなく、「どの状況で何に注意すべきか」という運用知識が蓄積される。モデルはそのままなのにパフォーマンスが改善する構造だ。
 
-[エージェントメモリ学習パターンのより深い分析はHindsight MCPの記事](/ja/blog/ja/hindsight-mcp-agent-memory-learning)で取り上げたことがある。Dreamingが追求する「経験ベースのメモリ更新」の哲学と類似したアプローチだ。
+[エージェントメモリ学習パターンのより深い分析はHindsight MCPの記事](/ja/blog/ja/hindsight-mcp-agent-memory-learning/)で取り上げたことがある。Dreamingが追求する「経験ベースのメモリ更新」の哲学と類似したアプローチだ。
 
 ## 批判的に見ると — まだ検証されていない点
 
@@ -203,7 +203,7 @@ Improve：Dreamingが定期的に蓄積されたセッションデータを検�
 
 <strong>第三に、ガバナンスの緊張。</strong> エージェントが自ら行動パターンを変えるシステムは監査（audit）が難しい。「6ヶ月前にエージェントがなぜその決定を下したか」を追跡するためには、メモリストアのバージョン管理が必要になる。この点についてAnthropicの公式ガイドはまだ十分ではない。
 
-<strong>第四に、Research Previewの状態。</strong> DreamingはまだResearch Previewだ。Public BetaのOutcomes、Orchestrationと異なり、プロダクションでの安定性はさらなる検証が必要だ。[エージェントコスト現実分析の記事](/ja/blog/ja/ai-agent-cost-reality)でも強調したが、エージェントシステムの運用コストはトークンコストだけではない。ガバナンスコスト、モニタリングコスト、デバッグコストが伴う。
+<strong>第四に、Research Previewの状態。</strong> DreamingはまだResearch Previewだ。Public BetaのOutcomes、Orchestrationと異なり、プロダクションでの安定性はさらなる検証が必要だ。[エージェントコスト現実分析の記事](/ja/blog/ja/ai-agent-cost-reality/)でも強調したが、エージェントシステムの運用コストはトークンコストだけではない。ガバナンスコスト、モニタリングコスト、デバッグコストが伴う。
 
 第五に、Outcomesのgrader実行コストだ。graderもエージェントセッションとして実行されるため、rubricが複雑で再試行が多くなるほどコストが線形的に増加する。これに対するコスト予測ツールはまだない。
 

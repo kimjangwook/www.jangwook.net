@@ -79,7 +79,7 @@ relatedPosts: []
 
 ### コア技術スタック
 
-- <strong>Claude Code</strong>: Anthropic の CLI ベース AI 開発環境（[Claude Code Best Practicesガイド](/ja/blog/ja/claude-code-best-practices)も参照）
+- <strong>Claude Code</strong>: Anthropic の CLI ベース AI 開発環境（[Claude Code Best Practicesガイド](/ja/blog/ja/claude-code-best-practices/)も参照）
 - <strong>Astro 5</strong>: Islands Architecture 基盤の静的サイトジェネレーター
 - <strong>MCP (Model Context Protocol)</strong>: AI と外部システムの接続
 - <strong>TypeScript</strong>: 型安全なコード
@@ -467,7 +467,7 @@ tags: [5-8個]
 
 ## MCP統合: AIのスーパーパワー
 
-MCP (Model Context Protocol)は、Claudeが外部システムと相互作用できるようにします。[Claude Code HooksとワークフローオートメーションCC](/ja/blog/ja/claude-code-hooks-workflow)で実際のMCP統合パターンを確認できます。
+MCP (Model Context Protocol)は、Claudeが外部システムと相互作用できるようにします。[Claude Code HooksとワークフローオートメーションCC](/ja/blog/ja/claude-code-hooks-workflow/)で実際のMCP統合パターンを確認できます。
 
 ### 1. Context7 - 最新ドキュメント自動検索
 

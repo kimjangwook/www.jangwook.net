@@ -38,7 +38,7 @@ relatedPosts:
 
 ## CLS 量的是"总移动量"，不是"移动了几次"
 
-先把地基打好。Core Web Vitals 由三个指标构成：LCP（最大元素何时绘制）、[INP（对交互反应多快）](/zh/blog/zh/inp-yielding-measure-2026)、还有 CLS（画面偏移了多少）。前两个是时间，以毫秒计；唯独 CLS 是一个没有单位的分数。这一点，恰恰是 CLS 最容易被误读的原因。
+先把地基打好。Core Web Vitals 由三个指标构成：LCP（最大元素何时绘制）、[INP（对交互反应多快）](/zh/blog/zh/inp-yielding-measure-2026/)、还有 CLS（画面偏移了多少）。前两个是时间，以毫秒计；唯独 CLS 是一个没有单位的分数。这一点，恰恰是 CLS 最容易被误读的原因。
 
 CLS 把页面存活期间发生的<strong>意外布局偏移</strong>累加起来。单次偏移的分数，是两个值相乘得到的：屏幕上有多大区域动了（impact fraction），以及这块区域移动了多远（distance fraction）。一个占据视口一半的元素，往下挪了视口高度的一半，分数大约是 0.5 × 0.5 = 0.25。一条小脚注挪几像素，和半个屏幕整块下沉，分量完全不同。
 
@@ -137,7 +137,7 @@ CLS 不是简单求和，而是按<strong>会话窗口（session window）</stro
 
 用 `min-height` 保住最小高度，`:empty` 时用 `visibility:hidden` 藏起来，这样内容还没来时，布局也不会晃。凡是尺寸能提前知道的位置——广告、嵌入、横幅——都吃这一套（[Google Publisher Tag, minimize layout shift](https://developers.google.com/publisher-tag/guides/minimize-layout-shift)）。
 
-<strong>3) 别往已有内容的上方插东西。</strong> 实在非插不可，就只在响应用户操作时插。这跟前面那条 500ms 规则是对上的：用户按按钮触发的偏移属于预期，会被 CLS 排除；而没有任何输入、脚本硬推的偏移，会原封不动地计入分数。如果你的页面靠 JavaScript 事后绘制内容，那多半你同时还在扛[爬虫不渲染你的 JavaScript](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026) 这个问题。渲染时机，对性能和可爬取性是同时起作用的。
+<strong>3) 别往已有内容的上方插东西。</strong> 实在非插不可，就只在响应用户操作时插。这跟前面那条 500ms 规则是对上的：用户按按钮触发的偏移属于预期，会被 CLS 排除；而没有任何输入、脚本硬推的偏移，会原封不动地计入分数。如果你的页面靠 JavaScript 事后绘制内容，那多半你同时还在扛[爬虫不渲染你的 JavaScript](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/) 这个问题。渲染时机，对性能和可爬取性是同时起作用的。
 
 结果就在表里。三处修复里，光改图片一项就抹掉了 80% 的 CLS；把另外两项也处理掉，只剩 0.014。这残余的 0.014 来自公告插入的一次小偏移，大约是 GOOD 阈值的七分之一，实际使用中感觉不到。
 
@@ -151,7 +151,7 @@ CLS 不是简单求和，而是按<strong>会话窗口（session window）</stro
 
 其三，<strong>我的测量方法本身就带着一层近似。</strong> 我把 `layout-shift` 的值简单相加。这次所有偏移都落进了同一个会话窗口，和真实 CLS 对上了；但在偏移相隔好几秒才发生的长寿命页面（无限滚动、SPA）上，简单求和与会话窗口值会分道扬镳。需要准确值时，就该用 Google 发布的 `web-vitals` JavaScript 库，它把会话窗口的逻辑替你实现好了。另外，这个实验没涉及 Web 字体替换（FOUT）引起的偏移，那也是常见的 CLS 来源。
 
-想通了这些局限，实测的用处反而更清楚了。实验室测量不是排名预言，而是一件<strong>调试工具</strong>：亲眼看清什么在动、动了多少，再把原因一个个剥掉。这就是这套工作流的全部，也是它的核心。同样的姿态，也支撑着[用 trace 把 LCP 瓶颈拆开的那次记录](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026)和[实测 content-visibility 渲染成本的那次记录](/zh/blog/zh/content-visibility-auto-render-cost-measure-2026)。有时候该被怀疑的是量具本身。[prerender 页面的 LCP 报成 6.2 秒](/zh/blog/zh/prerender-activationstart-cwv-measurement-2026)，并不是页面慢，而是没把起点减掉。别猜，去测。
+想通了这些局限，实测的用处反而更清楚了。实验室测量不是排名预言，而是一件<strong>调试工具</strong>：亲眼看清什么在动、动了多少，再把原因一个个剥掉。这就是这套工作流的全部，也是它的核心。同样的姿态，也支撑着[用 trace 把 LCP 瓶颈拆开的那次记录](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026/)和[实测 content-visibility 渲染成本的那次记录](/zh/blog/zh/content-visibility-auto-render-cost-measure-2026/)。有时候该被怀疑的是量具本身。[prerender 页面的 LCP 报成 6.2 秒](/zh/blog/zh/prerender-activationstart-cwv-measurement-2026/)，并不是页面慢，而是没把起点减掉。别猜，去测。
 
 ## 今天就能跑一遍的清单
 

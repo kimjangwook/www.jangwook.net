@@ -154,8 +154,8 @@ relatedPosts:
 | 4 | [日语主页](/ja/) | 16 | 3:40 | 100% |
 | 5 | [Notion API MCP指南](/ko/blog/ko/ai-agent-notion-mcp-automation/) | 14 | 6:36 | 100% |
 | 6 | [Claude Code Web自动化](/ko/blog/ko/claude-code-web-automation/) | 11 | 0:55 | 100% |
-| 7 | [改进历史](/ko/improvement-history) | 8 | 16:12 | 100% |
-| 8 | [社交页面](/ko/social) | 5 | 3:31 | 100% |
+| 7 | [改进历史](/ko/improvement-history/) | 8 | 16:12 | 100% |
+| 8 | [社交页面](/ko/social/) | 5 | 3:31 | 100% |
 | 9 | [博客启动报告（日语）](/ja/blog/ja/blog-launch-analysis-report/) | 4 | 0:57 | 100% |
 | 10 | [Claude Code Web自动化（日语）](/ja/blog/ja/claude-code-web-automation/) | 4 | 1:54 | 67% |
 

@@ -160,7 +160,7 @@ MatMul-Free 아키텍처는 GPU 접근이 제한된 환경에서의 AI 개발 �
 - <strong>개발도상국</strong>: 고가의 GPU 없이도 로컬 AI 모델 개발 가능
 - <strong>프로토타이핑</strong>: 아이디어를 빠르게 검증하는 데 GPU 대기 불필요
 
-API 비용 절감을 원한다면 [RTK: Rust 기반 토큰 압축으로 LLM 비용을 60% 줄이는 방법](/ko/blog/ko/rtk-rust-token-killer-llm-cost-optimization-guide-2026)도 효과적인 선택이다.
+API 비용 절감을 원한다면 [RTK: Rust 기반 토큰 압축으로 LLM 비용을 60% 줄이는 방법](/ko/blog/ko/rtk-rust-token-killer-llm-cost-optimization-guide-2026/)도 효과적인 선택이다.
 
 ### 2. 엣지 디바이스 추론
 
@@ -170,7 +170,7 @@ API 비용 절감을 원한다면 [RTK: Rust 기반 토큰 압축으로 LLM 비�
 - <strong>모바일</strong>: 배터리 소모 최소화하면서 온디바이스 추론
 - <strong>뉴로모픽 칩</strong>: 논문에 따르면 비동기 처리로 엣지 GPU 대비 4배 처리량, 10배 에너지 절감
 
-최근 [8GB VRAM에서 실행되는 Qwen3-Coder](/ko/blog/ko/qwen3-coder-8gb-vram)처럼 소비자 하드웨어에서도 수준급 AI 모델 실행이 가능해지는 추세와 맥을 같이 한다.
+최근 [8GB VRAM에서 실행되는 Qwen3-Coder](/ko/blog/ko/qwen3-coder-8gb-vram/)처럼 소비자 하드웨어에서도 수준급 AI 모델 실행이 가능해지는 추세와 맥을 같이 한다.
 
 ### 3. 현실적 한계
 
@@ -190,7 +190,7 @@ MatMul-Free 아키텍처는 아직 초기 단계이지만, 몇 가지 발전 방
 3. <strong>하드웨어 최적화</strong>: 삼진 연산에 특화된 커스텀 하드웨어나 FPGA 가속
 4. <strong>하이브리드 접근</strong>: 핵심 레이어는 MatMul-Free, 출력은 전통적 방식의 혼합
 
-[NVIDIA DGX Spark](/ko/blog/ko/nvidia-dgx-spark-cuda-compatibility) 같은 개인용 AI 전용 하드웨어의 보급과 맞물려 삼진 연산에 특화된 칩셋 개발이 가속화될 가능성도 있다.
+[NVIDIA DGX Spark](/ko/blog/ko/nvidia-dgx-spark-cuda-compatibility/) 같은 개인용 AI 전용 하드웨어의 보급과 맞물려 삼진 연산에 특화된 칩셋 개발이 가속화될 가능성도 있다.
 
 ## 결론
 

@@ -65,11 +65,11 @@ INP是Interaction to Next Paint，直译是"从交互到下一次绘制"。它�
 
 在意INP有两个理由。一个是人，一个是搜索。
 
-人这边很直白。不管加载多快，只要每次按按钮都卡上300ms，这站就会被记成"慢"。而且它和无障碍是重叠的。没反应时，有认知负荷或者手会抖的用户会反复按同一个按钮，那个空档里表单就被提交了两次。所以我把响应速度，和[用Lighthouse实测并修复无障碍那篇](/zh/blog/zh/a11y-lighthouse-audit-fix-2026)放在同一条线上看。
+人这边很直白。不管加载多快，只要每次按按钮都卡上300ms，这站就会被记成"慢"。而且它和无障碍是重叠的。没反应时，有认知负荷或者手会抖的用户会反复按同一个按钮，那个空档里表单就被提交了两次。所以我把响应速度，和[用Lighthouse实测并修复无障碍那篇](/zh/blog/zh/a11y-lighthouse-audit-fix-2026/)放在同一条线上看。
 
 搜索这边得说实话。Core Web Vitals是Google页面体验信号的一部分，INP在里面。但Google的说法是：它只是在关联度相近的页面之间起个"分高下"的作用，并不能推翻关联度。<strong>把INP降到200ms以内，并不保证排名上升。</strong>这不是我的看法，是官方立场。它仍然值得测、值得修，因为同一份力气同时动了搜索信号和真实体感。哪怕只冲着其中一头，也划算。
 
-这里要记住INP的一个性质：它本质上是字段（field）指标。判定用的是真实用户Chrome里采集的数据（CrUX）。实验室（lab）工具也能估，但那个值完全取决于"你按了哪些交互"。所以这次实验把"我按了什么"控制得很死，只用这个条件下跑出来的数字说话。它替代不了真实访客那台慢手机。这个限制我留到最后再说。这个性质和[我实测LCP那篇](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026)讲的"加载多快结束"正好成对：LCP管前半段，INP管后半段。在同一套 Core Web Vitals 里，[实测并压住画面偏移（CLS）的那次记录](/zh/blog/zh/cls-layout-shift-reserve-space-measure-2026)和[用一行 CSS 削减渲染成本的 content-visibility 实验](/zh/blog/zh/content-visibility-auto-render-cost-measure-2026)，我也用同样的姿态处理。不过字段指标有个前提：测量它的代码不能错，错了它会安静地骗你。[开了 prerender 后 LCP 记成 6.2 秒的那次实测](/zh/blog/zh/prerender-activationstart-cwv-measurement-2026)就是这种情况。
+这里要记住INP的一个性质：它本质上是字段（field）指标。判定用的是真实用户Chrome里采集的数据（CrUX）。实验室（lab）工具也能估，但那个值完全取决于"你按了哪些交互"。所以这次实验把"我按了什么"控制得很死，只用这个条件下跑出来的数字说话。它替代不了真实访客那台慢手机。这个限制我留到最后再说。这个性质和[我实测LCP那篇](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026/)讲的"加载多快结束"正好成对：LCP管前半段，INP管后半段。在同一套 Core Web Vitals 里，[实测并压住画面偏移（CLS）的那次记录](/zh/blog/zh/cls-layout-shift-reserve-space-measure-2026/)和[用一行 CSS 削减渲染成本的 content-visibility 实验](/zh/blog/zh/content-visibility-auto-render-cost-measure-2026/)，我也用同样的姿态处理。不过字段指标有个前提：测量它的代码不能错，错了它会安静地骗你。[开了 prerender 后 LCP 记成 6.2 秒的那次实测](/zh/blog/zh/prerender-activationstart-cwv-measurement-2026/)就是这种情况。
 
 ## 沙盒：同样的活儿，两种跑法
 
@@ -147,7 +147,7 @@ new PerformanceObserver((list) => {
 
 <strong>第一，水合与重渲染。</strong>用React或Vue做的页面，加载完立刻要水合：JavaScript给DOM挂事件、对齐状态。这活儿一重，用户在这期间点的那一下，就得等水合跑完。这是输入延迟整块变大的教科书情形。再叠上一次点击就重画半棵组件树的重渲染，处理时间也跟着膨胀。"框架快"恰恰是最容易让人松懈的地方。
 
-<strong>第二，第三方标签。</strong>分析脚本、广告、聊天挂件、热图工具。这些多半是别人的代码，你切不了，而且它想什么时候用主线程就什么时候用。偏赶上那一刻用户按了按钮，输入延迟就飙。这是你自己代码再干净、INP照样难看的常见原因。它和[用JS事后插入内容的CSR习惯](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026)同根：对爬虫是空页面，对用户是慢响应。事后丢到主线程上的活儿，总要还账。
+<strong>第二，第三方标签。</strong>分析脚本、广告、聊天挂件、热图工具。这些多半是别人的代码，你切不了，而且它想什么时候用主线程就什么时候用。偏赶上那一刻用户按了按钮，输入延迟就飙。这是你自己代码再干净、INP照样难看的常见原因。它和[用JS事后插入内容的CSR习惯](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/)同根：对爬虫是空页面，对用户是慢响应。事后丢到主线程上的活儿，总要还账。
 
 <strong>第三，事件委托背后那个重的公共处理函数。</strong>在文档最上层挂一个监听接住所有点击，很省事，可要是那个处理函数每次点击都做重的分支和计算，所有点击就一起慢。
 

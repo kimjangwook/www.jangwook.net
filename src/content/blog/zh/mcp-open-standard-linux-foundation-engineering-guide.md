@@ -141,7 +141,7 @@ graph TD
 
 <strong>核心概念</strong>：
 
-- <strong>MCP Host</strong>：AI应用（[Claude Code、Cursor、Windsurf](/zh/blog/zh/openai-codex-api-release-vs-claude-code-comparison-may-2026)等）
+- <strong>MCP Host</strong>：AI应用（[Claude Code、Cursor、Windsurf](/zh/blog/zh/openai-codex-api-release-vs-claude-code-comparison-may-2026/)等）
 - <strong>MCP Client</strong>：在Host内部管理与Server的1:1连接
 - <strong>MCP Server</strong>：提供对特定资源（数据库、API、文件等）的访问
 - <strong>Transport</strong>：stdio（本地）或HTTP+SSE（远程）协议
@@ -197,7 +197,7 @@ MintMCP、Cloudflare Workers等提供的<strong>MCP网关</strong>使平台工�
 
 实际导入案例中报告的效果：
 
-- <strong>重复性工作时间减少40%</strong>：通过MCP自动化 [Jira Issue创建、Slack通知](/zh/blog/zh/jira-ai-agents-mcp-engineering-management)、数据库查询等
+- <strong>重复性工作时间减少40%</strong>：通过MCP自动化 [Jira Issue创建、Slack通知](/zh/blog/zh/jira-ai-agents-mcp-engineering-management/)、数据库查询等
 - <strong>缩短Onboarding时间</strong>：新成员通过标准化的MCP服务器即时访问团队工具
 - <strong>减少影子IT</strong>：用标准MCP服务器统一工具访问，替代个人脚本
 
@@ -207,7 +207,7 @@ MintMCP、Cloudflare Workers等提供的<strong>MCP网关</strong>使平台工�
 
 MCP的快速扩散伴随着代价。根据Cisco的分析，主要风险如下：
 
-1. <strong>Prompt注入</strong>：MCP服务器返回的数据中可能包含恶意Prompt（参见 [MCP代码执行安全策略](/zh/blog/zh/anthropic-code-execution-mcp)）
+1. <strong>Prompt注入</strong>：MCP服务器返回的数据中可能包含恶意Prompt（参见 [MCP代码执行安全策略](/zh/blog/zh/anthropic-code-execution-mcp/)）
 2. <strong>供应链攻击</strong>：社区MCP服务器（如OpenClaw的5,700+技能）的质量管理问题
 3. <strong>过度权限授予</strong>：向MCP服务器授予超出必要的系统访问权限
 4. <strong>数据泄露</strong>：通过AI模型非预期地将内部数据传输到外部

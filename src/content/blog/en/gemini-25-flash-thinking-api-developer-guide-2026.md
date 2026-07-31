@@ -48,7 +48,7 @@ I set `thinking_budget` to 0, 1024, and 8000 across three prompt types — simpl
 
 `thinking_budget` limits how many tokens the model can spend on "hidden reasoning" before it writes the response. Budget=0 disables thinking entirely. Budget=-1 lets the model decide how much to think. A positive integer sets the cap (maximum is 24576).
 
-There's an important catch: thinking tokens aren't returned in the response, but **they're billed at the same rate as output tokens**. As covered in the [LLM API pricing comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek), Gemini 2.5 Flash output tokens cost $0.0035/1K. Spending 1024 thinking tokens adds that cost on top.
+There's an important catch: thinking tokens aren't returned in the response, but **they're billed at the same rate as output tokens**. As covered in the [LLM API pricing comparison](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/), Gemini 2.5 Flash output tokens cost $0.0035/1K. Spending 1024 thinking tokens adds that cost on top.
 
 One practical note: the `google.generativeai` package is now deprecated. You need the new `google-genai` package.
 
@@ -140,7 +140,7 @@ I'll be honest — the code review at Budget=1024 felt *better* than Budget=0 ev
 
 Budget=8000 on the math problem consumed 4036 thinking tokens in 26 seconds. That latency is unacceptable in any interactive context. I'd only use this for offline batch analysis or asynchronous background jobs.
 
-The [Gemini 2.5 Flash cost optimization guide](/en/blog/en/gemini-25-flash-api-cost-optimization-guide) covers this too: thinking tokens and output tokens are priced identically. Using Budget=8000 indiscriminately can multiply your costs by several times.
+The [Gemini 2.5 Flash cost optimization guide](/en/blog/en/gemini-25-flash-api-cost-optimization-guide/) covers this too: thinking tokens and output tokens are priced identically. Using Budget=8000 indiscriminately can multiply your costs by several times.
 
 ## Production Code: Tracking Thinking Usage
 
@@ -213,7 +213,7 @@ I want to be direct about the frustrating parts.
 
 **thinking_budget and thinking_level can't coexist.** Gemini 3.x uses `thinking_level`; 2.5 uses `thinking_budget`. Mix them in the same call and you get a 400 error. This is documented but the error message isn't obvious enough to catch immediately if you're migrating code.
 
-**Thinking tokens don't benefit from context caching.** Even if you use context caching to reduce the cost of a long system prompt, thinking tokens are billed fresh every time. As I covered in the [AI agent cost reality post](/en/blog/en/ai-agent-cost-reality), costs in agent loops can spiral faster than expected when thinking tokens accumulate.
+**Thinking tokens don't benefit from context caching.** Even if you use context caching to reduce the cost of a long system prompt, thinking tokens are billed fresh every time. As I covered in the [AI agent cost reality post](/en/blog/en/ai-agent-cost-reality/), costs in agent loops can spiral faster than expected when thinking tokens accumulate.
 
 ## My Take
 

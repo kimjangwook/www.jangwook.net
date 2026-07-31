@@ -220,7 +220,7 @@ My blog currently runs 19 agents:
 - `content-recommender`: generates relatedPosts
 - `image-generator`: writes hero image briefs
 
-For more complex patterns around organizing agents into teams, see the [Claude Code Agent Teams Complete Guide](/en/blog/en/claude-agent-teams-guide).
+For more complex patterns around organizing agents into teams, see the [Claude Code Agent Teams Complete Guide](/en/blog/en/claude-agent-teams-guide/).
 
 ## The Full Pipeline: How It Actually Works
 
@@ -355,7 +355,7 @@ Something only became clear after I had built all three steps: this pattern isn'
 
 The decision rule in one line: <strong>"Will I repeat this procedure in nearly the same form next month, and is there a way to verify the result automatically?"</strong> If both are yes, automate it. If either is no, doing it by hand is usually faster and safer.
 
-Once you reach the point of wanting to run several tasks in parallel, [running parallel Claude Code sessions with git worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree) is the natural next direction.
+Once you reach the point of wanting to run several tasks in parallel, [running parallel Claude Code sessions with git worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree/) is the natural next direction.
 
 ## Honest Assessment: What Doesn't Work Well
 
@@ -379,7 +379,7 @@ This first part covered automation that stays within the `.claude/` folder.
 
 Part 2 goes a step further: <strong>building an MCP (Model Context Protocol) server from scratch to connect Claude Code to external tools</strong>. Reading a Notion database, sending Slack messages, querying PostgreSQL, all triggerable from a single slash command.
 
-If you've already experimented with MCP servers, the [TypeScript SDK MCP Server step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) is good preparation.
+If you've already experimented with MCP servers, the [TypeScript SDK MCP Server step-by-step guide](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026/) is good preparation.
 
 ## Verify Against the Official Docs
 

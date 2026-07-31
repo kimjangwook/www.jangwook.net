@@ -155,7 +155,7 @@ crew = Crew(
 )
 ```
 
-これで30分以内に動作するマルチエージェントシステムが作れる。[Claude Codeエージェントワークフローパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)で紹介した役割ベースのエージェントパターンと非常によく似たアプローチだ。
+これで30分以内に動作するマルチエージェントシステムが作れる。[Claude Codeエージェントワークフローパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)で紹介した役割ベースのエージェントパターンと非常によく似たアプローチだ。
 
 CrewAI v1.10.1で追加された機能：
 - **MCPネイティブサポート**: MCPサーバーをツールとして直接接続
@@ -209,7 +209,7 @@ result = await workflow.run("Handle customer support ticket #4521")
 
 核心的な差別点は**ワークフローID**だ。プロセスが死んでも、Podが再起動しても、同じ`workflow_id`で実行すると中断した地点から再開する。RedisやPostgreSQLなどの外部ストアに状態を保存するからこそ可能なことだ。Daprは30以上の状態ストアをプラグイン方式でサポートする。
 
-[Dapr Agents v1.0 GA分析記事](/ja/blog/ja/dapr-agents-v1-cncf-production-ai-framework)で詳しく取り上げたが、核心はCNCFエコシステムとの統合だ。Prometheus、OpenTelemetry、Kubernetes RBAC — Daprをすでに使っているチームならエージェントレイヤーを追加するコストは非常に低い。
+[Dapr Agents v1.0 GA分析記事](/ja/blog/ja/dapr-agents-v1-cncf-production-ai-framework/)で詳しく取り上げたが、核心はCNCFエコシステムとの統合だ。Prometheus、OpenTelemetry、Kubernetes RBAC — Daprをすでに使っているチームならエージェントレイヤーを追加するコストは非常に低い。
 
 ただし、Dapr Agentsを勧めない状況も明確だ。**Kubernetesをまだ使っていないチームにはオーバーキルだ。** Dapr自体のインストール、サイドカーパターンの理解、状態ストアの設定だけで週単位の作業になり得る。また**Pythonベースのエージェントロジックのみをサポート**しており、TypeScriptやGoで直接エージェントを書くことはまだ制限されている。
 
@@ -249,7 +249,7 @@ YesならDapr Agentsを真剣に検討してほしい。Daprがすでにデプ�
 
 前者ならLangGraphのグラフモデルが必要だ。後者ならCrewAIとDapr Agentsのどちらでも問題ない。
 
-私は現在、このブログの自動化システムで**LangGraphベースのアプローチ**を最も参考にしている。[Stripeが1,300件のPRを自律エージェントで処理した事例](/ja/blog/ja/stripe-minions-autonomous-coding-agents-1300-prs)を見ると、複雑な分岐処理が必要な箇所でグラフベースのアプローチを選んでいる。グラウンドトゥルースは常に「どのフレームワークを使うか」ではなく「どう使うか」にある。
+私は現在、このブログの自動化システムで**LangGraphベースのアプローチ**を最も参考にしている。[Stripeが1,300件のPRを自律エージェントで処理した事例](/ja/blog/ja/stripe-minions-autonomous-coding-agents-1300-prs/)を見ると、複雑な分岐処理が必要な箇所でグラフベースのアプローチを選んでいる。グラウンドトゥルースは常に「どのフレームワークを使うか」ではなく「どう使うか」にある。
 
 ## マイグレーション戦略 — 素早く始めて必要な部分だけ強化する
 

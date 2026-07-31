@@ -301,7 +301,7 @@ function extractJsonFromResponse(text: string): string {
 
 ### Pattern 2: Tool Useで構造化出力を強制する
 
-[Claude Agent SDK Tool Use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)で扱っているように、`tool_use`を活用するとJSON形式を強制できる。LLMがツールを「呼び出す」形で構造化データを返すようにするパターンだ。
+[Claude Agent SDK Tool Use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)で扱っているように、`tool_use`を活用するとJSON形式を強制できる。LLMがツールを「呼び出す」形で構造化データを返すようにするパターンだ。
 
 ```typescript
 import Anthropic from '@anthropic-ai/sdk';
@@ -632,9 +632,9 @@ async function extractPostMetadata(
 }
 ```
 
-[TypeScriptで自分だけのMCPサーバーを作る](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)でMCPツールを実装するときも、このパターンがそのまま使える。ツールハンドラー関数でLLMを呼び出し、応答をZodで検証してから構造化された結果を返せばいい。
+[TypeScriptで自分だけのMCPサーバーを作る](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026/)でMCPツールを実装するときも、このパターンがそのまま使える。ツールハンドラー関数でLLMを呼び出し、応答をZodで検証してから構造化された結果を返せばいい。
 
-[Vitest 4でAIエージェントをテストする](/ja/blog/ja/vitest-4-ai-agent-testing-patterns-2026)で扱ったように、この関数を単体テストする際は`client.messages.create()`をモッキングして`safeParse()`の結果をアサートすればいい。Zodスキーマがあればテストフィクスチャをスキーマ基準で作れるので便利だ。
+[Vitest 4でAIエージェントをテストする](/ja/blog/ja/vitest-4-ai-agent-testing-patterns-2026/)で扱ったように、この関数を単体テストする際は`client.messages.create()`をモッキングして`safeParse()`の結果をアサートすればいい。Zodスキーマがあればテストフィクスチャをスキーマ基準で作れるので便利だ。
 
 ### v3からv4へのマイグレーションチェックリスト
 

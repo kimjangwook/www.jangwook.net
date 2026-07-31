@@ -91,7 +91,7 @@ Aqua Security의 Trivy(컨테이너 취약점 스캐너)를 먼저 타겟팅했�
 
 **빠른 업데이트 주기.** AI 라이브러리는 API 변경이 잦아서 `pip install --upgrade`를 자주 실행한다. 새 모델이 나올 때마다 SDK를 업데이트하는 습관이 공격 노출면을 키운다.
 
-**프로덕션 환경의 높은 권한.** LLM 프록시 서버는 대부분 클라우드 API 키를 환경 변수로 갖고 있다. AWS, GCP, 각종 AI 프로바이더 키가 한곳에 모여 있으니 공격자 입장에서는 노다지다. [MCP 설정 파일에서만 2만 개 이상의 크리덴셜이 공개 리포지토리에 노출된 사례](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security)도 이 구조에서 비롯된다.
+**프로덕션 환경의 높은 권한.** LLM 프록시 서버는 대부분 클라우드 API 키를 환경 변수로 갖고 있다. AWS, GCP, 각종 AI 프로바이더 키가 한곳에 모여 있으니 공격자 입장에서는 노다지다. [MCP 설정 파일에서만 2만 개 이상의 크리덴셜이 공개 리포지토리에 노출된 사례](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security/)도 이 구조에서 비롯된다.
 
 ## 실전 대응 방법
 
@@ -123,7 +123,7 @@ diff <(cat /tmp/pth-before.txt) \
 
 ### 3. 보안 도구도 검증 대상
 
-이번 사건의 가장 뼈아픈 교훈은 "보안 스캐너를 신뢰했더니 그게 감염 벡터였다"는 점이다. Trivy, Snyk, Checkmarx 같은 보안 도구의 GitHub Actions 버전도 해시 기반으로 고정해야 한다. [AI 에이전트 DevSecOps 파이프라인](/ko/blog/ko/openai-promptfoo-ai-agent-devsecops)을 구축할 때 외부 도구 신뢰 검증이 핵심 의제인 이유다.
+이번 사건의 가장 뼈아픈 교훈은 "보안 스캐너를 신뢰했더니 그게 감염 벡터였다"는 점이다. Trivy, Snyk, Checkmarx 같은 보안 도구의 GitHub Actions 버전도 해시 기반으로 고정해야 한다. [AI 에이전트 DevSecOps 파이프라인](/ko/blog/ko/openai-promptfoo-ai-agent-devsecops/)을 구축할 때 외부 도구 신뢰 검증이 핵심 의제인 이유다.
 
 ```yaml
 # Bad: 태그 기반 (변조 가능)
@@ -141,7 +141,7 @@ LLM 프록시 서버가 외부로 아웃바운드 연결을 열 수 있다면, �
 
 한 가지 주의할 점: 이 사건을 "AI 라이브러리를 쓰면 안 된다"로 확대 해석하면 곤란하다. 공급망 공격은 AI에 국한된 문제가 아니라 npm(event-stream 사건), PyPI(ctx 패키지), 그리고 솔라윈즈까지 소프트웨어 생태계 전반의 문제다. 다만 AI 도구 체인은 높은 권한 + 빠른 업데이트 주기 + 깊은 의존성이라는 조합 때문에 공격 가치가 더 높다는 점을 인식해야 한다.
 
-개인적으로 이번 사건 이후 우리 팀에서 CI/CD 파이프라인의 모든 외부 액션을 해시 기반으로 전환하는 작업을 시작했다. 솔직히 귀찮지만, `.pth` 파일 하나로 클라우드 키가 통째로 날아가는 시나리오를 생각하면 안 할 이유가 없다. [MCP 생태계에서 60일 만에 30개 CVE가 발견된 보안 위기](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening)처럼 AI 인프라 보안은 이미 전쟁 중이다.
+개인적으로 이번 사건 이후 우리 팀에서 CI/CD 파이프라인의 모든 외부 액션을 해시 기반으로 전환하는 작업을 시작했다. 솔직히 귀찮지만, `.pth` 파일 하나로 클라우드 키가 통째로 날아가는 시나리오를 생각하면 안 할 이유가 없다. [MCP 생태계에서 60일 만에 30개 CVE가 발견된 보안 위기](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening/)처럼 AI 인프라 보안은 이미 전쟁 중이다.
 
 ---
 

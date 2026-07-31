@@ -121,8 +121,8 @@ Sitemap: https://example.com/sitemap.xml
 
 当然，这是"<strong>想要</strong>引用流量的站点"的默认值。如果你运营的是付费内容或社区档案，连引用都不想要，那把搜索机器人也屏蔽才对。答案不止一个。不过对大多数博客和文档站来说，"拒绝训练＋放行引用"这个组合是个合理的起点。
 
-爬虫到达之后实际读取什么，是另一个层面的问题。那部分我在[把 LocalBusiness 结构化数据从服务端输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)那篇里另作讨论。如果 robots.txt 是"让谁进来"，标记就是"给进来的机器人看什么"。
-而如果你运营多语言站点，还得另外确认上述 robots.txt 的 Sitemap 指令所携带的 hreflang 信号是否真正双向对应。那次审计的过程我整理在[亲自审计我自己 4 语言博客 hreflang 的记录](/zh/blog/zh/hreflang-reciprocity-audit-multilingual-2026)里。
+爬虫到达之后实际读取什么，是另一个层面的问题。那部分我在[把 LocalBusiness 结构化数据从服务端输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026/)那篇里另作讨论。如果 robots.txt 是"让谁进来"，标记就是"给进来的机器人看什么"。
+而如果你运营多语言站点，还得另外确认上述 robots.txt 的 Sitemap 指令所携带的 hreflang 信号是否真正双向对应。那次审计的过程我整理在[亲自审计我自己 4 语言博客 hreflang 的记录](/zh/blog/zh/hreflang-reciprocity-audit-multilingual-2026/)里。
 
 
 ## 我做了验证: 规则真的按意图生效了吗
@@ -184,7 +184,7 @@ Python 标准解析器先满足了 `Allow: /` 就放了行。但<strong>真实 G
 
 也就是说，面对同一份 robots.txt，标准解析器说"放行"，真实 Googlebot 说"屏蔽"。这个不一致看似微不足道，实务里却危险。你用某个本地脚本或某个库"测了一下 robots.txt，通过了"就放心了，可要是那个解析器没实现 Google 的最长匹配规则，实际上可能被屏蔽、也可能被放开，而你并不知道。
 
-我的结论是：<strong>验证 robots.txt，一定要用那个爬虫真正使用的规则来确认。</strong>Google 就用 Search Console 的 robots.txt 测试工具，OpenAI 就以官方文档里各机器人的行为为准。别拿一个通用解析器"过了"就算数。我今天翻出来的这一行，就是证据。（顺便说，这种"工具通过了就一切没问题"的陷阱在无障碍里也一样存在。这和 [Lighthouse 满分 100 并不等于符合 WCAG](/zh/blog/zh/a11y-lighthouse-audit-fix-2026) 是完全同一类错觉。）
+我的结论是：<strong>验证 robots.txt，一定要用那个爬虫真正使用的规则来确认。</strong>Google 就用 Search Console 的 robots.txt 测试工具，OpenAI 就以官方文档里各机器人的行为为准。别拿一个通用解析器"过了"就算数。我今天翻出来的这一行，就是证据。（顺便说，这种"工具通过了就一切没问题"的陷阱在无障碍里也一样存在。这和 [Lighthouse 满分 100 并不等于符合 WCAG](/zh/blog/zh/a11y-lighthouse-audit-fix-2026/) 是完全同一类错觉。）
 
 ## Google-Extended 的陷阱: 它挡不住 AI Overviews
 

@@ -76,7 +76,7 @@ response = client.messages.create(
 )
 ```
 
-이 코드를 Anthropic API 키 없이 직접 실행하지는 못했다. 위 코드는 공식 문서와 릴리스 노트를 기반으로 작성한 것이며, task_budget의 advisory 동작 방식은 [Managed Agents 실전 배포 포스트](/ko/blog/ko/claude-managed-agents-production-deployment-guide)에서 직접 테스트한 경험과 맞닿아 있다.
+이 코드를 Anthropic API 키 없이 직접 실행하지는 못했다. 위 코드는 공식 문서와 릴리스 노트를 기반으로 작성한 것이며, task_budget의 advisory 동작 방식은 [Managed Agents 실전 배포 포스트](/ko/blog/ko/claude-managed-agents-production-deployment-guide/)에서 직접 테스트한 경험과 맞닿아 있다.
 
 ## Managed Agents는 뭐가 다른가
 
@@ -99,7 +99,7 @@ Notion, Rakuten, Sentry가 이미 프로덕션에 적용했다는 사례가 공�
 
 Managed Agents가 이 부담을 덜어준다면 — 실제로 Sentry가 "몇 주 만에 패치 에이전트를 프로덕션 출시했다"고 말한 배경이 이것이라면 — 가치는 분명하다.
 
-[Claude Code 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 다룬 오케스트레이터-서브에이전트 구조를 Managed Agents 위에 올리면, 이전에는 직접 구현해야 했던 복구 로직과 상태 동기화를 플랫폼이 처리해주는 셈이다.
+[Claude Code 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 다룬 오케스트레이터-서브에이전트 구조를 Managed Agents 위에 올리면, 이전에는 직접 구현해야 했던 복구 로직과 상태 동기화를 플랫폼이 처리해주는 셈이다.
 
 task_budget도 방향은 맞다. 에이전트가 예산 내에서 우선순위를 스스로 정하도록 유도하는 방식은, 하드 컷보다 실제 작업 완성도를 더 높일 가능성이 있다.
 
@@ -117,7 +117,7 @@ byteiota.com에서 수집된 개발자 피드백 요약을 보면, 일부 파워
 
 그리고 내가 가장 중요하게 생각하는 문제는 따로 있다. <strong>새 토큰나이저</strong>다. Opus 4.7은 새 토큰나이저를 탑재했는데, 동일 텍스트에 대해 이전 대비 1〜1.35배 더 많은 토큰을 사용한다. 공표된 가격은 바뀌지 않았지만, 실질 비용이 최대 35% 상승할 수 있다는 의미다.
 
-[AI 에이전트 비용 현실](/ko/blog/ko/ai-agent-cost-reality)에서 프로덕션 에이전트 운용 비용을 분석한 적이 있는데, 토큰나이저 변경은 예산 시뮬레이션을 완전히 다시 해야 할 수준의 변수다. Anthropic이 이것을 출시 전면에 내세우지 않았다는 점은 비판받아 마땅하다.
+[AI 에이전트 비용 현실](/ko/blog/ko/ai-agent-cost-reality/)에서 프로덕션 에이전트 운용 비용을 분석한 적이 있는데, 토큰나이저 변경은 예산 시뮬레이션을 완전히 다시 해야 할 수준의 변수다. Anthropic이 이것을 출시 전면에 내세우지 않았다는 점은 비판받아 마땅하다.
 
 ## 비용 현실: 얼마나 올랐나
 
@@ -193,7 +193,7 @@ Sentry가 "몇 주 만에 패치 에이전트를 출시했다"는 사례가 과�
 
 ## 이번 달 Anthropic 릴리스의 더 큰 그림
 
-4월 Anthropic 릴리스를 하나의 서사로 읽으면 흥미롭다. [지난달 성능 저하 논란](/ko/blog/ko/anthropic-claude-performance-decline-controversy-april-2026)으로 커뮤니티 신뢰가 흔들렸을 때, Anthropic은 한 달 만에 벤치마크 개선 수치와 함께 돌아왔다.
+4월 Anthropic 릴리스를 하나의 서사로 읽으면 흥미롭다. [지난달 성능 저하 논란](/ko/blog/ko/anthropic-claude-performance-decline-controversy-april-2026/)으로 커뮤니티 신뢰가 흔들렸을 때, Anthropic은 한 달 만에 벤치마크 개선 수치와 함께 돌아왔다.
 
 하지만 개발자들의 반응은 "숫자보다 실무가 더 중요하다"는 방향으로 성숙해지고 있다. SWE-bench가 높다고 해서 내 코드베이스에서도 잘 동작한다는 보장은 없고, "legendarily bad" 같은 피드백은 무시하기 어렵다.
 

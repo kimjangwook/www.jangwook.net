@@ -724,6 +724,6 @@ Most importantly, all these improvements <strong>directly impact user experience
 ---
 
 <strong>Related Links</strong>:
-- [V2 Recommendation System: Metadata-Based Optimization](/en/blog/en/metadata-based-recommendation-optimization)
-- [V1 Recommendation System: LLM Content-Based Recommendations](/en/blog/en/ai-content-recommendation-system)
+- [V2 Recommendation System: Metadata-Based Optimization](/en/blog/en/metadata-based-recommendation-optimization/)
+- [V1 Recommendation System: LLM Content-Based Recommendations](/en/blog/en/ai-content-recommendation-system/)
 - [Astro Content Collections Official Documentation](https://docs.astro.build/en/guides/content-collections/)

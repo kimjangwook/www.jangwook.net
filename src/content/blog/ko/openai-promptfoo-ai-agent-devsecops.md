@@ -95,7 +95,7 @@ Enterprise:
 
 ### 1. AI 에이전트 보안의 패러다임 전환
 
-2025년까지 AI 보안은 대부분 "모델 안전성"에 초점을 맞췄다. RLHF로 모델을 정렬하고, 출력 필터를 달고, 가드레일을 설정하는 방식이었다. 하지만 2026년의 AI 에이전트는 <strong>도구를 호출하고, 데이터에 접근하고, 외부 시스템과 상호작용</strong>한다. [공격 표면](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security)이 완전히 달라졌다.
+2025년까지 AI 보안은 대부분 "모델 안전성"에 초점을 맞췄다. RLHF로 모델을 정렬하고, 출력 필터를 달고, 가드레일을 설정하는 방식이었다. 하지만 2026년의 AI 에이전트는 <strong>도구를 호출하고, 데이터에 접근하고, 외부 시스템과 상호작용</strong>한다. [공격 표면](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security/)이 완전히 달라졌다.
 
 ```mermaid
 graph TD
@@ -230,7 +230,7 @@ escalation_triggers:
 
 ### 3. 보안 테스트 기준을 수립하라
 
-[NIST AI 위험 관리 프레임워크](/ko/blog/ko/nist-ai-agent-security-standards)를 기반으로, 팀에 맞는 보안 테스트 기준을 수립한다.
+[NIST AI 위험 관리 프레임워크](/ko/blog/ko/nist-ai-agent-security-standards/)를 기반으로, 팀에 맞는 보안 테스트 기준을 수립한다.
 
 | 테스트 카테고리 | 최소 기준 | 권장 기준 |
 |-------------|---------|---------|

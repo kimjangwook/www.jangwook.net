@@ -66,7 +66,7 @@ relatedPosts:
 - クレジット基盤の決済システム（Stripe連携）
 - 5言語多言語対応
 
-しかしリリース後一週間、冷静な現実に向き合わなければなりませんでした。このサービスの初期の自動化構造をどう設計したかは、[Agent Effi Flow自動化分析 第1回](/ja/blog/ja/effiflow-automation-analysis-part1)で詳しく解説しています。
+しかしリリース後一週間、冷静な現実に向き合わなければなりませんでした。このサービスの初期の自動化構造をどう設計したかは、[Agent Effi Flow自動化分析 第1回](/ja/blog/ja/effiflow-automation-analysis-part1/)で詳しく解説しています。
 
 ---
 
@@ -301,7 +301,7 @@ const CREDIT_COSTS = {
 - Duty-Free、Tax-Freeキーワード検出
 - 弥生、freee CSVフォーマット対応
 
-こうした自動化パイプラインを実際にどう運用し改善してきたかは、[Agent Effi Flow自動化分析 第3回](/ja/blog/ja/effiflow-automation-analysis-part3)に続きます。
+こうした自動化パイプラインを実際にどう運用し改善してきたかは、[Agent Effi Flow自動化分析 第3回](/ja/blog/ja/effiflow-automation-analysis-part3/)に続きます。
 
 ---
 

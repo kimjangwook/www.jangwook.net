@@ -61,11 +61,11 @@ relatedPosts:
 
 > <strong>Series: DeNA LLM Study</strong> (2/5)
 >
-> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals/)
 > 2. <strong>Part 2: Structured Output and Multi-LLM Pipelines</strong> ← Current Article
-> 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag)
-> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design)
+> 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag/)
+> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design/)
 
 ## Overview
 

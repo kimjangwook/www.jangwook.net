@@ -67,7 +67,7 @@ Voxtral의 핵심 스펙을 정리하면 이렇다:
 
 인간 평가(human evaluation)에서 ElevenLabs Flash v2.5를 이겼다고 한다. Mistral 측 발표이니 독립 검증은 필요하지만, 블라인드 A/B 테스트 결과를 공개한 것 자체는 자신감의 표현이다.
 
-4B라는 사이즈도 눈에 띈다. 최근 스마트폰 NPU가 7~10B 추론을 감당하기 시작했으니, Voxtral은 온디바이스 TTS의 현실적인 후보다. [Kitten TTS](/ko/blog/ko/kitten-tts-v08-tiny-sota)(14M)처럼 극한으로 작지는 않지만, 품질 대비 크기의 균형점이 흥미롭다.
+4B라는 사이즈도 눈에 띈다. 최근 스마트폰 NPU가 7~10B 추론을 감당하기 시작했으니, Voxtral은 온디바이스 TTS의 현실적인 후보다. [Kitten TTS](/ko/blog/ko/kitten-tts-v08-tiny-sota/)(14M)처럼 극한으로 작지는 않지만, 품질 대비 크기의 균형점이 흥미롭다.
 
 ## TTS 엔진 비교: 내가 실제로 써본 것들
 
@@ -107,7 +107,7 @@ response = requests.post(
 )
 ```
 
-이전에 다뤘던 [KaniTTS2](/ko/blog/ko/kanitts2-voice-cloning)가 3GB VRAM으로 보이스 클로닝을 했다면, Voxtral은 API 한 줄이면 된다. 물론 로컬에서 돌리려면 Hugging Face에서 가중치를 받아 직접 추론해야 하는데, 4B 모델이니 8GB VRAM이면 충분할 것이다.
+이전에 다뤘던 [KaniTTS2](/ko/blog/ko/kanitts2-voice-cloning/)가 3GB VRAM으로 보이스 클로닝을 했다면, Voxtral은 API 한 줄이면 된다. 물론 로컬에서 돌리려면 Hugging Face에서 가중치를 받아 직접 추론해야 하는데, 4B 모델이니 8GB VRAM이면 충분할 것이다.
 
 솔직히 3초 클로닝의 품질이 실제로 어느 수준인지는 직접 들어봐야 안다. Mistral 데모 페이지의 샘플은 인상적이었지만, 데모란 게 항상 베스트 케이스를 보여주는 법이다.
 

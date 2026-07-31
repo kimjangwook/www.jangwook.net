@@ -128,7 +128,7 @@ function validateFaqPage(doc) {
     - mainEntity[1] 缺 name — 必填
 ```
 
-正常样本过了结构检查（`PASS`）。可紧挨着的那一行是 `DEPRECATED`。你的校验器再怎么亮绿灯，Google搜索去渲染它的那道口子已经关了。这就是全文的一句话总结：schema有效性和曝光价值是两条轴，而CI门禁只看得到前一条。谁在跑[CI里自动校验结构化数据的流水线](/zh/blog/zh/validate-structured-data-ci-jsonld-2026)，谁就越要记住这个盲区。门禁通过，不等于流量价值附上来。校验器漏掉的还有第二条轴：值本身讲不讲得通。我[把餐厅营业时间的标记过了三层校验](/zh/blog/zh/restaurant-jsonld-opening-hours-validation-2026)，`opens: "eleven"` 这种值一层都没被拦下。
+正常样本过了结构检查（`PASS`）。可紧挨着的那一行是 `DEPRECATED`。你的校验器再怎么亮绿灯，Google搜索去渲染它的那道口子已经关了。这就是全文的一句话总结：schema有效性和曝光价值是两条轴，而CI门禁只看得到前一条。谁在跑[CI里自动校验结构化数据的流水线](/zh/blog/zh/validate-structured-data-ci-jsonld-2026/)，谁就越要记住这个盲区。门禁通过，不等于流量价值附上来。校验器漏掉的还有第二条轴：值本身讲不讲得通。我[把餐厅营业时间的标记过了三层校验](/zh/blog/zh/restaurant-jsonld-opening-hours-validation-2026/)，`opens: "eleven"` 这种值一层都没被拦下。
 
 第二个样本里还有一点要看。校验器照样能精准抓出必填字段缺失。也就是说，结构检查本身没死。死的是它后面原本挂着的Google富媒体结果这份奖励。这个区分，决定了下一步怎么判断。
 
@@ -146,7 +146,7 @@ Google官方指引很明确：没必要主动删除。没被用到的结构化�
 
 这才是我写这篇的真正原因。
 
-FAQ富媒体结果退场后腾出的搜索结果空间，正被AI Overviews这类生成式回答迅速填满。而AI回答引擎从页面里抽取信息的方式，跟Google富媒体结果根本不同。富媒体结果读的是JSON-LD这条独立通道。而大多数AI爬虫，是从[渲染出来的真实HTML正文](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026)里抽语义。在这里，"问题 → 就地收尾的简短回答"这个模式，恰好是机器最好引用的形状。不过能在那个引用位上露出多少，光靠标记定不下来。[`max-snippet`、`nosnippet` 这类爬虫摘要控制对 AI Overviews 到底管用到什么程度](/zh/blog/zh/robots-snippet-controls-ai-overviews-2026)，最好一并确认。
+FAQ富媒体结果退场后腾出的搜索结果空间，正被AI Overviews这类生成式回答迅速填满。而AI回答引擎从页面里抽取信息的方式，跟Google富媒体结果根本不同。富媒体结果读的是JSON-LD这条独立通道。而大多数AI爬虫，是从[渲染出来的真实HTML正文](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/)里抽语义。在这里，"问题 → 就地收尾的简短回答"这个模式，恰好是机器最好引用的形状。不过能在那个引用位上露出多少，光靠标记定不下来。[`max-snippet`、`nosnippet` 这类爬虫摘要控制对 AI Overviews 到底管用到什么程度](/zh/blog/zh/robots-snippet-controls-ai-overviews-2026/)，最好一并确认。
 
 所以FAQPage里真正的资产，从来不是JSON-LD那个类型名，而是它逼你养成的纪律：一句清晰的问题，一段就地收尾的简洁回答。别把这份纪律锁在JSON-LD里，把它拉到看得见的语义HTML中，这才是当下的正解。具体做法：
 

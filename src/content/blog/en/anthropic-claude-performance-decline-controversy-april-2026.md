@@ -98,7 +98,7 @@ Using an LLM service means accepting a certain amount of "black box." You don't 
 
 Anthropic changed that baseline without notifying users. It wasn't a setting users had configured themselves. The company lowered a default value and buried the disclosure in a changelog.
 
-As I've detailed in my [Claude Code usage analysis](/en/blog/en/claude-code-insights-usage-analysis), the more you integrate Claude Code into production workflows, the more critical predictable model behavior becomes. When yesterday's output differs from today's, debugging whether it's your code or a model change costs real time. For automated pipelines, that cost compounds.
+As I've detailed in my [Claude Code usage analysis](/en/blog/en/claude-code-insights-usage-analysis/), the more you integrate Claude Code into production workflows, the more critical predictable model behavior becomes. When yesterday's output differs from today's, debugging whether it's your code or a model change costs real time. For automated pipelines, that cost compounds.
 
 Cherny's pushback backfired. Calling the change "obvious and explicit" at the exact moment hundreds of users were publicly saying "I had no idea" just made the communication gap undeniable. The company might feel it did everything right procedurally. But whether it actually reached users is the more relevant question. Those are different things.
 
@@ -130,7 +130,7 @@ The theory that emerged: Anthropic lowered effort levels partly due to compute c
 
 I can't confirm it. But "service quality being quietly adjusted under cost pressure" is a topic that almost never gets discussed openly in this industry.
 
-As I noted in my post on [Claude Code's five agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types), the more complexity you build into an agent system, the more a small performance change in the underlying model compounds through the whole pipeline. Layer a multi-level orchestrator-subagent structure and one effort level shift can degrade end-to-end reliability significantly. Many Claude Code users confirmed this the hard way.
+As I noted in my post on [Claude Code's five agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/), the more complexity you build into an agent system, the more a small performance change in the underlying model compounds through the whole pipeline. Layer a multi-level orchestrator-subagent structure and one effort level shift can degrade end-to-end reliability significantly. Many Claude Code users confirmed this the hard way.
 
 Users expect "model upgrades mean getting better." What's actually true is that cost pressures can lead to service quality adjustments on existing model versions — without any version change. Both things can be true simultaneously. How the AI services industry navigates that structural tension will, I think, determine its long-term trustworthiness.
 

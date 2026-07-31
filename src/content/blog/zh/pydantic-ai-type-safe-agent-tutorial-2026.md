@@ -57,7 +57,7 @@ print(result.output)  # → success (no tool calls)
 
 ## 为什么选PydanticAI: 与比较文章不同的视角
 
-我之前写过一篇[Python AI智能体库对比文章](/zh/blog/zh/python-ai-agent-library-comparison-2026)，涵盖PydanticAI、Instructor和Smolagents。那篇文章回答"选哪个"，这篇文章回答"用PydanticAI怎么实际构建"。实现方法才是目的。
+我之前写过一篇[Python AI智能体库对比文章](/zh/blog/zh/python-ai-agent-library-comparison-2026/)，涵盖PydanticAI、Instructor和Smolagents。那篇文章回答"选哪个"，这篇文章回答"用PydanticAI怎么实际构建"。实现方法才是目的。
 
 各库定位快速对比:
 
@@ -367,7 +367,7 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 
 - 你处于Pydantic v1遗留代码库。迁移成本可能超过引入框架的收益。
 - 流式结构化输出是产品的核心功能。当前实现仍是beta，稳定性难以保证。
-- 复杂的多智能体图编排是主要目标。该领域LangGraph一方更为成熟。[Google ADK vs LangGraph对比](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026)中的标准有助于判断。
+- 复杂的多智能体图编排是主要目标。该领域LangGraph一方更为成熟。[Google ADK vs LangGraph对比](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026/)中的标准有助于判断。
 - 你没有精力跟进版本固定和CHANGELOG追踪。它尚处于1.0之前，破坏性变更确实会发生。
 
 总结来说，对于以类型为中心的单个或少量智能体场景，它是目前最佳选择；但对于大规模图工作流或v1环境，应先考虑其他工具。
@@ -381,7 +381,7 @@ result_local  = review_agent.run_sync(code, model='ollama:llama3.3')
 - [pydantic/pydantic-ai (GitHub)](https://github.com/pydantic/pydantic-ai) — 源码、CHANGELOG和发布说明
 - [pydantic/pydantic (GitHub)](https://github.com/pydantic/pydantic) — 作为基础的Pydantic v2库
 
-在同一Python技术栈中可继续阅读[用FastMCP构建MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)和[FastAPI + Claude API流式生产指南](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026)。
+在同一Python技术栈中可继续阅读[用FastMCP构建MCP服务器](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)和[FastAPI + Claude API流式生产指南](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026/)。
 
 ## 核心模式快速总结
 

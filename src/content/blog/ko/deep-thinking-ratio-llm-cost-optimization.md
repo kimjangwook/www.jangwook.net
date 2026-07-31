@@ -118,7 +118,7 @@ Think@n:
 
 ### 2. AI 에이전트 설계에의 적용
 
-특히 복잡한 추론을 수행하는 [AI 에이전트 파이프라인](/ko/blog/ko/ai-agent-cost-reality)에서 DTR은 강력한 도구가 된다.
+특히 복잡한 추론을 수행하는 [AI 에이전트 파이프라인](/ko/blog/ko/ai-agent-cost-reality/)에서 DTR은 강력한 도구가 된다.
 
 ```python
 # 개념적 구현 예시
@@ -167,7 +167,7 @@ Llama 3.1, Qwen 3, Mistral 등 오픈소스 모델을 자체 배포하는 팀은
 
 DTR을 지금 당장 API에서 계산할 수 없더라도, 이 연구에서 얻을 수 있는 즉각적인 시사점들이 있다:
 
-**길이 제한보다 품질 지표에 집중하라.** 단순히 최대 토큰 수를 늘리는 것은 비용 낭비로 이어질 수 있다. [실제 LLM API 비용 최적화 실험](/ko/blog/ko/gemini-25-flash-api-cost-optimization-guide)에서도 같은 패턴이 관찰된다.
+**길이 제한보다 품질 지표에 집중하라.** 단순히 최대 토큰 수를 늘리는 것은 비용 낭비로 이어질 수 있다. [실제 LLM API 비용 최적화 실험](/ko/blog/ko/gemini-25-flash-api-cost-optimization-guide/)에서도 같은 패턴이 관찰된다.
 
 **복수 후보 생성 + Best-of-N 전략을 검토하라.** Think@n의 핵심 아이디어인 "여러 경로를 시작하고 가망 없는 것을 빨리 포기한다"는 접근법은 현재도 구현 가능하다. 단지 DTR 대신 다른 신뢰도 지표(confidence score, perplexity 등)를 활용할 수 있다.
 
@@ -177,7 +177,7 @@ DTR을 지금 당장 API에서 계산할 수 없더라도, 이 연구에서 얻�
 
 Google·UVA의 DTR 연구는 AI 추론 최적화의 패러다임 전환을 예고한다. "길게 생각하면 좋다"에서 "깊게 생각하는 것이 진짜 중요하다"로의 전환이다.
 
-엔지니어링 매니저와 VPoE 입장에서 이 연구가 중요한 이유는 단순하다. <strong>AI 인프라 비용의 절반을 줄이면서 동시에 성능을 높일 수 있는 이론적 기반이 생겼다.</strong> 오픈소스 모델을 활용하는 팀이라면 지금 바로 DTR 기반 추론 최적화를 실험해볼 가치가 있다. [AI 학습 비용 하락 추세](/ko/blog/ko/karpathy-ai-training-cost-deflation)와 맞물려, 추론 효율성 최적화가 다음 경쟁력의 핵심이 될 것이다.
+엔지니어링 매니저와 VPoE 입장에서 이 연구가 중요한 이유는 단순하다. <strong>AI 인프라 비용의 절반을 줄이면서 동시에 성능을 높일 수 있는 이론적 기반이 생겼다.</strong> 오픈소스 모델을 활용하는 팀이라면 지금 바로 DTR 기반 추론 최적화를 실험해볼 가치가 있다. [AI 학습 비용 하락 추세](/ko/blog/ko/karpathy-ai-training-cost-deflation/)와 맞물려, 추론 효율성 최적화가 다음 경쟁력의 핵심이 될 것이다.
 
 ---
 

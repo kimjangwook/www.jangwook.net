@@ -72,7 +72,7 @@ relatedPosts:
 
 <strong>90多个插件。</strong>此次更新新增了Slack、Jira、GitHub等大量外部集成，MCP服务器支持也得到改善。
 
-<strong>GPT-5.5集成（4月23日）。</strong>功能更新一周后，GPT-5.5成为Codex的默认模型。OpenAI表示其在"多步骤任务、规划、工具使用和自我检查"方面有所提升。我的[GPT-5.5发布分析](/zh/blog/zh/openai-gpt-5-5-release-claude-comparison-april-2026)对该模型本身有更深入的介绍。
+<strong>GPT-5.5集成（4月23日）。</strong>功能更新一周后，GPT-5.5成为Codex的默认模型。OpenAI表示其在"多步骤任务、规划、工具使用和自我检查"方面有所提升。我的[GPT-5.5发布分析](/zh/blog/zh/openai-gpt-5-5-release-claude-comparison-april-2026/)对该模型本身有更深入的介绍。
 
 方向很清晰。Codex正在从"帮你写代码"向"在你不在时持续工作的智能体工作区"演进。4月更新日志中明确使用了"full agent workspace"（完整智能体工作区）这一表述。
 
@@ -126,15 +126,15 @@ Codex更适合任务明确、边界清晰的工作："把这个模块的测试�
 
 我的主要工作——博客自动化、智能体流水线开发、脚本构建——依赖快速反馈循环和迭代优化。需求在会话中途会改变；我需要看到中间结果并调整方向。
 
-让我心动的Codex场景是<strong>异步批量PR工作</strong>："把所有10篇博文的frontmatter格式统一，我去开个会。"对于原子性强、不需要访问本地环境、能生成可审查PR的任务，异步模式是合理的。我用[Git Worktree构建过Claude Code并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)来处理并发任务，但我理解Codex的模式为什么对其他人更有吸引力。
+让我心动的Codex场景是<strong>异步批量PR工作</strong>："把所有10篇博文的frontmatter格式统一，我去开个会。"对于原子性强、不需要访问本地环境、能生成可审查PR的任务，异步模式是合理的。我用[Git Worktree构建过Claude Code并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)来处理并发任务，但我理解Codex的模式为什么对其他人更有吸引力。
 
 不适合我当前设置的部分：这里已有的自动化基础设施（hooks、自定义命令、slash技能）需要针对Codex重新构建。这不是质量判断——只是切换成本对抗一个已经在运作的系统。
 
-我也记得稳定性历史。五个月前，[GPT-5.3 Codex上线因平台稳定性问题而暂停](/zh/blog/zh/gpt53-codex-rollout-pause)。而这次4月更新的范围要大得多。云端智能体服务的故障模式与本地CLI不同——服务宕机时，你就没法工作了。Claude Code在本地运行，没有网络也能继续编辑文件。这种韧性差异平时容易被忽视，直到截止日期前一晚服务挂了才会后悔。
+我也记得稳定性历史。五个月前，[GPT-5.3 Codex上线因平台稳定性问题而暂停](/zh/blog/zh/gpt53-codex-rollout-pause/)。而这次4月更新的范围要大得多。云端智能体服务的故障模式与本地CLI不同——服务宕机时，你就没法工作了。Claude Code在本地运行，没有网络也能继续编辑文件。这种韧性差异平时容易被忽视，直到截止日期前一晚服务挂了才会后悔。
 
 ## 2026年5月的判断
 
-在[Cursor 3 vs Claude Code vs Windsurf对比](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026)中，我得出了类似结论：问题不是哪款工具更好，而是它适合哪种工作流。Codex和Claude Code有足够多的架构重叠，看起来可以互换，但实际上各自针对不同的开发模式做了优化。
+在[Cursor 3 vs Claude Code vs Windsurf对比](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026/)中，我得出了类似结论：问题不是哪款工具更好，而是它适合哪种工作流。Codex和Claude Code有足够多的架构重叠，看起来可以互换，但实际上各自针对不同的开发模式做了优化。
 
 Codex的4月更新是真实的进步。向完整异步智能体工作区演进的方向清晰，GPT-5.5带来了切实的模型改进，90多个插件让它在更多技术栈中更实用。对于已经使用ChatGPT Business、想委托明确范围异步任务的团队，现在是认真评估的好时机。
 

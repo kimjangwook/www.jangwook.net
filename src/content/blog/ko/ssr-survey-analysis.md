@@ -655,7 +655,7 @@ icc_score = calculate_icc(pivot_data)  # 0.8330
 ### 1. 콘텐츠 전략
 
 <strong>우선순위 콘텐츠</strong>:
-- <strong>Claude Code 시리즈 확장</strong>: [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices)가 1위 콘텐츠이므로 후속편 작성
+- <strong>Claude Code 시리즈 확장</strong>: [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices/)가 1위 콘텐츠이므로 후속편 작성
   - Part 2: 고급 패턴
   - Part 3: 프로덕션 활용 사례
 - <strong>AI 개발 워크플로우 집중</strong>: 개발자 중심 콘텐츠 강화
@@ -774,7 +774,7 @@ SSR은 단순한 설문 도구를 넘어서 <strong>콘텐츠 전략 수립의 �
 - [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
 
 ### 블로그 포스트
-- [AI가 소비자 행동을 예측하는 새로운 방법: 의미론적 유사도 평가](/ko/blog/ko/llm-consumer-research-ssr) - SSR 방법론 소개
+- [AI가 소비자 행동을 예측하는 새로운 방법: 의미론적 유사도 평가](/ko/blog/ko/llm-consumer-research-ssr/) - SSR 방법론 소개
 
 ### 관련 연구
 - [Research on LLM Bias in Survey Research](https://www.nature.com/articles/s41599-024-03609-x)

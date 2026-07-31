@@ -39,7 +39,7 @@ relatedPosts:
       zh: "了解Anthropic模型从Opus 4.7到Fable 5的演进，有助于掌握新模型中task_budget设计和managed agent架构的变化"
 ---
 
-Two months ago, when [Anthropic released Mythos Preview exclusively through Project Glasswing](/en/blog/en/claude-mythos-preview-glasswing-ai-cybersecurity), I was genuinely skeptical about when it would go public. A model hitting 93.9% on SWE-bench, yet restricted to twelve companies — that felt like either a careful safety stance or unusually clever positioning. I couldn't tell which.
+Two months ago, when [Anthropic released Mythos Preview exclusively through Project Glasswing](/en/blog/en/claude-mythos-preview-glasswing-ai-cybersecurity/), I was genuinely skeptical about when it would go public. A model hitting 93.9% on SWE-bench, yet restricted to twelve companies — that felt like either a careful safety stance or unusually clever positioning. I couldn't tell which.
 
 On June 9, 2026, the answer arrived: <strong>Claude Fable 5</strong>. The model ID is `claude-fable-5`, available now on the Claude API, Bedrock, Vertex AI, Microsoft Foundry, and GitHub Copilot.
 
@@ -147,7 +147,7 @@ response = client.messages.create(
 )
 ```
 
-[For parallel agent architectures similar to Opus 4.8's Dynamic Workflows](/en/blog/en/claude-opus-4-8-dynamic-workflows-parallel-agents-guide), a practical cost control strategy is to apply `effort: "low"` to subagents handling exploration or memory retrieval, and `effort: "high"` only to synthesis and decision-making steps.
+[For parallel agent architectures similar to Opus 4.8's Dynamic Workflows](/en/blog/en/claude-opus-4-8-dynamic-workflows-parallel-agents-guide/), a practical cost control strategy is to apply `effort: "low"` to subagents handling exploration or memory retrieval, and `effort: "high"` only to synthesis and decision-making steps.
 
 Task Budget (`output_config.task_budget`) is worth setting on long agentic runs. It gives the model a token countdown it can self-regulate against, reducing the chance of an unexpectedly runaway session.
 

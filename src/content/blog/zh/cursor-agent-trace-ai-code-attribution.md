@@ -66,7 +66,7 @@ Agent Trace是一项开放规范，用于在版本管理的代码库中以<stron
 
 <strong>四种贡献者类型分类</strong>：分为`human`（人类直接编写）、`ai`（AI生成）、`mixed`（人类编辑AI输出或反之）、`unknown`（来源不明）。
 
-<strong>厂商中立设计</strong>：无论来自Cursor、Copilot、[Claude Code](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026)还是其他工具，都可以用相同的格式记录。
+<strong>厂商中立设计</strong>：无论来自Cursor、Copilot、[Claude Code](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026/)还是其他工具，都可以用相同的格式记录。
 
 <strong>存储库无关</strong>：可以存储在本地文件、git notes、数据库等任何地方。
 
@@ -168,7 +168,7 @@ AI工具使用率高不一定意味着生产力高。分析Agent Trace数据可�
 
 ### 3. 合规性和审计应对
 
-金融、医疗、国防等受监管行业对代码来源的明确性要求不断增加（参见[NIST AI代理安全标准](/zh/blog/zh/nist-ai-agent-security-standards)）。Agent Trace在以下方面有帮助：
+金融、医疗、国防等受监管行业对代码来源的明确性要求不断增加（参见[NIST AI代理安全标准](/zh/blog/zh/nist-ai-agent-security-standards/)）。Agent Trace在以下方面有帮助：
 
 <strong>审计追踪</strong>：能定量报告代码的AI贡献比例。
 
@@ -256,7 +256,7 @@ graph TD
     执行环境 --> 追踪审计
 ```
 
-Agent Trace在这个生态系统中负责<strong>"执行后(post-execution)"</strong>阶段。代理[被定义（ADL/AGENTS.md）](/zh/blog/zh/adl-agent-definition-language-governance)、通信（MCP/Open Responses）、执行（Skills）后，Agent Trace的作用是追踪结果物。
+Agent Trace在这个生态系统中负责<strong>"执行后(post-execution)"</strong>阶段。代理[被定义（ADL/AGENTS.md）](/zh/blog/zh/adl-agent-definition-language-governance/)、通信（MCP/Open Responses）、执行（Skills）后，Agent Trace的作用是追踪结果物。
 
 ## 当前限制和未解决的问题
 

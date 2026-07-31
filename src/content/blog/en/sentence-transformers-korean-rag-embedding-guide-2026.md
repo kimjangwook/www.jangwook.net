@@ -142,7 +142,7 @@ Measured similarity scores:
 
 Semantically similar pairs land at 0.62〜0.65. Unrelated pairs are near zero or slightly negative. The negative values surprised me at first. Cosine similarity ranges from -1 to 1, so truly unrelated sentences naturally cluster around 0, sometimes dipping slightly negative.
 
-For context on what "high" looks like in practice: the [vector DB benchmark post](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector) notes that RAG systems typically use 0.3〜0.5 as a retrieval threshold. So 0.65 is a strong semantic match.
+For context on what "high" looks like in practice: the [vector DB benchmark post](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector/) notes that RAG systems typically use 0.3〜0.5 as a retrieval threshold. So 0.65 is a strong semantic match.
 
 ## Mini RAG simulation — two out of three queries failed
 
@@ -194,7 +194,7 @@ Same 3 queries, both models:
 
 The similarity scores are also telling. The multilingual model assigned 0.720 to the correct cost-reduction document; the English model only managed 0.453 for the same pair. Stronger semantic connection, better ranked.
 
-The [RAG architecture post](/en/blog/en/dena-llm-study-part4-rag) argues that retrieval quality determines generation quality. This experiment shows that principle applies at the embedding model selection step, before you've written a single line of retrieval code.
+The [RAG architecture post](/en/blog/en/dena-llm-study-part4-rag/) argues that retrieval quality determines generation quality. This experiment shows that principle applies at the embedding model selection step, before you've written a single line of retrieval code.
 
 My conclusion: **for Korean or multilingual RAG pipelines, start with a multilingual model.** Switching later means re-embedding your entire document collection, which is a meaningful operational cost for large corpora.
 
@@ -262,7 +262,7 @@ Writing this up left one question open: is local embedding always the answer for
 
 - **You don't want to run infrastructure.** If GPU provisioning, model version management, and scaling aren't work you want to own, a managed API saves real effort.
 - **You need top-tier multilingual quality at low volume.** OpenAI `text-embedding-3-large` and Cohere `embed-multilingual-v3` sit near the top of the benchmarks, and at tens of thousands of calls a month the cost is negligible.
-- **Exact keyword matching matters more than semantic similarity.** For precise term, code, or proper-noun matching, BM25-style keyword search often beats dense retrieval. A [hybrid of both](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) is frequently the real answer.
+- **Exact keyword matching matters more than semantic similarity.** For precise term, code, or proper-noun matching, BM25-style keyword search often beats dense retrieval. A [hybrid of both](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026/) is frequently the real answer.
 - **Embeddings aren't the bottleneck.** If chunking strategy or reranking has more room to improve, swapping the embedding model isn't where to spend effort first.
 
 The short version: with Korean-containing data, just avoid English-only models. After that, local versus API is a tradeoff between privacy, cost, and operational burden.

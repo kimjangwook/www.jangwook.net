@@ -155,7 +155,7 @@ crew = Crew(
 )
 ```
 
-有了这些，30分钟内就能建立一个可运行的多智能体系统。这与[Claude Code智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)中介绍的基于角色的智能体模式非常相似。
+有了这些，30分钟内就能建立一个可运行的多智能体系统。这与[Claude Code智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)中介绍的基于角色的智能体模式非常相似。
 
 CrewAI v1.10.1新增功能：
 - **原生MCP支持**：直接将MCP服务器作为工具连接
@@ -209,7 +209,7 @@ result = await workflow.run("Handle customer support ticket #4521")
 
 核心差异化因素是**工作流ID**。即使进程崩溃，即使Pod重启，用相同的`workflow_id`执行，就能从中断处恢复。这是因为状态保存在Redis或PostgreSQL等外部存储中。Dapr以插件方式支持30多种状态存储。
 
-正如在[Dapr Agents v1.0 GA分析文章](/zh/blog/zh/dapr-agents-v1-cncf-production-ai-framework)中详细介绍的，核心是与CNCF生态系统的集成。Prometheus、OpenTelemetry、Kubernetes RBAC——已经使用Dapr的团队添加智能体层的成本非常低。
+正如在[Dapr Agents v1.0 GA分析文章](/zh/blog/zh/dapr-agents-v1-cncf-production-ai-framework/)中详细介绍的，核心是与CNCF生态系统的集成。Prometheus、OpenTelemetry、Kubernetes RBAC——已经使用Dapr的团队添加智能体层的成本非常低。
 
 但也有明确不推荐Dapr Agents的情况。**对于尚未使用Kubernetes的团队来说，这是过度设计。** 仅安装Dapr本身、理解sidecar模式、配置状态存储就可能需要数周工作。另外，**仅支持基于Python的智能体逻辑**，直接用TypeScript或Go编写智能体目前仍有限制。
 
@@ -249,7 +249,7 @@ result = await workflow.run("Handle customer support ticket #4521")
 
 前者需要LangGraph的图模型。后者用CrewAI或Dapr Agents都可以。
 
-我目前在博客自动化系统中最多参考**基于LangGraph的方法**。从[Stripe用自主智能体处理1,300个PR的案例](/zh/blog/zh/stripe-minions-autonomous-coding-agents-1300-prs)来看，他们在需要复杂分支处理的地方也选择了图方式。真正的关键永远不是"用哪个框架"，而是"怎么用"。
+我目前在博客自动化系统中最多参考**基于LangGraph的方法**。从[Stripe用自主智能体处理1,300个PR的案例](/zh/blog/zh/stripe-minions-autonomous-coding-agents-1300-prs/)来看，他们在需要复杂分支处理的地方也选择了图方式。真正的关键永远不是"用哪个框架"，而是"怎么用"。
 
 ## 迁移策略 — 快速开始，只强化需要的部分
 

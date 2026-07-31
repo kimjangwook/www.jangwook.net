@@ -106,7 +106,7 @@ node --version  # v22.22.0
 npm --version   # 10.9.4
 ```
 
-One notable addition in Node.js 22 that's useful for testing: [Node.js built-in SQLite](/en/blog/en/node-sqlite-builtin-practical-guide-2026) lets you spin up an in-memory DB without external drivers, which pairs well with Vitest for fast integration tests.
+One notable addition in Node.js 22 that's useful for testing: [Node.js built-in SQLite](/en/blog/en/node-sqlite-builtin-practical-guide-2026/) lets you spin up an in-memory DB without external drivers, which pairs well with Vitest for fast integration tests.
 
 ## Step 1: Install Vitest 4
 
@@ -549,9 +549,9 @@ For large Next.js or Express server test suites, be more careful. Vitest's Vite-
 
 npm weekly downloads went from 4.8M to 7.7M. A lot of projects made the switch, but not all of them did it smoothly. Factor your project's complexity before committing.
 
-Vitest 5.0 betas are already on npm. Once stable, expect another round of breaking changes. Migrating to 4.x now gives you a solid foundation before that wave hits. Right now I'm exploring how to pair Vitest with [Bun for TypeScript script automation](/en/blog/en/bun-shell-scripting-practical-guide-2026), running the test suite under Bun. That'll be a separate post.
+Vitest 5.0 betas are already on npm. Once stable, expect another round of breaking changes. Migrating to 4.x now gives you a solid foundation before that wave hits. Right now I'm exploring how to pair Vitest with [Bun for TypeScript script automation](/en/blog/en/bun-shell-scripting-practical-guide-2026/), running the test suite under Bun. That'll be a separate post.
 
-If you want to keep sharpening the TypeScript toolchain, [building an MCP server with the TypeScript SDK step by step](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026) and [writing a type-safe API with Hono](/en/blog/en/hono-typescript-api-2026) fit the same track. Aligning your tests, runtime, and API layer on the Vite ecosystem cuts down config files noticeably.
+If you want to keep sharpening the TypeScript toolchain, [building an MCP server with the TypeScript SDK step by step](/en/blog/en/mcp-server-typescript-sdk-step-by-step-2026/) and [writing a type-safe API with Hono](/en/blog/en/hono-typescript-api-2026/) fit the same track. Aligning your tests, runtime, and API layer on the Vite ecosystem cuts down config files noticeably.
 
 ## References (Primary Sources)
 

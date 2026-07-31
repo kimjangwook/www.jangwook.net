@@ -107,7 +107,7 @@ AI検索エンジンの普及により、<strong>引用されないコンテン�
 3. <strong>ブランド認知</strong>：複数のAIプラットフォームで引用されることで、ブランド露出増加
 4. <strong>購買決定への影響</strong>：B2B購買プロセスの初期段階で認知される機会
 
-AEO戦略をB2B SaaSに段階的に適用した9ステップのロードマップは[LLM時代のSEO/AEO実践適用ガイド](/ja/blog/ja/llm-seo-aeo-practical-implementation)で詳しく解説しています。
+AEO戦略をB2B SaaSに段階的に適用した9ステップのロードマップは[LLM時代のSEO/AEO実践適用ガイド](/ja/blog/ja/llm-seo-aeo-practical-implementation/)で詳しく解説しています。
 
 ## Agent Effi Flowサービス紹介
 
@@ -1070,7 +1070,7 @@ graph TD
 
 ## 結論
 
-AEOは、<strong>SEOの進化形</strong>であり、AI検索時代の必須戦略です。従来のSEOが検索エンジンのアルゴリズムを理解することに重点を置いていたのに対し、AEOは<strong>AI検索エンジンが理解しやすいコンテンツ構造</strong>を提供することに焦点を当てています。Googleのコンテンツ品質基準をAIで分析した実体験は[AdSense挑戦記：「価値のないコンテンツ」の拒否を乗り越えた実録](/ja/blog/ja/adsense-rejection-ai-analysis-improvement)でご確認ください。
+AEOは、<strong>SEOの進化形</strong>であり、AI検索時代の必須戦略です。従来のSEOが検索エンジンのアルゴリズムを理解することに重点を置いていたのに対し、AEOは<strong>AI検索エンジンが理解しやすいコンテンツ構造</strong>を提供することに焦点を当てています。Googleのコンテンツ品質基準をAIで分析した実体験は[AdSense挑戦記：「価値のないコンテンツ」の拒否を乗り越えた実録](/ja/blog/ja/adsense-rejection-ai-analysis-improvement/)でご確認ください。
 
 ### AEO成功の3本柱
 

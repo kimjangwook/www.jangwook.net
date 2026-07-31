@@ -56,7 +56,7 @@ relatedPosts:
 ### 1.1 Key Metrics Overview
 
 <strong>Analysis Period</strong>: November 21 - December 21, 2025 (31 days)
-<strong>Previous Report</strong>: [45-Day Growth Report](/en/blog/en/45-day-analytics-report-2025-11) (October 7 - November 20)
+<strong>Previous Report</strong>: [45-Day Growth Report](/en/blog/en/45-day-analytics-report-2025-11/) (October 7 - November 20)
 
 | Key Metric | This Period | Previous 45 Days | Change | Status |
 |------------|-------------|------------------|--------|--------|

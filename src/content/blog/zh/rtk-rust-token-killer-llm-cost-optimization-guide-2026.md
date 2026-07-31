@@ -64,7 +64,7 @@ RTK(Rust Token Killer)就是针对这个问题而生的工具。它坐在AI编�
 - **截断**：超过阈值的输出被截断，标记为`...(truncated)`
 - **去重**：删除重复的输出模式
 
-与Claude Code的集成通过`PreToolUse` hook实现。了解[Claude Code的hook系统](/zh/blog/zh/claude-code-hooks-workflow)的话，设计逻辑一目了然——`rtk init -g`一条命令就自动注册到`~/.claude/hooks/`下。之后Claude Code执行`git status`时，hook会拦截并将其重写为`rtk git status`。Claude Code对这个过程毫不知情。
+与Claude Code的集成通过`PreToolUse` hook实现。了解[Claude Code的hook系统](/zh/blog/zh/claude-code-hooks-workflow/)的话，设计逻辑一目了然——`rtk init -g`一条命令就自动注册到`~/.claude/hooks/`下。之后Claude Code执行`git status`时，hook会拦截并将其重写为`rtk git status`。Claude Code对这个过程毫不知情。
 
 支持的代理：Claude Code、Cursor、Windsurf、Cline、GitHub Copilot CLI、Gemini CLI、Antigravity、Hermes。单一Rust二进制文件，零运行时依赖。
 
@@ -211,7 +211,7 @@ rtk init -g
 削减LLM代理成本有三个层级：
 
 1. **模型选择**：切换到更便宜的模型（Haiku、Flash等）
-2. **API层**：[提示缓存](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)、批处理API、[MCP schema压缩](/zh/blog/zh/mcp2cli-token-cost-optimization)
+2. **API层**：[提示缓存](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide/)、批处理API、[MCP schema压缩](/zh/blog/zh/mcp2cli-token-cost-optimization/)
 3. **Shell层**：RTK（命令输出压缩）
 
 RTK属于第3层。如果这一层还没有优化，很可能有实际节省空间。但如果已经通过模型选择和缓存控制了成本，RTK的边际贡献就会相对较小。
@@ -259,7 +259,7 @@ rtk session
 | MCP schema压缩（mcp2cli） | API | MCP工具注入 | 中 | 96〜99% |
 | RTK | Shell | Bash命令输出 | 低 | 0〜90%（因命令而异） |
 
-[提示缓存](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)在重复工作流程中很强大。[MCP schema压缩](/zh/blog/zh/mcp2cli-token-cost-optimization)在运行大量MCP工具的环境中可以实现显著节省。RTK的实现阻力最低，完全不改变现有工作流程，更像是"先装上再说"的工具。
+[提示缓存](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide/)在重复工作流程中很强大。[MCP schema压缩](/zh/blog/zh/mcp2cli-token-cost-optimization/)在运行大量MCP工具的环境中可以实现显著节省。RTK的实现阻力最低，完全不改变现有工作流程，更像是"先装上再说"的工具。
 
 代理成本是多个因素复合叠加的结构。RTK处理其中"shell命令输出"这一部分，并透明地完成这项工作。正确的定位是"成本优化栈中的又一层"，而非银弹。
 

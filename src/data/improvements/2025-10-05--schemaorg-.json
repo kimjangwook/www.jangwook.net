@@ -51,7 +51,7 @@
     "ja": "高",
     "zh": "高"
   },
-  "sourceReport": "/{lang}/blog/{lang}/blog-launch-analysis-report",
+  "sourceReport": "/{lang}/blog/{lang}/blog-launch-analysis-report/",
   "description": {
     "ko": "Article, BreadcrumbList, WebSite Schema를 추가하여 검색엔진 최적화",
     "en": "Added Article, BreadcrumbList, and WebSite Schema for search engine optimization",

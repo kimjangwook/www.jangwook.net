@@ -64,7 +64,7 @@ InsightForgeは、初期のプロダクトやマーケティング仮説を検�
 
 これらは重要ですが、多くの場合、遅れて扱われます。チームは先に作り、メッセージを決め、機能を実装し、その後に仮説が正しかったかを確認します。
 
-私が欲しかったのは、正式な検証の前に使える道具でした。答えを出す道具ではなく、どの仮説が危険で検証すべきかを整理する道具です。一人でSaaSを作ってきた[個人開発者のAI SaaS挑戦記](/ja/blog/ja/individual-developer-ai-saas-journey)でも、同じ漠然とした行き詰まりを何度も繰り返しました。
+私が欲しかったのは、正式な検証の前に使える道具でした。答えを出す道具ではなく、どの仮説が危険で検証すべきかを整理する道具です。一人でSaaSを作ってきた[個人開発者のAI SaaS挑戦記](/ja/blog/ja/individual-developer-ai-saas-journey/)でも、同じ漠然とした行き詰まりを何度も繰り返しました。
 
 ## 最初に考えた形はもっと単純だった
 
@@ -121,7 +121,7 @@ LLMプロダクトで一番怖いのは、それっぽい出力が簡単に出�
 - どのclaimにはproofが必要か
 - 次の顧客インタビューで何を聞くべきか
 
-そのために、workflowを構造化しました。persona generation、question generation、response capture、scoring、insight generation、reportingを一つの大きなpromptにしない。各stageに役割と制約を持たせる必要がありました。複数のエージェントを段階に分けて調整する中で経験した試行錯誤は、[マルチエージェント・オーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)に詳しく書いています。
+そのために、workflowを構造化しました。persona generation、question generation、response capture、scoring、insight generation、reportingを一つの大きなpromptにしない。各stageに役割と制約を持たせる必要がありました。複数のエージェントを段階に分けて調整する中で経験した試行錯誤は、[マルチエージェント・オーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement/)に詳しく書いています。
 
 これは単なるprompt engineeringではありません。生成されたものをプロダクト内でどの地位に置くかを決める作業でした。
 
@@ -154,7 +154,7 @@ LLMプロダクトで一番怖いのは、それっぽい出力が簡単に出�
 
 web evidenceを付けることも簡単ではありませんでした。検索結果を増やすとレポートは強そうに見えます。しかしevidenceが特定の結論を支えていなければ、ただの装飾です。
 
-さらに、決済、credit、queue、provider cost、失敗時の扱い、DeepSeek残高通知、adminでの使用状況確認など、運用の問題もありました。リサーチ製品はレポート生成器ではありません。実際のサービスにするなら、各runにはコスト、失敗、期待値があります。1回のレポートが複数段階のLLM呼び出しで構成されるため費用が急速に積み上がり、この点は[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality)で扱った問題とそのまま重なりました。
+さらに、決済、credit、queue、provider cost、失敗時の扱い、DeepSeek残高通知、adminでの使用状況確認など、運用の問題もありました。リサーチ製品はレポート生成器ではありません。実際のサービスにするなら、各runにはコスト、失敗、期待値があります。1回のレポートが複数段階のLLM呼び出しで構成されるため費用が急速に積み上がり、この点は[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality/)で扱った問題とそのまま重なりました。
 
 この苦労が、InsightForgeをデモではなくプロダクトに近づけました。
 

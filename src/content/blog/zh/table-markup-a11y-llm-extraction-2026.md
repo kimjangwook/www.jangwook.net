@@ -115,7 +115,7 @@ D: headerCellsInDOM= 0  violations=region(moderate)
 
 `region` 是"页面内容不在地标区域内"的 best-practice 规则，和表格无关。表格相关违规，四种全是零。表头单元格一个都没有的 B 通过了，没有任何角色的 div 网格 D 也通过了。
 
-这不是 axe 的缺陷。它的表格规则设计用来抓结构性矛盾：布局用表格里出现 `<th>`、`headers` 属性指向不存在的 id，诸如此类。"这堆 div 本该是一张表格"这种判断需要理解内容含义，规则引擎做不到。我[数过自动检查亮绿灯之后仍然留在页面上的障碍](/zh/blog/zh/axe-automated-a11y-coverage-gap-2026)，这次属于同一族。区别在于，这回被漏掉的不只是人的可用性。
+这不是 axe 的缺陷。它的表格规则设计用来抓结构性矛盾：布局用表格里出现 `<th>`、`headers` 属性指向不存在的 id，诸如此类。"这堆 div 本该是一张表格"这种判断需要理解内容含义，规则引擎做不到。我[数过自动检查亮绿灯之后仍然留在页面上的障碍](/zh/blog/zh/axe-automated-a11y-coverage-gap-2026/)，这次属于同一族。区别在于，这回被漏掉的不只是人的可用性。
 
 不过直接数 DOM 里的表头单元格，差别就出来了。A 和 C 各有 11 个（四个列表头加七个行表头），B 和 D 是零。能把单元格与表头的关系交给辅助技术的，只有 A 和 C。看到这里结论似乎很简单：ARIA role 写规范的 div 网格与语义化表格对等。
 
@@ -198,7 +198,7 @@ Readability 0.6 textContent   0/7   0/7   0/7   0/7
 
 这条规则通常只被当作无障碍依据引用。这次的测量给它添了第二条依据：用原生元素，无障碍之外的读者会一并跟过来；用 ARIA 模仿语义，那份语义就走不出无障碍树。
 
-同样的道理我在另一层说过。[用 JS 注入 LocalBusiness JSON-LD，原始 HTML 里结构化数据块是 0 个](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)——浏览器里查验一切正常，到机器取走的那一步却形同不存在。表格标记的结构完全一样：你在屏幕上验过的结果，和机器带走的结果，是两回事。挂在字符串上的元数据也在同一处漏掉。[语言和方向信息不跟着字符串一起走，会在哪一步崩掉](/zh/blog/zh/string-lang-dir-metadata-multilingual-web)，我另外测过。
+同样的道理我在另一层说过。[用 JS 注入 LocalBusiness JSON-LD，原始 HTML 里结构化数据块是 0 个](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026/)——浏览器里查验一切正常，到机器取走的那一步却形同不存在。表格标记的结构完全一样：你在屏幕上验过的结果，和机器带走的结果，是两回事。挂在字符串上的元数据也在同一处漏掉。[语言和方向信息不跟着字符串一起走，会在哪一步崩掉](/zh/blog/zh/string-lang-dir-metadata-multilingual-web/)，我另外测过。
 
 ## 这个实验没有主张的事
 

@@ -183,7 +183,7 @@ Pydantic AI为结构化输出提供五种模式：
 
 目前还不是v1.0。快速变化的API是在生产环境中犹豫的主要原因。0.x版本意味着随时可能有破坏性变更。我相信Pydantic团队的质量标准，但静观其变比急于求成更明智。
 
-多智能体场景也存在局限性。如果需要复杂编排，更实际的做法是在LangGraph之上将Pydantic AI仅作为结构化输出层使用。如果在上层框架选型上犹豫不决，建议先读[Google ADK vs LangGraph 智能体框架比较](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026)。想深入实践 Pydantic AI 本身，可参考[Pydantic AI 类型安全智能体教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)，其中分步讲解。
+多智能体场景也存在局限性。如果需要复杂编排，更实际的做法是在LangGraph之上将Pydantic AI仅作为结构化输出层使用。如果在上层框架选型上犹豫不决，建议先读[Google ADK vs LangGraph 智能体框架比较](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026/)。想深入实践 Pydantic AI 本身，可参考[Pydantic AI 类型安全智能体教程](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)，其中分步讲解。
 
 ## Smolagents：让LLM来写代码
 
@@ -235,7 +235,7 @@ smolagents的核心逻辑约1000行，这是有意为之的设计决策。易于
 
 认证、速率限制、日志记录等生产基础设施需要自行构建。Smolagents处于HuggingFace的实验性空间，难以期待企业级支持或长期API稳定性。
 
-关于如何将这些模式整合到更完整的生产智能体架构中，[生产级 AI 智能体设计原则](/zh/blog/zh/dena-llm-study-part5-agent-design)提供了全面的决策框架，值得一读。
+关于如何将这些模式整合到更完整的生产智能体架构中，[生产级 AI 智能体设计原则](/zh/blog/zh/dena-llm-study-part5-agent-design/)提供了全面的决策框架，值得一读。
 
 ## 三大库综合比较表
 
@@ -270,7 +270,7 @@ smolagents的核心逻辑约1000行，这是有意为之的设计决策。易于
 
 需要接受v0.x带来的破坏性变更风险。我的判断是：新项目值得尝试，但将现有生产代码迁移过来还为时过早。
 
-[AI 智能体的成本现实](/zh/blog/zh/ai-agent-cost-reality)也值得参考。无论选择哪个库，模型选择都会对成本产生巨大影响，特别是在预估Instructor的重试成本或Smolagents代码生成循环成本时大有帮助。
+[AI 智能体的成本现实](/zh/blog/zh/ai-agent-cost-reality/)也值得参考。无论选择哪个库，模型选择都会对成本产生巨大影响，特别是在预估Instructor的重试成本或Smolagents代码生成循环成本时大有帮助。
 
 ## 实战组合模式
 

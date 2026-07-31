@@ -174,7 +174,7 @@ whenActivated(() => {
 
 最容易被省掉的恰恰是 `navType`。留着这个字段，事后才分得清"预渲染命中率上去了"和"页面真的变快了"。不留，就没有别的办法分。
 
-还有一个值没进那张表。`domContentLoadedEventStart` 的 46.8ms **完全不会被校正**。Navigation Timing 的各个标记仍然跑在预渲染那套时钟上。把校正过的 LCP 和没校正的"加载完成时间"并排放进同一块看板，这两个数就是在读两只不同的表。当你想验证[通过资源优先级把 LCP 往前拉的改动](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026)有没有生效时，这种错位尤其磨人，因为你用来对照的基线自己也在动。
+还有一个值没进那张表。`domContentLoadedEventStart` 的 46.8ms **完全不会被校正**。Navigation Timing 的各个标记仍然跑在预渲染那套时钟上。把校正过的 LCP 和没校正的"加载完成时间"并排放进同一块看板，这两个数就是在读两只不同的表。当你想验证[通过资源优先级把 LCP 往前拉的改动](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026/)有没有生效时，这种错位尤其磨人，因为你用来对照的基线自己也在动。
 
 ## 这个实验用 Playwright 根本跑不起来
 
@@ -198,7 +198,7 @@ whenActivated(() => {
 
 老实说，我没能定位到底。参数不是凶手。同一个二进制，只有在 Playwright **真正驱动它**的时候预渲染才被抑制。这次执行的时间里，我没能再往下收窄。
 
-不过实务上要的结论已经摆在那儿了：**别用 Playwright 或 Puppeteer 去验证 Speculation Rules。** 规则明明是对的，你却会拿到一个"没生效"的假阴性。这和[在 jsdom 里跑 axe-core、结果漏掉真实违规](/zh/blog/zh/axe-core-ci-a11y-jsdom-vs-browser-2026)是同一类陷阱：测试环境安安静静地给你一个错误答案，旁边还打着绿勾。
+不过实务上要的结论已经摆在那儿了：**别用 Playwright 或 Puppeteer 去验证 Speculation Rules。** 规则明明是对的，你却会拿到一个"没生效"的假阴性。这和[在 jsdom 里跑 axe-core、结果漏掉真实违规](/zh/blog/zh/axe-core-ci-a11y-jsdom-vs-browser-2026/)是同一类陷阱：测试环境安安静静地给你一个错误答案，旁边还打着绿勾。
 
 最后管用的是两招。一是本文这套装置：让页面自己用 `sendBeacon` 把结果回传，Chrome 只管正常启动。二是 Chrome 文档推荐的快速确认法："The easiest way to see if a page was prerendered (either in full or partially) is to open DevTools after the page is activated and type `performance.getEntriesByType('navigation')[0].activationStart` in the console."（出处：[Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
 
@@ -227,4 +227,4 @@ whenActivated(() => {
 
 这六条对完全不做预渲染的站点也无害。现在就放进去，等哪天真开起来，看板不会突然抖一下。
 
-如果你想找人复核 RUM 管线能不能扛住预渲染、bfcache 这类页面生命周期变化，或者需要把 Core Web Vitals 的计量设计重做一遍，我以个人身份承接咨询与实现委托。联系方式放在[个人主页](/zh/about)。
+如果你想找人复核 RUM 管线能不能扛住预渲染、bfcache 这类页面生命周期变化，或者需要把 Core Web Vitals 的计量设计重做一遍，我以个人身份承接咨询与实现委托。联系方式放在[个人主页](/zh/about/)。

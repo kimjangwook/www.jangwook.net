@@ -84,7 +84,7 @@ Capabilities
 
 ## 진짜 놀라운 건 Function Calling이다
 
-나는 이번 Gemma 4에서 가장 의미 있는 변화가 네이티브 function calling이라고 본다. 훨씬 작은 [FunctionGemma 270M조차 도구 호출을 해낸다는 실험](/ko/blog/ko/functiongemma-270m-tool-calling)을 보면, 이제 함수 호출은 대형 모델만의 능력이 아니다. 실제로 Ollama API를 통해 테스트해봤다:
+나는 이번 Gemma 4에서 가장 의미 있는 변화가 네이티브 function calling이라고 본다. 훨씬 작은 [FunctionGemma 270M조차 도구 호출을 해낸다는 실험](/ko/blog/ko/functiongemma-270m-tool-calling/)을 보면, 이제 함수 호출은 대형 모델만의 능력이 아니다. 실제로 Ollama API를 통해 테스트해봤다:
 
 ```bash
 curl -s http://localhost:11434/api/chat -d '{
@@ -140,11 +140,11 @@ echo 'Answer in JSON: {"capital": "<answer>"}. What is the capital of France?' \
 # → {"capital": "Paris"}
 ```
 
-개인적으로 이 정도면 [MCP 서버의 로컬 백엔드](/ko/blog/ko/mcp-server-build-practical-guide-2026)로 쓸 수 있겠다는 생각이 든다. 외부 API 호출 없이 사내 데이터를 처리하는 에이전트를 만들 때, [보안이 중요한 환경](/ko/blog/ko/mcp-gateway-agent-traffic-control)에서 특히 가치가 있다.
+개인적으로 이 정도면 [MCP 서버의 로컬 백엔드](/ko/blog/ko/mcp-server-build-practical-guide-2026/)로 쓸 수 있겠다는 생각이 든다. 외부 API 호출 없이 사내 데이터를 처리하는 에이전트를 만들 때, [보안이 중요한 환경](/ko/blog/ko/mcp-gateway-agent-traffic-control/)에서 특히 가치가 있다.
 
 ## 그래서 실제로 뭘 만들 수 있나
 
-내가 생각하는 현실적인 활용 시나리오는 세 가지다. 어느 쪽이든 실제 서비스로 띄우려면 [Ollama와 FastAPI로 로컬 LLM을 프로덕션 배포하는 가이드](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026)가 출발점이 된다.
+내가 생각하는 현실적인 활용 시나리오는 세 가지다. 어느 쪽이든 실제 서비스로 띄우려면 [Ollama와 FastAPI로 로컬 LLM을 프로덕션 배포하는 가이드](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026/)가 출발점이 된다.
 
 **1. 오프라인 코드 리뷰 에이전트**
 — Git diff를 입력으로 받아 코드 리뷰 코멘트를 생성하는 로컬 에이전트. 소스코드가 외부로 나가면 안 되는 환경에서 유용하다.

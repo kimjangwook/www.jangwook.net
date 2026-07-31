@@ -87,7 +87,7 @@ DDR5 RDIMM价格急剧下降，改变了整个格局。
 
 ## 为什么还要用GPU：速度问题
 
-单看每GB成本，RDIMM占据压倒性优势，但关键在于[<strong>推理速度</strong>](/zh/blog/zh/asic-llm-inference-16k-tps)。
+单看每GB成本，RDIMM占据压倒性优势，但关键在于[<strong>推理速度</strong>](/zh/blog/zh/asic-llm-inference-16k-tps/)。
 
 ### 内存带宽对比
 
@@ -192,7 +192,7 @@ graph TD
     C --> E["异步任务<br/>70B~405B模型"]
 ```
 
-- [小型模型（7B~13B）](/zh/blog/zh/devstral-qwen3-coder-small-models)使用GPU进行快速推理
+- [小型模型（7B~13B）](/zh/blog/zh/devstral-qwen3-coder-small-models/)使用GPU进行快速推理
 - 大型模型（70B+）使用CPU进行高性价比运行
 - 通过llama.cpp的`--n-gpu-layers`选项将部分层卸载到GPU
 
@@ -202,7 +202,7 @@ DDR5 RDIMM价格低于RTX 3090 VRAM的每GB成本，不仅仅是简单的价格�
 
 1. <strong>大型模型可及性提升</strong>：405B级模型可在$2,500系统上运行
 2. <strong>成本优化选项多样化</strong>：根据用途选择GPU/CPU/混合方案
-3. <strong>入门门槛降低</strong>：[本地LLM实验](/zh/blog/zh/prismml-bonsai-1bit-llm-edge-ai)成本大幅下降
+3. <strong>入门门槛降低</strong>：[本地LLM实验](/zh/blog/zh/prismml-bonsai-1bit-llm-edge-ai/)成本大幅下降
 
 如果速度是首要考量，GPU仍然是正确答案。但如果目标是<strong>"以最低成本运行最大模型"</strong>，基于DDR5 RDIMM的CPU推理正在成为2026年的新最优解。
 

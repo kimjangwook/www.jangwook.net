@@ -166,7 +166,7 @@ The `text` field lets you pass run-specific context. This is particularly useful
 
 For example: when a Sentry alert fires, it could trigger a routine that analyzes the stack trace, correlates it with recent commits, and opens a draft fix PR. CD pipelines can trigger smoke test routines via API after each deployment.
 
-If you've [built an MCP server from scratch before](/en/blog/en/mcp-server-build-practical-guide-2026), you already understand how this connector ecosystem extends. Routines bring those same connectors into an automated execution environment.
+If you've [built an MCP server from scratch before](/en/blog/en/mcp-server-build-practical-guide-2026/), you already understand how this connector ecosystem extends. Routines bring those same connectors into an automated execution environment.
 
 ### GitHub Event Triggers
 
@@ -212,7 +212,7 @@ Read new messages from Slack #bug-reports from the last 24 hours and:
 4. For unclear cases, send a message asking for more information
 ```
 
-If you're already familiar with [Claude Code's five agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types), Routines map most cleanly onto the "Autonomous Agent" pattern—running on cloud infrastructure on a schedule rather than interactively.
+If you're already familiar with [Claude Code's five agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/), Routines map most cleanly onto the "Autonomous Agent" pattern—running on cloud infrastructure on a schedule rather than interactively.
 
 ## Four Real-World Use Cases
 
@@ -267,7 +267,7 @@ curl -X POST \
 
 The routine calls key API endpoints, scans error logs, and posts a go/no-go verdict to #releases.
 
-I covered [how to deploy MCP servers to Kubernetes in production](/en/blog/en/mcp-server-production-deployment-kubernetes-guide) previously. Adding this smoke test routine as the final step in that pipeline connects the two setups cleanly.
+I covered [how to deploy MCP servers to Kubernetes in production](/en/blog/en/mcp-server-production-deployment-kubernetes-guide/) previously. Adding this smoke test routine as the final step in that pipeline connects the two setups cleanly.
 
 ### Case 4: Weekly Documentation Drift Detection
 
@@ -291,7 +291,7 @@ Routines are genuinely useful, but the research preview status shouldn't be dism
 
 My personal rule: I only use Routines for work where it doesn't matter if the run fails or produces an imperfect result. Tasks where mistakes are easily reversible. Tasks where failures are naturally corrected by the next execution. That's where Routines consistently deliver value.
 
-If you've [mastered parallel Claude Code sessions with git worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree), think of Routines as extending that parallelism across time—while you're doing one thing, a routine is handling something else in a different repository.
+If you've [mastered parallel Claude Code sessions with git worktrees](/en/blog/en/claude-code-parallel-sessions-git-worktree/), think of Routines as extending that parallelism across time—while you're doing one thing, a routine is handling something else in a different repository.
 
 ## Conclusion — Which Teams Should Try This?
 

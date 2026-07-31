@@ -59,7 +59,7 @@ relatedPosts:
 
 ## なぜ今エージェンティックAIに「標準」が必要なのか
 
-2026年3月現在、エージェンティックAIエコシステムは爆発的に成長しています。AnthropicのClaude Agent SDK（[Anthropic Agent Skills標準：AIエージェント能力の拡張](/ja/blog/ja/anthropic-agent-skills-standard)参照）、OpenAIのAgentKit、GoogleのAgent Development Kit、LangChain、CrewAIなど数多くのフレームワークが競争しながら開発チームに選択の自由を与えましたが、同時に深刻なフラグメンテーション問題を生み出しました。
+2026年3月現在、エージェンティックAIエコシステムは爆発的に成長しています。AnthropicのClaude Agent SDK（[Anthropic Agent Skills標準：AIエージェント能力の拡張](/ja/blog/ja/anthropic-agent-skills-standard/)参照）、OpenAIのAgentKit、GoogleのAgent Development Kit、LangChain、CrewAIなど数多くのフレームワークが競争しながら開発チームに選択の自由を与えましたが、同時に深刻なフラグメンテーション問題を生み出しました。
 
 各フレームワークごとにツール呼び出し方式、レスポンス形式、エージェントループの処理方法がバラバラであるため、モデルを入れ替えたり複数のモデルを並行運用しようとすると、インテグレーションコードをゼロから書き直す必要がある状況が繰り返されていました。ある開発者の言葉を借りれば、<strong>「ラッパーのためのラッパーをまた書く」</strong>悪循環でした。
 
@@ -130,7 +130,7 @@ Open Responsesの最大の強みは、リリースと同時に確保した広範
 |--------|------|------|
 | Hugging Face | オープンソースハブ | 数千のモデルに対する標準APIアクセス |
 | OpenRouter | モデルルーター | マルチプロバイダー間のシームレスな切り替え |
-| [Vercel](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026) | フロントエンドプラットフォーム | AI SDKインテグレーションによるフロントエンド開発の標準化 |
+| [Vercel](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026/) | フロントエンドプラットフォーム | AI SDKインテグレーションによるフロントエンド開発の標準化 |
 | LM Studio | ローカル推論 | ローカルモデルでも同一APIを使用 |
 | Ollama | ローカル推論 | セルフホスティング環境での標準化 |
 | vLLM | 推論エンジン | ハイパフォーマンス推論サーバーとの互換性 |
@@ -267,7 +267,7 @@ Reasoning Visibilityは単なるデバッグツールではなく、<strong>AI�
 
 ### AnthropicとGoogleは？
 
-現在、Open ResponsesスペックにAnthropicとGoogleは公式パートナーとして参加していません。OpenRouterのオープンソースモデル優位性とマルチプロバイダー戦略については[OpenRouter週間TOP5のうち4つがオープンソース — プロプライエタリモデル時代の終焉](/ja/blog/ja/openrouter-oss-dominance)を参照してください。この2社がそれぞれのエージェントフレームワーク（Claude Agent SDK、Google ADK）を保有しているため、Open Responsesを受け入れるか独自標準を推進するかはまだ不確実です。
+現在、Open ResponsesスペックにAnthropicとGoogleは公式パートナーとして参加していません。OpenRouterのオープンソースモデル優位性とマルチプロバイダー戦略については[OpenRouter週間TOP5のうち4つがオープンソース — プロプライエタリモデル時代の終焉](/ja/blog/ja/openrouter-oss-dominance/)を参照してください。この2社がそれぞれのエージェントフレームワーク（Claude Agent SDK、Google ADK）を保有しているため、Open Responsesを受け入れるか独自標準を推進するかはまだ不確実です。
 
 ただし、OpenAIとAnthropicの社員30名以上が最近共同で国防総省の訴訟で協力した事例からもわかるように、AI業界の協力関係は競争関係と共存しています。標準化に対する業界のニーズが高まれば、合流する可能性は十分にあります。
 

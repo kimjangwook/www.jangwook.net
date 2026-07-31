@@ -136,7 +136,7 @@ graph LR
 
 ### 프롬프트 템플릿
 
-이처럼 구조화된 프롬프트 설계는 [사양 주도 개발(Spec-Driven Development)](/ko/blog/ko/specification-driven-development) 패러다임과 맥락을 같이 한다.
+이처럼 구조화된 프롬프트 설계는 [사양 주도 개발(Spec-Driven Development)](/ko/blog/ko/specification-driven-development/) 패러다임과 맥락을 같이 한다.
 
 ````markdown
 <instructions>
@@ -731,7 +731,7 @@ graph TD
     style E fill:#6bcf7f
 ```
 
-각 단계에서 Verbalized Sampling을 적용하여 <strong>계층적 다양성</strong>을 확보한다. 멀티 에이전트 워크플로우를 더 체계적으로 설계하고 싶다면 [LangGraph 멀티 에이전트 시스템 완전 가이드](/ko/blog/ko/langgraph-multi-agent)를 함께 읽어보라.
+각 단계에서 Verbalized Sampling을 적용하여 <strong>계층적 다양성</strong>을 확보한다. 멀티 에이전트 워크플로우를 더 체계적으로 설계하고 싶다면 [LangGraph 멀티 에이전트 시스템 완전 가이드](/ko/blog/ko/langgraph-multi-agent/)를 함께 읽어보라.
 
 ### 7. 실패 패턴을 피하라
 
@@ -856,7 +856,7 @@ cat .claude/agents/prompt-engineer.md
 # - 파라미터 미세 조정
 ```
 
-에이전트 배포 및 실전 활용 패턴에 대해서는 [OpenAI AgentKit 실전 가이드 2부](/ko/blog/ko/openai-agentkit-tutorial-part2)도 함께 참고하라.
+에이전트 배포 및 실전 활용 패턴에 대해서는 [OpenAI AgentKit 실전 가이드 2부](/ko/blog/ko/openai-agentkit-tutorial-part2/)도 함께 참고하라.
 
 ### 다음 단계
 

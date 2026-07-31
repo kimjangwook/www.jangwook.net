@@ -179,13 +179,13 @@ RTX 5090の32GB VRAMと高いメモリバンド幅で`max_gpu_cache=120`設定�
 
 1. <strong>モデル構造分析が最適化の出発点</strong>：MoEモデルのエキスパート分布を把握すれば選択的ローディングが可能
 2. <strong>多層キャッシュが鍵</strong>：VRAM → Pinned RAM → SSD順のキャッシュ戦略が300倍の高速化を実現
-3. <strong>ハードウェアの進化が格差を縮める</strong>：次世代GPUでは実用的な速度に到達する可能性。[llama.cppのコンピュートグラフ最適化](/ja/blog/ja/qwen3-coder-next-llama-cpp-graph-optimization)のようなソフトウェアレベルのアプローチもこの格差を急速に縮めています。
+3. <strong>ハードウェアの進化が格差を縮める</strong>：次世代GPUでは実用的な速度に到達する可能性。[llama.cppのコンピュートグラフ最適化](/ja/blog/ja/qwen3-coder-next-llama-cpp-graph-optimization/)のようなソフトウェアレベルのアプローチもこの格差を急速に縮めています。
 
 ## 結論
 
 Qwen3-Coder-Next 80Bを8GB VRAMで実行することは技術的に印象的な成果です。現在の1.2 t/sの速度はリアルタイムコーディング補助には不十分ですが、次世代GPUと最適化技法の発展により、消費者ハードウェアでの大規模コーディングモデル実行がますます現実に近づいています。
 
-ローカルLLMに関心のある開発者は[nalexandのGitHubリポジトリ](https://github.com/nalexand/Qwen3-Coder-OPTIMIZED)を確認し、自身のハードウェアで直接実験してみることをお勧めします。VRAMの使用量をさらに削減したい場合は、[4bit量子化でVRAMを最大70%削減するHeretic 1.2の手法](/ja/blog/ja/heretic-12-vram-reduction)も参照してください。
+ローカルLLMに関心のある開発者は[nalexandのGitHubリポジトリ](https://github.com/nalexand/Qwen3-Coder-OPTIMIZED)を確認し、自身のハードウェアで直接実験してみることをお勧めします。VRAMの使用量をさらに削減したい場合は、[4bit量子化でVRAMを最大70%削減するHeretic 1.2の手法](/ja/blog/ja/heretic-12-vram-reduction/)も参照してください。
 
 ## 参考資料
 

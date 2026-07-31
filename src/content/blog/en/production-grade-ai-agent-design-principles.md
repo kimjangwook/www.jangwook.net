@@ -51,7 +51,7 @@ If 2025 was the "year of AI agents," then 2026 is defined by **the shift to prod
 
 IBM's Kate Blair put it plainly: *"2026 should be the year where multi-agent systems move into production at scale."*
 
-Yet the reality is sobering. O'Reilly's 2026 report notes that many agent workflow experiments from 2024–2025 "got stuck and never reached the maturity required for enterprise-wide rollout." The bottleneck isn't model capability — it's the **absence of sound design principles**. If you're weighing options at the framework-selection stage, see the [LangGraph vs. CrewAI vs. Dapr production comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) as well.
+Yet the reality is sobering. O'Reilly's 2026 report notes that many agent workflow experiments from 2024–2025 "got stuck and never reached the maturity required for enterprise-wide rollout." The bottleneck isn't model capability — it's the **absence of sound design principles**. If you're weighing options at the framework-selection stage, see the [LangGraph vs. CrewAI vs. Dapr production comparison](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/) as well.
 
 This post distills the **9 core design principles** from the arXiv paper *"A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows"* (2512.08769), presented through the lens of an Engineering Manager.
 
@@ -63,7 +63,7 @@ The reasons agent systems succeed in POC but fail in production are well-underst
 
 **1. No design for uncertainty**: POCs validate only the happy path, but production environments have constant network errors, model timeouts, and edge cases.
 
-**2. No auditability**: If you can't reconstruct what happened, you can't fix it. This challenge is covered in depth in the [AI agent observability production guide](/en/blog/en/ai-agent-observability-production-guide).
+**2. No auditability**: If you can't reconstruct what happened, you can't fix it. This challenge is covered in depth in the [AI agent observability production guide](/en/blog/en/ai-agent-observability-production-guide/).
 
 **3. Single points of failure**: One massive agent handling everything means one failure brings down everything.
 
@@ -445,4 +445,4 @@ As an Engineering Manager: when your team wants to promote a POC to production, 
 - [arXiv: A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows](https://arxiv.org/html/2512.08769v1)
 - [O'Reilly Signals for 2026](https://www.oreilly.com/radar/signals-for-2026/)
 - [IBM AI Tech Trends 2026](https://www.ibm.com/think/news/ai-tech-trends-predictions-2026)
-- [NIST AI Agent Security Standards](/en/blog/en/nist-ai-agent-security-standards)
+- [NIST AI Agent Security Standards](/en/blog/en/nist-ai-agent-security-standards/)

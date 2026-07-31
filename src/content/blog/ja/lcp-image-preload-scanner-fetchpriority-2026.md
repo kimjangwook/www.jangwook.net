@@ -82,7 +82,7 @@ Load delayが1,184ms。画像のダウンロードは5msなのに、ブラウザ
 
 ここで一つ、重要な概念を。ブラウザには**プリロードスキャナ(preload scanner)**というものがある。HTMLのレスポンスバイトが届くと、メインパーサーが走る前に、このスキャナが生のHTMLを走査して`<img src>`や`<script src>`、`<link href>`といったリソースを先回りで発見し、リクエストを前倒しする。問題は、このスキャナがHTMLしか見ないことだ。**CSS内の`background-image`のURLは、スキャナには見えない**([web.dev, Don't fight the browser preload scanner](https://web.dev/preload-scanner/))。だから背景画像は、CSSがダウンロードされてパースされるまでリクエストすら始まらない。私の実験ではCSSに1秒を仕込んであるので、ヒーローはきっちりその分だけ遅れて発見された。Chrome自身がこれを「LCP request discovery」インサイトとして名指しで指摘してくれた([LCP discovery, Chrome for Developers](https://developer.chrome.com/docs/performance/insights/lcp-discovery))。
 
-この現象は、[AIクローラーがJavaScriptを実行せずコンテンツを見られないという話](/ja/blog/ja/ai-crawlers-dont-render-javascript-csr-2026)と根が同じだ。リソースがどこにどう置かれたかが、それがいつ(あるいはそもそも)処理されるかを決める。
+この現象は、[AIクローラーがJavaScriptを実行せずコンテンツを見られないという話](/ja/blog/ja/ai-crawlers-dont-render-javascript-csr-2026/)と根が同じだ。リソースがどこにどう置かれたかが、それがいつ(あるいはそもそも)処理されるかを決める。
 
 ## fetchpriorityとpreloadを掛けた — なのにLCPは動かない
 
@@ -155,7 +155,7 @@ LCP: 109 ms
 3. **LCP画像に`loading="lazy"`は絶対に付けない。** フォールド下の画像には有効だが、ビューポート最上部のヒーローに掛けると、自ら発見を遅らせる自傷行為になる([web.dev, LCPの誤解](https://web.dev/blog/common-misconceptions-lcp))。
 4. **クリティカルCSSをインライン化し、残りは非ブロッキングに。** 画像を早く受け取っても、レンダーブロッキングCSSがあれば描けない。
 5. **`width`/`height`(または`aspect-ratio`)を必ず明示する。** レイアウトシフト(CLS)を防ぐ。上の実験ではCLSは三バージョンとも0.00だった。
-6. **何より、LCP分解を先に読む。** DevToolsのPerformanceパネルがTTFB / Load delay / Load duration / Render delayをそのまま見せてくれる。一番大きい区間から潰す。この計測ワークフロー自体は、[Lighthouseでアクセシビリティのスコアを直接直した記事](/ja/blog/ja/a11y-lighthouse-audit-fix-2026)でさらに掘り下げた。
+6. **何より、LCP分解を先に読む。** DevToolsのPerformanceパネルがTTFB / Load delay / Load duration / Render delayをそのまま見せてくれる。一番大きい区間から潰す。この計測ワークフロー自体は、[Lighthouseでアクセシビリティのスコアを直接直した記事](/ja/blog/ja/a11y-lighthouse-audit-fix-2026/)でさらに掘り下げた。
 
 ## 正直な限界 — この数字を誤読しないこと
 
@@ -167,7 +167,7 @@ LCP: 109 ms
 
 三つ目。preloadも乱発すれば毒になる。何でもかんでもpreloadで高い優先度を与えると、肝心なリソースの帯域を奪い、条件によっては画像を二度取りすることもある。preloadは**LCP要素ただ一つ**にだけ、惜しんで使うのが原則だ。
 
-この記事を一文にまとめるとこうだ。LCPが遅いなら、まず画像サイズを疑うのではなく、ブラウザがそれをいつ発見していつ描くのか — 四つの区間を先に開いてみること。ボトルネックはたいてい、ダウンロードではなく、発見とレンダーブロッキングに隠れている。多言語ブログを実際に監査してレンダーブロッキングリソースを剥がした[技術SEO監査の記録](/ja/blog/ja/multilingual-blog-technical-audit-campaign-2026)でも、同じ結論にたどり着いた。
+この記事を一文にまとめるとこうだ。LCPが遅いなら、まず画像サイズを疑うのではなく、ブラウザがそれをいつ発見していつ描くのか — 四つの区間を先に開いてみること。ボトルネックはたいてい、ダウンロードではなく、発見とレンダーブロッキングに隠れている。多言語ブログを実際に監査してレンダーブロッキングリソースを剥がした[技術SEO監査の記録](/ja/blog/ja/multilingual-blog-technical-audit-campaign-2026/)でも、同じ結論にたどり着いた。
 
 ---
 

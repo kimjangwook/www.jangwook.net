@@ -94,7 +94,7 @@ MCP AppはMCPサーバーのすべてのツールを呼び出せ、ホストは�
 
 <strong>4. セキュリティ保証</strong>
 
-MCP Appsはsandboxed iframeの中で実行されます。親ページへのアクセス、クッキーの盗取、コンテナからの脱出ができません。ホストがサーバー開発者を完全に信頼しなくても、サードパーティアプリを安全にレンダリングできます。MCPエコシステム全体のセキュリティ脅威とハードニング方法については[MCPセキュリティ危機 — 60日間で30件のCVE、エンタープライズハードニングガイド](/ja/blog/ja/mcp-security-crisis-30-cves-enterprise-hardening)を参照してください。
+MCP Appsはsandboxed iframeの中で実行されます。親ページへのアクセス、クッキーの盗取、コンテナからの脱出ができません。ホストがサーバー開発者を完全に信頼しなくても、サードパーティアプリを安全にレンダリングできます。MCPエコシステム全体のセキュリティ脅威とハードニング方法については[MCPセキュリティ危機 — 60日間で30件のCVE、エンタープライズハードニングガイド](/ja/blog/ja/mcp-security-crisis-30-cves-enterprise-hardening/)を参照してください。
 
 ## 動作原理：アーキテクチャ詳細
 
@@ -359,7 +359,7 @@ export default function App() {
 | ChatGPT | ⏳ 未定 | 公式発表なし |
 | Cursor | ⏳ 未定 | ロードマップ検討中 |
 
-VS Codeでは `/mcp` チャットコマンドでサーバーの有効化/無効化、OAuth認証管理が可能です。ブラウザでMCPサーバーを直接実行する方式については[WebMCP: Chrome 146でブラウザがAIエージェントのツールサーバーになる](/ja/blog/ja/webmcp-chrome-146-ai-tool-server)を参照してください。
+VS Codeでは `/mcp` チャットコマンドでサーバーの有効化/無効化、OAuth認証管理が可能です。ブラウザでMCPサーバーを直接実行する方式については[WebMCP: Chrome 146でブラウザがAIエージェントのツールサーバーになる](/ja/blog/ja/webmcp-chrome-146-ai-tool-server/)を参照してください。
 
 ## Engineering Manager視点での実務適用
 
@@ -418,7 +418,7 @@ MCP AppsはAIエージェントインターフェースの根本的な限界を�
 
 Engineering Manager視点でこの技術の価値は明確です。チームメンバーがAIに質問し、その場でインタラクティブツールを受け取って作業を完了するワークフローが実現します。別のダッシュボードタブや別のツール切り替えなしに。
 
-今すぐすべてのMCPサーバーにUIを追加する必要はありません。しかし、チームで最もよく使うツール一つにMCP Appsを適用してみることから始めてください。その経験が今後のAIワークフロー設計の方向性を変えてくれるでしょう。AIエージェントに活用できる標準化されたスキルシステムについては[Anthropic Agent Skills標準：AIエージェント能力の拡張](/ja/blog/ja/anthropic-agent-skills-standard)も合わせてお読みください。
+今すぐすべてのMCPサーバーにUIを追加する必要はありません。しかし、チームで最もよく使うツール一つにMCP Appsを適用してみることから始めてください。その経験が今後のAIワークフロー設計の方向性を変えてくれるでしょう。AIエージェントに活用できる標準化されたスキルシステムについては[Anthropic Agent Skills標準：AIエージェント能力の拡張](/ja/blog/ja/anthropic-agent-skills-standard/)も合わせてお読みください。
 
 ## 参考資料
 

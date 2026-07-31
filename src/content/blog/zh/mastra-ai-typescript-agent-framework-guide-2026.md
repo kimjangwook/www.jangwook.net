@@ -160,7 +160,7 @@ export const weatherTool = createTool({
 });
 ```
 
-用Zod schema定义I/O类型的方式，与[PydanticAI类型安全代理](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)中使用Pydantic BaseModel在结构上很相似。语言不同，但"类型即文档即验证逻辑"的理念是一致的。
+用Zod schema定义I/O类型的方式，与[PydanticAI类型安全代理](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)中使用Pydantic BaseModel在结构上很相似。语言不同，但"类型即文档即验证逻辑"的理念是一致的。
 
 天气工具使用的Open-Meteo API是免费的，不需要API密钥。通过geocoding将城市名转换为经纬度，再调用天气预报API获取当前天气。
 
@@ -324,7 +324,7 @@ export const weatherAdviceWorkflow = createWorkflow({
 
 在TypeScript生态中，与Mastra最接近的是Vercel AI SDK。如果说Vercel AI SDK专注于LLM调用和流式传输，那么Mastra在其基础上增加了代理生命周期管理、内存和可观察性。
 
-在[Google ADK与LangGraph比较](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026)中，两者都是Python中心的。Mastra正在TypeScript中尝试占据相同的位置。
+在[Google ADK与LangGraph比较](/zh/blog/zh/google-adk-vs-langgraph-agent-framework-comparison-2026/)中，两者都是Python中心的。Mastra正在TypeScript中尝试占据相同的位置。
 
 | | Mastra | Vercel AI SDK | LangGraph.js |
 |---|---|---|---|
@@ -350,16 +350,16 @@ export const weatherAdviceWorkflow = createWorkflow({
 - 在TypeScript/JavaScript项目中首次引入代理时。如果团队已经熟悉Node生态，引入成本比新搭一套Python技术栈更低。
 - 想把代理循环、内存、可观察性都放在一个SDK里完成时。这能减少自己拼接多个库的工作量。
 - 需要工作流（基于图的多步骤管道）的场景。`.then()` / `.branch()` / `.parallel()`的类型安全组合是其强项。
-- 处于频繁切换LLM提供商做实验的阶段。只改model字符串就能在OpenAI、Anthropic、Gemini之间切换。成本与响应速度的权衡，我在[AI代理成本的现实](/zh/blog/zh/ai-agent-cost-reality)中有更详细的探讨。
+- 处于频繁切换LLM提供商做实验的阶段。只改model字符串就能在OpenAI、Anthropic、Gemini之间切换。成本与响应速度的权衡，我在[AI代理成本的现实](/zh/blog/zh/ai-agent-cost-reality/)中有更详细的探讨。
 
 **最好避开的情况**
 
 - 需要今天就把它投入关键性生产服务时。v1.0发布还不到半年，API稳定性和第三方集成生态还达不到LangChain的水平。
-- Python库生态（LangGraph、CrewAI、PydanticAI）的成熟度和社区插件是决定因素时。选项对比可参考[Python AI代理库比较](/zh/blog/zh/python-ai-agent-library-comparison-2026)。
+- Python库生态（LangGraph、CrewAI、PydanticAI）的成熟度和社区插件是决定因素时。选项对比可参考[Python AI代理库比较](/zh/blog/zh/python-ai-agent-library-comparison-2026/)。
 - 需要立即在Vercel以外的环境（Docker、自建服务器）搭建复杂部署管道时。官方部署文档在这方面仍然薄弱。
 - 仅需调用一两次LLM就够用的场景。那样只用Vercel AI SDK就足够，代理抽象层是不必要的开销。
 
-如果只想纯粹对比工具调用的模式，把它和[Claude Agent SDK工具使用指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)放在一起看，设计上的差异会更清晰。
+如果只想纯粹对比工具调用的模式，把它和[Claude Agent SDK工具使用指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)放在一起看，设计上的差异会更清晰。
 
 ## 现在值得尝试Mastra吗？
 

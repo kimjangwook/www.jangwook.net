@@ -114,7 +114,7 @@ resource "aws_lambda_function" "api_handler" {
 }
 ```
 
-As of 2025, LLMs like [Claude](/en/blog/en/anthropic-code-execution-mcp) and GPT-4 can produce <strong>near production-level</strong> Terraform code. Describe your requirements in natural language and get high-quality IaC configurations.
+As of 2025, LLMs like [Claude](/en/blog/en/anthropic-code-execution-mcp/) and GPT-4 can produce <strong>near production-level</strong> Terraform code. Describe your requirements in natural language and get high-quality IaC configurations.
 
 ### 2. Infrastructure State Management
 
@@ -154,7 +154,7 @@ variable "allowed_ips" {
 
 ### Deployment Automation
 
-Abstract complex deployment processes into a single script. Combined with [GitHub Actions](/en/blog/en/github-actions-claude-code-ci-automation), you can build a fully automated CI/CD pipeline.
+Abstract complex deployment processes into a single script. Combined with [GitHub Actions](/en/blog/en/github-actions-claude-code-ci-automation/), you can build a fully automated CI/CD pipeline.
 
 ```bash
 #!/bin/bash
@@ -310,7 +310,7 @@ When adding a new Worker:
 4. Update Lambda queue mapping
 5. Run `./deploy.sh`
 
-Thanks to Terraform's modularization, <strong>adding new services is very straightforward</strong>. Implementing [type-safe AI agent logic](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) in each worker leads to an even more robust system.
+Thanks to Terraform's modularization, <strong>adding new services is very straightforward</strong>. Implementing [type-safe AI agent logic](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) in each worker leads to an even more robust system.
 
 ## Production Results
 

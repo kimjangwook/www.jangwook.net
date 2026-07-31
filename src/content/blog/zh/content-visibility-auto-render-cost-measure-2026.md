@@ -88,7 +88,7 @@ section.cv {
 
 `contain-intrinsic-size` 替它把位置先占下——在跳过渲染期间,给浏览器一个占位尺寸,告诉它"这段大约这么高"。用文档的话说,它"指定元素在受 size containment 影响时的自然尺寸"。再加上 `auto` 关键字(像 `auto 480px`),浏览器渲染过一次后就会记住实际尺寸,以后复用。
 
-这跟[给图片写死 width/height 来防止布局跳动](/zh/blog/zh/cls-layout-shift-reserve-space-measure-2026)是同一个直觉:提前把位置占好,等真实内容进来时,不会把四周挤走。实测里也印证了这点。`content-visibility` 页面的 `scrollHeight` 是 206,294px,baseline 是 302,454px。差值不是 bug——`auto` 版把还没渲染的段落按 480px 的估值占着。估得离真实值越远,滚动体验就越别扭,所以最好量几段有代表性的真实高度,填一个接近的近似值。
+这跟[给图片写死 width/height 来防止布局跳动](/zh/blog/zh/cls-layout-shift-reserve-space-measure-2026/)是同一个直觉:提前把位置占好,等真实内容进来时,不会把四周挤走。实测里也印证了这点。`content-visibility` 页面的 `scrollHeight` 是 206,294px,baseline 是 302,454px。差值不是 bug——`auto` 版把还没渲染的段落按 480px 的估值占着。估得离真实值越远,滚动体验就越别扭,所以最好量几段有代表性的真实高度,填一个接近的近似值。
 
 ## 无障碍呢？auto 不是 display:none
 
@@ -108,7 +108,7 @@ section.cv {
 
 最安静的陷阱是 <strong>强制布局</strong>。正如 web.dev 提醒的,只有当你不去调用那些会强制对已跳过子树进行渲染的 DOM API 时,浏览器才能跳过这份活。对屏幕外元素调 `getBoundingClientRect()`、`offsetTop`、`scrollHeight`,浏览器就会当场把它强制排一遍,省下来的全没了。如果你的滚动位置计算或动画钩子习惯性地调这些 API,该审一审。Chromium 在你对 `content-visibility: hidden` 的子树调用这类 API 时,会在控制台打出提示。
 
-再老实说一句:这省的是 <strong>渲染 CPU,不是下载字节</strong>。完整的 HTML 照样全下来。初次绘制和滚动响应会变好,网络传输量不变。想减字节,得另外上[真正的懒加载或服务端分页](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026)。两种优化解决的是不同问题。
+再老实说一句:这省的是 <strong>渲染 CPU,不是下载字节</strong>。完整的 HTML 照样全下来。初次绘制和滚动响应会变好,网络传输量不变。想减字节,得另外上[真正的懒加载或服务端分页](/zh/blog/zh/lcp-image-preload-scanner-fetchpriority-2026/)。两种优化解决的是不同问题。
 
 ## 一份今天就能用的清单
 
@@ -131,7 +131,7 @@ section.cv {
 
 <strong>4. 审查强制布局的代码。</strong>只要对屏幕外元素有 `getBoundingClientRect`、`offsetTop` 这类调用,省下的就被抹掉。
 
-<strong>5. 重新测,并确认它仍然可达。</strong>在应用前后实测强制布局时间或[滚动与交互响应](/zh/blog/zh/inp-yielding-measure-2026)。再用屏幕阅读器,以及目标浏览器的 Ctrl+F,确认屏幕外文字仍然找得到。变快了却到不了,那不叫改进。
+<strong>5. 重新测,并确认它仍然可达。</strong>在应用前后实测强制布局时间或[滚动与交互响应](/zh/blog/zh/inp-yielding-measure-2026/)。再用屏幕阅读器,以及目标浏览器的 Ctrl+F,确认屏幕外文字仍然找得到。变快了却到不了,那不叫改进。
 
 一行 CSS 换来 15 倍,当然是这个极端做重的沙盒里的数,真实站点的收益完全取决于页面结构。但原理很硬:不画没人看得见的东西,页面就快。而 `content-visibility` 是少数几个能在不破坏无障碍的前提下做到这件事的办法。
 

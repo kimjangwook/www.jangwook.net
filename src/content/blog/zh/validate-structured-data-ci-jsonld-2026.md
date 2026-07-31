@@ -53,11 +53,11 @@ relatedPosts:
 
 陷阱就在这里：第二层失败时，第一层照样面不改色地通过。而 Google 官方的两个校验工具——Rich Results Test 和 Schema Markup Validator（validator.schema.org）——都是<strong>要你在浏览器里粘 URL 或代码的手动工具</strong>。它们不在你的构建里。所以除非有人手动打开去看，坏掉的 schema 就一路流到线上。
 
-如果你已经[在 JSON-LD、Microdata、RDFa 之间选定了语法](/zh/blog/zh/structured-data-syntax-comparison-jsonld-microdata-rdfa-2026)，下一个问题就是：用这门语法每天写的标记，每次提交时谁来确认它写对了？
+如果你已经[在 JSON-LD、Microdata、RDFa 之间选定了语法](/zh/blog/zh/structured-data-syntax-comparison-jsonld-microdata-rdfa-2026/)，下一个问题就是：用这门语法每天写的标记，每次提交时谁来确认它写对了？
 
 ## 为什么这道缝现在更贵了
 
-从前结构化数据悄悄坏掉，损失顶多是一条富媒体摘要。现在不一样了。搜索的重心在迁移，那些生成 AI 概览和生成式回答的爬虫，越来越依赖结构化数据来判断一个页面讲的是什么。而这类爬虫里有不少[根本不跑你的 JavaScript，只抓 raw HTML 就走](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026)。服务端吐出的那段 JSON-LD，几乎就是它们能看到的全部。
+从前结构化数据悄悄坏掉，损失顶多是一条富媒体摘要。现在不一样了。搜索的重心在迁移，那些生成 AI 概览和生成式回答的爬虫，越来越依赖结构化数据来判断一个页面讲的是什么。而这类爬虫里有不少[根本不跑你的 JavaScript，只抓 raw HTML 就走](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026/)。服务端吐出的那段 JSON-LD，几乎就是它们能看到的全部。
 
 要是这段 JSON-LD 的 `@type` 是小写的 `article` 呢？人眼看页面正常，解析器也放行，可在读它的机器眼里，那是个没有作者、没有发布日期、身份不明的节点。一个疏漏的代价，从"错过一条摘要"变成了"AI 误读这个页面"。在上线前拦下它，比过去更划算了。
 
@@ -101,7 +101,7 @@ resolved term IRIs  : http://schema.org/article, http://schema.org/authour,
 
 原因是 schema.org 托管的 JSON-LD 上下文把 `@vocab` 设成了 `https://schema.org/`。一旦有了 `@vocab`，处理器就把任何未定义的字符串<strong>直接拼</strong>到这个前缀后面。它从不去核对 schema.org 里有没有 `authour` 这个属性，只是造出一个不存在的 IRI，而这在 JSON-LD 语法上完全合法。解析器看的是语法，不是词汇。
 
-于是"JSON-LD 合法"和"Google 读得懂"之间就裂开了一道缝。这道缝也贯穿在[把散落的块连成一个 @graph](/zh/blog/zh/json-ld-graph-entity-linking-2026) 的问题里：谈连接之前，得先保证每个节点本身就是用合法的类型和属性写的。
+于是"JSON-LD 合法"和"Google 读得懂"之间就裂开了一道缝。这道缝也贯穿在[把散落的块连成一个 @graph](/zh/blog/zh/json-ld-graph-entity-linking-2026/) 的问题里：谈连接之前，得先保证每个节点本身就是用合法的类型和属性写的。
 
 ## 一个 60 行的、懂 schema 的校验器
 
@@ -189,7 +189,7 @@ GitHub Actions 作业里一个步骤。
   run: npm run validate:schema
 ```
 
-校验器失败，作业就失败，带着坏 schema 的 PR 合不进去。想扫全站，就从构建好的 HTML 里把每个 `<script type="application/ld+json">` 块抓出来，逐个灌进同一个 `checkNode`。道理一样。这跟[把无障碍检查放进 CI](/zh/blog/zh/axe-core-ci-a11y-jsdom-vs-browser-2026) 是同一副骨架：把人每次用肉眼盯的活儿，换成一个失败就变红的确定性关卡。
+校验器失败，作业就失败，带着坏 schema 的 PR 合不进去。想扫全站，就从构建好的 HTML 里把每个 `<script type="application/ld+json">` 块抓出来，逐个灌进同一个 `checkNode`。道理一样。这跟[把无障碍检查放进 CI](/zh/blog/zh/axe-core-ci-a11y-jsdom-vs-browser-2026/) 是同一副骨架：把人每次用肉眼盯的活儿，换成一个失败就变红的确定性关卡。
 
 ## 这个校验器做不到的事
 
@@ -197,7 +197,7 @@ GitHub Actions 作业里一个步骤。
 
 <strong>它不是 Rich Results Test 的替代品。</strong>它只认识手工挑的一小块词汇（Article、BreadcrumbList、ListItem、Person）。实战里，你得从 schema.org 的公开导出里生成类型和属性清单来填 `VOCAB`，才有全面覆盖。这里展示的是概念验证，不是成品。
 
-<strong>通过校验，不保证会出富媒体结果。</strong>这不是我的看法，是 Google 官方立场。通用结构化数据指南写得很直白：使用结构化数据"让某项特性<strong>有可能</strong>出现，但不保证它一定出现"。就算标记完美无缺，Google 的算法也可能根据用户、设备、地点判断纯文本结果更合适。指南还明确写道，结构化数据"本身不是通用的排名因素"。校验器放行的是"格式对了"，不是"会出富媒体结果"，更不是"排名会涨"。甚至有些类型的富媒体结果资格会被直接收回。FAQPage 就是这样，但删掉标记并不是答案。这个判断的依据，我写在[FAQ富媒体结果已经结束，但别急着删掉Q&A标记](/zh/blog/zh/faqpage-deprecation-ai-citation-2026)里。
+<strong>通过校验，不保证会出富媒体结果。</strong>这不是我的看法，是 Google 官方立场。通用结构化数据指南写得很直白：使用结构化数据"让某项特性<strong>有可能</strong>出现，但不保证它一定出现"。就算标记完美无缺，Google 的算法也可能根据用户、设备、地点判断纯文本结果更合适。指南还明确写道，结构化数据"本身不是通用的排名因素"。校验器放行的是"格式对了"，不是"会出富媒体结果"，更不是"排名会涨"。甚至有些类型的富媒体结果资格会被直接收回。FAQPage 就是这样，但删掉标记并不是答案。这个判断的依据，我写在[FAQ富媒体结果已经结束，但别急着删掉Q&A标记](/zh/blog/zh/faqpage-deprecation-ai-citation-2026/)里。
 
 <strong>解析器的展开只看语法。</strong>如前所示，因为 `@vocab`，连拼写错误都会展开成合法 IRI。所以别把"展开成功"当成"校验通过"。两层互不替代。语法交给解析器，语义交给懂 schema 的检查。
 

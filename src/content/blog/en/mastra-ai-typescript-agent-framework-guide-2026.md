@@ -156,7 +156,7 @@ export const weatherTool = createTool({
 });
 ```
 
-Zod schemas for I/O typing. If you've seen [PydanticAI's type-safe agent approach](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) in Python, this is structurally similar. Same idea: type definition as documentation and validation logic, just across different languages.
+Zod schemas for I/O typing. If you've seen [PydanticAI's type-safe agent approach](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) in Python, this is structurally similar. Same idea: type definition as documentation and validation logic, just across different languages.
 
 The weather tool uses Open-Meteo, which is free and needs no API key. It geocodes city names to coordinates, then fetches current weather data. Clean separation of concerns.
 
@@ -318,7 +318,7 @@ With an Anthropic API key, switching to `anthropic/claude-sonnet-4-6` just works
 
 The closest comparison in TypeScript is Vercel AI SDK. Vercel AI SDK handles LLM calls and streaming well; Mastra adds agent lifecycle management, memory, and observability on top. It's not a replacement. It's a higher-level abstraction that uses AI SDK underneath.
 
-Against the [Google ADK vs LangGraph comparison](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026) I did earlier, both were Python-only. Mastra is occupying that same space in TypeScript.
+Against the [Google ADK vs LangGraph comparison](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026/) I did earlier, both were Python-only. Mastra is occupying that same space in TypeScript.
 
 | | Mastra | Vercel AI SDK | LangGraph.js |
 |---|---|---|---|
@@ -346,16 +346,16 @@ Here's the judgment I landed on after actually using it. Tool choice always come
 - You're introducing agents into a TypeScript/JavaScript project for the first time. If your team already lives in the Node ecosystem, the entry cost is lower than standing up a fresh Python stack.
 - You want the agent loop, memory, and observability handled inside one SDK instead of wiring several libraries together yourself.
 - You need workflows — graph-based multi-step pipelines. The type-safe composition of `.then()`, `.branch()`, and `.parallel()` is a real strength.
-- You're experimenting and switching LLM providers often. Swapping the model string moves you between OpenAI, Anthropic, and Gemini. The cost-versus-latency tradeoff is something I dug into in [the reality of AI agent costs](/en/blog/en/ai-agent-cost-reality).
+- You're experimenting and switching LLM providers often. Swapping the model string moves you between OpenAI, Anthropic, and Gemini. The cost-versus-latency tradeoff is something I dug into in [the reality of AI agent costs](/en/blog/en/ai-agent-cost-reality/).
 
 **Avoid it (for now) when:**
 
 - You need to ship a mission-critical production service today. v1.0 is less than six months old, and API stability plus the third-party integration ecosystem don't yet match LangChain.
-- The maturity and community plugins of the Python ecosystem (LangGraph, CrewAI, PydanticAI) are decisive for you. For weighing the options, see [the Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026).
+- The maturity and community plugins of the Python ecosystem (LangGraph, CrewAI, PydanticAI) are decisive for you. For weighing the options, see [the Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026/).
 - You need a complex deployment pipeline on something other than Vercel (Docker, self-hosted) right away. The official deployment docs are still thin there.
 - A simple one-or-two-shot LLM call is all you need. In that case Vercel AI SDK alone is enough, and the agent abstraction is overhead you don't need.
 
-If you want to compare the raw tool-calling pattern, putting it next to the [Claude Agent SDK tool use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026) makes the design differences clear.
+If you want to compare the raw tool-calling pattern, putting it next to the [Claude Agent SDK tool use guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/) makes the design differences clear.
 
 ## Is It Worth Trying Right Now?
 

@@ -50,7 +50,7 @@ relatedPosts:
 
 两周内完成了一篇理论物理学论文。这通常需要一年的时间。
 
-3月23日，Anthropic新开设了Science博客。第一篇文章的标题颇具挑衅性——"Vibe Physics: The AI Grad Student"。这是哈佛大学物理学教授Matthew Schwartz直接指导[Claude Opus 4.5](/zh/blog/zh/anthropic-claude-performance-decline-controversy-april-2026)进行理论物理计算的实验记录。
+3月23日，Anthropic新开设了Science博客。第一篇文章的标题颇具挑衅性——"Vibe Physics: The AI Grad Student"。这是哈佛大学物理学教授Matthew Schwartz直接指导[Claude Opus 4.5](/zh/blog/zh/anthropic-claude-performance-decline-controversy-april-2026/)进行理论物理计算的实验记录。
 
 说实话，看到标题时我以为又是一篇"AI革命性地改变科学"的文章，但读完发现完全不是那么回事。与其说是成功故事，不如说更像是一本**指导日志**。
 
@@ -71,7 +71,7 @@ Schwartz将当前LLM的理论物理能力评估为**G2（研究生二年级）**
 
 我认为这个评价并非仅适用于物理学。让AI写代码也好、写文章也好，感觉都差不多。前80%快得惊人，但剩下的20%需要专家的眼光。"vibe coding"这个说法流行起来也是同样的道理——看起来好像能跑，但是不是真的对，还得人来看。
 
-这里有一个重要的启示。AI不是在"代替"研究，而是在**[放大专家的生产力](/zh/blog/zh/ai-agent-cost-reality)**。如果一个不懂物理的人让Claude写论文，得到的结果很可能看似合理却是错的。
+这里有一个重要的启示。AI不是在"代替"研究，而是在**[放大专家的生产力](/zh/blog/zh/ai-agent-cost-reality/)**。如果一个不懂物理的人让Claude写论文，得到的结果很可能看似合理却是错的。
 
 ## 同步发布的实战模式：Ralph Loop
 
@@ -112,6 +112,6 @@ Anthropic已经有Research博客了。另外开设Science博客是有深意的�
 
 即使你不打算写物理论文，这个实验的启示也很明确。
 
-**将长时间任务委托给AI的模式正在形成。** 通过[CLAUDE.md](/zh/blog/zh/agents-md-effectiveness)提供项目上下文，通过CHANGELOG.md跟踪状态，通过test oracle验证质量。这个结构无论是物理研究、数据管道建设还是大规模重构，都同样适用。
+**将长时间任务委托给AI的模式正在形成。** 通过[CLAUDE.md](/zh/blog/zh/agents-md-effectiveness/)提供项目上下文，通过CHANGELOG.md跟踪状态，通过test oracle验证质量。这个结构无论是物理研究、数据管道建设还是大规模重构，都同样适用。
 
 但别忘了"G2水平"这个评价。一个勤奋但需要监督的研究生。没有这个前提就直接使用产出，问题出现的速度会和产出的速度一样快。

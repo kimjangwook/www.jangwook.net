@@ -98,7 +98,7 @@ SWE-bench 88.7%는 꽤 인상적이다. 하지만 이 수치로 "Claude보다 �
 
 **GDPval 84.9%** — OpenAI의 자체 벤치마크다. 이 이름을 처음 들어본 개발자가 많을 것이다. 나도 그렇다. 자체 벤치마크는 자신에게 유리한 방식으로 설계될 가능성이 있어서, 이 수치를 인용할 때는 출처를 명시하는 게 맞다.
 
-이전에 [GPT-5와 Claude, Gemini, DeepSeek의 API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)를 정리할 때도 비슷한 문제가 있었다. 각 회사마다 자신에게 유리한 벤치마크를 내세우고, 비교 기준이 달라서 실제로 어떤 모델이 "더 나은가"를 단정 짓기가 어렵다. 이번엔 그 문제가 더 심화됐다.
+이전에 [GPT-5와 Claude, Gemini, DeepSeek의 API 가격 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)를 정리할 때도 비슷한 문제가 있었다. 각 회사마다 자신에게 유리한 벤치마크를 내세우고, 비교 기준이 달라서 실제로 어떤 모델이 "더 나은가"를 단정 짓기가 어렵다. 이번엔 그 문제가 더 심화됐다.
 
 ## 가격이 2배로 올랐다 — 이걸 감당해야 하는가
 
@@ -130,11 +130,11 @@ OpenAI가 이 가격에 자신감을 보인다는 건, 성능 우위에 대한 �
 
 <strong>GPT-5.5가 유리한 상황.</strong> OpenAI 생태계에 이미 깊이 통합된 팀의 경우 — Azure OpenAI, Vercel AI SDK의 OpenAI 백엔드, Copilot 연동 등을 쓰고 있다면 — 전환 비용이 상대적으로 낮다. SWE-bench 스타일의 순수 코딩 성능이 핵심 지표인 팀, 그리고 ChatGPT 기반 제품을 만드는 경우에도 GPT-5.5가 맞는 선택일 수 있다. ChatGPT Plus/Pro 사용자가 이미 GPT-5.5를 쓰고 있기 때문에 제품의 레퍼런스 모델과 맞추는 측면에서 유리하다.
 
-<strong>Claude가 여전히 강점을 보이는 상황.</strong> [Claude Code의 5가지 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 다뤘듯이, Claude는 도구 사용 패턴이 섬세하고 컨텍스트 관리가 안정적이다. 특히 Claude Managed Agents + Advisor Tool 조합은 비용 효율 측면에서 경쟁력 있다. Sonnet 4.6이 executor로, Opus가 advisor로 동작하면서 태스크 성공률을 높이면서도 비용을 11.9% 절감한다는 데이터가 있다. 장시간 실행되는 복잡한 에이전트 파이프라인에서 Claude의 인프라 레이어 지원 — 체크포인팅, 자격증명 관리, 스코프 권한 — 이 실질적인 차이를 만든다.
+<strong>Claude가 여전히 강점을 보이는 상황.</strong> [Claude Code의 5가지 에이전틱 워크플로우 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 다뤘듯이, Claude는 도구 사용 패턴이 섬세하고 컨텍스트 관리가 안정적이다. 특히 Claude Managed Agents + Advisor Tool 조합은 비용 효율 측면에서 경쟁력 있다. Sonnet 4.6이 executor로, Opus가 advisor로 동작하면서 태스크 성공률을 높이면서도 비용을 11.9% 절감한다는 데이터가 있다. 장시간 실행되는 복잡한 에이전트 파이프라인에서 Claude의 인프라 레이어 지원 — 체크포인팅, 자격증명 관리, 스코프 권한 — 이 실질적인 차이를 만든다.
 
 <strong>더 중요한 차이는 생태계와 워크플로우 통합이다.</strong> 벤치마크 몇 퍼센트보다, 기존 코드베이스가 어느 SDK에 의존하는지, 팀이 이미 어느 쪽에 익숙한지가 실무에서 훨씬 크게 작용한다. 모델을 바꾸는 건 API 키 하나 바꾸는 문제가 아니다. 프롬프트 설계, 에러 처리 로직, 도구 스키마 설계, 재시도 전략까지 모두 연동되어 있어서, 실제 전환 비용은 생각보다 높다. 내가 본 케이스 중 "일단 모델만 바꿔보자"고 했다가 며칠 간의 프롬프트 재설계로 이어진 경우가 한두 번이 아니다.
 
-내 프로젝트 기준으로는 당분간 Claude 생태계를 유지할 것 같다. 최근에 [Vercel AI SDK로 Claude 스트리밍 에이전트를 구축하는 작업](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)을 했는데, 스트리밍 도중 도구 호출이 섞이는 복잡한 시나리오에서 Claude가 더 일관된 동작을 보였다. GPT-5.5 API가 공개되면 같은 태스크를 돌려보고 비교할 계획은 있다.
+내 프로젝트 기준으로는 당분간 Claude 생태계를 유지할 것 같다. 최근에 [Vercel AI SDK로 Claude 스트리밍 에이전트를 구축하는 작업](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026/)을 했는데, 스트리밍 도중 도구 호출이 섞이는 복잡한 시나리오에서 Claude가 더 일관된 동작을 보였다. GPT-5.5 API가 공개되면 같은 태스크를 돌려보고 비교할 계획은 있다.
 
 ### 실제 의사결정 기준
 
@@ -157,7 +157,7 @@ OpenAI는 GPT-5.5를 "에이전트 런타임"이라고 불렀다. 하지만 Anth
 
 GPT-5.5가 "에이전트 런타임에 최적화된 모델"이라면, Managed Agents는 "에이전트를 운영하는 인프라"다. 더 스마트한 엔진과 더 안정적인 레일. 어떤 게 더 중요한지는 팀의 필요에 따라 다르지만, 두 가지를 같은 레이어에 놓고 비교하는 건 범주 오류다.
 
-내가 이해하기로는, 장기적으로 에이전트 에코시스템의 표준을 누가 쥐느냐는 모델 성능 지표보다 인프라 레이어를 먼저 장악하는 쪽이 유리할 가능성이 높다. [AI 에이전트 프레임워크 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)에서 다뤘듯이, 에이전트 생태계는 프레임워크와 인프라가 결합된 형태로 수렴하는 중이다.
+내가 이해하기로는, 장기적으로 에이전트 에코시스템의 표준을 누가 쥐느냐는 모델 성능 지표보다 인프라 레이어를 먼저 장악하는 쪽이 유리할 가능성이 높다. [AI 에이전트 프레임워크 비교](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)에서 다뤘듯이, 에이전트 생태계는 프레임워크와 인프라가 결합된 형태로 수렴하는 중이다.
 
 ## 아직 풀리지 않은 질문들
 

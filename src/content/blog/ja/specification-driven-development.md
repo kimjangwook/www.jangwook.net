@@ -61,7 +61,7 @@ relatedPosts:
 
 2025年初頭、Andrej Karpathyが「Vibe Coding」という用語を作りました。AIにプロンプトを投げて、生成されたコードをコピーして、動作することを祈る方式。プロトタイプには効果的ですが、大規模プロジェクトでは急速に崩壊します。
 
-今、<strong>仕様駆動開発(Specification-Driven Development, SDD)</strong>が登場しました。Markdownで明確な仕様を書けば、AIコーディングエージェントがそれを実行可能なコードに「コンパイル」します。このアプローチは[Amazon Kiroのような仕様駆動AI IDE](/ja/blog/ja/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026)としても製品化されています。単なる方法論の変化ではなく、AIと一緒にソフトウェアを構築する方法の根本的な転換です。
+今、<strong>仕様駆動開発(Specification-Driven Development, SDD)</strong>が登場しました。Markdownで明確な仕様を書けば、AIコーディングエージェントがそれを実行可能なコードに「コンパイル」します。このアプローチは[Amazon Kiroのような仕様駆動AI IDE](/ja/blog/ja/amazon-kiro-spec-driven-ai-ide-vs-claude-code-2026/)としても製品化されています。単なる方法論の変化ではなく、AIと一緒にソフトウェアを構築する方法の根本的な転換です。
 
 ### Vibe Codingの限界
 
@@ -102,7 +102,7 @@ function login(username: string, password: string) {
 
 2. <strong>構造化されたワークフロー</strong>
    - 仕様作成(Specify) → 計画策定(Plan) → 作業分解(Task) → 実装(Implement)
-   - 各段階が明確に分離され追跡可能（[Claude Codeの5つのエージェンティックワークフローパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)とも接続します）
+   - 各段階が明確に分離され追跡可能（[Claude Codeの5つのエージェンティックワークフローパターン](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)とも接続します）
 
 3. <strong>AIをツールとして、開発者を設計者として</strong>
    - 開発者は「何を」決定 (アーキテクチャ、ビジネスロジック)
@@ -787,4 +787,4 @@ cd spec-kit-examples/todo-api
 
 ---
 
-<strong>次回記事</strong>: [AIエージェント協業パターン: 5つの専門エージェントでフルスタックアプリを構築する](/ja/blog/ja/ai-agent-collaboration-patterns)では、Architecture Agent、Coding Agent、Testing Agent、Security Agent、DevOps Agentをオーケストレーションして複雑なアプリケーションを構築する実戦事例を扱います。
+<strong>次回記事</strong>: [AIエージェント協業パターン: 5つの専門エージェントでフルスタックアプリを構築する](/ja/blog/ja/ai-agent-collaboration-patterns/)では、Architecture Agent、Coding Agent、Testing Agent、Security Agent、DevOps Agentをオーケストレーションして複雑なアプリケーションを構築する実戦事例を扱います。

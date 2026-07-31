@@ -51,7 +51,7 @@ relatedPosts:
 
 ## 개요
 
-대규모 언어 모델(LLM)의 추론 능력을 강화하기 위한 강화학습(RL) 미세조정은 최근 몇 년간 큰 주목을 받아왔다. LLM의 기본 작동 원리와 현황을 먼저 이해하고 싶다면 [DeNA LLM 스터디 Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)을 참고하면 된다. 그러나 <strong>초기 성공률이 극히 낮은 어려운 문제</strong>에서는 학습 신호가 거의 없어 RL 학습이 정체(plateau)되는 근본적인 한계가 있었다.
+대규모 언어 모델(LLM)의 추론 능력을 강화하기 위한 강화학습(RL) 미세조정은 최근 몇 년간 큰 주목을 받아왔다. LLM의 기본 작동 원리와 현황을 먼저 이해하고 싶다면 [DeNA LLM 스터디 Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals/)을 참고하면 된다. 그러나 <strong>초기 성공률이 극히 낮은 어려운 문제</strong>에서는 학습 신호가 거의 없어 RL 학습이 정체(plateau)되는 근본적인 한계가 있었다.
 
 MIT 연구팀(Shobhita Sundaram 외)이 발표한 논문 <strong>"Teaching Models to Teach Themselves: Reasoning at the Edge of Learnability"</strong>는 이 문제에 대한 혁신적인 해답을 제시한다. 바로 <strong>SOAR(Self-improvement through Open-ended Automated Reasoning)</strong> — LLM이 스스로 학습용 커리큘럼을 생성하여 풀 수 없던 문제를 단계적으로 정복하는 프레임워크다.
 
@@ -141,7 +141,7 @@ SOAR는 인간 교육의 <strong>비계(scaffolding)</strong> 개념을 AI 학�
 
 ### 자기 진화하는 AI 시스템의 가능성
 
-이 연구는 외부 인간 감독 없이 AI가 자체적으로 학습 커리큘럼을 설계하고 실행하는 <strong>자율적 자기 개선(autonomous self-improvement)</strong>의 가능성을 열어놓는다. 실제 오픈소스 구현 사례로는 [Hermes Agent — 작업할수록 스스로 진화하는 AI 에이전트](/ko/blog/ko/hermes-agent-self-evolving-ai-framework)가 유사한 자기 개선 메커니즘을 프로덕션 레벨로 구현한 예다. 물론 안전성 관점에서 신중한 접근이 필요하지만, 기술적 가능성은 분명히 입증되었다.
+이 연구는 외부 인간 감독 없이 AI가 자체적으로 학습 커리큘럼을 설계하고 실행하는 <strong>자율적 자기 개선(autonomous self-improvement)</strong>의 가능성을 열어놓는다. 실제 오픈소스 구현 사례로는 [Hermes Agent — 작업할수록 스스로 진화하는 AI 에이전트](/ko/blog/ko/hermes-agent-self-evolving-ai-framework/)가 유사한 자기 개선 메커니즘을 프로덕션 레벨로 구현한 예다. 물론 안전성 관점에서 신중한 접근이 필요하지만, 기술적 가능성은 분명히 입증되었다.
 
 ## 결론
 

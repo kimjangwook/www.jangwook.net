@@ -149,11 +149,11 @@ Olmo Hybrid는 <strong>완전 오픈(Fully Open)</strong>으로 공개되었다:
 
 ### 2. 긴 문맥 활용의 확대
 
-64K 토큰에서의 성능 개선은 실무적으로 큰 의미가 있다. 코드 리뷰, [문서 분석](/ko/blog/ko/anthropic-files-api-batch-document-processing-guide), 멀티턴 대화 등 긴 문맥이 필요한 유스케이스에서 더 안정적인 성능을 기대할 수 있다.
+64K 토큰에서의 성능 개선은 실무적으로 큰 의미가 있다. 코드 리뷰, [문서 분석](/ko/blog/ko/anthropic-files-api-batch-document-processing-guide/), 멀티턴 대화 등 긴 문맥이 필요한 유스케이스에서 더 안정적인 성능을 기대할 수 있다.
 
 ### 3. 학습 인프라 투자 효율
 
-2배의 데이터 효율은 곧 <strong>학습 비용 50% 절감</strong>의 가능성을 의미한다. [GPU 클러스터 비용](/ko/blog/ko/gemini-25-flash-api-cost-optimization-guide)이 AI 프로젝트의 가장 큰 비용 항목인 현실에서, 아키텍처 혁신을 통한 비용 절감은 ROI에 직접 영향을 미친다.
+2배의 데이터 효율은 곧 <strong>학습 비용 50% 절감</strong>의 가능성을 의미한다. [GPU 클러스터 비용](/ko/blog/ko/gemini-25-flash-api-cost-optimization-guide/)이 AI 프로젝트의 가장 큰 비용 항목인 현실에서, 아키텍처 혁신을 통한 비용 절감은 ROI에 직접 영향을 미친다.
 
 ### 4. 오픈소스 생태계의 성숙
 
@@ -165,7 +165,7 @@ Olmo Hybrid는 LLM 아키텍처의 방향을 보여주는 중요한 이정표다
 
 1. <strong>Pure Transformer의 시대는 끝나가고 있다</strong>. 하이브리드 접근이 효율과 성능 모두에서 우위를 점하고 있다.
 2. <strong>스케일링 법칙이 하이브리드에 유리하다</strong>. 모델이 커질수록 효율 이득이 증가하는 구조적 장점이 있다.
-3. <strong>오픈소스 모델의 경쟁력이 강화된다</strong>. 아키텍처 혁신과 완전 공개의 조합은 [프로프라이어터리 모델](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)과의 격차를 줄이고 있다.
+3. <strong>오픈소스 모델의 경쟁력이 강화된다</strong>. 아키텍처 혁신과 완전 공개의 조합은 [프로프라이어터리 모델](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)과의 격차를 줄이고 있다.
 
 AI 팀을 이끄는 리더라면, 하이브리드 아키텍처의 발전을 주시하면서 자체 모델 학습 파이프라인에 이를 어떻게 통합할 수 있을지 검토해볼 시점이다.
 

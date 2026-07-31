@@ -136,7 +136,7 @@ export function toOpeningHours(raw: string): OpeningHoursSpecification[] {
 
 多语言服务还得定一条店名策略：本地写法（日文店名）放 `name`，罗马字写法放 `alternateName`，因为地图和本地搜索实际比对的是本地写法。整段标记提交 schema.org 官方校验器，结果零错误、零警告。
 
-输出位置只考虑服务端。SvelteKit 里就是在店铺详情页的 server load 里跑转换器，序列化后塞进 `svelte:head`，并把 `<` 转义成 `\u003c`，防止店名或简介里的字符破坏 script 标签。为什么不用客户端注入？[之前实测过](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)：不在原始 HTML 里的结构化数据，对任何跳过渲染的采集方来说等于不存在。
+输出位置只考虑服务端。SvelteKit 里就是在店铺详情页的 server load 里跑转换器，序列化后塞进 `svelte:head`，并把 `<` 转义成 `\u003c`，防止店名或简介里的字符破坏 script 标签。为什么不用客户端注入？[之前实测过](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026/)：不在原始 HTML 里的结构化数据，对任何跳过渲染的采集方来说等于不存在。
 
 ## 模型说不出口的事：两段营业、最后点单、坐标精度
 
@@ -185,7 +185,7 @@ curl -s -X POST "https://validator.schema.org/validate" \
 
 第三行才是麻烦。`opens: "eleven"`，一个压根不是时间的值，<strong>三层里没有一层拦截</strong>。schema-dts 里 `Time` 归根结底是 string 的别名，类型检查无能为力；校验器不检查值的格式。营业时间标记里杀伤力最大的缺陷（时间不是时间），反而穿透力最强。所以转换器里那条 `TIME_RE` 正则不是装饰，是<strong>唯一的防线</strong>。拿掉它，"eleven" 能通过编译、通过校验、一路进到线上 HTML。
 
-这个格局和[对比 axe-core 在 jsdom 与真实浏览器下的表现](/zh/blog/zh/axe-core-ci-a11y-jsdom-vs-browser-2026)时一模一样：每个工具抓的缺陷各不相同，谁漏了什么只有实测才知道，而漏洞所在之处只能自己立门禁、进 CI 常驻。
+这个格局和[对比 axe-core 在 jsdom 与真实浏览器下的表现](/zh/blog/zh/axe-core-ci-a11y-jsdom-vs-browser-2026/)时一模一样：每个工具抓的缺陷各不相同，谁漏了什么只有实测才知道，而漏洞所在之处只能自己立门禁、进 CI 常驻。
 
 ## 诚实的边界：这段标记不会抬高你的本地排名
 
@@ -212,4 +212,4 @@ curl -s -X POST "https://validator.schema.org/validate" \
 
 ---
 
-如果你的门店或本地业务网站需要设计结构化数据，或想用这种实测方式审计现有的标记管线，我个人承接相关咨询与实现委托。[联系方式在这里](/zh/contact)。
+如果你的门店或本地业务网站需要设计结构化数据，或想用这种实测方式审计现有的标记管线，我个人承接相关咨询与实现委托。[联系方式在这里](/zh/contact/)。

@@ -214,7 +214,7 @@ git worktree remove --force ../my-app-feature
 
 나는 이 패턴이 꽤 마음에 들지만, 만능은 아니다. 작업들이 서로 다른 파일을 건드리는 경우에 가장 효과적이고, 같은 컴포넌트를 두 세션이 모두 수정해야 한다면 오히려 머지 충돌이 더 많이 생긴다. 또, 세션이 3개를 넘어가면 어느 세션이 어디까지 했는지 추적하기 시작하면서 오버헤드가 생긴다.
 
-멀티 에이전트 PR 리뷰 패턴과 결합하면 각 worktree 브랜치에서 나온 PR을 자동으로 리뷰할 수 있어서, 팀 단위에서는 이 조합이 가장 실용적이었다. 더 나아가 공식 문서는 서브에이전트를 각자의 worktree에서 격리해 돌리는 방법도 안내한다. 커스텀 서브에이전트의 frontmatter에 `isolation: worktree`를 넣으면, 에이전트마다 임시 worktree가 생기고 변경 없이 끝나면 자동으로 삭제된다. [에이전트 팀을 구성해 본 적이 있다면](/ko/blog/ko/claude-agent-teams-guide) 이 격리 옵션이 병렬 작업의 충돌을 얼마나 줄여 주는지 바로 체감할 것이다.
+멀티 에이전트 PR 리뷰 패턴과 결합하면 각 worktree 브랜치에서 나온 PR을 자동으로 리뷰할 수 있어서, 팀 단위에서는 이 조합이 가장 실용적이었다. 더 나아가 공식 문서는 서브에이전트를 각자의 worktree에서 격리해 돌리는 방법도 안내한다. 커스텀 서브에이전트의 frontmatter에 `isolation: worktree`를 넣으면, 에이전트마다 임시 worktree가 생기고 변경 없이 끝나면 자동으로 삭제된다. [에이전트 팀을 구성해 본 적이 있다면](/ko/blog/ko/claude-agent-teams-guide/) 이 격리 옵션이 병렬 작업의 충돌을 얼마나 줄여 주는지 바로 체감할 것이다.
 
 ## 언제 쓰고, 언제 피할까
 
@@ -234,7 +234,7 @@ git worktree remove --force ../my-app-feature
 - 마이그레이션처럼 **공유 상태(로컬 DB 등)에 순서가 중요한 작업**일 때. 동시에 돌리면 데이터가 꼬인다.
 - 잠깐 끝나는 작은 수정이라 **격리 설정 비용이 작업 자체보다 큰** 경우.
 
-판단 기준을 한 줄로 줄이면 이렇다. 작업들이 파일 수준에서 독립적인가? 그렇다면 worktree가 빛난다. 아니라면 굳이 나누지 마라. [Claude Code 마스터클래스 1편](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent)에서 다룬 프롬프트 분배 원칙과 함께 보면, 어떤 작업을 어떻게 쪼갤지 감을 잡기 쉽다.
+판단 기준을 한 줄로 줄이면 이렇다. 작업들이 파일 수준에서 독립적인가? 그렇다면 worktree가 빛난다. 아니라면 굳이 나누지 마라. [Claude Code 마스터클래스 1편](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent/)에서 다룬 프롬프트 분배 원칙과 함께 보면, 어떤 작업을 어떻게 쪼갤지 감을 잡기 쉽다.
 
 판단 기준을 표로 정리하면:
 
@@ -269,4 +269,4 @@ git worktree prune  # 이미 삭제된 디렉토리의 참조 정리
 
 핵심은 간단하다: **독립적인 브랜치 → 독립적인 디렉토리 → 독립적인 Claude Code 세션**. 이 세 가지가 맞아떨어지면 서로 방해하지 않고 동시에 작업이 진행된다.
 
-처음에는 두 개의 worktree로 시작해서, 패턴이 익숙해지면 세 개로 늘려보는 걸 권한다. [에이전트 팀 구성을 더 체계적으로 하고 싶다면](/ko/blog/ko/claude-agent-teams-guide) 그 다음 단계로 넘어가면 된다. 그리고 이 병렬화가 실제로 내 작업 시간을 줄였는지는 감이 아니라 [Claude Code 사용량을 직접 뜯어본 기록](/ko/blog/ko/claude-code-insights-usage-analysis)처럼 숫자로 확인하는 게 좋다.
+처음에는 두 개의 worktree로 시작해서, 패턴이 익숙해지면 세 개로 늘려보는 걸 권한다. [에이전트 팀 구성을 더 체계적으로 하고 싶다면](/ko/blog/ko/claude-agent-teams-guide/) 그 다음 단계로 넘어가면 된다. 그리고 이 병렬화가 실제로 내 작업 시간을 줄였는지는 감이 아니라 [Claude Code 사용량을 직접 뜯어본 기록](/ko/blog/ko/claude-code-insights-usage-analysis/)처럼 숫자로 확인하는 게 좋다.

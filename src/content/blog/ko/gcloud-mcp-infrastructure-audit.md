@@ -96,11 +96,11 @@ Google Cloud의 Security Command Center나 Cloud Asset Inventory도 훌륭한 �
 2. <strong>컨텍스트 인식</strong>: AI가 리소스 간 관계를 이해하고 분석
 3. <strong>자동화된 보고서</strong>: 구조화된 분석 결과와 개선 권고사항 생성
 
-같은 맥락에서 AWS 환경의 MCP 활용은 [AWS MCP Server GA 실전 가이드](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026)에서 CloudWatch·IAM 에이전트 연동 방법을 확인할 수 있다.
+같은 맥락에서 AWS 환경의 MCP 활용은 [AWS MCP Server GA 실전 가이드](/ko/blog/ko/aws-mcp-server-ga-practical-guide-2026/)에서 CloudWatch·IAM 에이전트 연동 방법을 확인할 수 있다.
 
 ### 병렬 에이전트 아키텍처
 
-단일 에이전트로 모든 서비스를 순차적으로 점검하는 대신, [병렬 서브에이전트 패턴](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026)을 적용했다:
+단일 에이전트로 모든 서비스를 순차적으로 점검하는 대신, [병렬 서브에이전트 패턴](/ko/blog/ko/claude-agent-sdk-subagents-orchestration-tutorial-2026/)을 적용했다:
 
 ```mermaid
 flowchart TB
@@ -361,7 +361,7 @@ gcloud run services update my-service \
   --update-secrets=OPENAI_API_KEY=openai-api-key:latest
 ```
 
-AI 에이전트는 이러한 수정 명령어를 자동으로 생성하고, 승인 후 실행할 수 있다. 시크릿 유출 위험의 실태는 [AI 코딩 에이전트가 2,900만 시크릿을 유출시킨 사례](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security)에서 구체적으로 확인할 수 있다.
+AI 에이전트는 이러한 수정 명령어를 자동으로 생성하고, 승인 후 실행할 수 있다. 시크릿 유출 위험의 실태는 [AI 코딩 에이전트가 2,900만 시크릿을 유출시킨 사례](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security/)에서 구체적으로 확인할 수 있다.
 
 ### 예시: 방화벽 규칙 강화
 

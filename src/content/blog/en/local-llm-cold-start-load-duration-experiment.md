@@ -41,7 +41,7 @@ faq:
     answer: 'Yes, and that was the key thing I found. Even within "cold," it mattered whether the model file was still in the OS page cache. Stopped-but-cached, the 7.2GB model loaded in about 2.8 seconds; truly cold from disk (like right after a reboot) it took 9.0 seconds. So when you set a benchmark or SLA, base it on the post-reboot worst case, not the cached number.'
 ---
 
-I have been running a local agent on my MacBook for a few days. When I step away to do something else and come back to the same agent, the first reply is noticeably sluggish. The second and third are fine; only that first one drags. While writing [yesterday's post decomposing prefill and generation cost](/en/blog/en/local-llm-prefill-generation-latency-experiment), I wrote that I warmed the model before measuring "so model load time (load_duration) would not contaminate the numbers." That line nagged at me. The thing I deliberately threw away was exactly the delay I feel most often in daily use.
+I have been running a local agent on my MacBook for a few days. When I step away to do something else and come back to the same agent, the first reply is noticeably sluggish. The second and third are fine; only that first one drags. While writing [yesterday's post decomposing prefill and generation cost](/en/blog/en/local-llm-prefill-generation-latency-experiment/), I wrote that I warmed the model before measuring "so model load time (load_duration) would not contaminate the numbers." That line nagged at me. The thing I deliberately threw away was exactly the delay I feel most often in daily use.
 
 So today I measured the cost I excluded yesterday. The time it takes a model to land in memory, the thing we casually call cold start.
 
@@ -134,13 +134,13 @@ On the command line, the `OLLAMA_KEEP_ALIVE` environment variable or the API's `
 
 Measuring turned a few vague operational hunches into something concrete.
 
-First, for chat or agent use, give `keep_alive` plenty of room. If the model is evicted every time a user speaks, every turn is a cold start. Adding 2.5 seconds per turn on a 7.2GB model wrecks the conversation. As long as memory allows, set a long `keep_alive` or pin it with `-1`. This is a setting you can drop straight onto the deployment from my [Ollama plus FastAPI production serving guide](/en/blog/en/ollama-fastapi-production-deployment-guide-2026).
+First, for chat or agent use, give `keep_alive` plenty of room. If the model is evicted every time a user speaks, every turn is a cold start. Adding 2.5 seconds per turn on a 7.2GB model wrecks the conversation. As long as memory allows, set a long `keep_alive` or pin it with `-1`. This is a setting you can drop straight onto the deployment from my [Ollama plus FastAPI production serving guide](/en/blog/en/ollama-fastapi-production-deployment-guide-2026/).
 
 Second, warm the model once at startup. Have your boot script fire a dummy prompt to pay the cold start in advance, so the first real user never eats the 9 seconds. You cannot avoid paying the cold cost on the first request, but that first request does not have to be a real user.
 
 Third, routing across several models is pricier than it looks. Calling a different model per request triggers a reload each time, and if memory is tight they flush each other's page cache down to a true cold (#1 level). If you build a router that rotates four models, compute load cost times switch count up front.
 
-Fourth, benchmark inference speed only after warming. That is precisely why I warmed before measuring yesterday. Measure once while cold and `load_duration` stacks 9 seconds on top of prefill and generation, so you cannot tell whether the model is slow or the load is. The same principle held in my [output reproducibility experiment](/en/blog/en/llm-determinism-temperature-seed-experiment). Fix every variable except the one you are measuring.
+Fourth, benchmark inference speed only after warming. That is precisely why I warmed before measuring yesterday. Measure once while cold and `load_duration` stacks 9 seconds on top of prefill and generation, so you cannot tell whether the model is slow or the load is. The same principle held in my [output reproducibility experiment](/en/blog/en/llm-determinism-temperature-seed-experiment/). Fix every variable except the one you are measuring.
 
 Fifth, memory and responsiveness are a trade. A long `keep_alive` erases cold starts past the first request, but that model occupies RAM the whole time. Pin a 9.6GB model indefinitely and you shrink what other work can use; load another model and the page cache gets flushed, reviving cold. So I decided which models stay up first, gave a long `keep_alive` to the one or two I use most, and kept the rest short. Holding every model warm is a luxury only enough memory affords. Hammering in `keep_alive=-1` to drive cold start to zero just returns it as a bigger cold on the next model's load.
 

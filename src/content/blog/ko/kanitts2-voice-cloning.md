@@ -76,7 +76,7 @@ nineninesix-ai 팀이 Apache 2.0 라이선스로 공개한 이 프로젝트는 �
 
 기존의 고품질 TTS 모델들은 수십억 개의 파라미터와 10GB 이상의 VRAM을 요구하는 경우가 많았다. KaniTTS2는 400M 파라미터로 이를 달성하여, <strong>소비자급 GPU(RTX 3060 수준)</strong>에서도 동작할 수 있다.
 
-비슷한 경량화 트렌드로 [8GB VRAM에서 동작하는 Qwen3-Coder](/ko/blog/ko/qwen3-coder-8gb-vram)도 코딩 특화 모델에서 유사한 접근을 보여준다.
+비슷한 경량화 트렌드로 [8GB VRAM에서 동작하는 Qwen3-Coder](/ko/blog/ko/qwen3-coder-8gb-vram/)도 코딩 특화 모델에서 유사한 접근을 보여준다.
 
 ### 2. 완전한 오픈소스 사전학습 프레임워크
 
@@ -86,7 +86,7 @@ nineninesix-ai 팀이 Apache 2.0 라이선스로 공개한 이 프로젝트는 �
 - 특정 도메인(의료, 법률 등)에 특화된 음성 모델 구축
 - 특정 악센트나 방언에 맞춘 커스터마이징
 
-오픈소스 AI 경쟁이 가속화되는 흐름은 [2026년 2월 AI 모델 러시](/ko/blog/ko/ai-model-rush-february-2026) 분석에서 더 넓은 맥락으로 확인할 수 있다.
+오픈소스 AI 경쟁이 가속화되는 흐름은 [2026년 2월 AI 모델 러시](/ko/blog/ko/ai-model-rush-february-2026/) 분석에서 더 넓은 맥락으로 확인할 수 있다.
 
 ### 3. 보이스 클로닝 내장
 
@@ -165,7 +165,7 @@ KaniTTS2의 공개는 단순한 모델 릴리스를 넘어서, 음성 AI 민주�
 3. <strong>연구 가속화</strong>: 완전한 학습 파이프라인 공개는 TTS 연구의 재현성과 발전 속도를 높인다
 4. <strong>개인 프라이버시</strong>: 클라우드 API 대신 로컬에서 실행할 수 있어 음성 데이터의 프라이버시를 보장한다
 
-이 흐름은 음성 AI에 국한되지 않다. [DeepSeek V4 출시 임박](/ko/blog/ko/deepseek-v4-release)처럼 오픈 웨이트 LLM 생태계 전반에서 같은 민주화 기조가 이어지고 있다.
+이 흐름은 음성 AI에 국한되지 않다. [DeepSeek V4 출시 임박](/ko/blog/ko/deepseek-v4-release/)처럼 오픈 웨이트 LLM 생태계 전반에서 같은 민주화 기조가 이어지고 있다.
 
 ## 결론
 

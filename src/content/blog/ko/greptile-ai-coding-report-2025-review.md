@@ -88,11 +88,11 @@ graph TD
     end
 ```
 
-OpenAI가 여전히 시장을 리드하고 있지만, Anthropic의 성장세가 놀랍다. <strong>1,547배 성장</strong>이라는 수치는 Claude가 개발자 커뮤니티에서 얼마나 빠르게 채택되고 있는지를 보여준다. 실제로 [Claude Code를 4,516개 메시지에 걸쳐 분석한 개인 사용 패턴 데이터](/ko/blog/ko/claude-code-insights-usage-analysis)에서도 이런 의존도 증가를 확인할 수 있다.
+OpenAI가 여전히 시장을 리드하고 있지만, Anthropic의 성장세가 놀랍다. <strong>1,547배 성장</strong>이라는 수치는 Claude가 개발자 커뮤니티에서 얼마나 빠르게 채택되고 있는지를 보여준다. 실제로 [Claude Code를 4,516개 메시지에 걸쳐 분석한 개인 사용 패턴 데이터](/ko/blog/ko/claude-code-insights-usage-analysis/)에서도 이런 의존도 증가를 확인할 수 있다.
 
 ### 3. CLAUDE.md 파일의 표준화
 
-리포트에 따르면 <strong>전체 저장소의 67%가 CLAUDE.md 규칙 파일을 채택</strong>했다. 이는 AI 에이전트에게 코드베이스 컨텍스트를 제공하는 것이 개발 워크플로우의 표준으로 자리 잡았음을 의미한다. [CLAUDE.md 기반 워크플로우를 실제 프로젝트에 적용하는 구체적인 방법은 이 가이드](/ko/blog/ko/claude-code-best-practices)에서 확인할 수 있다.
+리포트에 따르면 <strong>전체 저장소의 67%가 CLAUDE.md 규칙 파일을 채택</strong>했다. 이는 AI 에이전트에게 코드베이스 컨텍스트를 제공하는 것이 개발 워크플로우의 표준으로 자리 잡았음을 의미한다. [CLAUDE.md 기반 워크플로우를 실제 프로젝트에 적용하는 구체적인 방법은 이 가이드](/ko/blog/ko/claude-code-best-practices/)에서 확인할 수 있다.
 
 17%의 저장소는 세 가지 형식(CLAUDE.md, .cursorrules, .github/copilot-instructions.md)을 모두 사용하고 있어, 멀티 AI 도구 환경이 현실화되고 있다.
 
@@ -194,7 +194,7 @@ graph TD
 | 보일러플레이트 코드 | <strong>90%</strong> | AI가 패턴 기반으로 즉시 생성 |
 | 라이브러리 학습 | <strong>80%</strong> | 문서 대신 컨텍스트 기반 예제 제공 |
 | 디버깅 | <strong>70%</strong> | 에러 원인 분석 자동화 |
-| 테스트 작성 | <strong>75%</strong> | 테스트 케이스 자동 생성 ([E2E 테스트 자동화 실전 사례 참고](/ko/blog/ko/e2e-page-test-automation-claude-code)) |
+| 테스트 작성 | <strong>75%</strong> | 테스트 케이스 자동 생성 ([E2E 테스트 자동화 실전 사례 참고](/ko/blog/ko/e2e-page-test-automation-claude-code/)) |
 | 코드 리팩토링 | <strong>60%</strong> | 패턴 인식 및 개선안 제시 |
 
 ## 생산성 향상의 진정한 의미

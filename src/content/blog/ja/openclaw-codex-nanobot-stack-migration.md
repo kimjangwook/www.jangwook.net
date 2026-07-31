@@ -104,7 +104,7 @@ OpenClawのような全部入りツールの罠はここにあります。マル
 
 3月にAnthropicがClaude Code Channelsを発表しました。Telegramでメッセージを送るとローカル端末のClaudeが応答する機能で、ちょうどOpenClawのTelegramチャネルとほぼ同じUXを提供してくれるものです。私はこれを暫定的なつなぎとして使いました。「OpenClawがなくてもTelegramからClaudeを呼べるなら、OAuth遮断の即時的な痛みは減る」という計算です。
 
-実際よく動きました。移動中にTelegramで「今日の分析レポート回しといて」と送れば、家のmac miniが受け取って処理し、結果をTelegramに返してくる。一ヶ月近くこのスタイルで使っていました。[Channelsの使用記](/ja/blog/ja/claude-code-channels-telegram-bridge)にも書いたとおりです。
+実際よく動きました。移動中にTelegramで「今日の分析レポート回しといて」と送れば、家のmac miniが受け取って処理し、結果をTelegramに返してくる。一ヶ月近くこのスタイルで使っていました。[Channelsの使用記](/ja/blog/ja/claude-code-channels-telegram-bridge/)にも書いたとおりです。
 
 問題はChannelsが「メッセージ-応答」モデルだという点です。状態を持たない。「ゆうべ走らせたバックフィルジョブ、どこまで進んだ?」と聞いても、Channelsはそのバックフィルジョブの存在を知りません。毎回新しいセッションに入って一から尋ねるようなものです。OpenClawはチャネルごとに文脈を保持してくれていましたが、Channelsはそうではない。
 
@@ -122,7 +122,7 @@ OpenClawが重い理由はモデル依存ではありません。50を超える�
 
 これはOpenClawの責任というより、私がOpenClawを誤って使っていたということです。OpenClawは[チャネル連携とマルチエージェントルーティング](https://docs.openclaw.ai/concepts/multi-agent)を一箇所でオーケストレーションするツールです。そこで私が実際に使っていたのは「Claudeで記事を書く + Telegramで結果を受け取る」程度でした。95%の機能を使わないまま100%の重さを背負っていたわけです。
 
-これをOpenClawがよく作られたツールであることを否定する意味で受け取らないでほしいです。私はいまでも[OpenClawインストールガイド](/ja/blog/ja/openclaw-installation-tutorial)に書いたあの長所たち — マルチモデル、チャネルシステム、ノードグラフ — を認めています。ただ、その長所たちが私の作業には必要なかった、というだけのことです。
+これをOpenClawがよく作られたツールであることを否定する意味で受け取らないでほしいです。私はいまでも[OpenClawインストールガイド](/ja/blog/ja/openclaw-installation-tutorial/)に書いたあの長所たち — マルチモデル、チャネルシステム、ノードグラフ — を認めています。ただ、その長所たちが私の作業には必要なかった、というだけのことです。
 
 ## Nanobotに乗り換えたあと
 

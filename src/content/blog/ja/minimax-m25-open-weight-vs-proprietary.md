@@ -69,7 +69,7 @@ MiniMax M2.5は229Bパラメータのオープンウェイトモデルで、Hugg
 
 ### SWE-Bench Verified（コーディング）
 
-SWE-Bench Verifiedは実際のGitHubイシューを解決する能力を測定するベンチマークです。[マルチエージェントシステムのSWE-Benchパフォーマンス](/ja/blog/ja/multi-agent-swe-bench-verdent)も参考にしてください。
+SWE-Bench Verifiedは実際のGitHubイシューを解決する能力を測定するベンチマークです。[マルチエージェントシステムのSWE-Benchパフォーマンス](/ja/blog/ja/multi-agent-swe-bench-verdent/)も参考にしてください。
 
 | モデル | スコア | 種類 |
 |--------|--------|------|
@@ -94,7 +94,7 @@ SWE-Bench Verifiedは実際のGitHubイシューを解決する能力を測定�
 
 ## コスト革命：性能だけでなく価格でも圧倒
 
-M2.5の衝撃は性能だけではありません。<strong>コストパフォーマンス</strong>が桁違いです。[2026年主要LLM API価格比較](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)と合わせて確認すると、その差がより鮮明になります。
+M2.5の衝撃は性能だけではありません。<strong>コストパフォーマンス</strong>が桁違いです。[2026年主要LLM API価格比較](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)と合わせて確認すると、その差がより鮮明になります。
 
 | 項目 | M2.5 Lightning | M2.5 Standard |
 |------|---------------|---------------|

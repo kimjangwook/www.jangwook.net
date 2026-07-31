@@ -44,11 +44,11 @@ faq:
 
 > <strong>系列: DeNA LLM 学习</strong> (1/5)
 >
-> 1. <strong>[Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals)</strong> ← 当前文章
+> 1. <strong>[Part 1: LLM基础与2025年AI现状](/zh/blog/zh/dena-llm-study-part1-fundamentals/)</strong> ← 当前文章
 > 2. Part 2: 结构化输出与多LLM管道
-> 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)
-> 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)
+> 3. [Part 3: 模型训练方法论](/zh/blog/zh/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag/)
+> 5. [Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design/)
 
 ## 哪些读者适合读 / 什么情况下可以跳过
 
@@ -63,8 +63,8 @@ faq:
 
 <strong>可以跳过、直接看下一篇，如果你</strong>
 
-- 已经能讲清楚Transformer、Next Token Prediction和RLHF。那本篇当复习快速浏览即可，直接跳到讲结构化输出的Part 2，或者跳到讲检索结合的[Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag)。
-- 目标是设计会调用工具的智能体，而非单次调用。那么[Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design)更对口。
+- 已经能讲清楚Transformer、Next Token Prediction和RLHF。那本篇当复习快速浏览即可，直接跳到讲结构化输出的Part 2，或者跳到讲检索结合的[Part 4: RAG架构与最新趋势](/zh/blog/zh/dena-llm-study-part4-rag/)。
+- 目标是设计会调用工具的智能体，而非单次调用。那么[Part 5: 智能体设计与多智能体编排](/zh/blog/zh/dena-llm-study-part5-agent-design/)更对口。
 - 想深入研究模型内部的训练过程。那么Part 3的训练方法论比这种基础对比更合适。
 
 一句话：想画一遍概念地图时就读它；如果你已经有地图了，直接跳到你需要的那一篇。

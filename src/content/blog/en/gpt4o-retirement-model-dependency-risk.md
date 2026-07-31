@@ -80,7 +80,7 @@ Companies running production systems that directly call the GPT-4o API face the 
 - <strong>API Endpoint Migration</strong>: Adapting to changes in GPT-4o-specific parameters and response formats
 - <strong>Prompt Re-optimization</strong>: The cost of rewriting prompts for the new model
 - <strong>Performance Regression Testing</strong>: Verifying existing workflows maintain quality on the new model
-- <strong>Cost Structure Changes</strong>: Budget restructuring due to token pricing changes in successor models (see [LLM API pricing comparison: GPT-5 vs Claude vs Gemini vs DeepSeek](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek))
+- <strong>Cost Structure Changes</strong>: Budget restructuring due to token pricing changes in successor models (see [LLM API pricing comparison: GPT-5 vs Claude vs Gemini vs DeepSeek](/en/blog/en/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/))
 
 ## What Is Model Dependency Risk
 
@@ -120,7 +120,7 @@ Anthropic's Claude has shown remarkable growth in the enterprise market since la
 
 <strong>1. Safety-First Philosophy</strong>
 
-Anthropic delivers safety technologies like Constitutional AI in enterprise-ready formats. This approach has earned high trust in heavily regulated sectors like finance, healthcare, and legal. In fact, [42% of generative AI deployments fail due to the absence of top-down governance](/en/blog/en/enterprise-ai-adoption-topdown).
+Anthropic delivers safety technologies like Constitutional AI in enterprise-ready formats. This approach has earned high trust in heavily regulated sectors like finance, healthcare, and legal. In fact, [42% of generative AI deployments fail due to the absence of top-down governance](/en/blog/en/enterprise-ai-adoption-topdown/).
 
 <strong>2. Consistent API Policies</strong>
 
@@ -229,7 +229,7 @@ graph LR
 
 ### Long-Term Perspective
 
-The AI model market will change even faster going forward. [In February 2026 alone, more than 7 major models are launching simultaneously](/en/blog/en/ai-model-rush-february-2026). In this environment, <strong>going all-in on a single model is accumulating technical debt</strong>.
+The AI model market will change even faster going forward. [In February 2026 alone, more than 7 major models are launching simultaneously](/en/blog/en/ai-model-rush-february-2026/). In this environment, <strong>going all-in on a single model is accumulating technical debt</strong>.
 
 ## Conclusion
 
@@ -246,4 +246,4 @@ AI models are tools. The real competitive advantage isn't depending on any singl
 
 - [OpenAI Model Deprecation Policy](https://platform.openai.com/docs/deprecations)
 - [Anthropic Claude Enterprise](https://www.anthropic.com/enterprise)
-- [February 2026 AI Model Rush Analysis](/en/blog/en/ai-model-rush-february-2026)
+- [February 2026 AI Model Rush Analysis](/en/blog/en/ai-model-rush-february-2026/)

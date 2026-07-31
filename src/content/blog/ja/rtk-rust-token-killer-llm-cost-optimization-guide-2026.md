@@ -64,7 +64,7 @@ RTK(Rust Token Killer)は、その問題をピンポイントで狙ったツー�
 - **Truncation**: 一定以上の長さの出力を切り捨てて`...(truncated)`と表示
 - **Deduplication**: 繰り返し出力の重複除去
 
-Claude Codeとの統合は`PreToolUse`フックを通じて行われる。[Claude Codeのフックシステム](/ja/blog/ja/claude-code-hooks-workflow)を知っていれば理解しやすい構造だ — `rtk init -g`一発で`~/.claude/hooks/`以下に自動登録される。その後Claude Codeが`git status`を実行すると、フックがそれをインターセプトして`rtk git status`に書き換える。Claude Codeはこの過程を認識しない。
+Claude Codeとの統合は`PreToolUse`フックを通じて行われる。[Claude Codeのフックシステム](/ja/blog/ja/claude-code-hooks-workflow/)を知っていれば理解しやすい構造だ — `rtk init -g`一発で`~/.claude/hooks/`以下に自動登録される。その後Claude Codeが`git status`を実行すると、フックがそれをインターセプトして`rtk git status`に書き換える。Claude Codeはこの過程を認識しない。
 
 対応エージェント: Claude Code、Cursor、Windsurf、Cline、GitHub Copilot CLI、Gemini CLI、Antigravity、Hermes。単一のRustバイナリで依存関係はゼロ。
 
@@ -211,7 +211,7 @@ rtk init -g
 LLMエージェントコストを削減する方法は大きく3レイヤーある:
 
 1. **モデル選択**: 安いモデルに切り替え(Haiku、Flashなど)
-2. **APIレイヤー**: [プロンプトキャッシング](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide)、バッチAPI、[MCPスキーマ圧縮](/ja/blog/ja/mcp2cli-token-cost-optimization)
+2. **APIレイヤー**: [プロンプトキャッシング](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide/)、バッチAPI、[MCPスキーマ圧縮](/ja/blog/ja/mcp2cli-token-cost-optimization/)
 3. **シェルレイヤー**: RTK(コマンド出力圧縮)
 
 RTKは3番のレイヤーに属する。まだここまで最適化していないプロジェクトなら導入価値がある。しかし既にモデル選択やキャッシングでコストを管理しているなら、RTKの貢献分は相対的に小さくなる。
@@ -259,7 +259,7 @@ rtk session
 | MCPスキーマ圧縮(mcp2cli) | API | MCPツール注入 | 中 | 96〜99% |
 | RTK | シェル | Bashコマンド出力 | 低 | 0〜90%(コマンドによる) |
 
-[プロンプトキャッシング](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide)は繰り返しワークフローで強力だ。[MCPスキーマ圧縮](/ja/blog/ja/mcp2cli-token-cost-optimization)は多くのMCPツールを使う環境で劇的な節約が可能だ。RTKは実装の摩擦が最も低く、既存のワークフローをまったく変えずに済む点で「とりあえず入れておく」ツールに近い。
+[プロンプトキャッシング](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide/)は繰り返しワークフローで強力だ。[MCPスキーマ圧縮](/ja/blog/ja/mcp2cli-token-cost-optimization/)は多くのMCPツールを使う環境で劇的な節約が可能だ。RTKは実装の摩擦が最も低く、既存のワークフローをまったく変えずに済む点で「とりあえず入れておく」ツールに近い。
 
 エージェントのコストは複数の要素が複合的に積み重なる構造だ。RTKは「シェルコマンド出力」というその一角を扱い、それを透過的にこなす。「コストスタックのもう一つのレイヤー」として捉えるのが正しい見方で、銀の弾丸ではない。
 

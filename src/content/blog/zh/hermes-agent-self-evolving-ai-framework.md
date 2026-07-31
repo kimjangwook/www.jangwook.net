@@ -96,7 +96,7 @@ Hermes的方法不同：
 2. 技能文档保存在`~/.hermes/plugins/`或`.hermes/plugins/`
 3. 下次收到类似任务时，在工具发现阶段引用这些文档
 
-这个模式让我觉得有趣的原因是，它在结构上与我每天使用的Claude Code的CLAUDE.md相似。在CLAUDE.md中写下"在这个项目中遵循这些规则"，下次会话时代理就会读取并据此行动。Hermes只是将这个过程自动化了。关于代理如何跨会话保持上下文的不同方法，可以在[Hindsight MCP代理内存架构分析](/zh/blog/zh/hindsight-mcp-agent-memory-learning)中对比。
+这个模式让我觉得有趣的原因是，它在结构上与我每天使用的Claude Code的CLAUDE.md相似。在CLAUDE.md中写下"在这个项目中遵循这些规则"，下次会话时代理就会读取并据此行动。Hermes只是将这个过程自动化了。关于代理如何跨会话保持上下文的不同方法，可以在[Hindsight MCP代理内存架构分析](/zh/blog/zh/hindsight-mcp-agent-memory-learning/)中对比。
 
 但说实话，"自动生成的技能文档质量"还不够稳定。简单的文件操作或API调用能产生相当好用的技能，但高度依赖上下文的复杂任务有时会遗漏关键点。v0.7.0在NousResearch/hermes-agent-self-evolution仓库中加入了基于DSPy + GEPA的进化式自我改进，但这还处于实验阶段。
 
@@ -134,9 +134,9 @@ v0.7.0最大的变化是内存变成了插件系统。之前会话结束时上�
 
 **Claude Code/OpenClaw** — 编码专精，IDE集成强。CLAUDE.md式项目规则虽然手动，但更可控。如果主要目的是写代码，Claude Code仍然更好。
 
-**LangChain/CrewAI** — 工作流编排能力强，但没有"代理自主成长"的概念。按预定义图执行。多代理协作如何影响基准测试性能，可参考[SWE-bench多代理性能分析](/zh/blog/zh/multi-agent-swe-bench-verdent)。
+**LangChain/CrewAI** — 工作流编排能力强，但没有"代理自主成长"的概念。按预定义图执行。多代理协作如何影响基准测试性能，可参考[SWE-bench多代理性能分析](/zh/blog/zh/multi-agent-swe-bench-verdent/)。
 
-**Hermes Agent** — 作为通用代理，自我改进是核心。比起编码，更适合日常自动化、研究和通信枢纽。多平台支持特别强。企业级代理部署的实际案例，可看[Stripe自主编码代理处理1,300个PR的案例研究](/zh/blog/zh/stripe-minions-autonomous-coding-agents-1300-prs)。
+**Hermes Agent** — 作为通用代理，自我改进是核心。比起编码，更适合日常自动化、研究和通信枢纽。多平台支持特别强。企业级代理部署的实际案例，可看[Stripe自主编码代理处理1,300个PR的案例研究](/zh/blog/zh/stripe-minions-autonomous-coding-agents-1300-prs/)。
 
 坦白说，我觉得"自我进化"这个词可能有些被高估了。目前的水平更接近"把任务记录文档化后复用"，而非像人类从经验中学习那样本质性地改变。但"文档化自动化"本身已经具有相当大的价值，这点不得不承认。
 

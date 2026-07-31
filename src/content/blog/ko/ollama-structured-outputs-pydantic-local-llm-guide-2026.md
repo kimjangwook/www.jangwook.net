@@ -218,7 +218,7 @@ Dispatch: OK (type-safe)
 
 `Literal["web_search", "read_file", ...]`로 선언했기 때문에, `tool_call.tool_name`은 항상 저 네 값 중 하나다. 존재하지 않는 도구를 모델이 만들어내더라도 Pydantic이 `ValidationError`를 던진다. `if tool_call.tool_name == "web_search"` 분기가 안전하게 동작하는 이유다.
 
-이 패턴은 Cloud API에서 function calling을 쓰는 것과 근본적으로 같다. 로컬에서 [Claude Agent SDK의 Tool Use 패턴](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)과 비교해보면 설계 차이가 흥미롭다. Cloud LLM은 도구 선택 자체를 모델이 "native"하게 처리하는 반면, Ollama 쪽은 JSON schema 강제 + Pydantic 검증이라는 명시적 레이어가 필요하다.
+이 패턴은 Cloud API에서 function calling을 쓰는 것과 근본적으로 같다. 로컬에서 [Claude Agent SDK의 Tool Use 패턴](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)과 비교해보면 설계 차이가 흥미롭다. Cloud LLM은 도구 선택 자체를 모델이 "native"하게 처리하는 반면, Ollama 쪽은 JSON schema 강제 + Pydantic 검증이라는 명시적 레이어가 필요하다.
 
 ## Gemma4와 스키마 복잡도: 내가 발견한 한계
 
@@ -230,7 +230,7 @@ Dispatch: OK (type-safe)
 
 **스키마 크기.** 큰 Pydantic 모델의 JSON schema는 수백 토큰에 달한다. 이 자체가 컨텍스트를 차지하므로 실제 프롬프트에 쓸 수 있는 공간이 줄어든다. 복잡한 스키마일수록 더 강력한 모델이 필요하다.
 
-[Ollama FastAPI 배포 가이드](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026)에서 다룬 대로 Ollama를 API 서버로 배포한 뒤 이 패턴을 쓰면, 스키마 복잡도에 따라 모델을 런타임에 교체하는 것도 고려할 수 있다.
+[Ollama FastAPI 배포 가이드](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026/)에서 다룬 대로 Ollama를 API 서버로 배포한 뒤 이 패턴을 쓰면, 스키마 복잡도에 따라 모델을 런타임에 교체하는 것도 고려할 수 있다.
 
 ## 중첩 스키마 실전 예제: 주의할 점
 
@@ -340,7 +340,7 @@ print(f"Key phrases: {result.key_phrases}")
 
 **스트리밍.** `stream: true`로 설정하면 생성 중인 JSON을 점진적으로 받을 수 있다. `ijson` 같은 스트리밍 JSON 파서와 결합하면 큰 응답도 메모리 효율적으로 처리할 수 있다.
 
-**모델 선택 전략.** 간단한 추출은 `gemma4:e4b`(빠름), 복잡한 중첩 스키마는 `gemma4:12b-it-qat`(정확함)로 런타임에 분기하는 패턴이 비용-품질 균형에서 유리하다. [Pydantic AI로 에이전트 전체를 구조화하는 방법](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 보면 이 판단을 프레임워크 레벨에서 추상화하는 방식을 볼 수 있다.
+**모델 선택 전략.** 간단한 추출은 `gemma4:e4b`(빠름), 복잡한 중첩 스키마는 `gemma4:12b-it-qat`(정확함)로 런타임에 분기하는 패턴이 비용-품질 균형에서 유리하다. [Pydantic AI로 에이전트 전체를 구조화하는 방법](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)을 보면 이 판단을 프레임워크 레벨에서 추상화하는 방식을 볼 수 있다.
 
 Gemma4 기반 에이전트를 직접 돌리고 있다면, 오늘 바로 `format` 파라미터 하나를 추가하는 것만으로 파싱 안정성이 크게 달라진다. 특히 에이전트 도구 선택처럼 잘못된 응답이 바로 오류로 이어지는 경로에서 더 그렇다.
 

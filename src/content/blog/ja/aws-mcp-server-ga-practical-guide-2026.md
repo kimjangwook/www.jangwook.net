@@ -56,7 +56,7 @@ AWS MCPサーバーは、Claude Code、Cursor、CodexといったAIコーディ�
 
 `uvx awslabs.cloudwatch-mcp-server@latest` 1行で、Claude CodeがCloudWatch Logsを直接照会し、アラーム状態を確認し、Logs Insightsクエリを実行できるようになる。IAMコンソールに入って手動で設定を確認する必要がなくなる。
 
-[MCPサーバーを自作した経験](/ja/blog/ja/mcp-server-build-practical-guide-2026)があれば理解が早い。AWS MCPサーバーはAWSが公式に管理するMCPサーバーコレクションだ。`awslabs/mcp` GitHubリポジトリで公開されており、PyPIからインストールできる。
+[MCPサーバーを自作した経験](/ja/blog/ja/mcp-server-build-practical-guide-2026/)があれば理解が早い。AWS MCPサーバーはAWSが公式に管理するMCPサーバーコレクションだ。`awslabs/mcp` GitHubリポジトリで公開されており、PyPIからインストールできる。
 
 ### GAが意味すること
 
@@ -198,7 +198,7 @@ attach_user_policy / detach_user_policy
 simulate_principal_policy   ← 核心ツール
 ```
 
-特に注目したのは`simulate_principal_policy`だ。特定のIAMプリンシパル（ユーザー/ロール）が特定のアクションを実行できるか、実際にAWSにリクエストを送らずシミュレーションする。[MCPセキュリティ脆弱性の30 CVE問題](/ja/blog/ja/mcp-security-crisis-30-cves-enterprise-hardening)を考えると、エージェントがIAM権限を事前検証してから実行できれば、権限超過実行の事故を予防できる。
+特に注目したのは`simulate_principal_policy`だ。特定のIAMプリンシパル（ユーザー/ロール）が特定のアクションを実行できるか、実際にAWSにリクエストを送らずシミュレーションする。[MCPセキュリティ脆弱性の30 CVE問題](/ja/blog/ja/mcp-security-crisis-30-cves-enterprise-hardening/)を考えると、エージェントがIAM権限を事前検証してから実行できれば、権限超過実行の事故を予防できる。
 
 実際のテスト結果:
 
@@ -254,7 +254,7 @@ IAMポリシーでこのキーを使い、エージェント権限を別途制�
 
 このポリシーを追加すれば、人間はIAMユーザーを作成できるが、Claude Code（MCPを通じたエージェント）はIAMユーザー作成ができない。同じAWS認証情報を使いながら、エージェントの権限を追加制限できる。
 
-[Claude Agent SDKでTool Useを実装した際](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)にエージェント権限制御がいかに複雑かを感じたが、この条件キーはAWS自体のインフラレベルでその問題を解決する。
+[Claude Agent SDKでTool Useを実装した際](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)にエージェント権限制御がいかに複雑かを感じたが、この条件キーはAWS自体のインフラレベルでその問題を解決する。
 
 ## アーキテクチャ図
 
@@ -274,7 +274,7 @@ IAMポリシーでこのキーを使い、エージェント権限を別途制�
 | AWS Pricing MCP Server | コスト推定 | 別途 |
 | EKS MCP Server | EKSクラスター管理 | 別途 |
 
-[FastMCPでPython MCPサーバーを作った時](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)は各APIごとにツールを個別定義する必要があったが、`aws-api-mcp-server`は単一ツールで全AWS APIを呼び出せる。これは設計として興味深い。
+[FastMCPでPython MCPサーバーを作った時](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)は各APIごとにツールを個別定義する必要があったが、`aws-api-mcp-server`は単一ツールで全AWS APIを呼び出せる。これは設計として興味深い。
 
 ## 率直な評価 — 良い点と残念な点
 

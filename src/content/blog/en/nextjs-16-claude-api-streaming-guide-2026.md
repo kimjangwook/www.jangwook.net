@@ -186,7 +186,7 @@ Two things worth noting here.
 
 <strong>First, `client.messages.stream()` returns an `AsyncIterableStream`.</strong> The `for await...of` loop receives chunks one at a time and pushes them to the client. When the stream ends, a `[DONE]` signal is sent and the controller closes.
 
-<strong>Second, `ReadableStream` + `TextEncoder` is Web Streams API standard.</strong> Next.js Route Handlers use Web Streams, not Node.js `stream` module. This is why the code looks different from [FastAPI streaming](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026) or Express implementations. `new ReadableStream` may feel unfamiliar, but it's the standard across modern JavaScript runtimes — Cloudflare Workers, Deno, Bun all work the same way.
+<strong>Second, `ReadableStream` + `TextEncoder` is Web Streams API standard.</strong> Next.js Route Handlers use Web Streams, not Node.js `stream` module. This is why the code looks different from [FastAPI streaming](/en/blog/en/fastapi-claude-api-streaming-production-guide-2026/) or Express implementations. `new ReadableStream` may feel unfamiliar, but it's the standard across modern JavaScript runtimes — Cloudflare Workers, Deno, Bun all work the same way.
 
 The filter on `content_block_delta` events: Anthropic's streaming protocol emits multiple event types (`message_start`, `content_block_start`, `content_block_delta`, `message_delta`, `message_stop`). Only `text_delta` typed `content_block_delta` events carry actual text content.
 
@@ -424,12 +424,12 @@ Each message starts with `data:` and ends with two newlines. The `TextEncoder`/`
 | Learning value | Forces you to understand Web Streams and SSE | Use immediately |
 | Best for | Understanding streaming mechanics | Rapid prototyping |
 
-My recommendation: build it the raw way once, then use the SDK. You'll understand what the SDK is actually handling for you. See [Building a Claude Streaming Agent with Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026) for the SDK-based comparison.
+My recommendation: build it the raw way once, then use the SDK. You'll understand what the SDK is actually handling for you. See [Building a Claude Streaming Agent with Vercel AI SDK](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026/) for the SDK-based comparison.
 
 ## Next Steps
 
-1. **Add Tool Use** — Give Claude function-calling ability → [Claude Agent SDK Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026)
-2. **Prompt Caching** — Cut API costs up to 90% → [Claude API Prompt Caching in Practice](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide)
+1. **Add Tool Use** — Give Claude function-calling ability → [Claude Agent SDK Complete Guide](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/)
+2. **Prompt Caching** — Cut API costs up to 90% → [Claude API Prompt Caching in Practice](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide/)
 3. **Stronger error handling** — AbortController, retry logic, error SSE events
 4. **Stream cancellation** — Cancel button to stop generation mid-stream
 5. **Vercel deployment** — Apply the notes above and go live

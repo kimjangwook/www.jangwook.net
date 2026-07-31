@@ -50,7 +50,7 @@ relatedPosts:
 
 ## 概要
 
-大規模言語モデル（LLM）の推論能力を強化するための強化学習（RL）ファインチューニングは、ここ数年大きな注目を集めてきました。この研究に入る前にLLMの基本的な仕組みを理解したい方は、[DeNA LLMスタディPart 1: LLM基礎と2025年AI現状](/ja/blog/ja/dena-llm-study-part1-fundamentals)が良い出発点です。しかし、<strong>初期成功率が極めて低い難問</strong>では学習信号がほとんど得られず、RL学習が停滞（プラトー）するという根本的な限界がありました。
+大規模言語モデル（LLM）の推論能力を強化するための強化学習（RL）ファインチューニングは、ここ数年大きな注目を集めてきました。この研究に入る前にLLMの基本的な仕組みを理解したい方は、[DeNA LLMスタディPart 1: LLM基礎と2025年AI現状](/ja/blog/ja/dena-llm-study-part1-fundamentals/)が良い出発点です。しかし、<strong>初期成功率が極めて低い難問</strong>では学習信号がほとんど得られず、RL学習が停滞（プラトー）するという根本的な限界がありました。
 
 MIT研究チーム（Shobhita Sundaram他）が発表した論文<strong>「Teaching Models to Teach Themselves: Reasoning at the Edge of Learnability」</strong>は、この問題に対する革新的な解答を提示します。それが<strong>SOAR（Self-improvement through Open-ended Automated Reasoning）</strong>— LLMが自ら学習用カリキュラムを生成し、解けなかった問題を段階的に克服するフレームワークです。
 
@@ -140,7 +140,7 @@ SOARは人間教育の<strong>足場かけ（scaffolding）</strong>概念をAI�
 
 ### 自己進化するAIシステムの可能性
 
-この研究は、外部の人間の監督なしにAIが自律的に学習カリキュラムを設計・実行する<strong>自律的自己改善（autonomous self-improvement）</strong>の可能性を開きます。類似の自己改善メカニズムの実際のオープンソース実装として、[Hermes Agent — 作業するたびに自ら進化するオープンソースAIエージェント](/ja/blog/ja/hermes-agent-self-evolving-ai-framework)がプロダクションレベルでの実現例を示しています。安全性の観点から慎重なアプローチが必要ですが、技術的可能性は明確に実証されました。
+この研究は、外部の人間の監督なしにAIが自律的に学習カリキュラムを設計・実行する<strong>自律的自己改善（autonomous self-improvement）</strong>の可能性を開きます。類似の自己改善メカニズムの実際のオープンソース実装として、[Hermes Agent — 作業するたびに自ら進化するオープンソースAIエージェント](/ja/blog/ja/hermes-agent-self-evolving-ai-framework/)がプロダクションレベルでの実現例を示しています。安全性の観点から慎重なアプローチが必要ですが、技術的可能性は明確に実証されました。
 
 ## 結論
 

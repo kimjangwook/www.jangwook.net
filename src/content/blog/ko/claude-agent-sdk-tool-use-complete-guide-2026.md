@@ -295,7 +295,7 @@ Valid input (required field present): True
 Invalid input (missing required field): False, Missing required field: location
 ```
 
-[FastAPI + Claude API 스트리밍 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)에서 다룬 에러 분류 전략을 도구 에러에도 적용하면 프로덕션 안정성이 올라간다.
+[FastAPI + Claude API 스트리밍 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026/)에서 다룬 에러 분류 전략을 도구 에러에도 적용하면 프로덕션 안정성이 올라간다.
 
 ## 다중 도구 호출 처리: 병렬 실행이 가능한가
 
@@ -545,7 +545,7 @@ Tool Use를 실제로 써보면서 느낀 한계를 정리한다.
 
 <strong>도구 정의 품질이 직결됨</strong>: `description`이 애매하면 모델이 엉뚱한 도구를 선택하거나 도구를 안 쓴다. 도구 설명을 잘 쓰는 것 자체가 별도의 프롬프트 엔지니어링이다. 프레임워크가 이 부분을 자동화해주지 않는다.
 
-나는 Tool Use가 과소평가됐다고 본다. 에이전트 프레임워크들이 화려한 추상화를 제공하지만, 결국 그 내부에는 이 패턴이 있다. [PydanticAI의 타입 안전한 도구 정의 방식](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)처럼 프레임워크가 JSON 스키마 생성을 자동화해주는 건 편리하지만, 기반 메커니즘을 직접 이해하고 있어야 디버깅할 때 막히지 않는다.
+나는 Tool Use가 과소평가됐다고 본다. 에이전트 프레임워크들이 화려한 추상화를 제공하지만, 결국 그 내부에는 이 패턴이 있다. [PydanticAI의 타입 안전한 도구 정의 방식](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)처럼 프레임워크가 JSON 스키마 생성을 자동화해주는 건 편리하지만, 기반 메커니즘을 직접 이해하고 있어야 디버깅할 때 막히지 않는다.
 
 ## 언제 Tool Use를 쓰고, 언제 피할까
 
@@ -565,7 +565,7 @@ Tool Use를 실제로 써보면서 느낀 한계를 정리한다.
 - 비용 상한이 빡빡한 대량 배치. 도구 정의당 ~250 토큰 고정 오버헤드와 컨텍스트 누적이 호출 수에 곱해진다. 수백만 건 배치라면 도구 없는 단일 호출이 더 경제적일 수 있다.
 - 결정성(determinism)이 필수인 파이프라인. 도구 선택 자체가 비결정적이라, 매번 같은 도구 호출 순서가 보장돼야 하는 워크플로우라면 규칙 기반 코드가 낫다.
 
-기준은 단순하다. "모델이 직접 답하면 틀릴 수 있는가, 아니면 모델이 모르는 걸 가져와야 하는가"를 자문해보면 된다. 둘 중 하나면 Tool Use, 아니면 일반 호출이다. 더 무거운 멀티에이전트 오케스트레이션이 필요해지는 시점은 [Claude Agent Teams로 다중 에이전트를 구성](/ko/blog/ko/claude-agent-teams-guide)할 때인데, 그 전에 단일 에이전트의 Tool Use부터 확실히 잡아두는 게 순서다.
+기준은 단순하다. "모델이 직접 답하면 틀릴 수 있는가, 아니면 모델이 모르는 걸 가져와야 하는가"를 자문해보면 된다. 둘 중 하나면 Tool Use, 아니면 일반 호출이다. 더 무거운 멀티에이전트 오케스트레이션이 필요해지는 시점은 [Claude Agent Teams로 다중 에이전트를 구성](/ko/blog/ko/claude-agent-teams-guide/)할 때인데, 그 전에 단일 에이전트의 Tool Use부터 확실히 잡아두는 게 순서다.
 
 ## 참고한 공식 문서
 
@@ -576,7 +576,7 @@ Tool Use를 실제로 써보면서 느낀 한계를 정리한다.
 - [Claude Agent SDK 개요](https://platform.claude.com/docs/en/agent-sdk/overview): 도구 루프를 직접 구현하는 대신 SDK가 추상화해주는 상위 계층.
 - [anthropic/claude-agent-sdk-python (GitHub)](https://github.com/anthropics/claude-agent-sdk-python): 공식 파이썬 SDK 저장소와 실행 가능한 예제 코드.
 
-MCP로 도구를 서버화해 재사용하고 싶다면 [FastMCP로 파이썬 MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026) 글이 이 Tool Use 패턴을 표준 프로토콜 위에 올리는 다음 단계를 다룬다.
+MCP로 도구를 서버화해 재사용하고 싶다면 [FastMCP로 파이썬 MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/) 글이 이 Tool Use 패턴을 표준 프로토콜 위에 올리는 다음 단계를 다룬다.
 
 ## 다섯 줄로 압축한 Tool Use 핵심
 

@@ -128,7 +128,7 @@ function validateFaqPage(doc) {
     - mainEntity[1] name 누락 — 필수
 ```
 
-정상 샘플은 스키마 구조 검사를 통과한다(`PASS`). 그런데 그 옆줄은 `DEPRECATED`다. 검증기가 아무리 초록불을 켜도, Google 검색이 그걸 렌더링하는 단계는 이미 닫혔다. 이게 오늘 글의 한 줄 요약이다. 스키마 유효성과 노출 가치는 다른 축이고, CI 게이트는 앞의 것만 본다. 이 사각지대는 [CI에서 구조화 데이터를 자동 검증하는 파이프라인](/ko/blog/ko/validate-structured-data-ci-jsonld-2026)을 운영하는 사람이라면 특히 유념해야 한다. 게이트가 통과했다고 트래픽 가치가 붙는 게 아니다. 검증기가 놓치는 축은 하나 더 있다. 값 자체가 말이 되는가. [음식점 영업시간 마크업을 3계층으로 검증해보니](/ko/blog/ko/restaurant-jsonld-opening-hours-validation-2026) `opens: "eleven"` 같은 값은 어느 층에서도 걸리지 않았다.
+정상 샘플은 스키마 구조 검사를 통과한다(`PASS`). 그런데 그 옆줄은 `DEPRECATED`다. 검증기가 아무리 초록불을 켜도, Google 검색이 그걸 렌더링하는 단계는 이미 닫혔다. 이게 오늘 글의 한 줄 요약이다. 스키마 유효성과 노출 가치는 다른 축이고, CI 게이트는 앞의 것만 본다. 이 사각지대는 [CI에서 구조화 데이터를 자동 검증하는 파이프라인](/ko/blog/ko/validate-structured-data-ci-jsonld-2026/)을 운영하는 사람이라면 특히 유념해야 한다. 게이트가 통과했다고 트래픽 가치가 붙는 게 아니다. 검증기가 놓치는 축은 하나 더 있다. 값 자체가 말이 되는가. [음식점 영업시간 마크업을 3계층으로 검증해보니](/ko/blog/ko/restaurant-jsonld-opening-hours-validation-2026/) `opens: "eleven"` 같은 값은 어느 층에서도 걸리지 않았다.
 
 두 번째 샘플에서 확인할 점도 있다. 검증기는 여전히 필수 필드 누락을 정확히 잡아낸다. 즉 구조 검사 자체는 죽지 않았다. 죽은 건 그 뒤에 붙던 Google의 리치 결과 보상이다. 이 구분이 다음 결정을 가른다.
 
@@ -146,7 +146,7 @@ Google의 공식 안내는 명확하다. 굳이 제거할 필요는 없다는 �
 
 여기부터가 내가 이 글을 쓴 진짜 이유다.
 
-FAQ 리치 결과가 사라진 검색결과 화면을, AI Overviews를 비롯한 생성형 답변이 빠르게 채우고 있다. 그리고 AI 답변 엔진이 페이지에서 정보를 뽑는 방식은 Google 리치 결과와 근본이 다르다. 리치 결과는 JSON-LD라는 별도 채널을 읽었다. 반면 대다수 AI 크롤러는 [렌더링된 실제 HTML 본문](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026)에서 의미를 추출한다. 여기서 "질문 → 자기완결적인 짧은 답" 패턴은 기계가 인용하기 가장 좋은 형태다. 다만 그 인용 자리에 얼마나 노출될지는 마크업만으로 정해지지 않는다. [`max-snippet`·`nosnippet` 같은 로봇 스니펫 제어가 AI Overviews에 어디까지 먹히는지](/ko/blog/ko/robots-snippet-controls-ai-overviews-2026)도 같이 확인해두는 편이 낫다.
+FAQ 리치 결과가 사라진 검색결과 화면을, AI Overviews를 비롯한 생성형 답변이 빠르게 채우고 있다. 그리고 AI 답변 엔진이 페이지에서 정보를 뽑는 방식은 Google 리치 결과와 근본이 다르다. 리치 결과는 JSON-LD라는 별도 채널을 읽었다. 반면 대다수 AI 크롤러는 [렌더링된 실제 HTML 본문](/ko/blog/ko/ai-crawlers-dont-render-javascript-csr-2026/)에서 의미를 추출한다. 여기서 "질문 → 자기완결적인 짧은 답" 패턴은 기계가 인용하기 가장 좋은 형태다. 다만 그 인용 자리에 얼마나 노출될지는 마크업만으로 정해지지 않는다. [`max-snippet`·`nosnippet` 같은 로봇 스니펫 제어가 AI Overviews에 어디까지 먹히는지](/ko/blog/ko/robots-snippet-controls-ai-overviews-2026/)도 같이 확인해두는 편이 낫다.
 
 그러니까 FAQPage에서 진짜 자산이었던 건 JSON-LD 타입 이름이 아니라, 그걸 쓰게 만든 규율이었다. 명확한 질문 문장, 그 자리에서 완결되는 간결한 답. 이 규율을 JSON-LD에 가두지 말고, 눈에 보이는 시맨틱 HTML로 끌어내는 게 지금의 정답이라고 나는 본다. 구체적으로는 이렇게 한다.
 
@@ -186,7 +186,7 @@ FAQ 리치 결과가 사라진 검색결과 화면을, AI Overviews를 비롯한
 
 차이는 단순하지만 결정적이다. 질문이 실제 `<h2>`가 되어 문서 구조에 편입되고, 답은 그 자리에서 끝난다. 사람은 목차와 스크롤로 바로 찾고, AI 크롤러는 본문에서 질문-답 쌍을 그대로 뽑아간다. JSON-LD를 함께 남기고 싶다면 남겨도 된다. 다만 그건 이제 "혹시 모를 타 엔진용 보조 채널"이지 주력이 아니다. 주력은 눈에 보이는 이 HTML이다.
 
-한 가지 더. 개별 페이지의 Q&A 구조를 정리했다면, 다음 단계는 사이트 전체의 [JSON-LD 노드를 하나의 그래프로 잇는 일](/ko/blog/ko/json-ld-graph-entity-linking-2026)이다. FAQ가 죽었다고 구조화 데이터 전체를 방치하면, 정작 살아 있는 Article·Organization 마크업이 고아 노드로 흩어진다.
+한 가지 더. 개별 페이지의 Q&A 구조를 정리했다면, 다음 단계는 사이트 전체의 [JSON-LD 노드를 하나의 그래프로 잇는 일](/ko/blog/ko/json-ld-graph-entity-linking-2026/)이다. FAQ가 죽었다고 구조화 데이터 전체를 방치하면, 정작 살아 있는 Article·Organization 마크업이 고아 노드로 흩어진다.
 
 ## 정리: FAQ 마크업 앞에서 지금 할 결정
 

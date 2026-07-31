@@ -310,7 +310,7 @@ interface Checkpoint {
 | <strong>content-discovery</strong> | content-recommender | - |
 | <strong>operations</strong> | site-manager | portfolio-curator, learning-tracker, improvement-tracker, prompt-engineer |
 
-Claude Codeでこのようなチーム構造を実際に実装する方法は[Claude Code Agent Teams 完全ガイド](/ja/blog/ja/claude-agent-teams-guide)で確認できます。
+Claude Codeでこのようなチーム構造を実際に実装する方法は[Claude Code Agent Teams 完全ガイド](/ja/blog/ja/claude-agent-teams-guide/)で確認できます。
 
 <strong>各クラスターの役割</strong>:
 
@@ -520,7 +520,7 @@ Deep Agentsパラダイムの実装により、以下の改善が期待されま
 | 並列実行率 | 0% | 40% | - |
 | タスク完了率 | 70% | 95% | 36% |
 
-並列実行効率を実践でさらに高める方法は[AIエージェントワークフローをメタツールで最適化する: AWOフレームワーク実践ガイド](/ja/blog/ja/agentic-workflow-meta-tools-optimization)を参照してください。
+並列実行効率を実践でさらに高める方法は[AIエージェントワークフローをメタツールで最適化する: AWOフレームワーク実践ガイド](/ja/blog/ja/agentic-workflow-meta-tools-optimization/)を参照してください。
 
 ### 定性的改善
 
@@ -728,4 +728,4 @@ Deep Agentsの導入により、エージェントシステムは<strong>より�
 
 ---
 
-<strong>次回記事</strong>: [AIエージェントペルソナ分析](/ja/blog/ja/ai-agent-persona-analysis)では、エージェントの役割定義とペルソナ設計の最適化方法を詳しく解説します。
+<strong>次回記事</strong>: [AIエージェントペルソナ分析](/ja/blog/ja/ai-agent-persona-analysis/)では、エージェントの役割定義とペルソナ設計の最適化方法を詳しく解説します。

@@ -441,7 +441,7 @@ print(result)
    - 並列実行の最適化
    - キューイングシステムの導入
    - リソース管理
-   - エージェントワークフローのメタツール最適化パターンは[エージェントワークフローメタツール最適化](/ja/blog/ja/agentic-workflow-meta-tools-optimization)を参照
+   - エージェントワークフローのメタツール最適化パターンは[エージェントワークフローメタツール最適化](/ja/blog/ja/agentic-workflow-meta-tools-optimization/)を参照
 
 ### ベストプラクティス
 
@@ -486,7 +486,7 @@ restored_state = production_app.get_state(config)
 
 ## 他のフレームワークとの比較
 
-LangGraphはCrewAI、Daprなど様々なエージェントフレームワークと並存しています。プロダクション適合性や用途別の詳細比較は[2026年AIエージェントフレームワーク比較：LangGraph vs CrewAI vs Daprプロダクションガイド](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)をご覧ください。
+LangGraphはCrewAI、Daprなど様々なエージェントフレームワークと並存しています。プロダクション適合性や用途別の詳細比較は[2026年AIエージェントフレームワーク比較：LangGraph vs CrewAI vs Daprプロダクションガイド](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)をご覧ください。
 
 ### LangGraph vs CrewAI
 
@@ -553,7 +553,7 @@ Replitは、<strong>AIペアプログラミング機能</strong>に LangGraph �
 
 ## 結論
 
-LangGraph は、<strong>プロダクション対応のマルチエージェント AI システム</strong>を構築するための強力なフレームワークです。グラフベースのアーキテクチャにより、従来の線形チェーンでは実現困難だった複雑なワークフローを柔軟に実装できます。Claude SDKを使ったマルチエージェントオーケストレーションの実装に興味がある方は、[Claude Agent SDKサブエージェントオーケストレーションチュートリアル](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026)も参考にしてください。
+LangGraph は、<strong>プロダクション対応のマルチエージェント AI システム</strong>を構築するための強力なフレームワークです。グラフベースのアーキテクチャにより、従来の線形チェーンでは実現困難だった複雑なワークフローを柔軟に実装できます。Claude SDKを使ったマルチエージェントオーケストレーションの実装に興味がある方は、[Claude Agent SDKサブエージェントオーケストレーションチュートリアル](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026/)も参考にしてください。
 
 ### LangGraphを選択すべき場合
 

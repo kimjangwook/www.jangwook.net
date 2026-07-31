@@ -46,10 +46,10 @@ faq:
 ---
 > <strong>シリーズ: DeNA LLMスタディ</strong> (5/5 - 最終回)
 >
-> 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM基礎と2025年AI現況](/ja/blog/ja/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 構造化出力とマルチLLMパイプライン
-> 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training)
-> 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag)
+> 3. [Part 3: モデル学習方法論](/ja/blog/ja/dena-llm-study-part3-model-training/)
+> 4. [Part 4: RAGアーキテクチャと最新トレンド](/ja/blog/ja/dena-llm-study-part4-rag/)
 > 5. <strong>Part 5: エージェント設計とマルチエージェントオーケストレーション</strong> ← 現在の記事
 
 ## 自律エージェントからオーケストレーションへ
@@ -86,7 +86,7 @@ faq:
 - プロトタイプ段階で、まず動作を確認したいとき。マルチエージェントはデバッグコストが大きいので、単一呼び出しで検証してから必要に応じて分割しましょう。
 - コスト上限を制御できないのにNetwork（自由対話）パターンを使おうとする場合。対話の長さが暴走すると請求書も一緒に暴走します。
 
-一言でまとめると、こうです。<strong>「複数段階 + ツール呼び出し + 記憶」が同時に必要なときだけエージェントを取り出し、どれか一つでも欠けるならまずもっと単純な道具を疑え。</strong> マルチエージェントのコストの罠は[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality)で、オーケストレーションをもう一歩深く掘り下げた話は[マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)で続きます。
+一言でまとめると、こうです。<strong>「複数段階 + ツール呼び出し + 記憶」が同時に必要なときだけエージェントを取り出し、どれか一つでも欠けるならまずもっと単純な道具を疑え。</strong> マルチエージェントのコストの罠は[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality/)で、オーケストレーションをもう一歩深く掘り下げた話は[マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement/)で続きます。
 
 ## 1. n8nを活用したLLMワークフロー
 

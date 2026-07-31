@@ -104,7 +104,7 @@ const target = pages.get(a.href);
 if (target && !target.alts.some(t => t.href === url)) brokenReturn++;
 ````
 
-먼저 글 하나의 4개 언어판만 검사했다. 접근성 감사를 다뤘던 [Lighthouse 접근성 글](/ko/blog/ko/a11y-lighthouse-audit-fix-2026)을 대상으로 삼았다.
+먼저 글 하나의 4개 언어판만 검사했다. 접근성 감사를 다뤘던 [Lighthouse 접근성 글](/ko/blog/ko/a11y-lighthouse-audit-fix-2026/)을 대상으로 삼았다.
 
 ```text
 $ node hreflang-audit.mjs dist a11y-lighthouse-audit-fix-2026
@@ -223,7 +223,7 @@ hreflang을 내보내는 방법은 셋이고, Google은 "세 방법이 동등하
 | HTTP `Link:` 헤더 | 응답 헤더 | PDF·이미지 등 비HTML 문서에도 적용 가능 | 서버·CDN 설정 필요. 눈으로 확인이 번거로움 | 비HTML 리소스, 헤더 제어가 쉬운 환경 |
 | 사이트맵 `xhtml:link` | XML 사이트맵 | HTML을 안 건드림. 대규모에 유리, 한 곳에서 관리 | 사이트맵이 커지고, 생성 파이프라인이 필요 | 페이지 수만 개, 마크업 수정이 어려운 CMS |
 
-내 블로그는 정적 빌드라 HTML 태그 방식이 맞다. 페이지 수가 수백 개인 지금은 태그 방식의 "HTML이 무거워진다"는 약점이 아직 부담스럽지 않다. 만약 수만 페이지로 커진다면 사이트맵 방식으로 옮기는 걸 고려할 것이다. 그 경우 [LocalBusiness 구조화 데이터를 서버사이드로 내보낸 경험](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026)에서처럼, 신호는 빌드 시점에 결정론적으로 찍어내는 게 사람이 손으로 관리하는 것보다 훨씬 안전하다.
+내 블로그는 정적 빌드라 HTML 태그 방식이 맞다. 페이지 수가 수백 개인 지금은 태그 방식의 "HTML이 무거워진다"는 약점이 아직 부담스럽지 않다. 만약 수만 페이지로 커진다면 사이트맵 방식으로 옮기는 걸 고려할 것이다. 그 경우 [LocalBusiness 구조화 데이터를 서버사이드로 내보낸 경험](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026/)에서처럼, 신호는 빌드 시점에 결정론적으로 찍어내는 게 사람이 손으로 관리하는 것보다 훨씬 안전하다.
 
 ## 자주 밟는 지뢰 — 특히 중국어
 
@@ -235,7 +235,7 @@ hreflang을 내보내는 방법은 셋이고, Google은 "세 방법이 동등하
 - <strong>상대 경로</strong>: `href="/en/..."`는 안 된다. 절대 URL이어야 한다.
 - <strong>noindex와 동시 사용</strong>: hreflang 대상이 `noindex`면 신호가 서로 모순된다. 색인하지 말라면서 대체판으로 안내하는 꼴이다.
 
-마지막 항목은 특히 [AI 크롤러를 robots.txt로 제어하던 글](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026)과 이어진다. 색인·크롤링·언어 신호는 각자 다른 파일과 태그에 흩어져 있지만, 서로 모순되면 크롤러는 가장 보수적으로 해석하거나 그냥 무시한다. 신호를 넣는 것보다 <strong>신호끼리 충돌하지 않게 맞추는 것</strong>이 실무의 절반이다.
+마지막 항목은 특히 [AI 크롤러를 robots.txt로 제어하던 글](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026/)과 이어진다. 색인·크롤링·언어 신호는 각자 다른 파일과 태그에 흩어져 있지만, 서로 모순되면 크롤러는 가장 보수적으로 해석하거나 그냥 무시한다. 신호를 넣는 것보다 <strong>신호끼리 충돌하지 않게 맞추는 것</strong>이 실무의 절반이다.
 
 ## 그래서 개발자가 바로 할 것
 

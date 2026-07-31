@@ -215,7 +215,7 @@ function withTransaction(db, fn) {
 }
 ```
 
-[搭建 Hono API 服务器](/zh/blog/zh/hono-typescript-api-2026)时，这个工具函数可以直接复用。
+[搭建 Hono API 服务器](/zh/blog/zh/hono-typescript-api-2026/)时，这个工具函数可以直接复用。
 
 ## 自定义函数与聚合函数
 
@@ -370,7 +370,7 @@ const mode = db.prepare('PRAGMA journal_mode').get();
 console.log(mode.journal_mode);  // wal
 ```
 
-正如[Deno 2 vs Bun 比较](/zh/blog/zh/deno-2-vs-bun-nodejs-runtime-2026-comparison)中提到的，开启 WAL 模式后，SQLite 可以处理大多数内部工具场景的负载，很多时候不需要 PostgreSQL。
+正如[Deno 2 vs Bun 比较](/zh/blog/zh/deno-2-vs-bun-nodejs-runtime-2026-comparison/)中提到的，开启 WAL 模式后，SQLite 可以处理大多数内部工具场景的负载，很多时候不需要 PostgreSQL。
 
 ## 错误处理
 
@@ -436,7 +436,7 @@ try {
 
 暂时不要部署到生产 HTTP 服务器。等 Node.js v26 LTS 稳定、experimental 标签去掉再说。但对于内部 CLI 工具、脚本、构建流程、缓存层和原型，现在就可以用。如果你在 CI 里被 `better-sqlite3` 的构建失败折磨过，这个模块马上就能改善体验。
 
-在构建[类似 Bun Shell 的自动化脚本](/zh/blog/zh/bun-shell-scripting-practical-guide-2026)或内部开发工具时，想要最小化外部依赖，`node:sqlite` 是当下实用的选择。
+在构建[类似 Bun Shell 的自动化脚本](/zh/blog/zh/bun-shell-scripting-practical-guide-2026/)或内部开发工具时，想要最小化外部依赖，`node:sqlite` 是当下实用的选择。
 
 ## 内部工具，现在就够用了
 

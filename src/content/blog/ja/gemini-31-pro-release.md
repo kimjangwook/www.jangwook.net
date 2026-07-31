@@ -84,7 +84,7 @@ Googleは、Gemini 3.1 Proの向上した推論能力を示す4つの実践的�
 
 ### 現在の競争構図
 
-Gemini 3.1 Proのリリースにより、AIモデル競争がさらに激化しています。Claude 4 Opus/SonnetとGemini 3.1 Proを主要な軸で比較すると（AI競争の全体像は[OpenAI GPT-5.5とClaudeの比較分析](/ja/blog/ja/openai-gpt-5-5-release-claude-comparison-april-2026)も参考に）：
+Gemini 3.1 Proのリリースにより、AIモデル競争がさらに激化しています。Claude 4 Opus/SonnetとGemini 3.1 Proを主要な軸で比較すると（AI競争の全体像は[OpenAI GPT-5.5とClaudeの比較分析](/ja/blog/ja/openai-gpt-5-5-release-claude-comparison-april-2026/)も参考に）：
 
 | 項目 | Gemini 3.1 Pro | Claude 4 Opus |
 |------|---------------|---------------|
@@ -129,7 +129,7 @@ Gemini 3.1 Proは様々なプラットフォームからアクセス可能です
 - <strong>エンタープライズ</strong>：Vertex AI、Gemini Enterprise
 - <strong>コンシューマー</strong>：Geminiアプリ、NotebookLM
 
-特に<strong>Google Antigravity</strong>というエージェンティック開発プラットフォームの登場は注目に値します。これはAnthropicのMCPエコシステムと直接競合するポジションです。[LangGraph・CrewAI・DAPRプロダクション向けエージェントフレームワーク比較](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)で各フレームワークの長所・短所を確認できます。
+特に<strong>Google Antigravity</strong>というエージェンティック開発プラットフォームの登場は注目に値します。これはAnthropicのMCPエコシステムと直接競合するポジションです。[LangGraph・CrewAI・DAPRプロダクション向けエージェントフレームワーク比較](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)で各フレームワークの長所・短所を確認できます。
 
 ## 実践的な示唆
 
@@ -137,7 +137,7 @@ Gemini 3.1 Proは様々なプラットフォームからアクセス可能です
 
 1. <strong>モデル選択戦略の再考</strong>：複雑な推論が必要なタスクではGemini 3.1 Proを積極的に検討する価値があります
 2. <strong>マルチモーダルワークフロー設計</strong>：テキスト → コード → 可視化を一つのパイプラインで構成可能
-3. <strong>エージェント開発プラットフォーム比較</strong>：Antigravity vs MCP vs LangChainなどのエージェントフレームワーク比較検討が必要（[Google ADK vs LangGraph徹底比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026)参照）
+3. <strong>エージェント開発プラットフォーム比較</strong>：Antigravity vs MCP vs LangChainなどのエージェントフレームワーク比較検討が必要（[Google ADK vs LangGraph徹底比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026/)参照）
 
 ### 注意点
 

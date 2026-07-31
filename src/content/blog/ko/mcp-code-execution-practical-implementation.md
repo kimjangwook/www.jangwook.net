@@ -60,7 +60,7 @@ relatedPosts:
 
 ## 개요
 
-이전 포스트 [Anthropic MCP 코드 실행: AI 에이전트 효율성 98.7% 향상](/ko/blog/ko/anthropic-code-execution-mcp)에서 MCP Code Execution의 이론적 배경과 성능 개선 원리를 살펴보았다. 이번 포스트에서는 해당 패턴을 실제 프로젝트에 적용하여 <strong>Claude Code 프로젝트 구조를 개선한 사례</strong>를 공유한다.
+이전 포스트 [Anthropic MCP 코드 실행: AI 에이전트 효율성 98.7% 향상](/ko/blog/ko/anthropic-code-execution-mcp/)에서 MCP Code Execution의 이론적 배경과 성능 개선 원리를 살펴보았다. 이번 포스트에서는 해당 패턴을 실제 프로젝트에 적용하여 <strong>Claude Code 프로젝트 구조를 개선한 사례</strong>를 공유한다.
 
 Anthropic의 Code Execution with MCP는 토큰 사용량을 98.7% 감소시키고 실행 속도를 60% 개선하는 혁신적인 접근법이다. 이를 실제로 적용하기 위해 `.claude/` 디렉토리에 3개의 새로운 디렉토리를 추가하고, 관련 문서를 작성했다.
 
@@ -288,7 +288,7 @@ export const getNextPubdate = {
 
 ## security/ 디렉토리: 보안 가이드라인
 
-MCP 설정 파일 자체가 시크릿 유출 경로가 된 사례는 [AI 코딩 에이전트가 2,900만 시크릿을 유출시켰다](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security)에 정리해두었다. 샌드박스를 설계하기 전에 한 번 보면 좋다.
+MCP 설정 파일 자체가 시크릿 유출 경로가 된 사례는 [AI 코딩 에이전트가 2,900만 시크릿을 유출시켰다](/ko/blog/ko/ai-coding-secrets-sprawl-mcp-config-security/)에 정리해두었다. 샌드박스를 설계하기 전에 한 번 보면 좋다.
 
 `security/` 디렉토리에는 샌드박스 설정과 입력 검증 패턴이 있다.
 
@@ -469,7 +469,7 @@ Code Execution 패턴을 추가하면:
 
 ## 향후 계획
 
-도구를 늘리는 대신 메타 도구로 묶어 컨텍스트를 줄이는 접근은 [AI 에이전트 워크플로우를 메타 도구로 최적화하기](/ko/blog/ko/agentic-workflow-meta-tools-optimization)에서 다뤘다.
+도구를 늘리는 대신 메타 도구로 묶어 컨텍스트를 줄이는 접근은 [AI 에이전트 워크플로우를 메타 도구로 최적화하기](/ko/blog/ko/agentic-workflow-meta-tools-optimization/)에서 다뤘다.
 
 ### 1. Tool Wrapper 변환
 
@@ -520,7 +520,7 @@ Code Execution 패턴을 추가하면:
 - <strong>속도 향상</strong>: 실행 시간 60% 단축 예상
 - <strong>보안 강화</strong>: AI 생성 코드 실행 안전성 확보
 
-이 구조는 현재 문서화 단계이며, 실제 구현과 벤치마크는 향후 진행할 예정이다. Code Execution with MCP의 이론적 배경이 궁금하다면 [이전 포스트](/ko/blog/ko/anthropic-code-execution-mcp)를 참고하면 된다.
+이 구조는 현재 문서화 단계이며, 실제 구현과 벤치마크는 향후 진행할 예정이다. Code Execution with MCP의 이론적 배경이 궁금하다면 [이전 포스트](/ko/blog/ko/anthropic-code-execution-mcp/)를 참고하면 된다.
 
 ## 참고 자료
 

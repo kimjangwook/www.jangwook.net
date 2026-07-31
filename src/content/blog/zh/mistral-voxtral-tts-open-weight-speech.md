@@ -67,7 +67,7 @@ Voxtral的核心规格整理如下：
 
 据称在人工评估（human evaluation）中击败了ElevenLabs Flash v2.5。这是Mistral方面的说法，需要独立验证，但敢于公布盲测A/B测试结果本身就是一种自信的表现。
 
-4B的参数规模也值得关注。近期智能手机NPU已经开始处理7-10B的推理任务，Voxtral是设备端TTS的现实候选者。虽然不像[Kitten TTS](/zh/blog/zh/kitten-tts-v08-tiny-sota)（14M）那样极致小巧，但品质与体积的平衡点很有意思。
+4B的参数规模也值得关注。近期智能手机NPU已经开始处理7-10B的推理任务，Voxtral是设备端TTS的现实候选者。虽然不像[Kitten TTS](/zh/blog/zh/kitten-tts-v08-tiny-sota/)（14M）那样极致小巧，但品质与体积的平衡点很有意思。
 
 ## TTS引擎对比：我实际使用过的
 
@@ -107,7 +107,7 @@ response = requests.post(
 )
 ```
 
-之前介绍的[KaniTTS2](/zh/blog/zh/kanitts2-voice-cloning)需要3GB VRAM才能实现语音克隆，而Voxtral只需一行API调用。当然，如果要在本地运行，需要从Hugging Face下载权重自行推理，但4B模型8GB VRAM应该足够。
+之前介绍的[KaniTTS2](/zh/blog/zh/kanitts2-voice-cloning/)需要3GB VRAM才能实现语音克隆，而Voxtral只需一行API调用。当然，如果要在本地运行，需要从Hugging Face下载权重自行推理，但4B模型8GB VRAM应该足够。
 
 说实话，3秒克隆的实际品质到底如何，不亲耳听过无法判断。Mistral演示页面的样本令人印象深刻，但演示展示的永远是最佳案例。
 

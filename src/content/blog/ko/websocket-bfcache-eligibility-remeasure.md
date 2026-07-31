@@ -53,7 +53,7 @@ back/forward cache(bfcache)는 사용자가 페이지를 떠날 때 그 페이�
 
 문제는 아무 페이지나 얼려둘 수 없다는 점이다. 페이지가 살아 있는 연결이나 콜백을 붙들고 있으면, 브라우저는 그 페이지를 얼리는 대신 그냥 파기해버린다. 오래도록 그 목록에 올라 있던 항목이 열린 WebSocket이었다. 실시간 채팅 위젯, 알림 스트림, 라이브 시세처럼 WebSocket을 물고 있는 페이지는 뒤로 가기에서 매번 풀 로드됐다.
 
-그리고 이 상태는 추측할 필요가 없다. 브라우저가 두 개의 API로 답을 준다. `pageshow` 이벤트의 `event.persisted`가 `true`면 bfcache에서 복원된 것이다. 복원되지 <strong>않았을</strong> 때는 `PerformanceNavigationTiming.notRestoredReasons`가 그 이유를 담는다. 이 API는 Chrome 123부터 출시됐다. 나는 [지난번 6판 측정](/ko/blog/ko/bfcache-notrestoredreasons-audit-2026)에서 이 두 API로 여섯 가지 차단 후보를 하나씩 갈라냈고, 그중 열린 WebSocket이 `reason: "websocket"`으로 페이지를 차단하는 것을 확인했다.
+그리고 이 상태는 추측할 필요가 없다. 브라우저가 두 개의 API로 답을 준다. `pageshow` 이벤트의 `event.persisted`가 `true`면 bfcache에서 복원된 것이다. 복원되지 <strong>않았을</strong> 때는 `PerformanceNavigationTiming.notRestoredReasons`가 그 이유를 담는다. 이 API는 Chrome 123부터 출시됐다. 나는 [지난번 6판 측정](/ko/blog/ko/bfcache-notrestoredreasons-audit-2026/)에서 이 두 API로 여섯 가지 차단 후보를 하나씩 갈라냈고, 그중 열린 WebSocket이 `reason: "websocket"`으로 페이지를 차단하는 것을 확인했다.
 
 ## 공식은 분명히 "이제 안 막는다"고 했다
 
@@ -112,7 +112,7 @@ window.addEventListener('pageshow', (e) => {
 
 ## 그래서 개발자는 무엇을 해야 하나
 
-이 어긋남은 추상적인 이야기가 아니다. 지난 글에서 나는 bfcache 측정을 헤드리스 스크립트로 옮겨 [배포마다 CI 게이트로 돌리라](/ko/blog/ko/validate-structured-data-ci-jsonld-2026)고 권했다. 오늘 측정이 바로 그 권고의 맹점을 드러낸다. CI의 브라우저는 십중팔구 갓 만든 프로필의 헤드리스다. 그 환경은 방금 본 대로 실사용자보다 플랫폼 롤아웃을 늦게 반영한다. 플랫폼이 "고쳤다"고 발표한 뒤에도 당신의 게이트는 한동안 `websocket`을 차단 사유로 계속 뱉을 수 있다.
+이 어긋남은 추상적인 이야기가 아니다. 지난 글에서 나는 bfcache 측정을 헤드리스 스크립트로 옮겨 [배포마다 CI 게이트로 돌리라](/ko/blog/ko/validate-structured-data-ci-jsonld-2026/)고 권했다. 오늘 측정이 바로 그 권고의 맹점을 드러낸다. CI의 브라우저는 십중팔구 갓 만든 프로필의 헤드리스다. 그 환경은 방금 본 대로 실사용자보다 플랫폼 롤아웃을 늦게 반영한다. 플랫폼이 "고쳤다"고 발표한 뒤에도 당신의 게이트는 한동안 `websocket`을 차단 사유로 계속 뱉을 수 있다.
 
 바로 적용할 수 있는 순서로 정리한다.
 
@@ -147,4 +147,4 @@ window.addEventListener('pageshow', (event) => {
 
 정직하게 한계도 적어둔다. 이 세 판은 한 대의 macOS 머신에서 Chrome 150 계열로 잰 값이다. Safari와 Firefox는 차단 조건이 다르고, `notRestoredReasons` 자체가 Chromium 계열 API다. 나는 헤드풀 스테이블 프로필에서 시드를 받은 상태로는 재현하지 못했고, 기능의 정확한 플래그 이름도 확정하지 못했다. 여기 적힌 결과를 "Chrome 150은 WebSocket을 막는다"는 일반 명제로 읽으면 틀린다. 정확히는 "내가 잰 세 자동화 환경에서는 아직 막혔다"이다. 재현 절차는 그대로 남겼으니, 각자의 대상 환경에서 같은 세 판을 돌려보면 자기 롤아웃 단계의 답이 나온다.
 
-측정이 발표를 확인하는 것과, 그 발표가 내 앞의 브라우저에서 실제로 켜져 있는 것은 다른 질문이다. 후자는 의견이 아니라 측정으로만 답할 수 있고, 그 답은 환경마다 다르다. 운영 중인 사이트의 bfcache 자격을 실측하고 그 결과를 실사용자 필드 데이터와 어긋나지 않게 게이트로 남기는 작업을 개인적으로 상담·구현 의뢰로 받고 있다. 필요하다면 [문의 페이지](/ko/contact)로 연락 주면 된다.
+측정이 발표를 확인하는 것과, 그 발표가 내 앞의 브라우저에서 실제로 켜져 있는 것은 다른 질문이다. 후자는 의견이 아니라 측정으로만 답할 수 있고, 그 답은 환경마다 다르다. 운영 중인 사이트의 bfcache 자격을 실측하고 그 결과를 실사용자 필드 데이터와 어긋나지 않게 게이트로 남기는 작업을 개인적으로 상담·구현 의뢰로 받고 있다. 필요하다면 [문의 페이지](/ko/contact/)로 연락 주면 된다.

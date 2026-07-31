@@ -140,7 +140,7 @@ curl -A "GPTBot" https://example.com/my-page | grep "여기_핵심_문구"
 - <strong>Astro</strong>: 정적 생성이 기본이라 대개 안전하다. 다만 `client:only` 아일랜드 안에만 있는 텍스트는 초기 HTML에 안 들어가니 주의.
 - <strong>SvelteKit / Angular</strong>: SvelteKit은 `load` 함수의 서버 실행을, Angular는 Angular Universal(SSR)을 켠다.
 
-특히 조심할 게 하나 있다. 구조화 데이터(JSON-LD)나 메타 태그를 Google Tag Manager 같은 클라이언트 스크립트로 주입하는 패턴이다. 사람 눈엔 잘 들어가지만 AI 크롤러는 그 스크립트를 안 돌리니 JSON-LD도 통째로 사라진다. 이 함정은 [LocalBusiness 구조화 데이터를 JS로 넣을 때와 서버사이드로 넣을 때의 차이](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026)에서 실측으로 다룬 적이 있는데, AI 크롤러 시대에는 그 "서버사이드가 더 확실하다"는 원칙의 무게가 훨씬 커졌다. 엔티티를 제대로 연결하는 [JSON-LD @graph 구조](/ko/blog/ko/json-ld-graph-entity-linking-2026)를 쓰더라도, 그게 서버 응답에 있어야 의미가 있다.
+특히 조심할 게 하나 있다. 구조화 데이터(JSON-LD)나 메타 태그를 Google Tag Manager 같은 클라이언트 스크립트로 주입하는 패턴이다. 사람 눈엔 잘 들어가지만 AI 크롤러는 그 스크립트를 안 돌리니 JSON-LD도 통째로 사라진다. 이 함정은 [LocalBusiness 구조화 데이터를 JS로 넣을 때와 서버사이드로 넣을 때의 차이](/ko/blog/ko/localbusiness-structured-data-server-side-vs-js-2026/)에서 실측으로 다룬 적이 있는데, AI 크롤러 시대에는 그 "서버사이드가 더 확실하다"는 원칙의 무게가 훨씬 커졌다. 엔티티를 제대로 연결하는 [JSON-LD @graph 구조](/ko/blog/ko/json-ld-graph-entity-linking-2026/)를 쓰더라도, 그게 서버 응답에 있어야 의미가 있다.
 
 전면 SSR 전환이 부담스럽다면 하이브리드도 괜찮다. 껍데기와 핵심 텍스트는 서버에서 그리고, 상호작용이 필요한 위젯만 클라이언트에서 하이드레이션하는 방식이다. 판단 기준은 딱 하나. <strong>의미 있는 본문 텍스트가 초기 HTML에 들어 있는가.</strong>
 
@@ -154,7 +154,7 @@ curl -A "GPTBot" https://example.com/my-page | grep "여기_핵심_문구"
 
 llms.txt는 사이트 콘텐츠를 마크다운으로 요약해 크롤러에게 제공하자는 커뮤니티 제안이다. 아이디어 자체는 나쁘지 않다. 문제는 현실이다. Google은 공식적으로 지원하지 않는다고 못박았고(2025년 7월 Search Central Live, Gary Illyes), John Mueller는 이걸 이미 10년 넘게 무시당해온 keywords 메타 태그에 비유했다. 사이트 운영자가 "우리 사이트는 이런 내용입니다"라고 스스로 주장하는 파일이라 조작에 취약하다는 논리다. 어느 주요 AI 서비스도 이 파일을 추론에 쓴다고 공식 확인한 곳이 없다. 채택률은 30만 도메인 조사에서 10% 남짓, 유효한 llms.txt의 97%가 2026년 5월 한 달간 아무 요청도 못 받았다는 집계도 있다(참고값, 공식 아님).
 
-정리하면, AI 크롤러가 못 읽는 근본 원인은 "요약 파일이 없어서"가 아니라 "본문이 JS 뒤에 숨어서"다. 원인을 두고 우회로부터 까는 셈이다. AI 크롤러 접근 자체를 어떻게 통제할지는 [robots.txt로 AI 크롤러를 제어하는 전략](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026)에서 따로 다뤘으니, 허용·차단 정책은 그쪽을 참고하면 된다. 다만 "인용되게 하기"의 1번은 언제나 서버사이드 가시성이다.
+정리하면, AI 크롤러가 못 읽는 근본 원인은 "요약 파일이 없어서"가 아니라 "본문이 JS 뒤에 숨어서"다. 원인을 두고 우회로부터 까는 셈이다. AI 크롤러 접근 자체를 어떻게 통제할지는 [robots.txt로 AI 크롤러를 제어하는 전략](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026/)에서 따로 다뤘으니, 허용·차단 정책은 그쪽을 참고하면 된다. 다만 "인용되게 하기"의 1번은 언제나 서버사이드 가시성이다.
 
 ## 정직하게 남기는 한계
 

@@ -125,7 +125,7 @@ import _ from "npm:lodash@4";
 
 With the `npm:` specifier, there is no separate install step. On first run Deno downloads to its global cache, and subsequent runs work offline. Not having node_modules feels odd at first, but cloning a project and running it immediately without any install step is genuinely nice.
 
-When I wrote the [Bun Shell scripting guide](/en/blog/en/bun-shell-scripting-practical-guide-2026), Bun's npm compatibility made it easy to pull in existing utility libraries without any friction. Deno's `npm:` approach works better for script-level experiments and greenfield projects.
+When I wrote the [Bun Shell scripting guide](/en/blog/en/bun-shell-scripting-practical-guide-2026/), Bun's npm compatibility made it easy to pull in existing utility libraries without any friction. Deno's `npm:` approach works better for script-level experiments and greenfield projects.
 
 ## Security Model: This Is the Real Difference
 
@@ -169,7 +169,7 @@ import { createHash } from "node:crypto";
 import { EventEmitter } from "node:events";
 ```
 
-I tested all of these, and both Bun and Deno handled them identically. `crypto.createHash("sha256")`, EventEmitter, and `fs.existsSync` all passed. Just like [running Hono.js on Cloudflare Workers](/en/blog/en/hono-typescript-api-2026), Hono works the same on Bun and Deno.
+I tested all of these, and both Bun and Deno handled them identically. `crypto.createHash("sha256")`, EventEmitter, and `fs.existsSync` all passed. Just like [running Hono.js on Cloudflare Workers](/en/blog/en/hono-typescript-api-2026/), Hono works the same on Bun and Deno.
 
 ## TypeScript Support: The Version Gap Matters
 
@@ -271,7 +271,7 @@ bun test counter.test.ts     # specific file
 bun test --watch             # watch mode
 ```
 
-`bun:test` is Jest-compatible. Existing Jest test suites often run without changes. For teams [migrating from Jest to Vitest](/en/blog/en/vitest-4-jest-migration-guide-2026), moving to Bun is a similar level of effort. The describe/test/expect API is the same.
+`bun:test` is Jest-compatible. Existing Jest test suites often run without changes. For teams [migrating from Jest to Vitest](/en/blog/en/vitest-4-jest-migration-guide-2026/), moving to Bun is a similar level of effort. The describe/test/expect API is the same.
 
 **Deno test**
 
@@ -379,7 +379,7 @@ A decision rubric is more useful than abstract comparison. Here is how I'd map t
 **Use Deno when**
 
 - You start a new TypeScript project. Type checking, the default sandbox, and no-install `npm:` specifiers all arrive together.
-- You build CLI tools or short scripts. Cold start is fast and single-binary distribution is clean. For instance, if you port [a local data tool built on Node.js's built-in SQLite](/en/blog/en/node-sqlite-builtin-practical-guide-2026) to Deno, permission flags let you scope disk access tightly.
+- You build CLI tools or short scripts. Cold start is fast and single-binary distribution is clean. For instance, if you port [a local data tool built on Node.js's built-in SQLite](/en/blog/en/node-sqlite-builtin-practical-guide-2026/) to Deno, permission flags let you scope disk access tightly.
 - You run unknown third-party packages on a server or in CI/CD. The permission model is a real line of defense.
 
 **Avoid Deno when**
@@ -387,7 +387,7 @@ A decision rubric is more useful than abstract comparison. Here is how I'd map t
 - Your existing codebase leans hard on npm-only packages. Compatibility has improved, but some native addons still cause friction.
 - Your team can't absorb the early friction of managing permission flags. The `--allow-*` list grows long in complex apps.
 
-If you're also designing a type-safe data layer, it's worth validating a [Drizzle ORM and TypeScript setup](/en/blog/en/drizzle-orm-typescript-complete-guide-2026) on both runtimes. Drizzle behaves the same on Bun and Deno.
+If you're also designing a type-safe data layer, it's worth validating a [Drizzle ORM and TypeScript setup](/en/blog/en/drizzle-orm-typescript-complete-guide-2026/) on both runtimes. Drizzle behaves the same on Bun and Deno.
 
 ## Sources and Official Docs
 

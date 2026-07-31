@@ -71,7 +71,7 @@ graph TD
     JC --> AI
 ```
 
-<strong>Frontier Red Team</strong>은 AI 시스템의 극한 능력을 스트레스 테스트하는 팀이다. 최근에는 Claude를 활용해 Firefox 코드베이스에서 22개의 CVE(보안 취약점)를 자율 발견한 프로젝트가 대표적이다. 단순히 취약점을 찾는 것을 넘어, AI가 그 취약점을 자율적으로 익스플로잇할 수 있는지까지 테스트했다. 이 프로젝트의 기술적 세부 내용은 [Claude가 Firefox에서 22개 CVE를 발견하다 — AI 보안 감사의 새로운 패러다임](/ko/blog/ko/claude-firefox-22-cves-ai-security-audit)에서 확인할 수 있다.
+<strong>Frontier Red Team</strong>은 AI 시스템의 극한 능력을 스트레스 테스트하는 팀이다. 최근에는 Claude를 활용해 Firefox 코드베이스에서 22개의 CVE(보안 취약점)를 자율 발견한 프로젝트가 대표적이다. 단순히 취약점을 찾는 것을 넘어, AI가 그 취약점을 자율적으로 익스플로잇할 수 있는지까지 테스트했다. 이 프로젝트의 기술적 세부 내용은 [Claude가 Firefox에서 22개 CVE를 발견하다 — AI 보안 감사의 새로운 패러다임](/ko/blog/ko/claude-firefox-22-cves-ai-security-audit/)에서 확인할 수 있다.
 
 <strong>Societal Impacts</strong> 팀은 AI가 실제 세계에서 어떻게 사용되고 있는지 현장 연구를 수행한다. <strong>Economic Research</strong> 팀은 AI가 고용 시장과 거시 경제에 미치는 영향을 추적한다.
 
@@ -198,7 +198,7 @@ Anthropic만 생태계 전략을 추진하는 것은 아니다. 3대 AI 벤더�
 - 전담 Applied AI 엔지니어 지원
 - Code Modernization 스타터 킷
 
-특히 SI나 컨설팅 사업을 하는 조직이라면, 조기 가입이 경쟁 우위가 된다. 파트너 생태계에서 Claude 에이전트가 수행할 수 있는 역량 확장에 대해서는 [Anthropic Agent Skills 표준: AI 에이전트 역량 확장](/ko/blog/ko/anthropic-agent-skills-standard)을 참고하면 된다.
+특히 SI나 컨설팅 사업을 하는 조직이라면, 조기 가입이 경쟁 우위가 된다. 파트너 생태계에서 Claude 에이전트가 수행할 수 있는 역량 확장에 대해서는 [Anthropic Agent Skills 표준: AI 에이전트 역량 확장](/ko/blog/ko/anthropic-agent-skills-standard/)을 참고하면 된다.
 
 ### 3. 벤더 평가 프레임워크 업데이트
 
@@ -236,7 +236,7 @@ developer_experience:
 
 ### 4. Code Modernization 파일럿
 
-레거시 코드베이스가 있는 프로젝트에서 Code Modernization 스타터 킷을 활용한 소규모 파일럿을 시작한다. 전체 마이그레이션이 아닌, 하나의 모듈 또는 서비스에서 시작해 ROI를 측정하는 것이 핵심이다. Claude를 활용한 에이전틱 코딩 패턴에 대해서는 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)를 참고하면 된다.
+레거시 코드베이스가 있는 프로젝트에서 Code Modernization 스타터 킷을 활용한 소규모 파일럿을 시작한다. 전체 마이그레이션이 아닌, 하나의 모듈 또는 서비스에서 시작해 ROI를 측정하는 것이 핵심이다. Claude를 활용한 에이전틱 코딩 패턴에 대해서는 [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)를 참고하면 된다.
 
 ## 마치며
 

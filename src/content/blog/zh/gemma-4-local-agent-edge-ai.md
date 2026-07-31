@@ -84,7 +84,7 @@ Capabilities
 
 ## 真正让我惊讶的是Function Calling
 
-我认为Gemma 4这次最有意义的变化就是原生函数调用。看看[连小得多的FunctionGemma 270M都能完成工具调用的实验](/zh/blog/zh/functiongemma-270m-tool-calling)，就会明白函数调用已不再是大模型专属的能力。我通过Ollama API实际测试了一下：
+我认为Gemma 4这次最有意义的变化就是原生函数调用。看看[连小得多的FunctionGemma 270M都能完成工具调用的实验](/zh/blog/zh/functiongemma-270m-tool-calling/)，就会明白函数调用已不再是大模型专属的能力。我通过Ollama API实际测试了一下：
 
 ```bash
 curl -s http://localhost:11434/api/chat -d '{
@@ -140,11 +140,11 @@ echo 'Answer in JSON: {"capital": "<answer>"}. What is the capital of France?' \
 # → {"capital": "Paris"}
 ```
 
-个人觉得到这个程度的话，可以用作[MCP服务器的本地后端](/zh/blog/zh/mcp-server-build-practical-guide-2026)了。在不调用外部API、处理公司内部数据来构建Agent的场景下，[对安全要求高的环境](/zh/blog/zh/mcp-gateway-agent-traffic-control)特别有价值。
+个人觉得到这个程度的话，可以用作[MCP服务器的本地后端](/zh/blog/zh/mcp-server-build-practical-guide-2026/)了。在不调用外部API、处理公司内部数据来构建Agent的场景下，[对安全要求高的环境](/zh/blog/zh/mcp-gateway-agent-traffic-control/)特别有价值。
 
 ## 那实际能拿来做什么
 
-我想到的现实可行的应用场景有三个。无论哪一个，要真正做成服务上线，都可以从[用Ollama和FastAPI将本地LLM部署到生产环境的指南](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026)入手。
+我想到的现实可行的应用场景有三个。无论哪一个，要真正做成服务上线，都可以从[用Ollama和FastAPI将本地LLM部署到生产环境的指南](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026/)入手。
 
 **1. 离线代码审查Agent**
 ——接收Git diff作为输入，生成代码审查评论的本地Agent。在源码不能外传的环境下特别有用。

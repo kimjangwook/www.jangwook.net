@@ -57,7 +57,7 @@ relatedPosts:
 
 ## 为什么要自己构建
 
-正如[MCP服务器工具包完整指南](/zh/blog/zh/mcp-servers-toolkit-introduction)中介绍的，现有的公开MCP服务器已达数百个。那为什么还要自己构建呢？
+正如[MCP服务器工具包完整指南](/zh/blog/zh/mcp-servers-toolkit-introduction/)中介绍的，现有的公开MCP服务器已达数百个。那为什么还要自己构建呢？
 
 **内部系统集成。** 没有任何公开MCP服务器了解你公司的内部JIRA、构建系统或部署流水线。
 
@@ -282,7 +282,7 @@ def get_app_settings() -> str:
 
 坦率地说，将Streamable HTTP MCP服务器部署到生产环境仍需谨慎。
 
-正如[MCP安全危机 — 60天30个CVE](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening)中所讨论的，MCP生态系统在安全方面尚未成熟。自建服务器时需要特别注意：
+正如[MCP安全危机 — 60天30个CVE](/zh/blog/zh/mcp-security-crisis-30-cves-enterprise-hardening/)中所讨论的，MCP生态系统在安全方面尚未成熟。自建服务器时需要特别注意：
 
 <strong>未实现认证的风险：</strong> FastMCP默认配置没有认证。仅在内部网络使用尚可，但若暴露在公网，必须添加API密钥或OAuth验证：
 
@@ -299,7 +299,7 @@ mcp = FastMCP("secure-server", auth=auth)
 
 <strong>输入验证：</strong> 不要将用户输入直接传递给系统命令或原始查询。使用Pydantic模型强制类型约束，可以获得基本的输入验证。
 
-<strong>日志记录：</strong> 必须记录哪个AI智能体在何时调用了哪个工具。正如[MCP Gateway — 谁在控制AI智能体的工具调用](/zh/blog/zh/mcp-gateway-agent-traffic-control)中所说，智能体流量监控是生产环境的必要条件。
+<strong>日志记录：</strong> 必须记录哪个AI智能体在何时调用了哪个工具。正如[MCP Gateway — 谁在控制AI智能体的工具调用](/zh/blog/zh/mcp-gateway-agent-traffic-control/)中所说，智能体流量监控是生产环境的必要条件。
 
 ## 本地测试方法
 

@@ -146,7 +146,7 @@ blocks containing inLanguage: 1248
   rss.xml       xml:lang=False  <language>=False  items=1248
 ```
 
-The HTML layer held up. Every page declares `html[lang]`, and every JSON-LD block carries `inLanguage` at the item level. That's the payoff from earlier passes over this site, including the [hreflang reciprocity audit](/en/blog/en/hreflang-reciprocity-audit-multilingual-2026) that forced me to get the per-page language story straight in the first place.
+The HTML layer held up. Every page declares `html[lang]`, and every JSON-LD block carries `inLanguage` at the item level. That's the payoff from earlier passes over this site, including the [hreflang reciprocity audit](/en/blog/en/hreflang-reciprocity-audit-multilingual-2026/) that forced me to get the per-page language story straight in the first place.
 
 The last line is the problem. `dist/rss.xml` is the aggregate feed, the one that mixes all four language editions into a single chronological stream, and it declares nothing. No channel `<language>`. No per-item language. Twelve hundred and forty-eight items going out the door with their language stripped off, to be reconstructed by whatever guesswork the consumer felt like implementing.
 
@@ -206,7 +206,7 @@ FAILED: rss.xml: dc:language 1245 / item 1248 — mismatch
 exit=1
 ```
 
-Caught all three, correct count, nonzero exit. Restoring the file made it pass again. Two minutes of work to convert "I believe this gate works" into "I watched this gate fail on purpose." Every validator I add to this pipeline gets that treatment now, because a gate that can't fail is decoration with a runtime cost. That habit came out of the [five-day audit campaign](/en/blog/en/multilingual-blog-technical-audit-campaign-2026) where I ran measure, fix, and freeze-as-a-gate on repeat, and it has caught more than one script that was quietly passing on a typo'd selector.
+Caught all three, correct count, nonzero exit. Restoring the file made it pass again. Two minutes of work to convert "I believe this gate works" into "I watched this gate fail on purpose." Every validator I add to this pipeline gets that treatment now, because a gate that can't fail is decoration with a runtime cost. That habit came out of the [five-day audit campaign](/en/blog/en/multilingual-blog-technical-audit-campaign-2026/) where I ran measure, fix, and freeze-as-a-gate on repeat, and it has caught more than one script that was quietly passing on a typo'd selector.
 
 ## Why I did not add `@language` to my JSON-LD context
 
@@ -241,7 +241,7 @@ Those strings are English. They're English on the Korean page, the Japanese page
 
 Missing metadata and wrong metadata are not the same failure. When metadata is absent, a consumer knows it's operating on inference and can hedge. When metadata is present and wrong, it gets believed. Wrong is worse than absent, and it's worse in a way that's harder to detect downstream because everything looks well-formed.
 
-There's a second reason, which is that the audit already told me I have a more precise layer in place: `inLanguage` on all 1,248 blocks, at the item level, where it actually varies. A document-wide default would be a coarser statement sitting on top of a finer one. The [`@graph` consolidation work](/en/blog/en/json-ld-graph-entity-linking-2026) is what put that item-level coverage there, and it would be strange to now paper over it with a blunter declaration.
+There's a second reason, which is that the audit already told me I have a more precise layer in place: `inLanguage` on all 1,248 blocks, at the item level, where it actually varies. A document-wide default would be a coarser statement sitting on top of a finer one. The [`@graph` consolidation work](/en/blog/en/json-ld-graph-entity-linking-2026/) is what put that item-level coverage there, and it would be strange to now paper over it with a blunter declaration.
 
 Two routes are defensible. Convert the global entity strings to the draft's language-map form, so each one declares its own language regardless of which page it lands on. Or leave `@context` untouched and let per-item `inLanguage` carry the load. I took the second, for now, because the first depends on the draft's field-name conventions settling down. This is a First Public Working Draft. Those names may not survive it.
 
@@ -271,4 +271,4 @@ Run these against your own `dist/`, not your source:
 
 ---
 
-If your site serves several languages and you're not certain what its build output actually declares, that's a measurable question rather than a matter of opinion. I take on consulting and implementation work in this area personally: auditing language and direction metadata across pages, feeds and structured data, then turning whatever the audit finds into CI gates so the fix survives the next twenty commits. If that's useful to you, [get in touch](/en/contact).
+If your site serves several languages and you're not certain what its build output actually declares, that's a measurable question rather than a matter of opinion. I take on consulting and implementation work in this area personally: auditing language and direction metadata across pages, feeds and structured data, then turning whatever the audit finds into CI gates so the fix survives the next twenty commits. If that's useful to you, [get in touch](/en/contact/).

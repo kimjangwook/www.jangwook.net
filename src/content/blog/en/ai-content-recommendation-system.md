@@ -559,7 +559,7 @@ git add recommendations.json
 git commit -m "chore: update recommendations for new post"
 ```
 
-For the complete pipeline design—from post writing to recommendation generation and deployment—see [Complete Guide to LLM-Based Blog Post Automation](/en/blog/en/llm-blog-automation).
+For the complete pipeline design—from post writing to recommendation generation and deployment—see [Complete Guide to LLM-Based Blog Post Automation](/en/blog/en/llm-blog-automation/).
 
 ## Performance Optimization
 
@@ -635,7 +635,7 @@ Based on industry data:
 | Bounce Rate | -15-25% |
 | Recommendation CTR | 18-25% |
 
-To track these metrics in real time, setting up [Google Analytics MCP for Blog Analytics Automation](/en/blog/en/google-analytics-mcp-automation) alongside this system makes measurement straightforward.
+To track these metrics in real time, setting up [Google Analytics MCP for Blog Analytics Automation](/en/blog/en/google-analytics-mcp-automation/) alongside this system makes measurement straightforward.
 
 ### Qualitative Effects
 
@@ -704,11 +704,11 @@ A Claude LLM-based content recommendation system goes beyond simple tag matching
 ✅ <strong>Automated workflows</strong> for minimal maintenance
 ✅ <strong>Natural multilingual support</strong> for global blog optimization
 
-Implementing this system will increase reader engagement time, improve content discoverability, and ultimately maximize your blog's value. You can apply it to your existing blog right away—start building today! Pairing this with [AI Agent + Notion MCP Blog Automation](/en/blog/en/ai-agent-notion-mcp-automation) lets you manage everything from content planning to recommendation data in one unified flow.
+Implementing this system will increase reader engagement time, improve content discoverability, and ultimately maximize your blog's value. You can apply it to your existing blog right away—start building today! Pairing this with [AI Agent + Notion MCP Blog Automation](/en/blog/en/ai-agent-notion-mcp-automation/) lets you manage everything from content planning to recommendation data in one unified flow.
 
 ## Next Article
 
-<strong>[Recommendation System Optimization: From 78K Tokens to Zero](/en/blog/en/metadata-based-recommendation-optimization)</strong> covers how we optimized this LLM-based recommendation system with a metadata-based algorithm, eliminating 100% of token usage and reducing execution time by 99%.
+<strong>[Recommendation System Optimization: From 78K Tokens to Zero](/en/blog/en/metadata-based-recommendation-optimization/)</strong> covers how we optimized this LLM-based recommendation system with a metadata-based algorithm, eliminating 100% of token usage and reducing execution time by 99%.
 
 ## References
 

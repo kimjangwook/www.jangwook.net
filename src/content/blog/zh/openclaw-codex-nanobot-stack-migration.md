@@ -104,7 +104,7 @@ OpenClaw这种集成包工具的陷阱就在这里。多智能体、频道、调
 
 三月份Anthropic发布了Claude Code Channels。从Telegram发消息，本地终端的Claude会回复。刚好这个体验跟OpenClaw的Telegram频道几乎一样。我把它当成临时桥用——"如果没有OpenClaw也能从Telegram唤起Claude，那OAuth封锁的即时痛感就能减轻"，是这么算的。
 
-实际上跑得挺好。在外面用Telegram发一句"今天的分析报告跑一下"，家里的Mac mini接到任务、处理完、把结果发回Telegram。这样用了将近一个月。和我之前在[Channels试用记](/zh/blog/zh/claude-code-channels-telegram-bridge)里写的差不多。
+实际上跑得挺好。在外面用Telegram发一句"今天的分析报告跑一下"，家里的Mac mini接到任务、处理完、把结果发回Telegram。这样用了将近一个月。和我之前在[Channels试用记](/zh/blog/zh/claude-code-channels-telegram-bridge/)里写的差不多。
 
 问题在于Channels是"消息-响应"模型。它没有状态。我问"昨晚开的backfill任务跑到哪了？"，Channels根本不知道这个backfill任务的存在。每次都是开一个新会话从零问起。OpenClaw能给每个频道维持上下文，Channels没这个能力。
 
@@ -122,7 +122,7 @@ OpenClaw重不是因为模型依赖。它一次性扛着50多个集成、自带�
 
 这不算OpenClaw的错，是我之前用OpenClaw的方式不对。OpenClaw是用来在一个地方[编排频道集成和多智能体路由](https://docs.openclaw.ai/concepts/multi-agent)的工具。我实际用到的也就"用Claude写文章+用Telegram拿结果"这点东西。95%的功能没用上，却扛着100%的重量。
 
-请不要把这段理解成我在否定OpenClaw做得好。我依然认可[OpenClaw安装指南](/zh/blog/zh/openclaw-installation-tutorial)里写的那些优点——多模型、频道系统、节点图。只是这些优点在我手头的工作里用不上。
+请不要把这段理解成我在否定OpenClaw做得好。我依然认可[OpenClaw安装指南](/zh/blog/zh/openclaw-installation-tutorial/)里写的那些优点——多模型、频道系统、节点图。只是这些优点在我手头的工作里用不上。
 
 ## 换到Nanobot之后
 

@@ -124,7 +124,7 @@ AIは収集したデータを「Overview → 成果中心のReview → 課題抽
 - 後で検索可能な構造化されたデータの確保
 
 ### 2. Notion API MCPで自動ドキュメント化
-[Notion API MCP（Model Context Protocol）](https://modelcontextprotocol.io/introduction)を活用して、コードベースから自動でドキュメントを抽出してNotionに整理します。MCPサーバーを自作する方法は[MCPサーバー構築実践ガイド](/ja/blog/ja/mcp-server-build-practical-guide-2026)でステップごとに解説しています。
+[Notion API MCP（Model Context Protocol）](https://modelcontextprotocol.io/introduction)を活用して、コードベースから自動でドキュメントを抽出してNotionに整理します。MCPサーバーを自作する方法は[MCPサーバー構築実践ガイド](/ja/blog/ja/mcp-server-build-practical-guide-2026/)でステップごとに解説しています。
 
 <strong>自動化された項目</strong>：
 - 開発進捗状況
@@ -160,7 +160,7 @@ Claude Code、ChatGPT、Geminiなど様々なAIツールをコードレビュー
 
 ## AIエージェントベースの自動化システム
 
-それでは、核心となる半期資料作成自動化システムを紹介します。4つの専門AIエージェントが並列で作業し、それぞれの領域を担当します。こうした複数エージェントの分業パターンは[LLMベースのPMワークフロー自動化](/ja/blog/ja/llm-pm-workflow-automation)で扱ったアプローチと軌を一にします。
+それでは、核心となる半期資料作成自動化システムを紹介します。4つの専門AIエージェントが並列で作業し、それぞれの領域を担当します。こうした複数エージェントの分業パターンは[LLMベースのPMワークフロー自動化](/ja/blog/ja/llm-pm-workflow-automation/)で扱ったアプローチと軌を一にします。
 
 ### 全体アーキテクチャ
 
@@ -569,6 +569,6 @@ AI自動化の核心は技術自体ではなく<strong>プロセス設計</stron
 
 ---
 
-<strong>次回予告</strong>：[AIエージェントシステム構築実践ガイド：Notion API MCPとClaude Codeで自動化パイプラインを作る](/ja/blog/ja/ai-agent-notion-mcp-automation)
+<strong>次回予告</strong>：[AIエージェントシステム構築実践ガイド：Notion API MCPとClaude Codeで自動化パイプラインを作る](/ja/blog/ja/ai-agent-notion-mcp-automation/)
 
 ご質問や追加で知りたい内容があれば、コメントでお知らせください！

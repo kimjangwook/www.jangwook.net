@@ -44,11 +44,11 @@ faq:
 
 "在不允许使用云端AI的环境中工作。"第一次听到这句话时，我老实说没什么感触。可后来真的接触下来，处理医院病历的团队、审查法律文件的团队、分析金融客户数据的团队，比我以为的多得多。对这些团队说"粘贴到Claude或GPT里试试"，从一开始就不是个选项。
 
-上周我写了一篇[用FastMCP从零构建MCP服务器的文章](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026)，展示了如何将Claude Code作为客户端连接。文章发布后马上收到了一个问题："能用本地LLM代替Claude作为客户端吗？"
+上周我写了一篇[用FastMCP从零构建MCP服务器的文章](/zh/blog/zh/fastmcp-python-mcp-server-build-guide-2026/)，展示了如何将Claude Code作为客户端连接。文章发布后马上收到了一个问题："能用本地LLM代替Claude作为客户端吗？"
 
 好问题。我也想试试。
 
-这篇文章就是那个问题的答案。用Ollama + Gemma 4 + FastMCP，我构建了一个完全不需要互联网连接的离线AI工具管道。用Ollama服务Gemma 4的运维层面，我在[Ollama + FastAPI 生产部署指南](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026)中讲得更深入，可以配合阅读。
+这篇文章就是那个问题的答案。用Ollama + Gemma 4 + FastMCP，我构建了一个完全不需要互联网连接的离线AI工具管道。用Ollama服务Gemma 4的运维层面，我在[Ollama + FastAPI 生产部署指南](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026/)中讲得更深入，可以配合阅读。
 
 > **先读一手资料。** 这里整理了本文用到的工具的官方参考。开始前请确认各项目当前推荐的配置。
 > - Ollama 官方网站：[ollama.com](https://ollama.com)
@@ -290,6 +290,6 @@ Gemma 4按`list_directory` → `read_file("README.md")`的顺序调用。经过�
 
 将这个管道投入生产前，也请检查MCP安全问题。即使是本地部署，工具注入、过度权限等MCP特有的风险依然存在。
 
-如果想用 TypeScript 而不是 Python 实现 MCP 客户端，[@modelcontextprotocol/sdk TypeScript MCP 客户端指南](/zh/blog/zh/mcp-client-typescript-sdk-guide-2026)涵盖了相同的流程。从 Gemma 4 等本地模型获取稳定结构化 JSON 输出的方法，参见 [Ollama structured outputs + Pydantic 指南](/zh/blog/zh/ollama-structured-outputs-pydantic-local-llm-guide-2026)。
+如果想用 TypeScript 而不是 Python 实现 MCP 客户端，[@modelcontextprotocol/sdk TypeScript MCP 客户端指南](/zh/blog/zh/mcp-client-typescript-sdk-guide-2026/)涵盖了相同的流程。从 Gemma 4 等本地模型获取稳定结构化 JSON 输出的方法，参见 [Ollama structured outputs + Pydantic 指南](/zh/blog/zh/ollama-structured-outputs-pydantic-local-llm-guide-2026/)。
 
 代码全部在上面。安装依赖只需`pip install fastmcp uvicorn openai requests`一条命令。如果运行时遇到问题，分步骤单独测试会比调试整个管道更快。

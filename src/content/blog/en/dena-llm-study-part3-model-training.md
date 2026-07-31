@@ -44,11 +44,11 @@ faq:
 
 > <strong>Series: DeNA LLM Study</strong> (3/5)
 >
-> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: Structured Output and Multi-LLM Pipelines
 > 3. <strong>Part 3: Model Training Methodologies</strong> ← Current Article
-> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag)
-> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design)
+> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag/)
+> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design/)
 
 ## Where do you even start with fine-tuning?
 
@@ -56,7 +56,7 @@ faq:
 
 Part 3 of DeNA's LLM study materials lands right on that pain point. It walks through how the three training approaches differ, then digs into the mechanics and real-world use of efficient methods like LoRA, QLoRA, and DPO. On top of that, I've added the trends as they stand in 2025 and a few things I learned running this stuff myself.
 
-This is a middle chapter in the series. If you want to see how the model itself works first, start with [Part 1: LLM Fundamentals](/en/blog/en/dena-llm-study-part1-fundamentals). If you're curious about attaching external knowledge instead of training, [Part 4: RAG Architecture](/en/blog/en/dena-llm-study-part4-rag) picks up the thread.
+This is a middle chapter in the series. If you want to see how the model itself works first, start with [Part 1: LLM Fundamentals](/en/blog/en/dena-llm-study-part1-fundamentals/). If you're curious about attaching external knowledge instead of training, [Part 4: RAG Architecture](/en/blog/en/dena-llm-study-part4-rag/) picks up the thread.
 
 ## When this is useful, and when you can skip it
 

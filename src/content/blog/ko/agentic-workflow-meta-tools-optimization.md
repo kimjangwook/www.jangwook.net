@@ -67,7 +67,7 @@ AWO(Agent Workflow Optimization) 프레임워크의 작동 원리를 분석하�
 
 ## 왜 에이전트 워크플로우 최적화가 필요한가
 
-현재 대부분의 AI 에이전트 시스템은 <strong>ReAct(Reasoning + Acting)</strong> 패턴을 따른다. 에이전트가 사용자 요청을 받으면 LLM이 추론하고, 도구를 호출하고, 결과를 관찰하고, 다시 추론하는 루프를 반복한다. ReAct 외에도 다양한 워크플로우 패턴이 존재하는데, [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 실무에 맞는 패턴을 비교해볼 수 있다.
+현재 대부분의 AI 에이전트 시스템은 <strong>ReAct(Reasoning + Acting)</strong> 패턴을 따른다. 에이전트가 사용자 요청을 받으면 LLM이 추론하고, 도구를 호출하고, 결과를 관찰하고, 다시 추론하는 루프를 반복한다. ReAct 외에도 다양한 워크플로우 패턴이 존재하는데, [Claude Code 에이전틱 워크플로우 패턴 5가지](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 실무에 맞는 패턴을 비교해볼 수 있다.
 
 문제는 이 과정에서 발생하는 비효율이다.
 
@@ -367,7 +367,7 @@ AWO 도입에 필요한 역량:
 | Tree of Thought | 다중 추론 경로 탐색 | 탐색 vs AWO는 통합 |
 | AVATAR | 대조 학습 기반 | 학습이 필요하지만 AWO는 실행 분석만 사용 |
 
-AWO의 장점은 <strong>기존 시스템에 비침습적으로 적용</strong>할 수 있다는 점이다. 에이전트의 코어 로직을 수정하지 않고 도구만 추가하면 된다. 시스템 수준의 에이전트 아키텍처 최적화를 원한다면 [Deep Agents 패러다임으로 AI 에이전트 시스템 최적화하기](/ko/blog/ko/deep-agents-architecture-optimization)도 함께 살펴보면 좋다.
+AWO의 장점은 <strong>기존 시스템에 비침습적으로 적용</strong>할 수 있다는 점이다. 에이전트의 코어 로직을 수정하지 않고 도구만 추가하면 된다. 시스템 수준의 에이전트 아키텍처 최적화를 원한다면 [Deep Agents 패러다임으로 AI 에이전트 시스템 최적화하기](/ko/blog/ko/deep-agents-architecture-optimization/)도 함께 살펴보면 좋다.
 
 ## 결론
 

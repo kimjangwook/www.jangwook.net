@@ -65,13 +65,13 @@ relatedPosts:
 
 2026년 2월, GitHub는 GPT-5.3 기반의 Codex 기능을 플랫폼 전체에 롤아웃하던 중 심각한 신뢰성 문제를 발견하고 <strong>일시적으로 이전 버전(GPT-5.0)으로 롤백</strong>하는 결정을 내렸다. 이 사건은 AI 모델의 버전 업그레이드가 단순한 기능 개선이 아니라, 프로덕션 인프라 전체의 안정성에 직결되는 문제임을 다시 한번 일깨워 주었다.
 
-GitHub Codex 롤백 사건의 배경과 원인을 분석하고, 엔지니어링 매니저(EM) 관점에서 AI 모델 버전업 리스크를 어떻게 관리해야 하는지 짚는다. AI 모델 의존도 증가가 가져오는 또 다른 리스크는 [GPT-4o 서비스 종료가 불러온 모델 의존성 위험 분석](/ko/blog/ko/gpt4o-retirement-model-dependency-risk)에서 함께 살펴볼 수 있다.
+GitHub Codex 롤백 사건의 배경과 원인을 분석하고, 엔지니어링 매니저(EM) 관점에서 AI 모델 버전업 리스크를 어떻게 관리해야 하는지 짚는다. AI 모델 의존도 증가가 가져오는 또 다른 리스크는 [GPT-4o 서비스 종료가 불러온 모델 의존성 위험 분석](/ko/blog/ko/gpt4o-retirement-model-dependency-risk/)에서 함께 살펴볼 수 있다.
 
 ## 사건 경위
 
 ### GPT-5.3 Codex란?
 
-GitHub Copilot의 코어 엔진인 Codex는 OpenAI의 GPT 모델을 기반으로 코드 생성, 자동 완성, 코드 리뷰 등의 기능을 제공한다. [Greptile의 AI 코딩 현황 리포트](/ko/blog/ko/greptile-ai-coding-report-2025-review)에 따르면, 개발자들의 AI 코딩 도구 의존도는 이미 돌이킬 수 없는 수준에 달해 있어 이런 서비스 장애의 파급력이 더욱 커졌다. GPT-5.3으로의 업그레이드는 다음과 같은 개선을 목표로 했다:
+GitHub Copilot의 코어 엔진인 Codex는 OpenAI의 GPT 모델을 기반으로 코드 생성, 자동 완성, 코드 리뷰 등의 기능을 제공한다. [Greptile의 AI 코딩 현황 리포트](/ko/blog/ko/greptile-ai-coding-report-2025-review/)에 따르면, 개발자들의 AI 코딩 도구 의존도는 이미 돌이킬 수 없는 수준에 달해 있어 이런 서비스 장애의 파급력이 더욱 커졌다. GPT-5.3으로의 업그레이드는 다음과 같은 개선을 목표로 했다:
 
 - <strong>코드 생성 정확도 향상</strong>: 복잡한 멀티파일 컨텍스트 이해 능력 강화
 - <strong>응답 속도 개선</strong>: 추론 최적화를 통한 레이턴시 감소
@@ -161,7 +161,7 @@ AI 모델의 버전 업그레이드를 단순한 "소프트웨어 업데이트"�
 
 GitHub 팀이 빠르게 롤백할 수 있었던 이유는 <strong>사전에 롤백 계획이 수립되어 있었기 때문</strong>이다. EM으로서 다음을 보장해야 한다:
 
-- <strong>Feature Flag 기반 배포</strong>: 모델 버전을 런타임에 전환 가능하도록 설계 (CLI 마이그레이션 시의 유사한 접근법은 [Claude Code CLI 마이그레이션 가이드](/ko/blog/ko/claude-code-cli-migration-guide) 참고)
+- <strong>Feature Flag 기반 배포</strong>: 모델 버전을 런타임에 전환 가능하도록 설계 (CLI 마이그레이션 시의 유사한 접근법은 [Claude Code CLI 마이그레이션 가이드](/ko/blog/ko/claude-code-cli-migration-guide/) 참고)
 - <strong>자동 롤백 트리거</strong>: 핵심 지표(레이턴시, 에러율) 임계치 초과 시 자동 복원
 - <strong>롤백 리허설</strong>: 정기적으로 롤백 시나리오를 테스트
 

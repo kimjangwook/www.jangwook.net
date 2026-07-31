@@ -45,7 +45,7 @@ My blog automation system consists of four key components:
 
 ### 1. Claude Code (The Orchestrator)
 
-Claude Code isn't just a coding assistant - it's a complete development environment powered by Claude 3.5 Sonnet. (See [Claude Code Best Practices: Maximizing AI Coding Productivity](/en/blog/en/claude-code-best-practices) for a deeper dive.) It can:
+Claude Code isn't just a coding assistant - it's a complete development environment powered by Claude 3.5 Sonnet. (See [Claude Code Best Practices: Maximizing AI Coding Productivity](/en/blog/en/claude-code-best-practices/) for a deeper dive.) It can:
 
 - Read and write files across your entire project
 - Execute bash commands and manage git operations
@@ -428,7 +428,7 @@ tags: ['llm', 'claude-code', 'automation']
 
 ## MCP Integration: Extending Claude's Capabilities
 
-Model Context Protocol (MCP) is what makes this system truly powerful. It's like giving Claude superpowers. [Claude Code Hooks & Workflow Automation](/en/blog/en/claude-code-hooks-workflow) covers real MCP integration patterns in production.
+Model Context Protocol (MCP) is what makes this system truly powerful. It's like giving Claude superpowers. [Claude Code Hooks & Workflow Automation](/en/blog/en/claude-code-hooks-workflow/) covers real MCP integration patterns in production.
 
 ### 1. Context7: Always Up-to-Date Documentation
 

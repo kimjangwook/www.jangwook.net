@@ -72,7 +72,7 @@ relatedPosts:
 
 3. <strong>기능 요구사항</strong>: 오픈소스 커스터마이징이 필요하다면 Codex CLI가, 복잡한 멀티에이전트 시스템이 필요하다면 Claude Code가 적합하다.
 
-마이그레이션 전, Claude Code를 완전히 활용하고 있는지 먼저 확인하고 싶다면 [Claude Code 모범 사례 가이드](/ko/blog/ko/claude-code-best-practices)를 참고하라.
+마이그레이션 전, Claude Code를 완전히 활용하고 있는지 먼저 확인하고 싶다면 [Claude Code 모범 사례 가이드](/ko/blog/ko/claude-code-best-practices/)를 참고하라.
 
 ## 핵심 비교: 4가지 CLI 도구
 
@@ -467,7 +467,7 @@ flowchart TD
 - <strong>MCP 생태계 활용</strong>: 다양한 MCP 서버 통합
 - <strong>장문 컨텍스트</strong>: 200K 토큰 컨텍스트 윈도우 필요
 
-Claude Code로 구현 가능한 5가지 에이전틱 워크플로우 패턴은 [Claude Code 에이전틱 워크플로우 패턴 가이드](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)에서 확인하라.
+Claude Code로 구현 가능한 5가지 에이전틱 워크플로우 패턴은 [Claude Code 에이전틱 워크플로우 패턴 가이드](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)에서 확인하라.
 
 ## 하이브리드 전략
 

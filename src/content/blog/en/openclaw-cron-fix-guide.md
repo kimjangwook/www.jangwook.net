@@ -63,7 +63,7 @@ relatedPosts:
 
 Users on OpenClaw stable/beta (v2026.2.3-1) have reported issues with cron jobs not running and missing reminders.
 
-This is a critical bug in the scheduling logic. A fix is available in the dev channel (v2026.2.4). This guide explains how to update. If you're interested in building a more resilient automation setup, check out [Astro Scheduled Publishing Automation Guide](/en/blog/en/astro-scheduled-publishing).
+This is a critical bug in the scheduling logic. A fix is available in the dev channel (v2026.2.4). This guide explains how to update. If you're interested in building a more resilient automation setup, check out [Astro Scheduled Publishing Automation Guide](/en/blog/en/astro-scheduled-publishing/).
 
 ## Background
 
@@ -115,4 +115,4 @@ openclaw gateway restart
 
 ## Conclusion
 
-This update restores cron job stability. Immediate update is recommended. To strengthen your CI/CD automation and prevent similar issues, see the [GitHub Actions + Claude Code CI Automation Guide](/en/blog/en/github-actions-claude-code-ci-automation).
+This update restores cron job stability. Immediate update is recommended. To strengthen your CI/CD automation and prevent similar issues, see the [GitHub Actions + Claude Code CI Automation Guide](/en/blog/en/github-actions-claude-code-ci-automation/).

@@ -514,7 +514,7 @@ test('POMパターンを使用したログインテスト', async ({ page }) => 
 
 ## GitHub Actions CI/CD統合
 
-CI 環境で大量のページを効率的に検証するには並列実行が重要です。[Claude Code で大規模ページテストを並列自動化する](/ja/blog/ja/claude-code-parallel-testing)では、数百ページを同時処理する並列テストパターンを詳しく解説しています。
+CI 環境で大量のページを効率的に検証するには並列実行が重要です。[Claude Code で大規模ページテストを並列自動化する](/ja/blog/ja/claude-code-parallel-testing/)では、数百ページを同時処理する並列テストパターンを詳しく解説しています。
 
 ### ワークフロー設定
 
@@ -825,7 +825,7 @@ Playwright + AIの組み合わせは、E2Eテスト自動化における革新�
 - CI/CDパイプラインに統合
 - ビジュアルテストで品質をさらに強化
 
-Playwright テストを Claude Code エージェントと組み合わせた実践例は、[Claude Code でページ E2E テストを自動化する](/ja/blog/ja/e2e-page-test-automation-claude-code)で確認できます。
+Playwright テストを Claude Code エージェントと組み合わせた実践例は、[Claude Code でページ E2E テストを自動化する](/ja/blog/ja/e2e-page-test-automation-claude-code/)で確認できます。
 
 E2Eテストは初期投資が必要ですが、長期的には開発速度の向上とバグ削減につながります。Playwrightの強力な機能とAI支援を活用し、効率的なテスト自動化を実現しましょう。
 

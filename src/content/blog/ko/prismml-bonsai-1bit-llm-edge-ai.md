@@ -57,7 +57,7 @@ relatedPosts:
 
 이름이 좀 오해를 부른다. "1-bit"이라고 하면 0과 1만 쓰는 것 같지만, 실제로는 가중치를 {-1, +1} 두 값으로만 표현한다. 부호 하나. 곱셈이 사라지고 덧셈과 뺄셈만 남는다. 행렬곱(MatMul)이 사실상 비트 연산으로 대체되니까 연산량이 극적으로 줄어든다.
 
-이 아이디어 자체는 새롭지 않다. Microsoft Research의 BitNet 논문이 2023년에 나왔고, 2024년에 BitNet b1.58이 ternary({-1, 0, +1}) 방식으로 후속 연구를 냈다. PrismML이 한 건 이걸 실제로 쓸 수 있는 모델로 만든 것이다. KV 캐시를 3-bit으로 압축해서 메모리 효율을 높이는 다른 접근법은 [Google TurboQuant의 KV 캐시 압축 기술 분석](/ko/blog/ko/google-turboquant-kv-cache-3bit-compression)에서 비교해볼 수 있다.
+이 아이디어 자체는 새롭지 않다. Microsoft Research의 BitNet 논문이 2023년에 나왔고, 2024년에 BitNet b1.58이 ternary({-1, 0, +1}) 방식으로 후속 연구를 냈다. PrismML이 한 건 이걸 실제로 쓸 수 있는 모델로 만든 것이다. KV 캐시를 3-bit으로 압축해서 메모리 효율을 높이는 다른 접근법은 [Google TurboQuant의 KV 캐시 압축 기술 분석](/ko/blog/ko/google-turboquant-kv-cache-3bit-compression/)에서 비교해볼 수 있다.
 
 ## 공개된 모델 라인업
 
@@ -83,7 +83,7 @@ HPCwire 보도에 따르면 풀정밀도 대비 14배 작고, 8배 빠르며, �
 
 지금 LLM 생태계의 가장 큰 병목은 GPU 메모리다. 로컬에서 모델을 돌리고 싶어도 VRAM 제약 때문에 양자화를 하고, 그래도 안 되면 더 작은 모델로 내려가는 식이다. 1.15GB면 이 병목을 근본적으로 우회한다. M1 맥북에어의 통합 메모리에서 여유롭게 돌아가고, 심지어 스마트폰에서도 가능하다.
 
-마침 Google이 엊그제(4월 7일) LiteRT-LM이라는 엣지 디바이스용 LLM 추론 프레임워크를 공개했다. Android, iOS, 웹, 데스크톱, IoT를 모두 지원하고 GPU/NPU 가속까지 된다. PrismML 같은 초경량 모델과 LiteRT-LM 같은 런타임이 만나면, "오프라인에서 돌아가는 LLM"이 단순한 데모가 아니라 실제 제품이 될 수 있는 조합이 갖춰진다. 로컬에서 돌리는 에이전트의 실제 가능성은 [Gemma 4 로컬 에이전트 hands-on 리뷰](/ko/blog/ko/gemma-4-local-agent-edge-ai)에서 직접 확인해봤다.
+마침 Google이 엊그제(4월 7일) LiteRT-LM이라는 엣지 디바이스용 LLM 추론 프레임워크를 공개했다. Android, iOS, 웹, 데스크톱, IoT를 모두 지원하고 GPU/NPU 가속까지 된다. PrismML 같은 초경량 모델과 LiteRT-LM 같은 런타임이 만나면, "오프라인에서 돌아가는 LLM"이 단순한 데모가 아니라 실제 제품이 될 수 있는 조합이 갖춰진다. 로컬에서 돌리는 에이전트의 실제 가능성은 [Gemma 4 로컬 에이전트 hands-on 리뷰](/ko/blog/ko/gemma-4-local-agent-edge-ai/)에서 직접 확인해봤다.
 
 개인적으로 가장 기대되는 건 프라이버시 시나리오다. 의료 데이터나 사내 문서를 클라우드로 보내지 않고 디바이스에서 처리한다는 건, 규제가 까다로운 산업에서 LLM 도입의 가장 큰 장벽을 없앤다는 뜻이다.
 

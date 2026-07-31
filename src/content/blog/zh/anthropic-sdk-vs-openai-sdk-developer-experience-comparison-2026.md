@@ -264,7 +264,7 @@ with client.chat.completions.stream(
             print(delta.content, end="", flush=True)
 ```
 
-Anthropic的`stream.text_stream`对于纯文本输出更简洁。[使用Vercel AI SDK构建Claude流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)的指南在类似模式上构建，适合进一步阅读。
+Anthropic的`stream.text_stream`对于纯文本输出更简洁。[使用Vercel AI SDK构建Claude流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026/)的指南在类似模式上构建，适合进一步阅读。
 
 ## Anthropic专有功能：提示词缓存、扩展思考、引用
 
@@ -286,7 +286,7 @@ client.messages.create(
 )
 ```
 
-[Claude API提示词缓存实战指南](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)涵盖了在生产中应用此功能的四种模式，可降低70%成本。
+[Claude API提示词缓存实战指南](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide/)涵盖了在生产中应用此功能的四种模式，可降低70%成本。
 
 **扩展思考（Extended Thinking）**
 
@@ -338,7 +338,7 @@ for block in response.content:
 
 **选择OpenAI SDK的场景**: 语音界面或实时交互（Realtime API）、Assistants API的文件搜索+代码解释器组合、组织/项目级计费分离、管理微调后的自定义模型。
 
-**两者都用？** 在前面放一个抽象层。[PydanticAI](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026)在智能体层面处理多提供商路由，让你避免在整个代码库中传播工具格式差异。
+**两者都用？** 在前面放一个抽象层。[PydanticAI](/zh/blog/zh/pydantic-ai-type-safe-agent-tutorial-2026/)在智能体层面处理多提供商路由，让你避免在整个代码库中传播工具格式差异。
 
 ## 这次比较真正揭示的内容
 

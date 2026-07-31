@@ -102,7 +102,7 @@ Opus 4.8于5月28日发布，Claude Code在6月9日（v2.1.170）将其设为默
 
 根据Anthropic的官方说明，相比Opus 4.7在编码、agent任务和专业工作上有所改进。"适度但可感知的提升"是多数评测的描述。我亲自使用下来，复杂重构和多文件修改时错误确实少了一些，但没有让人眼前一亮的感觉。
 
-[Claude Code agent工作流5种模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)中介绍的并行agent模式与Opus 4.8的Dynamic Workflows直接相关。
+[Claude Code agent工作流5种模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)中介绍的并行agent模式与Opus 4.8的Dynamic Workflows直接相关。
 
 Dynamic Workflows是让Claude把任务编排成工作流，协调数十到数百个agent在后台处理大规模工作。Anthropic重点强调了两点：
 
@@ -126,7 +126,7 @@ Fast Mode降价比看起来更有意义——Opus系列之前即便在快速模�
 - 按插件的用量
 - 按各个MCP服务器的用量
 
-[Claude Code插件完整指南](/zh/blog/zh/claude-code-plugins-complete-guide)详细介绍了插件结构——一个插件可以捆绑技能、hooks和MCP服务器。现在可以看到插件内部哪个组件在消耗token，而不只是插件整体。
+[Claude Code插件完整指南](/zh/blog/zh/claude-code-plugins-complete-guide/)详细介绍了插件结构——一个插件可以捆绑技能、hooks和MCP服务器。现在可以看到插件内部哪个组件在消耗token，而不只是插件整体。
 
 在我的配置中，发现Google Analytics MCP服务器消耗的token远超预期——因为自动调用太频繁。这一点现在清晰可见，于是立即调整了MCP服务器配置来降低调用频率。之前完全不知道这个情况。
 
@@ -166,7 +166,7 @@ Safe Mode有正确的使用场景，也有不该用的场景。
 
 ## Hooks进化：MCP工具直接调用与MessageDisplay
 
-之前介绍过的[Claude Code Hooks工作流](/zh/blog/zh/claude-code-hooks-workflow)在本次更新中得到了扩展。有两点值得关注。
+之前介绍过的[Claude Code Hooks工作流](/zh/blog/zh/claude-code-hooks-workflow/)在本次更新中得到了扩展。有两点值得关注。
 
 <strong>MCP工具类型hook</strong>
 

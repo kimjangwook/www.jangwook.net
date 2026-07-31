@@ -113,7 +113,7 @@ EM/CTO観点からすると、これは単なる地政学的な話ではあり�
 | GPT-5.2 | $6.00 | $24.00 | 約 1.0x |
 | GLM-5 (API) | $1.00 | $3.20 | <strong>約 0.15x</strong> |
 
-GLM-5 APIはClaude Opus 4.6と比べ、入力コストが5分の1、出力コストが約8分の1です。同等の性能でこのコスト差は、規模が大きくなるほど意思決定に決定的な影響を及ぼします。主要なLLM APIの価格比較については、[LLM API料金比較2026: GPT-5、Claude、Gemini、DeepSeek](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)をご参照ください。
+GLM-5 APIはClaude Opus 4.6と比べ、入力コストが5分の1、出力コストが約8分の1です。同等の性能でこのコスト差は、規模が大きくなるほど意思決定に決定的な影響を及ぼします。主要なLLM APIの価格比較については、[LLM API料金比較2026: GPT-5、Claude、Gemini、DeepSeek](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)をご参照ください。
 
 ### 自己ホスティング(Self-Hosting)シナリオ
 
@@ -173,7 +173,7 @@ graph TD
 - 大規模ドキュメント処理 (200K コンテキスト)
 - データ規定が厳格な金融・医療・法律分野 (MIT 自己ホスティング)
 - スタートアップ・SMBのコスト最適化 (Claude Opus 比 85% 削減)
-- AIエージェント・MCPワークフロー (MCP-Atlas オープンソース1位) — GLM-5と組み合わせるエージェントフレームワークの選定には[2026年AIエージェントフレームワーク比較: LangGraph vs CrewAI vs Dapr](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)をご参照ください
+- AIエージェント・MCPワークフロー (MCP-Atlas オープンソース1位) — GLM-5と組み合わせるエージェントフレームワークの選定には[2026年AIエージェントフレームワーク比較: LangGraph vs CrewAI vs Dapr](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)をご参照ください
 
 <strong>既存商用モデルがより適している状況:</strong>
 
@@ -252,7 +252,7 @@ GLM-5の登場は、3つのメッセージを伝えます。
 
 今すぐすべてのワークロードをGLM-5に転換する必要はありません。しかし、コーディングアシスタント、AIエージェント、大容量ドキュメント処理のような領域では、即座にパイロットを開始する十分な根拠が生まれました。
 
-AI導入で「最高性能モデルを使う」ことが正解ではない時代が来ました。今はワークロード別に最適なモデルをインテリジェントにルーティングすることが、エンジニアリングリーダーの核心的能力になります。ルーティング判断の参考として、最新の[OpenAI GPT-5.5 vs Claudeモデル比較分析](/ja/blog/ja/openai-gpt-5-5-release-claude-comparison-april-2026)もご確認ください。
+AI導入で「最高性能モデルを使う」ことが正解ではない時代が来ました。今はワークロード別に最適なモデルをインテリジェントにルーティングすることが、エンジニアリングリーダーの核心的能力になります。ルーティング判断の参考として、最新の[OpenAI GPT-5.5 vs Claudeモデル比較分析](/ja/blog/ja/openai-gpt-5-5-release-claude-comparison-april-2026/)もご確認ください。
 
 ## 参考資料
 

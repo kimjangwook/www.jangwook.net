@@ -64,7 +64,7 @@ RTK(Rust Token Killer)는 그 문제를 정확히 겨냥한 도구다. AI 코딩
 - **Truncation**: 일정 길이 이상의 출력을 잘라내고 `...(truncated)` 표시
 - **Deduplication**: 반복 출력 중복 제거
 
-Claude Code와의 통합은 `PreToolUse` 훅을 통해 이루어진다. [Claude Code의 훅 시스템](/ko/blog/ko/claude-code-hooks-workflow)을 알고 있다면 금방 이해될 구조다 — `rtk init -g` 한 번으로 `~/.claude/hooks/` 아래에 자동으로 등록된다. 그 이후 Claude Code가 `git status`를 실행하면, 훅이 이를 가로채 `rtk git status`로 재작성한다. Claude Code는 이 과정을 모른다.
+Claude Code와의 통합은 `PreToolUse` 훅을 통해 이루어진다. [Claude Code의 훅 시스템](/ko/blog/ko/claude-code-hooks-workflow/)을 알고 있다면 금방 이해될 구조다 — `rtk init -g` 한 번으로 `~/.claude/hooks/` 아래에 자동으로 등록된다. 그 이후 Claude Code가 `git status`를 실행하면, 훅이 이를 가로채 `rtk git status`로 재작성한다. Claude Code는 이 과정을 모른다.
 
 지원 에이전트: Claude Code, Cursor, Windsurf, Cline, GitHub Copilot CLI, Gemini CLI, Antigravity, Hermes. 단일 Rust 바이너리에 의존성이 없다.
 
@@ -211,7 +211,7 @@ rtk init -g
 LLM 에이전트 비용을 줄이는 방법은 크게 세 레이어다:
 
 1. **모델 선택**: 싼 모델로 교체 (Haiku, Flash 등)
-2. **API 레이어**: [프롬프트 캐싱](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide), [배치 API](/ko/blog/ko/anthropic-message-batches-api-production-guide), [MCP 스키마 압축](/ko/blog/ko/mcp2cli-token-cost-optimization)
+2. **API 레이어**: [프롬프트 캐싱](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide/), [배치 API](/ko/blog/ko/anthropic-message-batches-api-production-guide/), [MCP 스키마 압축](/ko/blog/ko/mcp2cli-token-cost-optimization/)
 3. **셸 레이어**: RTK (명령어 출력 압축)
 
 RTK는 3번 레이어에 속한다. 여기까지 최적화가 안 된 프로젝트라면 도입 가치가 있다. 하지만 이미 모델 선택이나 캐싱으로 비용을 잡고 있다면 RTK의 기여분은 상대적으로 작아진다.
@@ -284,9 +284,9 @@ echo "RTK 설치 완료. Claude Code를 재시작하세요."
 | MCP 스키마 압축 (mcp2cli) | API | MCP 툴 주입 | 중간 | 96〜99% |
 | RTK | 셸 | Bash 명령어 출력 | 낮음 | 0〜90% (명령어 따라 다름) |
 
-모델 교체가 비용 절감 효과가 가장 크지만, 성능 저하가 따른다. 프롬프트 캐싱은 반복적 워크플로우에서 강력하다. [MCP 스키마 압축](/ko/blog/ko/mcp2cli-token-cost-optimization)은 MCP를 많이 쓰는 환경에서 극적인 절감이 가능하다.
+모델 교체가 비용 절감 효과가 가장 크지만, 성능 저하가 따른다. 프롬프트 캐싱은 반복적 워크플로우에서 강력하다. [MCP 스키마 압축](/ko/blog/ko/mcp2cli-token-cost-optimization/)은 MCP를 많이 쓰는 환경에서 극적인 절감이 가능하다.
 
-RTK는 이 중에서 구현 난도가 가장 낮고, 기존 워크플로우를 전혀 바꾸지 않는다는 점에서 "일단 깔아두는" 도구에 가깝다. [AI 에이전트 비용 현실](/ko/blog/ko/ai-agent-cost-reality)에서 다룬 것처럼 에이전트 비용은 여러 요소가 복합적으로 쌓이는 구조다. RTK 하나로 모든 걸 해결하기보다, 레이어별로 쌓아가는 접근이 현실적이다.
+RTK는 이 중에서 구현 난도가 가장 낮고, 기존 워크플로우를 전혀 바꾸지 않는다는 점에서 "일단 깔아두는" 도구에 가깝다. [AI 에이전트 비용 현실](/ko/blog/ko/ai-agent-cost-reality/)에서 다룬 것처럼 에이전트 비용은 여러 요소가 복합적으로 쌓이는 구조다. RTK 하나로 모든 걸 해결하기보다, 레이어별로 쌓아가는 접근이 현실적이다.
 
 ## 설치해봐야 할까?
 

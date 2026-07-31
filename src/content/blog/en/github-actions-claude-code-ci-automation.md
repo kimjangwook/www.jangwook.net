@@ -284,7 +284,7 @@ claude -p \
 
 You can skip `--bare` locally, but `--dangerously-skip-permissions` is still needed. Without it, Claude asks "do you trust this directory?" and the pipe hangs.
 
-Compared to [Claude Code's hook-based review system](/en/blog/en/claude-code-hooks-workflow), this approach is complementary: hooks run locally before a commit, while GitHub Actions runs at the PR gate for the whole team.
+Compared to [Claude Code's hook-based review system](/en/blog/en/claude-code-hooks-workflow/), this approach is complementary: hooks run locally before a commit, while GitHub Actions runs at the PR gate for the whole team.
 
 ## Injecting Project Rules with CLAUDE.md
 
@@ -331,7 +331,7 @@ Real-world estimates:
 - Nightly audit (20 files): $0.80–1.50
 - Monthly (50 PRs + 30 nightly runs): $20–60
 
-Compare that to [Anthropic's native Claude Code Review feature](/en/blog/en/claude-code-review-multi-agent-pr) at $15–25 per PR. Direct CLI integration is much cheaper per run, though less thorough than a multi-agent setup. For catching bugs and security issues before human review, it's more than enough.
+Compare that to [Anthropic's native Claude Code Review feature](/en/blog/en/claude-code-review-multi-agent-pr/) at $15–25 per PR. Direct CLI integration is much cheaper per run, though less thorough than a multi-agent setup. For catching bugs and security issues before human review, it's more than enough.
 
 `--max-budget-usd` is your safety net. Set it and a runaway large PR or unexpected loop stops at your specified limit automatically.
 

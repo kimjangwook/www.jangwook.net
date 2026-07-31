@@ -145,7 +145,7 @@ of each component in a sequence relative to the other components...
 
 The interesting bit: the first search failed, and the agent automatically reformulated the query (`attention (machine learning)`) and retried. No extra code required. Agno runs a ReAct loop internally — plan, act, observe, adjust. Tool failures are handled gracefully.
 
-Compared with the code-execution approach in Smolagents (covered in the [Python AI agent library comparison post](/en/blog/en/python-ai-agent-library-comparison-2026)), Agno leans more toward tool composition than code generation. Neither is strictly better; it depends on what you're building.
+Compared with the code-execution approach in Smolagents (covered in the [Python AI agent library comparison post](/en/blog/en/python-ai-agent-library-comparison-2026/)), Agno leans more toward tool composition than code generation. Neither is strictly better; it depends on what you're building.
 
 ## Structured Output: Use `output_schema`, Not `output_model`
 
@@ -205,7 +205,7 @@ Skills:
 
 `response.content` returns an actual Pydantic instance. Parsing is handled internally; you get full IDE autocomplete on the result. The 4-second latency (vs 9 seconds for the Calculator agent) reflects the absence of tool call round-trips.
 
-This is similar in spirit to [PydanticAI's `output_type` parameter](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026), but the naming diverges. When jumping between frameworks, you need to memorize each one's vocabulary — that's friction that accumulates.
+This is similar in spirit to [PydanticAI's `output_type` parameter](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/), but the naming diverges. When jumping between frameworks, you need to memorize each one's vocabulary — that's friction that accumulates.
 
 ## Multi-Agent Team: `members=`, Not `agents=`
 
@@ -301,7 +301,7 @@ Debugging is manual. `debug_mode=True` spits out unstructured logs. I haven't fo
 
 The docs lag behind the API. `show_tool_calls`, `output_model`, `agents=` — these are examples of parameters whose behavior in the docs doesn't match the current codebase. Always check the GitHub `examples/` directory for the latest version, not the tutorial blog posts.
 
-The Team's `coordinate` mode is sequential. If you need parallel agent execution or complex conditional branching across many agents, [Google ADK or LangGraph](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026) are better fits.
+The Team's `coordinate` mode is sequential. If you need parallel agent execution or complex conditional branching across many agents, [Google ADK or LangGraph](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026/) are better fits.
 
 ## When Agno Makes Sense
 
@@ -317,7 +317,7 @@ Where I wouldn't use Agno: real-time streaming UIs, production workflows requiri
 
 ## A Quick Comparison with PydanticAI
 
-Among frameworks in a similar position, there is [PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026). Having written real code with both, the biggest differences I felt are these.
+Among frameworks in a similar position, there is [PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/). Having written real code with both, the biggest differences I felt are these.
 
 <strong>Tool ecosystem</strong>: Agno ships 100+ built-in tools; PydanticAI has you register your own functions with the `@agent.tool` decorator. Agno wins on "fast start"; PydanticAI is better when you want explicit control over tool logic.
 
@@ -327,7 +327,7 @@ Among frameworks in a similar position, there is [PydanticAI](/en/blog/en/pydant
 
 <strong>Dependencies</strong>: Similarly light. Both are far lighter than LangChain.
 
-If the decision still feels complicated, reading the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026) alongside should get you to a clearer conclusion.
+If the decision still feels complicated, reading the [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026/) alongside should get you to a clearer conclusion.
 
 ## What's Next to Explore
 

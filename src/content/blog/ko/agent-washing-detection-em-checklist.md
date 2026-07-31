@@ -166,7 +166,7 @@ class WashedAgent:
 
 <strong>질문:</strong> 리소스 제약이 있을 때 시스템이 트레이드오프를 인식하는가?
 
-진짜 에이전트는 주어진 <strong>시간, 토큰, [API 비용](/ko/blog/ko/ai-agent-cost-reality)의 제약 안에서 최적 결과를 도출</strong>하려고 전략을 조정한다. 에이전트 워싱은 리소스 제약을 인식하지 못하고 항상 같은 방식으로 실행된다.
+진짜 에이전트는 주어진 <strong>시간, 토큰, [API 비용](/ko/blog/ko/ai-agent-cost-reality/)의 제약 안에서 최적 결과를 도출</strong>하려고 전략을 조정한다. 에이전트 워싱은 리소스 제약을 인식하지 못하고 항상 같은 방식으로 실행된다.
 
 ```python
 # 진짜 에이전트: 리소스 인식
@@ -195,7 +195,7 @@ async def run_with_budget(self, task, token_budget=10000):
 
 <strong>질문:</strong> 시스템이 왜 특정 행동을 선택했는지 설명할 수 있는가?
 
-진짜 에이전트는 <strong>[의사결정 과정의 투명한 추적(trace)](/ko/blog/ko/ai-agent-observability-production-guide)</strong>을 제공한다. 에이전트 워싱은 "블랙박스"로 작동하거나, 사전 작성된 설명만 반환한다.
+진짜 에이전트는 <strong>[의사결정 과정의 투명한 추적(trace)](/ko/blog/ko/ai-agent-observability-production-guide/)</strong>을 제공한다. 에이전트 워싱은 "블랙박스"로 작동하거나, 사전 작성된 설명만 반환한다.
 
 ```mermaid
 graph TD

@@ -301,7 +301,7 @@ function extractJsonFromResponse(text: string): string {
 
 ### Pattern 2：用 Tool Use 强制结构化输出
 
-如 [Claude Agent SDK Tool Use 完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026) 所述，利用 `tool_use` 可以强制要求 JSON 格式。让 LLM 以"调用工具"的形式返回结构化数据。
+如 [Claude Agent SDK Tool Use 完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/) 所述，利用 `tool_use` 可以强制要求 JSON 格式。让 LLM 以"调用工具"的形式返回结构化数据。
 
 ```typescript
 import Anthropic from '@anthropic-ai/sdk';
@@ -632,9 +632,9 @@ async function extractPostMetadata(
 }
 ```
 
-在 [用 TypeScript 打造自己的 MCP 服务器](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026) 中实现 MCP 工具时，这个模式同样适用。在工具处理函数里调用 LLM，用 Zod 校验响应，然后返回结构化结果即可。
+在 [用 TypeScript 打造自己的 MCP 服务器](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/) 中实现 MCP 工具时，这个模式同样适用。在工具处理函数里调用 LLM，用 Zod 校验响应，然后返回结构化结果即可。
 
-如 [用 Vitest 4 测试 AI Agent](/zh/blog/zh/vitest-4-ai-agent-testing-patterns-2026) 中所述，对这个函数做单元测试时，mock 掉 `client.messages.create()`，然后断言 `safeParse()` 的结果就好。有了 Zod schema，可以按 schema 来生成测试 fixture，非常方便。
+如 [用 Vitest 4 测试 AI Agent](/zh/blog/zh/vitest-4-ai-agent-testing-patterns-2026/) 中所述，对这个函数做单元测试时，mock 掉 `client.messages.create()`，然后断言 `safeParse()` 的结果就好。有了 Zod schema，可以按 schema 来生成测试 fixture，非常方便。
 
 ### 从 v3 迁移到 v4 的检查清单
 

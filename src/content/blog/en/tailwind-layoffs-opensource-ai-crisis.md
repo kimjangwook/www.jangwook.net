@@ -97,7 +97,7 @@ graph TD
     PreviousModel -.->|"Transition due to AI"| CurrentModel
 ```
 
-<strong>The core problem</strong>: AI coding assistants (GitHub Copilot, Cursor, [Claude](/en/blog/en/github-actions-claude-code-ci-automation), etc.) now answer developers' questions directly, eliminating the need to visit official documentation. Since documentation traffic was the only pathway to paid product discovery, traffic decline directly translated to revenue decline.
+<strong>The core problem</strong>: AI coding assistants (GitHub Copilot, Cursor, [Claude](/en/blog/en/github-actions-claude-code-ci-automation/), etc.) now answer developers' questions directly, eliminating the need to visit official documentation. Since documentation traffic was the only pathway to paid product discovery, traffic decline directly translated to revenue decline.
 
 ### Rejection of LLM-Friendly Documentation
 
@@ -209,7 +209,7 @@ graph LR
 
 ### 2. Enter the AI Agent/Plugin Ecosystem
 
-<strong>Collaborate</strong> with [AI tools](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026) to create new revenue streams:
+<strong>Collaborate</strong> with [AI tools](/en/blog/en/vercel-ai-sdk-claude-streaming-agent-2026/) to create new revenue streams:
 
 ```typescript
 // Hypothetical Tailwind AI plugin example
@@ -229,7 +229,7 @@ const tailwindPlugin = {
 };
 ```
 
-<strong>Strategy</strong>: Exist as a <strong>plugin/extension</strong> for AI coding assistants, so [AI naturally recommends](/en/blog/en/webmcp-chrome-146-ai-tool-server) premium products when generating code.
+<strong>Strategy</strong>: Exist as a <strong>plugin/extension</strong> for AI coding assistants, so [AI naturally recommends](/en/blog/en/webmcp-chrome-146-ai-tool-server/) premium products when generating code.
 
 ### 3. Strengthen Enterprise Licensing
 

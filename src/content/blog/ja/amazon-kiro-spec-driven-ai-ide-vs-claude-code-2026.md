@@ -61,7 +61,7 @@ Kiroの公式キャッチコピーは「Beyond Vibe Coding」だ。感覚的な�
 
 Kiroはこれを変えようとする。プロンプトを入れてもコードをすぐ生成せず、まず要件ドキュメントを作り、設計をレビューし、タスクリストを構成してからコードを生成する。開発者が各ステップをレビューして承認してはじめて次に進む。
 
-[スペック駆動開発の哲学](/ja/blog/ja/specification-driven-development)でも触れたが、このアプローチが意味を持つ場面は確かにある。複数の開発者が一緒に複雑な機能を開発するとき、要件が頻繁に変わる環境では、こうした構造化されたワークフローが実際に助けになる。
+[スペック駆動開発の哲学](/ja/blog/ja/specification-driven-development/)でも触れたが、このアプローチが意味を持つ場面は確かにある。複数の開発者が一緒に複雑な機能を開発するとき、要件が頻繁に変わる環境では、こうした構造化されたワークフローが実際に助けになる。
 
 ## スペック駆動開発ワークフロー: 実際の構造
 
@@ -119,7 +119,7 @@ SO THAT 開発者が新しい割り当てを認識できるように
 
 この部分が正直、自分には興味深いと思った。Claude CodeもKiroもHooksの概念があるが、アプローチが違う。
 
-[Claude CodeのHooksシステム](/ja/blog/ja/claude-code-hooks-workflow)は、Claude Code実行イベントにシェルコマンドを紐付ける方式だ。強力だが設定がJSON/シェルスクリプトで行われるため技術的な敷居がある。
+[Claude CodeのHooksシステム](/ja/blog/ja/claude-code-hooks-workflow/)は、Claude Code実行イベントにシェルコマンドを紐付ける方式だ。強力だが設定がJSON/シェルスクリプトで行われるため技術的な敷居がある。
 
 KiroのAgent Hooksは違う。自然言語でHookを定義できる。
 
@@ -146,7 +146,7 @@ Free プラン50クレジットはKiroがどう動くか体験するには十分
 
 Claude Code Maxが$100/月であることと比較するとKiro Proははるかに安い。ただし作業方式が違うため単純な比較は意味がない。
 
-MCP（Model Context Protocol）はKiroも対応している。`.kiro/mcp.json`で設定し、他のMCPクライアントと同じ方式だ。ただし[Claude CodeとOpenAI Codexの比較で見たように](/ja/blog/ja/openai-codex-api-release-vs-claude-code-comparison-may-2026)、Claude Codeエコシステムのサーバー数と成熟度に比べればまだ初期段階だ。
+MCP（Model Context Protocol）はKiroも対応している。`.kiro/mcp.json`で設定し、他のMCPクライアントと同じ方式だ。ただし[Claude CodeとOpenAI Codexの比較で見たように](/ja/blog/ja/openai-codex-api-release-vs-claude-code-comparison-may-2026/)、Claude Codeエコシステムのサーバー数と成熟度に比べればまだ初期段階だ。
 
 正直に言って残念な点がひとつある: KiroはVS Codeのフォークだ。利点はVS Codeエコシステムの拡張機能をそのまま使えることだ。欠点はVS Code以外のワークフロー、特にターミナル中心の開発者には向かないことだ。私のようにNeovimやターミナルワークフローを好む人にはKiroをメインとして使うのが難しい。
 
@@ -160,7 +160,7 @@ MCP（Model Context Protocol）はKiroも対応している。`.kiro/mcp.json`�
 
 **速度と柔軟性**: Claude Codeはスペックフェーズなしで直接実行する。小さなバグ修正、高速なリファクタリング、探索的なコーディングではClaude Codeが圧倒的に速い。Kiroのスペック生成プロセスには価値があるが時間がかかる。10分の修正にスペックを先に作るのはオーバーヘッドになる。
 
-**ワークフロー統合**: [Claude Codeは様々なエージェントワークフローパターンをサポートしている](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)。GitHub、Jira、Slack、内部APIとの統合も設定なしにMCPで接続される。KiroもMCPをサポートしているが生態系の成熟度が違う。
+**ワークフロー統合**: [Claude Codeは様々なエージェントワークフローパターンをサポートしている](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)。GitHub、Jira、Slack、内部APIとの統合も設定なしにMCPで接続される。KiroもMCPをサポートしているが生態系の成熟度が違う。
 
 **アプローチの哲学**: 最も根本的な違いだ。Claude Codeは「あなたが望むものを実装します」と言う。Kiroは「一緒に要件を整理して、設計をレビューして、それから実装しましょう」と言う。前者はスピードを、後者は厳密さを選択する。
 

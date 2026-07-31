@@ -46,7 +46,7 @@ navigator.modelContext.provideContext({ tools: [ /* 这个数组会覆盖全部 
 
 WebMCP(Web Model Context Protocol)是一项浏览器标准，让网页把自身功能作为“可调用的工具”暴露给AI智能体。服务端MCP把本地应用和远程服务器接入智能体，而WebMCP把这个连接点搬进浏览器、搬进文档本身。页面把“筛选商品”“加入购物车”这类动作注册成结构化工具，接在浏览器上的智能体就按schema来调用。原本由人点击的按钮，变成了智能体像调函数一样调用的对象。
 
-这个想法本身不新。W3C Web Machine Learning Community Group在2026年2月10日以Google和Microsoft的工程师为主首次公开，我当时也从概念层面写过一篇[浏览器如何成为智能体工具服务器](/zh/blog/zh/webmcp-chrome-146-ai-tool-server)。那时是草案，现在不是了。Chrome官方文档明确写着“Join the WebMCP origin trial from Chrome 149”，已经进到可以领取origin trial令牌、在生产域名上开启的阶段。概念变成实物，总会在某处出现设计图和施工结果对不上的地方。这道错位正是本文的核心。
+这个想法本身不新。W3C Web Machine Learning Community Group在2026年2月10日以Google和Microsoft的工程师为主首次公开，我当时也从概念层面写过一篇[浏览器如何成为智能体工具服务器](/zh/blog/zh/webmcp-chrome-146-ai-tool-server/)。那时是草案，现在不是了。Chrome官方文档明确写着“Join the WebMCP origin trial from Chrome 149”，已经进到可以领取origin trial令牌、在生产域名上开启的阶段。概念变成实物，总会在某处出现设计图和施工结果对不上的地方。这道错位正是本文的核心。
 
 还有一个问题：为什么非得在浏览器里？服务端MCP本就能把工具交给智能体。答案在状态。登录会话、购物车、此刻屏幕上的筛选条件——这些只有在浏览器标签页里才完整成立。服务端工具要够到这些状态，就得另起一套认证与同步。而页面直接暴露自己的工具时，智能体就在用户已经登录的那个会话里调用动作，不必安装本地应用，也不必另换API密钥。这种"直接沿用已经打开的上下文"正是WebMCP存在的理由，同时也是下一节要看的安全张力的根源。
 
@@ -104,7 +104,7 @@ controller.abort();
 
 值得留意的是移除工具的做法。文档里看不到独立的`unregisterTool`方法。取而代之，注册时把`{ signal }`作为第二个参数传入，之后调用`controller.abort()`把工具撤下。如果想让工具随路由出入，为每条路由新建一个控制器来管理是自然的写法。另一侧，面向智能体的代码用`getTools({ fromOrigins: [...] })`查询已暴露的工具，用`executeTool(tool, '{"category":"shoes"}', { signal })`调用。
 
-强制`inputSchema`为JSON Schema这一点，碰过服务端MCP的人会觉得眼熟。把[MCP、A2A、Open Responses各自如何描述工具](/zh/blog/zh/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026)对比一遍，就能理解WebMCP为什么非要在浏览器里也要求同一套schema契约。契约相同，智能体才能用同样的流程处理服务端工具和页面工具。
+强制`inputSchema`为JSON Schema这一点，碰过服务端MCP的人会觉得眼熟。把[MCP、A2A、Open Responses各自如何描述工具](/zh/blog/zh/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026/)对比一遍，就能理解WebMCP为什么非要在浏览器里也要求同一套schema契约。契约相同，智能体才能用同样的流程处理服务端工具和页面工具。
 
 除了这套命令式(imperative)方式，Chrome文档还一并介绍了声明式(declarative)方式：给现有的HTML表单加上`toolname`、`tooldescription`之类的属性，就能把它暴露成工具，表单的字段直接成为工具的参数。不必用JS写`execute`，而是在已有的标记上叠加智能体可读的提示。哪种更合适看情况。若你的站点本就靠服务端渲染的表单和链接运转，声明式增加的代码更少；若这个动作需要精细操作客户端状态，命令式`registerTool`给你控制力。我的判断是大多数实站会两者混用——只读动作用声明式轻量处理，改状态的动作用命令式并附上注解。
 

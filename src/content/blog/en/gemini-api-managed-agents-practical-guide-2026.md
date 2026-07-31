@@ -36,7 +36,7 @@ So I installed it and ran the code myself. The pitch is accurate: one `pip insta
 
 ## What Gemini Managed Agents Actually Are
 
-Anthropic shipped [Claude Managed Agents](/en/blog/en/anthropic-claude-opus-4-7-managed-agents-2026) first, and OpenAI is moving in a similar direction. Google made `Gemini API Managed Agents` official at Google I/O 2026.
+Anthropic shipped [Claude Managed Agents](/en/blog/en/anthropic-claude-opus-4-7-managed-agents-2026/) first, and OpenAI is moving in a similar direction. Google made `Gemini API Managed Agents` official at Google I/O 2026.
 
 One-sentence version: <strong>the SDK now has a `client.interactions` namespace, and a single `create()` call is all it takes to run an agent.</strong>
 
@@ -262,7 +262,7 @@ Having used Claude Managed Agents first, the comparison comes naturally.
 
 <strong>The tool sets reflect each company's infrastructure strengths.</strong> Claude puts more emphasis on real OS-level tools: bash, computer use on Linux and macOS, text editor. Gemini has more tools tied into Google's own infrastructure: google_search, google_maps, url_context. Not surprising — each company ships the tools they already have a competitive advantage in.
 
-<strong>Cost is hard to predict.</strong> Claude Managed Agents lets you set an explicit `task_budget`, so costs are relatively foreseeable. Gemini Managed Agents does not clearly document per-interaction pricing in public docs right now. Given the EXPERIMENTAL status, the billing model may not even be finalized yet. As I wrote in [AI Agent Cost Reality](/en/blog/en/ai-agent-cost-reality), the key cost driver in agents is how many tool calls happen and how many tokens get consumed. Managed Agents makes that execution more of a black box, which makes cost control harder.
+<strong>Cost is hard to predict.</strong> Claude Managed Agents lets you set an explicit `task_budget`, so costs are relatively foreseeable. Gemini Managed Agents does not clearly document per-interaction pricing in public docs right now. Given the EXPERIMENTAL status, the billing model may not even be finalized yet. As I wrote in [AI Agent Cost Reality](/en/blog/en/ai-agent-cost-reality/), the key cost driver in agents is how many tool calls happen and how many tokens get consumed. Managed Agents makes that execution more of a black box, which makes cost control harder.
 
 <strong>SDK maturity is still different.</strong> The Anthropic SDK's Managed Agents features are fairly well organized with clear error messages. The `interactions` namespace in google-genai carries an EXPERIMENTAL warning, and there are gaps between what external documentation describes and what the SDK actually implements (environment_id vs previous_interaction_id is a concrete example). This looks like a gap that opened up from shipping quickly — it will probably get cleaned up soon.
 
@@ -287,7 +287,7 @@ Three reasons.
 
 First, it is EXPERIMENTAL. The SDK prints a warning itself. API interface changes in future versions is a real possibility — and given that major parameter names already differ between external documentation and the actual implementation, that probability is not low.
 
-Second, cost is unpredictable. You cannot easily control how many tool calls the agent makes or what it ends up spending. When [choosing an AI agent framework](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production), cost controllability is a meaningful selection criterion. Gemini Managed Agents is weak on that front right now.
+Second, cost is unpredictable. You cannot easily control how many tool calls the agent makes or what it ends up spending. When [choosing an AI agent framework](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/), cost controllability is a meaningful selection criterion. Gemini Managed Agents is weak on that front right now.
 
 Third, the available tools are more limited than the announcement implied. Linux sandbox access, a 4-core/16 GB environment — none of that is confirmed in the current public API. Taking the announcement at face value leads to a mismatch with what you actually get.
 

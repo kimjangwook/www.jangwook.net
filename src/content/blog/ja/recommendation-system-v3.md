@@ -722,6 +722,6 @@ V3推薦システムは<strong>性能、保守性、スケーラビリティ</st
 ---
 
 <strong>関連リンク</strong>:
-- [V2推薦システム: メタデータベース最適化](/ja/blog/ja/metadata-based-recommendation-optimization)
-- [V1推薦システム: LLMコンテンツベース推薦](/ja/blog/ja/ai-content-recommendation-system)
+- [V2推薦システム: メタデータベース最適化](/ja/blog/ja/metadata-based-recommendation-optimization/)
+- [V1推薦システム: LLMコンテンツベース推薦](/ja/blog/ja/ai-content-recommendation-system/)
 - [Astro Content Collections公式ドキュメント](https://docs.astro.build/en/guides/content-collections/)

@@ -77,7 +77,7 @@ GPT-4o APIを直接呼び出すプロダクションシステムを運用して�
 - <strong>APIエンドポイントのマイグレーション</strong>：GPT-4o専用パラメータとレスポンス形式の変更対応
 - <strong>プロンプトの再最適化</strong>：新モデルに合わせてプロンプトを書き直すコスト
 - <strong>性能回帰テスト</strong>：既存ワークフローが新モデルで同等の品質を保証するかの検証
-- <strong>コスト構造の変化</strong>：後継モデルのトークン価格変動に伴う予算再編（[GPT-5・Claude・Gemini・DeepSeekの実コスト比較](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)）
+- <strong>コスト構造の変化</strong>：後継モデルのトークン価格変動に伴う予算再編（[GPT-5・Claude・Gemini・DeepSeekの実コスト比較](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)）
 
 ## モデル依存リスクとは何か
 
@@ -117,7 +117,7 @@ AnthropicのClaudeは2025年後半からエンタープライズ市場で目覚�
 
 <strong>1. 安全性と信頼性を優先する哲学</strong>
 
-AnthropicはConstitutional AIなどの安全技術を企業環境に適した形で提供しています。規制が強化される金融、医療、法律分野でこのアプローチが高い信頼を得ています。実際、[生成AIの導入失敗の42%はトップダウンのガバナンス不在に起因しています](/ja/blog/ja/enterprise-ai-adoption-topdown)。
+AnthropicはConstitutional AIなどの安全技術を企業環境に適した形で提供しています。規制が強化される金融、医療、法律分野でこのアプローチが高い信頼を得ています。実際、[生成AIの導入失敗の42%はトップダウンのガバナンス不在に起因しています](/ja/blog/ja/enterprise-ai-adoption-topdown/)。
 
 <strong>2. 一貫したAPIポリシー</strong>
 
@@ -226,7 +226,7 @@ graph LR
 
 ### 長期的な視点
 
-AIモデル市場は今後さらに速く変化するでしょう。[2026年2月だけでも7つ以上の主要モデルが同時リリース](/ja/blog/ja/ai-model-rush-february-2026)される状況です。このような環境で<strong>特定モデルにオールインすることは技術的負債を積む行為</strong>です。
+AIモデル市場は今後さらに速く変化するでしょう。[2026年2月だけでも7つ以上の主要モデルが同時リリース](/ja/blog/ja/ai-model-rush-february-2026/)される状況です。このような環境で<strong>特定モデルにオールインすることは技術的負債を積む行為</strong>です。
 
 ## 結論
 
@@ -243,4 +243,4 @@ AIモデルはツールです。ツールに依存するのではなく、<stron
 
 - [OpenAI Model Deprecation Policy](https://platform.openai.com/docs/deprecations)
 - [Anthropic Claude Enterprise](https://www.anthropic.com/enterprise)
-- [2026年2月AIモデルラッシュ分析](/ja/blog/ja/ai-model-rush-february-2026)
+- [2026年2月AIモデルラッシュ分析](/ja/blog/ja/ai-model-rush-february-2026/)

@@ -113,7 +113,7 @@ Vercel AI SDKの実質的なメリットは三つだ：
 
 デメリットもある。Vercelプラットフォームに最適化されているため、他のデプロイ環境では制約が生じる。エージェントループの細かい制御が必要な場合、Anthropic SDKを直接使うより拡張性が落ちる部分がある。この点については後で具体的に説明する。
 
-[Claude Managed Agentsを直接構築する方法](/ja/blog/ja/claude-managed-agents-production-deployment-guide)と比べると、Managed Agentsはインフラなしで始めやすいが、カスタマイズの限界が明確だった。Vercel AI SDKはその中間にある — 直接実装より抽象化されていて、Managed Agentsより制御権が多い。
+[Claude Managed Agentsを直接構築する方法](/ja/blog/ja/claude-managed-agents-production-deployment-guide/)と比べると、Managed Agentsはインフラなしで始めやすいが、カスタマイズの限界が明確だった。Vercel AI SDKはその中間にある — 直接実装より抽象化されていて、Managed Agentsより制御権が多い。
 
 ## 環境設定 — パッケージインストールから
 
@@ -319,7 +319,7 @@ export async function POST(req: Request) {
 
 `maxSteps: 5`が重要だ。ツール呼び出しの結果を受け取った後、Claudeが再び応答を生成するループを回すために必要だ。設定しないと、ツール呼び出し結果を受け取ってもClaudeがそれ以上応答を生成しない。
 
-[AIエージェントが複数のツールを組み合わせて作業するパターン](/ja/blog/ja/ai-agent-collaboration-patterns)は、`maxSteps`設定と各ツールの`description`の品質に大きく依存する。ツールの説明が曖昧だと、Claudeがいつどのツールを使うべきか判断できない。実際に最初は天気とToDoが混乱するケースがあったが、システムプロンプトに各ツールの使用シナリオを明記したら安定した。
+[AIエージェントが複数のツールを組み合わせて作業するパターン](/ja/blog/ja/ai-agent-collaboration-patterns/)は、`maxSteps`設定と各ツールの`description`の品質に大きく依存する。ツールの説明が曖昧だと、Claudeがいつどのツールを使うべきか判断できない。実際に最初は天気とToDoが混乱するケースがあったが、システムプロンプトに各ツールの使用シナリオを明記したら安定した。
 
 フロントエンドでツール呼び出しの進行状況をリアルタイムで表示することもできる：
 
@@ -390,7 +390,7 @@ ${content}
 - 長いドキュメントからの構造化情報抽出
 - フォームの自動入力
 
-このブログのカテゴリスコア抽出で実際に同様のパターンを使っている。Zodスキーマに`describe()`をしっかり書くことが出力品質を上げるための鍵だ。[コンテキストエンジニアリングをきちんと適用すれば](/ja/blog/ja/context-engineering-production-ai-agents)、スキーマ設計とプロンプト品質が抽出精度の80%を決める。
+このブログのカテゴリスコア抽出で実際に同様のパターンを使っている。Zodスキーマに`describe()`をしっかり書くことが出力品質を上げるための鍵だ。[コンテキストエンジニアリングをきちんと適用すれば](/ja/blog/ja/context-engineering-production-ai-agents/)、スキーマ設計とプロンプト品質が抽出精度の80%を決める。
 
 ## 本番環境で遭遇した問題
 
@@ -411,7 +411,7 @@ export const runtime = 'nodejs'; // EdgeではなくNode.jsランタイムを使
 
 Vercel無料プランでサーバーレス関数のタイムアウトは10秒だ。Claudeが長いテキストを生成したり、複雑なツールループを回したりすると超過することがある。Proプラン以上なら60秒まで延びる。
 
-これより長い作業が必要なら構造自体を変える必要がある。[MCPサーバーを別途構築して長時間実行タスクを分離する方法](/ja/blog/ja/mcp-server-build-practical-guide-2026)が一つの代替案だ。
+これより長い作業が必要なら構造自体を変える必要がある。[MCPサーバーを別途構築して長時間実行タスクを分離する方法](/ja/blog/ja/mcp-server-build-practical-guide-2026/)が一つの代替案だ。
 
 <strong>コンテキストの累積コスト</strong>
 

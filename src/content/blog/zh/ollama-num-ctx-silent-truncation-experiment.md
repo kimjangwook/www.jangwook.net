@@ -43,7 +43,7 @@ faq:
 
 几天前，我在本地跑的会议纪要总结智能体开始犯怪。短的纪要处理得好好的，可一喂长纪要，它就把我写在最上面的指令("只用 JSON 回答")整段无视，改用大白话啰嗦一通。我起初以为是模型笨。让我在意的是，同一个模型在短输入下却老老实实守着指令。那也许不是模型变笨了，而是模型**压根没看见**我的指令。
 
-在[上一篇拆解 prefill 与 generation 成本的文章](/zh/blog/zh/local-llm-prefill-generation-latency-experiment)里，我测过上下文越长、首个 token 越晚出。那讲的是速度。这回我怀疑的是另一面。过了某个长度，受损的也许不是速度，而是**内容**直接消失。于是我动手测了。
+在[上一篇拆解 prefill 与 generation 成本的文章](/zh/blog/zh/local-llm-prefill-generation-latency-experiment/)里，我测过上下文越长、首个 token 越晚出。那讲的是速度。这回我怀疑的是另一面。过了某个长度，受损的也许不是速度，而是**内容**直接消失。于是我动手测了。
 
 ## 把秘密藏在开头，再逐步加长
 
@@ -103,7 +103,7 @@ def ask(num_ctx, n_filler):
 
 这次实验最实用的收获在别处：**截断会在响应里留下痕迹。** Ollama 在 `/api/generate` 响应里返回的 `prompt_eval_count`，是模型真正 prefill 的输入 token 数。这个值比你发出去的提示 token 数小，又紧贴 num_ctx，那基本就是被截了。
 
-为什么重要? 因为平时没人看这个数。答案出来像模像样，你就默认整段输入都进去了。可即便你[用结构化输出把答案稳住了](/zh/blog/zh/ollama-structured-outputs-pydantic-local-llm-guide-2026)，要是模型一开始就只看到半段输入，你拿到的是 schema 干净、内容却错的答案。schema 校验过得了，事实却对不上，这是最难排的那类 bug。
+为什么重要? 因为平时没人看这个数。答案出来像模像样，你就默认整段输入都进去了。可即便你[用结构化输出把答案稳住了](/zh/blog/zh/ollama-structured-outputs-pydantic-local-llm-guide-2026/)，要是模型一开始就只看到半段输入，你拿到的是 schema 干净、内容却错的答案。schema 校验过得了，事实却对不上，这是最难排的那类 bug。
 
 ## 可默认值并不是 4096
 
@@ -155,7 +155,7 @@ def guarded_generate(prompt, num_ctx=8192, model="melavisions/gemma4:latest"):
 
 还有一件，老实说我没解开。我也用 OpenAI 兼容端点(`/v1/chat/completions`)跑了同一套测试，那里没法每次请求传 `options.num_ctx`，而且 `usage.prompt_tokens` 报出来的数和 `/api/generate` 的 `prompt_eval_count` 不一样(同一段文本，3464 对 2384)。更怪的是，在我机器上即便长输入 head 也活了下来，recall 成功。我能想通的是 token 计数方式不同、两个端点没法一比一对照，但为什么连截断行为看起来都不一样，我没法干净地解释。不过 [OpenAI 兼容 API 不认 num_ctx、在 4096 处无声截断的问题](https://github.com/ollama/ollama/issues/2714)确实有人报过，所以走 `/v1` 这条路的话，要记住你完全受制于服务端默认值(`OLLAMA_CONTEXT_LENGTH`)。
 
-这跟[冷启动时追踪 load_duration](/zh/blog/zh/local-llm-cold-start-load-duration-experiment) 是一个路子。Ollama 悄悄塞进每个响应里的那些数字，哪怕文档写得稀薄，也是追踪它真实行为最诚实的线索。就像 `load_duration` 供出了冷启动，`prompt_eval_count` 供出了截断。要是你认真在跑本地模型，不妨把这些数字一个个翻出来看看。
+这跟[冷启动时追踪 load_duration](/zh/blog/zh/local-llm-cold-start-load-duration-experiment/) 是一个路子。Ollama 悄悄塞进每个响应里的那些数字，哪怕文档写得稀薄，也是追踪它真实行为最诚实的线索。就像 `load_duration` 供出了冷启动，`prompt_eval_count` 供出了截断。要是你认真在跑本地模型，不妨把这些数字一个个翻出来看看。
 
 ## 参考资料
 

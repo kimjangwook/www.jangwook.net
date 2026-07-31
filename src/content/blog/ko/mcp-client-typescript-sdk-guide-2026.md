@@ -50,7 +50,7 @@ Claude Desktop나 Cursor가 MCP 서버에 연결할 때 내부적으로 무슨 �
 
 ## Claude Desktop이 하는 일을 직접 해보자는 발상
 
-MCP(Model Context Protocol)는 AI 에이전트가 외부 도구와 데이터에 접근하는 표준 방식이다. 지금까지 MCP 관련 글에서 서버 만들기를 많이 다뤘다. [TypeScript로 MCP 서버를 만드는 방법](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)도 썼고, [Python FastMCP로 30분 만에 서버 올리기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)도 해봤다. 그런데 클라이언트 측을 직접 구현하는 글은 써본 적이 없었다.
+MCP(Model Context Protocol)는 AI 에이전트가 외부 도구와 데이터에 접근하는 표준 방식이다. 지금까지 MCP 관련 글에서 서버 만들기를 많이 다뤘다. [TypeScript로 MCP 서버를 만드는 방법](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026/)도 썼고, [Python FastMCP로 30분 만에 서버 올리기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/)도 해봤다. 그런데 클라이언트 측을 직접 구현하는 글은 써본 적이 없었다.
 
 프로덕션 사용 사례를 생각해보면 커스텀 MCP 클라이언트가 필요한 순간이 분명히 있다.
 
@@ -279,7 +279,7 @@ async function callToolSafe(client, name, args) {
 
 이 동작은 MCP 스펙에서 의도된 설계다. 도구 실행 에러와 프로토콜 에러를 구분하기 위해 에러를 콘텐츠로 반환한다. 클라이언트 측에서는 이 패턴을 인식하고 처리해야 한다.
 
-실제로 이 점이 Claude 에이전트가 도구 실행 실패를 "텍스트 메시지"로 받아서 이어서 추론하는 방식과 일치한다. 에이전트가 tool call 결과를 다시 LLM에 넘길 때 오류 내용도 컨텍스트로 포함되기 때문이다. 그리고 그 결과를 어떤 포맷으로 직렬화해 넘기느냐가 곧 입력 토큰 비용이 된다. [같은 데이터도 포맷에 따라 토큰이 62%까지 차이 나기](/ko/blog/ko/llm-token-cost-data-format-experiment) 때문에, 평탄한 결과는 JSON보다 CSV·TSV로 돌려주는 작은 결정이 에이전트 전체 비용을 바꾼다.
+실제로 이 점이 Claude 에이전트가 도구 실행 실패를 "텍스트 메시지"로 받아서 이어서 추론하는 방식과 일치한다. 에이전트가 tool call 결과를 다시 LLM에 넘길 때 오류 내용도 컨텍스트로 포함되기 때문이다. 그리고 그 결과를 어떤 포맷으로 직렬화해 넘기느냐가 곧 입력 토큰 비용이 된다. [같은 데이터도 포맷에 따라 토큰이 62%까지 차이 나기](/ko/blog/ko/llm-token-cost-data-format-experiment/) 때문에, 평탄한 결과는 JSON보다 CSV·TSV로 돌려주는 작은 결정이 에이전트 전체 비용을 바꾼다.
 
 ## Promise.all로 병렬 호출 — 4개 동시 실행이 1ms
 
@@ -332,7 +332,7 @@ MCP 서버에 코드 린팅, 파일 변환, 외부 API 조회 같은 도구가 �
 
 **자체 에이전트 프레임워크 개발**
 
-LangGraph나 LlamaIndex 같은 프레임워크 없이 직접 에이전트를 짜는 경우, MCP 서버가 제공하는 도구를 에이전트 루프 안에 통합할 수 있다. `listTools()`로 도구 목록을 가져와 LLM 프롬프트에 주입하고, LLM의 응답에서 도구 호출 파라미터를 파싱해 `callTool()`로 실행하는 패턴이다. [Claude Agent SDK로 AI 에이전트에 tool을 붙이는 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 이 패턴을 더 체계적으로 확인할 수 있다.
+LangGraph나 LlamaIndex 같은 프레임워크 없이 직접 에이전트를 짜는 경우, MCP 서버가 제공하는 도구를 에이전트 루프 안에 통합할 수 있다. `listTools()`로 도구 목록을 가져와 LLM 프롬프트에 주입하고, LLM의 응답에서 도구 호출 파라미터를 파싱해 `callTool()`로 실행하는 패턴이다. [Claude Agent SDK로 AI 에이전트에 tool을 붙이는 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 이 패턴을 더 체계적으로 확인할 수 있다.
 
 **테스트 및 디버깅**
 

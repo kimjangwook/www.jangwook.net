@@ -63,7 +63,7 @@ Four strategies do the work:
 - **Truncation**: cuts output above a threshold, marks it `...(truncated)`
 - **Deduplication**: removes repeated output patterns
 
-Integration with Claude Code happens via a `PreToolUse` hook. If you understand [how Claude Code hooks work](/en/blog/en/claude-code-hooks-workflow), the design clicks immediately — `rtk init -g` registers it automatically under `~/.claude/hooks/`. After that, when Claude Code runs `git status`, the hook intercepts it and rewrites it as `rtk git status`. Claude Code never knows.
+Integration with Claude Code happens via a `PreToolUse` hook. If you understand [how Claude Code hooks work](/en/blog/en/claude-code-hooks-workflow/), the design clicks immediately — `rtk init -g` registers it automatically under `~/.claude/hooks/`. After that, when Claude Code runs `git status`, the hook intercepts it and rewrites it as `rtk git status`. Claude Code never knows.
 
 Supported agents: Claude Code, Cursor, Windsurf, Cline, GitHub Copilot CLI, Gemini CLI, Antigravity, Hermes. Single Rust binary, zero runtime dependencies.
 
@@ -210,7 +210,7 @@ Another thing: there's a different Rust tool also named `rtk` — [reachingforth
 Three layers where you can cut LLM agent costs:
 
 1. **Model selection**: switch to cheaper models (Haiku, Flash)
-2. **API layer**: [prompt caching](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide), batch API, [MCP schema compression](/en/blog/en/mcp2cli-token-cost-optimization)
+2. **API layer**: [prompt caching](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide/), batch API, [MCP schema compression](/en/blog/en/mcp2cli-token-cost-optimization/)
 3. **Shell layer**: RTK (command output compression)
 
 RTK is layer 3. If you haven't touched this layer yet, there's likely real savings here. If you've already optimized model choice and caching, RTK's marginal contribution gets smaller.
@@ -283,9 +283,9 @@ Where does RTK fit in the cost optimization stack?
 | MCP schema compression (mcp2cli) | API | MCP tool injection | Medium | 96–99% |
 | RTK | Shell | Bash command output | Low | 0–90% (varies) |
 
-Model downgrades have the biggest absolute impact but come with quality trade-offs. [Prompt caching](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide) is powerful for repetitive workflows. [MCP schema compression](/en/blog/en/mcp2cli-token-cost-optimization) delivers dramatic savings if you're running many MCP tools. RTK has the lowest implementation friction and zero workflow change requirement.
+Model downgrades have the biggest absolute impact but come with quality trade-offs. [Prompt caching](/en/blog/en/claude-api-prompt-caching-cost-optimization-guide/) is powerful for repetitive workflows. [MCP schema compression](/en/blog/en/mcp2cli-token-cost-optimization/) delivers dramatic savings if you're running many MCP tools. RTK has the lowest implementation friction and zero workflow change requirement.
 
-As covered in [the real cost of AI agents in production](/en/blog/en/ai-agent-cost-reality), agent costs accumulate across multiple factors. RTK addresses one slice of that — shell command output — and does it transparently. The right framing is "another layer in the cost stack," not a silver bullet.
+As covered in [the real cost of AI agents in production](/en/blog/en/ai-agent-cost-reality/), agent costs accumulate across multiple factors. RTK addresses one slice of that — shell command output — and does it transparently. The right framing is "another layer in the cost stack," not a silver bullet.
 
 ## Should You Install It?
 

@@ -222,7 +222,7 @@ trigger:
     - labels_not_contains: ["skip-review"]
 ```
 
-[MCP 서버를 직접 구축해봤다면](/ko/blog/ko/mcp-server-build-practical-guide-2026), 이 커넥터 생태계가 어떻게 확장되는지 이미 느꼈을 것이다. Routines는 그 커넥터를 자동화된 실행 환경에서 그대로 활용한다.
+[MCP 서버를 직접 구축해봤다면](/ko/blog/ko/mcp-server-build-practical-guide-2026/), 이 커넥터 생태계가 어떻게 확장되는지 이미 느꼈을 것이다. Routines는 그 커넥터를 자동화된 실행 환경에서 그대로 활용한다.
 
 ## Step 3 — MCP 커넥터 연결로 외부 서비스 통합
 
@@ -249,7 +249,7 @@ Slack #bug-reports 채널에서 지난 24시간 내 새 메시지를 읽고:
 
 이 루틴 덕분에 우리 팀에서 버그 트리아지 시간이 절반 가까이 줄었다고 경험한 팀들의 이야기를 들었다. 다만 내가 직접 운영한 결과, "재현 가능한 버그인지 판단" 부분에서 Claude가 가끔 애매한 케이스를 이슈로 만들거나 명확한 버그를 스킵하는 일이 있었다. 프롬프트에 판단 기준을 더 구체적으로 써주는 게 답이다.
 
-[Claude Code 에이전틱 워크플로우의 5가지 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)을 알고 있다면, Routines는 그 중 "자율 에이전트(Autonomous Agent)" 패턴을 클라우드에서 예약 실행하는 방식으로 이해하면 정확하다.
+[Claude Code 에이전틱 워크플로우의 5가지 패턴](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)을 알고 있다면, Routines는 그 중 "자율 에이전트(Autonomous Agent)" 패턴을 클라우드에서 예약 실행하는 방식으로 이해하면 정확하다.
 
 ## 실전 사용 사례 4가지
 
@@ -304,7 +304,7 @@ curl -X POST \
 
 루틴은 배포된 버전의 주요 API 엔드포인트를 호출하고, 에러 로그를 스캔하고, #releases 채널에 go/no-go 판정을 전송한다.
 
-[MCP 서버를 Kubernetes에 프로덕션 배포하는 방법](/ko/blog/ko/mcp-server-production-deployment-kubernetes-guide)을 이미 다뤘는데, 이 스모크 테스트 루틴을 그 파이프라인의 마지막 단계로 붙이면 자연스럽게 연결된다.
+[MCP 서버를 Kubernetes에 프로덕션 배포하는 방법](/ko/blog/ko/mcp-server-production-deployment-kubernetes-guide/)을 이미 다뤘는데, 이 스모크 테스트 루틴을 그 파이프라인의 마지막 단계로 붙이면 자연스럽게 연결된다.
 
 ### 사례 4: 주간 문서 드리프트 탐지
 
@@ -328,7 +328,7 @@ Routines가 인상적인 건 사실이지만, 아직 리서치 프리뷰 단계�
 
 나는 Routines를 "없어도 돌아가는 작업"에만 쓰는 원칙을 유지하고 있다. 잘못 실행돼도 사람이 쉽게 되돌릴 수 있는 작업, 실패해도 다음 실행에서 자연스럽게 보완되는 작업. 그 범위에서는 충분히 유용하다.
 
-[Claude Code를 병렬 세션으로 운영하는 방법](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)을 이미 익혔다면, Routines는 그 병렬성을 시간 축으로 확장하는 개념으로 볼 수 있다. 지금 이 순간 내가 다른 작업을 하는 동안, 루틴이 다른 저장소에서 다른 작업을 처리하고 있다.
+[Claude Code를 병렬 세션으로 운영하는 방법](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)을 이미 익혔다면, Routines는 그 병렬성을 시간 축으로 확장하는 개념으로 볼 수 있다. 지금 이 순간 내가 다른 작업을 하는 동안, 루틴이 다른 저장소에서 다른 작업을 처리하고 있다.
 
 ## 결론 — 어떤 팀에게 적합한가
 

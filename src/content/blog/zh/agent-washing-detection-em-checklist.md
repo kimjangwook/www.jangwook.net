@@ -165,7 +165,7 @@ class WashedAgent:
 
 <strong>问题：</strong>存在资源限制时，系统是否能识别权衡取舍？
 
-真正的智能体会在给定的<strong>时间、Token和[API成本](/zh/blog/zh/ai-agent-cost-reality)约束下调整策略</strong>以获得最优结果。代理洗白产品无法感知资源约束，始终以相同方式执行。
+真正的智能体会在给定的<strong>时间、Token和[API成本](/zh/blog/zh/ai-agent-cost-reality/)约束下调整策略</strong>以获得最优结果。代理洗白产品无法感知资源约束，始终以相同方式执行。
 
 ```python
 # 真正智能体：资源感知
@@ -194,7 +194,7 @@ async def run_with_budget(self, task, token_budget=10000):
 
 <strong>问题：</strong>系统能解释为何选择某一特定行动吗？
 
-真正的智能体提供<strong>[透明的决策过程追踪](/zh/blog/zh/ai-agent-observability-production-guide)</strong>。代理洗白产品作为黑盒运行，或仅返回预先编写的说明。
+真正的智能体提供<strong>[透明的决策过程追踪](/zh/blog/zh/ai-agent-observability-production-guide/)</strong>。代理洗白产品作为黑盒运行，或仅返回预先编写的说明。
 
 ```mermaid
 graph TD

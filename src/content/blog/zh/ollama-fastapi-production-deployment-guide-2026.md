@@ -375,7 +375,7 @@ api:
 
 FastAPI在客户端和Ollama之间充当稳定的适配器。切换模型或升级Ollama时，客户端代码保持不变。这就是不直接暴露Ollama的主要原因。
 
-这种方式与[使用FastMCP将本地LLM作为MCP服务器公开](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)的方式有所不同。FastMCP适合与Claude Desktop等MCP客户端集成，FastAPI适合普通HTTP客户端（Web应用、移动端、CLI工具）集成。两者互补，不存在竞争关系。
+这种方式与[使用FastMCP将本地LLM作为MCP服务器公开](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp/)的方式有所不同。FastMCP适合与Claude Desktop等MCP客户端集成，FastAPI适合普通HTTP客户端（Web应用、移动端、CLI工具）集成。两者互补，不存在竞争关系。
 
 ## 多模型路由：根据请求类型切换模型
 
@@ -467,7 +467,7 @@ async def generate(req: GenerateRequest):
 - `llama3.1:70b`（Q4量化）：生产级质量
 - VRAM充足时可以将`--workers`提高到4以上
 
-如果想进一步厘清模型规模与实际运营成本的关系，可以配合阅读[分析AI智能体真实运营成本的文章](/zh/blog/zh/ai-agent-cost-reality)。它能帮你判断本地推理究竟能把token成本压到多低，以及GPU运维开销会在哪里吃掉这部分节省。
+如果想进一步厘清模型规模与实际运营成本的关系，可以配合阅读[分析AI智能体真实运营成本的文章](/zh/blog/zh/ai-agent-cost-reality/)。它能帮你判断本地推理究竟能把token成本压到多低，以及GPU运维开销会在哪里吃掉这部分节省。
 
 ## 何时使用这套方案，何时应当避免
 
@@ -573,7 +573,7 @@ app = FastAPI(title="Ollama API Server", lifespan=lifespan)
 4. **模型多路复用**：将代码请求路由到代码专用模型，普通请求路由到其他模型
 5. **备用路由**：主模型过载时自动切换到备用模型
 
-构建本地LLM服务器的原因因人而异。我的需求是拥有一个不需要API密钥就能实验的环境。云端LLM更强大，但反复实验阶段积累的token费用让人难以接受。14.9秒的响应时间对于验证代码是否正确运行已经足够。Ollama + FastAPI的组合在这两者之间找到了很好的平衡点。当真正需要生产级质量时，切换到云端API只需改变一个环境变量，而不需要重写客户端代码。部署阶段切换到云端时，[用FastAPI将Claude API流式响应部署到生产环境的方法](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026)是本文自然的下一步——保持同一套FastAPI接口、只替换后端的模式可以原样套用。
+构建本地LLM服务器的原因因人而异。我的需求是拥有一个不需要API密钥就能实验的环境。云端LLM更强大，但反复实验阶段积累的token费用让人难以接受。14.9秒的响应时间对于验证代码是否正确运行已经足够。Ollama + FastAPI的组合在这两者之间找到了很好的平衡点。当真正需要生产级质量时，切换到云端API只需改变一个环境变量，而不需要重写客户端代码。部署阶段切换到云端时，[用FastAPI将Claude API流式响应部署到生产环境的方法](/zh/blog/zh/fastapi-claude-api-streaming-production-guide-2026/)是本文自然的下一步——保持同一套FastAPI接口、只替换后端的模式可以原样套用。
 
 ## 参考资料（一手来源）
 

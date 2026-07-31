@@ -36,7 +36,7 @@ Google I/O 2026结束整整十天了。每年都一样，发布会当天我盯�
 
 ## 先把Gemini Managed Agents说清楚
 
-Anthropic率先推出了[Claude Managed Agents](/zh/blog/zh/anthropic-claude-opus-4-7-managed-agents-2026)，OpenAI也在朝着类似的方向推进。Google在这次Google I/O 2026上正式公开了`Gemini API Managed Agents`。
+Anthropic率先推出了[Claude Managed Agents](/zh/blog/zh/anthropic-claude-opus-4-7-managed-agents-2026/)，OpenAI也在朝着类似的方向推进。Google在这次Google I/O 2026上正式公开了`Gemini API Managed Agents`。
 
 一句话总结：<strong>SDK里新增了`client.interactions`命名空间，调用一次`create()`就能启动智能体。</strong>
 
@@ -264,7 +264,7 @@ Google后续很可能会在这里陆续添加更多专用智能体，比如编�
 
 <strong>计费结构难以确认。</strong>Claude Managed Agents可以显式设置`task_budget`，成本相对可预测。Gemini Managed Agents每次interaction的费用在现有公开文档里没有明确说明。EXPERIMENTAL状态下，计费结构本身也还没确定。这是目前阶段现实意义上的一个缺点——很难做生产成本规划。
 
-这与[AI智能体成本现实](/zh/blog/zh/ai-agent-cost-reality)里讨论过的核心问题一脉相承：智能体成本的关键是调用了多少工具、消耗了多少token。Managed Agents这类方案把执行过程变成近似黑盒，成本控制难度更大。
+这与[AI智能体成本现实](/zh/blog/zh/ai-agent-cost-reality/)里讨论过的核心问题一脉相承：智能体成本的关键是调用了多少工具、消耗了多少token。Managed Agents这类方案把执行过程变成近似黑盒，成本控制难度更大。
 
 <strong>SDK成熟度仍有差距。</strong>Anthropic SDK对Managed Agents相关功能梳理得较为清晰，错误提示也比较明确。google-genai SDK的interactions命名空间目前带着EXPERIMENTAL警告，而且参数名和官方博客的描述存在出入（environment_id vs previous_interaction_id）。这看起来是快速发布导致的落差，应该很快会修正。
 
@@ -291,7 +291,7 @@ Google后续很可能会在这里陆续添加更多专用智能体，比如编�
 
 第一，EXPERIMENTAL状态。SDK自己就在打警告。下个版本接口可能变——主要参数名已经和外部文档对不上，这种可能性并不低。
 
-第二，成本无法预测。智能体会调用几次工具、花多少钱，很难控制。在[选择AI智能体框架](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)时，成本可控性是重要评估维度。目前Gemini Managed Agents在这个维度上表现偏弱。
+第二，成本无法预测。智能体会调用几次工具、花多少钱，很难控制。在[选择AI智能体框架](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)时，成本可控性是重要评估维度。目前Gemini Managed Agents在这个维度上表现偏弱。
 
 第三，公开工具水平比发布资料描述的更受限。Linux沙箱访问、4核/16GB环境这些内容，在目前公开API里无法确认。如果完全按发布材料的说法来理解，实际体验会和预期有落差。
 

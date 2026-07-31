@@ -58,7 +58,7 @@ print(result.output)  # → success (no tool calls)
 
 ## 왜 PydanticAI인가: 기존 비교와 다른 관점
 
-[Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 PydanticAI·Instructor·Smolagents를 다룬 적이 있다. 그 포스트가 "무엇을 선택할까"를 다룬다면, 이번 포스트는 "PydanticAI로 실제로 어떻게 만드는가"다. 구현 방법이 목적이다.
+[Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에서 PydanticAI·Instructor·Smolagents를 다룬 적이 있다. 그 포스트가 "무엇을 선택할까"를 다룬다면, 이번 포스트는 "PydanticAI로 실제로 어떻게 만드는가"다. 구현 방법이 목적이다.
 
 핵심 차별화 포인트를 짧게 정리하면 이렇다:
 
@@ -491,7 +491,7 @@ for name, data in results.items():
 
 - Pydantic v1 레거시 코드베이스. 마이그레이션 비용이 프레임워크 도입 이득을 넘어설 수 있다.
 - 스트리밍 구조화 출력이 제품의 핵심 기능인 경우. 현재 구현이 베타라 안정성을 보장하기 어렵다.
-- 복잡한 멀티에이전트 그래프 오케스트레이션이 주 목적인 경우. 그 영역은 LangGraph 쪽이 더 성숙하다. [Google ADK vs LangGraph 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026)에서 다룬 기준이 도움이 된다.
+- 복잡한 멀티에이전트 그래프 오케스트레이션이 주 목적인 경우. 그 영역은 LangGraph 쪽이 더 성숙하다. [Google ADK vs LangGraph 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026/)에서 다룬 기준이 도움이 된다.
 - 버전 고정과 CHANGELOG 추적을 감당할 여력이 없는 경우. 1.0 이전이라 호환성 없는 변경이 실제로 발생한다.
 
 요약하면, 타입 중심 단일/소수 에이전트에는 현재 가장 좋은 선택지이지만, 대규모 그래프 워크플로나 v1 환경에서는 다른 도구를 먼저 검토하는 게 맞다.
@@ -505,7 +505,7 @@ for name, data in results.items():
 - [pydantic/pydantic-ai (GitHub)](https://github.com/pydantic/pydantic-ai) — 소스, CHANGELOG, 릴리스 노트
 - [pydantic/pydantic (GitHub)](https://github.com/pydantic/pydantic) — 기반이 되는 Pydantic v2 라이브러리
 
-같은 Python 스택에서 이어 읽을 만한 글로는 [FastMCP로 MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026)와 [FastAPI + Claude API 스트리밍 프로덕션 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026)를 추천한다.
+같은 Python 스택에서 이어 읽을 만한 글로는 [FastMCP로 MCP 서버 만들기](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/)와 [FastAPI + Claude API 스트리밍 프로덕션 가이드](/ko/blog/ko/fastapi-claude-api-streaming-production-guide-2026/)를 추천한다.
 
 ## 요약: 핵심 패턴 빠르게 훑기
 

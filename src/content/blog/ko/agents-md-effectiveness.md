@@ -176,7 +176,7 @@ Conventional Commits를 따르며...
 - <strong>Python 중심</strong>: AGENTbench는 Python 프로젝트만 대상
 - <strong>니치 리포지토리</strong>: 개발자가 컨텍스트 파일을 사용하는 리포지토리는 상대적으로 소규모
 - <strong>정적 평가</strong>: 컨텍스트 파일이 반복 작업에서 누적 효과를 내는지는 미검증
-- <strong>거버넌스 공백</strong>: 에이전트가 지시를 충실히 따르다 역효과를 낸다는 패턴은 [AI 에이전트의 KPI 압박과 윤리 위반 연구](/ko/blog/ko/ai-agent-kpi-ethics)와도 연결된다
+- <strong>거버넌스 공백</strong>: 에이전트가 지시를 충실히 따르다 역효과를 낸다는 패턴은 [AI 에이전트의 KPI 압박과 윤리 위반 연구](/ko/blog/ko/ai-agent-kpi-ethics/)와도 연결된다
 
 향후 연구 방향으로는:
 
@@ -194,7 +194,7 @@ AGENTS.md는 코딩 에이전트 생태계에서 사실상의 표준이 되어�
 
 에이전트 개발사의 권장대로 `/init`으로 자동 생성하는 것은 현재로서는 오히려 역효과를 낼 수 있다. 직접 작성하되 꼭 필요한 정보만 담는 것이 가장 효과적인 전략이다.
 
-자동 생성의 비효율은 AGENTS.md에만 국한된 문제가 아니다. [AI가 스스로 생성한 스킬도 효과가 없다는 SkillsBench 벤치마크](/ko/blog/ko/ai-self-generated-skills-myth)는 같은 패턴을 다른 각도에서 증명한다.
+자동 생성의 비효율은 AGENTS.md에만 국한된 문제가 아니다. [AI가 스스로 생성한 스킬도 효과가 없다는 SkillsBench 벤치마크](/ko/blog/ko/ai-self-generated-skills-myth/)는 같은 패턴을 다른 각도에서 증명한다.
 
 ## 참고 자료
 

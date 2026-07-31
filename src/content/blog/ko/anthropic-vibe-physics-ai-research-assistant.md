@@ -50,7 +50,7 @@ relatedPosts:
 
 2주 만에 이론 물리학 논문 한 편이 나왔다. 보통 1년 걸리는 작업이다.
 
-지난 3월 23일, Anthropic이 Science 블로그를 새로 열었다. 첫 번째 글의 제목이 좀 도발적이다 — "Vibe Physics: The AI Grad Student." 하버드 물리학 교수 Matthew Schwartz가 [Claude Opus 4.5](/ko/blog/ko/anthropic-claude-performance-decline-controversy-april-2026)를 직접 지도하며 이론 물리학 연산을 수행시킨 실험 기록이다.
+지난 3월 23일, Anthropic이 Science 블로그를 새로 열었다. 첫 번째 글의 제목이 좀 도발적이다 — "Vibe Physics: The AI Grad Student." 하버드 물리학 교수 Matthew Schwartz가 [Claude Opus 4.5](/ko/blog/ko/anthropic-claude-performance-decline-controversy-april-2026/)를 직접 지도하며 이론 물리학 연산을 수행시킨 실험 기록이다.
 
 솔직히 제목을 보고 "또 AI가 과학을 혁신한다는 이야기인가" 싶었는데, 읽어보니 꽤 다른 결의 글이었다. 성공담이 아니라 **지도 일지**에 가깝다.
 
@@ -71,7 +71,7 @@ Schwartz는 현재 LLM의 이론 물리 능력을 **G2(대학원 2년차)** 수�
 
 나는 이 평가가 물리학에만 해당된다고 생각하지 않는다. 코드를 짜게 해봐도, 글을 쓰게 해봐도 비슷한 느낌을 받는다. 80%까지는 놀라울 만큼 빠른데, 나머지 20%에서 전문가의 눈이 필요해진다. "vibe coding"이라는 표현이 유행하는 것도 같은 맥락이다 — 대충 돌아가는 것 같은데, 정말 맞는지는 사람이 봐야 한다.
 
-이건 중요한 함의가 있다. AI가 연구를 "대신"하는 게 아니라, **[전문가의 생산성을 증폭](/ko/blog/ko/ai-agent-cost-reality)**시키는 도구라는 점이다. 물리학을 모르는 사람이 Claude에게 논문을 시키면 그럴듯하지만 틀린 결과가 나올 가능성이 높다.
+이건 중요한 함의가 있다. AI가 연구를 "대신"하는 게 아니라, **[전문가의 생산성을 증폭](/ko/blog/ko/ai-agent-cost-reality/)**시키는 도구라는 점이다. 물리학을 모르는 사람이 Claude에게 논문을 시키면 그럴듯하지만 틀린 결과가 나올 가능성이 높다.
 
 ## 같이 공개된 실전 패턴: Ralph Loop
 
@@ -112,6 +112,6 @@ Anthropic에는 이미 Research 블로그가 있다. 그런데 별도로 Science
 
 물리학 논문을 쓸 일은 없더라도, 이 실험에서 배울 점은 분명하다.
 
-**AI에게 장시간 작업을 맡기는 패턴이 정립되고 있다.** [CLAUDE.md](/ko/blog/ko/agents-md-effectiveness)로 프로젝트 컨텍스트를 주고, CHANGELOG.md로 상태를 추적하고, test oracle로 품질을 검증하는 구조. 이건 물리 연구든, 데이터 파이프라인이든, 대규모 리팩토링이든 동일하게 적용할 수 있다.
+**AI에게 장시간 작업을 맡기는 패턴이 정립되고 있다.** [CLAUDE.md](/ko/blog/ko/agents-md-effectiveness/)로 프로젝트 컨텍스트를 주고, CHANGELOG.md로 상태를 추적하고, test oracle로 품질을 검증하는 구조. 이건 물리 연구든, 데이터 파이프라인이든, 대규모 리팩토링이든 동일하게 적용할 수 있다.
 
 다만 "G2 수준"이라는 평가를 잊지 말아야 한다. 열심히 하지만 감독이 필요한 대학원생. 그 전제 없이 결과물을 그대로 쓰면, 빠르게 만든 만큼 빠르게 문제가 터진다.

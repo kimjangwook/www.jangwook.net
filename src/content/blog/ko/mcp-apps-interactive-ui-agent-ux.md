@@ -94,7 +94,7 @@ MCP App은 MCP 서버의 모든 도구를 호출할 수 있고, 호스트는 새
 
 <strong>4. 보안 보장</strong>
 
-MCP Apps는 sandboxed iframe 안에서 실행된다. 부모 페이지에 접근하거나, 쿠키를 훔치거나, 컨테이너를 벗어날 수 없다. 호스트가 서버 개발자를 완전히 신뢰하지 않아도 안전하게 서드파티 앱을 렌더링할 수 있다. MCP 생태계 전반의 보안 위협과 하드닝 방법은 [MCP 보안 위기 — 60일 만에 30개 CVE, 엔터프라이즈 하드닝 가이드](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening)에서 상세히 다루고 있다.
+MCP Apps는 sandboxed iframe 안에서 실행된다. 부모 페이지에 접근하거나, 쿠키를 훔치거나, 컨테이너를 벗어날 수 없다. 호스트가 서버 개발자를 완전히 신뢰하지 않아도 안전하게 서드파티 앱을 렌더링할 수 있다. MCP 생태계 전반의 보안 위협과 하드닝 방법은 [MCP 보안 위기 — 60일 만에 30개 CVE, 엔터프라이즈 하드닝 가이드](/ko/blog/ko/mcp-security-crisis-30-cves-enterprise-hardening/)에서 상세히 다루고 있다.
 
 ## 동작 원리: 아키텍처 상세
 
@@ -359,7 +359,7 @@ export default function App() {
 | ChatGPT | ⏳ 미정 | 공식 발표 없음 |
 | Cursor | ⏳ 미정 | 로드맵 논의 중 |
 
-VS Code에서는 `/mcp` 채팅 명령으로 서버 활성화/비활성화, OAuth 인증 관리를 할 수 있다. 브라우저에서 MCP 서버를 직접 실행하는 방식에 대해서는 [WebMCP: Chrome 146에서 브라우저가 AI 에이전트의 툴 서버가 된다](/ko/blog/ko/webmcp-chrome-146-ai-tool-server)를 참고하면 된다.
+VS Code에서는 `/mcp` 채팅 명령으로 서버 활성화/비활성화, OAuth 인증 관리를 할 수 있다. 브라우저에서 MCP 서버를 직접 실행하는 방식에 대해서는 [WebMCP: Chrome 146에서 브라우저가 AI 에이전트의 툴 서버가 된다](/ko/blog/ko/webmcp-chrome-146-ai-tool-server/)를 참고하면 된다.
 
 ## Engineering Manager 관점에서의 실무 적용
 
@@ -418,7 +418,7 @@ MCP Apps는 AI 에이전트 인터페이스의 근본적인 한계를 해결한�
 
 Engineering Manager 관점에서 이 기술의 가치는 명확하다. 팀원들이 AI에게 질문하고, 그 자리에서 인터랙티브 도구를 받아 작업을 완료하는 워크플로우가 가능해진다. 별도 대시보드 탭, 별도 도구 전환 없이.
 
-지금 당장 모든 MCP 서버에 UI를 추가할 필요는 없다. 하지만 팀에서 가장 자주 쓰는 도구 하나에 MCP Apps를 적용해보는 것으로 시작해보면 된다. 그 경험이 앞으로의 AI 워크플로우 설계 방향을 바꿔줄 것이다. AI 에이전트가 활용할 수 있는 표준화된 스킬 시스템에 대해서는 [Anthropic Agent Skills 표준: AI 에이전트 역량 확장](/ko/blog/ko/anthropic-agent-skills-standard)을 함께 읽어보면 된다.
+지금 당장 모든 MCP 서버에 UI를 추가할 필요는 없다. 하지만 팀에서 가장 자주 쓰는 도구 하나에 MCP Apps를 적용해보는 것으로 시작해보면 된다. 그 경험이 앞으로의 AI 워크플로우 설계 방향을 바꿔줄 것이다. AI 에이전트가 활용할 수 있는 표준화된 스킬 시스템에 대해서는 [Anthropic Agent Skills 표준: AI 에이전트 역량 확장](/ko/blog/ko/anthropic-agent-skills-standard/)을 함께 읽어보면 된다.
 
 ## 참고 자료
 

@@ -46,11 +46,11 @@ faq:
 
 > <strong>시리즈: DeNA LLM 스터디</strong> (4/5)
 >
-> 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM 기초와 2025년 AI 현황](/ko/blog/ko/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: 구조화 출력과 멀티 LLM 파이프라인
-> 3. [Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training)
-> 4. <strong>[Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag)</strong> ← 현재 글
-> 5. [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design)
+> 3. [Part 3: 모델 학습 방법론](/ko/blog/ko/dena-llm-study-part3-model-training/)
+> 4. <strong>[Part 4: RAG 아키텍처와 최신 트렌드](/ko/blog/ko/dena-llm-study-part4-rag/)</strong> ← 현재 글
+> 5. [Part 5: 에이전트 설계와 멀티 에이전트 오케스트레이션](/ko/blog/ko/dena-llm-study-part5-agent-design/)
 
 ## RAG는 결국 검색 엔지니어링이다
 
@@ -824,7 +824,7 @@ def sanitize_response(response):
 - 키워드 매칭과 의미 검색이 모두 필요한 혼합 질의가 많을 때
 - Recall은 나오는데 상위 결과의 정밀도가 부족할 때 (Reranking이 특효)
 
-벡터 저장소 선택이 고민이라면 [2026 벡터 DB 비교: Qdrant vs Chroma vs pgvector](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector)에서 하이브리드 검색 지원 여부와 운영 부담을 비교해두었다.
+벡터 저장소 선택이 고민이라면 [2026 벡터 DB 비교: Qdrant vs Chroma vs pgvector](/ko/blog/ko/vector-db-comparison-2026-qdrant-chroma-pgvector/)에서 하이브리드 검색 지원 여부와 운영 부담을 비교해두었다.
 
 <strong>피해야 할 때</strong>: 응답 지연이 수십 ms 단위로 빡빡한 실시간 경로. Cross-Encoder Reranking은 지연을 늘리므로, 이럴 땐 ColBERT처럼 가벼운 방식이나 Reranking 생략을 검토한다.
 
@@ -841,7 +841,7 @@ def sanitize_response(response):
 - 한 번의 검색으로는 답이 안 나오고, 검색 → 평가 → 재검색 루프가 필요할 때
 - 여러 도구(벡터 검색, 키워드, 웹, SQL)를 질문에 따라 골라 써야 할 때
 
-<strong>피해야 할 때</strong>: 비용과 지연에 민감한 대량 트래픽 경로. 반복 호출은 토큰과 시간을 곱으로 늘린다. 프레임워크 선택이 고민이라면 [LlamaIndex vs LangChain vs Haystack RAG 프레임워크 비교 2026](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026)에서 에이전트형 검색 추상화가 어떻게 다른지 정리했으니 참고하라.
+<strong>피해야 할 때</strong>: 비용과 지연에 민감한 대량 트래픽 경로. 반복 호출은 토큰과 시간을 곱으로 늘린다. 프레임워크 선택이 고민이라면 [LlamaIndex vs LangChain vs Haystack RAG 프레임워크 비교 2026](/ko/blog/ko/llamaindex-vs-langchain-vs-haystack-rag-2026/)에서 에이전트형 검색 추상화가 어떻게 다른지 정리했으니 참고하라.
 
 ### 한 장 요약
 
@@ -929,4 +929,4 @@ DeNA 스터디 시리즈의 마지막 Part 5에서는:
 
 ---
 
-<strong>시리즈 계속</strong>: [Part 5: 프로덕션 배포와 모니터링](/ko/blog/ko/dena-llm-study-part5-agent-design) (예정)
+<strong>시리즈 계속</strong>: [Part 5: 프로덕션 배포와 모니터링](/ko/blog/ko/dena-llm-study-part5-agent-design/) (예정)

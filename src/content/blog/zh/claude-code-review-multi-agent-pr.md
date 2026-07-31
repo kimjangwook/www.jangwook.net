@@ -59,7 +59,7 @@ relatedPosts:
               └── 最终审查评论 (PR概述 + 内联注释)
 ```
 
-智能体并行运行，聚合智能体整合结果，去除重复项并按严重程度排序。开发者首先看到最重要的问题。想将类似的并行智能体执行模式直接应用于团队工作流程，[Claude Code智能体工作流模式5种](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)提供了详细的实现示例。
+智能体并行运行，聚合智能体整合结果，去除重复项并按严重程度排序。开发者首先看到最重要的问题。想将类似的并行智能体执行模式直接应用于团队工作流程，[Claude Code智能体工作流模式5种](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)提供了详细的实现示例。
 
 每次审查的平均耗时约**20分钟**。这是一个明确的设计哲学：深度优于速度。
 
@@ -138,7 +138,7 @@ Claude Code Review不是要取代现有工具，而是作为**补充工具**定�
 
 ## 可用性与路线图
 
-目前以**Research Preview**形式向Team和Enterprise计划用户提供，通过GitHub集成运行。GitLab支持计划在未来扩展。已经搭建[GitHub Actions + Claude Code PR自动审查流水线](/zh/blog/zh/github-actions-claude-code-ci-automation)的团队，可以将Code Review功能叠加为额外层，最大化自动化与深度语义分析的协同效果。
+目前以**Research Preview**形式向Team和Enterprise计划用户提供，通过GitHub集成运行。GitLab支持计划在未来扩展。已经搭建[GitHub Actions + Claude Code PR自动审查流水线](/zh/blog/zh/github-actions-claude-code-ci-automation/)的团队，可以将Code Review功能叠加为额外层，最大化自动化与深度语义分析的协同效果。
 
 作为Research Preview阶段，功能和定价在正式发布前可能会有调整。
 

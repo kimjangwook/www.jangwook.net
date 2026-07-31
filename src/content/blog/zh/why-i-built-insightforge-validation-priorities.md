@@ -64,7 +64,7 @@ InsightForge是一个面向早期产品和市场假设的研究辅助服务。
 
 这些问题很重要，但通常被处理得太晚。团队先做页面、定消息、开发功能，然后才开始确认假设是否正确。
 
-我想要的是正式验证之前使用的工具。不是给答案的工具，而是指出哪些假设危险到值得验证的工具。一个人做SaaS的过程中，我在[个人开发者的AI SaaS之路](/zh/blog/zh/individual-developer-ai-saas-journey)里也反复遇到同样的茫然。
+我想要的是正式验证之前使用的工具。不是给答案的工具，而是指出哪些假设危险到值得验证的工具。一个人做SaaS的过程中，我在[个人开发者的AI SaaS之路](/zh/blog/zh/individual-developer-ai-saas-journey/)里也反复遇到同样的茫然。
 
 ## 最初诱人的版本要简单得多
 
@@ -121,7 +121,7 @@ LLM产品最难的地方是，合理的输出太便宜了。
 - 哪个claim在生效前需要proof
 - 下一次客户访谈应该问什么
 
-为了接近这个目标，我必须让workflow更结构化。persona generation、question generation、response capture、scoring、insight generation和reporting不能只是一个大prompt。每个stage都需要约束、检查和明确角色。把多个agent拆成阶段来协调时遇到的试错，我在[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement)里写得更详细。
+为了接近这个目标，我必须让workflow更结构化。persona generation、question generation、response capture、scoring、insight generation和reporting不能只是一个大prompt。每个stage都需要约束、检查和明确角色。把多个agent拆成阶段来协调时遇到的试错，我在[多智能体编排改进记](/zh/blog/zh/multi-agent-orchestration-improvement/)里写得更详细。
 
 这不只是prompt engineering，而是决定每个生成物在产品里到底是什么身份。
 
@@ -154,7 +154,7 @@ LLM产品最难的地方是，合理的输出太便宜了。
 
 market grounding也比想象中难。加入web evidence会让报告看起来更强，但只有当evidence支持具体结论时才有意义。否则只是装饰。
 
-还有运营问题：payments、credits、queues、provider cost、失败运行、退款、DeepSeek余额提醒、admin可视性。一个研究产品不只是报告生成器。如果它是真实服务，每次运行都有成本、失败模式和用户期待。由于一份报告由多个阶段的LLM调用组成，费用会迅速累积，这一点和我在[AI智能体的成本现实](/zh/blog/zh/ai-agent-cost-reality)里讨论的问题完全重叠。
+还有运营问题：payments、credits、queues、provider cost、失败运行、退款、DeepSeek余额提醒、admin可视性。一个研究产品不只是报告生成器。如果它是真实服务，每次运行都有成本、失败模式和用户期待。由于一份报告由多个阶段的LLM调用组成，费用会迅速累积，这一点和我在[AI智能体的成本现实](/zh/blog/zh/ai-agent-cost-reality/)里讨论的问题完全重叠。
 
 这些困难把InsightForge从demo推向了产品。
 

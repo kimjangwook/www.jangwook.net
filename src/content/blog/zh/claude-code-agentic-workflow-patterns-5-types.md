@@ -115,7 +115,7 @@ claude "分析src/目录下所有TypeScript文件，
 
 **何时使用**：上下文明确、范围定义清晰的单一复杂任务。例如："为这个模块的所有函数添加JSDoc"、"将该目录下所有文件名转换为kebab-case"。
 
-[Claude Code最佳实践指南](/zh/blog/zh/claude-code-best-practices)深入介绍了通过CLAUDE.md进行权限设计的方法，值得配合阅读。
+[Claude Code最佳实践指南](/zh/blog/zh/claude-code-best-practices/)深入介绍了通过CLAUDE.md进行权限设计的方法，值得配合阅读。
 
 ## 模式3：Parallel（并行）
 
@@ -135,7 +135,7 @@ cd ../docs-update && claude "更新API文档"
 
 切换到这种方式后，个人生产力有了明显提升。最实际的收益：在等待CI流水线完成的时间里，可以继续推进其他分支的工作。
 
-[使用Git Worktree运行并行会话的具体步骤](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)在另一篇文章中有详细介绍。如果是第一次设置，那篇文章是更快的路径。
+[使用Git Worktree运行并行会话的具体步骤](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)在另一篇文章中有详细介绍。如果是第一次设置，那篇文章是更快的路径。
 
 **何时使用**：独立功能开发、多语言翻译、编写测试代码等——任何不需要在任务间共享状态的工作。
 
@@ -158,11 +158,11 @@ cd ../docs-update && claude "更新API文档"
 
 实践中，这种方式还能分散单个智能体的上下文长度限制。将大型任务交给一个智能体往往会撑爆上下文窗口，拆分成团队后，每个智能体只需维护自己工作的上下文即可。
 
-关于[在OpenClaw环境中实际组建和运营智能体团队的经验](/zh/blog/zh/claude-agent-teams-guide)，有一篇专门的文章，从角色设计到基于tmux的监控都有具体介绍。
+关于[在OpenClaw环境中实际组建和运营智能体团队的经验](/zh/blog/zh/claude-agent-teams-guide/)，有一篇专门的文章，从角色设计到基于tmux的监控都有具体介绍。
 
 **何时使用**：顺序但复杂的多步骤流水线。内容管道、代码审查→修复→测试→部署周期等。
 
-回顾[将协调者模式应用于这个博客自动化系统时的失败与改进过程](/zh/blog/zh/multi-agent-orchestration-improvement)——角色边界不清晰会导致智能体相互冲突或陷入无限循环。这些失败案例比任何文档都更有教育意义。
+回顾[将协调者模式应用于这个博客自动化系统时的失败与改进过程](/zh/blog/zh/multi-agent-orchestration-improvement/)——角色边界不清晰会导致智能体相互冲突或陷入无限循环。这些失败案例比任何文档都更有教育意义。
 
 ## 模式5：Autonomous（自律）
 

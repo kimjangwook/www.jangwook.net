@@ -75,7 +75,7 @@ CMSはありません。管理者パネルもありません。エージェン�
 
 ## なぜこれを作ったのか
 
-Paperclipをインストールした後、「実際に何か作ってみないと感覚が掴めない」と思いました。エージェント一つをCLIで動かすのと、14個を組織として運営するのはまったく別の問題ですから。エージェントスキル構成とオーケストレーション戦略の実践事例は[Anthropic Agent Skills実践ガイド](/ja/blog/ja/anthropic-agent-skills-practical-guide)で体系的に扱っている。
+Paperclipをインストールした後、「実際に何か作ってみないと感覚が掴めない」と思いました。エージェント一つをCLIで動かすのと、14個を組織として運営するのはまったく別の問題ですから。エージェントスキル構成とオーケストレーション戦略の実践事例は[Anthropic Agent Skills実践ガイド](/ja/blog/ja/anthropic-agent-skills-practical-guide/)で体系的に扱っている。
 
 そして気になっていました。<strong>会社はAIだけで回せるのか？</strong> 収益が0円でも構わないので、コンテンツが生産され、サイトが維持され、品質が管理される — そのループが人間なしで回るのかどうか。
 
@@ -89,7 +89,7 @@ effloowのエージェントは5つのビジネスユニットに分かれてい
 
 <strong>Content Factory</strong> — SEOを狙った長文アーティクルを生産します。Trend Scoutがトピックを発掘し、Writerが初稿を書き、Lead Researcherが事実検証を行います。
 
-<strong>Tool Forge</strong> — 無料のウェブツールを作ります。これまでに出来たのはtwMerge Playground — Tailwind CSSのクラス競合をデバッグするインタラクティブツールです。Builderエージェントが担当しています。インタラクティブAIツールにリアルタイムストリーミングを加える方法は[Vercel AI SDKでClaudeストリーミングエージェントを作る](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026)で確認できる。
+<strong>Tool Forge</strong> — 無料のウェブツールを作ります。これまでに出来たのはtwMerge Playground — Tailwind CSSのクラス競合をデバッグするインタラクティブツールです。Builderエージェントが担当しています。インタラクティブAIツールにリアルタイムストリーミングを加える方法は[Vercel AI SDKでClaudeストリーミングエージェントを作る](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026/)で確認できる。
 
 <strong>Experiment Lab</strong> — 収益化の実験を行います。AdSense、アフィリエイトリンクなどをA/Bテストするために作りましたが、まだ実験は0件です。
 
@@ -160,6 +160,6 @@ Paperclipでイシュー12個を作成し、エージェントに割り当てま
 
 ただし確かなのは、<strong>初期構築のスピードが圧倒的</strong>だということです。一日でサイト＋コンテンツ＋ツール＋GA4連携＋Liveダッシュボードが完成しました。一人でやったら一週間はかかったでしょう。
 
-effloowは引き続き運用するつもりです。次の目標はエージェントたちが自ら イシューを生成できるようにすること — Trend Scoutがトピックを見つけ、Boardがイシューを作り、Writerに自動でアサインされるループ。今は私がイシューを作らなければならないので、本当の「無人会社」とは距離があります。スケジュールとAPIイベントを組み合わせたエージェント自動化ループの実装方法は[Claude Code Routines実践実装ガイド](/ja/blog/ja/claude-code-routines-practical-guide-2026)で扱っている。
+effloowは引き続き運用するつもりです。次の目標はエージェントたちが自ら イシューを生成できるようにすること — Trend Scoutがトピックを見つけ、Boardがイシューを作り、Writerに自動でアサインされるループ。今は私がイシューを作らなければならないので、本当の「無人会社」とは距離があります。スケジュールとAPIイベントを組み合わせたエージェント自動化ループの実装方法は[Claude Code Routines実践実装ガイド](/ja/blog/ja/claude-code-routines-practical-guide-2026/)で扱っている。
 
 コードはまだ公開していませんが、サイトは[effloow.com](https://www.effloow.com)で見ることができます。毎週effloow Weeklyで進捗状況を記録する予定です。

@@ -69,7 +69,7 @@ graph TD
     JC --> AI
 ```
 
-<strong>Frontier Red Team</strong>是对AI系统极限能力进行压力测试的团队。近期的代表性项目是利用Claude在Firefox代码库中自主发现22个CVE（安全漏洞）。不仅仅是发现漏洞，还测试了AI能否自主利用这些漏洞进行攻击。该项目的技术细节请参阅[Claude在Firefox中发现22个CVE — AI安全审计的新范式](/zh/blog/zh/claude-firefox-22-cves-ai-security-audit)。
+<strong>Frontier Red Team</strong>是对AI系统极限能力进行压力测试的团队。近期的代表性项目是利用Claude在Firefox代码库中自主发现22个CVE（安全漏洞）。不仅仅是发现漏洞，还测试了AI能否自主利用这些漏洞进行攻击。该项目的技术细节请参阅[Claude在Firefox中发现22个CVE — AI安全审计的新范式](/zh/blog/zh/claude-firefox-22-cves-ai-security-audit/)。
 
 <strong>Societal Impacts</strong>团队负责开展AI在现实世界中实际使用情况的实地研究。<strong>Economic Research</strong>团队则跟踪AI对就业市场和宏观经济的影响。
 
@@ -123,7 +123,7 @@ graph TD
 
 另一个核心要素是<strong>Code Modernization Starter Kit</strong>。它为合作伙伴提供了遗留代码库迁移和技术债务清理的标准化起点。
 
-Anthropic自身也表示这是"需求最高的企业工作负载"。这反映了其判断：Claude的智能体编程能力在这一领域最能直接转化为客户成果。有关利用Claude构建智能体编程工作流的模式，请参阅[Claude Code智能体工作流模式5种](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)。
+Anthropic自身也表示这是"需求最高的企业工作负载"。这反映了其判断：Claude的智能体编程能力在这一领域最能直接转化为客户成果。有关利用Claude构建智能体编程工作流的模式，请参阅[Claude Code智能体工作流模式5种](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)。
 
 ## CTO必须关注的三个信号
 
@@ -185,7 +185,7 @@ Anthropic Institute的Frontier Red Team在Firefox中发现CVE，既是纯粹的�
 # 准备Claude Certified Architect, Foundations考试
 ```
 
-### 2. 评估加入Partner Network（关于在合作伙伴生态系统中扩展Claude智能体能力，请参阅[Anthropic Agent Skills标准：AI智能体能力扩展](/zh/blog/zh/anthropic-agent-skills-standard)）
+### 2. 评估加入Partner Network（关于在合作伙伴生态系统中扩展Claude智能体能力，请参阅[Anthropic Agent Skills标准：AI智能体能力扩展](/zh/blog/zh/anthropic-agent-skills-standard/)）
 
 会员资格是免费的。加入后可获得：
 - Anthropic Academy培训资料

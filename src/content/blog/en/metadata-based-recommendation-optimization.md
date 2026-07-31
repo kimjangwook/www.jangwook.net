@@ -61,7 +61,7 @@ relatedPosts:
 
 ## Introduction: The Cost Snowball
 
-It started with a simple addition to our blog: a [related posts recommendation feature](/en/blog/en/ai-content-recommendation-system). Initially, it seemed straightforward. "Just show the LLM post contents and ask it to find similar articles." However, generating recommendations for just 13 posts consumed <strong>78,000 tokens</strong> and took <strong>2.7 minutes</strong>.
+It started with a simple addition to our blog: a [related posts recommendation feature](/en/blog/en/ai-content-recommendation-system/). Initially, it seemed straightforward. "Just show the LLM post contents and ask it to find similar articles." However, generating recommendations for just 13 posts consumed <strong>78,000 tokens</strong> and took <strong>2.7 minutes</strong>.
 
 What if we scaled to 30 posts? 180,000 tokens, about 6.5 minutes. 100 posts? Nearly 600,000 tokens and over 20 minutes. This system had no scalability.
 
@@ -413,7 +413,7 @@ The algorithm is actually more <strong>deterministic</strong> (always same resul
 - Fast response time is critical
 - <strong>Cost minimization is essential</strong>
 
-Our recommendation system follows the same role-separation principle as [AI Agent Collaboration Patterns](/en/blog/en/ai-agent-collaboration-patterns):
+Our recommendation system follows the same role-separation principle as [AI Agent Collaboration Patterns](/en/blog/en/ai-agent-collaboration-patterns/):
 1. <strong>Analysis (LLM)</strong>: Unstructured text → Structured metadata
 2. <strong>Recommendation (Algorithm)</strong>: Structured metadata → Similarity scores
 
@@ -613,9 +613,9 @@ LLMs are amazing. But not every problem needs an LLM. Sometimes old, proven algo
 ---
 
 <strong>Related Posts:</strong>
-- [Building an Intelligent Content Recommendation System with Claude LLM](/en/blog/en/ai-content-recommendation-system) - Initial LLM-based recommendation system
-- [Blog Automation with LLM and Claude Code](/en/blog/en/llm-blog-automation) - Complete blog automation system
-- [Claude Code Best Practices](/en/blog/en/claude-code-best-practices) - AI development productivity optimization
+- [Building an Intelligent Content Recommendation System with Claude LLM](/en/blog/en/ai-content-recommendation-system/) - Initial LLM-based recommendation system
+- [Blog Automation with LLM and Claude Code](/en/blog/en/llm-blog-automation/) - Complete blog automation system
+- [Claude Code Best Practices](/en/blog/en/claude-code-best-practices/) - AI development productivity optimization
 
 <strong>References:</strong>
 - [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index)

@@ -114,7 +114,7 @@ Atlassian がホストする MCP サーバーを通じて、以下の AI クラ�
 
 ### Rovo MCP ギャラリー
 
-Atlassian の Rovo MCP ギャラリーを通じて、GitHub、Box、Figma、[Slack](/ja/blog/ja/slack-mcp-team-communication) などのサードパーティ ツールのエージェントも Jira 内で動作します。注目すべきは、現在 <strong>MCP 使用量の約 1/3 が書き込み（Write）操作</strong>という点です。単なるデータ照会ではなく、実際にタスクを実行していることを意味しています。
+Atlassian の Rovo MCP ギャラリーを通じて、GitHub、Box、Figma、[Slack](/ja/blog/ja/slack-mcp-team-communication/) などのサードパーティ ツールのエージェントも Jira 内で動作します。注目すべきは、現在 <strong>MCP 使用量の約 1/3 が書き込み（Write）操作</strong>という点です。単なるデータ照会ではなく、実際にタスクを実行していることを意味しています。
 
 ### エンタープライズ導入の現況
 
@@ -157,7 +157,7 @@ EM として、この転換を <strong>脅威ではなく機会</strong>とし�
 
 ### 3. MCP ベース ツール統合戦略
 
-[MCP はもはや事実上の標準](/ja/blog/ja/mcp-open-standard-linux-foundation-engineering-guide)（de facto standard）です。Anthropic が作成しましたが、Linux Foundation に寄付され、OpenAI、Google、Microsoft、AWS がすべてサポートしています。
+[MCP はもはや事実上の標準](/ja/blog/ja/mcp-open-standard-linux-foundation-engineering-guide/)（de facto standard）です。Anthropic が作成しましたが、Linux Foundation に寄付され、OpenAI、Google、Microsoft、AWS がすべてサポートしています。
 
 ```mermaid
 graph TD
@@ -239,7 +239,7 @@ AI エージェント導入の成果を定量的に測定できる必要があ�
 ### AI エージェント ≠ 万能
 
 - エージェントはツールです。<strong>判断は依然として人間の責務</strong>です
-- 初期段階では、エージェント出力の品質が不安定である可能性があります。[エージェントウォッシングチェックリスト](/ja/blog/ja/agent-washing-detection-em-checklist)を活用した検証プロセスを必ず設けてください
+- 初期段階では、エージェント出力の品質が不安定である可能性があります。[エージェントウォッシングチェックリスト](/ja/blog/ja/agent-washing-detection-em-checklist/)を活用した検証プロセスを必ず設けてください
 - チームメンバーの心理的安全性を考慮してください。「AI が私の仕事を代替する」という不安に先制的に対応してください
 
 ### セキュリティとコンプライアンス

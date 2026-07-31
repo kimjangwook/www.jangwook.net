@@ -51,7 +51,7 @@ relatedPosts:
 
 2026년 3월 10일, Google이 <strong>Gemini Embedding 2</strong>를 발표했다. "우리의 첫 네이티브 멀티모달 임베딩 모델"이라는 설명이 붙었다. 텍스트, 이미지, 비디오, 오디오, 문서를 <strong>하나의 벡터 공간</strong>에 매핑하는 모델이다.
 
-[기존 RAG 파이프라인](/ko/blog/ko/dena-llm-study-part4-rag)의 가장 큰 제약은 텍스트만 다룰 수 있다는 점이었다. 사내 위키에 다이어그램이 있어도, 제품 매뉴얼에 스크린샷이 포함되어 있어도, 임베딩 단계에서 전부 무시됐다. 결과적으로 사용자 질문의 맥락에 맞는 정보가 있음에도 검색되지 않는 상황이 반복됐다.
+[기존 RAG 파이프라인](/ko/blog/ko/dena-llm-study-part4-rag/)의 가장 큰 제약은 텍스트만 다룰 수 있다는 점이었다. 사내 위키에 다이어그램이 있어도, 제품 매뉴얼에 스크린샷이 포함되어 있어도, 임베딩 단계에서 전부 무시됐다. 결과적으로 사용자 질문의 맥락에 맞는 정보가 있음에도 검색되지 않는 상황이 반복됐다.
 
 Gemini Embedding 2는 이 문제를 근본적으로 해결한다.
 
@@ -237,7 +237,7 @@ Google 공식 블로그에 따르면 일부 고객은 <strong>레이턴시 70% �
 
 ### 2. 벤더 의존성 평가
 
-현재 Gemini Embedding 2는 Google 전용이다. 멀티클라우드 전략을 운영하는 기업이라면 [A2A + MCP 하이브리드 아키텍처](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide) 관점에서 임베딩 레이어를 교체 가능한 인터페이스로 설계하는 것이 장기적으로 유리하다:
+현재 Gemini Embedding 2는 Google 전용이다. 멀티클라우드 전략을 운영하는 기업이라면 [A2A + MCP 하이브리드 아키텍처](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide/) 관점에서 임베딩 레이어를 교체 가능한 인터페이스로 설계하는 것이 장기적으로 유리하다:
 
 - <strong>임베딩 레이어 추상화</strong>: 임베딩 모델을 교체 가능한 인터페이스로 설계
 - <strong>벡터 포맷 호환</strong>: 3,072차원 벡터는 대부분의 벡터 DB에서 호환
@@ -247,7 +247,7 @@ Google 공식 블로그에 따르면 일부 고객은 <strong>레이턴시 70% �
 
 멀티모달 데이터를 외부 API로 전송하는 것은 거버넌스 이슈를 수반한다:
 
-- Vertex AI에서는 <strong>VPC Service Controls</strong>로 데이터 경계 설정 가능 ([BigQuery MCP 프리픽스 필터링](/ko/blog/ko/bigquery-mcp-prefix-filtering)처럼 엔터프라이즈 데이터 접근을 세밀하게 제어하는 패턴이 Google 생태계 전반에서 일관성을 갖추고 있다)
+- Vertex AI에서는 <strong>VPC Service Controls</strong>로 데이터 경계 설정 가능 ([BigQuery MCP 프리픽스 필터링](/ko/blog/ko/bigquery-mcp-prefix-filtering/)처럼 엔터프라이즈 데이터 접근을 세밀하게 제어하는 패턴이 Google 생태계 전반에서 일관성을 갖추고 있다)
 - <strong>CMEK(Customer-Managed Encryption Keys)</strong> 지원
 - 회의 녹화나 고객 통화 음성은 PII 마스킹 후 임베딩 처리 권장
 - Data Residency 요구사항이 있다면 리전 선택 확인 필수

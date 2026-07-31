@@ -60,7 +60,7 @@ relatedPosts:
 
 ## 概要
 
-Selenium、Cypress、[Playwright](/ja/blog/ja/playwright-ai-testing)などの従来のE2Eテストツールは、CSSセレクターと命令型コードでテストを記述します。UIが変更されるとセレクターが壊れ、数十のテストファイルを修正しなければなりません。
+Selenium、Cypress、[Playwright](/ja/blog/ja/playwright-ai-testing/)などの従来のE2Eテストツールは、CSSセレクターと命令型コードでテストを記述します。UIが変更されるとセレクターが壊れ、数十のテストファイルを修正しなければなりません。
 
 <strong>OpenClaw</strong>はこの問題を根本的に異なるアプローチで解決します。AIエージェントがアクセシビリティツリー（Accessibility Tree）をベースにWebページを理解し、自然言語で記述されたテストシナリオを解釈して実行します。ブラウザ自動化、デバイス管理、クロンスケジューリング、マルチエージェントオーケストレーションをひとつのプラットフォームで統合運用できます。
 
@@ -99,7 +99,7 @@ E2Eテストの観点から各コンポーネントの役割は次のとおり�
 | <strong>Browser</strong> | ChromiumベースWeb自動化 | Webアプリの機能・UIテスト |
 | <strong>Nodes</strong> | デバイス制御（macOS/iOS/Android） | クロスプラットフォームテスト |
 | <strong>Cron</strong> | スケジューリングエンジン | 定期テスト実行トリガー |
-| <strong>Sub-agents</strong> | 並列エージェント実行 | [テストスイートの並列化](/ja/blog/ja/claude-code-parallel-testing) |
+| <strong>Sub-agents</strong> | 並列エージェント実行 | [テストスイートの並列化](/ja/blog/ja/claude-code-parallel-testing/) |
 | <strong>Canvas</strong> | ビジュアルワークスペース | UIリグレッションテスト・結果ダッシュボード |
 
 ## ブラウザ自動化：アクセシビリティツリーベースのテスト
@@ -334,7 +334,7 @@ openclaw cron add \
 
 ### 並列テスト実行
 
-[サブエージェント](/ja/blog/ja/ai-agent-collaboration-patterns)はバックグラウンドで独立して実行されるエージェントです。複数のテストを同時に実行し、完了時に結果を自動的にレポートします。
+[サブエージェント](/ja/blog/ja/ai-agent-collaboration-patterns/)はバックグラウンドで独立して実行されるエージェントです。複数のテストを同時に実行し、完了時に結果を自動的にレポートします。
 
 ```mermaid
 graph TD

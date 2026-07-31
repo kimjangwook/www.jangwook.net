@@ -197,7 +197,7 @@ def cached_rag_qa(docs: list[str], questions: list[str]) -> list[str]:
 
 カスタマーサポートシステムを例に挙げると、製品マニュアル(50,000トークン)を1日1,000回参照する場合、キャッシングなしでは$150だが、キャッシング後は$18.4程度になる。1日$131の節約だ。
 
-[コンテキストエンジニアリングの観点から何をキャッシュするかを設計する方法](/ja/blog/ja/context-engineering-production-ai-agents)を理解すると、RAGキャッシング戦略がより明確になる。
+[コンテキストエンジニアリングの観点から何をキャッシュするかを設計する方法](/ja/blog/ja/context-engineering-production-ai-agents/)を理解すると、RAGキャッシング戦略がより明確になる。
 
 ## パターン3: ツール定義のキャッシング
 
@@ -235,7 +235,7 @@ response = client.messages.create(
 )
 ```
 
-MCPベースのエージェントなら[mcp2cliのトークン最適化アプローチ](/ja/blog/ja/mcp2cli-token-cost-optimization)と組み合わせることで、ツールディスカバリコストをほぼなくせる。
+MCPベースのエージェントなら[mcp2cliのトークン最適化アプローチ](/ja/blog/ja/mcp2cli-token-cost-optimization/)と組み合わせることで、ツールディスカバリコストをほぼなくせる。
 
 ## パターン4: マルチターン会話のキャッシング
 
@@ -344,6 +344,6 @@ def calculate_cost(usage, model: str = "claude-sonnet-4-6") -> dict:
 2. 以降7回のリクエストはキャッシュヒットで0.1×のコストのみ
 3. 5分以内にすべて完了するのでキャッシュが失効しない
 
-結果として入力トークンコストが約65%減少した。[LLM APIの価格比較2026](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)で扱ったように、さらに削減するには作業種別に異なるモデルを使う異種アーキテクチャを組み合わせる必要がある。
+結果として入力トークンコストが約65%減少した。[LLM APIの価格比較2026](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)で扱ったように、さらに削減するには作業種別に異なるモデルを使う異種アーキテクチャを組み合わせる必要がある。
 
 最後に正直に一言。プロンプトキャッシングは「設定すれば自動的に節約できる」感覚の機能ではない。どのブロックをキャッシュするか、リクエストパターンがTTLと合っているか、キャッシュヒット率をどう測定するかを設計しなければならない。最初は面倒に見えるが、一度きちんと設定すればAPIコストが目に見えて変わる。私はその差を直接見た。

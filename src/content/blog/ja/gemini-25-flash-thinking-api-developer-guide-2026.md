@@ -48,7 +48,7 @@ Gemini 2.5 Flashの`thinking_budget`パラメータを、単純タスク・数�
 
 `thinking_budget`は、モデルが回答前にどれだけの「隠れた推論」ができるかをトークン数で制限するパラメータだ。Budget=0でthinkingを完全に無効化する。Budget=-1はモデルが必要な分だけ自律的に推論する。正の整数を渡すとその値が上限になる（最大24576）。
 
-重要な点がある。thinkingトークンは応答として出力されないが、**コストは同じ料金で課金される**。出力トークンと同じ料金だ。[LLM API価格比較の記事](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)でも確認できるように、Gemini 2.5 Flashの出力トークン料金は$0.0035/1Kトークン。thinking 1024トークンを使えばその分が追加コストになる。
+重要な点がある。thinkingトークンは応答として出力されないが、**コストは同じ料金で課金される**。出力トークンと同じ料金だ。[LLM API価格比較の記事](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)でも確認できるように、Gemini 2.5 Flashの出力トークン料金は$0.0035/1Kトークン。thinking 1024トークンを使えばその分が追加コストになる。
 
 APIの使い方は、2024年まで使っていた`google.generativeai`パッケージではなく、新しい`google-genai`パッケージを使う必要がある。これは見落としやすいポイントだ。
 
@@ -140,7 +140,7 @@ Budget=0で単純タスクが1.4秒で応答した。このタスクに1024 budg
 
 Budget=8000の数学問題では4036 thinkingトークンを消費した。応答時間は26秒。通常の対話型アプリではこの遅延は受け入れがたい。バッチ処理やバックグラウンド分析にのみ使うべきだ。
 
-[Gemini 2.5 Flash コスト最適化ガイド](/ja/blog/ja/gemini-25-flash-api-cost-optimization-guide)でも述べたが、thinkingトークンの料金が出力トークンと同じという点は必ず覚えておくべきだ。Budget=8000を無闇に使うとコストが数倍に膨らむ。
+[Gemini 2.5 Flash コスト最適化ガイド](/ja/blog/ja/gemini-25-flash-api-cost-optimization-guide/)でも述べたが、thinkingトークンの料金が出力トークンと同じという点は必ず覚えておくべきだ。Budget=8000を無闇に使うとコストが数倍に膨らむ。
 
 ## 実際のコード：thinkingトークン追跡パターン
 
@@ -213,7 +213,7 @@ print(f"総コストトークン: {result['total_tokens']}")
 
 第二に、**thinking_budgetとthinking_levelを同時に設定すると400エラー**になる。Gemini 3.x系は`thinking_level`を使い、2.5系は`thinking_budget`を使う。移行中のコードでこの部分を混用するとエラーが発生する。公式ドキュメントには明記されているが、エラーメッセージが直感的でないため初めて遭遇すると戸惑う。
 
-第三に、**thinkingトークンがキャッシュされない。** Context Cachingで長いシステムプロンプトのコストを削減しても、thinkingトークンは毎回新たに課金される。[AIエージェントのコスト現実分析](/ja/blog/ja/ai-agent-cost-reality)でも触れたように、エージェントループを回すとthinkingコストが予想より早く膨らむ。
+第三に、**thinkingトークンがキャッシュされない。** Context Cachingで長いシステムプロンプトのコストを削減しても、thinkingトークンは毎回新たに課金される。[AIエージェントのコスト現実分析](/ja/blog/ja/ai-agent-cost-reality/)でも触れたように、エージェントループを回すとthinkingコストが予想より早く膨らむ。
 
 ## 私の最終的な立場
 

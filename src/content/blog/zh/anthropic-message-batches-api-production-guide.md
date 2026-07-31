@@ -219,7 +219,7 @@ Batches API:
   即标准价格的5% — 节省95%
 ```
 
-参考[Prompt Caching实战指南](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide)了解详细配置方式。
+参考[Prompt Caching实战指南](/zh/blog/zh/claude-api-prompt-caching-cost-optimization-guide/)了解详细配置方式。
 
 ## 需要注意的限制和陷阱
 
@@ -293,7 +293,7 @@ const batch = await client.messages.batches.create(
 
 不足100个请求的批次效果有限。批处理基础设施是为大规模设计的，小批量下顺序标准调用往往更简单且更快。
 
-我在实践中发现最有效的是混合策略，这与[异构LLM舰队成本优化](/zh/blog/zh/heterogeneous-llm-agent-fleet-cost-optimization)的思路一致：将昂贵模型（Opus）的任务通过批量进行夜间处理，将廉价且快速的模型（Haiku）用于实时交互。兼顾质量和成本。
+我在实践中发现最有效的是混合策略，这与[异构LLM舰队成本优化](/zh/blog/zh/heterogeneous-llm-agent-fleet-cost-optimization/)的思路一致：将昂贵模型（Opus）的任务通过批量进行夜间处理，将廉价且快速的模型（Haiku）用于实时交互。兼顾质量和成本。
 
 Webhook缺失和进度仪表板的缺失依然是运维上的摩擦点，但API本身稳定可靠——没有理由再等待了。
 

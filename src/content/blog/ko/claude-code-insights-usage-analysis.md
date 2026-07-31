@@ -128,7 +128,7 @@ TaskCreate: 1,276회
 
 ### 2. 커스텀 슬래시 커맨드 활용
 
-`/write-post` 같은 커스텀 슬래시 커맨드를 만들어 반복 작업을 자동화한 것도 높은 평가를 받았다. 블로그 포스트 하나를 작성하려면 리서치 → 한국어 작성 → 3개 언어 번역 → 이미지 생성 → 메타데이터 업데이트 등 10단계 이상의 작업이 필요한데, 이를 하나의 커맨드로 인코딩한 것이다. [EffiFlow Part 2: Skills 자동 발견과 58% 토큰 절감 캐싱](/ko/blog/ko/effiflow-automation-analysis-part2)에서 이런 커스텀 커맨드 구조가 어떻게 캐싱 효율로 이어지는지 확인할 수 있다.
+`/write-post` 같은 커스텀 슬래시 커맨드를 만들어 반복 작업을 자동화한 것도 높은 평가를 받았다. 블로그 포스트 하나를 작성하려면 리서치 → 한국어 작성 → 3개 언어 번역 → 이미지 생성 → 메타데이터 업데이트 등 10단계 이상의 작업이 필요한데, 이를 하나의 커맨드로 인코딩한 것이다. [EffiFlow Part 2: Skills 자동 발견과 58% 토큰 절감 캐싱](/ko/blog/ko/effiflow-automation-analysis-part2/)에서 이런 커스텀 커맨드 구조가 어떻게 캐싱 효율로 이어지는지 확인할 수 있다.
 
 > "복잡한 다단계 콘텐츠 생성을 반복 가능한 원-커맨드 작업으로 변환"
 > — /insights 분석 결과
@@ -324,7 +324,7 @@ graph TD
 - <strong>수치를 절대 기준으로 받아들일 때</strong>: 세션 분류나 만족도 같은 정성 평가는 보조 모델이 추정한 값이다. 방향을 잡는 참고치로 쓰되, 한 번의 결과를 성과 평가처럼 다루지는 마라.
 - <strong>개인정보가 민감한 환경</strong>: 리포트는 로컬 사용 기록을 읽어 들인다. 공용 화면에 띄우거나 캡처를 공유할 때는 프로젝트 경로나 파일명이 그대로 노출될 수 있다는 점을 염두에 둬라.
 
-병렬 세션을 자주 쓴다면 [Git Worktree로 Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)와 함께 보면, 컨텍스트 한도로 끊기는 문제를 세션 분리로 푸는 구체적인 방법까지 이어진다.
+병렬 세션을 자주 쓴다면 [Git Worktree로 Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)와 함께 보면, 컨텍스트 한도로 끊기는 문제를 세션 분리로 푸는 구체적인 방법까지 이어진다.
 
 ## 다른 개발자에게 추천하는 이유
 
@@ -357,6 +357,6 @@ Claude Code `/insights`는 단순한 통계 기능이 아니다. AI 코딩 도�
 
 ### 함께 읽으면 좋은 글
 
-- [Claude Code 에이전트 팀 구성 가이드](/ko/blog/ko/claude-agent-teams-guide)
-- [Git Worktree로 Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree)
-- [EffiFlow Part 2: Skills 자동 발견과 토큰 절감 캐싱](/ko/blog/ko/effiflow-automation-analysis-part2)
+- [Claude Code 에이전트 팀 구성 가이드](/ko/blog/ko/claude-agent-teams-guide/)
+- [Git Worktree로 Claude Code 병렬 세션 운영하기](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/)
+- [EffiFlow Part 2: Skills 자동 발견과 토큰 절감 캐싱](/ko/blog/ko/effiflow-automation-analysis-part2/)

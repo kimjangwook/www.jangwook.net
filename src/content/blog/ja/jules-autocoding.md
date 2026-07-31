@@ -61,7 +61,7 @@ relatedPosts:
 
 ## はじめに
 
-2025年8月、Googleは革新的なAIコーディングエージェント<strong>Jules</strong>をパブリックベータから正式リリースしました。GitHub Copilotや[Claude Code](/ja/blog/ja/claude-code-best-practices)といった既存のAI開発支援ツールとは異なり、Julesは<strong>非同期で自律的に動作する</strong>点が最大の特徴です。
+2025年8月、Googleは革新的なAIコーディングエージェント<strong>Jules</strong>をパブリックベータから正式リリースしました。GitHub Copilotや[Claude Code](/ja/blog/ja/claude-code-best-practices/)といった既存のAI開発支援ツールとは異なり、Julesは<strong>非同期で自律的に動作する</strong>点が最大の特徴です。
 
 開発者がコーディング中にリアルタイムで補完を提供するのではなく、Julesはバックグラウンドで完全に独立してタスクを実行し、完成したコードをプルリクエストとして提出します。本記事では、Julesの機能、活用方法、他のツールとの比較、そして実践的なベストプラクティスまで包括的に解説します。
 
@@ -444,7 +444,7 @@ Requirements:
 
 Julesを他の主要AIコーディングツールと比較してみましょう。
 
-| 特徴 | Jules | [Claude Code](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types) | GitHub Copilot | Cursor |
+| 特徴 | Jules | [Claude Code](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/) | GitHub Copilot | Cursor |
 |------|-------|-------------|----------------|--------|
 | <strong>動作モード</strong> | 非同期・自律型 | 対話型 | リアルタイム補完 | リアルタイム補完 |
 | <strong>実行環境</strong> | クラウドVM | ローカル | ローカル | ローカル |
@@ -465,7 +465,7 @@ Julesを他の主要AIコーディングツールと比較してみましょう�
 - <strong>明確に定義されたタスク</strong>：Issue記述が詳細な場合
 - <strong>複数タスクの並行処理</strong>：バッチ処理が必要な場合
 
-#### [Claude Code](/ja/blog/ja/claude-code-masterclass-series-1-prompt-to-agent)：探索的開発
+#### [Claude Code](/ja/blog/ja/claude-code-masterclass-series-1-prompt-to-agent/)：探索的開発
 
 - <strong>アーキテクチャ設計</strong>：対話しながら最適解を模索
 - <strong>学習</strong>：新しい技術の使い方を質問しながら実装

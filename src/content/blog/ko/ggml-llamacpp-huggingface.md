@@ -68,7 +68,7 @@ relatedPosts:
 
 ### 1. 오픈소스 지속가능성 문제의 해결
 
-llama.cpp는 2023년 등장 이후 [로컬 AI 추론](/ko/blog/ko/asic-llm-inference-16k-tps)의 사실상 표준이 되었다. 하지만 소규모 팀이 이 거대한 프로젝트를 유지하는 것은 지속가능성 측면에서 큰 도전이었다. Hugging Face의 리소스가 뒷받침되면서 이 문제가 구조적으로 해결된다.
+llama.cpp는 2023년 등장 이후 [로컬 AI 추론](/ko/blog/ko/asic-llm-inference-16k-tps/)의 사실상 표준이 되었다. 하지만 소규모 팀이 이 거대한 프로젝트를 유지하는 것은 지속가능성 측면에서 큰 도전이었다. Hugging Face의 리소스가 뒷받침되면서 이 문제가 구조적으로 해결된다.
 
 ### 2. transformers-ggml 생태계 통합
 
@@ -84,7 +84,7 @@ graph LR
 
 - 모델 출시에서 로컬 추론까지의 시간이 대폭 단축된다
 - GGUF 파일 형식과 Hugging Face Hub의 통합이 더욱 긴밀해진다
-- [양자화](/ko/blog/ko/qwen3-coder-8gb-vram) 품질 관리가 transformers 레벨에서 이루어질 수 있다
+- [양자화](/ko/blog/ko/qwen3-coder-8gb-vram/) 품질 관리가 transformers 레벨에서 이루어질 수 있다
 
 ### 3. 사용자 경험 개선
 
@@ -145,7 +145,7 @@ graph TD
 공식 발표에서 밝힌 향후 기술 목표는 명확하다:
 
 1. <strong>transformers와의 원클릭 통합</strong>: transformers 프레임워크가 모델 정의의 'source of truth'로 자리잡은 만큼, ggml 생태계와의 호환성 개선이 핵심이다
-2. <strong>사용자 경험 개선</strong>: 클라우드 추론의 대안으로서 [로컬 추론](/ko/blog/ko/ddr5-rdimm-vs-rtx3090-local-llm)이 의미 있는 수준에 도달한 지금, 일반 사용자의 접근성 향상이 중요하다
+2. <strong>사용자 경험 개선</strong>: 클라우드 추론의 대안으로서 [로컬 추론](/ko/blog/ko/ddr5-rdimm-vs-rtx3090-local-llm/)이 의미 있는 수준에 도달한 지금, 일반 사용자의 접근성 향상이 중요하다
 3. <strong>오픈소스 초지능</strong>: 장기 비전으로 "open-source superintelligence accessible to the world"를 제시했다
 
 ## 결론

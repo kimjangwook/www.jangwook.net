@@ -269,7 +269,7 @@ jangwook.net/
 - 국제 표준인 영어로 설정
 - Google에게 다국어 구조를 명확히 전달
 
-"가치 없는 콘텐츠" 판정을 코드 레벨에서 어떻게 풀어냈는지는 [AdSense 저품질 콘텐츠 문제, 기술적으로 해결하기](/ko/blog/ko/adsense-low-value-content-technical-fix)에 더 구체적으로 정리했다.
+"가치 없는 콘텐츠" 판정을 코드 레벨에서 어떻게 풀어냈는지는 [AdSense 저품질 콘텐츠 문제, 기술적으로 해결하기](/ko/blog/ko/adsense-low-value-content-technical-fix/)에 더 구체적으로 정리했다.
 
 ### 개선 3: 자동 언어 감지 구현
 
@@ -314,7 +314,7 @@ authorBio: "AI 개발자, 10+ 년 경력. MCP와 Claude Code 전문가"
 - 검증 가능한 프로젝트 (GitHub 링크)
 - 연락처 (이메일, 소셜 미디어)
 
-검색 엔진과 AI 검색(AEO) 양쪽에서 신뢰 신호를 강화하는 방법은 [LLM 시대의 SEO·AEO 실전 적용](/ko/blog/ko/llm-seo-aeo-practical-implementation)에서 이어진다.
+검색 엔진과 AI 검색(AEO) 양쪽에서 신뢰 신호를 강화하는 방법은 [LLM 시대의 SEO·AEO 실전 적용](/ko/blog/ko/llm-seo-aeo-practical-implementation/)에서 이어진다.
 
 ## Before/After 비교: 승인 가능성 평가
 

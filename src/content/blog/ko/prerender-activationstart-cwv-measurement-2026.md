@@ -189,7 +189,7 @@ whenActivated(() => {
 
 핵심은 `navType`을 버리지 않는 것이다. 이 필드가 있으면 나중에 "prerender 비중이 늘어서 좋아진 것"과 "페이지가 실제로 빨라진 것"을 사후에 갈라낼 수 있다. 없으면 갈라낼 방법이 없다.
 
-한 가지 더. 표에 없는 값이 하나 있다. `domContentLoadedEventStart` 46.8ms는 **어떤 보정도 받지 않는다.** Navigation Timing의 마크들은 여전히 prerender 시작 기준이다. 그러니 보정된 LCP와 보정되지 않은 "로드 완료 시간"을 한 대시보드에 나란히 두면, 두 숫자는 서로 다른 시계를 읽고 있는 셈이 된다. 이 어긋남은 [LCP를 앞당기는 리소스 우선순위 작업](/ko/blog/ko/lcp-image-preload-scanner-fetchpriority-2026)의 효과를 검증할 때 특히 성가시다. 개선한 만큼 숫자가 움직였는지를 판단할 기준선이 흔들리기 때문이다.
+한 가지 더. 표에 없는 값이 하나 있다. `domContentLoadedEventStart` 46.8ms는 **어떤 보정도 받지 않는다.** Navigation Timing의 마크들은 여전히 prerender 시작 기준이다. 그러니 보정된 LCP와 보정되지 않은 "로드 완료 시간"을 한 대시보드에 나란히 두면, 두 숫자는 서로 다른 시계를 읽고 있는 셈이 된다. 이 어긋남은 [LCP를 앞당기는 리소스 우선순위 작업](/ko/blog/ko/lcp-image-preload-scanner-fetchpriority-2026/)의 효과를 검증할 때 특히 성가시다. 개선한 만큼 숫자가 움직였는지를 판단할 기준선이 흔들리기 때문이다.
 
 ## Playwright로는 이 실험이 아예 안 됐다
 
@@ -213,7 +213,7 @@ whenActivated(() => {
 
 정직하게 적자면, 원인을 끝까지 특정하지 못했다. 플래그는 범인이 아니었다. 같은 바이너리를 Playwright가 **실제로 구동할 때만** prerender가 억제됐다. 그 이상은 이번 실행 시간 안에서 좁히지 못했다.
 
-다만 실무적으로 필요한 결론은 이미 나와 있다. **Speculation Rules를 Playwright나 Puppeteer로 검증하지 마라.** 규칙이 멀쩡해도 "동작 안 함"이라는 거짓 음성을 받는다. 이건 [jsdom에서 axe-core를 돌렸을 때 실제 위반을 놓쳤던 일](/ko/blog/ko/axe-core-ci-a11y-jsdom-vs-browser-2026)과 정확히 같은 종류의 함정이다. 테스트 환경이 틀린 답을 조용히, 초록불로 준다.
+다만 실무적으로 필요한 결론은 이미 나와 있다. **Speculation Rules를 Playwright나 Puppeteer로 검증하지 마라.** 규칙이 멀쩡해도 "동작 안 함"이라는 거짓 음성을 받는다. 이건 [jsdom에서 axe-core를 돌렸을 때 실제 위반을 놓쳤던 일](/ko/blog/ko/axe-core-ci-a11y-jsdom-vs-browser-2026/)과 정확히 같은 종류의 함정이다. 테스트 환경이 틀린 답을 조용히, 초록불로 준다.
 
 내가 결국 쓴 방법은 두 가지다. 하나는 이 글의 하네스처럼 페이지가 스스로 `sendBeacon`으로 결과를 되쏘게 하고 크롬을 그냥 띄우는 것. 다른 하나는 크롬 문서가 권하는 손쉬운 확인법이다. "The easiest way to see if a page was prerendered (either in full or partially) is to open DevTools after the page is activated and type `performance.getEntriesByType('navigation')[0].activationStart` in the console." (출처: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages))
 
@@ -242,4 +242,4 @@ Speculation Rules를 도입하기 전에, 계측 쪽을 먼저 손봐야 한다.
 
 이 여섯 가지는 prerender를 쓰지 않는 사이트에서도 무해하다. 지금 넣어두면, 나중에 도입하는 날 대시보드가 흔들리지 않는다.
 
-RUM 파이프라인이 prerender나 bfcache 같은 페이지 수명주기 변화를 제대로 반영하고 있는지 확인하고 싶거나, Core Web Vitals 계측을 새로 설계해야 하는 상황이라면 개인적으로 상담과 구현 의뢰를 받고 있다. [프로필](/ko/about)에 연락 경로를 열어두었다.
+RUM 파이프라인이 prerender나 bfcache 같은 페이지 수명주기 변화를 제대로 반영하고 있는지 확인하고 싶거나, Core Web Vitals 계측을 새로 설계해야 하는 상황이라면 개인적으로 상담과 구현 의뢰를 받고 있다. [프로필](/ko/about/)에 연락 경로를 열어두었다.

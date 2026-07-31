@@ -56,7 +56,7 @@ relatedPosts:
 
 2026년 초, 중국 AI 업계에서 대규모 언어 모델(LLM)의 새로운 물결이 밀려오고 있다. Reddit r/LocalLLaMA 커뮤니티에서 <strong>DeepSeek V4의 출시가 임박했다</strong>는 소식이 전해지며 큰 관심을 모으고 있다. Qwen3.5, GLM-5에 이어 DeepSeek V4까지 — 중국 AI 기업들의 차세대 모델 경쟁이 본격적으로 가속화되고 있다.
 
-[2026년 2월 AI 모델 러시](/ko/blog/ko/ai-model-rush-february-2026) 분석에서 볼 수 있듯이, 이 시기는 중국 AI 모델 발표의 중요한 전환점이었다.
+[2026년 2월 AI 모델 러시](/ko/blog/ko/ai-model-rush-february-2026/) 분석에서 볼 수 있듯이, 이 시기는 중국 AI 모델 발표의 중요한 전환점이었다.
 
 ## DeepSeek의 발자취
 
@@ -86,7 +86,7 @@ DeepSeek의 핵심 경쟁력 중 하나는 <strong>오픈 웨이트 정책</stro
 | <strong>GLM-5</strong> | Zhipu AI | 멀티모달 통합, 에이전트 기능 강화 |
 | <strong>Yi-Lightning</strong> | 01.AI | 추론 최적화, 비용 효율 |
 
-Qwen3.5의 경우 [VendingBench에서의 놀라운 성과와 상업용 AI 시장 파괴](/ko/blog/ko/qwen35-vending-bench-bankruptcy)로 특히 주목받고 있다.
+Qwen3.5의 경우 [VendingBench에서의 놀라운 성과와 상업용 AI 시장 파괴](/ko/blog/ko/qwen35-vending-bench-bankruptcy/)로 특히 주목받고 있다.
 
 ### 경쟁의 핵심 축
 
@@ -138,7 +138,7 @@ Reddit r/LocalLLaMA 커뮤니티에서 DeepSeek V4 소식은 308포인트를 기
 3. <strong>혁신 가속</strong>: 커뮤니티 기반의 모델 개선과 응용 분야 확대
 4. <strong>지정학적 영향</strong>: AI 기술 패권 경쟁의 새로운 국면
 
-음성 AI 분야에서도 [KaniTTS2처럼 3GB VRAM으로 보이스 클로닝이 가능한 경량 모델](/ko/blog/ko/kanitts2-voice-cloning)이 등장하는 것은 이 AI 민주화의 연장선이다.
+음성 AI 분야에서도 [KaniTTS2처럼 3GB VRAM으로 보이스 클로닝이 가능한 경량 모델](/ko/blog/ko/kanitts2-voice-cloning/)이 등장하는 것은 이 AI 민주화의 연장선이다.
 
 ## 결론
 

@@ -242,7 +242,7 @@ team = GraphFlow(participants=[planner, coder, tester], graph=graph)
 
 Conditional edges are supported too. A feedback loop where a failing test sends execution back to the coder is expressible as a graph. For complex workflows this is far cleaner than hard-coding branching logic inside system prompts.
 
-My honest take: the GraphFlow API is still a bit verbose. There is no equivalent of LangGraph's `add_conditional_edges` convenience method, so edge definitions get long. That said, explicit DAG routing in a Python agent framework is essentially unique to AutoGen. I compared this with LangGraph, CrewAI, and Dapr in the [AI agent framework comparison post](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production).
+My honest take: the GraphFlow API is still a bit verbose. There is no equivalent of LangGraph's `add_conditional_edges` convenience method, so edge definitions get long. That said, explicit DAG routing in a Python agent framework is essentially unique to AutoGen. I compared this with LangGraph, CrewAI, and Dapr in the [AI agent framework comparison post](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/).
 
 ### Swarm
 
@@ -291,7 +291,7 @@ outer_team = RoundRobinGroupChat(
 )
 ```
 
-From outside, `coding_unit` looks like a regular agent. Inside, a developer → tester loop is running. Only the summary surfaces to the outer team. The concept is similar to [subagent orchestration in the Claude Agent SDK](/en/blog/en/claude-agent-sdk-subagents-orchestration-tutorial-2026), but AutoGen makes the team structure more explicit in code.
+From outside, `coding_unit` looks like a regular agent. Inside, a developer → tester loop is running. Only the summary surfaces to the outer team. The concept is similar to [subagent orchestration in the Claude Agent SDK](/en/blog/en/claude-agent-sdk-subagents-orchestration-tutorial-2026/), but AutoGen makes the team structure more explicit in code.
 
 ## Limitations I Hit in Practice
 
@@ -299,7 +299,7 @@ From outside, `coding_unit` looks like a regular agent. Inside, a developer → 
 Agent memory in AutoGen 0.7.x only persists within a conversation session. There is no built-in cross-session memory. You need to wire in an external database or memory layer yourself.
 
 **2. Debugging is still awkward**  
-Streaming with `run_stream()` shows each agent's messages, but seeing intermediate tool call results at a glance is difficult. Connecting an external tracing tool like Langfuse is practically essential. I covered the setup in the [Langfuse self-hosted tracing guide](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026).
+Streaming with `run_stream()` shows each agent's messages, but seeing intermediate tool call results at a glance is difficult. Connecting an external tracing tool like Langfuse is practically essential. I covered the setup in the [Langfuse self-hosted tracing guide](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026/).
 
 **3. Async only**  
 Every API is `async/await`. Wrap with `asyncio.run()` for synchronous contexts, and be mindful of async handling when integrating with FastAPI or Django.
@@ -403,7 +403,7 @@ The most time-consuming step is usually converting `llm_config` to `model_client
 
 My honest position: AutoGen is strong when **inter-agent collaboration protocols are complex**. Team composition, cross-team routing, and hierarchical agent structures are first-class constructs in the API.
 
-For a single agent with many tools, [PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026) results in cleaner code — AutoGen's team abstraction becomes unnecessary overhead. The [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026) shows where each library fits.
+For a single agent with many tools, [PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/) results in cleaner code — AutoGen's team abstraction becomes unnecessary overhead. The [Python AI agent library comparison](/en/blog/en/python-ai-agent-library-comparison-2026/) shows where each library fits.
 
 If Kubernetes-level infrastructure durability is the concern, look at Dapr Agents instead. AutoGen focuses squarely on the **agent conversation layer**, not infrastructure.
 

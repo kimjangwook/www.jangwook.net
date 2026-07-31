@@ -166,7 +166,7 @@ AI智能体24小时运行，意味着<strong>异步工作的极致化</strong>�
 
 - <strong>任务分解能力</strong>：区分可以委托给AI的任务和必须由人类完成的任务
 - <strong>结果审查能力</strong>：快速验证AI产出物质量的技能
-- <strong>异步编排能力</strong>：管理[AI智能体的任务队列](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)并调整优先级
+- <strong>异步编排能力</strong>：管理[AI智能体的任务队列](/zh/blog/zh/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)并调整优先级
 
 ### 3. 成本效益分析
 
@@ -188,7 +188,7 @@ Perplexity Computer并非孤军奋战。当前"全天候AI智能体"市场正在
 |---|---|---|
 | Perplexity Personal Computer | 基于Mac mini的24/7智能体 | 专用硬件 + 云端AI |
 | OpenClaw | 开源AI助手（21万星标） | 在自有硬件上运行 |
-| [Claude Managed Agents](/zh/blog/zh/claude-managed-agents-production-deployment-guide) | 基于MCP的工具联动智能体 | API + 协议标准化 |
+| [Claude Managed Agents](/zh/blog/zh/claude-managed-agents-production-deployment-guide/) | 基于MCP的工具联动智能体 | API + 协议标准化 |
 | OpenAI Codex | 编程专用智能体 | 纯云端 |
 
 Gartner预测，<strong>到2026年底，40%的企业应用将搭载AI智能体</strong>（从2025年不足5%急剧增长）。全天候AI智能体正处于这一趋势的最前沿。
@@ -199,7 +199,7 @@ Gartner预测，<strong>到2026年底，40%的企业应用将搭载AI智能体</
 
 1. <strong>梳理可委托给AI的工作清单</strong>：列出团队中重复执行的调研、分析、报告生成等工作。
 2. <strong>设计治理框架</strong>：定义AI智能体拥有何种级别的权限，哪些操作需要人工审批。
-3. <strong>设计异步工作流</strong>：建立向[AI智能体](/zh/blog/zh/python-ai-agent-library-comparison-2026)委派任务并审查结果的流程。
+3. <strong>设计异步工作流</strong>：建立向[AI智能体](/zh/blog/zh/python-ai-agent-library-comparison-2026/)委派任务并审查结果的流程。
 4. <strong>审查安全策略</strong>：检查本地文件访问、云端数据传输、审计日志管理等方面的安全策略。
 
 ## 结论

@@ -114,7 +114,7 @@ relatedPosts:
 
 ### 3.1 즉시 실행 가능한 분석 쿼리
 
-블로그 분석을 시작하는 독자를 위해, <strong>실제로 사용 가능한 MCP 쿼리 예제</strong>를 공유한다. GA4를 MCP로 연결하는 전체 설정 과정은 [Google Analytics MCP 자동화 가이드](/ko/blog/ko/google-analytics-mcp-automation)에서 단계별로 다룬다.
+블로그 분석을 시작하는 독자를 위해, <strong>실제로 사용 가능한 MCP 쿼리 예제</strong>를 공유한다. GA4를 MCP로 연결하는 전체 설정 과정은 [Google Analytics MCP 자동화 가이드](/ko/blog/ko/google-analytics-mcp-automation/)에서 단계별로 다룬다.
 
 #### 쿼리 1: 실시간 방문자 현황
 
@@ -373,7 +373,7 @@ mcp__analytics -
 - 프로젝트 문의 전환 경로 최적화
 - 관련 포스트 추천 알고리즘 구현
 
-이 단계에서 콘텐츠 생산을 지속하려면 작성 파이프라인 자체를 자동화하는 것이 현실적이다. LLM으로 초안부터 발행까지 연결한 방법은 [LLM 기반 블로그 자동화](/ko/blog/ko/llm-blog-automation)에 정리해 두었다.
+이 단계에서 콘텐츠 생산을 지속하려면 작성 파이프라인 자체를 자동화하는 것이 현실적이다. LLM으로 초안부터 발행까지 연결한 방법은 [LLM 기반 블로그 자동화](/ko/blog/ko/llm-blog-automation/)에 정리해 두었다.
 
 ### 6.3 장기 비전 (3-6개월)
 
@@ -656,4 +656,4 @@ jangwook.net 블로그는 기술적으로 성공적으로 런칭됐다.
 
 ### 경험을 나누고 싶다면
 
-같은 고민을 하는 동료 개발자에게 이 기록이 참고가 되면 좋겠다. 자기 블로그 분석 경험이나 반론이 있으면 [Contact](/ko/contact)로 알려주면 된다. 나도 아직 첫 주 데이터로 더듬는 중이다.
+같은 고민을 하는 동료 개발자에게 이 기록이 참고가 되면 좋겠다. 자기 블로그 분석 경험이나 반론이 있으면 [Contact](/ko/contact/)로 알려주면 된다. 나도 아직 첫 주 데이터로 더듬는 중이다.

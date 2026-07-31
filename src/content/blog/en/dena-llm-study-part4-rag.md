@@ -46,11 +46,11 @@ faq:
 
 > <strong>Series: DeNA LLM Study</strong> (4/5)
 >
-> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals)
+> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals/)
 > 2. Part 2: Structured Output and Multi-LLM Pipelines
-> 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training)
+> 3. [Part 3: Model Training Methodologies](/en/blog/en/dena-llm-study-part3-model-training/)
 > 4. <strong>Part 4: RAG Architecture and Latest Trends</strong> ← Current Article
-> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design)
+> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design/)
 
 ## RAG Is Really a Search Engineering Problem
 
@@ -824,7 +824,7 @@ The question I got most while writing up the study notes was simply "so what sho
 - You see mixed queries that need both keyword matching and semantic search
 - Recall is fine but the precision of top results is weak (reranking shines here)
 
-If picking a vector store is the open question, [2026 Vector DB Comparison: Qdrant vs Chroma vs pgvector](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector) compares hybrid-search support and operational overhead.
+If picking a vector store is the open question, [2026 Vector DB Comparison: Qdrant vs Chroma vs pgvector](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector/) compares hybrid-search support and operational overhead.
 
 <strong>When to avoid it</strong>: real-time paths with a tight latency budget of tens of milliseconds. Cross-Encoder reranking adds latency, so consider a lighter approach like ColBERT or skipping reranking entirely.
 
@@ -841,7 +841,7 @@ If picking a vector store is the open question, [2026 Vector DB Comparison: Qdra
 - A single retrieval pass doesn't answer the question, and you need a retrieve → evaluate → re-retrieve loop
 - You need to pick among several tools (vector search, keyword, web, SQL) per query
 
-<strong>When to avoid it</strong>: high-traffic paths sensitive to cost and latency. Iterative calls multiply tokens and time. If the framework choice is the open question, [LlamaIndex vs LangChain vs Haystack RAG Framework Comparison 2026](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026) covers how their agentic retrieval abstractions differ.
+<strong>When to avoid it</strong>: high-traffic paths sensitive to cost and latency. Iterative calls multiply tokens and time. If the framework choice is the open question, [LlamaIndex vs LangChain vs Haystack RAG Framework Comparison 2026](/en/blog/en/llamaindex-vs-langchain-vs-haystack-rag-2026/) covers how their agentic retrieval abstractions differ.
 
 ### One-table summary
 
@@ -927,4 +927,4 @@ In the final Part 5 of DeNA's study series, we'll cover:
 
 ---
 
-<strong>Series Continues</strong>: [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design)
+<strong>Series Continues</strong>: [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design/)

@@ -60,7 +60,7 @@ relatedPosts:
 
 ## 들어가며: 비용의 눈덩이
 
-블로그에 [관련 포스트 추천 기능](/ko/blog/ko/ai-content-recommendation-system)을 추가하면서 시작된 여정이었다. 처음엔 단순했다. "LLM에게 포스트 내용을 보여주고 유사한 글을 찾아달라고 하면 되겠지." 하지만 13개 포스트에서 추천을 생성하는 데 <strong>78,000 토큰</strong>이 소비되고, <strong>2.7분</strong>이 걸렸다.
+블로그에 [관련 포스트 추천 기능](/ko/blog/ko/ai-content-recommendation-system/)을 추가하면서 시작된 여정이었다. 처음엔 단순했다. "LLM에게 포스트 내용을 보여주고 유사한 글을 찾아달라고 하면 되겠지." 하지만 13개 포스트에서 추천을 생성하는 데 <strong>78,000 토큰</strong>이 소비되고, <strong>2.7분</strong>이 걸렸다.
 
 포스트가 30개로 늘어나면? 180,000 토큰, 약 6.5분. 100개가 되면? 거의 600,000 토큰에 20분 이상. 확장성이 없는 시스템이었다.
 
@@ -536,7 +536,7 @@ graph LR
 - 빠른 응답 시간이 중요한 경우
 - <strong>비용 최소화가 필수인 경우</strong>
 
-우리의 추천 시스템은 [AI 에이전트 협업 패턴](/ko/blog/ko/ai-agent-collaboration-patterns)의 역할 분리 원칙과 동일한 사고방식에서 출발한다:
+우리의 추천 시스템은 [AI 에이전트 협업 패턴](/ko/blog/ko/ai-agent-collaboration-patterns/)의 역할 분리 원칙과 동일한 사고방식에서 출발한다:
 1. <strong>분석 (LLM)</strong>: 비구조화된 텍스트 → 구조화된 메타데이터
 2. <strong>추천 (알고리즘)</strong>: 구조화된 메타데이터 → 유사도 점수
 
@@ -858,9 +858,9 @@ LLM은 놀랍다. 하지만 모든 문제가 LLM을 필요로 하지는 않다. 
 ---
 
 <strong>관련 포스트:</strong>
-- [Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템](/ko/blog/ko/ai-content-recommendation-system) - 초기 LLM 기반 추천 시스템 구축
-- [LLM과 Claude Code를 활용한 블로그 자동화](/ko/blog/ko/llm-blog-automation) - 블로그 자동화 전체 시스템
-- [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices) - AI 개발 생산성 최적화
+- [Claude LLM으로 구축하는 지능형 콘텐츠 추천 시스템](/ko/blog/ko/ai-content-recommendation-system/) - 초기 LLM 기반 추천 시스템 구축
+- [LLM과 Claude Code를 활용한 블로그 자동화](/ko/blog/ko/llm-blog-automation/) - 블로그 자동화 전체 시스템
+- [Claude Code Best Practices](/ko/blog/ko/claude-code-best-practices/) - AI 개발 생산성 최적화
 
 <strong>참고 자료:</strong>
 - [Jaccard Similarity](https://en.wikipedia.org/wiki/Jaccard_index)

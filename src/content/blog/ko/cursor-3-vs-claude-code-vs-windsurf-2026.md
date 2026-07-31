@@ -109,7 +109,7 @@ Cursor를 팀 환경에서 쓸 때의 강점도 있다. Bugbot이 팀의 PR 피�
 
 개인적으로 가장 자주 쓰는 건 `/loop` 기능이다. 인터벌 없이 자기 페이스로 반복 작업을 실행한다. 이 블로그의 일일 포스팅 자동화도 `/loop` 기반이다.
 
-Claude Code가 다른 도구와 가장 크게 다른 점은 <strong>코드베이스 전체를 이해한다</strong>는 것이다. 파일 몇 개만 보는 게 아니라, 레포 전체 구조를 읽고 아키텍처 수준의 판단을 내린다. 실제로 [Claude Code의 병렬 세션과 Git Worktree를 조합하면](/ko/blog/ko/claude-code-parallel-sessions-git-worktree) 멀티레포 작업도 가능하다. 운영 루틴을 먼저 잡고 싶다면 [Claude Code 실전 루틴 가이드](/ko/blog/ko/claude-code-routines-practical-guide-2026)도 함께 보면 좋다.
+Claude Code가 다른 도구와 가장 크게 다른 점은 <strong>코드베이스 전체를 이해한다</strong>는 것이다. 파일 몇 개만 보는 게 아니라, 레포 전체 구조를 읽고 아키텍처 수준의 판단을 내린다. 실제로 [Claude Code의 병렬 세션과 Git Worktree를 조합하면](/ko/blog/ko/claude-code-parallel-sessions-git-worktree/) 멀티레포 작업도 가능하다. 운영 루틴을 먼저 잡고 싶다면 [Claude Code 실전 루틴 가이드](/ko/blog/ko/claude-code-routines-practical-guide-2026/)도 함께 보면 좋다.
 
 SWE-bench(실제 소프트웨어 엔지니어링 태스크 벤치마크)에서 Claude Code + Claude Opus 4.x 조합이 선두권이다. "벤치마크가 실제랑 다르다"는 말이 있지만, 내 경험에서도 복잡한 리팩터링이나 설계 결정에서 Claude Code가 더 좋은 코드를 내놓는 경향이 있다.
 
@@ -125,7 +125,7 @@ Claude Code의 진짜 힘은 <strong>Hooks와 Skills 시스템</strong>에 있�
 
 Windsurf를 처음 썼을 때, "아, 이게 바이브 코딩이구나"를 체감했다. 코드를 쓰는 속도가 다른 도구보다 빠르게 느껴진다. Cascade 에이전트가 현재 작업의 문맥을 잘 기억하고, 멀티스텝 작업을 자율로 처리한다.
 
-<strong>Arena Mode</strong>가 가장 독창적인 기능이다. 두 모델에 같은 프롬프트를 주고, 두 응답을 나란히 보면서 하나를 선택한다. [Windsurf Arena Mode를 써봤을 때 발견한 흥미로운 데이터](/ko/blog/ko/windsurf-arena-mode-speed-over-accuracy)가 있다. 개발자들은 AI 코딩 도구에서 정확도보다 속도를 2배 이상 중요하게 여긴다는 것이다.
+<strong>Arena Mode</strong>가 가장 독창적인 기능이다. 두 모델에 같은 프롬프트를 주고, 두 응답을 나란히 보면서 하나를 선택한다. [Windsurf Arena Mode를 써봤을 때 발견한 흥미로운 데이터](/ko/blog/ko/windsurf-arena-mode-speed-over-accuracy/)가 있다. 개발자들은 AI 코딩 도구에서 정확도보다 속도를 2배 이상 중요하게 여긴다는 것이다.
 
 2026년 Windsurf 2.0은 <strong>Devin 통합</strong>을 추가했다. 로컬 Cascade 세션과 클라우드 Devin 세션을 하나의 칸반 스타일 대시보드에서 관리한다. 팀 단위로 에이전트를 운영할 때 유용하다.
 
@@ -212,7 +212,7 @@ Windsurf가 2025〜2026년에 걸쳐 Wave 릴리즈를 14번 진행했다는 것
 
 ## 내 결론 — 세 가지를 다 써봤을 때
 
-솔직히 말하면 나는 지금 Claude Code 중심으로 운영하고 있다. 이 블로그의 자동화 워크플로우, 다국어 포스트 작성, 코드 리뷰까지 전부 Claude Code 기반이다. 아키텍처를 이해하고 장기적으로 유지보수 가능한 코드를 쓴다는 점이 결정적이었다. [Claude Code의 모범 사례를 처음 정리했을 때](/ko/blog/ko/claude-code-best-practices), 이 도구가 단순한 코딩 보조가 아니라 시스템 설계 파트너처럼 쓰일 수 있다는 걸 확인했다.
+솔직히 말하면 나는 지금 Claude Code 중심으로 운영하고 있다. 이 블로그의 자동화 워크플로우, 다국어 포스트 작성, 코드 리뷰까지 전부 Claude Code 기반이다. 아키텍처를 이해하고 장기적으로 유지보수 가능한 코드를 쓴다는 점이 결정적이었다. [Claude Code의 모범 사례를 처음 정리했을 때](/ko/blog/ko/claude-code-best-practices/), 이 도구가 단순한 코딩 보조가 아니라 시스템 설계 파트너처럼 쓰일 수 있다는 걸 확인했다.
 
 그렇다고 Cursor를 완전히 떠난 건 아니다. Tab 자동완성은 아직도 Cursor가 최강이다. 코드를 빠르게 입력하면서 수정하는 작업에서 Cursor의 체감은 여전히 다른 도구와 다르다.
 
@@ -220,6 +220,6 @@ Windsurf는 과대평가됐다고 본다. Arena Mode는 신선하고, Cascade의
 
 세 도구 모두 6개월 전과 지금이 완전히 다른 제품이다. 이 글도 몇 달 뒤에 다시 쓰면 내용이 달라질 것이다. 지금 가장 확실한 조언은 하나다: 무료 플랜이나 트라이얼로 직접 써보고, 본인 워크플로우에 맞는 것을 고르라. 스펙표나 리뷰 글이 아니라, 본인 코드에서 돌려보는 게 유일한 정답이다.
 
-마지막으로 한 가지 더. 이 세 도구 중 하나를 선택한다는 게 나머지를 완전히 포기하는 결정이 아니다. AI 코딩 도구는 아직 "하나만 쓰면 충분한" 단계가 아니다. 나도 Claude Code를 주로 쓰면서 Cursor로 파일을 편집하고, Windsurf로 간단한 프로토타입을 테스트한다. 세 도구가 어떻게 다른지 이해하면, 상황에 따라 맞는 도구를 고르는 감각이 생긴다. 그게 2026년 AI 코딩 도구를 잘 쓰는 방법이다. 더 넓은 에이전트 도구 선택 기준은 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)와 [MCP·A2A·Open Responses 프로토콜 비교](/ko/blog/ko/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026)에서도 이어서 다룬다.
+마지막으로 한 가지 더. 이 세 도구 중 하나를 선택한다는 게 나머지를 완전히 포기하는 결정이 아니다. AI 코딩 도구는 아직 "하나만 쓰면 충분한" 단계가 아니다. 나도 Claude Code를 주로 쓰면서 Cursor로 파일을 편집하고, Windsurf로 간단한 프로토타입을 테스트한다. 세 도구가 어떻게 다른지 이해하면, 상황에 따라 맞는 도구를 고르는 감각이 생긴다. 그게 2026년 AI 코딩 도구를 잘 쓰는 방법이다. 더 넓은 에이전트 도구 선택 기준은 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026/)와 [MCP·A2A·Open Responses 프로토콜 비교](/ko/blog/ko/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026/)에서도 이어서 다룬다.
 
 분기마다 한 번씩 이 판단을 다시 해보는 것도 권한다. 6개월 전에 최선의 선택이었던 도구가 지금도 최선이라는 보장이 없다. 세 도구 모두 지금도 빠르게 변하고 있다. 그리고 그 변화의 속도 자체가, 우리가 AI 코딩 도구에서 기대하는 것이 무엇인지를 아직도 정의하는 중이라는 방증이다.

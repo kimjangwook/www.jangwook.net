@@ -43,7 +43,7 @@ faq:
 
 며칠 전 로컬에서 돌리던 회의록 요약 에이전트가 이상하게 굴었다. 짧은 회의록은 잘 처리하는데, 긴 회의록을 넣으면 맨 위에 적어둔 "JSON으로만 답하라" 같은 지시를 통째로 무시하고 평문으로 줄줄 답했다. 처음엔 모델이 멍청해서 그런 줄 알았다. 그런데 같은 모델이 짧은 입력에서는 멀쩡하게 지시를 지킨다는 게 걸렸다. 모델이 멍청해진 게 아니라, 모델이 내 지시를 **아예 못 본** 것이라면?
 
-[prefill과 generation 비용을 분해한 지난 글](/ko/blog/ko/local-llm-prefill-generation-latency-experiment)에서 컨텍스트가 길수록 첫 토큰이 늦어진다는 건 쟀었다. 그건 속도 얘기였다. 오늘 의심한 건 다른 쪽이다. 컨텍스트가 어느 선을 넘으면 속도가 아니라 **내용**이 사라지는 것 아니냐는 의심. 그래서 직접 재봤다.
+[prefill과 generation 비용을 분해한 지난 글](/ko/blog/ko/local-llm-prefill-generation-latency-experiment/)에서 컨텍스트가 길수록 첫 토큰이 늦어진다는 건 쟀었다. 그건 속도 얘기였다. 오늘 의심한 건 다른 쪽이다. 컨텍스트가 어느 선을 넘으면 속도가 아니라 **내용**이 사라지는 것 아니냐는 의심. 그래서 직접 재봤다.
 
 ## 비밀 코드를 맨 앞에 숨기고 길이를 늘여봤다
 
@@ -103,7 +103,7 @@ def ask(num_ctx, n_filler):
 
 이 실험에서 건진 가장 실용적인 사실은 따로 있다. **잘림은 응답 안에 흔적을 남긴다.** Ollama가 `/api/generate` 응답에 돌려주는 `prompt_eval_count`는 모델이 실제로 prefill한 입력 토큰 수다. 이 값이 내가 보낸 프롬프트의 토큰 수보다 작고 num_ctx에 바짝 붙어 있으면, 백이면 백 잘린 것이다.
 
-이게 왜 중요하냐면, 평소엔 이 숫자를 아무도 안 본다. 답이 그럴듯하게 나오면 입력이 온전히 들어갔다고 믿어버린다. 하지만 [구조화 출력으로 답을 안정화](/ko/blog/ko/ollama-structured-outputs-pydantic-local-llm-guide-2026)해놓아도, 애초에 모델이 본 입력이 반쪽이면 스키마만 깔끔하고 내용은 틀린 답이 나온다. 스키마 검증은 통과하는데 사실관계가 어긋나는, 디버깅하기 제일 골치 아픈 종류의 버그다.
+이게 왜 중요하냐면, 평소엔 이 숫자를 아무도 안 본다. 답이 그럴듯하게 나오면 입력이 온전히 들어갔다고 믿어버린다. 하지만 [구조화 출력으로 답을 안정화](/ko/blog/ko/ollama-structured-outputs-pydantic-local-llm-guide-2026/)해놓아도, 애초에 모델이 본 입력이 반쪽이면 스키마만 깔끔하고 내용은 틀린 답이 나온다. 스키마 검증은 통과하는데 사실관계가 어긋나는, 디버깅하기 제일 골치 아픈 종류의 버그다.
 
 ## 그런데 기본값이 4096이 아니었다
 
@@ -157,7 +157,7 @@ def guarded_generate(prompt, num_ctx=8192, model="melavisions/gemma4:latest"):
 
 그리고 솔직히 못 푼 게 하나 남았다. OpenAI 호환 엔드포인트(`/v1/chat/completions`)로도 같은 테스트를 돌려봤는데, 여기선 `options.num_ctx`를 요청마다 줄 방법이 없고 `usage.prompt_tokens`가 `/api/generate`의 `prompt_eval_count`와 다른 숫자(같은 텍스트인데 3464 대 2384)로 찍혔다. 게다가 내 머신에선 긴 입력에서도 head가 살아남아 recall이 됐다. 토큰 집계 방식이 달라서 두 엔드포인트를 1:1로 비교할 수 없다는 것까진 알겠는데, 왜 잘림 거동까지 달라 보였는지는 깔끔하게 설명하지 못하겠다. 다만 [OpenAI 호환 API에서 num_ctx가 안 먹혀 4096으로 조용히 잘린다는 이슈](https://github.com/ollama/ollama/issues/2714)가 실제로 보고돼 있으니, `/v1` 경로를 쓴다면 서버 기본값(`OLLAMA_CONTEXT_LENGTH`)에 전적으로 의존한다는 점은 기억해두는 게 좋다.
 
-[콜드 스타트 때 load_duration을 추적](/ko/blog/ko/local-llm-cold-start-load-duration-experiment)했던 것과 결이 같다. Ollama가 응답에 슬쩍 끼워 돌려주는 숫자들은 문서엔 잘 안 적혀 있어도, 실제 거동을 추적하는 가장 정직한 단서다. `load_duration`이 콜드 스타트를 일러바쳤듯, `prompt_eval_count`는 잘림을 일러바친다. 로컬 모델을 진지하게 굴릴 거면 이 숫자들을 한 번씩 들여다보길 권한다.
+[콜드 스타트 때 load_duration을 추적](/ko/blog/ko/local-llm-cold-start-load-duration-experiment/)했던 것과 결이 같다. Ollama가 응답에 슬쩍 끼워 돌려주는 숫자들은 문서엔 잘 안 적혀 있어도, 실제 거동을 추적하는 가장 정직한 단서다. `load_duration`이 콜드 스타트를 일러바쳤듯, `prompt_eval_count`는 잘림을 일러바친다. 로컬 모델을 진지하게 굴릴 거면 이 숫자들을 한 번씩 들여다보길 권한다.
 
 ## 참고자료
 

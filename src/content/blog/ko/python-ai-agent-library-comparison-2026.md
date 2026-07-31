@@ -184,7 +184,7 @@ Pydantic AI는 구조화 출력을 위한 다섯 가지 모드를 제공한다:
 
 아직 v1.0이 아니다. 빠르게 변하는 API가 프로덕션 도입을 망설이게 만드는 이유다. 0.x 버전이라는 건 breaking change가 언제든 올 수 있다는 뜻이다. Pydantic 팀의 품질 기준은 믿지만, 서두르기보다는 안정화를 지켜보는 편이 낫다고 생각한다.
 
-또 멀티 에이전트 시나리오는 아직 제한적이다. 복잡한 오케스트레이션이 필요하다면 LangGraph 위에서 Pydantic AI를 구조화 출력 레이어로만 쓰는 조합이 더 현실적이다. 상위 레이어 프레임워크 선택이 고민이라면 [Google ADK vs LangGraph 에이전트 프레임워크 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026)를 먼저 읽어두면 도움이 된다. Pydantic AI 자체를 깊게 파고드는 실습은 [Pydantic AI 타입 안전 에이전트 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)에서 단계별로 다뤘다.
+또 멀티 에이전트 시나리오는 아직 제한적이다. 복잡한 오케스트레이션이 필요하다면 LangGraph 위에서 Pydantic AI를 구조화 출력 레이어로만 쓰는 조합이 더 현실적이다. 상위 레이어 프레임워크 선택이 고민이라면 [Google ADK vs LangGraph 에이전트 프레임워크 비교](/ko/blog/ko/google-adk-vs-langgraph-agent-framework-comparison-2026/)를 먼저 읽어두면 도움이 된다. Pydantic AI 자체를 깊게 파고드는 실습은 [Pydantic AI 타입 안전 에이전트 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)에서 단계별로 다뤘다.
 
 ## Smolagents: LLM이 코드를 쓰게 하라
 
@@ -301,7 +301,7 @@ result = instructor_client.chat.completions.create(
 
 단, v1.0이 아직 아니므로 breaking change 리스크는 감수해야 한다. 내 판단으로는, 새로 시작하는 프로젝트라면 써볼 가치가 있다. 기존 프로덕션 코드를 마이그레이션하는 건 아직 시기상조다.
 
-에이전트 설계의 큰 그림이 궁금하다면 [프로덕션 AI 에이전트 설계 원칙](/ko/blog/ko/dena-llm-study-part5-agent-design)이 좋은 출발점이다. 이 라이브러리들이 해결하는 문제의 배경을 이해하는 데 도움이 된다.
+에이전트 설계의 큰 그림이 궁금하다면 [프로덕션 AI 에이전트 설계 원칙](/ko/blog/ko/dena-llm-study-part5-agent-design/)이 좋은 출발점이다. 이 라이브러리들이 해결하는 문제의 배경을 이해하는 데 도움이 된다.
 
 ### Smolagents를 선택해야 할 때
 
@@ -418,7 +418,7 @@ assert result.name == "테스트"
 
 "뭐가 가장 좋은가"를 묻는다면, 내 대답은 이렇다. 구조화 추출이 필요하면 Instructor, 타입 안전한 에이전트 루프가 필요하면 Pydantic AI, 코드 실행 에이전트가 필요하면 Smolagents. 그게 전부다.
 
-[AI 에이전트의 비용 현실](/ko/blog/ko/ai-agent-cost-reality)도 참고하면 좋다. 어떤 라이브러리를 쓰든 모델 선택에 따라 비용이 크게 달라지는데, 특히 Instructor의 재시도 비용이나 Smolagents의 코드 생성 루프 비용을 사전에 추정할 때 도움이 된다.
+[AI 에이전트의 비용 현실](/ko/blog/ko/ai-agent-cost-reality/)도 참고하면 좋다. 어떤 라이브러리를 쓰든 모델 선택에 따라 비용이 크게 달라지는데, 특히 Instructor의 재시도 비용이나 Smolagents의 코드 생성 루프 비용을 사전에 추정할 때 도움이 된다.
 
 ## 언제 쓰고, 언제 피해야 하는가
 

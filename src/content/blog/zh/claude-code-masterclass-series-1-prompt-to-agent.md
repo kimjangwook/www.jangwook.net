@@ -211,7 +211,7 @@ frontmatter中的`description`字段最为关键。编排器Claude在判断"什�
 - `content-recommender`: 生成relatedPosts
 - `image-generator`: 撰写英雄图片简报
 
-关于将代理组织成团队的更复杂模式，可以参考[Claude Code代理团队完整指南](/zh/blog/zh/claude-agent-teams-guide)。
+关于将代理组织成团队的更复杂模式，可以参考[Claude Code代理团队完整指南](/zh/blog/zh/claude-agent-teams-guide/)。
 
 ## 三步整合：实际自动化管道
 
@@ -343,7 +343,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 把判断标准压缩成一句话就是：<strong>「这个流程下个月还会以几乎相同的形式重复吗，以及有没有办法自动验证结果？」</strong>两个都是「是」就自动化；只要有一个是「否」，手工做通常更快也更安全。
 
-当你走到想要并行同时运行多个任务的阶段时，[用git worktree并行运行Claude Code会话的模式](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)是自然的下一个扩展方向。
+当你走到想要并行同时运行多个任务的阶段时，[用git worktree并行运行Claude Code会话的模式](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)是自然的下一个扩展方向。
 
 ## 诚实的评价: 哪些地方不好用
 
@@ -365,7 +365,7 @@ Rate: SAFE / CAUTION / CRITICAL
 
 第2篇更进一步，<strong>从头构建MCP服务器，将Claude Code连接到外部工具</strong>。读取Notion数据库、发送Slack消息、查询PostgreSQL，这些外部系统集成都可以通过一条斜线命令完成。
 
-如果已经尝试过MCP服务器构建，[TypeScript SDK MCP服务器逐步构建指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)是很好的预备阅读材料。
+如果已经尝试过MCP服务器构建，[TypeScript SDK MCP服务器逐步构建指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/)是很好的预备阅读材料。
 
 ## 用官方文档核对
 

@@ -76,7 +76,7 @@ response = client.messages.create(
 )
 ```
 
-このコードはAnthropicのAPIキーなしに直接実行できなかった。上記コードは公式ドキュメントとリリースノートを基に作成したもので、task_budgetのadvisory動作方式は[Managed Agentsの本番デプロイ記事](/ja/blog/ja/claude-managed-agents-production-deployment-guide)で直接テストした経験と繋がっている。
+このコードはAnthropicのAPIキーなしに直接実行できなかった。上記コードは公式ドキュメントとリリースノートを基に作成したもので、task_budgetのadvisory動作方式は[Managed Agentsの本番デプロイ記事](/ja/blog/ja/claude-managed-agents-production-deployment-guide/)で直接テストした経験と繋がっている。
 
 ## Managed Agentsは何が違うのか
 
@@ -99,7 +99,7 @@ Notion、Rakuten、Sentryがすでに本番に適用したという事例が公�
 
 Managed Agentsがこの負担を軽減してくれるなら — 実際にSentryが「数週間でパッチエージェントを本番リリースした」と言った背景がこれなら — 価値は明確だ。
 
-[Claude Codeエージェントワークフローパターン5種](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)で扱ったオーケストレーター-サブエージェント構造をManaged Agents上に載せると、以前は自分で実装しなければならなかったリカバリーロジックと状態同期をプラットフォームが処理してくれることになる。
+[Claude Codeエージェントワークフローパターン5種](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)で扱ったオーケストレーター-サブエージェント構造をManaged Agents上に載せると、以前は自分で実装しなければならなかったリカバリーロジックと状態同期をプラットフォームが処理してくれることになる。
 
 task_budgetも方向性は正しい。エージェントが予算内で優先順位を自分で決めるよう誘導する方式は、ハードカットより実際のタスク完成度を高める可能性がある。
 
@@ -117,7 +117,7 @@ byteiota.comで収集された開発者フィードバックのまとめを見�
 
 そして私が最も重要だと思う問題は別にある。<strong>新トークナイザー</strong>だ。Opus 4.7は新トークナイザーを搭載し、同じテキストに対して以前比で1〜1.35倍多くのトークンを使用する。公表された価格は変わっていないが、実質コストが最大35%上昇する可能性があることを意味する。
 
-[AIエージェントのコスト現実](/ja/blog/ja/ai-agent-cost-reality)で本番エージェントの運用コストを分析したことがあるが、トークナイザーの変更は予算シミュレーションを完全にやり直すレベルの変数だ。
+[AIエージェントのコスト現実](/ja/blog/ja/ai-agent-cost-reality/)で本番エージェントの運用コストを分析したことがあるが、トークナイザーの変更は予算シミュレーションを完全にやり直すレベルの変数だ。
 
 ## コスト現実：どれだけ上がったか
 
@@ -157,7 +157,7 @@ Sentryが「数週間でパッチエージェントを本番リリースした�
 
 ## 今月のAnthropicリリースの大きな絵
 
-4月のAnthropicリリースを一つの物語として読むと興味深い。[先月の性能低下論争](/ja/blog/ja/anthropic-claude-performance-decline-controversy-april-2026)でコミュニティの信頼が揺らいでいたとき、Anthropicはベンチマーク改善数値とともに一ヶ月で帰ってきた。
+4月のAnthropicリリースを一つの物語として読むと興味深い。[先月の性能低下論争](/ja/blog/ja/anthropic-claude-performance-decline-controversy-april-2026/)でコミュニティの信頼が揺らいでいたとき、Anthropicはベンチマーク改善数値とともに一ヶ月で帰ってきた。
 
 しかし開発者たちの反応は「数字より実務が大事」という方向に成熟しつつある。SWE-benchが高くても自分のコードベースでうまく動くという保証はなく、「legendarily bad」というフィードバックは無視しにくい。
 

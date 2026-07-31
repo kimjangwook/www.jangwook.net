@@ -44,7 +44,7 @@ faq:
 
 > <strong>シリーズ：OpenAI AgentKitマスター</strong> (2/2)
 >
-> 1. [OpenAI AgentKit完全ガイド パート1：コア概念とスタートガイド](/ja/blog/ja/openai-agentkit-tutorial-part1)
+> 1. [OpenAI AgentKit完全ガイド パート1：コア概念とスタートガイド](/ja/blog/ja/openai-agentkit-tutorial-part1/)
 > 2. <strong>OpenAI AgentKit完全ガイド パート2：実践応用と高度なパターン</strong> ← 現在の記事
 
 パート1では基本を押さえました。ところがデモを抜けて本物のトラフィックを流し始めた瞬間、単一エージェントでは手に負えない問題が一気に出てきます。複数のエージェントをどう連携させるか。途中で落ちたらどう復旧するか。テナントごとのデータをどう分離するか。
@@ -1375,9 +1375,9 @@ results = runner.run_batch(
 
 ### あわせて読みたい
 
-- [OpenAI AgentKit完全ガイド 第1部：コア概念と始め方](/ja/blog/ja/openai-agentkit-tutorial-part1) — 本記事の前提となる基礎編
-- [FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026) — 本文のSlack例を超えて自分でMCPサーバーを設計するとき
-- [Claude Agent SDK ツール使用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026) — 別フレームワークのツール・ハンドオフ設計と比較する
+- [OpenAI AgentKit完全ガイド 第1部：コア概念と始め方](/ja/blog/ja/openai-agentkit-tutorial-part1/) — 本記事の前提となる基礎編
+- [FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/) — 本文のSlack例を超えて自分でMCPサーバーを設計するとき
+- [Claude Agent SDK ツール使用完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/) — 別フレームワークのツール・ハンドオフ設計と比較する
 
 ---
 

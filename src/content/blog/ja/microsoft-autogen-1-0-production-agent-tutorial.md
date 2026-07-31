@@ -245,7 +245,7 @@ team = GraphFlow(
 
 条件付きエッジもサポートしている。testerが失敗判定を出したらcoderに戻すフィードバックループをグラフで表現できる。
 
-正直に言うとGraphFlowのAPIはまだ少しverboseな感じがある。LangGraphの `add_conditional_edges` のような便利メソッドがなくてエッジ定義が長くなる。でもPythonエージェントフレームワークの中でグラフベースルーティングを明示的にサポートしているのはAutoGenだけだ。[AIエージェントフレームワークをLangGraph、CrewAI、Daprと比較した記事](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)でこの部分をより詳しく扱っている。
+正直に言うとGraphFlowのAPIはまだ少しverboseな感じがある。LangGraphの `add_conditional_edges` のような便利メソッドがなくてエッジ定義が長くなる。でもPythonエージェントフレームワークの中でグラフベースルーティングを明示的にサポートしているのはAutoGenだけだ。[AIエージェントフレームワークをLangGraph、CrewAI、Daprと比較した記事](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)でこの部分をより詳しく扱っている。
 
 ### Swarm
 
@@ -294,7 +294,7 @@ outer_team = RoundRobinGroupChat(
 )
 ```
 
-外から見ると `coding_unit` は単純なエージェントのように見えるが、内部では developer → tester ループが動いている。[Claude Agent SDKでサブエージェントをオーケストレーションする方法](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026)と概念は似ているが、AutoGenはチーム構造をより明示的にコードで表現する。
+外から見ると `coding_unit` は単純なエージェントのように見えるが、内部では developer → tester ループが動いている。[Claude Agent SDKでサブエージェントをオーケストレーションする方法](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026/)と概念は似ているが、AutoGenはチーム構造をより明示的にコードで表現する。
 
 ## 実際に使って感じた限界
 
@@ -302,7 +302,7 @@ outer_team = RoundRobinGroupChat(
 AutoGen 0.7.xのエージェントメモリは会話セッション内でしか維持されない。長期記憶（cross-session memory）は内蔵サポートがなく、外部DBや別途メモリレイヤーを自分で繋げる必要がある。
 
 **2. デバッグがまだ不便**  
-`run_stream()` でストリーミングすると各エージェントの発言は見えるが、中間ツール呼び出し結果を一目で見るのが難しい。[Langfuse셀프ホスティングガイド](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026)で設定方法を扱った。
+`run_stream()` でストリーミングすると各エージェントの発言は見えるが、中間ツール呼び出し結果を一目で見るのが難しい。[Langfuse셀프ホスティングガイド](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026/)で設定方法を扱った。
 
 **3. 非同期コードのみサポート**  
 全APIが `async/await` ベースだ。同期コードで使うには `asyncio.run()` で包む必要がある。
@@ -402,7 +402,7 @@ model_client = ReplayChatCompletionClient(
 
 率直に言うと、**エージェント間の協調プロトコルが複雑な場合**にAutoGenが強い。チーム構成、チーム間ルーティング、階層的エージェント構造を明示的にコードで表現できる。
 
-一方、単一エージェントにツールをたくさん付けて使うだけなら [PydanticAI](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026) のほうがコードがより簡潔だ。[Python AIエージェントライブラリ比較記事](/ja/blog/ja/python-ai-agent-library-comparison-2026)で各ライブラリのポジションをまとめている。
+一方、単一エージェントにツールをたくさん付けて使うだけなら [PydanticAI](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/) のほうがコードがより簡潔だ。[Python AIエージェントライブラリ比較記事](/ja/blog/ja/python-ai-agent-library-comparison-2026/)で各ライブラリのポジションをまとめている。
 
 ## まとめ
 

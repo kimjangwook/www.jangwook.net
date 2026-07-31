@@ -49,7 +49,7 @@ relatedPosts:
 > 📚 <strong>系列：OpenClaw 完全攻略</strong>
 > - <strong>第1篇：介绍篇（本文）</strong> — OpenClaw 是什么？为什么特别？
 > - [第2篇：教程篇](/zh/blog/zh/openclaw-installation-tutorial/) — 从安装到第一次对话
-> - [第3篇：实战篇](/zh/blog/zh/openclaw-advanced-usage) — 技能、自动化与高级工作流
+> - [第3篇：实战篇](/zh/blog/zh/openclaw-advanced-usage/) — 技能、自动化与高级工作流
 
 ---
 

@@ -93,7 +93,7 @@ Abeer et al.의 연구에 따르면, LLM이 생성한 요약은 <strong>26.5%의
 
 ### 655건 평가에서 드러난 격차
 
-Mozilla Foundation에서 구축한 [다국어 AI 안전성 평가 랩](https://www.multilingualailab.com/)은 GPT-4o, Gemini 2.5 Flash, Mistral Small을 대상으로 난민·망명 시나리오에서 영어 vs 아랍어/페르시아어/파슈토어/쿠르드어 성능을 비교했다. 각 모델의 [API 가격과 성능 스펙 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)도 함께 확인하면 모델 선택에 도움이 된다.
+Mozilla Foundation에서 구축한 [다국어 AI 안전성 평가 랩](https://www.multilingualailab.com/)은 GPT-4o, Gemini 2.5 Flash, Mistral Small을 대상으로 난민·망명 시나리오에서 영어 vs 아랍어/페르시아어/파슈토어/쿠르드어 성능을 비교했다. 각 모델의 [API 가격과 성능 스펙 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)도 함께 확인하면 모델 선택에 도움이 된다.
 
 ### 평가 결과 요약
 
@@ -107,7 +107,7 @@ Mozilla Foundation에서 구축한 [다국어 AI 안전성 평가 랩](https://w
 
 ### LLM-as-Judge의 과신 문제
 
-LLM 자동 평가(LLM-as-a-Judge)는 사실 확인 도구 없이도 <strong>한 번도 "불확실"이라고 답하지 않았다</strong>. 인간 평가자가 지적한 격차를 과소 보고하고, 원문에 존재하지 않는 면책 조항을 환각하기도 했다. LLM 평가 파이프라인의 신뢰성을 높이려면 [Langfuse 같은 LLM 트레이싱 도구](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026)를 도입해 모델별 응답을 체계적으로 추적하는 방법이 현실적이다.
+LLM 자동 평가(LLM-as-a-Judge)는 사실 확인 도구 없이도 <strong>한 번도 "불확실"이라고 답하지 않았다</strong>. 인간 평가자가 지적한 격차를 과소 보고하고, 원문에 존재하지 않는 면책 조항을 환각하기도 했다. LLM 평가 파이프라인의 신뢰성을 높이려면 [Langfuse 같은 LLM 트레이싱 도구](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026/)를 도입해 모델별 응답을 체계적으로 추적하는 방법이 현실적이다.
 
 ## 가드레일이 무너지는 순간
 
@@ -163,7 +163,7 @@ Q&A보다 요약에서 편향 조작이 더 쉽다. 요약 기반 워크플로(�
 
 <strong>5. 평가에서 가드레일까지 연속 파이프라인을 구축하라</strong>
 
-평가 결과가 가드레일 정책에 직접 반영되는 연속적 프로세스가 필요하다. 평가와 가드레일을 별개로 운영하면 발견된 문제가 수정되지 않는다. [LangGraph·CrewAI·DAPR 같은 에이전트 프레임워크](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)는 평가와 가드레일을 연결하는 자동화 파이프라인 구축에 활용할 수 있다.
+평가 결과가 가드레일 정책에 직접 반영되는 연속적 프로세스가 필요하다. 평가와 가드레일을 별개로 운영하면 발견된 문제가 수정되지 않는다. [LangGraph·CrewAI·DAPR 같은 에이전트 프레임워크](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)는 평가와 가드레일을 연결하는 자동화 파이프라인 구축에 활용할 수 있다.
 
 ### 기술 구현 권장사항
 

@@ -301,7 +301,7 @@ function extractJsonFromResponse(text: string): string {
 
 ### Pattern 2: Tool Use로 구조화된 출력 강제
 
-[Claude Agent SDK Tool Use 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026)에서 다루는 것처럼, `tool_use`를 활용하면 JSON 형식을 강제할 수 있다. LLM이 도구를 "호출"하는 형태로 구조화된 데이터를 반환하게 만드는 패턴이다.
+[Claude Agent SDK Tool Use 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 다루는 것처럼, `tool_use`를 활용하면 JSON 형식을 강제할 수 있다. LLM이 도구를 "호출"하는 형태로 구조화된 데이터를 반환하게 만드는 패턴이다.
 
 ```typescript
 import Anthropic from '@anthropic-ai/sdk';
@@ -632,9 +632,9 @@ async function extractPostMetadata(
 }
 ```
 
-[TypeScript로 나만의 MCP 서버 만들기](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026)에서 MCP 도구를 구현할 때도 이 패턴을 그대로 쓸 수 있다. 도구 핸들러 함수에서 LLM을 호출하고, 응답을 Zod로 검증한 후 구조화된 결과를 반환하면 된다.
+[TypeScript로 나만의 MCP 서버 만들기](/ko/blog/ko/mcp-server-typescript-sdk-step-by-step-2026/)에서 MCP 도구를 구현할 때도 이 패턴을 그대로 쓸 수 있다. 도구 핸들러 함수에서 LLM을 호출하고, 응답을 Zod로 검증한 후 구조화된 결과를 반환하면 된다.
 
-[Vitest 4로 AI 에이전트 테스트하기](/ko/blog/ko/vitest-4-ai-agent-testing-patterns-2026)에서 다룬 것처럼, 이 함수를 단위 테스트할 때는 `client.messages.create()`를 모킹하고 `safeParse()`의 결과를 단언하면 된다. Zod 스키마가 있으면 테스트 픽스처를 스키마 기준으로 만들 수 있어서 편하다.
+[Vitest 4로 AI 에이전트 테스트하기](/ko/blog/ko/vitest-4-ai-agent-testing-patterns-2026/)에서 다룬 것처럼, 이 함수를 단위 테스트할 때는 `client.messages.create()`를 모킹하고 `safeParse()`의 결과를 단언하면 된다. Zod 스키마가 있으면 테스트 픽스처를 스키마 기준으로 만들 수 있어서 편하다.
 
 ### v3에서 v4로 마이그레이션할 때 체크리스트
 

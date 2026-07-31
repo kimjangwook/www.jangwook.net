@@ -63,7 +63,7 @@ relatedPosts:
 
 중국에서 유입되는 트래픽이 꾸준히 늘고 있었고, 중국어권 개발자에게도 양질의 콘텐츠를 주고 싶었다. 하지만 40개 포스트에 중국어 버전을 추가하고, 모든 UI 컴포넌트를 다국어화하며, SEO를 최적화하는 작업은 만만치 않았다.
 
-<strong>Astro 기반 다국어 블로그에 새 언어를 추가하는 전 과정</strong>을 상세히 기록한다. 파일 구조 설계부터 대규모 번역 자동화, SEO 최적화까지, 실전에서 마주친 문제와 해결책을 투명하게 남겼다. 콘텐츠 생산 전반을 LLM으로 자동화한 배경은 [LLM 기반 블로그 자동화](/ko/blog/ko/llm-blog-automation)에서 다뤘다.
+<strong>Astro 기반 다국어 블로그에 새 언어를 추가하는 전 과정</strong>을 상세히 기록한다. 파일 구조 설계부터 대규모 번역 자동화, SEO 최적화까지, 실전에서 마주친 문제와 해결책을 투명하게 남겼다. 콘텐츠 생산 전반을 LLM으로 자동화한 배경은 [LLM 기반 블로그 자동화](/ko/blog/ko/llm-blog-automation/)에서 다뤘다.
 
 ### 이 글을 읽으면 알 수 있는 것
 
@@ -503,7 +503,7 @@ export const SITE_META = {
 
 ## Section 6: 대규모 번역 자동화
 
-40개 포스트에 중국어 버전을 추가하고, 기존 한국어/영어/일본어 버전의 relatedPosts에 중국어 reason을 추가하는 작업은 <strong>수작업으로는 불가능</strong>했다. 여러 에이전트에 작업을 나눠 병렬 처리하는 패턴은 [AI 에이전트와 Notion MCP 자동화](/ko/blog/ko/ai-agent-notion-mcp-automation)에서도 같은 방식으로 썼다.
+40개 포스트에 중국어 버전을 추가하고, 기존 한국어/영어/일본어 버전의 relatedPosts에 중국어 reason을 추가하는 작업은 <strong>수작업으로는 불가능</strong>했다. 여러 에이전트에 작업을 나눠 병렬 처리하는 패턴은 [AI 에이전트와 Notion MCP 자동화](/ko/blog/ko/ai-agent-notion-mcp-automation/)에서도 같은 방식으로 썼다.
 
 ### 문제 정의
 

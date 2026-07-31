@@ -93,7 +93,7 @@ Web浏览器起源于1990年代设计的<strong>文档查看器</strong>。虽�
 
 2025-2026年是AI Agent真正实用化的时期。Claude的Computer Use、OpenAI的Operator、Google的Mariner等展示了<strong>AI直接操控计算机</strong>的技术。
 
-在这种环境下，用户打开浏览器自行搜索、在多个网站间切换的行为越来越显得低效。与此同时，[Chrome 146的WebMCP](/zh/blog/zh/webmcp-chrome-146-ai-tool-server)等技术正使浏览器本身进化为AI智能体的工具服务器。
+在这种环境下，用户打开浏览器自行搜索、在多个网站间切换的行为越来越显得低效。与此同时，[Chrome 146的WebMCP](/zh/blog/zh/webmcp-chrome-146-ai-tool-server/)等技术正使浏览器本身进化为AI智能体的工具服务器。
 
 ### 3. 超级应用趋势的AI版本
 
@@ -139,7 +139,7 @@ graph LR
 
 ### 1. 重新思考平台战略
 
-如果你在构建基于Web的SaaS，需要制定应对AI Hub平台的战略。[MCP（Model Context Protocol）](/zh/blog/zh/mcp-open-standard-linux-foundation-engineering-guide)等标准已经在确立为AI工具集成的接口。
+如果你在构建基于Web的SaaS，需要制定应对AI Hub平台的战略。[MCP（Model Context Protocol）](/zh/blog/zh/mcp-open-standard-linux-foundation-engineering-guide/)等标准已经在确立为AI工具集成的接口。
 
 ### 2. AI原生UX设计
 
@@ -161,7 +161,7 @@ Atlas不仅是OpenAI的战略。主要玩家的动向如下：
 | Apple | Apple Intelligence | 设备原生AI集成 |
 | Microsoft | Copilot | Windows + Office生态系统集成 |
 
-[Google I/O 2026](/zh/blog/zh/google-io-2026-antigravity-2-agent-platform-analysis)明确显示，这场竞争已超越聊天机器人层面，扩展到了开发者IDE领域。
+[Google I/O 2026](/zh/blog/zh/google-io-2026-antigravity-2-agent-platform-analysis/)明确显示，这场竞争已超越聊天机器人层面，扩展到了开发者IDE领域。
 
 ## 结论
 

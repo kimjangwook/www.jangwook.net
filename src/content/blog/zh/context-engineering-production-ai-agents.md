@@ -109,7 +109,7 @@ LangChain、LlamaIndex、Weaviate等主流框架已将这一概念纳入核心�
 
 ### 3. 上下文隔离
 
-在多智能体系统中，设计每个子智能体只持有与其角色相关的上下文。编排者持有所有信息，并仅向每个智能体传递必要片段——这是有效的架构模式。[Claude Code智能体工作流模式5种](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)详细演示了如何实现这种编排者-子智能体架构。
+在多智能体系统中，设计每个子智能体只持有与其角色相关的上下文。编排者持有所有信息，并仅向每个智能体传递必要片段——这是有效的架构模式。[Claude Code智能体工作流模式5种](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)详细演示了如何实现这种编排者-子智能体架构。
 
 实践方法：
 - 在智能体间传递信息时，传递摘要而非完整原始内容
@@ -178,7 +178,7 @@ Letta、Mem0等框架从操作系统虚拟内存中汲取灵感来实现这一�
 
 **运营阶段：**
 - [ ] 是否定期测量context-precision和context-recall指标？
-- [ ] 是否有监控在上下文污染发生时进行检测？（具体监控实现方法请参阅[生产AI智能体可观测性指南](/zh/blog/zh/ai-agent-observability-production-guide)。）
+- [ ] 是否有监控在上下文污染发生时进行检测？（具体监控实现方法请参阅[生产AI智能体可观测性指南](/zh/blog/zh/ai-agent-observability-production-guide/)。）
 - [ ] 是否定期审查token使用量与性能的权衡？
 
 ---

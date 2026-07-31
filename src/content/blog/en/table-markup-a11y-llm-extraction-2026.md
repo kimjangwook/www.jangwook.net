@@ -115,7 +115,7 @@ D: headerCellsInDOM= 0  violations=region(moderate)
 
 `region` is a best-practice rule about page content sitting outside landmarks. Nothing to do with tables. Table-related violations: zero across all four. B, with no header cells whatsoever, passes. So does D, a div grid with no roles at all.
 
-That isn't a defect in axe. Its table rules are built to catch structural contradictions: a `<th>` inside a layout table, a `headers` attribute pointing at an id that doesn't exist. Deciding that "this pile of divs should have been a table" requires understanding what the content means, and that isn't a job a rule engine can do. I've [counted the barriers that survive a green automated audit before](/en/blog/en/axe-automated-a11y-coverage-gap-2026), and this belongs to the same family. What's different here is that the thing being missed isn't only human usability.
+That isn't a defect in axe. Its table rules are built to catch structural contradictions: a `<th>` inside a layout table, a `headers` attribute pointing at an id that doesn't exist. Deciding that "this pile of divs should have been a table" requires understanding what the content means, and that isn't a job a rule engine can do. I've [counted the barriers that survive a green automated audit before](/en/blog/en/axe-automated-a11y-coverage-gap-2026/), and this belongs to the same family. What's different here is that the thing being missed isn't only human usability.
 
 Count header cells in the DOM, though, and the four split. A and C expose 11 (four column headers plus seven row headers); B and D expose zero. Only A and C can hand a cell-to-header relationship to assistive technology. Stop reading here and the conclusion looks simple: a div grid with proper ARIA roles is equivalent to a semantic table.
 
@@ -198,7 +198,7 @@ It also runs in the same direction as a principle W3C wrote down long ago, the f
 
 That rule normally gets cited on accessibility grounds alone. This measurement adds a second one. Use the native element and the non-accessibility consumers come along free. Imitate the semantics with ARIA and those semantics never leave the accessibility tree.
 
-I've made the same argument at a different layer before. [Injecting LocalBusiness JSON-LD with JavaScript left the raw HTML showing zero structured-data blocks](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026): correct in the browser, absent at the moment a machine carried the page away. Table markup has the identical shape. What you verified on screen and what the machine took home are two different results. Metadata attached to strings leaks at the same seam. I measured separately [where things break when language and direction never travel with the string itself](/en/blog/en/string-lang-dir-metadata-multilingual-web).
+I've made the same argument at a different layer before. [Injecting LocalBusiness JSON-LD with JavaScript left the raw HTML showing zero structured-data blocks](/en/blog/en/localbusiness-structured-data-server-side-vs-js-2026/): correct in the browser, absent at the moment a machine carried the page away. Table markup has the identical shape. What you verified on screen and what the machine took home are two different results. Metadata attached to strings leaks at the same seam. I measured separately [where things break when language and direction never travel with the string itself](/en/blog/en/string-lang-dir-metadata-multilingual-web/).
 
 ## What this experiment does not claim
 

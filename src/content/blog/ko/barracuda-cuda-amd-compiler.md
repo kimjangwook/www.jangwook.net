@@ -51,7 +51,7 @@ relatedPosts:
 
 ## 개요
 
-GPU 컴퓨팅 세계에서 NVIDIA의 CUDA는 사실상의 표준이다. 하지만 이는 동시에 <strong>벤더 종속(vendor lock-in)</strong>을 의미한다. CUDA로 작성된 코드는 NVIDIA GPU에서만 실행할 수 있었다. 실제로 [NVIDIA DGX Spark에서도 CUDA 호환성 문제](/ko/blog/ko/nvidia-dgx-spark-cuda-compatibility)가 보고되며, 하드웨어 의존성의 현실이 드러난다.
+GPU 컴퓨팅 세계에서 NVIDIA의 CUDA는 사실상의 표준이다. 하지만 이는 동시에 <strong>벤더 종속(vendor lock-in)</strong>을 의미한다. CUDA로 작성된 코드는 NVIDIA GPU에서만 실행할 수 있었다. 실제로 [NVIDIA DGX Spark에서도 CUDA 호환성 문제](/ko/blog/ko/nvidia-dgx-spark-cuda-compatibility/)가 보고되며, 하드웨어 의존성의 현실이 드러난다.
 
 <strong>BarraCUDA</strong>는 이 벽을 허물기 위해 탄생한 오픈소스 컴파일러다. `.cu` 파일을 받아 AMD RDNA 3(GFX11) 머신 코드로 직접 컴파일한다. LLVM 의존성 없이 15,000줄의 C99로 작성됐으며, HIP 변환 레이어도 필요하지 않다.
 
@@ -127,7 +127,7 @@ BarraCUDA의 등장은 단순한 기술적 성과를 넘어, GPU 생태계의 �
 
 ### NVIDIA 독점에 대한 도전
 
-현재 GPU 컴퓨팅 시장에서 CUDA의 위치는 절대적이다. AI/ML 워크로드의 대부분이 CUDA 기반이며, 이는 NVIDIA GPU 없이는 실행이 불가능했다. [GPT-4o 은퇴에서 확인된 모델 의존 리스크](/ko/blog/ko/gpt4o-retirement-model-dependency-risk)처럼, 특정 기술에 대한 과도한 의존은 장기적으로 큰 리스크를 안긴다. BarraCUDA는 이 구도에 균열을 만든다.
+현재 GPU 컴퓨팅 시장에서 CUDA의 위치는 절대적이다. AI/ML 워크로드의 대부분이 CUDA 기반이며, 이는 NVIDIA GPU 없이는 실행이 불가능했다. [GPT-4o 은퇴에서 확인된 모델 의존 리스크](/ko/blog/ko/gpt4o-retirement-model-dependency-risk/)처럼, 특정 기술에 대한 과도한 의존은 장기적으로 큰 리스크를 안긴다. BarraCUDA는 이 구도에 균열을 만든다.
 
 ### AMD GPU 활용 가능성 확대
 
@@ -135,7 +135,7 @@ AMD의 ROCm/HIP 생태계는 성장하고 있지만, 기존 CUDA 코드를 변�
 
 ### 오픈소스의 힘
 
-15,000줄의 C99로 CUDA 컴파일러를 구현했다는 사실 자체가, 오픈소스 커뮤니티의 역량을 보여준다. Hacker News에서 66포인트를 기록하며 개발자 커뮤니티의 관심을 모았다. [AI가 작성한 C 컴파일러 CCC와 GCC 비교](/ko/blog/ko/ccc-vs-gcc-ai-compiled-c-compiler)에서도 볼 수 있듯이, 소규모 오픈소스 컴파일러가 주목받는 시대다.
+15,000줄의 C99로 CUDA 컴파일러를 구현했다는 사실 자체가, 오픈소스 커뮤니티의 역량을 보여준다. Hacker News에서 66포인트를 기록하며 개발자 커뮤니티의 관심을 모았다. [AI가 작성한 C 컴파일러 CCC와 GCC 비교](/ko/blog/ko/ccc-vs-gcc-ai-compiled-c-compiler/)에서도 볼 수 있듯이, 소규모 오픈소스 컴파일러가 주목받는 시대다.
 
 ## 현재 한계와 전망
 

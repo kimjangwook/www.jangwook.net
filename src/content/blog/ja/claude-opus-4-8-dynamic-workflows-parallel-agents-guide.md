@@ -91,7 +91,7 @@ messages_with_injection = [
 
 この方式の実用的なメリットは<strong>プロンプトキャッシュを壊さない</strong>ことだ。最上位のシステムプロンプトを変更するとキャッシュが無効化されてコストが跳ね上がるが、mid-conversation injectionはその問題を回避する。長時間のエージェント実行においてキャッシュヒットがコストの相当部分を左右することを考えると、小さくない差だ。
 
-[Claude Agent SDK サブエージェント オーケストレーション 実践ガイド](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026)で扱った既存の並列処理パターンと比較すると、この変更がいかに自然にそのパターンを拡張しているかが分かる。
+[Claude Agent SDK サブエージェント オーケストレーション 実践ガイド](/ja/blog/ja/claude-agent-sdk-subagents-orchestration-tutorial-2026/)で扱った既存の並列処理パターンと比較すると、この変更がいかに自然にそのパターンを拡張しているかが分かる。
 
 ## Fast Mode: 数字で見る現実
 
@@ -105,7 +105,7 @@ Fast Modeは、出力トークン毎秒(OTPS)を標準比で最大2.5倍に高�
 | Opus 4.8 Fast Mode | $10 | $50 |
 | Opus 4.7 Fast Mode | $30 | $150 |
 
-Opus 4.7からOpus 4.8に上がることでFast Modeの価格が3分の1になった。標準の2倍という水準は変わらないが、前世代のFast Modeと比較するとこの数字は確かに意味がある。[Opus 4.7とManaged Agentsのコスト分析](/ja/blog/ja/anthropic-claude-opus-4-7-managed-agents-2026)で検討したper-taskコスト構造と合わせて見ると、実際のパイプラインのどこにFast Modeを組み込むか判断しやすい。
+Opus 4.7からOpus 4.8に上がることでFast Modeの価格が3分の1になった。標準の2倍という水準は変わらないが、前世代のFast Modeと比較するとこの数字は確かに意味がある。[Opus 4.7とManaged Agentsのコスト分析](/ja/blog/ja/anthropic-claude-opus-4-7-managed-agents-2026/)で検討したper-taskコスト構造と合わせて見ると、実際のパイプラインのどこにFast Modeを組み込むか判断しやすい。
 
 使い方はシンプルだ:
 
@@ -138,7 +138,7 @@ response = client.beta.messages.create(
 
 大規模マイグレーションも同様だ。BunのファウンダーJarred Sumnerが、Dynamic Workflowsを使ってBunランタイムをZigからRustにポーティングした事例が公開されている — 11日間で約75万行のRustコード、既存テストスイートの99.8%通過。数百のエージェントがファイルごとに並列作業し、レビュアーエージェントが各ファイルを2名ずつ検証し、ビルド/テスト通過ループを自動で回したとのことだ。
 
-[エージェントワークフローパターン5種類](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)でまとめた分類で見ると、Dynamic Workflowsは「並列パターン」と「自律パターン」の組み合わせをコード化したものだ。
+[エージェントワークフローパターン5種類](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)でまとめた分類で見ると、Dynamic Workflowsは「並列パターン」と「自律パターン」の組み合わせをコード化したものだ。
 
 <strong>使うべきでないケース:</strong>
 
@@ -162,7 +162,7 @@ response = client.beta.messages.create(
 
 ## コスト構造と実際への影響
 
-[AIエージェントのコスト現実](/ja/blog/ja/ai-agent-cost-reality)で扱ったフレームワークをここに当てはめると、Dynamic Workflowsのコスト構造は「トークン量 × エージェント数」が支配する。
+[AIエージェントのコスト現実](/ja/blog/ja/ai-agent-cost-reality/)で扱ったフレームワークをここに当てはめると、Dynamic Workflowsのコスト構造は「トークン量 × エージェント数」が支配する。
 
 ワークフローランタイム自体に追加料金はない。サブエージェントが消費するトークンが標準Opus 4.8料金で請求されるだけだ。問題は1,000エージェントの上限に近い実行で各エージェントのコンテキストサイズがどうなるかということだ。
 
@@ -174,7 +174,7 @@ response = client.beta.messages.create(
 
 これらの原則が自然に徹底されなければ、1回のワークフロー実行が予算を超えることが起きる。特にultracodeモードでClaudeが自律的に複数のワークフローを連続トリガーする場合は特にそうだ。
 
-[AWOフレームワークでエージェントワークフローを最適化する方法](/ja/blog/ja/agentic-workflow-meta-tools-optimization)と組み合わせると — 反復的なツール呼び出しをメタツールにコンパイルしてLLM呼び出しを削減するアプローチ — Dynamic Workflowsのコストを構造的に下げる余地がある。
+[AWOフレームワークでエージェントワークフローを最適化する方法](/ja/blog/ja/agentic-workflow-meta-tools-optimization/)と組み合わせると — 反復的なツール呼び出しをメタツールにコンパイルしてLLM呼び出しを削減するアプローチ — Dynamic Workflowsのコストを構造的に下げる余地がある。
 
 ## 誰に本当に向いているか
 
@@ -202,4 +202,4 @@ Fast Modeの値下げは歓迎できる変化だ。前世代比で3分の1の価
 
 実際に試してみると、既知のバグ(早期終了、過剰なファイル削除)は今すぐプロダクションに投入するのを慎重にすべき理由だ。ワークフローが途中で止まり、なぜ止まったのかログから把握するのに時間がかかった。この部分が解消されれば評価は変わりうる。
 
-[LangGraph、CrewAI、Daprのようなサードパーティフレームワークとの比較](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)で見ると、Dynamic Workflowsのポジションは「Claudeエコシステムの中で、Claude Codeと共に、一度きりではなく繰り返し実行可能な大規模オーケストレーション」だ。汎用フレームワークを置き換えるというよりも、特定の作業種別でClaude nativeアプローチが持つ効率性を示す機能として捉えるのが正確だと思う。
+[LangGraph、CrewAI、Daprのようなサードパーティフレームワークとの比較](/ja/blog/ja/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)で見ると、Dynamic Workflowsのポジションは「Claudeエコシステムの中で、Claude Codeと共に、一度きりではなく繰り返し実行可能な大規模オーケストレーション」だ。汎用フレームワークを置き換えるというよりも、特定の作業種別でClaude nativeアプローチが持つ効率性を示す機能として捉えるのが正確だと思う。

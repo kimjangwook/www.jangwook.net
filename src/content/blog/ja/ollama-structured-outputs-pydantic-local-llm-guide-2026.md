@@ -215,7 +215,7 @@ Dispatch: OK (type-safe)
 
 `Literal["web_search", "read_file", ...]` で宣言しているため、`tool_call.tool_name` は必ずその4つの値のどれかだ。存在しないツールをモデルが作り出しても、Pydanticが `ValidationError` を投げる。`if tool_call.tool_name == "web_search"` の分岐が安全に動作する理由はここにある。
 
-このパターンはCloud APIでfunction callingを使うのと根本的に同じだ。ローカルでは[Claude Agent SDKのTool Useパターン](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)と比較すると、クラウドLLMとローカルLLMの設計上の違いが興味深い。
+このパターンはCloud APIでfunction callingを使うのと根本的に同じだ。ローカルでは[Claude Agent SDKのTool Useパターン](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)と比較すると、クラウドLLMとローカルLLMの設計上の違いが興味深い。
 
 ## Gemma4とスキーマ複雑度: 見つけた限界
 
@@ -227,7 +227,7 @@ Dispatch: OK (type-safe)
 
 **スキーマサイズ。** 大きなPydanticモデルのJSONスキーマは数百トークンに達する。これ自体がコンテキストを占有するので、実際のプロンプトに使えるスペースが減る。複雑なスキーマほど強力なモデルが必要になる。
 
-[OllamaをFastAPI本番環境で使う方法](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)で扱った通りOllamaをAPIサーバーとして配備した後にこのパターンを使う場合、スキーマ複雑度によってモデルをランタイムで切り替えることも検討できる。
+[OllamaをFastAPI本番環境で使う方法](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026/)で扱った通りOllamaをAPIサーバーとして配備した後にこのパターンを使う場合、スキーマ複雑度によってモデルをランタイムで切り替えることも検討できる。
 
 ## ネストスキーマの実践例: 注意すべき点
 
@@ -329,7 +329,7 @@ print(f"Key phrases: {result.key_phrases}")
 
 **ストリーミング。** `stream: true` に設定すると、生成中のJSONを段階的に受け取れる。`ijson` のようなストリーミングJSONパーサーと組み合わせると、大きなレスポンスもメモリ効率よく処理できる。
 
-**モデル選択戦略。** シンプルな抽出は `gemma4:e4b`（速い）、複雑なネストスキーマは `gemma4:12b-it-qat`（正確）でランタイムに分岐するパターンがコスト品質のバランス上有利だ。[Pydantic AIでエージェント全体を構造化する方法](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)を見ると、この判断をフレームワークレベルで抽象化する方法が確認できる。
+**モデル選択戦略。** シンプルな抽出は `gemma4:e4b`（速い）、複雑なネストスキーマは `gemma4:12b-it-qat`（正確）でランタイムに分岐するパターンがコスト品質のバランス上有利だ。[Pydantic AIでエージェント全体を構造化する方法](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)を見ると、この判断をフレームワークレベルで抽象化する方法が確認できる。
 
 Gemma4ベースのエージェントを実行しているなら、今日すぐ `format` パラメーター一つ追加するだけでパース安定性が大きく変わる。特にエージェントのツール選択のように、間違ったレスポンスがすぐエラーにつながるパスでより顕著だ。
 

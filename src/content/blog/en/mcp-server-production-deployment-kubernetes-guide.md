@@ -80,7 +80,7 @@ If you're running an MCP server, you're probably exposed to at least one of thes
 
 ## Prerequisites
 
-This guide assumes a FastMCP (Python) server. [Building an MCP server from scratch is covered in a previous post](/en/blog/en/mcp-server-build-practical-guide-2026) — this one focuses entirely on deployment.
+This guide assumes a FastMCP (Python) server. [Building an MCP server from scratch is covered in a previous post](/en/blog/en/mcp-server-build-practical-guide-2026/) — this one focuses entirely on deployment.
 
 What you need:
 - Kubernetes cluster (1.28+)
@@ -300,7 +300,7 @@ Extend the nginx proxy timeout. The default (60 seconds) will cut off long respo
 
 ## Step 5: OAuth 2.1 Credential Management
 
-Relying on static API keys is the biggest long-term risk. Keys leak into GitHub repos, get forgotten after team changes, or break silently when services rotate them. [Looking at MCP-related CVE patterns](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening), credential management failure is a recurring theme.
+Relying on static API keys is the biggest long-term risk. Keys leak into GitHub repos, get forgotten after team changes, or break silently when services rotate them. [Looking at MCP-related CVE patterns](/en/blog/en/mcp-security-crisis-30-cves-enterprise-hardening/), credential management failure is a recurring theme.
 
 Injecting from Kubernetes Secrets:
 
@@ -377,7 +377,7 @@ spec:
 
 <strong>Upstream schema change detection</strong>: If a dependency changes its response schema, the MCP server stays alive but returns garbage. You need integration tests that call actual tools and validate results on a schedule.
 
-[An MCP Gateway](/en/blog/en/mcp-gateway-agent-traffic-control) puts a single entry point in front of multiple MCP servers and gives you centralized health status management. Worth considering if you're running more than one.
+[An MCP Gateway](/en/blog/en/mcp-gateway-agent-traffic-control/) puts a single entry point in front of multiple MCP servers and gives you centralized health status management. Worth considering if you're running more than one.
 
 ## What Actually Happened When I Deployed
 

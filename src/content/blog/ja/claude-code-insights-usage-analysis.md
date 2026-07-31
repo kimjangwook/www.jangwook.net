@@ -128,7 +128,7 @@ TaskCreate: 1,276回
 
 ### 2. カスタムスラッシュコマンドの活用
 
-`/write-post`のようなカスタムスラッシュコマンドを作成して繰り返し作業を自動化したことも高い評価を受けました。ブログ記事1つを作成するには、リサーチ → 韓国語執筆 → 3言語翻訳 → 画像生成 → メタデータ更新など10段階以上の作業が必要ですが、これを1つのコマンドにエンコードしています。[EffiFlow Part 2: Skillsの自動発見と58%トークン削減キャッシング](/ja/blog/ja/effiflow-automation-analysis-part2)では、このコマンド構造がどのようにキャッシュ効率につながるかを確認できます。
+`/write-post`のようなカスタムスラッシュコマンドを作成して繰り返し作業を自動化したことも高い評価を受けました。ブログ記事1つを作成するには、リサーチ → 韓国語執筆 → 3言語翻訳 → 画像生成 → メタデータ更新など10段階以上の作業が必要ですが、これを1つのコマンドにエンコードしています。[EffiFlow Part 2: Skillsの自動発見と58%トークン削減キャッシング](/ja/blog/ja/effiflow-automation-analysis-part2/)では、このコマンド構造がどのようにキャッシュ効率につながるかを確認できます。
 
 > 「複雑な多段階コンテンツ生成を再現可能なワンコマンド作業に変換」
 > — /insights分析結果
@@ -324,7 +324,7 @@ graph TD
 - <strong>数値を絶対基準として受け取るとき</strong>：セッション分類や満足度といった定性評価は補助モデルが推定した値です。方向性を決める参考値として使い、一度の結果を成果評価のように扱わないでください。
 - <strong>個人情報が機微な環境</strong>：レポートはローカルの使用履歴を読み込みます。共有画面に映したりスクリーンショットを共有したりするときは、プロジェクトのパスやファイル名がそのまま露出しうる点に注意してください。
 
-並列セッションを頻繁に使うなら、[Git WorktreeでClaude Codeの並列セッションを運用する](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)と併せて読むと、コンテキスト制限で切れる問題をセッション分離で解く具体的な方法までつながります。
+並列セッションを頻繁に使うなら、[Git WorktreeでClaude Codeの並列セッションを運用する](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/)と併せて読むと、コンテキスト制限で切れる問題をセッション分離で解く具体的な方法までつながります。
 
 ## 他の開発者にお勧めする理由
 
@@ -357,6 +357,6 @@ Claude Code `/insights`は単なる統計機能ではありません。AIコー�
 
 ### 併せて読みたい記事
 
-- [Claude Code エージェントチーム構成ガイド](/ja/blog/ja/claude-agent-teams-guide)
-- [Git WorktreeでClaude Codeの並列セッションを運用する](/ja/blog/ja/claude-code-parallel-sessions-git-worktree)
-- [EffiFlow Part 2: Skills自動発見とトークン削減キャッシング](/ja/blog/ja/effiflow-automation-analysis-part2)
+- [Claude Code エージェントチーム構成ガイド](/ja/blog/ja/claude-agent-teams-guide/)
+- [Git WorktreeでClaude Codeの並列セッションを運用する](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/)
+- [EffiFlow Part 2: Skills自動発見とトークン削減キャッシング](/ja/blog/ja/effiflow-automation-analysis-part2/)

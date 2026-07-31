@@ -79,7 +79,7 @@ GPT-4o API를 직접 호출하는 프로덕션 시스템을 운영하는 기업�
 - <strong>API 엔드포인트 마이그레이션</strong>: GPT-4o 전용 파라미터와 응답 형식 변경 대응
 - <strong>프롬프트 재최적화</strong>: 새 모델에 맞게 프롬프트를 재작성해야 하는 비용
 - <strong>성능 회귀 테스트</strong>: 기존 워크플로우가 새 모델에서 동일한 품질을 보장하는지 검증
-- <strong>비용 구조 변화</strong>: 후속 모델의 토큰 가격 변동에 따른 예산 재편성 ([GPT-5, Claude, Gemini, DeepSeek 실제 비용 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek))
+- <strong>비용 구조 변화</strong>: 후속 모델의 토큰 가격 변동에 따른 예산 재편성 ([GPT-5, Claude, Gemini, DeepSeek 실제 비용 비교](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/))
 
 ## 모델 의존 리스크란 무엇인가
 
@@ -119,7 +119,7 @@ Anthropic의 Claude는 2025년 후반부터 엔터프라이즈 시장에서 눈�
 
 <strong>1. 안전성과 신뢰성 우선 철학</strong>
 
-Anthropic은 Constitutional AI와 같은 안전 기술을 기업 환경에 적합한 형태로 제공한다. 규제가 강화되는 금융, 의료, 법률 분야에서 이 접근 방식이 높은 신뢰를 얻고 있다. 실제로 [생성형 AI 도입 실패의 42%는 탑다운 거버넌스 부재에서 비롯된다](/ko/blog/ko/enterprise-ai-adoption-topdown).
+Anthropic은 Constitutional AI와 같은 안전 기술을 기업 환경에 적합한 형태로 제공한다. 규제가 강화되는 금융, 의료, 법률 분야에서 이 접근 방식이 높은 신뢰를 얻고 있다. 실제로 [생성형 AI 도입 실패의 42%는 탑다운 거버넌스 부재에서 비롯된다](/ko/blog/ko/enterprise-ai-adoption-topdown/).
 
 <strong>2. 일관된 API 정책</strong>
 
@@ -228,7 +228,7 @@ graph LR
 
 ### 장기적 관점
 
-AI 모델 시장은 앞으로 더 빠르게 변화할 것이다. [2026년 2월만 해도 7개 이상의 주요 모델이 동시 출시](/ko/blog/ko/ai-model-rush-february-2026)되는 상황이다. 이런 환경에서 <strong>특정 모델에 올인하는 것은 기술 부채를 쌓는 행위</strong>다.
+AI 모델 시장은 앞으로 더 빠르게 변화할 것이다. [2026년 2월만 해도 7개 이상의 주요 모델이 동시 출시](/ko/blog/ko/ai-model-rush-february-2026/)되는 상황이다. 이런 환경에서 <strong>특정 모델에 올인하는 것은 기술 부채를 쌓는 행위</strong>다.
 
 ## 결론
 
@@ -245,4 +245,4 @@ AI 모델은 도구다. 도구에 의존하는 것이 아니라, <strong>도구�
 
 - [OpenAI Model Deprecation Policy](https://platform.openai.com/docs/deprecations)
 - [Anthropic Claude Enterprise](https://www.anthropic.com/enterprise)
-- [2026년 2월 AI 모델 러시 분석](/ko/blog/ko/ai-model-rush-february-2026)
+- [2026년 2월 AI 모델 러시 분석](/ko/blog/ko/ai-model-rush-february-2026/)

@@ -91,7 +91,7 @@ messages_with_injection = [
 
 The practical benefit here is that <strong>it doesn't bust your prompt cache.</strong> Modifying the top-level system prompt invalidates the cache and causes a cost spike. Mid-conversation injection sidesteps that. In long agentic runs where cache hits significantly affect costs, this is a meaningful difference — not a footnote.
 
-If you've worked through the parallel processing patterns in the [Claude Agent SDK subagent orchestration guide](/en/blog/en/claude-agent-sdk-subagents-orchestration-tutorial-2026), it's easy to see how naturally this extends those patterns.
+If you've worked through the parallel processing patterns in the [Claude Agent SDK subagent orchestration guide](/en/blog/en/claude-agent-sdk-subagents-orchestration-tutorial-2026/), it's easy to see how naturally this extends those patterns.
 
 ## Fast Mode: The Numbers, Honestly
 
@@ -105,7 +105,7 @@ Pricing breakdown:
 | Opus 4.8 Fast Mode | $10 | $50 |
 | Opus 4.7 Fast Mode | $30 | $150 |
 
-Moving from Opus 4.7 to 4.8, Fast Mode got three times cheaper. Still 2x the standard rate, but against the previous generation's Fast Mode pricing, that number actually means something. Compared to the per-task cost breakdown I worked through in [the Opus 4.7 and Managed Agents cost analysis](/en/blog/en/anthropic-claude-opus-4-7-managed-agents-2026), it's now a lot easier to identify exactly where in a pipeline Fast Mode is worth inserting.
+Moving from Opus 4.7 to 4.8, Fast Mode got three times cheaper. Still 2x the standard rate, but against the previous generation's Fast Mode pricing, that number actually means something. Compared to the per-task cost breakdown I worked through in [the Opus 4.7 and Managed Agents cost analysis](/en/blog/en/anthropic-claude-opus-4-7-managed-agents-2026/), it's now a lot easier to identify exactly where in a pipeline Fast Mode is worth inserting.
 
 How to use it:
 
@@ -138,7 +138,7 @@ A full-codebase security audit is the clearest example. "Audit every API endpoin
 
 Large-scale migrations are another strong case. Bun's founder Jarred Sumner publicly documented using Dynamic Workflows to port the Bun runtime from Zig to Rust — approximately 750,000 lines of Rust over 11 days, with 99.8% of the existing test suite passing. Hundreds of agents working on individual files in parallel, reviewer agents checking each file twice, and an automated build/test loop running throughout.
 
-In the framework from [five agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types), Dynamic Workflows codifies a combination of the "parallel pattern" and the "autonomous pattern."
+In the framework from [five agentic workflow patterns](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/), Dynamic Workflows codifies a combination of the "parallel pattern" and the "autonomous pattern."
 
 <strong>Bad fits:</strong>
 
@@ -162,7 +162,7 @@ Honestly, a few items in the launch documentation were uncomfortable to read.
 
 ## Cost Structure and What It Actually Means
 
-Applying the framework from [the AI agent cost reality post](/en/blog/en/ai-agent-cost-reality), Dynamic Workflows' cost behavior is dominated by "token volume × agent count."
+Applying the framework from [the AI agent cost reality post](/en/blog/en/ai-agent-cost-reality/), Dynamic Workflows' cost behavior is dominated by "token volume × agent count."
 
 There's no additional charge for the workflow runtime itself. Subagents are billed at standard Opus 4.8 rates. The question is what the context size per agent looks like when you're running near the 1,000-agent ceiling.
 
@@ -174,7 +174,7 @@ The official guide gives four cost control principles:
 
 If these disciplines don't come naturally to your team, a single workflow run can exceed budget expectations. This is especially true in ultracode mode where Claude autonomously chains multiple workflows.
 
-Combining with the [AWO framework approach to agentic workflow optimization](/en/blog/en/agentic-workflow-meta-tools-optimization) — compiling repeated tool call patterns into meta-tools to reduce LLM invocations — gives you a structural mechanism to pull Dynamic Workflows costs down.
+Combining with the [AWO framework approach to agentic workflow optimization](/en/blog/en/agentic-workflow-meta-tools-optimization/) — compiling repeated tool call patterns into meta-tools to reduce LLM invocations — gives you a structural mechanism to pull Dynamic Workflows costs down.
 
 ## Who Should Deploy This Now
 
@@ -202,4 +202,4 @@ The Fast Mode price drop is genuinely good news. A third of the previous generat
 
 The known bugs (early stopping, over-deletion) are the reason to pause before production deployment. I ran into the stopping issue while testing, and working out what happened from the logs took longer than it should have. When those get resolved, the evaluation changes.
 
-Against [third-party frameworks like LangGraph, CrewAI, and Dapr](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production), Dynamic Workflows' position is: "within the Claude ecosystem, alongside Claude Code, for repeatable large-scale orchestration rather than one-offs." It's not a replacement for general-purpose frameworks. It's a demonstration of the efficiency available from a Claude-native approach for a specific category of task.
+Against [third-party frameworks like LangGraph, CrewAI, and Dapr](/en/blog/en/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/), Dynamic Workflows' position is: "within the Claude ecosystem, alongside Claude Code, for repeatable large-scale orchestration rather than one-offs." It's not a replacement for general-purpose frameworks. It's a demonstration of the efficiency available from a Claude-native approach for a specific category of task.

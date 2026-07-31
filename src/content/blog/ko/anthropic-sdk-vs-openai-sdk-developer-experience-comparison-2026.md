@@ -308,7 +308,7 @@ with client.chat.completions.stream(
 
 Anthropic은 `stream.text_stream`으로 텍스트만 직접 추출할 수 있다. OpenAI는 `chunk.choices[0].delta.content`까지 직접 파고 들어가야 한다. 단순 텍스트 스트리밍이라면 Anthropic이 더 편하다.
 
-[Vercel AI SDK로 Claude 스트리밍 에이전트를 구축](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026)하는 방법도 이 스트리밍 패턴을 응용한 사례다.
+[Vercel AI SDK로 Claude 스트리밍 에이전트를 구축](/ko/blog/ko/vercel-ai-sdk-claude-streaming-agent-2026/)하는 방법도 이 스트리밍 패턴을 응용한 사례다.
 
 비동기 스트리밍은 어떨까? 두 SDK 모두 `async with` 패턴을 지원한다. `async for text in stream.text_stream:` (Anthropic)과 `async for chunk in stream:` (OpenAI)처럼 사용 방식은 동기와 거의 같다. 다만 FastAPI나 Starlette 같은 비동기 웹 프레임워크에서 스트리밍 응답을 바로 전달할 때는, 두 SDK의 스트림 객체가 AsyncGenerator를 구현하므로 `StreamingResponse`에 직접 넘길 수 있다. 이 부분의 인터페이스는 둘이 거의 동일하다.
 
@@ -335,7 +335,7 @@ client.messages.create(
 )
 ```
 
-[Claude API Prompt Caching 실전 가이드](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide)에서 이 기능을 활용해 비용을 70%까지 낮추는 패턴을 다룬다.
+[Claude API Prompt Caching 실전 가이드](/ko/blog/ko/claude-api-prompt-caching-cost-optimization-guide/)에서 이 기능을 활용해 비용을 70%까지 낮추는 패턴을 다룬다.
 
 **확장 사고 (Extended Thinking)**
 
@@ -401,7 +401,7 @@ OpenAI SDK의 `fine_tuning` 모듈은 파인튜닝 작업을 SDK에서 직접 �
 
 **둘 다 써야 하는 경우**
 
-멀티모델 아키텍처를 운영한다면 두 SDK를 모두 쓸 수밖에 없다. 이때는 [PydanticAI](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)처럼 SDK를 추상화하는 레이어를 두는 게 관리가 편하다. 각 SDK를 직접 쓰면 툴 호출 포맷(`input_schema` vs `function.parameters`)부터 다르기 때문에 코드 분기가 늘어난다.
+멀티모델 아키텍처를 운영한다면 두 SDK를 모두 쓸 수밖에 없다. 이때는 [PydanticAI](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)처럼 SDK를 추상화하는 레이어를 두는 게 관리가 편하다. 각 SDK를 직접 쓰면 툴 호출 포맷(`input_schema` vs `function.parameters`)부터 다르기 때문에 코드 분기가 늘어난다.
 
 비교 요약:
 
@@ -443,4 +443,4 @@ Anthropic은 추론 품질, 비용 최적화, 엔터프라이즈 문서 처리�
 
 이 글의 비교는 anthropic 0.100.0과 openai 2.36.0 기준이다. 두 패키지 모두 빠르게 업데이트되므로, 실제 적용 전에 해당 버전의 릴리스 노트를 확인하는 걸 권장한다.
 
-LLM API 가격까지 고려한 최종 결정을 내리고 싶다면, [LLM API 가격 비교 2026](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)에서 토큰당 실제 비용을 확인해볼 수 있다. SDK 선택과 모델 선택을 묶어서 판단하는 게 결국 총비용 관점에서 더 현명한 접근이다. SDK 품질이 아무리 좋아도, 호출하는 모델의 성능과 가격이 맞지 않으면 전체 시스템이 최적화되지 않는다. 두 결정을 함께 고려하라.
+LLM API 가격까지 고려한 최종 결정을 내리고 싶다면, [LLM API 가격 비교 2026](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)에서 토큰당 실제 비용을 확인해볼 수 있다. SDK 선택과 모델 선택을 묶어서 판단하는 게 결국 총비용 관점에서 더 현명한 접근이다. SDK 품질이 아무리 좋아도, 호출하는 모델의 성능과 가격이 맞지 않으면 전체 시스템이 최적화되지 않는다. 두 결정을 함께 고려하라.

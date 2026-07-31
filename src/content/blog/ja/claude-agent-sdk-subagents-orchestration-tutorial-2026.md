@@ -35,7 +35,7 @@ relatedPosts:
       zh: '将技能连接到子代理可以重用重复能力。如果想更深入理解AgentDefinition.skills字段的用法，这篇文章会有所帮助。'
 ---
 
-[Tool Useガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)を書いてしばらく後、コメントが届いた。「単一エージェントは理解できましたが、レビュアー・セキュリティスキャナー・ドキュメントライターを同時に動かすにはどうすればいいですか?」正直、そのタイミングでちょうど実験中だった。
+[Tool Useガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)を書いてしばらく後、コメントが届いた。「単一エージェントは理解できましたが、レビュアー・セキュリティスキャナー・ドキュメントライターを同時に動かすにはどうすればいいですか?」正直、そのタイミングでちょうど実験中だった。
 
 `claude-agent-sdk 0.2.82`を実際にインストールしてみると答えがあった。`AgentDefinition`データクラス一つと`ClaudeAgentOptions.agents`辞書で十分だ。実際にオブジェクトを作成し、型構造を確認した。APIキーがなかったので実行まではできなかったが、コードの構造と型システムは直接触って確かめられた。
 
@@ -266,7 +266,7 @@ def on_agent_stop(hook_input: sdk.SubagentStopHookInput) -> None:
     # agent_transcript_pathにサブエージェントの全対話記録がある
 ```
 
-[Anthropic Agent Skillsの実践ガイド](/ja/blog/ja/anthropic-agent-skills-practical-guide)でも触れているが、スキルとフックを組み合わせるとエージェントの動作をかなり細かく制御できる。
+[Anthropic Agent Skillsの実践ガイド](/ja/blog/ja/anthropic-agent-skills-practical-guide/)でも触れているが、スキルとフックを組み合わせるとエージェントの動作をかなり細かく制御できる。
 
 ## サブエージェントを使うときと使わないとき
 

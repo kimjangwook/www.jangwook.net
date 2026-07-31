@@ -69,7 +69,7 @@ relatedPosts:
 
 - <strong>분기별 AI 역량 재평가</strong>: 매 분기 시작 시 최신 모델의 벤치마크를 확인하고, 현재 워크플로우에서 자동화 가능한 영역을 재식별한다.
 - <strong>"AI-Ready" 백로그 관리</strong>: 현재는 수동으로 하고 있지만 AI 성능이 향상되면 자동화할 수 있는 작업 목록을 별도로 관리한다.
-- <strong>벤더 락인 회피</strong>: 단일 AI 벤더에 종속되지 않도록 추상화 레이어를 설계한다. MCP(Model Context Protocol)와 같은 표준, 그리고 [LangGraph, CrewAI, Dapr처럼 교체 가능한 프레임워크](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production)가 이를 돕다.
+- <strong>벤더 락인 회피</strong>: 단일 AI 벤더에 종속되지 않도록 추상화 레이어를 설계한다. MCP(Model Context Protocol)와 같은 표준, 그리고 [LangGraph, CrewAI, Dapr처럼 교체 가능한 프레임워크](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/)가 이를 돕다.
 
 ```typescript
 // AI 벤더 추상화 레이어 예시
@@ -95,7 +95,7 @@ Morgan Stanley 리포트가 예측하는 수준의 AI 도약이 실현되면, �
 ### 실행 방안
 
 - <strong>Centaur Pod 모델 도입</strong>: 2〜3명의 시니어 엔지니어 + AI 에이전트 조합으로 기존 5〜6명 팀의 산출량을 달성한다.
-- <strong>AI 오케스트레이터 역할 신설</strong>: 팀 내에서 [AI 에이전트의 작업 흐름](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types)을 설계하고 품질을 관리하는 전문 역할을 만든다.
+- <strong>AI 오케스트레이터 역할 신설</strong>: 팀 내에서 [AI 에이전트의 작업 흐름](/ko/blog/ko/claude-code-agentic-workflow-patterns-5-types/)을 설계하고 품질을 관리하는 전문 역할을 만든다.
 - <strong>코드 리뷰 프로세스 업데이트</strong>: AI가 생성한 코드에 대한 리뷰 기준과 프로세스를 별도로 정의한다.
 
 ```mermaid
@@ -124,7 +124,7 @@ Morgan Stanley 리포트는 <strong>"15-15-15" 다이나믹</strong>을 언급�
 ### 실행 방안
 
 - <strong>하이브리드 AI 인프라 전략</strong>: 모든 AI 워크로드를 클라우드에 올리지 않는다. 추론(inference)은 로컬/엣지에서, 학습(training)은 클라우드에서 하는 분리 전략을 검토한다.
-- <strong>비용 모니터링 대시보드 구축</strong>: [AI API 호출 비용](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)을 실시간으로 추적하고, 모델별/기능별 ROI를 측정한다.
+- <strong>비용 모니터링 대시보드 구축</strong>: [AI API 호출 비용](/ko/blog/ko/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)을 실시간으로 추적하고, 모델별/기능별 ROI를 측정한다.
 - <strong>오픈소스 모델 활용 계획</strong>: Mistral 3, GLM-5 등 프로프라이어터리 모델의 92% 성능을 15% 비용으로 달성하는 오픈소스 대안을 항상 벤치마킹한다.
 
 | 전략 | 비용 절감 효과 | 적합한 워크로드 |

@@ -130,11 +130,11 @@ Anthropic内部基准测试结果：Word文档生成质量提升8.4%，PowerPoin
 
 实际操作中，rubric设计是核心工作。太宽松，Outcomes没有效果。太严格，代理会陷入无限重试循环。
 
-[4月撰写的Managed Agents基础部署指南](/zh/blog/zh/claude-managed-agents-production-deployment-guide)分析了每会话$0.08的基础成本。Outcomes在此之上增加了grader会话成本，具体取决于rubric复杂度和需要多少次重试。
+[4月撰写的Managed Agents基础部署指南](/zh/blog/zh/claude-managed-agents-production-deployment-guide/)分析了每会话$0.08的基础成本。Outcomes在此之上增加了grader会话成本，具体取决于rubric复杂度和需要多少次重试。
 
 ## 多代理编排 — 并行模式的标准化
 
-让多个专业代理并行处理复杂任务并不是新思路。[Claude Code五种代理工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)已经介绍过这种架构。Orchestration增加的是这种模式的托管版本：
+让多个专业代理并行处理复杂任务并不是新思路。[Claude Code五种代理工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)已经介绍过这种架构。Orchestration增加的是这种模式的托管版本：
 
 - 主代理分解任务并委托给专家代理
 - 最多20个子代理并行运行
@@ -187,7 +187,7 @@ graph TD
 
 随着这个循环的重复，代理不是获得了新技能，而是积累了"在什么情况下需要注意什么"的运营知识。模型不变，但有效行为在改善。
 
-[Hindsight MCP的基于经验的内存刷新方法](/zh/blog/zh/hindsight-mcp-agent-memory-learning)从不同角度覆盖了类似的领域。比较这两种设计有助于思考代理内存架构的选择。
+[Hindsight MCP的基于经验的内存刷新方法](/zh/blog/zh/hindsight-mcp-agent-memory-learning/)从不同角度覆盖了类似的领域。比较这两种设计有助于思考代理内存架构的选择。
 
 ## 我的质疑
 
@@ -199,7 +199,7 @@ graph TD
 
 <strong>第三，可审计性张力。</strong> 代理自主改变自身行为模式的系统很难审计。"六个月前代理为何做出那个决定？"需要内存存储的版本历史——而这方面的工具目前还不够清晰。
 
-<strong>第四，Research Preview状态。</strong> Dreaming还不是生产就绪的功能。与Public Beta的Outcomes和Orchestration不同，Dreaming在生产规模下的稳定性尚待验证。[代理成本现实分析](/zh/blog/zh/ai-agent-cost-reality)中也强调了这一点：治理成本、监控成本和调试成本即使在token便宜的情况下也是真实的成本。
+<strong>第四，Research Preview状态。</strong> Dreaming还不是生产就绪的功能。与Public Beta的Outcomes和Orchestration不同，Dreaming在生产规模下的稳定性尚待验证。[代理成本现实分析](/zh/blog/zh/ai-agent-cost-reality/)中也强调了这一点：治理成本、监控成本和调试成本即使在token便宜的情况下也是真实的成本。
 
 第五，Outcomes grader成本随重试深度线性增长。一个有五项标准的rubric，如果任务在前三次尝试中失败，可能会使会话成本增加三倍。目前还没有针对这点的成本估算工具。
 

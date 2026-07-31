@@ -391,7 +391,7 @@ Files API가 유리한 상황:
 
 ## Message Batches API와 함께 쓰기
 
-[Anthropic Message Batches API](/ko/blog/ko/anthropic-message-batches-api-production-guide)는 대량 요청을 비동기로 처리하면서 비용을 50% 절감한다. Files API와 함께 쓰면 두 가지 절감 효과를 동시에 얻을 수 있다.
+[Anthropic Message Batches API](/ko/blog/ko/anthropic-message-batches-api-production-guide/)는 대량 요청을 비동기로 처리하면서 비용을 50% 절감한다. Files API와 함께 쓰면 두 가지 절감 효과를 동시에 얻을 수 있다.
 
 ```python
 def batch_file_analysis_with_batches(pdf_paths: list[str], questions: list[str]):
@@ -435,7 +435,7 @@ def batch_file_analysis_with_batches(pdf_paths: list[str], questions: list[str])
     return batch.id
 ```
 
-100개 문서에 10개 질문이면 총 1,000개 API 요청이다. Files API 없이는 각 요청마다 문서 전체를 전송해야 한다. 두 API를 조합하면 파일 재전송 절감 + 배치 50% 할인을 동시에 적용할 수 있다. [Langfuse로 LLM 비용을 추적](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026)하면 실제로 얼마나 절감됐는지 숫자로 볼 수 있다.
+100개 문서에 10개 질문이면 총 1,000개 API 요청이다. Files API 없이는 각 요청마다 문서 전체를 전송해야 한다. 두 API를 조합하면 파일 재전송 절감 + 배치 50% 할인을 동시에 적용할 수 있다. [Langfuse로 LLM 비용을 추적](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026/)하면 실제로 얼마나 절감됐는지 숫자로 볼 수 있다.
 
 ---
 

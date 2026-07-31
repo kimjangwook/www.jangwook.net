@@ -128,11 +128,11 @@ Anthropic's internal benchmark numbers: 8.4% improvement in Word document qualit
 
 In practice, rubric design becomes the core work. Too permissive, and Outcomes adds latency without benefit. Too strict, and you get an infinite retry loop. The API for grader configuration isn't something I could test at this tier, but the Outcomes cookbook example on the Claude platform shows the pattern clearly.
 
-The [Managed Agents deployment walkthrough I wrote in April](/en/blog/en/claude-managed-agents-production-deployment-guide) covered the $0.08/session baseline cost. Outcomes adds grader session cost on top — how much depends on rubric complexity and how many retry cycles each task needs.
+The [Managed Agents deployment walkthrough I wrote in April](/en/blog/en/claude-managed-agents-production-deployment-guide/) covered the $0.08/session baseline cost. Outcomes adds grader session cost on top — how much depends on rubric complexity and how many retry cycles each task needs.
 
 ## Multiagent Orchestration — Standardizing the Parallel Pattern
 
-Running multiple specialized agents in parallel for complex tasks isn't new either. [Five agentic workflow patterns for Claude Code](/en/blog/en/claude-code-agentic-workflow-patterns-5-types) covered the architecture. What Orchestration adds is a managed version of that pattern:
+Running multiple specialized agents in parallel for complex tasks isn't new either. [Five agentic workflow patterns for Claude Code](/en/blog/en/claude-code-agentic-workflow-patterns-5-types/) covered the architecture. What Orchestration adds is a managed version of that pattern:
 
 - Lead agent decomposes the task and delegates to specialists
 - Up to 20 subagents run in parallel
@@ -156,7 +156,7 @@ graph TD
     F --> G["Lead Agent\nSynthesis & Final Output"]
 ```
 
-The per-subagent model configuration is a meaningful addition. A code generation subagent running Opus 4.7 alongside a fast validation subagent running Haiku 4.5 is cost-efficient without sacrificing output quality where it matters. This is the [heterogeneous agent fleet](/en/blog/en/ai-agent-cost-reality) pattern made easier to implement.
+The per-subagent model configuration is a meaningful addition. A code generation subagent running Opus 4.7 alongside a fast validation subagent running Haiku 4.5 is cost-efficient without sacrificing output quality where it matters. This is the [heterogeneous agent fleet](/en/blog/en/ai-agent-cost-reality/) pattern made easier to implement.
 
 ## The Self-Improvement Loop All Three Create Together
 
@@ -185,7 +185,7 @@ Improve: Dreaming periodically reviews accumulated sessions and updates memory. 
 
 Over time, the agent doesn't acquire new skills — it accumulates operational knowledge about "what to watch out for in which situations." The model stays constant; the effective behavior improves.
 
-[Hindsight MCP's approach to experience-based memory refresh](/en/blog/en/hindsight-mcp-agent-memory-learning) covers similar territory from a different angle. Comparing both designs is useful for thinking through agent memory architecture choices.
+[Hindsight MCP's approach to experience-based memory refresh](/en/blog/en/hindsight-mcp-agent-memory-learning/) covers similar territory from a different angle. Comparing both designs is useful for thinking through agent memory architecture choices.
 
 ## Where I'm Skeptical
 
@@ -197,7 +197,7 @@ Several things give me pause.
 
 <strong>Third, auditability tension.</strong> A system where the agent autonomously changes its own behavioral patterns is hard to audit. "Why did the agent make that decision six months ago?" requires memory store version history — and the tooling for that isn't clearly specified yet.
 
-<strong>Fourth, Research Preview status.</strong> Dreaming is not Production. Unlike Outcomes and Orchestration (Public Beta), Dreaming hasn't been validated at production scale. The [agent cost reality](/en/blog/en/ai-agent-cost-reality) analysis I did earlier applies here too: governance costs, monitoring costs, and debugging costs are real costs even when tokens are cheap.
+<strong>Fourth, Research Preview status.</strong> Dreaming is not Production. Unlike Outcomes and Orchestration (Public Beta), Dreaming hasn't been validated at production scale. The [agent cost reality](/en/blog/en/ai-agent-cost-reality/) analysis I did earlier applies here too: governance costs, monitoring costs, and debugging costs are real costs even when tokens are cheap.
 
 Fifth, Outcomes grader cost scales with retry depth. A rubric with five criteria and a task that fails on the first three passes could triple the session cost relative to a baseline run. There's no cost estimation tooling for this yet.
 

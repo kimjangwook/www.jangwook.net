@@ -49,7 +49,7 @@ faq:
 日本で働きながら発見したB2B自動化ニーズ:
 
 1. <strong>免税処理業務の手作業依存</strong>: パスポートと免税書類を目視確認し手入力
-2. <strong>経理業務の反復作業</strong>: レシートOCR後の手動データ整理。[実データで見るAI経理自動化の効果](/ja/blog/ja/effiflow-automation-analysis-part1)では、この課題がいかに深刻かを数字で示しています。
+2. <strong>経理業務の反復作業</strong>: レシートOCR後の手動データ整理。[実データで見るAI経理自動化の効果](/ja/blog/ja/effiflow-automation-analysis-part1/)では、この課題がいかに深刻かを数字で示しています。
 3. <strong>既存ソリューションの限界</strong>: 高価なエンタープライズソリューションか精度の低い汎用OCR
 
 個人開発者としての差別化ポイントは<strong>AIを活用した構造化データ抽出</strong>です。単純なテキストOCRを超えて、Google Gemini APIのStructured Output機能で型安全なJSON応答を受け取り、即座にビジネスロジックに活用可能なデータを提供します。このサービスのその後の方向性についてはAgent Effi Flowのピボット決断とおもてなしボット構想で続けて解説しています。
@@ -674,7 +674,7 @@ const optimized = await sharp(imageBuffer)
    - TypeScript型定義
    - Zodスキーマ検証
    
-   AIツールを活用してサイドプロジェクトを会社レベルに育てるアプローチはeffloow：サイドプロジェクトからAIカンパニーへでも詳しく解説しています。複数のエージェントを連携させて作業を自動化する実践ノウハウは[マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement)にまとめてあります。
+   AIツールを活用してサイドプロジェクトを会社レベルに育てるアプローチはeffloow：サイドプロジェクトからAIカンパニーへでも詳しく解説しています。複数のエージェントを連携させて作業を自動化する実践ノウハウは[マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement/)にまとめてあります。
 
 3. <strong>Vercel Preview Deployments</strong>
    - PRごとに自動デプロイURL
@@ -734,7 +734,7 @@ const optimized = await sharp(imageBuffer)
 <strong>このアプローチが向いているケース</strong>:
 
 - ソロまたは小規模チームがMVPを素早く検証したい場合。マネージドバックエンド(Supabase)とサーバーレスデプロイ(Vercel)が、インフラ運用の負担をほぼ取り除いてくれます。
-- AI推論コストが単価に直接反映される従量課金サービス。Gemini 2.5 Flashの安いトークン単価がマージンを守ります。AI運用コストの現実的な内訳は<a href="/ja/blog/ja/ai-agent-cost-reality">AIエージェントコストの現実</a>でより深く扱いました。
+- AI推論コストが単価に直接反映される従量課金サービス。Gemini 2.5 Flashの安いトークン単価がマージンを守ります。AI運用コストの現実的な内訳は<a href="/ja/blog/ja/ai-agent-cost-reality/">AIエージェントコストの現実</a>でより深く扱いました。
 - トラフィックが不規則、または初期はほぼゼロのサービス。サーバーレス課金はアイドル時にコストがほぼ0になります。
 - 構造化データ抽出が中核的な価値である場合。Structured Outputがパースレイヤーを丸ごと不要にします。
 
@@ -742,10 +742,10 @@ const optimized = await sharp(imageBuffer)
 
 - 厳格なデータガバナンスやオンプレミス要件がある場合。画像を外部LLM APIへ送る構造そのものがコンプライアンスの壁に当たることがあります。
 - ミリ秒単位の遅延が重要なワークロード。LLM推論は数百ミリ秒から数秒かかるため、リアルタイム処理には不向きです。
-- 月数百万件以上の安定的で予測可能な大量処理。この規模では、サーバーレス・従量APIより専用インフラや自前モデルのほうが単価で有利になります。実運用データで検証したコスト・効果分析は<a href="/ja/blog/ja/effiflow-automation-analysis-part2">Effi Flow自動化分析</a>で確認できます。
+- 月数百万件以上の安定的で予測可能な大量処理。この規模では、サーバーレス・従量APIより専用インフラや自前モデルのほうが単価で有利になります。実運用データで検証したコスト・効果分析は<a href="/ja/blog/ja/effiflow-automation-analysis-part2/">Effi Flow自動化分析</a>で確認できます。
 - OCRエラーがそのまま事故につながる高リスク領域(医療処方、法的契約の原本)。人手によるレビュー工程を必ず挟む必要があるため、「完全自動化」という前提が崩れます。
 
-新しいツールを習得するコストも無視できません。React/Next.jsにすでに習熟したチームなら、SvelteKitへ移る学習コストがバンドルサイズ削減の利得を上回ることもあります。ソロ開発者がAIツールで生産性を引き上げた実際のパターンは<a href="/ja/blog/ja/claude-code-insights-usage-analysis">Claude Code使用分析</a>にまとめてあります。
+新しいツールを習得するコストも無視できません。React/Next.jsにすでに習熟したチームなら、SvelteKitへ移る学習コストがバンドルサイズ削減の利得を上回ることもあります。ソロ開発者がAIツールで生産性を引き上げた実際のパターンは<a href="/ja/blog/ja/claude-code-insights-usage-analysis/">Claude Code使用分析</a>にまとめてあります。
 
 ## 参考資料
 

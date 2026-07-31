@@ -64,7 +64,7 @@ In November 2025, my blog reached an important milestone. I decided to <strong>a
 
 Traffic from China had been steadily increasing, and I wanted to provide quality content to Chinese-speaking developers as well. However, adding Chinese versions to 40 posts, multilingualize all UI components, and optimize SEO was no small task.
 
-In this article, I'll share <strong>the entire process of adding a new language to an Astro-based multilingual blog</strong> in detail. From file structure design to large-scale translation automation and SEO optimization - I've transparently documented the problems encountered and solutions found in practice. The broader story of automating content production with an LLM is covered in [LLM-based blog automation](/en/blog/en/llm-blog-automation).
+In this article, I'll share <strong>the entire process of adding a new language to an Astro-based multilingual blog</strong> in detail. From file structure design to large-scale translation automation and SEO optimization - I've transparently documented the problems encountered and solutions found in practice. The broader story of automating content production with an LLM is covered in [LLM-based blog automation](/en/blog/en/llm-blog-automation/).
 
 ### What You'll Learn
 
@@ -504,7 +504,7 @@ export const SITE_META = {
 
 ## Section 6: Large-Scale Translation Automation
 
-Adding Chinese versions to 40 posts and adding Chinese reason to relatedPosts in existing Korean/English/Japanese versions was <strong>impossible to do manually</strong>. I used the same pattern of splitting work across multiple agents for parallel processing in [AI agent and Notion MCP automation](/en/blog/en/ai-agent-notion-mcp-automation).
+Adding Chinese versions to 40 posts and adding Chinese reason to relatedPosts in existing Korean/English/Japanese versions was <strong>impossible to do manually</strong>. I used the same pattern of splitting work across multiple agents for parallel processing in [AI agent and Notion MCP automation](/en/blog/en/ai-agent-notion-mcp-automation/).
 
 ### Problem Definition
 

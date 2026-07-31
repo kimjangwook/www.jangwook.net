@@ -92,7 +92,7 @@ data: {"result":{...},"jsonrpc":"2.0","id":1}
 
 不是直接解析JSON，而是提取 `data:` 行。官方MCP客户端库会自动处理这部分，但用curl直接测试时需要了解这一点。
 
-如果已读过[用Python FastMCP从零构建MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026)的指南，基本概念应该已经熟悉。这里使用TypeScript SDK直接构建HTTP层。
+如果已读过[用Python FastMCP从零构建MCP服务器](/zh/blog/zh/mcp-server-build-practical-guide-2026/)的指南，基本概念应该已经熟悉。这里使用TypeScript SDK直接构建HTTP层。
 
 把协议流程整理成时序图：
 
@@ -342,7 +342,7 @@ export default {
 };
 ```
 
-[MCP服务器在Kubernetes上的稳定运营方法](/zh/blog/zh/mcp-server-production-deployment-kubernetes-guide)一文中也涉及同样的核心问题：在哪个层面管理会话状态？这个决定决定了上层所有架构。
+[MCP服务器在Kubernetes上的稳定运营方法](/zh/blog/zh/mcp-server-production-deployment-kubernetes-guide/)一文中也涉及同样的核心问题：在哪个层面管理会话状态？这个决定决定了上层所有架构。
 
 ## 已知局限
 
@@ -354,7 +354,7 @@ export default {
 
 **SSE调试不便。** `event: message\ndata: {...}` 格式使标准工具操作复杂。无法直接将输出管道到 `jq`。建议为测试会话准备小型辅助脚本，或使用MCP Inspector工具。
 
-[用MCP网关集中管理智能体流量](/zh/blog/zh/mcp-gateway-agent-traffic-control)一文中介绍了在网关层抽象会话管理复杂性的方案——运营多个MCP服务器时这也是有效的解决思路。
+[用MCP网关集中管理智能体流量](/zh/blog/zh/mcp-gateway-agent-traffic-control/)一文中介绍了在网关层抽象会话管理复杂性的方案——运营多个MCP服务器时这也是有效的解决思路。
 
 ## 可行性评估
 

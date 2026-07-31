@@ -67,7 +67,7 @@ Its key features are:
 
 <strong>Four contributor type classifications</strong>: `human` (direct human writing), `ai` (AI-generated), `mixed` (human editing AI output or vice versa), `unknown` (source unknown).
 
-<strong>Vendor-neutral design</strong>: The same format can be used regardless of whether the code came from Cursor, Copilot, [Claude Code](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026), or any other tool.
+<strong>Vendor-neutral design</strong>: The same format can be used regardless of whether the code came from Cursor, Copilot, [Claude Code](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026/), or any other tool.
 
 <strong>Repository-agnostic</strong>: Trace records can be stored locally, in git notes, databases, or anywhere else you prefer.
 
@@ -169,7 +169,7 @@ High AI tool adoption doesn't automatically mean high productivity. Analyzing Ag
 
 ### 3. Compliance and Audit Response
 
-In regulated industries like finance, healthcare, and defense, there's growing demand to clearly identify code origins (see [NIST AI Agent Security Standards](/en/blog/en/nist-ai-agent-security-standards)). Agent Trace helps with:
+In regulated industries like finance, healthcare, and defense, there's growing demand to clearly identify code origins (see [NIST AI Agent Security Standards](/en/blog/en/nist-ai-agent-security-standards/)). Agent Trace helps with:
 
 <strong>Audit trail</strong>: Quantitatively report the percentage of AI contribution in code.
 
@@ -257,7 +257,7 @@ graph TD
     ExecutionEnvironment --> TrackingAudit
 ```
 
-Agent Trace handles the <strong>"post-execution"</strong> stage in this ecosystem. It tracks the results after agents are [defined (ADL/AGENTS.md)](/en/blog/en/adl-agent-definition-language-governance), communicate (MCP/Open Responses), and execute (Skills).
+Agent Trace handles the <strong>"post-execution"</strong> stage in this ecosystem. It tracks the results after agents are [defined (ADL/AGENTS.md)](/en/blog/en/adl-agent-definition-language-governance/), communicate (MCP/Open Responses), and execute (Skills).
 
 ## Current Limitations and Unresolved Challenges
 

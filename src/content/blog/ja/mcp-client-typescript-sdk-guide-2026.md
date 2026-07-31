@@ -50,7 +50,7 @@ Claude Desktopがサーバーに接続するとき、内部で何が起きてい
 
 ## Claude Desktopがやることを自分でやってみるという発想
 
-MCP（Model Context Protocol）はAIエージェントが外部ツールとデータにアクセスするための標準インターフェースだ。これまでMCP関連の記事ではサーバー構築をよく扱ってきた。[TypeScriptでMCPサーバーを作る方法](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)も書いたし、[Python FastMCPで30分でサーバーを立ち上げる方法](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)も試した。だがクライアント側を自分で実装した記事は書いたことがなかった。
+MCP（Model Context Protocol）はAIエージェントが外部ツールとデータにアクセスするための標準インターフェースだ。これまでMCP関連の記事ではサーバー構築をよく扱ってきた。[TypeScriptでMCPサーバーを作る方法](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026/)も書いたし、[Python FastMCPで30分でサーバーを立ち上げる方法](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)も試した。だがクライアント側を自分で実装した記事は書いたことがなかった。
 
 本番ユースケースを考えると、カスタムMCPクライアントが必要な瞬間は明らかにある。
 
@@ -265,7 +265,7 @@ async function callToolSafe(client, name, args) {
 }
 ```
 
-この動作はMCP仕様で意図されたデザインだ。ツール実行エラーとプロトコルエラーを区別するために、エラーをコンテンツとして返す。Claudeエージェントがツール実行失敗を「テキストメッセージ」として受け取り、そのまま推論を続けるやり方と一致している。そして、その結果をどの形式で直列化して渡すかがそのまま入力トークンコストになる。[同じデータでも形式によってトークンが62%も変わる](/ja/blog/ja/llm-token-cost-data-format-experiment)ため、平坦な結果をJSONではなくCSV・TSVで返すという小さな判断がエージェント全体のコストを変える。
+この動作はMCP仕様で意図されたデザインだ。ツール実行エラーとプロトコルエラーを区別するために、エラーをコンテンツとして返す。Claudeエージェントがツール実行失敗を「テキストメッセージ」として受け取り、そのまま推論を続けるやり方と一致している。そして、その結果をどの形式で直列化して渡すかがそのまま入力トークンコストになる。[同じデータでも形式によってトークンが62%も変わる](/ja/blog/ja/llm-token-cost-data-format-experiment/)ため、平坦な結果をJSONではなくCSV・TSVで返すという小さな判断がエージェント全体のコストを変える。
 
 ## Promise.allによる並列呼び出し — 4件同時実行が1ms
 
@@ -315,7 +315,7 @@ MCPサーバーにコードのリンティング、ファイル変換、外部AP
 
 **独自エージェントフレームワークの開発**
 
-LangGraphやLlamaIndexなしで独自のエージェントを書く場合、MCPサーバーが提供するツールをエージェントループに組み込める。`listTools()`でツール一覧を取得してLLMプロンプトに注入し、LLMの応答からツール呼び出しパラメータを解析して`callTool()`で実行するパターンだ。AIエージェントにツールを体系的に組み込む方法は[Claude Agent SDKによるtool use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)で詳しく解説している。
+LangGraphやLlamaIndexなしで独自のエージェントを書く場合、MCPサーバーが提供するツールをエージェントループに組み込める。`listTools()`でツール一覧を取得してLLMプロンプトに注入し、LLMの応答からツール呼び出しパラメータを解析して`callTool()`で実行するパターンだ。AIエージェントにツールを体系的に組み込む方法は[Claude Agent SDKによるtool use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)で詳しく解説している。
 
 **テストとデバッグ**
 

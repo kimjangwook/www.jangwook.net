@@ -152,7 +152,7 @@ export OPENAI_MODEL="qwen3-coder-plus"
 qwen
 ```
 
-[Claude Code](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent)와의 통합도 지원하여, 기존 개발 워크플로우에 자연스럽게 통합할 수 있다.
+[Claude Code](/ko/blog/ko/claude-code-masterclass-series-1-prompt-to-agent/)와의 통합도 지원하여, 기존 개발 워크플로우에 자연스럽게 통합할 수 있다.
 
 ## 두 모델 비교 분석
 
@@ -167,7 +167,7 @@ qwen
 | <strong>컨텍스트</strong> | 표준 | 256K (네이티브) |
 | <strong>최소 VRAM</strong> | ~16GB (Q4) | ~4GB (활성 3B) |
 | <strong>실행 환경</strong> | RTX 4090, Mac 32GB | Raspberry Pi급 가능 |
-| <strong>에이전트 프레임워크</strong> | OpenHands, SWE-Agent | Qwen Code, [Claude Code](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026) |
+| <strong>에이전트 프레임워크</strong> | OpenHands, SWE-Agent | Qwen Code, [Claude Code](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026/) |
 
 ### 아키텍처 차이
 
@@ -208,7 +208,7 @@ graph TD
 이 두 모델의 등장은 단순한 신제품 출시 이상의 의미를 가진다.
 
 1. <strong>개인정보 보호</strong>: 코드를 외부 서버에 보내지 않고 로컬에서 AI 지원을 받을 수 있다
-2. <strong>비용 절감</strong>: [API 비용](/ko/blog/ko/claude-code-local-model-inefficiency) 없이 자체 하드웨어에서 무제한 사용 가능하다
+2. <strong>비용 절감</strong>: [API 비용](/ko/blog/ko/claude-code-local-model-inefficiency/) 없이 자체 하드웨어에서 무제한 사용 가능하다
 3. <strong>오프라인 작업</strong>: 인터넷 연결 없이도 AI 코딩 어시스턴트를 사용할 수 있다
 4. <strong>커스터마이징</strong>: 자사 코드베이스에 파인튜닝하여 맞춤형 모델 구축이 가능하다
 

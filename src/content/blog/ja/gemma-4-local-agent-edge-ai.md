@@ -84,7 +84,7 @@ Capabilities
 
 ## 本当に驚いたのはFunction Callingだ
 
-今回のGemma 4で最も意義のある変化は、ネイティブなfunction callingだと自分は考えている。はるかに小さな[FunctionGemma 270Mでさえツール呼び出しをこなす実験](/ja/blog/ja/functiongemma-270m-tool-calling)を見ると、もう関数呼び出しは大型モデルだけの能力ではない。実際にOllama APIを通じてテストしてみた：
+今回のGemma 4で最も意義のある変化は、ネイティブなfunction callingだと自分は考えている。はるかに小さな[FunctionGemma 270Mでさえツール呼び出しをこなす実験](/ja/blog/ja/functiongemma-270m-tool-calling/)を見ると、もう関数呼び出しは大型モデルだけの能力ではない。実際にOllama APIを通じてテストしてみた：
 
 ```bash
 curl -s http://localhost:11434/api/chat -d '{
@@ -140,11 +140,11 @@ echo 'Answer in JSON: {"capital": "<answer>"}. What is the capital of France?' \
 # → {"capital": "Paris"}
 ```
 
-個人的に、この程度なら[MCPサーバーのローカルバックエンド](/ja/blog/ja/mcp-server-build-practical-guide-2026)として使えそうだという手応えがある。外部API呼び出しなしで社内データを処理するエージェントを作る場合、[セキュリティが重要な環境](/ja/blog/ja/mcp-gateway-agent-traffic-control)で特に価値がある。
+個人的に、この程度なら[MCPサーバーのローカルバックエンド](/ja/blog/ja/mcp-server-build-practical-guide-2026/)として使えそうだという手応えがある。外部API呼び出しなしで社内データを処理するエージェントを作る場合、[セキュリティが重要な環境](/ja/blog/ja/mcp-gateway-agent-traffic-control/)で特に価値がある。
 
 ## で、実際に何が作れるのか
 
-自分が考える現実的な活用シナリオは3つだ。どれも実際のサービスとして立ち上げるなら、[OllamaとFastAPIでローカルLLMを本番デプロイするガイド](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026)が出発点になる。
+自分が考える現実的な活用シナリオは3つだ。どれも実際のサービスとして立ち上げるなら、[OllamaとFastAPIでローカルLLMを本番デプロイするガイド](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026/)が出発点になる。
 
 **1. オフラインコードレビューエージェント**
 — Git diffを入力にしてコードレビューコメントを生成するローカルエージェント。ソースコードが外部に出てはいけない環境で重宝する。

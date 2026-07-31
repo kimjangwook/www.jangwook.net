@@ -184,7 +184,7 @@ export async function POST(req: Request) {
 
 <strong>1つ目、`client.messages.stream()`は`AsyncIterableStream`を返す。</strong> `for await...of`でチャンクを1つずつ受け取り、クライアントに送り出す。ストリームが終了したら`[DONE]`シグナルを送ってコントローラーを閉じる。
 
-<strong>2つ目、`ReadableStream` + `TextEncoder`の組み合わせがWeb Streams API標準だ。</strong> Next.js Route HandlerはNode.jsの`stream`モジュールではなくWeb Streamsを使う。[FastAPIのストリーミング](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026)とAPIが異なる理由がこれだ。
+<strong>2つ目、`ReadableStream` + `TextEncoder`の組み合わせがWeb Streams API標準だ。</strong> Next.js Route HandlerはNode.jsの`stream`モジュールではなくWeb Streamsを使う。[FastAPIのストリーミング](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026/)とAPIが異なる理由がこれだ。
 
 ## Step 3: 環境変数とセキュリティ設定
 
@@ -368,11 +368,11 @@ Route Handlerの`Response`ヘッダーに`"Content-Type": "text/event-stream"`�
 
 個人的には初学者にはまずこの記事のようにRaw APIで試して、次にSDKを使うことを勧める。SDKが何をやってくれているかを知ってこそ、SDKを正しく使える。
 
-[Vercel AI SDKでClaudeストリーミングエージェントを作る](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026)と直接比較してみてほしい。
+[Vercel AI SDKでClaudeストリーミングエージェントを作る](/ja/blog/ja/vercel-ai-sdk-claude-streaming-agent-2026/)と直接比較してみてほしい。
 
 ## 次のステップ
 
-1. **Tool Use追加** — Claudeに関数呼び出し能力を付与 → [Claude Agent SDK実践ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026)
-2. **Prompt Caching** — APIコストを最大90%削減 → [Claude API Prompt Caching実践](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide)
+1. **Tool Use追加** — Claudeに関数呼び出し能力を付与 → [Claude Agent SDK実践ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)
+2. **Prompt Caching** — APIコストを最大90%削減 → [Claude API Prompt Caching実践](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide/)
 3. **エラーハンドリング強化** — AbortController、retryロジック、エラーSSEイベント
 4. **Vercel配備** — 上記の注意点を適用してプロダクション公開

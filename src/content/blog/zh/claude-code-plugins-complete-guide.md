@@ -140,7 +140,7 @@ Claude Code 插件系统是 Anthropic 推出的扩展机制，将`<strong>`斜�
 
 ### 3. code-review：4 个并行代理代码审查
 
-同时使用 4 个[专业代理](/zh/blog/zh/anthropic-agent-skills-practical-guide)进行代码审查的高级插件。
+同时使用 4 个[专业代理](/zh/blog/zh/anthropic-agent-skills-practical-guide/)进行代码审查的高级插件。
 
 ```bash
 /plugin install code-review
@@ -557,7 +557,7 @@ my-plugin/
 /plugin install commit-commands@1.2.3
 ```
 
-关于 Claude Code CLI 版本升级，请参阅 [Claude Code CLI 迁移指南](/zh/blog/zh/claude-code-cli-migration-guide)。
+关于 Claude Code CLI 版本升级，请参阅 [Claude Code CLI 迁移指南](/zh/blog/zh/claude-code-cli-migration-guide/)。
 
 ### 权限
 
@@ -580,7 +580,7 @@ Claude Code 插件系统将开发工作流的`<strong>`自动化和标准化`</s
 
 `<strong>`建议策略`</strong>`：
 
-1. <strong>初学者</strong>：先阅读 [Claude Code 最佳实践](/zh/blog/zh/claude-code-best-practices)，再从 `commit-commands` 和 `feature-dev` 开始
+1. <strong>初学者</strong>：先阅读 [Claude Code 最佳实践](/zh/blog/zh/claude-code-best-practices/)，再从 `commit-commands` 和 `feature-dev` 开始
 2. <strong>团队</strong>：添加 `pr-review-toolkit` 和 `hookify`
 3. <strong>高级用户</strong>：探索 `plugin-dev` 和社区市场
 

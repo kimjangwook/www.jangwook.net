@@ -107,7 +107,7 @@ Pro方案定价$20/月，包含多仓库布局和云端/本地智能体无缝切
 
 <strong>Monitor工具</strong>也是新功能——实时流式传输后台进程输出。一边看构建日志一边推进下一个任务，这种自然的工作模式变得可能了。
 
-我最常用的功能是`/loop`。无需固定间隔，自主调节重复任务的节奏。[将Claude Code的Git Worktree并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree)与此结合，可以高效处理多仓库工作。如果想先建立操作节奏，也可以继续阅读[Claude Code实战例程指南](/zh/blog/zh/claude-code-routines-practical-guide-2026)。
+我最常用的功能是`/loop`。无需固定间隔，自主调节重复任务的节奏。[将Claude Code的Git Worktree并行会话](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)与此结合，可以高效处理多仓库工作。如果想先建立操作节奏，也可以继续阅读[Claude Code实战例程指南](/zh/blog/zh/claude-code-routines-practical-guide-2026/)。
 
 Claude Code与其他工具最大的区别在于<strong>理解整个代码库</strong>。不是读几个文件，而是读取整个仓库结构并做出架构级别的判断。在SWE-bench（实际软件工程任务基准）中，Claude Code + Claude Opus 4.x组合位居前列。"基准测试与实际不同"的质疑合理，但在我自己的经验中，复杂重构和设计决策方面，Claude Code产出的代码质量更高。
 
@@ -123,7 +123,7 @@ Claude Code的真正力量在于<strong>Hooks和Skills系统</strong>。我运�
 
 第一次使用Windsurf，我终于体会到了"Vibe编程"是什么感觉。写代码的速度感觉比其他工具更快。Cascade能很好地记住当前工作的上下文，自主处理多步骤任务。
 
-<strong>Arena Mode</strong>是最有创意的功能。给两个模型相同的提示词，并排显示两个回答，选择其中一个。[Windsurf Arena Mode的数据](/zh/blog/zh/windsurf-arena-mode-speed-over-accuracy)显示了一个有趣的现象：开发者在评估AI编程工具时，对速度的重视程度是准确性的2倍以上。
+<strong>Arena Mode</strong>是最有创意的功能。给两个模型相同的提示词，并排显示两个回答，选择其中一个。[Windsurf Arena Mode的数据](/zh/blog/zh/windsurf-arena-mode-speed-over-accuracy/)显示了一个有趣的现象：开发者在评估AI编程工具时，对速度的重视程度是准确性的2倍以上。
 
 Windsurf 2.0添加了<strong>Devin集成</strong>。在单一看板式仪表板中管理本地Cascade会话和云端Devin会话，适合团队级别运营智能体。
 
@@ -208,7 +208,7 @@ Windsurf在2025〜2026年间进行了14次Wave发布，每次都添加了Arena M
 
 ## 我的结论——三款都用过之后
 
-坦率说，我现在以Claude Code为主。这个博客的自动化工作流、多语言文章写作、代码审查，全部基于Claude Code。能理解架构并写出长期可维护代码是决定性因素。[第一次整理Claude Code最佳实践](/zh/blog/zh/claude-code-best-practices)时，发现这个工具不只是编程辅助，更像是系统设计伙伴。
+坦率说，我现在以Claude Code为主。这个博客的自动化工作流、多语言文章写作、代码审查，全部基于Claude Code。能理解架构并写出长期可维护代码是决定性因素。[第一次整理Claude Code最佳实践](/zh/blog/zh/claude-code-best-practices/)时，发现这个工具不只是编程辅助，更像是系统设计伙伴。
 
 话虽如此，我没有完全放弃Cursor。Tab自动补全Cursor仍然是最强的。快速输入代码并修改时，Cursor的手感和其他工具不一样。
 
@@ -216,4 +216,4 @@ Windsurf被高估了，这是我的判断。Arena Mode很有创意，Cascade的�
 
 三款工具都与半年前完全不同了。这篇对比文章几个月后也会需要更新。现在最可靠的建议只有一个：用免费版或试用版测试你自己的代码库，而不是别人的演示项目。这才是唯一有效的测试。
 
-最后一点：选择这三款工具之一，并不意味着完全放弃其他两款。AI编程工具还没到"一款搞定一切"的阶段。我以Claude Code为主，用Cursor编辑文件，偶尔用Windsurf测试快速原型。理解每款工具真正擅长什么，就能培养出在不同情况下选择合适工具的直觉。这就是2026年高效使用AI编程工具的方式。更广泛的代理工具选择标准，可以继续阅读[Python AI代理库比较](/zh/blog/zh/python-ai-agent-library-comparison-2026)和[MCP、A2A、Open Responses协议比较](/zh/blog/zh/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026)。
+最后一点：选择这三款工具之一，并不意味着完全放弃其他两款。AI编程工具还没到"一款搞定一切"的阶段。我以Claude Code为主，用Cursor编辑文件，偶尔用Windsurf测试快速原型。理解每款工具真正擅长什么，就能培养出在不同情况下选择合适工具的直觉。这就是2026年高效使用AI编程工具的方式。更广泛的代理工具选择标准，可以继续阅读[Python AI代理库比较](/zh/blog/zh/python-ai-agent-library-comparison-2026/)和[MCP、A2A、Open Responses协议比较](/zh/blog/zh/mcp-vs-a2a-vs-open-responses-agent-protocol-comparison-2026/)。

@@ -188,7 +188,7 @@ Pydantic AI offers five modes for structured output:
 
 It's still not v1.0. A rapidly changing API is the main reason to hesitate before committing to it in production. Sub-1.0 means breaking changes are on the table at any point. I trust Pydantic's quality bar, but watching for stabilization is smarter than rushing in.
 
-Multi-agent scenarios are also limited. For complex orchestration, a more practical setup is LangGraph handling state and flow with Pydantic AI as the structured output layer inside each node. If you're weighing the upper-layer framework choice, [Google ADK vs LangGraph agent framework comparison](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026) is useful context first. For a hands-on, step-by-step walkthrough of Pydantic AI itself, see the [Pydantic AI type-safe agent tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026).
+Multi-agent scenarios are also limited. For complex orchestration, a more practical setup is LangGraph handling state and flow with Pydantic AI as the structured output layer inside each node. If you're weighing the upper-layer framework choice, [Google ADK vs LangGraph agent framework comparison](/en/blog/en/google-adk-vs-langgraph-agent-framework-comparison-2026/) is useful context first. For a hands-on, step-by-step walkthrough of Pydantic AI itself, see the [Pydantic AI type-safe agent tutorial](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/).
 
 ## Smolagents: Let the LLM Write the Code
 
@@ -364,7 +364,7 @@ Honestly? I use all three. They're good at different things.
 
 If someone asks "which is best?" my answer is simple. Instructor for structured extraction, Pydantic AI for type-safe agent loops, Smolagents for code-execution agents. That's the whole decision tree.
 
-[The cost reality of AI agents](/en/blog/en/ai-agent-cost-reality) is worth reading alongside this. Whichever library you pick, model selection drives cost dramatically, especially Instructor retry costs and Smolagents code-generation loop overhead. For the broader architectural picture of [production AI agent design principles](/en/blog/en/dena-llm-study-part5-agent-design), that series is a solid starting point for understanding the problems these libraries solve.
+[The cost reality of AI agents](/en/blog/en/ai-agent-cost-reality/) is worth reading alongside this. Whichever library you pick, model selection drives cost dramatically, especially Instructor retry costs and Smolagents code-generation loop overhead. For the broader architectural picture of [production AI agent design principles](/en/blog/en/dena-llm-study-part5-agent-design/), that series is a solid starting point for understanding the problems these libraries solve.
 
 ## When to Use Each, and When to Avoid It
 

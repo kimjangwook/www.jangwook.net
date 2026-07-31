@@ -39,7 +39,7 @@ relatedPosts:
       zh: "了解Anthropic模型从Opus 4.7到Fable 5的演进，有助于掌握新模型中task_budget设计和managed agent架构的变化"
 ---
 
-[Anthropic이 2026년 4월에 Project Glasswing을 통해 Mythos Preview를 공개했을 때](/ko/blog/ko/claude-mythos-preview-glasswing-ai-cybersecurity), 나는 솔직히 이 모델이 언제 일반 공개될지 반신반의했다. SWE-bench 93.9%라는 수치를 들고 나왔는데도 12개 기업에만 제한 배포한다는 결정이 영리한 마케팅인지 진짜 안전 우려인지 확신하기 어려웠다.
+[Anthropic이 2026년 4월에 Project Glasswing을 통해 Mythos Preview를 공개했을 때](/ko/blog/ko/claude-mythos-preview-glasswing-ai-cybersecurity/), 나는 솔직히 이 모델이 언제 일반 공개될지 반신반의했다. SWE-bench 93.9%라는 수치를 들고 나왔는데도 12개 기업에만 제한 배포한다는 결정이 영리한 마케팅인지 진짜 안전 우려인지 확신하기 어려웠다.
 
 그로부터 두 달. 2026년 6월 9일, Anthropic이 <strong>Claude Fable 5</strong>를 일반 공개했다. Mythos의 대중화 버전이다. `claude-fable-5`라는 모델 ID로 API에서 바로 쓸 수 있다.
 
@@ -128,7 +128,7 @@ Fable 5는 ZDR(Zero Data Retention) 설정 조직에서 사용할 수 없다. �
 Fable 5는 Opus 계열과 다른 토크나이저를 쓴다. 동일한 프롬프트가 Fable 5에서 약 30% 더 많은 토큰으로 처리된다. 단순히 요금 단가가 2배인 게 아니라 토큰 수까지 늘어난다. Opus 4.8 기준으로 측정한 `max_tokens` 값을 그대로 쓰면 안 된다. Fable 5로 전환할 때는 `count_tokens` API로 실제 토큰 수를 재측정해야 한다.
 
 <strong>Effort 파라미터로 비용 제어:</strong>
-Fable 5에서 비용을 줄이는 실질적 방법은 `output_config.effort`다. `low`〜`xhigh`까지 단계가 있다. 단순 태스크에는 `low`나 `medium`을 쓰면 토큰 낭비를 줄일 수 있다. [Claude Opus 4.8의 Dynamic Workflows처럼 병렬 에이전트를 운영할 때](/ko/blog/ko/claude-opus-4-8-dynamic-workflows-parallel-agents-guide)는 서브에이전트에 `effort: "low"`를 적용하고 최종 합성 단계에만 `high`를 쓰는 전략이 현실적이다.
+Fable 5에서 비용을 줄이는 실질적 방법은 `output_config.effort`다. `low`〜`xhigh`까지 단계가 있다. 단순 태스크에는 `low`나 `medium`을 쓰면 토큰 낭비를 줄일 수 있다. [Claude Opus 4.8의 Dynamic Workflows처럼 병렬 에이전트를 운영할 때](/ko/blog/ko/claude-opus-4-8-dynamic-workflows-parallel-agents-guide/)는 서브에이전트에 `effort: "low"`를 적용하고 최종 합성 단계에만 `high`를 쓰는 전략이 현실적이다.
 
 ## Fable 5 vs Opus 4.8: 전환 비용 현실적으로 계산하기
 

@@ -159,7 +159,7 @@ PROGRESS.md增长到490行，notes目录积累了大量文档——这是智能�
 
 ## 与先前研究的关联
 
-该实验与[Verdent AI的多智能体SWE-bench结果](/zh/blog/zh/multi-agent-swe-bench-verdent)处于同一脉络。Verdent展示了基准测试中的并行执行效果，而本SQLite项目则实证了<strong>实际系统构建中的多智能体分工</strong>。
+该实验与[Verdent AI的多智能体SWE-bench结果](/zh/blog/zh/multi-agent-swe-bench-verdent/)处于同一脉络。Verdent展示了基准测试中的并行执行效果，而本SQLite项目则实证了<strong>实际系统构建中的多智能体分工</strong>。
 
 核心共同点：
 
@@ -181,7 +181,7 @@ PROGRESS.md增长到490行，notes目录积累了大量文档——这是智能�
 
 该实验同时展示了多智能体开发的潜力与局限。6个智能体在2天内构建出19,000行可工作的数据库引擎令人印象深刻，但超过一半的提交是协调开销这一事实不容忽视。
 
-<strong>并行性很强大，但只有在严格的任务边界下才有效</strong>。[Claude Code智能体团队指南](/zh/blog/zh/claude-agent-teams-guide)中可以查看实践中的智能体团队构建模式。测试不仅仅是质量保证，更是对抗智能体系统熵增的核心机制。
+<strong>并行性很强大，但只有在严格的任务边界下才有效</strong>。[Claude Code智能体团队指南](/zh/blog/zh/claude-agent-teams-guide/)中可以查看实践中的智能体团队构建模式。测试不仅仅是质量保证，更是对抗智能体系统熵增的核心机制。
 
 ## 参考资料
 

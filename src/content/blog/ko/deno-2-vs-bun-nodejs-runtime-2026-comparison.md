@@ -124,7 +124,7 @@ import _ from "npm:lodash@4";
 
 `npm:` 지정자를 쓰면 패키지를 별도로 설치하지 않아도 된다. 첫 실행 시 Deno의 글로벌 캐시에 다운로드되고, 이후에는 오프라인도 가능하다. node_modules가 없다는 게 처음엔 어색하지만, 새 환경에서 클론 후 바로 실행된다는 장점이 크다.
 
-내가 [Bun Shell 스크립트 가이드](/ko/blog/ko/bun-shell-scripting-practical-guide-2026)를 쓸 때는 Bun의 npm 호환성 덕분에 기존 유틸리티 라이브러리를 그대로 가져올 수 있었다. Deno의 `npm:` 방식은 스크립트 단위 실험이나 새 프로젝트에서 더 편리하다.
+내가 [Bun Shell 스크립트 가이드](/ko/blog/ko/bun-shell-scripting-practical-guide-2026/)를 쓸 때는 Bun의 npm 호환성 덕분에 기존 유틸리티 라이브러리를 그대로 가져올 수 있었다. Deno의 `npm:` 방식은 스크립트 단위 실험이나 새 프로젝트에서 더 편리하다.
 
 ## 보안 모델: 이게 진짜 차이다
 
@@ -168,7 +168,7 @@ import { createHash } from "node:crypto";
 import { EventEmitter } from "node:events";
 ```
 
-직접 테스트한 결과, Bun과 Deno 모두 위 코드가 동일하게 동작했다. `crypto.createHash("sha256")`, EventEmitter, `fs.existsSync` 모두 통과. [Hono.js를 Cloudflare Workers에서 실행하는 것처럼](/ko/blog/ko/hono-typescript-api-2026), Hono는 Bun과 Deno 어디서든 동일하게 동작한다.
+직접 테스트한 결과, Bun과 Deno 모두 위 코드가 동일하게 동작했다. `crypto.createHash("sha256")`, EventEmitter, `fs.existsSync` 모두 통과. [Hono.js를 Cloudflare Workers에서 실행하는 것처럼](/ko/blog/ko/hono-typescript-api-2026/), Hono는 Bun과 Deno 어디서든 동일하게 동작한다.
 
 ## TypeScript 지원: 버전 차이에 주목
 
@@ -270,7 +270,7 @@ bun test counter.test.ts    # 특정 파일만
 bun test --watch            # 감시 모드
 ```
 
-`bun:test`는 Jest API와 호환된다. 기존 Jest 테스트를 거의 수정 없이 실행할 수 있는 경우가 많다. [Jest에서 Vitest로 마이그레이션하는 것과 비슷한 맥락으로](/ko/blog/ko/vitest-4-jest-migration-guide-2026), Bun으로 이동할 때도 describe/test/expect 패턴은 그대로다.
+`bun:test`는 Jest API와 호환된다. 기존 Jest 테스트를 거의 수정 없이 실행할 수 있는 경우가 많다. [Jest에서 Vitest로 마이그레이션하는 것과 비슷한 맥락으로](/ko/blog/ko/vitest-4-jest-migration-guide-2026/), Bun으로 이동할 때도 describe/test/expect 패턴은 그대로다.
 
 **Deno 테스트**
 
@@ -419,7 +419,7 @@ CLI 도구를 배포할 때 런타임 설치 없이 단일 바이너리를 배�
 **Deno를 써야 할 때**
 
 - 새 TypeScript 프로젝트. 타입 체크, 기본 샌드박스, 설치 없는 `npm:` 지정자가 한 번에 들어온다.
-- CLI 도구나 짧은 스크립트. cold start가 빠르고 단일 바이너리로 배포하기 좋다. 예를 들어 [Node.js 내장 SQLite로 로컬 데이터 도구를 만드는 작업](/ko/blog/ko/node-sqlite-builtin-practical-guide-2026)을 Deno로 옮기면 권한 플래그로 디스크 접근 범위를 좁힐 수 있다.
+- CLI 도구나 짧은 스크립트. cold start가 빠르고 단일 바이너리로 배포하기 좋다. 예를 들어 [Node.js 내장 SQLite로 로컬 데이터 도구를 만드는 작업](/ko/blog/ko/node-sqlite-builtin-practical-guide-2026/)을 Deno로 옮기면 권한 플래그로 디스크 접근 범위를 좁힐 수 있다.
 - 알 수 없는 서드파티 패키지를 실행하는 서버나 CI/CD. 권한 모델이 실질적인 방어선이 된다.
 
 **Deno를 피해야 할 때**
@@ -427,7 +427,7 @@ CLI 도구를 배포할 때 런타임 설치 없이 단일 바이너리를 배�
 - npm 전용 패키지에 깊게 의존하는 기존 코드베이스. 호환성은 좋아졌지만 일부 네이티브 애드온은 여전히 마찰이 있다.
 - 권한 플래그 관리에 드는 초기 마찰을 팀이 감당하기 어려울 때. 복잡한 앱에서는 `--allow-*` 목록이 길어진다.
 
-타입 안전한 데이터 계층까지 함께 설계한다면 [Drizzle ORM과 TypeScript 조합](/ko/blog/ko/drizzle-orm-typescript-complete-guide-2026)을 두 런타임 모두에서 검증해보는 것도 방법이다. Drizzle는 Bun과 Deno에서 동일하게 동작한다.
+타입 안전한 데이터 계층까지 함께 설계한다면 [Drizzle ORM과 TypeScript 조합](/ko/blog/ko/drizzle-orm-typescript-complete-guide-2026/)을 두 런타임 모두에서 검증해보는 것도 방법이다. Drizzle는 Bun과 Deno에서 동일하게 동작한다.
 
 ## 출처와 공식 문서
 

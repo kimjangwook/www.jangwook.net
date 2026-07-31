@@ -36,7 +36,7 @@ Google I/O 2026이 끝나고 딱 열흘이 지났다. 매년 그렇듯 발표 �
 
 ## Gemini Managed Agents가 뭔지 먼저 정리하자
 
-Anthropic이 먼저 [Claude Managed Agents](/ko/blog/ko/anthropic-claude-opus-4-7-managed-agents-2026)를 선보였고, OpenAI도 비슷한 방향으로 움직이고 있다. Google은 이번 Google I/O 2026에서 `Gemini API Managed Agents`를 공식 공개했다.
+Anthropic이 먼저 [Claude Managed Agents](/ko/blog/ko/anthropic-claude-opus-4-7-managed-agents-2026/)를 선보였고, OpenAI도 비슷한 방향으로 움직이고 있다. Google은 이번 Google I/O 2026에서 `Gemini API Managed Agents`를 공식 공개했다.
 
 한 줄 요약: <strong>SDK 안에 `client.interactions`라는 네임스페이스가 생겼고, `create()` 한 번 호출로 에이전트를 실행할 수 있다.</strong>
 
@@ -264,7 +264,7 @@ response = client.interactions.create(
 
 <strong>과금 구조를 확인하기 어렵다.</strong> Claude Managed Agents는 `task_budget`을 명시적으로 설정할 수 있고 비용이 상대적으로 예측 가능하다. Gemini Managed Agents의 인터랙션당 비용은 현재 공개 문서에서 명확하게 제시되어 있지 않다. EXPERIMENTAL 상태인 만큼 과금 구조도 확정되지 않은 것으로 보인다. 프로덕션 비용 계획을 세우기 어렵다는 게 지금 시점의 현실적인 단점이다.
 
-[AI 에이전트 비용 현실](/ko/blog/ko/ai-agent-cost-reality)에서 다뤘던 것처럼, 에이전트 비용의 핵심은 얼마나 도구를 호출하고 얼마나 많은 토큰을 쓰느냐다. Managed Agents는 이 실행 과정이 블랙박스에 가까워서 비용 제어가 더 어려울 수 있다.
+[AI 에이전트 비용 현실](/ko/blog/ko/ai-agent-cost-reality/)에서 다뤘던 것처럼, 에이전트 비용의 핵심은 얼마나 도구를 호출하고 얼마나 많은 토큰을 쓰느냐다. Managed Agents는 이 실행 과정이 블랙박스에 가까워서 비용 제어가 더 어려울 수 있다.
 
 <strong>SDK 성숙도가 아직 다르다.</strong> Anthropic SDK는 Managed Agents 관련 기능이 꽤 정리되어 있고 에러 메시지도 명확하다. google-genai SDK의 interactions 네임스페이스는 현재 EXPERIMENTAL 워닝이 붙어 있고, 파라미터 이름이 공식 블로그 설명과 실제 구현이 다른 부분이 있다(environment_id vs previous_interaction_id). 이건 빠르게 출시하면서 생긴 간극으로 보이고, 조만간 정리될 것 같다.
 
@@ -291,7 +291,7 @@ response = client.interactions.create(
 
 첫째, EXPERIMENTAL 상태다. SDK 자체가 경고를 출력한다. API 인터페이스가 다음 버전에서 바뀔 수 있다는 뜻이다. 주요 파라미터 이름이 이미 외부 문서와 다른 상황이니 이 가능성은 낮지 않다.
 
-둘째, 비용 예측이 불가하다. 에이전트가 몇 번의 도구 호출을 하고 얼마를 쓸지 통제하기 어렵다. [AI 에이전트 프레임워크를 선택할 때](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production) 비용 제어 가능성을 중요한 기준으로 봤는데, 지금 Gemini Managed Agents는 이 기준에서 약하다.
+둘째, 비용 예측이 불가하다. 에이전트가 몇 번의 도구 호출을 하고 얼마를 쓸지 통제하기 어렵다. [AI 에이전트 프레임워크를 선택할 때](/ko/blog/ko/ai-agent-framework-comparison-2026-langgraph-crewai-dapr-production/) 비용 제어 가능성을 중요한 기준으로 봤는데, 지금 Gemini Managed Agents는 이 기준에서 약하다.
 
 셋째, 공개된 도구 수준이 발표 자료보다 제한적이다. Linux 샌드박스 접근, 4코어/16GB 환경 같은 내용이 현재 공개 API에서는 확인되지 않는다. 발표 내용 전체를 액면 그대로 받아들이면 실제 경험과 차이가 생긴다.
 

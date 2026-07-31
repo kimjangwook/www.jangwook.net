@@ -358,9 +358,9 @@ Files APIが有利な状況：
 
 ## Message Batches APIとの組み合わせ
 
-[Anthropic Message Batches API](/ja/blog/ja/anthropic-message-batches-api-production-guide)は大量リクエストを非同期で処理しながらコストを50%削減する。Files APIと組み合わせると2つの削減効果を同時に得られる。
+[Anthropic Message Batches API](/ja/blog/ja/anthropic-message-batches-api-production-guide/)は大量リクエストを非同期で処理しながらコストを50%削減する。Files APIと組み合わせると2つの削減効果を同時に得られる。
 
-ファイル100件に質問10個で計1,000件のAPIリクエストだ。Files APIなしでは各リクエストでドキュメント全体を送信する必要がある。両APIを組み合わせるとファイル再転送削減＋バッチ50%割引を同時に適用できる。[LangfuseでLLMコストを追跡](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026)すると、実際にどれだけ節約できたかを数字で確認できる。
+ファイル100件に質問10個で計1,000件のAPIリクエストだ。Files APIなしでは各リクエストでドキュメント全体を送信する必要がある。両APIを組み合わせるとファイル再転送削減＋バッチ50%割引を同時に適用できる。[LangfuseでLLMコストを追跡](/ja/blog/ja/langfuse-self-hosted-llm-tracing-setup-guide-2026/)すると、実際にどれだけ節約できたかを数字で確認できる。
 
 ---
 

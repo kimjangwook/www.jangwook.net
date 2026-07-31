@@ -167,7 +167,7 @@ A genuine agent <strong>continues toward the overall goal even under partial fai
 
 <strong>Question:</strong> When resource constraints are in place, does the system recognize trade-offs?
 
-A genuine agent adjusts its strategy to <strong>produce the best result within given constraints</strong> — time, tokens, [API costs](/en/blog/en/ai-agent-cost-reality). An agent-washed product runs the same way regardless of resource limitations.
+A genuine agent adjusts its strategy to <strong>produce the best result within given constraints</strong> — time, tokens, [API costs](/en/blog/en/ai-agent-cost-reality/). An agent-washed product runs the same way regardless of resource limitations.
 
 ```python
 # Genuine agent: resource awareness
@@ -196,7 +196,7 @@ A genuine agent uses <strong>transfer learning</strong> to handle novel domain t
 
 <strong>Question:</strong> Can the system explain why it chose a particular action?
 
-A genuine agent provides <strong>[transparent traces](/en/blog/en/ai-agent-observability-production-guide) of its decision-making process</strong>. An agent-washed product operates as a black box or returns only pre-written explanations.
+A genuine agent provides <strong>[transparent traces](/en/blog/en/ai-agent-observability-production-guide/) of its decision-making process</strong>. An agent-washed product operates as a black box or returns only pre-written explanations.
 
 ```mermaid
 graph TD

@@ -50,7 +50,7 @@ This article is based on real experiments I ran with Bun 1.3.14. Some things in 
 
 ## What Bun Shell Is and Why It's Worth Knowing
 
-Bun is a JavaScript runtime that also serves as a package manager, bundler, and test runner. The entire project is about collapsing a fragmented ecosystem into a single tool. [Just as Python's uv consolidates pip, pyenv, and poetry into one binary](/en/blog/en/uv-python-ai-development-setup-guide-2026), Bun merges npm/yarn/pnpm, a test runner, and a bundler into one.
+Bun is a JavaScript runtime that also serves as a package manager, bundler, and test runner. The entire project is about collapsing a fragmented ecosystem into a single tool. [Just as Python's uv consolidates pip, pyenv, and poetry into one binary](/en/blog/en/uv-python-ai-development-setup-guide-2026/), Bun merges npm/yarn/pnpm, a test runner, and a bundler into one.
 
 Bun Shell is the natural extension of this philosophy into shell scripting. Install `bun`, and you can use the `$` template literal to run shell commands directly inside TypeScript. No extra dependencies.
 
@@ -358,7 +358,7 @@ My conclusion: **if your project is already Bun-based, Bun Shell is a natural fi
 - You have complex bash scripts with unknown bash-isms that might not translate.
 - `zx` already works and your team is comfortable with it.
 
-I'd push back on the framing that Bun Shell is "better than zx." In terms of ecosystem maturity and download numbers, zx is ahead. Bun Shell is the right choice for Bun projects specifically. It isn't a universal upgrade recommendation. If you're still deciding on the runtime itself, my [Deno 2 vs Bun vs Node.js comparison](/en/blog/en/deno-2-vs-bun-nodejs-runtime-2026-comparison) goes deeper into that decision, and it's worth reading before you lock in a tool.
+I'd push back on the framing that Bun Shell is "better than zx." In terms of ecosystem maturity and download numbers, zx is ahead. Bun Shell is the right choice for Bun projects specifically. It isn't a universal upgrade recommendation. If you're still deciding on the runtime itself, my [Deno 2 vs Bun vs Node.js comparison](/en/blog/en/deno-2-vs-bun-nodejs-runtime-2026-comparison/) goes deeper into that decision, and it's worth reading before you lock in a tool.
 
 And honestly, the missing `.stdin()` API bothers me. Once that's stable, stdin-based pipe processing will be significantly cleaner. There's a workaround for now, but it adds friction.
 
@@ -417,7 +417,7 @@ Without `process.exit(1)`, a failed command might silently pass the pipeline. Th
 
 After actually installing and running it, Bun Shell's developer experience is better than I expected. Automatic variable escaping, the `.nothrow()` pattern, and `.lines()` for line-by-line output are thoughtful details you don't see in zx.
 
-That said, it's still 1.x and some APIs are not stable. I'd recommend validating thoroughly in your actual environment before putting Bun Shell scripts into production CI/CD. The same applies if you're integrating with [Claude Code hooks or other automation pipelines](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent).
+That said, it's still 1.x and some APIs are not stable. I'd recommend validating thoroughly in your actual environment before putting Bun Shell scripts into production CI/CD. The same applies if you're integrating with [Claude Code hooks or other automation pipelines](/en/blog/en/claude-code-masterclass-series-1-prompt-to-agent/).
 
 Bun is moving fast and the Shell API will stabilize. There's no urgent reason to drop zx, but for new Bun projects, the built-in shell deserves a first look.
 

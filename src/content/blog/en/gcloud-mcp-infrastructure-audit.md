@@ -96,11 +96,11 @@ Key advantages:
 2. <strong>Context awareness</strong>: AI understands and analyzes relationships between resources
 3. <strong>Automated reports</strong>: Generates structured analysis results and improvement recommendations
 
-For MCP usage in AWS environments, see [AWS MCP Server GA Practical Guide](/en/blog/en/aws-mcp-server-ga-practical-guide-2026) for CloudWatch and IAM agent integration.
+For MCP usage in AWS environments, see [AWS MCP Server GA Practical Guide](/en/blog/en/aws-mcp-server-ga-practical-guide-2026/) for CloudWatch and IAM agent integration.
 
 ### Parallel Agent Architecture
 
-Instead of a single agent sequentially checking all services, I applied a [parallel sub-agent pattern](/en/blog/en/claude-agent-sdk-subagents-orchestration-tutorial-2026):
+Instead of a single agent sequentially checking all services, I applied a [parallel sub-agent pattern](/en/blog/en/claude-agent-sdk-subagents-orchestration-tutorial-2026/):
 
 ```mermaid
 flowchart TB
@@ -361,7 +361,7 @@ gcloud run services update my-service \
   --update-secrets=OPENAI_API_KEY=openai-api-key:latest
 ```
 
-AI agents can automatically generate these remediation commands and execute them after approval. For context on the scale of secret exposure risks, see [How AI Coding Agents Leaked 29 Million Secrets](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security).
+AI agents can automatically generate these remediation commands and execute them after approval. For context on the scale of secret exposure risks, see [How AI Coding Agents Leaked 29 Million Secrets](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security/).
 
 ### Example: Firewall Rule Hardening
 

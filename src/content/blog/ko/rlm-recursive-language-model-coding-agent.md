@@ -53,7 +53,7 @@ relatedPosts:
 
 LLM을 활용한 코딩 에이전트를 운영하다 보면 반드시 부딪히는 벽이 있다. <strong>컨텍스트 윈도우의 한계</strong>다. 128K 토큰이든 200K 토큰이든, 대규모 코드베이스를 다루다 보면 모델이 중요한 정보를 놓치기 시작한다. 이른바 "Context Rot" — 컨텍스트가 길어질수록 성능이 급격히 떨어지는 현상이다.
 
-MIT에서 발표한 <strong>Recursive Language Models(RLM)</strong> 논문(arXiv:2512.24601)은 이 문제에 대한 근본적인 해법을 제시한다. 그리고 최근 Tenobrus라는 개발자가 이 아이디어를 [Claude Code](/ko/blog/ko/claude-managed-agents-production-deployment-guide)에 직접 구현해서 화제가 되었다. 코딩 에이전트 안에서 RLM을 "스킬"로 구현한 것이다.
+MIT에서 발표한 <strong>Recursive Language Models(RLM)</strong> 논문(arXiv:2512.24601)은 이 문제에 대한 근본적인 해법을 제시한다. 그리고 최근 Tenobrus라는 개발자가 이 아이디어를 [Claude Code](/ko/blog/ko/claude-managed-agents-production-deployment-guide/)에 직접 구현해서 화제가 되었다. 코딩 에이전트 안에서 RLM을 "스킬"로 구현한 것이다.
 
 AI로 시스템을 만드는 입장에서 이 접근법이 왜 중요한지, 그리고 실무에서 어떻게 활용할 수 있는지 분석한다.
 
@@ -154,7 +154,7 @@ graph TB
 
 ### 멀티 에이전트 vs RLM
 
-최근 AI 업계에서는 단일 모델의 한계를 극복하기 위해 [<strong>멀티 에이전트 시스템</strong>](/ko/blog/ko/multi-agent-orchestration-routing)이 주목받고 있다. 여러 모델이 협업하는 방식이다.
+최근 AI 업계에서는 단일 모델의 한계를 극복하기 위해 [<strong>멀티 에이전트 시스템</strong>](/ko/blog/ko/multi-agent-orchestration-routing/)이 주목받고 있다. 여러 모델이 협업하는 방식이다.
 
 RLM은 이와 다른 접근이다. <strong>같은 모델이 자기 자신을 재귀적으로 호출</strong>하는 것이기 때문에, 모델 간 커뮤니케이션 오버헤드가 없고, 일관된 "사고 방식"을 유지할 수 있다.
 
@@ -223,7 +223,7 @@ claude --task "다음 요약들을 기반으로 전체 아키텍처를 분석해
 3. <strong>Phase 3</strong>: 디버깅 워크플로우에 통합
 4. <strong>Phase 4</strong>: 전체 개발 파이프라인에 적용
 
-에이전트 아키텍처 최적화의 심층 분석은 [딥 에이전트 아키텍처 최적화 가이드](/ko/blog/ko/deep-agents-architecture-optimization)에서 확인하면 된다.
+에이전트 아키텍처 최적화의 심층 분석은 [딥 에이전트 아키텍처 최적화 가이드](/ko/blog/ko/deep-agents-architecture-optimization/)에서 확인하면 된다.
 
 ## 논문의 시사점: 향후 전망
 

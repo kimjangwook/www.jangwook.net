@@ -59,7 +59,7 @@ relatedPosts:
 
 ## 引言：成本如滚雪球
 
-这段旅程始于为博客添加[相关文章推荐功能](/zh/blog/zh/ai-content-recommendation-system)。最初的想法很简单："让LLM查看文章内容，然后找出相似的文章就行了。"但是，为13篇文章生成推荐就消耗了<strong>78,000个令牌</strong>，耗时<strong>2.7分钟</strong>。
+这段旅程始于为博客添加[相关文章推荐功能](/zh/blog/zh/ai-content-recommendation-system/)。最初的想法很简单："让LLM查看文章内容，然后找出相似的文章就行了。"但是，为13篇文章生成推荐就消耗了<strong>78,000个令牌</strong>，耗时<strong>2.7分钟</strong>。
 
 如果文章增加到30篇呢？180,000个令牌，约6.5分钟。如果达到100篇呢？接近600,000个令牌，超过20分钟。这是一个缺乏可扩展性的系统。
 
@@ -535,7 +535,7 @@ graph LR
 - 快速响应时间很重要
 - <strong>成本最小化至关重要</strong>
 
-我们的推荐系统与[AI代理协作模式](/zh/blog/zh/ai-agent-collaboration-patterns)的角色分离原则一脉相承：
+我们的推荐系统与[AI代理协作模式](/zh/blog/zh/ai-agent-collaboration-patterns/)的角色分离原则一脉相承：
 1. <strong>分析（LLM）</strong>：非结构化文本 → 结构化元数据
 2. <strong>推荐（算法）</strong>：结构化元数据 → 相似度分数
 
@@ -857,9 +857,9 @@ LLM令人惊叹。但并非所有问题都需要LLM。有时候，经过验证�
 ---
 
 <strong>相关文章：</strong>
-- [使用Claude LLM构建智能内容推荐系统](/ko/blog/ko/ai-content-recommendation-system) - 初始基于LLM的推荐系统构建
-- [利用LLM和Claude Code实现博客自动化](/ko/blog/ko/llm-blog-automation) - 博客自动化整体系统
-- [Claude Code最佳实践](/ko/blog/ko/claude-code-best-practices) - AI开发生产力优化
+- [使用Claude LLM构建智能内容推荐系统](/ko/blog/ko/ai-content-recommendation-system/) - 初始基于LLM的推荐系统构建
+- [利用LLM和Claude Code实现博客自动化](/ko/blog/ko/llm-blog-automation/) - 博客自动化整体系统
+- [Claude Code最佳实践](/ko/blog/ko/claude-code-best-practices/) - AI开发生产力优化
 
 <strong>参考资料：</strong>
 - [Jaccard相似度](https://en.wikipedia.org/wiki/Jaccard_index)

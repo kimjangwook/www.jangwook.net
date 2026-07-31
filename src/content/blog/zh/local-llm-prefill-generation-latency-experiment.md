@@ -104,7 +104,7 @@ def call(prompt):
 
 有意思的是prefill的<strong>速度</strong>(tok/s)。上下文短时是198 tok/s，接近1万token时降到177，慢了约10%。也就是说，处理单个token的成本本身也随上下文变长而升高。据我理解，注意力对序列长度是平方级开销，所以在长文末尾读一个词、同时回看前面全部，比在短文里读一个词更重。因此prefill比"与token数成正比"略陡一些。
 
-这里有第一条实战经验。本地代理响应慢的真凶，通常不是生成速度，而是prefill。塞进五份RAG文档，或把前面20轮对话整段重发，模型还没写出第一个字，几十秒就没了。在云端API上，这笔成本会[按token计费，而token数又随数据格式变化](/zh/blog/zh/llm-token-cost-data-format-experiment)；在本地，它原封不动地记在我的时间账上。
+这里有第一条实战经验。本地代理响应慢的真凶，通常不是生成速度，而是prefill。塞进五份RAG文档，或把前面20轮对话整段重发，模型还没写出第一个字，几十秒就没了。在云端API上，这笔成本会[按token计费，而token数又随数据格式变化](/zh/blog/zh/llm-token-cost-data-format-experiment/)；在本地，它原封不动地记在我的时间账上。
 
 如果用流式UI，可以把这段prefill时间理解为用户盯着空白屏幕或加载转圈的时间。一旦token开始流出，后面以每秒16个的速度填得还算快。问题在于到第一个字符之前。上下文越长，用户要忍受的"是不是卡住了"式沉默就越久。决定本地聊天机器人体感响应性的，是这段沉默的长度，而非token流出的速度。在9,700 token上下文下55秒什么都不出，那就不是一个能拿来对话的工具。
 
@@ -143,7 +143,7 @@ def call(prompt):
 
 <strong>3. 上下文窗口"放得下"不等于"用得了"。</strong> 模型支持32k，但在我的笔记本上哪怕1万token，第一个token也要55秒。要做交互式使用，应以实测的prefill时间、而非支持上限来定上下文预算。我在本地追求对话式响应时，会把上下文压在几千token以内。
 
-<strong>4. 实在需要长上下文，就只付一次prefill再复用。</strong> 如果是围绕同一份文档反复提问的RAG，把文档放在提示词前方的固定位置，只在后面换问题。第一个问题付全额prefill，后续问题靠缓存几乎跳过prefill。[把本地模型接到MCP服务器来搭代理](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp)时，守住这个顺序，也能避免每次工具调用往返都重新prefill系统提示。
+<strong>4. 实在需要长上下文，就只付一次prefill再复用。</strong> 如果是围绕同一份文档反复提问的RAG，把文档放在提示词前方的固定位置，只在后面换问题。第一个问题付全额prefill，后续问题靠缓存几乎跳过prefill。[把本地模型接到MCP服务器来搭代理](/zh/blog/zh/local-llm-private-mcp-server-gemma4-fastmcp/)时，守住这个顺序，也能避免每次工具调用往返都重新prefill系统提示。
 
 ## 我实际改动的提示词
 
@@ -175,7 +175,7 @@ def call(prompt):
 
 ## 这次测量的边界
 
-诚实地划清边界。这是一台MacBook、一个模型(`gemma4:e4b`)、Ollama这一特定运行时跑出的数字。绝对值(55秒、16 tok/s)会随GPU、内存、量化、运行时整体改变。换更大的模型，或用上[把输出按类型接收的结构化输出](/zh/blog/zh/ollama-structured-outputs-pydantic-local-llm-guide-2026)，又会引入别的变量。
+诚实地划清边界。这是一台MacBook、一个模型(`gemma4:e4b`)、Ollama这一特定运行时跑出的数字。绝对值(55秒、16 tok/s)会随GPU、内存、量化、运行时整体改变。换更大的模型，或用上[把输出按类型接收的结构化输出](/zh/blog/zh/ollama-structured-outputs-pydantic-local-llm-guide-2026/)，又会引入别的变量。
 
 我信任的不是绝对值，而是<strong>形状</strong>。prefill几乎与上下文成正比增长，生成略微变慢，相同前缀靠缓存几乎免费。这三条趋势在任何环境里方向都应一致。并发请求下缓存如何竞争、量化级别对prefill速度有何影响，我还没测，留作下一次实验。
 

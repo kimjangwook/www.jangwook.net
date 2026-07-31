@@ -51,7 +51,7 @@ relatedPosts:
 
 ## 概述
 
-在GPU计算的世界中，NVIDIA的CUDA是事实上的标准。但这同时也意味着<strong>供应商锁定（vendor lock-in）</strong>——用CUDA编写的代码只能在NVIDIA GPU上运行。正如[NVIDIA DGX Spark的CUDA兼容性问题](/zh/blog/zh/nvidia-dgx-spark-cuda-compatibility)所示，这种硬件依赖的现实代价不可忽视。
+在GPU计算的世界中，NVIDIA的CUDA是事实上的标准。但这同时也意味着<strong>供应商锁定（vendor lock-in）</strong>——用CUDA编写的代码只能在NVIDIA GPU上运行。正如[NVIDIA DGX Spark的CUDA兼容性问题](/zh/blog/zh/nvidia-dgx-spark-cuda-compatibility/)所示，这种硬件依赖的现实代价不可忽视。
 
 <strong>BarraCUDA</strong>是一个为打破这堵墙而诞生的开源编译器。它接收`.cu`文件，直接编译为AMD RDNA 3（GFX11）机器码。用15,000行C99编写，零LLVM依赖，也不需要HIP转换层。
 
@@ -127,7 +127,7 @@ BarraCUDA的出现不仅是技术成就，更暗示着GPU生态系统的结构�
 
 ### 挑战NVIDIA垄断
 
-在当前GPU计算市场中，CUDA的地位是绝对的。绝大多数AI/ML工作负载基于CUDA，没有NVIDIA GPU就无法运行。正如[GPT-4o退役揭示的模型依赖风险](/zh/blog/zh/gpt4o-retirement-model-dependency-risk)，过度依赖单一技术会带来长期战略风险。BarraCUDA正在撼动这一格局。
+在当前GPU计算市场中，CUDA的地位是绝对的。绝大多数AI/ML工作负载基于CUDA，没有NVIDIA GPU就无法运行。正如[GPT-4o退役揭示的模型依赖风险](/zh/blog/zh/gpt4o-retirement-model-dependency-risk/)，过度依赖单一技术会带来长期战略风险。BarraCUDA正在撼动这一格局。
 
 ### 扩展AMD GPU的可能性
 
@@ -135,7 +135,7 @@ AMD的ROCm/HIP生态系统在增长，但转换现有CUDA代码时仍存在摩�
 
 ### 开源的力量
 
-用15,000行C99实现CUDA编译器这一事实本身，就展示了开源社区的实力。在Hacker News上获得66分，吸引了开发者社区的关注。[AI编写的C编译器CCC与GCC对比分析](/zh/blog/zh/ccc-vs-gcc-ai-compiled-c-compiler)同样表明，小规模开源编译器项目正获得越来越多的关注。
+用15,000行C99实现CUDA编译器这一事实本身，就展示了开源社区的实力。在Hacker News上获得66分，吸引了开发者社区的关注。[AI编写的C编译器CCC与GCC对比分析](/zh/blog/zh/ccc-vs-gcc-ai-compiled-c-compiler/)同样表明，小规模开源编译器项目正获得越来越多的关注。
 
 ## 当前局限与展望
 

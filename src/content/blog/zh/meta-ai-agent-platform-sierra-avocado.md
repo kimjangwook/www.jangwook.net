@@ -59,7 +59,7 @@ relatedPosts:
 
 Meta正在从一家社交媒体公司向<strong>AI Agent平台企业</strong>进行重大转型。这一自2025年末开始加速的战略可以用三个关键词来概括：代表外部Agent合作伙伴关系的<strong>Sierra</strong>、下一代前沿模型内部代号<strong>Avocado</strong>、以及代表高级推理能力的<strong>Big Brain</strong>。
 
-本文分析Meta的AI战略如何变化，以及这对开发者和企业意味着什么。如需了解企业AI Agent采用趋势，可参考[企业AI导入自上而下战略](/zh/blog/zh/enterprise-ai-adoption-topdown)。
+本文分析Meta的AI战略如何变化，以及这对开发者和企业意味着什么。如需了解企业AI Agent采用趋势，可参考[企业AI导入自上而下战略](/zh/blog/zh/enterprise-ai-adoption-topdown/)。
 
 ## 从Llama到Avocado — 战略大转型
 
@@ -199,7 +199,7 @@ graph TB
 | <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
 | <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
 
-关于Anthropic的Agent标准化方法，可参阅[Anthropic Agent技能标准](/zh/blog/zh/anthropic-agent-skills-standard)。
+关于Anthropic的Agent标准化方法，可参阅[Anthropic Agent技能标准](/zh/blog/zh/anthropic-agent-skills-standard/)。
 
 ## 结论
 

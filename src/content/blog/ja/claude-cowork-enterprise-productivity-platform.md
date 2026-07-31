@@ -139,7 +139,7 @@ Claude CoworkはClaudeデスクトップアプリ上で動作し、<strong>Excel
 
 ### 2. ベンダーロックインとプラットフォーム戦略
 
-AnthropicのCowork戦略は明確です — <strong>MCPを通じたオープンエコシステムの構築</strong>です。MCPがLinux Foundationに寄贈されオープンスタンダードとなった状況で、Coworkは「標準を最もよく実装したプロダクト」のポジションを先取りしようとしています。[A2AとMCPを組み合わせたハイブリッドマルチエージェントアーキテクチャ](/ja/blog/ja/a2a-mcp-hybrid-architecture-production-guide)を見ると、この標準が実際にどう機能するかがよりリアルにわかります。
+AnthropicのCowork戦略は明確です — <strong>MCPを通じたオープンエコシステムの構築</strong>です。MCPがLinux Foundationに寄贈されオープンスタンダードとなった状況で、Coworkは「標準を最もよく実装したプロダクト」のポジションを先取りしようとしています。[A2AとMCPを組み合わせたハイブリッドマルチエージェントアーキテクチャ](/ja/blog/ja/a2a-mcp-hybrid-architecture-production-guide/)を見ると、この標準が実際にどう機能するかがよりリアルにわかります。
 
 比較:
 
@@ -205,7 +205,7 @@ Coworkのローンチをより広い文脈で見ると、Anthropicの戦略は3�
 2. <strong>エンタープライズ拡張</strong>（2026年初頭）: Coworkで非開発職種までAIエージェントを拡張
 3. <strong>プラットフォームエコシステム</strong>（2026年〜）: MCPオープンスタンダード + Plugin Marketplaceでサードパーティエコシステムを構築
 
-この戦略はSlackが開発チーム → 全社コミュニケーションツールへ進化した経路と類似しています。違いはCoworkが<strong>エージェンティックAIの実行力</strong>を提供するという点です — 単にメッセージをやり取りするのではなく、実際の業務を代行できます。[AnthropicのManaged AgentsとOpus 4.7の分析](/ja/blog/ja/anthropic-claude-opus-4-7-managed-agents-2026)を読むと、このエージェンティックAI戦略の全体像がより鮮明になります。
+この戦略はSlackが開発チーム → 全社コミュニケーションツールへ進化した経路と類似しています。違いはCoworkが<strong>エージェンティックAIの実行力</strong>を提供するという点です — 単にメッセージをやり取りするのではなく、実際の業務を代行できます。[AnthropicのManaged AgentsとOpus 4.7の分析](/ja/blog/ja/anthropic-claude-opus-4-7-managed-agents-2026/)を読むと、このエージェンティックAI戦略の全体像がより鮮明になります。
 
 ## まとめ
 

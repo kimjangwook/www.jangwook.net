@@ -65,7 +65,7 @@ APIを直接叩いてみたら、予想と違う結果が出た。
 
 もう一つ：`gemini-2.5-flash-lite`は入力$0.10、出力$0.40だ。一見はるかに安く見えるが、常にそうとは限らない。この点はStep 3で実験結果とともに説明する。
 
-セットアップから始めよう。[LLM API料金比較2026](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek)でも確認できるが、今日はGemini 2.5 Flashに集中する。
+セットアップから始めよう。[LLM API料金比較2026](/ja/blog/ja/llm-api-pricing-comparison-2026-gpt5-claude-gemini-deepseek/)でも確認できるが、今日はGemini 2.5 Flashに集中する。
 
 ```bash
 pip install google-genai
@@ -196,7 +196,7 @@ client.caches.delete(cache.name)
 - RAGで検索された文書を複数の質問にまたがって再利用するとき
 - コードベースやマニュアル全体をコンテキストとして使うコーディングアシスタント
 
-[Claude APIのPrompt Caching](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide)と概念は同じだが実装の詳細が異なる。Anthropicはキャッシュマーカーを明示的に指定するのに対し、Geminiはキャッシュオブジェクトを別途作成する方式だ。
+[Claude APIのPrompt Caching](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide/)と概念は同じだが実装の詳細が異なる。Anthropicはキャッシュマーカーを明示的に指定するのに対し、Geminiはキャッシュオブジェクトを別途作成する方式だ。
 
 ## Step 3: Flash vs Flash-Lite — 常にLiteが安いわけではない
 
@@ -235,13 +235,13 @@ response = client.models.generate_content(
 | 複雑な推論 | Flash | Thinking品質の差 |
 | 大量バッチ処理 | Batch API + 判断 | 50%割引適用後に再計算 |
 
-タスク別モデル選択は[異種LLMアーキテクチャのコスト最適化](/ja/blog/ja/heterogeneous-llm-agent-fleet-cost-optimization)で扱うマルチモデルルーティングパターンと接続する。
+タスク別モデル選択は[異種LLMアーキテクチャのコスト最適化](/ja/blog/ja/heterogeneous-llm-agent-fleet-cost-optimization/)で扱うマルチモデルルーティングパターンと接続する。
 
 ## Step 4: Batch APIで非緊急タスクを50%割引
 
 リアルタイム応答が不要なタスクがあればBatch APIを使える。Googleはバッチ処理に50%割引を提供している——Anthropic Message Batches APIと同じ考え方だ。
 
-[Anthropic Message Batches API実践ガイド](/ja/blog/ja/anthropic-message-batches-api-production-guide)でバッチ処理パターンを詳しく説明したが、Geminiも同じ原理だ。
+[Anthropic Message Batches API実践ガイド](/ja/blog/ja/anthropic-message-batches-api-production-guide/)でバッチ処理パターンを詳しく説明したが、Geminiも同じ原理だ。
 
 Gemini Batch APIの使用例：
 

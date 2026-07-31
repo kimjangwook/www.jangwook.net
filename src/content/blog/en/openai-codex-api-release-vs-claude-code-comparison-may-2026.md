@@ -73,7 +73,7 @@ The April 16 update expanded this significantly. Looking at the official changel
 
 <strong>90+ plugins.</strong> Slack, Jira, GitHub, and many more external integrations were added in this update. MCP server support also improved.
 
-<strong>GPT-5.5 integration (April 23).</strong> GPT-5.5 became Codex's default model a week after the feature update. OpenAI says it's better at "multi-step tasks, planning, tool use, and checking its own work." My [GPT-5.5 release analysis](/en/blog/en/openai-gpt-5-5-release-claude-comparison-april-2026) covers the model itself in more depth.
+<strong>GPT-5.5 integration (April 23).</strong> GPT-5.5 became Codex's default model a week after the feature update. OpenAI says it's better at "multi-step tasks, planning, tool use, and checking its own work." My [GPT-5.5 release analysis](/en/blog/en/openai-gpt-5-5-release-claude-comparison-april-2026/) covers the model itself in more depth.
 
 The direction is clear. Codex is moving from "write code for you" to "an agent workspace where work continues while you're away." The April changelog uses the phrase "full agent workspace" explicitly.
 
@@ -125,15 +125,15 @@ There are also hidden time costs in async work. When a Codex PR comes back wrong
 
 My main work — blog automation, agent pipeline development, script building — relies on quick feedback loops and iterative refinement. Requirements shift mid-session; I need to see partial results and change direction.
 
-The Codex scenario that tempts me is **async batch PR work**: "Fix the frontmatter format across all 10 blog posts, I'll be in a meeting." For tasks that are atomic, don't need local environment access, and produce reviewable PRs, the async model makes sense. I've built [parallel Claude Code sessions using Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree) that handle concurrency differently, but I can see how Codex's model would appeal to others.
+The Codex scenario that tempts me is **async batch PR work**: "Fix the frontmatter format across all 10 blog posts, I'll be in a meeting." For tasks that are atomic, don't need local environment access, and produce reviewable PRs, the async model makes sense. I've built [parallel Claude Code sessions using Git Worktree](/en/blog/en/claude-code-parallel-sessions-git-worktree/) that handle concurrency differently, but I can see how Codex's model would appeal to others.
 
 What doesn't fit my setup: the existing automation infrastructure here (hooks, custom commands, slash skills) would need to be rebuilt for Codex. That's not a quality judgment — it's just switching costs against an already-working system.
 
-I also keep the stability history in mind. Five months ago, the [GPT-5.3 Codex rollout was paused](/en/blog/en/gpt53-codex-rollout-pause) due to platform reliability issues. This April update is significantly larger in scope. Cloud agent services fail differently than local CLIs — when the service is down, you can't work. Claude Code running locally keeps editing files even without internet. That resilience difference is easy to dismiss until the service goes down the night before a deadline.
+I also keep the stability history in mind. Five months ago, the [GPT-5.3 Codex rollout was paused](/en/blog/en/gpt53-codex-rollout-pause/) due to platform reliability issues. This April update is significantly larger in scope. Cloud agent services fail differently than local CLIs — when the service is down, you can't work. Claude Code running locally keeps editing files even without internet. That resilience difference is easy to dismiss until the service goes down the night before a deadline.
 
 ## My Take at May 2026
 
-In the [Cursor 3 vs Claude Code vs Windsurf comparison](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026), I reached a similar conclusion: the question isn't which tool is better, but which workflow it fits. Codex and Claude Code have enough architectural overlap to appear comparable but are optimized for different development patterns.
+In the [Cursor 3 vs Claude Code vs Windsurf comparison](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026/), I reached a similar conclusion: the question isn't which tool is better, but which workflow it fits. Codex and Claude Code have enough architectural overlap to appear comparable but are optimized for different development patterns.
 
 Codex's April update is real progress. The direction toward a full async agent workspace is clear, GPT-5.5 brings genuine model improvements, and the 90+ plugins make it more practical across diverse tech stacks. For teams already on ChatGPT Business wanting to delegate well-scoped async tasks, this is the right time to evaluate it seriously.
 

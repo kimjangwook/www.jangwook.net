@@ -74,7 +74,7 @@ relatedPosts:
 
 ### LLMを活用した合成消費者の登場
 
-LLMは様々な人口統計学的特性を持つ「合成消費者」をシミュレートできる可能性を示しました。[AIエージェントにペルソナを付与した際の心理的効果](/ja/blog/ja/ai-agent-persona-analysis)は120以上の研究で実証されており、合成消費者プロファイルの設計にも同じ原理が適用されます。しかし、初期の研究は重要な問題に直面しました:
+LLMは様々な人口統計学的特性を持つ「合成消費者」をシミュレートできる可能性を示しました。[AIエージェントにペルソナを付与した際の心理的効果](/ja/blog/ja/ai-agent-persona-analysis/)は120以上の研究で実証されており、合成消費者プロファイルの設計にも同じ原理が適用されます。しかし、初期の研究は重要な問題に直面しました:
 
 <strong>直接的な数値評価の要求時の問題</strong>:
 - LLMに「1から5の中から一つを選んでください」と直接尋ねると
@@ -220,7 +220,7 @@ print(f"主な購買動機: {results.top_reasons}")
 - <strong>バージョンA</strong>: 「環境に優しい竹歯ブラシ」
 - <strong>バージョンB</strong>: 「持続可能な未来のための竹歯ブラシ」
 
-数千人の合成消費者でテストし、どのメッセージがより効果的かを即座に確認できます。この規模のLLM呼び出しには[Anthropic Message Batches API](/ja/blog/ja/anthropic-message-batches-api-production-guide)でリクエストをバッチ処理することで、コストを最大50%削減できます。
+数千人の合成消費者でテストし、どのメッセージがより効果的かを即座に確認できます。この規模のLLM呼び出しには[Anthropic Message Batches API](/ja/blog/ja/anthropic-message-batches-api-production-guide/)でリクエストをバッチ処理することで、コストを最大50%削減できます。
 
 ### 3. セグメント別ターゲット分析
 
@@ -255,7 +255,7 @@ LLM自体が持つバイアスが合成消費者の応答にも反映される�
 
 SSRのような技術が成熟すれば:
 
-1. <strong>コスト削減</strong>: 従来の調査コストの10%以下で大規模調査が可能([Claude API Prompt Caching](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide)適用で繰り返しLLM呼び出しのコストをさらに70%削減)
+1. <strong>コスト削減</strong>: 従来の調査コストの10%以下で大規模調査が可能([Claude API Prompt Caching](/ja/blog/ja/claude-api-prompt-caching-cost-optimization-guide/)適用で繰り返しLLM呼び出しのコストをさらに70%削減)
 2. <strong>スピード向上</strong>: 数週間かかっていた調査を数時間以内に完了
 3. <strong>規模拡大</strong>: 数百人ではなく数万人の合成回答者でテスト
 4. <strong>反復実験</strong>: 迅速な反復による製品最適化

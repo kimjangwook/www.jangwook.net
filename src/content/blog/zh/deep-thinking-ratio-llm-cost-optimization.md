@@ -117,7 +117,7 @@ Think@n:
 
 ### 2. AI智能体设计的应用
 
-尤其对于执行复杂推理的[AI智能体管道](/zh/blog/zh/ai-agent-cost-reality)，DTR成为一个强大的优化工具。
+尤其对于执行复杂推理的[AI智能体管道](/zh/blog/zh/ai-agent-cost-reality/)，DTR成为一个强大的优化工具。
 
 ```python
 # 概念性实现示例
@@ -166,7 +166,7 @@ DTR需要访问模型的中间层（hidden states）进行计算。目前GPT-4o�
 
 即使今天无法通过商业API计算DTR，这项研究也提供了立即可用的实践启示：
 
-**关注质量指标而非长度限制。** 简单增加最大token数可能造成成本浪费。[真实LLM API成本优化实验](/zh/blog/zh/gemini-25-flash-api-cost-optimization-guide)也印证了同样的规律。
+**关注质量指标而非长度限制。** 简单增加最大token数可能造成成本浪费。[真实LLM API成本优化实验](/zh/blog/zh/gemini-25-flash-api-cost-optimization-guide/)也印证了同样的规律。
 
 **现在就尝试Best-of-N策略。** Think@n的核心思路——启动多条路径，快速放弃无望的那些——今天就可以实现。可以用置信度分数、困惑度等其他启发式方法替代DTR。
 
@@ -176,7 +176,7 @@ DTR需要访问模型的中间层（hidden states）进行计算。目前GPT-4o�
 
 Google·UVA的DTR研究预示着AI推理优化的范式转变，从"思考更长"转向"思考更深"。对于管理AI基础设施的工程领导者，结论很明确：<strong>现在有了在将推理成本减半的同时提升性能的理论和实证基础。</strong>
 
-如果您的团队正在运行开源模型，今天就可以开始DTR优化实验。如果使用商业API，请关注未来几个月内厂商的相关支持动态。结合[AI训练成本下降趋势](/zh/blog/zh/karpathy-ai-training-cost-deflation)来看，推理效率优化将成为下一个核心竞争力。
+如果您的团队正在运行开源模型，今天就可以开始DTR优化实验。如果使用商业API，请关注未来几个月内厂商的相关支持动态。结合[AI训练成本下降趋势](/zh/blog/zh/karpathy-ai-training-cost-deflation/)来看，推理效率优化将成为下一个核心竞争力。
 
 ---
 

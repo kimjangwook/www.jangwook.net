@@ -140,7 +140,7 @@ Claude Cowork은 Claude 데스크톱 앱에서 동작하며, <strong>Excel과 Po
 
 ### 2. 벤더 락인과 플랫폼 전략
 
-Anthropic의 Cowork 전략은 명확하다 — <strong>MCP를 통한 개방형 생태계 구축</strong>이다. MCP가 Linux Foundation에 기증되어 오픈 표준이 된 상황에서, Cowork은 "표준을 가장 잘 구현한 제품"의 위치를 선점하려 한다. 실제 프로덕션에서 [A2A와 MCP를 하이브리드로 결합한 멀티에이전트 아키텍처](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide)가 어떻게 구성되는지 살펴보면, 이 전략의 실질적 의미가 더 명확해진다.
+Anthropic의 Cowork 전략은 명확하다 — <strong>MCP를 통한 개방형 생태계 구축</strong>이다. MCP가 Linux Foundation에 기증되어 오픈 표준이 된 상황에서, Cowork은 "표준을 가장 잘 구현한 제품"의 위치를 선점하려 한다. 실제 프로덕션에서 [A2A와 MCP를 하이브리드로 결합한 멀티에이전트 아키텍처](/ko/blog/ko/a2a-mcp-hybrid-architecture-production-guide/)가 어떻게 구성되는지 살펴보면, 이 전략의 실질적 의미가 더 명확해진다.
 
 비교:
 
@@ -206,7 +206,7 @@ Cowork의 출시를 더 넓은 맥락에서 보면, Anthropic의 전략은 3단�
 2. <strong>엔터프라이즈 확장</strong> (2026 초): Cowork으로 비개발 직군까지 AI 에이전트 확장
 3. <strong>플랫폼 생태계</strong> (2026〜): MCP 오픈 표준 + Plugin Marketplace로 서드파티 생태계 구축
 
-이 전략은 Slack이 개발팀 → 전사 커뮤니케이션 도구로 진화한 경로와 유사하다. 차이점은 Cowork이 <strong>에이전틱 AI의 실행력</strong>을 제공한다는 것이다 — 단순히 메시지를 주고받는 것이 아니라, 실제 업무를 대신 수행할 수 있다. [Anthropic Managed Agents와 Opus 4.7 분석](/ko/blog/ko/anthropic-claude-opus-4-7-managed-agents-2026)을 읽으면 이 에이전틱 AI 전략의 전체 그림이 더 선명해진다.
+이 전략은 Slack이 개발팀 → 전사 커뮤니케이션 도구로 진화한 경로와 유사하다. 차이점은 Cowork이 <strong>에이전틱 AI의 실행력</strong>을 제공한다는 것이다 — 단순히 메시지를 주고받는 것이 아니라, 실제 업무를 대신 수행할 수 있다. [Anthropic Managed Agents와 Opus 4.7 분석](/ko/blog/ko/anthropic-claude-opus-4-7-managed-agents-2026/)을 읽으면 이 에이전틱 AI 전략의 전체 그림이 더 선명해진다.
 
 ## 결론
 

@@ -163,7 +163,7 @@ result = call_llm("What's the weather like today?")
 
 ## Tracing a Real RAG Pipeline
 
-As I explored when building [type-safe agents with PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026), adding Langfuse to actual agent code makes it immediately clear which steps are driving costs. If you haven't settled on a vector DB yet, [comparing Qdrant, Chroma, and pgvector](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector) first will speed up that decision. Below is the pattern I actually use in my projects.
+As I explored when building [type-safe agents with PydanticAI](/en/blog/en/pydantic-ai-type-safe-agent-tutorial-2026/), adding Langfuse to actual agent code makes it immediately clear which steps are driving costs. If you haven't settled on a vector DB yet, [comparing Qdrant, Chroma, and pgvector](/en/blog/en/vector-db-comparison-2026-qdrant-chroma-pgvector/) first will speed up that decision. Below is the pattern I actually use in my projects.
 
 ```python
 from langfuse import observe, get_client
@@ -291,7 +291,7 @@ compiled = prompt.compile(
 
 Managing prompts this way means "why did response quality drop on the day we used version 2?" becomes a question you can answer immediately in the Langfuse UI.
 
-If you've [built an MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026), adding Langfuse tracing to its LLM calls is the natural next step. MCP servers tend to have long tool invocation chains, which is exactly where trace waterfalls are most valuable.
+If you've [built an MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/), adding Langfuse tracing to its LLM calls is the natural next step. MCP servers tend to have long tool invocation chains, which is exactly where trace waterfalls are most valuable.
 
 ## When I Don't Recommend Self-Hosting
 
@@ -309,7 +309,7 @@ There are cases where I don't recommend self-hosting. Here it is, honestly.
 
 I run two projects side by side — one on Cloud, one self-hosted. Honest impression: ClickHouse eating 2GB+ of memory still feels wasteful.
 
-If you've [built an MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026), attaching Langfuse tracing to the LLM calls from that server is the natural next step. MCP servers tend to grow long tool-call chains, which makes the trace waterfall especially valuable.
+If you've [built an MCP server with FastMCP](/en/blog/en/fastmcp-python-mcp-server-build-guide-2026/), attaching Langfuse tracing to the LLM calls from that server is the natural next step. MCP servers tend to grow long tool-call chains, which makes the trace waterfall especially valuable.
 
 ## When to Self-Host and When to Avoid It
 
@@ -329,7 +329,7 @@ I touched on the Cloud-versus-self-hosting tradeoff earlier, but the real decisi
 - You don't want to own backups, version upgrades, and scaling
 - You're at the prototype stage and plan to attach and detach tracing repeatedly
 
-If you're stuck in the murky middle, gauge your container-deployment comfort first. If the health checks, resource limits, and restart policies from my [guide to deploying Ollama and FastAPI in production](/en/blog/en/ollama-fastapi-production-deployment-guide-2026) feel routine to you, running the full Langfuse stack won't be a problem. If that post feels like a stretch, start on Cloud and migrate once you've grown.
+If you're stuck in the murky middle, gauge your container-deployment comfort first. If the health checks, resource limits, and restart policies from my [guide to deploying Ollama and FastAPI in production](/en/blog/en/ollama-fastapi-production-deployment-guide-2026/) feel routine to you, running the full Langfuse stack won't be a problem. If that post feels like a stretch, start on Cloud and migrate once you've grown.
 
 I split mine across two projects. The blog automation pipeline with no sensitive data runs on Cloud; the side that handles client data is self-hosted. Even for the same tool, matching the deployment to the nature of the data was the choice I regretted least. Honestly, ClickHouse eating 2GB+ of memory still feels wasteful for my scale.
 

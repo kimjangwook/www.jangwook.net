@@ -208,7 +208,7 @@ it("filters out non-text-delta events from the stream", async () => {
 
 将 LLM 用作分类器是常见模式——比如把"这条用户消息是问题还是命令"的判断委托给模型。这是测试难度最高的场景，因为 LLM 输出并不总是可预测的。
 
-我在[用 Vercel AI SDK 构建流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026)的过程中遇到了类似问题。核心在于把分类器逻辑与 LLM 调用分离，分别独立测试。
+我在[用 Vercel AI SDK 构建流式代理](/zh/blog/zh/vercel-ai-sdk-claude-streaming-agent-2026/)的过程中遇到了类似问题。核心在于把分类器逻辑与 LLM 调用分离，分别独立测试。
 
 ```javascript
 // 代理代码：将 LLM 输出转为大写，只允许有效值
@@ -300,7 +300,7 @@ $ npx vitest run --reporter=verbose
 
 关于这种模拟方法的局限，也需要坦诚说明。
 
-**可能与真实 API 行为产生偏差。** SDK 内部实现改变时，`fakeStream()` 重现的事件结构也需要更新。正如我在[Claude Agent SDK Tool Use 实战指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)中发现的，SDK 版本升级时流事件格式会有细微变化。
+**可能与真实 API 行为产生偏差。** SDK 内部实现改变时，`fakeStream()` 重现的事件结构也需要更新。正如我在[Claude Agent SDK Tool Use 实战指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)中发现的，SDK 版本升级时流事件格式会有细微变化。
 
 **边缘情况需要 E2E 测试补充。** 限速、网络超时、Token 超额等情况很难用模拟完全再现。让单元测试专注于业务逻辑验证，另外维护一套使用真实 API 的集成测试，是比较现实的做法。
 
@@ -314,6 +314,6 @@ $ npx vitest run --reporter=verbose
 2. **`async function*` 生成器** — 流式响应模拟用 `mockReturnValue(fakeStream())`
 3. **`beforeEach(() => vi.clearAllMocks())`** — 防止测试间状态污染是必须的
 
-如果你在用 TypeScript，结合 [MCP 服务器 TypeScript 实战教程](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026)中的模式和这篇文章的模式，可以把包括 MCP 工具处理函数在内的整个 AI 代理代码库置于单元测试覆盖之下。
+如果你在用 TypeScript，结合 [MCP 服务器 TypeScript 实战教程](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/)中的模式和这篇文章的模式，可以把包括 MCP 工具处理函数在内的整个 AI 代理代码库置于单元测试覆盖之下。
 
 AI 代理代码没有测试，最常见的原因就是"不知道怎么模拟"。希望这些模式能降低这道门槛。

@@ -266,7 +266,7 @@ calculate(divide, 100, 4) = 25.0
 入力検証 (必須フィールドなし): False, Missing required field: location
 ```
 
-[FastAPI + Claude APIストリーミングガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026)で扱ったエラー分類戦略をツールエラーにも適用するとプロダクション安定性が向上する。
+[FastAPI + Claude APIストリーミングガイド](/ja/blog/ja/fastapi-claude-api-streaming-production-guide-2026/)で扱ったエラー分類戦略をツールエラーにも適用するとプロダクション安定性が向上する。
 
 ## 複数ツール呼び出し処理: 並列実行は可能か
 
@@ -463,7 +463,7 @@ Tool Useを実際に使ってみて感じた限界をまとめる。
 
 <strong>ツール定義品質が直結する</strong>: `description`が曖昧だとモデルが違うツールを選択したり、ツールを使わない。ツールの説明を上手く書くこと自体が別のプロンプトエンジニアリングだ。
 
-私はTool Useが過小評価されていると思う。エージェントフレームワークが華やかな抽象化を提供しているが、結局その内部にはこのパターンがある。[PydanticAIのタイプセーフなツール定義方式](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)のようにフレームワークがJSONスキーマ生成を自動化してくれるのは便利だが、基盤メカニズムを直接理解していないとデバッグするときに詰まる。
+私はTool Useが過小評価されていると思う。エージェントフレームワークが華やかな抽象化を提供しているが、結局その内部にはこのパターンがある。[PydanticAIのタイプセーフなツール定義方式](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)のようにフレームワークがJSONスキーマ生成を自動化してくれるのは便利だが、基盤メカニズムを直接理解していないとデバッグするときに詰まる。
 
 ## いつTool Useを使い、いつ避けるか
 
@@ -483,7 +483,7 @@ Tool Useを実際に使ってみて感じた限界をまとめる。
 - コスト上限が厳しい大量バッチ。ツール定義あたり~250トークンの固定オーバーヘッドとコンテキスト累積が呼び出し数に掛かる。数百万件のバッチならツールなしの単一呼び出しの方が経済的なことがある。
 - 決定性が必須のパイプライン。ツール選択自体が非決定的なので、毎回同じツール呼び出し順序が保証されるべきワークフローならルールベースのコードの方がよい。
 
-基準はシンプルだ。「モデルが直接答えると間違える可能性があるか、それともモデルが知らないものを取得する必要があるか」を自問すればいい。どちらかならTool Use、そうでなければ通常呼び出しだ。より重いマルチエージェントのオーケストレーションが必要になる地点は[Claude Agent Teamsで複数エージェントを構成](/ja/blog/ja/claude-agent-teams-guide)するときだが、その前に単一エージェントのTool Useを確実に押さえるのが順序だ。
+基準はシンプルだ。「モデルが直接答えると間違える可能性があるか、それともモデルが知らないものを取得する必要があるか」を自問すればいい。どちらかならTool Use、そうでなければ通常呼び出しだ。より重いマルチエージェントのオーケストレーションが必要になる地点は[Claude Agent Teamsで複数エージェントを構成](/ja/blog/ja/claude-agent-teams-guide/)するときだが、その前に単一エージェントのTool Useを確実に押さえるのが順序だ。
 
 ## 参照した公式ドキュメント
 
@@ -494,7 +494,7 @@ Tool Useを実際に使ってみて感じた限界をまとめる。
 - [Claude Agent SDK 概要](https://platform.claude.com/docs/en/agent-sdk/overview): ツールループを自前実装する代わりにSDKが抽象化してくれる上位レイヤー。
 - [anthropic/claude-agent-sdk-python (GitHub)](https://github.com/anthropics/claude-agent-sdk-python): 公式PythonSDKリポジトリと実行可能なサンプルコード。
 
-MCPでツールをサーバー化して再利用したいなら、[FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026)記事が、このTool Useパターンを標準プロトコル上に載せる次のステップを扱っている。
+MCPでツールをサーバー化して再利用したいなら、[FastMCPでPython MCPサーバーを作る](/ja/blog/ja/fastmcp-python-mcp-server-build-guide-2026/)記事が、このTool Useパターンを標準プロトコル上に載せる次のステップを扱っている。
 
 ## 5行に圧縮したTool Useの要点
 

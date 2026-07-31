@@ -174,7 +174,7 @@ whenActivated(() => {
 
 肝は`navType`を捨てないことだ。このフィールドさえ残っていれば、「prerenderの比率が上がって良くなった」のか「ページが本当に速くなった」のかを後から切り分けられる。無ければ切り分ける手段がない。
 
-もう一点。表に載っていない値がある。`domContentLoadedEventStart`の46.8msは**いかなる補正も受けない**。Navigation Timingのマークは依然としてprerender開始が基準のままだ。補正済みのLCPと未補正の「読み込み完了時間」を同じダッシュボードに並べれば、二つの数字は違う時計を読んでいることになる。このズレは[リソース優先度を触ってLCPを前倒しする作業](/ja/blog/ja/lcp-image-preload-scanner-fetchpriority-2026)の効果を検証するとき、とりわけ厄介になる。動いた分だけ動いたのかを判定する基準線が揺れるからだ。
+もう一点。表に載っていない値がある。`domContentLoadedEventStart`の46.8msは**いかなる補正も受けない**。Navigation Timingのマークは依然としてprerender開始が基準のままだ。補正済みのLCPと未補正の「読み込み完了時間」を同じダッシュボードに並べれば、二つの数字は違う時計を読んでいることになる。このズレは[リソース優先度を触ってLCPを前倒しする作業](/ja/blog/ja/lcp-image-preload-scanner-fetchpriority-2026/)の効果を検証するとき、とりわけ厄介になる。動いた分だけ動いたのかを判定する基準線が揺れるからだ。
 
 ## Playwrightではこの実験自体が成立しなかった
 
@@ -196,7 +196,7 @@ whenActivated(() => {
 
 正直に書くと、原因は特定しきれていない。フラグは犯人ではなかった。同じバイナリでも、Playwrightが**実際に駆動しているときだけ**prerenderが抑制される。それ以上は今回の実行時間内では詰められなかった。
 
-ただし実務に必要な結論はもう出ている。**Speculation RulesをPlaywrightやPuppeteerで検証してはいけない**。規則が正しくても「動いていません」という偽陰性が返る。これは[jsdomでaxe-coreを回して実際の違反を取りこぼした件](/ja/blog/ja/axe-core-ci-a11y-jsdom-vs-browser-2026)とまったく同じ種類の罠だ。テスト環境が、静かに、しかも緑のランプで間違った答えを返す。
+ただし実務に必要な結論はもう出ている。**Speculation RulesをPlaywrightやPuppeteerで検証してはいけない**。規則が正しくても「動いていません」という偽陰性が返る。これは[jsdomでaxe-coreを回して実際の違反を取りこぼした件](/ja/blog/ja/axe-core-ci-a11y-jsdom-vs-browser-2026/)とまったく同じ種類の罠だ。テスト環境が、静かに、しかも緑のランプで間違った答えを返す。
 
 結局使った手は二つ。一つはこの記事のハーネスのように、ページ自身に`sendBeacon`で結果を投げ返させ、Chromeはただ起動するだけにすること。もう一つはChromeのドキュメントが薦める手軽な確認法だ。"The easiest way to see if a page was prerendered (either in full or partially) is to open DevTools after the page is activated and type `performance.getEntriesByType('navigation')[0].activationStart` in the console."（出典: [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/docs/web-platform/prerender-pages)）
 
@@ -225,4 +225,4 @@ Speculation Rulesを入れる前に、計測側を先に直す。順番を逆に
 
 この六つはprerenderを使っていないサイトでも無害だ。今のうちに入れておけば、導入した日にダッシュボードが揺れない。
 
-RUMのパイプラインがprerenderやbfcacheのようなページライフサイクルの変化をきちんと反映できているか確かめたい場合や、Core Web Vitalsの計測設計をやり直す必要がある場合は、個人で相談と実装の依頼を受けている。[プロフィール](/ja/about)に連絡先を置いてある。
+RUMのパイプラインがprerenderやbfcacheのようなページライフサイクルの変化をきちんと反映できているか確かめたい場合や、Core Web Vitalsの計測設計をやり直す必要がある場合は、個人で相談と実装の依頼を受けている。[プロフィール](/ja/about/)に連絡先を置いてある。

@@ -104,7 +104,7 @@ const target = pages.get(a.href);
 if (target && !target.alts.some(t => t.href === url)) brokenReturn++;
 ````
 
-先只检查一篇文章的四种语言版本。我拿讲无障碍审计的[Lighthouse无障碍那篇](/zh/blog/zh/a11y-lighthouse-audit-fix-2026)做对象。
+先只检查一篇文章的四种语言版本。我拿讲无障碍审计的[Lighthouse无障碍那篇](/zh/blog/zh/a11y-lighthouse-audit-fix-2026/)做对象。
 
 ```text
 $ node hreflang-audit.mjs dist a11y-lighthouse-audit-fix-2026
@@ -223,7 +223,7 @@ graph TD
 | HTTP `Link:`头 | 响应头 | 可用于PDF、图片等非HTML文件 | 需服务器/CDN配置；肉眼核查麻烦 | 非HTML资源、易于控制头的环境 |
 | 站点地图 `xhtml:link` | XML站点地图 | 不动HTML；大规模有利，集中管理 | 站点地图膨胀；需要生成流水线 | 数万页、难改标记的CMS |
 
-我的博客是静态构建，所以HTML标签方式合适。在数百页的当下，标签方式"HTML变重"的劣势还不成负担。若长到数万页，我会考虑改用站点地图方式。那种情况下，正如[把LocalBusiness结构化数据在服务端输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026)那次一样，在构建时点确定性地打出信号，比人手管理安全得多。
+我的博客是静态构建，所以HTML标签方式合适。在数百页的当下，标签方式"HTML变重"的劣势还不成负担。若长到数万页，我会考虑改用站点地图方式。那种情况下，正如[把LocalBusiness结构化数据在服务端输出](/zh/blog/zh/localbusiness-structured-data-server-side-vs-js-2026/)那次一样，在构建时点确定性地打出信号，比人手管理安全得多。
 
 ## 常踩的雷 — 尤其是中文
 
@@ -235,7 +235,7 @@ graph TD
 - <strong>相对路径</strong>：`href="/en/..."`不行，必须是绝对URL。
 - <strong>与noindex同用</strong>：如果hreflang的目标是`noindex`，信号之间就自相矛盾。你一边说别收录，一边又把用户引向它作为替代版本。
 
-最后一条尤其和[用robots.txt控制AI爬虫那篇](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026)相连。收录、抓取、语言这些信号分散在不同的文件和标签里，一旦彼此矛盾，爬虫要么按最保守的方式解读，要么干脆忽略。加信号不难，<strong>让信号之间不打架</strong>才是实战的一半。
+最后一条尤其和[用robots.txt控制AI爬虫那篇](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026/)相连。收录、抓取、语言这些信号分散在不同的文件和标签里，一旦彼此矛盾，爬虫要么按最保守的方式解读，要么干脆忽略。加信号不难，<strong>让信号之间不打架</strong>才是实战的一半。
 
 ## 所以开发者现在该做什么
 

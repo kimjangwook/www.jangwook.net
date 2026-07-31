@@ -139,7 +139,7 @@ graph LR
 - <strong>错误处理</strong>：Agent失败时如何恢复？
 - <strong>成本优化</strong>：如何混合使用昂贵和便宜的模型？
 
-构建和稳定这个路由层所花的时间，超过了所有其他成本的总和。[Claude智能体团队构建指南](/zh/blog/zh/claude-agent-teams-guide)中介绍的多智能体编排模式，是降低这种路由复杂度的实用起点。
+构建和稳定这个路由层所花的时间，超过了所有其他成本的总和。[Claude智能体团队构建指南](/zh/blog/zh/claude-agent-teams-guide/)中介绍的多智能体编排模式，是降低这种路由复杂度的实用起点。
 
 ## 过度工程的陷阱：40小时 vs 1个Prompt
 
@@ -230,7 +230,7 @@ graph TD
 └── 低复杂度（60%）: Claude Haiku / GPT-4o-mini → 分类、摘要、格式化
 ```
 
-仅此策略就能将API成本<strong>降低40-60%</strong>。关于如何在代码层面处理各模型单价和工具调用成本，[Claude Agent SDK 工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026)提供了具体的实现示例。
+仅此策略就能将API成本<strong>降低40-60%</strong>。关于如何在代码层面处理各模型单价和工具调用成本，[Claude Agent SDK 工具使用完全指南](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)提供了具体的实现示例。
 
 ### 2. 缓存和批处理
 
@@ -253,7 +253,7 @@ AI Agent不是魔法。它是<strong>存在明确权衡取舍的工程工具</st
 这一年运营下来，真正刻进脑子里的教训是这几条。
 
 1. <strong>API成本只是总成本的一部分。</strong> 必须包括工程时间、维护和故障响应。
-2. <strong>路由层是最大的技术难关。</strong> 多Agent系统的真正困难不在于单个Agent，而在于[编排](/zh/blog/zh/multi-agent-orchestration-improvement)。
+2. <strong>路由层是最大的技术难关。</strong> 多Agent系统的真正困难不在于单个Agent，而在于[编排](/zh/blog/zh/multi-agent-orchestration-improvement/)。
 3. <strong>警惕过度工程。</strong> 一个写得好的Prompt可能比40小时的复杂管道更好。
 4. <strong>按用途使用。</strong> 扩展个人生产力效果卓越，但单纯替代人工成本可能反而更高。
 

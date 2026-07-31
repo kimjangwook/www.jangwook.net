@@ -49,7 +49,7 @@ MCP（Model Context Protocol）サーバーをゼロから実装しようとす�
 
 FastMCPはその苦しさを解消するために作られたフレームワークだ。今日、サンドボックスでpipでインストールして、実際に動くMCPサーバーを30分以内に立ち上げた。
 
-この記事はMCPプロトコル自体ではなく、FastMCPというツールを扱う。プロトコルの背景が気になるなら[Model Context Protocol公式サイト](https://modelcontextprotocol.io)を、FastMCPのソースと変更履歴は[jlowin/fastmcp GitHubリポジトリ](https://github.com/jlowin/fastmcp)を一緒に開いておくと理解が早い。なお、同じMCPをTypeScriptで作る流れは[MCPサーバーTypeScript SDKステップバイステップガイド](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)に別途まとめてある。
+この記事はMCPプロトコル自体ではなく、FastMCPというツールを扱う。プロトコルの背景が気になるなら[Model Context Protocol公式サイト](https://modelcontextprotocol.io)を、FastMCPのソースと変更履歴は[jlowin/fastmcp GitHubリポジトリ](https://github.com/jlowin/fastmcp)を一緒に開いておくと理解が早い。なお、同じMCPをTypeScriptで作る流れは[MCPサーバーTypeScript SDKステップバイステップガイド](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026/)に別途まとめてある。
 
 ## FastMCPとは何かを先に確認した
 
@@ -176,7 +176,7 @@ Claude Desktopで動作すると、ユーザーはツールがどの段階を実
 
 ## FastMCP Clientでテストする
 
-実際のClaude Desktopなしにサーバーをテストできる。FastMCPはin-processクライアントを提供している。MCPエージェントワークフローパターンを実装するときもこの方式でテストがシンプルになる。このin-processテストを超えて、アプリケーションからMCPサーバーを直接消費する独立クライアントが必要なら、[MCPクライアントをTypeScript SDKで実装する方法](/ja/blog/ja/mcp-client-typescript-sdk-guide-2026)が参考になる。
+実際のClaude Desktopなしにサーバーをテストできる。FastMCPはin-processクライアントを提供している。MCPエージェントワークフローパターンを実装するときもこの方式でテストがシンプルになる。このin-processテストを超えて、アプリケーションからMCPサーバーを直接消費する独立クライアントが必要なら、[MCPクライアントをTypeScript SDKで実装する方法](/ja/blog/ja/mcp-client-typescript-sdk-guide-2026/)が参考になる。
 
 ```python
 import asyncio
@@ -443,8 +443,8 @@ FastMCPで惜しい点がひとつある。3.xになって文書がコード変�
 **FastMCPを避けたほうがいい場合**
 
 - 低レベルのMCPメッセージを直接いじる必要があったり、非標準トランスポートが必要なとき。この場合は抽象化がむしろ邪魔になる。MCP Python SDKを直接使うほうが正しい。
-- Python以外のランタイムが主力のとき。Node/TypeScript環境なら[MCPサーバーTypeScript SDKステップバイステップガイド](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026)のほうが自然だ。
-- サーバーを外部に公開せず、完全にローカル・プライベートで動かしたいとき。モデルまでローカルに束ねる構成は[Gemma 3とFastMCPで作るプライベートMCPサーバー](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp)で扱った。
+- Python以外のランタイムが主力のとき。Node/TypeScript環境なら[MCPサーバーTypeScript SDKステップバイステップガイド](/ja/blog/ja/mcp-server-typescript-sdk-step-by-step-2026/)のほうが自然だ。
+- サーバーを外部に公開せず、完全にローカル・プライベートで動かしたいとき。モデルまでローカルに束ねる構成は[Gemma 3とFastMCPで作るプライベートMCPサーバー](/ja/blog/ja/local-llm-private-mcp-server-gemma4-fastmcp/)で扱った。
 - フレームワークの抽象化の中で起きる挙動を100%追跡しなければならない規制・監査環境。こういう場合は依存を薄く保つほうが安全だ。
 
 一行でまとめると、標準クライアントと素早く連携するならFastMCP、プロトコルの底を直接触るならSDKだ。

@@ -79,7 +79,7 @@ relatedPosts:
 4. <strong>チーム標準化</strong>：組織全体で統一したツールを使用する必要がある場合
 5. <strong>パフォーマンス要件</strong>：レイテンシやスループットの要件が変化した場合
 
-マイグレーション前に、Claude Codeを最大限に活用しているかを[Claude Codeベストプラクティスガイド](/ja/blog/ja/claude-code-best-practices)で確認しましょう。
+マイグレーション前に、Claude Codeを最大限に活用しているかを[Claude Codeベストプラクティスガイド](/ja/blog/ja/claude-code-best-practices/)で確認しましょう。
 
 ---
 
@@ -433,7 +433,7 @@ codex refactor ./src/utils.ts --goal "performance optimization"
    - ドキュメント生成、翻訳、要約が主要タスク
    - 200K tokensのコンテキストを活用している
 
-Claude Codeで実装できる5種類のエージェントワークフローパターンは[Claude Codeエージェントワークフローパターンガイド](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types)でご確認ください。
+Claude Codeで実装できる5種類のエージェントワークフローパターンは[Claude Codeエージェントワークフローパターンガイド](/ja/blog/ja/claude-code-agentic-workflow-patterns-5-types/)でご確認ください。
 
 4. <strong>コードベース全体の理解が必要</strong>
    - 大規模リファクタリング

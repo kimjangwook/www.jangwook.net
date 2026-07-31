@@ -61,7 +61,7 @@ Kiro的官方口号是"Beyond Vibe Coding"——超越随感编码。要理解�
 
 Kiro的答案是：不要从提示词直接跳到代码。先生成需求文档，审查技术设计，组织任务列表，然后再写代码。开发者需要审批每个阶段才能进入下一步。
 
-[我之前写过规格驱动开发的哲学](/zh/blog/zh/specification-driven-development)，在特定场景下这种方法确实有价值。多名开发者共同开发复杂功能时，需求频繁变动需要可追溯性时，这种结构化的工作流程实际上很有帮助。
+[我之前写过规格驱动开发的哲学](/zh/blog/zh/specification-driven-development/)，在特定场景下这种方法确实有价值。多名开发者共同开发复杂功能时，需求频繁变动需要可追溯性时，这种结构化的工作流程实际上很有帮助。
 
 ## 规格驱动开发工作流程：实际结构
 
@@ -119,7 +119,7 @@ SO THAT 开发人员能够了解新的任务分配
 
 这部分我认为真的很有趣。Claude Code和Kiro都有Hooks概念，但实现方式不同。
 
-[Claude Code的Hooks系统](/zh/blog/zh/claude-code-hooks-workflow)是将shell命令绑定到Claude Code执行事件的方式。功能强大，但配置需要JSON和shell脚本，存在一定技术门槛。
+[Claude Code的Hooks系统](/zh/blog/zh/claude-code-hooks-workflow/)是将shell命令绑定到Claude Code执行事件的方式。功能强大，但配置需要JSON和shell脚本，存在一定技术门槛。
 
 Kiro的Agent Hooks则不同。可以用自然语言定义Hook行为：
 
@@ -146,7 +146,7 @@ Steering Files更简单但很实用。在`.kiro/steering/`下的Markdown文件�
 
 与Claude Code Max的$100/月相比，Kiro Pro便宜得多。但由于工作方式根本不同，直接比较没有太大意义。
 
-MCP（Model Context Protocol）Kiro也支持，通过`.kiro/mcp.json`配置，与其他MCP客户端方式相同。但正如[OpenAI Codex和Claude Code的比较](/zh/blog/zh/openai-codex-api-release-vs-claude-code-comparison-may-2026)中提到的，Claude Code生态系统中MCP服务器的数量和成熟度处于不同量级。
+MCP（Model Context Protocol）Kiro也支持，通过`.kiro/mcp.json`配置，与其他MCP客户端方式相同。但正如[OpenAI Codex和Claude Code的比较](/zh/blog/zh/openai-codex-api-release-vs-claude-code-comparison-may-2026/)中提到的，Claude Code生态系统中MCP服务器的数量和成熟度处于不同量级。
 
 一个坦率的不足：Kiro是VS Code的分支。优点是可以直接使用VS Code生态系统的扩展。缺点是对于VS Code以外的工作流——尤其是终端中心型开发者——并不适合。如果像我一样偏好Neovim或终端优先的工作流，很难将Kiro作为主力工具。
 
@@ -160,7 +160,7 @@ MCP（Model Context Protocol）Kiro也支持，通过`.kiro/mcp.json`配置，�
 
 **速度和灵活性**：Claude Code跳过规格阶段直接执行。对于小型bug修复、快速重构和探索性编码，Claude Code快得多。Kiro的规格生成过程有价值，但需要时间。10分钟的修改还要先做规格，那就是额外负担了。
 
-**工作流集成**：[Claude Code的智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types)已经成熟。通过MCP连接GitHub、Jira、Slack和内部API无需自定义配置。Kiro也支持MCP，但生态系统成熟度不同。
+**工作流集成**：[Claude Code的智能体工作流模式](/zh/blog/zh/claude-code-agentic-workflow-patterns-5-types/)已经成熟。通过MCP连接GitHub、Jira、Slack和内部API无需自定义配置。Kiro也支持MCP，但生态系统成熟度不同。
 
 **方法论哲学**：这是最根本的区别。Claude Code说"我来帮你实现想要的功能"。Kiro说"我们先理清需求、审查设计，然后再实现"。前者选择速度，后者选择严谨。两者都没有错，只是优化方向不同。
 

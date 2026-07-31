@@ -182,7 +182,7 @@ Pydantic AIは構造化出力のために5つのモードを提供する：
 
 まだv1.0ではない。急速に変化するAPIがプロダクション導入をためらわせる理由だ。0.x系バージョンということはbreaking changeがいつでも来る可能性があることを意味する。Pydanticチームの品質基準は信頼しているが、急ぐよりも安定化を見届ける方が賢明だと考える。
 
-また、マルチエージェントシナリオはまだ制限がある。複雑なオーケストレーションが必要なら、LangGraphの上でPydantic AIを構造化出力レイヤーとしてのみ使う組み合わせの方が現実的だ。上位レイヤーのフレームワーク選定で迷うなら、まず[Google ADK vs LangGraph エージェントフレームワーク比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026)を読んでおくと役立つ。Pydantic AI自体を深く掘り下げる実践は[Pydantic AI 型安全エージェントチュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026)で段階的に扱っている。
+また、マルチエージェントシナリオはまだ制限がある。複雑なオーケストレーションが必要なら、LangGraphの上でPydantic AIを構造化出力レイヤーとしてのみ使う組み合わせの方が現実的だ。上位レイヤーのフレームワーク選定で迷うなら、まず[Google ADK vs LangGraph エージェントフレームワーク比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026/)を読んでおくと役立つ。Pydantic AI自体を深く掘り下げる実践は[Pydantic AI 型安全エージェントチュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)で段階的に扱っている。
 
 ## Smolagents：LLMにコードを書かせよ
 
@@ -232,7 +232,7 @@ smolagentsのコアロジックは約1,000行だ。これは意図的な設計�
 
 また、オープンソースモデルを使用する場合はコード品質が大きく変わる。GPT-4oやClaude Sonnet相当のモデルでは問題なく動くが、7B以下のモデルではコードにバグが混入するケースが多い。これがSmolagentsの最大の限界だと私は考える。モデル品質への依存度がInstructorやPydantic AIよりはるかに高いのだ。
 
-[プロダクション品質のAIエージェント設計原則](/ja/blog/ja/dena-llm-study-part5-agent-design)では、エージェントシステムの全体アーキテクチャを設計する観点からこれらのパターンを解説している。エージェントシステム全体を設計する際に合わせて読むことをお勧めする。
+[プロダクション品質のAIエージェント設計原則](/ja/blog/ja/dena-llm-study-part5-agent-design/)では、エージェントシステムの全体アーキテクチャを設計する観点からこれらのパターンを解説している。エージェントシステム全体を設計する際に合わせて読むことをお勧めする。
 
 ## 3つのライブラリ総合比較表
 
@@ -378,7 +378,7 @@ assert result.name == "テスト"
 
 「どれが最も優れているか」と問われれば、私の答えはこうだ。構造化抽出が必要ならInstructor、型安全なエージェントループが必要ならPydantic AI、コード実行エージェントが必要ならSmolagents。それだけだ。
 
-[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality)も参考になる。どのライブラリを使ってもモデルの選択によってコストは大きく変わる。特にInstructorのリトライコストやSmolagentsのコード生成ループのコストを事前に見積もる際に役立つ。
+[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality/)も参考になる。どのライブラリを使ってもモデルの選択によってコストは大きく変わる。特にInstructorのリトライコストやSmolagentsのコード生成ループのコストを事前に見積もる際に役立つ。
 
 ## いつ使い、いつ避けるべきか
 

@@ -51,7 +51,7 @@ relatedPosts:
 > 📚 <strong>Series: Mastering OpenClaw</strong>
 > - <strong>Part 1: Introduction (this post)</strong> — What is OpenClaw and why is it special?
 > - [Part 2: Tutorial](/en/blog/en/openclaw-installation-tutorial/) — From installation to your first conversation
-> - [Part 3: Practical Usage](/en/blog/en/openclaw-advanced-usage) — Skills, automation, and advanced workflows
+> - [Part 3: Practical Usage](/en/blog/en/openclaw-advanced-usage/) — Skills, automation, and advanced workflows
 
 ---
 

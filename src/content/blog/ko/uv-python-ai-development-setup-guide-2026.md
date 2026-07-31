@@ -375,7 +375,7 @@ jobs:
 
 `astral-sh/setup-uv` 액션이 공식 제공된다. CI 캐시도 자동으로 처리해준다.
 
-MCP 서버를 Python으로 구축할 때도 이 CI 패턴이 그대로 적용된다. [FastMCP](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026) 의존성을 `uv add fastmcp`로 추가하고, GitHub Actions에서 `uv sync`로 설치하면 일관된 빌드 환경을 유지할 수 있다.
+MCP 서버를 Python으로 구축할 때도 이 CI 패턴이 그대로 적용된다. [FastMCP](/ko/blog/ko/fastmcp-python-mcp-server-build-guide-2026/) 의존성을 `uv add fastmcp`로 추가하고, GitHub Actions에서 `uv sync`로 설치하면 일관된 빌드 환경을 유지할 수 있다.
 
 ## uv tool로 CLI 도구 관리하기
 
@@ -519,7 +519,7 @@ uv add "anthropic[vertex]"
 
 - torch, CUDA, tensorflow처럼 conda 채널에서 빌드된 바이너리에 의존하는 딥러닝 프로젝트. uv는 PyPI 기반이라 이 영역을 직접 못 다룬다. CUDA 버전 매칭이 핵심이라면 conda(또는 conda + uv 병행)가 현실적이다.
 
-한 줄로 정리하면, **API를 호출하는 에이전트/백엔드 성격의 Python 프로젝트라면 uv, GPU 바이너리에 깊게 묶인 ML 학습 프로젝트라면 conda**가 출발점이다. 라이브러리 추천 관점은 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026)에서 더 자세히 다뤘고, 타입 안전한 에이전트를 만들 때의 의존성 선택은 [Pydantic AI 타입 안전 에이전트 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026)을 참고하면 좋다.
+한 줄로 정리하면, **API를 호출하는 에이전트/백엔드 성격의 Python 프로젝트라면 uv, GPU 바이너리에 깊게 묶인 ML 학습 프로젝트라면 conda**가 출발점이다. 라이브러리 추천 관점은 [Python AI 에이전트 라이브러리 비교](/ko/blog/ko/python-ai-agent-library-comparison-2026/)에서 더 자세히 다뤘고, 타입 안전한 에이전트를 만들 때의 의존성 선택은 [Pydantic AI 타입 안전 에이전트 튜토리얼](/ko/blog/ko/pydantic-ai-type-safe-agent-tutorial-2026/)을 참고하면 좋다.
 
 ## 솔직하게, uv가 아직 못 해주는 것들
 
@@ -583,4 +583,4 @@ uv self update
 
 **이미지 brief** (Codex 이미지 생성용): uv의 병렬 다운로드 아키텍처를 보여주는 다이어그램. pip의 순차적 패키지 해결(직렬 화살표)과 uv의 병렬 해결(동시 화살표 여러 개)을 나란히 배치. 배경은 어두운 터미널 테마. 제목은 "uv vs pip: Parallel Resolution". 색상: uv는 보라/인디고, pip은 회색.
 
-uv로 환경을 깔끔하게 잡았다면 그다음 자연스러운 단계는 로컬 관측성이다. 직접 띄운 환경 위에 LLM 트레이싱을 얹는 방법은 [Langfuse v3 셀프호스팅 완전 가이드](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026)에서 이어서 다룬다.
+uv로 환경을 깔끔하게 잡았다면 그다음 자연스러운 단계는 로컬 관측성이다. 직접 띄운 환경 위에 LLM 트레이싱을 얹는 방법은 [Langfuse v3 셀프호스팅 완전 가이드](/ko/blog/ko/langfuse-self-hosted-llm-tracing-setup-guide-2026/)에서 이어서 다룬다.

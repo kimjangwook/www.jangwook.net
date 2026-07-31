@@ -355,9 +355,9 @@ That last point is where I'd actually pause longest before adoption. It's not ju
 
 ## Combining with Message Batches API
 
-The [Anthropic Message Batches API](/en/blog/en/anthropic-message-batches-api-production-guide) cuts costs 50% by processing requests asynchronously in bulk. Combined with Files API, you get both benefits simultaneously.
+The [Anthropic Message Batches API](/en/blog/en/anthropic-message-batches-api-production-guide/) cuts costs 50% by processing requests asynchronously in bulk. Combined with Files API, you get both benefits simultaneously.
 
-100 documents × 10 questions = 1,000 API requests. Without Files API, each request sends the entire document. With both APIs together, you get reduced file transfer costs plus 50% batch discount. [Tracking costs with Langfuse](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026) lets you see the actual savings in numbers.
+100 documents × 10 questions = 1,000 API requests. Without Files API, each request sends the entire document. With both APIs together, you get reduced file transfer costs plus 50% batch discount. [Tracking costs with Langfuse](/en/blog/en/langfuse-self-hosted-llm-tracing-setup-guide-2026/) lets you see the actual savings in numbers.
 
 ---
 
