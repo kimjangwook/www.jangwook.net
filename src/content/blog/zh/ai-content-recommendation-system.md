@@ -723,7 +723,7 @@ const unreadRecommendations = recommendations.filter(
 
 ## 下一篇
 
-<strong>[推荐系统创新: 将 78,000 令牌降至零的元数据优化之旅](/ko/blog/ko/metadata-based-recommendation-optimization/)</strong>介绍了将此 LLM 驱动的推荐系统优化为基于元数据的算法,100% 消除令牌使用并将执行时间缩短 99% 的案例。
+<strong>[推荐系统创新: 将 78,000 令牌降至零的元数据优化之旅](/zh/blog/zh/metadata-based-recommendation-optimization/)</strong>介绍了将此 LLM 驱动的推荐系统优化为基于元数据的算法,100% 消除令牌使用并将执行时间缩短 99% 的案例。
 
 ## 参考资料
 

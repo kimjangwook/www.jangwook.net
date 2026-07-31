@@ -1,6 +1,6 @@
 ---
 title: '24,948 of My 46,382 Internal Links Pointed at a 301'
-description: 'A link-text accessibility script surfaced a URL bug instead. Across 1,334 built pages, 24,948 of 46,382 internal links pointed at a slash-less URL that 301s. Root cause, four-stage fix, and the run to zero.'
+description: 'Across 1,334 pages, 24,948 of 46,382 internal links pointed at a slash-less URL that 301-redirects. The root cause, a four-stage fix, and the audit that hit zero.'
 pubDate: '2026-07-31'
 heroImage: '../../../assets/blog/internal-link-trailing-slash-redirect-audit-2026/hero.png'
 tags:

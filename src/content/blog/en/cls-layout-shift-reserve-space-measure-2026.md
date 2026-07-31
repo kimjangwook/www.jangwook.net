@@ -1,6 +1,6 @@
 ---
 title: 'Cutting CLS from 0.559 to 0.014, measured'
-description: 'A layout that jumps while it loads is a measurable metric, not a matter of taste. I built the same page two ways and dropped CLS from 0.559 (POOR) to 0.014 (GOOD) with reserved image boxes and pre-placed slots.'
+description: 'I built the same page two ways and measured both. Reserved image boxes and pre-placed slots dropped Cumulative Layout Shift from 0.559 (POOR) to 0.014 (GOOD).'
 pubDate: '2026-07-15'
 heroImage: '../../../assets/blog/cls-layout-shift-reserve-space-measure-2026/hero.png'
 tags:

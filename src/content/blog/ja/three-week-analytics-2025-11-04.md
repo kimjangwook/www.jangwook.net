@@ -105,11 +105,11 @@ relatedPosts:
 
 | 順位 | タイトル | ページビュー | 平均滞在時間 | エンゲージメント率 |
 |------|------|----------|-----------|--------|
-| 1 | [Claude Skills完全ガイド](/ko/blog/ko/claude-skills-implementation-guide/) | 31 | 2:09 | 80% |
+| 1 | [Claude Skills完全ガイド](/ja/blog/ja/claude-skills-implementation-guide/) | 31 | 2:09 | 80% |
 | 2 | [英語ホームページ](/en/) | 56 | 0:00 | 3.6% |
 | 3 | [Claude Code Best Practices (英語)](/en/blog/en/claude-code-best-practices/) | 10 | 0:51 | 80% |
-| 4 | [Claude Code Best Practices (韓国語)](/ko/blog/ko/claude-code-best-practices/) | 9 | 1:12 | 72.7% |
-| 5 | [OpenAI AgentKit Part 1](/ko/blog/ko/openai-agentkit-tutorial-part1/) | 9 | 1:17 | 80% |
+| 4 | [Claude Code Best Practices (韓国語)](/ja/blog/ja/claude-code-best-practices/) | 9 | 1:12 | 72.7% |
+| 5 | [OpenAI AgentKit Part 1](/ja/blog/ja/openai-agentkit-tutorial-part1/) | 9 | 1:17 | 80% |
 
 ### 今期間公開された新規記事 (20記事)
 

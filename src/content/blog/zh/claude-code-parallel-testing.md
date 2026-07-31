@@ -61,7 +61,7 @@ relatedPosts:
 
 ## 概述
 
-[上一篇文章](/ko/blog/ko/llm-page-migration-standardization/)中介绍了利用LLM进行网页迁移的整体策略。本文将介绍<strong>利用Claude Code的并行执行功能将测试自动化速度提升5-8倍的实战实现方法</strong>。
+[上一篇文章](/zh/blog/zh/llm-page-migration-standardization/)中介绍了利用LLM进行网页迁移的整体策略。本文将介绍<strong>利用Claude Code的并行执行功能将测试自动化速度提升5-8倍的实战实现方法</strong>。
 
 在拥有50〜500个以上页面的大规模迁移项目中,最大的瓶颈是<strong>测试阶段</strong>。如果对每个页面依次执行E2E、可访问性、性能和SEO测试,将需要数十个小时。
 
@@ -1362,7 +1362,7 @@ jobs:
 
 ### 下一步
 
-结合[上一篇文章](/ko/blog/ko/llm-page-migration-standardization/)中介绍的整体迁移策略和本文的并行测试自动化,可以构建<strong>完全自动化的大规模网页迁移系统</strong>。
+结合[上一篇文章](/zh/blog/zh/llm-page-migration-standardization/)中介绍的整体迁移策略和本文的并行测试自动化,可以构建<strong>完全自动化的大规模网页迁移系统</strong>。
 
 下期预告: "Claude Code代理优化: 提升令牌效率和响应速度"
 
@@ -1379,4 +1379,4 @@ jobs:
 - [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
 
 ### 参考博客文章
-- [使用LLM实现网页迁移工作的标准化](/ko/blog/ko/llm-page-migration-standardization/)
+- [使用LLM实现网页迁移工作的标准化](/zh/blog/zh/llm-page-migration-standardization/)

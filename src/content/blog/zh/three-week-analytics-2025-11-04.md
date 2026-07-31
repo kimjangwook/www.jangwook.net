@@ -158,20 +158,20 @@ relatedPosts:
 
 | 排名 | 标题 | 页面浏览 | 平均停留 | 参与率 |
 |------|------|----------|-----------|--------|
-| 1 | [Claude Skills完整指南](/ko/blog/ko/claude-skills-implementation-guide/) | 31 | 2:09 | 80% |
+| 1 | [Claude Skills完整指南](/zh/blog/zh/claude-skills-implementation-guide/) | 31 | 2:09 | 80% |
 | 2 | [英文主页](/en/) | 56 | 0:00 | 3.6% |
 | 3 | [Claude Code最佳实践（英文）](/en/blog/en/claude-code-best-practices/) | 10 | 0:51 | 80% |
-| 4 | [Claude Code最佳实践（韩文）](/ko/blog/ko/claude-code-best-practices/) | 9 | 1:12 | 72.7% |
-| 5 | [OpenAI AgentKit第1部分](/ko/blog/ko/openai-agentkit-tutorial-part1/) | 9 | 1:17 | 80% |
-| 6 | [SSR方法论调查分析](/ko/blog/ko/ssr-survey-analysis/) | 8 | 1:37 | 72.7% |
+| 4 | [Claude Code最佳实践（韩文）](/zh/blog/zh/claude-code-best-practices/) | 9 | 1:12 | 72.7% |
+| 5 | [OpenAI AgentKit第1部分](/zh/blog/zh/openai-agentkit-tutorial-part1/) | 9 | 1:17 | 80% |
+| 6 | [SSR方法论调查分析](/zh/blog/zh/ssr-survey-analysis/) | 8 | 1:37 | 72.7% |
 | 7 | [Jules自动编码（英文）](/en/blog/en/jules-autocoding/) | 7 | 5:18 | 57.1% |
 | 8 | [韩文主页](/ko/) | 7 | 0:08 | 75% |
-| 9 | [Playwright AI测试](/ko/blog/ko/playwright-ai-testing/) | 7 | 1:38 | 50% |
+| 9 | [Playwright AI测试](/zh/blog/zh/playwright-ai-testing/) | 7 | 1:38 | 50% |
 | 10 | [LangGraph多代理（英文）](/en/blog/en/langgraph-multi-agent/) | 6 | 0:27 | 66.7% |
 | 11 | [LLM PM工作流自动化（日文）](/ja/blog/ja/llm-pm-workflow-automation/) | 6 | 0:00 | 40% |
-| 12 | [Chrome DevTools MCP](/ko/blog/ko/chrome-devtools-mcp-performance/) | 6 | 1:11 | 55.6% |
-| 13 | [Jules自动编码（韩文）](/ko/blog/ko/jules-autocoding/) | 6 | 5:14 | 85.7% |
-| 14 | [LLM博客自动化](/ko/blog/ko/llm-blog-automation/) | 6 | 1:42 | 62.5% |
+| 12 | [Chrome DevTools MCP](/zh/blog/zh/chrome-devtools-mcp-performance/) | 6 | 1:11 | 55.6% |
+| 13 | [Jules自动编码（韩文）](/zh/blog/zh/jules-autocoding/) | 6 | 5:14 | 85.7% |
+| 14 | [LLM博客自动化](/zh/blog/zh/llm-blog-automation/) | 6 | 1:42 | 62.5% |
 | 15 | [LLM消费者研究SSR（英文）](/en/blog/en/llm-consumer-research-ssr/) | 5 | 0:07 | 75% |
 
 ### 内容洞察

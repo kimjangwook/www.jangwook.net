@@ -106,11 +106,11 @@ Over three weeks, we recorded <strong>235 visitors</strong>, <strong>259 session
 
 | Rank | Title | Pageviews | Avg Time | Engagement |
 |------|-------|-----------|----------|------------|
-| 1 | [Claude Skills Complete Guide](/ko/blog/ko/claude-skills-implementation-guide/) | 31 | 2:09 | 80% |
+| 1 | [Claude Skills Complete Guide](/en/blog/en/claude-skills-implementation-guide/) | 31 | 2:09 | 80% |
 | 2 | [English Homepage](/en/) | 56 | 0:00 | 3.6% |
 | 3 | [Claude Code Best Practices (EN)](/en/blog/en/claude-code-best-practices/) | 10 | 0:51 | 80% |
-| 4 | [Claude Code Best Practices (KO)](/ko/blog/ko/claude-code-best-practices/) | 9 | 1:12 | 72.7% |
-| 5 | [OpenAI AgentKit Part 1](/ko/blog/ko/openai-agentkit-tutorial-part1/) | 9 | 1:17 | 80% |
+| 4 | [Claude Code Best Practices (KO)](/en/blog/en/claude-code-best-practices/) | 9 | 1:12 | 72.7% |
+| 5 | [OpenAI AgentKit Part 1](/en/blog/en/openai-agentkit-tutorial-part1/) | 9 | 1:17 | 80% |
 
 ### New Posts Published This Period (20 posts)
 

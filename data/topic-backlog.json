@@ -5962,6 +5962,40 @@
       "added_at": "2026-07-30",
       "status": "queued",
       "notes": "2026-07-30 daily-closing 선정. 착지: 같은 페이지를 사람 UI Lighthouse와 에이전트 헬스체크로 각각 돌려 결과가 갈라지는 항목(agentic browsing, SEO)을 대조. 한계 명시: 롤아웃 채널 제한, 점수 산식 비공개. 내부링크: axe-automated-a11y-coverage-gap-2026, ai-crawlers-dont-render-javascript-csr-2026, validate-structured-data-ci-jsonld-2026."
+    },
+    {
+      "slug": "inp-lab-vs-field-tbt-proxy-compare-2026",
+      "title_idea": "랩에서 INP를 측정할 수 없다면 무엇을 대신 보나 — TBT 대리지표의 일치도 실측 비교",
+      "content_type": "comparison",
+      "target_keyword": "INP 랩 측정",
+      "secondary_keywords": [
+        "Total Blocking Time 대리지표",
+        "field vs lab 데이터",
+        "PageSpeed Insights CrUX"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "WebPageTest 2026 INP 분해 기능 / INP는 필드 전용 지표. wp-rocket.me/blog/core-web-vitals-testing-performance-monitoring-tools/",
+      "added_at": "2026-07-31",
+      "status": "queued",
+      "notes": "2026-07-31 daily-closing 선정(토=비교 가이드). 착지점: 같은 페이지 8개에 Lighthouse TBT와 CrUX INP를 나란히 놓고 순위 상관을 계산, 대리지표가 어긋나는 페이지 유형을 표로 제시. 한계 명시: 저트래픽 페이지는 CrUX 결측. 내부링크: cls-layout-shift-reserve-space-measure-2026, chrome-devtools-mcp-performance."
+    },
+    {
+      "slug": "crux-vs-rum-sample-gap-compare-2026",
+      "title_idea": "CrUX가 비어 있는 페이지는 누가 측정하나 — CrUX와 자체 RUM 커버리지 차이 비교",
+      "content_type": "comparison",
+      "target_keyword": "CrUX 데이터 없음",
+      "secondary_keywords": [
+        "자체 RUM 구축",
+        "web-vitals 라이브러리",
+        "저트래픽 페이지 성능 측정"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "Chrome UX Report 표본 임계값 문서 / PageSpeed Insights 필드 데이터 결측 사례",
+      "added_at": "2026-07-31",
+      "status": "queued",
+      "notes": "2026-07-31 daily-closing 선정. 착지점: 321편 사이트에서 CrUX 필드 데이터가 존재하는 URL 비율을 세고, 결측 구간을 web-vitals 자체 수집으로 메웠을 때의 지표 차이를 대조. 한계 명시: 자체 RUM은 방문자 표본 편향. 내부링크: inp-lab-vs-field-tbt-proxy-compare-2026, cls-layout-shift-reserve-space-measure-2026."
     }
   ]
 }
