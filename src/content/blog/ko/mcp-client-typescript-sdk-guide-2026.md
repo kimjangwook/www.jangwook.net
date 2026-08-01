@@ -332,7 +332,7 @@ MCP 서버에 코드 린팅, 파일 변환, 외부 API 조회 같은 도구가 �
 
 **자체 에이전트 프레임워크 개발**
 
-LangGraph나 LlamaIndex 같은 프레임워크 없이 직접 에이전트를 짜는 경우, MCP 서버가 제공하는 도구를 에이전트 루프 안에 통합할 수 있다. `listTools()`로 도구 목록을 가져와 LLM 프롬프트에 주입하고, LLM의 응답에서 도구 호출 파라미터를 파싱해 `callTool()`로 실행하는 패턴이다. [Claude Agent SDK로 AI 에이전트에 tool을 붙이는 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 이 패턴을 더 체계적으로 확인할 수 있다.
+LangGraph나 LlamaIndex 같은 프레임워크 없이 직접 에이전트를 짜는 경우, MCP 서버가 제공하는 도구를 에이전트 루프 안에 통합할 수 있다. `listTools()`로 도구 목록을 가져와 LLM 프롬프트에 주입하고, LLM의 응답에서 도구 호출 파라미터를 파싱해 `callTool()`로 실행하는 패턴이다. [Claude Agent SDK로 AI 에이전트에 tool을 붙이는 완전 가이드](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)에서 이 패턴을 더 체계적으로 확인할 수 있다. 반대로 루프를 직접 짜지 않고 프레임워크에 얹는 길도 있다. 같은 TypeScript 진영이라면 [Mastra](/ko/blog/ko/mastra-ai-typescript-agent-framework-guide-2026/)를, 파이썬 쪽이라면 [Agno](/ko/blog/ko/agno-python-agent-framework-gemini-guide-2026/)를 각각 정리해뒀다.
 
 **테스트 및 디버깅**
 

@@ -6014,6 +6014,40 @@
       "added_at": "2026-07-31",
       "status": "queued",
       "notes": "2026-07-31 daily-closing 선정. 착지점: 321편 사이트에서 CrUX 필드 데이터가 존재하는 URL 비율을 세고, 결측 구간을 web-vitals 자체 수집으로 메웠을 때의 지표 차이를 대조. 한계 명시: 자체 RUM은 방문자 표본 편향. 내부링크: inp-lab-vs-field-tbt-proxy-compare-2026, cls-layout-shift-reserve-space-measure-2026."
+    },
+    {
+      "slug": "robots-txt-user-agent-token-coverage-audit-2026",
+      "title_idea": "robots.txt의 User-agent 줄이 실제로 덮는 크롤러는 몇 개인가",
+      "content_type": "how-to",
+      "target_keyword": "robots.txt user-agent token",
+      "secondary_keywords": [
+        "Google 크롤러 목록",
+        "AdsBot robots.txt",
+        "크롤러 user agent token"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Google Crawling Infrastructure — Google's common crawlers / robots.txt spec (developers.google.com/crawling)",
+      "added_at": "2026-08-01",
+      "status": "queued",
+      "notes": "공식 문서가 developers.google.com/crawling 으로 이전되며 크롤러별 robots.txt 스니펫과 user agent token 표가 정리됨. 측정 포인트 두 가지가 반증 가능하다. (1) `User-agent: *`는 AdsBot 계열을 매칭하지 않으므로 별도 명시가 없으면 내 robots.txt는 그 크롤러를 전혀 덮지 않는다. (2) Googlebot Smartphone과 Desktop은 같은 토큰을 공유해 robots.txt로 분리 제어가 불가능하다. 내 robots.txt를 공식 토큰 목록과 대조해 '덮는다고 믿었지만 안 덮는 줄'을 세는 감사 스크립트로 구성. 기존 robots-snippet-controls-ai-overviews-2026(스니펫 제어)과 축이 다름 — 그쪽은 serving 지시, 이쪽은 user-agent 매칭."
+    },
+    {
+      "slug": "devtools-render-blocking-column-first-paint-audit-2026",
+      "title_idea": "Network 패널의 render-blocking 열이 지목한 리소스와 내가 지목한 리소스",
+      "content_type": "how-to",
+      "target_keyword": "render blocking resources DevTools",
+      "secondary_keywords": [
+        "render blocking column",
+        "first paint 차단 리소스",
+        "Performance Insights"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Chrome for Developers — Performance insights: Render-blocking requests / What's new in DevTools",
+      "added_at": "2026-08-01",
+      "status": "queued",
+      "notes": "DevTools Network 패널에 render blocking 전용 열이 생겨, 어떤 JS/CSS/폰트가 첫 페인트를 막는지 추측 없이 열람 가능해졌다. 실험 설계: 내 Astro 빌드 산출물에서 (a) 내가 차단 리소스라고 예상한 목록과 (b) DevTools가 실제로 표시한 목록을 대조해 불일치 건수를 센다. 이어서 defer/async/preload를 하나씩 적용하며 FCP 변화를 재고, '차단으로 표시되지만 실제 FCP에는 영향이 없는' 항목을 분리한다. LCP·CLS·INP 기존 계측 글과 지표 축이 겹치지 않고 first paint를 다룸."
     }
   ]
 }

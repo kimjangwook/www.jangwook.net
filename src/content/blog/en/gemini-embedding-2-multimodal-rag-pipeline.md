@@ -1,9 +1,9 @@
 ---
 title: Gemini Embedding 2 — How Multimodal Embeddings Change RAG
-description: A deep dive into Google
-s first native multimodal embedding model: >-
-  key features, architecture shifts compared to text-only embeddings, and how to
-  apply it in production RAG pipelines.'
+description: >-
+  Google's first native multimodal embedding model: what shifts from text-only
+  embeddings, how retrieval changes, and how to use it in a production RAG
+  pipeline.
 pubDate: '2026-03-19'
 heroImage: ../../../assets/blog/gemini-embedding-2-multimodal-rag-pipeline-hero.jpg
 tags:

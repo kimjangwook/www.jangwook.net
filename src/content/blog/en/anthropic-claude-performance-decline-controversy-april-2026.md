@@ -1,9 +1,8 @@
 ---
 title: 'The Anthropic Claude Performance Decline Controversy'
 description: >-
-  In March 2026, Anthropic quietly lowered Claude default effort to "medium,"
-  triggering power user backlash. A CTO-level analysis of the pricing
-  controversy and what it reveals about transparency and trust in AI services.
+  Anthropic quietly dropped Claude's default effort to medium in March 2026 and
+  power users pushed back. What the row reveals about pricing and trust in AI.
 pubDate: '2026-04-17'
 heroImage: >-
   ../../../assets/blog/anthropic-claude-performance-decline-controversy-april-2026-hero.jpg

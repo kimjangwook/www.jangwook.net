@@ -119,7 +119,7 @@ def ask(num_ctx, n_filler):
 
 기본값이 4096이었다면 5911에서 이미 잘렸어야 한다. 그런데 12631토큰까지 멀쩡히 들어가다가 16383(=16384−1)에서 천장을 쳤다. 즉 내 맥북에서 Ollama 0.30.7이 잡은 **기본 num_ctx는 4096이 아니라 16384**였다. [Ollama 공식 FAQ](https://docs.ollama.com/faq)와 커뮤니티 문서를 찾아보니, 최근 버전은 기본 컨텍스트를 사용 가능한 메모리에 맞춰 자동으로 키운다고 한다. 16GB M1에서 16384가 잡힌 것이다.
 
-이게 단순한 트리비아가 아닌 이유는 portability다. 내 32GB 데스크탑에서 잘 돌던 에이전트가 8GB 클라우드 인스턴스에 올라가면 기본 num_ctx가 더 작게 잡혀서, 똑같은 코드가 똑같은 입력에 조용히 잘릴 수 있다. 로컬에서 테스트할 땐 멀쩡하다가 배포하면 품질이 무너지는, 재현하기 까다로운 사고로 이어진다. 나는 "기본값을 믿지 말고 항상 명시하라"는 쪽이다. 기본값이 머신마다 다르다면 그건 사실상 신뢰할 수 없는 값이다.
+이게 단순한 트리비아가 아닌 이유는 portability다. 내 32GB 데스크탑에서 잘 돌던 에이전트가 8GB 클라우드 인스턴스에 올라가면 기본 num_ctx가 더 작게 잡혀서, 똑같은 코드가 똑같은 입력에 조용히 잘릴 수 있다. 로컬에서 테스트할 땐 멀쩡하다가 배포하면 품질이 무너지는, 재현하기 까다로운 사고로 이어진다. 나는 "기본값을 믿지 말고 항상 명시하라"는 쪽이다. 기본값이 머신마다 다르다면 그건 사실상 신뢰할 수 없는 값이다. 게다가 이 천장은 요청 하나만의 것이 아니다. 동시 요청을 몇 개까지 받게 잡느냐에 따라 한 슬롯이 쓸 수 있는 창은 더 좁아지는데, 그 쪽은 [`num_parallel`을 올리며 동시 요청 처리량을 재본 실험](/ko/blog/ko/local-llm-concurrent-requests-num-parallel-experiment/)에서 따로 다뤘다.
 
 ## 그래서 코드에 가드를 하나 넣었다
 
@@ -157,7 +157,7 @@ def guarded_generate(prompt, num_ctx=8192, model="melavisions/gemma4:latest"):
 
 그리고 솔직히 못 푼 게 하나 남았다. OpenAI 호환 엔드포인트(`/v1/chat/completions`)로도 같은 테스트를 돌려봤는데, 여기선 `options.num_ctx`를 요청마다 줄 방법이 없고 `usage.prompt_tokens`가 `/api/generate`의 `prompt_eval_count`와 다른 숫자(같은 텍스트인데 3464 대 2384)로 찍혔다. 게다가 내 머신에선 긴 입력에서도 head가 살아남아 recall이 됐다. 토큰 집계 방식이 달라서 두 엔드포인트를 1:1로 비교할 수 없다는 것까진 알겠는데, 왜 잘림 거동까지 달라 보였는지는 깔끔하게 설명하지 못하겠다. 다만 [OpenAI 호환 API에서 num_ctx가 안 먹혀 4096으로 조용히 잘린다는 이슈](https://github.com/ollama/ollama/issues/2714)가 실제로 보고돼 있으니, `/v1` 경로를 쓴다면 서버 기본값(`OLLAMA_CONTEXT_LENGTH`)에 전적으로 의존한다는 점은 기억해두는 게 좋다.
 
-[콜드 스타트 때 load_duration을 추적](/ko/blog/ko/local-llm-cold-start-load-duration-experiment/)했던 것과 결이 같다. Ollama가 응답에 슬쩍 끼워 돌려주는 숫자들은 문서엔 잘 안 적혀 있어도, 실제 거동을 추적하는 가장 정직한 단서다. `load_duration`이 콜드 스타트를 일러바쳤듯, `prompt_eval_count`는 잘림을 일러바친다. 로컬 모델을 진지하게 굴릴 거면 이 숫자들을 한 번씩 들여다보길 권한다.
+[콜드 스타트 때 load_duration을 추적](/ko/blog/ko/local-llm-cold-start-load-duration-experiment/)했던 것과 결이 같다. Ollama가 응답에 슬쩍 끼워 돌려주는 숫자들은 문서엔 잘 안 적혀 있어도, 실제 거동을 추적하는 가장 정직한 단서다. `load_duration`이 콜드 스타트를 일러바쳤듯, `prompt_eval_count`는 잘림을 일러바친다. 짝이 되는 `eval_count`도 같은 성격인데, 추론 모드를 켰을 때 [보이지 않는 사고 토큰이 비용을 얼마나 밀어올리는지](/ko/blog/ko/local-llm-reasoning-mode-token-cost-experiment/)는 그 숫자로 쟀다. 로컬 모델을 진지하게 굴릴 거면 이 숫자들을 한 번씩 들여다보길 권한다.
 
 ## 참고자료
 

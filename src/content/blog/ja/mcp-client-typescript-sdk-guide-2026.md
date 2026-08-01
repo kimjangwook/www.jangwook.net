@@ -315,7 +315,7 @@ MCPサーバーにコードのリンティング、ファイル変換、外部AP
 
 **独自エージェントフレームワークの開発**
 
-LangGraphやLlamaIndexなしで独自のエージェントを書く場合、MCPサーバーが提供するツールをエージェントループに組み込める。`listTools()`でツール一覧を取得してLLMプロンプトに注入し、LLMの応答からツール呼び出しパラメータを解析して`callTool()`で実行するパターンだ。AIエージェントにツールを体系的に組み込む方法は[Claude Agent SDKによるtool use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)で詳しく解説している。
+LangGraphやLlamaIndexなしで独自のエージェントを書く場合、MCPサーバーが提供するツールをエージェントループに組み込める。`listTools()`でツール一覧を取得してLLMプロンプトに注入し、LLMの応答からツール呼び出しパラメータを解析して`callTool()`で実行するパターンだ。AIエージェントにツールを体系的に組み込む方法は[Claude Agent SDKによるtool use完全ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)で詳しく解説している。逆に、ループを自分で書かずフレームワークに乗せる道もある。同じTypeScript陣営なら[Mastra](/ja/blog/ja/mastra-ai-typescript-agent-framework-guide-2026/)を、Python側なら[Agno](/ja/blog/ja/agno-python-agent-framework-gemini-guide-2026/)をそれぞれまとめてある。
 
 **テストとデバッグ**
 

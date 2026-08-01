@@ -119,7 +119,7 @@ def ask(num_ctx, n_filler):
 
 要是默认是 4096，5911 那会儿就该被砍了。结果 12631 token 还稳稳进去，到 16383(= 16384 − 1)才撞顶。也就是说，在我的 MacBook 上，Ollama 0.30.7 选的**默认 num_ctx 不是 4096，而是 16384**。翻了 [Ollama 官方 FAQ](https://docs.ollama.com/faq) 和社区文档才知道，近期版本会按可用内存自动放大默认上下文。16GB 的 M1 上就落到了 16384。
 
-这不是冷知识，是个 portability 问题。在我 32GB 台式机上跑得欢的智能体，挪到 8GB 云实例，默认 num_ctx 变小，同一份代码对同一份输入就可能无声截断。于是你得到一桩难复现的事故：本地测试一切正常，部署后质量塌方。我的立场很明确：别信默认值，永远显式设定。如果默认值还因机器而异，那它本质上就是个不可信的值。
+这不是冷知识，是个 portability 问题。在我 32GB 台式机上跑得欢的智能体，挪到 8GB 云实例，默认 num_ctx 变小，同一份代码对同一份输入就可能无声截断。于是你得到一桩难复现的事故：本地测试一切正常，部署后质量塌方。我的立场很明确：别信默认值，永远显式设定。如果默认值还因机器而异，那它本质上就是个不可信的值。而且这个天花板并不只属于单条请求。你把服务端配置成同时接多少条请求，每个槽位能用的窗口就更窄，这一块我在[调高 `num_parallel` 测并发请求吞吐的实验](/zh/blog/zh/local-llm-concurrent-requests-num-parallel-experiment/)里另外谈过。
 
 ## 所以我在代码里加了一道守卫
 
@@ -155,7 +155,7 @@ def guarded_generate(prompt, num_ctx=8192, model="melavisions/gemma4:latest"):
 
 还有一件，老实说我没解开。我也用 OpenAI 兼容端点(`/v1/chat/completions`)跑了同一套测试，那里没法每次请求传 `options.num_ctx`，而且 `usage.prompt_tokens` 报出来的数和 `/api/generate` 的 `prompt_eval_count` 不一样(同一段文本，3464 对 2384)。更怪的是，在我机器上即便长输入 head 也活了下来，recall 成功。我能想通的是 token 计数方式不同、两个端点没法一比一对照，但为什么连截断行为看起来都不一样，我没法干净地解释。不过 [OpenAI 兼容 API 不认 num_ctx、在 4096 处无声截断的问题](https://github.com/ollama/ollama/issues/2714)确实有人报过，所以走 `/v1` 这条路的话，要记住你完全受制于服务端默认值(`OLLAMA_CONTEXT_LENGTH`)。
 
-这跟[冷启动时追踪 load_duration](/zh/blog/zh/local-llm-cold-start-load-duration-experiment/) 是一个路子。Ollama 悄悄塞进每个响应里的那些数字，哪怕文档写得稀薄，也是追踪它真实行为最诚实的线索。就像 `load_duration` 供出了冷启动，`prompt_eval_count` 供出了截断。要是你认真在跑本地模型，不妨把这些数字一个个翻出来看看。
+这跟[冷启动时追踪 load_duration](/zh/blog/zh/local-llm-cold-start-load-duration-experiment/) 是一个路子。Ollama 悄悄塞进每个响应里的那些数字，哪怕文档写得稀薄，也是追踪它真实行为最诚实的线索。就像 `load_duration` 供出了冷启动，`prompt_eval_count` 供出了截断。与之成对的 `eval_count` 也是同一种性格，开启推理模式后[看不见的思考 token 把成本抬高了多少](/zh/blog/zh/local-llm-reasoning-mode-token-cost-experiment/)，我就是用这个数字量的。要是你认真在跑本地模型，不妨把这些数字一个个翻出来看看。
 
 ## 参考资料
 

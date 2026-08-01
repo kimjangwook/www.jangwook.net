@@ -189,7 +189,7 @@ Boundaries, stated plainly.
 
 **Depth is my metric.** No official document says Google uses a particular depth as a threshold, and link structure guarantees no ranking. What the docs do guarantee stops at the shape of a crawlable link (`<a href>`) and the definition of crawl budget. Read my depth numbers as "how well does my structure explain itself using links alone," nothing more.
 
-**Unreachable is not unindexable.** URLs in sitemap.xml can be discovered without any link path, so this isn't a claim that 296 posts are about to vanish. But a sitemap is a flat list of URLs and carries no context: what a page sits under, which cluster it belongs to, what comes next. Only links carry that. Supplementing discovery with a sitemap and expressing structure with links are not substitutes.
+**Unreachable is not unindexable.** URLs in sitemap.xml can be discovered without any link path, so this isn't a claim that 296 posts are about to vanish. How far that discovery push actually goes has a limit of its own, and whether rewriting `lastmod` moves the recrawl interval at all is something I [measured separately](/en/blog/en/sitemap-lastmod-crawl-scheduling-2026/). Beyond that, a sitemap is a flat list of URLs and carries no context: what a page sits under, which cluster it belongs to, what comes next. Only links carry that. Supplementing discovery with a sitemap and expressing structure with links are not substitutes.
 
 **Rows two and three are simulations.** I didn't observe Googlebot behavior. I removed specific edges from my own link graph and recomputed shortest paths. The proposition I verified is "if that archive stops emitting crawlable links, my graph loses 296 posts from the root" — nothing wider.
 
@@ -202,7 +202,7 @@ Boundaries, stated plainly.
 The checklist I'm keeping. Any size of site, about thirty minutes.
 
 1. **Measure the build output.** Not the dev server, not CMS data. Collect `<a href>` from the HTML you actually ship and run breadth-first from the homepage. Client-inserted links dropping out is correct behavior.
-2. **Make unreachable count your KPI, not inbound count.** An audit that only flags zero-inbound orphans waves strongly connected islands straight through. Watch unreachable-from-root and the depth distribution instead.
+2. **Make unreachable count your KPI, not inbound count.** An audit that only flags zero-inbound orphans waves strongly connected islands straight through. Watch unreachable-from-root and the depth distribution instead. Once the edge count is filled in, the question left is what those edges say, and I audited anchor text as [one of the seven channels where a title gets declared](/en/blog/en/title-declaration-channels-anchor-text-audit-2026/) in a separate piece.
 3. **Run a hub-removal simulation once.** Pull each hub (archive, tags, categories) out of the graph one at a time and see how far unreachable count jumps. If removing one page strands hundreds of posts, that page is a single point of failure. Knowing that and keeping it is a different position from not knowing.
 4. **Don't hide content behind load-more or infinite scroll.** Elements that navigate through script events are not crawlable links (Google, officially). If you want infinite scroll, ship the same list through an `<a href>` pager alongside it.
 5. **Avoid next-only pagers.** Ten posts per page turns 322 posts into a worst-case depth of 33; the same page count through a numbered pager gives you 9. Depth is a consequence of a UI choice.
