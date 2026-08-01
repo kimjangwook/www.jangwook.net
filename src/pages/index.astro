@@ -165,21 +165,19 @@ const formatDate = (date: Date, lang: LanguageCode) => {
 								{latestPostsByLanguage[lang.code].map((post) => {
 									const slug = post.id.replace(`${lang.code}/`, '');
 									return (
-										<article>
-											<a
-												href={`/${lang.code}/blog/${lang.code}/${slug}/`}
-												class="group block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
-											>
-												<time datetime={post.data.pubDate.toISOString()} class="text-xs text-gray-500 dark:text-gray-500">
-													{formatDate(post.data.pubDate, lang.code)}
-												</time>
-												<h4 class="mt-1 text-base font-semibold leading-6 text-gray-950 dark:text-gray-50 group-hover:text-teal-700 dark:group-hover:text-teal-300">
-													{post.data.title}
-												</h4>
-												<p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400 line-clamp-2">
-													{post.data.description}
-												</p>
-											</a>
+										<article class="group relative">
+											<time datetime={post.data.pubDate.toISOString()} class="text-xs text-gray-500 dark:text-gray-500">
+												{formatDate(post.data.pubDate, lang.code)}
+											</time>
+											<h4 class="mt-1 text-base font-semibold leading-6 text-gray-950 dark:text-gray-50 group-hover:text-teal-700 dark:group-hover:text-teal-300">
+												<a
+													href={`/${lang.code}/blog/${lang.code}/${slug}/`}
+													class="rounded-sm after:absolute after:inset-0 after:content-[''] focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500"
+												>{post.data.title}</a>
+											</h4>
+											<p class="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-400 line-clamp-2">
+												{post.data.description}
+											</p>
 										</article>
 									);
 								})}

@@ -32,66 +32,78 @@ const {
 ---
 
 <article class="post-card">
-	<a href={href} class="post-card__link">
-		<div class="post-card__media" aria-hidden={!heroImage}>
-			{heroImage ? (
-				<Image
-					src={heroImage}
-					alt={title}
-					width={680}
-					height={430}
-					class="post-card__image"
-					loading={eager ? 'eager' : 'lazy'}
-					fetchpriority={eager ? 'high' : 'auto'}
-					decoding="async"
-					format="webp"
-					quality={82}
-				/>
-			) : (
-				<div class="post-card__placeholder mono uc">field<br />note</div>
-			)}
-			<span class="post-card__stamp mono uc">note</span>
+	<div class="post-card__media" aria-hidden="true">
+		{heroImage ? (
+			<Image
+				src={heroImage}
+				alt=""
+				width={680}
+				height={430}
+				class="post-card__image"
+				loading={eager ? 'eager' : 'lazy'}
+				fetchpriority={eager ? 'high' : 'auto'}
+				decoding="async"
+				format="webp"
+				quality={82}
+			/>
+		) : (
+			<div class="post-card__placeholder mono uc">field<br />note</div>
+		)}
+		<span class="post-card__stamp mono uc">note</span>
+	</div>
+
+	<div class="post-card__body">
+		<div class="post-card__meta">
+			<time datetime={pubDate.toISOString()}>
+				<FormattedDate date={pubDate} />
+			</time>
+			<span class="post-card__meta-dot"></span>
+			<span>{readingTime} {readingTimeLabel}</span>
 		</div>
 
-		<div class="post-card__body">
-			<div class="post-card__meta">
-				<time datetime={pubDate.toISOString()}>
-					<FormattedDate date={pubDate} />
-				</time>
-				<span class="post-card__meta-dot"></span>
-				<span>{readingTime} {readingTimeLabel}</span>
-			</div>
+		<h3><a href={href} class="post-card__link">{title}</a></h3>
+		<p>{description}</p>
 
-			<h3>{title}</h3>
-			<p>{description}</p>
-
-			<div class="post-card__footer">
-				<div class="post-card__tags">
-					{tags?.slice(0, 3).map((tag, index) => (
-						<span class:list={['post-card__tag mono', { 'is-primary': index === 0 }]}>
-							<span>#</span>{tag}
-						</span>
-					))}
-				</div>
-				<span class="post-card__read mono">{readMoreLabel}</span>
+		<div class="post-card__footer">
+			<div class="post-card__tags">
+				{tags?.slice(0, 3).map((tag, index) => (
+					<span class:list={['post-card__tag mono', { 'is-primary': index === 0 }]}>
+						<span>#</span>{tag}
+					</span>
+				))}
 			</div>
+			<span class="post-card__read mono" aria-hidden="true">{readMoreLabel}</span>
 		</div>
-	</a>
+	</div>
 </article>
 
 <style>
 	.post-card {
 		position: relative;
-		border-bottom: 1px solid var(--paper-rule);
-	}
-
-	.post-card__link {
 		display: grid;
 		grid-template-columns: minmax(11rem, 0.9fr) minmax(0, 1.1fr);
 		gap: 1.35rem;
 		padding: 1.35rem 0;
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	/* 링크는 제목만 감싼다 — 앵커 텍스트와 접근성 이름이 곧 글 제목이 된다.
+	   카드 전체의 클릭 영역은 가상 요소 오버레이로 되살린다. */
+	.post-card__link {
 		color: inherit;
 		text-decoration: none;
+	}
+
+	.post-card__link::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+	}
+
+	.post-card__link:focus-visible {
+		outline: 2px solid var(--flow-deep);
+		outline-offset: 3px;
+		border-radius: 2px;
 	}
 
 	.post-card__media {
@@ -236,17 +248,17 @@ const {
 		content: ' ->';
 	}
 
-	.post-card__link:hover .post-card__image {
+	.post-card:hover .post-card__image {
 		filter: saturate(1.02);
 		transform: scale(1.035);
 	}
 
-	.post-card__link:hover h3 {
+	.post-card:hover h3 {
 		color: var(--flow-deep);
 	}
 
 	@media (max-width: 720px) {
-		.post-card__link {
+		.post-card {
 			grid-template-columns: 1fr;
 			gap: 1rem;
 		}

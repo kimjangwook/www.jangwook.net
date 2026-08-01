@@ -3054,5 +3054,16 @@
       "devops": 0.5,
       "architecture": 0.6
     }
+  },
+  "title-declaration-channels-anchor-text-audit-2026": {
+    "pubDate": "2026-08-01",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.35,
+      "web-development": 0.98,
+      "ai-ml": 0.1,
+      "devops": 0.45,
+      "architecture": 0.55
+    }
   }
 }

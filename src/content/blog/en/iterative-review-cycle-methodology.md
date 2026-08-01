@@ -1,6 +1,6 @@
 ---
-title: '반복적 리뷰 사이클 방법론: 복잡한 개발에서 에러를 최소화하는 멀티 에이전트 오케스트레이션'
-description: 오케스트레이션 에이전트 중심의 반복적 리뷰 사이클을 통해 복잡한 개발 작업의 에러율을 40-90% 감소시키는 체계적 방법론을 소개합니다.
+title: 'Iterative Review Cycles: Cutting Errors with Multi-Agent Orchestration'
+description: A systematic methodology that puts an orchestration agent at the center of repeated review cycles, reported to cut error rates on complex development work by 40-90%.
 pubDate: '2025-12-06'
 heroImage: ../../../assets/blog/iterative-review-cycle-methodology-hero.jpg
 tags:

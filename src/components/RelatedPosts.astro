@@ -81,31 +81,32 @@ if (validPosts.length === 0) {
   <ul class="recommendations-list">
     {validPosts.map((post) => (
       <li class="recommendation-item">
-        <a
-          href={post.url}
-          onclick={`gtag('event', 'related_post_click', {
-            'target_post': '${post.slug}',
-            'similarity_score': ${post.score}
-          })`}
-        >
-          <div class="item-content">
-            <h4 class="item-title">{post.title}</h4>
-            {post.reason && (
-              <p class="item-reason">{post.reason}</p>
-            )}
-          </div>
-          {post.heroImage && (
-            <div class="item-image">
-              <Image
-                src={post.heroImage}
-                alt={post.title}
-                width={120}
-                height={80}
-                loading="lazy"
-              />
-            </div>
+        <div class="item-content">
+          <h4 class="item-title">
+            <a
+              class="item-link"
+              href={post.url}
+              onclick={`gtag('event', 'related_post_click', {
+                'target_post': '${post.slug}',
+                'similarity_score': ${post.score}
+              })`}
+            >{post.title}</a>
+          </h4>
+          {post.reason && (
+            <p class="item-reason">{post.reason}</p>
           )}
-        </a>
+        </div>
+        {post.heroImage && (
+          <div class="item-image" aria-hidden="true">
+            <Image
+              src={post.heroImage}
+              alt=""
+              width={120}
+              height={80}
+              loading="lazy"
+            />
+          </div>
+        )}
       </li>
     ))}
   </ul>
@@ -135,24 +136,38 @@ if (validPosts.length === 0) {
   }
 
   .recommendation-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
     border-bottom: 1px solid var(--paper-rule);
+    transition: opacity 0.2s ease;
   }
 
   .recommendation-item:last-child {
     border-bottom: none;
   }
 
-  .recommendation-item a {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    padding: 1.25rem 0;
+  /* 링크가 감싸는 것은 제목 텍스트뿐. 나머지 클릭 영역은 오버레이가 담당한다. */
+  .item-link {
     text-decoration: none;
     color: inherit;
-    transition: opacity 0.2s ease, color 0.2s ease;
   }
 
-  .recommendation-item:hover a {
+  .item-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .item-link:focus-visible {
+    outline: 2px solid var(--flow-deep);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .recommendation-item:hover {
     opacity: 0.8;
   }
 

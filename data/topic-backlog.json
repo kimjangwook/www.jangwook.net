@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-31",
+  "updated_at": "2026-08-01",
   "topics": [
+    {
+      "slug": "title-declaration-channels-anchor-text-audit-2026",
+      "title_idea": "제목을 선언하는 일곱 곳 중 여섯 곳만 내가 썼다",
+      "content_type": "comparison",
+      "target_keyword": "제목 링크 앵커 텍스트 감사",
+      "secondary_keywords": [
+        "og:title headline 일치",
+        "카드 링크 접근성 이름",
+        "WCAG 2.4.2 제목"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "자체 빌드 산출물 실측. dist/ HTML 1,336장, 글 1,296편. title/h1/og:title/twitter:title/JSON-LD headline/RSS 6채널 전수 대조 100% 일치(단일 frontmatter title 소스). 7번째 채널 인바운드 앵커 텍스트 18,296개: 대상 h1과 정확일치 121(0.7%), 포함 5,185(28.3%), 무관 12,990(71%). 길이 p90 144/p99 290/최대 367자. 원인=BlogCard·RelatedPosts·루트 index가 카드 전체를 <a>로 감쌈. 수정(링크는 제목만 + ::after inset:0 오버레이 + alt=\"\") 후 정확일치 5,285(28.9%), p90 52/p99 67/최대 111, 151자+ 1,716→0. 잔여 70자+ 55개는 전부 article-prose 수동 문맥 링크. WCAG 2.4.2 전수: 빈 title 1(ezoic 검증 스텁), 중복 제목 2그룹 4장 → en/iterative-review(한국어 title)·ko/barracuda(일본어 title) 언어 불일치 수정 후 0. Playwright hit test: 카드 1036x329, 앵커 1개, elementFromPoint(75%,80%)=link. 1차 출처: Google title-link, Article SD, W3C WCAG 2.4.2. 기둥①②.",
+      "added_at": "2026-08-01",
+      "status": "done",
+      "notes": "핵심: 선언 채널 7곳 중 6곳은 사람이 쓰고 리뷰되지만, 7번째(인바운드 앵커 텍스트)는 컴포넌트만 쓰고 아무도 세지 않는다. 71% 불일치는 정상(언어 스위처 9,072 + 본문 문맥 링크 3,846) — 획일화가 목표가 아님. 후속 소재: (1) 채널 대조+앵커 길이+제목 언어 일치를 scripts/ CI 게이트로 상설화, (2) 제목 언어 불일치 전수 규칙(title 문자 체계 vs html[lang])을 다국어 사이트 일반 문제로 확장, (3) 오버레이 패턴의 텍스트 선택 불가 트레이드오프를 대체 패턴과 비교.",
+      "published_at": "2026-08-01"
+    },
     {
       "slug": "internal-link-trailing-slash-redirect-audit-2026",
       "title_idea": "내부 링크 46,382개 중 24,948개가 301로 튕기고 있었다",

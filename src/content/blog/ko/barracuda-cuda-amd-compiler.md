@@ -1,5 +1,5 @@
 ---
-title: BarraCUDA — CUDAコードをAMD GPUで動かすオープンソースコンパイラ
+title: 'BarraCUDA — CUDA 코드를 AMD GPU에서 돌리는 오픈소스 컴파일러'
 description: >-
   CUDA 코드를 AMD GPU에서 직접 실행하는 오픈소스 컴파일러 BarraCUDA를 심층 분석합니다. LLVM 의존성 없이 15,000줄
   C99로 구현된 컴파일러 아키텍처, 지원 CUDA 기능 목록, GPU 벤더 종속에서 벗어나는 전략을 실제 코드 예시와 함께 설명합니다.
