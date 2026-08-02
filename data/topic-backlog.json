@@ -6066,6 +6066,108 @@
       "added_at": "2026-08-01",
       "status": "queued",
       "notes": "DevTools Network 패널에 render blocking 전용 열이 생겨, 어떤 JS/CSS/폰트가 첫 페인트를 막는지 추측 없이 열람 가능해졌다. 실험 설계: 내 Astro 빌드 산출물에서 (a) 내가 차단 리소스라고 예상한 목록과 (b) DevTools가 실제로 표시한 목록을 대조해 불일치 건수를 센다. 이어서 defer/async/preload를 하나씩 적용하며 FCP 변화를 재고, '차단으로 표시되지만 실제 FCP에는 영향이 없는' 항목을 분리한다. LCP·CLS·INP 기존 계측 글과 지표 축이 겹치지 않고 first paint를 다룸."
+    },
+    {
+      "slug": "audit-harness-series-1-shared-parser-skeleton-2026",
+      "title_idea": "감사 스크립트를 매번 새로 짜지 않기 #1 — 빌드 산출물 1,340장 파서의 공통 골격",
+      "content_type": "series",
+      "target_keyword": "정적 사이트 빌드 산출물 감사 스크립트",
+      "secondary_keywords": [
+        "HTML 전수 파싱",
+        "cheerio 감사 하네스",
+        "Astro dist 검사"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "자체 발행 이력 — 2026-07-30〜08-02 4편(crawl-depth, trailing-slash, title-declaration, wcag-em)에서 매번 일회용 파서를 새로 작성",
+      "added_at": "2026-08-02",
+      "status": "queued",
+      "notes": "이번 주 감사 글 4편이 각각 dist/**/*.html을 훑는 스크립트를 처음부터 다시 짰다. 공통 부분(파일 수집, 파싱, 샤딩·병렬, 결과 스키마, 리포트 출력)을 하나의 골격으로 뽑고, 글마다 달랐던 건 '규칙 함수' 하나뿐이었음을 코드로 보인다. 방법론 자체가 주제이므로 기존의 '내 사이트를 재봤다' 형식과 서술 각도가 다르다. 시리즈 1편으로 #2(시계열 회귀)와 짝."
+    },
+    {
+      "slug": "audit-harness-series-2-timeseries-regression-2026",
+      "title_idea": "감사 스크립트를 매번 새로 짜지 않기 #2 — 결과를 시계열로 남겨 회귀를 잡는다",
+      "content_type": "series",
+      "target_keyword": "사이트 품질 지표 회귀 감지",
+      "secondary_keywords": [
+        "감사 결과 스냅샷",
+        "CI 품질 게이트",
+        "지표 시계열 비교"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "자체 발행 이력 — #1의 후속. 2026-07-31 trailing-slash 글에서 24,948건 발견이 '한 번 고치고 끝'으로 남은 문제 인식",
+      "added_at": "2026-08-02",
+      "status": "queued",
+      "notes": "1편의 하네스가 뱉은 결과를 커밋마다 JSON으로 남기고, 직전 스냅샷과 비교해 악화만 실패로 처리하는 게이트를 만든다. 절대값 임계(위반 0건)가 아니라 델타 기준으로 잡는 이유를 실제 수치 변동으로 보인다. 인젝션 회귀 게이트 글(07-27)과 지표 축이 다르며 그쪽은 모델 버전, 이쪽은 빌드 산출물."
+    },
+    {
+      "slug": "wcag-sc-automatable-share-axe-vs-manual-2026",
+      "title_idea": "자동 감사가 판정할 수 있는 WCAG 성공 기준은 몇 개인가 — 위반 0건이 뜻하는 범위",
+      "content_type": "comparison",
+      "target_keyword": "axe-core 자동 검사 커버리지",
+      "secondary_keywords": [
+        "WCAG 2.2 AA 성공 기준",
+        "자동 판정 불가 항목",
+        "수동 검토 필요 범위"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "자체 실측 — 2026-08-02 wcag-em 글에서 axe-core 4.12.1을 1,342장에 전수 적용(wcag2a/2aa/21a/21aa/22aa 태그 한정) / W3C WCAG 2.2 Understanding 문서",
+      "added_at": "2026-08-02",
+      "status": "queued",
+      "notes": "축은 도구 대결이 아니라 '기준별 판정 가능성'이다. 기존 queued 항목 axe-wave-pa11y-lighthouse-...-comparison(도구 4종 비교)과 겹치지 않도록, 여기서는 axe 하나만 쓰고 WCAG 2.2 AA 성공 기준 목록을 축으로 세운다. 각 기준을 (a) 자동 판정 가능 (b) 부분 판정 (c) 판정 불가로 분류하고, 내 사이트에서 실제로 규칙이 발동한 기준만 표시해 '위반 0건'이 덮는 실제 범위를 백분율로 낸다. 이번 주 표본 대 전수 글의 후속이되 결론이 반대 방향(전수로 돌려도 못 보는 영역)."
+    },
+    {
+      "slug": "cheerio-jsdom-playwright-parse-benchmark-1300-pages-2026",
+      "title_idea": "같은 1,300장을 세 가지로 파싱했다 — cheerio·jsdom·Playwright의 시간과 결과 차이",
+      "content_type": "comparison",
+      "target_keyword": "cheerio jsdom playwright 비교",
+      "secondary_keywords": [
+        "HTML 파서 벤치마크",
+        "headless 브라우저 파싱 비용",
+        "정적 파싱 한계"
+      ],
+      "search_intent": "commercial",
+      "priority": 2,
+      "source": "자체 실측 — 2026-07-31·08-01 글에서 cheerio 1.2.0, 08-02 글에서 jsdom 30.0.1, 08-01 글에서 Playwright Chromium을 각각 사용",
+      "added_at": "2026-08-02",
+      "status": "queued",
+      "notes": "이번 주에 세 도구를 다른 글에서 따로 썼는데 어느 쪽을 언제 쓸지 기준을 적어둔 적이 없다. 동일 입력(빌드 산출물 1,300여 장)에 동일 질문 3종(앵커 텍스트 수집, 계산된 스타일 필요 항목, 접근성 트리)을 던져 소요 시간·CPU·결과 일치도를 잰다. 정적 파서가 틀리는 지점(CSS 적용 후에만 판정 가능한 항목)을 구체적 건수로 보이는 게 핵심. 도구 선택 가이드라 how-to가 아니라 comparison."
+    },
+    {
+      "slug": "w3c-document-status-group-note-recommendation-reading-2026",
+      "title_idea": "Group Note는 표준이 아니다 — W3C 문서 지위를 실무에서 읽는 법",
+      "content_type": "news",
+      "target_keyword": "W3C Group Note Recommendation 차이",
+      "secondary_keywords": [
+        "W3C 문서 트랙",
+        "웹 표준 지위",
+        "WCAG-EM 2.0 발행"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "W3C Process Document / WCAG-EM 2.0이 2026-07-23 Group Note로 발행된 사실(2026-08-02 자체 글에서 확인)",
+      "added_at": "2026-08-02",
+      "status": "queued",
+      "notes": "WCAG-EM 2.0을 다루면서 이게 Recommendation이 아니라 Group Note라는 점을 한 줄로만 넘겼다. 발주처가 '표준 준수'를 요구할 때 어떤 문서를 근거로 댈 수 있고 어느 것은 못 대는지가 실무 판단으로 남는다. W3C 트랙(WD→CR→PR→REC)과 Note 계열의 법적·계약적 위상 차이를 정리하고, 접근성·성능 영역에서 자주 인용되는 문서들을 지위별로 표에 넣는다. 측정 글이 아니라 문서 읽기 글이라 이번 주 방법론 고착을 깨는 쪽."
+    },
+    {
+      "slug": "related-posts-vs-hub-page-crawl-depth-compare-2026",
+      "title_idea": "관련 글 8개와 허브 한 장 중 무엇이 크롤 깊이를 더 줄이나",
+      "content_type": "comparison",
+      "target_keyword": "내부 링크 구조 크롤 깊이",
+      "secondary_keywords": [
+        "허브 페이지 효과",
+        "관련 글 링크",
+        "사이트 구조 비교"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "자체 실측 — 2026-07-30 crawl-depth 글에서 아카이브 4장 제거 시 296편이 도달 불가로 전환된 결과",
+      "added_at": "2026-08-02",
+      "status": "queued",
+      "notes": "지난주 글은 허브를 지웠을 때의 손실만 쟀다. 반대 방향으로 (a) 관련 글 링크만 있고 허브 없음 (b) 허브만 있고 관련 글 없음 (c) 둘 다 를 같은 문서 집합에 적용해 평균 깊이·최대 깊이·도달 불가 수를 비교한다. 링크 예산이 한정된 사이트가 어디에 먼저 투자해야 하는지를 수치로 답하는 게 목적. crawl-depth 글의 단순 후속이 아니라 설계 선택 비교라 서술 축이 다르다."
     }
   ]
 }
