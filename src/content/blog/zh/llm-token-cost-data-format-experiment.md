@@ -147,7 +147,7 @@ CSV、TSV、Markdown表彻底出局。因为没有办法把变长的条目数组
 - LLM输入不用XML。同样的信息，它最费token。
 - 若换格式大幅削了token，就验证一次该格式下模型精度是否保持。
 
-数据格式是代码里几乎自动决定的值，平时不会去留意。可它进入LLM上下文的那一刻，那个随手的 `indent=2` 就可能造出半张token账单。在亲自测量之前，我也低估了它的分量。
+数据格式是代码里几乎自动决定的值，平时不会去留意。可它进入LLM上下文的那一刻，那个随手的 `indent=2` 就可能造出半张token账单。在亲自测量之前，我也低估了它的分量。账单的另一半，也就是单价那边，眼下仍在晃动。[Anthropic和OpenAI在同一个月递交IPO之后，token单价怎么动的](/zh/blog/zh/anthropic-openai-ipo-token-price-war-developer-guide-june-2026/)，我另外整理过。单价不归我定，token数量归我定。
 
 ## 参考资料
 

@@ -218,7 +218,7 @@ Dispatch: OK (type-safe)
 
 `Literal["web_search", "read_file", ...]`로 선언했기 때문에, `tool_call.tool_name`은 항상 저 네 값 중 하나다. 존재하지 않는 도구를 모델이 만들어내더라도 Pydantic이 `ValidationError`를 던진다. `if tool_call.tool_name == "web_search"` 분기가 안전하게 동작하는 이유다.
 
-이 패턴은 Cloud API에서 function calling을 쓰는 것과 근본적으로 같다. 로컬에서 [Claude Agent SDK의 Tool Use 패턴](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)과 비교해보면 설계 차이가 흥미롭다. Cloud LLM은 도구 선택 자체를 모델이 "native"하게 처리하는 반면, Ollama 쪽은 JSON schema 강제 + Pydantic 검증이라는 명시적 레이어가 필요하다.
+이 패턴은 Cloud API에서 function calling을 쓰는 것과 근본적으로 같다. 로컬에서 [Claude Agent SDK의 Tool Use 패턴](/ko/blog/ko/claude-agent-sdk-tool-use-complete-guide-2026/)과 비교해보면 설계 차이가 흥미롭다. Cloud LLM은 도구 선택 자체를 모델이 "native"하게 처리하는 반면, Ollama 쪽은 JSON schema 강제 + Pydantic 검증이라는 명시적 레이어가 필요하다. TypeScript에서 이 Pydantic 자리를 맡는 건 Zod다. [Zod v4의 safeParse()로 Claude API 응답을 타입 안전하게 파싱하는 패턴](/ko/blog/ko/typescript-zod-v4-claude-api-structured-output-guide-2026/)을 따로 정리해뒀는데, 검증 레이어를 언어만 바꿔 옮긴 모양이 된다.
 
 ## Gemma4와 스키마 복잡도: 내가 발견한 한계
 

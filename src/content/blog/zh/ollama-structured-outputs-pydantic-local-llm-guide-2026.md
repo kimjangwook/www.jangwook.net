@@ -210,7 +210,7 @@ Dispatch: OK (type-safe)
 
 由于 `tool_name` 声明为 `Literal["web_search", "read_file", ...]`，`tool_call.tool_name` 始终是这四个值之一。如果模型捏造了不存在的工具名，Pydantic会抛出 `ValidationError`。这就是 `if tool_call.tool_name == "web_search"` 分支可以安全编写的原因。
 
-这个模式在架构上与云端API的函数调用相同。与[Claude Agent SDK的Tool Use模式](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)相比，可以发现一个有趣的设计差异：云端LLM在模型层面原生处理工具选择，而本地Ollama需要显式的JSON Schema加Pydantic验证层。
+这个模式在架构上与云端API的函数调用相同。与[Claude Agent SDK的Tool Use模式](/zh/blog/zh/claude-agent-sdk-tool-use-complete-guide-2026/)相比，可以发现一个有趣的设计差异：云端LLM在模型层面原生处理工具选择，而本地Ollama需要显式的JSON Schema加Pydantic验证层。在TypeScript这边，站在Pydantic位置上的是Zod。我另外整理过[用Zod v4的safeParse()把Claude API响应做类型安全解析的写法](/zh/blog/zh/typescript-zod-v4-claude-api-structured-output-guide-2026/)，等于把校验层原样搬到了另一种语言。
 
 ## Gemma4与Schema复杂度：我发现的局限性
 

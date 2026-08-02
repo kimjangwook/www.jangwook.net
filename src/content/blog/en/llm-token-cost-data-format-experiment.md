@@ -147,7 +147,7 @@ Today's measurements changed my defaults to this.
 - No XML as LLM input. It spends the most tokens on the same information.
 - If a format change cut tokens significantly, verify once that model accuracy holds in that format.
 
-Data format is a value your code picks almost automatically, so you rarely think about it. But the moment it enters an LLM context, that thoughtless `indent=2` can become half your token bill. Until I measured it myself, I was underestimating the size of it too.
+Data format is a value your code picks almost automatically, so you rarely think about it. But the moment it enters an LLM context, that thoughtless `indent=2` can become half your token bill. Until I measured it myself, I was underestimating the size of it too. The other half of that bill, the unit price, is still moving around. I covered [how token pricing shifted after Anthropic and OpenAI filed for IPOs in the same month](/en/blog/en/anthropic-openai-ipo-token-price-war-developer-guide-june-2026/) separately. I don't get to set the price per token. I do get to set the token count.
 
 ## References
 

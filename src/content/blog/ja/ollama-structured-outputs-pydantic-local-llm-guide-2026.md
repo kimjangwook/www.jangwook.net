@@ -215,7 +215,7 @@ Dispatch: OK (type-safe)
 
 `Literal["web_search", "read_file", ...]` で宣言しているため、`tool_call.tool_name` は必ずその4つの値のどれかだ。存在しないツールをモデルが作り出しても、Pydanticが `ValidationError` を投げる。`if tool_call.tool_name == "web_search"` の分岐が安全に動作する理由はここにある。
 
-このパターンはCloud APIでfunction callingを使うのと根本的に同じだ。ローカルでは[Claude Agent SDKのTool Useパターン](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)と比較すると、クラウドLLMとローカルLLMの設計上の違いが興味深い。
+このパターンはCloud APIでfunction callingを使うのと根本的に同じだ。ローカルでは[Claude Agent SDKのTool Useパターン](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)と比較すると、クラウドLLMとローカルLLMの設計上の違いが興味深い。TypeScriptでこのPydanticの位置に立つのはZodだ。[Zod v4のsafeParse()でClaude APIのレスポンスを型安全に解析するパターン](/ja/blog/ja/typescript-zod-v4-claude-api-structured-output-guide-2026/)は別途まとめてある。検証層を言語ごと移し替えた形になる。
 
 ## Gemma4とスキーマ複雑度: 見つけた限界
 

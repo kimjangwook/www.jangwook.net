@@ -1,6 +1,6 @@
 ---
-title: 'What a 26-page WCAG-EM sample missed across 1,342 built pages'
-description: 'W3C published WCAG-EM 2.0 on 23 July 2026. I followed its sampling procedure to the letter, got 26 pages, then ran axe-core over all 1,342 pages of the same build. The sample caught one of four defect types.'
+title: 'What a 26-page WCAG-EM sample missed in a 1,342-page build'
+description: 'W3C shipped WCAG-EM 2.0 in July 2026. I sampled 26 pages by its procedure, then swept the whole 1,342-page build. The sample caught one of four defect types.'
 pubDate: '2026-08-02'
 heroImage: '../../../assets/blog/wcag-em-2-sampling-vs-full-sweep-audit-2026/hero.png'
 tags:

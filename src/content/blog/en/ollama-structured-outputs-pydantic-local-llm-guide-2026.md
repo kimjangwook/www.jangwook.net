@@ -210,7 +210,7 @@ Dispatch: OK (type-safe)
 
 Because `tool_name` is typed as `Literal["web_search", "read_file", ...]`, `tool_call.tool_name` is always one of those four values. If the model invents a nonexistent tool name, Pydantic throws `ValidationError`. The `if tool_call.tool_name == "web_search"` branch is safe to write.
 
-This is architecturally the same as function calling in cloud APIs. Comparing it with [Claude Agent SDK's Tool Use patterns](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/) shows an interesting design difference. Cloud LLMs handle tool selection natively at the model level, while local Ollama needs an explicit JSON schema plus a Pydantic validation layer.
+This is architecturally the same as function calling in cloud APIs. Comparing it with [Claude Agent SDK's Tool Use patterns](/en/blog/en/claude-agent-sdk-tool-use-complete-guide-2026/) shows an interesting design difference. Cloud LLMs handle tool selection natively at the model level, while local Ollama needs an explicit JSON schema plus a Pydantic validation layer. In TypeScript, Zod stands where Pydantic does here. I wrote up [parsing Claude API responses type-safely with Zod v4's safeParse()](/en/blog/en/typescript-zod-v4-claude-api-structured-output-guide-2026/) separately, and it comes out as the same validation layer moved into another language.
 
 ## Gemma4 and Schema Complexity: Limitations I Found
 

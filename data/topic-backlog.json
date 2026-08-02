@@ -6168,6 +6168,40 @@
       "added_at": "2026-08-02",
       "status": "queued",
       "notes": "지난주 글은 허브를 지웠을 때의 손실만 쟀다. 반대 방향으로 (a) 관련 글 링크만 있고 허브 없음 (b) 허브만 있고 관련 글 없음 (c) 둘 다 를 같은 문서 집합에 적용해 평균 깊이·최대 깊이·도달 불가 수를 비교한다. 링크 예산이 한정된 사이트가 어디에 먼저 투자해야 하는지를 수치로 답하는 게 목적. crawl-depth 글의 단순 후속이 아니라 설계 선택 비교라 서술 축이 다르다."
+    },
+    {
+      "slug": "inbound-link-distribution-orphan-rate-4-languages-2026",
+      "title_idea": "링크 하나가 34편을 끌어가는 동안 67편은 한 번도 불리지 않았다",
+      "content_type": "comparison",
+      "target_keyword": "내부 링크 인바운드 분포",
+      "secondary_keywords": [
+        "고아 페이지 비율",
+        "다국어 링크 그래프",
+        "내부 링크 감사"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "자체 실측 — 2026-08-02 마감에서 4개 언어판 본문 링크를 파싱한 결과(ko 998링크/고아 67편 20.7%, ja 948/72, en 954/72, zh 973/71)",
+      "added_at": "2026-08-02",
+      "status": "queued",
+      "notes": "아웃바운드는 324편 전부 1개 이상 확보돼 있는데 인바운드는 21% 근처가 0이다. 같은 원고를 4개 언어로 옮겼는데도 링크 그래프는 언어판마다 갈렸다(ko가 ja보다 50링크 많음). 번역 과정에서 링크가 빠지는 지점을 찾는 게 축이다. 최다 인바운드 글은 4개 언어 모두 ai-agent-cost-reality(32~34)로 일치해 멱법칙 상단은 언어와 무관했다. crawl-depth·related-posts 백로그 항목과는 측정 대상이 다르다. 저쪽은 깊이, 이쪽은 인바운드 분포다."
+    },
+    {
+      "slug": "meta-description-length-cjk-serp-pixel-width-2026",
+      "title_idea": "150자 기준을 4개 언어에 그대로 적용하면 어디서 잘리나",
+      "content_type": "comparison",
+      "target_keyword": "메타 디스크립션 길이 기준",
+      "secondary_keywords": [
+        "SERP 픽셀 폭",
+        "다국어 SEO 메타데이터",
+        "CJK 문자 폭"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "자체 실측 — 2026-08-02 마감의 메타데이터 스캔에서 150~160자 규격 이탈이 ko 271편·en 292편·ja 314편·zh 317편으로 언어마다 크게 갈린 결과",
+      "added_at": "2026-08-02",
+      "status": "queued",
+      "notes": "영어권 가이드의 150~160자는 문자 수 기준인데, CJK는 한 글자가 라틴 문자의 약 2배 폭을 먹는다. 그래서 같은 기준을 적용한 ja·zh 원고가 97%씩 이탈로 잡힌다. 문자 수가 아니라 렌더 폭으로 재면 언어별 상한이 실제로 어디인지를 폰트 메트릭으로 측정한다. 규격 자체가 틀렸는지, 원고가 틀렸는지를 가르는 게 목적이다. 결론이 '언어별 상한 표'로 떨어지면 이 사이트의 검증 스크립트 기준도 같이 고친다."
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 title: 'I Authored Six of the Seven Places My Title Is Declared'
-description: 'Six title channels agreed across 1,296 pages. The seventh, inbound anchor text, matched the target heading on only 0.7% of 18,296 links, and one wrapper element caused all of it.'
+description: 'Six title channels agreed across 1,296 pages. The seventh, inbound anchor text, matched the target heading on 0.7% of 18,296 links. One wrapper caused it.'
 pubDate: '2026-08-01'
 heroImage: '../../../assets/blog/title-declaration-channels-anchor-text-audit-2026/hero.png'
 tags:
