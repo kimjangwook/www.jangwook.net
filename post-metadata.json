@@ -3065,5 +3065,16 @@
       "devops": 0.45,
       "architecture": 0.55
     }
+  },
+  "wcag-em-2-sampling-vs-full-sweep-audit-2026": {
+    "pubDate": "2026-08-02",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.97,
+      "ai-ml": 0.05,
+      "devops": 0.55,
+      "architecture": 0.6
+    }
   }
 }

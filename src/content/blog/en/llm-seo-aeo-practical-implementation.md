@@ -542,7 +542,7 @@ gtag('event', 'api_call', {
    - Monitor server logs for bot user agents
    - High bot traffic = content is being indexed by AI
 
-4. <strong>Query Patterns**:
+4. <strong>Query Patterns</strong>:
    - Increase in question-based queries
    - Example: "How does Agent Effi Flow work?" vs "Agent Effi Flow"
 

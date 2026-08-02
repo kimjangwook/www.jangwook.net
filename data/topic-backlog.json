@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-01",
+  "updated_at": "2026-08-02",
   "topics": [
+    {
+      "slug": "wcag-em-2-sampling-vs-full-sweep-audit-2026",
+      "title_idea": "표본 26장이 놓친 위반 3종 — WCAG-EM 2.0을 1,342장에 적용",
+      "content_type": "how-to",
+      "target_keyword": "WCAG-EM 2.0 표본 추출 전수 검사",
+      "secondary_keywords": [
+        "접근성 감사 표본",
+        "axe-core 전수 스캔",
+        "초기하 분포 탐지 확률"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "W3C WCAG-EM 2.0 (W3C Group Note, 2026-07-23, 전판 2014-07-10) 1차 출처 + 자체 빌드 실측. dist/ HTML 1,342장을 axe-core 4.12.1 + jsdom 30.0.1로 전수(규칙: wcag2a/2aa/21a/21aa/22aa), 12샤드 4병렬 CPU 800s. 위반 페이지 77(5.7%), 규칙 4종: label 75p/907n(GFM 태스크리스트 라벨 없는 체크박스), list 1p(반쪽 변환된 <strong>Query Patterns** → <ol> 직계 자식), document-title·html-has-lang 1p(ezoic 30바이트 스텁). WCAG-EM 절차대로 구조화 표본 24 + 무작위 2(=10%) = 26장(1.9%) → label 1종만 검출, 3종 미검출. Step 4.3 트립와이어 민감도: 시드 20,000회 몬테카를로에서 신규 발견 확률 0.29%. 초기하 탐지확률: m=75 k=2→10.9%, k=52→95%; m=1 k=100→7.5%, 95%엔 k=1,275. 수정: <strong> 1줄 + rehype 플러그인(li 텍스트→aria-label) → 재측정 77p/910n → 1p/2n. 함정: 단일 프로세스 OOM(exit 134, ~450장), Astro 5 콘텐츠레이어 캐시가 설정 변경에 무효화 안 됨. 기둥①②.",
+      "added_at": "2026-08-02",
+      "status": "done",
+      "notes": "핵심 주장: 무작위 표본 크기가 제품 규모가 아니라 구조화 표본에 앵커돼 있어 콘텐츠가 늘수록 대표성 검증이 약해진다. 위반은 템플릿 유래(어느 표본에나 보임)와 콘텐츠 유래(1장에만 존재, 표본으로 사실상 검출 불가)로 갈린다. 후속 소재: (1) 전수 axe 스캔을 CI 게이트로 상설화할 때의 실행시간 예산 설계(현재 CPU 800s는 prebuild에 부적합), (2) jsdom이 판정 못 하는 규칙군을 Playwright로 보완한 하이브리드 전수, (3) WCAG-EM Step 3.3 '완전한 프로세스' 를 정적 사이트의 언어 전환·검색 흐름에 적용.",
+      "published_at": "2026-08-02"
+    },
     {
       "slug": "title-declaration-channels-anchor-text-audit-2026",
       "title_idea": "제목을 선언하는 일곱 곳 중 여섯 곳만 내가 썼다",
