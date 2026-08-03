@@ -3076,5 +3076,16 @@
       "devops": 0.55,
       "architecture": 0.6
     }
+  },
+  "etag-deploy-invalidation-conditional-requests-2026": {
+    "pubDate": "2026-08-03",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.97,
+      "ai-ml": 0.05,
+      "devops": 0.75,
+      "architecture": 0.5
+    }
   }
 }

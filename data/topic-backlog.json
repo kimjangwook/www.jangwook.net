@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-02",
+  "updated_at": "2026-08-03",
   "topics": [
+    {
+      "slug": "etag-deploy-invalidation-conditional-requests-2026",
+      "title_idea": "1년 전 글의 Last-Modified가 어제였다 — 배포가 지우는 캐시 검증자",
+      "content_type": "how-to",
+      "target_keyword": "ETag Last-Modified 조건부 요청 배포",
+      "secondary_keywords": [
+        "304 Not Modified",
+        "캐시 검증자",
+        "정적 호스팅 크롤 비용"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "라이브 실측 + 샌드박스. jangwook.net(GitHub Pages) 응답: ETag=\"hex(mtime)-hex(size)\"(0x6a6f6b7d=1785686909=Last-Modified와 동일, 0x3279e=206750=Content-Length), cache-control max-age=600. 표본 8 URL의 Last-Modified가 초 단위까지 1종(배포 시각). gzip 협상 시 W/ 약한 검증자. 조건부 요청 실측: INM/IMS 현재값→304 0B(헤더 365B, 0.042s), 배포 이전 날짜 IMS→200 206,750B(헤더 660B, 0.134s), gzip 200→30,246B. 동일 소스 재빌드: HTML 1,346장 100% SHA-256 일치(빌드 85.3s). 전체 109.4MB/gzip 26.4MB, 평균 85,207B/20,537B. 샌드박스(Node 22.22): mtime 검증자는 바이트 동일 재배포 후 ETag 6a703515→6a703519, 200/206,750B. 내용해시(c3f104574859d427)는 304/0B, 1바이트 수정 시 200/206,766B. 배포 통계: 29.3일 커밋 178→5분 클러스터 154회(5.25/일), 간격 중앙값 2.75h·p90 15.84h·최대 16.8h. 배포 0회 확률: 1h 83.7%/3h 60.9%/6h 37.0%/12h 12.0%/24h·72h·7d 0.0%. 1차 출처: Google 'Crawling December: HTTP caching'(2024-12-09), crawl budget 가이드, RFC 9110 8.8.1·8.8.3.1, GitHub Pages limits(100GB/월 soft). 기둥①④.",
+      "added_at": "2026-08-03",
+      "status": "done",
+      "notes": "핵심 주장: 정적 호스팅의 캐시 검증자는 콘텐츠 동일성이 아니라 배포 동일성을 나타낸다. 콘텐츠 재현율 100% vs 검증자 안정성 0%의 대비가 논지. 조건부 요청 성공률 = P(재방문 간격 내 배포 0회)라는 프레이밍이 이번 글의 오리지널 기여. 부산물: scripts/audit-cache-validators.mjs 신설(검증자 성질 판정 + 조건부 요청 성립 여부). 후속 소재: (1) 이 감사를 배포 후 자동 실행해 검증자 형태 회귀를 감시하는 게이트, (2) Cloudflare 등 앞단 CDN을 두고 내용 해시 ETag로 재작성했을 때의 전후 실측, (3) 서버 로그가 있는 환경에서 실제 크롤러 재방문 간격을 관측해 이 글의 조건부 확률을 실측으로 대체.",
+      "published_at": "2026-08-03"
+    },
     {
       "slug": "wcag-em-2-sampling-vs-full-sweep-audit-2026",
       "title_idea": "표본 26장이 놓친 위반 3종 — WCAG-EM 2.0을 1,342장에 적용",
