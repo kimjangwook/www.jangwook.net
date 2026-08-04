@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-03",
+  "updated_at": "2026-08-04",
   "topics": [
+    {
+      "slug": "focus-not-obscured-sticky-header-scroll-padding-2026",
+      "title_idea": "Tab으로 0건, Shift+Tab으로 16건 — 스티키 헤더가 삼킨 키보드 포커스",
+      "content_type": "how-to",
+      "target_keyword": "WCAG 2.4.11 포커스 가림 스티키 헤더",
+      "secondary_keywords": [
+        "scroll-padding-top",
+        "Focus Not Obscured",
+        "키보드 포커스 감사"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "W3C WCAG 2.2(권고안 2024-12-12) SC 2.4.11/2.4.12 축자 인용 + Understanding 2.4.11(sticky header 명시, F110) + CSS Scroll Snap L1 scroll-padding 정의 1차 출처. 자체 측정: Playwright 1.57+Chromium, 6페이지 x 2뷰포트(1280x800/390x844), 실제 Tab/Shift+Tab 키 입력, data-fidx로 요소 중복 제거, 포커스 사각형 5x5=25점 elementFromPoint 히트테스트. 수정 전 고유 정지점 2,141: AA(2.4.11) 16건 전부 header.site-header[sticky] 귀속, AAA(2.4.12) 199건. 방향 분해가 핵심 — forward Tab 1,072정지 AA 0건, reverse Shift+Tab 1,069정지 AA 16건(브라우저가 nearest-edge 정렬). 뷰포트: 데스크톱 10/174, 모바일 6/25. 가려진 요소: post-card__link 9, summary.faq-question 2 등. 별건 4건: .back-to-top이 opacity-0+pointer-events-none만으로 숨겨져 탭 순서 잔류(2.4.7). 수정: html{--header-height:5rem; scroll-padding-top:calc(+1rem)} = 96px + .back-to-top visibility:hidden/visible. 재빌드 후 재측정: 정지점 2,133, AA 0건, AAA 25건, invisible 0건. 착지점 y=24→y=96(=패딩값 일치). 잔여 AAA 25 수동 분류: 원형버튼 코너 아티팩트 14, 두줄 인라인링크 줄간격 10, 뷰포트초과 iframe 1. Chromium 함정: element.focus()는 중앙 정렬(y=367)로 결함 미재현 → 실제 키 입력 필수. Tailwind 함정: @apply visible이 .visible 선택자와 순환의존으로 빌드 실패. 부산물: scripts/audit-focus-obscured.mjs 신설. axe 규칙 목록(Deque 4.10)에 2.4.11/2.4.12 규칙 없음 확인. 기둥①②.",
+      "added_at": "2026-08-04",
+      "status": "done",
+      "notes": "핵심 주장: 2.4.11 감사 결과는 감사자가 탭한 방향에 종속된다. forward 0건 vs reverse 16건이 같은 페이지에서 나온다는 것이 오리지널 기여. 부수 발견: 8/1에 카드 오버레이 패턴으로 바꾼 것이 포커스 사각형을 300px→65px로 줄여 헤더 81px보다 작게 만들었다(접근성 개선이 다른 기준 실패를 생성). 후속 소재: (1) 이 감사를 CI 게이트로 상설화(현재 2,141정지점 측정에 수분 소요 — 페이지 표본 설계 필요), (2) scroll-padding이 통하지 않는 케이스(스티키 푸터·비모달 다이얼로그·모달 내부 스크롤 컨테이너)의 대응 패턴 비교, (3) Firefox/WebKit의 focus scroll 정렬 착지점 비교 실측으로 UA 재량 범위 확인, (4) 히트테스트 격자 대신 요소 실제 페인트 영역을 얻는 방법 탐색(원형/비사각형 오판 제거).",
+      "published_at": "2026-08-04"
+    },
     {
       "slug": "etag-deploy-invalidation-conditional-requests-2026",
       "title_idea": "1년 전 글의 Last-Modified가 어제였다 — 배포가 지우는 캐시 검증자",

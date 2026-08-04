@@ -3087,5 +3087,16 @@
       "devops": 0.75,
       "architecture": 0.5
     }
+  },
+  "focus-not-obscured-sticky-header-scroll-padding-2026": {
+    "pubDate": "2026-08-04",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.45,
+      "web-development": 0.98,
+      "ai-ml": 0.02,
+      "devops": 0.5,
+      "architecture": 0.45
+    }
   }
 }

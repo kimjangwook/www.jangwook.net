@@ -16,6 +16,19 @@
 	#main-content:focus {
 		outline: none;
 	}
+
+	/*
+	  WCAG 2.2 SC 2.4.11 (Focus Not Obscured, Minimum).
+	  The site header is position:sticky at top:0 (measured 81-82px tall), so any
+	  scroll-into-view that aligns a target to the top edge parks it underneath.
+	  Sequential focus navigation upward (Shift+Tab) and in-page hash jumps both
+	  take that path. scroll-padding-top shrinks the "optimal viewing region" the
+	  UA scrolls into, which moves the landing point below the header.
+	*/
+	html {
+		--header-height: 5rem;
+		scroll-padding-top: calc(var(--header-height) + 1rem);
+	}
 }
 
 /*
@@ -596,6 +609,13 @@
 		@apply flex items-center justify-center;
 		@apply transition-all duration-300;
 		@apply opacity-0 translate-y-4 pointer-events-none;
+		/*
+		  opacity:0 alone leaves the button in the tab order, so a keyboard user
+		  lands on a control they cannot see (WCAG 2.4.7 Focus Visible).
+		  visibility:hidden removes it from sequential focus navigation and still
+		  transitions, because visibility animates in discrete steps.
+		*/
+		visibility: hidden;
 		border-radius: 999px;
 		background: var(--ink);
 		box-shadow: var(--box-shadow);
@@ -603,6 +623,7 @@
 
 	.back-to-top.visible {
 		@apply opacity-100 translate-y-0 pointer-events-auto;
+		visibility: visible;
 	}
 
 	.back-to-top:hover {
