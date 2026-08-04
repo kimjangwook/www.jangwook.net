@@ -136,6 +136,8 @@ Chrome 文档这样解释这个值："For all the cross-origin iframes, we repor
 
 读法归纳一下。拿 `no-store` 当 bfcache 的关闭开关，现在依据已经很薄。但这不等于敏感页面就裸露在内存里。防护的责任从一行响应头，移到了认证状态变化这个更准的信号上。这毕竟依赖浏览器行为，结论我不说死。可如果你有代码建立在「我们发了 `no-store`，当然不会被缓存」这个前提上，这周就该重新量一次。
 
+顺带把另一个轴也点出来。`Cache-Control` 决定的是缓存能不能存这份响应，而校验值（ETag 与 Last-Modified）决定的是存下来之后再验证要花多少代价。这些校验值会被一次部署整体抹掉，我在[部署会抹掉缓存校验值](/zh/blog/zh/etag-deploy-invalidation-conditional-requests-2026/)里单独量过。
+
 ## 挡住的是开着的连接，不是代码
 
 > **【追记 2026-07-22】** 据 web.dev 2026 年 6 月的公告（「New to the web platform in June 2026」），浏览器行为可能已经改变，带有活动 WebSocket 连接的页面现在也能进入 bfcache。下面这一节的测量是在那次公告之前的环境（Chrome 150）里测的，所以我打算用同一套探针重新测量后再更新结论。在那之前，本节关于 WebSocket 阻断的结论请按旧版本行为来读。

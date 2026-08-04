@@ -415,6 +415,7 @@ Nginxの`proxy_buffering off`が抜けている場合がほとんどだ。もし
 - 1,000件以上のドキュメントを一括処理するバッチ作業。ストリーミングは意味がなく、Anthropic Message Batches APIがコスト面で半分程度になる。
 - 双方向リアルタイム操作（タイピングインジケーター、同時編集）が必要な場合。SSEは単方向なのでWebSocketが適切だ。
 - ローカル・オンプレミス環境で外部API呼び出し自体がブロックされている場合。まずはセルフホストモデルが先になる。セルフホストの選択肢は[OllamaとFastAPIでプロダクションデプロイする方法](/ja/blog/ja/ollama-fastapi-production-deployment-guide-2026/)で扱った。
+- フロントエンドが既にNext.jsで、バックエンドを別に立てる理由がない場合。App RouterのRoute Handlerで同じSSEを捌けば、デプロイ対象が一つ減りCORS設定も要らなくなる。その構成は[Next.js 16 + Claude APIストリーミング](/ja/blog/ja/nextjs-16-claude-api-streaming-guide-2026/)で扱った。
 
 つまり「長い出力 + リアルタイム表示」という二つの条件が同時に成立するときだけ、このパターンの複雑さが正当化される。どちらか一方が欠ければ、より単純な方法がある。
 

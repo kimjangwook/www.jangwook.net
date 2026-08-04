@@ -166,6 +166,6 @@ What this measurement doesn't tell you. First, this is a keyboard tab-order meas
 - If `aria-modal="true"` is present, find the code that backs the claim — `showModal()` or `inert`. No backing, no attribute.
 - If background blocking rests on `aria-hidden` alone, replace it with `inert`.
 - In axe/CI output, open the incomplete array, not just violations. If `focusable-modal-open` is in there, the Tab test above is its answer.
-- On close, confirm focus returns to the element that opened the modal (APG requirement).
+- On close, confirm focus returns to the element that opened the modal (APG requirement). Whether that returned focus then sits hidden under a sticky header is a separate measurement, which I ran in [the sticky header problem](/en/blog/en/focus-not-obscured-sticky-header-scroll-padding-2026/).
 
 Keyboard focus is the one thing automated tooling never finishes pressing for you. Plenty of sites stack up green reports without anyone ever running the three-Tab check. I take on this kind of work personally — auditing modal and overlay keyboard behavior on production sites and turning the findings into CI gates that stop regressions. If that's useful to you, [get in touch](/en/contact/).

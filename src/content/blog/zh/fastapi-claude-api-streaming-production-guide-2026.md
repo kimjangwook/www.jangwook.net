@@ -415,6 +415,7 @@ async def log_streaming_metrics(request: Request, call_next):
 - 批量处理1000份以上文档的场景。流式传输毫无意义，而Anthropic Message Batches API成本大约只有一半。
 - 需要双向实时交互（打字指示器、协同编辑）的场景。SSE是单向的，WebSocket才是合适的工具。
 - 在本地或私有化部署环境中外部API调用本身被屏蔽。此时应优先考虑自托管模型。自托管方案我在[用Ollama和FastAPI进行生产部署](/zh/blog/zh/ollama-fastapi-production-deployment-guide-2026/)中讲过。
+- 前端本来就是 Next.js，也没有非要单独立一个后端的理由。在 App Router 的 Route Handler 里处理同样的 SSE，能少一个部署对象，CORS 配置也一并省掉。这套结构我在[用Next.js 16 + Claude API构建流式AI聊天应用](/zh/blog/zh/nextjs-16-claude-api-streaming-guide-2026/)中讲过。
 
 简而言之，只有当"长输出"和"实时显示"两个条件同时成立时，这套模式的复杂度才是值得的。少了任何一个，都有更简单的做法。
 

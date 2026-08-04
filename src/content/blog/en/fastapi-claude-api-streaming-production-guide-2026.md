@@ -416,6 +416,7 @@ Reaching for SSE + FastAPI isn't always the right call. Here's how I decide, bas
 - You're batch-processing 1,000+ documents. Streaming buys you nothing, and the Anthropic Message Batches API runs at roughly half the cost.
 - You need bidirectional real-time interaction (typing indicators, collaborative editing). SSE is one-directional, so WebSocket is the right tool.
 - You're in a local or on-prem environment where outbound API calls are blocked. Self-hosting a model comes first there. I covered the self-hosted route in [deploying a production backend with Ollama and FastAPI](/en/blog/en/ollama-fastapi-production-deployment-guide-2026/).
+- Your frontend is already Next.js and nothing forces a separate backend. Handling the same SSE inside an App Router route handler removes one deployment target and the CORS config with it. That setup is in [Next.js 16 + Claude API streaming](/en/blog/en/nextjs-16-claude-api-streaming-guide-2026/).
 
 In short, the complexity of this pattern is only justified when "long output" and "real-time display" hold at the same time. Drop either one and a simpler approach exists.
 

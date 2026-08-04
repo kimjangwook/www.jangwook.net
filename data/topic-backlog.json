@@ -6238,6 +6238,40 @@
       "added_at": "2026-08-02",
       "status": "queued",
       "notes": "영어권 가이드의 150~160자는 문자 수 기준인데, CJK는 한 글자가 라틴 문자의 약 2배 폭을 먹는다. 그래서 같은 기준을 적용한 ja·zh 원고가 97%씩 이탈로 잡힌다. 문자 수가 아니라 렌더 폭으로 재면 언어별 상한이 실제로 어디인지를 폰트 메트릭으로 측정한다. 규격 자체가 틀렸는지, 원고가 틀렸는지를 가르는 게 목적이다. 결론이 '언어별 상한 표'로 떨어지면 이 사이트의 검증 스크립트 기준도 같이 고친다."
+    },
+    {
+      "slug": "contrast-color-vs-token-layer-wcag-tiers-2026",
+      "title_idea": "브라우저가 대비색을 계산해준다면, 토큰 레이어는 무엇을 위해 남는가",
+      "content_type": "comparison",
+      "target_keyword": "CSS contrast-color",
+      "secondary_keywords": [
+        "WCAG 대비 기준",
+        "디자인 토큰",
+        "색 대비 자동화"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "web.dev 2026-04 Baseline 다이제스트에서 contrast-color()가 Baseline newly available로 승격, MDN 및 SiteLint의 한계 정리",
+      "added_at": "2026-08-04",
+      "status": "queued",
+      "notes": "축은 '자동화가 되나'가 아니라 '어느 층까지 자동화가 닿나'다. contrast-color()는 반환값이 흑백 이진이고 font-size·font-weight를 보지 않으므로, WCAG 2.2 AA의 본문 4.5:1은 덮어도 큰 글씨 3:1과 UI 컴포넌트·경계 3:1 층은 판정 근거 자체가 없다. 같은 팔레트에 (a) 손으로 유지하는 시맨틱 토큰 (b) contrast-color() 전면 위임 (c) 혼합을 적용해 세 층별로 통과·실패 건수를 각각 낸다. 결론은 '대체'가 아니라 경계선이 어디인지의 표. 접근성 주제지만 빌드 산출물 전수 파싱 형식이 아니라 CSS 기능 평가라 방법론 고착을 깬다."
+    },
+    {
+      "slug": "google-shared-crawl-capacity-ai-training-optout-2026",
+      "title_idea": "Googlebot 하나가 색인과 학습을 겸할 때, 사이트가 실제로 고를 수 있는 것",
+      "content_type": "news",
+      "target_keyword": "크롤 예산 AI 크롤러",
+      "secondary_keywords": [
+        "Googlebot 학습 데이터",
+        "Cloudflare 봇 차단",
+        "크롤 용량 공유"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Google 'Optimize your crawl budget' 문서 2026-07-22 개정(크롤 용량은 전 크롤러 공유), Cloudflare의 2026-09-15 신규 도메인 기본 차단 정책 예고",
+      "added_at": "2026-08-04",
+      "status": "queued",
+      "notes": "기존 발행 글 ai-crawler-control-robots-txt-llms-txt-2026은 차단 문법을, queued의 measure-ai-crawler-traffic-server-logs는 측정을 다룬다. 이 글의 축은 둘 다 아니고 '선택지가 실제로 존재하는가'다. 색인용과 학습용이 같은 크롤러라 한쪽만 거부하면 다른 쪽도 잃는 구조를 문서 원문으로 확인하고, 크롤 용량이 공유 풀이라 학습 크롤러의 수요가 Googlebot 몫을 깎는다는 개정 문구까지 연결한다. 여기에 광고 수익화 페이지를 기본 차단으로 돌리는 Cloudflare 정책이 겹치면 AdSense 운영 사이트는 9월 15일 이후 기본값이 바뀐다. 측정 글이 아니라 문서·정책 읽기 글이라 최근 7편의 형식 고착을 깨는 쪽이고, 뉴스 유형이 지난주 0%였던 공백을 메운다."
     }
   ]
 }

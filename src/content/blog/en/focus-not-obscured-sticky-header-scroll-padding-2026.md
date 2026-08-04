@@ -1,5 +1,5 @@
 ---
-title: 'Zero Failures Tabbing Down, 16 Tabbing Up: The Sticky Header Problem'
+title: 'Zero Failures Tabbing Down, 16 Tabbing Up: Sticky Headers'
 description: 'Tabbing down six pages found zero WCAG 2.4.11 failures. Shift-Tabbing up the same pages found 16, because browsers align focus targets to the nearer edge.'
 pubDate: '2026-08-04'
 heroImage: '../../../assets/blog/focus-not-obscured-sticky-header-scroll-padding-2026/hero.png'

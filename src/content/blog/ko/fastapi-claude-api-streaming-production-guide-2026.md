@@ -436,6 +436,7 @@ Nginx의 `proxy_buffering off`가 빠진 경우가 대부분이다. 또는 `Cont
 - 1,000건 이상의 문서를 일괄 처리하는 배치 작업. 스트리밍은 의미가 없고 Anthropic Message Batches API가 비용 면에서 절반 수준이다.
 - 양방향 실시간 상호작용(타이핑 인디케이터, 동시 편집)이 필요한 경우. SSE는 단방향이므로 WebSocket이 맞다.
 - 로컬·온프레미스 환경에서 외부 API 호출 자체가 막혀 있을 때. 이 경우 자체 호스팅 모델이 먼저다. 자체 호스팅 옵션은 [Ollama와 FastAPI로 프로덕션 배포하기](/ko/blog/ko/ollama-fastapi-production-deployment-guide-2026/)에서 다뤘다.
+- 프론트엔드가 이미 Next.js이고 백엔드를 따로 둘 이유가 없을 때. App Router의 Route Handler에서 같은 SSE를 처리하면 배포 대상이 하나 줄고 CORS 설정도 사라진다. 그 구성은 [Next.js 16 + Claude API로 스트리밍 AI 채팅 앱 만들기](/ko/blog/ko/nextjs-16-claude-api-streaming-guide-2026/)에서 다뤘다.
 
 요컨대 "긴 출력 + 실시간 표시"라는 두 조건이 동시에 성립할 때만 이 패턴의 복잡도가 정당화된다. 한쪽이라도 빠지면 더 단순한 방법이 있다.
 

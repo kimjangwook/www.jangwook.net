@@ -1,6 +1,6 @@
 ---
 title: 'Your Last Deploy Reset Every Cache Validator on the Site'
-description: 'A post I have not edited since October reports Last-Modified as yesterday. Its ETag is just file mtime and size in hex, so one deploy voids every 304 the site could earn.'
+description: 'A post untouched since October reports Last-Modified as yesterday. Its ETag is just file mtime and size in hex, so one deploy voids every 304 you could earn.'
 pubDate: '2026-08-03'
 heroImage: '../../../assets/blog/etag-deploy-invalidation-conditional-requests-2026/hero.png'
 tags:

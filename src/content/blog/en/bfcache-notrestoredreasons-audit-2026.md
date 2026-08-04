@@ -136,6 +136,8 @@ The conditions matter here, so let me copy them across carefully. Per Chrome's o
 
 The practical read: using `no-store` as your bfcache opt-out no longer rests on much. That doesn't mean sensitive pages now sit exposed in memory, either. Responsibility moved from a header string to a sharper signal, the change in authentication state. I won't push the conclusion harder than that, since it's browser behavior and it moved once already. But if you have code built on "we send `no-store`, so we're obviously not cached," go measure it again this week.
 
+Worth naming the other axis while we're here. `Cache-Control` decides whether a cache may store a response at all, while the validators (ETag and `Last-Modified`) decide what a revalidation costs once it has one. I measured how a single deploy wipes every one of those validators in [your last deploy reset every cache validator](/en/blog/en/etag-deploy-invalidation-conditional-requests-2026/).
+
 ## An open connection blocks, WebSocket code doesn't
 
 > **[Update 2026-07-22]** Per a web.dev announcement in June 2026 ("New to the web platform in June 2026"), browser behavior may have shifted so that a page with an active WebSocket connection can now enter bfcache. The measurement in the section below was taken on Chrome 150, before that announcement, so I plan to rerun the same probe and update the result. Until then, read this section's WebSocket-blocking conclusion as reflecting the older behavior.
