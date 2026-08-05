@@ -91,6 +91,8 @@ response = client.messages.create(
 
 가격 구조는 세션 시간당 $0.08 + 표준 Claude API 토큰 비용이다. idle 시간은 제외되지 않는다는 점을 공식 문서에서 명시하고 있다.
 
+관리형 실행 환경이라는 발상 자체는 Anthropic만의 것이 아니다. Google도 이후 Gemini API에 같은 계층을 올렸고, 호출 한 번으로 샌드박스까지 붙는 구조를 [Gemini Managed Agents를 직접 돌려본 기록](/ko/blog/ko/gemini-api-managed-agents-practical-guide-2026/)에 정리해뒀다. 두 API를 나란히 놓으면 세션을 무엇으로 보느냐에서 설계가 갈린다.
+
 Notion, Rakuten, Sentry가 이미 프로덕션에 적용했다는 사례가 공개됐는데, Notion은 90% 비용 감소와 85% 지연 개선, Rakuten은 70개 이상 비즈니스 유닛에서 오류율 97% 감소를 보고했다. 숫자가 크게 느껴지지만, 이는 기존에 각 팀이 직접 운영하던 불안정한 에이전트 인프라와 비교한 수치임을 감안해야 한다.
 
 ## 좋은 것부터: 에이전트 인프라 관리 부담의 실질적 감소

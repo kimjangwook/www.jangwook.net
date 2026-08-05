@@ -251,6 +251,8 @@ LLM 자체가 가진 편향성이 합성 소비자 응답에도 반영될 수 �
 - <strong>편향 완화 기법</strong>: 프롬프트 엔지니어링으로 편향 최소화
 - <strong>다양한 모델 사용</strong>: 여러 LLM의 결과를 앙상블하여 편향 감소
 
+첫 항목이 결국 이 방법론의 성격을 규정한다. SSR은 실제 설문을 대체하는 도구가 아니라 어느 설문을 먼저 돌릴지 정하는 도구다. 이 결론에 도달하기까지 synthetic panel을 실제 제품으로 만들면서 겪은 시행착오는 [InsightForge를 검증 우선순위 도구로 재정의한 기록](/ko/blog/ko/why-i-built-insightforge-validation-priorities/)에 남겨뒀다.
+
 ## 미래 전망
 
 ### 소비자 조사의 패러다임 전환

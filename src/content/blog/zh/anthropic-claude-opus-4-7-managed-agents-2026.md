@@ -91,6 +91,8 @@ response = client.messages.create(
 
 定价结构为每会话小时$0.08 + 标准Claude API令牌费用。官方文档明确指出空闲时间不会排除。
 
+托管运行环境这个思路并非Anthropic独有。Google随后也在Gemini API上做了同一层，一次调用就连沙箱一起给你的结构，我整理在[实际跑通Gemini Managed Agents的记录](/zh/blog/zh/gemini-api-managed-agents-practical-guide-2026/)里。把两个API并排看，分歧出现在各自把什么当作一次会话。
+
 Notion、Rakuten和Sentry已将其应用于生产环境。Notion报告成本降低90%、延迟改善85%；Rakuten在70多个业务单元中报告错误率降低97%；Sentry在"数周内"完成了补丁Agent的上线。数字令人印象深刻，但需要记住，这是与之前自管理的不稳定基础设施相比的结果。
 
 ## 亮点：Agent基础设施管理负担的实质性减少

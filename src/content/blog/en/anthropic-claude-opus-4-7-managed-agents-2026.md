@@ -91,6 +91,8 @@ Core features per the official documentation:
 
 Pricing is $0.08 per session-hour plus standard Claude API token costs. The docs explicitly note that idle time is included.
 
+The managed-runtime idea is not exclusive to Anthropic. Google later shipped the same layer on the Gemini API, and I wrote up what it feels like to run one in [a hands-on pass through Gemini Managed Agents](/en/blog/en/gemini-api-managed-agents-practical-guide-2026/), where a single call gets you the sandbox too. Put the two APIs side by side and the split shows up in what each one treats as a session.
+
 Notion, Rakuten, and Sentry are named as early production adopters. Notion reported 90% cost reduction and 85% latency improvement; Rakuten claimed 97% error reduction across 70+ business units; Sentry shipped a patch agent in "weeks." These are impressive numbers — though I'd note they compare against previously unstable self-managed infrastructure, so take them as upper-bound estimates.
 
 ## The Good: Real Reduction in Agent Infrastructure Overhead

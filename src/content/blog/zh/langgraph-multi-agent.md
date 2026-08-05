@@ -442,6 +442,8 @@ LangGraph与CrewAI、Dapr等多种智能体框架并存。如需了解各框架�
 - 探索性问题解决
 - 灵活的对话模式
 
+表格里写的"对话驱动"在代码中长什么样，不亲手写一遍很难有实感。从AssistantAgent到GraphFlow，跟着[从零构建AutoGen 0.7.x的过程](/zh/blog/zh/microsoft-autogen-1-0-production-agent-tutorial/)走一遍，先画图与先让对话流动这两条路线的差别就摸得到了。
+
 ## 实际使用案例
 
 ### LinkedIn - 招聘公告自动化

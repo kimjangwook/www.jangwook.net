@@ -1,6 +1,6 @@
 ---
 title: 'Anthropic SDK vs OpenAI SDK: Developer Experience Compared'
-description: 'I installed anthropic 0.100.0 and openai 2.36.0 side by side in a sandbox and dug into the internals.'
+description: 'anthropic 0.100.0 vs openai 2.36.0, installed side by side: 408 vs 230 exported types, input_schema vs function.parameters, and which SDK really fits your work.'
 pubDate: '2026-05-09'
 heroImage: '../../../assets/blog/anthropic-sdk-vs-openai-sdk-developer-experience-comparison-2026/hero.png'
 tags: ['Anthropic', 'OpenAI', 'Python', 'SDK', 'LLM']

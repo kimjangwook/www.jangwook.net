@@ -483,6 +483,8 @@ LangGraph sits alongside CrewAI, Dapr, and others in the multi-agent ecosystem. 
 
 <strong>Choose AutoGen when</strong>: You want conversational multi-agent interactions or need Microsoft toolchain integration.
 
+What "conversational" actually looks like in code is hard to picture until you write it yourself. Walking through [building AutoGen 0.7.x from scratch](/en/blog/en/microsoft-autogen-1-0-production-agent-tutorial/), from AssistantAgent up to GraphFlow, makes the split concrete: one side draws the graph first, the other lets the conversation flow first.
+
 ## Real-World Use Cases
 
 <strong>LinkedIn</strong>: Uses LangGraph for content moderation pipelines, routing posts through specialist agents for policy violation detection, context analysis, and escalation decisions.

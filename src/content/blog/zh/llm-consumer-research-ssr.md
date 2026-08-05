@@ -249,6 +249,8 @@ LLM本身的偏差也会反映在合成消费者响应中：
 - <strong>偏差缓解技术</strong>：通过提示词工程（prompt engineering）最小化偏差
 - <strong>使用多种模型</strong>：集成多个LLM的结果以减少偏差
 
+第一条其实界定了这套方法论的性质。SSR不是用来替代真实问卷的工具，而是决定先跑哪一份问卷的工具。在得出这个结论之前，把synthetic panel做成真实产品所走的弯路，我写在了[把InsightForge重新定义为验证优先级工具的记录](/zh/blog/zh/why-i-built-insightforge-validation-priorities/)里。
+
 ## 未来展望
 
 ### 消费者调研的范式转变

@@ -1,6 +1,6 @@
 ---
 title: 'AI Agent Identity Dark Matter: Why Enterprises Lose Control'
-description: '70% of enterprises already run AI agents in production, yet 80% can''t track their real-time behavior.'
+description: '70% of enterprises run AI agents in production, yet 80% cannot see what they do. What identity dark matter is, why risk compounds, and 5 controls to apply now.'
 pubDate: '2026-03-14'
 heroImage: ../../../assets/blog/ai-agent-identity-dark-matter-enterprise-hero.jpg
 tags:

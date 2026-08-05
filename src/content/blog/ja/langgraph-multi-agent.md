@@ -516,6 +516,8 @@ LangGraphはCrewAI、Daprなど様々なエージェントフレームワーク�
 - LangGraph: プロダクション環境、複雑な状態管理が必要な場合
 - AutoGen: コード生成タスク、対話的な問題解決
 
+表にある「対話ベース」がコードでどう見えるかは、自分で書いてみるまで掴みにくい。AssistantAgentからGraphFlowまで[AutoGen 0.7.xを一から実装した過程](/ja/blog/ja/microsoft-autogen-1-0-production-agent-tutorial/)を追うと、グラフを先に描く側と対話を先に流す側の違いが手に取れる。
+
 ## 実際の使用事例
 
 ### LinkedIn

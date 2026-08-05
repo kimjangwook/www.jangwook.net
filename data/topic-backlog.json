@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-04",
+  "updated_at": "2026-08-05",
   "topics": [
     {
       "slug": "focus-not-obscured-sticky-header-scroll-padding-2026",
@@ -6272,6 +6272,40 @@
       "added_at": "2026-08-04",
       "status": "queued",
       "notes": "기존 발행 글 ai-crawler-control-robots-txt-llms-txt-2026은 차단 문법을, queued의 measure-ai-crawler-traffic-server-logs는 측정을 다룬다. 이 글의 축은 둘 다 아니고 '선택지가 실제로 존재하는가'다. 색인용과 학습용이 같은 크롤러라 한쪽만 거부하면 다른 쪽도 잃는 구조를 문서 원문으로 확인하고, 크롤 용량이 공유 풀이라 학습 크롤러의 수요가 Googlebot 몫을 깎는다는 개정 문구까지 연결한다. 여기에 광고 수익화 페이지를 기본 차단으로 돌리는 Cloudflare 정책이 겹치면 AdSense 운영 사이트는 9월 15일 이후 기본값이 바뀐다. 측정 글이 아니라 문서·정책 읽기 글이라 최근 7편의 형식 고착을 깨는 쪽이고, 뉴스 유형이 지난주 0%였던 공백을 메운다."
+    },
+    {
+      "slug": "search-console-api-faq-appearance-sunset-2026",
+      "title_idea": "SERP에서 사라진 기능이 리포팅 파이프라인에서는 언제 사라지는가",
+      "content_type": "news",
+      "target_keyword": "Search Console API searchAppearance",
+      "secondary_keywords": [
+        "FAQ 리치 결과 종료",
+        "Search Console API 마이그레이션",
+        "SEO 리포트 자동화"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Google FAQ 구조화 데이터 문서의 2026-05-07 지원 종료 고지(SERP 노출 중단), 2026-06-15 문서 삭제는 developers.google.com/search/updates에서 확인됨. Search Console API의 FAQ 데이터 제거가 2026-08월이라는 시점은 2차 출처(Search Engine Journal 등) 다수가 일치하나 공식 updates 페이지에는 없음 — 집필 시 API 응답으로 직접 확인할 것",
+      "added_at": "2026-08-05",
+      "status": "queued",
+      "notes": "발행 글 faqpage-deprecation-ai-citation-2026은 마크업을 남길지 뺄지와 AI 인용 관점을 다뤘다. 이 글의 축은 마크업이 아니라 계측이다. 기능 종료는 SERP → Search Console UI → API 순으로 시차를 두고 내려오는데, 마지막 단계가 리포팅 쪽에서 가장 조용하게 깨진다. 사라진 차원을 조회하면 에러가 아니라 빈 행이 돌아오므로 대시보드는 '0으로 떨어졌다'와 '더 이상 측정되지 않는다'를 구분하지 못한다. 자체 속성에 searchAppearance 차원을 열거하는 스크립트를 돌려 지금 어떤 값이 남아 있는지 표로 내고, 종료된 차원을 조회했을 때의 실제 응답 형태를 기록한다. 검증 포인트: 8월 종료 시점을 2차 출처만 믿지 말고 API 응답으로 확정할 것. 확정 안 되면 '아직 살아있다'는 사실 자체가 결론이 된다."
+    },
+    {
+      "slug": "wcag3-requirements-binary-audit-harness-2026",
+      "title_idea": "합격·불합격으로 답을 내던 감사 스크립트가 점수 모델을 만나면",
+      "content_type": "news",
+      "target_keyword": "WCAG 3.0 작업 초안",
+      "secondary_keywords": [
+        "WCAG 3 적합성 모델",
+        "axe 자동 검사 한계",
+        "접근성 감사 자동화"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "W3C Accessibility Guidelines (WCAG) 3.0 Working Draft 2026-03-03 (w3.org/TR/2026/WD-wcag-3.0-20260303/) 원문 — guidelines/requirements/assertions/methods 4층 구조, 적합성 모델은 미확정이며 초안 자체가 이해관계자에게 열린 질문을 제시. 후보 권고는 2027 Q4 예상",
+      "added_at": "2026-08-05",
+      "status": "queued",
+      "notes": "'WCAG 3이 무엇인가' 해설은 이미 넘친다. 이 글의 축은 이 블로그가 그동안 쌓아온 감사 하네스 쪽이다. axe-core CI, WCAG-EM 샘플링, target size 감사 — 전부 성공 기준 하나당 통과/실패 한 비트를 뱉는 구조로 짜여 있다. WCAG 3 초안은 성공 기준을 requirements로 쪼개고 그 위에 assertions(조직의 선언)라는, 스크립트가 애초에 판정할 수 없는 층을 얹는다. 자동 검사가 커버하던 비율이 분모가 바뀌면 어떻게 되는지 자체 감사 스크립트 출력으로 계산한다. 성실성 주의: 적합성·점수 모델은 초안에서 미확정 상태이므로 확정된 것처럼 쓰지 않는다. '아직 정해지지 않았다'가 이 글의 핵심 사실이고, 그럼에도 4층 구조는 이미 결정돼 있어 하네스 설계에 지금 영향을 준다는 것이 논지다. 지난주 진단된 How-to 86% 편향에 대해 뉴스 유형으로 균형을 잡는다."
     }
   ]
 }

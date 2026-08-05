@@ -252,6 +252,8 @@ Biases inherent in LLMs can be reflected in synthetic consumer responses:
 - <strong>Bias Mitigation Techniques</strong>: Minimize bias through prompt engineering
 - <strong>Multiple Model Usage</strong>: Reduce bias by ensembling results from multiple LLMs
 
+That first bullet ends up defining what the methodology is for. SSR does not replace real surveys; it decides which survey you run first. The detours I took before landing on that conclusion, while turning a synthetic panel into an actual product, are written up in [why InsightForge became a validation-priority tool](/en/blog/en/why-i-built-insightforge-validation-priorities/).
+
 ## Future Outlook
 
 ### Paradigm Shift in Consumer Research

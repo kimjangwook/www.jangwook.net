@@ -443,6 +443,8 @@ LangGraph 외에도 CrewAI, Dapr 등 다양한 에이전트 프레임워크가 �
 - 탐색적 문제 해결
 - 유연한 대화 패턴
 
+표에 적힌 "대화 기반"이 코드에서 어떻게 생겼는지는 직접 짜보기 전까지 잘 와닿지 않는다. AssistantAgent부터 GraphFlow까지 [AutoGen 0.7.x를 처음부터 구현한 과정](/ko/blog/ko/microsoft-autogen-1-0-production-agent-tutorial/)을 따라가면, 그래프를 먼저 그리는 쪽과 대화를 먼저 흐르게 하는 쪽의 차이가 손에 잡힌다.
+
 ## 실제 사용 사례
 
 ### LinkedIn - 채용 공고 자동화

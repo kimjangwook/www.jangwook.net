@@ -91,6 +91,8 @@ response = client.messages.create(
 
 価格体系はセッション時間あたり$0.08 + 標準Claude APIトークン費用だ。アイドル時間は除外されないことを公式ドキュメントで明記している。
 
+マネージド実行環境という発想はAnthropicに固有のものではない。Googleもその後Gemini APIに同じ層を載せている。呼び出し一回でサンドボックスまで付いてくる構造は[Gemini Managed Agentsを実際に動かした記録](/ja/blog/ja/gemini-api-managed-agents-practical-guide-2026/)にまとめた。二つのAPIを並べると、セッションを何と見なすかで設計が分かれる。
+
 Notion、Rakuten、Sentryがすでに本番に適用したという事例が公開されており、Notionは90%のコスト削減と85%のレイテンシ改善、Rakutenは70以上のビジネスユニットでエラー率97%削減を報告した。
 
 ## 良い点：エージェントインフラ管理負担の実質的な軽減
