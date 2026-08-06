@@ -183,7 +183,7 @@ Flash是务实的默认选择。比Flash-Lite慢2.5倍、贵3倍，但在更复�
 
 ## 超越模型选择的三个成本杠杆
 
-降低成本的方法不只有选择模型。
+降低成本的方法不只有选择模型。换档位之前，也可以先[按任务类型调一调Thinking预算](/zh/blog/zh/gemini-25-flash-thinking-api-developer-guide-2026/)。在同一个模型上，仅一项预算设置就会让延迟和输出令牌一起变动。
 
 **1. Context Caching**
 

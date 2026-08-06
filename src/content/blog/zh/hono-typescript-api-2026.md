@@ -372,7 +372,7 @@ wrangler deploy
 
 我没有验证 `wrangler deploy`——这需要真实的 Cloudflare 账户来配置绑定。但代码结构如上所示，与本地 Bun 服务器唯一的区别是如何访问 `c.env.DB` 这类绑定。
 
-查看 Cloudflare Workers 智能体基础设施，可以看到 Hono 已经在 Cloudflare 生态中作为 AI 智能体的 API 层被广泛使用。
+查看 [Cloudflare Workers 智能体基础设施](/zh/blog/zh/cloudflare-agents-week-2026-autonomous-infrastructure/)，可以看到 Hono 已经在 Cloudflare 生态中作为 AI 智能体的 API 层被广泛使用。
 
 ## 类型安全的中间件: Variables 的用法
 

@@ -209,6 +209,8 @@ There's a well-known set of things axe-core can't catch. Can you reach and opera
 
 So I treat automated tools as a floor, not a ceiling. The violations axe-core catches are the lower bound that must be zero, the ones nobody should have to spend time confirming by hand. Pin that floor with CI and spend the freed-up time on keyboard walkthroughs and screen-reader read-alongs. The moment you believe the tool does all of it, the half the tool can't see ships straight to production.
 
+I measured where that floor actually sits. [Running axe-core across the full W3C ACT test suite](/en/blog/en/act-rules-axe-coverage-wcag-sc-2026/), 22 of 36 success criteria came back with zero detections. Part of that silence came from rules that were simply switched off. That's the reason to check your `rules` config before wiring anything into CI.
+
 ## A checklist you can apply today
 
 - If you've bolted `axe-core` onto unit tests, always include `'incomplete'` in `resultTypes` and actually read the list. If `color-contrast` is in there, that's not a pass, it's unchecked.

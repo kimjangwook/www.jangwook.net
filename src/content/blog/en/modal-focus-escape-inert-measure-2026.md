@@ -1,5 +1,5 @@
 ---
-title: 'aria-modal="true" Blocked Nothing: Modal Focus Escape, Measured'
+title: 'aria-modal="true" Blocked Nothing: Focus Escape Measured'
 description: Keyboard focus escaped an aria-modal dialog on the third Tab press while axe reported zero violations. I measured the same markup under aria-hidden and inert.
 pubDate: '2026-07-23'
 heroImage: ../../../assets/blog/modal-focus-escape-inert-measure-2026/hero.png

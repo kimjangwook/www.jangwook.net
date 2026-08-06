@@ -183,7 +183,7 @@ Using Pro for a general chatbot is wasteful. But when I look at [real AI agent c
 
 ## Three Cost Levers Beyond Model Selection
 
-Model choice isn't the only knob.
+Model choice isn't the only knob. Before you switch tiers, try [tuning the Thinking budget per task type](/en/blog/en/gemini-25-flash-thinking-api-developer-guide-2026/). On the same model, one budget setting moves latency and output tokens together.
 
 **1. Context Caching**
 

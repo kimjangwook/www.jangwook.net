@@ -305,6 +305,8 @@ new StreamableHTTPServerTransport({
 
 단일 인스턴스 VM이나 컨테이너라면 stateful이 편하다. 프로세스가 하나이고 세션 Map이 안전하게 살아있다. 반면 서버리스 환경(AWS Lambda, Cloudflare Workers)은 요청마다 실행 컨텍스트가 초기화되므로 메모리 세션 Map이 유지되지 않는다. 이 경우 반드시 stateless 모드를 써야 한다. stateful로 서버리스에 배포하면 세션 ID가 발급은 되는데 두 번째 요청부터 404가 날아온다.
 
+서버리스 위에 에이전트를 얹는 흐름 자체는 계속 커지고 있다. [Cloudflare Agents Week 2026 발표를 정리하면서](/ko/blog/ko/cloudflare-agents-week-2026-autonomous-infrastructure/) 확인한 제약도 결국 같은 것이었다. 실행 컨텍스트가 요청마다 초기화되는 런타임에서는 상태를 런타임 바깥에 두는 수밖에 없다.
+
 솔직히 말하면 stateful 모드의 인메모리 세션 Map도 장기적으로는 문제가 있다. 서버를 재시작하면 모든 세션이 사라진다. 프로덕션에서 Rolling Update를 하거나 크래시 후 재시작이 일어나면 클라이언트가 갑자기 "세션 없음"을 받게 된다. 이를 해결하려면 Redis 같은 외부 세션 스토어가 필요한데, SDK가 기본 제공하는 건 아니라 직접 구현해야 한다.
 
 두 모드를 표로 압축하면:

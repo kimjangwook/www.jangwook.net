@@ -84,6 +84,8 @@ Gemini 2.5 Flash enables **Thinking mode by default**. The model internally reas
 
 Honestly, I didn't expect the gap to be this large. Measuring directly: a simple math problem consumed 305 Thinking tokens against just 2 output tokens.
 
+Turning Thinking off across the board isn't the answer either. [Splitting thinking_budget across 0/1024/8000 and testing per task type](/en/blog/en/gemini-25-flash-thinking-api-developer-guide-2026/) pulls in two directions. Simple tasks slow down the moment you hand them a budget, while math reasoning actually shrinks its output tokens.
+
 ```python
 # Thinking enabled (default)
 response = client.models.generate_content(

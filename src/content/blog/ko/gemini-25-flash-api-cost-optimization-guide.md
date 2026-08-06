@@ -84,6 +84,8 @@ Gemini 2.5 Flash는 기본값으로 **Thinking(추론) 모드가 활성화**된�
 
 솔직히 처음엔 이게 이렇게 클 줄 몰랐다. 직접 측정해보니 단순 수학 문제 하나에 305개의 Thinking 토큰이 소비됐다. 응답 토큰은 2개인데.
 
+다만 Thinking을 무조건 끄는 게 답은 아니다. [thinking_budget을 0/1024/8000으로 나눠 작업 유형별로 실험해보면](/ko/blog/ko/gemini-25-flash-thinking-api-developer-guide-2026/) 방향이 갈린다. 단순 작업은 예산을 주는 순간 느려지지만, 수학 추론에서는 오히려 출력 토큰이 줄어든다.
+
 ```python
 # Thinking 활성화 (기본값) — 같은 질문
 response = client.models.generate_content(

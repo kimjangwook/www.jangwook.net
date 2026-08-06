@@ -413,7 +413,7 @@ serve({ fetch: app.fetch, port: 3000 }, (info) => {
 })
 ```
 
-Cloudflare Workers 기반 에이전트 인프라를 살펴보면, Hono는 이미 Cloudflare Workers 위에서 에이전트 API 레이어로 활발히 쓰이고 있다. 이 생태계와 결합하면 Hono는 단순한 REST API 프레임워크 이상의 역할을 한다.
+[Cloudflare Workers 기반 에이전트 인프라](/ko/blog/ko/cloudflare-agents-week-2026-autonomous-infrastructure/)를 살펴보면, Hono는 이미 Cloudflare Workers 위에서 에이전트 API 레이어로 활발히 쓰이고 있다. 이 생태계와 결합하면 Hono는 단순한 REST API 프레임워크 이상의 역할을 한다.
 
 ## 타입 안전한 미들웨어 작성: Variables 활용
 

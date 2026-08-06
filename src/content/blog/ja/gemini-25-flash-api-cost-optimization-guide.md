@@ -84,6 +84,8 @@ Gemini 2.5 Flashはデフォルトで**Thinking（推論）モードが有効**�
 
 正直、最初はここまで大きいとは思わなかった。直接測定してみると、単純な数学の問題一つに305個のThinkingトークンが消費された。回答トークンは2個なのに。
 
+ただしThinkingを一律に切るのが正解というわけでもない。[thinking_budgetを0/1024/8000に分けてタスク種別ごとに実験する](/ja/blog/ja/gemini-25-flash-thinking-api-developer-guide-2026/)と、方向が分かれる。単純タスクは予算を与えた途端に遅くなるが、数学推論ではむしろ出力トークンが減る。
+
 ```python
 # Thinking有効（デフォルト）— 同じ質問
 response = client.models.generate_content(

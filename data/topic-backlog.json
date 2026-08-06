@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-05",
+  "updated_at": "2026-08-06",
   "topics": [
     {
       "slug": "focus-not-obscured-sticky-header-scroll-padding-2026",
@@ -6306,6 +6306,40 @@
       "added_at": "2026-08-05",
       "status": "queued",
       "notes": "'WCAG 3이 무엇인가' 해설은 이미 넘친다. 이 글의 축은 이 블로그가 그동안 쌓아온 감사 하네스 쪽이다. axe-core CI, WCAG-EM 샘플링, target size 감사 — 전부 성공 기준 하나당 통과/실패 한 비트를 뱉는 구조로 짜여 있다. WCAG 3 초안은 성공 기준을 requirements로 쪼개고 그 위에 assertions(조직의 선언)라는, 스크립트가 애초에 판정할 수 없는 층을 얹는다. 자동 검사가 커버하던 비율이 분모가 바뀌면 어떻게 되는지 자체 감사 스크립트 출력으로 계산한다. 성실성 주의: 적합성·점수 모델은 초안에서 미확정 상태이므로 확정된 것처럼 쓰지 않는다. '아직 정해지지 않았다'가 이 글의 핵심 사실이고, 그럼에도 4층 구조는 이미 결정돼 있어 하네스 설계에 지금 영향을 준다는 것이 논지다. 지난주 진단된 How-to 86% 편향에 대해 뉴스 유형으로 균형을 잡는다."
+    },
+    {
+      "slug": "webaim-million-2026-regression-aria-element-count",
+      "title_idea": "오류가 10% 늘어난 해에, 페이지 요소는 22% 늘었다",
+      "content_type": "news",
+      "target_keyword": "WebAIM Million 2026",
+      "secondary_keywords": [
+        "웹 접근성 오류 통계",
+        "ARIA 남용",
+        "자동 접근성 검사 한계"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "WebAIM Million 2026 (webaim.org/projects/million/) 원문 — 홈페이지 100만 장에서 검출 오류 56,114,377건, 페이지당 평균 56.1건(2025년 51건 대비 +10.1%). WCAG 2 실패 검출 페이지 95.9%(2025년 94.8%). 2026년 2월 기준 페이지당 평균 요소 수 1,437개로 1년새 +22.5%. 검출 오류의 96%가 7년째 같은 6개 범주에 몰림. 저대비 텍스트 83.9%, alt 누락 절반 이상, 라벨 없는 폼 입력 51%",
+      "added_at": "2026-08-06",
+      "status": "queued",
+      "notes": "'접근성이 나빠지고 있다'는 요약은 이미 여러 곳에 있다. 이 글의 축은 분모다. 오류 건수는 +10.1% 늘었는데 페이지당 요소 수는 +22.5% 늘었다. 요소당 오류율로 환산하면 방향이 반대로 뒤집힌다. 이 계산을 원문 수치로 직접 해보고, 그게 무엇을 의미하는지(코드가 나빠진 것인가, 페이지가 커진 것인가) 따진다. 두 번째 축은 이 블로그가 이미 쌓은 자동 검사 커버리지 데이터와의 대조다. act-rules-axe-coverage-wcag-sc-2026에서 ACT 정답지 기준 검출률 37.5%, 36개 성공기준 중 22개가 0건이었다. WebAIM이 세는 56.1건은 axe가 잡을 수 있는 범주 안쪽 숫자이므로, 실제 장벽 총량의 하한선이라는 점을 명시한다. 성실성 주의: 원문은 자동 검출 기준임을 스스로 밝히고 있다. '95.9%가 접근 불가'가 아니라 '95.9%에서 자동으로 검출 가능한 실패가 발견됐다'로 정확히 쓴다. 링크: act-rules-axe-coverage-wcag-sc-2026, axe-automated-a11y-coverage-gap-2026, axe-core-ci-a11y-jsdom-vs-browser-2026"
+    },
+    {
+      "slug": "chrome-xslt-removal-sitemap-stylesheet-impact-2026",
+      "title_idea": "브라우저에서 XSLT가 빠지면 sitemap.xsl은 어떻게 되나",
+      "content_type": "news",
+      "target_keyword": "Chrome XSLT 제거",
+      "secondary_keywords": [
+        "sitemap.xsl 스타일시트",
+        "XSLTProcessor 대체",
+        "RSS 브라우저 렌더링"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Chrome for Developers — Removing XSLT for a more secure browser (developer.chrome.com/docs/web-platform/deprecating-xslt) — Chrome 152(2026-08-25)에서 제거 테스트용 오리진 트라이얼 시작, Chrome 158(2026-11-17) 제거 예정. Firefox·WebKit도 엔진에서 XSLT 제거 방침 표명",
+      "added_at": "2026-08-06",
+      "status": "queued",
+      "notes": "XSLT 제거 자체를 해설한 글은 곧 쏟아진다. 이 글의 차별점은 영향 범위를 직접 세는 것이다. sitemap.xml과 RSS에 붙이는 xml-stylesheet 처리 명령은 브라우저 XSLT에 의존하는 대표적 잔존 용례다. 크롤러는 XSLT를 거치지 않고 원본 XML을 읽으므로 색인에는 영향이 없다는 점을 먼저 못 박고(이게 오해가 가장 많이 날 지점이다), 사람이 브라우저로 sitemap을 열었을 때의 표시만 깨진다는 것을 구분한다. 실측 축: 이 블로그의 sitemap-index.xml·rss.xml에 xml-stylesheet가 걸려 있는지 확인하고, 걸려 있다면 Chrome 152 오리진 트라이얼 없이 어떻게 보이는지와 대체안(빌드 시 정적 HTML 생성) 비용을 비교한다. 성실성 주의: 제거 일정은 Chrome 측 예정일이며 변경될 수 있다. 오리진 트라이얼과 최종 제거를 혼동하지 않는다. 링크: sitemap-lastmod-crawl-scheduling-2026, internal-link-trailing-slash-redirect-audit-2026"
     }
   ]
 }

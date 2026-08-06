@@ -286,6 +286,8 @@ My rule of thumb: **where you deploy determines which mode you use.**
 
 Single-instance VM or container? Stateful works fine. The process stays alive, the session Map persists. Serverless (AWS Lambda, Cloudflare Workers)? The execution context resets per request — an in-memory session Map doesn't survive. Use stateless mode, full stop. If you deploy stateful to serverless, the session ID gets issued but the second request hits a fresh instance that has no record of it. You get a 404 (or 400), and it'll look like an SDK bug until you trace it back to the architecture mismatch.
 
+The push to run agents on serverless keeps growing. When I went through [the Cloudflare Agents Week 2026 announcements](/en/blog/en/cloudflare-agents-week-2026-autonomous-infrastructure/), the constraint turned out to be the same one. On a runtime that resets its execution context per request, state has to live outside the runtime.
+
 I'll also be honest that stateful mode's in-memory session Map has production-level reliability problems even on long-running instances. Server restarts, rolling updates, crash recovery — any of these wipe the session Map. Clients holding valid session IDs suddenly get "session not found." Solving this properly requires an external session store like Redis, which isn't something the SDK provides out of the box.
 
 The two modes, compressed into a table:

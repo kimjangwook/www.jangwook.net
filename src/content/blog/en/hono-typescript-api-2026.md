@@ -381,7 +381,7 @@ wrangler deploy
 
 I didn't verify `wrangler deploy` — that requires an actual Cloudflare account. The code structure is exactly as shown above, and the only difference from the local Bun server is how you access bindings like `c.env.DB`.
 
-Cloudflare Workers agent infrastructure shows how Hono sits at the API layer in Cloudflare-based AI agent systems. It's already being used this way in production.
+[Cloudflare Workers agent infrastructure](/en/blog/en/cloudflare-agents-week-2026-autonomous-infrastructure/) shows how Hono sits at the API layer in Cloudflare-based AI agent systems. It's already being used this way in production.
 
 ## Type-Safe Middleware with Variables
 

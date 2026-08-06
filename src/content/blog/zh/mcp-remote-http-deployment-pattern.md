@@ -286,6 +286,8 @@ new StreamableHTTPServerTransport({
 
 单实例VM或容器用stateful很方便。进程持续运行，会话Map稳定存在。而Serverless环境（AWS Lambda、Cloudflare Workers）每次请求都重置执行上下文——内存会话Map无法持久化。这种情况必须使用stateless模式。将stateful部署到Serverless，会话ID会被发放，但第二次请求命中全新实例，不知道这个ID，返回404或400。看起来像SDK的bug，实际上是架构不匹配。
 
+把智能体放到Serverless上运行的趋势一直在扩大。我在[整理 Cloudflare Agents Week 2026 的发布内容时](/zh/blog/zh/cloudflare-agents-week-2026-autonomous-infrastructure/)确认的约束，归根结底也是同一个。在每次请求都重置执行上下文的运行时里，状态只能放在运行时之外。
+
 坦率地说，即使在长期运行的实例上，stateful模式的内存会话Map也有可靠性问题。服务器重启、实例替换、崩溃恢复——任何一种都会清空会话Map。持有有效会话ID的客户端突然收到"会话不存在"。解决这个问题需要Redis等外部会话存储，而SDK并不开箱即提供。
 
 把两种模式压缩成一张表：

@@ -84,6 +84,8 @@ Gemini 2.5 Flash默认启用**Thinking（推理）模式**。模型在响应前�
 
 坦白说，我最初没想到差距会这么大。实测结果：一个简单的数学问题消耗了305个Thinking令牌，但回答只有2个令牌。
 
+不过一律关掉Thinking也不是答案。[把thinking_budget分成0/1024/8000，按任务类型逐一实验](/zh/blog/zh/gemini-25-flash-thinking-api-developer-guide-2026/)，方向会分岔。简单任务一给预算就变慢，而数学推理反倒会减少输出令牌。
+
 ```python
 # Thinking启用（默认）
 response = client.models.generate_content(

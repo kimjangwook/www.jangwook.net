@@ -386,7 +386,7 @@ wrangler deploy
 
 実際の Cloudflare アカウントなしでは `wrangler deploy` まで検証できなかった。ただし、コード構造自体は上記のとおりで、ローカル Bun サーバーと変わる部分は `c.env.DB` のようなバインディングへのアクセス方法だけだ。
 
-Cloudflare Workers ベースのエージェントインフラと組み合わせると、Hono は単純な REST API フレームワーク以上の役割を持つ。Cloudflare Workers 上でエージェント API レイヤーとして活発に使われているのも、この組み合わせの強みによる。
+[Cloudflare Workers ベースのエージェントインフラ](/ja/blog/ja/cloudflare-agents-week-2026-autonomous-infrastructure/)と組み合わせると、Hono は単純な REST API フレームワーク以上の役割を持つ。Cloudflare Workers 上でエージェント API レイヤーとして活発に使われているのも、この組み合わせの強みによる。
 
 ## 型安全なミドルウェアを書く: Variables の活用
 

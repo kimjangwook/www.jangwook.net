@@ -1,6 +1,6 @@
 ---
 title: 'FAQ Rich Results Are Dead. Don''t Delete the Q&A Markup'
-description: Google fully retired FAQ rich results on May 7, 2026. A FAQPage JSON-LD passes the schema validator but comes back DEPRECATED. Here's what to change in code and content, from Google's own docs.
+description: Google retired FAQ rich results on May 7, 2026. FAQPage JSON-LD still passes the schema validator but returns DEPRECATED. What to change in code and content.
 pubDate: '2026-07-25'
 heroImage: ../../../assets/blog/faqpage-deprecation-ai-citation-2026/hero.png
 tags:
