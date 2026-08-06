@@ -3098,5 +3098,16 @@
       "devops": 0.5,
       "architecture": 0.45
     }
+  },
+  "act-rules-axe-coverage-wcag-sc-2026": {
+    "pubDate": "2026-08-06",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.6,
+      "web-development": 0.95,
+      "ai-ml": 0,
+      "devops": 0.6,
+      "architecture": 0.4
+    }
   }
 }
