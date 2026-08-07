@@ -11,7 +11,7 @@ export PATH="/Applications/cmux.app/Contents/Resources/bin:/Users/jangwook/.nvm/
 export HOME="/Users/jangwook"
 
 # Project directory
-PROJECT_DIR="/Users/jangwook/Documents/workspace/www.jangwook.net"
+PROJECT_DIR="/Users/jangwook/workspace/www.jangwook.net"
 cd "$PROJECT_DIR"
 
 # Load environment variables (API keys, Telegram credentials)
