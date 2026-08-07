@@ -1,6 +1,6 @@
 ---
 title: 'I Widened Letter Spacing by 0.12em and 570 Elements Clipped'
-description: 'axe-core reported zero violations for WCAG 1.4.12. Then I applied the four declarations the criterion actually asks for, and 570 elements lost text. Here is the breakdown of which declaration does the damage.'
+description: 'axe-core found zero WCAG 1.4.12 violations. Then I applied the four declarations the criterion asks for and 570 elements clipped. Which one does the damage.'
 pubDate: '2026-08-07'
 heroImage: '../../../assets/blog/text-spacing-1412-clamp-audit-2026/hero.png'
 tags:

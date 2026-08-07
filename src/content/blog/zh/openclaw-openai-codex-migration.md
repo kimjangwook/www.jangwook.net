@@ -204,7 +204,7 @@ openclaw onboard --auth-choice anthropic
 | 代码/工具 | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
 | 迁移难度 | — | 简单（15分钟） | 简单 |
 
-最重要的是<strong>不要把自己锁死在某个Provider上</strong>。利用OpenClaw基于配置的架构，保持灵活切换的能力。如果你还在选择AI编程工具，[Cursor 3 vs Claude Code vs Windsurf对比](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026/)也值得参考。
+最重要的是<strong>不要把自己锁死在某个Provider上</strong>。利用OpenClaw基于配置的架构，保持灵活切换的能力。补充一句：写完这篇没多久，我把OpenClaw整个撤掉了。为了避免锁定而加的这一层，本身开始变成维护成本。这个判断的来龙去脉写在[我为什么从OpenClaw转向Codex+Nanobot](/zh/blog/zh/openclaw-codex-nanobot-stack-migration/)里。如果你还在选择AI编程工具，[Cursor 3 vs Claude Code vs Windsurf对比](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026/)也值得参考。
 
 ## 参考资料
 

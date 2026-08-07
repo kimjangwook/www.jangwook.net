@@ -237,7 +237,7 @@ Some cases won't load. Examples with `meta refresh` or orientation locks navigat
 
 W3C publishes per-tool ACT implementation reports separately, and this is not one of them. Those measure rule-by-rule implementation consistency. This measures what a default, CI-shaped run decides, aggregated by success criterion. Different questions, so don't put the numbers side by side.
 
-Everything here is axe-core 4.13.0. Another checker has another list. And the obvious one, worth stating anyway: <strong>passing every automated rule is not WCAG conformance.</strong> Conformance is a human judgment.
+Everything here is axe-core 4.13.0. Another checker has another list. And the obvious one, worth stating anyway: <strong>passing every automated rule is not WCAG conformance.</strong> Conformance is a human judgment. The criterion where that gap shows up most clearly is 1.4.12 Text Spacing. I once [widened letter spacing to the required values and watched 570 elements clip](/en/blog/en/text-spacing-1412-clamp-audit-2026/), and every one of those pages passed AA in the checker.
 
 ## Two lists worth generating today
 

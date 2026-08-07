@@ -217,7 +217,7 @@ openclaw onboard --auth-choice anthropic
 | 코드/도구 | | | |
 | 전환 난이도 | — | 쉬움 (15분) | 쉬움 |
 
-가장 중요한 건 <strong>특정 프로바이더에 종속되지 않는 구조</strong>를 만들어 두는 것이다. OpenClaw의 설정 기반 아키텍처를 활용하면, 어떤 프로바이더가 정책을 바꾸더라도 유연하게 대응할 수 있다. AI 코딩 도구 선택 자체가 고민이라면 [Cursor 3 vs Claude Code vs Windsurf 비교](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026/)도 함께 읽어보면 된다.
+가장 중요한 건 <strong>특정 프로바이더에 종속되지 않는 구조</strong>를 만들어 두는 것이다. OpenClaw의 설정 기반 아키텍처를 활용하면, 어떤 프로바이더가 정책을 바꾸더라도 유연하게 대응할 수 있다. 덧붙이자면 나는 이 글을 쓰고 얼마 뒤에 OpenClaw 자체를 걷어냈다. 종속을 피하려고 얹은 레이어가 그 자체로 유지비가 되기 시작해서였고, 그 판단의 근거는 [OpenClaw를 떠나 Codex+Nanobot으로 옮긴 기록](/ko/blog/ko/openclaw-codex-nanobot-stack-migration/)에 정리해뒀다. AI 코딩 도구 선택 자체가 고민이라면 [Cursor 3 vs Claude Code vs Windsurf 비교](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026/)도 함께 읽어보면 된다.
 
 ## 참고 자료
 

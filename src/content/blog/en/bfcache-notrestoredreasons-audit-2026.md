@@ -1,6 +1,6 @@
 ---
 title: 'One listener costs you the back button: six bfcache probes'
-description: Six pages, one bfcache blocker each, real back navigations measured with pageshow.persisted and notRestoredReasons. unload blocked the restore. beforeunload and Cache-Control no-store did not.
+description: 'Six pages, one bfcache blocker each, measured on real back navigations with pageshow.persisted and notRestoredReasons. Only unload blocked the restore.'
 pubDate: '2026-07-21'
 updatedDate: '2026-07-24'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png

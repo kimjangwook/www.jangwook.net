@@ -6358,6 +6358,40 @@
       "added_at": "2026-08-06",
       "status": "queued",
       "notes": "XSLT 제거 자체를 해설한 글은 곧 쏟아진다. 이 글의 차별점은 영향 범위를 직접 세는 것이다. sitemap.xml과 RSS에 붙이는 xml-stylesheet 처리 명령은 브라우저 XSLT에 의존하는 대표적 잔존 용례다. 크롤러는 XSLT를 거치지 않고 원본 XML을 읽으므로 색인에는 영향이 없다는 점을 먼저 못 박고(이게 오해가 가장 많이 날 지점이다), 사람이 브라우저로 sitemap을 열었을 때의 표시만 깨진다는 것을 구분한다. 실측 축: 이 블로그의 sitemap-index.xml·rss.xml에 xml-stylesheet가 걸려 있는지 확인하고, 걸려 있다면 Chrome 152 오리진 트라이얼 없이 어떻게 보이는지와 대체안(빌드 시 정적 HTML 생성) 비용을 비교한다. 성실성 주의: 제거 일정은 Chrome 측 예정일이며 변경될 수 있다. 오리진 트라이얼과 최종 제거를 혼동하지 않는다. 링크: sitemap-lastmod-crawl-scheduling-2026, internal-link-trailing-slash-redirect-audit-2026"
+    },
+    {
+      "slug": "reflow-1410-vs-text-spacing-1412-same-pages-2026",
+      "title_idea": "같은 페이지를 320px로 좁힐 때와 자간을 넓힐 때, 깨지는 곳은 겹치는가",
+      "content_type": "comparison",
+      "target_keyword": "WCAG 1.4.10 리플로우 1.4.12 텍스트 간격 차이",
+      "secondary_keywords": [
+        "320 CSS 픽셀 리플로우 검사",
+        "고정 높이 컨테이너 오버플로",
+        "리플로우 자동 검사 한계"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "W3C Understanding SC 1.4.10 Reflow / SC 1.4.12 Text Spacing(공식). 보조 참고: yatil.net 'Resize Text & Reflow', AccessibilityOz 1.4.12 해설. 두 기준이 모두 고정 높이·overflow:hidden을 벌하지만 트리거가 다르다는 점이 여러 해설에서 반복 지적됨",
+      "added_at": "2026-08-07",
+      "status": "queued",
+      "notes": "어제 글(text-spacing-1412-clamp-audit-2026)의 자연스러운 짝. 그 글은 자간을 넓혀 570곳이 잘리는 것을 셌다. 이번엔 같은 페이지 집합을 320 CSS 픽셀로 좁혀 리플로우 위반을 세고, 두 목록의 교집합·차집합을 낸다. 가설 검증형: '두 기준은 결국 같은 컴포넌트를 잡는다'가 흔한 통념인데, 실제로 겹치는 비율을 재본 글은 거의 없다. 겹치지 않는 쪽이 나오면 그게 이 글의 핵심 발견이 된다. 성실성 주의: 리플로우는 자동 판정이 어려운 기준이다. 스크립트가 재는 것은 '가로 스크롤 발생 여부'이지 '적합성'이 아니라는 것을 먼저 못 박는다. 예외(표·지도 등 2차원 콘텐츠)를 수동으로 골라내는 절차를 포함. 도구는 기존 감사 하네스 재사용(scripts/). 링크: text-spacing-1412-clamp-audit-2026, act-rules-axe-coverage-wcag-sc-2026, wcag22-target-size-audit-2026"
+    },
+    {
+      "slug": "container-queries-vs-media-queries-reflow-cost-2026",
+      "title_idea": "컨테이너 쿼리로 옮기면 320px 리플로우가 실제로 덜 깨지나",
+      "content_type": "comparison",
+      "target_keyword": "컨테이너 쿼리 미디어 쿼리 차이",
+      "secondary_keywords": [
+        "@container 마이그레이션 비용",
+        "컴포넌트 반응형 320px",
+        "container query 브라우저 지원 2026"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "MDN CSS container queries / Baseline 지원 현황(공식). 업계 해설 다수가 2026년 기준 96% 전후 지원과 '미디어 쿼리는 페이지 단위, 컨테이너 쿼리는 컴포넌트 단위'라는 역할 분담을 제시",
+      "added_at": "2026-08-07",
+      "status": "queued",
+      "notes": "'컨테이너 쿼리로 바꿔라'는 권고는 넘치는데 바꾼 뒤 무엇이 얼마나 좋아지는지 잰 글이 없다. 측정 축을 접근성으로 잡는 게 차별점이다. 같은 컴포넌트를 미디어 쿼리판과 @container판으로 각각 만들고, 부모 폭 250/450/전체 세 조건에서 가로 오버플로 발생 지점을 센다. 리플로우 글과 짝을 이루는 후속. 성실성 주의: 이건 컴포넌트 몇 개짜리 재현 실험이지 벤치마크가 아니다. 마이그레이션 비용(CSS 줄 수, 래퍼 요소 추가)도 같이 적어 '공짜가 아니다'를 분명히 한다. 링크: reflow-1410-vs-text-spacing-1412-same-pages-2026, baseline-2026-ci-gate-web-features"
     }
   ]
 }

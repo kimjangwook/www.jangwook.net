@@ -207,7 +207,7 @@ Generate an API key at `console.anthropic.com` and pay per token. For Opus agent
 | Code/Tools | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
 | Migration Effort | — | Easy (~15 min) | Easy |
 
-The most important takeaway: <strong>don't lock yourself into a single provider.</strong> OpenClaw's config-driven architecture lets you swap providers with minimal friction — use that to your advantage. If you're still choosing between AI coding tools more broadly, [Cursor 3 vs Claude Code vs Windsurf](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026/) is worth reading alongside this guide.
+The most important takeaway: <strong>don't lock yourself into a single provider.</strong> OpenClaw's config-driven architecture lets you swap providers with minimal friction — use that to your advantage. One postscript: not long after writing this, I pulled OpenClaw out entirely. The layer I added to avoid lock-in had itself turned into upkeep. I wrote up that reasoning in [why I left OpenClaw for a Codex + Nanobot stack](/en/blog/en/openclaw-codex-nanobot-stack-migration/). If you're still choosing between AI coding tools more broadly, [Cursor 3 vs Claude Code vs Windsurf](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026/) is worth reading alongside this guide.
 
 ## References
 

@@ -206,7 +206,7 @@ openclaw onboard --auth-choice anthropic
 | コード/ツール | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
 | 切り替え難度 | — | 簡単（15分） | 簡単 |
 
-最も大切なのは、<strong>特定のプロバイダーに依存しない構成</strong>を作っておくことです。OpenClawの設定ベースのアーキテクチャを活かせば、どのプロバイダーがポリシーを変えても柔軟に対応できます。AIコーディングツール全体を比較したい場合は[Cursor 3 vs Claude Code vs Windsurf](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026/)も参考になります。
+最も大切なのは、<strong>特定のプロバイダーに依存しない構成</strong>を作っておくことです。OpenClawの設定ベースのアーキテクチャを活かせば、どのプロバイダーがポリシーを変えても柔軟に対応できます。ひとつ付け加えると、この記事を書いてしばらくして私はOpenClaw自体を外しました。依存を避けるために重ねたレイヤーが、それ自体で維持コストになり始めたからです。その判断の経緯は[OpenClawをやめてCodex+Nanobotに移した記録](/ja/blog/ja/openclaw-codex-nanobot-stack-migration/)にまとめてあります。AIコーディングツール全体を比較したい場合は[Cursor 3 vs Claude Code vs Windsurf](/ja/blog/ja/cursor-3-vs-claude-code-vs-windsurf-2026/)も参考になります。
 
 ## 参考資料
 
