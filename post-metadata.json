@@ -3109,5 +3109,16 @@
       "devops": 0.6,
       "architecture": 0.4
     }
+  },
+  "text-spacing-1412-clamp-audit-2026": {
+    "pubDate": "2026-08-07",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.35,
+      "web-development": 0.95,
+      "ai-ml": 0,
+      "devops": 0.4,
+      "architecture": 0.35
+    }
   }
 }

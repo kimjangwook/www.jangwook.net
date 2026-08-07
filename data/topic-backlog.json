@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-06",
+  "updated_at": "2026-08-07",
   "topics": [
+    {
+      "slug": "text-spacing-1412-clamp-audit-2026",
+      "title_idea": "자간을 0.12em 넓혔더니 569곳이 잘렸다 — 검사기가 통과시킨 AA 기준",
+      "content_type": "how-to",
+      "target_keyword": "WCAG 1.4.12 텍스트 간격 감사",
+      "secondary_keywords": [
+        "letter-spacing 콘텐츠 손실",
+        "-webkit-line-clamp 접근성",
+        "avoid-inline-spacing 한계"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "W3C WCAG 2.2 SC 1.4.12(레벨 AA, 네 값: line-height 1.5x, 단락뒤 2x, letter-spacing 0.12x, word-spacing 0.16x) + Understanding SC 1.4.12(실패 3유형: 세로절단/가로절단/겹침, 말줄임은 \"드러낼 수단\" 있으면 허용, 해당 속성 미사용 문자체계 예외) + Deque avoid-inline-spacing 규칙문서(축자: \"Ensure that text spacing set through style attributes can be adjusted with custom stylesheets.\") 1차 출처. 자체 측정: 표본 24 URL x 2뷰포트(1280x800/390x844)=48화면, Playwright 1.57 + Chromium 143.0.7499.4, Node 22.22, axe-core 4.13.0, dist 1,356장 중 표본. axe avoid-inline-spacing 단독 실행: 위반 0, 통과 24, incomplete 0, inapplicable 0. 네 값 전부 적용: 새로 잘린 요소 569, 클램프 줄 손실 1,438, 손실 화면 28/48, 가로스크롤 신규 0, 페이지높이 min1.006/median1.123/max1.487. 선언별 분해(핵심): line-height 1.5 → 0건(높이 1.000x, min 0.926x = 저자 1.58을 되레 축소), 단락 margin 2em → 0건(1.064x), word-spacing 0.16em → 123건(1.004x), letter-spacing 0.12em → 522건(1.036x). 손실의 92%가 자간 단독. raise-only 변형(1.5 미만만 상향)도 569/1,438로 동일, 높이만 1.168x. 언어별 word-spacing 신규절단(desktop/mobile): ja 1/1, zh 3/4, ko 40/15, en 0/55 — ko는 띄어쓰기가 있어 W3C 예외 미적용. letter-spacing: ko 164/42, ja 61/30, zh 42/58, en 37/76. 컴포넌트별 표시율(baseline→적용후): .post-card p clamp3 n=2680 86.2%→76.6%, 홈 clamp2 n=24 47.2%→38.1%, .item-reason clamp1 n=42 35.1%→30.7%(평균 108자, 사이트 내 유일 게재). 수정: .item-reason 클램프 제거+line-height 1.4→1.5, .item-title 1.4→1.5, 홈 clamp2→3. 재측정: 손실화면 28→17, .item-reason 표시율 35.1→100%, 홈 47.2→70.8%. 함정: 이진 지표 newClipped는 569→572로 되레 증가 — 기준선에서 이미 잘린 상자는 \"새로\" 잘릴 수 없어 지표 시야 밖. 부산물: scripts/audit-text-spacing.mjs, data/text-spacing-sample.json 신설. 기둥①.",
+      "added_at": "2026-08-07",
+      "status": "done",
+      "notes": "핵심 주장: 1.4.12 손실의 원인 축(가로: letter/word-spacing)과 독자가 체감하는 축(세로: line-height/단락간격)이 서로 다르다. 522 대 0. 둘째 오리지널: 다국어에서 CJK를 한 덩어리로 묶으면 안 된다 — word-spacing은 ja/zh에 거의 무해하나 ko는 띄어쓰기 때문에 정상 적용(W3C 예외 미해당). 셋째: 클램프 허용 여부의 판정 기준은 \"드러낼 수단의 유무\"이며, 이 기준으로 카드 발췌(허용)와 추천 사유(불가)가 갈린다. 넷째(메타): 위반 건수 같은 임계값 지표는 항구적 실패를 구조적으로 못 본다 — 비율 지표 병기 필요. 후속 소재: (1) 겹침(overlap) 유형 판정 구현 — 현재 미측정이라 Understanding 3유형 중 1개 누락, (2) Firefox/WebKit의 letter-spacing 서브픽셀·line-clamp 구현 차이 실측 비교, (3) 이 감사를 표본 24→전수로 확장할 때의 실행시간 예산, (4) SC 1.4.10 Reflow(320px/400% 확대) 감사로 확장.",
+      "published_at": "2026-08-07"
+    },
     {
       "slug": "focus-not-obscured-sticky-header-scroll-padding-2026",
       "title_idea": "Tab으로 0건, Shift+Tab으로 16건 — 스티키 헤더가 삼킨 키보드 포커스",
