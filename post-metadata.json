@@ -3120,5 +3120,16 @@
       "devops": 0.4,
       "architecture": 0.35
     }
+  },
+  "text-fragment-citation-deep-link-audit-2026": {
+    "pubDate": "2026-08-08",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.3,
+      "web-development": 0.95,
+      "ai-ml": 0.15,
+      "devops": 0.3,
+      "architecture": 0.4
+    }
   }
 }

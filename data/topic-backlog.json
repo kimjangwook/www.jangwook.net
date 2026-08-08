@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-07",
+  "updated_at": "2026-08-08",
   "topics": [
+    {
+      "slug": "text-fragment-citation-deep-link-audit-2026",
+      "title_idea": "인용된 문장으로 되돌아오는 링크: 코드 블록에서만 15개 중 14개가 끊겼다",
+      "content_type": "how-to",
+      "target_keyword": "텍스트 프래그먼트 인용 딥링크",
+      "secondary_keywords": [
+        "#:~:text= 매칭 규칙",
+        "블록 경계 인용",
+        "CJK 단어 경계 텍스트 프래그먼트"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "WICG URL Fragment Text Directives(Draft Community Group Report, W3C 표준 아님) 축자 인용: 'While the matching text and its prefix/suffix can span across block-boundaries, the individual parameters to these steps cannot.' + 단어 경계는 UAX #29 위임, 사전 기반 분절 주의(일본어 명시) + 사용자 활성화 필요 + force-load-at-top 옵트아웃. WHATWG HTML PR #11895(2025-11-09 개설, draft, 2026-07까지 커밋; Chromium 구현, WebKit Safari 18.2 릴리스노트, Gecko 논의중). 자체 측정: 통제 픽스처 35건(22 매칭/13 실패), 코퍼스 24페이지(언어별 6), Playwright 1.57 + Chromium 151.0.7922.34, Node 22.22, 뷰포트 1280x800, 판정은 링크 클릭 후 window.scrollY(대상은 4000px 스페이서 아래). 정적 집계: 잎블록 ko1163/ja1196/en1163/zh1205, 문장 495/617/378/476, 페이지내 중복 14/14/7/5, 단어경계 불일치 0/0/0/0. 브라우저 69건 중 55 도착 — 고유 산문 48/48, 중복 산문 6/6(첫 일치로 이동), pre 코드 1/15. 픽스처 핵심: 블록 넘는 bare text 실패(h2+p, li+li), start,end는 성공, 인라인 strong/code 무해, 미드워드 시작 4언어 전부 실패, CJK 분절 경계 시작은 성공, prefix- 인접 시 경계 요구 소멸, prefix 비인접(콜론) 실패, pre 내 공백 미접힘(label value 실패/label     value 성공), pre 줄바꿈 넘는 bare 실패. 부산물: scripts/audit-text-fragments.mjs, data/text-fragment-audit.json, devDep jsdom 추가. 기둥①.",
+      "added_at": "2026-08-08",
+      "status": "done",
+      "notes": "핵심 주장: 인용의 단위는 산문 한 문장이며 그 문장이 블록 하나에 담겨야 주소가 된다. 오리지널 기여 (1) 실패가 무작위가 아니라 코드 블록 한 곳에 100% 편중된다는 실측(14/14) 및 그 원인이 pre의 공백 미접힘이라는 분리 실험, (2) CJK 실패는 언어가 아니라 분절 경계 문제이며 prefix-로 우회 가능함을 4언어 대조로 제시, (3) 중복 문장 = 모호한 주소라는 프레이밍(자사 relatedPosts 정형 문구 자기 적발). 후속 소재: (1) WebKit/Gecko 매칭 동작 비교 실측, (2) 이 감사를 빌드 게이트로 상설화(중복 문장 검출), (3) 코드 블록에 안정 id를 부여해 #id 앵커로 보완하는 설계 실험, (4) 실제 AI 답변이 text fragment 링크를 만드는지 관측 가능한 경로 탐색.",
+      "published_at": "2026-08-08"
+    },
     {
       "slug": "text-spacing-1412-clamp-audit-2026",
       "title_idea": "자간을 0.12em 넓혔더니 569곳이 잘렸다 — 검사기가 통과시킨 AA 기준",
