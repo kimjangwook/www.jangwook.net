@@ -58,7 +58,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-In my last post, I installed Paperclip — an AI agent orchestration platform — and took it for a spin. I got as far as hiring agents, assigning issues, and committing code. But stopping there felt like a waste.
+In [my last post](/en/blog/en/paperclip-zero-human-company-agent-orchestration/), I installed Paperclip — an AI agent orchestration platform — and took it for a spin. I got as far as hiring agents, assigning issues, and committing code. But stopping there felt like a waste.
 
 So I went ahead and built an actual company.
 

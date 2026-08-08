@@ -55,7 +55,7 @@ relatedPosts:
       zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
 ---
 
-上一篇文章里，我安装并试运行了Paperclip这个AI Agent编排平台。从雇佣Agent、分配Issue到提交代码，整个流程都跑通了——但停在这里实在太可惜了。
+[上一篇文章里，我安装并试运行了Paperclip这个AI Agent编排平台](/zh/blog/zh/paperclip-zero-human-company-agent-orchestration/)。从雇佣Agent、分配Issue到提交代码，整个流程都跑通了——但停在这里实在太可惜了。
 
 所以我干脆造了一家真正的公司。
 

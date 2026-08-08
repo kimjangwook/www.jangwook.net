@@ -1852,5 +1852,16 @@
         "id": 4346664
       }
     }
+  },
+  {
+    "slug": "text-fragment-citation-deep-link-audit-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/text-fragment-citation-deep-link-audit-2026",
+    "posted_at": "2026-08-08T06:57:16.571Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
   }
 ]

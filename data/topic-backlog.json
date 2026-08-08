@@ -6410,6 +6410,40 @@
       "added_at": "2026-08-07",
       "status": "queued",
       "notes": "'컨테이너 쿼리로 바꿔라'는 권고는 넘치는데 바꾼 뒤 무엇이 얼마나 좋아지는지 잰 글이 없다. 측정 축을 접근성으로 잡는 게 차별점이다. 같은 컴포넌트를 미디어 쿼리판과 @container판으로 각각 만들고, 부모 폭 250/450/전체 세 조건에서 가로 오버플로 발생 지점을 센다. 리플로우 글과 짝을 이루는 후속. 성실성 주의: 이건 컴포넌트 몇 개짜리 재현 실험이지 벤치마크가 아니다. 마이그레이션 비용(CSS 줄 수, 래퍼 요소 추가)도 같이 적어 '공짜가 아니다'를 분명히 한다. 링크: reflow-1410-vs-text-spacing-1412-same-pages-2026, baseline-2026-ci-gate-web-features"
+    },
+    {
+      "slug": "prerender-until-script-origin-trial-measure-2026",
+      "title_idea": "prerender-until-script를 켜면 프리렌더가 어디서 멈추는지 재봤다",
+      "content_type": "how-to",
+      "target_keyword": "speculation rules prerender until script",
+      "secondary_keywords": [
+        "prerender 오리진 트라이얼 2026",
+        "speculation rules 측정 방법",
+        "activationStart 프리렌더 계측"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome for Developers 블로그의 prerender-until-script 오리진 트라이얼 공지(Chrome 144)와 prerender-pages 문서. HTMLScriptElement.supports('speculationrules') 기반 계측 패턴은 같은 문서에 기술됨",
+      "added_at": "2026-08-08",
+      "status": "queued",
+      "notes": "기존 prerender-activationstart-cwv-measurement-2026의 직속 후속. 전체 프리렌더는 서드파티 스크립트까지 앞서 실행해버리는 게 부담인데, prerender-until-script는 첫 스크립트 앞에서 멈춘다고 말한다. 그 '멈추는 지점'이 실제로 어디인지 자체 사이트에서 잰다. 측정 축: 활성화 전 실행된 요청 수, activationStart 보정 후 LCP, 애널리틱스 중복 집계 여부. 성실성 주의: 오리진 트라이얼이라 플래그/토큰 상태를 명시하고, 표본은 자기 사이트 페이지 몇 개라는 점을 분명히 쓴다. 링크: prerender-activationstart-cwv-measurement-2026, bfcache-notrestoredreasons-audit-2026, inp-yielding-measure-2026"
+    },
+    {
+      "slug": "llms-txt-conformance-sweep-2026",
+      "title_idea": "llms.txt를 올린 사이트들의 파일을 실제로 열어봤다: 규격을 지킨 건 몇 개인가",
+      "content_type": "how-to",
+      "target_keyword": "llms.txt 규격 검증",
+      "secondary_keywords": [
+        "llms.txt 작성법 2026",
+        "llms-full.txt 차이",
+        "AI 크롤러 llms.txt 실효성"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "2026년 llms.txt 채택률 조사 다수(top-10k 기준 2025-07 1.04% → 2026-06 5.61%). 별개로 5억 건 규모 AI 봇 트래픽 관측에서 llms.txt를 직접 요청한 건은 408건에 불과했다는 보고가 있어, 채택률과 실제 페치 사이의 간극이 논점",
+      "added_at": "2026-08-08",
+      "status": "queued",
+      "notes": "'llms.txt를 올려라'는 글은 많지만 올라간 파일이 규격을 지켰는지 센 글이 없다. 공개된 호스트 목록에서 /llms.txt와 /llms-full.txt를 받아 (1) 200 응답 여부 (2) Content-Type이 text/plain인지 (3) H1 + 요약 + 링크 섹션 구조를 지키는지 (4) 안의 링크가 살아 있는지를 센다. 서버 로그 없이 가능한 축만 다룬다. 성실성 주의: 채택률 수치는 조사마다 8.7%〜51.8%로 크게 갈리는데, 표본(고정 패널 vs Tranco 상위)이 달라서다. 이 차이를 뭉개지 말고 그대로 적는다. 실효성 판단은 '검색 크롤러는 안 가져가고 IDE 에이전트가 가져간다'까지만 쓰고 순위 효과는 주장하지 않는다. 링크: ai-crawler-control-robots-txt-llms-txt-2026, robots-snippet-controls-ai-overviews-2026, ai-crawlers-dont-render-javascript-csr-2026"
     }
   ]
 }

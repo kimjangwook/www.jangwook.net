@@ -1,6 +1,6 @@
 ---
 title: '자간을 0.12em 넓혔더니 570곳이 잘렸다: 검사기가 통과시킨 AA 기준'
-description: 'axe-core는 WCAG 1.4.12에 위반 0건을 줬다. 그 기준이 요구하는 네 줄을 실제로 적용하자 570개 요소에서 글자가 잘렸다. 네 줄을 하나씩 따로 걸어 어느 선언이 콘텐츠를 잃게 하는지 분해했다.'
+description: 'axe-core는 WCAG 1.4.12 텍스트 간격 기준에 위반 0건을 줬다. 그런데 그 기준이 요구하는 네 줄을 실제로 적용하자 570개 요소에서 글자가 잘렸다. 네 줄을 하나씩 따로 걸어 -webkit-line-clamp가 어디서 콘텐츠를 잃게 하는지를 분해해봤다.'
 pubDate: '2026-08-07'
 heroImage: '../../../assets/blog/text-spacing-1412-clamp-audit-2026/hero.png'
 tags:

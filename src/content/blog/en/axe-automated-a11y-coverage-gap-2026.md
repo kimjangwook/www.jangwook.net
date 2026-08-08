@@ -1,6 +1,6 @@
 ---
-title: What Automated Accessibility Checks Miss After the Green Light
-description: I seeded eight WCAG barriers into one checkout page and ran axe-core. It caught the four rule-based ones and missed the four needing human judgment. Here's the gap, plus a manual-review checklist.
+title: What axe-core Misses After Reporting Zero Violations
+description: I seeded eight WCAG barriers into a checkout page and ran axe-core. It caught the four rule-based ones and missed the four needing human judgment entirely.
 pubDate: '2026-07-12'
 heroImage: ../../../assets/blog/axe-automated-a11y-coverage-gap-2026/hero.png
 tags:
