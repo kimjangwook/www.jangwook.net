@@ -3131,5 +3131,16 @@
       "devops": 0.3,
       "architecture": 0.4
     }
+  },
+  "reflow-1410-400-zoom-viewport-height-2026": {
+    "pubDate": "2026-08-09",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.4,
+      "web-development": 0.97,
+      "ai-ml": 0,
+      "devops": 0.35,
+      "architecture": 0.3
+    }
   }
 }

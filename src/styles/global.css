@@ -29,6 +29,18 @@
 		--header-height: 5rem;
 		scroll-padding-top: calc(var(--header-height) + 1rem);
 	}
+
+	/*
+	  WCAG 2.2 SC 1.4.10 (Reflow). At 400% zoom on a 1280x800 screen the viewport
+	  drops to 320x200 CSS px. The header stops being sticky there (Header.astro),
+	  so reserving 96px of scroll padding would waste half of what is left.
+	*/
+	@media (max-height: 400px) {
+		html {
+			--header-height: 0px;
+			scroll-padding-top: 1rem;
+		}
+	}
 }
 
 /*

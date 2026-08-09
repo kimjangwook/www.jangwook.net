@@ -1,7 +1,24 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-08",
+  "updated_at": "2026-08-09",
   "topics": [
+    {
+      "slug": "reflow-1410-400-zoom-viewport-height-2026",
+      "title_idea": "320px로 재면 리플로우는 절반만 잰 것이다 — 400% 확대의 높이 200px",
+      "content_type": "how-to",
+      "target_keyword": "WCAG 1.4.10 리플로우 감사",
+      "secondary_keywords": [
+        "400% 확대 뷰포트 높이",
+        "overflow-wrap anywhere min-content",
+        "sticky 헤더 리플로우"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "W3C WCAG 2.2 SC 1.4.10(레벨 AA) 축자 인용 + Understanding SC 1.4.10 축자('320 CSS pixels is equivalent to a starting viewport width of 1280 CSS pixels wide at 400% zoom', '256 ... 1024 CSS pixels at 400% zoom', 2차원 레이아웃 예외 예시) + CSS Text Level 3 overflow-wrap 정의 축자(break-word는 min-content 내재 크기에 미반영, anywhere는 반영). 자체 측정: dist 1,366장 중 표본 16 URL, 조건 3종(320x844/320x256/320x200), Playwright 1.57.0 + Chromium 헤드리스, Node 22.22, deviceScaleFactor 1, 로컬 정적 서버, 2026-08-09. 기준선: 가로 넘침 16/16 페이지가 세 조건 전부 동일(2px x14, 10px x1, 17px x1, 최대 17px). 요소 단위 43개 중 24개는 조상 스크롤 컨테이너에 흡수(pre>code 18, 표 래퍼 thead/tbody 6), 페이지 넘침 19개. 최대 요소 넘침 585px(code)인데 페이지는 2px. 원인 3분류: 헤더 컨트롤 줄(16/16, +2px), 끊기지 않는 이메일 문자열(+10px, 카드 314px), 안 접히는 1fr auto 1fr 그리드(+17px). 세로: sticky 헤더 82px = 844에서 9.7%, 200에서 41%. 가용비율 90.3/68.0/59.0%, 가용높이 762/174/118px, line-height 28px → 4.2줄. 최소재현: 288px 트랙에서 baseline 304 / break-word 304 / anywhere 288 / min-width:0 288. 수정 4건 후 재측정: 가로 0/16 전 조건, zoom400 가용비율 59.0→100.0%, 118→200px(4.2→7.1줄, +69%). axe-core 4.13.0 105규칙 중 wcag1410 태그 0건. 방법론 사고: 첫 실행에서 존재하지 않는 /ko/tags/ 2건이 404인 채 '넘침 0·가용 100%'로 집계 → 응답코드 200 단언 추가. 부산물: scripts/audit-reflow.mjs, data/reflow-audit.json, data/reflow-audit-after.json. 기둥①.",
+      "added_at": "2026-08-09",
+      "status": "done",
+      "notes": "핵심 주장: 1.4.10의 가로 판정은 뷰포트 높이와 완전히 독립이며(세 조건 동일), 400% 확대가 실제로 바꾸는 축은 높이다. 그리고 그 높이를 먹는 것은 콘텐츠가 아니라 저자가 붙인 sticky 헤더다. 둘째 오리지널: 리플로우 판정 단위는 요소가 아니라 스크롤 컨테이너(43→19). 셋째: overflow-wrap:break-word는 min-content를 줄이지 않아 그리드 트랙 확장을 못 막는다는 스펙 사실을 최소재현으로 확인 — Tailwind break-words로는 안 고쳐진다. 넷째: 한 성공기준용 값(2.4.11의 scroll-padding-top 96px)이 다른 기준 조건(200px 뷰포트)에서 짐이 된다. 후속 소재: (1) 실제 브라우저 확대(에뮬레이션 아님)로 srcset·DPR 차이 실측, (2) 이 감사를 배포 게이트로 상설화(표본 설계), (3) WebKit/Gecko의 min-content·sticky 처리 비교, (4) 겹침(overlap) 유형 판정 구현, (5) 세로쓰기(writing-mode) 사이트에서 256px 높이 축 측정."
+    },
     {
       "slug": "text-fragment-citation-deep-link-audit-2026",
       "title_idea": "인용된 문장으로 되돌아오는 링크: 코드 블록에서만 15개 중 14개가 끊겼다",

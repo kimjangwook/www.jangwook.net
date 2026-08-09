@@ -21,7 +21,7 @@ const t = useTranslations(lang);
   class="site-header sticky top-0 z-50 backdrop-blur-sm border-b"
 >
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between min-h-20 gap-4">
+    <div class="site-header__row flex items-center justify-between min-h-20 gap-4">
       <div class="flex items-center gap-6">
         <!-- Mobile menu button (shown on mobile and tablet) -->
         <!-- UX: Touch target minimum 44x44px (Fitts's Law) -->
@@ -129,6 +129,28 @@ const t = useTranslations(lang);
   .site-header {
     background: color-mix(in oklch, var(--paper) 92%, transparent);
     border-color: var(--paper-rule);
+  }
+
+  /* WCAG 1.4.10 Reflow (320 CSS px). 브랜드 + 테마 토글 + 언어 전환의 고유 폭
+     합이 288px(320 - 좌우 패딩)를 2px 넘겨 가로 스크롤이 생겼다. 여백만
+     줄여 넘김을 없앤다. 넓은 화면의 배치는 그대로 둔다. */
+  @media (max-width: 400px) {
+    .site-header > nav {
+      padding-inline: 0.75rem;
+    }
+
+    .site-header__row {
+      gap: 0.5rem;
+    }
+  }
+
+  /* 400% 확대 시 뷰포트 높이는 200 CSS px까지 줄어든다. 그 화면에서 82px짜리
+     sticky 헤더는 세로의 41%를 상시 점유한다. 짧은 뷰포트에서는 헤더를
+     흐름 안으로 되돌려 본문에 높이를 돌려준다. */
+  @media (max-height: 400px) {
+    .site-header {
+      position: static;
+    }
   }
 
   .brand-heading {
