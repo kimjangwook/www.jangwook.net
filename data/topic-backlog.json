@@ -6563,6 +6563,57 @@
       "added_at": "2026-08-09",
       "status": "queued",
       "notes": "적합성 통과 여부와 무관한 '남는 화면'을 하나의 예산 지표로 정의하고, 헤더·배너·쿠키 고지·플로팅 버튼이 그 예산을 각각 몇 퍼센트씩 쓰는지를 계속 추적하는 시리즈의 1편. 2편 후보는 쿠키 배너·광고 슬롯의 예산 점유, 3편은 예산 회귀를 CI에 거는 방법. 시리즈 5주 연속 0편을 끊는 것이 이 항목의 목적이다. 링크: reflow-1410-400-zoom-viewport-height-2026, focus-not-obscured-sticky-header-scroll-padding-2026"
+    },
+    {
+      "slug": "webcrypto-mlkem-xwing-post-quantum-browser-measure-2026",
+      "title_idea": "브라우저가 양자내성 키교환을 갖췄다: Web Crypto의 ML-KEM·X-Wing을 직접 재본다",
+      "content_type": "how-to",
+      "target_keyword": "Web Crypto ML-KEM",
+      "secondary_keywords": [
+        "X-Wing 하이브리드 키교환",
+        "브라우저 양자내성 암호",
+        "ML-DSA 서명 검증"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome 151 릴리스 노트 — Web Cryptography API에 ML-KEM·ML-DSA·X-Wing·ChaCha20-Poly1305 추가 (developer.chrome.com/blog/new-in-chrome-151)",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "단순 소개가 아니라 실측으로 간다. generateKey·encapsulate·decapsulate를 실제로 돌려 키/캡슐 바이트 크기와 왕복 시간을 X25519와 나란히 재고, 하이브리드(X-Wing)가 순수 ML-KEM 대비 얼마나 더 드는지 표로 낸다. 미지원 브라우저 폴백 경로도 함께 확인. 측정 스크립트는 저장소에 넣는다."
+    },
+    {
+      "slug": "devtools-mcp-agent-driven-performance-trace-2026",
+      "title_idea": "에이전트에게 DevTools를 쥐여줬다: DevTools MCP로 성능 트레이스를 자동으로 뜨는 절차",
+      "content_type": "how-to",
+      "target_keyword": "DevTools MCP 서버",
+      "secondary_keywords": [
+        "에이전트 성능 측정 자동화",
+        "Chrome 151 DevTools",
+        "MCP 브라우저 트레이스"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Chrome 151 DevTools 릴리스 노트 — DevTools MCP 서버 대규모 업데이트 (developer.chrome.com/blog/new-in-devtools-151)",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "이 블로그의 측정 루틴(트레이스 뜨기 → 지표 추출 → 회귀 비교)을 에이전트가 대신 돌리게 만드는 절차서. 사람이 손으로 할 때와 결과가 갈리는 지점을 명시하는 것이 차별점이다. 링크 후보: webmcp-navigator-modelcontext-origin-trial-agent-tools-2026, mcp-apps-interactive-ui-agent-ux"
+    },
+    {
+      "slug": "animationevent-animation-attribute-transition-debug-2026",
+      "title_idea": "transitionend가 어느 애니메이션 것인지 이제 물어볼 수 있다: AnimationEvent.animation 활용법",
+      "content_type": "how-to",
+      "target_keyword": "AnimationEvent animation 속성",
+      "secondary_keywords": [
+        "TransitionEvent animation",
+        "CSS 애니메이션 디버깅",
+        "Web Animations API 연결"
+      ],
+      "search_intent": "how-to",
+      "priority": 3,
+      "source": "Chrome 151 릴리스 노트 — AnimationEvent·TransitionEvent에 읽기 전용 animation 속성 추가",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "기존에는 이벤트에서 Animation 객체로 되짚을 방법이 없어 propertyName·target으로 추측하던 코드를 실제로 걷어낸다. 우선순위 3인 이유는 범위가 좁아서이고, 다른 주제가 밀릴 때 채우는 용도."
     }
   ]
 }

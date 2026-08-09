@@ -1,6 +1,6 @@
 ---
 title: '공식은 "WebSocket이 bfcache를 막지 않는다"고 했다 — 다시 재보니 세 번 다 막혔다'
-description: Chrome 149가 WebSocket의 bfcache 차단을 풀었다고 발표했다. Chrome 150 세 환경에서 다시 재보니 notRestoredReasons는 여전히 websocket을 돌려줬다.
+description: 'Chrome 149가 WebSocket의 bfcache 차단을 풀었다고 발표했다. Chrome 150 세 환경에서 다시 재보니 notRestoredReasons는 여전히 websocket을 돌려줬다. 릴리스 노트와 실측이 갈리는 지점을 재현 스크립트와 측정 로그까지 함께 기록했다.'
 pubDate: '2026-07-24'
 heroImage: ../../../assets/blog/websocket-bfcache-eligibility-remeasure/hero.png
 tags:

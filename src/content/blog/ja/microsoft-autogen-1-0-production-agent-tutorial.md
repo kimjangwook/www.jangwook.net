@@ -86,6 +86,8 @@ assistant = AssistantAgent(name="assistant", model_client=model_client)
 
 この変更の理由は**複数モデルバックエンドのサポート**だ。0.7.xではAnthropic Claude、Azure OpenAI、Ollama（ローカルLLM）、LLaMA.cppまで同じインターフェースで切り替えられる。エージェントのコードを触らずにモデルだけ差し替えが可能だ。
 
+この再設計が AutoGen だけで終わっていない点も併せて見ておきたい。Microsoft はその後、AutoGen のランタイムと Semantic Kernel のエンタープライズ機能を[ひとつの Agent Framework に統合して GA を出した](/ja/blog/ja/microsoft-agent-framework-ga-production-strategy/)。ここで学ぶモデルクライアントの分離とチーム抽象は、そちらでもほぼそのまま使える。
+
 ## インストール（5分あれば十分）
 
 ```bash

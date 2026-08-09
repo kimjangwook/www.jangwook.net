@@ -86,6 +86,8 @@ assistant = AssistantAgent(name="assistant", model_client=model_client)
 
 这一变化的原因是**支持多模型后端**。在0.7.x中，Anthropic Claude、Azure OpenAI、Ollama（本地LLM）、LLaMA.cpp都可以通过相同接口切换。不修改智能体代码，只换模型即可。
 
+这次重构并没有止步于 AutoGen，这一点值得一起看。此后 Microsoft 把 AutoGen 的运行时和 Semantic Kernel 的企业能力[合并成一个 Agent Framework 并发布了 GA](/zh/blog/zh/microsoft-agent-framework-ga-production-strategy/)。这里学到的模型客户端分离和团队抽象，在那边几乎可以原样沿用。
+
 ## 安装（5分钟搞定）
 
 ```bash

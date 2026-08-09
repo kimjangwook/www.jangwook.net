@@ -1,6 +1,6 @@
 ---
 title: '표본 26장이 놓친 위반 3종: WCAG-EM 2.0을 1,342장에 적용한 기록'
-description: 'W3C가 7월 23일 WCAG-EM 2.0을 Group Note로 발행했다. 문서의 표본 추출 절차를 내 사이트에 그대로 적용해 26장을 뽑고, 같은 빌드의 1,342장 전체를 axe-core로 훑어 대조했다. 표본은 위반 4종 중 1종만 잡았고, 무작위 표본이 새 발견을 내놓을 확률은 0.29%였다.'
+description: 'W3C가 7월 23일 WCAG-EM 2.0을 Group Note로 발행했다. 문서의 표본 추출 절차대로 26장을 뽑고, 같은 빌드의 1,342장 전체를 axe-core로 훑어 대조했다. 표본은 위반 4종 중 1종만 잡았고, 무작위 표본의 새 발견 확률은 0.29%였다.'
 pubDate: '2026-08-02'
 heroImage: '../../../assets/blog/wcag-em-2-sampling-vs-full-sweep-audit-2026/hero.png'
 tags:

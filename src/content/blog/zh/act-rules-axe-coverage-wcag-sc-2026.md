@@ -150,6 +150,8 @@ failing examples evaluated: 387 (unevaluable 6, page errors 27)
 
 这些零不能读成 axe 的缺陷。「链接文字有没有说清目的地」需要读语义，检查器在没把握的情况下硬报违规，误报会堆到没人再看结果为止。W3C 在[评估工具概览](https://www.w3.org/WAI/test-evaluate/tools/)里也划了这条线：「However, tools can't do it all. Some accessibility checks just cannot be automated and require manual intervention.」
 
+还有一类要补上。除了必须读语义才能判的标准，还有一些得让视口真的动起来才判得了，1.4.10 回流就是。这次测量在固定视口下只扫 DOM，本来就扫不出这一条。[把三个高度放在一起测之后，判定分岔的是纵向而不是横向](/zh/blog/zh/reflow-1410-400-zoom-viewport-height-2026/)。写这份沉默清单时，最好把「只能靠人读的」和「要换条件重测的」分开记。
+
 我的判断是：问题不在工具沉默，而在<strong>这份沉默没有被记录在流水线的任何地方</strong>。自动化决定不了的那 22 条标准，在你选定工具的那一刻就已经确定了。可是把这份清单写下来的团队，我几乎没见过。
 
 ## 有一部分沉默不是能力问题，是配置问题

@@ -154,6 +154,8 @@ failing examples evaluated: 387 (unevaluable 6, page errors 27)
 
 여기서 오해하면 안 되는 게 있다. 이 0들은 대부분 axe의 결함이 아니다. "링크 텍스트가 목적을 설명하는가"는 의미를 읽어야 하는 판단이고, 검사기가 확신 없이 위반을 뱉으면 오탐이 쌓여 아무도 결과를 안 보게 된다. W3C도 [평가 도구 개요](https://www.w3.org/WAI/test-evaluate/tools/)에서 선을 그어 둔다. "However, tools can't do it all. Some accessibility checks just cannot be automated and require manual intervention."
 
+여기에 한 가지를 덧붙이고 싶다. 의미를 읽어야 해서 남는 기준 말고, 뷰포트를 실제로 움직여봐야 판정되는 기준도 이 목록에 섞여 있다. 1.4.10 리플로우가 그렇다. 고정 뷰포트에서 DOM만 훑는 이 측정으로는 애초에 나올 수 없는 항목이고, [세 가지 높이로 같이 재보니 판정이 갈린 쪽은 가로가 아니라 세로였다](/ko/blog/ko/reflow-1410-400-zoom-viewport-height-2026/). 침묵의 목록을 적을 때는 "사람이 읽어야 하는 것"과 "다른 조건에서 다시 재야 하는 것"을 구분해 두는 편이 낫다.
+
 내 판단은 이렇다. 문제는 도구가 침묵하는 것이 아니라, <strong>그 침묵이 파이프라인 어디에도 기록되지 않는 것</strong>이다. 자동으로 결정되지 않는 22개 기준의 목록은 도구를 고르는 순간 이미 정해진다. 그런데 그 목록을 가진 팀을 나는 거의 못 봤다.
 
 ## 침묵의 일부는 능력이 아니라 설정이었다

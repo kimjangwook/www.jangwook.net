@@ -1,6 +1,6 @@
 ---
 title: '官方说「WebSocket 不再拦截 bfcache」，我重测了三次，次次都被拦'
-description: Chrome 149 宣布活动中的 WebSocket 不再阻止 bfcache。我在 Chrome 150 的三种环境重测，notRestoredReasons 照旧返回 websocket。
+description: 'Chrome 149 宣布活动中的 WebSocket 不再阻止 bfcache。我在 Chrome 150 的三种环境里重新测了一遍，notRestoredReasons 照旧返回 websocket，三次都一样。发布说明和实测对不上的那个点，连同复现脚本、测量日志和三次运行的差异都一起记了下来。'
 pubDate: '2026-07-24'
 heroImage: ../../../assets/blog/websocket-bfcache-eligibility-remeasure/hero.png
 tags:

@@ -50,6 +50,8 @@ The idea isn't new. The W3C Web Machine Learning Community Group first published
 
 One question lingers: why does it have to be inside the browser? Server-side MCP can already hand tools to an agent. The answer is state. A login session, a cart, the filter conditions currently on screen — these only fully exist inside the browser tab. For a server tool to reach that state, you'd have to rebuild separate auth and synchronization. But when the page exposes its own tools, the agent invokes actions in the exact session the user is already logged into. No local app to install, no separate API key exchange. This "use the context that's already open" property is WebMCP's reason to exist — and, as the next section shows, the root of its security tension too.
 
+The picture sharpens if you put the opposite approach next to it. Where WebMCP sends the agent into the page, [MCP Apps pulls the UI into the chat](/en/blog/en/mcp-apps-interactive-ui-agent-ux/). Same problem, solved from opposite ends, and which one fits comes down to where the user's session already lives.
+
 Let me lower expectations up front. An origin trial is not a finalized standard. It can change any time, and it already has, twice. So don't memorize the code below as a settled API. Treat it as the shape at this moment, one that may move again next quarter.
 
 ## The two places the February draft and the shipped build diverged

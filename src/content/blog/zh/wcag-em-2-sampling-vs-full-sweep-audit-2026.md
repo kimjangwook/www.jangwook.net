@@ -1,6 +1,6 @@
 ---
 title: '26个抽样页漏掉的3类违规：把WCAG-EM 2.0用在1,342个页面上'
-description: 'W3C于7月23日以Group Note形式发布WCAG-EM 2.0。我照着文档的抽样流程挑出26个页面，又把同一次构建的1,342个页面全部用axe-core扫了一遍做对照。抽样只抓到4类违规中的1类，而随机样本给出新发现的概率是0.29%。'
+description: 'W3C 于 7 月 23 日以 Group Note 形式发布 WCAG-EM 2.0。我照着文档的抽样流程挑出 26 个页面，又把同一次构建的 1,342 个页面全部用 axe-core 扫了一遍做对照。抽样只抓到 4 类违规中的 1 类，而随机样本给出新发现的概率只有 0.29%，几乎等于没有。'
 pubDate: '2026-08-02'
 heroImage: '../../../assets/blog/wcag-em-2-sampling-vs-full-sweep-audit-2026/hero.png'
 tags:

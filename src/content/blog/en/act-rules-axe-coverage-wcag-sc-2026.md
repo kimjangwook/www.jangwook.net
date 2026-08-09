@@ -148,6 +148,8 @@ In total, <strong>22 of the 36 criteria that appear scored zero violations</stro
 
 Don't misread those zeros as defects. Deciding whether link text describes its destination means reading for meaning, and a checker that guesses will bury its users in false positives until they stop reading the output entirely. W3C draws the same line in its [evaluation tools overview](https://www.w3.org/WAI/test-evaluate/tools/): "However, tools can't do it all. Some accessibility checks just cannot be automated and require manual intervention."
 
+One more thing belongs on that list. Beyond the criteria that need a human to read for meaning, some need the viewport to actually move before anything can be decided. Reflow, 1.4.10, is one of those. A fixed-viewport DOM sweep like this one was never going to surface it, and when [I measured it at three different heights in one run, the verdict split on the vertical axis, not the horizontal one](/en/blog/en/reflow-1410-400-zoom-viewport-height-2026/). When you write down the silent list, it helps to separate "a person has to read this" from "this has to be measured again under different conditions."
+
 Here's my read. The problem isn't that the tool goes quiet. It's that <strong>the silence is recorded nowhere in the pipeline</strong>. The list of criteria your automation will never decide is fixed the moment you choose your tool, and I have almost never seen a team that has written that list down.
 
 ## Some of the silence is configuration, not capability
