@@ -6461,6 +6461,108 @@
       "added_at": "2026-08-08",
       "status": "queued",
       "notes": "'llms.txt를 올려라'는 글은 많지만 올라간 파일이 규격을 지켰는지 센 글이 없다. 공개된 호스트 목록에서 /llms.txt와 /llms-full.txt를 받아 (1) 200 응답 여부 (2) Content-Type이 text/plain인지 (3) H1 + 요약 + 링크 섹션 구조를 지키는지 (4) 안의 링크가 살아 있는지를 센다. 서버 로그 없이 가능한 축만 다룬다. 성실성 주의: 채택률 수치는 조사마다 8.7%〜51.8%로 크게 갈리는데, 표본(고정 패널 vs Tranco 상위)이 달라서다. 이 차이를 뭉개지 말고 그대로 적는다. 실효성 판단은 '검색 크롤러는 안 가져가고 IDE 에이전트가 가져간다'까지만 쓰고 순위 효과는 주장하지 않는다. 링크: ai-crawler-control-robots-txt-llms-txt-2026, robots-snippet-controls-ai-overviews-2026, ai-crawlers-dont-render-javascript-csr-2026"
+    },
+    {
+      "slug": "act-rules-format-11-recommendation-what-changed-2026",
+      "title_idea": "ACT Rules Format 1.1이 권고안이 되면서 달라진 것 — 문서를 처음부터 다시 읽었다",
+      "content_type": "news",
+      "target_keyword": "ACT Rules Format 1.1",
+      "secondary_keywords": [
+        "접근성 규칙 표준 2026",
+        "ACT 규칙 해석",
+        "자동 접근성 검사 표준"
+      ],
+      "search_intent": "news",
+      "priority": 1,
+      "source": "W3C ACT Rules Format 1.1(W3C 권고안, 2026-02-05). 이번 주 act-rules-axe-coverage 글에서 인용만 하고 문서 자체는 다루지 않았다. 1.0(2019 Note) 대비 변경점은 문서의 Changes 절에서 확인 가능",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "측정 없는 문서 읽기형으로 쓴다(이번 주 6/6편이 자체 사이트 실측이라 방법론 고착 해소용). 규칙 정의·적용 가능성(applicability)·기대 결과(expectation) 구조가 검사 도구 구현에 무엇을 강제하는지까지. 성실성 주의: 변경점은 문서의 Changes 절을 축자로 확인한 것만 쓰고, 도구 벤더의 대응 여부는 추측하지 않는다. 링크: act-rules-axe-coverage-wcag-sc-2026, wcag-em-2-sampling-vs-full-sweep-audit-2026"
+    },
+    {
+      "slug": "text-fragment-html-standard-migration-pr11895-2026",
+      "title_idea": "텍스트 프래그먼트는 어느 표준의 것인가 — WICG 초안에서 HTML 표준으로 가는 절차 읽기",
+      "content_type": "news",
+      "target_keyword": "URL fragment text directive 표준화",
+      "secondary_keywords": [
+        "scroll-to-text-fragment 명세",
+        "WHATWG HTML PR 11895",
+        "WICG 인큐베이션 절차"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "WICG URL Fragment Text Directives(Draft Community Group Report), WHATWG HTML pull request #11895(2025-11-09 개설, draft). 이번 주 text-fragment 글에서 각주로만 언급했다",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "기능이 아니라 문서의 신분을 다룬다. CG Report / Draft / Living Standard / W3C Note / Recommendation이 각각 무엇을 보장하고 무엇을 보장하지 않는지를, 실제로 브라우저에 이미 구현된 이 기능을 예로 설명한다. 성실성 주의: PR 상태는 집필 시점에 다시 확인하고 날짜를 명시한다. 병합 시점을 예측하지 않는다. 링크: text-fragment-citation-deep-link-audit-2026"
+    },
+    {
+      "slug": "rfc9110-validators-static-hosting-gap-reading-2026",
+      "title_idea": "RFC 9110이 정의한 검증자와 정적 호스팅이 실제로 내보내는 값 사이",
+      "content_type": "news",
+      "target_keyword": "RFC 9110 ETag 정의",
+      "secondary_keywords": [
+        "strong validator weak validator",
+        "Last-Modified 정확도",
+        "조건부 요청 규격"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "IETF RFC 9110 8.8.1·8.8.2·8.8.3(HTTP Semantics). 이번 주 etag 글이 자체 사이트 실측으로 다룬 현상의 규격 쪽 근거",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "강한 검증자와 약한 검증자의 정의, 그리고 '1초 해상도'가 규격에서 어떤 지위인지를 원문으로 읽는다. 이번 주 실측 글의 후속이되 측정을 반복하지 않는다. 성실류 주의: 규격 문언은 축자 인용하고, 특정 호스팅 벤더의 구현 의도를 규격 위반이라고 단정하지 않는다. 링크: etag-deploy-invalidation-conditional-requests-2026"
+    },
+    {
+      "slug": "etag-lastmodified-across-static-hosts-compare-2026",
+      "title_idea": "같은 파일을 네 곳에 올려 응답 헤더만 비교했다 — 정적 호스팅의 캐시 검증자",
+      "content_type": "comparison",
+      "target_keyword": "정적 호스팅 ETag 비교",
+      "secondary_keywords": [
+        "GitHub Pages 캐시 헤더",
+        "Cloudflare Pages ETag",
+        "Netlify Vercel 캐시 검증자"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "이번 주 etag-deploy-invalidation 글이 남긴 미회수 질문('오리진을 통제한다면 내용 해시로 바꿀 수 있다' — 그럼 통제 못 하는 호스팅들은 지금 뭘 내보내는가)",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "동일한 정적 산출물을 여러 호스팅에 올리고 curl -I만으로 ETag 형식·Last-Modified 기준·재배포 전후 변화·304 응답 여부를 표로 놓는다. 비교표 + 결정 매트릭스(무엇을 우선하면 어디를 고르나) 형식이라 이번 주 결핍된 comparison 유형을 채운다. 성실성 주의: 각 호스팅의 요금제/지역/캐시 계층에 따라 달라질 수 있음을 명시하고, 측정 계정·플랜·날짜를 적는다. 링크: etag-deploy-invalidation-conditional-requests-2026, deploy-stale-cache-anon-volume-route-config"
+    },
+    {
+      "slug": "sticky-header-vs-static-header-tradeoff-2026",
+      "title_idea": "스티키 헤더를 떼면 무엇을 잃는가 — 포커스·리플로우·내비게이션의 3자 대차대조",
+      "content_type": "comparison",
+      "target_keyword": "스티키 헤더 접근성 트레이드오프",
+      "secondary_keywords": [
+        "scroll-padding-top 대안",
+        "max-height 미디어쿼리 헤더",
+        "고정 헤더 뷰포트 점유"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "이번 주 두 편(focus-not-obscured, reflow-1410)이 같은 원인(81~82px 스티키 헤더)을 서로 다른 성공기준에서 지적했다. 두 글 모두 '떼는 선택지'는 판단을 유보했다",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "선택지 세 가지를 나란히 놓는다: 스티키 유지 + scroll-padding, max-height 미디어쿼리로 해제, 아예 정적 헤더. 축은 포커스 가림 위반 수, 400% 확대 시 남는 본문 줄 수, 내비게이션까지의 스크롤 비용. 앞의 두 축은 이미 잰 값이 있으니 세 번째만 새로 잰다. 성실성 주의: 내비게이션 편의는 측정이 아니라 판단이라는 점을 분명히 구분해 쓴다. 링크: focus-not-obscured-sticky-header-scroll-padding-2026, reflow-1410-400-zoom-viewport-height-2026"
+    },
+    {
+      "slug": "viewport-budget-series-1-what-400-zoom-leaves-2026",
+      "title_idea": "뷰포트 예산 시리즈 #1 — 400% 확대에서 사용자에게 남는 화면을 예산으로 관리하기",
+      "content_type": "series",
+      "target_keyword": "뷰포트 예산 접근성",
+      "secondary_keywords": [
+        "400% 확대 레이아웃",
+        "고정 요소 화면 점유율",
+        "저시력 사용자 화면 공간"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "이번 주 reflow 글의 결론 7·8번 항목(1.4.10 판정 항목이 아니지만 실제로 남는 화면은 4.2줄이었다)이 시리즈 아크의 출발점",
+      "added_at": "2026-08-09",
+      "status": "queued",
+      "notes": "적합성 통과 여부와 무관한 '남는 화면'을 하나의 예산 지표로 정의하고, 헤더·배너·쿠키 고지·플로팅 버튼이 그 예산을 각각 몇 퍼센트씩 쓰는지를 계속 추적하는 시리즈의 1편. 2편 후보는 쿠키 배너·광고 슬롯의 예산 점유, 3편은 예산 회귀를 CI에 거는 방법. 시리즈 5주 연속 0편을 끊는 것이 이 항목의 목적이다. 링크: reflow-1410-400-zoom-viewport-height-2026, focus-not-obscured-sticky-header-scroll-padding-2026"
     }
   ]
 }
