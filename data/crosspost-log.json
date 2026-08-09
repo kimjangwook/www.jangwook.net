@@ -1863,5 +1863,28 @@
         "skipped": true
       }
     }
+  },
+  {
+    "slug": "text-fragment-citation-deep-link-audit-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/text-fragment-citation-deep-link-audit-2026",
+    "posted_at": "2026-08-08T14:19:34.294Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "reflow-1410-400-zoom-viewport-height-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/reflow-1410-400-zoom-viewport-height-2026",
+    "posted_at": "2026-08-09T07:04:43.889Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/a-320px-reflow-test-covers-half-of-it-the-200px-height-at-400-zoom-38na",
+        "id": 4352215
+      }
+    }
   }
 ]
