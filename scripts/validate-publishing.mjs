@@ -353,9 +353,14 @@ async function validateCrawlerSurfaces() {
     }
   }
 
+  // Mediavine 독점 요건(2026-08-10): AdSense 등 타 프로그래매틱 파트너 코드가
+  // 남아 있으면 Mediavine 런칭이 차단되므로 재유입 자체를 빌드에서 막는다.
   const baseHead = await fs.readFile(path.join(repoRoot, 'src/components/BaseHead.astro'), 'utf8');
-  if (!baseHead.includes('enableAds') || !baseHead.includes('{enableAds &&')) {
-    errors.push('src/components/BaseHead.astro: AdSense script must be gated by enableAds');
+  if (baseHead.includes('adsbygoogle') || baseHead.includes('ca-pub-') || baseHead.includes('google-adsense-account')) {
+    errors.push('src/components/BaseHead.astro: AdSense code must be removed (Mediavine exclusivity)');
+  }
+  if (!baseHead.includes('scripts.scriptwrapper.com')) {
+    errors.push('src/components/BaseHead.astro: Mediavine script tag is missing');
   }
 
   const notFoundPage = await fs.readFile(path.join(repoRoot, 'src/pages/404.astro'), 'utf8');
