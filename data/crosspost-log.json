@@ -1886,5 +1886,39 @@
         "id": 4352215
       }
     }
+  },
+  {
+    "slug": "reflow-1410-400-zoom-viewport-height-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/reflow-1410-400-zoom-viewport-height-2026",
+    "posted_at": "2026-08-09T07:07:54.819Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "reflow-1410-400-zoom-viewport-height-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/reflow-1410-400-zoom-viewport-height-2026",
+    "posted_at": "2026-08-09T14:20:34.071Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "modern-web-guidance-agent-skill-coverage-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/modern-web-guidance-agent-skill-coverage-2026",
+    "posted_at": "2026-08-10T06:54:51.874Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/chromes-agent-skill-138-guides-2-on-a11y-0-on-search-5143",
+        "id": 4357871
+      }
+    }
   }
 ]
