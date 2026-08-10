@@ -231,6 +231,8 @@ if (blocking.length > 0) process.exit(1);
 
 我自己的顺序是：先让全量自动检查把能判的都清掉，人的注意力只花在上面那份清单上。这跟我前阵子折腾的[抽样问题](/zh/blog/zh/wcag-em-2-sampling-vs-full-sweep-audit-2026)正好配成一对——那边问「看几页」，这边问「看得见什么」。审计计划要两个答案都有才立得住。
 
+当被数的对象不是规则而是文档，同样的偏斜也会出现。[我把 Chrome 交给 agent 的 138 篇指南按分类数了一遍，无障碍只有 2 篇](/zh/blog/zh/modern-web-guidance-agent-skill-coverage-2026/)。数检查器能判什么，和数 agent 读什么再回答，其实是同一个问题。
+
 ## 这些数字没有说的事
 
 把条件原样写出来。

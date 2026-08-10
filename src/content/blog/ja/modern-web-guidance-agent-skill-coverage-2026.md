@@ -1,6 +1,6 @@
 ---
 title: 'Chromeのエージェントスキルを数えた：ガイド138本、アクセシビリティ2本、検索0本'
-description: 'Google Chromeチームの Modern Web Guidance 0.0.180 を入れて、ガイド138本をカテゴリ別に数え、3領域22件のクエリで検索を突いてみた。UI系の上位類似度は平均0.643、アクセシビリティ0.508、構造化データ0.267で無応答2件。コーパスが空けた場所をプロジェクト規約で埋める手順まで書く。'
+description: 'Google Chromeチームの Modern Web Guidance 0.0.180 を入れ、ガイド138本をカテゴリ別に数え、3領域22件のクエリで検索を突いた。上位類似度はUI 0.643、アクセシビリティ0.508、構造化データ0.267で無応答2件。コーパスの空白を規約で埋める手順まで書く。'
 pubDate: '2026-08-10'
 heroImage: '../../../assets/blog/modern-web-guidance-agent-skill-coverage-2026/hero.png'
 tags:

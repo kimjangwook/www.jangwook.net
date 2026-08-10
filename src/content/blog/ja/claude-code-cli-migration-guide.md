@@ -155,6 +155,8 @@ project/.codex/
 
 ### 1. GitHub Copilot CLIへの移行
 
+移る前に、アカウント設定を一箇所だけ開いておいたほうがいいです。[Copilotがユーザーのコードを学習に使う方針とそのオプトアウト経路](/ja/blog/ja/github-copilot-data-policy-opt-out-guide/)は個人プランでは既定でオンなので、移行初日から適用されます。
+
 #### インストールと初期設定
 
 ```bash

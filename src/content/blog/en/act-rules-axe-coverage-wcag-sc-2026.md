@@ -229,6 +229,8 @@ That covers the decidable half. The other half has to become a list, and this me
 
 My order of operations is simple: let the full-sweep automation clear everything it can decide, then spend human attention only on the list above. It pairs with the [sampling question I worked through recently](/en/blog/en/wcag-em-2-sampling-vs-full-sweep-audit-2026). That one asked how many pages you look at. This one asks what you're able to see. An audit plan needs both answers.
 
+The same skew shows up when the thing you count is documents rather than rules. [I counted the 138 guides Chrome hands to agents, and accessibility came to two](/en/blog/en/modern-web-guidance-agent-skill-coverage-2026/). Counting what a checker decides and counting what an agent reads before it answers turn out to be the same question.
+
 ## What these numbers do not say
 
 The conditions, plainly.

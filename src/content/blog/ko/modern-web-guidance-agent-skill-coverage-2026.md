@@ -1,6 +1,6 @@
 ---
 title: 'Chrome의 에이전트 스킬을 세어봤다: 가이드 138개, 접근성 2개, 검색 0개'
-description: 'Google Chrome 팀의 Modern Web Guidance 0.0.180을 설치해 가이드 138개를 카테고리별로 세고, 세 영역 22개 질의로 검색을 찔러봤다. UI 질의 상위 유사도 평균 0.643, 접근성 0.508, 구조화 데이터 0.267에 무응답 2건. 코퍼스가 비운 자리를 프로젝트 규칙으로 메우는 방법까지 정리했다.'
+description: 'Google Chrome 팀의 Modern Web Guidance 0.0.180을 설치해 가이드 138개를 세고, 22개 질의로 검색을 찔러봤다. 상위 유사도는 UI 0.643, 접근성 0.508, 구조화 데이터 0.267. 빈자리를 프로젝트 규칙으로 메우는 방법까지 정리했다.'
 pubDate: '2026-08-10'
 heroImage: '../../../assets/blog/modern-web-guidance-agent-skill-coverage-2026/hero.png'
 tags:

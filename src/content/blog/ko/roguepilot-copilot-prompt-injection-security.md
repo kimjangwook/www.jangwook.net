@@ -62,6 +62,8 @@ relatedPosts:
 
 이 취약점은 <strong>패시브 프롬프트 인젝션(Passive Prompt Injection)</strong>이라는 새로운 공격 유형을 보여주며, [AI 코딩 도구](/ko/blog/ko/cursor-3-vs-claude-code-vs-windsurf-2026/)가 팀의 개발 워크플로우에 깊이 통합될수록 보안 리스크가 함께 커진다는 사실을 일깨워 준다.
 
+Copilot을 팀에 들일 때 점검해야 할 항목은 취약점만이 아니다. 같은 도구가 코드를 어디까지 가져가는지도 별도의 결정이고, [4월부터 시작된 학습 데이터 정책과 옵트아웃 절차](/ko/blog/ko/github-copilot-data-policy-opt-out-guide/)는 기본값이 "동의"라서 방치하면 그대로 넘어간다.
+
 이 글에서는 RoguePilot의 기술적 메커니즘을 분석하고, Engineering Manager 관점에서 팀에 적용해야 할 AI 코딩 도구 보안 가이드라인을 정리한다.
 
 ## RoguePilot 공격의 작동 원리

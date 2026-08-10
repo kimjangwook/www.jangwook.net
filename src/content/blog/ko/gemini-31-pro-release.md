@@ -84,6 +84,8 @@ Google은 Gemini 3.1 Pro의 향상된 추론 능력을 보여주는 4가지 실�
 
 ### 현재 경쟁 구도
 
+경쟁은 텍스트 모델에서만 벌어지는 게 아니다. 같은 시기 영상 쪽에서는 [OpenAI가 Sora 앱을 접고 그 자리를 Google Veo 4가 노리는 재편](/ko/blog/ko/sora-shutdown-ai-video-market-reshaping-veo4/)이 진행됐고, 멀티모달 네이티브를 내세우는 Gemini 라인업의 위치는 그 흐름과 떼어 놓고 읽기 어렵다.
+
 Gemini 3.1 Pro의 출시로 AI 모델 경쟁이 더욱 치열해지고 있다. Claude 4 Opus/Sonnet과 Gemini 3.1 Pro를 주요 축으로 비교하면([OpenAI GPT-5.5 출시와 Claude 비교 분석](/ko/blog/ko/openai-gpt-5-5-release-claude-comparison-april-2026/)도 함께 살펴보면 AI 경쟁의 전체 구도를 파악하는 데 도움이 된다):
 
 | 항목 | Gemini 3.1 Pro | Claude 4 Opus |

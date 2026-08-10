@@ -163,6 +163,8 @@ Atlas不仅是OpenAI的战略。主要玩家的动向如下：
 
 [Google I/O 2026](/zh/blog/zh/google-io-2026-antigravity-2-agent-platform-analysis/)明确显示，这场竞争已超越聊天机器人层面，扩展到了开发者IDE领域。
 
+集中做中枢，也意味着要收掉别的东西。OpenAI [关停 Sora 应用、把视频市场的份额让给 Google Veo 4 的过程](/zh/blog/zh/sora-shutdown-ai-video-market-reshaping-veo4/)就是这个代价的写照。
+
 ## 结论
 
 以OpenAI Atlas为代表的AI应用中心的出现，不是<strong>浏览器的终结</strong>，而是<strong>计算接口的进化</strong>。

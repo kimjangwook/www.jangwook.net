@@ -1,6 +1,6 @@
 ---
 title: "Chrome's agent skill: 138 guides, 2 on a11y, 0 on search"
-description: 'I counted all 138 guides in Chrome''s Modern Web Guidance 0.0.180 and probed its search with 22 queries. UI scored 0.643, accessibility 0.508, structured data 0.267.'
+description: 'I counted the 138 guides in Chrome''s Modern Web Guidance 0.0.180 and probed its search with 22 queries: UI 0.643, accessibility 0.508, structured data 0.267.'
 pubDate: '2026-08-10'
 heroImage: '../../../assets/blog/modern-web-guidance-agent-skill-coverage-2026/hero.png'
 tags:

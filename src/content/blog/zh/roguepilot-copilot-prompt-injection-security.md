@@ -60,6 +60,8 @@ relatedPosts:
 
 该漏洞展示了一种新的攻击模式——<strong>被动提示注入（Passive Prompt Injection）</strong>。它提醒我们，[AI 编码工具](/zh/blog/zh/cursor-3-vs-claude-code-vs-windsurf-2026/)与团队开发工作流集成得越深，安全风险就越大。
 
+把 Copilot 引入团队时要检查的不只有漏洞。同一个工具把代码带走到什么程度是另一个决定，而[4 月起生效的训练数据政策和退出步骤](/zh/blog/zh/github-copilot-data-policy-opt-out-guide/)默认就是「同意」，放着不管就等于通过了。
+
 本文将分析 RoguePilot 的技术机制，并为工程管理者（EM）总结需要应用于团队的 AI 编码工具安全指南。
 
 ## RoguePilot 攻击的工作原理

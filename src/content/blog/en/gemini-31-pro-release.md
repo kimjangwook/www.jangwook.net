@@ -85,6 +85,8 @@ Google showcased four practical demonstrations of Gemini 3.1 Pro's enhanced reas
 
 ### Current Competitive Landscape
 
+The competition isn't confined to text models. Around the same time, video saw its own reshuffle: [OpenAI shut the Sora app down and Google Veo 4 moved on the gap](/en/blog/en/sora-shutdown-ai-video-market-reshaping-veo4/). Reading the multimodal-native Gemini lineup apart from that shift is hard.
+
 With Gemini 3.1 Pro's release, the AI model competition has intensified further. Comparing Claude 4 Opus/Sonnet with Gemini 3.1 Pro on key dimensions (also see [OpenAI GPT-5.5 vs Claude comparison](/en/blog/en/openai-gpt-5-5-release-claude-comparison-april-2026/) for the full competitive landscape):
 
 | Aspect | Gemini 3.1 Pro | Claude 4 Opus |

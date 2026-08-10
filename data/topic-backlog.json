@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-09",
+  "updated_at": "2026-08-10",
   "topics": [
     {
       "slug": "reflow-1410-400-zoom-viewport-height-2026",
@@ -6614,6 +6614,57 @@
       "added_at": "2026-08-09",
       "status": "queued",
       "notes": "기존에는 이벤트에서 Animation 객체로 되짚을 방법이 없어 propertyName·target으로 추측하던 코드를 실제로 걷어낸다. 우선순위 3인 이유는 범위가 좁아서이고, 다른 주제가 밀릴 때 채우는 용도."
+    },
+    {
+      "slug": "webaim-million-2026-top6-errors-self-audit",
+      "title_idea": "내 사이트에도 그 여섯 개가 있었다: WebAIM Million 2026 상위 오류 유형을 직접 재보기",
+      "content_type": "how-to",
+      "target_keyword": "WebAIM Million 2026 접근성 오류",
+      "secondary_keywords": [
+        "홈페이지 접근성 자동 검사",
+        "저대비 텍스트 대체 텍스트 누락",
+        "axe-core 오류 유형별 집계"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "WebAIM Million 2026 보고서 — 홈페이지 96.3%에 검출 가능한 WCAG 실패, 페이지당 평균 56.1건(전년 대비 +10.1%), 6개 유형이 전체 오류의 78%",
+      "added_at": "2026-08-10",
+      "status": "queued",
+      "notes": "기존 a11y 측정 계열(act-rules, axe-core-ci, axe 커버리지 갭)과 이어지는 축. 상위 6개 유형만 골라 자체 사이트에서 유형별 건수를 뽑는 스크립트를 만들고, 전체 오류의 78%가 정말 그 여섯에 몰리는지 확인한다. 차별화: 남의 통계 인용이 아니라 내 코퍼스에서 같은 분포가 재현되는지 재는 것."
+    },
+    {
+      "slug": "dragging-movements-257-single-pointer-audit-2026",
+      "title_idea": "드래그로만 되는 UI를 세어봤다: WCAG 2.5.7 단일 포인터 대안 감사",
+      "content_type": "how-to",
+      "target_keyword": "WCAG 2.5.7 드래그 동작",
+      "secondary_keywords": [
+        "단일 포인터 대안",
+        "pointerdown 드래그 감사",
+        "슬라이더 접근성 테스트"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "WCAG 2.2 신설 AA 기준 2.5.7 Dragging Movements — 자동 검사기가 판정하지 못하는 대표 항목",
+      "added_at": "2026-08-10",
+      "status": "queued",
+      "notes": "axe로는 결정되지 않는 기준이라 수동 목록에 남는다. DOM에서 드래그 핸들러를 가진 요소를 훑어 후보를 뽑고, 각 후보에 클릭·키보드 대안이 있는지 반자동으로 판정하는 절차를 만든다. target-size 감사 글과 짝이 되는 구조."
+    },
+    {
+      "slug": "redundant-entry-337-form-autofill-audit-2026",
+      "title_idea": "같은 값을 두 번 묻는 폼 찾기: WCAG 3.3.7 중복 입력 감사",
+      "content_type": "how-to",
+      "target_keyword": "WCAG 3.3.7 중복 입력",
+      "secondary_keywords": [
+        "autocomplete 속성 감사",
+        "다단계 폼 접근성",
+        "폼 필드 중복 검출"
+      ],
+      "search_intent": "how-to",
+      "priority": 3,
+      "source": "WCAG 2.2 신설 A 기준 3.3.7 Redundant Entry — 다단계 폼에서 동일 정보 재입력 요구 금지",
+      "added_at": "2026-08-10",
+      "status": "queued",
+      "notes": "다단계 폼의 필드 name·autocomplete를 단계별로 수집해 같은 값을 다시 묻는 지점을 기계적으로 찾는다. 우선순위 3인 이유는 대상 사이트가 폼 중심이어야 표본이 나오기 때문."
     }
   ]
 }

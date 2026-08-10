@@ -1,6 +1,6 @@
 ---
 title: 'A 320px reflow test covers half of it: the 200px height at 400% zoom'
-description: 'I measured WCAG 1.4.10 Reflow at three viewport heights in one run. The horizontal verdict came back pixel-identical every time. What 400% zoom really changes is height: 82px of sticky header, 41% of the screen.'
+description: 'WCAG 1.4.10 Reflow at three viewport heights: horizontal verdicts were identical. What 400% zoom changes is height. An 82px sticky header ate 41% of it.'
 pubDate: '2026-08-09'
 heroImage: '../../../assets/blog/reflow-1410-400-zoom-viewport-height-2026/hero.png'
 tags:

@@ -165,6 +165,8 @@ Atlas는 OpenAI만의 전략이 아니다. 주요 플레이어의 움직임을 �
 
 [Google I/O 2026](/ko/blog/ko/google-io-2026-antigravity-2-agent-platform-analysis/)에서는 이 경쟁이 에이전트 IDE 수준으로까지 확대되고 있음이 확인되었다.
 
+허브에 집중한다는 건 다른 쪽을 접는다는 뜻이기도 하다. OpenAI가 [Sora 앱을 종료하고 영상 시장의 지분을 Google Veo 4에 내준 과정](/ko/blog/ko/sora-shutdown-ai-video-market-reshaping-veo4/)이 그 대가를 보여준다.
+
 ## 결론
 
 OpenAI Atlas로 대표되는 AI 앱 허브의 등장은 <strong>브라우저의 종말</strong>이 아니라, <strong>컴퓨팅 인터페이스의 진화</strong>다.

@@ -140,6 +140,8 @@ project/
 
 ### 1. GitHub Copilot CLI로 마이그레이션
 
+옮기기 전에 계정 설정 한 곳을 먼저 열어 두는 편이 낫다. [Copilot이 사용자 코드를 학습에 쓰는 정책과 그 옵트아웃 경로](/ko/blog/ko/github-copilot-data-policy-opt-out-guide/)는 개인 플랜에서 기본이 켜짐이라, 마이그레이션 첫날부터 적용된다.
+
 GitHub Copilot CLI는 GitHub과의 긴밀한 통합과 월 $10의 합리적인 가격이 장점이다. 특히 2025년부터 Claude와 Gemini 모델도 지원하여 Multi-vendor 환경을 제공한다.
 
 #### 장점

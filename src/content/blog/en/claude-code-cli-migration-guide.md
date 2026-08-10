@@ -183,6 +183,8 @@ graph TD
 
 ### 1. Migrating to GitHub Copilot CLI
 
+Open one account setting before you move. [The policy that lets Copilot train on your code, and the opt-out path around it](/en/blog/en/github-copilot-data-policy-opt-out-guide/), ships enabled on individual plans, so it applies from day one of the migration.
+
 #### Advantages
 
 - <strong>Cost-effective</strong>: $10/month for Individual, $19/month for Pro

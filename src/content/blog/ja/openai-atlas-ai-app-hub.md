@@ -163,6 +163,8 @@ Atlasはopen AIだけの戦略ではありません。主要プレイヤーの�
 
 [Google I/O 2026](/ja/blog/ja/google-io-2026-antigravity-2-agent-platform-analysis/)では、この競争がエージェントIDEレベルにまで拡大していることが確認されました。
 
+ハブに集中するということは、別のどこかをたたむということでもあります。OpenAIが[Soraアプリを終了し、動画市場のシェアをGoogle Veo 4に譲った過程](/ja/blog/ja/sora-shutdown-ai-video-market-reshaping-veo4/)が、その代償を示しています。
+
 ## 結論
 
 OpenAI Atlasに代表されるAIアプリハブの登場は、<strong>ブラウザの終焉</strong>ではなく、<strong>コンピューティングインターフェースの進化</strong>です。

@@ -214,6 +214,8 @@ With the browser acting as an intermediary layer, AI agent access can be safely 
 
 Providing <strong>MCP endpoints</strong> for AI agents could become as strategically important as SEO for web services. A new discipline of "AI Engine Optimization (AEO)" is likely to emerge.
 
+What the agent already knows when it arrives matters just as much. The Chrome team ships more than browser APIs; it also distributes the document bundle agents consult, and [when I counted those 138 guides, two covered accessibility and none covered search](/en/blog/en/modern-web-guidance-agent-skill-coverage-2026/). You can leave the endpoint open, but if the concept is missing from the agent's vocabulary, the call never arrives.
+
 ## Cross-Browser Support and Standardization Outlook
 
 While WebMCP launches first in Chrome 146, it's expected to spread to other browsers through web standardization.

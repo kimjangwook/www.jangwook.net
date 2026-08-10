@@ -63,6 +63,8 @@ In February 2026, security firm Orca Security disclosed a vulnerability called <
 
 This vulnerability exemplifies a new attack type called <strong>passive prompt injection</strong>, reminding us that as [AI coding tools](/en/blog/en/cursor-3-vs-claude-code-vs-windsurf-2026/) become deeply integrated into team development workflows, security risks grow proportionally.
 
+Vulnerabilities aren't the only thing to check before rolling Copilot out to a team. How far the same tool carries your code is a separate decision, and [the training-data policy that took effect in April, along with the opt-out steps](/en/blog/en/github-copilot-data-policy-opt-out-guide/), defaults to consent — leave it alone and it goes through.
+
 This article analyzes the technical mechanics of RoguePilot and outlines AI coding tool security guidelines that engineering managers should implement for their teams.
 
 ## How the RoguePilot Attack Works

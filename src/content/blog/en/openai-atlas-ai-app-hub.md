@@ -166,6 +166,8 @@ Atlas isn't OpenAI's strategy alone. Here's how the major players are moving:
 
 [Google I/O 2026](/en/blog/en/google-io-2026-antigravity-2-agent-platform-analysis/) made it clear that this competition has expanded well beyond chatbots into developer IDE territory.
 
+Concentrating on a hub also means folding something else. [OpenAI's shutdown of the Sora app, and the video-market share it handed to Google Veo 4](/en/blog/en/sora-shutdown-ai-video-market-reshaping-veo4/), shows what that costs.
+
 ## Conclusion
 
 The emergence of AI app hubs represented by OpenAI Atlas is not <strong>the death of the browser</strong> — it's <strong>the evolution of the computing interface</strong>.

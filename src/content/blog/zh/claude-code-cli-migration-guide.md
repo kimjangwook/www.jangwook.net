@@ -135,6 +135,8 @@ npm run build
 
 <strong>适用场景</strong>：深度使用GitHub生态系统的团队
 
+搬过去之前，先打开一处账户设置比较好。[Copilot 用你的代码做训练的政策以及对应的退出路径](/zh/blog/zh/github-copilot-data-policy-opt-out-guide/)在个人套餐上默认是开启的，迁移第一天就会生效。
+
 <strong>步骤一：安装与配置</strong>
 
 ```bash

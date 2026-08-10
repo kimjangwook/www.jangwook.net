@@ -1,6 +1,6 @@
 ---
 title: '我数了数 Chrome 的 agent skill：138 篇指南，无障碍 2 篇，搜索 0 篇'
-description: '装上 Google Chrome 团队的 Modern Web Guidance 0.0.180，按分类数完 138 篇指南，再用三个领域共 22 条查询去戳它的检索。UI 类查询首位相似度均值 0.643，无障碍 0.508，结构化数据 0.267 且有 2 条无返回。语料库空出来的地方，怎么用项目规约补上，这篇一并写清楚。'
+description: '装上 Chrome 团队的 Modern Web Guidance 0.0.180，按分类数完 138 篇指南，再用三个领域 22 条查询去戳检索。首位相似度：UI 0.643，无障碍 0.508，结构化数据 0.267，另有 2 条完全没有返回。语料库空出来的地方怎么用项目规约补上，这篇一并写清楚。'
 pubDate: '2026-08-10'
 heroImage: '../../../assets/blog/modern-web-guidance-agent-skill-coverage-2026/hero.png'
 tags:

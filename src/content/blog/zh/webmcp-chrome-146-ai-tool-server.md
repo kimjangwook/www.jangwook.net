@@ -211,6 +211,8 @@ AI代理开发者无需为每个网站编写定制爬取逻辑，通过标准化
 
 为AI代理提供<strong>MCP端点</strong>可能成为与SEO同等重要的战略。"AI引擎优化（AEO）"这一新领域即将诞生。
 
+不过还得看 agent 带着什么知识来。Chrome 团队发布的不只是浏览器 API，还有一整套供 agent 参考的文档，而[我把那 138 篇指南数了一遍，无障碍只有 2 篇，搜索是 0 篇](/zh/blog/zh/modern-web-guidance-agent-skill-coverage-2026/)。端点开着也没用，如果 agent 的词汇表里没有这个概念，调用根本不会来。
+
 ## 跨浏览器支持与标准化展望
 
 目前WebMCP率先在Chrome 146中引入，但预计将通过Web标准化向其他浏览器扩展。
