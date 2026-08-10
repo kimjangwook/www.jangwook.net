@@ -3142,5 +3142,16 @@
       "devops": 0.35,
       "architecture": 0.3
     }
+  },
+  "modern-web-guidance-agent-skill-coverage-2026": {
+    "pubDate": "2026-08-10",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.5,
+      "web-development": 0.95,
+      "ai-ml": 0.55,
+      "devops": 0.3,
+      "architecture": 0.4
+    }
   }
 }
