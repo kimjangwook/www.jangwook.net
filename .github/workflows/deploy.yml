@@ -35,6 +35,8 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # assets 전용 설정은 wrangler 4 필요 (v3 액션 기본값은 3.x)
+          wranglerVersion: "4.120.1"
 
   indexnow:
     # 배포 완료 후 전체 sitemap URL을 IndexNow로 송신 (Bing/Copilot 색인 갱신)
