@@ -200,7 +200,11 @@ const speakableSchema = articleData ? {
 	'@type': 'WebPage',
 	'speakable': {
 		'@type': 'SpeakableSpecification',
-		'cssSelector': ['article h1', 'article h2', 'article p:first-of-type', '.article-summary']
+		// 선택자는 "제목 1개 + 리드 문단 1개"로 한정한다.
+		// 이전 값(article h1/h2/p:first-of-type/.article-summary)은 페이지당 문단 13개 안팎을
+		// 가리켰고, .article-summary는 DOM에 존재하지 않아 schema.org 검증기가
+		// NO_MATCHES_FOUND(severe)를 냈다. postbuild의 validate-speakable.mjs가 이 상태를 지킨다.
+		'cssSelector': ['.article-shell__header h1', '.article-prose > p:first-of-type']
 	},
 	'url': canonicalURL.toString()
 } : null;

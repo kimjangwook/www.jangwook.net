@@ -3153,5 +3153,16 @@
       "devops": 0.3,
       "architecture": 0.4
     }
+  },
+  "speakable-cssselector-pointer-rot-2026": {
+    "pubDate": "2026-08-11",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.35,
+      "web-development": 0.95,
+      "ai-ml": 0.1,
+      "devops": 0.4,
+      "architecture": 0.35
+    }
   }
 }

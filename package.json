@@ -19,10 +19,11 @@
     "codex:write-post": "node scripts/codex-compat.mjs write-post",
     "codex:write-ga-post": "node scripts/codex-compat.mjs write-ga-post",
     "codex:commit": "node scripts/codex-compat.mjs commit",
-    "postbuild": "node scripts/fetch-adstxt.mjs && node scripts/validate-hreflang.mjs && node scripts/validate-string-meta.mjs",
+    "postbuild": "node scripts/fetch-adstxt.mjs && node scripts/validate-hreflang.mjs && node scripts/validate-string-meta.mjs && node scripts/validate-speakable.mjs",
     "fetch:adstxt": "node scripts/fetch-adstxt.mjs",
     "validate:hreflang": "node scripts/validate-hreflang.mjs",
-    "validate:string-meta": "node scripts/validate-string-meta.mjs"
+    "validate:string-meta": "node scripts/validate-string-meta.mjs",
+    "validate:speakable": "node scripts/validate-speakable.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

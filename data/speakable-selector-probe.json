@@ -1,0 +1,315 @@
+{
+  "measured_at": "2026-08-11",
+  "node": "v22.22.0",
+  "jsdom": "29.1.1",
+  "dist_blog_pages": 1336,
+  "pages_with_speakable": 1332,
+  "sample_size": 20,
+  "per_lang": {
+    "en": 333,
+    "ja": 333,
+    "ko": 333,
+    "zh": 333
+  },
+  "old_selectors": [
+    "article h1",
+    "article h2",
+    "article p:first-of-type",
+    ".article-summary"
+  ],
+  "new_selectors": [
+    ".article-shell__header h1",
+    ".article-prose > p:first-of-type"
+  ],
+  "parent_of_matched_paragraphs": {
+    "header.article-shell__header": 20,
+    "blockquote": 59,
+    "div.article-prose": 20,
+    "li": 73,
+    "div.text-center": 20,
+    "div.flex-1": 20,
+    "div.item-content": 60
+  },
+  "rows": [
+    {
+      "page": "en/blog/en/45-day-analytics-report-2025-11",
+      "lang": "en",
+      "old": {
+        "article h1": 2,
+        "article h2": 9,
+        "article p:first-of-type": 24,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "en/blog/en/claude-agent-teams-guide",
+      "lang": "en",
+      "old": {
+        "article h1": 1,
+        "article h2": 16,
+        "article p:first-of-type": 13,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "en/blog/en/figma-mcp-web-components-sync",
+      "lang": "en",
+      "old": {
+        "article h1": 1,
+        "article h2": 12,
+        "article p:first-of-type": 24,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "en/blog/en/local-ai-radio-smart-home",
+      "lang": "en",
+      "old": {
+        "article h1": 1,
+        "article h2": 9,
+        "article p:first-of-type": 7,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "en/blog/en/openclaw-opus-4-6-setup-guide",
+      "lang": "en",
+      "old": {
+        "article h1": 1,
+        "article h2": 8,
+        "article p:first-of-type": 7,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ja/blog/ja/45-day-analytics-report-2025-11",
+      "lang": "ja",
+      "old": {
+        "article h1": 2,
+        "article h2": 9,
+        "article p:first-of-type": 24,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ja/blog/ja/claude-agent-teams-guide",
+      "lang": "ja",
+      "old": {
+        "article h1": 1,
+        "article h2": 16,
+        "article p:first-of-type": 13,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ja/blog/ja/figma-mcp-web-components-sync",
+      "lang": "ja",
+      "old": {
+        "article h1": 1,
+        "article h2": 11,
+        "article p:first-of-type": 12,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ja/blog/ja/local-ai-radio-smart-home",
+      "lang": "ja",
+      "old": {
+        "article h1": 1,
+        "article h2": 9,
+        "article p:first-of-type": 7,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ja/blog/ja/openclaw-opus-4-6-setup-guide",
+      "lang": "ja",
+      "old": {
+        "article h1": 1,
+        "article h2": 8,
+        "article p:first-of-type": 7,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ko/blog/ko/45-day-analytics-report-2025-11",
+      "lang": "ko",
+      "old": {
+        "article h1": 2,
+        "article h2": 9,
+        "article p:first-of-type": 24,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ko/blog/ko/claude-agent-teams-guide",
+      "lang": "ko",
+      "old": {
+        "article h1": 1,
+        "article h2": 16,
+        "article p:first-of-type": 13,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ko/blog/ko/figma-mcp-web-components-sync",
+      "lang": "ko",
+      "old": {
+        "article h1": 1,
+        "article h2": 19,
+        "article p:first-of-type": 16,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ko/blog/ko/local-ai-radio-smart-home",
+      "lang": "ko",
+      "old": {
+        "article h1": 1,
+        "article h2": 9,
+        "article p:first-of-type": 7,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "ko/blog/ko/openclaw-opus-4-6-setup-guide",
+      "lang": "ko",
+      "old": {
+        "article h1": 1,
+        "article h2": 8,
+        "article p:first-of-type": 7,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "zh/blog/zh/45-day-analytics-report-2025-11",
+      "lang": "zh",
+      "old": {
+        "article h1": 2,
+        "article h2": 9,
+        "article p:first-of-type": 24,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "zh/blog/zh/claude-agent-teams-guide",
+      "lang": "zh",
+      "old": {
+        "article h1": 1,
+        "article h2": 16,
+        "article p:first-of-type": 13,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "zh/blog/zh/figma-mcp-web-components-sync",
+      "lang": "zh",
+      "old": {
+        "article h1": 1,
+        "article h2": 19,
+        "article p:first-of-type": 16,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "zh/blog/zh/local-ai-radio-smart-home",
+      "lang": "zh",
+      "old": {
+        "article h1": 1,
+        "article h2": 9,
+        "article p:first-of-type": 7,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    },
+    {
+      "page": "zh/blog/zh/openclaw-opus-4-6-setup-guide",
+      "lang": "zh",
+      "old": {
+        "article h1": 1,
+        "article h2": 8,
+        "article p:first-of-type": 7,
+        ".article-summary": 0
+      },
+      "new": {
+        ".article-shell__header h1": 1,
+        ".article-prose > p:first-of-type": 1
+      }
+    }
+  ]
+}

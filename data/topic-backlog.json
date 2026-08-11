@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-10",
+  "updated_at": "2026-08-11",
   "topics": [
+    {
+      "slug": "speakable-cssselector-pointer-rot-2026",
+      "title_idea": "음성으로 읽을 문단을 13개나 지목하고 있었다 — speakable 선택자 실측",
+      "content_type": "how-to",
+      "target_keyword": "speakable 구조화 데이터 cssSelector",
+      "secondary_keywords": [
+        "SpeakableSpecification 검증",
+        "p:first-of-type 오해",
+        "NO_MATCHES_FOUND"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Google speakable 공식 문서 축자 인용 4건(베타 표기, 미국·영어 Google Home 대상 한정, cssSelector/xPath 택일, 노출 무보장) + Search Gallery 지원 타입 목록 + Search 문서 업데이트 로그(FAQ 리치결과 2026-05-08 종료 공지/2026-06-15 문서 삭제, practice problem 2026-01-06 삭제). 자체 측정: schema.org Schema Markup Validator에 라이브 URL 투입 → 객체 3개 중 오류 1건 NO_MATCHES_FOUND(.article-summary, isSevere true). jsdom 29.1.1 + Node 22.22로 dist 파싱, 블로그 1,336장 중 1,332장이 SpeakableSpecification 탑재, 표본 20장(4언어 각 5장): article h1 중앙값1(합24), article h2 중앙값9(합229), article p:first-of-type 중앙값13(합272), .article-summary 0. 272개 문단 부모 분포: li 73, div.item-content(관련글 카드) 60, blockquote 59, header 20, div.article-prose(실제 리드) 20, div.text-center 20, div.flex-1 20. 수정 후 .article-shell__header h1 / .article-prose > p:first-of-type 각 20/20장에서 1개. 게이트를 수정 전 dist에 적용 시 40건 실패. 부산물: scripts/validate-speakable.mjs(postbuild 편입), scripts/chart-speakable-selectors.py, data/speakable-selector-probe.json. 기둥①④.",
+      "added_at": "2026-08-11",
+      "status": "done",
+      "published_at": "2026-08-11",
+      "notes": "핵심 주장: 구조화 데이터는 값을 담는 것과 DOM을 가리키는 것(speakable의 cssSelector/xPath)으로 나뉘며 후자만 조용히 썩는다. 둘째: 포인터는 0을 가리키는 것뿐 아니라 과다 지시로도 썩고, 스키마 검증기는 전자만 severe로 잡는다. 셋째: 선택자 문자열은 자기 자신 때문에 항상 grep에 걸리므로 문자열 검색으로는 검출 불가 — 실행만이 답. 넷째: :first-of-type은 부모별 첫 형제이므로 후손 결합자와 결합하면 컨테이너 수만큼 매치. 후속 소재: (1) xPath 변형에서 같은 감사 재현, (2) Rich Results Test와 Schema Markup Validator의 판정 차이 실측, (3) CSS 클래스 리네임 시 JSON-LD 동반 검색을 린트로 강제하는 설계, (4) speakable을 결국 지울지 남길지 반년 뒤 재판단."
+    },
     {
       "slug": "reflow-1410-400-zoom-viewport-height-2026",
       "title_idea": "320px로 재면 리플로우는 절반만 잰 것이다 — 400% 확대의 높이 200px",
