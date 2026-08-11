@@ -1,6 +1,6 @@
 ---
 title: '一年没动过的文章，Last-Modified 却写着昨天：部署会抹掉缓存校验值'
-description: '给去年写的文章发了个 curl，Last-Modified 显示的是昨天的部署时间。拆开 ETag 一看，就是文件修改时间和大小拼成的十六进制。同一份源码重新构建出的 1,346 个 HTML 完全字节一致，可一次部署就让整站的条件请求全部落空。'
+description: '给去年写的文章发了个 curl，Last-Modified 显示的却是昨天的部署时间。拆开 ETag 一看，就是文件修改时间和大小拼成的十六进制。同一份源码重新构建出的 1,346 个 HTML 完全字节一致，可一次部署就让整站的条件请求全部落空，本该拿到的 304 再也换不回来。文中给出实测过程与几种可行的缓解方案。'
 pubDate: '2026-08-03'
 heroImage: '../../../assets/blog/etag-deploy-invalidation-conditional-requests-2026/hero.png'
 tags:

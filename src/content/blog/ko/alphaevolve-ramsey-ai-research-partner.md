@@ -152,6 +152,8 @@ AlphaEvolve의 핵심 차별점은 <strong>범용성</strong>이다. 라마지 �
 
 <strong>하나의 시스템이 수학, 최적화, 엔지니어링 전반</strong>에 걸쳐 성과를 내고 있다는 점이 주목할 만하다.
 
+다만 이 표에 빠진 축이 하나 있다. AlphaEvolve는 사람이 평가 함수만 정해 주면 나머지를 스스로 탐색하지만, 반대로 사람이 매 단계 방향을 잡아 주는 방식도 성립한다. 하버드의 한 물리학 교수가 Claude를 대학원생처럼 지도해 두 주 만에 논문을 뽑아낸 [Vibe Physics 실험](/ko/blog/ko/anthropic-vibe-physics-ai-research-assistant/)이 그 반대편 극단이다. 자동 탐색과 밀착 지도 중 무엇이 맞는지는 문제가 평가 가능한 형태인지에 달려 있다.
+
 ## CTO/EM이 주목해야 할 포인트
 
 ### 1. AI R&D 파이프라인의 변화

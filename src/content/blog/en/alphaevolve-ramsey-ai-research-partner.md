@@ -153,6 +153,8 @@ AlphaEvolve's key differentiator is its <strong>generality</strong>. Beyond Rams
 
 The fact that <strong>a single system is delivering results across mathematics, optimization, and engineering</strong> is what makes this remarkable.
 
+One axis is missing from that table, though. AlphaEvolve searches on its own once a human fixes the evaluation function, but the opposite arrangement also works: a human steering at every step. A Harvard physics professor supervised Claude the way you would a graduate student and got a paper out in two weeks, which I wrote up in [the Vibe Physics experiment](/en/blog/en/anthropic-vibe-physics-ai-research-assistant/). Which mode fits depends on whether the problem can be scored automatically at all.
+
 ## Key Takeaways for CTOs and Engineering Managers
 
 ### 1. The Shifting AI R&D Pipeline

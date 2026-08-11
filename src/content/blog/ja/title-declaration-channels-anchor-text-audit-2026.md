@@ -1,6 +1,6 @@
 ---
 title: 'タイトルを宣言している七か所のうち、自分が書いたのは六か所だった'
-description: '一つの記事のタイトルは title・h1・og:title・headline・RSS と六か所で宣言される。全部一致していた。問題は七つ目だった。自サイトに向かう内部リンク18,296本のうち、リンク先の見出しと一致するアンカーテキストは0.7%。原因はカード全体を包んだ<a>一つだった。'
+description: '一つの記事のタイトルは title・h1・og:title・headline・RSS など六か所で宣言される。1,296本すべてで一致していた。問題は七つ目のチャネルだった。自サイトに向かう内部リンク18,296本のうち、リンク先の見出しと一致するアンカーテキストは0.7%。原因はカード全体を包んだ<a>一つだった。'
 pubDate: '2026-08-01'
 heroImage: '../../../assets/blog/title-declaration-channels-anchor-text-audit-2026/hero.png'
 tags:

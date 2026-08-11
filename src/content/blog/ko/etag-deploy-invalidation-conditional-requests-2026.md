@@ -1,6 +1,6 @@
 ---
 title: '1년 전 글의 Last-Modified가 어제였다: 배포가 지우는 캐시 검증자'
-description: '작년에 쓴 글을 curl로 찔러보니 Last-Modified가 어제 배포 시각이었다. ETag를 뜯어보니 파일 수정 시각과 크기를 16진수로 이어붙인 값이다. 같은 소스로 다시 빌드한 HTML 1,346장이 100% 바이트 동일한데도, 배포 한 번이 사이트 전체의 조건부 요청을 무효로 만든다.'
+description: '작년에 쓴 글을 curl로 찔러보니 Last-Modified가 어제 배포 시각이었다. ETag는 파일 수정 시각과 크기를 16진수로 이어붙인 값이다. 같은 소스로 다시 빌드한 HTML 1,346장이 100% 바이트 동일한데도, 배포 한 번이 사이트 전체의 조건부 요청을 무효로 만든다.'
 pubDate: '2026-08-03'
 heroImage: '../../../assets/blog/etag-deploy-invalidation-conditional-requests-2026/hero.png'
 tags:

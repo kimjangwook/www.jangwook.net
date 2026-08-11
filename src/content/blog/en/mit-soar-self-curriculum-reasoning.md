@@ -137,6 +137,8 @@ SOAR's greatest significance is providing a principled path for models to <stron
 
 SOAR successfully applies the educational concept of <strong>scaffolding</strong> to AI training. Just as learners grow through problems slightly above their current level (Zone of Proximal Development, ZPD), LLMs expand their capabilities through self-generated progressive problems.
 
+There is another route, where the curriculum comes from the environment rather than from the model. Training agents inside RL environments that simulate professional workflows is the idea behind [Deeptune's "training gym" approach](/en/blog/en/deeptune-ai-agent-training-gyms-rl-professional-workflows/). SOAR manufactures its problems internally; a training gym buys them from outside. Either way the bottleneck is the same one: securing a difficulty ladder that can actually be scored.
+
 ### The Possibility of Self-Evolving AI Systems
 
 This research opens the door to <strong>autonomous self-improvement</strong> where AI designs and executes its own learning curriculum without external human supervision. For a real-world open-source implementation of a similar self-improvement mechanism, [Hermes Agent — an Open-Source AI Agent That Evolves as It Works](/en/blog/en/hermes-agent-self-evolving-ai-framework/) shows what this looks like at the production level. While careful consideration of safety implications is necessary, the technical feasibility has been clearly demonstrated.

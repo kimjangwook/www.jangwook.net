@@ -6683,6 +6683,57 @@
       "added_at": "2026-08-10",
       "status": "queued",
       "notes": "다단계 폼의 필드 name·autocomplete를 단계별로 수집해 같은 값을 다시 묻는 지점을 기계적으로 찾는다. 우선순위 3인 이유는 대상 사이트가 폼 중심이어야 표본이 나오기 때문."
+    },
+    {
+      "slug": "navigation-api-baseline-migration-measure-2026",
+      "title_idea": "popstate로는 못 보던 이동을 세어봤다: Navigation API 실측과 History API 이관 경계",
+      "content_type": "how-to",
+      "target_keyword": "Navigation API 마이그레이션",
+      "secondary_keywords": [
+        "History API pushState 대체",
+        "navigate 이벤트 계측",
+        "SPA 라우팅 히스토리"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "web.dev/blog/baseline-navigation-api, InfoQ 2026-05 — Navigation API가 2026-01 Baseline Newly available (Chrome/Edge/Firefox 147/Safari 26.2)",
+      "added_at": "2026-08-11",
+      "status": "queued",
+      "notes": "navigation.entries()로 실제 히스토리 스택을 덤프해 popstate 기반 라우터가 놓치던 이동 유형을 수치로 보인다. 차별화: 이관 가이드가 아니라 '이관하면 무엇이 새로 보이는가'를 실측. same-origin·현재 브라우징 컨텍스트로 노출이 제한된다는 경계도 함께 못박는다."
+    },
+    {
+      "slug": "trusted-types-rollout-report-only-audit-2026",
+      "title_idea": "innerHTML을 세어보니 몇 개였나: Trusted Types를 report-only로 먼저 켜보기",
+      "content_type": "how-to",
+      "target_keyword": "Trusted Types 적용",
+      "secondary_keywords": [
+        "DOM XSS 방어",
+        "CSP report-only",
+        "injection sink 감사"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Baseline 2026 — Trusted Types API가 주요 엔진에서 Baseline newly available 진입",
+      "added_at": "2026-08-11",
+      "status": "queued",
+      "notes": "require-trusted-types-for를 report-only로 걸고 위반 리포트를 모아 실제 sink 개수를 센다. 차단 모드로 바로 가지 않는 이유(서드파티 스크립트·마크다운 렌더러)를 수치로 설명하는 것이 차별화 포인트."
+    },
+    {
+      "slug": "zstd-content-encoding-measure-vs-brotli-2026",
+      "title_idea": "zstd로 바꾸면 몇 바이트, 몇 밀리초를 버는가 — Brotli와 같은 페이지로 재본 기록",
+      "content_type": "comparison",
+      "target_keyword": "zstd content-encoding",
+      "secondary_keywords": [
+        "Brotli 비교",
+        "HTTP 압축 벤치마크",
+        "Accept-Encoding 협상"
+      ],
+      "search_intent": "comparison",
+      "priority": 3,
+      "source": "Baseline 2026 — Zstandard HTTP content encoding이 모던 브라우저 전반 지원",
+      "added_at": "2026-08-11",
+      "status": "queued",
+      "notes": "같은 빌드 산출물을 zstd/br/gzip으로 각각 인코딩해 크기와 디코드 시간을 함께 잰다. 압축률만 비교하는 글이 많아, 디코드 비용과 CDN 협상 실패 시 폴백까지 다루면 차별화된다."
     }
   ]
 }

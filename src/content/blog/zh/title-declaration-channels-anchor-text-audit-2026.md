@@ -1,6 +1,6 @@
 ---
 title: '声明标题的七个位置里，只有六个是我写的'
-description: '一篇文章的标题会在 title、h1、og:title、headline、RSS 五六处被声明，1,296 篇全部一致。出问题的是第七处：指向文章的 18,296 条内部链接里，锚文本与目标标题完全一致的只有 0.7%，根源是包住整张卡片的那一个 a 标签。'
+description: '一篇文章的标题会在 title、h1、og:title、headline、RSS 等六处被声明，1,296 篇全部一致。真正出问题的是第七处：指向文章的 18,296 条内部链接里，锚文本与目标标题完全一致的只有 0.7%，根源是包住整张卡片的那一个 a 标签。本文给出七个渠道的实测数据与可照做的修复路径。'
 pubDate: '2026-08-01'
 heroImage: '../../../assets/blog/title-declaration-channels-anchor-text-audit-2026/hero.png'
 tags:

@@ -1,6 +1,6 @@
 ---
 title: '제목을 선언하는 일곱 곳 중 여섯 곳만 내가 썼다: 앵커 텍스트 18,296개 실측'
-description: '한 페이지의 제목은 title·h1·og:title·headline·RSS까지 여섯 곳에서 선언된다. 전부 일치했다. 문제는 일곱 번째 채널이었다. 내 사이트로 들어오는 내부 링크 18,296개 중 목표 글의 제목과 일치하는 앵커 텍스트는 0.7%뿐이었고, 그 원인은 카드 전체를 감싼 링크 하나였다.'
+description: '한 페이지의 제목은 title·h1·og:title·headline·RSS 등 여섯 곳에서 선언된다. 1,296편 전부 일치했다. 문제는 일곱 번째 채널이었다. 내부 링크 18,296개 중 목표 글 제목과 일치하는 앵커 텍스트는 0.7%뿐이었고, 원인은 카드를 감싼 링크 하나였다.'
 pubDate: '2026-08-01'
 heroImage: '../../../assets/blog/title-declaration-channels-anchor-text-audit-2026/hero.png'
 tags:

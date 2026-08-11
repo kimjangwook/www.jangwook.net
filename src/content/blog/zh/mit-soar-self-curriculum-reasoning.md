@@ -137,6 +137,8 @@ SOAR最大的意义在于，它提供了一条<strong>无需额外策划数据</
 
 SOAR成功地将人类教育中的<strong>脚手架（scaffolding）</strong>概念应用于AI训练。就像学习者通过略高于当前水平的问题（最近发展区，ZPD）成长一样，LLM也通过自生成的渐进式问题扩展能力。
 
+还有另一条路线：课程不由模型自己生成，而是由环境一侧提供。在模拟专业业务工作流的RL环境中训练Agent，就是[Deeptune的「训练健身房」思路](/zh/blog/zh/deeptune-ai-agent-training-gyms-rl-professional-workflows/)。SOAR在内部制造问题，训练健身房则从外部采购问题。无论走哪条路，瓶颈都一样：如何拿到一架能被自动打分的难度阶梯。
+
 ### 自我进化AI系统的可能性
 
 这项研究开启了AI在没有外部人类监督的情况下<strong>自主设计和执行学习课程（autonomous self-improvement）</strong>的可能性。关于类似自我改进机制的实际开源实现，[Hermes Agent——随工作不断自我进化的开源AI智能体](/zh/blog/zh/hermes-agent-self-evolving-ai-framework/)展示了生产级别的实现案例。虽然从安全角度需要谨慎对待，但技术可行性已被明确证明。

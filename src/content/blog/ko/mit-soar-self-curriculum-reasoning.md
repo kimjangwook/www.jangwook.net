@@ -139,6 +139,8 @@ SOAR의 가장 큰 의의는 <strong>별도의 큐레이팅된 데이터 없이<
 
 SOAR는 인간 교육의 <strong>비계(scaffolding)</strong> 개념을 AI 학습에 성공적으로 적용한 사례다. 학습자가 현재 수준에서 약간 위의 문제(근접 발달 영역, ZPD)를 통해 성장하는 것처럼, LLM도 자체 생성된 단계적 문제를 통해 역량을 확장한다.
 
+커리큘럼을 모델이 직접 만들지 않고 환경 쪽에서 공급하는 노선도 있다. 전문 업무 워크플로우를 시뮬레이션한 RL 환경에서 에이전트를 훈련시키는 [Deeptune의 '트레이닝 짐' 접근법](/ko/blog/ko/deeptune-ai-agent-training-gyms-rl-professional-workflows/)이 그쪽이다. SOAR가 문제를 안에서 만든다면 트레이닝 짐은 문제를 밖에서 사 온다. 어느 쪽이든 병목은 같다. 채점 가능한 난이도 사다리를 어떻게 확보하느냐다.
+
 ### 자기 진화하는 AI 시스템의 가능성
 
 이 연구는 외부 인간 감독 없이 AI가 자체적으로 학습 커리큘럼을 설계하고 실행하는 <strong>자율적 자기 개선(autonomous self-improvement)</strong>의 가능성을 열어놓는다. 실제 오픈소스 구현 사례로는 [Hermes Agent — 작업할수록 스스로 진화하는 AI 에이전트](/ko/blog/ko/hermes-agent-self-evolving-ai-framework/)가 유사한 자기 개선 메커니즘을 프로덕션 레벨로 구현한 예다. 물론 안전성 관점에서 신중한 접근이 필요하지만, 기술적 가능성은 분명히 입증되었다.

@@ -150,6 +150,8 @@ AlphaEvolve的核心差异化在于<strong>通用性</strong>。不仅限于Rams
 
 <strong>单一系统在数学、优化、工程全领域</strong>均取得突破性成果，这一点尤为值得关注。
 
+不过这张表少了一个维度。AlphaEvolve只要人定好评估函数，剩下的就自己去搜索；反过来，人在每一步都给方向的做法同样成立。哈佛的一位物理学教授把Claude当研究生带，两周就写出了一篇论文，那次[Vibe Physics实验](/zh/blog/zh/anthropic-vibe-physics-ai-research-assistant/)正是另一端的极点。自动搜索还是贴身指导更合适，取决于问题本身能不能被自动打分。
+
 ## CTO/EM应当关注的要点
 
 ### 1. AI研发流程的变革
