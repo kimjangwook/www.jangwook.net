@@ -36,3 +36,6 @@ _sandbox/
 
 # scheduler logs
 logs/ops/loop_state.json
+
+# Cloudflare Workers
+.wrangler/

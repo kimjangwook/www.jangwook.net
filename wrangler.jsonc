@@ -1,0 +1,17 @@
+{
+	// Cloudflare Workers 정적 자산 배포 설정 (GitHub Pages → Workers 이전, 2026-08-11)
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "www-jangwook-net",
+	"compatibility_date": "2026-08-01",
+	"routes": [
+		{ "pattern": "jangwook.net", "custom_domain": true },
+		{ "pattern": "www.jangwook.net", "custom_domain": true }
+	],
+	"assets": {
+		"directory": "./dist",
+		// 디렉토리 URL 정규화: GitHub Pages와 동일하게 트레일링 슬래시 유지
+		"html_handling": "auto-trailing-slash",
+		// 404는 Astro가 생성한 404.html로 서빙
+		"not_found_handling": "404-page"
+	}
+}
