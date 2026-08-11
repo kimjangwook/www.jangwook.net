@@ -37,29 +37,26 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           # assets 전용 설정은 wrangler 4 필요 (v3 액션 기본값은 3.x)
           wranglerVersion: "4.120.1"
-
-  indexnow:
-    # 배포 완료 후 전체 sitemap URL을 IndexNow로 송신 (Bing/Copilot 색인 갱신)
-    # 배경: 2026-06-20 IndexNow 미배포로 AI Performance Citations 급락 → 재발 방지
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
+      # 배포 완료 후 전체 sitemap URL을 IndexNow로 송신 (Bing/Copilot 색인 갱신)
+      # 배경: 2026-06-20 IndexNow 미배포로 AI Performance Citations 급락 → 재발 방지
+      # sitemap은 HTTP가 아닌 빌드 산출물(dist/)에서 직접 읽음 —
+      # Cloudflare Bot Fight Mode가 python-urllib UA를 403으로 차단하기 때문
       - name: Submit sitemap URLs to IndexNow
         run: |
           python3 - << 'EOF'
           import json, re, urllib.request
+          from pathlib import Path
 
           HOST = "jangwook.net"
           KEY = "fab847bedb7a40429e80d70450c31ea6"
-          SITEMAPS = [f"https://{HOST}/sitemap-{lang}.xml" for lang in ("ko", "ja", "en", "zh")]
 
           urls = set()
-          for sm in SITEMAPS:
-              try:
-                  body = urllib.request.urlopen(sm, timeout=30).read().decode()
-                  urls.update(re.findall(r"<loc>(.*?)</loc>", body))
-              except Exception as e:
-                  print(f"WARN: {sm}: {e}")
+          for lang in ("ko", "ja", "en", "zh"):
+              sm = Path(f"dist/sitemap-{lang}.xml")
+              if sm.exists():
+                  urls.update(re.findall(r"<loc>(.*?)</loc>", sm.read_text()))
+              else:
+                  print(f"WARN: {sm} not found")
 
           if not urls:
               raise SystemExit("ERROR: no URLs extracted from sitemaps")
