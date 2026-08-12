@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SC 1.4.13 tooltip variants</title>
+<style>
+  :root { font: 16px/1.6 system-ui, sans-serif; }
+  body { margin: 0; padding: 24px 32px; background:#fff; color:#111; }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  p.lede { margin: 0 0 24px; color:#444; }
+  .row { margin: 0 0 64px; max-width: 620px; }
+  .label { font-size: 12px; color:#666; letter-spacing:.04em; text-transform:uppercase; margin-bottom:6px; }
+  .anchor { position: relative; display: inline-block; }
+  .trigger { font: inherit; background:#f3f4f6; border:1px solid #cbd5e1; border-radius:6px; padding:6px 12px; cursor:help; }
+  .trigger:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+  .tip {
+    position: absolute; left: 0; top: 100%; margin-top: 8px; z-index: 5;
+    width: 320px; padding: 10px 12px; font-size: 14px;
+    background:#111827; color:#f9fafb; border-radius:6px;
+  }
+  .under { margin: 8px 0 0; color:#334155; }
+
+  #t2 { display: none; }
+  #v2 .trigger:hover ~ #t2 { display: block; }
+
+  #t3 { display: none; }
+  #v3 .trigger:hover ~ #t3, #v3 .trigger:focus-visible ~ #t3 { display: block; }
+
+  /* V4: :has() keeps it open while the pointer is on the tooltip; padding bridges the 8px gap */
+  #t4 { display: none; margin-top: 0; padding: 18px 0 0 0; background: transparent; }
+  #v4 .anchor:has(.trigger:hover) #t4,
+  #v4 .anchor:has(.trigger:focus-visible) #t4,
+  #v4 .anchor:has(#t4:hover) #t4 { display: block; }
+  #t4 .inner { display:block; background:#111827; color:#f9fafb; border-radius:6px; padding:10px 12px; }
+
+  #t5, #t6 { display: none; }
+  #t5.open, #t6.open { display: block; }
+
+  [popover] { margin:0; inset:auto; position:absolute; border:0; padding:0; }
+  #t7 { width:320px; padding:10px 12px; background:#111827; color:#f9fafb; border-radius:6px; font-size:14px; }
+</style>
+</head>
+<body>
+<h1>Content on Hover or Focus — seven implementations</h1>
+<p class="lede">Each row attaches the same sentence to the same trigger by a different mechanism.</p>
+
+<div class="row" id="v1">
+  <div class="label">V1 title attribute</div>
+  <span class="anchor"><button class="trigger" id="g1" title="Rate limit: 60 requests per minute per API key.">What is the rate limit?</button></span>
+  <p class="under">Content below V1 that a tooltip can cover.</p>
+</div>
+
+<div class="row" id="v2">
+  <div class="label">V2 CSS :hover only</div>
+  <span class="anchor"><button class="trigger" id="g2">What is the rate limit?</button><span class="tip" id="t2" role="tooltip">Rate limit: 60 requests per minute per API key.</span></span>
+  <p class="under">Content below V2 that a tooltip can cover.</p>
+</div>
+
+<div class="row" id="v3">
+  <div class="label">V3 CSS :hover + :focus-visible</div>
+  <span class="anchor"><button class="trigger" id="g3" aria-describedby="t3">What is the rate limit?</button><span class="tip" id="t3" role="tooltip">Rate limit: 60 requests per minute per API key.</span></span>
+  <p class="under">Content below V3 that a tooltip can cover.</p>
+</div>
+
+<div class="row" id="v4">
+  <div class="label">V4 CSS :has() with a padding bridge</div>
+  <span class="anchor"><button class="trigger" id="g4" aria-describedby="t4">What is the rate limit?</button><span class="tip" id="t4" role="tooltip"><span class="inner">Rate limit: 60 requests per minute per API key.</span></span></span>
+  <p class="under">Content below V4 that a tooltip can cover.</p>
+</div>
+
+<div class="row" id="v5">
+  <div class="label">V5 JS: hover + focus + Escape + 150ms grace</div>
+  <span class="anchor"><button class="trigger" id="g5" aria-describedby="t5">What is the rate limit?</button><span class="tip" id="t5" role="tooltip">Rate limit: 60 requests per minute per API key.</span></span>
+  <p class="under">Content below V5 that a tooltip can cover.</p>
+</div>
+
+<div class="row" id="v6">
+  <div class="label">V6 JS with a 2s auto-hide timer</div>
+  <span class="anchor"><button class="trigger" id="g6" aria-describedby="t6">What is the rate limit?</button><span class="tip" id="t6" role="tooltip">Rate limit: 60 requests per minute per API key.</span></span>
+  <p class="under">Content below V6 that a tooltip can cover.</p>
+</div>
+
+<div class="row" id="v7">
+  <div class="label">V7 native popover=hint</div>
+  <span class="anchor"><button class="trigger" id="g7">What is the rate limit?</button></span>
+  <div popover="hint" id="t7" role="tooltip">Rate limit: 60 requests per minute per API key.</div>
+  <p class="under">Content below V7 that a tooltip can cover.</p>
+</div>
+
+<script>
+// V5: hover + focus, Escape closes, 150ms grace period lets the pointer cross the gap
+(function () {
+  const g = document.getElementById('g5'), t = document.getElementById('t5');
+  let timer;
+  const open  = () => { clearTimeout(timer); t.classList.add('open'); };
+  const close = () => { t.classList.remove('open'); };
+  const soft  = () => { clearTimeout(timer); timer = setTimeout(close, 150); };
+  g.addEventListener('mouseenter', open);
+  g.addEventListener('focus', open);
+  g.addEventListener('blur', close);
+  g.addEventListener('mouseleave', soft);
+  t.addEventListener('mouseenter', open);
+  t.addEventListener('mouseleave', soft);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+})();
+// V6: same trigger wiring, but it hides itself after 2 seconds
+(function () {
+  const g = document.getElementById('g6'), t = document.getElementById('t6');
+  let timer;
+  const open = () => { t.classList.add('open'); clearTimeout(timer); timer = setTimeout(() => t.classList.remove('open'), 2000); };
+  g.addEventListener('mouseenter', open);
+  g.addEventListener('focus', open);
+  g.addEventListener('mouseleave', () => t.classList.remove('open'));
+})();
+// V7: native popover=hint, opened on hover and on focus, closed on leave
+(function () {
+  const g = document.getElementById('g7'), t = document.getElementById('t7');
+  const place = () => {
+    const r = g.getBoundingClientRect();
+    t.style.left = (r.left + window.scrollX) + 'px';
+    t.style.top  = (r.bottom + window.scrollY + 8) + 'px';
+  };
+  const open = () => { place(); try { t.showPopover(); } catch (e) { window.__v7err = String(e); } };
+  g.addEventListener('mouseenter', open);
+  g.addEventListener('focus', open);
+  g.addEventListener('mouseleave', () => { try { t.hidePopover(); } catch (e) {} });
+})();
+window.__ready = true;
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+{
+  "measuredAt": "2026-08-12",
+  "support": {
+    "popoverAttr": true,
+    "hintReflected": "hint",
+    "v7err": null,
+    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.7499.4 Safari/537.36"
+  },
+  "results": [
+    {
+      "id": 1,
+      "name": "title attribute",
+      "hoverShows": null,
+      "gapPx": null,
+      "obscuresOtherContent": null,
+      "hoverable": null,
+      "persistent5s": null,
+      "dismissibleByEsc": null,
+      "focusedId": "g1",
+      "focusShows": null,
+      "dismissibleWhileFocused": null
+    },
+    {
+      "id": 2,
+      "name": "CSS :hover only",
+      "hoverShows": true,
+      "gapPx": 8,
+      "obscuresOtherContent": true,
+      "hoverable": false,
+      "persistent5s": true,
+      "dismissibleByEsc": false,
+      "focusedId": "g2",
+      "focusShows": false,
+      "dismissibleWhileFocused": null
+    },
+    {
+      "id": 3,
+      "name": "CSS :hover + :focus-visible",
+      "hoverShows": true,
+      "gapPx": 8,
+      "obscuresOtherContent": true,
+      "hoverable": false,
+      "persistent5s": true,
+      "dismissibleByEsc": false,
+      "focusedId": "g3",
+      "focusShows": true,
+      "dismissibleWhileFocused": false
+    },
+    {
+      "id": 4,
+      "name": "CSS :has() + bridge",
+      "hoverShows": true,
+      "gapPx": 0,
+      "obscuresOtherContent": true,
+      "hoverable": true,
+      "persistent5s": true,
+      "dismissibleByEsc": false,
+      "focusedId": "g4",
+      "focusShows": true,
+      "dismissibleWhileFocused": false
+    },
+    {
+      "id": 5,
+      "name": "JS hover/focus/Esc/bridge",
+      "hoverShows": true,
+      "gapPx": 8,
+      "obscuresOtherContent": true,
+      "hoverable": true,
+      "persistent5s": true,
+      "dismissibleByEsc": true,
+      "focusedId": "g5",
+      "focusShows": true,
+      "dismissibleWhileFocused": true
+    },
+    {
+      "id": 6,
+      "name": "JS + 2s auto-hide",
+      "hoverShows": true,
+      "gapPx": 8,
+      "obscuresOtherContent": true,
+      "hoverable": false,
+      "persistent5s": false,
+      "dismissibleByEsc": false,
+      "focusedId": "g6",
+      "focusShows": true,
+      "dismissibleWhileFocused": false
+    },
+    {
+      "id": 7,
+      "name": "popover=hint",
+      "hoverShows": true,
+      "gapPx": 8,
+      "obscuresOtherContent": true,
+      "hoverable": false,
+      "persistent5s": true,
+      "dismissibleByEsc": true,
+      "focusedId": "g7",
+      "focusShows": true,
+      "dismissibleWhileFocused": true
+    }
+  ],
+  "axe": {
+    "closed": {
+      "axeVersion": "4.13.0",
+      "rulesRun": 90,
+      "violations": [
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "nodes": 1,
+          "tags": []
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "nodes": 16,
+          "tags": []
+        }
+      ],
+      "rulesTagged1413": [
+        "color-contrast"
+      ]
+    },
+    "allOpen": {
+      "axeVersion": "4.13.0",
+      "rulesRun": 91,
+      "violations": [
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "nodes": 1,
+          "tags": []
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "nodes": 22,
+          "tags": []
+        }
+      ],
+      "rulesTagged1413": [
+        "color-contrast",
+        "color-contrast"
+      ]
+    }
+  }
+}
