@@ -1954,5 +1954,39 @@
         "id": 4366455
       }
     }
+  },
+  {
+    "slug": "speakable-cssselector-pointer-rot-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/speakable-cssselector-pointer-rot-2026",
+    "posted_at": "2026-08-11T06:49:35.862Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "speakable-cssselector-pointer-rot-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/speakable-cssselector-pointer-rot-2026",
+    "posted_at": "2026-08-11T14:21:57.066Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "content-on-hover-focus-1413-tooltip-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/content-on-hover-focus-1413-tooltip-2026",
+    "posted_at": "2026-08-12T06:48:09.679Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/css-cannot-hear-the-escape-key-seven-tooltips-against-sc-1413-42g1",
+        "id": 4375192
+      }
+    }
   }
 ]
