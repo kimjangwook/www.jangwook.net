@@ -164,7 +164,7 @@ Letta、Mem0等框架从操作系统虚拟内存中汲取灵感来实现这一�
 
 ## Engineering Manager实践清单
 
-在团队中引入上下文工程时，验证以下内容：
+在团队中引入上下文工程时，验证以下内容。如果需要的不只是上下文管理，而是覆盖整个部署环节的设计标准，[AI智能体生产环境部署的9项设计原则](/zh/blog/zh/production-grade-ai-agent-design-principles/)可以作为这份清单的上层框架。
 
 **架构设计阶段：**
 - [ ] 是否为每个智能体定义了上下文预算（token budget）？

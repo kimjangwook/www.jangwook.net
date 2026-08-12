@@ -1,6 +1,6 @@
 ---
-title: 'CSS Cannot Hear the Escape Key: Seven Tooltips Against SC 1.4.13'
-description: 'Seven tooltip implementations, measured against Dismissible, Hoverable and Persistent one at a time. Every CSS-only version failed Dismissible, and popover="hint" fails Hoverable.'
+title: 'CSS Cannot Hear Escape: Seven Tooltips Against SC 1.4.13'
+description: 'Seven tooltips, each measured against Dismissible, Hoverable and Persistent separately. Every CSS-only build fails Dismissible; popover="hint" fails Hoverable.'
 pubDate: '2026-08-12'
 heroImage: '../../../assets/blog/content-on-hover-focus-1413-tooltip-2026/hero.png'
 tags:

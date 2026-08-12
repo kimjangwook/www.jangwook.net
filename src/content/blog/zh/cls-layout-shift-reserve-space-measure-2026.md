@@ -1,6 +1,6 @@
 ---
 title: '刚要点按钮，页面却跳了一下 — 把 CLS 从 0.559 压到 0.014 的实测记录'
-description: '加载时布局乱跳不是审美问题，而是一个能量化的指标。我把同一个页面做了两版，用 layout-shift PerformanceObserver 测 CLS，只靠给图片预留盒子、给动态内容预留槽位，就把 0.559（POOR）压到了 0.014（GOOD）。过程有代码，也有日志。'
+description: '加载时布局乱跳不是审美问题，而是一个能量化的指标。我把同一个页面做了两版，用 layout-shift PerformanceObserver 测 CLS，只靠给图片预留盒子、给动态内容预留槽位，就把 0.559（POOR）压到了 0.014（GOOD）。过程有代码，有日志，也有可以照着复现的测量步骤。'
 pubDate: '2026-07-15'
 heroImage: '../../../assets/blog/cls-layout-shift-reserve-space-measure-2026/hero.png'
 tags:

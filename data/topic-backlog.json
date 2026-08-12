@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-11",
+  "updated_at": "2026-08-12",
   "topics": [
     {
       "slug": "speakable-cssselector-pointer-rot-2026",
@@ -6734,6 +6734,57 @@
       "added_at": "2026-08-11",
       "status": "queued",
       "notes": "같은 빌드 산출물을 zstd/br/gzip으로 각각 인코딩해 크기와 디코드 시간을 함께 잰다. 압축률만 비교하는 글이 많아, 디코드 비용과 CDN 협상 실패 시 폴백까지 다루면 차별화된다."
+    },
+    {
+      "slug": "soft-navigations-chrome151-spa-cwv-measure-2026",
+      "title_idea": "SPA의 두 번째 화면은 그동안 측정되지 않았다 — Chrome 151 soft-navigation 실측",
+      "content_type": "news",
+      "target_keyword": "Soft Navigations API",
+      "secondary_keywords": [
+        "SPA Core Web Vitals",
+        "interaction-contentful-paint",
+        "soft-navigation PerformanceObserver"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Chrome 151 stable(2026-07-28)에서 soft-navigation·interaction-contentful-paint 항목이 플래그 없이 Performance Timeline에 추가 (developer.chrome.com, csswizardry Web-Perf Wednesday 003)",
+      "added_at": "2026-08-12",
+      "status": "queued",
+      "notes": "뉴스 소개로 끝내지 않고, 같은 SPA에서 초기 로드와 소프트 내비게이션의 LCP/CLS/INP를 각각 잘라 재본 수치를 낸다. 기존 CLS·INP·prerender 실측 글과 내부링크로 이어진다. 차별화 포인트: 휴리스틱이 소프트 내비게이션으로 잡지 못하는 라우팅을 실제로 재현해 한계를 명시."
+    },
+    {
+      "slug": "declarative-partial-updates-out-of-order-streaming-2026",
+      "title_idea": "JavaScript 없이 HTML을 순서 밖으로 흘려보내기 — Declarative Partial Updates가 바꾸는 것",
+      "content_type": "news",
+      "target_keyword": "Declarative Partial Updates",
+      "secondary_keywords": [
+        "out-of-order HTML streaming",
+        "template for",
+        "streamHTML setHTML"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Chrome 148에서 처리 명령(<?marker>, <?start>, <?end>)과 <template for> 기반 out-of-order 스트리밍 + setHTML/streamHTML 계열 API 도입 (developer.chrome.com/blog/declarative-partial-updates)",
+      "added_at": "2026-08-12",
+      "status": "queued",
+      "notes": "아직 Chrome 전용 제안 단계라는 점을 먼저 못박고, 폴백 없이 쓰면 무엇이 깨지는지를 실제로 확인한다. HTMX·Turbo가 하던 일을 플랫폼이 얼마나 가져갔는지 비교하면 차별화된다."
+    },
+    {
+      "slug": "baseline-alerts-web-platform-status-adoption-lag-2026",
+      "title_idea": "기능이 Baseline에 들어간 날과 내가 쓰기 시작한 날 사이의 거리",
+      "content_type": "news",
+      "target_keyword": "Baseline Alerts",
+      "secondary_keywords": [
+        "Web Platform Status dashboard",
+        "Baseline 2026",
+        "브라우저 기능 채택 지연"
+      ],
+      "search_intent": "informational",
+      "priority": 3,
+      "source": "Web Platform Status 대시보드에 Baseline Alerts 도입 (web.dev/baseline)",
+      "added_at": "2026-08-12",
+      "status": "queued",
+      "notes": "백업 후보. Anchor positioning·Trusted Types·zstd 등 2026 Baseline 항목이 내 사이트에서 실제로 언제 쓸 수 있게 되는지 사용자 통계로 역산한다."
     }
   ]
 }

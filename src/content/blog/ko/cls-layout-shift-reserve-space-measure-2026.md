@@ -1,6 +1,6 @@
 ---
 title: '버튼을 누르려는 순간 화면이 밀렸다 — CLS 0.559를 0.014로 내린 실측 기록'
-description: '레이아웃이 로딩 중에 밀리는 건 취향 문제가 아니라 측정 가능한 지표다. 같은 페이지를 두 가지로 만들어 layout-shift PerformanceObserver로 CLS를 재고, 이미지 크기 예약과 슬롯 확보로 0.559(POOR)를 0.014(GOOD)까지 내린 과정을 코드와 로그로 남긴다.'
+description: '로딩 중 레이아웃이 밀리는 건 취향 문제가 아니라 측정 가능한 지표다. 같은 페이지를 두 가지로 만들어 layout-shift PerformanceObserver로 CLS를 재고, 이미지 크기 예약과 슬롯 확보만으로 0.559(POOR)를 0.014(GOOD)까지 내린 기록이다.'
 pubDate: '2026-07-15'
 heroImage: '../../../assets/blog/cls-layout-shift-reserve-space-measure-2026/hero.png'
 tags:

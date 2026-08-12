@@ -44,7 +44,7 @@ Anthropic의 데이터에 따르면, 1,000줄 이상의 대형 PR에서 Code Rev
 
 ## 작동 원리 — 병렬 에이전트 팀
 
-단일 모델이 PR 전체를 읽는 기존 AI 리뷰 도구와 달리, Claude Code Review는 진짜 **팀 구조**로 작동한다.
+단일 모델이 PR 전체를 읽는 기존 AI 리뷰 도구와 달리, Claude Code Review는 진짜 **팀 구조**로 작동한다. 역할을 나눈 에이전트가 리뷰를 주고받으며 오류를 깎아내리는 구조 자체는 [반복적 리뷰 사이클 방법론](/ko/blog/ko/iterative-review-cycle-methodology/)에서 다룬 오케스트레이션 패턴과 같은 계열이다.
 
 ```
 PR 수신

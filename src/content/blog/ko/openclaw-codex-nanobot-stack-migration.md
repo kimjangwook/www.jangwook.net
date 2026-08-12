@@ -61,7 +61,7 @@ relatedPosts:
 
 4월 4일 아침에 Anthropic 이메일을 받았다. Claude Pro 구독으로는 더 이상 OpenClaw 같은 서드파티 도구를 쓸 수 없다는 통보였다. 정확히는 "구독으로 발급된 OAuth 토큰을 외부 도구에서 쓰는 것을 금지한다"는 정책이었는데, OpenClaw 사용자 입장에선 사실상 같은 말이다([VentureBeat 보도](https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and)).
 
-2월에 OpenClaw용 Codex 마이그레이션 가이드까지 썼던 입장에서 좀 멍했다. 그 글은 "Claude/Gemini 약관이 흔들리니 Codex를 백업으로 깔아두자"는 톤이었는데, 두 달 만에 그 백업이 메인이 된 셈이다. 그리고 4월 24일에 GPT-5.5가 풀려나오면서([OpenAI 발표](https://openai.com/index/introducing-gpt-5-5/)) 판이 한 번 더 흔들렸다.
+2월에 [OpenClaw용 Codex 마이그레이션 가이드](/ko/blog/ko/openclaw-openai-codex-migration/)까지 썼던 입장에서 좀 멍했다. 그 글은 "Claude/Gemini 약관이 흔들리니 Codex를 백업으로 깔아두자"는 톤이었는데, 두 달 만에 그 백업이 메인이 된 셈이다. 그리고 4월 24일에 GPT-5.5가 풀려나오면서([OpenAI 발표](https://openai.com/index/introducing-gpt-5-5/)) 판이 한 번 더 흔들렸다.
 
 지금 내 자동화 스택은 이렇게 생겼다 — Claude + launchd가 메인 엔진, Codex가 무거운 작업(이미지 생성, 리뷰), Nanobot + Telegram이 상태 관리와 잡일. OpenClaw는 깨끗하게 빠졌다. 한 달간 세 번의 갈아타기를 거치면서 배운 것들을 정리해 두려고 한다.
 

@@ -44,7 +44,7 @@ relatedPosts:
 
 ## 工作原理 — 并行智能体团队
 
-与让单一模型阅读整个PR的传统AI审查工具不同，Claude Code Review以真正的**团队结构**运作：
+与让单一模型阅读整个PR的传统AI审查工具不同，Claude Code Review以真正的**团队结构**运作。分工的智能体来回传递审查意见、逐步削减错误，这套结构与[迭代审查循环方法论](/zh/blog/zh/iterative-review-cycle-methodology/)中讨论的编排模式同属一脉：
 
 ```
 接收PR

@@ -165,7 +165,7 @@ Frameworks like Letta and Mem0 implement this hierarchy inspired by OS virtual m
 
 ## Engineering Manager Checklist
 
-When introducing context engineering to your team, verify the following:
+When introducing context engineering to your team, verify the following. If you need design criteria that span the whole deployment rather than context alone, the [9 design principles for production-grade AI agent deployment](/en/blog/en/production-grade-ai-agent-design-principles/) act as the outer frame around this checklist.
 
 **Architecture design:**
 - [ ] Is a context budget (token budget) defined per agent?

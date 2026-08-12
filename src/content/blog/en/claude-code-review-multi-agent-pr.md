@@ -44,7 +44,7 @@ According to Anthropic's data, on large PRs (1,000+ lines), Code Review found an
 
 ## How It Works — Parallel Agent Teams
 
-Unlike traditional AI review tools that have a single model read through the PR, Claude Code Review operates as a genuine **team structure**:
+Unlike traditional AI review tools that have a single model read through the PR, Claude Code Review operates as a genuine **team structure**. Role-split agents passing reviews back and forth to grind down errors belongs to the same family as the orchestration pattern covered in [iterative review cycles](/en/blog/en/iterative-review-cycle-methodology/):
 
 ```
 PR Received

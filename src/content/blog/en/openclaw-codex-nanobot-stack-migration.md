@@ -62,7 +62,7 @@ relatedPosts:
 
 I got an email from Anthropic on the morning of April 4th. The notice said I could no longer use third-party tools like OpenClaw with my Claude Pro subscription. The exact wording was something like "OAuth tokens issued through subscriptions cannot be used in external tools," but for an OpenClaw user that's basically the same thing ([VentureBeat coverage](https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and)).
 
-As someone who literally wrote a Codex migration guide for OpenClaw users back in February, I sat there a bit stunned. That earlier post had the tone of "Claude and Gemini ToS keep shifting, so install Codex as a backup." Two months later, the backup had become the main thing. And then on April 24th, GPT-5.5 dropped ([OpenAI announcement](https://openai.com/index/introducing-gpt-5-5/)) and the ground shifted again.
+As someone who literally wrote a [Codex migration guide for OpenClaw users](/en/blog/en/openclaw-openai-codex-migration/) back in February, I sat there a bit stunned. That earlier post had the tone of "Claude and Gemini ToS keep shifting, so install Codex as a backup." Two months later, the backup had become the main thing. And then on April 24th, GPT-5.5 dropped ([OpenAI announcement](https://openai.com/index/introducing-gpt-5-5/)) and the ground shifted again.
 
 My automation stack now looks like this. Claude plus launchd is the main engine. Codex handles the heavier work — image generation and reviews. Nanobot plus Telegram covers state management and the small jobs in between. OpenClaw is gone, cleanly. Three rounds of migration in a single month taught me a few things, and I want to write them down before I forget.
 

@@ -1,6 +1,6 @@
 ---
 title: 'CSS로는 Escape를 받을 수 없다: 툴팁 일곱 개로 잰 SC 1.4.13'
-description: '툴팁에 :focus-visible을 붙이면 접근성은 끝난 줄 알았다. 구현 일곱 개를 만들어 Dismissible·Hoverable·Persistent 세 항목을 각각 재보니, CSS만으로 통과한 것은 하나도 없었다. popover=hint도 절반만 준다.'
+description: '툴팁에 :focus-visible만 붙이면 접근성은 끝난 줄 알았다. 구현 일곱 개를 만들어 Dismissible·Hoverable·Persistent 세 항목을 각각 재보니 CSS만으로 통과한 것은 하나도 없었고, popover="hint"조차 절반만 대신해 주었다.'
 pubDate: '2026-08-12'
 heroImage: '../../../assets/blog/content-on-hover-focus-1413-tooltip-2026/hero.png'
 tags:

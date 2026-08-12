@@ -61,7 +61,7 @@ relatedPosts:
 
 4月4日早上收到了Anthropic的邮件。通知说Claude Pro订阅不能再用在OpenClaw这类第三方工具上。准确说政策是"禁止把订阅签发的OAuth token用在外部工具里"，不过对OpenClaw用户来说基本是同一回事（[VentureBeat报道](https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and)）。
 
-二月份我还专门写过给OpenClaw用户的Codex迁移指南，看到这封邮件有点发愣。那篇文章的语气是"Claude/Gemini的条款都在动，先把Codex作为备份装上"，结果两个月后这个备份就成了主力。然后4月24日GPT-5.5发布（[OpenAI公告](https://openai.com/index/introducing-gpt-5-5/)），局面又抖了一次。
+二月份我还专门写过[给OpenClaw用户的Codex迁移指南](/zh/blog/zh/openclaw-openai-codex-migration/)，看到这封邮件有点发愣。那篇文章的语气是"Claude/Gemini的条款都在动，先把Codex作为备份装上"，结果两个月后这个备份就成了主力。然后4月24日GPT-5.5发布（[OpenAI公告](https://openai.com/index/introducing-gpt-5-5/)），局面又抖了一次。
 
 现在我的自动化栈长这样——Claude+launchd做主引擎，Codex负责重活（图像生成、代码审查），Nanobot+Telegram管状态和杂事。OpenClaw已经完全拔掉。这一个月里换了三轮，我想把学到的东西记一下。
 
