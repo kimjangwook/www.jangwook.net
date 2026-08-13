@@ -1,0 +1,135 @@
+{
+  "parser": "parse5 8.0.1",
+  "rows": [
+    {
+      "fixture": "A. head (baseline)",
+      "scriptingOn": {
+        "elementFound": true,
+        "location": "html > head > meta",
+        "survivesAsTextOnly": false
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > head > meta",
+        "survivesAsTextOnly": false
+      }
+    },
+    {
+      "fixture": "B. head, after comment",
+      "scriptingOn": {
+        "elementFound": true,
+        "location": "html > head > meta",
+        "survivesAsTextOnly": false
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > head > meta",
+        "survivesAsTextOnly": false
+      }
+    },
+    {
+      "fixture": "C. head, after stray text",
+      "scriptingOn": {
+        "elementFound": true,
+        "location": "html > body > meta",
+        "survivesAsTextOnly": false
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > body > meta",
+        "survivesAsTextOnly": false
+      }
+    },
+    {
+      "fixture": "D. head, after <div>",
+      "scriptingOn": {
+        "elementFound": true,
+        "location": "html > body > meta",
+        "survivesAsTextOnly": false
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > body > meta",
+        "survivesAsTextOnly": false
+      }
+    },
+    {
+      "fixture": "E. body, first child",
+      "scriptingOn": {
+        "elementFound": true,
+        "location": "html > body > meta",
+        "survivesAsTextOnly": false
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > body > meta",
+        "survivesAsTextOnly": false
+      }
+    },
+    {
+      "fixture": "F. body, last child",
+      "scriptingOn": {
+        "elementFound": true,
+        "location": "html > body > meta",
+        "survivesAsTextOnly": false
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > body > meta",
+        "survivesAsTextOnly": false
+      }
+    },
+    {
+      "fixture": "G. inside <noscript>",
+      "scriptingOn": {
+        "elementFound": false,
+        "location": null,
+        "survivesAsTextOnly": true
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > head > noscript > meta",
+        "survivesAsTextOnly": false
+      }
+    },
+    {
+      "fixture": "H. inside <template>",
+      "scriptingOn": {
+        "elementFound": true,
+        "location": "html > head > template > #content-fragment > #document-fragment > meta",
+        "survivesAsTextOnly": false
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > head > template > #content-fragment > #document-fragment > meta",
+        "survivesAsTextOnly": false
+      }
+    },
+    {
+      "fixture": "I. head, unclosed <title>",
+      "scriptingOn": {
+        "elementFound": false,
+        "location": null,
+        "survivesAsTextOnly": true
+      },
+      "scriptingOff": {
+        "elementFound": false,
+        "location": null,
+        "survivesAsTextOnly": true
+      }
+    },
+    {
+      "fixture": "J. body, inside <div>",
+      "scriptingOn": {
+        "elementFound": true,
+        "location": "html > body > div > meta",
+        "survivesAsTextOnly": false
+      },
+      "scriptingOff": {
+        "elementFound": true,
+        "location": "html > body > div > meta",
+        "survivesAsTextOnly": false
+      }
+    }
+  ]
+}

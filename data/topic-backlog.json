@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-12",
+  "updated_at": "2026-08-13",
   "topics": [
+    {
+      "slug": "robots-meta-head-body-parser-placement-2026",
+      "title_idea": "열 가지 중 세 가지는 요소조차 되지 못했다 — robots meta의 실제 착지점",
+      "content_type": "news-insight",
+      "target_keyword": "robots meta head body 배치",
+      "secondary_keywords": [
+        "noscript noindex",
+        "HTML 파서 in head 삽입 모드",
+        "template DocumentFragment robots"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Google Search Central robots meta 문서 축자 인용 2건('Place the robots meta tag in the <head> section of a given page', 배치 비강제·body 존중 노트 — 문서 업데이트 로그 2026-03-24 항목) + JavaScript SEO Basics 축자 3건(evergreen Chromium 실행, 200 큐잉, noindex 시 렌더링·JS 실행 생략 경고) + WHATWG HTML noscript 요소 정의 축자 1건. 5건 전부 curl로 원문 받아 태그 제거·공백 정규화 후 문자열 포함 대조 통과. 자체 측정: 픽스처 10종 x 스크립팅 2조건, parse5 8.0.1, jsdom 30.0.1, Node 22.22, 임시 샌드박스. 결과 head 2 / body 5 / 요소 미생성 3(noscript-scripting-on, template, title 미닫힘). jsdom 소비자 프로브: head 스코프 셀렉터가 C·D·E 놓침, 문서 스코프가 G 통과. jsdom runScripts 기본값/outside-only는 noscript 내 meta를 요소로 보고 dangerously는 텍스트(길이 38)로 봄. 자사 dist 3장 확인: head 자식 60, head 부적격 요소 0. 부산물: scripts/probe-robots-meta-placement.mjs, scripts/probe-robots-meta-consumer.mjs, scripts/chart-robots-meta-placement.py, data/robots-meta-placement.json, data/robots-meta-consumer.json. 기둥①.",
+      "added_at": "2026-08-13",
+      "status": "done",
+      "published_at": "2026-08-13",
+      "notes": "핵심 주장: (1) Google의 2026-03 노트는 body 배치를 허가한 게 아니라 파싱 사고를 Google 쪽에서만 사고가 아니게 만든 것이다 — body의 robots meta는 대부분 저자가 head에 쓴 것이 옮겨진 결과. (2) 실제 실패 축은 head/body가 아니라 요소 존재/부재이며 10종 중 3종이 후자. (3) noscript 안 noindex는 정확히 반대로 작동 — 스크립팅 켜지면 순수 텍스트, Google은 상록 Chromium. (4) jsdom 기본값이 noscript를 요소로 보므로 CI가 통과시킨 지시자를 Google은 못 본다. (5) 초기 HTML 바이트 > 렌더러 산물이라는 강도 서열. 후속 소재: (a) canonical/hreflang이 head 조기 종료로 밀려나는 비율을 dist 전수로 측정, (b) 404 등 실제로 robots meta를 내보내는 페이지 집합만 골라 배치 감사, (c) 실제 Chromium(headless)과 parse5 트리 구성 일치 여부 대조, (d) Bing 웹마스터 문서에 같은 허용 문장이 있는지 조사."
+    },
     {
       "slug": "speakable-cssselector-pointer-rot-2026",
       "title_idea": "음성으로 읽을 문단을 13개나 지목하고 있었다 — speakable 선택자 실측",

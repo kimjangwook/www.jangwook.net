@@ -1,0 +1,45 @@
+{
+  "engine": "jsdom 30.0.1",
+  "rows": [
+    {
+      "fixture": "A. head (baseline)",
+      "headScoped": true,
+      "documentScoped": true
+    },
+    {
+      "fixture": "C. head, after stray text",
+      "headScoped": false,
+      "documentScoped": true
+    },
+    {
+      "fixture": "D. head, after <div>",
+      "headScoped": false,
+      "documentScoped": true
+    },
+    {
+      "fixture": "E. body, first child",
+      "headScoped": false,
+      "documentScoped": true
+    },
+    {
+      "fixture": "G. inside <noscript>",
+      "headScoped": true,
+      "documentScoped": true
+    },
+    {
+      "fixture": "H. inside <template>",
+      "headScoped": false,
+      "documentScoped": false
+    },
+    {
+      "fixture": "I. head, unclosed <title>",
+      "headScoped": false,
+      "documentScoped": false
+    },
+    {
+      "fixture": "K. injected by JS after parse",
+      "headScoped": "raw HTML: false / after script: true",
+      "documentScoped": "raw HTML: false / after script: true"
+    }
+  ]
+}
