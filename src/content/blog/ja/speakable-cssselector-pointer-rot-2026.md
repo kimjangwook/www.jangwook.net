@@ -1,6 +1,6 @@
 ---
 title: '「ここを読み上げて」が13段落を指していた: speakableセレクタ実測'
-description: 'speakableのcssSelectorをビルド成果物に対して実際に走らせた。四つのうち一つは1,332ページで何も掴んでおらず、リード段落一つを狙ったはずのセレクタは1ページあたり13段落を掴んでいた。値を持つマークアップとDOMを指すマークアップは、壊れ方がまるで違う。'
+description: 'speakableのcssSelectorをビルド成果物に対して実際に走らせた。四つのうち一つは1,332ページで何も掴んでおらず、リード段落一つを狙ったはずのセレクタは1ページあたり13段落を掴んでいた。値を持つマークアップとDOMを指すマークアップは壊れ方がまるで違う。検証器は0件だけを重大扱いする。'
 pubDate: '2026-08-11'
 heroImage: '../../../assets/blog/speakable-cssselector-pointer-rot-2026/hero.png'
 tags:

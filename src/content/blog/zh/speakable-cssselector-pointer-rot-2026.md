@@ -1,6 +1,6 @@
 ---
 title: '让机器"读这里"的标记，指向了13个段落：speakable 选择器实测'
-description: '我把 speakable 里的 cssSelector 放到构建产物上真跑了一遍。四个里有一个在 1,332 个页面上什么都没抓到，本想圈住导语的那个每页抓了 13 段。带值的结构化数据和指向 DOM 的结构化数据，坏法完全不同。'
+description: '我把 speakable 里的 cssSelector 放到构建产物上真跑了一遍。四个里有一个在 1,332 个页面上什么都没抓到，本想圈住导语的那个每页抓了 13 段。带值的结构化数据和指向 DOM 的结构化数据，坏法完全不同。校验器只把零匹配标成严重错误，抓太多则一声不响。过检并不等于指针有效。'
 pubDate: '2026-08-11'
 heroImage: '../../../assets/blog/speakable-cssselector-pointer-rot-2026/hero.png'
 tags:

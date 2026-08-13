@@ -154,7 +154,7 @@ Tab 3에서 포커스가 브라우저 주소창으로 잠깐 나가는 것은 �
 | 2 | 커스텀 오버레이 + 배경 `inert` | 한 줄로 명시적 처리 | 이번 실측 — 배경 진입 0회 |
 | 3 | JS 포커스 트랩 루프 | 코드가 keydown을 가로챔 | 구형 브라우저 지원이 꼭 필요할 때만 |
 
-1순위가 네이티브 `<dialog>`인 이유는 명확하다. `showModal()`을 호출하면 다이얼로그 밖의 문서 전체가 inert 상태가 되고, top layer 배치와 `::backdrop`, Esc 닫기까지 플랫폼이 처리한다. 이번 글에서 손으로 만든 것들이 전부 공짜로 온다.
+1순위가 네이티브 `<dialog>`인 이유는 명확하다. `showModal()`을 호출하면 다이얼로그 밖의 문서 전체가 inert 상태가 되고, top layer 배치와 `::backdrop`, Esc 닫기까지 플랫폼이 처리한다. 이번 글에서 손으로 만든 것들이 전부 공짜로 온다. 커스텀 툴팁은 그 Esc를 CSS로는 받을 수 없다. [툴팁 일곱 개로 SC 1.4.13을 잰 기록](/ko/blog/ko/content-on-hover-focus-1413-tooltip-2026/)이 그 축이다.
 
 ```html
 <dialog id="subscribe-dialog">

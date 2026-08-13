@@ -213,7 +213,7 @@ RCからGAへの移行時にマイナーなブレーキングチェンジが発�
 Microsoft Agent Frameworkはすでに複数のグローバル企業が検証しています：
 
 - <strong>KPMG</strong>：監査自動化 — エージェントが財務データの異常検知後にHITL承認ワークフローと連携
-- <strong>BMW</strong>：車両テレメトリ分析 — マルチエージェントがセンサーデータを並列処理
+- <strong>BMW</strong>：車両テレメトリ分析 — マルチエージェントがセンサーデータを並列処理。リアルタイムのセンサーストリームがエージェント入力になるには、その手前にストリーミング層が要る。[IBM が Confluent を高く買った理由](/ja/blog/ja/ibm-confluent-realtime-data-ai-agents/)が、その層の話だ。
 - <strong>Commerzbank</strong>：顧客サポート自動化 — MCPを通じたCRM/ERP連携
 - <strong>Fujitsu</strong>：エンタープライズIT運用自動化 — 宣言的YAMLベースのエージェントオーケストレーション
 

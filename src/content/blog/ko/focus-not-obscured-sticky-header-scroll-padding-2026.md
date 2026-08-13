@@ -1,6 +1,6 @@
 ---
 title: 'Tab으로 0건, Shift+Tab으로 16건: 스티키 헤더가 삼킨 키보드 포커스'
-description: '같은 6개 페이지를 Tab으로 내려가며 재면 WCAG 2.4.11 위반이 0건, Shift+Tab으로 올라가며 재면 16건이었다. 브라우저가 포커스 대상을 화면에 넣는 정렬이 진행 방향에 따라 달라지기 때문이다. CSS 한 줄로 16건을 0건으로 만든 실측 기록.'
+description: '같은 6개 페이지를 Tab으로 내려가며 재면 WCAG 2.4.11 위반이 0건, Shift+Tab으로 올라가며 재면 16건이었다. 브라우저가 포커스 대상을 화면에 넣는 정렬이 진행 방향에 따라 달라지기 때문이다. CSS 한 줄로 16건을 0건으로 줄인 바로 그 실측이다.'
 pubDate: '2026-08-04'
 heroImage: '../../../assets/blog/focus-not-obscured-sticky-header-scroll-padding-2026/hero.png'
 tags:

@@ -1,6 +1,6 @@
 ---
 title: '음성으로 읽을 문단을 13개나 지목하고 있었다: speakable 선택자 실측'
-description: 'speakable의 cssSelector를 빌드 산출물에 직접 걸어 재봤다. 네 개 중 하나는 아무것도 가리키지 않았고, 리드 문단 하나를 노렸던 선택자는 페이지당 13개를 잡고 있었다. 값을 담는 마크업과 DOM을 가리키는 마크업은 썩는 방식이 다르다.'
+description: 'speakable의 cssSelector를 빌드 산출물에 직접 걸어 재봤다. 네 개 중 하나는 아무것도 가리키지 않았고, 리드 문단 하나를 노렸던 선택자는 페이지당 13개를 잡고 있었다. 값을 담는 마크업과 DOM을 가리키는 마크업은 썩는 방식이 다르다. 검증기는 0만 잡는다.'
 pubDate: '2026-08-11'
 heroImage: '../../../assets/blog/speakable-cssselector-pointer-rot-2026/hero.png'
 tags:

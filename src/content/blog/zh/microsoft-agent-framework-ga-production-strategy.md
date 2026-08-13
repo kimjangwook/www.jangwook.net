@@ -213,7 +213,7 @@ Microsoft提供了清晰的迁移指南。两个框架都将继续提供v1.x安�
 Microsoft Agent Framework已被多家全球企业验证：
 
 - <strong>毕马威（KPMG）</strong>：审计自动化 — Agent检测财务数据异常后，与HITL审批工作流联动
-- <strong>宝马（BMW）</strong>：车辆遥测分析 — 多Agent并行处理传感器数据
+- <strong>宝马（BMW）</strong>：车辆遥测分析 — 多Agent并行处理传感器数据。传感器流要成为 Agent 的输入，前面得先有一层流处理。[IBM 高价收购 Confluent 的原因](/zh/blog/zh/ibm-confluent-realtime-data-ai-agents/)讲的就是这一层。
 - <strong>德国商业银行（Commerzbank）</strong>：客户支持自动化 — 通过MCP集成CRM/ERP
 - <strong>富士通（Fujitsu）</strong>：企业IT运维自动化 — 基于声明式YAML的Agent编排
 

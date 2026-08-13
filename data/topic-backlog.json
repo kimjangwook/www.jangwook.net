@@ -6803,6 +6803,57 @@
       "added_at": "2026-08-12",
       "status": "queued",
       "notes": "백업 후보. Anchor positioning·Trusted Types·zstd 등 2026 Baseline 항목이 내 사이트에서 실제로 언제 쓸 수 있게 되는지 사용자 통계로 역산한다."
+    },
+    {
+      "slug": "chrome-mv2-webstore-removal-aug31-2026",
+      "title_idea": "Chrome 웹스토어에서 MV2 목록이 사라지는 날 — 설치된 사본은 남는다",
+      "content_type": "news",
+      "target_keyword": "Manifest V2 Chrome Web Store 제거",
+      "secondary_keywords": [
+        "Manifest V3 이전 마감",
+        "AllowLegacyMV2Extensions",
+        "Chrome 151 MV2"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Chrome Extensions 공식 타임라인(developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline): 2026-08-31 'All remaining Manifest V2 extensions removed from the Chrome Web Store'. 9to5Google 2026-07-08, Chrome Unboxed 2026-07-10이 문서 추가를 보도. Chrome 151(2026-07-28)에서 잔여 플래그 제거는 별축.",
+      "added_at": "2026-08-13",
+      "status": "queued",
+      "notes": "금요일 뉴스 분석. 브라우저가 MV2를 끄는 사건(Chrome 138/151)과 스토어 목록 삭제(8/31)를 섞지 않는 것이 차별화. 설치된 사본은 남되 재설치·업데이트가 끊긴다는 공식 문장을 축자 대조하고, chrome://extensions 감사로 '남아 있는 MV2가 있는지'를 실측 축으로 쓴다. 광고차단기 추모 글이 아니라 스토어 디스커버리 단절이 초점."
+    },
+    {
+      "slug": "review-snippet-undisclosed-incentive-guideline-2026",
+      "title_idea": "리뷰 스니펫 문서에 가짜·미공개 리워드 리뷰 조항이 들어왔다",
+      "content_type": "news",
+      "target_keyword": "review snippet 인센티브 리뷰 가이드라인",
+      "secondary_keywords": [
+        "가짜 리뷰 구조화 데이터",
+        "undisclosed incentivized reviews",
+        "Review snippet guidelines"
+      ],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "Google Search Central documentation updates, 2026-07-24: review snippet 문서에 fake and undisclosed incentivized reviews 가이드라인 추가. https://developers.google.com/search/updates 및 review-snippet#guidelines.",
+      "added_at": "2026-08-13",
+      "status": "queued",
+      "notes": "뉴스 분석. 마크업 문법 통과와 리뷰 정책 위반은 다른 층이라는 점을, 자사 사이트에 Review/AggregateRating가 있는지 dist 전수로 세고(있으면 정책 문장과 대조, 없으면 '해당 없음'을 명시) 차별화한다. FAQPage 종료 글과 이어 '리치 결과 문서가 남기는 잔여 규칙' 계열."
+    },
+    {
+      "slug": "google-amp-direct-host-july-2026",
+      "title_idea": "AMP 캐시와 뷰어가 빠졌다 — 검색은 이제 퍼블리셔 호스트로 곧장 보낸다",
+      "content_type": "news",
+      "target_keyword": "AMP 캐시 종료 Google Search",
+      "secondary_keywords": [
+        "AMP viewer 제거",
+        "signed exchange AMP",
+        "AMP host page"
+      ],
+      "search_intent": "informational",
+      "priority": 3,
+      "source": "Google Search Central documentation updates, 2026-07-01: AMP documentation simplified, AMP viewer/AMP Cache/signed exchange 참조 삭제. 'Google Search will now take users directly to the publisher's AMP host pages.' https://developers.google.com/search/updates",
+      "added_at": "2026-08-13",
+      "status": "queued",
+      "notes": "금요일 뉴스 분석. AMP 페이지가 있는지, 캐시 URL·viewer URL이 아직 내부링크/정규화에 남아 있는지를 자사·샘플 사이트에서 세는 실측이 본문. 캐시 검증자(ETag) 글과 이어 '배포 주체가 바뀌면 검증자도 바뀐다'는 축으로 차별화. 자사가 AMP를 안 쓰면 그 사실을 한계로 명시하고 타 퍼블리셔 응답 헤더만 잰다."
     }
   ]
 }

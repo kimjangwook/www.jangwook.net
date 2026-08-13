@@ -214,7 +214,7 @@ Minor breaking changes are possible during the transition from RC to GA. It is s
 Microsoft Agent Framework is already being validated by several global enterprises:
 
 - <strong>KPMG</strong>: Audit automation — agents detect financial data anomalies, then integrate with HITL approval workflows
-- <strong>BMW</strong>: Vehicle telemetry analysis — multi-agents process sensor data in parallel
+- <strong>BMW</strong>: Vehicle telemetry analysis — multi-agents process sensor data in parallel. Sensor streams only become agent input if a streaming layer sits in front of them. [Why IBM paid up for Confluent](/en/blog/en/ibm-confluent-realtime-data-ai-agents/) is that layer.
 - <strong>Commerzbank</strong>: Customer support automation — CRM/ERP integration via MCP
 - <strong>Fujitsu</strong>: Enterprise IT operations automation — declarative YAML-based agent orchestration
 

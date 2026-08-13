@@ -1,6 +1,6 @@
 ---
 title: '往下按 Tab 零违规，往上按 16 条：吸顶头部吞掉的键盘焦点'
-description: '同样六个页面，用 Tab 往下走测出 WCAG 2.4.11 违规 0 条，用 Shift+Tab 往上走测出 16 条。原因在于浏览器把焦点目标滚进视口时，对齐方式取决于你从哪个方向来。一行 CSS 把 16 条降到 0 条的实测记录。'
+description: '同样六个页面，用 Tab 往下走测出 WCAG 2.4.11 违规 0 条，用 Shift+Tab 往上走测出 16 条。原因在于浏览器把焦点目标滚进视口时，对齐方式取决于你从哪个方向来。一行 CSS 把 16 条降到 0 条的实测记录。测的方向一换，结果就跟着换，这不是偶然误差，而是对齐规则本身。'
 pubDate: '2026-08-04'
 heroImage: '../../../assets/blog/focus-not-obscured-sticky-header-scroll-padding-2026/hero.png'
 tags:

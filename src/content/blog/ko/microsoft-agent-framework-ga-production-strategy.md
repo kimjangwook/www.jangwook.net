@@ -213,7 +213,7 @@ RC 단계에서 GA 전환 시 마이너 브레이킹 체인지가 있을 수 있
 Microsoft Agent Framework는 이미 여러 글로벌 기업이 검증 중이다:
 
 - <strong>KPMG</strong>: 감사 자동화 — 에이전트가 재무 데이터 이상 감지 후 HITL 승인 워크플로우 연동
-- <strong>BMW</strong>: 차량 텔레메트리 분석 — 멀티에이전트가 센서 데이터를 병렬 처리
+- <strong>BMW</strong>: 차량 텔레메트리 분석 — 멀티에이전트가 센서 데이터를 병렬 처리. 실시간 센서 스트림이 에이전트 입력이 되려면 그 앞단에 스트리밍 레이어가 있어야 한다. [IBM의 Confluent 인수가 그 층을 왜 비싸게 샀는지](/ko/blog/ko/ibm-confluent-realtime-data-ai-agents/)가 그 이야기다.
 - <strong>Commerzbank</strong>: 고객 지원 자동화 — MCP를 통한 CRM/ERP 연동
 - <strong>Fujitsu</strong>: 엔터프라이즈 IT 운영 자동화 — 선언적 YAML 기반 에이전트 오케스트레이션
 

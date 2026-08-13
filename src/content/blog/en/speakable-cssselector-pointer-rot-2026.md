@@ -1,6 +1,6 @@
 ---
-title: "The markup said 'read this aloud' and pointed at 13 paragraphs"
-description: "I ran my speakable cssSelector values against my own built HTML. One matched nothing across 1,332 pages; another grabbed 13 paragraphs per page instead of the lede."
+title: "Markup said 'read this aloud' and pointed at 13 paragraphs"
+description: "I ran speakable cssSelectors against my built HTML. One matched nothing across 1,332 pages; another grabbed 13 paragraphs per page instead of the lede."
 pubDate: '2026-08-11'
 heroImage: '../../../assets/blog/speakable-cssselector-pointer-rot-2026/hero.png'
 tags:
