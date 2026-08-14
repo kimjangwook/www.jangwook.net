@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-13",
+  "updated_at": "2026-08-14",
   "topics": [
+    {
+      "slug": "official-geo-subtraction-gsc-control-2026",
+      "title_idea": "공식 GEO 가이드가 지운 것들: Search Console에 생긴 스위치",
+      "content_type": "news-insight",
+      "target_keyword": "Google 공식 GEO 가이드 Search Console",
+      "secondary_keywords": [
+        "llms.txt Google Search 무시",
+        "Search generative AI control",
+        "생성형 검색 구조화 데이터"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "Google Search Central AI optimization guide (updated 2026-07-10) + AI features page + third-party SEO guidance + GSC Search generative AI control + GSC generative AI performance report (2026-06-03) + web.dev agent-friendly. Live fetch 2026-08-14: llms.txt 404, robots live 106 lines vs git 45, 8/8 pages no robots meta. 기둥①②.",
+      "added_at": "2026-08-14",
+      "status": "done",
+      "published_at": "2026-08-14",
+      "notes": "핵심 주장: 공식 GEO는 빼기 목록 + Search Console 속성 스위치. llms.txt/전용 스키마/청킹은 공식 무시. 라이브 robots.txt는 CDN 접두로 git과 다름. GSC 제어는 상속되고 순위 신호가 아님. Search Console 미로그인. Content-Signal은 공식 robots 규칙으로 확인 못 함."
+    },
     {
       "slug": "robots-meta-head-body-parser-placement-2026",
       "title_idea": "열 가지 중 세 가지는 요소조차 되지 못했다 — robots meta의 실제 착지점",

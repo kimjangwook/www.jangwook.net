@@ -1,0 +1,122 @@
+{
+  "slug": "official-geo-subtraction-gsc-control-2026",
+  "measuredAt": "2026-08-14",
+  "node": "N/A (curl + HTML parse)",
+  "liveHost": "https://jangwook.net",
+  "llmsTxt": {
+    "url": "https://jangwook.net/llms.txt",
+    "httpStatus": 404,
+    "alsoChecked": ["https://jangwook.net/LLMs.txt", "https://www.jangwook.net/llms.txt"]
+  },
+  "robotsTxt": {
+    "repoPath": "public/robots.txt",
+    "repoLines": 45,
+    "repoBytes": 1101,
+    "liveUrl": "https://jangwook.net/robots.txt",
+    "liveLines": 106,
+    "liveBytes": 2937,
+    "cloudflareManagedPrefix": true,
+    "contentSignalLine": "Content-Signal: search=yes,ai-train=no,use=reference",
+    "repoSuffixPresentInLive": true,
+    "googleExtendedDisallowGroups": 2,
+    "llmsMention": "comment only: /ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "httpStatus": 200,
+      "robotsMetaTags": 0,
+      "dataNosnippetAttributes": 0,
+      "jsonLdTypes": ["Organization", "ImageObject", "Person", "WebSite"],
+      "canonical": true,
+      "ogImage": true
+    },
+    {
+      "path": "/ko/",
+      "httpStatus": 200,
+      "robotsMetaTags": 0,
+      "dataNosnippetAttributes": 0,
+      "jsonLdTypes": ["Organization", "ImageObject", "Person", "WebSite", "FAQPage"],
+      "canonical": true,
+      "ogImage": true
+    },
+    {
+      "path": "/en/",
+      "httpStatus": 200,
+      "robotsMetaTags": 0,
+      "dataNosnippetAttributes": 0,
+      "jsonLdTypes": ["Organization", "ImageObject", "Person", "WebSite", "FAQPage"],
+      "canonical": true,
+      "ogImage": true
+    },
+    {
+      "path": "/ko/blog/",
+      "httpStatus": 200,
+      "robotsMetaTags": 0,
+      "dataNosnippetAttributes": 0,
+      "jsonLdTypes": ["Organization", "ImageObject", "Person", "WebSite"],
+      "canonical": true,
+      "ogImage": true
+    },
+    {
+      "path": "/ko/blog/ko/robots-snippet-controls-ai-overviews-2026/",
+      "httpStatus": 200,
+      "robotsMetaTags": 0,
+      "dataNosnippetAttributes": 0,
+      "jsonLdTypes": ["Organization", "ImageObject", "Person", "WebSite", "WebPage", "SpeakableSpecification", "BreadcrumbList", "BlogPosting"],
+      "canonical": true,
+      "ogImage": true,
+      "note": "description text contains the word nosnippet; no robots meta tag"
+    },
+    {
+      "path": "/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026/",
+      "httpStatus": 200,
+      "robotsMetaTags": 0,
+      "dataNosnippetAttributes": 0,
+      "jsonLdTypes": ["Organization", "ImageObject", "Person", "WebSite", "WebPage", "SpeakableSpecification", "BreadcrumbList", "BlogPosting"],
+      "canonical": true,
+      "ogImage": true
+    },
+    {
+      "path": "/ko/blog/ko/faqpage-deprecation-ai-citation-2026/",
+      "httpStatus": 200,
+      "robotsMetaTags": 0,
+      "dataNosnippetAttributes": 0,
+      "jsonLdTypes": ["Organization", "ImageObject", "Person", "WebSite", "WebPage", "SpeakableSpecification", "BreadcrumbList", "BlogPosting"],
+      "canonical": true,
+      "ogImage": true
+    },
+    {
+      "path": "/ko/contact/",
+      "httpStatus": 200,
+      "robotsMetaTags": 0,
+      "dataNosnippetAttributes": 0,
+      "jsonLdTypes": ["Organization", "ImageObject", "Person", "WebSite"],
+      "canonical": true,
+      "ogImage": true
+    }
+  ],
+  "summary": {
+    "pagesFetched": 8,
+    "pagesWithRobotsMeta": 0,
+    "pagesWithDataNosnippetAttr": 0,
+    "pagesHttp200": 8
+  },
+  "officialSources": {
+    "aiOptimizationGuide": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+    "aiOptimizationGuideLastUpdated": "2026-07-10",
+    "aiFeatures": "https://developers.google.com/search/docs/appearance/ai-features",
+    "aiFeaturesLastUpdated": "2025-12-10",
+    "thirdPartySeo": "https://developers.google.com/search/docs/fundamentals/third-party-seo",
+    "gscControl": "https://support.google.com/webmasters/answer/16908024",
+    "gscReport": "https://support.google.com/webmasters/answer/16984139",
+    "gscReportBlog": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+    "agentUx": "https://web.dev/articles/ai-agent-site-ux"
+  },
+  "limits": [
+    "Did not log into Search Console; cannot assert whether the Search generative AI control UI is visible on this property.",
+    "Did not measure ranking, impressions, or AI Overview citations.",
+    "Content-Signal is present in the served robots.txt via a CDN-managed prefix; no Google Search Central robots.txt document was found that lists Content-Signal as a supported rule.",
+    "Structured data type lists are from live HTML parse on 2026-08-14 and are not a rich-result eligibility claim."
+  ]
+}

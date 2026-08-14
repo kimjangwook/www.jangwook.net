@@ -46,11 +46,14 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-05-05
+**최신 포스트 날짜**: 2026-08-14
 
-**총 포스트 수**: 240개 (한국어 기준)
+**총 포스트 수**: 335개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **공식 GEO 가이드가 지운 것들: Search Console에 생긴 스위치** (2026-08-14)
+   - Google 공식 생성형 AI 최적화 가이드는 llms.txt와 전용 스키마를 무시하라고 적는다. 개발자가 볼 새 장치는 Search Console 생성형 AI 제어와 라이브 robots.txt다.
 
 1. **Anthropic Files API 가이드 — PDF를 한 번만 업로드하고 반복 분석하기** (2026-05-05)
    - 파일을 한 번 올리고 file_id만 재사용해 입력 토큰 비용을 줄이는 방법. Python SDK 0.97.0 기준 코드 예제, 에러 핸들링 패턴, Source Review 방식으로 정직하게 분석.
@@ -914,6 +917,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-04-27 (openclaw-codex-nanobot-stack-migration 포스트 발행)
+**Last Updated**: 2026-08-14 (official-geo-subtraction-gsc-control-2026 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**

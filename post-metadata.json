@@ -3186,5 +3186,16 @@
       "devops": 0.45,
       "architecture": 0.3
     }
+  },
+  "official-geo-subtraction-gsc-control-2026": {
+    "pubDate": "2026-08-14",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.95,
+      "ai-ml": 0.45,
+      "devops": 0.35,
+      "architecture": 0.55
+    }
   }
 }
