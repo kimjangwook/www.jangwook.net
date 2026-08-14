@@ -8,8 +8,11 @@ on:
   # GitHub의 Actions 탭에서 이 워크플로를 수동으로 실행할 수 있습니다.
   workflow_dispatch:
   # 매일 한국 시간 00:00 (UTC 15:00 전날)에 자동 빌드하여 예약 포스트 공개
+  # 매일 뉴욕 자정(05:00 UTC = 00:00 EST, 서머타임 시 01:00 EDT)에 재빌드하여
+  # Mediavine ads.txt를 뉴욕 기준 하루 한 번 갱신
   schedule:
     - cron: "0 15 * * *"
+    - cron: "0 5 * * *"
 
 permissions:
   contents: read
