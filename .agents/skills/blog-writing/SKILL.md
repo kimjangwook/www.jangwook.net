@@ -64,9 +64,10 @@ python scripts/validate_frontmatter.py <language>/post-name.md
 - pubDate always latest post + 1 day
 - heroImage uses ../../../assets/blog/ path
 - Use quadruple backticks when code blocks contain triple backticks
-- Create all three language versions simultaneously (ko, en, ja)
+- Write each language from a FACT CORE, never Korean-first then translate
 - Same filename across all language folders
 - Hero images are shared across all languages
+- Follow `claude-controller/.claude/skills/daily-tech-blog/voice-anti-ai.md` when this blog's daily pipeline writes
 
 ## File Structure
 
