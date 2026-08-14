@@ -59,7 +59,12 @@ log "slug=$SLUG"
 
 for LANG in ko ja en zh; do
   log "phase lang=$LANG"
-  LANG_PROMPT="$(sed "s/{{LANG}}/$LANG/g; s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-lang.md")"
+  LANG_FILE="$PROMPT_DIR/daily-post-lang-$LANG.md"
+  if [ ! -f "$LANG_FILE" ]; then
+    log "missing prompt $LANG_FILE"
+    exit 1
+  fi
+  LANG_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$LANG_FILE")"
   DENY_ARGS=()
   for OTHER in ko ja en zh; do
     if [ "$OTHER" != "$LANG" ]; then
