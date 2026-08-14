@@ -1,6 +1,6 @@
 ---
 title: 'Cloudflare Agents Week 2026分析 — AI智能体成为云基础设施的自主运营者'
-description: 'Cloudflare Agents Week 2026全面解析 — Sandboxes GA、Artifacts、Dynamic Workers，以及AI智能体自主提供基础设施的功能。20多项公告深度分析，附@cloudflare/agents SDK本地实验结果。'
+description: '动手读完 Cloudflare Agents Week 2026 的通读记录。Sandboxes GA、Artifacts、Dynamic Workers 都看过，再加上智能体自己开通云账号、再去买域名。文里还附上了 @cloudflare/agents SDK 本地实验里动手才会真正撞上的那几处细节。'
 pubDate: '2026-05-15'
 heroImage: '../../../assets/blog/cloudflare-agents-week-2026-autonomous-infrastructure-hero.png'
 tags: ['Cloudflare', 'AI智能体', '智能体基础设施', 'Web平台']

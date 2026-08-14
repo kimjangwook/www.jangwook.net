@@ -217,7 +217,7 @@ One thing nagged at me the whole way through. Google deciding not to enforce pla
 
 What bothers me is that the leniency landed in exactly one place. My build pipeline still checks the head. No other engine has published the same sentence. And above all, a head that closed early is still a bug, whatever survived it. Robots meta making it through says nothing about the canonical that was sitting next to it.
 
-So I've decided not to read the note as "the body is fine." I read it as "if you found it in the body, go find out where the head closed." That version is more useful at work. How long it stays useful, I don't know. Once other engines write the same line and frameworks take over head management completely, this check can disappear. We're not there.
+So I've decided not to read the note as "the body is fine." I read it as "if you found it in the body, go find out where the head closed." That version is more useful at work. How long it stays useful, I don't know. Once other engines write the same line and frameworks take over head management completely, this check can disappear. We're not there. Some controls never appear in HTML. The Search Console property switch for generative AI does not land in a pull request. I followed that with [the subtraction list official GEO left, and that switch](/en/blog/en/official-geo-subtraction-gsc-control-2026/).
 
 Tracing where a directive vanishes inside a rendering pipeline is part of what I do for a living. The [contact page](/en/contact/) is the way in.
 

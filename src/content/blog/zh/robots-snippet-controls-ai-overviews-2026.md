@@ -146,7 +146,7 @@ FILE: fixed.html
 
 ## 诚实的边界 —— 是引用"资格"，不是引用"保证"
 
-该把预期压下来了。放开 `max-snippet:-1` 和 `max-image-preview:large`，并不会让 AI Overview 就去引用你的页面。这些指令只打开**被引用的资格**，究竟引不引用由 Google 决定。它们也不会提升排名。Google 从未说过摘要指令是排名信号。去掉 `nosnippet` 就带来更多访客，这样的承诺哪里都没有。
+该把预期压下来了。放开 `max-snippet:-1` 和 `max-image-preview:large`，并不会让 AI Overview 就去引用你的页面。这些指令只打开**被引用的资格**，究竟引不引用由 Google 决定。它们也不会提升排名。Google 从未说过摘要指令是排名信号。去掉 `nosnippet` 就带来更多访客，这样的承诺哪里都没有。页面指令上面还有一层：Search Console 资源开关。HTML 的 PR 合进去了，父级域名上有人点了排除，照样会从 AI Overview 掉出去。我用公开 URL 量过[官方 GEO 留下的那只开关](/zh/blog/zh/official-geo-subtraction-gsc-control-2026/)。
 
 反方向的取舍也要看诚实。挂 `nosnippet` 并不总是错。付费内容的正文、只该登录后可见的信息、一旦在结果里整段露出就没人点进来的页面，收紧摘要是合理的。只是现在做这个选择时要清楚：你放弃的是被 AI 回答引用的机会。以前你只是隐藏摘要，现在连同你在生成式搜索里的存在感一起隐去了。
 

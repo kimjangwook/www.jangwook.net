@@ -6872,6 +6872,57 @@
       "added_at": "2026-08-13",
       "status": "queued",
       "notes": "금요일 뉴스 분석. AMP 페이지가 있는지, 캐시 URL·viewer URL이 아직 내부링크/정규화에 남아 있는지를 자사·샘플 사이트에서 세는 실측이 본문. 캐시 검증자(ETag) 글과 이어 '배포 주체가 바뀌면 검증자도 바뀐다'는 축으로 차별화. 자사가 AMP를 안 쓰면 그 사실을 한계로 명시하고 타 퍼블리셔 응답 헤더만 잰다."
+    },
+    {
+      "slug": "robots-control-surface-comparison-txt-meta-header-gsc-2026",
+      "title_idea": "같은 제외를 네 곳에 걸면 무엇이 실제로 막히나 — robots.txt·meta·X-Robots-Tag·Search Console",
+      "content_type": "comparison",
+      "target_keyword": "robots.txt robots meta X-Robots-Tag Search Console 비교",
+      "secondary_keywords": [
+        "생성형 AI 제어 Search Console",
+        "X-Robots-Tag noindex",
+        "robots meta head 배치"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Google Search Central robots meta / X-Robots-Tag 스펙 + AI optimization guide(llms.txt 무시) + GSC Search generative AI control 도움말. 선행 글 official-geo-subtraction-gsc-control-2026, robots-meta-head-body-parser-placement-2026, robots-snippet-controls-ai-overviews-2026, ai-crawler-control-robots-txt-llms-txt-2026. 라이브 fetch 2026-08-14: GSC 미로그인, 제어는 속성 상속·순위 신호 아님.",
+      "added_at": "2026-08-14",
+      "status": "queued",
+      "notes": "토요일 비교 가이드. 크롤 차단(robots.txt)·색인/스니펫(meta·헤더)·생성형 표시(GSC 속성 스위치)를 한 표로 겹치지 않게 나눈다. 차별화: 자사 라이브 robots.txt 106줄 vs git 45줄, dist의 robots meta 착지, GSC 스위치는 HTML에 없다는 세 축을 같은 페이지 집합에 적용. 페이지당 지시자를 두 곳에 동시에 걸면 어느 쪽이 이기는지는 공식 병합 규칙만 인용하고, 로그인 없는 GSC는 한계로 명시."
+    },
+    {
+      "slug": "schema-markup-validator-vs-rich-results-test-2026",
+      "title_idea": "검증기 통과와 리치 결과 자격은 같은 판이 아니었다 — 같은 URL을 두 도구에 넣었다",
+      "content_type": "comparison",
+      "target_keyword": "Schema Markup Validator Rich Results Test 비교",
+      "secondary_keywords": [
+        "speakable NO_MATCHES_FOUND",
+        "FAQPage 리치결과 종료",
+        "구조화 데이터 검증 도구"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "Google Search Central structured-data 문서: Rich Results Test는 Google 리치 결과 자격, Schema Markup Validator는 schema.org 일반 검증. speakable 글(2026-08-11)에서 Schema Markup Validator가 .article-summary NO_MATCHES_FOUND(isSevere true)를 낸 실측이 이미 있다. FAQ 리치결과 2026-05-08 종료/2026-06-15 문서 삭제.",
+      "added_at": "2026-08-14",
+      "status": "queued",
+      "notes": "토요일 비교. speakable 후속: 같은 라이브 URL 표본을 Schema Markup Validator와 Rich Results Test에 넣고, 한쪽에만 뜨는 오류(선택자 0매치 vs 리치결과 미지원 타입)를 표로 나눈다. FAQPage가 검증기는 통과하고 리치결과는 이미 끝난 상태인 점도 같은 표에 넣는다. 도구 리뷰가 아니라 '통과가 목적 달성이 아닌 이유'를 숫자로 보여주는 것이 차별화. 선행: speakable-cssselector-pointer-rot-2026, faqpage-deprecation-ai-citation-2026, validate-structured-data-ci-jsonld-2026."
+    },
+    {
+      "slug": "nosnippet-vs-gsc-ai-control-vs-google-extended-2026",
+      "title_idea": "빼고 싶은 대상이 색인·AI 답변·학습이면 스위치가 세 개다",
+      "content_type": "comparison",
+      "target_keyword": "nosnippet Search Console 생성형 AI Google-Extended 비교",
+      "secondary_keywords": [
+        "AI Overview 제외",
+        "Google-Extended robots.txt",
+        "생성형 검색 옵트아웃"
+      ],
+      "search_intent": "comparison",
+      "priority": 2,
+      "source": "robots snippet 글의 nosnippet=AI Overview 입력 제외 + 공식 GEO의 GSC 속성 스위치(표시만, 순위 신호 아님) + robots.txt Google-Extended(학습, 검색 제외 아님). Search Central AI features / robots meta / Google-Extended 문서. 2026-08-14 라이브: llms.txt 404, GSC 미로그인.",
+      "added_at": "2026-08-14",
+      "status": "queued",
+      "notes": "토요일 비교 백업. 'AI에서 빼기'를 한 덩어리로 묶는 업계 글을 깨는 표: 스니펫 입력 / 생성형 표시 / 학습 크롤. 자사 페이지에 nosnippet이 있는지, Google-Extended가 라이브 robots.txt에 있는지, GSC 스위치는 HTML에 없는지를 같은 감사로 센다. official-geo·robots-snippet·ai-crawler 세 글의 내부링크 허브가 된다."
     }
   ]
 }

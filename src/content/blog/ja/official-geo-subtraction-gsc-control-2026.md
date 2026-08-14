@@ -1,6 +1,6 @@
 ---
 title: '本番robots.txtがgitより長い日のGEO作業'
-description: '公式ガイドはllms.txtを無視すると書く。今日測ったのは本番106行と、コードレビューに乗らないプロパティ制御だ。'
+description: '公式GEOガイドはllms.txtと専用スキーマを検索信号にしない。今日公開URLで測ったのはllms.txtの404、本番robots.txt 106行（gitは45行）、コードレビューに乗らないSearch Consoleの生成AIプロパティ制御だ。順位信号ではなく、表示の資格についての話である。'
 pubDate: '2026-08-14'
 updatedDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'

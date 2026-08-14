@@ -146,7 +146,7 @@ Don't judge this by eye. Just as I [validated JSON-LD structured data in CI](/en
 
 ## An honest limit — eligibility, not a guarantee
 
-Time to lower expectations. Opening `max-snippet:-1` and `max-image-preview:large` does not make AI Overviews quote your page. These directives only open the **eligibility** to be quoted; whether you actually are is Google's call. They don't raise your ranking either. Google has never said snippet directives are a ranking signal. There's no promise that removing `nosnippet` brings more visitors.
+Time to lower expectations. Opening `max-snippet:-1` and `max-image-preview:large` does not make AI Overviews quote your page. These directives only open the **eligibility** to be quoted; whether you actually are is Google's call. They don't raise your ranking either. Google has never said snippet directives are a ranking signal. There's no promise that removing `nosnippet` brings more visitors. Above the page directive sits another switch, on the Search Console property. A merged HTML PR does not help if someone clicked exclude on the parent domain. I measured [the switch official GEO left behind](/en/blog/en/official-geo-subtraction-gsc-control-2026/) on public URLs.
 
 Look at the trade-off in the other direction honestly, too. `nosnippet` isn't always a mistake. For the body of paid content, information that should only appear behind a login, or a page whose click incentive evaporates if it's shown whole in results, tightening the snippet is reasonable. What's new is that this choice now carries a cost: you're giving up the chance to be cited in an AI answer. You used to hide only the snippet; now you're also hiding your presence in generative search.
 

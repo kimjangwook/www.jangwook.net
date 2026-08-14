@@ -1,6 +1,6 @@
 ---
-title: 'Cloudflare Agents Week 2026分析 — AIエージェントがクラウドインフラを自律的にプロビジョニングする'
-description: 'Cloudflareが4月のAgents Week行事で20件以上の発表を行った。Sandboxes GA、Artifacts、Dynamic Workers、さらにエージェントが直接Cloudflareアカウントを作成してドメインを購入する機能まで。@cloudflare/agents SDKをローカルで実際に動かした結果をまとめた。'
+title: 'Cloudflare Agents Week 2026 — エージェントがインフラを自律構築する'
+description: 'Cloudflare Agents Week 2026を手で追った記録である。Sandboxes GA、Artifacts、Dynamic Workersに加え、エージェントが自分でアカウントを作りドメインを買う流れまで見る。@cloudflare/agents SDKをローカルで動かしたメモ付きだ。'
 pubDate: '2026-05-15'
 heroImage: '../../../assets/blog/cloudflare-agents-week-2026-autonomous-infrastructure-hero.png'
 tags: ['Cloudflare', 'AIエージェント', 'エージェントインフラ', 'Webプラットフォーム']

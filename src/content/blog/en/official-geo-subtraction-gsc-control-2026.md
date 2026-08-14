@@ -1,5 +1,5 @@
 ---
-title: "Google’s GEO guide ignores llms.txt. Diff the live robots.txt"
+title: "Google GEO guide ignores llms.txt. Diff the live robots.txt"
 description: "Official GEO text ignores llms.txt. I measured a 404, a 106-line live robots.txt, and a Search Console include switch that never lands in a pull request."
 pubDate: '2026-08-14'
 updatedDate: '2026-08-14'

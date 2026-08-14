@@ -1,6 +1,6 @@
 ---
 title: 'GEO 가이드가 지운 일과 Search Console 스위치'
-description: '공식 GEO 가이드는 llms.txt를 무시한다. 오늘 잰 것은 라이브 robots.txt 106줄과, 코드 리뷰에 안 잡히는 속성 스위치다.'
+description: '공식 GEO 가이드는 llms.txt와 전용 스키마를 검색 신호로 쓰지 않는다. 오늘 공개 URL로 잰 것은 llms.txt 404, 라이브 robots.txt 106줄(git은 45줄), 그리고 코드 리뷰에 안 잡히는 Search Console 생성형 AI 속성 스위치다.'
 pubDate: '2026-08-14'
 updatedDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'

@@ -1,6 +1,6 @@
 ---
 title: 'Google 官方 GEO 不认 llms.txt，先看线上 robots.txt'
-description: '官方指南写明忽略 llms.txt 和专用 schema。今天量到的是 404、线上 106 行 robots.txt，以及代码评审里看不到的站点资源开关。'
+description: '官方 GEO 指南不把 llms.txt 和专用 schema 当搜索信号。今天用公开 URL 量到 llms.txt 的 404、线上 robots.txt 106 行（git 里是 45 行），以及代码评审看不到的 Search Console 生成式 AI 资源开关。讲的是展示资格，不是排名。'
 pubDate: '2026-08-14'
 updatedDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'
