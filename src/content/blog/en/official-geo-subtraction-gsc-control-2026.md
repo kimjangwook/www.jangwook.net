@@ -1,6 +1,6 @@
 ---
-title: "Official GEO is a subtraction list plus one Search Console switch"
-description: "Google official generative-AI guide says to ignore llms.txt and special schema. What a developer should check is the Search Console include switch and the live robots.txt, not git."
+title: "Google’s GEO guide ignores llms.txt. Diff the live robots.txt"
+description: "Official GEO text ignores llms.txt. I measured a 404, a 106-line live robots.txt, and a Search Console include switch that never lands in a pull request."
 pubDate: '2026-08-14'
 updatedDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'
@@ -54,15 +54,30 @@ relatedPosts:
       zh: 用 @graph 串实体，这件事还在。但若写成“AI Overview 专用优化”，就和官方指南拧着。
 ---
 
-I didn't open Search Console for this. I fetched the public bytes the site already ships, then put them next to the official text.
+The file Google Search ignores is not on this site. The robots.txt a crawler actually reads is 61 lines longer than git. The switch that can drop the whole property out of AI Overviews is not in either file.
 
-Google Search Central published [Optimizing your website for generative AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) on 15 May 2026 and touched it again on 10 July. Third-party AEO/GEO lists still start with `llms.txt`. Then chunking. Then a special schema.org type. Then a rewrite "for the model." The official mythbusting section deletes that column first.
-
-The new thing a developer can actually flip is a property setting. Ranking is out of scope.
+I did not open Search Console. I fetched the public bytes.
 
 ![Official GEO is a subtraction list plus one switch](../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png)
 
-## A pull request will not see this switch
+## I fetched /llms.txt
+
+```bash
+curl -sI https://jangwook.net/llms.txt
+# HTTP/2 404
+```
+
+`LLMs.txt` and the `www` host 404'd as well. This site does not ship the file.
+
+Third-party AEO/GEO lists still start with it. Google Search Central published [Optimizing your website for generative AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) on 15 May 2026 and touched it again on 10 July. The LLMS.txt line is blunt.
+
+> Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.
+
+Source: the LLMS.txt item in the same [optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+
+Keep it if some other consumer reads it. Off the Google Search board. If [robots.txt already splits training bots from search bots](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026), today's job is not another file. The live robots.txt mentions that post in a comment. Not a directive.
+
+## The include switch is not in the repo
 
 "Included in Search Console" points at the [Search generative AI control](https://support.google.com/webmasters/answer/16908024). Path: Settings > Search generative AI.
 
@@ -72,7 +87,7 @@ Three states. Include the site's links and content in generative AI features. Ex
 
 Source: [Search generative AI control](https://support.google.com/webmasters/answer/16908024)
 
-It is not a ranking signal for the rest of Search. It is not a training switch. Training limits sit on [Google-Extended](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers#google-extended). Full removal from Search is `noindex`. After the control goes live, exclusion usually lands in 1〜2 days. Cache can stretch that.
+Training limits sit on [Google-Extended](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers#google-extended). Full removal from Search is `noindex`. After the control goes live, exclusion usually lands in 1〜2 days. Cache can stretch that.
 
 Flip exclude on the domain property and every child URL-prefix that still inherits follows it. A blog at `https://example.com/blog/` can fall out because someone touched the parent. Clean HTML does not reopen that.
 
@@ -84,7 +99,7 @@ For a team, invert the order of work. Read the parent property first. Write down
 
 ![Eligibility is three layers](../../../assets/blog/official-geo-subtraction-gsc-control-2026/three-layers.png)
 
-AI Overviews attach a short gist and supporting links to a hard question. AI Mode is the conversational surface for comparisons and multi-step reasoning. Both sit inside Google Search. Both pull live pages. Google describes the machinery as RAG on top of the core ranking systems, plus query fan-out. A lawn-weeds question can spawn separate retrievals for herbicides, chemical-free removal, and prevention.
+AI Overviews attach a short gist and supporting links to a hard question. AI Mode is the conversational surface for comparisons and multi-step reasoning. Both sit inside Google Search. Both pull live pages. Google describes the machinery as RAG on top of the core ranking systems, plus query fan-out.
 
 A page has to be indexed and allowed to show a snippet. [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) puts it this way:
 
@@ -96,7 +111,7 @@ The same page still wants the technical requirements, the spam policies, and peo
 
 Snippet eligibility is a lever I already measured. `nosnippet` and `max-snippet:0` close the page as direct input to AI Overviews and AI Mode. That write-up is in [robots snippet directives](/en/blog/en/robots-snippet-controls-ai-overviews-2026). I am not rerunning that parser today.
 
-## Four items the official guide deletes
+## Mythbusting is a delete list
 
 > From Google Search's perspective, optimizing for generative AI search is optimizing for the search experience, and thus still SEO.
 
@@ -111,45 +126,32 @@ What I would drop from an engineering backlog:
 | Rewriting only for AI | Synonyms and meaning are already understood. You do not need a page per long-tail variant | Keep the human draft. Farming variant pages collides with [scaled content](https://developers.google.com/search/docs/essentials/spam-policies#scaled-content) |
 | A special schema.org type for generative search | Not required. There is no special markup to add | Leave rich-result markup in place. Do not invent an "AI Overview schema" |
 
-The `llms.txt` line is blunt.
+Inauthentic mentions around the web are, officially, not as helpful as they sound. Third-party tools that claim "internal" Google metrics get the same haircut. No third-party tool has access to internal ranking or AI systems. The [third-party SEO guidance](https://developers.google.com/search/docs/fundamentals/third-party-seo) says to check AEO/GEO advice against official docs. Using a tool in a workflow is fine. Treating its number as Google's number is not.
 
-> Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.
-
-Source: the LLMS.txt item in the same [optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
-
-Harmless and useless, for Google Search. Fine to keep for some other consumer. Off the Google Search board. If [robots.txt already splits training bots from search bots](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026), today's job is not another file.
+## What still belongs in JSON-LD
 
 Read the structured-data paragraph twice. It is not required for generative search and there is no dedicated type. It still helps rich-result eligibility, so keep it in the wider SEO plan. I do not read that as "delete JSON-LD." I read it as "do not add a type because AI Overviews exist." Structured data has never guaranteed rankings. It does not guarantee citations either.
 
-Inauthentic mentions around the web are, officially, not as helpful as they sound. Third-party tools that claim "internal" Google metrics get the same haircut. No third-party tool has access to internal ranking or AI systems. The [third-party SEO guidance](https://developers.google.com/search/docs/fundamentals/third-party-seo) says to check AEO/GEO advice against official docs. Using a tool in a workflow is fine. Treating its number as Google's number is not.
+On 14 August 2026 I curled the public surface of `https://jangwook.net`. Home JSON-LD carried `Organization`, `ImageObject`, `Person`, `WebSite`. `/ko/` and `/en/` also carry `FAQPage`. Posts add `WebPage`, `SpeakableSpecification`, `BreadcrumbList`, `BlogPosting`. Under today's official text, that markup is not a ticket into generative search. It stays on the rich-result side, the same split I used when [FAQ rich results ended and the Q&A markup stayed](/en/blog/en/faqpage-deprecation-ai-citation-2026).
 
-## 45 lines in git, 106 in production
+Eight pages (`/`, `/ko/`, `/en/`, `/ko/blog/`, three posts, `/ko/contact/`) returned HTTP 200. Zero `<meta name="robots">`. Zero `data-nosnippet` attributes. One page used the word `nosnippet` in body copy. That was not a directive. The template only emits a robots tag when `noindex` is on.
 
-On 14 August 2026 I curled the public surface of `https://jangwook.net`.
+git robots.txt is 45 lines, 1,101 bytes. Live is 106 lines, 2,937 bytes.
 
 ```bash
-curl -sI https://jangwook.net/llms.txt
-# HTTP/2 404
-
 curl -sL https://jangwook.net/robots.txt | wc -l
 # 106
 ```
 
-`LLMs.txt` and the `www` host 404'd as well. This site does not ship the file Google Search says it ignores.
-
-robots.txt had grown outside the repo. git is 45 lines, 1,101 bytes: training bots (`GPTBot`, `ClaudeBot`, `CCBot`, `Google-Extended`) blocked, search bots and `*` only blocked on cross-language URLs. The live response is 106 lines, 2,937 bytes. A CDN-managed prefix sits in front. `User-agent: *` carries `Content-Signal: search=yes,ai-train=no,use=reference`, plus extra `Disallow: /` groups. The repo body continues after that.
+git blocks training bots (`GPTBot`, `ClaudeBot`, `CCBot`, `Google-Extended`) and only hides cross-language URLs from search bots and `*`. The live response has a CDN-managed prefix in front. `User-agent: *` carries `Content-Signal: search=yes,ai-train=no,use=reference`, plus extra `Disallow: /` groups. Google-Extended deny groups show up twice on the live file. The repo body continues after that.
 
 ![Line counts for git robots.txt versus the live response](../../../assets/blog/official-geo-subtraction-gsc-control-2026/robots-live-vs-git.png)
 
 I did not find `Content-Signal` listed as a supported rule in the Search Central robots.txt docs I used for this piece. Presence in the file is not the same as Googlebot consuming the token. I am not claiming the latter.
 
-Eight pages (`/`, `/ko/`, `/en/`, `/ko/blog/`, three posts, `/ko/contact/`) returned HTTP 200. Zero `<meta name="robots">`. Zero `data-nosnippet` attributes. One page used the word `nosnippet` in body copy. That was not a directive. The template only emits a robots tag when `noindex` is on.
-
-Home JSON-LD carried `Organization`, `Person`, `WebSite`. Posts carried `BlogPosting`, `WebPage`, `BreadcrumbList`. Under today's official text, that markup is not a ticket into generative search. It stays on the rich-result side, the same split I used when [FAQ rich results ended and the Q&A markup stayed](/en/blog/en/faqpage-deprecation-ai-citation-2026).
-
 If GEO work means "add a file to the repo," the file a crawler already reads has grown outside the repo. Diff the deployed URL.
 
-## Agents walk the same tree as a screen reader
+## The accessibility tree is the cheap path
 
 The last stretch of the guide is browser agents. Booking. Comparing specs. Different job from search citations. Same surface. [web.dev's agent-friendly note](https://web.dev/articles/ai-agent-site-ux) lists three views: screenshots, raw HTML, the accessibility tree.
 
@@ -159,7 +161,7 @@ The leftover work is dull. Prefer `button` and `a`. Wire labels with `for`. Do n
 
 web.dev also says a screenshot-only path is slow and expensive. Put the main path on the tree and the DOM, and the text a crawler reads comes from the same markup an agent uses. That is the opposite of stuffing hidden search copy.
 
-## Monday morning
+## Run this before you open a ticket
 
 ```bash
 curl -sI https://example.com/llms.txt | head -n 1
@@ -176,6 +178,7 @@ Keep: indexing and snippet eligibility, a live robots.txt diff against git, the 
 
 Include can stay on. Snippets can stay allowed. The page can be indexed. Google still does not owe a citation. I measured where eligibility breaks, not the size of an effect.
 
-If the live robots.txt and git do not match, or you cannot even find the parent-property control, bring that page. Matching official text to the bytes you actually ship is the work I do.
+Matching official text to the bytes you actually ship is the work I do. Contact is on the profile.
+
 ---
 *Sources: Google Search Central [generative AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) (updated 2026-07-10), [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features), [third-party SEO guidance](https://developers.google.com/search/docs/fundamentals/third-party-seo), [Generative AI performance reports announcement](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports) (2026-06-03), Search Console Help [Search generative AI control](https://support.google.com/webmasters/answer/16908024) and [Generative AI performance report](https://support.google.com/webmasters/answer/16984139), web.dev [Build agent-friendly websites](https://web.dev/articles/ai-agent-site-ux) (all official). The four English block quotes were fetched from those pages, whitespace-folded, and checked against the source; each quote sits next to its URL. Live fetch: 2026-08-14, robots.txt, llms.txt, and eight pages on `https://jangwook.net`, curl plus HTML parse. Data: `data/official-geo-gsc-control-probe-2026.json`. Figures: `scripts/chart-official-geo-gsc-control.py`. Search Console was not opened. Content-Signal appears in the live robots.txt and was not confirmed as a supported Search Central robots.txt rule. Structured data and this switch do not guarantee rankings.*
