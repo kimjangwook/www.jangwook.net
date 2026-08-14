@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import matter from 'gray-matter';
+import { findTranslatedSkeletons, groupsFromPosts } from './h2-independence.mjs';
 
 const repoRoot = process.cwd();
 const contentRoot = path.join(repoRoot, 'src/content/blog');
@@ -121,6 +122,7 @@ async function loadPosts() {
       const proseOnly = parsed.content.replace(/^(`{3,})[\s\S]*?^\1`*\s*$/gm, '');
       const markdownImages = extractMarkdownImages(proseOnly);
       const h2Count = (proseOnly.match(/^## /gm) || []).length;
+      const h2Headings = [...proseOnly.matchAll(/^## .+$/gm)].map((match) => match[0]);
       const tableLineCount = (proseOnly.match(/^\|.*\|$/gm) || []).length;
 
       posts.push({
@@ -131,6 +133,7 @@ async function loadPosts() {
         data: parsed.data,
         content: parsed.content,
         pubDateKey,
+        h2Headings,
         draft,
         noindex,
         published,
@@ -247,6 +250,13 @@ function validateRelatedPosts(posts) {
         errors.push(`${post.relPath}: relatedPosts references non-indexable post "${rec.slug}" (draft/noindex/future/missing)`);
       }
     }
+  }
+}
+
+function validateH2Independence(posts) {
+  const hits = findTranslatedSkeletons(groupsFromPosts(posts));
+  for (const hit of hits) {
+    errors.push(`translated H2 spine (write languages independently): ${hit}`);
   }
 }
 
@@ -395,6 +405,7 @@ async function main() {
   validateRelatedPosts(posts);
   validateTitleLengths(posts);
   validateSharedFrontmatterParity(posts);
+  validateH2Independence(posts);
   validateVerbatimCitations(posts);
   await validateCrawlerSurfaces();
 

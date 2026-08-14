@@ -68,6 +68,7 @@ python scripts/validate_frontmatter.py <language>/post-name.md
 - Same filename across all language folders
 - Hero images are shared across all languages
 - Follow `claude-controller/.claude/skills/daily-tech-blog/voice-anti-ai.md` when this blog's daily pipeline writes
+- Daily launchd writes languages in separate grok processes (`scripts/grok-lang-pipeline.sh`)
 
 ## File Structure
 
