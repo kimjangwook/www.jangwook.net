@@ -1,6 +1,6 @@
 ---
 title: '닫힌 아코디언 속 글자를 링크로 열 수 있는가: hidden=until-found 17개 조건 실측'
-description: '아코디언 안에 숨긴 텍스트는 링크나 검색으로 찾아갈 수 있을까? Chromium 143에서 17가지 숨김 방식을 만들고 텍스트 프래그먼트와 window.find, 접근성 트리를 대조했다. 도착과 열림이 왜 서로 다른 일인지 정리한다.'
+description: '닫힌 아코디언 속 글자를 링크와 검색으로 열 수 있는지 Chromium 143에서 숨김 17가지를 대조했다. 텍스트 프래그먼트는 6083px를 뛰었지만 CSS max-height:0은 열리지 않았다. 도착과 열림이 서로 다른 일임을 window.find와 접근성 트리로 실측한다.'
 pubDate: '2026-08-15'
 heroImage: '../../../assets/blog/hidden-until-found-find-fragment-accordion-2026/hero.png'
 tags:
@@ -68,7 +68,7 @@ relatedPosts:
 
 문제는 그 다음이다. 브라우저는 텍스트의 좌표를 찾아 6083px 아래로 스크롤했지만, 아코디언을 열어주는 자바스크립트는 돌지 않았다. 높이 0px짜리 상자 안의 문장은 뷰포트에 들어왔지만 눈에는 흰 여백만 보였다.
 
-브라우저에게 도착은 좌표 이동이었고, 열림은 스타일 변경이었다. 둘은 애초에 다른 작업이었다.
+브라우저에게 도착은 좌표 이동이었고, 열림은 스타일 변경이었다. 둘은 애초에 다른 작업이었다. [인용 문장으로 되돌아가는 텍스트 프래그먼트](/ko/blog/ko/text-fragment-citation-deep-link-audit-2026/)는 산문 도착을 재는 선행 측정이다. 이번 글은 그 도착이 닫힌 UI를 만났을 때 열리는지를 본다.
 
 ## 숨김이라는 다섯 갈래의 일
 
@@ -100,11 +100,11 @@ relatedPosts:
 | sr-only 클리핑 | 참 | 참 | 참 | 있음 |
 | `max-height:0` CSS 아코디언 | 참 | 참 | 참 | 있음 |
 
-숨김은 하나의 스위치가 아니었다. 렌더링 자체가 생략된 층(`display:none`, 불리언 `hidden`), 그리기는 건너뛰되 검색에는 열어둔 층(`hidden="until-found"`, UA 기본 `content-visibility:hidden`), 트리에 남겨두고 화면 밖으로 잘라낸 층(`max-height:0`), 보조공학 이름에서만 지운 층(`aria-hidden`), 검색과 포커스에서 격리한 층(`inert`). 다섯 작업이 각자 다른 잣대로 돌아갔다.
+숨김은 하나의 스위치가 아니었다. 렌더링 자체가 생략된 층(`display:none`, 불리언 `hidden`), 그리기는 건너뛰되 검색에는 열어둔 층(`hidden="until-found"`, UA 기본 `content-visibility:hidden`), 트리에 남겨두고 화면 밖으로 잘라낸 층(`max-height:0`), 보조공학 이름에서만 지운 층(`aria-hidden`), 검색과 포커스에서 격리한 층(`inert`). 다섯 작업이 각자 다른 잣대로 돌아갔다. [inert가 포커스와 탐색을 끊는 방식](/ko/blog/ko/modal-focus-escape-inert-measure-2026/)을 모달에서 잰 기록과 이어진다. 이번 픽스처에서는 검색과 프래그먼트만 거절하고 해시 링크는 받았다.
 
 ## until-found는 닫혀 있어도 테두리 자리를 차지한다
 
-일반 `hidden`은 `display: none`, `until-found`는 `content-visibility: hidden`을 쓴다.
+일반 `hidden`은 `display: none`, `until-found`는 `content-visibility: hidden`을 쓴다. [content-visibility가 렌더 비용을 줄이는 방식](/ko/blog/ko/content-visibility-auto-render-cost-measure-2026/)을 잰 적이 있는데, until-found가 UA 스타일로 거는 값은 그 속성의 hidden 상태다.
 
 `#box-until`의 계산된 스타일은 `display: block`, `content-visibility: hidden`이었다. `el.hidden`은 `true`가 아니라 문자열 `"until-found"`를 돌려줬다.
 

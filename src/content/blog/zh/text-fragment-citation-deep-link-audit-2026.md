@@ -163,7 +163,7 @@ https://example.com/page#:~:text=prefix-,start,end,-suffix
 
 引擎只有一个：Chromium 151.0.7922.34，一台机器。WebKit 和 Gecko 没测。用来做预测的 `Intl.Segmenter` 也不保证与 Chromium 内部的切分器一致，我能说的只是这一轮里两者没有打架。
 
-还有最要紧的一条：<strong>GPTBot 或 Google 是否真的在产出这种形式的链接，我不知道。</strong> 没有公开资料，我也没有观测。[AI 爬虫不执行 JavaScript](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026) 那件事我可以自己发请求验证，引用链接怎么生成却不是能这样观测的对象。本文回答的是「这样的链接如果存在，在我的站点上能不能到位」，而不是「这样的链接会不会被造出来」。我也不主张易被引用会带来排名收益：文本片段是导航机制，从未被宣布为排名因素。
+还有最要紧的一条：<strong>GPTBot 或 Google 是否真的在产出这种形式的链接，我不知道。</strong> 没有公开资料，我也没有观测。[AI 爬虫不执行 JavaScript](/zh/blog/zh/ai-crawlers-dont-render-javascript-csr-2026) 那件事我可以自己发请求验证，引用链接怎么生成却不是能这样观测的对象。本文回答的是「这样的链接如果存在，在我的站点上能不能到位」，而不是「这样的链接会不会被造出来」。到达之后的问题是关上的界面。[十七种隐藏方式里，文本片段会不会打开折叠面板](/zh/blog/zh/hidden-until-found-find-fragment-accordion-2026/)用同一类链接接着测。我也不主张易被引用会带来排名收益：文本片段是导航机制，从未被宣布为排名因素。
 
 ## 收尾：让可引用的单位待在一个块里
 

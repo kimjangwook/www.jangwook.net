@@ -1,6 +1,6 @@
 ---
 title: '折叠面板里的文字，浏览器到底能不能搜到'
-description: '把 17 种隐藏内容的方式放进 Chromium 143 实测，页面内搜索和文本片段定位只在 10 种情况下能到达。而在 max-height 为 0 的手写折叠面板里，页面滚到了位置，内容却依然看不见。'
+description: '把十七种隐藏方式放进 Chromium 143 实测：页面内搜索和文本片段只在十种情况下到达。max-height:0 的手写折叠会滚到坐标却不展开。hidden=until-found 靠浏览器默认样式打开。到达与展开不是同一件事。本文对照了 window.find、文本片段与无障碍树的一次结果。'
 pubDate: '2026-08-15'
 heroImage: '../../../assets/blog/hidden-until-found-find-fragment-accordion-2026/hero.png'
 tags:
@@ -74,7 +74,7 @@ relatedPosts:
 
 调用 `window.find`、拉取无障碍名称列表、点击文本片段链接后的段落视口判定，都返回了 `true`。浏览器算出了文字在文档里的坐标，并把视口推到了对应位置。
 
-真正缺失的是展开动作。浏览器到达了坐标，却没有谁来把折叠容器撑开。到达和展开是两套独立的机制。手写的 CSS 折叠不会接收文本片段到达的通知，用户停在一片空白前，只能看到一条拉长的滚动条。
+真正缺失的是展开动作。浏览器到达了坐标，却没有谁来把折叠容器撑开。到达和展开是两套独立的机制。手写的 CSS 折叠不会接收文本片段到达的通知，用户停在一片空白前，只能看到一条拉长的滚动条。[回到被引那句话的文本片段](/zh/blog/zh/text-fragment-citation-deep-link-audit-2026/)测的是散文能否到达。这篇看到达之后，关上的界面会不会打开。
 
 ## 17 种隐藏写法，只有 10 种能把人带到文字面前
 
@@ -119,7 +119,7 @@ relatedPosts:
 实测中，“隐藏”分成了五种行为：
 
 1. 彻底不参与渲染与检索：`display: none` 与布尔值 `hidden`。
-2. 跳过绘制但保留检索能力：`hidden="until-found"` 与浏览器应用的 `content-visibility: hidden`。
+2. 跳过绘制但保留检索能力：`hidden="until-found"` 与浏览器应用的 `content-visibility: hidden`。[content-visibility 如何降低渲染开销](/zh/blog/zh/content-visibility-auto-render-cost-measure-2026/)里测过的 hidden 状态，正是 until-found 的默认样式。
 3. 视觉上裁剪但完整保留在文档树中：`max-height: 0`、`opacity: 0` 以及屏幕阅读器专用裁剪类。
 4. 从辅助技术接口中剥离：`aria-hidden="true"`。
 5. 从页面查找算法中屏蔽：`inert`。
@@ -140,7 +140,7 @@ WAI-ARIA 规范这样定义 `aria-hidden`：
 >
 > 来源: [WHATWG HTML Standard - inert subtrees](https://html.spec.whatwg.org/multipage/interaction.html#inert-subtrees)
 
-实测中加了 `inert` 的段落占据 18×1230 像素的正常渲染区域，`innerText` 能读到文字，`window.find` 却返回 `false`。文本片段点击后滚动条停在 0，点击 `#id` 锚点时跳到了 6085 像素。
+实测中加了 `inert` 的段落占据 18×1230 像素的正常渲染区域，`innerText` 能读到文字，`window.find` 却返回 `false`。文本片段点击后滚动条停在 0，点击 `#id` 锚点时跳到了 6085 像素。[inert 如何阻断焦点与移动](/zh/blog/zh/modal-focus-escape-inert-measure-2026/)是同一属性在模态框里的记录。这里它只拒绝搜索和文本片段，锚点跳转仍通过。
 
 ## 浏览器的默认样式表如何接管 until-found
 

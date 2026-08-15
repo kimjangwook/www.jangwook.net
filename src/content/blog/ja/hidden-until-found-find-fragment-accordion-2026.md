@@ -1,6 +1,6 @@
 ---
 title: 'アコーディオンを隠す17通りと、テキストフラグメントが白紙に跳ぶ条件'
-description: 'アコーディオンの隠し方17通りをChromiumに通し、window.find、テキストフラグメント、アクセシビリティツリーでの到達と開示を測った。max-height:0は白紙のまま6083px跳び、hidden="until-found"はUAスタイルシートによって開かれた。到着と開示が別の仕事である理由を実測で整理する。'
+description: 'アコーディオンの隠し方17通りをChromium 143に通し、window.findとテキストフラグメント、アクセシビリティツリーで到達と開示を測った。max-height:0は白紙のまま6083px跳び、until-foundはUAスタイルで開く。到着と開示が別の仕事であることを実測で整理する。'
 pubDate: '2026-08-15'
 heroImage: '../../../assets/blog/hidden-until-found-find-fragment-accordion-2026/hero.png'
 tags:
@@ -66,7 +66,7 @@ relatedPosts:
 
 「隠す」は一つのスイッチではない。内部処理では、完全除外、描画省略、領域の切り抜き、支援技術ツリーからの除外、対話と検索の無効化という五つの仕事に分かれる。
 
-到達は対象の座標を特定してスクロールを完了すること、開示は隠された要素を表示状態へ戻すこと。この二つは別の処理だ。
+到達は対象の座標を特定してスクロールを完了すること、開示は隠された要素を表示状態へ戻すこと。この二つは別の処理だ。[引用文へ戻るテキストフラグメント](/ja/blog/ja/text-fragment-citation-deep-link-audit-2026/)は散文の到達を測った先行記録だ。本稿はその到達が閉じたUIに当たったとき開くかを見る。
 
 ## 17通りの隠し方をChromiumに通した
 
@@ -100,11 +100,11 @@ relatedPosts:
 
 `window.find()` が `true` を返したのは 17 セル中 10 セル。テキストフラグメントで到達したのも同じ 10 セルで、失敗したのは表の 7 種類だ。
 
-IDハッシュは 12 セルで成功した。`visibility:hidden` と `inert` はフラグメントを拒絶するが、ハッシュは受け入れる。検索とフラグメントは同じ門ではない。
+IDハッシュは 12 セルで成功した。`visibility:hidden` と `inert` はフラグメントを拒絶するが、ハッシュは受け入れる。検索とフラグメントは同じ門ではない。[inertがフォーカスと探索を切る記録](/ja/blog/ja/modal-focus-escape-inert-measure-2026/)と同じ属性が、ここでは検索とフラグメントだけを拒んだ。
 
 ## UAスタイルシートが適用するcontent-visibility
 
-WHATWGのレンダリング仕様にあるUAスタイルシートの規則を、Chromium 143 の `#box-until`（`hidden="until-found"` の要素）で確かめた。
+WHATWGのレンダリング仕様にあるUAスタイルシートの規則を、Chromium 143 の `#box-until`（`hidden="until-found"` の要素）で確かめた。[content-visibilityが描画コストを削る計測](/ja/blog/ja/content-visibility-auto-render-cost-measure-2026/)で見た hidden 状態が、until-found のUAスタイルでも使われる。
 
 `display` は `block` のまま、`content-visibility` だけが `hidden` だった。余白のない `#box-until` の `getBoundingClientRect()` は高さ 0px、幅 1230pxの `0×1230`、内側の段落は高さ 18pxを返した。
 

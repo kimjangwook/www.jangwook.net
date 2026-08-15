@@ -1,6 +1,6 @@
 ---
 title: 'GEO対策を削り、Search Consoleの制御点だけを測った'
-description: 'robots.txtの45行とライブ106行、llms.txtの404を測った。Google公式のGEO案内とSearch Consoleの除外設定の境界を記録する。'
+description: '公開 robots.txt は106行、リポジトリは45行だった。llms.txt は404で Google Search は使わないと書く。Search Console の生成AIスイッチはプルリクに出ない。公式GEO案内を公開URL八枚の生バイトと突き合わせ、差分61行を記録した実測メモである。'
 pubDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'
 tags: ['geo', 'google-search-console', 'robots-txt', 'seo', 'web-development']
@@ -86,7 +86,7 @@ Googleの生成AI最適化ガイドの記述だ。
 
 > “Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.” ([Google Search Central](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide))
 
-作らないと決めた。外部リストに追従してファイルを増やす必要はない。Google検索に対して公式文書は効果を約束していない。
+作らないと決めた。外部リストに追従してファイルを増やす必要はない。Google検索に対して公式文書は効果を約束していない。[robots.txtとllms.txtをクローラー制御として分けた記録](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026/)と同じ層だ。今回はGoogleが検索に使わないと書いた文を、公開URLの404と並べた。
 
 ## 入口を閉じる設定はプルリクに出てこない
 
@@ -112,13 +112,13 @@ data-nosnippet: 0
 body text containing "nosnippet": 1
 ```
 
-`nosnippet` の1件は指示子ではなく本文の単語だった。JSON-LDにはトップの `Organization`、`ImageObject`、`Person`、`WebSite`、言語トップの `FAQPage`、記事の `WebPage`、`SpeakableSpecification`、`BreadcrumbList`、`BlogPosting` があった。
+`nosnippet` の1件は指示子ではなく本文の単語だった。[robots metaがheadの外へ落ちる着地点](/ja/blog/ja/robots-meta-head-body-parser-placement-2026/)を測ったあとの再集計である。対象はパーサー用フィクスチャではなく公開8枚の生HTMLだ。JSON-LDにはトップの `Organization`、`ImageObject`、`Person`、`WebSite`、言語トップの `FAQPage`、記事の `WebPage`、`SpeakableSpecification`、`BreadcrumbList`、`BlogPosting` があった。
 
 専用の生成AIタグはなく、構造化データの型も引用や表示を保証しない。Google公式も追加要件を置いていない。
 
 > “There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary.” ([Google Search Central](https://developers.google.com/search/docs/appearance/ai-features))
 
-JSON-LDを足しても掲載は保証されない。分かったのは、8ページが応答し、`meta robots` と `data-nosnippet` がなかったことまでだ。
+JSON-LDを足しても掲載は保証されない。分かったのは、8ページが応答し、`meta robots` と `data-nosnippet` がなかったことまでだ。[スニペット指示子がAI Overviewへの入力を切る経路](/ja/blog/ja/robots-snippet-controls-ai-overviews-2026/)は、このページ層に属する。8枚にその指示子はなかった。
 
 ## 測っていない数字を報告書から外した
 

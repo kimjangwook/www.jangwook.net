@@ -1,6 +1,6 @@
 ---
 title: 'GEO 控制：开关在 Search Console'
-description: '线上 robots.txt 比仓库多 61 行，llms.txt 返回 404。生成式 AI 搜索的控制项在 Search Console。'
+description: '线上 robots.txt 是 106 行，仓库文件只有 45 行。llms.txt 返回 404，Google 写明搜索不会读取它。Search Console 的生成式 AI 开关不会出现在 PR 里。我把官方 GEO 文档和八个公开 URL 的实际字节逐项对照，记下了这 61 行未审查的差额。'
 pubDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'
 tags:
@@ -77,7 +77,7 @@ Google 的官方指南原文写得很直接：
 
 > “Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.”（[Google Search：生成式 AI 功能优化指南](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)）
 
-我没补空文件，也没列入修复项。写它增加维护负担，且没有来自 Google 官方文档的收益证据。
+我没补空文件，也没列入修复项。写它增加维护负担，且没有来自 Google 官方文档的收益证据。这和[把 robots.txt 与 llms.txt 当作爬虫控制分开看](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026/)是同一层。这次是把 Google「搜索不读」的原文和公开 404 放在一起。
 
 这不代表所有系统都忽略它。Google 只说明 Google Search 的处理方式；若服务其他读取 `llms.txt` 的系统，需单独验证。
 
@@ -85,7 +85,7 @@ Google 的官方指南原文写得很直接：
 
 我抓了首页、`/ko/`、`/en/`、`/ko/blog/`、3 篇文章和 `/ko/contact/`，8 个 URL 均返回 HTTP 200。
 
-HTML 解析结果：0 个 `<meta name="robots">`，0 个 `data-nosnippet` 属性。正文仅出现 1 次 `nosnippet`，属于普通文字而非控制标签。
+HTML 解析结果：0 个 `<meta name="robots">`，0 个 `data-nosnippet` 属性。正文仅出现 1 次 `nosnippet`，属于普通文字而非控制标签。[robots meta 从 head 落到何处](/zh/blog/zh/robots-meta-head-body-parser-placement-2026/)测过之后再数一遍。对象不是解析器夹具，而是八张公开页的原始 HTML。
 
 首页 JSON-LD 有 Organization、ImageObject、Person、WebSite；`/ko/` 与 `/en/` 增加 FAQPage；文章页增加 WebPage、SpeakableSpecification、BreadcrumbList、BlogPosting。有结构化数据，不等于 AI 搜索会引用这些页面。
 
@@ -107,7 +107,7 @@ Search Console 新增的 Search generative AI control，控制站点是否进入
 
 ## 给产品、设计和开发的本周取舍
 
-若要保持进入 AI Overviews 或 AI Mode 的资格，先做三件事：对比线上与仓库的 `robots.txt`；检查 HTML 是否误放 `noindex`、`nosnippet` 或 `data-nosnippet`；在 Search Console 中核对 Search generative AI control 与父级继承关系。
+若要保持进入 AI Overviews 或 AI Mode 的资格，先做三件事：对比线上与仓库的 `robots.txt`；检查 HTML 是否误放 `noindex`、`nosnippet` 或 `data-nosnippet`；在 Search Console 中核对 Search generative AI control 与父级继承关系。[摘要指令如何切断 AI Overview 输入](/zh/blog/zh/robots-snippet-controls-ai-overviews-2026/)就在这一层。八张响应里没有这些指令。
 
 产品看 106 与 45：线上与仓库之间有 61 行审查空白。设计无需为 AI 拆页面或切碎文案，官方未作要求。开发需将 CDN 前缀纳入发布检查，避免线上脱离仓库。
 

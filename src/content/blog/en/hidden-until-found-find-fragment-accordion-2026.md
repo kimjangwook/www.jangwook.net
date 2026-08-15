@@ -66,17 +66,17 @@ Inside that panel, `getBoundingClientRect()` reported a box height of 0 pixels. 
 
 I had assumed `max-height: 0` was one of the cases Chrome called impossible to search. It was not. In my fixture, `window.find("TOKENCSSMAXH")` returned `true`, the token appeared in the CDP accessibility tree dump, and the fragment click marked the element as in view.
 
-The browser found the text, calculated the scroll target, and landed at pixel 6083. It did not expand the container. `max-height: 0` is purely visual, so the browser has no semantic hook to know that the box must expand. The scroll succeeded; the reveal never happened.
+The browser found the text, calculated the scroll target, and landed at pixel 6083. It did not expand the container. `max-height: 0` is purely visual, so the browser has no semantic hook to know that the box must expand. The scroll succeeded; the reveal never happened. [Text-fragment links that return to a cited sentence](/en/blog/en/text-fragment-citation-deep-link-audit-2026/) measured arrival in prose. This fixture asks whether that arrival opens a closed UI.
 
 ## Hiding text turns out to be five different jobs
 
 Before running the matrix, I treated "hiding text" as a single binary switch: either an element is rendered or it is not. The test fixture split that assumption into five distinct behaviors:
 
 1. **Not rendered**: `display: none` and boolean `hidden`. The element has no box or geometry and is invisible to find-in-page, fragments, and accessibility trees.
-2. **Paint skipped but searchable**: `hidden="until-found"` and UA-applied `content-visibility: hidden`. The element retains layout containment and a box. Child paint is skipped, but text remains reachable by search and URL fragments.
+2. **Paint skipped but searchable**: `hidden="until-found"` and UA-applied `content-visibility: hidden`. The element retains layout containment and a box. Child paint is skipped, but text remains reachable by search and URL fragments. I previously [measured how content-visibility cuts render cost](/en/blog/en/content-visibility-auto-render-cost-measure-2026/). until-found applies that same property through the UA stylesheet.
 3. **Clipped in tree**: `max-height: 0`, `opacity: 0`, and off-screen screen-reader clips (`.sr-only`). The layout tree constructs the elements, but visual output is clipped or transparent.
 4. **Stripped from accessibility names**: `aria-hidden="true"`. Content paints, but the accessibility tree ignores it.
-5. **Ignored by search**: `inert`. The element paints, but find-in-page cannot match text inside it.
+5. **Ignored by search**: `inert`. The element paints, but find-in-page cannot match text inside it. [How inert blocks focus and traversal](/en/blog/en/modal-focus-escape-inert-measure-2026/) is the same attribute in a modal. Here it refused find and fragments, then accepted a hash link.
 
 When I checked the JavaScript property `HTMLElement.hidden` on a node with `hidden="until-found"`, I expected it to return a boolean `true`. It did not. The IDL getter returned the string `"until-found"`.
 

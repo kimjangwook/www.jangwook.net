@@ -1,6 +1,6 @@
 ---
 title: 'robots.txt는 45줄인데 배포본은 106줄이었다: 공식 GEO 제어를 내 사이트에서 확인한 날'
-description: '내 사이트의 공개 robots.txt와 저장소 파일이 45줄 대 106줄로 달랐다. llms.txt, Search Console, HTML을 나눠 Google 공식 문서와 실제 바이트를 대조했다.'
+description: '공개 robots.txt는 106줄이고 저장소 파일은 45줄이었다. llms.txt는 404였고 Google은 검색에 쓰지 않는다고 적는다. Search Console 생성형 AI 스위치는 PR에 없다. 공식 GEO 문서를 공개 URL 여덟 장의 바이트와 대조한 기록이다.'
 pubDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'
 tags:
@@ -88,7 +88,7 @@ HTTP/2 404
 
 > Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.
 
-404라는 사실만으로 파일을 만들 이유는 생기지 않았다. 외부 GEO 도구를 쓰지 않았고 수치를 믿지도 않았다. 같은 가이드는 생성형 검색을 별개 순위로 떼어놓지 않는다.
+404라는 사실만으로 파일을 만들 이유는 생기지 않았다. [robots.txt와 llms.txt를 크롤러 제어로 나눈 기록](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026/)과 같은 층이다. 이번엔 Google이 그 파일을 검색에 쓰지 않는다고 명시한 문장을 공개 URL의 404와 나란히 둔다. 외부 GEO 도구를 쓰지 않았고 수치를 믿지도 않았다. 같은 가이드는 생성형 검색을 별개 순위로 떼어놓지 않는다.
 
 > From Google Search's perspective, optimizing for generative AI search is optimizing for the search experience, and thus still SEO.
 
@@ -102,7 +102,7 @@ Search Console에 로그인하지 않아 이 속성에 메뉴가 실제로 보�
 
 `/`, `/ko/`, `/en/`, `/ko/blog/`, 글 세 편, `/ko/contact/` 여덟 장을 공개 URL로 가져왔다. 모두 HTTP 200이었다.
 
-HTML을 정규식으로 확인했다. `<meta name="robots">`와 `data-nosnippet` 속성은 0개였다. 본문에 `nosnippet` 단어가 들어간 페이지가 하나 있었으나 지시자가 아닌 설명 문장이었다.
+HTML을 정규식으로 확인했다. `<meta name="robots">`와 `data-nosnippet` 속성은 0개였다. [robots meta가 head 밖으로 떨어지는 착지점](/ko/blog/ko/robots-meta-head-body-parser-placement-2026/)을 잰 뒤에 다시 센 값이다. 이번엔 파서 픽스처가 아니라 공개 여덟 장의 생 HTML이다. 본문에 `nosnippet` 단어가 들어간 페이지가 하나 있었으나 지시자가 아닌 설명 문장이었다.
 
 여덟 페이지 안에 스니펫 축소 지시자가 없음을 확인했을 뿐, Google의 표시 판단 전체를 뜻하지는 않는다.
 
@@ -124,7 +124,7 @@ JSON-LD도 확인했다. 홈에는 `Organization`, `ImageObject`, `Person`, `Web
 
 첫째는 Search Console 속성 스위치다. 생성형 AI 기능 포함 여부를 정한다. 기본값은 포함이며, 제외를 고르면 링크와 근거 입력, 노출과 트래픽이 빠진다. 이 층은 PR diff에 나타나지 않으므로 화면에서 확인해야 한다.
 
-둘째는 색인과 스니펫을 다루는 페이지 지시자다. 검색에서 완전히 빼는 `noindex`, 스니펫을 줄이는 robots meta와 `data-nosnippet`가 속한다. `robots.txt`는 크롤러가 먼저 받는 응답이며, 내 사이트는 저장소 45줄과 공개 106줄로 갈렸다.
+둘째는 색인과 스니펫을 다루는 페이지 지시자다. 검색에서 완전히 빼는 `noindex`, 스니펫을 줄이는 robots meta와 `data-nosnippet`가 속한다. [스니펫 지시자가 AI Overview 입력을 끊는 경로](/ko/blog/ko/robots-snippet-controls-ai-overviews-2026/)는 이 둘째 층이다. 여덟 장에는 그 지시자가 없었다. `robots.txt`는 크롤러가 먼저 받는 응답이며, 내 사이트는 저장소 45줄과 공개 106줄로 갈렸다.
 
 셋째는 구조화 데이터다. JSON-LD는 리치 결과 자격과 연결될 뿐 생성형 검색 전용 자격을 만들지 않는다.
 

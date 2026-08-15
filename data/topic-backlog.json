@@ -6941,6 +6941,57 @@
       "added_at": "2026-08-14",
       "status": "queued",
       "notes": "토요일 비교 백업. 'AI에서 빼기'를 한 덩어리로 묶는 업계 글을 깨는 표: 스니펫 입력 / 생성형 표시 / 학습 크롤. 자사 페이지에 nosnippet이 있는지, Google-Extended가 라이브 robots.txt에 있는지, GSC 스위치는 HTML에 없는지를 같은 감사로 센다. official-geo·robots-snippet·ai-crawler 세 글의 내부링크 허브가 된다."
+    },
+    {
+      "slug": "details-name-exclusive-accordion-2026",
+      "title_idea": "name 하나만 붙이면 details가 서로를 닫는다 — exclusive accordion 실측",
+      "content_type": "how-to",
+      "target_keyword": "details name exclusive accordion",
+      "secondary_keywords": [
+        "HTML details name 속성",
+        "hidden until-found vs details",
+        "아코디언 검색 가능"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "WHATWG HTML details element name attribute (exclusive accordion). Chrome for Developers hidden=until-found. Follow-up to 2026-08-15 hidden-until-found post: live FAQ.astro already uses details. Measure name-grouped exclusive open vs until-found vs CSS max-height on this site FAQ.",
+      "added_at": "2026-08-15",
+      "status": "queued",
+      "notes": "일요일은 sunday-strategy라 월요일(how-to) 후보. 오늘 글이 until-found와 details를 갈랐으니, name으로 묶인 exclusive accordion이 find/fragment/beforematch와 어떻게 겹치는지를 같은 픽스처에 칸을 더해 잰다. 차별화: 스펙 소개가 아니라 FAQ.astro에 name을 붙이기 전후 17셀+라이브 페이지 재측정."
+    },
+    {
+      "slug": "scroll-state-queries-sticky-header-2026",
+      "title_idea": "스크롤 방향이 헤더를 숨긴다 — scroll-state(scrolled)와 스티키 헤더 실측",
+      "content_type": "how-to",
+      "target_keyword": "CSS scroll-state scrolled 쿼리",
+      "secondary_keywords": [
+        "Hidey Bar sticky header",
+        "container-type scroll-state",
+        "WCAG 2.4.11 포커스 가림"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome for Developers, What's new in web UI (I/O 2026): scroll-state queries scrolled, e.g. scroll-state(scrolled: bottom). https://developer.chrome.com/blog/new-in-web-ui-io26",
+      "added_at": "2026-08-15",
+      "status": "queued",
+      "notes": "월요일 how-to. 기존 focus-not-obscured·reflow 글의 스티키 헤더(82px/96px scroll-padding)에 hidey-bar를 붙이면 2.4.11과 1.4.10 숫자가 어떻게 바뀌는지가 본문. 기능 소개가 아니라 같은 감사 스크립트 재실행."
+    },
+    {
+      "slug": "find-in-page-vs-window-find-ua-gap-2026",
+      "title_idea": "window.find가 찾은 10칸과 Cmd+F가 찾은 칸은 같았는가",
+      "content_type": "how-to",
+      "target_keyword": "find-in-page window.find 차이",
+      "secondary_keywords": [
+        "WHATWG find-in-page",
+        "hidden until-found beforematch",
+        "Cmd+F 아코디언"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "WHATWG HTML Issue #3539 (find-in-page vs window.find). Today's hidden-until-found post used window.find as a proxy and stated the user-facing find UI was unmeasured.",
+      "added_at": "2026-08-15",
+      "status": "queued",
+      "notes": "월요일 how-to 백업. 오늘 글의 명시적 한계(window.find ≠ 검색창 UI)를 같은 17셀 픽스처에서 CDP/Playwright 키보드 Cmd+F로 메운다. 숫자가 같으면 한계를 접고, 다르면 어느 숨김이 갈리는지가 오리지널."
     }
   ]
 }

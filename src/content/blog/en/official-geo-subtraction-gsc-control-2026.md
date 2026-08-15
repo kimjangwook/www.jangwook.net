@@ -1,6 +1,6 @@
 ---
 title: 'The GEO Control That Never Appeared in My Pull Request'
-description: 'My live robots.txt was 61 lines longer than Git, llms.txt returned 404, and a Search Console setting sat outside both. Here is the control path I could actually verify.'
+description: "Live robots.txt was 106 lines; Git had 45. llms.txt returned 404. Google Search ignores it. Search Console's generative AI switch never lands in a pull request."
 pubDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'
 tags:
@@ -89,7 +89,7 @@ Google's generative AI optimization guide states:
 
 The guide also notes: “From Google Search's perspective, optimizing for generative AI search is optimizing for the search experience, and thus still SEO.” [The guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) is the source, not a third-party GEO score.
 
-I would not add `llms.txt` to this site's Google Search backlog. That is a decision about Google Search, not other systems. The 404 closes a proposed task without a deployment change.
+I would not add `llms.txt` to this site's Google Search backlog. That is a decision about Google Search, not other systems. The 404 closes a proposed task without a deployment change. That sits on the same layer as [splitting robots.txt and llms.txt as crawler controls](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026/). This time I put Google's ignore sentence next to a public 404.
 
 ## The switch that can cut off the whole site lives in Search Console
 
@@ -119,7 +119,7 @@ The control is not a ranking switch or a replacement for indexing. A page must b
 
 [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 
-I checked eight public URLs: `/`, `/ko/`, `/en/`, `/ko/blog/`, three posts, and `/ko/contact/`. All eight returned HTTP 200, with zero `<meta name="robots">` tags and zero `data-nosnippet` attributes. One page contained `nosnippet` in body copy, not as a directive.
+I checked eight public URLs: `/`, `/ko/`, `/en/`, `/ko/blog/`, three posts, and `/ko/contact/`. All eight returned HTTP 200, with zero `<meta name="robots">` tags and zero `data-nosnippet` attributes. One page contained `nosnippet` in body copy, not as a directive. [Snippet directives that cut AI Overview input](/en/blog/en/robots-snippet-controls-ai-overviews-2026/) live on this page layer. None of the eight responses carried them.
 
 This raw-HTML check reads the server response, not the post-JavaScript DOM:
 
@@ -132,7 +132,7 @@ print('data-nosnippet attrs:', len(re.findall(r'<[^>]+data-nosnippet', html, re.
 PY
 ```
 
-I did not re-run the `nosnippet` parser from the earlier post; this was a separate count of live HTML. No page-level snippet directive appeared in these responses, but that does not establish indexing, an AI citation, or an enabled Search Console control.
+I did not re-run the `nosnippet` parser from the earlier post; this was a separate count of live HTML. The earlier post was [where robots meta actually lands after parsing](/en/blog/en/robots-meta-head-body-parser-placement-2026/). This count is live HTML, not the parser fixture. No page-level snippet directive appeared in these responses, but that does not establish indexing, an AI citation, or an enabled Search Console control.
 
 JSON-LD was present: the home page emitted `Organization`, `ImageObject`, `Person`, and `WebSite`; `/ko/` and `/en/` added `FAQPage`; posts added `WebPage`, `SpeakableSpecification`, `BreadcrumbList`, and `BlogPosting`. I parsed these types from live HTML, not as a claim to a rich result or generative-search slot. Google states structured data is not required for generative AI search and has no dedicated type, though it feeds rich-result eligibility.
 
