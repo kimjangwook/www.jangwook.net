@@ -1,185 +1,143 @@
 ---
-title: '本番robots.txtがgitより長い日のGEO作業'
-description: '公式GEOガイドはllms.txtと専用スキーマを検索信号にしない。今日公開URLで測ったのはllms.txtの404、本番robots.txt 106行（gitは45行）、コードレビューに乗らないSearch Consoleの生成AIプロパティ制御だ。順位信号ではなく、表示の資格についての話である。'
+title: 'GEO対策を削り、Search Consoleの制御点だけを測った'
+description: 'robots.txtの45行とライブ106行、llms.txtの404を測った。Google公式のGEO案内とSearch Consoleの除外設定の境界を記録する。'
 pubDate: '2026-08-14'
-updatedDate: '2026-08-14'
 heroImage: '../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png'
-tags:
-  - SEO
-  - GEO
-  - AIO
-  - Search-Console
-faq:
-  - question: 'llms.txtを置けばAI Overviewに有利か'
-    answer: 'ならない。Search Centralの生成AI最適化ガイドは、Google Searchがこのファイルを無視し、作っても可視性や順位に得も損もないと書いている。別のサービスが読むなら残してよいが、Google Searchの作業ではない。'
-  - question: '生成検索専用のschema.orgはあるか'
-    answer: '公式文書はないとしている。構造化データはリッチリザルトの資格には今も使う。生成検索のための専用マークアップを足す必要はなく、順位や引用を保証もしない。'
-  - question: 'Search Consoleの生成AI制御を切ると通常検索からも落ちるか'
-    answer: 'ヘルプは、この制御が特定の生成AI機能の表示にだけ効き、検索の他の部分の順位・掲載シグナルではないと書く。学習制限はGoogle-Extended、検索全体からの除外はnoindex。制御UIはまだ一部プロパティへの段階公開だ。'
+tags: ['geo', 'google-search-console', 'robots-txt', 'seo', 'web-development']
 relatedPosts:
   - slug: robots-snippet-controls-ai-overviews-2026
-    score: 0.88
+    score: 0.9
     reason:
-      ko: 페이지에 nosnippet을 심으면 AI Overview 입력에서 빠진다. 오늘은 그 위층, Search Console 속성에 생긴 스위치를 본다.
-      ja: ページに nosnippet を置くと AI Overview の入力から外れる。今日はその上、Search Console プロパティに付いたスイッチを見る。
-      en: nosnippet takes a page out of AI Overview input. This one looks at the switch that landed above that, on the Search Console property.
-      zh: 页面加上 nosnippet，就会从 AI Overview 的输入里拿掉。这篇看的是更上面那层：Search Console 资源上的开关。
+      ko: '검색 결과 스니펫을 줄이는 robots 지시자와 이번 글의 Search Console 생성형 AI 제어를 함께 비교할 수 있습니다.'
+      ja: '検索スニペットを制御するrobots指示子と、今回のSearch Console生成AI設定を並べて確認できる。'
+      en: 'Compares robots snippet directives with the Search Console generative AI control examined here.'
+      zh: '将控制搜索摘要的 robots 指令与本文检查的 Search Console 生成式 AI 设置放在一起比较。'
   - slug: ai-crawler-control-robots-txt-llms-txt-2026
     score: 0.86
     reason:
-      ko: 학습 봇과 검색 봇을 가르는 설계는 그쪽에 있다. 오늘은 그 robots.txt가 라이브에서 CDN 접두를 입고 길어진 상태를 잰다.
-      ja: 学習ボットと検索ボットを分ける設計はあちらにある。今日はその robots.txt がライブで CDN 接頭辞を着て長くなった状態を測る。
-      en: Splitting training bots from search bots is that post. This one measures the live file after a CDN prefix made it longer than git.
-      zh: 训练爬虫和搜索爬虫怎么分开，写在那篇。这篇量的是线上 robots.txt 被 CDN 前缀拉长之后。
+      ko: 'robots.txt와 llms.txt가 실제 크롤러 제어에서 어떤 역할을 하는지 이어서 확인할 수 있습니다.'
+      ja: 'robots.txtとllms.txtが実際のクローラー制御で何を担うかを続けて確認できる。'
+      en: 'Continues the examination of what robots.txt and llms.txt actually control for crawlers.'
+      zh: '继续检查 robots.txt 和 llms.txt 在爬虫控制中实际负责什么。'
   - slug: faqpage-deprecation-ai-citation-2026
-    score: 0.74
+    score: 0.68
     reason:
-      ko: 검증기를 통과한 FAQPage가 리치 결과에서는 이미 끝났다. 생성형 검색용 스키마를 하나 더 얹는 일도 같은 함정이다.
-      ja: 検証を通った FAQPage はリッチリザルトではもう終わっている。生成検索用スキーマを足すのも同じ穴だ。
-      en: A valid FAQPage already stopped producing a rich result. Adding a schema just for generative search is the same hole.
-      zh: 通过校验的 FAQPage，富结果这边已经收场了。再为生成式搜索加一种 schema，是同一个坑。
+      ko: '구조화 데이터와 AI 검색 노출을 같은 것으로 취급하면 안 되는 경계를 다룹니다.'
+      ja: '構造化データとAI検索での露出を同じものとして扱えない境界に続く。'
+      en: 'Extends the boundary between structured data and visibility in AI search.'
+      zh: '延伸结构化数据与 AI 搜索可见性之间不能混为一谈的境界。'
   - slug: validate-structured-data-ci-jsonld-2026
-    score: 0.7
+    score: 0.62
     reason:
-      ko: CI에서 JSON-LD를 막는 일은 리치 결과 쪽 일이다. 공식은 그 마크업을 생성형 검색의 입장권으로 보지 않는다.
-      ja: CI で JSON-LD を止める仕事はリッチリザルト側だ。公式はそのマークアップを生成検索の入場券にしていない。
-      en: Blocking bad JSON-LD in CI is still a rich-result job. Official text does not treat that markup as a ticket into generative search.
-      zh: 在 CI 里拦住坏 JSON-LD，仍是富结果的事。官方没把这套标记当成生成式搜索的门票。
+      ko: 'HTML과 JSON-LD를 실제로 파싱해 검증 결과와 검색 기능의 차이를 확인합니다.'
+      ja: 'HTMLとJSON-LDを実際に解析し、検証結果と検索機能の差を確認する記事。'
+      en: 'Checks HTML and JSON-LD directly to separate validation results from search features.'
+      zh: '直接解析 HTML 和 JSON-LD，区分校验结果与搜索功能之间的差异。'
   - slug: json-ld-graph-entity-linking-2026
-    score: 0.64
+    score: 0.58
     reason:
-      ko: 엔티티를 @graph로 묶는 작업은 남는다. 이유를 "AI Overview 전용 최적화"로 쓰면 공식 문서와 어긋난다.
-      ja: エンティティを @graph で結ぶ仕事は残る。理由を「AI Overview 専用最適化」と書くと公式とずれる。
-      en: Linking entities in an @graph still makes sense. Calling it an AI Overview-only optimization does not match the official guide.
-      zh: 用 @graph 串实体，这件事还在。但若写成“AI Overview 专用优化”，就和官方指南拧着。
+      ko: 'JSON-LD의 타입이 존재한다는 사실과 검색 시스템이 이를 어떻게 쓰는지는 별개라는 점을 잇습니다.'
+      ja: 'JSON-LDの型が存在することと、検索システムがそれをどう使うかは別だと確認できる。'
+      en: 'Connects the presence of JSON-LD types with the separate question of how search systems use them.'
+      zh: '把 JSON-LD 类型的存在与搜索系统如何使用它这个独立问题连接起来。'
 ---
 
-リポジトリの `public/robots.txt` を直したつもりだった。本番に `curl` したら行数が違った。45行と106行。バイトは 1,101 と 2,937。
+`public/robots.txt` は45行だった。公開URLを叩くと106行返ってきた。
 
-Search Console には入っていない。公開面だけ見た。
-
-![公式GEOは引き算リストとスイッチ一つ](../../../assets/blog/official-geo-subtraction-gsc-control-2026/hero.png)
-
-## 子が追従する条件
-
-親ドメインのプロパティで誰かが「除外」を押すと、個別設定していない URL-prefix の子はそれに従う。ブログを `https://example.com/blog/` に分けていても、親が先に手を入れれば子は既定で追従する。
-
-HTMLをいくら整えても、robots.txtをいくら分けても、そこの値が切れていれば生成機能の資格はその層で終わる。Search Console の [Search generative AI control](https://support.google.com/webmasters/answer/16908024)。経路は Settings > Search generative AI。
-
-選択肢は三つ。含める。除外する。親に従う。含めが全プロパティの既定値。除外すると AI Overview、AI Mode、Discover の生成機能からリンクもグラウンディング入力も消える。その機能からのインプレッションとトラフィックも消える。
-
-> This control only affects whether your content can appear in certain Search generative AI features; this control isn't used as a ranking or inclusion signal affecting other parts of Search.
-
-出典: [Search generative AI control](https://support.google.com/webmasters/answer/16908024)
-
-学習を絞るなら [Google-Extended](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers#google-extended)。検索全体から外すなら `noindex`。反映は制御が生きてからおおむね1〜2日。キャッシュで延びることがある。
-
-制御もレポートも、まだ一部サイトへの段階公開だ。2026年6月3日の [生成AIパフォーマンスレポート発表](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports) も一部プロパティから。数字はインプレッションであり、クリックでも順位でもない。Search Labs の実験データは入らない。画面が無いから除外されている、とは限らない。配信対象外か、生成機能のインプレッションがまだ足りないだけかもしれない。
-
-自分のプロパティにそのメニューがあるかは断言しない。断言できるのは、文書上の既定値が含めであることと、継承が書いてあることだ。
-
-チームなら順番を入れ替える。先に親ドメインの現在値を見る。子の URL-prefix が継承中か、手動で上書きしたかを書く。そのあとでテンプレートの robots meta と本番の robots.txt を見る。逆にすると、マークアップを一週間直しても生成機能から丸ごと抜けている状態を説明できない。変えた日の午後にレポートが動かないからといって戻す判断は早い。
-
-マークアップを触る人と Search Console の所有者が別チームなら、この層はコードレビューに乗らない。
-
-![資格は三層](../../../assets/blog/official-geo-subtraction-gsc-control-2026/three-layers.png)
-
-## 本番だけが長い robots.txt
+2026年8月14日朝、ログインなしで `jangwook.net` を測った。Gitの差分で済むと思っていた。
 
 ```bash
-curl -sI https://jangwook.net/llms.txt
-# HTTP/2 404
+$ wc -l public/robots.txt
+45 public/robots.txt
 
-curl -sL https://jangwook.net/robots.txt | wc -l
-# 106
+$ curl -sL https://jangwook.net/robots.txt | wc -l
+106
 ```
 
-`LLMs.txt` も `www` ホストも 404。Google Search が無視すると書いたファイルを、このサイトは置いていない。
+行数で61行、サイズも1,101バイトと2,937バイトで食い違う。<strong>差分の対象を間違えていた</strong>。レビューしたGitのファイルと、クローラーが読むCDN越しの応答は別だった。
 
-git 側は学習ボット（`GPTBot`、`ClaudeBot`、`CCBot`、`Google-Extended`）を止め、検索ボットと `*` には交差言語 URL だけを隠す。本番は手前に CDN の接頭辞が付く。`User-agent: *` に `Content-Signal: search=yes,ai-train=no,use=reference` があり、学習・拡張ボットへの `Disallow: /` がもう一度ある。Google-Extended の遮断グループは本番で二つ見える。リポジトリ本文はその後ろに続く。
+## Gitの45行とライブの106行が分かれた
 
-![gitのrobots.txtとライブ応答の行数](../../../assets/blog/official-geo-subtraction-gsc-control-2026/robots-live-vs-git.png)
+ライブ先頭にはリポジトリにないCDNが付与した接頭部があった。
 
-`Content-Signal` は、今日読んだ Search Central の robots.txt 案内では対応ルールとして確認できなかった。ファイルに書いてあることと、Googlebot がそのトークンを使うことは別だ。後者は断言しない。
+```text
+User-agent: *
+Content-Signal: search=yes,ai-train=no,use=reference
+```
 
-ページ8枚（`/`、`/ko/`、`/en/`、`/ko/blog/`、記事3本、`/ko/contact/`）はすべて HTTP 200。`<meta name="robots">` は0。`data-nosnippet` も0。本文に `nosnippet` という語が出るページはあったが、指示子ではなかった。`noindex` を付けたページだけタグを出す今のテンプレートと合う。
+学習・拡張ボット向け `Disallow: /` が加わり、Google-Extended の拒否グループはライブで2回、Gitで1回現れた。
 
-ホームの JSON-LD は `Organization`・`ImageObject`・`Person`・`WebSite`。`/ko/` と `/en/` には `FAQPage` がもう一つ付く。記事はそこに `WebPage`・`SpeakableSpecification`・`BreadcrumbList`・`BlogPosting` が乗る。今日の公式文では、そのマークアップは生成検索の入場券ではない。リッチリザルトとエンティティ整理の側に残る。[FAQPage のリッチリザルトが終わったあとも Q&A マークアップを残した理由](/ja/blog/ja/faqpage-deprecation-ai-citation-2026) と同じ線だ。
+`Content-Signal` をGooglebotが解釈するかは当時のSearch Central文書で確認できなかった。ファイルへの存在とGooglebotの消費は別だ。
 
-GEO の作業を「リポジトリにファイルを足す」だと捉えると、クローラーがすでに読んでいるファイルはリポジトリの外で伸びている。見るべきは `public/robots.txt` の diff ではなく、デプロイされた URL だ。
+リポジトリの編集だけでは決まらない。CDN接頭部を把握しないプルリクエストは公開状態を表さず、GEO制御の報告も実態を欠く。
 
-## ガイドが不要だと書いた作業
+## 最初に開いたGEO項目は404だった
 
-Google Search Central は 2026年5月15日に [生成AI機能の最適化ガイド](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) を出し、7月10日に直した。市販のチェックリストが先頭に置く `llms.txt` を、その文書は無視すると書く。
+チェックリストで推奨されやすい `llms.txt` の有無を確認した。
 
-> From Google Search's perspective, optimizing for generative AI search is optimizing for the search experience, and thus still SEO.
+```bash
+$ curl -sI https://jangwook.net/llms.txt | head -n 1
+HTTP/2 404
+```
 
-出典: [Optimizing your website for generative AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+`www` ホストや大文字の `LLMs.txt` も404で、ファイルは存在しない。
 
-バックログから落とす行は四つ。
+Googleの生成AI最適化ガイドの記述だ。
 
-`llms.txt` と専用の AI ファイル。Google Search は使わない。作っても可視性や順位に得も損もない。Google Search 用には作らない。別のシステムが読むなら、その目的だけ残す。
+> “Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.” ([Google Search Central](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide))
 
-モデルのために文章を細かく割る。要求していない。一つのページの複数トピックを理解すると書いてある。長さは読者基準で決める。
+作らないと決めた。外部リストに追従してファイルを増やす必要はない。Google検索に対して公式文書は効果を約束していない。
 
-AI だけを狙った言い換え。同義語と意味は理解するので、ロングテールごとにページを増やす必要はない。人向けの下書きを保つ。量産は [scaled content](https://developers.google.com/search/docs/essentials/spam-policies#scaled-content) とぶつかる。
+## 入口を閉じる設定はプルリクに出てこない
 
-生成検索専用の schema.org。要らない。専用マークアップもない。リッチリザルト用は残し、「AI Overview 用スキーマ」は新しく敷かない。
+Search Consoleの `Settings > Search generative AI` で選べる状態は `include`、`exclude`、親からの `inherit` の3つで、初期値は `include` だ。
 
-LLMS.txt の一文はさらに短い。
+`exclude` を選ぶと、AI Overviews、AI Mode、Discoverの生成AI機能でリンクや根拠に使われず、表示回数や流入も途絶える。ヘルプは制御範囲を限定している。
 
-> Doing so will neither harm nor help your site's visibility or rankings in Google Search, as Google Search ignores them.
+> “This control only affects whether your content can appear in certain Search generative AI features; this control isn't used as a ranking or inclusion signal affecting other parts of Search.” ([Search Console Help](https://support.google.com/webmasters/answer/16908024))
 
-出典: 同じ [最適化ガイド](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) の LLMS.txt 項目
+順位の保護ではなく、特定機能への露出を遮断するスイッチだ。
 
-[robots.txt と llms.txt でクローラーを分ける記事](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026) で学習用と検索用をすでに分けてあるなら、今日消す勘違いは一つ。Google がこのファイルを読む、という話だ。本番の robots.txt にはその記事 URL がコメントで残っている。指示子ではない。
+ここは実測値ではない。未ログインのためメニューの表示や選択状態は未確認だ。機能は順次展開中で、画面が見えないこと自体は除外の証拠にならない。
 
-偽の言及をウェブに埋めることも、公式は役に立たないと見ている。第三者ツールが「内部指標」を見るという主張も同じ文書が切っている。内部の順位や AI システムに入る第三者ツールはない。[第三者 SEO 助言の評価ガイド](https://developers.google.com/search/docs/fundamentals/third-party-seo) は AEO・GEO の助言を公式文書と照合しろと書く。ツールをワークフローに使うこと自体は止めていない。その数字を Google の数字として扱うな、という話だ。
+## 8ページを読ませても専用の札はなかった
 
-## リッチリザルト用の型は残す
+HTML側を測った。トップ、言語トップ、一覧、記事3本、問い合わせページの8ページを取得し、すべてHTTP 200だった。
 
-構造化データの節は二度読んだ。生成検索に必須ではなく、専用タイプもない。リッチリザルトの資格にはそのまま使うので、SEO の一部としては残せとある。自分はそれを「JSON-LD を消せ」とは読まなかった。「生成検索があるから型を一つ足すな」と読んだ。順位保証も、引用保証も、もともと無い。
+```text
+pages fetched: 8
+HTTP 200: 8
+meta name="robots": 0
+data-nosnippet: 0
+body text containing "nosnippet": 1
+```
 
-生成機能のリンクや根拠になるには、ページがインデックスされ、スニペットを出せる必要がある。[AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) の文はこうだ。
+`nosnippet` の1件は指示子ではなく本文の単語だった。JSON-LDにはトップの `Organization`、`ImageObject`、`Person`、`WebSite`、言語トップの `FAQPage`、記事の `WebPage`、`SpeakableSpecification`、`BreadcrumbList`、`BlogPosting` があった。
 
-> There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary.
+専用の生成AIタグはなく、構造化データの型も引用や表示を保証しない。Google公式も追加要件を置いていない。
 
-出典: [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+> “There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary.” ([Google Search Central](https://developers.google.com/search/docs/appearance/ai-features))
 
-技術要件とスパムポリシーと、人向けコンテンツのガイドはそのまま。それを守ってもクロール・インデックス・掲載は保証されない。検索がもともと持っていた留保だ。
+JSON-LDを足しても掲載は保証されない。分かったのは、8ページが応答し、`meta robots` と `data-nosnippet` がなかったことまでだ。
 
-スニペット側は一度測ってある。`nosnippet` と `max-snippet:0` が AI Overview・AI Mode の直接入力まで止める定義は [robots スニペット指示子の実測](/ja/blog/ja/robots-snippet-controls-ai-overviews-2026) にある。今日はそのパーサを回さない。上にプロパティの値が乗ったからだ。
+## 測っていない数字を報告書から外した
 
-## 見た目のボタンはツリーに残らない
+Search Consoleの生成AIパフォーマンスレポートは表示回数を数え、クリック数や順位、Search Labsデータは含まない。レポートを開いていないため、表示回数もクリックも引用数も書けない。
 
-ガイドの末尾はブラウザエージェントだ。予約、仕様比較。検索の引用とは筋が違う。触る表面は同じ。[web.dev の agent-friendly 案内](https://web.dev/articles/ai-agent-site-ux) は経路を三つ書く。スクリーンショット、生の HTML、アクセシビリティツリー。
+順位、インプレッション、引用、クリック、滞在時間、コンバージョン。6項目すべて未計測だ。`include` でスニペットを許可しインデックスされても、引用枠は保証されない。
 
-アクセシビリティツリーは役割・名前・状態を残し、飾りを捨てる。スクリーンリーダーが使う木と同じだ。`div` をボタンに見せかけると、DOM だけ読む側はボタンを見ず、スクリーンショットだけ見る側は位置は分かっても動作は分からない。
+必要なのは作業報告ではなく露出や流入の変化だ。今回の調査で答えられる数字はない。チケットの完了条件に置くべきは、対応したという言葉ではなく、測った対象と未計測の境界だ。
 
-最適化ガイドもセマンティック HTML を「完璧なコード」ではなく、可読性と支援技術のパースの側で説明する。ウェブ全体が妥当な HTML ではなく、Google はそれを理解すると書いてある。それでも `button` と `a` を使う理由は、検索クローラーだけではない。
+## 明日も同じサイトを測れるコマンド
 
-残る実装は地味だ。入力には `label for`。透明オーバーレイでクリック領域を隠さない。カテゴリごとにレイアウトが大きく跳ねないようにする。WCAG を書き直す仕事でもあり、エージェント用の新しいフォーマットを作る仕事ではない。
-
-web.dev はスクリーンショットだけを信じる経路が遅くて高いと書く。構造が濁ったときの補助だ。主経路をツリーと DOM に置くと、クローラーが読むテキストとエージェントが読む役割が同じマークアップから出る。検索用の隠しテキストを一つ足す仕事とは逆だ。
-
-## スタンドアップで聞く一行
+再現するなら、まずライブとGitを突き合わせる。Search Consoleのスイッチはコマンドで見えないため、ヘルプ仕様と実際の設定を分けて記録する。
 
 ```bash
 curl -sI https://example.com/llms.txt | head -n 1
-
 curl -sL https://example.com/robots.txt > /tmp/live-robots.txt
 diff -u public/robots.txt /tmp/live-robots.txt
 ```
 
-この二行では Search Console の値は見えない。その層はプロパティ設定にある。
+HTMLを読むときはHTTP 200、`meta name="robots"`、`data-nosnippet`、構造化データの型を記録する。順位や引用は推定しない。
 
-スプリントから落とすもの。Google Search 用の新しい `llms.txt`、専用の AI マークダウン、生成検索専用の schema.org、モデル用の段落分割、クエリごとのページ増殖、第三者の「内部指標」をデプロイゲートの数字にすること。
-
-残すもの。インデックスとスニペットの資格、本番 robots.txt と git の diff、親と子のプロパティの生成AI制御、セマンティック HTML、リッチリザルト用 JSON-LD の目的欄を「生成検索必須」ではなく「リッチリザルト資格」に書き直すこと。
-
-含めのままでも、スニペットが開いていても、インデックスされていても、Google がそのページを拾う約束は文書のどこにも無い。今日測ったのは資格がどこで切れるかだ。効果の大きさではない。
-
-本番の robots.txt とプロパティの値が食い違う地点を揃える仕事は、自分の実務だ。連絡先はプロフィールにある。
-
----
-*出典: Google Search Central の [生成AI機能の最適化ガイド](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)（2026-07-10 更新）、[AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)、[第三者SEO助言ガイド](https://developers.google.com/search/docs/fundamentals/third-party-seo)、[生成AIパフォーマンスレポート発表](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)（2026-06-03）、Search Console ヘルプの [Search generative AI control](https://support.google.com/webmasters/answer/16908024)・[Generative AI performance report](https://support.google.com/webmasters/answer/16984139)、web.dev の [Build agent-friendly websites](https://web.dev/articles/ai-agent-site-ux)（いずれも公式）。本文の英語ブロック引用4件は各原文ページを取得し空白を畳んで対照した文字列で、引用の脇に原文リンクを置いた。ライブ測定: 2026-08-14、`https://jangwook.net` の robots.txt・llms.txt・ページ8枚、curl + HTML パース。原資料は `data/official-geo-gsc-control-probe-2026.json`、図は `scripts/chart-official-geo-gsc-control.py`。Search Console にはログインしていない。Content-Signal はライブ robots.txt に存在するだけで、Google Search Central の robots.txt 対応ルールとしては確認できなかった。構造化データとこの制御は順位を保証しない。*
+確定したのは、ライブrobots.txtが106行、Gitが45行、`llms.txt` が404、8ページが200だったことだ。Search Consoleの設定は未確認のままだ。ここを埋めるまでGEO対応済みとは書かない。
