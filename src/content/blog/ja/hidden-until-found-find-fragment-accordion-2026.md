@@ -1,286 +1,157 @@
 ---
-title: 'フラグメントは届いたのに、閉じたアコーディオンは開かなかった'
-description: '同じ文を17マスに入れてChromium 143で測った。max-height:0はscrollY 6083でも箱の高さ0。detailsは開く。本番FAQはすでにその扉だった。'
+title: 'アコーディオンを隠す17通りと、テキストフラグメントが白紙に跳ぶ条件'
+description: 'アコーディオンの隠し方17通りをChromiumに通し、window.find、テキストフラグメント、アクセシビリティツリーでの到達と開示を測った。max-height:0は白紙のまま6083px跳び、hidden="until-found"はUAスタイルシートによって開かれた。到着と開示が別の仕事である理由を実測で整理する。'
 pubDate: '2026-08-15'
 heroImage: '../../../assets/blog/hidden-until-found-find-fragment-accordion-2026/hero.png'
 tags:
+  - Web開発
   - HTML
-  - CSS
-  - SEO
   - アクセシビリティ
-  - Web標準
+  - ブラウザ仕様
+  - CSS
 faq:
-  - question: 'CSSのmax-height:0でもテキストフラグメントは届きますか。'
-    answer: 'このChromiumでは届いた。scrollYは6083まで下がった。ただしアコーディオンのdata-openは"0"のままで、箱の高さは0、elementFromPointはBODYを返した。到達と開示は別の仕事だった。'
-  - question: 'hidden=until-foundを足せば、検索がFAQの中までリンクしますか。'
-    answer: 'Chromeの文書は、検索が開示されたフラグメントへスクロールするリンクを作ると書いている。こちらでは検索結果もAI回答も見ていない。ベンダーの主張として読む。順位の約束でもない。'
-  - question: '閉じたdetailsの答えはインデックスされますか。'
-    answer: '測っていない。閉じた答えはinnerTextには無く、textContentとwindow.findにはあった。ブラウザのAPIであって、クローラーのログではない。'
-  - question: 'window.findはCmd+Fと同じですか。'
-    answer: '同じとは書いていない。WHATWGはwindow.findを未規定とし、Issue #3539で追跡している。本番のページ内検索UIは押していない。'
+  - question: 'hidden="until-found" を使えばどんなアコーディオンでも自動で開きますか。'
+    answer: '開きません。レイアウト包含の影響が必要で、著者が display: none や display: inline を指定すると開示されません。Chromium以外や非対応ブラウザでは閉じたままなので、onbeforematch in HTMLElement.prototype を判定します。'
+  - question: 'max-height: 0 で隠したアコーディオンにテキストフラグメントで飛ぶと何が起きますか。'
+    answer: 'スクロール位置は座標まで移動しますが、開閉状態を示す属性や外枠の高さ（0px）は変わりません。開くイベントも発火せず、画面には閉じた外枠や白紙の領域だけが残ります。'
+  - question: 'hidden="until-found" は display: none と何が違いますか。'
+    answer: '通常の hidden 属性は display: none、hidden="until-found" はUAスタイルシートで content-visibility: hidden になります。描画を省略しつつ検索・フラグメントの対象に残り、一致時に beforematch とともに属性が除去されます。'
+  - question: '<details> 要素を使っている場合は hidden="until-found" への移行が必要ですか。'
+    answer: '移行は必須ではありません。閉じた <details> は検索・フラグメント遷移の対象で、一致時にブラウザが open 属性を付けて展開します。自サイトでも同様に展開しました。'
 relatedPosts:
   - slug: text-fragment-citation-deep-link-audit-2026
-    score: 0.91
+    score: 0.90
     reason:
-      ko: 그 글은 인용 한 줄이 프로즈와 pre에서 도착하는지를 쟀다. 이번에는 그 문장이 닫힌 디스클로저 안에 있을 때 문이 열리는지를 잰다.
-      ja: あちらは引用の一文が散文とpreで届くかを測った。こちらはその文が閉じたdisclosureの中にいるとき、扉が開くかを測る。
-      en: That post measured whether a cited sentence arrived in prose versus pre. This one measures whether the door opens when that sentence sits in a closed disclosure.
-      zh: 那篇量的是引用的一句在散文和 pre 里能不能到达。这篇量的是那句话待在关上的 disclosure 里时，门会不会开。
+      ko: 그 글은 인용 링크가 도달하지 못하는 마크업 경계를 다뤘고, 이 글은 도달한 뒤 열리지 않는 펼침 메뉴 경계를 다룬다.
+      ja: あちらは引用リンクが到達できないマークアップ境界を扱い、こちらは到達したあとに開かない開閉境界を扱う。
+      en: That post covered markup boundaries where citation links fail to arrive. This one covers disclosure boundaries where links arrive but fail to open.
+      zh: 那篇讲的是引用链接无法到达的标记边界，这篇讲的是到达后打不开的折叠边界。
   - slug: content-visibility-auto-render-cost-measure-2026
     score: 0.83
     reason:
-      ko: "그쪽은 content-visibility: auto가 레이아웃 비용을 깎는 이야기였다. 오늘은 같은 속성 이름에 hidden이 붙지 않으면 find도 hash도 죽은 주소가 되는 쪽을 잰다."
-      ja: "あちらは content-visibility: auto がレイアウトのコストを削る話だった。今日は同じプロパティ名に hidden が付かないと、find も hash も死んだ住所になる側を測る。"
-      en: "That one measured how content-visibility: auto cuts layout cost. This one measures the same property name with no hidden attribute: find and hash both stay dead addresses."
-      zh: "那篇量的是 content-visibility: auto 怎么砍布局成本。这篇量的是同一个属性名、没有 hidden 时，find 和 hash 都是死地址。"
-  - slug: faqpage-deprecation-ai-citation-2026
-    score: 0.68
-    reason:
-      ko: FAQPage 마크업이 리치 결과에서 끝난 이야기를 그 글이 잡았다. 오늘은 그 FAQ의 닫힌 답이 브라우저에서 열릴 수 있는 주소인지를 잰다. 리치 결과는 다시 돌리지 않았다.
-      ja: FAQPage のマークアップがリッチリザルトで終わった話はあちらにある。今日はそのFAQの閉じた答えが、ブラウザで開く住所かどうかを測る。リッチリザルトは回していない。
-      en: That post caught FAQPage markup after the rich result ended. This one measures whether a closed FAQ answer is an address the browser can open. No rich-result re-run.
-      zh: 那篇记下了 FAQPage 标记在富结果里收场。这篇量的是关上的 FAQ 答案在浏览器里是不是还能打开的地址。富结果没再跑。
+      ko: content-visibility가 렌더링 비용을 건너뛰는 방식을 다룬 글이다. until-found는 같은 속성을 검색 가능성과 연결한다.
+      ja: content-visibilityが描画コストを省く仕組みを扱った記事。until-foundは同じプロパティを検索可能性と繋ぐ。
+      en: That post measured how content-visibility skips rendering cost. until-found ties that same property to searchability.
+      zh: 那篇测了 content-visibility 如何跳过渲染开销。until-found 把同一个属性与可搜索性连在了一起。
   - slug: modal-focus-escape-inert-measure-2026
-    score: 0.75
+    score: 0.74
     reason:
-      ko: inert를 모달 포커스용으로 잰 글이다. 오늘은 그 같은 속성이 페이지 안 검색과 텍스트 프래그먼트에서 무시되는 쪽을 본다.
-      ja: inert をモーダルのフォーカス用に測った記事だ。今日はその同じ属性が、window.find とテキストフラグメントから無視される側を見る。
-      en: That post measured inert for modal focus. This one watches the same attribute get ignored by find-in-page and by text fragments.
-      zh: 那篇把 inert 当模态焦点来测。这篇看同一个属性在页内查找和文本片段里被忽略的那一面。
+      ko: inert가 포커스를 가두는 방식을 다룬 글이다. 이번 측정에서는 inert가 페이지 내 검색과 프래그먼트를 거부하는 동작을 확인했다.
+      ja: inertがフォーカスを閉じ込める仕組みを扱った記事。今回の計測ではinertがページ内検索とフラグメントを拒絶する動作を確認した。
+      en: That post covered how inert traps focus. This measurement confirms how inert rejects find-in-page and fragments.
+      zh: 那篇讲了 inert 如何锁住焦点。这次测量确认了 inert 拒绝页面内查找和片段跳转的行为。
+  - slug: faqpage-deprecation-ai-citation-2026
+    score: 0.72
+    reason:
+      ko: FAQPage 구조화 데이터가 사라진 뒤 본문 접근성이 왜 중요해졌는지 다뤘다. 아코디언 안에 닫힌 텍스트가 바로 그 본문이다.
+      ja: FAQPage構造化データの廃止後になぜ本文の到達性が重要になったかを扱った記事。アコーディオンの中に閉じたテキストがその本文にあたる。
+      en: That post asked why body text accessibility matters after FAQPage deprecation. Text tucked inside accordions is that very body text.
+      zh: 那篇讲了 FAQPage 结构化数据退场后正文可达性为何重要。折叠在手风琴里的文本正是这些正文。
   - slug: content-on-hover-focus-1413-tooltip-2026
-    score: 0.61
+    score: 0.63
     reason:
-      ko: 호버로 열린 콘텐츠가 키보드로 닫히는지를 잰 글이다. 닫혀 있는 답을 텍스트 주소로 다시 여는 문제는 이웃이지만 같은 문은 아니다.
-      ja: ホバーで開いた中身をキーボードで閉じられるかを測った記事だ。閉じた答えをテキストの住所で開き直す問題は隣だが、同じ扉ではない。
-      en: That one measured whether hover content can be dismissed from the keyboard. Reopening a closed answer from a text address is a neighbor, not the same door.
-      zh: 那篇量的是悬停打开的内容能不能用键盘关掉。用文本地址重新打开关上的答案，是隔壁，不是同一扇门。
+      ko: 호버와 포커스로 나타나는 콘텐츠의 이탈을 다뤘다. 닫힌 영역이 사용자의 의도와 어긋나게 닫혀 있는 구조를 공유한다.
+      ja: ホバーやフォーカスで現れるコンテンツの消失を扱った記事。閉じた領域が利用者の意図と食い違って閉じ続ける構造を共有する。
+      en: That post covered disappearing hover/focus content. Both share the failure mode where hidden areas stay closed against user intent.
+      zh: 那篇讲了悬停和聚焦时出现的内容如何失控。两篇都涉及隐藏区域违背用户意图保持关闭的失效模式。
 ---
 
-`#tf-css-maxh` を押した。飛び先は `#:~:text=TOKENCSSMAXH`。scrollY は 6083 まで跳ねた。アコーディオンの `data-open` はまだ `"0"`。箱の `getBoundingClientRect` の高さは 0。中の段落は高さ 18、y 399.7。`elementFromPoint(640, 409)` が返したのはその文ではなく BODY だった。
+`#tf-css-maxh` をクリックした。リンク先は `#:~:text=TOKENCSSMAXH`。`window.scrollY` は 6083 まで跳んだが、アコーディオンの `data-open="0"` は動かない。外枠の高さは 0px、内側の段落は高さ 18px、y座標 399.7 だった。段落の中央で `elementFromPoint(640, 409)` を叩くと、返ったのは文ではなく `BODY`。バイト列はあるが描画はなく、ページは切り取られた不可視の領域へスクロールしていた。
 
-ページはクリップまでスクロールした。バイトはそこにあった。絵は出ていない。
+![アコーディオンの隠し方17通りとテキストフラグメントの到達](../../../assets/blog/hidden-until-found-find-fragment-accordion-2026/hero.png)
 
-マスごとに違う TOKEN 文を入れた。隠し方は17。ヘッドレス Chromium 143.0.7499.4、Playwright 1.57.0、Node 22.22、ビューポート 1280×800。静的サーバは `/tmp`。クリックのあと 200ms 待って、段落の矩形とビューポートを見比べた。
+## 到着と開示は別の仕事である
 
-「隠す」はスイッチ一つだと思っていた。違った。
+私は `max-height: 0` が「検索不能な領域」に該当すると思い込んでいた。だが実測値は違った。`window.find('TOKENCSSMAXH')` は `true`、アクセシビリティツリーにも名前があり、フラグメントの探索も一致した。欠けていたのは検索可能性ではなく、開示（reveal）の一手だった。
 
-![フラグメントは scrollY 6083 まで跳ね、アコーディオンの高さは 0 のまま](../../../assets/blog/hidden-until-found-find-fragment-accordion-2026/hero.png)
+「隠す」は一つのスイッチではない。内部処理では、完全除外、描画省略、領域の切り抜き、支援技術ツリーからの除外、対話と検索の無効化という五つの仕事に分かれる。
 
-## 祖先を開く手続きはdetailsにしか走らない
+到達は対象の座標を特定してスクロールを完了すること、開示は隠された要素を表示状態へ戻すこと。この二つは別の処理だ。
 
-閉じた `<details>` の中に、同じ型のトークンを置いた。`#tf-details-closed` をクリックする。`toggle` イベントが一つ出た。`open` が true にひっくり返る。scrollY は 4907。段落の高さ 18、画面の中。祖先を開く手続きが走った。
+## 17通りの隠し方をChromiumに通した
 
-CSS の `max-height: 0` には、その手続きが来なかった。フラグメントは「届いた」。箱は閉じたまま。
+推測で議論するのをやめ、ローカルサーバーにHTMLフィクスチャを作った。17通りの隠し方を並べ、各領域に固有のトークンを置いた。
 
-Chrome の文書。[Making collapsed content accessible with hidden=until-found](https://developer.chrome.com/docs/css-ui/hidden-until-found)。
+環境は Node 22.22、Playwright 1.57.0、ヘッドレスChromium 143.0.7499.4。画面は 1280×800 に固定した。
 
-> Collapsing content sections, sometimes described as an accordion, are a common UI pattern. However, content hidden in the collapsed sections becomes impossible to search using a find-in-page search. Also, it isn't possible to link to text fragments inside collapsed regions.
+各セルで、読み込み直後の `window.find(TOKEN)`、テキストフラグメントとIDハッシュをクリックした200ミリ秒後の段落の位置、CDPの `Accessibility.getFullAXTree` 出力におけるトークンの有無を調べた。
 
-仕様側の手続きは、アコーディオン一般ではなく、二つのフックにしか書いてない。[Interaction with details and hidden=until-found](https://html.spec.whatwg.org/multipage/interaction.html#interaction-with-details-and-hidden=until-found)。
+![17通りの隠し方における検索、フラグメント到達、IDハッシュ到達、アクセシビリティツリーの判定行列](../../../assets/blog/hidden-until-found-find-fragment-accordion-2026/hide-matrix.png)
 
-> When find-in-page begins searching for matches, all details elements in the page which do not have their open attribute set should have the skipped contents of their second slot become accessible, without modifying the open attribute, in order to make find-in-page able to search through it. Similarly, all HTML elements with the hidden attribute in the Hidden Until Found state should have their skipped contents become accessible without modifying the hidden attribute in order to make find-in-page able to search through them.
-
-`max-height: 0` は、この文のどちらにも入っていない。find は true。アクセシビリティ名にも TOKEN は残っていた。フラグメントはスクロールした。`elementFromPoint` は BODY。到着は開示ではない。
-
-## 飛ぶ前からfindは閉じた答えを持っていた
-
-本番の FAQ を見た。対象は `/ko/blog/ko/text-fragment-citation-deep-link-audit-2026/`。HTTP は 200。`details.faq-item` は 4 つ。コンポーネントが `open={index === 0}` なので、先頭だけ開いている。1〜3 は閉じたまま。
-
-閉じた答えの文は「코드 블록 자체를 인용 대상으로 만들기는 어렵습니다」。飛ぶ前、`document.body.innerText` には無かった。`textContent` にはあった。`window.find` は true を返した。
-
-`#:~:text=` をその文に向けて直接飛ばす。二つ目の details が開いた。`hitOpen: true`。scrollY 8752。開いた details の `getBoundingClientRect.top` は 373。
-
-このサイトの FAQ は、仕様が開ける扉をすでに使っていた。`FAQ.astro` のマークアップは `<details class="faq-item">`。[先の計測](/ja/blog/ja/text-fragment-citation-deep-link-audit-2026/) は散文と `<pre>` への到達だった。今日はその次の扉。文が閉じた details の中にいる場合。
-
-`hidden="until-found"` を本番 FAQ に足して出し直してはいない。見たのは、いま乗っている `<details>` だけ。
-
-閉じた答えが `textContent` にあることは、インデックスの証明ではない。Googlebot は回していない。リッチリザルトも Schema 検証も回していない。[FAQPage のマークアップがリッチリザルトで終わった話](/ja/blog/ja/faqpage-deprecation-ai-citation-2026/) は別の仕事のまま置いてある。
-
-## hiddenの二つの計算結果
-
-フィクスチャの `#box-until` に `hidden="until-found"` を付けた。計算値は `display: block` と `content-visibility: hidden`。コンテナの箱は 0×1230。子の段落は高さ 18 を返した。`innerText` は false。`window.find` は true。
-
-`#tf-until` をクリックする。`beforematch` が `#box-until` で一度出た。`hidden` 属性は消えていた。scrollY 4352。画面の中。
-
-ただの `hidden`、`hidden="hidden"`、著者の `display: none` は一つの家族。`window.find` は false。フラグメントも hash も 0。既定の `hidden` はアコーディオンの家族ではない。
-
-計算値は UA ルールと揃っていた。`hidden=""` / `hidden="hidden"` の `display` は `none`。[Hidden elements](https://html.spec.whatwg.org/multipage/rendering.html#hidden-elements)。
-
-```css
-[hidden]:not([hidden=until-found i]):not(embed) {
-  display: none;
-}
-
-[hidden=until-found i]:not(embed) {
-  content-visibility: hidden;
-}
-```
-
-`hidden="until-found"` のノードで、`HTMLElement.hidden` の IDL ゲッタが返したのは boolean の true ではなく、文字列 `"until-found"`。Chromium 143 では `'onbeforematch' in HTMLElement.prototype` が true。
-
-WHATWG の [hidden 属性](https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute)。
-
-> Will not be rendered, but content inside will be accessible to find-in-page and fragment navigation.
-
-[同じ節](https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute) の続き。
-
-> Web browsers will use 'content-visibility: hidden' instead of 'display: none' when the hidden attribute is in the Hidden Until Found state, as specified in the Rendering section.
-
-Chrome の文書。[Making collapsed content accessible with hidden=until-found](https://developer.chrome.com/docs/css-ui/hidden-until-found)。
-
-> hidden=until-found applies the content-visibility:hidden CSS property instead of the display:none property that the regular hidden attribute applies.
-
-タブのパネルを `hidden` で隠すな、とも仕様は書く。
-
-> The hidden attribute must not be used to hide content that could legitimately be shown in another presentation. For example, it is incorrect to use hidden to hide panels in a tabbed dialog, because the tabbed interface is merely a kind of overflow presentation — one could equally well just show all the form controls in one big page with a scrollbar.
-
-出典は同じ [hidden 属性](https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute)。
-
-## paddingが残す40pxの枠
-
-`#box-until` は、padding 無しだと高さ 0、幅 1230。子は 18 を返す。Chrome が警告していた余り寸法が、そのまま出た。
-
-`#box-until-box` に margin 8、灰色の border 4、padding 16 を足した。`hidden="until-found"` のまま `getBoundingClientRect` は 1214×40。中身の無い枠。フラグメントのあと `hidden` は剥がれ、箱は 40 から 90 へ伸びた。`beforematch` は 1。この 40→90 は、このフィクスチャの余白の合計であって、定数ではない。
-
-出典は [Making collapsed content accessible with hidden=until-found](https://developer.chrome.com/docs/css-ui/hidden-until-found)。
-
-> Some layout APIs such as getBoundingClientRect will report that the hidden content inside the hidden=until-found element takes up space and has a position in the page.
-
-> Child nodes of the hidden=until-found element won't be rendered, but the hidden=until-found element itself will still have a box. This means that CSS properties such as border and explicit size will still affect the rendering.
-
-仕様が先に置いている罠を、そのまま踏んだ。`hidden="until-found" style="display:none"`。`#box-until-none`。`window.find` は false。テキストフラグメントのクリックでは属性は残った。`beforematch` は 0。scrollY は 0。`#p-until-none` への hash では `beforematch` が一度走り、`hidden` は剥がれた。残りは著者の `display: none`。段落の高さは 0。scrollY は 0 のまま。ブラウザは属性に従ったあと、スタイルシートに負けた。
-
-`hidden="until-found" style="display:inline"` は反対側だった。クリック前から文は `innerText` にあり、アクセシビリティ名の一覧にも乗っていた。フラグメントは `hidden="until-found"` を残したままスクロールした。scrollY 4729。hash は `hidden` を剥がした。レイアウト containment はすでに壊れていたので、「隠れている」は嘘だった。
-
-[hidden 属性](https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute)。
-
-> The element needs to be affected by layout containment in order to be revealed by find-in-page. This means that if the element in the Hidden Until Found state has a 'display' value of 'none', 'contents', or 'inline', then the element will not be revealed by find-in-page.
-
-## 属性のないcontent-visibilityは死んだ住所
-
-著者 CSS で `content-visibility: hidden` だけを付けた。属性は無し。`#box-cv-hidden`。`window.find` は false。フラグメントは届かない。hash も scrollY 0。
-
-UA が `until-found` に使うのと同じプロパティ名。祖先開示の手続きが見るのは属性と `<details>` だけで、プロパティ単体は死んだ住所だった。
-
-[content-visibility: auto で強制レイアウトを削った回](/ja/blog/ja/content-visibility-auto-render-cost-measure-2026/) は、見える側のコストの話だった。今日のマスは、同じ名前を隠しに使った側。フックが無い。
-
-コンソールに残した確認はこれだけだ。
-
-```js
-const el = document.querySelector('[hidden="until-found"]')
-getComputedStyle(el).display
-getComputedStyle(el).contentVisibility
-el.getBoundingClientRect()
-el.firstElementChild && el.firstElementChild.getBoundingClientRect()
-```
-
-## findが無視するもの、名前が消えるもの
-
-見える段落に `inert` を付けた。`innerText` は true。描画されている。箱は 18×1230。`window.find` は false。テキストフラグメントの scrollY は 0。`#p-inert` への hash は着いた。scrollY 6085。`window.find` と id-hash は同じ扉ではない。
-
-[Inert subtrees](https://html.spec.whatwg.org/multipage/interaction.html#inert-subtrees)。
-
-> The user agent should ignore the node for the purposes of find-in-page.
-
-`inert` をモーダルのフォーカス用に測ったのは[別の回](/ja/blog/ja/modal-focus-escape-inert-measure-2026/)。
-
-`visibility: hidden` も、find とフラグメントは拒んで hash は受けた側に入った。
-
-`aria-hidden="true"` を付けた見える段落は、描画されていた。`innerText` は true。`window.find` は true。フラグメントは着いた。scrollY 5542。CDP の `Accessibility.getFullAXTree` が出した名前に、TOKENARIAHIDDEN は無かった。find は、アクセシビリティツリーが名前にしない文を指せた。
-
-WAI-ARIA 1.2 の [aria-hidden](https://www.w3.org/TR/wai-aria-1.2/#aria-hidden)。
-
-> Indicates whether the element is exposed to an accessibility API.
-
-[同じ節](https://www.w3.org/TR/wai-aria-1.2/#aria-hidden) の続き。
-
-> Authors MAY, with caution, use aria-hidden to hide visibly rendered content from assistive technologies only if the act of hiding this content is intended to improve the experience for users of assistive technologies by removing redundant or extraneous content.
-
-名前が無い、はこのダンプに TOKEN を含む name 値が無かった、という意味だ。スクリーンリーダーは回していない。
-
-スパムポリシーは、アコーディオンやタブの出し入れを隠しテキスト悪用の側に置いていない。[Hidden text and links](https://developers.google.com/search/docs/essentials/spam-policies#hidden-text-and-links) の例外の行。
-
-> Accordion or tabbed content that toggle between hiding and showing additional content
-
-別の行。
-
-> Text that's only accessible to screen readers and is intended to improve the experience for those using screen readers
-
-ポリシーの文であって、順位の約束ではない。構造化データもフラグメントも、リッチリザルトや AI 引用を保証しない。
-
-## 17マスを一度に置いた
-
-呼び出しのあいだに selection は消した。10 / 17 が `window.find` で true。フラグメントの `inView` も 10 / 17。hash は 12 / 17。
-
-![17マスの find・フラグメント・hash・AX名](../../../assets/blog/hidden-until-found-find-fragment-accordion-2026/hide-matrix.png)
-
-| マス | find | フラグメント | hash | AX名にTOKEN |
+| 隠し方 | `window.find()` | テキストフラグメント到達 | IDハッシュ到達 | AXツリー名（CDP） |
 | --- | --- | --- | --- | --- |
-| visible | あり | あり | あり | あり |
-| hidden="" | なし | なし | なし | なし |
-| hidden="hidden" | なし | なし | なし | — |
-| until-found | あり | あり | あり | なし |
-| until-found+box | あり | あり | あり | — |
-| until-found+display:none | なし | なし | なし | — |
-| until-found+display:inline | あり | あり | あり | あり |
-| details 閉じ | あり | あり | あり | なし |
-| details 開き | あり | あり | あり | あり |
-| display:none | なし | なし | なし | なし |
-| visibility:hidden | なし | なし | あり | なし |
-| content-visibility:hidden CSS | なし | なし | なし | なし |
-| aria-hidden | あり | あり | あり | なし |
-| inert | なし | なし | あり | なし |
-| opacity:0 | あり | あり | あり | あり |
-| sr-only clip | あり | あり | あり | あり |
-| max-height:0 | あり | あり | あり | あり |
+| visible（表示中） | true | true | true | あり |
+| `hidden=""`（真偽値hidden） | false | false | false | なし |
+| `hidden="hidden"` | false | false | false | — |
+| `hidden="until-found"` | true | true | true | なし |
+| until-found + 余白枠（padding/border） | true | true | true | — |
+| until-found + `display:none` | false | false | false | — |
+| until-found + `display:inline` | true | true | true | あり |
+| `<details>` 閉鎖 | true | true | true | なし |
+| `<details>` 開放 | true | true | true | あり |
+| 著者 `display:none` | false | false | false | なし |
+| `visibility:hidden` | false | false | true | なし |
+| 著者 `content-visibility:hidden` | false | false | false | なし |
+| `aria-hidden="true"` | true | true | true | なし |
+| `inert` | false | false | true | なし |
+| `opacity:0` | true | true | true | あり |
+| sr-only clip（クリップ隠し） | true | true | true | あり |
+| `max-height:0` | true | true | true | あり |
 
-hash だけ残ったのが `visibility: hidden` と `inert`。名前に TOKEN があったのは 6 / 17。表の「—」は、名前の有無を取り切っていないマス。
+`window.find()` が `true` を返したのは 17 セル中 10 セル。テキストフラグメントで到達したのも同じ 10 セルで、失敗したのは表の 7 種類だ。
 
-バイトは少なくとも五つの仕事に割れていた。描かない (`display: none` / ただの `hidden`)。スキップするが探せる (`hidden=until-found` → UA の `content-visibility: hidden`)。クリップするがツリーに残る (`max-height: 0`)。支援技術の名前から外す (`aria-hidden`)。find から外す (`inert`)。
+IDハッシュは 12 セルで成功した。`visibility:hidden` と `inert` はフラグメントを拒絶するが、ハッシュは受け入れる。検索とフラグメントは同じ門ではない。
 
-## 押していないCmd+F
+## UAスタイルシートが適用するcontent-visibility
 
-本番のページ内検索 UI は押していない。使ったのは `window.find()` と、`#:~:text=` リンクのクリック。[Find-in-page](https://html.spec.whatwg.org/multipage/interaction.html#find-in-page)。
+WHATWGのレンダリング仕様にあるUAスタイルシートの規則を、Chromium 143 の `#box-until`（`hidden="until-found"` の要素）で確かめた。
 
-> Issue #3539 tracks standardizing how find-in-page underlies the currently-unspecified window.find() API.
+`display` は `block` のまま、`content-visibility` だけが `hidden` だった。余白のない `#box-until` の `getBoundingClientRect()` は高さ 0px、幅 1230pxの `0×1230`、内側の段落は高さ 18pxを返した。
 
-Firefox も WebKit も回していない。`hidden=until-found` の対応を、そちらのエンジンについて主張しない。Search Console にも入っていない。検索結果や AI 回答がテキストフラグメント付きのリンクを出すところも見ていない。
+この状態で `innerText` にトークンはなく（`false`）、`window.find()` は `true` を返した。
 
-Chrome の文書は、検索がそのリンクを作ると書く。
+フラグメントリンク `#tf-until` をクリックすると `window.scrollY` は 4352 に移動した。`#box-until` 上で `beforematch` が 1 回発火し、`hidden` 属性が消え、段落の `inView` は `true` になった。
 
-> In addition to allowing find-in-page search on hidden regions, this feature will allow this hidden content to be accessible to search engines. Google Search will even form links that scroll to the revealed fragment.
+もう一つ予想が外れた。JavaScriptのプロパティ `el.hidden` は真偽値の `true` ではなく、文字列 `"until-found"` を返した。属性値がそのまま返されている。
 
-出典: [Making collapsed content accessible with hidden=until-found](https://developer.chrome.com/docs/css-ui/hidden-until-found)
+## 著者のCSSがブラウザの親切を押し潰した境界
 
-こちらで再観測していない。ベンダーの主張として置く。「検索がもう FAQ の中までリンクしている」とは書かない。
+`hidden="until-found"` を書けばすべて解決するわけではない。著者のスタイルシートが標準動作を破壊する場面を二つ観測した。WHATWGの[HTML仕様](https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute)は、レイアウト包含の影響を受けない `display:none`、`contents`、`inline` の要素は検索時に開示されないと定めている。
 
-フィクスチャ側のテキストフラグメントは、同一文書のアクティベーションが要った。直接の `#:~:text=` 遷移でも、この Chromium では until-found と本番の閉じた FAQ は開いた。この UA、このビルド。クローラーではない。
+一つ目は `#box-until-none`（`hidden="until-found"` に `style="display:none"` を重ねた要素）だ。`window.find()` は `false`、フラグメントをクリックしても `beforematch` は発火せず、スクロール位置は 0 のままだった。
 
-until-found だけを隠し方にして出す前に、手元の UA で見た一行。
+IDハッシュでは `beforematch` が発火して `hidden` 属性が外れた。しかし著者の `display: none` は残り、段落の高さとスクロール位置は 0 のまま。ブラウザは属性を取り除いたが、スタイルシートに敗北した。
 
-```js
+二つ目は余白と枠線だ。margin 8px、border 4px、padding 16pxの `#box-until-box` は、折りたたみ中の `getBoundingClientRect()` が `1214×40`。中身は描画されず、外枠と内余白だけが残る。フラグメントリンクのあと `beforematch` が発火して属性が外れ、ボックスは `1214×90` へ広がった。この変化はフィクスチャの余白等の合計で、普遍的な定数ではない。
+
+`hidden="until-found"` を使うなら、閉じている最中の境界線やパディングをゼロにするか、コンテナ自体の余白設計を見直さなければならない。
+
+## 自サイトのFAQで4つの回答を検索した
+
+本番の jangwook.net の技術ブログ記事 `https://jangwook.net/ko/blog/ko/text-fragment-citation-deep-link-audit-2026/` を開いた。4 つの `details.faq-item` は `FAQ.astro` の `open={index === 0}` により先頭だけが開き、1〜3 は閉じていた。
+
+閉じていた 2 番目の回答文「코드 블록 자체를 인용 대상으로 만들기는 어렵습니다」は、遷移前の `innerText` にはなく（`false`）、`textContent` にはあり、`window.find()` は `true` を返した。
+
+その文へテキストフラグメントで遷移すると、`window.scrollY` は 8752 へ跳び、2 番目の `<details>` は自動展開した。`hitOpen` は `true`、展開後の `getBoundingClientRect().top` は 373 だった。
+
+自サイトのアコーディオンをわざわざ `hidden="until-found"` に書き換える必要はなかった。標準の `<details>` を使っていれば、ブラウザは最初から開示の手順を知っている。
+
+## 測らなかったことと、残すべき分岐
+
+今回の数字は、2026年8月15日に手元のChromium 143.0.7499.4、Playwright 1.57.0で取得した記録にすぎない。FirefoxやSafariは計測しておらず、`hidden="until-found"` の対応状況について主張しない。
+
+`window.find()` は実際のページ内検索UIではなく、WHATWGの Issue #3539 に残る代替の計測値だ。CDPのアクセシビリティツリーに名前がないことはスクリーンリーダーの証明ではなく、GooglebotやAIクローラーも測定していない。
+
+テスト用フィクスチャのJSONデータは `/tmp` 配下にのみ存在し、リポジトリにはコミットしていない。
+
+[Chrome for Developersの解説文書](https://developer.chrome.com/docs/css-ui/hidden-until-found)は、Google検索が開示されたフラグメントへのリンクを形成すると述べる。魅力的な約束だが、今回の検証では生成を観測していない。ベンダーの主張と、手元で動くバイト列の挙動は分けて管理すべきだ。
+
+自作のコンポーネントで `hidden="until-found"` を本番採用するなら、対応確認が要る。
+
+```javascript
 if (!('onbeforematch' in HTMLElement.prototype)) {
-  // このUAでは閉じた中身は閉じたまま
+  // beforematch に非対応のブラウザでは、閉じたコンテンツが永久に開かないリスクがある
 }
 ```
 
-本番 FAQ をコンソールで突いた手順。
-
-```js
-[...document.querySelectorAll('details.faq-item')].map((d, i) => ({
-  i,
-  open: d.open,
-  t: d.innerText.slice(0, 60),
-}))
-document.body.innerText.includes('코드 블록 자체를 인용 대상으로 만들기는 어렵습니다')
-document.body.textContent.includes('코드 블록 자체를 인용 대상으로 만들기는 어렵습니다')
-window.find('코드 블록 자체를 인용 대상으로 만들기는 어렵습니다')
-```
-
-どの隠し方をチームが出せばよいかは、この17マスでは証明できない。証明できたのは、2026-08-15 のこの Chromium が、どのマスを find し、名前に載せ、hash でスクロールし、フラグメントで開いたかだ。JSON は `/tmp` のラボディレクトリに置いたままで、リポジトリには入れてない。
-
-閉じた答えにフラグメントが届くかを測る仕事は、自分の実務だ。連絡先はプロフィールにある。
-
----
-
-*出典: WHATWG [HTML Standard, The hidden attribute](https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute)・[Interaction with details and hidden=until-found](https://html.spec.whatwg.org/multipage/interaction.html#interaction-with-details-and-hidden=until-found)・[Inert subtrees](https://html.spec.whatwg.org/multipage/interaction.html#inert-subtrees)・[Find-in-page](https://html.spec.whatwg.org/multipage/interaction.html#find-in-page)・[Hidden elements](https://html.spec.whatwg.org/multipage/rendering.html#hidden-elements)、Chrome for Developers [Making collapsed content accessible with hidden=until-found](https://developer.chrome.com/docs/css-ui/hidden-until-found)、Google Search Central [Spam Policies, Hidden text and links](https://developers.google.com/search/docs/essentials/spam-policies#hidden-text-and-links)、W3C [WAI-ARIA 1.2, aria-hidden](https://www.w3.org/TR/wai-aria-1.2/#aria-hidden)（いずれも公式）。本文の英文ブロック引用は公式ページの文で、引用のそばに原文リンクを置いた。計測環境: 一時サンドボックスの隠し方17マス、ヘッドレス Chromium 143.0.7499.4、Playwright 1.57.0、Node 22.22、ビューポート 1280×800、ローカル静的サーバ、2026年8月15日計測。本番確認はテキストフラグメント記事1本、FAQ 4件。フィクスチャ JSON はリポジトリ外。Gecko / WebKit は未計測。Cmd+F は未使用。クローラーログは無い。順位と引用は保証しない。*
+この判定なしに `hidden="until-found"` だけで組むと、非対応環境では検索からもフラグメントからも閉ざされたままになる。アニメーションやCSSの都合で隠す前に、まず `<details>` で組めないかを考える。それができないUIでのみ `hidden="until-found"` を選び、`display` や枠線の余白で動作を潰していないかを実測する。到着した読者に白紙を見せないための境界線は、そこにある。
