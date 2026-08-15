@@ -3197,5 +3197,16 @@
       "devops": 0.35,
       "architecture": 0.55
     }
+  },
+  "hidden-until-found-find-fragment-accordion-2026": {
+    "pubDate": "2026-08-15",
+    "difficulty": 3,
+    "categoryScores": {
+      "automation": 0.25,
+      "web-development": 0.97,
+      "ai-ml": 0.15,
+      "devops": 0.2,
+      "architecture": 0.45
+    }
   }
 }

@@ -1,7 +1,25 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-14",
+  "updated_at": "2026-08-15",
   "topics": [
+    {
+      "slug": "hidden-until-found-find-fragment-accordion-2026",
+      "title_idea": "프래그먼트는 6083까지 갔는데 아코디언은 닫혀 있었다",
+      "content_type": "how-to",
+      "target_keyword": "hidden until-found 아코디언 텍스트 프래그먼트",
+      "secondary_keywords": [
+        "hidden=until-found find-in-page",
+        "CSS max-height 아코디언 검색",
+        "details 텍스트 프래그먼트"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "WHATWG hidden / details / inert / find-in-page + Chrome hidden=until-found + GSC hidden-text spam policy + WAI-ARIA aria-hidden. Live: 17 hide cells on one fixture + this site FAQ.astro details. Chromium 143.0.7499.4 headless, Playwright 1.57.0, Node 22.22, 2026-08-15.",
+      "added_at": "2026-08-15",
+      "status": "done",
+      "published_at": "2026-08-15",
+      "notes": "핵심 주장: 숨김은 한 스위치가 아니다. CSS max-height:0은 find/fragment가 도착해도 박스가 0고 열리지 않는다. details와 hidden=until-found만 조상 공개 알고리즘에 있다. 라이브 FAQ는 이미 details. until-found+display:none은 스펙이 명시한 함정. 저자 content-visibility:hidden은 속성 훅 없이 죽은 주소. Search/크롤러/Cmd+F는 미측정."
+    },
     {
       "slug": "official-geo-subtraction-gsc-control-2026",
       "title_idea": "공식 GEO 가이드가 지운 것들: Search Console에 생긴 스위치",

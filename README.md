@@ -46,11 +46,14 @@ npm run astro check
 
 ## 📝 블로그 포스트 현황
 
-**최신 포스트 날짜**: 2026-08-14
+**최신 포스트 날짜**: 2026-08-15
 
-**총 포스트 수**: 335개 (한국어 기준)
+**총 포스트 수**: 336개 (한국어 기준)
 
 ### 공개된 포스트
+
+1. **프래그먼트는 6083까지 갔는데 아코디언은 닫혀 있었다** (2026-08-15)
+   - 같은 문장 17칸을 크로미움에서 눌렀다. CSS max-height는 스크롤만 가고 높이는 0. 라이브 FAQ의 닫힌 details는 프래그먼트가 열었다.
 
 1. **공식 GEO 가이드가 지운 것들: Search Console에 생긴 스위치** (2026-08-14)
    - Google 공식 생성형 AI 최적화 가이드는 llms.txt와 전용 스키마를 무시하라고 적는다. 개발자가 볼 새 장치는 Search Console 생성형 AI 제어와 라이브 robots.txt다.
@@ -917,6 +920,6 @@ MIT License
 
 ---
 
-**Last Updated**: 2026-08-14 (official-geo-subtraction-gsc-control-2026 포스트 발행)
+**Last Updated**: 2026-08-15 (hidden-until-found-find-fragment-accordion-2026 포스트 발행)
 
 **Built with** ❤️ **using Astro & Claude Code**
