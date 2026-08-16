@@ -2,6 +2,7 @@
 title: AGENTS.md와 CLAUDE.md 실측, 같은 리포에서 두 CLI가 읽어 들인 것
 description: AGENTS.md 한 장이면 모든 에이전트가 읽는다는 기대는 빗나갔다. 2026년 8월 16일 claude 2.1.233과 codex 0.147.0을 샌드박스에 올리고 76번 돌려보니 교차 인식률은 0이었고 모노레포 중첩 파일 탐색은 cwd와 도구 선택에 따라 갈렸다. 실측 데이터와 우회 설정을 정리한다.
 pubDate: '2026-08-16'
+heroImage: '../../../assets/blog/agents-md-vs-claude-md-loading-measured-2026/hero.png'
 tags:
   - ai
   - coding-agent

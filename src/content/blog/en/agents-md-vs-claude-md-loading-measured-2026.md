@@ -1,7 +1,8 @@
 ---
 title: "AGENTS.md vs CLAUDE.md loading across 76 runs"
-description: "AGENTS.md in a monorepo failed to load where expected. These 76 runs measure the directory walk and fixes."
+description: "AGENTS.md in a monorepo did not load where I expected. Across 76 runs I measured how Codex and Claude Code walk the directory tree, which nested files each one reads, and what actually fixed it."
 pubDate: '2026-08-16'
+heroImage: '../../../assets/blog/agents-md-vs-claude-md-loading-measured-2026/hero.png'
 tags:
   - ai
   - coding-agent
@@ -27,7 +28,7 @@ relatedPosts:
     score: 0.65
     reason:
       ko: "에이전트가 규칙을 무시하거나 잘못 로드할 때 팀에 쌓이는 인지 부채를 연결해서 볼 수 있다."
-      ja: "エージェントが規約を無視または誤로드했을 때 팀에 쌓이는 인지 부채를 연결해서 볼 수 있다."
+      ja: "エージェントが規約を読み落とす、あるいは誤って読み込んだときにチームへ積み上がる認知的負債とつなげて読める。"
       en: "Connects the silent failure of agent instructions to the cognitive debt accumulated across an engineering team."
       zh: "将 Agent 忽略或未加载规则时的隐性故障与团队累积的认知负债联系起来。"
 ---
@@ -49,6 +50,8 @@ On 2026-08-16, I ran both tools using `codex-cli` 0.147.0 and `claude` 2.1.233. 
 | Both (Control) | None | Canary absent | 0/3 and 0/3 |
 
 > "Claude Code reads `CLAUDE.md`, not `AGENTS.md`."
+>
+> — [Claude Code memory docs](https://code.claude.com/docs/en/memory)
 
 ## Codex stops walking at your current working directory
 
@@ -59,12 +62,18 @@ Then I ran `cd packages/api` and used the same command against `note.txt`. Codex
 With `ZZROOT7` at root and `ZZNEST7` in `packages/api`, root runs produced `ZZROOT7` in 3 out of 3 and `ZZNEST7` in 0 out of 3 runs.
 
 > "Starting at the project root (typically the Git root), Codex walks down to your current working directory."
+>
+> — [Codex AGENTS.md guide](https://developers.openai.com/codex/guides/agents-md)
 
 > "In each directory along the path, it checks for `AGENTS.override.md`, then `AGENTS.md`, then any fallback names in `project_doc_fallback_filenames`."
+>
+> — [Codex AGENTS.md guide](https://developers.openai.com/codex/guides/agents-md)
 
 ## Claude Code nested loading depends on tool choice
 
 > "Claude also discovers `CLAUDE.md` and `CLAUDE.local.md` files in subdirectories under your current working directory. Instead of loading them at launch, they are included when Claude reads files in those subdirectories."
+>
+> — [Claude Code memory docs](https://code.claude.com/docs/en/memory)
 
 With `packages/api/CLAUDE.md` and canary `ZZNEST7`, the token appeared in 7 out of 12 root runs (3 out of 6 and 4 out of 6). Regular guidelines still yielded 4 out of 6 runs.
 

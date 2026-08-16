@@ -253,6 +253,91 @@ function validateRelatedPosts(posts) {
   }
 }
 
+// 2026-08-16: 세 가지 회귀의 처방. 셋 다 이날 발행 글부터 error 이고 그 이전은 warning 이다.
+// 기존 코퍼스에 이미 각각 44건·982건·42건이 있어서 전량 error 로 두면 빌드가 즉시 멈춘다.
+const QUALITY_GATE_FROM = '2026-08-16';
+
+// 게이트 이후 글은 error, 그 이전은 요약 한 줄로만 남긴다. 과거 위반이 각각
+// 수십 건이라 개별로 뱉으면 매 빌드 로그를 덮어 정작 오늘 글의 error 가 안 보인다.
+const legacy = new Map();
+
+function gateSeverity(post, message, bucket) {
+  if (post.pubDateKey && post.pubDateKey >= QUALITY_GATE_FROM) {
+    errors.push(message);
+    return;
+  }
+  const list = legacy.get(bucket) ?? [];
+  list.push(message);
+  legacy.set(bucket, list);
+}
+
+function flushLegacyWarnings() {
+  for (const [bucket, list] of legacy) {
+    warnings.push(`${bucket} (${QUALITY_GATE_FROM} 이전 발행, 백로그): ${list.length}\n${limitList(list)}`);
+  }
+}
+
+// 인용은 있는데 본문 전체에 링크가 하나도 없는 글. 독자가 출처를 확인할 방법이 없다.
+// validateVerbatimCitations 는 "그대로 옮기면" 류의 축자 주장이 있을 때만 걸리므로,
+// 주장 없이 인용만 늘어놓은 경우(2026-08-16 en)가 그 그물을 빠져나갔다.
+function validateQuoteSources(posts) {
+  for (const post of posts.filter((item) => item.indexable)) {
+    const body = String(post.content ?? '');
+    const quotes = (body.match(/^>\s+\S/gm) ?? []).length;
+    if (quotes === 0) continue;
+    const links = (body.match(/\]\(https?:\/\//g) ?? []).length;
+    if (links === 0) {
+      gateSeverity(post, `${post.relPath}: 블록 인용 ${quotes}개, 본문 링크 0개 — 출처 확인 불가`, '인용 출처 링크 없음');
+    }
+  }
+}
+
+// description 이 너무 짧으면 SERP 에서 검색엔진이 본문을 임의로 긁어 채운다.
+// 상한 검사만 있어서 짧은 쪽이 그대로 통과했다.
+function validateDescriptionFloor(posts) {
+  // 권장은 150~160(라틴 기준). 하한은 그보다 낮게 두어 재작성 강요가 아니라 방어선으로 쓴다.
+  // CJK 는 한 글자가 담는 정보가 많아 같은 자수로 재면 안 된다. 중국어 106자는 충분하다.
+  // 과거 글 982편이 80자 미만이라 백로그로 세지 않고 게이트 이후 글만 본다.
+  const DESC_MIN_BY_LANG = { en: 120, ko: 90, ja: 80, zh: 70 };
+  for (const post of posts.filter((item) => item.indexable)) {
+    if (!post.pubDateKey || post.pubDateKey < QUALITY_GATE_FROM) continue;
+    const desc = String(post.data.description ?? '');
+    const min = DESC_MIN_BY_LANG[post.lang] ?? 120;
+    if (desc.length > 0 && desc.length < min) {
+      errors.push(`${post.relPath}: description ${desc.length}자 (${post.lang} 최소 ${min})`);
+    }
+  }
+}
+
+// relatedPosts 의 reason.<lang> 이 그 언어로 안 쓰인 경우. 스키마는 문자열이라 통과하고,
+// 렌더되면 일본어 화면에 한국어가 그대로 노출된다.
+const SCRIPTS = {
+  hangul: /[가-힣]/,
+  kana: /[ぁ-んァ-ヶ]/,
+};
+
+function validateRelatedReasonLanguage(posts) {
+  for (const post of posts.filter((item) => item.indexable)) {
+    const related = Array.isArray(post.data.relatedPosts) ? post.data.relatedPosts : [];
+    for (const rec of related) {
+      const reason = rec?.reason;
+      if (!reason || typeof reason !== 'object') continue;
+      for (const [lang, value] of Object.entries(reason)) {
+        const text = String(value ?? '');
+        if (!text) continue;
+        let bad = null;
+        if (lang === 'ja' && SCRIPTS.hangul.test(text)) bad = '한글';
+        else if (lang === 'ko' && SCRIPTS.kana.test(text)) bad = '카나';
+        else if (lang === 'zh' && (SCRIPTS.hangul.test(text) || SCRIPTS.kana.test(text))) bad = '한글/카나';
+        else if (lang === 'en' && (SCRIPTS.hangul.test(text) || SCRIPTS.kana.test(text))) bad = '비라틴 문자';
+        if (bad) {
+          gateSeverity(post, `${post.relPath}: relatedPosts reason.${lang} 에 ${bad} 혼입 — "${text.slice(0, 40)}"`, 'relatedPosts reason 언어 혼입');
+        }
+      }
+    }
+  }
+}
+
 function validateH2Independence(posts) {
   const hits = findTranslatedSkeletons(groupsFromPosts(posts));
   for (const hit of hits) {
@@ -407,6 +492,10 @@ async function main() {
   validateSharedFrontmatterParity(posts);
   validateH2Independence(posts);
   validateVerbatimCitations(posts);
+  validateQuoteSources(posts);
+  validateDescriptionFloor(posts);
+  validateRelatedReasonLanguage(posts);
+  flushLegacyWarnings();
   await validateCrawlerSurfaces();
 
   const hiddenPastPosts = posts.filter((post) => post.pubDateKey && post.pubDateKey <= todayJst && (post.draft || post.noindex));

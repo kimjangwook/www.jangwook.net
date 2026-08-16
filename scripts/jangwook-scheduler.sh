@@ -1,8 +1,14 @@
 #!/bin/bash
-# jangwook-scheduler.sh — launchd wrapper for Grok Build automation
+# jangwook-scheduler.sh — launchd wrapper for jangwook.net automation
 # Usage: jangwook-scheduler.sh <task-name> <agent-args...>
-# Accepts Claude-style flags (--dangerously-skip-permissions, --model opus)
-# and maps them to grok (--yolo, --model grok-4.6).
+#
+# Engines by task (2026-08-15):
+#   daily-post  → scripts/daily-post-pipeline.sh
+#                 판단(주제 선정·플랜·검수·발행) claude opus
+#                 집필(ko/ja/en/zh 본문)        codex gpt-5.6-luna, effort max
+#   그 외        → grok 단일 프로세스. Claude-style flags
+#                 (--dangerously-skip-permissions, --model opus) 를
+#                 grok (--yolo, --model grok-4.6) 로 매핑한다.
 
 set -uo pipefail
 
@@ -167,16 +173,29 @@ echo "========================================" >> "$LOG_FILE"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] START: $TASK_NAME" >> "$LOG_FILE"
 echo "========================================" >> "$LOG_FILE"
 
-if [ ! -x "$GROK_BIN" ]; then
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: grok not executable: $GROK_BIN" >> "$LOG_FILE"
-    tg_send "[jangwook.net] ${TASK_NAME}: grok 바이너리 없음
-경로: ${GROK_BIN}
-조치: ~/.grok/bin/grok 설치 확인"
-    exit 1
+# daily-post 만 엔진이 다르다: 판단은 claude, 집필은 codex.
+# 나머지 작업(daily-closing, sunday-strategy 등)은 그대로 grok 단일 프로세스.
+if [ "$TASK_NAME" = "daily-post" ]; then
+    TASK_ENGINE="pipeline"
+else
+    TASK_ENGINE="grok"
 fi
 
-build_grok_args "$@" || exit 1
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: $GROK_BIN $(summarize_grok_args)" >> "$LOG_FILE"
+if [ "$TASK_ENGINE" = "grok" ]; then
+    if [ ! -x "$GROK_BIN" ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: grok not executable: $GROK_BIN" >> "$LOG_FILE"
+        tg_send "[jangwook.net] ${TASK_NAME}: grok 바이너리 없음
+경로: ${GROK_BIN}
+조치: ~/.grok/bin/grok 설치 확인"
+        exit 1
+    fi
+
+    build_grok_args "$@" || exit 1
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: $GROK_BIN $(summarize_grok_args)" >> "$LOG_FILE"
+else
+    # plist 가 넘긴 grok 플래그는 파이프라인에서 쓰지 않는다. 로그에만 남긴다.
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude=plan / codex=write), ignored args: $*" >> "$LOG_FILE"
+fi
 
 # ── grok 헤드리스 새니티 프리플라이트 ──
 # 인증·바이너리·네트워크가 죽으면 워치독이 1시간을 낭비하고 작업은 0 진척으로 끝난다.
@@ -208,13 +227,71 @@ grok_preflight() {
     rm -f "$tmp"; return 1
 }
 
-if ! grok_preflight; then
-    tg_send "[jangwook.net] ${TASK_NAME}: grok 헤드리스 무응답(60초 프리플라이트 실패)
+CLAUDE_BIN="${CLAUDE_BIN:-/opt/homebrew/bin/claude}"
+CODEX_BIN="${CODEX_BIN:-/opt/homebrew/bin/codex}"
+CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-luna}"
+
+# claude/codex 프리플라이트. 파이프라인은 6 프로세스라 중간에 인증이 죽으면
+# 언어 파일이 일부만 남는다. 시작 전에 두 엔진 모두 살아있는지 확인한다.
+claude_preflight() {
+    local tmp rc
+    tmp="$(mktemp -t claude-preflight 2>/dev/null || echo /tmp/claude-preflight.$$)"
+    run_timeout 90 "$CLAUDE_BIN" -p 'Reply with exactly: OK' \
+        --dangerously-skip-permissions --model opus </dev/null >"$tmp" 2>&1
+    rc=$?
+    if [ "$rc" -eq 0 ] && grep -qi 'OK' "$tmp"; then
+        rm -f "$tmp"; return 0
+    fi
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT: claude 무응답(rc=${rc}): $(tr '\n' ' ' < "$tmp" 2>/dev/null | tail -c 300)" >> "$LOG_FILE"
+    rm -f "$tmp"; return 1
+}
+
+codex_preflight() {
+    local tmp rc
+    tmp="$(mktemp -t codex-preflight 2>/dev/null || echo /tmp/codex-preflight.$$)"
+    run_timeout 90 "$CODEX_BIN" exec 'Reply with exactly: OK' \
+        --model "$CODEX_MODEL" -c model_reasoning_effort="low" \
+        --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check </dev/null >"$tmp" 2>&1
+    rc=$?
+    if [ "$rc" -eq 0 ] && grep -qi 'OK' "$tmp"; then
+        rm -f "$tmp"; return 0
+    fi
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT: codex 무응답(rc=${rc}): $(tr '\n' ' ' < "$tmp" 2>/dev/null | tail -c 300)" >> "$LOG_FILE"
+    rm -f "$tmp"; return 1
+}
+
+if [ "$TASK_ENGINE" = "grok" ]; then
+    if ! grok_preflight; then
+        tg_send "[jangwook.net] ${TASK_NAME}: grok 헤드리스 무응답(60초 프리플라이트 실패)
 원인 후보: ~/.grok/auth.json 만료 / XAI_API_KEY 미설정 / 네트워크.
 조치: 이번 주기 건너뜀(다음 주기 자동 재시도). 반복 시 터미널에서 grok login,
 또는 .env 에 XAI_API_KEY 를 넣는다."
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: grok 무응답 — 작업 스킵" >> "$LOG_FILE"
-    exit 1
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: grok 무응답 — 작업 스킵" >> "$LOG_FILE"
+        exit 1
+    fi
+else
+    if [ ! -x "$CLAUDE_BIN" ] || [ ! -x "$CODEX_BIN" ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: claude($CLAUDE_BIN) 또는 codex($CODEX_BIN) 없음" >> "$LOG_FILE"
+        tg_send "[jangwook.net] ${TASK_NAME}: 에이전트 바이너리 없음
+claude: ${CLAUDE_BIN}
+codex: ${CODEX_BIN}"
+        exit 1
+    fi
+    if ! claude_preflight; then
+        tg_send "[jangwook.net] ${TASK_NAME}: claude 헤드리스 무응답(90초 프리플라이트 실패)
+원인 후보: 로그인 만료 / 사용량 한도 / 네트워크.
+조치: 이번 주기 건너뜀(다음 주기 자동 재시도)."
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: claude 무응답 — 작업 스킵" >> "$LOG_FILE"
+        exit 1
+    fi
+    # codex 는 집필 엔진이지만 언어 단위 claude 폴백이 있다. 여기서 죽이면
+    # 폴백이 있는데도 하루를 통째로 건너뛴다. 경보만 보내고 진행한다.
+    if ! codex_preflight; then
+        tg_send "[jangwook.net] ${TASK_NAME}: codex 헤드리스 무응답(90초 프리플라이트 실패)
+원인 후보: codex login 만료 / 사용량 한도 / 모델 ${CODEX_MODEL} 접근 불가.
+진행: 집필은 claude opus xhigh 폴백으로 계속한다. 반복되면 터미널에서 codex login."
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT WARN: codex 무응답 — claude 폴백으로 진행" >> "$LOG_FILE"
+    fi
 fi
 
 # Sync with remote before running
@@ -236,7 +313,8 @@ if ! git pull --rebase origin main >> "$LOG_FILE" 2>&1; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Sync recovered" >> "$LOG_FILE"
 fi
 
-# daily-post runs 6 isolated grok processes. Give it a longer hang alert.
+# daily-post runs 6+ isolated agent processes (claude core/seal, codex ×4).
+# Give it a longer hang alert.
 WATCHDOG_SECS=3600
 if [ "$TASK_NAME" = "daily-post" ]; then
     WATCHDOG_SECS=10800
@@ -250,7 +328,7 @@ fi
         tg_send "[jangwook.net] 스케줄 지연 경고
 작업: ${TASK_NAME}
 경과: $((ELAPSED / 60))분 이상
-상태: Grok 프로세스가 $((WATCHDOG_SECS / 60))분 넘게 실행 중
+상태: ${TASK_ENGINE} 에이전트가 $((WATCHDOG_SECS / 60))분 넘게 실행 중
 조치: 프로세스 점검 필요"
     fi
 ) &
@@ -267,9 +345,9 @@ is_transient_failure() {
 failure_cause() {
     local t; t="$(tail -n 120 "$LOG_FILE")"
     if printf '%s' "$t" | grep -qiE "session limit|usage limit|hit your (session|usage)"; then
-        echo "Grok 세션/사용량 한도 도달 — 다음 주기 자동 재실행"
+        echo "에이전트 세션/사용량 한도 도달 — 다음 주기 자동 재실행"
     elif printf '%s' "$t" | grep -qiE "Invalid authentication|Failed to authenticate|Authentication failed|API Error: 401"; then
-        echo "인증 실패(401) — grok login 또는 XAI_API_KEY 확인"
+        echo "인증 실패(401) — ${TASK_ENGINE} 엔진 로그인 확인 (grok login / codex login / claude)"
     elif printf '%s' "$t" | grep -qiE "overloaded|529|Too Many Requests|429|rate.?limit"; then
         echo "API 과부하/레이트리밋"
     elif printf '%s' "$t" | grep -qiE "An internal error occurred|EINTR"; then
@@ -282,9 +360,9 @@ failure_cause() {
 }
 
 run_agent() {
-    if [ "$TASK_NAME" = "daily-post" ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: grok-lang-pipeline (isolated ko/ja/en/zh)" >> "$LOG_FILE"
-        bash "$PROJECT_DIR/scripts/grok-lang-pipeline.sh"
+    if [ "$TASK_ENGINE" = "pipeline" ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude core/seal + codex ko/ja/en/zh)" >> "$LOG_FILE"
+        bash "$PROJECT_DIR/scripts/daily-post-pipeline.sh"
     else
         "$GROK_BIN" "${GROK_ARGS[@]}"
     fi

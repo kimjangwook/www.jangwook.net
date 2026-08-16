@@ -2,6 +2,7 @@
 title: 'AGENTS.md 与 CLAUDE.md 加载实测，两套工具怎么读你的规则'
 description: '76次执行实测。codex与Claude Code互不读取对方的说明文件。codex 的嵌套配置在父级目录运行时完全失效，Claude遇到标记指令甚至当成隐藏提示词注入拒绝执行。附完整复现命令与双CLI配置方案。'
 pubDate: '2026-08-16'
+heroImage: '../../../assets/blog/agents-md-vs-claude-md-loading-measured-2026/hero.png'
 tags:
   - ai-agents
   - developer-tools

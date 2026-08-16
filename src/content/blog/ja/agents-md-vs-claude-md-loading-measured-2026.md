@@ -2,6 +2,7 @@
 title: 'AGENTS.mdとCLAUDE.mdを76回走らせて読み込みの境界を数えた'
 description: '空のリポジトリに指示書を置き、codexとClaude Codeへ同じ命令を投げた。互いのファイルを一切読まない0件の相互認識から、モノレポでサブディレクトリの指示が読み飛ばされる条件、ツール選択で読み込みが途切れる仕組みまで、2026年8月16日の実測76回で記録した。'
 pubDate: '2026-08-16'
+heroImage: '../../../assets/blog/agents-md-vs-claude-md-loading-measured-2026/hero.png'
 tags: ['agents-md', 'claude-code', 'codex', 'ai-agent', 'web-development']
 relatedPosts:
   - slug: agents-md-effectiveness
