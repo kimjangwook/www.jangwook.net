@@ -25,6 +25,7 @@ AGY_MODEL="${LAB_AGY_MODEL:-gemini-3.7-flash-medium}"
 # 랩에 마감은 없지만 상한은 있어야 한다. 캡에 걸리면 남은 셀을 건너뛰고
 # 거기까지의 데이터로 분석한다 — 분석이 status 를 partial 로 적는다.
 LAB_EXEC_BUDGET_SEC="${LAB_EXEC_BUDGET_SEC:-9000}"   # 2시간 30분
+LAB_CELL_TIMEOUT_SEC="${LAB_CELL_TIMEOUT_SEC:-180}"  # 런 하나의 상한
 
 export HOME="${HOME:-/Users/jangwook}"
 export PATH="/Users/jangwook/.nvm/versions/node/v22.22.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -99,8 +100,24 @@ if [ "$CELL_COUNT" -lt 1 ]; then
   log "셀이 없다 — 중단"; rm -rf "$LAB_DIR"; exit 1
 fi
 
-# ── 2. execute (agy): 셀을 하나씩 실제로 돌린다 ────────────────────────
-# 셀 하나가 죽어도 나머지는 계속 간다. 실패한 셀도 데이터다.
+# ── 2. execute: bash 가 돌리고 agy 가 판정한다 ─────────────────────────
+# 명령 실행을 에이전트에게 맡겼더니 codex 가 agy 안에서
+# "failed to load configuration" 으로 죽었다(2026-08-16). 같은 명령을 bash 에서
+# 돌리면 멀쩡하다. 중첩 에이전트는 환경을 온전히 물려주지 않는다.
+# 그래서 실행은 결정적인 bash 가 하고, agy 는 원시 출력을 읽어 observe 기준으로
+# hit/miss 를 판정한다. 손발은 그대로 agy 다. 다만 손이 잡는 것이 셸이 아니라 판정이다.
+run_with_timeout() {
+  local secs="$1"; shift
+  "$@" & local pid=$!
+  ( sleep "$secs"; kill -TERM "$pid" 2>/dev/null ) & local killer=$!
+  wait "$pid" 2>/dev/null; local rc=$?
+  kill -TERM "$killer" 2>/dev/null; wait "$killer" 2>/dev/null
+  [ "$rc" -eq 143 ] && rc=124
+  return $rc
+}
+
+CELL_FIELDS_PY='import json,shlex,sys; c=json.loads(sys.argv[1]); print("\n".join(f"CELL_{k.upper()}={shlex.quote(str(c.get(k) or d))}" for k,d in (("id","cell"),("setup",""),("command",""),("observe",""),("repeats","3"))))'
+
 FAILED=0
 SKIPPED=0
 EXEC_START=$(date +%s)
@@ -111,34 +128,47 @@ for i in $(seq 0 $((CELL_COUNT - 1))); do
     log "실행 예산 소진 (${ELAPSED}s ≥ ${LAB_EXEC_BUDGET_SEC}s) — 남은 ${SKIPPED}셀 건너뜀"
     break
   fi
-  CELL_JSON=$(/usr/bin/python3 -c "
-import json;print(json.dumps(json.load(open('$LAB_DIR/plan.json'))['cells'][$i], ensure_ascii=False))")
-  CELL_ID=$(/usr/bin/python3 -c "
-import json,sys;print(json.loads(sys.argv[1]).get('id','cell-$i'))" "$CELL_JSON")
+
+  CELL_JSON=$(/usr/bin/python3 -c "import json;print(json.dumps(json.load(open('$LAB_DIR/plan.json'))['cells'][$i], ensure_ascii=False))")
+  eval "$(/usr/bin/python3 -c "$CELL_FIELDS_PY" "$CELL_JSON")"
+
   CELL_DIR="$(mktemp -d "${TMPDIR:-/tmp}/jangwook-lab-cell.XXXXXX")"
+  log "phase execute cell=$CELL_ID ($((i + 1))/$CELL_COUNT, bash × ${CELL_REPEATS})"
 
-  log "phase execute cell=$CELL_ID ($((i + 1))/$CELL_COUNT, agy/$AGY_MODEL)"
-  EXEC_PROMPT="$(sed -e "s#{{CELL_DIR}}#$CELL_DIR#g" \
-                     -e "s#{{RAW_DIR}}#$RAW_DIR#g" \
-                     -e "s#{{CELL_ID}}#$CELL_ID#g" \
-                     -e "s#{{RESULTS_JSONL}}#$RESULTS_JSONL#g" \
-                     "$PROMPT_DIR/lab-execute.md")"
-  # 셀 JSON 은 sed 로 넣으면 특수문자에서 깨진다. 프롬프트 끝에 붙인다.
-  EXEC_PROMPT="${EXEC_PROMPT/\{\{CELL_JSON\}\}/$CELL_JSON}"
-
-  ( cd "$CELL_DIR" && "$AGY_BIN" --print "$EXEC_PROMPT" \
-      --model "$AGY_MODEL" --dangerously-skip-permissions \
-      --print-timeout 25m </dev/null ) >>"$LOG_FILE" 2>&1
-  RC=$?
-  [ "$RC" -ne 0 ] && { FAILED=$((FAILED + 1)); log "cell=$CELL_ID rc=$RC"; }
+  RUN_RCS=""
+  for r in $(seq 1 "$CELL_REPEATS"); do
+    RAW_FILE="$RAW_DIR/$CELL_ID-$r.txt"
+    : > "$RAW_FILE"
+    # setup 은 반복마다 다시 돈다. 명령이 상태를 소비하는 셀이 있다.
+    find "${CELL_DIR:?}" -mindepth 1 -delete 2>/dev/null || true
+    if [ -n "$CELL_SETUP" ]; then
+      run_with_timeout 60 bash -c "cd '$CELL_DIR' && $CELL_SETUP" >>"$RAW_FILE" 2>&1
+    fi
+    run_with_timeout "$LAB_CELL_TIMEOUT_SEC" bash -c "cd '$CELL_DIR' && $CELL_COMMAND" >>"$RAW_FILE" 2>&1
+    RC=$?
+    RUN_RCS="$RUN_RCS $RC"
+    [ "$RC" -ne 0 ] && FAILED=$((FAILED + 1))
+  done
   rm -rf "$CELL_DIR"
+  log "cell=$CELL_ID 실행 종료 rc:${RUN_RCS}"
+
+  # agy 가 원시 출력을 읽고 observe 기준으로 판정한다.
+  JUDGE_PROMPT="$(sed -e "s#{{RAW_DIR}}#$RAW_DIR#g" \
+                      -e "s#{{CELL_ID}}#$CELL_ID#g" \
+                      -e "s#{{REPEATS}}#$CELL_REPEATS#g" \
+                      -e "s#{{EXIT_CODES}}#${RUN_RCS# }#g" \
+                      -e "s#{{RESULTS_JSONL}}#$RESULTS_JSONL#g" \
+                      "$PROMPT_DIR/lab-judge.md")"
+  JUDGE_PROMPT="${JUDGE_PROMPT/\{\{OBSERVE\}\}/$CELL_OBSERVE}"
+  "$AGY_BIN" --print "$JUDGE_PROMPT" --model "$AGY_MODEL" \
+    --dangerously-skip-permissions --print-timeout 5m </dev/null >>"$LOG_FILE" 2>&1 \
+    || log "cell=$CELL_ID 판정 실패 — 이 셀은 results.jsonl 에 안 남는다"
 done
 
 RECORDED=$(wc -l < "$RESULTS_JSONL" | tr -d ' ')
-log "실행 완료 — 기록된 셀 ${RECORDED}/${CELL_COUNT}, 실패 ${FAILED}, 건너뜀 ${SKIPPED}"
+log "실행 완료 — 기록된 셀 ${RECORDED}/${CELL_COUNT}, 실패한 런 ${FAILED}, 건너뜀 ${SKIPPED}"
 if [ "$SKIPPED" -gt 0 ]; then
-  # 분석자에게 미실행을 알린다. 모르면 complete 로 적어 사흘 뒤 글을 오염시킨다.
-  echo "{\"_note\":\"실행 예산 소진으로 ${SKIPPED}셀 미실행. status 는 partial 이어야 하고 results.md 에 어느 셀이 빠졌는지 적어야 한다\"}" >> "$RESULTS_JSONL"
+  printf '{"_note":"실행 예산 소진으로 %s셀 미실행. status 는 partial 이어야 하고 results.md 에 어느 셀이 빠졌는지 적어야 한다"}\n' "$SKIPPED" >> "$RESULTS_JSONL"
 fi
 
 if [ "$RECORDED" -lt 1 ]; then
