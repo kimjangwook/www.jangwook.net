@@ -25,6 +25,10 @@ First, some definitions. What matters is what comes next. Today I place the offi
 </example>
 
 How to write:
+- **This piece exists to carry the `thesis`.** The numbers are evidence for that claim, not the point of the piece. A list of measurements with no claim is a lab note.
+- Take `counter` head on in the body. Do not summarise it weakly and knock it down. Grant the range where it is right, then say why the thesis still stands. If there are conditions under which the counter wins, name them.
+- `decision` appears explicitly in the piece. What does the reader change tomorrow.
+- Do not bury `does-not-generalize`. Drawing the boundary yourself, before anyone asks, is what this blog trades on.
 - The title and your first three sentences answer two questions: is this for a reader like me, and what do I get if I stay. If you reach paragraph two without answering, cut the opening.
 - Open on the FACT CORE `scene` or `numbers` — a failed attempt, a count, a deadline. Not a definition, not "in today's X".
 - When a term may be new, show the job it does in the scene first, then name it. Spend at most three parenthetical glosses in the whole piece, and only on the terms the argument turns on. If a paragraph carries two, rewrite it — a paragraph that stops to define things twice is a glossary, not a scene.

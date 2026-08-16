@@ -21,13 +21,21 @@
 # 두 슬러그를 같이 돌리면 서로의 상태를 덮는다.
 #
 # 단계:
-#   1. core           claude → data/fact-core.md  (slug + 취재 재료. 본문 금지)
+#   1. core           claude → data/fact-core.md
+#                     data/labs/ 의 미소비 데이터셋에서 하나를 골라 논지를 세운다.
+#                     여기서 새로 실험하지 않는다. 실험은 run-lab.sh 가 매일 따로 돈다.
+#   1.5 hero          claude → data/hero-spec.json → render-hero.py (실패 시 Gemini)
 #   2. lang ko/ja/en/zh  writer → src/content/blog/<lang>/<slug>.md  (각 1 프로세스)
 #   3. polish         집필과 다른 모델 → 같은 파일 20~30% 감량 (비치명)
 #   4. review-1       집필과 다른 모델 → data/review-gemini.md  (비치명)
 #   5. seal-check     claude xhigh → data/seal-check.md (OK | REWRITE: ja,zh)
+#   5.5 insight-gate  claude xhigh → data/insight-gate.md (PUBLISH | HOLD)
+#                     HOLD 면 발행하지 않고 랩 데이터셋을 미소비로 남긴다.
 #   6. (조건부) 재집필  writer → REWRITE 로 지목된 언어만 다시 쓴다 (폴백 동일)
-#   7. seal-publish   claude → 커밋·푸시·Telegram
+#   7. seal-publish   claude → 커밋·푸시·Telegram, 그리고 랩 consumed 표시
+#
+# 발행은 월·수·금(launchd), 실험은 매일. 한 편에 들어가는 실측의 두께를 위해
+# 실험과 집필을 분리했다. 옛 "단일 실행 안에서 끝내라" 깊이 상한은 폐기.
 #
 # 리뷰가 둘인 이유: flash 는 싸고 빨라 사실·링크·메타데이터 같은 기계적 오류를
 # 훑는 데 쓰고, opus xhigh 가 그 메모를 받아 문체와 H2 독립성을 판정한다.
@@ -493,6 +501,38 @@ $CHECK_BODY" || exit 1
   done
 fi
 
+# ── 5.5 insight-gate (claude xhigh): 발행할 값이 있는가 ────────────────
+# 앞의 게이트들은 "틀렸는가"를 본다. 이 게이트만 "쓸 값이 있는가"를 본다.
+# HOLD 면 발행하지 않고 랩 데이터셋을 미소비 상태로 남겨 다음 주기로 넘긴다.
+# 정확하지만 할 말이 없는 글이 나가는 것을 막는 유일한 장치다.
+INSIGHT_GATE="$PROJECT_DIR/data/insight-gate.md"
+rm -f "$INSIGHT_GATE"
+log "phase insight-gate (claude/$CLAUDE_MODEL effort=$CLAUDE_REVIEW_EFFORT)"
+GATE_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-insight-gate.md")"
+run_claude "$CLAUDE_REVIEW_EFFORT" "$GATE_PROMPT"
+GATE_RC=$?
+
+if [ "$GATE_RC" -ne 0 ] || [ ! -s "$INSIGHT_GATE" ]; then
+  # 게이트가 답을 못 내면 통과시키지 않는다. 판정 없는 발행은 게이트가 없는 것과 같다.
+  log "insight-gate 판정 없음(rc=$GATE_RC) — 발행 보류"
+  "$CONTROLLER_DIR/sh/send-telegram.sh" "⏸ [jangwook.net] ${SLUG}
+통찰 게이트가 판정을 내지 못해 발행을 보류했다(rc=${GATE_RC}).
+랩 데이터셋은 미소비로 남는다. data/insight-gate.md 확인." >/dev/null 2>&1 || true
+  exit 1
+fi
+
+if head -n 1 "$INSIGHT_GATE" | grep -q '^HOLD'; then
+  HOLD_REASON="$(head -n 1 "$INSIGHT_GATE")"
+  log "insight-gate $HOLD_REASON — 발행하지 않는다"
+  "$CONTROLLER_DIR/sh/send-telegram.sh" "⏸ [jangwook.net] ${SLUG} 발행 보류
+${HOLD_REASON}
+
+네 언어 초고는 작업트리에 남아 있고 랩 데이터셋은 미소비 상태다.
+판정 근거: data/insight-gate.md" >/dev/null 2>&1 || true
+  exit 0
+fi
+log "insight-gate PUBLISH"
+
 # ── 6. seal-publish (claude): 커밋·푸시·알림 ───────────────────────────
 log "phase seal-publish (claude/$CLAUDE_MODEL)"
 log "engines: $(tr '\n' ' ' < "$ENGINE_LOG" 2>/dev/null)"
@@ -513,6 +553,31 @@ PUBLISH_RC=$?
 if [ "$PUBLISH_RC" -ne 0 ]; then
   log "seal-publish claude failed rc=$PUBLISH_RC"
   exit "$PUBLISH_RC"
+fi
+
+# 쓴 랩 데이터셋을 소비 처리한다. 안 하면 다음 발행일에 같은 실험이 다시 뽑힌다.
+# 발행이 성공한 뒤에만 표시한다. HOLD 나 실패로 끝나면 미소비로 남아 다음 주기가 쓴다.
+LAB_IDS="$(awk '/^lab:/{f=1;next} f && /^ *- /{gsub(/^ *- */,""); print; next} f && !/^ *- /{f=0}' "$FACT_CORE" 2>/dev/null)"
+if [ -n "$LAB_IDS" ]; then
+  for LID in $LAB_IDS; do
+    /usr/bin/python3 - "$PROJECT_DIR/data/labs/index.json" "$LID" "$SLUG" <<'PY' 2>/dev/null || true
+import json, sys
+path, lab_id, slug = sys.argv[1], sys.argv[2], sys.argv[3]
+try:
+    rows = json.load(open(path))
+except Exception:
+    rows = []
+hit = False
+for r in rows:
+    if r.get("id") == lab_id:
+        r["consumed"] = True
+        r["consumed_by"] = slug
+        hit = True
+if hit:
+    json.dump(rows, open(path, "w"), ensure_ascii=False, indent=2)
+PY
+    log "lab consumed → $LID"
+  done
 fi
 
 log "done slug=$SLUG"

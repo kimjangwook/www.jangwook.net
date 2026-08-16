@@ -29,10 +29,21 @@ _sandbox/
 
 # automation data (operational data, API responses, strategy reports)
 # 루트 data/만 무시 — src/data(사이트 콘텐츠 데이터)는 추적 대상
-/data/
+# `/data/` 가 아니라 `/data/*` 인 이유: 디렉터리째 무시하면 git 이 그 아래로
+# 내려가지 않아서 하위 경로의 화이트리스트(!)가 전혀 먹지 않는다.
+/data/*
 # 단, 주간 잡이 매주 커밋하는 운영 산출물은 추적 유지(인덱스에서 빠져도 재추가되도록 예외).
 !data/strategy-report.md
 !data/topic-backlog.json
+# 랩 데이터셋은 발행된 글의 근거다. 매니페스트와 결과 요약은 추적하고,
+# 원시 출력(raw/)은 용량 때문에 로컬에만 둔다.
+!data/labs/
+data/labs/*
+!data/labs/index.json
+!data/labs/*/
+data/labs/*/*
+!data/labs/*/lab.json
+!data/labs/*/results.md
 
 # scheduler logs
 logs/ops/loop_state.json
