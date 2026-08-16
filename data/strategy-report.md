@@ -4,6 +4,131 @@
 
 ---
 
+## 2026-08-16 주간 리뷰 (8월 3주차)
+
+### 성과 요약
+
+- **이번 주 신규 발행 포스트**: 7개 (08-10〜08-16) — **결손 0일**. 지난주 08-05 구멍은 이번 주에는 재발하지 않았다
+- **콘텐츠 믹스**: How-to 57%(4) / 뉴스 29%(2) / 비교 14%(1) / 시리즈 0%(0)
+  - 목표(How-to 40 / 뉴스 30 / 비교 15 / 시리즈 15) 대비 **How-to +17%p, 뉴스 −1%p, 비교 −1%p, 시리즈 −15%p**
+  - 지난주 83/0/17/0에서 크게 회복. 뉴스는 2주 연속 0편이다가 29%로 복귀. **시리즈만 7주 연속 0편**
+- **내부링크 현황**: 337편 중 0-link **1편** — 4주 연속 0편 기록이 오늘 발행분에서 깨짐. `agents-md-vs-claude-md-loading-measured-2026` 본문에 `/ko/blog/ko/` 0개. 저녁 daily-closing 전이므로 당일 메움이 남아 있다. 나머지 6편은 편당 2〜3개
+- **4언어 균형**: ko/en/ja/zh 각 337편 일치
+- **크로스포스팅**: dev.to **7/7 (100%)** — 로그 엔트리는 재시도 포함 19건, 고유 슬러그 7. Hashnode는 정책상 제외(2026-08-02 종결)
+
+#### 이번 주 포스트 목록
+
+| 날짜 | 슬러그 | 유형 | 도메인 | 분량 | 표 | mermaid |
+|---|---|---|---|---|---|---|
+| 08-10 | modern-web-guidance-agent-skill-coverage-2026 | how-to | AX/에이전트 | 2,144 | 23 | 0 |
+| 08-11 | speakable-cssselector-pointer-rot-2026 | how-to | GEO | 1,617 | 24 | 0 |
+| 08-12 | content-on-hover-focus-1413-tooltip-2026 | how-to | 접근성 | 2,241 | 9 | 0 |
+| 08-13 | robots-meta-head-body-parser-placement-2026 | news | AIO/SEO | 2,128 | 22 | 0 |
+| 08-14 | official-geo-subtraction-gsc-control-2026 | news | GEO | 957 | 0 | 0 |
+| 08-15 | hidden-until-found-find-fragment-accordion-2026 | how-to | 접근성 | 771 | 19 | 0 |
+| 08-16 | agents-md-vs-claude-md-loading-measured-2026 | comparison | AX | 914 | 0 | 0 |
+
+분량 하한(2,000단어)을 넘긴 것은 4/7편. official-geo·hidden-until-found·agents-md 세 편은 771〜957단어. 08-14·08-15는 당일 재집필(redo)이 있었고, 08-15 문체 파이프라인이 polish 20〜30% 삭감을 넣었다. 삭감이 하한 아래로 떨어뜨리는 새 실패 모드다.
+
+도메인은 접근성 2 / GEO·AIO 3 / AX 2. 지난주 접근성 67% 뭉침은 풀렸다. 다만 여덟 기둥 기준으로 웹 층(1〜3) 5편 · 에이전트 층(4〜8) 2편이라, SKILL 쿼터("1〜3이 5편 이상이면 다음은 4〜8")가 다음 주에 걸린다.
+
+### 지난주 계획 이행 점검
+
+| 지난주 결정 | 결과 |
+|---|---|
+| 유형 강제: 뉴스 2 / 시리즈 1 / 비교 2 / How-to 2 | △ 뉴스 2 ✅ · 비교 1 · How-to 4 · 시리즈 0 — 뉴스만 정확히 지킴 |
+| 전수 파싱 감사 주 3편 이내 | ✅ 전수 파싱은 speakable 1편. 나머지는 픽스처·라이브 fetch·CLI 샌드박스 |
+| 접근성 주제 2편 이하 | ✅ hover + hidden 2편. speakable은 GEO |
+| 결말 `정리:` / 「말하지 않는 것」 금지 | ✅ `정리:` 0/7, 「말하지 않는 것」 계열 0/7. **08-09 SKILL 에스컬레이션이 작동한 첫 주** |
+| mermaid 주 2편 이상 | ❌ 0/7 (6주 연속 0) |
+| 우선 백로그 4건(viewport-budget, etag-hosts, act-rules-1.1, sticky-header) | ❌ 0건 — **3주 연속 우선 슬러그 미소비** |
+| 08-05 결손 원인 확인 | ⏹️ 미확인. 이번 주는 결손 0이라 재발 신호는 없음 |
+
+지난주 결정 7건 중 이행 3.5건. 문체 규칙(SKILL.md에 박은 것)은 지켰고, 발행 대상 선택(리포트에만 적은 것)은 또 무시됐다. 두 주 전의 "기록형 조정은 집필 시점에 참조되지 않는다"는 문체에는 더 이상 해당하지 않고, **주제 피커에만 해당한다.**
+
+### 스타일 분석
+
+최근 7편(ko) 전수 확인.
+
+**양호한 항목**
+
+- 결말 템플릿이 깨졌다. `정리:` 접두 0편, 「이 측정이 말하지 않는 것」 계열 0편. 지난주 5〜6/6에서 0/7
+- 도입부 변주는 유지: 실험 세팅(agents) / 프래그먼트 클릭 한 장면(hidden) / git vs live 불일치(official-geo) / 분류 숫자 선제시(robots) / 통념 반박(hover) / 검증기 에러 문자열(speakable) / 릴리스+카운트(MWG)
+- CTA가 한 갈래로 안 모였다. 상담 유도 3(robots·hover·MWG) / 열린 과제 2(hidden·official-geo) / 입장 단정 1(agents) / 업 선언 1(speakable)
+- 1인칭은 6/7편에서 기준(2회)을 넘김. speakable 13 · MWG 14 · hover 6 · robots 5
+- 비판·한계는 수치를 낸 절 안에 붙어 있는 편이 늘었다
+
+**문제 항목**
+
+1. **오늘 글이 게이트 두 개를 동시에 빠뜨렸다**
+   - `agents-md-vs-claude-md-loading-measured-2026`: 본문 내부링크 0, 1인칭 0. 비교글인데 표도 0. 재현 배시만 남고 독자가 건너갈 글이 없다
+   - 저녁 closing이 링크를 메우더라도 1인칭·표는 그 패스가 안 고친다
+2. **한계 전용 마지막 절이 이름만 바뀌어 남았다**
+   - hidden의 끝 H2 「남은 한계와 아직 풀지 못한 것」. 금지 명명(`말하지 않는 것`)은 피했지만 위치와 기능은 같다. 1/7이라 에스컬레이션 임계(4편)에는 안 닿음
+3. **실측 골격은 남고, 전수 파싱만 줄었다**
+   - 7/7편이 "내가 돌리고 셌다". 쿼터 문면(전수 파싱 ≤3)은 지켰다. 쿼터 취지(방법론 다양화)는 반만. 문서 읽기형 뉴스는 robots·official-geo 두 편이 실측을 끼고 나와서, 백로그에 넣어 둔 순수 문서 읽기 3건은 또 안 쓰였다
+4. **구조 장치: mermaid 0, 표는 양극**
+   - mermaid 6주 연속 0. 표는 0개(official-geo·agents) 아니면 19〜24개. 중간이 hover 9개뿐
+5. **분량 붕괴 3편**
+   - 재집필+polish가 2,000단어 아래로 잘라냈다. hidden 771단어 / 표 19개는 표가 본문을 밀어낸 형태
+
+### 다음 주 전략
+
+- **유형 강제 배분**: 시리즈 1 / 뉴스 2 / 비교 1 / How-to 3. 시리즈를 월요일에 먼저 쓴다. 7주 공백을 리포트 마지막에 두지 않는다
+- **기둥 쿼터 집행**: 다음 글은 기둥 4〜8(자동화·팀·AX·프롬프트·하네스)에서 고른다. 웹 층 5/7이 이미 임계
+- **우선 처리 백로그** (이번 주 신규 6건 + 지난주 미소비 잔여):
+  1. `viewport-budget-series-1-what-400-zoom-leaves-2026` (08-09, series) — 7주 공백. 접근성 2편 한도는 시리즈 1편으로 소비
+  2. `agent-instruction-loading-series-2-does-loaded-rule-change-code-2026` (신규, series) — 오늘 글 미회수. viewport를 안 쓰면 이것
+  3. `claude-code-memory-doc-reads-claude-md-not-agents-md-2026` (신규, news) — 측정 없는 문서 읽기
+  4. `gsc-generative-ai-control-switch-document-reading-2026` (신규, news) — official-geo가 열어 둔 GSC 한 칸
+  5. `agents-md-vs-claude-md-vs-cursorrules-loading-surface-2026` (신규, comparison) — 토요일 비교
+  6. `codex-claude-shared-instruction-workaround-2026` (신규, how-to) — 오늘 글의 우회를 따라 하는 월요일 How-to
+- **오늘 0-link 당일 처리**: daily-closing이 `agents-md-vs-claude-md-loading-measured-2026`에 본문 링크 2개를 넣지 못하면 월요일 수동
+- **polish 후 단어 수 재확인**: 삭감 뒤 ko `wc -w`가 2,000 미만이면 발행 게이트 실패로 취급. 이번 주 3편이 이 구멍으로 나갔다
+- **mermaid**: 주 1편. 2편 목표는 6주째 실패라 낮춘다. 로드 분기·비교 글에 한 장
+
+**SKILL.md 수정 여부**: ⚪ **이번 주는 수정하지 않음**. 지난주 박은 결말 규칙이 7편에서 지켜졌다. 남은 실패는 문체가 아니라 **주제 피커가 `strategy-report.md` 우선 슬러그를 읽지 않는 것**(3주 연속). 다음 주에도 우선 4건 중 0건이면 `daily-post-pipeline.sh` 주제 선정 단계에 리포트 슬러그 강제 소비를 넣는다. 문체 파일을 한 번 더 늘리지 않는다.
+
+### 스타일 조정 제안
+
+#### 이번 주 발견된 패턴 문제
+
+- 결말 `정리:` / 「말하지 않는 것」은 사라졌고, 한계 전용 절은 1편만 이름만 바꿔 잔류
+- 7/7편이 실측. 전수 파싱은 1편으로 줄었으나 문서 읽기형 순수 뉴스는 0편
+- mermaid 0, 표는 0 아니면 20+
+- 최신 1편 내부링크 0 · 1인칭 0
+- 재집필 3편이 2,000단어 아래로 잘림
+
+#### 권장 조정
+
+- 한계는 해당 수치 절 안에서 처리. 끝에 남길 때도 「남은 한계」 명명을 이번 주에 재사용하지 않는다
+- 뉴스 날은 샌드박스 숫자를 새로 만들지 않는다. 이미 잰 숫자 인용 + 문서 변경분만
+- 표 20개 넘으면 2〜3개를 목록이나 mermaid 한 장으로 환원
+- 비교글에도 내부링크 2개와 1인칭 2회는 게이트다. relatedPosts만 있고 본문이 끊기면 실패
+- polish 후 단어 수가 하한 아래면 삭감을 되돌리거나 발행하지 않는다
+
+### 백로그 현황
+
+- **총 405개 주제 / queued 331개** (이번 주 +6)
+- queued 유형 분포: how-to 147 / news 102 / comparison 63 / series 19
+- how-to는 이미 147건이라 신규 How-to는 오늘 글의 우회·중첩 파일 2건만 넣었다(템플릿의 월〜수 3건에서 1건 축소)
+- 이번 주 신규 투입 6건:
+
+| 유형 | 슬러그 | 우선순위 |
+|---|---|---|
+| series | agent-instruction-loading-series-2-does-loaded-rule-change-code-2026 | 1 |
+| news | claude-code-memory-doc-reads-claude-md-not-agents-md-2026 | 1 |
+| news | gsc-generative-ai-control-switch-document-reading-2026 | 1 |
+| comparison | agents-md-vs-claude-md-vs-cursorrules-loading-surface-2026 | 1 |
+| how-to | codex-claude-shared-instruction-workaround-2026 | 1 |
+| how-to | claude-code-read-tool-nested-claude-md-2026 | 2 |
+
+6건 모두 이번 주 글이 남긴 미회수 질문 또는 인용만 하고 읽지 않은 문서에 근거한다. news 2건은 측정 없는 문서 읽기형이다.
+
+지난주 우선 4건(`viewport-budget-series-1`, `etag-lastmodified-across-static-hosts-compare`, `act-rules-format-11-recommendation-what-changed`, `sticky-header-vs-static-header-tradeoff`)은 전부 queued 잔류. 폐기하지 않는다.
+
+---
+
 ## 2026-08-09 주간 리뷰 (8월 2주차)
 
 ### 성과 요약

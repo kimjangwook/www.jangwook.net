@@ -1,7 +1,109 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-15",
+  "updated_at": "2026-08-16",
   "topics": [
+    {
+      "slug": "agent-instruction-loading-series-2-does-loaded-rule-change-code-2026",
+      "title_idea": "읽혔다는 것과 코드가 달라진 것은 다른 사건이다",
+      "content_type": "series",
+      "target_keyword": "AGENTS.md 로드 코드 품질",
+      "secondary_keywords": [
+        "지시문 로드와 준수 차이",
+        "캐너리 토큰 코딩 태스크",
+        "Claude Code Codex 규칙 준수"
+      ],
+      "search_intent": "informational",
+      "priority": 1,
+      "source": "2026-08-16 agents-md-vs-claude-md-loading-measured-2026 결말 미회수: '지시문이 로드된다고 실제 생성되는 코드의 품질까지 올라가는지는 이 실험의 범위를 벗어난다'. 같은 샌드박스·같은 두 CLI(claude 2.1.233 / codex 0.147.0)에서 캐너리 로드 확인 뒤 실제 코딩 태스크를 붙여 규칙 준수율을 잰다. 시리즈 7주 공백 해소 + 기둥 6 AX.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "시리즈 2편. 1편은 로드 여부, 2편은 로드 이후 산출물. 측정은 전수 파싱이 아니라 태스크 n회. mermaid로 로드→준수 분기. 링크: agents-md-vs-claude-md-loading-measured-2026, agents-md-effectiveness, cognitive-debt-agentic-coding-2026"
+    },
+    {
+      "slug": "claude-code-memory-doc-reads-claude-md-not-agents-md-2026",
+      "title_idea": "Claude Code는 AGENTS.md를 읽지 않는다고 문서에 박혀 있다",
+      "content_type": "news",
+      "target_keyword": "Claude Code CLAUDE.md AGENTS.md",
+      "secondary_keywords": [
+        "Claude Code memory 문서",
+        "AGENTS.md 표준",
+        "코딩 에이전트 지시문"
+      ],
+      "search_intent": "news",
+      "priority": 1,
+      "source": "Claude Code 메모리 공식 문서 축자: 'Claude Code reads CLAUDE.md, not AGENTS.md.' + agents.md 공식 사이트 nearest-file 문장 + OpenAI Codex Agents.md 가이드 cwd walk-down. 2026-08-16 글이 인용만 하고 문서  palimpsest·변경 이력은 안 읽었다. 측정 없는 문서 읽기형.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "레인 B. 전수 파싱·샌드박스 실측 금지(이번 주 7/7이 실측). 문서가 언제 그 문장을 넣었는지, agents.md 표준과 충돌하는 문장을 누가 양보하는지. 성실성: 벤더 로드맵 추측 금지. 링크: agents-md-vs-claude-md-loading-measured-2026, modern-web-guidance-agent-skill-coverage-2026"
+    },
+    {
+      "slug": "gsc-generative-ai-control-switch-document-reading-2026",
+      "title_idea": "Search Console 생성형 AI 스위치가 끊는 것과 끊지 않는 것",
+      "content_type": "news",
+      "target_keyword": "Search Console 생성형 AI 제어",
+      "secondary_keywords": [
+        "Google Search generative AI control",
+        "AI features 사이트 제외",
+        "공식 GEO 가이드"
+      ],
+      "search_intent": "news",
+      "priority": 1,
+      "source": "2026-08-14 official-geo-subtraction-gsc-control-2026가 남긴 한 칸: 로그인하지 않아 GSC 생성형 AI 제어 메뉴의 실제 값(include/상속)을 확인하지 않음. Google Search Central AI features / 생성형 AI 최적화 가이드 / GSC 도움말. 로그인 가능하면 스크린샷, 불가면 문서만으로 스위치가 끊는 자격 범위를 적고 측정은 하지 않는다.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "문서 읽기형. 순위를 재지 않는다. 자격(eligibility)과 순위 신호를 섞지 말 것. 링크: official-geo-subtraction-gsc-control-2026, robots-snippet-controls-ai-overviews-2026, nosnippet-vs-gsc-ai-control-vs-google-extended-2026"
+    },
+    {
+      "slug": "agents-md-vs-claude-md-vs-cursorrules-loading-surface-2026",
+      "title_idea": "같은 리포에 지침 파일 세 장을 두고 누가 무엇을 읽는지 비교한다",
+      "content_type": "comparison",
+      "target_keyword": "AGENTS.md CLAUDE.md .cursorrules 비교",
+      "secondary_keywords": [
+        "코딩 에이전트 지시문 파일",
+        "Cursor rules 로드",
+        "모노레포 지침 탐색"
+      ],
+      "search_intent": "comparison",
+      "priority": 1,
+      "source": "2026-08-16 글은 claude vs codex 2자. 팀에 실제로 남는 세 번째 표면은 .cursorrules / .cursor/rules. 같은 캐너리 프로토콜로 3파일을 나란히. 토요일 비교 슬롯. 기둥 6 AX.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "비교표 필수. mermaid는 로드 표면 한 장만. 설치되지 않은 CLI는 문서 인용으로 강등하고 실행했다고 쓰지 말 것. 링크: agents-md-vs-claude-md-loading-measured-2026, modern-web-guidance-agent-skill-coverage-2026"
+    },
+    {
+      "slug": "codex-claude-shared-instruction-workaround-2026",
+      "title_idea": "심볼릭 링크와 fallback 파일명으로 두 CLI에 같은 지침을 물리는 법",
+      "content_type": "how-to",
+      "target_keyword": "AGENTS.md CLAUDE.md 심볼릭 링크",
+      "secondary_keywords": [
+        "project_doc_fallback_filenames",
+        "Claude Code 메모리 파일",
+        "Codex AGENTS.md"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "2026-08-16 글 후반 '두 가지 우회'를 재현 절차로만 풀어 쓴다. symlink CLAUDE.md→AGENTS.md, codex -c project_doc_fallback_filenames. 월요일 How-to. 기둥 6·8.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "사이트 전수 파싱 금지. 샌드박스 재현 + 실패 조건(Windows 심볼릭 링크, 하위 패키지 cwd). 내부링크 최소 2: agents-md-vs-claude-md-loading-measured-2026, modern-web-guidance-agent-skill-coverage-2026. 1인칭 3회 이상 — 직전 비교글이 1인칭 0회였음."
+    },
+    {
+      "slug": "claude-code-read-tool-nested-claude-md-2026",
+      "title_idea": "하위 CLAUDE.md는 Read 도구를 거치지 않으면 증발한다",
+      "content_type": "how-to",
+      "target_keyword": "Claude Code 하위 CLAUDE.md Read 도구",
+      "secondary_keywords": [
+        "모노레포 CLAUDE.md",
+        "Claude Code 메모리 탐색",
+        "nested instruction file"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "2026-08-16 실측 한 줄: Claude Code는 Read 도구를 거치지 않은 하위 지침을 읽지 못한다. 그 한 줄을 재현 가능한 설정(권한 모드·자동 Read·수동 경로)으로 쪼갠다. 화~수 How-to.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "전수 감사 아님. 픽스처 소수. 권한 모드를 바꾸면 결과가 달라질 수 있으니 버전·모드를 각주에 박을 것. 링크: agents-md-vs-claude-md-loading-measured-2026, context-engineering-production-ai-agents"
+    },
     {
       "slug": "hidden-until-found-find-fragment-accordion-2026",
       "title_idea": "프래그먼트는 6083까지 갔는데 아코디언은 닫혀 있었다",
