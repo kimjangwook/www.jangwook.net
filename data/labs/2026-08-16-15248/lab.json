@@ -1,0 +1,36 @@
+{
+  "id": "2026-08-16-15248",
+  "pillar": "agent-harness",
+  "question": "32 KiB(project_doc_max_bytes 기본값)를 넘긴 단일 AGENTS.md 를 codex 는 바이트 경계에서 자르는가 파일째 버리는가, 한도를 올리면 잘린 꼬리가 돌아오는가, 그리고 같은 크기의 CLAUDE.md 에서 Claude Code 는 어떻게 다른가.",
+  "expectation": "나는 codex 가 자른다(clip)고 본다 — 앞은 살고 뒤가 죽는다. 근거는 공식 가이드의 트러블슈팅 문구가 'Instructions truncated: Raise project_doc_max_bytes or split large files' 이지 'file skipped' 가 아니라는 점이다. 다만 같은 문서의 본문은 'stops adding files once the combined size reaches the limit' 라고 **파일 단위**로 적혀 있고, 파일 하나가 단독으로 한도를 넘는 경우를 문서는 답하지 않는다. 그래서 예상은 이렇다. (1) 31 KiB 에서는 head·tail 캐너리가 둘 다 산다. (2) 34 KiB·48 KiB 에서 head 는 살고 tail 만 죽는다 — 이것이 clip 가설이다. (3) -c project_doc_max_bytes=262144 로 올리면 34 KiB·48 KiB 의 tail 이 돌아온다. (4) Claude Code 는 CLAUDE.md 에 바이트 한도가 문서화돼 있지 않으므로 48 KiB 에서도 head·tail 둘 다 산다.\n\n무엇이 이 예상을 깨는가. (a) 34 KiB 에서 head 까지 죽으면 clip 이 아니라 파일째 드롭이고, '조금 넘겼으니 뒤만 조금 잘리겠지'라는 실무 직관이 통째로 틀린 것이 된다. (b) 한도를 262144 로 올렸는데도 tail 이 안 돌아오면 원인은 바이트 한도가 아니라 긴 지시문 안쪽에 대한 모델의 접근성이고, project_doc_max_bytes 를 올리는 처방 자체가 헛돈다. (c) claude 가 48 KiB tail 을 놓치면 문서화되지 않은 한도가 있다는 뜻이다. 셋 중 하나라도 나오면 기사이고, 넷 다 예상대로면 공식 문서 확인일 뿐이다.\n\n측정이 무엇을 재는지에 대한 전제: head 캐너리는 살고 tail 캐너리만 죽는 셀이 하나라도 나오면, 그것은 모델이 셸로 파일을 읽지 않았다는 증거이기도 하다(읽었다면 tail 도 찾았을 것이다). 그 전제를 따로 확인하려고 CLI 가 아예 로드하지 않는 NOTES.md 에 캐너리를 넣은 통제 셀을 엔진마다 하나씩 둔다.",
+  "environment": {
+    "os": "darwin 25.5.0 (macOS 26.5.2, build 25F84)",
+    "node": "v22.22.0",
+    "tools": {
+      "codex": "0.147.0",
+      "claude": "2.1.233"
+    },
+    "models": {
+      "codex": "gpt-5.6-luna, model_reasoning_effort=low (셀마다 -c 로 고정. ~/.codex/config.toml 의 기본값 max 는 120런을 감당 못 한다)",
+      "claude": "sonnet"
+    },
+    "notes": [
+      "~/.codex/config.toml 에 project_doc_max_bytes 설정이 없다 — 기본 32768 바이트가 적용된다.",
+      "~/.codex/AGENTS.md 는 0 바이트다. codex 는 빈 파일을 건너뛰므로 전역 문서가 합산 한도를 먹지 않는다.",
+      "~/.claude/CLAUDE.md 는 10951 바이트이고 모든 claude 셀에 항상 로드된다 — 셀 간 상수다.",
+      "CELL_DIR 은 git 저장소가 아니라서 codex 에 --skip-git-repo-check 가 필요하다."
+    ]
+  },
+  "dimensions": {
+    "engine": ["codex-default", "codex-raised", "claude"],
+    "size": ["31k", "34k", "48k"],
+    "pos": ["head", "tail"],
+    "loaded": ["yes", "no"]
+  },
+  "runs": 120,
+  "cells": 20,
+  "status": "complete",
+  "consumed": false,
+  "surprised": true,
+  "headline": "codex 는 32 KiB 를 넘긴 단일 AGENTS.md 를 파일째 버리지 않고 바이트 경계에서 자른다 — 34k·48k 에서 head 캐너리 6/6, tail 0/6, project_doc_max_bytes 를 262144 로 올리면 tail 이 6/6 으로 돌아온다. 반면 같은 크기 CLAUDE.md 에서 claude 는 경계 없이 확률적으로 놓친다: 31k head 2/6·tail 4/6, 34k head 3/6·tail 1/6, 48k head 0/6·tail 2/6."
+}
