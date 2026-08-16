@@ -1,6 +1,6 @@
 ---
 title: 'AGENTS.mdとCLAUDE.mdを76回走らせて読み込みの境界を数えた'
-description: '空のリポジトリに指示書を置き、codexとClaude Codeへ同じ命令を投げた。互いのファイルを一切読まない0件の相互認識から、モノレポでサブディレクトリの指示が読み飛ばされる条件、ツール選択で読み込みが途切れる仕組みまで、2026年8月16日の実測76回で記録した。'
+description: '空のリポジトリに指示書を置き、codexとClaude Codeへ同じ命令を投げた。互いのファイルを一切読まない0件の相互認識から、モノレポでサブディレクトリの指示が読み飛ばされる条件、ツール選択で読み込みが途切れる仕組みまで、2026年8月16日の実測76回で記録した。回避はシンボリックリンクとfallback。'
 pubDate: '2026-08-16'
 heroImage: '../../../assets/blog/agents-md-vs-claude-md-loading-measured-2026/hero.png'
 tags: ['agents-md', 'claude-code', 'codex', 'ai-agent', 'web-development']
@@ -48,7 +48,7 @@ relatedPosts:
 
 [Claude Codeの公式ドキュメント](https://code.claude.com/docs/en/memory) はいう。「Claude also discovers `CLAUDE.md` and `CLAUDE.local.md` files in subdirectories under your current working directory. Instead of loading them at launch, they are included when Claude reads files in those subdirectories.」
 
-「reads files」はClaudeのReadツールだった。Readでは `CLAUDE.md` が追加され、Bashではフックが発火しない。
+「reads files」はClaudeのReadツールだった。Readでは `CLAUDE.md` が追加され、Bashではフックが発火しない。チーム規約をスキルへ切り出す[カバレッジ測定](/ja/blog/ja/modern-web-guidance-agent-skill-coverage-2026/)と同じ層だ。読まれなければスキルも空になる。
 
 Readを強制すると 4/4、Bashを強制すると 0/4だった。
 
@@ -95,7 +95,7 @@ claude -p "Print the first line of packages/api/note.txt. Nothing else." --permi
 
 codex 0.147.0 は `CLAUDE.md` だけで 0/3、別バッチの2回を足しても 0/5だった。Claude Code 2.1.233 は `AGENTS.md` だけで 0/3だった。
 
-[Claude Codeのドキュメント](https://code.claude.com/docs/en/memory) は「Claude Code reads `CLAUDE.md`, not `AGENTS.md`.」と明言する。これは不具合ではなく仕様だ。
+[Claude Codeのドキュメント](https://code.claude.com/docs/en/memory) は「Claude Code reads `CLAUDE.md`, not `AGENTS.md`.」と明言する。これは不具合ではなく仕様だ。指示書が成功率を変えるかという[先行の論文検証](/ja/blog/ja/agents-md-effectiveness/)とは層が違う。本稿はファイルがコンテキストに載るかだけを数える。
 
 Claude Code側では、[公式ドキュメント](https://code.claude.com/docs/en/memory) が案内するシンボリックリンクを使う。`ln -s AGENTS.md CLAUDE.md` で3/3を確認した。
 
@@ -152,4 +152,4 @@ Git管理外の codex 走査は `--skip-git-repo-check` で回避したため未
 
 Claudeには `~/.claude/CLAUDE.md` が常に読み込まれていた。条件間では定数だが、完全隔離ではない。
 
-数えたのは「指示書がコンテキストに入り、実行時に追従されたかどうか」までだ。コード品質や開発効率への効果は別に測る問題だ。
+数えたのは「指示書がコンテキストに入り、実行時に追従されたかどうか」までだ。コード品質や開発効率への効果は別に測る問題だ。[ルールが静かに読み飛ばされるときの認知負債](/ja/blog/ja/cognitive-debt-agentic-coding-2026/)は、ここで始まる。

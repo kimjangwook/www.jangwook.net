@@ -1,6 +1,6 @@
 ---
 title: AGENTS.md와 CLAUDE.md 실측, 같은 리포에서 두 CLI가 읽어 들인 것
-description: AGENTS.md 한 장이면 모든 에이전트가 읽는다는 기대는 빗나갔다. 2026년 8월 16일 claude 2.1.233과 codex 0.147.0을 샌드박스에 올리고 76번 돌려보니 교차 인식률은 0이었고 모노레포 중첩 파일 탐색은 cwd와 도구 선택에 따라 갈렸다. 실측 데이터와 우회 설정을 정리한다.
+description: AGENTS.md 한 장이면 모든 에이전트가 읽는다는 기대는 빗나갔다. 2026년 8월 16일 claude 2.1.233과 codex 0.147.0을 샌드박스에서 76번 돌려보니 교차 인식률은 0이었고 중첩 파일 탐색은 cwd와 도구 선택에 따라 갈렸다. 실측과 우회 설정을 정리한다.
 pubDate: '2026-08-16'
 heroImage: '../../../assets/blog/agents-md-vs-claude-md-loading-measured-2026/hero.png'
 tags:
@@ -48,7 +48,7 @@ relatedPosts:
 
 루트 `AGENTS.md` 조건에서 codex는 3/3으로 캐너리 토큰을 출력했다. Claude Code는 0/3이었다. 반대로 루트에 `CLAUDE.md`만 둔 기본 설정의 codex는 0/3으로 침묵했고, Claude Code는 9/9로 규칙을 따랐다.
 
-교차 인식률은 0이었다.
+교차 인식률은 0이었다. [지시문이 성공률을 바꾸는지 논문으로 본 기록](/ko/blog/ko/agents-md-effectiveness/)이 있다. 이번 글은 그 앞 층, 파일이 컨텍스트에 실리는지를 잰다.
 
 공식 문서는 의도된 사양으로 적어두었다. [Claude Code 메모리 공식 문서](https://code.claude.com/docs/en/memory)는 이렇게 못 박는다.
 
@@ -102,7 +102,7 @@ Bash를 막아 Read를 강제하자 결과는 4/4로 전부 규칙을 따랐다.
 
 > "Claude also discovers `CLAUDE.md` and `CLAUDE.local.md` files in subdirectories under your current working directory. Instead of loading them at launch, they are included when Claude reads files in those subdirectories."
 
-시작할 때가 아니라 하위 디렉터리의 파일을 읽을 때 포함한다는 문구에서, 읽는 행위는 Read 도구 호출을 의미했다.
+시작할 때가 아니라 하위 디렉터리의 파일을 읽을 때 포함한다는 문구에서, 읽는 행위는 Read 도구 호출을 의미했다. 팀 규칙을 스킬로 쪼개 넣는 [가이드라인 커버리지 측정](/ko/blog/ko/modern-web-guidance-agent-skill-coverage-2026/)과 같은 층이다. 파일이 안 읽히면 스킬도 빈 껍데기다.
 
 첫 실험 8번을 통째로 날린 삽질도 있었다. `--disallowedTools Bash "프롬프트"` 형태로 인자를 적어 프롬프트까지 도구 이름으로 삼켰다. 알 수 없는 도구 에러가 났다. 프롬프트를 `-p` 뒤로 옮기고 나서야 측정을 이어갔다.
 
@@ -165,4 +165,4 @@ codex exec --skip-git-repo-check -C . "Print the first line of packages/api/note
 
 모노레포의 하위 패키지 지침에만 의존하는 구조는 위험하다. 터미널의 현재 위치에 따라, 에이전트가 파일을 읽어 들인 내부 도구에 따라 지침은 쉽게 증발한다.
 
-루트에 명확한 지침을 두고 심볼릭 링크나 대체 파일명 설정을 걸어두는 편을 택한다. 에이전트가 문서를 읽었다고 가정하는 순간 깨지는 것은 팀의 빌드다.
+루트에 명확한 지침을 두고 심볼릭 링크나 대체 파일명 설정을 걸어두는 편을 택한다. 에이전트가 문서를 읽었다고 가정하는 순간 깨지는 것은 팀의 빌드다. [규칙을 조용히 건너뛸 때 쌓이는 인지 부채](/ko/blog/ko/cognitive-debt-agentic-coding-2026/)는 여기서 시작한다.

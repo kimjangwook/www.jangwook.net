@@ -1,6 +1,6 @@
 ---
 title: "AGENTS.md vs CLAUDE.md loading across 76 runs"
-description: "AGENTS.md in a monorepo did not load where I expected. Across 76 runs I measured how Codex and Claude Code walk the directory tree, which nested files each one reads, and what actually fixed it."
+description: "AGENTS.md did not load where I expected. Across 76 runs I measured how Codex and Claude Code walk the tree, which nested files each reads, and two fixes."
 pubDate: '2026-08-16'
 heroImage: '../../../assets/blog/agents-md-vs-claude-md-loading-measured-2026/hero.png'
 tags:
@@ -49,6 +49,8 @@ On 2026-08-16, I ran both tools using `codex-cli` 0.147.0 and `claude` 2.1.233. 
 | Claude Code | Root `AGENTS.md` | `ZZROOT7` | 0/3 |
 | Both (Control) | None | Canary absent | 0/3 and 0/3 |
 
+I previously [measured whether instruction files change success rates](/en/blog/en/agents-md-effectiveness/). This post measures the layer before that: whether the file enters context.
+
 > "Claude Code reads `CLAUDE.md`, not `AGENTS.md`."
 >
 > — [Claude Code memory docs](https://code.claude.com/docs/en/memory)
@@ -91,7 +93,7 @@ claude -p "Print the first line of packages/api/note.txt. Nothing else." \
 
 Disallowing Bash gave `Read` compliance of 4 out of 4. Disallowing `Read` gave `Bash` compliance of 0 out of 4.
 
-Claude Code attaches subdirectory instructions to file-reading calls. Shell commands bypass the hook and keep them out of context.
+Claude Code attaches subdirectory instructions to file-reading calls. Shell commands bypass the hook and keep them out of context. That is the same injection surface as [splitting project guidelines into agent skills](/en/blog/en/modern-web-guidance-agent-skill-coverage-2026/).
 
 In my local execution log from one failed nested run, Claude explained the refusal. The user had specified "Nothing else", and the instruction inside `packages/api/CLAUDE.md` looked like hidden prompt injection. At the root, Claude obeyed the same sentence in 9 out of 9 runs. A nested rule carried less trust.
 
@@ -151,7 +153,7 @@ This snapshot used `claude` 2.1.233 and `codex-cli` 0.147.0 on 2026-08-16. File 
 
 Sample sizes were 3 to 6 runs per cell across 76 valid runs out of 84 attempts. The 0 out of 3 and 3 out of 3 results show direction. The 7 out of 12 result is an observed sample, not a fixed probability.
 
-Canary tokens test whether a file is loaded into the prompt context and obeyed, not whether an agent writes better code or follows code architecture.
+Canary tokens test whether a file is loaded into the prompt context and obeyed, not whether an agent writes better code or follows code architecture. [Cognitive debt when agents skip rules](/en/blog/en/cognitive-debt-agentic-coding-2026/) starts at this silent miss.
 
 All Claude runs included my global user-level instruction file at `~/.claude/CLAUDE.md` in every test condition.
 

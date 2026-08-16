@@ -1,6 +1,6 @@
 ---
 title: 'AGENTS.md 与 CLAUDE.md 加载实测，两套工具怎么读你的规则'
-description: '76次执行实测。codex与Claude Code互不读取对方的说明文件。codex 的嵌套配置在父级目录运行时完全失效，Claude遇到标记指令甚至当成隐藏提示词注入拒绝执行。附完整复现命令与双CLI配置方案。'
+description: '76次执行实测。codex与Claude Code互不读取对方的说明文件。codex 的嵌套配置在父级目录运行时完全失效，Claude遇到标记指令甚至当成隐藏提示词注入拒绝执行。附完整复现命令与双CLI配置方案。版本为 claude 2.1.233 与 codex 0.147.0，附软链接与 fallback。'
 pubDate: '2026-08-16'
 heroImage: '../../../assets/blog/agents-md-vs-claude-md-loading-measured-2026/hero.png'
 tags:
@@ -73,7 +73,7 @@ relatedPosts:
 
 根目录 `CLAUDE.md` 里的同样指令，Claude 9 次全部照办。规则下沉后既有工具选择差异，也引发模型警惕。文档所说的读取文件指 `Read` 工具。
 
-禁用 Bash、强制使用 `Read` 工具时，4 次运行全部带上标记词（4/4）。禁用 `Read`、强制通过终端执行 `sed` 或 `cat` 时，命中率是 0/4。通过系统命令读取文件不会触发所在目录规则文件的注入逻辑。
+禁用 Bash、强制使用 `Read` 工具时，4 次运行全部带上标记词（4/4）。禁用 `Read`、强制通过终端执行 `sed` 或 `cat` 时，命中率是 0/4。通过系统命令读取文件不会触发所在目录规则文件的注入逻辑。把团队规范拆成技能注入的[覆盖度实测](/zh/blog/zh/modern-web-guidance-agent-skill-coverage-2026/)，落在同一层。文件没读进去，技能也是空壳。
 
 调试这个机制时我还报废了 8 次运行。`--disallowedTools` 是可变参数，直接在后面跟提示词会把提示词吞掉，报错找不到名为 Print 的工具。提示词必须放在 `-p` 参数后面。
 
@@ -122,7 +122,7 @@ codex exec -c 'project_doc_fallback_filenames=["CLAUDE.md"]' --skip-git-repo-che
 
 只有 `CLAUDE.md` 的仓库加上这行参数后，codex 也跑出 3/3。
 
-多包结构的仓库在根目录运行时，codex 会跳过子包规则，Claude 的子目录规则也不稳定。关键构建指令或代码风格，现阶段应提到根目录统一声明。
+多包结构的仓库在根目录运行时，codex 会跳过子包规则，Claude 的子目录规则也不稳定。关键构建指令或代码风格，现阶段应提到根目录统一声明。规则被静默跳过时，[团队里堆起来的认知负债](/zh/blog/zh/cognitive-debt-agentic-coding-2026/)就是从这里开始的。
 
 ## 本次测量的边界与未覆盖项
 

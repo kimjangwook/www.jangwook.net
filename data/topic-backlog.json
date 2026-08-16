@@ -3,6 +3,57 @@
   "updated_at": "2026-08-16",
   "topics": [
     {
+      "slug": "claude-md-at-import-agents-md-vs-symlink-2026",
+      "title_idea": "CLAUDE.md 첫 줄의 @AGENTS.md와 심볼릭 링크는 같은 우회가 아니다",
+      "content_type": "how-to",
+      "target_keyword": "CLAUDE.md @AGENTS.md import",
+      "secondary_keywords": [
+        "Claude Code AGENTS.md import",
+        "ln -s AGENTS.md CLAUDE.md",
+        "Windows symlink Developer Mode"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Claude Code memory 공식 문서 AGENTS.md 절(2026-08-16 확인): 'create a CLAUDE.md that imports it' + '@AGENTS.md' 예제 + 'A symlink also works if you don't need to add Claude-specific content' + Windows는 Administrator/Developer Mode 필요하므로 import 권장. 2026-08-16 글은 심볼릭 링크만 3/3으로 쟀고 @AGENTS.md import·/context 확인은 미측정이라고 명시.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "월요일 How-to. 이미 큐에 있는 symlink+fallback 글과 겹치지 않게, import vs symlink vs /import 복사(v2.1.213+)를 같은 캐너리로 나란히 잰다. Windows 심볼릭 링크는 권한이 없으면 문서대로 import로 강등하고 실행했다고 쓰지 말 것. 링크: agents-md-vs-claude-md-loading-measured-2026, modern-web-guidance-agent-skill-coverage-2026"
+    },
+    {
+      "slug": "codex-project-doc-max-bytes-truncation-2026",
+      "title_idea": "32KiB를 넘긴 AGENTS.md는 어디서 잘리는가",
+      "content_type": "how-to",
+      "target_keyword": "Codex project_doc_max_bytes",
+      "secondary_keywords": [
+        "AGENTS.md 32KiB",
+        "Codex instruction truncation",
+        "project_doc_max_bytes"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "OpenAI Codex AGENTS.md 가이드(learn.chatgpt.com/docs/agent-configuration/agents-md, 2026-08-16 확인): 'Codex skips empty files and stops adding files once the combined size reaches the limit defined by project_doc_max_bytes (32 KiB by default).' + 트러블슈트 'Instructions truncated: Raise project_doc_max_bytes or split large files'. 2026-08-16 글이 명시적으로 미측정한 항목.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "월요일 How-to. 캐너리를 파일 앞·32KiB 경계·뒤에 심고 잘림 위치를 잰다. 전수 파싱이 아니라 n회 실행. 한도를 올렸을 때 토큰만 늘고 준수는 그대로인지도 칸을 나눈다. 링크: agents-md-vs-claude-md-loading-measured-2026, rtk-rust-token-killer-llm-cost-optimization-guide-2026"
+    },
+    {
+      "slug": "codex-agents-override-md-cwd-walk-2026",
+      "title_idea": "같은 폴더의 AGENTS.md는 override가 있으면 읽히지 않는다",
+      "content_type": "how-to",
+      "target_keyword": "AGENTS.override.md Codex",
+      "secondary_keywords": [
+        "Codex override 파일",
+        "AGENTS.md 탐색 순서",
+        "project_doc_fallback_filenames"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "OpenAI Codex AGENTS.md 가이드(2026-08-16 확인): 디렉터리마다 AGENTS.override.md → AGENTS.md → fallback 순, 디렉터리당 최대 1파일. 글로벌은 ~/.codex/AGENTS.override.md가 있으면 AGENTS.md를 읽지 않음. 2026-08-16 글은 AGENTS.override.md를 미측정이라고 적어 두었다.",
+      "added_at": "2026-08-16",
+      "status": "queued",
+      "notes": "월요일 How-to 백업. 오늘 글의 cwd 워크를 같은 픽스처에 override 칸만 더한다. 루트 override vs 하위 override vs fallback이 동시에 있을 때 무엇이 남는지. 설치되지 않은 프로필(CODEX_HOME)은 문서 인용으로 강등. 링크: agents-md-vs-claude-md-loading-measured-2026, agents-md-effectiveness"
+    },
+    {
       "slug": "agent-instruction-loading-series-2-does-loaded-rule-change-code-2026",
       "title_idea": "읽혔다는 것과 코드가 달라진 것은 다른 사건이다",
       "content_type": "series",
