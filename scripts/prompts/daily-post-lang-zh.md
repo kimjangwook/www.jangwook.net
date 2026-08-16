@@ -4,7 +4,7 @@
 
 按这个顺序读:
 1. `docs/persona-kim-jangwook.md`
-2. `/Users/jangwook/workspace/claude-controller/.claude/skills/daily-tech-blog/voice-anti-ai.md`
+2. `scripts/prompts/voice-anti-ai.md`
 3. `data/fact-core.md`
 4. `src/content/blog/zh/` 里一篇不是今天 slug 的旧文。只借节奏。
 

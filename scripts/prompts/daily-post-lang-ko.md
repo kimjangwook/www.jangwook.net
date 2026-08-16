@@ -4,7 +4,7 @@
 
 읽을 것 (이 순서):
 1. `docs/persona-kim-jangwook.md`
-2. `/Users/jangwook/workspace/claude-controller/.claude/skills/daily-tech-blog/voice-anti-ai.md`
+2. `scripts/prompts/voice-anti-ai.md`
 3. `data/fact-core.md`
 4. `src/content/blog/ko/` 에서 오늘 slug가 아닌 글 하나. 최근 실측 글이 좋다. 그 글의 호흡만 빌린다.
 

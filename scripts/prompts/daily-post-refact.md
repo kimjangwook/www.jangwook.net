@@ -5,7 +5,7 @@ This post exists. Four writers are about to redo it from your file and will neve
 Read, in this order:
 1. `/Users/jangwook/workspace/www.jangwook.net/docs/persona-kim-jangwook.md`
 2. `/Users/jangwook/workspace/claude-controller/.claude/skills/daily-tech-blog/SKILL.md`
-3. `/Users/jangwook/workspace/claude-controller/.claude/skills/daily-tech-blog/voice-anti-ai.md`
+3. `scripts/prompts/voice-anti-ai.md`
 4. All four of `src/content/blog/{ko,ja,en,zh}/{{SLUG}}.md`
 
 Extract, do not invent. Every number, command, and verbatim quote must already appear in one of those four files. Where two languages disagree on a number, keep the one that names how it was measured and note the conflict under `limits`.

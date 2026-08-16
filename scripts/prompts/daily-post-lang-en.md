@@ -4,7 +4,7 @@ Write only `src/content/blog/en/{{SLUG}}.md` (frontmatter plus body).
 
 Read, in this order:
 1. `docs/persona-kim-jangwook.md`
-2. `/Users/jangwook/workspace/claude-controller/.claude/skills/daily-tech-blog/voice-anti-ai.md`
+2. `scripts/prompts/voice-anti-ai.md`
 3. `data/fact-core.md`
 4. One older file in `src/content/blog/en/` that is not today's slug. Steal its rhythm, not its outline.
 

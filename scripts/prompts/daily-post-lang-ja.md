@@ -4,7 +4,7 @@
 
 読む順:
 1. `docs/persona-kim-jangwook.md`
-2. `/Users/jangwook/workspace/claude-controller/.claude/skills/daily-tech-blog/voice-anti-ai.md`
+2. `scripts/prompts/voice-anti-ai.md`
 3. `data/fact-core.md`
 4. `src/content/blog/ja/` の、今日の slug ではない記事を1本。実測寄りの最近のものがよい。呼吸だけ借りる。
 

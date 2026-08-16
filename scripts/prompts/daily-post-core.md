@@ -3,7 +3,7 @@ Goal: write only `data/fact-core.md`. First line is `slug: kebab-name` or `SKIP:
 Read, in this order:
 1. /Users/jangwook/workspace/www.jangwook.net/docs/persona-kim-jangwook.md
 2. /Users/jangwook/workspace/claude-controller/.claude/skills/daily-tech-blog/SKILL.md (topic gate, lanes, no money/company names)
-3. /Users/jangwook/workspace/claude-controller/.claude/skills/daily-tech-blog/voice-anti-ai.md
+3. scripts/prompts/voice-anti-ai.md
 
 Research. If Lane A is possible, run the sandbox in /tmp. Collect evidence.
 
