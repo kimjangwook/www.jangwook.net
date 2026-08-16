@@ -25,6 +25,7 @@ First, some definitions. What matters is what comes next. Today I place the offi
 </example>
 
 How to write:
+- **`mechanism` is the spine.** The numbers say what happened. What a reader takes away is what caused it. Work the causal chain into the body; do not let a list of measurements stand in for it. If the FACT CORE says `mechanism: unknown`, write that you do not know. Inventing a plausible cause is where this blog loses its reader.
 - **This piece exists to carry the `thesis`.** The numbers are evidence for that claim, not the point of the piece. A list of measurements with no claim is a lab note.
 - Take `counter` head on in the body. Do not summarise it weakly and knock it down. Grant the range where it is right, then say why the thesis still stands. If there are conditions under which the counter wins, name them.
 - `decision` appears explicitly in the piece. What does the reader change tomorrow.

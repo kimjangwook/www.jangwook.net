@@ -21,6 +21,10 @@ CLAUDE_MODEL="${LAB_MODEL:-opus}"
 CLAUDE_EFFORT="${LAB_EFFORT:-xhigh}"
 AGY_BIN="${AGY_BIN:-/Users/jangwook/.local/bin/agy}"
 AGY_MODEL="${LAB_AGY_MODEL:-gemini-3.7-flash-medium}"
+# 실행 단계 총량 캡. 셀당 타임아웃만 있으면 17셀 × 25분 = 7시간이 된다.
+# 랩에 마감은 없지만 상한은 있어야 한다. 캡에 걸리면 남은 셀을 건너뛰고
+# 거기까지의 데이터로 분석한다 — 분석이 status 를 partial 로 적는다.
+LAB_EXEC_BUDGET_SEC="${LAB_EXEC_BUDGET_SEC:-9000}"   # 2시간 30분
 
 export HOME="${HOME:-/Users/jangwook}"
 export PATH="/Users/jangwook/.nvm/versions/node/v22.22.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -98,7 +102,15 @@ fi
 # ── 2. execute (agy): 셀을 하나씩 실제로 돌린다 ────────────────────────
 # 셀 하나가 죽어도 나머지는 계속 간다. 실패한 셀도 데이터다.
 FAILED=0
+SKIPPED=0
+EXEC_START=$(date +%s)
 for i in $(seq 0 $((CELL_COUNT - 1))); do
+  ELAPSED=$(( $(date +%s) - EXEC_START ))
+  if [ "$ELAPSED" -ge "$LAB_EXEC_BUDGET_SEC" ]; then
+    SKIPPED=$((CELL_COUNT - i))
+    log "실행 예산 소진 (${ELAPSED}s ≥ ${LAB_EXEC_BUDGET_SEC}s) — 남은 ${SKIPPED}셀 건너뜀"
+    break
+  fi
   CELL_JSON=$(/usr/bin/python3 -c "
 import json;print(json.dumps(json.load(open('$LAB_DIR/plan.json'))['cells'][$i], ensure_ascii=False))")
   CELL_ID=$(/usr/bin/python3 -c "
@@ -123,7 +135,11 @@ import json,sys;print(json.loads(sys.argv[1]).get('id','cell-$i'))" "$CELL_JSON"
 done
 
 RECORDED=$(wc -l < "$RESULTS_JSONL" | tr -d ' ')
-log "실행 완료 — 기록된 셀 ${RECORDED}/${CELL_COUNT}, 실패 ${FAILED}"
+log "실행 완료 — 기록된 셀 ${RECORDED}/${CELL_COUNT}, 실패 ${FAILED}, 건너뜀 ${SKIPPED}"
+if [ "$SKIPPED" -gt 0 ]; then
+  # 분석자에게 미실행을 알린다. 모르면 complete 로 적어 사흘 뒤 글을 오염시킨다.
+  echo "{\"_note\":\"실행 예산 소진으로 ${SKIPPED}셀 미실행. status 는 partial 이어야 하고 results.md 에 어느 셀이 빠졌는지 적어야 한다\"}" >> "$RESULTS_JSONL"
+fi
 
 if [ "$RECORDED" -lt 1 ]; then
   log "기록된 셀이 없다 — 분석 생략"

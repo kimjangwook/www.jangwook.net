@@ -521,11 +521,46 @@ if [ "$GATE_RC" -ne 0 ] || [ ! -s "$INSIGHT_GATE" ]; then
   exit 1
 fi
 
-if head -n 1 "$INSIGHT_GATE" | grep -q '^HOLD'; then
-  HOLD_REASON="$(head -n 1 "$INSIGHT_GATE")"
-  log "insight-gate $HOLD_REASON — 발행하지 않는다"
+GATE_VERDICT="$(head -n 1 "$INSIGHT_GATE")"
+
+# REWRITE — 재료는 있는데 초고가 안 썼다. 지목된 언어만 다시 쓰고 한 번 더 판정한다.
+# 재판정은 한 번뿐이다. 게이트와 집필이 서로를 물고 도는 것을 막는다.
+if printf '%s' "$GATE_VERDICT" | grep -q '^REWRITE'; then
+  GATE_LANGS="$(printf '%s' "$GATE_VERDICT" | sed -E 's/^REWRITE: *//; s/ *—.*//' | tr ',' ' ')"
+  GATE_BODY="$(cat "$INSIGHT_GATE")"
+  log "insight-gate $GATE_VERDICT — 지목 언어 재집필"
+  for LANG in $GATE_LANGS; do
+    case " $LANGS " in
+      *" $LANG "*) ;;
+      *) log "insight-gate 가 모르는 언어 지목=$LANG — 무시"; continue ;;
+    esac
+    log "phase insight-rewrite lang=$LANG (writer=$WRITER)"
+    write_lang "$LANG" "$(cat "$PROMPT_DIR/daily-post-lang-fix.md" 2>/dev/null || true)
+
+통찰 게이트가 이 언어를 되돌렸다. 지시는 실행형이다. 그대로 따른다.
+$GATE_BODY" || exit 1
+  done
+
+  log "phase insight-gate 재판정 (claude/$CLAUDE_MODEL effort=$CLAUDE_REVIEW_EFFORT)"
+  rm -f "$INSIGHT_GATE"
+  run_claude "$CLAUDE_REVIEW_EFFORT" "$GATE_PROMPT"
+  if [ ! -s "$INSIGHT_GATE" ]; then
+    log "재판정 산출 없음 — 발행 보류"
+    "$CONTROLLER_DIR/sh/send-telegram.sh" "⏸ [jangwook.net] ${SLUG}
+재집필 후 통찰 게이트가 판정을 내지 못해 보류했다." >/dev/null 2>&1 || true
+    exit 1
+  fi
+  GATE_VERDICT="$(head -n 1 "$INSIGHT_GATE")"
+  # 두 번째도 REWRITE 면 더 돌리지 않는다. 초고가 못 고치는 문제라는 뜻이다.
+  if printf '%s' "$GATE_VERDICT" | grep -q '^REWRITE'; then
+    GATE_VERDICT="HOLD: 재집필 후에도 통찰 게이트가 REWRITE — 초고로 못 메우는 문제"
+  fi
+fi
+
+if printf '%s' "$GATE_VERDICT" | grep -q '^HOLD'; then
+  log "insight-gate $GATE_VERDICT — 발행하지 않는다"
   "$CONTROLLER_DIR/sh/send-telegram.sh" "⏸ [jangwook.net] ${SLUG} 발행 보류
-${HOLD_REASON}
+${GATE_VERDICT}
 
 네 언어 초고는 작업트리에 남아 있고 랩 데이터셋은 미소비 상태다.
 판정 근거: data/insight-gate.md" >/dev/null 2>&1 || true

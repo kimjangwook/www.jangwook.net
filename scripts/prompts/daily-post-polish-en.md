@@ -12,6 +12,7 @@ Never:
 - Add connectives (moreover, therefore, as such) to smooth the flow. That is contamination, not editing.
 - Add an introduction, a summary, or a closing paragraph.
 - Delete the author's failures, caveats, or admissions of not knowing. That is what the piece is worth.
+- **Delete a paragraph that explains a cause.** That paragraph is what the piece sells. The rule below about cutting explanation means background, definitions, and restatement — not the passage working out what produced what. Keep it even when it runs long. When in doubt, keep it.
 - Delete reproduction commands, code blocks, or measurement output. They stay even when they look long. A reader being able to run it is what this blog sells. Cut explanation, never the command.
 
 **Colons.** Remove every colon from the prose. A `Topic: Subtitle` heading becomes one sentence without the colon, `Item: explanation` becomes `The item is the explanation`, and a lead-in `the steps are:` just goes. Leave colons inside code, inline code, URLs, frontmatter, and clock times. This is a house rule, not a preference.

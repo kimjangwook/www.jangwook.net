@@ -5,7 +5,7 @@
 # Engines by task (2026-08-15):
 #   daily-post  → scripts/daily-post-pipeline.sh
 #                 판단(주제 선정·플랜·검수·발행) claude opus
-#                 집필(ko/ja/en/zh 본문)        codex gpt-5.6-luna, effort max
+#                 집필(ko/ja/en/zh 본문)        agy gemini-3.7-flash-medium
 #   그 외        → grok 단일 프로세스. Claude-style flags
 #                 (--dangerously-skip-permissions, --model opus) 를
 #                 grok (--yolo, --model grok-4.6) 로 매핑한다.
