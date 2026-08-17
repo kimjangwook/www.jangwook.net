@@ -1,0 +1,54 @@
+{
+  "id": "2026-08-17-77272",
+  "pillar": "aio",
+  "question": "AI 크롤러를 막으려고 쓴 robots.txt 의 열한 가지 실제 형태를, 현장에서 검증에 쓰이는 세 파서(python 표준 urllib.robotparser · protego · npm robots-parser)에 같은 질문으로 물었을 때 어디서 답이 갈리고, 갈린 답 중 어느 쪽이 막았다고 믿은 봇을 조용히 통과시키는가.",
+  "expectation": "결론부터 적는다. 나는 파서 셋이 갈리는 지점보다 셋이 사이좋게 틀리는 지점이 더 위험하다고 본다.\n\n셀별 예상. (1) control-plain 은 셋 다 ALLOWED, ua-case-mismatch 는 셋 다 DISALLOWED — 평범한 파일에서는 아무도 안 갈린다. (2) urllib.robotparser 만 사양에서 벗어난다: duplicate-groups 는 첫 그룹만 보고 ALLOWED, longest-match-allow 는 파일 순서상 앞에 있는 Disallow 를 먼저 물어 DISALLOWED, tie-disallow-first 도 같은 이유로 DISALLOWED, wildcard-dollar 는 * 와 $ 를 문자 그대로 취급해 ALLOWED. protego 와 robots-parser 는 이 넷을 전부 사양대로 낸다. (3) 경계는 tie-allow-first 다. 규칙 집합은 tie-disallow-first 와 같고 두 줄 순서만 뒤집혔다. urllib 은 여기서 ALLOWED 로 뒤집히고 나머지 둘은 두 셀이 동일할 것이다. 즉 urllib 의 답을 결정하는 것은 최장 일치가 아니라 줄 번호다. (4) empty-specific-group 은 셋 다 ALLOWED. 전역 Disallow: / 아래에 GPTBot 그룹을 만들고 Crawl-delay 만 적으면, 가장 구체적인 그룹이 이긴다는 규칙 때문에 GPTBot 은 전면 허용으로 바뀐다. (5) full-ua-string 도 셋 다 ALLOWED. 제품 토큰 대신 브라우저형 UA 헤더 전문을 넘기면 GPTBot 그룹이 매칭되지 않는다. (6) bare-path-query 는 urllib DISALLOWED, protego DISALLOWED, robots-parser UNDEFINED. (7) bom-prefix 는 urllib 만 ALLOWED.\n\n왜 이렇게 보는가. urllib.robotparser 의 RuleLine 은 경로 접두사 비교이고 can_fetch 는 매칭되는 첫 줄에서 반환하는 구조라, 최장 일치·타이브레이크·와일드카드가 들어설 자리가 없다. 반대로 protego 는 Google 사양 준수를 표방하고 robots-parser 는 그 규칙을 구현했다고 문서에 적는다. 그리고 empty-specific-group 과 full-ua-string 은 파서 품질 문제가 아니라 사양이 그렇게 정해진 것이므로, 잘 만든 파서일수록 오히려 위험한 답을 정확히 낸다.\n\n무엇이 이 예상을 깬다면 기사인가. (a) protego 나 robots-parser 가 full-ua-string·bare-path-query 밖의 어느 셀에서든 사양과 다른 답을 내면, '표준 라이브러리 말고 제대로 된 파서를 쓰라'는 흔한 처방이 무너진다 — 갈아타도 답이 안 맞는다는 뜻이니까. (b) empty-specific-group 에서 한 파서라도 DISALLOWED 를 내면 이건 robots.txt 설계의 함정이 아니라 구현별 편차이고, 사이트 운영자에게 줄 경고문이 정반대가 된다. (c) full-ua-string 에서 어느 파서가 DISALLOWED 를 내면 그 파서는 헤더 안의 토큰을 부분 문자열로 찾는다는 뜻이고, 이건 편의가 아니라 오탐 위험이다(GPTBot 문자열이 들어간 임의 UA 를 전부 봇 취급한다). (d) urllib 이 duplicate-groups 나 wildcard-dollar 를 통과시키면 CPython 파서에 대한 내 모형이 틀린 것이다.\n\n정직한 한계. 이 실험이 재는 것은 세 오픈소스 파서의 해석이지 GPTBot·ClaudeBot·PerplexityBot 실물의 동작이 아니다. 실물 크롤러의 파서는 공개돼 있지 않고(Google 만 참조 구현을 공개한다), 여기서 protego 를 사양의 대리자로 쓰는 것도 그 라이브러리의 자기 주장에 기댄 것이다. 그래서 결과는 '크롤러가 이렇게 동작한다'가 아니라 '당신이 검증에 쓴 스크립트가 이렇게 답한다'로만 말할 수 있다. 이 실험의 값어치는 정확히 거기에 있다 — 검증 도구를 검증한다.\n\n기존 글과의 관계. 2026-08 발행분 ai-crawler-control-robots-txt-llms-txt-2026 이 urllib 의 최장 일치 미구현 1건을 한 번 관측했다. 그래서 longest-match-allow 셀은 새 발견이 아니라 하네스가 제대로 돌고 있는지 보는 앵커로 둔다. 나머지 열 개 시나리오와 protego·robots-parser 두 열은 아직 잰 적이 없다.",
+  "environment": {
+    "os": "darwin 25.5.0 (macOS 26.5.2, build 25F84)",
+    "tools": {
+      "python3": "3.12.8",
+      "node": "v22.22.0",
+      "npm": "10.9.4"
+    },
+    "parsers": {
+      "urllib.robotparser": "CPython 3.12.8 표준 라이브러리. 별도 설치 없음. 99개 raw 파일에서 VERSION=3.12.8 로 확인",
+      "protego": "PyPI 0.6.2. /tmp/lab-2026-08-17-77272/venv 에 한 번 설치되어 11개 셀이 재사용. 33개 protego raw 파일 전부 VERSION=0.6.2",
+      "robots-parser": "npm 3.0.1. /tmp/lab-2026-08-17-77272/node 에 한 번 설치되어 CELL_DIR 심링크로 재사용. 33개 robots-parser raw 파일 전부 VERSION=3.0.1"
+    },
+    "notes": [
+      "모든 작업은 CELL_DIR(/tmp 아래 새 디렉터리)과 /tmp/lab-2026-08-17-77272 안에서만 일어났다. 블로그 레포를 가리키는 명령은 하나도 없다.",
+      "네트워크는 protego(pip)·robots-parser(npm) 설치 때만 썼다. 질의 대상 호스트 example.test 는 예약 TLD 이고 실제 요청은 없다 — robots.txt 는 파일에서 읽었다.",
+      "설치 실패로 ERROR 처리된 셀은 없다. 99런 전부 exit 0.",
+      "모델이 개입하지 않으므로 출력은 결정적이다. repeats=3 은 값의 분산이 아니라 설치·환경 흔들림과 심링크 실패를 잡기 위한 것이었고, 33개 셀 모두 3회가 동일한 값이었다 — 셀 내 분산 0.",
+      "정답 기준은 RFC 9309 와 Google Search Central 의 robots.txt 사양이다. 세 파서 중 무엇도 정답으로 전제하지 않았다.",
+      "control-plain--protego 의 1회차 raw 에는 venv 최초 설치에서 나온 pip 업그레이드 안내 두 줄이 RESULT 줄 앞에 섞여 있다. 2·3회차에는 없고 exit 0, RESULT 값도 동일하다.",
+      "empty-specific-group 셀 3개가 falsifier 였고 셋 다 ALLOWED 로 예상을 기각하지 못했다. 통제 셀 control-plain 과 ua-case-mismatch 는 각각 세 파서가 일치했다."
+    ]
+  },
+  "dimensions": {
+    "scenario": [
+      "control-plain",
+      "empty-specific-group",
+      "duplicate-groups",
+      "ua-case-mismatch",
+      "longest-match-allow",
+      "tie-disallow-first",
+      "tie-allow-first",
+      "wildcard-dollar",
+      "full-ua-string",
+      "bom-prefix",
+      "bare-path-query"
+    ],
+    "parser": [
+      "urllib",
+      "protego",
+      "robots-parser"
+    ]
+  },
+  "runs": 99,
+  "cells": 33,
+  "status": "complete",
+  "consumed": false,
+  "surprised": true,
+  "headline": "11개 시나리오를 전부 사양대로 답한 파서는 없다 — protego 10/11, robots-parser 9/11, urllib 5/11 이고 33셀 중 24셀·99런 중 72런만 사양과 일치했다. 33셀 중 10셀이 차단 의도된 URL 에 ALLOWED(9셀) 또는 UNDEFINED(1셀)를 냈고, 그중 3셀(empty-specific-group)은 세 파서가 만장일치로 사양대로 답한 결과다. urllib 은 규칙 집합이 같고 줄 순서만 뒤집힌 tie-disallow-first(0/3) 와 tie-allow-first(3/3) 사이에서 답이 뒤집혔고, protego 는 BOM 3바이트 한 셀에서만, robots-parser 는 UA 헤더 전문과 상대 경로 두 셀에서만 갈렸다."
+}
