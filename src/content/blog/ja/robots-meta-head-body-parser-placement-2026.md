@@ -1,6 +1,6 @@
 ---
 title: 'head内に書いたrobots metaがbodyに落ちる条件'
-description: 'Googleは2026年3月、robots metaをbodyに置いても尊重すると文書に書き加えた。ただしhead/bodyの境界は著者が宣言する値ではなく、パーサーが計算する結果だ。配置10通りをparse5に通し、要素がどこに置かれ、どこで消えるかを実測した。'
+description: 'Googleは2026年3月、robots metaをbodyに置いても尊重すると文書に書き加えた。ただしhead/bodyの境界は著者が宣言する値ではなく、パーサーが計算する結果だ。配置10通りをparse5に通し、要素がどこに置かれ、3通りで要素自体が消えるかを実測した。着地点を先に確認する記録だ。'
 pubDate: '2026-08-13'
 heroImage: '../../../assets/blog/robots-meta-head-body-parser-placement-2026/hero.png'
 tags:

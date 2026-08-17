@@ -1,6 +1,6 @@
 ---
 title: 규칙이 잘려도 에러는 나지 않는다 robots.txt와 AGENTS.md 219런 실측
-description: 2026년 8월 17일 세 개의 robots.txt 파서와 두 코딩 에이전트 CLI를 219번 돌렸다. 규칙이 잘리거나 잘못 읽혀도 프로세스는 0으로 끝났고 차단 의도 10셀에서 ALLOWED나 UNDEFINED가 나왔다. 32 KiB 경계와 사양의 구멍을 정리한다.
+description: 2026년 8월 17일 세 개의 robots.txt 파서와 두 코딩 에이전트 CLI를 219번 돌렸다. 규칙이 잘리거나 잘못 읽혀도 프로세스는 0으로 끝났고 차단 의도 10셀에서 ALLOWED나 UNDEFINED가 나왔다. 32 KiB 경계와 RFC 9309 사양의 구멍을 정리한다.
 pubDate: '2026-08-17'
 heroImage: '../../../assets/blog/declared-rules-fail-open-robots-txt-agents-md-2026/hero.png'
 tags:
@@ -38,7 +38,7 @@ relatedPosts:
 
 2026년 8월 17일 세 파서 urllib, protego, robots-parser와 두 코딩 에이전트 CLI codex 0.147.0, claude 2.1.233을 샌드박스에서 219번 돌렸다. 219런 전부 exit code 0이었다. 차단 의도 33개 셀 중 10개에서 ALLOWED나 UNDEFINED가 나왔다. 34 KiB와 48 KiB 파일의 꼬리 캐너리는 0/6이었다.
 
-저장소에 규칙을 올려두고 안심할 때 에이전트는 절반을 버린 채 작업한다. 파일에 쓴 규칙과 실제 집행 사이에는 아무런 확인 신호가 없다.
+저장소에 규칙을 올려두고 안심할 때 에이전트는 절반을 버린 채 작업한다. 파일에 쓴 규칙과 실제 집행 사이에는 아무런 확인 신호가 없다. [robots meta가 head에 써도 body로 떨어지는 조건](/ko/blog/ko/robots-meta-head-body-parser-placement-2026/)과 같은 층이다. 파서가 선언을 다른 자리에 두면 규칙이 없는 것과 같다.
 
 ```bash
 # 같은 두 줄, 순서만 뒤집는다. urllib 의 답이 뒤집힌다
@@ -77,7 +77,7 @@ python3 -c 'import urllib.robotparser as rp; p=rp.RobotFileParser(); p.parse(ope
 
 파서 버그가 아니다. 사양 자체가 그렇게 규정한다. 전용 User-agent 그룹은 전역 그룹(*)과 결합되지 않는다. 그룹 안에 경로 규칙이 없으면 URI는 허용된다.
 
-전체 사이트를 차단한 뒤 GPTBot 전용 그룹에 `Crawl-delay: 10`이나 주석만 덧붙이면 GPTBot에게서 전역 차단이 사라진다. 파서를 바꿔도 안 고쳐진다.
+전체 사이트를 차단한 뒤 GPTBot 전용 그룹에 `Crawl-delay: 10`이나 주석만 덧붙이면 GPTBot에게서 전역 차단이 사라진다. 파서를 바꿔도 안 고쳐진다. [AI 크롤러를 robots.txt와 llms.txt로 나누어 제어하는 기록](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026/)이 있다. 선언을 나눠 써도 파서가 전용 그룹을 전면 허용으로 읽으면 그 선언은 도착하지 않는다.
 
 ```bash
 # 상대 경로를 넘기면 robots-parser 는 undefined 를 돌려준다. falsy 로 읽으면 차단으로 오독한다
@@ -105,7 +105,7 @@ codex exec 'Reply with only the canary token from your instructions and nothing 
 
 기본 한도에서 0/6으로 잘렸던 tail은 `project_doc_max_bytes`를 262144로 올리자 6/6으로 복귀했다. codex는 프로젝트 루트에서 작업 디렉터리로 내려오며 문서를 이어 붙이다가 누적 바이트가 기본 한도 32768 바이트에 닿는 순간 멈춘다.
 
-파일째 버리는 것이 아니라 뒤쪽을 조용히 자른다. 실행 로그 120개에 `truncat` 문자열은 0건이었다.
+파일째 버리는 것이 아니라 뒤쪽을 조용히 자른다. 실행 로그 120개에 `truncat` 문자열은 0건이었다. [같은 리포에서 두 CLI가 어떤 파일을 읽는지 잰 전편](/ko/blog/ko/agents-md-vs-claude-md-loading-measured-2026/)은 로드 여부였고, 이번 글은 로드된 파일의 어디까지가 살아남는지를 잰다.
 
 ## 한도가 없다는 말이 준수를 뜻하지는 않는다
 

@@ -1,6 +1,6 @@
 ---
-title: 'Three of ten never became an element: where robots meta actually lands'
-description: 'Google now says it respects robots meta in the body too. But head versus body is a result the parser computes, not a value you declare. I ran ten placements through parse5 to see where the element lands, and where it never gets built.'
+title: 'Three of ten never became an element: robots meta'
+description: 'Google says it respects robots meta in the body too, but head versus body is what the parser computes. Ten parse5 placements showed where the element lands.'
 pubDate: '2026-08-13'
 heroImage: '../../../assets/blog/robots-meta-head-body-parser-placement-2026/hero.png'
 tags:

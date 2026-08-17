@@ -1,6 +1,6 @@
 ---
 title: 'ルールが届かないとき処理は止まらず素通りする: robots.txtとAGENTS.mdの実測'
-description: 'robots.txtの33セル中10セルで遮断意図のURLが通過し、AGENTS.mdは32KiBを超えると末尾の指示が6回中0回しか届かない。219回の実行はすべて終了コード0だった。宣言ファイルが壊れたとき、システムは例外を吐かずにフェイルオープンする。'
+description: 'robots.txtの33セル中10セルで遮断意図のURLが通過し、AGENTS.mdは32KiBを超えると末尾の指示が6回中0回しか届かない。219回の実行はすべて終了コード0だった。宣言ファイルが壊れたとき例外は出ず、判定したパーサーの名前を先に確認してから遮断可否を読む必要がある。32KiB境界も測った。'
 pubDate: '2026-08-17'
 heroImage: '../../../assets/blog/declared-rules-fail-open-robots-txt-agents-md-2026/hero.png'
 tags:
@@ -73,7 +73,7 @@ Crawl-delay: 10
 > "User agent specific groups and global groups (*) are not combined."
 > — [Robots.txt Specifications](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt)
 
-特定の User-agent の評価は専用グループだけで完結する。グローバルグループは引き継がれず、`Disallow` がなければ全 URL にアクセスできる。どのパーサーでも変わらない仕様だ。
+特定の User-agent の評価は専用グループだけで完結する。グローバルグループは引き継がれず、`Disallow` がなければ全 URL にアクセスできる。どのパーサーでも変わらない仕様だ。[robots.txtとllms.txtでクローラー制御を分けた記録](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026/)がある。宣言を分けても、専用グループが全面許可ならその宣言は届かない。
 
 ```bash
 # 専用グループに Crawl-delay だけを書くと上の全体 Disallow が消える。3パーサーが満場一致で ALLOWED
@@ -140,7 +140,7 @@ Codex はルートから降りながら `AGENTS.md` を結合し、累積バイ�
 
 31,023 バイトでは末尾が6/6で生還した。34,022・49,022 バイトでは先頭が6/6で生還した。一方、34,023・49,023 バイトでは末尾が0/6で消滅した。
 
-ファイルごと破棄なら先頭も消える。消えたのは後ろ側で、切り捨てを決めるのは全体サイズではなく読み込み順序と累積バイト数だ。
+ファイルごと破棄なら先頭も消える。消えたのは後ろ側で、切り捨てを決めるのは全体サイズではなく読み込み順序と累積バイト数だ。[同じリポジトリで2つのCLIがどのファイルを読むかを測った前編](/ja/blog/ja/agents-md-vs-claude-md-loading-measured-2026/)はロードの有無だった。本稿はロードされたファイルのどこまでが残るかを測る。
 
 `project_doc_max_bytes` を 262,144 にすると、34k と48kの末尾カナリアは0/6から6/6へ復帰した。
 
@@ -164,7 +164,7 @@ Codex 側の12セルは6/6か0/6、Claude 側の6セルはすべて中間値だ�
 
 パーサー不一致、全域拒絶の消失、バイト切り捨て、指示埋没に共通する問題は、**宣言側と執行側が分離し、その間にエラー通知のチャンネルがない**ことだ。
 
-ルールが届かなくても読み違えても、処理系は警告なしに動く。Codex のログ120件に `truncat` はなく、ログ出力のオプション（`codex -c log_dir=...`）なしでは切り落とされたことも分からない。219回は終了コード0だった。
+ルールが届かなくても読み違えても、処理系は警告なしに動く。Codex のログ120件に `truncat` はなく、ログ出力のオプション（`codex -c log_dir=...`）なしでは切り落とされたことも分からない。219回は終了コード0だった。[robots metaがheadに書いてもbodyへ落ちる条件](/ja/blog/ja/robots-meta-head-body-parser-placement-2026/)と同じ層だ。パーサーが宣言を別の場所に置けば、規則はないのと同じになる。
 
 障害時に止める仕組みをフェイルクローズ（fail-closed）、異常時も素通しする仕組みをフェイルオープン（fail-open）という。
 

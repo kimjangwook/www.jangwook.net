@@ -1,6 +1,6 @@
 ---
 title: '写在 head 里的 robots meta，为什么落到了 body'
-description: 'Google 在 2026 年 3 月往文档里加了一句：body 里的 robots meta 同样尊重。可 head 和 body 的分界不是作者声明的值，而是解析器算出来的结果。我把十种摆放位置送进 parse5，看元素究竟落在哪儿，又在哪儿彻底消失。'
+description: 'Google 在 2026 年 3 月往文档里加了一句：body 里的 robots meta 同样尊重。可 head 和 body 的分界不是作者声明的值，而是解析器算出来的结果。我把十种摆放位置送进 parse5，看元素落在哪儿，又在哪三种摆放下连元素都建不出来、指令也跟着消失。先确认落点再写。'
 pubDate: '2026-08-13'
 heroImage: '../../../assets/blog/robots-meta-head-body-parser-placement-2026/hero.png'
 tags:

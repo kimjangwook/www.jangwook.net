@@ -46,7 +46,7 @@ Neither file is a control. Both are requests. Treating "I edited the file" as th
 
 ## What causes the silence
 
-The declaration and the enforcement live in different processes, and there is no error channel between them. A truncated instruction file is exit 0. A misparsed rule is exit 0. Nothing in either path is built to report that the two sides disagree.
+The declaration and the enforcement live in different processes, and there is no error channel between them. A truncated instruction file is exit 0. A misparsed rule is exit 0. Nothing in either path is built to report that the two sides disagree. [Robots meta has the same shape](/en/blog/en/robots-meta-head-body-parser-placement-2026/): the parser can miss the tag and never raise.
 
 I grepped all 120 raw Codex outputs for `truncat`, case insensitive. Zero hits. The Codex docs offer an audit path, `codex -c log_dir=./.codex-log`, but it is a separate opt-in.
 
@@ -126,7 +126,7 @@ python3 -m venv venv && ./venv/bin/pip install -q protego
 
 Three of the ten cells are not parser defects. All three parsers answered ALLOWED, and all three were right.
 
-Put `User-agent: *` with `Disallow: /` at the top, then add a `GPTBot` group below it containing only `Crawl-delay: 10`. Once that group exists, the blanket block stops applying to GPTBot.
+Put `User-agent: *` with `Disallow: /` at the top, then add a `GPTBot` group below it containing only `Crawl-delay: 10`. Once that group exists, the blanket block stops applying to GPTBot. [Splitting crawler control across robots.txt and llms.txt](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026/) does not help if the dedicated group is a full allow.
 
 ```bash
 # A dedicated group holding only Crawl-delay erases the global Disallow above it. All three parsers say ALLOWED
@@ -142,7 +142,7 @@ The second lab covered 20 cells at 6 runs each, 120 runs. I wanted the byte beha
 
 Codex concatenates the files it finds and stops when the accumulated bytes reach `project_doc_max_bytes`. What dies is always the back.
 
-With the default limit, a 34022 B `AGENTS.md` with a first-line canary returned it in 6 of 6 runs, and so did a 49022 B one. Move the canary to the last line at 34023 B and 49023 B, and both go to 0 of 6. A 31023 B file under the limit returned its tail canary 6 of 6. If the file were dropped whole, the head canary would have died too. It did not.
+With the default limit, a 34022 B `AGENTS.md` with a first-line canary returned it in 6 of 6 runs, and so did a 49022 B one. Move the canary to the last line at 34023 B and 49023 B, and both go to 0 of 6. A 31023 B file under the limit returned its tail canary 6 of 6. If the file were dropped whole, the head canary would have died too. It did not. [The previous measurement asked whether each CLI loads the file](/en/blog/en/agents-md-vs-claude-md-loading-measured-2026/). This one asks how much of a loaded file survives the byte limit.
 
 Raising the limit from 32768 to 262144 took the 34 KiB and 48 KiB tail canaries from 0 of 6 to 6 of 6, the fix the same page prescribes.
 
@@ -183,11 +183,11 @@ Five things I changed, in order.
 
 - Before saying robots.txt blocked it, find out which parser produced that verdict. urllib.robotparser matched the spec on 5 of 11 scenarios here, and its documentation points at RFC 9309 without listing what it leaves unimplemented.
 - When you add a crawler-specific user-agent group, write the `Disallow` lines again inside it. A group holding only a `Crawl-delay` or comment is a full allow.
-- Block what must be blocked in the server response. robots.txt reduces crawl requests. It does not cut access, whatever [the declaration file you reach for](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026/) happens to be.
+- Block what must be blocked in the server response. robots.txt reduces crawl requests. It does not cut access, whatever the declaration file you reach for happens to be.
 - Fix validation code that reads `isAllowed` as two values. robots-parser returns `undefined` for a relative path, and falsy-reading it reports the URL as blocked when nothing blocked it.
 - If an agent instruction file passes 32 KiB, split it or raise the limit, then put a canary at the end and confirm that string comes back in an answer. Changing the setting and the instruction arriving are separate events.
 
-The shape generalizes past these files. Any declared file read by a separate consumer that stays quiet when it cannot read the rule has this problem, and llms.txt, [meta robots](/en/blog/en/robots-meta-head-body-parser-placement-2026/) and the `.editorconfig` family have the same shape. The verification method crosses file types too. Ask the consumer a question whose answer differs depending on whether it read the rule.
+The shape generalizes past these files. Any declared file read by a separate consumer that stays quiet when it cannot read the rule has this problem, and llms.txt, meta robots and the `.editorconfig` family have the same shape. The verification method crosses file types too. Ask the consumer a question whose answer differs depending on whether it read the rule.
 
 ## What 219 runs do not show
 

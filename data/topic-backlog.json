@@ -1,7 +1,58 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-16",
+  "updated_at": "2026-08-17",
   "topics": [
+    {
+      "slug": "css-pseudo-element-backdrop-click-chrome152-2026",
+      "title_idea": "backdrop 클릭으로 다이얼로그를 닫는다 — Chrome 152 CSSPseudoElement",
+      "content_type": "how-to",
+      "target_keyword": "CSSPseudoElement ::backdrop click",
+      "secondary_keywords": [
+        "Chrome 152 CSSPseudoElement",
+        "::backdrop 다이얼로그 닫기",
+        "intersection 없이 backdrop 클릭"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome 152 beta 블로그(Rachel Andrew, 2026-07-30): CSSPseudoElement 지원이 ::after/::before/::marker에서 ::backdrop, ::scroll-marker, ::view-transition으로 확장. ::backdrop는 다이얼로그 콘텐츠 클릭과 겹치지 않게 backdrop 클릭으로 닫을 수 있어 복잡한 intersection 로직이 필요 없다고 명시.",
+      "added_at": "2026-08-17",
+      "status": "queued",
+      "notes": "화요일 How-to. 자체 dialog/popover 페이지에서 CSSPseudoElement로 ::backdrop 클릭을 잡고, 콘텐츠 클릭이 닫히지 않는지 실측. 기존 element-pseudo-event-pseudotarget-css-js-2026(queued)과 겹치지 않게, 대상은 ::backdrop 닫기 동작만. 링크: modal-focus-escape-inert-measure-2026, content-on-hover-focus-1413-tooltip-2026"
+    },
+    {
+      "slug": "media-element-pseudo-classes-chrome152-2026",
+      "title_idea": "재생 중인지 CSS만으로 묻는다 — :playing :paused Chrome 152",
+      "content_type": "how-to",
+      "target_keyword": "CSS :playing :paused media pseudo-class",
+      "secondary_keywords": [
+        "Chrome 152 media pseudo-classes",
+        ":seeking :buffering :muted",
+        "Interop 2026 media"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome 152 beta 블로그(2026-07-30): :playing, :paused, :seeking, :buffering, :stalled, :muted, :volume-locked가 audio/video 상태에 매칭. Interop 2026 초점 항목. 문서만 읽고 끝난 글이 아니라, 같은 페이지에서 상태를 바꿔 선택자가 실제로 붙는지 잰다.",
+      "added_at": "2026-08-17",
+      "status": "queued",
+      "notes": "화요일 How-to. 자체 audio/video 픽스처에서 상태 전환 7종을 걸고 getComputedStyle로 의사클래스 매칭을 확인. JS class 토글과 비교해 어긋나는 칸을 남긴다. 링크: inp-yielding-measure-2026, prerender-activationstart-cwv-measurement-2026"
+    },
+    {
+      "slug": "connection-allowlists-fetch-restrict-chrome152-2026",
+      "title_idea": "응답 헤더가 막는 fetch는 몇 개인가 — Chrome 152 Connection Allowlists",
+      "content_type": "how-to",
+      "target_keyword": "Chrome Connection Allowlists header",
+      "secondary_keywords": [
+        "Connection Allowlists Fetch",
+        "WICG connection-allowlists",
+        "Chrome 152 외부 연결 제한"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Chrome 152 beta 블로그(2026-07-30) + WICG connection-allowlists 제안: 서버가 HTTP 응답 헤더로 허가 엔드포인트를 배포하고, Fetch 등 연결 전에 Chrome이 목적지와 대조. 불일치 연결은 차단. 문서의 '명시적 제어'가 정적 호스팅에서 실제로 몇 칸을 막는지 잰다.",
+      "added_at": "2026-08-17",
+      "status": "queued",
+      "notes": "화요일 How-to. 자체 페이지에서 허용 목록 안/밖 fetch를 나란히 보내고 차단된 칸을 센다. Trusted Types·CSP와 겹치는 칸은 따로 표시. 링크: trusted-types-rollout-report-only-audit-2026, official-geo-subtraction-gsc-control-2026"
+    },
     {
       "slug": "claude-md-at-import-agents-md-vs-symlink-2026",
       "title_idea": "CLAUDE.md 첫 줄의 @AGENTS.md와 심볼릭 링크는 같은 우회가 아니다",

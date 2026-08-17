@@ -1,6 +1,6 @@
 ---
 title: '规则没有生效，为什么两边都当成通过了'
-description: '我在两行 robots.txt 里调换顺序，urllib 的结果当场反转。把 34 KiB 的 AGENTS.md 喂给 Codex，文件后半截的测试标记变成 0 命中，终端没有报错。声明式规则解析失败时不会停下，只会假装规则不存在。'
+description: '我在两行 robots.txt 里调换顺序，urllib 的结果当场反转。把 34 KiB 的 AGENTS.md 喂给 Codex，文件后半截的测试标记变成 0 命中，终端没有报错。声明式规则解析失败时不会停下，只会假装规则不存在。219 次运行全部以退出码 0 结束，先确认是哪个解析器给的判定。'
 pubDate: '2026-08-17'
 heroImage: '../../../assets/blog/declared-rules-fail-open-robots-txt-agents-md-2026/hero.png'
 tags:
@@ -81,7 +81,7 @@ python3 -c 'import urllib.robotparser as rp; p=rp.RobotFileParser(); p.parse(ope
 > If no match is found amongst the rules in a group for a matching user-agent or there are no rules in the group, the URI is allowed.
 > — [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.txt)
 
-专有 UA 分组不与全局合并；无规则即放行。GPTBot 开组后，全局 `Disallow: /` 失效。
+专有 UA 分组不与全局合并；无规则即放行。GPTBot 开组后，全局 `Disallow: /` 失效。[用 robots.txt 与 llms.txt 拆开爬虫控制的记录](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026/)在这里对不上：专用分组一旦全面放行，那些声明就到不了。
 
 ## 33 个测试矩阵里的静默放行
 
@@ -148,7 +148,7 @@ codex exec 'Reply with only the canary token from your instructions and nothing 
 
 `project_doc_max_bytes` 从 32768 调到 262144 后，34k、48k 文件的尾部从 0/6 恢复到 6/6。
 
-Codex 不是整份丢弃，而是在 32768 处停止。头部完好，尾部被切掉。120 份输出中 `truncat` 为 0 次，终端没有报错或警告。
+Codex 不是整份丢弃，而是在 32768 处停止。头部完好，尾部被切掉。120 份输出中 `truncat` 为 0 次，终端没有报错或警告。[前一篇测的是两个 CLI 会不会加载文件](/zh/blog/zh/agents-md-vs-claude-md-loading-measured-2026/)。这篇测的是已加载的文件在字节上限下还剩多少。
 
 > This limit applies only to `MEMORY.md`. CLAUDE.md files are loaded in full regardless of length, though shorter files produce better adherence.
 > — [Claude Code Memory Documentation](https://code.claude.com/docs/en/memory)
@@ -162,7 +162,7 @@ Codex 不是整份丢弃，而是在 32768 处停止。头部完好，尾部被�
 
 声明和执行规则的是两个独立进程，中间没有确认握手或强制中断的错误通道。
 
-`robots.txt`、`AGENTS.md`、`CLAUDE.md`、`llms.txt` 中，解析器读错或上下文截断，消费进程退出码仍是 0。
+`robots.txt`、`AGENTS.md`、`CLAUDE.md`、`llms.txt` 中，解析器读错或上下文截断，消费进程退出码仍是 0。[写在 head 里的 robots meta 也会落到 body](/zh/blog/zh/robots-meta-head-body-parser-placement-2026/)，同一层：解析器把声明放到别处，就等于没有规则。
 
 反对意见是，robots.txt 只是参考建议，AGENTS.md 截断改配置就能解决，两者不该放一起。
 
