@@ -66,7 +66,8 @@ ENGINE_LOG="$PROJECT_DIR/data/write-engines.txt"
 CLAUDE_BIN="${CLAUDE_BIN:-/opt/homebrew/bin/claude}"
 CLAUDE_MODEL="${CLAUDE_MODEL:-opus}"
 CLAUDE_EFFORT="${CLAUDE_EFFORT:-high}"          # 판단 단계 기본
-CLAUDE_WRITE_EFFORT="${CLAUDE_WRITE_EFFORT:-xhigh}"   # codex 폴백 집필
+CLAUDE_WRITE_MODEL="${CLAUDE_WRITE_MODEL:-fable}"      # 집필 1순위
+CLAUDE_WRITE_EFFORT="${CLAUDE_WRITE_EFFORT:-xhigh}"   # 폴백 집필
 CLAUDE_REVIEW_EFFORT="${CLAUDE_REVIEW_EFFORT:-xhigh}" # 리뷰/판정
 CODEX_BIN="${CODEX_BIN:-/opt/homebrew/bin/codex}"
 CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-luna}"
@@ -91,7 +92,7 @@ cd "$PROJECT_DIR" || exit 1
 LANGS="ko ja en zh"
 
 # 집필 엔진. 기본 agy(gemini-3.7-flash-medium). 실패하면 claude opus xhigh 로 폴백한다.
-WRITER="${WRITER:-agy}"
+WRITER="${WRITER:-fable}"
 REDO_SLUG=""
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -111,14 +112,17 @@ while [ $# -gt 0 ]; do
   esac
 done
 case "$WRITER" in
-  codex|agy|claude) ;;
-  *) echo "unknown writer: $WRITER (codex|agy|claude)" >&2; exit 2 ;;
+  fable|codex|agy|claude) ;;
+  *) echo "unknown writer: $WRITER (fable|codex|agy|claude)" >&2; exit 2 ;;
 esac
 
 # 편집자는 집필자와 다른 모델이어야 한다. 자기 문장에서 자기 군더더기는 잘 안 보인다.
 # POLISH=0 으로 편집 패스를 끌 수 있다.
 if [ -z "${POLISH_ENGINE:-}" ]; then
-  if [ "$WRITER" = "agy" ]; then POLISH_ENGINE="codex"; else POLISH_ENGINE="agy"; fi
+  case "$WRITER" in
+    agy) POLISH_ENGINE="codex" ;;
+    *)   POLISH_ENGINE="agy" ;;
+  esac
 fi
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] pipeline: $*"; }
@@ -127,10 +131,10 @@ log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] pipeline: $*"; }
 # claude: 판단·폴백 집필. 컨트롤러 레포(스킬 원본)를 읽어야 하므로 --add-dir.
 # $1=effort, $2=prompt
 run_claude() {
-  local effort="$1" prompt="$2"
+  local effort="$1" prompt="$2" model="${3:-$CLAUDE_MODEL}"
   "$CLAUDE_BIN" -p "$prompt" \
     --dangerously-skip-permissions \
-    --model "$CLAUDE_MODEL" \
+    --model "$model" \
     --effort "$effort" \
     --add-dir "$CONTROLLER_DIR" \
     </dev/null
@@ -209,6 +213,8 @@ $extra"
   hold_siblings "$lang" || { log "hold failed lang=$lang"; return 1; }
 
   case "$WRITER" in
+    fable)  run_claude "$CLAUDE_WRITE_EFFORT" "$prompt" "$CLAUDE_WRITE_MODEL"; rc=$?
+            wlabel="claude/$CLAUDE_WRITE_MODEL:$CLAUDE_WRITE_EFFORT" ;;
     codex)  run_codex "$prompt"; rc=$?; wlabel="codex/$CODEX_MODEL:$CODEX_EFFORT" ;;
     agy)    run_agy "$prompt";   rc=$?; wlabel="agy/$AGY_MODEL" ;;
     claude) run_claude "$CLAUDE_WRITE_EFFORT" "$prompt"; rc=$?; wlabel="claude/$CLAUDE_MODEL:$CLAUDE_WRITE_EFFORT" ;;
@@ -232,7 +238,9 @@ $extra"
   if [ "$rc" -ne 0 ]; then
     log "lang=$lang $WRITER failed rc=$rc — claude/$CLAUDE_MODEL effort=$CLAUDE_WRITE_EFFORT 로 폴백"
   else
-    log "lang=$lang $WRITER rc=0 이나 $lang/$SLUG.md 없음 — claude 폴백"
+    # fable 은 사용량 한도에 걸려도 종료코드 0 을 준다. 종료코드로는 못 잡고
+    # 산출물 부재로만 잡힌다. 그래서 이 분기가 폴백의 주 경로다.
+    log "lang=$lang $WRITER rc=0 이나 $lang/$SLUG.md 없음 (한도 소진 가능) — claude 폴백"
   fi
   rm -f "$target"
 
