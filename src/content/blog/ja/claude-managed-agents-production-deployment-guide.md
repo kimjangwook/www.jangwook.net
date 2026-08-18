@@ -1,8 +1,6 @@
 ---
 title: Claude Managed Agentsを試した — インフラなしでAIエージェントを30分でデプロイ
-description: >-
-  Anthropicが4月に公開したClaude Managed Agentsを実際に試してみた正直なレビュー。API
-  3ステップチェーン、$0.08/時間の実際のコスト計算、ベンダーロックインリスクまでカバー。
+description: 'Anthropicが2026年4月8日に公開ベータにしたClaude Managed Agentsを実際に繋いでみた。インフラなしでエージェントを起動するAPIの3ステップ、$0.08/時間の実費の出し方、ベンダーロックインがどの段で効くかまで、デプロイ側からコード付きで公開日の手順を追った記録だ。'
 pubDate: '2026-04-16'
 heroImage: >-
   ../../../assets/blog/claude-managed-agents-production-deployment-guide-hero.jpg

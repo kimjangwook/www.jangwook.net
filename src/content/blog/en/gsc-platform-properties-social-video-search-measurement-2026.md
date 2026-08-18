@@ -1,6 +1,6 @@
 ---
-title: "Search Console can now measure your TikTok. Your pipeline can't."
-description: "Platform properties went global on 2026-07-29. The Search Console API reference has not changed since 2024-07-23, so automated dashboards are the last to see it."
+title: "Search Console can measure TikTok. Your pipeline can't."
+description: "Platform properties went global on 2026-07-29. Search Console API docs still stop at 2024-07-23, so automated dashboards see Instagram, TikTok, X, YouTube last."
 pubDate: '2026-08-18'
 heroImage: '../../../assets/blog/gsc-platform-properties-social-video-search-measurement-2026/hero.png'
 tags:

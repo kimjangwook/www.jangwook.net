@@ -1,8 +1,6 @@
 ---
 title: Claude Managed Agents 써봤다 — 인프라 없이 AI 에이전트 30분 배포
-description: >-
-  Anthropic이 4월 공개한 Claude Managed Agents를 직접 붙여본 솔직한 사용기. API 3단계 체인, $0.08/시간
-  요금 현실 계산, 벤더 락인 리스크까지 다룬다.
+description: 'Anthropic이 2026년 4월 8일 공개 베타로 내놓은 Claude Managed Agents를 직접 붙여 봤다. API 3단계 체인으로 인프라 없이 에이전트를 띄우는 구조, $0.08/시간 요금의 실제 합계, 벤더 락인이 어디서 걸리는지까지 배포 관점에서 정리한다.'
 pubDate: '2026-04-16'
 heroImage: >-
   ../../../assets/blog/claude-managed-agents-production-deployment-guide-hero.jpg

@@ -1,8 +1,6 @@
 ---
 title: 亲测Claude Managed Agents — 无需基础设施，30分钟部署AI智能体
-description: >-
-  对Anthropic于4月公开测试的Claude Managed
-  Agents的真实评测。涵盖API三步链路、$0.08/小时的实际成本计算以及供应商锁定风险。
+description: 'Anthropic 于 2026 年 4 月 8 日把 Claude Managed Agents 公开测试。我实际接过一遍，从部署侧写下四件事：API 三步链路怎么走、$0.08/小时真实合计是多少、不用自建基础设施时结构变成什么样、供应商锁定会卡在哪一步。没有自己搭服务器，只走官方 API 核对。'
 pubDate: '2026-04-16'
 heroImage: >-
   ../../../assets/blog/claude-managed-agents-production-deployment-guide-hero.jpg

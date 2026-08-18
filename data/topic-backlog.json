@@ -1,7 +1,58 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-17",
+  "updated_at": "2026-08-18",
   "topics": [
+    {
+      "slug": "fetch-textstream-vs-text-first-chunk-2026",
+      "title_idea": "첫 글자는 text()보다 얼마나 빨리 오나 — Response.textStream() 실측",
+      "content_type": "how-to",
+      "target_keyword": "Response textStream() first chunk",
+      "secondary_keywords": [
+        "textStream vs text() latency",
+        "TextDecoderStream Chrome 151",
+        "Fetch streaming UTF-8"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Chrome 151 release notes (2026-07-28) + web.dev New to the web platform in July (2026-07-31): Response/Request/Blob.textStream() is a shorthand for piping the byte stream through TextDecoderStream(). azukiazusa 2026-08-07 also documents replacing the pipe boilerplate.",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "수요일 How-to. 자체 픽스처(긴 markdown/JSON)에서 response.text(), body.pipeThrough(TextDecoderStream()), response.textStream()의 first-chunk와 complete 시각을 PerformanceObserver/marks로 나란히 잰다. 기존 prerender-activationstart-cwv-measurement-2026, inp-yielding-measure-2026과 링크."
+    },
+    {
+      "slug": "loaf-web-workers-congested-moments-chrome153-2026",
+      "title_idea": "워커가 바쁠 때 LoAF는 무엇을 찍나 — Chrome 153 Web Workers",
+      "content_type": "how-to",
+      "target_keyword": "Long Animation Frames API Web Workers",
+      "secondary_keywords": [
+        "LoAF congested moments worker",
+        "Chrome 153 PerformanceObserver",
+        "long-animation-frame worker"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "ChromeStatus feature 5387465121726464 (2026-07-16): Long Animation Frame API extended to report congested moments in Web Workers rather than a separate API. Chrome 153 beta window opens 2026-08-19 per chromestatus milestone list.",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "수요일 How-to. 메인 스레드 50ms+ 작업과 Worker 50ms+ 작업을 같은 페이지에 심고 PerformanceObserver('long-animation-frame') 엔트리가 워커 쪽을 포함하는지 셀을 나눈다. MDN은 워커 script attribution이 없다고 적는다. 링크: inp-yielding-measure-2026, prerender-activationstart-cwv-measurement-2026"
+    },
+    {
+      "slug": "speculation-rules-form-submission-prerender-2026",
+      "title_idea": "검색 폼을 내기 전에 prerender가 서는가 — form_submission 실측",
+      "content_type": "how-to",
+      "target_keyword": "speculation rules form_submission prerender",
+      "secondary_keywords": [
+        "Chrome 151 form_submission",
+        "prerender GET search form",
+        "speculation rules prerender"
+      ],
+      "search_intent": "how-to",
+      "priority": 2,
+      "source": "Chrome 151 release notes (2026-07-28): speculation rules gain a form_submission field so prerender can be prepared as a form submission and activated by real GET form navigations such as search. Tracking bug 346555939, ChromeStatus 5074313831120896.",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "수요일 How-to. 자체 검색 폼에서 speculation rules + form_submission을 걸고, 제출 전 prerender 생성 여부와 activationStart를 잰다. 기존 prerender-until-script-origin-trial-measure-2026(queued)과 겹치지 않게 대상은 GET 폼 활성화만. 링크: prerender-activationstart-cwv-measurement-2026, sitemap-lastmod-crawl-scheduling-2026"
+    },
     {
       "slug": "css-pseudo-element-backdrop-click-chrome152-2026",
       "title_idea": "backdrop 클릭으로 다이얼로그를 닫는다 — Chrome 152 CSSPseudoElement",
@@ -2145,8 +2196,9 @@
       "priority": 2,
       "source": "Google AI Studio 공식 문서, Google DeepMind 블로그",
       "added_at": "2026-05-03",
-      "status": "queued",
-      "notes": "Gemini 2.5 Flash($0.10/1M input)의 실용적 사용법. 긴 컨텍스트(1M 토큰) 처리 시나리오별 비용과 Claude 대비 실측 비교. llm-api-pricing-comparison-2026 내부링크 연결."
+      "status": "done",
+      "notes": "Gemini 2.5 Flash($0.10/1M input)의 실용적 사용법. 긴 컨텍스트(1M 토큰) 처리 시나리오별 비용과 Claude 대비 실측 비교. llm-api-pricing-comparison-2026 내부링크 연결.",
+      "published_at": "auto-detected"
     },
     {
       "slug": "google-io-2026-ai-developer-key-announcements-analysis",
@@ -3728,8 +3780,9 @@
       "priority": 1,
       "source": "trend research",
       "added_at": "2026-06-01",
-      "status": "queued",
-      "notes": "Zod v4가 2026년 출시되면서 JSON Schema 변환 성능이 크게 개선됨. Claude API의 tool_use 기반 강제 JSON 출력을 Zod 스키마와 연동하면 런타임 타입 안전성을 확보할 수 있는데, 이를 다룬 한국어 How-to가 전무함. z.toJSONSchema()로 Zod 스키마를 Claude tool 정의로 변환, 응답 파싱 시 z.parse()로 검증, 실패 시 자동 재시도 패턴까지 커버. vitest-4-ai-agent-testing-patterns-2026, claude-api-tool-use-strict-mode-production-guide 포스트와 내부링크 연결 가능. TypeScript 생태계 독자층 타겟 화요일 How-to 유형."
+      "status": "done",
+      "notes": "Zod v4가 2026년 출시되면서 JSON Schema 변환 성능이 크게 개선됨. Claude API의 tool_use 기반 강제 JSON 출력을 Zod 스키마와 연동하면 런타임 타입 안전성을 확보할 수 있는데, 이를 다룬 한국어 How-to가 전무함. z.toJSONSchema()로 Zod 스키마를 Claude tool 정의로 변환, 응답 파싱 시 z.parse()로 검증, 실패 시 자동 재시도 패턴까지 커버. vitest-4-ai-agent-testing-patterns-2026, claude-api-tool-use-strict-mode-production-guide 포스트와 내부링크 연결 가능. TypeScript 생태계 독자층 타겟 화요일 How-to 유형.",
+      "published_at": "auto-detected"
     },
     {
       "slug": "claude-code-plan-mode-deep-dive-workflow-guide-2026",
@@ -3979,8 +4032,9 @@
       "priority": 2,
       "source": "Drizzle ORM이 Star 수 기준 Prisma를 앞질렀으며, 번들 크기 0 런타임·완전 타입 안전·SQLite·D1 네이티브 지원으로 엣지 환경에 유리. How-to 포맷으로 스키마 정의부터 마이그레이션·쿼리·관계까지 커버.",
       "added_at": "2026-06-09",
-      "status": "queued",
-      "notes": "node-sqlite-builtin-practical-guide와 연계 가능. TypeScript 개발자 독자층 직접 수요."
+      "status": "done",
+      "notes": "node-sqlite-builtin-practical-guide와 연계 가능. TypeScript 개발자 독자층 직접 수요.",
+      "published_at": "auto-detected"
     },
     {
       "slug": "claude-api-vision-multimodal-image-analysis-guide-2026",
@@ -7196,6 +7250,227 @@
       "added_at": "2026-08-15",
       "status": "queued",
       "notes": "월요일 how-to 백업. 오늘 글의 명시적 한계(window.find ≠ 검색창 UI)를 같은 17셀 픽스처에서 CDP/Playwright 키보드 Cmd+F로 메운다. 숫자가 같으면 한계를 접고, 다르면 어느 숨김이 갈리는지가 오리지널."
+    },
+    {
+      "slug": null,
+      "title_idea": "Google検索の技術ドキュメント更新履歴を提供し、構造化データ要件やクローラー仕様の変更を記録する",
+      "content_type": "news",
+      "target_keyword": "Google検索の技術ドキュメント更新履歴を提供し、構造化データ要件やクローラー仕様の変更を記録する",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://developers.google.com/search/updates (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Chrome 151で導入されたusermedia機能要素、宣言的Shadow DOMスロット割り当て、ソフトナビゲーション計測指標を解説する",
+      "content_type": "news",
+      "target_keyword": "Chrome 151で導入されたusermedia機能要素、宣言的Shadow DOMスロット割り当て、ソフトナビゲーション計測指標を解説する",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://developer.chrome.com/blog/new-in-chrome-151 (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "2026年時点におけるCascading Style Sheets仕様の安定版およびワーキングドラフトの標準化状況を定義する",
+      "content_type": "news",
+      "target_keyword": "2026年時点におけるCascading Style Sheets仕様の安定版およびワーキングドラフトの標準化状況を定義する",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://www.w3.org/TR/css-2026/ (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Claude APIおよびプラットフォーム機能の変更点、Compliance API、モデルパラメータ更新情報を記録する",
+      "content_type": "news",
+      "target_keyword": "Claude APIおよびプラットフォーム機能の変更点、Compliance API、モデルパラメータ更新情報を記録する",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://platform.claude.com/docs/en/release-notes/system-prompts (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "OpenAI APIのモデル更新、プログラマティックツール呼び出し、プロンプトキャッシュ、マルチエージェント機能の変更履歴を提供する",
+      "content_type": "news",
+      "target_keyword": "OpenAI APIのモデル更新、プログラマティックツール呼び出し、プロンプトキャッシュ、マルチエージェント機能の変更履歴を提供する",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://developers.openai.com/api/docs/changelog (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Schema.orgの語彙リリース履歴と新規型定義、プロパティ追加、構造化データスキーマの変更点を公開する",
+      "content_type": "news",
+      "target_keyword": "Schema.orgの語彙リリース履歴と新規型定義、プロパティ追加、構造化データスキーマの変更点を公開する",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://schema.org/docs/releases.html (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "AIエージェントおよびLLM向けにWebサイトの構造化文書とコンテキストを提供するllms.txt標準仕様を策定する",
+      "content_type": "news",
+      "target_keyword": "AIエージェントおよびLLM向けにWebサイトの構造化文書とコンテキストを提供するllms.txt標準仕様を策定する",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://llmstxt.org/ (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "MCP仕様に基づく各種外部ツール（ファイルシステム、Git、DB等）向け公式リファレンスサーバ実装を提供する",
+      "content_type": "news",
+      "target_keyword": "MCP仕様に基づく各種外部ツール（ファイルシステム、Git、DB等）向け公式リファレンスサーバ実装を提供する",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/modelcontextprotocol/servers (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Webプラットフォームの変化は最先端モデルより速く、Modern Web Guidanceがその差を埋める",
+      "content_type": "news",
+      "target_keyword": "Webプラットフォームの変化は最先端モデルより速く、Modern Web Guidanceがその差を埋める",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://developer.chrome.com/docs/modern-web-guidance (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "web.devがBaseline Alertsを導入した",
+      "content_type": "news",
+      "target_keyword": "web.devがBaseline Alertsを導入した",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://web.dev/blog/baseline-alerts (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Dunky UIにACCESSIBILITY.mdを追加し、エージェントはW3CとARIA仕様に沿った厳格な流れに従う必要がある",
+      "content_type": "news",
+      "target_keyword": "Dunky UIにACCESSIBILITY.mdを追加し、エージェントはW3CとARIA仕様に沿った厳格な流れに従う必要がある",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/dunky-dev/ui/blob/main/ACCESSIBILITY.md (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "生成AIへの指示にWCAG 2.2を使うだけで見づらさがかなり改善される",
+      "content_type": "news",
+      "target_keyword": "生成AIへの指示にWCAG 2.2を使うだけで見づらさがかなり改善される",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://www.w3.org/TR/WCAG22/ (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "MCPの基礎から実装まで学ぶ一次資料として公式ドキュメントを使う",
+      "content_type": "news",
+      "target_keyword": "MCPの基礎から実装まで学ぶ一次資料として公式ドキュメントを使う",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "DeepSeekがOSS化したAgent Harnessは公開5日でGitHub 149K stars、リポジトリはまだdeveloper previewと明記している",
+      "content_type": "news",
+      "target_keyword": "DeepSeekがOSS化したAgent Harnessは公開5日でGitHub 149K stars、リポジトリはまだdeveloper previewと明記",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/deepseek-ai/deepseek-harness (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Googleが検索の生成AI機能向けにウェブサイトを最適化する公式ガイドを出している",
+      "content_type": "news",
+      "target_keyword": "Googleが検索の生成AI機能向けにウェブサイトを最適化する公式ガイドを出している",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "W3CのPasskey Document Signing Community Groupは署名セレモニー、第三者が独自検証できる証拠フォーマット、署名の法的効力を表す仕組みを目指す",
+      "content_type": "news",
+      "target_keyword": "W3CのPasskey Document Signing Community Groupは署名セレモニー、第三者が独自検証できる証拠フォーマット、署名の法的効力",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://www.w3.org/community/passkey-signing/ (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "OWASP PTK Security ScanをGitHub Marketplaceに公開し、Chromium上でDAST/IAST/SAST/SCAを実行してSARIFをCode Scanningへ上げ、重大度でCIを落とせる",
+      "content_type": "news",
+      "target_keyword": "OWASP PTK Security ScanをGitHub Marketplaceに公開し、Chromium上でDAST/IAST/SAST/SCAを実行して",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/marketplace/actions/owasp-ptk-security-scan (2026-08-18 확인, HTTP 200)",
+      "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
     }
   ]
 }

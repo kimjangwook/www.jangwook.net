@@ -1,9 +1,6 @@
 ---
-title: I Tried Claude Managed Agents — Deploy AI Agents in 30 Minutes
-description: >-
-  An honest review of Anthropic's Claude Managed Agents, launched in public beta
-  on April 8, 2026. Covers the 3-step API chain, real cost calculations at
-  $0.08/hr, and vendor lock-in risks.
+title: I Tried Claude Managed Agents — 30-Minute Deploy
+description: 'I tried Claude Managed Agents after the April 8, 2026 public beta. The 3-step API chain, real $0.08/hour cost, and vendor lock-in, written from a deploy view.'
 pubDate: '2026-04-16'
 heroImage: >-
   ../../../assets/blog/claude-managed-agents-production-deployment-guide-hero.jpg

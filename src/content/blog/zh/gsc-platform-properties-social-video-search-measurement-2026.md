@@ -1,6 +1,6 @@
 ---
 title: 'Search Console 平台资源：全球开放了，接口里还没有名字'
-description: 'Google 在 7 月 7 日给 Search Console 加了平台资源，7 月 29 日宣布全球开放。今天 8 月 18 日，帮助中心两页仍写着逐步推出，API 参考停在 2024-07-23，只文档化了 URL-prefix 和 sc-domain 两种写法。七份官方文档逐字核对之后的判断：手动看报表的团队今天就接，自动管道先别放。'
+description: 'Google 7 月 29 日宣布平台资源全球开放。今天 8 月 18 日帮助中心两页仍写逐步推出，API 参考停在 2024-07-23，只有 URL-prefix 和 sc-domain。七份文档核对后的判断：手动看报表的今天就接 Instagram、TikTok、X、YouTube，自动管道先别放。'
 pubDate: '2026-08-18'
 heroImage: '../../../assets/blog/gsc-platform-properties-social-video-search-measurement-2026/hero.png'
 tags:
@@ -35,7 +35,7 @@ relatedPosts:
 
 7 月 29 日，Google 宣布 Search Console 的平台资源向所有人开放。今天是 8 月 18 日，我用 curl 把帮助中心那两页的正文取回来，里面仍然写着这项功能正在逐步推出。同一家公司、同一个功能，两份官方文档在同一天说着不同的可用性。
 
-先说结论。用手打开 Search Console 看报表的团队，今天就把四个账号接上，花费是零，没有理由等。把 Search Console 拉进 API 或 BigQuery 做自动报表的团队，我的建议相反：资源可以接，管道里先别放。拦住管道的不是权限，是名字——参考文档里没有一种写法能指向这类资源。结果是把测量自动化建得越早的组织，越晚看到这批新数据，手动打开面板的团队反而先看到。
+先说结论。用手打开 Search Console 看报表的团队，今天就把四个账号接上，花费是零，没有理由等。把 Search Console [拉进 API 或 BigQuery 做自动报表](/zh/blog/zh/google-analytics-mcp-automation/)的团队，我的建议相反：资源可以接，管道里先别放。拦住管道的不是权限，是名字——参考文档里没有一种写法能指向这类资源。结果是把测量自动化建得越早的组织，越晚看到这批新数据，手动打开面板的团队反而先看到。
 
 ## 三个日期，一个还没长出接口的功能
 
@@ -89,7 +89,7 @@ curl -sSL "https://developers.google.com/webmaster-tools/search-console-api-orig
 #    1 sc-domain:example.com
 ```
 
-`instagram` 出现 0 次。自动报表读不到平台资源，原因不在权限，在于不知道用什么字符串去指它。实际端点会不会收账号路径，我不知道。文档里没有的写法，试出来的结果也不能当依据。这两件事的区别很实际：权限问题可以申请，命名问题只能等文档。
+`instagram` 出现 0 次。自动报表读不到平台资源，原因不在权限，在于不知道用什么字符串去指它。实际端点会不会收账号路径，我不知道。文档里没有的写法，试出来的结果也不能当依据。这两件事的区别很实际：权限问题可以申请，命名问题只能等文档。[只存在于 Search Console、拉取请求里找不到的控制点](/zh/blog/zh/official-geo-subtraction-gsc-control-2026/)也是同一层。范围在仓库外面被决定。
 
 要打个比方：这批数据现在只开了柜台窗口，没有邮购。想要就自己走一趟。比方在一个地方失效 —— 邮购渠道不是没建，是建了没印地址。端点也许已经能收，只是没人知道信封上该写什么。
 
@@ -98,7 +98,7 @@ curl -sSL "https://developers.google.com/webmaster-tools/search-console-api-orig
 > "On the Insights page, the top summary card shows all clicks to your property across Google (including web, image, video, and news searches). However, the detailed lists below the summary card focus specifically on traffic from web search results. Because of this, the total from specific cards might be lower than the number shown in the main summary card."
 > — [Search Console 帮助中心：关于 Search Console 中的平台资源](https://support.google.com/webmasters/answer/17148418)
 
-顶部汇总卡数的是 Google 上的全部点击，含网页、图片、视频、新闻搜索；下面的明细列表只数网页搜索。两个数字都叫 clicks。谁把汇总卡的数抄进周报，再拿明细列表去解释，就会算出自己解释不了的差额，而差额本身是正常的。
+顶部汇总卡数的是 Google 上的全部点击，含网页、图片、视频、新闻搜索；下面的明细列表只数网页搜索。两个数字都叫 clicks。[prerender 页面把 LCP 记成 6.2 秒](/zh/blog/zh/prerender-activationstart-cwv-measurement-2026/)也是同一类：指标名不告诉你它从哪只表开始走。谁把汇总卡的数抄进周报，再拿明细列表去解释，就会算出自己解释不了的差额，而差额本身是正常的。
 
 ![两栏对照图。左栏是平台资源数得到的东西：Google 搜索的点击与展示、平均点击率与平均排名位置、Discover 与 News 的流量、带来点击的搜索查询词、默认 28 天窗口。右栏是数不到的东西：平台内部的推荐与浏览、播放列表里的单个视频、API 与 BigQuery 的读取、建资源之前的历史区间、正式的内容类型维度](../../../assets/blog/gsc-platform-properties-social-video-search-measurement-2026/figure-1-zh.png)
 
