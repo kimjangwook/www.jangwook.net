@@ -472,33 +472,37 @@ plist 는 `~/Library/LaunchAgents/`. 변경 후 `launchctl bootout` → `bootstr
 
 ## 5. 삭제·개명·신규 전체 목록
 
-**삭제**
-- `scripts/prompts/daily-post-lang.md` (스텁, 134B — 참조처 확인 후)
-- `data/fact-core.md` (→ `column-brief.md`)
+**삭제** — 둘 다 완료 (2026-08-18)
+- ~~`scripts/prompts/daily-post-lang.md`~~ (스텁, 134B). 참조처는 이 문서뿐이었다
+- ~~`data/fact-core.md`~~ (→ `column-brief.md`)
 
-**개명**
-- `scripts/prompts/daily-post-core.md` → `daily-post-core-lab.md`
-- `scripts/x-scout.sh` → `scripts/social/x-scout.sh`
-  (소셜 교류용이며 **여전히 어디에도 안 붙는다**. 요청 없는 잡을 만들지 말 것)
-- launchd `net.jangwook.lab` → `net.jangwook.scout`
+**개명** — 완료 (2026-08-18)
+- ~~`scripts/prompts/daily-post-core.md`~~ → `daily-post-core-lab.md`
+- ~~`scripts/x-scout.sh`~~ → `scripts/social/x-scout.sh`
+  참조처를 원장·crontab·컨트롤러까지 훑어 0건을 확인하고 옮겼다.
+  **여전히 어디에도 안 붙는다.** 요청 없는 잡을 만들지 말 것
+- launchd `net.jangwook.lab` → ~~`net.jangwook.scout`~~
+  **원장에서는 잡 id 를 안 바꿨다.** 실행 이력·클레임·놓친 실행이 그 id 를 참조한다.
+  스텝의 명령을 `scout-and-probe.sh` 로 바꾸고 라벨만 갈았다 (`lm job set-command`)
 
 **신규**
 
 | 파일 | 역할 | 상태 |
 |---|---|---|
-| `scripts/scout.sh` | X·웹 수집, 402 가드 | 미착수 |
+| `scripts/scout.sh` | X·웹 수집, 402 가드 | **완료** (모델 호출부는 08-19 09:10 이 첫 시험) |
 | `scripts/verify-urls.sh` | URL 실존 확인 | **완료** |
 | `scripts/backlog-merge.mjs` | 백로그 조인 | **완료** |
-| `scripts/scout-and-probe.sh` | 09:10 엔트리포인트 | 미착수 |
-| `scripts/probe.sh` | 축소 예산 프로브 래퍼 | 미착수 |
-| `scripts/gen-image-grok.sh` | S4 | 미착수 |
+| `scripts/scout-and-probe.sh` | 09:10 엔트리포인트 | **완료** |
+| `scripts/probe.sh` | 축소 예산 프로브 래퍼 | **완료** |
+| `scripts/gen-image-grok.sh` | S4 | **완료** (경로 회수는 유료 티어에서 첫 시험) |
 | `scripts/palette.py` | 팔레트 단일 출처 | **완료** |
-| `scripts/render-figure.py` | 본문 도판 3종 | 미착수 |
-| `scripts/prompts/topic-pick.md` | 주제 선정 게이트 | 미착수 |
-| `scripts/prompts/daily-post-brief.md` | 레인 B 브리프 | 미착수 |
+| `scripts/render-figure.py` | 본문 도판 3종 | **완료** |
+| `scripts/prompts/topic-pick.md` | 주제 선정 게이트 | **완료** |
+| `scripts/prompts/daily-post-brief.md` | 레인 B 브리프 | **완료** |
 | `scripts/prompts/models/column-model-{ko,ja,en,zh}.md` | 본보기 | **완료** |
-| `data/priority-slugs.json` | 우선순위 계약 | 미착수 |
-| `data/img-quota-agy.txt` | agy 쿼터 회계 | 미착수 |
+| `data/priority-slugs.json` | 우선순위 계약 | **완료** |
+| `scripts/check-forced-slug.py` | 규칙 1 셸 집행 | **완료** |
+| `data/img-quota-agy.txt` | agy 쿼터 회계 | **완료** (gen-hero.sh 가 S2 첫 진입 때 만든다) |
 
 **손대지 않을 것**
 `daily-post-seal-publish.md`, `daily-post-lang-fix.md`, `h2-independence.mjs`,
