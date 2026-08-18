@@ -770,10 +770,10 @@ ko 기준. 다른 언어는 그 언어의 대응 항목으로.
 [x] B-3  daily-post-core.md → daily-post-core-lab.md 개명 (+ 새 스키마)
 [x] B-4  daily-post-refact.md 를 새 스키마로
 
-[ ] C-1  scripts/scout.sh (x·web 모드, 402 가드)
-[ ] C-2  data/priority-slugs.json + sunday-strategy SKILL 수정
-[ ] C-3  scripts/prompts/topic-pick.md
-[ ] C-4  파이프라인에 규칙 1 셸 재계산·대조
+[x] C-1  scripts/scout.sh (x·web 모드, 402 가드)
+[x] C-2  data/priority-slugs.json + sunday-strategy SKILL 수정
+[x] C-3  scripts/prompts/topic-pick.md
+[x] C-4  파이프라인에 규칙 1 셸 재계산·대조 (scripts/check-forced-slug.py)
 
 [ ] D-1  scripts/probe.sh (예산 1500s, 셀 3~6)
 [ ] D-2  scripts/scout-and-probe.sh
@@ -796,7 +796,11 @@ ko 기준. 다른 언어는 그 언어의 대응 항목으로.
 [ ] 최종  §8 검증 절차 전체
 ```
 
-**A·B 완료 (2026-08-18).** 다음은 C.
+**A·B·C 완료 (2026-08-18).** 다음은 D.
+
+발행 빈도는 원장에서 되돌렸다 — `lm schedule set jangwook-net.daily-post "23 15 * * *"`.
+C-5 의 `calculateSimilarity` 는 쓸 수 없다. 그 함수는 `categoryScores`·`difficulty` 를
+요구하는데 주제 선정 시점에 그 값이 없다. `jaccardSimilarity` 로 갔다.
 
 **A 를 먼저 한다.** 소유자 불만의 직접 원인이고, A만 끝나도 다음 글의 문체가
 달라진다. B~F 는 그 뒤에 순서대로.

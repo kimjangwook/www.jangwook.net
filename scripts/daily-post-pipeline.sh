@@ -408,7 +408,61 @@ trap release_lock EXIT INT TERM
 
 rm -f "$BRIEF" "$SEAL_CHECK" "$GEMINI_REVIEW" "$ENGINE_LOG"
 
-# ── 1. core (claude): 주제 선정 + 취재 플랜 ────────────────────────────
+# ── 0. topic-pick (claude): 오늘 무엇을 쓸지 ───────────────────────────
+# 레인 b 만. 레인 a 는 랩 데이터셋이 주제를 정한다.
+#
+# 셸이 규칙 1을 다시 계산해 모델의 답과 대조한다. 프롬프트만으로는 부족하다 —
+# 하드 블록·우선순위 0 으로 지정해도 4주 연속 밀린 기록이 있다.
+# 프롬프트는 이유를 주고 집행은 여기서 한다.
+TOPIC_PICK="$PROJECT_DIR/data/topic-pick.md"
+if [ -z "$REDO_SLUG" ] && [ "$LANE" = "b" ]; then
+  rm -f "$TOPIC_PICK"
+
+  # 수집물이 없으면 여기서 모은다.
+  #
+  # 임시 다리다. 원래 자리는 09:10 의 scout-and-probe.sh 이고, 그게 붙으면 이 블록은
+  # 지운다. 없는 채로 두면 topic-pick 이 규칙 2(수집물 붙은 백로그)를 건너뛰고
+  # 규칙 3(새 제안)으로 미끄러진다 — 수집·검증을 만들어 놓고 안 쓰는 모양이 된다.
+  HARVEST_DIR="$PROJECT_DIR/data/scout/$(date +%F)"
+  if [ ! -s "$HARVEST_DIR/harvest.verified.json" ]; then
+    log "phase scout (수집물 없음 — 임시 경로)"
+    bash "$PROJECT_DIR/scripts/scout.sh" web >/dev/null 2>&1 || log "scout web 실패 — 비치명"
+    bash "$PROJECT_DIR/scripts/scout.sh" x    >/dev/null 2>&1 || log "scout x 실패 — 비치명"
+    if [ -s "$HARVEST_DIR/harvest.json" ]; then
+      bash "$PROJECT_DIR/scripts/verify-urls.sh" "$HARVEST_DIR/harvest.json" \
+        >/dev/null 2>&1 || log "verify-urls 실패 — 비치명"
+    fi
+    if [ -s "$HARVEST_DIR/harvest.verified.json" ]; then
+      node "$PROJECT_DIR/scripts/backlog-merge.mjs" "$HARVEST_DIR/harvest.verified.json" \
+        --out "$PROJECT_DIR/data/backlog-slate.json" >/dev/null 2>&1 \
+        || log "backlog-merge 실패 — 비치명"
+    fi
+  fi
+
+  log "phase topic-pick (claude/$CLAUDE_MODEL)"
+  run_claude "$CLAUDE_EFFORT" "$(cat "$PROMPT_DIR/topic-pick.md")"
+  PICK_RC=$?
+  if [ "$PICK_RC" -ne 0 ] || [ ! -s "$TOPIC_PICK" ]; then
+    log "topic-pick 실패(rc=$PICK_RC) — 브리프가 백로그에서 직접 고른다"
+    rm -f "$TOPIC_PICK"
+  elif grep -q '^SKIP' "$TOPIC_PICK"; then
+    log "SKIP $(head -n 1 "$TOPIC_PICK")"
+    exit 0
+  else
+    # 규칙 1 재계산. 게이트를 못 읽으면 닫는다 — 파싱 버그가 곧 잘못된 주제다.
+    if ! /usr/bin/python3 "$PROJECT_DIR/scripts/check-forced-slug.py" \
+           --pick "$TOPIC_PICK" \
+           --priority "$PROJECT_DIR/data/priority-slugs.json" \
+           --backlog "$PROJECT_DIR/data/topic-backlog.json" \
+           --posts "$PROJECT_DIR/src/content/blog/ko"; then
+      log "규칙 1 위반 — 강제 슬러그를 건너뛰었다. 멈춘다"
+      exit 1
+    fi
+    log "topic-pick $(awk -F': *' '/^slug:/{print $2; exit}' "$TOPIC_PICK") ($(awk -F': *' '/^pick-source:/{print $2; exit}' "$TOPIC_PICK"))"
+  fi
+fi
+
+# ── 1. brief (claude): 취재 플랜 ───────────────────────────────────────
 if [ -n "$REDO_SLUG" ]; then
   log "phase refact slug=$REDO_SLUG (claude/$CLAUDE_MODEL)"
   CORE_PROMPT="$(sed "s/{{SLUG}}/$REDO_SLUG/g" "$PROMPT_DIR/daily-post-refact.md")"

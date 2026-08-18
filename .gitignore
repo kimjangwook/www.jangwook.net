@@ -35,6 +35,10 @@ _sandbox/
 # 단, 주간 잡이 매주 커밋하는 운영 산출물은 추적 유지(인덱스에서 빠져도 재추가되도록 예외).
 !data/strategy-report.md
 !data/topic-backlog.json
+# priority-slugs.json 은 산출물이 아니라 **계약**이다. daily-post 의 주제 선정
+# 게이트가 이 파일을 읽고, 없으면 백로그 폴백으로 내려간다. 추적하지 않으면
+# 리포를 새로 클론한 순간 우선순위가 통째로 사라진다.
+!data/priority-slugs.json
 # 랩 데이터셋은 발행된 글의 근거다. 매니페스트와 결과 요약은 추적하고,
 # 원시 출력(raw/)은 용량 때문에 로컬에만 둔다.
 !data/labs/
