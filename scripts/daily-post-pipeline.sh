@@ -53,6 +53,7 @@
 #
 # redo 모드:
 #   scripts/daily-post-pipeline.sh [--lane a|b] [--writer ...] [--redo <slug>]
+#   scripts/daily-post-pipeline.sh --resume <slug>    # seal-check 부터 다시
 # 이미 발행된 글을 이 로직으로 다시 만든다. core 대신 claude 가 기존 4개 파일에서
 # 브리프 를 복원하고(취재는 끝나 있다), 기존 본문 4개를 레포 밖으로 치운 뒤
 # codex 가 백지에서 다시 쓴다. 기존 본문은 아카이브에 남는다.
@@ -97,6 +98,7 @@ LANGS="ko ja en zh"
 # 집필 엔진. 기본 agy(gemini-3.7-flash-medium). 실패하면 claude opus xhigh 로 폴백한다.
 WRITER="${WRITER:-fable}"
 REDO_SLUG=""
+RESUME_SLUG=""
 # 레인 b 가 기본이다. 레인 a(랩 주도)는 죽이지 않고 소수 경로로 남긴다 —
 # 랩이 배신하는 결과를 냈을 때 그것만으로 한 편이 서는 경우가 아직 있다.
 LANE="${LANE:-b}"
@@ -105,6 +107,18 @@ while [ $# -gt 0 ]; do
     --lane)
       LANE="${2:-}"
       case "$LANE" in a|b) ;; *) echo "usage: $0 --lane a|b" >&2; exit 2 ;; esac
+      shift 2
+      ;;
+    --resume)
+      # 뒷단(seal-check 이후)만 다시 돈다. 앞단 산출물은 그대로 쓴다.
+      #
+      # 2026-08-18 에 필요해졌다. 92분을 돌아 4개 언어를 다 쓰고 폴리시까지 끝낸 뒤
+      # seal-check 첫 호출에서 세션 한도에 걸렸다.
+      #   You've hit your session limit · resets 7:40pm (Asia/Tokyo)
+      # 그때 할 수 있는 것이 "처음부터 다시"뿐이었다. 그러면 이미 규격 안에 착지한
+      # 네 편을 버리고, 브리프도 새로 만들어 다른 숫자 위에 다시 쓰게 된다.
+      RESUME_SLUG="${2:-}"
+      [ -n "$RESUME_SLUG" ] || { echo "usage: $0 --resume <slug>" >&2; exit 2; }
       shift 2
       ;;
     --redo)
@@ -406,7 +420,55 @@ release_lock() { rm -rf "$LOCK_DIR"; }
 # cleanup 도 release_lock 을 부른다.
 trap release_lock EXIT INT TERM
 
-rm -f "$BRIEF" "$SEAL_CHECK" "$GEMINI_REVIEW" "$ENGINE_LOG"
+# 언어 격리용 임시 디렉터리. **분기 앞에 만든다.**
+#
+# 2026-08-18 에 여기서 데였다. 이 줄이 --resume 이 건너뛰는 블록 안에 있었고,
+# 그래서 resume 경로에서 HOLD_DIR 가 빈 문자열이었다. 재집필이 hold_siblings 를
+# 부르는 순간 `mv ... "$HOLD_DIR/ko.md"` 가 `/ko.md` 가 됐다.
+#
+#   mv: fastcopy: open() failed (to): /ko.md: Read-only file system
+#
+# 루트가 읽기 전용이라 실패로 끝났지만, 쓸 수 있는 경로였다면 원고를 엉뚱한 데
+# 옮겨 놓고 그 사실을 아무도 몰랐을 것이다.
+HOLD_DIR="$(mktemp -d "${TMPDIR:-/tmp}/daily-post-hold.XXXXXX")"
+
+# ── R. --resume: 뒷단만 다시 돈다 ──────────────────────────────────────
+#
+# 앞단 산출물을 지우기 **전에** 분기한다. 아래 rm 이 브리프를 지우므로
+# 순서를 바꾸면 이어서 돌 것이 없어진다.
+if [ -n "$RESUME_SLUG" ]; then
+  SLUG="$RESUME_SLUG"
+  log "phase resume slug=$SLUG — seal-check 부터 다시 돈다"
+
+  # 이어서 돌 수 있는 상태인지 먼저 본다. 없는 것을 있다고 가정하고 진행하면
+  # seal-check 가 빈 재료로 판정하고, 그 판정이 발행까지 간다.
+  MISSING=""
+  [ -s "$BRIEF" ] || MISSING="$MISSING $(basename "$BRIEF")"
+  BRIEF_SLUG="$(awk -F': *' '/^slug:/{gsub(/[" ]/, "", $2); print $2; exit}' "$BRIEF" 2>/dev/null)"
+  if [ -n "$BRIEF_SLUG" ] && [ "$BRIEF_SLUG" != "$SLUG" ]; then
+    log "FATAL: 브리프의 slug 는 '$BRIEF_SLUG' 인데 --resume 은 '$SLUG' 다."
+    log "       다른 주제의 브리프로 판정하면 인용과 본문이 갈린다."
+    exit 2
+  fi
+  for L in $LANGS; do
+    [ -s "$PROJECT_DIR/src/content/blog/$L/$SLUG.md" ] || MISSING="$MISSING $L"
+  done
+  if [ -n "$MISSING" ]; then
+    log "FATAL: 이어서 돌 수 없다 — 없는 것:$MISSING"
+    log "       처음부터 돌리려면 --resume 없이 실행한다."
+    exit 2
+  fi
+  log "resume 확인: 브리프 + 4개 언어 모두 있다"
+
+  # seal-check 산출물만 지운다. 브리프·언어 파일·히어로는 그대로 쓴다.
+  rm -f "$SEAL_CHECK"
+  trap 'cleanup' EXIT INT TERM
+else
+
+# insight-gate 도 지운다. 목록에서 빠져 있어서 실패한 회차의 낡은 판정이 남았다 —
+# 2026-08-18 에 17:52 자 파일이 19:07 까지 살아 있었다. 판정 파일이 이전 회차 것인지
+# 이번 것인지는 mtime 을 봐야만 알 수 있고, 그건 사람이 안 본다.
+rm -f "$BRIEF" "$SEAL_CHECK" "$GEMINI_REVIEW" "$ENGINE_LOG" "$PROJECT_DIR/data/insight-gate.md"
 
 # ── 0. topic-pick (claude): 오늘 무엇을 쓸지 ───────────────────────────
 # 레인 b 만. 레인 a 는 랩 데이터셋이 주제를 정한다.
@@ -513,7 +575,6 @@ if [ -n "$REDO_SLUG" ] && [ "$SLUG" != "$REDO_SLUG" ]; then
   exit 1
 fi
 
-HOLD_DIR="$(mktemp -d "${TMPDIR:-/tmp}/daily-post-hold.XXXXXX")"
 trap cleanup EXIT INT TERM
 
 # redo: 기존 본문 4개를 아카이브로 옮겨 백지에서 다시 쓰게 한다.
@@ -594,6 +655,20 @@ if { [ "$REVIEWER1" = "agy" ] && [ -x "$AGY_BIN" ]; } || { [ "$REVIEWER1" = "cod
   fi
 fi
 REVIEWER1_LABEL="${REVIEWER1_LABEL:-none}"
+
+fi   # --resume 분기 끝. 여기부터는 두 경로가 합류한다.
+
+# --resume 은 앞단의 리뷰 산출물을 그대로 쓴다. 지난 회차의 review-gemini.md 가
+# 남아 있으면 그것이 이번 판정의 입력이 된다 — 같은 슬러그의 같은 본문에 대한
+# 메모라 유효하다. 없으면 seal-check 가 단독 리뷰로 넘어간다.
+if [ -n "$RESUME_SLUG" ]; then
+  REVIEWER1_LABEL="${REVIEWER1_LABEL:-이전 회차}"
+  if [ -f "$GEMINI_REVIEW" ]; then
+    log "resume: 이전 회차의 review-1 메모를 쓴다 ($(date -r "$GEMINI_REVIEW" +%H:%M))"
+  else
+    log "resume: review-1 메모가 없다 — seal-check 단독 리뷰"
+  fi
+fi
 
 # ── 4. seal-check (claude xhigh): 판정. 본문 산문은 고치지 않는다 ──────
 log "phase seal-check (claude/$CLAUDE_MODEL effort=$CLAUDE_REVIEW_EFFORT)"
