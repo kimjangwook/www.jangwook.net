@@ -53,7 +53,8 @@
 #
 # redo 모드:
 #   scripts/daily-post-pipeline.sh [--lane a|b] [--writer ...] [--redo <slug>]
-#   scripts/daily-post-pipeline.sh --resume <slug>    # seal-check 부터 다시
+#   scripts/daily-post-pipeline.sh --resume [--slug <s>] [--from check|publish]
+#     --slug 를 생략하면 data/column-brief.md 에서 읽는다 (원장이 부르는 형태)
 # 이미 발행된 글을 이 로직으로 다시 만든다. core 대신 claude 가 기존 4개 파일에서
 # 브리프 를 복원하고(취재는 끝나 있다), 기존 본문 4개를 레포 밖으로 치운 뒤
 # codex 가 백지에서 다시 쓴다. 기존 본문은 아카이브에 남는다.
@@ -99,6 +100,7 @@ LANGS="ko ja en zh"
 WRITER="${WRITER:-fable}"
 REDO_SLUG=""
 RESUME_SLUG=""
+RESUME_SLUG_ARG=""
 RESUME_FROM="check"
 # 레인 b 가 기본이다. 레인 a(랩 주도)는 죽이지 않고 소수 경로로 남긴다 —
 # 랩이 배신하는 결과를 냈을 때 그것만으로 한 편이 서는 경우가 아직 있다.
@@ -118,19 +120,25 @@ while [ $# -gt 0 ]; do
       #   You've hit your session limit · resets 7:40pm (Asia/Tokyo)
       # 그때 할 수 있는 것이 "처음부터 다시"뿐이었다. 그러면 이미 규격 안에 착지한
       # 네 편을 버리고, 브리프도 새로 만들어 다른 숫자 위에 다시 쓰게 된다.
-      RESUME_SLUG="${2:-}"
-      [ -n "$RESUME_SLUG" ] || { echo "usage: $0 --resume <slug> [check|publish]" >&2; exit 2; }
+      RESUME_SLUG="pending"
+      shift
+      ;;
+    --slug)
+      RESUME_SLUG_ARG="${2:-}"
+      [ -n "$RESUME_SLUG_ARG" ] || { echo "usage: $0 --resume [--slug <s>] [--from check|publish]" >&2; exit 2; }
+      shift 2
+      ;;
+    --from)
       # 어느 단부터 이어 갈지. 기본 check.
       #   check    seal-check 부터 (판정 → 조건부 재집필 → insight-gate → 발행)
       #   publish  발행만. 판정이 이미 끝났고 마지막 단만 실패했을 때
       #
       # publish 를 나눈 이유. 2026-08-18 에 seal-publish 가 529 로 두 번 떨어졌는데,
       # 그때마다 --resume 이 seal-check 를 5분씩 다시 돌렸다. 그 판정은 이미 났고
-      # insight-gate 도 PUBLISH 를 냈다. 판정을 다시 돌리는 것은 낭비이고,
-      # opus xhigh 큰 컨텍스트가 529 를 더 잘 맞으므로 재시도 확률도 낮아진다.
-      case "${3:-check}" in
-        check|publish) RESUME_FROM="${3:-check}"; shift ;;
-        *) echo "usage: $0 --resume <slug> [check|publish]" >&2; exit 2 ;;
+      # insight-gate 도 PUBLISH 를 냈다.
+      case "${2:-}" in
+        check|publish) RESUME_FROM="$2" ;;
+        *) echo "usage: $0 --resume [--slug <s>] [--from check|publish]" >&2; exit 2 ;;
       esac
       shift 2
       ;;
@@ -149,6 +157,26 @@ while [ $# -gt 0 ]; do
       ;;
   esac
 done
+# --resume 대상 확정. --slug 를 안 주면 브리프에서 읽는다.
+#
+# 원장(life-manager)이 이 스크립트를 고정 명령으로 들고 있어야 하는데, 슬러그가
+# 필수면 그 명령을 미리 적을 수 없다. 재개 대상은 언제나 "직전에 실패한 그 글"이고
+# 그 정체는 data/column-brief.md 에 있다.
+if [ "$RESUME_SLUG" = "pending" ]; then
+  if [ -n "$RESUME_SLUG_ARG" ]; then
+    RESUME_SLUG="$RESUME_SLUG_ARG"
+  else
+    RESUME_SLUG="$(awk -F': *' '/^slug:/{gsub(/[" ]/, "", $2); print $2; exit}' \
+                    "$PROJECT_DIR/data/column-brief.md" 2>/dev/null)"
+    [ -n "$RESUME_SLUG" ] || {
+      echo "재개할 대상을 못 찾았다 — data/column-brief.md 에 slug: 이 없다" >&2
+      exit 2
+    }
+  fi
+elif [ -n "$RESUME_SLUG_ARG" ]; then
+  echo "--slug 는 --resume 과 함께만 쓴다" >&2; exit 2
+fi
+
 case "$WRITER" in
   fable|codex|agy|claude) ;;
   *) echo "unknown writer: $WRITER (fable|codex|agy|claude)" >&2; exit 2 ;;
