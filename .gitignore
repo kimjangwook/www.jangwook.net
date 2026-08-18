@@ -54,3 +54,4 @@ logs/ops/loop_state.json
 
 # Cloudflare Workers
 .wrangler/
+scripts/__pycache__/

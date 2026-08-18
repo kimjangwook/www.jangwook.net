@@ -99,6 +99,7 @@ LANGS="ko ja en zh"
 WRITER="${WRITER:-fable}"
 REDO_SLUG=""
 RESUME_SLUG=""
+RESUME_FROM="check"
 # 레인 b 가 기본이다. 레인 a(랩 주도)는 죽이지 않고 소수 경로로 남긴다 —
 # 랩이 배신하는 결과를 냈을 때 그것만으로 한 편이 서는 경우가 아직 있다.
 LANE="${LANE:-b}"
@@ -118,7 +119,19 @@ while [ $# -gt 0 ]; do
       # 그때 할 수 있는 것이 "처음부터 다시"뿐이었다. 그러면 이미 규격 안에 착지한
       # 네 편을 버리고, 브리프도 새로 만들어 다른 숫자 위에 다시 쓰게 된다.
       RESUME_SLUG="${2:-}"
-      [ -n "$RESUME_SLUG" ] || { echo "usage: $0 --resume <slug>" >&2; exit 2; }
+      [ -n "$RESUME_SLUG" ] || { echo "usage: $0 --resume <slug> [check|publish]" >&2; exit 2; }
+      # 어느 단부터 이어 갈지. 기본 check.
+      #   check    seal-check 부터 (판정 → 조건부 재집필 → insight-gate → 발행)
+      #   publish  발행만. 판정이 이미 끝났고 마지막 단만 실패했을 때
+      #
+      # publish 를 나눈 이유. 2026-08-18 에 seal-publish 가 529 로 두 번 떨어졌는데,
+      # 그때마다 --resume 이 seal-check 를 5분씩 다시 돌렸다. 그 판정은 이미 났고
+      # insight-gate 도 PUBLISH 를 냈다. 판정을 다시 돌리는 것은 낭비이고,
+      # opus xhigh 큰 컨텍스트가 529 를 더 잘 맞으므로 재시도 확률도 낮아진다.
+      case "${3:-check}" in
+        check|publish) RESUME_FROM="${3:-check}"; shift ;;
+        *) echo "usage: $0 --resume <slug> [check|publish]" >&2; exit 2 ;;
+      esac
       shift 2
       ;;
     --redo)
@@ -460,8 +473,18 @@ if [ -n "$RESUME_SLUG" ]; then
   fi
   log "resume 확인: 브리프 + 4개 언어 모두 있다"
 
-  # seal-check 산출물만 지운다. 브리프·언어 파일·히어로는 그대로 쓴다.
-  rm -f "$SEAL_CHECK"
+  # ★ 판정을 미리 지우지 않는다.
+  #
+  # 첫 판이 `rm -f "$SEAL_CHECK"` 로 시작했다. 그 뒤 seal-check 가 529 로 실패하니
+  # 이전 판정이 사라지고 없는 상태가 됐다 — 지우고 못 만든 것이다.
+  # 그러면 `--resume <slug> publish` 로 발행만 이어 갈 수도 없다.
+  #
+  # seal-check 는 산출물을 덮어쓰므로 미리 지울 이유가 없다. 대신 이전 것을
+  # 옆에 남겨 둔다 — 재판정이 실패했을 때 사람이 무엇을 잃었는지 볼 수 있게.
+  if [ -s "$SEAL_CHECK" ] && [ "$RESUME_FROM" = "check" ]; then
+    cp "$SEAL_CHECK" "$SEAL_CHECK.prev" 2>/dev/null || true
+    log "resume: 이전 판정을 $(basename "$SEAL_CHECK").prev 로 남긴다"
+  fi
   trap 'cleanup' EXIT INT TERM
 else
 
@@ -670,6 +693,25 @@ if [ -n "$RESUME_SLUG" ]; then
   fi
 fi
 
+if [ "$RESUME_FROM" = "publish" ]; then
+  # 판정을 건너뛴다. 다만 **판정이 실제로 있었는지는 확인한다** —
+  # 없는 판정을 통과로 가정하고 발행하면 게이트가 있으나 마나다.
+  [ -s "$SEAL_CHECK" ] || { log "FATAL: $SEAL_CHECK 가 없다. --resume <slug> check 로 판정부터 받는다"; exit 2; }
+  GATE_FILE="$PROJECT_DIR/data/insight-gate.md"
+  [ -s "$GATE_FILE" ] || { log "FATAL: insight-gate 판정이 없다. --resume <slug> check 로 받는다"; exit 2; }
+  # 제목 줄이 먼저 오는 경우가 있어 앞 20줄에서 판정을 찾는다 (아래 게이트와 같은 규칙).
+  GATE_LINE="$(head -n 20 "$GATE_FILE" | /usr/bin/grep -m1 -E '^(PUBLISH|REWRITE|HOLD)' || true)"
+  if [ -z "$GATE_LINE" ]; then
+    log "FATAL: insight-gate 의 판정 줄을 못 읽었다 — --resume <slug> check 로 다시 받는다"
+    exit 2
+  fi
+  case "$GATE_LINE" in
+    PUBLISH*) ;;
+    *) log "FATAL: insight-gate 가 PUBLISH 가 아니다 — $GATE_LINE"; exit 2 ;;
+  esac
+  log "resume publish: seal-check($(date -r "$SEAL_CHECK" +%H:%M)) · insight-gate PUBLISH($(date -r "$GATE_FILE" +%H:%M)) 확인 — 발행만 한다"
+else
+
 # ── 4. seal-check (claude xhigh): 판정. 본문 산문은 고치지 않는다 ──────
 log "phase seal-check (claude/$CLAUDE_MODEL effort=$CLAUDE_REVIEW_EFFORT)"
 CHECK_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-seal-check.md")"
@@ -731,7 +773,31 @@ if [ "$GATE_RC" -ne 0 ] || [ ! -s "$INSIGHT_GATE" ]; then
   exit 1
 fi
 
-GATE_VERDICT="$(head -n 1 "$INSIGHT_GATE")"
+# 판정 줄을 찾는다.
+#
+# 프롬프트는 "First line is exactly one of" 라고 지시하는데, 모델은 제목 줄을 먼저 쓴다.
+# 2026-08-18 실물이 그랬다.
+#
+#   1: # insight-gate — gsc-platform-properties-...
+#   2:
+#   3: PUBLISH
+#
+# `head -n 1` 로 읽으면 판정이 제목이 되고, 그 값은 ^REWRITE 도 ^HOLD 도 아니라
+# **두 분기를 모두 통과해 발행까지 간다.** 이번에는 3행이 PUBLISH 라 결과가 맞았지만,
+# 3행이 HOLD 였어도 똑같이 발행했다. 게이트가 fail-open 이었다.
+#
+# 앞 20줄에서 판정으로 읽히는 첫 줄을 찾는다. 없으면 **닫는다** —
+# 게이트 출력을 못 읽으면 통과시키지 않는다.
+GATE_VERDICT="$(head -n 20 "$INSIGHT_GATE" | /usr/bin/grep -m1 -E '^(PUBLISH|REWRITE|HOLD)' || true)"
+if [ -z "$GATE_VERDICT" ]; then
+  log "insight-gate 판정 줄을 못 읽었다 — 발행하지 않는다"
+  log "  앞 5줄: $(head -n 5 "$INSIGHT_GATE" | tr '\n' '|')"
+  "$CONTROLLER_DIR/sh/send-telegram.sh" "⏸ [jangwook.net] ${SLUG}
+통찰 게이트의 판정 줄(PUBLISH|REWRITE|HOLD)을 찾지 못해 발행을 보류했다.
+data/insight-gate.md 확인." >/dev/null 2>&1 || true
+  exit 0
+fi
+log "insight-gate 판정: $GATE_VERDICT"
 
 # REWRITE — 재료는 있는데 초고가 안 썼다. 지목된 언어만 다시 쓰고 한 번 더 판정한다.
 # 재판정은 한 번뿐이다. 게이트와 집필이 서로를 물고 도는 것을 막는다.
@@ -776,7 +842,10 @@ ${GATE_VERDICT}
 판정 근거: data/insight-gate.md" >/dev/null 2>&1 || true
   exit 0
 fi
-log "insight-gate PUBLISH"
+# 여기 오면 REWRITE 도 HOLD 도 아니었다는 뜻이고, 판정 줄이 없으면 위에서 이미 나갔다.
+log "insight-gate 통과 ($GATE_VERDICT)"
+
+fi   # RESUME_FROM=publish 분기 끝
 
 # ── 6. seal-publish (claude): 커밋·푸시·알림 ───────────────────────────
 log "phase seal-publish (claude/$CLAUDE_MODEL)"
