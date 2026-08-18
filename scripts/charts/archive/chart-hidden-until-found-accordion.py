@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Figures for hidden-until-found-find-fragment-accordion-2026.
 
-English labels only (shared across ko/ja/en/zh). Numbers from data/fact-core.md.
+English labels only (shared across ko/ja/en/zh). Numbers from data/column-brief.md.
 """
 from __future__ import annotations
 

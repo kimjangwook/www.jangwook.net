@@ -17,13 +17,15 @@
 #   WRITER=codex scripts/daily-post-pipeline.sh        (환경변수도 동작)
 # 1차 리뷰어·편집자는 집필 엔진과 겹치지 않게 자동으로 고른다.
 #
-# 동시 실행 금지: data/fact-core.md·seal-check.md·write-engines.txt 를 공유한다.
+# 동시 실행 금지: data/column-brief.md·seal-check.md·write-engines.txt 를 공유한다.
 # 두 슬러그를 같이 돌리면 서로의 상태를 덮는다.
 #
 # 단계:
-#   1. core           claude → data/fact-core.md
-#                     data/labs/ 의 미소비 데이터셋에서 하나를 골라 논지를 세운다.
-#                     여기서 새로 실험하지 않는다. 실험은 run-lab.sh 가 매일 따로 돈다.
+#   1. brief          claude → data/column-brief.md
+#                     레인 b(기본): daily-post-brief.md 가 data/topic-pick.md 를 읽고
+#                     LOCKED(잠긴 사실) / OPEN(집필자가 늘려도 되는 재료) 두 블록을 쓴다.
+#                     레인 a: daily-post-core-lab.md 가 data/labs/ 의 미소비 데이터셋을 쓴다.
+#                     어느 레인이든 여기서 새로 실험하지 않는다.
 #   1.5 hero          claude → data/hero-spec.json → render-hero.py (실패 시 Gemini)
 #   2. lang ko/ja/en/zh  writer → src/content/blog/<lang>/<slug>.md  (각 1 프로세스)
 #   3. polish         집필과 다른 모델 → 같은 파일 20~30% 감량 (비치명)
@@ -34,8 +36,9 @@
 #   6. (조건부) 재집필  writer → REWRITE 로 지목된 언어만 다시 쓴다 (폴백 동일)
 #   7. seal-publish   claude → 커밋·푸시·Telegram, 그리고 랩 consumed 표시
 #
-# 발행은 월·수·금(launchd), 실험은 매일. 한 편에 들어가는 실측의 두께를 위해
-# 실험과 집필을 분리했다. 옛 "단일 실행 안에서 끝내라" 깊이 상한은 폐기.
+# 발행은 매일 한 편이다. 2026-08-16 에 월·수·금으로 줄였다가 2026-08-18 에 되돌렸다 —
+# 줄인 이유였던 "한 편의 두께"는 발행 빈도가 아니라 브리프 스키마의 문제였다.
+# 실험은 주제가 정해진 뒤에 그 주제를 겨냥해서만 돈다(scout-and-probe.sh).
 #
 # 리뷰가 둘인 이유: flash 는 싸고 빨라 사실·링크·메타데이터 같은 기계적 오류를
 # 훑는 데 쓰고, opus xhigh 가 그 메모를 받아 문체와 H2 독립성을 판정한다.
@@ -49,16 +52,16 @@
 # 호출: scripts/jangwook-scheduler.sh (launchd)
 #
 # redo 모드:
-#   scripts/daily-post-pipeline.sh --redo <slug>
+#   scripts/daily-post-pipeline.sh [--lane a|b] [--writer ...] [--redo <slug>]
 # 이미 발행된 글을 이 로직으로 다시 만든다. core 대신 claude 가 기존 4개 파일에서
-# FACT CORE 를 복원하고(취재는 끝나 있다), 기존 본문 4개를 레포 밖으로 치운 뒤
+# 브리프 를 복원하고(취재는 끝나 있다), 기존 본문 4개를 레포 밖으로 치운 뒤
 # codex 가 백지에서 다시 쓴다. 기존 본문은 아카이브에 남는다.
 set -uo pipefail
 
 PROJECT_DIR="${PROJECT_DIR:-/Users/jangwook/workspace/www.jangwook.net}"
 CONTROLLER_DIR="${CONTROLLER_DIR:-/Users/jangwook/workspace/claude-controller}"
 PROMPT_DIR="$PROJECT_DIR/scripts/prompts"
-FACT_CORE="$PROJECT_DIR/data/fact-core.md"
+BRIEF="$PROJECT_DIR/data/column-brief.md"
 SEAL_CHECK="$PROJECT_DIR/data/seal-check.md"
 GEMINI_REVIEW="$PROJECT_DIR/data/review-gemini.md"
 ENGINE_LOG="$PROJECT_DIR/data/write-engines.txt"
@@ -94,8 +97,16 @@ LANGS="ko ja en zh"
 # 집필 엔진. 기본 agy(gemini-3.7-flash-medium). 실패하면 claude opus xhigh 로 폴백한다.
 WRITER="${WRITER:-fable}"
 REDO_SLUG=""
+# 레인 b 가 기본이다. 레인 a(랩 주도)는 죽이지 않고 소수 경로로 남긴다 —
+# 랩이 배신하는 결과를 냈을 때 그것만으로 한 편이 서는 경우가 아직 있다.
+LANE="${LANE:-b}"
 while [ $# -gt 0 ]; do
   case "$1" in
+    --lane)
+      LANE="${2:-}"
+      case "$LANE" in a|b) ;; *) echo "usage: $0 --lane a|b" >&2; exit 2 ;; esac
+      shift 2
+      ;;
     --redo)
       REDO_SLUG="${2:-}"
       [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer codex|agy|claude] --redo <slug>" >&2; exit 2; }
@@ -229,7 +240,7 @@ $extra"
 
   # 폴백. 집필 엔진이 비정상 종료했으면 반쯤 쓰인 파일이 남아 있을 수 있다.
   # 그 파일을 이어 고치게 두면 어디까지가 누구 문장인지 알 수 없다.
-  # 지우고 FACT CORE 에서 다시 시작한다.
+  # 지우고 브리프 에서 다시 시작한다.
   if [ "$WRITER" = "claude" ]; then
     log "lang=$lang claude 집필 실패 rc=$rc (폴백 대상 없음)"
     restore_holds
@@ -286,6 +297,43 @@ record_engine() {
 # (arXiv:2505.13360, 약 19%). 집필 프롬프트는 짧게 두고, 삭제 규칙은 여기에 둔다.
 # 편집자는 사실을 더하지 않는다. 짧게 만들 뿐이다. 실패해도 초고는 살아 있으므로
 # 비치명으로 둔다.
+# 본문 분량 — frontmatter 만 뺀다. 코드는 본문이다.
+#
+# 두 지표를 같이 내는 이유: `wc -w` 는 일본어·중국어에서 무의미하다. 참조 6편을
+# 실측하면 ja 107~578, zh 114~564 단어로 나온다. 띄어쓰기가 없으니 한 편이 통째로
+# 몇 단어로 세어진다. 그래서 ko·en 은 단어, ja·zh 는 공백 제외 글자수로 잰다.
+#
+# 코드블록은 빼지 않는다. 빼면 ko 대표글이 2,033 → 1,800 단어로 떨어지는데,
+# 재현 명령과 측정 출력이 이 블로그가 파는 것이라 본문 밖으로 밀어낼 것이 아니다.
+body_metrics() {
+  /usr/bin/python3 - "$1" <<'PYBM' 2>/dev/null || echo "0 0"
+import re, sys
+t = open(sys.argv[1], encoding='utf-8').read()
+t = re.sub(r'\A---.*?^---\s*$', '', t, count=1, flags=re.S | re.M)
+print(len(t.split()), len(re.sub(r'\s', '', t)))
+PYBM
+}
+
+# 언어별 바닥선. polish 프롬프트에 박은 값과 같아야 한다 — 두 곳이 갈리면
+# 프롬프트를 지킨 글에서 경고가 뜨거나, 뚫린 글이 조용히 지나간다.
+#
+# 값의 출처는 참조 6편(docs/pipeline-rebuild-2026-08.md §9)의 본문 실측 하한이다.
+#   ko 1,651~2,033 words / en 1,496~1,920 words
+#   ja 5,476~7,562 chars / zh 4,444~5,535 chars
+# 인수인계서의 "2,200단어"는 frontmatter 를 포함한 전체 파일 wc -w 수치였다.
+# 같은 글을 본문 기준으로 재면 1,650 근처가 된다. 숫자가 아니라 그 경계를 옮겼다.
+# 실측 하한에서 조금 더 내렸다. en 참조글 하나가 1,496 단어라 1,500 으로 두면
+# 목표로 삼은 글이 스스로 경고를 띄운다.
+polish_floor() {
+  case "$1" in
+    ko) echo "words 1600" ;;
+    en) echo "words 1450" ;;
+    ja) echo "chars 5300" ;;
+    zh) echo "chars 4300" ;;
+    *)  echo "words 0" ;;
+  esac
+}
+
 polish_lang() {
   local lang="$1" pfile prompt rc before after
   pfile="$PROMPT_DIR/daily-post-polish-$lang.md"
@@ -295,6 +343,8 @@ polish_lang() {
   local target="$PROJECT_DIR/src/content/blog/$lang/$SLUG.md"
   [ -s "$target" ] || return 0
   before=$(wc -c < "$target" | tr -d ' ')
+  read -r bw bc <<<"$(body_metrics "$target")"
+  read -r unit floor <<<"$(polish_floor "$lang")"
   prompt="$(sed "s/{{SLUG}}/$SLUG/g" "$pfile")"
 
   log "phase polish lang=$lang (editor=$POLISH_ENGINE)"
@@ -309,7 +359,15 @@ polish_lang() {
     return 0
   fi
   after=$(wc -c < "$target" | tr -d ' ')
-  log "polish lang=$lang ${before} → ${after} bytes"
+  read -r aw ac <<<"$(body_metrics "$target")"
+  log "polish lang=$lang ${before} → ${after} bytes / ${bw} → ${aw} words / ${bc} → ${ac} chars"
+  # 바닥선은 프롬프트가 지키는 것이라 여기서 되돌리지 않는다. 다만 뚫렸다는 사실은 남긴다 —
+  # 안 남기면 "왜 요즘 글이 짧지"가 몇 주 뒤에야 사람 눈에 띈다.
+  local now
+  case "$unit" in words) now="$aw" ;; *) now="$ac" ;; esac
+  if [ "$floor" -gt 0 ] && [ "$now" -lt "$floor" ]; then
+    log "polish lang=$lang WARN 바닥선 미달 ${now} ${unit} < ${floor}"
+  fi
   return 0
 }
 
@@ -329,7 +387,7 @@ fi
 
 mkdir -p "$PROJECT_DIR/data"
 
-# 동시 실행 잠금. data/fact-core.md 등을 공유하므로 두 런이 겹치면 서로를 덮는다.
+# 동시 실행 잠금. data/column-brief.md 등을 공유하므로 두 런이 겹치면 서로를 덮는다.
 # mkdir 은 원자적이라 별도 도구 없이 잠금이 된다.
 LOCK_DIR="$PROJECT_DIR/data/.pipeline.lock"
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
@@ -348,15 +406,19 @@ release_lock() { rm -rf "$LOCK_DIR"; }
 # cleanup 도 release_lock 을 부른다.
 trap release_lock EXIT INT TERM
 
-rm -f "$FACT_CORE" "$SEAL_CHECK" "$GEMINI_REVIEW" "$ENGINE_LOG"
+rm -f "$BRIEF" "$SEAL_CHECK" "$GEMINI_REVIEW" "$ENGINE_LOG"
 
 # ── 1. core (claude): 주제 선정 + 취재 플랜 ────────────────────────────
 if [ -n "$REDO_SLUG" ]; then
   log "phase refact slug=$REDO_SLUG (claude/$CLAUDE_MODEL)"
   CORE_PROMPT="$(sed "s/{{SLUG}}/$REDO_SLUG/g" "$PROMPT_DIR/daily-post-refact.md")"
 else
-  log "phase core (claude/$CLAUDE_MODEL)"
-  CORE_PROMPT="$(cat "$PROMPT_DIR/daily-post-core.md")"
+  case "$LANE" in
+    a) CORE_PROMPT_FILE="$PROMPT_DIR/daily-post-core-lab.md" ;;
+    *) CORE_PROMPT_FILE="$PROMPT_DIR/daily-post-brief.md" ;;
+  esac
+  log "phase brief lane=$LANE (claude/$CLAUDE_MODEL) prompt=$(basename "$CORE_PROMPT_FILE")"
+  CORE_PROMPT="$(cat "$CORE_PROMPT_FILE")"
 fi
 run_claude "$CLAUDE_EFFORT" "$CORE_PROMPT"
 CORE_RC=$?
@@ -364,19 +426,19 @@ if [ "$CORE_RC" -ne 0 ]; then
   log "core claude failed rc=$CORE_RC"
   exit "$CORE_RC"
 fi
-if [ ! -f "$FACT_CORE" ]; then
-  log "FACT CORE missing after core phase"
+if [ ! -f "$BRIEF" ]; then
+  log "브리프 missing after core phase"
   exit 1
 fi
-if grep -q '^SKIP' "$FACT_CORE"; then
-  log "SKIP $(head -n 1 "$FACT_CORE")"
+if grep -q '^SKIP' "$BRIEF"; then
+  log "SKIP $(head -n 1 "$BRIEF")"
   exit 0
 fi
 
-SLUG="$(awk -F': *' '/^slug:/{gsub(/[" ]/, "", $2); print $2; exit}' "$FACT_CORE")"
+SLUG="$(awk -F': *' '/^slug:/{gsub(/[" ]/, "", $2); print $2; exit}' "$BRIEF")"
 if [ -z "$SLUG" ]; then
-  log "FACT CORE has no slug:"
-  head -n 20 "$FACT_CORE"
+  log "브리프 has no slug:"
+  head -n 20 "$BRIEF"
   exit 1
 fi
 log "slug=$SLUG"
@@ -403,7 +465,7 @@ if [ -n "$REDO_SLUG" ]; then
 fi
 
 # ── 1.5 히어로 이미지 ──────────────────────────────────────────────────
-# 언어 집필보다 먼저 만든다. FACT CORE 의 hero: 가 실제 경로가 된 뒤에 네 언어가
+# 언어 집필보다 먼저 만든다. 브리프 의 hero: 가 실제 경로가 된 뒤에 네 언어가
 # 같은 값을 frontmatter 에 적어야, 나중에 네 파일을 따로 고치는 일이 없다.
 # 실패해도 글은 나간다. 다만 supporting asset 이 없으면 seal-check 가 잡는다.
 HERO_REL=""
@@ -426,15 +488,15 @@ else
   fi
 fi
 
-# FACT CORE 의 hero: 줄을 실제 경로로 바꾼다. TODO 로 남으면 네 언어가 각자
+# 브리프 의 hero: 줄을 실제 경로로 바꾼다. TODO 로 남으면 네 언어가 각자
 # 다른 값을 적거나 heroImage 를 통째로 빠뜨린다.
 if [ -n "$HERO_REL" ]; then
   awk -v rel="$HERO_REL" '
     /^hero:/ && !done { print "hero: \x27" rel "\x27"; done=1; next }
     { print }
     END { if (!done) print "hero: \x27" rel "\x27" }
-  ' "$FACT_CORE" > "$FACT_CORE.tmp" && mv "$FACT_CORE.tmp" "$FACT_CORE"
-  log "FACT CORE hero → $HERO_REL"
+  ' "$BRIEF" > "$BRIEF.tmp" && mv "$BRIEF.tmp" "$BRIEF"
+  log "브리프 hero → $HERO_REL"
 fi
 
 # ── 2. lang × 4: 언어별 독립 초고 ──────────────────────────────────────
@@ -600,7 +662,7 @@ fi
 
 # 쓴 랩 데이터셋을 소비 처리한다. 안 하면 다음 발행일에 같은 실험이 다시 뽑힌다.
 # 발행이 성공한 뒤에만 표시한다. HOLD 나 실패로 끝나면 미소비로 남아 다음 주기가 쓴다.
-LAB_IDS="$(awk '/^lab:/{f=1;next} f && /^ *- /{gsub(/^ *- */,""); print; next} f && !/^ *- /{f=0}' "$FACT_CORE" 2>/dev/null)"
+LAB_IDS="$(awk '/^lab:/{f=1;next} f && /^ *- /{gsub(/^ *- */,""); print; next} f && !/^ *- /{f=0}' "$BRIEF" 2>/dev/null)"
 if [ -n "$LAB_IDS" ]; then
   for LID in $LAB_IDS; do
     /usr/bin/python3 - "$PROJECT_DIR/data/labs/index.json" "$LID" "$SLUG" <<'PY' 2>/dev/null || true

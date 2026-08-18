@@ -3,7 +3,7 @@ Goal: first-pass review of `{{SLUG}}`. Write only `data/review-gemini.md`. Chang
 You are the first of two reviewers. A second reviewer decides what gets rewritten. Your job is to find what a careful reader would catch by comparing files, not to judge taste.
 
 Read:
-- `data/fact-core.md`
+- `data/column-brief.md`
 - `src/content/blog/ko/{{SLUG}}.md`
 - `src/content/blog/ja/{{SLUG}}.md`
 - `src/content/blog/en/{{SLUG}}.md`
@@ -11,8 +11,8 @@ Read:
 
 Check, per language:
 
-1. **Facts against the FACT CORE.** Every number, unit, command, version, and quoted sentence in the body must trace to `data/fact-core.md`. List anything that does not, with the line it appears on. A number that changed units between languages is a finding.
-2. **Quotes.** Verbatim quotes must match the FACT CORE character for character in the original language, and carry the same URL.
+1. **Facts against the 브리프.** Every number, unit, command, version, and quoted sentence in the body must trace to `data/column-brief.md`. List anything that does not, with the line it appears on. A number that changed units between languages is a finding.
+2. **Quotes.** Verbatim quotes must match the 브리프 character for character in the original language, and carry the same URL.
 3. **Frontmatter.** slug, pubDate, heroImage, tags, relatedPosts. Same slug and pubDate across all four. heroImage path exists on disk. relatedPosts point at slugs that exist.
 4. **Links and images.** Internal links resolve to real files. Image paths exist. Broken or invented URLs.
 5. **H2 spine.** List each file's H2 headings in order. Say plainly whether three or more languages walk the same topic order. Do not judge whether that is acceptable — report the sequences and let the second reviewer decide.

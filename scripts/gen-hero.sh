@@ -79,7 +79,7 @@ if [ -z "${GEMINI_API_KEY:-}${GEMINI_API_KEY_PAID:-}" ]; then
 fi
 
 # 제목 한 줄만 뽑아 쓴다. 이미지 모델에 긴 문장을 주면 글자를 그리려다 뭉갠다.
-SUBJECT="$(awk -F': *' '/^slug:/{print $2; exit}' "$PROJECT_DIR/data/fact-core.md" 2>/dev/null | tr '-' ' ')"
+SUBJECT="$(awk -F': *' '/^slug:/{print $2; exit}' "$PROJECT_DIR/data/column-brief.md" 2>/dev/null | tr '-' ' ')"
 [ -n "$SUBJECT" ] || SUBJECT="$(echo "$SLUG" | tr '-' ' ')"
 
 PROMPT="A flat editorial illustration for a software engineering blog post about ${SUBJECT}.

@@ -38,7 +38,7 @@ LOG_FILE="$LOG_DIR/lab.log"
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] lab: $*" | tee -a "$LOG_FILE" >&2; }
 
 # 랩끼리만 배타. 발행 파이프라인과는 겹쳐도 된다. 랩은 data/labs 아래만 쓰고
-# git 을 만지지 않으므로 fact-core 계열 상태를 공유하지 않는다.
+# git 을 만지지 않으므로 column-brief 계열 상태를 공유하지 않는다.
 LOCK_DIR="$LABS_DIR/.lab.lock"
 if ! mkdir "$LOCK_DIR" 2>/dev/null; then
   OTHER="$(cat "$LOCK_DIR/pid" 2>/dev/null || echo '?')"

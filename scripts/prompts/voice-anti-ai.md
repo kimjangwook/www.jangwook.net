@@ -42,8 +42,6 @@ This is the part the 2026 research moved most, and it applies to all four langua
 
 **Newer tells (2026), all languages:** a sentence ending in an -ing tail that adds fake analysis (highlighting, underscoring, reflecting); avoiding *is/has* for serves as / stands as / boasts / features; renaming the same subject every sentence to avoid repetition; long sentences joined by "and" with almost no commas, semicolons, or parentheses; a closing section shaped as "despite its X, challenges remain" or a call to action.
 
-**Colons are banned in prose, all four languages.** `Topic: Subtitle` headings, mid-sentence `here is the point:`, list items shaped `Item: explanation`, lead-ins like `the steps are:`. A colon announces that a label is about to be attached to a thing, and that announcement is the sound of a generated document. Write the sentence instead. Colons inside code, inline code, URLs, frontmatter, and clock times are untouched. This is the one rule in this file with no exceptions to weigh — it is a house rule.
-
 **Em dashes are no longer a machine mark.** The Economist's 2026-07 study (55,940 sentences) found ChatGPT uses them *less* than human writers, and Claude is the only current model that overuses them. Limit them for rhythm if you like. Do not strip them as camouflage, and do not treat their presence as evidence of anything.
 
 **Sentence length has two failure modes, not one.** Uniform length reads as machine. So does a metronome — short, long, short, long — unrelated to the thought. Length changes when the thought changes.
@@ -55,7 +53,6 @@ Detectors moved from vocabulary to layout, because vocabulary got cleaned up fir
 - **No emoji in headings. No `---` between sections. No Title Case section headings.** Sentence case in English, noun phrases in ko/ja/zh.
 - **Bold only for a proper noun's first mention.** Emphasis is a short sentence or a number, not a typeface. A page with bold in every paragraph reads as a slide deck.
 - **No characters your keyboard does not have.** Box drawing, `─ ≈ ⚠ →`. Pangram measures these at 3× human rate, and box-drawing horizontals at **940×**. This is the layer that survives after someone strips the AI vocabulary, which is exactly why it identifies.
-- **A label followed by a colon is the strongest single shape to avoid** — `**Item:** description`, `**時間：**`, `**概述：**`. Delete the label, start with a verb.
 
 ## Structure (2026-08 research)
 
@@ -85,10 +82,10 @@ A line you would not say out loud gets rewritten. Numbers and verbatim quotes st
 
 `scripts/daily-post-pipeline.sh` splits the day into isolated processes. Judgment runs on claude, prose runs on codex. No process writes two languages.
 
-1. **core** — claude (opus) writes `data/fact-core.md` (bullets). Topic gate, lane, evidence. It is denied the blog tree.
-2. **lang ×4** — agy (`gemini-3.7-flash-medium`), one process per language. Before each run the other three files for today's slug are moved out of the repo, so there is no draft on disk to translate from. If the writer dies, that one language falls back to claude opus at effort `xhigh`, from the FACT CORE, not from whatever the writer left behind. The writing model is deliberately a mid-effort one: raising reasoning makes prose more uniform, and uniformity is what reads as machine (measured 2026-08-15). `data/write-engines.txt` records who wrote what.
+1. **core** — claude (opus) writes `data/column-brief.md` (bullets). Topic gate, lane, evidence. It is denied the blog tree.
+2. **lang ×4** — agy (`gemini-3.7-flash-medium`), one process per language. Before each run the other three files for today's slug are moved out of the repo, so there is no draft on disk to translate from. If the writer dies, that one language falls back to claude opus at effort `xhigh`, from the 브리프, not from whatever the writer left behind. The writing model is deliberately a mid-effort one: raising reasoning makes prose more uniform, and uniformity is what reads as machine (measured 2026-08-15). `data/write-engines.txt` records who wrote what.
 3. **polish** — a model different from the writer edits that one file, inside the same hold window. 20-30% shorter, no new facts, no added transitions, reproduction commands untouched. Prompts in `scripts/prompts/daily-post-polish-{ko,ja,en,zh}.md`. Writing and cutting are separate jobs; merging them into one prompt costs compliance on both.
-4. **review-1** — a model different from the writer writes `data/review-gemini.md`: facts against the FACT CORE, quotes, frontmatter, links, H2 sequences, truncation. Mechanical layers only, no taste. Non-fatal — a missing review does not stop the day.
+4. **review-1** — a model different from the writer writes `data/review-gemini.md`: facts against the 브리프, quotes, frontmatter, links, H2 sequences, truncation. Mechanical layers only, no taste. Non-fatal — a missing review does not stop the day.
 5. **seal-check** — claude opus at effort `xhigh` reads all four plus the first-pass notes, and writes `data/seal-check.md`: `OK`, or `REWRITE: ja,zh` with the specific problem. It fixes metadata, never prose. The first-pass notes are input, not a verdict; opus re-derives each claim and has overturned them.
 6. **rewrite** — the writer redoes only the languages seal-check named, still one file at a time, then polish runs again on it.
 7. **seal-publish** — claude commits, pushes, sends Telegram. `validate:publishing` fails a shared H2 spine on pubDate >= 2026-08-14.
