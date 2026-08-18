@@ -63,6 +63,8 @@ Length 1,800–2,150 words of body (frontmatter excluded, code included), 6–10
   its own language.
 - The last H2 is `## References`. List the links in the order of LOCKED `sources[]`.
 - Don't open another language's folder.
+- Need a figure? `scripts/render-figure.py --slug {{SLUG}} --spec <json> --name figure-1`.
+  Three kinds only — `two-column`, `matrix`, `before-after`. Don't invent a fourth.
 
 When you're done, read it out loud. Fix the sentences your mouth won't say.
 

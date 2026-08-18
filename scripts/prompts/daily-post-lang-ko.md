@@ -58,6 +58,9 @@
   언어로 쓴다.
 - 마지막 H2는 `## 참고 자료`. LOCKED `sources[]` 번호 순서 그대로 링크 목록을 낸다.
 - 다른 언어 폴더를 열지 않는다.
+- 도판이 필요하면 `scripts/render-figure.py --slug {{SLUG}} --spec <json> --name figure-1`
+  로 만든다. 세 가지만 있다 — 2열 대조(`two-column`), 라벨 매트릭스(`matrix`),
+  before-after 막대쌍(`before-after`). 없는 그림은 그리지 않는다.
 
 다 쓰면 소리 내어 읽는다. 입으로 안 나오는 문장은 고친다.
 

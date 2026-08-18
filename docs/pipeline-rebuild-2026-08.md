@@ -775,28 +775,32 @@ ko 기준. 다른 언어는 그 언어의 대응 항목으로.
 [x] C-3  scripts/prompts/topic-pick.md
 [x] C-4  파이프라인에 규칙 1 셸 재계산·대조 (scripts/check-forced-slug.py)
 
-[ ] D-1  scripts/probe.sh (예산 1500s, 셀 3~6)
-[ ] D-2  scripts/scout-and-probe.sh
-[ ] D-3  lab-plan.md 를 topic-pick 종속으로
+[x] D-1  scripts/probe.sh (예산 1500s, 셀 3~6)
+[x] D-2  scripts/scout-and-probe.sh
+[x] D-3  lab-plan.md 를 topic-pick 종속으로 (run-lab.sh --for)
 [x] D-4  seal-check 에 실행동사↔tested[] 매핑 검사  (A 와 함께 앞당김)
 
-[ ] E-1  render-hero.py --repair
-[ ] E-2  scripts/gen-image-grok.sh (센티넬·경로 파싱·JPG 변환)
-[ ] E-3  gen-hero.sh 5단 확장 + hero_kind 기록
-[ ] E-4  data/img-quota-agy.txt 회계
-[ ] E-5  scripts/render-figure.py
+[x] E-1  render-hero.py --repair
+[x] E-2  scripts/gen-image-grok.sh (센티넬·경로 파싱·JPG 변환)
+[x] E-3  gen-hero.sh 5단 확장 + hero_kind 기록
+[x] E-4  data/img-quota-agy.txt 회계
+[x] E-5  scripts/render-figure.py (+ palette 에 CJK 폰트)
 
-[~] F-1  파이프라인 --lane a|b  (인자·프롬프트 선택만. 나머지는 C 이후)
-[ ] F-2  daily-post 매일로 — **plist 가 아니라 life-manager 원장이다.**
-         cutover(2026-08-18 14:43) 이후 plist 는 아무것도 몰지 않는다.
-         `lm schedule set <job-id> <expr>` 를 먼저 만들 것. 마감 08-20
-[ ] F-3  insight-gate 레인 B 판
-[ ] F-4  validate-publishing 검사 3종 추가
+[x] F-1  파이프라인 --lane a|b + topic-pick 재사용
+[x] F-2  daily-post 매일로 + lab → scout-and-probe.sh
+         **plist 가 아니라 life-manager 원장이다.** cutover 이후 plist 는 아무것도 몰지 않는다.
+         `lm schedule set` 과 `lm job set-command` 를 만들어 처리했다.
+         잡 id 는 안 바꿨다 — 실행 이력·클레임이 그 id 를 참조한다.
+[x] F-3  insight-gate 레인 B 판 (Q2 출처·날짜, Q5 입장 신설)
+[x] F-4  validate-publishing 검사 3종 추가 (REBUILD_GATE_FROM)
 
-[ ] 최종  §8 검증 절차 전체
+[x] 최종  §8 검증 절차 전체 (npm run build 통과)
 ```
 
-**A·B·C 완료 (2026-08-18).** 다음은 D.
+**A~F 완료 (2026-08-18).** 부록 C 전 항목.
+
+실물로 아직 못 돌린 것 셋 — `scout.sh` 의 모델 호출부, `gen-image-grok.sh` 의 경로 회수,
+agy 산출물 크기 분포. 08-19 09:10 과 15:23 이 첫 시험이다.
 
 발행 빈도는 원장에서 되돌렸다 — `lm schedule set jangwook-net.daily-post "23 15 * * *"`.
 C-5 의 `calculateSimilarity` 는 쓸 수 없다. 그 함수는 `categoryScores`·`difficulty` 를

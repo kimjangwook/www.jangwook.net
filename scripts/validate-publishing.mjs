@@ -481,6 +481,131 @@ async function validateTestFlag() {
   }
 }
 
+// ── 재구축 파이프라인 게이트 (2026-08-18 단계 F-4) ─────────────────────
+//
+// 기존 QUALITY_GATE_FROM 과 같은 방식으로 날짜를 끊는다. 전량 error 로 두면
+// 324편짜리 코퍼스에서 빌드가 즉시 멈춘다.
+//
+// 2026-08-19 가 재구축된 프롬프트로 쓰는 첫 글이다.
+const REBUILD_GATE_FROM = '2026-08-19';
+const rebuildLegacy = new Map();
+
+function rebuildGate(post, message, bucket) {
+  if (post.pubDateKey && post.pubDateKey >= REBUILD_GATE_FROM) {
+    errors.push(message);
+    return;
+  }
+  const list = rebuildLegacy.get(bucket) ?? [];
+  list.push(message);
+  rebuildLegacy.set(bucket, list);
+}
+
+function flushRebuildWarnings() {
+  for (const [bucket, list] of rebuildLegacy) {
+    warnings.push(`${bucket} (${REBUILD_GATE_FROM} 이전 발행, 백로그): ${list.length}\n${limitList(list)}`);
+  }
+}
+
+// 언어별 분량. `wc -w` 는 일본어·중국어에서 성립하지 않는다 —
+// 참조 6편을 재면 ja 107~578, zh 114~564 단어로 나온다. 띄어쓰기가 없어서다.
+// 그래서 ko·en 은 단어, ja·zh 는 공백 제외 글자수로 잰다.
+//
+// 값은 참조 6편(docs/pipeline-rebuild-2026-08.md §9) 본문 실측에서 왔다.
+//   ko 1,651~2,033 words / en 1,496~1,920 words
+//   ja 5,476~7,562 chars / zh 4,444~5,535 chars
+// 하한은 그 아래로 여유를 두고, 상한은 "목차가 됐다"를 잡을 만큼만 높인다.
+const LENGTH_BOUNDS = {
+  ko: { unit: 'words', min: 1600, max: 2800 },
+  en: { unit: 'words', min: 1450, max: 2600 },
+  ja: { unit: 'chars', min: 5300, max: 9500 },
+  zh: { unit: 'chars', min: 4300, max: 8000 }
+};
+
+function bodyMetrics(body) {
+  const text = String(body ?? '');
+  return {
+    words: text.split(/\s+/).filter(Boolean).length,
+    chars: text.replace(/\s/g, '').length
+  };
+}
+
+function validateBodyLength(posts) {
+  for (const post of posts.filter((item) => item.indexable)) {
+    const bounds = LENGTH_BOUNDS[post.lang];
+    if (!bounds) continue;
+    const m = bodyMetrics(post.content);
+    const v = bounds.unit === 'words' ? m.words : m.chars;
+    if (v < bounds.min) {
+      rebuildGate(post, `${post.relPath}: 본문 ${v} ${bounds.unit} (${post.lang} 하한 ${bounds.min}) — polish 가 바닥을 뚫었을 수 있다`, '본문 분량 미달');
+    } else if (v > bounds.max) {
+      rebuildGate(post, `${post.relPath}: 본문 ${v} ${bounds.unit} (${post.lang} 상한 ${bounds.max}) — 목차가 됐는지 본다`, '본문 분량 초과');
+    }
+  }
+}
+
+// 마지막 H2 는 참고 자료다. 브리프 sources[] 의 번호 순서를 그대로 낸다.
+// 없으면 네 언어가 각자 다른 레퍼런스를 갖게 되는 사고의 첫 징후다.
+const REFERENCES_H2 = {
+  ko: '참고 자료',
+  ja: '参考資料',
+  en: 'References',
+  zh: '参考资料'
+};
+
+function validateReferencesSection(posts) {
+  for (const post of posts.filter((item) => item.indexable)) {
+    const want = REFERENCES_H2[post.lang];
+    if (!want) continue;
+    const h2s = [...String(post.content ?? '').matchAll(/^##\s+(.+?)\s*$/gm)].map((m) => m[1].trim());
+    if (h2s.length === 0) continue;
+    if (!h2s.some((h) => h === want)) {
+      rebuildGate(post, `${post.relPath}: \`## ${want}\` 절이 없다 (마지막 H2 는 참고 자료다)`, '참고 자료 절 없음');
+      continue;
+    }
+    if (h2s[h2s.length - 1] !== want) {
+      rebuildGate(post, `${post.relPath}: 마지막 H2 가 \`${h2s[h2s.length - 1]}\` 다 — \`## ${want}\` 여야 한다`, '참고 자료가 마지막이 아님');
+    }
+  }
+}
+
+// 본문의 외부 URL 이 브리프 sources[] 안에 있는가.
+//
+// 브리프는 오늘 글의 것 하나뿐이라 코퍼스 전체에는 걸 수 없다. 브리프의 slug 와
+// 같은 글만 본다. 브리프가 없으면(수동 빌드) 조용히 건너뛴다.
+async function validateSourcesClosure(posts) {
+  const briefPath = path.join(repoRoot, 'data', 'column-brief.md');
+  if (!(await fileExists(briefPath))) return;
+  const brief = await fs.readFile(briefPath, 'utf8');
+
+  const slugMatch = brief.match(/^slug:\s*(.+)$/m);
+  if (!slugMatch) return;
+  const slug = slugMatch[1].trim().replace(/['"]/g, '');
+
+  // LOCKED 블록 안의 URL 만 센다. OPEN 은 재료라 URL 이 있어도 인용 출처가 아니다.
+  const lockedStart = brief.indexOf('## LOCKED');
+  const openStart = brief.indexOf('## OPEN');
+  if (lockedStart < 0) return;
+  const locked = brief.slice(lockedStart, openStart > lockedStart ? openStart : undefined);
+  const allowed = new Set(
+    (locked.match(/https?:\/\/[^\s"'`)<>\]]+/g) ?? []).map((u) => u.replace(/[.,)]+$/, ''))
+  );
+  if (allowed.size === 0) return;
+
+  const ownHost = /^https?:\/\/(www\.)?jangwook\.net/;
+  for (const post of posts.filter((item) => item.indexable && item.slug === slug)) {
+    const urls = (String(post.content ?? '').match(/\]\((https?:\/\/[^)]+)\)/g) ?? [])
+      .map((m) => m.slice(2, -1).replace(/[.,)]+$/, ''));
+    const stray = [...new Set(urls)].filter((u) => !ownHost.test(u) && !allowed.has(u));
+    if (stray.length) {
+      rebuildGate(
+        post,
+        `${post.relPath}: 브리프 LOCKED sources[] 에 없는 외부 링크 ${stray.length}개 — ${stray.slice(0, 3).join(', ')}`,
+        '브리프 밖 외부 링크'
+      );
+    }
+  }
+}
+
 async function main() {
   await validateTestFlag();
   const posts = await loadPosts();
@@ -495,7 +620,11 @@ async function main() {
   validateQuoteSources(posts);
   validateDescriptionFloor(posts);
   validateRelatedReasonLanguage(posts);
+  validateBodyLength(posts);
+  validateReferencesSection(posts);
+  await validateSourcesClosure(posts);
   flushLegacyWarnings();
+  flushRebuildWarnings();
   await validateCrawlerSurfaces();
 
   const hiddenPastPosts = posts.filter((post) => post.pubDateKey && post.pubDateKey <= todayJst && (post.draft || post.noindex));

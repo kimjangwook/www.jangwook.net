@@ -58,6 +58,8 @@
   それぞれその言語で書く。
 - 最後の H2 は `## 参考資料`。LOCKED `sources[]` の番号順のままリンク一覧を出す。
 - 他の言語のフォルダを開かない。
+- 図版が要るなら `scripts/render-figure.py --slug {{SLUG}} --spec <json> --name figure-1`。
+  三種類だけある — `two-column` / `matrix` / `before-after`。無い図は描かない。
 
 書き終えたら声に出して読む。口に出ない文は直す。
 

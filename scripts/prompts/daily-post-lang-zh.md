@@ -56,6 +56,8 @@
   各用各自的语言写。
 - 最后一个 H2 是 `## 参考资料`。按 LOCKED `sources[]` 的编号顺序列出链接。
 - 不打开别的语言的目录。
+- 需要图版就用 `scripts/render-figure.py --slug {{SLUG}} --spec <json> --name figure-1`。
+  只有三种 — `two-column`、`matrix`、`before-after`。没有的图就不画。
 
 写完出声读一遍。嘴里说不顺的句子改掉。
 

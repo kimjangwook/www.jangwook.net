@@ -416,15 +416,22 @@ rm -f "$BRIEF" "$SEAL_CHECK" "$GEMINI_REVIEW" "$ENGINE_LOG"
 # 프롬프트는 이유를 주고 집행은 여기서 한다.
 TOPIC_PICK="$PROJECT_DIR/data/topic-pick.md"
 if [ -z "$REDO_SLUG" ] && [ "$LANE" = "b" ]; then
-  rm -f "$TOPIC_PICK"
-
-  # 수집물이 없으면 여기서 모은다.
+  # 09:10 의 scout-and-probe.sh 가 오늘 것을 이미 골랐으면 그것을 쓴다.
   #
-  # 임시 다리다. 원래 자리는 09:10 의 scout-and-probe.sh 이고, 그게 붙으면 이 블록은
-  # 지운다. 없는 채로 두면 topic-pick 이 규칙 2(수집물 붙은 백로그)를 건너뛰고
-  # 규칙 3(새 제안)으로 미끄러진다 — 수집·검증을 만들어 놓고 안 쓰는 모양이 된다.
+  # 다시 고르면 안 된다. 09:10 프로브가 그 슬러그를 겨냥해 셀을 돌려 놨는데
+  # 여기서 다른 주제를 고르면 그 실험 결과가 통째로 버려지고, 브리프의
+  # tested[] 는 다른 주제의 측정으로 채워진다.
+  PICK_REUSED=0
+  if [ -s "$TOPIC_PICK" ] && [ "$(date -r "$TOPIC_PICK" +%F 2>/dev/null)" = "$(date +%F)" ]; then
+    PICK_REUSED=1
+    log "topic-pick 재사용 (09:10 산출물) $(awk -F': *' '/^slug:/{print $2; exit}' "$TOPIC_PICK")"
+  else
+    rm -f "$TOPIC_PICK"
+  fi
+
+  # 수집물이 없으면 여기서 모은다. 09:10 잡이 죽었거나 아직 안 붙었을 때다.
   HARVEST_DIR="$PROJECT_DIR/data/scout/$(date +%F)"
-  if [ ! -s "$HARVEST_DIR/harvest.verified.json" ]; then
+  if [ "$PICK_REUSED" -eq 0 ] && [ ! -s "$HARVEST_DIR/harvest.verified.json" ]; then
     log "phase scout (수집물 없음 — 임시 경로)"
     bash "$PROJECT_DIR/scripts/scout.sh" web >/dev/null 2>&1 || log "scout web 실패 — 비치명"
     bash "$PROJECT_DIR/scripts/scout.sh" x    >/dev/null 2>&1 || log "scout x 실패 — 비치명"
@@ -439,9 +446,13 @@ if [ -z "$REDO_SLUG" ] && [ "$LANE" = "b" ]; then
     fi
   fi
 
-  log "phase topic-pick (claude/$CLAUDE_MODEL)"
-  run_claude "$CLAUDE_EFFORT" "$(cat "$PROMPT_DIR/topic-pick.md")"
-  PICK_RC=$?
+  if [ "$PICK_REUSED" -eq 1 ]; then
+    PICK_RC=0
+  else
+    log "phase topic-pick (claude/$CLAUDE_MODEL)"
+    run_claude "$CLAUDE_EFFORT" "$(cat "$PROMPT_DIR/topic-pick.md")"
+    PICK_RC=$?
+  fi
   if [ "$PICK_RC" -ne 0 ] || [ ! -s "$TOPIC_PICK" ]; then
     log "topic-pick 실패(rc=$PICK_RC) — 브리프가 백로그에서 직접 고른다"
     rm -f "$TOPIC_PICK"

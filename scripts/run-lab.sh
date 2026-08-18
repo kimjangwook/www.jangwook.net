@@ -7,8 +7,10 @@
 # 실행이 손이 많이 가는 일이라 값싸고 빠른 쪽에 맡기고, 무엇을 왜 재는지는
 # 비싼 쪽이 정한다. 셀 하나가 실패해도 나머지는 계속 돈다.
 #
-# 발행과 분리된 잡이라 마감이 없다. 발행 파이프라인(월·수·금)이
-# data/labs/index.json 에서 consumed=false 인 것 중 하나를 골라 쓴다.
+# 두 모드가 있다.
+#   기본        자유 탐색. 랩이 질문을 고르고 재고를 쌓는다. 레인 A 가 그 재고를 쓴다.
+#   --for slug  주제 종속. topic-pick 의 testable: 을 받아 3~6셀만 돈다.
+#               probe.sh 가 축소 예산으로 이 모드를 부른다.
 set -uo pipefail
 
 PROJECT_DIR="${PROJECT_DIR:-/Users/jangwook/workspace/www.jangwook.net}"
@@ -26,6 +28,25 @@ AGY_MODEL="${LAB_AGY_MODEL:-gemini-3.7-flash-medium}"
 # 거기까지의 데이터로 분석한다 — 분석이 status 를 partial 로 적는다.
 LAB_EXEC_BUDGET_SEC="${LAB_EXEC_BUDGET_SEC:-9000}"   # 2시간 30분
 LAB_CELL_TIMEOUT_SEC="${LAB_CELL_TIMEOUT_SEC:-180}"  # 런 하나의 상한
+
+# --for <slug> — 주제 종속 모드.
+#
+# 배선을 뒤집는다. 예전에는 랩이 스스로 질문을 고르고, 발행이 그 재고에서 골랐다.
+# 그러면 랩이 궁금해한 것과 그날 쓸 글이 서로를 안 본다. 이제 주제가 먼저 서고
+# 실험은 그 주장을 반증하거나 확인하는 데만 쓴다.
+#
+# 비어 있으면 옛 자유 탐색 모드다. 레인 A 가 그 경로를 계속 쓴다.
+FOR_SLUG=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --for)
+      FOR_SLUG="${2:-}"
+      [ -n "$FOR_SLUG" ] || { echo "usage: $0 --for <slug>" >&2; exit 2; }
+      shift 2
+      ;;
+    *) echo "unknown arg: $1" >&2; exit 2 ;;
+  esac
+done
 
 export HOME="${HOME:-/Users/jangwook}"
 export PATH="/Users/jangwook/.nvm/versions/node/v22.22.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -77,8 +98,9 @@ RESULTS_JSONL="$LAB_DIR/results.jsonl"
 mkdir -p "$RAW_DIR"
 : > "$RESULTS_JSONL"
 
-log "phase plan (claude/$CLAUDE_MODEL effort=$CLAUDE_EFFORT) → $LAB_ID"
-PLAN_PROMPT="$(sed -e "s#{{LAB_DIR}}#$LAB_DIR#g" -e "s#{{LAB_ID}}#$LAB_ID#g" "$PROMPT_DIR/lab-plan.md")"
+log "phase plan (claude/$CLAUDE_MODEL effort=$CLAUDE_EFFORT) → $LAB_ID${FOR_SLUG:+ for=$FOR_SLUG}"
+PLAN_PROMPT="$(sed -e "s#{{LAB_DIR}}#$LAB_DIR#g" -e "s#{{LAB_ID}}#$LAB_ID#g" \
+                    -e "s#{{FOR_SLUG}}#${FOR_SLUG:-none}#g" "$PROMPT_DIR/lab-plan.md")"
 "$CLAUDE_BIN" -p "$PLAN_PROMPT" \
   --dangerously-skip-permissions --model "$CLAUDE_MODEL" --effort "$CLAUDE_EFFORT" \
   --add-dir "$CONTROLLER_DIR" </dev/null >>"$LOG_FILE" 2>&1
@@ -98,6 +120,12 @@ import json;print(len(json.load(open('$LAB_DIR/plan.json')).get('cells',[])))" 2
 log "설계 완료 — ${CELL_COUNT}셀"
 if [ "$CELL_COUNT" -lt 1 ]; then
   log "셀이 없다 — 중단"; rm -rf "$LAB_DIR"; exit 1
+fi
+# 주제 종속 모드는 3~6셀이 정상이다. 12셀 하한은 자유 탐색 모드의 것이고,
+# 25분 예산에 12셀을 넣으면 셀당 2분이라 대부분 타임아웃으로 끝난다.
+if [ -n "$FOR_SLUG" ] && [ "$CELL_COUNT" -gt 8 ]; then
+  log "주제 종속 모드에 ${CELL_COUNT}셀은 많다 — 앞 6셀만 돈다"
+  CELL_COUNT=6
 fi
 
 # ── 2. execute: bash 가 돌리고 agy 가 판정한다 ─────────────────────────
