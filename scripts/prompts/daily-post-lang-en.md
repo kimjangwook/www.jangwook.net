@@ -11,8 +11,9 @@ Read, in this order:
 3. `data/column-brief.md`
 4. `scripts/prompts/voice-anti-ai.md`
 
-Borrow the model's breathing. Two paragraphs of setup, six to eight blocks of body,
-a three-beat close with no H2. Watch how that piece takes a side and how it ends.
+Borrow the model's breathing. Watch its six-to-eight-block body and its three-beat
+close with no H2. The title and the opening do NOT follow the model - the "Title
+and opening" rules below win.
 
 ## What is locked and what is yours
 
@@ -39,11 +40,26 @@ actually do it / who it fits / limits
 
 Length is set by the content. There is no word target - do not pad to reach one or cut to fit one. 6-10 H2s.
 
+## Title and opening
+
+This blog is tuned for people who came looking for information, not for search
+engines. The job of the title and the opening is not to stage curiosity - it is to
+hand the reader what they came for as fast as possible.
+
+- The title states "did X, and this is what happened" in plain declarative form.
+  Purpose or action, plus the direction of the result, belong inside the title.
+  No noun-phrase riddles that only name the topic, no keyword strings.
+- First paragraph, three sentences: what you wanted to know (purpose) → what you
+  did (action) → how it came out (the gist). Don't open on scenery or procedural
+  detail - an opening the reader walks through without knowing why is the worst
+  opening this blog can have.
+- Second paragraph: why that result matters to the reader, plus your call in one
+  line. The body is the evidence.
+- Don't hide the result to build tension. Give the answer first; let the body be
+  read for "why" and "when it changes".
+
 ## Writing
 
-- Open on a dated event or a question you actually got asked.
-- Give the conclusion in the second paragraph. That's a reason to keep reading, not
-  a summary.
 - No paragraph confessing what you didn't try. "I couldn't run it myself",
   "I never got the sandbox up" — once that shows up every time, it is a template.
 - Don't invent numbers, quotes, or dates outside LOCKED.
@@ -53,8 +69,9 @@ Length is set by the content. There is no word target - do not pad to reach one 
   still stands.
 - Don't close on balance. Pick a side, then write one line on what would prove you
   wrong.
-- Don't end the last section on a summary, a lesson, or "you must always". The last
-  sentence is an observation that reaches past the topic.
+- Don't end the last section on a summary, a lesson, or "you must always". Once
+  you've given the call and what would prove it wrong, don't add a line for
+  afterglow - it is information to the last sentence.
 - At most three parenthetical term explanations in the whole piece. For the rest,
   use a plain word or show what the thing does inside the sentence.
 - First person, contractions mixed in. Vary sentence length — some short, some long.
