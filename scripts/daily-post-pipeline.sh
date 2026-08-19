@@ -2,8 +2,8 @@
 # daily-post 파이프라인 — 엔진 분리 (2026-08-15)
 #
 #   판단(주제 선정·플랜·발행) : claude opus
-#   집필(4개 언어 본문)       : agy gemini-3.7-flash-medium  (기본)
-#     └ 폴백                 : claude opus / effort xhigh  (집필 실패 시 언어 단위)
+#   집필(4개 언어 본문)       : claude fable / effort low  (기본)
+#     └ 폴백                 : claude opus / effort medium  (집필 실패 시 언어 단위)
 #   편집(언어별 삭감 패스)     : 집필과 다른 모델. 사실을 더하지 않고 20~30% 줄인다
 #   리뷰                      : 1차(집필과 다른 모델) → claude opus / effort xhigh
 #
@@ -13,7 +13,7 @@
 #
 # 집필 엔진 교체:
 #   scripts/daily-post-pipeline.sh --writer codex      (gpt-5.6-luna, effort high)
-#   scripts/daily-post-pipeline.sh --writer claude     (opus xhigh, 폴백 없음)
+#   scripts/daily-post-pipeline.sh --writer claude     (opus, CLAUDE_WRITE_EFFORT, 폴백 없음)
 #   WRITER=codex scripts/daily-post-pipeline.sh        (환경변수도 동작)
 # 1차 리뷰어·편집자는 집필 엔진과 겹치지 않게 자동으로 고른다.
 #
@@ -72,7 +72,11 @@ CLAUDE_BIN="${CLAUDE_BIN:-/opt/homebrew/bin/claude}"
 CLAUDE_MODEL="${CLAUDE_MODEL:-opus}"
 CLAUDE_EFFORT="${CLAUDE_EFFORT:-high}"          # 판단 단계 기본
 CLAUDE_WRITE_MODEL="${CLAUDE_WRITE_MODEL:-fable}"      # 집필 1순위
-CLAUDE_WRITE_EFFORT="${CLAUDE_WRITE_EFFORT:-xhigh}"   # 폴백 집필
+# 집필은 low — effort 를 올릴수록 산문이 균일해지고 그 균일함이 AI 문체로 읽힌다
+# (§CODEX_EFFORT 의 2026-08-15 ko A/B 와 같은 근거).
+CLAUDE_WRITE_EFFORT="${CLAUDE_WRITE_EFFORT:-low}"
+CLAUDE_FALLBACK_MODEL="${CLAUDE_FALLBACK_MODEL:-opus}"     # 집필 폴백 (판단 단계의 CLAUDE_MODEL 과 분리)
+CLAUDE_FALLBACK_EFFORT="${CLAUDE_FALLBACK_EFFORT:-medium}"
 CLAUDE_REVIEW_EFFORT="${CLAUDE_REVIEW_EFFORT:-xhigh}" # 리뷰/판정
 CODEX_BIN="${CODEX_BIN:-/opt/homebrew/bin/codex}"
 CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-luna}"
@@ -96,7 +100,7 @@ cd "$PROJECT_DIR" || exit 1
 
 LANGS="ko ja en zh"
 
-# 집필 엔진. 기본 agy(gemini-3.7-flash-medium). 실패하면 claude opus xhigh 로 폴백한다.
+# 집필 엔진. 기본 fable(effort low). 실패하면 claude opus medium 으로 폴백한다.
 WRITER="${WRITER:-fable}"
 REDO_SLUG=""
 RESUME_SLUG=""
@@ -144,12 +148,12 @@ while [ $# -gt 0 ]; do
       ;;
     --redo)
       REDO_SLUG="${2:-}"
-      [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer codex|agy|claude] --redo <slug>" >&2; exit 2; }
+      [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer fable|codex|agy|claude|sdk] --redo <slug>" >&2; exit 2; }
       shift 2
       ;;
     --writer)
       WRITER="${2:-}"
-      [ -n "$WRITER" ] || { echo "usage: $0 --writer codex|agy|claude" >&2; exit 2; }
+      [ -n "$WRITER" ] || { echo "usage: $0 --writer fable|codex|agy|claude|sdk" >&2; exit 2; }
       shift 2
       ;;
     *)
@@ -178,8 +182,8 @@ elif [ -n "$RESUME_SLUG_ARG" ]; then
 fi
 
 case "$WRITER" in
-  fable|codex|agy|claude) ;;
-  *) echo "unknown writer: $WRITER (fable|codex|agy|claude)" >&2; exit 2 ;;
+  fable|codex|agy|claude|sdk) ;;
+  *) echo "unknown writer: $WRITER (fable|codex|agy|claude|sdk)" >&2; exit 2 ;;
 esac
 
 # 편집자는 집필자와 다른 모델이어야 한다. 자기 문장에서 자기 군더더기는 잘 안 보인다.
@@ -215,6 +219,21 @@ run_codex() {
     --dangerously-bypass-approvals-and-sandbox \
     --cd "$PROJECT_DIR" \
     </dev/null
+}
+
+# sdk: Agent SDK 편집부(sonnet). 편집장 세션 하나가 Task 로 서브에이전트
+# (writer low / editor-style·editor-pattern medium)를 위임 호출하고 라운드(최대 2)를
+# 스스로 판정한다. 프롬프트는 인자 길이 한계를 피해 파일로 넘긴다.
+# $1=lang, $2=prompt
+run_sdk_team() {
+  local lang="$1" prompt="$2" pfile rc
+  pfile="$(mktemp "${TMPDIR:-/tmp}/dp-sdk-prompt.XXXXXX")" || return 1
+  printf '%s' "$prompt" > "$pfile"
+  node "$PROJECT_DIR/scripts/daily-post-write-sdk.mjs" \
+    --lang "$lang" --slug "$SLUG" --prompt-file "$pfile"
+  rc=$?
+  rm -f "$pfile"
+  return "$rc"
 }
 
 # agy: Antigravity CLI. gemini-cli 개인 티어는 2026-08 기준 IneligibleTierError 라
@@ -259,7 +278,7 @@ hold_siblings() {
   return 0
 }
 
-# 한 언어를 쓴다. 기본 codex, 실패하면 claude opus xhigh 로 폴백.
+# 한 언어를 쓴다. 기본 fable(low), 실패하면 claude opus medium 으로 폴백.
 # 폴백은 언어 단위다. ko 가 codex 로 나오고 ja 만 claude 로 나오는 상태가 정상이며,
 # 어느 언어를 누가 썼는지는 $ENGINE_LOG 에 남아 Telegram 까지 간다.
 # $1=lang, $2=추가 지시(없으면 빈 문자열)
@@ -282,6 +301,8 @@ $extra"
     fable)  run_claude "$CLAUDE_WRITE_EFFORT" "$prompt" "$CLAUDE_WRITE_MODEL"; rc=$?
             wlabel="claude/$CLAUDE_WRITE_MODEL:$CLAUDE_WRITE_EFFORT" ;;
     codex)  run_codex "$prompt"; rc=$?; wlabel="codex/$CODEX_MODEL:$CODEX_EFFORT" ;;
+    sdk)    run_sdk_team "$lang" "$prompt"; rc=$?
+            wlabel="sdk/sonnet:chief+3" ;;
     agy)    run_agy "$prompt";   rc=$?; wlabel="agy/$AGY_MODEL" ;;
     claude) run_claude "$CLAUDE_WRITE_EFFORT" "$prompt"; rc=$?; wlabel="claude/$CLAUDE_MODEL:$CLAUDE_WRITE_EFFORT" ;;
   esac
@@ -302,7 +323,7 @@ $extra"
     return 1
   fi
   if [ "$rc" -ne 0 ]; then
-    log "lang=$lang $WRITER failed rc=$rc — claude/$CLAUDE_MODEL effort=$CLAUDE_WRITE_EFFORT 로 폴백"
+    log "lang=$lang $WRITER failed rc=$rc — claude/$CLAUDE_FALLBACK_MODEL effort=$CLAUDE_FALLBACK_EFFORT 로 폴백"
   else
     # fable 은 사용량 한도에 걸려도 종료코드 0 을 준다. 종료코드로는 못 잡고
     # 산출물 부재로만 잡힌다. 그래서 이 분기가 폴백의 주 경로다.
@@ -310,7 +331,7 @@ $extra"
   fi
   rm -f "$target"
 
-  run_claude "$CLAUDE_WRITE_EFFORT" "$prompt"
+  run_claude "$CLAUDE_FALLBACK_EFFORT" "$prompt" "$CLAUDE_FALLBACK_MODEL"
   rc=$?
 
   if [ "$rc" -ne 0 ]; then
@@ -326,7 +347,7 @@ $extra"
   # 편집도 hold 창 안에서. 편집자에게도 다른 언어를 보여주지 않는다.
   polish_lang "$lang"
   restore_holds
-  record_engine "$lang" "claude/$CLAUDE_MODEL:$CLAUDE_WRITE_EFFORT ($WRITER fallback)"
+  record_engine "$lang" "claude/$CLAUDE_FALLBACK_MODEL:$CLAUDE_FALLBACK_EFFORT ($WRITER fallback)"
   return 0
 }
 
