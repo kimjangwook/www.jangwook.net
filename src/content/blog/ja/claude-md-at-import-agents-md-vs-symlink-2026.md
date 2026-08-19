@@ -1,155 +1,139 @@
 ---
-title: 'CLAUDE.mdの@AGENTS.md importとシンボリックリンクを七条件21回で測り分けた'
-description: 'Claude Codeの公式ドキュメントはAGENTS.mdを共有する道として@importとシンボリックリンクを並べて案内する。2026年8月19日にclaude 2.1.233で七条件×3回を実測すると、リポジトリ外を指すimportだけが0/3で、警告もエラーもなく沈黙した。二つが壊れる条件の違いと、チーム構成別の選び方を記録する。'
+title: '@importとシンボリックリンク、CLAUDE.mdはどちらで壊れるか21回実測'
+description: 'CLAUDE.mdにAGENTS.mdを読ませる三つの方法を7条件×3回、計21回headlessで実測した。リポジトリ外を指す@importだけが承認ゲートで0/3になり、警告もエラーも出ない。symlinkとどちらを選ぶかは好みではなく、対象ファイルの置き場所とだれが実行するかで決まる。'
 pubDate: '2026-08-19'
 heroImage: '../../../assets/blog/claude-md-at-import-agents-md-vs-symlink-2026/hero.png'
-tags: ['claude-code', 'agents-md', 'claude-md', 'ai-agent', 'web-development']
+tags:
+  - claude-code
+  - agents-md
+  - claude-md
+  - ai-agent
+  - devops
+faq:
+  - question: 'CLAUDE.mdでAGENTS.mdを読み込む方法は何がありますか。'
+    answer: '公式ドキュメントは二つの経路を示す。ひとつはCLAUDE.mdの中に`@AGENTS.md`と書くimport、もうひとつは`ln -s AGENTS.md CLAUDE.md`のシンボリックリンクだ。加えてv2.1.213以上では`/import`スラッシュコマンドが一度きりのコピーを作る。'
+  - question: 'リポジトリ外のファイルをimportするとどうなりますか。'
+    answer: 'そのimportは外部importとして扱われ、初回に承認ダイアログが出る。ヘッドレス実行にはこのダイアログが存在しないため、実測では3回とも0/3、つまりAGENTS.mdの内容が一度もコンテキストに乗らなかった。警告もエラーも出ず、モデルは未展開の`@/tmp/...`という文字列を一行返しただけだった。'
+  - question: 'symlinkと@importはどちらを使うべきですか。'
+    answer: '判断基準は本文「誰に合うか」のとおり。結論だけ言えば、`@import`を選んだなら相対`@AGENTS.md`をCLAUDE.mdに書き、symlinkを選んだなら`ln -s AGENTS.md CLAUDE.md`を張って`core.symlinks`とWindows checkoutの扱いをオンボーディング手順に明記する。'
+  - question: '指示ファイルがちゃんと読み込まれたか確認する方法はありますか。'
+    answer: '対話セッションでは`/context`を実行するとMemory files欄にCLAUDE.mdが表示される。ヘッドレス実行にはこの画面がないため、AGENTS.mdの末尾にカナリアトークンを仕込み、`claude -p`の出力にそれが現れるかで生死を判定するしかない。'
 relatedPosts:
   - slug: agents-md-vs-claude-md-loading-measured-2026
-    score: 0.9
-    reason:
-      ko: '심볼릭 링크만 3/3으로 측정하고 @import를 숙제로 남긴 사흘 전 실측의 직접적인 후속편이다.'
-      ja: 'シンボリックリンクだけを3/3で確認し、@importを宿題に残した三日前の実測の直接の続編。'
-      en: 'Direct follow-up to the measurement that confirmed symlinks at 3/3 and left the @import path untested.'
-      zh: '三天前的实测确认了符号链接3/3并把@import留作作业，本文是其直接续篇。'
-  - slug: declared-rules-fail-open-robots-txt-agents-md-2026
     score: 0.8
     reason:
-      ko: '선언된 규칙이 에러 없이 조용히 무시되는 fail-open 구조를 다른 계층에서 다룬 글과 같은 주제로 이어진다.'
-      ja: '宣言されたルールがエラーなしに静かに無視されるfail-open構造を、別の層で扱った記事とつながる。'
-      en: 'Shares the theme of declared rules failing open, silently ignored without an error, at another layer of the stack.'
-      zh: '与探讨声明式规则在无报错情况下被静默忽略的fail-open结构的文章同属一个主题。'
-  - slug: cognitive-debt-agentic-coding-2026
-    score: 0.7
+      ko: 지난 글이 symlink 로딩을 3/3으로 측정하고 @import를 미측정으로 남겼다면, 이번 글은 그 미측정 구간을 21런으로 채우고 두 경로가 왜 다른 조건에서 실패하는지를 규명한다.
+      ja: 前稿がsymlinkの読み込みを3/3と測り、@importを未測定のまま残した空白を、21回の実行で埋めて二つの経路がなぜ異なる条件で失敗するかを突き止める。
+      en: The prior post measured symlink loading at 3/3 and left @import unmeasured. This post fills that gap with 21 runs and pins down why the two routes fail under different conditions.
+      zh: 前文将symlink加载测得3/3，却把@import留作未测。本文用21次执行填补这一空白，并厘清两条路径为何在不同条件下失效。
+  - slug: declared-rules-fail-open-robots-txt-agents-md-2026
+    score: 0.74
     reason:
-      ko: '에이전트에게 도달하지 않는 지시문이 팀의 인지적 부채로 쌓이는 과정을 이어서 생각할 수 있다.'
-      ja: 'エージェントに届かない指示書がチームの認知的負債として積もる過程を続けて考えられる。'
-      en: 'Extends the question of how instructions that never reach the agent pile up as cognitive debt in a team.'
-      zh: '可以接着思考未能送达智能体的指示文件如何在团队中堆积为认知负债。'
+      ko: 선언된 규칙이 예외 없이 조용히 통과되는 실패 패턴을 공유한다. robots.txt와 AGENTS.md의 32KiB 절단이 파서 단의 침묵이었다면, 이번 글은 승인 게이트를 통과하지 못한 import가 어떻게 같은 침묵으로 끝나는지 보여준다.
+      ja: 宣言された規則が例外なく静かに素通りする失敗パターンを共有する。robots.txtとAGENTS.mdの32KiB切り捨てがパーサー側の沈黙だったとすれば、承認ゲートを通らなかったimportが同じ沈黙で終わる様子を追う。
+      en: Shares the fail-open pattern where declared rules pass through silently, no exception raised. Where the previous post found silence at the parser's 32KiB truncation, this one finds the same silence at an import that never cleared the approval gate.
+      zh: 共享声明规则被静默放行、无异常抛出的失效模式。前文在解析器32KiB截断处发现了沉默，本文则在未通过审批门的import上发现了同样的沉默。
+  - slug: cognitive-debt-agentic-coding-2026
+    score: 0.62
+    reason:
+      ko: 에이전트에게 위임하는 설정 파일이 결국 신뢰의 단위가 된다는 문제의식을 공유한다. 코드 리뷰 부채가 사람이 검증을 미룬 결과였다면, 이번 글의 승인 게이트는 그 검증을 언제 어떻게 되돌려받을지를 다룬다.
+      ja: エージェントに委ねる設定ファイルが結局は信頼の単位になるという問題意識を共有する。コードレビュー負債が人間の検証先送りの結果だったとすれば、承認ゲートはその検証をいつどう取り戻すかを扱う。
+      en: Shares the concern that a config file handed to an agent becomes a unit of trust. Where code-review debt was the result of humans deferring verification, this post's approval gate is about when and how that verification comes back.
+      zh: 共享交给Agent的配置文件最终会成为信任单位这一问题意识。如果说代码评审债务是人类推迟验证的结果，本文的审批门则关乎这种验证何时、如何被找回。
 ---
-三日前、[AGENTS.mdとCLAUDE.mdの読み込み境界を76回測った記事](/ja/blog/ja/agents-md-vs-claude-md-loading-measured-2026/)に宿題を一つ残した。シンボリックリンク `ln -s AGENTS.md CLAUDE.md` は3/3で通ると確認したが、公式ドキュメントがもう一つ案内する `@AGENTS.md` importは未測定と書いたままだった。2026年8月19日、その宿題を片付けた。
 
-結論から書く。公式ドキュメントはimportとシンボリックリンクを好みの問題のように並べているが、二つは別の層で解釈され、別の条件で壊れる。しかも壊れ方はエラーではなく沈黙だ。リポジトリの外を指すimportは、人のいない実行経路では承認されないまま空振りする。CI・フック・`claude -p` が混ざるリポジトリで、importはシンボリックリンクの持ち運びできる代替にならない。
+先週の金曜、同僚に聞かれた。「CLAUDE.mdに`@AGENTS.md`と書くのと、symlinkを張るのと、結局どっちが正しいの」。公式ドキュメントを読み直しても、両方が同じ目的地に着くと書いてあるだけで、条件による違いには触れていない。ドキュメントの記述だけでは分からないため、対象ファイルの置き場所と実行環境を変えながら手元で試すことにした。
 
-## 公式ドキュメントが並べて見せる三つの道
+[前稿](/ja/blog/ja/agents-md-vs-claude-md-loading-measured-2026/)ではsymlinkの読み込みを3/3と測り、`@import`を未測定のまま残した。試した結果、二つは同じ動作をしない。片方はファイルシステムが解決し、もう片方はClaude Code自身が解決する。壊れ方が違う。
 
-Claude Codeのmemoryドキュメントは、すでに `AGENTS.md` を使っているリポジトリとの共存をこう案内する。
+## 事実整理 — 公式が示す三つの経路
+
+Claude Codeのmemoryページはこう書いている。
 
 > Claude Code reads `CLAUDE.md`, not `AGENTS.md`. If your repository already uses `AGENTS.md` for other coding agents, create a `CLAUDE.md` that imports it so both tools read the same instructions without duplicating them.
 > — [How Claude remembers your project](https://code.claude.com/docs/en/memory)
 
-一番手はimportだ。`CLAUDE.md` に `@AGENTS.md` と一行書くと起動時に中身が読み込まれ、その下にClaude専用の節を書き足せる。パスは相対でも絶対でもよく、相対パスは作業ディレクトリではなくimportを書いたファイルを基準に解決される。import先のファイルからさらに別のファイルを再帰してimportでき、深さは4ホップまで許される。
+続けて、Claude固有の追記が要らないならsymlinkでもよいとある。
 
-二番手がシンボリックリンクだ。Claude専用の内容を足す必要がないなら `ln -s AGENTS.md CLAUDE.md` でも動くと公式ドキュメントは言う。ただしWindowsではリンク作成に管理者権限かDeveloper Modeが要るため、importを使えという但し書きが付く。
-
-三番手は `/import` コマンドで、`AGENTS.md` のような指示ファイルの一回きりのコピーを `CLAUDE.md` に書き足し、MCPサーバー・コマンド・サブエージェント・スキルも持ち越す。v2.1.213以上が条件だ。
-
-importで分割してもコンテキストは減らないと公式ドキュメントは明言している。トークン節約という動機は最初から立たない。三つの道は同じページに並んでいて、読み手は「どれでも同じ」と受け取る。私もそう読んだ。測るまでは。
-
-## 七条件×3回、合言葉ZQ7CANARYの実測
-
-/tmpに条件ごとのディレクトリを掘り、それぞれの `AGENTS.md` に、読み込まれた時だけ出力に現れる合言葉ZQ7CANARYを仕込んだ。プロンプトは毎回同じで、`claude -p 'Reply with exactly the word OK and nothing else.'` を各条件3回。指示が届いていればOKの後ろに合言葉が付き、届いていなければOKだけが返る。環境はmacOSのclaude 2.1.233、ユーザースコープの `~/.claude/CLAUDE.md` は全条件で共通の定数にした。
-
-最初はJSON出力のinitイベントにある memory_paths で読み込みを確認するつもりだった。ここに落とし穴があった。この項目にはauto memoryのディレクトリしか載らず、`CLAUDE.md` のパスは出てこない。headless実行では読み込みの成否をメタデータから確かめる手段がなく、出力に現れる合言葉を計器にした。
-
-| 条件 | CLAUDE.mdの中身 | 適用 |
-| --- | --- | --- |
-| a | `@AGENTS.md` 相対パス、リポジトリ内 | 3/3 |
-| b | `AGENTS.md` へのシンボリックリンク | 3/3 |
-| c | `AGENTS.md` の一回コピー | 3/3 |
-| d | `CLAUDE.md` なし、`AGENTS.md` のみ | 0/3 |
-| e | `@/tmp/claudemd-lab-ext/AGENTS.md` 絶対パス、作業ディレクトリ外 | 0/3 |
-| f | 作業ディレクトリ内を指す絶対パスのimport | 3/3 |
-| g | 作業ディレクトリ外のファイルへのシンボリックリンク | 3/3 |
-
-分かれ目は二つある。まずeとf。どちらも絶対パスのimportだが、外を指すeだけが0/3で、中を指すfは3/3だった。絶対パスという書き方ではなく、パスがどこへ解決されるかが生死を分けている。次にeとg。同じ「外のファイル」でも、importは0/3、シンボリックリンクは3/3。外を指すこと自体を拒んでいるのではなく、importという経路だけを止めている。
-
-eの失敗の中身も確かめた。ツールを禁止した上で、セッション開始時に受け取ったプロジェクト指示をそのまま出力させると、返ってきたのは展開されないリテラルの一行 `@/tmp/claudemd-lab-ext/AGENTS.md` だけだった。警告もエラーもない。importの失敗は例外ではなく、ただの空白だ。
-
-## パスが解決される場所の違い
-
-シンボリックリンクはファイルシステムの層で解決される。Claude Codeのローダーが `CLAUDE.md` を開く時には、カーネルがすでにリンク先のファイルを渡した後だ。ローダーに見えるのはプロジェクトルートのファイル一枚で、「リポジトリの外のパス」という情報はその時点でもう存在しない。信頼を判定しようにも、判定に使う材料が手元にない。
-
-`@` importはローダー自身が解決する。ローダーはパスの文字列を手に持ったまま、指定されたパスが作業ディレクトリの外へ解決されるかを判定できる。外ならexternalに分類し、承認ゲートに掛ける。
-
-> An import in a project-level memory file is external when its path resolves outside your working directory... The first time Claude Code encounters external imports in a project, it shows an approval dialog listing the files. If you decline, the imports stay disabled and the dialog doesn't appear again.
+> A symlink also works if you don't need to add Claude-specific content
 > — [How Claude remembers your project](https://code.claude.com/docs/en/memory)
 
-ゲートは人の応答を待つ構造だから、人がいなければ通さない。失敗がエラーではなく「展開されない一行」になるのはこのためだ。fが通ってeが落ちるのはパスの解決先の差、gが通るのはゲートがシンボリックリンクという経路を見ていないからだ。表の七行は、この一つの構造で全部説明が付く。
+コマンドはそのまま `ln -s AGENTS.md CLAUDE.md` だ。v2.1.213以上には`/import`スラッシュコマンドがあり、AGENTS.mdだけでなくMCPサーバーやコマンド、サブエージェント、スキルまで一度きりでコピーする。三つ目の経路はコピーのため、以降ソースが変わっても追随しない。公式ドキュメントにはここまでの仕様しかなく、三つのうちどれを選ぶべきかの判断基準は書かれていない。
 
-## 「一度承認すれば終わり」という反論
+## 仕組み — なぜ壊れ方が違うのか
 
-この結果には正面からの反論が立つ。eが0/3なのはheadlessでダイアログを出せなかっただけで、実務は対話型が基本であり、初回に一度承認すれば以後は動く。失敗と呼ぶのは大袈裟だ、という主張だ。
+symlinkはファイルシステムが解決する。Claude Codeのmemoryローダーが`CLAUDE.md`を開く時点で、カーネルはすでにリンクをたどってターゲットのバイト列を渡し終えている。ローダーが見るのはプロジェクト直下にある一個の普通のファイルであり、中身がリポジトリ外から来たという情報は、その時点で存在しない。
 
-正しい範囲は実在する。自分のマシンで対話型だけを使う一人開発者なら、承認は本当に一度で済む。その使い方でexternal importを避ける理由を、私は見つけていない。ここは譲る。
+一方、`@`によるimportはローダー自身が解決する。ローダーはパスを文字列のまま保持し、作業ディレクトリの外に出るかを判定できる。外に出るなら承認ゲートの前に置く。判断できるのは、情報を握っている側だけだ。
 
-それでも崩れる範囲が三つある。
+この仕組みを裏づけるのが条件fとgだ。絶対パスでもリポジトリ内を指せば3回とも読み込みが通り、symlinkでリポジトリ外を指しても3回とも通る。落ちるのは条件eだけ、つまり`@import`がリポジトリの外を指したときに限られる。
 
-まず、CI・フック・サブエージェント・cronには承認を押す人がいない。ダイアログが出ないのではなく、出す先がない。
+## 数字の検証 — 21回の実測
 
-次に、承認は人とマシンの単位だ。新しく入った同僚の最初のセッションでダイアログはまた出る。初日のセットアップで、中身の分からないダイアログに拒否を押したらどうなるか。公式ドキュメントの通り、そのマシンではimportが無効のまま固定され、ダイアログは二度と出ない。押した本人は、何を失ったかを知らないままだ。
+macOS、Claude Code 2.1.233、ヘッドレス実行で`--output-format json`、`~/.claude/CLAUDE.md`は全条件で固定した。AGENTS.mdにカナリアトークン`ZQ7CANARY`を仕込み、`claude -p 'Reply with exactly the word OK and nothing else.'`を7条件×3回、計21回走らせた。返答にカナリアが現れれば指示ファイルがコンテキストに届いた証拠になる。
 
-三つ目の理由は実測で確かめた。承認の状態はリポジトリに残らない。eの条件のディレクトリにはプロジェクトの `.claude/` が作られず、ホームの設定にも該当パスの記録はなかった。承認をコミットしてチームに配る経路がないから、「自分のマシンでは動くのに」が偶然ではなく構造として発生する。
+| 条件 | 設定 | 結果 |
+|---|---|---|
+| a | `CLAUDE.md = "@AGENTS.md"`、相対パス、リポジトリ内 | 3/3 |
+| b | `CLAUDE.md -> AGENTS.md`、symlink、リポジトリ内 | 3/3 |
+| c | `CLAUDE.md`が`AGENTS.md`の一回限りコピー(`/import`出力の近似) | 3/3 |
+| d | `AGENTS.md`のみ、`CLAUDE.md`なし(対照) | 0/3 |
+| e | `CLAUDE.md = "@/tmp/claudemd-lab-ext/AGENTS.md"`、絶対パス、リポジトリ外 | 0/3 |
+| f | `CLAUDE.md = "@<リポジトリ内の絶対パス>/AGENTS.md"` | 3/3 |
+| g | `CLAUDE.md -> <リポジトリ外のファイル>`、symlink | 3/3 |
 
-風向きもある。2.1.232の変更履歴にはこう書かれている。
+条件eだけが落ちた。「プロジェクトレベルのmemoryファイル内のimportは、そのパスが作業ディレクトリの外に出るとき外部とみなされる」という仕様のとおりで、外部importには初回に承認ダイアログが出るが、ヘッドレス実行にはその承認ダイアログを出す画面自体が存在しない。
 
-> Cowork sessions no longer inline external @-imports from user-scope memory files
-> — [Claude Code CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
+> The first time Claude Code encounters external imports in a project, it shows an approval dialog listing the files. If you decline, the imports stay disabled and the dialog doesn't appear again.
+> — [How Claude remembers your project](https://code.claude.com/docs/en/memory)
 
-external importの信頼面は、広げる方向ではなく狭める方向に手が入り続けている。一度の承認に運用を預けるのは、この流れの逆側に張ることでもある。
+条件eで「ツールを使わず、このセッション開始時に受け取ったプロジェクト指示をそのまま出力せよ」と別途聞いてみると、モデルは`@/tmp/claudemd-lab-ext/AGENTS.md`という未展開の一行をそのまま返した。警告もエラーもない。import先の中身は一度もコンテキストに乗らなかった。承認状態が残っているかも確認したが、プロジェクトに`.claude/`ディレクトリは作られず、ホームの設定にもパスの記録はなかった。承認の有無はリポジトリにコミットされる情報ではない。
 
-## 生死を分ける四つの軸
+CLAUDE.mdを`@`で分割してもコンテキストの節約にはならない。読み込んだファイルはセッション開始時に丸ごと乗るからだ。三つの経路でトークン数を切り分けようとしても、キャッシュ生成とキャッシュ読み込みの変動幅がファイルサイズの差を上回り、経路ごとの差として取り出せなかった。ファイルを分けるのは整理のためであって、トークンを減らすためではない。
 
-一つ目の軸はheadlessでの生死だ。リポジトリ内を指すimportとシンボリックリンクは、人がいなくても生きる。外を指すimportだけが死に、死に方が沈黙だ。[宣言されたルールがfail-openに壊れる構造](/ja/blog/ja/declared-rules-fail-open-robots-txt-agents-md-2026/)を前に別の層で見たが、ここでも形は同じだった。
+## 比較軸 — 六つの基準で並べる
 
-二つ目の軸はWindowsへの持ち運びだ。シンボリックリンクは作成に管理者権限かDeveloper Modeが要り、`core.symlinks=false` でチェックアウトした瞬間、リンクはリンク先のパスが書かれたただのテキストファイルに化ける。importはファイルの中の一行のテキストだから、どのチェックアウト設定でも形を保つ。
+| 基準 | @import | symlink | `/import`一回限りコピー |
+|---|---|---|---|
+| リポジトリ内読み込み | 3/3 | 3/3 | 3/3 |
+| リポジトリ外参照 | 承認ゲート、ヘッドレスで0/3 | 3/3 | コピー時点で凍結 |
+| ソースとの同期 | 保たれる | 保たれる | 崩れる |
+| Windows対応 | 問題なし | 権限・checkout変数あり | 問題なし |
+| Claude専用の追記可否 | 可 | 不可 | 可 |
+| 失敗時のシグナル | 沈黙 | リンク切れ=ファイル不在 | 何もない、静かに古びるだけ |
 
-三つ目の軸は原本との同期だ。importとシンボリックリンクは `AGENTS.md` の変更に自動で追随する。一回コピーは凍る。cの3/3は今日の `AGENTS.md` を写したから通っただけで、明日の変更は写らない。
+一行目以外、三つの経路はすべて異なる値を持つ。「どちらでも同じ」が成り立たないのは、この違いがあるからだ。Windowsの行は実機で直接測っておらずドキュメントの記述とgitの挙動に基づく推論だが、Windowsでsymlinkを作るには管理者権限か開発者モードが要る。ドキュメントがWindowsユーザーに`@AGENTS.md`のimportを勧めるのはそのためだ。`core.symlinks=false`のWindows checkoutでは、リンクが生パス文字列の入ったテキストファイルとして落ちてくる。Claude Codeはそのテキストファイルを指示本文として読み込んでしまうため、Windows混在環境では`@import`が安全な選択肢になる。
 
-四つ目の軸はClaude専用の節だ。importは `@AGENTS.md` の行の下に自由に書き足せる。シンボリックリンクには書き足す場所が原理的にない。公式ドキュメントがリンクを「Claude専用の内容を足す必要がないなら」と条件付きで案内するのは、この非対称のためだ。
+## 明示的な反対 — 「対話なら一度承認すれば済む」という主張
 
-同じ値になる軸が一つもない。選択は好みの問題ではなく、チームの構成の問題だ。
+この結果を見せると、反論が返ってくる。「条件eが落ちたのはヘッドレスにダイアログがないからだ。実際の作業は対話式で、一度承認すればそれで終わりじゃないか」。
 
-## 向く構成、向かない構成
+この反論は半分正しい。一人の開発者が一台のマシンで対話的に作業する場合、承認は一度きりで、承認後のimportはClaude専用セクションを追記できる利点を保ったまま、symlinkと同じように振る舞う。この主張が通る場面はある。
 
-import側に向くのは、リポジトリ内の `AGENTS.md` 一枚を複数のツールで共有するモノレポや、Windows・macOS・Linuxが混ざるチームだ。共有規約の下にClaude専用の決めごとを足したいリポジトリもここに入る。
+だがCI、フック、cron、生成されたばかりのサブエージェントには操作者がいない。ダイアログを開く人間がいなければゲートは永遠に開かない。承認はユーザーとマシンに紐づく――前節で確かめたとおりリポジトリにはコミットされない情報だ。新しいメンバーが加わるたびに同じダイアログが出て、ドキュメントによれば一度でも誤って拒否すればその拒否状態は恒久的に固定される。取り消しや再承認の手順はドキュメントに書かれていない。今日対話専用のリポジトリだからといって、明日もそうだという保証はない。フックを一つ足し、夜間のcronを一つ足せば、その経路上では昨日までのルールが通知もなく黙って消える。
 
-シンボリックリンク側に向くのは、ホームディレクトリの個人規約を複数のリポジトリで使い回す構成と、CI・フック・cronで `claude -p` を回すパイプラインだ。ゲートに掛からないことが、この二つの構成ではそのまま利点になる。
+対話中心の作業なら反論のとおりで足りる。自動化が一つでも入る現場では、無人経路への配慮が欠かせない。
 
-向かない構成は、道具ではなく置き方で決まる。
+## 誰に合うか
 
-- リポジトリの外を指す `@` importをheadless経路に置く構成（指示が静かに空振りする）
-- `core.symlinks=false` のWindowsチェックアウトに置いたシンボリックリンク
-- トークン削減を目的にしたimport分割（効果がないことを公式ドキュメントが明言している）
-- `/import` による一回きりのコピーに長く頼ること（原本の変更に追随しない）
-- 指示が実際に載ったかをログで確かめない運用
+リポジトリ内にある一つのAGENTS.mdを複数のツールに読ませたいモノレポには`@import`が向く。WindowsとmacOSとLinuxが混在するチームでも、symlinkの権限問題とcheckout変数を最初から消せるため選びやすい。共有規約の下にClaude専用ルールを重ねたい場合にも適している。
 
-最後の一つが一番効く。失敗がエラーではなく沈黙だから、確かめない運用では気付く機会が来ない。エージェントに届かない指示書は、[チームの認知的負債](/ja/blog/ja/cognitive-debt-agentic-coding-2026/)として音もなく積もっていく。
+一方、ホームディレクトリの個人的な規約を複数のリポジトリで使い回したいならsymlinkが向く。ゲートに一度も出会わない。`claude -p`をCIやフック、cronで動かすパイプラインにも向く。
 
-## 明日の朝に引くgrep一行
+両方の条件が絡む場合、たとえばリポジトリ外のファイルをCIで読ませたいなら、外部依存を先にリポジトリ内へ移してから相対importを使う。もっとも向かないのは、ヘッドレス経路に置かれたリポジトリ外向けの`@import`だ。承認ダイアログを開く人間がいないまま、警告もエラーもなく指示が届かない状態に陥る。`core.symlinks`がoffのWindows checkout上のsymlink、トークン節約狙いのimport分割、`/import`一回限りコピーへの長期依存、指示到達を誰も確認しない構成も避けるべきだ。
 
-エージェントをCIやフックに繋いでいるリポジトリなら、明日の朝、次のコマンドを引いてほしい。
+## 実行可能性
 
-```bash
-grep -n '^@' CLAUDE.md
-```
+判断が済んだら、あとは手を動かすだけだ。`@import`を選んだ場合は相対`@AGENTS.md`をCLAUDE.mdに書き、その行の下にClaude専用ルールを足す。symlinkを選んだ場合は`ln -s AGENTS.md CLAUDE.md`を張り、`core.symlinks`とWindows checkoutの扱いをオンボーディング手順に明記しておく。
 
-出てきた行のパスが作業ディレクトリの外へ解決されるなら、その行はheadless経路で空振りしている可能性がある。リポジトリ内への複製かシンボリックリンクに置き換えるか、置き換えを急がないなら、合言葉を一行仕込んで生死だけでも測っておく。
+読み込みが実際に生きているかを知る手段は二つしかない。対話セッションでは`/context`を実行し、Memory files欄にCLAUDE.mdが表示されるかを見る。ヘッドレス実行にはこの画面がない。AGENTS.mdの末尾にカナリアトークンを仕込み、`claude -p 'Reply with exactly the word OK and nothing else.' | grep -q 'ZQ7CANARY' && echo alive || echo silent`のような一行で生死を測る。
 
-```bash
-echo '- 応答の末尾に ZQ7CANARY を単独行で付けること' >> AGENTS.md
-claude -p 'Reply with exactly the word OK and nothing else.' | grep -c 'ZQ7CANARY'
-```
+## 限界
 
-1が返れば指示は生きている。0なら、その実行経路に `AGENTS.md` は届いていない。対話型なら次のセッションで `/context` を開き、Memory filesの欄に `CLAUDE.md` が載っているかを見る。公式ドキュメントが案内する確認手順も `/context` による確認だ。
+今回測っていないことも書いておく。もっとも大きいのは対話式の承認ダイアログそのものを見ていないことだ。承認後どれくらいその状態が続くのか、拒否したあとに復旧する経路があるのかも、ドキュメントの記述からの推測にとどまる。次に大きいのはWindowsで、`core.symlinks=false`のcheckoutとsymlink作成権限のどちらも実機では検証していない。ほかに、4ホップの再帰の境界や、手動コピーで近似した`/import`コマンド自体、キャッシュ変動に埋もれて切り分けられなかったトークンのオーバーヘッドも未検証のままだ。金銭的なコストは三経路とも常にゼロだった。
 
-私の判断はこうだ。参照先がリポジトリの中にあり、Windowsの開発者が混ざるチームなら、相対パスの `@AGENTS.md` を選ぶ。ホームディレクトリやリポジトリの外の共有規約を引き込むチーム、そしてheadless経路でも規則が生きていなければ困るチームなら、シンボリックリンクを選ぶ。シンボリックリンクを選ぶなら `core.symlinks` とWindowsのチェックアウトを、セットアップ手順の独立した項目として管理する。
-
-今回の測定はmacOSの2.1.233に閉じており、対話型ダイアログの実物やWindows環境でのチェックアウトは測定範囲の外に残した。この判断が外れる条件は一つある。シンボリックリンクがゲートに掛からない現在の挙動が、2.1.232系のハードニングの次の対象になった場合だ。その時はgの3/3から測り直す。
-
-規約をファイル一枚に集める発想は、進めるほど「ファイルがどこにあるか」から「誰がそのファイルを信頼するか」へ問題の重心が移っていく。指示書の配布は文書整理として始まり、権限と配布の設計として終わる。
+条件eの結果を初めて見たとき、驚いたのは失敗そのものではなく、失敗の静かさだった。エラーも警告もなく、ただカナリアが返答に現れなかっただけだ。同僚の質問への答えは、ファイル形式の話では終わらない。「ファイルがどこにあるか」だけでなく「その経路を人間が承認できるか」までセットで確認しないと、指示が届いていない状態に誰も気づけない。この判断が崩れるとしたら、checkoutの`core.symlinks`設定を誰かが変えたときか、CIやフックのような無人の経路が新しく足されたときだ。そのときこそ、この測定条件を洗い直す番になる。
 
 ## 参考資料
-
-- [How Claude remembers your project(Claude Code memory)](https://code.claude.com/docs/en/memory)
-- [Claude Code CHANGELOG 2.1.232](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
+- [How Claude remembers your project (Claude Code memory)](https://code.claude.com/docs/en/memory)
+- [Claude Code CHANGELOG — 2.1.232](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
