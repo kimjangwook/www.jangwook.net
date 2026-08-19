@@ -510,15 +510,16 @@ function flushRebuildWarnings() {
 // 참조 6편을 재면 ja 107~578, zh 114~564 단어로 나온다. 띄어쓰기가 없어서다.
 // 그래서 ko·en 은 단어, ja·zh 는 공백 제외 글자수로 잰다.
 //
-// 값은 참조 6편(docs/pipeline-rebuild-2026-08.md §9) 본문 실측에서 왔다.
-//   ko 1,651~2,033 words / en 1,496~1,920 words
-//   ja 5,476~7,562 chars / zh 4,444~5,535 chars
-// 하한은 그 아래로 여유를 두고, 상한은 "목차가 됐다"를 잡을 만큼만 높인다.
+// 하한은 분량 목표가 아니라 파손 감지선이다 (2026-08-19). 참조 6편 실측 하한
+// (ko 1600w 등)을 쓰던 시절, sonnet 편집부(WRITER=sdk)의 정상 글(ko 1301w)이
+// 여기 막혔다 — 분량은 내용이 정한다로 규범을 바꾸고, min 은 "엔진이 중간에
+// 죽어 반 토막이 났다"만 잡게 내렸다. daily-post-pipeline.sh 의 polish_floor
+// 와 같아야 한다. 상한은 그대로다 — "목차가 됐다"는 여전히 잡는다.
 const LENGTH_BOUNDS = {
-  ko: { unit: 'words', min: 1600, max: 2800 },
-  en: { unit: 'words', min: 1450, max: 2600 },
-  ja: { unit: 'chars', min: 5300, max: 9500 },
-  zh: { unit: 'chars', min: 4300, max: 8000 }
+  ko: { unit: 'words', min: 700, max: 2800 },
+  en: { unit: 'words', min: 650, max: 2600 },
+  ja: { unit: 'chars', min: 2400, max: 9500 },
+  zh: { unit: 'chars', min: 2000, max: 8000 }
 };
 
 function bodyMetrics(body) {

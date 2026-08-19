@@ -4,7 +4,7 @@ Target: `src/content/blog/en/{{SLUG}}.md`, that file only.
 
 Goal: remove what does not need to be there, with the author's voice intact. You are not improving sentences.
 
-**There is a floor. Do not cut below 1,450 words of body (frontmatter excluded).** If the draft is already under that, leave the length alone and only fix the patterns below. Above it you may cut 20-30%, but stop at 1,450. The cut rate is a ceiling, not a target.
+**Length is an outcome, not a target.** Cut only sentences that match the patterns below, and let the length land wherever it lands. Never cut more than 30% of the draft - the cut rate is a ceiling, not a target.
 
 Read `data/column-brief.md` first. It decides what counts as a fact.
 

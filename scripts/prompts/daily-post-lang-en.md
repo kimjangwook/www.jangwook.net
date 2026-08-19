@@ -37,7 +37,7 @@ Facts / mechanism and structure / checking the numbers / cost / axes of comparis
 **the explicit counter-argument (a whole section, required)** / whether you can
 actually do it / who it fits / limits
 
-Length 1,800–2,150 words of body (frontmatter excluded, code included), 6–10 H2s.
+Length is set by the content. There is no word target - do not pad to reach one or cut to fit one. 6-10 H2s.
 
 ## Writing
 

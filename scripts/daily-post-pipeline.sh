@@ -390,22 +390,18 @@ print(len(t.split()), len(re.sub(r'\s', '', t)))
 PYBM
 }
 
-# 언어별 바닥선. polish 프롬프트에 박은 값과 같아야 한다 — 두 곳이 갈리면
-# 프롬프트를 지킨 글에서 경고가 뜨거나, 뚫린 글이 조용히 지나간다.
-#
-# 값의 출처는 참조 6편(docs/pipeline-rebuild-2026-08.md §9)의 본문 실측 하한이다.
-#   ko 1,651~2,033 words / en 1,496~1,920 words
-#   ja 5,476~7,562 chars / zh 4,444~5,535 chars
-# 인수인계서의 "2,200단어"는 frontmatter 를 포함한 전체 파일 wc -w 수치였다.
-# 같은 글을 본문 기준으로 재면 1,650 근처가 된다. 숫자가 아니라 그 경계를 옮겼다.
-# 실측 하한에서 조금 더 내렸다. en 참조글 하나가 1,496 단어라 1,500 으로 두면
-# 목표로 삼은 글이 스스로 경고를 띄운다.
+# 언어별 바닥선 — 파손 감지용이지 분량 목표가 아니다 (2026-08-19).
+# 원래는 참조 6편 실측 하한(ko 1600w 등)이었는데, sonnet 편집부(WRITER=sdk)가
+# 밀도 있게 짧게 쓰는 경향이라 정상 글(ko 1301w)이 게이트에 막혔다. 분량은
+# 내용이 정한다로 규범을 바꾸고, 여기는 "산출물이 잘려 나갔다"(엔진 중도 사망,
+# polish 폭주)만 잡는 선으로 내렸다. validate-publishing.mjs 의 min 과 같아야
+# 한다 — 두 곳이 갈리면 경고 없이 빌드에서 죽는 글이 생긴다.
 polish_floor() {
   case "$1" in
-    ko) echo "words 1600" ;;
-    en) echo "words 1450" ;;
-    ja) echo "chars 5300" ;;
-    zh) echo "chars 4300" ;;
+    ko) echo "words 700" ;;
+    en) echo "words 650" ;;
+    ja) echo "chars 2400" ;;
+    zh) echo "chars 2000" ;;
     *)  echo "words 0" ;;
   esac
 }
