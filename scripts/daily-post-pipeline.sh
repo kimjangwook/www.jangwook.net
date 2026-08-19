@@ -2,7 +2,8 @@
 # daily-post 파이프라인 — 엔진 분리 (2026-08-15)
 #
 #   판단(주제 선정·플랜·발행) : claude opus
-#   집필(4개 언어 본문)       : claude fable / effort low  (기본)
+#   집필(4개 언어 본문)       : sdk — Agent SDK 편집부, sonnet (기본)
+#                             편집장 medium 이 writer low·편집자 2(medium)를 위임
 #     └ 폴백                 : claude opus / effort medium  (집필 실패 시 언어 단위)
 #   편집(언어별 삭감 패스)     : 집필과 다른 모델. 사실을 더하지 않고 20~30% 줄인다
 #   리뷰                      : 1차(집필과 다른 모델) → claude opus / effort xhigh
@@ -100,8 +101,10 @@ cd "$PROJECT_DIR" || exit 1
 
 LANGS="ko ja en zh"
 
-# 집필 엔진. 기본 fable(effort low). 실패하면 claude opus medium 으로 폴백한다.
-WRITER="${WRITER:-fable}"
+# 집필 엔진. 기본 sdk — Agent SDK 편집부(sonnet). 2026-08-19 claude-md-at-import
+# redo 실전(4개 언어 재발행, seal-check·insight-gate 통과)을 보고 fable 에서
+# 전환했다. 실패하면 claude opus medium 으로 폴백한다.
+WRITER="${WRITER:-sdk}"
 REDO_SLUG=""
 RESUME_SLUG=""
 RESUME_SLUG_ARG=""
