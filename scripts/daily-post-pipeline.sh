@@ -252,6 +252,17 @@ run_agy() {
     </dev/null
 }
 
+# local: 100% 무료 로컬 LLM (Qwen 27B/38B). 0원 방어용 윤문/스카우트 래퍼.
+run_local() {
+  local prompt="$1"
+  node "$PROJECT_DIR/../life-manager/src/cli/local-llm.ts" \
+    --model "mtplx-qwen38-27b-optimized-quality" \
+    --temperature 0.2 \
+    --max-tokens 4096 \
+    "$prompt" \
+    </dev/null
+}
+
 # ── 언어 격리 ──────────────────────────────────────────────────────────
 HOLD_DIR=""
 restore_holds() {
@@ -424,6 +435,7 @@ polish_lang() {
 
   log "phase polish lang=$lang (editor=$POLISH_ENGINE)"
   case "$POLISH_ENGINE" in
+    local) run_local "$prompt"; rc=$? ;;
     codex) run_codex "$prompt"; rc=$? ;;
     agy)   run_agy "$prompt" "$AGY_REVIEW_MODEL"; rc=$? ;;
     *)     run_claude "$CLAUDE_EFFORT" "$prompt"; rc=$? ;;
