@@ -80,7 +80,7 @@ CLAUDE_FALLBACK_MODEL="${CLAUDE_FALLBACK_MODEL:-opus}"     # 집필 폴백 (판�
 CLAUDE_FALLBACK_EFFORT="${CLAUDE_FALLBACK_EFFORT:-medium}"
 CLAUDE_REVIEW_EFFORT="${CLAUDE_REVIEW_EFFORT:-xhigh}" # 리뷰/판정
 CODEX_BIN="${CODEX_BIN:-/opt/homebrew/bin/codex}"
-CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-luna}"
+CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-terra}"
 # effort=max 는 "빠짐없이 균일하게 덮는" 산문을 만든다. 그 균일함이 곧 AI 문체다.
 # 2026-08-15 ko 단일언어 A/B: 프롬프트를 고정하고 max→high 만 바꿨을 때
 # 설명성 괄호 18→8, 유보 4→2, 소요 18분→6분. high 를 기본으로 둔다.

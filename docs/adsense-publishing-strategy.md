@@ -87,7 +87,7 @@ launchd가 생성한 글은 아래 조건을 만족해야 한다.
 
 ### launchd 운영 메모
 
-`scripts/jangwook-scheduler.sh`는 task name에 `daily`, `publish`, `post`, `blog`, `write`가 들어가면 Claude 실행 후 `npm run validate:publishing`을 자동 실행한다. 빌드까지 launchd에서 강제하고 싶으면 launchd 환경에 다음 값을 넣는다.
+`scripts/jangwook-scheduler.sh`는 task name에 `daily`, `publish`, `post`, `blog`, `write`가 들어가면 Grok 실행 후 `npm run validate:publishing`을 자동 실행한다. 빌드까지 launchd에서 강제하고 싶으면 launchd 환경에 다음 값을 넣는다.
 
 ```bash
 PUBLISHING_BUILD_GATE=1

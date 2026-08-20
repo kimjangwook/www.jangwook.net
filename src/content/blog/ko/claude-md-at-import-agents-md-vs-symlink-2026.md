@@ -121,7 +121,7 @@ CI, 훅, 크론, 서브에이전트처럼 사람이 지켜보지 못하는 경�
 > Cowork sessions no longer inline external @-imports from user-scope memory files
 > — [Claude Code CHANGELOG - 2.1.232](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
 
-Cowork 세션에서 사용자 스코프 메모리 파일의 external import를 더 이상 인라인하지 않도록 범위를 좁혔다는 뜻이다. 같은 릴리스에 심볼릭 링크 선점 거부와 샌드박스 우회 차단도 함께 실렸다. 규약을 파일 한 장으로 묶자는 발상은 문서 정리 문제로 시작했지만 실제로는 누가 그 파일을 신뢰하느냐는 권한 문제로 계속 손질되고 있다. 오늘 게이트를 지나는 심볼릭 링크가 다음 릴리스에서도 지나리라는 보장은 이 문서 어디에도 없다.
+Cowork 세션에서 사용자 스코프 메모리 파일의 external import를 더 이상 인라인하지 않도록 범위를 좁혔다는 뜻이다. 같은 릴리스에 심볼릭 링크 선점 거부와 샌드박스 우회 차단도 함께 실렸다. 규약을 파일 한 장으로 묶자는 발상은 문서 정리 문제로 시작했지만 실제로는 누가 그 파일을 신뢰하느냐는 권한 문제로 계속 손질되고 있다. 오늘 게이트 없이 통과하는 심볼릭 링크가 다음 릴리스에서도 그대로 유지되리라는 보장은 이 문서 어디에도 없다.
 
 ## 참고 자료
 - [How Claude remembers your project](https://code.claude.com/docs/en/memory)

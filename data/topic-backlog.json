@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-18",
+  "updated_at": "2026-08-19",
   "topics": [
     {
       "slug": "fetch-textstream-vs-text-first-chunk-2026",
@@ -118,8 +118,9 @@
       "priority": 1,
       "source": "Claude Code memory 공식 문서 AGENTS.md 절(2026-08-16 확인): 'create a CLAUDE.md that imports it' + '@AGENTS.md' 예제 + 'A symlink also works if you don't need to add Claude-specific content' + Windows는 Administrator/Developer Mode 필요하므로 import 권장. 2026-08-16 글은 심볼릭 링크만 3/3으로 쟀고 @AGENTS.md import·/context 확인은 미측정이라고 명시.",
       "added_at": "2026-08-16",
-      "status": "queued",
-      "notes": "월요일 How-to. 이미 큐에 있는 symlink+fallback 글과 겹치지 않게, import vs symlink vs /import 복사(v2.1.213+)를 같은 캐너리로 나란히 잰다. Windows 심볼릭 링크는 권한이 없으면 문서대로 import로 강등하고 실행했다고 쓰지 말 것. 링크: agents-md-vs-claude-md-loading-measured-2026, modern-web-guidance-agent-skill-coverage-2026"
+      "status": "done",
+      "notes": "월요일 How-to. 이미 큐에 있는 symlink+fallback 글과 겹치지 않게, import vs symlink vs /import 복사(v2.1.213+)를 같은 캐너리로 나란히 잰다. Windows 심볼릭 링크는 권한이 없으면 문서대로 import로 강등하고 실행했다고 쓰지 말 것. 링크: agents-md-vs-claude-md-loading-measured-2026, modern-web-guidance-agent-skill-coverage-2026",
+      "published_at": "auto-detected"
     },
     {
       "slug": "codex-project-doc-max-bytes-truncation-2026",
@@ -5713,8 +5714,9 @@
       "source": "pm 캐치업 스카우트 2026-07-19. Google Search Central 공식 블로그 \"See how content from social and video platforms performs on Google Search\" (developers.google.com/search/blog/2026/07/search-console-social-video-platforms). 신규 property type \"Platform Properties\": Instagram/TikTok/X/YouTube 중 하나를 verify하면 해당 계정 콘텐츠가 구글 검색·Discover에서 받는 clicks/impressions/query를 Performance·Insights 리포트로 확인. coming weeks 점진 롤아웃. 2025-12 social channels, 2026-06 Gen AI performance reports의 연장선상 productized 버전. [기둥①=웹개발자/기술SEO 착지, ③=검색 표면 확장 캐치업 부수] 통찰: 내가 소유·제어하는 사이트의 GSC 데이터만으로는 브랜드의 검색 존재감을 더 이상 온전히 못 잡는다 — 소셜·영상 콘텐츠가 독립적으로 랭크·유입을 만든다. 즉 조직의 오가닉 발견 측정 표면이 소유 사이트 밖으로 확장됨. 실험 설계 가능: platform property 연결 → 같은 브랜드 쿼리에서 사이트 vs 소셜 콘텐츠 중 무엇이 뜨는지 실측 → 온사이트 콘텐츠 투자 vs 소셜 투자 판단 기준 도출. 한계 명시 필요: 순위·유입 보장 아님, 롤아웃 점진적이라 계정별 데이터 지연 가능, 검증은 각자 property로.",
       "added": "2026-07-19",
       "added_at": "2026-07-19",
-      "status": "queued",
-      "notes": "pm 캐치업. 24h 창 내 유일 유효건(웹개발/EM에 실측 착지). ChatGPT 데스크톱 Chat/Work/Codex 스위처(7/18)·MCP 2026-07-28 스테이트리스 RC(6월 발표, 창밖)는 통찰/신선도 미달로 드롭. 글은 measure→decide 루프 형태 권장, 실제 property 연결 스크린샷·쿼리 실측 데이터 필수."
+      "status": "done",
+      "notes": "pm 캐치업. 24h 창 내 유일 유효건(웹개발/EM에 실측 착지). ChatGPT 데스크톱 Chat/Work/Codex 스위처(7/18)·MCP 2026-07-28 스테이트리스 RC(6월 발표, 창밖)는 통찰/신선도 미달로 드롭. 글은 measure→decide 루프 형태 권장, 실제 property 연결 스크린샷·쿼리 실측 데이터 필수.",
+      "published_at": "auto-detected"
     },
     {
       "slug": "typescript-native-compiler-go-port-benchmark-2026",
@@ -7469,6 +7471,136 @@
       "priority": 2,
       "source": "https://github.com/marketplace/actions/owasp-ptk-security-scan (2026-08-18 확인, HTTP 200)",
       "added_at": "2026-08-18",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Bedrock Runtime エンドポイントのサポートとシェル呼び出しのストリーミングイベントを追加",
+      "content_type": "news",
+      "target_keyword": "Bedrock Runtime エンドポイントのサポートとシェル呼び出しのストリーミングイベントを追加",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/openai/openai-python/releases/tag/v3.2.0 (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "WebSocket ストリーム ID と Workload Identity イベント、Ultrafast ティア、構造化 MCP サポートを追加し Sora API を非推奨化",
+      "content_type": "news",
+      "target_keyword": "WebSocket ストリーム ID と Workload Identity イベント、Ultrafast ティア、構造化 MCP サポートを追加し Sora ",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/openai/openai-python/releases/tag/v3.1.0 (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "デフォルトの HTTP クライアントを HTTPX2 に移行し httpx の自動インストールを廃止",
+      "content_type": "news",
+      "target_keyword": "デフォルトの HTTP クライアントを HTTPX2 に移行し httpx の自動インストールを廃止",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/openai/openai-python/releases/tag/v3.0.0 (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "claude-opus-5 モデルのサポート、ツール変更イベント、セッション予算管理、advisor ツールのサポートを追加",
+      "content_type": "news",
+      "target_keyword": "claude-opus-5 モデルのサポート、ツール変更イベント、セッション予算管理、advisor ツールのサポートを追加",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.122.0 (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "WGSL コンピュートシェーダーでの @subgroup_size 属性によるサブグループサイズ制御と setImmediates 検証失敗時の OperationError 送出に対応",
+      "content_type": "news",
+      "target_keyword": "WGSL コンピュートシェーダーでの @subgroup_size 属性によるサブグループサイズ制御と setImmediates 検証失敗時の Operati",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://developer.chrome.com/blog/new-in-webgpu-151-152 (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "モバイルアプリケーション向け WCAG 2.2 適用ガイドライン (WCAG2Mobile) のドラフト策定に向けた討議を実施",
+      "content_type": "news",
+      "target_keyword": "モバイルアプリケーション向け WCAG 2.2 適用ガイドライン (WCAG2Mobile) のドラフト策定に向けた討議を実施",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://www.w3.org/WAI/about/groups/task-forces/matf/ (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Google Searchにおいて全言語・地域を対象とするAugust 2026 spam updateの展開を開始した",
+      "content_type": "news",
+      "target_keyword": "Google Searchにおいて全言語・地域を対象とするAugust 2026 spam updateの展開を開始した",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://status.search.google.com/ (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "改ざん防止技術と発行者・保持者・検証者モデルを拡張したVerifiable Credentials Data Model v2.1のWorking Draftを公開した",
+      "content_type": "news",
+      "target_keyword": "改ざん防止技術と発行者・保持者・検証者モデルを拡張したVerifiable Credentials Data Model v2.1のWorking Draftを",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://www.w3.org/TR/2026/WD-vc-data-model-2.1-20260816/ (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "GPT-5.6 Sol向けに通常処理の最大14倍の応答速度を提供する新APIサービスクラスUltrafast modeの限定プレビューを開始した",
+      "content_type": "news",
+      "target_keyword": "GPT-5.6 Sol向けに通常処理の最大14倍の応答速度を提供する新APIサービスクラスUltrafast modeの限定プレビューを開始した",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://developers.openai.com/api/docs/changelog (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "HTML要素に対するWAI-ARIA属性の適切な適用要件と適合性検証基準を定めたARIA in HTMLをW3C勧告として更新・公開した",
+      "content_type": "news",
+      "target_keyword": "HTML要素に対するWAI-ARIA属性の適切な適用要件と適合性検証基準を定めたARIA in HTMLをW3C勧告として更新・公開した",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://www.w3.org/TR/2026/REC-html-aria-20260811/ (2026-08-19 확인, HTTP 200)",
+      "added_at": "2026-08-19",
       "status": "queued",
       "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
     }

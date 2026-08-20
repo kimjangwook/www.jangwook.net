@@ -2022,5 +2022,153 @@
         "id": 4385137
       }
     }
+  },
+  {
+    "slug": "robots-meta-head-body-parser-placement-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/robots-meta-head-body-parser-placement-2026",
+    "posted_at": "2026-08-13T06:50:05.666Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "robots-meta-head-body-parser-placement-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/robots-meta-head-body-parser-placement-2026",
+    "posted_at": "2026-08-13T13:40:38.209Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "robots-meta-head-body-parser-placement-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/robots-meta-head-body-parser-placement-2026",
+    "posted_at": "2026-08-13T14:21:42.218Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "official-geo-subtraction-gsc-control-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/official-geo-subtraction-gsc-control-2026",
+    "posted_at": "2026-08-14T06:44:40.863Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/official-geo-is-a-subtraction-list-plus-one-search-console-switch-4b1c",
+        "id": 4393848
+      }
+    }
+  },
+  {
+    "slug": "official-geo-subtraction-gsc-control-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/official-geo-subtraction-gsc-control-2026",
+    "posted_at": "2026-08-14T06:47:22.146Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "official-geo-subtraction-gsc-control-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/official-geo-subtraction-gsc-control-2026",
+    "posted_at": "2026-08-14T14:20:27.505Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "hidden-until-found-find-fragment-accordion-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/hidden-until-found-find-fragment-accordion-2026",
+    "posted_at": "2026-08-15T07:26:46.888Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/the-page-scrolled-to-a-clip-the-accordion-stayed-shut-321",
+        "id": 4401995
+      }
+    }
+  },
+  {
+    "slug": "hidden-until-found-find-fragment-accordion-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/hidden-until-found-find-fragment-accordion-2026",
+    "posted_at": "2026-08-15T14:24:33.681Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "agents-md-vs-claude-md-loading-measured-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/agents-md-vs-claude-md-loading-measured-2026",
+    "posted_at": "2026-08-16T10:08:37.174Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/agentsmd-vs-claudemd-loading-across-76-runs-2of7",
+        "id": 4409479
+      }
+    }
+  },
+  {
+    "slug": "agents-md-vs-claude-md-loading-measured-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/agents-md-vs-claude-md-loading-measured-2026",
+    "posted_at": "2026-08-16T14:19:28.574Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "declared-rules-fail-open-robots-txt-agents-md-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/declared-rules-fail-open-robots-txt-agents-md-2026",
+    "posted_at": "2026-08-17T09:01:05.061Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/robotstxt-and-agentsmd-both-fail-open-54bc",
+        "id": 4416371
+      }
+    }
+  },
+  {
+    "slug": "declared-rules-fail-open-robots-txt-agents-md-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/declared-rules-fail-open-robots-txt-agents-md-2026",
+    "posted_at": "2026-08-17T14:22:19.002Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "gsc-platform-properties-social-video-search-measurement-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/gsc-platform-properties-social-video-search-measurement-2026",
+    "posted_at": "2026-08-18T14:54:07.604Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/search-console-can-measure-tiktok-your-pipeline-cant-3ong",
+        "id": 4427244
+      }
+    }
   }
 ]
