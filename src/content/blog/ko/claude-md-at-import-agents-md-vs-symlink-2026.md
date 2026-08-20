@@ -1,6 +1,6 @@
 ---
 title: CLAUDE.md @import와 심볼릭 링크, 21번 돌려 갈라진 지점
-description: 공식 문서는 @import와 심볼릭 링크를 같은 문제의 두 해법으로 나란히 적어둔다. 리포 밖 파일을 가리키는 순간 결과가 갈린다는 걸 헤드리스에서 일곱 조건, 스물한 번 실행으로 확인했다.
+description: '공식 문서는 CLAUDE.md의 @AGENTS.md import와 심볼릭 링크를 같은 해법으로 나란히 적는다. 리포 밖 파일을 가리키면 결과가 갈린다는 걸 헤드리스 일곱 조건, 스물한 번 실행으로 직접 확인했다. 무인 CI·승인 게이트에서 살아남는 쪽은 심볼릭 링크였다.'
 pubDate: '2026-08-19'
 heroImage: '../../../assets/blog/claude-md-at-import-agents-md-vs-symlink-2026/hero.png'
 tags:

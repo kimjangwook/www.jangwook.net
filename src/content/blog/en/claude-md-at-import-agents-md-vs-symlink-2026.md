@@ -1,6 +1,6 @@
 ---
 title: "Claude Code's @import vs symlink for CLAUDE.md, tested"
-description: "Anthropic's docs offer @AGENTS.md imports and a symlink as interchangeable ways to feed Claude Code your rules. Across 21 headless runs, one of them failed silently and left no trace."
+description: "Anthropic docs treat @AGENTS.md imports and a symlink as interchangeable for CLAUDE.md. Across 21 headless runs, that import failed silently off-repo."
 pubDate: '2026-08-19'
 heroImage: '../../../assets/blog/claude-md-at-import-agents-md-vs-symlink-2026/hero.png'
 tags: ['claude-code', 'agents-md', 'ai-coding-agent', 'developer-tools', 'devops']

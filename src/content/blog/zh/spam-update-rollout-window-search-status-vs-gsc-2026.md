@@ -1,6 +1,6 @@
 ---
 title: 'Google把spam update的开始时刻精确到分钟公开，接进Search Console后精度依然磨平'
-description: 'August 2026 spam update在incidents.json里留下了精确到秒的开始时间戳，抓取不需要认证。但Search Console的日期轴按太平洋时间整天对齐，分钟级信息一进连接键就变成边界日里前后混合的一天。查了八份官方文档、跑了九次实测：这个数据值得抓，但只能用来打标签，不能用来提高相关分析的精度。'
+description: 'August 2026 spam update在incidents.json里留下精确到秒的开始时间戳，抓取无需认证。但Search Console的日期轴按太平洋时间整天对齐，分钟级信息一进连接键就变成边界日里前后混合的一天。查了八份官方文档、跑了九次实测：这个数据值得抓，但只能用来打标签，不能用来提高相关分析精度。'
 pubDate: '2026-08-20'
 heroImage: '../../../assets/blog/spam-update-rollout-window-search-status-vs-gsc-2026/hero.png'
 tags:
@@ -70,13 +70,13 @@ Search Console API的文档写得很清楚，查询窗口用的是什么单位�
 
 > — [Search Console API — Search Analytics: query](https://developers.google.com/webmaster-tools/v1/searchanalytics/query)
 
-一边是UTC分钟级时间戳，一边是PT日期级连接键，两边分辨率差了三个数量级。分辨率往下走时，分钟信息摊进边界整天：一部分请求发生在更新前，一部分在更新后，在Search Console看来只有一行数据。
+一边是UTC分钟级时间戳，一边是PT日期级连接键，两边分辨率差了三个数量级。[平台资源也是屏幕上有、API 文档里没有](/zh/blog/zh/gsc-platform-properties-social-video-search-measurement-2026/)同一层：界面精度和管道能接住的精度不是同一份合同。分辨率往下走时，分钟信息摊进边界整天：一部分请求发生在更新前，一部分在更新后，在Search Console看来只有一行数据。
 
 2026年8月这次spam update的边界日混合比是39%/61%，2026年3月core update是8%/92%，3月spam update是50%/50%，2月Serving故障是83%/17%——摊多摊少不取决于更新跑了多久，而取决于开始时刻落在PT的哪个点。排名类更新大多在PT上午8点到9点之间开始，边界日大约六成时间落在更新之后——但这只是巧合，不是规律。
 
 UTC日期和PT日期本身也会错位。核对19个时间戳，有2个错位，都出在2026年2月的Serving故障：begin和end在UTC下是2026-02-25，换算成PT却是2026-02-24。排名类更新的7个样本都在UTC 16点前后开始，UTC日期和PT日期碰巧一致，只因为开始时刻都落在这个窄区间里。
 
-begin的10个样本秒位全是00，分钟值集中在{0,25,27,40,55}；end的9个样本秒位同样全是00，分钟值全是5的倍数；created的10个样本秒位却分布在2、3、14、18、21、25、28、33、43这些真实值上——begin和end是人工填写的声明值，created和modified带着机器记录才有的零散秒位。差距会累积成什么样？算过声明的end和完成公告即 most_recent_update.created 之间的间隔，9起里差值从-46分钟到+58分钟不等。2025年8月的spam update最极端：完成公告是2025-09-22T06:14:22Z，声明的end却是2025-09-22T07:00:00Z——公告比声明的结束时刻早发了46分钟。看似精确的分钟级数字，实际置信区间不是分钟。
+begin的10个样本秒位全是00，分钟值集中在{0,25,27,40,55}；end的9个样本秒位同样全是00，分钟值全是5的倍数；created的10个样本秒位却分布在2、3、14、18、21、25、28、33、43这些真实值上——begin和end是人工填写的声明值，created和modified带着机器记录才有的零散秒位。[官方文档写的控制点与实际部署对不上的记录](/zh/blog/zh/official-geo-subtraction-gsc-control-2026/)是同一道缝：有 schema 不等于值的来源有合同。差距会累积成什么样？算过声明的end和完成公告即 most_recent_update.created 之间的间隔，9起里差值从-46分钟到+58分钟不等。2025年8月的spam update最极端：完成公告是2025-09-22T06:14:22Z，声明的end却是2025-09-22T07:00:00Z——公告比声明的结束时刻早发了46分钟。看似精确的分钟级数字，实际置信区间不是分钟。
 
 ## 核对数字
 
@@ -88,7 +88,7 @@ HTML历史表格的Duration列和JSON里end减begin算出来的值，9起事件�
 
 ## 成本
 
-抓取数据不花钱。robots.txt对所有UA全放行，用`curl -A "curl/8.7.1"`直接能拿到incidents.json，返回200，application/json，12,903字节，10起事件，不需要认证和API key。探测`/`、`/incidents.json`、`/feed.atom`、`/products.json`、`/incidents.schema.json`、`/history.rss`、`/summary.json`七个路径，前五个返回200，后两个猜测路径返回404——面板页脚明确列出的公开端点只有前五个。
+抓取数据不花钱。robots.txt对所有UA全放行，用`curl -A "curl/8.7.1"`直接能拿到incidents.json，返回200，application/json，12,903字节，10起事件，不需要认证和API key。[声明的 robots.txt 以失败开放收场的情况](/zh/blog/zh/declared-rules-fail-open-robots-txt-agents-md-2026/)正好相反，这里声明和实际打开是对齐的。探测`/`、`/incidents.json`、`/feed.atom`、`/products.json`、`/incidents.schema.json`、`/history.rss`、`/summary.json`七个路径，前五个返回200，后两个猜测路径返回404——面板页脚明确列出的公开端点只有前五个。
 
 轮询配额和速率限制的文档没有公开，属于未知。实现成本主要是归一化逻辑：把UTC转成PT、按天截断、给边界日打标记。这部分工作量预估半天，但没有实测计时，只是估算。
 

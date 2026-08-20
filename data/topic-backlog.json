@@ -3,6 +3,57 @@
   "updated_at": "2026-08-20",
   "topics": [
     {
+      "slug": "chrome-153-email-verification-http-message-signatures-2026",
+      "title_idea": "Chrome 153에서 이메일 검증 발급 요청이 JSON+서명으로 바뀐다",
+      "content_type": "news",
+      "target_keyword": "Chrome 153 Email Verification HTTP Message Signatures",
+      "secondary_keywords": [
+        "email verification origin trial Chrome 153",
+        "issuance request application/json",
+        "RFC 9421 HTTP Message Signatures"
+      ],
+      "search_intent": "news",
+      "priority": 1,
+      "source": "Chrome for Developers, Rowan Merewood, Email verification updates, August 2026 (published 2026-08-13): Chrome 153 breaking change: issuance request sends only email in application/json with HTTP Message Signatures (RFC 9421). Chrome 152 and earlier: application/x-www-form-urlencoded POST with request_token. Stable of 153 is scheduled end of August / Sep 8 two-week calendar. Demo issuance endpoint updated with structured-headers + http-message-sig.",
+      "added_at": "2026-08-20",
+      "status": "queued",
+      "notes": "금요일 뉴스 분석. 이미 큐에 있는 browser-two-week-release-cycle-2026, loaf-web-workers Chrome 153 how-to와 겹치지 않게, 대상은 이메일 제공자 issuance 엔드포인트의 요청 포맷 전환만. 153 베타(2026-08-19 프로모션)에서 form-urlencoded와 JSON+Signature를 나란히 받는지 문서와 데모 코드를 읽고, 레거시 포맷을 언제 끊을지 판단 기준을 적는다. 측정 금지(네트워크 발급은 제공자 계정 필요). 링크: declared-rules-fail-open-robots-txt-agents-md-2026, official-geo-subtraction-gsc-control-2026"
+    },
+    {
+      "slug": "chrome-153-extension-default-pinning-2026",
+      "title_idea": "Chrome 153은 확장 아이콘을 툴바에 기본으로 고정한다",
+      "content_type": "news",
+      "target_keyword": "Chrome 153 default pinning extensions",
+      "secondary_keywords": [
+        "extension action icon toolbar",
+        "Chrome 153 Canary pinning experiment",
+        "chrome.action user settings"
+      ],
+      "search_intent": "news",
+      "priority": 1,
+      "source": "Chrome Extensions what's new, posted 2026-08-03: Starting in Chrome 153, experimenting with pinning an extension's action icon to the browser's top-level toolbar by default. Live for some users in Chrome Canary. Chrome 153 beta window: Chromium Dash lists beta between Aug 19 and Sep 10, stable next week Aug 26 on the two-week calendar.",
+      "added_at": "2026-08-20",
+      "status": "queued",
+      "notes": "금요일 뉴스 분석. 확장 개발자가 action 아이콘이 항상 보인다고 가정하면 안 되는 이유, 사용자 고정 해제와의 관계, chrome.action.onUserSettingsChanged(Chrome 130)와의 연결. Canary 일부 사용자만 실험 중이므로 전수 실측 금지. 문서·메일링 리스트·what's-new 축자 대조. 링크: content-on-hover-focus-1413-tooltip-2026 (있으면), wcag22-target-size-audit-2026"
+    },
+    {
+      "slug": "chrome-153-beta-two-week-calendar-check-2026",
+      "title_idea": "2주 주기표의 Chrome 153 베타가 8월 19일에 실제로 올랐는지",
+      "content_type": "news",
+      "target_keyword": "Chrome 153 beta two-week release calendar",
+      "secondary_keywords": [
+        "Chrome 153 beta Aug 19",
+        "four-week vs two-week milestone",
+        "Chromium Dash schedule 153"
+      ],
+      "search_intent": "news",
+      "priority": 2,
+      "source": "developer.chrome.com/blog/chrome-two-week-release (Ben Mason / Deepak Ravichandran, 2026-03-03): M153 beta promotion old Wed Aug 26 vs new Wed Aug 19; stable old Tue Sep 22 vs new Tue Sep 8. Chromium Dash (2026-08-20 확인): Chrome 153 Beta between Aug 19 - Sep 10. chromereleases.googleblog.com/2026/08/ still listing Beta 152.0.7977.54 in the August archive crawl.",
+      "added_at": "2026-08-20",
+      "status": "queued",
+      "notes": "금요일 뉴스 분석. 2026-07-23에 넣은 browser-two-week-release-cycle-2026(3대 브라우저 개요)와 겹치지 않게, 질문은 하나: 새 달력의 첫 베타 프로모션(8/19)이 Chromium Dash·Chrome Release 블로그·chrome://version 채널에 실제로 찍혔는가. 문서 세 표면을 나란히 읽고 어긋난 칸만 남긴다. 링크: browser-two-week-release-cycle-2026(백로그), spam-update-rollout-window-search-status-vs-gsc-2026"
+    },
+    {
       "slug": "fetch-textstream-vs-text-first-chunk-2026",
       "title_idea": "첫 글자는 text()보다 얼마나 빨리 오나 — Response.textStream() 실측",
       "content_type": "how-to",

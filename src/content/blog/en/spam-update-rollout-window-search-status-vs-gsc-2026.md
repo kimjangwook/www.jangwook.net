@@ -1,6 +1,6 @@
 ---
-title: "I Timestamped Google's August 2026 Spam Update to the Minute. Search Console Still Can't Use It."
-description: "The Search Status Dashboard's incidents.json gives the August 2026 spam update a minute-level UTC start time, no login required. Search Console's join key is a PT date. I checked what survives the trip between them."
+title: "Spam Update Timed to the Minute. Search Console Can't Use It"
+description: "incidents.json gives the August 2026 spam update a minute-level UTC start. Search Console's join key is a PT date. The join leaves a mixed boundary day."
 pubDate: '2026-08-20'
 heroImage: '../../../assets/blog/spam-update-rollout-window-search-status-vs-gsc-2026/hero.png'
 tags:
@@ -44,7 +44,7 @@ The incident text itself tells you what to expect from the rollout: global, all 
 
 As of the dashboard's last update I checked — August 19, 23:30:49 PDT — the incident was still active. There is no `end` field in the JSON object: no null value, no empty string. The key is absent, cleanly encoding "we don't know" where many status APIs force a placeholder value instead.
 
-Fetching the incident data requires no credentials. `curl` with a generic user agent against `incidents.json` returns HTTP 200 and 12,903 bytes—no authentication, no API key. I probed seven paths on the host: `incidents.json`, the HTML page, the Atom feed, the JSON schema, and a products list all returned 200, while two guessed paths, `history.rss` and `summary.json`, returned 404. Google's footer links to all five working endpoints.
+Fetching the incident data requires no credentials. Unlike [declared robots.txt rules that fail open](/en/blog/en/declared-rules-fail-open-robots-txt-agents-md-2026/), the dashboard's `allow: /` actually matches what curl receives. `curl` with a generic user agent against `incidents.json` returns HTTP 200 and 12,903 bytes—no authentication, no API key. I probed seven paths on the host: `incidents.json`, the HTML page, the Atom feed, the JSON schema, and a products list all returned 200, while two guessed paths, `history.rss` and `summary.json`, returned 404. Google's footer links to all five working endpoints.
 
 ## The same second, three different strings
 
@@ -62,7 +62,7 @@ Three surfaces, three encodings of the identical moment: `16:27:00+00:00` in JSO
 
 ## Where the timestamp goes to die
 
-Search Console's API does not accept a timestamp. It accepts a date in Pacific Time, full stop.
+Search Console's API does not accept a timestamp. It accepts a date in Pacific Time, full stop. Same layer as [platform properties that exist on screen but not in the API docs](/en/blog/en/gsc-platform-properties-social-video-search-measurement-2026/): the UI's precision and the pipeline's join key are not the same contract.
 
 > Start date of the requested date range, in YYYY-MM-DD format, in PT time (UTC - 7:00/8:00). Must be less than or equal to the end date.
 > — [Search Console API — Search Analytics: query](https://developers.google.com/webmaster-tools/v1/searchanalytics/query)
@@ -84,7 +84,7 @@ What I could confirm is ten entries: nine closed and one open, with seven rankin
 
 The boundary-day pattern is structural, but not uniform. The 39/61 split for the August 2026 spam update recurs across other updates: the March 2026 spam update split 50/50, and a February 2026 serving incident split 83/17. Short rollouts show an even sharper effect. I counted how many PT calendar days fall *entirely* inside a rollout window without boundary contamination—clean days. The March 2026 spam update ran 19 hours 30 minutes across two PT calendar days, leaving zero clean days in Search Console. Every recorded day for that rollout is mixed. June: one clean day, out of a 2-day-1-hour run. Longer rollouts fare better, and the pattern becomes almost mechanical: 21 days 17 hours of runtime for the February 2026 Discover incident bought 21 clean days, and the August 2025 spam update's 26 days 15 hours bought 26. Once a rollout runs long enough for the two boundary days to fade, duration and clean-day count track one to one.
 
-The raw timestamps reveal a second pattern. The seconds field on every `begin` and `end` value is always `:00`, and every `end` value lands on a multiple of five minutes in the JSON. `created` and `modified`, by contrast, carry unrounded seconds scattered across the minute. That pattern distinguishes a human typing a round number into a form from a system recording the exact timestamp of an event. As a result, the gap between a declared start and the announcement notice varies. For ranking updates, the gap ranges from 0.8 minutes for the December 2025 core update to 18.1 minutes for the March 2026 spam update, with the August 2026 spam update at 1.8 minutes. The completion notices diverge further: the August 2025 spam update's completion notice posted 46 minutes *before* its own declared end time, while the other eight closed incidents have notices landing 0 to 58 minutes after the declared end. That divergence is not a bug in the dashboard; it reflects the difference between when an event occurred and when an operator confirmed it.
+The raw timestamps reveal a second pattern. The seconds field on every `begin` and `end` value is always `:00`, and every `end` value lands on a multiple of five minutes in the JSON. `created` and `modified`, by contrast, carry unrounded seconds scattered across the minute. That pattern distinguishes a human typing a round number into a form from a system recording the exact timestamp of an event. Same gap as [controls the docs describe versus what actually ships](/en/blog/en/official-geo-subtraction-gsc-control-2026/): a schema field is not a contract about how the value was produced. As a result, the gap between a declared start and the announcement notice varies. For ranking updates, the gap ranges from 0.8 minutes for the December 2025 core update to 18.1 minutes for the March 2026 spam update, with the August 2026 spam update at 1.8 minutes. The completion notices diverge further: the August 2025 spam update's completion notice posted 46 minutes *before* its own declared end time, while the other eight closed incidents have notices landing 0 to 58 minutes after the declared end. That divergence is not a bug in the dashboard; it reflects the difference between when an event occurred and when an operator confirmed it.
 
 I tested whether the human-facing duration column diverges from machine data. Comparing the HTML history table's rounded duration column against the raw `end - begin` calculation from JSON across all nine closed incidents showed exact alignment. The HTML rounds to the nearest hour: 18 days, 1 hour 35 minutes becomes "18 days, 2 hours" on the page. The human-facing display and machine feed agree; they simply present different units for the same source.
 

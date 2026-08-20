@@ -1,6 +1,6 @@
 ---
-title: 'August 2026 spam updateの開始時刻を分単位で取り、Search Consoleと突き合わせたら境界日が丸ごと混ざった'
-description: 'Google Search Status Dashboardのincidents.jsonは分単位のUTCで公開されている。Search Console APIの日付キーはPT日単位だ。この解像度差を実測したら、境界日は「前」でも「後」でもなく前後が混ざった一日になった。'
+title: 'August 2026 spam updateの開始時刻、Search Consoleでは境界日が混ざる'
+description: 'Google Search Status Dashboardのincidents.jsonはAugust 2026 spam updateの開始時刻を分単位UTCで公開する。Search Console APIの結合キーはPT日単位だ。解像度差を実測すると境界日は前後混在の一日になり、数値を補正する分解能は残らない。'
 pubDate: '2026-08-20'
 heroImage: '../../../assets/blog/spam-update-rollout-window-search-status-vs-gsc-2026/hero.png'
 tags:
@@ -41,7 +41,7 @@ August 2026 spam updateの開始時刻は、Google Search Status Dashboardのinc
 > August 2026 spam update Active Start Time: 18 Aug 2026, 09:27 PDT Last update: 18 Aug 2026, 09:28 PDT Impacted products: Ranking
 > — [Google Search Status Dashboard](https://status.search.google.com/)
 
-curlで叩くとincidents.jsonは認証もAPIキーも要らずに200を返した。robots.txtも全許可だ。
+curlで叩くとincidents.jsonは認証もAPIキーも要らずに200を返した。robots.txtも全許可だ。[宣言したrobots.txtがフェイルオープンで残る場合](/ja/blog/ja/declared-rules-fail-open-robots-txt-agents-md-2026/)とは逆で、ここでは宣言どおりに開いている。
 
 > allow: /
 > — [Search Status Dashboard incidents.json](https://status.search.google.com/incidents.json)
@@ -66,7 +66,7 @@ incidents.jsonのタイムスタンプを並べて秒の桁を見ると、はっ
 > begin 10件 seconds 全て 00、分値 {0,25,27,40,55}。end 9件 seconds 全て 00、分値 {0,10,30,40} — 全て5の倍数。created 10件 seconds は実際の値（2,3,14,18,21,25,28,33,43分台に散らばる）
 > — [Search Status Dashboard incidents.json](https://status.search.google.com/incidents.json)
 
-begin と end は人間が入力した宣言値で、秒はすべて00、endの分値は5の倍数しか出てこない。created と modified だけが秒まで持つ機械記録だ。宣言値と機械記録の乖離は実態とのズレを生む。August 2025 spam updateでは、完了告知が自身が宣言した終了時刻より46分早く出た。
+begin と end は人間が入力した宣言値で、秒はすべて00、endの分値は5の倍数しか出てこない。created と modified だけが秒まで持つ機械記録だ。[公式文書に書かれた制御点と実際の配信がずれた記録](/ja/blog/ja/official-geo-subtraction-gsc-control-2026/)と同じ層で、スキーマがあることと値の意味が契約されていることは別だ。宣言値と機械記録の乖離は実態とのズレを生む。August 2025 spam updateでは、完了告知が自身が宣言した終了時刻より46分早く出た。
 
 > August 2025 spam update は完了告知が2025-09-22T06:14:22Zなのに、自身が宣言したendは2025-09-22T07:00:00Z — 告知が終了宣言より46分先に上がった
 > — [Search Status Dashboard incidents.json](https://status.search.google.com/incidents.json)
@@ -80,7 +80,7 @@ Search Console APIのsearchanalytics.queryは、日付を次のように定義�
 > Start date of the requested date range, in YYYY-MM-DD format, in PT time (UTC - 7:00/8:00). Must be less than or equal to the end date.
 > — [Search Console API — Search Analytics: query](https://developers.google.com/webmaster-tools/v1/searchanalytics/query)
 
-時刻ではなく日付だ。PTのUTC-7とUTC-8のどちらを使うかは夏時間次第で、判定方法はドキュメントに明示されていない。Google自身が公式に推奨している対照方法がある。
+時刻ではなく日付だ。[プラットフォーム属性も画面にはあり API 文書にはなかった](/ja/blog/ja/gsc-platform-properties-social-video-search-measurement-2026/)のと同じ層で、画面の解像度とパイプラインが受け取れる解像度が違う。PTのUTC-7とUTC-8のどちらを使うかは夏時間次第で、判定方法はドキュメントに明示されていない。Google自身が公式に推奨している対照方法がある。
 
 > Check the Search Status Dashboard and take note of the start and end date of the core update. Compare the right dates: We recommend waiting at least a full week after a core update completes before analyzing your site in Search Console.
 > — [Google Search core updates and your website](https://developers.google.com/search/updates/core-updates)
@@ -89,15 +89,15 @@ Search Console APIのsearchanalytics.queryは、日付を次のように定義�
 
 ## 境界日で何が混ざるか
 
-UTCの日付文字列をPTの日付軸にそのまま置くとズレが生じる。過去のインシデント19個のタイムスタンプで確認すると、2件でズレが出た。もっとも、19件の母数で算出したズレの比率をそのまま将来に当てはめてよいかは、正直まだ判断がつかない。ズレた2件は両方とも2026年2月のServing障害で、beginとendがUTC 2026-02-25なのにPTでは2026-02-24だった。ランキングアップデート7件はUTC 16:00前後に始まるため、たまたまUTC日付とPT日付が一致していた——保証ではなく偶然だ。PDTならUTC 00:00〜07:00、PSTなら00:00〜08:00に始まるインシデントは必ずズレる。
-UTCの日付文字列をPTの日付軸にそのまま置くとズレが生じる。過去のインシデント19個のタイムスタンプで確認すると、2件でズレが出た。もっとも、19件の母数で算出したズレの比率をそのまま将来に当てはめてよいかは、正直まだ判断がつかない。ズレた2件は両方とも2026年2月のServing障害で、beginとendがUTC 2026-02-25なのにPTでは2026-02-24だった。ランキングアップデート7件はUTC 16:00前後に始まるため、たまたまUTC日付とPT日付が一致していた——保証ではなく偶然だ。PDTならUTC 00:00〜07:00、PSTならUTC 00:00〜08:00に始まるインシデントは必ずズレる。
+UTCの日付文字列をPTの日付軸にそのまま置くとズレが生じる。過去のインシデント19個のタイムスタンプで確認すると、2件でズレが出た。もっとも、19件の母数で算出したズレの比率をそのまま将来に当てはめてよいかは、正直まだ判断がつかない。ズレた2件は両方とも2026年2月のServing障害で、beginとendがUTC 2026-02-25なのにPTでは2026-02-24だった。ランキングアップデート7件はUTC 16:00前後に始まるため、たまたまUTC日付とPT日付が一致していた——保証ではなく偶然だ。PDTならUTC 00:00-07:00、PSTなら00:00-08:00に始まるインシデントは必ずズレる。
+UTCの日付文字列をPTの日付軸にそのまま置くとズレが生じる。過去のインシデント19個のタイムスタンプで確認すると、2件でズレが出た。もっとも、19件の母数で算出したズレの比率をそのまま将来に当てはめてよいかは、正直まだ判断がつかない。ズレた2件は両方とも2026年2月のServing障害で、beginとendがUTC 2026-02-25なのにPTでは2026-02-24だった。ランキングアップデート7件はUTC 16:00前後に始まるため、たまたまUTC日付とPT日付が一致していた——保証ではなく偶然だ。PDTならUTC 00:00-07:00、PSTならUTC 00:00-08:00に始まるインシデントは必ずズレる。
 
 開始日がロールアウト前後にどれだけ混じるかも計算した。
 
 > 2026-08 spam 39%/61%, 2026-03 core 8%/92%, 2026-03 spam 50%/50%, 2026-02 Serving 83%/17%
 > — [Search Status Dashboard incidents.json](https://status.search.google.com/incidents.json)
 
-混合比を決めるのはロールアウトの長さではなく、PT基準の開始時刻の位置だ。PT 02:00に始まった2026年3月のcore updateは開始日の92%がロールアウト後だが、PT 12:00に始まった2026年3月のspam updateは正確に50%/50%になる。ランキングアップデートの大半はPT午前8〜9時台に始まるため、開始日の約6割はすでにロールアウト後という計算になる。開始日を「更新前」として除外すると、その日のトラフィックの半分以上を誤ってラベル付けしてしまう。
+混合比を決めるのはロールアウトの長さではなく、PT基準の開始時刻の位置だ。PT 02:00に始まった2026年3月のcore updateは開始日の92%がロールアウト後だが、PT 12:00に始まった2026年3月のspam updateは正確に50%/50%になる。ランキングアップデートの大半はPT午前8時から9時台に始まるため、開始日の約6割はすでにロールアウト後という計算になる。開始日を「更新前」として除外すると、その日のトラフィックの半分以上を誤ってラベル付けしてしまう。
 
 短いロールアウトほど境界日の混在が重く効く。ロールアウト期間をPT日単位で区切り、完全内部日を数えると、2026年3月のspam updateは19時間30分しか続かなかったのに跨いだPT日は2日、そのうち完全内部日はゼロだった。GSCの日付軸にきれいな1日が存在しない。2日1時間続いた2026年6月のspam updateは完全内部日が1日だけだ。対照的に、21日17時間の2026年2月Discover障害は21日、26日15時間の2025年8月spam updateは26日ある。ロールアウトが長いほど、境界日の影響は薄まって消える。
 
@@ -119,7 +119,7 @@ Atomフィードだけで運用しているチームにも落とし穴がある�
 
 ## 誰に向くか、向かないか
 
-GSC APIを定期バッチで回して日別成果を蓄積しているチームなら、ラベル列一つで回帰分析のノイズ区間を切り離せる。短いspam updateのように完全内部日が0〜1日しかないケースでは、窓の取り方自体が結論を左右するので、ラベル付けが特に効く。
+GSC APIを定期バッチで回して日別成果を蓄積しているチームなら、ラベル列一つで回帰分析のノイズ区間を切り離せる。短いspam updateのように完全内部日が0日から1日しかないケースでは、窓の取り方自体が結論を左右するので、ラベル付けが特に効く。
 
 インシデント情報の自動取得は、複数サイトや複数プロパティを一つのダッシュボードに集約し、人間が都度画面を開けない運用で威力を発揮する。裏返せば、ロールアウトの相関を因果として扱おうとする分析には向かない。境界日の混在を消す方法はなく、順位変動の原因も特定できないからだ。次の場面でも不要になる。
 

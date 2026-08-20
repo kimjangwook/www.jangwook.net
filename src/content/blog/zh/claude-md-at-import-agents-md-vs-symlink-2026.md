@@ -1,6 +1,6 @@
 ---
 title: '@import 与软链接实测：CLAUDE.md 读 AGENTS.md 谁在无人值守时失效'
-description: '21次运行三路对比 @import、软链接、/import 一次性复制。@import 在仓库外目标上无头模式全部失败，软链接3/3全过——原因不是写法，是解析发生在哪一层。附CI存活检测命令。'
+description: '官方文档把 CLAUDE.md 的 @AGENTS.md import 和软链接写成同一问题的两种解法。七个条件、二十一次无头模式运行后，指向仓库外目标的 @import 在审批闸口全部失败且无警告、无错误。软链接三次运行 3/3 通过，无人值守 CI 里能活下来的就是软链接而不是 @import。'
 pubDate: '2026-08-19'
 heroImage: '../../../assets/blog/claude-md-at-import-agents-md-vs-symlink-2026/hero.png'
 tags:

@@ -1,6 +1,6 @@
 ---
 title: '@importとシンボリックリンク、CLAUDE.mdはどちらで壊れるか21回実測'
-description: 'CLAUDE.mdにAGENTS.mdを読ませる三つの方法を7条件×3回、計21回headlessで実測した。リポジトリ外を指す@importだけが承認ゲートで0/3になり、警告もエラーも出ない。symlinkとどちらを選ぶかは好みではなく、対象ファイルの置き場所とだれが実行するかで決まる。'
+description: '公式文書はCLAUDE.mdの@importとシンボリックリンクを同じ解法として並べる。AGENTS.mdを読ませる三つの方法を7条件×3回、計21回headlessで実測した。リポジトリ外を指す@importだけ承認ゲートで0/3、警告もエラーも出ない。symlinkの可否は置き場所で決まる結果だ。'
 pubDate: '2026-08-19'
 heroImage: '../../../assets/blog/claude-md-at-import-agents-md-vs-symlink-2026/hero.png'
 tags:
