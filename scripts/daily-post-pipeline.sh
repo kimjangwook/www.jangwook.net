@@ -46,13 +46,13 @@
 
 PROJECT_DIR="/Users/jangwook/workspace/www.jangwook.net"
 CONTROLLER_DIR="/Users/jangwook/workspace/claude-controller"
-PROMPT_DIR="/scripts/prompts"
-BRIEF="/data/column-brief.md"
-SEAL_CHECK="/data/seal-check.md"
-GEMINI_REVIEW="/data/review-gemini.md"
-ENGINE_LOG="/data/write-engines.txt"
+PROMPT_DIR="$PROJECT_DIR/scripts/prompts"
+BRIEF="$PROJECT_DIR/data/column-brief.md"
+SEAL_CHECK="$PROJECT_DIR/data/seal-check.md"
+GEMINI_REVIEW="$PROJECT_DIR/data/review-gemini.md"
+ENGINE_LOG="$PROJECT_DIR/data/write-engines.txt"
 
-CLAUDE_BIN="/opt/homebrew/bin/claude"
+CLAUDE_SDK="${CLAUDE_SDK:-/Users/jangwook/workspace/life-manager/src/cli/claude-sdk-llm.ts}"  # 2026-08-21 CLI 퇴출
 CLAUDE_MODEL="opus"
 CLAUDE_EFFORT="medium"          # 판단 단계 기본 (과잉 생각 방지)
 CLAUDE_WRITE_MODEL="fable"      # 집필 1순위
@@ -82,10 +82,11 @@ LANGS="en ko ja zh"
 # 집필 엔진. 기본 sdk — Agent SDK 편집부(sonnet). 2026-08-19 claude-md-at-import
 # redo 실전(4개 언어 재발행, seal-check·insight-gate 통과)을 보고 fable 에서
 # 전환했다. 실패하면 claude opus medium 으로 폴백한다.
-# 집필 엔진: 기본 hybrid (영어=GPT Codex, 다국어 번역=Gemini 3.7 Flash)
-WRITER="hybrid"
-WRITER_EN="codex"
-WRITER_TRANS="agy"
+# 집필 엔진: 기본 sdk — Agent SDK 편집부(sonnet). 2026-08-21 LLM CLI 금지 결정으로
+# hybrid(영어=codex CLI, 번역=agy CLI)에서 되돌렸다. codex·agy 는 더 쓰지 않는다.
+WRITER="sdk"
+WRITER_EN="sdk"
+WRITER_TRANS="sdk"
 REDO_SLUG=""
 RESUME_SLUG=""
 RESUME_SLUG_ARG=""
@@ -172,11 +173,10 @@ esac
 
 # 편집자는 집필자와 다른 모델이어야 한다. 자기 문장에서 자기 군더더기는 잘 안 보인다.
 # POLISH=0 으로 편집 패스를 끌 수 있다.
+# 2026-08-21 agy 퇴출 — 편집 패스는 claude (opus, SDK 러너 경유).
+# sdk 편집부(sonnet)와 모델이 달라 "집필자 ≠ 편집자" 원칙은 유지된다.
 if [ -z "${POLISH_ENGINE:-}" ]; then
-  case "$WRITER" in
-    agy) POLISH_ENGINE="claude" ;;
-    *)   POLISH_ENGINE="agy" ;;
-  esac
+  POLISH_ENGINE="claude"
 fi
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] pipeline: $*"; }
@@ -185,13 +185,14 @@ log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] pipeline: $*"; }
 # claude: 판단·폴백 집필. 컨트롤러 레포(스킬 원본)를 읽어야 하므로 --add-dir.
 # $1=effort, $2=prompt
 run_claude() {
+  # 2026-08-21: claude CLI → Claude Agent SDK 러너. LLM 은 CLI 로 부르지 않는다.
   local effort="$1" prompt="$2" model="${3:-$CLAUDE_MODEL}"
-  "$CLAUDE_BIN" -p "$prompt" \
-    --dangerously-skip-permissions \
+  node "${CLAUDE_SDK:-/Users/jangwook/workspace/life-manager/src/cli/claude-sdk-llm.ts}" \
     --model "$model" \
     --effort "$effort" \
+    --cwd "$PROJECT_DIR" \
     --add-dir "$CONTROLLER_DIR" \
-    </dev/null
+    "$prompt" </dev/null
 }
 
 # codex: 집필 단계. 사용자 config 가 바뀌어도 모델/추론량이 흔들리지 않게 명시한다.
@@ -451,8 +452,8 @@ polish_lang() {
 }
 
 # ── 사전 점검 ──────────────────────────────────────────────────────────
-if [ ! -x "$CLAUDE_BIN" ]; then
-  log "FATAL: claude missing at $CLAUDE_BIN"
+if [ ! -f "$CLAUDE_SDK" ]; then
+  log "FATAL: claude-sdk-llm missing at $CLAUDE_SDK"
   exit 1
 fi
 if [ "$WRITER" = "codex" ] && [ ! -x "$CODEX_BIN" ]; then
@@ -712,12 +713,8 @@ done
 # 싸고 빠른 모델에게 사실·인용·링크·frontmatter 같이 기계적으로 대조 가능한
 # 층을 훑게 하고, 문체 판정은 다음 단계 opus 에 맡긴다.
 # 1차 리뷰어는 집필 엔진과 달라야 한다. 자기 문장을 자기가 읽으면 덜 걸린다.
-# 기본은 agy(gemini). 집필이 agy 였거나 agy 미설치 시 claude sonnet 으로 한다.
-if [ "$WRITER" = "agy" ] || [ ! -x "$AGY_BIN" ]; then
-  REVIEWER1="claude"
-else
-  REVIEWER1="agy"
-fi
+# 2026-08-21: agy 퇴출 — 리뷰는 항상 claude sonnet (SDK 러너 경유).
+REVIEWER1="claude"
 if [ "$REVIEWER1" = "agy" ] && [ -x "$AGY_BIN" ]; then
   log "phase review-1 (reviewer=$REVIEWER1, writer=$WRITER)"
   GEMINI_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-review-gemini.md")"
@@ -726,7 +723,7 @@ if [ "$REVIEWER1" = "agy" ] && [ -x "$AGY_BIN" ]; then
     log "review-1 실패(rc=$REVIEW1_RC) 또는 산출 없음 — opus 단독 리뷰로 진행"
     rm -f "$GEMINI_REVIEW"
   fi
-elif [ "$REVIEWER1" = "claude" ] && [ -x "$CLAUDE_BIN" ]; then
+elif [ "$REVIEWER1" = "claude" ] && [ -f "$CLAUDE_SDK" ]; then
   log "phase review-1 (reviewer=$REVIEWER1/sonnet, writer=$WRITER)"
   GEMINI_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-review-gemini.md")"
   run_claude "low" "$GEMINI_PROMPT" "sonnet"; REVIEW1_RC=$?; REVIEWER1_LABEL="claude/sonnet"

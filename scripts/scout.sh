@@ -18,7 +18,7 @@ OUT_DIR="$PROJECT_DIR/data/scout/$DATE"
 mkdir -p "$OUT_DIR"
 
 GROK_BIN="${GROK_BIN:-/Users/jangwook/.grok/bin/grok}"
-AGY_BIN="${AGY_BIN:-/Users/jangwook/.local/bin/agy}"
+GEMINI_LLM="${GEMINI_LLM:-/Users/jangwook/workspace/life-manager/src/cli/gemini-llm.ts}"
 CLAUDE_BIN="${CLAUDE_BIN:-/Users/jangwook/.local/bin/claude}"
 
 log() { printf '%s scout[%s] %s\n' "$(date '+%H:%M:%S')" "$MODE" "$*" >&2; }
@@ -93,31 +93,23 @@ scout_web() {
 出力は次のJSON配列のみ。コードブロックなし、説明なし:
 [{"url":"...","points_to":null,"claim":"...","publisher":"...","observed_at":"YYYY-MM-DD"}]'
 
+  # LLM 은 CLI 로 부르지 않는다 (2026-08-21 규칙) — claude CLI·agy 모두 제거,
+  # Gemini API(genai) 직호출. Key 1 실패 시 Key 2 로 폴백.
   local out rc
-  if [ -x "$CLAUDE_BIN" ]; then
-    out="$("$CLAUDE_BIN" -p "$prompt" --permission-mode acceptEdits </dev/null 2>&1)"; rc=$?
-  elif [ -x "$AGY_BIN" ]; then
-    out="$("$AGY_BIN" --print "$prompt" \
-      --model "${AGY_MODEL:-gemini-3.7-flash-high}" \
-      --dangerously-skip-permissions \
-      --add-dir "$CONTROLLER_DIR" \
-      --print-timeout 20m </dev/null 2>&1)"; rc=$?
-  else
-    rc=127
-  fi
+  out="$(node "$GEMINI_LLM" \
+    --env-file "$CONTROLLER_DIR/.env" \
+    --api-key-env GEMINI_API_KEY_FREE \
+    --model gemini-3.7-flash --thinking high \
+    "$prompt" </dev/null 2>&1)"; rc=$?
 
   if [ "$rc" -ne 0 ] || [ -z "${out// }" ]; then
-    log "scout_web primary failed (rc=$rc) — agy 로 폴백"
-    if [ -x "$AGY_BIN" ]; then
-      out="$("$AGY_BIN" --print "$prompt" \
-        --model "${AGY_MODEL:-gemini-3.7-flash-high}" \
-        --dangerously-skip-permissions \
-        --add-dir "$CONTROLLER_DIR" \
-        --print-timeout 20m </dev/null 2>&1)"; rc=$?
-      [ "$rc" -eq 0 ] || { log "agy fallback rc=$rc"; echo "[]"; return 0; }
-    else
-      echo "[]"; return 0
-    fi
+    log "scout_web Key 1 failed (rc=$rc) — Key 2 로 폴백"
+    out="$(node "$GEMINI_LLM" \
+      --env-file "$CONTROLLER_DIR/.env" \
+      --api-key-env GEMINI_API_KEY_FREE_2 \
+      --model gemini-3.7-flash --thinking high \
+      "$prompt" </dev/null 2>&1)"; rc=$?
+    [ "$rc" -eq 0 ] || { log "gemini Key 2 fallback rc=$rc"; echo "[]"; return 0; }
   fi
   printf '%s' "$out"
 }

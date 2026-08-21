@@ -274,7 +274,7 @@ async function migrate() {
     '',
     '## Codex 프로젝트 신뢰 설정',
     '- 프로젝트 루트에서 실행 시, 전역 `~/.codex/config.toml`에 다음 항목이 있어야 신뢰 경고가 발생하지 않습니다.',
-    '  - `[projects."/Users/jangwook/Documents/workspace/www.jangwook.net"]`',
+    '  - `[projects."/Users/jangwook/workspace/www.jangwook.net"]`',
     '  - `trust_level = "trusted"`',
     '',
   ].join('\n');

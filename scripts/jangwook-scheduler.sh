@@ -233,7 +233,8 @@ CLAUDE_BIN="${CLAUDE_BIN:-/opt/homebrew/bin/claude}"
 claude_preflight() {
     local tmp rc
     tmp="$(mktemp -t claude-preflight 2>/dev/null || echo /tmp/claude-preflight.$$)"
-    run_timeout 90 "$CLAUDE_BIN" -p 'Reply with exactly: OK' \
+    # 2026-08-21: claude CLI → SDK 러너 (LLM 은 CLI 로 부르지 않는다)
+    run_timeout 90 node "${CLAUDE_SDK:-/Users/jangwook/workspace/life-manager/src/cli/claude-sdk-llm.ts}" --model sonnet --max-turns 1 'Reply with exactly: OK' \
         --dangerously-skip-permissions --model opus </dev/null >"$tmp" 2>&1
     rc=$?
     if [ "$rc" -eq 0 ] && grep -qi 'OK' "$tmp"; then
@@ -253,7 +254,7 @@ if [ "$TASK_ENGINE" = "grok" ]; then
         exit 1
     fi
 else
-    if [ ! -x "$CLAUDE_BIN" ]; then
+    if [ ! -f "${CLAUDE_SDK:-/Users/jangwook/workspace/life-manager/src/cli/claude-sdk-llm.ts}" ]; then
         echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: claude($CLAUDE_BIN) 없음" >> "$LOG_FILE"
         tg_send "[jangwook.net] ${TASK_NAME}: claude 바이너리 없음
 경로: ${CLAUDE_BIN}"

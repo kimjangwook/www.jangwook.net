@@ -64,7 +64,7 @@ Transform analytics insights into trackable improvements by:
 
 **File Structure:**
 ```
-/Users/jangwook/Documents/workspace/jangwook.net/
+/Users/jangwook/workspace/jangwook.net/
 ├── improvement-tracking/
 │   ├── active-todos.md           # Current active improvements
 │   ├── completed-todos.md        # Archive of completed items
@@ -86,7 +86,7 @@ Transform analytics insights into trackable improvements by:
 
 ### 3. Improvement History Page
 
-**Location:** `/Users/jangwook/Documents/workspace/jangwook.net/src/pages/improvement-history.astro`
+**Location:** `/Users/jangwook/workspace/jangwook.net/src/pages/improvement-history.astro`
 
 **Page Structure:**
 ```astro
