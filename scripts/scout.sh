@@ -94,8 +94,9 @@ scout_web() {
 [{"url":"...","points_to":null,"claim":"...","publisher":"...","observed_at":"YYYY-MM-DD"}]'
 
   local out rc
-  if [ -x "$AGY_BIN" ]; then
-    # --print 는 프롬프트를 **값으로** 받는다. 위치 인자로 주면 조용히 빈 세션이 뜬다.
+  if [ -x "$CLAUDE_BIN" ]; then
+    out="$("$CLAUDE_BIN" -p "$prompt" --permission-mode acceptEdits </dev/null 2>&1)"; rc=$?
+  elif [ -x "$AGY_BIN" ]; then
     out="$("$AGY_BIN" --print "$prompt" \
       --model "${AGY_MODEL:-gemini-3.7-flash-high}" \
       --dangerously-skip-permissions \
@@ -106,10 +107,17 @@ scout_web() {
   fi
 
   if [ "$rc" -ne 0 ] || [ -z "${out// }" ]; then
-    log "agy rc=$rc — claude 로 폴백"
-    [ -x "$CLAUDE_BIN" ] || { log "claude 도 없다"; echo "[]"; return 0; }
-    out="$("$CLAUDE_BIN" -p "$prompt" --permission-mode acceptEdits </dev/null 2>&1)"; rc=$?
-    [ "$rc" -eq 0 ] || { log "claude rc=$rc"; echo "[]"; return 0; }
+    log "scout_web primary failed (rc=$rc) — agy 로 폴백"
+    if [ -x "$AGY_BIN" ]; then
+      out="$("$AGY_BIN" --print "$prompt" \
+        --model "${AGY_MODEL:-gemini-3.7-flash-high}" \
+        --dangerously-skip-permissions \
+        --add-dir "$CONTROLLER_DIR" \
+        --print-timeout 20m </dev/null 2>&1)"; rc=$?
+      [ "$rc" -eq 0 ] || { log "agy fallback rc=$rc"; echo "[]"; return 0; }
+    else
+      echo "[]"; return 0
+    fi
   fi
   printf '%s' "$out"
 }

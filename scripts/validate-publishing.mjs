@@ -607,6 +607,41 @@ async function validateSourcesClosure(posts) {
   }
 }
 
+function validateNoTildes(posts) {
+  const TILDE_PATTERN = /[~〜～]/;
+  for (const post of posts.filter((item) => item.indexable)) {
+    const title = String(post.data.title ?? '');
+    const desc = String(post.data.description ?? '');
+    if (TILDE_PATTERN.test(title)) {
+      rebuildGate(post, `${post.relPath}: title에 물결표(~, 〜, ～) 포함 — "${title}"`, '물결표 사용');
+    }
+    if (TILDE_PATTERN.test(desc)) {
+      rebuildGate(post, `${post.relPath}: description에 물결표(~, 〜, ～) 포함 — "${desc}"`, '물결표 사용');
+    }
+    const related = Array.isArray(post.data.relatedPosts) ? post.data.relatedPosts : [];
+    for (const rec of related) {
+      if (rec?.reason && typeof rec.reason === 'object') {
+        for (const [lang, val] of Object.entries(rec.reason)) {
+          if (TILDE_PATTERN.test(String(val ?? ''))) {
+            rebuildGate(post, `${post.relPath}: relatedPosts reason.${lang}에 물결표 포함 — "${val}"`, '물결표 사용');
+          }
+        }
+      }
+    }
+
+    // 본문 검사 (코드블록 ```...```, 인라인 코드 `...`, URL [...](...) 내부 제외)
+    let text = String(post.content ?? '').replace(/^(`{3,})[\s\S]*?^\1`*\s*$/gm, '');
+    text = text.replace(/`[^`\n]+`/g, '');
+    text = text.replace(/\]\([^)]+\)/g, ']');
+
+    if (TILDE_PATTERN.test(text)) {
+      const match = text.match(/[^\n]{0,30}[~〜～][^\n]{0,30}/);
+      const snippet = match ? match[0].trim() : '';
+      rebuildGate(post, `${post.relPath}: 본문 산문에 물결표(~, 〜, ～) 포함 — "...${snippet}..."`, '물결표 사용');
+    }
+  }
+}
+
 async function main() {
   await validateTestFlag();
   const posts = await loadPosts();
@@ -623,6 +658,7 @@ async function main() {
   validateRelatedReasonLanguage(posts);
   validateBodyLength(posts);
   validateReferencesSection(posts);
+  validateNoTildes(posts);
   await validateSourcesClosure(posts);
   flushLegacyWarnings();
   flushRebuildWarnings();

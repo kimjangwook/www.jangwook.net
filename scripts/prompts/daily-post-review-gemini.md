@@ -17,6 +17,8 @@ Check, per language:
 4. **Links and images.** Internal links resolve to real files. Image paths exist. Broken or invented URLs.
 5. **H2 spine.** List each file's H2 headings in order. Say plainly whether three or more languages walk the same topic order. Do not judge whether that is acceptable — report the sequences and let the second reviewer decide.
 6. **Truncation.** A file that stops mid-section, an empty section, a heading with no body, a dangling code fence.
+7. **Wave / tilde characters.** Any `~`, `〜`, `～` in the prose (outside code blocks) is a finding.
+8. **Unexplained domain jargon.** Any core technical term/acronym dropped without grounding in plain language for non-developer readers is a finding.
 
 Write `data/review-gemini.md` like this:
 

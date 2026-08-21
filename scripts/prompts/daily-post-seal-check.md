@@ -9,6 +9,8 @@ Check only:
 - facts, numbers and quotes stay inside the 브리프 `## LOCKED` block
 - three or more languages do not share the same H2 topic order (robots → console → schema…)
 - **no impersonated execution** — see below
+- **no wave characters (`~`, `〜`, `～`)** in prose (outside code blocks)
+- **no unexplained domain jargon** that leaves non-developer readers stranded
 - if the brief says `hero_kind: illustration`, the body carries at least one figure
   or code block of its own. A generated illustration is decoration, not evidence.
 

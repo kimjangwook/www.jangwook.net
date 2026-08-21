@@ -14,7 +14,7 @@ Never:
 - Add connectives (moreover, therefore, as such) to smooth the flow. That is contamination, not editing.
 - Add an introduction, a summary, or a closing paragraph.
 - Delete the author's failures, caveats, or admissions of not knowing. That is what the piece is worth.
-- **Delete a paragraph that explains a cause.** That paragraph is what the piece sells. The rule below about cutting explanation means background, definitions, and restatement — not the passage working out what produced what. Keep it even when it runs long. When in doubt, keep it.
+- **Delete a paragraph that explains a cause or essential technical context.** That paragraph is what the piece sells. The rule below about cutting explanation means redundant fluff and restatement — not the passage working out what produced what or explaining a domain term for non-developer readers (PMs, team leads, business side). Keep it even when it runs long. When in doubt, keep it.
 - Delete reproduction commands, code blocks, or measurement output. They stay even when they look long. A reader being able to run it is what this blog sells. Cut explanation, never the command.
 
 Check each sentence silently, and fix:
@@ -25,11 +25,12 @@ Check each sentence silently, and fix:
 5. A paragraph that restates an earlier point in new words. Cut the later one.
 6. Unearned adjectives: robust, seamless, powerful, innovative, comprehensive, significant, increasingly.
 7. A noun built from a verb where the verb would do: "performs a validation of" → "validates".
-8. Parenthetical glosses. More than three in the piece: cut the excess and use a plainer word instead.
+8. Unexplained technical terms. Unpack their meaning and practical role naturally so non-developer readers (PMs, team leads, business side) immediately follow the flow.
 9. Stacked hedges. Two "it's not that…" in one section becomes one.
 9b. Consecutive sections that both end on a negation. Do not delete the caveat — move it. Let one section close on a judgment or the next action instead.
 10. A run of sentences at the same length. Break one. Do not alternate short/long as a pattern.
 11. Also / Moreover / Therefore / In this way at the start of a sentence. Cut them. If the sentences really connect, they connect without one.
+11b. Wave / tilde characters (`~`, `〜`, `～`). Completely remove all forms of tildes and replace with hyphens (`-`) or natural ranges (`from X to Y`, `X to Y`).
 12. Sentences whose subject is the article or an abstraction. Turn `this post argues that` into a person or a team. Unpack `by means of` into a concrete verb.
 13. Latinate pileups. Drop in one plain verb a reader can picture.
 

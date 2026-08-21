@@ -193,7 +193,7 @@ esac
 # POLISH=0 으로 편집 패스를 끌 수 있다.
 if [ -z "${POLISH_ENGINE:-}" ]; then
   case "$WRITER" in
-    agy) POLISH_ENGINE="codex" ;;
+    agy) POLISH_ENGINE="claude" ;;
     *)   POLISH_ENGINE="agy" ;;
   esac
 fi
@@ -718,20 +718,24 @@ done
 # 싸고 빠른 모델에게 사실·인용·링크·frontmatter 같이 기계적으로 대조 가능한
 # 층을 훑게 하고, 문체 판정은 다음 단계 opus 에 맡긴다.
 # 1차 리뷰어는 집필 엔진과 달라야 한다. 자기 문장을 자기가 읽으면 덜 걸린다.
-# 기본은 agy(gemini). 집필이 agy 였으면 codex 로 바꾼다.
-if [ "$WRITER" = "agy" ]; then
-  REVIEWER1="codex"
+# 기본은 agy(gemini). 집필이 agy 였거나 agy 미설치 시 claude sonnet 으로 한다.
+if [ "$WRITER" = "agy" ] || [ ! -x "$AGY_BIN" ]; then
+  REVIEWER1="claude"
 else
   REVIEWER1="agy"
 fi
-if { [ "$REVIEWER1" = "agy" ] && [ -x "$AGY_BIN" ]; } || { [ "$REVIEWER1" = "codex" ] && [ -x "$CODEX_BIN" ]; }; then
+if [ "$REVIEWER1" = "agy" ] && [ -x "$AGY_BIN" ]; then
   log "phase review-1 (reviewer=$REVIEWER1, writer=$WRITER)"
   GEMINI_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-review-gemini.md")"
-  if [ "$REVIEWER1" = "agy" ]; then
-    run_agy "$GEMINI_PROMPT" "$AGY_REVIEW_MODEL"; REVIEW1_RC=$?; REVIEWER1_LABEL="$AGY_REVIEW_MODEL"
-  else
-    run_codex "$GEMINI_PROMPT"; REVIEW1_RC=$?; REVIEWER1_LABEL="$CODEX_MODEL"
+  run_agy "$GEMINI_PROMPT" "$AGY_REVIEW_MODEL"; REVIEW1_RC=$?; REVIEWER1_LABEL="$AGY_REVIEW_MODEL"
+  if [ "$REVIEW1_RC" -ne 0 ] || [ ! -f "$GEMINI_REVIEW" ]; then
+    log "review-1 실패(rc=$REVIEW1_RC) 또는 산출 없음 — opus 단독 리뷰로 진행"
+    rm -f "$GEMINI_REVIEW"
   fi
+elif [ "$REVIEWER1" = "claude" ] && [ -x "$CLAUDE_BIN" ]; then
+  log "phase review-1 (reviewer=$REVIEWER1/sonnet, writer=$WRITER)"
+  GEMINI_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-review-gemini.md")"
+  run_claude "low" "$GEMINI_PROMPT" "sonnet"; REVIEW1_RC=$?; REVIEWER1_LABEL="claude/sonnet"
   if [ "$REVIEW1_RC" -ne 0 ] || [ ! -f "$GEMINI_REVIEW" ]; then
     log "review-1 실패(rc=$REVIEW1_RC) 또는 산출 없음 — opus 단독 리뷰로 진행"
     rm -f "$GEMINI_REVIEW"

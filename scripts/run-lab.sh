@@ -180,7 +180,7 @@ for i in $(seq 0 $((CELL_COUNT - 1))); do
   rm -rf "$CELL_DIR"
   log "cell=$CELL_ID 실행 종료 rc:${RUN_RCS}"
 
-  # agy 가 원시 출력을 읽고 observe 기준으로 판정한다.
+  # judge: claude sonnet 이 원시 출력을 읽고 observe 기준으로 판정한다 (실패 시 agy).
   JUDGE_PROMPT="$(sed -e "s#{{RAW_DIR}}#$RAW_DIR#g" \
                       -e "s#{{CELL_ID}}#$CELL_ID#g" \
                       -e "s#{{REPEATS}}#$CELL_REPEATS#g" \
@@ -188,9 +188,16 @@ for i in $(seq 0 $((CELL_COUNT - 1))); do
                       -e "s#{{RESULTS_JSONL}}#$RESULTS_JSONL#g" \
                       "$PROMPT_DIR/lab-judge.md")"
   JUDGE_PROMPT="${JUDGE_PROMPT/\{\{OBSERVE\}\}/$CELL_OBSERVE}"
-  "$AGY_BIN" --print "$JUDGE_PROMPT" --model "$AGY_MODEL" \
-    --dangerously-skip-permissions --print-timeout 5m </dev/null >>"$LOG_FILE" 2>&1 \
-    || log "cell=$CELL_ID 판정 실패 — 이 셀은 results.jsonl 에 안 남는다"
+  JUDGE_RC=1
+  if [ -x "$CLAUDE_BIN" ]; then
+    "$CLAUDE_BIN" -p "$JUDGE_PROMPT" --dangerously-skip-permissions --model sonnet </dev/null >>"$LOG_FILE" 2>&1
+    JUDGE_RC=$?
+  elif [ -x "$AGY_BIN" ]; then
+    "$AGY_BIN" --print "$JUDGE_PROMPT" --model "$AGY_MODEL" \
+      --dangerously-skip-permissions --print-timeout 5m </dev/null >>"$LOG_FILE" 2>&1
+    JUDGE_RC=$?
+  fi
+  [ "$JUDGE_RC" -ne 0 ] && log "cell=$CELL_ID 판정 실패 — 이 셀은 results.jsonl 에 안 남는다"
 done
 
 RECORDED=$(wc -l < "$RESULTS_JSONL" | tr -d ' ')

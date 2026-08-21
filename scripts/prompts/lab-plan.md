@@ -9,7 +9,7 @@ Goal: design one deep experiment and write only `{{LAB_DIR}}/plan.json`. You do 
 
 1. `data/topic-pick.md` 를 연다. `testable:` 칸이 무엇을 어떻게 잴지 말한다.
 2. `hook:` 과 `sources[]` 를 읽어 그 주제의 주장이 무엇인지 파악한다.
-3. **그 주장을 반증하거나 확인할 셀 3~6개**를 설계한다. 그 이상은 예산에 안 들어간다.
+3. **그 주장을 반증하거나 확인할 셀 3-6개**를 설계한다. 그 이상은 예산에 안 들어간다.
    실행 예산이 25분, 셀당 상한이 2분이다.
 4. `testable:` 가 `no` 면 `plan.json` 을 쓰지 말고 그대로 끝낸다.
    재료가 없는 것이 실패는 아니다 — 빈 `tested[]` 로 글은 나간다.
