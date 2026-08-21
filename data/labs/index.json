@@ -213,5 +213,51 @@
     "consumed": false,
     "surprised": false,
     "headline": "배선 없는 AGENTS.md 는 0/3 hit 이고 total_input 도 통제 셀과 −2 토큰이라 9,674 바이트 문서가 프롬프트에 아예 들어가지 않는다. @import(17978)·심볼릭 링크(17856)·복사(17862) 세 배선은 전부 3/3 hit 에 문서 한 벌 2,920 토큰만 청구했고, @import 는 복사보다 116 토큰 많을 뿐 문서를 이중 계상하지 않는다. 같은 `@AGENTS.md` 한 줄을 마크다운 코드펜스로 감싸면 ZZFENC85 0/3 에 total_input 15081(배선 없음 수준 +141)로, 캐너리만 안 나오는 게 아니라 로드 자체가 일어나지 않는다."
+  },
+  {
+    "id": "probe-2026-08-21-search-console-ai-features-opt-out-vs-official-docs-gap-2026",
+    "pillar": "aio",
+    "question": "2026-08-20 Google 이 Preferred Source(포함 방향 레버)를 연 시점에, 생성 기능에서 사이트를 빼는 반대 방향 레버가 공식 문서 표면에 실제로 존재하는가 — 그리고 문서가 유일하게 지목하는 nosnippet·data-nosnippet·max-snippet 은 자사 배포본 HTML 의 몇 개 URL 에 실제로 착지해 있는가.",
+    "expectation": "믿는 것 세 가지. (1) developers.google.com 의 AI features 문서에는 nosnippet·data-nosnippet·max-snippet 만 배타 레버로 적혀 있고, 'preferred source' 라는 말도 Search Console 스위치도 개발자 문서 쪽에는 아직 나오지 않는다 — 발표는 소비자·퍼블리셔 블로그에만 있고 개발자 문서가 아직 따라오지 않은 상태라고 본다. (2) 자사 배포본은 nosnippet 계열을 한 URL 에도 넣지 않았다(0/12). 즉 '유일한 레버'가 실무에서는 아무 데도 착지해 있지 않다. (3) 자사 robots.txt 에는 Cloudflare Content-Signal(ai-train=no)이 이미 들어가 있는데 이것은 Google 공식 레버가 아니다. 왜 이렇게 보는가 — 2026 년 내내 Google 은 AI Overviews·AI Mode 를 '검색 기능'으로 규정해 왔고, 검색 기능에서 빠지는 유일한 공식 경로를 스니펫 제어로 일원화해 왔다. Google-Extended 는 Gemini·Vertex 그라운딩용이지 검색 AI 기능용이 아니라고 문서가 명시해 왔다. 이 세 번째 믿음이 틀리면(=Google-Extended 문서가 AI Overviews·AI Mode 를 함께 지목하면) 이 글의 전제는 무너진다. C5 가 그것만 노린다. 한계를 미리 적어 둔다 — topic-pick 의 'GSC 화면을 센다'는 항목은 인증 세션이 필요해 헤드리스 셀로 잴 수 없다. 화면 대신 '공식 문서 표면'을 잰다. 글에서 '내 GSC 화면에 스위치가 없었다'로 쓰면 안 되고 '공식 문서에 없다'까지만 써야 한다.",
+    "environment": {
+      "os": "darwin 25.5.0 (macOS 26.5.2, build 25F84)",
+      "tools": {
+        "curl": "8.7.1 (x86_64-apple-darwin25.0) libcurl/8.7.1",
+        "perl": "5.34.1 (/usr/bin/perl)",
+        "python3": "3.12.8",
+        "jq": "jq-1.7.1-apple",
+        "grep": "BSD grep (macOS 기본)"
+      },
+      "notes": [
+        "모델 호출이 하나도 없는 랩이다. 전부 HTTP fetch + 텍스트 카운트라 결정적이다. 그래서 repeats 는 최소치인 3 으로 잡았다 — 반복은 모델 분산이 아니라 네트워크·엣지 캐시 변동을 잡기 위한 것이다.",
+        "세 fetch 대상은 2026-08-21 09:5x KST 에 curl 로 200 을 확인했다: developers.google.com/search/docs/appearance/ai-features (177,842 B), .../crawling-indexing/robots-meta-tag (205,974 B), .../crawling-indexing/overview-google-crawlers (74,475 B), .../crawling-indexing/sitemaps/build-sitemap (189,367 B), blog.google 발표문 (379,877 B), jangwook.net/sitemap-ko.xml (71,340 B). 셀이 이와 크게 다른 바이트 수를 받으면 봇 차단 페이지를 받은 것이므로 결과를 버린다.",
+        "모든 curl 에 데스크톱 Chrome User-Agent 를 붙인다. UA 없이 developers.google.com 을 때리면 다른 본문을 받을 수 있다.",
+        "www.jangwook.net/sitemap-index.xml 은 404 다. 실제 색인은 /sitemap.xml 이고 그 안이 sitemap-ko/en/ja/zh.xml 로 갈린다. C4 는 ko 판만 본다 — 네 언어가 같은 템플릿에서 나오므로 한 언어로 레버 착지 여부는 판정된다.",
+        "sitemap 안의 호스트는 www 없는 jangwook.net 이다. 셀도 그 호스트를 쓴다.",
+        "블로그 저장소를 가리키는 명령은 하나도 없다. 공개 배포본을 HTTPS 로 가져올 뿐이고 파일은 전부 CELL_DIR 안에 쓴다.",
+        "data-nosnippet 문자열은 nosnippet 을 포함한다. RAW/TXT 카운트에서 nosnippet 값은 data-nosnippet 건수를 포함한 값이므로, 순수 nosnippet 건수는 (nosnippet - data-nosnippet) 으로 읽는다.",
+        "RAW 는 HTML 원문 카운트, TXT 는 script/style 제거 후 태그를 벗긴 본문 카운트다. data-nosnippet 은 자사 HTML 에서는 태그 속성이라 TXT 에서 사라진다. 그래서 C4 는 원문만 센다.",
+        "C6 통제 셀이 developers.google.com 공통 내비게이션·푸터가 만드는 기준선을 준다. C1 의 토큰 수는 반드시 C6 값을 빼고 읽어야 한다. 예를 들어 C1 과 C6 의 'AI Overviews' 값이 같다면 그것은 문서 본문이 아니라 사이드 내비게이션이 만든 수다.",
+        "C2 의 DIRECT PROBE 는 슬러그를 추측한 것이라 404 는 약한 증거다. '그 URL 이 없다'까지만 말하고 '그런 문서가 없다'로 확대하면 안 된다. 강한 증거는 NAV CENSUS 쪽이다 — Search Central 좌측 내비게이션은 문서 전체 목록을 서버 렌더로 담고 있다."
+      ]
+    },
+    "dimensions": {
+      "surface": [
+        "google-developer-docs",
+        "google-announcement",
+        "own-deployment"
+      ],
+      "lever_direction": [
+        "inclusion",
+        "exclusion",
+        "both"
+      ]
+    },
+    "runs": 18,
+    "cells": 6,
+    "status": "complete",
+    "consumed": false,
+    "surprised": true,
+    "headline": "개발자 문서에는 2026-08-20 자로 갱신된 preferred-sources 전용 페이지가 이미 있고(좌측 내비 154 경로 중 하나, HTTP 200), 발표문도 퍼블리셔를 Search Console 이 아니라 그 문서로 보낸다. 같은 문서군에서 생성 기능 배타 레버는 ai-features 본문의 한 문장(순수 nosnippet 1·data-nosnippet 1·max-snippet 1·noindex 1, 통제 셀 차감 후)뿐이고 opt out·exclude 는 원문에서 0건이다. 그 레버가 실제 지시자로 착지한 자사 배포본 URL 은 12 중 0 이며(표본 12개 전부 robots·googlebot meta 태그 없음), 배포본이 켜 둔 것은 Google-Extended Disallow 2행과 Content-Signal: search=yes,ai-train=no,use=reference 뿐이다. falsifier 는 발동하지 않았다 — Google-Extended 절은 Gemini·Vertex 그라운딩만 말하고 검색 포함에 영향이 없다고 명시한다."
   }
 ]
