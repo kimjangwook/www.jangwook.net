@@ -82,11 +82,11 @@ LANGS="en ko ja zh"
 # 집필 엔진. 기본 sdk — Agent SDK 편집부(sonnet). 2026-08-19 claude-md-at-import
 # redo 실전(4개 언어 재발행, seal-check·insight-gate 통과)을 보고 fable 에서
 # 전환했다. 실패하면 claude opus medium 으로 폴백한다.
-# 집필 엔진: 기본 sdk — Agent SDK 편집부(sonnet). 2026-08-21 LLM CLI 금지 결정으로
-# hybrid(영어=codex CLI, 번역=agy CLI)에서 되돌렸다. codex·agy 는 더 쓰지 않는다.
-WRITER="sdk"
-WRITER_EN="sdk"
-WRITER_TRANS="sdk"
+# 집필 엔진: 역할 분담 원칙(2026-08-22) — 집필은 gpt → gemini, claude 는 폴백만.
+# CLI 는 쓰지 않는다: gpt=OpenAI SDK(openai-llm.ts), gemini=genai(gemini-llm.ts).
+WRITER="hybrid"
+WRITER_EN="gpt"
+WRITER_TRANS="gemini"
 REDO_SLUG=""
 RESUME_SLUG=""
 RESUME_SLUG_ARG=""
@@ -292,6 +292,50 @@ $article"
   return 0
 }
 
+# gpt: OpenAI SDK 직호출 (codex CLI 아님 — 2026-08-21 CLI 금지). 텍스트 전용.
+OPENAI_LLM="${OPENAI_LLM:-/Users/jangwook/workspace/life-manager/src/cli/openai-llm.ts}"
+run_gpt() {
+  local prompt="$1"
+  node "$OPENAI_LLM" \
+    --env-file "$CONTROLLER_DIR/.env" \
+    --model "$CODEX_MODEL" \
+    --effort "$CODEX_EFFORT" \
+    "$prompt" </dev/null
+}
+
+# 집필의 임베드판 (역할 분담: 집필 = gpt → gemini. claude 는 최종 폴백만).
+# 브리프(와 번역 시 EN 마스터)를 프롬프트에 넣고, 출력 전문을 언어 파일로 저장.
+# $1=engine(gpt|gemini), $2=lang, $3=지시, $4=추가 코퍼스(EN 마스터 등, 없으면 "")
+run_embed_write() {
+  local engine="$1" lang="$2" inst="$3" extra_corpus="$4"
+  local target="$PROJECT_DIR/src/content/blog/$lang/$SLUG.md"
+  local out rc
+  local full="다음은 집필 지시와 재료다. 지시에 따라 기사를 완성하고, 프런트매터(---)를 포함한 기사 전문 markdown 만 출력하라. 설명·인사·코드펜스 감싸기 금지. 파일 저장은 셸이 대신한다.
+
+=== 집필 지시 ===
+$inst
+
+=== data/column-brief.md ===
+$(cat "$BRIEF" 2>/dev/null)"
+  [ -n "$extra_corpus" ] && full="$full
+
+$extra_corpus"
+  case "$engine" in
+    gpt)    out="$(run_gpt "$full")"; rc=$? ;;
+    gemini) out="$(run_gemini "$full")"; rc=$? ;;
+    *) return 1 ;;
+  esac
+  [ "$rc" -eq 0 ] || { log "embed-write($engine) $lang rc=$rc"; return 1; }
+  case "$out" in ---*) ;; *) log "embed-write($engine) $lang: 프런트매터 없음 — 기각"; return 1 ;; esac
+  if [ "${#out}" -lt 2000 ]; then
+    log "embed-write($engine) $lang: ${#out}b — 너무 짧아 기각"
+    return 1
+  fi
+  printf '%s\n' "$out" > "$target"
+  log "embed-write($engine) $lang 저장 ${#out} bytes"
+  return 0
+}
+
 # 1차 리뷰(비치명)의 임베드판. 브리프 + 4개 언어 본문을 넣고 리뷰 보고서를 받아
 # data/review-gemini.md 에 저장한다. $1=engine(local|gemini)
 run_embed_review() {
@@ -386,9 +430,30 @@ write_lang() {
 
 $extra"
 
+  # 번역(비 EN)의 임베드 재료는 hold 전에 읽는다 — hold 가 형제 언어를 치운다.
+  local en_corpus=""
+  if [ "$lang" != "en" ] && [ -s "$PROJECT_DIR/src/content/blog/en/$SLUG.md" ]; then
+    en_corpus="=== EN 마스터 (src/content/blog/en/$SLUG.md) ===
+$(cat "$PROJECT_DIR/src/content/blog/en/$SLUG.md")"
+  fi
+
   hold_siblings "$lang" || { log "hold failed lang=$lang"; return 1; }
 
-  case "$WRITER" in
+  # ★ hybrid 해석 버그 수정 (2026-08-22): 기존 코드는 cur_writer 를 만들고도
+  #   case "$WRITER" 로 분기해 hybrid 가 엔진 없이 claude 폴백으로 빠졌다.
+  case "$cur_writer" in
+    # 역할 분담: 집필 = gpt → gemini (임베드). claude 는 아래 공용 폴백.
+    gpt)
+      if run_embed_write gpt "$lang" "$prompt" "$en_corpus"; then
+        rc=0; wlabel="gpt/$CODEX_MODEL:$CODEX_EFFORT"
+      elif run_embed_write gemini "$lang" "$prompt" "$en_corpus"; then
+        rc=0; wlabel="gemini-3.7-flash (gpt fallback)"
+      else
+        rc=1; wlabel="gpt/gemini failed"
+      fi ;;
+    gemini)
+      run_embed_write gemini "$lang" "$prompt" "$en_corpus"; rc=$?
+      wlabel="gemini-3.7-flash" ;;
     fable)  run_claude "$CLAUDE_WRITE_EFFORT" "$prompt" "$CLAUDE_WRITE_MODEL"; rc=$?
             wlabel="claude/$CLAUDE_WRITE_MODEL:$CLAUDE_WRITE_EFFORT" ;;
     codex)  run_codex "$prompt"; rc=$?; wlabel="codex/$CODEX_MODEL:$CODEX_EFFORT" ;;
@@ -396,6 +461,7 @@ $extra"
             wlabel="sdk/sonnet:chief+3" ;;
     agy)    run_agy "$prompt";   rc=$?; wlabel="agy/$AGY_MODEL" ;;
     claude) run_claude "$CLAUDE_WRITE_EFFORT" "$prompt"; rc=$?; wlabel="claude/$CLAUDE_MODEL:$CLAUDE_WRITE_EFFORT" ;;
+    *)      rc=1; wlabel="unknown/$cur_writer" ;;
   esac
 
   if [ "$rc" -eq 0 ] && [ -f "$target" ]; then
