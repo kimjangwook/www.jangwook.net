@@ -14,8 +14,8 @@
    pick-source: forced.
    나쁜 선택이라고 판단해도 고른다. 대신 objection: 한 줄을 적는다.
    그 줄은 Telegram 으로 나가고 사람이 판단한다.
-2. 아니면 backlog-slate 중 verified 수집물이 하나 이상 붙은 것.  pick-source: backlog
-3. 1도 2도 비면 백로그 밖에서 제안해도 된다.
+2. 아니면 backlog-slate 중 verified 수집물이 하나 이상 붙은 것 중 【소셜 버즈량(X 인게이지먼트, Hacker News/Reddit/GitHub 언급)과 검색 유입 잠재력이 가장 높은 주제】를 최우선으로 고른다.  pick-source: backlog
+3. 1도 2도 비면 백로그 밖에서 현재 업계에서 가장 버즈량이 높은 고유입 주제를 제안해도 된다.
    단, topic-backlog.json 에 먼저 추가한다.               pick-source: new
 4. SKIP 은 verified 수집물 0건이고 우선 큐도 비었을 때만.
 ```
@@ -54,7 +54,7 @@ console.log(jaccardSimilarity(tok("<후보-슬러그>"), tok("<기존-슬러그>
 ## 고른 뒤
 
 `testable:` 는 **이 주제를 확인하거나 반증할 수 있는가**다. 오늘 랩이 이 칸을 보고
-셀 3~6개를 만든다. `yes` 면 무엇을 어떻게 재는지 한 줄로 쓴다. 못 재면 `no` 다 —
+셀 3-6개를 만든다. `yes` 면 무엇을 어떻게 재는지 한 줄로 쓴다. 못 재면 `no` 다 —
 `no` 라고 해서 글을 못 쓰는 것이 아니다.
 
 `leads:` 는 X 에서 온 단서다. **레퍼런스가 아니다.** `harvest.verified.json` 에서

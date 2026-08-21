@@ -33,12 +33,13 @@ scout_x() {
   [ -x "$GROK_BIN" ] || { log "grok 없음 $GROK_BIN — 건너뜀"; return 0; }
 
   local prompt
-  prompt='X(Twitter) を検索し、直近48時間で「Web開発・技術SEO・アクセシビリティ・Core Web Vitals・構造化データ・GEO/AI検索・AIエージェント(MCP、エージェントCLI、AGENTS.md、ハーネス設計)」に関する、一次情報を指している投稿を12件選べ。
+  prompt='X(Twitter) を検索し、直近48時間で【バズ量・エンゲージメント(RT/いいね/引用)が高く、開発者やCTOの間で大きな議論を呼んでいる話題】を中心に、「Webアーキテクチャ・エンタープライズ刷新・CDP/DSR/会員基盤・技術SEO・Core Web Vitals・AIエージェント(MCP、ハーネス設計、コンテキスト最適化)」に関する、一次情報を指している高バズ投稿を12件選べ。
 
 選定基準:
 ① その投稿が公式ドキュメント・リリースノート・仕様・GitHub リポジトリ・計測結果のいずれかを指していること
-② 情報商材・SEO業者の宣伝・根拠のない断定は除外
-③ 「感想だけ」で一次情報を指していない投稿は除外
+② エンジニアコミュニティで高い関心・リツイート・議論を集めているバイラルな話題を最優先
+③ 情報商材・SEO業者の宣伝・根拠のない断定は除外
+④ 「感想だけ」で一次情報を指していない投稿は除外
 
 各項目について、その投稿が指している一次情報の URL を points_to に必ず入れる。
 見つからなければその項目を出力しない。投稿自体の URL は url に入れる。
@@ -68,20 +69,16 @@ scout_x() {
 # 모델이 안 열고, 안 열었다는 사실이 출력에 안 남는다.
 scout_web() {
   local prompt
-  prompt='WebSearch を使って、直近7日間の一次情報を12件集めよ。判断はするな。集めるだけだ。
+  prompt='WebSearch を使って、直近7日間で【検索需要・Hacker News・GitHub Trending・Reddit (r/LocalLLaMA, r/webdev) で話題性とバズ量が最も高い一次情報】を12件集めよ。判断はするな。集めるだけだ。
 
 対象ソース(この一覧の中から探す):
-- Google Search Central のブログ・ドキュメント(構造化データ、クロール、AI Overview)
+- GitHub Trending で急上昇している AI/Web フレームワーク・ツール・MCP 実装リポジトリ
+- Google Search Central / Chrome DevRel の最新発表(AI Overview, Core Web Vitals, クロール)
 - W3C / WAI(WCAG、ARIA、a11y 標準の変更)
-- web.dev / Chrome DevRel(Core Web Vitals、レンダリング、性能)
-- 検索エンジン・標準の公式告知(Bing/Naver ウェブマスター、schema.org、llms.txt)
-- モデル提供元の一次文書: Anthropic・OpenAI・Google のツール定義、コンテキスト管理、
-  エージェント設計文書とリリースノート。プロンプトガイドの「変更分」
-- エージェントフレームワークのリポジトリ: MCP 仕様とサーバ実装、
-  エージェント CLI(Claude Code・Codex ほか)の CHANGELOG、ハーネス関連の Issue・RFC
-- AX の議論: AGENTS.md・llms.txt・機械可読文書規約の実際の採用事例
-- 評価・測定: プロンプトやハーネスの変更を数値で測った公開実験。
-  ベンチマーク発表よりも再現手順があるものを優先
+- モデル提供元の一次文書: Anthropic・OpenAI・Google のツール定義、コンテキスト管理、エージェント設計文書とリリースノート
+- エージェント CLI(Claude Code・Codex ほか)の CHANGELOG、ハーネス設計、コンテキスト最適化の実践知
+- エンタープライズ Web 刷新、CDP・DSR(データプライバシー)、会員・認証基盤のアーキテクチャ議論
+- 評価・測定: プロンプトやハーネスの変更を数値で測った公開実験
 
 除外: ニュースサイトの二次記事、まとめ記事、ベンダーのマーケティング資料。
 一次情報そのものの URL を出す。それを紹介した記事の URL ではない。
