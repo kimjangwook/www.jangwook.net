@@ -1,6 +1,6 @@
 ---
 title: "我把 Google AI features 文档逐字数了一遍：没有退出开关，这是架构决定的"
-description: "AI features 文档全文 177,842 字节里，opt out、opt-out、exclude 各 0 次。为什么不存在 AI 专属排除开关，以及团队该拿什么替代它。"
+description: 'AI features 文档全文 177,842 字节里，opt out、opt-out、exclude 各出现 0 次。为什么不存在只把 AI Overviews 与 AI Mode 排除在外的开关，以及不靠 robots.txt 的话团队该动哪里，用 18 轮实测给出答案。'
 pubDate: '2026-08-21'
 heroImage: '../../../assets/blog/search-console-ai-features-opt-out-vs-official-docs-gap-2026/hero.png'
 tags:
@@ -43,7 +43,7 @@ AI features 文档指名的、能减少页面在搜索中展示内容的手段�
 > To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
 > — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 
-这四个手段没有一个是专门为 AI 打造的。它们就是多年来管着普通搜索结果展示的那套摘要控制机制。文档的末次更新时间戳写着 2025-12-10 UTC，也就是说，在我统计词频的那天，文档已经八个多月没动过。
+这四个手段没有一个是专门为 AI 打造的。它们就是多年来管着普通搜索结果展示的那套摘要控制机制。这四个手段在单个页面上究竟怎么落地，我[按指令逐条实测过](/zh/blog/zh/robots-snippet-controls-ai-overviews-2026)，记录另存一处。文档的末次更新时间戳写着 2025-12-10 UTC，也就是说，在我统计词频的那天，文档已经八个多月没动过。
 
 再看同样这八个月里的另一个方向。Google 8 月 20 日的公告推出了 Preferred Sources，对应的开发者文档更新时间戳是 2026-08-20 UTC，和公告同一天。公告正文 9,045 字节，里面 `preferred source` 7 次，`publisher` 8 次，`Top Stories` 1 次，`AI Overviews` 1 次，`AI Mode` 2 次。而 `Search Console`、`turn off`、`exclude`、`remove`、`block` 全是 0 次。公告里确实出现过一次 `opt out`，但那属于页尾邮件订阅退订的提示语：“You may opt out at any time.”
 
@@ -74,7 +74,7 @@ AI 引用资格不是一条带独立输入的新流水线，它直接复用已�
 
 ## 工单关到了错误的文件上
 
-大型网站改版的现场，AI 排除需求永远是同一副长相。法务或公关说一句“别让 AI 用我们的内容”，工程师打开 robots.txt，把 Google-Extended 设成 Disallow，在 Content-Signal 那行补上 `ai-train=no`，报完成。需求是“把我们从 AI 里拿掉”，实现是“我们退出了训练”。两句话都带着 AI 这个词，于是审核的人看到 `Google-Extended` 底下那条 `Disallow: /` 就批了 PR，工单关闭。
+大型网站改版的现场，AI 排除需求永远是同一副长相。法务或公关说一句“别让 AI 用我们的内容”，工程师打开 robots.txt，把 Google-Extended 设成 Disallow，在 Content-Signal 那行补上 `ai-train=no`，报完成。需求是“把我们从 AI 里拿掉”，实现是“我们退出了训练”。两句话都带着 AI 这个词，于是审核的人看到 `Google-Extended` 底下那条 `Disallow: /` 就批了 PR，工单关闭。按爬虫令牌逐个[拦训练、放行引用的设计](/zh/blog/zh/ai-crawler-control-robots-txt-llms-txt-2026)本身是成立的，只是它回答的问题，和这张工单问的不是同一个。
 
 问题在于 Google-Extended 压根不碰 Search。
 
@@ -115,7 +115,7 @@ AI 引用资格不是一条带独立输入的新流水线，它直接复用已�
 
 我把 linter 放在第一位，因为只有它能抓住已经躺在生产环境里的错误。
 
-从 sitemap 里抽一个确定性样本，渲染每个 URL，统计渲染输出中的 `robots` 和 `googlebot` meta 标签数量，一旦渲染结果与声明的策略对不上就让构建失败。我那 12 个 URL 的样本就是这件事的最小可用版本。读一遍 robots.txt 就当验证完毕，正是让这种偏差长期潜伏的无效检查方式。
+从 sitemap 里抽一个确定性样本，渲染每个 URL，统计渲染输出中的 `robots` 和 `googlebot` meta 标签数量，一旦渲染结果与声明的策略对不上就让构建失败。我那 12 个 URL 的样本就是这件事的最小可用版本。读一遍 robots.txt 就当验证完毕，正是让这种偏差长期潜伏的无效检查方式。声明的规则没能送达时，两边都不会报错，这个形状和我[用 219 轮实测 robots.txt 与 AGENTS.md](/zh/blog/zh/declared-rules-fail-open-robots-txt-agents-md-2026) 时看到的一样。
 
 第二，把策略文档拆开。“搜索面 AI 排除”是花摘要预算的商业决定，“训练排除”是碰一个爬虫令牌的技术决定。两个独立条目，绝不合成一条。
 

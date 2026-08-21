@@ -1,6 +1,6 @@
 ---
 title: "Google の AI features 文書に除外スイッチは一語も無い。抜けではなく設計の結果だ"
-description: "AI features 文書の原文を全文カウントした。opt out、opt-out、exclude はいずれも 0 件。AI だけを外すレバーが存在しない理由と、その代わりに何をすべきか。"
+description: 'AI features 文書の原文を全文カウントした。opt out、opt-out、exclude はいずれも 0 件だった。AI Overviews と AI Mode だけを検索面から外すレバーが存在しない理由と、robots.txt の代わりに何を触るべきかを18ランの実測でまとめた。'
 pubDate: '2026-08-21'
 heroImage: '../../../assets/blog/search-console-ai-features-opt-out-vs-official-docs-gap-2026/hero.png'
 tags:
@@ -43,7 +43,7 @@ AI features 文書が、自社ページから検索に出る情報を減らす�
 > To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
 > — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 
-四つのどれも AI 専用ではない。通常の検索結果の表示を何年も前から司ってきた、あのスニペット制御そのものだ。文書の最終更新表記は 2025-12-10 UTC。カウントした時点で、8か月以上そのまま止まっていた。
+四つのどれも AI 専用ではない。通常の検索結果の表示を何年も前から司ってきた、あのスニペット制御そのものだ。この四つがページ単位でどう着地するかは、[robots スニペット指示子をページごとに実測した記録](/ja/blog/ja/robots-snippet-controls-ai-overviews-2026)に別途まとめてある。文書の最終更新表記は 2025-12-10 UTC。カウントした時点で、8か月以上そのまま止まっていた。
 
 同じ8か月を逆方向から見る。Google の8月20日の発表が Preferred Sources を持ち込み、専用の開発者文書には 2026-08-20 UTC の更新表記が入っている。発表と同じ日だ。発表文の本文は 9,045バイト。その中に `preferred source` が 7 件、`publisher` が 8 件、`Top Stories` が 1 件、`AI Overviews` が 1 件、`AI Mode` が 2 件。`Search Console`、`turn off`、`exclude`、`remove`、`block` は全部 0 件。発表文には `opt out` が 1 件だけあるが、その 1 件は末尾のニュースレター登録欄に属している。「You may opt out at any time.」
 
@@ -74,7 +74,7 @@ AI features 文書は、包含側に新規の実装が要らないことも明�
 
 ## 誤ったファイルに対して閉じられるチケット
 
-大規模なウェブリニューアルの現場で、AI 除外の要求はいつも同じ形で降りてくる。法務か広報が「AI に自社コンテンツが使われないようにしてほしい」と言う。エンジニアが robots.txt を開き、Google-Extended を Disallow して、Content-Signal の行に `ai-train=no` を足し、完了と報告する。要求は「AI から外せ」だった。実装は「学習から外した」だった。両方の文に AI という語が入っているので、レビュアーは `Google-Extended` の下の `Disallow: /` を見て PR を承認し、チケットが閉じる。
+大規模なウェブリニューアルの現場で、AI 除外の要求はいつも同じ形で降りてくる。法務か広報が「AI に自社コンテンツが使われないようにしてほしい」と言う。エンジニアが robots.txt を開き、Google-Extended を Disallow して、Content-Signal の行に `ai-train=no` を足し、完了と報告する。要求は「AI から外せ」だった。実装は「学習から外した」だった。両方の文に AI という語が入っているので、レビュアーは `Google-Extended` の下の `Disallow: /` を見て PR を承認し、チケットが閉じる。クローラートークン単位で[学習は拒否し引用は許可する設計](/ja/blog/ja/ai-crawler-control-robots-txt-llms-txt-2026)そのものは有効だ。ただしその設計が答える問いは、このチケットが投げた問いとは別のものだ。
 
 ところが Google-Extended は検索に一切触れない。
 
@@ -115,7 +115,7 @@ AI features 文書は、包含側に新規の実装が要らないことも明�
 
 リンターを先頭に置く。すでに本番に入っている誤りを捕まえられるのはリンターだけだからだ。
 
-sitemap から決定的な手順で標本を抜き、各 URL をレンダーし、出力上の `robots` と `googlebot` のメタタグを数え、レンダー結果が宣言した方針と食い違ったらビルドを落とす。自社の12本の標本は、この検査の最小構成にすぎない。robots.txt を読んで検証済みとみなす従来の手順こそが、乖離をそのまま残しておいた原因だ。
+sitemap から決定的な手順で標本を抜き、各 URL をレンダーし、出力上の `robots` と `googlebot` のメタタグを数え、レンダー結果が宣言した方針と食い違ったらビルドを落とす。自社の12本の標本は、この検査の最小構成にすぎない。robots.txt を読んで検証済みとみなす従来の手順こそが、乖離をそのまま残しておいた原因だ。宣言した規則が届かなくてもどちらの側にもエラーが出ない性質は、[robots.txt と AGENTS.md を219ランで実測したとき](/ja/blog/ja/declared-rules-fail-open-robots-txt-agents-md-2026)も同じだった。
 
 二つめ、方針文書を割る。「検索面の AI 除外」はスニペット予算を使う事業判断。「学習の除外」はクローラートークン一つに触れる技術判断。常に別項目で、決して一つにしない。
 

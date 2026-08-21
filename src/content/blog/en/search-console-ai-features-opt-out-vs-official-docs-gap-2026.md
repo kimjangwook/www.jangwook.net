@@ -43,7 +43,7 @@ The AI features doc names exactly four ways to reduce what Search displays from 
 > To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
 > — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 
-Not one of those four is AI-specific. They're the same snippet controls that have governed ordinary search result display for years. The doc's last-updated stamp reads 2025-12-10 UTC, so at the time I counted, it had been sitting still for over eight months.
+Not one of those four is AI-specific. They're the same snippet controls that have governed ordinary search result display for years. How those four actually land on an individual page is something I [measured directive by directive](/en/blog/en/robots-snippet-controls-ai-overviews-2026) in an earlier run. The doc's last-updated stamp reads 2025-12-10 UTC, so at the time I counted, it had been sitting still for over eight months.
 
 Now look at the other direction over the same eight months. Google's August 20 announcement introduced Preferred Sources, and the dedicated developer doc for it carries an update stamp of 2026-08-20 UTC — same day as the announcement. The announcement's body runs 9,045 bytes. In it: `preferred source` 7 times, `publisher` 8 times, `Top Stories` once, `AI Overviews` once, `AI Mode` twice. `Search Console`, `turn off`, `exclude`, `remove`, `block` — all zero. There is one instance of `opt out` in the announcement, and it belongs to the newsletter signup box at the bottom: "You may opt out at any time."
 
@@ -74,7 +74,7 @@ The doc is also explicit that inclusion requires no new build work: "You don't n
 
 ## The ticket that closes against the wrong file
 
-In large web renewal work, the AI-exclusion request always arrives in the same shape. Legal or comms says "make sure our content isn't used by AI." An engineer opens robots.txt, disallows Google-Extended, adds `ai-train=no` to the Content-Signal line, and reports done. The request was "keep us out of AI." The implementation was "we opted out of training." Both sentences contain the word AI, so the reviewer sees `Disallow: /` under `Google-Extended`, approves the PR, and the ticket closes.
+In large web renewal work, the AI-exclusion request always arrives in the same shape. Legal or comms says "make sure our content isn't used by AI." An engineer opens robots.txt, disallows Google-Extended, adds `ai-train=no` to the Content-Signal line, and reports done. The request was "keep us out of AI." The implementation was "we opted out of training." Both sentences contain the word AI, so the reviewer sees `Disallow: /` under `Google-Extended`, approves the PR, and the ticket closes. Shaping robots.txt so that [training is refused while citation stays allowed](/en/blog/en/ai-crawler-control-robots-txt-llms-txt-2026) is sound work on its own. It just answers a different question than the one this ticket asked.
 
 Except Google-Extended doesn't touch Search at all.
 
@@ -115,7 +115,7 @@ So I grant the range and keep my position. Within a page, the toolkit is adequat
 
 I put the linter first because it's the only one that catches an error already in production.
 
-Pull a deterministic sample from your sitemap, render each URL, count `robots` and `googlebot` meta tags on the output, and fail the build when the rendered tags disagree with declared policy. My 12-URL sample is the minimum viable version of this. Reading robots.txt and calling it verified is the check that let the divergence live.
+Pull a deterministic sample from your sitemap, render each URL, count `robots` and `googlebot` meta tags on the output, and fail the build when the rendered tags disagree with declared policy. My 12-URL sample is the minimum viable version of this. Reading robots.txt and calling it verified is the check that let the divergence live. A declared rule that never reaches its target raises no error on either side, which is the same shape I found when I [measured robots.txt and AGENTS.md over 219 runs](/en/blog/en/declared-rules-fail-open-robots-txt-agents-md-2026).
 
 Second, split the policy doc. "Search-surface AI exclusion" is a business decision that spends snippet budget. "Training exclusion" is a technical decision that touches one crawler token. Two separate line items, never one.
 

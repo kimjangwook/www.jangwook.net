@@ -29,7 +29,7 @@ relatedPosts:
 ---
 A teammate asked me last week whether pointing Claude Code at an `AGENTS.md` file mattered — import it, symlink it, copy it once, whatever's fastest. I said probably not. Then I ran the three routes against each other, and one fails in a way that leaves zero evidence on disk.
 
-`@AGENTS.md` imports and symlinks both get instructions into context in standard setups. But "probably not" turned out to do heavy lifting. `@AGENTS.md` imports and symlinks resolve at different layers of the system, meaning they break under different conditions, and both fail silently. Point an import at a file outside the repository and run Claude Code unattended — a nightly CI job, say — and the tool drops instructions without a warning.
+`@AGENTS.md` imports and symlinks both get instructions into context in standard setups. But "probably not" turned out to do heavy lifting. `@AGENTS.md` imports and symlinks resolve at different layers of the system, meaning they break under different conditions, and both fail silently. A declared rule that slips through without raising anything is the same shape I found when [measuring robots.txt and AGENTS.md](/en/blog/en/declared-rules-fail-open-robots-txt-agents-md-2026). Point an import at a file outside the repository and run Claude Code unattended — a nightly CI job, say — and the tool drops instructions without a warning.
 
 ## What Anthropic's docs say
 
@@ -127,7 +127,7 @@ When neither change is immediately possible, plant a canary in `AGENTS.md` and v
 claude -p 'Reply with exactly the word OK and nothing else.' | grep -q 'ZQ7CANARY' && echo alive || echo silent
 ```
 
-In an interactive session, the equivalent verification is `/context`, which lists `CLAUDE.md` under Memory files when loaded. The documentation provides no equivalent screen for headless runs, making canary verification necessary.
+In an interactive session, the equivalent verification is `/context`, which lists `CLAUDE.md` under Memory files when loaded. The documentation provides no equivalent screen for headless runs, making canary verification necessary. Counting what a config declares separately from what actually loaded is the same split I hit while [counting robots directives in the file and in the rendered output](/en/blog/en/search-console-ai-features-opt-out-vs-official-docs-gap-2026).
 
 Financial cost is zero across all three routes. Token overhead could not be isolated in these runs: prompt token counts fluctuated across conditions because cache-creation and cache-read variation exceeded file-size differences. Documentation is explicit on one related point: splitting `CLAUDE.md` into `@path` imports does not reduce context consumption, because imported files load in full at session launch. Splitting files aids organization, not token efficiency.
 

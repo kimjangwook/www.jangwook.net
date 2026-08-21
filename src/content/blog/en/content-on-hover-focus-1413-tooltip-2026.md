@@ -142,7 +142,7 @@ Hoverable is where V3 and V4 parted ways. Same technology, same opening triggers
 
 V3 gives the popup `margin-top: 8px`. It looks 8px away and it hit-tests 8px away. The instant the pointer leaves the trigger and lands in that strip, `:hover` releases and the popup is gone. The script measured the distance from trigger bottom to popup top at exactly 8px.
 
-V4 builds the same 8px out of padding instead. The popup box touches the trigger, and 18px of transparent padding inside the box pushes only the visible content down. Measured gap: 0px. It looks detached and hit-tests as continuous. Add a `:has()` rule so hovering the popup itself keeps the open state, and Hoverable falls out of pure CSS.
+V4 builds the same 8px out of padding instead. The popup box touches the trigger, and 18px of transparent padding inside the box pushes only the visible content down. Measured gap: 0px. It looks detached and hit-tests as continuous. The split between what a control looks like and what it hit-tests as sits on the same axis I [measured against the target size criterion](/en/blog/en/wcag22-target-size-audit-2026). Add a `:has()` rule so hovering the popup itself keeps the open state, and Hoverable falls out of pure CSS.
 
 ```css
 /* popup touches the trigger; the breathing room lives inside the box */

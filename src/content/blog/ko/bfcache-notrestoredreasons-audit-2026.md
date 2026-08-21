@@ -1,6 +1,6 @@
 ---
 title: 'beforeunload는 통과했고 unload는 막혔다: bfcache 실측 6판'
-description: 뒤로 가기가 즉시 열리는지 아닌지는 취향이 아니라 측정 대상이다. 차단 조건을 하나씩 심은 페이지 여섯 개에 back 내비게이션을 걸어 pageshow.persisted와 notRestoredReasons를 받아냈다. unload는 막혔고 beforeunload와 no-store는 통과했다.
+description: '뒤로 가기가 즉시 열리는지는 취향이 아니라 측정 대상이다. 차단 조건을 하나씩 심은 페이지 여섯 개에 back 내비게이션을 걸어 pageshow.persisted와 notRestoredReasons를 받아냈다. unload는 막혔고 beforeunload와 no-store는 통과했다.'
 pubDate: '2026-07-21'
 updatedDate: '2026-07-24'
 heroImage: ../../../assets/blog/bfcache-notrestoredreasons-audit-2026/hero.png

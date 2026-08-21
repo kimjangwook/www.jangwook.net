@@ -1,6 +1,6 @@
 ---
 title: 'AI 검색에서 사이트를 빼는 스위치를 공식 문서에서 찾아봤더니 있는 건 포함 레버뿐이었다'
-description: 'Google의 AI 기능 문서 원문에서 opt out, opt-out, exclude를 전수로 세어보니 전부 0건이었다. AI 전용 배타 레버가 왜 존재하지 않는지, 그러면 무엇을 해야 하는지 정리했다.'
+description: 'Google의 AI 기능 문서 원문 177,842바이트에서 opt out, opt-out, exclude를 전수로 세어보니 전부 0건이었다. AI Overviews와 AI Mode 전용 배타 레버가 왜 없는지, robots.txt 대신 무엇을 손봐야 하는지 18런 실측으로 정리했다.'
 pubDate: '2026-08-21'
 heroImage: '../../../assets/blog/search-console-ai-features-opt-out-vs-official-docs-gap-2026/hero.png'
 tags:
@@ -38,7 +38,7 @@ relatedPosts:
 
 ## "AI에서 빼달라"는 티켓은 실제로 무엇을 끄고 있나
 
-대규모 웹 리뉴얼 현장에서 AI 배타 요구는 늘 같은 모양으로 온다. 법무나 홍보가 "AI에 우리 콘텐츠가 쓰이지 않게 해달라"고 하면 엔지니어는 십중팔구 robots.txt를 연다. Google-Extended를 Disallow하고 Content-Signal 지시자에 `ai-train=no`를 적은 뒤 완료 보고를 올린다.
+대규모 웹 리뉴얼 현장에서 AI 배타 요구는 늘 같은 모양으로 온다. 법무나 홍보가 "AI에 우리 콘텐츠가 쓰이지 않게 해달라"고 하면 엔지니어는 십중팔구 robots.txt를 연다. Google-Extended를 Disallow하고 Content-Signal 지시자에 `ai-train=no`를 적은 뒤 완료 보고를 올린다. 크롤러 토큰 단위로 [학습은 막고 인용은 허용하는 설계](/ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026) 자체는 유효하다. 다만 그 설계가 답하는 질문은 이 티켓이 던진 질문과 다르다.
 
 자사 배포본이 정확히 이 상태였다. robots.txt를 열어보니 Google-Extended를 막는 그룹 두 개와 `Content-Signal: search=yes,ai-train=no,use=reference` 한 줄, GPTBot과 CCBot을 막는 지시자가 각각 두 개씩 있었다. sitemap-ko.xml에서 뽑은 결정적 표본 12개 URL의 렌더 결과를 확인하니 robots나 googlebot용 메타 태그를 내보내는 URL이 하나도 없었다. 학습만 막았다. 검색 AI 표면은 그대로였다.
 
@@ -67,7 +67,7 @@ Search Central 문서는 AI Overviews나 AI Mode에서 인용되는 자격을 �
 > To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
 > - [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 
-`nosnippet`은 페이지 전체의 스니펫 노출을 끄는 메타 태그, `data-nosnippet`은 페이지 안 특정 HTML 요소만 스니펫에서 제외하는 속성, `max-snippet`은 스니펫에 노출할 최대 글자 수를 지정하는 태그, `noindex`는 색인 자체를 막는 태그다. 넷 다 AI 전용 도구가 아니다. 원래 있던 일반 검색 스니펫 통제를 그대로 쓴다. AI가 Search에 내장돼 있으므로 통제 지점도 하나라는 것이 공식 문서의 논리다.
+`nosnippet`은 페이지 전체의 스니펫 노출을 끄는 메타 태그, `data-nosnippet`은 페이지 안 특정 HTML 요소만 스니펫에서 제외하는 속성, `max-snippet`은 스니펫에 노출할 최대 글자 수를 지정하는 태그, `noindex`는 색인 자체를 막는 태그다. 넷 다 AI 전용 도구가 아니다. 원래 있던 일반 검색 스니펫 통제를 그대로 쓴다. AI가 Search에 내장돼 있으므로 통제 지점도 하나라는 것이 공식 문서의 논리다. 이 넷이 페이지 단위에서 실제로 어떻게 착지하는지는 [robots 스니펫 지시자를 페이지마다 실측한 기록](/ko/blog/ko/robots-snippet-controls-ai-overviews-2026)에 따로 정리해뒀다.
 
 > AI is built into Search and integral to how Search functions, which is why robots.txt directives for Googlebot is the control for site owners to manage access to how their sites are crawled for Search.
 > - [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
@@ -128,7 +128,7 @@ Preferred Source는 기본 자격에 손을 대지 않는다. 그 위에 시그�
 
 첫째, 정책 문서에서 "검색면 AI 배타"와 "학습 배타"를 다른 항목으로 분리한다. 전자는 검색 스니펫 예산을 쓰는 사업 결정이고 후자는 크롤러 토큰 하나만 건드리는 기술 결정이라고 명시한다. 두 요구가 같은 티켓에 섞여 들어오는 것을 막는 최소한의 장치다.
 
-둘째, robots.txt 파일만 읽고 완료로 치는 체크를 버린다. 대신 sitemap에서 결정적 표본을 뽑아 각 URL의 렌더 결과에서 robots와 googlebot 메타 태그 착지 개수를 세고, 선언한 정책과 렌더된 태그가 어긋나면 빌드를 멈추는 린터를 CI 게이트에 넣는다. 12개 표본 프로브가 이 린터의 최소 형태다. 파일을 읽고 확인했다고 치는 검사가 바로 그 어긋남을 살려둔 검사다.
+둘째, robots.txt 파일만 읽고 완료로 치는 체크를 버린다. 대신 sitemap에서 결정적 표본을 뽑아 각 URL의 렌더 결과에서 robots와 googlebot 메타 태그 착지 개수를 세고, 선언한 정책과 렌더된 태그가 어긋나면 빌드를 멈추는 린터를 CI 게이트에 넣는다. 12개 표본 프로브가 이 린터의 최소 형태다. 파일을 읽고 확인했다고 치는 검사가 바로 그 어긋남을 살려둔 검사다. 선언한 규칙이 닿지 않아도 어느 쪽에서도 에러가 나지 않는 성질은 [robots.txt와 AGENTS.md를 219런으로 실측했을 때](/ko/blog/ko/declared-rules-fail-open-robots-txt-agents-md-2026)도 똑같았다.
 
 셋째, 배타 레버를 켜는 PR은 대상 페이지군의 오가닉 유입 비중을 본문에 적어야만 통과시킨다. 그 숫자를 아무도 제시하지 못한다면 PR이 아직 준비되지 않은 상태다. 숫자가 곧 결정이다.
 

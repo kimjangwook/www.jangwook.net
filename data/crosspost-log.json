@@ -2170,5 +2170,17 @@
         "id": 4427244
       }
     }
+  },
+  {
+    "slug": "spam-update-rollout-window-search-status-vs-gsc-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/spam-update-rollout-window-search-status-vs-gsc-2026",
+    "posted_at": "2026-08-20T14:32:33.352Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/spam-update-timed-to-the-minute-search-console-cant-use-it-fnn",
+        "id": 4445850
+      }
+    }
   }
 ]

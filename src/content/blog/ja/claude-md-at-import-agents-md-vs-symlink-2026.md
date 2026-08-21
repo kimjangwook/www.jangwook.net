@@ -126,13 +126,13 @@ CLAUDE.mdを`@`で分割してもコンテキストの節約にはならない�
 
 判断が済んだら、あとは手を動かすだけだ。`@import`を選んだ場合は相対`@AGENTS.md`をCLAUDE.mdに書き、その行の下にClaude専用ルールを足す。symlinkを選んだ場合は`ln -s AGENTS.md CLAUDE.md`を張り、`core.symlinks`とWindows checkoutの扱いをオンボーディング手順に明記しておく。
 
-読み込みが実際に生きているかを知る手段は二つしかない。対話セッションでは`/context`を実行し、Memory files欄にCLAUDE.mdが表示されるかを見る。ヘッドレス実行にはこの画面がない。AGENTS.mdの末尾にカナリアトークンを仕込み、`claude -p 'Reply with exactly the word OK and nothing else.' | grep -q 'ZQ7CANARY' && echo alive || echo silent`のような一行で生死を測る。
+読み込みが実際に生きているかを知る手段は二つしかない。対話セッションでは`/context`を実行し、Memory files欄にCLAUDE.mdが表示されるかを見る。ヘッドレス実行にはこの画面がない。AGENTS.mdの末尾にカナリアトークンを仕込み、`claude -p 'Reply with exactly the word OK and nothing else.' | grep -q 'ZQ7CANARY' && echo alive || echo silent`のような一行で生死を測る。設定が宣言したものと実際に積まれたものを別々に数える必要がある点では、[robots指示子をファイル側とレンダー側で別々に数えたとき](/ja/blog/ja/search-console-ai-features-opt-out-vs-official-docs-gap-2026)と構造が重なる。
 
 ## 限界
 
 今回測っていないことも書いておく。もっとも大きいのは対話式の承認ダイアログそのものを見ていないことだ。承認後どれくらいその状態が続くのか、拒否したあとに復旧する経路があるのかも、ドキュメントの記述からの推測にとどまる。次に大きいのはWindowsで、`core.symlinks=false`のcheckoutとsymlink作成権限のどちらも実機では検証していない。ほかに、4ホップの再帰の境界や、手動コピーで近似した`/import`コマンド自体、キャッシュ変動に埋もれて切り分けられなかったトークンのオーバーヘッドも未検証のままだ。金銭的なコストは三経路とも常にゼロだった。
 
-条件eの結果を初めて見たとき、驚いたのは失敗そのものではなく、失敗の静かさだった。エラーも警告もなく、ただカナリアが返答に現れなかっただけだ。同僚の質問への答えは、ファイル形式の話では終わらない。「ファイルがどこにあるか」だけでなく「その経路を人間が承認できるか」までセットで確認しないと、指示が届いていない状態に誰も気づけない。この判断が崩れるとしたら、checkoutの`core.symlinks`設定を誰かが変えたときか、CIやフックのような無人の経路が新しく足されたときだ。そのときこそ、この測定条件を洗い直す番になる。
+条件eの結果を初めて見たとき、驚いたのは失敗そのものではなく、失敗の静かさだった。エラーも警告もなく、ただカナリアが返答に現れなかっただけだ。宣言した規則が届かないまま誰にも咎められずに素通りする形は、[robots.txtとAGENTS.mdを実測したとき](/ja/blog/ja/declared-rules-fail-open-robots-txt-agents-md-2026)と同じだった。同僚の質問への答えは、ファイル形式の話では終わらない。「ファイルがどこにあるか」だけでなく「その経路を人間が承認できるか」までセットで確認しないと、指示が届いていない状態に誰も気づけない。この判断が崩れるとしたら、checkoutの`core.symlinks`設定を誰かが変えたときか、CIやフックのような無人の経路が新しく足されたときだ。そのときこそ、この測定条件を洗い直す番になる。
 
 ## 参考資料
 - [How Claude remembers your project (Claude Code memory)](https://code.claude.com/docs/en/memory)
