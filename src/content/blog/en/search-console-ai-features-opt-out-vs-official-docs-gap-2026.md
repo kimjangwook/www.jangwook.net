@@ -1,107 +1,148 @@
 ---
-title: "We Looked for an \"Opt Out of AI\" Button in Search Central Docs. There Isn't One, and That's the Point"
-description: 'Legal asks to keep content out of AI Overviews. Engineering flips a robots.txt switch and closes the ticket. We counted every word in four Google docs to find out why that ticket was never actually closed.'
+title: "I Searched Google's AI Features Doc for an Opt-Out Switch. There Is None, and That's Architecture"
+description: "I counted every word in Google's AI features doc: zero hits for opt out, opt-out, or exclude. Why no AI-only exclusion lever exists, and what to do instead."
 pubDate: '2026-08-21'
 heroImage: '../../../assets/blog/search-console-ai-features-opt-out-vs-official-docs-gap-2026/hero.png'
 tags:
   - SEO
   - GEO
-  - Search Console
   - AI Overview
+  - Engineering Management
 relatedPosts:
   - slug: robots-snippet-controls-ai-overviews-2026
-    score: 0.8
+    score: 0.86
     reason:
-      ko: 그 글은 nosnippet 이 AI Overviews 인용 자격까지 끈다는 사실을 다뤘다. 이 글은 그 넷(nosnippet, data-nosnippet, max-snippet, noindex) 말고는 배타 레버가 아예 없다는 것, 그리고 그것이 왜 문서의 누락이 아니라 설계인지를 다룬다.
-      ja: あちらは nosnippet が AI Overviews の引用資格まで止めることを扱った。こちらはその四つ（nosnippet, data-nosnippet, max-snippet, noindex）以外に排他レバーが存在しないこと、それが文書の欠落ではなく設計である理由を扱う。
-      en: That post showed nosnippet also cuts AI Overviews citation eligibility. This one shows there is no fifth lever beyond those four, and why that absence is architecture, not a documentation gap.
-      zh: 那篇讲的是 nosnippet 也会切断 AI Overviews 的引用资格。这篇讲的是除了这四个（nosnippet, data-nosnippet, max-snippet, noindex）之外根本没有第五个排他开关，以及这为什么是架构问题而不是文档遗漏。
+      ko: 그 글이 nosnippet 계열 네 레버가 실제로 어떻게 착지하는지를 페이지 단위로 실측한 기록이라면, 이 글은 그 네 레버 말고는 아무것도 없다는 사실이 왜 문서의 누락이 아니라 설계의 결과인지를 다룬다.
+      ja: あちらが nosnippet 系の四つのレバーがページ単位でどう着地するかの実測記録なら、こちらはその四つ以外に何も無いことが文書の抜けではなく設計の結果である理由を扱う。
+      en: That post measures how the four nosnippet-family levers actually land on a page. This one explains why there is nothing besides those four, and why that absence is a design outcome rather than a documentation gap.
+      zh: 那篇是对 nosnippet 系四个开关在页面上如何落地的实测记录；这篇则解释为什么除了这四个什么都没有，以及这种缺席为何是设计结果而非文档遗漏。
   - slug: ai-crawler-control-robots-txt-llms-txt-2026
-    score: 0.72
+    score: 0.81
     reason:
-      ko: 그 글은 크롤러를 들여보낼지 말지의 문제였다. 이 글은 이미 들어온 뒤 검색과 AI 표면 중 어디에 인용될지를 나누는 자격 판정 자체가 하나로 묶여 있다는 것을 다룬다. 층이 다르다.
-      ja: あちらはクローラーを入れるか否かの問題だった。こちらは既に入った後、検索とAI表面のどちらに引用されるかを分ける資格判定そのものが一本に束ねられている点を扱う。層が違う。
-      en: That post was about letting crawlers in or not. This one is about the eligibility judgment itself, made after entry, that decides both search and AI surfaces at once — a different layer entirely.
-      zh: 那篇讲的是让不让爬虫进来。这篇讲的是爬虫进来之后，决定它能否出现在搜索和 AI 界面的资格判定其实是同一条判定线——这是完全不同的层。
+      ko: robots.txt로 학습을 막는 일과 검색면 AI 인용에서 빠지는 일은 다른 결정이다. 그 글이 크롤러 토큰 쪽 지도라면, 이 글은 그 지도를 들고 잘못된 티켓을 닫아 온 팀에게 보내는 정정이다.
+      ja: robots.txt で学習を止めることと、検索面のAI引用から外れることは別の決定だ。あちらがクローラートークン側の地図なら、こちらはその地図を手に誤ったチケットを閉じてきたチームへの訂正になる。
+      en: Blocking training via robots.txt and dropping out of AI citations in Search are different decisions. That post maps the crawler-token side; this one is the correction for teams who have been closing the wrong ticket with that map in hand.
+      zh: 用 robots.txt 拦训练，和从搜索面的 AI 引用中消失，是两个不同的决定。那篇画的是爬虫令牌那一侧的地图，这篇是写给拿着那张地图关错工单的团队的更正。
   - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.68
+    score: 0.75
     reason:
-      ko: 그 글이 GSC 로 무엇을 뺄 수 있는지의 공식 범위를 다뤘다면, 이 글은 그 범위 밖에 있는 것 — AI 전용 배타 항목의 부재 — 을 문서 원문 어휘 카운트로 증명한다.
-      ja: あちらが GSC で何を除外できるかの公式範囲を扱ったなら、こちらはその範囲の外にあるもの — AI専用の排他項目の不在 — を文書原文の語彙カウントで裏付ける。
-      en: If that post mapped the official scope of what GSC lets you subtract, this one proves what sits outside that scope — the absence of an AI-only exclusion — with a raw word count from the source documents.
-      zh: 如果那篇梳理的是 GSC 能减掉什么的官方范围，这篇证明的就是这个范围之外的东西——AI 专属排除项的缺失——用的是源文档的原文词频统计。
+      ko: 선언한 robots.txt와 실제 배포본이 어긋나 있던 그 경험이 이 글의 CI 게이트 제안으로 이어졌다. 파일을 읽는 검사와 렌더 결과를 세는 검사는 다른 것을 본다.
+      ja: 宣言した robots.txt と実際の配信物がずれていたあの経験が、この記事の CI ゲート提案につながっている。ファイルを読む検査とレンダー結果を数える検査は別のものを見ている。
+      en: The gap between a declared robots.txt and what actually shipped is what led to the CI gate proposed here. Reading a file and counting rendered output are two different inspections.
+      zh: 声明的 robots.txt 与实际部署物之间的偏差，正是本文提出 CI 门禁的由来。读文件的检查和数渲染结果的检查，看的是两样东西。
 ---
 
-Legal filed a ticket: keep our content out of AI Overviews. I searched for the setting to handle the request. I read Google's own AI features documentation word by word, ran the same count against a Google announcement from yesterday, and checked our production robots.txt and rendered pages against both to see where the lever was supposed to live. The setting does not exist. Once you see why, you stop looking for it.
+I wanted to know whether Google had shipped an AI-only exclusion switch — some way to stay in ordinary search results while dropping out of AI Overviews and AI Mode. So on August 21, 2026, the day after Google announced Preferred Sources, I pulled the raw HTML of the official AI features documentation and counted words in it. In all 177,842 bytes: `opt out` 0 times, `opt-out` 0 times, `exclude` 0 times.
 
-Google's AI features documentation names exactly four levers that reduce what shows up from your pages in Search: `nosnippet` (blocks any snippet, AI or otherwise, from showing under the page), `data-nosnippet` (marks specific HTML elements as off-limits to snippets), `max-snippet` (caps how many characters of text a snippet may quote), and `noindex` (removes the page from the index entirely). None of the four levers is AI-specific. There is no fifth lever that pulls content out of AI Overviews while leaving regular search snippets intact. The omission is not a documentation oversight — a single eligibility check decides both surfaces at once. If your team closes "keep us out of AI" tickets by editing robots.txt — the plain-text file that tells crawlers which paths on a site they're allowed to fetch — you have closed the wrong ticket. Data teams hit the same gap when a business stakeholder files a deletion request and the system only reaches as far as its narrowest technical boundary. I audited the two Google documents defining this boundary against our production configuration to see where the assumption breaks.
+That absence is not a documentation gap someone forgot to fill. It is what the architecture produces, and it means the request sitting in your backlog — "make sure AI doesn't use our content" — is not an engineering task. It's a business decision about how much organic search traffic you're willing to give up. The rest of this is the evidence, and the four rules I now enforce so the request stops getting closed against the wrong file.
 
-The distinction matters because the ticket rarely asks for what engineering delivers. Legal wants a business outcome — content not consumed by generative answers, including AI Overviews, AI Mode, and any future surface Google adds. Engineering delivers a robots.txt line that touches exactly one crawler, on exactly one axis: training-data collection. Once you separate them, the request turns from a five-minute config change into a decision about how much organic search traffic you are willing to spend.
+## What the word counts showed
 
-## What changed, and what didn't
+The AI features doc names exactly four ways to reduce what Search displays from your pages:
 
-Start with the two documents at the center of the gap. Google Search Central's [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) page is the only document that addresses reducing AI exposure. Its last-modified timestamp reads 2025-12-10 UTC. On 2026-08-20, Google published [A more personalized Search, Discover and News](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/), introducing "Preferred Source" — a feature letting users pick sites they want highlighted, with a badge shown "in AI Mode and AI Overviews" (AI Mode is a separate, conversational Google Search interface, distinct from the AI Overviews summary box) per the companion [Preferred sources](https://developers.google.com/search/docs/appearance/preferred-sources) page, whose own timestamp reads 2026-08-20 UTC, the day of the announcement.
+> To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
+> — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 
-Look at the timeline: Google updated the document on gaining visibility the day the feature launched. The document on reducing visibility has not changed in over eight months. A delayed documentation cycle could account for some of that gap on its own. The word count settles the question.
+Not one of those four is AI-specific. They're the same snippet controls that have governed ordinary search result display for years. The doc's last-updated stamp reads 2025-12-10 UTC, so at the time I counted, it had been sitting still for over eight months.
 
-I ran a literal string count across the AI features page — all 177,842 bytes of it. "Opt out": zero matches. "Opt-out": zero. "Exclude": zero. A document devoted to how pages appear in AI features never once uses vocabulary for turning that appearance off. The announcement post carries exactly one instance of "opt out," and it sits in a newsletter-unsubscribe sentence unrelated to search exclusion. Its word count — 9,045 bytes of body copy — yields 7 matches for "preferred source," 8 for "publisher," 1 for "Top Stories," 1 for "AI Overviews," 2 for "AI Mode," and zero for "Search Console," "turn off," "exclude," "remove," or "block." Neither document contains exclusion vocabulary; every term in the copy points toward inclusion.
+Now look at the other direction over the same eight months. Google's August 20 announcement introduced Preferred Sources, and the dedicated developer doc for it carries an update stamp of 2026-08-20 UTC — same day as the announcement. The announcement's body runs 9,045 bytes. In it: `preferred source` 7 times, `publisher` 8 times, `Top Stories` once, `AI Overviews` once, `AI Mode` twice. `Search Console`, `turn off`, `exclude`, `remove`, `block` — all zero. There is one instance of `opt out` in the announcement, and it belongs to the newsletter signup box at the bottom: "You may opt out at any time."
 
-## The mechanism — why the fifth lever never showed up
+The only scale number the announcement offers is a user-side one.
 
-The AI features documentation states the eligibility rule directly: "To be eligible to be shown as a supporting link in AI Overviews or AI Mode, a page must be indexed and eligible to be shown in Google Search with a snippet, fulfilling the Search technical requirements." There is no separate AI eligibility check. AI Overviews and AI Mode citations ride on the same pass/fail gate as an ordinary search snippet: indexed, and snippet-eligible.
+> Readers more easily find their favorite publications in Top Stories, AI Overviews, and AI Mode, while publishers gain a more seamless way to connect with readers across Google. So far, people have already selected more than 600,000 unique sources.
+> — [A more personalized Search, Discover and News](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
 
-That requirement explains the broader architecture. If AI citation used an independent gate, Google would offer a dedicated control for it, the same way Google-Extended gives AI training and grounding their own dedicated control — feeding an AI answer live web data rather than generating from memory. Search citation gets no equivalent lever. To build one, Google would first have to split eligibility into two pipelines: one for search, one for AI. That split does not exist, leaving nowhere to attach an independent control. The documentation states the rule explicitly: "AI is built into Search and integral to how Search functions, which is why robots.txt directives for Googlebot is the control for site owners to manage access to how their sites are crawled for Search." Calling that shared check a single "gate" is my synthesis rather than Google's literal phrasing — the documentation specifies "fulfilling the Search technical requirements" — but the architecture it describes leaves no room for an isolated control.
+600,000 is how many unique sources users picked. It is not a publisher outcome metric, and nobody should present it to an executive as one.
 
-Preferred Source confirms the pattern from the other direction. Its documentation does not touch base eligibility at all; it layers a signal on top: "your content can be highlighted with a 'preferred' badge for users who have selected your site as a preferred source." Google built a new inclusion feature in the same eight months it left the exclusion document untouched, and that new feature still routes through the identical underlying gate rather than opening a parallel one. Inclusion got a badge. Exclusion did not get a switch.
+## Why there is no dial to attach
 
-## The one document people reach for instead, and why it answers a different question
+The mechanism is one sentence in the doc, and it decides everything downstream.
 
-Google-Extended is the token engineers cite when an AI exclusion ticket arrives — and the token is the wrong lever for a documented reason. Google's [crawlers and fetchers](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers) guide states: "Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search." Disallowing Google-Extended in robots.txt prevents content from training Gemini models or grounding Vertex AI applications (Google Cloud's platform for building AI apps). It does not alter your presence in Google Search or AI Overviews.
+> To be eligible to be shown as a supporting link in AI Overviews or AI Mode, a page must be indexed and eligible to be shown in Google Search with a snippet, fulfilling the Search technical requirements.
+> — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 
-A word count on the crawlers page confirms the scope: Google-Extended appears 6 times, Gemini 4 times, Vertex 8 times, AI Overviews 0 times, and AI Mode 0 times. The vocabulary of that document focuses entirely on model training and enterprise grounding, never touching the search surfaces teams expect this token to govern.
+AI citation eligibility isn't a separate pipeline with its own inputs. It reuses the existing determination: are you indexed, and are you eligible to appear with a snippet. To bolt an AI-only exclusion dial onto that, someone at Google would first have to split the eligibility check into a search branch and an AI branch. It isn't split. So there's no surface for the dial to mount on.
 
-I needed to confirm that our deployment behaved as documented, with no sign of Google-Extended leaking into search-facing behavior. I tested our production robots.txt and a deterministic sample of our sitemap against the documentation — eighteen runs across six configuration cells with three repeats each, every request returning exit 0 and HTTP 200, matching baseline byte counts with zero bot-block challenges. That run served as a health check on our deployment, not a test of the Google-Extended boundary; I ran the falsification attempt separately, testing the hypothesis that Google-Extended reaches into AI Overviews despite what documentation claims. While Google can update documentation and crawler behavior without notice, no evidence supported that hypothesis here: Google-Extended operates strictly on the training side, exactly as documented.
+I want to flag one thing about my own phrasing here. Calling this a single shared gate is my synthesis, not Google's wording. What the doc says is "fulfilling the Search technical requirements." I'm reading a shared determination out of that sentence, and if Google later documents two branches that were always there, my reading was wrong rather than the platform having changed.
 
-## Our own deployment showed the exact failure mode
+The inclusion side supports the same structure. Preferred Sources doesn't alter base eligibility at all — it layers one signal on top of it.
 
-The distinction is not hypothetical. In our production robots.txt, we maintain two Google-Extended disallow groups, alongside directives for GPTBot (OpenAI's training crawler) and CCBot (Common Crawl's scraping bot). Our robots.txt includes a Content-Signal header line — a syntax that specifies permitted crawler usage per purpose — reading `search=yes,ai-train=no,use=reference`: it permits the content to be indexed and cited in search, while explicitly refusing its use as AI training data. Every directive blocks training or third-party scraping; none of them activates the four levers Google specifies for reducing search-facing AI exposure.
+> In AI Mode and AI Overviews, your content can be highlighted with a "preferred" badge for users who have selected your site as a preferred source.
+> — [Preferred sources](https://developers.google.com/search/docs/appearance/preferred-sources)
 
-I checked a deterministic sample of twelve URLs from our sitemap — spanning 351 URLs and 71,340 bytes of XML — inspecting the rendered HTML of each page for robots or googlebot meta tags. Zero of the twelve URLs carried any of the four snippet directives. Had our team resolved a "keep this out of AI Overviews" ticket last month based on robots.txt alone, the deployed code would have achieved nothing toward that goal while appearing resolved on a surface inspection.
+The doc is also explicit that inclusion requires no new build work: "You don't need to create new machine readable files, AI text files, or markup to appear in these features." Meanwhile, the same doc's framing of access control points back at Googlebot itself: "AI is built into Search and integral to how Search functions, which is why robots.txt directives for Googlebot is the control for site owners to manage access to how their sites are crawled for Search." Blocking Googlebot to escape AI Overviews means leaving Search. That is the price tag, stated plainly.
 
-"AI" appears in both the ticket title and the configuration diff, allowing a reviewer to see `Disallow: /` under `Google-Extended` and approve the pull request. The request targeted Search visibility; the fix targeted model training. They share a word and nothing else.
+## The ticket that closes against the wrong file
 
-## The counter-argument, and where it actually holds
+In large web renewal work, the AI-exclusion request always arrives in the same shape. Legal or comms says "make sure our content isn't used by AI." An engineer opens robots.txt, disallows Google-Extended, adds `ai-train=no` to the Content-Signal line, and reports done. The request was "keep us out of AI." The implementation was "we opted out of training." Both sentences contain the word AI, so the reviewer sees `Disallow: /` under `Google-Extended`, approves the PR, and the ticket closes.
 
-The primary counter-argument claims: "There is no missing lever because the existing four are already precise enough." The argument breaks on a fundamental distinction: precision governs which content to remove, not which surface observes the removal. Wrapping a paragraph in `data-nosnippet` removes that text simultaneously from AI Overviews, AI Mode, standard search snippets, and every other surface consuming snippet eligibility. No combination of the four documented levers produces an outcome where content is invisible to AI surfaces yet visible in standard search snippets. Legal requests that dual state, but the platform architecture cannot deliver it.
+Except Google-Extended doesn't touch Search at all.
 
-The counter-argument holds on content granularity. The `data-nosnippet` attribute operates at the element level rather than the page level. An engineer can wrap a single paywalled paragraph or members-only summary, excluding only that fragment while the surrounding page retains full snippet eligibility. Similarly, `max-snippet` constrains character length rather than forcing a binary cutoff. If Google offered only page-level `noindex` and `nosnippet`, criticism of blunt tooling would hold. Here, element-level granularity exists and functions precisely on content. It cannot partition by surface.
+> Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.
+> — [Google crawlers and fetchers](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
 
-Element-level precision carries an engineering cost that teams overlook: it assumes templates can branch markup per element. A site using a shared template across hundreds of pages cannot apply `data-nosnippet` selectively without building custom conditional paths first. Selective exclusion requires template-level engineering before any tag can ship.
+The word distribution in that crawlers doc tells you what territory the token covers: Google-Extended appears 6 times, Gemini 4, Vertex 8. `AI Overviews` appears 0 times. `AI Mode`, 0 times. The token governs model training and grounding on the Gemini and Vertex side. AI Overviews and AI Mode are not in its vocabulary.
 
-## What this costs, and what it doesn't
+If you've worked deletion requests in a customer data platform, this failure has a familiar shape. The request scope is wide, the system reaches only as far as the narrowest technical boundary it knows how to touch, and without a written definition of done, "we did it" and "it's handled" quietly diverge. Nobody lied. The reviewer read a real file and saw a real directive.
 
-Inclusion and exclusion carry asymmetric costs. Inclusion is free. The documentation states plainly: "You don't need to create new machine readable files, AI text files, or markup to appear in these features." A normally indexed, snippet-eligible page qualifies as an AI Overview citation candidate without additional configuration. Preferred Source follows the same pattern: no new data schemas, only a button and a documented signal layered on top of existing eligibility.
+I ran a probe against my own production site the same day to see how wide that gap was on a site I control. Six cells, three repetitions each, 18 runs total. Every request came back exit 0 and HTTP 200, received byte counts matched the pre-registered baselines, zero bot-block pages. What that actually validated was the health of my own deployment — it did not test where Google-Extended's boundary sits. I also ran a separate cell trying to break the premise that Google-Extended covers search AI features, and nothing came back that falsified it. Failing to refute is weaker than confirming, and I'm treating it that way.
 
-Exclusion carries a direct cost. Because the only available levers rely on snippet controls, they cannot distinguish AI consumption from search snippet display. Applying an exclusion directive forfeits search snippets alongside AI citations. Google's announcement highlights one specific metric — "more than 600,000 unique sources" chosen by users — but that reflects user preferences rather than publisher traffic impact. Without official publisher-side data, that number remains a metric of user adoption rather than business ROI.
+The part that mattered was smaller. `sitemap-ko.xml` is 71,340 bytes and lists 351 URLs. I pulled a deterministic sample of 12 and checked what the rendered pages carried. All 12 had empty `robots` and `googlebot` meta tags. Not one of the four controls was live anywhere in the sample. My robots.txt, meanwhile, has two groups disallowing Google-Extended, a `Content-Signal: search=yes,ai-train=no,use=reference` line, and directives blocking GPTBot and CCBot. Everything switched on was on the training side. Nothing was switched on for search-surface snippets. Twelve is a small sample, and widening it could move the result, but the direction it points is the one I expected: the file said something the rendered output never carried.
 
-The actual cost of an exclusion decision is the organic traffic tied to the snippet you disable. Google does not publish this figure; every team that has run this trade-off has had to pull it from its own analytics stack first, ticket or no ticket.
+## Four axes that end the argument in review
 
-## What a team should put in place, not what we happened to do
+**Inclusion versus exclusion.** Over the same eight months, the inclusion direction got a dedicated doc, a button snippet published in Search Central, and a launch-day update. The exclusion direction got a doc that hasn't moved since December. Inclusion costs nothing to implement — no new files, no markup. Exclusion costs whatever traffic the snippet was earning you.
 
-The gap points to four operating rules, none requiring Google to ship a fifth lever.
-First, close the verification hole. Inspecting robots.txt alone cannot count as a completion check; a directive can sit in the file, look correct in review, and still never reach the pages it was meant to change. Sampling deterministic URLs from the sitemap and verifying the rendered `robots` and `googlebot` meta tags in production HTML is the minimal linter a continuous-integration gate (CI gate, an automated check that runs before a deploy is allowed to ship) should enforce. If declared policy and rendered tags diverge, the deployment halts.
-Second, split "keep us out of AI" tickets into two line items: a "search-facing AI exclusion" (a business decision trading off snippet visibility) and a "training exclusion" (a technical crawler directive).
-Third, require any pull request touching the four documented exclusion levers to state the target page group's organic traffic share, so reviewers weigh business impact alongside code diffs.
-Fourth, retire the ambiguous phrase "block AI crawlers" from internal documentation. Name the crawler token and the target surface directly instead — Google-Extended for training, `data-nosnippet` for search snippets and citations.
+**Training exclusion versus search-surface exclusion.** Google-Extended, GPTBot, and CCBot turn off model training and grounding, with no effect on Search inclusion or ranking. The nosnippet family turns off display in Search — which cascades into the AI surfaces because eligibility is shared. Different levers, different costs, and one word in common that keeps merging them in Slack.
 
-Picture the most common version of that ticket: a B2B platform, an ecommerce site, or a corporate blog where organic search drives leads and pipeline, and legal wants "our content" out of AI Overviews. For that team, the right move is to leave the four exclusion levers alone and put the effort into Preferred Source integration and snippet eligibility instead — the traffic those snippets carry is the business, and there is no lever that removes AI citation without removing the snippet underneath it. Applying `data-nosnippet` straight to the monetized paragraphs, by contrast, is the correct call for a narrower case: organizations selling paywalled research, subscription databases, or gated editorial are already trading traffic for something else entirely, so the snippet loss is a cost worth paying, as long as the team prices it in up front. If Google ever ships a documented, surface-specific exclusion control, that calculus changes; until then, these four levers represent the entire toolkit, and a dedicated AI switch has no architectural anchor.
+**Content granularity versus surface separation.** You can control which sentences appear. You cannot control which surface they appear on. More on this in the next section, because it's where the strongest objection to my read lives.
 
-These findings come from public documentation, publisher announcements, and production probes against our own deployment. None of the probes reach into the authenticated Search Console administrative UI, so an unannounced AI configuration option sitting behind that login remains unverified.
+**Declaration versus landing.** robots.txt is a declaration. Rendered meta tags are what actually shipped. My 12 of 12 is the whole argument for treating these as separate checks.
+
+## "The four controls are already precise enough"
+
+The serious objection to everything above goes like this: there's no separate AI exclusion lever because you don't need one. The existing four are precise enough already.
+
+On granularity, that objection is correct, and I want to concede it fully rather than restate it weakly. `data-nosnippet` applies at the element level — you can wrap a single paragraph, a pull quote, a pricing table. `max-snippet` tunes by character count. If the only tools were `noindex` and page-level `nosnippet`, the criticism "these instruments are blunt" would stand. It doesn't stand. The instruments are fine-grained, and I've stopped using bluntness as an argument.
+
+Where the objection breaks is that precision answers "what do I remove," not "where does it disappear from." Put `data-nosnippet` on a paragraph, and that paragraph vanishes from AI Overviews, from AI Mode, and from your ordinary search snippet, simultaneously. The lever has no surface parameter. A publisher asking to leave AI while staying in Search is not asking for a finer tool. They're asking for an axis that isn't in the API.
+
+There's a second cost the objection tends to skip. Element-level precision presumes a template that can branch. Sites mass-produced from a shared template can't apply anything selectively until someone builds the conditional first. On that class of site, the honest estimate isn't one line of markup — it's template surgery, then one line of markup.
+
+So I grant the range and keep my position. Within a page, the toolkit is adequate. Across surfaces, there is nothing, and that's the thing people are actually asking for.
+
+## Four rules, in this order
+
+I put the linter first because it's the only one that catches an error already in production.
+
+Pull a deterministic sample from your sitemap, render each URL, count `robots` and `googlebot` meta tags on the output, and fail the build when the rendered tags disagree with declared policy. My 12-URL sample is the minimum viable version of this. Reading robots.txt and calling it verified is the check that let the divergence live.
+
+Second, split the policy doc. "Search-surface AI exclusion" is a business decision that spends snippet budget. "Training exclusion" is a technical decision that touches one crawler token. Two separate line items, never one.
+
+Third, a PR that switches on an exclusion lever doesn't merge unless its description states the share of organic traffic the affected page group carries. If nobody can produce the number, the PR isn't ready — the number is the decision.
+
+Fourth, "block AI crawlers" is banned language internally. Say the token or say the surface. Training means Google-Extended. Search snippets and citations mean `data-nosnippet`.
+
+One thing I have not checked: whether the signed-in Search Console interface has an AI features section. I didn't count it, and I'm not asserting its absence. That the announcement routed publishers to Search Central documentation rather than to Search Console is circumstantial, nothing more.
+
+## What to measure before you sign the ticket
+
+Don't start with "should we opt out of AI." Start with "how much of this page group's revenue depends on snippet visibility in Search." An exclusion order issued without that figure is a payment authorized without knowing the amount.
+
+The unit economics are asymmetric, which is why the question order has to flip. Inclusion is effectively free — no new files, no markup, no engineering ticket. Exclusion costs you the organic traffic that snippet was carrying, and Google publishes no figure for that loss. Every estimate has to come from your own analytics. So the cheap side is measurable and the expensive side isn't, which is precisely the condition under which teams underprice the expensive side.
+
+For teams where search traffic is the lead source — B2B platforms, commerce, corporate sites — I'd write "do not touch the exclusion levers" into the standard and spend the effort on Preferred Sources adoption and on keeping snippet eligibility intact instead. For teams where the content is the product — paid articles, subscription databases, member-only editorial — `data-nosnippet` at the element level is defensible, provided the organic decline on those page groups is in the budget before the tag ships, not discovered in next quarter's report.
+
+Here's my call. The absence of an AI-only exclusion switch is not a temporary state waiting on a Google release. It follows from a shared eligibility determination, and until that determination splits, the combination people want cannot be built. What would prove me wrong is narrow and specific: Google documenting a control that removes a page from AI Overviews and AI Mode while it keeps appearing with a snippet in ordinary results. Not a blog post hinting at it. A control in the docs.
+
+I'll also keep an honest reservation on the table. Eight months of a static doc doesn't establish that the exclusion policy is settled — it's equally consistent with a documentation update that simply hasn't shipped. Update history doesn't state policy.
+
+What it does state is where the hands go. Counting which direction's docs get touched on launch day and which direction's sit for eight months tells you, through nothing more than word distribution, what a platform is currently selling its users and what it isn't.
 
 ## References
 
 - [A more personalized Search, Discover and News](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
 - [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 - [Preferred sources](https://developers.google.com/search/docs/appearance/preferred-sources)
-- [Google crawlers and fetchers — Google-Extended](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
+- [Google crawlers and fetchers](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
 - [Robots meta tag, data-nosnippet, and X-Robots-Tag specifications](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag)
