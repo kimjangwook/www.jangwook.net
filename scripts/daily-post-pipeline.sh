@@ -173,10 +173,11 @@ esac
 
 # 편집자는 집필자와 다른 모델이어야 한다. 자기 문장에서 자기 군더더기는 잘 안 보인다.
 # POLISH=0 으로 편집 패스를 끌 수 있다.
-# 2026-08-21 agy 퇴출 — 편집 패스는 claude (opus, SDK 러너 경유).
-# sdk 편집부(sonnet)와 모델이 달라 "집필자 ≠ 편집자" 원칙은 유지된다.
+# 2026-08-21 agy 퇴출 + local 우선 (claude 사용량 절감이 목적):
+# 편집 패스는 local(qwen) → gemini(genai) → claude 3단 A2A 체인.
+# sdk 편집부(sonnet)와 모델이 달라 "집필자 ≠ 편집자" 원칙도 유지된다.
 if [ -z "${POLISH_ENGINE:-}" ]; then
-  POLISH_ENGINE="claude"
+  POLISH_ENGINE="local"
 fi
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] pipeline: $*"; }
@@ -236,13 +237,96 @@ run_agy() {
 
 # local: 100% 무료 로컬 LLM (Qwen 27B/38B). 0원 방어용 윤문/스카우트 래퍼.
 run_local() {
-  local prompt="$1"
+  local prompt="$1" max_tokens="${2:-4096}"
   node "$PROJECT_DIR/../life-manager/src/cli/local-llm.ts" \
     --model "mtplx-qwen38-27b-optimized-quality" \
     --temperature 0.2 \
-    --max-tokens 4096 \
+    --max-tokens "$max_tokens" \
     "$prompt" \
     </dev/null
+}
+
+# gemini: genai API 직호출 (agy 아님 — 2026-08-21 CLI 금지). 텍스트 전용.
+GEMINI_LLM="${GEMINI_LLM:-/Users/jangwook/workspace/life-manager/src/cli/gemini-llm.ts}"
+run_gemini() {
+  local prompt="$1"
+  node "$GEMINI_LLM" \
+    --env-file "$CONTROLLER_DIR/.env" \
+    --api-key-env GEMINI_API_KEY_FREE \
+    --model gemini-3.7-flash \
+    "$prompt" </dev/null
+}
+
+# ── 임베드 편집 (A2A: local → gemini → claude 체인의 텍스트 모델용) ─────
+# 텍스트 전용 모델은 파일을 못 읽고 못 쓴다. 셸이 대신 읽어 프롬프트에 넣고,
+# 출력 전문으로 파일을 교체한다. 검증(프런트매터·분량 하한)에 실패하면 기각하고
+# rc=1 — 호출측이 다음 엔진으로 폴백한다.
+# $1=engine(local|gemini), $2=lang, $3=지시(치환 완료된 프롬프트)
+run_embed_polish() {
+  local engine="$1" lang="$2" inst="$3"
+  local target="$PROJECT_DIR/src/content/blog/$lang/$SLUG.md"
+  local article out rc olen nlen
+  article="$(cat "$target")" || return 1
+  local full="다음은 편집 지시와 기사 원문이다. 지시에 따라 기사를 손질한 뒤, 프런트매터(---)를 포함한 수정된 기사 전문 markdown 만 출력하라. 설명·인사·코드펜스 감싸기 금지.
+
+=== 편집 지시 ===
+$inst
+
+=== 기사 원문 ($lang/$SLUG.md) ===
+$article"
+  case "$engine" in
+    local)  out="$(run_local "$full" 12288)"; rc=$? ;;
+    gemini) out="$(run_gemini "$full")"; rc=$? ;;
+    *) return 1 ;;
+  esac
+  [ "$rc" -eq 0 ] || { log "embed-polish($engine) $lang rc=$rc"; return 1; }
+  case "$out" in ---*) ;; *) log "embed-polish($engine) $lang: 프런트매터 없음 — 기각"; return 1 ;; esac
+  olen=${#article}; nlen=${#out}
+  # 삭감 패스는 20~30% 감량이 목표다. 40% 미만이면 잘렸거나 폭주 삭감이다.
+  if [ "$nlen" -lt $((olen * 4 / 10)) ]; then
+    log "embed-polish($engine) $lang: ${nlen}b < 원문 40% — 기각"
+    return 1
+  fi
+  printf '%s\n' "$out" > "$target"
+  log "embed-polish($engine) $lang 적용 ${olen} → ${nlen} bytes"
+  return 0
+}
+
+# 1차 리뷰(비치명)의 임베드판. 브리프 + 4개 언어 본문을 넣고 리뷰 보고서를 받아
+# data/review-gemini.md 에 저장한다. $1=engine(local|gemini)
+run_embed_review() {
+  local engine="$1" inst corpus f full out rc
+  inst="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-review-gemini.md")"
+  corpus="=== data/column-brief.md ===
+$(cat "$BRIEF" 2>/dev/null)"
+  for f in $LANGS; do
+    corpus="$corpus
+
+=== src/content/blog/$f/$SLUG.md ===
+$(cat "$PROJECT_DIR/src/content/blog/$f/$SLUG.md" 2>/dev/null)"
+  done
+  full="다음 리뷰 지시를 수행하라. 아래 첨부한 파일 내용만 근거로 삼는다. 리뷰 보고서 본문(markdown)만 출력하라 — 파일 쓰기는 셸이 대신한다.
+
+=== 리뷰 지시 ===
+$inst
+
+$corpus"
+  if [ "$engine" = "local" ] && [ "${#full}" -gt 30000 ]; then
+    # 로컬 qwen 의 컨텍스트를 넘길 크기다. 타임아웃 행업보다 즉시 폴백이 낫다.
+    log "embed-review(local) 입력 ${#full}자 > 30000 — gemini 로 넘긴다"
+    return 1
+  fi
+  case "$engine" in
+    local)  out="$(run_local "$full" 8192)"; rc=$? ;;
+    gemini) out="$(run_gemini "$full")"; rc=$? ;;
+    *) return 1 ;;
+  esac
+  if [ "$rc" -ne 0 ] || [ "${#out}" -lt 200 ]; then
+    log "embed-review($engine) rc=$rc len=${#out} — 기각"
+    return 1
+  fi
+  printf '%s\n' "$out" > "$GEMINI_REVIEW"
+  return 0
 }
 
 # ── 언어 격리 ──────────────────────────────────────────────────────────
@@ -428,7 +512,17 @@ polish_lang() {
 
   log "phase polish lang=$lang (editor=$POLISH_ENGINE)"
   case "$POLISH_ENGINE" in
-    local) run_local "$prompt"; rc=$? ;;
+    # local qwen → gemini genai → claude(에이전트) 순 A2A 폴백.
+    # 앞 두 엔진은 임베드 편집(검증 실패 시 파일 무변경·기각)이라 안전하다.
+    local)
+      run_embed_polish local "$lang" "$prompt" \
+        || run_embed_polish gemini "$lang" "$prompt" \
+        || run_claude "$CLAUDE_EFFORT" "$prompt"
+      rc=$? ;;
+    gemini)
+      run_embed_polish gemini "$lang" "$prompt" \
+        || run_claude "$CLAUDE_EFFORT" "$prompt"
+      rc=$? ;;
     codex) run_codex "$prompt"; rc=$? ;;
     agy)   run_agy "$prompt" "$AGY_REVIEW_MODEL"; rc=$? ;;
     *)     run_claude "$CLAUDE_EFFORT" "$prompt"; rc=$? ;;
@@ -713,12 +807,19 @@ done
 # 싸고 빠른 모델에게 사실·인용·링크·frontmatter 같이 기계적으로 대조 가능한
 # 층을 훑게 하고, 문체 판정은 다음 단계 opus 에 맡긴다.
 # 1차 리뷰어는 집필 엔진과 달라야 한다. 자기 문장을 자기가 읽으면 덜 걸린다.
-# 2026-08-21: agy 퇴출 — 리뷰는 항상 claude sonnet (SDK 러너 경유).
-REVIEWER1="claude"
-if [ "$REVIEWER1" = "agy" ] && [ -x "$AGY_BIN" ]; then
-  log "phase review-1 (reviewer=$REVIEWER1, writer=$WRITER)"
-  GEMINI_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-review-gemini.md")"
-  run_agy "$GEMINI_PROMPT" "$AGY_REVIEW_MODEL"; REVIEW1_RC=$?; REVIEWER1_LABEL="$AGY_REVIEW_MODEL"
+# 2026-08-21: agy 퇴출 + local 우선 — local(qwen) → gemini(genai) → claude sonnet.
+REVIEWER1="embed"
+if [ "$REVIEWER1" = "embed" ]; then
+  # local(qwen) → gemini(genai) → claude sonnet 3단 A2A. 앞 두 단은 임베드 리뷰.
+  log "phase review-1 (reviewer=local→gemini→claude, writer=$WRITER)"
+  if run_embed_review local; then
+    REVIEW1_RC=0; REVIEWER1_LABEL="local/qwen38-27b"
+  elif run_embed_review gemini; then
+    REVIEW1_RC=0; REVIEWER1_LABEL="gemini-3.7-flash"
+  else
+    GEMINI_PROMPT="$(sed "s/{{SLUG}}/$SLUG/g" "$PROMPT_DIR/daily-post-review-gemini.md")"
+    run_claude "low" "$GEMINI_PROMPT" "sonnet"; REVIEW1_RC=$?; REVIEWER1_LABEL="claude/sonnet"
+  fi
   if [ "$REVIEW1_RC" -ne 0 ] || [ ! -f "$GEMINI_REVIEW" ]; then
     log "review-1 실패(rc=$REVIEW1_RC) 또는 산출 없음 — opus 단독 리뷰로 진행"
     rm -f "$GEMINI_REVIEW"
