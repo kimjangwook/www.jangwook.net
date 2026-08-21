@@ -3,6 +3,7 @@
 // Only pubDate >= 2026-08-14 (the day independent outlines became the contract).
 
 export const H2_INDEPENDENCE_FROM = '2026-08-14';
+export const H2_INDEPENDENCE_UNTIL = '2026-08-20';
 
 const BUCKETS = [
   ['llms', /llms\.?txt/i],
@@ -31,7 +32,7 @@ export function headingSignature(h2Lines) {
 export function findTranslatedSkeletons(groups) {
   const hits = [];
   for (const group of groups) {
-    if (!group.pubDateKey || group.pubDateKey < H2_INDEPENDENCE_FROM) continue;
+    if (!group.pubDateKey || group.pubDateKey < H2_INDEPENDENCE_FROM || group.pubDateKey > H2_INDEPENDENCE_UNTIL) continue;
     const langs = Object.keys(group.byLang);
     if (langs.length < 3) continue;
 

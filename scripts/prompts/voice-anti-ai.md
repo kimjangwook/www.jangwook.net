@@ -81,16 +81,13 @@ A line you would not say out loud gets rewritten. Numbers and verbatim quotes st
 
 ## Process the scheduler already enforces
 
-`scripts/daily-post-pipeline.sh` splits the day into isolated processes. Judgment runs on claude, prose runs on codex. No process writes two languages.
+`scripts/daily-post-pipeline.sh` orchestrates the execution flow: English Master writing first, followed by high-quality multilingual transcreation (`ko`, `ja`, `zh`) via Native SDK (`daily-post-write-sdk.mjs`).
 
-1. **core** — claude (opus) writes `data/column-brief.md` (bullets). Topic gate, lane, evidence. It is denied the blog tree.
-2. **lang ×4** — agy (`gemini-3.7-flash-medium`), one process per language. Before each run the other three files for today's slug are moved out of the repo, so there is no draft on disk to translate from. If the writer dies, that one language falls back to claude opus at effort `xhigh`, from the 브리프, not from whatever the writer left behind. The writing model is deliberately a mid-effort one: raising reasoning makes prose more uniform, and uniformity is what reads as machine (measured 2026-08-15). `data/write-engines.txt` records who wrote what.
-3. **polish** — a model different from the writer edits that one file, inside the same hold window. 20-30% shorter, no new facts, no added transitions, reproduction commands untouched. Prompts in `scripts/prompts/daily-post-polish-{ko,ja,en,zh}.md`. Writing and cutting are separate jobs; merging them into one prompt costs compliance on both.
-4. **review-1** — a model different from the writer writes `data/review-gemini.md`: facts against the 브리프, quotes, frontmatter, links, H2 sequences, truncation. Mechanical layers only, no taste. Non-fatal — a missing review does not stop the day.
-5. **seal-check** — claude opus at effort `xhigh` reads all four plus the first-pass notes, and writes `data/seal-check.md`: `OK`, or `REWRITE: ja,zh` with the specific problem. It fixes metadata, never prose. The first-pass notes are input, not a verdict; opus re-derives each claim and has overturned them.
-6. **rewrite** — the writer redoes only the languages seal-check named, still one file at a time, then polish runs again on it.
-7. **seal-publish** — claude commits, pushes, sends Telegram. `validate:publishing` fails a shared H2 spine on pubDate >= 2026-08-14.
-
-Reviewer and editor are always a different model from the writer. A model reads past its own prose.
-
-A human editing a post by hand is outside this. The rule is about the scheduler: whatever writes an article body is codex.
+1. **core** — claude (opus) writes `data/column-brief.md` (bullets). Topic gate, lane, evidence, real-world team context, and executive insights.
+2. **master English (`en`)** — native SDK (`sonnet:chief+3`) writes `src/content/blog/en/<slug>.md` as the authoritative Master Article (Source of Truth).
+3. **multilingual transcreation (`ko`, `ja`, `zh`)** — native SDK (`sonnet:chief+3`) translates and transcreates the English master into natural, professional, and authoritative Korean (해라체), Japanese (だ体), and Chinese prose without machine translation quirks.
+4. **polish** — edits each file (20-30% shorter, no added fluff). Prompts in `scripts/prompts/daily-post-polish-{en,ko,ja,zh}.md`.
+5. **review-1** — checks facts against the brief, quotes, frontmatter, links, and truncation.
+6. **seal-check** — claude opus at effort `xhigh` reads all four plus the first-pass notes, ensuring facts, quotes, formatting, and high-quality human tone.
+7. **insight-gate** — claude opus at effort `xhigh` verifies executive value, concrete mechanism, and actionable takeaways (`PUBLISH` / `REWRITE` / `HOLD`).
+8. **seal-publish** — static build verification (1,414+ pages), git commit, push, Telegram report.

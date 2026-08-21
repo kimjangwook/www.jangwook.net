@@ -1,13 +1,13 @@
 Goal: judge {{SLUG}}. Write only `data/seal-check.md`. Do not edit any file under `src/content/blog/`.
 
-You are the reviewer, not a writer. Four writers each wrote one language without seeing the others. Your job is to say what is wrong, not to fix prose.
+You are the reviewer, not a writer. English is the Master Article (Source of Truth), and ko/ja/zh are transcreated/translated from the English master. Your job is to say what is wrong, not to fix prose.
 
 Read `data/column-brief.md` and the four files under `src/content/blog/{ko,ja,en,zh}/{{SLUG}}.md`.
 
 Check only:
 - relatedPosts, heroImage, internal links, images exist and resolve
-- facts, numbers and quotes stay inside the 브리프 `## LOCKED` block
-- three or more languages do not share the same H2 topic order (robots → console → schema…)
+- facts, numbers and quotes stay inside the 브리프 `## LOCKED` block and match across languages
+- translations (ko, ja, zh) read naturally without awkward machine-translation syntax or calques
 - **no impersonated execution** — see below
 - **no wave characters (`~`, `〜`, `～`)** in prose (outside code blocks)
 - **no unexplained domain jargon** that leaves non-developer readers stranded
@@ -51,8 +51,8 @@ or
 REWRITE: ja,zh
 ```
 
-Then, for each named language, the specific problem in two or three lines: which H2 spine it copied, which number it invented, which quote drifted from the 브리프, which sentence claims a run that `tested[]` does not have. Be concrete enough that a writer who cannot see the other languages can act on it.
+Then, for each named language, the specific problem in two or three lines: which number it invented, which quote drifted from the 브리프, which sentence claims a run that `tested[]` does not have, or where machine translation awkwardness breaks reader trust. Be concrete enough that the writer can act on it.
 
-Name a language only when it must change. A file that already reads like a person stays. Do not make the four outlines match.
+Name a language only when it must change. A file that already reads like a person stays.
 
 Never ask questions.

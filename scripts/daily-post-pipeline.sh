@@ -99,7 +99,7 @@ export PATH="/Users/jangwook/.nvm/versions/node/v22.22.0/bin:/opt/homebrew/bin:/
 export TELEGRAM_BOT_TOKEN=""
 cd "$PROJECT_DIR" || exit 1
 
-LANGS="ko ja en zh"
+LANGS="en ko ja zh"
 
 # 집필 엔진. 기본 sdk — Agent SDK 편집부(sonnet). 2026-08-19 claude-md-at-import
 # redo 실전(4개 언어 재발행, seal-check·insight-gate 통과)을 보고 fable 에서
@@ -285,6 +285,8 @@ hold_siblings() {
   local keep="$1" other
   for other in $LANGS; do
     [ "$other" = "$keep" ] && continue
+    # 영어가 마스터 아티클이므로, ko/ja/zh 번역 집필 시 영어를 가리지 않고 참조할 수 있도록 보존한다.
+    [ "$other" = "en" ] && continue
     if [ -f "$PROJECT_DIR/src/content/blog/$other/$SLUG.md" ]; then
       mv "$PROJECT_DIR/src/content/blog/$other/$SLUG.md" "$HOLD_DIR/$other.md" || return 1
     fi
@@ -708,7 +710,9 @@ if [ -n "$HERO_REL" ]; then
   log "브리프 hero → $HERO_REL"
 fi
 
-# ── 2. lang × 4: 언어별 독립 초고 ──────────────────────────────────────
+# ── 2. Master English 집필 → 다국어 번역/현지화 (ko ja zh) ─────────────────
+# 영어(en)를 먼저 마스터 아티클로 완성하고, 이를 정본으로 삼아
+# ko, ja, zh로 전문 번역 및 현지화(transcreation)를 진행한다.
 for LANG in $LANGS; do
   log "phase lang=$LANG (writer=$WRITER)"
   write_lang "$LANG" "" || exit 1
