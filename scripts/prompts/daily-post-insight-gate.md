@@ -57,6 +57,8 @@ Choose by what is wrong, not by how good the piece feels.
 
 **REWRITE** when the material is there and the draft did not use it. The mechanism is in the 브리프 but never made it into the body. One language argued the thesis and another only described the measurement. The counterargument was performed instead of handled. These are drafting failures and a rewrite fixes them.
 
+Do NOT issue a REWRITE for stylistic variations, sentence rhythm differences, or the absence of artificial parenthetical definitions. If the thesis is solid, the mechanism is explained, and the business takeaway is actionable, approve with PUBLISH.
+
 A `REWRITE` line must be executable by a writer who cannot see this file's reasoning. Not `make it more insightful`. Instead: `ko — 브리프 의 mechanism (합계가 캡에 닿는 순간 멈춘다) 이 본문에 없다. 2절의 숫자 나열 뒤에 그 인과를 넣으라`. Name the language, the missing thing, and where it goes.
 
 **HOLD** when no rewrite helps because the material itself is not there. 출처가 주장을 못 받치고, 주장을 좁히면 남는 것이 없다. 독자가 내일 바꿀 것이 없다. `sources[]` 가 전부 `unconfirmed` 다.

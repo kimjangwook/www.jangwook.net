@@ -42,57 +42,35 @@
 # 실험은 주제가 정해진 뒤에 그 주제를 겨냥해서만 돈다(scout-and-probe.sh).
 #
 # 리뷰가 둘인 이유: flash 는 싸고 빨라 사실·링크·메타데이터 같은 기계적 오류를
-# 훑는 데 쓰고, opus xhigh 가 그 메모를 받아 문체와 H2 독립성을 판정한다.
-# 판정(REWRITE 여부)은 opus 만 내린다. 리뷰어가 둘이어도 결정권은 하나다.
-#
-# 언어 격리: grok 의 `--deny Read(...)` 에 해당하는 기능이 codex 에 없다.
-# 대신 각 언어 프로세스를 돌리기 직전, 오늘 slug 의 다른 언어 파일을 레포 밖
-# 임시 디렉터리로 옮긴다. 번역할 원본이 디스크에 없으면 번역이 불가능하다.
-# trap 으로 어떤 종료 경로에서도 원위치한다.
-#
-# 호출: scripts/jangwook-scheduler.sh (launchd)
-#
-# redo 모드:
-#   scripts/daily-post-pipeline.sh [--lane a|b] [--writer ...] [--redo <slug>]
-#   scripts/daily-post-pipeline.sh --resume [--slug <s>] [--from check|publish]
-#     --slug 를 생략하면 data/column-brief.md 에서 읽는다 (원장이 부르는 형태)
-# 이미 발행된 글을 이 로직으로 다시 만든다. core 대신 claude 가 기존 4개 파일에서
-# 브리프 를 복원하고(취재는 끝나 있다), 기존 본문 4개를 레포 밖으로 치운 뒤
-# codex 가 백지에서 다시 쓴다. 기존 본문은 아카이브에 남는다.
-set -uo pipefail
+# 훑는 데 쓰고, opus medium 이 그 메모를 받아 종합 판정한다.
 
-PROJECT_DIR="${PROJECT_DIR:-/Users/jangwook/workspace/www.jangwook.net}"
-CONTROLLER_DIR="${CONTROLLER_DIR:-/Users/jangwook/workspace/claude-controller}"
-PROMPT_DIR="$PROJECT_DIR/scripts/prompts"
-BRIEF="$PROJECT_DIR/data/column-brief.md"
-SEAL_CHECK="$PROJECT_DIR/data/seal-check.md"
-GEMINI_REVIEW="$PROJECT_DIR/data/review-gemini.md"
-ENGINE_LOG="$PROJECT_DIR/data/write-engines.txt"
+PROJECT_DIR="/Users/jangwook/workspace/www.jangwook.net"
+CONTROLLER_DIR="/Users/jangwook/workspace/claude-controller"
+PROMPT_DIR="/scripts/prompts"
+BRIEF="/data/column-brief.md"
+SEAL_CHECK="/data/seal-check.md"
+GEMINI_REVIEW="/data/review-gemini.md"
+ENGINE_LOG="/data/write-engines.txt"
 
-CLAUDE_BIN="${CLAUDE_BIN:-/opt/homebrew/bin/claude}"
-CLAUDE_MODEL="${CLAUDE_MODEL:-opus}"
-CLAUDE_EFFORT="${CLAUDE_EFFORT:-high}"          # 판단 단계 기본
-CLAUDE_WRITE_MODEL="${CLAUDE_WRITE_MODEL:-fable}"      # 집필 1순위
-# 집필은 low — effort 를 올릴수록 산문이 균일해지고 그 균일함이 AI 문체로 읽힌다
-# (§CODEX_EFFORT 의 2026-08-15 ko A/B 와 같은 근거).
-CLAUDE_WRITE_EFFORT="${CLAUDE_WRITE_EFFORT:-low}"
-CLAUDE_FALLBACK_MODEL="${CLAUDE_FALLBACK_MODEL:-opus}"     # 집필 폴백 (판단 단계의 CLAUDE_MODEL 과 분리)
-CLAUDE_FALLBACK_EFFORT="${CLAUDE_FALLBACK_EFFORT:-medium}"
-CLAUDE_REVIEW_EFFORT="${CLAUDE_REVIEW_EFFORT:-xhigh}" # 리뷰/판정
-CODEX_BIN="${CODEX_BIN:-/opt/homebrew/bin/codex}"
-CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-terra}"
-# effort=max 는 "빠짐없이 균일하게 덮는" 산문을 만든다. 그 균일함이 곧 AI 문체다.
-# 2026-08-15 ko 단일언어 A/B: 프롬프트를 고정하고 max→high 만 바꿨을 때
-# 설명성 괄호 18→8, 유보 4→2, 소요 18분→6분. high 를 기본으로 둔다.
-CODEX_EFFORT="${CODEX_EFFORT:-high}"
-AGY_BIN="${AGY_BIN:-/Users/jangwook/.local/bin/agy}"
-# 집필 기본 모델. high 가 아니라 medium 이다 — effort 를 올릴수록 산문이
-# 균일해지고, 그 균일함이 AI 문체로 읽힌다 (2026-08-15 ko A/B).
-AGY_MODEL="${AGY_MODEL:-gemini-3.7-flash-medium}"
-# 리뷰·편집처럼 대조와 삭제가 일인 단계는 추론을 더 줘도 문체가 상하지 않는다.
-AGY_REVIEW_MODEL="${AGY_REVIEW_MODEL:-gemini-3.7-flash-high}"
+CLAUDE_BIN="/opt/homebrew/bin/claude"
+CLAUDE_MODEL="opus"
+CLAUDE_EFFORT="medium"          # 판단 단계 기본 (과잉 생각 방지)
+CLAUDE_WRITE_MODEL="fable"      # 집필 1순위
+# 집필은 low — effort 를 올릴수록 산문이 균일해지고 그 균일함이 AI 문체로 읽힌다.
+CLAUDE_WRITE_EFFORT="low"
+CLAUDE_FALLBACK_MODEL="opus"     # 집필 폴백
+CLAUDE_FALLBACK_EFFORT="low"
+CLAUDE_REVIEW_EFFORT="medium" # 리뷰/판정 (과도한 추론으로 인한 사소한 트집/과잉 검열 방지)
+CODEX_BIN="/opt/homebrew/bin/codex"
+CODEX_MODEL="gpt-5.6-terra"
+CODEX_EFFORT="medium"
+AGY_BIN="/Users/jangwook/.local/bin/agy"
+# 집필 모델 (gemini-3.7-flash-medium). 군더더기 없고 명쾌한 산문과 자연스러운 번역 생성
+AGY_MODEL="gemini-3.7-flash-medium"
+# 리뷰·편집 단계도 medium으로 과도한 피로도와 사소한 트집 방지
+AGY_REVIEW_MODEL="gemini-3.7-flash-medium"
 
-export HOME="${HOME:-/Users/jangwook}"
+export HOME="/Users/jangwook"
 export PATH="/Users/jangwook/.nvm/versions/node/v22.22.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # 헤드리스 run 은 인바운드 Telegram 이 불필요하다. 빈 토큰이면 플러그인이 즉시
 # exit 해 고아 bun 폴러가 뜨지 않는다 (scheduler 와 동일 정책).
@@ -151,12 +129,12 @@ while [ $# -gt 0 ]; do
       ;;
     --redo)
       REDO_SLUG="${2:-}"
-      [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer fable|codex|agy|claude|sdk] --redo <slug>" >&2; exit 2; }
+      [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer fable|codex|agy|flash|claude|sdk] --redo <slug>" >&2; exit 2; }
       shift 2
       ;;
     --writer)
       WRITER="${2:-}"
-      [ -n "$WRITER" ] || { echo "usage: $0 --writer fable|codex|agy|claude|sdk" >&2; exit 2; }
+      [ -n "$WRITER" ] || { echo "usage: $0 --writer fable|codex|agy|flash|claude|sdk" >&2; exit 2; }
       shift 2
       ;;
     *)
@@ -185,8 +163,8 @@ elif [ -n "$RESUME_SLUG_ARG" ]; then
 fi
 
 case "$WRITER" in
-  fable|codex|agy|claude|sdk) ;;
-  *) echo "unknown writer: $WRITER (fable|codex|agy|claude|sdk)" >&2; exit 2 ;;
+  fable|codex|agy|flash|claude|sdk) ;;
+  *) echo "unknown writer: $WRITER (fable|codex|agy|flash|claude|sdk)" >&2; exit 2 ;;
 esac
 
 # 편집자는 집필자와 다른 모델이어야 한다. 자기 문장에서 자기 군더더기는 잘 안 보인다.

@@ -10,7 +10,7 @@ Check only:
 - translations (ko, ja, zh) read naturally without awkward machine-translation syntax or calques
 - **no impersonated execution** — see below
 - **no wave characters (`~`, `〜`, `～`)** in prose (outside code blocks)
-- **no unexplained domain jargon** that leaves non-developer readers stranded
+- **no parenthetical dictionary glosses** (`Term(explanation)` clutter that breaks reading rhythm)
 - if the brief says `hero_kind: illustration`, the body carries at least one figure
   or code block of its own. A generated illustration is decoration, not evidence.
 

@@ -67,7 +67,7 @@ hand the reader what they came for as fast as possible.
 - Don't end the last section on a summary, a lesson, or "you must always". Once
   you've given the call and what would prove it wrong, don't add a line for
   afterglow - it is information to the last sentence.
-- Don't drop technical terms (acronyms, system fields, API parameters, join keys, time zones like UTC/PT/PDT/PST, rollouts, serving, regression analysis) without explanation. Spell out what the concept actually means in practice and how it drives the mechanism, so non-developer readers (PMs, team leads, business side, executives) easily grasp the full context and causal chain.
+- Explain domain mechanics and why they matter through the natural narrative flow. Never drop dry parenthetical dictionary glosses like `Search Console (a tool that monitors search traffic)`. Let the real-world operational cause and effect carry the clarity. Professional engineering terms (robots.txt, PRs, CI/CD, crawl budgets, status codes) are used naturally without breaking character to define them.
 - Never use wave or tilde characters (`~`, `〜`, `～`) under any circumstances. Express ranges of numbers, dates, or time intervals using hyphens (`-`) or natural phrasing (`10 to 20`, `from 10 to 20`).
 - First person, contractions mixed in. Vary sentence length — some short, some long.
 - H2s belong to this English piece alone. Don't port another language's outline.

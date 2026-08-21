@@ -22,7 +22,7 @@ This is the part the 2026 research moved most, and it applies to all four langua
 
 **Stakes are countable consequences for named people.** Not "this matters." Who loses what: money, a deleted history, the next project, 61 lines nobody reviewed. Toss's most-shared 2026 piece led with 5,600억 vs 350억 and drew comments from a 사회과학 reader and a 금융권 practitioner. Findy's most-shared piece fixed its scope in three paragraphs — one person, one month, almost no hand-written code — before making any claim.
 
-**A term's job comes before its name, and no domain jargon goes unexplained.** Never open on an abstract definition, and never drop raw technical terms without grounding what they actually do. Show the thing failing or working in the scene, explain its practical role in plain language so non-developer readers (PMs, team leads, business side) can easily follow, then name it, and optionally give the original spelling in parentheses. `ADB(안드로이드 기기를 명령으로 제어하는 도구)` is the shape. If a time zone standard (PT), API field, join key, or system mechanic is central to the post, spell out what it means, why it exists, and how it directly affects the outcome before running calculations on it. Do not stop at a dry one-word dictionary gloss; make the mechanism tangible and immediately clear to a reader who has never configured that system.
+**A term's job comes from context, not parenthetical dictionary glosses.** Never drop a parenthetical definition like `Search Console(웹사이트 검색 노출을 확인하는 도구)` or `ADB(안드로이드 기기를 명령으로 제어하는 도구)`. Parenthetical glosses read like a machine textbook or AI slop. Instead, let the mechanism and practical impact show through the natural narrative flow. Professional domain words (robots.txt, PR, CI/CD, crawler, rollout, status code) are used naturally without halting the sentence to define them. If a concept is crucial to non-technical readers, explain its real-world cause and effect within the sentence itself, never inside parentheses.
 
 **Analogy budget: one per article, and say where it breaks.** Allowed only when the analogy is shorter than the plain statement and cannot be misread. An analogy nobody corrects becomes the reader's wrong model.
 
@@ -34,11 +34,11 @@ This is the part the 2026 research moved most, and it applies to all four langua
 
 **English stems:** delve, unleash, game-changing, revolutionary, transformative, leverage, unlock, it's worth noting, it's important to, in other words, at the end of the day, not just X but Y, here's the, let's dive, in today's, tapestry, landscape, realm, moreover, furthermore.
 
-**Korean stems:** 하는 것이다, 에 대해, 그것은 ...이다, 먼저 용어부터, 중요한 건 이것이다, 오늘 내가 택한 쪽, 본절에서는, 이 글에서는, 말할 필요도 없이, 패러다임, 혁신적, 여정이 시작된다, 단순히 A가 아니라 B, 되어지고 있다, 수행/진행/실시/처리, 를 통해.
+**Korean stems:** 하는 것이다, 에 대해, 에 의해, 그것은 ...이다, 먼저 용어부터, 중요한 건 이것이다, 오늘 내가 택한 쪽, 본절에서는, 이 글에서는, 말할 필요도 없이, 패러다임, 혁신적, 여정이 시작된다, 단순히 A가 아니라 B, 되어지고 있다, 로 보여진다, 으로 생각된다, 수행/진행/실시/처리, 를 통해, 용어(설명) 형태의 사전식 괄호 표기.
 
-**Japanese stems:** 本節では, 重要なのは, まず用語を, だ。だ。だ。(単調な断定連続), レバー, レイヤー (when they are Korean calques), つまり/要するに/このように の定型, が重要です, 羅針盤・架け橋・地図の在庫比喩, 見ていきましょう.
+**Japanese stems:** 本節では, 重要なのは, まず用語を, だ。だ。だ。(単調な断定連続), レバー, レイヤー (when they are Korean calques), つまり/要するに/このように の定型, が重要です, 羅針盤・架け橋・地図の在庫比喩, 見ていきましょう, 用語（説明）の辞書的括弧書き.
 
-**Chinese stems:** 先把词钉死, 划掉清单, 资格的层, 生成式资格层, 四字对仗连发, 不是A而是B(及「更是」「不只是…更是」), 进行/开展/作出/予以/得以, ……的存在, 值得警惕, 不容忽视, 从某种意义上说.
+**Chinese stems:** 先把词钉死, 划掉清单, 资格的层, 生成式资格层, 四字对仗连发, 不是A而是B(及「更是」「不只是…更是」), 进行/开展/作出/予以/得以, ……的存在, 值得警惕, 不容忽视, 从某种意义上说, 术语（解释）的字典式括号注记.
 
 **Newer tells (2026), all languages:** a sentence ending in an -ing tail that adds fake analysis (highlighting, underscoring, reflecting); avoiding *is/has* for serves as / stands as / boasts / features; renaming the same subject every sentence to avoid repetition; long sentences joined by "and" with almost no commas, semicolons, or parentheses; a closing section shaped as "despite its X, challenges remain" or a call to action.
 
