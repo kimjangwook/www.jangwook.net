@@ -19,7 +19,7 @@ CONTROLLER_DIR="${CONTROLLER_DIR:-/Users/jangwook/workspace/claude-controller}"
 PROMPT_DIR="$PROJECT_DIR/scripts/prompts"
 CLAUDE_BIN="${CLAUDE_BIN:-/opt/homebrew/bin/claude}"
 CLAUDE_MODEL="${SCOUT_MODEL:-opus}"
-CLAUDE_EFFORT="${SCOUT_EFFORT:-high}"
+CLAUDE_EFFORT="${SCOUT_EFFORT:-medium}"
 
 export HOME="${HOME:-/Users/jangwook}"
 export PATH="/Users/jangwook/.nvm/versions/node/v22.22.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"

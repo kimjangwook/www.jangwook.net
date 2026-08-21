@@ -6,14 +6,14 @@
 #                             편집장 medium 이 writer low·편집자 2(medium)를 위임
 #     └ 폴백                 : claude opus / effort medium  (집필 실패 시 언어 단위)
 #   편집(언어별 삭감 패스)     : 집필과 다른 모델. 사실을 더하지 않고 20~30% 줄인다
-#   리뷰                      : 1차(집필과 다른 모델) → claude opus / effort xhigh
+#   리뷰                      : 1차(집필과 다른 모델) → claude opus / effort medium
 #
 # 집필 모델을 medium 으로 두는 이유는 §CODEX_EFFORT 주석과 같다. 추론량을 올릴수록
 # 산문이 균일해지고, 그 균일함이 독자에게 AI 문체로 읽힌다. 대조·삭제가 일인
 # 리뷰·편집 단계만 high 를 쓴다(AGY_REVIEW_MODEL).
 #
 # 집필 엔진 교체:
-#   scripts/daily-post-pipeline.sh --writer codex      (gpt-5.6-luna, effort high)
+#   scripts/daily-post-pipeline.sh --writer codex      (gpt-5.6-terra, effort medium)
 #   scripts/daily-post-pipeline.sh --writer claude     (opus, CLAUDE_WRITE_EFFORT, 폴백 없음)
 #   WRITER=codex scripts/daily-post-pipeline.sh        (환경변수도 동작)
 # 1차 리뷰어·편집자는 집필 엔진과 겹치지 않게 자동으로 고른다.

@@ -88,6 +88,6 @@ A line you would not say out loud gets rewritten. Numbers and verbatim quotes st
 3. **multilingual transcreation (`ko`, `ja`, `zh`)** — native SDK (`sonnet:chief+3`) translates and transcreates the English master into natural, professional, and authoritative Korean (해라체), Japanese (だ体), and Chinese prose without machine translation quirks.
 4. **polish** — edits each file (20-30% shorter, no added fluff). Prompts in `scripts/prompts/daily-post-polish-{en,ko,ja,zh}.md`.
 5. **review-1** — checks facts against the brief, quotes, frontmatter, links, and truncation.
-6. **seal-check** — claude opus at effort `xhigh` reads all four plus the first-pass notes, ensuring facts, quotes, formatting, and high-quality human tone.
-7. **insight-gate** — claude opus at effort `xhigh` verifies executive value, concrete mechanism, and actionable takeaways (`PUBLISH` / `REWRITE` / `HOLD`).
+6. **seal-check** — claude opus at effort `medium` reads all four plus the first-pass notes, ensuring facts, quotes, formatting, and high-quality human tone.
+7. **insight-gate** — claude opus at effort `medium` verifies executive value, concrete mechanism, and actionable takeaways (`PUBLISH` / `REWRITE` / `HOLD`).
 8. **seal-publish** — static build verification (1,414+ pages), git commit, push, Telegram report.

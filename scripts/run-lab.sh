@@ -20,7 +20,7 @@ LABS_DIR="$PROJECT_DIR/data/labs"
 
 CLAUDE_BIN="${CLAUDE_BIN:-/opt/homebrew/bin/claude}"
 CLAUDE_MODEL="${LAB_MODEL:-opus}"
-CLAUDE_EFFORT="${LAB_EFFORT:-xhigh}"
+CLAUDE_EFFORT="${LAB_EFFORT:-medium}"
 AGY_BIN="${AGY_BIN:-/Users/jangwook/.local/bin/agy}"
 AGY_MODEL="${LAB_AGY_MODEL:-gemini-3.7-flash-medium}"
 # 실행 단계 총량 캡. 셀당 타임아웃만 있으면 17셀 × 25분 = 7시간이 된다.
