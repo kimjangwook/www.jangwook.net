@@ -82,7 +82,10 @@ LANGS="en ko ja zh"
 # 집필 엔진. 기본 sdk — Agent SDK 편집부(sonnet). 2026-08-19 claude-md-at-import
 # redo 실전(4개 언어 재발행, seal-check·insight-gate 통과)을 보고 fable 에서
 # 전환했다. 실패하면 claude opus medium 으로 폴백한다.
-WRITER="${WRITER:-sdk}"
+# 집필 엔진: 기본 hybrid (영어=GPT Codex, 다국어 번역=Gemini 3.7 Flash)
+WRITER="hybrid"
+WRITER_EN="codex"
+WRITER_TRANS="agy"
 REDO_SLUG=""
 RESUME_SLUG=""
 RESUME_SLUG_ARG=""
@@ -129,12 +132,12 @@ while [ $# -gt 0 ]; do
       ;;
     --redo)
       REDO_SLUG="${2:-}"
-      [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer fable|codex|agy|flash|claude|sdk] --redo <slug>" >&2; exit 2; }
+      [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk] --redo <slug>" >&2; exit 2; }
       shift 2
       ;;
     --writer)
       WRITER="${2:-}"
-      [ -n "$WRITER" ] || { echo "usage: $0 --writer fable|codex|agy|flash|claude|sdk" >&2; exit 2; }
+      [ -n "$WRITER" ] || { echo "usage: $0 --writer hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk" >&2; exit 2; }
       shift 2
       ;;
     *)
@@ -163,8 +166,8 @@ elif [ -n "$RESUME_SLUG_ARG" ]; then
 fi
 
 case "$WRITER" in
-  fable|codex|agy|flash|claude|sdk) ;;
-  *) echo "unknown writer: $WRITER (fable|codex|agy|flash|claude|sdk)" >&2; exit 2 ;;
+  hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk) ;;
+  *) echo "unknown writer: $WRITER (hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk)" >&2; exit 2 ;;
 esac
 
 # 편집자는 집필자와 다른 모델이어야 한다. 자기 문장에서 자기 군더더기는 잘 안 보인다.
@@ -277,8 +280,17 @@ hold_siblings() {
 # 어느 언어를 누가 썼는지는 $ENGINE_LOG 에 남아 Telegram 까지 간다.
 # $1=lang, $2=추가 지시(없으면 빈 문자열)
 write_lang() {
-  local lang="$1" extra="${2:-}" prompt_file prompt rc target wlabel
+  local lang="$1" extra="${2:-}" prompt_file prompt rc target wlabel cur_writer
   prompt_file="$PROMPT_DIR/daily-post-lang-$lang.md"
+
+  cur_writer="$WRITER"
+  if [ "$cur_writer" = "hybrid" ] || [ "$cur_writer" = "gpt-flash" ]; then
+    if [ "$lang" = "en" ]; then
+      cur_writer="$WRITER_EN"
+    else
+      cur_writer="$WRITER_TRANS"
+    fi
+  fi
   if [ ! -f "$prompt_file" ]; then
     log "missing prompt $prompt_file"
     return 1
