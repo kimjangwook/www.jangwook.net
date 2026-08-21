@@ -6,7 +6,7 @@ Read `data/column-brief.md`, any lab manifests it names under `data/labs/`, and 
 
 대부분의 글은 레인 B 다. 실측이 아니라 1차 출처를 읽고 판단을 더한 칼럼이고, 브리프의 `## LOCKED` `tested[]` 가 비어 있는 것이 정상이다. **빈 `tested[]` 는 감점 사유가 아니다.** 판정은 무엇을 쟀는가가 아니라 무엇을 주장했고 그것이 서는가로 한다.
 
-## The six questions
+## The seven questions
 
 **0. Is there a mechanism, or only an observation?**
 The 브리프 has a `mechanism` field. Find where the body works out what caused the result, not merely what the result was. A piece that reports a boundary without saying what makes the boundary is a finding, not an insight. If `mechanism` is honestly `unknown`, the body must say so in the author's voice — that is acceptable, and quietly omitting the question is not.
@@ -27,14 +27,15 @@ Name the action. If the only takeaway is "this is interesting" or "be aware of t
 **4. Is the counterargument handled or performed?**
 Find where the body deals with `counter`. Performed means the objection is summarised weakly and dismissed in the next sentence. Handled means the range where the objection is right is granted, and the thesis survives with that granted, or is narrowed to survive.
 
-브리프는 이것을 **한 절 통째로** 쓰라고 지시했다. 반대가 한 문단에 눌려 있으면 그것은 handled 가 아니다.
-
 **5. 입장이 있는가, 아니면 균형으로 도망갔는가?**
 브리프의 `stance` 는 조건부 양분이다 — A 인 팀에는 X, B 인 팀에는 Y. 본문이 그 갈림을 내렸는가.
 
 "상황에 따라 다르다", "장단점이 있다", "결국 팀에 달렸다" 로 닫힌 글은 아무것도 고르지 않은 것이다. 마지막 절에서 한쪽을 골랐고, **그 선택이 틀릴 조건을 한 줄로 적었는가**를 본다. 그 한 줄이 없으면 고른 것이 아니라 단정한 것이다.
 
 이 질문은 네 언어를 따로 본다. 같은 브리프를 받고도 한 언어만 균형으로 도망가는 일이 잦다.
+
+**6. 엔지니어링 리더십(EM)과 C-Level을 설득할 비즈니스 식견이 담겨 있는가?**
+단순한 코드 나열이나 기능 소개에 그치지 않고, 현업(웹 리뉴얼 또는 CDP/DSR/회원 서비스)에서의 생생한 문제의식과 고뇌, 팀 차원의 프로세스화/시스템화 고민, 그리고 CEO/CTO가 공감할 비즈니스 ROI와 조직적 가치가 서 있는가를 본다. 경영진이 읽었을 때 "이 엔지니어링 리더에게 기술 자문, 컨설팅, 집필을 의뢰하고 싶다"는 권위와 신뢰가 느껴져야 한다. 피상적인 튜토리얼 수준에 머물러 있다면 REWRITE 대상이다.
 
 ## Verdict
 
