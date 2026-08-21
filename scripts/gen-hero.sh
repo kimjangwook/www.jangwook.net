@@ -93,10 +93,12 @@ if [ -s "$OUT" ]; then
 fi
 
 # 유료 키는 컨트롤러 .env 에만 있다. 값은 로그에 남기지 않는다.
+set +u
 set -a
 [ -f "$CONTROLLER_DIR/.env" ] && . "$CONTROLLER_DIR/.env"
 [ -f "$PROJECT_DIR/.env" ] && . "$PROJECT_DIR/.env"
 set +a
+set -u
 
 [ -x "$PY" ] || { log "FATAL: python 없음 $PY"; exit 1; }
 mkdir -p "$OUT_DIR" "$(dirname "$HERO_LOG")"
