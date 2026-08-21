@@ -1,152 +1,96 @@
 ---
-title: 'AIから除外するボタンを探して公式ドキュメントを全文カウントしたら、そのスイッチは存在しなかった'
-description: 'Googleは2026年8月20日、Preferred Sourceの発表と同日に専用開発者文書を更新した。除外スイッチの側は2025年12月10日から止まったままだ。opt out・exclude の出現回数をゼロから数え、除外用のスイッチが存在しない理由を仕様レベルで確認した。'
+title: '「AIから除外」ボタンを探して公式文書を読み倒した。存在しない、そこに理由がある'
+description: '法務が「コンテンツをAI Overviewsから除外してくれ」とチケットを切る。エンジニアはrobots.txtを一行いじってクローズする。四つの公式文書を語彙単位で数えたら、そのチケットが一度も閉じていなかった理由が見えた。'
 pubDate: '2026-08-21'
 heroImage: '../../../assets/blog/search-console-ai-features-opt-out-vs-official-docs-gap-2026/hero.png'
 tags:
-  - google-search-console
-  - ai-overviews
-  - seo
-  - robots-txt
+  - SEO
+  - GEO
+  - Search Console
+  - AI Overview
 relatedPosts:
   - slug: robots-snippet-controls-ai-overviews-2026
-    score: 0.85
+    score: 0.8
     reason:
-      ko: nosnippet·data-nosnippet가 AI 인용 입력까지 차단한다는 그 글의 결론이, 이 글에서 확인한 "배타 레버는 스니펫 통제뿐"이라는 판정의 근거 문서와 겹친다.
-      ja: nosnippet・data-nosnippet がAI引用の入力まで遮断するという前稿の結論が、本検証で確認した「除外スイッチはスニペット制御のみ」という判定の根拠文書と重なる。
-      en: That post's finding — nosnippet and data-nosnippet block AI citation input too — rests on the same document this post used to confirm that snippet controls are the only exclusion lever that exists.
-      zh: 那篇文章的结论——nosnippet、data-nosnippet 会连 AI 引用输入一起挡掉——所依据的文档，与本文用来确认"排斥杠杆只有摘要控制"这一判断的文档是同一份。
+      ko: 그 글은 nosnippet 이 AI Overviews 인용 자격까지 끈다는 사실을 다뤘다. 이 글은 그 넷(nosnippet, data-nosnippet, max-snippet, noindex) 말고는 배타 레버가 아예 없다는 것, 그리고 그것이 왜 문서의 누락이 아니라 설계인지를 다룬다.
+      ja: あちらは nosnippet が AI Overviews の引用資格まで止めることを扱った。こちらはその4つ（nosnippet, data-nosnippet, max-snippet, noindex）以外に排他レバーが存在しないこと、それが文書の欠落ではなく設計である理由を扱う。
+      en: That post showed nosnippet also cuts AI Overviews citation eligibility. This one shows there is no fifth lever beyond those four, and why that absence is architecture, not a documentation gap.
+      zh: 那篇讲的是 nosnippet 也会切断 AI Overviews 的引用资格。这篇讲的是除了这四个（nosnippet, data-nosnippet, max-snippet, noindex）之外根本没有第五个排他开关，以及这为什么是架构问题而不是文档遗漏。
   - slug: ai-crawler-control-robots-txt-llms-txt-2026
-    score: 0.75
-    reason:
-      ko: Google-Extended가 검색 AI 배타 레버가 아니라 학습·그라운딩 범위라는 이 글의 판정이, robots.txt·llms.txt로 크롤러 접근 자체를 통제하는 그 글의 축과 정확히 나뉜다.
-      ja: Google-Extended は検索AIの除外スイッチではなく学習・グラウンディング範囲を制御するものだという判定が、robots.txt・llms.txt でクローラーアクセス自体を制御する前稿の軸ときれいに分かれる。
-      en: This post's finding that Google-Extended governs training and grounding, not search AI exclusion, sits cleanly apart from that post's axis of controlling crawler access itself via robots.txt and llms.txt.
-      zh: 本文关于 Google-Extended 管的是训练与关联而非搜索 AI 排斥的判断，与那篇用 robots.txt、llms.txt 控制爬虫访问本身的主线正好分开。
-  - slug: official-geo-subtraction-gsc-control-2026
     score: 0.72
     reason:
-      ko: Search Console의 생성형 AI 스위치를 실측한 그 글과, 발표문이 퍼블리셔를 Search Console이 아니라 Search Central로 보냈다는 이 글의 발견이 서로 다른 문서를 가리킨다는 점에서 이어진다.
-      ja: Search Console の生成AIスイッチを実測した前稿と、発表文が Search Console ではなく Search Central へ送っていたという検証結果が、指す文書の違いでつながる。
-      en: That post measured Search Console's generative AI switch directly; this post found the announcement routes publishers to Search Central instead — the two point at different documents, and the gap is the connection.
-      zh: 那篇实测了 Search Console 的生成式 AI 开关，本文则发现公告把发布者导向的是 Search Central 而非 Search Console——两者指向不同文档，这个落差正是连接点。
+      ko: 그 글은 크롤러를 들여보낼지 말지의 문제였다. 이 글은 이미 들어온 뒤 검색과 AI 표면 중 어디에 인용될지를 나누는 자격 판정 자체가 하나로 묶여 있다는 것을 다룬다. 층이 다르다.
+      ja: あちらはクローラーを入れるか否かの問題だった。こちらは既に入った後、検索とAI表面のどちらに引用されるかを分ける資格判定そのものが一本に束ねられている点を扱う。層が違う。
+      en: That post was about letting crawlers in or not. This one is about the eligibility judgment itself, made after entry, that decides both search and AI surfaces at once — a different layer entirely.
+      zh: 那篇讲的是让不让爬虫进来。这篇讲的是爬虫进来之后，决定它能否出现在搜索和 AI 界面的资格判定其实是同一条判定线——这是完全不同的层。
+  - slug: official-geo-subtraction-gsc-control-2026
+    score: 0.68
+    reason:
+      ko: 그 글이 GSC 로 무엇을 뺄 수 있는지의 공식 범위를 다뤘다면, 이 글은 그 범위 밖에 있는 것 — AI 전용 배타 항목의 부재 — 을 문서 원문 어휘 카운트로 증명한다.
+      ja: あちらが GSC で何を除外できるかの公式範囲を扱ったなら、こちらはその範囲の外にあるもの — AI専用の排他項目の不在 — を文書原文の語彙カウントで裏付ける。
+      en: If that post mapped the official scope of what GSC lets you subtract, this one proves what sits outside that scope — the absence of an AI-only exclusion — with a raw word count from the source documents.
+      zh: 如果那篇梳理的是 GSC 能减掉什么的官方范围，这篇证明的就是这个范围之外的东西——AI 专属排除项的缺失——用的是源文档的原文词频统计。
 ---
 
-サイトのコンテンツをAI検索から外すスイッチがGoogle Search Consoleにあるのではないかという相談を現場で受けてきた。法務や広報から聞かれるたびに探した。公開されている公式ドキュメントを全文カウントした結果、公式仕様上にAI専用の除外スイッチは存在しなかった。あるのは一般検索のスニペット制御4項目だけで、絞ると通常検索とAI Overviewsの双方が同時に削られる。
+法務がチケットを切った。うちのコンテンツをAI Overviewsから除外してくれ、と。私はAI除外の設定を探しに行った。Googleの公式AI機能ドキュメントを一語ずつ読み、昨日出たGoogleの発表文にも同じ語彙カウントをかけた。自社の本番robots.txt（サイトがクローラーに何を許可し何を禁止するかを記す設定ファイル）とレンダー後のページを両方の基準に照らし、トグルがどこにあるべきかを確認した。設定は存在しない。理由が分かってしまえば、探すのをやめられる。
 
-AIから外すという要求を技術タスクだと誤解したまま設定を触ると、検索流入そのものを削っていることに気づかない。除外スイッチを探すのをやめ、スニペット予算をどれだけ使うかという経営判断に切り替える。結論はその一点に尽きる。
+GoogleのAI機能ドキュメントが検索での露出を減らす手段として名指ししているのは、`nosnippet`（スニペット表示そのものを止める）、`data-nosnippet`（ページ内の特定要素だけをスニペットの対象から外す）、`max-snippet`（スニペットの文字数上限を制限する）、`noindex`（検索結果への掲載自体を止める）の4つだけだ。どれもAI専用ではない。通常の検索スニペットはそのままに、AI Overviewsからだけコンテンツを引き抜く5つ目のスイッチはない。この不在は文書の書き漏らしではない。一つの資格判定が両方の表面を同時に決めているから、こうなる。「AIから除外してくれ」というチケットをrobots.txtの編集でクローズしているチームがいるなら、間違ったチケットを閉じている。
 
-## 現場の問い — 「AIから外して」というチケット
+食い違いが起きるのは、チケットの要求がエンジニアリングの成果物と一致しないからだ。法務が求めているのは事業上の結果、つまり生成AIの回答にコンテンツが使われないことである一方、エンジニアリングが納品するのはrobots.txtの1行でしかない。要求と修正が同じに見えるのは、両方が「AI」という語を使っているからだ。切り分けてしまえば、5分の設定変更に見えていた作業は、事業上の代償を伴う経営判断に変わる。
 
-大規模リニューアルの現場では、法務や広報から「うちのコンテンツがAIに使われないようにしてほしい」という要求が定期的に届く。エンジニアが最初に触るのはたいていrobots.txtだ。Google-ExtendedをDisallowにし、Content-Signal指示子（AI学習可否をクローラーに伝える一行）を`ai-train=no`と書き足し、対応完了としてチケットを閉じる。
+## 何が変わり、何が変わらなかったか
 
-本サイトの配信物でも同じ乖離が起きている。robots.txtにGoogle-Extendedを対象にしたDisallowグループが2つと、Content-Signal指示子が1行入っている。ところがsitemapから抽出した標本12件のURLを調べると、robotsやgooglebot向けのmetaタグは1つも着地していない。標本URLのレンダリング結果を並べて確かめて気づいた。学習は止めたが、検索のAI表面には手を付けていない。要求は「AIから外して」、実装は「学習データから外した」。どちらも「AI」という同じ単語を使うせいで、対象範囲がずれたまま完了報告が通ってしまう。完了の定義を決めない限り、「やった」と「実際に効いた」はこうして静かに分かれる。
+2つの公式文書から確認する。Google Search Centralの[AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)は、AI露出を減らす方法を扱う唯一の文書だ。最終更新の表記は2025-12-10 UTCで止まっている。2026-08-20、Googleは[A more personalized Search, Discover and News](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)を公開し、「Preferred Source」を導入した。ユーザーが好みのサイトを選ぶ機能で、併設の[Preferred sources](https://developers.google.com/search/docs/appearance/preferred-sources)ページによればAI Mode（対話型の検索インターフェース）とAI Overviews（検索結果上部に出る要約）の両方で「preferred」バッジが表示される。更新表記は発表と同じ2026-08-20 UTCだ。可視性を増やす側の文書は機能公開の当日に更新され、可視性を減らす側の文書は8か月以上動いていない。私はこの更新差を、Googleが排除ツールの整備を凍結した証拠だと断言するつもりはない。単に文書更新のサイクルが遅れている可能性も残る。公開されているテキスト自体に曖昧さはなく、語彙カウントがその傾向を裏付ける。AI featuresページ全体、177,842バイトに対して文字列カウントをかけたところ、「opt out」は0件、「opt-out」も0件、「exclude」も0件だった。発表記事には「opt out」が1件あるが、検索除外とは無関係なニュースレター配信停止の一文に埋まっているだけだ。本文9,045バイトを数えると「preferred source」が7件、「publisher」が8件、「Top Stories」が1件、「AI Overviews」が1件、「AI Mode」が2件で、「Search Console」「turn off」「exclude」「remove」「block」はいずれも0件だった。本文の語彙はすべて包摂の方向を向いている。
 
-## 公式ドキュメントが挙げる制御項目は4つだけ
+## メカニズム — 第五の統制手段が現れなかった理由
 
-Google Search Centralの公式ドキュメント「AI features and your website」を全文読んだ。検索結果に出る情報を絞る手段として、次の一文が挙がっている。
+AI featuresのドキュメントは資格判定のルールを直接記している。「AI OverviewsまたはAI Modeでサポートリンクとして表示される資格を得るには、ページがインデックス登録され、検索技術要件を満たす形でスニペット付きのGoogle検索結果に表示される資格を持つ必要がある」。AI専用の別立て審査は存在しない。AI OverviewsとAI Modeの引用は、通常の検索スニペットとまったく同じ合否ゲートに乗っている。インデックス登録されているか、スニペット表示の資格があるか、それだけだ。
 
-> To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
-> — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+この一文が、Google検索のアーキテクチャを示している。もしAI引用が独立したゲートを使っているなら、GoogleはAI専用の統制点を用意していたはずだ——Google-ExtendedがAI学習とグラウンディング専用の統制点として機能しているように。AIの回答をメモリからの生成ではなく、生きたウェブデータを与えて成立させるための仕組みがGoogle-Extendedだ。だが実際には、そうなっていない。AI Overviewsの資格ゲートは独立しておらず、通常の検索ゲートと共有されている。この判定を「共有」と表現するのは私の分析上の言い換えであって、Google自身の文言そのものではない。文書が使っているのは「検索の技術要件を満たす」という表現だ。AI専用の除外スイッチを作るには、まず資格判定を検索用とAI用の2系統に分ける必要がある。パイプラインが1本である以上、専用の統制点を設ける場所自体が存在しない。ドキュメントはこの構造を明言している。「AIはSearchに組み込まれ、Searchの機能そのものに不可欠であるため、Googlebot向けのrobots.txtディレクティブこそが、サイト運営者がクロールを管理する統制点になる」。一つのクロール制御、一つの資格判定、一組のスニペットディレクティブが、人間が検索結果の下に見るものと、言語モデルが引用してよいものの両方を同時に支配している。
 
-`nosnippet`（検索結果に要約文を出さない指示）、`data-nosnippet`（ページ内の特定要素だけをスニペット対象から外すHTML属性）、`max-snippet`（要約文の最大文字数を指定するパラメータ）、`noindex`（ページ自体を索引から外す指示）の4項目だ。この4項目はAI専用の新しい仕組みではない。もともと一般検索のスニペット表示を制御するパラメータだ。
+包摂側のロジックもまったく同じだ。Preferred Sourceは、文書によれば基本の資格判定自体には手を加えていない。既存の判定の上にシグナルを1枚重ねているだけだ。「あなたのサイトをpreferred sourceとして選んだユーザーに対して、あなたのコンテンツは『preferred』バッジで強調表示されうる」。土台のゲートには触れず、条件を1つ積み上げる。これは偶然のタイミングではなく、一貫した設計思想の表れだ。
 
-なぜAI専用のスイッチがなく4項目で済むのか、ドキュメントの前段がその理由を説明している。
+## みんなが代わりに手を伸ばす文書、そしてそれが答えていない問い
 
-> AI is built into Search and integral to how Search functions, which is why robots.txt directives for Googlebot is the control for site owners to manage access to how their sites are crawled for Search.
-> — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+Google-Extendedは、AI除外のチケットが来たときにエンジニアが真っ先に引っ張り出すトークンだ。だが文書に明記された仕様から見て、誤った統制手段だ。Googleの[crawlers and fetchers](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)ガイドはこう述べる。「Google-Extendedはサイトの検索への収録には影響せず、検索でのランキングシグナルとしても使われない」。robots.txtでGoogle-Extendedをdisallowすれば、そのコンテンツがGeminiモデルの学習に使われることや、Vertex AIアプリケーションのグラウンディングに使われることは防げる。だがGoogle検索やAI Overviewsでの露出は一切変わらない。
 
-AI OverviewsやAI Modeは検索の外付け機能ではなく、検索そのものの一部として組み込まれている。制御点も検索用のクロール制御・スニペット制御と同じ場所にあり、AI専用の制御は用意されていない。
+crawlersページに対する語彙カウントがこの範囲を裏付けている。Google-Extendedが6回、Geminiが4回、Vertexが8回登場する一方、AI Overviewsは0回、AI Modeも0回だ。語彙はモデル学習とグラウンディングに集中しており、チームが制御を期待する検索表面には一度も触れていない。
 
-AI Overviewsの引用資格の判定基準も、通常検索の判定をそのまま再利用している。
+この検証で確かめたかったのは、自社のデプロイが文書の記述どおりに振る舞っているか、Google-Extendedが検索側の挙動に漏れ出していないかだった。自社の本番robots.txtと、sitemap（サイト内の全URLをGoogleに知らせる一覧ファイル）から抽出した決定的な標本——無作為抽出ではなく、毎回同じ基準で同じURL群を選び直せるようにした標本、再現性のために必要な条件だ——を文書と照合した。6つの構成セル、それぞれ3回ずつの反復で計18回走らせた結果、すべての試行がexit 0とHTTP 200を返し、受信バイト数は事前の基準値と完全に一致し、ボットブロックのチャレンジも一度も発生しなかった。この18回はあくまで自社デプロイの健全性チェックであり、Google-Extendedの境界そのものを検証したものではない。反証を狙った試行は別立てで走らせた。「Google-Extendedがドキュメントの主張に反して実はAI Overviewsにまで及んでいるのではないか」という仮説だけを狙い撃ちにした1本だ。この仮説を支持する証拠は一つも出なかった。Googleは予告なくドキュメントとクローラーの挙動を変更しうるため、この結果は恒久的な証明にはならない。だが前提を崩そうとしたあらゆる試みを、その前提は生き延びた。Google-Extendedは学習側だけで厳密に動いている。
 
-> To be eligible to be shown as a supporting link in AI Overviews or AI Mode, a page must be indexed and eligible to be shown in Google Search with a snippet, fulfilling the Search technical requirements.
-> — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+## 自社の実装がその失敗パターンをそのまま体現していた
 
-AI Overviewsの根拠リンクとして出るための追加技術要件は無い。インデックス登録され、スニペット付きで検索結果に出る資格があれば、そのままAI回答の引用候補になる。
+この食い違いは仮想の話ではない。自社の本番robots.txtには、Google-Extendedのdisallowグループが2つあり、GPTBot（OpenAIの学習用クローラー）とCCBot（Common Crawlのスクレイピングボット）向けのディレクティブも並んでいる。クローラーの用途を指定するContent-Signalヘッダー行も入っており、`search=yes,ai-train=no,use=reference`という内容だ。どのディレクティブも学習またはサードパーティのスクレイピングを止めているだけで、Googleが検索側のAI露出を減らすために指定している4つの除外ディレクティブは1つも入っていない。
 
-## なぜスイッチが二つに分かれないのか — 仕組みの話
+sitemapから決定的な標本として12個のURLを抜き出し、それぞれのレンダー後HTMLをrobotsまたはgooglebotのmetaタグの有無で検査した。12件のうち、4つのスニペットディレクティブを1つでも持っていたURLはゼロだった。12件は小さな標本であり、サンプルを増やせば結果が動く余地はある。それでも先月、robots.txtの確認だけで「コンテンツをAI Overviewsから除外してくれ」というチケットを閉じていたなら、要求された目的は何一つ達成できていなかったことになる。
 
-ここが仕組みの核心だ。除外専用のスイッチが存在しないのは、ドキュメントの記述漏れではない。資格判定のパイプラインが1本しかないからだ。
+チケット名にも差分にも「AI」の文字があるため、レビュアーは`Google-Extended`の`Disallow: /`を見ただけでプルリクエストを承認してしまう。差分の実効性ではなく、チケット名と設定ブロックの見た目の一致だけで判断した結果だ。
 
-通常検索に出るかを決める判定と、AI Overviewsの引用元として出るかを決める判定は、公式ドキュメント上、別のパイプラインとして分かれていない。「インデックスされスニペット表示の資格がある」という1つの判定を、AI Overviewsもそのまま参照している。「共有されている」と直接示す実装記述があるわけではなく、「追加の技術要件は無い」という記述からの推測である点は留保しておく必要がある。
+## 反論、そしてそれが成立する範囲
 
-判定ロジックが共通である以上、資格を操作するスイッチも1つにしかなり得ない。仮に「通常検索には出すがAI回答の入力には使わせない」という専用スイッチを作るなら、まず資格判定そのものを通常検索用とAI用の2本に分岐させる必要がある。分岐していないところにスイッチだけを後付けすることはできない。スイッチが無いのは文書の記述漏れではなく、現在のアーキテクチャ上、埋めようがない欄だからだ。
+主要な反論はこうだ。「別の除外ディレクティブが欠けているのではなく、必要ないのだ。既存の4つで十分に精密である」。この反論は前提の取り違えで崩れる。精密さが決めるのはどのコンテンツを消すかであって、どの表面から消すかではない。ある段落を`data-nosnippet`で囲むと、その記述はAI Overviews、AI Mode、通常の検索スニペットを含むすべての検索表面から同時に消える。4つの除外ディレクティブをどう組み合わせても、「AI表面からだけ消して通常の検索スニペットは維持する」という結果は作れない。法務が求めるこの二重状態こそ、検索アーキテクチャが原理上提供できない唯一の結果だ。
 
-包含側、つまり自サイトをAI回答に優先引用させたい側の実装は、資格判定自体に手を加えていない。既存の判定の上に「ユーザーがこのサイトを選んだ」という条件を1つ重ねただけだ。ここでの「1本」は物理インフラではなく判定ロジックの共有を指す。ロジックを分岐させる必要がないからこそ、発表から1日で専用ドキュメントとボタンコードが揃った。
+この反論には、コンテンツの粒度に関する限り一理ある。`data-nosnippet`属性はページ単位ではなく要素単位で動く。有料の1段落や会員限定の要約だけを囲めば、その断片だけを除外しつつページの残りはスニペット資格を保てる。`max-snippet`も二者択一ではなく文字数で制限できる。ページ全体の`noindex`や`nosnippet`しかなければ「大雑把すぎる」という批判も当たっただろう。要素単位の粒度は確かにあり、コンテンツに対しては精密に機能する。できないのは表面ごとの切り分けだけだ。
 
-## 発表文とPreferred Source専用文書が向いている方向
+要素単位の精密さには見落としがちな実装コストが伴う。テンプレートが要素ごとに分岐できる構造を前提としているからだ。共通テンプレートで量産されたサイトでは、条件分岐の仕組みを先に作らないかぎり`data-nosnippet`を選択適用できない。タグを1行入れる前にテンプレートの改修が必要になる。
 
-2026年8月20日、GoogleはPreferred Sourceという機能を発表した。読者がTop Stories・AI Overviews・AI Modeで好みの情報源を選べる仕組みで、選ばれたサイトには「preferred」バッジが付く。発表文の本文をpreferred source・Top Stories・AI Overviews・AI Mode・publisherといった語で数えると、露出を増やす方向の語彙に集中している。逆にturn off・exclude・remove・blockといった除外方向の語はゼロだ。opt outという文字列は1件現れるが、ニュースレター購読解除の注意書き「You may opt out at any time.」であり、検索での除外とは無関係だ。
+## これは何にコストがかかり、何にはかからないか
 
-> Readers more easily find their favorite publications in Top Stories, AI Overviews, and AI Mode, while publishers gain a more seamless way to connect with readers across Google. So far, people have already selected more than 600,000 unique sources.
-> — [A more personalized Search, Discover and News](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
+包摂と除外のコスト構造は非対称だ。包摂は無料だ。文書は明確に述べている。「これらの機能に表示されるために、新しい機械可読ファイルやAIテキストファイル、マークアップを作成する必要はない」。通常どおりインデックス登録され、スニペット資格を持つページは、追加の設定なしにAI Overviewsの引用候補になる。Preferred Sourceも同じパターンをたどる。新しいデータスキーマは要らず、既存の資格判定の上にボタン1つと文書化されたシグナルを重ねるだけだ。
 
-発表文は60万件以上のユニークソースが選択されたと公表している。ただしこの数値は読者側の選択数であり、パブリッシャー側の流入効果を示す数字ではない。
+一方、除外には直接のコストがかかる。利用できる設定項目がスニペット制御しかないため、AIによる消費と検索スニペット表示を切り分けられない。除外のディレクティブを適用すると、AI引用と一緒に検索スニペットも手放すことになる。Googleの発表文は1つの指標を強調している。ユーザーが選んだ「60万を超えるユニークソース」という数字だ。だがこれはユーザー側の選択数であって、パブリッシャー側のトラフィックへの影響を示すものではない。公式なデータがない以上、この数字から事業の費用対効果は測れない。
 
-Googleは発表文の中で、パブリッシャー向けの案内先をSearch ConsoleではなくSearch Centralの開発者ドキュメントに指定した。
+除外の判断が実際に負う代償は、無効化するスニペットに紐づいたオーガニックトラフィックそのものだ。Googleはこの数字を公表していない。社内の分析基盤が補うしかなく、エンジニアリングチームはrobots.txtを変更したり`data-nosnippet`を適用したりする前に、そのトラフィック見積もりをチケットに求めるべきだ。
 
-> If you're a publisher, you can find the new "Preferred Source" button code in our Google Search Central documentation to get started.
-> — [A more personalized Search, Discover and News](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
+## チームが仕組みとして備えるべきこと
 
-発表文の本文にSearch Consoleという語は一度も登場しない。
+この食い違いが示しているのは、いくつかの運用ルールだ。どれもGoogleが第5の除外ディレクティブを出すのを待たずに仕組み化できる。最も重要なのは検証の穴を塞ぐことだ。robots.txtの目視確認だけで完了とみなすチェックはやめる。ディレクティブがファイルに正しく書かれていても、対象ページに反映されていないケースがあるからだ。sitemapから決定的なURLを抽出し、本番のレンダー後HTMLで`robots`と`googlebot`のmetaタグを検証する——自社デプロイで行った検査——は、CIゲート（デプロイ前の自動チェック）が強制できるリンターの最小形になる。宣言したポリシーとレンダー後のタグが食い違えば、デプロイを止めればいい。この修正のまわりに、残りの穴を塞ぐ3つの習慣を置く。第1に、「AIから除外」のチケットを、スニペット可視性を天秤にかける事業判断である「検索面のAI除外」と、クローラーのトークン1つを扱う技術判断である「学習除外」の2つの項目に分ける。第2に、4つの文書化された除外ディレクティブのいずれかを変更するプルリクエストには、対象ページ群のオーガニックトラフィック比率を説明欄に書くよう求め、レビュアーがコード差分だけでなく事業インパクトも見られるようにする。第3に、社内文書では「AIクローラーをブロックする」という曖昧な表現を禁止し、クローラーのトークンと対象表面を必ずセットで書かせる——学習ならGoogle-Extended、検索スニペットと引用なら`data-nosnippet`と明記する。
 
-Preferred Source専用のドキュメントは、発表と同日の2026年8月20日付けで更新されている。
+この断絶は、CDP（Customer Data Platform）やDSR（データ主体からの削除要求）を扱う際の構造とよく似ている。事業側のステークホルダーはスコープを広く定義し、システムは狭い技術的境界だけを実装し、チームは元の要求を満たさないままチケットを完了扱いにする。この食い違いを防ぐには、個人の注意力に頼るのではなく、完了の定義そのものを明文化する必要がある。
 
-> In AI Mode and AI Overviews, your content can be highlighted with a "preferred" badge for users who have selected your site as a preferred source.
-> — [Preferred sources](https://developers.google.com/search/docs/appearance/preferred-sources)
+有料記事、購読制のデータベース、会員限定の編集コンテンツのようにコンテンツ自体が商品となる組織であれば、先に触れた要素単位の粒度がそのまま使える。収益化された段落だけを`data-nosnippet`で囲み、テンプレート改修のコストとオーガニックスニペットの損失を事前に織り込んでおけばよい。一方、B2Bプラットフォームやコーポレートサイトのようにオーガニック検索がリードやパイプラインを生む組織にとっては、除外側の設定はそもそも選択肢に入らない。Preferred Sourceは既存の資格判定に無料で乗るだけの仕組みだから、導入を進めて様子を見るほうが理にかなっている。もしGoogleがいつか文書化された表面別の除外統制を出荷すれば、この計算は変わる。それまでは、この4つの除外ディレクティブがツールキットのすべてであり、AI専用の統制点には構造上の足場がない。
 
-Preferred Sourceドキュメントの本文をカウントすると、preferred sourceという語だけで24回、AI Overviews・AI Mode・Top Storiesがそれぞれ2回ずつ現れる。opt outという語はここでも一度も出てこない。
-
-対照的に、除外手段を説明する「AI features and your website」の最終更新表記は2025年12月10日のままだ。包含側には発表と同日に更新された専用ドキュメントが付き、除外側は8か月以上前の状態で止まっている。opt out・opt-out・excludeという語を全文検索してもゼロ件だ。公式文書の語彙からも、Googleの更新が包含側のみに向けられている実態が分かる。
-
-## 反論 — 専用制御の不在は設計の誠実さだという見方
-
-除外専用のスイッチが無いことを欠陥と決めつける前に、逆の立場を検討しておく。AIが検索そのものに組み込まれている以上、別の制御を作ること自体が守れない約束になる。インデックス・スニペット・AI引用が同じ判定を共有しているのに、AI入力だけを個別に切る設計は内部に矛盾を抱え込む。Googleはその約束をしなかった。
-
-既存の4制御は精密に作られている。`data-nosnippet`は要素単位で効く。ページ全体ではなく、有料本文の一部や会員限定の要約、引用されると困る特定の段落だけを対象にできる。`max-snippet`は文字数単位で調整できる。ただし要素ごとの除外はマークアップを打ち分けられるテンプレート構造を前提とするため、共通テンプレートで量産されたサイトでは実装コストが嵩む。
-
-既存の制御が効かない組み合わせが1つだけある。「AI回答の表面では引用させないが、通常検索のスニペットは維持したい」という要求だ。4つの選択肢をどのように組み合わせても、この状態は作れない。判定ロジックが1本である以上、AI側だけを閉じて検索側だけを開ける操作は成立せず、両方の露出を同時に引き受けるかどうかの選択になる。
-
-## Google-Extendedは別の話
-
-除外手段を探す過程で混同されやすいのがGoogle-Extendedだ。robots.txtでGoogle-ExtendedをDisallowにすればAI検索からも外れると誤解される場面は多い。公式ドキュメントはこの見解を否定している。
-
-> Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.
-> — [Google crawlers and fetchers — Google-Extended](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
-
-Google-Extendedは検索のAI表面への露出には影響しない。では何を制御しているのか。「AI features and your website」のドキュメントでも、Google-Extendedを検索AI機能ではなく別のカテゴリーへ切り離している。
-
-> To limit AI training and grounding in some of Google's other systems, read more about Google-Extended.
-> — [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
-
-Google-Extendedが制御するのは、Geminiなどの学習・グラウンディング（回答生成時に外部情報を根拠として参照する処理）に関わる範囲であり、検索結果やAI Overviewsへの掲載可否ではない。学習データから除外しても、検索AI表面への露出は手付かずのまま残る。検索側の露出を動かすなら、スニペット制御を直接設定する必要がある。
-
-## 実行への落とし込み — 完了の定義を配信物で数える
-
-この判定をもとに、現場の運用ルールを4つ定めた。
-
-1つ目、ポリシー文書の中で「AI検索からの除外（スニペット予算の消費）」と「学習データからの除外（クローラートークンの制御）」を別項目に分け、同じ「AI」という単語で括らない。
-
-2つ目、robots.txtだけを読んで完了と判定するチェックをやめる。sitemapから標本URLを抽出し、各URLのレンダリング結果でrobots・googlebot向けmetaタグの着地個数を数えるリンターをCIゲートに組み込む。今回の検証で行ったC4（sitemapから決定的な標本を選び、meta着地個数を数える手順）がこのリンターの最小形だ。宣言と実際の配信物がずれた瞬間にビルドを止める。
-
-3つ目、除外設定を有効化するプルリクエストは、対象ページ群のオーガニック流入比率を本文に書かなければ通さない。スニペットを手放す判断である以上、レビュアーが確認すべき数字はコードの差分ではなく流入の数値だ。
-
-4つ目、「AIクローラーを止める」という曖昧な表現を禁止し、どの表面の何を止めるのかをトークン名と対象機能名で正確に書かせる。
-
-## CTOへの視点 — 包含と除外の単価は対称ではない
-
-経営判断として整理すると、包含側と除外側でコスト構造は対称ではない。
-
-包含側は公式ドキュメントが新しいファイルもマークアップも不要と明言している。実装コストは実質ゼロで、すでに通常検索に正常に出ているサイトは何もしなくてもAI引用の候補になる。
-
-除外側は無料ではない。唯一の手段がスニペット制御である以上、AIから外れるコストは通常検索の結果からスニペットが消えることで支払われる。「AIから外すか」を問う前に、対象ページ群の検索スニペットへの依存度を測定する必要がある。数値を把握しないまま下りてきた除外指示は、コストを知らずに支払う決定になる。
-
-コストの非対称性を踏まえると、方針は2つに割れる。中間はない。有料記事やリサーチレポート、独自データベースのようにコンテンツ自体が商品であるチームなら、対象ページ群のオーガニック流入を並べ、流入減を購読収益で埋め合わせられる範囲に絞って`data-nosnippet`を要素単位で仕掛ける。B2BサービスやEC、コーポレートサイトのように検索流入がリード獲得の主経路であるチームは、除外スイッチには触れず、Preferred Sourceボタンの実装とスニペット資格の維持に注力する。判定ロジックが1本である以上、同じスイッチを両方向に切り替えることはできない。どちらかを選ぶことになる。
-
-組織のスケールという観点でもう1点付け加える。人数が増えるほど、法務が投げた「AIから外して」の一言が複数のエンジニアを経由し、そのたびに範囲の解釈がずれていく。なお、ログイン後のGoogle Search Console管理画面自体にAI専用の設定項目が存在するかどうかは今回の検証では直接測定できていない。公式ドキュメントの記述と仕様から除外レバーの不在を判定したものであり、画面を直接確認するまでは管理画面UI上の存在有無を断定しない。また、今回数えたのは本サイトの配信物1件分だけで、他のCMSやヘッドレス構成でrobots.txtとContent-Signalの宣言がどこまで実際のmetaタグと一致するかは、まだ確かめていない。
-
-GoogleがAI表面の資格判定を通常検索のスニペット判定から切り離す仕様を発表した場合に限り、この線引きは前提から崩れる。判定が2本に分かれれば除外専用スイッチが生まれる余地ができ、今回の「中間はない」という整理ごと見直すことになる。
+認証済みのSearch Console管理画面に未発表のAI関連設定項目があるかどうかは確認していない。ここに記した知見はすべて公開文書、パブリッシャー向け発表、そして本番プローブから導いたものだ。Googleがログイン画面の裏に専用の統制を準備しているのか、それとも既存の4つの仕組みを維持し続けるのかは、開かれた問いのままだ。
 
 ## 参考資料
 
