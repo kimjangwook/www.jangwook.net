@@ -173,7 +173,7 @@ echo "========================================" >> "$LOG_FILE"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] START: $TASK_NAME" >> "$LOG_FILE"
 echo "========================================" >> "$LOG_FILE"
 
-# daily-post 만 엔진이 다르다: 판단은 claude, 집필은 codex.
+# daily-post 만 엔진이 다르다: 판단은 claude, 집필은 native sdk (sonnet 편집부).
 # 나머지 작업(daily-closing, sunday-strategy 등)은 그대로 grok 단일 프로세스.
 if [ "$TASK_NAME" = "daily-post" ]; then
     TASK_ENGINE="pipeline"
@@ -194,7 +194,7 @@ if [ "$TASK_ENGINE" = "grok" ]; then
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: $GROK_BIN $(summarize_grok_args)" >> "$LOG_FILE"
 else
     # plist 가 넘긴 grok 플래그는 파이프라인에서 쓰지 않는다. 로그에만 남긴다.
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude=plan / codex=write), ignored args: $*" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude=plan / sdk=write), ignored args: $*" >> "$LOG_FILE"
 fi
 
 # ── grok 헤드리스 새니티 프리플라이트 ──
@@ -228,11 +228,8 @@ grok_preflight() {
 }
 
 CLAUDE_BIN="${CLAUDE_BIN:-/opt/homebrew/bin/claude}"
-CODEX_BIN="${CODEX_BIN:-/opt/homebrew/bin/codex}"
-CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-luna}"
 
-# claude/codex 프리플라이트. 파이프라인은 6 프로세스라 중간에 인증이 죽으면
-# 언어 파일이 일부만 남는다. 시작 전에 두 엔진 모두 살아있는지 확인한다.
+# claude 프리플라이트. 시작 전에 claude 엔진이 정상 응답하는지 확인한다.
 claude_preflight() {
     local tmp rc
     tmp="$(mktemp -t claude-preflight 2>/dev/null || echo /tmp/claude-preflight.$$)"
@@ -246,20 +243,6 @@ claude_preflight() {
     rm -f "$tmp"; return 1
 }
 
-codex_preflight() {
-    local tmp rc
-    tmp="$(mktemp -t codex-preflight 2>/dev/null || echo /tmp/codex-preflight.$$)"
-    run_timeout 90 "$CODEX_BIN" exec 'Reply with exactly: OK' \
-        --model "$CODEX_MODEL" -c model_reasoning_effort="low" \
-        --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check </dev/null >"$tmp" 2>&1
-    rc=$?
-    if [ "$rc" -eq 0 ] && grep -qi 'OK' "$tmp"; then
-        rm -f "$tmp"; return 0
-    fi
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT: codex 무응답(rc=${rc}): $(tr '\n' ' ' < "$tmp" 2>/dev/null | tail -c 300)" >> "$LOG_FILE"
-    rm -f "$tmp"; return 1
-}
-
 if [ "$TASK_ENGINE" = "grok" ]; then
     if ! grok_preflight; then
         tg_send "[jangwook.net] ${TASK_NAME}: grok 헤드리스 무응답(60초 프리플라이트 실패)
@@ -270,11 +253,10 @@ if [ "$TASK_ENGINE" = "grok" ]; then
         exit 1
     fi
 else
-    if [ ! -x "$CLAUDE_BIN" ] || [ ! -x "$CODEX_BIN" ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: claude($CLAUDE_BIN) 또는 codex($CODEX_BIN) 없음" >> "$LOG_FILE"
-        tg_send "[jangwook.net] ${TASK_NAME}: 에이전트 바이너리 없음
-claude: ${CLAUDE_BIN}
-codex: ${CODEX_BIN}"
+    if [ ! -x "$CLAUDE_BIN" ]; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: claude($CLAUDE_BIN) 없음" >> "$LOG_FILE"
+        tg_send "[jangwook.net] ${TASK_NAME}: claude 바이너리 없음
+경로: ${CLAUDE_BIN}"
         exit 1
     fi
     if ! claude_preflight; then
@@ -283,14 +265,6 @@ codex: ${CODEX_BIN}"
 조치: 이번 주기 건너뜀(다음 주기 자동 재시도)."
         echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: claude 무응답 — 작업 스킵" >> "$LOG_FILE"
         exit 1
-    fi
-    # codex 는 집필 엔진이지만 언어 단위 claude 폴백이 있다. 여기서 죽이면
-    # 폴백이 있는데도 하루를 통째로 건너뛴다. 경보만 보내고 진행한다.
-    if ! codex_preflight; then
-        tg_send "[jangwook.net] ${TASK_NAME}: codex 헤드리스 무응답(90초 프리플라이트 실패)
-원인 후보: codex login 만료 / 사용량 한도 / 모델 ${CODEX_MODEL} 접근 불가.
-진행: 집필은 claude opus xhigh 폴백으로 계속한다. 반복되면 터미널에서 codex login."
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT WARN: codex 무응답 — claude 폴백으로 진행" >> "$LOG_FILE"
     fi
 fi
 
@@ -361,7 +335,7 @@ failure_cause() {
 
 run_agent() {
     if [ "$TASK_ENGINE" = "pipeline" ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude core/seal + codex ko/ja/en/zh)" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude core/seal + native sdk sonnet ko/ja/en/zh)" >> "$LOG_FILE"
         bash "$PROJECT_DIR/scripts/daily-post-pipeline.sh"
     else
         "$GROK_BIN" "${GROK_ARGS[@]}"

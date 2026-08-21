@@ -463,7 +463,7 @@ if [ ! -x "$CLAUDE_BIN" ]; then
   log "FATAL: claude missing at $CLAUDE_BIN"
   exit 1
 fi
-if [ ! -x "$CODEX_BIN" ]; then
+if [ "$WRITER" = "codex" ] && [ ! -x "$CODEX_BIN" ]; then
   log "FATAL: codex missing at $CODEX_BIN"
   exit 1
 fi
