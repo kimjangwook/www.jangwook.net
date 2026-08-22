@@ -1,6 +1,6 @@
 ---
 title: "AnthropicとOpenAIが同じ月にIPOを申請した — トークン価格戦争が開発者に意味すること"
-description: "2026年6月、Anthropic(6/1)とOpenAI(6/8)がそれぞれSECに非公開S-1を提出した。2つのAI最大手企業の同時IPOがAPIの価格をどう変えつつあるのか、実際のトークンコスト比較とともに開発者の視点で分析する。"
+description: "2026年6月、Anthropic(6/1)とOpenAI(6/8)がそれぞれSECに非公開S-1を提出した。二社の同時IPOがAPIトークン価格をどう揺らしているのかを、モデル別の実単価比較と、開発者がいま決めておくべき対応まで含めて整理する。"
 pubDate: '2026-06-13'
 heroImage: '../../../assets/blog/anthropic-openai-ipo-token-price-war-developer-guide-june-2026-hero.png'
 tags:

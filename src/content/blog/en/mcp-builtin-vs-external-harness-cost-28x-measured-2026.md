@@ -1,6 +1,6 @@
 ---
 title: "We Examined the 28x Agent-Cost Result and Found the Harness Is the Decision Layer"
-description: "MCP is not the primary cost decision for AI agents. Controlled evidence shows that harness design, verification, context policy, and runtime controls determine cost, reliability, and auditability."
+description: "MCP is not the main cost lever for AI agents. A controlled study of seven harnesses and five models, plus measured tool payloads, shows which layer sets cost."
 pubDate: 2026-08-22
 heroImage: '../../../assets/blog/mcp-builtin-vs-external-harness-cost-28x-measured-2026/hero.png'
 tags:
@@ -69,11 +69,11 @@ The harness governs all of those terms:
 
 The tool interface changes one expression within that system. It does not determine the policy that repeatedly carries the expression forward.
 
-I ran a minimal JSON-RPC stdio probe on two MCP servers, sending `initialize`, `notifications/initialized`, and `tools/list`, then measuring the bytes of the minimally serialized `tools` array. One server exposed two tools in 1,451 bytes. Another exposed 29 tools in 23,257 bytes. That is a 16x difference in persistent tool-definition bytes from registering one server rather than another.
+I ran a minimal JSON-RPC stdio probe on two MCP servers, sending `initialize`, `notifications/initialized`, and `tools/list`, then measuring the bytes of the minimally serialized `tools` array. One server exposed two tools in 1,451 bytes. Another exposed 29 tools in 23,257 bytes. That is a 16x difference in persistent tool-definition bytes from registering one server rather than another. I recorded how instruction files get re-read each turn in [a measured comparison of AGENTS.md and CLAUDE.md loading](/en/blog/en/agents-md-vs-claude-md-loading-measured-2026).
 
 The absolute token estimates are approximate because they use character count divided by four rather than a production tokenizer. The byte ratio is not subject to that approximation. More importantly, this is not a reproduction of the study’s seven-by-five matrix. It isolates one operational fact that platform teams can immediately control: tool schemas are not abstract metadata when they are included in every request. They are recurring input inventory.
 
-That is why MCP failures can be financially different even if failures are no more frequent. In the study, failures occurred equally often across the two interfaces, including repetitions. Yet 12.9% of money spent on MCP runs bought no completed work, compared with 2.2% for CLI runs. The difference was the cost accumulated before the system reached failure.
+That is why MCP failures can be financially different even if failures are no more frequent. In the study, failures occurred equally often across the two interfaces, including repetitions. Yet 12.9% of money spent on MCP runs bought no completed work, compared with 2.2% for CLI runs. The difference was the cost accumulated before the system reached failure. For where agent spend actually goes outside model pricing, see [my accounting from running eight agents against human labor cost](/en/blog/en/ai-agent-cost-reality).
 
 A platform dashboard that shows total spend and success rate but omits spend tied to failed work will hide exactly this pattern.
 
@@ -113,7 +113,7 @@ The study released its harness, task, verification method, and complete dataset 
 
 Then make MCP registration a governed engineering change.
 
-Every MCP server registration PR should disclose the `tools/list` payload size and tool count. CI can run the same basic probe used above and enforce server-level and repository-level payload budgets. The goal is not to ban large tool surfaces categorically. It is to require an owner to justify why a persistent set of 29 tools belongs in every agent context rather than being split, scoped, or loaded only when needed.
+Every MCP server registration PR should disclose the `tools/list` payload size and tool count. CI can run the same basic probe used above and enforce server-level and repository-level payload budgets. The goal is not to ban large tool surfaces categorically. It is to require an owner to justify why a persistent set of 29 tools belongs in every agent context rather than being split, scoped, or loaded only when needed. The security half of that review matters too, as [the 29 million secrets leaked through MCP config files](/en/blog/en/ai-coding-secrets-sprawl-mcp-config-security) showed.
 
 Add a failed-work spend ratio to the operating dashboard. Success rate alone cannot distinguish a cheap early failure from an expensive failure after repeated context expansion, tool calls, and retries. This is a direct unit-economics measure: what share of agent spend failed to purchase completed work?
 
