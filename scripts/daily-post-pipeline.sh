@@ -247,14 +247,26 @@ run_local() {
 }
 
 # gemini: genai API 직호출 (agy 아님 — 2026-08-21 CLI 금지). 텍스트 전용.
+# 무료 키 2개를 순차 시도한다 (2026-08-22): Key 1 이 503/429 로 죽어도 Key 2 는
+# 다른 프로젝트라 라우팅·쿼터가 달라 살아 있는 경우가 많다.
 GEMINI_LLM="${GEMINI_LLM:-/Users/jangwook/workspace/life-manager/src/cli/gemini-llm.ts}"
-run_gemini() {
-  local prompt="$1"
+run_gemini_key() {
+  local key_env="$1" prompt="$2"
   node "$GEMINI_LLM" \
     --env-file "$CONTROLLER_DIR/.env" \
-    --api-key-env GEMINI_API_KEY_FREE \
+    --api-key-env "$key_env" \
     --model gemini-3.7-flash \
     "$prompt" </dev/null
+}
+run_gemini() {
+  local prompt="$1" out rc
+  out="$(run_gemini_key GEMINI_API_KEY_FREE "$prompt")"; rc=$?
+  if [ "$rc" -ne 0 ]; then
+    log "run_gemini: Key 1 실패 rc=$rc — GEMINI_API_KEY_FREE_2 로 재시도"
+    out="$(run_gemini_key GEMINI_API_KEY_FREE_2 "$prompt")"; rc=$?
+  fi
+  printf '%s' "$out"
+  return $rc
 }
 
 # ── 임베드 편집 (A2A: local → gemini → claude 체인의 텍스트 모델용) ─────
@@ -287,6 +299,12 @@ $article"
     log "embed-polish($engine) $lang: ${nlen}b < 원문 40% — 기각"
     return 1
   fi
+  # 팽창 가드 (2026-08-22): 윤문은 다듬는 단계지 확장하는 단계가 아니다.
+  # 로컬 qwen 이 EN 을 17k → 50k 로 불린 사고 후 신설. 130% 초과면 기각.
+  if [ "$nlen" -gt $((olen * 13 / 10)) ]; then
+    log "embed-polish($engine) $lang: ${nlen}b > 원문 130% — 팽창 기각"
+    return 1
+  fi
   printf '%s\n' "$out" > "$target"
   log "embed-polish($engine) $lang 적용 ${olen} → ${nlen} bytes"
   return 0
@@ -303,7 +321,7 @@ run_gpt() {
     "$prompt" </dev/null
 }
 
-# 집필의 임베드판 (역할 분담: 집필 = gpt → gemini. claude 는 최종 폴백만).
+# 집필의 임베드판 (역할 분담: 집필 = gpt → gemini(키 2개) → local. claude 는 최종 폴백만).
 # 브리프(와 번역 시 EN 마스터)를 프롬프트에 넣고, 출력 전문을 언어 파일로 저장.
 # $1=engine(gpt|gemini), $2=lang, $3=지시, $4=추가 코퍼스(EN 마스터 등, 없으면 "")
 run_embed_write() {
@@ -320,9 +338,15 @@ $(cat "$BRIEF" 2>/dev/null)"
   [ -n "$extra_corpus" ] && full="$full
 
 $extra_corpus"
+  if [ "$engine" = "local" ] && [ "${#full}" -gt 30000 ]; then
+    # 로컬 qwen 의 컨텍스트를 넘길 크기다. 타임아웃 행업보다 즉시 폴백이 낫다.
+    log "embed-write(local) $lang 입력 ${#full}자 > 30000 — 다음 엔진으로 넘긴다"
+    return 1
+  fi
   case "$engine" in
     gpt)    out="$(run_gpt "$full")"; rc=$? ;;
     gemini) out="$(run_gemini "$full")"; rc=$? ;;
+    local)  out="$(run_local "$full" 12288)"; rc=$? ;;
     *) return 1 ;;
   esac
   [ "$rc" -eq 0 ] || { log "embed-write($engine) $lang rc=$rc"; return 1; }
@@ -442,18 +466,25 @@ $(cat "$PROJECT_DIR/src/content/blog/en/$SLUG.md")"
   # ★ hybrid 해석 버그 수정 (2026-08-22): 기존 코드는 cur_writer 를 만들고도
   #   case "$WRITER" 로 분기해 hybrid 가 엔진 없이 claude 폴백으로 빠졌다.
   case "$cur_writer" in
-    # 역할 분담: 집필 = gpt → gemini (임베드). claude 는 아래 공용 폴백.
+    # 역할 분담: 집필 = gpt → gemini(키 2개) → local (임베드). claude 는 아래 공용 폴백.
     gpt)
       if run_embed_write gpt "$lang" "$prompt" "$en_corpus"; then
         rc=0; wlabel="gpt/$CODEX_MODEL:$CODEX_EFFORT"
       elif run_embed_write gemini "$lang" "$prompt" "$en_corpus"; then
         rc=0; wlabel="gemini-3.7-flash (gpt fallback)"
+      elif run_embed_write local "$lang" "$prompt" "$en_corpus"; then
+        rc=0; wlabel="local/qwen (gpt/gemini fallback)"
       else
-        rc=1; wlabel="gpt/gemini failed"
+        rc=1; wlabel="gpt/gemini/local failed"
       fi ;;
     gemini)
-      run_embed_write gemini "$lang" "$prompt" "$en_corpus"; rc=$?
-      wlabel="gemini-3.7-flash" ;;
+      if run_embed_write gemini "$lang" "$prompt" "$en_corpus"; then
+        rc=0; wlabel="gemini-3.7-flash"
+      elif run_embed_write local "$lang" "$prompt" "$en_corpus"; then
+        rc=0; wlabel="local/qwen (gemini fallback)"
+      else
+        rc=1; wlabel="gemini/local failed"
+      fi ;;
     fable)  run_claude "$CLAUDE_WRITE_EFFORT" "$prompt" "$CLAUDE_WRITE_MODEL"; rc=$?
             wlabel="claude/$CLAUDE_WRITE_MODEL:$CLAUDE_WRITE_EFFORT" ;;
     codex)  run_codex "$prompt"; rc=$?; wlabel="codex/$CODEX_MODEL:$CODEX_EFFORT" ;;

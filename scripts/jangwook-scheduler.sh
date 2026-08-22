@@ -168,10 +168,10 @@ fi
 
 START_TIME=$(date +%s)
 
-echo "" >> "$LOG_FILE"
-echo "========================================" >> "$LOG_FILE"
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] START: $TASK_NAME" >> "$LOG_FILE"
-echo "========================================" >> "$LOG_FILE"
+echo "" | tee -a "$LOG_FILE"
+echo "========================================" | tee -a "$LOG_FILE"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] START: $TASK_NAME" | tee -a "$LOG_FILE"
+echo "========================================" | tee -a "$LOG_FILE"
 
 # daily-post 만 엔진이 다르다: 판단은 claude, 집필은 native sdk (sonnet 편집부).
 # 나머지 작업(daily-closing, sunday-strategy 등)은 그대로 grok 단일 프로세스.
@@ -183,7 +183,7 @@ fi
 
 if [ "$TASK_ENGINE" = "grok" ]; then
     if [ ! -x "$GROK_BIN" ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: grok not executable: $GROK_BIN" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: grok not executable: $GROK_BIN" | tee -a "$LOG_FILE"
         tg_send "[jangwook.net] ${TASK_NAME}: grok 바이너리 없음
 경로: ${GROK_BIN}
 조치: ~/.grok/bin/grok 설치 확인"
@@ -191,10 +191,10 @@ if [ "$TASK_ENGINE" = "grok" ]; then
     fi
 
     build_grok_args "$@" || exit 1
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: $GROK_BIN $(summarize_grok_args)" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: $GROK_BIN $(summarize_grok_args)" | tee -a "$LOG_FILE"
 else
     # plist 가 넘긴 grok 플래그는 파이프라인에서 쓰지 않는다. 로그에만 남긴다.
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude=plan / sdk=write), ignored args: $*" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude=plan / sdk=write), ignored args: $*" | tee -a "$LOG_FILE"
 fi
 
 # ── grok 헤드리스 새니티 프리플라이트 ──
@@ -223,7 +223,7 @@ grok_preflight() {
     if [ "$rc" -eq 0 ] && grep -qi 'OK' "$tmp"; then
         rm -f "$tmp"; return 0
     fi
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT: grok 무응답(rc=${rc}): $(tr '\n' ' ' < "$tmp" 2>/dev/null | tail -c 300)" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT: grok 무응답(rc=${rc}): $(tr '\n' ' ' < "$tmp" 2>/dev/null | tail -c 300)" | tee -a "$LOG_FILE"
     rm -f "$tmp"; return 1
 }
 
@@ -234,13 +234,13 @@ claude_preflight() {
     local tmp rc
     tmp="$(mktemp -t claude-preflight 2>/dev/null || echo /tmp/claude-preflight.$$)"
     # 2026-08-21: claude CLI → SDK 러너 (LLM 은 CLI 로 부르지 않는다)
-    run_timeout 90 node "${CLAUDE_SDK:-/Users/jangwook/workspace/life-manager/src/cli/claude-sdk-llm.ts}" --model sonnet --max-turns 1 'Reply with exactly: OK' \
-        --dangerously-skip-permissions --model opus </dev/null >"$tmp" 2>&1
+    run_timeout 90 node "${CLAUDE_SDK:-/Users/jangwook/workspace/life-manager/src/cli/claude-sdk-llm.ts}" --model sonnet --max-turns 1 \
+        'Reply with exactly: OK' </dev/null >"$tmp" 2>&1
     rc=$?
     if [ "$rc" -eq 0 ] && grep -qi 'OK' "$tmp"; then
         rm -f "$tmp"; return 0
     fi
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT: claude 무응답(rc=${rc}): $(tr '\n' ' ' < "$tmp" 2>/dev/null | tail -c 300)" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT: claude 무응답(rc=${rc}): $(tr '\n' ' ' < "$tmp" 2>/dev/null | tail -c 300)" | tee -a "$LOG_FILE"
     rm -f "$tmp"; return 1
 }
 
@@ -250,12 +250,12 @@ if [ "$TASK_ENGINE" = "grok" ]; then
 원인 후보: ~/.grok/auth.json 만료 / XAI_API_KEY 미설정 / 네트워크.
 조치: 이번 주기 건너뜀(다음 주기 자동 재시도). 반복 시 터미널에서 grok login,
 또는 .env 에 XAI_API_KEY 를 넣는다."
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: grok 무응답 — 작업 스킵" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: grok 무응답 — 작업 스킵" | tee -a "$LOG_FILE"
         exit 1
     fi
 else
     if [ ! -f "${CLAUDE_SDK:-/Users/jangwook/workspace/life-manager/src/cli/claude-sdk-llm.ts}" ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: claude($CLAUDE_BIN) 없음" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] FATAL: claude($CLAUDE_BIN) 없음" | tee -a "$LOG_FILE"
         tg_send "[jangwook.net] ${TASK_NAME}: claude 바이너리 없음
 경로: ${CLAUDE_BIN}"
         exit 1
@@ -264,19 +264,19 @@ else
         tg_send "[jangwook.net] ${TASK_NAME}: claude 헤드리스 무응답(90초 프리플라이트 실패)
 원인 후보: 로그인 만료 / 사용량 한도 / 네트워크.
 조치: 이번 주기 건너뜀(다음 주기 자동 재시도)."
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: claude 무응답 — 작업 스킵" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] PREFLIGHT ABORT: claude 무응답 — 작업 스킵" | tee -a "$LOG_FILE"
         exit 1
     fi
 fi
 
 # Sync with remote before running
 if ! git pull --rebase origin main >> "$LOG_FILE" 2>&1; then
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] git pull --rebase failed, attempting recovery..." >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] git pull --rebase failed, attempting recovery..." | tee -a "$LOG_FILE"
 
     git rebase --abort >> "$LOG_FILE" 2>&1 || true
     git stash >> "$LOG_FILE" 2>&1 || true
     if ! git pull --rebase origin main >> "$LOG_FILE" 2>&1; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Remote sync failed; refusing destructive reset." >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Remote sync failed; refusing destructive reset." | tee -a "$LOG_FILE"
         tg_send "[jangwook.net] 원격 동기화 실패
 작업: ${TASK_NAME}
 상태: git pull --rebase 실패
@@ -285,7 +285,7 @@ if ! git pull --rebase origin main >> "$LOG_FILE" 2>&1; then
     fi
     git stash pop >> "$LOG_FILE" 2>&1 || true
 
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] Sync recovered" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] Sync recovered" | tee -a "$LOG_FILE"
 fi
 
 # daily-post runs 6+ isolated agent processes (claude core/seal, codex ×4).
@@ -336,7 +336,7 @@ failure_cause() {
 
 run_agent() {
     if [ "$TASK_ENGINE" = "pipeline" ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude core/seal + native sdk sonnet ko/ja/en/zh)" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude core/seal + native sdk sonnet ko/ja/en/zh)" | tee -a "$LOG_FILE"
         bash "$PROJECT_DIR/scripts/daily-post-pipeline.sh"
     else
         "$GROK_BIN" "${GROK_ARGS[@]}"
@@ -352,7 +352,7 @@ EXIT_CODE=$?
 # 발행 게이트 실패는 이미 작업한 경우라 여기서 재시도하지 않는다.
 for RETRY_DELAY in 120 600; do
     if [ "$EXIT_CODE" -ne 0 ] && is_transient_failure; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] grok 일시적 실패(인증/과부하 추정) 감지 — ${RETRY_DELAY}초 후 재시도" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] grok 일시적 실패(인증/과부하 추정) 감지 — ${RETRY_DELAY}초 후 재시도" | tee -a "$LOG_FILE"
         tg_send "[jangwook.net] ${TASK_NAME}: 일시적 실패 감지, ${RETRY_DELAY}초 후 재시도"
         sleep "$RETRY_DELAY"
         run_agent >> "$LOG_FILE" 2>&1
@@ -370,7 +370,7 @@ wait $WATCHDOG_PID 2>/dev/null || true
 cleanup_orphan_telegram_bun
 
 if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] Publishing validation gate..." >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] Publishing validation gate..." | tee -a "$LOG_FILE"
     if ! npm run validate:publishing >> "$LOG_FILE" 2>&1; then
         EXIT_CODE=1
         tg_send "[jangwook.net] 발행 검증 실패
@@ -378,7 +378,7 @@ if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
 상태: npm run validate:publishing 실패
 조치: 로그 확인 필요"
     elif [ "${PUBLISHING_BUILD_GATE:-0}" = "1" ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Optional Astro check gate..." >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Optional Astro check gate..." | tee -a "$LOG_FILE"
         if ! npm run astro -- check >> "$LOG_FILE" 2>&1; then
             EXIT_CODE=1
             tg_send "[jangwook.net] Astro 체크 실패
@@ -388,7 +388,7 @@ if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
         fi
 
         if [ "$EXIT_CODE" -eq 0 ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Optional publishing build gate..." >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Optional publishing build gate..." | tee -a "$LOG_FILE"
         if ! npm run build >> "$LOG_FILE" 2>&1; then
             EXIT_CODE=1
             tg_send "[jangwook.net] 발행 빌드 실패
@@ -411,11 +411,11 @@ if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
         --name-only --pretty=format: -- 'src/content/blog/en/*.md' 2>/dev/null \
         | grep '\.md$' | sort -u)
     if [ -n "$NEW_EN_POSTS" ]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Crosspost gate: 신규 영문 글 감지" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Crosspost gate: 신규 영문 글 감지" | tee -a "$LOG_FILE"
         while IFS= read -r enfile; do
             [ -z "$enfile" ] && continue
             cpslug=$(basename "$enfile" .md)
-            echo "[$(date '+%Y-%m-%d %H:%M:%S')] crosspost: $cpslug (platform=${CROSSPOST_PLATFORMS:-devto})" >> "$LOG_FILE"
+            echo "[$(date '+%Y-%m-%d %H:%M:%S')] crosspost: $cpslug (platform=${CROSSPOST_PLATFORMS:-devto})" | tee -a "$LOG_FILE"
             # Hashnode 는 2026-06 정책변경으로 GraphQL API 가 Pro 구독 전용(gql.hashnode.com → 공지 301).
             # 자동화 기본은 작동하는 dev.to 만. Hashnode Pro 업그레이드 후 plist 에 CROSSPOST_PLATFORMS=all 설정.
             node scripts/crosspost.js "$cpslug" --platform="${CROSSPOST_PLATFORMS:-devto}" >> "$LOG_FILE" 2>&1 \
@@ -426,7 +426,7 @@ if [ "$EXIT_CODE" -eq 0 ] && should_run_publishing_gate; then
 fi
 
 ELAPSED=$(( $(date +%s) - START_TIME ))
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] DONE: $TASK_NAME (exit: $EXIT_CODE, ${ELAPSED}s)" >> "$LOG_FILE"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] DONE: $TASK_NAME (exit: $EXIT_CODE, ${ELAPSED}s)" | tee -a "$LOG_FILE"
 
 # 최종 종료코드가 0이 아니면 항상 알림을 보내 실패가 가시화되도록 한다.
 if [ "$EXIT_CODE" -ne 0 ]; then
