@@ -259,5 +259,51 @@
     "consumed": false,
     "surprised": true,
     "headline": "개발자 문서에는 2026-08-20 자로 갱신된 preferred-sources 전용 페이지가 이미 있고(좌측 내비 154 경로 중 하나, HTTP 200), 발표문도 퍼블리셔를 Search Console 이 아니라 그 문서로 보낸다. 같은 문서군에서 생성 기능 배타 레버는 ai-features 본문의 한 문장(순수 nosnippet 1·data-nosnippet 1·max-snippet 1·noindex 1, 통제 셀 차감 후)뿐이고 opt out·exclude 는 원문에서 0건이다. 그 레버가 실제 지시자로 착지한 자사 배포본 URL 은 12 중 0 이며(표본 12개 전부 robots·googlebot meta 태그 없음), 배포본이 켜 둔 것은 Google-Extended Disallow 2행과 Content-Signal: search=yes,ai-train=no,use=reference 뿐이다. falsifier 는 발동하지 않았다 — Google-Extended 절은 Gemini·Vertex 그라운딩만 말하고 검색 포함에 영향이 없다고 명시한다."
+  },
+  {
+    "id": "probe-2026-08-23-viewport-budget-series-1-what-400-zoom-leaves-2026",
+    "pillar": "a11y",
+    "question": "WCAG 1.4.10 가로 판정을 통과하는 페이지에서 320x200(400% 확대) 뷰포트의 세로 예산은 무엇이 먹는가 — 그 비용은 뷰포트 높이에 비례해 줄어드는 상대값인가, 높이와 무관한 절대 px 통행료인가.",
+    "expectation": "고정 크롬의 비용은 절대 px 이라고 본다. static 헤더(약 82px)는 첫 화면만 먹고 스크롤하면 회복되지만, 스크롤 후 나타나는 Mediavine 하단 컨테이너(#fixed_container_bottom)와 back-to-top 버튼은 뷰포트 높이와 무관하게 같은 px 을 계속 가져간다. 그렇다면 320x844 에서 20% 남짓인 손실률이 320x200 에서는 40% 이상으로 부풀고, 본문 가용 높이는 118px 부근(본문 line-height 27.97px 기준 4.2줄)으로 떨어진다. 2026-08-09 자체 감사의 118px 는 이 절대 통행료의 결과이지 뷰포트가 좁아서 생긴 비례 손실이 아니다. 반대로 크롬을 전부 제거해도 가용 px 이 거의 회복되지 않는다면, 원인은 고정 크롬이 아니라 문서 자체 레이아웃(제목 블록·히어로·본문 내 광고 슬롯)이고 hook 의 'sticky 헤더·배너·플로팅 요소가 먹는다'는 진술은 무너진다.",
+    "environment": {
+      "os": "darwin 25.5.0",
+      "tools": {
+        "node": "22.22.0",
+        "playwright": "1.58.2 (/Users/jangwook/workspace/claude-controller/node_modules/playwright)",
+        "chromium": "145.0.7632.6",
+        "curl": "8.7.1"
+      },
+      "notes": "대상은 로컬 dist 가 아니라 공개 라이브 사이트(https://www.jangwook.net). 블로그 레포를 건드리지 않는다. playwright 는 claude-controller 의 node_modules 를 절대 경로로 require 한다. 모든 작업 디렉터리는 /tmp 아래 $CELL_DIR. 측정 지표는 elementFromPoint 기반 행 단위 히트 테스트(2px 스텝, x=25/50/75%)로 산출한 usable_px = 본문(article/main)에 실제로 도달하는 세로 픽셀."
+    },
+    "dimensions": {
+      "viewport_h": [
+        "844",
+        "400",
+        "256",
+        "200"
+      ],
+      "scroll_state": [
+        "top",
+        "mid"
+      ],
+      "chrome": [
+        "present",
+        "stripped",
+        "per-element-removed"
+      ],
+      "page_type": [
+        "post",
+        "post2",
+        "blog-index",
+        "home",
+        "local-control"
+      ]
+    },
+    "runs": 27,
+    "cells": 6,
+    "status": "complete",
+    "consumed": false,
+    "surprised": false,
+    "headline": "320x200 에서 본문에 닿는 세로 픽셀은 118px(top, 6/6 재현)이고 손실 82px 는 네 뷰포트 높이에서 동일한 절대값이다 / 그 82px 는 static 헤더 블록이고 고정 크롬이 아니며, mid 상태의 손실 90px 는 뷰포트 높이와 무관하게 400px 높이를 유지하는 하단 광고 컨테이너 단독 몫(제거 시 +90px, 개별 합 = ALL 합)이고, back-to-top 의 단독 비용은 0px 다."
   }
 ]
