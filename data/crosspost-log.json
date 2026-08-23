@@ -2182,5 +2182,40 @@
         "id": 4445850
       }
     }
+  },
+  {
+    "slug": "mcp-builtin-vs-external-harness-cost-28x-measured-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/mcp-builtin-vs-external-harness-cost-28x-measured-2026",
+    "posted_at": "2026-08-22T09:17:40.632Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/we-examined-the-28x-agent-cost-result-and-found-the-harness-is-the-decision-layer-58il",
+        "id": 4460046
+      }
+    }
+  },
+  {
+    "slug": "mcp-builtin-vs-external-harness-cost-28x-measured-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/mcp-builtin-vs-external-harness-cost-28x-measured-2026",
+    "posted_at": "2026-08-22T09:19:56.323Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "skipped": true
+      }
+    }
+  },
+  {
+    "slug": "viewport-budget-series-1-what-400-zoom-leaves-2026",
+    "canonical_url": "https://jangwook.net/en/blog/en/viewport-budget-series-1-what-400-zoom-leaves-2026",
+    "posted_at": "2026-08-23T07:36:18.153Z",
+    "results": {
+      "devto": {
+        "success": true,
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/we-measured-what-400-zoom-leaves-behind-and-found-a-fixed-pixel-toll-1p1n",
+        "id": 4466462
+      }
+    }
   }
 ]

@@ -8715,6 +8715,40 @@
       "added_at": "2026-08-23",
       "status": "queued",
       "notes": "시리즈 1(08-23)의 고정 픽셀 예산 모델을 200%·1.4.12 스페이싱으로 확장"
+    },
+    {
+      "slug": "viewport-budget-series-2-usable-px-ci-regression-gate-2026",
+      "title_idea": "usable_px를 CI 게이트로 만들었다 — 뷰포트 예산 회귀를 배포에서 잡는 방법",
+      "content_type": "how-to",
+      "target_keyword": "viewport usable pixels CI regression gate",
+      "secondary_keywords": [
+        "Playwright hit test usable_px",
+        "320x200 reflow baseline",
+        "third-party fixed container viewport budget"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "자체 실측 (2026-08-23 발행 viewport-budget-series-1). SC 1.4.10 통과 상태에서 320x200 상단 118px / 중간 110px, 고정 82px 손실. 시리즈 1은 측정만 하고 게이트 설계는 결론 문단에서 제안 수준으로 끝냄.",
+      "added_at": "2026-08-23",
+      "status": "queued",
+      "notes": "시리즈 2. 시리즈 1이 남긴 미회수 긴장(중간 스크롤 상태의 3/6~6/6 산발성)을 정면으로 다룬다. 다룰 것: Playwright 하네스를 CI 잡으로 옮기는 스크립트, 대표 페이지 표본 선정 기준, 기준선 저장 포맷, 10% 하락 임계값이 거짓 실패를 얼마나 내는지 실측, 중간 상태를 report-only로 격리하는 방법. 링크: viewport-budget-series-1-what-400-zoom-leaves-2026, reflow-1410-400-zoom-viewport-height-2026, cls-layout-shift-reserve-space-measure-2026, audit-harness-series-2-timeseries-regression-2026"
+    },
+    {
+      "slug": "https-first-public-sites-default-mixed-subresource-audit-2026",
+      "title_idea": "Chrome 154가 HTTPS를 기본으로 켜기 전에, 내 사이트의 HTTP 잔재를 먼저 셌다",
+      "content_type": "how-to",
+      "target_keyword": "Chrome 154 Always Use Secure Connections default audit",
+      "secondary_keywords": [
+        "HTTPS-First mode public sites only",
+        "http subresource redirect chain audit",
+        "mixed content upgrade measurement"
+      ],
+      "search_intent": "how-to",
+      "priority": 1,
+      "source": "Google Security Blog 'HTTPS by default' + Chrome 154 릴리스 계획 보도(2026-08). Chrome 147(2026-04) Enhanced Safe Browsing 사용자 선행 적용, Chrome 154(2026년 하반기)부터 전체 사용자·모든 공개 사이트에 'Always Use Secure Connections' 기본 활성. 사설 사이트는 경고 제외.",
+      "added_at": "2026-08-23",
+      "status": "queued",
+      "notes": "how-to. 뉴스 요약이 아니라 '내 사이트에서 무엇이 깨지는지 세는 절차'로 쓴다. 다룰 것: sitemap 전수에서 http:// 절대 URL·리다이렉트 체인·서브리소스를 뽑는 스크립트, public/private 판정이 로컬 개발 서버(127.0.0.1, .local)에 어떻게 걸리는지 실측, HSTS와 upgrade 동작의 차이, 경고가 뜨는 조건(신규·저빈도 방문)을 재현하는 방법. 측정 대상은 자체 사이트로 한정. 링크: etag-deploy-invalidation-conditional-requests-2026, internal-link-trailing-slash-redirect-audit-2026"
     }
   ]
 }

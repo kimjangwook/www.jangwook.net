@@ -1,6 +1,6 @@
 ---
 title: 'I Tried RTK (Rust Token Killer)'
-description: 'RTK (Rust Token Killer) is a CLI proxy that compresses Bash command output before sending it to LLMs in AI coding agents. After real installation, I measured 90% reduction on find and 50% on ls commands.'
+description: "RTK (Rust Token Killer) is a CLI proxy that compresses Bash output before it hits the LLM. I measured 90% token savings on find and 50% on ls, plus the limits."
 pubDate: '2026-05-22'
 heroImage: >-
   ../../../assets/blog/rtk-rust-token-killer-hero.png

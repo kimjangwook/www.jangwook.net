@@ -1,5 +1,5 @@
 ---
-title: "We Measured What 400% Zoom Leaves Behind, and Found a Fixed Pixel Toll"
+title: "What 400% Zoom Leaves Behind: An 82px Fixed Pixel Toll"
 description: "A 320px reflow pass did not prevent severe vertical reading-space loss at short viewports. The loss was a fixed pixel cost, largely outside the application CSS."
 pubDate: '2026-08-23'
 heroImage: '../../../assets/blog/viewport-budget-series-1-what-400-zoom-leaves-2026/hero.png'
@@ -33,7 +33,7 @@ relatedPosts:
       zh: "展示如何将合规证据与实际可用性回归监控分开管理。"
 ---
 
-# We Measured What 400% Zoom Leaves Behind, and Found a Fixed Pixel Toll
+# What 400% Zoom Leaves Behind: An 82px Fixed Pixel Toll
 
 We wanted to know how much article space remains for a person using a 320px-wide, short viewport equivalent to 400% zoom. We measured the vertical pixels that could actually reach `article` or `main` across viewport heights, scroll states, page types, and browser-chrome conditions. The page passed every horizontal reflow check, yet at 320x200 only 118px of article space remained at the top, and a separate fixed-container effect reduced mid-page space to 110px.
 
@@ -41,7 +41,7 @@ That result matters because a conformance pass can be true while the reading exp
 
 ## A horizontal reflow pass did not describe the reading experience
 
-Accessibility reporting in a large modernization program often compresses the answer to a neat statement: no automated violations, Reflow passes, release approved. That statement is useful. It is also incomplete when a low-vision user is navigating a page with limited viewport height.
+Accessibility reporting in a large modernization program often compresses the answer to a neat statement: no automated violations, Reflow passes, release approved. That statement is useful. It is also incomplete when a low-vision user is navigating a page with limited viewport height. We measured how far that first item actually reaches [against the W3C ACT answer key of 1,213 cases](/en/blog/en/act-rules-axe-coverage-wcag-sc-2026). The second item is what we went after here.
 
 WCAG 2.2 Success Criterion 1.4.10 requires vertical-scrolling content to work at a width equivalent to 320 CSS pixels. It does not prescribe a remaining vertical reading height for that content.
 
@@ -55,7 +55,7 @@ For a CTO, this is not an argument against the criterion. It is an argument agai
 
 ## At 400% zoom, height shrinks with width
 
-A surprisingly common audit error is to simulate a narrow width while leaving a generous desktop-like height. That captures only half of the zoom condition.
+A surprisingly common audit error is to simulate a narrow width while leaving a generous desktop-like height. That captures only half of the zoom condition. An earlier measurement covered exactly this point: [a 320px reflow test covers half of it](/en/blog/en/reflow-1410-400-zoom-viewport-height-2026).
 
 > It should be noted that 400% applies to the dimension, not the area. It means four times the default zoom level viewport width and four times the default zoom level height.
 >
@@ -127,7 +127,7 @@ Instead, record a baseline for representative pages at 320x200 in the top state.
 
 The top state is the defensible first gate because it was stable: all six runs were byte-identical across the tested height ladder, and the 118px result reproduced the earlier audit. The mid state should remain a report-only diagnostic until the third-party loading behavior is understood. In the observed runs, the blocking effect varied from 3/6 to 6/6 depending on viewport and page context. A hard CI gate on that state would spend engineering attention on false failures.
 
-This distinction has direct unit-economics value. A single CI job can test a page sample across two conditions. The measurement cost is modest compared with discovering, after launch, that a revenue, consent, or support dependency has displaced the primary content on the exact screen where a user needs to read it. More importantly, the metric gives review discussions a price tag. Adding 12px to a header is no longer an aesthetic choice alone; it is a measurable draw against a constrained viewport budget.
+This distinction has direct unit-economics value. A single CI job can test a page sample across two conditions. The measurement cost is modest compared with discovering, after launch, that a revenue, consent, or support dependency has displaced the primary content on the exact screen where a user needs to read it. More importantly, the metric gives review discussions a price tag. Adding 12px to a header is no longer an aesthetic choice alone; it is a measurable draw against a constrained viewport budget. Turning layout instability into a number changes review discussions the same way, which is what happened when we were [cutting CLS from 0.559 to 0.014](/en/blog/en/cls-layout-shift-reserve-space-measure-2026).
 
 ## The counter-argument is correct for conformance decisions
 
