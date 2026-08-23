@@ -1,38 +1,38 @@
 {
   "version": 1,
-  "week_of": "2026-08-16",
+  "week_of": "2026-08-24",
   "written_by": "sunday-strategy",
   "note": "이 파일은 sunday-strategy 가 매주 쓴다. 1,860줄짜리 strategy-report.md 를 파싱하는 대신 기계가독 계약을 둔다. 없거나 10일 이상 낡으면 topic-pick 은 topic-backlog.json 의 priority <= 0 으로 폴백한다.",
   "slugs": [
     {
-      "slug": "viewport-budget-series-1-what-400-zoom-leaves-2026",
-      "since": "2026-08-09",
-      "reason": "7주 공백. 접근성 2편 한도를 시리즈 1편으로 소비한다"
+      "slug": "codex-claude-shared-instruction-workaround-2026",
+      "since": "2026-08-16",
+      "reason": "이번 주 How-to 0%. 08-19 symlink 글의 우회를 따라 하는 월요일 How-to"
+    },
+    {
+      "slug": "sticky-header-viewport-budget-400-zoom-2026",
+      "since": "2026-08-23",
+      "reason": "How-to 보강 2번째. 08-09 sticky-header 주제의 후신, 시리즈 1 기준선 재사용"
     },
     {
       "slug": "agent-instruction-loading-series-2-does-loaded-rule-change-code-2026",
       "since": "2026-08-16",
-      "reason": "직전 글이 회수하지 않은 질문. viewport 를 안 쓰면 이것"
+      "reason": "시리즈 격주 리듬 유지. viewport 시리즈 1은 08-23 소비 완료"
     },
     {
       "slug": "claude-code-memory-doc-reads-claude-md-not-agents-md-2026",
       "since": "2026-08-16",
-      "reason": "측정 없이 문서 읽기만으로 서는 주제"
+      "reason": "측정 없이 문서 읽기만으로 서는 뉴스"
     },
     {
       "slug": "gsc-generative-ai-control-switch-document-reading-2026",
       "since": "2026-08-16",
-      "reason": "official-geo 실험이 열어 둔 GSC 한 칸"
+      "reason": "08-21 opt-out 글이 문서 격차만 다뤘다. 스위치 자체 판독이 남아 있다"
     },
     {
       "slug": "agents-md-vs-claude-md-vs-cursorrules-loading-surface-2026",
       "since": "2026-08-16",
-      "reason": "비교 카테고리 3주 연속 0%"
-    },
-    {
-      "slug": "codex-claude-shared-instruction-workaround-2026",
-      "since": "2026-08-16",
-      "reason": "직전 글의 우회를 따라 하는 How-to"
+      "reason": "비교는 이번 주 43%로 과잉이라 토요일 1편으로 제한"
     }
   ]
 }

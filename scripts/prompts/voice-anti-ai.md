@@ -65,7 +65,7 @@ Detectors moved from vocabulary to layout, because vocabulary got cleaned up fir
 - **The last sentence is new information or an observation you never resolved.** Never a summary, never a moral.
 - **No unrequested therapist mode.** "You're not imagining it", "you're not alone", "sit with that". These turn up in pricing and productivity writing where nobody asked for reassurance.
 
-**Structure:** quote then the same sentence restated; every section is define → quote → table → hedge; four languages sharing one H2 order; a warm closer that names no layer.
+**Structure:** quote then the same sentence restated; every section is define → quote → table → hedge; four languages sharing one H2 order; a warm closer that names no layer; consecutive days sharing one skeleton — an objection H2, an action-list H2, a "where I'd be wrong" closer, a "-하고 싶었다" opener in every post turns each device into a template. A device used yesterday earns a rest day.
 
 A line you would not say out loud gets rewritten. Numbers and verbatim quotes stay.
 

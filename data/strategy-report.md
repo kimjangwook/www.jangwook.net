@@ -4,6 +4,103 @@
 
 ---
 
+## 2026-08-23 주간 리뷰 (8월 4주차)
+
+### 성과 요약
+
+- **이번 주 신규 발행 포스트**: 7개 (08-17〜08-23) — 결손 0일, 2주 연속
+- **콘텐츠 믹스**: How-to 0%(0) / 뉴스 43%(3) / 비교 43%(3) / 시리즈 14%(1)
+  - 목표(How-to 40 / 뉴스 30 / 비교 15 / 시리즈 15) 대비 **How-to −40%p, 비교 +28%p**
+  - **시리즈 7주 공백이 깨졌다** (viewport-budget-series-1, 08-23). 대신 How-to가 0으로 붕괴 — 백로그 상 how-to로 분류된 3편(gsc-platform·claude-md-symlink·search-console)이 실제 본문은 뉴스/비교로 집필됐다. 유형 라벨과 산출물이 어긋나는 것이 이번 주 믹스 붕괴의 실체다
+- **내부링크 현황**: 344편 중 0-link **1편** — 오늘 발행분(viewport)뿐, 저녁 daily-closing 전 상태. 지난주와 같은 당일-미처리 패턴
+- **4언어 균형**: ko/ja/en/zh 각 344편 일치
+- **크로스포스팅**: dev.to **5/7** — `claude-md-at-import`(08-19)와 `search-console-ai-features`(08-21)는 로그에 엔트리 자체가 없다. 두 날 모두 redo/프로브 재실행이 있던 날이라, 재집필 경로가 크로스포스트 단계를 건너뛰는 것으로 보인다. Hashnode는 정책상 제외 유지(2026-08-02 종결)
+
+#### 이번 주 포스트 목록
+
+| 날짜 | 슬러그 | 유형(실제) | 어절 | 표행 | mermaid | 링크 | 1인칭 |
+|---|---|---|---|---|---|---|---|
+| 08-17 | declared-rules-fail-open-robots-txt-agents-md-2026 | comparison | 1,119 | 0 | 0 | 3 | 2 |
+| 08-18 | gsc-platform-properties-social-video-search-measurement-2026 | news | 2,227 | 8 | 0 | 3 | 5 |
+| 08-19 | claude-md-at-import-agents-md-vs-symlink-2026 | comparison | 1,858 | 17 | 0 | 3 | 2 |
+| 08-20 | spam-update-rollout-window-search-status-vs-gsc-2026 | news | 1,699 | 0 | 0 | 3 | 0 |
+| 08-21 | search-console-ai-features-opt-out-vs-official-docs-gap-2026 | news | 2,245 | 0 | 0 | 3 | 7 |
+| 08-22 | mcp-builtin-vs-external-harness-cost-28x-measured-2026 | comparison | 2,149 | 0 | 0 | 3 | 5 |
+| 08-23 | viewport-budget-series-1-what-400-zoom-leaves-2026 | series | 1,887 | 0 | 0 | 0 | 0 |
+
+어절 2,000 하한 미달 4편(declared 1,119 / spam 1,699 / claude-md 1,858 / viewport 1,887). 지난주 "하한 미달이면 발행 게이트 실패로 취급" 결정은 이행되지 않았다.
+
+### 지난주 계획 이행 점검
+
+| 지난주 결정 | 결과 |
+|---|---|
+| 유형 강제: 시리즈 1 / 뉴스 2 / 비교 1 / How-to 3 | △ 시리즈 1 ✅ · 뉴스 3 · 비교 3 · **How-to 0** |
+| 시리즈를 월요일에 먼저 쓴다 | ❌ 일요일(08-23)에 나왔다. 다만 나오긴 했다 — 7주 공백 종료 |
+| 우선 슬러그 6건 소비 | △ **1건 소비**(viewport) — 4주 만의 첫 소비. 잔여 5건 이월 |
+| polish 후 2,000 미만이면 발행 게이트 실패 | ❌ 4/7편이 하한 미달로 발행 |
+| mermaid 주 1편 | ❌ 0/7 — **7주 연속 0** |
+| 표 20개 초과 시 환원 | ✅ 최다 17행(claude-md). 다만 표 0개가 5편으로 반대쪽 극단 |
+| 08-16 agents-md 0-link 당일 처리 | ✅ 현재 본문 링크 보유 |
+
+### 스타일 분석
+
+최근 7편(ko) 전수 확인. 서브에이전트 정독 + 기계 계측 병행.
+
+**양호한 항목**
+
+- 틸드·볼드 남용·이모지 헤딩·em-dash 남용: 7편 전부 깨끗
+- 한계·유보가 수치 절 안에 붙은 글 6/7 (declared만 전용 절 격리)
+- 사전식 괄호 표기: 08-21 파이프라인 수정(ff002ca) 이후 발행된 3편(search-console·mcp·viewport)에서 0건 — 수정이 작동한다
+
+**문제 항목**
+
+1. **spam-update(08-20)가 금지 패턴 최다 위반** — 사전식 괄호 주석 15곳+("Google Search Console(웹사이트의 검색 노출 순위와 클릭 성과를 집계하는 공식 도구)", "롤아웃(전 세계 검색 서버로의 순차 배포)" 등), 금지 어간 "진행" 2회, 해라체 이탈("~보았다", "~권장한다"). 단 이 글은 괄호 금지 규칙이 파이프라인에 들어간 08-21 **전날** 발행분이다. 규칙 부재가 아니라 시차 문제로 판정, 규칙 추가 불요
+2. **포스트 간 골격 동형화 — 이번 주 최대 발견**. 7/7편이 같은 뼈대: 도입 선요약 → 수치 절 → 반론 전용 H2 → 액션 절 → 반증조건 클로저
+   - 반론 H2가 7편 전부 존재, 내부 골격도 동일("반대가 옳은 범위 인정 → 무너지는 지점은 하나")
+   - 액션 절 5/7편, 그중 6·7번은 H2 제목까지 준동일("CEO와 CTO가 다음 검토 주기/릴리스 사이클에 바꿀 것")
+   - 클로저 문형 "내 판단/결론은 단순하다" 3연속(08-21·22·23), 도입 "~하고 싶었다" 3연속(08-20·21·23)
+   - 개별 규칙(반증조건 명시)은 지켜지는데 **지켜지는 방식이 매일 같아서 규칙 자체가 새 템플릿이 됐다**
+3. **declared-rules(08-17) moral 마감**: "커밋했다고 규칙이 작동하지는 않는다. 침묵하는 통과를 믿지 않는다." — canon "never a moral" 직접 위반. 병렬 명령 리스트("내일 바꿀 다섯 가지" 5항목 동형)도 동반
+4. **viewport(08-23) 3중 결함**: 본문 첫 줄 H1 중복(frontmatter title과 동일, 제목 2회 렌더), 내부링크 0, 1인칭 0. 시리즈 첫 글이 게이트를 가장 많이 빠뜨렸다
+5. mermaid 0/7 (7주 연속), 표 있는 글 2/7
+
+### 문체 정본 수정 — voice-anti-ai.md「Structure (2026-08 research)」절
+
+**늘리기 전 전체 분석 (관문 4항목)**
+
+1. **이미 있는가**: 부분적으로만. 기존 항목은 단락 골격(글 안)과 4언어 H2 동형(언어 간)을 막는다. 이번 발견은 **날짜 간** 동형화 — 어제 글의 뼈대가 오늘 글에 복제되는 층 — 이고 기존 항목이 커버하지 않는다. spam 글의 괄호 위반은 기존 규칙("A term's job comes from context")에 이미 포함 + 08-21 파이프라인 수정으로 집행까지 붙었으므로 추가하지 않는다
+2. **묻혀 있는가**: Structure 절은 항목 7개 + tells 1줄. 새 H2급 규칙을 더하면 묻힌다. 그래서 별도 항목이 아니라 **기존 tells 줄의 연장**으로 넣었다
+3. **죽었는가**: 「No unrequested therapist mode」는 최근 7편(그리고 기억하는 한 그 전 주에도) 위반 0. 한국어 기술 실측 글에서 발화될 여지가 낮다. **삭제 후보로 제안한다** (이번 주는 제안만, 삭제는 다음 주 리뷰에서 재확인 후)
+4. **모순되는가**: "pick a side + name the condition under which you are wrong" 규칙과 긴장이 있다 — 그 규칙을 매일 지키면 클로저가 동형화된다. 추가한 문구는 규칙 폐기가 아니라 "장치는 하루 쉬어 간다"로 변주를 요구하므로 충돌하지 않는다
+
+**실제 수정**: `scripts/prompts/voice-anti-ai.md`의 「Structure (2026-08 research)」절, `**Structure:**` tells 줄 끝에 1문장 추가 — "consecutive days sharing one skeleton — an objection H2, an action-list H2, a 'where I'd be wrong' closer, a '-하고 싶었다' opener in every post turns each device into a template. A device used yesterday earns a rest day."
+
+### 다음 주 전략
+
+- **유형 강제 배분**: How-to 3 / 뉴스 2 / 비교 1 / 시리즈 1. 이번 주 How-to 0%가 최우선 교정 대상. 월〜수 How-to를 먼저 소진한다
+- **유형 라벨 어긋남 감시**: 백로그 라벨이 how-to여도 산출물이 뉴스/비교로 나오는 케이스가 3건. 집필 브리프에 유형을 명시 전달하는지 확인 필요
+- **크로스포스트 결손 2건 수동 처리**: `claude-md-at-import`(08-19), `search-console-ai-features`(08-21)를 월요일에 dev.to 수동 크로스포스트. redo 경로가 크로스포스트를 건너뛰는 원인 확인
+- **viewport H1 중복 핫픽스**: 본문 첫 줄 H1 제거 (4언어), 월요일 daily-closing 전
+- **어절 하한 게이트**: 2주 연속 미이행. `daily-post-pipeline.sh` polish 단계 뒤에 wc 검사를 넣지 않으면 리포트 결정만으로는 안 지켜진다는 것이 확정됐다
+- **우선 처리**: `data/priority-slugs.json` 갱신 완료 — 이월 5건(since 2026-08-16 보존) + 신규 1건(sticky-header how-to). viewport는 발행돼 제거
+
+### 백로그 현황
+
+- **총 524개 주제 / queued 443개** (이번 주 +6, 발행 전환 1)
+- queued 유형 분포: news 203 / how-to 155 / comparison 65 / series 20
+- 이번 주 신규 투입 6건 — 전부 이번 주 글이 남긴 미회수 질문에 근거:
+
+| 유형 | 슬러그 | 근거 |
+|---|---|---|
+| how-to | mcp-server-removal-context-token-delta-2026 | 08-22 글의 28배 수치를 독자 세션에서 재는 절차 |
+| how-to | claude-md-at-import-nested-two-levels-measured-2026 | 08-19 글이 추론으로 유보한 셀의 실측 회수 |
+| how-to | sticky-header-viewport-budget-400-zoom-2026 | 08-09 sticky-header 주제의 후신, 시리즈 1 기준선 재사용 |
+| news | spam-update-completion-lag-dashboard-followup-2026 | 08-20 글 미회수(보존 정책 vs 상한) |
+| news | gsc-platform-properties-two-week-recheck-2026 | 08-18 글의 열린 관측 2주 후 재방문 |
+| series | viewport-budget-series-2-text-spacing-200-zoom-2026 | 시리즈 1의 예산 모델을 200%·텍스트 스페이싱으로 확장 |
+
+---
+
 ## 2026-08-16 주간 리뷰 (8월 3주차)
 
 ### 성과 요약
