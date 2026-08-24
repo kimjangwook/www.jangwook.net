@@ -305,5 +305,38 @@
     "consumed": false,
     "surprised": false,
     "headline": "320x200 에서 본문에 닿는 세로 픽셀은 118px(top, 6/6 재현)이고 손실 82px 는 네 뷰포트 높이에서 동일한 절대값이다 / 그 82px 는 static 헤더 블록이고 고정 크롬이 아니며, mid 상태의 손실 90px 는 뷰포트 높이와 무관하게 400px 높이를 유지하는 하단 광고 컨테이너 단독 몫(제거 시 +90px, 개별 합 = ALL 합)이고, back-to-top 의 단독 비용은 0px 다."
+  },
+  {
+    "id": "probe-2026-08-24-claude-md-vs-skill-vs-subagent-same-rule-three-layers-measured-2026",
+    "pillar": "agent-harness",
+    "question": "동일한 캐너리 규칙 한 줄을 CLAUDE.md / SKILL.md / 서브에이전트 정의 세 층에 각각 심었을 때, 층마다 (a) 규칙이 실제 응답에 실리는지 (b) 런당 입력 토큰이 얼마나 드는지가 어떻게 갈리는가 — 그리고 업계가 반복 인용하는 '서브에이전트 스폰당 약 20,000토큰'은 실측과 맞는가.",
+    "expectation": "CLAUDE.md 층만 무조건 상주한다. 산수 질문 같은 무관한 프롬프트에도 규칙이 실려 hit 3/3, 입력 토큰 증가는 규칙 길이 수준(수십 토큰)에 그친다. SKILL.md 층은 progressive disclosure 때문에 name/description만 인덱스에 실리고 본문은 로드되지 않는다. 따라서 명시 호출이 없는 passive 조건에서는 miss 3/3, 이름을 불러 호출한 조건에서만 hit이고 그때 Skill 도구 왕복으로 수백~수천 토큰이 붙는다. 서브에이전트 층은 위임하면 hit하지만 총 입력 토큰이 control 대비 가장 크게 뛴다 — 다만 20,000토큰보다는 작고 5,000~15,000 구간일 것으로 본다. 20k라는 숫자는 출처 없이 굳은 어림수라고 의심한다. 세 층을 동시에 심고 아무것도 호출하지 않는 셀에서는 CLAUDE.md 캐너리만 잡히고 나머지 두 토큰은 나타나지 않을 것이다. 이 예상이 깨지는 지점(예: 명시 호출해도 SKILL 본문이 안 실림, 또는 서브에이전트가 정말 20k를 넘김)이 글이 된다.",
+    "environment": {
+      "os": "darwin 25.5.0 (macOS 26.5.2, build 25F84)",
+      "tools": {
+        "claude": "2.1.241",
+        "codex": "0.147.0",
+        "model_under_test": "claude-sonnet-5"
+      }
+    },
+    "dimensions": {
+      "layer": [
+        "none",
+        "claude-md",
+        "skill",
+        "subagent",
+        "all-three"
+      ],
+      "invocation": [
+        "passive",
+        "explicit"
+      ]
+    },
+    "runs": 18,
+    "cells": 6,
+    "status": "partial",
+    "consumed": false,
+    "surprised": false,
+    "headline": "6셀 18런 전부 실행됐으나 측정값 0건 — claude 2.1.241의 --output-format json 최상위가 문서와 달리 단일 객체가 아닌 JSON 배열이라 18런 모두 파서가 동일 지점에서 죽었고, hit 플래그도 total_in도 산출되지 않았다."
   }
 ]
