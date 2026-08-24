@@ -1,6 +1,6 @@
 ---
 title: "把同一条规则搬过 CLAUDE.md、Skill 和子代理之后，我发现成本不是决策点"
-description: "CLAUDE.md、SKILL.md 与子代理解决的是覆盖范围和生命周期的不同问题。三者真正的架构边界在于强制力：没有一层是控制面。"
+description: "CLAUDE.md、SKILL.md 与子代理解决的是覆盖范围和生命周期的不同问题。通过实测对比三者的行为差异，真正的架构边界在于强制力：没有任何一层是控制面。"
 pubDate: 2026-08-24
 heroImage: '../../../assets/blog/claude-md-vs-skill-vs-subagent-same-rule-three-layers-measured-2026/hero.png'
 tags:
