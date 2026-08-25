@@ -32,6 +32,10 @@ if [ -f "$PROJECT_DIR/.env" ]; then
     set +a
 fi
 
+# 인증은 구독 OAuth 뿐. 부모 셸이나 .env 에서 올라온 API 키가 있으면 claude 가
+# "Invalid API key" 로 즉사한다 (2026-08-25 seal-check). 여기서 벗겨 낸다.
+unset ANTHROPIC_API_KEY ANTHROPIC_AUTH_TOKEN
+
 # Claude Telegram 플러그인 MCP(bun server.ts) 차단 (2026-07-21).
 # 헤드리스 run 은 인바운드 텔레그램이 불필요(알림은 TG_BOT_TOKEN+curl 경로)한데,
 # 같은 머신의 다른 claude 잡이 남긴 고아 bun 폴러가 CPU 를 점유할 수 있다.
@@ -312,6 +316,13 @@ WATCHDOG_PID=$!
 # 일시적 실패(인증/과부하/네트워크) 감지 — 이 run 의 로그 꼬리에서만 확인.
 # 빌드 진행 카운터 "(401/798)" 같은 오탐을 피하려 정밀 패턴 사용.
 is_transient_failure() {
+    # 셸이 깨진 것은 일시적 실패가 아니다. 재시도해도 같은 자리에서 죽고,
+    # 그 사이 앞단(집필·윤문)을 통째로 다시 돌려 이미 나온 원고를 버린다.
+    # 2026-08-25: 파이프라인이 실행 중 편집돼 무너졌는데, 로그 꼬리에 남아 있던
+    # gemini 503 문구가 이 판정을 통과시켜 50분치 작업이 브리프부터 재시작됐다.
+    if tail -n 120 "$LOG_FILE" | grep -qE 'daily-post-pipeline[^:]*\.sh: line [0-9]+:|syntax error near unexpected token'; then
+        return 1
+    fi
     tail -n 120 "$LOG_FILE" | grep -qiE 'Invalid authentication|Failed to authenticate|Authentication failed|API Error: (401|429|500|503|529)|overloaded_error|Too Many Requests|ETIMEDOUT|ECONNRESET|rate.?limit|An internal error occurred|EINTR'
 }
 
@@ -337,7 +348,22 @@ failure_cause() {
 run_agent() {
     if [ "$TASK_ENGINE" = "pipeline" ]; then
         echo "[$(date '+%Y-%m-%d %H:%M:%S')] AGENT: daily-post-pipeline (claude core/seal + native sdk sonnet ko/ja/en/zh)" | tee -a "$LOG_FILE"
-        bash "$PROJECT_DIR/scripts/daily-post-pipeline.sh"
+        # ★ 스냅샷 사본으로 돈다. bash 는 스크립트를 바이트 오프셋으로 이어 읽어서,
+        #   실행 중에 원본 길이가 바뀌면 그 지점부터 잘린 토큰을 읽는다.
+        #   2026-08-25 에 두 번 죽었다 — 다른 세션이 파이프라인을 커밋하는 사이
+        #   2시간 30분짜리 실행이 `line 935: hen: command not found` /
+        #   `line 938: syntax error near unexpected token 'fi'` 로 무너졌고,
+        #   원고 4편은 발행 직전에 버려졌다. 파일 자체는 bash -n 을 통과한다 —
+        #   즉 코드에는 증거가 남지 않는다.
+        local snapshot
+        # macOS mktemp 는 X 가 템플릿 **끝**에 있어야 치환한다. 확장자를 붙이면
+        # 그대로 고정 경로가 돼 동시 실행이 서로의 사본을 덮어쓴다. -t 를 쓴다.
+        snapshot="$(mktemp -t daily-post-pipeline)"
+        cp "$PROJECT_DIR/scripts/daily-post-pipeline.sh" "$snapshot"
+        bash "$snapshot"
+        local rc=$?
+        rm -f "$snapshot"
+        return $rc
     else
         "$GROK_BIN" "${GROK_ARGS[@]}"
     fi

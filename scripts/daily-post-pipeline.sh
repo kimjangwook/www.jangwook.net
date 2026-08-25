@@ -45,6 +45,10 @@
 # 훑는 데 쓰고, opus medium 이 그 메모를 받아 종합 판정한다.
 
 PROJECT_DIR="/Users/jangwook/workspace/www.jangwook.net"
+
+# 인증은 구독 OAuth 뿐. 부모 셸이나 .env 에서 올라온 API 키가 있으면 claude 가
+# "Invalid API key" 로 즉사한다 (2026-08-25 seal-check). 여기서 벗겨 낸다.
+unset ANTHROPIC_API_KEY ANTHROPIC_AUTH_TOKEN
 CONTROLLER_DIR="/Users/jangwook/workspace/claude-controller"
 PROMPT_DIR="$PROJECT_DIR/scripts/prompts"
 BRIEF="$PROJECT_DIR/data/column-brief.md"
