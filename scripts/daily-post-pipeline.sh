@@ -239,7 +239,6 @@ run_agy() {
 run_local() {
   local prompt="$1" max_tokens="${2:-4096}"
   node "$PROJECT_DIR/../life-manager/src/cli/local-llm.ts" \
-    --model "mtplx-qwen38-27b-optimized-quality" \
     --temperature 0.2 \
     --max-tokens "$max_tokens" \
     "$prompt" \
