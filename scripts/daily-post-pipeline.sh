@@ -521,15 +521,19 @@ $(cat "$PROJECT_DIR/src/content/blog/en/$SLUG.md")"
   run_claude "$CLAUDE_FALLBACK_EFFORT" "$prompt" "$CLAUDE_FALLBACK_MODEL"
   rc=$?
 
-  if [ "$rc" -ne 0 ]; then
-    restore_holds
-    log "lang=$lang claude 폴백도 실패 rc=$rc"
-    return "$rc"
-  fi
-  if [ ! -f "$target" ]; then
-    restore_holds
-    log "missing $lang/$SLUG.md ($WRITER·claude 모두 산출 없음)"
-    return 1
+  if [ "$rc" -ne 0 ] || [ ! -f "$target" ]; then
+    log "lang=$lang claude 폴백 실패 rc=$rc — 최종 안전망 local-llm(SuperQwen 27B)으로 폴백"
+    rm -f "$target"
+    if run_embed_write local "$lang" "$prompt" "$en_corpus"; then
+      polish_lang "$lang"
+      restore_holds
+      record_engine "$lang" "local/SuperQwen-27B (final fallback)"
+      return 0
+    else
+      restore_holds
+      log "missing $lang/$SLUG.md ($WRITER·claude·local 모두 산출 없음)"
+      return 1
+    fi
   fi
   # 편집도 hold 창 안에서. 편집자에게도 다른 언어를 보여주지 않는다.
   polish_lang "$lang"
