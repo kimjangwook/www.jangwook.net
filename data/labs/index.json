@@ -338,5 +338,51 @@
     "consumed": false,
     "surprised": false,
     "headline": "6셀 18런 전부 실행됐으나 측정값 0건 — claude 2.1.241의 --output-format json 최상위가 문서와 달리 단일 객체가 아닌 JSON 배열이라 18런 모두 파서가 동일 지점에서 죽었고, hit 플래그도 total_in도 산출되지 않았다."
+  },
+  {
+    "id": "probe-2026-08-25-mcp-roadmap-doc-read-agent-identity-progressive-discovery-2026",
+    "pillar": "agent-harness",
+    "question": "2026-08-22 갱신된 MCP 공식 로드맵이 우선순위로 적은 항목들(Tasks·subscriptions/listen·webhooks·DPoP·ID-JAG·progressive discovery·tool result shape)은 지금 어느 문서 표면에 실재하는가 — 릴리스된 스펙 스키마인가, 워킹그룹 헌장·로드맵 산문뿐인가 — 그리고 progressive discovery 가 풀겠다는 '카탈로그를 앞에서 통째로 먹는다'는 문제는 커서 페이지네이션이 이미 스펙에 있는 지금 실제 클라이언트(claude 2.1.241 / codex 0.147.0)에서 그대로 성립하는가.",
+    "expectation": "결론부터 적는다. 나는 로드맵 항목이 두 무리로 갈린다고 본다. Tasks 는 이미 2025-11-25 릴리스 스키마에 들어가 있고(사전 조사에서 tasks/ 25회, CreateTask 6회), DPoP·progressive discovery·webhook 은 스키마 파일에 한 글자도 없다. 즉 로드맵 문장 하나가 '곧 온다'로 읽히지만 실제 거리(release-schema 안 vs 헌장 산문뿐)는 항목마다 다르다. 두 번째로, 나는 progressive discovery 의 전제인 '클라이언트가 카탈로그 전부를 앞에서 먹는다'가 지금도 참이라고 본다. nextCursor 는 2025-06-18 부터 스키마에 있지만, 클라이언트는 이것을 지연 로딩 레버로 쓰지 않고 연결 시점에 커서를 끝까지 따라가 전 카탈로그를 컨텍스트에 넣는다고 예상한다. 200개 툴 / 페이지 20 이면 tools/list 가 10회 불리고 총 응답 바이트가 첫 페이지의 약 10배가 나올 것이다. 이 예상이 깨지는 자리는 클라이언트가 첫 페이지에서 멈추는 경우다. 그러면 스펙에 이미 있는 페이지네이션이 사실상의 progressive discovery 로 동작하고 있었다는 뜻이고, 로드맵의 문제 진술 쪽이 흔들린다.",
+    "environment": {
+      "os": "darwin 25.5.0 (macOS 26.5.2)",
+      "tools": {
+        "codex": "0.147.0",
+        "claude": "2.1.241",
+        "node": "v22.22.0",
+        "python3": "3.12.8",
+        "curl": "8.7.1",
+        "jq": "1.7.1-apple"
+      },
+      "sources": {
+        "roadmap": "https://modelcontextprotocol.io/development/roadmap (last updated 2026-08-22)",
+        "schemas": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/{2025-06-18,2025-11-25,draft}/schema.json",
+        "docs_corpus": "https://modelcontextprotocol.io/llms-full.txt (약 2.37MB)"
+      }
+    },
+    "dimensions": {
+      "surface": [
+        "release-schema",
+        "draft-schema",
+        "docs-corpus",
+        "live-client"
+      ],
+      "client": [
+        "claude",
+        "codex",
+        "none"
+      ],
+      "catalog_size": [
+        "20",
+        "200",
+        "n/a"
+      ]
+    },
+    "runs": 18,
+    "cells": 6,
+    "status": "partial",
+    "consumed": false,
+    "surprised": false,
+    "headline": "claude 2.1.241 은 200개 카탈로그를 연결 시점에 nextCursor 로 10페이지 전량 선인출한다(3/3, 62,708B — 20개 단일페이지 6,235B 의 10.06배). DPoP·progressive discovery·webhook·ID-JAG 는 MCP 스키마 네 버전(2025-06-18/2025-11-25/2026-07-28/draft) 모두 0회이고 로드맵·헌장 산문에만 있으며, tasks/ 는 2025-11-25 에 25회 있다가 현행 2026-07-28 에서 0회로 코어 스키마 밖으로 나갔다. codex 0.147.0 셀은 사용량 한도로 0/3, 판정 불가."
   }
 ]
