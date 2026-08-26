@@ -298,7 +298,9 @@ function validateDescriptionFloor(posts) {
   // 권장은 150~160(라틴 기준). 하한은 그보다 낮게 두어 재작성 강요가 아니라 방어선으로 쓴다.
   // CJK 는 한 글자가 담는 정보가 많아 같은 자수로 재면 안 된다. 중국어 106자는 충분하다.
   // 과거 글 982편이 80자 미만이라 백로그로 세지 않고 게이트 이후 글만 본다.
-  const DESC_MIN_BY_LANG = { en: 120, ko: 90, ja: 80, zh: 70 };
+  // zh 는 70 → 50 완화 (2026-08-26). 중국어는 조사·어미가 없어 같은 내용을 한국어보다
+  // 짧게 담는다. 67자짜리 정상 description 이 발행 게이트를 막아 daily-post 가 exit 1 났다.
+  const DESC_MIN_BY_LANG = { en: 120, ko: 90, ja: 80, zh: 50 };
   for (const post of posts.filter((item) => item.indexable)) {
     if (!post.pubDateKey || post.pubDateKey < QUALITY_GATE_FROM) continue;
     const desc = String(post.data.description ?? '');
