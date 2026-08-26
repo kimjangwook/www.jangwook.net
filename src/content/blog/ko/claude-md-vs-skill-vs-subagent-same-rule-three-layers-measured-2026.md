@@ -7,28 +7,7 @@ tags:
   - AI Engineering
   - Agent Architecture
   - Developer Productivity
-relatedPosts:
-  - slug: claude-md-at-import-agents-md-vs-symlink-2026
-    score: 0.92
-    reason:
-      ko: "CLAUDE.md와 import, AGENTS.md, 심볼릭 링크의 적용 범위와 운영상 간극을 다룬 글입니다."
-      ja: "CLAUDE.md、import、AGENTS.md、シンボリックリンクの適用範囲と運用上の差を扱います。"
-      en: "A practical analysis of scope and operational trade-offs across CLAUDE.md, imports, AGENTS.md, and symlinks."
-      zh: "本文分析 CLAUDE.md、import、AGENTS.md 与符号链接在作用范围和运维上的差异。"
-  - slug: mcp-builtin-vs-external-harness-cost-28x-measured-2026
-    score: 0.88
-    reason:
-      ko: "에이전트 도구 호출의 비용 구조와 측정 하네스를 운영 규약으로 만드는 방법을 다룹니다."
-      ja: "エージェントのツール呼び出しにおけるコスト構造と、計測ハーネスを運用規約にする方法を扱います。"
-      en: "An examination of agent-tool cost structures and how to operationalize a measurement harness."
-      zh: "本文讨论代理工具调用的成本结构，以及如何将测量 harness 纳入团队运维规范。"
-  - slug: search-console-ai-features-opt-out-vs-official-docs-gap-2026
-    score: 0.78
-    reason:
-      ko: "공식 문서의 설명과 실제 통제 지점 사이의 간극을 검증 가능한 운영 관점에서 다룹니다."
-      ja: "公式ドキュメントの説明と実際の統制点の隔たりを、検証可能な運用の観点から扱います。"
-      en: "A case for treating the gap between documentation and actual control points as an operational risk."
-      zh: "本文从可验证的运营视角，讨论官方文档描述与实际控制点之间的差距。"
+relatedPosts: []
 ---
 
 같은 규칙을 CLAUDE.md에서 스킬로, 다시 서브에이전트로 옮기면 컨텍스트 비용이 실제로 줄어드는지 알고 싶었다. 문서에 적힌 로딩 경로를 따라가 보고, 토큰 수치를 믿기 전에 측정 하네스부터 검증하려고 Claude CLI 명령을 통제된 조건에서 한 번 돌렸다. 결론은 이렇다. 계층 선택은 비용을 깎는 수단이 아니라 적용 범위, 수명, 격리, 강제력을 정하는 결정이다.
@@ -89,7 +68,7 @@ CLAUDE.md는 상주 컨텍스트다. 세션 시작 시점에 로드되고 대화
 
 공식 문서의 동작 방식은 그걸 일반 규칙으로 뒷받침하지 않는다.
 
-포크가 아닌 서브에이전트는 자기 작업 메시지와 시스템 컨텍스트로 시작하지만, 메인 대화가 로드하는 CLAUDE.md 계층도 함께 받는다. 사용자 수준, 프로젝트, 로컬, 관리 정책 파일이 여기에 들어간다. 내장 Explore와 Plan 에이전트가 명시된 예외다.
+포크가 아닌 서브에이전트는 자기 작업 메시지와 시스템 컨텍스트로 시작하지만, 메인 대화가 로드하는 CLAUDE.md 계층도 함께 받는다. 그 계층이 무인 실행에서 실제로 무엇을 읽어오는지는 @import와 심볼릭 링크를 21번 돌려 확인한 기록에 정리해 뒀다. 사용자 수준, 프로젝트, 로컬, 관리 정책 파일이 여기에 들어간다. 내장 Explore와 Plan 에이전트가 명시된 예외다.
 
 기동 경로는 사전 로드된 스킬의 의미도 바꾼다. 일반 세션에서 스킬은 필요할 때까지 열리지 않을 수 있다. 스킬이 설정된 서브에이전트에서는 스킬 전문이 기동 시점에 주입된다.
 
@@ -99,7 +78,7 @@ CLAUDE.md는 상주 컨텍스트다. 세션 시작 시점에 로드되고 대화
 
 리더가 기억할 아키텍처 요점이 여기다. 점진적 공개는 파일 포맷의 속성이 아니다. 로딩 경로의 속성이다.
 
-SKILL.md 포맷은 개방 표준으로 공개되고 여러 에이전트 제품이 채택하면서 이식성이 좋아졌다. 재사용 절차를 두기에 합리적인 자리라는 뜻이다. 그렇다고 모든 런타임이, 특히 서브에이전트 구현마다, 동일한 지연 로딩 동작을 보존한다는 보장은 아니다.
+SKILL.md 포맷은 [개방 표준으로 공개](/ko/blog/ko/anthropic-agent-skills-standard)되고 여러 에이전트 제품이 채택하면서 이식성이 좋아졌다. 재사용 절차를 두기에 합리적인 자리라는 뜻이다. 그렇다고 모든 런타임이, 특히 서브에이전트 구현마다, 동일한 지연 로딩 동작을 보존한다는 보장은 아니다.
 
 > "Discovery: At startup, agents load only the name and description of each available skill... Full instructions load only when a task calls for them, so agents can keep many skills on hand with only a small context footprint."
 
@@ -182,7 +161,7 @@ CFO와 CTO는 클라우드 단위 경제성에 적용하던 기준을 그대로 
 
 단위 경제성이 리뷰 가능해진다. 상주 컨텍스트, 호출된 절차, 스폰된 작업에 각각 이름 붙은 주인과 보이는 경계가 생기기 때문이다. 사용량이 늘면 비용도 늘겠지만, 조용한 중복이 아니라 관측 가능한 결정을 거쳐 늘어난다.
 
-컴플라이언스 방어가 쉬워진다. 팀이 컨텍스트 지시를 통제로 착각하지 않게 되기 때문이다. 민감 데이터 제한, 프로덕션 명령 게이트, 시크릿 취급 규칙은 훅으로 옮겨 시스템이 요청 대신 차단하게 만들 수 있다.
+컴플라이언스 방어가 쉬워진다. 팀이 컨텍스트 지시를 통제로 착각하지 않게 되기 때문이다. 민감 데이터 제한, 프로덕션 명령 게이트, 시크릿 취급 규칙은 [훅으로 옮겨](/ko/blog/ko/claude-code-hooks-workflow) 시스템이 요청 대신 차단하게 만들 수 있다.
 
 출시 속도도 빨라진다. 에이전트 관련 PR마다 배치를 원점에서 논쟁하지 않아도 되기 때문이다. 운영 모델이 명확하면 설계 churn이 줄고 팀의 주의는 실제 제품이나 마이그레이션 작업으로 돌아간다.
 

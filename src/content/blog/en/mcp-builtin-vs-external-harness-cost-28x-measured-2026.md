@@ -24,13 +24,6 @@ relatedPosts:
       ja: モデル単価ではなく、実行構造全体と失敗コストからエージェント費用を見る視点を広げます。
       en: Extend the cost discussion from model pricing to execution architecture, retries, and failed work.
       zh: 将智能体成本讨论从模型单价扩展到执行架构、重试和失败工作成本。
-  - slug: agents-md-vs-claude-md-loading-measured-2026
-    score: 0.78
-    reason:
-      ko: 매 회차에 누적되는 컨텍스트와 지시 파일이 비용에 미치는 영향을 측정 관점에서 이어 봅니다.
-      ja: 毎ターン蓄積されるコンテキストと指示ファイルがコストへ与える影響を、計測の観点から追います。
-      en: Compare how persistent context and instruction files shape recurring input cost across agent turns.
-      zh: 从测量角度比较持续上下文和指令文件如何影响每轮智能体输入成本。
 ---
 
 An AI-agent team wants to know whether removing MCP will reduce operating cost. I examined a controlled MCP-versus-CLI study alongside a direct measurement of MCP tool-definition payloads. The result is clear: MCP can add recurring context weight, but the harness determines the cost structure, and changing interfaces alone will not reliably recover that cost.
@@ -69,7 +62,7 @@ The harness governs all of those terms:
 
 The tool interface changes one expression within that system. It does not determine the policy that repeatedly carries the expression forward.
 
-I ran a minimal JSON-RPC stdio probe on two MCP servers, sending `initialize`, `notifications/initialized`, and `tools/list`, then measuring the bytes of the minimally serialized `tools` array. One server exposed two tools in 1,451 bytes. Another exposed 29 tools in 23,257 bytes. That is a 16x difference in persistent tool-definition bytes from registering one server rather than another. I recorded how instruction files get re-read each turn in [a measured comparison of AGENTS.md and CLAUDE.md loading](/en/blog/en/agents-md-vs-claude-md-loading-measured-2026).
+I ran a minimal JSON-RPC stdio probe on two MCP servers, sending `initialize`, `notifications/initialized`, and `tools/list`, then measuring the bytes of the minimally serialized `tools` array. One server exposed two tools in 1,451 bytes. Another exposed 29 tools in 23,257 bytes. That is a 16x difference in persistent tool-definition bytes from registering one server rather than another. I recorded how instruction files get re-read each turn in a measured comparison of AGENTS.md and CLAUDE.md loading.
 
 The absolute token estimates are approximate because they use character count divided by four rather than a production tokenizer. The byte ratio is not subject to that approximation. More importantly, this is not a reproduction of the study’s seven-by-five matrix. It isolates one operational fact that platform teams can immediately control: tool schemas are not abstract metadata when they are included in every request. They are recurring input inventory.
 

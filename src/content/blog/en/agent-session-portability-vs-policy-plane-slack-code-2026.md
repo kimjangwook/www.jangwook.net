@@ -1,14 +1,13 @@
 ---
-title: "I Treated Agent Sessions as Portable Cache and Moved Control to a Policy Plane: Vendor Lock-In Became Manageable"
-description: "Session migration preserves useful work context, but authentication, hooks, policies, MCP connections, and runtime controls stay behind. The durable answer is to place approval and audit controls outside the agent harness."
+title: "Treat the Session as Cache. Move the Policy Plane. Lock-in Becomes a Mapping Problem."
+description: "Session migration preserves useful work context. But auth, hooks, policy, MCP connections, and runtime config stay with the client. The durable answer is to put approval and audit outside the agent harness entirely."
 pubDate: 2026-08-26
-heroImage: '../../../assets/blog/agent-session-portability-vs-policy-plane-slack-code-2026/hero.png'
+heroImage: "../../../assets/blog/agent-session-portability-vs-policy-plane-slack-code-2026/hero.png"
 tags:
   - AI Agents
   - Engineering Leadership
   - Governance
   - Vendor Lock-in
-  - Slack Code
 relatedPosts:
   - slug: "mcp-builtin-vs-external-harness-cost-28x-measured-2026"
     score: 0.88
@@ -33,138 +32,86 @@ relatedPosts:
       zh: "让工具访问和代理身份逐步发现，是分离策略平面后的下一步。"
 ---
 
-I wanted to know whether portable coding-agent sessions materially reduce vendor lock-in, or merely make a future migration look easier than it is. I froze one real Claude Code session, inspected it, and transferred it into seven target formats with session-migrate 0.8.0. The useful conversation and tool context traveled surprisingly well, but the controls that make agent work safe in an organization did not move at all.
+# Treat the Session as Cache. Move the Policy Plane. Lock-in Becomes a Mapping Problem.
 
-That distinction matters because a CTO should optimize for portability of approval and audit, not portability of a developer’s local transcript.
+Does migrating a coding-agent session to another vendor actually reduce lock-in, or does it just create the illusion that "well, we *could* move, if we ever needed to"? I wanted to find the exact boundary by hand. I froze one Claude Code session and pushed it through session-migrate 0.8.0 into seven target formats. The conversation and tool-call context transferred reasonably well. Not one of the organizational controls that make this agent work safe in production came along.
 
-## The operational problem is not where the chat history lives
+That single sentence is the whole article. The thing a CTO should be optimizing for is not the portability of a developer's local chat log. It is the portability of approval and audit.
 
-In renewal programs and data-platform work, the same question eventually reaches engineering leadership: “Three months from now, where can we see why this agent made that change?”
+## The Operational Problem Is Not Where the Log Lives
 
-The dangerous answer is usually “somewhere in a developer’s local session files.” One engineer has the context in a JSONL file, another copied fragments into a PR description, and a third has already cleaned the directory. That is tolerable for a private experiment. It is an operational defect when the change touches identity, payments, member data, or production access.
+Three months after an agent made a change that touched production, where do you find the justification for that change? The dangerous answer is "somewhere in someone's local session file." One engineer keeps context in a JSONL. Another pasted fragments into a PR description. A third already cleaned up their directory. Fine for a personal experiment. The moment the change touches auth, payments, member data, or production access, it is an operational defect, not a preference.
 
-There is a second risk moving in the opposite direction. Session files can contain production-log fragments, schema details, attached artifacts, and sometimes samples of real data. A command that converts such a session into another vendor’s native format is not just a convenience feature. It opens another route for data export.
+The reverse risk moves with it. A session file carries production log fragments, schema details, attached artifacts, sometimes real data samples. A command that rewrites that file into another vendor's native format is not a convenience feature. It is one more data-exfiltration path.
 
-This is why I do not treat agent-session portability as a simple developer-productivity question. It is a data-governance question disguised as a CLI feature.
+So I do not frame agent-session portability as a developer-productivity question. It is a data-governance question wearing a CLI feature's face.
 
-Slack Code points in the opposite direction from session migration but arrives at the same architectural conclusion. Slack says that mentioning a coding agent can create a dedicated code channel, gather relevant people, collect code diffs, planning documents, and live HTML previews, then archive the completed channel as a searchable record. That moves the durable work record away from a single workstation and into a shared operating surface.
+Slack Code starts from the opposite direction and lands on the same conclusion. You mention a coding agent, a dedicated code channel appears, the right people gather, diffs and plan documents and live HTML previews accumulate inside it, and when the work is done the channel archives as a searchable record. The durable work artifact moves from a personal workstation to a shared operational surface.
 
-> Slack Code は Slack 既存の権限と管理者コントロールを継承するため、IT 部門が新たな設定や監査を行う必要はありません。重要な変更はチャンネル内でそのまま担当者による迅速な承認フローに回すことができ、レビューの安心感を保ちながら自動化のスピードを実現します。  
-> — [Slack Code: チームと AI エージェントが共に作り上げる場所](https://slack.com/intl/ja-jp/blog/news/slack-code-channels-for-agents)
+> Because Slack Code inherits Slack's existing permissions and admin controls, IT does not need to build new configuration or audit. Critical changes route directly to an approver inside the channel, preserving review confidence while keeping automation speed.
+> — [Slack Code: Where Teams and AI Agents Build Together](https://slack.com/intl/ja-jp/blog/news/slack-code-channels-for-agents)
 
-The product detail matters less than the mechanism: it inherits an existing permission and administration plane rather than asking IT to reconstruct one inside every new agent workflow.
+The inheritance structure matters more than the product details. Instead of asking IT to stand up a new permission model for every new agent workflow, the agent inherits the ACL that already exists. Slack's existing ACL decides which channel, which people, which data the agent can touch. Swap the harness; that layer does not move.
 
-## What the migration test actually preserved
+## What Actually Survived the Migration
 
-I installed session-migrate 0.8.0 in a Python 3.12 virtual environment on macOS, despite the README stating support for Python 3.11+ and Linux. Installation and startup worked. That does not change the published support boundary, but it was sufficient for a controlled format-conversion test.
+I set up a Python 3.12 venv on macOS and installed session-migrate 0.8.0. The README lists Python 3.11+ and Linux as the supported range, but install and boot both worked without issue. The official support boundary did not change; a controlled format-conversion experiment did not need it to.
 
-The source was one frozen Claude Code session: 341,646 bytes, 90 records, with 20 tool-use blocks, 20 tool-result blocks, and 11 thinking blocks. Freezing was essential. A live session file continued to grow during the first attempt, which meant each target conversion was being compared against a different source population.
+The source was one frozen Claude Code session: 341,646 bytes, 90 records, 20 tool-use blocks, 20 tool-result blocks, 11 thinking blocks. The freeze was the critical step. On my first attempt, the live session file kept growing mid-run, so each target received a different population.
 
-I then transferred the same frozen session into Codex, Pi, GitHub Copilot CLI, Qwen Code, Kimi Code, Muse Code, and Mistral Vibe, with each target home isolated under `/tmp`. The targets produced 33 to 50 records. That spread does not indicate materially different information preservation; target formats split equivalent content into different record units.
+I sent the same frozen session to Codex, Pi, GitHub Copilot CLI, Qwen Code, Kimi Code, Muse Code, and Mistral Vibe. All target homes were isolated under `/tmp` so no real config directory was touched. Resulting record counts ranged from 33 to 50. That does not mean different amounts of information were preserved. The target formats simply chunk the same content into different record units.
 
-The important result was the loss manifest. Dropped totals clustered tightly between 54 and 57 across all seven targets, while the dropped-thinking count stayed fixed at 9. The recurring omissions were source-side metadata records, tool-reference records, and private thinking. Codex additionally dropped one session title; Vibe retained two tool-reference records that the other targets dropped.
+The useful result was on the loss-manifest side. Total drops landed between 54 and 57 across all seven targets. Thinking-block drops were fixed at 9. What dropped repeatedly: source-side metadata records, tool-reference records, and private reasoning traces. Codex dropped one additional session title. Vibe retained two tool-reference records that every other target discarded.
 
-This pattern is more useful than a generic compatibility claim. Changing the target did not materially change the loss. The source session’s event vocabulary determined what could enter the intermediate model.
+This pattern is far more useful than a generic compatibility claim. The loss did not move when I changed the target. What can enter the intermediate model is determined by the source session's event vocabulary, not by the destination.
 
-The project describes the conversion path this way:
+The project documents the conversion path like this:
 
-> native session → validated event timeline → native target → resume  
+> native session → validated event timeline → native target → resume
 > — [session-migrate — Migrate your sessions to any harness](https://github.com/xhluca/session-migrate)
 
-That intermediate timeline is intentionally small: ordered conversation events can pass through it, but client-resident configuration cannot. The source session remains untouched, and omissions or transformations are counted in a content-free migration manifest.
+The middle timeline is deliberately small. Ordered conversation events pass through. Client-resident configuration does not. The source session is never mutated. Omissions and transformations are tallied by count in a content-free migration manifest.
 
-## The lock-in boundary is the policy plane, not the transcript
+## The Lock-in Boundary Is the Policy Plane, Not the Log
 
-The migration tool supports 12 harness formats and describes 144 ordered routes, including same-format portable rewrites. User and assistant messages are preserved in order on every route. This is meaningful portability, not plain-text export dressed up as a migration.
+The tool supports 12 harness formats and enumerates 144 ordered routes, including same-format portable rewrites. User and assistant messages are preserved in order across every route. This is not a plaintext export with a migration label. It is real, meaningful portability.
 
-> Every listed format can be a source or target: 144 ordered routes, including same-format portable rewrites.  
+> Every listed format can be a source or target: 144 ordered routes, including same-format portable rewrites.
 > — [session-migrate README — Compatibility](https://raw.githubusercontent.com/xhluca/session-migrate/main/README.md)
 
-But the same compatibility documentation states the decisive limitation:
+But the same compatibility document states the decisive limit:
 
-> Auth, hooks, policies, MCP, and runtime config | No | These remain with the source client  
+> Auth, hooks, policies, MCP, and runtime config | No | These remain with the source client
 > — [session-migrate — Migrate your sessions to any harness](https://github.com/xhluca/session-migrate)
 
-This is the architectural fact executives need to use in vendor discussions. A team can migrate the work narrative, tool calls, and much of the usable context. It cannot migrate the enforcement environment merely by moving a session file.
+This is the architectural fact an executive needs in a vendor negotiation. The team can move the work narrative, the tool calls, a substantial amount of usable context. One session file does not move the execution environment.
 
-Authentication stays bound to the client. Hooks stay bound to the client. Policy configuration, MCP connections, and runtime configuration stay bound to the client. Those are not missing because a target format was chosen poorly; they were never part of the transferable event timeline.
+Auth is bound to the client. Hooks are bound to the client. Policy config, MCP connections, runtime settings all stay with the client. This is not a case of picking the wrong target format and losing something. These items were never members of the migratable event timeline to begin with.
 
-The failed Antigravity and Cursor conversions reinforced the same boundary. Both adapters immediately required their native executables, `agy` and `cursor-agent`, which were not installed. These are not independent file translators. They attach to a client because some native state cannot be reconstructed from an exported session alone.
+The Antigravity and Cursor conversions failed, which proves the same boundary from the other side. Both adapters immediately require the native binaries `agy` and `cursor-agent`. Neither was installed on my machine. These adapters are not standalone file translators. They need native state that cannot be reconstructed from an exported session alone, so they operate attached to the client.
 
-For an individual developer, this may be acceptable. For an organization, it means the real switching cost is the work of rebuilding access mappings, hooks, policies, and approved tool connectivity across the new harness.
+A solo developer can live with that. An organization cannot. The real replacement cost is rebuilding permission mappings, hooks, policy, and approved tool access on the new harness. Not the two seconds it takes to move a session file. The several weeks that follow.
 
-## The strongest counter-argument is right in a narrow but important range
+## The Strongest Counterargument Is Narrow but Correct Where It Applies
 
-The strongest objection is that session context is the real cost of switching. That objection deserves more respect than it usually gets.
+The strongest objection: "The body of resume cost is session context." A solo developer who must continue a long implementation session across a tool switch, or a small team that operates inside a single vendor, is exactly right. If a 90-record session's conversation flow and tool-call chain breaks, the agent must re-infer "where am I right now," and that token and time cost is real. In the range where session context dominates resume cost, portability *is* productivity.
 
-For a developer carrying one long-running implementation session across changing tools, reconstructing context can be expensive. The test supports that view: the source session’s ordered conversation, tool-use history, and tool-result history were not simply discarded. The migration tool gives a practical route to retain the work narrative rather than restarting from an empty prompt.
+But attach the conditions under which that argument holds, and the range narrows. Single vendor. Single project. Single developer. Session measured in hours. Break any one of those, and the body of resume cost is no longer context. It is reconstructing the execution environment: "Can this agent call this tool, with this permission, under this policy, in this repository?" When an auditor three months later asks "who made this change, under what approval, with what data access?" and the answer is "some developer's local JSONL, 90 records," the organization does not meet its operational bar no matter how cleanly the session migrated.
 
-This is especially valuable for an unregulated individual or a small team that frequently changes harnesses and has no need to centralize approval records. In that environment, 144 migration routes are not a marketing number. They can reduce the friction of experimentation and preserve accumulated context.
+## So I Treat the Session as Cache
 
-It would be wrong to say that policy does not migrate, therefore session migration is useless. The session remains a valuable continuity asset.
+The practical conclusion this experiment gave me is simple. An agent session is disposable cache. Conversation context, tool-call history, reasoning traces—all of it is an intermediate artifact: restore it if you resume the same task, otherwise start over. session-migrate supporting 144 routes and transparently reporting 54-to-57 record losses in a manifest means this cache layer is genuinely portable.
 
-My call still stands outside that range. A migrated session resumes without the original client’s authentication, hooks, policies, MCP connections, and runtime configuration. For teams handling audited systems, the safety controls are not optional context around the work. They are part of the work.
+But something sits above the cache. Whether this agent can push to this repository. Whether it can reach this MCP server. Which approver signs when this hook fires. What data classification this session's output carries. That layer is client-resident. It is vendor-bound. It is not in the session file.
 
-The more people, repositories, environments, and regulatory constraints involved, the less the saved session context dominates the economics. Rebuilding policy controls, validating permissions, proving approval paths, and reviewing new data-export routes consume the migration budget.
+The moment you lift that layer out of the agent harness and onto the organization's existing permission and audit system, a vendor switch stops being "two seconds to move a session" and becomes "several weeks to map the policy plane's ACL to the new harness." And those several weeks are work the organization already performs, repeatedly, for every other system. Slack Code inheriting Slack's ACL. MCP connections isolated into an external harness. Approval and audit as a standalone service outside the agent process. The reason this direction keeps repeating: while the policy plane is glued to the client, vendor lock-in is not solved by session portability.
 
-## Make sessions disposable cache and make governance durable
+The session is cache. You can drop it. You can rebuild it. The policy is not. Once you set it, every session is born under it, every tool is called under it, every change is approved under it. The moment that layer lives inside the client, a vendor switch means the session transfers but the answer to "what is this agent allowed to do, in this organization?" vanishes.
 
-The operating model I recommend has three gates.
-
-First, declare sessions to be cache, not the system of record. Decisions, evidence, and rollback procedures must exist in the PR body, the approved work channel, or both. Add one line to the review checklist: “Is the basis for this judgment available outside the agent session?”
-
-This sounds small, but it changes behavior. It prevents the team from treating a local transcript as an audit artifact simply because it contains a detailed conversation. A transcript can disappear with a laptop replacement, an employee departure, or routine cleanup of a local agent directory.
-
-Second, require an export review for audited repositories. When session migration is necessary, attach the dry-run migration manifest to the work ticket before export. A content-free manifest that reports categories and counts of omissions is better suited to review than a raw session dump. The reviewer can assess what is leaving and what will be lost without spreading the underlying content to another audience.
-
-Third, choose one enforcement point for approvals, access, and archival: a channel or CI. Not both by default, and not a separate enforcement model inside every agent CLI. Teams that already have strong code-owner and CI approval controls should not add a parallel chat-based approval system merely because an agent product makes it available. Two approval planes create ambiguity about which decision is authoritative.
-
-The onboarding instruction can be direct: choose the CLI that helps you work, but approvals happen here and records live here.
-
-That preserves local tool choice without allowing tool choice to fragment governance.
-
-## Slack Code is a policy-plane product, not merely an agent integration
-
-Slack Code is available for teams using integrations with Claude, Devin, GitHub Copilot, and Vercel, with ChatGPT described as forthcoming. Its product promise is not that every agent thinks alike or stores state alike. Its promise is that work can begin from a shared channel and inherit the organization’s existing Slack controls.
-
-The official claim that more than 70% of code channels complete from idea to merged pull request within a day should be treated only as a vendor reference point. Slack does not disclose the methodology, population, or measurement period. It is not sufficient evidence for a business case on its own.
-
-Still, the workflow design is strategically sound. Product, design, engineering, and operations can observe the same request, review the same artifacts, and see the resulting decision without each participant needing access to a developer’s local harness. The channel can become an archive of the human approval boundary even if the agent backend changes.
-
-Slack has also described visibility into an agent’s reasoning process as future work rather than a released capability. That is consistent with session migration’s deliberate omission of private or signed thinking traces. The part of an agent’s work that most needs explaining is structurally the least portable, because it is bound to the model provider.
-
-The practical audit target is therefore narrower and more dependable: what was requested, what changed, what evidence was reviewed, and who approved it.
-
-## What CEOs and CTOs should put into the vendor-switching model
-
-Do not estimate agent vendor switching cost by asking whether session history can be exported. That produces a deceptively low number.
-
-The right model asks whether the organization’s enforcement plane exists outside the harness:
-
-- Can approval rules survive a CLI replacement?
-- Can access and MCP connectivity be rebuilt from centrally owned configuration?
-- Can an auditor find the rationale and approval record without reading a developer’s local session?
-- Can a team revoke access or halt a workflow from one administrative surface?
-- Can the organization assess what data leaves when a session is moved?
-
-If the answer is yes, the agent harness becomes closer to a replaceable execution tool. That improves negotiating leverage. Procurement can pressure vendors on price, quality, and integration because the organization does not need to rebuild its governance model every time it changes a model or CLI.
-
-If the answer is no, the vendor owns more than an interface. It owns embedded approval logic, access patterns, and operating memory. Its price is then much harder to discipline because replacement creates organizational risk, not merely developer inconvenience.
-
-This also clarifies where to invest as agent usage grows. Buying additional licenses scales activity. Increasing the throughput and clarity of the audit plane scales the organization. The latter is what prevents agent adoption from becoming a collection of unreviewable local automations.
-
-## Where this recommendation does not fit
-
-A Slack-centered enforcement model does not fit teams whose collaboration standard is not Slack. The principle remains valid, but the policy plane must be implemented in the organization’s actual shared workflow system.
-
-It also does not fit teams that already enforce approval effectively through CI and code owners. Adding channels as a second approval authority can make the system worse by splitting the evidence trail.
-
-Organizations prohibited from retaining conversation logs in third-party SaaS need a different archive design. Teams with only a handful of agent requests per day may find automatically created channels generate more archive overhead than operating value. And teams that require private reasoning traces as audit evidence should recognize that neither a portable session nor a channel archive presently solves that requirement.
-
-My position is clear: use session migration as an individual continuity tool, but do not elevate it into the team’s governance standard. Put approval, audit, archival, and revocation into one tool-neutral enforcement plane; I would change that position only if session formats begin to carry portable, centrally verifiable policy and identity state alongside the conversation.
+So I report session-file portability as a developer-productivity metric, and policy-plane portability as an operational-risk metric. Different cadence. Different owner. Lumping both under the single word "vendor lock-in" lets a clean session-migration result paper over a policy-plane gap.
 
 ## References
 
-1. [Slack Code: チームと AI エージェントが共に作り上げる場所 — Slack](https://slack.com/intl/ja-jp/blog/news/slack-code-channels-for-agents)
-2. [session-migrate — Migrate your sessions to any harness — GitHub / xhluca](https://github.com/xhluca/session-migrate)
-3. [session-migrate README — Compatibility — GitHub / xhluca](https://raw.githubusercontent.com/xhluca/session-migrate/main/README.md)
+- [Slack Code: Channels for Agents](https://slack.com/intl/ja-jp/blog/news/slack-code-channels-for-agents)
+- [session-migrate — Migrate your sessions to any harness](https://github.com/xhluca/session-migrate)
+- [session-migrate README — Compatibility Matrix](https://raw.githubusercontent.com/xhluca/session-migrate/main/README.md)

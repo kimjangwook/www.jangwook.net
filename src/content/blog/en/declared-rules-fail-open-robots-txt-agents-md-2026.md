@@ -24,20 +24,6 @@ relatedPosts:
       ja: "あちらは robots.txt と llms.txt で AI クローラーを制御する手順をまとめた記事で、本稿はその宣言がパーサー段階で何セル素通りするかを実測している。"
       en: "That post lays out how to declare AI crawler rules with robots.txt and llms.txt; this one measures how often three parsers let those declarations through anyway."
       zh: "那篇整理了用 robots.txt 与 llms.txt 控制 AI 爬虫的做法，本文则实测这些声明在解析器层面有多少格子被直接放行。"
-  - slug: agents-md-vs-claude-md-loading-measured-2026
-    score: 0.84
-    reason:
-      ko: "저 글은 지시문 파일이 로드되는지를 쟀고, 이 글은 로드된 파일의 어디까지가 살아남는지를 바이트 경계로 쟀다."
-      ja: "あちらは指示ファイルがロードされるかを測り、本稿はロードされたファイルのどこまでが生き残るかをバイト境界で測った。"
-      en: "That post measured whether the instruction file loads at all; this one measures how much of a loaded file survives the byte limit."
-      zh: "那篇测的是指令文件到底加载没有，本文测的是已加载的文件在字节上限下还剩多少。"
-  - slug: robots-meta-head-body-parser-placement-2026
-    score: 0.71
-    reason:
-      ko: "meta robots도 선언 파일과 같은 모양이다. 파서가 태그를 못 읽어도 오류가 나지 않고, 배치 한 줄로 결과가 갈린다."
-      ja: "meta robots も宣言ファイルと同じ形をしている。パーサーがタグを読み落としてもエラーは出ず、置き場所ひとつで結果が変わる。"
-      en: "Meta robots has the same shape as a declared file. The parser misses the tag without erroring, and placement alone changes the outcome."
-      zh: "meta robots 与声明文件形状相同。解析器读不到标签也不会报错，仅凭放置位置就能改变结果。"
 ---
 
 I wrote a two-line robots.txt and flipped the order of the lines. With `Disallow: /p` above `Allow: /p`, `urllib.robotparser` returns DISALLOWED for `https://example.test/page.html`. Put `Allow: /p` first and the same parser returns ALLOWED. The rule set is identical, character for character. protego and robots-parser said ALLOWED both ways and never moved.
@@ -46,7 +32,7 @@ Neither file is a control. Both are requests. Treating "I edited the file" as th
 
 ## What causes the silence
 
-The declaration and the enforcement live in different processes, and there is no error channel between them. A truncated instruction file is exit 0. A misparsed rule is exit 0. Nothing in either path is built to report that the two sides disagree. [Robots meta has the same shape](/en/blog/en/robots-meta-head-body-parser-placement-2026/): the parser can miss the tag and never raise.
+The declaration and the enforcement live in different processes, and there is no error channel between them. A truncated instruction file is exit 0. A misparsed rule is exit 0. Nothing in either path is built to report that the two sides disagree. Robots meta has the same shape: the parser can miss the tag and never raise.
 
 I grepped all 120 raw Codex outputs for `truncat`, case insensitive. Zero hits. The Codex docs offer an audit path, `codex -c log_dir=./.codex-log`, but it is a separate opt-in.
 
@@ -142,7 +128,7 @@ The second lab covered 20 cells at 6 runs each, 120 runs. I wanted the byte beha
 
 Codex concatenates the files it finds and stops when the accumulated bytes reach `project_doc_max_bytes`. What dies is always the back.
 
-With the default limit, a 34022 B `AGENTS.md` with a first-line canary returned it in 6 of 6 runs, and so did a 49022 B one. Move the canary to the last line at 34023 B and 49023 B, and both go to 0 of 6. A 31023 B file under the limit returned its tail canary 6 of 6. If the file were dropped whole, the head canary would have died too. It did not. [The previous measurement asked whether each CLI loads the file](/en/blog/en/agents-md-vs-claude-md-loading-measured-2026/). This one asks how much of a loaded file survives the byte limit.
+With the default limit, a 34022 B `AGENTS.md` with a first-line canary returned it in 6 of 6 runs, and so did a 49022 B one. Move the canary to the last line at 34023 B and 49023 B, and both go to 0 of 6. A 31023 B file under the limit returned its tail canary 6 of 6. If the file were dropped whole, the head canary would have died too. It did not. The previous measurement asked whether each CLI loads the file. This one asks how much of a loaded file survives the byte limit.
 
 Raising the limit from 32768 to 262144 took the 34 KiB and 48 KiB tail canaries from 0 of 6 to 6 of 6, the fix the same page prescribes.
 

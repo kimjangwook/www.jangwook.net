@@ -9,28 +9,7 @@ tags:
   - analytics
   - geo
   - youtube
-relatedPosts:
-  - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.91
-    reason:
-      ko: 'Search Console 안에 있는 개관 스위치를 같은 방식으로 문서 대조해서 확인한 글이다. 이번 글의 계기가 된 관찰과 같은 층에 있다.'
-      ja: Search Console の中にある開示スイッチを、同じやり方で文書照合して確かめた記事。今回の観察と同じ層にある。
-      en: Verifies the generative AI control inside Search Console using the same document-collation method. Sits on the same layer as this piece.
-      zh: 用同样的文档核对方法确认 Search Console 里的生成式 AI 开关。和这篇的观察在同一层。
-  - slug: google-analytics-mcp-automation
-    score: 0.87
-    reason:
-      ko: '리포트를 자동화해 둔 쪽이 새로 열린 데이터를 늦게 본다 — 그 자동화를 어떻게 짰는지가 이 글에 있다.'
-      ja: レポートを自動化した側が新しいデータを遅れて見る。その自動化をどう組んだかがこの記事にある。
-      en: The automation this article warns about is the one built here. Read it to see what a report pipeline actually looks like.
-      zh: 这篇警告的自动化，就是那篇搭起来的。想看报表管道长什么样可以读它。
-  - slug: prerender-activationstart-cwv-measurement-2026
-    score: 0.74
-    reason:
-      ko: '같은 이름의 지표가 다른 구간을 세고 있을 때 합이 어긋난다는 것 — 측정 설계에서 반복되는 함정이다.'
-      ja: 同じ名前の指標が違う区間を数えていると合計が合わない。測定設計で繰り返し出てくる罠だ。
-      en: Two metrics sharing a name while counting different spans is a recurring measurement trap. Same shape, different surface.
-      zh: 同名指标数着不同区间，合计就对不上。测量设计里反复出现的同一个陷阱。
+relatedPosts: []
 ---
 
 7 月 29 日，Google 宣布 Search Console 的平台资源向所有人开放。今天是 8 月 18 日，我用 curl 把帮助中心那两页的正文取回来，里面仍然写着这项功能正在逐步推出。同一家公司、同一个功能，两份官方文档在同一天说着不同的可用性。
@@ -89,7 +68,7 @@ curl -sSL "https://developers.google.com/webmaster-tools/search-console-api-orig
 #    1 sc-domain:example.com
 ```
 
-`instagram` 出现 0 次。自动报表读不到平台资源，原因不在权限，在于不知道用什么字符串去指它。实际端点会不会收账号路径，我不知道。文档里没有的写法，试出来的结果也不能当依据。这两件事的区别很实际：权限问题可以申请，命名问题只能等文档。[只存在于 Search Console、拉取请求里找不到的控制点](/zh/blog/zh/official-geo-subtraction-gsc-control-2026/)也是同一层。范围在仓库外面被决定。
+`instagram` 出现 0 次。自动报表读不到平台资源，原因不在权限，在于不知道用什么字符串去指它。实际端点会不会收账号路径，我不知道。文档里没有的写法，试出来的结果也不能当依据。这两件事的区别很实际：权限问题可以申请，命名问题只能等文档。只存在于 Search Console、拉取请求里找不到的控制点也是同一层。范围在仓库外面被决定。
 
 要打个比方：这批数据现在只开了柜台窗口，没有邮购。想要就自己走一趟。比方在一个地方失效 —— 邮购渠道不是没建，是建了没印地址。端点也许已经能收，只是没人知道信封上该写什么。
 

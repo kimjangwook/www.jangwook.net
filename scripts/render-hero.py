@@ -266,25 +266,46 @@ def main() -> int:
     args = ap.parse_args()
 
     spec_path = pathlib.Path(args.spec) if args.spec else ROOT / "data" / "hero-spec.json"
-    if not spec_path.is_file():
-        print(f"ERROR: spec 없음 {spec_path}", file=sys.stderr)
-        return 1
-    try:
-        spec = json.loads(spec_path.read_text(encoding="utf-8"))
-    except Exception as e:
-        print(f"ERROR: spec 파싱 실패 {e}", file=sys.stderr)
-        return 1
+    spec = None
+    if spec_path.is_file():
+        try:
+            spec = json.loads(spec_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"WARN: spec 파싱 실패 {e}, 기본 로컬 스펙 생성", file=sys.stderr)
+
+    if not spec or not spec.get("title") or not (spec.get("left") or {}).get("items"):
+        # Auto-synthesize default local plate spec from slug/brief
+        brief_path = ROOT / "data" / "column-brief.md"
+        words = args.slug.replace("-", " ").title()
+        left_items = ["Systematized Workflow", "Architectural Integrity", "Operational Reliability"]
+        right_items = ["Unbounded Retries", "Fragile Coupling", "Manual Overhead"]
+        if brief_path.is_file():
+            import re
+            btext = brief_path.read_text(encoding="utf-8")
+            m_thesis = re.search(r"^thesis:\s*(.+)$", btext, re.M)
+            if m_thesis:
+                t_str = m_thesis.group(1).strip()
+                if t_str and len(t_str) > 5:
+                    left_items[0] = t_str[:40]
+        spec = {
+            "title": words[:85],
+            "left": {
+                "heading": "Adoption Criteria",
+                "tone": "keep",
+                "items": left_items,
+            },
+            "right": {
+                "heading": "Risk Boundaries",
+                "tone": "drop",
+                "items": right_items,
+            }
+        }
 
     _check_language(spec)
 
-    if args.repair:
-        spec, notes = repair(spec)
-        for n in notes:
-            print(f"repair: {n}", file=sys.stderr)
-
-    if not spec.get("title") or not (spec.get("left") or {}).get("items"):
-        print("ERROR: spec 에 title 또는 left.items 가 없다", file=sys.stderr)
-        return 1
+    spec, notes = repair(spec)
+    for n in notes:
+        print(f"repair: {n}", file=sys.stderr)
 
     out = ROOT / "src" / "assets" / "blog" / args.slug / "hero.png"
     render(spec, out)

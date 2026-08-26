@@ -23,13 +23,6 @@ relatedPosts:
       ja: robots.txt で学習を止めることと、検索面のAI引用から外れることは別の決定だ。あちらがクローラートークン側の地図なら、こちらはその地図を手に誤ったチケットを閉じてきたチームへの訂正になる。
       en: Blocking training via robots.txt and dropping out of AI citations in Search are different decisions. That post maps the crawler-token side; this one is the correction for teams who have been closing the wrong ticket with that map in hand.
       zh: 用 robots.txt 拦训练，和从搜索面的 AI 引用中消失，是两个不同的决定。那篇画的是爬虫令牌那一侧的地图，这篇是写给拿着那张地图关错工单的团队的更正。
-  - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.75
-    reason:
-      ko: 선언한 robots.txt와 실제 배포본이 어긋나 있던 그 경험이 이 글의 CI 게이트 제안으로 이어졌다. 파일을 읽는 검사와 렌더 결과를 세는 검사는 다른 것을 본다.
-      ja: 宣言した robots.txt と実際の配信物がずれていたあの経験が、この記事の CI ゲート提案につながっている。ファイルを読む検査とレンダー結果を数える検査は別のものを見ている。
-      en: The gap between a declared robots.txt and what actually shipped is what led to the CI gate proposed here. Reading a file and counting rendered output are two different inspections.
-      zh: 声明的 robots.txt 与实际部署物之间的偏差，正是本文提出 CI 门禁的由来。读文件的检查和数渲染结果的检查，看的是两样东西。
 ---
 
 我想弄清楚 Google 到底有没有做过一个 AI 专属的排除开关：让页面继续留在普通搜索结果里，同时从 AI Overviews 和 AI Mode 中消失。2026 年 8 月 21 日，也就是 Preferred Sources 发布的第二天，我把官方 AI features 文档的原始 HTML 拉下来数了一遍词。全文 177,842 字节里，`opt out` 0 次，`opt-out` 0 次，`exclude` 0 次。

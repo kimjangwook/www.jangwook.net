@@ -4,28 +4,7 @@ description: 'Instagram・TikTok・X・YouTubeの四つがSearch Consoleの属�
 pubDate: '2026-08-18'
 heroImage: '../../../assets/blog/gsc-platform-properties-social-video-search-measurement-2026/hero.png'
 tags: ['google-search-console', 'seo', 'analytics', 'measurement', 'web-development']
-relatedPosts:
-  - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.88
-    reason:
-      ko: '풀 리퀘스트에 나타나지 않고 Search Console 화면에만 있는 제어점을 실제로 측정한 기록이다.'
-      ja: 'プルリクエストに出てこず、Search Consoleの画面にしかない制御点を実際に測った記録。'
-      en: 'Measures a control point that never shows up in a pull request and lives only inside the Search Console UI.'
-      zh: '实测了不会出现在拉取请求中、只存在于 Search Console 界面里的控制点。'
-  - slug: google-analytics-mcp-automation
-    score: 0.74
-    reason:
-      ko: '레포트를 자동화한 쪽이 이번 글에서 오히려 늦게 보게 되는 그 파이프라인의 구축 과정이다.'
-      ja: 'レポートを自動化した側が今回は逆に遅く見ることになる、そのパイプラインを組んだ話。'
-      en: 'Builds the reporting pipeline that, in this case, ends up seeing the new data last.'
-      zh: '搭建了自动报表管道，而本文中恰恰是这类团队最晚看到新数据。'
-  - slug: prerender-activationstart-cwv-measurement-2026
-    score: 0.61
-    reason:
-      ko: '같은 이름의 지표가 서로 다른 것을 세고 있을 때 계측이 어떻게 틀리는지 보여주는 사례다.'
-      ja: '同じ名前の指標が違うものを数えているとき、計測がどう狂うかの事例。'
-      en: 'Another case where two things sharing one metric name quietly break the measurement.'
-      zh: '同一指标名称背后计量对象不同，测量因此出错的另一个案例。'
+relatedPosts: []
 ---
 
 2026年7月7日、GoogleがSearch Consoleに新しい種類の属性を足した。Instagram、TikTok、X、YouTubeの四つで、自分のアカウントの投稿がGoogle検索でどう出ているかを、サイトと同じ画面で読める。7月29日には全世界に開放された。ここまでは、機能が一つ増えたという話だ。
@@ -129,7 +108,7 @@ HIT が返る。ログインしていない状態の、日本のIPからだ。�
 > For security, ownership is periodically checked.
 > — [About platform properties in Search Console](https://support.google.com/webmasters/answer/17148418)
 
-繋ぎが切れれば、外部ログインの期限切れであっても、レポートへのアクセスは再検証まで止まる。以前[プルリクエストには出てこないSearch Consoleの制御点](/ja/blog/ja/official-geo-subtraction-gsc-control-2026/)を測ったが、コードのどこにもない設定が画面の中にだけある構図はそのときと同じだ。今回はそこに、設定が他人の都合で外れる性質が乗った。
+繋ぎが切れれば、外部ログインの期限切れであっても、レポートへのアクセスは再検証まで止まる。以前プルリクエストには出てこないSearch Consoleの制御点を測ったが、コードのどこにもない設定が画面の中にだけある構図はそのときと同じだ。今回はそこに、設定が他人の都合で外れる性質が乗った。
 
 後ろにあるのが過去の区間だ。サイト属性は付けてしまえば黙って積み続けるが、プラットフォーム属性は検証より前が空のままで、前年同期比が成立しない。全社のKPIに上げれば、最初の一年は伸び率がすべて意味のない数字になる。
 

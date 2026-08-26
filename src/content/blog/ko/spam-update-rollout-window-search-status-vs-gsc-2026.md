@@ -17,13 +17,6 @@ relatedPosts:
       ja: 公式が公開したものと実際にジョインできるものの差を同じやり方で確認した記事。ここでもSearch Console側の解像度がボトルネックになる。
       en: Same method — checking the gap between what is officially published and what actually joins. Search Console's resolution is the bottleneck here too.
       zh: 用同样的方法核对官方公开的内容与实际可关联的数据之间的差距，这里 Search Console 一侧的分辨率同样是瓶颈。
-  - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.76
-    reason:
-      ko: 공식 문서가 적어 둔 제어 지점과 실제 배포 사이의 간격을 다룬 글. 대시보드 문서를 그대로 믿을 때 생기는 함정이 겹친다.
-      ja: 公式文書に書かれた制御点と実際の配信の差を扱った記事。ダッシュボードの文書をそのまま信じたときの落とし穴が重なる。
-      en: On the gap between the control points official docs describe and what actually ships. The same trap of trusting dashboard docs at face value shows up.
-      zh: 讨论官方文档所写的控制点与实际交付之间的差距，照单全收信任仪表盘文档时的陷阱与本文重合。
 ---
 
 Google Search Status Dashboard(구글 검색의 시스템 장애와 랭킹 알고리즘 업데이트 현황을 컴퓨터가 읽을 수 있는 데이터로 제공하는 공식 상태 대시보드)의 `incidents.json` 데이터 주소(엔드포인트)가 업데이트 시작 시각을 초 단위까지 공개한다는 점에 주목했다. 이 초 단위 시작 시각을 Google Search Console(웹사이트의 검색 노출 순위와 클릭 성과를 집계하는 공식 도구) 데이터와 결합하면, 알고리즘 변경에 따른 순위 변동 분석의 정밀도를 크게 끌어올릴 수 있을지 검증해보고 싶었다. curl 명령어로 대시보드 데이터 주소 다섯 개를 직접 호출하고, 지난 사건 10건의 시각 기록(타임스탬프)을 초 단위로 뜯어보았다. 결과적으로 분석 정밀도는 올라가지 않았다. Search Console 쪽에서 두 데이터를 서로 묶기 위한 기준 열(조인 키, Join Key)이 미국 태평양 시간(PT, Pacific Time) 기준의 '하루(1일)' 단위 날짜 하나뿐이라, 분·초 단위 시각 데이터를 합치는 순간 업데이트 시작 당일(경계일) 24시간 안에서 업데이트 전후 상태가 뒤섞여버리기 때문이다.
@@ -60,7 +53,7 @@ August 2026 spam update는 8월 20일 현재도 진행 중이다. `incidents.jso
 > "begin": {"description": "Time in RFC3339 format when this incident started.", "type": "string"}
 > — [incidents.schema.json](https://status.search.google.com/incidents.schema.json)
 
-RFC3339라는 시간 표기 포맷(시차 정보를 포함하는 전산 표준 규격)만 규정할 뿐, 이 시작 시각이 시스템 자동 관측값인지 관리자의 사후 선언값인지는 문서 어디에도 설명되어 있지 않다. [공식 문서가 적어 둔 제어 지점과 실제 배포가 어긋난 기록](/ko/blog/ko/official-geo-subtraction-gsc-control-2026/)과 같다. 스키마가 있는 것과, 그 값이 무엇을 의미하는지 계약이 있는 것은 다르다. 숫자의 자릿수 분포를 직접 역산해야만 비로소 파악할 수 있는 정보다.
+RFC3339라는 시간 표기 포맷(시차 정보를 포함하는 전산 표준 규격)만 규정할 뿐, 이 시작 시각이 시스템 자동 관측값인지 관리자의 사후 선언값인지는 문서 어디에도 설명되어 있지 않다. 공식 문서가 적어 둔 제어 지점과 실제 배포가 어긋난 기록과 같다. 스키마가 있는 것과, 그 값이 무엇을 의미하는지 계약이 있는 것은 다르다. 숫자의 자릿수 분포를 직접 역산해야만 비로소 파악할 수 있는 정보다.
 
 선언값과 시스템 기록의 괴리가 실제로 드러난 사례도 있다. 2025년 8월 spam update의 경우, 완료 공지 생성 시각(`most_recent_update.created`)은 2025-09-22T06:14:22Z에 올라왔는데, 공식 선언된 배포 종료 시각(`end`)은 2025-09-22T07:00:00Z로 기록되어 있다. 공지가 종료 선언 시각보다 46분 먼저 올라온 셈이다. 나머지 8건은 반대로 선언된 종료 시각이 실제 완료 공지보다 0분에서 58분 앞섰다. 겉보기에는 분 단위로 정밀해 보이는 숫자의 실제 신뢰 오차 범위가 수분이 아니라 최대 한 시간에 가깝다는 뜻이다.
 

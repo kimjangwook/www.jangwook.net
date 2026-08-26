@@ -30,54 +30,33 @@ This is the part the 2026 research moved most, and it applies to all four langua
 
 **Substance test, per paragraph.** After each one the reader must be able to repeat a name, a number, a date, a cause, or a trade-off. If deleting the paragraph loses nothing, it was decoration. (SlopDetector 2026-07 signal 12.)
 
-## Patterns to rewrite on sight
+## Patterns to avoid (AI clichés & unnatural patterns)
 
-**English stems:** delve, unleash, game-changing, revolutionary, transformative, leverage, unlock, it's worth noting, it's important to, in other words, at the end of the day, not just X but Y, here's the, let's dive, in today's, tapestry, landscape, realm, moreover, furthermore.
+- **상투적인 AI 어휘 지양**:
+  - en: delve, unleash, game-changing, revolutionary, transformative, leverage, unlock, landscape, tapestry, in today's fast-paced, let's dive in, moreover, furthermore.
+  - ko: 혁신적인, 패러다임, 여정이 시작된다, 말할 필요도 없이, 단순한 A가 아닌 B, ~로 보여진다, ~되어지고 있다 등 불필요한 피동·상투어.
+  - ja: 本節では, 重要なのは, レバー, 架け橋, 見ていきましょう 등 상투적 번역투.
+  - zh: 先把词钉死, 不容忽视, 值得警惕, 并非A而是B 등 상투어.
+- **사전식 괄호 주석 금지**: `Search Console(웹사이트 노출 확인 도구)` 같은 교과서식 정의 대신 문맥과 인과관계 안에서 자연스럽게 의미를 녹여낸다.
+- **부자연스러운 단문 분절 지양**: 단문을 쓰되, 문맥의 논리적 연결(접속사, 설명)을 억지로 잘라내어 암호문처럼 만들지 않는다. 생각이 자연스럽게 이어지도록 쓴다.
+- **균형 잡힌 마무리**: 기계적인 교훈/요약 대신, 결론에서는 내가 주장한 선택의 전제 조건이나 트레이드오프를 솔직하고 담백하게 제시한다.
 
-**Korean stems:** 하는 것이다, 에 대해, 에 의해, 그것은 ...이다, 먼저 용어부터, 중요한 건 이것이다, 오늘 내가 택한 쪽, 본절에서는, 이 글에서는, 말할 필요도 없이, 패러다임, 혁신적, 여정이 시작된다, 단순히 A가 아니라 B, 되어지고 있다, 로 보여진다, 으로 생각된다, 수행/진행/실시/처리, 를 통해, 용어(설명) 형태의 사전식 괄호 표기.
+## Typography
 
-**Japanese stems:** 本節では, 重要なのは, まず用語を, だ。だ。だ。(単調な断定連続), レバー, レイヤー (when they are Korean calques), つまり/要するに/このように の定型, が重要です, 羅針盤・架け橋・地図の在庫比喩, 見ていきましょう, 用語（説明）の辞書的括弧書き.
-
-**Chinese stems:** 先把词钉死, 划掉清单, 资格的层, 生成式资格层, 四字对仗连发, 不是A而是B(及「更是」「不只是…更是」), 进行/开展/作出/予以/得以, ……的存在, 值得警惕, 不容忽视, 从某种意义上说, 术语（解释）的字典式括号注记.
-
-**Newer tells (2026), all languages:** a sentence ending in an -ing tail that adds fake analysis (highlighting, underscoring, reflecting); avoiding *is/has* for serves as / stands as / boasts / features; renaming the same subject every sentence to avoid repetition; long sentences joined by "and" with almost no commas, semicolons, or parentheses; a closing section shaped as "despite its X, challenges remain" or a call to action.
-
-**Em dashes are no longer a machine mark.** The Economist's 2026-07 study (55,940 sentences) found ChatGPT uses them *less* than human writers, and Claude is the only current model that overuses them. Limit them for rhythm if you like. Do not strip them as camouflage, and do not treat their presence as evidence of anything.
-
-**Sentence length has two failure modes, not one.** Uniform length reads as machine. So does a metronome — short, long, short, long — unrelated to the thought. Length changes when the thought changes.
-
-## Typography (2026-08 research)
-
-Detectors moved from vocabulary to layout, because vocabulary got cleaned up first.
-
-- **No emoji in headings. No `---` between sections. No Title Case section headings.** Sentence case in English, noun phrases in ko/ja/zh.
-- **Bold only for a proper noun's first mention.** Emphasis is a short sentence or a number, not a typeface. A page with bold in every paragraph reads as a slide deck.
-- **No wave / tilde characters (`~`, `〜`, `～`) under any circumstances.** Prohibit all forms of tilde (ASCII `~`, Japanese wave dash `〜`, full-width tilde `～`) across all languages. Never use them for ranges, time intervals, dates, numbers, softening tone, or trailing endings. Express ranges using hyphens (`-`) or natural phrasing (ko: `10에서 20`, `10부터 20까지`; ja: `10から20まで`, `10-20`; en: `10 to 20`, `10-20`; zh: `10到20`, `10-20`).
-- **No characters your keyboard does not have.** Box drawing, `─ ≈ ⚠ →`. Pangram measures these at 3× human rate, and box-drawing horizontals at **940×**. This is the layer that survives after someone strips the AI vocabulary, which is exactly why it identifies.
-
-## Structure (2026-08 research)
-
-- **Sections do not get equal weight.** Write the one that matters long and cut the rest short, or drop them. Even section lengths are a generated table of contents, not a piece of thinking.
-- **Paragraphs do not share one skeleton.** Not every one is topic sentence, explanation, example, summary. Some start on the example. Some end without a summary.
-- **Lists are not parallel.** Two items is fine, so is four. One item can be a word and the next a full sentence. Matched counts and matched grammar are a template.
-- **When you concede, keep the concession.** Naming a counterargument and returning immediately to your original path is the shape of balance without the cost of it. Say what you gave up.
-- **Do not close on balance.** Pick a side, then write one line naming the condition under which you are wrong. That line is what a balanced ending is pretending to be.
-- **The last sentence is new information or an observation you never resolved.** Never a summary, never a moral.
-- **No unrequested therapist mode.** "You're not imagining it", "you're not alone", "sit with that". These turn up in pricing and productivity writing where nobody asked for reassurance.
-
-**Structure:** quote then the same sentence restated; every section is define → quote → table → hedge; four languages sharing one H2 order; a warm closer that names no layer; consecutive days sharing one skeleton — an objection H2, an action-list H2, a "where I'd be wrong" closer, a "-하고 싶었다" opener in every post turns each device into a template. A device used yesterday earns a rest day.
-
-A line you would not say out loud gets rewritten. Numbers and verbatim quotes stay.
+- **제목 이모지 금지, `---` 구분선 금지.**
+- **물결표(`~`, `〜`, `～`) 일체 금지**: 모든 언어에서 범위는 하이픈(`-`) 또는 문장형(`10에서 20`, `10 to 20`)으로 표기.
+- **불필요한 볼드 남발 금지**: 첫 언급 고유명사 위주로 사용.
+- **특수 기호 절제**: 키보드에 없는 특수문자나 상자 그림문자 배제.
 
 ## How a {{LANG}} file should sound
 
-**ko** 해라체. Mix `-다` 종결 with noun stops and a short question. Field words stay (스프린트, 스위치, 배포). No English-metaphor calques.
+**ko** 단단하고 자연스러운 해라체(평서문). 현장감 있는 실무 개발 용어는 자연스럽게 살리고, 번역투를 배제한 명쾌한 논리 전개.
 
-**ja** だ体. Break `...だ` runs with 体言止め. MEO stays MEO.
+**ja** 명쾌한 だ体. 자연스러운 기술 어휘와 군더더기 없는 논증.
 
-**en** Contractions in some sentences, not all. Active voice. Slack-to-a-coworker register.
+**en** Active voice, direct and authoritative. Professional yet conversational peer-to-peer register.
 
-**zh** 收录, 摘要, 抓取, 站点资源, 父级属性. 书面为主, 夹一点短句. No Korean calque.
+**zh** 书面为主, 结构清晰, 表达地道.
 
 ## Process the scheduler already enforces
 

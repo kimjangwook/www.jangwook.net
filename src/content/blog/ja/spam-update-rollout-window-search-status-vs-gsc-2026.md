@@ -16,13 +16,6 @@ relatedPosts:
       ja: 公式が公開したものと実際にジョインできるものの差を同じやり方で確認した記事。ここでもSearch Console側の解像度がボトルネックになる。
       en: Same method — checking the gap between what is officially published and what actually joins. Search Console's resolution is the bottleneck here too.
       zh: 用同样的方法核对官方公开的内容与实际可关联的数据之间的差距，这里 Search Console 一侧的分辨率同样是瓶颈。
-  - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.76
-    reason:
-      ko: 공식 문서가 적어 둔 제어 지점과 실제 배포 사이의 간격을 다룬 글. 대시보드 문서를 그대로 믿을 때 생기는 함정이 겹친다.
-      ja: 公式文書に書かれた制御点と実際の配信の差を扱った記事。ダッシュボードの文書をそのまま信じたときの落とし穴が重なる。
-      en: On the gap between the control points official docs describe and what actually ships. The same trap of trusting dashboard docs at face value shows up.
-      zh: 讨论官方文档所写的控制点与实际交付之间的差距，照单全收信任仪表盘文档时的陷阱与本文重合。
 ---
 
 August 2026 spam updateの開始時刻は、Google Search Status Dashboardのincidents.jsonに分単位で公開されている。開始時刻をSearch Consoleの日次パフォーマンスデータに紐付ければ精度が上がるはずだと考え、curlで叩いて突き合わせた。結果は逆だった。Search Console側の結合キーがPT日単位しかないため、分単位の値は結合の瞬間に丸められるのではなく、境界日の中でロールアウト前後の状態が混ざって残る。
@@ -66,7 +59,7 @@ incidents.jsonのタイムスタンプを並べて秒の桁を見ると、はっ
 > begin 10件 seconds 全て 00、分値 {0,25,27,40,55}。end 9件 seconds 全て 00、分値 {0,10,30,40} — 全て5の倍数。created 10件 seconds は実際の値（2,3,14,18,21,25,28,33,43分台に散らばる）
 > — [Search Status Dashboard incidents.json](https://status.search.google.com/incidents.json)
 
-begin と end は人間が入力した宣言値で、秒はすべて00、endの分値は5の倍数しか出てこない。created と modified だけが秒まで持つ機械記録だ。[公式文書に書かれた制御点と実際の配信がずれた記録](/ja/blog/ja/official-geo-subtraction-gsc-control-2026/)と同じ層で、スキーマがあることと値の意味が契約されていることは別だ。宣言値と機械記録の乖離は実態とのズレを生む。August 2025 spam updateでは、完了告知が自身が宣言した終了時刻より46分早く出た。
+begin と end は人間が入力した宣言値で、秒はすべて00、endの分値は5の倍数しか出てこない。created と modified だけが秒まで持つ機械記録だ。公式文書に書かれた制御点と実際の配信がずれた記録と同じ層で、スキーマがあることと値の意味が契約されていることは別だ。宣言値と機械記録の乖離は実態とのズレを生む。August 2025 spam updateでは、完了告知が自身が宣言した終了時刻より46分早く出た。
 
 > August 2025 spam update は完了告知が2025-09-22T06:14:22Zなのに、自身が宣言したendは2025-09-22T07:00:00Z — 告知が終了宣言より46分先に上がった
 > — [Search Status Dashboard incidents.json](https://status.search.google.com/incidents.json)

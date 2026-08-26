@@ -86,11 +86,10 @@ LANGS="en ko ja zh"
 # 집필 엔진. 기본 sdk — Agent SDK 편집부(sonnet). 2026-08-19 claude-md-at-import
 # redo 실전(4개 언어 재발행, seal-check·insight-gate 통과)을 보고 fable 에서
 # 전환했다. 실패하면 claude opus medium 으로 폴백한다.
-# 집필 엔진: 역할 분담 원칙(2026-08-22) — 집필은 gpt → gemini, claude 는 폴백만.
-# CLI 는 쓰지 않는다: gpt=OpenAI SDK(openai-llm.ts), gemini=genai(gemini-llm.ts).
-WRITER="hybrid"
-WRITER_EN="gpt"
-WRITER_TRANS="gemini"
+# 집필 엔진: 로컬 LLM 우선 (SuperQwen3.8-27b MLX). 실패 시 gemini → claude 로 폴백.
+WRITER="local"
+WRITER_EN="local"
+WRITER_TRANS="local"
 REDO_SLUG=""
 RESUME_SLUG=""
 RESUME_SLUG_ARG=""
@@ -239,11 +238,11 @@ run_agy() {
     </dev/null
 }
 
-# local: 100% 무료 로컬 LLM (Qwen 27B/38B). 0원 방어용 윤문/스카우트 래퍼.
+# local: 100% 무료 로컬 LLM (SuperQwen 27B MLX). 0원 방어용 집필/윤문 래퍼.
 run_local() {
-  local prompt="$1" max_tokens="${2:-4096}"
+  local prompt="$1" max_tokens="${2:-12288}"
   node "$PROJECT_DIR/../life-manager/src/cli/local-llm.ts" \
-    --temperature 0.2 \
+    --temperature 0.3 \
     --max-tokens "$max_tokens" \
     "$prompt" \
     </dev/null
@@ -341,9 +340,9 @@ $(cat "$BRIEF" 2>/dev/null)"
   [ -n "$extra_corpus" ] && full="$full
 
 $extra_corpus"
-  if [ "$engine" = "local" ] && [ "${#full}" -gt 30000 ]; then
-    # 로컬 qwen 의 컨텍스트를 넘길 크기다. 타임아웃 행업보다 즉시 폴백이 낫다.
-    log "embed-write(local) $lang 입력 ${#full}자 > 30000 — 다음 엔진으로 넘긴다"
+  if [ "$engine" = "local" ] && [ "${#full}" -gt 100000 ]; then
+    # SuperQwen MLX 컨텍스트(262k) 한도를 방어하는 상한.
+    log "embed-write(local) $lang 입력 ${#full}자 > 100000 — 다음 엔진으로 넘긴다"
     return 1
   fi
   case "$engine" in
@@ -469,7 +468,17 @@ $(cat "$PROJECT_DIR/src/content/blog/en/$SLUG.md")"
   # ★ hybrid 해석 버그 수정 (2026-08-22): 기존 코드는 cur_writer 를 만들고도
   #   case "$WRITER" 로 분기해 hybrid 가 엔진 없이 claude 폴백으로 빠졌다.
   case "$cur_writer" in
-    # 역할 분담: 집필 = gpt → gemini(키 2개) → local (임베드). claude 는 아래 공용 폴백.
+    # 역할 분담: 로컬 LLM(SuperQwen MLX) 우선 -> gemini -> gpt -> claude
+    local)
+      if run_embed_write local "$lang" "$prompt" "$en_corpus"; then
+        rc=0; wlabel="local/superqwen-27b"
+      elif run_embed_write gemini "$lang" "$prompt" "$en_corpus"; then
+        rc=0; wlabel="gemini-3.7-flash (local fallback)"
+      elif run_embed_write gpt "$lang" "$prompt" "$en_corpus"; then
+        rc=0; wlabel="gpt/$CODEX_MODEL (local fallback)"
+      else
+        rc=1; wlabel="local/gemini/gpt failed"
+      fi ;;
     gpt)
       if run_embed_write gpt "$lang" "$prompt" "$en_corpus"; then
         rc=0; wlabel="gpt/$CODEX_MODEL:$CODEX_EFFORT"

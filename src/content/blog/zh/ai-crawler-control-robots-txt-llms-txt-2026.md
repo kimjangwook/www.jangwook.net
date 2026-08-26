@@ -204,7 +204,7 @@ llms.txt 是一份提案中的 markdown 文件，让站点告诉 LLM"这里有�
 
 数字也很冷（以下为第三方调查值，<strong>仅供参考，非官方</strong>）。一项行业分析报告称，放了 llms.txt 的站点里相当一部分几乎没收到过真实的 AI 机器人访问；另一项观测了约 5 亿次 AI 机器人访问的监测发现，直接冲着 llms.txt 去的请求少得可怜。文件在增多，读它的机器人却没有。
 
-我的立场是：llms.txt 现在<strong>是保险，不是彩票</strong>。生成成本几乎为零，为标准可能落地做点对冲也有意义，想加就加。但"加了 llms.txt，AI 搜索就会好好收录我"是没有根据的期待。那点时间，不如花在上面整理的 robots.txt 分机器人控制和结构化数据上，实测收益大得多。后来 Search Central 在官方指南里写了：忽略 llms.txt。[线上 robots.txt 和 Search Console 开关的实测](/zh/blog/zh/official-geo-subtraction-gsc-control-2026/)用公开 URL 核过那句话。
+我的立场是：llms.txt 现在<strong>是保险，不是彩票</strong>。生成成本几乎为零，为标准可能落地做点对冲也有意义，想加就加。但"加了 llms.txt，AI 搜索就会好好收录我"是没有根据的期待。那点时间，不如花在上面整理的 robots.txt 分机器人控制和结构化数据上，实测收益大得多。后来 Search Central 在官方指南里写了：忽略 llms.txt。线上 robots.txt 和 Search Console 开关的实测用公开 URL 核过那句话。
 
 ## 那么，今天要做什么: 清单
 

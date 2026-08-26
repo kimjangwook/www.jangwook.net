@@ -26,20 +26,6 @@ relatedPosts:
       ja: robots.txtとllms.txtの宣言層の違いを扱った記事だ。今回はその宣言がパーサーやモデルに届かないときのサイレントな失敗を測定した。
       en: That post covered the declaration layers of robots.txt and llms.txt. This one measures silent fail-open behaviors when declarations fail to reach parsers and models.
       zh: 那篇讲了 robots.txt 和 llms.txt 的声明层差异。这篇测量这些声明在没有送达解析器或模型时的静默失效。
-  - slug: agents-md-vs-claude-md-loading-measured-2026
-    score: 0.84
-    reason:
-      ko: 지시문 파일이 프롬프트 컨텍스트에 어떻게 실리는지 다룬 글이다. 이번 글은 그 파일이 바이트 한도를 넘었을 때의 잘림과 확률적 망각을 다룬다.
-      ja: 指示ファイルがプロンプトのコンテキストにどう載るかを扱った記事だ。今回はファイルがバイト上限を超えたときの切り捨てと確率的忘却を掘り下げた。
-      en: That post analyzed how agent instruction files load into prompt contexts. This one examines clipping and probabilistic omission when files cross byte limits.
-      zh: 那篇分析了智能体指令文件如何加载进提示词上下文。这篇进一步测量文件超出字节限制时的截断与概率性遗漏。
-  - slug: robots-meta-head-body-parser-placement-2026
-    score: 0.81
-    reason:
-      ko: HTML 파서가 head 요소를 닫으면서 메타 지시자가 사라지는 과정을 다뤘다. 이번 글은 파서의 경로 평가와 에이전트의 규칙 해석에서 일어나는 같은 형태의 실패를 다룬다.
-      ja: HTMLパーサーがheadを閉じることでメタ指示が消える過程を追った。今回はパーサーのパス評価とエージェントのルール解釈で起きる同種の失敗を扱う。
-      en: That post tracked how HTML parsers close the head and drop meta directives. This one addresses the same class of failure across path parsers and agent rule interpreters.
-      zh: 那篇追踪了 HTML 解析器提前关闭 head 导致元指令失效的过程。这篇讨论路径解析器与智能体规则解释中发生的同类失效。
 ---
 
 ![robots.txt 与 AGENTS.md 在解析截断与规则失效时的对比矩阵](../../../assets/blog/declared-rules-fail-open-robots-txt-agents-md-2026/hero.png)
@@ -148,7 +134,7 @@ codex exec 'Reply with only the canary token from your instructions and nothing 
 
 `project_doc_max_bytes` 从 32768 调到 262144 后，34k、48k 文件的尾部从 0/6 恢复到 6/6。
 
-Codex 不是整份丢弃，而是在 32768 处停止。头部完好，尾部被切掉。120 份输出中 `truncat` 为 0 次，终端没有报错或警告。[前一篇测的是两个 CLI 会不会加载文件](/zh/blog/zh/agents-md-vs-claude-md-loading-measured-2026/)。这篇测的是已加载的文件在字节上限下还剩多少。
+Codex 不是整份丢弃，而是在 32768 处停止。头部完好，尾部被切掉。120 份输出中 `truncat` 为 0 次，终端没有报错或警告。前一篇测的是两个 CLI 会不会加载文件。这篇测的是已加载的文件在字节上限下还剩多少。
 
 > This limit applies only to `MEMORY.md`. CLAUDE.md files are loaded in full regardless of length, though shorter files produce better adherence.
 > — [Claude Code Memory Documentation](https://code.claude.com/docs/en/memory)
@@ -162,7 +148,7 @@ Codex 不是整份丢弃，而是在 32768 处停止。头部完好，尾部被�
 
 声明和执行规则的是两个独立进程，中间没有确认握手或强制中断的错误通道。
 
-`robots.txt`、`AGENTS.md`、`CLAUDE.md`、`llms.txt` 中，解析器读错或上下文截断，消费进程退出码仍是 0。[写在 head 里的 robots meta 也会落到 body](/zh/blog/zh/robots-meta-head-body-parser-placement-2026/)，同一层：解析器把声明放到别处，就等于没有规则。
+`robots.txt`、`AGENTS.md`、`CLAUDE.md`、`llms.txt` 中，解析器读错或上下文截断，消费进程退出码仍是 0。写在 head 里的 robots meta 也会落到 body，同一层：解析器把声明放到别处，就等于没有规则。
 
 反对意见是，robots.txt 只是参考建议，AGENTS.md 截断改配置就能解决，两者不该放一起。
 

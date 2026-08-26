@@ -103,137 +103,50 @@ set -u
 [ -x "$PY" ] || { log "FATAL: python 없음 $PY"; exit 1; }
 mkdir -p "$OUT_DIR" "$(dirname "$HERO_LOG")"
 
-SPEC="$PROJECT_DIR/data/hero-spec.json"
-
-# ── S1. 결정적 렌더 ────────────────────────────────────────────────────
-if [ -s "$SPEC" ]; then
-  "$PY" "$PROJECT_DIR/scripts/render-hero.py" --slug "$SLUG" --spec "$SPEC" \
-    >/dev/null 2>"$PROJECT_DIR/data/hero-render.err"
-  RC=$?
-  [ "$RC" -eq 0 ] && [ -s "$OUT" ] && finish S1 plate
-  stage_log S1 "$RC"
-  log "S1 실패 — $(tail -n 2 "$PROJECT_DIR/data/hero-render.err" 2>/dev/null | tr '\n' ' ')"
-
-  # ── S1.5. 복구 렌더 ──────────────────────────────────────────────────
-  # S1 실패의 대부분은 스펙 불량(항목 초과, left.items 누락)이다.
-  # 클램프하고 다시 그린다. 이 한 단이 S2 진입의 대부분을 없앤다.
-  "$PY" "$PROJECT_DIR/scripts/render-hero.py" --slug "$SLUG" --spec "$SPEC" --repair \
-    >/dev/null 2>"$PROJECT_DIR/data/hero-repair.err"
-  RC=$?
-  [ "$RC" -eq 0 ] && [ -s "$OUT" ] && finish S1.5 plate
-  stage_log S1.5 "$RC"
-  log "S1.5 실패 — $(tail -n 2 "$PROJECT_DIR/data/hero-repair.err" 2>/dev/null | tr '\n' ' ')"
-else
-  stage_log S1 2
-  log "hero-spec.json 없음 — 생성형으로 간다"
-fi
-
-# ── 여기서부터 illustration ────────────────────────────────────────────
+# ── S1. 로컬 이미지 생성 모델 (z-image-turbo @ 192.168.0.246:11432) ────
 SUBJECT="$(awk -F': *' '/^slug:/{print $2; exit}' "$BRIEF" 2>/dev/null | tr '-' ' ')"
 [ -n "$SUBJECT" ] || SUBJECT="$(echo "$SLUG" | tr '-' ' ')"
 
-PROMPT="A flat editorial illustration for a software engineering blog post about ${SUBJECT}.
-Cream paper background #fbfaf7. Dark ink #1c1f26. One muted accent, deep red or deep green.
-Abstract shapes only. Two grouped sets of small rounded rectangles, one set marked with a cross, the other with a plus.
-No text, no letters, no numbers, no logos, no people, no photorealism, no 3D, no gradients, no drop shadows.
-Thin even line weight, generous whitespace, calm and technical.
-16:9 aspect ratio."
+THESIS="$(awk -F': *' '/^thesis:/{print $2; exit}' "$BRIEF" 2>/dev/null)"
 
-# ── S2. agy ────────────────────────────────────────────────────────────
-# CLI 플래그가 아니라 에이전트 내부 툴 generate_image 다. 모델은 바이너리에
-# 고정돼 있고 접근은 -p 뿐이다.
-agy_quota_used() {
-  local today; today="$(date +%F)"
-  [ -s "$QUOTA_FILE" ] || { echo 0; return; }
-  awk -v d="$today" '$1 == d { print $2; found=1 } END { if (!found) print 0 }' "$QUOTA_FILE" | tail -n 1
-}
-agy_quota_bump() {
-  local today used; today="$(date +%F)"; used="$(agy_quota_used)"
-  local tmp; tmp="$(mktemp)"
-  awk -v d="$today" '$1 != d' "$QUOTA_FILE" 2>/dev/null > "$tmp"
-  printf '%s %s\n' "$today" "$(( used + 1 ))" >> "$tmp"
-  # 30일치만 둔다. 회계 파일이 무한히 자랄 이유가 없다.
-  tail -n 30 "$tmp" > "$QUOTA_FILE"; rm -f "$tmp"
-}
+PROMPT="A clean modern digital editorial illustration for a tech leadership engineering post about ${SUBJECT}. ${THESIS}.
+Dark slate and rich graphite background with subtle glowing cyan and emerald circuit nodes, architectural abstractions and data connections.
+Minimalist geometric composition, elegant vector line art, high tech aesthetic, calm and sophisticated.
+No text, no letters, no words, no numbers, no stock photo people, no low quality artifacts.
+16:9 widescreen composition."
 
-run_agy_image() {
-  # 코드 드로잉 방지. 2026-07-29 에 agy 가 SVG 로 그려서 가짜 결과물이 나왔다.
-  # 이 문구는 축자로 박는다.
-  "$AGY_BIN" -p "Generate an image and save it to ${OUT}, using your image GENERATION tool only (code/SVG drawing forbidden).
-
-${PROMPT}" \
-    --dangerously-skip-permissions \
-    --add-dir "$OUT_DIR" \
-    --print-timeout 12m </dev/null >/dev/null 2>&1
-}
-
-if [ ! -x "$AGY_BIN" ]; then
-  stage_log S2 127
-  log "S2 건너뜀 — agy 없음 $AGY_BIN"
-elif [ "$(agy_quota_used)" -ge "$AGY_QUOTA_MAX" ]; then
-  stage_log S2 3
-  log "S2 건너뜀 — 오늘 쿼터 $(agy_quota_used)/$AGY_QUOTA_MAX (남은 2장은 etf-swing-social 몫)"
-else
-  for attempt in 1 2; do
-    log "S2 agy 시도 $attempt (포그라운드. 5~10분)"
-    rm -f "$OUT"
-    run_agy_image
-    RC=$?
-    agy_quota_bump
-    # **타임아웃 ≠ 실패.** 응답 타임아웃이 나도 파일은 저장되는 경우가 있다.
-    # rc 를 보지 않고 산출물을 본다.
-    if [ -s "$OUT" ]; then
-      BYTES="$(wc -c < "$OUT" | tr -d ' ')"
-      if [ "$BYTES" -ge "$MIN_BYTES" ]; then
-        finish S2 illustration
-      fi
-      log "S2 산출물이 작다 ${BYTES} < ${MIN_BYTES} — 코드 드로잉 의심"
-      stage_log "S2.small.$attempt" "$RC" "$OUT"
-      rm -f "$OUT"
-      continue
-    fi
-    stage_log "S2.$attempt" "$RC"
-    log "S2 산출물 없음 (rc=$RC)"
-    break
-  done
+LOCAL_IMAGE_CLI="/Users/jangwook/workspace/life-manager/src/cli/local-image.ts"
+if [ -f "$LOCAL_IMAGE_CLI" ]; then
+  log "S1 로컬 이미지 생성 시도 (z-image-turbo 1024x576)"
+  rm -f "$OUT"
+  node "$LOCAL_IMAGE_CLI" --model z-image-turbo --size 1024x576 -o "$OUT" "$PROMPT" >&2
+  RC=$?
+  if [ "$RC" -eq 0 ] && [ -s "$OUT" ]; then
+    "$PY" -c "from PIL import Image; im=Image.open('$OUT'); im=im.resize((1600, 840), Image.Resampling.LANCZOS); im.save('$OUT', optimize=True)" 2>/dev/null || true
+    finish S1 illustration
+  fi
+  stage_log S1.image "$RC"
+  log "S1 z-image-turbo 실패 (rc=$RC) — flux2-klein 시도"
+  
+  node "$LOCAL_IMAGE_CLI" --model flux2-klein-4b --size 1024x576 -o "$OUT" "$PROMPT" >&2
+  RC=$?
+  if [ "$RC" -eq 0 ] && [ -s "$OUT" ]; then
+    "$PY" -c "from PIL import Image; im=Image.open('$OUT'); im=im.resize((1600, 840), Image.Resampling.LANCZOS); im.save('$OUT', optimize=True)" 2>/dev/null || true
+    finish S1.flux illustration
+  fi
+  stage_log S1.flux "$RC"
 fi
 
-# ── S3. gemini 무료 ────────────────────────────────────────────────────
-gemini_stage() {
-  local stage="$1" key="$2"
-  [ -f "$GEN_IMAGE" ] || { log "$stage 건너뜀 — $GEN_IMAGE 없음"; stage_log "$stage" 127; return 1; }
-  if [ -z "$(eval "echo \"\${$key:-}\"")" ]; then
-    log "$stage 건너뜀 — $key 없음"
-    stage_log "$stage" 3
-    return 1
-  fi
-  log "$stage 시도"
-  rm -f "$OUT"
-  "$PY" "$GEN_IMAGE" --out "$OUT" --prompt "$PROMPT" --aspect 16:9 --key-env "$key" >&2
-  local rc=$?
-  [ "$rc" -eq 0 ] && [ -s "$OUT" ] && return 0
-  stage_log "$stage" "$rc"
-  log "$stage 실패 rc=$rc"
-  rm -f "$OUT"
-  return 1
-}
-
-gemini_stage S3 GEMINI_API_KEY && finish S3 illustration
-
-# ── S4. grok ───────────────────────────────────────────────────────────
-log "S4 시도"
-rm -f "$OUT"
-bash "$PROJECT_DIR/scripts/gen-image-grok.sh" "$OUT" "$PROMPT" >&2
+# ── S2. 비상 폴백: 타이포그래피 도판 ─────────────────────────────────────
+log "S2 비상 폴백 도판 렌더러 시도"
+"$PY" "$PROJECT_DIR/scripts/render-hero.py" --slug "$SLUG" \
+  >/dev/null 2>"$PROJECT_DIR/data/hero-auto.err"
 RC=$?
 if [ "$RC" -eq 0 ] && [ -s "$OUT" ]; then
-  finish S4 illustration
+  finish S2 plate
 fi
-stage_log S4 "$RC"
-rm -f "$OUT"
-
-# ── S5. gemini 유료 ────────────────────────────────────────────────────
-gemini_stage S5 GEMINI_API_KEY_PAID && finish S5 illustration
+stage_log S2.plate "$RC"
 
 stage_log none 1
-log "다섯 단 전부 실패 — 이미지 없이 진행한다. data/hero.log 확인"
+log "모든 생성 단계 실패 — data/hero.log 확인"
 exit 1

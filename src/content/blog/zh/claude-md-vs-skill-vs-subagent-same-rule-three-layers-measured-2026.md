@@ -7,28 +7,7 @@ tags:
   - AI Engineering
   - Agent Architecture
   - Developer Productivity
-relatedPosts:
-  - slug: claude-md-at-import-agents-md-vs-symlink-2026
-    score: 0.92
-    reason:
-      ko: "CLAUDE.md와 import, AGENTS.md, 심볼릭 링크의 적용 범위와 운영상 간극을 다룬 글입니다."
-      ja: "CLAUDE.md、import、AGENTS.md、シンボリックリンクの適用範囲と運用上の差を扱います。"
-      en: "A practical analysis of scope and operational trade-offs across CLAUDE.md, imports, AGENTS.md, and symlinks."
-      zh: "本文分析 CLAUDE.md、import、AGENTS.md 与符号链接在作用范围和运维上的差异。"
-  - slug: mcp-builtin-vs-external-harness-cost-28x-measured-2026
-    score: 0.88
-    reason:
-      ko: "에이전트 도구 호출의 비용 구조와 측정 하네스를 운영 규약으로 만드는 방법을 다룹니다."
-      ja: "エージェントのツール呼び出しにおけるコスト構造と、計測ハーネスを運用規約にする方法を扱います。"
-      en: "An examination of agent-tool cost structures and how to operationalize a measurement harness."
-      zh: "本文讨论代理工具调用的成本结构，以及如何将测量 harness 纳入团队运维规范。"
-  - slug: search-console-ai-features-opt-out-vs-official-docs-gap-2026
-    score: 0.78
-    reason:
-      ko: "공식 문서의 설명과 실제 통제 지점 사이의 간극을 검증 가능한 운영 관점에서 다룹니다."
-      ja: "公式ドキュメントの説明と実際の統制点の隔たりを、検証可能な運用の観点から扱います。"
-      en: "A case for treating the gap between documentation and actual control points as an operational risk."
-      zh: "本文从可验证的运营视角，讨论官方文档描述与实际控制点之间的差距。"
+relatedPosts: []
 ---
 
 我想知道，把同一条规则从 CLAUDE.md 挪到 Skill、再挪到子代理，上下文成本到底会不会下降。我先把三条官方加载路径读完，再跑了一次受控的 Claude CLI 命令去验证测量脚本本身，然后才决定信不信任何一个 token 数字。结论是：选哪一层，决定的是覆盖范围、生命周期、隔离性和可强制性，不是省钱。
@@ -89,7 +68,7 @@ Skill 的成本形状不一样。它的 description 常驻索引供代理发现�
 
 官方给出的机制不支持这条通则。
 
-非 fork 的子代理带着自己的任务消息和系统上下文启动，但它同样会拿到主对话加载的整套 CLAUDE.md 层级，包括用户级、项目级、本地文件和受管策略文件。文档写明的例外只有内建的 Explore 和 Plan。
+非 fork 的子代理带着自己的任务消息和系统上下文启动，但它同样会拿到主对话加载的整套 CLAUDE.md 层级（这套层级在无人值守时到底读到了什么，我在用 @import 和软链接跑了 21 次的实测记录里写过），包括用户级、项目级、本地文件和受管策略文件。文档写明的例外只有内建的 Explore 和 Plan。
 
 启动路径还改写了「预加载 Skill」的含义。在普通会话里，Skill 可以一直不披露正文直到被需要。而给子代理配上 skills 字段之后，完整正文在启动时就注入。
 
@@ -99,7 +78,7 @@ Skill 的成本形状不一样。它的 description 常驻索引供代理发现�
 
 这就是技术负责人该记住的那一条架构判断：渐进式披露不是文件格式的属性，而是加载路径的属性。
 
-SKILL.md 的可移植性确实变强了，因为它作为开放标准发布，被越来越多的代理产品采纳。把可复用流程放在这里是合理的选择。但这并不保证每个运行时都会保留同样的懒加载行为，跨到不同的子代理实现时尤其如此。
+SKILL.md 的可移植性确实变强了，因为它作为[开放标准](/zh/blog/zh/anthropic-agent-skills-standard)发布，被越来越多的代理产品采纳。把可复用流程放在这里是合理的选择。但这并不保证每个运行时都会保留同样的懒加载行为，跨到不同的子代理实现时尤其如此。
 
 > "Discovery: At startup, agents load only the name and description of each available skill... Full instructions load only when a task calls for them, so agents can keep many skills on hand with only a small context footprint."
 
@@ -182,7 +161,7 @@ CFO 和 CTO 应当要求这里适用和云单位经济学一样的标准：实�
 
 单位经济学变得可评审，因为常驻上下文、被调用的流程和被 spawn 的工作负载都有了具名的归属和可见的边界。用量涨，成本仍会涨，但它是沿着可观察的决策涨，而不是靠无声的重复堆出来的。
 
-合规变得更站得住脚，因为团队不再把上下文里的指令当成管控。敏感数据限制、生产命令闸门、密钥处理规则，都可以搬进 hook，让系统去拦截，而不是去请求配合。
+合规变得更站得住脚，因为团队不再把上下文里的指令当成管控。敏感数据限制、生产命令闸门、密钥处理规则，都可以[搬进 hook](/zh/blog/zh/claude-code-hooks-workflow)，让系统去拦截，而不是去请求配合。
 
 上市速度也会改善，因为工程师不必在每一个跟代理相关的 PR 里都从头辩论一遍该放哪层。清晰的运行模型减少设计上的反复，让团队把注意力花在真正的产品或迁移工作上。
 

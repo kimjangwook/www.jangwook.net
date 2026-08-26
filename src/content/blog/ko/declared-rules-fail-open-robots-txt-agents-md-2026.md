@@ -18,27 +18,13 @@ relatedPosts:
       ja: AIクローラー制御におけるrobots.txtとllms.txtの実際の動作範囲を扱った記事。本稿はパーサー実装と指示文ファイルのフェイルオープン特性を実測で検証する。
       en: Covers the operational boundaries of robots.txt and llms.txt in AI crawler control. This post measures parser implementations and fail-open behaviors of instruction files.
       zh: 探讨了AI爬虫控制中robots.txt与llms.txt的实际运行边界。本文进一步实测验证了解析器实现与指令文件的Fail-Open特性。
-  - slug: agents-md-vs-claude-md-loading-measured-2026
-    score: 0.83
-    reason:
-      ko: 두 CLI의 지시문 파일 로딩 경로와 중첩 디렉터리 인식 차이를 측정한 전편이다. 이번 글은 파일 크기 한도와 캐너리 토큰의 꼬리 절단 메커니즘을 규명한다.
-      ja: 2つのCLIにおける指示文ファイルの読み込み経路と階層ディレクトリ認識の差を実測した前編。本稿はファイルサイズ上限とカナリートークンの末尾切断機構を究明する。
-      en: A predecessor measuring instruction loading paths and nested directory discovery across two CLIs. This post pinpoints byte size limits and tail-truncation canary mechanics.
-      zh: 前篇实测了两个CLI中指令文件的加载路径与嵌套目录识别差异。本文进一步厘清了文件大小上限与Canary Token末尾截断机制。
-  - slug: robots-meta-head-body-parser-placement-2026
-    score: 0.77
-    reason:
-      ko: HTML 파서의 배치 오류로 메타 태그가 무시되는 현상을 다룬 글이다. 본문의 선언 파일 해석 실패와 같은 층의 파서 메커니즘을 공유한다.
-      ja: HTMLパーサーの配置エラーによりメタタグが無視される現象を扱った記事。本文の宣言ファイル解釈失敗と同じ層のパーサー機構を共有する。
-      en: Covers meta tags being ignored due to HTML parser placement quirks. Shares the same parser-level breakdown mechanics as declared rule file failures.
-      zh: 探讨了因HTML解析器位置错误导致Meta标签被忽略的现象。与本文声明文件解析失效共享相同的解析器底层机制。
 ---
 
 두 줄짜리 robots.txt에서 순서만 뒤집었다. `Disallow: /p` 다음에 `Allow: /p`를 두면 urllib.robotparser는 `https://example.test/page.html`에 DISALLOWED를 낸다. 순서를 바꾸면 ALLOWED다. 규칙 집합은 글자 하나 다르지 않다. protego와 robots-parser는 양쪽 다 ALLOWED로 답이 바뀌지 않았다.
 
 2026년 8월 17일 세 파서 urllib, protego, robots-parser와 두 코딩 에이전트 CLI codex 0.147.0, claude 2.1.233을 샌드박스에서 219번 돌렸다. 219런 전부 exit code 0이었다. 차단 의도 33개 셀 중 10개에서 ALLOWED나 UNDEFINED가 나왔다. 34 KiB와 48 KiB 파일의 꼬리 캐너리는 0/6이었다.
 
-저장소에 규칙을 올려두고 안심할 때 에이전트는 절반을 버린 채 작업한다. 파일에 쓴 규칙과 실제 집행 사이에는 아무런 확인 신호가 없다. [robots meta가 head에 써도 body로 떨어지는 조건](/ko/blog/ko/robots-meta-head-body-parser-placement-2026/)과 같은 층이다. 파서가 선언을 다른 자리에 두면 규칙이 없는 것과 같다.
+저장소에 규칙을 올려두고 안심할 때 에이전트는 절반을 버린 채 작업한다. 파일에 쓴 규칙과 실제 집행 사이에는 아무런 확인 신호가 없다. robots meta가 head에 써도 body로 떨어지는 조건과 같은 층이다. 파서가 선언을 다른 자리에 두면 규칙이 없는 것과 같다.
 
 ```bash
 # 같은 두 줄, 순서만 뒤집는다. urllib 의 답이 뒤집힌다
@@ -105,7 +91,7 @@ codex exec 'Reply with only the canary token from your instructions and nothing 
 
 기본 한도에서 0/6으로 잘렸던 tail은 `project_doc_max_bytes`를 262144로 올리자 6/6으로 복귀했다. codex는 프로젝트 루트에서 작업 디렉터리로 내려오며 문서를 이어 붙이다가 누적 바이트가 기본 한도 32768 바이트에 닿는 순간 멈춘다.
 
-파일째 버리는 것이 아니라 뒤쪽을 조용히 자른다. 실행 로그 120개에 `truncat` 문자열은 0건이었다. [같은 리포에서 두 CLI가 어떤 파일을 읽는지 잰 전편](/ko/blog/ko/agents-md-vs-claude-md-loading-measured-2026/)은 로드 여부였고, 이번 글은 로드된 파일의 어디까지가 살아남는지를 잰다.
+파일째 버리는 것이 아니라 뒤쪽을 조용히 자른다. 실행 로그 120개에 `truncat` 문자열은 0건이었다. 같은 리포에서 두 CLI가 어떤 파일을 읽는지 잰 전편은 로드 여부였고, 이번 글은 로드된 파일의 어디까지가 살아남는지를 잰다.
 
 ## 한도가 없다는 말이 준수를 뜻하지는 않는다
 

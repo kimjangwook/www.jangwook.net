@@ -9,28 +9,7 @@ tags:
   - analytics
   - measurement
   - social-media
-relatedPosts:
-  - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.84
-    reason:
-      ko: Search Console 안에만 있고 저장소에는 없는 제어를 확인한 글이다. 이번 속성도 같은 자리에 있다. 코드 리뷰가 볼 수 없는 곳에서 리포트의 범위가 정해진다.
-      ja: リポジトリには存在せず Search Console の中だけにある制御を確認した記事。今回のプロパティも同じ場所にあり、コードレビューの外でレポートの範囲が決まる。
-      en: That post checks a control that exists only inside Search Console and nowhere in the repository. This property type sits in the same place, where the scope of a report gets decided outside code review.
-      zh: 那篇核对的是只存在于 Search Console、仓库里找不到的控制项。这次的资源类型也在同一个位置：报表的范围在代码审查之外被决定。
-  - slug: google-analytics-mcp-automation
-    score: 0.79
-    reason:
-      ko: 리포트를 자동화하는 쪽의 이야기다. 이 글의 결론은 그 파이프라인에 무엇을 넣지 말아야 하는지이므로, 자동화 구성을 먼저 읽으면 각주가 필요한 이유가 분명해진다.
-      ja: レポート自動化の側の話。本稿の結論はそのパイプラインに何を入れないかなので、自動化の構成を先に読むと注記が必要な理由がはっきりする。
-      en: The automation side of the same problem. This article's conclusion is about what to keep out of that pipeline, so reading the automated-reporting setup first makes the footnote feel necessary rather than pedantic.
-      zh: 讲的是报表自动化的那一侧。本文的结论是哪些数字不要进那条流水线，先读自动化的搭建过程，就会明白脚注为什么必要。
-  - slug: prerender-activationstart-cwv-measurement-2026
-    score: 0.71
-    reason:
-      ko: 하나의 지표 이름이 서로 다른 기준을 감추고 있을 때 수치가 얼마나 어긋나는지 실측한 글이다. Insights 요약 카드와 하단 리스트가 둘 다 clicks 를 쓰는 문제와 같은 종류다.
-      ja: ひとつの指標名が別々の基準を隠しているとき、数値がどれだけ食い違うかを実測した記事。Insights の要約カードと下部リストがどちらも clicks を使う問題と同種だ。
-      en: A measurement where one metric name hid two different starting clocks. The Insights summary card and the list beneath it both say clicks while counting different populations, which is the same species of problem.
-      zh: 那篇实测了同一个指标名掩盖两种基准时，数字会差多少。Insights 的摘要卡片和下方列表都叫 clicks 却统计不同范围，属于同一类问题。
+relatedPosts: []
 ---
 
 On 2026-07-29 Google's Search Central blog announced that platform properties are globally available to everyone. Three weeks later, I pulled the two Search Console help pages that document the feature. Both still say the rollout is gradual. Same company, same feature, two answers about whether it exists for you.
@@ -167,7 +146,7 @@ Not the numbers in the weekly report. The footnote under it.
 - Monthly, if you want the cross-platform picture, export each property into a sheet that is visibly not the pipeline. No join key, no scheduled refresh.
 - Rewrote a batch of captions? Drop an annotation on the change date and read across it.
 
-The last time I found a Search Console control that existed nowhere in my repository, [it was the generative-AI switch that never appears in a pull request](/en/blog/en/official-geo-subtraction-gsc-control-2026/). Same shape one layer over: what your reporting can see is decided outside your codebase, so no diff will tell your team it moved.
+The last time I found a Search Console control that existed nowhere in my repository, it was the generative-AI switch that never appears in a pull request. Same shape one layer over: what your reporting can see is decided outside your codebase, so no diff will tell your team it moved.
 
 ## Who this fits, and who it doesn't
 

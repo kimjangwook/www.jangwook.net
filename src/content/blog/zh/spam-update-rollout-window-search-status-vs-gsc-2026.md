@@ -17,13 +17,6 @@ relatedPosts:
       ja: 同じSearch Consoleを扱うが、今回は「いつ」ではなく「どこ」の問題だ。APIフィールドと文書の間の時差という同種のズレを扱う。
       en: Same Search Console surface, but a different mismatch — API fields versus what the docs say is available, not when.
       zh: 同样围绕Search Console，这次问的是"哪里"——API字段与文档之间同一类落差。
-  - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.82
-    reason:
-      ko: 공식 문서와 실제 배포 사이의 행 단위 차이를 추적한 글. 이번 글의 '선언값 vs 기계 기록'과 같은 종류의 틈을 다른 표면에서 확인한다.
-      ja: 公式文書と実際のデプロイの行単位の差を追った記事。今回の「宣言値 vs 機械記録」と同種の隙間を別の表面で確認する。
-      en: Tracks a line-by-line gap between official docs and what is actually deployed — the same declared-versus-observed gap, on a different surface.
-      zh: 追踪官方文档与实际部署之间逐行差异的一篇。和"声明值 vs 机器记录"是同一类缝隙，只是换了个表面。
 ---
 
 Google状态面板把每次排名更新的开始时刻标到了分钟级。把开始时刻直接接进Search Console分析管道，能不能让相关分析更准？拉下incidents.json、Atom订阅、HTML面板、Search Console API文档四份材料核对，跑了几段Python算边界，答案是不能。时刻本身没有问题，问题出在Search Console的连接键：按太平洋时间整天切，分钟级信息一进去就磨平了。
@@ -76,7 +69,7 @@ Search Console API的文档写得很清楚，查询窗口用的是什么单位�
 
 UTC日期和PT日期本身也会错位。核对19个时间戳，有2个错位，都出在2026年2月的Serving故障：begin和end在UTC下是2026-02-25，换算成PT却是2026-02-24。排名类更新的7个样本都在UTC 16点前后开始，UTC日期和PT日期碰巧一致，只因为开始时刻都落在这个窄区间里。
 
-begin的10个样本秒位全是00，分钟值集中在{0,25,27,40,55}；end的9个样本秒位同样全是00，分钟值全是5的倍数；created的10个样本秒位却分布在2、3、14、18、21、25、28、33、43这些真实值上——begin和end是人工填写的声明值，created和modified带着机器记录才有的零散秒位。[官方文档写的控制点与实际部署对不上的记录](/zh/blog/zh/official-geo-subtraction-gsc-control-2026/)是同一道缝：有 schema 不等于值的来源有合同。差距会累积成什么样？算过声明的end和完成公告即 most_recent_update.created 之间的间隔，9起里差值从-46分钟到+58分钟不等。2025年8月的spam update最极端：完成公告是2025-09-22T06:14:22Z，声明的end却是2025-09-22T07:00:00Z——公告比声明的结束时刻早发了46分钟。看似精确的分钟级数字，实际置信区间不是分钟。
+begin的10个样本秒位全是00，分钟值集中在{0,25,27,40,55}；end的9个样本秒位同样全是00，分钟值全是5的倍数；created的10个样本秒位却分布在2、3、14、18、21、25、28、33、43这些真实值上——begin和end是人工填写的声明值，created和modified带着机器记录才有的零散秒位。官方文档写的控制点与实际部署对不上的记录是同一道缝：有 schema 不等于值的来源有合同。差距会累积成什么样？算过声明的end和完成公告即 most_recent_update.created 之间的间隔，9起里差值从-46分钟到+58分钟不等。2025年8月的spam update最极端：完成公告是2025-09-22T06:14:22Z，声明的end却是2025-09-22T07:00:00Z——公告比声明的结束时刻早发了46分钟。看似精确的分钟级数字，实际置信区间不是分钟。
 
 ## 核对数字
 

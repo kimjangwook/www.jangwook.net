@@ -123,9 +123,9 @@ thesis:              반박 가능한 한 문장
 stance:              조건부 양분. A인 팀에는 X, B인 팀에는 Y (중립 금지)
 counter:             가장 강한 반대, 그리고 그것이 옳은 범위
 mechanism:           무엇이 그것을 일으켰나 (모르면 unknown)
-em_problem_context:  현업(웹 리뉴얼 또는 CDP/DSR/회원/데이터 서비스)에서의 실제 문제와 아키텍처 고뇌
-team_systematization: 최신 기술/AI를 2개 팀의 표준 프로세스·린터·게이트로 안착시키는 방법
-executive_insight:   CEO/CTO 관점의 비즈니스 임팩트 (단위 비용 절감, 출시 속도, 컴플라이언스, 조직 확장성)
+em_problem_context:  실제 현업 개발 및 시스템 아키텍처에서의 핵심 문제의식과 엔지니어링 고뇌
+team_systematization: 팀 협업 및 엔지니어링 프로세스 표준화/자동화 방안
+executive_insight:   CEO/CTO 관점의 비즈니스 임팩트 (단위 비용, 생산성, 운영 안정성)
 axes:                비교축
 cost:                가격·쿼터·시간 (모르면 unknown)
 fits:

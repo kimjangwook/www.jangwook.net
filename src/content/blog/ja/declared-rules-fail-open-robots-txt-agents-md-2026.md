@@ -26,20 +26,6 @@ relatedPosts:
       ja: クローラー制御の宣言ファイルが実際にどう解釈されるかを扱う点で直接つながる。前稿がllms.txtとrobots.txtの役割分担を扱ったのに対し、本稿はその宣言がパーサーやエージェントの段階で静かに無力化される仕組みを測っている。
       en: Directly related in examining how crawler control files are actually parsed. While the previous post looked at role separation between llms.txt and robots.txt, this piece measures how those declarations fail open inside parsers and agents.
       zh: 直接承接爬虫控制声明文件如何被实际解析的主题。前文讨论llms.txt与robots.txt的分工，本文则实测这些声明在解析器和Agent层级如何被静默放行。
-  - slug: agents-md-vs-claude-md-loading-measured-2026
-    score: 0.72
-    reason:
-      ko: 에이전트 지시문 파일의 로딩 방식과 바이트 한계를 실측했다는 공통 기반을 공유한다. 이번 측정은 바이트 경계 절단과 확률적 불준수가 어떻게 robots.txt의 실패 패턴과 같은 구조를 갖는지 한 단계 더 파고든다.
-      ja: エージェント指示ファイルの読み込み方式とバイト制限を実測した共通の土台を持つ。本稿では、バイト境界での切り捨てと確率的な不遵守が、いかにrobots.txtの失敗パターンと同じ構造を持つかまで掘り下げた。
-      en: Shares the empirical base of measuring agent instruction loading mechanisms and byte limits. This post deepens the analysis to show how byte-boundary clipping and probabilistic non-compliance mirror the fail-open patterns of robots.txt.
-      zh: 共享关于Agent指令文件加载机制与字节限制的实测基础。本文进一步深入，探讨字节截断与概率性不遵从如何与robots.txt呈现出相同的静默放行结构。
-  - slug: robots-meta-head-body-parser-placement-2026
-    score: 0.68
-    reason:
-      ko: 선언된 메타 규칙이 파서의 동작 방식에 의해 무시되거나 왜곡되는 현상을 다룬다. head-body 파서 배치 문제가 HTML 파서의 실패였다면, 이번 글은 robots.txt 파서와 LLM 지시문 로더의 실패를 다룬다.
-      ja: 宣言されたメタ規則がパーサーの挙動によって無視・歪曲される現象を扱う。head-body配置がHTMLパーサーの特性による失敗だったとすれば、本稿はrobots.txtパーサーとLLM指示ローダーの特性による失敗を扱う。
-      en: Examines how declared meta rules get bypassed or warped by parser mechanics. Where the head-body placement piece dealt with HTML parser quirks, this post explores failures in robots.txt parsers and LLM instruction loaders.
-      zh: 探讨声明的元规则如何因解析器行为而被忽视或扭曲。如果说head-body放置问题是HTML解析器的特性所致，本文探讨的则是robots.txt解析器与LLM指令加载器的静默失效。
 ---
 
 ```bash
@@ -140,7 +126,7 @@ Codex はルートから降りながら `AGENTS.md` を結合し、累積バイ�
 
 31,023 バイトでは末尾が6/6で生還した。34,022・49,022 バイトでは先頭が6/6で生還した。一方、34,023・49,023 バイトでは末尾が0/6で消滅した。
 
-ファイルごと破棄なら先頭も消える。消えたのは後ろ側で、切り捨てを決めるのは全体サイズではなく読み込み順序と累積バイト数だ。[同じリポジトリで2つのCLIがどのファイルを読むかを測った前編](/ja/blog/ja/agents-md-vs-claude-md-loading-measured-2026/)はロードの有無だった。本稿はロードされたファイルのどこまでが残るかを測る。
+ファイルごと破棄なら先頭も消える。消えたのは後ろ側で、切り捨てを決めるのは全体サイズではなく読み込み順序と累積バイト数だ。同じリポジトリで2つのCLIがどのファイルを読むかを測った前編はロードの有無だった。本稿はロードされたファイルのどこまでが残るかを測る。
 
 `project_doc_max_bytes` を 262,144 にすると、34k と48kの末尾カナリアは0/6から6/6へ復帰した。
 
@@ -164,7 +150,7 @@ Codex 側の12セルは6/6か0/6、Claude 側の6セルはすべて中間値だ�
 
 パーサー不一致、全域拒絶の消失、バイト切り捨て、指示埋没に共通する問題は、**宣言側と執行側が分離し、その間にエラー通知のチャンネルがない**ことだ。
 
-ルールが届かなくても読み違えても、処理系は警告なしに動く。Codex のログ120件に `truncat` はなく、ログ出力のオプション（`codex -c log_dir=...`）なしでは切り落とされたことも分からない。219回は終了コード0だった。[robots metaがheadに書いてもbodyへ落ちる条件](/ja/blog/ja/robots-meta-head-body-parser-placement-2026/)と同じ層だ。パーサーが宣言を別の場所に置けば、規則はないのと同じになる。
+ルールが届かなくても読み違えても、処理系は警告なしに動く。Codex のログ120件に `truncat` はなく、ログ出力のオプション（`codex -c log_dir=...`）なしでは切り落とされたことも分からない。219回は終了コード0だった。robots metaがheadに書いてもbodyへ落ちる条件と同じ層だ。パーサーが宣言を別の場所に置けば、規則はないのと同じになる。
 
 障害時に止める仕組みをフェイルクローズ（fail-closed）、異常時も素通しする仕組みをフェイルオープン（fail-open）という。
 

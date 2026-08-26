@@ -30,8 +30,8 @@ The `## OPEN` block is material, not a script. Don't transcribe it in order.
 
 ## Skeleton
 
-Pick six to eight of the nine. You choose the order:
-Firsthand problem awareness & agony / Mechanism & structure / **Team adoption & process systematization** / Cost & unit economics / Comparative axes / **The explicit counter-argument (a whole section, required)** / Implementation feasibility & operational risks / **Executive insights for CEOs/CTOs** / Boundaries & limits
+Pick five to seven of the following:
+Firsthand problem awareness / Mechanism & architectural structure / Team adoption & workflow systematization / Cost & unit economics / Comparative axes / Counter-arguments & trade-offs / Implementation feasibility & operational risks / Business impact & leadership takeaways / Boundaries & limits
 
 Length is set by the content. There is no word target - do not pad to reach one or cut to fit one. 6-10 H2s.
 

@@ -9,28 +9,7 @@ tags:
   - measurement
   - api
   - analytics
-relatedPosts:
-  - slug: official-geo-subtraction-gsc-control-2026
-    score: 0.88
-    reason:
-      ko: 공식 문서가 적어 둔 제어 지점과 실제로 배포된 것 사이의 간격을 같은 방식으로 확인한 글이다. Search Console 쪽 스위치 이야기가 이어진다.
-      ja: 公式文書に書かれた制御点と実際に配信されているものの差を、同じやり方で確認した記事。Search Console側のスイッチの話がつながる。
-      en: Same method applied to the gap between what the official docs describe and what the site actually serves, including the Search Console switch.
-      zh: 用同样的方法核对官方文档写明的控制点与线上实际交付之间的差距，其中也包括 Search Console 的开关。
-  - slug: google-analytics-mcp-automation
-    score: 0.81
-    reason:
-      ko: 리포트를 자동으로 끌어오는 쪽의 이야기. 이 글에서 파이프라인에 넣지 말라고 한 이유가 그 자동화의 구조를 알면 더 잘 읽힌다.
-      ja: レポートを自動で引いてくる側の話。パイプラインに入れるなと書いた理由は、その自動化の構造を知ると読みやすい。
-      en: The other side of this post, on pulling reports automatically. Knowing that plumbing makes the "keep it out of the pipeline" call easier to follow.
-      zh: 讲的是自动拉取报表的那一侧。了解这套自动化结构后，本文"先别接进管线"的判断会更容易理解。
-  - slug: prerender-activationstart-cwv-measurement-2026
-    score: 0.74
-    reason:
-      ko: 측정 도구가 어떤 구간을 아예 세지 않는지를 다룬 글. 과소집계는 지표가 틀린 것과 다른 문제라는 점이 공통이다.
-      ja: 計測ツールがどの区間をそもそも数えないかを扱った記事。過少計測は数値の誤りとは別の問題だという点が共通する。
-      en: On the intervals a measurement tool simply does not count. Undercounting is a different problem from a wrong number, which is the shared thread.
-      zh: 讨论测量工具根本不统计哪一段区间。少统计和数字算错是两类问题，这是两篇文章的共同点。
+relatedPosts: []
 ---
 
 2026년 7월 29일 공지는 플랫폼 속성이 전세계 누구에게나 열렸다고 적었다. 3주가 지난 오늘 헬프센터 두 페이지를 긁어 보니 점진 롤아웃 중이라는 문장이 그대로 살아 있다. 같은 회사가 같은 기능의 가용성을 두 갈래로 말한다. 사소한 어긋남처럼 보이는데 속성을 실제로 붙이려는 사람 앞에서 다시 걸린다.
@@ -74,7 +53,7 @@ curl -sSL "https://developers.google.com/webmaster-tools/search-console-api-orig
 
 instagram은 0건이다. 마지막 갱신은 2024년 7월 23일. 플랫폼 속성이 나오기 2년 전에 멈춘 문서다.
 
-파이프라인이 새 데이터를 못 읽는 이유는 권한이 없어서가 아니라 가리킬 이름을 몰라서다. [공식 문서에 적힌 제어와 배포본이 어긋난 기록](/ko/blog/ko/official-geo-subtraction-gsc-control-2026/)과 같은 층이다. 화면에는 있고 문서에는 없는 자리가 리포트의 범위를 정한다. 이 구분이 대응을 가른다. 권한 문제라면 계정 설정에서 바로 풀면 된다. 이름 문제는 구글이 문법을 문서에 적어 주기 전까지 손댈 방법이 없다. 실제 엔드포인트가 어떤 문자열을 받아 주는지는 알 수 없고 문서에 없는 문자열을 넣어 본 결과를 근거로 삼을 수도 없다. 오늘 대시보드에 넣을 수 있는 것은 추측이지 계약이 아니다. 조용히 틀린 합계는 빈칸보다 나쁘다.
+파이프라인이 새 데이터를 못 읽는 이유는 권한이 없어서가 아니라 가리킬 이름을 몰라서다. 공식 문서에 적힌 제어와 배포본이 어긋난 기록과 같은 층이다. 화면에는 있고 문서에는 없는 자리가 리포트의 범위를 정한다. 이 구분이 대응을 가른다. 권한 문제라면 계정 설정에서 바로 풀면 된다. 이름 문제는 구글이 문법을 문서에 적어 주기 전까지 손댈 방법이 없다. 실제 엔드포인트가 어떤 문자열을 받아 주는지는 알 수 없고 문서에 없는 문자열을 넣어 본 결과를 근거로 삼을 수도 없다. 오늘 대시보드에 넣을 수 있는 것은 추측이지 계약이 아니다. 조용히 틀린 합계는 빈칸보다 나쁘다.
 
 자동 리포트의 실제 모양을 보면 이 막힘이 어디서 걸리는지 분명하다. 스케줄러가 속성 목록을 받아 온다. 목록에 든 속성마다 기간과 차원을 붙여 쿼리를 날리고 돌아온 행을 시트나 웨어하우스에 적재한다. 이 사슬에서 속성을 지목하는 고리가 문자열 하나다. 목록 API가 새 속성을 돌려준다 해도 그 문자열이 어떤 형식으로 오고 쿼리에 그대로 넣어도 되는지가 문서에 없으면 매핑을 확정할 수 없다. 확정하지 못한 매핑을 넣고 배포하면 다음 주 리포트는 조용히 합계가 달라진 채로 나간다.
 

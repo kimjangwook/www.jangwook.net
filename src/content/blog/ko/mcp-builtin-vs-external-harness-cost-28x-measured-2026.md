@@ -24,13 +24,6 @@ relatedPosts:
       ja: モデル単価ではなく、実行構造全体と失敗コストからエージェント費用を見る視点を広げます。
       en: Extend the cost discussion from model pricing to execution architecture, retries, and failed work.
       zh: 将智能体成本讨论从模型单价扩展到执行架构、重试和失败工作成本。
-  - slug: agents-md-vs-claude-md-loading-measured-2026
-    score: 0.78
-    reason:
-      ko: 매 회차에 누적되는 컨텍스트와 지시 파일이 비용에 미치는 영향을 측정 관점에서 이어 봅니다.
-      ja: 毎ターン蓄積されるコンテキストと指示ファイルがコストへ与える影響を、計測の観点から追います。
-      en: Compare how persistent context and instruction files shape recurring input cost across agent turns.
-      zh: 从测量角度比较持续上下文和指令文件如何影响每轮智能体输入成本。
 ---
 
 어느 에이전트 팀이 묻는다. MCP를 걷어내면 운영 비용이 줄어드느냐. 나는 MCP와 CLI를 통제 비교한 연구를 열어 읽고, 그 옆에 MCP 도구 정의 페이로드를 직접 재본 측정치를 놓았다. 결론은 분명하다. MCP는 매 회차 상주하는 컨텍스트 무게를 더할 수 있지만, 비용 구조를 정하는 것은 하네스이고, 인터페이스만 갈아서 그 비용을 되찾기는 어렵다.
@@ -69,7 +62,7 @@ relatedPosts:
 
 도구 인터페이스는 이 시스템 안의 표현 하나를 바꾼다. 그 표현을 회차마다 실어 나르는 정책 자체를 정하지는 못한다.
 
-나는 MCP 서버 두 개에 최소한의 JSON-RPC stdio 프로브를 돌렸다. `initialize`, `notifications/initialized`, `tools/list`를 보내고 응답의 `tools` 배열만 최소 직렬화해 바이트를 셌다. 한쪽 서버는 도구 2개를 1,451 바이트로 노출했다. 다른 쪽은 도구 29개를 23,257 바이트로 노출했다. 어느 서버를 등록하느냐만으로 매 회차 상주하는 도구 정의 바이트가 16배 갈린다. 지시 파일이 회차마다 어떻게 다시 실려 오는지는 [AGENTS.md와 CLAUDE.md를 같은 리포에서 실측한 기록](/ko/blog/ko/agents-md-vs-claude-md-loading-measured-2026)에 남겨두었다.
+나는 MCP 서버 두 개에 최소한의 JSON-RPC stdio 프로브를 돌렸다. `initialize`, `notifications/initialized`, `tools/list`를 보내고 응답의 `tools` 배열만 최소 직렬화해 바이트를 셌다. 한쪽 서버는 도구 2개를 1,451 바이트로 노출했다. 다른 쪽은 도구 29개를 23,257 바이트로 노출했다. 어느 서버를 등록하느냐만으로 매 회차 상주하는 도구 정의 바이트가 16배 갈린다. 지시 파일이 회차마다 어떻게 다시 실려 오는지는 AGENTS.md와 CLAUDE.md를 같은 리포에서 실측한 기록에 남겨두었다.
 
 절대 토큰 추정치는 근사값이다. 프로덕션 토크나이저가 아니라 문자수를 4로 나눈 값이다. 바이트 비율은 그 근사에 좌우되지 않는다. 더 중요한 것은 이것이 논문의 7×5 행렬 재현이 아니라는 점이다. 플랫폼 팀이 당장 통제할 수 있는 운영 사실 하나를 떼어낸 것이다. 도구 스키마는 매 요청에 포함되는 순간 추상적 메타데이터가 아니다. 반복 지불되는 입력 재고다.
 

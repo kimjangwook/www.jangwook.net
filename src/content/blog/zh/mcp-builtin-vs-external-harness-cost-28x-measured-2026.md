@@ -24,13 +24,6 @@ relatedPosts:
       ja: モデル単価ではなく、実行構造全体と失敗コストからエージェント費用を見る視点を広げます。
       en: Extend the cost discussion from model pricing to execution architecture, retries, and failed work.
       zh: 将智能体成本讨论从模型单价扩展到执行架构、重试和失败工作成本。
-  - slug: agents-md-vs-claude-md-loading-measured-2026
-    score: 0.78
-    reason:
-      ko: 매 회차에 누적되는 컨텍스트와 지시 파일이 비용에 미치는 영향을 측정 관점에서 이어 봅니다.
-      ja: 毎ターン蓄積されるコンテキストと指示ファイルがコストへ与える影響を、計測の観点から追います。
-      en: Compare how persistent context and instruction files shape recurring input cost across agent turns.
-      zh: 从测量角度比较持续上下文和指令文件如何影响每轮智能体输入成本。
 ---
 
 一个做 AI 智能体的团队问我：砍掉 MCP 能不能把运维成本降下来。我把一份关于 MCP 与 CLI 的受控实验，和我自己对 MCP 工具定义体积的实测放在一起看了一遍。结论很明确：MCP 确实会往每一轮请求里塞进常驻的上下文重量，但决定成本结构的是 Harness；只换接口，回收不了那笔钱。
@@ -69,7 +62,7 @@ relatedPosts:
 
 工具接口只改变这几项里其中一项的表达形式。它决定不了那个把这些项一轮一轮抬着往前走的策略。
 
-我自己跑了一个最小的 JSON-RPC stdio 探针，对两个 MCP 服务器依次发 `initialize`、`notifications/initialized`、`tools/list`，然后只把响应里的 `tools` 数组做最小化序列化，统计字节数。一个服务器暴露 2 个工具，1,451 字节。另一个暴露 29 个工具，23,257 字节。也就是说，仅仅因为你注册的是这台而不是那台服务器，常驻工具定义的字节数就差了 16 倍。指令文件在每一轮里如何被重新读取，我在[同一仓库实测 AGENTS.md 与 CLAUDE.md 加载](/zh/blog/zh/agents-md-vs-claude-md-loading-measured-2026)里记过。
+我自己跑了一个最小的 JSON-RPC stdio 探针，对两个 MCP 服务器依次发 `initialize`、`notifications/initialized`、`tools/list`，然后只把响应里的 `tools` 数组做最小化序列化，统计字节数。一个服务器暴露 2 个工具，1,451 字节。另一个暴露 29 个工具，23,257 字节。也就是说，仅仅因为你注册的是这台而不是那台服务器，常驻工具定义的字节数就差了 16 倍。指令文件在每一轮里如何被重新读取，我在同一仓库实测 AGENTS.md 与 CLAUDE.md 加载里记过。
 
 绝对 token 数只能算近似值，因为我用的是字符数除以四，不是生产环境的分词器。但倍数是按字节算的，不受这个近似影响。更要紧的一点：这不是对论文那个七乘五矩阵的复现。它只锁定了一个平台团队立刻就能管住的事实——当工具 schema 被塞进每一个请求时，它不是抽象的元数据，而是一笔每一轮都要重付的输入成本。
 

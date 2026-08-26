@@ -140,13 +140,13 @@ FILE: fixed.html
 
 数字说得很清楚。`broken.html` 无论内容多好，都被整页剔出 AI Overview 的输入。那位在 `googlebot` 标签里写下 `max-snippet:160`、相信"摘要是开着的"开发者，其实站在一扇上了锁的门前。`fixed.html` 全量可引，大图预览也开着，只精确排除了一行——那条内部备注。审计脚本抓到的四个问题（整页阻断、元素误用、冲突、图片受限），都是真实站点上反复出现的模式。
 
-审计时一定要针对**服务器实际返回的 HTML**。浏览器开发者工具的 Elements 面板显示的是 JavaScript 执行之后的 DOM，若有运行时改动过的 meta 标签，就会和爬虫看到的不一致。用 `curl -s <URL> | grep -i 'name="robots"'` 直接取原始响应更稳妥。我踩过的坑正是这个：开发者工具里显示得干干净净是 `max-snippet:-1`，服务器原始响应里却还留着 CMS 塞进去的 `nosnippet`。真相在最初的字节里，不在渲染后的画面里。就算标签写在最初的字节里，解析器若没把它做成 `<head>` 里的元素，搜索引擎仍然读不到。[robots meta 实际落在哪里](/zh/blog/zh/robots-meta-head-body-parser-placement-2026/)，我用十种夹具量过。
+审计时一定要针对**服务器实际返回的 HTML**。浏览器开发者工具的 Elements 面板显示的是 JavaScript 执行之后的 DOM，若有运行时改动过的 meta 标签，就会和爬虫看到的不一致。用 `curl -s <URL> | grep -i 'name="robots"'` 直接取原始响应更稳妥。我踩过的坑正是这个：开发者工具里显示得干干净净是 `max-snippet:-1`，服务器原始响应里却还留着 CMS 塞进去的 `nosnippet`。真相在最初的字节里，不在渲染后的画面里。就算标签写在最初的字节里，解析器若没把它做成 `<head>` 里的元素，搜索引擎仍然读不到。robots meta 实际落在哪里，我用十种夹具量过。
 
 别靠肉眼判断这些。就像我[在 CI 里校验 JSON-LD 结构化数据](/zh/blog/zh/validate-structured-data-ci-jsonld-2026/)那样，摘要指令也该在构建流水线里让解析器自动检查。某个标签落错的那一瞬间，人眼会漏，解析器不会。
 
 ## 诚实的边界 —— 是引用"资格"，不是引用"保证"
 
-该把预期压下来了。放开 `max-snippet:-1` 和 `max-image-preview:large`，并不会让 AI Overview 就去引用你的页面。这些指令只打开**被引用的资格**，究竟引不引用由 Google 决定。它们也不会提升排名。Google 从未说过摘要指令是排名信号。去掉 `nosnippet` 就带来更多访客，这样的承诺哪里都没有。页面指令上面还有一层：Search Console 资源开关。HTML 的 PR 合进去了，父级域名上有人点了排除，照样会从 AI Overview 掉出去。我用公开 URL 量过[官方 GEO 留下的那只开关](/zh/blog/zh/official-geo-subtraction-gsc-control-2026/)。
+该把预期压下来了。放开 `max-snippet:-1` 和 `max-image-preview:large`，并不会让 AI Overview 就去引用你的页面。这些指令只打开**被引用的资格**，究竟引不引用由 Google 决定。它们也不会提升排名。Google 从未说过摘要指令是排名信号。去掉 `nosnippet` 就带来更多访客，这样的承诺哪里都没有。页面指令上面还有一层：Search Console 资源开关。HTML 的 PR 合进去了，父级域名上有人点了排除，照样会从 AI Overview 掉出去。我用公开 URL 量过官方 GEO 留下的那只开关。
 
 反方向的取舍也要看诚实。挂 `nosnippet` 并不总是错。付费内容的正文、只该登录后可见的信息、一旦在结果里整段露出就没人点进来的页面，收紧摘要是合理的。只是现在做这个选择时要清楚：你放弃的是被 AI 回答引用的机会。以前你只是隐藏摘要，现在连同你在生成式搜索里的存在感一起隐去了。
 

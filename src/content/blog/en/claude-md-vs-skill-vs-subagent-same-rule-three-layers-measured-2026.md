@@ -1,34 +1,13 @@
 ---
-title: "I Moved the Same Rule Across CLAUDE.md, Skills, and Subagents—and Found That Cost Was Not the Decision"
-description: "CLAUDE.md, SKILL.md, and subagents solve different reach and lifecycle problems. Their real architectural boundary is enforcement: none of the three is a control plane."
+title: "CLAUDE.md vs Skills vs Subagents: Cost Is Not the Boundary"
+description: "CLAUDE.md, SKILL.md, and subagents solve different reach and lifecycle problems. The boundary that matters is enforcement, and none of them is a control plane."
 pubDate: 2026-08-24
 heroImage: '../../../assets/blog/claude-md-vs-skill-vs-subagent-same-rule-three-layers-measured-2026/hero.png'
 tags:
   - AI Engineering
   - Agent Architecture
   - Developer Productivity
-relatedPosts:
-  - slug: claude-md-at-import-agents-md-vs-symlink-2026
-    score: 0.92
-    reason:
-      ko: "CLAUDE.md와 import, AGENTS.md, 심볼릭 링크의 적용 범위와 운영상 간극을 다룬 글입니다."
-      ja: "CLAUDE.md、import、AGENTS.md、シンボリックリンクの適用範囲と運用上の差を扱います。"
-      en: "A practical analysis of scope and operational trade-offs across CLAUDE.md, imports, AGENTS.md, and symlinks."
-      zh: "本文分析 CLAUDE.md、import、AGENTS.md 与符号链接在作用范围和运维上的差异。"
-  - slug: mcp-builtin-vs-external-harness-cost-28x-measured-2026
-    score: 0.88
-    reason:
-      ko: "에이전트 도구 호출의 비용 구조와 측정 하네스를 운영 규약으로 만드는 방법을 다룹니다."
-      ja: "エージェントのツール呼び出しにおけるコスト構造と、計測ハーネスを運用規約にする方法を扱います。"
-      en: "An examination of agent-tool cost structures and how to operationalize a measurement harness."
-      zh: "本文讨论代理工具调用的成本结构，以及如何将测量 harness 纳入团队运维规范。"
-  - slug: search-console-ai-features-opt-out-vs-official-docs-gap-2026
-    score: 0.78
-    reason:
-      ko: "공식 문서의 설명과 실제 통제 지점 사이의 간극을 검증 가능한 운영 관점에서 다룹니다."
-      ja: "公式ドキュメントの説明と実際の統制点の隔たりを、検証可能な運用の観点から扱います。"
-      en: "A case for treating the gap between documentation and actual control points as an operational risk."
-      zh: "本文从可验证的运营视角，讨论官方文档描述与实际控制点之间的差距。"
+relatedPosts: []
 ---
 
 I wanted to know whether moving the same rule from CLAUDE.md to a skill, then to a subagent, actually lowers its context cost. I traced the documented loading paths and ran a controlled Claude CLI command to validate the measurement harness before trusting any token result. The conclusion is that layer choice is primarily a decision about reach, lifecycle, isolation, and enforceability—not a simple cost-reduction move.
@@ -89,7 +68,7 @@ The common migration story says: CLAUDE.md is expensive, skills are lazy, and su
 
 The official mechanics do not support that as a general rule.
 
-A non-fork subagent starts with its own task message and system context, but it also receives the CLAUDE.md hierarchy that the main conversation loads. That includes user-level, project, local, and managed policy files. The built-in Explore and Plan agents are the stated exceptions.
+A non-fork subagent starts with its own task message and system context, but it also receives the CLAUDE.md hierarchy that the main conversation loads. What that hierarchy actually resolves to in unattended runs is something I tested across 21 runs with @import and symlinks. That includes user-level, project, local, and managed policy files. The built-in Explore and Plan agents are the stated exceptions.
 
 The startup path also changes the meaning of a preloaded skill. In a regular session, a skill can remain undisclosed until needed. For a subagent configured with a skill, the full skill content is injected at startup.
 
@@ -99,7 +78,7 @@ The startup path also changes the meaning of a preloaded skill. In a regular ses
 
 This is the architectural point leaders should retain: progressive disclosure is not a property of a file format. It is a property of a loading path.
 
-The SKILL.md format has become more portable because it was released as an open standard and adopted by a growing number of agent products. That makes it a sensible place for reusable procedures. It does not guarantee that every runtime will preserve the same lazy-loading behavior, particularly across subagent implementations.
+The SKILL.md format has become more portable because it was released as an [open standard](/en/blog/en/anthropic-agent-skills-standard) and adopted by a growing number of agent products. That makes it a sensible place for reusable procedures. It does not guarantee that every runtime will preserve the same lazy-loading behavior, particularly across subagent implementations.
 
 > "Discovery: At startup, agents load only the name and description of each available skill... Full instructions load only when a task calls for them, so agents can keep many skills on hand with only a small context footprint."
 
@@ -182,7 +161,7 @@ With a placement policy, three things improve at once.
 
 Unit economics become reviewable because resident context, invoked procedures, and spawned workloads have named owners and visible boundaries. Cost may still rise as usage rises, but it rises through observable decisions rather than silent duplication.
 
-Compliance becomes more defensible because teams stop treating contextual instructions as controls. Sensitive data restrictions, production command gates, and secret-handling rules can move into hooks where the system can block rather than request compliance.
+Compliance becomes more defensible because teams stop treating contextual instructions as controls. Sensitive data restrictions, production command gates, and secret-handling rules can [move into hooks](/en/blog/en/claude-code-hooks-workflow) where the system can block rather than request compliance.
 
 Time to market improves because engineers no longer debate placement from first principles during every agent-related PR. A clear operating model reduces design churn and lets teams spend their attention on the actual product or migration work.
 

@@ -7,28 +7,7 @@ tags:
   - AI Engineering
   - Agent Architecture
   - Developer Productivity
-relatedPosts:
-  - slug: claude-md-at-import-agents-md-vs-symlink-2026
-    score: 0.92
-    reason:
-      ko: "CLAUDE.md와 import, AGENTS.md, 심볼릭 링크의 적용 범위와 운영상 간극을 다룬 글입니다."
-      ja: "CLAUDE.md、import、AGENTS.md、シンボリックリンクの適用範囲と運用上の差を扱います。"
-      en: "A practical analysis of scope and operational trade-offs across CLAUDE.md, imports, AGENTS.md, and symlinks."
-      zh: "本文分析 CLAUDE.md、import、AGENTS.md 与符号链接在作用范围和运维上的差异。"
-  - slug: mcp-builtin-vs-external-harness-cost-28x-measured-2026
-    score: 0.88
-    reason:
-      ko: "에이전트 도구 호출의 비용 구조와 측정 하네스를 운영 규약으로 만드는 방법을 다룹니다."
-      ja: "エージェントのツール呼び出しにおけるコスト構造と、計測ハーネスを運用規約にする方法を扱います。"
-      en: "An examination of agent-tool cost structures and how to operationalize a measurement harness."
-      zh: "本文讨论代理工具调用的成本结构，以及如何将测量 harness 纳入团队运维规范。"
-  - slug: search-console-ai-features-opt-out-vs-official-docs-gap-2026
-    score: 0.78
-    reason:
-      ko: "공식 문서의 설명과 실제 통제 지점 사이의 간극을 검증 가능한 운영 관점에서 다룹니다."
-      ja: "公式ドキュメントの説明と実際の統制点の隔たりを、検証可能な運用の観点から扱います。"
-      en: "A case for treating the gap between documentation and actual control points as an operational risk."
-      zh: "本文从可验证的运营视角，讨论官方文档描述与实际控制点之间的差距。"
+relatedPosts: []
 ---
 
 同じルールをCLAUDE.mdからスキルへ、さらにサブエージェントへ移したとき、コンテキストのコストが本当に下がるのかを知りたかった。公式に記載されたロード経路を追い、トークンの数字を信じる前に計測ハーネス自体を検証するためClaude CLIのコマンドを統制した条件で走らせた。結論としては、層の選択は到達範囲、ライフサイクル、隔離、強制力の判断であって、コストを下げるための単純な移設ではない。
@@ -89,7 +68,7 @@ CLAUDE.mdは常駐コンテキストだ。セッション冒頭で読み込ま�
 
 公式に書かれた仕組みは、それを一般則としては支えない。
 
-フォークではないサブエージェントは、自分のタスクメッセージとシステムコンテキストから始まるが、同時に本流の会話が読み込むCLAUDE.mdの階層も受け取る。ユーザーレベル、プロジェクト、ローカル、管理ポリシーのファイルが含まれる。組み込みのExploreとPlanが例外として明記されている。
+フォークではないサブエージェントは、自分のタスクメッセージとシステムコンテキストから始まるが、同時に本流の会話が読み込むCLAUDE.mdの階層も受け取る。その階層が無人実行で実際に何を読むかは、@importとシンボリックリンクを21回試した記録にまとめてある。ユーザーレベル、プロジェクト、ローカル、管理ポリシーのファイルが含まれる。組み込みのExploreとPlanが例外として明記されている。
 
 起動経路は、事前ロードされたスキルの意味も変える。通常のセッションなら、スキルは必要になるまで開示されないままでいられる。しかしスキルを設定したサブエージェントでは、起動時に本文が丸ごと注入される。
 
@@ -99,7 +78,7 @@ CLAUDE.mdは常駐コンテキストだ。セッション冒頭で読み込ま�
 
 経営層に持ち帰ってほしいアーキテクチャ上の要点はここだ。段階的開示はファイル形式の性質ではない。ロード経路の性質だ。
 
-SKILL.mdの形式はオープン標準として公開され、対応するエージェント製品が増えたことで移植性が上がった。だから再利用する手順の置き場所としては筋がいい。とはいえ、どのランタイムでも同じ遅延ロードの挙動が保たれる保証にはならない。特にサブエージェントの実装をまたぐと差が出る。
+SKILL.mdの形式は[オープン標準として公開](/ja/blog/ja/anthropic-agent-skills-standard)され、対応するエージェント製品が増えたことで移植性が上がった。だから再利用する手順の置き場所としては筋がいい。とはいえ、どのランタイムでも同じ遅延ロードの挙動が保たれる保証にはならない。特にサブエージェントの実装をまたぐと差が出る。
 
 > "Discovery: At startup, agents load only the name and description of each available skill... Full instructions load only when a task calls for them, so agents can keep many skills on hand with only a small context footprint."
 
@@ -182,7 +161,7 @@ CFOとCTOは、クラウドのユニットエコノミクスに求めるのと�
 
 ユニットエコノミクスはレビュー可能になる。常駐コンテキスト、呼び出される手順、spawnされるワークロードに名前のついた持ち主と見える境界ができるからだ。利用が増えればコストは増えるが、それは静かな重複ではなく観測できる判断を通って増える。
 
-コンプライアンスは説明しやすくなる。チームが文脈上の指示を統制と呼ぶのをやめるからだ。機微データの制限、本番コマンドのゲート、シークレットの取り扱いはフックへ移せる。そこでは、遵守をお願いするのではなくシステムが遮断できる。
+コンプライアンスは説明しやすくなる。チームが文脈上の指示を統制と呼ぶのをやめるからだ。機微データの制限、本番コマンドのゲート、シークレットの取り扱いは[フックへ移せる](/ja/blog/ja/claude-code-hooks-workflow)。そこでは、遵守をお願いするのではなくシステムが遮断できる。
 
 市場投入は速くなる。エージェント関連のPRのたびに、エンジニアが配置を原理から議論しなくて済む。運用モデルがはっきりしていれば設計のやり直しが減り、チームの注意は本来のプロダクトや移行の作業に向く。
 
