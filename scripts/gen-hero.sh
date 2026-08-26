@@ -107,19 +107,15 @@ mkdir -p "$OUT_DIR" "$(dirname "$HERO_LOG")"
 SUBJECT="$(awk -F': *' '/^slug:/{print $2; exit}' "$BRIEF" 2>/dev/null | tr '-' ' ')"
 [ -n "$SUBJECT" ] || SUBJECT="$(echo "$SLUG" | tr '-' ' ')"
 
-THESIS="$(awk -F': *' '/^thesis:/{print $2; exit}' "$BRIEF" 2>/dev/null)"
-
-PROMPT="A clean modern digital editorial illustration for a tech leadership engineering post about ${SUBJECT}. ${THESIS}.
-Dark slate and rich graphite background with subtle glowing cyan and emerald circuit nodes, architectural abstractions and data connections.
-Minimalist geometric composition, elegant vector line art, high tech aesthetic, calm and sophisticated.
-No text, no letters, no words, no numbers, no stock photo people, no low quality artifacts.
-16:9 widescreen composition."
+# 영문 키워드 기반 순수 시각 추상화 프롬프트 (한글/문자 유입 원천 차단)
+PROMPT="Abstract modern digital 3D vector illustration representing ${SUBJECT}. Minimalist dark slate and graphite background with glowing cyan and emerald geometric nodes, sleek interconnected pipelines, subtle volumetric lighting, high tech architecture visualization. Pure visual composition, pristine and elegant."
+NEGATIVE_PROMPT="text, letters, typography, words, font, watermark, signature, label, subtitle, caption, headline, alphabet, numbers, symbols, characters, logo, writing, script, UI, interface, code snippets, speech bubble, poster, book"
 
 LOCAL_IMAGE_CLI="/Users/jangwook/workspace/life-manager/src/cli/local-image.ts"
 if [ -f "$LOCAL_IMAGE_CLI" ]; then
-  log "S1 로컬 이미지 생성 시도 (z-image-turbo 1024x576)"
+  log "S1 로컬 이미지 생성 시도 (z-image-turbo 1024x576, textless)"
   rm -f "$OUT"
-  node "$LOCAL_IMAGE_CLI" --model z-image-turbo --size 1024x576 -o "$OUT" "$PROMPT" >&2
+  node "$LOCAL_IMAGE_CLI" --model z-image-turbo --size 1024x576 --negative-prompt "$NEGATIVE_PROMPT" -o "$OUT" "$PROMPT" >&2
   RC=$?
   if [ "$RC" -eq 0 ] && [ -s "$OUT" ]; then
     "$PY" -c "from PIL import Image; im=Image.open('$OUT'); im=im.resize((1600, 840), Image.Resampling.LANCZOS); im.save('$OUT', optimize=True)" 2>/dev/null || true
@@ -128,7 +124,7 @@ if [ -f "$LOCAL_IMAGE_CLI" ]; then
   stage_log S1.image "$RC"
   log "S1 z-image-turbo 실패 (rc=$RC) — flux2-klein 시도"
   
-  node "$LOCAL_IMAGE_CLI" --model flux2-klein-4b --size 1024x576 -o "$OUT" "$PROMPT" >&2
+  node "$LOCAL_IMAGE_CLI" --model flux2-klein-4b --size 1024x576 --negative-prompt "$NEGATIVE_PROMPT" -o "$OUT" "$PROMPT" >&2
   RC=$?
   if [ "$RC" -eq 0 ] && [ -s "$OUT" ]; then
     "$PY" -c "from PIL import Image; im=Image.open('$OUT'); im=im.resize((1600, 840), Image.Resampling.LANCZOS); im.save('$OUT', optimize=True)" 2>/dev/null || true
