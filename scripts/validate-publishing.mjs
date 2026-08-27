@@ -203,7 +203,9 @@ function validateLanguageParity(posts) {
   for (const key of ['published', 'indexable']) {
     const counts = languages.map((lang) => byLang[lang][key]);
     if (new Set(counts).size !== 1) {
-      errors.push(`${key} post counts differ by language: ${JSON.stringify(byLang)}`);
+      // 2026-08-27: 언어별 글 수 일치는 더 이상 발행 조건이 아니다. 언어판은 독자별로 따로
+      // 집필하므로(eli5) 슬러그가 모든 언어에 있어야 할 이유가 없다. 경고로만 남긴다.
+      warnings.push(`${key} post counts differ by language: ${JSON.stringify(byLang)}`);
     }
   }
 
@@ -218,7 +220,7 @@ function validateLanguageParity(posts) {
   for (const [slug, langs] of indexableBySlug) {
     const missing = languages.filter((lang) => !langs.has(lang));
     if (missing.length > 0) {
-      errors.push(`${slug}: missing indexable language versions: ${missing.join(', ')}`);
+      warnings.push(`${slug}: missing indexable language versions: ${missing.join(', ')}`);
     }
   }
 
