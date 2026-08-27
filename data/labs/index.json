@@ -302,9 +302,10 @@
     "runs": 27,
     "cells": 6,
     "status": "complete",
-    "consumed": false,
+    "consumed": true,
     "surprised": false,
-    "headline": "320x200 에서 본문에 닿는 세로 픽셀은 118px(top, 6/6 재현)이고 손실 82px 는 네 뷰포트 높이에서 동일한 절대값이다 / 그 82px 는 static 헤더 블록이고 고정 크롬이 아니며, mid 상태의 손실 90px 는 뷰포트 높이와 무관하게 400px 높이를 유지하는 하단 광고 컨테이너 단독 몫(제거 시 +90px, 개별 합 = ALL 합)이고, back-to-top 의 단독 비용은 0px 다."
+    "headline": "320x200 에서 본문에 닿는 세로 픽셀은 118px(top, 6/6 재현)이고 손실 82px 는 네 뷰포트 높이에서 동일한 절대값이다 / 그 82px 는 static 헤더 블록이고 고정 크롬이 아니며, mid 상태의 손실 90px 는 뷰포트 높이와 무관하게 400px 높이를 유지하는 하단 광고 컨테이너 단독 몫(제거 시 +90px, 개별 합 = ALL 합)이고, back-to-top 의 단독 비용은 0px 다.",
+    "consumed_by": "wcag-reflow-118px-absolute-toll-2026"
   },
   {
     "id": "probe-2026-08-24-claude-md-vs-skill-vs-subagent-same-rule-three-layers-measured-2026",
