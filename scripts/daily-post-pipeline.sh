@@ -87,6 +87,11 @@ LANGS="en ko ja zh"
 # redo 실전(4개 언어 재발행, seal-check·insight-gate 통과)을 보고 fable 에서
 # 전환했다. 실패하면 claude opus medium 으로 폴백한다.
 # 집필 엔진: 로컬 LLM 우선 (SuperQwen3.8-27b MLX). 실패 시 gemini → claude 로 폴백.
+# 집필 엔진 목록의 정본. 예전에는 이 목록이 usage 문구 두 곳과 검증 case 두 곳에
+# 각각 복사돼 있었다. 2026-08-26 에 기본값만 hybrid → local 로 바꾸고 검증 case 를
+# 빼먹어서, 다음 날 daily-post 가 `unknown writer: local` 로 11초 만에 죽었다.
+# 목록을 늘릴 때 고칠 곳은 이 한 줄이다.
+WRITER_CHOICES="hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk|local"
 WRITER="local"
 WRITER_EN="local"
 WRITER_TRANS="local"
@@ -136,12 +141,12 @@ while [ $# -gt 0 ]; do
       ;;
     --redo)
       REDO_SLUG="${2:-}"
-      [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk] --redo <slug>" >&2; exit 2; }
+      [ -n "$REDO_SLUG" ] || { echo "usage: $0 [--writer $WRITER_CHOICES] --redo <slug>" >&2; exit 2; }
       shift 2
       ;;
     --writer)
       WRITER="${2:-}"
-      [ -n "$WRITER" ] || { echo "usage: $0 --writer hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk" >&2; exit 2; }
+      [ -n "$WRITER" ] || { echo "usage: $0 --writer $WRITER_CHOICES" >&2; exit 2; }
       shift 2
       ;;
     *)
@@ -169,9 +174,12 @@ elif [ -n "$RESUME_SLUG_ARG" ]; then
   echo "--slug 는 --resume 과 함께만 쓴다" >&2; exit 2
 fi
 
-case "$WRITER" in
-  hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk) ;;
-  *) echo "unknown writer: $WRITER (hybrid|gpt-flash|fable|codex|agy|flash|claude|sdk)" >&2; exit 2 ;;
+# case 패턴 자리에 "$WRITER_CHOICES" 를 그대로 둘 수는 없다 — 확장된 `|` 는
+# 패턴 구분자로 재해석되지 않아 통째로 한 개의 리터럴이 된다. 구분자를 감싸 넣고
+# 부분 문자열로 본다.
+case "|$WRITER_CHOICES|" in
+  *"|$WRITER|"*) ;;
+  *) echo "unknown writer: $WRITER ($WRITER_CHOICES)" >&2; exit 2 ;;
 esac
 
 # 편집자는 집필자와 다른 모델이어야 한다. 자기 문장에서 자기 군더더기는 잘 안 보인다.
