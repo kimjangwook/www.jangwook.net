@@ -1,122 +1,103 @@
 ---
-title: 구글은 Preferred Source 들어가는 문서는 전용 페이지로 지었지만 AI 검색에서 빼는 방법은 한 문장뿐이다
-description: 구글이 AI 검색에 사이트를 보여 주는 방법은 전용 문서와 버튼 코드까지 갖춰 준 반면, 빼는 방법은 개발자 문서 한 문장에
-  몰아 놓았다. 직접 잰 세 개의 표면과 자사 12개 페이지 점검 결과를 바탕으로 그 비대칭을 확인한다.
-pubDate: 2026-08-29
+'title': '구글 검색 인공지능 답변: 사이트를 넣는 방법엔 전용 문서를, 빼는 방법엔 문장 하나를 남겼다'
+'description': '2026년 8월 20일 구글이 내놓은 선호 출처 기능의 문서 두께를, 빼는 방법의 문서 두께와 나란히 세어 본 기록이다. 공식 문서 세 표면과 자사 페이지 12 URL을 직접 세어, 더 보여 주기와 덜 보여 주기의 비대칭이 숫자로 어떻게 나타나는지 짚는다.'
+pubDate: '2026-08-29'
 heroImage: ../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/hero.png
 tags:
-- 구글검색
-- AI검색
-- 사이트운영
-relatedPosts:
-- slug: ai-crawler-control-robots-txt-llms-txt-2026
-  score: 0.7
-  reason:
-    en: After strengthening search visibility with Google's Preferred Source, complete
-      the picture with a robots.txt strategy for controlling AI crawlers.
-    ko: Google Preferred Source로 검색 노출을 강화했다면, 반대 방향인 robots.txt를 활용한 AI 크롤러 제어 전략으로
-      콘텐츠 접근 권한까지 완성하세요.
-    ja: Google Preferred Sourceで検索表示を強化したなら、robots.txtによるAIクローラー制御戦略でコンテンツアクセス権まで整えましょう。
-    zh: 用 Google Preferred Source 强化搜索曝光后，再借助 robots.txt 的 AI 爬虫控制策略，完善内容的访问权限管理。
+- 검색
+- 웹문서
+- 측정기록
 ---
 
-웹사이트를 운영하는 사람이라면 이것 하나만 기억하면 된다. 구글의 새로운 AI 검색에 내 사이트를 보여 주는 방법은 안내 문서와 버튼 코드까지 만들어 준다. 반면 내 사이트를 빼는 방법은 개발자 문서의 한 문장에 전부 들어 있다. 그리고 그 한 문장이 가리키는 표시는 우리 회사 페이지 12곳 중 어디에도 실려 있지 않았다.
+## 같은 날짜에 갱신된 세 개의 공식 문서
 
-## 2026-08-20 발표와 문서 갱신
+2026년 8월 20일에 구글이 새 기능을 발표했다. 이 기능을 쉽게 말하면 이렇다. 독자가 좋아하는 사이트를 골라, 구글 검색의 인공지능 답변에 더 자주 보이게 할 수 있다. 사이트 운영자 입장에서는 내 글이 인공지능 답변에 실릴 기회가 늘어난다는 뜻이다.
 
-2026년 8월 20일에 구글이 새 기능을 발표했다. 이용자가 자기가 선호하는 사이트를 골라 두면 AI 검색 답변에서 그 사이트의 내용에 선호 표시가 붙는다. 그 내용이 강조되어 보이는 기능이다. 사이트 운영자 입장에서는 내 사이트가 AI 검색에서 더 눈에 띄게 되는 길이 열린 셈이다.
+이 기능의 문서가 어떻게 만들어졌는지가 이 글의 주제다. 공식 문서는 8월 20일에 갱신되었다. 발표문도 같은 날 나왔다. 그리고 우리 사이트의 배포본, 즉 실제 인터넷에 서비스 중인 우리 페이지들도 같은 시점의 표면이 된다.
 
-발표와 같은 날짜에 구글은 이 기능 전용의 공식 안내 문서도 새로 올렸다. 발표문에는 이렇게 쓰여 있다.
+세 곳을 나란히 놓고 세어 보면 한 가지가 뚜렷하게 보인다. 더 보여 주는 쪽 안내물은 두껍고, 덜 보여 주는 쪽 안내물은 얇다.
 
-> If you're a publisher, you can find the new "Preferred Source" button code in our Google Search Central documentation to get started.
-> — [Personalize search and discover news with preferred sources](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
+시장에 가게를 하나 낸다고 생각하자. 시장 관리자는 흔들없이 큰 간판을 달아 주면서 "이렇게 하면 손님이 더 많이 옵니다"라는 안내 책자까지 쥐여 준다. 그런데 가게 문을 닫고 싶을 때 쓰라고 주는 것은 쪽지 한 장이다. "닫으려면 문 잠금장치를 쓰세요"라는 한 줄뿐이다. 잠금장치 자체는 오래전부터 있고 잘 작동한다. 다만 안내물의 두께가 이렇게 다르면, 손님이 문을 닫는 방법을 모른 채 계속 영업하게 되기 쉽다.
 
-한국어로 옮기면 이렇다. 사이트 발행자라면 시작하기 위한 새 선호 소스 버튼 코드를 구글 검색 센터 문서에서 찾을 수 있다는 뜻이다. 즉 들어가는 방법은 발표에서부터 바로 안내 문서로 연결되어 있다.
+여기서 내가 챙겨야 할 건 이것이다. 간판의 두께는 내 선택을 대신해 주지 않는다. 문을 닫을지 말지는 결국 내 페이지에 그 표시가 실려 있는지를 내가 직접 봐야 안다.
 
-그러니까 내 입장에서 달라지는 건 이것이다. 사이트를 AI 검색에 더 잘 나오게 하고 싶다면 구글이 이미 문을 넓게 열어 두었고, 그 문으로 걸어 들어가는 절차까지 문서로 만들어 두었다.
+## 선호 출처를 알리는 전용 문서와 버튼 코드
 
-## 공식 문서에서 빼는 방법은 한 문장뿐이다
+먼저 더 보여 주는 쪽부터 보자. 이 기능의 이름을 우리말로 옮기면 선호 출처 정도가 된다. 독자가 구글 설정에서 어떤 사이트를 선호 출처로 지정하면, 그 사이트의 내용이 인공지능 답변 안에서 눈에 띄게 드러난다. 내용에는 "선호"라는 꼬리표가 붙는다.
 
-반대로 빼는 쪽은 이야기가 다르다. 빼는 방법을 제어 지시자라고 부르는데, 쉽게 말해 내 페이지에 붙여 두는 "이건 보여 주지 마" 표지다.
+발표문은 이 기능 안내에 많은 분량을 할애했다. 우리가 발표문 본문을 세어 보니 선호 출처라는 말이 7번 나왔다. 인공지능 답변 기능 이름도 거듭 언급됐다. 그리고 발표문은 사이트 운영자에게 이렇게 말한다. 새 기능을 쓰려면 구글의 개발자 문서에서 버튼 코드를 찾으라는 것이다. 버튼 코드란, 내 사이트에 "이 사이트를 선호 출처로 지정하기"라는 버튼을 달 수 있게 구글이 미리 만들어 둔 정해진 문장 묶음이다.
 
-구글의 AI 검색 기능 안내 문서에서 빼기 방법을 다룬 문장은 단 한 줄이었다. 그리고 그 한 줄에는 네 가지 표지가 전부 묶여 있다.
+전용 문서도 이틀 안에 갖춰졌다. 구글 개발자 문서의 왼쪽 이동 목록에는 총 154개의 경로가 걸려 있다. 그중에 선호 출처 전용 문서가 하나로 자리 잡고 있었고, 접속하면 정상 페이지가 열렸다. 문서 아래에는 "2026년 8월 20일 갱신"이라는 날짜가 적혀 있었다. 발표 날짜와 정확히 같은 날이다.
 
-> To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
-> — [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
+그래서 이 기능을 넣고 싶은 운영자는 길이 잘 닦여 있다. 발표문을 따라가면 전용 문서가 나오고, 거기서 버튼 코드를 복사해 내 페이지에 붙이면 된다. 버튼 코드를 가져다 붙이는 일은 이렇게 쉽게 풀려 있다.
 
-뜻을 풀면 이렇다. 검색 결과에 내 페이지의 정보가 나오는 양을 줄이려면 네 가지 표지 가운데 하나를 쓰라는 것. 네 이름 모두 페이지에 붙이는 표지 문구인데, 예컨대 noindex는 이 페이지를 보여 주지 말라는 표지다. 이 네 가지를 세어 보면 각각 1번씩만 등장했다.
+## 인공지능 검색에서 빼는 방법을 담은 문장 한 개
 
-![공식 문서에서 빼기 문법으로 지목된 네 가지 표시가 각 1번씩 잡혔다](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-cell-docs-exclusion-lever-inventory.ko.png)
+이제 반대쪽을 보자. 내 사이트를 인공지능 답변에서 빼고 싶다면 어떻게 해야 할까.
 
-더 확인한 것이 있다. 같은 문서에서 "빠진다"거나 "제외된다"라는 뜻의 말을 찾아 보았다. 그런 표현은 0건이었다. 즉 빼기 방법 전체가 저 한 문장 안에 담겨 있는 것이다.
+구글의 AI 기능 공식 안내 문서를 뒤져 본 결과, 이 질문에 답하는 문장은 한 문장뿐이었다. 그 문장은 네 가지 표시를 한데 묶어 이렇게 말한다. 그 문장은 이렇게 말한다. 검색에서 보여 주는 정보를 줄이려면 그 네 가지 표시를 쓰라는 것이다. 미리보기를 통째로 숨기거나, 일부만 숨기거나, 요약 길이를 제한하거나, 페이지 전체를 검색에서 숨기는 표시다. 네 가지 표시가 한 문장에 다 들어 있다.
 
-여기서 내가 해야 할 일은 분명하다. AI 검색에서 내 사이트가 나오는 것을 줄이고 싶은 사람은, 구글이 알려 주는 저 네 가지 표지가 내 페이지에 실제로 적혀 있는지 목록을 만들어 세어 보면 된다.
+같은 문서에서 "빼기"라는 뜻의 말을 직접 세어 보면 0건이다. 빼달라고 요청하는 어휘는 원문 어디에도 없다. 방법을 안내하는 문장이 한 개뿐이고, 그 문장조차 "빼기"라는 말로 시작하지 않는다.
 
-## 들어가는 방법의 전용 문서와 버튼 코드
+발표문 쪽은 더 뚜렷하다. 선호 출처라는 말이 7번 나오는 문서에서, 검색에서 빼겠다는 뜻의 표현은 사실상 0건이었다. 유일하게 빼기 어휘로 잡힌 한 건은 뉴스레터 신청을 그만둘 때 쓰는 문구였다. 검색과는 무관한 자리다.
 
-이 비대칭을 동네 시장에 비유해 보자. 시장 입구에는 새 가게 개업을 알리는 큰 안내문이 걸려 있고, 손님을 부르는 방법이 책 한 권으로 정리되어 나눠진다. 그런데 가게를 그만두고 나가는 방법은 안내 어디에도 없고, 관리 사무소 게시판 구석의 짧은 규정 한 줄에만 적혀 있는 셈이다.
+여기서 바로 공정하게 말해 둘 것이 있다. 빼는 방법이 한 문장인 것을 문제라고 우기기는 어렵다. 그 네 가지 표시는 여러 해 동안 검증되어 온 표준 문법이다. 구글이 인공지능 답변을 검색의 일부로 규정했으니, 그 제어를 이미 있던 미리보기 조절 문법으로 묶는 것은 논리에 맞는 설계다. 운영자가 그 표시를 쓰지 않는 것은 방법이 없어서가 아니라 선택이다. 이 판단은 규칙의 논리 안에서는 맞다.
 
-실제로 구글 문서 왼쪽의 목록을 모두 세면 154개의 경로가 있는데, 그중 선호 소스 전용 문서가 하나로 존재했다. 그 문서는 접속이 잘 되었고, 마지막 갱신 날짜가 2026-08-20으로 발표와 같은 날이었다. 반면 그 전용 문서에서 빼기 안내 문구는 0건이었다. 발표문에서도 선호 소스라는 말이 7번 나왔지만, 검색에서 빼는 방법에 대한 말은 사실상 나오지 않았다. 발표문에서 "빼다"라는 단어가 나온 유일한 곳은 뉴스레터 수신 거지 문구였다.
+하지만 같은 날짜를 나란히 놓으면 차이는 수치로 실재한다. 포함 쪽은 발표와 같은 날 전용 문서와 버튼 코드를 받았다. 배제 쪽은 어휘 네 개짜리 한 문장에 머문다. 문서의 논리가 맞아도, 두 안내물의 두께 차이는 그대로 남는다.
 
-결론은 단순하다. 구글은 사람들을 들이는 문은 넓게, 나가는 문은 좁게 지었다. 그리고 그 좁은 문이 어디 있는지는 각자 찾아서 알아야 한다.
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-docs-exclusion-lever-inventory" data-lang="ko"><span class="lm-card__badge lm-card__badge--ok">성공</span><span class="lm-card__title">공식 문서 빼기 문법 조사</span><span class="lm-card__text">공식 문서 본문에서 문서가 지목한 세 문법이 각 한 번씩 잡혔다. 페이지 전체 숨김 표지와 구글 확장 표지도 한 번씩 있었다. 추천 소스 단어는 본문에서 잡히지 않았다.</span><div class="lm-card__numbers"><span class="lm-card__chip">내용 뺌표 1</span><span class="lm-card__chip">일부 뺌표 1</span><span class="lm-card__chip">요약 제한 1</span><span class="lm-card__chip">추천 소스 0</span></div></div>
 
-## Google-Extended 가 검색 포함에 영향 없다는 공식 문장
+## 세 개의 공식 문서와 자사 페이지 12곳을 세어 본 측정 절차
 
-여기서 많은 사이트 운영자가 오해하는 부분이 있다. 구글에는 구글 확장용 로봇이라는 이름의 차단 표지가 있다. 사이트 소유자가 설정 파일에 한 줄을 적어 두면, 구글의 다른 시스템이 내 콘텐츠를 쓰지 못하게 막는 표지다.
+이 비대칭을 감이 아니라 숫자로 잡기 위해, 2026년 8월 21일에 세 가지 표면을 직접 세어 보는 측정을 했다.
 
-많은 사람이 이것을 "AI 검색에서 빼는 방법"으로 믿는다. 그런데 구글의 공식 문서는 정반대를 말한다.
+첫째는 공식 문서다. 개발자 안내 문서 본문에서 더 보여 주는 쪽 단어와 덜 보여 주는 쪽 단어를 각각 잡아 몇 번 나오는지 세었다. 무관한 문서를 통제로 함께 넣어, 다른 문서의 말이 섞여 개수가 부풀지 않았는지 확인했다.
 
-> Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.
-> — [Google-Extended / Google Search Central](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
+둘째는 왼쪽 이동 목록이다. 문서 사이트가 여는 154개 경로 전체를 훑어 선호 출처 전용 문서가 목록에 존재하는지, 접속이 되는지, 갱신 날짜가 언제인지를 확인했다.
 
-번역하면 이렇다. 이 표지는 내 사이트가 구글 검색에 포함되는 데 아무 영향이 없고, 검색 순위에도 쓰이지 않는다는 것이다.
+셋째는 발표문이다. 같은 방법으로 더 보여 주는 단어와 빼는 단어의 개수를 세었다.
 
-![그 표지가 검색의 생성 기능까지 제어한다는 직접 표시는 0건이었다](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-cell-falsifier-google-extended-covers-search-ai.ko.png)
+넷째는 우리 페이지다. 사이트 목록에서 12개 주소를 표본으로 뽑았다. 12라는 수는 우리 사이트 전체가 아니라 우리 사이트 한 곳에서 뽑은 표본이다. 각 주소의 문서 원본을 받아, 빼기 표시가 실제로 박혀 있는지를 한 주소씩 확인했다. 여섯 칸의 관측을 세 번 반복해 모두 18번 페이지를 가져왔다. 18번 모두 정상 페이지가 돌아왔는지도 확인했다.
 
-이 절이 중요한 이유는 이렇다. 구글은 AI 검색을 "검색 안에 들어 있는 기능"으로 규정한다. 그래서 검색에 나오게 할지 말지를 정하는 표지 하나가 AI 검색 제어까지 겸하는 구조다. 공식 문서 표면에는 별도의 AI 검색 차단 스위치가 나오지 않는다. 차단 표지로 걸어 두어도 검색에는 그대로 나온다. 만약 어느 날 그 차단 표지가 검색까지 막는다고 공식 문서가 말하기 시작하면, 이 글의 판단은 틀린 것으로 바뀐다.
+가져온 문장 원본에서 단어를 세는 방식이라, 문서 표면에 무엇이 적혀 있는지를 재는 측정이다. 그 표시가 실제 인공지능 답변에 어떤 효과를 내는지까지는 재지 못한다. 그 한계는 글 끝에서 다시 짚는다.
 
-설정 파일에 차단 줄을 적어 두고 "AI 차단은 끝났다"고 믿고 있었다면, 그 믿음은 구글 공식 기준으로는 사실이 아니다.
+<div class="lm-card lm-card--how" data-lm-figure="explain-how" data-lang="ko"><span class="lm-card__title">측정 절차</span><ol class="lm-card__steps"><li class="lm-card__text">단계 1. 여섯 칸을 세 번씩 읽어 열여덟 관측을 만들었다.</li><li class="lm-card__text">단계 2. 공식 문서와 발표문에서 넣기·빼기 단어를 세었다.</li><li class="lm-card__text">단계 3. 무관한 문서를 통제로 넣어 메뉴 섞임을 뺐다.</li><li class="lm-card__text">단계 4. 실제 서비스 중인 우리 HTML에서 문법 착지 수를 확인했다.</li><li class="lm-card__text">단계 5. 열여덟 관측 모두 정상 페이지를 받았는지 확인했다.</li></ol></div>
 
-## 우리 사이트 12개 페이지에는 빼기 표지가 하나도 없었다
+## 자사 페이지 12곳에서 빼기 표시를 확인한 결과
 
-그렇다면 우리 사이트는 어떤 상태였을까. 서비스 중인 페이지 12곳을 표본으로 삼아, 빼기 표지가 실제로 적혀 있는지 확인했다.
+결과가 이 글의 가장 중요한 숫자다.
 
-![서비스 중인 12개 URL 중 빼기 문법이 착지한 곳은 0곳이었다](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-cell-own-deployment-lever-landing.ko.png)
+빼는 문장이 가리키는 표시가 우리 페이지에 실제로 박혀 있는 곳은 12곳 중 0곳이었다. 문서 원본을 받아 본 12개 주소 전부, 빼기 지시에는 아무 문장도 들어 있지 않았다. 문서가 말하는 방법이 우리 배포본 어디에도 착지하지 않은 것이다.
 
-결과는 0곳이었다. 12개 페이지 전부 페이지 안에 어떤 제어 표지도 없었다. 한편 우리가 걸어 둔 것은 따로 있었다. 차단 표지 두 줄과 콘텐츠 신호라는 또 다른 표지 하나였다. 즉 "AI와 관련된 설정은 켜 두었는데", 정작 구글이 AI 검색 빼기의 공식 경로로 지목한 그 표지는 어디에도 실려 있지 않았다.
+우리가 대신 켜 두고 있는 것은 다른 종류의 것들이다. 인공지능 학습용으로 불리는 차단 표지를 막는 설정 두 줄과, 내용 신호를 알리는 설정 하나다. 내용 신호란 내 사이트가 검색에는 쓰이되 인공지능 학습에는 쓰이지 말라는 뜻을 알리는 문장이다. 문제는, 그 차단 표지가 검색에 사이트가 등장하는 것과는 무관하다는 것을 구글 공식 문서가 직접 밝히고 있다는 점이다. 인공지능 학습 차단과 검색 노출은 공식적으로 분리된 별개라는 뜻이다.
 
-이게 나한테 뭘 뜻하냐면, 설정 파일에 뭔가를 적어 둔 것과 실제 페이지에 표지가 붙는 것은 별개라는 점이다. "차단했다고 믿는 안전"은 설정 줄 몇 개로 만들어지기 쉽고, 실제로 페이지에 붙어 있는지는 따로 세어 봐야 보인다.
+그러니까 내 입장에서 달라지는 건 이것이다. 우리는 인공지능 차단 설정을 켜 놓고 "우리는 빼기 전략이 있다"고 믿고 있었을 수 있다. 그런데 구글 기준으로 그 설정은 검색 등장과 아무 상관이 없고, 정작 유일한 빼기 문법은 12페이지 어디에도 없었다. 빼기 전략을 검토하지 않은 것은 아니지만, 사실상 갖고 있지 않았던 셈이다.
 
-## 측정 방법과 통제
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-own-deployment-lever-landing" data-lang="ko"><span class="lm-card__badge lm-card__badge--ok">성공</span><span class="lm-card__title">우리 페이지 착지 확인</span><span class="lm-card__text">문서가 지목한 세 문법은 실제 서비스 중인 우리 HTML에서 착지한 URL이 없었다. 즉 문서의 빼기 문법이 페이지에는 반영되지 않았다.</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">유효 실행 3/3</span></div><span class="lm-card__chip">착지 주소 0</span></div></div>
 
-이 수치들은 어떻게 잰 것일까. 세 개의 표면을 대상으로 측정했다. 구글의 개발자 문서, 구글의 발표문, 그리고 우리 회사의 실제 배포 페이지가 그 세 곳이다. 2026년 8월 21일에 각 페이지를 가져와서, 빼기 표지 이름과 "빼다"라는 뜻의 단어가 몇 번 나오는지 세었다. 같은 날짜에 18번의 측정을 돌렸고, 광고 문구 같은 다른 이유로 우연히 단어가 나오는 경우는 미리 빼고 계산했다.
+## 두 부류의 사이트 운영자를 위한 점검 항목
 
-![3개 표면을 대상으로 잰 측정 절차](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-how.ko.png)
+여기서 독자는 둘로 나뉜다.
 
-페이지를 가져오는 데 쓴 도구는 컴퓨터에서 페이지를 열어 내용을 긁어 오는 보통의 도구들이었다. 브라우저로 직접 열었을 때와 같은 방식으로 접근했다. 즉 사람이 문서를 눈으로 읽고 세는 것과 같은 결과를 기계로 반복한 것이다.
+검색 인공지능에 내 사이트가 덜 나오길 원하는 사람이라면, 이렇게 하면 된다. 내 페이지 몇 개를 직접 열어 그 빼기 표시가 실려 있는지 세어 보고, 인공지능을 차단했다고 믿었던 설정이 실제로는 검색 등장과 무관하다는 공식 문장을 확인해 둔다. 믿음과 페이지의 실제 상태를 대조하는 일, 그것이 첫걸음이다.
 
-다만 여기서 짚어야 할 반대 의견이 있다. 빼는 방법이 한 문장인 것은 문제가 아니라는 해석이 가능하다는 점이다. 저 네 가지 표지는 여러 해 동안 검증되어 온 표준이고, 구글 입장에서는 AI 검색을 검색의 일부로 보니까 기존 표지로 제어하는 것이 일관된 설계라는 주장이다. 이 논리 자체는 옳다. 하지만 같은 날짜에 들어가는 문에는 전용 문서와 버튼 코드가 지어졌고, 나가는 문은 단어 네 개짜리 한 문장이었다. 문서의 논리가 맞아도 두 문의 두께 차이는 수치로 실재한다.
+반대로 더 많이 나오길 원하는 사람에게 필요한 일은 오히려 적다. 내 페이지에 아무 제한 표시도 없어 자격이 유지되는지만 확인하면 충분하다. 빼기 문법이 얇다는 것은 넣기를 원하는 쪽에는 바람이다. 넣는 쪽에는 전용 문서와 버튼 코드가 이미 갖춰져 있으니, 자격만 지키면 된다.
 
-## 배포 점검 체크리스트에 추가할 두 항목
-
-이 비대칭을 팀 차원에서 다루려면 두 줄만 추가하면 된다.
-
-첫째, 배포 점검 목록에 "빼기 표지가 붙은 페이지 목록" 항목을 넣는다. 페이지 목록 전체에서 표본을 뽑아 각 페이지에 제어 표지가 실제로 있는지 세고, 우리가 의도한 상태와 맞는지 대조한다. 이번처럼 12곳을 세면 의외의 사실이 바로 드러난다.
-
-둘째, 설정 파일에 적은 차단 줄은 검색 포함과 무관하다는 구글의 공식 문장을 팀 문서에 그대로 인용으로 붙여 둔다. "차단했다"는 믿음이 점검 없이 퍼지는 것을 막아 준다.
-
-AI 검색에서 내 사이트가 나오는 것을 늘리고 싶은 사람은, 구글이 발표한 들어가는 방법의 안내 문서를 찾아 그 절차를 그대로 따라 하면 된다. 전용 문서와 버튼 코드가 이미 준비되어 있으므로 절차만 옮기면 된다.
+결국 남는 말은 이것이다. 더 보여 주기는 구글이 문서와 버튼까지 지어 준다. 덜 보여 주기는 한 문장의 설정을 내가 직접 내 페이지에 넣어야 한다. 그러니 내 사이트에 그 설정이 실려 있는지는 한 번은 직접 세어 봐야 한다.
 
 ## 이 글이 확인하지 못한 것
 
-이 글은 세 가지를 확인하지 못했다. 첫째, 구글의 운영 관리 화면 안에 선호 소스를 고르고 빼는 실제 스위치가 어떻게 보이는지는 로그인이 필요해 세지 못했다. 공식 문서 표면에 없다는 것까지만 말할 수 있다. 둘째, 다른 사이트들의 빼기 표지 사용률은 우리 한 곳 표본이라 알 수 없다. 셋째, 빼기 표지가 실제 AI 답변 인용에 어떤 효과를 주는지는 이번에 재지 않았다. 다음 과제는 운영 관리 화면의 실제 모습을 확인하는 것이다.
+이 측정은 2026년 8월 21일의 표면 사진이다. 문서는 계속 갱신되므로, 지금 다시 세면 개수가 달라졌을 수 있다. 또한 운영자 화면의 실제 스위치 모습은 접속 인증이 필요해 잴 수 없었고, 빼기 문법이 실제 인공지능 답변의 인용에 어떤 효과를 내는지도 재지 못했다. 표본도 우리 사이트 한 곳의 12개 주소뿐이라, 다른 사이트들의 채택 비율은 알 수 없다. 다음에는 그 문법이 인용 결과에 미치는 효과를 실측해 볼 것이다.
 
-빼고 싶은 사람은 자기 페이지에 빼기 문법이 실제로 적혀 있는지 목록을 만들어 세면 되고, 넣고 싶은 사람은 구글이 공지한 들어가는 방법의 안내 문서를 찾아 절차를 따라 하면 된다. 이 판단이 틀릴 조건은 이것이다. 공식 문서에 저 네 가지 표지와 별개로, AI 검색에서 사이트를 빼는 전용 방법이 새로 등장하면 이 글의 주장은 틀린 것으로 간주한다.
+<div class="lm-card lm-card--takeaway" data-lm-figure="explain-takeaway" data-lang="ko"><span class="lm-card__title">결론</span><p class="lm-card__takeaway">공식 문서는 빼기 문법을 말했지만, 실제 서비스 중인 우리 페이지에는 그 문법이 URL 하나에도 없었다.</p></div>
+
+마지막으로 이 판단이 틀릴 조건을 남긴다. 구글이 공식 문서에 "인공지능을 막는 표지가 검색 인공지능 답변에 사이트가 등장하는 것까지 함께 막는다"고 직접 적어 넣으면, 이 글의 판단은 틀린 것이다. 이번 측정에서는 그런 문장이 세 번 확인 모두 나오지 않았다.
 
 ## 참고 자료
 
-1. AI features / Google Search Central — Google — https://developers.google.com/search/docs/appearance/ai-features
-2. AI features / Google Search Central (Google-Extended 분리 문장) — Google — https://developers.google.com/search/docs/appearance/ai-features
-3. Google-Extended / Google Search Central (google-common-crawlers) — Google — https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers
-4. Preferred sources / Google Search Central — Google — https://developers.google.com/search/docs/appearance/preferred-sources
-5. Personalize search and discover news with preferred sources / Google blog 발표문 (Aug 20, 2026) — Google — https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/
+1. [AI features / Google Search Central — Google](https://developers.google.com/search/docs/appearance/ai-features)
+2. [AI features / Google Search Central (Google-Extended 분리 문장) — Google](https://developers.google.com/search/docs/appearance/ai-features)
+3. [Google-Extended / Google Search Central (google-common-crawlers) — Google](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
+4. [Preferred sources / Google Search Central — Google](https://developers.google.com/search/docs/appearance/preferred-sources)
+5. [Personalize search and discover news with preferred sources — Google blog](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
+6. [AI features / Google Search Central (스니펫 자격 조건 문장) — Google](https://developers.google.com/search/docs/appearance/ai-features)
