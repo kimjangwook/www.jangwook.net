@@ -1,110 +1,80 @@
 ---
-title: Google 为进入 AI 搜索准备了专门文档，退出的方法却只剩一句摘要控制指令
-description: Google 在 Preferred Source 发布两天内就配好了专属说明和按钮代码，但把网站从 AI 搜索里拿出来的方法，在官方文档里只有一句话。这篇文章用日常例子讲清这种不对称，以及网站经营者接下来该检查什么。
+title: 谷歌一天内为 Preferred Source 配齐了专用文档，而让网站退出谷歌 AI 搜索的官方手段只有一句片段指令
+description: 谷歌在 8 月 20 日发布 Preferred Source 的同一天，就配好了专用文档、按钮代码和发布公告；但想让网站不被 AI 搜索采用，官方文档里只剩一句片段指令。本文用数字说明这种不平衡，以及网站运营者今天该做的两件事。
 pubDate: '2026-08-28'
 heroImage: ../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/hero.png
 tags:
 - google-search
-- ai-overviews
 - preferred-source
+- ai-overviews
 relatedPosts:
 - slug: ai-crawler-control-robots-txt-llms-txt-2026
   score: 0.7
   reason:
-    en: Now that Google has shipped a dedicated page for getting into AI search, pairing
-      Preferred Sources setup with concrete robots.txt and llms.txt crawler control
-      is essential.
-    ko: Google이 AI 검색 진입용 전용 페이지를 공개한 지금, Preferred Sources 설정과 함께 robots.txt·llms.txt로
-      크롤러를 제어하는 구체적 전략이 필요합니다.
-    ja: GoogleがAI検索専用ページを公開した今、Preferred Sourcesの設定と合わせてrobots.txt・llms.txtでクローラーを制御する具体的な戦略が不可欠です。
-    zh: 在Google上线AI搜索专用页面的当下，将Preferred Sources设置与robots.txt、llms.txt爬虫控制策略结合使用至关重要。
+    en: If Google shipped a dedicated publisher on-ramp on day one, this guide covers
+      the hands-on strategy of using robots.txt and llms.txt to block AI training
+      crawls while still permitting citation.
+    ko: 구글이 발표 당일부터 언론사를 위한 전용 온보딩을 만들었다면, 이 글은 robots.txt와 llms.txt로 AI 크롤러의 학습은
+      막고 인용은 허용하는 실전 제어 전략을 다룹니다.
+    ja: Googleが発表当日からパブリッシャー向けの専用オンボーディングを用意したなら、この記事ではrobots.txtとllms.txtでAIクローラーの学習をブロックしつつ引用を許可する実践的な制御戦略を解説します。
+    zh: 谷歌在发布当天就为出版方搭建了专用入口，而本文将讲解如何用 robots.txt 和 llms.txt 阻止 AI 爬虫训练、同时允许引用的实战策略。
 ---
 
-想象你家门口开了个摊位。市场管理方第一天就给你送来了欢迎招牌、贴纸和宣传单，教你怎么让更多顾客找到你。可你要是想歇业或者撤出市场，翻遍手册，只有细则里的一句话。Google 的 AI 搜索现在就是这个摊位：请进来的路修得又宽又亮，出去的路只有一行小字。
+如果你的网站或公众号的内容会被谷歌的 AI 搜索拿来回答别人的问题，这篇文章讲的事和你有关。谷歌为"把你的内容放进来"准备了完整的入口：有专门的说明文档、有可以直接复制的按钮代码、还有当天的发布公告。但"把你的内容从 AI 回答里拿出来"这条路，官方文档里只有一句话。这不只是感觉，数字可以证明：一边是一整页产品文档，一边是四个词组成的一句话。
 
-## 进入 AI 搜索有专属页面，退出只有一句话
+先给一个类比。这就像街角新开的店办会员卡：办卡的手续，店员替你跑，宣传单满街都是；可是想退卡，你得自己去翻墙角那张贴着的小告示，上面一行字就是全部说明。两条路都存在，但详细程度完全不同。一家店真正希望你做哪件事，看它把哪份说明写得更用心就知道了。谷歌也一样：文档写得越细，说明它投入得越多。
 
-这件事跟你的日常有什么关系？如果你有自己的网站，或者公司有网站，它在 Google 的 AI 回答里出现多少、怎么出现，已经变成了和以前“搜索排名”差不多的资产。管理这份资产有两个方向：让它多出现、让它少出现。这两个方向能用的工具差得很远。
+## 8 月 20 日发布公告里"加入"一侧的分量
 
-2026 年 8 月 20 日，Google 发布了一个叫 Preferred Source 的新功能。这个词的意思是：用户可以在 Google 里把某个网站设为“偏好来源”，之后这个网站的内容在 AI Mode 和 AI Overviews 这两种 AI 搜索结果里——前者是像聊天一样回答问题的搜索，后者是搜索结果顶部的 AI 总结——会带上一枚“preferred”徽章，被更醒目地展示出来。
+2026 年 8 月 20 日，谷歌发布了 Preferred Source。意思是读者可以把你选成"偏好的来源"。之后在 AI 搜索的回答里，你的内容会带上一个"首选"的标记，更容易被看到。我们把这篇公告的原文拿来数了词：表达 preferred source 的地方出现了 7 次，还提到谷歌新闻栏目 Top Stories 1 次、AI Overviews 1 次、AI Mode 2 次。AI Overviews 和 AI Mode 是谷歌搜索里由 AI 直接生成回答的功能。同一篇公告里，表达"退出搜索收录"的词实际上一次都没出现——仅有的 1 处表示退出的英文 opt out 是新闻订阅页的"你可以随时退订"，跟搜索无关。
 
-发布同一天，Google 的开发者文档站上就出现了一个专门讲这个功能的页面，页面标注的更新日期就是 2026 年 8 月 20 日。发布文里还直接告诉出版方：想要的话，去 Search Central 文档拿“Preferred Source”按钮代码就行。也就是说，从“告诉你有这功能”到“给你可以贴上的按钮”，一天之内全齐了。
+![8月 20日发布公告文本计数结果，preferred source 表达出现了 7 次。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-announcement-inclusion-vs-exclusion-wording.png)
 
-进入网站的方法很齐全。那退出的方法呢？我们实际数了数。
+这篇公告还告诉发布者：想加按钮，去 Search Central 的文档里找按钮代码。Search Central 是谷歌给网站运营者看的官方说明中心。也就是说，谷歌不但发布了功能，还指明了你要去哪里、复制哪段代码。这条路从公告到落地，当天就通了。
 
-![ai-features 文档文本计数 raw 输出 — 排除指令 nosnippet、data-nosnippet、max-snippet、noindex 各 1 处，opt out、exclude 0 处。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-docs-exclusion-lever-inventory.png)
+## "加入"一侧的专用文档确实存在
 
-Google 讲 AI 搜索功能的那份官方文档里，关于怎么把网站从这些功能中排除，正文里只有一句话。这句话把四个控制开关捆在一起说：
+我们检查了 Search Central 左侧导航里的全部 154 个文档路径，确认其中有一个叫 preferred-sources 的专用文档。它能正常打开，页面上标注的最后更新日期是 2026-08-20——和发布公告是同一天。功能发布当天，说明文档同步上线，这是"产品级投入"的标准动作。
 
-> 要限制搜索结果中来自你网页的信息展示，请使用 nosnippet、data-nosnippet、max-snippet 或 noindex 控制。
-> — [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
+![Search Central 导航 154 个路径中确认了 preferred-sources 专用文档 1 个的记录。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-docs-inclusion-lever-absence.png)
 
-这四个词是“摘要控制指令”。解释一下：网页可以给搜索机器人贴小标签，比如“请不要摘录我的内容”或者“干脆别收录这一页”。这四个指令就是这类标签里的四个名字，都是 Google 用了很多年的老标准。同一个文档里，“opt out”（选择退出）和“exclude”（排除）这两个词，数出来是 0 处。
+## "退出"一侧的全部官方说明只有一句话
 
-一句话，四个老标签，再没有别的。这就是退出方法在官方文档表面能看到的全部。
+那想让 AI 回答里少出现自己的内容怎么办？谷歌关于 AI 搜索功能的开发者文档里，答案只有一句话：如果你想让页面信息在搜索里少被展示，就用 nosnippet、data-nosnippet、max-snippet 或 noindex 这几个控制项。这四个词都是网站页面上可以放的小标记，作用分别是"不要展示摘要"之类。同一份文档里，opt out、exclude 这类明确的"退出"字眼出现了 0 次。
 
-## Preferred Source 发布文里的用词分布
+![在 ai-features 开发者文档的文字里计数，退出类指令共 4 处。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-docs-exclusion-lever-inventory.png)
 
-进入和退出的不对称，在发布文本身的用词里也能数出来。
+有一种反驳值得认真对待：一句话就够了。这些小标记用了好多年，经过验证，谷歌也把 AI 功能划为搜索的一部分，所以用它们来控制退出是一致的设计——运营者不用，是自己的选择，不是路太薄。这个说法在规则内部是成立的。但数字摆在那里：同一天，"加入"一侧拿到了专用页面、按钮代码和发布公告，"退出"一侧只有这 4 个词的一句话。这种不平衡是客观存在的。
 
-我们把 8 月 20 日那篇发布文的全文做了词频统计。"preferred source"这个词组出现了 7 处，Top Stories 出现 1 处，AI Overviews 1 处，AI Mode 2 处。而表示“退出、排除”的词，实际有效的出现次数是 0——全文里唯一一处 "You may opt out at any time"（你可以随时退出）出现在新闻通讯订阅栏的说明里，跟搜索退出毫无关系。
+## 我们自己网站的 12 个页面里，标记实际落在 0 个
 
-对出版方的指引也一样。发布文没有让出版方去 Search Console（Google 给网站管理者的后台），而是让他们去 Search Central 文档拿按钮代码。进入这条路，是有人领着、有现成工具、一步到位的。
+规则里写了这个做法，和页面上真的配置了这个做法，是两回事。我们从自家网站给搜索引擎看的网址清单（站点地图）里抽了 12 个网址，逐个检查页面代码里有没有真的放那些"别展示"的标记。结果是：12 个页面里，一个都没有。也就是说，即便我们想退出，这条唯一的官方通道，在我们自己的部署里一次也没有用过。
 
-![Preferred Source 发布文文本计数 raw 输出 — preferred source 7 处，排除类词汇实际 0 处。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-announcement-inclusion-vs-exclusion-wording.png)
+![自家站点地图样本 12 个 URL 中指令落地为 0 的记录。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-own-deployment-lever-landing.png)
 
-具体到你的网站：想让它多露脸，Google 已经把工具送到你手边了。反过来，如果你想控制露出，Google 预期你自己动手贴标签——没有人给你做按钮。
+这里要澄清一个常见的误会。有些网站在另一个叫 robots.txt 的文件里写了 Google-Extended 的屏蔽规则。robots.txt 是网站用来告诉爬虫程序"哪些内容你可以看"的清单，Google-Extended 是谷歌的一个爬虫名称。很多人以为屏蔽了它，AI 回答就不会用自己。但谷歌官方文档明确写着：Google-Extended 不影响你的网站在谷歌搜索中的收录，也不作为搜索排名的信号。换句话说，屏蔽了它，你在搜索和 AI 回答里的出现方式一点都不会变。我们查证过，目前的官方文档确实把 Google-Extended 归到"谷歌的其他系统"，和搜索分开。
 
-## Google-Extended 和搜索收录被官方明确分开
+## 应该放进团队检查清单的两项
 
-这里有个很多人会踩的坑，值得单独讲。
+不管你的目标是把内容从 AI 回答里拿出来，还是多放进去，解决“以为做到了”和“实际做到了”之间落差的方法都一样：动手数一遍。落到日常操作上，就是两个检查项。
 
-有一种叫 robots.txt 的文件，是网站放在根目录下的“访客守则”，用来告诉各种爬虫机器人哪些地方不许进。其中有一个针对 AI 的条目叫 Google-Extended，很多网站都写了它，以为这样就能“不被 AI 用到”。
+**想把内容从 AI 回答里拿出来的团队**，在每次页面更新发布的检查清单里加一条：从网站给搜索引擎看的页面清单里挑几个网址，逐个打开页面。数一数“不要展示这页的摘要”的标记是不是真的贴在了页面上。我们自己数的结果是 12 个页面里 0 个贴了——在我们抽查的 12 个页面里，贴了这个标记的是 0 个——就这份样本而言，退出路径一次也没有真正落地。同时把谷歌的官方原话写进团队维基。谷歌明确写过：屏蔽 Google-Extended 这个爬虫名字，并不影响网站在谷歌搜索里的收录。钉上这句话，团队就不会再把“屏蔽了 AI 爬虫”误当成“退出了 AI 回答”。
 
-但 Google 的官方文档写得很清楚：
+**想让内容更多出现在 AI 回答里的团队**，这种不对称反而对你有利。你只需要确认页面上没有贴任何阻止摘要的标记——谷歌说了，进入 AI 功能没有额外的技术要求，所以什么都不贴本身就是资格。然后照着谷歌发布当天就写进 Search Central 文档的那个按钮代码去做：到 Search Central 文档里的 Preferred Sources 页面，把现成的按钮代码复制过来贴上。
 
-> Google-Extended 不影响网站在 Google 搜索中的收录，也不作为 Google 搜索的排名信号使用。
-> — [Google-Extended / Google Search Central (google-common-crawlers)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
+不管选哪边，把这两项写在下一次发布前大家都会看到的检查清单里。清单条目能撑过人员变动；“我记得我们处理过这件事”撑不过。
 
-同一份 AI 功能文档里也有一句分工说明：
+## robots.txt 里管 AI 的那行，和能不能出现在搜索里，是两回事
 
-> 要限制在 Google 其他系统中的 AI 训练和 grounding，请阅读 Google-Extended 的相关内容。
-> — [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
+Google 官方文档里有一句话说得很直白：用来限制 AI 训练的 Google-Extended，“不会影响网站在 Google 搜索中的收录，也不会被用作搜索排名的依据”。用日常的话打个比方：robots.txt 里那行“不许 AI 进来”的标记，就像家门口挂的一块“谢绝推销”的牌子——它管的是推销员（AI 模型），但邮递员（搜索爬虫）照样会按地址把你的页面送到搜索结果里。
 
-翻译成日常的话：Google-Extended 管的是 Google 别的 AI 系统，比如训练模型那部分；而搜索里的 AI 功能（AI Overviews、AI Mode）被 Google 划定为“搜索本身的一部分”。所以守则里写了“AI 别来”，搜索里的 AI 照样可以来。就像你在门口贴了“谢绝推销”，快递员照样能敲门——因为你挡的是推销员，不是快递。
-
-![Google-Extended 文档相关段落 raw 输出 — 确认有 1 句说明对搜索收录无影响。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-falsifier-google-extended-covers-search-ai.png)
-
-换句话说，想控制搜索 AI 功能里的露出，唯一写在文档上的路就是那四个摘要控制指令，而且它们得贴在网页本身上，不是贴在 robots.txt 里。
-
-## 我们自己 12 个网页的检查结果
-
-光看文档还不够，我们检查了自己的网站。
-
-做法是：从网站的站点地图——也就是把全站网址列成一张清单的目录页——里取了 12 个网页作为样本，逐个查看这些页面有没有贴上前面说的那种“摘要控制指令”。结果是 0/12——12 个页面里，一个贴了指令的都没有。
-
-![自有网站地图 12 个 URL 检查 raw 输出 — 指令落点 0/12。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-own-deployment-lever-landing.png)
-
-同一时间，我们的网站在 robots.txt 里也写了针对 AI 的拦截条目——Google-Extended 的 2 行禁止规则，外加一条内容信号声明。我们“以为”自己在管理 AI 露出，实际上按 Google 的官方标准，这 12 个页面对搜索的 AI 功能完全敞开着。
-
-关键在于：写没写拦截文件，和页面实际在不在 AI 搜索里，是两件互不相干的事。以为前者能管住后者，就是这次测量抓到的落差。这不一定是我们独有的问题——凡是写了“AI 拦截”就以为安全的网站，都可能处于同样的状态。
-
-## 什么情况下这个判断会错，以及接下来该做什么
-
-有一种公平的反驳值得摆出来：nosnippet 这类指令是经过多年验证的标准，Google 把搜索 AI 功能当作搜索的一部分来管理，统一归到摘要控制里，本身是自洽的设计。运营者不去用这些指令，可能不是工具太薄，而是自己的选择。
-
-这个反驳在规则逻辑上是对的。但同一份发布、同一天，进入方向拿到了专属页面、按钮代码和公开数字，退出方向只有一句四个词的小字——不对称有数字为证，不是靠讲道理就能否认的。
-
-那么，这个判断什么时候会错？用大白话说：如果 Google 哪天在官方文档里写明“用 Google-Extended 这类条目也能让网站从搜索的 AI 功能里退出”，或者在摘要控制指令之外另外公布了正式的退出方法，这篇文章的判断就作废了。
-
-给两类读者各一句“那就这样做”：
-
-- **想让网站在搜索和 AI 回答里出现得更多的人**：检查你的页面没有贴“别摘录”的标签就可以了。robots.txt 里的 AI 相关条目跟搜索曝光无关，不用因为它放心，也不用为它担心。
-- **想控制或退出 AI 露出的网站负责人**：从站点地图里抽一批网址，逐页数一下有没有 nosnippet 系列指令实际贴在页面上，把这份清单留成检查记录。别再把 robots.txt 里那两行当成“已经退出”的证据。
+这一点很重要，因为很容易产生误会：有的站长看到自己的内容被 AI 用了，第一反应是“那我把它挡住，搜索里是不是也别展示了”。按 Google 自己的说明，这两个门是分开的。想控制内容在搜索结果里怎么被摘录展示，走的是另一套开关（比如限制摘要的那几个标记）；想限制 AI 训练，走的是 Google-Extended。一块牌子管一扇门，别指望挂错地方也能起作用。
 
 ## 本文未能核实的部分
 
-这次只测了文档的文字表面，没有测三样东西：Search Console 后台里实际界面上有没有开关（需要登录，这次没能验证）；其他网站的摘要指令使用比例（只查了我们自己的 12 个页面）；以及这些指令对 AI Overviews 实际引用效果的因果影响。接下来要核实的是：等 Search Console 的界面能用工具检查时补上界面验证，并在更大的页面样本上重新清点有没有贴这些指令。
+这次只测了官方文档和公告的文字表面，没有登录过谷歌给网站管理者用的后台 Search Console 的实际操作界面，所以界面上有没有对应的开关，本文不能下结论。帮助中心的页面因为是脚本外壳，测不到内容，只能算未测量。另外，那些屏蔽标记对 AI 回答引用的实际效果，以及别的网站有没有真的用这些标记，本文都没有测。接下来要核实的是界面里的实际开关形态，以及标记与 AI 引用之间的因果关系。
+
+这个判断在什么条件下会错：如果哪天谷歌改了官方说明，"从 AI 回答里排除自己的规则"也拿到了专用文档、注册流程和发布公告，或者"屏蔽爬虫与 AI 回答无关"的说法被推翻，这篇文章的结论就算过时作废。
 
 ## 参考资料
 
