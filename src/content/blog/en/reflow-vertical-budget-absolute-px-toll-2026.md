@@ -1,10 +1,9 @@
 ---
-title: A page can pass the WCAG 1.4.10 Reflow check and still lose most of its vertical
-  reading space at 400% zoom
-description: A webpage that passes the official left-to-right check can still leave
-  only 118 pixels of vertical space for actual text when a reader zooms to 400%. Measuring
-  where the lost pixels go shows the loss comes from fixed-size page furniture, not
-  from zooming itself.
+title: Passing WCAG 1.4.10 Reflow Does Not Guarantee Readable Text at 400% Zoom
+description: A page can pass the horizontal reflow check and still lose most of its
+  vertical reading space when the screen is zoomed to 400%. This article shows, with
+  measured numbers, that the loss is a fixed pixel toll that hurts small screens the
+  most.
 pubDate: '2026-08-28'
 heroImage: ../../../assets/blog/reflow-vertical-budget-absolute-px-toll-2026/hero.png
 tags:
@@ -14,100 +13,101 @@ relatedPosts:
 - slug: declared-rules-fail-open-robots-txt-agents-md-2026
   score: 0.7
   reason:
-    en: A page that passes the WCAG 1.4.10 Reflow check can still lose most of its
-      vertical content, and that mirrors how truncated rules in robots.txt and AGENTS.md
-      fail silently—both are 'failures without errors,' so reading both pieces shows
-      why passing validation is not the same as being safe.
-    ko: WCAG 1.4.10 Reflow를 통과한 페이지조차 세로 스크롤로 내용을 잃는 것은 robots.txt와 AGENTS.md의 잘린
-      규칙이 조용히 실패하는 방식과 같은 '에러 없는 실패'의 또 다른 사례이므로, 검증을 통과해도 무너지는 지점을 이해하려면 두 글을 함께
-      봐야 한다.
-    ja: WCAG 1.4.10 Reflowを通過したページでも縦スクロールで内容を失うのは、robots.txtとAGENTS.mdの切れたルールが静かに失敗するのと同じ「エラーなしの失敗」のもう一つの例であり、検証を通過しても崩れる箇所を理解するには両方の記事を読む価値がある。
-    zh: 通过 WCAG 1.4.10 Reflow 检查的页面仍可能在垂直方向丢失大量内容,这与 robots.txt 和 AGENTS.md 中被截断的规则静默失效如出一辙——两者都是'没有报错的失败',同时阅读才能明白为何通过验证不等于安全。
+    en: This piece on passing WCAG reflow while text still breaks echoes the robots.txt
+      finding that truncated rules fail silently — showing that passing a check is
+      not the same as actually working.
+    ko: 리플로우를 통과해도 텍스트가 깨질 수 있다는 이 글은, 규칙이 잘려도 에러 없이 통과되는 robots.txt 실험과 마찬가지로 '검사를
+      넘었다는 것'과 '실제로 읽을 수 있다는 것'이 다름을 보여준다.
+    ja: リフローを通過してもテキストが崩れ得るというこの記事は、ルールが途切れてもエラーなしに通過するrobots.txtの実験と同様に、「チェックを通ったこと」と「実際に読めること」が異なることを示している。
+    zh: 这篇文章说明通过重排检查后文本仍可能损坏，与 robots.txt 实验一样揭示了"通过检查"与"真正可用"是两回事，规则静默失效的问题一脉相承。
 ---
 
-Zoom means the browser feature that makes everything on a page bigger. It is the same as pinching out on a phone. On a computer, you zoom by pressing the plus button while holding Ctrl. Reflow means the way a page rearranges its text into a narrower, taller shape so you never have to scroll sideways to read a line.
+## The vertical reading space that shrinks at 400% zoom
 
-A page can pass the official check for reflow and still be nearly unreadable to someone who zooms. The check, called WCAG 1.4.10 Reflow, only measures whether content fits from left to right at 320 pixels of width. It never measures how much room is left from top to bottom. In one real measurement, a page that passed the width check left only 118 of 200 vertical pixels for the actual article text. The missing height was eaten by page furniture: a header and a bottom ad box that stay the same size no matter how small the screen gets.
+There is a web rule called WCAG 1.4.10 Reflow. WCAG is a widely used checklist for making websites usable by everyone, and Reflow is the item in that list that deals with zooming. When you zoom a page to 400%, the rule asks one thing: the text should stack into a single column, and you should not have to scroll sideways to read it.
 
-That is the whole point of this piece. A passing mark on a check that measures one direction says nothing about the other direction.
+That is a good rule. But it only checks one direction. It checks that nothing spills out to the right. It says nothing about how much of the screen is left, top to bottom, for the words themselves.
 
-## 400% zoom shrinks the height, not just the width
+Here is the part that actually affects you. On one real, live website, we zoomed to 400% on a very small screen. Then we measured how many vertical pixels actually reach the article text. The answer was 118px. On a screen 200px tall, that is barely more than half. The rest was covered by things like a header and an ad box sitting on top of the text.
 
-Zooming to 400% does something people often miss. It multiplies the size of things in both directions, so a screen that used to show a lot of content now shows a much smaller slice of it. The W3C, the standards body behind WCAG, states this plainly: "400% applies to the dimension, not the area."
+Think of it like shopping. Imagine a store counter takes up the same amount of floor space no matter how big or tiny the store is. In a big store, losing that counter's footprint is a nuisance. In a tiny kiosk, that same counter eats most of the floor. The counter did not change. The store did.
 
-Zoom to 400% and the screen shows a quarter of the content in each direction, so everything competes for a much smaller space.
+That is exactly what happens when you zoom. Zooming to 400% does not just make things wider. The W3C (the group that writes these web rules) points out in its own explanation of the rule that "400% applies to the dimension, not the area." So your screen keeps its full width and height in physical terms, but the page is drawn four times bigger in each direction. The space left for reading, top to bottom, becomes a quarter of what it was. And whatever fixed furniture the page keeps on top of the text stays the same size.
 
-For a reader who depends on zoom, the window gets very small. Their screen at 400% zoom shows the equivalent of a tiny 320-by-200-pixel window of content. The page has 200 vertical pixels to work with at that moment. If 118 of those go to the article, only 82 are left for everything else. In the measured case, the article got the 118. The page furniture took the rest. The usable vertical space for text fell by 41% at the top of the page, and the loss reached 45% of the height mid-scroll. Almost half the window showed no text you could read.
+![Actual screenshot taken at a 320x200 screen, where the vertical space reaching the article is 118px](../../../assets/blog/reflow-vertical-budget-absolute-px-toll-2026/shot-budget-ladder-320w-4heights-320x200.png)
 
-## The official width check measures nothing about height
+## The same 82px loss at four screen heights
 
-WCAG is a set of rules for making websites usable by people with disabilities, and 1.4.10 Reflow is one of its rules. Here is exactly what it requires:
+We wanted to know whether the lost space changes with the screen. So we measured the same page at four screen heights: 844px, 400px, 256px, and 200px. All of them were 320px wide, because that is the width the reflow rule uses.
 
-> Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels; Horizontal scrolling content at a height equivalent to 256 CSS pixels.
-> — [WCAG 2.2 Success Criterion 1.4.10 Reflow (spec)](https://www.w3.org/TR/WCAG22/#reflow)
+The measuring tool was a hit test. It walks down the screen in small steps and asks, at each spot, "what element is on top here?" If the answer is the article text, that pixel counts as usable. If the answer is a header, an ad, or anything else covering the text, that pixel counts as lost.
 
-Read that closely. For a page that scrolls up and down (which is almost every page), the rule only asks for one thing: the content must fit into 320 pixels of width. It says nothing about height. The rule was written that way on purpose.
+Here is what the measurement showed:
 
-The measured pages passed this rule completely. On every one of 8 tested combinations, the content fit exactly the width available: the visible width equaled the full content width, with 0 pixels of sideways overflow, and the reflow check returned pass on all 8. Yet at the same time, on the smallest measured screen, the article could only touch 118 of 200 vertical pixels.
+```
+screen height  usable vertical px  lost
+844px          762                 82
+400px          318                 82
+256px          174                 82
+200px          118                 82
+```
 
-Both things were true at once. The page passed the width test and starved the reader vertically. The check never looks at the second number, so the passing mark tells you nothing about it.
+The loss was exactly 82px at every height. Not roughly the same. Exactly. Subtract and check: 844−762=82, 400−318=82, 256−174=82, 200−118=82.
 
-To be fair to the rule: it never claimed otherwise. The people who wrote it designed it to govern width, and they never promised that passing it guarantees vertical readability. If anyone treats a 1.4.10 pass as meaning "this page reads fine when zoomed," the fault is in that expectation, not in the rule itself. The rest of this piece is about why that expectation is so common, and why it breaks.
+So the loss is fixed, like that store counter. Every screen pays the same amount. The same absolute chunk is taken away from every screen. So the smaller the screen, the bigger the share that disappears. On the tall 844px screen, 82px is under a tenth of the space. On the 200px screen, it is 41%. Same loss, very different impact.
 
-## Where the missing vertical space goes — 82 pixels and 90 pixels
+This is why "small screens lose a bit of convenience" is the wrong picture. The picture is "small screens pay the same fixed fee, and the fee is huge relative to what they have."
 
-So where do the lost pixels go? The measurement took a real, live website and shrank the window height in steps: 844, 400, 256, and 200 pixels tall, always 320 pixels wide. At each size it measured how many vertical pixels actually reach the article text. The test walks down the screen in small steps. At each step it asks what element is sitting there. A pixel counts as usable only if the answer is the article.
+![Vertical pixels reaching the article, measured at four screen heights; the loss was 82px at all four heights](../../../assets/blog/reflow-vertical-budget-absolute-px-toll-2026/chart-budget-ladder-320w-4heights.png)
 
-The finding: the loss was exactly 82 pixels at every single window height. Not a percentage that got bigger — the same flat 82 pixels every time. The usable space was 762 pixels out of 844, then 318 out of 400, then 174 out of 256, then 118 out of 200.
+## Where the 90px loss comes from, and its full recovery
 
-A flat absolute loss is a signature. It means the element taking the space does not respond to the size of the screen. A percentage-based loss would shrink with the window; a fixed-size object keeps taking the same amount no matter what.
+Finding a fixed loss is one thing. Naming who takes it is another. So we ran a second experiment on the smallest screen, in a scrolled state where the loss was largest. We removed the page's fixed elements one at a time and measured how much vertical space came back each time.
 
-But the story has a twist. The 82 pixels at the top of the page turned out not to be a floating header at all. In the measured runs, the header was no longer sticky at small heights. Sticky means it stays pinned to the top of the screen as you scroll. Instead, it had switched back to normal page flow. So it scrolls away with the page and blocks nothing. The flat 82 pixels belong to a header block sitting inside the normal flow of the document, not to anything glued over it.
+The page had four suspects: a sticky header, a reading-progress bar, a "back to top" button, and a fixed ad container pinned to the bottom of the screen. The sticky header is a bar that stays pinned at the top while you scroll.
 
-The real fixed element appears mid-scroll. Removing tests were run: strip away each fixed element one at a time and see how many vertical pixels come back. The results:
+The results were lopsided. Removing the header gave back 0px. Removing the progress bar gave back 0px. Removing the back-to-top button gave back 0px. Removing the bottom ad container gave back 90px, and removing everything gave back the same 90px, no more. The pieces did not overlap, and the sums matched exactly: 0+0+0+90 equals 90.
 
-| Element removed | Pixels recovered (at 320x200, mid-scroll) |
-|---|---|
-| Header | 0 |
-| Reading progress bar | 0 |
-| Back-to-top button | 0 |
-| Bottom ad container | 90 |
-| All of them | 90 |
+So the entire mid-scroll loss belonged to one element: a fixed ad box at the bottom of the screen. And that box keeps a height of 400px regardless of whether the screen is 844px tall or 200px tall. It never adapts.
 
-One element, a bottom ad container, accounts for the entire mid-scroll loss — 90 pixels, all by itself. Removing it restored the full 200 pixels of usable height. Removing the back-to-top button recovered zero pixels, and removing everything recovered the same 90 as removing the ad alone, which confirms there was no overlap in what each element was blocking.
+One detail surprised us. The 82px toll at the top of the screen turned out not to be the sticky header's fault. On the smallest screens the header stops sticking and flows away with the page. The 82px is simply the header block occupying its normal place inside the document. It takes its normal place at the top of the page no matter how tall the screen is.
 
-The W3C's own guidance warns about exactly this kind of element:
+What you would notice as a reader: one element you never chose to look at was responsible for nearly half the reading space on a small screen, and taking it away restored every pixel of it.
+
+![Vertical pixels reaching the article, measured while removing elements one by one; removing the bottom fixed container gave back 90px](../../../assets/blog/reflow-vertical-budget-absolute-px-toll-2026/chart-removal-decomposition-at-320x200.png)
+
+## Separating the horizontal check from vertical readability
+
+Now the fair question: does the page fail the reflow rule, then? No. It passes. We checked it across 8 screen combinations, measuring horizontal overflow (how many pixels of content stick out past the right edge and force sideways scrolling). Every single combination measured 0px. The rule's own text asks only this: "Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels." Width. Not height.
+
+The W3C's guide to the rule also acknowledges the risk we found, in its own words:
 
 > Such sticky or fixed content can pose significant issues for those who would benefit from Reflow, as aside from obscuring keyboard focus, such sticky or fixed content can make reading content difficult if not impossible.
 > — [Understanding Success Criterion 1.4.10: Reflow / W3C WAI](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
 
-And it defines the culprit plainly: "Sticky regions always stay visible in the viewport while the other content will disappear underneath when scrolling." The ad container held its 400-pixel height at every window size, from 844 down to 200 — a fixed size that never yielded to the shrinking screen.
+There is a reasonable counterargument here, and it is worth stating honestly. The rule never promised anything about the vertical direction. Asking only for a 320px width is by design, not by oversight. Nobody ever claimed that passing 1.4.10 guarantees comfortable vertical reading. On that narrow, legal reading, the counterargument is correct.
 
-## The loss does not grow — the denominator shrinks
+But in everyday practice, teams use a passing reflow score as shorthand for "the page still works when zoomed." That shorthand is what breaks. The pass is real. It is also consistent with a screen where a fixed ad eats 45% of the reading space. Both things are true at once, because the check and the problem live on different axes.
 
-Here is the number that should change how you think about zoom problems. The same 90 pixels taken by the bottom ad container amounted to 10.7% of the screen height at 844 pixels. At 200 pixels of height, the same 90 pixels amounted to 45%.
+![Horizontal overflow measured across 8 screen combinations; all were 0px](../../../assets/blog/reflow-vertical-budget-absolute-px-toll-2026/chart-reflow-1410-horizontal-pass-check.png)
 
-Nothing about the ad changed. Nothing about the blocking grew worse. The only thing that changed was the denominator, the total space being divided. The slice stayed the same size; the whole pie got smaller.
+## A separate check that measures vertical space directly
 
-This is why zoom problems hide until the last moment. At normal window sizes, the fixed furniture costs a fraction small enough to ignore. At 400% zoom on a small screen, the same furniture takes nearly half the window. A fixed-size object takes the same pixels in a big window and a small one. The smaller the window, the bigger its share, and the less room left for you.
+If the standard check does not cover it, the fix is to measure it yourself. The measurement we used is not complicated. It is a small script. The script steps down the screen in small steps, at three horizontal positions. At each step, it checks whether the article text is on top. If it is, that pixel counts as usable. The count is a single number: usable vertical pixels. Run it at a small screen size like 320x200, and you get the number of vertical pixels a reader can actually use when zoomed.
 
-A control test confirms the zoom itself is not the culprit. The same measurement run on a plain local document with no headers, no ads, no floating elements of any kind showed every row at a perfect ratio of 1.0: the entire screen reached the text at every point. The loss is not a zoom effect. It is a page-furniture effect.
+The W3C already suggests the remedy on the design side, too. Their technique C34 recommends turning sticky headers off at narrow widths, so that they stop pinning themselves over the content and simply scroll away with the page.
 
-## Measuring the vertical budget next to the pass verdict
+For a team that actually serves people who zoom (and that should be most teams), the concrete move is this: keep the horizontal reflow check. Add a vertical space measurement at a small screen size as a separate check. And let the bottom fixed containers scroll away with the page on short screens, using a media query, a rule that changes how the page looks at certain screen sizes.
 
-If you run a website that serves people who zoom or use a screen reader (a program that reads page content aloud), the fix is concrete. Keep the 1.4.10 width check. Add, alongside it, a vertical budget measurement: shrink the view to 320 by 200 pixels and count how many vertical pixels actually reach the article text, point by point. The measurement needs no special access and no special tools. It was run against a public site using a standard tool that controls a browser by itself, in 27 runs across 6 cells.
-
-If the count comes back low, the removal test tells you who is eating the pixels: strip each fixed element in turn and see what comes back. In the measured case, the entire 90-pixel loss traced to one bottom ad container, and the W3C already publishes a technique — C34 — for the fix, using a media query to un-fix sticky elements. A media query is a rule that applies only under certain screen conditions. Un-fixing lets them scroll away on small screens.
-
-What changes on your end is one extra gate. A page should not be called "readable at 400%" on the strength of a width check alone.
-
-If, on the other hand, your pages are internal documents or reports with no sticky headers or floating buttons and no bottom ad boxes, the width check alone is genuinely enough. The control test proved it: with no floating furniture, the vertical budget is perfect, and measuring it again would add nothing. Skip it.
+For a team running plain document pages with no fixed menus, ads, or buttons (the local reports and control documents of the world), the honest answer is different: the horizontal pass alone is enough, and adding this extra measurement would be overkill. Know which kind of page you run before deciding.
 
 ## What this article could not verify
 
-This measurement could not settle some things. The exact window height at which the header switches from pinned to normal flow is only narrowed down to somewhere between 400 and 844 pixels — the precise threshold was not found. The bottom ad container occasionally failed to block anything, likely due to ad-loading timing, but the cause was not confirmed. And this data says nothing about whether a small vertical budget actually drives zoom users away, nor about how these findings extend to sites built differently from the one tested.
+This piece rests on one live website, one machine, one browser, and 27 test runs. So it does not prove what happens on sites built differently. We also could not pin down some details. We only narrowed the screen height where the header stops sticking to somewhere between 400 and 844px. We do not know why the bottom ad sometimes failed to block during some runs; ad loading timing is our unconfirmed guess. And we never collected data on whether this loss actually drives real zoom users away. Next, someone should test the threshold value directly and run the same budget measurement across sites with different layouts.
 
-And one honest line about when this whole judgment would be wrong: if you strip every floating element from the page at 320x200 and the pixels reaching the article do not grow at all from their 110, then attributing the loss to fixed page furniture is incorrect.
+And one plain line about when this judgment would be wrong: if we removed every element covering the text and the readable vertical space did not grow, or if the loss came out as a different amount at each screen height instead of the same 82px everywhere, this article's conclusion would be false. That did not happen. The loss was 82px at all four heights, and removing the cause gave back all 90px.
+
+The one thing to walk away with: a zoom check that says "pass" only means no sideways scrolling. If a fixed menu or ad covers the text, the space you can actually read in can be far smaller than the screen, so measure that space directly, or make sure it was never built in the first place.
 
 ## References
 
