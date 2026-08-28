@@ -307,8 +307,10 @@ function validateDescriptionFloor(posts) {
     if (!post.pubDateKey || post.pubDateKey < QUALITY_GATE_FROM) continue;
     const desc = String(post.data.description ?? '');
     const min = DESC_MIN_BY_LANG[post.lang] ?? 120;
+    // 2026-08-28: 사용자 결정 — description 길이 하한은 오류가 아니라 경고로만 남긴다.
+    // (편집부가 내용에 맞춰 길이를 정한다. 빌드를 막지 않는다.)
     if (desc.length > 0 && desc.length < min) {
-      errors.push(`${post.relPath}: description ${desc.length}자 (${post.lang} 최소 ${min})`);
+      warnings.push(`${post.relPath}: description ${desc.length}자 (${post.lang} 권장 최소 ${min})`);
     }
   }
 }
