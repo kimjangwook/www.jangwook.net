@@ -1,115 +1,117 @@
 ---
-title: Preferred Source の専用文書と、Google AI 検索から外すためのスニペット指定の一文
-description: Google は自サイトを AI 検索に取り込む仕組みに専用文書と登録手順を用意した。一方、外すための公式手段は開発者文書のたった一文に押し込まれている。
-pubDate: '2026-08-28'
+title: Google は Preferred Source に専用文書を用意したが、AI検索から外れる方法は nosnippet 類の一文だけだった
+description: Google の公式文書と発表文、自社サイト12ページの実測をもとに、AI検索に入る道と出る道の厚さの違いを確かめた。入る側には専用ページとボタン用のコードが用意され、出る側は開発者文書の一つの文に押し込められていた。
+pubDate: 2026-08-29
 heroImage: ../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/hero.png
 tags:
 - google-search
-- preferred-source
-- ai-overviews
-- nosnippet
+- preferred-sources
+- ai-mode
 relatedPosts:
 - slug: ai-crawler-control-robots-txt-llms-txt-2026
   score: 0.7
   reason:
-    en: If Google shipped a dedicated publisher on-ramp on day one, this guide covers
-      the hands-on strategy of using robots.txt and llms.txt to block AI training
-      crawls while still permitting citation.
-    ko: 구글이 발표 당일부터 언론사를 위한 전용 온보딩을 만들었다면, 이 글은 robots.txt와 llms.txt로 AI 크롤러의 학습은
-      막고 인용은 허용하는 실전 제어 전략을 다룹니다.
-    ja: Googleが発表当日からパブリッシャー向けの専用オンボーディングを用意したなら、この記事ではrobots.txtとllms.txtでAIクローラーの学習をブロックしつつ引用を許可する実践的な制御戦略を解説します。
-    zh: 谷歌在发布当天就为出版方搭建了专用入口，而本文将讲解如何用 robots.txt 和 llms.txt 阻止 AI 爬虫训练、同时允许引用的实战策略。
+    en: After strengthening search visibility with Google's Preferred Source, complete
+      the picture with a robots.txt strategy for controlling AI crawlers.
+    ko: Google Preferred Source로 검색 노출을 강화했다면, 반대 방향인 robots.txt를 활용한 AI 크롤러 제어 전략으로
+      콘텐츠 접근 권한까지 완성하세요.
+    ja: Google Preferred Sourceで検索表示を強化したなら、robots.txtによるAIクローラー制御戦略でコンテンツアクセス権まで整えましょう。
+    zh: 用 Google Preferred Source 强化搜索曝光后，再借助 robots.txt 的 AI 爬虫控制策略，完善内容的访问权限管理。
 ---
 
-ウェブサイトを持っている人にとって、Google の AI 検索に自分の記事が使われるかどうかは、もう「技術の話」ではなく商売の話になっている。Google は取り込む側の案内は手厚く作り、外す側の説明はほとんど用意していない。入り口の名前は Preferred Source という。
+自分の書いたページがAIの検索回答にどう扱われるかは、サイトを持つ人にとって既に現場の問題だ。Googleが2026年8月20日に公表した仕組みを見ると、違いがはっきりしていた。入る側の機能は大々的に告知された。出る側の方法は、告知されないまま文書の片隅に置かれていた。用意の厚さの違いが、文書の量にそのまま現れていた。入る側には専用文書とボタン用のコードが用意され、出る側は開発者文書の一文にまとめられているだけだった。
 
-Google の AI 検索には、記事の上に AI が作った答えが表示される機能がある。読者が「このサイトを好みの情報源にする」と登録すると、AI の答えの中であなたのサイトが目立つように示される。「好みの情報源」の目印が付くのだ。これが Preferred Source だ。公式の説明文にはこうある。
+## 2026-08-20の発表と文書の更新
 
-> In AI Mode and AI Overviews, your content can be highlighted with a "preferred" badge for users who have selected your site as a preferred source.
-> — [Preferred sources / Google Search Central](https://developers.google.com/search/docs/appearance/preferred-sources)
+発端は8月20日の発表だった。Googleは8月20日、新しい機能を発表した。ユーザーが自分のお気に入りのサイトを検索結果に指定できる。名前は「Preferred Source」だ。ユーザーが普段使うお店をお気に入りとして登録するのと同じ操作で、自分の好きなサイトをAI検索の中で選べるようになる。
 
-つまり、好みの情報源に登録されたサイトの記事には、目印が付いて強調されるということだ。これは Google が 2026 年 8 月 20 日に発表した新しい仕組みである。
-
-## 発表文が映し出す取り込み側の規模
-
-この発表の当日、Google は取り込む側の準備を当日のうちに整えた。発表文は、サイト運営者に登録のやり方を教えるための文書へ直接案内している。発表文の言葉をそのまま引く。
+発表と同じ日に、Googleの開発者向け文書にも新しいページが用意された。この文書には、サイト運営者が読者に選んでもらえるようにするための説明が書いてある。発表文には、サイト運営者に向けて、そのページからボタン用のコードを持ってくるように促す文まである。
 
 > If you're a publisher, you can find the new "Preferred Source" button code in our Google Search Central documentation to get started.
-> — [Personalize search and discover news with preferred sources / Google blog](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
+> — [Personalize search and discover news with preferred sources](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
 
-訳すとこうなる。サイトを運営する人は、Google Search Central の文書にある新しい「Preferred Source」ボタンのコードを見つければ、すぐ始められる。ボタンとは、読者のサイト上に置く「このサイトを好みの情報源にする」という登録ボタンのことだ。
+サイトをAI検索に「入れる」方向には、発表と専用ページとコードがそろって用意された。
 
-実際にどれほど力が入っていたかを確かめるため、発表文の文字を数えた。単語の並びを数えるだけでよい。数え方は簡単で、発表文の中に「preferred source」という言葉が何回出てくるかを数える。出てきた回数は 7 回だった。単数形が 4 回。一方で「外したい」「除外したい」という方向の言葉は、実質的にゼロだった。唯一見つかった「opt out（脱退する）」という言葉は、ニュースレターの申込欄の説明で、検索とは無関係だった。
+## 公式文書の表面にある除外の一文
 
-![8月20日の発表文のテキストを数えた結果、preferred source という表現が7回出てきた。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-announcement-inclusion-vs-exclusion-wording.png)
-
-## 取り込み側専用文書の存在
-
-取り込む側には、発表と同じ日に専用の文書が公開された。Google の検索まわりの公式文書は、Google Search Central という開発者向けサイトにまとまっている。そこには左側に目次があり、文書へのリンクが並んでいる。そのリンクの数を数えると 154 本あった。その中に「preferred-sources」という専用の文書が一本、きちんと存在する。文書には「最終更新 2026 年 8 月 20 日」と記されており、発表された日そのものである。
-
-![Search Central の目次にある154本の道の中に、preferred-sources 専用文書が1本あることを確認した記録だ。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-docs-inclusion-lever-absence.png)
-
-買い物にたとえると分かりやすい。新しいお店がオープンして、店員が町中に招待状を配って歩く。会員になると特典が付くと書かれた紙が、手に取れる場所に置かれている。これが Preferred Source の扱いである。では、会員をやめたいとき、返品したいときはどうか。店の隅の掲示一枚に、小さく手続きが書いてあるだけ。
-
-## 外す側のたった一文
-
-外したい場合の公式の説明は、同じ Google Search Central の中にある「AI features」という文書に集約されている。そこに書かれているのは、たった一文だ。
+AI検索から自分のサイトを外したいとき、公式文書はどう答えているのか。Googleが開発者向けに用意した「AI features」という、検索のAI機能をまとめたページには、こう書いてある。
 
 > To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
-> — [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
+> — [AI features](https://developers.google.com/search/docs/appearance/ai-features)
 
-この一文には、名前が四つ並んでいる。nosnippet、data-nosnippet、max-snippet、noindex。どれも「ページの要約や内容をどこまで見せてよいか」を Google に伝えるための合図である。たとえば nosnippet は「このページは要約して見せないで」という合図だ。noindex はもっと強く「このページは検索結果にすら出さないで」という合図になる。つまり、AI 検索から自分のサイトを外す方法は、既存のこの四つの合図にすべて任されている。
+この一文が、公式文書の表面に見える除外方法のすべてだ。nosnippet などの四つの記号は、ページに小さな印をつけて「この部分は検索の要約に使わないで」とGoogleに伝える仕組みだ。調べた結果、このページで除外を直接示す記号はこの四つが各1回だけ現れた。除外を意味する「opt out」や「exclude」という言葉は0回だった。
 
-同じ文書で「外す」「除外する」を意味する言葉を探して数えてみた。opt out が 0 回、exclude が 0 回だった。AI 検索から抜けるための専用の説明は、この文書の表面には存在しない。
+![公式文書で除外の記法として指し示された四つの印が各1回ずつ現れた](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-cell-docs-exclusion-lever-inventory.ja.png)
 
-![ai-features の開発者文書の表面を数えると、外すための合図は4つだけだった。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-docs-exclusion-lever-inventory.png)
+一文に四つの印を並べただけ、という厚さの薄さは、専用ページとボタンコードを持つ入る側とは対照的だ。
 
-## 自社配信12URLでの指定の着地
+## 取り込み側の専用文書とボタンコード
 
-文書に書いてあるだけでは、現場でそのまま使えるかどうかは分からない。そこで自分たちのサイトで確かめた。手順はこうだ。まず自分のサイトに置いてある「サイトマップ」（サイトの中の全ページの住所録のようなもの）を開く。そこから決めた基準に従って 12 個のページを選び、一つずつ開いて、Google への「見せないで」という合図が本当に埋め込まれているかを数えた。
+Preferred Source の専用ページは、Google開発者文書の案内リストに並ぶ154項目の一つとして存在する。ページはきちんと開け、更新日は発表と同じ8月20日だった。発表文では「Preferred Source」という言葉が7回出てきた。検索結果にAIのまとめを出す「AI Overviews」と、AIだけで答える検索「AI Mode」という名前も合わせて3回現れ、記事の中心に置かれていた。
 
-結果は 0 だった。12 ページのうち、合図が実際に置かれていたページは一つもない。言い方を変えると、0/12 である。つまり「外したい」と思ったときに頼るべき合図は、自分のページのどこにも埋まっていなかった。合図そのものは昔から存在するのに、自社のページには誰も埋め込んでいなかった。
+この入り口は、製品の一部として整えられている。新しい機能には、専用の案内ページ、貼り付けるボタンのコード、告知文が用意されていた。専用ページ、ボタンコード、発表文の三つが、入り口のためにそろえられていた。
 
-![自社のサイトマップから選んだ12個のURLを調べたところ、合図が置かれていたのは0個だった。](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-own-deployment-lever-landing.png)
+## Google-Extendedが検索への掲載に影響しないという公式の文
 
-「一文しかないのは問題ではない。nosnippet や noindex は何年も使われてきた信頼できる合図で、Google は AI 検索を検索の一部として位置づけているのだから、既存の合図で一元化するのは一貫した設計だ。使わないのは運営者の選択だ」という意見は、理屈としては正しい。実際、この文書には「追加の技術条件はない」とも書いてある。
+ここは誤解が起きやすい場所である。Google-Extended を使ってもAI検索には載る、という事実は運営者が知っておくべきことだ。
 
-> There are no additional technical requirements.
-> — [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
+Google-Extended は、サイト側が Google の学習用ロボットを拒否するための設定の名前だ。名前だけ聞くとGoogleのAIを止めるスイッチのように聞こえる。実際、AI検索に載らないようにしようとこの設定を使う運営者もいる。しかし公式文書はこう言っている。
 
-しかし理屈が正しくても、数字は別のことを教えてくれる。発表と同じ日に、取り込む側は専用ページとボタンのコードを手に入れた。外す側は、四つの単語が並んだ一文だけだ。しかもその一文が指し示す合図は、実測した 12 ページのどこにも埋まっていなかった。理屈の整合と、現場の厚みは、別の物である。
+> Google-Extended は、サイトの Google 検索への掲載に影響せず、Google 検索のランキングシグナルとしても使われない。
+> — [Google-Extended / Google Search Central（google-common-crawlers）](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
 
-## robots.txtのAIトークンと検索取り込みの公式な分離
+二回読んでほしい。「AIのスイッチ」に聞こえる道具が、検索に載るかどうかに公式には影響しないと明記されている。しかもAIの答えはGoogle自身の位置づけでは検索の一部だ。AI機能の文書は Google-Extended を「Googleの他のシステム」へ案内している。つまりこの印は、運営者が心配している検索の扉ではなく、別の扉のための印である。
 
-もう一つ、知らないと損をする仕組みがある。robots.txt という、自分のサイトを訪れてよい機械を指定するための約束事のファイルがある。ここに Google-Extended という名前を書いて「見せないで」と指定する方法が知られている。だがこの指定は、検索に影響しないと公式文書が明言している。
+なぜこうなるのか。同じ印でも、制御できる相手の範囲が違うのだ。Google は AI Overviews と AI Mode を検索に内蔵された機能だと決めている。だから検索から外す制御は、昔からある要約の見せ方を指定する記法にまとめられている。Google-Extended はその外側、「他のシステム」の側に置かれる。検索を外すこととは分けられている。専用ページとボタンコードのある側と、一文しかない側の文書の厚みの差は、文書の出来の差ではなく、この決め方の結果である。
 
-> To limit AI training and grounding in some of Google's other systems, read more about Google-Extended.
-> — [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
+![Google-Extendedの節はGeminiやVertexのグラウンディングにのみ言及し、検索への掲載に影響しないと明記されていた](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-cell-falsifier-google-extended-covers-search-ai.ko.png)
 
-この一文の意味は、Google-Extended は「Google のその他のシステム」の話であり、AI 検索の話ではないということだ。さらに Google-Extended の説明文書には、こう明記されている。
+## 自社12ページを調べると、除外の印は一つもなかった
 
-> Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.
-> — [Google-Extended / Google Search Central](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
+「除外の印は昔から検証されてきた標準的な手段であり、Google が AI 機能を検索の一部と位置づけている以上、すでにある表示制御へ一本化するのは筋の通った設計であって、使わないのはサイト運営者の選択だ」というものである。
 
-訳すと、Google-Extended は Google 検索への掲載に影響せず、順位の材料にも使われない、という意味だ。つまり「robots.txt で AI をブロックしたから、うちの記事は AI 検索から外れた」という思い込みは、公式の説明の上では成立しない。実際に自分たちのサイトを調べると、この Google-Extended の指定が二行、書かれていた。検索側の AI 機能を外すつもりで書いたのかどうかは分からないが、公式の説明の上では、その二行は検索には何も変えない。
+この反論の第1段は正しい。除外の印として案内されている四つの道具は、長年使われてきた仕組みだ。Google の文書は追加の技術条件がないことまで明言している。つまり原理としては、道具はあり、あとは使う側の判断だ。
 
-## チームの点検リストに入れる二項目
+しかし、実際に何が配られたかを見ると、同日の扱いは対称ではない。2026年8月20日、ソースに選ばれたいサイト運営者側には、三つの資料が同時に用意された。専用の解説ページ、貼り付けるボタンのコード、そして発表文そのものである。一方、除外したい側の案内は、四つの道具の名前を一行に並べた一文だけだ。文字数にすれば、ごく短い一行である。
 
-サイト運営の点検リストに入れるべき項目は二つある。一つ目は、外したい場合の備えである。自分のページの中で「AI には要約を見せたくない」ページを決め、そこに nosnippet などの合図が本当に埋め込まれているかを確認する。二つ目は、安心のための備えである。「AI をブロックした」という名目の robots.txt の指定は、Google の公式基準では検索への掲載に影響しない。そのことを、チームの文書に引用付きで書き留めておく。安心の勘違いは、この引用文一つで防げる。
+さらに、その一文だけ渡された道具を、当社自身は使っているだろうか。自社の配信サイトから、ページ一覧に基づいて決まった手順で選んだ12ページを点検した結果、その印を実際に置いているページはゼロだった（0/12）。文書のどこかに一行書かれていても、専用ページもボタンも発表もなく、運営者に届く通知もなければ、多くの現場では誰も気づかない。「使わないのは選択だ」という第2段は、案内が少ない除外の側にだけ当てはまる。ソースに選ばれる側の選択肢は、三つの形で大々的に告知された。
 
-ここで読者を二つに分けて、それぞれ「ならこうする」を示す。まず、AI 検索から自分の記事を外したい人。自分のサイトのページをいくつか開き、「このページは要約して見せないで」という合図が実際に付いているか、自分の目で数えること。この調査では 12 ページ中 0 ページだった。次に、逆に AI 検索に自分の記事をもっと使われたい人。ブロックの合図が付いていないことだけ確かめたうえで、Google が新たに開いた Preferred Source の登録手順に従ってボタンを設置すること。
+反論の筋は通っている。それでも、両側に配られた案内の量と目立たせ方が違う以上、この非対称は原理の問題ではなく、実務の現場で実際に起きていることである。
 
-Google はどちらの方向を「基本」にしているのか。文書の厚みを数えれば分かる。取り込む側には発表当日に専用文書とボタンが用意され、外す側には既存の仕組みに吸収された一文だけが残った。文書の量の差は、Google の力の入れ方の差をそのまま示している。
+## 測定方法と統制
+
+
+
+- 三つの対象（開発者文書・発表文・自社配信サイト）を対象に、各ページの元のテキストをそのまま取り出して数えた。
+- 数える前に、結果を歪める可能性のある共通語を差し引く統制を行った。
+- ページの取得は同じ環境と日時で行い、各数値は取得した元のテキストから直接数えたものだ。
+
+![三つの表面を対象に測った測定手順](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-how.ja.png)
+
+## 配信点検チェックリストに追加する二項目
+
+チームの配信点検リストには、二つだけ足せばよい。
+
+1つ目は、除外の印がどこに実際に着地しているかを確認する項目だ。あらかじめ用意したサイト内のページ一覧から標本のページを取り、除外の印が書かれているかを実際に数える。今回の12ページの結果が示すように、設定したつもりと、実際に書かれている事実は一致しないことがある。
+
+2つ目は、Google-Extended が検索への掲載に影響しないという公式の文を、チームの文書に引用として固定しておくことだ。「AIはブロックしたから大丈夫」という安心が再発しないようにするためだ。
+
+やるべきことは、サイトをAI検索に増やしたい人と減らしたい人で変わる。減らしたい人は、自分のページに除外の印が実際に書かれているか、リストを作って数えてみることだ。増やしたい人は、Googleが告知した案内ページ（Googleの開発者文書 Search Central にある Preferred Source のページ）を開き、その手順に従うことだ。
+
+## この判断が覆る条件
+
+公式文書の表面に除外の方法が一つの文しか現れていない、という実測に立っている。したがって、公式文書に除外の印とは別の、AI検索から外れる専用の道が新たに書かれたら、この判断は覆る。
 
 ## この記事が確認できなかったこと
 
-今回測ったのは文書の表面と、自社サイト 12 ページという小さな標本である。Search Console（Google が運営者に見せる管理画面）に実際に外すための操作があるかどうかは、ログインが必要なため確認できていない。また、nosnippet の合図が AI 検索の引用に実際どう効くかの効果も測っていない。次に確認すべきは、管理画面の実際の操作と、他サイトでの合図の設置状況だ。
+今回は三つの対象の表面だけを見た。サイトの表示状態を確かめるGoogleの管理画面「Search Console」がある。その実際の画面にどの操作が現れるかは、ログインが必要なため確かめられていない。また、他のサイトでの除外の印の使用状況や、その印がAIの回答への引用に実際にどんな効果を持つかは、この記事の範囲外だ。次に見るべきは、自社の標本数を増やした上での着地率と、Google側の文書の今後の更新だ。
 
-なお、この判断が覆る条件は一つある。Google の公式説明が変わり、AI 検索から外すための規則が専用の文書と登録手順を持つ日だ。あるいは「ブロックの合図は AI 検索とは無関係」という説明が覆る日も同じだ。その日が来れば、この記事の主張は間違いとみなす。
 
 ## 参考資料
 
-1. [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features) — Google
-2. [Google-Extended / Google Search Central (google-common-crawlers)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers) — Google
-3. [Preferred sources / Google Search Central](https://developers.google.com/search/docs/appearance/preferred-sources) — Google
-4. [Personalize search and discover news with preferred sources / Google blog 발표문 (Aug 20, 2026)](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/) — Google
+1. [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
+2. [AI features / Google Search Central (Google-Extended 分離文)](https://developers.google.com/search/docs/appearance/ai-features)
+3. [Google-Extended / Google Search Central](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
+4. [Preferred sources / Google Search Central](https://developers.google.com/search/docs/appearance/preferred-sources)
+5. [Personalize search and discover news with preferred sources / Google blog](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
+6. [AI features / Google Search Central (スニペット適格条件文)](https://developers.google.com/search/docs/appearance/ai-features)

@@ -1,125 +1,150 @@
 ---
-title: Google Gave Preferred Sources a Product; Leaving AI Answers Rests on Four Snippet
-  Controls in One Sentence
-description: "Google's August 20, 2026 Preferred Sources launch gave the opt-in side a full product — an announcement, a dedicated Search Central page among 154 paths, and button code — while opting out of AI answers is covered by a single sentence naming four snippet controls (nosnippet, data-nosnippet, max-snippet, noindex), which shows what counts: getting in is built for you, getting out is not."
-pubDate: '2026-08-28'
+title: Google built a full product path into Preferred Source, but the way out of
+  its AI search is one sentence of snippet controls
+description: Google shipped a dedicated document, button code, and announcement for
+  showing your site in AI search, while the way to leave AI search sits in one sentence
+  of old snippet controls. We measured all three surfaces and found the exit instruction
+  landed on 0 of our 12 live pages.
+pubDate: 2026-08-29
 heroImage: ../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/hero.png
 tags:
 - google-search
-- preferred-sources
+- preferred-source
 - ai-overviews
 relatedPosts:
 - slug: ai-crawler-control-robots-txt-llms-txt-2026
   score: 0.7
   reason:
-    en: If Google shipped a dedicated publisher on-ramp on day one, this guide covers
-      the hands-on strategy of using robots.txt and llms.txt to block AI training
-      crawls while still permitting citation.
-    ko: 구글이 발표 당일부터 언론사를 위한 전용 온보딩을 만들었다면, 이 글은 robots.txt와 llms.txt로 AI 크롤러의 학습은
-      막고 인용은 허용하는 실전 제어 전략을 다룹니다.
-    ja: Googleが発表当日からパブリッシャー向けの専用オンボーディングを用意したなら、この記事ではrobots.txtとllms.txtでAIクローラーの学習をブロックしつつ引用を許可する実践的な制御戦略を解説します。
-    zh: 谷歌在发布当天就为出版方搭建了专用入口，而本文将讲解如何用 robots.txt 和 llms.txt 阻止 AI 爬虫训练、同时允许引用的实战策略。
+    en: After strengthening search visibility with Google's Preferred Source, complete
+      the picture with a robots.txt strategy for controlling AI crawlers.
+    ko: Google Preferred Source로 검색 노출을 강화했다면, 반대 방향인 robots.txt를 활용한 AI 크롤러 제어 전략으로
+      콘텐츠 접근 권한까지 완성하세요.
+    ja: Google Preferred Sourceで検索表示を強化したなら、robots.txtによるAIクローラー制御戦略でコンテンツアクセス権まで整えましょう。
+    zh: 用 Google Preferred Source 强化搜索曝光后，再借助 robots.txt 的 AI 爬虫控制策略，完善内容的访问权限管理。
 ---
 
-If you run a website or post anything online, Google now treats two opposite wishes very differently. The wish to be shown — "put my site in AI answers and label it as a preferred source" — got a product. It came with a launch announcement, a dedicated documentation page, and copy-paste button code, all on the same day. The opposite wish — "keep my site out of AI answers" — got one sentence in a developer document. That one sentence names four controls and nothing else.
+If you run a website, this matters to you. Google made it very easy to appear in its AI search results. Getting out is different: the official way out is a single sentence buried in technical documentation. When we checked our own 12 live pages, that exit instruction was on none of them.
 
-The one thing to remember: getting in is something Google built for you; getting out is something you must build for yourself. So if you want to know which direction Google treats as the default, don't read the fine print — count the pages.
+So the practical takeaway is this. Google made the path into AI search broad, but the official path out is one sentence. That means you need to check whether that sentence's instructions are actually present on your own pages.
 
-## The announcement gave the opt-in side a full product
+## The announcement and the document update on 2026-08-20
 
-On August 20, 2026, Google announced a feature called Preferred Sources. In plain terms, Preferred Sources lets a reader pick your site as a favorite. When they do, your content gets a "preferred" badge in AI Mode and AI Overviews. These are Google features that answer a question with an AI-written summary instead of a plain list of links.
+On August 20, 2026, Google announced a feature called Preferred Sources. Here is what it is, in plain terms: when someone uses Google's AI-powered search (the kind that writes a summary answer instead of just listing links), that person can pick favorite websites. If they pick yours, Google can highlight your content with a "preferred" badge in those AI answers.
 
-To see how much Google invested in this "get in" direction, we counted the words in the announcement itself. We fetched the announcement page and counted how many times each key phrase appeared. The phrase "preferred source" appeared 7 times — 4 of them in its singular form. It also mentioned Top Stories once, AI Overviews once, and AI Mode twice.
+Google's own documentation describes it directly:
 
-What did not appear? The practical vocabulary of leaving. The only "opt out" in the whole announcement was in a newsletter sign-up line — "You may opt out at any time" — which has nothing to do with search visibility. In other words, the announcement speaks the language of invitation, not the language of exit.
+> In AI Mode and AI Overviews, your content can be highlighted with a "preferred" badge for users who have selected your site as a preferred source.
+> — [Preferred sources / Google Search Central](https://developers.google.com/search/docs/appearance/preferred-sources)
 
-> If you're a publisher, you can find the new "Preferred Source" button code in our Google Search Central documentation to get started.
-> — [Personalize search and discover news with preferred sources](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
+Two terms there need one line each. "AI Mode" and "AI Overviews" are Google's two AI search features. The first is a full conversational search mode; the second is the short AI summary that sometimes appears above the usual list of links.
 
-Notice where that sentence sends publishers: not to a settings screen, but to a documentation page with ready-made code. Google wrote the invitation and also gave you everything you need to accept it.
+Think of a shopping street. On August 20, the shop at one end threw a grand opening: a new sign, a flyer, a staff member explaining how to get in. That shop is Preferred Sources. The other end of the street has an exit nobody marked, and that exit is what this article is about.
 
-![Word count of the August 20 announcement text, where the phrase "preferred source" appeared 7 times.](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-announcement-inclusion-vs-exclusion-wording.png)
+## The exclusion lever on the official docs is one sentence
 
-## The dedicated document the inclusion side received the same day
+Now the other side of the asymmetry. Suppose you own a website and you want the opposite of Preferred Sources. You want your pages to stay in normal Google search but not appear inside the AI answers. Where is the official instruction for that?
 
-An announcement is only as good as what stands behind it, so we checked whether the "get in" direction has a real home. Think of it like a store: a flyer is nice, but is there an actual service desk?
-
-There is. Google's developer help site — called Search Central, the place where Google publishes its rules and instructions for website owners — lists 154 paths in its left-hand navigation. One of them is a dedicated page just for Preferred Sources. When we opened it, the page returned a normal success response, and it carried a "last updated" stamp of August 20, 2026 UTC, the worldwide time standard Google uses — the exact same day as the announcement.
-
-So on a single day, the inclusion lever received three things: a launch post, a dedicated page inside the official documentation, and button code to place on your site. That is a full product launch: a post, a page in the official docs, and ready-to-paste code, all on day one.
-
-For anyone publishing online, the practical effect is that the "get in" path requires almost no research. You follow a link from the announcement, copy the code, and you are in motion the same afternoon.
-
-![A record of finding 1 dedicated preferred-sources document among 154 paths in the Search Central navigation.](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-docs-inclusion-lever-absence.png)
-
-## One sentence is the whole official way out
-
-Now turn the sign around and ask the opposite question: how does a site ask to be left out of AI answers?
-
-The answer lives in a developer document about Google's AI search features. It is a single sentence, and it names four controls:
+It is one sentence in Google's developer documentation. The sentence tells you to use four existing controls, all bundled together:
 
 > To limit the information shown from your pages in Search, use nosnippet, data-nosnippet, max-snippet, or noindex controls.
 > — [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
 
-What are these four words? They are instructions you place on your pages, each one telling Google to show less of a page. A "snippet" is the short text preview Google shows under a link. nosnippet means "don't show that preview." data-nosnippet means "don't show this particular part." max-snippet means "you may show a preview, but only up to a length I set." noindex is the strongest one — it means "leave this page out of your results entirely."
+Those four names are not products. They are small instructions you can place inside a page's underlying code, and each one tells Google's crawler (the program that reads web pages for Google) to show less of that page. One hides the text preview. One hides a specific section. One caps how much preview text is shown. The last one, noindex, removes the page from search entirely, which is a much stronger step than most people want.
 
-That is the whole exit door. To see how thin it really is, we counted the words on that developer page. In the body of the text, each of the four control names appeared exactly once — 4 mentions total, all packed into that one sentence. The words "opt out," "opt-out," and "exclude" appeared 0 times.
+We counted the words on that documentation page. The four exclusion instructions each appear exactly 1 time. The words "opt out," "opt-out," and "exclude", the natural vocabulary for leaving something, appear 0 times in the page's underlying text. There is no dedicated "how to leave AI search" section. There is no button. There is one sentence.
 
-The same page also says there are "no additional technical requirements" for AI features. Read those two facts together and you get the full picture: qualifying for AI answers requires nothing extra, and refusing AI answers requires one sentence naming four snippet controls. Qualifying for AI answers needs no extra setup. Leaving needs a technical instruction that many site owners never hear about.
+So the comparison on the same day is direct: the inclusion direction got a flyer, a sign, and a staff member. The exclusion direction got one sentence in a storage room.
 
-If your team ever asks "how do we keep our content out of AI answers?", the official answer fits on a sticky note. And someone on your team has to find it and place the instructions on your pages.
+![The four exclusion instructions named in the official documentation each appeared exactly 1 time](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-cell-docs-exclusion-lever-inventory.en.png)
 
-![A count of 4 exclusion directives on the surface of the ai-features developer document.](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-docs-exclusion-lever-inventory.png)
+## The inclusion lever has a dedicated document and button code
 
-## The directive we searched for across 12 of our own URLs — and found 0 times
+Compare that with what Google built for the direction of getting in. Preferred Sources has its own full documentation page. We checked that page directly: it exists in Google's developer documentation navigation, it loads correctly, and it is dated "Last updated 2026-08-20 UTC", the same day as the announcement. The words "opt out" appear 0 times on it.
 
-An instruction that exists in a document only matters if it actually lands on real pages. So we checked our own house.
+The announcement itself does not send publishers to a settings screen. It sends them to that documentation, to grab actual code:
 
-We took a sample of 12 URLs from our own site's sitemap — the list of pages a website hands to search engines, like a table of contents of the whole site. On each of the 12 pages, we looked for the kind of instruction Google reads: a small hidden label inside the page (a "meta tag") addressed to Google's crawler that could carry a snippet control.
+> If you're a publisher, you can find the new "Preferred Source" button code in our Google Search Central documentation to get started.
+> — [Personalize search and discover news with preferred sources / Google blog 발표문 (Aug 20, 2026)](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/)
 
-The result: all 12 pages had no such label at all. That is 0 out of 12. The instruction that would remove or shrink our pages in AI answers was not planted anywhere in our own deployment.
+So within one day, the inclusion direction got three things: an announcement, a dedicated document, and copy-paste button code. The exclusion direction, on the same day, got its existing single sentence and nothing new. The speed and weight of the difference is what matters to you: if your team wants to join, there is a page telling them exactly what to do tonight. If your team wants to leave, they have to find one buried sentence first.
 
-![0 directive landings found in a sample of 12 URLs from our own sitemap.](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/log-own-deployment-lever-landing.png)
+There is one more convenience in the inclusion direction. Google's documentation for AI features states the entry requirements in a single sentence:
 
-What did we find instead? We had set three lines in our robots.txt — a text file where a site tells crawlers which areas they may or may not visit. We had blocked a crawler called Google-Extended, and set a content-signal line saying our content may be searched but not used for AI training. Both are honest choices. But as you'll see next, neither one removes our site from AI answers in search. We felt like we had an exit strategy, but we did not actually have an exit.
-
-## The official separation between the AI blocklist and search inclusion
-
-This is the trap worth nailing down, because many site owners (ours included, until we checked) believe blocking Google-Extended keeps them out of AI answers. It does not — Google says so in its own words.
-
-Google-Extended is a named address that a Google crawler looks for. Site owners can use it to limit how their content is used for AI training and for grounding — feeding facts to an AI model — in some of Google's other systems. Here is how the developer document handles it:
-
-> To limit AI training and grounding in some of Google's other systems, read more about Google-Extended.
+> There are no additional technical requirements.
 > — [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features)
 
-Note the phrasing: "Google's other systems." The AI answers built into Search are deliberately not in that list. And the Google-Extended page states the separation outright:
+In other words, getting in is free and instant. Getting out requires editing page code.
+
+## The official sentence that Google-Extended does not affect search inclusion
+
+This is where many site owners get genuinely misled, and it is the most useful fact in this article.
+
+There is a setting called Google-Extended. Its name makes it sound like a switch for Google's AI, and many operators use it believing that setting it blocks their site from AI search. Google's own documentation says otherwise, in plain words:
 
 > Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.
-> — [Google-Extended / Google Search Central](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
+> — [Google-Extended / Google Search Central (google-common-crawlers)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
 
-So the mechanism behind the whole asymmetry becomes visible. Google defines AI Overviews and AI Mode as features inside Search. Because they are inside Search, controlling them is folded into the old, long-established snippet controls — the four names in that one sentence. Anything meant for "other systems" gets pushed to Google-Extended, which officially has no effect on search inclusion. Exit gets absorbed into an existing rule. Entry gets built as a new product. The length of each document reflects that decision.
+Read that twice. The tool that sounds like an "AI off switch" officially does not affect whether your site appears in Google search, and the AI answers are, by Google's own framing, part of search. Google's documentation for AI features points Google-Extended to "some of Google's other systems." In plain terms, this token is for other Google products, not for the search results you were worried about.
 
-A fair objection deserves an honest hearing. Someone might say: one sentence is not a scandal. The four controls — nosnippet and noindex among them — are years-old, battle-tested standards that Google has documented for a long time. If Google treats AI features as part of Search, folding their controls into snippet controls is consistent design, not neglect. And if a site owner never uses those controls, that is their choice, not a missing lever. Within its own logic, this argument is correct. But it cannot explain the calendar. On the very same day, the inclusion lever received a dedicated page, button code, and a launch post; the exit received one sentence containing 4 tokens, and that sentence's instructions were planted on 0 of the 12 real URLs we measured. The asymmetry is not a reading of intent. It is a number.
+In practical terms, Google-Extended is the control on the wrong door. An operator who sets it is blocking a side entrance while believing the front door is locked.
 
-## Two items to put on your team's checklist
+![There were 0 direct statements that the Google-Extended token controls generative features in search](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-cell-falsifier-google-extended-covers-search-ai.en.png)
 
-Whatever your goal, the fix for the gap between belief and reality is the same: measure. Two line items cover it.
+## Exclusion instructions landed on 0 of our 12 live URLs
 
-**If you want your content out of AI answers**, add this to your checklist for publishing a page update: pick a sample of URLs from your sitemap, open each page, and count whether the "don't show this page's preview" instruction is actually present. Ours was 0 out of 12 — a strategy we believed in but had never planted. Also pin a quote in your team wiki: Google's official words that Google-Extended does not affect inclusion in Google Search, so nobody mistakes "we blocked the AI crawler" for "we opted out."
+Here is the part where we turned this from an observation about documents into a finding about our own website.
 
-**If you want your content in AI answers more often**, the asymmetry works in your favor. Confirm your pages carry no snippet-blocking instructions — leaving them off is what keeps you eligible, since Google says there are no extra technical requirements — and then follow the registration flow Google opened on announcement day: the Preferred Sources page in Search Central, with the button code ready to copy.
+Google's exclusion sentence points to four code-level instructions. For any of them to work, the instruction has to physically exist on the page. So the real question for any site is not whether Google has an exit. It does. The question is whether the exit instruction is actually installed on our pages.
 
-Either way, write the check down where the next deploy can see it. A checklist item survives staff changes; a memory of "I think we handle that" does not.
+We took a decisive sample: 12 URLs pulled from our own sitemap, which is the machine-readable list of a site's pages. We fetched each of the 12 live pages and looked for the small metadata tags (invisible labels inside a page's code) that carry these exclusion instructions.
+
+The result: all 12 URLs had no such tags at all. The instruction count landed at 0 out of 12.
+
+Meanwhile, our deployment did have AI-related settings turned on elsewhere: 2 lines in our robots.txt file, a site-wide instruction file, that block Google-Extended, and one content-preference setting that says search yes, AI training no. In other words, we had done the things that feel like "blocking AI," but none of the things that actually move the lever Google's documentation points to.
+
+![Of our 12 live URLs, the exclusion instructions had landed on 0](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-cell-own-deployment-lever-landing.en.png)
+
+The lesson is simple and uncomfortable: believing you have an exit is different from having the exit installed. We had the belief. The count was 0.
+
+## How we measured and the controls
+
+You should not take a count like "0 of 12" on faith, so here is exactly how it was produced.
+
+We measured three surfaces on August 21, 2026, one day after the announcement:
+
+1. Google's developer documentation page on AI features: we counted occurrences of the exclusion vocabulary and the inclusion vocabulary in the page text, subtracting control terms so navigation menus and unrelated headings could not inflate the counts.
+2. The Preferred Sources documentation page: we confirmed it exists, that it loads, that its last-updated date matches the announcement day, and that "opt out" phrasing appears 0 times.
+3. Our own live deployment: 12 URLs chosen from the sitemap, each fetched and inspected for the metadata tags that carry the exclusion instructions.
+
+![The measurement procedure carried out across the three surfaces](../../../assets/blog/preferred-source-inclusion-only-exclusion-lever-unlanded-2026/explain-how.en.png)
+
+A fair objection is worth addressing head-on, because it almost changed our conclusion. Someone could argue: a one-sentence exit is not a problem. The four instructions (nosnippet, noindex, and their siblings) are years-old, battle-tested standards. Google treats AI features as part of Search, so controlling them through the existing preview controls is a consistent design, and operators who don't use them are making a choice, not suffering from a thin lever.
+
+Within its own logic, that argument is correct. The instructions are reliable and standard. But the asymmetry is still real, and we can put numbers on it. Both happened on the same date. The way in received a dedicated page, button code, and an announcement. The way out received one sentence with only 4 mentions of its instructions. And that sentence's instructions were physically present on 0 of our 12 live pages. A logically sound design and a measurable imbalance can both be true at once.
+
+## Two items to add to your deployment checklist
+
+Everything above reduces to two checklist lines a site team can add tomorrow. Neither requires new tools or budget.
+
+First: keep a list of the URLs where the exclusion instructions are actually installed, and compare it against your intended policy. Pull a sample of pages from your sitemap (we used 12) and check each one for the small metadata tags in question. What you intend and what is physically on the pages are two different facts, and only the second one counts.
+
+Second: record, with the official quote, in your team's shared notes, that the Google-Extended setting does not affect whether your site appears in Google search. Quote Google's own sentence. The goal is to prevent the recurring belief that "we blocked AI" when what was blocked is a different door entirely.
+
+If you want out of AI search: make that list of your pages and count, one by one, whether the exit instruction is actually written on each one, because our own count came back 0 of 12 despite our team believing otherwise.
+
+If you want in: find Google's Preferred Sources guidance document, the one the announcement itself points to, and follow its steps, since the entry requirement is, by Google's own wording, nothing additional at all.
 
 ## What this article could not verify
 
-Every number here is a snapshot of August 20–21, 2026, and documentation pages get updated, so these counts are only valid for that date, not for later. We also did not measure three things: whether the actual Search Console screen — Google's dashboard for website owners — exposes any switch we could not see without a logged-in session, whether the snippet controls truly change which pages AI Overviews cites as sources, and how other websites deploy these instructions — our landing measurement covers only our own 12-URL sample, not the web at large. Next check worth doing: repeat the same counts on a fresh date, and see whether the one-sentence exit has grown a page of its own.
+A few things sit outside what we measured. We only checked the surface of official documents; we did not verify the actual screens inside Google's Search Console tool, which requires a logged-in account, so we cannot say whether a switch exists there. We also measured only our own site's 12 pages, which says nothing about how many other sites have the exclusion instructions installed. And we did not test whether the exclusion instructions actually change AI Overviews citations in practice; we measured the documents and the deployment, not the outcomes.
 
-And here is the condition under which this entire judgment is wrong: if Google's official explanation changes — the day "keep my content out of AI answers" gets its own dedicated guide and sign-up steps like the inclusion side, or the day the claim that the AI blocklist token has nothing to do with AI answers is reversed — count this article's argument as outdated.
+And the condition under which this whole judgment would be wrong: if Google's documentation adds a separate, dedicated path for leaving AI search, distinct from the preview instructions, or states that Google-Extended covers search AI features too, then this article's argument no longer holds.
 
 ## References
 
 1. [AI features / Google Search Central](https://developers.google.com/search/docs/appearance/ai-features) — Google
-2. [Google-Extended / Google Search Central (google-common-crawlers)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers) — Google
-3. [Preferred sources / Google Search Central](https://developers.google.com/search/docs/appearance/preferred-sources) — Google
-4. [Personalize search and discover news with preferred sources / Google blog 발표문 (Aug 20, 2026)](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/) — Google
+2. [AI features / Google Search Central (Google-Extended separation sentence)](https://developers.google.com/search/docs/appearance/ai-features) — Google
+3. [Google-Extended / Google Search Central (google-common-crawlers)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers) — Google
+4. [Preferred sources / Google Search Central](https://developers.google.com/search/docs/appearance/preferred-sources) — Google
+5. [Personalize search and discover news with preferred sources / Google blog announcement (Aug 20, 2026)](https://blog.google/products-and-platforms/products/search/personalize-search-discover-news/) — Google
+6. [AI features / Google Search Central (snippet eligibility sentence)](https://developers.google.com/search/docs/appearance/ai-features) — Google
