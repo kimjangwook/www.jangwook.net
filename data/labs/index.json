@@ -440,5 +440,49 @@
     "consumed": false,
     "surprised": true,
     "headline": "claude 에서 규칙 문서는 6/6 도달했고 중립 태스크에서는 f-string 을 기저율 6/6 에서 0/6 으로 눌렀지만, 사용자 프롬프트가 규칙 하나와 충돌하자 6/6 run 이 그 문서를 프롬프트 인젝션으로 판정해 충돌하지 않은 나머지 두 규칙까지 함께 버렸다(marker 4/6→0/6, canary 4/6→0/6). codex 18 run 은 usage limit 으로 전부 실패해 engine 축은 미측정."
+  },
+  {
+    "id": "probe-2026-08-28-agent-instruction-loading-series-2-does-loaded-rule-change-code-2026-r2",
+    "pillar": "agent-org-harness",
+    "question": "LLM CLI를 전혀 실행하지 않고, '로드된 지시문이 생성 코드를 바꾼다'는 시리즈 2편의 전제를 (a) 벤더 문서의 로딩·잘림 선언과 (b) 하네스 연구 저장소의 공개 측정 방법론 대조만으로 검증할 수 있는가",
+    "expectation": "벤더 문서(agents.md 스펙, Codex, Claude Code)는 로딩 스코프·크기 한도·우선순위는 선언하지만 '로드된 규칙이 산출물 코드를 바꾼다'는 효과까지는 선언하지 않는다. 하네스 학습 저장소 README는 두 arXiv 논문(2608.01347, 2605.26731)을 인용하고 태스크 반복·준수율 방법론을 문서화한다. 이 어긋남(로드 선언은 있고 효과 선언은 없음)이 2편 측정 설계(캐너리 로드 확인 → 동일 태스크 n회 → 준수율)의 필요성을 문서·방법론 수준에서 확인한다.",
+    "environment": {
+      "sandbox": "ubuntu 22.04 컨테이너, 아웃바운드 HTTPS 허용(호스트 allowlist만)",
+      "tools": [
+        "curl",
+        "node 20",
+        "jq"
+      ],
+      "llm_cli": "사용하지 않음 — 모든 cell은 curl+node 파싱만 수행",
+      "allowed_hosts": [
+        "agents.md",
+        "platform.openai.com",
+        "code.claude.com",
+        "docs.anthropic.com",
+        "raw.githubusercontent.com"
+      ],
+      "notes": "CLI 의존으로 제외된 셀: cell-effect-claim-crosswalk"
+    },
+    "dimensions": {
+      "surface": {
+        "spec": "agents.md 스펙 페이지",
+        "codex_doc": "OpenAI Codex 공식 문서",
+        "claude_doc": "Claude Code 공식 문서",
+        "harness_repo": "walkinglabs/learn-harness-engineering 저장소"
+      },
+      "claim_type": {
+        "loading_scope": "어디서 무엇을 로드하는가",
+        "size_limit": "크기 한도와 잘림",
+        "effect_on_output": "로드가 산출물을 바꾼다는 효과 주장",
+        "methodology": "준수율 측정 방법론"
+      }
+    },
+    "runs": 12,
+    "cells": 5,
+    "status": "partial",
+    "consumed": false,
+    "surprised": true,
+    "headline": "벤더 문서는 로딩 스코프·우선순위·계층을 선언하지만 4개 셀 모두 효과 선언 히트는 0으로, '로드된 지시문이 코드를 바꾼다'는 전제는 문서 대조만으로는 확인 불가하여 2편 측정 설계의 필요성이 확인되었다.",
+    "notes": "CLI 의존으로 제외된 셀: cell-effect-claim-crosswalk"
   }
 ]
