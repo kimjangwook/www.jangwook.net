@@ -213,7 +213,7 @@
     "consumed": true,
     "surprised": false,
     "headline": "배선 없는 AGENTS.md 는 0/3 hit 이고 total_input 도 통제 셀과 −2 토큰이라 9,674 바이트 문서가 프롬프트에 아예 들어가지 않는다. @import(17978)·심볼릭 링크(17856)·복사(17862) 세 배선은 전부 3/3 hit 에 문서 한 벌 2,920 토큰만 청구했고, @import 는 복사보다 116 토큰 많을 뿐 문서를 이중 계상하지 않는다. 같은 `@AGENTS.md` 한 줄을 마크다운 코드펜스로 감싸면 ZZFENC85 0/3 에 total_input 15081(배선 없음 수준 +141)로, 캐너리만 안 나오는 게 아니라 로드 자체가 일어나지 않는다.",
-    "consumed_by": "agents-md-three-wirings-equal-cost-codefence-silent-trap-2026"
+    "consumed_by": "reflow-vertical-budget-absolute-px-toll-2026"
   },
   {
     "id": "probe-2026-08-21-search-console-ai-features-opt-out-vs-official-docs-gap-2026",
