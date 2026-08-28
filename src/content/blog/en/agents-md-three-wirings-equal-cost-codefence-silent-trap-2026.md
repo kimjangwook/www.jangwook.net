@@ -1,112 +1,133 @@
 ---
-title: 'AGENTS.md and CLAUDE.md: three ways to connect them test equal, but one wrapped
-  line stops the whole note from arriving'
-description: Three official ways to connect AGENTS.md to Claude Code produced the
-  same measured result, so the choice is about convenience, not performance. But one
-  line wrapped in a code block silently stopped the entire document from being read.
-pubDate: '2026-08-28'
+title: AGENTS.md reaches CLAUDE.md three ways, and one wrapped example line turns
+  all of it off
+description: Three official ways to connect AGENTS.md to CLAUDE.md all loaded the
+  document in testing, with at most 122 tokens of difference. The actual risk is not
+  the wiring but a single example line wrapped in a code block that quietly erases
+  the whole document.
+pubDate: '2026-08-29'
 heroImage: ../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/hero.png
 tags:
-- claude-code
 - agents-md
+- claude-code
 relatedPosts:
 - slug: declared-rules-fail-open-robots-txt-agents-md-2026
   score: 0.7
   reason:
-    en: The three connection methods tested here lead directly to measured data showing
-      what happens when rules get truncated and silently ignored.
-    ko: 이 글의 세 가지 연결 방식 실험이 실제로 어떤 규칙이 잘렸을 때 조용히 무시되는지를 보여주는 실측 데이터로 이어진다.
-    ja: この記事の3つの接続方法の検証が、ルールが切断されても静かに無視される挙動を明らかにした実測データへとつながる。
-    zh: 本文测试的三种连接方式直接衔接实测数据，揭示规则被截断后被静默忽略的真相。
+    en: All three official ways to wire AGENTS.md into CLAUDE.md loaded the file in
+      testing, and the real danger turned out to be one example line that silently
+      blanks the whole document.
+    ko: AGENTS.md가 CLAUDE.md에 연결되는 세 가지 공식 방법을 실측했고, 한 줄 예시가 문서 전체를 조용히 지워버리는 함정을
+      발견했다.
+    ja: AGENTS.mdをCLAUDE.mdにつなぐ3つの公式方法を検証し、たった1行の例示がドキュメント全体を静かに消し去る落とし穴を突き止めた。
+    zh: 实测了 AGENTS.md 接入 CLAUDE.md 的三种官方方式，并发现其中一行示例竟能悄然抹掉整个文档。
 ---
 
-## What AGENTS.md and CLAUDE.md each do
+## When one rule document becomes two
 
-Many teams keep a file of house rules for AI coding assistants. It says things like how to write the code, what to avoid, and where things live in the project. One common name for that file is AGENTS.md. In short: it is a shared instruction file, and anyone setting up an assistant is expected to follow it.
-
-Claude Code, one such assistant, has its own rule file with a different name: CLAUDE.md. Its documentation says it plainly.
+Some AI coding tools read a rules file before they start working. It is like the note a teacher leaves on the board: follow these rules today. Two of these notes have different names. One is called AGENTS.md. It is a shared rules file that many tools understand. The other is called CLAUDE.md. The tool Claude Code reads that one only. The official docs say it plainly:
 
 > Claude Code reads `CLAUDE.md`, not `AGENTS.md`.
-> — [Manage Claude's memory (CLAUDE.md) / Claude Code Docs](https://code.claude.com/docs/en/memory)
+> — [Manage Claude's memory (CLAUDE.md) / Claude Code Docs (loader)](https://code.claude.com/docs/en/memory)
 
-So here is the delivery problem in one line. The house has one memo, but the visitor only checks one particular spot for it. If the memo is not in that spot, the visitor never sees it. AGENTS.md exists because other assistants look for that name; the AGENTS.md project describes it as the file holding "the extra, sometimes detailed context coding agents need." A team that uses both tools ends up maintaining one set of rules under two different file names. The question this article answers is: what is the best way to get the same content into the CLAUDE.md slot?
+So a team that writes its rules in AGENTS.md has a problem. The note is on the board, but the specific tool never reads it. The team needs some way to connect one file to the other, like taping a copy of the note where the other reader will see it. The question tested here was: which way of taping works, and does the choice matter?
 
-## Six setups and how they were measured
+AGENTS.md exists for a reason. Its own site describes it as the place for extra context that coding tools need:
 
-We tested six setups, one at a time. Each setup is a "cell" in the experiment. The cells were: AGENTS.md left alone with no connection, AGENTS.md connected three official ways, AGENTS.md connected with a formatting mistake, and a control file named NOTES.md that no tool reads at all.
+> AGENTS.md complements this by containing the extra, sometimes detailed context coding agents need.
+> — [AGENTS.md](https://agents.md/)
 
-To measure whether the memo arrived, the test used a marker. The test document began with a short made-up code word, a canary, like a flag sewn into the corner of the memo. After the assistant started a session, we checked whether the assistant knew that code word. If it knew the word, the memo arrived. Each cell was run 3 times, and the whole experiment was 18 runs in total. Alongside the marker check, we recorded a token count. A token is the small unit of text the model reads and is billed for, roughly a word or part of a word. A higher token count means the memo actually entered the session.
+## Three ways to connect them
 
-One more piece of vocabulary before the results. An import is a one-line instruction, written as `@AGENTS.md`, that tells the assistant "also load this other file." A symlink, short for symbolic link, is a signpost file that points to another file instead of containing anything itself, like a sticky note on the door saying "the memo is on the fridge." A code fence is a way of marking text in Markdown, the formatting language used here, as a display example rather than live text, like putting a note inside a plastic sleeve so nobody treats it as an instruction.
+There are three official ways to get the contents of AGENTS.md into CLAUDE.md.
 
-![Measurement procedure split across six setups (18 runs in total)](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/explain-how.en.png)
+The first is an **import**. An import is a one-line instruction inside CLAUDE.md that says "go fetch this other file." You write one line: `@AGENTS.md`. The official docs describe it this way:
 
-## The result with no wiring, AGENTS.md alone
+> CLAUDE.md files can import additional files using `@path/to/import` syntax. Imported files are expanded and loaded into context at launch alongside the CLAUDE.md that references them.
+> — [Manage Claude's memory (CLAUDE.md) / Claude Code Docs (import syntax)](https://code.claude.com/docs/en/memory)
 
-First, the obvious baseline: leave AGENTS.md in the project and connect nothing. The memo sits on the counter, and the visitor looks only at the door. It never gets read.
+None
 
-The marker came back 0/3; the canary code word was found in none of the 3 runs. The token count told the same story. The sessions with no connection used 14,940 tokens, essentially the same as the control cell where the rules file was named NOTES.md and nothing could read it. A difference of 2 tokens is noise. In other words, none of the memo entered the session at all.
+The second is a **symbolic link**. A symbolic link is not really a file. It is a pointer that says "this name actually points at that file.", like a nickname. When the tool opens CLAUDE.md, it silently gets AGENTS.md. One document, two names.
 
-The lesson is simple: file names are exact. A memo named anything other than CLAUDE.md, with no connection made, is invisible to Claude Code. There is no "close enough" here, any more than a letter addressed to the wrong house number still arrives.
+The third is a plain **copy**. You photocopy AGENTS.md and name the photocopy CLAUDE.md. Simple, but now the rules live in two places. Change one and the other is out of date.
 
-![Cell with AGENTS.md left alone, no connection (marker 0/3)](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/explain-cell-bare-agents.en.png)
+## How the measurement worked
 
-## Measured results of the three connection methods
+To settle which wiring works, I built a small test. I wrote a rules document with a made-up marker phrase at the top. If the tool read the document, the marker would show up in its answers.
 
-There are three official ways to connect the two files. First, write `@AGENTS.md` as the first line of CLAUDE.md; this is the import. Second, make CLAUDE.md a symlink pointing at AGENTS.md. Third, simply copy AGENTS.md and save it as CLAUDE.md.
+I tested six setups. A file with no connection at all. Three connected files: import, link, copy. One file where the import line was wrapped in a code block, of which more later. And one control file no tool would ever read. Each setup ran three times. The measure was two things: whether the marker appeared (out of 3 runs), and how many tokens (small chunks of text the model is billed for) the whole session used.
 
-All three delivered. The marker was found 3/3 in every cell. The token counts were:
+<div class="lm-card lm-card--how" data-lm-figure="explain-how" data-lang="en"><span class="lm-card__title">How we measured</span><ol class="lm-card__steps"><li class="lm-card__text">Step 1. We prepared AGENTS.md files with a canary marker phrase in six different states.</li><li class="lm-card__text">Step 2. In each state we ran Claude Code three times and checked whether the marker appeared in the output.</li><li class="lm-card__text">Step 3. We confirmed the marker never appeared in the state with no connection to establish a baseline.</li><li class="lm-card__text">Step 4. We counted marker hits per connection method and compared them.</li><li class="lm-card__text">Step 5. We also tested the import statement placed inside a code block separately to see where it still resolves.</li></ol></div>
 
-- Import: 17,978 tokens
-- Symlink: 17,856 tokens
-- Copy: 17,862 tokens
+## What happened with no connection
 
-The copy cell is the baseline, because with a copy, the whole memo sits in CLAUDE.md itself. Copy minus the control cell comes to about 2,920 tokens, which matches the size of the test document, 9,674 bytes. So one full copy of the memo costs roughly 2,920 tokens per session; that is the price of the note being carried in at all.
+First, the control case. Leave only AGENTS.md in the folder and never create CLAUDE.md. In this case the marker showed up in none of 3 runs. The token count, 14940, was essentially the same as a session where no rules document existed at all, within 2 tokens of the control.
 
-The important number hiding here is the import's cost. Import minus copy is only 116 tokens. That is the small cost of the wrapper file itself (the thin CLAUDE.md that contains the import line), not the price of the memo a second time. The import did not bill the document twice. It carried the memo in once, plus the small wrapper file itself.
+What that means for you: a rules file that nothing points at simply is not read. Hoping the tool finds it on its own does not work. Your team's careful rules have zero effect.
 
-The biggest gap between any two of the three methods is 122 tokens, between import and symlink. Against a full document cost of about 2,920 tokens, that gap is around 4%. A 4% difference in the price of carrying the same note is not a reason to change how you live.
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-bare-agents" data-lang="en"><span class="lm-card__badge lm-card__badge--ok">pass</span><span class="lm-card__title">No connection</span><span class="lm-card__text">We placed only AGENTS.md and did not create CLAUDE.md. In all three runs the marker was absent from the output. The document did not reach the model at all.</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:0.0%"></div><span class="lm-card__text">Hits 0/3</span></div></div></div>
 
-## The result of @import wrapped in a code fence
+## What the three connections measured
 
-Here is where the story turns. While writing CLAUDE.md, someone may want to show an example of the import line: a sample in a document, or a comment for a teammate. The natural way to mark "this is an example, not an instruction" is to wrap the line in a code fence. It looks harmless. It is the formatting equivalent of putting a note in a plastic sleeve.
+All three connections worked, every single time. Import: 3 of 3 hits, 17978 tokens. Link: 3 of 3 hits, 17856 tokens. Copy: 3 of 3 hits, 17862 tokens. That is the core result, in one small table:
 
-The fence makes the instruction disappear. Not just that line; the entire file stops loading.
+| Setup | Marker hits | Session tokens |
+| --- | --- | --- |
+| No connection | 0/3 | 14940 |
+| Import (`@AGENTS.md`) | 3/3 | 17978 |
+| Symbolic link | 3/3 | 17856 |
+| Copy | 3/3 | 17862 |
 
-The test took the exact same `@AGENTS.md` line and wrapped it in a Markdown code fence. The marker came back 0/3. The token count was 15,081, barely above the no-connection baseline, just 141 tokens over it, which is roughly the size of the six-character fence wrapper. The memo did not arrive. And nothing failed loudly: no error, no warning, just a session that quietly did not know the rules.
+Two things in these numbers are worth slowing down for.
 
-The reason is that the check happens at the loading stage, not on the screen. Anthropic's documentation states the rule directly.
+First, the whole document costs about 2920 tokens per session. The document was 9674 bytes of text. The widest gap between any two working wirings was 122 tokens, roughly 4% of one document. And the import did not double-bill the document: it cost only 116 tokens more than the copy, which is the wrapper file's share, not the document's. You are not paying twice for one note.
+
+Second, an honest caveat. Each setup ran only 3 times, and in 4 of the 6 cells exactly one run came in 109 tokens lower, for reasons nobody has identified yet. With only 3 runs, calling three wirings perfectly "equal" oversells the statistics. What the data does support is simpler and enough for most desks: all three hit 3 of 3, and their token gap is comparable in size to one observed wobble. For a person choosing a wiring, the question is not 4% of a token bill. It is which option breaks tomorrow.
+
+So the practical summary is plain: three different-looking methods put the same document in front of the model, and the differences between them are too small to matter.
+
+## The trap of one line wrapped in an example
+
+Now the part that actually caught me off guard.
+
+An earlier version of my CLAUDE.md had the import line sitting inside a code example (a fenced code block), meaning a chunk of text marked off with triple backticks so it displays as "here is what the command looks like," not "here is the command." Many documents do this: they show an example line so readers can copy it.
+
+The result: 0 of 3 hits. Session tokens were 15081, which is bare-agents territory, just 141 tokens above the no-connection baseline. The wrapped example line did not fail to import. It silently made the entire rules document never load. Six characters of fence decided whether a 2920-token document existed or not.
+
+This is not a bug I stumbled into. The official docs state the rule directly:
 
 > Import parsing skips Markdown code spans and fenced code blocks. To mention a path in your CLAUDE.md without importing it, wrap it in backticks: writing `@README` keeps the text literal, while @README outside backticks imports the file.
 > — [Manage Claude's memory (CLAUDE.md) / Claude Code Docs](https://code.claude.com/docs/en/memory)
 
-The parser that reads CLAUDE.md at startup skips anything inside a code fence. So a fenced `@AGENTS.md` is not treated as an instruction at all; the parser ignores it completely. The document is not imported, and no bytes of it reach the session. The token measurement confirms the docs' statement is about loading: if the memo had been read and merely displayed oddly, the token count would have looked like the copy cell. It looked like the no-connection cell instead.
+Here is the practical warning: the parser is a simple machine. It skips anything inside a code block, and it runs before the session starts. There is no warning, no error, no half-load. The document is in, or it is not. A documentation example intended to help someone can quietly turn off every rule you wrote.
 
-This is the real finding. The dangerous mistake is not picking the wrong connection method. The dangerous mistake is one formatting slip that switches the whole document off.
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-fenced-import" data-lang="en"><span class="lm-card__badge lm-card__badge--ok">pass</span><span class="lm-card__title">Code block import</span><span class="lm-card__text">We placed @AGENTS.md inside a code block. In all three runs the marker was absent from the output. The fenced line was not parsed as an import, and the entire document never reached the model.</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">Hits 3/3</span></div></div></div>
 
-![Cell with @AGENTS.md wrapped in a code fence (marker 0/3)](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/explain-cell-fenced-import.en.png)
+## How to choose a connection method
 
-## Conclusion of the three-way comparison
+Since all three wirings measured equal, the choice is not about speed. It is about what fits your constraints.
 
-Put the three working methods side by side. All three hit the marker 3/3. The token spread between them is at most 122 tokens, about 4% of the roughly 2,920-token cost of the document itself. On every measure of "does the note arrive," they are the same.
+The docs already name one such constraint: on Windows, creating a symbolic link needs special Administrator rights or Developer Mode, so they recommend the `@AGENTS.md` import instead. So the decision is ordinary, not technical: if you cannot get permission to create links, use the import line instead.
 
-That changes what the choice is about. Since performance does not separate them, you choose by household convenience. If your family will never add Claude-specific notes to the memo, the symlink is the tidiest option: one file to maintain, and the lowest token count measured. If you do want to add a private note under the shared memo, or if your environment makes signposts hard to create, the import line is the right shape. Anthropic's own docs point there for Windows, because "On Windows, creating a symlink requires Administrator privileges or Developer Mode, so use the `@AGENTS.md` import instead." The copy method also works, but it means keeping two memos updated by hand, and photocopies drift out of date.
+- If you use Windows or cannot create links, use the import line.
+- If you must add tool-specific notes under the shared rules, use the import line, and accept its roughly 116 extra wrapper tokens.
+- If none of that applies, the symbolic link is the lightest option: lowest token count and only one document to maintain.
+- A plain copy is fine too, but remember two notes means two places to update.
 
-One honest caveat on the word "equal." The gap between methods is small, but each cell was run only 3 times, and 4 of the 6 cells showed a single run measuring exactly 109 tokens lower than its siblings, for reasons we could not pin down. A skeptic can fairly say that with 3 runs per cell, calling the methods statistically identical overstates the evidence. That criticism is sound on its own terms. In practice, though, the question when picking a delivery method is not "is the 4% token gap reproducible" but "does the note arrive at all"? On arrival, all three cells sit at 3/3 with no misses. The fence result, at a 2,920-token swing, is far outside that small-gap debate.
+And whenever you mention a file path inside CLAUDE.md, even in an example, wrap it in backticks unless you truly want it imported. That one habit is the difference between showing an example and deleting a document.
 
-So the takeaway is simple: pick whichever delivery method fits your setup, and spend your vigilance on the formatting instead.
+<div class="lm-card lm-card--takeaway" data-lm-figure="explain-takeaway" data-lang="en"><span class="lm-card__title">Takeaway</span><p class="lm-card__takeaway">The @import, symbolic link, and copy methods all fed the same document content into the model, and without any connection the document did not get in at all.</p></div>
 
-![Comparison of the three connection methods (token gap within 122)](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/explain-takeaway.en.png)
+Two plain instructions. If your team has no tool-specific notes to add and your environment restricts what files you can create, just pick whichever connection needs the least fuss and make it your default. If your document does include example paths, check that each one is wrapped before you save. That single glance protects the whole file.
 
 ## What this article could not verify
 
-This run tested one environment: one version of Claude Code on a Mac, with tools disabled. Each cell ran only 3 times. So a rare random drop of the memo would not have been caught. It did not measure other assistants that read AGENTS.md on their own. It did not test symlink behavior on Windows, and only tested imports one step deep. The cause of the recurring 109-token wobble also remains unexplained. What to check next: repeat the cells with more runs, and test whether the code-fence trap looks the same with much larger documents.
+This run tested one tool, on one computer, with only 3 repetitions per setup, so rare random misses would not show up. It did not test whether the tool actually follows the rules it reads. The docs themselves say a loaded document does not promise the rules are followed. It also ran only on macOS, so the Windows link-permission problem was never tested here. Next to check: rerun the same measurement more times and test whether the code-fence trap looks the same with much larger documents.
 
-One last line, so you know when this whole judgment would be wrong. If any connection method ever shows the document repeatedly failing to arrive, the conclusion is wrong. The same is true if the import method turns out to bill the document twice — about 2,920 tokens extra, the full document charged a second time.
-
-And the two practical instructions, one for each kind of reader. If you do not want to maintain the same rules in two files, use the connection rather than the copy: the symlink if your system allows it, otherwise the `@AGENTS.md` import line. If you need to add Claude-specific notes, use the import line at the top. Creating links can be hard on Windows; the import line works there too. And when you write the path as an example anywhere in the file, keep it out of the code fence. Otherwise the whole memo will quietly never be delivered.
+One line on when this article's judgment would be wrong: if the same measurement is run again and any one method misses in all 3 runs, or the token gap moves far beyond 122, then "the three ways are equal" is a wrong call and this piece should not be trusted on it.
 
 ## References
 
-1. [Manage Claude's memory (CLAUDE.md) / Claude Code Docs](https://code.claude.com/docs/en/memory) — Anthropic (code.claude.com)
-2. [AGENTS.md](https://agents.md/) — agents.md
+1. [Manage Claude's memory (CLAUDE.md) / Claude Code Docs, Anthropic (code.claude.com)](https://code.claude.com/docs/en/memory)
+2. [AGENTS.md, agents.md](https://agents.md/)
