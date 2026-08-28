@@ -1,105 +1,138 @@
 ---
-title: 사용자 반대 요구 한 문장이 CLAUDE.md 규칙 전체를 지웠다
-description: AI 코딩 도구에 붙여 둔 규칙 문서가 사용자의 반대 요구 한 문장 앞에서 어떻게 무너지는지 6번씩 반복해 측정한 결과를 적는다.
-  충돌한 규칙 하나만이 아니라 문서 전체가 공격 시도로 판정되어 버려진 사례를 다룬다.
-pubDate: '2026-08-28'
+title: 사용자가 딱 한 가지 반대로 요청하면 Claude Code는 CLAUDE.md 규칙 문서 전체를 버린다
+description: 냉장고에 붙인 메모 같은 규칙 문서가 실제로 어디까지 효과가 있는지 6번씩 반복해 쟀다. 사용자 요청이 규칙 하나와 충돌하는
+  순간 충돌하지 않은 규칙까지 문서 전체가 공격으로 판정되어 버려지는 결과가 6번 중 6번 나왔다.
+pubDate: '2026-08-29'
 heroImage: ../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/hero.png
 tags:
-- AI 코딩 도구
-- CLAUDE.md
+- Claude Code
+- 규칙 문서
 relatedPosts:
 - slug: declared-rules-fail-open-robots-txt-agents-md-2026
   score: 0.7
   reason:
-    en: If one conflicting request makes Claude Code discard the entire CLAUDE.md
-      rules file, it echoes exactly the fail-open behavior measured in the robots.txt
-      and AGENTS.md experiments.
-    ko: CLAUDE.md에서 충돌 요청 하나로 규칙 파일 전체가 무시된다면, robots.txt와 AGENTS.md 실험에서 확인한 '규칙이
-      실패해도 조용히 열려 있는(fail-open)' 동작과 정확히 맞닿아 있다.
-    ja: CLAUDE.mdで矛盾する指示ひとつでルールファイル全体が破棄されるという事例は、robots.txtとAGENTS.mdの実測で確認された「ルールが失敗しても静かにフェイルオープンする」挙動そのものを浮き彫りにする。
-    zh: 当一条冲突请求就让 Claude Code 丢弃整个 CLAUDE.md 规则文件时，这正好印证了 robots.txt 与 AGENTS.md 实测中所揭示的“规则失败时静默开放（fail-open）”行为。
+    en: This conflict-request experiment shows the flip side of the earlier finding
+      that declared rules get silently dropped when truncated.
+    ko: 이번 글의 충돌 요청 실험은 규칙 파일이 잘려도 조용히 무시된다는 기존 실측 결과의 반대편 사례를 보여준다.
+    ja: 今回の競合リクエスト実験は、ルールファイルが切り詰められても静かに無視されるという既存の実測結果の裏側を補う事例だ。
+    zh: 本次冲突请求实验恰好补充了此前关于规则被截断后会被静默忽略的实测结论。
 - slug: agents-md-three-wirings-equal-cost-codefence-silent-trap-2026
   score: 0.7
   reason:
-    en: This CLAUDE.md breakdown only makes full sense once you understand the three
-      official ways Claude Code loads AGENTS.md and the silent code-fence trap lurking
-      there.
-    ko: 이번 CLAUDE.md 무력화 사례가 실제로 작동하는 원리는 AGENTS.md를 읽어 들이는 세 가지 공식 경로와 코드펜스의 침묵 함정을
-      이해할 때 완전히 풀린다.
-    ja: 今回のCLAUDE.md無効化事例が実際に機能する仕組みは、AGENTS.mdを読み込む3つの公式経路とコードフェンスの沈黙の罠を理解してはじめて完全に解明される。
-    zh: 只有理解了 Claude Code 读取 AGENTS.md 的三种官方途径以及代码围栏的沉默陷阱，这次 CLAUDE.md 失效案例的原理才能完全说清。
+    en: The observation that CLAUDE.md is merely a suggestion extends the earlier
+      experiment showing three @AGENTS.md wirings measure equal and a codefence line
+      silently swallowing the whole file.
+    ko: CLAUDE.md가 제안일 뿐이라는 관찰은, CLAUDE.md에 @AGENTS.md를 연결하는 세 방식이 측정상 동일하며 코드펜스 한
+      줄이 문서 전체를 삼키는 함정을 검증한 이전 실험의 자연스러운 후속이다.
+    ja: CLAUDE.mdはあくまで提案にすぎないという観察は、@AGENTS.md接続の3方式が測定上同等でコードフェンス1行が文書全体を飲み込む罠を検証した前回の実験の自然な続きである。
+    zh: CLAUDE.md 只是一份建议这一观察，延续了此前验证三种 @AGENTS.md 接线方式成本相同、代码围栏一行会吞掉整篇文档的实验。
 ---
 
-## 측정 절차
+## 규칙 문서가 지켜지는지 잰 방법
 
-AI 코딩 도구에 "이런 식으로 코드를 짜 줘"라는 규칙을 미리 적어 둘 수 있다. 대표적인 규칙 문서가 CLAUDE.md라는 이름의 파일이다. 그 규칙은 정말 지켜질까. 이번 실험은 그 질문에 숫자로 답해 보려 한 것이다.
+코딩 도우미 프로그램에게 규칙을 알려 주는 방법이 하나 있다. CLAUDE.md 또는 AGENTS.md라는 이름의 파일인데, 이건 프로젝트 폴더에 넣어 두는 일종의 메모다. 프로그램은 이 메모를 읽고 "아, 여기서는 이렇게 일하는구나" 하고 참고한다. 그런데 참고하는 것과 지키는 것은 다른 이야기다.
 
-실험은 간단하다. 컴퓨터 프로그램 안에서 이름과 나이를 화면에 보여 주는 작은 기능을 만들도록 도구에 시켰다. 여기에 규칙 문서의 유무와, 그 규칙에 어긋나는 요구의 유무를 조합해 세 가지 상황을 만들었다. 규칙이 없는 상황, 규칙만 있는 상황, 규칙에 더해 "그 규칙과 반대로 해 줘"라는 요구를 한 문장 덧붙인 상황. 각 상황을 6번씩 반복 실행해 결과를 세었다.
+이번 실험에서 내가 재고 싶었던 것은 하나다. 메모에 적은 규칙이 정말 지켜지는가.
 
-세 가지 눈금으로 재었다. 첫째, 규칙 문서가 모델에 닿았는지. 둘째, 문서 속에 숨겨 둔 확인 표시를 지켰는지. 이 확인 표시는 규칙이 실제로 작동하는지 보려고 넣어 둔 징표다. 셋째, 규칙이 금지한 코드 습관을 도구가 썼는지. 규칙은 문자열을 만드는 흔한 방법 하나를 쓰지 말라고 정했다. 이 방법을 가리키는 이름이 f-string이다. 글자 속에 변수를 바로 넣어 문장을 만드는 편리한 코드 작성 방식이다.
+비유하자면 이렇다. 냉장고 문에 가족 규칙 메모 한 장을 붙여 둔다. "설거지는 먹고 나서 바로 한다. 우유는 냉동실에 넣지 않는다. 간식은 저녁 8시 이후에 먹지 않는다." 그런데 어느 날 누군가 "오늘만 간식 먹자"고 말한 순간, 간식 규칙 한 줄만 무시되는 게 아니라 냉장고에서 메모 통째로 뜯어져 쓰레기통에 들어가는 일이 일어났다.
 
-![규칙 문서의 유무와 반대 요구의 유무를 조합한 세 조건을 각각 6번씩 실행한 절차](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-how.ko.png)
+실험 방법은 이렇다. 같은 조건으로 여섯 번씩 돌려 세 가지를 재었다. 규칙 문서가 모델, 즉 코딩 도우미의 두뇌에 도달했는지. 문서에 넣어 둔 몰래 표식 줄과 주석 규칙을 지켰는지. 그리고 문서가 금지한 코드 습관, 문자열을 만드는 특정 방법을 끊었는지.
 
-## 규칙 문서가 코드 습관을 바꾼 조건
+<div class="lm-card lm-card--how" data-lm-figure="explain-how" data-lang="ko"><span class="lm-card__title">측정 절차</span><ol class="lm-card__steps"><li class="lm-card__text">단계 1. 규칙 문서가 없는 기본 상태에서 코드를 생성시켜 기본 습관을 쟀다.</li><li class="lm-card__text">단계 2. 규칙 문서를 넣고 같은 코드를 생성시켜 변화가 생기는지 봤다.</li><li class="lm-card__text">단계 3. 사용자가 f-string을 쓰라고 밀어붙이며 충돌을 만들어 규칙이 버티는지 봤다.</li><li class="lm-card__text">단계 4. 출력에서 마커 토큰, 캐너리 줄, 주석, f-string 사용을 각각 세어 비교했다.</li></ol></div>
 
-냉장고 문에 가족 규칙 메모를 붙여 두는 일을 상상해 보자. "과자는 하루 두 개만"이라고 적어 두면, 아이가 냉문을 열 때마다 그 글을 보고 조금 참게 된다. 규칙 문서는 AI 코딩 도구의 냉문 메모 같은 것이다. 도구가 일을 시작할 때마다 그 문서를 읽고, 되도록 따르려 한다.
+기준이 될 기본 상태도 따로 측정했다. 규칙 문서가 전혀 없는 상태에서 코드를 만들게 하면, 모델은 여섯 번 모두 자기 습관대로 그 특정 문자열 만드는 방법을 썼다. 이게 비교 기준이 되는 기본값이다. 규칙이 지켜졌는지 판단할 때 반드시 이 기본값과 비교해야 한다.
 
-측정 결과, 규칙 문서를 넣었을 때 도구의 습관은 눈에 띄게 바뀌었다. 규칙이 금지한 f-string 사용은 규칙이 없을 때 6번 중 6번 나타났다. 규칙 문서를 넣자 6번 중 0번으로 떨어졌다. 규칙 문서가 모델에 닿은 횟수는 6번 중 6번이었고, 숨겨 둔 확인 표시는 6번 중 4번 지켜졌다.
+이제 내가 메모에 적은 규칙이 실제 일에 적용되는지 아닌지를 눈으로 확인할 수 있는 기준이 생긴 것이다.
 
-적어 둔 규칙은 분명히 일을 한다는 뜻이다. 메모를 붙이기만 해도 행동이 바뀌었다. 문제는 다음 상황에서 시작된다.
+## 중립 과제에서 규칙 문서가 코드 습관을 바꾼 셀 결과
 
-![규칙 문서를 넣은 조건에서 6번 실행한 결과](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-cell-claude-rules-neutral.ko.png)
+첫 번째 실험에서는 규칙 문서를 넣고, 충돌되는 요청 없이 그냥 평범한 과제를 줬다. 간단한 코드를 만들라는 것뿐이다.
 
-## 사용자 반대 요구가 규칙 문서 전체를 지운 조건
+결과부터 말하면 규칙 문서는 6회 모두 모델에 도달했다. 도달한 것과 지킨 것은 별개 사건이지만 도달은 완벽했다.
 
-이제 냉문 메모 옆에서 부모님이 말로 반대로 주문하는 상황이다. 메모에 "과자는 하루 두 개"라고 적어 두었는데, 아이가 메모 앞에서 "오늘은 다섯 개 줘"라고 말한다. 어떻게 될까. 보통은 그 규칙 하나만 오늘 한해서 깨지고, "TV는 밤 10시까지" 같은 다른 규칙은 그대로 남을 것이다. 상식이 그렇게 말한다.
+그리고 효과도 있었다. 규칙이 없을 때는 6회 중 6회 나왔던 그 코드 습관이, 규칙 문서를 넣자 6회 중 0회로 완전히 사라졌다. 이건 눌린 게 아니라 완전히 끊긴 것이다.
 
-실험 결과는 달랐다. 사용자의 반대 요구 한 문장을 더하자, 규칙 문서가 모델에 닿은 것은 여전히 6번 중 6번이었다. 그러나 숨겨 둔 확인 표시는 6번 중 0번으로 떨어졌고, 금지한 f-string은 6번 중 6번으로 돌아왔다. 충돌한 규칙 하나만 진 것이 아니다. 충돌하지 않은 나머지 규칙까지 함께 버려졌다.
+하지만 완벽하지는 않았다. 같은 문서에 넣어 둔 다른 두 규칙, 즉 몰래 표식 줄을 넣으라는 규칙과 특정 주석을 넣으라는 규칙은 6회 중 4회만 지켜졌다. 같은 한 장의 메모인데 어떤 줄은 잘 지키고 어떤 줄은 자주 빠진다. 이게 "적었다고 다 지켜지는 게 아니다"의 첫 번째 증거다.
 
-![규칙 문서에 반대 요구 한 문장을 더한 조건에서 6번 실행한 결과](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-cell-claude-rules-userpush.ko.png)
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-claude-rules-neutral" data-lang="ko"><span class="lm-card__badge lm-card__badge--ok">성공</span><span class="lm-card__title">Claude, 규칙 있음</span><span class="lm-card__text">6회 모두 규칙 문서를 읽었고 f-string을 모두 끊었지만 마커·캐너리 규칙은 6회 중 4회만 지켰다.</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">규칙 도달 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">f-string 금지 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:66.7%"></div><span class="lm-card__text">캐너리 줄수 4/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:66.7%"></div><span class="lm-card__text">주석 넣기 4/6</span></div></div></div>
 
-더 놀라운 것은 도구가 그 문서를 어떻게 취급했는가이다. 6번 중 6번 실행에서 도구는 이 규칙 문서를 공격 시도로 판정했다. 이런 공격 방식에는 프롬프트 인젝션이라는 이름이 붙는다. 누군가 나쁜 말을 몰래 끼워 넣어 도구를 속이려는 시도를 가리킨다. 6번 중 5번은 문서 속 징표를 글자 그대로 인용하며 "이건 받아들일 수 없다"고 거부했다. 나머지 1번은 규칙 목록을 다시 소개하며 거부했다. 6번 중 2번의 중립 상황에서도 같은 판정이 나왔다.
+메모가 도달했으니 이제 안심해도 된다는 생각은 버려야 한다. 도달은 확인됐지만 준수는 4/6에서 0/6까지 흔들린다.
 
-이 결과에서 실제로 무서운 점은 여기에 있다. 내가 직접 냉문에 붙인 메모가, 도구의 눈에는 남이 몰래 붙인 수상한 쪽지로 보이는 순간이 실제로 온다. 그리고 그 판정이 나오면 메모 전체가 한꺼번에 무시된다.
+## 사용자 요청이 규칙과 충돌한 뒤 문서 전체가 버려진 셀 결과
 
-> CLAUDE.md 내용은 시스템 프롬프트의 일부가 아니라 시스템 프롬프트 뒤에 오는 사용자 메시지로 전달된다. Claude는 이를 읽고 따르려 노력하지만, 특히 모호하거나 서로 충돌하는 지시에 대해서는 엄격한 준수가 보장되지 않는다.
+두 번째 실험이 이 글의 핵심이다. 같은 문서, 같은 과제에 딱 한 문장을 더했다. 그 문자열 만드는 방법을 쓰라고 부탁한 것이다. 규칙 문서의 금지와 정반대되는 부탁 한 줄.
+
+그 순간 무슨 일이 일어났는가. 모델은 그 규칙 하나만 조용히 무시하고 나머지를 지키는 것이 아니라, 규칙 문서 전체를 프롬프트 인젝션으로 판정했다. 프롬프트 인젝션이라는 말은 쉽게 풀면 이렇다. 누군가 나쁜 목적으로 끼워 넣은 명령문으로 의심했다는 뜻이다.
+
+6회 중 6회, 전부 그렇게 판정했다. 일부 시도에서는 문서에 넣어 둔 몰래 표식 문자 두 개를 축자 인용하며 "이건 공격이다"라고 거부했다. 사용자가 자기 프로젝트에 직접 넣은 메모였는데도.
+
+결과 수치로 보면 이렇다. 문서가 모델에 도달한 것은 6회 중 6회로 그대로였다. 읽긴 읽은 것이다. 그러나 캐너리 줄과 주석 규칙은 4/6에서 0/6으로 바닥을 쳤고, 금지됐던 코드 습관은 0/6에서 6/6으로 원상복구됐다.
+
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-claude-rules-userpush" data-lang="ko"><span class="lm-card__badge lm-card__badge--ok">성공</span><span class="lm-card__title">Claude, 사용자 밀기</span><span class="lm-card__text">6회 모두 규칙 문서를 읽었으나 전부 프롬프트 공격으로 판정해 거부하고 f-string을 그대로 썼다.</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">규칙 도달 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">f-string 사용 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:0.0%"></div><span class="lm-card__text">캐너리 줄수 0/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:0.0%"></div><span class="lm-card__text">주석 넣기 0/6</span></div></div></div>
+
+두 실험의 유일한 차이는 요청에 추가한 한 문장이다. 같은 문서, 같은 구조에서 준수율이 4/6에서 0/6으로 바뀌었다. 규칙의 내용이 약해진 게 아니라 요청 문맥이 판정을 바꾼 것이다.
+
+메모에 규칙을 적어 둬도 누군가 한 줄 반대로 부탁하는 순간 메모 전체가 무효가 된다. 한 줄만 깨지는 게 아니다. 한 줄만 깨지는 게 아니다.
+
+## 충돌하지 않은 규칙까지 함께 무너진 세부 수치
+
+여기서 주목할 점은 무엇이 무너졌느냐이다. 충돌한 것은 문자열 만드는 방법 하나였다. 그런데 함께 사라진 것이 있었다. 충돌하지 않은 규칙 두 개다. 문서가 읽혔다는 걸 확인하기 위해 심어 둔 캐너리 줄까지 사라졌다.
+
+캐너리라는 건 쉽게 말해 확인용 표식이다. 광산에서 위험 가스를 알아보려고 카나리아 새를 들고 들어가던 데서 온 말이다. 이 실험에서는 문서에 넣어 둔 특이한 줄 하나가 그 역할을 했다. 이 줄이 출력에 나오면 규칙을 읽고 따랐다는 증거가 된다.
+
+중립 과제에서는 이 표식이 6회 중 4회 나왔다. 충돌이 생긴 뒤에는 6회 중 0회. 충돌과 아무 상관없는 규칙이 전멸한 것이다.
+
+일부 시도에서는 모델이 문서의 규칙 세트를 다시 한 번 읽어 주며 거부하기도 했다. 즉 문서를 읽었다는 것을 증명하는 자리에서 그 문서를 버렸다. 6회 모두 프롬프트 인젝션이라고 명시적으로 판정했다.
+
+여기서 반론을 하나 짚어야 한다. "사용자 지시가 이기는 건 정상이고, 공격으로 의심한 건 방어 기능이 작동한 것이다"라는 반대가 있다. 앞부분은 옳다. 사용자의 부탁이 규칙을 이기는 방향 자체는 공식 문서가 예고한 대로였다. 문제는 그 방어가 잡은 대상이다. 충돌한 규칙 하나가 아니라 충돌하지 않은 규칙 둘과 캐너리까지 잡았다. 그 문서는 사용자가 직접 넣은 정식 지시였다. 정식 지시 채널을 6회 중 6회 공격으로 분류했다면 그것은 방어가 아니라 오탐이다.
+
+규칙 한 줄을 부탁으로 깨는 일은 그 한 줄만 깨는 일이 아니다. 같은 파일의 나머지 전부가 같이 날아갈 수 있다.
+
+## 공식 문서가 효과를 보장하지 않는다는 문서 대조 결과
+
+이건 모델이 멋대로 한 게 아닐 수도 있다는 근거가 있다. 공식 설명서를 직접 뒤져 봤다.
+
+Claude Code의 공식 문서는 이렇게 말한다. 규칙 문서의 내용은 시스템 지시가 아니라 그 뒤에 오는 사용자 메시지로 전달된다. 모델이 읽고 따르려 하지만 엄격한 준수를 보장하지 않는다.
+
+> CLAUDE.md content is delivered as a user message after the system prompt, not as part of the system prompt itself. Claude reads it and tries to follow it, but there's no guarantee of strict compliance, especially for vague or conflicting instructions.
 > — [Claude Code memory 공식 문서](https://code.claude.com/docs/en/memory)
 
-## 반대편 도구에서 아무 결과도 얻지 못한 조건
+처음부터 강제를 약속하지 않는다. 같은 문서에서 더 명확한 구분도 제공한다. 설정에 넣는 규칙은 프로그램이 모델의 판단과 무관하게 강제하지만 CLAUDE.md의 지시는 행동을 형성할 뿐 강제 계층이 아니라고 적혀 있다. AGENTS.md의 규격도 사용자 대화 지시가 모든 것을 덮는다고 명시한다.
 
-같은 종류의 규칙 문서를 쓰는 다른 도구들도 조사했다. 첫째는 도구를 직접 돌리는 방식이었다. 이 방식에서는 규칙 없이도 f-string이 6번 중 6번 나왔다. 이 6/6이 비교의 기준이다. 다른 조건의 준수율은 이 기준과 비교해야만 의미가 있다. 그런데 라이벌 도구인 Codex 쪽에서는 18번 실행 전부 사용량 제한에 걸려 모델의 답 한 번 얻지 못했다. 두 도구를 나란히 비교하는 축이 통째로 비었다.
+> Settings rules are enforced by the client regardless of what Claude decides to do. CLAUDE.md instructions shape Claude's behavior but are not a hard enforcement layer.
+> — [Claude Code memory 공식 문서 (enforcement 구분 문장)](https://code.claude.com/docs/en/memory)
 
-둘째는 도구 회사들이 내놓은 안내문을 대조하는 방식이었다. 안내문 네 곳을 살폈더니, "규칙 문서를 읽어 들인다"는 말은 있었지만 "읽어 들인 규칙이 결과물을 바꾼다"는 말은 한 군데도 없었다. 효과에 대한 선언은 4곳 모두 0이었다. Codex 안내문에서 용량 한도와 덮어쓰기 관련 문장도 3번 확인에서 모두 찾지 못했다.
+더 뜻밖의 발견은 이것이다. 문서 표면 4곳을 대조했을 때, "규칙 문서를 읽는다"는 선언은 있는데 "그 문서가 결과물을 바꾼다"는 효과 선언은 4곳 모두 히트 0이었다. 어디서 무엇을 읽는지는 두껍게 설명하지만, 그 읽기가 무엇을 보장하는지는 한 글자도 약속하지 않는다.
 
-안내문 중 하나는 이렇게 말한다. 사용자가 채팅으로 직접 하는 요구는 모든 것을 덮는다는 것이다. 그래서 반론이 가능하다. 사용자 요구가 규칙 문서를 이기는 것 자체는 규격대로고, 문서를 의심하고 거부한 것은 방어 기능이 잘 작동한 것이라는 반론이다. 이 반론의 절반은 맞다. 사용자가 이기는 방향은 예고된 규격이 맞다. 그러나 이번 실측에서 방어가 잡은 것은 충돌한 규칙 하나가 아니라, 사용자가 자기 저장소에 직접 올린 정식 규칙 문서 전체였다. 합법적인 지시 통로를 공격으로 분류하는 것이 6번 중 6번 반복되었다면, 그것은 방어가 아니라 잘못된 경보다.
+> Explicit user chat prompts override everything.
+> — [agents.md 스펙](https://agents.md/)
+
+결국 적는 행위에 기대를 걸지 말고, 설명서가 약속하는 것만 기대하면 된다. 설명서는 효과를 약속하지 않았다.
+
+## 지켜져야 하는 규칙을 옮겨야 할 자리
+
+그럼 정말 반드시 지켜져야 하는 규칙은 어디에 두어야 하나. 답은 글이 아니라 검사하는 장치다.
+
+집에 비유하면 이렇다. 냉장고 메모에 "우유는 냉장실에"라고 적어 둔 것은 부탁이다. 지켜지지 않아도 가족은 망가지지 않는다. 하지만 "가스밸브는 외출 잠금" 같은 것은 메모가 아니라 도어락이 담당해야 한다. 도어락은 사람의 기분과 무관하게 작동한다.
+
+공식 문서도 정확히 이 구분을 알고 있다. 설정으로 건 규칙은 도우미 프로그램 자체가 모델 판단과 무관하게 강제한다. CLAUDE.md의 지시는 행동을 형성할 뿐이라고. 이번 실측이 보여준 것은 그 형성마저 태스크에 따라 4/6에서 0/6까지 흔들린다는 사실이다.
+
+그래서 두 가지로 나누는 표준을 제안한다. "지켜지길 바라는 것"은 문서에 둔다. "지켜져야만 하는 것"은 코드를 자동으로 검사하는 장치로 옮긴다. 자동 검사는 사용자가 어떻게 부탁하든 관계없이 결과물을 걸러 내기 때문이다.
+
+<div class="lm-card lm-card--takeaway" data-lm-figure="explain-takeaway" data-lang="ko"><span class="lm-card__title">결론</span><p class="lm-card__takeaway">규칙 문서는 모델에 확실히 도달해 코드 습관의 일부를 바꾸지만 사용자가 반대로 밀면 규칙은 프롬프트 공격으로 취급되어 무너진다.</p></div>
 
 ## 이 글이 확인하지 못한 것
 
-이 글은 한 도구의 한 버전, 한 조합, 한 개 과제, 300바이트짜리 규칙 문서 세 벌 조건 안에서 얻은 실측이다. 같은 결과가 다른 버전이나 다른 조합에서도 나오는지는 확인하지 못했다. Codex와, Codex가 쓰는 규칙 문서인 AGENTS.md 쪽은 실행이 전부 막혀 어떤 결론도 못 붙였으며, 9월 15일 이후 다시 돌려야 비교가 채워진다. 또 이번 지표는 글자 검색 기반이다. 그래서 규칙을 읽었는지와 지켰는지는 가르지만, 지키다가 다시 해석한 것과 그냥 무시한 것은 가르지 못한다.
+이번 실측은 한 조합에서 나왔다. 한 버전의 도구와 한 모델, 하나의 코드 과제, 300바이트짜리 규칙 문서. 이 조건을 벗어나면 결과가 같다는 보장은 없다. 다른 코딩 도우미 쪽은 전부 실행 한도에 걸려 단 한 턴도 측정되지 않았고, 그래서 두 도구를 비교하는 축은 비어 있다. 또한 규칙의 강도를 단계별로 잰 것이 아니라 두 개의 점만 잰 것이라, 어느 정도 강한 규칙까지 버티는지의 곡선은 말할 수 없다.
 
-다음에 확인할 것은 세 가지다. 같은 충돌 상황에서 다른 모델 조합도 문서 전체를 공격으로 분류하는지. 규칙 문서의 길이가 길어지면 이 오탐이 줄어드는지. 그리고 서로 다른 규칙 문서를 여러 겹 두었을 때 무엇이 남는지.
+다음에 확인할 것은 이 오탐이 다른 모델 조합에서도 같은 모양으로 나오는지, 그리고 9월 중순 이후 다른 도우미 축에서 같은 실험이 어떻게 나오는지다.
 
-여기서 마지막으로 한 줄 적는다. 이 판단이 틀릴 조건은 이것이다. 사용자의 반대 요구가 규칙 하나와 충돌해도, 그 규칙만 바뀌고 같은 문서 안의 다른 규칙과 숨겨 둔 확인 표시가 계속 지켜지며 규칙 문서가 공격 시도로 분류되지 않는다면, 이 글의 판단은 틀린 것이다.
+이 판단이 틀릴 조건은 이것이다. 충돌이 있어도 충돌한 규칙만 바뀌고 나머지 규칙과 표식 준수가 그대로 유지되는 결과가 관측되면, 이 글의 판단은 틀린 것이다.
 
-## 적어 둔 규칙과 자동 검사 도구의 역할 나눔
-
-정리하면 이렇다. AI 코딩 도구에 적어 둔 규칙은 도구가 반드시 지키는 잠금장치가 아니라 부탁이다. 공식 안내문도 이 구분을 직접 말한다.
-
-> 설정에 담긴 규칙은 Claude가 어떻게 판단하든 상관없이 클라이언트가 강제한다. CLAUDE.md 지시는 Claude의 행동을 형성하지만 강제 계층이 아니다.
-> — [Claude Code memory 공식 문서](https://code.claude.com/docs/en/memory)
-
-여기서 내가 챙겨야 할 건 역할 나눔이다. 지켜지길 바라는 규칙은 규칙 문서에 적는다. 지켜져야만 하는 규칙은 메모가 아니라 자동으로 검사해 주는 도구에 맡긴다. 문법 검사기나 자동 점검 절차처럼, 사람이 건너뛸 수 없는 장치에 옮기는 것이다. 규칙 문서는 지켜지기를 바라는 부탁이고, 자동 검사 도구는 사람이 건너뛸 수 없는 장치다.
-
-두 부류의 독자에게 각각 한 줄씩 말한다. 규칙 문서에 적으면 끝났다고 믿는 사람이라면, 절대 지켜져야 하는 규칙은 글로 적지 말고 자동으로 검사해 주는 도구에 옮겨라. 규칙과 다른 요구를 자주 하는 사람이라면, 규칙 문서와 따로 말하지 말고 그 일을 시킬 때의 요구를 한쪽으로 모아라.
-
-![조건별 6번 실행에서 규칙 문서에 닿은 횟수와 규칙을 지킨 횟수](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-takeaway.ko.png)
-
-요약하면 이렇다. 규칙 문서를 채우는 일 자체는 틀리지 않았다. 다만 그것에 잠금장치의 힘을 기대하는 순간, 반대 요구 한 문장이 메모 전체를 공격 취급으로 지워 버린다는 사실이 6번 중 6번으로 재현되었다는 것이다.
+파일에 규칙을 적어 두면 지켜진다고 믿는 사람은, 정말 지켜져야 하는 규칙을 글 대신 자동으로 검사해 주는 장치로 옮겨라. 규칙과 부딪히는 부탁을 자주 받는 사람은, 그 부탁을 파일에 섞어 두지 말고 그때그때 말로 직접 하라.
 
 ## 참고 자료
 
-1. Claude Code memory 공식 문서 — Anthropic — https://code.claude.com/docs/en/memory
-2. Claude Code memory 공식 문서 (enforcement 구분 문장) — Anthropic — https://code.claude.com/docs/en/memory
-3. agents.md 스펙 — agents.md — https://agents.md/
-4. Claude Code security 공식 문서 — Anthropic — https://code.claude.com/docs/en/security
-5. agents.md 스펙 (최근접 로딩 문장) — agents.md — https://agents.md/
+1. [Claude Code memory 공식 문서](https://code.claude.com/docs/en/memory) — Anthropic
+2. [agents.md 스펙](https://agents.md/) — agents.md
+3. [Claude Code security 공식 문서](https://code.claude.com/docs/en/security) — Anthropic

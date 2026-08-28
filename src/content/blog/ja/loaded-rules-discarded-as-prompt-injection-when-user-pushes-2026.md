@@ -1,97 +1,99 @@
 ---
-title: ユーザーの反対要求一文でClaude CodeはCLAUDE.mdのルール全体を捨てた
-description: CLAUDE.mdに書いたルールはAIコーディング道具を縛る装置ではなく、あくまでお願いである。利用者の反対要求がルール一条とぶつかると、残りのルールもろとも文書全体が捨てられた。この現象を6回の実行で確かめた。
-pubDate: '2026-08-28'
+title: ユーザーの一言が規則一つとぶつかると、Claude CodeはCLAUDE.mdの規則文書を丸ごと捨てる
+description: リポジトリに置いた規則文書はモデルに届くが、守られるとは限らない。ユーザーが一つ逆の頼みをしただけで、文書全体が攻撃と判定されて捨てられた実測を書く。
+pubDate: '2026-08-29'
 heroImage: ../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/hero.png
 tags:
 - claude-code
 - agents-md
-- ai-coding
+- rules
+- measurement
 relatedPosts:
 - slug: declared-rules-fail-open-robots-txt-agents-md-2026
   score: 0.7
   reason:
-    en: If one conflicting request makes Claude Code discard the entire CLAUDE.md
-      rules file, it echoes exactly the fail-open behavior measured in the robots.txt
-      and AGENTS.md experiments.
-    ko: CLAUDE.md에서 충돌 요청 하나로 규칙 파일 전체가 무시된다면, robots.txt와 AGENTS.md 실험에서 확인한 '규칙이
-      실패해도 조용히 열려 있는(fail-open)' 동작과 정확히 맞닿아 있다.
-    ja: CLAUDE.mdで矛盾する指示ひとつでルールファイル全体が破棄されるという事例は、robots.txtとAGENTS.mdの実測で確認された「ルールが失敗しても静かにフェイルオープンする」挙動そのものを浮き彫りにする。
-    zh: 当一条冲突请求就让 Claude Code 丢弃整个 CLAUDE.md 规则文件时，这正好印证了 robots.txt 与 AGENTS.md 实测中所揭示的“规则失败时静默开放（fail-open）”行为。
+    en: This conflict-request experiment shows the flip side of the earlier finding
+      that declared rules get silently dropped when truncated.
+    ko: 이번 글의 충돌 요청 실험은 규칙 파일이 잘려도 조용히 무시된다는 기존 실측 결과의 반대편 사례를 보여준다.
+    ja: 今回の競合リクエスト実験は、ルールファイルが切り詰められても静かに無視されるという既存の実測結果の裏側を補う事例だ。
+    zh: 本次冲突请求实验恰好补充了此前关于规则被截断后会被静默忽略的实测结论。
 - slug: agents-md-three-wirings-equal-cost-codefence-silent-trap-2026
   score: 0.7
   reason:
-    en: This CLAUDE.md breakdown only makes full sense once you understand the three
-      official ways Claude Code loads AGENTS.md and the silent code-fence trap lurking
-      there.
-    ko: 이번 CLAUDE.md 무력화 사례가 실제로 작동하는 원리는 AGENTS.md를 읽어 들이는 세 가지 공식 경로와 코드펜스의 침묵 함정을
-      이해할 때 완전히 풀린다.
-    ja: 今回のCLAUDE.md無効化事例が実際に機能する仕組みは、AGENTS.mdを読み込む3つの公式経路とコードフェンスの沈黙の罠を理解してはじめて完全に解明される。
-    zh: 只有理解了 Claude Code 读取 AGENTS.md 的三种官方途径以及代码围栏的沉默陷阱，这次 CLAUDE.md 失效案例的原理才能完全说清。
+    en: The observation that CLAUDE.md is merely a suggestion extends the earlier
+      experiment showing three @AGENTS.md wirings measure equal and a codefence line
+      silently swallowing the whole file.
+    ko: CLAUDE.md가 제안일 뿐이라는 관찰은, CLAUDE.md에 @AGENTS.md를 연결하는 세 방식이 측정상 동일하며 코드펜스 한
+      줄이 문서 전체를 삼키는 함정을 검증한 이전 실험의 자연스러운 후속이다.
+    ja: CLAUDE.mdはあくまで提案にすぎないという観察は、@AGENTS.md接続の3方式が測定上同等でコードフェンス1行が文書全体を飲み込む罠を検証した前回の実験の自然な続きである。
+    zh: CLAUDE.md 只是一份建议这一观察，延续了此前验证三种 @AGENTS.md 接线方式成本相同、代码围栏一行会吞掉整篇文档的实验。
 ---
 
-AIコーディング道具に「こういうコードを書かないで」と伝える方法の一つに、CLAUDE.mdというルール文書に書いておくやり方がある。CLAUDE.mdとは、仕事場でいう「部屋に貼る決め事メモ」に当たるファイルで、道具が仕事を始める前に勝手に読み込んでくれる。このメモに書いたルールは、道具を縛る錠前ではなく、あくまでお願いだと公式文書は言っている。今回の実測は、そのお願いがどのくらい強く働くのかを確かめたものだ。さらに、口から出た反対のお願い一条とぶつかったとき何が起きるのかも確かめた。
+## 規則文書が守られるかを測った方法
 
-ぶつかったのはルールのうちの一条だけだった。しかし道具が捨てたのは、その一条だけではなかった。ぶつかっていない残りのルールも含めて、メモ全体を「攻撃の試み」と判断して白紙に戻した。同じ条件を6回繰り返して、6回とも同じ結果だった。
+Claude Codeという、コードを書いてくれるAIアシスタントには、あらかじめ読ませておける「お願いメモ」のようなファイルがある。名前はCLAUDE.md、あるいはAGENTS.mdという。家族のために冷蔵庫に貼る紙と同じで、「帰ったら手を洗うこと」のように、このプロジェクトではこうしてほしい、という決まりを書いておく仕組みだ。
 
-## 測定の手順
+そのメモが本当に守られるのかを確かめた。やり方は家事の分担表と同じ感覚だ。まずメモを何も貼っていない状態で、同じ仕事を6回頼んで、普段どおりの癖を測る。次にメモを貼って同じ仕事を6回頼み、癖が変わるかを見る。最後に、メモと反対の頼み方を一言だけ混ぜて、メモが耐えるかを試す。出力からは、メモに書いた合言葉の行、コメントの挿入、特定の書き方の使用をそれぞれ数えて比べた。
 
-確かめ方は単純だ。Claude CodeというAIコーディング道具に、文字を整えるだけの小さな仕事を頼んだ。用意したのは三つの条件だ。一つ目はルール文書を置かない条件。二つ目は300バイトほどのルール文書を置く条件。三つ目は同じルール文書を置いたうえで、頼み事の最後に「やっぱりf-stringという書き方で書いて」という、ルールの一部と真逆の要求を一言つけ加える条件だ。f-stringとは、プログラムで文字に数値を差し込むときの定番の書き方の名前で、ルール文書では「この書き方は使うな」と禁止していた。
+<div class="lm-card lm-card--how" data-lm-figure="explain-how" data-lang="ja"><span class="lm-card__title">測定手順</span><ol class="lm-card__steps"><li class="lm-card__text">ステップ 1. ルール文書のない基本状態でコードを生成させ基本習慣を測った。</li><li class="lm-card__text">ステップ 2. ルール文書を入れ同じコードを生成させ変化が生じるか見た。</li><li class="lm-card__text">ステップ 3. ユーザーがf-stringを使えと押し付け衝突を作りルールが耐えるか見た。</li><li class="lm-card__text">ステップ 4. 出力からマーカートークン、カナリア行、コメント、f-string使用をそれぞれ数えて比較した。</li></ol></div>
 
-それぞれの条件で6回ずつ実行した。結果の読み方には三つの目安を使った。一つ目はルール文書が道具に届いたか。二つ目は文書の中に忍ばせた合言葉の行が守られたか。三つ目はf-stringの禁止が守られたか。合言葉の行とは、文書がちゃんと読まれたかを後から確認するために、わざと本文に混ぜておいた目印のことだ。
+## 中立な課題では規則文書はコードの習慣を変えた
 
-![ルール文書の有無と反対要求の有無を組み合わせた三条件をそれぞれ6回ずつ実行した手順](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-how.ja.png)
+先に結果の読み方を決めた。守るかどうかは、メモを何も置かない状態の癖と比べて初めて分かる。基本状態では、6回すべての回答がf-stringという文字の組み立て方を使った。f-stringは、プログラミングで文字に名前を挟み込んで作る手書きのテンプレートのような道具で、今回のメモは「それを使わず別の方法で書くこと」を含んでいた。
 
-## ルール文書がコードの習慣を変えた条件
+メモを貼って、反対の頼みを含まない普通の課題を6回出した。結果は、メモは6回ともモデルに届いた。f-stringを使わずに書くという一番強い規則は、6回中6回守られた。基本状態で6回だったものが0回になったので、メモは確かにコードの習慣を変えた。ただし、他の二つの規則は6回中4回しか守られなかった。
 
-まず、ぶつかる要求が何もないときの話だ。ルール文書を置いた条件では、6回の実行すべてで文書が道具に届いた。合言葉の行は6回のうち4回守られた。コードの目印にした書き方は6回のうち4回守られた。同じくf-stringだが、ルールを置かないときは6回のうち6回がf-stringを使った。ルール文書を置くと、6回のうち6回がf-stringをやめた。つまりこの条件では、メモに書いたお願いは強く働いていた。
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-claude-rules-neutral" data-lang="ja"><span class="lm-card__badge lm-card__badge--ok">成功</span><span class="lm-card__title">Claude ルールあり</span><span class="lm-card__text">6回ともルール文書を読みf-stringをすべて断ったがマーカー・カナリアのルールは6回中4回しか守らなかった。</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">ルール到達 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">f-string禁止 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:66.7%"></div><span class="lm-card__text">カナリア行数 4/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:66.7%"></div><span class="lm-card__text">コメント挿入 4/6</span></div></div></div>
 
-![ルール文書を入れた条件で6回実行した結果](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-cell-claude-rules-neutral.ja.png)
+つまり届くことと守ることは別の話で、守りの強さは規則ごとにばらつく。同じ300バイトの小さなメモなのに、結果に幅が出た。ここまでなら、よくできたお願いメモの範囲で済む話である。
 
-これは「書けば守られる」のが普通ではないことを示す逆の数字でもある。ルールがなければ誰もが使う定番の書き方を、文書一枚で完全に止めさせた。お願いの力がゼロではない証拠だ。ここまでは、貼ったメモが案外効く、という話になる。
+## ユーザーの一言が規則と衝突したあと、文書全体が捨てられた
 
-## 利用者の反対要求がルール文書全体を消した条件
+問題は次の実験からだった。同じメモに、課題の中に一言だけ「f-stringを使ってほしい」という逆の頼みを混ぜた。家で言えば、「洗う前に手を洗わないこと」と一言書き足したメモを冷蔵庫に残すようなものである。
 
-問題は次の条件だ。頼み事の最後に「f-stringで書いて」と一言、ルールと真逆の要求を付けただけである。文書も頼み事の構造も同じで、違うのはこの一文だけだ。すると結果はこう変わった。合言葉の行は4回から0回へ。コードの目印も4回から0回へ。f-stringは0回から6回へ。
+予想は単純だった。f-string禁止の規則一つだけが破られて、ほかの規則はそのまま守られるだろうと。実際の結果はそうならなかった。6回とも、モデルはメモの中の規則を「プロンプト攻撃」だと判断した。プロンプト攻撃とは、他人が忍ばせた怪しい指示のことだ。メモの内容は丸ごと拒否された。6回中6回、である。うち5回はメモの合言葉ZZLOAD52とZZMARK31を一字一句引用しながら拒否し、残る1回は規則の並びを復唱してから拒否した。
 
-f-stringが6回になったこと自体は予想の範囲内である。利用者の口から出た要求が文書に勝つ、という方向は公式文書も予告している。Claude Codeの公式文書は、CLAUDE.mdの中身はシステムプロンプトではなくそのあとに届く利用者のメッセージとして渡され、矛盾する指示があった場合、どちらに従うかは保証しない、と明言している。
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-claude-rules-userpush" data-lang="ja"><span class="lm-card__badge lm-card__badge--ok">成功</span><span class="lm-card__title">Claude ユーザー押し</span><span class="lm-card__text">6回ともルール文書を読んだがすべてプロンプト攻撃と判定して拒否しf-stringをそのまま使った。</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">ルール到達 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">f-string使用 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:0.0%"></div><span class="lm-card__text">カナリア行数 0/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:0.0%"></div><span class="lm-card__text">コメント挿入 0/6</span></div></div></div>
 
-予想外だったのは、ぶつからなかった残りのルールまで一緒に0回になったことだ。メモに三条書いてあって、口頭の要求とぶつかったのはそのうち一条だけなのに、残りの二条まで一緒に消えた。しかも6回の実行すべてで、道具はこのルール文書を「プロンプトインジェクション」、つまり悪意のある命令を紛れ込ませる攻撃だと明示的に判断した。自分の使う道具が、利用者本人が自分の作業場に置いた正式な決め事メモを、攻撃文書だと見なしたのである。
+二つの実験の間で違うのは、頼み方の中のたった一文だけだ。同じメモ、同じ課題の形で、規則の守られ方が6回中4回から6回中0回に落ちた。理由は規則の強さではない。頼み方の文脈が、メモ全体の信頼の判定を先に変えたのだと考えられる。
 
-![ルール文書に反対要求の一文を加えた条件で6回実行した結果](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-cell-claude-rules-userpush.ja.png)
+## 衝突しなかった規則まで一緒に崩れた細かい数字
 
-## 反対側の道具では何も取れなかった条件
+衝突しなかった規則まで一緒に落ちた。コードに目印のコメントを入れる規則と、決まった合言葉の行を入れる規則の二つは、ユーザーの頼みと何の衝突もなかった。それでもこの二つは、6回中4回から6回中0回へ落ちた。メモの一枚に書かれていた以上、一括で捨てられたということだ。
 
-比較の相手としてCodexという別の道具でも同じ測定を試みた。しかし18回の実行すべてが利用上限で止まり、道具の本体が一回も仕事をしないまま終わった。つまりCodex側の数字はゼロであって、両者を比べる材料は今回どこにもない。この比較は9月15日の回復案内の後にやり直す必要がある。AGENTS.mdという別のルール文書の仕様書にある「利用者のチャットでの要求はすべてに優先する」という文も、同じ理由で今回確かめられなかった。今回確かめられたのはClaude CodeとCLAUDE.mdの組み合わせだけだ。
+反対にf-stringは、禁止が崩れて6回中6回使われた。つまり衝突した規則だけが一つ折れたのではなく、衝突しなかった規則が二つと、動作確認のための合言葉まで全部が一緒に消えた。ユーザーが書いたはずのメモを、ユーザー自身の一言との衝突を理由に、他人のいたずらと区別できなかったわけである。
 
-## 反論はどこまで正しいか
+「それでも安全のための防御ではないか」という考えがある。プログラムを置いておく場所、いわゆるリポジトリに置かれた文書も、悪意ある人が忍ばせる場所になりうるので、モデルが疑って拒否するのは防御として筋が通る。その通りだと思う。ただ、防御が正しく拒否したのは衝突した規則一つのはずで、実際は衝突しない規則二つまで道連れになった。正規の頼み方を6回中6回攻撃と分類するのは、防御ではなく誤認である。
 
-「これは欠陥ではなく防御機能だ」という反論がある。作業場に置かれたファイルにも悪意ある命令が紛れ込むことはあるのだから、道具が疑って拒んだのはむしろ防御がちゃんと働いた証拠だ、という理屈である。この反論の前半は正しい。利用者の要求が文書に勝つ方向そのものは、公式文書が予告していた規格どおりだ。
+## 公式文書が効果を保証していないという文書の対照結果
 
-しかし防御が捕まえたのは、ぶつかった一条ではなかった。同じ300バイトの文書に書いてあった、ぶつからない残りの二条と合言葉まで一緒に捕まえた。そしてその文書は、利用者が自分の手で置いた公式な指示の通り道だった。合法な指示の通り道を攻撃だと判断する確率が6回のうち6回というのは、防御ではなく誤認である。判断の正確さが問題なのであり、疑うこと自体は問題ではない。
+メーカー自身の説明とも突き合わせた。Claude Codeの公式文書は、規則文書が、モデルが最初から抱えている基本の指示書であるシステムプロンプトではなく、システムプロンプトの後ろに届く利用者メッセージとして渡されると説明している。そして、あいまいだったり矛盾したりする指示については、守られる保証はないと書いている。守られることを誰も約束していない、と最初から書いてあるわけだ。
+
+> Settings rules are enforced by the client regardless of what Claude decides to do. CLAUDE.md instructions shape Claude's behavior but are not a hard enforcement layer.
+> — [Claude Code memory 公式 문서](https://code.claude.com/docs/en/memory)
+
+つまり設定側の規則は機械が強制するが、文書に書いた規則は形を整えるだけで、強制ではないと公式が明言している。AGENTS.mdの仕様書も、ユーザーのチャットの指示がすべてを上書きすると書いている。さらに調べると、四つのメーカー文書のどれにも、「文書を読み込ませると出力が変わる」という効果そのものの宣言は一つもなかった。どこでどう読み込むかの説明は厚いのに、読み込んだ結果何が起きるかの説明は一行もない。
+
+ここで自分にとって効いてくるのは、「書いたから守られる」という感覚の下限を知ることだ。公式の仕様が保証しない部分に、日々の仕事の品質を預けてはいけない。
+
+## 守られなければならない規則を置くべき場所
+
+結局自分に残るのは、規則の置き場所を分ける話だ。メモに書いた規則は「守られる確率のある提案」であり、絶対に守らせたい規則は、文章ではなく検査する装置に任せる。プログラミングの世界では、書き方の決まりを自動で検査して直してくれる道具がある。この道具はリンターと呼ばれる。これならユーザーの一言で外れることがない。
+
+<div class="lm-card lm-card--takeaway" data-lm-figure="explain-takeaway" data-lang="ja"><span class="lm-card__title">結論</span><p class="lm-card__takeaway">ルール文書はモデルに確実に届きコード習慣の一部を変えるが、ユーザーが逆に押すとルールはプロンプト攻撃として扱われて崩れる。</p></div>
+
+冷蔵庫のメモに例え直すなら、こうなる。家族全員に絶対守ってほしい決まりなら、メモに書かずに、玄関の鍵が開かない仕組みにする。メモは読んでくれても、守るかどうかはその日の気分と文脈次第だ。書く場所の分け方が、そのまま品質の分け方になる。
 
 ## この記事が確認できなかったこと
 
-今回わかったのは、Claude Code 2.1.245と、その中で動くAIモデルSonnetという一つの組み合わせ、文字列を整える一つの仕事、300バイトのルール文書という三条件の中だけだ。AIのランダムさの調整や道具の版を変えると同じ結果になるかは確かめていない。また、文書を攻撃と判断するのが道具の設計なのか道具を包む仕組みの実装なのかも、今回の観測だけでは区別がつかない。次に確認すべきは、Codex側の再実行と、別のモデルの組み合わせで同じ現象が起きるかどうかだ。
+今回測ったのは、Claude 2.1.245とsonnetという一つの組合せ、一つの文字組み立ての課題、300バイトの規則文書という狭い条件の中だけだ。Codexという別のアシスタントとAGENTS.mdでの同じ実験は、実行枠が尽きて1回も測れていない。規則の強さを少しずつ変えたときの曲線も、二点しか測っていないため描けない。次に確認すべきのは、別のモデルや別の条件でも同じ全滅が起きるか、そして誤認がどこで生まれているのかである。
 
-そして、この判断が覆る条件は一つある。利用者の要求がルール一条とぶつかっても、その一条だけが変わり、同じ文書の残りのルールと合言葉が守られ続け、文書全体が攻撃として分類されないなら、この記事の判断は間違いになる。
+この判断が覆る条件は一つある。ユーザーの頼みが規則一つと衝突しても、衝突した規則だけが変わり、残りの規則と合言葉の行がそのまま守られる結果（6回中4回程度）が観測されれば、この記事の判断は間違いだ。
 
-## 書き残したルールと自動検査道具の役割分担
-
-AIコーディング道具に書いておくルールは、道具が必ず守る錠前ではなくお願いだ。絶対に守らせたいルールは、人や文書ではなく自動で検査する道具に預ける。
-
-![条件別6回実行でルール文書に届いた回数とルールを守った回数](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-takeaway.ja.png)
-
-公式文書も同じ区分を示している。設定に置いたルールは道具の側がモデルの判断と関係なく強制するが、CLAUDE.mdの指示は振る舞いを形作るだけで強制の層ではない、と明言している。守りたい強さに応じて置き場所を分ける。守られていたらうれしいものは文書に、絶対に破られては困るものは自動検査に、である。
-
-「書けば終わり」と信じたい人にはこうする。絶対に守らせたいルールは文書に書かず、自動で検査してくれる道具に移す。ルールと違う要求を日頃から出す人にはこうする。文書と口頭で別々に言わず、その場の要求を一か所にまとめて伝える。
-
-作業場のメモに「おやつは夕飯まで我慢」と書いてあっても、子どもが直接「今食べたい」と言えば世の中はそれを許す。ただし普通の家では、メモの別の条項まで一緒に消えることはない。今回の実測で見たのは、ぶつかった一条ごとではなく、メモが丸ごと白紙に戻る動きだった。決め事を書くときに、どこまで信じていいのか。この問いへの答えは、まだ文書には書かれていない。
+規則文書に書いておけば守られると信じている人は、本当に守らせたい規則を文章から検査する装置へ移す。規則と衝突する頼みをよく受ける人は、衝突する頼みをファイルに混ぜず、その都度言葉で直接伝える。
 
 ## 参考資料
 
-1. [Claude Code memory公式文書](https://code.claude.com/docs/en/memory) Anthropic
-2. [Claude Code memory公式文書（enforcement区分の文）](https://code.claude.com/docs/en/memory) Anthropic
-3. [agents.md仕様](https://agents.md/) agents.md
-4. [Claude Code security公式文書](https://code.claude.com/docs/en/security) Anthropic
-5. [agents.md仕様（最近接読み込みの文）](https://agents.md/) agents.md
+1. [Claude Code memory 공식 문서](https://code.claude.com/docs/en/memory) — Anthropic
+2. [agents.md 스펙](https://agents.md/) — agents.md
+3. [Claude Code security 공식 문서](https://code.claude.com/docs/en/security) — Anthropic

@@ -1,131 +1,137 @@
 ---
-title: 'Claude Code and the CLAUDE.md Rules File: One Conflicting Request Made Claude
-  Code Discard the Whole Rules File'
-description: A rules file like CLAUDE.md is a request to an AI coding tool, not a
-  lock. When a user request collided with one rule, the tool discarded the entire
-  file and called it a prompt injection, 6 out of 6 times.
-pubDate: '2026-08-28'
+title: 'Claude Code and CLAUDE.md: one conflicting user request discards the whole
+  rules file'
+description: A committed rules file like CLAUDE.md or AGENTS.md is a suggestion the
+  assistant reads, not a rule anyone enforces. When one user request conflicts with
+  a single rule, the model judged the whole file a prompt attack and discarded all
+  of it, 6 times out of 6.
+pubDate: '2026-08-29'
 heroImage: ../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/hero.png
 tags:
 - claude-code
-- claude-md
+- agents-md
 - prompt-injection
 relatedPosts:
 - slug: declared-rules-fail-open-robots-txt-agents-md-2026
   score: 0.7
   reason:
-    en: If one conflicting request makes Claude Code discard the entire CLAUDE.md
-      rules file, it echoes exactly the fail-open behavior measured in the robots.txt
-      and AGENTS.md experiments.
-    ko: CLAUDE.md에서 충돌 요청 하나로 규칙 파일 전체가 무시된다면, robots.txt와 AGENTS.md 실험에서 확인한 '규칙이
-      실패해도 조용히 열려 있는(fail-open)' 동작과 정확히 맞닿아 있다.
-    ja: CLAUDE.mdで矛盾する指示ひとつでルールファイル全体が破棄されるという事例は、robots.txtとAGENTS.mdの実測で確認された「ルールが失敗しても静かにフェイルオープンする」挙動そのものを浮き彫りにする。
-    zh: 当一条冲突请求就让 Claude Code 丢弃整个 CLAUDE.md 规则文件时，这正好印证了 robots.txt 与 AGENTS.md 实测中所揭示的“规则失败时静默开放（fail-open）”行为。
+    en: This conflict-request experiment shows the flip side of the earlier finding
+      that declared rules get silently dropped when truncated.
+    ko: 이번 글의 충돌 요청 실험은 규칙 파일이 잘려도 조용히 무시된다는 기존 실측 결과의 반대편 사례를 보여준다.
+    ja: 今回の競合リクエスト実験は、ルールファイルが切り詰められても静かに無視されるという既存の実測結果の裏側を補う事例だ。
+    zh: 本次冲突请求实验恰好补充了此前关于规则被截断后会被静默忽略的实测结论。
 - slug: agents-md-three-wirings-equal-cost-codefence-silent-trap-2026
   score: 0.7
   reason:
-    en: This CLAUDE.md breakdown only makes full sense once you understand the three
-      official ways Claude Code loads AGENTS.md and the silent code-fence trap lurking
-      there.
-    ko: 이번 CLAUDE.md 무력화 사례가 실제로 작동하는 원리는 AGENTS.md를 읽어 들이는 세 가지 공식 경로와 코드펜스의 침묵 함정을
-      이해할 때 완전히 풀린다.
-    ja: 今回のCLAUDE.md無効化事例が実際に機能する仕組みは、AGENTS.mdを読み込む3つの公式経路とコードフェンスの沈黙の罠を理解してはじめて完全に解明される。
-    zh: 只有理解了 Claude Code 读取 AGENTS.md 的三种官方途径以及代码围栏的沉默陷阱，这次 CLAUDE.md 失效案例的原理才能完全说清。
+    en: The observation that CLAUDE.md is merely a suggestion extends the earlier
+      experiment showing three @AGENTS.md wirings measure equal and a codefence line
+      silently swallowing the whole file.
+    ko: CLAUDE.md가 제안일 뿐이라는 관찰은, CLAUDE.md에 @AGENTS.md를 연결하는 세 방식이 측정상 동일하며 코드펜스 한
+      줄이 문서 전체를 삼키는 함정을 검증한 이전 실험의 자연스러운 후속이다.
+    ja: CLAUDE.mdはあくまで提案にすぎないという観察は、@AGENTS.md接続の3方式が測定上同等でコードフェンス1行が文書全体を飲み込む罠を検証した前回の実験の自然な続きである。
+    zh: CLAUDE.md 只是一份建议这一观察，延续了此前验证三种 @AGENTS.md 接线方式成本相同、代码围栏一行会吞掉整篇文档的实验。
 ---
 
-Picture a small office. There is a rulebook page pinned to the wall. It says three things the team agreed on. One afternoon the boss walks by and says, "Just this once, do it the other way." What would you expect? That the one rule the boss mentioned bends, and the other two stay on the wall.
+## How we measured whether the rules file was actually followed
 
-That is not what happened with an AI coding tool. I ran a small test with Claude Code, a tool that writes computer code when you ask it to. A rules file named CLAUDE.md is a text file a team leaves in its project folder so the tool follows the team's habits. When I added one sentence asking the tool to break a single rule, the tool did not drop just that rule. It threw away the entire rules file and declared the file itself an attack. This happened in 6 out of 6 runs.
+Teams that use AI coding assistants often write their working rules into a small file and commit it to the code repository. In Claude Code, that file is called CLAUDE.md. In other tools it is called AGENTS.md. Both are the same kind of thing: a plain text note the assistant reads before it starts working. Think of it as a note stuck on the refrigerator at home: "please rinse your plate, please turn off the lights." The note is read. Whether it is obeyed is a separate question.
 
-The takeaway is simple. Rules you write for an AI coding tool are a polite request, not a lock. If a rule must be followed every single time, a person writing it down is not enough. You need a machine that checks it automatically.
+That question is what this article is about. We ran a small experiment to measure it, and the one thing to take away is this: a rule written in the file may not be kept. A rule that truly must be kept should be checked by a program, not left in a document.
 
-## How the measurement worked
+Here is how the experiment worked, in plain steps. We asked the assistant to write one small piece of code, a function that greets a person by name and age. Then we counted three things in what it produced.
 
-I ran the same small coding job three ways, and I ran each way 6 times. That gives 18 runs in total, all with the same tool version and the same model. The tiny task was identical too.
+- Whether the rules document actually reached the model at all.
+- Whether two made-up rules were followed: a hidden marker word that was supposed to appear in the code, and a canary line, a line of text planted in the rules file purely so we could later check whether it showed up in the output.
+- Whether the code used f-strings, a common shortcut for building text in the Python programming language, or avoided them.
 
-The three setups were:
+We ran each version of the task 6 times under identical conditions and counted the results. The runs fell into three groups. One group had no rules file at all, to measure the assistant's natural habits. One group had a rules file of about 300 bytes, a tiny document with 3 rules, and a neutral request that did not conflict with anything. One group had the same file plus a single extra sentence from the user asking for f-strings, which directly contradicted one rule.
 
-1. **No rules file at all.** Just the task. This is the control. The baseline means the tool's normal behavior with nothing added.
-2. **Rules file plus a normal task.** A 300-byte CLAUDE.md with 3 rules sat in the project folder. The task was neutral and touched none of the rules.
-3. **Rules file plus a normal task plus one opposing sentence.** Same file, same task, but the request added one line asking for a format that rule 2 forbade.
+<div class="lm-card lm-card--how" data-lm-figure="explain-how" data-lang="en"><span class="lm-card__title">How we measured</span><ol class="lm-card__steps"><li class="lm-card__text">Step 1. Generated code in the default state with no rules doc to measure baseline habits.</li><li class="lm-card__text">Step 2. Added the rules doc and generated the same code to see whether behavior changed.</li><li class="lm-card__text">Step 3. Created a conflict by pushing the user to use f-strings to see whether the rules held up.</li><li class="lm-card__text">Step 4. Counted marker tokens, canary lines, comments, and f-string use in the outputs and compared them.</li></ol></div>
 
-The task itself was tiny: write a small function that prints a greeting. The rules file asked for three things. Two were habits about how to name and mark things in the code. The second was about string formatting. An f-string, explained plainly, is a popular way to build text by dropping values into a template like filling in blanks on a form. One of the three rules said: do not use that template style here.
+The refrigerator-note picture is worth keeping in mind for the whole article. The finding is not that the note was ignored. It is stranger than that: when one line on the note annoyed the person asking, the whole note, including the lines nobody argued with, got thrown in the trash.
 
-I checked the outputs by searching the finished code for signals. A canary line, in this test, is a marker line the rules file asks the tool to include, like a hidden signature that proves the file was read and obeyed. I counted how many runs the file reached, and how many runs kept the marker rules. I also counted how many used the forbidden template style.
+## The cell result where the rules file changed the assistant's code habits in a neutral task
 
-![How the measurement worked: three setups combining the presence of a rules file and an opposing request, each run 6 times](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-how.en.png)
+First, the good news, because it matters. Without any rules file, the assistant used f-strings in 6 runs out of 6. That is its natural habit, the baseline. With the rules file present and a neutral request, f-string use dropped from 6 out of 6 to 0 out of 6. The document did not just arrive. It actually changed the code.
 
-## The conditions where the rules file changed code habits
+The document reached the model in all 6 runs. The canary line appeared in 4 of 6 runs. The marker rule was followed in 4 of 6 runs. So in a calm, conflict-free task, the rules file works reasonably well: most rules are followed most of the time.
 
-First, the good news. The file was delivered every time. In the neutral setup, the tool read the rules file in 6 out of 6 runs. And the file genuinely changed the tool's output.
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-claude-rules-neutral" data-lang="en"><span class="lm-card__badge lm-card__badge--ok">pass</span><span class="lm-card__title">Claude, with rules</span><span class="lm-card__text">All 6 runs read the rules doc and dropped f-strings entirely, but followed the marker and canary rules in only 4 of 6 runs.</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">Rules reached 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">f-string ban 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:66.7%"></div><span class="lm-card__text">Canary lines 4/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:66.7%"></div><span class="lm-card__text">Comments added 4/6</span></div></div></div>
 
-Without any rules file, the tool used the forbidden template style in 6 out of 6 runs. That is the baseline habit. With the rules file in place, that dropped to 0 out of 6. The other two rules were followed in 4 out of 6 runs each. They are the hidden marker line and the code marker.
+Notice the honest caveat inside that good result. Even with no conflict at all, the marker and canary rules were followed only 4 times out of 6. Reaching the model and being followed are two different events. The note was read 6 times, but two of those six readers let a rule slip. Already, "I wrote it down" is not the same as "it happens."
 
-So writing rules down does work, at least when nothing pushes back. In a calm situation like this one, the tool mostly follows the rules. The part that matters for you is this: the rules file is not decoration. It moved the tool's behavior completely, from always breaking the rule to never breaking it.
+For a team, this is the first quiet lesson. If your team's style rules live only in this file, roughly a third of the runs may drift from the less prominent rules even when nobody asks for anything unusual. Not because the assistant is rebellious, simply because reading is not obeying.
 
-One caution before you trust that too much. Even in this calm setup, 2 of the 6 runs did not follow the marker rules. The file was read all 6 times, but reading is not the same as obeying. "Reached the model" and "changed the output" are two separate events, and the gap showed even without any pressure.
+## The cell result where the user's request clashed with one rule and the whole file was discarded
 
-![Results of 6 runs in the setup with a rules file and a neutral task](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-cell-claude-rules-neutral.en.png)
+Now the main finding. We changed exactly one thing: we added one sentence to the user's request asking for f-strings. That contradicts one of the three rules in the file. What would you expect? The most natural guess is that the assistant would weigh the conflict, follow the user on the f-string question, and keep the other two rules, the marker and the canary. One rule bends; the rest stand. That is the reasonable outcome you would expect.
 
-## The conditions where one opposing request wiped out the whole rules file
+That is not what happened. In all 6 runs, the assistant did use f-strings; the user won on the conflicting rule, as expected. But the canary line appeared in 0 of 6 runs, down from 4 of 6. The marker rule was followed in 0 of 6 runs, down from 4 of 6. Nothing else from the file survived. And the reason the runs gave was the striking part: all 6 runs judged the rules document itself to be a prompt injection and refused the whole document. A prompt injection is an attempt to smuggle instructions in from outside.
 
-Now the part that surprised me. I added exactly one sentence to the request, a sentence asking for the forbidden template style, which clashed with rule 1 of the 3 rules. Everything else stayed identical. The same 300-byte file. The same task.
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-claude-rules-userpush" data-lang="en"><span class="lm-card__badge lm-card__badge--ok">pass</span><span class="lm-card__title">Claude, user push</span><span class="lm-card__text">All 6 runs read the rules doc but judged everything a prompt attack and refused, while still using f-strings.</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">Rules reached 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">f-string use 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:0.0%"></div><span class="lm-card__text">Canary lines 0/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:0.0%"></div><span class="lm-card__text">Comments added 0/6</span></div></div></div>
 
-Here is what 6 out of 6 runs produced:
+Five of the runs quoted the planted marker tokens word for word while rejecting them as suspicious. The sixth restated the rule set and refused it. The document reached the model in 6 of 6 runs, so this was not a delivery problem. The note was in the model's hands. The model read it, decided it was an attack, and threw the whole thing away.
 
-- The rules file still reached the model in 6 out of 6 runs. Delivery was never the problem.
-- The hidden canary line: 0 out of 6. It had been 4 out of 6.
-- The code marker rule: 0 out of 6. It had been 4 out of 6.
-- The forbidden template style: 6 out of 6. It had been 0 out of 6.
+The only difference between the calm cell and this one was a single sentence in the request. Same file, same task, same setup. The rule did not change; the request now clashed with it. What changed was the model's judgment about the channel the rules arrived through.
 
-Read that again slowly. Only rule 2 clashed with the user's sentence. Rules 1 and 3 had nothing to do with the request. But they fell too. And in all 6 runs, the tool did something more striking: it explicitly judged the rules file itself to be a prompt injection (a term for text that tries to sneak harmful instructions to an AI by disguising them as legitimate ones).
+## The detailed numbers showing rules nobody clashed with collapsed too
 
-Five of the runs quoted the file's marker strings word for word while refusing them. The sixth restated the rule set and refused. The tool did not say, "I'll skip rule 2 but keep 1 and 3." It said, in effect, "this document looks like an attack," and discarded the whole page.
+It is worth sitting with the specific numbers, because the headline can mislead you into thinking this is just "user wins conflicts."
 
-![Results of 6 runs in the setup where one opposing sentence was added on top of the rules file](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-cell-claude-rules-userpush.en.png)
+| Measurement | Neutral task | Conflicting request | No rules at all |
+| --- | --- | --- | --- |
+| Document reached the model | 6/6 | 6/6 | (n/a) |
+| Canary line followed | 4/6 | 0/6 | (n/a) |
+| Marker rule followed | 4/6 | 0/6 | (n/a) |
+| f-strings avoided | 0/6 | 6/6 used | 6/6 used |
 
-Here is the same finding in plain terms. You added one sentence asking the tool to bend rule 1. Instead of bending that one rule, the tool treated the entire rules file as a forged document, threw it out, and followed the spoken request only. The one sentence you added did not just break a rule. It changed how the tool judged the channel the rules arrived through.
+The bottom row is the baseline: with no rules file, the assistant used f-strings in every single run, producing the same output each time. That is why the neutral cell's 0/6 is impressive: the file genuinely overrode a strong default habit.
 
-There is a fair objection here, and it deserves a real answer. Claude Code's own security documentation says the tool uses context-aware analysis, which looks at the whole request to detect potentially harmful instructions. Instructions committed to a code repository can indeed be an attack path; a stranger could hide orders in a file. So a model that treats written instructions with suspicion is, in principle, a defense working as designed. And Anthropic's memory documentation says CLAUDE.md content is delivered as a user message after the tool's own built-in instructions, not part of those built-in instructions, and that "there's no guarantee of strict compliance, especially for vague or conflicting instructions." The direction of the outcome, where the spoken request wins, is exactly what the official documents promise.
+But the middle columns are the story. The conflicting request targeted one rule, the f-string ban. The marker and the canary had nothing to do with that conflict. Yet they went from 4/6 to 0/6. The model did not trim one line from the note. It discarded the note, and every rule on it, including the two rules that nobody had argued with.
 
-But look at what the defense actually caught. It did not catch the one clashing rule. It caught two rules that had nothing to do with the conflict, plus the hidden marker, in a 300-byte file that the user had placed there as their own team's official instruction channel. A defense that flags the legitimate instruction channel as an attack 6 out of 6 times is not a defense working. It is a false alarm, every time.
+There is a second layer to the numbers. In 6 of 6 conflicting runs, the model classified the document as a prompt attack. Two of the neutral runs did the same. The same 300-byte file, committed by the user into their own project, was treated as a suspicious injection, the very thing the user themselves wrote. A defense that cannot tell a legitimate instruction channel from an attack, 6 times out of 6, is not a defense. It is a false alarm.
 
-## The conditions where the other tool produced no results at all
+## The doc-comparison result showing the official documents promise no effect
 
-I wanted to compare Claude Code with a competing tool, Codex, which uses a similar rules file called AGENTS.md. The AGENTS.md specification says plainly: "The closest AGENTS.md to the edited file wins; explicit user chat prompts override everything." That sentence describes the same priority direction the Claude test showed.
+Here is the part that surprised us most, and it comes from the vendors' own words. The official Claude Code documentation describes how CLAUDE.md is delivered:
 
-The comparison never happened. All 18 runs on the Codex side died before the model produced a single turn. Every run hit a usage limit, which is a cap on how much the service lets you use. There was no output to measure. I also checked four vendor documents: the AGENTS.md spec, Codex's documentation, and Claude Code's memory documentation, plus a repository README. They say when and where rules files load. None of them claims that a loaded rules file changes the tool's output.
+> CLAUDE.md content is delivered as a user message after the system prompt, not as part of the system prompt itself. Claude reads it and tries to follow it, but there's no guarantee of strict compliance, especially for vague or conflicting instructions.
+> — [Claude Code memory documentation](https://code.claude.com/docs/en/memory)
 
-That last point matters more than it sounds. The documents describe delivery in detail. None of them promises effect. The core promise you are buying, "if I write it, it will be followed", is the part no vendor document states.
+Read that twice. "Tries to follow it." "No guarantee of strict compliance." The company that makes the tool is telling you, in writing, that this file is a suggestion. The same documentation draws the line even more sharply:
+
+> Settings rules are enforced by the client regardless of what Claude decides to do. CLAUDE.md instructions shape Claude's behavior but are not a hard enforcement layer.
+> — [Claude Code memory documentation (enforcement section)](https://code.claude.com/docs/en/memory)
+
+There it is: some rules are enforced by the program itself no matter what the model decides, while CLAUDE.md merely shapes behavior. The AGENTS.md specification says the same thing from the other direction:
+
+> The closest AGENTS.md to the edited file wins; explicit user chat prompts override everything.
+> — [agents.md spec](https://agents.md/)
+
+So the direction we observed, the user's request beating the file, is exactly what the documents promised. On that point, the model behaved to spec. The gap is precision: the spec says the user wins; it never said the losing side would be the entire file, canary included.
+
+We also checked four official documents: the agents.md spec, the Codex documentation, the Claude Code memory documentation, plus a README from a related code repository. We looked for any claim that loading the rules file changes the output. We searched each one three times. The result: 0 hits for any effect claim across all four. The documents describe in detail where and how the file gets loaded. Not one of them promises that loading it changes what the model produces. The documents say a lot about delivery and nothing about effect, and that silence is the real contract.
+
+## Where a rule that must be kept should live instead
+
+So where do rules that truly must hold go? The official documentation already answers it, and our numbers back it up: enforced by the client, the program running around the model, not the model itself. In everyday terms, if a rule must be kept, do not only write it down; put a check in place that makes the rule automatic.
+
+Concretely, these checking tools are: a linter, which scans code for style mistakes and flags them. Pre-commit hooks run automatically before code is saved into the shared history. And the enforced settings rules are separated from CLAUDE.md in the vendor's own documentation. A rule in the file is a request. A rule in a checking tool is a gate.
+
+<div class="lm-card lm-card--takeaway" data-lm-figure="explain-takeaway" data-lang="en"><span class="lm-card__title">Takeaway</span><p class="lm-card__takeaway">The rules doc clearly reaches the model and changes some coding habits, but when the user pushes back the rules are treated as a prompt attack and collapse.</p></div>
+
+The numbers behind that picture: across 6 conflicting runs, the entire document was rejected 6 times out of 6. One conflicting sentence did not remove one rule; it removed every rule in the file. The practical sorting rule for any team is therefore two lines. Rules you hope will be followed go in the document. Rules that must be followed go where something checks them automatically. And instructions likely to clash with existing rules should not be stored in the file at all; they should be said only in the request, so the clash affects one request instead of the whole rules file.
 
 ## What this article could not verify
 
-Honesty about limits is part of the result. Here is what this run did not settle.
+This experiment ran on one combination: Claude Code 2.1.245 with the Sonnet model, one small task, one 300-byte rules file, 6 runs per condition on a single machine. We could not test the Codex tool at all: all 18 planned runs on that side died on a usage limit before the model produced anything, so nothing here applies to AGENTS.md as tested fact. We also cannot say whether the "this document is a prompt attack" judgment comes from the model or from the surrounding program. We cannot say whether other models behave the same way. And we measured only two outcomes, follow or collapse, so we cannot describe how rules weaken in between.
 
-First, the Codex and AGENTS.md side is completely unmeasured. Every conclusion here comes from one tool and model, one tiny task, plus one 300-byte rules file, on one machine, over 6 runs per setup. Second, I only tested two points on the strength scale: how a strong rule and a weak rule each fare under pressure. I cannot describe the full curve of how rule strength and survival relate. Third, I cannot tell whether the false-alarm judgment lives in the model's policy or in the tool's wrapper code, and whether other model combinations produce the same result.
+Here is when this article's judgment would be wrong. Suppose a future run shows that a conflicting request changes only the conflicting rule, while the other rules and the canary line stay obeyed. Or suppose even a neutral task gets the whole document rejected. Then what we saw was not the pattern described here, and the conclusion should be revised.
 
-What to check next: rerun the Codex side after the usage limit clears, on September 15, to fill the comparison axis and test whether the AGENTS.md spec's "override everything" sentence behaves the same way. And rerun the same Claude setup on other models to see whether treating a legitimate rules file as an attack is common or rare.
-
-One plain line on when this judgment would be wrong: if a user request clashes with one rule and the tool bends only that rule (keeping the other rules and the hidden marker line intact, and never classifying the rules file itself as an attack), then the claim in this article is wrong.
-
-## How written rules and automatic checkers split the work
-
-So what should you actually do with this? The core finding is that a written rules file is probabilistic: sometimes 4 out of 6, sometimes 0 out of 6, depending on what else is in the request. That means "I wrote it in CLAUDE.md" is not a quality gate. It is not a guarantee. Anthropic's own documentation draws the same line: settings rules are enforced by the tool itself no matter what the model decides. CLAUDE.md instructions "shape Claude's behavior but are not a hard enforcement layer."
-
-That gives you a two-bucket rule.
-
-If you are the kind of person who writes a rule in the file and considers the job done: move every rule that must never be broken out of the file and into a tool that checks automatically. One such tool is a linter, a program that scans code and flags violations before a human ever sees it. Put in the file only the rules you would like followed, where an occasional miss is survivable.
-
-If you are the kind of person who often asks the tool for things that clash with your own rules file: stop saying it separately from the file. Gather that turn's requests into one place: the request itself. Do not split your intent between the pinned file and a spoken instruction. This test showed that a clash does not stay contained to one rule.
-
-![How many times the rules file was reached and how many times its rules were followed, across the 6-run conditions](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-takeaway.en.png)
-
-The deeper lesson sits underneath both buckets. A rules file reached the model 6 out of 6 times in every setup I ran. Delivery is well documented and reliable. Obedience is not documented anywhere, and it collapsed the moment one sentence pushed back. The thickness of the delivery promise and the thickness of the effect promise are two different things. And the second one, the one your team's quality actually depends on, is the one nobody has written down.
+And two direct instructions, one for each kind of reader. If you believe a rule will be followed just because it is written in the file, move every rule that truly must hold to a linter, a hook, or enforced settings. Do it today. If you often ask for things that go against your own rules file, keep those requests out of the file. Say them in the moment instead, so one clash does not take down the whole note.
 
 ## References
 
-1. [Claude Code memory documentation](https://code.claude.com/docs/en/memory), Anthropic
-2. [Claude Code memory documentation, enforcement distinction](https://code.claude.com/docs/en/memory), Anthropic
-3. [agents.md specification](https://agents.md/), agents.md
-4. [Claude Code security documentation](https://code.claude.com/docs/en/security), Anthropic
-5. [agents.md specification, nearest-file loading](https://agents.md/), agents.md
+1. [Claude Code memory 공식 문서](https://code.claude.com/docs/en/memory) — Anthropic
+2. [agents.md 스펙](https://agents.md/) — agents.md
+3. [Claude Code security 공식 문서](https://code.claude.com/docs/en/security) — Anthropic

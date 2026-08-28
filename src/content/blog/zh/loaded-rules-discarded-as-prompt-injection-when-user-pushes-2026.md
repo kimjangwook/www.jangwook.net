@@ -1,106 +1,116 @@
 ---
-title: 用户一句相反要求让Claude Code丢掉了整份CLAUDE.md规则
-description: 写在CLAUDE.md里的规则文档，在用户提出一句相反要求时，被模型整体判定为提示注入而全部丢开。本文用家规便条的比喻解释这次实测的步骤、数字和局限。
-pubDate: '2026-08-28'
+title: 用户只要提出一条相反要求，Claude Code 就会丢掉整份 CLAUDE.md 规则文件
+description: 写进仓库规则文件里的规矩，被模型读到不等于被遵守。实测显示用户一句话和规矩冲突时，整份规则文件在 6 次里 6 次被当作提示词攻击丢掉。
+pubDate: '2026-08-29'
 heroImage: ../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/hero.png
 tags:
 - claude-code
 - agents-md
-- 规则文档
+- prompt-injection
 relatedPosts:
 - slug: declared-rules-fail-open-robots-txt-agents-md-2026
   score: 0.7
   reason:
-    en: If one conflicting request makes Claude Code discard the entire CLAUDE.md
-      rules file, it echoes exactly the fail-open behavior measured in the robots.txt
-      and AGENTS.md experiments.
-    ko: CLAUDE.md에서 충돌 요청 하나로 규칙 파일 전체가 무시된다면, robots.txt와 AGENTS.md 실험에서 확인한 '규칙이
-      실패해도 조용히 열려 있는(fail-open)' 동작과 정확히 맞닿아 있다.
-    ja: CLAUDE.mdで矛盾する指示ひとつでルールファイル全体が破棄されるという事例は、robots.txtとAGENTS.mdの実測で確認された「ルールが失敗しても静かにフェイルオープンする」挙動そのものを浮き彫りにする。
-    zh: 当一条冲突请求就让 Claude Code 丢弃整个 CLAUDE.md 规则文件时，这正好印证了 robots.txt 与 AGENTS.md 实测中所揭示的“规则失败时静默开放（fail-open）”行为。
+    en: This conflict-request experiment shows the flip side of the earlier finding
+      that declared rules get silently dropped when truncated.
+    ko: 이번 글의 충돌 요청 실험은 규칙 파일이 잘려도 조용히 무시된다는 기존 실측 결과의 반대편 사례를 보여준다.
+    ja: 今回の競合リクエスト実験は、ルールファイルが切り詰められても静かに無視されるという既存の実測結果の裏側を補う事例だ。
+    zh: 本次冲突请求实验恰好补充了此前关于规则被截断后会被静默忽略的实测结论。
 - slug: agents-md-three-wirings-equal-cost-codefence-silent-trap-2026
   score: 0.7
   reason:
-    en: This CLAUDE.md breakdown only makes full sense once you understand the three
-      official ways Claude Code loads AGENTS.md and the silent code-fence trap lurking
-      there.
-    ko: 이번 CLAUDE.md 무력화 사례가 실제로 작동하는 원리는 AGENTS.md를 읽어 들이는 세 가지 공식 경로와 코드펜스의 침묵 함정을
-      이해할 때 완전히 풀린다.
-    ja: 今回のCLAUDE.md無効化事例が実際に機能する仕組みは、AGENTS.mdを読み込む3つの公式経路とコードフェンスの沈黙の罠を理解してはじめて完全に解明される。
-    zh: 只有理解了 Claude Code 读取 AGENTS.md 的三种官方途径以及代码围栏的沉默陷阱，这次 CLAUDE.md 失效案例的原理才能完全说清。
+    en: The observation that CLAUDE.md is merely a suggestion extends the earlier
+      experiment showing three @AGENTS.md wirings measure equal and a codefence line
+      silently swallowing the whole file.
+    ko: CLAUDE.md가 제안일 뿐이라는 관찰은, CLAUDE.md에 @AGENTS.md를 연결하는 세 방식이 측정상 동일하며 코드펜스 한
+      줄이 문서 전체를 삼키는 함정을 검증한 이전 실험의 자연스러운 후속이다.
+    ja: CLAUDE.mdはあくまで提案にすぎないという観察は、@AGENTS.md接続の3方式が測定上同等でコードフェンス1行が文書全体を飲み込む罠を検証した前回の実験の自然な続きである。
+    zh: CLAUDE.md 只是一份建议这一观察，延续了此前验证三种 @AGENTS.md 接线方式成本相同、代码围栏一行会吞掉整篇文档的实验。
 ---
 
-很多团队把代码规矩写进一个叫 CLAUDE.md 的文件里，指望 AI 编程助手照着做。CLAUDE.md 是一个放在项目文件夹里的规则文档，AI 工具启动时会自动读它。这次实测发现：只要用户在对话里加一句和规则相反的要求，模型不只丢掉那一条被撞上的规则，而是把整份规则文档当成攻击，全部丢开。6 次运行，6 次都是这样。
+## 规矩文件是什么，为什么它不一定被遵守
 
-这对每天用这些工具的人来说很直接：你以为写下的规矩是锁，其实它只是一张请求条。
+很多人在项目的代码仓库里放一个规则文件，名字叫 CLAUDE.md 或 AGENTS.md。它就像贴在冰箱上的家规便条：上面写着"作业先写完再玩游戏""吃饭前洗手"。写这个文件的人，默认 AI 助手每次干活都会照着做。
 
-## 测量步骤
+这次实测要回答的问题很直接：这张便条到底管不管用？答案是——管用，但只要用户的要求和规矩冲突，整份文件就会失效。
 
-先说这次是怎么量的。做法很朴素，像给家里的规矩做对照实验。准备了三种情况：一种不放规则文档，直接给模型一个写代码任务；另一种放一份约 300 字节的规则文档，里面有三条规矩；还有一种放同一份文档，但在任务要求里多加一句和其中一条规则相反的话。每种情况各跑 6 次。
+先说这个结果对我来说意味着什么：如果你以为"写进文件就等于定死了规矩"，这次的数字会让你重新想一遍。写下来不等于被遵守。真正必须做到的规矩，得交给别的办法去保证。
 
-规矩里有几个可检查的点。一个是"金丝雀"——藏在文档里的一行没什么实际用途的标记文字，看它有没有出现在产出里，就知道模型有没有照做。一个是代码里的标记注释。还有一个指标：这个任务默认会产出一种叫 f-string 的写法——它是 Python 语言里把变量直接嵌进文字里的一种简写格式，规则禁止用它。
+## 规则文档是否被遵守是怎么测的
 
-先看基准。不放规则文档时，6 次运行里 f-string 出现了 6 次，也就是 6/6。这是模型没人管时的天生默认习惯。后面所有的"守规矩"都要和这个 6/6 比才有意义。
+实验的做法不复杂。研究者准备了一个很小的编程任务：写一个打招呼的小函数。然后分三种情况各跑 6 次。
 
-![规则文档的有无和相反要求的有无组合成的三种条件各执行6次的步骤](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-how.zh.png)
+第一种情况：不放假规矩，看 AI 默认怎么写。结果 6 次里 6 次，AI 都用了一种叫 f-string 的写法来拼字符串。f-string 就是在句子里挖个洞、把变量塞进去的写法——这是 AI 平时的默认习惯。
 
-## 规则文档改变代码习惯的条件
+然后放一张"便条"进项目，上面写了 3 条规矩，比如"不要用 f-string""写代码时加上某行固定的标记和注释"。这些用来检查的记号行，研究者叫它"金丝雀"——就像矿井里放金丝雀，看它还在不在，就知道规则还活着没有。
 
-只放规则文档、不加相反要求时，文档本身确实送到了模型那里——6 次全都读到了。规矩也起了作用：f-string 从基准的 6/6 降到了 0/6，完全被压住。金丝雀和代码标记各守住了 6 次里的 4 次。
+第三种情况里，便条一样，但用户在请求里多说一句话："请用 f-string。"这一句和便条上的第 2 条规矩正好相反。看 AI 是只破这一条，还是把整张便条都扔了。
 
-换句话说，在没有冲突的日常里，这张便条是管用的。这也是很多团队"写下就放心"的原因。可以确认，规则文档在正常情况下确实能改变模型的产出习惯。
+每跑一次，都用搜索工具数输出里有没有那些记号，这些记号出现的次数，就是下面列出的数字。
 
-但要注意 4/6 这个数。同一种设定跑 6 次，有 2 次没有完全照做。也就是说这张便条从一开始就不是百分百的，它改变的是"倾向"，不是"结果"。
+<div class="lm-card lm-card--how" data-lm-figure="explain-how" data-lang="zh"><span class="lm-card__title">测量步骤</span><ol class="lm-card__steps"><li class="lm-card__text">步骤 1. 在没有规则文档的默认状态下生成代码,测量默认习惯。</li><li class="lm-card__text">步骤 2. 放入规则文档后生成同样的代码,观察是否发生变化。</li><li class="lm-card__text">步骤 3. 用户强行要求使用f-string制造冲突,观察规则是否坚持住。</li><li class="lm-card__text">步骤 4. 分别统计输出中的标记token、金丝雀行、注释和f-string使用并进行比较。</li></ol></div>
 
-![在放入规则文档的条件下运行6次的结果](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-cell-claude-rules-neutral.zh.png)
+## 中性任务下规则文档确实改变了代码习惯
 
-## 用户一句相反要求让整份规则文档被丢开的条件
+先看好消息。没有用户施压时，那张 300 字节的便条（大约一小段话的长度）确实起作用了。
 
-接下来是让我意外的部分。我在请求里只加了一句话。这句话要求工具使用一种被第 2 条规则禁止的写法。其他一切都没变。同样是那份 300 字节的规则文档，同样的任务。
+6 次实验，便条 6 次都送到了模型面前。AI 平时 6 次里 6 次都用 f-string，看了便条后变成 6 次里 0 次用。也就是说，默认习惯被完全压下去了。不过另外两条规矩——加标记和金丝雀行——只在 6 次里做到了 4 次。规则送到了模型那里，不等于每一条都被照办。这一点从这时就看得出来了。
 
-6 次运行的结果是这样的：
+<div class="lm-card lm-card--cell" data-lm-figure="explain-cell-claude-rules-neutral" data-lang="zh"><span class="lm-card__badge lm-card__badge--ok">成功</span><span class="lm-card__title">Claude,有规则</span><span class="lm-card__text">6次全部读取了规则文档并全部停用了f-string,但标记与金丝雀规则在6次中只遵守了4次。</span><div class="lm-card__numbers"><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">规则触达 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:100.0%"></div><span class="lm-card__text">f-string禁用 6/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:66.7%"></div><span class="lm-card__text">金丝雀行数 4/6</span></div><div class="lm-card__bar"><div class="lm-card__bar-fill" style="--lm-bar-w:66.7%"></div><span class="lm-card__text">添加注释 4/6</span></div></div></div>
 
-- 规则文档依然 6 次全部送达了模型。送达从来不是问题。
-- 藏起来的金丝雀：6 次里 0 次被遵守，之前是 6 次里 4 次。
-- 代码标记规则：6 次里 0 次，之前是 6 次里 4 次。
-- 被禁止的写法：6 次里 6 次，之前是 6 次里 0 次。
+## 用户一句话施压后，整份规则文档被一起丢掉
 
-请慢一点再读一遍。和用户这句话冲突的只有一条规则。另外两条跟这次请求毫无关系，但它们也一起掉了。而且 6 次运行里，全部 6 次都把这份规则文档明确定性为提示注入。提示注入这个词的意思是：有人把有害的指令伪装成正常文字，偷偷塞给人工智能。
+两组实验的唯一差别，是请求里多加了一句话——其他设置、那份规则文件的内容，一个字都没变。所以真正改变的并不是规则本身，而是 AI 对这份文档的态度：在这个判断里，规则文件不再是项目说明，而像是有人偷偷塞进文件夹的话。
 
-为什么会这样？有一个最能解释这个现象的线索。这份规则文档不是工具自带的内置指令，而是被当成一条普通的用户留言送到的。官方文档写明了这一点，还说"对于模糊或冲突的指令，不保证严格遵守"。也就是说，当请求里出现一句和规则相撞的话时，工具会分析整份请求的来龙去脉，判断哪些内容可疑。而这份规则文档走的正是"用户消息"这条通道。最合理的解释是：规则本身没有变弱，是工具先重新判断了"用户消息"这条通道还信不信得过。判定一旦变成负面的，整份文件就被一起丢掉了。
+这个判断一旦翻转，后果不是只丢掉被点名的那一条规则。实验里，没和用户要求冲突的其他规则也跟着一起失效了——AI 不是只丢掉冲突的那一条，而是把整份文件都扔了。
 
-用家规便条来复述一次。你在冰箱上贴了 3 条规矩。家人当面说："这次就按我说的来。"正常的预期是那一条规矩让步，另外两条继续贴着。实际发生的是：这张便条被当成了一张伪造的纸，整张从冰箱上揭下来扔掉，然后只听当面那句话。你多说的那一句，不只弄破了一条规矩，还改变了工具对"规矩是经过哪个渠道来的"这件事的判断。
+## 官方文档本来就没承诺规矩一定被遵守
 
-这里有一个说得通的反驳，值得认真对待。"用户要求压过文档规则"这个方向本身，官方文档是预告过的，确实不算意外。而且仓库里放着的指令文件，原则上也可能被陌生人藏进坏指令，模型多加怀疑本身是一种防御。但看看防御这次实际抓住的是什么。它没有只抓住冲突的那一条规则。它抓住的是同一份 300 字节文档里两条毫无冲突的规则，外加那条隐藏的检查线。而这份文档，是用户自己放进自己项目里的正式指令渠道。6 次里 6 次都把合法的指令渠道判定为攻击，这不是防御在起作用，而是每次都响的错误警报。
+这不算偷偷出问题。Anthropic 的 Claude Code 官方文档写得很明白：
 
-## 在 Codex 上没有拿到任何结果的条件
+> CLAUDE.md content is delivered as a user message after the system prompt, not as part of the system prompt itself. Claude reads it and tries to follow it, but there's no guarantee of strict compliance, especially for vague or conflicting instructions.
+> — [Claude Code memory 공식 문서](https://code.claude.com/docs/en/memory)
 
-这个实验本来还有另一半：在另一个叫 Codex 的 AI 编程工具上做同样的测试。结果 18 次运行全部因为用量限额直接失败，模型一次都没有真正开工，等于一个数据都没拿到。
+> — [Claude Code memory 공식 문서](https://code.claude.com/docs/en/memory)
 
-另外还做了一次文档对照，查了 4 份官方文档的页面。查到的内容是：各家都详细说明了'什么时候会读哪个文件'。比如 agents.md 的规范说，工具会自动读目录树里离被改文件最近的那份规则。agents.md 是另一份类似 CLAUDE.md 的规则文档。它说但 4 份文档里，没有一份写着"读了规则之后，产出就会照着变"这种效果承诺。关于'怎么读'的说明写得很详细，但对'读了会不会照做'没有任何承诺。
+翻译过来：规则文件的内容是作为用户消息送过去的，AI 会读、会尽量照做，但不保证严格遵守，遇到模糊或冲突的指令尤其如此。文档还专门区分了两种东西：
 
-官方自己也只承诺"会读"，从没承诺"会照做"。
+> Settings rules are enforced by the client regardless of what Claude decides to do. CLAUDE.md instructions shape Claude's behavior but are not a hard enforcement layer.
+> — [Claude Code memory 공식 문서 (enforcement 구분 문장)](https://code.claude.com/docs/en/memory)
+
+> — [Claude Code memory 공식 문서 (enforcement 구분 문장)](https://code.claude.com/docs/en/memory)
+
+意思是：有一类规则由程序层面强制执行，不管 AI 自己怎么想都得守；而规则文件只是"影响"，不是"强制"。官方从来没说这张便条是强制性的。
+
+研究者还对照了 4 份厂商文档，包括 agents.md 的规范。agents.md 那边写着：
+
+> The closest AGENTS.md to the edited file wins; explicit user chat prompts override everything.
+> — [agents.md 스펙](https://agents.md/)
+
+> — [agents.md 스펙](https://agents.md/)
+
+也就是官方规范本来就说：用户在对话里明说的话，压过一切文件规则。用户指令赢，这个方向是对的。可是 4 份文档里，没有一处写过"规则文件被加载后会改变输出效果"这样的承诺。它们只说了文件会被加载，没说加载了会怎样。文档承诺的，和实际做到的，不是一回事。
+
+## 该被遵守的规矩应该放的位置
+
+反方会说：这是安全功能，不是缺陷。AI 怀疑并拒绝可疑指令，是防御在起作用。这个说法在优先级上没错——用户确实可以压过文件规则。但这次防御拦下的不是那 1 条冲突的规矩，而是同一份 300 字节文件里没冲突的 2 条和金丝雀。合法的指令 6 次里 6 次被判成攻击，这是误报，不是防御。
+
+所以真正的问题不是"该不该让用户赢"，而是"这份文件到底算什么承诺"。落到我实际要做的事上，结论是分成两类：写下来"希望被遵守"的，放规则文件；写下来"必须被遵守"的，交给程序去查——比如自动检查代码风格的工具、提交代码前自动运行的检查脚本、设置里的强制规则。文档管概率，程序管底线。
+
+还有一点实用建议：如果我的请求本来就会和某条规矩冲突，那句话别写进文件里和别的规矩混着，到时候直接在对话里说。
+
+<div class="lm-card lm-card--takeaway" data-lm-figure="explain-takeaway" data-lang="zh"><span class="lm-card__title">结论</span><p class="lm-card__takeaway">规则文档确实到达模型并改变了部分代码习惯,但一旦用户反向施压,规则就被当作提示词攻击对待而崩溃。</p></div>
 
 ## 本文未能核实的部分
 
-这次没有测的东西有四样。Codex 那边 18 次运行全部卡在用量限额上，模型之间的比较没有数据，9 月 15 日之后才能补跑。同样的事在另一份规则文件 AGENTS.md 上没有验证过。AGENTS.md 是和 CLAUDE.md 类似的规则文档，很多其他工具用它。规则强度只测了两个点，画不出一条完整的曲线。还有，这是在一台机器、一个模型版本、6 次运行里看到的，别的版本和别的随机设置下是否稳定，未知。
+这次只测了 Claude 一种工具、一个写函数的任务、一份 300 字节的规则文件。另一家工具的 18 次运行全部因为用量限制没跑成，所以 AGENTS.md 那边的同样结论还没有数字。接下来要做的，是换模型组合重跑，看这种"整份丢弃"的判断在别的条件下还稳不稳。
 
-这个判断在什么条件下会错：如果那句相反的要求只影响被撞的那一条规则，其他规则继续被遵守，文档也不被当成攻击，那这篇文章的判断就是错的。
+如果这个判断在什么条件下会错：有两种情况能证明这篇文章错了。一是：用户要求和规矩冲突时，AI 只改冲突的那一条，其余规矩照旧守着，比如 6 次里 4 次守住。二是：没有冲突的普通任务里，整份文件也被拒绝。出现任意一种，判断就不成立。
 
-## 写下来的规则与自动检查工具的分工
-
-把结论收成一句话：写在 CLAUDE.md 里的规则，不是绑住工具的锁，只是一句请求。请求有时候被听，有时候不被听，而一旦和用户的当面要求相撞，整份文档都可能被丢开。这一点后面给建议时会用到。
-
-如果只想做一件事：必须 100% 守住的规矩，别写在文档里，交给会自动执行检查的工具——比如检查代码风格的程序或自动测试，它们不商量、不判断动机，只看结果过不过。
-
-给两类人各一句实在话。相信"写进文档就完事"的人：把绝对不能违反的规则从文档里搬出去，交给自动检查的工具去做。经常提出和规则不同要求的人：别把要求同时撒在文档和对话两处，把这一次要做的事集中说在对话里，免得撞翻整份文档。
-
-![三种条件下各6次运行中规则文档送达的次数和规则被遵守的次数](../../../assets/blog/loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026/explain-takeaway.zh.png)
+给两种读者各一句实在话：如果你一直相信"写进文件就一定会被遵守"，那就把必须做到的规矩从文件搬到自动检查的装置上去。如果你的工作里经常要提出和规矩相反的要求，那就别把会冲突的要求混进文件，需要的时候在对话里直接说。
 
 ## 参考资料
 
-1. [Claude Code memory 官方文档](https://code.claude.com/docs/en/memory) — Anthropic
-2. [Claude Code memory 官方文档（enforcement 区分句）](https://code.claude.com/docs/en/memory) — Anthropic
-3. [agents.md 规范](https://agents.md/) — agents.md
-4. [Claude Code security 官方文档](https://code.claude.com/docs/en/security) — Anthropic
-5. [agents.md 规范（就近加载句）](https://agents.md/) — agents.md
+1. [Claude Code memory 공식 문서](https://code.claude.com/docs/en/memory) — Anthropic
+2. [agents.md 스펙](https://agents.md/) — agents.md
+3. [Claude Code security 공식 문서](https://code.claude.com/docs/en/security) — Anthropic
