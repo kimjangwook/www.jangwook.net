@@ -1,106 +1,111 @@
 ---
-title: 320×200 里的 118px：1.4.10 通过之后纵向还剩什么
-description: Reflow 判定只量横向，320×200 下正文可用纵向像素可能只剩 118px。本文用 27 次实测拆解 82px 与 90px 两笔固定通行费，并给出可直接落地的
-  CI 检查与 C34 切换清单。
-pubDate: 2026-08-27
+title: 通过 WCAG 1.4.10 重排检查的页面，在 400% 缩放下仍可能在纵向上无法阅读
+description: 一项只检查横向滚动的官方检查，不能保证放大后正文还留有多少纵向空间。实测显示，200 像素的屏幕高度里真正能碰到正文的只剩 118 像素。
+pubDate: '2026-08-28'
 heroImage: ../../../assets/blog/reflow-vertical-budget-absolute-px-toll-2026/hero.png
 tags:
-- accessibility
-- wcag
+- 无障碍
+- WCAG
 relatedPosts:
 - slug: declared-rules-fail-open-robots-txt-agents-md-2026
   score: 0.7
   reason:
-    en: 'If you read how robots.txt rules were truncated yet passed silently, here
-      you''ll see the same blind spot in viewport form: a Reflow pass that waves through
-      vertically broken readability.'
-    ko: 선언된 규칙이 잘려도 조용히 통과되던 robots.txt 사례를 읽었다면, 이번엔 Reflow 통과가 수직 가독성 붕괴를 그냥 놓쳐버리는
-      측정의 사각지대가 그 공백의 뷰포트 버전임을 확인하게 된다.
-    ja: 途中で切れてもエラーなく通過したrobots.txtの事例を読んだなら、今回はReflow合格が縦方向の可読性崩壊をそのまま見逃す測定の死角が、同じ空白のビューポート版であると確認できる。
-    zh: 读过 robots.txt 规则被截断却静默通过案例的人,会在这里看到同一盲区的视口版本:Reflow 检测直接放行了纵向可读性的崩坏。
+    en: A page that passes the WCAG 1.4.10 Reflow check can still lose most of its
+      vertical content, and that mirrors how truncated rules in robots.txt and AGENTS.md
+      fail silently—both are 'failures without errors,' so reading both pieces shows
+      why passing validation is not the same as being safe.
+    ko: WCAG 1.4.10 Reflow를 통과한 페이지조차 세로 스크롤로 내용을 잃는 것은 robots.txt와 AGENTS.md의 잘린
+      규칙이 조용히 실패하는 방식과 같은 '에러 없는 실패'의 또 다른 사례이므로, 검증을 통과해도 무너지는 지점을 이해하려면 두 글을 함께
+      봐야 한다.
+    ja: WCAG 1.4.10 Reflowを通過したページでも縦スクロールで内容を失うのは、robots.txtとAGENTS.mdの切れたルールが静かに失敗するのと同じ「エラーなしの失敗」のもう一つの例であり、検証を通過しても崩れる箇所を理解するには両方の記事を読む価値がある。
+    zh: 通过 WCAG 1.4.10 Reflow 检查的页面仍可能在垂直方向丢失大量内容,这与 robots.txt 和 AGENTS.md 中被截断的规则静默失效如出一辙——两者都是'没有报错的失败',同时阅读才能明白为何通过验证不等于安全。
 ---
 
-## 横向判定的盲区
+## 400% 缩放会减少的东西——不是宽度，而是高度
 
-WCAG 1.4.10 Reflow 的自动化判定在我们测试的全部单元格上通过：8/8，`clientWidth 320 = scrollWidth 320`，文档级横向溢出为 0。同一个页面、同一个 400% 缩放，在 320×200 视口下正文实际可达的纵向像素只有 118px，6/6 次复现。
+先把结论用一句话说完：一项网页通过了官方的横向检查，不代表把它放大到 400% 之后，读者还能看到足够的正文。实际发生的情况很具体——放大屏幕读文章的人，可能一屏只能看到一小段字，其余位置被别的东西占着。
 
-这不是数据和规范打架。规范原文写得很清楚："Vertical scrolling content at a width equivalent to 320 CSS pixels"——只约束宽度，对高度一字未提 [2]。作为规范解释，反方的说法是对的：1.4.10 从未承诺过纵向可读性，我们的测量推翻不了合规判定。
+先解释几个词。缩放就是把网页画面整体放大，好比把一本书的字放大了看。重排检查是网页行业的一个官方测试项目，全名是 WCAG 1.4.10 重排。WCAG 是一份国际通用的网页无障碍标准，也就是“网页要怎么设计才不会把部分用户挡在门外”的规则手册。重排这一条要求的是：把页面放大到 400% 时，内容不要让人同时左右两个方向都要滚动，只要上下滚就行。
 
-问题在于实践中这个绿灯被怎么用。团队普遍把 1.4.10 通过当成"放大了也能读"的代理指标。这个代理关系在本次实测中断裂了，而且断裂的形状可以量化：一笔与视口无关的固定像素过路费。
+听起来很合理。但这里有个容易被忽略的数学事实：放大到 400%，是每个方向都放大 4 倍。宽度放大 4 倍，能装下的内容就少 4 倍；高度也一样放大 4 倍，所以一屏能装下的高度只剩四分之一。规则原文自己也写明了这一点——"400% 作用于每个维度，而不是作用于面积"。
 
-先说一个结构性事实：400% 缩放不是把面积缩成四分之一，而是把每个维度都缩成四分之一。W3C 的理解文档原话是 "400% applies to the dimension, not the area" [1]。所以 320×200 不是刁钻的边界用例——它就是 1280×800 笔记本屏幕在该标准自己点名的缩放级别下的实际视口。规范文本只测宽度，而同一个缩放把纵向也压缩了同样的倍数，这一轴判定不碰。
+## 重排检查不测的纵向
 
-## 320×200 的纵向预算 118px
+想象你的饭盒越换越小，从大饭盒换到小饭盒。重排检查相当于只检查“饭菜不会从左边或右边洒出去”。这个检查全部通过了。但没人检查饭盒的盖子内侧还挂了几个固定不动的小盒子——腌菜盒、广告盒、回到顶部的按钮盒。饭盒本身越小，这些占位的盒子就越显得大。
 
-测量方法：Playwright elementFromPoint 行级命中测试，2px 步进，x 取 25/50/75% 三列，输出正文可触达的纵向像素（usable_px）。27 个 run，覆盖四个视口高度（844/400/256/200）× 两个滚动状态（top/mid）× 逐元素移除，页型覆盖 post、post2、blog-index、home、local-control。
+规则原文其实写得清清楚楚。WCAG 2.2 的 1.4.10 条文是这样规定的：
 
-| 视口高度 | top usable_px | mid usable_px |
-|---|---|---|
-| 844 | 762 | — |
-| 400 | 318 | — |
-| 256 | 174 | — |
-| 200 | 118 | 110 |
+> Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions for: Vertical scrolling content at a width equivalent to 320 CSS pixels; Horizontal scrolling content at a height equivalent to 256 CSS pixels.
+> — [Understanding Success Criterion 1.4.10: Reflow / W3C WAI](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
 
-top 状态的损失是 844−762=400−318=256−174=200−118=82px，四个高度下精确一致。h=200 时 top 损失率 41.0%，mid 45.0%。而 1.4.10 的横向判定在全表中是 8/8 通过：clientWidth 320 = scrollWidth 320，h_overflow_px 0，reflow_pass true。
+这段条文的中文意思是：对于上下滚动的内容，标准只要求宽度缩到 320 CSS 像素时内容不丢失。CSS 像素是网页排版用来量长度的单位，和我们平时说的手机屏幕物理像素不是一回事；对高度，条文一个字都没提。所以公平地说，这个标准本来就没打算管纵向。问题出在实际工作中，很多人把“重排检查通过”当成了“放大后也能好好读”的证明。这次实测用数字说明：拿「检查通过」来证明「读起来没问题」，是靠不住的。
 
-## 与高度无关的 82px 通行费
+## 消失的纵向空间的去向——82 像素与 90 像素
 
-损失如果是按视口比例收缩的，"绝对值通行费"论点就该被驳回。实测不是：82px 在四个高度下分毫不差。原因是占编对视口高度不响应——底部广告容器在 h=844 时高 400px，在 h=200 时依然是 400px，6/6 复现。视口越小，这笔固定费用占产能的比例越大。同一笔 90px，在 844 里是 10.7%，在 200 里是 45.0%——不是比例变大，是分母变小。
+先说清楚测量是怎么做的。我们拿一个真实在线运行的网站，把浏览器窗口逐步压矮：844、400、256、200 像素，宽度始终是 320 像素。每压矮一次，就量一次屏幕上到底有多少纵向像素真正摸得到正文。测量的办法是一小步一小步地“问”屏幕上的每一个点：这个点现在是谁占着？只有答案是正文的点，才算可用。
 
-## 阻断主体分解——90px 底部广告容器
+结果很整齐：不管窗口多高，损失都是同样的 82 像素。可用空间分别是 844 里的 762、400 里的 318、256 里的 174、200 里的 118。损失的绝对值一次都没变。
 
-在 320×200 视口下做了一次逐元素移除分解：把固定装饰元素一个个单独摘掉，再全部摘掉，测每次的可用像素恢复量。结果像一次排班复盘——把每个占编岗位逐一叫走，看产能恢复多少。
+这个不变的损失值说明了问题。它说明占用者不理会屏幕的大小。如果损失按比例走，窗口越小它也该跟着变小；固定尺寸的东西才会在任何窗口里都吃掉同样多。
 
-| 移除的元素 | mid 状态恢复量 |
+但这里有个容易误会的地方。屏幕压到最矮时，页头其实已经不再是吸顶的了。吸顶的意思是：你往下滚动时，它一直钉在屏幕顶上不动。而在 200 像素高的小窗口里，页头已经退回普通的文档排版，跟着页面一起滚走了，不再遮住任何东西。所以这 82 像素不是被“浮在正文上面的东西”挡走的，而是页头这个模块在文档内部占掉的位置——它在文档里就占那么大一块地。这也是为什么在滚动到一半的状态下把它删掉，一个像素也回不来。
+
+真正压在正文上的固定元素出现在滚动到一半的时候。我们做了逐个删除的实验：每次只拆掉一个固定元素，看有多少纵向像素回来。结果如下：
+
+| 删掉的元素 | 回来的像素（320x200，滚动中） |
 |---|---|
-| header | Δ0 |
-| reading-progress | Δ0 |
-| #back-to-top（fixed，h=48） | Δ0 |
-| #fixed_container_bottom | Δ+90 |
-| ALL | Δ+90 |
+| 页头 | 0 |
+| 阅读进度条 | 0 |
+| 回到顶部按钮 | 0 |
+| 底部广告容器 | 90 |
+| 全部一起删 | 90 |
 
-mid 状态的阻断者就是那个 90px 的底部广告容器，而且只有它。各元素单独移除的恢复量之和（0+0+0+90=90）与全部移除的恢复量（Δ+90）相等，说明没有重叠遮蔽——每个像素只被计了一次账。移除该容器后，mid 状态可用像素从 110 恢复到 200，3/3 次运行结果一致。这也是证伪检查：如果摘光全部 chrome 也拿不回纵向预算，"固定 chrome 吃预算"这条主轴就塌了。实测没有塌。
+滚动状态下的全部损失，就是底部广告容器一个元素造成的——整整 90 像素，没有别人分走。把它删掉，200 像素全部恢复。删掉回到顶部按钮，一个像素也没回来。全删和只删广告的结果一样，说明各个元素挡住的地方互不重叠。
 
-表里有两处值得停下来看。第一，header 的 Δ0 不是异常：在 h=200 时 header 的 `position` 是 `static`（6/6 复现），它会随文档一起滚走，根本不在 mid 探针的路径上。82px 的 top 损失归属因此被证伪流程修正过——最初的预期是"固定 chrome 的份额"，但那 82px 实际属于文档流内的静态 header 块，是在 top 滚动状态下、它滚走之前收的费。绝对像素这个结论活了下来，被指控的元素换了人。
+W3C 自己的指南警告的正是这一类元素：
 
-第二，`#back-to-top` 的单独恢复量是 0px。这个元素在 mid 滚动时可见、fixed、高 48px，但在这份数据里拿回了 0px。至于它为何没有造成阻断——是完全未遮蔽，还是仅在探针未覆盖的条件下遮蔽——这份数据无法区分。换句话说，"存在但不计费"和"存在但计费方式探针看不见"这两种状态，在这套指标下是同一个读数。此外，WAI 文档点名的另一个轴向——遮挡键盘焦点[1]——这次没有测量，命中测试对它是沉默的。
+> Such sticky or fixed content can pose significant issues for those who would benefit from Reflow, as aside from obscuring keyboard focus, such sticky or fixed content can make reading content difficult if not impossible.
+> — [Understanding Success Criterion 1.4.10: Reflow / W3C WAI](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
 
-还有一处归属失败，如实记录：home 页在 h=200 top 状态 `usable_px` 掉到 0，而 `blocked_px` 返回为空——剩下的 118px 无法归到任何元素头上。这是唯一打破 82px 模式的页面，我们选择留白而不是补一个说法。同理，底部容器的阻断在部分运行中间歇消失（怀疑是广告加载时机，原因未查明），所以 mid 的数字是 3/3 和 6/6，而不是全绿。
+它对这类固定内容的定义也很直白：
 
-排班类比在这里落点很清楚：底部的 90px 容器是一个不随班次缩减的固定占编。当班人数（视口高度）从 844 缩到 200，这个占编一个像素都没让——同一个 90px，在 h=844 上占 10.7%，在 h=200 上占 45.0%。比例变大不是因为岗位多了，是因为人少了。
+> Sticky regions always stay visible in the viewport while the other content will disappear underneath when scrolling.
+> — [CSS technique C34: Using media queries to un-fixing sticky headers / W3C WAI](https://www.w3.org/WAI/WCAG22/Techniques/css/C34)
 
-## falsifier 修正过的归属——static 头部的份额
+那个底部广告容器在所有窗口高度下都保持着固定的高度，从 844 一直到 200 像素，屏幕怎么缩它都不让步。换句话说，如果你在这样的网站上放大阅读，挡住我的不是放大这个动作，而是页面上几件尺寸不变的固定元素。
 
-原假设是"82px 损失归固定 chrome"。证伪条件设了两条：若全移除 chrome 后纵向像素不恢复，论点崩塌；若损失随高度比例递减，绝对通行费论点被驳回。实测结果保留了主张但修正了归属：h=200 mid 全移除后 110→200（+90，3/3 一致），缺口全部来自广告容器。而 82px 的 top 损失，测量显示 header 在 h=844 时是 sticky、h=200 时已降级为 static——它随文档流走，不是 fixed 阻断者。82px 实际是文档流内头部块的份额，不是固定 chrome 的份额。归因写错了，数字没写错。
+## 损失没有变大，是分母变小了
 
-## elementFromPoint 命中测试与对照单元
+同样的 90 像素，在 844 像素高的屏幕上只占 10.7%；在 200 像素高的屏幕上就变成 45%。数字本身一个都没变，变的是它除以的那个总数。这就是“分母变小”的意思：不是页面上的东西越来越大，而是留给正文的空间越来越小，同样大的占位就显得越来越挤。
 
-指标可信度需要一个对照：一份无任何 chrome 的本地散文文档，全行 ratio 1.0——命中测试方法本身不制造损失。另外 post 页有 offenders 97、worst_overflow_px 604，但这是子元素溢出，文档级横向滚动为 0，不影响 1.4.10 判定。
+另外，删掉回到顶部按钮之后，可用纵向像素一点都没涨。它确实悬在那里，但在这个测量里不挡正文。不过标准原文提醒过，这类悬浮内容还有别的代价——用键盘操作的人会在页面上留下一个高亮的“当前位置”标记，它们会把这个标记挡在下面。那部分的账，这次没有算进去。
 
-## 诚实清单：没测的部分
+如果你的网站要服务放大屏幕或使用屏幕朗读器的读者，光看“横向检查通过”那个绿色标记，是不够的。
 
-- header sticky→static 的确切阈值未确认，只 narrowed 到 (400, 844] 区间，480 只是 C34 示例值。
-- fixed_container_bottom 的阻断在部分 run 中缺席，疑似广告加载时序，原因未查明。
-- home 页 h=200 top usable_px 为 0，其余 118px 的归属失败（blocked_px 为空），是全部数据里唯一偏离 82px 模式的单元格。
-- offenders 97 个子元素在哪里被裁剪，未测。
-- 广告容器移除对收入的成本，本实验未计量。
+## 建议增加的纵向预算测量
 
-## 作为独立门禁的纵向预算审计与 C34 切换
+这次实验里，8 个测试格子全部通过了重排的横向判定——没有一格出现左右滚动。判定是真的，通过也是真的。但同一批格子里，纵向损失最严重时达到 45%。
 
-建议按页面类型分开，因为固定占编不同：
+所以实际的建议分两类，各一句话：
 
-**如果你的站点真实服务放大用户**——有 sticky 头部、固定容器——就在 1.4.10 自动化判定旁边，把纵向预算审计作为独立门禁加入。跑同一套梯子：320px 宽，高度梯子（200 是底线，可加 256、400、844），top 和 mid 两个滚动状态，逐行 elementFromPoint 命中测试。为你的内容的行高设定一个可用像素阈值，在 CI 里像跑 reflow 检查一样跑它。成本接近零：Playwright 加一个公开站点，一台机器 27 次运行。
+- 如果你的网站确实接收放大屏幕、屏幕朗读器的用户——那就把“320 像素宽、200 像素高的状态下正文可达像素”的测量，作为一项独立检查，跟横向判定分开跑。
+- 如果你的页面是内部文档、报告这类没有任何固定悬浮元素的——横向检查通过就够了，纵向测量可以省掉。
 
-**在小高度下固定 chrome 无法避免的地方**，套用 C34：以 `min-height` 为键的媒体查询，在阈值以下把 sticky 头部和固定底部容器切换为静态定位 [3]。我们的数据说，光底部广告容器一项在 h=200 mid 就值 90px 的恢复量——占视口的 45%。这是这个页面上杠杆最高的开关。
+顺带一提，官方也给了修法：WCAG 的 C34 技巧建议用媒体查询来修。媒体查询就是一段“根据屏幕条件改变样式”的规则。做法是让吸顶的页头变回普通排版，跟着内容一起滚动。标准原文这样解释悬浮区域的毛病：
 
-**如果你的页面没有固定 chrome**——本地报告、对照文档、纯文页——1.4.10 通过就足够了，纵向预算门禁属于过度设计。对照格证明了这一点：每一行都是 ratio 1.0。
+> Sticky regions always stay visible in the viewport while the other content will disappear underneath when scrolling.
+> — [CSS technique C34: Using media queries to un-fixing sticky headers / W3C WAI](https://www.w3.org/WAI/WCAG22/Techniques/css/C34)
 
-一条成本上的提醒：本实验没有为移除广告容器对收入的影响定价。测量是免费的；整改不是，这笔权衡由你自己做。
+## 本文未能核实的部分
 
-这个教训超出无障碍范畴。当一个合规检查通过时，通过只在标准选择测量的轴上有效。纵向预算按设计就在 1.4.10 的轴之外——规范本身没有任何错。但任何把绿灯读成"放大了也能用"的团队，都把一个窄保证换成了宽保证，而这次兑换恰好在 82px + 90px 处违约。审计你的门禁没有测的轴；要紧的是用户实际使用的那些轴。
+先交代测量范围。这次的结果来自一个公开网站、一台设备、一个版本的浏览器。结构不同的其他网站能不能照搬，本文没有测过，也不应默认成立。
+
+还有一些问题这次没有解决。页头从吸顶退回普通排版的准确临界高度没有找到，只知道在 400 到 844 像素之间的某处。底部广告容器偶尔测不到它挡东西，怀疑和广告加载的时机有关，但原因没有查明。这份数据也回答不了纵向空间变小是否真的让放大用户更快离开——那需要行为数据，本文没测。
+
+最后用一句大白话说清楚，这个判断在什么条件下会错：在 320x200 的窗口里，如果把页面上所有浮着的元素全部删光，而摸得到正文的纵向像素连 1 像素都没有从 110 涨上去，那么“损失是这些固定元素吃掉的”这个结论就是错的。
 
 ## 参考资料
 
-1. Understanding Success Criterion 1.4.10: Reflow / W3C WAI — [Understanding Success Criterion 1.4.10: Reflow / W3C WAI](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
-2. WCAG 2.2 Success Criterion 1.4.10 Reflow (spec) / W3C — [WCAG 2.2 Success Criterion 1.4.10 Reflow (spec) / W3C](https://www.w3.org/TR/WCAG22/#reflow)
-3. CSS technique C34: Using media queries to un-fixing sticky headers / W3C WAI — [CSS technique C34: Using media queries to un-fixing sticky headers / W3C WAI](https://www.w3.org/WAI/WCAG22/Techniques/css/C34)
+1. [Understanding Success Criterion 1.4.10: Reflow / W3C WAI](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) — W3C
+2. [WCAG 2.2 Success Criterion 1.4.10 Reflow (spec) / W3C](https://www.w3.org/TR/WCAG22/#reflow) — W3C
+3. [CSS technique C34: Using media queries to un-fixing sticky headers / W3C WAI](https://www.w3.org/WAI/WCAG22/Techniques/css/C34) — W3C

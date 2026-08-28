@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-26",
+  "updated_at": "2026-08-28",
   "topics": [
     {
       "slug": "chrome-153-email-verification-http-message-signatures-2026",
@@ -9059,6 +9059,84 @@
       "priority": 2,
       "source": "https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it (2026-08-26 확인, HTTP 200)",
       "added_at": "2026-08-26",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "AIエージェントが研究・製造の実機を安全に操作するための新標準 Model Hardware Standard (MHS) の研究プレビュー第1段階を開始した。",
+      "content_type": "news",
+      "target_keyword": "AIエージェントが研究・製造の実機を安全に操作するための新標準 Model Hardware Standard (MHS) の研究プレビュー第1段階を開始した。",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://www.anthropic.com/news/model-hardware-standard-research-preview (2026-08-28 확인, HTTP 200)",
+      "added_at": "2026-08-28",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Vercel内部で使っていたエージェント向けWebGPUライブラリvgpuをオープンソース化し、ブラウザとヘッドレスNodeの両方で同一シェーダを実行できるようにした。",
+      "content_type": "news",
+      "target_keyword": "Vercel内部で使っていたエージェント向けWebGPUライブラリvgpuをオープンソース化し、ブラウザとヘッドレスNodeの両方で同一シェーダを実行できるよう",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://github.com/vercel-labs/vgpu (2026-08-28 확인, HTTP 200)",
+      "added_at": "2026-08-28",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "2500億件のDNSキャッシュでRust最適化を5つ入れ、100TBのメモリを削減し挿入43%・参照19%高速化した実測を公開した。",
+      "content_type": "news",
+      "target_keyword": "2500億件のDNSキャッシュでRust最適化を5つ入れ、100TBのメモリを削減し挿入43%・参照19%高速化した実測を公開した。",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://blog.cloudflare.com/dns-cache-memory-optimization-1111/ (2026-08-28 확인, HTTP 200)",
+      "added_at": "2026-08-28",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "OpenAI公式ブログは、ブラウザ側のWebMCPで人とエージェントが同一UIを共有するノートブックを示し、従来のMCP/APIとは別の実装経路だと説明している。",
+      "content_type": "news",
+      "target_keyword": "OpenAI公式ブログは、ブラウザ側のWebMCPで人とエージェントが同一UIを共有するノートブックを示し、従来のMCP/APIとは別の実装経路だと説明している",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://learn.chatgpt.com/blog/automating-repetitive-work-at-openai-with-codex (2026-08-28 확인, HTTP 200)",
+      "added_at": "2026-08-28",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "Grok Botを実務で回すなら公式ドキュメントと公開リポジトリをエージェントに渡してワークフローを組み立てるのが最短だと主張している。",
+      "content_type": "news",
+      "target_keyword": "Grok Botを実務で回すなら公式ドキュメントと公開リポジトリをエージェントに渡してワークフローを組み立てるのが最短だと主張している。",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://docs.x.ai/grok-bot/overview (2026-08-28 확인, HTTP 200)",
+      "added_at": "2026-08-28",
+      "status": "queued",
+      "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
+    },
+    {
+      "slug": null,
+      "title_idea": "WebMCPは画面操作より最大5倍速く完了率も10〜15%高く、Google LighthouseのAgentic Browsing監査で満点を取りやすいと計測結果を示している。",
+      "content_type": "news",
+      "target_keyword": "WebMCPは画面操作より最大5倍速く完了率も10〜15%高く、Google LighthouseのAgentic Browsing監査で満点を取りやすいと計測",
+      "secondary_keywords": [],
+      "search_intent": "informational",
+      "priority": 2,
+      "source": "https://webmcp.com/benchmark (2026-08-28 확인, HTTP 200)",
+      "added_at": "2026-08-28",
       "status": "queued",
       "notes": "scout 자동 수집. 쓰기 전에 1차 출처를 다시 연다."
     }
