@@ -1,83 +1,99 @@
 ---
-pubDate: '2026-08-26'
-title: Three AGENTS.md wirings into Claude Code cost the same; a code fence in CLAUDE.md
-  is what silently kills the import
-description: 'Measured three methods of wiring AGENTS.md into Claude Code. The 116-token
-  spread is noise. The real trap: a markdown code fence around @AGENTS.md in CLAUDE.md
-  zeros the load with no error, no token spike, no signal.'
+title: Claude Code reads AGENTS.md through three official routes at equal cost — one
+  fence line silently kills the whole file
+description: Claude Code does not read AGENTS.md on its own, but three official ways
+  to connect it all worked the same in a real test. The real trap is not the method
+  you pick — it is one wrapped line that quietly stops the whole document from loading.
+pubDate: '2026-08-28'
 heroImage: ../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/hero.png
+tags:
+- claude-code
+- agents-md
+relatedPosts:
+- slug: declared-rules-fail-open-robots-txt-agents-md-2026
+  score: 0.7
+  reason:
+    en: The new post maps the three official routes that explain the silent truncation
+      failures measured in the 219-run AGENTS.md experiment.
+    ko: 이 글에서 확인한 '규칙이 잘려도 에러 없이 실패한다'는 관측을 뒷받침하는 AGENTS.md 읽기 경로의 공식 스펙을 새 글이 세 가지
+      경로로 정리한다.
+    ja: 「ルールが切れてもエラーにならない」という実測の背景となる、AGENTS.mdを読む公式経路を新記事が3つに整理する。
+    zh: 新文章用三条官方路径解释了旧文219次实测中AGENTS.md规则被静默截断却不出错的机制。
 ---
 
-I needed to know whether @import, symlink, and file copy are interchangeable for wiring AGENTS.md into Claude Code. I ran six cells, eighteen runs, with all tools and MCP servers disabled so the model could not open any file on its own. The three wirings differ by 116 tokens on a 2,920-token document; the code fence in CLAUDE.md is the only import-style cell where the document never loads.
+## AGENTS.md alone does not reach Claude Code
 
-If your team has a CLAUDE.md with a code fence that mentions @AGENTS.md, that import is dead. You will not see an error. You will not see a token spike. You will just have every new session start without the 2,920 tokens of context you wrote. I would rather grep for that pattern on a Tuesday morning than debate which wiring is prettier.
+Say you run a small shop. You write a notice with your staff's house rules and pin it somewhere in the back room. The staff never see it, because they only check one specific board by the front door.
 
-## The parser does not look inside fences
+That is roughly what happens between two files. AGENTS.md is a file where a team writes the rules and context that AI coding helpers should follow. Claude Code is one such helper, a program where you type instructions in plain language and it works on code with you. Claude Code has its own notice board, called CLAUDE.md. The official docs say it plainly: "Claude Code reads `CLAUDE.md`, not `AGENTS.md`."
 
-> "You can also reference other files using the @ syntax. For example, you can add @AGENTS.md to your CLAUDE.md file to import its contents."
-> — [Memory files — Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/memory)
+So if your team already has an AGENTS.md and you just leave it there, Claude Code never reads it. Nothing crashes. There is no error. The rules are simply written down somewhere nobody looks. In our test, we placed a marker inside an AGENTS.md (a word the helper could only know by reading it) and asked it to report the marker. With no connection between the files, it found the marker 0 times out of 3 tries. The cost of each session stayed at the baseline level, meaning the document never entered its reading at all.
 
-The loader reads CLAUDE.md at session start. It scans for the @filename pattern and treats each match as an import directive. That scan happens outside markdown code fences and code spans. Text inside a fence is an inert string to the parser. So when @AGENTS.md sits between fence markers, the loader does not open the file. It does not log a warning. It does not retry. The @ symbol is just a character in a paragraph, the way a dollar sign inside a code block is not currency.
+![Excerpt of the raw output from the bare AGENTS.md cell, with no wiring, the canary was missed in all 3 tries, input tokens 14,940×3.](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/log-bare-agents.png)
 
-The 141-token rise in the fenced cell is the fence markers and the literal @AGENTS.md string themselves, ingested as inert text. The 2,920-token document never enters the prompt. No error path exists for "found an @ inside a fence" because the parser has no concept of a missed fence. It did not fail to find the file. It did not look there.
+The part that affects you: having the file is not the same as the helper reading it. Someone has to physically connect the two.
 
-## 116 tokens on a 2,920-token document
+## Three official ways to attach the document
 
-> "bare-agents 0/3 hit, total_input −2 vs control. at-import 3/3, 17978. symlink 3/3, 17856. copy 3/3, 17862. fenced-import ZZFENC85 0/3, total_input 15081."
-> — [probe-2026-08-19 — lab.json + results](data/labs/probe-2026-08-19-claude-md-at-import-agents-md-vs-symlink-2026/)
+Claude Code's docs list three official ways to get the notice onto the right board. Each method works a little differently, so here is what you actually do.
 
-| Cell | Hit rate | total_input | Delta vs copy |
-|---|---|---|---|
-| bare-agents (no wiring) | 0/3 | control −2 | — |
-| @import | 3/3 | 17,978 | +116 |
-| symlink | 3/3 | 17,856 | −6 |
-| copy | 3/3 | 17,862 | 0 |
-| fenced @import | 0/3 | 15,081 | −2,781 |
+1. **The @import line.** At the top of CLAUDE.md, you write a single line, `@AGENTS.md`. This tells the helper: "when you start, also read that file." You are pointing the helper at another file instead of putting the content in the file it reads. The docs describe it as: "CLAUDE.md files can import additional files using `@path/to/import` syntax. Imported files are expanded and loaded into context at launch alongside the CLAUDE.md that references them."
 
-The canary document is 9,674 bytes, which bills as 2,920 tokens at 3.31 bytes per token. @import bills 116 tokens more than copy. Symlink bills 6 tokens less. On a 2,920-token document, that is a 4 percent spread. The three methods are functionally identical. They all put the same 2,920 tokens into the prompt. The spread is the import mechanism's own overhead, not a quality difference.
+2. **The symbolic link.** This is a pointer file that pretends to be the real file. You make CLAUDE.md a pointer that opens AGENTS.md. The helper opens CLAUDE.md and finds itself reading AGENTS.md. It is like hanging the recipe card itself on the board hook, instead of copying it.
 
-## Three wirings, one function
+3. **The copy.** You duplicate AGENTS.md and save the duplicate as CLAUDE.md. Same content, second file. Like hand-copying the recipe card. Simple, but now you maintain two cards: change one, and the other goes stale.
 
-The official documentation lists @import, symlink, and copy as three ways to reference AGENTS.md. In practice, the three differ only in how the loader or filesystem resolves the path. @import is a string the loader expands at parse time. Symlink is a filesystem entry the loader follows. Copy is a literal file the loader reads. The prompt the model receives is the same 2,920 tokens in all three cases.
+All three are documented. The question we wanted to answer: do they behave the same once running?
 
-This means the choice is a maintenance preference, not a functional one. You pick one, you commit, you do not revisit. A team that switches from symlink to @import because someone read a blog post is spending review time on a 116-token difference.
+## What the test measured: all three arrived, at nearly the same cost
 
-## Where "equivalent" stops being true
+We ran the same check for each method, 3 times per method, and watched two things. First, did the marker get through, did the helper actually read the document? Second, what each session cost, measured in tokens. Tokens are the small units a language model reads and writes, and they are what you get billed for.
 
-The strongest objection: this is 9,674 bytes, three runs per cell, one macOS machine, one version of Claude Code. A lab from 2026-08-16 showed the same loader producing probabilistic omission at 31 to 48 KiB. Whether the three wirings still land within 116 tokens of each other at 50 KiB or above is unconfirmed.
+The result: all three methods delivered the document 3 out of 3 times. And the cost difference between the three was 122 tokens at most. That number means little on its own. One full copy of the document bills about 2,920 tokens. The gap between the best and worst of the three methods was 122 tokens, roughly 4% of one document copy. In money terms, the difference between the three routes is a rounding error.
 
-And the codex axis. The previous lab on 2026-08-18 killed all 60 codex runs on the usage limit. The limit lifts on 2026-09-15. Teams that run both codex and claude in the same repository: this dataset answers half the question. "How do you wire AGENTS.md" is not a single-tool question for those teams.
+One detail worth knowing: the @import line did not bill the document twice. Reading it through the pointer cost essentially the same as having a plain copy, only about 116 tokens more, which covers the wrapper CLAUDE.md itself, not the imported document.
 
-I grant the range. If your AGENTS.md exceeds 32 KiB, or you run codex and claude side by side, "equivalent" is a claim I have not yet verified. For a 9,674-byte document in a single claude session, the three wirings are the same.
+![Excerpt of the raw output from the copy cell, the canary was reached in all 3 tries, input tokens 17,862×3.](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/log-copy.png)
 
-## The grep and the lint rule
+So what changes on your end is simple: you do not need to agonize over which method is "faster" or "cheaper." They are the same for practical purposes. Choose by convenience, not performance.
 
-What I told the team: run `grep -n '@' CLAUDE.md` and look for any @ path that sits inside a code fence. One line in the documentation template lint: no @ paths between fence markers. That is a 30-second check.
+## One wrapped line kills the whole load
 
-The fence trap is not version-specific. It is not OS-specific. It is a parse rule. The loader will not look inside a fence on 2.1.233, and it will not look inside a fence on whatever ships next quarter. The trap is structural, not a bug a patch will fix.
+Here is where the test found something genuinely dangerous. Suppose you write documentation and want to show an example, "don't type this literally, but a line would look like this." A natural way to mark "this is just an example" is to wrap it in a code fence: three backtick characters before and after the line, the same marks used to set off code in ordinary notes.
 
-Any markdown formatter, any prettier config, any CI lint that reformats CLAUDE.md can introduce a fence around an example line. The next person who opens a new session after that reformat will not know the import is dead. There is no signal. No error. No degraded performance metric. The 2,920 tokens simply are not there.
+We wrapped the line `@AGENTS.md` in such a fence, as an example. The result: the marker was found 0 out of 3 times. The document did not load at all. The session cost dropped to almost the no-connection baseline, only 141 tokens above it, which is about the size of the fence marks themselves.
 
-## What a dead import costs per quarter
+Read that again. The fence did not merely make that one line "an example." It silently disconnected the entire document. Six characters of decoration decided whether a whole file's worth of rules existed. And nothing looks broken: the file is still there, the line is still there, the helper just never reads any of it.
 
-A team of eight engineers, each opening a new session three times a day, is 1,440 sessions per quarter. If the rules document is 2,920 tokens and it is not in the prompt, every one of those sessions starts without the context. The model will guess. It will ask clarifying questions that waste turns. It will produce code that violates the conventions you wrote.
+![Excerpt of the raw output from the fence-wrapped cell, the canary was missed in all 3 tries, input tokens 15,081×3.](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/log-fenced-import.png)
 
-You do not see this in a dashboard. You see it as a slower code review, as a PR that needs two extra rounds because the model did not know the naming convention, as a junior who asks a question the document already answered. The 2,920 tokens are cheap. The review time they prevent is not.
+This is not a bug we discovered against the docs; it is documented behavior. The official docs state: "Import parsing skips Markdown code spans and fenced code blocks. To mention a path in your CLAUDE.md without importing it, wrap it in backticks: writing `@README` keeps the text literal, while @README outside backticks imports the file." The parser reads the file at startup and deliberately skips anything inside code fences. Our token measurements confirm this rule operates at the loading step, not just on screen.
 
-## What this dataset does not answer
+One last point: a line "written down" and a line "actually read" are different things. One innocent formatting choice can switch a whole document off.
 
-Four-hop recursive import: the documentation says maximum depth of four hops. I measured one hop. Whether the fence rule applies at depth two, three, four is untested.
+## Which method to pick is decided by your situation
 
-Insertion position: the total_input tells me the document is in the prompt. It does not tell me where. After the system prompt? Before the first user message? The raw data has a 109-token variance in two of the six cells that I cannot explain from the fields available.
+Since the three methods cost the same, the choice comes down to your circumstances, like choosing between taping a note, hanging the card, or copying it.
 
-50 KiB and above. Codex axis. Both open.
+- **If your team uses only Claude Code** and has no need for a shared AGENTS.md with other tools, the copy is fine and easiest to understand.
+- **If you use AGENTS.md with several tools** (it is a shared format that other coding helpers also read), the copy forces you to maintain two documents. Pick a method that keeps one source of truth: the @import line or the symbolic link.
+- **On Windows**, the docs are explicit: "On Windows, creating a symlink requires Administrator privileges or Developer Mode, so use the `@AGENTS.md` import instead." If getting admin rights is a hassle on your machine, the @import line is the low-friction route. It also lets you add Claude-only notes below the import line, which a plain link cannot do.
 
-Here is my read. If your team has not wired AGENTS.md into Claude Code yet, pick any of the three methods, commit, and do not revisit. The 116-token spread is not a decision axis. If you have already wired it, grep CLAUDE.md for @ paths inside fences this week. That is the only check that matters.
+The upshot: performance cannot decide this for you, because there is no performance difference to find. Your operating constraints do.
 
-The 32 KiB boundary and the codex axis are open questions. I will re-measure when the usage limit lifts on 2026-09-15. What you can say from a 9,674-byte, three-run, single-version dataset and what you can say after a quarter of production use are different things.
+## What this article could not verify
 
-Three lines of fence markers determine whether a 2,920-token document loads. The document format is the load protocol. There is no manifest. There is no config file. The markdown grammar of CLAUDE.md itself is the import mechanism. Which means every tool that reformats your CLAUDE.md is a load-path dependency, and none of them will warn you when they introduce a fence.
+Each method was tested only 3 times, so rare flukes would not show up. Also, the same run contained an unexplained wobble of exactly 109 tokens in 4 of 6 cells. It is small, but unexplained.
+
+![Excerpt of the raw output from the control cell, wired to nothing, the canary was missed in all 3 tries, input tokens 14,942×3.](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/log-notes-control.png)
+
+We also tested on macOS only, so we did not measure the Windows symlink permission problem ourselves; the docs' advice on that stands unverified by us. Next, it would be worth re-running with more repetitions and on Windows.
+
+One condition would make this article's judgment wrong. Repeat the test. If any of the three methods fails to reach the document in all 3 tries (say it hits only 1/3 or 2/3), or a gap of about 2,920 tokens appears between methods, then the claim that the three wirings are equal is false.
+
+So, the two lines that matter. If you want out, do nothing. You don't use multiple coding tools together and you don't need Claude-only settings. Just leave your file as it is. But make sure no path in your config is ever wrapped in a code fence. If you want in, pick one of the three methods today. Use the @import line if you're on Windows or want to append Claude-only notes. Otherwise use the link or the copy. And whenever you mention a path in the config, keep it unwrapped.
 
 ## References
-- [Memory files — Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/memory)
-- [probe-2026-08-19 — lab.json + results](data/labs/probe-2026-08-19-claude-md-at-import-agents-md-vs-symlink-2026/)
+
+1. [Manage Claude's memory (CLAUDE.md) / Claude Code Docs](https://code.claude.com/docs/en/memory) — Anthropic (code.claude.com)
+2. [AGENTS.md](https://agents.md/) — agents.md

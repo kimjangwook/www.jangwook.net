@@ -1,104 +1,103 @@
 ---
-title: 三种 AGENTS.md 接线方式成本相同；CLAUDE.md 里一个代码围栏才是真正杀死 import 的静默陷阱
-description: 实测三种将 AGENTS.md 接入 Claude Code 的方式，token 差异仅 116。真正的陷阱：CLAUDE.md 中用代码围栏包裹
-  @AGENTS.md，文档加载直接归零，无报错、无 token 异常、无任何信号。
-pubDate: '2026-08-26'
+title: 让 Claude Code 读取 AGENTS.md 的三种官方方法费用相同 — 只有代码围栏里的一行会悄悄让整个文件消失
+description: 实测三种把 AGENTS.md 接入 Claude Code 的官方方法，三种都能让规则文件送达，费用差异小到可以忽略。真正的坑不是选哪种接法，而是一行被代码围栏包住的写法会让整个文件安静地不被读取。
+pubDate: '2026-08-28'
 heroImage: ../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/hero.png
 tags:
-- Claude Code
 - AGENTS.md
-- 上下文工程
-- 工程效能
-- AI 辅助开发
+- Claude Code
 relatedPosts:
-- slug: claude-md-vs-skill-vs-subagent-same-rule-three-layers-measured-2026
-  score: 0.9
-  reason:
-    ko: 같은 CLAUDE.md 컨텍스트 계층 구조를 다른 각도에서 실측한 후속 글
-    ja: 同じ CLAUDE.md コンテキスト階層を別の角度から実測した続編
-    en: Follow-up that measures the same CLAUDE.md context layer from a different
-      angle
-    zh: 同一 CLAUDE.md 上下文层次的另一角度实测
-- slug: mcp-builtin-vs-external-harness-cost-28x-measured-2026
+- slug: declared-rules-fail-open-robots-txt-agents-md-2026
   score: 0.7
   reason:
-    ko: MCP 서버 비용 구조를 실측한 글로, 도구 의존성 논의와 연결
-    ja: MCP サーバーのコスト構造を実測した記事で、ツール依存性の議論と接続
-    en: MCP server cost structure measurement that connects to the tool-dependency
-      discussion
-    zh: MCP 服务器成本结构实测，与工具依赖性讨论相关联
+    en: The new post maps the three official routes that explain the silent truncation
+      failures measured in the 219-run AGENTS.md experiment.
+    ko: 이 글에서 확인한 '규칙이 잘려도 에러 없이 실패한다'는 관측을 뒷받침하는 AGENTS.md 읽기 경로의 공식 스펙을 새 글이 세 가지
+      경로로 정리한다.
+    ja: 「ルールが切れてもエラーにならない」という実測の背景となる、AGENTS.mdを読む公式経路を新記事が3つに整理する。
+    zh: 新文章用三条官方路径解释了旧文219次实测中AGENTS.md规则被静默截断却不出错的机制。
 ---
 
-我需要确认一件事：@import、symlink、文件拷贝这三种方式把 AGENTS.md 接入 Claude Code，到底能不能互换。我跑了 6 个单元格、18 次运行，全部工具和 MCP 服务器关闭，模型无法自行打开任何文件。三种接线在一份 2,920 token 的文档上只差 116 token；CLAUDE.md 里的代码围栏是唯一一个文档从未加载的接线方式。
 
-如果你团队的 CLAUDE.md 里有一段代码围栏提到了 @AGENTS.md，那条 import 已经死了。你不会看到报错。你不会看到 token 飙升。你只是每个新会话都少了一段 2,920 token 的上下文。我宁愿周二早上 grep 一下那个模式，也不想开会讨论哪种接线方式更优雅。
+## 只放一个 AGENTS.md 文件，规则不会自动送达
 
-## 解析器不看围栏内部
+先说这跟我有什么关系：如果你或你的团队用 AI 编程助手，你们写的规矩文件可能根本没被读到。规矩没被读到，就等于没写。
 
-> "You can also reference other files using the @ syntax. For example, you can add @AGENTS.md to your CLAUDE.md file to import its contents."
-> — [Memory files — Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/memory)
+![仅放置 AGENTS.md 的单元格的原始输出摘录 — 3 次全部未命中，输入 14,940×3。](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/log-bare-agents.png)
 
-loader 在会话启动时读取 CLAUDE.md。它扫描 @filename 模式，将每个匹配项当作 import 指令。这个扫描发生在 markdown 代码围栏和代码跨度之外。围栏内的文本对解析器来说就是一段惰性字符串。所以 @AGENTS.md 夹在围栏标记中间时，loader 不会打开那个文件。不会记录警告。不会重试。@ 符号就是段落里的一个字符，跟代码块里的美元符号不代表货币一样。
+具体说。有一个叫 AGENTS.md 的文件，它是给编程 AI 看的"说明书"，里面写着这个项目该注意什么。AGENTS.md 的官方网站说，这个文件装的是"编程助手需要的额外、有时很详细的上下文"。
 
-围栏单元格里 total_input 多出来的 141 token，就是围栏标记本身加上 @AGENTS.md 这个字面字符串，作为惰性文本被吞了进去。那份 2,920 token 的文档从未进入 prompt。不存在"在围栏里发现了 @"这条错误路径，因为解析器根本没有"漏看围栏"这个概念。它不是没找到文件。它是压根没往那儿看。
+问题在这里。一个叫 Claude Code 的编程助手工具，它的官方文档写得很直接："Claude Code 读取的是 CLAUDE.md，不是 AGENTS.md。"也就是说，你把说明书（AGENTS.md）放在桌上，但读说明书的人（Claude Code）只认另一个名字的文件夹（CLAUDE.md）。
 
-## 2,920 token 文档上的 116 token 差异
+我们做了实测来确认这一点。把 AGENTS.md 文件单独放在那里，什么都不做，然后让 Claude Code 启动 3 次，看它能不能答出说明书里藏的一道暗号。结果 3 次全部没答上。而且从用量数字看，那次启动消耗的"输入量"和一个完全没有说明书的对照情况几乎一样，只差 2 个单位。这说明不是"读得不仔细"，是整个文件压根没进它的脑子。
 
-> "bare-agents 0/3 hit, total_input −2 vs control. at-import 3/3, 17978. symlink 3/3, 17856. copy 3/3, 17862. fenced-import ZZFENC85 0/3, total_input 15081."
-> — [probe-2026-08-19 — lab.json + results](data/labs/probe-2026-08-19-claude-md-at-import-agents-md-vs-symlink-2026/)
+对普通人的意思：文件写好了、放在正确的地方，不等于被读到了。这和"通知贴在公告栏"和"通知真的被人看了"是两回事。
 
-| 单元格 | 命中率 | total_input | 相对 copy 差异 |
-|---|---|---|---|
-| bare-agents（无接线） | 0/3 | 对照 −2 | — |
-| @import | 3/3 | 17,978 | +116 |
-| symlink | 3/3 | 17,856 | −6 |
-| copy | 3/3 | 17,862 | 0 |
-| fenced @import | 0/3 | 15,081 | −2,781 |
+## 把说明书接过去的三个官方办法
 
-canary 文档是 9,674 字节，按 3.31 字节/token 计费为 2,920 token。@import 比 copy 多计 116 token。symlink 比 copy 少 6 token。在一份 2,920 token 的文档上，这是 4% 的波动。三种方式功能上完全相同。它们都把同样的 2,920 token 放进了 prompt。这个差异是 import 机制自身的开销，不是质量差异。
+怎么办？官方文档给了三个办法，把 AGENTS.md 的内容接到 Claude Code 认识的 CLAUDE.md 上。
 
-## 三种接线，同一功能
+用一个家里的比喻。假设你有一份家电说明书，想让家里人都能看到。你有三种摆法：
 
-官方文档把 @import、symlink、copy 列为引用 AGENTS.md 的三种方式。实际上，三者只在 loader 或文件系统如何解析路径这一点上有区别。@import 是 loader 在解析时展开的字符串。symlink 是 loader 跟随的文件系统条目。copy 是 loader 直接读取的字面文件。模型收到的 prompt 在三种情况下都是同样的 2,920 token。
+1. **写一张便条引用它**——在 CLAUDE.md 里写一行"请去读 @AGENTS.md"。这叫 @import，意思是启动时把那个文件的内容展开、一起装进去。官方文档说，被引用的文件"会在启动时和引用它的文件一起展开并加载"。
+2. **把说明书本身挂到那个位置**——做一个符号链接。符号链接就是一个"同一份文件的两个名字"，像在家里同一个位置挂两块门牌，指的其实是同一间屋子。命令是 `ln -s AGENTS.md CLAUDE.md`。
+3. **把说明书抄一份放过去**——直接复制一份文件，改名叫 CLAUDE.md。
 
-这意味着这个选择纯粹是维护偏好。你选一种，定了，不再改。一个团队因为有人读了篇博客就从 symlink 换成 @import，是在拿 review 时间讨论 116 token 的差异。
+注意第三种有个代价：说明书变成两份了。以后改规矩，得记得改两处，不然两份会越走越远。第二种就没有这个问题，因为本来只有一份。第一种也只有一个原件。
 
-## "等价"在哪里失效
+## 三种方法的实测结果：都能到，费用几乎一样
 
-最强的反驳：这是 9,674 字节、每个单元格 3 次运行、一台 macOS 机器、一个 Claude Code 版本。2026-08-16 的实验室数据显示同一个 loader 在 31 到 48 KiB 文档上出现概率性遗漏。50 KiB 以上三种接线是否仍然落在 116 token 以内，未确认。
+三种接法我们都各测了 3 次。判断标准是那道藏在说明书开头的暗号有没有被 AI 说出。另外还看了每次启动的"输入量"，你可以把它理解成这次对话开头要"读进去"的内容有多少，内容越多，花的钱越多。
 
-还有 codex 轴线。2026-08-18 的前一次实验把 60 次 codex 运行全部打在了 usage limit 上。限制在 2026-09-15 解除。同时在同一个仓库里跑 codex 和 claude 的团队：这份数据只回答了半个问题。"怎么接 AGENTS.md"对那些团队来说不是单工具问题。
+结果：三种方法，暗号都是 3 次全部命中。输入量也几乎一样——复制法是 17,862 个单位，@import 是 17,978 个单位，符号链接是 17,856 个单位。三种方法之间最大的差距只有 122 个单位。
 
-我承认这个边界。如果你的 AGENTS.md 超过 32 KiB，或者同时跑 codex 和 claude，"等价"是我尚未验证的论断。对于一份 9,674 字节的文档、单次 claude 会话，三种接线是同一回事。
+![复制方式单元格的原始输出摘录 — 3 次全部命中，输入 17,862×3。](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/log-copy.png)
 
-## 一条 grep 和一条 lint 规则
+122 这个数字大不大？要先知道说明书本身值多少。那份测试用的说明书有 9,674 字节，大约是几千个汉字的文本量，折算下来约 2,920 个输入单位——这是每次启动都要为它付的"账单"。122 相当于这份账单的 4% 以内。直接说：122 相当于说明书本身费用的 4% 以内，可以忽略。
 
-我给团队的指令：跑 `grep -n '@' CLAUDE.md`，检查有没有 @ 路径落在代码围栏里。文档模板 lint 加一行：围栏标记之间不允许出现 @ 路径。30 秒的检查。
+所以结论是：选哪种接法，不是性能问题，而是各家情况的问题。这个判断对你意味着，你不用为"选错接法导致效果变差"而焦虑，可以按自己团队的便利来选。
 
-围栏陷阱不依赖版本。不依赖操作系统。它是解析规则。loader 在 2.1.233 上不会看围栏内部，下个季度发布的版本也不会。这是结构性问题，不是某个 patch 能修的 bug。
+不过要诚实说一句：有人会反驳说，122 个单位的差距虽然小，但每种只测了 3 次，还观察到原因不明的 109 个单位的波动，所以"完全一样"这话在统计上说过头了。这个反驳有道理。只是对实际使用者来说，关键问题不是"4% 的差距稳不稳定"，而是"哪种不会坏"——三种的命中率都是 3/3，没有一种坏。
 
-任何 markdown 格式化工具、任何 prettier 配置、任何会重新格式化 CLAUDE.md 的 CI lint，都可能在一行示例代码外面套上围栏。重新格式化之后下一个打开新会话的人不会知道 import 已经死了。没有信号。没有报错。没有性能指标下降。那 2,920 token 就是不在。
+## 一行被代码围栏包住的写法，会让整个文件安静地消失
 
-## 一条死掉的 import 每季度值多少钱
+这是本文最重要的发现。
 
-8 个工程师的团队，每人每天新开 3 次会话，一个季度 1,440 个会话。如果规则文档是 2,920 token 且不在 prompt 里，每一个会话都在没有上下文的状态下启动。模型会猜。它会问澄清问题，浪费轮次。它会写出违反你写明的规范的代码。
+写说明文档时，人们经常想举个例子："比如你可以写 @AGENTS.md 这样引用。"为了让例子好看，会用代码围栏把例子包起来。代码围栏就是 Markdown 里用三个反引号围出的一块区域，作用类似把一段话装进一个透明的展示盒，表示"这是展示用的，别照着执行"。
 
-你在 dashboard 上看不到这个。你看到的是 code review 变慢，是某个 PR 因为模型不知道命名规范多走了两轮，是个 junior 问了文档里已经回答过的问题。2,920 token 很便宜。它省下的 review 时间不便宜。
+我们实测了这种情况：CLAUDE.md 里确实写了 `@AGENTS.md` 这一行，只是被代码围栏包住了。结果：暗号 3 次全部没命中。输入量是 15,081，和"什么都没接"的水平几乎一样，只多 141。
 
-## 这份数据没有回答的问题
+![被代码围栏包住的单元格的原始输出摘录 — 3 次全部未命中，输入 15,081×3。](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/log-fenced-import.png)
 
-四跳递归 import：文档说最大深度四跳。我测了一跳。围栏规则在第二跳、第三跳、第四跳是否仍然成立，未测。
+也就是说，那六七个围栏字符，决定了整份说明书（约 2,920 个单位的内容）进不进得去。不是"读得马虎"，是一个字节都没进去。
 
-插入位置：total_input 告诉我文档在 prompt 里，但不告诉我它在哪。系统 prompt 之后？第一条用户消息之前？原始数据里，6 个单元格中有 2 个存在 109 token 的方差，我手头的字段解释不了。
+为什么会这样？官方文档写明了原因："import 解析会跳过 Markdown 的行内代码和围栏代码块。想在 CLAUDE.md 里提到一个路径而不触发导入，就把它包在反引号里。"翻译成大白话：Claude Code 在启动时有个"收发员"逐行检查 CLAUDE.md，看到 @路径 就去把那个文件取来。但收发员有一条规矩——凡是装在"展示盒"里的内容一律跳过不看。这条规矩本来是保护你的，让你能提到路径而不触发读取。副作用是，如果你不小心把真想导入的那一行也装进了展示盒，收发员就真的不取了，而且不会有任何报错提示你。
 
-50 KiB 以上。codex 轴线。两个都是开放问题。
+这里我需要留意的是：文件"写着"和"被读到"是两回事。写错了位置或格式，规矩会整份消失，而且安静得没有任何提示。
 
-我的判断。如果你的团队还没把 AGENTS.md 接入 Claude Code，三种方式随便选一种，定了，不再改。116 token 的波动不是决策依据。如果你已经接了，这周 grep 一下 CLAUDE.md 里围栏中的 @ 路径。这是唯一有意义的检查。
+## 选哪种接法由各团队的情况决定
 
-32 KiB 边界和 codex 轴线是开放问题。2026-09-15 限制解除后我会重新测量。一份 9,674 字节、3 次运行、单版本的数据集能说的话，和一个季度生产使用之后能说的话，是两回事。
+既然性能一样，就按处境选：
 
-三行围栏标记决定一份 2,920 token 文档是否加载。文档格式就是加载协议。没有 manifest。没有配置文件。CLAUDE.md 自身的 markdown 语法就是 import 机制。这意味着每一个会重新格式化你 CLAUDE.md 的工具都是加载路径上的依赖，而其中任何一个引入围栏时都不会警告你。
+- **Windows 电脑**：官方文档说，在 Windows 上创建符号链接需要管理员权限或开发者模式，所以建议用 @import 那一行引用的写法。你的团队用的电脑系统，直接决定了哪种接法做起来不折腾。
+- **要不要给 Claude 加专属内容**：如果 CLAUDE.md 里还想额外写一些只给 Claude 看的规矩，用 @import 方式，把 AGENTS.md 引进来，下面再写自己的内容。符号链接做不到这一点，因为它俩是同一个文件。
+- **两份文件都不想维护**：用符号链接，只有一份源文件，改动不会失联。
+
+最后是我决定要做的两件事：
+
+**如果你想把 AGENTS.md 接进 Claude Code**：今天就三选一——在 Windows 上或需要加 Claude 专属内容，就用 @import 一行引用；否则用符号链接。并且记住，CLAUDE.md 里凡是只是"提到"路径而非真想导入的地方，必须用反引号包住。
+
+**如果你只想退出、什么都不接**：如果你们不用 Claude Code，或暂时不需要它读这份文件，那就什么都不用做，把文件放着即可。但检查一下有没有人把引用行包进了代码围栏。有的话，其他工具共享的说明也可能被悄悄跳过。
+
+![不属于任何方法的对照单元格的原始输出摘录 — 3 次全部未命中，输入 14,942×3。](../../../assets/blog/agents-md-three-wirings-equal-cost-codefence-silent-trap-2026/log-notes-control.png)
+
+## 本文未能核实的部分
+
+这次没有核实的东西有：每种接法只重复了 3 次，罕见的偶然失误测不到。符号链接的结果只在苹果电脑的 macOS 系统上成立，Windows 的权限问题没实测。还有一种原因不明的 109 个单位的用量波动，在 6 组实验里的 4 组中反复出现，但查不出来源。超出本文范围的是：其他编程工具怎么处理 AGENTS.md，以及文档送达后 AI 有没有真的照做——"到达"不等于"服从"。接下来要核实的是：在更大的文件上，代码围栏这个坑是否同样出现。
+
+这个判断在什么条件下会错：如果同样的实验重做时，三种接法中有任何一种的命中率不再是 3 次全部命中，或者接法之间出现了接近一份说明书体量（约 2,920 个单位）的费用差距，那么"三种接法一样好"这个结论就是错的。
 
 ## 参考资料
-- [Memory files — Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/memory)
-- [probe-2026-08-19 — lab.json + results](data/labs/probe-2026-08-19-claude-md-at-import-agents-md-vs-symlink-2026/)
+
+1. [Manage Claude's memory (CLAUDE.md) / Claude Code Docs](https://code.claude.com/docs/en/memory) — Anthropic (code.claude.com)
+2. [AGENTS.md](https://agents.md/) — agents.md
