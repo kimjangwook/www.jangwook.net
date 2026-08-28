@@ -437,9 +437,10 @@
     "cells": 6,
     "cells_usable": 3,
     "status": "partial",
-    "consumed": false,
+    "consumed": true,
     "surprised": true,
-    "headline": "claude 에서 규칙 문서는 6/6 도달했고 중립 태스크에서는 f-string 을 기저율 6/6 에서 0/6 으로 눌렀지만, 사용자 프롬프트가 규칙 하나와 충돌하자 6/6 run 이 그 문서를 프롬프트 인젝션으로 판정해 충돌하지 않은 나머지 두 규칙까지 함께 버렸다(marker 4/6→0/6, canary 4/6→0/6). codex 18 run 은 usage limit 으로 전부 실패해 engine 축은 미측정."
+    "headline": "claude 에서 규칙 문서는 6/6 도달했고 중립 태스크에서는 f-string 을 기저율 6/6 에서 0/6 으로 눌렀지만, 사용자 프롬프트가 규칙 하나와 충돌하자 6/6 run 이 그 문서를 프롬프트 인젝션으로 판정해 충돌하지 않은 나머지 두 규칙까지 함께 버렸다(marker 4/6→0/6, canary 4/6→0/6). codex 18 run 은 usage limit 으로 전부 실패해 engine 축은 미측정.",
+    "consumed_by": "loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026"
   },
   {
     "id": "probe-2026-08-28-agent-instruction-loading-series-2-does-loaded-rule-change-code-2026-r2",
@@ -480,9 +481,10 @@
     "runs": 12,
     "cells": 5,
     "status": "partial",
-    "consumed": false,
+    "consumed": true,
     "surprised": true,
     "headline": "벤더 문서는 로딩 스코프·우선순위·계층을 선언하지만 4개 셀 모두 효과 선언 히트는 0으로, '로드된 지시문이 코드를 바꾼다'는 전제는 문서 대조만으로는 확인 불가하여 2편 측정 설계의 필요성이 확인되었다.",
-    "notes": "CLI 의존으로 제외된 셀: cell-effect-claim-crosswalk"
+    "notes": "CLI 의존으로 제외된 셀: cell-effect-claim-crosswalk",
+    "consumed_by": "loaded-rules-discarded-as-prompt-injection-when-user-pushes-2026"
   }
 ]
