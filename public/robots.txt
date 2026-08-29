@@ -1,33 +1,10 @@
-# AI 학습(training) 크롤러: 모델 학습 사용 거부
-# 전략 근거: /ko/blog/ko/ai-crawler-control-robots-txt-llms-txt-2026
-User-agent: GPTBot
-User-agent: ClaudeBot
-User-agent: CCBot
-User-agent: Google-Extended
-Disallow: /
-
-# AI 검색/인용(search) 크롤러: 인용·유입 허용
-# 교차 언어 안전망을 이 그룹에도 복제 (그룹 매칭 특성).
-# Disallow를 Allow보다 앞에 둬 first-match·longest-match 파서 모두에서 동일 동작.
-User-agent: OAI-SearchBot
-User-agent: Claude-SearchBot
-User-agent: PerplexityBot
-Disallow: /ko/blog/en/
-Disallow: /ko/blog/ja/
-Disallow: /ko/blog/zh/
-Disallow: /en/blog/ko/
-Disallow: /en/blog/ja/
-Disallow: /en/blog/zh/
-Disallow: /ja/blog/ko/
-Disallow: /ja/blog/en/
-Disallow: /ja/blog/zh/
-Disallow: /zh/blog/ko/
-Disallow: /zh/blog/en/
-Disallow: /zh/blog/ja/
-Allow: /
+# AI 크롤러 전면 허용 (2026-08-30)
+# 학습 차단 그룹(GPTBot·ClaudeBot·CCBot·Google-Extended)을 제거했다.
+# 근거: 학습 차단은 에이전트 브라우징·AI Overviews를 막지 못하는 반면,
+# Google-Extended는 학습과 그라운딩(인용)을 묶은 단일 레버라 인용 통로까지 함께 닫혔다.
 
 User-agent: *
-# Block cross-language content mismatch URLs (safety net)
+# 교차 언어 콘텐츠 불일치 URL 차단 (SEO 안전망, AI 정책과 무관)
 Disallow: /ko/blog/en/
 Disallow: /ko/blog/ja/
 Disallow: /ko/blog/zh/
