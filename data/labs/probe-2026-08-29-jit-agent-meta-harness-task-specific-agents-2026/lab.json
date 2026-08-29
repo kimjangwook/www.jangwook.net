@@ -1,0 +1,30 @@
+{
+  "id": "probe-2026-08-29-jit-agent-meta-harness-task-specific-agents-2026",
+  "pillar": "agent-org-harness",
+  "question": "동일 모델·동일 디코딩 조건에서 GitHub bingreeky/JIT 소스가 주장하는 대로, 태스크마다 즉석 생성한 태스크 특화 하네스(JIT-Agent 방식)는 베이스라인 단일 프롬프트 대비 코딩 태스크 2종의 숨은 테스트 통과율을 유의미하게 올리는가? 올렸다면 그 증분이 '태스크 특화성'에서 오는가, 아니면 하네스 존재 자체(추가 구조·재시도 여지)에서 오는가?",
+  "expectation": "주장이 참이면 jit-harness 셀이 baseline 셀보다 두 태스크 모두에서 통과율 +10pp 이상 높고, generic-harness(태스크 무관 범용 하네스)는 baseline과 ±5pp 이내로 묶인다. 주장이 거짓이거나 하네스 생성이 노이즈만 추가하면 jit-harness ≈ baseline이거나 generic-harness와 구분되지 않는다.",
+  "environment": {
+    "os": "Ubuntu 24.04 컨테이너(동일 머신, 동시 실행 없음)",
+    "model": "단일 오픈가중치 모델 1종(예: 로컬 서빙 8B급 instruct 1개), temperature=0 greedy 고정, max_tokens 동일 — JIT-Agent의 핵심 주장이 '모델 교체 없이 하네스만으로'이므로 모델 변수는 완전 고정",
+    "fixtures": "오프라인 로컬 픽스처 2종: taskA=CSV 파서 구현(숨은 테스트 12개), taskB=기존 코드의 경계 조건 버그 수정(숨은 테스트 10개). 숨은 테스트는 작성자가 별도 보관하고 실행 시에만 주입",
+    "jit_harness_cache": "JIT-Agent의 하네스 생성 단계는 사전 실행 결과를 ./harnesses/jit/{task}.md로 고정 캐시해 두고, 실험 본체는 캐시된 하네스를 그대로 프롬프트로 주입한다(네트워크·외부 API 호출 없음, 측정 중 하네스 재생성 금지)",
+    "isolation": "셀별 독립 워크스페이스, 실행 순서 셔플, 각 repeat마다 워크스페이스 초기화"
+  },
+  "dimensions": {
+    "mode": [
+      "baseline",
+      "jit-harness",
+      "generic-harness"
+    ],
+    "task": [
+      "taskA",
+      "taskB"
+    ]
+  },
+  "runs": 18,
+  "cells": 6,
+  "status": "partial",
+  "consumed": false,
+  "surprised": true,
+  "headline": "하네스 비교는 실험 인프라 붕괴로 검증 불가: 태스크A는 fixture 부재·bench/run.py 부재로 무효화됐고 태스크B 두 하네스 셀은 usable_runs 0이었으며 metrics상 6개 셀 모두 hits 0."
+}
