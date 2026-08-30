@@ -5,6 +5,11 @@
   "note": "이 파일은 sunday-strategy 가 매주 쓴다. 1,860줄짜리 strategy-report.md 를 파싱하는 대신 기계가독 계약을 둔다. 없거나 10일 이상 낡으면 topic-pick 은 topic-backlog.json 의 priority <= 0 으로 폴백한다.",
   "slugs": [
     {
+      "slug": "google-extended-one-token-training-and-grounding-2026",
+      "since": "2026-08-29",
+      "reason": "사용자 수동 지목(2026-08-29). Gemini Spark 로 자사 글을 읽히려다 자기 robots.txt 의 Google-Extended Disallow 에 막힌 사건. 학습·grounding 이 한 토큰에 묶인 것은 3사 중 Google 뿐이라 자사 실측이 그대로 근거가 된다"
+    },
+    {
       "slug": "codex-claude-shared-instruction-workaround-2026",
       "since": "2026-08-16",
       "reason": "이번 주 How-to 0%. 08-19 symlink 글의 우회를 따라 하는 월요일 How-to"

@@ -158,9 +158,10 @@
     "runs": 60,
     "cells": 10,
     "status": "partial",
-    "consumed": false,
+    "consumed": true,
     "surprised": true,
-    "headline": "claude 2.1.233 은 cwd 의 조상 CLAUDE.md 를 git 루트 바깥까지 전부 읽고(above 6/6, root 6/6), 하위 디렉터리 문서는 그 트리의 파일을 읽을 때만 도달한다(leaf ask 0/6, 같은 위치 leaf touch 도달 6/6). 뒤집히는 축은 문서 위치가 아니라 cwd 였다 — 같은 repo/packages/CLAUDE.md 가 cwd=root 0/6, cwd=leaf 6/6. 다만 지연 로드로 도달한 6런은 6/6 이 그 문서를 프롬프트 인젝션으로 분류해 지시 준수는 3/6 에 그쳤고, launch 로드된 36런은 36/36 준수에 0런만 의심했다. 통제 셀 NOTES.md 는 0/6. codex 0.147.0 셀 10개 60런은 전부 usage limit 으로 모델 턴 없이 죽어 엔진 비교축은 미측정이다."
+    "headline": "claude 2.1.233 은 cwd 의 조상 CLAUDE.md 를 git 루트 바깥까지 전부 읽고(above 6/6, root 6/6), 하위 디렉터리 문서는 그 트리의 파일을 읽을 때만 도달한다(leaf ask 0/6, 같은 위치 leaf touch 도달 6/6). 뒤집히는 축은 문서 위치가 아니라 cwd 였다 — 같은 repo/packages/CLAUDE.md 가 cwd=root 0/6, cwd=leaf 6/6. 다만 지연 로드로 도달한 6런은 6/6 이 그 문서를 프롬프트 인젝션으로 분류해 지시 준수는 3/6 에 그쳤고, launch 로드된 36런은 36/36 준수에 0런만 의심했다. 통제 셀 NOTES.md 는 0/6. codex 0.147.0 셀 10개 60런은 전부 usage limit 으로 모델 턴 없이 죽어 엔진 비교축은 미측정이다.",
+    "consumed_by": "claude-md-reachability-bound-to-cwd-lazy-loaded-rules-half-obeyed-2026"
   },
   {
     "id": "probe-2026-08-19-claude-md-at-import-agents-md-vs-symlink-2026",
