@@ -516,5 +516,43 @@
     "consumed": false,
     "surprised": true,
     "headline": "하네스 비교는 실험 인프라 붕괴로 검증 불가: 태스크A는 fixture 부재·bench/run.py 부재로 무효화됐고 태스크B 두 하네스 셀은 usable_runs 0이었으며 metrics상 6개 셀 모두 hits 0."
+  },
+  {
+    "id": "probe-2026-08-30-codex-claude-shared-instruction-workaround-2026",
+    "pillar": "agent-org-harness",
+    "question": "AI CLI를 실행하지 않고도 symlink 공유 우회(AGENTS.md ↔ CLAUDE.md)가 성립하는지를 문서 계층과 파일시스템 계층에서만 잴 수 있는가 — Claude Code가 AGENTS.md를 네이티브로 읽는다는 문서항이 존재하는가, symlink가 32KiB 한도 검사에 동일하게 투사되는가, symlink가 이동·재배치에 견디는가, 그리고 agents.md/Codex 공식 문서가 symlink를 금지하거나 특수취급하는가",
+    "expectation": "Claude Code 체인지로그에 AGENTS.md 네이티브 로딩 항목이 확인되면 symlink 우회 자체가 불필요해 훅의 전제가 무너진다. 네이티브 항목이 없어도 stat이 디레퍼런스되므로 두 경로의 크기·바이트 내용·32KiB 경계 카나리 오프셋이 완전히 일치하고, 상대 symlink만 재배치에 생존하며, agents.md 스펙에는 symlink 규정이 없을 것이라 예상한다.",
+    "environment": {
+      "os": "리눅스(실행 단계에서 임시 작업 디렉터리 자동 생성 가정)",
+      "tools": [
+        "curl",
+        "node",
+        "coreutils(ln, diff, stat)"
+      ],
+      "network": "code.claude.com, raw.githubusercontent.com, agents.md 만 허용",
+      "constraints": "LLM CLI(aggy/agy/claude/codex/gemini/grok/llm) 전혀 호출 금지 — 로딩 거동을 실행으로 확인하는 대신 문서 표면 파싱과 파일시스템 계층의 symlink 의미론으로만 측정"
+    },
+    "dimensions": {
+      "doc-surface": [
+        "claude-changelog",
+        "codex-docs-raw",
+        "agents-md-spec"
+      ],
+      "layout": [
+        "symlink-relative",
+        "symlink-absolute",
+        "plain-copy"
+      ],
+      "fs-event": [
+        "static-read",
+        "dir-relocated"
+      ]
+    },
+    "runs": 12,
+    "cells": 4,
+    "status": "partial",
+    "consumed": false,
+    "surprised": true,
+    "headline": "체인지로그에서 AGENTS.md 네이티브 로딩 항목은 없었고(0건) 상대 symlink만 재배치에 생존했으며 agents.md/Codex 문서에는 symlink 규정이 없었으나, 32KiB 경계 투사는 3회 모두 ENOENT로 검증에 실패했다."
   }
 ]
