@@ -1,0 +1,41 @@
+{
+  "id": "probe-2026-08-31-gsc-generative-ai-control-switch-document-reading-2026",
+  "pillar": "agent-org-harness",
+  "question": "Search Console의 2026-06-03 신설 생성형 AI 컨트롤은 스위치가 실제로 몇 개의 상태(기본 / AI 기능 제외 / 완전 제외 가설)를 갖고, 각 상태로 토글할 때 어떤 신호가 나가고 사이트 표면에 무엇이 변하는가 — 그리고 그 실물이 support 문서(16908024, \"This control doesn't affect AI training\" 포함)의 조항들과 어디에서 대응하고 어디에서 어긋나는가?",
+  "expectation": "가설: UI는 문서가 암시하는 것보다 많은(또는 다른) 상태 수를 가진다 — 기본 + AI 기능 제외 + 문서에 명시 없는 완전 제외형 3상태일 가능성. 토글은 상태별로 구분되는 백엔드 페이로드를 보내지만 사이트 측 표면(robots.txt, 헤더, HTML)에는 아무 변화도 남기지 않는다(색인 측 신호이므로). UI 도움말 문구는 문서의 행동 지시 조항 일부만 되풀이하고 '학습 무관' 조항은 스위치 자체로는 검증 불가다. 어긋난 칸이 표로 남으면 뉴스의 존재 이유가 된다.",
+  "environment": {
+    "property": "www.jangwook.net (GSC 소유자 권한 보유 계정)",
+    "session": "영구 프로필을 쓰는 Headless Chromium 인증 세션(GSC 설정 화면 접근용), 수동 사전 로그인 1회",
+    "fixtures": "out/fixtures/gsc-doc-16908024.txt — 2026-08-31 verified 수집물(소스 1·2)에서 지원 문서 본문과 Google 블로그 발표문을 저장한 스냅샷. URL 호스트 제한상 실험 런타임에 원문을 다시 fetch 하지 않고 스냅샷만 diff에 쓴다",
+    "baseline": "아무 상태 변경 전의 robots.txt(라이브 106줄), 응답 헤더, 본문 HTML 해시를 out/baseline/ 에 고정"
+  },
+  "dimensions": {
+    "phase": [
+      "static-read",
+      "toggle",
+      "post-toggle"
+    ],
+    "surface": [
+      "gsc-ui",
+      "gsc-xhr",
+      "site-signals",
+      "doc-text"
+    ],
+    "state": [
+      "default",
+      "ai-excluded",
+      "full-excluded-if-present"
+    ],
+    "clause": [
+      "states-coverage",
+      "training-unaffected",
+      "rollout-subset"
+    ]
+  },
+  "runs": 15,
+  "cells": 5,
+  "status": "partial",
+  "consumed": false,
+  "surprised": true,
+  "headline": "생성형 AI 컨트롤의 추가 상태 가설은 뒷받침되지 않았고, 토글 페이로드 비교와 문서-UI 격차 검증은 의존 파일·스크립트 부재로 대부분 실행되지 못했다."
+}
