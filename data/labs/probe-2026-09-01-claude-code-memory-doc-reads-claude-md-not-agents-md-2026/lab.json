@@ -1,0 +1,30 @@
+{
+  "id": "probe-2026-09-01-claude-code-memory-doc-reads-claude-md-not-agents-md-2026",
+  "pillar": "agent-org-harness",
+  "question": "같은 디렉터리에 CLAUDE.md와 AGENTS.md가 나란히 있을 때 Claude Code의 메모리/컨텍스트 로딩은 어느 파일의 내용을 읽는가 — AGENTS.md 단독일 때는 읽히는가",
+  "expectation": "2026-08-31 기준 Claude Code는 CLAUDE.md의 마커만 컨텍스트에 로드하고 AGENTS.md는 이름이 같은 역할 파일이라도 무시한다. Coexistent 칸에서 CLAUDE.md 마커만 관찰되고, agents_only 칸에서 AGENTS.md 마커가 로드되지 않는다면 주장이 확인된다.",
+  "environment": {
+    "os": "linux",
+    "runtime": "node + Claude Code npm cli(cli.js 직접 실행, claude 래퍼 바이너리 미사용)",
+    "isolation": "각 실행마다 mktemp 디렉터리를 프로젝트 루트로 사용, CLAUDE_CONFIG_DIR/HOME을 임시 경로로 격리해 전역 메모리 오염 차단",
+    "network": "claude -p 실행에 API 키 필요, 모델 응답 대신 디버그 로그의 파일로드흔적을 1차 관찰로 삼음"
+  },
+  "dimensions": {
+    "memory_pairing": [
+      "coexistent",
+      "agents_only",
+      "claude_only",
+      "none"
+    ],
+    "probe": [
+      "debug_log_scan",
+      "model_self_report"
+    ]
+  },
+  "runs": 12,
+  "cells": 4,
+  "status": "partial",
+  "consumed": false,
+  "surprised": true,
+  "headline": "네 조건 모두 마커 관측 0회 — 파일시스템 오류(Read-only file system, mkdir 실패)로 CLAUDE.md vs AGENTS.md 로딩 우선순위에 대한 결론을 전혀 내지 못했다."
+}
