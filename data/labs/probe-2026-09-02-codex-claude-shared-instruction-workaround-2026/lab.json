@@ -1,0 +1,36 @@
+{
+  "id": "probe-2026-09-02-codex-claude-shared-instruction-workaround-2026",
+  "pillar": "agent-org-harness",
+  "question": "하나의 AGENTS.md를 심mlink로 CLAUDE.md(및 홈 전역 경로)에 물려 Codex와 Claude Code가 같은 지침 파일을 읽게 만드는 우회는, 파일 해상도·상위 디렉터리 도달성·override 섀도·32KiB 예산의 어느 칸에서 실제로 성립하고 어느 칸에서 무너지는가",
+  "expectation": "심mlink 양방향 모두 readlink -f 기준 동일 대상으로 해석되고, 루트 심mlink는 하위 디렉터리에서 상위 워크로 도달 가능하며, AGENTS.override.md가 없는 한 섀도 없이 결합 크기가 32KiB 이하이면 공유 구성이 유지된다. override 파일 존재 시 Codex 쪽 픽은 override로 넘어가 공유가 깨진다.",
+  "environment": {
+    "notes": "CLI 의존으로 제외된 셀: c1-symlink-claude-to-agents-local, c2-symlink-agents-to-claude-md-local"
+  },
+  "dimensions": {
+    "wiring": [
+      "claude-md-symlink-to-agents",
+      "agents-symlink-to-claude-md",
+      "global-home-symlink"
+    ],
+    "reachability": [
+      "root",
+      "subdirectory-walk-up"
+    ],
+    "shadow": [
+      "none",
+      "AGENTS.override.md",
+      "preexisting-home-files"
+    ],
+    "size": [
+      "under-32KiB",
+      "over-32KiB"
+    ]
+  },
+  "runs": 9,
+  "cells": 5,
+  "status": "partial",
+  "consumed": false,
+  "surprised": false,
+  "headline": "루트 심mlink의 상위 도달성(reachable_at_up=3, marker_via_walk=1)과 홈 경로 심mlink 결합(exists=yes)은 성립했으나, 32KiB 예산은 bytes=31769(v31)에서 유지되고 bytes=33817(v33)에서 over_limit_by=1049로 무너지며, 실제 CLI 픽업 검증은 LLM CLI 의존 셀 2개 제외로 불가했다.",
+  "notes": "CLI 의존으로 제외된 셀: c1-symlink-claude-to-agents-local, c2-symlink-agents-to-claude-md-local"
+}
