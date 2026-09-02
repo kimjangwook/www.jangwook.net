@@ -385,9 +385,10 @@
     "runs": 18,
     "cells": 6,
     "status": "partial",
-    "consumed": false,
+    "consumed": true,
     "surprised": false,
-    "headline": "claude 2.1.241 은 200개 카탈로그를 연결 시점에 nextCursor 로 10페이지 전량 선인출한다(3/3, 62,708B — 20개 단일페이지 6,235B 의 10.06배). DPoP·progressive discovery·webhook·ID-JAG 는 MCP 스키마 네 버전(2025-06-18/2025-11-25/2026-07-28/draft) 모두 0회이고 로드맵·헌장 산문에만 있으며, tasks/ 는 2025-11-25 에 25회 있다가 현행 2026-07-28 에서 0회로 코어 스키마 밖으로 나갔다. codex 0.147.0 셀은 사용량 한도로 0/3, 판정 불가."
+    "headline": "claude 2.1.241 은 200개 카탈로그를 연결 시점에 nextCursor 로 10페이지 전량 선인출한다(3/3, 62,708B — 20개 단일페이지 6,235B 의 10.06배). DPoP·progressive discovery·webhook·ID-JAG 는 MCP 스키마 네 버전(2025-06-18/2025-11-25/2026-07-28/draft) 모두 0회이고 로드맵·헌장 산문에만 있으며, tasks/ 는 2025-11-25 에 25회 있다가 현행 2026-07-28 에서 0회로 코어 스키마 밖으로 나갔다. codex 0.147.0 셀은 사용량 한도로 0/3, 판정 불가.",
+    "consumed_by": "mcp-roadmap-vs-schema-catalog-prefetch-measured-2026"
   },
   {
     "id": "probe-2026-08-28-agent-instruction-loading-series-2-does-loaded-rule-change-code-2026",
