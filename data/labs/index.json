@@ -664,5 +664,49 @@
     "surprised": false,
     "headline": "루트 심mlink의 상위 도달성(reachable_at_up=3, marker_via_walk=1)과 홈 경로 심mlink 결합(exists=yes)은 성립했으나, 32KiB 예산은 bytes=31769(v31)에서 유지되고 bytes=33817(v33)에서 over_limit_by=1049로 무너지며, 실제 CLI 픽업 검증은 LLM CLI 의존 셀 2개 제외로 불가했다.",
     "notes": "CLI 의존으로 제외된 셀: c1-symlink-claude-to-agents-local, c2-symlink-agents-to-claude-md-local"
+  },
+  {
+    "id": "probe-2026-09-03-google-extended-one-token-training-and-grounding-2026",
+    "pillar": "agent-org-harness",
+    "question": "Google-Extended가 학습과 grounding을 하나의 토큰으로 묶는 '유일 레버 = robots.txt 토큰'이라는 주장을 자사 robots.txt 토큰 대조와 UA 6종 응답으로 반증하거나 확인할 수 있는가",
+    "expectation": "(1) 라이브 robots.txt에서 Google-Extended는 Disallow 그룹에 있고, 인용 허용 그룹(OAI-SearchBot/Claude-SearchBot/PerplexityBot)에는 Google 몫의 대응 검색 토큰이 없다. (2) git(45줄)과 라이브(106줄)의 차이는 Cloudflare 삽입 블록에서 온다. (3) UA 6종 본문 요청은 전부 307→200으로 HTTP 단 차단이 없다. (4) Cloudflare Content-Signal 헤더는 search=yes, ai-train=no이고 ai-input은 미선언이라 grounding 분리 레버가 아니다. (5) OpenAI·Anthropic 공식 문서는 검색/학습 토큰이 분리되어 있어 '독립 설정'을 명시한다. 이 다섯이 모두 성립하면 '학습 거부가 인용까지 끊는 스위치는 Google만 하나'라는 주장이 확인된다.",
+    "environment": {
+      "os": "linux",
+      "shell": "bash",
+      "network": "public-internet",
+      "tools": [
+        "curl",
+        "grep",
+        "awk",
+        "diff",
+        "git"
+      ],
+      "targets": [
+        "https://jangwook.net/robots.txt",
+        "https://www.jangwook.net/",
+        "https://platform.openai.com/docs/bots",
+        "https://docs.anthropic.com"
+      ]
+    },
+    "dimensions": {
+      "surface": [
+        "robots-txt-live",
+        "robots-txt-git-drift",
+        "http-endpoint-ua",
+        "http-response-headers",
+        "official-docs-tokens"
+      ],
+      "provider": [
+        "google",
+        "openai",
+        "anthropic"
+      ]
+    },
+    "runs": 18,
+    "cells": 6,
+    "status": "partial",
+    "consumed": false,
+    "surprised": true,
+    "headline": "Google-Extended '단일 레버' 주장은 라이브 robots.txt 주석과 OpenAI 문서의 토큰 독립성 문구, 그리고 여섯 UA 전부 first=200 final=200이라는 결과로 방향이 지지되었으나, Content-Signal 헤더 셀이 3회 모두 실패해 학습-인용 분리 레버의 부재까지는 확인하지 못했다."
   }
 ]
