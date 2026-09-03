@@ -705,8 +705,9 @@
     "runs": 18,
     "cells": 6,
     "status": "partial",
-    "consumed": false,
+    "consumed": true,
     "surprised": true,
-    "headline": "Google-Extended '단일 레버' 주장은 라이브 robots.txt 주석과 OpenAI 문서의 토큰 독립성 문구, 그리고 여섯 UA 전부 first=200 final=200이라는 결과로 방향이 지지되었으나, Content-Signal 헤더 셀이 3회 모두 실패해 학습-인용 분리 레버의 부재까지는 확인하지 못했다."
+    "headline": "Google-Extended '단일 레버' 주장은 라이브 robots.txt 주석과 OpenAI 문서의 토큰 독립성 문구, 그리고 여섯 UA 전부 first=200 final=200이라는 결과로 방향이 지지되었으나, Content-Signal 헤더 셀이 3회 모두 실패해 학습-인용 분리 레버의 부재까지는 확인하지 못했다.",
+    "consumed_by": "google-extended-single-lever-training-grounding-tied-robots-txt-2026"
   }
 ]
