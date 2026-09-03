@@ -152,10 +152,12 @@ async function loadPosts() {
 async function validateImages(posts) {
   const singleImagePosts = [];
 
-  for (const post of posts.filter((item) => item.indexable)) {
+  for (const post of posts) {
     const heroImage = post.data.heroImage;
     if (!heroImage) {
-      warnings.push(`${post.relPath}: missing heroImage`);
+      if (post.indexable) {
+        warnings.push(`${post.relPath}: missing heroImage`);
+      }
     } else if (typeof heroImage === 'string') {
       const heroPath = resolveLocalContentRef(post.file, heroImage);
       if (heroPath && !await fileExists(heroPath)) {
@@ -175,7 +177,7 @@ async function validateImages(posts) {
 
     // 전략 기준: 본문에 시각적 보조 자료(이미지·mermaid·표)가 하나도 없으면 경고.
     // 히어로만 있는 글이라도 다이어그램·표가 있으면 품질 기준 충족으로 본다.
-    if (localImages.length === 0 && post.mermaidCount === 0 && post.tableLineCount === 0) {
+    if (post.indexable && localImages.length === 0 && post.mermaidCount === 0 && post.tableLineCount === 0) {
       singleImagePosts.push(`${post.lang}/${post.slug}`);
     }
   }
