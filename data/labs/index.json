@@ -709,5 +709,40 @@
     "surprised": true,
     "headline": "Google-Extended '단일 레버' 주장은 라이브 robots.txt 주석과 OpenAI 문서의 토큰 독립성 문구, 그리고 여섯 UA 전부 first=200 final=200이라는 결과로 방향이 지지되었으나, Content-Signal 헤더 셀이 3회 모두 실패해 학습-인용 분리 레버의 부재까지는 확인하지 못했다.",
     "consumed_by": "google-extended-single-lever-training-grounding-tied-robots-txt-2026"
+  },
+  {
+    "id": "probe-2026-09-04-owasp-mcp-governance-risk-inventory-2026",
+    "pillar": "agent-org-harness",
+    "question": "자사 하네스에 연결된 MCP 서버들을 OWASP MCP 거버넌스 프로젝트의 인벤토리·리스크 스코어링 기준에 대입하면 몇 개가 어떤 칸(설치 스키마·권한 범위·업데이트 부재)에서 플래그되는가?",
+    "expectation": "하네스 설정에서 추출한 MCP 서버 목록은 OWASP 기준의 최소 2개 칸에서 플래그된다 — 특히 버전 고정 없는 원격 설치와 과대 권한(전역 파일시스템·네트워크) 항목에서 다수가 점수를 받는다.",
+    "environment": {
+      "os": "darwin",
+      "harness": "자사 하네스의 MCP 설정 파일(.mcp.json, ~/.claude.json 계열)이 존재하는 로컬 머신",
+      "tools": [
+        "jq",
+        "git",
+        "curl"
+      ],
+      "reference": "https://github.com/OWASP/OWASP-MCP-Governance-and-Risk-Project"
+    },
+    "dimensions": {
+      "criterion": [
+        "inventory-enumeration",
+        "install-schema",
+        "permission-scope",
+        "update-absence"
+      ],
+      "server_class": [
+        "local-stdio",
+        "remote-http",
+        "builtin"
+      ]
+    },
+    "runs": 15,
+    "cells": 5,
+    "status": "complete",
+    "consumed": false,
+    "surprised": true,
+    "headline": "하네스에서 MCP 서버(analytics-mcp)는 열거되었으나 5개 셀 모두 hits 0으로 OWASP 기준 플래그는 하나도 산출되지 않았고, 크로스워크 셀은 결과 파일 부재로 실패했다."
   }
 ]
