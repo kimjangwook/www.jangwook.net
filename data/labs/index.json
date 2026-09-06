@@ -745,5 +745,29 @@
     "surprised": true,
     "headline": "하네스에서 MCP 서버(analytics-mcp)는 열거되었으나 5개 셀 모두 hits 0으로 OWASP 기준 플래그는 하나도 산출되지 않았고, 크로스워크 셀은 결과 파일 부재로 실패했다.",
     "consumed_by": "mcp-governance-audit-exit-code-zero-fail-open-harness-2026"
+  },
+  {
+    "id": "probe-2026-09-06-codex-project-doc-max-bytes-truncation-2026",
+    "pillar": "agent-org-harness",
+    "question": "Codex AGENTS.md 로딩이 32 KiB(32768 B) 초과 시 바이트 경계에서 잘라내는가, 아니면 파일 단위(whole-file)로 건너뛰는가 — 문서 문구와 소스 코드에서 판별할 수 있는가?",
+    "expectation": "문서 'stops adding files once the combined size reaches the limit' 은 파일 단위 스킵을 시사하지만, 소스 코드가 실제로 바이트 수준 slice 로 truncate 하는지 확인. 두 출처가 일치하면 파일 단위, 불일치하면 바이트 단위(또는 문서 오류)로 결론.",
+    "environment": {
+      "notes": [
+        "node >= 20, curl, grep. 외부 LLM CLI 불필요. network: platform.openai.com, raw.githubusercontent.com 접근."
+      ]
+    },
+    "dimensions": {
+      "axis": [
+        "truncation-granularity",
+        "source-agreement",
+        "boundary-math"
+      ]
+    },
+    "runs": 9,
+    "cells": 3,
+    "status": "complete",
+    "consumed": false,
+    "surprised": true,
+    "headline": "문서와 소스에서 검색 적중 0회로 판별 실패, 경계 계산은 32768 <= 32KiB가 true임을 보여줌."
   }
 ]
