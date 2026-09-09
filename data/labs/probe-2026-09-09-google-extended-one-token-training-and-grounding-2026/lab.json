@@ -1,0 +1,24 @@
+{
+  "id": "probe-2026-09-09-google-extended-one-token-training-and-grounding-2026",
+  "pillar": "agent-org-harness",
+  "question": "Does Google's Google-Extended token simultaneously control both AI training and grounding, with no separate control mechanism, unlike OpenAI and Anthropic which provide distinct tokens for search and training? Additionally, is robots.txt the only effective lever given that all HTTP responses return 200?",
+  "expectation": "We expect to confirm that Google-Extended is a single token governing both training and grounding, that our live robots.txt contains separate tokens for OpenAI and Anthropic but not for Google, and that all six user agents receive HTTP 200, thereby proving robots.txt is the sole control mechanism.",
+  "environment": {
+    "notes": [
+      "Linux environment with curl, python3, git, network access to jangwook.net. Local git repository of the site including robots.txt history."
+    ]
+  },
+  "dimensions": {
+    "axis": [
+      "robots.txt_token_analysis",
+      "http_response_status",
+      "live_vs_git_discrepancy"
+    ]
+  },
+  "runs": 12,
+  "cells": 4,
+  "status": "partial",
+  "consumed": false,
+  "surprised": true,
+  "headline": "실험은 Google-Extended의 단일 통제 토큰 여부와 robots.txt의 유일한 통제 수단임을 확인하지 못했고, 모든 에이전트에 대해 HTTP 200만 확인되었습니다."
+}
