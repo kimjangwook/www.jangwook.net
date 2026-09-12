@@ -25,21 +25,22 @@ const sectionTitles: Record<Language, string> = {
 
 // Get all blog posts and check which language versions exist for this slug
 const allPosts = await getCollection('blog');
-const availableLanguages = Object.keys(languages).filter(lang => {
-  // Check if a post exists for this language and slug
-  return allPosts.some(post => post.id === `${lang}/${slug}.md` || post.id === `${lang}/${slug}`);
+
+const availableLanguages = (Object.keys(languages) as Language[]).filter((lang) => {
+	// Check if a post exists for this language and slug
+	return allPosts.some((post) => post.id === `${lang}/${slug}.md` || post.id === `${lang}/${slug}`);
 });
 ---
 
-<div class="blog-post-language-switcher">
-  <h2>{sectionTitles[currentLang]}</h2>
-  <ul>
-    {availableLanguages.map((lang) => {
+<section class="blog-post-language-switcher" aria-labelledby="article-language-title">
+	<h2 id="article-language-title">{sectionTitles[currentLang]}</h2>
+	<ul>
+		{availableLanguages.map((lang) => {
       const { flag, label, currentLabel } = languages[lang];
       return (
         <li>
           {lang === currentLang ? (
-            <span class="current-language">
+				<span class="current-language" aria-current="page">
               {flag} {currentLabel}
             </span>
           ) : (
@@ -51,45 +52,54 @@ const availableLanguages = Object.keys(languages).filter(lang => {
       );
     })}
   </ul>
-</div>
+</section>
 
 <style>
-  .blog-post-language-switcher {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--gray-200);
-  }
+	.blog-post-language-switcher {
+		margin-top: 3.5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
+	}
 
-  .blog-post-language-switcher h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
+	.blog-post-language-switcher h2 {
+		margin: 0 0 1rem;
+		font-family: var(--font-serif);
+		font-size: 1.35rem;
+		font-weight: 500;
+		line-height: 1.45;
+	}
 
   .blog-post-language-switcher ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		gap: 0.55rem 1.1rem;
+		flex-wrap: wrap;
   }
 
   .blog-post-language-switcher li {
     margin: 0;
   }
 
-  .blog-post-language-switcher a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
+	.blog-post-language-switcher a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.5rem;
+		color: var(--accent, #a33a24);
+		text-decoration: none;
+		text-underline-offset: 0.2em;
+	}
 
-  .blog-post-language-switcher a:hover {
-    opacity: 0.7;
-  }
+	.blog-post-language-switcher a:hover {
+		text-decoration: underline;
+	}
 
-  .current-language {
-    color: var(--gray-600);
-  }
+	.current-language {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.5rem;
+		color: var(--muted, var(--ink-2, #62665d));
+		font-weight: 600;
+	}
 </style>

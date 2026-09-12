@@ -75,7 +75,7 @@ graph TD
 
 ## The five items I actually ran over five days
 
-Measurement first. Each item got a before/after in numbers, not a vibe that "things feel better" but reproducible figures. (The raw log of all five lives on the [improvement history page](/en/improvement-history/) too.)
+Measurement first. Each item got a before/after in numbers, not a vibe that "things feel better" but reproducible figures. (The raw log of all five lives on the improvement history page too.)
 
 | Date | Item | Before | After | Gate |
 |---|---|---|---|---|

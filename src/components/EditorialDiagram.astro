@@ -1,0 +1,262 @@
+---
+import type { Language } from '../lib/i18n/languages';
+
+interface Props {
+	lang: Language;
+}
+
+const { lang } = Astro.props;
+const copy = {
+	ko: {
+		question: '같은 가격이어도, 같은 뜻일까요?',
+		steps: [
+			['원문에 적힌 정보', '가격 · 대상 · 계약 조건'],
+			['수집된 자료', '어떤 자료를 읽었는가?'],
+			['생성된 답변', '조건이 그대로 남았는가?'],
+		],
+		caption: '요금 안내를 예로 든 개념도입니다. 9,900원은 글에서 설명한 가상의 예시이며 실제 서비스의 점검 결과가 아닙니다.',
+	},
+	ja: {
+		question: '同じ価格でも、意味は同じでしょうか。',
+		steps: [
+			['原文の情報', '価格 · 対象 · 契約条件'],
+			['取得した資料', 'どの資料を読んだのか。'],
+			['生成された回答', '条件はそのまま残ったのか。'],
+		],
+		caption: '料金案内を例にした概念図です。9,900 KRWは記事で説明する架空の例であり、実際のサービス監査ではありません。',
+	},
+	en: {
+		question: 'The same price. The same meaning?',
+		steps: [
+			['Source information', 'Price · user · contract'],
+			['Retrieved material', 'What material was read?'],
+			['Generated answer', 'Were the conditions kept?'],
+		],
+		caption: 'A conceptual diagram using a pricing example. The hypothetical 9,900 KRW is explanatory material from the article, not an audit of a real service.',
+	},
+	zh: {
+		question: '价格相同，含义也相同吗？',
+		steps: [
+			['原文中的信息', '价格 · 对象 · 合同条件'],
+			['抓取到的资料', '读取了哪些资料？'],
+			['生成的回答', '条件是否原样保留？'],
+		],
+		caption: '以资费说明为例的概念图。9,900 KRW是文章用于说明的虚构示例，并非对实际服务的审计结果。',
+	},
+}[lang];
+const captionId = `editorial-diagram-caption-${lang}`;
+---
+
+<figure class="editorial-diagram" aria-labelledby={captionId}>
+	<p class="editorial-diagram__eyebrow">READ THE CONDITIONS</p>
+	<h2 class="editorial-diagram__question">{copy.question}</h2>
+	<div class="editorial-diagram__flow">
+		{copy.steps.map(([label, note], index) => (
+			<div class="editorial-diagram__step">
+				<span class="editorial-diagram__index">{String(index + 1).padStart(2, '0')}</span>
+				<h3>{label}</h3>
+				<div class="editorial-diagram__paper">
+					{index === 0 ? (
+						<strong>9,900 <small>KRW</small></strong>
+					) : (
+						<span class="editorial-diagram__lines" aria-hidden="true">
+							<i></i><i></i><i></i>
+						</span>
+					)}
+					<p>{note}</p>
+				</div>
+			</div>
+		))}
+	</div>
+	<figcaption id={captionId}>{copy.caption}</figcaption>
+</figure>
+
+<style>
+	.editorial-diagram {
+		min-width: 0;
+		margin: 0;
+		padding: clamp(1.5rem, 4vw, 2.35rem) 0 1.5rem;
+		border-block: 1px solid var(--paper-rule);
+	}
+
+	.editorial-diagram__eyebrow {
+		margin: 0;
+		color: var(--accent);
+		font-family: var(--font-mono);
+		font-size: 0.62rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		line-height: 1.4;
+		text-transform: uppercase;
+	}
+
+	.editorial-diagram__question {
+		max-width: 25rem;
+		margin: 1.1rem 0 0;
+		font-family: var(--font-serif);
+		font-size: clamp(1.65rem, 3vw, 2.25rem);
+		font-weight: 500;
+		letter-spacing: -0.035em;
+		line-height: 1.45;
+	}
+
+	.editorial-diagram__flow {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: clamp(1rem, 2.5vw, 1.8rem);
+		margin-top: 2rem;
+	}
+
+	.editorial-diagram__step {
+		position: relative;
+		min-width: 0;
+	}
+
+	.editorial-diagram__step:not(:last-child)::after {
+		content: '→';
+		position: absolute;
+		right: clamp(-1.4rem, -2vw, -0.7rem);
+		top: 5.35rem;
+		color: var(--accent);
+		font-family: var(--font-serif);
+		font-size: 1.1rem;
+	}
+
+	.editorial-diagram__index {
+		display: block;
+		margin-bottom: 0.45rem;
+		color: var(--accent);
+		font-family: var(--font-mono);
+		font-size: 0.62rem;
+		line-height: 1;
+	}
+
+	.editorial-diagram h3 {
+		margin: 0;
+		font-family: var(--font-sans);
+		font-size: 0.78rem;
+		font-weight: 600;
+		line-height: 1.5;
+	}
+
+	.editorial-diagram__paper {
+		min-height: 7.5rem;
+		margin-top: 0.7rem;
+		padding: 1rem 0 0.65rem;
+		border-top: 2px solid var(--ink);
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	.editorial-diagram__paper strong {
+		display: block;
+		font-family: var(--font-serif);
+		font-size: clamp(1.45rem, 3vw, 2rem);
+		font-weight: 500;
+		letter-spacing: -0.045em;
+		line-height: 1.3;
+		white-space: nowrap;
+	}
+
+	.editorial-diagram__paper small {
+		font-family: var(--font-sans);
+		font-size: 0.42em;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+	}
+
+	.editorial-diagram__paper p {
+		margin: 1.1rem 0 0;
+		color: var(--accent);
+		font-size: 0.7rem;
+		line-height: 1.65;
+		word-break: keep-all;
+		overflow-wrap: anywhere;
+	}
+
+	.editorial-diagram__lines {
+		display: block;
+		padding-top: 0.25rem;
+	}
+
+	.editorial-diagram__lines i {
+		display: block;
+		width: 88%;
+		height: 1px;
+		margin-bottom: 0.65rem;
+		background: var(--paper-rule);
+	}
+
+	.editorial-diagram__lines i:nth-child(2) {
+		width: 62%;
+		background: var(--accent);
+	}
+
+	.editorial-diagram figcaption {
+		max-width: 32rem;
+		margin-top: 1.25rem;
+		color: var(--muted);
+		font-size: 0.72rem;
+		line-height: 1.7;
+	}
+
+	@media (max-width: 680px) {
+		.editorial-diagram__flow {
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+		}
+
+		.editorial-diagram__step {
+			display: grid;
+			grid-template-columns: 2rem minmax(0, 1fr) minmax(0, 1.35fr);
+			gap: 0.65rem;
+			align-items: baseline;
+			padding: 0.9rem 0;
+			border-top: 1px solid var(--paper-rule);
+		}
+
+		.editorial-diagram__step:first-child {
+			margin-top: 0.8rem;
+		}
+
+		.editorial-diagram__step:not(:last-child)::after {
+			display: none;
+		}
+
+		.editorial-diagram__index,
+		.editorial-diagram h3 {
+			margin: 0;
+		}
+
+		.editorial-diagram__paper {
+			min-height: 0;
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+
+		.editorial-diagram__paper p {
+			margin: 0.22rem 0 0;
+			font-size: 0.7rem;
+		}
+
+		.editorial-diagram__paper strong {
+			font-size: 1.45rem;
+		}
+
+		.editorial-diagram__lines {
+			display: none;
+		}
+	}
+
+	@media (max-width: 360px) {
+		.editorial-diagram__step {
+			grid-template-columns: 1.55rem minmax(0, 1fr) minmax(0, 1.2fr);
+			gap: 0.45rem;
+		}
+
+		.editorial-diagram__paper strong {
+			font-size: 1.3rem;
+		}
+	}
+</style>

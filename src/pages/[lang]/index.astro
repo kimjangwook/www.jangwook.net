@@ -1,15 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
-import BlogCard from '../../components/BlogCard.astro';
+import FAQ from '../../components/FAQ.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import HeroSection from '../../components/HeroSection.astro';
-import FAQ from '../../components/FAQ.astro';
+import { getFAQItems } from '../../data/faq';
+import { filterPostsByDate, calculateReadingTime } from '../../lib/content';
+import { getPostPath, getTagEntries, getTagPath, type BlogPost } from '../../lib/blog';
 import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
 import { useTranslations, type Language } from '../../lib/i18n/languages';
-import { filterPostsByDate, calculateReadingTime } from '../../lib/content';
-import { getFAQItems } from '../../data/faq';
 import ogHome from '../../assets/og-home.jpg';
 
 export function getStaticPaths() {
@@ -18,17 +18,80 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params as { lang: Language };
 const t = useTranslations(lang);
-const faqItems = getFAQItems(lang as 'ko' | 'en' | 'ja' | 'zh');
-
-// Get latest 6 blog posts filtered by language
-// - ko/filename.md -> ko
-// - en/filename.md -> en
-// - ja/filename.md -> ja
+const faqItems = getFAQItems(lang);
 const allPosts = await getCollection('blog');
-const posts = filterPostsByDate(allPosts)
+const localizedPosts = filterPostsByDate(allPosts)
 	.filter((post) => post.id.startsWith(`${lang}/`))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 6);
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featuredSlug = 'ai-search-seo-accessibility-checklist';
+const targetFeatured = localizedPosts.find((post) => post.id === `${lang}/${featuredSlug}`);
+const featuredPost: BlogPost | undefined = targetFeatured ?? localizedPosts[0];
+const featuredHref = featuredPost ? getPostPath(lang, featuredPost) : `/${lang}/blog/`;
+const isTargetFeatured = featuredPost?.id === `${lang}/${featuredSlug}`;
+const latestPosts = localizedPosts
+	.filter((post) => post.id !== featuredPost?.id)
+	.slice(0, 5);
+const topics = getTagEntries(localizedPosts).slice(0, 7);
+
+const copy = {
+	ko: {
+		featuredLabel: '지금 읽을 칼럼',
+		featuredStatement: '검색에 발견되는 일과, 정확하게 전달되는 일.',
+		featuredRead: '칼럼 읽기',
+		latestLabel: '최근의 질문들',
+		latestBrowse: '전체 칼럼 보기',
+		topicsLabel: '주제로 찾아보기',
+		topicsBrowse: '태그 전체 보기',
+		perspectiveLabel: '저자의 메모',
+		perspectiveTitle: '도구의 이름보다, 무엇을 확인했는지.',
+		perspectiveText: '개발하고 운영하며 만난 질문을 기록합니다. 낯선 용어는 설명하고, 관찰과 해석은 나누며, 아직 알 수 없는 것은 남겨 둡니다.',
+	},
+	ja: {
+		featuredLabel: '最初に読むコラム',
+		featuredStatement: '検索で見つかることと、正確に伝わること。',
+		featuredRead: 'コラムを読む',
+		latestLabel: '最近の問い',
+		latestBrowse: 'すべてのコラム',
+		topicsLabel: 'テーマから探す',
+		topicsBrowse: 'タグをすべて見る',
+		perspectiveLabel: '著者のメモ',
+		perspectiveTitle: '道具の名前より、何を確かめたのか。',
+		perspectiveText: '開発と運用で出会った問いを記録します。知らない言葉は説明し、観察と解釈を分け、まだ分からないことは残します。',
+	},
+	en: {
+		featuredLabel: 'A column to start with',
+		featuredStatement: 'Being found in search. Being understood correctly.',
+		featuredRead: 'Read the column',
+		latestLabel: 'Recent questions',
+		latestBrowse: 'Browse all columns',
+		topicsLabel: 'Explore by topic',
+		topicsBrowse: 'Browse all tags',
+		perspectiveLabel: 'A note from the author',
+		perspectiveTitle: 'Beyond tool names: what did we verify?',
+		perspectiveText: 'Questions from building and operating software. Unfamiliar terms explained, observations separated from interpretation, and open questions left visible.',
+	},
+	zh: {
+		featuredLabel: '从这篇专栏开始',
+		featuredStatement: '被搜索发现，与被准确传达。',
+		featuredRead: '阅读专栏',
+		latestLabel: '最近的问题',
+		latestBrowse: '浏览全部专栏',
+		topicsLabel: '按主题查找',
+		topicsBrowse: '查看全部标签',
+		perspectiveLabel: '作者笔记',
+		perspectiveTitle: '比工具名称更重要的，是确认了什么。',
+		perspectiveText: '记录在开发和运营中遇到的问题。解释陌生术语，区分观察与解读，也把尚未确定的部分留下来。',
+	},
+}[lang];
+
+const formatDescription = (post: BlogPost) => post.data.description;
+const formatHomeDate = (date: Date) =>
+	new Intl.DateTimeFormat(lang === 'zh' ? 'zh-CN' : lang, {
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric',
+	}).format(date);
 ---
 
 <!doctype html>
@@ -44,97 +107,445 @@ const posts = filterPostsByDate(allPosts)
 	</head>
 	<body>
 		<Header lang={lang} />
-		<HeroSection lang={lang} />
+		<HeroSection lang={lang} primaryHref={featuredHref} showDiagram={isTargetFeatured} />
 
-		<!-- Latest Posts Section -->
-		<main id="main-content" tabindex="-1" class="latest-notes max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-			<div class="latest-notes__header">
-				<div>
-					<p class="mono uc"><span class="flow-dot"></span> latest</p>
-					<h2>{t('blog.latestPosts')}</h2>
+		<main id="main-content" tabindex="-1" class="home-content">
+			{featuredPost && (
+				<section class="home-section home-featured" id="columns" aria-labelledby="featured-heading">
+					<div class="home-section__label">
+						<h2 id="featured-heading">{copy.featuredLabel}</h2>
+						<time datetime={featuredPost.data.pubDate.toISOString()}>{formatHomeDate(featuredPost.data.pubDate)}</time>
+					</div>
+
+					<div class="home-featured__composition">
+						<div class="home-featured__statement">
+							<p class="home-eyebrow">{(featuredPost.data.tags ?? []).slice(0, 2).join(' / ')}</p>
+							<p>{copy.featuredStatement}</p>
+							<span aria-hidden="true"></span>
+						</div>
+
+						<article class="home-featured__article">
+							<h3><a href={featuredHref}>{featuredPost.data.title}</a></h3>
+							<p>{formatDescription(featuredPost)}</p>
+							<div class="home-featured__meta">
+								<span>{calculateReadingTime(featuredPost.body || '')} {t('blog.readTime')}</span>
+								{(featuredPost.data.tags ?? []).slice(0, 3).map((tag) => (
+									<a href={getTagPath(lang, getTagEntries(localizedPosts).find((entry) => entry.label === tag)?.slug ?? tag)}>{tag}</a>
+								))}
+							</div>
+							<a class="home-text-link" href={featuredHref}>{copy.featuredRead} <span aria-hidden="true">↗</span></a>
+						</article>
+					</div>
+				</section>
+			)}
+
+			<section class="home-section home-latest" id="latest" aria-labelledby="latest-heading">
+				<div class="home-section__label">
+					<h2 id="latest-heading">{copy.latestLabel}</h2>
+					<a class="home-text-link" href={`/${lang}/blog/`}>{copy.latestBrowse} <span aria-hidden="true">→</span></a>
 				</div>
-				<a
-					href={`/${lang}/blog/`}
-					class="latest-notes__archive mono"
-				>
-					{t('blog.viewAll')}
-				</a>
-			</div>
 
-			<div class="latest-notes__list">
-				{posts.map((post, postIndex) => (
-					<BlogCard
-						href={`/${lang}/blog/${post.id}/`}
-						lang={lang}
-						postId={post.id}
-						title={post.data.title}
-						description={post.data.description}
-						pubDate={post.data.pubDate}
-						heroImage={post.data.heroImage}
-						tags={post.data.tags}
-						readingTime={calculateReadingTime(post.body || '')}
-						readingTimeLabel={t('blog.readTime')}
-						readMoreLabel={t('blog.readMore')}
-						eager={postIndex === 0}
-					/>
-				))}
-			</div>
+				{latestPosts.length > 0 ? (
+					<ol class="home-latest__list">
+						{latestPosts.map((post) => (
+							<li>
+								<time datetime={post.data.pubDate.toISOString()}>{formatHomeDate(post.data.pubDate)}</time>
+								<article>
+									<h3><a href={getPostPath(lang, post)}>{post.data.title}</a></h3>
+									<p>{post.data.description}</p>
+								</article>
+								<a class="home-latest__arrow" href={getPostPath(lang, post)} aria-label={`${post.data.title} — ${t('blog.readMore')}`}>
+									<span aria-hidden="true">↗</span>
+								</a>
+							</li>
+						))}
+					</ol>
+				) : (
+						<p class="home-empty">{lang === 'ko' ? '게시된 글이 없습니다.' : lang === 'ja' ? '公開された記事はありません。' : lang === 'zh' ? '暂无已发布文章。' : 'No published articles yet.'}</p>
+				)}
+			</section>
+
+			<section class="home-section home-topics" id="topics" aria-labelledby="topics-heading">
+				<div class="home-section__label">
+					<h2 id="topics-heading">{copy.topicsLabel}</h2>
+					<a class="home-text-link" href={`/${lang}/tags/`}>{copy.topicsBrowse} <span aria-hidden="true">→</span></a>
+				</div>
+				<div class="home-topics__list">
+					{topics.map((topic) => (
+						<a href={getTagPath(lang, topic.slug)}>
+							<span>{topic.label}</span><small>{topic.count}</small>
+						</a>
+					))}
+				</div>
+			</section>
+
+			<section class="home-perspective" id="about" aria-labelledby="perspective-heading">
+				<p class="home-eyebrow">{copy.perspectiveLabel}</p>
+				<h2 id="perspective-heading">{copy.perspectiveTitle}</h2>
+				<p>{copy.perspectiveText}</p>
+				<span class="home-perspective__signature">{lang === 'ko' ? '김장욱' : 'Kim Jangwook'}</span>
+			</section>
 		</main>
 
-		<!-- FAQ Section for AEO (Answer Engine Optimization) -->
-		<FAQ items={faqItems} lang={lang as 'ko' | 'en' | 'ja' | 'zh'} />
-
+		<FAQ items={faqItems} lang={lang} />
 		<Footer lang={lang} />
 	</body>
 </html>
 
 <style>
-	.latest-notes__header {
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		gap: 1.5rem;
-		margin-bottom: 1.2rem;
-		padding-bottom: 0.75rem;
+	.home-content {
+		width: min(var(--page-width), calc(100% - 6rem));
+		padding-block: 0;
+	}
+
+	.home-section {
+		padding-block: clamp(2.5rem, 5vw, 4rem);
 		border-bottom: 1px solid var(--paper-rule);
 	}
 
-	.latest-notes__header p {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.65rem;
-		margin: 0 0 0.5rem;
-		font-size: 0.68rem;
-		color: var(--flow-deep);
+	.home-section__label {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1.5rem;
+		padding-bottom: 1.35rem;
 	}
 
-	.latest-notes__header h2 {
+	.home-section__label h2 {
 		margin: 0;
-		font-size: clamp(2rem, 4vw, 3rem);
-		line-height: 1.05;
-		letter-spacing: -0.02em;
+		font-family: var(--font-serif);
+		font-size: clamp(1.45rem, 3vw, 2rem);
+		font-weight: 500;
+		letter-spacing: -0.035em;
+		line-height: 1.45;
 	}
 
-	.latest-notes__archive {
-		color: var(--flow-deep);
-		font-size: 0.72rem;
-		text-decoration: none;
+	.home-section__label > time {
+		color: var(--muted);
+		font-family: var(--font-mono);
+		font-size: 0.65rem;
 		white-space: nowrap;
 	}
 
-	.latest-notes__archive::after {
-		content: ' ->';
+	.home-eyebrow {
+		margin: 0;
+		color: var(--accent);
+		font-family: var(--font-mono);
+		font-size: 0.62rem;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		line-height: 1.5;
+		text-transform: uppercase;
 	}
 
-	.latest-notes__list {
+	.home-featured__composition {
 		display: grid;
-		gap: 0;
+		grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+		gap: clamp(2.5rem, 8vw, 7rem);
+		align-items: center;
 	}
 
-	@media (max-width: 640px) {
-		.latest-notes__header {
+	.home-featured__composition > *,
+	.home-featured__statement,
+	.home-featured__article,
+	.home-latest__list article {
+		min-width: 0;
+	}
+
+	.home-featured__statement > p:not(.home-eyebrow) {
+		max-width: 22rem;
+		margin: 1.1rem 0 0;
+		font-family: var(--font-serif);
+		font-size: clamp(1.6rem, 3.2vw, 2.35rem);
+		letter-spacing: -0.04em;
+		line-height: 1.62;
+		word-break: keep-all;
+		overflow-wrap: anywhere;
+	}
+
+	.home-featured__statement > span {
+		display: block;
+		width: 4.1rem;
+		height: 2px;
+		margin-top: 1.6rem;
+		background: var(--accent);
+	}
+
+	.home-featured__article h3 {
+		margin: 0;
+		font-family: var(--font-serif);
+		font-size: clamp(1.65rem, 3.2vw, 2.5rem);
+		font-weight: 500;
+		letter-spacing: -0.04em;
+		line-height: 1.5;
+		word-break: keep-all;
+		overflow-wrap: anywhere;
+	}
+
+	.home-featured__article h3 a {
+		color: var(--ink);
+	}
+
+	.home-featured__article h3 a:hover {
+		color: var(--accent);
+	}
+
+	.home-featured__article > p {
+		max-width: 46rem;
+		margin: 1rem 0 0;
+		color: var(--muted);
+		font-size: 1rem;
+		line-height: 1.9;
+		word-break: keep-all;
+		overflow-wrap: anywhere;
+	}
+
+	.home-featured__meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.4rem 0.85rem;
+		margin-top: 1.1rem;
+		color: var(--muted);
+		font-family: var(--font-mono);
+		font-size: 0.64rem;
+	}
+
+	.home-featured__meta a {
+		color: var(--accent);
+		font-family: var(--font-sans);
+		font-size: 0.74rem;
+		text-decoration: underline;
+	}
+
+	.home-text-link {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		color: var(--accent);
+		font-size: 0.76rem;
+		font-weight: 600;
+		white-space: nowrap;
+	}
+
+	.home-featured__article > .home-text-link {
+		margin-top: 0.65rem;
+	}
+
+	.home-latest__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.home-latest__list li {
+		display: grid;
+		grid-template-columns: 8.5rem minmax(0, 1fr) 2rem;
+		gap: clamp(1rem, 3vw, 2.2rem);
+		align-items: start;
+		padding: 1.55rem 0;
+		border-top: 1px solid var(--paper-rule);
+	}
+
+	.home-latest__list time {
+		padding-top: 0.3rem;
+		color: var(--muted);
+		font-family: var(--font-mono);
+		font-size: 0.65rem;
+	}
+
+	.home-latest__list article {
+		min-width: 0;
+	}
+
+	.home-latest__list h3 {
+		margin: 0;
+		font-family: var(--font-serif);
+		font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+		font-weight: 500;
+		letter-spacing: -0.025em;
+		line-height: 1.55;
+		overflow-wrap: anywhere;
+	}
+
+	.home-latest__list h3 a {
+		color: var(--ink);
+	}
+
+	.home-latest__list h3 a:hover {
+		color: var(--accent);
+	}
+
+	.home-latest__list article p {
+		max-width: 48rem;
+		margin: 0.45rem 0 0;
+		color: var(--muted);
+		font-size: 0.9rem;
+		line-height: 1.85;
+		word-break: keep-all;
+		overflow-wrap: anywhere;
+	}
+
+	.home-latest__arrow {
+		min-width: 44px;
+		min-height: 44px;
+		display: inline-grid;
+		place-items: center;
+		align-self: start;
+		color: var(--accent);
+		font-size: 1.2rem;
+		text-decoration: none;
+	}
+
+	.home-empty {
+		margin: 0;
+		color: var(--muted);
+	}
+
+	.home-topics__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 2rem;
+	}
+
+	.home-topics__list a {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.9rem;
+		border-bottom: 1px solid var(--paper-rule);
+		color: var(--ink);
+		font-family: var(--font-serif);
+		font-size: 1.08rem;
+		text-decoration: none;
+	}
+
+	.home-topics__list a:hover {
+		border-bottom-color: var(--accent);
+		color: var(--accent);
+	}
+
+	.home-topics__list small {
+		color: var(--accent);
+		font-family: var(--font-mono);
+		font-size: 0.62rem;
+	}
+
+	.home-perspective {
+		max-width: var(--reading-width);
+		padding-block: clamp(3.5rem, 7vw, 5.5rem) clamp(4rem, 8vw, 6rem);
+	}
+
+	.home-perspective h2 {
+		margin: 1rem 0 0;
+		font-family: var(--font-serif);
+		font-size: clamp(1.7rem, 3vw, 2.35rem);
+		font-weight: 500;
+		letter-spacing: -0.035em;
+		line-height: 1.6;
+	}
+
+	.home-perspective > p:not(.home-eyebrow) {
+		margin: 0.95rem 0 0;
+		color: var(--muted);
+		font-size: 1rem;
+		line-height: 1.9;
+	}
+
+	.home-perspective__signature {
+		display: block;
+		margin-top: 1.3rem;
+		font-family: var(--font-serif);
+		font-size: 1rem;
+	}
+
+	@media (max-width: 1100px) {
+		.home-content {
+			width: min(var(--page-width), calc(100% - 4rem));
+		}
+	}
+
+	@media (max-width: 820px) {
+		.home-content {
+			width: calc(100% - 2.5rem);
+		}
+
+		.home-featured__composition {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.home-featured__statement > p:not(.home-eyebrow) {
+			max-width: 30rem;
+		}
+	}
+
+	@media (max-width: 540px) {
+		.home-content {
+			width: calc(100% - 2rem);
+		}
+
+		.home-section {
+			padding-block: 2.4rem 2.8rem;
+		}
+
+		.home-section__label {
 			align-items: flex-start;
 			flex-direction: column;
+			gap: 0.45rem;
+		}
+
+		.home-featured__statement > p:not(.home-eyebrow) {
+			font-size: 1.6rem;
+		}
+
+		.home-featured__article h3 {
+			font-size: 1.55rem;
+			line-height: 1.6;
+		}
+
+		.home-latest__list li {
+			grid-template-columns: minmax(0, 1fr) 2rem;
+			gap: 0.5rem;
+		}
+
+		.home-latest__list time {
+			grid-column: 1 / -1;
+			padding-top: 0;
+		}
+
+	.home-latest__list h3 {
+			font-size: 1.38rem;
+		}
+
+		.home-latest__list article p {
+			font-size: 0.88rem;
+		}
+
+		.home-perspective {
+			padding-block: 3rem 4.5rem;
+		}
+	}
+
+	.home-featured__statement > p:lang(ja),
+	.home-featured__statement > p:lang(zh),
+	.home-featured__article h3:lang(ja),
+	.home-featured__article h3:lang(zh),
+	.home-latest__list h3:lang(ja),
+	.home-latest__list h3:lang(zh),
+	.home-latest__list article p:lang(ja),
+	.home-latest__list article p:lang(zh) {
+		word-break: normal;
+	}
+
+	@media (max-width: 359px) {
+		.home-content {
+			width: calc(100% - 1.5rem);
+		}
+
+		.home-latest__list h3 {
+			font-size: 1.3rem;
 		}
 	}
 </style>

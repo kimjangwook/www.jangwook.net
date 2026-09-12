@@ -114,19 +114,18 @@ if (validPosts.length === 0) {
 
 <style>
   .related-posts {
-    margin: 3.5rem 0 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--paper-rule);
+    margin: 4.5rem 0 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
   }
 
   .section-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     font-weight: 500;
     margin: 0 0 1.5rem 0;
     color: var(--ink);
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--paper-rule);
+    line-height: 1.4;
   }
 
   .recommendations-list {
@@ -138,18 +137,12 @@ if (validPosts.length === 0) {
   .recommendation-item {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.25rem;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--paper-rule);
-    transition: opacity 0.2s ease;
+    padding: 1.15rem 0;
+    border-top: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
   }
 
-  .recommendation-item:last-child {
-    border-bottom: none;
-  }
-
-  /* 링크가 감싸는 것은 제목 텍스트뿐. 나머지 클릭 영역은 오버레이가 담당한다. */
   .item-link {
     text-decoration: none;
     color: inherit;
@@ -162,13 +155,13 @@ if (validPosts.length === 0) {
   }
 
   .item-link:focus-visible {
-    outline: 2px solid var(--flow-deep);
+    outline: 2px solid var(--focus-ring, var(--accent, #a33a24));
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   .recommendation-item:hover {
-    opacity: 0.8;
+    color: var(--accent, #a33a24);
   }
 
   .item-content {
@@ -183,37 +176,30 @@ if (validPosts.length === 0) {
     font-size: 1.12rem;
     font-weight: 500;
     color: var(--ink);
-    /* At or above the 1.5 floor SC 1.4.12 names, so a user override cannot
-       shrink this clamp box. */
     line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow-wrap: anywhere;
   }
 
   .recommendation-item:hover .item-title {
-    color: var(--flow-deep);
+    color: var(--accent, #a33a24);
   }
 
   .item-reason {
     margin: 0;
     font-size: 0.8125rem;
-    color: var(--ink-2);
-    line-height: 1.5;
-    /* This sentence is written per recommendation and appears nowhere else on
-       the site. A clamp here has no mechanism to reveal the rest, so there is
-       no clamp: the text wraps in full. */
+    color: var(--muted, var(--ink-2, #62665d));
+    line-height: 1.7;
+    overflow-wrap: anywhere;
   }
 
   .item-image {
     flex-shrink: 0;
     width: 120px;
     height: 80px;
-    border-radius: 6px;
+    border-radius: 0;
     overflow: hidden;
-    background: var(--paper-2);
-    border: 1px solid var(--paper-edge);
+    background: var(--surface, var(--paper, #f4f0e8));
+    border: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
   }
 
   .item-image img {
@@ -226,7 +212,7 @@ if (validPosts.length === 0) {
   @media (max-width: 640px) {
     .related-posts {
       margin: 2.5rem 0 2rem;
-      padding: 1.5rem;
+      padding-top: 1.25rem;
     }
 
     .section-title {

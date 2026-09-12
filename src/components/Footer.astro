@@ -1,245 +1,195 @@
 ---
-/**
- * Footer Component
- * UX Psychology Principles Applied:
- * - Tesler's Law: Back-to-top button reduces navigation complexity
- * - Fitts's Law: Touch-friendly social link targets (44x44px)
- * - Aesthetic-Usability Effect: Hover micro-interactions on social icons
- * - WCAG AA: Focus-visible states for keyboard navigation
- */
-import { useTranslations, type Language } from "../lib/i18n/languages";
-import BackToTop from "./BackToTop.astro";
+import { useTranslations, type Language } from '../lib/i18n/languages';
+import BackToTop from './BackToTop.astro';
+import BrandMark from './BrandMark.astro';
 
 interface Props {
-  lang: Language;
+	lang: Language;
 }
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const today = new Date();
+
+const footerLabels = {
+	ko: {
+		links: '바로가기',
+		privacy: '개인정보처리방침',
+		terms: '이용약관',
+		tagline: '무엇을 확인했는지, 판단의 근거를 기록합니다.',
+	},
+	en: {
+		links: 'Explore',
+		privacy: 'Privacy',
+		terms: 'Terms',
+		tagline: 'Notes on what was checked and why it matters.',
+	},
+	ja: {
+		links: 'リンク',
+		privacy: 'プライバシー',
+		terms: '利用規約',
+		tagline: '何を確かめたのか、判断の根拠を記録します。',
+	},
+	zh: {
+		links: '链接',
+		privacy: '隐私政策',
+		terms: '服务条款',
+		tagline: '记录确认过什么，以及它为何成为判断依据。',
+	},
+}[lang];
 ---
 
-<!-- UX: BackToTop button for quick navigation (Tesler's Law) -->
 <BackToTop />
 
-<footer
-  class="site-footer mt-20"
->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- About Section -->
-      <div>
-        <h3 class="text-white dark:text-gray-100 font-bold text-lg mb-4">
-          {t("site.title").split("|")[0].trim()}
-        </h3>
-        <p id="footer-site-description" class="text-sm text-gray-400">
-          {t("site.description")}
-        </p>
-      </div>
+<footer class="site-footer" id="contact">
+	<div class="site-footer__inner">
+		<div class="site-footer__identity">
+			<a href={`/${lang}/`} class="site-footer__brand" aria-label={t('site.title')}>
+				<BrandMark showWordmark size={32} />
+			</a>
+			<p id="footer-tagline">{footerLabels.tagline}</p>
+		</div>
 
-      <!-- Quick Links with focus states (WCAG AA) -->
-      <div>
-        <h3 class="text-white dark:text-gray-100 font-bold text-lg mb-4">
-          {
-            lang === "ko"
-              ? "바로가기"
-              : lang === "ja"
-                ? "リンク"
-                : lang === "zh"
-                  ? "链接"
-                  : "Links"
-          }
-        </h3>
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a href={`/${lang}/`} class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded"
-              >{t("nav.home")}</a>
-          </li>
-          <li>
-            <a
-              href={`/${lang}/blog/`}
-              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded">{t("nav.blog")}</a>
-          </li>
-          <li>
-            <a
-              href={`/${lang}/about/`}
-              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded">{t("nav.about")}</a>
-          </li>
-          <li>
-            <a
-              href={`/${lang}/contact/`}
-              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded">{t("nav.contact")}</a>
-          </li>
-          <li>
-            <a
-              href={`/${lang}/tags/`}
-              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded">{t("nav.tags")}</a>
-          </li>
-          <li>
-            <a
-              href={`/${lang}/privacy/`}
-              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded"
-              >{
-                lang === "ko"
-                  ? "개인정보처리방침"
-                  : lang === "ja"
-                    ? "プライバシー"
-                    : lang === "zh"
-                      ? "隐私政策"
-                      : "Privacy"
-              }</a>
-          </li>
-          <li>
-            <a
-              href={`/${lang}/terms/`}
-              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded"
-              >{
-                lang === "ko"
-                  ? "이용약관"
-                  : lang === "ja"
-                    ? "利用規約"
-                    : lang === "zh"
-                      ? "服务条款"
-                      : "Terms"
-              }</a>
-          </li>
-        </ul>
-      </div>
+		<nav class="site-footer__nav" aria-label={footerLabels.links}>
+			<a href={`/${lang}/blog/`}>{t('nav.blog')}</a>
+			<a href={`/${lang}/tags/`}>{t('nav.tags')}</a>
+			<a href={`/${lang}/about/`}>{t('nav.about')}</a>
+			<a href={`/${lang}/contact/`}>{t('nav.contact')}</a>
+			<a href={`/${lang}/privacy/`}>{footerLabels.privacy}</a>
+			<a href={`/${lang}/terms/`}>{footerLabels.terms}</a>
+		</nav>
 
-      <!-- UX: Social Links with touch-friendly targets (Fitts's Law - 44x44px) and micro-interactions -->
-      <div>
-        <h3 class="text-white dark:text-gray-100 font-bold text-lg mb-4">
-          {t("nav.social")}
-        </h3>
-        <div class="flex gap-2">
-          <!-- UX: Touch target 44x44px minimum for mobile accessibility -->
-          <a
-            href="https://x.com/Kim_Jangwook"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link touch-target flex items-center justify-center w-11 h-11 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
-            data-social-platform="twitter"
-            aria-label="Follow on X (Twitter)"
-          >
-            <span class="sr-only">Twitter</span>
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-              ></path>
-            </svg>
-          </a>
-          <a
-            href="https://medium.com/@kim-jangwook"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link touch-target flex items-center justify-center w-11 h-11 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
-            data-social-platform="medium"
-            aria-label="Read on Medium"
-          >
-            <span class="sr-only">Medium</span>
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"
-              ></path>
-            </svg>
-          </a>
-          <a
-            href="https://linkedin.com/in/jangwook-kim-2590a1174"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link touch-target flex items-center justify-center w-11 h-11 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
-            data-social-platform="linkedin"
-            aria-label="Connect on LinkedIn"
-          >
-            <span class="sr-only">LinkedIn</span>
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
+		<a class="site-footer__email" href="mailto:me@jangwook.net">me@jangwook.net <span aria-hidden="true">↗</span></a>
+	</div>
 
-    <div
-      class="border-t border-gray-800 dark:border-gray-900 mt-8 pt-8 text-center text-sm text-gray-400 dark:text-gray-500"
-    >
-      <p id="footer-tagline" class="mb-2 text-gray-300 dark:text-gray-400">
-        {
-          lang === "ko"
-            ? "AI 에이전트와 소프트웨어 제작을 기록하는 개인 기술 블로그"
-            : lang === "ja"
-              ? "AIエージェント、自動化、ソフトウェア開発の個人ノート"
-              : lang === "zh"
-                ? "关于 AI 代理、自动化和软件构建的个人笔记"
-                : "Personal notes on AI agents, automation, and building software"
-        }
-      </p>
-      <p id="footer-copyright">
-        &copy; {today.getFullYear()} Kim Jangwook. {t("footer.allRightsReserved")}.
-      </p>
-    </div>
-  </div>
+	<div class="site-footer__bottom">
+		<p id="footer-copyright">&copy; {today.getFullYear()} Kim Jangwook. {t('footer.allRightsReserved')}.</p>
+		<p>{t('site.title').split('|')[0].trim()}</p>
+	</div>
 </footer>
 
-<!-- Social Link Click Tracking -->
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const socialLinks = document.querySelectorAll(".social-link");
-
-    socialLinks.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        const platform = event.currentTarget.dataset.socialPlatform;
-        const url = event.currentTarget.href;
-
-        // Send GA4 event
-        if (typeof gtag !== "undefined" && platform) {
-          const eventData = {
-            social_platform: platform,
-            link_url: url,
-            event_category: "engagement",
-            event_label: `social_${platform}`,
-          };
-          gtag("event", "social_link_click", eventData);
-        }
-      });
-    });
-  });
-</script>
-
 <style>
-  .site-footer {
-    background: var(--slate);
-    color: oklch(0.80 0.008 245);
-    border-top: 1px solid var(--slate-rule);
-  }
+	.site-footer {
+		width: min(var(--page-width), calc(100% - 6rem));
+		margin: 0 auto;
+		padding: 2rem 0 1.25rem;
+		border-top: 1px solid var(--ink);
+		color: var(--muted);
+	}
 
-  .site-footer h3 {
-    font-family: var(--font-serif);
-    font-weight: 500;
-    color: oklch(0.96 0.005 245);
-  }
+	.site-footer__inner {
+		display: grid;
+		grid-template-columns: minmax(12rem, 1fr) minmax(0, 1fr) auto;
+		align-items: start;
+		gap: 2rem;
+	}
 
-  .site-footer p,
-  .site-footer li {
-    color: oklch(0.74 0.008 245);
-  }
+	.site-footer__brand {
+		display: inline-flex;
+		color: var(--ink);
+		text-decoration: none;
+	}
 
-  .site-footer a {
-    color: oklch(0.80 0.008 245);
-  }
+	.site-footer__identity p {
+		max-width: 22rem;
+		margin: 0.7rem 0 0;
+		font-size: 0.78rem;
+		line-height: 1.65;
+	}
 
-  .site-footer a:hover {
-    color: var(--flow);
-  }
+	.site-footer__nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.1rem 1.15rem;
+		font-size: 0.75rem;
+	}
 
-  .site-footer .social-link {
-    border: 1px solid var(--slate-rule);
-    border-radius: 8px;
-  }
+	.site-footer__nav a,
+	.site-footer__email {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		color: var(--muted);
+		text-decoration: underline;
+	}
 
-  .site-footer .social-link:hover {
-    background: var(--slate-2);
-  }
+	.site-footer__nav a:hover,
+	.site-footer__email:hover {
+		color: var(--accent);
+	}
+
+	.site-footer__email {
+		justify-self: end;
+		color: var(--accent);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		white-space: nowrap;
+	}
+
+	.site-footer__email span {
+		margin-left: 0.35rem;
+		font-size: 1rem;
+	}
+
+	.site-footer__bottom {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-top: 1.35rem;
+		padding-top: 0.9rem;
+		border-top: 1px solid var(--paper-rule);
+		font-family: var(--font-mono);
+		font-size: 0.62rem;
+		line-height: 1.5;
+	}
+
+	.site-footer__bottom p {
+		margin: 0;
+	}
+
+	@media (max-width: 860px) {
+		.site-footer {
+			width: calc(100% - 2.5rem);
+		}
+
+		.site-footer__inner {
+			grid-template-columns: minmax(0, 1fr) auto;
+		}
+
+		.site-footer__nav {
+			grid-column: 1 / -1;
+			grid-row: 2;
+		}
+
+		.site-footer__email {
+			grid-column: 2;
+			grid-row: 1;
+		}
+	}
+
+	@media (max-width: 540px) {
+		.site-footer {
+			width: calc(100% - 2rem);
+		}
+
+		.site-footer__inner {
+			grid-template-columns: 1fr;
+			gap: 0.85rem;
+		}
+
+		.site-footer__nav,
+		.site-footer__email {
+			grid-column: auto;
+			grid-row: auto;
+		}
+
+		.site-footer__email {
+			justify-self: start;
+		}
+
+		.site-footer__bottom {
+			flex-direction: column;
+			gap: 0.3rem;
+		}
+	}
 </style>

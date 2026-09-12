@@ -114,11 +114,12 @@ const sectionTitle = title || defaultTitles[lang];
 	}
 
 	.faq-question svg {
-		color: var(--flow-deep);
+		color: var(--accent, #a33a24);
 	}
 
 	.faq-answer {
-		color: var(--ink-2);
+		color: var(--muted, var(--ink, #242621));
+		animation: none;
 	}
 
 	.faq-item summary::-webkit-details-marker {
@@ -129,18 +130,4 @@ const sectionTitle = title || defaultTitles[lang];
 		list-style: none;
 	}
 
-	.faq-answer {
-		animation: fadeIn 0.3s ease-out;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(-10px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
 </style>

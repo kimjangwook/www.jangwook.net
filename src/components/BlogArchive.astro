@@ -265,34 +265,44 @@ const pageLabel = `${labels.page} ${page}`;
 </script>
 
 <style>
+	.blog-archive {
+		width: min(920px, 100%);
+		margin: 0 auto;
+	}
+
 	.blog-archive__header {
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
 		gap: 1.5rem;
-		margin-bottom: 1.25rem;
-		padding-bottom: 0.9rem;
-		border-bottom: 1px solid var(--paper-rule);
+		margin-bottom: 1.15rem;
+		padding-bottom: 1.45rem;
+		border-bottom: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
 	}
 
 	.blog-archive__header p {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.65rem;
-		margin: 0 0 0.65rem;
+		gap: 0.55rem;
+		margin: 0 0 0.7rem;
 		font-size: 0.68rem;
-		color: var(--flow-deep);
+		color: var(--accent, #a33a24);
 	}
 
 	.blog-archive__header h1 {
 		margin: 0;
-		font-size: clamp(2.6rem, 6vw, 5rem);
-		line-height: 0.98;
-		letter-spacing: -0.03em;
+		font-family: var(--font-serif);
+		font-size: clamp(2.4rem, 6vw, 4.75rem);
+		font-weight: 500;
+		line-height: 1.08;
+		letter-spacing: -0.04em;
+		color: var(--ink);
+		text-wrap: balance;
 	}
 
 	.blog-archive__count {
-		color: var(--ink-3) !important;
+		margin-bottom: 0 !important;
+		color: var(--muted, var(--ink-3, #62665d)) !important;
 		white-space: nowrap;
 	}
 
@@ -303,22 +313,22 @@ const pageLabel = `${labels.page} ${page}`;
 
 	.blog-archive__empty {
 		padding: 3rem 0;
-		color: var(--ink-2);
+		color: var(--muted, var(--ink-2, #62665d));
 		font-family: var(--font-serif);
 	}
 
 	.blog-archive__controls {
 		display: grid;
-		gap: 0.8rem;
+		gap: 0.85rem;
 		justify-items: center;
-		padding: 1.5rem 0 0.25rem;
+		padding: 1.35rem 0 0.25rem;
 	}
 
 	.blog-archive__skip {
 		align-self: center;
-		color: var(--ink-3);
+		color: var(--muted, var(--ink-3, #62665d));
 		font-size: 0.68rem;
-		text-decoration: none;
+		text-underline-offset: 0.2em;
 	}
 
 	.blog-archive__progress {
@@ -329,19 +339,20 @@ const pageLabel = `${labels.page} ${page}`;
 	}
 
 	.blog-archive__load {
-		padding: 0.65rem 1rem;
-		border: 1px solid var(--paper-edge);
-		border-radius: 999px;
-		background: var(--paper-2);
-		color: var(--ink-2);
+		min-height: 2.75rem;
+		padding: 0.65rem 1.05rem;
+		border: 1px solid var(--control-border, var(--muted, #62665d));
+		border-radius: 2px;
+		background: transparent;
+		color: var(--ink);
 		font-size: 0.7rem;
 		cursor: pointer;
 	}
 
 	.blog-archive__load:hover,
 	.blog-archive__load:focus-visible {
-		border-color: var(--flow-deep);
-		color: var(--flow-deep);
+		border-color: var(--accent, #a33a24);
+		color: var(--accent, #a33a24);
 	}
 
 	.blog-archive__load:disabled {
@@ -352,7 +363,7 @@ const pageLabel = `${labels.page} ${page}`;
 	.blog-archive__status {
 		margin: 0;
 		min-height: 1.3em;
-		color: var(--ink-3);
+		color: var(--muted, var(--ink-3, #62665d));
 		font-size: 0.72rem;
 		text-align: center;
 	}
@@ -367,9 +378,9 @@ const pageLabel = `${labels.page} ${page}`;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
-		margin-top: 1.75rem;
+		margin-top: 1.85rem;
 		padding-top: 1rem;
-		border-top: 1px solid var(--paper-rule);
+		border-top: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
 	}
 
 	.blog-pagination__link,
@@ -378,19 +389,24 @@ const pageLabel = `${labels.page} ${page}`;
 	}
 
 	.blog-pagination__link {
-		color: var(--flow-deep);
-		text-decoration: none;
+		color: var(--accent, #a33a24);
+		text-underline-offset: 0.2em;
 	}
 
 	.blog-pagination__link.is-disabled {
-		color: var(--ink-4);
+		color: var(--muted, var(--ink-3, #62665d));
+		opacity: 0.55;
 	}
 
 	.blog-pagination__current {
-		color: var(--ink-3);
+		color: var(--muted, var(--ink-3, #62665d));
 	}
 
 	@media (max-width: 640px) {
+		.blog-archive {
+			width: 100%;
+		}
+
 		.blog-archive__header {
 			align-items: flex-start;
 			flex-direction: column;
@@ -409,6 +425,16 @@ const pageLabel = `${labels.page} ${page}`;
 		.blog-pagination__current {
 			order: -1;
 			width: 100%;
+		}
+	}
+
+	@media (max-width: 359px) {
+		.blog-archive__header h1 {
+			font-size: 2.1rem;
+		}
+
+		.blog-pagination {
+			gap: 0.65rem;
 		}
 	}
 </style>

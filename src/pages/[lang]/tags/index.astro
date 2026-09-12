@@ -153,46 +153,55 @@ const initialStatus = tags.length === 0
 </script>
 
 <style>
+	.tags-page {
+		width: min(920px, 100%);
+		margin-inline: auto;
+	}
+
 	.tags-page__header {
-		max-width: 48rem;
-		margin-bottom: 2rem;
-		padding-bottom: 1.2rem;
-		border-bottom: 1px solid var(--paper-rule);
+		max-width: 52rem;
+		margin-bottom: 2.1rem;
+		padding-bottom: 1.45rem;
+		border-bottom: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
 	}
 
 	.tags-page__header p:first-child {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.65rem;
-		margin: 0 0 0.65rem;
+		gap: 0.55rem;
+		margin: 0 0 0.7rem;
 		font-size: 0.68rem;
-		color: var(--flow-deep);
+		color: var(--accent, #a33a24);
 	}
 
 	.tags-page__header h1 {
 		margin: 0 0 0.7rem;
-		font-size: clamp(2.6rem, 6vw, 5rem);
-		line-height: 0.98;
-		letter-spacing: -0.03em;
+		font-family: var(--font-serif);
+		font-size: clamp(2.4rem, 6vw, 4.75rem);
+		font-weight: 500;
+		line-height: 1.08;
+		letter-spacing: -0.04em;
+		color: var(--ink);
 	}
 
 	.tags-page__header p:last-child {
 		max-width: 38rem;
 		margin: 0;
-		color: var(--ink-2);
+		color: var(--muted, var(--ink-2, #62665d));
 		font-family: var(--font-serif);
 		font-size: 1.05rem;
+		line-height: 1.7;
 	}
 
 	.tag-search {
-		max-width: 38rem;
-		margin-bottom: 1.75rem;
+		max-width: 42rem;
+		margin-bottom: 2rem;
 	}
 
 	.tag-search__label {
 		display: block;
 		margin-bottom: 0.45rem;
-		color: var(--ink-2);
+		color: var(--muted, var(--ink-2, #62665d));
 		font-size: 0.72rem;
 	}
 
@@ -205,25 +214,27 @@ const initialStatus = tags.length === 0
 	.tag-search__input {
 		flex: 1;
 		min-width: 0;
+		min-height: 2.75rem;
 		padding: 0.7rem 0.85rem;
-		border: 1px solid var(--paper-edge);
-		border-radius: 5px;
-		background: var(--paper);
+		border: 1px solid var(--control-border, var(--muted, #62665d));
+		border-radius: 2px;
+		background: var(--surface, var(--paper, #f4f0e8));
 		color: var(--ink);
 		font-family: var(--font-sans);
 	}
 
 	.tag-search__input:focus-visible {
-		outline: 2px solid var(--flow-deep);
-		outline-offset: 2px;
+		outline: 2px solid var(--focus-ring, var(--accent, #a33a24));
+		outline-offset: 4px;
 	}
 
 	.tag-search__clear {
+		min-height: 2.75rem;
 		padding: 0.5rem 0.7rem;
-		border: 1px solid var(--paper-edge);
-		border-radius: 5px;
-		background: var(--paper-2);
-		color: var(--ink-2);
+		border: 1px solid var(--control-border, var(--muted, #62665d));
+		border-radius: 2px;
+		background: transparent;
+		color: var(--ink);
 		font-size: 0.68rem;
 		text-decoration: none;
 		cursor: pointer;
@@ -231,14 +242,14 @@ const initialStatus = tags.length === 0
 
 	.tag-search__status {
 		margin: 0.55rem 0 0;
-		color: var(--ink-3);
+		color: var(--muted, var(--ink-3, #62665d));
 		font-size: 0.75rem;
 	}
 
 	.tag-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-		gap: 0.65rem;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+		gap: 0;
 		max-width: 58rem;
 		margin: 0;
 		padding: 0;
@@ -255,20 +266,19 @@ const initialStatus = tags.length === 0
 		align-items: baseline;
 		justify-content: space-between;
 		gap: 0.75rem;
-		min-height: 3.25rem;
-		padding: 0.8rem 0.9rem;
-		border: 1px solid var(--paper-edge);
-		border-radius: 5px;
-		background: var(--paper);
+		min-height: 3.35rem;
+		padding: 0.85rem 0.2rem;
+		border-top: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
+		background: transparent;
 		color: var(--ink);
 		text-decoration: none;
 	}
 
 	.tag-list__link:hover,
 	.tag-list__link:focus-visible {
-		border-color: var(--flow-deep);
-		background: var(--flow-soft);
-		color: var(--flow-deep);
+		border-color: var(--accent, #a33a24);
+		background: transparent;
+		color: var(--accent, #a33a24);
 	}
 
 	.tag-list__name {
@@ -277,18 +287,18 @@ const initialStatus = tags.length === 0
 	}
 
 	.tag-list__name span {
-		color: var(--flow-deep);
+		color: var(--accent, #a33a24);
 	}
 
 	.tag-list__count {
 		flex: none;
-		color: var(--ink-3);
+		color: var(--muted, var(--ink-3, #62665d));
 		font-size: 0.68rem;
 	}
 
 	.tag-list__empty {
 		margin: 1rem 0;
-		color: var(--ink-2);
+		color: var(--muted, var(--ink-2, #62665d));
 		font-family: var(--font-serif);
 	}
 
@@ -300,6 +310,12 @@ const initialStatus = tags.length === 0
 
 		.tag-search__clear {
 			align-self: flex-start;
+		}
+	}
+
+	@media (max-width: 359px) {
+		.tags-page__header h1 {
+			font-size: 2.1rem;
 		}
 	}
 </style>

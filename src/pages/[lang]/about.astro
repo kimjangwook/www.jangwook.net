@@ -564,7 +564,74 @@ const t = useTranslations(lang);
 				border-color: var(--paper-rule);
 			}
 
+			.about-page {
+				width: min(var(--page-width), calc(100% - 6rem));
+				margin-inline: auto;
+				padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+			}
+
+			.about-page section {
+				margin-bottom: clamp(3.5rem, 7vw, 5.5rem);
+			}
+
+			.about-page section > h2 {
+				margin-bottom: 1.4rem;
+				padding-bottom: 0.8rem;
+				border-bottom: 1px solid var(--ink);
+			}
+
+			.about-page h2,
+			.about-page h3,
+			.about-page h4 {
+				color: var(--ink);
+			}
+
+			/* Portfolio items remain content rows while the refreshed shell stays editorial. */
+			.about-page :global(.bg-gray-50),
+			.about-page :global(.bg-white),
+			.about-page :global(.dark .dark\:bg-gray-800) {
+				background: transparent;
+				border: 0;
+				border-top: 1px solid var(--paper-rule);
+				border-radius: 0;
+				box-shadow: none;
+			}
+
+			.about-page :global(.bg-gray-50),
+			.about-page :global(.bg-white),
+			.about-page :global(.dark .dark\:bg-gray-800) {
+				padding-inline: 0;
+			}
+
+			.about-page :global(.bg-green-100),
+			.about-page :global(.dark .dark\:bg-green-900\/30),
+			.about-page :global(.bg-blue-100),
+			.about-page :global(.dark .dark\:bg-blue-900\/30) {
+				background: var(--paper-2);
+				border: 1px solid var(--paper-rule);
+				border-radius: 0;
+				color: var(--muted);
+			}
+
+			.about-page :global(.text-green-700),
+			.about-page :global(.dark .dark\:text-green-400),
+			.about-page :global(.text-blue-700),
+			.about-page :global(.dark .dark\:text-blue-400) {
+				color: var(--muted);
+			}
+
+			.about-page :global(.text-gray-700),
+			.about-page :global(.dark .dark\:text-gray-300),
+			.about-page :global(.text-gray-600),
+			.about-page :global(.dark .dark\:text-gray-400) {
+				color: var(--ink-2);
+			}
+
 			@media (max-width: 820px) {
+				.about-page {
+					width: calc(100% - 2.5rem);
+				}
+
 				.about-profile {
 					grid-template-columns: 1fr;
 				}
@@ -572,6 +639,17 @@ const t = useTranslations(lang);
 				.about-profile__body {
 					padding-left: 0;
 					border-left: 0;
+				}
+			}
+
+			@media (max-width: 540px) {
+				.about-page {
+					width: calc(100% - 2rem);
+					padding-block: 2.8rem 4rem;
+				}
+
+				.about-profile h1 {
+					font-size: clamp(3.25rem, 17vw, 5rem);
 				}
 			}
 		</style>

@@ -9,13 +9,24 @@
  * - Keyboard accessible
  * - Touch-friendly (44x44px minimum)
  */
+import { isValidLanguage, type Language } from '../lib/i18n/languages';
+
+const candidateLanguage = Astro.url.pathname.split('/').filter(Boolean)[0] ?? '';
+const lang: Language = isValidLanguage(candidateLanguage) ? candidateLanguage : 'ko';
+const labels: Record<Language, string> = {
+	ko: '맨 위로 이동',
+	ja: 'ページの先頭へ戻る',
+	en: 'Back to top',
+	zh: '返回顶部',
+};
 ---
 
 <button
-  id="back-to-top"
-  class="back-to-top touch-target"
-  aria-label="Back to top"
-  title="Back to top"
+	id="back-to-top"
+	class="back-to-top"
+	type="button"
+	aria-label={labels[lang]}
+	title={labels[lang]}
 >
   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -25,7 +36,7 @@
 <script>
   const backToTopButton = document.getElementById('back-to-top');
 
-  if (backToTopButton) {
+	if (backToTopButton) {
     // Show/hide based on scroll position
     const toggleVisibility = () => {
       if (window.scrollY > 300) {
@@ -42,11 +53,12 @@
       scrollTimeout = setTimeout(toggleVisibility, 10);
     }, { passive: true });
 
-    // Smooth scroll to top on click
+    // Smooth scroll to top on click; CSS reduced-motion rules keep this quiet
+    // for readers who request less motion.
     backToTopButton.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
       });
     });
 
@@ -54,9 +66,9 @@
     backToTopButton.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
         });
       }
     });
@@ -65,3 +77,49 @@
     toggleVisibility();
   }
 </script>
+
+<style>
+	#back-to-top {
+		position: fixed;
+		right: clamp(1rem, 3vw, 2.5rem);
+		bottom: 1rem;
+		z-index: 20;
+		display: grid;
+		width: 2.75rem;
+		height: 2.75rem;
+		place-items: center;
+		border: 1px solid var(--control-border, var(--muted, #62665d));
+		border-radius: 2px;
+		background: var(--surface, var(--paper, #f4f0e8));
+		color: var(--ink);
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(0.5rem);
+		transition: opacity 160ms ease, transform 160ms ease, color 160ms ease, border-color 160ms ease;
+	}
+
+	#back-to-top.visible {
+		opacity: 0.92;
+		pointer-events: auto;
+		transform: translateY(0);
+	}
+
+	#back-to-top:hover,
+	#back-to-top:focus-visible {
+		border-color: var(--accent, #a33a24);
+		color: var(--accent, #a33a24);
+	}
+
+	@media (max-height: 400px) {
+		#back-to-top {
+			right: 0.75rem;
+			bottom: 0.65rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#back-to-top {
+			transition: none;
+		}
+	}
+</style>

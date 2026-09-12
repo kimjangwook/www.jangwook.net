@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params as { lang: Language };
 const post = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 const readingTime = calculateReadingTime(post.body ?? '');
 if (!post.filePath) {
 	throw new Error(`Missing source path for blog article: ${post.id}`);
@@ -40,6 +40,7 @@ const articleSourceSha256 = createHash('sha256')
 	noindex={post.data.noindex}
 	relatedPosts={post.data.relatedPosts}
 	readingTime={readingTime}
+	headings={headings}
 	articleSourceSha256={articleSourceSha256}
 >
 	<Content />

@@ -30,6 +30,7 @@ const languageCodes: Record<Language, string> = {
 				class:list={['language-switcher__item', { 'is-active': language === currentLang }]}
 				data-lang={language}
 				aria-current={language === currentLang ? 'page' : undefined}
+				aria-label={label}
 				title={label}
 			>
 				<span class="language-switcher__code">{languageCodes[language]}</span>
@@ -43,64 +44,57 @@ const languageCodes: Record<Language, string> = {
 	.language-switcher {
 		display: inline-flex;
 		align-items: center;
-		gap: 0;
-		padding: 0.2rem;
-		border: 1px solid var(--paper-edge);
-		border-radius: 999px;
-		background: var(--paper);
+		flex-wrap: wrap;
+		gap: 0.1rem;
+		padding: 0;
+		border: 0;
+		background: transparent;
 	}
 
 	.language-switcher__item {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.34rem;
-		min-height: 2rem;
-		padding: 0.35rem 0.72rem;
-		border-radius: 999px;
-		color: var(--ink-2);
+		justify-content: center;
+		min-width: 2.3rem;
+		min-height: 44px;
+		padding: 0.3rem 0.28rem;
+		border-bottom: 2px solid transparent;
+		color: var(--muted);
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
 		text-decoration: none;
 	}
 
 	.language-switcher__item:hover {
 		color: var(--ink);
-		background: var(--paper-2);
 	}
 
 	.language-switcher__item.is-active {
-		color: var(--paper);
-		background: var(--ink);
+		color: var(--ink);
+		border-bottom-color: var(--accent);
 	}
 
 	.language-switcher__code {
-		font-family: var(--font-mono);
-		font-size: 0.68rem;
-		font-weight: 600;
-		letter-spacing: 0.05em;
-	}
-
-	.language-switcher__label {
-		font-size: 0.78rem;
 		line-height: 1;
 	}
 
+	.language-switcher__label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
 	@media (max-width: 720px) {
-		.language-switcher {
-			width: min(10rem, 42vw);
-			min-width: 0;
-			overflow-x: auto;
-			scrollbar-width: none;
-		}
-
-		.language-switcher::-webkit-scrollbar {
-			display: none;
-		}
-
 		.language-switcher__item {
-			padding-inline: 0.56rem;
-		}
-
-		.language-switcher__label {
-			display: none;
+			min-width: 2.2rem;
 		}
 	}
 </style>

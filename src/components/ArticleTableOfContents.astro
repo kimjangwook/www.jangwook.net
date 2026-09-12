@@ -1,0 +1,156 @@
+---
+import type { Language } from '../lib/i18n/languages';
+
+interface Heading {
+	depth: number;
+	slug: string;
+	text: string;
+}
+
+interface Props {
+	headings?: Heading[];
+	lang: Language;
+}
+
+const { headings = [], lang } = Astro.props;
+const items = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const showTableOfContents = items.length >= 4;
+const labels: Record<Language, string> = {
+	ko: '목차',
+	ja: '目次',
+	en: 'On this page',
+	zh: '目录',
+};
+const label = labels[lang];
+---
+
+{showTableOfContents && (
+	<aside class="article-toc" data-article-toc>
+		<details class="article-toc__details">
+			<summary>{label}</summary>
+			<nav aria-label={label}>
+				<ol>
+					{items.map((heading) => (
+						<li class:list={{ 'is-subheading': heading.depth === 3 }}>
+							<a href={`#${heading.slug}`}>{heading.text}</a>
+						</li>
+					))}
+				</ol>
+			</nav>
+		</details>
+	</aside>
+)}
+
+{showTableOfContents && (
+	<script>
+		const tocDetails = document.querySelector<HTMLDetailsElement>('[data-article-toc] details');
+		if (tocDetails && window.matchMedia('(min-width: 861px)').matches) tocDetails.open = true;
+	</script>
+)}
+
+<style>
+	.article-toc {
+		min-width: 0;
+		color: var(--muted, var(--ink-3));
+		font-family: var(--font-sans);
+		font-size: 0.72rem;
+	}
+
+	.article-toc__details {
+		position: sticky;
+		top: calc(var(--header-height, 5rem) + 1.5rem);
+		max-height: min(70vh, 38rem);
+		overflow: auto;
+		overscroll-behavior: contain;
+	}
+
+	.article-toc summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		min-height: 2.75rem;
+		padding: 0.6rem 0;
+		border-bottom: 1px solid var(--rule, var(--paper-rule));
+		color: var(--ink);
+		font-size: 0.72rem;
+		font-weight: 600;
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.article-toc summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.article-toc summary::after {
+		content: '+';
+		color: var(--accent, #a33a24);
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+	}
+
+	.article-toc details[open] summary::after {
+		content: '−';
+	}
+
+	.article-toc nav {
+		padding-top: 0.75rem;
+	}
+
+	.article-toc ol {
+		margin: 0;
+		padding: 0 0 0 1.1rem;
+		list-style: decimal;
+	}
+
+	.article-toc li {
+		margin: 0;
+		padding: 0;
+		line-height: 1.6;
+	}
+
+	.article-toc li + li {
+		margin-top: 0.7rem;
+	}
+
+	.article-toc li.is-subheading {
+		margin-left: 0.8rem;
+		font-size: 0.68rem;
+	}
+
+	.article-toc a {
+		display: block;
+		padding: 0.15rem 0;
+		color: inherit;
+		text-decoration: none;
+		text-wrap: pretty;
+	}
+
+	.article-toc a:hover {
+		color: var(--accent, #a33a24);
+	}
+
+	@media (max-width: 860px) {
+		.article-toc {
+			margin-bottom: 1.5rem;
+		}
+
+		.article-toc__details {
+			position: static;
+			max-height: none;
+			overflow: visible;
+		}
+
+		.article-toc nav {
+			max-height: 18rem;
+			overflow: auto;
+		}
+	}
+
+	@media (max-height: 400px) {
+		.article-toc__details {
+			position: static;
+		}
+	}
+</style>

@@ -7,14 +7,14 @@
 <button
 	id="theme-toggle"
 	type="button"
-	class="theme-toggle p-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent"
-	aria-label="Toggle theme"
-	title="Toggle theme"
+	class="theme-toggle"
+	aria-label="Toggle colour theme"
+	title="Toggle colour theme"
 >
 	<!-- Sun icon (visible in dark mode) -->
 	<svg
 		id="theme-toggle-light-icon"
-		class="hidden w-5 h-5"
+		class="theme-toggle__icon hidden"
 		fill="currentColor"
 		viewBox="0 0 20 20"
 		xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@
 	<!-- Moon icon (visible in light mode) -->
 	<svg
 		id="theme-toggle-dark-icon"
-		class="hidden w-5 h-5"
+		class="theme-toggle__icon hidden"
 		fill="currentColor"
 		viewBox="0 0 20 20"
 		xmlns="http://www.w3.org/2000/svg"
@@ -102,14 +102,26 @@
 
 <style>
 	.theme-toggle {
-		color: var(--ink-2);
-		border: 1px solid var(--paper-rule);
-		background: var(--paper);
+		display: inline-grid;
+		place-items: center;
+		min-width: 44px;
+		min-height: 44px;
+		padding: 0.55rem;
+		color: var(--muted);
+		border: 1px solid transparent;
+		background: transparent;
+		cursor: pointer;
+		transition: color 180ms var(--ease), border-color 180ms var(--ease), background-color 180ms var(--ease);
 	}
 
 	.theme-toggle:hover {
 		color: var(--ink);
 		background: var(--paper-2);
-		border-color: var(--paper-edge);
+		border-color: var(--paper-rule);
+	}
+
+	.theme-toggle__icon {
+		width: 1.05rem;
+		height: 1.05rem;
 	}
 </style>
