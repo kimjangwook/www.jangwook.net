@@ -65,6 +65,8 @@ const posts = filterPostsByDate(allPosts)
 				{posts.map((post, postIndex) => (
 					<BlogCard
 						href={`/${lang}/blog/${post.id}/`}
+						lang={lang}
+						postId={post.id}
 						title={post.data.title}
 						description={post.data.description}
 						pubDate={post.data.pubDate}

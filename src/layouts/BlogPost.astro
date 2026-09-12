@@ -27,9 +27,10 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	}>;
 	faq?: Array<{ question: string; answer: string }>;
 	readingTime?: number;
+	articleSourceSha256?: string;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, lang, tags, noindex, relatedPosts, faq, readingTime } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, lang, tags, noindex, relatedPosts, faq, readingTime, articleSourceSha256 } = Astro.props;
 const t = useTranslations(lang);
 
 // Extract slug from URL pathname (e.g., /ko/blog/ko/post-title -> post-title)
@@ -59,6 +60,7 @@ const breadcrumbs = [
 			faqData={faq}
 			breadcrumbs={breadcrumbs}
 		/>
+		{articleSourceSha256 && <meta name="article-source-sha256" content={articleSourceSha256} />}
 	</head>
 
 	<body>
@@ -149,64 +151,6 @@ const breadcrumbs = [
 						<RelatedPosts items={relatedPosts} language={lang} />
 					)}
 				</div>
-
-				<div class="article-shell__panel article-shell__comments">
-					<div class="giscus"></div>
-				</div>
-
-				<!-- Giscus Dynamic Theme Script -->
-				<script is:inline define:vars={{ giscusLang: lang === 'ja' ? 'ja' : lang === 'en' ? 'en' : lang === 'zh' ? 'zh-CN' : 'ko' }}>
-					function getGiscusTheme() {
-						return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-					}
-
-					function setGiscusTheme(theme) {
-						const iframe = document.querySelector('iframe.giscus-frame');
-						if (iframe) {
-							iframe.contentWindow.postMessage(
-								{ giscus: { setConfig: { theme: theme } } },
-								'https://giscus.app'
-							);
-						}
-					}
-
-					function loadGiscus() {
-						const script = document.createElement('script');
-						script.src = 'https://giscus.app/client.js';
-						script.setAttribute('data-repo', 'kimjangwook/www.jangwook.net');
-						script.setAttribute('data-repo-id', 'R_kgDOP8NyLg');
-						script.setAttribute('data-category', 'Announcements');
-						script.setAttribute('data-category-id', 'DIC_kwDOP8NyLs4CwRC3');
-						script.setAttribute('data-mapping', 'pathname');
-						script.setAttribute('data-strict', '0');
-						script.setAttribute('data-reactions-enabled', '1');
-						script.setAttribute('data-emit-metadata', '0');
-						script.setAttribute('data-input-position', 'bottom');
-						script.setAttribute('data-theme', getGiscusTheme());
-						script.setAttribute('data-lang', giscusLang);
-						script.setAttribute('data-loading', 'lazy');
-						script.setAttribute('crossorigin', 'anonymous');
-						script.async = true;
-						document.querySelector('.giscus').appendChild(script);
-					}
-
-					// Load giscus on page load
-					loadGiscus();
-
-					// Listen for theme changes
-					const observer = new MutationObserver((mutations) => {
-						mutations.forEach((mutation) => {
-							if (mutation.attributeName === 'class') {
-								setGiscusTheme(getGiscusTheme());
-							}
-						});
-					});
-
-					observer.observe(document.documentElement, {
-						attributes: true,
-						attributeFilter: ['class']
-					});
-				</script>
 
 				<!-- Back to blog link -->
 				<div class="article-shell__back">
@@ -448,12 +392,6 @@ const breadcrumbs = [
 
 			:global(.article-prose code) {
 				font-family: var(--font-mono);
-			}
-
-			.article-shell__comments {
-				margin-top: 3rem;
-				padding-top: 2rem;
-				border-top: 1px solid var(--paper-rule);
 			}
 
 			.article-shell__back {

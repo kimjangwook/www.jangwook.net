@@ -1,5 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import BlogPost from '../../../layouts/BlogPost.astro';
 import { type Language } from '../../../lib/i18n/languages';
 import { filterPostsByDate, calculateReadingTime } from '../../../lib/content';
@@ -21,6 +24,12 @@ const { lang } = Astro.params as { lang: Language };
 const post = Astro.props;
 const { Content } = await render(post);
 const readingTime = calculateReadingTime(post.body ?? '');
+if (!post.filePath) {
+	throw new Error(`Missing source path for blog article: ${post.id}`);
+}
+const articleSourceSha256 = createHash('sha256')
+	.update(readFileSync(resolve(process.cwd(), post.filePath)))
+	.digest('hex');
 ---
 
 <BlogPost
@@ -31,6 +40,7 @@ const readingTime = calculateReadingTime(post.body ?? '');
 	noindex={post.data.noindex}
 	relatedPosts={post.data.relatedPosts}
 	readingTime={readingTime}
+	articleSourceSha256={articleSourceSha256}
 >
 	<Content />
 </BlogPost>

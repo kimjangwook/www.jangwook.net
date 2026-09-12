@@ -11,7 +11,7 @@ const staticPages = [
   { path: '/ja/about', priority: 0.8, changefreq: 'monthly' },
   { path: '/ja/blog', priority: 0.9, changefreq: 'daily' },
   { path: '/ja/contact', priority: 0.7, changefreq: 'monthly' },
-  { path: '/ja/social', priority: 0.7, changefreq: 'monthly' },
+  { path: '/ja/tags', priority: 0.7, changefreq: 'monthly' },
   { path: '/ja/privacy', priority: 0.5, changefreq: 'yearly' },
   { path: '/ja/terms', priority: 0.5, changefreq: 'yearly' },
   { path: '/ja/portfolio/shadow-dash', priority: 0.7, changefreq: 'monthly' },

@@ -1,0 +1,136 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import {
+	getPublishedPosts,
+	getPostPath,
+	getTagEntries,
+	getTagLocaleLinks,
+	getTagSwitcherLinks,
+	getTagSlugMap,
+	type TagEntry,
+} from '../../../lib/blog';
+import { archiveLabels } from '../../../lib/archiveLabels';
+import { calculateReadingTime } from '../../../lib/content';
+import { useTranslations, type Language } from '../../../lib/i18n/languages';
+import { languages } from '../../../lib/i18n/languages';
+
+export async function getStaticPaths() {
+	const allPosts = await getCollection('blog');
+	return Object.keys(languages).flatMap((candidate) => {
+		const lang = candidate as Language;
+		return getTagEntries(getPublishedPosts(allPosts, lang)).map((entry) => ({
+			params: { lang, tag: entry.slug },
+		}));
+	});
+}
+
+const { lang, tag: rawTag } = Astro.params as { lang: Language; tag: string };
+const tagSlug = decodeURIComponent(rawTag).normalize('NFC');
+const labels = archiveLabels[lang];
+const t = useTranslations(lang);
+const allPosts = await getCollection('blog');
+const posts = getPublishedPosts(allPosts, lang);
+const tagEntry: TagEntry | undefined = getTagEntries(posts).find((entry) => entry.slug === tagSlug);
+
+if (!tagEntry) {
+	throw new Error(`Unknown tag route: ${lang}/${tagSlug}`);
+}
+
+const tagSlugs = getTagSlugMap(posts);
+const alternateLinks = getTagLocaleLinks(allPosts, tagSlug, Astro.site?.origin ?? 'https://jangwook.net');
+const languageLinks = getTagSwitcherLinks(allPosts, tagSlug, Astro.site?.origin ?? 'https://jangwook.net');
+const title = labels.postsWithTag(tagEntry.label);
+const breadcrumbs = [
+	{ name: t('nav.home'), item: new URL(`/${lang}/`, Astro.site).toString() },
+	{ name: labels.tags, item: new URL(`/${lang}/tags/`, Astro.site).toString() },
+	{ name: `#${tagEntry.label}`, item: Astro.url.toString() },
+];
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead
+			title={title}
+			description={`${title} · ${labels.tagCount(tagEntry.count)}`}
+			alternateLinks={alternateLinks}
+			breadcrumbs={breadcrumbs}
+		/>
+	</head>
+	<body>
+		<Header lang={lang} languageLinks={languageLinks} />
+		<main id="main-content" tabindex="-1" class="tag-detail max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+			<header class="tag-detail__header">
+				<p class="mono uc"><span class="flow-dot"></span> {labels.tags}</p>
+				<h1><span aria-hidden="true">#</span>{tagEntry.label}</h1>
+				<p>{labels.tagCount(tagEntry.count)}</p>
+			</header>
+
+			<div class="tag-detail__list">
+				{tagEntry.posts.map((post, postIndex) => (
+					<BlogCard
+						href={getPostPath(lang, post)}
+						postId={post.id}
+						lang={lang}
+						title={post.data.title}
+						description={post.data.description}
+						pubDate={post.data.pubDate}
+						heroImage={post.data.heroImage}
+						tags={post.data.tags}
+						tagSlugs={tagSlugs}
+						readingTime={calculateReadingTime(post.body || '')}
+						readingTimeLabel={labels.readTime}
+						readMoreLabel={labels.readMore}
+						eager={postIndex === 0}
+					/>
+				))}
+			</div>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>
+
+<style>
+	.tag-detail__header {
+		margin-bottom: 1.25rem;
+		padding-bottom: 0.9rem;
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	.tag-detail__header p:first-child {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin: 0 0 0.65rem;
+		font-size: 0.68rem;
+		color: var(--flow-deep);
+	}
+
+	.tag-detail__header h1 {
+		margin: 0;
+		font-size: clamp(2.4rem, 6vw, 4.7rem);
+		line-height: 0.98;
+		letter-spacing: -0.03em;
+		word-break: break-word;
+	}
+
+	.tag-detail__header h1 span {
+		color: var(--flow-deep);
+	}
+
+	.tag-detail__header p:last-child {
+		margin: 0.75rem 0 0;
+		color: var(--ink-3);
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+	}
+
+	.tag-detail__list {
+		display: grid;
+		gap: 0;
+	}
+</style>

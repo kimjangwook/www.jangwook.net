@@ -26,6 +26,8 @@ interface Props {
 	isHomePage?: boolean;
 	noindex?: boolean;
 	robots?: string;
+	/** Actual locale equivalents for routes whose availability differs by locale. */
+	alternateLinks?: Array<{ lang: string; url: string }>;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -39,6 +41,7 @@ const {
 	breadcrumbs,
 	noindex = false,
 	robots,
+	alternateLinks,
 } = Astro.props;
 const robotsContent = robots || (noindex ? 'noindex, follow' : undefined);
 
@@ -69,7 +72,8 @@ if (currentLang) {
 	pathWithoutLang = pathname;
 }
 
-// 각 언어별 대체 URL 생성
+// 각 언어별 대체 URL 생성. 아카이브 페이지/태그 상세처럼 locale마다
+// 실제 route가 다를 수 있는 페이지는 호출자가 존재하는 equivalent만 넘긴다.
 const languages = ['ko', 'en', 'ja', 'zh'] as const;
 const siteUrl = 'https://jangwook.net';
 
@@ -78,7 +82,7 @@ type HreflangTag = {
 	url: string;
 };
 
-const hreflangTags: HreflangTag[] = languages.map(lang => {
+const generatedHreflangTags: HreflangTag[] = languages.map(lang => {
 	// 루트 경로(/)는 각 언어 홈으로 매핑
 	if (pathWithoutLang === '/' || pathWithoutLang === '') {
 		return {
@@ -101,6 +105,11 @@ const hreflangTags: HreflangTag[] = languages.map(lang => {
 		url: `${siteUrl}/${lang}${finalPath}`
 	};
 });
+
+const hasExplicitAlternates = alternateLinks !== undefined;
+const hreflangTags: HreflangTag[] = hasExplicitAlternates
+	? alternateLinks.map(({ lang, url }) => ({ lang, url }))
+	: generatedHreflangTags;
 
 // Google Fonts: 페이지 언어에 필요한 CJK 패밀리만 로드
 // 전체 9패밀리 CSS는 전송 405KB(gzip)로 렌더 블로킹 비용이 큼 —
@@ -131,9 +140,12 @@ let xDefaultPath = pathWithoutLang;
 if (xDefaultPath.startsWith('/blog/')) {
 	xDefaultPath = xDefaultPath.replace(/^\/blog\/(ko|en|ja|zh)\//, '/blog/en/');
 }
-const xDefaultUrl = pathWithoutLang === '/' || pathWithoutLang === ''
+const generatedXDefaultUrl = pathWithoutLang === '/' || pathWithoutLang === ''
 	? `${siteUrl}/`
 	: `${siteUrl}/en${xDefaultPath}`;
+const xDefaultUrl = hasExplicitAlternates
+	? (alternateLinks.find(({ lang }) => lang === 'en')?.url ?? alternateLinks[0]?.url ?? canonicalURL.toString())
+	: generatedXDefaultUrl;
 
 // WebSite Schema (모든 페이지)
 const websiteSchema = {

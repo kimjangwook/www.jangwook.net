@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import FormattedDate from './FormattedDate.astro';
+import { getTagPath, getTagSlug } from '../lib/blog';
+import type { Language } from '../lib/i18n/languages';
 
 interface Props {
 	href: string;
@@ -13,6 +15,12 @@ interface Props {
 	readingTime: number;
 	readingTimeLabel?: string;
 	readMoreLabel?: string;
+	/** Stable content ID used by the archive's progressive loader. */
+	postId?: string;
+	/** Locale used for tag links. If omitted, it is inferred from href. */
+	lang?: Language;
+	/** Collision-safe tag slugs shared by the page rendering the card. */
+	tagSlugs?: ReadonlyMap<string, string> | Record<string, string>;
 	/** 뷰포트 상단(LCP 후보) 카드에만 true — lazy 대신 eager + fetchpriority로 로드 */
 	eager?: boolean;
 }
@@ -27,11 +35,21 @@ const {
 	readingTime,
 	readingTimeLabel = 'min read',
 	readMoreLabel = 'Read more',
+	postId,
+	lang,
+	tagSlugs,
 	eager = false,
 } = Astro.props;
+
+const hrefLang = href.match(/^\/(ko|en|ja|zh)(?:\/|$)/)?.[1] as Language | undefined;
+const inferredLang: Language = lang ?? hrefLang ?? 'ko';
+const getSlug = (tag: string) => {
+	if (tagSlugs instanceof Map) return tagSlugs.get(tag) ?? getTagSlug(tag);
+	return tagSlugs ? (tagSlugs as Record<string, string>)[tag] ?? getTagSlug(tag) : getTagSlug(tag);
+};
 ---
 
-<article class="post-card">
+<article class="post-card" data-post-id={postId}>
 	<div class="post-card__media" aria-hidden="true">
 		{heroImage ? (
 			<Image
@@ -67,9 +85,13 @@ const {
 		<div class="post-card__footer">
 			<div class="post-card__tags">
 				{tags?.slice(0, 3).map((tag, index) => (
-					<span class:list={['post-card__tag mono', { 'is-primary': index === 0 }]}>
-						<span>#</span>{tag}
-					</span>
+					<a
+						href={getTagPath(inferredLang, getSlug(tag))}
+						class:list={['post-card__tag', 'post-card__tag-link', 'mono', { 'is-primary': index === 0 }]}
+						aria-label={`#${tag}`}
+					>
+						<span aria-hidden="true">#</span>{tag}
+					</a>
 				))}
 			</div>
 			<span class="post-card__read mono" aria-hidden="true">{readMoreLabel}</span>
@@ -98,6 +120,7 @@ const {
 		content: '';
 		position: absolute;
 		inset: 0;
+		z-index: 0;
 	}
 
 	.post-card__link:focus-visible {
@@ -213,6 +236,18 @@ const {
 		flex-wrap: wrap;
 		gap: 0.38rem;
 		min-width: 0;
+	}
+
+	.post-card__tag-link {
+		position: relative;
+		z-index: 1;
+		text-decoration: none;
+	}
+
+	.post-card__tag-link:hover,
+	.post-card__tag-link:focus-visible {
+		color: var(--flow-deep);
+		border-color: var(--flow-deep);
 	}
 
 	.post-card__tag {

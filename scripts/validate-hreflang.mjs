@@ -12,6 +12,24 @@ import process from 'node:process';
 const distRoot = path.join(process.cwd(), 'dist');
 const SITE = 'https://jangwook.net';
 
+/**
+ * URL strings read from the filesystem can contain literal Unicode while
+ * links emitted by Astro are percent-encoded. Keep the validator strict about
+ * the actual URL, but compare both representations through URL's canonical
+ * serialization so equivalent paths are treated as the same page.
+ */
+export function canonicalizeUrl(value) {
+  const url = new URL(String(value).normalize('NFC'), `${SITE}/`);
+  // NFC keeps decomposed source filenames and composed route params aligned
+  // before URL serializes non-ASCII path segments.
+  url.pathname = url.pathname.normalize('NFC');
+  return url.href;
+}
+
+export function canonicalPagePath(value) {
+  return new URL(canonicalizeUrl(value)).pathname;
+}
+
 async function collectHtmlFiles(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
   const files = [];
@@ -28,7 +46,8 @@ async function collectHtmlFiles(dir) {
 
 function pageUrl(filePath) {
   const rel = path.relative(distRoot, path.dirname(filePath));
-  return rel === '' ? `${SITE}/` : `${SITE}/${rel.split(path.sep).join('/')}/`;
+  const raw = rel === '' ? `${SITE}/` : `${SITE}/${rel.split(path.sep).join('/')}/`;
+  return canonicalizeUrl(raw);
 }
 
 function extractHreflangs(html) {
@@ -50,10 +69,7 @@ const ORPHAN_ALLOWLIST = [
 function checkBrokenInternalLinks(files, htmlByFile) {
   // 빌드된 페이지·자산으로 해석되지 않는 내부 href를 경고.
   // 본문 코드 예시(<pre>/<code>) 안의 경로 문자열은 제외한다.
-  const pages = new Set(files.map((f) => {
-    const rel = path.relative(distRoot, path.dirname(f));
-    return rel === '' ? '/' : `/${rel.split(path.sep).join('/')}/`;
-  }));
+  const pages = new Set(files.map((f) => canonicalPagePath(pageUrl(f))));
   const broken = new Map();
   for (const file of files) {
     const src = pageUrl(file);
@@ -64,7 +80,7 @@ function checkBrokenInternalLinks(files, htmlByFile) {
       const target = match[1];
       if (/\.[a-z0-9]+$/i.test(target)) continue; // 파일 자산(xml·webp 등)은 별도 존재 검증 대상 아님
       const dir = target.endsWith('/') ? target : `${target}/`;
-      if (!pages.has(dir)) {
+      if (!pages.has(canonicalPagePath(dir))) {
         if (!broken.has(target)) broken.set(target, src);
       }
     }
@@ -89,7 +105,7 @@ function checkOrphans(files, htmlByFile) {
     for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
       let target = match[1];
       if (!target.endsWith('/')) target += '/';
-      const abs = `${SITE}${target}`;
+      const abs = canonicalizeUrl(`${SITE}${target}`);
       if (pages.has(abs) && abs !== url) inbound.set(abs, (inbound.get(abs) ?? 0) + 1);
     }
   }
@@ -119,7 +135,8 @@ async function main() {
     const targets = new Set();
     for (const { href } of tags) {
       if (!/^https?:\/\//.test(href)) relativeHrefs.push(`${url} -> ${href}`);
-      targets.add(href.endsWith('/') || /\.[a-z]+$/.test(href) ? href : `${href}/`);
+      const target = href.endsWith('/') || /\.[a-z]+$/.test(href) ? href : `${href}/`;
+      targets.add(canonicalizeUrl(target));
     }
     annotations.set(url, targets);
   }
@@ -158,7 +175,9 @@ async function main() {
   console.log('[hreflang-check] OK');
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === new URL(process.argv[1], 'file:').href) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

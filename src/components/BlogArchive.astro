@@ -1,0 +1,414 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BlogCard from './BlogCard.astro';
+import { getArchivePath, getPostPath, getTagSlugMap, type BlogPost } from '../lib/blog';
+import { archiveLabels, type ArchiveLabels } from '../lib/archiveLabels';
+import type { Language } from '../lib/i18n/languages';
+import { calculateReadingTime } from '../lib/content';
+
+interface Props {
+	lang: Language;
+	posts: CollectionEntry<'blog'>[];
+	page: number;
+	totalPages: number;
+	totalPosts: number;
+	allLocalizedPosts?: BlogPost[];
+	labels?: ArchiveLabels;
+	heading?: string;
+}
+
+const {
+	lang,
+	posts,
+	page,
+	totalPages,
+	totalPosts,
+	allLocalizedPosts = posts,
+	labels = archiveLabels[lang],
+	heading = 'Blog',
+} = Astro.props;
+const nextPage = page < totalPages ? page + 1 : null;
+const previousPage = page > 1 ? page - 1 : null;
+const nextHref = nextPage ? getArchivePath(lang, nextPage) : null;
+const previousHref = previousPage ? getArchivePath(lang, previousPage) : null;
+const tagSlugs = getTagSlugMap(allLocalizedPosts);
+const pageLabel = `${labels.page} ${page}`;
+---
+
+<section
+	class="blog-archive"
+	data-blog-infinite
+	data-blog-page={page}
+	data-total-pages={totalPages}
+	data-next-url={nextHref ?? undefined}
+	data-load-more-label={labels.loadMore}
+	data-retry-label={labels.retry}
+	data-loading-label={labels.loading}
+	data-loaded-label={labels.loaded(0).replace('0', '{count}')}
+	data-all-loaded-label={labels.allLoaded}
+	data-load-error-label={labels.loadError}
+	aria-busy="false"
+>
+	<header class="blog-archive__header">
+		<div>
+			<p class="mono uc"><span class="flow-dot"></span> {labels.archiveLabel}</p>
+			<h1>{page > 1 ? `${heading} · ${pageLabel}` : heading}</h1>
+		</div>
+		<p class="blog-archive__count mono">{totalPosts} · {pageLabel}</p>
+	</header>
+
+	<div id="blog-archive-list" class="blog-archive__list" data-blog-card-list>
+		{posts.length > 0 ? posts.map((post, postIndex) => (
+			<BlogCard
+				href={getPostPath(lang, post)}
+				postId={post.id}
+				lang={lang}
+				title={post.data.title}
+				description={post.data.description}
+				pubDate={post.data.pubDate}
+				heroImage={post.data.heroImage}
+				tags={post.data.tags}
+				tagSlugs={tagSlugs}
+				readingTime={calculateReadingTime(post.body || '')}
+				readingTimeLabel={labels.readTime}
+				readMoreLabel={labels.readMore}
+				eager={page === 1 && postIndex === 0}
+			/>
+		)) : (
+			<p class="blog-archive__empty">{lang === 'ko' ? '공개된 글이 없습니다.' : lang === 'ja' ? '公開された記事はありません。' : lang === 'zh' ? '暂无已发布文章。' : 'No published posts yet.'}</p>
+		)}
+	</div>
+
+	<div class="blog-archive__controls">
+		<a href="#footer-tagline" class="blog-archive__skip mono" data-blog-skip-footer>{labels.skipToFooter}</a>
+		<div class="blog-archive__progress" data-blog-progress>
+			<button
+				type="button"
+				class="blog-archive__load mono"
+				data-blog-load-more
+				hidden={!nextHref}
+				aria-controls="blog-archive-list"
+			>
+				{labels.loadMore}
+			</button>
+			<p class="blog-archive__status" data-blog-status role="status" aria-live="polite" aria-atomic="true"></p>
+		</div>
+		<div
+			class="blog-archive__sentinel"
+			data-blog-sentinel
+			hidden={!nextHref}
+			aria-hidden="true"
+		></div>
+	</div>
+
+	<nav class="blog-pagination" aria-label={lang === 'ko' ? '블로그 페이지 이동' : lang === 'ja' ? 'ブログページ移動' : lang === 'zh' ? '博客分页' : 'Blog pages'}>
+		{previousHref ? (
+			<a class="blog-pagination__link mono" href={previousHref} rel="prev">← {labels.previous}</a>
+		) : (
+			<span class="blog-pagination__link is-disabled mono" aria-disabled="true">← {labels.previous}</span>
+		)}
+		<span class="blog-pagination__current mono" aria-current="page">{pageLabel} / {totalPages}</span>
+		{nextHref ? (
+			<a class="blog-pagination__link mono" href={nextHref} rel="next">{labels.next} →</a>
+		) : (
+			<span class="blog-pagination__link is-disabled mono" aria-disabled="true">{labels.next} →</span>
+		)}
+	</nav>
+</section>
+
+<script>
+	const archiveRoots = document.querySelectorAll<HTMLElement>('[data-blog-infinite]');
+
+	archiveRoots.forEach((root) => {
+		if (root.dataset.blogReady === 'true') return;
+		root.dataset.blogReady = 'true';
+
+		const cardList = root.querySelector<HTMLElement>('[data-blog-card-list]');
+		const loadMore = root.querySelector<HTMLButtonElement>('[data-blog-load-more]');
+		const status = root.querySelector<HTMLElement>('[data-blog-status]');
+		const sentinel = root.querySelector<HTMLElement>('[data-blog-sentinel]');
+		const skipFooter = root.querySelector<HTMLAnchorElement>('[data-blog-skip-footer]');
+		if (!cardList || !loadMore || !status || !sentinel) return;
+
+		let nextUrl = root.dataset.nextUrl || '';
+		let currentPage = Number(root.dataset.blogPage || '1');
+		let loading = false;
+		let ended = !nextUrl;
+		let autoLoadingEnabled = Boolean(nextUrl);
+		let observer: IntersectionObserver | undefined;
+		let activeRequest: AbortController | undefined;
+		const loadedIds = new Set(
+			[...cardList.querySelectorAll<HTMLElement>('[data-post-id]')]
+				.map((card) => card.dataset.postId)
+				.filter((id): id is string => Boolean(id)),
+		);
+
+		const setStatus = (message: string) => {
+			status.textContent = message;
+		};
+
+		const stopAtEnd = () => {
+			ended = true;
+			nextUrl = '';
+			root.dataset.nextUrl = '';
+			root.setAttribute('aria-busy', 'false');
+			sentinel.hidden = true;
+			loadMore.hidden = true;
+			observer?.disconnect();
+			setStatus(root.dataset.allLoadedLabel || '');
+		};
+
+		const fail = () => {
+			autoLoadingEnabled = false;
+			observer?.disconnect();
+			root.setAttribute('aria-busy', 'false');
+			loadMore.disabled = false;
+			loadMore.hidden = false;
+			loadMore.textContent = root.dataset.retryLabel || loadMore.textContent;
+			setStatus(root.dataset.loadErrorLabel || 'Unable to load more posts.');
+		};
+
+		const loadNext = async (source: 'auto' | 'manual' = 'auto') => {
+			if (loading || ended || !nextUrl || (source === 'auto' && !autoLoadingEnabled)) return;
+			let requestUrl: URL;
+			try {
+				requestUrl = new URL(nextUrl, window.location.href);
+			} catch (_error) {
+				fail();
+				return;
+			}
+			if (requestUrl.origin !== window.location.origin) {
+				fail();
+				return;
+			}
+
+			loading = true;
+			const requestController = new AbortController();
+			activeRequest = requestController;
+			root.setAttribute('aria-busy', 'true');
+			loadMore.disabled = true;
+			loadMore.hidden = false;
+			loadMore.textContent = root.dataset.loadingLabel || 'Loading';
+			setStatus(root.dataset.loadingLabel || 'Loading more posts.');
+
+			try {
+				const response = await fetch(requestUrl.href, {
+					credentials: 'same-origin',
+					headers: { Accept: 'text/html' },
+					signal: requestController.signal,
+				});
+				if (!response.ok) throw new Error(`Archive request failed: ${response.status}`);
+				const html = await response.text();
+				const document = new DOMParser().parseFromString(html, 'text/html');
+				const incomingRoot = document.querySelector<HTMLElement>('[data-blog-infinite]');
+				const incomingCards = incomingRoot?.querySelectorAll<HTMLElement>('[data-blog-card-list] [data-post-id]');
+				if (!incomingRoot || !incomingCards) throw new Error('Archive payload did not include cards.');
+
+				let appended = 0;
+				incomingCards.forEach((incomingCard) => {
+					const id = incomingCard.dataset.postId;
+					if (!id || loadedIds.has(id)) return;
+					loadedIds.add(id);
+					cardList.appendChild(document.importNode(incomingCard, true));
+					appended += 1;
+				});
+
+				currentPage = Number(incomingRoot.dataset.blogPage || String(currentPage + 1));
+				nextUrl = incomingRoot.dataset.nextUrl || '';
+				root.dataset.nextUrl = nextUrl;
+				root.dataset.blogPage = String(currentPage);
+				if (!nextUrl) {
+					stopAtEnd();
+				} else {
+					loadMore.disabled = false;
+					loadMore.hidden = false;
+					loadMore.textContent = root.dataset.loadMoreLabel || 'Load more';
+					setStatus(root.dataset.loadedLabel ? root.dataset.loadedLabel.replace('{count}', String(appended)) : `${appended} more posts loaded.`);
+				}
+			} catch (error) {
+				if (error instanceof DOMException && error.name === 'AbortError' && !autoLoadingEnabled) {
+					loadMore.disabled = false;
+					loadMore.textContent = root.dataset.loadMoreLabel || 'Load more';
+					setStatus('');
+				} else {
+					fail();
+				}
+			} finally {
+				loading = false;
+				if (activeRequest === requestController) activeRequest = undefined;
+				if (!ended) root.setAttribute('aria-busy', 'false');
+			}
+		};
+
+		loadMore.addEventListener('click', () => loadNext('manual'));
+		skipFooter?.addEventListener('click', (event) => {
+			autoLoadingEnabled = false;
+			observer?.disconnect();
+			sentinel.hidden = true;
+			activeRequest?.abort();
+			const target = document.getElementById('footer-tagline');
+			if (!target) return;
+			event.preventDefault();
+			target.setAttribute('tabindex', '-1');
+			target.scrollIntoView({ block: 'start' });
+			target.focus({ preventScroll: true });
+			window.history.replaceState({}, '', '#footer-tagline');
+		});
+		if (nextUrl && 'IntersectionObserver' in window) {
+			observer = new IntersectionObserver((entries) => {
+				if (entries.some((entry) => entry.isIntersecting)) void loadNext('auto');
+			}, { rootMargin: '0px 0px 560px 0px' });
+			observer.observe(sentinel);
+		}
+		if (!nextUrl) stopAtEnd();
+	});
+</script>
+
+<style>
+	.blog-archive__header {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 1.5rem;
+		margin-bottom: 1.25rem;
+		padding-bottom: 0.9rem;
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	.blog-archive__header p {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin: 0 0 0.65rem;
+		font-size: 0.68rem;
+		color: var(--flow-deep);
+	}
+
+	.blog-archive__header h1 {
+		margin: 0;
+		font-size: clamp(2.6rem, 6vw, 5rem);
+		line-height: 0.98;
+		letter-spacing: -0.03em;
+	}
+
+	.blog-archive__count {
+		color: var(--ink-3) !important;
+		white-space: nowrap;
+	}
+
+	.blog-archive__list {
+		display: grid;
+		gap: 0;
+	}
+
+	.blog-archive__empty {
+		padding: 3rem 0;
+		color: var(--ink-2);
+		font-family: var(--font-serif);
+	}
+
+	.blog-archive__controls {
+		display: grid;
+		gap: 0.8rem;
+		justify-items: center;
+		padding: 1.5rem 0 0.25rem;
+	}
+
+	.blog-archive__skip {
+		align-self: center;
+		color: var(--ink-3);
+		font-size: 0.68rem;
+		text-decoration: none;
+	}
+
+	.blog-archive__progress {
+		display: grid;
+		justify-items: center;
+		gap: 0.6rem;
+		min-height: 3rem;
+	}
+
+	.blog-archive__load {
+		padding: 0.65rem 1rem;
+		border: 1px solid var(--paper-edge);
+		border-radius: 999px;
+		background: var(--paper-2);
+		color: var(--ink-2);
+		font-size: 0.7rem;
+		cursor: pointer;
+	}
+
+	.blog-archive__load:hover,
+	.blog-archive__load:focus-visible {
+		border-color: var(--flow-deep);
+		color: var(--flow-deep);
+	}
+
+	.blog-archive__load:disabled {
+		cursor: wait;
+		opacity: 0.6;
+	}
+
+	.blog-archive__status {
+		margin: 0;
+		min-height: 1.3em;
+		color: var(--ink-3);
+		font-size: 0.72rem;
+		text-align: center;
+	}
+
+	.blog-archive__sentinel {
+		width: 1px;
+		height: 1px;
+	}
+
+	.blog-pagination {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-top: 1.75rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--paper-rule);
+	}
+
+	.blog-pagination__link,
+	.blog-pagination__current {
+		font-size: 0.7rem;
+	}
+
+	.blog-pagination__link {
+		color: var(--flow-deep);
+		text-decoration: none;
+	}
+
+	.blog-pagination__link.is-disabled {
+		color: var(--ink-4);
+	}
+
+	.blog-pagination__current {
+		color: var(--ink-3);
+	}
+
+	@media (max-width: 640px) {
+		.blog-archive__header {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.blog-archive__count {
+			margin: 0 !important;
+		}
+
+		.blog-pagination {
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+
+		.blog-pagination__current {
+			order: -1;
+			width: 100%;
+		}
+	}
+</style>

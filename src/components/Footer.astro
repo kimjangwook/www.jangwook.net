@@ -72,21 +72,8 @@ const today = new Date();
           </li>
           <li>
             <a
-              href={`/${lang}/social/`}
-              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded">{t("nav.social")}</a>
-          </li>
-          <li>
-            <a
-              href={`/${lang}/improvement-history/`}
-              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded">{
-                lang === "ko"
-                  ? "개선 이력"
-                  : lang === "ja"
-                    ? "改善履歴"
-                    : lang === "zh"
-                      ? "改进历史"
-                      : "Improvement Log"
-              }</a>
+              href={`/${lang}/tags/`}
+              class="link-underline hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded">{t("nav.tags")}</a>
           </li>
           <li>
             <a

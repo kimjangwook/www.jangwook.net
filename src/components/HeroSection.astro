@@ -13,29 +13,17 @@ const copy = {
 		kicker: 'lab notes from real experiments',
 		titleA: '안녕하세요,',
 		titleB: '김장욱입니다.',
-		subtitle: 'AI 에이전트, 자동화 도구, 개발 실험을 샌드박스에서 검증하고 기록하는 개인 기술 노트입니다.',
+		subtitle: 'AI 에이전트, 자동화 도구, 개발 실험을 직접 검증하고 기록하는 개인 기술 노트입니다.',
 		primary: '최신 글 읽기',
 		secondary: '소개 보기',
-		stats: [
-			['daily', 'cadence'],
-			['4', 'languages'],
-			['lab', 'sandbox first'],
-			['jw', 'personal notes'],
-		],
 	},
 	ja: {
 		kicker: 'lab notes from real experiments',
 		titleA: 'こんにちは、',
 		titleB: 'Kim Jangwookです。',
-		subtitle: 'AIエージェント、自動化ツール、開発実験をサンドボックスで検証して記録する個人技術ノートです。',
+		subtitle: 'AIエージェント、自動化ツール、開発実験を自分で検証して記録する個人技術ノートです。',
 		primary: '最新記事を読む',
 		secondary: '紹介を見る',
-		stats: [
-			['daily', 'cadence'],
-			['4', 'languages'],
-			['lab', 'sandbox first'],
-			['jw', 'personal notes'],
-		],
 	},
 	en: {
 		kicker: 'lab notes from real experiments',
@@ -44,12 +32,6 @@ const copy = {
 		subtitle: t('site.description'),
 		primary: 'Read latest',
 		secondary: 'About',
-		stats: [
-			['daily', 'cadence'],
-			['4', 'languages'],
-			['lab', 'sandbox first'],
-			['jw', 'personal notes'],
-		],
 	},
 	zh: {
 		kicker: 'lab notes from real experiments',
@@ -58,12 +40,6 @@ const copy = {
 		subtitle: '这是我的个人技术笔记，记录 AI 代理、自动化工具和软件实验的验证过程。',
 		primary: '阅读最新文章',
 		secondary: '关于我',
-		stats: [
-			['daily', 'cadence'],
-			['4', 'languages'],
-			['lab', 'sandbox first'],
-			['jw', 'personal notes'],
-		],
 	},
 }[lang];
 ---
@@ -100,15 +76,6 @@ const copy = {
 			</div>
 		</div>
 
-		<aside class="home-hero__stats" aria-label="Site summary">
-			<div class="mono uc">counts</div>
-			{copy.stats.map(([value, label]) => (
-				<div class="home-hero__stat">
-					<strong>{value}</strong>
-					<span class="mono">{label}</span>
-				</div>
-			))}
-		</aside>
 	</div>
 </section>
 
@@ -166,9 +133,7 @@ const copy = {
 		margin: 0 auto;
 		padding: clamp(3rem, 8vw, 6rem) 1.5rem clamp(3.5rem, 8vw, 6.5rem);
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) 18rem;
-		gap: clamp(2rem, 5vw, 4.5rem);
-		align-items: end;
+		grid-template-columns: minmax(0, 1fr);
 	}
 
 	.home-hero__main {
@@ -255,44 +220,6 @@ const copy = {
 		background: var(--paper-2);
 	}
 
-	.home-hero__stats {
-		border-left: 1px solid var(--paper-rule);
-		padding-left: 1.5rem;
-	}
-
-	.home-hero__stats > .mono {
-		margin-bottom: 0.7rem;
-		font-size: 0.62rem;
-		color: var(--ink-3);
-	}
-
-	.home-hero__stat {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: 1rem;
-		padding: 0.72rem 0;
-		border-bottom: 1px solid var(--paper-rule);
-	}
-
-	.home-hero__stat:last-child {
-		border-bottom: 0;
-	}
-
-	.home-hero__stat strong {
-		font-family: var(--font-serif);
-		font-size: 1.75rem;
-		font-weight: 500;
-		color: var(--ink);
-	}
-
-	.home-hero__stat span {
-		font-size: 0.68rem;
-		color: var(--ink-3);
-		letter-spacing: 0.08em;
-		text-align: right;
-	}
-
 	@media (max-width: 900px) {
 		.home-hero {
 			grid-template-columns: 1fr;
@@ -302,21 +229,5 @@ const copy = {
 			display: none;
 		}
 
-		.home-hero__content {
-			grid-template-columns: 1fr;
-		}
-
-		.home-hero__stats {
-			border-left: 0;
-			border-top: 1px solid var(--paper-rule);
-			padding: 1rem 0 0;
-			display: grid;
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 0 1rem;
-		}
-
-		.home-hero__stats > .mono {
-			grid-column: 1 / -1;
-		}
 	}
 </style>

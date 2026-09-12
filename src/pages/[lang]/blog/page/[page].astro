@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../../components/BaseHead.astro';
+import BlogArchive from '../../../../components/BlogArchive.astro';
+import Footer from '../../../../components/Footer.astro';
+import Header from '../../../../components/Header.astro';
+import {
+	BLOG_PAGE_SIZE,
+	getArchiveLocaleLinks,
+	getArchiveSwitcherLinks,
+	getPageCount,
+	getPagePosts,
+	getPublishedPosts,
+} from '../../../../lib/blog';
+import { archiveLabels } from '../../../../lib/archiveLabels';
+import { useTranslations, type Language } from '../../../../lib/i18n/languages';
+import { languages } from '../../../../lib/i18n/languages';
+
+export async function getStaticPaths() {
+	const allPosts = await getCollection('blog');
+	return Object.keys(languages).flatMap((candidate) => {
+		const lang = candidate as Language;
+		const posts = getPublishedPosts(allPosts, lang);
+		const totalPages = getPageCount(posts.length, BLOG_PAGE_SIZE);
+		return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
+			params: { lang, page: String(index + 2) },
+		}));
+	});
+}
+
+const { lang, page: rawPage } = Astro.params as { lang: Language; page: string };
+const page = Number(rawPage);
+const t = useTranslations(lang);
+const labels = archiveLabels[lang];
+const allPosts = await getCollection('blog');
+const posts = getPublishedPosts(allPosts, lang);
+const totalPages = getPageCount(posts.length, BLOG_PAGE_SIZE);
+const alternateLinks = getArchiveLocaleLinks(allPosts, page, Astro.site?.origin ?? 'https://jangwook.net');
+const languageLinks = getArchiveSwitcherLinks(allPosts, page, Astro.site?.origin ?? 'https://jangwook.net');
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead
+			title={`${t('nav.blog')} · ${labels.page} ${page}`}
+			description={t('blog.description')}
+			alternateLinks={alternateLinks}
+		/>
+	</head>
+	<body>
+		<Header lang={lang} languageLinks={languageLinks} />
+		<main id="main-content" tabindex="-1" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+			<BlogArchive
+				lang={lang}
+				posts={getPagePosts(posts, page, BLOG_PAGE_SIZE)}
+				allLocalizedPosts={posts}
+				page={page}
+				totalPages={totalPages}
+				totalPosts={posts.length}
+				labels={labels}
+				heading={t('nav.blog')}
+			/>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>

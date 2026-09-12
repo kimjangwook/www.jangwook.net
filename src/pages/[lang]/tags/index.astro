@@ -1,0 +1,305 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import { getPublishedPosts, getTagEntries } from '../../../lib/blog';
+import { archiveLabels } from '../../../lib/archiveLabels';
+import { getStaticPaths as getI18nStaticPaths } from '../../../lib/i18n/utils';
+import { type Language } from '../../../lib/i18n/languages';
+
+export function getStaticPaths() {
+	return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Language };
+const labels = archiveLabels[lang];
+const allPosts = await getCollection('blog');
+const posts = getPublishedPosts(allPosts, lang);
+const tags = getTagEntries(posts);
+const query = Astro.url.searchParams.get('q')?.trim() ?? '';
+const normalizedQuery = query.toLocaleLowerCase();
+const matchingCount = tags.filter((entry) => entry.label.toLocaleLowerCase().includes(normalizedQuery)).length;
+const initialStatus = tags.length === 0
+	? labels.noTags
+	: matchingCount > 0
+		? labels.searchResults(matchingCount)
+		: labels.noMatchingTags;
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={labels.tags} description={labels.tagsDescription} />
+	</head>
+	<body>
+		<Header lang={lang} />
+		<main
+			id="main-content"
+			tabindex="-1"
+			class="tags-page max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14"
+			data-tag-search-surface
+			data-tag-no-matches={labels.noMatchingTags}
+			data-tag-no-tags={labels.noTags}
+			data-tag-result-template={labels.searchResults(0).replace('0', '{count}')}
+		>
+			<header class="tags-page__header">
+				<p class="mono uc"><span class="flow-dot"></span> index</p>
+				<h1>{labels.tags}</h1>
+				<p>{labels.tagsDescription}</p>
+			</header>
+
+			<form class="tag-search" data-tag-search-form method="get" role="search">
+				<label for="tag-search-input" class="tag-search__label mono">{labels.searchTags}</label>
+				<div class="tag-search__row">
+					<input
+						id="tag-search-input"
+						class="tag-search__input"
+						type="search"
+						name="q"
+						value={query}
+						placeholder={labels.searchPlaceholder}
+						autocomplete="off"
+						aria-describedby="tag-search-status"
+					/>
+					<button type="button" class="tag-search__clear mono" data-tag-search-clear hidden={!query}>
+						{labels.clearSearch}
+					</button>
+					<noscript>
+						{query && <a href={`/${lang}/tags/`} class="tag-search__clear mono">{labels.clearSearch}</a>}
+					</noscript>
+				</div>
+				<p id="tag-search-status" class="tag-search__status" data-tag-search-status role="status" aria-live="polite">
+					{initialStatus}
+				</p>
+			</form>
+
+			<ul class="tag-list" data-tag-list>
+				{tags.map((entry) => {
+					const matches = entry.label.toLocaleLowerCase().includes(normalizedQuery);
+					return (
+						<li class="tag-list__item" data-tag-item data-tag-search-value={entry.label.toLocaleLowerCase()} hidden={!matches}>
+							<a href={`/${lang}/tags/${encodeURIComponent(entry.slug)}/`} class="tag-list__link">
+								<span class="tag-list__name"><span aria-hidden="true">#</span>{entry.label}</span>
+								<span class="tag-list__count mono">{labels.tagCount(entry.count)}</span>
+							</a>
+						</li>
+					);
+				})}
+			</ul>
+			<p class="tag-list__empty" data-tag-search-empty hidden={matchingCount > 0}>
+			{tags.length > 0 ? labels.noMatchingTags : labels.noTags}
+			</p>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>
+
+<script>
+	const searchSurface = document.querySelector<HTMLElement>('[data-tag-search-surface]');
+	const searchForm = document.querySelector<HTMLFormElement>('[data-tag-search-form]');
+	const searchInput = document.querySelector<HTMLInputElement>('#tag-search-input');
+	const searchClear = document.querySelector<HTMLButtonElement>('[data-tag-search-clear]');
+	const searchStatus = document.querySelector<HTMLElement>('[data-tag-search-status]');
+	const searchEmpty = document.querySelector<HTMLElement>('[data-tag-search-empty]');
+	const tagItems = [...document.querySelectorAll<HTMLElement>('[data-tag-item]')];
+	const noMatchesLabel = searchSurface?.dataset.tagNoMatches ?? 'No matching tags.';
+	const noTagsLabel = searchSurface?.dataset.tagNoTags ?? noMatchesLabel;
+	const resultLabel = searchSurface?.dataset.tagResultTemplate ?? '{count} tags';
+
+	if (searchForm && searchInput && searchClear && searchStatus && searchEmpty) {
+		const updateUrl = (query: string) => {
+			const url = new URL(window.location.href);
+			if (query) url.searchParams.set('q', query);
+			else url.searchParams.delete('q');
+			window.history.replaceState({}, '', `${url.pathname}${url.search}`);
+		};
+
+		const filterTags = () => {
+			const query = searchInput.value.trim().toLocaleLowerCase();
+			let visible = 0;
+			tagItems.forEach((item) => {
+				const matches = (item.dataset.tagSearchValue ?? '').includes(query);
+				item.hidden = !matches;
+				if (matches) visible += 1;
+			});
+			searchClear.hidden = !query;
+			searchEmpty.hidden = visible > 0;
+			searchStatus.textContent = visible > 0
+				? resultLabel.replace('{count}', String(visible))
+				: tagItems.length === 0 ? noTagsLabel : noMatchesLabel;
+			updateUrl(searchInput.value.trim());
+		};
+
+		const syncFromLocation = () => {
+			const query = new URL(window.location.href).searchParams.get('q') ?? '';
+			searchInput.value = query;
+			filterTags();
+		};
+
+		searchInput.addEventListener('input', filterTags);
+		searchForm.addEventListener('submit', (event) => {
+			event.preventDefault();
+			filterTags();
+		});
+		searchClear.addEventListener('click', () => {
+			searchInput.value = '';
+			filterTags();
+			searchInput.focus();
+		});
+		window.addEventListener('popstate', syncFromLocation);
+		syncFromLocation();
+	}
+</script>
+
+<style>
+	.tags-page__header {
+		max-width: 48rem;
+		margin-bottom: 2rem;
+		padding-bottom: 1.2rem;
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	.tags-page__header p:first-child {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin: 0 0 0.65rem;
+		font-size: 0.68rem;
+		color: var(--flow-deep);
+	}
+
+	.tags-page__header h1 {
+		margin: 0 0 0.7rem;
+		font-size: clamp(2.6rem, 6vw, 5rem);
+		line-height: 0.98;
+		letter-spacing: -0.03em;
+	}
+
+	.tags-page__header p:last-child {
+		max-width: 38rem;
+		margin: 0;
+		color: var(--ink-2);
+		font-family: var(--font-serif);
+		font-size: 1.05rem;
+	}
+
+	.tag-search {
+		max-width: 38rem;
+		margin-bottom: 1.75rem;
+	}
+
+	.tag-search__label {
+		display: block;
+		margin-bottom: 0.45rem;
+		color: var(--ink-2);
+		font-size: 0.72rem;
+	}
+
+	.tag-search__row {
+		display: flex;
+		align-items: stretch;
+		gap: 0.5rem;
+	}
+
+	.tag-search__input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.7rem 0.85rem;
+		border: 1px solid var(--paper-edge);
+		border-radius: 5px;
+		background: var(--paper);
+		color: var(--ink);
+		font-family: var(--font-sans);
+	}
+
+	.tag-search__input:focus-visible {
+		outline: 2px solid var(--flow-deep);
+		outline-offset: 2px;
+	}
+
+	.tag-search__clear {
+		padding: 0.5rem 0.7rem;
+		border: 1px solid var(--paper-edge);
+		border-radius: 5px;
+		background: var(--paper-2);
+		color: var(--ink-2);
+		font-size: 0.68rem;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.tag-search__status {
+		margin: 0.55rem 0 0;
+		color: var(--ink-3);
+		font-size: 0.75rem;
+	}
+
+	.tag-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+		gap: 0.65rem;
+		max-width: 58rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.tag-list__item {
+		margin: 0;
+		padding: 0;
+	}
+
+	.tag-list__link {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.75rem;
+		min-height: 3.25rem;
+		padding: 0.8rem 0.9rem;
+		border: 1px solid var(--paper-edge);
+		border-radius: 5px;
+		background: var(--paper);
+		color: var(--ink);
+		text-decoration: none;
+	}
+
+	.tag-list__link:hover,
+	.tag-list__link:focus-visible {
+		border-color: var(--flow-deep);
+		background: var(--flow-soft);
+		color: var(--flow-deep);
+	}
+
+	.tag-list__name {
+		font-family: var(--font-serif);
+		font-size: 1.08rem;
+	}
+
+	.tag-list__name span {
+		color: var(--flow-deep);
+	}
+
+	.tag-list__count {
+		flex: none;
+		color: var(--ink-3);
+		font-size: 0.68rem;
+	}
+
+	.tag-list__empty {
+		margin: 1rem 0;
+		color: var(--ink-2);
+		font-family: var(--font-serif);
+	}
+
+	@media (max-width: 520px) {
+		.tag-search__row {
+			align-items: stretch;
+			flex-direction: column;
+		}
+
+		.tag-search__clear {
+			align-self: flex-start;
+		}
+	}
+</style>

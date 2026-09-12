@@ -4,9 +4,11 @@ import { getRouteFromUrl } from '../lib/i18n/utils';
 
 interface Props {
 	currentLang: Language;
+	/** Actual equivalent URLs when a route has locale-specific availability. */
+	links?: Partial<Record<Language, string>>;
 }
 
-const { currentLang } = Astro.props;
+const { currentLang, links } = Astro.props;
 const currentRoute = getRouteFromUrl(Astro.url.pathname);
 const languageCodes: Record<Language, string> = {
 	ko: 'KO',
@@ -19,7 +21,8 @@ const languageCodes: Record<Language, string> = {
 <nav class="language-switcher" aria-label="Select language">
 	{Object.entries(languages).map(([lang, label]) => {
 		const language = lang as Language;
-		const href = `/${language}${currentRoute.replace(/{LANG}/g, language)}`;
+		const defaultHref = `/${language}${currentRoute.replace(/{LANG}/g, language)}`;
+		const href = links?.[language] ?? defaultHref;
 
 		return (
 			<a
