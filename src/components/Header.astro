@@ -141,20 +141,46 @@ const navigationLabel = {
 		}
 
 		.site-header__brand {
-			grid-column: 1 / -1;
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.site-header__brand :global(.brand-wordmark__meta) {
+			display: none;
+		}
+
+		.site-header__brand :global(.brand-mark) {
+			width: 36px;
+			height: 36px;
+		}
+
+		.site-header__brand :global(.brand-wordmark) {
+			gap: 0.35rem;
+		}
+
+		.site-header__brand :global(.brand-wordmark__name) {
+			font-size: 1.15rem;
 		}
 
 		.primary-nav {
-			grid-column: 1;
+			grid-column: 1 / -1;
 			grid-row: 2;
-			justify-content: flex-start;
-			flex-wrap: wrap;
-			gap: 0.15rem 1.15rem;
+			width: 100%;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+			gap: 0;
+		}
+
+		.primary-nav :global(.nav-link) {
+			flex: 1 1 0;
+			justify-content: center;
+			min-width: 0;
+			white-space: nowrap;
 		}
 
 		.header-tools {
 			grid-column: 2;
-			grid-row: 2;
+			grid-row: 1;
 		}
 	}
 
@@ -163,8 +189,8 @@ const navigationLabel = {
 			width: calc(100% - 2rem);
 		}
 
-		.primary-nav {
-			gap: 0.1rem 0.8rem;
+		.primary-nav :global(.nav-link) {
+			font-size: 0.76rem;
 		}
 	}
 
@@ -173,8 +199,17 @@ const navigationLabel = {
 			width: calc(100% - 1.5rem);
 		}
 
-		.primary-nav {
-			gap: 0.1rem 0.55rem;
+		.primary-nav :global(.nav-link) {
+			font-size: 0.72rem;
+		}
+
+		.site-header__brand :global(.brand-mark) {
+			width: 32px;
+			height: 32px;
+		}
+
+		.site-header__brand :global(.brand-wordmark__name) {
+			font-size: 1.05rem;
 		}
 	}
 

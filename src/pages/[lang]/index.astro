@@ -6,8 +6,8 @@ import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import HeroSection from '../../components/HeroSection.astro';
 import { getFAQItems } from '../../data/faq';
-import { filterPostsByDate, calculateReadingTime } from '../../lib/content';
-import { getPostPath, getTagEntries, getTagPath, type BlogPost } from '../../lib/blog';
+import { calculateReadingTime } from '../../lib/content';
+import { getPostPath, getPublishedPosts, getTagEntries, getTagPath, type BlogPost } from '../../lib/blog';
 import { getStaticPaths as getI18nStaticPaths } from '../../lib/i18n/utils';
 import { useTranslations, type Language } from '../../lib/i18n/languages';
 import ogHome from '../../assets/og-home.jpg';
@@ -20,19 +20,17 @@ const { lang } = Astro.params as { lang: Language };
 const t = useTranslations(lang);
 const faqItems = getFAQItems(lang);
 const allPosts = await getCollection('blog');
-const localizedPosts = filterPostsByDate(allPosts)
-	.filter((post) => post.id.startsWith(`${lang}/`))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const localizedPosts = getPublishedPosts(allPosts, lang);
 
 const featuredSlug = 'ai-search-seo-accessibility-checklist';
 const targetFeatured = localizedPosts.find((post) => post.id === `${lang}/${featuredSlug}`);
 const featuredPost: BlogPost | undefined = targetFeatured ?? localizedPosts[0];
 const featuredHref = featuredPost ? getPostPath(lang, featuredPost) : `/${lang}/blog/`;
-const isTargetFeatured = featuredPost?.id === `${lang}/${featuredSlug}`;
 const latestPosts = localizedPosts
 	.filter((post) => post.id !== featuredPost?.id)
 	.slice(0, 5);
-const topics = getTagEntries(localizedPosts).slice(0, 7);
+const topicPosts = localizedPosts.slice(0, 5);
+const topics = getTagEntries(topicPosts);
 
 const copy = {
 	ko: {
@@ -41,11 +39,12 @@ const copy = {
 		featuredRead: '칼럼 읽기',
 		latestLabel: '최근의 질문들',
 		latestBrowse: '전체 칼럼 보기',
-		topicsLabel: '주제로 찾아보기',
+		topicsLabel: '태그로 찾아보기',
 		topicsBrowse: '태그 전체 보기',
-		perspectiveLabel: '저자의 메모',
-		perspectiveTitle: '도구의 이름보다, 무엇을 확인했는지.',
-		perspectiveText: '개발하고 운영하며 만난 질문을 기록합니다. 낯선 용어는 설명하고, 관찰과 해석은 나누며, 아직 알 수 없는 것은 남겨 둡니다.',
+		topicsIntro: '최근 칼럼 5편에 붙은 태그입니다.',
+		perspectiveLabel: '글을 쓰는 이유',
+		perspectiveTitle: '개발과 운영에서 배운 것을 나눕니다.',
+		perspectiveText: 'AI와 웹 개발, 자동화를 다루며 겪은 문제와 해결 과정을 정리합니다. 비슷한 일을 하는 분들이 기술을 선택하고 활용하는 데 도움이 되는 글을 쓰고 싶습니다.',
 	},
 	ja: {
 		featuredLabel: '最初に読むコラム',
@@ -53,11 +52,12 @@ const copy = {
 		featuredRead: 'コラムを読む',
 		latestLabel: '最近の問い',
 		latestBrowse: 'すべてのコラム',
-		topicsLabel: 'テーマから探す',
+		topicsLabel: 'タグから探す',
 		topicsBrowse: 'タグをすべて見る',
-		perspectiveLabel: '著者のメモ',
-		perspectiveTitle: '道具の名前より、何を確かめたのか。',
-		perspectiveText: '開発と運用で出会った問いを記録します。知らない言葉は説明し、観察と解釈を分け、まだ分からないことは残します。',
+		topicsIntro: '最近のコラム5本に付けたタグです。',
+		perspectiveLabel: '書く理由',
+		perspectiveTitle: '開発と運用で学んだことを分かち合います。',
+		perspectiveText: 'AI、ウェブ開発、自動化に取り組む中で出会った問題と解決の過程を整理します。同じような仕事をする方が技術を選び、活用する助けになる記事を書きたいと思っています。',
 	},
 	en: {
 		featuredLabel: 'A column to start with',
@@ -65,11 +65,12 @@ const copy = {
 		featuredRead: 'Read the column',
 		latestLabel: 'Recent questions',
 		latestBrowse: 'Browse all columns',
-		topicsLabel: 'Explore by topic',
+		topicsLabel: 'Explore by tag',
 		topicsBrowse: 'Browse all tags',
-		perspectiveLabel: 'A note from the author',
-		perspectiveTitle: 'Beyond tool names: what did we verify?',
-		perspectiveText: 'Questions from building and operating software. Unfamiliar terms explained, observations separated from interpretation, and open questions left visible.',
+		topicsIntro: 'Tags from the five most recent columns.',
+		perspectiveLabel: 'Why I write',
+		perspectiveTitle: 'I share what I learn from building and operating software.',
+		perspectiveText: 'I organize the problems and solutions I encounter in AI, web development, and automation. I want to write pieces that help people doing similar work choose and use technology.',
 	},
 	zh: {
 		featuredLabel: '从这篇专栏开始',
@@ -77,11 +78,12 @@ const copy = {
 		featuredRead: '阅读专栏',
 		latestLabel: '最近的问题',
 		latestBrowse: '浏览全部专栏',
-		topicsLabel: '按主题查找',
+		topicsLabel: '按标签查找',
 		topicsBrowse: '查看全部标签',
-		perspectiveLabel: '作者笔记',
-		perspectiveTitle: '比工具名称更重要的，是确认了什么。',
-		perspectiveText: '记录在开发和运营中遇到的问题。解释陌生术语，区分观察与解读，也把尚未确定的部分留下来。',
+		topicsIntro: '最近5篇专栏使用的标签。',
+		perspectiveLabel: '写作的理由',
+		perspectiveTitle: '分享我在开发和运营中学到的东西。',
+		perspectiveText: '整理我在 AI、网页开发和自动化实践中遇到的问题与解决过程。希望这些文章能帮助从事类似工作的人选择和使用技术。',
 	},
 }[lang];
 
@@ -107,7 +109,7 @@ const formatHomeDate = (date: Date) =>
 	</head>
 	<body>
 		<Header lang={lang} />
-		<HeroSection lang={lang} primaryHref={featuredHref} showDiagram={isTargetFeatured} />
+		<HeroSection lang={lang} primaryHref={featuredHref} />
 
 		<main id="main-content" tabindex="-1" class="home-content">
 			{featuredPost && (
@@ -170,6 +172,7 @@ const formatHomeDate = (date: Date) =>
 					<h2 id="topics-heading">{copy.topicsLabel}</h2>
 					<a class="home-text-link" href={`/${lang}/tags/`}>{copy.topicsBrowse} <span aria-hidden="true">→</span></a>
 				</div>
+				<p class="home-topics__intro">{copy.topicsIntro}</p>
 				<div class="home-topics__list">
 					{topics.map((topic) => (
 						<a href={getTagPath(lang, topic.slug)}>
@@ -407,6 +410,13 @@ const formatHomeDate = (date: Date) =>
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.4rem 2rem;
+	}
+
+	.home-topics__intro {
+		margin: -0.55rem 0 1.2rem;
+		color: var(--muted);
+		font-size: 0.82rem;
+		line-height: 1.75;
 	}
 
 	.home-topics__list a {
