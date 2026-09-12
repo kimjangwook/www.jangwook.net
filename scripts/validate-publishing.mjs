@@ -514,43 +514,8 @@ function flushRebuildWarnings() {
   }
 }
 
-// 언어별 분량. `wc -w` 는 일본어·중국어에서 성립하지 않는다 —
-// 참조 6편을 재면 ja 107~578, zh 114~564 단어로 나온다. 띄어쓰기가 없어서다.
-// 그래서 ko·en 은 단어, ja·zh 는 공백 제외 글자수로 잰다.
-//
-// 하한은 분량 목표가 아니라 파손 감지선이다 (2026-08-19). 참조 6편 실측 하한
-// (ko 1600w 등)을 쓰던 시절, sonnet 편집부(WRITER=sdk)의 정상 글(ko 1301w)이
-// 여기 막혔다 — 분량은 내용이 정한다로 규범을 바꾸고, min 은 "엔진이 중간에
-// 죽어 반 토막이 났다"만 잡게 내렸다. daily-post-pipeline.sh 의 polish_floor
-// 와 같아야 한다. 상한은 그대로다 — "목차가 됐다"는 여전히 잡는다.
-const LENGTH_BOUNDS = {
-  ko: { unit: 'words', min: 700, max: 2800 },
-  en: { unit: 'words', min: 650, max: 2600 },
-  ja: { unit: 'chars', min: 2400, max: 9500 },
-  zh: { unit: 'chars', min: 2000, max: 8000 }
-};
-
-function bodyMetrics(body) {
-  const text = String(body ?? '');
-  return {
-    words: text.split(/\s+/).filter(Boolean).length,
-    chars: text.replace(/\s/g, '').length
-  };
-}
-
-function validateBodyLength(posts) {
-  for (const post of posts.filter((item) => item.indexable)) {
-    const bounds = LENGTH_BOUNDS[post.lang];
-    if (!bounds) continue;
-    const m = bodyMetrics(post.content);
-    const v = bounds.unit === 'words' ? m.words : m.chars;
-    if (v < bounds.min) {
-      rebuildGate(post, `${post.relPath}: 본문 ${v} ${bounds.unit} (${post.lang} 하한 ${bounds.min}) — polish 가 바닥을 뚫었을 수 있다`, '본문 분량 미달');
-    } else if (v > bounds.max) {
-      rebuildGate(post, `${post.relPath}: 본문 ${v} ${bounds.unit} (${post.lang} 상한 ${bounds.max}) — 목차가 됐는지 본다`, '본문 분량 초과');
-    }
-  }
-}
+// 2026-09-13: 사용자 요청으로 자동 집필용 본문 분량 상한·하한 제거.
+// 완전성과 편집 품질은 원문 대조 및 사용자 검토에서 확인한다.
 
 // 마지막 H2 는 참고 자료다. 브리프 sources[] 의 번호 순서를 그대로 낸다.
 // 없으면 네 언어가 각자 다른 레퍼런스를 갖게 되는 사고의 첫 징후다.
@@ -664,7 +629,6 @@ async function main() {
   validateQuoteSources(posts);
   validateDescriptionFloor(posts);
   validateRelatedReasonLanguage(posts);
-  validateBodyLength(posts);
   validateReferencesSection(posts);
   validateNoTildes(posts);
   await validateSourcesClosure(posts);
