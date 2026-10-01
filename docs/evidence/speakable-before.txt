@@ -1,0 +1,21 @@
+❌ validate-speakable 실패 (40건)
+  - dist/en/blog/en/45-day-analytics-report-2025-11/index.html: "article p:first-of-type" 가 24개를 매치한다 (허용 2)
+  - dist/en/blog/en/45-day-analytics-report-2025-11/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/en/blog/en/claude-agent-teams-guide/index.html: "article p:first-of-type" 가 13개를 매치한다 (허용 2)
+  - dist/en/blog/en/claude-agent-teams-guide/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/en/blog/en/figma-mcp-web-components-sync/index.html: "article p:first-of-type" 가 24개를 매치한다 (허용 2)
+  - dist/en/blog/en/figma-mcp-web-components-sync/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/en/blog/en/local-ai-radio-smart-home/index.html: "article p:first-of-type" 가 7개를 매치한다 (허용 2)
+  - dist/en/blog/en/local-ai-radio-smart-home/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/en/blog/en/openclaw-opus-4-6-setup-guide/index.html: "article p:first-of-type" 가 7개를 매치한다 (허용 2)
+  - dist/en/blog/en/openclaw-opus-4-6-setup-guide/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/ja/blog/ja/45-day-analytics-report-2025-11/index.html: "article p:first-of-type" 가 24개를 매치한다 (허용 2)
+  - dist/ja/blog/ja/45-day-analytics-report-2025-11/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/ja/blog/ja/claude-agent-teams-guide/index.html: "article p:first-of-type" 가 13개를 매치한다 (허용 2)
+  - dist/ja/blog/ja/claude-agent-teams-guide/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/ja/blog/ja/figma-mcp-web-components-sync/index.html: "article p:first-of-type" 가 12개를 매치한다 (허용 2)
+  - dist/ja/blog/ja/figma-mcp-web-components-sync/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/ja/blog/ja/local-ai-radio-smart-home/index.html: "article p:first-of-type" 가 7개를 매치한다 (허용 2)
+  - dist/ja/blog/ja/local-ai-radio-smart-home/index.html: ".article-summary" 가 아무것도 매치하지 않는다
+  - dist/ja/blog/ja/openclaw-opus-4-6-setup-guide/index.html: "article p:first-of-type" 가 7개를 매치한다 (허용 2)
+  - dist/ja/blog/ja/openclaw-opus-4-6-setup-guide/index.html: ".article-summary" 가 아무것도 매치하지 않는다

@@ -1,0 +1,68 @@
+{
+  "standalone": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "figures": 4
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "figures": 4
+    }
+  ],
+  "checks": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "figures": 4,
+      "fig03": "/images/series/accessibility/overview/image-context-82591aaef74a.svg"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "figures": 4,
+      "fig03": "/images/series/accessibility/overview/image-context-82591aaef74a.svg"
+    }
+  ],
+  "axeViolations": [],
+  "sourceHash": "6854235cc9cbfaabb605f84a570afb7eaa58c294ce00da32d8041302d432ecc3",
+  "languageAudit": "reports/overview-language-audit.json",
+  "pdfRevision": "r2"
+}

@@ -1,0 +1,520 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+import type { ImageMetadata } from 'astro';
+import FallbackImage from '../assets/og-home.jpg';
+import { SITE_TITLE, SITE_DESCRIPTION, AUTHOR, ORGANIZATION } from '../consts';
+
+interface FAQItem {
+	question: string;
+	answer: string;
+}
+
+interface Props {
+	title: string;
+	description: string;
+	image?: ImageMetadata;
+	articleData?: {
+		publishedTime: string;
+		modifiedTime?: string;
+		author: string;
+		tags?: string[];
+	};
+	faqData?: FAQItem[];
+	breadcrumbs?: { name: string; item: string }[];
+	isHomePage?: boolean;
+	noindex?: boolean;
+	robots?: string;
+	/** Actual locale equivalents for routes whose availability differs by locale. */
+	alternateLinks?: Array<{ lang: string; url: string }>;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const {
+	title,
+	description,
+	image = FallbackImage,
+	articleData,
+	faqData,
+	breadcrumbs,
+	noindex = false,
+	robots,
+	alternateLinks,
+} = Astro.props;
+const robotsContent = robots || (noindex ? 'noindex, follow' : undefined);
+
+// 정적 페이지 제목에 브랜드 접미사 부여.
+// 글 페이지(articleData 존재)는 SERP 60자에 맞춘 제목을 그대로 유지하고,
+// 이미 브랜드 구분자('|')를 포함한 제목(홈 등)도 손대지 않는다.
+const fullTitle = articleData || title.includes('|')
+	? title
+	: `${title} | jangwook.net`;
+
+// 로컬호스트 체크 (GA 비활성화용)
+const isLocalhost = Astro.url.hostname === 'localhost' || Astro.url.hostname === '127.0.0.1';
+
+// Hreflang 태그 생성 로직
+const pathname = Astro.url.pathname;
+const langMatch = pathname.match(/^\/(ko|en|ja|zh)(\/|$)/);
+const currentLang = langMatch ? langMatch[1] : null;
+
+// 언어 코드를 제거한 경로 추출
+let pathWithoutLang: string;
+if (currentLang) {
+	// /ko/blog/post-title -> /blog/post-title
+	// /ko/ -> /
+	// /ko -> /
+	pathWithoutLang = pathname.replace(/^\/(ko|en|ja|zh)(\/|$)/, '/');
+} else {
+	// 루트 경로 또는 언어 코드가 없는 경로
+	pathWithoutLang = pathname;
+}
+
+// 각 언어별 대체 URL 생성. 아카이브 페이지/태그 상세처럼 locale마다
+// 실제 route가 다를 수 있는 페이지는 호출자가 존재하는 equivalent만 넘긴다.
+const languages = ['ko', 'en', 'ja', 'zh'] as const;
+const siteUrl = 'https://jangwook.net';
+
+type HreflangTag = {
+	lang: string;
+	url: string;
+};
+
+const generatedHreflangTags: HreflangTag[] = languages.map(lang => {
+	// 루트 경로(/)는 각 언어 홈으로 매핑
+	if (pathWithoutLang === '/' || pathWithoutLang === '') {
+		return {
+			lang,
+			url: `${siteUrl}/${lang}/`
+		};
+	}
+
+	// 블로그 포스트 경로 처리 (/blog/ko/..., /blog/en/...)
+	// pathWithoutLang이 /blog/ko/... 형태라면 중간의 언어 코드도 변경해야 함
+	let finalPath = pathWithoutLang;
+	if (finalPath.startsWith('/blog/')) {
+		// /blog/ko/slug -> /blog/{lang}/slug 로 변환
+		finalPath = finalPath.replace(/^\/blog\/(ko|en|ja|zh)\//, `/blog/${lang}/`);
+	}
+
+	// 일반 경로는 언어 코드 + 경로
+	return {
+		lang,
+		url: `${siteUrl}/${lang}${finalPath}`
+	};
+});
+
+const hasExplicitAlternates = alternateLinks !== undefined;
+const hreflangTags: HreflangTag[] = hasExplicitAlternates
+	? alternateLinks.map(({ lang, url }) => ({ lang, url }))
+	: generatedHreflangTags;
+
+// Load only the two families and three weights used by the current locale.
+// The root language hub is the one intentional exception because it renders
+// all four language labels in the same document. Code uses the native mono
+// stack from global.css, so no downloaded mono family is needed.
+const fontFamiliesByLang: Record<string, string> = {
+	ko: 'family=Noto+Sans+KR:wght@400;600&family=Noto+Serif+KR:wght@500',
+	en: 'family=Geist:wght@400;600&family=Newsreader:opsz,wght@6..72,500',
+	ja: 'family=Noto+Sans+JP:wght@400;600&family=Noto+Serif+JP:wght@500',
+	zh: 'family=Noto+Sans+SC:wght@400;600&family=Noto+Serif+SC:wght@500',
+};
+const allLocaleFonts = [
+	'family=Geist:wght@400;600',
+	'family=Newsreader:opsz,wght@6..72,500',
+	'family=Noto+Sans+KR:wght@400;600',
+	'family=Noto+Sans+JP:wght@400;600',
+	'family=Noto+Sans+SC:wght@400;600',
+].join('&');
+const fontsHref = `https://fonts.googleapis.com/css2?${currentLang && fontFamiliesByLang[currentLang] ? fontFamiliesByLang[currentLang] : allLocaleFonts}&display=swap`;
+
+// x-default 설정
+// 홈 클러스터: 중립 루트(/)가 언어 선택 랜딩이므로 x-default의 진짜 타깃.
+// 루트가 자체 hreflang 허브를 내보내는 구조에서 x-default를 /en/으로 두면
+// 루트의 self-reference가 없고 언어 홈들이 루트를 되가리키지 않아
+// 리시프로시티가 깨진다 (hreflang-reciprocity-audit 글에서 실측한 버그).
+let xDefaultPath = pathWithoutLang;
+if (xDefaultPath.startsWith('/blog/')) {
+	xDefaultPath = xDefaultPath.replace(/^\/blog\/(ko|en|ja|zh)\//, '/blog/en/');
+}
+const generatedXDefaultUrl = pathWithoutLang === '/' || pathWithoutLang === ''
+	? `${siteUrl}/`
+	: `${siteUrl}/en${xDefaultPath}`;
+const xDefaultUrl = hasExplicitAlternates
+	? (alternateLinks.find(({ lang }) => lang === 'en')?.url ?? alternateLinks[0]?.url ?? canonicalURL.toString())
+	: generatedXDefaultUrl;
+
+// WebSite Schema (모든 페이지)
+const websiteSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	'name': SITE_TITLE,
+	'description': SITE_DESCRIPTION,
+	'url': Astro.site?.toString(),
+};
+
+// Person Schema (저자 정보 - E-E-A-T 향상)
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	'@id': `${Astro.site}#author`,
+	'name': AUTHOR.name,
+	'url': AUTHOR.url,
+	'image': AUTHOR.image,
+	'jobTitle': AUTHOR.jobTitle,
+	'description': AUTHOR.description,
+	'sameAs': AUTHOR.sameAs,
+	'knowsAbout': AUTHOR.knowsAbout
+};
+
+// Organization Schema (AEO: AI 검색엔진의 엔티티 인식 향상)
+const organizationSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	'@id': `${Astro.site}#organization`,
+	'name': ORGANIZATION.name,
+	'url': ORGANIZATION.url,
+	'logo': {
+		'@type': 'ImageObject',
+		'url': ORGANIZATION.logo,
+		'width': 512,
+		'height': 512
+	},
+	'description': ORGANIZATION.description,
+	'foundingDate': ORGANIZATION.foundingDate,
+	'sameAs': ORGANIZATION.sameAs,
+	'founder': {
+		'@type': 'Person',
+		'@id': `${Astro.site}#author`
+	}
+};
+
+// FAQ Schema (AEO: Google AI Overview, ChatGPT 등에서 직접 답변 생성)
+const faqSchema = faqData && faqData.length > 0 ? {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	'mainEntity': faqData.map(item => ({
+		'@type': 'Question',
+		'name': item.question,
+		'acceptedAnswer': {
+			'@type': 'Answer',
+			'text': item.answer
+		}
+	}))
+} : null;
+
+// Speakable Schema (음성검색 최적화: Google Assistant, Alexa 등)
+const speakableSchema = articleData ? {
+	'@context': 'https://schema.org',
+	'@type': 'WebPage',
+	'speakable': {
+		'@type': 'SpeakableSpecification',
+		// 선택자는 "제목 1개 + 리드 문단 1개"로 한정한다.
+		// 이전 값(article h1/h2/p:first-of-type/.article-summary)은 페이지당 문단 13개 안팎을
+		// 가리켰고, .article-summary는 DOM에 존재하지 않아 schema.org 검증기가
+		// NO_MATCHES_FOUND(severe)를 냈다. postbuild의 validate-speakable.mjs가 이 상태를 지킨다.
+		'cssSelector': ['.article-shell__header h1', '.article-prose > p:first-of-type']
+	},
+	'url': canonicalURL.toString()
+} : null;
+
+// Article Schema (블로그 포스트만) - AEO 최적화: author/publisher 연결
+const articleSchema = articleData ? {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	'headline': title,
+	'description': description,
+	'image': new URL(image.src, Astro.url).toString(),
+	'datePublished': articleData.publishedTime,
+	'dateModified': articleData.modifiedTime || articleData.publishedTime,
+	'author': {
+		'@type': 'Person',
+		'@id': `${Astro.site}#author`,
+		'name': AUTHOR.name,
+		'url': AUTHOR.url,
+	},
+	'publisher': {
+		'@type': 'Organization',
+		'@id': `${Astro.site}#organization`,
+		'name': ORGANIZATION.name,
+		'logo': {
+			'@type': 'ImageObject',
+			'url': ORGANIZATION.logo,
+		},
+	},
+	'mainEntityOfPage': {
+		'@type': 'WebPage',
+		'@id': canonicalURL.toString(),
+	},
+	'inLanguage': currentLang || 'en',
+	...(articleData.tags && { 'keywords': articleData.tags.join(', ') }),
+} : null;
+
+// JSON-LD를 단일 @graph로 조립 (json-ld-graph-entity-linking-2026 글의 처방 적용)
+// 전역 엔티티(Organization·Person·WebSite)는 불변 @id, 페이지 엔티티는 @id 참조로 연결.
+const siteOrigin = Astro.site?.toString() ?? 'https://jangwook.net/';
+const ORG_ID = `${siteOrigin}#organization`;
+const AUTHOR_ID = `${siteOrigin}#author`;
+const WEBSITE_ID = `${siteOrigin}#website`;
+
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
+	'@type': 'BreadcrumbList',
+	'@id': `${canonicalURL}#breadcrumb`,
+	'itemListElement': breadcrumbs.map((crumb, index) => ({
+		'@type': 'ListItem',
+		'position': index + 1,
+		'name': crumb.name,
+		'item': crumb.item,
+	})),
+} : null;
+
+const graphNodes = [
+	organizationSchema,
+	{ ...personSchema, worksFor: { '@id': ORG_ID } },
+	{ ...websiteSchema, '@id': WEBSITE_ID, publisher: { '@id': ORG_ID } },
+	...(speakableSchema
+		? [{
+				...speakableSchema,
+				'@id': canonicalURL.toString(),
+				isPartOf: { '@id': WEBSITE_ID },
+				inLanguage: currentLang || 'en',
+				...(articleSchema ? { mainEntity: { '@id': `${canonicalURL}#article` } } : {}),
+				...(faqSchema ? { hasPart: { '@id': `${canonicalURL}#faq` } } : {}),
+				...(breadcrumbSchema ? { breadcrumb: { '@id': `${canonicalURL}#breadcrumb` } } : {}),
+			}]
+		: []),
+	...(breadcrumbSchema ? [breadcrumbSchema] : []),
+	...(articleSchema
+		? [{
+				...articleSchema,
+				'@id': `${canonicalURL}#article`,
+				author: { '@id': AUTHOR_ID },
+				publisher: { '@id': ORG_ID },
+				mainEntityOfPage: { '@id': canonicalURL.toString() },
+			}]
+		: []),
+	...(faqSchema
+		? [{
+				...faqSchema,
+				'@id': `${canonicalURL}#faq`,
+				inLanguage: currentLang || 'en',
+				isPartOf: { '@id': canonicalURL.toString() },
+			}]
+		: []),
+].map((node) => {
+	const { '@context': _context, ...rest } = node as Record<string, unknown>;
+	return rest;
+});
+
+const schemaGraph = { '@context': 'https://schema.org', '@graph': graphNodes };
+---
+
+<!-- Theme initialization script (prevent flicker) -->
+<script is:inline>
+	// This script runs before the page renders to prevent flash of unstyled content
+	(function() {
+		const savedTheme = localStorage.getItem('theme');
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+		if (theme === 'dark') {
+			document.documentElement.classList.add('dark');
+		}
+	})();
+</script>
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- Mediavine (조기 실행이 입찰 경쟁·수익에 유리하므로 head 최상단에 배치) -->
+<script
+	is:inline
+	type="text/javascript"
+	async="async"
+	data-noptimize="1"
+	data-cfasync="false"
+	src="//scripts.scriptwrapper.com/tags/b87a8865-5f57-423f-81d5-36dd4700eafe.js"
+></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap.xml" />
+
+<!-- RSS Feeds (language-specific and global) -->
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - All Languages`}
+	href={new URL('rss.xml', Astro.site)}
+/>
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - 한국어`}
+	href={new URL('rss-ko.xml', Astro.site)}
+	hreflang="ko"
+/>
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - English`}
+	href={new URL('rss-en.xml', Astro.site)}
+	hreflang="en"
+/>
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - 日本語`}
+	href={new URL('rss-ja.xml', Astro.site)}
+	hreflang="ja"
+/>
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={`${SITE_TITLE} - 中文`}
+	href={new URL('rss-zh.xml', Astro.site)}
+	hreflang="zh"
+/>
+
+<meta name="generator" content={Astro.generator} />
+{robotsContent && <meta name="robots" content={robotsContent} />}
+
+<!-- Google Fonts: the current locale's serif/sans pair only -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- display=swap keeps the content readable before the font response arrives. -->
+<link href={fontsHref} rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href={fontsHref} rel="stylesheet" /></noscript>
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Hreflang Tags for Multilingual SEO -->
+{hreflangTags.map(({ lang, url }) => (
+	<link rel="alternate" hreflang={lang} href={url} />
+))}
+<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={articleData ? "article" : "website"} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image.src, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+
+<!-- Schema.org Structured Data (AEO Optimized) -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+
+<!-- Google Analytics (프로덕션 환경에서만 로드) -->
+{!isLocalhost && (
+	<>
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-PWXG8FFDHW"></script>
+		<script is:inline>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-PWXG8FFDHW');
+		</script>
+
+		<!-- External Link Click Tracking -->
+		<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		// Track all external link clicks
+		document.addEventListener('click', (event) => {
+			const target = event.target;
+			const link = target.closest('a');
+
+			if (link && link.href) {
+				const currentHost = window.location.hostname;
+				const linkUrl = new URL(link.href, window.location.href);
+
+				// Check if link is external (different domain)
+				// Exclude social links (already tracked separately)
+				if (linkUrl.hostname !== currentHost &&
+					!link.classList.contains('social-link')) {
+					// Send GA4 event
+					if (typeof gtag !== 'undefined') {
+						const eventData = {
+							'link_url': link.href,
+							'link_domain': linkUrl.hostname,
+							'link_text': link.textContent?.trim() || '',
+							'page_location': window.location.href,
+							'event_category': 'engagement',
+							'event_label': 'external_link'
+						};
+						gtag('event', 'external_link_click', eventData);
+					}
+				}
+			}
+		});
+	});
+		</script>
+
+		<!-- Core Web Vitals Tracking -->
+		<script>
+	// Import and track Core Web Vitals
+	import { onCLS, onLCP, onFCP, onTTFB, onINP, type Metric } from 'web-vitals';
+
+	// Declare gtag function type
+	declare function gtag(
+		command: 'event',
+		eventName: string,
+		eventParams: Record<string, string | number | boolean>
+	): void;
+
+	function sendToGoogleAnalytics(metric: Metric): void {
+		const { name, delta, value, id, rating } = metric;
+
+		// Send to Google Analytics
+		if (typeof gtag !== 'undefined') {
+			gtag('event', name, {
+				event_category: 'Web Vitals',
+				event_label: id,
+				value: Math.round(name === 'CLS' ? delta * 1000 : delta),
+				metric_value: value,
+				metric_rating: rating,
+				non_interaction: true,
+			});
+		}
+
+		// Log to console in development
+		if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+			console.log(`[Web Vitals] ${name}:`, {
+				value: Math.round(name === 'CLS' ? value * 1000 : value) / (name === 'CLS' ? 1000 : 1),
+				rating: rating,
+				id: id
+			});
+		}
+	}
+
+	// Track all Core Web Vitals
+	onCLS(sendToGoogleAnalytics);  // Cumulative Layout Shift
+	onLCP(sendToGoogleAnalytics);  // Largest Contentful Paint
+	onFCP(sendToGoogleAnalytics);  // First Contentful Paint
+	onTTFB(sendToGoogleAnalytics); // Time to First Byte
+	onINP(sendToGoogleAnalytics);  // Interaction to Next Paint (replaces deprecated FID)
+		</script>
+
+	</>
+)}
+
+<!-- 로컬호스트 환경 디버그 메시지 -->
+{isLocalhost && (
+	<script is:inline>
+		console.log('[GA] Google Analytics is disabled in localhost environment');
+	</script>
+)}

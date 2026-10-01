@@ -1,0 +1,382 @@
+---
+title: Mastra.ai 実践ガイド — TypeScriptでAIエージェントを5分で動かす方法
+description: >-
+  Mastra.ai TypeScript AIエージェントフレームワークを実際にインストールしてGoogle
+  Geminiと連携し、天気エージェントを作ってみた。インストールから実際のツール呼び出しまでの実験記録。
+pubDate: '2026-06-14'
+heroImage: ../../../assets/blog/mastra-ai-typescript-agent-framework-guide-2026-hero.jpg
+tags:
+  - mastra
+  - typescript
+  - ai-agent
+  - gemini
+  - llm
+relatedPosts:
+  - slug: ai-agent-cost-reality
+    score: 0.9
+    reason:
+      ko: ai-agent 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into ai-agent.
+      ja: ai-agentをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 ai-agent 主题。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.85
+    reason:
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: dena-llm-study-part3-model-training
+    score: 0.8
+    reason:
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "Mastra.aiはどんなフレームワークですか?"
+    answer: "Gatsby.jsチームが作ったTypeScript-firstのAIエージェントフレームワークで、エージェント・ワークフロー・メモリ・オブザーバビリティを単一のSDKで提供します。内部ではVercel AI SDKを基盤に動作し、2026年1月にv1.0をリリースしました。"
+  - question: "本当に5分でエージェントを動かせますか?"
+    answer: "npm create mastra@latestでのインストールは約2〜3分、最初のエージェント実行まで含めても5〜10分程度です。Google Gemini連携の天気エージェントはソウルと東京の天気比較を約5.8秒で返しました。"
+  - question: "MastraでMemoryを使うには何が必要ですか?"
+    answer: "MemoryにはLibSQLやDuckDBといったストレージバックエンドの設定が必須です。エージェントを単独で使いながらMemoryを含めると、Memory requires a storage providerというエラーが発生します。"
+  - question: "どのLLMプロバイダーに対応していますか?"
+    answer: "OpenAI、Anthropic、Google Gemini、Meta LlamaなどVercel AI SDKが対応するほぼすべてのモデルを使えます。modelフィールドの文字列を変えるだけでプロバイダーが切り替わるので、google/gemini-2.5-flashをanthropic/claude-sonnet-4-6に差し替えても動きます。"
+---
+
+「TypeScript開発者ならLangChain.jsかVercel AI SDKくらいしか選択肢がない」。JavaScriptでAIエージェントを作ろうとするたびに、この話を聞かされてきた。自分もとくに疑わずに受け入れていた。そんなとき今年1月にMastra.aiを知った。YC W25バッチから$13Mを調達してv1.0をリリースしたフレームワークだ。
+
+名前だけは知っていたが、実際に触ったことはなかった。今日、思い切ってインストールした。Google Geminiと連携させて、ツール呼び出しができるエージェントを動かしてみた。「5分で動く」という売り文句、本当かどうかが気になっていた。
+
+## Mastra.aiとは何か
+
+MastraはGatsby.jsチームが作ったTypeScript-first AIエージェントフレームワークだ。2024年10月に公開され、15ヶ月でGitHub stars 22,000個、週次npmダウンロード30万件を超え、2026年1月にv1.0をリリースした。
+
+核心となるポジションは「エージェント、ワークフロー、メモリ、オブザーバビリティを1つのSDKで」提供するというものだ。LangChainが様々なパッケージの組み合わせだとすれば、Mastraは単一スタックで完結するアプローチを選んだ。
+
+対応LLMプロバイダはOpenAI、Anthropic、Google Gemini、Meta Llamaなど、Vercel AI SDKがサポートするほぼ全てのモデルだ。内部でVercel AI SDKを基盤として使っているため、Vercel AI SDKでClaudeストリーミングエージェントを作った経験があれば、基盤レイヤーはすでに知っている計算になる。
+
+### なぜ今TypeScriptエージェントフレームワークが出てきたのか
+
+正直に言うと、Pythonエージェントライブラリと比べてTypeScript側は常に2〜3年遅れている感じがしていた。LangGraph、CrewAI、PydanticAIはPythonエコシステムで急速に成熟したが、TypeScript陣営はVercel AI SDKレベルに留まっていた。
+
+MastraはそのギャップをTypeScriptで埋めようとする試みだ。過大評価かもしれないと思っていたが、実際に使ってみると思ったより完成度が高かった。もちろん惜しいところもある。
+
+## インストール: `npm create mastra@latest`
+
+公式ドキュメントのクイックスタートに従って進めた。使用環境はNode.js v22.22.0。
+
+```bash
+npm create mastra@latest mastra-lab -- --components agents,tools --llm google --example
+```
+
+`--components agents,tools`でエージェントとツールコンポーネントを含め、`--llm google`でGoogle GeminiをLLMプロバイダに指定した。`--example`は天気エージェントのサンプルを含む。
+
+インストール完了まで約2〜3分かかった。CLIが次のステップを順番に進めてくれる:
+
+```
+◇  Project structure created
+◇  npm dependencies installed
+◇  Mastra CLI installed
+◇  Mastra dependencies installed
+◇  .gitignore added
+└  Project created successfully
+
+◇  Mastra initialized successfully!
+
+   Rename .env.example to .env
+   and add your GOOGLE_API_KEY
+```
+
+生成された`package.json`の主要依存関係:
+
+```json
+{
+  "dependencies": {
+    "@mastra/core": "^1.42.0",
+    "@mastra/memory": "^1.20.3",
+    "@mastra/libsql": "^1.13.0",
+    "@mastra/observability": "^1.14.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
+```
+
+TypeScript 6.0.3とZod v4を使っている点が目を引く。どちらも2026年上半期にメジャーバージョンを上げたパッケージで、Mastraが最新バージョンを追いかけているのは良いサインだ。
+
+## 生成されたプロジェクト構造
+
+```
+mastra-lab/
+├── src/
+│   └── mastra/
+│       ├── index.ts          # Mastraインスタンスの初期化
+│       ├── agents/
+│       │   └── weather-agent.ts  # エージェント定義
+│       └── tools/
+│           └── weather-tool.ts   # ツール定義
+├── .env.example
+├── package.json
+└── tsconfig.json
+```
+
+レイヤーが明確に分離されている。`agents/`はエージェント定義、`tools/`は外部APIやデータソースとのインターフェース、`index.ts`はそれらを組み合わせたMastraインスタンスだ。
+
+## コード構造: エージェントとツール
+
+生成されたコードを見るとMastraの設計哲学が分かる。
+
+### ツール定義
+
+```typescript
+// src/mastra/tools/weather-tool.ts
+import { createTool } from '@mastra/core/tools';
+import { z } from 'zod';
+
+export const weatherTool = createTool({
+  id: 'get-weather',
+  description: 'Get current weather for a location',
+  inputSchema: z.object({
+    location: z.string().describe('City name'),
+  }),
+  outputSchema: z.object({
+    temperature: z.number(),
+    feelsLike: z.number(),
+    humidity: z.number(),
+    windSpeed: z.number(),
+    conditions: z.string(),
+    location: z.string(),
+  }),
+  execute: async (inputData) => {
+    return await getWeather(inputData.location);
+  },
+});
+```
+
+ZodスキーマでI/Oの型を定義する方式は、[PydanticAIのタイプセーフエージェント](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)でPydantic BaseModelを使うのと構造的に似ている。言語は違うが「型がすなわちドキュメントであり検証ロジック」という哲学は同じだ。
+
+天気ツールが使うOpen-Meteo APIは無料でAPIキーが不要なのが良い。geocodingで都市名→緯経度に変換し、天気予報APIで現在の天気を取得する仕組みだ。
+
+### エージェント定義
+
+```typescript
+// src/mastra/agents/weather-agent.ts
+import { Agent } from '@mastra/core/agent';
+import { Memory } from '@mastra/memory';
+import { weatherTool } from '../tools/weather-tool';
+
+export const weatherAgent = new Agent({
+  id: 'weather-agent',
+  name: 'Weather Agent',
+  instructions: `You are a helpful weather assistant...`,
+  model: 'google/gemini-2.5-pro',
+  tools: { weatherTool },
+  memory: new Memory(),
+});
+```
+
+`model`フィールドに`'google/gemini-2.5-pro'`のような文字列を書けば、Mastraが対応するプロバイダのSDKを自動で使う。内部では`@ai-sdk/google`が動いている。
+
+## 実際の実行: ソウルと東京の天気比較
+
+エージェントを実際に動かしてみた。Memoryの設定にはストレージバックエンドが必要なので、まず基本エージェントだけでテストした。
+
+```typescript
+const agent = new Agent({
+  id: 'weather-agent',
+  name: 'Weather Agent',
+  instructions: '簡潔に天気情報を提供するアシスタント',
+  model: 'google/gemini-2.5-flash',
+  tools: { weatherTool },
+});
+
+const result = await agent.generate(
+  'Compare the current weather in Seoul and Tokyo. Which city is hotter right now?'
+);
+console.log(result.text);
+```
+
+**実行結果（2026-06-14、応答時間: 5866ms）:**
+
+```
+It is 27.3°C and feels like 30.1°C in Seoul with mainly clear conditions.
+In Tokyo, it is 25.6°C and feels like 27.1°C with overcast conditions.
+Seoul is hotter right now.
+```
+
+エージェントが2都市に対してそれぞれ`get-weather`ツールを呼び出し、結果をまとめて比較回答を作った。約6秒以内に2回の外部API呼び出しとLLM推論を完了した。
+
+ツール呼び出し自体は正確だった。心配していた点の一つが「都市名を正しく処理できるか」だったが、Seoulをソウルの緯経度（37.566、126.978）に正確に変換した。
+
+### 実行中に遭遇したエラー: Memoryストレージ設定
+
+最初にMemoryを含めて実行すると、このようなエラーが出た:
+
+```
+MastraError: Memory requires a storage provider to function.
+Add a storage configuration to Memory or to your Mastra instance.
+https://mastra.ai/en/docs/memory/overview
+```
+
+公式サンプルにはMemoryが含まれているが、Memoryを使うにはLibSQLやDuckDBのようなストレージバックエンドを別途設定する必要がある。このエラーメッセージは初めて使う人には直感的ではない。
+
+## Mastraアーキテクチャの構成要素
+
+![Mastraアーキテクチャ図](../../../assets/blog/mastra-ai-architecture-diagram.png)
+
+Mastraの全体構造は大きく4レイヤーに分かれる:
+
+**1. Agentレイヤー**
+LLMを呼び出し、ツール実行の判断をする。一度の`generate()`呼び出しで内部的に複数回LLMとツールを往復できる。
+
+**2. Tools/Integrations**
+外部API、データベース、ファイルシステムとのインターフェース。Zodスキーマで型を定義すると、LLMが正しい形式で引数を埋める。
+
+**3. Memoryシステム**
+会話履歴、セマンティック検索、ワーキングメモリを管理する。LibSQLやPostgreSQLをストレージとして使う。
+
+**4. Observability**
+OpenTelemetryベースでエージェント実行のトレース、スパン、ログを記録する。
+
+## Mastra Studio
+
+`npm run dev`を実行すると`http://localhost:4111`でMastra Studioが開く。エージェントと会話し、ツール呼び出しの過程を視覚的に確認し、ワークフローをテストできるWeb UIだ。
+
+実際に動かしてみると、開発段階でエージェントの挙動を素早く確認するのに有用だ。各LLM呼び出しとツール実行が段階別に表示され、どこで何が起きているか追跡しやすい。
+
+Studioで最も有用な機能は<strong>ツール呼び出しトレース</strong>だ。エージェントがどのツールをどの引数で呼び、ツールが何を返し、その結果LLMがどう反応したかを段階別に見られる。デバッグでログを掘るよりずっと直感的だ。
+
+ただし、Studioはあくまで開発ツールだ。プロダクションのデプロイ経路とは分離されている。`npm run build`でビルドした成果物をどうサーバーに載せるかは、Vercel以外のドキュメントがまだ薄い。
+
+## Mastra Workflow: エージェントをグラフで組み合わせる
+
+Mastraの独特な強みの一つがワークフローシステムだ。単体のエージェントだけでなく、複数のステップをグラフでつなぐ複雑なパイプラインを構成できる。
+
+基本のワークフロー構造はこうだ：
+
+```typescript
+import { createWorkflow, createStep } from '@mastra/core/workflows';
+import { z } from 'zod';
+
+const step1 = createStep({
+  id: 'fetch-weather',
+  description: '天気データの収集',
+  inputSchema: z.object({ city: z.string() }),
+  outputSchema: z.object({ 
+    temperature: z.number(),
+    conditions: z.string()
+  }),
+  execute: async ({ inputData }) => {
+    // 天気APIを呼び出す
+    return { temperature: 27.3, conditions: 'Mainly clear' };
+  },
+});
+
+const step2 = createStep({
+  id: 'generate-advice',
+  description: '天気に基づく活動の提案',
+  inputSchema: z.object({ 
+    temperature: z.number(),
+    conditions: z.string()
+  }),
+  outputSchema: z.object({ advice: z.string() }),
+  execute: async ({ inputData, mastra }) => {
+    const agent = mastra?.getAgent('advisorAgent');
+    const result = await agent?.generate(
+      `Temperature: ${inputData.temperature}°C, ${inputData.conditions}. Suggest 3 activities.`
+    );
+    return { advice: result?.text || '' };
+  },
+});
+
+export const weatherAdviceWorkflow = createWorkflow({
+  id: 'weather-advice',
+  inputSchema: z.object({ city: z.string() }),
+  outputSchema: z.object({ advice: z.string() }),
+})
+  .then(step1)
+  .then(step2)
+  .commit();
+```
+
+`.then()`チェーンでステップをつなぎ、`.branch()`で分岐を作り、`.parallel()`で並列実行もできる。エージェントが単にLLMを呼ぶだけでなく、複雑なマルチステッププロセスを型安全に構成できるのが核心だ。
+
+このワークフローAPIは私はかなり気に入っている。LangGraphのようにグラフベースだが、TypeScriptのイディオムにずっと近い形で表現される。`createStep`の`inputSchema`・`outputSchema`がZodで定義されており、ステップ間のデータフローがコンパイル時に検証される。
+
+## 実践ヒント: Geminiモデルの選択
+
+MastraでGoogle Geminiを使うとき、モデル選択が性能とコストに直接影響する。
+
+- `google/gemini-2.5-pro`: 最も能力が高いが応答が遅くコストも高い。複雑な推論が必要なエージェント向き。
+- `google/gemini-2.5-flash`: 速くて安い。私がテストした天気エージェントはFlashで5.8秒以内に完了した。単純なツール呼び出し中心のエージェントならFlashから始めるのを薦める。
+- `google/gemini-2.0-flash-exp`: まだ実験的だがより速く、無料ティアで使える。
+
+Anthropic APIキーがあれば`anthropic/claude-sonnet-4-6`に替えてもそのまま動く。モデル文字列を変えるだけだ。この抽象化がMastraの強みの一つだ。
+
+## 他フレームワークとの比較
+
+TypeScriptエコシステムでMastraと最も近いのはVercel AI SDKだ。Vercel AI SDKがLLM呼び出しとストリーミングに特化しているなら、Mastraはそのうえにエージェントのライフサイクル管理、メモリ、オブザーバビリティを加えたレイヤーだ。
+
+[Google ADK vs LangGraph比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026/)では両方ともPython中心だったが、MastraはそのポジションをTypeScriptで狙っている。
+
+| | Mastra | Vercel AI SDK | LangGraph.js |
+|---|---|---|---|
+| 言語 | TypeScript | TypeScript | TypeScript |
+| エージェントループ | ✅ 内蔵 | ⚠️ 手動実装 | ✅ 内蔵 |
+| メモリ | ✅ 内蔵（ストレージ必要） | ❌ | ⚠️ 手動実装 |
+| ワークフロー | ✅ グラフベース | ❌ | ✅ グラフベース |
+| Observability | ✅ OpenTelemetry | ❌ | ⚠️ 外部ツール必要 |
+| 学習コスト | 中程度 | 低い | 高い |
+
+## 惜しい点2つ
+
+一つ目はMemoryの設定ハードルだ。先述のようにエージェント単体でMemoryを含めると即座にエラーになる。初めて使う人にはこのエラーメッセージが直感的ではない。公式サンプルコードと実際の単独実行コードの間にギャップがある。
+
+二つ目はMastra Studioがまだプロダクションデプロイの概念と分離している点だ。Studioは開発ツールだが、エージェントを本番にデプロイする方法のドキュメントがまだ薄い。
+
+## いつMastraを使い、いつ避けるべきか
+
+実際に使ったうえで整理した判断基準だ。ツール選択は結局のところ状況次第になる。
+
+**Mastraが合うケース**
+
+- TypeScript/JavaScriptベースのプロジェクトで初めてエージェントを導入するとき。チームがすでにNodeエコシステムに慣れているなら、Pythonスタックを新たに持ち込むより導入コストが低い。
+- エージェントループ、メモリ、オブザーバビリティを1つのSDK内で完結させたいとき。複数ライブラリを自分で繋ぎ合わせる手間を減らせる。
+- ワークフロー（グラフベースのマルチステップパイプライン）が必要な場合。`.then()` / `.branch()` / `.parallel()`のタイプセーフな組み合わせが強みだ。
+- LLMプロバイダを頻繁に切り替えて実験する段階。モデル文字列を変えるだけでOpenAI、Anthropic、Geminiを行き来できる。コストと応答速度のトレードオフは[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality/)で詳しく扱った。
+
+**避けたほうがよいケース**
+
+- ミッションクリティカルな本番サービスに今すぐ投入する必要があるとき。v1.0が出てから半年経っておらず、API安定性とサードパーティ統合のエコシステムがLangChainの水準に届いていない。
+- Pythonライブラリのエコシステム（LangGraph、CrewAI、PydanticAI）の成熟度やコミュニティプラグインが決め手になる場合。選択肢の比較は[Python AIエージェントライブラリ比較](/ja/blog/ja/python-ai-agent-library-comparison-2026/)を参考にするとよい。
+- Vercel以外の環境（Docker、自前サーバー）に複雑なデプロイパイプラインを即座に構築する必要があるとき。公式デプロイドキュメントがまだ薄い。
+- 単にLLMを1〜2回呼ぶだけで十分な場合。それならVercel AI SDKだけで足りるし、エージェント抽象化のオーバーヘッドは不要だ。
+
+純粋にツール呼び出しのパターンだけを比べたいなら、[Claude Agent SDKツール使用ガイド](/ja/blog/ja/claude-agent-sdk-tool-use-complete-guide-2026/)と並べて見ると設計の違いがはっきりする。
+
+## 今この時点でMastraを試す価値はあるか
+
+個人的にはYesと思う。ただし条件付きだ。
+
+TypeScriptで新しいエージェントプロジェクトを始めるなら、Mastraは確実に検討する価値がある。インストールから最初のエージェント実行まで5〜10分。フレームワーク構造も迷うところがない。
+
+しかしプロダクションに今すぐ投入するにはエコシステムがまだ薄い。v1リリースから半年も経っていないため、API安定性を完全に信頼するのは早い。サイドプロジェクトや社内ツールなら今すぐ使っていい。プロダクションサービスならv1.5あたりで再評価する、というのが今の判断だ。
+
+```bash
+# 始め方
+npm create mastra@latest my-agent-app -- --components agents,tools --llm google --example
+cd my-agent-app
+# .envにGOOGLE_API_KEYを追加
+npm run dev
+# → http://localhost:4111 でMastra Studioが開く
+```
+
+## 参考資料
+
+- [Mastra公式サイト](https://mastra.ai/) — フレームワーク紹介、機能概要、価格
+- [Mastra公式ドキュメント](https://mastra.ai/docs) — エージェント、ワークフロー、メモリ、オブザーバビリティのガイド
+- [Mastra GitHubリポジトリ](https://github.com/mastra-ai/mastra) — ソースコード、Issue、リリースノート
+- [Open-Meteo API](https://open-meteo.com/) — 天気ツールが使う無料の天気データAPI

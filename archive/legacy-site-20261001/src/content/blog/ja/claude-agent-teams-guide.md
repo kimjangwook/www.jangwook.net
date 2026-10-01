@@ -1,0 +1,369 @@
+---
+title: Claude Code Agent Teams 完全ガイド — 5チーム構成と実践運用
+description: >-
+  Claude CodeのAgent
+  TeamsをOpenClaw環境で有効化する全手順と、5専門チームの構成方法を丁寧に解説します。アーキテクチャ・コーディング・テスト・セキュリティ・DevOpsエージェントをオーケストレーターパターンで連携させ、プロダクション級アプリを自動構築した実践知見を共有します。
+pubDate: '2026-02-07'
+heroImage: ../../../assets/blog/claude-agent-teams-guide-hero.png
+tags:
+  - claude-code
+  - agent-teams
+  - openclaw
+  - multi-agent
+  - tmux
+  - automation
+relatedPosts:
+  - slug: multi-agent-orchestration-improvement
+    score: 0.9
+    reason:
+      ko: Claude Code 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Claude Code.
+      ja: Claude Codeをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Claude Code 主题。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.85
+    reason:
+      ko: Claude Code를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Claude Code experience.
+      ja: Claude Codeを実際に扱った経験が続く記事です。
+      zh: 延续 Claude Code 的实战经验。
+  - slug: effiflow-automation-analysis-part2
+    score: 0.8
+    reason:
+      ko: 같은 Claude Code 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Claude Code track.
+      ja: 同じClaude Codeの流れで併せて読むと役立ちます。
+      zh: 在同一 Claude Code 脉络中可一并阅读。
+faq:
+  - question: "サブエージェントとAgent Teamsは何が違いますか？"
+    answer: "サブエージェントは一つのセッション内で結果を返すだけの一方向構造です。Agent Teamsは完全に独立した複数のClaude Codeインスタンスが各自のコンテキストウィンドウを持ち、互いにメッセージを直接やり取りして協業します。調整もメインエージェントの一括管理ではなく、共有タスクリストで自律的に行われます。"
+  - question: "Agent Teamsはどう有効化しますか？"
+    answer: "Agent Teamsはデフォルトで無効です。環境変数CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1を設定するか、~/.claude/settings.jsonのenvセクションに同じ値を入れて永続化できます。環境変数はセッションごとに消えるため、settings.json方式の方が安定します。"
+  - question: "複数のチームメイトが同じファイルを修正する競合はどう防ぎますか？"
+    answer: "現時点ではファイルレベルのロックはサポートされていないため、タスク設計で回避する必要があります。チームメイトごとに担当ディレクトリとファイルを明確に分離し、共有ファイルは一人だけが修正するよう依存関係を設定してください。"
+  - question: "Agent Teamsのトークンコストはどれくらいですか？"
+    answer: "各チームメイトが独立したコンテキストウィンドウを使うため、5人チームなら最低5倍のトークン消費が発生します。単純作業はサブエージェントで処理し、Agent Teamsは議論・レビュー・並列探索など協業が実際に価値を生む場面に集中させるのが良いです。"
+---
+
+## サブエージェントとAgent Teamsの違い
+
+2026年2月5日、AnthropicがClaude Codeの新しい実験的機能として<strong>Agent Teams</strong>を発表しました。従来のサブエージェントは、一つのセッション内で結果を返すだけの一方向構造でした。Agent Teamsはここが違います。完全に独立した複数のClaude Codeインスタンスが<strong>互いにメッセージをやり取りしながら協業</strong>するのです。
+
+主な違いを整理すると以下の通りです：
+
+| 項目 | サブエージェント | Agent Teams |
+|------|----------------|-------------|
+| コンテキスト | メインセッション内部 | 各自独立したコンテキストウィンドウ |
+| 通信 | 結果をメインに返すのみ | チームメイト間で直接メッセージ交換 |
+| 調整 | メインエージェントが一括管理 | 共有タスクリストで自律的に調整 |
+| トークンコスト | 比較的低い | チームメイト数に比例して増加 |
+
+発表されたその日のうちに、OpenClaw環境でこの機能を試しました。この記事はその過程で経験した試行錯誤と発見をまとめた実践ガイドです。
+
+## 事前準備：OpenClaw devビルド
+
+Agent Teamsを使うには最新のClaude Codeが必要です。当時OpenClawのstableチャネルにはcronジョブのバグがあり、どのみちdevチャネルへの切り替えが必要な状況でもありました。（関連記事）
+
+### pnpmの有効化
+
+```bash
+corepack enable pnpm
+```
+
+### devチャネル切り替えとソースビルド
+
+```bash
+export OPENCLAW_GIT_DIR=~/openclaw
+openclaw update --channel dev
+```
+
+自動更新が失敗した場合は手動ビルドを行います：
+
+```bash
+cd ~/openclaw
+pnpm install && pnpm build && npm install -g .
+```
+
+### ゲートウェイ再起動
+
+```bash
+openclaw gateway restart
+```
+
+この手順によりdevチャネルのv2026.2.4が適用され、Agent Teamsに対応したClaude Codeバージョンが含まれます。
+
+## Agent Teamsの有効化
+
+Agent Teamsはデフォルトで無効になっています。有効化する方法は2つあります：
+
+### 方法1：環境変数の直接設定
+
+```bash
+export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
+```
+
+### 方法2：settings.jsonに永続設定
+
+`~/.claude/settings.json`：
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}
+```
+
+### OpenClaw LaunchAgentへの反映
+
+OpenClawをmacOS LaunchAgentとして運用している場合、plistファイルの`EnvironmentVariables`セクションに追加する必要があります：
+
+```xml
+<key>EnvironmentVariables</key>
+<dict>
+    <key>CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS</key>
+    <string>1</string>
+</dict>
+```
+
+筆者はsettings.json方式を選択しました。環境変数はセッションごとに消えますが、settings.jsonはClaude Code起動時に自動的に読み込まれるためです。
+
+## teammateModeの設定
+
+Agent Teamsの表示モードは3種類あります：
+
+- <strong>in-process</strong>：全チームメイトがメインターミナル内で実行されます。`Shift+↑/↓`でチームメイトを選択できます。
+- <strong>tmux</strong>：各チームメイトがtmux分割ペインで実行されます。全出力を一目で確認できます。
+- <strong>iTerm2</strong>：iTerm2使用時に自動分割されます。
+
+デフォルトは`auto`で、tmuxセッション内なら分割モード、それ以外はin-processモードになります。
+
+筆者は<strong>tmuxモード</strong>を明示的に設定しました：
+
+```json
+{
+  "teammateMode": "tmux"
+}
+```
+
+tmuxを選んだ理由はシンプルです。5つのチームを同時運用する際、各チームメイトの作業状況を<strong>一画面でリアルタイムに</strong>確認できなければ、ボトルネックを素早く特定できないためです。
+
+tmuxが未インストールの場合は、以下のコマンドでインストールしてください：
+
+```bash
+brew install tmux
+```
+
+## 5つの専門チームをこう分けた
+
+今回構成した5つのチームの役割と設計意図を整理します。
+
+### 1. ops（運用）
+
+インフラ点検、ゲートウェイ状態確認、cronジョブ監視を担当するチームです。devチャネル切り替え直後だったため、特に重要でした。
+
+### 2. branding（ブランディング）
+
+ブログ記事作成、ヒーロー画像生成、多言語コンテンツ管理を担当するチームです。技術コンテンツを4言語（日/韓/英/中）で同時に生産します。まさにこの記事もbrandingチームの成果物です。
+
+### 3. invest（投資）
+
+市場分析、ポートフォリオレビュー、リスク評価を並列処理するチームです。
+
+### 4. dev（開発）
+
+コードレビュー、リファクタリング、テスト作成、機能実装を担当するチームです。ファイル競合防止のため、各チームメイトの担当モジュールを明確に分離するのが鍵となります。
+
+### 5. social（ソーシャル）
+
+SNS投稿の下書き作成、トレンド分析、コミュニティモニタリングを担当するチームです。
+
+チーム構成プロンプトの例：
+
+```
+5つのエージェントチームを構成してください。
+- ops: インフラ運用と監視
+- branding: コンテンツ制作と多言語管理
+- invest: 市場分析と投資リサーチ
+- dev: コード作成とレビュー
+- social: SNSとコミュニティ管理
+各チームに2名のメンバーを配置し、Sonnetモデルを使用してください。
+```
+
+## タスクリストと依存関係管理
+
+Agent Teamsの核心メカニズムの一つが<strong>共有タスクリスト</strong>です。チームリードがタスクを作成し、チームメイトが自律的にclaimして処理します。
+
+### タスクの状態
+
+- <strong>pending</strong>：待機中
+- <strong>in progress</strong>：作業中
+- <strong>completed</strong>：完了
+
+### 依存関係の設定
+
+タスク間の依存関係を設定すると、先行タスクが完了するまで後続タスクはclaimできません。
+
+実際の例：
+
+```
+タスクリスト：
+1. [ops] ゲートウェイ状態点検
+2. [ops] cronジョブ動作確認（→ 1番に依存）
+3. [branding] ブログ下書き作成
+4. [branding] ヒーロー画像生成
+5. [branding] 多言語翻訳（→ 3番に依存）
+6. [dev] レコメンドシステムリファクタリング
+7. [dev] テスト作成（→ 6番に依存）
+```
+
+タスクの割り当てにはファイルロックが使われ、複数のチームメイトが同時に同じタスクをclaimしようとしても競合は発生しません。
+
+## 実践運用
+
+### Delegateモード
+
+デフォルトではチームリードも直接作業を行えますが、<strong>Delegateモード</strong>を有効にするとリードは調整専任になります：
+
+- チームメイトの生成/終了
+- メッセージの転送
+- タスク管理
+
+有効化：`Shift+Tab`
+
+大規模チーム運用時にはDelegateモードを推奨します。リードが直接コーディングを始めると調整に空白が生じるためです。
+
+### チームメイトとの直接対話
+
+チームリードを介さず、特定のチームメイトに直接指示できます：
+
+- <strong>in-process</strong>：`Shift+↑/↓`でチームメイトを選択後、メッセージ入力
+- <strong>tmux</strong>：該当ペインをクリックして直接操作
+
+この機能は、特定のチームメイトの方向性を素早く修正したい場合に便利です。
+
+### Plan Approval（計画承認）
+
+重要な作業では、チームメイトがまず計画を立て、リードの承認を得てから実行するよう設定できます：
+
+```
+認証モジュールリファクタリング用のarchitectチームメイトを作成してください。
+変更作業前に必ず計画承認を受けるよう設定してください。
+```
+
+リードが承認すれば実行され、却下された場合はフィードバックを反映して再計画します。
+
+## OpenClawとAgent Teamsが出会うとき
+
+ここで興味深いのは、OpenClaw自体のマルチエージェント機能とAgent Teamsが<strong>異なるレイヤー</strong>で動作するという点です。
+
+### OpenClawマルチエージェント
+
+- Telegram、Discordなど<strong>チャネルレベル</strong>でエージェントを管理
+- 各エージェントが独立したペルソナと設定を保持
+- cronジョブ、ハートビートなど<strong>自動化スケジューリング</strong>をサポート
+
+### Claude Code Agent Teams
+
+- <strong>セッションレベル</strong>で複数のClaude Codeインスタンスが協業
+- 共有タスクリストとメッセージングシステム
+- コード作業に特化した並列処理
+
+二つの階層を組み合わせると、以下のような構造になります：
+
+```
+OpenClawエージェント（チャネルレベル）
+  └─ Claude Codeセッション
+       └─ Agent Team（セッションレベル）
+            ├─ メンバーA (ops)
+            ├─ メンバーB (branding)
+            └─ メンバーC (dev)
+```
+
+例えば、OpenClawのメインエージェントがTelegramメッセージを受け取り、サブエージェントを生成します。そのサブエージェントがAgent Teamを構成し、複雑な作業を並列処理した後、結果をTelegramに返すパイプラインが実現できます。
+
+## ベストプラクティス
+
+### 1. ファイル競合の防止
+
+Agent Teamsで最も注意すべき点は、<strong>複数のチームメイトが同じファイルを修正すること</strong>です。
+
+- チームメイトごとに担当ディレクトリ/ファイルを明確に分離してください
+- 共有ファイルは一人のチームメイトのみが修正するよう依存関係を設定してください
+- `.claude/teams/`ディレクトリでチーム設定を確認できます
+
+### 2. コンテキストの受け渡し
+
+チームメイトはCLAUDE.md、MCPサーバー、スキルを自動ロードしますが、<strong>リードの会話履歴は引き継ぎません</strong>。そのため：
+
+- スポーンプロンプトに十分なコンテキストを含めてください
+- 関連ファイルパスを明示的に指定してください
+- 必要に応じてCLAUDE.mdにチーム共通情報を追加してください
+
+### 3. トークン管理
+
+各チームメイトが独立したコンテキストウィンドウを使用するため、トークン消費が急増します。
+
+- 単純作業にはサブエージェントで十分です
+- Agent Teamsは<strong>議論、レビュー、並列探索</strong>に集中しましょう
+- ブロードキャストメッセージはチーム規模に比例してコストが増加するため、最小化してください
+
+### 4. 権限管理
+
+チームメイトはリードの権限設定を引き継ぎます。`--dangerously-skip-permissions`でリードを実行すると、全チームメイトも同一権限を持つことになるため、注意が必要です。
+
+## 制限事項と注意点
+
+1. <strong>実験的機能</strong>：`EXPERIMENTAL`環境変数名が示す通り、まだ正式機能ではありません。APIが変更される可能性があります。
+
+2. <strong>トークンコスト</strong>：5人チームなら最低5倍のトークン消費が発生します。ROIを検討する必要があります。
+
+3. <strong>デバッグの難しさ</strong>：複数のチームメイトが同時作業すると、問題発生時の原因追跡が複雑になります。
+
+4. <strong>逐次処理には非効率</strong>：依存関係が多い作業は結局直列処理になるため、チームを使う意味がありません。
+
+5. <strong>同一ファイル修正のリスク</strong>：現時点ではファイルレベルのロックはサポートされていません。タスク設計で回避する必要があります。
+
+6. <strong>tmux環境が実質必須</strong>：5チームを適切にモニタリングするにはtmuxがほぼ必須です。in-processモードでは限界があります。
+
+## いつ使い、いつ避けるべきか
+
+公式ドキュメントも「並列探索が実際に価値を生む作業」でのみAgent Teamsを推奨しています。一日触ってみて整理した判断基準は次の通りです。
+
+<strong>向いているケース</strong>
+
+- コードレビューをセキュリティ・パフォーマンス・テストカバレッジのように独立した観点へ分割し、同時に回すとき
+- バグの原因が不明確で、複数の仮説を並列に検証し互いに反論させたいとき
+- フロントエンド・バックエンド・テストのようにレイヤーが分かれる新機能をチームメイトごとに分担するとき
+- ライブラリ調査のように、結果を集めて比較・議論するリサーチ系の作業のとき
+
+<strong>避けるべきケース</strong>
+
+- 依存関係が多く、結局直列で流れざるを得ない作業。チームを使っても速くなりません。
+- 複数のチームメイトが同じファイルを触る作業。ファイルロックがなく、上書きのリスクが大きいです。
+- 単純な繰り返し作業。これはサブエージェント一つで十分で、トークンもはるかに少なく済みます。
+- コストに敏感な状況。5人チームならトークンは最低5倍です。
+
+初めてなら、コードを直接書かないレビュー・リサーチ作業から始めるのをおすすめします。境界が明確なので、並列協業の価値を最も安全に体感できます。
+
+## あわせて読みたい記事
+
+同じマルチエージェントの流れを別角度から扱った記事です。
+
+- [マルチエージェントオーケストレーション改善記](/ja/blog/ja/multi-agent-orchestration-improvement/) — エージェントを調律するパターンをもう一歩深く掘り下げます。
+- [Git WorktreeでClaude Codeの並列セッションを回す](/ja/blog/ja/claude-code-parallel-sessions-git-worktree/) — Agent Teamsなしで手動の並列セッションを運用する代替案です。
+- [AIエージェントコストの現実](/ja/blog/ja/ai-agent-cost-reality/) — トークンコストが急増するマルチエージェント運用の経済性を検証します。
+
+## 参照した一次情報
+
+- [Claude Code — Agent Teams 公式ドキュメント](https://code.claude.com/docs/en/agent-teams)
+- [Claude Code — Subagents 公式ドキュメント](https://code.claude.com/docs/en/sub-agents)
+- [Claude Code 概要](https://code.claude.com/docs/en/overview)
+
+## 一日触ってみて思ったこと
+
+Agent Teamsはまだ実験段階ですが、可能性は確実に感じられます。特にOpenClawのマルチエージェントアーキテクチャと組み合わせれば、チャネルレベルの自動化の上にセッションレベルの並列協業を重ねる二重構造を実現できます。
+
+ただし現時点で全ての作業にAgent Teamsを適用するのは非効率的です。独立した作業が多く、チームメイト間の議論が実際に価値を生むシナリオ。並列探索、コードレビュー、競合仮説の検証といった場面。そこにこそ集中すべきだと思います。
+
+設定自体は30分あれば終わります。本当に難しいのはその先です。<strong>どの作業をチームにまとめ、どうタスクを分解するか</strong>という設計の問題ですね。その感覚は、実際に使いながら磨いていくしかありませんでした。

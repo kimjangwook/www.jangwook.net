@@ -1,0 +1,438 @@
+---
+title: 用Bun Shell构建TypeScript自动化脚本 — 从安装到实战模式
+description: >-
+  基于Bun 1.3.14实际实验的Bun Shell完整指南。涵盖$模板字面量、.nothrow()错误处理、Promise.all并行化及macOS
+  echo陷阱，附真实执行日志。还包含与zx的实质差异及生产环境部署的注意事项。
+pubDate: '2026-05-25'
+heroImage: ../../../assets/blog/bun-shell-scripting-practical-guide-2026-hero.png
+tags:
+  - Bun
+  - TypeScript
+  - 自动化
+  - Shell
+relatedPosts:
+  - slug: deno-2-vs-bun-nodejs-runtime-2026-comparison
+    score: 0.9
+    reason:
+      ko: bun 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into bun.
+      ja: bunをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 bun 主题。
+  - slug: mcp-server-typescript-sdk-step-by-step-2026
+    score: 0.85
+    reason:
+      ko: TypeScript를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on TypeScript experience.
+      ja: TypeScriptを実際に扱った経験が続く記事です。
+      zh: 延续 TypeScript 的实战经验。
+  - slug: vitest-4-jest-migration-guide-2026
+    score: 0.8
+    reason:
+      ko: 같은 TypeScript 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same TypeScript track.
+      ja: 同じTypeScriptの流れで併せて読むと役立ちます。
+      zh: 在同一 TypeScript 脉络中可一并阅读。
+faq:
+  - question: "Bun Shell和zx的核心区别是什么？"
+    answer: "API语法几乎相同，但Bun Shell不依赖bash。zx在内部调用系统的bash或sh，因此Windows上需要WSL或Git Bash。Bun Shell内置了用Rust实现的自有shell，让ls、rm、echo等命令在Windows、macOS、Linux上的运行结果完全一致。"
+  - question: "在Bun 1.3.14中可以用.stdin()直接传字符串吗？"
+    answer: "不可以。在1.3.14中直接传字符串会报stdin is not a function错误。最稳定的替代方案是用Bun.write写入文件再重定向，或者用printf构建管道。"
+  - question: "使用$.env()时为什么必须手动加上PATH？"
+    answer: "因为传给$.env()的对象会完全替换现有环境变量，而不是合并。如果漏掉PATH，后续所有命令都会找不到ls等可执行文件，所以必须显式包含process.env.PATH。"
+  - question: "现在应该用Bun Shell替代zx吗？"
+    answer: "如果项目已经基于Bun，或团队里有Windows开发者，那么它无需额外依赖即可使用，是个自然的选择。但如果项目基于Node.js加npm且没有迁移计划，或者zx已经运行良好，那么继续用zx更现实。"
+---
+
+写shell脚本的时候，我总有个小烦恼。用bash写虽然熟悉但在Windows上会出问题。Node.js的`child_process`写起来回调满天飞。用`zx`又需要额外安装包。就在这时我试了试Bun Shell，起初以为不过是个zx的翻版，真正跑起来之后，想法有些改变了。
+
+这篇文章基于我在Bun 1.3.14上实际实验的结果。文档里写的和实际运行的有出入的地方，我如实记录了下来。
+
+## Bun Shell是什么，为什么现在值得关注
+
+Bun是JavaScript运行时，同时也是包管理器、打包工具和测试运行器。整个项目的目标是把碎片化的生态系统整合成一个工具。[就像Python的uv整合了pip、pyenv和poetry一样](/zh/blog/zh/uv-python-ai-development-setup-guide-2026/)，Bun把npm/yarn/pnpm加测试运行器加打包工具合并成了一个。
+
+Bun Shell是这种整合哲学在shell脚本领域的延伸。安装`bun`之后，不需要额外配置，就可以在TypeScript内用`$`模板字面量直接执行shell命令。
+
+### 和zx的区别
+
+说实话，API表面上很像。两者都用`` $`command` ``语法。核心区别只有一个：**Bun Shell不依赖bash。**
+
+zx在内部调用系统的bash（或sh）。Windows上没有bash的话，就需要WSL或Git Bash。Bun Shell内置了用Rust实现的自有shell，不需要bash也能运行。`ls`、`rm`、`echo`、`cd`、`mkdir`等常用命令在Windows、macOS、Linux上的运行结果完全一致。
+
+如果团队里有Windows开发者，这个区别就很重要了。
+
+## 安装方法
+
+安装Bun只需一行命令：
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+安装完成后，`PATH`会自动添加到shell配置文件（`~/.zshrc`或`~/.bashrc`）中。在当前会话中生效：
+
+```bash
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+bun --version  # 1.3.14
+```
+
+初始化新项目：
+
+```bash
+mkdir my-scripts && cd my-scripts
+bun init -y
+```
+
+`bun init`会自动生成`package.json`、`tsconfig.json`和`index.ts`。TypeScript无需额外配置就能直接运行，这点很方便。
+
+## 基本模式: 用$模板字面量执行命令
+
+最基本的用法：从内置`bun`模块导入`$`：
+
+```typescript
+import { $ } from "bun";
+
+// 执行命令
+await $`echo "Hello from Bun Shell"`;
+
+// 捕获输出
+const files = await $`ls -la`.text();
+console.log(files);
+
+// JavaScript变量插值（自动转义！）
+const filename = "my file.txt";  // 含空格
+await $`echo "${filename}" > output.txt`;
+// → output.txt中保存"my file.txt"（空格被正确转义）
+```
+
+变量插值的自动转义确实有效。我测试了含空格的文件名，无需额外处理就能正确识别。这减少了bash脚本中因忘记给`"${var}"`加引号而出错的情况。
+
+### 输出格式方法
+
+```typescript
+// 以字符串返回
+const text = await $`ls`.text();
+
+// 以行数组返回（Bun特有的便利方法）
+const lines = await $`ls`.lines();
+// → ["file1.ts", "file2.ts", ...]
+
+// 以Blob返回
+const blob = await $`cat file.txt`.blob();
+```
+
+`.lines()`是把输出按行解析成数组的便利方法，比手写`text().split('\n')`更简洁。
+
+## 错误处理、环境变量和管道
+
+### 两种错误处理模式
+
+Bun Shell中命令失败（exit code != 0）时，默认会抛出异常。
+
+```typescript
+// 模式1：try/catch
+try {
+  await $`ls /nonexistent-dir`;
+} catch (e) {
+  console.log("错误:", e.message); // "Failed with exit code 1"
+}
+
+// 模式2：.nothrow() — 用exitCode代替抛出异常
+const result = await $`ls /nonexistent-dir`.nothrow();
+console.log(result.exitCode); // 1
+console.log(result.stderr.toString()); // 错误信息
+```
+
+实际工作中我更常用`.nothrow()`。检查文件是否存在、命令是否安装等场景比`try/catch`更简洁：
+
+```typescript
+const nodeResult = await $`node --version`.nothrow();
+if (nodeResult.exitCode === 0) {
+  console.log("Node.js:", nodeResult.stdout.toString().trim());
+} else {
+  console.log("Node.js未安装");
+}
+```
+
+这个模式在我的实验中验证可以正常使用。
+
+### 设置环境变量
+
+```typescript
+// 设置全局默认值
+$.env({ API_KEY: "secret123", PATH: process.env.PATH! });
+
+// 仅对单个命令生效
+const result = await $`echo $LOCAL_VAR`
+  .env({ LOCAL_VAR: "only this command", PATH: process.env.PATH! })
+  .text();
+```
+
+注意：`.env()`传入的对象会完全替换现有环境变量，而不是合并。如果忘了带`PATH`，后续所有命令都找不到可执行文件。
+
+### 管道
+
+```typescript
+// Bun Shell内置管道
+const sorted = await $`printf "banana\napple\ncherry\n" | sort`.text();
+// → apple, banana, cherry
+
+// 去重+排序（使用文件重定向）
+await Bun.write("input.txt", "banana\napple\ncherry\napple\n");
+const unique = await $`sort < input.txt | uniq`.text();
+```
+
+这里有个陷阱。在macOS上，`echo "banana\napple"`中的`\n`不会被解释为换行符。与Linux bash的`echo -e`不同，macOS默认的`echo`不处理转义序列。需要用`printf`代替。
+
+Bun Shell虽然不依赖bash运行，但内置命令的行为仍然遵循所在操作系统的规范，这一点要牢记。
+
+## 并行执行：Promise.all是关键
+
+在Bun Shell中并行执行多个命令需要使用`Promise.all`。顺序写的命令会顺序执行。
+
+```typescript
+// 顺序执行（~200ms）
+await $`sleep 0.1`;
+await $`sleep 0.1`;
+
+// 并行执行（~100ms）
+await Promise.all([
+  $`sleep 0.1`,
+  $`sleep 0.1`,
+]);
+```
+
+我直接测量了一下，顺序执行约471ms，并行执行约263ms。overhead比预期大，这是因为macOS进程创建本身有成本。不过对于IO密集型任务，并行化效果还是明显的。
+
+### 实用构建脚本示例
+
+Bun Shell在构建脚本中最能体现价值。可以将shell操作与TypeScript逻辑混合在同一个文件中：
+
+```typescript
+import { $ } from "bun";
+
+const DIST = "./dist";
+const SRC = "./src";
+
+async function build() {
+  // 清理构建目录
+  await $`rm -rf ${DIST} && mkdir -p ${DIST}`;
+
+  // 获取TypeScript文件列表
+  const tsFiles = await $`ls ${SRC}/*.ts`.text();
+  const files = tsFiles.trim().split("\n");
+
+  console.log(`构建目标：${files.length}个文件`);
+
+  // 并行处理
+  await Promise.all(
+    files.map(async (f) => {
+      const name = f.split("/").pop()!.replace(".ts", ".js");
+      await $`bun build ${f} --outfile ${DIST}/${name}`;
+    })
+  );
+
+  // 检验结果
+  const built = await $`ls ${DIST}/`.text();
+  console.log("构建完成:", built.trim().replace(/\n/g, ", "));
+}
+
+build().catch(console.error);
+```
+
+将这个脚本保存为`scripts/build.ts`，用`bun run scripts/build.ts`执行。不需要Node.js或ts-node，体感上轻松很多。将这个构建脚本接入GitHub Actions CI/CD流水线是本地自动化跑通后自然的下一步。
+
+## Bun Shell vs zx：实务中到底差在哪
+
+工具比较，实际使用模式比基准数字更重要。把两者摆在一起看，差异会更清楚。
+
+### 同样的任务，不同的代码
+
+```typescript
+// zx (基于 Node.js)
+import { $ } from "zx";
+
+// 复制多个文件
+for (const file of ["a.ts", "b.ts", "c.ts"]) {
+  await $`cp src/${file} dist/`;
+}
+
+// Bun Shell (基于 Bun)
+import { $ } from "bun";
+
+// 同样的任务
+for (const file of ["a.ts", "b.ts", "c.ts"]) {
+  await $`cp src/${file} dist/`;
+}
+```
+
+代码几乎一样。到这里为止，两个都能用。差异出现在运行时环境。
+
+### 实际能感受到的差异
+
+<strong>项目初始化速度</strong>：Bun 安装依赖很快。在已装好 `bun` 的环境里，直接 `import { $ } from "bun"` 比 `npm install zx` 更快。初始设置能省 1〜2 分钟。
+
+<strong>Windows 队友</strong>：在 Windows 上用 zx 需要 Git Bash 或 WSL。Bun Shell 内置自有 shell，在 Windows 上同样可用。如果团队一半人用 Windows，这个差异是实打实的。
+
+<strong>TypeScript 集成</strong>：Bun 无需单独编译即可直接运行 TypeScript。不用 zx + ts-node + tsconfig 组合，`bun run script.ts` 直接执行。CI 环境里能省掉一个运行时安装步骤。
+
+### 我现在就会用 Bun Shell 替代 zx 的情况
+
+团队项目开始用 Bun 之后，自然而然转向了 Bun Shell。感受最深的是"用 TypeScript 写脚本不需要任何额外配置"。用 `bun init` 新建仓库，马上就能写并运行 TypeScript 脚本。
+
+zx 也是好工具。生态成熟，在 Node.js 项目里很自然。我在现有 Node.js 项目里继续用 zx，在新的 Bun 项目里用 Bun Shell。
+
+把差异压缩成一张表：
+
+| 项目 | Bun Shell | zx |
+|---|---|---|
+| 运行时 | Bun 内置（零额外依赖） | Node.js + npm 包 |
+| Windows | 内置自有 shell，直接可用 | 需要 Git Bash、WSL |
+| 运行 TypeScript | 直接执行（零配置） | 需 ts-node 等组合 |
+| 生态成熟度 | 相对年轻 | 成熟，下载量领先 |
+| 自然的选择 | Bun 项目 | 现有 Node.js 项目 |
+
+## 实验中发现的陷阱
+
+诚实地说。
+
+### 陷阱1：`.stdin()` API在1.3.14中不可用
+
+你可能见过`` $`command`.stdin("text") ``这样的写法。在Bun 1.3.14中，这个API并不存在，运行时会报`stdin is not a function`错误。
+
+替代方案：
+
+```typescript
+// ❌ 1.3.14中不可用
+await $`sort | uniq`.stdin("banana\napple\ncherry");
+
+// ✅ 替代方案1：使用文件
+await Bun.write("/tmp/input.txt", "banana\napple\ncherry\n");
+await $`sort < /tmp/input.txt | uniq`;
+
+// ✅ 替代方案2：用printf构建管道
+await $`printf "banana\napple\ncherry\n" | sort | uniq`;
+```
+
+这是我发现的最意外的地方。部分文档里有这个API的示例，但当前稳定版本里根本没有，使用前要确认所用版本。
+
+### 陷阱2：`$.env()`是替换而非合并
+
+```typescript
+// ❌ 危险：PATH会消失
+$.env({ MY_VAR: "value" });
+await $`ls`;  // 可能报错
+
+// ✅ 安全：明确包含PATH
+$.env({ MY_VAR: "value", PATH: process.env.PATH! });
+```
+
+### 陷阱3：macOS的echo不解释`\n`
+
+前面已经说过，但值得再强调一遍：Bun Shell使用系统原生的`echo`。macOS上`echo "a\nb"`输出的是字面量`a\nb`，而不是两行。需要换行的管道输入请用`printf`。
+
+```typescript
+// ❌ macOS上不如预期
+await $`echo "apple\nbanana\ncherry" | sort`;
+// → 输出一行 "apple\nbanana\ncherry"
+
+// ✅ 各平台通用
+await $`printf "apple\nbanana\ncherry\n" | sort`;
+```
+
+## 什么时候用Bun Shell，什么时候不用
+
+我的结论：**项目已经基于Bun，就有足够理由用Bun Shell；否则从zx开始更现实。**
+
+### 适合用Bun Shell的场景
+
+- **项目已经用Bun**作为包管理器：无需额外依赖就能用shell脚本。
+- **团队有Windows开发者**：需要不依赖bash的跨平台shell。
+- 希望把**构建/部署脚本统一成TypeScript**：配置代码和shell操作在同一个文件里处理。
+
+### 不必用Bun Shell的场景
+
+- 项目基于Node.js + npm，没有迁移计划。
+- 已有复杂bash脚本，Bun Shell的兼容性不确定。
+- `zx`已经运行良好，团队也很熟悉。
+
+我不认同"Bun Shell比zx更好"这种说法。从生态成熟度和下载量来看，zx更占优。Bun Shell是"用Bun的人的自然选择"，而不是"所有项目都应该弃用zx"。如果你还在纠结运行时本身怎么选，我在[Deno 2、Bun与Node.js对比一文](/zh/blog/zh/deno-2-vs-bun-nodejs-runtime-2026-comparison/)里更深入地讲了这个取舍，定工具之前值得一读。
+
+还有一点，`.stdin()` API尚不稳定让我觉得遗憾。一旦稳定下来，基于stdin的管道处理会简洁很多，现在还需要绕路。
+
+把选择流程画成一张图：
+
+```mermaid
+graph TD
+    A{"项目是否已经<br/>基于 Bun"} -->|"是"| B["使用 Bun Shell<br/>零额外依赖"]
+    A -->|"否"| C{"是否有 Windows 队友、<br/>需要跨平台 shell"}
+    C -->|"是"| D["随引入 Bun 一起<br/>考虑 Bun Shell"]
+    C -->|"否"| E["继续用 zx 更现实"]
+```
+
+## 部署环境中的注意事项
+
+整理一下在真实服务器或 CI 上使用 Bun Shell 脚本时容易忽略的点。
+
+### 固定 Bun 版本
+
+本地和 CI 的 Bun 版本不一致时行为可能不同。最好在 `package.json` 里声明引擎要求，或用 `.bun-version` 文件固定版本：
+
+```json
+// package.json
+{
+  "engines": {
+    "bun": ">=1.3.0"
+  }
+}
+```
+
+在 GitHub Actions 里安装 Bun 时：
+
+```yaml
+- uses: oven-sh/setup-bun@v2
+  with:
+    bun-version: "1.3.14"
+```
+
+不固定具体版本的话，小版本更新带来 API 变化时可能出现意料之外的错误。
+
+### 错误日志模式
+
+用 `.nothrow()` 时，连 stderr 一起记录的习惯很重要：
+
+```typescript
+const result = await $`some-command`.nothrow();
+if (result.exitCode !== 0) {
+  // 连同 stderr 一起记录
+  console.error(`Command failed (code ${result.exitCode}): ${result.stderr.toString().trim()}`);
+  process.exit(1);  // 让 CI 识别为失败
+}
+```
+
+不显式调用 `process.exit(1)` 的话，脚本失败时 CI 流水线可能继续往下走。
+
+## 现在到底值不值得用
+
+实际安装运行之后，Bun Shell的开发体验比我想象的好。变量自动转义、`.nothrow()`模式、`.lines()`这样的便利方法，这些细节设计在zx里也见不到。
+
+不过目前仍是1.x版本，部分API还不稳定。在生产CI/CD脚本中使用之前，建议在实际环境中充分验证。与[Claude Code hooks等自动化流水线](/zh/blog/zh/claude-code-masterclass-series-1-prompt-to-agent/)集成时也同样如此。
+
+Bun在快速发展，Shell API也会逐渐稳定。现在没有迫切需要放弃zx的理由，但新的Bun项目不妨先试试内置shell。
+
+## 参考资料
+
+本文中的API行为以及构建/部署建议，都是我直接查阅以下一手资料后验证的。
+
+- [Bun Shell官方文档](https://bun.sh/docs/runtime/shell) — `$`模板字面量、`.nothrow()`、`$.env()`、管道/重定向以及内置命令列表的官方参考。
+- [Bun官方网站](https://bun.sh) — 安装方法，以及运行时/包管理器/打包工具的整体入口。
+- [oven-sh/bun GitHub仓库](https://github.com/oven-sh/bun) — 源代码、Issue追踪以及各版本的变更（我在这里确认了`.stdin()`的未实现行为）。
+- [google/zx GitHub仓库](https://github.com/google/zx) — 对比对象zx的官方仓库。Bun Shell文档也明确表示从中获得了灵感。
+
+---
+
+**实验环境**：
+- Bun：1.3.14（macOS arm64）
+- 沙箱：`/tmp/bun-lab-final/`
+- 实验日期：2026-05-25

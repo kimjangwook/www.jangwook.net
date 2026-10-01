@@ -1,0 +1,38 @@
+.article-downloads {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.7rem;
+	margin: 1.7rem 0 2.1rem;
+}
+
+.article-downloads a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	max-width: 100%;
+	padding: 0.65rem 0.9rem;
+	border: 1px solid var(--accent, #a33a24);
+	border-radius: 2px;
+	background: transparent;
+	color: var(--accent, #a33a24);
+	font: 600 0.82rem/1.5 var(--font-sans);
+	text-decoration: none;
+	overflow-wrap: anywhere;
+}
+
+.article-downloads a:hover {
+	background: color-mix(in srgb, var(--accent, #a33a24) 8%, transparent);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.article-downloads a:focus-visible {
+	outline: 2px solid var(--focus-ring, var(--accent, #a33a24));
+	outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+	.article-downloads a {
+		width: 100%;
+	}
+}

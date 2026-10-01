@@ -1,0 +1,195 @@
+---
+import { useTranslations, type Language } from '../lib/i18n/languages';
+import BackToTop from './BackToTop.astro';
+import BrandMark from './BrandMark.astro';
+
+interface Props {
+	lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const today = new Date();
+
+const footerLabels = {
+	ko: {
+		links: '바로가기',
+		privacy: '개인정보처리방침',
+		terms: '이용약관',
+		tagline: '무엇을 확인했는지, 판단의 근거를 기록합니다.',
+	},
+	en: {
+		links: 'Explore',
+		privacy: 'Privacy',
+		terms: 'Terms',
+		tagline: 'Notes on what was checked and why it matters.',
+	},
+	ja: {
+		links: 'リンク',
+		privacy: 'プライバシー',
+		terms: '利用規約',
+		tagline: '何を確かめたのか、判断の根拠を記録します。',
+	},
+	zh: {
+		links: '链接',
+		privacy: '隐私政策',
+		terms: '服务条款',
+		tagline: '记录确认过什么，以及它为何成为判断依据。',
+	},
+}[lang];
+---
+
+<BackToTop />
+
+<footer class="site-footer" id="contact">
+	<div class="site-footer__inner">
+		<div class="site-footer__identity">
+			<a href={`/${lang}/`} class="site-footer__brand" aria-label={t('site.title')}>
+				<BrandMark showWordmark size={32} />
+			</a>
+			<p id="footer-tagline">{footerLabels.tagline}</p>
+		</div>
+
+		<nav class="site-footer__nav" aria-label={footerLabels.links}>
+			<a href={`/${lang}/blog/`}>{t('nav.blog')}</a>
+			<a href={`/${lang}/tags/`}>{t('nav.tags')}</a>
+			<a href={`/${lang}/about/`}>{t('nav.about')}</a>
+			<a href={`/${lang}/contact/`}>{t('nav.contact')}</a>
+			<a href={`/${lang}/privacy/`}>{footerLabels.privacy}</a>
+			<a href={`/${lang}/terms/`}>{footerLabels.terms}</a>
+		</nav>
+
+		<a class="site-footer__email" href="mailto:me@jangwook.net">me@jangwook.net <span aria-hidden="true">↗</span></a>
+	</div>
+
+	<div class="site-footer__bottom">
+		<p id="footer-copyright">&copy; {today.getFullYear()} Kim Jangwook. {t('footer.allRightsReserved')}.</p>
+		<p>{t('site.title').split('|')[0].trim()}</p>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		width: min(var(--page-width), calc(100% - 6rem));
+		margin: 0 auto;
+		padding: 2rem 0 1.25rem;
+		border-top: 1px solid var(--ink);
+		color: var(--muted);
+	}
+
+	.site-footer__inner {
+		display: grid;
+		grid-template-columns: minmax(12rem, 1fr) minmax(0, 1fr) auto;
+		align-items: start;
+		gap: 2rem;
+	}
+
+	.site-footer__brand {
+		display: inline-flex;
+		color: var(--ink);
+		text-decoration: none;
+	}
+
+	.site-footer__identity p {
+		max-width: 22rem;
+		margin: 0.7rem 0 0;
+		font-size: 0.78rem;
+		line-height: 1.65;
+	}
+
+	.site-footer__nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.1rem 1.15rem;
+		font-size: 0.75rem;
+	}
+
+	.site-footer__nav a,
+	.site-footer__email {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		color: var(--muted);
+		text-decoration: underline;
+	}
+
+	.site-footer__nav a:hover,
+	.site-footer__email:hover {
+		color: var(--accent);
+	}
+
+	.site-footer__email {
+		justify-self: end;
+		color: var(--accent);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		white-space: nowrap;
+	}
+
+	.site-footer__email span {
+		margin-left: 0.35rem;
+		font-size: 1rem;
+	}
+
+	.site-footer__bottom {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-top: 1.35rem;
+		padding-top: 0.9rem;
+		border-top: 1px solid var(--paper-rule);
+		font-family: var(--font-mono);
+		font-size: 0.62rem;
+		line-height: 1.5;
+	}
+
+	.site-footer__bottom p {
+		margin: 0;
+	}
+
+	@media (max-width: 860px) {
+		.site-footer {
+			width: calc(100% - 2.5rem);
+		}
+
+		.site-footer__inner {
+			grid-template-columns: minmax(0, 1fr) auto;
+		}
+
+		.site-footer__nav {
+			grid-column: 1 / -1;
+			grid-row: 2;
+		}
+
+		.site-footer__email {
+			grid-column: 2;
+			grid-row: 1;
+		}
+	}
+
+	@media (max-width: 540px) {
+		.site-footer {
+			width: calc(100% - 2rem);
+		}
+
+		.site-footer__inner {
+			grid-template-columns: 1fr;
+			gap: 0.85rem;
+		}
+
+		.site-footer__nav,
+		.site-footer__email {
+			grid-column: auto;
+			grid-row: auto;
+		}
+
+		.site-footer__email {
+			justify-self: start;
+		}
+
+		.site-footer__bottom {
+			flex-direction: column;
+			gap: 0.3rem;
+		}
+	}
+</style>

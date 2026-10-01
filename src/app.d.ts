@@ -1,0 +1,2 @@
+/// <reference types="@cloudflare/workers-types" />
+declare global { namespace App { interface Platform { env: { LEADS_DB: D1Database; ASSETS?: Fetcher; MAIL_MODE?: string; SITE_URL?: string; FROM_EMAIL?: string; EMAIL?: { send(message: { from: string; to: string; subject: string; text: string; attachments?: { filename: string; content: string; type: string; disposition: 'attachment' }[] }): Promise<{ messageId: string }> } }; context: ExecutionContext; caches: CacheStorage; } } } export {};

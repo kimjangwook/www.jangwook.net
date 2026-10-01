@@ -1,0 +1,572 @@
+---
+title: 'DeNA LLM Study Part 3: Model Training, Pre-training to RLHF'
+description: >-
+  Deep dive into pre-training, fine-tuning, and RLHF from DeNA LLM Study Part 3,
+  covering efficient techniques like LoRA, QLoRA, and DPO.
+pubDate: '2025-12-10'
+heroImage: ../../../assets/blog/dena-llm-study-part3-model-training-hero.jpg
+tags:
+  - LLM
+  - Fine-tuning
+  - Reinforcement-Learning
+relatedPosts:
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.9
+    reason:
+      ko: LLM 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into LLM.
+      ja: LLMをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 LLM 主题。
+  - slug: dena-llm-study-part4-rag
+    score: 0.85
+    reason:
+      ko: LLM를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on LLM experience.
+      ja: LLMを実際に扱った経験が続く記事です。
+      zh: 延续 LLM 的实战经验。
+  - slug: effiflow-automation-analysis-part1
+    score: 0.8
+    reason:
+      ko: 같은 LLM 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same LLM track.
+      ja: 同じLLMの流れで併せて読むと役立ちます。
+      zh: 在同一 LLM 脉络中可一并阅读。
+faq:
+  - question: "What should I try first before fine-tuning?"
+    answer: "The article recommends starting with prompt optimization. About 80 percent of tasks can be solved with prompts alone, and only when that falls short should you try LoRA fine-tuning next."
+  - question: "What GPU can train a 7B model with QLoRA?"
+    answer: "According to the article, QLoRA uses 4-bit quantization to cut memory enough to fine-tune a 7B model on a single 24GB GPU like the RTX 3090 or RTX 4090. The tradeoff is that training runs about 1.5 to 2 times slower than full fine-tuning due to quantization overhead."
+  - question: "How is DPO better than RLHF?"
+    answer: "The article explains that DPO aligns human preferences in a single training stage without a separate reward model. It uses a classification loss that is more stable than PPO and cuts memory and time by roughly 50 percent while matching or beating RLHF performance."
+  - question: "What rank (r) value should I set for LoRA?"
+    answer: "The hyperparameter guide in the article sets r between 4 and 16, with 8 working for most cases. lora_alpha is usually 1 to 2 times r, and q_proj and v_proj in attention are the most effective target modules."
+---
+
+> <strong>Series: DeNA LLM Study</strong> (3/5)
+>
+> 1. [Part 1: LLM Fundamentals and 2025 AI Landscape](/en/blog/en/dena-llm-study-part1-fundamentals/)
+> 2. Part 2: Structured Output and Multi-LLM Pipelines
+> 3. <strong>Part 3: Model Training Methodologies</strong> ← Current Article
+> 4. [Part 4: RAG Architecture and Latest Trends](/en/blog/en/dena-llm-study-part4-rag/)
+> 5. [Part 5: Agent Design and Multi-Agent Orchestration](/en/blog/en/dena-llm-study-part5-agent-design/)
+
+## Where do you even start with fine-tuning?
+
+"I want to train the model on our own data, but where do I begin?" It's the question I field most often. Pre-training? Fine-tuning? Reinforcement learning? Plenty of jargon, and almost no clarity on which one actually fits your situation.
+
+Part 3 of DeNA's LLM study materials lands right on that pain point. It walks through how the three training approaches differ, then digs into the mechanics and real-world use of efficient methods like LoRA, QLoRA, and DPO. On top of that, I've added the trends as they stand in 2025 and a few things I learned running this stuff myself.
+
+This is a middle chapter in the series. If you want to see how the model itself works first, start with [Part 1: LLM Fundamentals](/en/blog/en/dena-llm-study-part1-fundamentals/). If you're curious about attaching external knowledge instead of training, [Part 4: RAG Architecture](/en/blog/en/dena-llm-study-part4-rag/) picks up the thread.
+
+## When this is useful, and when you can skip it
+
+Fine-tuning, RLHF, and LoRA are fairly deep topics. Not everyone needs them. Before diving in, it's worth checking which bucket your situation falls into. It saves time.
+
+<strong>When this is useful</strong>
+
+- You run, or plan to run, open-source models (Llama, Qwen, Gemma, etc.) on your own infrastructure.
+- Prompts and few-shot examples don't reliably produce the output format or domain vocabulary you need.
+- You want to change model behavior using data that's awkward to send to an external API, like internal docs, logs, or support transcripts.
+- Inference cost or latency forces you to push a small model up to par on a specific task.
+- You want to align "taste" through data: tone, safety, how the model refuses.
+
+<strong>When you can skip it</strong>
+
+- You're using a commercial API like GPT, Claude, or Gemini as-is, and plan to keep doing so. Here, prompt design and RAG almost always come before fine-tuning.
+- The task is classification, extraction, or summarization, and a few lines of prompt solve it.
+- You have fewer than a few hundred training examples. At that scale, few-shot is often more stable than fine-tuning.
+- You have no GPU budget or ops capacity. LoRA lowered the bar, but it isn't zero.
+
+In short, ask <strong>"is an external API enough?"</strong> first. Only when the answer is no does the rest of this article become relevant. But if you do need to run the model yourself, what follows can cut your cost by an order of magnitude.
+
+## Pre-training vs Fine-tuning vs Reinforcement Learning
+
+### The chef analogy works better than it should
+
+DeNA's materials map the three approaches onto running a restaurant. I expected it to feel forced. It doesn't. Follow it through and the role of each stage clicks into place.
+
+```mermaid
+graph TD
+    A[Pre-training<br/>Pre-training] --> B[Fine-tuning<br/>Fine-tuning]
+    B --> C[Reinforcement Learning<br/>RLHF/DPO]
+
+    A1[Chef Basic Training<br/>Learn All Cuisines] --> A
+    B1[Specific Restaurant<br/>Menu Specialization] --> B
+    C1[Customer Feedback<br/>Taste Improvement] --> C
+```
+
+<strong>Pre-training</strong>
+
+- <strong>Purpose</strong>: Acquire general language understanding capabilities
+- <strong>Data</strong>: Tens to hundreds of TBs of web data
+- <strong>Cost</strong>: Hundreds of millions to billions of dollars (GPT-4 estimated $100B+)
+- <strong>Analogy</strong>: Learning all cooking techniques in culinary school
+
+<strong>Fine-tuning</strong>
+
+- <strong>Purpose</strong>: Specialize for specific tasks/domains
+- <strong>Data</strong>: Thousands to tens of thousands of task-specific examples
+- <strong>Cost</strong>: Hundreds to thousands of dollars
+- <strong>Analogy</strong>: Becoming a pasta specialist at an Italian restaurant
+
+<strong>Reinforcement Learning</strong>
+
+- <strong>Purpose</strong>: Generate responses aligned with human preferences
+- <strong>Data</strong>: Thousands to tens of thousands of preference pairs
+- <strong>Cost</strong>: Thousands to tens of thousands of dollars
+- <strong>Analogy</strong>: Adjusting dish flavors based on customer feedback
+
+### Practical Decision-Making Guide
+
+```mermaid
+graph TD
+    Start[Need LLM Training?] --> Q1{New Knowledge<br/>Required?}
+    Q1 -->|Yes| PreTrain[Pre-training<br/>Cost: Very High]
+    Q1 -->|No| Q2{Task-Specific<br/>Needed?}
+    Q2 -->|Yes| FineTune[Fine-tuning<br/>Cost: Medium]
+    Q2 -->|No| Q3{Preference<br/>Alignment?}
+    Q3 -->|Yes| RL[Reinforcement Learning<br/>Cost: Medium]
+    Q3 -->|No| Prompt[Prompt Engineering<br/>Cost: Low]
+```
+
+<strong>Decision Checklist</strong>:
+
+1. <strong>Can it be solved with prompts?</strong> → Try prompt optimization first
+2. <strong>Does the existing model understand the task?</strong> → Yes: RL, No: Fine-tuning
+3. <strong>Is it a completely new domain?</strong> → Consider pre-training (but watch costs)
+
+## PEFT: The Rise of Efficient Fine-tuning
+
+### Problems with Traditional Fine-tuning
+
+Limitations of Full Fine-tuning that updates all parameters:
+
+- <strong>Memory Usage</strong>: Fine-tuning a 7B model requires 80GB+ VRAM
+- <strong>Time Cost</strong>: Takes hours to days
+- <strong>Deployment Challenges</strong>: Need to store entire model per task (tens of GBs)
+
+### Core Idea of PEFT
+
+Parameter-Efficient Fine-Tuning (PEFT) maximizes efficiency by <strong>training only a subset of parameters</strong>:
+
+```mermaid
+graph TD
+    subgraph Traditional_Fine-tuning
+        A[Original Model<br/>7B Parameters] --> B[Full Update<br/>7B Parameters]
+        B --> C[New Model<br/>28GB Storage]
+    end
+
+    subgraph PEFT
+        D[Original Model<br/>7B Parameters] --> E[Add Few Parameters<br/>Millions]
+        E --> F[Store Adapter Only<br/>Under 10MB]
+    end
+```
+
+<strong>Major PEFT Methods</strong>:
+
+1. <strong>Adapter</strong>: Insert small networks between layers
+2. <strong>Prefix Tuning</strong>: Add trainable prefixes to inputs
+3. <strong>LoRA</strong>: Update via low-rank decomposition (most popular)
+4. <strong>Prompt Tuning</strong>: Train only soft prompts
+
+## LoRA: Principles of Low-Rank Adaptation
+
+### Mathematical Background
+
+LoRA (Low-Rank Adaptation) is based on the following mathematical insight:
+
+```python
+# Original weight update (Full Fine-tuning)
+W_new = W_original + ΔW  # ΔW is d×d size
+
+# LoRA's low-rank decomposition
+ΔW = B @ A  # B is d×r, A is r×d (r << d)
+
+# Practical application
+output = (W_original + B @ A) @ input
+```
+
+<strong>Core Idea</strong>:
+
+- Pre-trained weights already contain abundant information
+- The change amount (ΔW) needed for fine-tuning has <strong>low intrinsic dimensionality</strong>
+- Therefore, ΔW can be expressed as the product of two small matrices (B, A)
+
+### LoRA Hyperparameter Configuration Guide
+
+```yaml
+# LoRA configuration example (HuggingFace PEFT)
+lora_config:
+  r: 8 # Rank (intrinsic dimension)
+  lora_alpha: 16 # Scaling parameter
+  lora_dropout: 0.1 # Dropout rate
+  target_modules: # Layers to apply
+    - q_proj # Query projection
+    - v_proj # Value projection
+  bias: "none" # Whether to train bias
+```
+
+<strong>Hyperparameter Selection Guide</strong>:
+
+| Parameter                       | Recommended    | Description                                                                   |
+| ------------------------------- | -------------- | ----------------------------------------------------------------------------- |
+| <strong>r (Rank)</strong>       | 4〜16          | Smaller saves memory, larger increases expressiveness. 8 works for most cases |
+| <strong>lora_alpha</strong>     | r〜2r          | Acts like learning rate. Usually 1〜2x of r                                   |
+| <strong>lora_dropout</strong>   | 0.05〜0.1      | Prevents overfitting. Set higher for small datasets                           |
+| <strong>target_modules</strong> | q_proj, v_proj | Query/Value in Attention are most effective                                   |
+
+### LoRA Variants
+
+<strong>DoRA (Weight-Decomposed Low-Rank Adaptation, 2024)</strong>
+
+```python
+# DoRA: Decompose weights into magnitude and direction
+W = m * (V + B @ A)
+# m: trainable magnitude, V: normalized weights, B@A: LoRA
+```
+
+- <strong>Advantage</strong>: Performance closer to Full Fine-tuning
+- <strong>Disadvantage</strong>: Slightly slower than LoRA
+
+<strong>GaLore (Gradient Low-Rank Projection, 2024)</strong>
+
+```python
+# Project gradient to low-rank space to save memory
+gradient_lowrank = project_to_lowrank(gradient)
+optimizer.step(gradient_lowrank)
+```
+
+- <strong>Advantage</strong>: Compress optimizer states too → 50% additional memory savings
+- <strong>Disadvantage</strong>: High implementation complexity
+
+<strong>LoRA+ (2024)</strong>
+
+```python
+# Apply different learning rates to matrices A and B
+lr_A = lr * eta  # Higher learning rate for A
+lr_B = lr        # Default learning rate for B
+```
+
+- <strong>Advantage</strong>: 1.5〜2x convergence speed improvement
+- <strong>Disadvantage</strong>: Requires hyperparameter tuning
+
+## QLoRA: Combining Quantization with PEFT
+
+### Innovation of 4-bit Quantization
+
+QLoRA combines <strong>4-bit quantization</strong> with LoRA to dramatically reduce memory usage:
+
+```mermaid
+graph TD
+    subgraph Memory_Comparison
+        A[Original 16bit<br/>14GB] --> B[8bit Quantization<br/>7GB]
+        B --> C[4bit QLoRA<br/>3.5GB]
+    end
+
+    subgraph Performance_Retention
+        D[Full Fine-tuning<br/>100%] --> E[LoRA<br/>98%]
+        E --> F[QLoRA<br/>97%]
+    end
+```
+
+<strong>QLoRA Core Technologies</strong>:
+
+1. <strong>4bit NormalFloat (NF4)</strong>: Quantization optimized for normal distributions
+2. <strong>Double Quantization</strong>: Quantize quantization constants too
+3. <strong>Paged Optimizers</strong>: Automatic CPU-GPU memory management
+
+### QLoRA Practical Workflow
+
+```python
+from transformers import AutoModelForCausalLM, BitsAndBytesConfig
+from peft import LoraConfig, get_peft_model
+
+# 1. 4-bit quantization configuration
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",      # NormalFloat 4bit
+    bnb_4bit_compute_dtype="float16", # Compute in float16
+    bnb_4bit_use_double_quant=True,   # Double quantization
+)
+
+# 2. Load model
+model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-2-7b-hf",
+    quantization_config=bnb_config,
+    device_map="auto"  # Automatic device allocation
+)
+
+# 3. LoRA configuration
+lora_config = LoraConfig(
+    r=8,
+    lora_alpha=16,
+    target_modules=["q_proj", "v_proj"],
+    lora_dropout=0.1,
+    bias="none",
+    task_type="CAUSAL_LM"
+)
+
+# 4. Create PEFT model
+model = get_peft_model(model, lora_config)
+
+# 5. Check trainable parameters
+trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+print(f"Trainable parameters: {trainable_params:,} ({trainable_params/7e9*100:.2f}%)")
+# Output: Trainable parameters: 4,194,304 (0.06%)
+```
+
+<strong>QLoRA Practical Tips</strong>:
+
+- <strong>GPU Memory</strong>: Train 7B model on single RTX 3090 (24GB)
+- <strong>Batch Size</strong>: Use gradient accumulation (e.g., batch_size=1, gradient_accumulation_steps=16)
+- <strong>Training Time</strong>: 1.5〜2x slower than Full Fine-tuning (quantization overhead)
+
+## RLHF and DPO: Learning Human Preferences
+
+### Complexity of RLHF
+
+Reinforcement Learning from Human Feedback (RLHF) is powerful but complex:
+
+```mermaid
+graph TD
+    A[1. Train SFT Model<br/>Supervised Fine-tuning] --> B[2. Train Reward Model<br/>Reward Model]
+    B --> C[3. Optimize Policy with PPO<br/>Proximal Policy Optimization]
+
+    D[Human Preference Data<br/>A vs B Comparison] --> B
+    B --> E[Reward Score Prediction]
+    E --> C
+
+    C --> F[Final Aligned Model<br/>Aligned Model]
+```
+
+<strong>RLHF Problems</strong>:
+
+1. <strong>3-stage Pipeline</strong>: SFT → Reward Model → RL Optimization
+2. <strong>Instability</strong>: PPO is sensitive to hyperparameters
+3. <strong>High Cost</strong>: Reward model training + RL sampling
+4. <strong>Difficult Debugging</strong>: Hard to diagnose RL convergence failures
+
+### DPO: Direct Preference Optimization
+
+Direct Preference Optimization (DPO) learns human preferences directly <strong>without a reward model</strong>:
+
+```mermaid
+graph TD
+    A[Human Preference Data<br/>Preferred vs Rejected] --> B[DPO Loss Function<br/>Classification Loss]
+    B --> C[Aligned Model<br/>Single-stage Training]
+
+    D[RLHF: 3 Stages] -.-> E[SFT → Reward → PPO]
+    F[DPO: 1 Stage] -.-> C
+```
+
+<strong>DPO Loss Function</strong>:
+
+```python
+# DPO Loss (simplified formula)
+loss = -log(σ(β * (log π(y_w|x) - log π(y_l|x))))
+
+# y_w: Preferred response (chosen)
+# y_l: Rejected response (rejected)
+# β: Hyperparameter (typically 0.1)
+# σ: Sigmoid function
+```
+
+<strong>DPO Advantages</strong>:
+
+- <strong>Simplicity</strong>: No reward model needed, single training stage
+- <strong>Stability</strong>: Classification loss is more stable than PPO
+- <strong>Efficiency</strong>: 50% reduction in memory and time
+- <strong>Performance</strong>: Equal or better performance than RLHF
+
+### DPO Practical Implementation
+
+```python
+from trl import DPOTrainer
+
+# DPO training configuration
+training_args = TrainingArguments(
+    output_dir="./dpo_model",
+    per_device_train_batch_size=4,
+    learning_rate=5e-5,
+    num_train_epochs=3,
+    gradient_accumulation_steps=4,
+)
+
+# Initialize DPO Trainer
+dpo_trainer = DPOTrainer(
+    model=model,
+    args=training_args,
+    train_dataset=preference_dataset,  # (prompt, chosen, rejected) format
+    tokenizer=tokenizer,
+    beta=0.1,  # DPO hyperparameter
+)
+
+# Run training
+dpo_trainer.train()
+```
+
+<strong>Preference Data Format</strong>:
+
+```python
+preference_dataset = [
+    {
+        "prompt": "How to sort a list in Python?",
+        "chosen": "Use the sorted() function: sorted([3,1,2])",
+        "rejected": "Just use sort()"
+    },
+    # ...
+]
+```
+
+### DPO Variants
+
+<strong>ORPO (Odds Ratio Preference Optimization, 2024)</strong>
+
+- Performs SFT and preference learning <strong>simultaneously</strong>
+- No separate SFT stage needed
+- Further training time reduction
+
+<strong>IPO (Identity Preference Optimization, 2024)</strong>
+
+- Can train without reference model
+- Further memory reduction
+
+<strong>KTO (Kahneman-Tversky Optimization, 2024)</strong>
+
+- Uses <strong>individual feedback</strong> (good/bad) instead of pairwise comparisons
+- Drastically reduced data collection costs
+
+## Task-Specific Training Method Selection Guide
+
+### Cost-Performance Tradeoff
+
+```mermaid
+graph TD
+    A[Analyze Task Type] --> B{General<br/>Knowledge OK?}
+    B -->|Yes| C[Prompt Engineering<br/>Cost: $0]
+    B -->|No| D{Domain-Specific<br/>Needed?}
+
+    D -->|Yes| E{Data Size}
+    E -->|Small| F[Few-shot ICL<br/>Cost: $0]
+    E -->|Medium| G[LoRA/QLoRA<br/>Cost: $10~100]
+    E -->|Large| H[Full Fine-tuning<br/>Cost: $1,000~10,000]
+
+    D -->|No| I{Response Quality<br/>Improvement?}
+    I -->|Yes| J[DPO/ORPO<br/>Cost: $100~1,000]
+```
+
+### Practical Recommendations
+
+<strong>1. Chatbots/Conversational Systems</strong>
+
+```
+Prompt → SFT (LoRA) → DPO
+```
+
+- Domain knowledge injection: Efficient fine-tuning with LoRA
+- Dialogue quality improvement: Preference alignment with DPO
+
+<strong>2. Document Classification/Tagging</strong>
+
+```
+Prompt → LoRA (Optional)
+```
+
+- Usually sufficient with prompts
+- Add LoRA for extreme performance needs
+
+<strong>3. Code Generation</strong>
+
+```
+Prompt → SFT (QLoRA) → RLHF/DPO
+```
+
+- Code style learning: Train on large code corpus with QLoRA
+- Executability improvement: Penalize compilation errors with RLHF
+
+<strong>4. Summarization/Translation</strong>
+
+```
+Prompt → DPO
+```
+
+- Base model often sufficient
+- Style adjustment: Learn desired tone/length with DPO
+
+### Memory Requirements Comparison
+
+| Method                            | 7B Model              | 13B Model             | 70B Model              |
+| --------------------------------- | --------------------- | --------------------- | ---------------------- |
+| <strong>Full Fine-tuning</strong> | 80GB                  | 160GB                 | 800GB+                 |
+| <strong>LoRA</strong>             | 40GB                  | 80GB                  | 400GB                  |
+| <strong>QLoRA</strong>            | <strong>24GB</strong> | <strong>40GB</strong> | <strong>200GB</strong> |
+
+<strong>Consumer GPU Viability</strong>:
+
+- <strong>RTX 4090 (24GB)</strong>: Can train 7B with QLoRA, 3B with LoRA
+- <strong>RTX 3090 (24GB)</strong>: Can train 7B with QLoRA
+- <strong>RTX 4060 Ti (16GB)</strong>: Can train 3B with QLoRA
+
+## What stuck with me after closing the materials
+
+### Fine-tuning isn't just for the big players anymore
+
+What hit me hardest in the DeNA materials was this: <strong>LLM fine-tuning is no longer exclusive to large corporations</strong>. Once QLoRA and DPO arrived, the math changed:
+
+- Fine-tune 7B models with 24GB VRAM
+- Build domain-specific models on hundreds of dollars budget
+- Use simple DPO instead of complex RLHF
+
+### Paradigm Shift in Efficiency
+
+Recently, <strong>Efficiency</strong> has become a trending topic:
+
+- LoRA: 98% of Full Fine-tuning performance with 0.1% parameters
+- QLoRA: Same performance with 1/4 memory
+- DPO: Equal performance with 1/3 of RLHF complexity
+
+This isn't just optimization. It's the payoff from <strong>novel mathematical insights</strong>. Low-rank hypotheses, quantization theory, implicit reward models. Academic research is moving into practice fast.
+
+### Lessons for Practitioners
+
+1. <strong>Start with prompts</strong>: 80% can be solved with prompts
+2. <strong>LoRA as default</strong>: Try LoRA first when fine-tuning is needed
+3. <strong>Save resources with QLoRA</strong>: Minimal performance difference, 4x memory savings
+4. <strong>Align with DPO</strong>: RLHF is legacy, DPO is the new standard
+5. <strong>Measure and improve</strong>: Focus on actual task performance over benchmark scores
+
+### 2025 Outlook
+
+Expected trends:
+
+- <strong>Smaller yet powerful models</strong>: Rise of compact models like Phi-3, Gemma 2
+- <strong>On-device fine-tuning</strong>: Era of fine-tuning on smartphones
+- <strong>Automated hyperparameter tuning</strong>: AutoML for LLM Fine-tuning
+- <strong>Multimodal PEFT</strong>: Simultaneous image+text fine-tuning
+
+## References
+
+### Papers
+
+- [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685) (Microsoft, 2021)
+- [Training language models to follow instructions with human feedback (InstructGPT, the original RLHF paper)](https://arxiv.org/abs/2203.02155) (OpenAI, 2022)
+- [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314) (University of Washington, 2023)
+- [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) (Stanford, 2023)
+- [DoRA: Weight-Decomposed Low-Rank Adaptation](https://arxiv.org/abs/2402.09353) (NVIDIA, 2024)
+- [GaLore: Memory-Efficient LLM Training](https://arxiv.org/abs/2403.03507) (CMU, 2024)
+
+### Libraries
+
+- [HuggingFace PEFT](https://github.com/huggingface/peft) - LoRA, QLoRA implementation
+- [HuggingFace TRL](https://github.com/huggingface/trl) - RLHF, DPO implementation
+- [Unsloth](https://github.com/unslothai/unsloth) - 2x faster LoRA training
+
+### Tutorials
+
+- [QLoRA Fine-tuning Tutorial](https://colab.research.google.com/drive/1VoYNfYDKcKRQRor98Zbf2-9VQTtGJ24k)
+- [DPO Training Example](https://huggingface.co/docs/trl/dpo_trainer)
+- [Practical LLM Fine-tuning Guide](https://product.kyobobook.co.kr/detail/S000214934825) (Kyobo Book)
+
+---
+
+<strong>Coming Next</strong>: "DeNA LLM Study Part 4: Production Deployment and Monitoring" will cover strategies for deploying fine-tuned models to actual services, monitoring methods, and cost optimization techniques.

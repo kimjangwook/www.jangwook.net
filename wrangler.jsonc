@@ -1,0 +1,59 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jangwook-net-series",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-09-30",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".svelte-kit/cloudflare"
+  },
+  "vars": {
+    "MAIL_MODE": "capture",
+    "SITE_URL": "http://localhost:5173",
+    "FROM_EMAIL": "materials@jangwook.net"
+  },
+  "d1_databases": [
+    {
+      "binding": "LEADS_DB",
+      "database_name": "jangwook-leads-local",
+      "database_id": "local-only-not-provisioned",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "env": {
+    "production": {
+      "name": "www-jangwook-net",
+      "vars": {
+        "MAIL_MODE": "disabled",
+        "SITE_URL": "https://jangwook.net",
+        "FROM_EMAIL": "materials@jangwook.net"
+      },
+      "d1_databases": [
+        {
+          "binding": "LEADS_DB",
+          "database_name": "jangwook-leads",
+          "database_id": "14e2c86d-e177-40c2-8223-a610d6943246",
+          "migrations_dir": "migrations"
+        }
+      ],
+      "triggers": {
+        "crons": [
+          "17 18 * * *"
+        ]
+      },
+      "routes": [
+        {
+          "pattern": "jangwook.net",
+          "custom_domain": true
+        },
+        {
+          "pattern": "www.jangwook.net",
+          "custom_domain": true
+        }
+      ]
+    }
+  }
+}

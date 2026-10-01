@@ -1,0 +1,105 @@
+---
+import type { Language } from '../lib/i18n/languages';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  slug: string;
+  currentLang: Language;
+}
+
+const { slug, currentLang } = Astro.props;
+
+const languages: Record<string, { flag: string; label: string; currentLabel: string }> = {
+  ko: { flag: '🇰🇷', label: '한국어', currentLabel: '한국어 (현재 페이지)' },
+  ja: { flag: '🇯🇵', label: '日本語', currentLabel: '日本語（現在のページ）' },
+  en: { flag: '🇺🇸', label: 'English', currentLabel: 'English (Current Page)' },
+  zh: { flag: '🇨🇳', label: '中文', currentLabel: '中文（当前页面）' }
+};
+
+const sectionTitles: Record<Language, string> = {
+  ko: '다른 언어로 읽기',
+  ja: '他の言語で読む',
+  en: 'Read in Other Languages',
+  zh: '阅读其他语言版本'
+};
+
+// Get all blog posts and check which language versions exist for this slug
+const allPosts = await getCollection('blog');
+
+const availableLanguages = (Object.keys(languages) as Language[]).filter((lang) => {
+	// Check if a post exists for this language and slug
+	return allPosts.some((post) => post.id === `${lang}/${slug}.md` || post.id === `${lang}/${slug}`);
+});
+---
+
+<section class="blog-post-language-switcher" aria-labelledby="article-language-title">
+	<h2 id="article-language-title">{sectionTitles[currentLang]}</h2>
+	<ul>
+		{availableLanguages.map((lang) => {
+      const { flag, label, currentLabel } = languages[lang];
+      return (
+        <li>
+          {lang === currentLang ? (
+				<span class="current-language" aria-current="page">
+              {flag} {currentLabel}
+            </span>
+          ) : (
+            <a href={`/${lang}/blog/${lang}/${slug}/`}>
+              {flag} {label}
+            </a>
+          )}
+        </li>
+      );
+    })}
+  </ul>
+</section>
+
+<style>
+	.blog-post-language-switcher {
+		margin-top: 3.5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--rule, var(--paper-rule, #d8d1c5));
+	}
+
+	.blog-post-language-switcher h2 {
+		margin: 0 0 1rem;
+		font-family: var(--font-serif);
+		font-size: 1.35rem;
+		font-weight: 500;
+		line-height: 1.45;
+	}
+
+  .blog-post-language-switcher ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		gap: 0.55rem 1.1rem;
+		flex-wrap: wrap;
+  }
+
+  .blog-post-language-switcher li {
+    margin: 0;
+  }
+
+	.blog-post-language-switcher a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.5rem;
+		color: var(--accent, #a33a24);
+		text-decoration: none;
+		text-underline-offset: 0.2em;
+	}
+
+	.blog-post-language-switcher a:hover {
+		text-decoration: underline;
+	}
+
+	.current-language {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.5rem;
+		color: var(--muted, var(--ink-2, #62665d));
+		font-weight: 600;
+	}
+</style>

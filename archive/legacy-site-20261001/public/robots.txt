@@ -1,0 +1,22 @@
+# AI 크롤러 전면 허용 (2026-08-30)
+# 학습 차단 그룹(GPTBot·ClaudeBot·CCBot·Google-Extended)을 제거했다.
+# 근거: 학습 차단은 에이전트 브라우징·AI Overviews를 막지 못하는 반면,
+# Google-Extended는 학습과 그라운딩(인용)을 묶은 단일 레버라 인용 통로까지 함께 닫혔다.
+
+User-agent: *
+# 교차 언어 콘텐츠 불일치 URL 차단 (SEO 안전망, AI 정책과 무관)
+Disallow: /ko/blog/en/
+Disallow: /ko/blog/ja/
+Disallow: /ko/blog/zh/
+Disallow: /en/blog/ko/
+Disallow: /en/blog/ja/
+Disallow: /en/blog/zh/
+Disallow: /ja/blog/ko/
+Disallow: /ja/blog/en/
+Disallow: /ja/blog/zh/
+Disallow: /zh/blog/ko/
+Disallow: /zh/blog/en/
+Disallow: /zh/blog/ja/
+Allow: /
+
+Sitemap: https://jangwook.net/sitemap.xml

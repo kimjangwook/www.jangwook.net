@@ -1,0 +1,39 @@
+name: Review-gated Cloudflare release
+on:
+  workflow_dispatch:
+    inputs:
+      approval:
+        description: 'Approved release SHA'
+        required: true
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check && npm run db:migrate && npm test && npm run build
+  deploy:
+    needs: validate
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci && npm run build
+      - name: Confirm reviewed commit
+        env:
+          APPROVAL: ${{ inputs.approval }}
+        run: test "$APPROVAL" = "$GITHUB_SHA"
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: deploy --env production

@@ -1,0 +1,1 @@
+✅ validate-speakable 통과 — speakable 페이지 1336장 중 표본 20장, 선택자 전부 해석됨

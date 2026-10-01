@@ -1,0 +1,668 @@
+---
+title: 'jangwook.net Blog Launch Analysis Report'
+description: >-
+  Blog launch GA4 data analysis, practical MCP query examples, and 3-month
+  growth strategy - transparently sharing the journey of starting a technical
+  blog
+pubDate: '2025-10-06'
+heroImage: ../../../assets/blog/blog-launch-analysis-hero.png
+tags:
+  - Analytics
+  - Blog
+  - Report
+relatedPosts:
+  - slug: google-analytics-mcp-automation
+    score: 0.9
+    reason:
+      ko: '다음 단계 학습으로 적합하며, 자동화, DevOps, 아키텍처 주제에서 연결됩니다.'
+      ja: 次のステップの学習に適しており、自動化、DevOps、アーキテクチャのトピックで繋がります。
+      en: >-
+        Suitable as a next-step learning resource, connecting through
+        automation, DevOps, architecture topics.
+      zh: 适合作为下一步学习资源，通过自动化、DevOps、架构主题进行连接。
+  - slug: llm-blog-automation
+    score: 0.89
+    reason:
+      ko: '자동화, 웹 개발, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、Web開発、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, web development, architecture with
+        comparable difficulty.
+      zh: 在自动化、Web开发、架构领域涵盖类似主题，难度相当。
+---
+
+# jangwook.net Blog Launch Analysis Report
+
+> <strong>Transparency Declaration</strong>: This report is an honest record of the early launch stage. Instead of impressive numbers, I'm sharing actual data and the learning process as it is.
+
+## 1. Overview
+
+### Background of Blog Launch
+
+In October 2025, I officially launched jangwook.net, a technical blog based on Astro 5.14. This blog is designed to be more than just a technical blog - it's a <strong>platform that realizes content automation, SEO optimization, and data-driven decision making</strong>.
+
+<strong>Key Differentiators</strong>:
+
+- 🌏 <strong>Multilingual Support</strong>: Korean, English, and Japanese content
+- 📊 <strong>GA4 MCP Integration</strong>: Automated analysis using Google Analytics MCP
+- 🚀 <strong>Islands Architecture</strong>: Ultra-fast static site based on Astro
+- 🔄 <strong>Automated Reporting</strong>: Data-driven content strategy
+
+### Analysis Environment
+
+- <strong>GA4 Property ID</strong>: 395101361
+- <strong>Property Name</strong>: jangwook.net
+- <strong>Analysis Tools</strong>: Google Analytics 4 (MCP Integration)
+- <strong>Analysis Date</strong>: October 6, 2025
+- <strong>Time Zone</strong>: Asia/Tokyo (JST)
+- <strong>Currency</strong>: USD
+- <strong>Data Collection Start</strong>: July 2023 (Property creation date)
+
+### Current Status: Early Data Collection Phase
+
+At the time of writing this report, GA4 is installed, but due to a 24-48 hour data processing delay, <strong>historical data has not yet been collected</strong>.
+
+However, <strong>real-time data</strong> is being collected normally, allowing us to observe current user behavior.
+
+<strong>Data Processing Pipeline</strong>:
+
+```
+Real-time Collection (0-5 min delay)
+    ↓
+Real-time Reports (Immediately queryable) ← Current stage
+    ↓
+Batch Processing (24-48 hours)
+    ↓
+Standard Reports (Historical analysis available) ← Waiting
+```
+
+## 2. Real-time Data Analysis
+
+### 2.1 Current Active Users
+
+Real-time data collected at the time of analysis:
+
+<strong>Activity by Page</strong>:
+
+- <strong>EffiFlow</strong>: 4 pageviews, 1 active user
+- <strong>Contact</strong>: 2 pageviews, 1 active user
+- <strong>Blog</strong>: 2 pageviews, 1 active user
+- <strong>About</strong>: 2 pageviews, 1 active user
+- <strong>Social</strong>: 2 pageviews, 1 active user
+
+<strong>Device Distribution</strong>:
+
+- Desktop: Main traffic (Japan region)
+- Mobile: Small amount of traffic (no region info)
+
+<strong>Geographic Distribution</strong>:
+
+- Japan: Source of all desktop traffic
+
+### 2.2 Initial Observations
+
+<strong>Positive Signals</strong>:
+
+1. <strong>Diverse Page Navigation</strong>: Users visit multiple pages instead of staying on a single page
+2. <strong>EffiFlow Page Engagement</strong>: High interest in specific project page (4 pageviews)
+3. <strong>Navigation Usage</strong>: Exploration of various sections like Contact, About, Social
+
+<strong>Areas for Improvement</strong>:
+
+1. <strong>Traffic Source Diversification</strong>: Currently focused on single region (Japan)
+2. <strong>Mobile Optimization</strong>: Very little mobile traffic
+3. <strong>Tracking Expansion</strong>: Need more sophisticated event tracking
+
+## 3. Practical GA4 MCP Query Examples
+
+### 3.1 Ready-to-Execute Analysis Queries
+
+For readers starting blog analysis, I'm sharing <strong>actually usable MCP query examples</strong>. The full setup for connecting GA4 to MCP is covered step by step in the [Google Analytics MCP automation guide](/en/blog/en/google-analytics-mcp-automation/).
+
+#### Query 1: Real-time Visitor Status
+
+```javascript
+// Who's on your blog right now?
+mcp__analytics -
+  mcp__run_realtime_report({
+    property_id: 395101361,
+    dimensions: ["unifiedScreenName", "country"],
+    metrics: ["activeUsers"],
+  });
+```
+
+<strong>Result Interpretation</strong>:
+
+- Current active user count
+- Which pages they're viewing
+- Which country they're from
+
+#### Query 2: Last 7 Days Traffic Trend
+
+```javascript
+// How's the weekly growth?
+mcp__analytics -
+  mcp__run_report({
+    property_id: 395101361,
+    date_ranges: [{ start_date: "7daysAgo", end_date: "today" }],
+    dimensions: ["date"],
+    metrics: ["activeUsers", "sessions", "screenPageViews"],
+    order_bys: [
+      { dimension: { dimension_name: "date", order_type: 1 }, desc: true },
+    ],
+  });
+```
+
+<strong>How to Use</strong>:
+
+- Identify daily traffic patterns
+- Analyze weekend vs weekday differences
+- Confirm growth trends
+
+#### Query 3: Top 10 Popular Blog Posts
+
+```javascript
+// Which content is performing best?
+mcp__analytics -
+  mcp__run_report({
+    property_id: 395101361,
+    date_ranges: [{ start_date: "30daysAgo", end_date: "today" }],
+    dimensions: ["pagePath", "pageTitle"],
+    metrics: ["screenPageViews", "activeUsers", "userEngagementDuration"],
+    dimension_filter: {
+      filter: {
+        field_name: "pagePath",
+        string_filter: {
+          match_type: 2,
+          value: "/blog/",
+          case_sensitive: false,
+        },
+      },
+    },
+    order_bys: [{ metric: { metric_name: "screenPageViews" }, desc: true }],
+    limit: 10,
+  });
+```
+
+<strong>Analysis Points</strong>:
+
+- screenPageViews: Popularity
+- activeUsers: Reach
+- userEngagementDuration: Content quality
+
+#### Query 4: Traffic Source Analysis
+
+```javascript
+// Where are your visitors coming from?
+mcp__analytics -
+  mcp__run_report({
+    property_id: 395101361,
+    date_ranges: [{ start_date: "30daysAgo", end_date: "today" }],
+    dimensions: ["sessionDefaultChannelGroup", "sessionSource"],
+    metrics: ["sessions", "bounceRate", "averageSessionDuration"],
+    order_bys: [{ metric: { metric_name: "sessions" }, desc: true }],
+  });
+```
+
+<strong>Benchmark Comparison</strong>:
+| Source | Tech Blog Average | Target |
+|--------|------------------|--------|
+| Organic Search | 25-40% | 30% (3 months), 65% (12 months) |
+| Direct | 20-30% | 40% (initial) |
+| Social | 15-25% | 20% |
+| Referral | 10-20% | 10% |
+
+### 3.2 Setting Measurement Baselines
+
+<strong>Core KPI Framework</strong> (Excerpted from strategy document):
+
+#### Primary KPIs (North Star Metrics)
+
+<strong>1. Monthly Active Readers (MAR)</strong>
+
+- <strong>Definition</strong>: Unique visitors who viewed at least one blog post per month
+- <strong>3-month target</strong>: 500
+- <strong>6-month target</strong>: 2,000
+- <strong>12-month target</strong>: 5,000
+
+<strong>2. Organic Search Traffic %</strong>
+
+- <strong>Definition</strong>: Percentage of search engine traffic out of total traffic
+- <strong>3-month target</strong>: 30%
+- <strong>6-month target</strong>: 50%
+- <strong>12-month target</strong>: 65%
+
+<strong>3. Average Engagement Time</strong>
+
+- <strong>Definition</strong>: Average engagement time per blog post
+- <strong>3-month target</strong>: 3:00 min
+- <strong>6-month target</strong>: 4:30 min
+- <strong>12-month target</strong>: 6:00 min
+
+#### Secondary KPIs
+
+<strong>Traffic Metrics</strong>:
+
+- Daily Active Users (DAU)
+- Pageviews
+- Session count
+- Average session duration
+
+<strong>Engagement Metrics</strong>:
+
+- Bounce Rate: <60% (good), <40% (excellent)
+- Pages/Session: 1.5+ (acceptable), 2.5+ (good)
+- Returning Visitor Rate: 20%+ (3 months), 35%+ (12 months)
+
+<strong>Conversion Metrics</strong>:
+
+- Portfolio page click-through rate: 8-12% target
+- Contact page visit rate
+- Social link click rate
+
+## 4. Expected Performance and Benchmarks
+
+### 4.1 Technical Blog Industry Benchmarks
+
+Typical personal technical blog metrics for the first 3 months:
+
+<strong>Traffic</strong>:
+
+- Daily visitors: 10-50 (varies by content quality)
+- Monthly pageviews: 300-1,500
+- Main sources: Direct (30%), Organic Search (25%), Social (20%)
+
+<strong>Engagement</strong>:
+
+- Average session duration: 1-3 minutes
+- Bounce rate: 60-80%
+- Pages/session: 1.5-2.5
+
+<strong>Devices</strong>:
+
+- Desktop: 60-70%
+- Mobile: 25-35%
+- Tablet: 5-10%
+
+### 4.2 jangwook.net Goal Setting
+
+<strong>1-month target (November 2025)</strong>:
+
+- DAU: 20-30
+- Monthly pageviews: 500-800
+- Average session duration: 2+ minutes
+- Bounce rate: <70%
+- Traffic channels: Direct 40%, Organic 30%, Social 20%, Referral 10%
+
+<strong>3-month target (December 2025)</strong>:
+
+- DAU: 50-80
+- Monthly pageviews: 2,000-3,000
+- Organic Search ratio: 40%+
+- Returning visitor rate: 20%+
+
+## 5. Insights from Data Scarcity
+
+### 5.1 Advantages of Early Launch
+
+Paradoxically, this moment without data is the most important:
+
+1. <strong>Clean Slate</strong>: Build correct tracking structure from the start without wrong settings
+2. <strong>Establish Baseline</strong>: Can clearly measure all improvement effects
+3. <strong>Experimentation Opportunity</strong>: Freely try A/B tests, content strategies, etc.
+
+### 5.2 Learning from Current Real-time Data
+
+<strong>Finding 1: Importance of Project Pages</strong>
+
+- EffiFlow page records most pageviews
+- <strong>Action</strong>: Strengthen project portfolio as main content
+
+<strong>Finding 2: Effectiveness of Navigation Structure</strong>
+
+- Users naturally explore multiple pages
+- <strong>Action</strong>: Maintain current navigation structure, strengthen internal links
+
+<strong>Finding 3: Regional and Device Patterns</strong>
+
+- Early traffic centered on Japan region, desktop
+- <strong>Actions</strong>:
+  - Consider expanding multilingual content (Japanese content)
+  - Prioritize mobile UX optimization
+
+## 6. Immediate Action Plan
+
+### 6.1 Short-term Actions (1-2 weeks)
+
+<strong>1. Enhanced Event Tracking</strong>
+
+```javascript
+// Events to add
+- blog_post_read_complete (100% scroll reached)
+- contact_button_click (contact click)
+- social_link_click (social link by type)
+- external_link_click (external link click)
+```
+
+<strong>2. Content Strategy</strong>
+
+- 2-3 technical blog posts per week
+- Project case study writing
+- SEO-optimized titles and meta descriptions
+
+<strong>3. Technical Improvements</strong>
+
+- Mobile responsive design verification
+- Page loading speed optimization (Core Web Vitals)
+- Structured data (Schema.org) addition
+
+### 6.2 Medium-term Strategy (1-3 months)
+
+<strong>1. Traffic Source Diversification</strong>
+
+- SEO: Keyword research and content optimization
+- Social: LinkedIn, Twitter(X) activation
+- Community: Developer community participation (Reddit, Dev.to)
+
+<strong>2. Content Performance Analysis</strong>
+
+- Identify top 10 posts
+- Analyze success patterns (topic, length, structure)
+- Improve or consolidate underperforming content
+
+<strong>3. Conversion Optimization</strong>
+
+- Add newsletter subscription CTA
+- Optimize project inquiry conversion path
+- Implement related post recommendation algorithm
+
+Sustaining content output at this stage is realistic only if you automate the writing pipeline itself. How I connected drafting through to publishing with an LLM is documented in [LLM-based blog automation](/en/blog/en/llm-blog-automation/).
+
+### 6.3 Long-term Vision (3-6 months)
+
+<strong>1. Data-driven Content Automation</strong>
+
+- Automatic topic detection using GA4 API
+- AI-based content recommendation system
+- Automatic performance report generation
+
+<strong>2. Community Building</strong>
+
+- Comment system introduction (Giscus, etc.)
+- Guest post program
+- Technical seminar/webinar hosting
+
+<strong>3. Monetization Strategy</strong>
+
+- Sponsored content (ethical disclosure principles)
+- Digital product sales (eBook, courses)
+- Consulting service integration
+
+## 7. Next Analysis Cycle Plan
+
+### 7.1 Analysis After 1 Week (October 13, 2025)
+
+<strong>Purpose</strong>: Verify initial data collection
+
+<strong>Checklist</strong>:
+
+- [ ] Confirm historical data collection complete
+- [ ] Identify daily traffic patterns
+- [ ] Determine main inflow paths
+- [ ] Analyze device/browser distribution
+- [ ] Top 5 pages for first week
+
+<strong>Expected Insights</strong>:
+
+- Day-of-week traffic patterns
+- Total first-week visitors
+- Initial viral effect status
+
+### 7.2 Analysis After 1 Month (November 6, 2025)
+
+<strong>Purpose</strong>: Monthly performance evaluation and strategy adjustment
+
+<strong>Analysis Items</strong>:
+
+- Monthly core metric achievement rate
+- Content performance ranking
+- Conversion rate by traffic channel
+- User journey mapping
+- SEO performance (Organic keywords)
+
+<strong>Decision Points</strong>:
+
+- Content topic direction adjustment
+- Marketing channel reallocation
+- Technical improvement priorities
+
+### 7.3 Analysis After 3 Months (January 6, 2026)
+
+<strong>Purpose</strong>: Quarterly retrospective and 2026 strategy establishment
+
+<strong>Strategic Questions</strong>:
+
+1. Which content was most effective?
+2. How does performance compare to targets?
+3. What unexpected successes/failures occurred?
+4. What's the core strategy for 2026?
+
+## 8. Transparency and Learning
+
+### 8.1 Limitations of This Report
+
+This analysis report has the following limitations:
+
+1. <strong>Data Scarcity</strong>: Historical data not collected, trend analysis impossible
+2. <strong>Sample Size</strong>: Only extremely limited real-time data used
+3. <strong>Statistical Significance</strong>: Cannot draw statistical conclusions at this point
+4. <strong>External Factors</strong>: Insufficient consideration of seasonality, events, etc.
+
+### 8.2 Learning Points
+
+What I learned through this experience:
+
+<strong>1. Understanding GA4 Data Pipeline</strong>
+
+- Difference between real-time vs historical data
+- Data processing delay time
+- Data access methods via API
+
+<strong>2. Importance of Early Stage</strong>
+
+- Correct tracking setup is the foundation of all analysis
+- Cannot measure improvement effects without baseline
+- Early design determines long-term strategy
+
+<strong>3. Transparent Communication</strong>
+
+- Don't hide data scarcity, disclose it
+- Acknowledge limitations and turn them into learning opportunities
+- Share the journey of growing together with readers
+
+## 9. Practical Guide for Readers
+
+### 9.1 Starting Your Blog Analysis
+
+<strong>7-day Action Plan</strong> that you, the reader, can start right away:
+
+#### Day 1: Baseline Assessment (30 min)
+
+```javascript
+// 3 queries to run
+1. Real-time status (Query 1)
+2. 7-day traffic (Query 2)
+3. Popular content (Query 3)
+
+// What to record
+- Current DAU (Daily Active Users)
+- Most popular posts
+- Main traffic sources
+```
+
+#### Day 2: Custom Dimension Setup (1-2 hours)
+
+```javascript
+// In GA4 Admin
+1. Create Custom Definitions
+   - Content Language (ko/en/ja)
+   - Content Type (blog_post/page)
+
+2. Modify blog template
+   gtag('event', 'page_view', {
+     'content_language': 'en',
+     'content_type': 'blog_post'
+   });
+```
+
+#### Day 3-5: Enhanced Event Tracking
+
+- Scroll depth (75%, 100%)
+- External link clicks
+- Read completion (based on dwell time)
+
+#### Day 6-7: First Weekly Report Writing
+
+<strong>What to include</strong>:
+
+- Key metrics (users, sessions, pageviews)
+- Top 5 posts
+- Traffic source analysis
+- 1-2 action items for next week
+
+### 9.2 Frequently Asked Questions (FAQ)
+
+<strong>Q1: GA4 data appears differently in MCP and UI</strong>
+A: Consider 24-48 hour data processing delay. Real-time reports are immediate, standard reports are delayed.
+
+<strong>Q2: Which metrics should I focus on?</strong>
+A: For the first 3 months, focus on <strong>Monthly Active Readers (MAR)</strong> and <strong>Organic Search %</strong>. These two metrics best represent blog health.
+
+<strong>Q3: I'm not meeting benchmark numbers - is it a failure?</strong>
+A: <strong>Growth trends</strong> are more important than absolute numbers. If you maintain 10% week-over-week growth, you can achieve targets within 3 months.
+
+<strong>Q4: How much time should I invest in analysis?</strong>
+A:
+
+- Daily: 5 min (real-time check)
+- Weekly: 30 min (weekly report)
+- Monthly: 2 hours (strategy review)
+
+<strong>Q5: What's the key to multilingual blog analysis?</strong>
+A: Set <strong>independent benchmarks</strong> for each language. Korean and English content operate in different markets and competitive environments.
+
+### 9.3 Additional Learning Resources
+
+<strong>Official Documentation</strong>:
+
+- [GA4 API Schema](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema)
+- [GA4 Query Explorer](https://ga-dev-tools.google/ga4/query-explorer/)
+
+<strong>Recommended Tools</strong>:
+
+- <strong>Looker Studio</strong>: Custom dashboard creation
+- <strong>Google Search Console</strong>: SEO performance tracking
+- <strong>PageSpeed Insights</strong>: Core Web Vitals monitoring
+
+<strong>Community</strong>:
+
+- Analytics Mania Blog (advanced techniques)
+- Measure School YouTube (video tutorials)
+
+## 10. Conclusion
+
+### 10.1 Early Launch Evaluation
+
+jangwook.net blog has been successfully launched technically:
+
+✅ <strong>Success Factors</strong>:
+
+- Astro-based high-performance static site (Core Web Vitals optimized)
+- GA4 + MCP analysis system working (automation ready)
+- Real-time user tracking and behavior observation available
+- Multilingual (ko/en/ja), multi-device access confirmed
+- <strong>Transparent data sharing culture established</strong> ← Most important
+
+⏳ <strong>In Progress</strong>:
+
+- Historical data collection (24-48 hour wait)
+- Custom dimension implementation (language tracking)
+- Content library expansion (2-3 posts per week)
+- Traffic source diversification (SEO, social, community)
+
+### 10.2 Future Roadmap
+
+This blog will evolve into a <strong>data-driven learning platform</strong>, not just a static site:
+
+<strong>After 1 week (2025-10-13)</strong>:
+
+- ✅ First historical data-based analysis report
+- ✅ Daily traffic pattern identification
+- ✅ Main inflow path identification
+
+<strong>After 1 month (2025-11-06)</strong>:
+
+- 📊 Monthly core metric achievement evaluation
+- 🎯 Content strategy optimization (performance-based)
+- 🔄 SEO keyword analysis and adjustment
+
+<strong>After 3 months (2026-01-06)</strong>:
+
+- 🤖 Automated weekly/monthly report system
+- 📈 500 MAR target achievement verification
+- 🧠 Data-driven content recommendation engine
+
+<strong>After 6 months (2026-04-06)</strong>:
+
+- 🌍 2,000 MAR achievement and community activation
+- 💰 Newsletter and monetization strategy launch
+- 🔮 AI-based performance prediction model
+
+### 10.3 Message to Readers
+
+What makes this report special is that it shares <strong>a genuine journey, not perfect data</strong>.
+
+Many analysis reports are full of impressive graphs and numbers, but the failures, trial and error, and learning process behind them are not shared.
+
+<strong>jangwook.net is different. We:</strong>
+
+- ❌ Don't hide failures → Transparently disclose even data scarcity
+- 📚 Share what we learned → Understanding GA4 pipeline, MCP usage
+- 🤝 Grow together with readers → Insights applicable to your blog too
+
+<strong>You can do it too</strong>:
+
+1. GA4 setup (30 min)
+2. Copy and run queries from this article (10 min)
+3. Write first weekly report (1 hour)
+4. Start data-driven improvements (ongoing)
+
+In the next report, I'll share deeper insights along with actual data.
+
+---
+
+### 📅 Next Report Preview
+
+<strong>Title</strong>: "What a Week of Data Tells Us: jangwook.net First Weekly Analysis"
+<strong>Publication Date</strong>: October 13, 2025 (1 week later)
+<strong>Contents</strong>:
+
+- ✅ Complete historical data analysis
+- 📊 Daily/hourly traffic patterns
+- 🎯 First week performance vs targets
+- 🔧 Problems discovered and solutions
+- 📈 Week 2 optimization strategy
+
+<strong>Series Tags</strong>: #BlogAnalytics #DataDriven #Transparency #WeeklyReport
+
+---
+
+### 💬 Share Your Experience
+
+If this article was helpful:
+
+- 🔗 <strong>Share</strong>: With fellow developers facing similar challenges
+- 💭 <strong>Leave comments</strong>: Your blog analysis experience and tips
+- 📧 <strong>Contact</strong>: 1-on-1 questions at [Contact](/en/contact/)
+
+<strong>Let's learn and grow together. Looking forward to your first analysis report!</strong> 🚀

@@ -1,0 +1,1804 @@
+{
+  "environment": "local production Worker, no deployment",
+  "routes": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/sign-language-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/captions-live",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/captions-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/extended-audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/identify-input-purpose",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-only-live",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/info-and-relationships",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/meaningful-sequence",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/sensory-characteristics",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/orientation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/use-of-color",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/identify-purpose",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/low-or-no-background-audio",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-control",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/contrast-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/images-of-text",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/contrast-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/resize-text",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/images-of-text-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/visual-presentation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/no-keyboard-trap",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/reflow",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/non-text-contrast",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/text-spacing",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/content-on-hover-or-focus",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/keyboard",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/timing-adjustable",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/keyboard-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/character-key-shortcuts",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/timeouts",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/pause-stop-hide",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/interruptions",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/no-timing",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/re-authenticating",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/animation-from-interactions",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/three-flashes-or-below-threshold",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/three-flashes",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/multiple-ways",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/bypass-blocks",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/page-titled",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-order",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/link-purpose-in-context",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/location",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/headings-and-labels",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-visible",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-appearance",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/link-purpose-link-only",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/section-headings",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-not-obscured-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-not-obscured-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/pointer-cancellation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/pointer-gestures",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/target-size-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/concurrent-input-mechanisms",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/motion-actuation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/target-size-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/label-in-name",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/dragging-movements",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/language-of-page",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/on-input",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/language-of-parts",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/unusual-words",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/abbreviations",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/reading-level",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/pronunciation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/on-focus",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/consistent-navigation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/consistent-identification",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/change-on-request",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/consistent-help",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/error-identification",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/labels-or-instructions",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/error-suggestion",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/error-prevention-legal-financial-data",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/help",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/agentic-accessibility",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/redundant-entry",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/name-role-value",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/accessible-authentication-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/status-messages",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/accessible-authentication-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/error-prevention-all",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/captions-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/captions-live",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/sign-language-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-only-live",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/extended-audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/identify-input-purpose",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/sensory-characteristics",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/orientation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/meaningful-sequence",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/info-and-relationships",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-control",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/identify-purpose",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/use-of-color",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/low-or-no-background-audio",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/contrast-minimum",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/resize-text",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/images-of-text",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/contrast-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/visual-presentation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/reflow",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/no-keyboard-trap",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/images-of-text-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/keyboard",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/non-text-contrast",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/text-spacing",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/content-on-hover-or-focus",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/keyboard-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/timing-adjustable",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/timeouts",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/character-key-shortcuts",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/pause-stop-hide",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/no-timing",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/re-authenticating",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/interruptions",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/bypass-blocks",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/three-flashes-or-below-threshold",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/three-flashes",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/animation-from-interactions",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/multiple-ways",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-order",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/link-purpose-in-context",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/page-titled",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/headings-and-labels",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-visible",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/location",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/link-purpose-link-only",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/section-headings",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-not-obscured-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-not-obscured-minimum",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-appearance",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/pointer-gestures",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/pointer-cancellation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/label-in-name",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/motion-actuation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/target-size-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/target-size-minimum",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/concurrent-input-mechanisms",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/dragging-movements",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/abbreviations",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/language-of-page",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/language-of-parts",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/unusual-words",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/on-input",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/pronunciation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/on-focus",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/reading-level",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/error-identification",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/consistent-navigation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/consistent-identification",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/change-on-request",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/consistent-help",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/error-prevention-legal-financial-data",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/labels-or-instructions",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/error-suggestion",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/redundant-entry",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/help",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/error-prevention-all",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/agentic-accessibility",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/accessible-authentication-minimum",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/status-messages",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/name-role-value",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/accessible-authentication-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/sign-language-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/captions-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/captions-live",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/info-and-relationships",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/extended-audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-only-live",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/identify-input-purpose",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/sensory-characteristics",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/meaningful-sequence",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/orientation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/identify-purpose",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/use-of-color",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-control",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/contrast-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/resize-text",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/images-of-text",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/contrast-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/low-or-no-background-audio",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/visual-presentation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/images-of-text-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/reflow",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/non-text-contrast",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/text-spacing",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/content-on-hover-or-focus",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/keyboard",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/no-keyboard-trap",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/pause-stop-hide",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/keyboard-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/character-key-shortcuts",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/timing-adjustable",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/timeouts",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/no-timing",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/re-authenticating",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/interruptions",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/three-flashes-or-below-threshold",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/three-flashes",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/animation-from-interactions",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/bypass-blocks",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/page-titled",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/link-purpose-in-context",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/multiple-ways",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-order",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/headings-and-labels",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/location",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-visible",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-appearance",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-not-obscured-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/link-purpose-link-only",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/section-headings",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-not-obscured-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/pointer-gestures",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/label-in-name",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/target-size-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/pointer-cancellation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/concurrent-input-mechanisms",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/motion-actuation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/target-size-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/dragging-movements",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/language-of-page",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/unusual-words",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/on-input",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/language-of-parts",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/abbreviations",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/reading-level",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/pronunciation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/on-focus",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/consistent-navigation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/consistent-identification",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/change-on-request",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/consistent-help",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/error-identification",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/labels-or-instructions",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/error-suggestion",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/error-prevention-legal-financial-data",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/accessible-authentication-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/help",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/redundant-entry",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/error-prevention-all",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/accessible-authentication-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/name-role-value",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/status-messages",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/agentic-accessibility",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/sign-language-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/captions-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/captions-live",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/info-and-relationships",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/extended-audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-only-live",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/identify-input-purpose",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/meaningful-sequence",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/sensory-characteristics",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/orientation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-control",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/identify-purpose",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/use-of-color",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/resize-text",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/low-or-no-background-audio",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/contrast-minimum",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/contrast-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/images-of-text",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/content-on-hover-or-focus",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/visual-presentation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/images-of-text-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/text-spacing",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/reflow",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/non-text-contrast",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/no-keyboard-trap",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/keyboard",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/pause-stop-hide",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/keyboard-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/character-key-shortcuts",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/timing-adjustable",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/timeouts",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/no-timing",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/interruptions",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/re-authenticating",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/animation-from-interactions",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/three-flashes",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/three-flashes-or-below-threshold",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/multiple-ways",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/bypass-blocks",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/page-titled",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-order",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/link-purpose-in-context",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/location",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/headings-and-labels",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-visible",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-appearance",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/link-purpose-link-only",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/section-headings",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-not-obscured-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-not-obscured-minimum",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/pointer-gestures",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/pointer-cancellation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/label-in-name",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/motion-actuation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/target-size-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/concurrent-input-mechanisms",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/dragging-movements",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/target-size-minimum",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/reading-level",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/language-of-page",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/language-of-parts",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/unusual-words",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/on-input",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/pronunciation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/on-focus",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/abbreviations",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/labels-or-instructions",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/consistent-navigation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/change-on-request",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/consistent-help",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/consistent-identification",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/error-identification",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/error-prevention-legal-financial-data",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/error-suggestion",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/help",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/accessible-authentication-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/error-prevention-all",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/redundant-entry",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/accessible-authentication-minimum",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/agentic-accessibility",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/name-role-value",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/status-messages",
+      "status": 200
+    }
+  ],
+  "archive": [
+    {
+      "lang": "ko",
+      "path": "/ko/blog/ko/ai-search-seo-accessibility-checklist/",
+      "status": 200,
+      "htmlLang": "ko"
+    },
+    {
+      "lang": "en",
+      "path": "/en/blog/en/ai-search-seo-accessibility-checklist/",
+      "status": 200,
+      "htmlLang": "en"
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/blog/ja/ai-search-seo-accessibility-checklist/",
+      "status": 200,
+      "htmlLang": "ja"
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/blog/zh/ai-search-seo-accessibility-checklist/",
+      "status": 200,
+      "htmlLang": "zh"
+    }
+  ],
+  "aliases": [
+    {
+      "path": "/ko/series/accessibility/non-text-content",
+      "status": 308,
+      "location": "/series/accessibility/non-text-content"
+    },
+    {
+      "path": "/ko/prompts?q=3.3.8",
+      "status": 308,
+      "location": "/prompts?q=3.3.8"
+    }
+  ],
+  "errors": []
+}

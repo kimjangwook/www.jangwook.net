@@ -1,0 +1,57 @@
+{
+  "result": [
+    {
+      "id": "cb81a2c7a7e4bff4853497267aee60df53b6da4d",
+      "zone_id": "e9df7542ce682e22b0d3aa6e6a8905fd",
+      "zone_name": "effloow.com",
+      "hostname": "a11y.effloow.com",
+      "service": "a11y-checker-saas",
+      "environment": "production",
+      "cert_id": "306126ea-c2c4-43f2-9c87-032c236acbff",
+      "previews_enabled": false,
+      "enabled": true
+    },
+    {
+      "id": "1b2fff0bfc0630a721c5041c746e5d68b233da32",
+      "zone_id": "cfe970b77e82a738d8b11b15ca1dfdab",
+      "zone_name": "jangwook.net",
+      "hostname": "jangwook.net",
+      "service": "www-jangwook-net",
+      "environment": "production",
+      "cert_id": "b9109d2a-6012-465e-9f73-29af50706d9e",
+      "previews_enabled": false,
+      "enabled": true
+    },
+    {
+      "id": "d6ba7525d50655e645a0f3abe7f489449a577327",
+      "zone_id": "cfe970b77e82a738d8b11b15ca1dfdab",
+      "zone_name": "jangwook.net",
+      "hostname": "www.jangwook.net",
+      "service": "www-jangwook-net",
+      "environment": "production",
+      "cert_id": "f4fc8adf-a9ca-40f3-bae6-8e0291ac62e0",
+      "previews_enabled": false,
+      "enabled": true
+    },
+    {
+      "id": "c2f2d5c6d863080f9c580b507be786efeda0dfbe",
+      "zone_id": "9ae9476069463c4efb12fca3f7f82dad",
+      "zone_name": "moatledger.com",
+      "hostname": "www.moatledger.com",
+      "service": "moatledger",
+      "environment": "production",
+      "cert_id": "e0677216-7f88-4acd-aaa1-134082f2d722",
+      "previews_enabled": false,
+      "enabled": true
+    }
+  ],
+  "success": true,
+  "errors": null,
+  "messages": null,
+  "result_info": {
+    "page": 1,
+    "per_page": 4,
+    "count": 4,
+    "total_count": 4
+  }
+}

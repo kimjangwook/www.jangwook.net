@@ -1,0 +1,221 @@
+---
+import { SITE_TITLE } from '../consts';
+import { useTranslations, type Language } from '../lib/i18n/languages';
+import BrandMark from './BrandMark.astro';
+import HeaderLink from './HeaderLink.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+	lang: Language;
+	languageLinks?: Partial<Record<Language, string>>;
+}
+
+const { lang, languageLinks } = Astro.props;
+const t = useTranslations(lang);
+const navigationLabel = {
+	ko: '주요 탐색',
+	en: 'Main navigation',
+	ja: 'メインナビゲーション',
+	zh: '主要导航',
+}[lang];
+---
+
+<a href="#main-content" class="skip-link">{t('a11y.skipToContent')}</a>
+
+<header class="site-header">
+	<div class="site-header__inner">
+		<div class="site-header__brand">
+			<a href={`/${lang}/`} class="brand-link" aria-label={SITE_TITLE}>
+				<BrandMark showWordmark size={42} />
+			</a>
+		</div>
+
+		<nav class="primary-nav" aria-label={navigationLabel}>
+			<HeaderLink href={`/${lang}/blog/`}>{t('nav.blog')}</HeaderLink>
+			<HeaderLink href={`/${lang}/tags/`}>{t('nav.tags')}</HeaderLink>
+			<HeaderLink href={`/${lang}/about/`}>{t('nav.about')}</HeaderLink>
+			<HeaderLink href={`/${lang}/contact/`}>{t('nav.contact')}</HeaderLink>
+		</nav>
+
+		<div class="header-tools">
+			<ThemeToggle />
+			<LanguageSwitcher currentLang={lang} links={languageLinks} />
+		</div>
+	</div>
+</header>
+
+<style>
+	.skip-link {
+		position: absolute;
+		left: 1rem;
+		top: -4rem;
+		z-index: 100;
+		padding: 0.6rem 0.9rem;
+		background: var(--ink);
+		color: var(--paper);
+		font-size: 0.85rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.skip-link:focus {
+		top: 1rem;
+		outline: 2px solid var(--focus-ring);
+		outline-offset: 4px;
+	}
+
+	.site-header {
+		position: static;
+		z-index: 20;
+		border-bottom: 1px solid var(--paper-rule);
+		background: color-mix(in srgb, var(--paper) 96%, transparent);
+	}
+
+	.site-header__inner {
+		width: min(var(--page-width), calc(100% - 6rem));
+		min-height: 5.25rem;
+		margin-inline: auto;
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		align-items: center;
+		gap: clamp(1.5rem, 4vw, 4.5rem);
+	}
+
+	.site-header__brand,
+	.brand-link {
+		min-width: 0;
+	}
+
+	.brand-link {
+		display: inline-flex;
+		color: var(--ink);
+		text-decoration: none;
+	}
+
+	.brand-link:hover {
+		color: var(--ink);
+	}
+
+	.primary-nav {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: clamp(0.7rem, 2vw, 1.65rem);
+		min-width: 0;
+	}
+
+	.header-tools {
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 0.65rem;
+	}
+
+	@media (min-width: 861px) {
+		.site-header {
+			position: sticky;
+			top: 0;
+		}
+	}
+
+	@media (max-width: 1100px) {
+		.site-header__inner {
+			width: min(var(--page-width), calc(100% - 4rem));
+			gap: 1.5rem;
+		}
+
+		.primary-nav {
+			gap: 0.8rem;
+		}
+	}
+
+	@media (max-width: 860px) {
+		.site-header__inner {
+			width: calc(100% - 2.5rem);
+			padding-block: 1rem 0.75rem;
+			grid-template-columns: minmax(0, 1fr) auto;
+			grid-template-rows: auto auto;
+			align-items: center;
+			gap: 0.65rem 1rem;
+		}
+
+		.site-header__brand {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.site-header__brand :global(.brand-wordmark__meta) {
+			display: none;
+		}
+
+		.site-header__brand :global(.brand-mark) {
+			width: 36px;
+			height: 36px;
+		}
+
+		.site-header__brand :global(.brand-wordmark) {
+			gap: 0.35rem;
+		}
+
+		.site-header__brand :global(.brand-wordmark__name) {
+			font-size: 1.15rem;
+		}
+
+		.primary-nav {
+			grid-column: 1 / -1;
+			grid-row: 2;
+			width: 100%;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+			gap: 0;
+		}
+
+		.primary-nav :global(.nav-link) {
+			flex: 1 1 0;
+			justify-content: center;
+			min-width: 0;
+			white-space: nowrap;
+		}
+
+		.header-tools {
+			grid-column: 2;
+			grid-row: 1;
+		}
+	}
+
+	@media (max-width: 540px) {
+		.site-header__inner {
+			width: calc(100% - 2rem);
+		}
+
+		.primary-nav :global(.nav-link) {
+			font-size: 0.76rem;
+		}
+	}
+
+	@media (max-width: 360px) {
+		.site-header__inner {
+			width: calc(100% - 1.5rem);
+		}
+
+		.primary-nav :global(.nav-link) {
+			font-size: 0.72rem;
+		}
+
+		.site-header__brand :global(.brand-mark) {
+			width: 32px;
+			height: 32px;
+		}
+
+		.site-header__brand :global(.brand-wordmark__name) {
+			font-size: 1.05rem;
+		}
+	}
+
+	@media (max-height: 500px) {
+		.site-header {
+			position: static;
+		}
+	}
+</style>

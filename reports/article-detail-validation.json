@@ -1,0 +1,293 @@
+{
+  "base": "http://127.0.0.1:8787",
+  "checkedAt": "2026-10-01T21:52:49.394Z",
+  "pages": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "width": 1440,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/keyboard",
+      "width": 1440,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "width": 390,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/keyboard",
+      "width": 390,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "width": 320,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/keyboard",
+      "width": 320,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "width": 1440,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/keyboard",
+      "width": 1440,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "width": 390,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/keyboard",
+      "width": 390,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "width": 320,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/keyboard",
+      "width": 320,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "width": 1440,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/keyboard",
+      "width": 1440,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "width": 390,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/keyboard",
+      "width": 390,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "width": 320,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/keyboard",
+      "width": 320,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "width": 1440,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/keyboard",
+      "width": 1440,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "width": 390,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/keyboard",
+      "width": 390,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "width": 320,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/keyboard",
+      "width": 320,
+      "status": 200,
+      "links": 88,
+      "violations": [],
+      "keyboardToggle": true,
+      "layout": true,
+      "structuredData": true
+    }
+  ],
+  "flows": [
+    {
+      "lang": "ko",
+      "noJS": true,
+      "preparationNavigation": true
+    },
+    {
+      "lang": "en",
+      "noJS": true,
+      "preparationNavigation": true
+    },
+    {
+      "lang": "ja",
+      "noJS": true,
+      "preparationNavigation": true
+    },
+    {
+      "lang": "zh",
+      "noJS": true,
+      "preparationNavigation": true
+    }
+  ],
+  "errors": []
+}

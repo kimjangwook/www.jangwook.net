@@ -1,0 +1,32 @@
+{
+  "deployedAt": "2026-10-01T15:02:30.173504Z",
+  "userAuthorization": "Deploy as-is if the language-specific accessibility names are appropriate",
+  "worker": "www-jangwook-net",
+  "versionId": "3d5be1be-304e-4443-a1fb-0d41b1691515",
+  "previousVersionId": "6698daa8-8c41-4db9-b395-3ab17fc7dfc7",
+  "releaseSha": "1ed2c210a7b5fbe8d161076e20e2f8ae6d2faeb0",
+  "releaseDirectory": "/var/folders/c9/dq96xgqs6mgbxl8k80c4blb00000gn/T/jangwook-release-20261001-yv7zyd03",
+  "domains": [
+    "https://jangwook.net",
+    "https://www.jangwook.net"
+  ],
+  "d1Name": "jangwook-leads",
+  "mailMode": "disabled",
+  "articleStatus": "All new article bodies remain drafts; all 352 preparation pages are public",
+  "archivePathsVerified": 1424,
+  "seriesPathsVerified": 352,
+  "accessibleNamePagesVerified": 20,
+  "productionValidationPassed": true,
+  "rollbackCommand": "npx wrangler rollback 6698daa8-8c41-4db9-b395-3ab17fc7dfc7 --name www-jangwook-net --env production",
+  "rollbackScheduleNote": "Previous Worker had no scheduled triggers; restore empty schedule if a rollback is used.",
+  "legacyDeployWorkflow": {
+    "id": 195145307,
+    "name": "Deploy to Cloudflare Workers",
+    "path": ".github/workflows/deploy.yml",
+    "state": "disabled_manually",
+    "reason": "Prevent scheduled or pushed legacy Astro deployments from overwriting the approved SvelteKit release",
+    "restoreCommand": "gh workflow enable 195145307 --repo kimjangwook/www.jangwook.net"
+  },
+  "liveAxePagesVerified": 24,
+  "liveAxeViolations": 0
+}

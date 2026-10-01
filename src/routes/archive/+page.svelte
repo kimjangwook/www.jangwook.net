@@ -1,0 +1,1 @@
+<script lang="ts">import ArchiveList from '$lib/components/ArchiveList.svelte';let {data}=$props();</script><svelte:head><title>아카이브 — jangwook.net</title><meta name="description" content="기존에 공개한 글을 원래 주소 그대로 보관합니다. 언어와 제목으로 지난 글을 찾아보세요."/></svelte:head><ArchiveList list={data.list}/>

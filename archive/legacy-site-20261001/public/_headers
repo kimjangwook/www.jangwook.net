@@ -1,0 +1,10 @@
+# Cloudflare Workers 정적 자산 커스텀 헤더
+# https://developers.cloudflare.com/workers/static-assets/headers/
+
+# Astro 빌드 자산은 파일명에 콘텐츠 해시가 박혀 있어 영구 캐시 가능
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML은 재배포 시 즉시 반영되도록 재검증 강제
+/*
+  X-Content-Type-Options: nosniff

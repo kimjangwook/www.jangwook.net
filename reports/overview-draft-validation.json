@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-01",
+  "scope": "overview only",
+  "changedArticles": [
+    "overview"
+  ],
+  "sourceHash": "cb43c80414b2a322888507743e31200145f1c40061d604a652dcfc3567e6ac0b",
+  "status": "draft",
+  "promptExecuted": false,
+  "published": false,
+  "contentValidation": "passed",
+  "svelteCheck": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "reviewHTML": [
+    {
+      "target": "review",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "hasPrompt": true,
+      "checkboxes": 4,
+      "checkboxNames": true,
+      "noindex": "noindex,nofollow"
+    },
+    {
+      "target": "review",
+      "width": 390,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "hasPrompt": true,
+      "checkboxes": 4,
+      "checkboxNames": true,
+      "noindex": "noindex,nofollow"
+    },
+    {
+      "target": "site",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "hasPrompt": true,
+      "checkboxes": 4,
+      "checkboxNames": true,
+      "noindex": "noindex,nofollow"
+    },
+    {
+      "target": "site",
+      "width": 390,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "hasPrompt": true,
+      "checkboxes": 4,
+      "checkboxNames": true,
+      "noindex": "noindex,nofollow"
+    }
+  ],
+  "axe": [
+    {
+      "target": "review",
+      "violations": []
+    },
+    {
+      "target": "site",
+      "violations": []
+    }
+  ],
+  "renderingChange": "Added accessible names to Markdown task checkboxes",
+  "reviewMatchesCanonicalBodyAndPrompt": true,
+  "temporaryPreviewStopped": true
+}

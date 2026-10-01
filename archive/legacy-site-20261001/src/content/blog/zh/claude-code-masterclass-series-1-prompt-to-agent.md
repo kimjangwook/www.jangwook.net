@@ -1,0 +1,381 @@
+---
+title: 'Claude Code 实战大师班 #1 — 用斜线命令·Hook·子代理三步实现工作流自动化'
+description: >-
+  通过斜线命令(.claude/commands/)定义任务，用settings.json
+  Hook连接事件，并委托给子代理(.claude/agents/)执行。本文以真实博客自动化系统为案例，从头到尾详解Claude
+  Code三步自动化工作流构建方式，所有代码均可直接运行，帮你掌握这一高效自动化范式。
+pubDate: '2026-05-10'
+heroImage: ../../../assets/blog/claude-code-masterclass-series-1-prompt-to-agent-hero.jpg
+tags:
+  - ClaudeCode
+  - 自动化
+  - 子代理
+  - 工作流
+relatedPosts:
+  - slug: bun-shell-scripting-practical-guide-2026
+    score: 0.9
+    reason:
+      ko: 자동화 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into 자동화.
+      ja: 자동화をもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 자동화 主题。
+  - slug: claude-code-parallel-sessions-git-worktree
+    score: 0.85
+    reason:
+      ko: claudecode를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on claudecode experience.
+      ja: claudecodeを実際に扱った経験が続く記事です。
+      zh: 延续 claudecode 的实战经验。
+faq:
+  - question: 创建斜线命令需要写代码吗?
+    answer: >-
+      不需要。只要在 .claude/commands/ 目录下放一个 .md
+      文件，文件名就是命令名。文件内容是自然语言指令，Claude会把每个步骤解释后转换为工具调用。
+  - question: '--dangerously-skip-permissions 这个参数可以放心用吗?'
+    answer: 如名字所示，它很危险，会跳过所有权限提示。只有在白名单定义完善的状态下才能使用，文中不建议在个人自动化项目之外使用它。
+  - question: Hook有哪些类型，哪一种最有用?
+    answer: >-
+      共有 PreToolUse、PostToolUse、Stop、SessionStart 四种类型。作者认为最有用的是 Stop
+      Hook，长时间自动化任务完成后会收到Telegram通知。
+  - question: frontmatter中的 description 字段为什么关键?
+    answer: 因为编排器Claude在判断什么时候该用哪个代理时会参考这个字段。写得含糊，就会调用错误的代理，或者完全被忽略。
+---
+
+你现在读到的这篇文章，很可能是今天早上11点30分自动触发的launchd任务唤醒了Claude Code，执行了`/daily-tech-blog`斜线命令，再由多个子代理分工完成研究和翻译后生成的。
+
+过去几个月，我一直在亲手构建和运维这套自动化管道。它并不完美——有时会触发超时，有时构建失败，有时只生成了某一种语言的版本就结束了。但如果没有这套系统，每天用4种语言发布文章根本不可能实现。
+
+这个系列记录的就是这一过程中学到的东西。第1篇聚焦最核心的三步，讲清楚从零构建的方法：<strong>斜线命令</strong>、<strong>Hook</strong>和<strong>子代理</strong>。
+
+## Step 1：斜线命令: `.claude/commands/` 文件夹就是全部
+
+在Claude Code中创建`/commit`、`/review`、`/deploy`这类命令的方法出奇地简单：只需在`.claude/commands/`目录下放一个`.md`文件。
+
+文件名就是命令名：
+
+```
+.claude/
+└── commands/
+    ├── commit.md          → /commit
+    ├── daily-review.md    → /daily-review
+    └── publish.md         → /publish
+```
+
+文件内容是自然语言指令。看起来像Markdown，但行为像代码：
+
+```markdown
+# Publish Command
+
+Validate and publish the blog post to production.
+
+## Usage
+/publish <slug>
+
+## Workflow
+1. Run npm run validate:publishing
+2. Run npm run build
+3. Run git add and commit with the slug
+4. Run git push origin main
+
+Report errors clearly with the step number.
+```
+
+就这些。在Claude Code会话中输入`/publish my-post-slug`，上面定义的工作流就会执行。Claude将每个步骤解释后转换为工具调用。
+
+第一次看到这个结构，最让我意外的是根本不需要编程语言。流程用文字写下来，Claude就会按情况自己执行。当然也有翻车的时候，它的理解和我的意图对不上。这种不可预测性，到现在我还没完全摸透。
+
+### 编写命令的技巧
+
+与其只写"做什么"，加入"为什么是这个顺序"和"哪些情况下要有不同行为"会精确得多：
+
+```markdown
+# Daily Tech Blog
+
+Research, write, validate, and publish one daily article.
+
+## Context
+- Today's date: use `date +%F`
+- Blog repo: ~/Documents/workspace/www.jangwook.net
+- Content types: how-to (Mon-Wed), news (Thu-Fri), series (Sat-Sun)
+
+## Failure Handling
+- If sandbox test fails: switch to Source Review lane
+- If build fails 3 times: stop and report
+- Never ask the user — this runs unattended
+```
+
+"Never ask the user"这一行是实现自主运行模式的关键。没有它，Claude在遇到不确定情况时就会停下来询问确认。在定时任务中这是致命的。
+
+## Step 2：settings.json Hook: 事件驱动的自动化
+
+如果斜线命令定义"做什么"，Hook定义的就是"什么时候自动触发"。
+
+在`.claude/settings.json`的`hooks`字段中注册事件-命令对：
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/send-telegram.sh 'Claude已完成任务'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[audit] $(date) — 文件写入发生\" >> ~/.claude/audit.log"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### 4种Hook类型
+
+| 类型 | 触发时机 | 常见用途 |
+|------|---------|---------|
+| `PreToolUse` | Claude调用工具的<strong>前一刻</strong> | 拦截危险命令、审计日志 |
+| `PostToolUse` | 工具调用<strong>完成后</strong> | 文件保存后执行lint、提交后通知 |
+| `Stop` | Claude<strong>完全停止</strong>响应时 | 完成通知、清理工作 |
+| `SessionStart` | Claude会话<strong>启动时</strong> | 注入时间上下文、环境设置 |
+
+在我的配置中最有用的是`Stop` Hook。长时间自动化任务（30分钟〜1小时）完成后，会收到Telegram通知。设置好这个之后，我就彻底摆脱了盯着终端看"结束了没有"的习惯。
+
+### permissions配置: 基于白名单的安全控制
+
+与Hook一起必须配置的是`permissions`。默认情况下，Claude Code在执行每条Bash命令前都会请求用户审批。在自动化环境中，这个行为会阻断整个管道。
+
+预先注册允许执行的命令，就能跳过审批提示直接执行：
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run validate:*)"
+    ]
+  }
+}
+```
+
+<strong>注意</strong>：白名单设置过宽（如`Bash(*)`）可能导致意外命令执行。只注册实际需要的命令模式才是安全做法。
+
+在实际代码审查管道中应用Hook的详细案例，可以参考用Claude Code Hook构建自动化代码审查系统。
+
+## Step 3：子代理委托: `.claude/agents/` 专业化AI
+
+让单个Claude实例同时处理研究 + 写作 + SEO优化 + 翻译 + 构建，会降低每项任务的专注度，也浪费Token上下文。
+
+子代理是为每个角色创建独立Claude实例的概念。在`.claude/agents/`文件夹中，用带frontmatter的Markdown文件来定义：
+
+```markdown
+---
+name: writing-assistant
+description: Technical blog post writer. Use when creating multilingual (ko/ja/en/zh) developer content.
+tools: Read, Write, WebSearch
+---
+
+You are a technical writer specializing in developer-focused content.
+
+Core rules:
+- Write for developers who will actually run the code
+- Include at least 3 first-person experience references
+- Verify technical claims before writing
+- Never fabricate benchmarks or logs
+```
+
+frontmatter中的`description`字段最为关键。编排器Claude在判断"什么时候该用哪个代理"时会参考这个字段。写得含糊，就会调用错误的代理，或者完全被忽略。
+
+`tools`字段只列出该代理实际需要的工具。没有`Write`权限的研究代理就不会意外修改文件。这是同时实现角色专业化和权限限制的方法。
+
+这个博客目前运行着19个代理：
+
+- `writing-assistant`: 4种语言文章写作
+- `seo-optimizer`: 元标签、内链优化
+- `web-researcher`: 趋势研究和事实核查
+- `content-recommender`: 生成relatedPosts
+- `image-generator`: 撰写英雄图片简报
+
+关于将代理组织成团队的更复杂模式，可以参考[Claude Code代理团队完整指南](/zh/blog/zh/claude-agent-teams-guide/)。
+
+## 三步整合：实际自动化管道
+
+比起理论，直接看运行中的管道更直观。这个博客每日自动化的流程如下：
+
+```
+macOS launchd (每天11:30)
+    ↓
+daily-tech-blog.sh
+    ↓
+claude --dangerously-skip-permissions "/daily-tech-blog"
+    ↓
+/daily-tech-blog 斜线命令执行
+    ├── 趋势研究（子代理：web-researcher）
+    ├── 沙盒测试（mktemp）
+    ├── 4语言文章写作（子代理：writing-assistant）
+    ├── npm run validate:publishing
+    ├── npm run build
+    └── git push origin main
+    ↓
+Stop Hook → send-telegram.sh → Telegram通知
+```
+
+最关键的文件是`daily-tech-blog.sh`。调用Claude的核心部分：
+
+```bash
+run_with_timeout "$MAX_TIMEOUT" claude --dangerously-skip-permissions \
+  "/daily-tech-blog" \
+  < /dev/null >> "$LOG_FILE" 2>&1 || CLAUDE_EC=$?
+```
+
+`--dangerously-skip-permissions`跳过所有权限提示。如名字所示，这是危险的。只有在白名单定义完善的状态下才能使用，个人自动化项目之外不建议使用。
+
+`< /dev/null`关闭stdin，防止Claude无限等待交互式输入。在cron任务中这是必须的。
+
+实际执行日志长这样：
+
+launchd plist的配置也值得参考：
+
+```xml
+<key>StartCalendarInterval</key>
+<dict>
+    <key>Hour</key>
+    <integer>11</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+</dict>
+<key>StandardOutPath</key>
+<string>/Users/jangwook/logs/launchd-daily-tech-blog.log</string>
+```
+
+将日志重定向到文件，在调试"为什么今天的文章没有发布"时帮助极大。
+
+## 实际入门: 5分钟最小配置
+
+为刚开始尝试三步走的人整理了最简工作示例，可以直接应用到现有项目。
+
+**1. 创建文件夹结构**
+
+```bash
+mkdir -p .claude/commands .claude/agents
+```
+
+**2. 第一个斜线命令** (`.claude/commands/review.md`)
+
+```markdown
+# Review Command
+
+Review recent changes before committing.
+
+## Steps
+1. Run git diff --staged to see staged changes
+2. Check for: hardcoded secrets, console.log, TODO comments
+3. Suggest improvements or approve with "LGTM"
+
+For detailed security analysis, delegate to @checker agent.
+```
+
+**3. 完成通知Hook配置** (`.claude/settings.json`)
+
+```json
+{
+  "permissions": {
+    "allow": ["Bash(git:*)", "Bash(npm:*)"]
+  },
+  "hooks": {
+    "Stop": [{
+      "hooks": [{
+        "type": "command",
+        "command": "say 'Claude已完成任务'"
+      }]
+    }]
+  }
+}
+```
+
+**4. 第一个代理定义** (`.claude/agents/checker.md`)
+
+```markdown
+---
+name: checker
+description: Code quality reviewer. Use when checking files for issues before commit.
+tools: Read, Grep
+---
+
+Review the provided files for syntax errors, obvious bugs, and security issues.
+Rate: SAFE / CAUTION / CRITICAL
+```
+
+这4个文件是最小工作单元。有了这些，`/review`就能分析暂存的变更，工作完成后收到语音通知，需要详细检查时委托给`checker`代理。
+
+## 何时该用这套三步自动化，何时该避免
+
+把三个步骤都搭建完之后，有件事才变得清晰：这套模式并非万能。对某些任务它太重，对另一些任务又不够用。
+
+<strong>适合的场景</strong>:
+
+- 存在每天或每周<strong>重复的多步骤任务</strong>。研究 → 撰写 → 验证 → 发布这种步骤固定、每次手工重复又很烦的流程是典型例子。
+- 任务能<strong>自然拆分成多个专门角色</strong>。把研究、写作和SEO塞进同一个上下文会拉低质量。拆成子代理后，每个角色的专注度都会提高。
+- 结果<strong>可以被客观验证</strong>。当你有`npm run build`或`astro check`这种通过/失败明确的关卡时，就能用QA循环把LLM的非确定性框住。
+- 需要<strong>非交互式执行</strong>时。如果是要靠cron或launchd在无人值守下运行的流水线，斜杠命令加钩子的组合很合适。
+
+<strong>最好避免的场景</strong>:
+
+- <strong>一次性的工作</strong>。为单次任务建命令文件和代理，成本大于收益。直接打提示词更快。
+- <strong>要求确定性输出的任务</strong>。会计对账、支付处理、迁移脚本这类每次都必须产出相同结果的工作，不适合基于LLM的自动化。应该用普通代码来写。
+- <strong>失败代价高的工作</strong>。生产数据库变更或对外发送的邮件，一旦出错很难撤销，应该经过人工最终审批。这正是绝对不能加`--dangerously-skip-permissions`的领域。
+- <strong>需求每次都变的工作</strong>。命令文件在自动化稳定流程时才出彩。每次条件都不同的工作，反而以交互方式来做更好。
+
+把判断标准压缩成一句话就是：<strong>「这个流程下个月还会以几乎相同的形式重复吗，以及有没有办法自动验证结果？」</strong>两个都是「是」就自动化；只要有一个是「否」，手工做通常更快也更安全。
+
+当你走到想要并行同时运行多个任务的阶段时，[用git worktree并行运行Claude Code会话的模式](/zh/blog/zh/claude-code-parallel-sessions-git-worktree/)是自然的下一个扩展方向。
+
+## 诚实的评价: 哪些地方不好用
+
+运行这套系统三个月后，我遇到了一些现实的限制。
+
+<strong>成本问题</strong>：每天自动生成4种语言、2500字以上的文章，月度API费用累积得比预期快。我靠Anthropic Max订阅勉强控制，但不接受这个成本就无法维持这个规模的自动化。
+
+<strong>超时处理</strong>：构建慢或子代理链条太长，就会触发60分钟超时。文章只生成到一半就中断。如果没有超时检测后的清理逻辑，仓库状态会变得混乱。
+
+<strong>代理质量的非确定性</strong>：同一个命令执行两次，结果可能不同。文章质量、内链位置、relatedPosts选择，每天都不一样。这是LLM的特性，无法消除，只能通过QA循环（validate:publishing、astro check、build）来保证最低质量标准。
+
+说实话，把这套系统称为"生产就绪"还为时过早。按我的标准，它是"对个人自动化来说足够稳定的水平"。在团队规模使用，需要更健壮地设计错误恢复、状态管理和审计日志。
+
+如果需要系统性地分析代理工作流的框架，Claude Code代理工作流5种模式是很好的参考。
+
+## 下一篇：#2 MCP服务器集成
+
+第1篇涵盖了在`.claude/`文件夹内完结的自动化。
+
+第2篇更进一步，<strong>从头构建MCP服务器，将Claude Code连接到外部工具</strong>。读取Notion数据库、发送Slack消息、查询PostgreSQL，这些外部系统集成都可以通过一条斜线命令完成。
+
+如果已经尝试过MCP服务器构建，[TypeScript SDK MCP服务器逐步构建指南](/zh/blog/zh/mcp-server-typescript-sdk-step-by-step-2026/)是很好的预备阅读材料。
+
+## 用官方文档核对
+
+本文中斜杠命令、钩子和子代理的行为都在Claude Code官方文档里有明确规范。版本升级后frontmatter字段或钩子类型可能发生变化，所以在真正动手搭建前，建议先核对下面这些一手来源。
+
+- [斜杠命令官方文档](https://code.claude.com/docs/en/slash-commands) — `.claude/commands/`的文件格式和参数处理
+- [钩子参考](https://code.claude.com/docs/en/hooks) — `PreToolUse`、`PostToolUse`、`Stop`、`SessionStart`等全部事件类型及载荷
+- [子代理定义指南](https://code.claude.com/docs/en/sub-agents) — `name`、`description`、`tools`这些frontmatter字段和`/agents`命令
+- [Claude Code官方文档主页](https://code.claude.com/docs/en/overview) — 从安装、配置到MCP的整体概览
+
+---
+
+*本文中的`.claude/`目录结构和Shell脚本示例均直接取自jangwook.net博客自动化系统的实际运行版本。*

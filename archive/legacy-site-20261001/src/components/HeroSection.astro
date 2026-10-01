@@ -1,0 +1,212 @@
+---
+import type { Language } from '../lib/i18n/languages';
+
+interface Props {
+	lang: Language;
+	primaryHref?: string;
+}
+
+const { lang, primaryHref = `/${lang}/blog/` } = Astro.props;
+const copy = {
+	ko: {
+		kicker: 'ENGINEERING, EXPLAINED',
+		title: '기술을 이해하고, 판단의 근거를 씁니다.',
+		subtitle: 'AI와 웹 개발, 자동화에서 마주친 질문을 직접 살펴보고, 확인한 사실과 남은 의문을 쉽게 풀어 씁니다.',
+		primary: '최근 칼럼 읽기',
+		secondary: '소개 보기',
+	},
+	ja: {
+		kicker: 'ENGINEERING, EXPLAINED',
+		title: '技術を理解し、判断の根拠を書く。',
+		subtitle: 'AI、ウェブ開発、自動化で出会った疑問を自分で調べ、確かめた事実と残る問いをわかりやすく伝えます。',
+		primary: '最新のコラムを読む',
+		secondary: '紹介を見る',
+	},
+	en: {
+		kicker: 'ENGINEERING, EXPLAINED',
+		title: 'Understand technology. Write the grounds for a decision.',
+		subtitle: 'I investigate questions in AI, web development, and automation, explaining what I found and what remains uncertain.',
+		primary: 'Read the latest column',
+		secondary: 'About this site',
+	},
+	zh: {
+		kicker: 'ENGINEERING, EXPLAINED',
+		title: '理解技术，写清判断的依据。',
+		subtitle: '亲自探究 AI、网页开发和自动化中遇到的问题，用易懂的语言解释已确认的事实与尚存的疑问。',
+		primary: '阅读最新专栏',
+		secondary: '关于本站',
+	},
+}[lang];
+---
+
+<section class="home-hero" aria-labelledby="home-hero-title">
+	<div class="home-hero__inner">
+		<div class="home-hero__copy">
+			<p class="home-hero__kicker">{copy.kicker}</p>
+			<h1 id="home-hero-title">{copy.title}</h1>
+			<p class="home-hero__intro">{copy.subtitle}</p>
+			<div class="home-hero__actions">
+				<a class="home-hero__primary" href={primaryHref}>
+					{copy.primary} <span aria-hidden="true">↗</span>
+				</a>
+					<a class="home-hero__secondary" href={`/${lang}/about/`}>{copy.secondary}</a>
+				</div>
+			</div>
+		</div>
+</section>
+
+<style>
+	.home-hero {
+		border-bottom: 1px solid var(--paper-rule);
+	}
+
+	.home-hero__inner {
+		width: min(var(--page-width), calc(100% - 6rem));
+		margin-inline: auto;
+		padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+		display: block;
+	}
+
+	.home-hero__copy {
+		min-width: 0;
+		max-width: 52rem;
+	}
+
+	.home-hero__kicker {
+		margin: 0 0 1.2rem;
+		color: var(--accent);
+		font-family: var(--font-mono);
+		font-size: 0.66rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		line-height: 1.4;
+	}
+
+	.home-hero h1 {
+		max-width: 44rem;
+		margin: 0;
+		font-family: var(--font-serif);
+		font-size: clamp(2.65rem, 4.6vw, 3.8rem);
+		font-weight: 500;
+		letter-spacing: -0.055em;
+		line-height: 1.42;
+	}
+
+	.home-hero__intro {
+		min-width: 0;
+		max-width: 42rem;
+		margin: 1.6rem 0 0;
+		color: var(--muted);
+		font-size: clamp(1.02rem, 1.45vw, 1.18rem);
+		line-height: 1.88;
+		word-break: keep-all;
+	}
+
+	.home-hero__actions {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem 1.4rem;
+		margin-top: 2rem;
+	}
+
+	.home-hero__primary,
+	.home-hero__secondary {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.home-hero__primary {
+		padding: 0.72rem 1rem;
+		background: var(--ink);
+		color: var(--paper);
+		font-size: 0.84rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.home-hero__primary:hover {
+		background: var(--accent);
+		color: var(--paper);
+	}
+
+	.home-hero__primary span {
+		margin-left: 0.45rem;
+		font-size: 1rem;
+	}
+
+	.home-hero__secondary {
+		color: var(--accent);
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+
+	@media (max-width: 1100px) {
+		.home-hero__inner {
+			width: min(var(--page-width), calc(100% - 4rem));
+		}
+
+		.home-hero h1 {
+			font-size: clamp(2.55rem, 5vw, 3.65rem);
+		}
+	}
+
+	.home-hero h1:lang(ja),
+	.home-hero h1:lang(zh) {
+		word-break: normal;
+	}
+
+	@media (max-width: 820px) {
+		.home-hero__inner {
+			width: calc(100% - 2.5rem);
+		}
+
+		.home-hero__copy {
+			max-width: 42rem;
+		}
+	}
+
+	@media (max-width: 540px) {
+		.home-hero__inner {
+			width: calc(100% - 2rem);
+			padding-block: 2.5rem 3rem;
+		}
+
+		.home-hero__kicker {
+			font-size: 0.59rem;
+		}
+
+		.home-hero h1 {
+			font-size: clamp(2rem, 9vw, 2.65rem);
+			line-height: 1.5;
+		}
+
+		.home-hero__intro {
+			margin-top: 1.2rem;
+			font-size: 0.98rem;
+			line-height: 1.9;
+		}
+
+		.home-hero__actions {
+			margin-top: 1.55rem;
+		}
+	}
+
+	@media (max-width: 359px) {
+		.home-hero__inner {
+			width: calc(100% - 1.5rem);
+		}
+
+		.home-hero h1 {
+			font-size: 1.9rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.home-hero__primary,
+		.home-hero__secondary {
+			transition: none;
+		}
+	}
+</style>

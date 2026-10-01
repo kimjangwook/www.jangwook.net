@@ -1,0 +1,62 @@
+{
+  "deployedAt": "2026-10-01T21:03:02.056613Z",
+  "worker": "www-jangwook-net",
+  "versionId": "ff57b9cd-06b8-4829-934c-01f5d12ba273",
+  "trafficPercent": 100,
+  "previousAcceptedVersionId": "3d5be1be-304e-4443-a1fb-0d41b1691515",
+  "intermediateVersionId": "7c2fff47-e8f4-4aa8-8366-2e62c873ee07",
+  "releaseSha": "a364a27b3f30c6cba58c648fd686f0934131c82a",
+  "releaseDirectory": "/var/folders/c9/dq96xgqs6mgbxl8k80c4blb00000gn/T/jangwook-release-20261002-lshrzu67",
+  "domains": [
+    "https://jangwook.net",
+    "https://www.jangwook.net"
+  ],
+  "articleStatus": "Overview published in ko/en/ja/zh; remaining 87 chapters in preparation in each language",
+  "overviewHashes": [
+    {
+      "lang": "ko",
+      "sourceHash": "6854235cc9cbfaabb605f84a570afb7eaa58c294ce00da32d8041302d432ecc3",
+      "updatedAt": "2026-10-01",
+      "publishedAt": "2026-10-01T20:42:37Z",
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "en",
+      "sourceHash": "c7689e504718f1a5113f0a69f3d8790601a7f438e9df5aacae6dc9d0e6beaa58",
+      "updatedAt": "2026-10-01",
+      "publishedAt": "2026-10-01T20:42:37Z",
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "ja",
+      "sourceHash": "7010a9ca68e62141e69ff35bf0fe8a22c919ffd115580a9c2892ababbe5fac4f",
+      "updatedAt": "2026-10-01",
+      "publishedAt": "2026-10-01T20:42:37Z",
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "zh",
+      "sourceHash": "ca8033c902705089d9f060c2332ddaeac19d1947e1146d73ff9ca946876be02c",
+      "updatedAt": "2026-10-01",
+      "publishedAt": "2026-10-01T20:42:37Z",
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    }
+  ],
+  "archivePathsVerified": 1424,
+  "seriesPathsVerified": 352,
+  "homeAxePagesVerified": 12,
+  "nativeAccessibleNamePagesVerified": 20,
+  "clientLanguageFlowsVerified": 4,
+  "validationErrors": 0,
+  "mailMode": "disabled",
+  "standaloneForm": "Removed; original URL redirects to final chapter",
+  "rollbackCommand": "npx wrangler rollback 3d5be1be-304e-4443-a1fb-0d41b1691515 --name www-jangwook-net --env production",
+  "legacyDeployWorkflow": {
+    "id": 195145307,
+    "name": "Deploy to Cloudflare Workers",
+    "path": ".github/workflows/deploy.yml",
+    "state": "disabled_manually",
+    "reason": "Prevent scheduled or pushed legacy Astro deployments from overwriting the approved SvelteKit release",
+    "restoreCommand": "gh workflow enable 195145307 --repo kimjangwook/www.jangwook.net"
+  }
+}

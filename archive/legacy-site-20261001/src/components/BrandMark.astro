@@ -1,0 +1,126 @@
+---
+interface Props {
+	size?: number;
+	onDark?: boolean;
+	showWordmark?: boolean;
+}
+
+const { size = 40, onDark = false, showWordmark = false } = Astro.props;
+const markColor = onDark ? 'var(--paper)' : 'currentColor';
+---
+
+<span class:list={['brand-lockup', { 'brand-lockup--wordmark': showWordmark }]} style={`--brand-size: ${size}px;`}>
+	<svg
+		class="brand-mark"
+		width={size}
+		height={size}
+		viewBox="0 0 40 40"
+		role={showWordmark ? undefined : 'img'}
+		aria-label={showWordmark ? undefined : 'jangwook.net'}
+		aria-hidden={showWordmark ? 'true' : undefined}
+		focusable="false"
+	>
+		<!-- A lowercase j and a measured terminal dot: a small, editable mark for a site about evidence. -->
+		<path
+			d="M23.7 7.2v17.2c0 5.8-2.6 8.9-7.3 8.9-3.6 0-6.1-1.8-7.1-4.8"
+			fill="none"
+			stroke={markColor}
+			stroke-width="2.4"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		/>
+		<circle cx="23.7" cy="4.9" r="1.7" fill={markColor} />
+		<path
+			d="M26.8 27.2c2.1 1.4 4 2.1 5.8 2.1"
+			fill="none"
+			stroke="var(--accent)"
+			stroke-width="1.8"
+			stroke-linecap="round"
+		/>
+		<circle class="brand-mark__signal" cx="34.2" cy="29.3" r="1.9" />
+	</svg>
+	{showWordmark && (
+		<span class="brand-wordmark">
+			<span class="brand-wordmark__name">jangwook<span class="brand-wordmark__dot">.</span>net</span>
+			<span class="brand-wordmark__meta">CONTEMPORARY NOTES ON TECHNOLOGY</span>
+		</span>
+	)}
+</span>
+
+<style>
+	.brand-lockup {
+		display: inline-flex;
+		align-items: center;
+		color: var(--ink);
+		line-height: 1;
+	}
+
+	.brand-lockup--wordmark {
+		gap: 0.7rem;
+	}
+
+	.brand-mark {
+		display: block;
+		width: var(--brand-size);
+		height: var(--brand-size);
+		flex: 0 0 auto;
+	}
+
+	.brand-mark__signal {
+		fill: var(--accent);
+		transform-origin: 34.2px 29.3px;
+		transition: transform 180ms var(--ease), opacity 180ms var(--ease);
+	}
+
+	.brand-lockup:hover .brand-mark__signal {
+		opacity: 0.82;
+		transform: scale(1.2);
+	}
+
+	.brand-wordmark {
+		display: flex;
+		min-width: 0;
+		flex-direction: column;
+		gap: 0.3rem;
+	}
+
+	.brand-wordmark__name {
+		font-family: var(--font-serif);
+		font-size: clamp(1.25rem, 2vw, 1.55rem);
+		font-weight: 500;
+		letter-spacing: -0.035em;
+		white-space: nowrap;
+	}
+
+	.brand-wordmark__dot {
+		color: var(--accent);
+	}
+
+	.brand-wordmark__meta {
+		color: var(--muted);
+		font-family: var(--font-mono);
+		font-size: 0.52rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		white-space: nowrap;
+	}
+
+	:global(.dark) .brand-lockup {
+		color: var(--ink);
+	}
+
+	@media (max-width: 540px) {
+		.brand-lockup--wordmark {
+			gap: 0.55rem;
+		}
+
+		.brand-wordmark__name {
+			font-size: 1.3rem;
+		}
+
+		.brand-wordmark__meta {
+			font-size: 0.45rem;
+			letter-spacing: 0.1em;
+		}
+	}
+</style>

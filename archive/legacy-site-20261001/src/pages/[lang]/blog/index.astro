@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import BlogArchive from '../../../components/BlogArchive.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import { getArchiveLocaleLinks, getArchiveSwitcherLinks, getPublishedPosts, getPagePosts, getPageCount, BLOG_PAGE_SIZE } from '../../../lib/blog';
+import { getStaticPaths as getI18nStaticPaths } from '../../../lib/i18n/utils';
+import { useTranslations, type Language } from '../../../lib/i18n/languages';
+import { archiveLabels } from '../../../lib/archiveLabels';
+
+export function getStaticPaths() {
+	return getI18nStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+const labels = archiveLabels[lang];
+const allPosts = await getCollection('blog');
+const posts = getPublishedPosts(allPosts, lang);
+const totalPages = getPageCount(posts.length, BLOG_PAGE_SIZE);
+const alternateLinks = getArchiveLocaleLinks(allPosts, 1, Astro.site?.origin ?? 'https://jangwook.net');
+const languageLinks = getArchiveSwitcherLinks(allPosts, 1, Astro.site?.origin ?? 'https://jangwook.net');
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<BaseHead
+			title={t('nav.blog')}
+			description={t('blog.description')}
+			alternateLinks={alternateLinks}
+		/>
+	</head>
+	<body>
+		<Header lang={lang} languageLinks={languageLinks} />
+		<main id="main-content" tabindex="-1" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+			<BlogArchive
+				lang={lang}
+				posts={getPagePosts(posts, 1, BLOG_PAGE_SIZE)}
+				allLocalizedPosts={posts}
+				page={1}
+				totalPages={totalPages}
+				totalPosts={posts.length}
+				labels={labels}
+				heading={t('nav.blog')}
+			/>
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>

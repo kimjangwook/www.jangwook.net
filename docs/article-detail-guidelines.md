@@ -1,0 +1,37 @@
+# 시리즈 상세 페이지 작성 원칙
+
+2026-10-02 사용자 승인. 모든 새 시리즈와 기존 시리즈 글을 작성·수정할 때 적용합니다.
+
+## 제목, 요약과 날짜
+
+제목은 글에서 설명할 항목이나 독자의 작업을 구체적으로 드러냅니다. 제목 바로 아래에 2~3문장의 요약을 제공합니다. 첫 문장은 무엇을 이해할 수 있는지, 다음 문장은 어떤 판단이나 실습을 준비할 수 있는지 설명합니다. 본문에서 제공하지 않는 성과, 자동 판정의 정확도, 인증, 순위 상승을 약속하지 않습니다. 원문과 예외, 가설과 실제 측정을 구분합니다.
+
+요약의 정본은 언어별 manifest.summary입니다. 화면 요약, meta description, og:description, JSON-LD description, 시리즈 목록과 RSS는 이 값을 공유하며 따로 작성해 어긋나지 않도록 합니다. 한국어 정본을 기준으로 영어·일본어·중국어 간체의 의미와 권고 강도를 보존합니다.
+
+초판 공개일은 첫 공개 기록인 firstPublishedAt을 유지하고, 최종 수정일은 updatedAt을 사용합니다. 글을 수정하거나 다시 승인해도 초판 공개일을 덮어쓰지 않습니다. 미공개 글에는 공개일을 만들지 않고 ‘공개 예정’으로 표시합니다. 날짜는 화면과 구조화 데이터, sitemap에서 일치시킵니다.
+
+## 전체 학습 목록과 현재 글의 목차
+
+전체 학습 목록은 기본적으로 접어둔 native details/summary 토글로 제공합니다. 토글에는 ‘전체 학습 순서’와 현재 글의 순서/전체 편수를 함께 표시합니다. 이 값은 읽은 글의 수나 학습 완료율이 아닙니다. 목록은 주제별로 묶고 원래 순서를 유지합니다.
+
+현재 글은 시각적으로 강조하고 링크에 aria-current=page를 제공합니다. 공개된 글과 ‘준비 중’ 문서를 문구로 구분하며 색상에만 의존하지 않습니다. 준비 중 글도 예정된 제목과 같은 URL로 연결합니다. 본문·프롬프트·승인 정보는 다른 글의 탐색용 데이터에 포함하지 않습니다.
+
+PC에서는 사이드바, 모바일에서는 요약과 날짜 아래에 같은 목록 컴포넌트를 배치합니다. 목록을 두 개 렌더링해 같은 링크와 랜드마크를 중복하지 않습니다. 목록의 스크롤 영역은 키보드로 조작할 수 있게 이름과 초점 접근을 제공하고, 열린 상태에서는 현재 항목을 확인하기 쉽게 합니다. native 토글은 JavaScript 없이도 열고 닫을 수 있어야 합니다.
+
+전체 시리즈 목록과 현재 글의 섹션 목차를 별도로 표시합니다. 모든 제목·상태·접근성 이름·목차·이전/다음 링크와 언어 선택기를 해당 언어로 제공합니다. 모바일의 읽기 순서는 제목 → 요약 → 날짜 → 학습 목록/현재 글 목차 → 본문 → 평가 프롬프트 → 이전/다음입니다.
+
+## JSON-LD와 검색 정보
+
+공개 승인된 글에만 BlogPosting을 출력하고 제목, 요약, 언어, canonical URL, datePublished, dateModified를 실제 콘텐츠와 맞춥니다. 각 글은 고유한 @id를 사용하며 isPartOf로 해당 CreativeWorkSeries를 참조합니다. 시리즈는 hasPart로 실제 공개 글을 참조합니다.
+
+전체 학습 순서는 ItemList의 ListItem.position으로 표현합니다. 현재 접근성 시리즈의 목록은 개요 + WCAG 2.2의 활성 86개 기준 + 마무리로 총 88편입니다. 준비 중 페이지도 실제로 존재하는 WebPage로 목록에 연결할 수 있지만 BlogPosting, 발행 날짜나 완성된 본문을 만들어 넣지 않습니다. 시리즈 허브는 CollectionPage로 학습 목록과 시리즈를 연결합니다. 개인 이름은 소개 페이지에서만 제공하는 기존 정책을 유지합니다.
+
+JSON-LD와 목록 링크는 SSR HTML에 포함합니다. 준비 중 페이지의 noindex,follow, 공개 글만 RSS/sitemap에 포함하는 정책, 언어별 canonical/hreflang, 기존 글 URL 보존을 유지합니다. 구조화 데이터 추가를 검색 순위나 별도 리치 결과 보장으로 설명하지 않습니다.
+
+참고: [CreativeWorkSeries](https://schema.org/CreativeWorkSeries), [ItemList](https://schema.org/ItemList), [isPartOf](https://schema.org/isPartOf), [Google Article 구조화 데이터](https://developers.google.com/search/docs/appearance/structured-data/article), [native details](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details).
+
+## 발행 전 확인
+
+네 언어에서 기본 접힘·펼침, 88개 링크의 순서와 현재 항목, 공개 상태, 본문·프롬프트 비노출, SSR JSON-LD와 화면 요약의 일치를 확인합니다. PC 1440px, 모바일 390/320px, 200% 글자 확대, 키보드 Enter/Space/Tab, JavaScript 비활성 환경과 axe를 점검합니다. 실제 접근성 트리에서 토글 이름·상태·목록 탐색 이름을 확인합니다.
+
+요약도 승인 해시에 포함됩니다. 요약을 수정하면 번역의 translationSourceHash와 각 언어 approvalHash를 현재 콘텐츠에 다시 묶습니다. 이번처럼 사용자가 구체적인 요약·화면 개선을 승인한 범위에서 처리하되, 본문의 주장이나 평가 결론 변경으로 범위를 넓히지 않습니다. 실제 배포 버전과 공개 URL을 확인한 뒤 완료를 알립니다.

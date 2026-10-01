@@ -1,0 +1,78 @@
+{
+  "date": "2026-07-03",
+  "completedDate": "2026-07-05",
+  "status": "completed",
+  "title": {
+    "ko": "번역 구조 드리프트 상환 캠페인",
+    "en": "Translation Drift Repayment Campaign",
+    "ja": "翻訳構造ドリフト返済キャンペーン",
+    "zh": "翻译结构漂移偿还行动"
+  },
+  "category": "Content",
+  "before": {
+    "metric": {
+      "ko": "언어 간 구조 불일치 슬러그",
+      "en": "Slugs with cross-language drift",
+      "ja": "言語間構造不一致スラッグ",
+      "zh": "跨语言结构不一致的slug"
+    },
+    "value": {
+      "ko": "21/50",
+      "en": "21/50",
+      "ja": "21/50",
+      "zh": "21/50"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "언어 간 구조 불일치 슬러그",
+      "en": "Slugs with cross-language drift",
+      "ja": "言語間構造不一致スラッグ",
+      "zh": "跨语言结构不一致的slug"
+    },
+    "value": {
+      "ko": "1 (수용된 레거시)",
+      "en": "1 (accepted legacy)",
+      "ja": "1（許容済みレガシー）",
+      "zh": "1（已接受的遗留）"
+    }
+  },
+  "impact": "-95%",
+  "impactType": "positive",
+  "effort": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高",
+    "zh": "高"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高",
+    "zh": "高"
+  },
+  "description": {
+    "ko": "번역에서 탈락한 섹션 40여 개·다이어그램 12개를 4개 언어에 복원하고, 드리프트 감지를 빌드 검증에 상설화. ko 렌더링 파손(중첩 코드펜스)도 발견·수리",
+    "en": "Restored ~40 dropped sections and 12 diagrams across four languages, made drift detection a permanent build check, and found/fixed a ko rendering break caused by nested code fences",
+    "ja": "翻訳で脱落した約40セクション・12ダイアグラムを4言語に復元し、ドリフト検知をビルド検証に常設化。ネストされたコードフェンスによるko版の描画破損も発見・修理",
+    "zh": "在四种语言中恢复了约40个被丢弃的章节和12张图表，将漂移检测常设为构建校验，并发现修复了嵌套代码围栏导致的韩语版渲染损坏"
+  },
+  "lessons": {
+    "ko": [
+      "측정 이상치는 작업 전에 측정 방법부터 검산 (코드펜스 오염이 최대 드리프트의 실체였음)",
+      "코드 섹션 복원은 공통 템플릿 + 문자열 파라미터로 언어 간 2차 드리프트 차단"
+    ],
+    "en": [
+      "Audit the metric before attacking an outlier (code-fence pollution was most of the largest 'drift')",
+      "Restore code sections via a shared template with string params to prevent secondary drift"
+    ],
+    "ja": [
+      "外れ値はまず測定方法を検算（コードフェンス汚染が最大ドリフトの実体だった）",
+      "コード復元は共通テンプレート+文字列パラメータで二次ドリフトを防止"
+    ],
+    "zh": [
+      "先核对度量方法再处理异常值（最大漂移的实体是代码围栏污染）",
+      "用共享模板+字符串参数恢复代码章节，防止二次漂移"
+    ]
+  }
+}

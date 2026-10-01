@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-01",
+  "scope": "Local rebuild, complete accessibility drafts, quiet modern redesign, preserved archive URLs and SSR/SEO/A11y/GEO verification",
+  "framework": "SvelteKit + Cloudflare Workers + D1",
+  "content": {
+    "posts": 88,
+    "criterionPosts": 86,
+    "prompts": 88,
+    "levels": {
+      "A": 31,
+      "AA": 24,
+      "AAA": 31
+    },
+    "published": 0,
+    "drafts": 88,
+    "bodyCharacters": 221527,
+    "promptCharacters": 135554,
+    "errors": []
+  },
+  "browser": {
+    "screens": 45,
+    "flows": [
+      "keyboard skip link",
+      "keyboard focus demo",
+      "prompt search",
+      "level filter",
+      "200% text resize",
+      "on-demand original Mermaid diagram",
+      "no-JS article and form submission",
+      "captured mail → all-prompts download → explicit subscription verification → unsubscribe"
+    ],
+    "errors": []
+  },
+  "worker": {
+    "checks": 19,
+    "errors": []
+  },
+  "types": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "d1Tests": {
+    "passed": 10,
+    "failed": 0
+  },
+  "build": "passed",
+  "wranglerDryRun": {
+    "passed": true,
+    "uploadKiB": 3471.92,
+    "gzipKiB": 589.32
+  },
+  "remoteDeployment": false,
+  "externalMailSent": false,
+  "remoteDatabaseProvisioned": false,
+  "agenticAuditExecutorImplemented": false,
+  "paymentsImplemented": false,
+  "archive": {
+    "originalLiveURLs": 1424,
+    "articles": 1424,
+    "urlChecks": 1424,
+    "checks": [
+      "Original article URLs present in sitemap; new drafts excluded",
+      "New RSS excludes archived articles",
+      "SSR content and canonical: /",
+      "SSR content and canonical: /series",
+      "SSR content and canonical: /prompts",
+      "SSR content and canonical: /archive",
+      "SSR content and canonical: /about",
+      "SSR content and canonical: /resources/accessibility",
+      "Article schema, language alternates and heading anchors: ko",
+      "Article schema, language alternates and heading anchors: en",
+      "Article schema, language alternates and heading anchors: ja",
+      "Article schema, language alternates and heading anchors: zh",
+      "Legacy pagination URLs preserved at original 12 posts per page",
+      "Unknown URL returns actual 404",
+      "No-JS archive search → original URL → full article",
+      "No-JS archive pagination"
+    ],
+    "errors": [],
+    "unpublishedLocalSourcesExcluded": 16
+  },
+  "ssr": {
+    "enabled": true,
+    "prerender": false,
+    "verifiedWithRawHTML": true,
+    "verifiedWithoutJavaScript": true
+  },
+  "design": "Quiet modern knowledge library — white/charcoal, self-hosted Noto Sans KR, modular content layout",
+  "lastVerifiedAt": "2026-10-01T00:14:47.159Z"
+}

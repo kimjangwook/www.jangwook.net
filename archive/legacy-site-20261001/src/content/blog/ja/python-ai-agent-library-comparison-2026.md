@@ -1,0 +1,413 @@
+---
+title: Python AIエージェントライブラリ比較 — Pydantic·Instructor·Smolagents
+description: >-
+  Pydantic
+  AI、Instructor、Smolagentsを実際のベンチマークコードで比較。構造化出力、エージェントアーキテクチャ、プロダクション準備度、コスト効率の4軸でどのプロジェクトに何を使うべきか明確な判断基準を提示します。
+pubDate: '2026-04-20'
+heroImage: ../../../assets/blog/python-ai-agent-library-comparison-2026-hero.jpg
+tags:
+  - python
+  - pydantic-ai
+  - instructor
+  - smolagents
+relatedPosts:
+  - slug: pydantic-ai-type-safe-agent-tutorial-2026
+    score: 0.9
+    reason:
+      ko: Python 주제를 한 단계 더 깊이 파고드는 글입니다.
+      en: Goes one level deeper into Python.
+      ja: Pythonをもう一歩深く掘り下げた記事です。
+      zh: 更深入地探讨 Python 主题。
+  - slug: fastmcp-python-mcp-server-build-guide-2026
+    score: 0.85
+    reason:
+      ko: Python를 실제로 다뤄본 경험이 이어지는 글입니다.
+      en: Continues the hands-on Python experience.
+      ja: Pythonを実際に扱った経験が続く記事です。
+      zh: 延续 Python 的实战经验。
+  - slug: fastapi-claude-api-streaming-production-guide-2026
+    score: 0.8
+    reason:
+      ko: 같은 Python 흐름에서 함께 읽으면 좋습니다.
+      en: Worth reading alongside this in the same Python track.
+      ja: 同じPythonの流れで併せて読むと役立ちます。
+      zh: 在同一 Python 脉络中可一并阅读。
+faq:
+  - question: Pydantic AI、Instructor、Smolagentsのどれを使うべきですか？
+    answer: >-
+      3つのライブラリは異なるレイヤーを扱うため競合関係ではありません。単一のLLM呼び出しで構造化抽出だけが必要ならInstructor、型安全なエージェントループが必要ならPydantic
+      AI、コード実行エージェントが必要ならSmolagentsを選んでください。
+  - question: 型安全性が最も重要な場合はどのライブラリが良いですか？
+    answer: >-
+      Pydanticチームが作ったPydantic
+      AIが最適です。Pythonの型ヒントをエージェント設計の中心に置き、ツールを型安全に定義し、依存性注入でテスト可能な構造を作ります。ただしまだv0.xのため、破壊的変更のリスクは受け入れる必要があります。
+  - question: 今すぐプロダクションで使って安全なのはどれですか？
+    answer: >-
+      Instructorが最も実績があります。月間ダウンロード300万回、GitHubスター11k以上で、最も多くのプロダクション検証を経ています。Pydantic
+      AIはv0.x、Smolagentsは実験的段階のため、導入には慎重さが必要です。
+  - question: Smolagentsのコード生成方式はなぜ有利なのですか？
+    answer: >-
+      HuggingFaceのベンチマークによると、JSONツール呼び出しと比べてLLM呼び出しが約30%減少します。複数のツールを順番に呼び出す際、毎回LLMに尋ねずコード1回で処理するためです。ただしコード品質はモデル性能に大きく依存するため、GPT-4oやClaude
+      Sonnet以上を推奨します。
+---
+
+先月、新しいプロジェクトを始めるにあたって一つの決断を迫られた。PythonでLLMベースのエージェントを構築するのだが、どのライブラリを使うべきか。LangGraph、CrewAIといった重厚なオーケストレーションフレームワークはすでに把握していた。問題はそれより一段下のレイヤーだった。LLMの呼び出しを直接制御したいが生のOpenAI SDKでは煩わしすぎる、その隙間を埋めるライブラリが2025〜2026年にかけて急成長したのだ。
+
+Pydantic AI、Instructor、Smolagents。3つのライブラリを実際に使った結果をまとめる。
+
+## まずレイヤーを整理しよう：この3つは競合しない
+
+最初に押さえておきたいのは、この3つのライブラリが異なるレイヤーを担当しているという点だ。
+
+- **Instructor**: LLMクライアントを「パッチ」してPydanticオブジェクトで構造化出力を保証するレイヤー。エージェントループはない。
+- **Pydantic AI**: ツール呼び出し、依存性注入、マルチエージェントを含む型安全なエージェントフレームワーク。Pydanticチームが開発。
+- **Smolagents**: HuggingFaceのコード生成エージェントフレームワーク。JSONのツール呼び出しの代わりにPythonコードを生成して実行する。
+
+したがって「どれが最も優れているか」ではなく「自分の状況に何が合っているか」が正しい問いだ。それを明らかにするのがこの記事の目的だ。
+
+## Instructor：LLMクライアントを変えず、パッチせよ
+
+### 思想
+
+Instructorは既存のLLMクライアント（OpenAI、Anthropic、Geminiなど）を新しいSDKで置き換えない。代わりに`instructor.from_openai(client)`の1行で「パッチ」して、`response_model`パラメータを追加する。
+
+```python
+import instructor
+from openai import OpenAI
+from pydantic import BaseModel
+
+client = instructor.from_openai(OpenAI())
+
+class UserProfile(BaseModel):
+    name: str
+    age: int
+    skills: list[str]
+
+profile = client.chat.completions.create(
+    model="gpt-4o-mini",
+    response_model=UserProfile,
+    messages=[{"role": "user", "content": "田中太郎、30代、PythonとGoのエンジニア"}]
+)
+# profileはUserProfileインスタンス。Pydantic検証済み。
+print(profile.name)  # "田中太郎"
+```
+
+検証が失敗した場合、エラーメッセージと共にモデルへ自動で再リクエストする。`max_retries`パラメータで最大リトライ回数を調整できる。
+
+### メリット
+
+**1. 学習コストがほぼゼロ。** すでにOpenAI SDKを使っているなら`instructor.from_openai()`の1行を加えるだけだ。新しいパラダイムを習得する必要はない。
+
+**2. マルチプロバイダーのサポートが充実。** OpenAI、Anthropic、Google Gemini、Mistral、Cohere、Ollama、DeepSeekを含む15以上のプロバイダーをサポート。プロバイダーを変えてもコード構造がほぼそのままだ。
+
+**3. 構造化抽出の信頼性が高い。** 月間ダウンロード数300万件、GitHub スター11k+。プロダクションで検証されたライブラリだ。複雑なネストスキーマ、リスト抽出、ユニオン型もすべて処理できる。
+
+**4. ストリーミング対応。** `Iterable[Model]`で型を指定すれば、構造化されたオブジェクトをストリーミングで受け取れる。
+
+### 率直な限界
+
+Instructorはエージェントフレームワークではない。繰り返しループもツール呼び出しもメモリ管理も存在しない。単一のLLM呼び出しで構造化データを取り出すこと、その一点に特化している。エージェントループが必要なら他の選択肢を検討するべきだ。
+
+また、検証失敗時のリトライコストは全て呼び出し元が負担する。モデルが繰り返し誤ったフォーマットを返すと、コストが想定以上に膨らむ可能性がある。複雑なネストスキーマでリトライが3〜5回発生するケースを私も実際に経験した。`max_retries`を1〜2に制限し、それでも失敗した場合のフォールバックロジックを用意するのが現実的だ。
+
+## Pydantic AI：型安全なエージェントを求めるなら
+
+### 思想
+
+Pydantic AIはPydanticチームが直接開発したエージェントフレームワークだ。Pythonの型ヒントをエージェント設計の核心に置く。ツールを型安全に定義し、依存性注入（Dependency Injection）で外部サービスをエージェントに接続する。
+
+```python
+from pydantic_ai import Agent
+from pydantic_ai.models.openai import OpenAIModel
+from pydantic import BaseModel
+import httpx
+
+# エージェントが返す型を定義
+class ResearchResult(BaseModel):
+    summary: str
+    sources: list[str]
+    confidence: float
+
+model = OpenAIModel("gpt-4o")
+agent = Agent(model, output_type=ResearchResult)
+
+# ツールを型安全に登録
+@agent.tool
+async def fetch_url(ctx, url: str) -> str:
+    """指定されたURLのコンテンツを取得する"""
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url)
+        return response.text[:2000]
+
+result = await agent.run("Python 3.13の新機能を調べて")
+print(result.output.confidence)  # 0.0〜1.0の範囲、検証済み
+```
+
+### 依存性注入の魅力
+
+Pydantic AIで私が最も気に入ったのは依存性注入パターンだ。データベース接続、HTTPクライアント、APIキーなどをエージェントの初期化時に注入できるため、テストが容易になる。
+
+```python
+from dataclasses import dataclass
+from pydantic_ai import Agent, RunContext
+
+@dataclass
+class AppDeps:
+    db: Database
+    http_client: httpx.AsyncClient
+
+agent = Agent(model, deps_type=AppDeps, output_type=str)
+
+@agent.tool
+async def query_user(ctx: RunContext[AppDeps], user_id: int) -> dict:
+    # ctx.deps.db、ctx.deps.http_clientでアクセス
+    return await ctx.deps.db.get_user(user_id)
+```
+
+テスト時に`AppDeps`にモックオブジェクトを渡せば、LLM呼び出しなしでツールのロジックを検証できる。このような構造的アプローチがプロダクションのコードベースで真価を発揮する。
+
+### 5つの出力モード
+
+Pydantic AIは構造化出力のために5つのモードを提供する：
+
+| モード | 説明 | 使用タイミング |
+|--------|------|--------------|
+| `text` | 通常のテキスト返却 | 自由形式の回答 |
+| `tool` | ツール呼び出しで構造化（デフォルト） | ほとんどの場合 |
+| `native` | モデルネイティブのstructured output | OpenAI o1、GPT-4o |
+| `prompted` | システムプロンプトで誘導 | ツール非対応モデル |
+| `auto` | モデルの機能に応じて自動選択 | 推奨デフォルト値 |
+
+### 率直な限界
+
+まだv1.0ではない。急速に変化するAPIがプロダクション導入をためらわせる理由だ。0.x系バージョンということはbreaking changeがいつでも来る可能性があることを意味する。Pydanticチームの品質基準は信頼しているが、急ぐよりも安定化を見届ける方が賢明だと考える。
+
+また、マルチエージェントシナリオはまだ制限がある。複雑なオーケストレーションが必要なら、LangGraphの上でPydantic AIを構造化出力レイヤーとしてのみ使う組み合わせの方が現実的だ。上位レイヤーのフレームワーク選定で迷うなら、まず[Google ADK vs LangGraph エージェントフレームワーク比較](/ja/blog/ja/google-adk-vs-langgraph-agent-framework-comparison-2026/)を読んでおくと役立つ。Pydantic AI自体を深く掘り下げる実践は[Pydantic AI 型安全エージェントチュートリアル](/ja/blog/ja/pydantic-ai-type-safe-agent-tutorial-2026/)で段階的に扱っている。
+
+## Smolagents：LLMにコードを書かせよ
+
+### 思想
+
+Smolagentsは最もユニークなアプローチを取る。一般的なエージェントは「どのツールをどの引数で呼び出すか」をJSONで決定する。SmolAgentsのCodeAgentは代わりに**Pythonコードを直接生成して実行**する。
+
+```python
+from smolagents import CodeAgent, DuckDuckGoSearchTool
+from smolagents.models import LiteLLMModel
+
+model = LiteLLMModel(model_id="gpt-4o")
+agent = CodeAgent(
+    tools=[DuckDuckGoSearchTool()],
+    model=model
+)
+
+result = agent.run(
+    "2026年のPython 3.14の主要変更点を調べてまとめて"
+)
+```
+
+エージェントが実行するのは`{"tool": "search", "query": "Python 3.14"}`のようなJSONではなく：
+
+```python
+results = web_search("Python 3.14 changes 2026")
+summary = "\n".join([r["snippet"] for r in results[:3]])
+final_answer(summary)
+```
+
+のような実際のPythonコードだ。
+
+### コード生成が有利な理由
+
+HuggingFaceチームのベンチマークによれば：
+- 従来のJSONツール呼び出しと比較して**LLM呼び出しを約30%削減**。複数のツールを順次呼び出す際に毎回LLMへ問い合わせず、コードで一括処理する
+- GAIAベンチマークでGPT-4o使用時**44.2%達成**（当時の検証セット1位）
+- コードで条件分岐、ループ、エラー処理を直接表現可能
+
+### コアの設計：1,000行のコード
+
+smolagentsのコアロジックは約1,000行だ。これは意図的な設計決定だ。フレームワークを理解・修正しやすく、不要な抽象化なしに作られている。研究チームやフレームワークの内部を深く掘り下げる必要がある場合に、この点が大きな利点となる。
+
+### 率直な限界
+
+コード実行はセキュリティリスクを伴う。`CodeAgent`はデフォルトで`E2BSandbox`や`LocalPythonInterpreter`を使うが、プロダクションでユーザー入力がエージェントを通じてコード実行に影響を与える可能性があるなら、サンドボックス化を必ず検討しなければならない。
+
+また、オープンソースモデルを使用する場合はコード品質が大きく変わる。GPT-4oやClaude Sonnet相当のモデルでは問題なく動くが、7B以下のモデルではコードにバグが混入するケースが多い。これがSmolagentsの最大の限界だと私は考える。モデル品質への依存度がInstructorやPydantic AIよりはるかに高いのだ。
+
+[プロダクション品質のAIエージェント設計原則](/ja/blog/ja/dena-llm-study-part5-agent-design/)では、エージェントシステムの全体アーキテクチャを設計する観点からこれらのパターンを解説している。エージェントシステム全体を設計する際に合わせて読むことをお勧めする。
+
+## 3つのライブラリ総合比較表
+
+| 項目 | Instructor | Pydantic AI | Smolagents |
+|------|-----------|-------------|------------|
+| **核心目的** | 構造化抽出 | 型安全エージェント | コード生成エージェント |
+| **エージェントループ** | ❌ | ✅ | ✅ |
+| **構造化出力** | ✅ コア機能 | ✅ 出力モード5種 | ⚠️ 部分サポート |
+| **マルチプロバイダー** | ✅ 15以上 | ✅ 主要プロバイダー | ✅ LiteLLM経由 |
+| **型安全性** | ✅ Pydantic | ✅✅ 完全型付け | ⚠️ 限定的 |
+| **コード実行** | ❌ | ❌ | ✅ コア機能 |
+| **学習コスト** | 低い | 中程度 | 中程度 |
+| **プロダクション準備度** | ✅ 高い | ⚠️ v0.x | ⚠️ 実験的 |
+| **マルチエージェント** | ❌ | ⚠️ 基本サポート | ⚠️ 限定的 |
+| **コア複雑度** | 低い | 中程度 | 低い（1,000行） |
+| **月間DL数** | 300万+ | 急成長中 | 急成長中 |
+
+## シナリオ別判断ガイド
+
+### Instructorを選ぶべき時
+
+- **すでにOpenAI/Anthropic SDKを使っており**、構造化出力だけが必要な場合
+- エージェントループなしで単一のLLM呼び出しからPydanticオブジェクトを取り出す必要がある場合
+- プロダクションの安定性が最優先の場合（300万DLの実績あり）
+- チームがすでに使っているSDKの知識をそのまま活用したい場合
+
+### Pydantic AIを選ぶべき時
+
+- エージェントのロジックを**型安全に**設計したい場合
+- 依存性注入でテスト可能なコード構造を求める場合
+- チームがPydanticに慣れており、同じパラダイムでエージェントも作りたい場合
+
+ただし、まだv1.0ではないのでbreaking changeのリスクは受け入れなければならない。私の判断では、新規プロジェクトなら試す価値がある。既存のプロダクションコードのマイグレーションはまだ時期尚早だ。
+
+### Smolagentsを選ぶべき時
+
+- **コード実行エージェント**が必要で、セキュリティサンドボックスを処理できる場合
+- 複数のツールを順次連結する複雑なワークフローを実装する場合
+- フレームワークの内部を理解しカスタマイズする必要がある場合
+- オープンソースモデルをローカルで実行してエージェントの実験をする場合
+
+重要な前提：**GPT-4oまたはClaude Sonnet以上のモデルを使用すること。** コード生成品質がエージェントのパフォーマンスを左右するためだ。
+
+## 実践的な組み合わせパターン
+
+3つのライブラリは一緒に使うこともできる。実際に私は同一プロジェクトで3つすべてを使うアーキテクチャを運用中だ。
+
+<strong>パターン1: Instructor + LangGraph</strong>
+- LangGraphが状態とフローを管理
+- Instructorが各ノードのLLM呼び出しで構造化出力を保証
+
+```python
+from langgraph.graph import StateGraph
+import instructor
+
+client = instructor.from_anthropic(anthropic_client)
+
+def analyze_node(state):
+    result = client.messages.create(
+        model="claude-sonnet-4-6",
+        response_model=AnalysisResult,
+        messages=[...]
+    )
+    return {"analysis": result}
+```
+
+この組み合わせが実用的な理由：LangGraphはエラー復旧・条件分岐・チェックポイント（状態保存）に強い。一方Instructorは「LLM出力を信頼できるPydanticオブジェクトへ変換する」ことに集中する。二つの関心事を分離すれば各レイヤーが単純になる。
+
+<strong>パターン2: Pydantic AI + Instructor</strong>
+- Pydantic AIがエージェントループとツール管理
+- 特定のツール内でInstructorを使い、複雑なネスト構造を抽出
+
+この組み合わせが合う状況：Pydantic AIのネイティブ出力モードで扱いにくい非常に複雑なスキーマ（5段階以上のネスト、条件付きフィールド）があるとき、そのツールの中だけでInstructorを使う選択をする。
+
+<strong>パターン3: Smolagents単独</strong>
+- リサーチ・分析・コード実行が必要な独立エージェント
+- E2Bサンドボックスでコード実行を隔離
+
+E2Bサンドボックス設定の例：
+
+```python
+from smolagents import CodeAgent, DuckDuckGoSearchTool
+from smolagents.models import LiteLLMModel
+from e2b_code_interpreter import Sandbox
+
+# E2Bサンドボックスで実行を隔離
+agent = CodeAgent(
+    tools=[DuckDuckGoSearchTool()],
+    model=LiteLLMModel(model_id="gpt-4o"),
+    executor_type="e2b",  # 隔離されたクラウドVMで実行
+)
+```
+
+E2Bはコードを隔離されたクラウドVMで実行するため、ローカルのファイルシステムや環境に影響を与えない。プロダクションでユーザー指定のクエリをエージェントに渡す状況なら、この設定は事実上必須だ。
+
+## テスト戦略の比較
+
+3つのライブラリはテストのアプローチが異なる。チームのテスト文化によって好みが分かれうる。
+
+<strong>Instructor</strong>：単体テストが容易だ。`response_model`に指定したPydanticモデルを個別に検証すればよい。LLM応答をmockに置き換えてリトライロジックもテストできる。
+
+```python
+# Instructor単体テスト — LLMのmockで高速に
+from unittest.mock import MagicMock
+
+mock_response = UserProfile(name="テスト", age=25, skills=["Python"])
+mock_client = MagicMock()
+mock_client.chat.completions.create.return_value = mock_response
+
+result = process_user(mock_client, "テスト入力")
+assert result.name == "テスト"
+```
+
+<strong>Pydantic AI</strong>：依存性注入のおかげで統合テストが構造的にきれいだ。`RunContext`にmock依存を注入し、LLMなしでツールロジックを検証する。
+
+<strong>Smolagents</strong>：エージェント全体のテストが中心になる。コード生成の結果が変わりうるため、単体テストより「エージェントが望む結果を出すか」を検証するエンドツーエンドテストが現実的だ。
+
+プロダクションAIエージェントの設計原則ではこうしたパターンを上位アーキテクチャの観点から扱っているので、エージェントシステム全体の設計を考える読者に薦める。
+
+## この3つのライブラリでも足りないとき
+
+3つすべてを見てきたが、これらが解決できない領域もある。
+
+<strong>分散エージェントシステム</strong>：複数マシンにエージェントをデプロイし、メッセージキューで作業を分配し、インフラレベルの耐久実行（durable execution）が必要なら、Dapr Agentsのようなインフラレイヤーを検討すべきだ。InstructorやSmolagentsはこのレイヤーを扱わない。
+
+<strong>マルチエージェント協業</strong>：10個以上のエージェントが共有状態を持って役割分担するシナリオなら、CrewAIやLangGraphの体系的なオーケストレーションが必要だ。Pydantic AIのマルチエージェント対応は、この複雑度を扱うにはまだ十分ではない。
+
+<strong>長時間実行ワークフロー</strong>：時間単位・日単位で実行されるワークフロー、中間状態をチェックポイントとして保存すべき作業には、LangGraphのpersistence機能やTemporalのようなワークフローエンジンが適する。
+
+この3つのライブラリは「LLMレイヤーに近い作業」に最適化されている。インフラレベルのエージェントシステムを構築するなら、これらを構成要素として活用しつつ、上位アーキテクチャは別途設計すべきだ。
+
+一つ現実的なアドバイス：最初から3つすべてを導入しようとしないこと。チームが新しいパラダイムに適応するにも時間がかかる。まずInstructor一つで「LLM構造化出力」の問題を解決し、エージェントループが必要になったらPydantic AIを追加し、コード実行が必要な特殊タスクが出てきたらそのときSmolagentsを検討する。この段階的アプローチが保守負担を減らす。
+
+## 私の結論: 状況に応じて3つ全部使う
+
+率直に言うと、私はこの3つのライブラリを全て使っている。それぞれ得意なことが違うからだ。
+
+**Instructor**は今すぐプロダクションで使っても安全だ。LLMのレスポンスから構造化データを取り出す必要がある時に毎回取り出すツールだ。
+
+**Pydantic AI**は方向性が正しく興味深い。まだv0.xというリスクはあるが、新しいプロジェクトのエージェントレイヤーとして実験中だ。v1.0がリリースされたら本格的にメインで使う予定だ。
+
+**Smolagents**はコード実行エージェントが必要な特定の状況で取り出す。ただし、モデルへの依存度が高く、プロダクションインフラを自前で構築するコストを考慮しなければならない。
+
+「どれが最も優れているか」と問われれば、私の答えはこうだ。構造化抽出が必要ならInstructor、型安全なエージェントループが必要ならPydantic AI、コード実行エージェントが必要ならSmolagents。それだけだ。
+
+[AIエージェントのコストの現実](/ja/blog/ja/ai-agent-cost-reality/)も参考になる。どのライブラリを使ってもモデルの選択によってコストは大きく変わる。特にInstructorのリトライコストやSmolagentsのコード生成ループのコストを事前に見積もる際に役立つ。
+
+## いつ使い、いつ避けるべきか
+
+ライブラリを選ぶとき、「使える」と「今すぐ使うべき」は別の問題だ。3つそれぞれについて、導入を勧める状況と見送るべき状況を整理する。
+
+### Instructor
+
+**使うと良い場合。** すでにOpenAIやAnthropicのSDKを使っていて、レスポンスを検証済みのPydanticオブジェクトで受け取りたいとき。単一呼び出しの抽出、フォーム自動補完、RAGパイプラインのクエリ分類のように、エージェントループが不要な作業。プロダクションの安定性を最優先するチーム。
+
+**避けるべき場合。** ツール呼び出し、メモリ、反復ループが必要な本物のエージェントを作るとき。Instructorはそのレイヤーを扱わないため、無理に当てはめるとかえってコードが煩雑になる。また複雑なネストスキーマでリトライが頻発するとコストが予測不能になるため、そのワークロードでは`max_retries`を制限しfallbackを先に設計すべきだ。
+
+### Pydantic AI
+
+**使うと良い場合。** 新規プロジェクトで型安全なエージェントループが欲しいとき。チームがすでにPydanticに慣れていて、依存性注入でテスト可能な構造を作りたいとき。breaking changeを受け入れる余裕がある実験段階。
+
+**避けるべき場合。** すでに安定稼働しているプロダクションコードを移行しようとするとき。まだv0.xのため、APIが変わればそのコストをそのまま負う。10以上のエージェントの複雑なオーケストレーションが必要なら、マルチエージェント対応がまだ不足しているのでLangGraphのような上位レイヤーを先に検討すべきだ。
+
+### Smolagents
+
+**使うと良い場合。** コード実行エージェントが必要で、サンドボックス化（E2Bなど）を処理できるとき。複数のツールを順次つなぐワークフロー。フレームワーク内部を読んで修正する研究的な作業。GPT-4oやClaude Sonnet相当のモデルを使える環境。
+
+**避けるべき場合。** 7B以下の小型モデルしか使えないとき。コード品質がモデル性能に直結するため、バグ混じりのコードが実行されるリスクが高まる。ユーザー入力が直接コード実行につながるのにサンドボックス化を保証できない環境。エンタープライズSLAや長期安定性を要求するサービス。認証、レート制限、ロギングなどのインフラを自前で作る余力がないチーム。
+
+## 一次情報源と公式ドキュメント
+
+本記事の技術的な主張は、各ライブラリの公式ドキュメントとリポジトリを根拠としている。直接確認したい場合は、以下から出発するのが最も正確だ。
+
+- **Pydantic AI 公式ドキュメント**: <https://ai.pydantic.dev> — 出力モード、依存性注入、ツール定義など本記事で扱った機能の一次情報源。
+- **Instructor 公式ドキュメント**: <https://python.useinstructor.com> — `response_model`によるパッチ方式、リトライ、マルチプロバイダー対応の公式リファレンス。
+- **Smolagents リポジトリ（HuggingFace）**: <https://github.com/huggingface/smolagents> — CodeAgentの設計思想、約1,000行のコア、サンドボックス実行環境に関する原本コードとドキュメント。
+
+ベンチマーク数値（GAIAスコア、LLM呼び出し削減率など）はHuggingFaceの公式ブログとリポジトリのREADMEに基づいており、時点により更新される可能性があるため、導入前に最新の数値を再確認することを勧める。

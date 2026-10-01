@@ -1,0 +1,1 @@
+import {isPreview} from '$lib/server/content';export const GET=({url}:{url:URL})=>new Response(isPreview(url)?'User-agent: *\nDisallow: /\n':'User-agent: *\nAllow: /\nDisallow: /dev/\nDisallow: /confirm/\nDisallow: /downloads/\nDisallow: /unsubscribe/\nSitemap: https://jangwook.net/sitemap.xml\n',{headers:{'Content-Type':'text/plain'}});

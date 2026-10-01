@@ -1,0 +1,15 @@
+{
+  "typecheck": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "unitTests": 18,
+  "builtWorker": true,
+  "productionDryRun": true,
+  "legacyURLs": 1424,
+  "seriesURLs": 352,
+  "homeAxePages": 12,
+  "seriesAxePages": 48,
+  "accessibleNamePages": 20,
+  "errors": []
+}

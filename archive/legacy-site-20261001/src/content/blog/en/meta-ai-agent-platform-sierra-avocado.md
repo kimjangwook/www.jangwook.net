@@ -1,0 +1,217 @@
+---
+title: 'Meta''s AI Agent Platform Transformation'
+description: >-
+  Meta is shifting from social media to AI agent platform: Sierra partnerships,
+  Avocado model, Big Brain reasoning, and what it all means for developers.
+pubDate: '2026-02-10'
+heroImage: ../../../assets/blog/meta-ai-agent-platform-sierra-avocado-hero.png
+tags:
+  - meta
+  - ai-agent
+  - sierra
+  - avocado
+  - big-brain
+  - llama
+  - platform
+relatedPosts:
+  - slug: enterprise-ai-adoption-topdown
+    score: 0.95
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ai-agent-persona-analysis
+    score: 0.94
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: anthropic-agent-skills-standard
+    score: 0.94
+    reason:
+      ko: '자동화, AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: 自動化、AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: >-
+        Covers similar topics in automation, AI/ML, architecture with comparable
+        difficulty.
+      zh: 在自动化、AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: ccc-vs-gcc-ai-compiled-c-compiler
+    score: 0.94
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+  - slug: data-driven-pm-framework
+    score: 0.94
+    reason:
+      ko: 'AI/ML, 아키텍처 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.'
+      ja: AI/ML、アーキテクチャ分野で類似したトピックを扱い、同程度の難易度です。
+      en: 'Covers similar topics in AI/ML, architecture with comparable difficulty.'
+      zh: 在AI/ML、架构领域涵盖类似主题，难度相当。
+---
+
+## Overview
+
+Meta is attempting a major pivot from a social media company to an <strong>AI agent platform company</strong>. This strategy, which accelerated from late 2025, can be summarized in three key terms: <strong>Sierra</strong> for external agent partnerships, <strong>Avocado</strong> as the internal codename for the next-generation frontier model, and <strong>Big Brain</strong> representing advanced reasoning capabilities.
+
+In this article, we analyze how Meta's AI strategy is evolving and what it means for developers and businesses. For context on enterprise AI agent adoption trends, see our [Top-Down Enterprise AI Adoption](/en/blog/en/enterprise-ai-adoption-topdown/) guide.
+
+## From Llama to Avocado — A Strategic Pivot
+
+### From Open Source to Proprietary
+
+Meta had long positioned itself as a leader in <strong>open-source AI</strong> through its Llama model series. In 2024, Mark Zuckerberg predicted that Llama would become "the most advanced in the industry."
+
+However, the April 2025 release of Llama 4 fell short of developer expectations, triggering the strategic pivot. In July 2025, Zuckerberg stated, "We'll need to be careful about what we choose to open source," signaling a change in direction.
+
+### Avocado — The Next-Generation Frontier Model
+
+<strong>Avocado</strong> is the codename for Meta's next-generation frontier AI model. According to CNBC reporting, this model has the following characteristics:
+
+- <strong>Proprietary model</strong>: Unlike previous Llama releases, weights may not be publicly available
+- <strong>Developed at TBD Lab</strong>: An elite research organization led by Alexandr Wang, formerly of Scale AI
+- <strong>Planned for Q1 2026 release</strong>: Intensifying competition with OpenAI, Google, and Anthropic
+
+```mermaid
+graph LR
+    Llama["Llama Series<br/>(Open Source)"] -->|Strategic Pivot| Avocado["Avocado<br/>(Proprietary)"]
+    Avocado --> TBD["TBD Lab<br/>(Alexandr Wang)"]
+    Avocado --> MSL["Meta Superintelligence Labs"]
+    TBD --> BigBrain["Big Brain<br/>(Reasoning Engine)"]
+```
+
+## Sierra — External Agent Partnership
+
+### What is Sierra AI?
+
+Sierra AI is an AI agent startup founded by <strong>Bret Taylor</strong>, former Salesforce co-CEO and OpenAI board chair. It provides an enterprise AI agent platform with extensible capabilities that enable complex, regulated businesses to deploy agents quickly.
+
+### Meta × Sierra Synergy
+
+Meta's pursuit of a Sierra partnership holds significant strategic value:
+
+| Area | Meta's Strengths | Sierra's Strengths |
+|------|-----------------|-------------------|
+| <strong>User Base</strong> | 3B+ DAU | Enterprise customer network |
+| <strong>AI Models</strong> | Avocado/Llama | Agent orchestration |
+| <strong>Channels</strong> | WhatsApp, Messenger, Instagram | B2B communication |
+| <strong>Data</strong> | Social graph | Business processes |
+
+Meta is already processing over 1 million weekly conversations through <strong>Business AI</strong> on WhatsApp, with plans for further expansion.
+
+## Big Brain — Advanced Reasoning Engine
+
+### The Importance of Reasoning
+
+<strong>Big Brain</strong> reportedly refers to Meta AI's advanced reasoning capabilities. As demonstrated by OpenAI's o1/o3 series and Google's Gemini 3, <strong>deep reasoning</strong> capabilities beyond simple text generation are a core competitive advantage for AI agents.
+
+For agents to perform complex business tasks, they need:
+
+1. <strong>Multi-step planning</strong>: Breaking down complex requests into stages
+2. <strong>Tool use</strong>: Calling external APIs and services
+3. <strong>Situational judgment</strong>: Appropriate decision-making in edge cases
+4. <strong>Self-verification</strong>: Confirming accuracy of results
+
+Big Brain embeds these reasoning capabilities into the Avocado model, elevating Meta's agent ecosystem to the next level.
+
+```mermaid
+graph TD
+    User["User Request"] --> Agent["Meta AI Agent"]
+    Agent --> BigBrain["Big Brain<br/>(Reasoning Engine)"]
+    BigBrain --> Plan["Multi-step Planning"]
+    BigBrain --> Tool["Tool Calls<br/>(APIs/Services)"]
+    BigBrain --> Judge["Situational Judgment"]
+    Plan --> Execute["Execution"]
+    Tool --> Execute
+    Judge --> Execute
+    Execute --> Result["Return Results"]
+```
+
+## Meta's Agent Platform Strategy — The Full Picture
+
+Meta's AI agent platform strategy consists of three layers:
+
+### 1. Model Layer (Avocado + Big Brain)
+
+- Achieving performance superiority over competitors with a next-gen frontier model
+- Enhancing agent autonomy through reasoning capabilities
+
+### 2. Platform Layer (Sierra + Business AI)
+
+- Agent deployment through WhatsApp, Messenger, and Instagram
+- Enterprise agent SDK and API offerings
+- Global expansion of the Business AI assistant
+
+### 3. Application Layer
+
+- <strong>Ad optimization</strong>: AI-powered ad creative generation ($10B revenue run-rate for video generation tools in Q4 2025)
+- <strong>Content recommendations</strong>: 7% lift in organic feed views
+- <strong>Business messaging</strong>: Click-to-message ad revenue growth exceeding 50% YoY in the US
+
+```mermaid
+graph TB
+    subgraph "Application Layer"
+        Ads["Ad Optimization"]
+        Content["Content Recommendations"]
+        BizMsg["Business Messaging"]
+    end
+    subgraph "Platform Layer"
+        WhatsApp["WhatsApp"]
+        Messenger["Messenger"]
+        Instagram["Instagram"]
+        SierraP["Sierra Partnership"]
+    end
+    subgraph "Model Layer"
+        AvocadoM["Avocado Model"]
+        BigBrainM["Big Brain Reasoning"]
+    end
+    Ads --> WhatsApp
+    Content --> Instagram
+    BizMsg --> Messenger
+    WhatsApp --> AvocadoM
+    Messenger --> AvocadoM
+    Instagram --> AvocadoM
+    SierraP --> AvocadoM
+    AvocadoM --> BigBrainM
+```
+
+## Impact on Developers
+
+### Key Takeaways
+
+1. <strong>Agent API ecosystem</strong>: If Meta releases an agent SDK, it opens up agent development for 3 billion users
+2. <strong>WhatsApp Business Agents</strong>: Business AI, already live in Mexico and the Philippines, is set to expand globally
+3. <strong>Avocado model capabilities</strong>: With the proprietary shift, API-based access will likely be the primary integration method
+4. <strong>Sierra platform integration</strong>: Enterprise agent development can leverage Sierra's orchestration layer
+
+### Shifting Competitive Landscape
+
+| Company | Agent Strategy | Core Model |
+|---------|---------------|-----------|
+| <strong>Meta</strong> | Social platform-based agents | Avocado |
+| <strong>OpenAI</strong> | ChatGPT + Operator | o3/GPT-5 |
+| <strong>Google</strong> | Gemini + Android integration | Gemini 3 |
+| <strong>Anthropic</strong> | Claude + Agent Teams | Opus 4.6 |
+| <strong>Salesforce</strong> | Agentforce + CRM | Einstein |
+
+For a deep dive on Anthropic's agent standardization approach, see [Anthropic Agent Skills Standard](/en/blog/en/anthropic-agent-skills-standard/).
+
+## Conclusion
+
+Meta's AI agent platform transformation is not merely a technology shift — it's a <strong>fundamental restructuring of its business model</strong>. Built on the solid foundation of advertising revenue, this attempt to convert a platform with 3 billion users into agent infrastructure has the potential to reshape the AI industry.
+
+If this triangulated strategy succeeds — strengthening enterprise agent capabilities through Sierra, securing model competitiveness with Avocado, and elevating reasoning with Big Brain — Meta could establish itself as a <strong>powerhouse in AI agent platforms</strong>, transcending its social media origins.
+
+The Q1 2026 release of the Avocado model and the global expansion of Business AI will be the first test of this vision.
+
+## References
+
+- [CNBC: From Llamas to Avocados: Meta's shifting AI strategy](https://www.cnbc.com/2025/12/09/meta-avocado-ai-strategy-issues.html)
+- [Meta: 2026 AI Drives Performance](https://about.fb.com/news/2026/01/2026-ai-drives-performance/)
+- [Sierra AI: Year Two in Review](https://sierra.ai/blog/year-two-in-review)
+- [Gadgets360: Meta AI Could Get New Avocado Models, AI Agents](https://www.gadgets360.com/ai/news/meta-ai-avocado-models-ai-agents)

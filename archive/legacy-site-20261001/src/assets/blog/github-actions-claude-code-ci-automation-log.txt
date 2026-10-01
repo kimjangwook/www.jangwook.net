@@ -1,0 +1,10 @@
+=== Claude Code CI Sandbox Log — Thu Apr 30 15:27:20 JST 2026 ===
+Topic: GitHub Actions + Claude Code CI
+
+Validated artifacts:
+1. claude-pr-review.yml — 6-step PR review pipeline (YAML valid)
+2. nightly-audit.yml — scheduled code health audit (YAML valid)
+3. local-review.sh — local test script (bash syntax valid)
+
+Key CLI flags for CI use:
+  claude -p [prompt] --output-format text --max-budget-usd N --bare --no-session-persistence --dangerously-skip-permissions

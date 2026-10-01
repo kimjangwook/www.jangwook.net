@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-10-01T13:41:25.119Z",
+  "environment": "local Vite SSR, not production",
+  "archive": [
+    {
+      "lang": "ko",
+      "archiveArticles": 356,
+      "path": "/ko/blog/ko/ai-search-seo-accessibility-checklist/",
+      "status": 200,
+      "htmlLang": "ko",
+      "hreflang": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ]
+    },
+    {
+      "lang": "en",
+      "archiveArticles": 356,
+      "path": "/en/blog/en/ai-search-seo-accessibility-checklist/",
+      "status": 200,
+      "htmlLang": "en",
+      "hreflang": [
+        "en",
+        "ja",
+        "ko",
+        "zh"
+      ]
+    },
+    {
+      "lang": "ja",
+      "archiveArticles": 356,
+      "path": "/ja/blog/ja/ai-search-seo-accessibility-checklist/",
+      "status": 200,
+      "htmlLang": "ja",
+      "hreflang": [
+        "ja",
+        "en",
+        "ko",
+        "zh"
+      ]
+    },
+    {
+      "lang": "zh",
+      "archiveArticles": 356,
+      "path": "/zh/blog/zh/ai-search-seo-accessibility-checklist/",
+      "status": 200,
+      "htmlLang": "zh",
+      "hreflang": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ]
+    }
+  ],
+  "newSeries": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "status": 200,
+      "htmlLang": "ko",
+      "hreflang": [
+        "ko"
+      ]
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "status": 404,
+      "htmlLang": "ko",
+      "hreflang": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "status": 404,
+      "htmlLang": "ko",
+      "hreflang": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "status": 404,
+      "htmlLang": "ko",
+      "hreflang": []
+    }
+  ],
+  "findings": {
+    "newSeriesBodyLanguages": [
+      "ko"
+    ],
+    "newSeriesPromptLanguages": [
+      "ko"
+    ],
+    "figureTextLanguages": [
+      "ko"
+    ],
+    "figureAltCaptionLanguages": [
+      "ko"
+    ],
+    "newSeriesLanguageSwitcher": false,
+    "localizedSeriesRoutes": false,
+    "rootLayoutMetadataLanguage": "ko",
+    "archiveHeaderFooterLanguages": [
+      "ko"
+    ]
+  },
+  "requiredBeforeMultilingualRelease": [
+    "Translate reviewed canonical Korean body and prompt directly into en/ja/zh",
+    "Localize all figure labels, titles, descriptions, alt text and captions",
+    "Serve real locale routes and localize page navigation, html lang, metadata and schema",
+    "Add reciprocal canonical/hreflang only for existing approved translations",
+    "Bind each translated revision and figure identity to review approval; never silently serve Korean as a completed translation"
+  ],
+  "figureValidation": {
+    "checks": [
+      {
+        "width": 1440,
+        "overflow": false,
+        "figures": 4,
+        "fig03": "/images/series/accessibility/overview/image-context-82591aaef74a.svg"
+      },
+      {
+        "width": 390,
+        "overflow": false,
+        "figures": 4,
+        "fig03": "/images/series/accessibility/overview/image-context-82591aaef74a.svg"
+      }
+    ],
+    "axeViolations": []
+  }
+}

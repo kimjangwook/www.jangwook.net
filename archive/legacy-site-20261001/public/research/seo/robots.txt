@@ -1,0 +1,25 @@
+# robots.txt for Agent Effi Flow
+# https://agent-effi-flow.jangwook.net/robots.txt
+
+User-agent: *
+# Allow all public pages
+Allow: /
+Allow: /services/
+Allow: /pricing
+Allow: /legal/
+
+# Disallow authenticated/private sections
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /agents/
+Disallow: /login
+
+# Disallow admin and internal paths if they exist
+Disallow: /admin/
+Disallow: /_app/
+
+# Sitemap location
+Sitemap: https://agent-effi-flow.jangwook.net/sitemap.xml
+
+# Crawl-delay (optional - uncomment if needed)
+# Crawl-delay: 1

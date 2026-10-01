@@ -1,0 +1,78 @@
+{
+  "date": "2026-07-02",
+  "completedDate": "2026-07-02",
+  "status": "completed",
+  "title": {
+    "ko": "relatedPosts 무결성 3중 방어 구축",
+    "en": "Triple-Layer relatedPosts Integrity",
+    "ja": "relatedPosts整合性の三重防御",
+    "zh": "relatedPosts完整性三重防御"
+  },
+  "category": "SEO",
+  "before": {
+    "metric": {
+      "ko": "draft 참조 404 내부링크",
+      "en": "Broken internal links to drafts",
+      "ja": "draft参照の404内部リンク",
+      "zh": "指向草稿的404内链"
+    },
+    "value": {
+      "ko": "12개",
+      "en": "12",
+      "ja": "12個",
+      "zh": "12个"
+    }
+  },
+  "after": {
+    "metric": {
+      "ko": "draft 참조 404 내부링크",
+      "en": "Broken internal links to drafts",
+      "ja": "draft参照の404内部リンク",
+      "zh": "指向草稿的404内链"
+    },
+    "value": {
+      "ko": "0개 + 빌드 게이트",
+      "en": "0 + build gate",
+      "ja": "0個 + ビルドゲート",
+      "zh": "0个 + 构建门禁"
+    }
+  },
+  "impact": "404 → 0",
+  "impactType": "positive",
+  "effort": {
+    "ko": "중간",
+    "en": "Medium",
+    "ja": "中",
+    "zh": "中"
+  },
+  "roi": {
+    "ko": "높음",
+    "en": "High",
+    "ja": "高",
+    "zh": "高"
+  },
+  "description": {
+    "ko": "추천 생성기의 draft/미래 글 필터, 렌더 방어, 빌드 시 참조 검증의 3중 구조로 공개 글의 404 내부링크를 원천 차단",
+    "en": "Generator filter for draft/future posts, render-time defense, and build-time reference validation combine to eliminate broken internal links",
+    "ja": "推薦生成器のdraft/未来記事フィルター、レンダリング防御、ビルド時参照検証の三重構造で公開記事の404内部リンクを根絶",
+    "zh": "通过推荐生成器的草稿/未来文章过滤、渲染防御、构建时引用校验三层结构，根除公开文章中的404内链"
+  },
+  "lessons": {
+    "ko": [
+      "생성 계층만 고치지 말고 소비 직전 게이트에서 불변식을 강제",
+      "validate-publishing.mjs가 인덱서블→비인덱서블 참조를 빌드 에러로 차단"
+    ],
+    "en": [
+      "Don't only fix the producer — enforce the invariant at a gate right before consumption",
+      "validate-publishing.mjs fails the build on indexable→non-indexable references"
+    ],
+    "ja": [
+      "生成層だけでなく消費直前のゲートで不変条件を強制",
+      "validate-publishing.mjsがindexable→非indexable参照をビルドエラーで遮断"
+    ],
+    "zh": [
+      "不只修生成层，还要在消费前的门禁强制不变式",
+      "validate-publishing.mjs将indexable→非indexable引用变为构建错误"
+    ]
+  }
+}

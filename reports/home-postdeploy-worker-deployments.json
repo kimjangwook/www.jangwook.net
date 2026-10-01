@@ -1,0 +1,176 @@
+{
+  "result": {
+    "deployments": [
+      {
+        "id": "f2da7f06-9b48-4ebc-ba88-a6d66e795ca7",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "ff57b9cd-06b8-4829-934c-01f5d12ba273",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-10-01T21:03:02.056613Z"
+      },
+      {
+        "id": "72d5c0ce-5d51-4f9b-a7d6-57138dc76899",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "7c2fff47-e8f4-4aa8-8366-2e62c873ee07",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-10-01T20:55:47.207908Z"
+      },
+      {
+        "id": "6ae2d7b3-b1c0-4cc7-b8c2-acf6aee97d93",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "3d5be1be-304e-4443-a1fb-0d41b1691515",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-10-01T15:02:30.173504Z"
+      },
+      {
+        "id": "04f79b97-5074-4bd4-af96-6938f58b385b",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "6698daa8-8c41-4db9-b395-3ab17fc7dfc7",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-10-01T11:33:41.718033Z"
+      },
+      {
+        "id": "4b138983-2897-4fa1-ba6a-35e2688fcc0f",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "e2d0e42b-e5e5-4fa7-b4d5-a92091ac65fa",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-30T20:05:54.954487Z"
+      },
+      {
+        "id": "7d3f4dac-bb39-458b-899c-7e6c7d6de72b",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "39474b98-7902-4771-9dd2-3b30e67301bb",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-30T11:07:36.353575Z"
+      },
+      {
+        "id": "d3a2cd0e-11b8-4f55-9f64-c98ec625d364",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "19690bc2-e472-4145-bee6-17b6e282c2b9",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-29T20:07:45.225512Z"
+      },
+      {
+        "id": "0f4656a5-5743-43eb-b8a7-42866549f350",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "ca280fba-db35-43cb-a373-8d963dd0f408",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-29T11:16:17.146965Z"
+      },
+      {
+        "id": "97d60805-9bee-43ea-9c69-98f82876bcfa",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "0e8cc476-7280-49fb-ab5a-6bbbc7671ad8",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-28T21:25:03.726448Z"
+      },
+      {
+        "id": "b70663e3-b625-46b9-ba7e-90eca563633f",
+        "source": "wrangler",
+        "strategy": "percentage",
+        "author_email": "kim.jangwook.1029@gmail.com",
+        "annotations": {
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "fdfea0d2-fcff-4d47-b948-817b3a90061a",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-09-28T11:32:36.751959Z"
+      }
+    ]
+  },
+  "success": true,
+  "errors": [],
+  "messages": [],
+  "result_info": {
+    "page": 1,
+    "per_page": 10,
+    "count": 10,
+    "total_count": 238,
+    "total_pages": 24
+  }
+}

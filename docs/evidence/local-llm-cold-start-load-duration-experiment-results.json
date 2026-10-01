@@ -1,0 +1,54 @@
+[
+  {
+    "model": "melavisions/gemma4:latest",
+    "gb": 2.0,
+    "cold_loads_ms": [
+      3329.9,
+      1553.4,
+      1553.5
+    ],
+    "cold_min": 1553.4,
+    "cold_max": 3329.9,
+    "warm_load_ms": 197.1,
+    "warm_wall_ms": 278.4
+  },
+  {
+    "model": "yinw1590/gemma4-e2b-text:latest",
+    "gb": 3.1,
+    "cold_loads_ms": [
+      3566.4,
+      1797.2,
+      1791.3
+    ],
+    "cold_min": 1791.3,
+    "cold_max": 3566.4,
+    "warm_load_ms": 377.1,
+    "warm_wall_ms": 500.4
+  },
+  {
+    "model": "gemma4:12b-it-qat",
+    "gb": 7.2,
+    "cold_loads_ms": [
+      9000.3,
+      6365.5,
+      2815.1
+    ],
+    "cold_min": 2815.1,
+    "cold_max": 9000.3,
+    "warm_load_ms": 373.3,
+    "warm_wall_ms": 1615.1
+  },
+  {
+    "model": "gemma4:e4b",
+    "gb": 9.6,
+    "cold_loads_ms": [
+      9709.7,
+      7864.8,
+      3857.5
+    ],
+    "cold_min": 3857.5,
+    "cold_max": 9709.7,
+    "warm_load_ms": 373.8,
+    "warm_wall_ms": 605.7
+  }
+]

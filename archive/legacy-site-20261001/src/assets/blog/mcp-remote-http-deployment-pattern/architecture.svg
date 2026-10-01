@@ -1,0 +1,101 @@
+<svg width="900" height="500" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b45309;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="450" y="48" font-family="ui-monospace, monospace" font-size="22" font-weight="bold" fill="white" text-anchor="middle">MCP Streamable HTTP Transport</text>
+  <text x="450" y="72" font-family="ui-monospace, monospace" font-size="13" fill="#94a3b8" text-anchor="middle">@modelcontextprotocol/sdk v1.29.0</text>
+
+  <!-- Client Box -->
+  <rect x="40" y="110" width="180" height="100" rx="10" fill="url(#blue)" opacity="0.9"/>
+  <text x="130" y="152" font-family="ui-monospace, monospace" font-size="14" font-weight="bold" fill="white" text-anchor="middle">MCP Client</text>
+  <text x="130" y="172" font-family="ui-monospace, monospace" font-size="11" fill="#bfdbfe" text-anchor="middle">Claude / Cursor</text>
+  <text x="130" y="188" font-family="ui-monospace, monospace" font-size="10" fill="#bfdbfe" text-anchor="middle">Accept: JSON + SSE</text>
+
+  <!-- Arrow 1: POST /mcp -->
+  <line x1="225" y1="145" x2="320" y2="145" stroke="#60a5fa" stroke-width="2" stroke-dasharray="none"/>
+  <polygon points="320,138 335,145 320,152" fill="#60a5fa"/>
+  <text x="278" y="136" font-family="ui-monospace, monospace" font-size="10" fill="#60a5fa" text-anchor="middle">POST /mcp</text>
+
+  <!-- Arrow 2: SSE response -->
+  <line x1="320" y1="165" x2="225" y2="165" stroke="#34d399" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="225,158 210,165 225,172" fill="#34d399"/>
+  <text x="278" y="182" font-family="ui-monospace, monospace" font-size="10" fill="#34d399" text-anchor="middle">event: message</text>
+
+  <!-- Server Box -->
+  <rect x="335" y="90" width="220" height="280" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="445" y="120" font-family="ui-monospace, monospace" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Express Server</text>
+
+  <!-- Transport Layer -->
+  <rect x="355" y="135" width="180" height="55" rx="8" fill="url(#orange)" opacity="0.85"/>
+  <text x="445" y="158" font-family="ui-monospace, monospace" font-size="11" font-weight="bold" fill="white" text-anchor="middle">StreamableHTTP</text>
+  <text x="445" y="174" font-family="ui-monospace, monospace" font-size="10" fill="#fef3c7" text-anchor="middle">Transport (stateful)</text>
+
+  <!-- MCP Server Instance -->
+  <rect x="355" y="205" width="180" height="55" rx="8" fill="url(#green)" opacity="0.85"/>
+  <text x="445" y="228" font-family="ui-monospace, monospace" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Server Instance</text>
+  <text x="445" y="244" font-family="ui-monospace, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">per session</text>
+
+  <!-- Session Store -->
+  <rect x="355" y="275" width="180" height="55" rx="8" fill="#374151" stroke="#6b7280" stroke-width="1"/>
+  <text x="445" y="298" font-family="ui-monospace, monospace" font-size="11" fill="#e5e7eb" text-anchor="middle">Session Map</text>
+  <text x="445" y="314" font-family="ui-monospace, monospace" font-size="10" fill="#9ca3af" text-anchor="middle">sessionId → transport</text>
+
+  <!-- Flow labels -->
+  <text x="445" y="356" font-family="ui-monospace, monospace" font-size="9" fill="#64748b" text-anchor="middle">POST·GET·DELETE /mcp</text>
+
+  <!-- Stateless comparison -->
+  <rect x="40" y="260" width="180" height="80" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="130" y="288" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle">Stateless Mode</text>
+  <text x="130" y="308" font-family="ui-monospace, monospace" font-size="10" fill="#64748b" text-anchor="middle">sessionIdGenerator</text>
+  <text x="130" y="322" font-family="ui-monospace, monospace" font-size="10" fill="#64748b" text-anchor="middle">= undefined</text>
+
+  <!-- Deployment options -->
+  <rect x="600" y="90" width="260" height="280" rx="10" fill="#0f172a" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="730" y="120" font-family="ui-monospace, monospace" font-size="13" font-weight="bold" fill="#93c5fd" text-anchor="middle">배포 환경</text>
+
+  <!-- Deploy options -->
+  <rect x="620" y="135" width="220" height="42" rx="6" fill="#1e3a5f"/>
+  <text x="730" y="152" font-family="ui-monospace, monospace" font-size="11" fill="#60a5fa" text-anchor="middle">🐳 Docker / Cloud Run</text>
+  <text x="730" y="166" font-family="ui-monospace, monospace" font-size="10" fill="#93c5fd" text-anchor="middle">PORT 환경변수로 포트 설정</text>
+
+  <rect x="620" y="187" width="220" height="42" rx="6" fill="#1a3a2a"/>
+  <text x="730" y="204" font-family="ui-monospace, monospace" font-size="11" fill="#34d399" text-anchor="middle">☁️ Cloudflare Workers</text>
+  <text x="730" y="218" font-family="ui-monospace, monospace" font-size="10" fill="#6ee7b7" text-anchor="middle">WebStandard transport 사용</text>
+
+  <rect x="620" y="239" width="220" height="42" rx="6" fill="#3a1a1a"/>
+  <text x="730" y="256" font-family="ui-monospace, monospace" font-size="11" fill="#f87171" text-anchor="middle">⚠️ stateless 필수</text>
+  <text x="730" y="270" font-family="ui-monospace, monospace" font-size="10" fill="#fca5a5" text-anchor="middle">서버리스 = 세션 공유 불가</text>
+
+  <rect x="620" y="291" width="220" height="42" rx="6" fill="#1a1a3a"/>
+  <text x="730" y="308" font-family="ui-monospace, monospace" font-size="11" fill="#a78bfa" text-anchor="middle">🔒 OAuth 2.1 인증</text>
+  <text x="730" y="322" font-family="ui-monospace, monospace" font-size="10" fill="#c4b5fd" text-anchor="middle">MCP 2.1 내장 지원</text>
+
+  <!-- Arrow Server to Deploy -->
+  <line x1="560" y1="200" x2="595" y2="200" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="595,194 610,200 595,206" fill="#475569"/>
+
+  <!-- Bottom stat -->
+  <rect x="40" y="400" width="820" height="55" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="450" y="424" font-family="ui-monospace, monospace" font-size="11" fill="#475569" text-anchor="middle">SDK 1.29.0 실험 결과 (2026-05-27)</text>
+  <text x="450" y="442" font-family="ui-monospace, monospace" font-size="10" fill="#334155" text-anchor="middle">initialize → tools/list → tools/call → session DELETE 전체 플로우 통과 확인</text>
+</svg>

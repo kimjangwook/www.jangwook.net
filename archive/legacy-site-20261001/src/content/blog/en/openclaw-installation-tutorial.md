@@ -1,0 +1,555 @@
+---
+title: OpenClaw Installation to First Conversation — Complete Tutorial
+description: >-
+  A beginner-friendly, step-by-step guide to installing OpenClaw, connecting
+  Telegram, and having your first AI conversation. Covers Node.js setup,
+  workspace structure, and fixes for the errors you're most likely to hit.
+pubDate: '2026-02-04'
+heroImage: ../../../assets/blog/openclaw-installation-tutorial-hero.png
+tags:
+  - openclaw
+  - tutorial
+  - telegram
+  - installation
+relatedPosts:
+  - slug: 45-day-analytics-report-2025-11
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part1-fundamentals
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: dena-llm-study-part4-rag
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: figma-mcp-web-components-sync
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+  - slug: gcloud-mcp-infrastructure-audit
+    score: 0.95
+    reason:
+      ko: 자동화 분야에서 유사한 주제를 다루며 비슷한 난이도입니다.
+      ja: 自動化分野で類似したトピックを扱い、同程度の難易度です。
+      en: Covers similar topics in automation with comparable difficulty.
+      zh: 在自动化领域涵盖类似主题，难度相当。
+---
+
+> <strong>Series: Mastering OpenClaw</strong> (2/3)
+> 1. [Introduction](/en/blog/en/openclaw-introduction-guide/)
+> 2. <strong>Tutorial</strong> ← You are here
+> 3. [Advanced Usage](/en/blog/en/openclaw-advanced-usage/)
+
+In the previous post, we explored what OpenClaw is. This time, we'll go through <strong>installing it and having your first conversation</strong> — all in one go. Open your terminal and follow along! 🚀
+
+---
+
+## 1. Prerequisites
+
+OpenClaw runs on the Node.js runtime.
+
+| Item | Requirement |
+|------|-------------|
+| <strong>Node.js</strong> | v22 or above (check with `node -v`) |
+| <strong>OS</strong> | Windows, macOS, and Linux all supported |
+
+- <strong>macOS / Linux</strong> — You can start right away without any additional setup.
+- <strong>Windows</strong> — Works natively. WSL2 is also supported but not required.
+
+If you don't have Node.js, download the LTS version (22+) from the [official site](https://nodejs.org/), or use a version manager:
+
+```bash
+# Volta (recommended — per-project version management)
+curl https://get.volta.sh | bash
+volta install node@22
+
+# nvm
+nvm install 22
+nvm use 22
+
+# fnm
+fnm install 22
+fnm use 22
+```
+
+### Optional (But Recommended!)
+
+- <strong>Brave Search API Key</strong> — Required for web search features. Get one free at [Brave Search API](https://brave.com/search/api/)
+- <strong>AI Model API Key</strong> — At least one of Anthropic, OpenAI, or Google. Set via `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` environment variables
+- <strong>Git</strong> — Required for source builds
+
+---
+
+## 2. Installation — 3 Methods
+
+Choose whichever method suits you best.
+
+### Method 1: npm Global Install (Most Recommended) ⭐
+
+```bash
+npm install -g openclaw@latest
+# or
+pnpm add -g openclaw@latest
+```
+
+Verify the installation:
+```bash
+openclaw --version
+```
+
+### Method 2: One-Click Script (Quick & Easy)
+
+```bash
+# macOS / Linux
+curl -fsSL https://openclaw.ai/install.sh | bash
+```
+
+```powershell
+# Windows (PowerShell)
+iwr -useb https://openclaw.ai/install.ps1 | iex
+```
+
+The script handles everything from dependency checks to PATH registration.
+
+### Method 3: Source Build (For Contributors)
+
+```bash
+git clone https://github.com/openclaw/openclaw.git
+cd openclaw
+pnpm install
+pnpm ui:build    # Automatically installs UI dependencies on first run
+pnpm build
+openclaw onboard --install-daemon
+```
+
+> <strong>Tip:</strong> Source builds are recommended if you're thinking about contributing or want to try the latest features early. Switching between npm and source builds is easy — `openclaw doctor` automatically updates the Gateway service entrypoint.
+
+---
+
+## 3. Onboarding Wizard — Core Setup in One Go
+
+After installation, the onboarding wizard guides you through core settings on first run.
+
+```bash
+openclaw onboard --install-daemon
+```
+
+Follow the interactive prompts to configure these items:
+
+| Setting | Description |
+|---|---|
+| <strong>Gateway</strong> | Always-on daemon where the AI agent resides |
+| <strong>Authentication</strong> | AI model API keys (Anthropic, OpenAI, etc.) |
+| <strong>Channels</strong> | Messaging platforms like Telegram, Discord |
+| <strong>Workspace</strong> | File workspace path for the agent |
+| <strong>Gateway Token</strong> | Generated by default by the wizard (even for loopback) |
+
+Adding the `--install-daemon` flag registers the Gateway as an OS service:
+- <strong>macOS</strong>: launchd
+- <strong>Linux</strong>: systemd user service
+- <strong>Windows</strong>: Windows Service
+
+It auto-starts after reboots, so no need to worry.
+
+### Manual Setup Without the Wizard
+
+You can also directly edit `~/.openclaw/openclaw.json` instead of using the wizard:
+
+```json5
+{
+  // AI model settings
+  "agents": {
+    "defaults": {
+      "workspace": "~/.openclaw/workspace",
+      "models": {
+        "default": "anthropic/claude-sonnet-4-20250514"
+      }
+    }
+  },
+  
+  // Channel settings
+  "channels": {
+    "telegram": {
+      "botToken": "<BotFather token>",
+      "dmPolicy": "pairing"
+    }
+  },
+  
+  // Automation settings
+  "cron": { "enabled": true },
+  "hooks": {
+    "enabled": true,
+    "token": "<webhook_secret>"
+  }
+}
+```
+
+---
+
+## 4. Telegram Bot Integration — The Easiest Channel
+
+Among all available channels, <strong>Telegram</strong> has the lowest barrier to entry. Let's start there.
+
+### 4-1. Create a Bot
+
+1. Send the `/newbot` command to [@BotFather](https://t.me/BotFather) on Telegram.
+2. Choose a bot name and username — you'll receive an <strong>API token</strong>.
+3. Copy and save this token.
+
+### 4-2. Register the Token in Config
+
+Skip this if you already registered it during the onboarding wizard. Manual setup:
+
+```json5
+{
+  "channels": {
+    "telegram": {
+      "botToken": "7123456789:AAHx...",
+      "dmPolicy": "pairing"
+    }
+  }
+}
+```
+
+**`dmPolicy` Options Explained:**
+
+| Policy | Behavior |
+|---|---|
+| `pairing` | Requires pairing approval (<strong>strongly recommended</strong> for security ⭐) |
+| `open` | Anyone can DM (for testing) |
+| `deny` | Block all DMs |
+
+### 4-3. Pairing Approval
+
+When you first DM the bot, a <strong>pairing request</strong> is generated. Approve it from the terminal:
+
+```bash
+# Check pending pairing requests
+openclaw pairing list
+
+# Approve pairing
+openclaw pairing approve <requestID>
+```
+
+You can also approve visually from the dashboard at `http://127.0.0.1:18789/`.
+
+### 4-4. Using in Telegram Groups
+
+Invite the bot to a group and it works in <strong>mention-based</strong> mode:
+
+```json5
+{
+  "channels": {
+    "telegram": {
+      "botToken": "7123456789:AAHx...",
+      "groups": {
+        "*": { "requireMention": true }
+      }
+    }
+  }
+}
+```
+
+- `@botname What's wrong with this code?` → AI responds
+- Regular conversation → AI observes silently
+
+### 4-5. Advanced Telegram Settings
+
+```json5
+{
+  "channels": {
+    "telegram": {
+      "botToken": "7123456789:AAHx...",
+      "dmPolicy": "pairing",
+      "streaming": {
+        "enabled": true,          // Real-time response streaming
+        "draftMode": true         // Show typing indicator
+      },
+      "reactions": {
+        "mode": "minimal"         // Minimize emoji reactions
+      },
+      "topics": true              // Forum topic support
+    }
+  }
+}
+```
+
+---
+
+## 5. Running and Verifying the Gateway
+
+If you installed the daemon during onboarding, it may already be running.
+
+### Service Management
+
+```bash
+# Check status
+openclaw gateway status
+
+# Start/Stop/Restart
+openclaw gateway start
+openclaw gateway stop
+openclaw gateway restart
+```
+
+### Manual Execution (For Debugging)
+
+```bash
+openclaw gateway --port 18789 --verbose
+```
+
+The `--verbose` flag outputs request/response logs in real time.
+
+### Remote Access (Tailscale)
+
+To access the Gateway from outside your home:
+
+```bash
+openclaw gateway --bind tailnet --token <token>
+```
+
+A token is <strong>required</strong> for non-local bindings.
+
+### Status Checks
+
+```bash
+# Full status
+openclaw status
+
+# Environment diagnostics
+openclaw doctor
+
+# Health check
+openclaw health
+```
+
+Visit <strong>http://127.0.0.1:18789/</strong> in your browser to visually check the running state, channel connections, recent conversations, and more through the dashboard.
+
+---
+
+## 6. First Conversation Test 🎉
+
+Everything is ready. Let's have an actual conversation.
+
+### Chat Directly on Telegram
+
+Send any message to the bot from your paired account. If the AI agent responds, you're all set! 🎊
+
+### Test via CLI
+
+```bash
+# Send a message to a specific Telegram chat
+openclaw message send --target telegram:<chatID> --message "Hello, OpenClaw!"
+
+# You can also test from the dashboard
+# Use WebChat at http://127.0.0.1:18789/
+```
+
+### Slash Commands
+
+Built-in commands you can use directly in Telegram chats:
+
+| Command | Description |
+|---|---|
+| `/status` | Check Gateway status |
+| `/model <model>` | Change AI model |
+| `/thinking <level>` | Adjust thinking level (off/low/medium/high) |
+| `/stop` | Stop the currently running task |
+| `/subagents list` | List sub-agents |
+| `/activation always\|mention` | Change response mode in groups |
+
+---
+
+## 7. Workspace Setup — Building Your Agent's Brain
+
+Now that it's working, let's customize it into <strong>an agent tailored to you</strong>.
+
+### Workspace File Structure
+
+```
+~/.openclaw/workspace/
+├── AGENTS.md        # Agent behavior rules and workflows
+├── SOUL.md          # Persona, personality, and tone definitions
+├── USER.md          # Information about the user (you)
+├── MEMORY.md        # Long-term memory — persists across sessions
+├── HEARTBEAT.md     # Items to auto-check on heartbeat
+├── TOOLS.md         # Local notes for tools (camera names, SSH info, etc.)
+├── memory/          # Daily memory logs
+│   ├── 2025-07-12.md
+│   └── 2025-07-13.md
+└── skills/          # Custom skills folder
+    └── my-skill/
+        └── SKILL.md
+```
+
+### SOUL.md — Defining the Agent's Personality
+
+Define the agent's character in this file:
+
+```markdown
+# SOUL.md
+
+## Personality
+- Friendly but professional tone
+- Communicate in English (keep technical terms as-is)
+- Use emojis moderately 😊
+- Good sense of humor, but avoid TMI
+
+## Name
+I am "Claudie" — A personal AI assistant powered by OpenClaw
+
+## Principles
+- Only provide accurate information; be honest when unsure
+- Always provide code in complete, runnable form
+- Strictly protect personal information
+```
+
+### USER.md — User Information
+
+```markdown
+# USER.md
+
+## Basic Info
+- Name: John Smith
+- Occupation: Software Engineer
+- Interests: AI, automation, developer productivity
+- Timezone: America/New_York (UTC-5)
+
+## Preferences
+- Keep responses concise
+- Prefer TypeScript for code
+- Use Google Calendar for scheduling
+```
+
+### HEARTBEAT.md — Automated Checklist
+
+Define items for the agent to automatically check periodically:
+
+```markdown
+# HEARTBEAT.md
+
+## Regular Checks (every heartbeat)
+- [ ] Notify about any urgent unread emails
+- [ ] Remind about calendar events within 2 hours
+- [ ] Alert if rain is forecast — bring an umbrella
+- [ ] Summarize new Issues/PRs in GitHub repos
+
+## Nighttime (23:00-08:00)
+- Only notify for urgent items; otherwise HEARTBEAT_OK
+```
+
+### Changing Models
+
+```bash
+# Change default model via CLI
+openclaw config set agents.defaults.models.default "anthropic/claude-opus-4-20250514"
+
+# Or use slash commands in Telegram
+/model opus
+/model sonnet
+/model gpt-4o
+```
+
+---
+
+## 8. Installing Skills
+
+Install community skills from ClawHub:
+
+![ClawHub — Search and install skills. Browse popular skills like Trello, Calendar, Slack, and more](../../../assets/blog/clawhub-main.png)
+
+```bash
+# Install CalDAV calendar integration skill
+npx clawhub@latest install caldav-calendar
+
+# Trello board management skill
+npx clawhub@latest install trello
+
+# Check installed skills
+ls ~/.openclaw/workspace/skills/
+```
+
+Installed skills are automatically recognized. They <strong>hot-reload</strong> without restarting the Gateway.
+
+---
+
+## 9. Troubleshooting — Problem-Solving Guide
+
+### Automatic Diagnostics
+
+```bash
+# Auto-diagnose the entire environment
+openclaw doctor
+
+# Output detailed status of all components
+openclaw status --all
+```
+
+`openclaw doctor` inspects Node.js version, config file validity, channel connections, API key status, and more — all at once.
+
+### Common Problems and Solutions
+
+| Symptom | Cause | Solution |
+|---|---|---|
+| Gateway won't start | Port conflict | `netstat -ano \| findstr 18789` (Windows) / `lsof -i :18789` (macOS/Linux) |
+| Telegram bot not responding | Token error or incomplete pairing | Check with `openclaw doctor`, verify approval status with `openclaw pairing list` |
+| API key error | Key expired or insufficient balance | Check key status with `openclaw doctor`, verify on model provider dashboard |
+| "Node version" error | Node.js below v22 | Check with `node -v` and upgrade |
+| Skill not recognized | Hot-reload delay | Wait briefly after saving `SKILL.md`, or restart Gateway |
+
+### Checking Logs
+
+```bash
+# Monitor Gateway logs in real time (macOS/Linux)
+tail -f ~/.openclaw/logs/gateway.log
+
+# Windows PowerShell
+Get-Content ~/.openclaw/logs/gateway.log -Wait -Tail 50
+```
+
+---
+
+## 10. Next Steps — Going Deeper
+
+Installation and your first conversation are complete! 🎉
+
+Now that the basics are set up, it's time for the really fun stuff:
+
+### Things to Try Right Away
+
+1. <strong>Edit SOUL.md</strong> — Give your agent a unique personality
+2. <strong>Create HEARTBEAT.md</strong> — Set up an automated checklist
+3. <strong>Browse skills on ClawHub</strong> — [clawhub.com](https://clawhub.com)
+4. <strong>Register a cron job</strong> — Daily morning briefing
+
+### What's Coming in Part 3
+
+<strong>[Part 3 (Advanced Usage)](/en/blog/en/openclaw-advanced-usage/)</strong> covers advanced real-world use cases for leveraging OpenClaw as a <strong>powerful automation tool</strong>:
+
+- Webhook workflows with n8n/Make integration
+- MCP server integration
+- Automated daily reports with cron (including config JSON)
+- Building multi-agent systems
+- Browser automation for data collection
+- Security camera monitoring with the Node system
+- Complete guide to custom skill development
+
+> 🦞 Play around with your installed OpenClaw while you wait. We'll be back soon! 🐾
+
+---
+
+*Questions or feedback are welcome on [GitHub Issues](https://github.com/openclaw/openclaw/issues) or [Discord](https://discord.gg/clawd).*

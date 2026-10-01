@@ -1,0 +1,18 @@
+{
+  "result": {
+    "uuid": "14e2c86d-e177-40c2-8223-a610d6943246",
+    "name": "jangwook-leads",
+    "created_at": "2026-10-01T14:53:27.164Z",
+    "version": "production",
+    "num_tables": 8,
+    "file_size": 118784,
+    "running_in_region": "APAC",
+    "read_replication": {
+      "mode": "disabled"
+    },
+    "jurisdiction": null
+  },
+  "errors": [],
+  "messages": [],
+  "success": true
+}

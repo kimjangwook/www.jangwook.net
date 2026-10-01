@@ -1,0 +1,49 @@
+{
+  "result": {
+    "placement": {},
+    "compatibility_date": "2026-09-30",
+    "compatibility_flags": [
+      "nodejs_compat"
+    ],
+    "usage_model": "standard",
+    "tags": [
+      "cf:service=jangwook-net-series",
+      "cf:environment=production"
+    ],
+    "tail_consumers": [],
+    "logpush": false,
+    "annotations": {
+      "workers/triggered_by": "version_upload"
+    },
+    "bindings": [
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "name": "FROM_EMAIL",
+        "text": "materials@jangwook.net",
+        "type": "plain_text"
+      },
+      {
+        "database_id": "14e2c86d-e177-40c2-8223-a610d6943246",
+        "id": "14e2c86d-e177-40c2-8223-a610d6943246",
+        "name": "LEADS_DB",
+        "type": "d1"
+      },
+      {
+        "name": "MAIL_MODE",
+        "text": "disabled",
+        "type": "plain_text"
+      },
+      {
+        "name": "SITE_URL",
+        "text": "https://jangwook.net",
+        "type": "plain_text"
+      }
+    ]
+  },
+  "success": true,
+  "errors": [],
+  "messages": []
+}
