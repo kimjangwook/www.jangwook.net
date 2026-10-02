@@ -71,3 +71,7 @@ wrangler.svelte.jsonc
 .dev.vars.*
 
 /node_modules
+
+# Journey/Mediavine ads.txt is validated and generated before each build
+/static/ads.txt
+/static/ads.txt.tmp

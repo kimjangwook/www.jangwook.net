@@ -119,6 +119,12 @@
       "redirect": "/series/accessibility/agentic-accessibility"
     },
     {
+      "path": "/ads.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "matchesJourneySource": true
+    },
+    {
       "scheduledRetention": true,
       "expiredRateBucket": true
     }

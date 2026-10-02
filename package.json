@@ -21,7 +21,9 @@
     "test:archive": "node scripts/verify-archive-seo.mjs",
     "content:prepare": "node scripts/prepare-series-pages.mjs",
     "test:locales": "node scripts/verify-series-locales.mjs",
-    "test:names": "node scripts/audit-accessible-names.mjs"
+    "test:names": "node scripts/audit-accessible-names.mjs",
+    "prebuild": "node scripts/fetch-adstxt.mjs",
+    "fetch:adstxt": "node scripts/fetch-adstxt.mjs"
   },
   "dependencies": {
     "@fontsource-variable/noto-sans-kr": "^5.3.0",

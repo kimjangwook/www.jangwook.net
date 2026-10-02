@@ -58,3 +58,11 @@ scheduled handler는 매일 18:17 UTC에 12개월 지난 리드와 만료 제한
 상세 영수증은 reports/production-deployment-receipt.json, URL 확인은 reports/production-series-validation.json 및 reports/archive-seo-validation.json, 실제 접근성 이름은 reports/accessible-names-validation.json입니다. 후속 변경은 이 배포 승인을 재사용하여 자동 발행하지 않습니다.
 
 기존 원격 GitHub 배포 workflow `195145307`은 disabled_manually 상태로 전환했습니다. 예전 Astro snapshot의 예약/푸시 배포가 새 운영 사이트를 덮어쓰는 것을 막기 위한 조치입니다. 필요 시 `gh workflow enable 195145307 --repo kimjangwook/www.jangwook.net`으로 복구할 수 있지만, 새 소스를 반영하기 전에는 기존 사이트를 재배포하므로 주의합니다. 본 배포에서 원래 Git checkout의 변경을 일괄 commit/push하지 않았습니다.
+
+## ads.txt 보존 — 2026-10-02
+
+기존 Git 기록 `b99b5c22`와 보관된 `scripts/fetch-adstxt.mjs`를 확인해 Journey/Mediavine 원본을 받아 자체 도메인의 `/ads.txt`에서 직접 제공하는 방식을 복원했다. AdSense 한 줄짜리 이전 파일로 대체하지 않는다.
+
+`npm run build`의 prebuild는 `scripts/fetch-adstxt.mjs`를 실행해 기존 사이트 ID `b87a8865-5f57-423f-81d5-36dd4700eafe`의 원본을 `static/ads.txt`로 생성한다. 네트워크 재시도 후 실패, 판매자 레코드 10개 미만, 소유 도메인 불일치 시 빌드를 중단한다. 검증된 원문을 그대로 정적 자산으로 제공한다. 생성 파일은 Git에서 제외하며 새 빌드에 반드시 포함된다.
+
+이전 Astro 예약 배포는 계속 비활성이다. 현재 원본 갱신 시점은 수동 빌드·배포 시점이며 일일 자동 갱신이 동작한다고 간주하지 않는다. `test:worker`는 `/ads.txt`의 HTTP 200, text/plain과 원본 일치를 검사한다. 배포 후 두 운영 도메인에서 같은 검사를 수행한다.

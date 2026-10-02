@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-02T08:27:26.053Z",
+  "source": "https://adstxt.journeymv.com/sites/b87a8865-5f57-423f-81d5-36dd4700eafe/ads.txt",
+  "bytes": 9720,
+  "sha256": "626214845733f36fbdd4a1a3dd4715dc9bc68c2b4ac388c526aa70f4fbc2d11a",
+  "checks": [
+    {
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "location": null
+    },
+    {
+      "method": "HEAD",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "location": null
+    }
+  ]
+}
