@@ -1,0 +1,158 @@
+{
+  "base": "http://127.0.0.1:8787",
+  "checkedAt": "2026-10-03T09:40:57.376Z",
+  "ssr": [
+    {
+      "path": "/ko/",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/en/",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/ja/",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/zh/",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/series",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/series/accessibility",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/series/accessibility/overview",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/en/series/accessibility/overview",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/ja/series/accessibility/overview",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/zh/series/accessibility/overview",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/series/accessibility/keyboard",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/en/series/accessibility/keyboard",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/ja/series/accessibility/keyboard",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/zh/series/accessibility/keyboard",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/archive",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/ko/blog/ko/salon-chatgpt-static-hosting-web-development/",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/prompts",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/updates",
+      "status": 200,
+      "count": 1,
+      "attributesPreserved": true
+    },
+    {
+      "path": "/missing-journey-verification-page",
+      "status": 404,
+      "count": 1,
+      "attributesPreserved": true
+    }
+  ],
+  "browser": [
+    {
+      "vendorStubbed": true,
+      "loadStatus": 200,
+      "requests": 1,
+      "clientNavigationRetainsDocument": true,
+      "scriptTagsAfterNavigation": 1
+    }
+  ],
+  "ads": [
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "HEAD",
+      "status": 200
+    }
+  ],
+  "errors": []
+}

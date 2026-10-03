@@ -66,3 +66,9 @@ scheduled handler는 매일 18:17 UTC에 12개월 지난 리드와 만료 제한
 `npm run build`의 prebuild는 `scripts/fetch-adstxt.mjs`를 실행해 기존 사이트 ID `b87a8865-5f57-423f-81d5-36dd4700eafe`의 원본을 `static/ads.txt`로 생성한다. 네트워크 재시도 후 실패, 판매자 레코드 10개 미만, 소유 도메인 불일치 시 빌드를 중단한다. 검증된 원문을 그대로 정적 자산으로 제공한다. 생성 파일은 Git에서 제외하며 새 빌드에 반드시 포함된다.
 
 이전 Astro 예약 배포는 계속 비활성이다. 현재 원본 갱신 시점은 수동 빌드·배포 시점이며 일일 자동 갱신이 동작한다고 간주하지 않는다. `test:worker`는 `/ads.txt`의 HTTP 200, text/plain과 원본 일치를 검사한다. 배포 후 두 운영 도메인에서 같은 검사를 수행한다.
+
+## Journey 공통 태그 — 2026-10-03
+
+사용자가 제공한 `scripts.scriptwrapper.com/tags/b87a8865-5f57-423f-81d5-36dd4700eafe.js` 태그를 `src/app.html`의 공통 head에 한 번 포함한다. `type="text/javascript"`, `async="async"`, `data-noptimize="1"`, `data-cfasync="false"`와 제공된 프로토콜 상대 URL을 그대로 유지한다. SSR 초기 HTML에 포함되며 네 언어 홈, 시리즈, 준비 문서, 아카이브 및 공통 정보 페이지에 적용된다. SvelteKit 클라이언트 이동마다 태그를 다시 삽입하지 않는다.
+
+배포 검증은 SSR head의 태그·속성·중복 여부, 브라우저의 실제 태그 요청, 클라이언트 이동 후 중복 여부, 기존 `/ads.txt` 원본 일치를 확인한다. 스크립트 로드 확인과 실제 광고 입찰·노출·수익 확인은 구별한다.
