@@ -1,0 +1,476 @@
+{
+  "checkedAt": "2026-10-03T13:48:01.012Z",
+  "domains": [
+    {
+      "host": "jangwook.net",
+      "ads": {
+        "get": 200,
+        "head": 200,
+        "bytes": 9720,
+        "sha256": "626214845733f36fbdd4a1a3dd4715dc9bc68c2b4ac388c526aa70f4fbc2d11a"
+      },
+      "archivePreserved": true,
+      "sitemap": true
+    },
+    {
+      "host": "www.jangwook.net",
+      "ads": {
+        "get": 200,
+        "head": 200,
+        "bytes": 9720,
+        "sha256": "626214845733f36fbdd4a1a3dd4715dc9bc68c2b4ac388c526aa70f4fbc2d11a"
+      },
+      "archivePreserved": true,
+      "sitemap": true
+    }
+  ],
+  "pages": [
+    {
+      "host": "jangwook.net",
+      "lang": "ko",
+      "slug": "overview",
+      "status": 200,
+      "sourceHash": "d65400684698d59c7989b58e44297840487972855afc6d49d235801939d7bd77"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "ko",
+      "slug": "non-text-content",
+      "status": 200,
+      "sourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "ko",
+      "slug": "keyboard",
+      "status": 200,
+      "sourceHash": null
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "en",
+      "slug": "overview",
+      "status": 200,
+      "sourceHash": "2e2bdfe5b8d7b425685c812a05915b6879e88ab4e19bb4a37c7368c0465f94bb"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "en",
+      "slug": "non-text-content",
+      "status": 200,
+      "sourceHash": "34f62eff0201925ba2e6c5d3330b6e9373fc2019ac12a678b498b80c3463374e"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "en",
+      "slug": "keyboard",
+      "status": 200,
+      "sourceHash": null
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "ja",
+      "slug": "overview",
+      "status": 200,
+      "sourceHash": "f70691a9f82cf9583cb7b24c5ed923e70434611a6b26e2c5494a6592dd717474"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "ja",
+      "slug": "non-text-content",
+      "status": 200,
+      "sourceHash": "2370940da1fe2a1135119fe3fcc1a17f55eb434a54a4be6570e024749ceebc93"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "ja",
+      "slug": "keyboard",
+      "status": 200,
+      "sourceHash": null
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "zh",
+      "slug": "overview",
+      "status": 200,
+      "sourceHash": "2222828a8102a1939f5a4f4ba4d77bdd0b1e8419cb2c64babe19b8b28c09b092"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "zh",
+      "slug": "non-text-content",
+      "status": 200,
+      "sourceHash": "ef8da4a833f7209eea5b5717d351887899d871bb3171133ac2b607788485e831"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "zh",
+      "slug": "keyboard",
+      "status": 200,
+      "sourceHash": null
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ko",
+      "slug": "overview",
+      "status": 200,
+      "sourceHash": "d65400684698d59c7989b58e44297840487972855afc6d49d235801939d7bd77"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ko",
+      "slug": "non-text-content",
+      "status": 200,
+      "sourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ko",
+      "slug": "keyboard",
+      "status": 200,
+      "sourceHash": null
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "en",
+      "slug": "overview",
+      "status": 200,
+      "sourceHash": "2e2bdfe5b8d7b425685c812a05915b6879e88ab4e19bb4a37c7368c0465f94bb"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "en",
+      "slug": "non-text-content",
+      "status": 200,
+      "sourceHash": "34f62eff0201925ba2e6c5d3330b6e9373fc2019ac12a678b498b80c3463374e"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "en",
+      "slug": "keyboard",
+      "status": 200,
+      "sourceHash": null
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ja",
+      "slug": "overview",
+      "status": 200,
+      "sourceHash": "f70691a9f82cf9583cb7b24c5ed923e70434611a6b26e2c5494a6592dd717474"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ja",
+      "slug": "non-text-content",
+      "status": 200,
+      "sourceHash": "2370940da1fe2a1135119fe3fcc1a17f55eb434a54a4be6570e024749ceebc93"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ja",
+      "slug": "keyboard",
+      "status": 200,
+      "sourceHash": null
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "zh",
+      "slug": "overview",
+      "status": 200,
+      "sourceHash": "2222828a8102a1939f5a4f4ba4d77bdd0b1e8419cb2c64babe19b8b28c09b092"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "zh",
+      "slug": "non-text-content",
+      "status": 200,
+      "sourceHash": "ef8da4a833f7209eea5b5717d351887899d871bb3171133ac2b607788485e831"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "zh",
+      "slug": "keyboard",
+      "status": 200,
+      "sourceHash": null
+    }
+  ],
+  "assets": [
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/ko/01-context-c82e358fedc7.svg",
+      "status": 200,
+      "sha256": "c82e358fedc7265ba68959a8f11f881793278feb7137045b085fac07790e3b22"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/ko/02-button-name-606d4b922f26.svg",
+      "status": 200,
+      "sha256": "606d4b922f26e00d612b3f31618e2b25ba2b0ed29d8de5cf690eb91da99b6f39"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/ko/03-chart-alternative-40f98938855b.svg",
+      "status": 200,
+      "sha256": "40f98938855bd7ddc7ab999c8d6a13494ca908bf478bc84289170a4f2616875d"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/ko/04-evidence-flow-aee5800be0ff.svg",
+      "status": 200,
+      "sha256": "aee5800be0ff4022a38621c0187317b3408572ad521bd8b79b75f67381b4b01a"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/en/01-context-1a08a50d6144.svg",
+      "status": 200,
+      "sha256": "1a08a50d614438ba8c423f7de1de2e9e5a8a6ade741df1c13419f6f4dd2b73a5"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/en/02-button-name-df34764703e8.svg",
+      "status": 200,
+      "sha256": "df34764703e8474eed2d3f19b94f1e3b1ba4b856942060389bc348c6c85c4b52"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/en/03-chart-alternative-5d6f28a69444.svg",
+      "status": 200,
+      "sha256": "5d6f28a6944444ff62def00ce3132d0de3e74460b7e405308214e66129b0ee42"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/en/04-evidence-flow-9845e0173737.svg",
+      "status": 200,
+      "sha256": "9845e01737376058362c6592b3e87dfc1514fd41dae37d460410cd7ba9bd258e"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/ja/01-context-af58c7c136de.svg",
+      "status": 200,
+      "sha256": "af58c7c136de9656dd889c924f5954aed91557d50fb814683b992a73f5220725"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/ja/02-button-name-828e7c4ec862.svg",
+      "status": 200,
+      "sha256": "828e7c4ec8623a5f81e04263bdcdeec14348d2ccb2c2011f407bf2e25c981b9b"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/ja/03-chart-alternative-e95ddabbc48a.svg",
+      "status": 200,
+      "sha256": "e95ddabbc48a360f7bd6cae05663004894061d5aaf0e02b5229323d507b42035"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/ja/04-evidence-flow-ab257f4fed3e.svg",
+      "status": 200,
+      "sha256": "ab257f4fed3e512d5e79cdb06af61214a1067971cef3ff68a4afe695da391079"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/zh/01-context-e7a8ea4930e7.svg",
+      "status": 200,
+      "sha256": "e7a8ea4930e7fa5b3fcbe077c76c386b6bff6c33cc2db30fb092effa60719139"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/zh/02-button-name-ae846b360e4f.svg",
+      "status": 200,
+      "sha256": "ae846b360e4fe2cd50574e01d9ba4d738ad0bd3a1c70276ae3f2e30d0890bb56"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/zh/03-chart-alternative-26d439f555d7.svg",
+      "status": 200,
+      "sha256": "26d439f555d7e083a600632ca26cd572798b99412f663482a278eadd23d91c3a"
+    },
+    {
+      "host": "jangwook.net",
+      "path": "/images/accessibility/non-text-content/zh/04-evidence-flow-3dcb26b61e0f.svg",
+      "status": 200,
+      "sha256": "3dcb26b61e0fabd333b078384d95d861195ba0671dd170a947a97e07a5f87889"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/ko/01-context-c82e358fedc7.svg",
+      "status": 200,
+      "sha256": "c82e358fedc7265ba68959a8f11f881793278feb7137045b085fac07790e3b22"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/ko/02-button-name-606d4b922f26.svg",
+      "status": 200,
+      "sha256": "606d4b922f26e00d612b3f31618e2b25ba2b0ed29d8de5cf690eb91da99b6f39"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/ko/03-chart-alternative-40f98938855b.svg",
+      "status": 200,
+      "sha256": "40f98938855bd7ddc7ab999c8d6a13494ca908bf478bc84289170a4f2616875d"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/ko/04-evidence-flow-aee5800be0ff.svg",
+      "status": 200,
+      "sha256": "aee5800be0ff4022a38621c0187317b3408572ad521bd8b79b75f67381b4b01a"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/en/01-context-1a08a50d6144.svg",
+      "status": 200,
+      "sha256": "1a08a50d614438ba8c423f7de1de2e9e5a8a6ade741df1c13419f6f4dd2b73a5"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/en/02-button-name-df34764703e8.svg",
+      "status": 200,
+      "sha256": "df34764703e8474eed2d3f19b94f1e3b1ba4b856942060389bc348c6c85c4b52"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/en/03-chart-alternative-5d6f28a69444.svg",
+      "status": 200,
+      "sha256": "5d6f28a6944444ff62def00ce3132d0de3e74460b7e405308214e66129b0ee42"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/en/04-evidence-flow-9845e0173737.svg",
+      "status": 200,
+      "sha256": "9845e01737376058362c6592b3e87dfc1514fd41dae37d460410cd7ba9bd258e"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/ja/01-context-af58c7c136de.svg",
+      "status": 200,
+      "sha256": "af58c7c136de9656dd889c924f5954aed91557d50fb814683b992a73f5220725"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/ja/02-button-name-828e7c4ec862.svg",
+      "status": 200,
+      "sha256": "828e7c4ec8623a5f81e04263bdcdeec14348d2ccb2c2011f407bf2e25c981b9b"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/ja/03-chart-alternative-e95ddabbc48a.svg",
+      "status": 200,
+      "sha256": "e95ddabbc48a360f7bd6cae05663004894061d5aaf0e02b5229323d507b42035"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/ja/04-evidence-flow-ab257f4fed3e.svg",
+      "status": 200,
+      "sha256": "ab257f4fed3e512d5e79cdb06af61214a1067971cef3ff68a4afe695da391079"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/zh/01-context-e7a8ea4930e7.svg",
+      "status": 200,
+      "sha256": "e7a8ea4930e7fa5b3fcbe077c76c386b6bff6c33cc2db30fb092effa60719139"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/zh/02-button-name-ae846b360e4f.svg",
+      "status": 200,
+      "sha256": "ae846b360e4fe2cd50574e01d9ba4d738ad0bd3a1c70276ae3f2e30d0890bb56"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/zh/03-chart-alternative-26d439f555d7.svg",
+      "status": 200,
+      "sha256": "26d439f555d7e083a600632ca26cd572798b99412f663482a278eadd23d91c3a"
+    },
+    {
+      "host": "www.jangwook.net",
+      "path": "/images/accessibility/non-text-content/zh/04-evidence-flow-3dcb26b61e0f.svg",
+      "status": 200,
+      "sha256": "3dcb26b61e0fabd333b078384d95d861195ba0671dd170a947a97e07a5f87889"
+    }
+  ],
+  "feeds": [
+    {
+      "host": "jangwook.net",
+      "lang": "ko",
+      "items": 2
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "en",
+      "items": 2
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "ja",
+      "items": 2
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "zh",
+      "items": 2
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ko",
+      "items": 2
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "en",
+      "items": 2
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ja",
+      "items": 2
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "zh",
+      "items": 2
+    }
+  ],
+  "redirects": [
+    {
+      "host": "jangwook.net",
+      "lang": "ko",
+      "location": "/ko/"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "en",
+      "location": "/en/"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "ja",
+      "location": "/ja/"
+    },
+    {
+      "host": "jangwook.net",
+      "lang": "zh",
+      "location": "/zh/"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ko",
+      "location": "/ko/"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "en",
+      "location": "/en/"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "ja",
+      "location": "/ja/"
+    },
+    {
+      "host": "www.jangwook.net",
+      "lang": "zh",
+      "location": "/zh/"
+    }
+  ],
+  "errors": []
+}

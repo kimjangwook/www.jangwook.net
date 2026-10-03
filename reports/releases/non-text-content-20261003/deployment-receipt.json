@@ -1,0 +1,38 @@
+{
+  "deployed": true,
+  "worker": "www-jangwook-net",
+  "versionId": "021bf11f-ea2e-418f-a60b-624a1e029c07",
+  "releaseSha": "d0cc9aff547d13d61ed3645fb272cf3a5c2342a0",
+  "rollbackVersion": "a911bb61-55a4-462c-b5ab-cfc937c4a891",
+  "domains": [
+    "jangwook.net",
+    "www.jangwook.net"
+  ],
+  "trafficPercent": 100,
+  "firstPublishedAt": "2026-10-03T13:32:25Z",
+  "urls": {
+    "ko": "https://jangwook.net/series/accessibility/non-text-content",
+    "en": "https://jangwook.net/en/series/accessibility/non-text-content",
+    "ja": "https://jangwook.net/ja/series/accessibility/non-text-content",
+    "zh": "https://jangwook.net/zh/series/accessibility/non-text-content"
+  },
+  "publicHTTPVerified": true,
+  "publicBrowserVerification": {
+    "pages": 12,
+    "noJS": 4,
+    "ssr": 4,
+    "errors": [],
+    "scope": "First-party article UI; external advertising frames excluded from browser checks"
+  },
+  "telegramXDraft": {
+    "delivery": "complete",
+    "messages": 5,
+    "messageIds": [
+      1718,
+      1719,
+      1720,
+      1721,
+      1722
+    ]
+  }
+}
