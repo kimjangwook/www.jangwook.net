@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-01T14:58:48.226Z",
+  "pages": [
+    {
+      "url": "https://jangwook.net/sitemap.xml",
+      "status": 200,
+      "articles": 0
+    },
+    {
+      "url": "https://jangwook.net/sitemap-ko.xml",
+      "status": 200,
+      "articles": 356
+    },
+    {
+      "url": "https://jangwook.net/sitemap-en.xml",
+      "status": 200,
+      "articles": 356
+    },
+    {
+      "url": "https://jangwook.net/sitemap-ja.xml",
+      "status": 200,
+      "articles": 356
+    },
+    {
+      "url": "https://jangwook.net/sitemap-zh.xml",
+      "status": 200,
+      "articles": 356
+    }
+  ],
+  "unpreserved": []
+}

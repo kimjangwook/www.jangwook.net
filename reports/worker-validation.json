@@ -1,0 +1,133 @@
+{
+  "checks": [
+    {
+      "path": "/",
+      "status": 302
+    },
+    {
+      "path": "/series",
+      "status": 200
+    },
+    {
+      "path": "/series/accessibility",
+      "status": 200
+    },
+    {
+      "path": "/services",
+      "status": 200
+    },
+    {
+      "path": "/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "path": "/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "path": "/en/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "path": "/ja/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "path": "/zh/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "path": "/dev/inbox",
+      "status": 404
+    },
+    {
+      "path": "/ko/blog/legacy-article",
+      "status": 404
+    },
+    {
+      "path": "/en/blog/legacy-article",
+      "status": 404
+    },
+    {
+      "path": "/archive",
+      "status": 200
+    },
+    {
+      "path": "/ko/blog/ko/salon-chatgpt-static-hosting-web-development/",
+      "status": 200
+    },
+    {
+      "path": "/ko/",
+      "status": 200
+    },
+    {
+      "path": "/en/",
+      "status": 200
+    },
+    {
+      "path": "/ja/",
+      "status": 200
+    },
+    {
+      "path": "/zh/",
+      "status": 200
+    },
+    {
+      "path": "/ko/about",
+      "status": 308
+    },
+    {
+      "path": "/_worker.js",
+      "status": 404
+    },
+    {
+      "path": "/downloads/invalid",
+      "status": 404
+    },
+    {
+      "path": "/confirm/invalid",
+      "status": 404
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "draftsExcluded": true
+    },
+    {
+      "path": "/rss.xml",
+      "status": 200,
+      "draftsExcluded": true
+    },
+    {
+      "path": "/en/rss.xml",
+      "status": 200,
+      "draftsExcluded": true
+    },
+    {
+      "path": "/ja/rss.xml",
+      "status": 200,
+      "draftsExcluded": true
+    },
+    {
+      "path": "/zh/rss.xml",
+      "status": 200,
+      "draftsExcluded": true
+    },
+    {
+      "path": "/resources/accessibility",
+      "formRemoved": true,
+      "redirect": "/series/accessibility/agentic-accessibility"
+    },
+    {
+      "path": "/ads.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "matchesJourneySource": true
+    },
+    {
+      "scheduledRetention": true,
+      "expiredRateBucket": true
+    }
+  ],
+  "errors": []
+}

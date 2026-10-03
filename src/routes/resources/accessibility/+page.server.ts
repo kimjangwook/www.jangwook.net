@@ -1,0 +1,2 @@
+import {redirect} from '@sveltejs/kit';import {localizedPath} from '$lib/series/i18n';import {LANGUAGE_COOKIE,preferredLanguage} from '$lib/server/language';import type {PageServerLoad} from './$types';
+export const load:PageServerLoad=({cookies,request})=>redirect(308,localizedPath('/series/accessibility/agentic-accessibility',preferredLanguage(cookies.get(LANGUAGE_COOKIE),request.headers.get('Accept-Language'))));

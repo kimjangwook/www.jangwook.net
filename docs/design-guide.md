@@ -1,33 +1,37 @@
-# jangwook.net design guide
+# Quiet modern knowledge library
 
-jangwook.net is a contemporary editorial column for technical questions, evidence, and decisions. The visual language is spacious and restrained: serif headings, readable sans-serif interface text, thin paper rules, and one brick-red accent. The page should feel like a carefully edited field note rather than a dashboard.
+2026-10-01 확정 시안: 화이트·차콜, 읽기 중심, 작고 실제로 작동하는 인터랙션. OpenAI와 Claude 공개 사이트의 정보 구조를 참고하되 독립 개발자·교육자의 지식 라이브러리로 구성합니다. 코발트블루, 숲색·라임, 큰 광고형 히어로, 3D 장식, 반복 카드, 거대한 영문 세리프는 사용하지 않습니다.
 
-## Tokens
+지속가능한 디자인은 유행보다 오래 유지할 수 있는 기준을 뜻합니다. 환경·탄소 감축 수치를 주장하지 않습니다. 한 글꼴 계열, 공통 tokens, 의미 있는 표면과 리스트, 일관된 간격으로 유지보수와 읽기 부담을 줄입니다. 메인 시안은 reports/design-reference/sustainable-home.png에 보관합니다.
 
-- Paper: `#F4F0E8`; surface: `#FBF9F4`; ink: `#242621`; muted: `#62665D`; accent: `#A33A24`; decorative rule: `#D8D1C5`.
-- Controls use `--control-border`; keyboard focus uses a visible 2px `--focus-ring` with offset. The decorative rule never carries state by itself.
-- Dark mode remains supported with the semantic variables in `src/styles/global.css`; keep text contrast readable and the accent restrained.
+## 공통 규칙
 
-## Type and layout
+- paper #fafaf8, surface #f1f1ee, ink #252525, muted #62625e, rule #deded9, control #858581. 구분선과 조작 요소 테두리를 구분합니다.
+- 자체 호스팅 Noto Sans KR Variable. 영문·한글 모두 sans, 코드만 monospace. 새 글꼴·외부 폰트 요청 없음.
+- 데스크톱 콘텐츠 폭 1120px, 본문 740px. 간격 8px 기반, 모서리 4~8px. 기본 본문 16~17px, 보조 텍스트 최소 12px, 한국어 줄간격 1.8~1.95.
+- 주요 조작 최소 44px. 차콜 3px focus-visible, 본문 건너뛰기, label, native button/form. 시각 효과는 필요한 hover만 150ms, reduced-motion과 forced-colors 지원.
+- 홈: 실제 공개된 최신 글 최대 5개 → 시리즈 링크 → 메뉴 링크. 광고형 소개·개인 이름·도구·자료받기 CTA를 넣지 않습니다.
+- 시리즈는 원리별 목록, 프롬프트는 해설로 연결되는 목록, 글은 본문과 목차, 자료 신청은 설명과 폼. 모든 페이지에 같은 헤더·푸터·색·타이포 적용.
+- 기존 글은 푸터의 아카이브로 접근. 홈 추천·신규 시리즈·새 RSS에 섞지 않습니다. URL과 본문·작성일을 보존하고 보관 글임을 표시합니다.
 
-- Load only the current locale's two families and three weights: Noto Serif/Sans KR, JP, or SC for CJK; Newsreader 500 and Geist 400/600 for English. The neutral root hub may load the four sans families plus Newsreader for its language list. Use the native monospace stack for code.
-- Page width is at most 1240px. Keep mobile side padding at 20px, or 16px at 320px. Article reading measure is 720px.
-- Body copy is 19px with a 1.85 line height. Headings use serif weight 500, balance naturally, and never clamp, ellipsize, or reserve a fixed height.
-- Links remain identifiable with underlines or an equivalent active treatment and a clear focus state. Content remains visible without JavaScript. Keep motion to a few quiet transitions and honor reduced motion.
-- Use one native language select with localized names and a label. Preserve equivalent-page URLs and a working link fallback without JavaScript. On mobile, keep brand and tools together and the four navigation links on one uninterrupted row, including at 320px. Do not let a sticky header cover content on short viewports.
+## 성능과 검증
 
-## Reading surfaces
+필수 내용은 SSR 응답에 포함합니다. 검색·아카이브 페이지 이동·폼은 JavaScript 없이 작동합니다. 클라이언트 개선은 초안 필터·복사·데모와 선택적으로 보는 기존 다이어그램에 사용합니다. 다이어그램 모듈은 필요할 때만 자체 호스팅 파일에서 가져옵니다. 아카이브 본문은 Static Assets에서 글 하나씩 읽으므로 Worker bundle에 전체 본문을 넣지 않습니다. 실제 전달량과 테스트 결과는 reports에 기록하며 검색 순위·AI 인용·접근성 완전 준수를 보장하지 않습니다.
 
-- Article reading uses a 720px measure, 19px/1.85 body copy on desktop, and 18px/1.88 on mobile. Preserve the source prose and paragraph order.
-- Show a table of contents when an article has at least four second- or third-level headings. Use native `<details>` for the mobile TOC; keep all article paragraphs visible without JavaScript.
-- Put long code and wide tables inside labelled, focusable regions with scoped horizontal scrolling so the document itself never scrolls sideways.
-- Reading progress is a noninteractive 2px bar at the viewport edge. Its fill stays inside that container; never apply viewport-fixed positioning to the fill. Verify the bar halfway through an article at mobile widths, not just at the top where its width is zero.
+1440/390/320px, 200% 글자 확대, 키보드·no-JS, axe AA, 로컬 production Worker의 SSR·canonical·sitemap·원래 URL을 검증합니다. 검증 이미지와 보고서는 실제 구현과 참고 시안을 구분합니다.
 
-## Content and routes
 
-- Keep the homepage opening focused on the headline and introduction; do not restore the removed pricing diagram. Write author copy in natural, concrete language rather than translated slogans.
-- Call tag navigation "태그" (Tags / タグ / 标签). Home tag discovery uses every unique tag from the latest five published columns in the current language, with the same stable ordering as the archive. Exclude drafts and future posts. Any displayed counts refer to those five columns; the full tag directory remains available.
-- Preserve all locale routes, downloads, publication-date guards, canonical/hreflang/schema metadata, source-hash markers, tag routes, and archive no-JS/infinite-loading behavior.
-- Prototype specimen labels, benchmark drafts, fabricated counts, testimonials, green verification badges, purple/neon/blue glow, and decorative code do not belong in production.
+## 2026-10-02 공개 및 UI 정책
 
-Personal article authoring follows the separately documented manual workflow and requires the user's publishing authorization.
+루트 `/`는 선택 언어 쿠키(`site_language`, 180일)를 우선하고 브라우저 `Accept-Language`를 참고해 `/ko/`, `/en/`, `/ja/`, `/zh/` 홈으로 302 이동합니다. 응답은 `private, no-store`, `Vary: Accept-Language, Cookie`입니다. 홈은 실제 승인·공개된 최신 글을 발행 시각 내림차순으로 최대 5편 표시하고, 시리즈와 메뉴 링크만 제공합니다. 현재 공개 글은 접근성 개요 한 편이므로 준비 중 글을 채워 넣지 않습니다. 네 언어 홈은 SSR·고유 canonical·상호 hreflang·x-default와 언어 선택기를 제공합니다. 한국어 시리즈의 기존 무접두 경로와 아카이브 URL은 유지합니다.
+
+개인 이름은 `/about` 소개 페이지에서만 표시합니다. 공통 작성자 표시, 푸터 이름, 홈 소개, 도구 메뉴, 자료받기 CTA와 독립 신청 폼은 제거합니다. 기존 `/resources/accessibility` 주소는 선택 언어의 마지막 글 `/series/accessibility/agentic-accessibility`로 308 이동합니다. 신청 폼은 마지막 글이 완성되고 모음집이 승인될 때 그 글 안에 추가할 예정입니다. 현재 마지막 글은 준비 중이며 폼과 메일 전송을 제공하지 않습니다. 이전 독립 폼 기반 브라우저 검증 기록은 이전 버전의 이력입니다.
+
+접근성 개요의 네 언어 본문·평가 프롬프트·도식 4개를 사용자 지시로 공개합니다. 정확한 sourceHash 승인과 번역 원본 일치 검증을 유지하고, RSS·sitemap·BlogPosting에 공개 글만 포함합니다. 나머지 87편 × 4언어는 본문 없는 준비 중 문서이며 noindex,follow입니다.
+
+모든 문서에 ‘초판 공개일’(`firstPublishedAt`)과 ‘최종 수정일’(`updatedAt`)을 표시합니다. 초판 공개일은 첫 실제 발행 때만 기록하며 수정 후에도 유지합니다. 준비 중 문서는 공개일을 만들지 않고 ‘공개 예정’이라고 표시합니다. 수정일은 보존된 본문·프롬프트·참조 도식 파일의 수정 기록에서 복원했습니다. compiler는 내용 해시가 변경되면 최종 수정일을 Asia/Tokyo 날짜로 갱신하며 초판 공개일은 덮어쓰지 않습니다. 내용 변경 시 기존 해시 승인은 자동으로 무효화됩니다. 최종 수정일은 공개 글의 dateModified, article:modified_time, sitemap lastmod에도 동일하게 제공합니다. 초판 공개일은 datePublished와 article:published_time에 사용합니다. 날짜 표기를 위한 메타데이터는 본문 승인 해시를 변경하지 않습니다.
+
+
+## 시리즈 상세 페이지 원칙 — 2026-10-02
+
+사용자가 전체 학습 목록 토글, 학습 성과를 설명하는 제목 아래 요약, 글과 시리즈의 JSON-LD 연결을 승인하고 향후 작성 원칙으로 저장하도록 요청했습니다. 상세 페이지 작업 전에 [article-detail-guidelines.md](article-detail-guidelines.md)를 읽고 적용합니다. 기본 접힘, 현재 글 순서와 강조, 공개/준비 상태, 네 언어 SSR 링크, PC 사이드바/모바일 요약 아래 배치, 키보드·no-JS 동작을 유지합니다. 준비 중 글에는 BlogPosting이나 발행 날짜를 만들어 넣지 않습니다.

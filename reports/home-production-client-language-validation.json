@@ -1,0 +1,31 @@
+{
+  "base": "https://jangwook.net",
+  "flows": [
+    {
+      "lang": "en",
+      "clientNavigation": true,
+      "cookieRemembered": true,
+      "KoreanAboutLanguage": true
+    },
+    {
+      "lang": "ja",
+      "clientNavigation": true,
+      "cookieRemembered": true,
+      "KoreanAboutLanguage": true
+    },
+    {
+      "lang": "zh",
+      "clientNavigation": true,
+      "cookieRemembered": true,
+      "KoreanAboutLanguage": true
+    },
+    {
+      "lang": "ko",
+      "clientNavigation": true,
+      "cookieRemembered": true,
+      "KoreanAboutLanguage": true
+    }
+  ],
+  "archiveLanguage": true,
+  "errors": []
+}

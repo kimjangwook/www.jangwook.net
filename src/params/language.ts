@@ -1,0 +1,1 @@
+export const match=(value:string)=>['ko','en','ja','zh'].includes(value);

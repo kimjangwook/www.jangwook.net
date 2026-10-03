@@ -1,0 +1,29 @@
+{
+  "posts": 88,
+  "criterionPosts": 86,
+  "prompts": 88,
+  "levels": {
+    "A": 31,
+    "AA": 24,
+    "AAA": 31
+  },
+  "published": 2,
+  "drafts": 86,
+  "bodyCharacters": 244797,
+  "promptCharacters": 140652,
+  "translationCounts": {
+    "en": {
+      "metadata": 88,
+      "complete": 2
+    },
+    "ja": {
+      "metadata": 88,
+      "complete": 2
+    },
+    "zh": {
+      "metadata": 88,
+      "complete": 2
+    }
+  },
+  "errors": []
+}

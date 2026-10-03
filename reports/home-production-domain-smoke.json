@@ -1,0 +1,85 @@
+{
+  "checks": [
+    {
+      "domain": "https://jangwook.net",
+      "lang": "ko",
+      "rootRedirect": "/ko/",
+      "home": 200,
+      "overview": 200,
+      "archivedURL": "/ko/blog/ko/salon-chatgpt-static-hosting-web-development/",
+      "cookieSecure": true,
+      "publishedIndexable": true
+    },
+    {
+      "domain": "https://jangwook.net",
+      "lang": "en",
+      "rootRedirect": "/en/",
+      "home": 200,
+      "overview": 200,
+      "archivedURL": "/en/blog/en/salon-chatgpt-static-hosting-web-development/",
+      "cookieSecure": true,
+      "publishedIndexable": true
+    },
+    {
+      "domain": "https://jangwook.net",
+      "lang": "ja",
+      "rootRedirect": "/ja/",
+      "home": 200,
+      "overview": 200,
+      "archivedURL": "/ja/blog/ja/salon-chatgpt-static-hosting-web-development/",
+      "cookieSecure": true,
+      "publishedIndexable": true
+    },
+    {
+      "domain": "https://jangwook.net",
+      "lang": "zh",
+      "rootRedirect": "/zh/",
+      "home": 200,
+      "overview": 200,
+      "archivedURL": "/zh/blog/zh/salon-chatgpt-static-hosting-web-development/",
+      "cookieSecure": true,
+      "publishedIndexable": true
+    },
+    {
+      "domain": "https://www.jangwook.net",
+      "lang": "ko",
+      "rootRedirect": "/ko/",
+      "home": 200,
+      "overview": 200,
+      "archivedURL": "/ko/blog/ko/salon-chatgpt-static-hosting-web-development/",
+      "cookieSecure": true,
+      "publishedIndexable": true
+    },
+    {
+      "domain": "https://www.jangwook.net",
+      "lang": "en",
+      "rootRedirect": "/en/",
+      "home": 200,
+      "overview": 200,
+      "archivedURL": "/en/blog/en/salon-chatgpt-static-hosting-web-development/",
+      "cookieSecure": true,
+      "publishedIndexable": true
+    },
+    {
+      "domain": "https://www.jangwook.net",
+      "lang": "ja",
+      "rootRedirect": "/ja/",
+      "home": 200,
+      "overview": 200,
+      "archivedURL": "/ja/blog/ja/salon-chatgpt-static-hosting-web-development/",
+      "cookieSecure": true,
+      "publishedIndexable": true
+    },
+    {
+      "domain": "https://www.jangwook.net",
+      "lang": "zh",
+      "rootRedirect": "/zh/",
+      "home": 200,
+      "overview": 200,
+      "archivedURL": "/zh/blog/zh/salon-chatgpt-static-hosting-web-development/",
+      "cookieSecure": true,
+      "publishedIndexable": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,10 @@
+PRAGMA foreign_keys = ON;
+CREATE TABLE leads (id TEXT PRIMARY KEY, email TEXT NOT NULL UNIQUE COLLATE NOCASE, role TEXT, verified_at TEXT, unsubscribe_hash TEXT UNIQUE NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+CREATE TABLE lead_consents (lead_id TEXT NOT NULL REFERENCES leads(id) ON DELETE CASCADE, scope TEXT NOT NULL, granted INTEGER NOT NULL DEFAULT 0, version TEXT NOT NULL, updated_at TEXT NOT NULL, PRIMARY KEY(lead_id,scope));
+CREATE TABLE consent_events (id TEXT PRIMARY KEY, lead_id TEXT NOT NULL REFERENCES leads(id) ON DELETE CASCADE, scope TEXT NOT NULL, granted INTEGER NOT NULL, version TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE TABLE material_requests (id TEXT PRIMARY KEY, lead_id TEXT NOT NULL REFERENCES leads(id) ON DELETE CASCADE, series TEXT NOT NULL, version TEXT NOT NULL, token_hash TEXT NOT NULL UNIQUE, expires_at INTEGER NOT NULL, status TEXT NOT NULL CHECK(status IN ('pending','sending','captured','accepted','failed')), created_at TEXT NOT NULL, UNIQUE(lead_id,series,version));
+CREATE TABLE mail_outbox (id TEXT PRIMARY KEY, request_id TEXT NOT NULL UNIQUE REFERENCES material_requests(id) ON DELETE CASCADE, subject TEXT NOT NULL, body TEXT NOT NULL, status TEXT NOT NULL CHECK(status IN ('pending','sending','captured','accepted','failed')), attempts INTEGER NOT NULL DEFAULT 0, provider_id TEXT, error_code TEXT, updated_at TEXT NOT NULL);
+CREATE TABLE request_limits (key TEXT PRIMARY KEY, count INTEGER NOT NULL, expires_at INTEGER NOT NULL);
+CREATE INDEX material_requests_expiry ON material_requests(expires_at);
+CREATE INDEX leads_activity ON leads(updated_at);
+CREATE INDEX outbox_status ON mail_outbox(status,updated_at);

@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-01T14:45:29.252Z",
+  "environment": "local only; not deployed",
+  "languages": [
+    "ko",
+    "en",
+    "ja",
+    "zh"
+  ],
+  "chaptersPerLanguage": 88,
+  "documentRoutes": 352,
+  "bodyAndPromptFiles": 704,
+  "reviewReadyOverviewLanguages": [
+    "ko",
+    "en",
+    "ja",
+    "zh"
+  ],
+  "followingChapters": "87 preparation pages per language; existing internal Korean drafts preserved",
+  "placeholderPolicy": {
+    "status": 200,
+    "robots": "noindex,follow",
+    "sitemap": false,
+    "rss": false,
+    "blogPosting": false,
+    "unapprovedBodyInPageData": false
+  },
+  "sourceOverviewHash": "6854235cc9cbfaabb605f84a570afb7eaa58c294ce00da32d8041302d432ecc3",
+  "validation": {
+    "typeErrors": 0,
+    "typeWarnings": 0,
+    "testsPassed": 14,
+    "browserPages": 48,
+    "developmentRoutes": 352,
+    "localProductionWorkerRoutes": 352,
+    "workerDryRun": true
+  },
+  "limitations": [
+    "All articles remain unpublished drafts",
+    "Material-request form and email flow remain Korean",
+    "Translated PDFs were not created in this task"
+  ],
+  "evidence": [
+    "series-language-validation.json",
+    "series-worker-validation.json",
+    "worker-validation.json",
+    "multilingual-typecheck.log",
+    "multilingual-tests.log",
+    "multilingual-build.log",
+    "multilingual-worker-dry-run.log",
+    "translations/accessibility-overview-provenance.json"
+  ]
+}

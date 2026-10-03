@@ -1,0 +1,3025 @@
+{
+  "pages": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "width": 1440,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility/overview",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/wcag-structure-2134e94fbade.svg",
+          "alt": "네 원칙 아래 지침, 지침 아래 성공 기준이 있습니다. 예: 인식 가능성, 1.1 텍스트 대안, 1.1.1 비텍스트 콘텐츠. AA 목표는 A와 AA 기준을 함께 포함하며 AAA 목표는 세 수준을 모두 포함합니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/signup-states-cc659e4c979c.svg",
+          "alt": "입력 화면에서 약관을 열고 닫아 입력을 이어갑니다. 잘못된 이메일을 제출한 오류 상태, 수정 후 재제출, 가입 완료 상태까지 각각 관찰합니다. 한 번의 최초 화면 검사로 이 과정을 확인했다고 할 수 없습니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/image-context-82591aaef74a.svg",
+          "alt": "A는 배송 안내 문장 옆에 놓인 장식 이미지이며 이동 기능이 없습니다. B는 트럭 이미지만 들어 있는 배송 조회 링크입니다. B의 초점 테두리, 손 모양 포인터와 화살표는 이미지 링크를 선택하면 배송 조회 화면으로 이동함을 나타냅니다. A는 순수 장식인 경우 빈 대체 텍스트를, B는 링크 목적을 전달하는 배송 조회 같은 대체 텍스트를 검토합니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/evidence-workflow-3bf434ae85e9.svg",
+          "alt": "범위와 질문을 정하고 증거를 수집한 뒤 도구와 AI로 검토합니다. 근거와 판정을 기록하고 수정 후 같은 환경에서 재확인합니다. 증거가 부족하면 수집을 보완하며 조작 실패는 실행 상태로 따로 기록합니다. 이 그림은 구현 완료된 서비스가 아니라 평가 설계입니다.",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "사용자가 하려는 일과 완료 조건을 적었습니다. 예: 약관을 확인하고 가입한 뒤 완료 안내를 인식한다.",
+        "시작 화면과 오류·팝업·완료 상태를 정리했습니다. 아직 확인하지 않은 상태는 미확인으로 남겼습니다.",
+        "목표 WCAG 버전과 수준, 브라우저·화면 크기·입력 방식·보조 기술 등 평가 환경을 기록했습니다. 정하지 않은 조건도 표시했습니다.",
+        "제공할 자료와 연결된 도구를 구분했습니다. 개인정보와 인증 정보를 제거하고, 캡처 시점과 상태를 함께 기록했습니다."
+      ]
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/non-text-content",
+      "width": 1440,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility",
+      "width": 1440,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ko",
+      "path": "/prompts",
+      "width": 1440,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "width": 390,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility/overview",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/wcag-structure-2134e94fbade.svg",
+          "alt": "네 원칙 아래 지침, 지침 아래 성공 기준이 있습니다. 예: 인식 가능성, 1.1 텍스트 대안, 1.1.1 비텍스트 콘텐츠. AA 목표는 A와 AA 기준을 함께 포함하며 AAA 목표는 세 수준을 모두 포함합니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/signup-states-cc659e4c979c.svg",
+          "alt": "입력 화면에서 약관을 열고 닫아 입력을 이어갑니다. 잘못된 이메일을 제출한 오류 상태, 수정 후 재제출, 가입 완료 상태까지 각각 관찰합니다. 한 번의 최초 화면 검사로 이 과정을 확인했다고 할 수 없습니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/image-context-82591aaef74a.svg",
+          "alt": "A는 배송 안내 문장 옆에 놓인 장식 이미지이며 이동 기능이 없습니다. B는 트럭 이미지만 들어 있는 배송 조회 링크입니다. B의 초점 테두리, 손 모양 포인터와 화살표는 이미지 링크를 선택하면 배송 조회 화면으로 이동함을 나타냅니다. A는 순수 장식인 경우 빈 대체 텍스트를, B는 링크 목적을 전달하는 배송 조회 같은 대체 텍스트를 검토합니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/evidence-workflow-3bf434ae85e9.svg",
+          "alt": "범위와 질문을 정하고 증거를 수집한 뒤 도구와 AI로 검토합니다. 근거와 판정을 기록하고 수정 후 같은 환경에서 재확인합니다. 증거가 부족하면 수집을 보완하며 조작 실패는 실행 상태로 따로 기록합니다. 이 그림은 구현 완료된 서비스가 아니라 평가 설계입니다.",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "사용자가 하려는 일과 완료 조건을 적었습니다. 예: 약관을 확인하고 가입한 뒤 완료 안내를 인식한다.",
+        "시작 화면과 오류·팝업·완료 상태를 정리했습니다. 아직 확인하지 않은 상태는 미확인으로 남겼습니다.",
+        "목표 WCAG 버전과 수준, 브라우저·화면 크기·입력 방식·보조 기술 등 평가 환경을 기록했습니다. 정하지 않은 조건도 표시했습니다.",
+        "제공할 자료와 연결된 도구를 구분했습니다. 개인정보와 인증 정보를 제거하고, 캡처 시점과 상태를 함께 기록했습니다."
+      ]
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/non-text-content",
+      "width": 390,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility",
+      "width": 390,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ko",
+      "path": "/prompts",
+      "width": 390,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "width": 320,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility/overview",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/wcag-structure-2134e94fbade.svg",
+          "alt": "네 원칙 아래 지침, 지침 아래 성공 기준이 있습니다. 예: 인식 가능성, 1.1 텍스트 대안, 1.1.1 비텍스트 콘텐츠. AA 목표는 A와 AA 기준을 함께 포함하며 AAA 목표는 세 수준을 모두 포함합니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/signup-states-cc659e4c979c.svg",
+          "alt": "입력 화면에서 약관을 열고 닫아 입력을 이어갑니다. 잘못된 이메일을 제출한 오류 상태, 수정 후 재제출, 가입 완료 상태까지 각각 관찰합니다. 한 번의 최초 화면 검사로 이 과정을 확인했다고 할 수 없습니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/image-context-82591aaef74a.svg",
+          "alt": "A는 배송 안내 문장 옆에 놓인 장식 이미지이며 이동 기능이 없습니다. B는 트럭 이미지만 들어 있는 배송 조회 링크입니다. B의 초점 테두리, 손 모양 포인터와 화살표는 이미지 링크를 선택하면 배송 조회 화면으로 이동함을 나타냅니다. A는 순수 장식인 경우 빈 대체 텍스트를, B는 링크 목적을 전달하는 배송 조회 같은 대체 텍스트를 검토합니다.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/evidence-workflow-3bf434ae85e9.svg",
+          "alt": "범위와 질문을 정하고 증거를 수집한 뒤 도구와 AI로 검토합니다. 근거와 판정을 기록하고 수정 후 같은 환경에서 재확인합니다. 증거가 부족하면 수집을 보완하며 조작 실패는 실행 상태로 따로 기록합니다. 이 그림은 구현 완료된 서비스가 아니라 평가 설계입니다.",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "사용자가 하려는 일과 완료 조건을 적었습니다. 예: 약관을 확인하고 가입한 뒤 완료 안내를 인식한다.",
+        "시작 화면과 오류·팝업·완료 상태를 정리했습니다. 아직 확인하지 않은 상태는 미확인으로 남겼습니다.",
+        "목표 WCAG 버전과 수준, 브라우저·화면 크기·입력 방식·보조 기술 등 평가 환경을 기록했습니다. 정하지 않은 조건도 표시했습니다.",
+        "제공할 자료와 연결된 도구를 구분했습니다. 개인정보와 인증 정보를 제거하고, 캡처 시점과 상태를 함께 기록했습니다."
+      ]
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/non-text-content",
+      "width": 320,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility",
+      "width": 320,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ko",
+      "path": "/prompts",
+      "width": 320,
+      "status": 200,
+      "language": "ko",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "width": 1440,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility/overview",
+      "alternates": [
+        "en",
+        "ko",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/en/wcag-structure-8801eb635bcd.svg",
+          "alt": "Guidelines sit under the four principles, and success criteria sit under the guidelines. Example: Perceivable, 1.1 Text Alternatives, 1.1.1 Non-text Content. An AA target includes both A and AA criteria, and an AAA target includes all three levels.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/signup-states-6d821f812951.svg",
+          "alt": "From the input screen, open and close the terms, then continue entering information. Observe the error state after submitting an invalid email address, the state after correction and resubmission, and the completed sign-up state separately. A single check of the initial screen cannot establish that this process has been checked.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/image-context-092f99dcf682.svg",
+          "alt": "A is a decorative image beside delivery information text and has no navigation function. B is a shipment-tracking link containing only the truck image. The focus outline, hand-shaped pointer, and arrow in B indicate that selecting the image link navigates to a shipment-tracking screen. For A, consider empty alternative text if it is purely decorative; for B, consider alternative text such as Track shipment that conveys the link’s purpose.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/evidence-workflow-6bd4cc1cd1db.svg",
+          "alt": "Define the scope and questions, collect evidence, and then review it with tools and AI. Record the supporting evidence and judgments, and recheck in the same environment after corrections. If evidence is insufficient, supplement the collection; record interaction failures separately as execution statuses. This diagram represents an evaluation design, not a service whose implementation is complete.",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "I have recorded what the user wants to do and the completion conditions. Example: Review the terms, sign up, and perceive the completion message.",
+        "I have listed the starting screen and the error, popup, and completion states. States not yet checked remain marked as unverified.",
+        "I have recorded the target WCAG version and level, and the evaluation environment, including browser, screen size, input method, and assistive technology. I have also marked any conditions not yet decided.",
+        "I have distinguished the materials to provide from the connected tools. I have removed personal information and authentication information, and recorded the capture time and state together."
+      ]
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/non-text-content",
+      "width": 1440,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility",
+      "width": 1440,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/prompts",
+      "width": 1440,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "width": 390,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility/overview",
+      "alternates": [
+        "en",
+        "ko",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/en/wcag-structure-8801eb635bcd.svg",
+          "alt": "Guidelines sit under the four principles, and success criteria sit under the guidelines. Example: Perceivable, 1.1 Text Alternatives, 1.1.1 Non-text Content. An AA target includes both A and AA criteria, and an AAA target includes all three levels.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/signup-states-6d821f812951.svg",
+          "alt": "From the input screen, open and close the terms, then continue entering information. Observe the error state after submitting an invalid email address, the state after correction and resubmission, and the completed sign-up state separately. A single check of the initial screen cannot establish that this process has been checked.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/image-context-092f99dcf682.svg",
+          "alt": "A is a decorative image beside delivery information text and has no navigation function. B is a shipment-tracking link containing only the truck image. The focus outline, hand-shaped pointer, and arrow in B indicate that selecting the image link navigates to a shipment-tracking screen. For A, consider empty alternative text if it is purely decorative; for B, consider alternative text such as Track shipment that conveys the link’s purpose.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/evidence-workflow-6bd4cc1cd1db.svg",
+          "alt": "Define the scope and questions, collect evidence, and then review it with tools and AI. Record the supporting evidence and judgments, and recheck in the same environment after corrections. If evidence is insufficient, supplement the collection; record interaction failures separately as execution statuses. This diagram represents an evaluation design, not a service whose implementation is complete.",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "I have recorded what the user wants to do and the completion conditions. Example: Review the terms, sign up, and perceive the completion message.",
+        "I have listed the starting screen and the error, popup, and completion states. States not yet checked remain marked as unverified.",
+        "I have recorded the target WCAG version and level, and the evaluation environment, including browser, screen size, input method, and assistive technology. I have also marked any conditions not yet decided.",
+        "I have distinguished the materials to provide from the connected tools. I have removed personal information and authentication information, and recorded the capture time and state together."
+      ]
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/non-text-content",
+      "width": 390,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility",
+      "width": 390,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/prompts",
+      "width": 390,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "width": 320,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility/overview",
+      "alternates": [
+        "en",
+        "ko",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/en/wcag-structure-8801eb635bcd.svg",
+          "alt": "Guidelines sit under the four principles, and success criteria sit under the guidelines. Example: Perceivable, 1.1 Text Alternatives, 1.1.1 Non-text Content. An AA target includes both A and AA criteria, and an AAA target includes all three levels.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/signup-states-6d821f812951.svg",
+          "alt": "From the input screen, open and close the terms, then continue entering information. Observe the error state after submitting an invalid email address, the state after correction and resubmission, and the completed sign-up state separately. A single check of the initial screen cannot establish that this process has been checked.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/image-context-092f99dcf682.svg",
+          "alt": "A is a decorative image beside delivery information text and has no navigation function. B is a shipment-tracking link containing only the truck image. The focus outline, hand-shaped pointer, and arrow in B indicate that selecting the image link navigates to a shipment-tracking screen. For A, consider empty alternative text if it is purely decorative; for B, consider alternative text such as Track shipment that conveys the link’s purpose.",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/en/evidence-workflow-6bd4cc1cd1db.svg",
+          "alt": "Define the scope and questions, collect evidence, and then review it with tools and AI. Record the supporting evidence and judgments, and recheck in the same environment after corrections. If evidence is insufficient, supplement the collection; record interaction failures separately as execution statuses. This diagram represents an evaluation design, not a service whose implementation is complete.",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "I have recorded what the user wants to do and the completion conditions. Example: Review the terms, sign up, and perceive the completion message.",
+        "I have listed the starting screen and the error, popup, and completion states. States not yet checked remain marked as unverified.",
+        "I have recorded the target WCAG version and level, and the evaluation environment, including browser, screen size, input method, and assistive technology. I have also marked any conditions not yet decided.",
+        "I have distinguished the materials to provide from the connected tools. I have removed personal information and authentication information, and recorded the capture time and state together."
+      ]
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/non-text-content",
+      "width": 320,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility",
+      "width": 320,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "en",
+      "path": "/en/prompts",
+      "width": 320,
+      "status": 200,
+      "language": "en",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/en/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "width": 1440,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility/overview",
+      "alternates": [
+        "ja",
+        "ko",
+        "en",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/ja/wcag-structure-a9fcb8dcbffe.svg",
+          "alt": "四つの原則の下にガイドライン、ガイドラインの下に達成基準があります。例：知覚可能、1.1 テキストによる代替、1.1.1 非テキストコンテンツ。AAを目標とする場合はAとAAの基準をともに含み、AAAを目標とする場合は三つのレベルすべてを含みます。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/signup-states-6c3e817467de.svg",
+          "alt": "入力画面から利用規約を開いて閉じ、入力を続けます。不正なメールアドレスを送信したエラー状態、修正後の再送信、登録完了の状態まで、それぞれ観察します。最初の画面を一度検査しただけでは、この過程を確認したとはいえません。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/image-context-561861d296c3.svg",
+          "alt": "Aは配送案内の文章の横に置かれた装飾画像で、移動機能はありません。Bはトラックの画像だけが含まれる配送状況確認のリンクです。Bのフォーカス枠、手の形のポインター、矢印は、画像リンクを選択すると配送状況確認画面へ移動することを示しています。Aが純粋な装飾である場合は空の代替テキストを、Bはリンクの目的を伝える「配送状況を確認」などの代替テキストを検討します。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/evidence-workflow-847c11e48259.svg",
+          "alt": "範囲と質問を定め、証拠を収集した後、ツールとAIで検討します。根拠と判定を記録し、修正後に同じ環境で再確認します。証拠が不足していれば収集を補い、操作の失敗は実行状態として別に記録します。この図は、実装済みのサービスではなく、評価の設計を示しています。",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "ユーザーが行おうとしていることと完了条件を記載しました。例：利用規約を確認して登録し、完了案内を知覚する。",
+        "開始画面と、エラー・ポップアップ・完了の各状態を整理しました。まだ確認していない状態は未確認として残しました。",
+        "目標とするWCAGのバージョンとレベル、ブラウザー・画面サイズ・入力方法・支援技術などの評価環境を記録しました。未決定の条件も示しました。",
+        "提供する資料と接続されたツールを区別しました。個人情報と認証情報を取り除き、キャプチャした時点と状態を併せて記録しました。"
+      ]
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/non-text-content",
+      "width": 1440,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility",
+      "width": 1440,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/prompts",
+      "width": 1440,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "width": 390,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility/overview",
+      "alternates": [
+        "ja",
+        "ko",
+        "en",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/ja/wcag-structure-a9fcb8dcbffe.svg",
+          "alt": "四つの原則の下にガイドライン、ガイドラインの下に達成基準があります。例：知覚可能、1.1 テキストによる代替、1.1.1 非テキストコンテンツ。AAを目標とする場合はAとAAの基準をともに含み、AAAを目標とする場合は三つのレベルすべてを含みます。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/signup-states-6c3e817467de.svg",
+          "alt": "入力画面から利用規約を開いて閉じ、入力を続けます。不正なメールアドレスを送信したエラー状態、修正後の再送信、登録完了の状態まで、それぞれ観察します。最初の画面を一度検査しただけでは、この過程を確認したとはいえません。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/image-context-561861d296c3.svg",
+          "alt": "Aは配送案内の文章の横に置かれた装飾画像で、移動機能はありません。Bはトラックの画像だけが含まれる配送状況確認のリンクです。Bのフォーカス枠、手の形のポインター、矢印は、画像リンクを選択すると配送状況確認画面へ移動することを示しています。Aが純粋な装飾である場合は空の代替テキストを、Bはリンクの目的を伝える「配送状況を確認」などの代替テキストを検討します。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/evidence-workflow-847c11e48259.svg",
+          "alt": "範囲と質問を定め、証拠を収集した後、ツールとAIで検討します。根拠と判定を記録し、修正後に同じ環境で再確認します。証拠が不足していれば収集を補い、操作の失敗は実行状態として別に記録します。この図は、実装済みのサービスではなく、評価の設計を示しています。",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "ユーザーが行おうとしていることと完了条件を記載しました。例：利用規約を確認して登録し、完了案内を知覚する。",
+        "開始画面と、エラー・ポップアップ・完了の各状態を整理しました。まだ確認していない状態は未確認として残しました。",
+        "目標とするWCAGのバージョンとレベル、ブラウザー・画面サイズ・入力方法・支援技術などの評価環境を記録しました。未決定の条件も示しました。",
+        "提供する資料と接続されたツールを区別しました。個人情報と認証情報を取り除き、キャプチャした時点と状態を併せて記録しました。"
+      ]
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/non-text-content",
+      "width": 390,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility",
+      "width": 390,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/prompts",
+      "width": 390,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "width": 320,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility/overview",
+      "alternates": [
+        "ja",
+        "ko",
+        "en",
+        "zh"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/ja/wcag-structure-a9fcb8dcbffe.svg",
+          "alt": "四つの原則の下にガイドライン、ガイドラインの下に達成基準があります。例：知覚可能、1.1 テキストによる代替、1.1.1 非テキストコンテンツ。AAを目標とする場合はAとAAの基準をともに含み、AAAを目標とする場合は三つのレベルすべてを含みます。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/signup-states-6c3e817467de.svg",
+          "alt": "入力画面から利用規約を開いて閉じ、入力を続けます。不正なメールアドレスを送信したエラー状態、修正後の再送信、登録完了の状態まで、それぞれ観察します。最初の画面を一度検査しただけでは、この過程を確認したとはいえません。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/image-context-561861d296c3.svg",
+          "alt": "Aは配送案内の文章の横に置かれた装飾画像で、移動機能はありません。Bはトラックの画像だけが含まれる配送状況確認のリンクです。Bのフォーカス枠、手の形のポインター、矢印は、画像リンクを選択すると配送状況確認画面へ移動することを示しています。Aが純粋な装飾である場合は空の代替テキストを、Bはリンクの目的を伝える「配送状況を確認」などの代替テキストを検討します。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/ja/evidence-workflow-847c11e48259.svg",
+          "alt": "範囲と質問を定め、証拠を収集した後、ツールとAIで検討します。根拠と判定を記録し、修正後に同じ環境で再確認します。証拠が不足していれば収集を補い、操作の失敗は実行状態として別に記録します。この図は、実装済みのサービスではなく、評価の設計を示しています。",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "ユーザーが行おうとしていることと完了条件を記載しました。例：利用規約を確認して登録し、完了案内を知覚する。",
+        "開始画面と、エラー・ポップアップ・完了の各状態を整理しました。まだ確認していない状態は未確認として残しました。",
+        "目標とするWCAGのバージョンとレベル、ブラウザー・画面サイズ・入力方法・支援技術などの評価環境を記録しました。未決定の条件も示しました。",
+        "提供する資料と接続されたツールを区別しました。個人情報と認証情報を取り除き、キャプチャした時点と状態を併せて記録しました。"
+      ]
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/non-text-content",
+      "width": 320,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility",
+      "width": 320,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/prompts",
+      "width": 320,
+      "status": 200,
+      "language": "ja",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/ja/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "width": 1440,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility/overview",
+      "alternates": [
+        "zh",
+        "ko",
+        "en",
+        "ja"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/zh/wcag-structure-3524a1fa1972.svg",
+          "alt": "四项原则下设有指南，指南下设有成功标准。例如：可感知性、1.1 文本替代、1.1.1 非文本内容。AA 目标同时涵盖 A 和 AA 标准，AAA 目标涵盖全部三个级别。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/signup-states-f4d1f77ee8d0.svg",
+          "alt": "在输入界面打开并关闭条款，然后继续输入。分别观察提交错误电子邮件地址后的错误状态、修正后重新提交，以及注册完成状态。不能声称一次初始界面检查就确认了整个过程。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/image-context-26698cc98387.svg",
+          "alt": "A 是放在配送说明文字旁的装饰图像，没有跳转功能。B 是仅包含卡车图像的物流查询链接。B 的焦点边框、手形指针和箭头表示，选择该图像链接后会进入物流查询界面。对于纯装饰性的 A，考虑使用空替代文本；对于 B，考虑使用物流查询等能够传达链接用途的替代文本。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/evidence-workflow-61ea84f073f8.svg",
+          "alt": "确定范围和问题，收集证据，然后通过工具和 AI 进行审查。记录依据和判定，修改后在相同环境中再次确认。证据不足时补充收集，操作失败则单独记录为执行状态。本图展示的是评估设计，而不是已完成实现的服务。",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "已写明用户想完成的任务和完成条件。例如：查看条款并注册，然后感知完成提示。",
+        "已梳理起始界面以及错误、弹窗、完成状态。尚未确认的状态保留为未确认。",
+        "已记录目标 WCAG 版本和级别，以及浏览器、屏幕尺寸、输入方式、辅助技术等评估环境。尚未确定的条件也已标明。",
+        "已区分将要提供的资料与已连接的工具。已移除个人信息和身份验证信息，并同时记录了截取时点和状态。"
+      ]
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/non-text-content",
+      "width": 1440,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility",
+      "width": 1440,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/prompts",
+      "width": 1440,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 1440,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "width": 390,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility/overview",
+      "alternates": [
+        "zh",
+        "ko",
+        "en",
+        "ja"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/zh/wcag-structure-3524a1fa1972.svg",
+          "alt": "四项原则下设有指南，指南下设有成功标准。例如：可感知性、1.1 文本替代、1.1.1 非文本内容。AA 目标同时涵盖 A 和 AA 标准，AAA 目标涵盖全部三个级别。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/signup-states-f4d1f77ee8d0.svg",
+          "alt": "在输入界面打开并关闭条款，然后继续输入。分别观察提交错误电子邮件地址后的错误状态、修正后重新提交，以及注册完成状态。不能声称一次初始界面检查就确认了整个过程。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/image-context-26698cc98387.svg",
+          "alt": "A 是放在配送说明文字旁的装饰图像，没有跳转功能。B 是仅包含卡车图像的物流查询链接。B 的焦点边框、手形指针和箭头表示，选择该图像链接后会进入物流查询界面。对于纯装饰性的 A，考虑使用空替代文本；对于 B，考虑使用物流查询等能够传达链接用途的替代文本。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/evidence-workflow-61ea84f073f8.svg",
+          "alt": "确定范围和问题，收集证据，然后通过工具和 AI 进行审查。记录依据和判定，修改后在相同环境中再次确认。证据不足时补充收集，操作失败则单独记录为执行状态。本图展示的是评估设计，而不是已完成实现的服务。",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "已写明用户想完成的任务和完成条件。例如：查看条款并注册，然后感知完成提示。",
+        "已梳理起始界面以及错误、弹窗、完成状态。尚未确认的状态保留为未确认。",
+        "已记录目标 WCAG 版本和级别，以及浏览器、屏幕尺寸、输入方式、辅助技术等评估环境。尚未确定的条件也已标明。",
+        "已区分将要提供的资料与已连接的工具。已移除个人信息和身份验证信息，并同时记录了截取时点和状态。"
+      ]
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/non-text-content",
+      "width": 390,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility",
+      "width": 390,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/prompts",
+      "width": 390,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "width": 320,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility/overview",
+      "alternates": [
+        "zh",
+        "ko",
+        "en",
+        "ja"
+      ],
+      "violations": [],
+      "images": [
+        {
+          "src": "/images/series/accessibility/overview/zh/wcag-structure-3524a1fa1972.svg",
+          "alt": "四项原则下设有指南，指南下设有成功标准。例如：可感知性、1.1 文本替代、1.1.1 非文本内容。AA 目标同时涵盖 A 和 AA 标准，AAA 目标涵盖全部三个级别。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/signup-states-f4d1f77ee8d0.svg",
+          "alt": "在输入界面打开并关闭条款，然后继续输入。分别观察提交错误电子邮件地址后的错误状态、修正后重新提交，以及注册完成状态。不能声称一次初始界面检查就确认了整个过程。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/image-context-26698cc98387.svg",
+          "alt": "A 是放在配送说明文字旁的装饰图像，没有跳转功能。B 是仅包含卡车图像的物流查询链接。B 的焦点边框、手形指针和箭头表示，选择该图像链接后会进入物流查询界面。对于纯装饰性的 A，考虑使用空替代文本；对于 B，考虑使用物流查询等能够传达链接用途的替代文本。",
+          "loaded": true
+        },
+        {
+          "src": "/images/series/accessibility/overview/zh/evidence-workflow-61ea84f073f8.svg",
+          "alt": "确定范围和问题，收集证据，然后通过工具和 AI 进行审查。记录依据和判定，修改后在相同环境中再次确认。证据不足时补充收集，操作失败则单独记录为执行状态。本图展示的是评估设计，而不是已完成实现的服务。",
+          "loaded": true
+        }
+      ],
+      "checkboxes": [
+        "已写明用户想完成的任务和完成条件。例如：查看条款并注册，然后感知完成提示。",
+        "已梳理起始界面以及错误、弹窗、完成状态。尚未确认的状态保留为未确认。",
+        "已记录目标 WCAG 版本和级别，以及浏览器、屏幕尺寸、输入方式、辅助技术等评估环境。尚未确定的条件也已标明。",
+        "已区分将要提供的资料与已连接的工具。已移除个人信息和身份验证信息，并同时记录了截取时点和状态。"
+      ]
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/non-text-content",
+      "width": 320,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility/non-text-content",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility",
+      "width": 320,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/series/accessibility",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/prompts",
+      "width": 320,
+      "status": 200,
+      "language": "zh",
+      "scrollWidth": 320,
+      "h1": 1,
+      "canonical": "https://jangwook.net/zh/prompts",
+      "alternates": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "violations": [],
+      "images": [],
+      "checkboxes": []
+    }
+  ],
+  "routes": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/captions-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/captions-live",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/sign-language-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/extended-audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-only-live",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/info-and-relationships",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/meaningful-sequence",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/sensory-characteristics",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/orientation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/identify-input-purpose",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/identify-purpose",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/use-of-color",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-control",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/contrast-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/resize-text",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/images-of-text",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/contrast-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/low-or-no-background-audio",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/visual-presentation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/images-of-text-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/reflow",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/non-text-contrast",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/text-spacing",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/content-on-hover-or-focus",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/keyboard",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/no-keyboard-trap",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/keyboard-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/character-key-shortcuts",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/timing-adjustable",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/pause-stop-hide",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/no-timing",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/interruptions",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/re-authenticating",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/timeouts",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/three-flashes-or-below-threshold",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/three-flashes",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/animation-from-interactions",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/bypass-blocks",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/page-titled",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-order",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/link-purpose-in-context",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/multiple-ways",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/headings-and-labels",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-visible",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/location",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/link-purpose-link-only",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/section-headings",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-not-obscured-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-not-obscured-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/focus-appearance",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/pointer-gestures",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/pointer-cancellation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/label-in-name",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/motion-actuation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/target-size-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/concurrent-input-mechanisms",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/dragging-movements",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/target-size-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/language-of-page",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/language-of-parts",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/unusual-words",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/abbreviations",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/reading-level",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/pronunciation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/on-focus",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/on-input",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/consistent-navigation",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/consistent-identification",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/change-on-request",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/consistent-help",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/error-identification",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/labels-or-instructions",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/error-suggestion",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/error-prevention-legal-financial-data",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/help",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/error-prevention-all",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/redundant-entry",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/accessible-authentication-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/accessible-authentication-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/name-role-value",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/status-messages",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/agentic-accessibility",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/captions-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/captions-live",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/sign-language-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/extended-audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-only-live",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/info-and-relationships",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/sensory-characteristics",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/meaningful-sequence",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/orientation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/identify-input-purpose",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/identify-purpose",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/use-of-color",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-control",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/contrast-minimum",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/resize-text",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/images-of-text",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/contrast-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/low-or-no-background-audio",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/visual-presentation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/images-of-text-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/reflow",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/non-text-contrast",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/text-spacing",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/content-on-hover-or-focus",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/keyboard",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/no-keyboard-trap",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/no-timing",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/interruptions",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/keyboard-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/character-key-shortcuts",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/timing-adjustable",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/pause-stop-hide",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/re-authenticating",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/timeouts",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/three-flashes-or-below-threshold",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/three-flashes",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/animation-from-interactions",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/bypass-blocks",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/page-titled",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-order",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/link-purpose-in-context",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/multiple-ways",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/headings-and-labels",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-visible",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/location",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/link-purpose-link-only",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/section-headings",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-not-obscured-minimum",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-not-obscured-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/focus-appearance",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/pointer-gestures",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/pointer-cancellation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/label-in-name",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/target-size-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/concurrent-input-mechanisms",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/motion-actuation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/dragging-movements",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/target-size-minimum",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/language-of-page",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/language-of-parts",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/unusual-words",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/abbreviations",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/reading-level",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/pronunciation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/on-focus",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/on-input",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/consistent-navigation",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/consistent-identification",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/change-on-request",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/consistent-help",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/error-identification",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/labels-or-instructions",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/error-suggestion",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/error-prevention-legal-financial-data",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/help",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/error-prevention-all",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/redundant-entry",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/accessible-authentication-minimum",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/accessible-authentication-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/name-role-value",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/status-messages",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/agentic-accessibility",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/captions-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/captions-live",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/sign-language-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/extended-audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-only-live",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/info-and-relationships",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/meaningful-sequence",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/sensory-characteristics",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/orientation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/identify-input-purpose",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/identify-purpose",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/use-of-color",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-control",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/contrast-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/resize-text",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/images-of-text",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/contrast-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/low-or-no-background-audio",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/visual-presentation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/images-of-text-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/reflow",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/non-text-contrast",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/text-spacing",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/content-on-hover-or-focus",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/keyboard",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/no-keyboard-trap",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/keyboard-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/character-key-shortcuts",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/timing-adjustable",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/pause-stop-hide",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/no-timing",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/interruptions",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/re-authenticating",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/timeouts",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/three-flashes-or-below-threshold",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/three-flashes",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/animation-from-interactions",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/bypass-blocks",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/page-titled",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-order",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/link-purpose-in-context",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/multiple-ways",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/headings-and-labels",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-visible",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/location",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/link-purpose-link-only",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/section-headings",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-not-obscured-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-not-obscured-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/focus-appearance",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/pointer-gestures",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/pointer-cancellation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/label-in-name",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/motion-actuation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/target-size-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/concurrent-input-mechanisms",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/dragging-movements",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/target-size-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/language-of-page",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/language-of-parts",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/unusual-words",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/abbreviations",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/reading-level",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/pronunciation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/on-focus",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/on-input",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/consistent-navigation",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/consistent-identification",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/change-on-request",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/consistent-help",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/error-identification",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/labels-or-instructions",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/error-suggestion",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/error-prevention-legal-financial-data",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/help",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/error-prevention-all",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/redundant-entry",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/accessible-authentication-minimum",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/accessible-authentication-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/name-role-value",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/status-messages",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/agentic-accessibility",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/overview",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/non-text-content",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/captions-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-description-or-media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/captions-live",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/sign-language-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/extended-audio-description-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/media-alternative-prerecorded",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-only-live",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/info-and-relationships",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/meaningful-sequence",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/sensory-characteristics",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/orientation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/identify-input-purpose",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/identify-purpose",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/use-of-color",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-control",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/contrast-minimum",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/resize-text",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/images-of-text",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/contrast-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/low-or-no-background-audio",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/visual-presentation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/images-of-text-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/reflow",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/non-text-contrast",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/text-spacing",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/content-on-hover-or-focus",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/keyboard",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/no-keyboard-trap",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/keyboard-no-exception",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/character-key-shortcuts",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/timing-adjustable",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/pause-stop-hide",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/no-timing",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/interruptions",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/re-authenticating",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/timeouts",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/three-flashes-or-below-threshold",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/three-flashes",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/animation-from-interactions",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/bypass-blocks",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/page-titled",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-order",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/link-purpose-in-context",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/multiple-ways",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/headings-and-labels",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-visible",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/location",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/section-headings",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-not-obscured-minimum",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-not-obscured-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/focus-appearance",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/link-purpose-link-only",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/pointer-gestures",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/pointer-cancellation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/label-in-name",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/motion-actuation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/target-size-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/concurrent-input-mechanisms",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/dragging-movements",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/target-size-minimum",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/abbreviations",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/language-of-page",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/language-of-parts",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/unusual-words",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/reading-level",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/on-focus",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/pronunciation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/on-input",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/consistent-navigation",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/consistent-identification",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/change-on-request",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/consistent-help",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/error-identification",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/labels-or-instructions",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/error-suggestion",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/error-prevention-legal-financial-data",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/help",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/error-prevention-all",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/redundant-entry",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/accessible-authentication-minimum",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/accessible-authentication-enhanced",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/name-role-value",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/status-messages",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/agentic-accessibility",
+      "status": 200
+    }
+  ],
+  "flows": [
+    {
+      "lang": "ko",
+      "noJS": true,
+      "keyboardSkip": true,
+      "languageTransition": true,
+      "search": true,
+      "textResize": true
+    },
+    {
+      "lang": "en",
+      "noJS": true,
+      "keyboardSkip": true,
+      "languageTransition": true,
+      "search": true,
+      "textResize": true
+    },
+    {
+      "lang": "ja",
+      "noJS": true,
+      "keyboardSkip": true,
+      "languageTransition": true,
+      "search": true,
+      "textResize": true
+    },
+    {
+      "lang": "zh",
+      "noJS": true,
+      "keyboardSkip": true,
+      "languageTransition": true,
+      "search": true,
+      "textResize": true
+    }
+  ],
+  "errors": []
+}

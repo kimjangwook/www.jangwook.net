@@ -1,0 +1,26 @@
+{
+  "commit": "1f90b67b",
+  "reason": "Four live sitemap article URLs absent from the preserved local snapshot; original sources recovered from Git, no original archive edits.",
+  "files": [
+    {
+      "path": "src/assets/blog/salon-chatgpt-static-hosting-web-development/hero.png",
+      "sha256": "f296bb9b01120b13fab15fe333a08f635fe0a13fcbd8a67c7064b53c9c57f5bc"
+    },
+    {
+      "path": "src/content/blog/en/salon-chatgpt-static-hosting-web-development.md",
+      "sha256": "38107fbc70aa5b659d5d9f5728cbd8576b7666c008c8c4cddcb2c07de3c26efe"
+    },
+    {
+      "path": "src/content/blog/ja/salon-chatgpt-static-hosting-web-development.md",
+      "sha256": "8390d92c40178de696a4c81c6aae32cb2adf8c3052cb9b5fab0c9c204b9084ce"
+    },
+    {
+      "path": "src/content/blog/ko/salon-chatgpt-static-hosting-web-development.md",
+      "sha256": "d8bc57c2ab9774b54ba58b7d6873e62706906ceac2e6ff04dc593c9224df7a82"
+    },
+    {
+      "path": "src/content/blog/zh/salon-chatgpt-static-hosting-web-development.md",
+      "sha256": "b9d098ddc59bf751f17eeacc4b860dff39c4789c12d0251bce397d744c3501e7"
+    }
+  ]
+}

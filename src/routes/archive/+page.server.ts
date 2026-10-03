@@ -1,0 +1,2 @@
+import { archiveList } from '$lib/server/archive';
+export const load=({url}:{url:URL})=>({list:archiveList(url),seo:{title:'아카이브 — jangwook.net',description:'기존에 공개한 글을 원래 주소 그대로 보관합니다.',canonical:'https://jangwook.net'+url.pathname+url.search}});

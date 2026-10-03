@@ -1,6 +1,5 @@
-// Mediavine 호스팅 ads.txt를 받아 dist/ads.txt로 서빙한다.
-// deploy.yml의 일일 크론 빌드(00:00 KST)가 매일 최신본으로 갱신한다.
-// (한때 워커 301 리다이렉트 방식을 썼으나 자기 도메인 직접 서빙으로 회귀 — 2026-08-12)
+// 기존 Journey/Mediavine 원본을 빌드 전에 받아 SvelteKit Static Assets로 직접 제공한다.
+// 자동 갱신을 가정하지 않는다. 현재 수동 배포 시마다 원본을 갱신한다.
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const ADSTXT_URL =
   'https://adstxt.journeymv.com/sites/b87a8865-5f57-423f-81d5-36dd4700eafe/ads.txt';
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const outPath = path.join(repoRoot, 'dist', 'ads.txt');
+const outPath = path.join(repoRoot, 'static', 'ads.txt');
 
 const RETRIES = 3;
 
@@ -35,9 +34,11 @@ const body = await fetchWithRetry();
 const recordLines = body
   .split('\n')
   .filter((line) => /^[a-z0-9.-]+,\s*\S+,\s*(DIRECT|RESELLER)/i.test(line.trim()));
-if (recordLines.length < 10) {
+if (!/^ownerdomain=jangwook\.net\s*$/m.test(body) || recordLines.length < 10) {
   throw new Error(`ads.txt 응답이 비정상 (판매자 레코드 ${recordLines.length}건)`);
 }
 
-await fs.writeFile(outPath, body);
-console.log(`✅ dist/ads.txt 생성 (판매자 레코드 ${recordLines.length}건)`);
+await fs.mkdir(path.dirname(outPath), { recursive: true });
+await fs.writeFile(outPath + '.tmp', body);
+await fs.rename(outPath + '.tmp', outPath);
+console.log(`✅ static/ads.txt 생성 (판매자 레코드 ${recordLines.length}건)`);

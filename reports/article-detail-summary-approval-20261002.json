@@ -1,0 +1,35 @@
+{
+  "authorization": "User approved full learning order toggle, outcome-focused summary and series structured data; proceed and save as article-detail principles.",
+  "scope": "Existing overview summary and UI metadata only; original body, prompts and diagrams remain the existing approved editions.",
+  "approvedAt": "2026-10-01T21:44:14Z",
+  "editions": [
+    {
+      "lang": "ko",
+      "sourceHash": "d65400684698d59c7989b58e44297840487972855afc6d49d235801939d7bd77",
+      "firstPublishedAt": "2026-10-01T20:42:37Z",
+      "updatedAt": "2026-10-02",
+      "summary": "웹 접근성을 사용자가 정보를 얻고 작업을 끝내는 과정에서 이해합니다. WCAG 2.2의 구조와 AI를 활용한 평가 방법을 익히고, 페이지·이용 흐름·증거 자료를 정해 첫 평가 프롬프트를 실행할 준비를 합니다."
+    },
+    {
+      "lang": "en",
+      "sourceHash": "2e2bdfe5b8d7b425685c812a05915b6879e88ab4e19bb4a37c7368c0465f94bb",
+      "firstPublishedAt": "2026-10-01T20:42:37Z",
+      "updatedAt": "2026-10-02",
+      "summary": "Understand web accessibility through the steps people take to find information and complete tasks. Learn how WCAG 2.2 is structured and how AI can support evaluation, then define the page, user journey and evidence needed to run your first evaluation prompt."
+    },
+    {
+      "lang": "ja",
+      "sourceHash": "f70691a9f82cf9583cb7b24c5ed923e70434611a6b26e2c5494a6592dd717474",
+      "firstPublishedAt": "2026-10-01T20:42:37Z",
+      "updatedAt": "2026-10-02",
+      "summary": "利用者が情報を得て目的の操作を終えるまでの流れから、ウェブアクセシビリティを理解します。WCAG 2.2の構造とAIを活用した評価方法を学び、対象ページ・利用の流れ・証拠資料を決めて、最初の評価プロンプトを実行する準備を整えます。"
+    },
+    {
+      "lang": "zh",
+      "sourceHash": "2222828a8102a1939f5a4f4ba4d77bdd0b1e8419cb2c64babe19b8b28c09b092",
+      "firstPublishedAt": "2026-10-01T20:42:37Z",
+      "updatedAt": "2026-10-02",
+      "summary": "从用户获取信息并完成任务的过程理解 Web 无障碍。了解 WCAG 2.2 的结构和借助 AI 进行评估的方法，明确目标页面、用户流程及所需证据，为运行第一个评估提示词做好准备。"
+    }
+  ]
+}

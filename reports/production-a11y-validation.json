@@ -1,0 +1,199 @@
+{
+  "base": "https://jangwook.net",
+  "checkedAt": "2026-10-01T15:07:30.507Z",
+  "pages": [
+    {
+      "lang": "ko",
+      "width": 1440,
+      "path": "/series/accessibility",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "ko",
+      "width": 1440,
+      "path": "/series/accessibility/non-text-content",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "ko",
+      "width": 1440,
+      "path": "/prompts",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "path": "/series/accessibility",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "path": "/series/accessibility/non-text-content",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "path": "/prompts",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "path": "/en/series/accessibility",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "path": "/en/series/accessibility/non-text-content",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "path": "/en/prompts",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "path": "/en/series/accessibility",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "path": "/en/series/accessibility/non-text-content",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "path": "/en/prompts",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "path": "/ja/series/accessibility",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "path": "/ja/series/accessibility/non-text-content",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "path": "/ja/prompts",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "path": "/ja/series/accessibility",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "path": "/ja/series/accessibility/non-text-content",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "path": "/ja/prompts",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "path": "/zh/series/accessibility",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "path": "/zh/series/accessibility/non-text-content",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "path": "/zh/prompts",
+      "status": 200,
+      "scrollWidth": 1440,
+      "violations": []
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "path": "/zh/series/accessibility",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "path": "/zh/series/accessibility/non-text-content",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "path": "/zh/prompts",
+      "status": 200,
+      "scrollWidth": 320,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

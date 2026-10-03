@@ -1,0 +1,1 @@
+<script lang="ts">import ArchiveList from '$lib/components/ArchiveList.svelte';let {data}=$props();</script><svelte:head><title>주제별 아카이브 — jangwook.net</title></svelte:head><ArchiveList list={data.list}/>
