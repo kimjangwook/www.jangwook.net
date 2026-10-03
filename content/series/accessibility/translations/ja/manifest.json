@@ -17,17 +17,17 @@
   {
     "slug": "non-text-content",
     "title": "代替テキスト：画像が担う役割を伝える",
-    "summary": "画像の存在よりも、その目的と文脈を説明する代替を設計します。",
-    "translationSourceHash": "10034c2fc5c47b28045d5376aa84484eeae31f63331df62ce06cd6d16e64ff66",
-    "hasContent": false,
-    "status": "draft",
-    "approvalHash": null,
-    "publishedAt": null,
-    "reviewedAt": null,
-    "reviewReady": false,
-    "updatedAt": "2026-10-01",
-    "contentRevisionHash": "03d9bf910f61c866ad2b1adc67f034d9ddaf5aa621018937392095ce24d196fb",
-    "firstPublishedAt": null
+    "summary": "非テキストコンテンツが伝える情報と操作の目的に合わせて、テキストによる代替を設計します。画像・DOM・アクセシビリティツリー・ページの文脈を照合する方法を学び、マルチモーダルAIの評価プロンプトを使って、根拠と修正・再確認の項目を記録できます。",
+    "translationSourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c",
+    "hasContent": true,
+    "status": "published",
+    "approvalHash": "2370940da1fe2a1135119fe3fcc1a17f55eb434a54a4be6570e024749ceebc93",
+    "publishedAt": "2026-10-03T13:32:25Z",
+    "reviewedAt": "2026-10-03T13:32:25Z",
+    "reviewReady": true,
+    "updatedAt": "2026-10-03",
+    "contentRevisionHash": "2370940da1fe2a1135119fe3fcc1a17f55eb434a54a4be6570e024749ceebc93",
+    "firstPublishedAt": "2026-10-03T13:32:25Z"
   },
   {
     "slug": "audio-only-and-video-only-prerecorded",

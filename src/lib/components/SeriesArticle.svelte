@@ -4,7 +4,7 @@ import ArticleSeo from './ArticleSeo.svelte';import Arrow from './Arrow.svelte';
 import {localizedPath} from '$lib/series/i18n';import type {loadArticle} from '$lib/server/series';
 let {data}:{data:ReturnType<typeof loadArticle>}=$props();let ui=$derived(data.ui);let firstPublishedDate=$derived(data.post.firstPublishedAt?new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(data.post.firstPublishedAt)):null);
 </script>
-<svelte:head><title>{data.post.title} — {ui.seriesTitle}</title><meta name="description" content={data.post.summary}/>{#if !data.prepared}{#each data.languageLinks as link}<link rel="alternate" hreflang={link.lang} href={'https://jangwook.net'+link.path}/>{/each}{/if}</svelte:head>
+<svelte:head><title>{data.post.title} — {ui.seriesTitle}</title><meta name="description" content={data.post.summary}/>{#if data.prepared}<meta name="article-source-sha256" content={data.post.sourceHash}/>{:else}{#each data.languageLinks as link}<link rel="alternate" hreflang={link.lang} href={'https://jangwook.net'+link.path}/>{/each}{/if}</svelte:head>
 {#if data.prepared}<ArticleSeo title={data.post.title} description={data.post.summary} path={data.path} lang={data.lang} translations={data.translations} publishedAt={data.post.firstPublishedAt} updatedAt={data.post.updatedAt} seriesPath={localizedPath('/series/accessibility',data.lang)} position={data.post.order}/>{/if}
 <SeriesStructuredData chapters={data.chapters} lang={data.lang}/>
 <div class="wrap article-shell" lang={data.lang}><article class="article article-layout" data-source-sha256={data.post.sourceHash}>

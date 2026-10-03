@@ -1,0 +1,26 @@
+{
+  "ko": {
+    "sourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c",
+    "firstPublishedAt": "2026-10-03T13:32:25Z",
+    "updatedAt": "2026-10-03",
+    "title": "대체 텍스트: 이미지가 맡은 일을 전달하기"
+  },
+  "en": {
+    "sourceHash": "34f62eff0201925ba2e6c5d3330b6e9373fc2019ac12a678b498b80c3463374e",
+    "firstPublishedAt": "2026-10-03T13:32:25Z",
+    "updatedAt": "2026-10-03",
+    "title": "Alternative Text: Conveying What an Image Does"
+  },
+  "ja": {
+    "sourceHash": "2370940da1fe2a1135119fe3fcc1a17f55eb434a54a4be6570e024749ceebc93",
+    "firstPublishedAt": "2026-10-03T13:32:25Z",
+    "updatedAt": "2026-10-03",
+    "title": "代替テキスト：画像が担う役割を伝える"
+  },
+  "zh": {
+    "sourceHash": "ef8da4a833f7209eea5b5717d351887899d871bb3171133ac2b607788485e831",
+    "firstPublishedAt": "2026-10-03T13:32:25Z",
+    "updatedAt": "2026-10-03",
+    "title": "替代文本：传达图像所承担的作用"
+  }
+}

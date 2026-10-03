@@ -1,0 +1,319 @@
+[
+  {
+    "lang": "en",
+    "sourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c",
+    "translation": {
+      "requested_model": "gpt-6-astra",
+      "effort": "high",
+      "started_at": "2026-10-03T13:16:52Z",
+      "input_sha256": "e38b46e9398287bb2a154be1b7aa8b94696252b23e8e7dc449675ca4070c3d54",
+      "status": "completed",
+      "model_returned": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 11765,
+        "output_tokens": 10080,
+        "cached_input_tokens": 0,
+        "images": 0,
+        "search_calls": 0
+      },
+      "elapsed_seconds": 405.9
+    },
+    "review": {
+      "requested_model": "gpt-6-astra",
+      "effort": "high",
+      "started_at": "2026-10-03T13:25:05Z",
+      "input_sha256": "4fed66fa02af2846b981870f48a892770dc4ee4f629d032106c758163953dc57",
+      "status": "completed",
+      "model_returned": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 21430,
+        "output_tokens": 1251,
+        "cached_input_tokens": 0,
+        "images": 0,
+        "search_calls": 0
+      },
+      "elapsed_seconds": 55.85
+    },
+    "reviewFindings": {
+      "complete": true,
+      "findings": [
+        {
+          "severity": "warning",
+          "field": "summary",
+          "reason": "The opening sentence awkwardly attaches the purpose to “the controls” rather than directly to the non-text content. The source refers to the information and functional purpose conveyed by non-text content."
+        },
+        {
+          "severity": "warning",
+          "field": "body",
+          "reason": "“Execution time” can mean elapsed duration, whereas 실행 시각 specifically means when the run occurred. “Execution timestamp” preserves the intended metadata unambiguously."
+        },
+        {
+          "severity": "warning",
+          "field": "figures",
+          "reason": "The descriptions for figures at indices 1–3 still call them Korean-language diagrams, although their supplied labels are translated into English. Update the language designation to match the localized diagrams."
+        }
+      ],
+      "replacements": [
+        {
+          "field": "summary",
+          "old": "Design text alternatives around the information and purpose of the controls that non-text content conveys.",
+          "new": "Design text alternatives around the information and functional purpose conveyed by non-text content.",
+          "reason": "Preserves the source relationship between non-text content, its information, and its functional purpose while improving clarity."
+        },
+        {
+          "field": "body",
+          "old": "Record the model version, tools, prompt version, input bundle, execution time, and cost.",
+          "new": "Record the model version, tools, prompt version, input bundle, execution timestamp, and cost.",
+          "reason": "Distinguishes the time when the run occurred from its duration."
+        }
+      ],
+      "figure_replacements": [
+        {
+          "index": 1,
+          "field": "desc",
+          "old": "Korean-language teaching diagram. Essential information and conditions are also provided in the body text and alternative text.",
+          "new": "English-language teaching diagram. Essential information and conditions are also provided in the body text and alternative text.",
+          "reason": "Matches the language of the localized SVG labels."
+        },
+        {
+          "index": 2,
+          "field": "desc",
+          "old": "Korean-language teaching diagram. Essential information and conditions are also provided in the body text and alternative text.",
+          "new": "English-language teaching diagram. Essential information and conditions are also provided in the body text and alternative text.",
+          "reason": "Matches the language of the localized SVG labels."
+        },
+        {
+          "index": 3,
+          "field": "desc",
+          "old": "Korean-language teaching diagram. Essential information and conditions are also provided in the body text and alternative text.",
+          "new": "English-language teaching diagram. Essential information and conditions are also provided in the body text and alternative text.",
+          "reason": "Matches the language of the localized SVG labels."
+        }
+      ]
+    },
+    "assets": [
+      {
+        "src": "/images/accessibility/non-text-content/en/01-context-1a08a50d6144.svg",
+        "sha256": "1a08a50d614438ba8c423f7de1de2e9e5a8a6ade741df1c13419f6f4dd2b73a5",
+        "original": "/images/accessibility/non-text-content/ko/01-context-c82e358fedc7.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/en/02-button-name-df34764703e8.svg",
+        "sha256": "df34764703e8474eed2d3f19b94f1e3b1ba4b856942060389bc348c6c85c4b52",
+        "original": "/images/accessibility/non-text-content/ko/02-button-name-606d4b922f26.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/en/03-chart-alternative-5d6f28a69444.svg",
+        "sha256": "5d6f28a6944444ff62def00ce3132d0de3e74460b7e405308214e66129b0ee42",
+        "original": "/images/accessibility/non-text-content/ko/03-chart-alternative-40f98938855b.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/en/04-evidence-flow-9845e0173737.svg",
+        "sha256": "9845e01737376058362c6592b3e87dfc1514fd41dae37d460410cd7ba9bd258e",
+        "original": "/images/accessibility/non-text-content/ko/04-evidence-flow-aee5800be0ff.svg"
+      }
+    ],
+    "intentional_adaptations": [
+      "Reader language instruction and scope.language in reusable prompt",
+      "Example visible strings and comments translated; syntax/enums/IDs retained"
+    ]
+  },
+  {
+    "lang": "ja",
+    "sourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c",
+    "translation": {
+      "requested_model": "gpt-6-astra",
+      "effort": "high",
+      "started_at": "2026-10-03T13:16:52Z",
+      "input_sha256": "2a3f73da6138592b43f0e911550462a8e12ea0397662c056416fb57498c8bc63",
+      "status": "completed",
+      "model_returned": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 11765,
+        "output_tokens": 13848,
+        "cached_input_tokens": 0,
+        "images": 0,
+        "search_calls": 0
+      },
+      "elapsed_seconds": 557.24
+    },
+    "review": {
+      "requested_model": "gpt-6-astra",
+      "effort": "high",
+      "started_at": "2026-10-03T13:27:42Z",
+      "input_sha256": "c51b18d7bc9e9d8e9c133e9aee64243020a665d14c7471e4ca0c90fc071ef529",
+      "status": "completed",
+      "model_returned": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 25305,
+        "output_tokens": 732,
+        "cached_input_tokens": 0,
+        "images": 0,
+        "search_calls": 0
+      },
+      "elapsed_seconds": 32.2
+    },
+    "reviewFindings": {
+      "complete": true,
+      "findings": [
+        {
+          "severity": "warning",
+          "field": "figures",
+          "reason": "The descriptions of figures 02–04 still identify them as Korean-language diagrams, although their supplied labels are Japanese. Update this language reference to match the localized figures. All substantive source content is present, including the measured results, conditions and exceptions, C01–C12 checklist items, prompt fields, and SVG labels."
+        }
+      ],
+      "replacements": [],
+      "figure_replacements": [
+        {
+          "index": 1,
+          "field": "desc",
+          "label_index": 0,
+          "old": "韓国語の教育用の図です。重要な情報と条件は、本文と代替テキストでも提供しています。",
+          "new": "日本語の教育用の図です。重要な情報と条件は、本文と代替テキストでも提供しています。",
+          "reason": "The language description should match the Japanese labels of the localized diagram."
+        },
+        {
+          "index": 2,
+          "field": "desc",
+          "label_index": 0,
+          "old": "韓国語の教育用の図です。重要な情報と条件は、本文と代替テキストでも提供しています。",
+          "new": "日本語の教育用の図です。重要な情報と条件は、本文と代替テキストでも提供しています。",
+          "reason": "The language description should match the Japanese labels of the localized diagram."
+        },
+        {
+          "index": 3,
+          "field": "desc",
+          "label_index": 0,
+          "old": "韓国語の教育用の図です。重要な情報と条件は、本文と代替テキストでも提供しています。",
+          "new": "日本語の教育用の図です。重要な情報と条件は、本文と代替テキストでも提供しています。",
+          "reason": "The language description should match the Japanese labels of the localized diagram."
+        }
+      ]
+    },
+    "assets": [
+      {
+        "src": "/images/accessibility/non-text-content/ja/01-context-af58c7c136de.svg",
+        "sha256": "af58c7c136de9656dd889c924f5954aed91557d50fb814683b992a73f5220725",
+        "original": "/images/accessibility/non-text-content/ko/01-context-c82e358fedc7.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/ja/02-button-name-828e7c4ec862.svg",
+        "sha256": "828e7c4ec8623a5f81e04263bdcdeec14348d2ccb2c2011f407bf2e25c981b9b",
+        "original": "/images/accessibility/non-text-content/ko/02-button-name-606d4b922f26.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/ja/03-chart-alternative-e95ddabbc48a.svg",
+        "sha256": "e95ddabbc48a360f7bd6cae05663004894061d5aaf0e02b5229323d507b42035",
+        "original": "/images/accessibility/non-text-content/ko/03-chart-alternative-40f98938855b.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/ja/04-evidence-flow-ab257f4fed3e.svg",
+        "sha256": "ab257f4fed3e512d5e79cdb06af61214a1067971cef3ff68a4afe695da391079",
+        "original": "/images/accessibility/non-text-content/ko/04-evidence-flow-aee5800be0ff.svg"
+      }
+    ],
+    "intentional_adaptations": [
+      "Reader language instruction and scope.language in reusable prompt",
+      "Example visible strings and comments translated; syntax/enums/IDs retained"
+    ]
+  },
+  {
+    "lang": "zh",
+    "sourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c",
+    "translation": {
+      "requested_model": "gpt-6-astra",
+      "effort": "high",
+      "started_at": "2026-10-03T13:16:52Z",
+      "input_sha256": "4bb8ea024067002b753e8394d7b19878294710de3738ddb2f08f3ed16911d077",
+      "status": "completed",
+      "model_returned": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 11767,
+        "output_tokens": 10867,
+        "cached_input_tokens": 0,
+        "images": 0,
+        "search_calls": 0
+      },
+      "elapsed_seconds": 437.11
+    },
+    "review": {
+      "requested_model": "gpt-6-astra",
+      "effort": "high",
+      "started_at": "2026-10-03T13:25:05Z",
+      "input_sha256": "014bd25d82558d2e97b724664069dd8ba8939cfbd561e3de89bd65c6c3700f78",
+      "status": "completed",
+      "model_returned": "gpt-6-astra",
+      "usage": {
+        "input_tokens": 22361,
+        "output_tokens": 717,
+        "cached_input_tokens": 0,
+        "images": 0,
+        "search_calls": 0
+      },
+      "elapsed_seconds": 30.55
+    },
+    "reviewFindings": {
+      "complete": true,
+      "findings": [
+        {
+          "severity": "warning",
+          "field": "figures",
+          "reason": "The descriptions of figures 2–4 still identify them as Korean-language diagrams (“韩语教学示意图”), although their supplied labels are in Simplified Chinese. Update this language metadata to match the localized figures; this is independent of the pending src replacement."
+        }
+      ],
+      "replacements": [],
+      "figure_replacements": [
+        {
+          "index": 1,
+          "field": "desc",
+          "label_index": 0,
+          "old": "韩语教学示意图。关键信息和条件也通过正文与替代文本一并提供。",
+          "new": "简体中文教学示意图。关键信息和条件也通过正文与替代文本一并提供。",
+          "reason": "Match the stated diagram language to its translated labels."
+        },
+        {
+          "index": 2,
+          "field": "desc",
+          "label_index": 0,
+          "old": "韩语教学示意图。关键信息和条件也通过正文与替代文本一并提供。",
+          "new": "简体中文教学示意图。关键信息和条件也通过正文与替代文本一并提供。",
+          "reason": "Match the stated diagram language to its translated labels."
+        },
+        {
+          "index": 3,
+          "field": "desc",
+          "label_index": 0,
+          "old": "韩语教学示意图。关键信息和条件也通过正文与替代文本一并提供。",
+          "new": "简体中文教学示意图。关键信息和条件也通过正文与替代文本一并提供。",
+          "reason": "Match the stated diagram language to its translated labels."
+        }
+      ]
+    },
+    "assets": [
+      {
+        "src": "/images/accessibility/non-text-content/zh/01-context-e7a8ea4930e7.svg",
+        "sha256": "e7a8ea4930e7fa5b3fcbe077c76c386b6bff6c33cc2db30fb092effa60719139",
+        "original": "/images/accessibility/non-text-content/ko/01-context-c82e358fedc7.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/zh/02-button-name-ae846b360e4f.svg",
+        "sha256": "ae846b360e4fe2cd50574e01d9ba4d738ad0bd3a1c70276ae3f2e30d0890bb56",
+        "original": "/images/accessibility/non-text-content/ko/02-button-name-606d4b922f26.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/zh/03-chart-alternative-26d439f555d7.svg",
+        "sha256": "26d439f555d7e083a600632ca26cd572798b99412f663482a278eadd23d91c3a",
+        "original": "/images/accessibility/non-text-content/ko/03-chart-alternative-40f98938855b.svg"
+      },
+      {
+        "src": "/images/accessibility/non-text-content/zh/04-evidence-flow-3dcb26b61e0f.svg",
+        "sha256": "3dcb26b61e0fabd333b078384d95d861195ba0671dd170a947a97e07a5f87889",
+        "original": "/images/accessibility/non-text-content/ko/04-evidence-flow-aee5800be0ff.svg"
+      }
+    ],
+    "intentional_adaptations": [
+      "Reader language instruction and scope.language in reusable prompt",
+      "Example visible strings and comments translated; syntax/enums/IDs retained"
+    ]
+  }
+]

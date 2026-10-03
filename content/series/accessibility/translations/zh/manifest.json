@@ -17,17 +17,17 @@
   {
     "slug": "non-text-content",
     "title": "替代文本：传达图像所承担的作用",
-    "summary": "设计能够说明图像目的与上下文，而非仅说明图像存在的替代内容。",
-    "translationSourceHash": "10034c2fc5c47b28045d5376aa84484eeae31f63331df62ce06cd6d16e64ff66",
-    "hasContent": false,
-    "status": "draft",
-    "approvalHash": null,
-    "publishedAt": null,
-    "reviewedAt": null,
-    "reviewReady": false,
-    "updatedAt": "2026-10-01",
-    "contentRevisionHash": "f091ea0f00ba9e921615f528dd5689f10f7a14576ac111c4b6161089c715bf91",
-    "firstPublishedAt": null
+    "summary": "根据非文本内容所传达的信息和操作目的设计文本替代。学习如何结合图像、DOM、无障碍树与页面上下文进行比较，并使用多模态 AI 评估提示词记录依据、修改方案和复查项目。",
+    "translationSourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c",
+    "hasContent": true,
+    "status": "published",
+    "approvalHash": "ef8da4a833f7209eea5b5717d351887899d871bb3171133ac2b607788485e831",
+    "publishedAt": "2026-10-03T13:32:25Z",
+    "reviewedAt": "2026-10-03T13:32:25Z",
+    "reviewReady": true,
+    "updatedAt": "2026-10-03",
+    "contentRevisionHash": "ef8da4a833f7209eea5b5717d351887899d871bb3171133ac2b607788485e831",
+    "firstPublishedAt": "2026-10-03T13:32:25Z"
   },
   {
     "slug": "audio-only-and-video-only-prerecorded",

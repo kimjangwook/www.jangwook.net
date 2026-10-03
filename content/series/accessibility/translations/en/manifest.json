@@ -17,17 +17,17 @@
   {
     "slug": "non-text-content",
     "title": "Alternative Text: Conveying What an Image Does",
-    "summary": "Design alternatives that explain an image’s purpose and context rather than merely its presence.",
-    "translationSourceHash": "10034c2fc5c47b28045d5376aa84484eeae31f63331df62ce06cd6d16e64ff66",
-    "hasContent": false,
-    "status": "draft",
-    "approvalHash": null,
-    "publishedAt": null,
-    "reviewedAt": null,
-    "reviewReady": false,
-    "updatedAt": "2026-10-01",
-    "contentRevisionHash": "007e55132c146d9a390ed6ddd5fb64e6aca384c7eeaedb36cd240cdc8f89630d",
-    "firstPublishedAt": null
+    "summary": "Design text alternatives around the information and functional purpose conveyed by non-text content. Learn how to compare images, the DOM, the accessibility tree, and page context, then use a multimodal AI evaluation prompt to record evidence, fixes, and retest items.",
+    "translationSourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c",
+    "hasContent": true,
+    "status": "published",
+    "approvalHash": "34f62eff0201925ba2e6c5d3330b6e9373fc2019ac12a678b498b80c3463374e",
+    "publishedAt": "2026-10-03T13:32:25Z",
+    "reviewedAt": "2026-10-03T13:32:25Z",
+    "reviewReady": true,
+    "updatedAt": "2026-10-03",
+    "contentRevisionHash": "34f62eff0201925ba2e6c5d3330b6e9373fc2019ac12a678b498b80c3463374e",
+    "firstPublishedAt": "2026-10-03T13:32:25Z"
   },
   {
     "slug": "audio-only-and-video-only-prerecorded",

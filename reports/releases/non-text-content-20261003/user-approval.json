@@ -1,0 +1,11 @@
+{
+  "request": "네가지 언어 완성하여 배포.",
+  "scope": "Approved non-text-content r3 Korean review, complete en/ja/zh body/prompt/diagram translations, publish four editions and deploy",
+  "approved_korean_source_hash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c",
+  "review_pdf_sha256": "deb1109b536bc4b0ff356565fa36903e1bf99d9f081aadcab8d680e9923d42bf",
+  "review_telegram_message_ids": [
+    2596
+  ],
+  "recorded_at": "2026-10-03T13:23:42.950514+00:00",
+  "other_unpublished_chapters_not_approved": true
+}

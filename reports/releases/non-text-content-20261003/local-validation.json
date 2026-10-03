@@ -1,0 +1,180 @@
+{
+  "tests": {
+    "passed": 19,
+    "failed": 0
+  },
+  "svelteCheck": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "build": true,
+  "productionDryRun": true,
+  "article": {
+    "base": "http://127.0.0.1:8787",
+    "checkedAt": "2026-10-03T13:43:50.018Z",
+    "scope": "First-party article UI; external advertising frames excluded from browser checks",
+    "pages": [
+      {
+        "lang": "ko",
+        "width": 1440,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "ko",
+        "width": 390,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "ko",
+        "width": 320,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "en",
+        "width": 1440,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "en",
+        "width": 390,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "en",
+        "width": 320,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "ja",
+        "width": 1440,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "ja",
+        "width": 390,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "ja",
+        "width": 320,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "zh",
+        "width": 1440,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "zh",
+        "width": 390,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      },
+      {
+        "lang": "zh",
+        "width": 320,
+        "violations": [],
+        "keyboardToggle": true,
+        "AXNames": true,
+        "reflow": true
+      }
+    ],
+    "noJS": [
+      {
+        "lang": "ko",
+        "toggle": true,
+        "draftPrivacy": true,
+        "languageSwitch": true
+      },
+      {
+        "lang": "en",
+        "toggle": true,
+        "draftPrivacy": true,
+        "languageSwitch": true
+      },
+      {
+        "lang": "ja",
+        "toggle": true,
+        "draftPrivacy": true,
+        "languageSwitch": true
+      },
+      {
+        "lang": "zh",
+        "toggle": true,
+        "draftPrivacy": true,
+        "languageSwitch": true
+      }
+    ],
+    "ssr": [
+      {
+        "lang": "ko",
+        "path": "/series/accessibility/non-text-content",
+        "status": 200,
+        "sourceHash": "73a433bf1eec160c23b203a0e4358bd1896fcd926427d97bf72314d0d546000c"
+      },
+      {
+        "lang": "en",
+        "path": "/en/series/accessibility/non-text-content",
+        "status": 200,
+        "sourceHash": "34f62eff0201925ba2e6c5d3330b6e9373fc2019ac12a678b498b80c3463374e"
+      },
+      {
+        "lang": "ja",
+        "path": "/ja/series/accessibility/non-text-content",
+        "status": 200,
+        "sourceHash": "2370940da1fe2a1135119fe3fcc1a17f55eb434a54a4be6570e024749ceebc93"
+      },
+      {
+        "lang": "zh",
+        "path": "/zh/series/accessibility/non-text-content",
+        "status": 200,
+        "sourceHash": "ef8da4a833f7209eea5b5717d351887899d871bb3171133ac2b607788485e831"
+      }
+    ],
+    "errors": []
+  },
+  "additionalChecks": {
+    "articleDetailPages": 24,
+    "noJSFlows": 4,
+    "homePages": 12,
+    "allLocalizedDocuments": 352,
+    "workerAdsFeedsAndRetention": true
+  },
+  "visualReview": {
+    "fourLanguageDesktopAndMobile": true,
+    "localizedDiagrams": 16
+  },
+  "sourceHashPreserved": true
+}
