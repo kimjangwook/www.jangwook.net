@@ -1,0 +1,54 @@
+{
+  "account": "effloow",
+  "language": "en",
+  "sourceHash": "34f62eff0201925ba2e6c5d3330b6e9373fc2019ac12a678b498b80c3463374e",
+  "articleUrl": "https://jangwook.net/en/series/accessibility/non-text-content",
+  "publishedAt": "2026-10-03T14:03:13.487027+00:00",
+  "status": "published_verified",
+  "posts": [
+    {
+      "index": 1,
+      "id": "2106384322479653021",
+      "url": "https://x.com/effloow/status/2106384322479653021",
+      "text": "[1/4]\nThe same image can need three different text alternatives. On a product page, describe what matters. Inside a link, explain where it goes. Beside text that already says it all, repeating that text may add noise."
+    },
+    {
+      "index": 2,
+      "id": "2106384324211941841",
+      "url": "https://x.com/effloow/status/2106384324211941841",
+      "text": "[2/4]\nAn alt attribute alone doesn't prove accessibility. Compare the image, DOM, accessibility tree, and surrounding content for the same element and state. For icon buttons, check the final accessible name. For charts, preserve values, units, and trends."
+    },
+    {
+      "index": 3,
+      "id": "2106384325688360968",
+      "url": "https://x.com/effloow/status/2106384325688360968",
+      "text": "[3/4]\nThe chapter includes a multimodal AI evaluation prompt. Missing evidence stays judgment deferred; a failed capture stays execution failed. Neither means pass. Each finding records evidence, user impact, a proposed fix, and a retest."
+    },
+    {
+      "index": 4,
+      "id": "2106384327349313894",
+      "url": "https://x.com/effloow/status/2106384327349313894",
+      "text": "[4/4]\nChapter 2 is now live in Korean, English, Japanese, and Simplified Chinese, with four explanatory diagrams and a reusable evaluation prompt. The worked example uses the published overview page. Full English article in the final reply."
+    }
+  ],
+  "verified": {
+    "account": true,
+    "fourPublicPosts": true,
+    "noLinksInBody": true,
+    "connectedThread": true,
+    "linkReplyParent": true,
+    "canonicalEnglishTarget": true
+  },
+  "linkReply": {
+    "id": "2106384670028124387",
+    "url": "https://x.com/effloow/status/2106384670028124387",
+    "parentPostId": "2106384327349313894",
+    "text": "https://jangwook.net/en/series/accessibility/non-text-content",
+    "shortUrl": "https://t.co/p7VHmHnKyo",
+    "resolvedUrl": "https://jangwook.net/en/series/accessibility/non-text-content",
+    "destinationStatus": 200
+  },
+  "verifiedAt": "2026-10-03T14:06:16.928168+00:00",
+  "screenshot": "x-published.png",
+  "uiEvidence": "x-published-dom.txt"
+}

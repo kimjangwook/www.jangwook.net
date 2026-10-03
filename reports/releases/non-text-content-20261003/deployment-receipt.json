@@ -34,5 +34,14 @@
       1721,
       1722
     ]
+  },
+  "xAnnouncement": {
+    "account": "effloow",
+    "language": "en",
+    "status": "published_verified",
+    "rootUrl": "https://x.com/effloow/status/2106384322479653021",
+    "linkReplyUrl": "https://x.com/effloow/status/2106384670028124387",
+    "linkPlacement": "Only separate final self-reply",
+    "sourceHash": "34f62eff0201925ba2e6c5d3330b6e9373fc2019ac12a678b498b80c3463374e"
   }
 }
