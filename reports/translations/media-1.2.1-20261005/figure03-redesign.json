@@ -1,0 +1,26 @@
+{
+  "ko": {
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-03-cb430a6d7aa9.svg",
+    "title": "요약만 읽으면, 무엇을 놓치게 될까요?",
+    "alt": "복구 코드 안내의 다섯 화면을 비교합니다. 짧은 요약에는 설정과 발급만 언급되고 보안 메뉴, 이전 코드 무효화 경고, 안전한 저장, 완료 결과가 빠집니다. 충분한 설명은 각 화면의 동작과 경고 및 결과를 전달합니다.",
+    "caption": "그림 03. “설정에서 복구 코드를 발급하세요”만 읽으면 경고와 저장 방법, 완료 결과를 알 수 없습니다. 왼쪽 화면을 기준으로 가운데 요약의 누락과 오른쪽 설명의 대응 문장을 비교해 보세요. 교육용 가상 예시이며 실제 모델의 측정 결과는 아닙니다."
+  },
+  "en": {
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-03-85d418c578ac.svg",
+    "title": "What would a short summary leave out?",
+    "alt": "Five recovery-code screens are compared. The summary mentions settings and generation but omits the security menu, old-code invalidation warning, safe storage and completion result. The sufficient description conveys each screen’s actions, warnings and results.",
+    "caption": "Figure 03. “Generate recovery codes in settings” does not tell you about the warning, safe storage or completion result. Compare the screens on the left with the omissions in the middle and the corresponding descriptions on the right. This is a fictional teaching example, not measured model output."
+  },
+  "ja": {
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-03-ed6e8f8de704.svg",
+    "title": "短い要約だけでは、何が抜け落ちるでしょうか？",
+    "alt": "復旧コードの案内を5つの画面で比較します。短い要約は設定と発行だけに言及し、セキュリティのメニュー、以前のコードの無効化、安全な保存、完了結果を省いています。十分な説明は各画面の操作、警告、結果を伝えます。",
+    "caption": "図03。「設定から復旧コードを発行してください」だけでは、警告や保存方法、完了結果が分かりません。左の画面を基準に、中央の要約の欠落と右の説明の対応箇所を比較してください。学習用の架空の例であり、実際のモデルの測定結果ではありません。"
+  },
+  "zh": {
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-03-6220605a8f9a.svg",
+    "title": "只看简短摘要，会遗漏什么？",
+    "alt": "对比恢复代码指南的五个画面。简短摘要只提到设置和生成，遗漏安全菜单、旧代码失效警告、安全保存和完成结果。充分说明传达每个画面的操作、警告和结果。",
+    "caption": "图03。只看“在设置中生成恢复代码”，无法了解警告、保存方法和完成结果。以左侧画面为依据，对比中间摘要的遗漏与右侧说明中的对应内容。这是虚构的教学示例，并非实际模型的测量结果。"
+  }
+}

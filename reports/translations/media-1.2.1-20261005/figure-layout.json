@@ -1,0 +1,215 @@
+[
+  {
+    "lang": "en",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-01-b1ec9a594adc.svg",
+    "adjusted": [
+      {
+        "label": "Complete transcript of the account recovery guide ↗",
+        "oldSize": 22,
+        "newSize": 17,
+        "available": 400,
+        "width": 517.046875
+      },
+      {
+        "label": "Presenter: You must be logged in on an existing device.",
+        "oldSize": 19,
+        "newSize": 16.9,
+        "available": 420,
+        "width": 471.25
+      },
+      {
+        "label": "Questioner: What happens to the previous codes?",
+        "oldSize": 19,
+        "newSize": 18.7,
+        "available": 420,
+        "width": 426.234375
+      },
+      {
+        "label": "Representative: The previous codes can no longer be used.",
+        "oldSize": 19,
+        "newSize": 15.8,
+        "available": 420,
+        "width": 504.328125
+      },
+      {
+        "label": "[Confirmation tone] Indicates that generation is complete.",
+        "oldSize": 19,
+        "newSize": 16.3,
+        "available": 420,
+        "width": 486.71875
+      },
+      {
+        "label": "Warning: existing codes become invalid",
+        "oldSize": 18,
+        "newSize": 14.5,
+        "available": 259,
+        "width": 319.375
+      },
+      {
+        "label": "Generation complete · New codes",
+        "oldSize": 18,
+        "newSize": 16.9,
+        "available": 259,
+        "width": 274.359375
+      },
+      {
+        "label": "Also describes the warning that previous codes cannot be used after generation, and the completion screen.",
+        "oldSize": 21,
+        "newSize": 18.6,
+        "available": 902,
+        "width": 1017.6728515625
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-02-70e5dc52b19a.svg",
+    "adjusted": [
+      {
+        "label": "Unable to process materials → Record errors, blocked access, and unreviewed scope separately",
+        "oldSize": 21,
+        "newSize": 20.8,
+        "available": 901,
+        "width": 908.578125
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-03-85d418c578ac.svg",
+    "adjusted": [
+      {
+        "label": "Old codes invalid · Back to settings",
+        "oldSize": 18,
+        "newSize": 17.4,
+        "available": 275,
+        "width": 284.40625
+      }
+    ]
+  },
+  {
+    "lang": "en",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-04-b1e9dbbe42d9.svg",
+    "adjusted": [
+      {
+        "label": "File, version, duration, and processed ranges",
+        "oldSize": 20,
+        "newSize": 19.7,
+        "available": 397,
+        "width": 401.921875
+      },
+      {
+        "label": "Speech, speakers, screens, actions, and results",
+        "oldSize": 20,
+        "newSize": 18.6,
+        "available": 397,
+        "width": 426.40625
+      },
+      {
+        "label": "Time location and evidence ID for each piece of information",
+        "oldSize": 20,
+        "newSize": 14.9,
+        "available": 397,
+        "width": 531.953125
+      },
+      {
+        "label": "Paragraphs, time ranges, and alternative version",
+        "oldSize": 20,
+        "newSize": 18.3,
+        "available": 397,
+        "width": 431.90625
+      },
+      {
+        "label": "Relationship to the original and provision location",
+        "oldSize": 20,
+        "newSize": 18,
+        "available": 397,
+        "width": 440.0625
+      },
+      {
+        "label": "Revise → Recheck the same original ranges → Check the latest alternative on the actual page",
+        "oldSize": 23,
+        "newSize": 20.1,
+        "available": 902,
+        "width": 1029.390625
+      },
+      {
+        "label": "If the original could not be processed, do not make a decision as though the entire original had been reviewed.",
+        "oldSize": 20,
+        "newSize": 18.2,
+        "available": 902,
+        "width": 986.53125
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-01-fa49bd3e5b7b.svg",
+    "adjusted": [
+      {
+        "label": "アカウント復旧案内の全文書き起こし ↗",
+        "oldSize": 22,
+        "newSize": 21.8,
+        "available": 400,
+        "width": 403.328125
+      },
+      {
+        "label": "進行役：既存の端末にログインする必要があります。",
+        "oldSize": 19,
+        "newSize": 17.6,
+        "available": 420,
+        "width": 452.203125
+      },
+      {
+        "label": "既存のコードの無効化に関する警告",
+        "oldSize": 18,
+        "newSize": 16.1,
+        "available": 259,
+        "width": 288
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-02-7403b182179c.svg",
+    "adjusted": []
+  },
+  {
+    "lang": "ja",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-03-ed6e8f8de704.svg",
+    "adjusted": [
+      {
+        "label": "新しいコードはどう保管しますか？",
+        "oldSize": 18,
+        "newSize": 17.9,
+        "available": 287,
+        "width": 287.46875
+      }
+    ]
+  },
+  {
+    "lang": "ja",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-04-a89de1de7115.svg",
+    "adjusted": []
+  },
+  {
+    "lang": "zh",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-01-686953069ca3.svg",
+    "adjusted": []
+  },
+  {
+    "lang": "zh",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-02-123df0d45ef8.svg",
+    "adjusted": []
+  },
+  {
+    "lang": "zh",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-03-6220605a8f9a.svg",
+    "adjusted": []
+  },
+  {
+    "lang": "zh",
+    "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-04-d878f1de17cb.svg",
+    "adjusted": []
+  }
+]

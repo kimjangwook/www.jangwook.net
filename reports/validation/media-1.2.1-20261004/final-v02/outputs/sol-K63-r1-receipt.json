@@ -1,0 +1,31 @@
+{
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "case_id": "K63",
+  "kind": "criterion",
+  "repeat": 1,
+  "input_sha256": "dc3f1acea30bafb125fb2cdf2e4a28a9704636e10a75fc4c57a9fa41c741b87b",
+  "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+  "reference_sha256": "1e9e99ddc8c8bc7679026ac7206b8cceba57fa54a98b5410d23cb061ca5ffee0",
+  "image_hashes": {
+    "FRAME-1": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b",
+    "FRAME-2": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de",
+    "FRAME-3": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297",
+    "FRAME-4": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1",
+    "FRAME-5": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+  },
+  "started_at": "2026-10-04T12:35:32Z",
+  "status": "completed",
+  "context": "Fresh stateless Responses request; no other outputs or reference answers supplied.",
+  "model_returned": "gpt-6.1-sol",
+  "finish_reason": "stop",
+  "usage": {
+    "input_tokens": 8431,
+    "output_tokens": 5432,
+    "cached_input_tokens": 0,
+    "images": 0,
+    "search_calls": 0
+  },
+  "decision": "pass",
+  "elapsed_seconds": 165.66
+}

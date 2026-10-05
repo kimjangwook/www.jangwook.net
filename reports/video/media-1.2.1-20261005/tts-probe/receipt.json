@@ -1,0 +1,15 @@
+{
+  "status": "generated",
+  "requested_model": "gemini-3.8-flash-tts",
+  "actual_model": "gemini-3.8-flash-tts",
+  "provider": "gemini",
+  "voice": "Charon",
+  "mime_type": "audio/wav",
+  "latency_ms": 6255,
+  "sha256": "e7ddcde6edc3f545b9f3d23d73a4317a4a7276c37ecd0011310ea90e50858226",
+  "duration_seconds": 13.8,
+  "sample_rate": 24000,
+  "channels": 1,
+  "sample_width": 2,
+  "scope": "Availability probe only; not published, no native narration or subtitle synchronization validation."
+}

@@ -1,0 +1,100 @@
+{
+  "criterion": "WCAG2.2 SC1.2.1",
+  "original_evidence_date": "2026-10-04",
+  "published_assets_date": "2026-10-05",
+  "original_files": [
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/observed-1.png",
+      "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/audio-guide.wav",
+      "sha256": "dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/observed-5.png",
+      "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/corrupt.wav",
+      "sha256": "98cb16d40b9224eb55c638df4a817ae3fae4b8ae6ae36fd61116691a56e923d9"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/video-audio-alternative.wav",
+      "sha256": "07649b74ad5ef6b570269def6e87803362bcf350a0dcba4663ebf55a35eb5943"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/silent-guide.mp4",
+      "sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K56/index.html",
+      "sha256": "246b0b58cf21c6f73fa20b29fb42c7840863dc1792909da7ac4ce771d6a675f2"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K34/index.html",
+      "sha256": "9ff8f6c8b907e7d87e0b0195ba546b170b09246d12a050b472b23695bac8aced"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K03/index.html",
+      "sha256": "0a64fa0aa99015f43ba2807fe6a9bd01a8a4c5844c2ec37a6aec0202ec978801"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K03/ALT-V.txt",
+      "sha256": "d7beda73489d1a75103d626c69ba79b61c865c16ad046e00a35e629e262808b0"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K42/index.html",
+      "sha256": "1a7e025f0d80fcf42cec1ee546869c6400fee3fdd407fbbefd72506eaedc8848"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K42/ALT-A.txt",
+      "sha256": "f0e7754342183936105a8fd9f0269665052cf4855bf03acdf4e0bd3eaec6dfa4"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K08/index.html",
+      "sha256": "1a7e025f0d80fcf42cec1ee546869c6400fee3fdd407fbbefd72506eaedc8848"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K08/ALT-A.txt",
+      "sha256": "49b4459e90902a7064fb742a72821e41dbb95acc9e9bda572d3a1c3b478aec18"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K63/index.html",
+      "sha256": "0a64fa0aa99015f43ba2807fe6a9bd01a8a4c5844c2ec37a6aec0202ec978801"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K63/ALT-V.txt",
+      "sha256": "d7beda73489d1a75103d626c69ba79b61c865c16ad046e00a35e629e262808b0"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K91/index.html",
+      "sha256": "ef1fc88b41e58e15ce05101307183f0412cc72eaa73a9d3b5c86b6dc434ef49e"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K25/index.html",
+      "sha256": "0a64fa0aa99015f43ba2807fe6a9bd01a8a4c5844c2ec37a6aec0202ec978801"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K25/ALT-V.txt",
+      "sha256": "b8b499a052d16b6da9d40867a5db6409da3c7b1f1e64fa87ea793419a7ff466a"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K79/index.html",
+      "sha256": "7fe3deb97e4f64a127767988e01cb4f09089516b069bb05ffe69e77057aaed67"
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K79/ALT-A.txt",
+      "sha256": "f0e7754342183936105a8fd9f0269665052cf4855bf03acdf4e0bd3eaec6dfa4"
+    }
+  ],
+  "localized_views": "New teaching translations; not the earlier model inputs. Original file hashes unchanged.",
+  "model_input_limits": "Original observations were independent ASR and representative PNGs supported by all-frame decoding; K03 input only included first/final group, K79 actual decoding failed. LLM native audio/video performance not measured.",
+  "public_scope": "Original HTML pages, text alternatives, media and observed frames. Execution snapshots with local paths remain private.",
+  "playback_derivative": {
+    "path": "/lab-fixtures/media-1.2.1/playback/silent-guide.mp4",
+    "sha256": "9475719748b4b584dda813711ae9d94f58dd92c0d78fe925dd2dcd6c5f028326",
+    "source_sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+    "purpose": "H.264 Main yuv420p faststart browser playback copy; original evidence bytes remain preserved."
+  }
+}

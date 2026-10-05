@@ -1,0 +1,74 @@
+◆  Checking zh
+[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor="Google Inc. (Apple)" renderer="ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)")
+
+Lint
+  ◇ 0 errors, 0 warnings
+
+Runtime
+  ◇ 0 errors, 0 warnings
+
+Layout
+  ℹ t=6.25s content_overlap #meta1 > span:nth-of-type(1) inside #meta2 > span:nth-of-type(1) "WCAG 2.2 · 1.2.1" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=6.25s content_overlap #meta1 > span:nth-of-type(2) inside #meta2 > span:nth-of-type(2) "1 / 5" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=6.25s content_overlap #title1 inside #title2 "账户设置" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=6.25s content_overlap #body1 inside #body2 "账户设置：创建恢复代码前必须登录。选择打开安全。" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=6.25s content_overlap #button1 inside #button2 "打开安全设置" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #meta2 > span:nth-of-type(1) inside #meta3 > span:nth-of-type(1) "WCAG 2.2 · 1.2.1" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #meta2 > span:nth-of-type(2) inside #meta3 > span:nth-of-type(2) "2 / 5" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #title2 inside #title3 "安全" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #body2 inside #body3 "安全：恢复代码帮助恢复账户访问。选择创建恢复代码。" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #button2 inside #button3 "生成恢复代码" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #meta3 > span:nth-of-type(1) inside #meta4 > span:nth-of-type(1) "WCAG 2.2 · 1.2.1" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #meta3 > span:nth-of-type(2) inside #meta4 > span:nth-of-type(2) "3 / 5" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #title3 inside #title4 "继续之前" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #body3 inside #body4 "继续之前：创建新代码会使旧代码失效。选择确认新代码。" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #button3 inside #button4 "确认新代码" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.33s text_occluded #meta3 > span:nth-of-type(1) inside #scene4 "WCAG 2.2 · 1.2.1" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #meta3 > span:nth-of-type(2) inside #scene4 "3 / 5" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #note3 inside #scene4 > div:nth-of-type(1) > div:nth-of-type(2) "教学示例 · 不含真实账户或代码" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #title3 inside #scene4 > div:nth-of-type(1) > div:nth-of-type(2) "继续之前" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #body3 inside #body4 "继续之前：创建新代码会使旧代码失效。选择确认新代码。" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #button3 inside #button4 "确认新代码" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=24.25s content_overlap #meta4 > span:nth-of-type(1) inside #meta5 > span:nth-of-type(1) "WCAG 2.2 · 1.2.1" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=24.25s content_overlap #meta4 > span:nth-of-type(2) inside #meta5 > span:nth-of-type(2) "4 / 5" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=24.25s content_overlap #title4 inside #title5 "恢复代码已生成" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=24.25s content_overlap #body4 inside #body5 "恢复代码已创建：安全保存。本例不显示真实代码。选择我已保存代码。" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=24.25s content_overlap #button4 inside #button5 "我已保存代码" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  0 error(s), 0 warning(s), 26 info(s)
+
+Motion
+  ◇ 0 errors, 0 warnings
+
+Contrast
+  ◇ 30/30 text checks pass WCAG AA
+
+Snapshots
+  ◇ disabled
+
+◇  Check passed

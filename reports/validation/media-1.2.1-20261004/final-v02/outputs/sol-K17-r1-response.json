@@ -1,0 +1,59 @@
+{
+  "terminal": {
+    "id": "resp_014e0a2324f41fb4016ac247eefa1887d0a093208afc424cb8",
+    "model": "gpt-6.1-sol",
+    "status": "completed",
+    "usage": {
+      "attribution": {
+        "items": {
+          "msg_014e0a2324f41fb4016ac247ef08f487d0bf44cbaa03a97953": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "content": [
+              {
+                "cache_write_tokens": 0,
+                "cached_tokens": 0,
+                "input_tokens": 3442,
+                "output_tokens": 0
+              }
+            ],
+            "input_tokens": 3442,
+            "output_tokens": 0
+          },
+          "rs_014e0a2324f41fb4016ac247f1e7d887d099d8c5f46bb9080a": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "input_tokens": 2,
+            "output_tokens": 195
+          },
+          "msg_014e0a2324f41fb4016ac247fdc6d087d0a3f45bba96d4899d": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "content": [
+              {
+                "cache_write_tokens": 0,
+                "cached_tokens": 0,
+                "input_tokens": 0,
+                "output_tokens": 731
+              }
+            ],
+            "input_tokens": 0,
+            "output_tokens": 731
+          }
+        }
+      },
+      "input_tokens": 3444,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 926,
+      "output_tokens_details": {
+        "reasoning_tokens": 195
+      },
+      "total_tokens": 4370
+    },
+    "incomplete_details": null
+  },
+  "output_text": "{\n  \"criterion\": \"1.2.1\",\n  \"level\": \"A\",\n  \"prompt_version\": \"0.2.0\",\n  \"scope\": {\n    \"url\": \"https://jangwook.net/series/accessibility/non-text-content\",\n    \"states\": [\n      \"기존 게시 글의 초기 상태에서 본문 영역의 미디어 콘텐츠와 제공 대안만 검토\"\n    ],\n    \"media_ids\": [],\n    \"inventory_complete_within_scope\": true,\n    \"exclusions\": [\n      \"광고 iframe\",\n      \"플레이어 키보드 접근성, 자막 및 다른 WCAG 성공 기준\",\n      \"외부 계정 또는 실제 라이브 사용자 계정\",\n      \"지정한 본문 영역과 초기 상태 밖의 콘텐츠 및 전체 사이트 적합성\"\n    ],\n    \"execution\": \"complete\",\n    \"decision\": \"not_applicable\",\n    \"reason\": \"제공된 PAGE-K17 수집 기록은 지정 범위의 목록 수집이 완전하다고 명시하며, audio·video·시간 기반 임베드·애니메이션 이미지 후보가 모두 0개이고 미디어 링크와 평가 대상 목록도 비어 있다. 관찰된 SVG 도표는 정적 콘텐츠로 기록되어 이 기준의 시간 기반 매체 대상이 아니다. 따라서 지정 범위에는 성공 기준 1.2.1의 적용 대상이 없다. 이는 제공된 고정 증거에 대한 판정이며 전체 사이트의 적합성 인증이 아니다.\"\n  },\n  \"input_used\": [\n    {\n      \"evidence_id\": \"PAGE-K17\",\n      \"kind\": \"파생\",\n      \"processed_ranges\": [],\n      \"limitations\": [\n        \"제공된 페이지 수집 기록을 검토했다. 기록의 수집 방법은 실제 운영 페이지의 Chromium DOM 스냅샷이며, 본문 영역을 대상으로 광고 iframe을 제외했다.\",\n        \"자료 묶음의 수집 시각은 2026-10-04T12:04:54.613330+00:00이다. 별도의 페이지 판본 또는 해시는 제공되지 않았다.\",\n        \"이 평가에서 URL을 직접 열거나 DOM을 재수집하지 않았다. 원본 DOM 스냅샷 본문이나 이미지 첨부가 아니라 입력에 제공된 관찰 기록을 사용했다.\",\n        \"사용 가능한 입력은 텍스트와 PNG이며, 추가 수집 도구와 직접 음성·영상 처리 기능은 제공되지 않았다. 직접 청취, 연속 재생 또는 스크린리더 사용을 수행하지 않았다.\",\n        \"원본 미디어 관찰 기록과 실제 대안 자료는 없으며, 확인된 대상이 없으므로 원본 시간 구간 분석이나 대안 동등성 비교는 수행할 대상이 없었다.\"\n      ]\n    }\n  ],\n  \"media\": [],\n  \"errors\": [],\n  \"unreviewed_media\": [],\n  \"other_checks\": [\n    \"정적 SVG 도표의 텍스트 대안 등은 성공 기준 1.1.1에서 별도로 검토할 수 있다. 이 평가에서는 해당 기준의 충족 여부를 판정하지 않았다.\"\n  ],\n  \"next_checks\": [\n    \"본문에 미디어가 추가되거나 초기 상태 외의 콘텐츠까지 범위가 확대되면 대상 목록을 다시 수집하고, 확인된 원본의 전체 필요한 정보와 실제 제공 대안을 비교한다.\"\n  ]\n}"
+}

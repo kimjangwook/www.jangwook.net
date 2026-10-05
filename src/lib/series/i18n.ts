@@ -1,7 +1,7 @@
 export const languages = {ko:'한국어', en:'English', ja:'日本語', zh:'中文'} as const;
 export type Language = keyof typeof languages;
 export function isLanguage(value:string):value is Language {return Object.hasOwn(languages,value);}
-export function seriesLanguage(path:string):Language {const first=path.split('/')[1];return isLanguage(first)&&/^\/(ko|en|ja|zh)(?:\/?$|\/(series|prompts)(\/|$))/.test(path)?first:'ko';}
+export function seriesLanguage(path:string):Language {const first=path.split('/')[1];return isLanguage(first)&&/^\/(ko|en|ja|zh)(?:\/?$|\/(series|prompts|about|updates|privacy|services|labs|archive|tags|blog)(\/|$))/.test(path)?first:'ko';}
 export function localizedPath(path:string,lang:Language){return path==='/'?'/'+lang+'/':lang==='ko'?path:'/'+lang+path;}
 const ko={
  seriesNavigation:'시리즈 학습 탐색',currentChapter:'현재 글',

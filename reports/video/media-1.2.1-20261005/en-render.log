@@ -1,0 +1,84 @@
+
+◆  Rendering en → /tmp/jangwook-hyperframes-en.mp4
+   24fps · standard · 1 workers
+   GPU: browser GPU (auto-detect)
+
+[?25l│
+◒  Checking browser[1G[J◇  Browser: cache
+[?25h[INFO] [Render] Pipeline started {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","platform":"darwin","arch":"arm64","nodeVersion":"v26.8.1","fps":{"num":24,"den":1},"format":"mp4","quality":"standard","browserGpuMode":"auto","forceScreenshot":false,"protocolTimeout":300000,"browserTimeout":120000,"pageNavigationTimeout":60000,"playerReadyTimeout":45000}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"pipeline","status":"checkpoint","elapsedMs":2,"message":"started","format":"mp4","quality":"standard","browserGpuMode":"auto","forceScreenshot":false,"protocolTimeoutMs":300000,"pageNavigationTimeoutMs":60000,"playerReadyTimeoutMs":45000,"requestedWorkers":1}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"compile","status":"start","elapsedMs":3,"needsAlpha":false}
+  █░░░░░░░░░░░░░░░░░░░░░░░░  5%  Compiling composition
+[INFO] [Compiler] Inlined CDN script: https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js
+[INFO] Compiled composition metadata {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","entryFile":"index.html","staticDuration":30,"width":1280,"height":800,"videoCount":0,"audioCount":0,"renderModeHints":{"recommendScreenshot":false,"reasons":[]}}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"compile","status":"end","elapsedMs":129,"durationMs":126,"needsAlpha":false}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"compile","status":"checkpoint","elapsedMs":130,"message":"composition metadata resolved","width":1280,"height":800,"videoCount":0,"audioCount":0,"imageCount":0,"deviceScaleFactor":1,"forceScreenshot":false,"compositionHash":"34a9bcb6ff7b789c"}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"browser_probe","status":"start","elapsedMs":130,"forceScreenshot":false,"stagePhase":"calibrating"}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"browser_probe","status":"end","elapsedMs":158,"durationMs":28,"forceScreenshot":false,"stagePhase":"calibrating"}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"browser_probe","status":"checkpoint","elapsedMs":158,"message":"duration resolved","durationSeconds":30,"totalFrames":720,"compositionHash":"34a9bcb6ff7b789c","beginFrameStalled":false}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"video_extract","status":"start","elapsedMs":159,"videoCount":0}
+  ██░░░░░░░░░░░░░░░░░░░░░░░  10%  Extracting video frames
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"video_extract","status":"end","elapsedMs":159,"durationMs":0,"videoCount":0}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"video_extract","status":"checkpoint","elapsedMs":160,"message":"frames resolved","videoCount":0,"extractedVideoCount":0,"totalFramesExtracted":0,"maxFramesPerVideo":0,"avgFramesPerExtractedVideo":null,"vfrPreflightCount":null,"vfrPreflightMs":null,"cacheHits":null,"cacheMisses":null,"transientRetries":null,"minVideoFrameCoverageRatio":null,"authoredTimedClipCount":1}
+[INFO] [Render] No HDR sources detected — rendering SDR {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e"}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"hdr_detection","status":"checkpoint","elapsedMs":160,"message":"resolved","requestedHdrMode":"auto","effectiveHdr":"sdr","nativeHdrVideoCount":0,"nativeHdrImageCount":0}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"audio_process","status":"start","elapsedMs":160,"audioCount":0}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"audio_process","status":"end","elapsedMs":160,"durationMs":0,"audioCount":0}
+  █████░░░░░░░░░░░░░░░░░░░░  20%  Processing audio tracks
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"file_server","status":"start","elapsedMs":160,"reused":false}
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Starting frame capture
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"file_server","status":"end","elapsedMs":163,"durationMs":3}
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Checking browser GPU
+[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor="Google Inc. (Apple)" renderer="ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)")
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"capture_calibration","status":"checkpoint","elapsedMs":400,"message":"skipped","requestedWorkers":1,"totalFrames":720,"htmlInCanvasDetected":false,"lowMemoryMode":false,"deInversionEligible":false,"deParallelRouterEligible":false}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"worker_resolution","status":"checkpoint","elapsedMs":401,"message":"resolved","workerCount":1}
+[INFO] streaming-encode gate {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","enabled":true,"reason":"single_worker","configFlag":true,"durationCapEnabled":false,"outputFormat":"mp4","workerCount":1,"durationSeconds":30,"maxDurationSeconds":240}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"capture_strategy","status":"checkpoint","elapsedMs":401,"message":"resolved","workerCount":1,"forceScreenshot":false,"captureBeyondViewport":null,"useStreamingEncode":true,"useLayeredComposite":false,"usePageSideCompositing":false,"hasHdrContent":false,"hasShaderTransitions":false,"isPngSequence":false}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"capture_streaming","status":"start","elapsedMs":401,"stagePhase":"capturing","workerCount":1,"forceScreenshot":false,"totalFrames":720,"framesCompleted":0,"captureMode":"drawelement","captureOperation":"drawElement"}
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7977.30, screenshot, gl=--use-gl=angle --use-angle=metal, headlessShell=true, platform=darwin)
+[initSession:screenshot] page.goto start (0ms)
+[initSession:screenshot] page.goto complete (48ms)
+[HyperFrames] render runtime fps {"canonicalFps":24,"source":"render-options","rawFpsSource":"render-options","rawFps":24}
+[initSession:screenshot] GSAP proxy flush complete (119ms)
+[initSession:screenshot] pollHfReady complete (147ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (148ms)
+[initSession:screenshot] applyVideoMetadataHints complete (149ms)
+[initSession:screenshot] media + fonts + tailwind ready (150ms)
+[initSession:screenshot] timeline at-risk predictor: 0/720 frames (0%) (185ms)
+[initSession:screenshot] static-frame dedup: 599/599 predicted frame(s) reusable (outcome=verified, runs=5/5, screenshots=30, seeks=31, elapsedMs=1172) (1555ms)
+[initSession:screenshot] drawElement self-verify armed: 4 ground-truth frame(s) @ [180, 360, 540, 684] of 720 (1919ms)
+[initSession:drawelement] drawElement canvas injected (1921ms)
+[initSession:drawelement] screenshot fallback: 5 clip-boundary frame(s) (1921ms)
+[initSession:drawelement] drawElement worker encode initialized (1925ms)
+  ██████░░░░░░░░░░░░░░░░░░░  25%  Streaming frame 1/720
+  ██████░░░░░░░░░░░░░░░░░░░  26%  Streaming frame 17/720
+  ████████░░░░░░░░░░░░░░░░░  33%  Streaming frame 106/720
+  █████████░░░░░░░░░░░░░░░░  36%  Streaming frame 149/720
+[INFO] [Render] drawElement self-verify passed {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","frame":180,"psnrDb":"inf"}
+  █████████░░░░░░░░░░░░░░░░  39%  Streaming frame 181/720
+  ███████████░░░░░░░░░░░░░░  47%  Streaming frame 288/720
+  ████████████░░░░░░░░░░░░░  48%  Streaming frame 301/720
+[INFO] [Render] drawElement self-verify passed {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","frame":360,"psnrDb":"inf"}
+  █████████████░░░░░░░░░░░░  53%  Streaming frame 371/720
+  ██████████████░░░░░░░░░░░  58%  Streaming frame 434/720
+  ██████████████░░░░░░░░░░░  59%  Streaming frame 449/720
+  ████████████████░░░░░░░░░  66%  Streaming frame 533/720
+[INFO] [Render] drawElement self-verify passed {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","frame":540,"psnrDb":"inf"}
+  █████████████████░░░░░░░░  69%  Streaming frame 577/720
+  █████████████████░░░░░░░░  70%  Streaming frame 593/720
+  ██████████████████░░░░░░░  74%  Streaming frame 643/720
+[INFO] [Render] drawElement self-verify passed {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","frame":684,"psnrDb":"inf"}
+  ███████████████████░░░░░░  77%  Streaming frame 685/720
+  ████████████████████░░░░░  80%  Streaming frame 720/720
+[static-dedup] reused 595/1315 frame(s) (45%), est. ~1785ms saved (avg 3ms/frame)
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"capture_streaming","status":"end","elapsedMs":6534,"durationMs":6133,"stagePhase":"capturing","workerCount":1,"forceScreenshot":false,"totalFrames":720,"framesCompleted":720,"captureMode":"drawelement","captureOperation":"encode"}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"assemble","status":"start","elapsedMs":6535,"stagePhase":"capturing","hasAudio":false,"workerCount":1,"forceScreenshot":false,"totalFrames":720,"framesCompleted":720,"captureMode":"drawelement","captureOperation":"encode"}
+  ██████████████████████░░░  90%  Assembling final video
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"assemble","status":"end","elapsedMs":6567,"durationMs":32,"stagePhase":"capturing","hasAudio":false,"workerCount":1,"forceScreenshot":false,"totalFrames":720,"framesCompleted":720,"captureMode":"drawelement","captureOperation":"encode"}
+[INFO] [Render:trace] {"renderJobId":"b3487c3b-bd1f-474c-b581-e3cf1640c36e","phase":"pipeline","status":"checkpoint","elapsedMs":6600,"message":"artifact validated","totalElapsedMs":6600}
+  █████████████████████████  100%  Render complete
+
+◇  /tmp/jangwook-hyperframes-en.mp4
+   1.2 MB · 30.0s video · rendered in 6.6s
+   drawelement capture · hardware gpu · compile 0.2s · extract 0.0s · audio 0.0s · probe 0.0s · setup 0.2s · capture 6.1s · encode (during capture) 6.1s · assemble 0.0s
+   Keep editing by chatting with Framey in the HyperFrames desktop app → https://hyperframes.dev/studio/download

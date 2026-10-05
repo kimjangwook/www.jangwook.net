@@ -1,4 +1,5 @@
 <script lang="ts">
+import MediaLabEmbed from './MediaLabEmbed.svelte';
 import SeriesOutline from './SeriesOutline.svelte';import SeriesStructuredData from './SeriesStructuredData.svelte';
 import ArticleSeo from './ArticleSeo.svelte';import Arrow from './Arrow.svelte';import PromptPanel from './PromptPanel.svelte';
 import {localizedPath} from '$lib/series/i18n';import type {loadArticle} from '$lib/server/series';
@@ -17,6 +18,7 @@ let {data}:{data:ReturnType<typeof loadArticle>}=$props();let ui=$derived(data.u
  {#if data.prepared}<div class="prose">{@html data.post.html}</div><div id="evaluation-prompt"><PromptPanel prompt={data.post.prompt} lang={data.lang}/></div>
 
 {:else}<section class="article-preparation" aria-labelledby="preparation-title"><p class="eyebrow">{ui.planned}</p><h2 id="preparation-title">{ui.preparationTitle}</h2><p>{ui.preparationMessage}</p><p>{ui.preparationPrompt}</p><a class="text-link" href={data.post.source}>{ui.sourceStandard} <Arrow/></a><p><a class="text-link" href={localizedPath('/series/accessibility',data.lang)}>{ui.allChapters} <Arrow/></a></p></section>{/if}
+ {#if data.post.slug==='audio-only-and-video-only-prerecorded'}<MediaLabEmbed lang={data.lang}/>{/if}
  <nav class="article-pagination" aria-label={ui.pagination}>{#if data.prev}<a href={localizedPath('/series/accessibility/'+data.prev.slug,data.lang)}><small>{ui.previous}</small>{data.prev.title}</a>{/if}{#if data.next}<a href={localizedPath('/series/accessibility/'+data.next.slug,data.lang)}><small>{ui.next}</small>{data.next.title}<Arrow/></a>{/if}</nav>
  </div></article>
 </div>

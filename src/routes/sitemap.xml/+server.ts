@@ -4,7 +4,7 @@ import {publishedVariants} from '$lib/server/series-feed';
 import {localizedPath,type Language} from '$lib/series/i18n';
 const esc=(s:string)=>s.replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]!));
 export const GET=()=>{
- const pages=['/ko/','/en/','/ja/','/zh/','/series','/series/accessibility','/prompts','/about','/archive','/updates',...(['en','ja','zh'] as Language[]).flatMap(l=>['/series','/series/accessibility','/prompts'].map(p=>localizedPath(p,l)))];
+ const pages=['/ko/','/en/','/ja/','/zh/','/series','/series/accessibility','/prompts','/about','/archive','/updates','/privacy','/services','/labs/accessibility/media-alternatives',...(['en','ja','zh'] as Language[]).flatMap(l=>['/series','/series/accessibility','/prompts','/about','/updates','/privacy','/services','/archive','/labs/accessibility/media-alternatives'].map(p=>localizedPath(p,l)))];
  const old=archive.filter(p=>!p.noindex);
  const nodes=pages.map(p=>'<url><loc>https://jangwook.net'+p+'</loc>'+(/^\/(ko|en|ja|zh)\/$/.test(p)?['ko','en','ja','zh'].map(l=>'<xhtml:link rel="alternate" hreflang="'+l+'" href="https://jangwook.net/'+l+'/"/>').join('')+'<xhtml:link rel="alternate" hreflang="x-default" href="https://jangwook.net/"/>':'')+'</url>');
  nodes.push(...catalog.flatMap(p=>publishedVariants(p.slug)).map(({post,path})=>'<url><loc>https://jangwook.net'+path+'</loc><lastmod>'+esc(post.updatedAt)+'</lastmod>'+publishedVariants(post.slug).map(t=>'<xhtml:link rel="alternate" hreflang="'+t.lang+'" href="https://jangwook.net'+t.path+'"/>').join('')+'</url>'));

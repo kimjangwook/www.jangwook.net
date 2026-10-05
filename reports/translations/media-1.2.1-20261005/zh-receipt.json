@@ -1,0 +1,10 @@
+{
+  "requested_model": "gpt-6-astra",
+  "actual_model": "gpt-6-astra",
+  "provider": "codex",
+  "reasoning_effort": "high",
+  "finish_reason": "stop",
+  "elapsed_seconds": 383.69,
+  "source_body_sha256": "8cb101fee4264e08a01ee8c5c9f1534210d61b54a0769a2daa58b34789fc2d87",
+  "source_prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440"
+}

@@ -1,0 +1,18 @@
+WebSocket server error: Port 24678 is already in use
+✔ language preference respects explicit selection and weighted browser languages (1.273084ms)
+✔ four real localized homes provide SSR metadata, selector links and only approved reading (0.999ms)
+✔ all 352 documents have modification dates; only published editions have a first-publication date (0.481333ms)
+✔ latest list is limited to five approved articles in first-publication order (0.18975ms)
+✔ localized overview has a real translated body, prompt, four figures and reciprocal paths (25.521ms)
+✔ all chapters have four-language preparation pages without a Korean fallback (12.027625ms)
+✔ exact translation approval and current Korean source are required outside preview (0.131042ms)
+✔ RSS and multilingual sitemap expose only approved chapters and exclude stale approvals (6.265916ms)
+✔ article learning navigation exposes only ordered metadata and honest publication state (0.79375ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1597.996542

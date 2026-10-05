@@ -7,22 +7,22 @@
     "AA": 24,
     "AAA": 31
   },
-  "published": 2,
-  "drafts": 86,
-  "bodyCharacters": 244797,
-  "promptCharacters": 140652,
+  "published": 3,
+  "drafts": 85,
+  "bodyCharacters": 259087,
+  "promptCharacters": 145932,
   "translationCounts": {
     "en": {
       "metadata": 88,
-      "complete": 2
+      "complete": 3
     },
     "ja": {
       "metadata": 88,
-      "complete": 2
+      "complete": 3
     },
     "zh": {
       "metadata": 88,
-      "complete": 2
+      "complete": 3
     }
   },
   "errors": []

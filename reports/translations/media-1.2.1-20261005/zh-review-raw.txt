@@ -1,0 +1,27 @@
+{
+  "decision": "needs_corrections",
+  "findings": [
+    {
+      "field": "body",
+      "issue": "The introduction to the correction record describes the displayed statements as Korean, but the edition displays them in Simplified Chinese. It should identify them as translations of the Korean article’s semantic paraphrases, without suggesting that Chinese fixtures were tested."
+    },
+    {
+      "field": "figures[2]",
+      "issue": "The supplied Figure 03 metadata still describes the older four-row, timecoded comparison, whereas the article contains the intentionally redesigned five-screen fictional comparison. Its title, description and labels need synchronization with that redesign. This is a metadata inconsistency, not an objection to the redesign or localized paths."
+    }
+  ],
+  "replacements": [
+    {
+      "field": "body",
+      "old": "原始内容与替代内容的语句是将其含义转述为韩语后的表述",
+      "new": "下列原始内容与替代内容的语句，是韩文原文中含义转述的中文译文",
+      "reason": "Accurately identifies the language of the displayed statements while preserving their provenance as translated semantic paraphrases rather than newly tested Chinese material."
+    }
+  ],
+  "unresolved": [
+    {
+      "field": "figures[2]",
+      "issue": "Synchronize the title, description and labels with the approved five-screen fictional Figure 03, without carrying over the old four-row timing layout or introducing measured timing. The permitted replacement fields do not include figure metadata, so no replacement is supplied for these fields."
+    }
+  ]
+}

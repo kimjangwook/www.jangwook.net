@@ -1,0 +1,365 @@
+{
+  "runs": [
+    {
+      "run": "claude-K03-r1",
+      "case": "K03",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K03-r2",
+      "case": "K03",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K03-r3",
+      "case": "K03",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K08-r1",
+      "case": "K08",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K08-r2",
+      "case": "K08",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K08-r3",
+      "case": "K08",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K17-r1",
+      "case": "K17",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 6,
+      "checks_total": 6,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K17-r2",
+      "case": "K17",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 6,
+      "checks_total": 6,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K17-r3",
+      "case": "K17",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 6,
+      "checks_total": 6,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K25-r1",
+      "case": "K25",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K25-r2",
+      "case": "K25",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K25-r3",
+      "case": "K25",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K34-r1",
+      "case": "K34",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K34-r2",
+      "case": "K34",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K34-r3",
+      "case": "K34",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K42-r1",
+      "case": "K42",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K42-r2",
+      "case": "K42",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K42-r3",
+      "case": "K42",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K56-r1",
+      "case": "K56",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K56-r2",
+      "case": "K56",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K56-r3",
+      "case": "K56",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K63-r1",
+      "case": "K63",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K63-r2",
+      "case": "K63",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K63-r3",
+      "case": "K63",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K79-r1",
+      "case": "K79",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K79-r2",
+      "case": "K79",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K79-r3",
+      "case": "K79",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K91-r1",
+      "case": "K91",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K91-r2",
+      "case": "K91",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K91-r3",
+      "case": "K91",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K03-r1",
+      "case": "K03",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 16,
+      "checks_total": 16,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K08-r1",
+      "case": "K08",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 15,
+      "checks_total": 15,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K17-r1",
+      "case": "K17",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 8,
+      "checks_total": 8,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K25-r1",
+      "case": "K25",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 15,
+      "checks_total": 15,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K34-r1",
+      "case": "K34",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K42-r1",
+      "case": "K42",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K56-r1",
+      "case": "K56",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 16,
+      "checks_total": 16,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K63-r1",
+      "case": "K63",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K79-r1",
+      "case": "K79",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K91-r1",
+      "case": "K91",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 15,
+      "checks_total": 15,
+      "all_checks_passed": true
+    }
+  ],
+  "failed_checks": []
+}

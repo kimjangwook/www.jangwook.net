@@ -1,0 +1,11 @@
+{
+  "status": "passed after applied corrections and asset-path synchronization",
+  "scope": "Editorial translation and final asset identity; translated prompts were not empirically executed",
+  "review_models": [
+    "gpt-6-astra high"
+  ],
+  "applied_body_corrections": 2,
+  "asset_path_review_resolution": "Typography fitting renamed content-hashed SVG assets; final figure03 metadata now matches the rendered files and all three body references. No rollback to pre-fit layout.",
+  "remaining_semantic_issues": [],
+  "evidence_limits": "Independent expert certification pending; finite-fixture claims and original missing ranges preserved."
+}

@@ -1,0 +1,109 @@
+{
+  "criterion": "1.2.1",
+  "level": "A",
+  "prompt_version": "0.2.0",
+  "scope": {
+    "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K42/index.html",
+    "states": [
+      "article initial state; media content and provided alternative only (PAGE-K42, 수집 시각 2026-10-04T12:04:54.613330+00:00, 로컬 HTML을 Chromium으로 파싱하고 제공된 대안 목적지를 읽은 기록)"
+    ],
+    "media_ids": ["M-A"],
+    "inventory_complete_within_scope": true,
+    "exclusions": [
+      "Player keyboard, captions and other WCAG criteria",
+      "External or live user accounts"
+    ],
+    "execution": "complete",
+    "decision": "pass",
+    "reason": "지정 범위의 대상은 M-A 하나이며 목록 수집이 범위 안에서 완전하다고 기록됐습니다. M-A는 사전 제작 음성 전용으로 분류되고, PAGE-K42에서 M-A와 연결된 텍스트 대안 ALT-A가 실제로 읽힌 상태로 제공됩니다. 원본 전체 구간(0~19.06775초)에 대한 독립 ASR 기록 OBS-A의 정보 단위 7개가 ALT-A에 모두 동등하게 들어 있어, 적용 대상 1개가 pass이고 누락된 대상이 없으므로 scope decision은 pass입니다. 판정은 이 fixture 페이지의 초기 상태에 한정됩니다."
+  },
+  "input_used": [
+    {
+      "evidence_id": "PAGE-K42",
+      "kind": "원본(페이지 목록과 대안 연결 기록)",
+      "processed_ranges": [],
+      "limitations": [
+        "HTML 원문 자체가 아니라 수집기가 정리한 media_links 기록만 제공됨",
+        "대안 ALT-A가 페이지에서 어떤 문구·위치로 M-A와 연결되는지 HTML 수준의 표시는 제공되지 않음(연결 관계는 media_links 기록으로 확인)",
+        "페이지를 직접 열지 않음"
+      ]
+    },
+    {
+      "evidence_id": "MEDIA-A",
+      "kind": "원본 메타데이터(대상 목록 항목: sha256, 길이, 출처, 분류 관찰)",
+      "processed_ranges": [],
+      "limitations": [
+        "MEDIA-A는 목록 항목의 evidence_id로만 존재하며 ffprobe 원시 출력은 제공되지 않음",
+        "WAV 원본을 직접 듣거나 디코딩하지 않음"
+      ]
+    },
+    {
+      "evidence_id": "OBS-A",
+      "kind": "파생(원본 WAV의 독립 ASR, faster-whisper base.en, CPU int8)",
+      "processed_ranges": [
+        {"start_seconds": 0, "end_seconds": 19.06775, "evidence_ids": ["OBS-A"], "reason": "기록된 processed_range와 duration이 원본 전체 길이와 같고 coverage_complete=true"}
+      ],
+      "limitations": [
+        "ASR은 소리를 빠뜨리거나 단어를 잘못 인식할 수 있으며 LLM의 직접 청취가 아님",
+        "음성 인식만 수행했고 일반 소리 사건·화자 분리 검증은 하지 않음",
+        "세그먼트 끝 표기는 19.0초이고 원본 길이는 19.06775초로, 약 0.068초 차이가 있음"
+      ]
+    },
+    {
+      "evidence_id": "ALT-A",
+      "kind": "대안(텍스트, fixture-v1, paragraph 1)",
+      "processed_ranges": [],
+      "limitations": [
+        "단일 문단 텍스트이며 시간 구간이 없는 대안"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "media_id": "M-A",
+      "classification": "prerecorded_audio_only",
+      "classification_evidence_ids": ["MEDIA-A", "OBS-A"],
+      "original_version": "local fixture assets/audio-guide.wav, sha256 dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5 (MEDIA-A와 OBS-A의 source_sha256 일치)",
+      "duration": 19.06775,
+      "execution": "complete",
+      "decision": "pass",
+      "exception": {"claimed": false, "verified": false, "no_extra_information": null, "clearly_labeled": null, "evidence_ids": []},
+      "coverage": {
+        "processed_ranges": [
+          {"start_seconds": 0, "end_seconds": 19.06775, "evidence_ids": ["OBS-A"], "reason": "독립 ASR이 원본 전체(0~19.06775초)를 처리했고, 세그먼트 0~8초와 8~19초가 이어져 내용 공백 없이 발화를 기록함. 19.0~19.06775초의 약 0.068초는 세그먼트 시간 표기의 반올림 범위로 보며 별도 발화 누락의 근거는 없음"}
+        ],
+        "unreviewed_ranges": [],
+        "complete": true
+      },
+      "alternatives": [
+        {"alternative_id": "ALT-A", "kind": "text", "relation_evidence_ids": ["PAGE-K42"], "actually_observed": true, "location": "K42 fixture 페이지의 대안 paragraph 1", "version": "fixture-v1"}
+      ],
+      "comparisons": [
+        {"unit_id": "U01", "original_location": "0.0~8.0초 세그먼트 첫 부분", "original_information": "복구 코드를 만들기 전에 로그인해 있어야 한다는 전제 조건", "alternative_id": "ALT-A", "alternative_location": "paragraph 1 첫 문장", "alternative_information": "You must be signed in.", "relation": "equivalent", "evidence_ids": ["OBS-A", "ALT-A"], "observation": "원본 ASR은 'You must be signed in before creating a recovery code'이고 대안은 'You must be signed in.'이다.", "interpretation": "대안 문장 자체는 '복구 코드 생성 전'이라는 시점을 생략했지만, 바로 이어지는 절차가 복구 코드 생성이므로 전제 조건의 의미가 같다.", "user_impact": "이용자는 절차를 시작하기 전에 로그인이 필요하다는 조건을 원본과 같이 알 수 있다."},
+        {"unit_id": "U02", "original_location": "0.0~8.0초 세그먼트 나머지", "original_information": "절차 순서: 계정 설정 열기 → 보안 열기 → 복구 코드 만들기 선택", "alternative_id": "ALT-A", "alternative_location": "paragraph 1 둘째 문장", "alternative_information": "Open Account settings, then Security, and select Create recovery code.", "relation": "equivalent", "evidence_ids": ["OBS-A", "ALT-A"], "observation": "세 단계의 대상과 순서가 같다.", "interpretation": "대소문자 표기 차이만 있으며 단계·순서가 보존된다.", "user_impact": "차이 없음."},
+        {"unit_id": "U03", "original_location": "8.0~19.0초 세그먼트 첫 문장", "original_information": "경고: 새 복구 코드를 만들면 이전 코드를 쓸 수 없게 됨", "alternative_id": "ALT-A", "alternative_location": "paragraph 1 셋째 문장", "alternative_information": "A new recovery code makes the previous one unusable.", "relation": "equivalent", "evidence_ids": ["OBS-A", "ALT-A"], "observation": "원본 'Creating a new recovery code makes the previous code unusable'과 대안의 의미가 같다.", "interpretation": "경고의 대상과 결과(이전 코드 사용 불가)가 보존된다.", "user_impact": "이용자는 생성 전에 이전 코드가 무효화된다는 위험을 같은 시점에 알 수 있다."},
+        {"unit_id": "U04", "original_location": "8.0~19.0초 세그먼트 중간", "original_information": "새 코드를 확인(confirm)", "alternative_id": "ALT-A", "alternative_location": "paragraph 1 넷째 문장 앞부분", "alternative_information": "Confirm,", "relation": "equivalent", "evidence_ids": ["OBS-A", "ALT-A"], "observation": "원본은 'confirm the new code', 대안은 'Confirm'이다.", "interpretation": "같은 문장에서 '새 코드'를 다루므로 확인 대상이 같다고 해석된다.", "user_impact": "차이 없음."},
+        {"unit_id": "U05", "original_location": "8.0~19.0초 세그먼트 중간", "original_information": "새 코드를 안전한 곳에 저장", "alternative_id": "ALT-A", "alternative_location": "paragraph 1 넷째 문장", "alternative_information": "save the new code safely, and finish.", "relation": "equivalent", "evidence_ids": ["OBS-A", "ALT-A"], "observation": "원본 'save it in a safe place'와 대안 'save the new code safely'의 의미가 같다. 대안에는 원본 ASR에 없는 'and finish'가 있다.", "interpretation": "'and finish'는 다음 완료 안내와 이어지는 표현으로, 새로운 조건이나 단계를 추가하지 않아 왜곡으로 보지 않는다.", "user_impact": "판단에 영향을 주는 차이 없음."},
+        {"unit_id": "U06", "original_location": "8.0~19.0초 세그먼트 끝부분", "original_information": "완료: 새 복구 코드가 준비됨", "alternative_id": "ALT-A", "alternative_location": "paragraph 1 마지막 문장 앞부분", "alternative_information": "The new code is ready;", "relation": "equivalent", "evidence_ids": ["OBS-A", "ALT-A"], "observation": "원본 'your new recovery code is ready'와 의미가 같다.", "interpretation": "완료 상태가 보존된다.", "user_impact": "차이 없음."},
+        {"unit_id": "U07", "original_location": "8.0~19.0초 세그먼트 마지막", "original_information": "부정 조건: 이전 코드는 더 이상 사용할 수 없음", "alternative_id": "ALT-A", "alternative_location": "paragraph 1 마지막 문장 뒷부분", "alternative_information": "the previous code can no longer be used.", "relation": "equivalent", "evidence_ids": ["OBS-A", "ALT-A"], "observation": "원본 'your previous code can no longer be used'와 부정어까지 같다.", "interpretation": "부정 조건이 정확히 보존된다.", "user_impact": "차이 없음."}
+      ],
+      "reason": "M-A는 MEDIA-A의 분류 관찰(사전 제작, 오디오 트랙만 존재, 단일 합성 화자의 발화 전용 녹음, 의도된 정보성 소리 없음)과 OBS-A의 음성 전용 기록으로 사전 제작 음성 전용입니다. 텍스트 대안 ALT-A가 M-A와 연결되어 실제로 읽힌 상태로 제공됩니다. 원본 전체 구간의 독립 ASR에서 정리한 정보 단위 7개(전제 조건, 세 단계 절차, 경고, 확인, 안전한 저장, 완료, 이전 코드 사용 불가)가 대안에 모두 동등하게 있고 누락·왜곡이 없습니다. 단일 화자이므로 화자 표시는 필요한 정보가 아닙니다. 따라서 pass입니다.",
+      "missing_evidence": [
+        "비발화 소리의 부재는 fixture의 분류 관찰(no intended informational sounds)에 근거하며, ASR은 소리 사건을 검증하지 않음",
+        "ffprobe 원시 트랙 정보는 제공되지 않아 '오디오 트랙만 존재'는 목록 항목의 관찰 문구로만 확인"
+      ],
+      "recommendations": [
+        {"change": "필수 수정 없음. 선택 개선: 대안 첫 문장을 'You must be signed in before creating a recovery code.'로 바꾸면 원본의 전제 조건 시점을 그대로 보존합니다.", "owner_role": "콘텐츠 담당", "retest": "같은 sha256의 audio-guide.wav와 수정된 ALT-A를 같은 페이지 초기 상태에서 다시 대조하고, 원본 0~19.06775초 전체의 정보 단위가 대안에 모두 있는지 확인합니다."}
+      ]
+    }
+  ],
+  "errors": [],
+  "unreviewed_media": [],
+  "other_checks": [
+    "플레이어의 키보드 조작과 자막, 1.2.x 이외의 기준은 제외 범위이므로 이 판정에 포함하지 않았습니다."
+  ],
+  "next_checks": [
+    "원본 WAV나 대안이 바뀌면 sha256과 판본을 다시 기록하고 동일 절차로 재평가합니다.",
+    "실제 서비스에 적용할 때는 비발화 소리나 여러 화자가 있는 음성에 대해 소리 사건과 화자 정보를 별도로 관찰한 기록을 수집해야 합니다."
+  ]
+}

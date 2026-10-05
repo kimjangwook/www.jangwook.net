@@ -1,2 +1,2 @@
-import { archiveList } from '$lib/server/archive';
-export const load=({url,params}:{url:URL;params:{lang:string;tag?:string}})=>({list:archiveList(url,{lang:params.lang,tag:params.tag}),seo:{title:'아카이브 — jangwook.net',description:'주제별 기존 글 아카이브',canonical:'https://jangwook.net'+url.pathname+url.search}});
+import {archiveList} from '$lib/server/archive';import copy from '$lib/site/copy.json';import {isLanguage} from '$lib/series/i18n';
+export const load=({url,params}:{url:URL;params:{lang:string;tag?:string}})=>{const lang=isLanguage(params.lang)?params.lang:'ko';return{lang,archiveCopy:copy[lang].archive,list:archiveList(url,{lang,tag:params.tag}),seo:{title:copy[lang].archive[0]+' — jangwook.net',description:copy[lang].archive[1],lang,canonical:'https://jangwook.net'+url.pathname+url.search}}};

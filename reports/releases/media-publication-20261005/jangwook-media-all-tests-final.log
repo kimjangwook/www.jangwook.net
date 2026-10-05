@@ -1,0 +1,31 @@
+✔ language preference respects explicit selection and weighted browser languages (1.179833ms)
+✔ four real localized homes provide SSR metadata, selector links and only approved reading (1.0775ms)
+✔ all 352 documents have modification dates; only published editions have a first-publication date (0.576083ms)
+✔ latest list is limited to five approved articles in first-publication order (0.249417ms)
+✔ validation rejects malformed email, unrecognized role and missing consent (0.863333ms)
+✔ drafts are available only in local preview; public bundles exclude all drafts (0.548333ms)
+✔ lead, optional consent and captured mail persist; duplicate request creates no second mail (143.175125ms)
+✔ concurrent submissions produce one request and one captured outbox (106.767083ms)
+✔ rate limit stops the sixth request (261.747833ms)
+✔ public draft submission and nonlocal capture cannot create leads (4.444125ms)
+✔ provider acceptance records a receipt and attaches approved prompts; failures stay distinct (175.994542ms)
+✔ expired material links can be requested again with a fresh token (108.804667ms)
+✔ changed content, invalid approval dates and future publication remain private (0.168459ms)
+✔ provider acceptance followed by database failure keeps the send claim and receipt (57.824291ms)
+✔ native media headers expose length and preserve source bytes (14.24125ms)
+✔ prefix, suffix and open-ended ranges return the exact source interval (2.064208ms)
+✔ unsatisfiable ranges and validator mismatches retain HTTP semantics (0.796416ms)
+✔ media routing excludes HTML, unrelated paths and arbitrary language assets (0.202ms)
+✔ localized overview has a real translated body, prompt, four figures and reciprocal paths (25.776458ms)
+✔ all chapters have four-language preparation pages without a Korean fallback (19.561584ms)
+✔ exact translation approval and current Korean source are required outside preview (0.161792ms)
+✔ RSS and multilingual sitemap expose only approved chapters and exclude stale approvals (2.698875ms)
+✔ article learning navigation exposes only ordered metadata and honest publication state (0.693708ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5836.628833

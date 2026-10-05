@@ -1,0 +1,1130 @@
+[
+  {
+    "case_id": "K17",
+    "target": "https://jangwook.net/series/accessibility/non-text-content / previous published article main initial state",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K17",
+        "url": "https://jangwook.net/series/accessibility/non-text-content",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual production Chromium DOM snapshot, main prose scope; advertising iframe excluded",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [],
+        "observed": {
+          "audio": 0,
+          "video": 0,
+          "time_based_embeds": 0,
+          "animated_image_candidates": 0,
+          "static_svg_diagrams": true
+        }
+      },
+      "original_observations": [],
+      "alternatives": [],
+      "errors": []
+    },
+    "exception_claims": [],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K42",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K42/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-A",
+          "classification_observation": "prerecorded, audio track only, synthetic single speaker, speech-only controlled recording, no intended informational sounds or other tracks",
+          "sha256": "dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5",
+          "duration": 19.06775,
+          "source": "local fixture assets/audio-guide.wav",
+          "evidence_id": "MEDIA-A"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K42",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K42/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-A",
+            "alternatives": [
+              "ALT-A"
+            ]
+          }
+        ]
+      },
+      "original_observations": [
+        {
+          "evidence_id": "OBS-A",
+          "source_file": "audio-guide.wav",
+          "source_sha256": "dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5",
+          "tool": "faster-whisper / base.en / CPU int8",
+          "method": "Actual independent ASR of the WAV, no production script or alternative supplied to ASR, no initial prompt. Speech recognition only; no general sound/diarization validation.",
+          "processed_range": [
+            0,
+            19.06775
+          ],
+          "duration": 19.06775,
+          "elapsed_seconds": 1.34,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": "You must be signed in before creating a recovery code, open account settings, then open security, and select create recovery code.",
+              "words": []
+            },
+            {
+              "start": 8.0,
+              "end": 19.0,
+              "text": "Creating a new recovery code makes the previous code unusable, confirm the new code, save it in a safe place, your new recovery code is ready, your previous code can no longer be used.",
+              "words": []
+            }
+          ],
+          "limitations": [
+            "ASR may omit sounds or misrecognize words; transcription is derived evidence, not LLM listening.",
+            "One synthetic speaker, clear speech, no intended informational non-speech sounds; speaker change and noisy content remain outside this fixture."
+          ],
+          "kind": "derived independent source ASR",
+          "media_id": "M-A",
+          "coverage_complete": true,
+          "scope_of_validation": "Controlled speech-only single-speaker synthetic fixture: original speech-generation text matches the independently recognized speech semantically, including all conditions and negations. The source script and tested alternative were not supplied to ASR. No noisy/multi-speaker/sound-event conclusion."
+        }
+      ],
+      "alternatives": [
+        {
+          "evidence_id": "ALT-A",
+          "media_id": "M-A",
+          "kind": "text",
+          "actually_observed": true,
+          "version": "fixture-v1",
+          "paragraphs": [
+            {
+              "location": "paragraph 1",
+              "text": "You must be signed in. Open Account settings, then Security, and select Create recovery code. A new recovery code makes the previous one unusable. Confirm, save the new code safely, and finish. The new code is ready; the previous code can no longer be used."
+            }
+          ],
+          "text": "You must be signed in. Open Account settings, then Security, and select Create recovery code. A new recovery code makes the previous one unusable. Confirm, save the new code safely, and finish. The new code is ready; the previous code can no longer be used."
+        }
+      ],
+      "errors": []
+    },
+    "exception_claims": [],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K08",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K08/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-A",
+          "classification_observation": "prerecorded, audio track only, synthetic single speaker, speech-only controlled recording, no intended informational sounds or other tracks",
+          "sha256": "dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5",
+          "duration": 19.06775,
+          "source": "local fixture assets/audio-guide.wav",
+          "evidence_id": "MEDIA-A"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K08",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K08/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-A",
+            "alternatives": [
+              "ALT-A"
+            ]
+          }
+        ]
+      },
+      "original_observations": [
+        {
+          "evidence_id": "OBS-A",
+          "source_file": "audio-guide.wav",
+          "source_sha256": "dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5",
+          "tool": "faster-whisper / base.en / CPU int8",
+          "method": "Actual independent ASR of the WAV, no production script or alternative supplied to ASR, no initial prompt. Speech recognition only; no general sound/diarization validation.",
+          "processed_range": [
+            0,
+            19.06775
+          ],
+          "duration": 19.06775,
+          "elapsed_seconds": 1.34,
+          "segments": [
+            {
+              "start": 0.0,
+              "end": 8.0,
+              "text": "You must be signed in before creating a recovery code, open account settings, then open security, and select create recovery code.",
+              "words": []
+            },
+            {
+              "start": 8.0,
+              "end": 19.0,
+              "text": "Creating a new recovery code makes the previous code unusable, confirm the new code, save it in a safe place, your new recovery code is ready, your previous code can no longer be used.",
+              "words": []
+            }
+          ],
+          "limitations": [
+            "ASR may omit sounds or misrecognize words; transcription is derived evidence, not LLM listening.",
+            "One synthetic speaker, clear speech, no intended informational non-speech sounds; speaker change and noisy content remain outside this fixture."
+          ],
+          "kind": "derived independent source ASR",
+          "media_id": "M-A",
+          "coverage_complete": true,
+          "scope_of_validation": "Controlled speech-only single-speaker synthetic fixture: original speech-generation text matches the independently recognized speech semantically, including all conditions and negations. The source script and tested alternative were not supplied to ASR. No noisy/multi-speaker/sound-event conclusion."
+        }
+      ],
+      "alternatives": [
+        {
+          "evidence_id": "ALT-A",
+          "media_id": "M-A",
+          "kind": "text",
+          "actually_observed": true,
+          "version": "fixture-v1",
+          "paragraphs": [
+            {
+              "location": "paragraph 1",
+              "text": "You must be signed in. Open Account settings, then Security, and select Create recovery code. A new recovery code makes the previous one usable. Confirm, save the new code safely, and finish. The new code is ready; the previous code can still be used."
+            }
+          ],
+          "text": "You must be signed in. Open Account settings, then Security, and select Create recovery code. A new recovery code makes the previous one usable. Confirm, save the new code safely, and finish. The new code is ready; the previous code can still be used."
+        }
+      ],
+      "errors": []
+    },
+    "exception_claims": [],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K63",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K63/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-V",
+          "classification_observation": "prerecorded controlled five-static-state video sequence; ffprobe confirms video track only, no audio; not player-muted synchronized media",
+          "sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "duration": 19.916667,
+          "source": "local fixture assets/silent-guide.mp4",
+          "evidence_id": "MEDIA-V"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K63",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K63/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-V",
+            "alternatives": [
+              "ALT-V"
+            ]
+          }
+        ]
+      },
+      "original_observations": [
+        {
+          "evidence_id": "OBS-V",
+          "kind": "derived frame sequence",
+          "source_sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "tool": "ffmpeg frame decode + framemd5; PNG images actually extracted from decoded MP4",
+          "decoded_frames": 239,
+          "fps": 12,
+          "processed_ranges": [
+            [
+              0,
+              19.916667
+            ]
+          ],
+          "unreviewed_ranges": [],
+          "coverage_complete": true,
+          "groups": [
+            {
+              "evidence_id": "FRAME-1",
+              "start": 0,
+              "end": 3.9166666666666665,
+              "decoded_identical_frame_hash": "4469897e02e9eba4fb9e8aa47d512e2d",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png"
+            },
+            {
+              "evidence_id": "FRAME-2",
+              "start": 3.9166666666666665,
+              "end": 7.916666666666667,
+              "decoded_identical_frame_hash": "3c7617fa1d66aab2c1363b5f757bdadb",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png"
+            },
+            {
+              "evidence_id": "FRAME-3",
+              "start": 7.916666666666667,
+              "end": 11.916666666666666,
+              "decoded_identical_frame_hash": "3832866396798a5b8ed0daa49d9f6ae8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png"
+            },
+            {
+              "evidence_id": "FRAME-4",
+              "start": 11.916666666666666,
+              "end": 15.916666666666666,
+              "decoded_identical_frame_hash": "20dfe3cb91d6a0bfbb5af15634512f33",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png"
+            },
+            {
+              "evidence_id": "FRAME-5",
+              "start": 15.916666666666666,
+              "end": 19.916666666666668,
+              "decoded_identical_frame_hash": "fc7322ae5f966954a6774c4a0b7ba8b8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png"
+            }
+          ],
+          "limitations": [
+            "All decoded frames belong to these five byte-identical groups. Each group is represented by an actual PNG. Full coverage applies only to this controlled static-state fixture, not a sampled arbitrary video.",
+            "No actual account operations; only instructional screens and ordered transitions."
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "evidence_id": "ALT-V",
+          "media_id": "M-V",
+          "kind": "text",
+          "actually_observed": true,
+          "version": "fixture-v1",
+          "paragraphs": [
+            {
+              "location": "paragraph 2",
+              "text": "1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security. "
+            },
+            {
+              "location": "paragraph 3",
+              "text": "2: Security explains that recovery codes restore account access; choose Create recovery code. "
+            },
+            {
+              "location": "paragraph 4",
+              "text": "3: Before you continue warns that a new code makes the previous code unusable. Choose Confirm new code. "
+            },
+            {
+              "location": "paragraph 5",
+              "text": "4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code. "
+            },
+            {
+              "location": "paragraph 6",
+              "text": "5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings."
+            }
+          ],
+          "text": "Step 1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security. Step 2: Security explains that recovery codes restore account access; choose Create recovery code. Step 3: Before you continue warns that a new code makes the previous code unusable. Choose Confirm new code. Step 4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code. Step 5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings."
+        }
+      ],
+      "errors": []
+    },
+    "exception_claims": [],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K25",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K25/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-V",
+          "classification_observation": "prerecorded controlled five-static-state video sequence; ffprobe confirms video track only, no audio; not player-muted synchronized media",
+          "sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "duration": 19.916667,
+          "source": "local fixture assets/silent-guide.mp4",
+          "evidence_id": "MEDIA-V"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K25",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K25/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-V",
+            "alternatives": [
+              "ALT-V"
+            ]
+          }
+        ]
+      },
+      "original_observations": [
+        {
+          "evidence_id": "OBS-V",
+          "kind": "derived frame sequence",
+          "source_sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "tool": "ffmpeg frame decode + framemd5; PNG images actually extracted from decoded MP4",
+          "decoded_frames": 239,
+          "fps": 12,
+          "processed_ranges": [
+            [
+              0,
+              19.916667
+            ]
+          ],
+          "unreviewed_ranges": [],
+          "coverage_complete": true,
+          "groups": [
+            {
+              "evidence_id": "FRAME-1",
+              "start": 0,
+              "end": 3.9166666666666665,
+              "decoded_identical_frame_hash": "4469897e02e9eba4fb9e8aa47d512e2d",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png"
+            },
+            {
+              "evidence_id": "FRAME-2",
+              "start": 3.9166666666666665,
+              "end": 7.916666666666667,
+              "decoded_identical_frame_hash": "3c7617fa1d66aab2c1363b5f757bdadb",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png"
+            },
+            {
+              "evidence_id": "FRAME-3",
+              "start": 7.916666666666667,
+              "end": 11.916666666666666,
+              "decoded_identical_frame_hash": "3832866396798a5b8ed0daa49d9f6ae8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png"
+            },
+            {
+              "evidence_id": "FRAME-4",
+              "start": 11.916666666666666,
+              "end": 15.916666666666666,
+              "decoded_identical_frame_hash": "20dfe3cb91d6a0bfbb5af15634512f33",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png"
+            },
+            {
+              "evidence_id": "FRAME-5",
+              "start": 15.916666666666666,
+              "end": 19.916666666666668,
+              "decoded_identical_frame_hash": "fc7322ae5f966954a6774c4a0b7ba8b8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png"
+            }
+          ],
+          "limitations": [
+            "All decoded frames belong to these five byte-identical groups. Each group is represented by an actual PNG. Full coverage applies only to this controlled static-state fixture, not a sampled arbitrary video.",
+            "No actual account operations; only instructional screens and ordered transitions."
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "evidence_id": "ALT-V",
+          "media_id": "M-V",
+          "kind": "text",
+          "actually_observed": true,
+          "version": "fixture-v1",
+          "paragraphs": [
+            {
+              "location": "paragraph 2",
+              "text": "1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security. "
+            },
+            {
+              "location": "paragraph 3",
+              "text": "4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code. "
+            },
+            {
+              "location": "paragraph 4",
+              "text": "5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings."
+            }
+          ],
+          "text": "Step 1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security. Step 4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code. Step 5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings."
+        }
+      ],
+      "errors": []
+    },
+    "exception_claims": [],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K91",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K91/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-V",
+          "classification_observation": "prerecorded controlled five-static-state video sequence; ffprobe confirms video track only, no audio; not player-muted synchronized media",
+          "sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "duration": 19.916667,
+          "source": "local fixture assets/silent-guide.mp4",
+          "evidence_id": "MEDIA-V"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K91",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K91/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-V",
+            "alternatives": [
+              "ALT-AD"
+            ]
+          }
+        ]
+      },
+      "original_observations": [
+        {
+          "evidence_id": "OBS-V",
+          "kind": "derived frame sequence",
+          "source_sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "tool": "ffmpeg frame decode + framemd5; PNG images actually extracted from decoded MP4",
+          "decoded_frames": 239,
+          "fps": 12,
+          "processed_ranges": [
+            [
+              0,
+              19.916667
+            ]
+          ],
+          "unreviewed_ranges": [],
+          "coverage_complete": true,
+          "groups": [
+            {
+              "evidence_id": "FRAME-1",
+              "start": 0,
+              "end": 3.9166666666666665,
+              "decoded_identical_frame_hash": "4469897e02e9eba4fb9e8aa47d512e2d",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png"
+            },
+            {
+              "evidence_id": "FRAME-2",
+              "start": 3.9166666666666665,
+              "end": 7.916666666666667,
+              "decoded_identical_frame_hash": "3c7617fa1d66aab2c1363b5f757bdadb",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png"
+            },
+            {
+              "evidence_id": "FRAME-3",
+              "start": 7.916666666666667,
+              "end": 11.916666666666666,
+              "decoded_identical_frame_hash": "3832866396798a5b8ed0daa49d9f6ae8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png"
+            },
+            {
+              "evidence_id": "FRAME-4",
+              "start": 11.916666666666666,
+              "end": 15.916666666666666,
+              "decoded_identical_frame_hash": "20dfe3cb91d6a0bfbb5af15634512f33",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png"
+            },
+            {
+              "evidence_id": "FRAME-5",
+              "start": 15.916666666666666,
+              "end": 19.916666666666668,
+              "decoded_identical_frame_hash": "fc7322ae5f966954a6774c4a0b7ba8b8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png"
+            }
+          ],
+          "limitations": [
+            "All decoded frames belong to these five byte-identical groups. Each group is represented by an actual PNG. Full coverage applies only to this controlled static-state fixture, not a sampled arbitrary video.",
+            "No actual account operations; only instructional screens and ordered transitions."
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "evidence_id": "ALT-AD",
+          "media_id": "M-V",
+          "kind": "audio",
+          "actually_observed": true,
+          "version": "fixture-v1",
+          "sha256": "07649b74ad5ef6b570269def6e87803362bcf350a0dcba4663ebf55a35eb5943",
+          "duration": 36.167125,
+          "observed_content": {
+            "evidence_id": "OBS-AD",
+            "source_file": "video-audio-alternative.wav",
+            "source_sha256": "07649b74ad5ef6b570269def6e87803362bcf350a0dcba4663ebf55a35eb5943",
+            "tool": "faster-whisper / base.en / CPU int8",
+            "method": "Actual independent ASR of the WAV, no production script or alternative supplied to ASR, no initial prompt. Speech recognition only; no general sound/diarization validation.",
+            "processed_range": [
+              0,
+              36.167125
+            ],
+            "duration": 36.167125,
+            "elapsed_seconds": 2.9,
+            "segments": [
+              {
+                "start": 0.0,
+                "end": 5.36,
+                "text": "Step 1. In account settings, the page says you must be signed in before creating a recovery",
+                "words": []
+              },
+              {
+                "start": 5.36,
+                "end": 11.6,
+                "text": "code. Choose open security. Step 2. Security explains that recovery codes restore account",
+                "words": []
+              },
+              {
+                "start": 11.6,
+                "end": 17.240000000000002,
+                "text": "access. Choose create recovery code. Step 3. Before you continue warns that a new code",
+                "words": []
+              },
+              {
+                "start": 17.240000000000002,
+                "end": 23.64,
+                "text": "makes the previous code unusable, choose confirm new code. Step 4. Recovery code created instructs",
+                "words": []
+              },
+              {
+                "start": 23.64,
+                "end": 28.32,
+                "text": "you to save it safely and says that this example shows no real code. Choose I saved",
+                "words": []
+              },
+              {
+                "start": 28.32,
+                "end": 33.4,
+                "text": "my code. Step 5. Complete says that the new code is ready and the previous code can no",
+                "words": []
+              },
+              {
+                "start": 33.4,
+                "end": 36.04,
+                "text": "longer be used. Choose return to settings.",
+                "words": []
+              }
+            ],
+            "limitations": [
+              "ASR may omit sounds or misrecognize words; transcription is derived evidence, not LLM listening.",
+              "One synthetic speaker, clear speech, no intended informational non-speech sounds; speaker change and noisy content remain outside this fixture."
+            ],
+            "media_id": "M-V",
+            "kind": "derived actual audio alternative ASR",
+            "coverage_complete": true
+          },
+          "no_separate_text_alternative": true
+        }
+      ],
+      "errors": []
+    },
+    "exception_claims": [],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K34",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K34/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-V",
+          "classification_observation": "prerecorded controlled five-static-state video sequence; ffprobe confirms video track only, no audio; not player-muted synchronized media",
+          "sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "duration": 19.916667,
+          "source": "local fixture assets/silent-guide.mp4",
+          "evidence_id": "MEDIA-V"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K34",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K34/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-V",
+            "alternatives": []
+          }
+        ]
+      },
+      "original_observations": [
+        {
+          "evidence_id": "OBS-V",
+          "kind": "derived frame sequence",
+          "source_sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "tool": "ffmpeg frame decode + framemd5; PNG images actually extracted from decoded MP4",
+          "decoded_frames": 239,
+          "fps": 12,
+          "processed_ranges": [
+            [
+              0,
+              19.916667
+            ]
+          ],
+          "unreviewed_ranges": [],
+          "coverage_complete": true,
+          "groups": [
+            {
+              "evidence_id": "FRAME-1",
+              "start": 0,
+              "end": 3.9166666666666665,
+              "decoded_identical_frame_hash": "4469897e02e9eba4fb9e8aa47d512e2d",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png"
+            },
+            {
+              "evidence_id": "FRAME-2",
+              "start": 3.9166666666666665,
+              "end": 7.916666666666667,
+              "decoded_identical_frame_hash": "3c7617fa1d66aab2c1363b5f757bdadb",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png"
+            },
+            {
+              "evidence_id": "FRAME-3",
+              "start": 7.916666666666667,
+              "end": 11.916666666666666,
+              "decoded_identical_frame_hash": "3832866396798a5b8ed0daa49d9f6ae8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png"
+            },
+            {
+              "evidence_id": "FRAME-4",
+              "start": 11.916666666666666,
+              "end": 15.916666666666666,
+              "decoded_identical_frame_hash": "20dfe3cb91d6a0bfbb5af15634512f33",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png"
+            },
+            {
+              "evidence_id": "FRAME-5",
+              "start": 15.916666666666666,
+              "end": 19.916666666666668,
+              "decoded_identical_frame_hash": "fc7322ae5f966954a6774c4a0b7ba8b8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png"
+            }
+          ],
+          "limitations": [
+            "All decoded frames belong to these five byte-identical groups. Each group is represented by an actual PNG. Full coverage applies only to this controlled static-state fixture, not a sampled arbitrary video.",
+            "No actual account operations; only instructional screens and ordered transitions."
+          ]
+        },
+        {
+          "evidence_id": "EXC-V",
+          "media_id": "M-V",
+          "existing_text": "Step 1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security. Step 2: Security explains that recovery codes restore account access; choose Create recovery code. Step 3: Before you continue warns that a new code makes the previous code unusable. Choose Confirm new code. Step 4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code. Step 5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings.",
+          "label": "The following silent guide is a media alternative to the complete written steps above.",
+          "clearly_labeled_observed": true
+        }
+      ],
+      "alternatives": [],
+      "errors": []
+    },
+    "exception_claims": [
+      {
+        "media_id": "M-V",
+        "claim": "media alternative to existing text",
+        "evidence_ids": [
+          "EXC-V"
+        ]
+      }
+    ],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K56",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K56/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-V",
+          "classification_observation": "prerecorded controlled five-static-state video sequence; ffprobe confirms video track only, no audio; not player-muted synchronized media",
+          "sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "duration": 19.916667,
+          "source": "local fixture assets/silent-guide.mp4",
+          "evidence_id": "MEDIA-V"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K56",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K56/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-V",
+            "alternatives": []
+          }
+        ]
+      },
+      "original_observations": [
+        {
+          "evidence_id": "OBS-V",
+          "kind": "derived frame sequence",
+          "source_sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "tool": "ffmpeg frame decode + framemd5; PNG images actually extracted from decoded MP4",
+          "decoded_frames": 239,
+          "fps": 12,
+          "processed_ranges": [
+            [
+              0,
+              19.916667
+            ]
+          ],
+          "unreviewed_ranges": [],
+          "coverage_complete": true,
+          "groups": [
+            {
+              "evidence_id": "FRAME-1",
+              "start": 0,
+              "end": 3.9166666666666665,
+              "decoded_identical_frame_hash": "4469897e02e9eba4fb9e8aa47d512e2d",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png"
+            },
+            {
+              "evidence_id": "FRAME-2",
+              "start": 3.9166666666666665,
+              "end": 7.916666666666667,
+              "decoded_identical_frame_hash": "3c7617fa1d66aab2c1363b5f757bdadb",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png"
+            },
+            {
+              "evidence_id": "FRAME-3",
+              "start": 7.916666666666667,
+              "end": 11.916666666666666,
+              "decoded_identical_frame_hash": "3832866396798a5b8ed0daa49d9f6ae8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png"
+            },
+            {
+              "evidence_id": "FRAME-4",
+              "start": 11.916666666666666,
+              "end": 15.916666666666666,
+              "decoded_identical_frame_hash": "20dfe3cb91d6a0bfbb5af15634512f33",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png"
+            },
+            {
+              "evidence_id": "FRAME-5",
+              "start": 15.916666666666666,
+              "end": 19.916666666666668,
+              "decoded_identical_frame_hash": "fc7322ae5f966954a6774c4a0b7ba8b8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png"
+            }
+          ],
+          "limitations": [
+            "All decoded frames belong to these five byte-identical groups. Each group is represented by an actual PNG. Full coverage applies only to this controlled static-state fixture, not a sampled arbitrary video.",
+            "No actual account operations; only instructional screens and ordered transitions."
+          ]
+        },
+        {
+          "evidence_id": "EXC-V",
+          "media_id": "M-V",
+          "existing_text": "Open settings and create a recovery code. Save the new code.",
+          "label": "The following silent guide is a media alternative to the complete written steps above.",
+          "clearly_labeled_observed": true
+        }
+      ],
+      "alternatives": [],
+      "errors": []
+    },
+    "exception_claims": [
+      {
+        "media_id": "M-V",
+        "claim": "media alternative to existing text",
+        "evidence_ids": [
+          "EXC-V"
+        ]
+      }
+    ],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K79",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K79/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-A",
+          "classification_observation": "Declared audio-only prerecorded, actual content cannot be decoded; track/content classification not confirmed",
+          "sha256": "98cb16d40b9224eb55c638df4a817ae3fae4b8ae6ae36fd61116691a56e923d9",
+          "duration": 19.06775,
+          "source": "local fixture assets/corrupt.wav",
+          "evidence_id": "MEDIA-A"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K79",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K79/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-A",
+            "alternatives": [
+              "ALT-A"
+            ]
+          }
+        ]
+      },
+      "original_observations": [],
+      "alternatives": [
+        {
+          "evidence_id": "ALT-A",
+          "media_id": "M-A",
+          "kind": "text",
+          "actually_observed": true,
+          "version": "fixture-v1",
+          "paragraphs": [
+            {
+              "location": "paragraph 1",
+              "text": "You must be signed in. Open Account settings, then Security, and select Create recovery code. A new recovery code makes the previous one unusable. Confirm, save the new code safely, and finish. The new code is ready; the previous code can no longer be used."
+            }
+          ],
+          "text": "You must be signed in. Open Account settings, then Security, and select Create recovery code. A new recovery code makes the previous one unusable. Confirm, save the new code safely, and finish. The new code is ready; the previous code can no longer be used."
+        }
+      ],
+      "errors": [
+        {
+          "evidence_id": "ERR-A",
+          "media_id": "M-A",
+          "tool": "ffmpeg",
+          "exit_code": 183,
+          "error": "[in#0 @ 0xa1101c000] Error opening input: Invalid data found when processing input\nError opening input file /Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/corrupt.wav.\nError opening input files: Invalid data found when processing input",
+          "actual_processing": "No media frames or samples decoded."
+        }
+      ]
+    },
+    "exception_claims": [],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  },
+  {
+    "case_id": "K03",
+    "target": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K03/index.html / fictional recovery-code help; user learns preconditions, steps, warning and completion",
+    "environment": {
+      "collector": "Chromium / ffprobe / ffmpeg / independent faster-whisper base.en",
+      "collected_at": "2026-10-04T12:04:54.613330+00:00",
+      "allowed_operations": "Read fixed provided evidence only; no external browse, form submission or source modification"
+    },
+    "media_inventory": {
+      "items": [
+        {
+          "media_id": "M-V",
+          "classification_observation": "prerecorded controlled five-static-state video sequence; ffprobe confirms video track only, no audio; not player-muted synchronized media",
+          "sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "duration": 19.916667,
+          "source": "local fixture assets/silent-guide.mp4",
+          "evidence_id": "MEDIA-V"
+        }
+      ],
+      "complete_within_scope": true,
+      "scope": "article initial state; media content and provided alternative only"
+    },
+    "evidence_bundle": {
+      "page": {
+        "evidence_id": "PAGE-K03",
+        "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K03/index.html",
+        "state": "article initial state; media content and provided alternative only",
+        "inventory_complete_within_scope": true,
+        "collection_method": "Actual local HTML parsed and all provided alternative destinations read by Chromium before evaluation",
+        "exclusions": [
+          "Player keyboard, captions and other WCAG criteria",
+          "External or live user accounts"
+        ],
+        "media_links": [
+          {
+            "media_id": "M-V",
+            "alternatives": [
+              "ALT-V"
+            ]
+          }
+        ]
+      },
+      "original_observations": [
+        {
+          "evidence_id": "OBS-V",
+          "kind": "derived frame sequence",
+          "source_sha256": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+          "tool": "ffmpeg frame decode + framemd5; PNG images actually extracted from decoded MP4",
+          "decoded_frames": null,
+          "fps": 12,
+          "processed_ranges": [
+            [
+              0,
+              4
+            ],
+            [
+              16,
+              19.916667
+            ]
+          ],
+          "unreviewed_ranges": [
+            [
+              4,
+              16
+            ]
+          ],
+          "coverage_complete": false,
+          "groups": [
+            {
+              "evidence_id": "FRAME-1",
+              "start": 0,
+              "end": 3.9166666666666665,
+              "decoded_identical_frame_hash": "4469897e02e9eba4fb9e8aa47d512e2d",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png"
+            },
+            {
+              "evidence_id": "FRAME-5",
+              "start": 15.916666666666666,
+              "end": 19.916666666666668,
+              "decoded_identical_frame_hash": "fc7322ae5f966954a6774c4a0b7ba8b8",
+              "image_path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png"
+            }
+          ],
+          "limitations": [
+            "Only the first and last screen ranges are supplied. No decode scan of the middle is available to this evaluation."
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "evidence_id": "ALT-V",
+          "media_id": "M-V",
+          "kind": "text",
+          "actually_observed": true,
+          "version": "fixture-v1",
+          "paragraphs": [
+            {
+              "location": "paragraph 2",
+              "text": "1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security. "
+            },
+            {
+              "location": "paragraph 3",
+              "text": "2: Security explains that recovery codes restore account access; choose Create recovery code. "
+            },
+            {
+              "location": "paragraph 4",
+              "text": "3: Before you continue warns that a new code makes the previous code unusable. Choose Confirm new code. "
+            },
+            {
+              "location": "paragraph 5",
+              "text": "4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code. "
+            },
+            {
+              "location": "paragraph 6",
+              "text": "5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings."
+            }
+          ],
+          "text": "Step 1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security. Step 2: Security explains that recovery codes restore account access; choose Create recovery code. Step 3: Before you continue warns that a new code makes the previous code unusable. Choose Confirm new code. Step 4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code. Step 5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings."
+        }
+      ],
+      "errors": []
+    },
+    "exception_claims": [],
+    "model_and_tools": "Actual model recorded in execution receipt. Evaluation has text and PNG inputs only, no direct audio/video processing or further collection tools. Read provided derived records and image attachments; do not claim direct listening, continuous playback or screen-reader use."
+  }
+]

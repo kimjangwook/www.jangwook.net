@@ -1,0 +1,90 @@
+{
+  "tool": "Hyperframes CLI 0.8.133",
+  "scope": "New localized teaching videos; not the original model evaluation inputs",
+  "renders": [
+    {
+      "lang": "ko",
+      "sha256": "175e6fa10bb7147ad3c8610cf6825463f5ad1e3fd91b29a95ec35877898e6941",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "profile": "High",
+            "width": 1280,
+            "height": 800,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "30.000000",
+          "size": "1030668"
+        }
+      }
+    },
+    {
+      "lang": "ja",
+      "sha256": "b0118b86f25ed3865dd1b0b2c816b6265d4649663434ce5707ff0c75cc3056ee",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "profile": "High",
+            "width": 1280,
+            "height": 800,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "30.000000",
+          "size": "1142173"
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "sha256": "675e5d922df665fcdec207b41e23cab2eca74fcc3db723da2e4f331a3c62ab10",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "profile": "High",
+            "width": 1280,
+            "height": 800,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "30.000000",
+          "size": "1218210"
+        }
+      }
+    },
+    {
+      "lang": "zh",
+      "sha256": "8f8a4ee7df1cc6649679f866e8fdcdcf2e262197d75b7559864839eb24bcc749",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "profile": "High",
+            "width": 1280,
+            "height": 800,
+            "pix_fmt": "yuv420p"
+          }
+        ],
+        "format": {
+          "duration": "30.000000",
+          "size": "983266"
+        }
+      }
+    }
+  ]
+}

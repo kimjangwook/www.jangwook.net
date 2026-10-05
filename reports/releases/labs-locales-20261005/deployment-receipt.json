@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-10-05T13:20:47.987076Z",
+  "worker": "www-jangwook-net",
+  "deploymentId": "bee24b42-0a37-487d-849c-1e3ad6900595",
+  "versionId": "957fc4fc-3883-409b-855a-376df1e6caf9",
+  "trafficPercent": 100,
+  "releaseSha": "c6bfe6df5390318d41f0791869ce0a78289b3298",
+  "rollbackVersion": "021bf11f-ea2e-418f-a60b-624a1e029c07",
+  "domains": [
+    "jangwook.net",
+    "www.jangwook.net"
+  ],
+  "scope": "Public validation fixtures and four-language supporting pages; article sources and approval states unchanged.",
+  "MAIL_MODE": "disabled",
+  "databaseMigrationAppliedThisRelease": false,
+  "globalSecuritySettingsModified": false,
+  "standaloneFixturesNoTransform": true,
+  "primaryCheckoutResetOrBulkCommitted": false,
+  "remotePushThisTurn": false,
+  "productionChecks": {
+    "pagesAndCases": 72,
+    "browserViewportLanguageCombinations": 12,
+    "noJavaScriptChecks": 20,
+    "originalFileHashes": 21,
+    "mediaPlaybackChecks": 8,
+    "archivedOriginalUrls": 1424,
+    "publishedArticleHashes": 8,
+    "domains": 2,
+    "errors": 0
+  },
+  "productionVerified": true
+}

@@ -1,0 +1,149 @@
+{
+  "run": "final-v02 r3",
+  "model": "Claude Opus 5.5 (claude-opus-5-5), effort high (session setting reported by user; not independently verifiable by the model)",
+  "working_folder": "/private/tmp/jangwook-a11y-claude-validation-20261003/media-20261004/final-v02",
+  "manifest": {
+    "path": "input-manifest.json",
+    "read_with": "Read, lines 1-267 in full",
+    "sha256": "3649ef8417c3e5c9801da3b02e08e5cc2cf9a5f5285d10f2dbbf0c2ddf30c6a1",
+    "note": "The manifest itself has no expected hash; the value above is the hash computed at run start and again at run end (unchanged)."
+  },
+  "hash_check": {
+    "tool": "shasum -a 256",
+    "checked_before_run": true,
+    "checked_after_run": true,
+    "all_input_and_image_hashes_match_manifest_before": true,
+    "all_input_and_image_hashes_match_manifest_after": true,
+    "prompt_sha256_verified": false,
+    "prompt_sha256_reason": "The manifest gives prompt_sha256 but does not define which byte span of each input it covers, so it was not recomputed. Only input_sha256 and image sha256 were verified."
+  },
+  "images": [
+    {"id": "FRAME-1", "path": "FRAME-1.png", "sha256_expected": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b", "sha256_before": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b", "sha256_after": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b", "match": true},
+    {"id": "FRAME-2", "path": "FRAME-2.png", "sha256_expected": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de", "sha256_before": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de", "sha256_after": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de", "match": true},
+    {"id": "FRAME-3", "path": "FRAME-3.png", "sha256_expected": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297", "sha256_before": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297", "sha256_after": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297", "match": true},
+    {"id": "FRAME-4", "path": "FRAME-4.png", "sha256_expected": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1", "sha256_before": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1", "sha256_after": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1", "match": true},
+    {"id": "FRAME-5", "path": "FRAME-5.png", "sha256_expected": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f", "sha256_before": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f", "sha256_after": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f", "match": true}
+  ],
+  "cases": [
+    {
+      "order": 1, "id": "K17", "kind": "criterion",
+      "input": "K17-input.txt", "input_lines": 131,
+      "input_sha256_expected": "bd7557023ebeef159639abb63e5ee9c3bcfa946f83622fd64efdbec005b6347e", "input_sha256_before": "bd7557023ebeef159639abb63e5ee9c3bcfa946f83622fd64efdbec005b6347e", "input_sha256_after": "bd7557023ebeef159639abb63e5ee9c3bcfa946f83622fd64efdbec005b6347e", "input_hash_match": true,
+      "input_read": "Read, lines 1-131 in one call (complete, not truncated)",
+      "images_specified": [], "images_read_with_Read": [],
+      "output": "K17-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "complete", "scope_decision": "not_applicable"
+    },
+    {
+      "order": 2, "id": "K42", "kind": "criterion",
+      "input": "K42-input.txt", "input_lines": 191,
+      "input_sha256_expected": "fd537ab41006f121670da22e6a10109720d665d4db3bea01e23c613c7e3b9b77", "input_sha256_before": "fd537ab41006f121670da22e6a10109720d665d4db3bea01e23c613c7e3b9b77", "input_sha256_after": "fd537ab41006f121670da22e6a10109720d665d4db3bea01e23c613c7e3b9b77", "input_hash_match": true,
+      "input_read": "Read, lines 1-191 in one call (complete, not truncated)",
+      "images_specified": [], "images_read_with_Read": [],
+      "output": "K42-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "complete", "scope_decision": "pass"
+    },
+    {
+      "order": 3, "id": "K08", "kind": "criterion",
+      "input": "K08-input.txt", "input_lines": 191,
+      "input_sha256_expected": "7703fa5f422ea71926b698bf1287993a85ab06486356e073dd1dc61e43096233", "input_sha256_before": "7703fa5f422ea71926b698bf1287993a85ab06486356e073dd1dc61e43096233", "input_sha256_after": "7703fa5f422ea71926b698bf1287993a85ab06486356e073dd1dc61e43096233", "input_hash_match": true,
+      "input_read": "Read, lines 1-191 in one call (complete, not truncated)",
+      "images_specified": [], "images_read_with_Read": [],
+      "output": "K08-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "complete", "scope_decision": "fail"
+    },
+    {
+      "order": 4, "id": "K63", "kind": "criterion",
+      "input": "K63-input.txt", "input_lines": 229,
+      "input_sha256_expected": "dc3f1acea30bafb125fb2cdf2e4a28a9704636e10a75fc4c57a9fa41c741b87b", "input_sha256_before": "dc3f1acea30bafb125fb2cdf2e4a28a9704636e10a75fc4c57a9fa41c741b87b", "input_sha256_after": "dc3f1acea30bafb125fb2cdf2e4a28a9704636e10a75fc4c57a9fa41c741b87b", "input_hash_match": true,
+      "input_read": "Read, lines 1-229 in one call (complete, not truncated)",
+      "images_specified": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read_with_Read": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "output": "K63-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "complete", "scope_decision": "pass"
+    },
+    {
+      "order": 5, "id": "K25", "kind": "criterion",
+      "input": "K25-input.txt", "input_lines": 221,
+      "input_sha256_expected": "80fe29b87314c6ff97505efa837ca9a8aa2dc4ab6a942681d73dc22c042d31eb", "input_sha256_before": "80fe29b87314c6ff97505efa837ca9a8aa2dc4ab6a942681d73dc22c042d31eb", "input_sha256_after": "80fe29b87314c6ff97505efa837ca9a8aa2dc4ab6a942681d73dc22c042d31eb", "input_hash_match": true,
+      "input_read": "Read in three calls covering every line: 15-164, 1-14, 165-end (221 lines plus trailing empty line)",
+      "images_specified": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read_with_Read": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "output": "K25-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "complete", "scope_decision": "fail"
+    },
+    {
+      "order": 6, "id": "K91", "kind": "criterion",
+      "input": "K91-input.txt", "input_lines": 273,
+      "input_sha256_expected": "ba60c9545844574c673e0e7bf6e3aee4da4f04443dead221b4b48c987cb66fe4", "input_sha256_before": "ba60c9545844574c673e0e7bf6e3aee4da4f04443dead221b4b48c987cb66fe4", "input_sha256_after": "ba60c9545844574c673e0e7bf6e3aee4da4f04443dead221b4b48c987cb66fe4", "input_hash_match": true,
+      "input_read": "Read, lines 1-273 in one call (complete, not truncated)",
+      "images_specified": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read_with_Read": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "output": "K91-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "complete", "scope_decision": "pass"
+    },
+    {
+      "order": 7, "id": "K34", "kind": "criterion",
+      "input": "K34-input.txt", "input_lines": 211,
+      "input_sha256_expected": "0f3b90e232bc7d471ef926a7894e5f774b774196f5cd9e44e60f9aa93886af88", "input_sha256_before": "0f3b90e232bc7d471ef926a7894e5f774b774196f5cd9e44e60f9aa93886af88", "input_sha256_after": "0f3b90e232bc7d471ef926a7894e5f774b774196f5cd9e44e60f9aa93886af88", "input_hash_match": true,
+      "input_read": "Read, lines 1-211 in one call (complete, not truncated)",
+      "images_specified": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read_with_Read": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "output": "K34-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "complete", "scope_decision": "not_applicable"
+    },
+    {
+      "order": 8, "id": "K56", "kind": "criterion",
+      "input": "K56-input.txt", "input_lines": 211,
+      "input_sha256_expected": "62383d171d5646e2a8d4c1080b2dee454b4920630df65e103afa2afa9ebaf122", "input_sha256_before": "62383d171d5646e2a8d4c1080b2dee454b4920630df65e103afa2afa9ebaf122", "input_sha256_after": "62383d171d5646e2a8d4c1080b2dee454b4920630df65e103afa2afa9ebaf122", "input_hash_match": true,
+      "input_read": "Read, lines 1-211 in one call (complete, not truncated)",
+      "images_specified": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read_with_Read": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "output": "K56-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "complete", "scope_decision": "fail"
+    },
+    {
+      "order": 9, "id": "K79", "kind": "criterion",
+      "input": "K79-input.txt", "input_lines": 164,
+      "input_sha256_expected": "beb545a838d6618e05d628c0ad304dc729a6286be09eb3e6ffdab3875cf2b236", "input_sha256_before": "beb545a838d6618e05d628c0ad304dc729a6286be09eb3e6ffdab3875cf2b236", "input_sha256_after": "beb545a838d6618e05d628c0ad304dc729a6286be09eb3e6ffdab3875cf2b236", "input_hash_match": true,
+      "input_read": "Read, lines 1-164 in one call (complete, not truncated)",
+      "images_specified": [], "images_read_with_Read": [],
+      "output": "K79-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success (evaluation output written; the input's own ffmpeg error ERR-A is recorded inside the result)", "scope_execution": "partial", "scope_decision": "inconclusive"
+    },
+    {
+      "order": 10, "id": "K03", "kind": "criterion",
+      "input": "K03-input.txt", "input_lines": 216,
+      "input_sha256_expected": "6559699a8c6664fb9027e1ae3210c2926cd12b7a33698fa2832395047ea02c38", "input_sha256_before": "6559699a8c6664fb9027e1ae3210c2926cd12b7a33698fa2832395047ea02c38", "input_sha256_after": "6559699a8c6664fb9027e1ae3210c2926cd12b7a33698fa2832395047ea02c38", "input_hash_match": true,
+      "input_read": "Read, lines 1-216 in one call (complete, not truncated)",
+      "images_specified": ["FRAME-1", "FRAME-5"], "images_read_with_Read": ["FRAME-1", "FRAME-5"],
+      "images_not_used": "FRAME-2, FRAME-3 and FRAME-4 were not specified for K03 and were not opened or used for this case",
+      "output": "K03-claude-r3.json", "output_format": "JSON (parsed successfully with json.load)",
+      "status": "success", "scope_execution": "partial", "scope_decision": "inconclusive"
+    },
+    {
+      "order": 11, "id": "P-LAB", "kind": "overview",
+      "input": "P-LAB-input.txt", "input_lines": 200,
+      "input_sha256_expected": "f5d99f40ed7547cc8d95a4eecd143609e1d2a7371700382ae9bbad8f2733aa5b", "input_sha256_before": "f5d99f40ed7547cc8d95a4eecd143609e1d2a7371700382ae9bbad8f2733aa5b", "input_sha256_after": "f5d99f40ed7547cc8d95a4eecd143609e1d2a7371700382ae9bbad8f2733aa5b", "input_hash_match": true,
+      "input_read": "Read, lines 1-201 in one call (complete, not truncated)",
+      "images_specified": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read_with_Read": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "output": "P-LAB-claude-r3.md", "output_format": "Markdown (evaluation plan, sections A-F; no accessibility judgment issued)",
+      "status": "success", "scope_execution": null, "scope_decision": null
+    },
+    {
+      "order": 12, "id": "P-NONE", "kind": "overview",
+      "input": "P-NONE-input.txt", "input_lines": 102,
+      "input_sha256_expected": "12190adcc48ce6a3d119c4a5473e07c374f113ed0adb6f01bad5af635b79e427", "input_sha256_before": "12190adcc48ce6a3d119c4a5473e07c374f113ed0adb6f01bad5af635b79e427", "input_sha256_after": "12190adcc48ce6a3d119c4a5473e07c374f113ed0adb6f01bad5af635b79e427", "input_hash_match": true,
+      "input_read": "Read, lines 1-103 in one call (complete, not truncated)",
+      "images_specified": [], "images_read_with_Read": [],
+      "output": "P-NONE-claude-r3.md", "output_format": "Markdown (evaluation plan, sections A-F; no accessibility judgment issued)",
+      "status": "success", "scope_execution": null, "scope_decision": null
+    }
+  ],
+  "not_read": [
+    "K08-claude-r1.json, K17-claude-r1.json, K17-claude-r2.json, K42-claude-r1.json (earlier results present in the folder; listed by ls only, never opened)",
+    "Answer keys, production scripts, prior P01/P02 results and any other run outputs"
+  ],
+  "limitations": [
+    "Original WAV/MP4 files were not provided; no direct listening or playback was performed. Media content was judged from provided derived records (ASR segments, frame-group records) and the FRAME PNGs.",
+    "No browser, search, extra collection, source change, other model calls or subagents were used.",
+    "Evaluation judgments were written directly by the model; programs were used only for SHA-256 hashing, line-length statistics and JSON parse checks.",
+    "FRAME-x.png files are mapped to OBS-V groups only by evidence_id; the framemd5 group hashes in the inputs cannot be compared to PNG file hashes.",
+    "Each case was evaluated only from its own input and its specified images; images were re-opened per case rather than reused from an earlier case."
+  ]
+}

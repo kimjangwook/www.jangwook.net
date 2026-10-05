@@ -1,0 +1,9 @@
+{
+  "actual_model": "gpt-6-astra",
+  "provider": "codex",
+  "reasoning_effort": "high",
+  "source_prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+  "source_body_sha256": "515041229b15598d85042d836729046c413e5978f8453f49980ef543c4b8cf78",
+  "elapsed_seconds": 49.9,
+  "scope": "Independent translation review; not a translated-prompt execution."
+}

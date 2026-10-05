@@ -1,0 +1,113 @@
+{
+  "criterion": "1.2.1",
+  "level": "A",
+  "prompt_version": "0.2.0",
+  "scope": {
+    "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K79/index.html",
+    "states": ["article initial state; media content and provided alternative only"],
+    "media_ids": ["M-A"],
+    "inventory_complete_within_scope": true,
+    "exclusions": [
+      "Player keyboard, captions and other WCAG criteria",
+      "External or live user accounts"
+    ],
+    "execution": "partial",
+    "decision": "inconclusive",
+    "reason": "범위 안 대상은 M-A 하나다. 페이지의 대상 목록과 연결된 텍스트 대안 ALT-A는 읽었지만, 원본 corrupt.wav는 ffmpeg가 열지 못해(ERR-A, exit 183) 샘플을 하나도 디코딩하지 못했고 원본 관찰 기록도 없다. 음성 전용이라는 분류는 선언일 뿐 트랙·내용으로 확인되지 않았고, 원본 정보와 대안을 대조할 수 없다. 실패를 확인한 것이 아니라 원본 처리 오류로 판단할 근거가 없는 상태이므로 inconclusive다."
+  },
+  "input_used": [
+    {
+      "evidence_id": "PAGE-K79",
+      "kind": "파생(로컬 HTML을 Chromium으로 파싱한 페이지·대안 연결 기록)",
+      "processed_ranges": [],
+      "limitations": ["HTML 원문이나 화면은 제공되지 않았고 연결 관계 기록만 읽음"]
+    },
+    {
+      "evidence_id": "MEDIA-A",
+      "kind": "원본 메타데이터(해시·선언된 분류·기록된 길이)",
+      "processed_ranges": [],
+      "limitations": [
+        "분류 관찰이 'Declared audio-only prerecorded, actual content cannot be decoded; track/content classification not confirmed'로 기록됨",
+        "목록에 길이 19.06775초가 적혀 있으나 디코딩이 실패해 이 길이를 원본에서 확인한 근거가 없음"
+      ]
+    },
+    {
+      "evidence_id": "ERR-A",
+      "kind": "도구 오류 기록(ffmpeg)",
+      "processed_ranges": [],
+      "limitations": ["'Invalid data found when processing input', 'No media frames or samples decoded.'"]
+    },
+    {
+      "evidence_id": "ALT-A",
+      "kind": "대안(텍스트 전사문, fixture-v1, paragraph 1)",
+      "processed_ranges": [],
+      "limitations": ["대안은 실제로 관찰됐지만 대조할 원본 관찰 기록이 없어 동등성을 판단할 수 없음. ALT 자체를 원본 관찰로 사용하지 않음"]
+    }
+  ],
+  "media": [
+    {
+      "media_id": "M-A",
+      "classification": "unknown",
+      "classification_evidence_ids": ["MEDIA-A", "ERR-A"],
+      "original_version": "assets/corrupt.wav, sha256 98cb16d40b9224eb55c638df4a817ae3fae4b8ae6ae36fd61116691a56e923d9(디코딩 불가)",
+      "duration": null,
+      "execution": "error",
+      "decision": "inconclusive",
+      "exception": {"claimed": false, "verified": false, "no_extra_information": null, "clearly_labeled": null, "evidence_ids": []},
+      "coverage": {
+        "processed_ranges": [],
+        "unreviewed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": null,
+            "evidence_ids": ["ERR-A", "MEDIA-A"],
+            "reason": "ffmpeg가 입력을 열지 못해 샘플을 하나도 디코딩하지 못했다. 원본 길이도 원본에서 확인되지 않아 끝 경계는 null이다(목록의 19.06775초는 미확인 기록값)."
+          }
+        ],
+        "complete": false
+      },
+      "alternatives": [
+        {
+          "alternative_id": "ALT-A",
+          "kind": "text",
+          "relation_evidence_ids": ["PAGE-K79", "ALT-A"],
+          "actually_observed": true,
+          "location": "K79/index.html의 대안 paragraph 1(PAGE-K79 media_links에서 M-A와 연결)",
+          "version": "fixture-v1"
+        }
+      ],
+      "comparisons": [],
+      "reason": "원본을 디코딩하지 못해 사전 제작 음성 전용인지, 어떤 발화·소리를 담는지 확인할 수 없다. 대안 ALT-A는 존재하지만 원본 정보 단위가 없어 equivalent·missing·inaccurate 중 어느 것도 판단할 수 없으므로 비교 항목을 만들지 않았다. 대안이 있다는 사실만으로 pass로 판정하지 않고, 도구 오류를 fail로도 바꾸지 않는다.",
+      "missing_evidence": [
+        "디코딩 가능한 원본 음성 파일 또는 같은 판본의 정상 파일",
+        "원본의 트랙 구성과 실제 길이(ffprobe 성공 결과)",
+        "원본 전체 구간의 독립 관찰 기록(사람의 청취 기록 또는 독립 ASR과 소리 확인)"
+      ],
+      "recommendations": [
+        {
+          "change": "페이지가 실제로 제공하는 음성 파일이 손상된 상태라면 정상 파일로 교체하고, 이용자에게도 재생 가능한 원본을 제공한다. 그 뒤 원본 전체를 독립 관찰해 ALT-A와 대조한다.",
+          "owner_role": "개발 담당(파일 배포)과 콘텐츠 담당(대안 대조)",
+          "retest": "같은 페이지·상태에서 교체한 파일의 sha256, 트랙 구성, 길이를 기록하고 0초부터 끝까지 독립 전사한 결과를 ALT-A의 각 문장과 대조한다."
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "evidence_id": "ERR-A",
+      "media_id": "M-A",
+      "tool": "ffmpeg",
+      "exit_code": 183,
+      "summary": "corrupt.wav 입력 열기 실패(Invalid data found when processing input). 디코딩한 샘플 없음."
+    }
+  ],
+  "unreviewed_media": [
+    "M-A: 원본 디코딩 실패로 0초부터 끝(미확인)까지 전체 미검토"
+  ],
+  "other_checks": [
+    "손상된 파일을 페이지가 그대로 제공한다면 이용자 누구도 재생할 수 없는 문제이며, 이는 1.2.1 판정과 별개로 콘텐츠 품질 문제로 확인한다."
+  ],
+  "next_checks": [
+    "원본 파일을 복구하거나 교체한 뒤 ffprobe로 트랙·길이를 확인하고 전체 전사·청취 기록을 수집해 같은 프롬프트로 다시 평가한다."
+  ]
+}

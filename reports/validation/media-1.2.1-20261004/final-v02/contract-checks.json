@@ -1,0 +1,2356 @@
+{
+  "reference_sha256": "1e9e99ddc8c8bc7679026ac7206b8cceba57fa54a98b5410d23cb061ca5ffee0",
+  "runs": [
+    {
+      "run": "claude-K03-r1",
+      "case": "K03",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K03-r2",
+      "case": "K03",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K03-r3",
+      "case": "K03",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K08-r1",
+      "case": "K08",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K08-r2",
+      "case": "K08",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K08-r3",
+      "case": "K08",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K17-r1",
+      "case": "K17",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 6,
+      "checks_total": 6,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K17-r2",
+      "case": "K17",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 6,
+      "checks_total": 6,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K17-r3",
+      "case": "K17",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 6,
+      "checks_total": 6,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K25-r1",
+      "case": "K25",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K25-r2",
+      "case": "K25",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K25-r3",
+      "case": "K25",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K34-r1",
+      "case": "K34",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K34-r2",
+      "case": "K34",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K34-r3",
+      "case": "K34",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K42-r1",
+      "case": "K42",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K42-r2",
+      "case": "K42",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K42-r3",
+      "case": "K42",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K56-r1",
+      "case": "K56",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K56-r2",
+      "case": "K56",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K56-r3",
+      "case": "K56",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K63-r1",
+      "case": "K63",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K63-r2",
+      "case": "K63",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K63-r3",
+      "case": "K63",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 11,
+      "checks_total": 11,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K79-r1",
+      "case": "K79",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K79-r2",
+      "case": "K79",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K79-r3",
+      "case": "K79",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 12,
+      "checks_total": 12,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K91-r1",
+      "case": "K91",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K91-r2",
+      "case": "K91",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "claude-K91-r3",
+      "case": "K91",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K03-r1",
+      "case": "K03",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 16,
+      "checks_total": 16,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K08-r1",
+      "case": "K08",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 15,
+      "checks_total": 15,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K17-r1",
+      "case": "K17",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 8,
+      "checks_total": 8,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K25-r1",
+      "case": "K25",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 15,
+      "checks_total": 15,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K34-r1",
+      "case": "K34",
+      "decision": "not_applicable",
+      "expected": "not_applicable",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K42-r1",
+      "case": "K42",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K56-r1",
+      "case": "K56",
+      "decision": "fail",
+      "expected": "fail",
+      "checks_passed": 16,
+      "checks_total": 16,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K63-r1",
+      "case": "K63",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 13,
+      "checks_total": 13,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K79-r1",
+      "case": "K79",
+      "decision": "inconclusive",
+      "expected": "inconclusive",
+      "checks_passed": 14,
+      "checks_total": 14,
+      "all_checks_passed": true
+    },
+    {
+      "run": "sol-K91-r1",
+      "case": "K91",
+      "decision": "pass",
+      "expected": "pass",
+      "checks_passed": 15,
+      "checks_total": 15,
+      "all_checks_passed": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "claude-K03-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 conservative intersection boundaries",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 full actual middle gap",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 unreviewed ranges preserved",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 conservative intersection boundaries",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 full actual middle gap",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 unreviewed ranges preserved",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 conservative intersection boundaries",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 full actual middle gap",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 unreviewed ranges preserved",
+      "pass": true
+    },
+    {
+      "check": "claude-K03-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K08-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K17-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K25-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 actual exception verified",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 actual exception verified",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 actual exception verified",
+      "pass": true
+    },
+    {
+      "check": "claude-K34-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K42-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 false exception rejected",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 false exception rejected",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 false exception rejected",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "claude-K56-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K63-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 decode failure recorded",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 decode failure recorded",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 decode failure recorded",
+      "pass": true
+    },
+    {
+      "check": "claude-K79-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 audio alternative excluded from original coverage",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 audio alone accepted",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 audio alternative excluded from original coverage",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 audio alone accepted",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r2 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 required schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 scope decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 scope execution",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 media inventory",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 audio alternative excluded from original coverage",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 audio alone accepted",
+      "pass": true
+    },
+    {
+      "check": "claude-K91-r3 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 conservative intersection boundaries",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 full actual middle gap",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 unreviewed ranges preserved",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K03-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K08-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K17-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K17-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K17-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K17-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K17-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K17-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K17-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K17-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K25-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 actual exception verified",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K34-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K42-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 false exception rejected",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 localized deficiency",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 actionable retest",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K56-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K63-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 M-A schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 M-A individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 M-A reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 decode failure recorded",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K79-r1 fixed input hash",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 required schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 criterion/version",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 scope decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 scope execution",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 media inventory",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 M-V schema",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 M-V individual decision",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 M-V reason",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 processed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 unreviewed_ranges typed ranges",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 audio alternative excluded from original coverage",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 audio alone accepted",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 real evidence IDs",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 requested and returned model",
+      "pass": true
+    },
+    {
+      "check": "sol-K91-r1 fixed input hash",
+      "pass": true
+    }
+  ],
+  "pass_count": 496,
+  "total": 496,
+  "all_completed_checks_passed": true,
+  "manual_semantic_and_no_fabrication_review": "reviewed by Codex agent; supplied fixture data and observed images compared against reasons and localized deficiencies; not independent human audit",
+  "overview_review": "6 Claude plans reviewed against frozen A-F planning rubric"
+}

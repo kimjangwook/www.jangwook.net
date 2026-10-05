@@ -1,0 +1,109 @@
+{
+  "frozen_at": "2026-10-04T12:34:53.583630+00:00",
+  "standard": "WCAG 2.2 SC 1.2.1 A",
+  "sources": [
+    "https://www.w3.org/TR/WCAG22/#audio-only-and-video-only-prerecorded",
+    "https://www.w3.org/WAI/WCAG22/Understanding/audio-only-and-video-only-prerecorded.html"
+  ],
+  "decisions": {
+    "K17": "not_applicable",
+    "K42": "pass",
+    "K08": "fail",
+    "K63": "pass",
+    "K25": "fail",
+    "K91": "pass",
+    "K34": "not_applicable",
+    "K56": "fail",
+    "K79": "inconclusive",
+    "K03": "inconclusive"
+  },
+  "executions": {
+    "K17": [
+      "complete"
+    ],
+    "K42": [
+      "complete"
+    ],
+    "K08": [
+      "complete"
+    ],
+    "K63": [
+      "complete"
+    ],
+    "K25": [
+      "complete"
+    ],
+    "K91": [
+      "complete"
+    ],
+    "K34": [
+      "complete"
+    ],
+    "K56": [
+      "complete"
+    ],
+    "K79": [
+      "error",
+      "partial"
+    ],
+    "K03": [
+      "partial"
+    ]
+  },
+  "semantic_requirements": {
+    "K08": [
+      "previous code reversed usable versus unusable; location in OBS-A 8-19 seconds and ALT-A paragraph 1"
+    ],
+    "K25": [
+      "missing Security explanation/navigation and Before you continue/Confirm new code warning stage, FRAME-2 and FRAME-3"
+    ],
+    "K91": [
+      "text OR sufficient audio; no recursive requirement to transcribe audio alternative"
+    ],
+    "K34": [
+      "exception requires no additional information AND clear label"
+    ],
+    "K56": [
+      "label alone insufficient, original has warning and intervening steps missing from EXC-V, no independent alternative"
+    ],
+    "K79": [
+      "decode failure is not absence, pass or NA; no fabricated observations"
+    ],
+    "K03": [
+      "full-pass prohibited with unreviewed 4-16 seconds"
+    ]
+  },
+  "rubric": [
+    "exact returned model and completed response",
+    "all required output keys",
+    "correct scope and per-media decisions",
+    "actual execution states",
+    "real evidence IDs only",
+    "missing or inaccurate info localized with original and alternative",
+    "no native media or user-operation claims",
+    "unreviewed ranges preserved",
+    "exception/audio-route handled correctly",
+    "overview plan has A-F, real vs planned states, evidence collection and no completed accessibility judgement"
+  ],
+  "limits": "Reference covers this controlled clear-speech/static-five-state fixture and scoped no-media control. This is a prepared finite validation set, not blind external human audit or whole-site certification. Source-generation script is withheld; independent ASR/framedecodes are supplied, no tested alternative reused as source.",
+  "prompt_version": "0.2.0",
+  "additional_contract": {
+    "original_only_coverage": true,
+    "numeric_range_objects": true,
+    "K03_confirmed_ranges": [
+      [
+        0,
+        3.9166666666666665
+      ],
+      [
+        16,
+        19.916667
+      ]
+    ],
+    "K03_unreviewed_range": [
+      3.9166666666666665,
+      16
+    ],
+    "interpretation": "Conservative intersection of declared collector windows and actually evidenced identical-frame groups. Video-alternative audio range belongs outside original media coverage. Metadata rounding must not invent a nonexistent missing frame."
+  }
+}

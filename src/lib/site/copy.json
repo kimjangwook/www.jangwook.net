@@ -1,0 +1,534 @@
+{
+  "ko": {
+    "about": [
+      "김장욱의 관점",
+      "웹의 기준을, 실무의 판단으로.",
+      "안녕하세요. 김장욱입니다. 웹을 설계하고 운영하는 분들이 더 나은 결정을 내릴 수 있도록, 중요한 주제를 골라 설명하고 적용 방법을 함께 제공합니다.",
+      [
+        [
+          "김장욱",
+          "웹 개발자 · 기술 교육과 컨설팅"
+        ],
+        [
+          "깊이 배우고, 직접 적용할 수 있게.",
+          "웹 접근성, 검색과 AI의 웹 이해, 비즈니스 웹의 운영을 다룹니다. 원리에서 시작해 사례와 예외를 살피고, 프롬프트와 도구로 실무에 연결합니다. 무엇을 먼저 확인하고, 어떤 자료가 필요하며, 결과를 어떻게 해석할지 설명합니다."
+        ],
+        [
+          "주제와 판단을 직접 책임집니다.",
+          "AI는 조사, 작성, 평가 방법을 확장하는 도구로 활용합니다. 주제 선정과 편집 판단은 제가 맡습니다. 기준의 내용, 교육용 예제, 실제 측정 결과를 구분하고 검증되지 않은 성능을 주장하지 않습니다."
+        ],
+        [
+          "계속 발전하는 자료를 만듭니다.",
+          "기술과 기준의 변화에 맞춰 시리즈를 업데이트합니다. 변경 이유와 버전을 기록하고, 글과 프롬프트와 서비스를 같은 방법론으로 연결합니다."
+        ]
+      ]
+    ],
+    "updates": [
+      "업데이트",
+      "지식도 함께 발전합니다.",
+      "내용과 프롬프트를 바꾼 이유, 그리고 현재 확인한 범위를 기록합니다.",
+      [
+        [
+          "2026-10-05",
+          "음성 전용·무음 영상 글 공개",
+          "세 번째 글과 평가 프롬프트를 네 언어로 공개했습니다. 실제 미디어 실습 페이지, Hyperframes 설명 영상과 단계별 텍스트 대안을 함께 제공합니다. 반복 검증의 입력 경로와 확인하지 않은 범위도 글에 명시했습니다."
+        ],
+        [
+          "2026-10-05",
+          "네 언어 실습 페이지와 공통 안내",
+          "검증에 사용한 미디어 사례의 원본 페이지와 파일을 공개합니다. 실습 안내, 소개, 업데이트, 개인정보 안내와 서비스 설계를 네 언어로 제공합니다. 번역된 실습 안내는 기존 모델 실행에 사용한 자료가 아니며, 세 번째 글은 아래 공개 기록을 참고하세요."
+        ],
+        [
+          "2026-10-03",
+          "비텍스트 콘텐츠 글 공개",
+          "비텍스트 콘텐츠와 대체 텍스트를 다룬 두 번째 글을 한국어·영어·일본어·중국어로 공개했습니다."
+        ],
+        [
+          "2026-10-02",
+          "접근성 개요 공개와 네 언어 홈",
+          "개요와 프롬프트, 도식 4개를 네 언어로 공개했습니다. 홈은 최신 글과 시리즈·메뉴 링크로 정리하고 시리즈 문서에 초판 공개일과 최종 수정일을 표시했습니다. 당시 나머지 87편은 준비 중이었습니다. 자료 신청은 시리즈 마지막 글에서 제공할 예정입니다."
+        ],
+        [
+          "2026-10-01",
+          "새로운 시리즈 중심 사이트의 로컬 검토본",
+          "Web for AI · Business · Everyone을 중심으로 재구성했습니다. 기준별 글과 프롬프트는 검증과 공개 검토를 거치는 편집 자료입니다."
+        ]
+      ]
+    ],
+    "privacy": [
+      "개인정보 안내",
+      "자료 신청과 개인정보",
+      "자료 전달과 선택적 구독에 사용하는 정보와 관리 방법입니다.",
+      [
+        [
+          "현재 제공 상태",
+          "자료 신청과 구독 폼은 아직 제공하지 않습니다. 다음 내용은 시리즈 마지막 글에서 제공할 자료 전달 흐름의 설계입니다."
+        ],
+        [
+          "수집하는 정보와 목적",
+          "자료 신청 시 이메일 주소, 선택한 시리즈와 자료 버전, 발송 상태를 기록하는 구조입니다. 역할과 업데이트 구독 여부는 선택 항목이며, 이메일은 요청한 자료 전달과 신청 관리에 사용합니다."
+        ],
+        [
+          "업데이트 안내",
+          "별도 구독에 동의하고 이메일 확인을 완료한 경우에만 업데이트를 전달합니다. 자료 신청만으로 구독에 동의한 것으로 처리하지 않으며 이메일의 수신 거부 링크에서 해지할 수 있습니다."
+        ],
+        [
+          "보관과 삭제",
+          "마지막 활동으로부터 12개월이 지난 신청 정보를 정기 삭제하는 정책입니다. 동의 철회와 정보 삭제 요청은 별도로 처리합니다. 삭제·문의는 me@jangwook.net으로 요청할 수 있습니다."
+        ],
+        [
+          "운영 환경과 언어 선택",
+          "리드와 신청 이력은 Cloudflare D1, 메일은 Cloudflare Email Service를 사용하는 설계입니다. 현재 운영 메일 기능은 비활성 상태입니다. 언어 선택은 site_language 쿠키에 180일 동안 저장합니다."
+        ],
+        [
+          "연락처",
+          "me@jangwook.net"
+        ]
+      ]
+    ],
+    "services": [
+      "서비스",
+      "배운 기준을 일하는 시스템으로.",
+      "접근성 시리즈의 평가 방법을 진단·개선·재점검을 연결하는 서비스로 발전시키고 있습니다.",
+      [
+        [
+          "단건 진단",
+          "페이지와 이용 흐름을 확인해 장벽의 근거, 개선 우선순위와 추가 확인 항목을 전달하는 서비스입니다."
+        ],
+        [
+          "지속 점검",
+          "변경에 따라 점검을 반복하고 이전 결과와 비교해 새 문제와 해결된 항목을 확인합니다."
+        ],
+        [
+          "개선 컨설팅",
+          "팀의 구조와 개발 과정에 맞는 개선 계획, 구현 검토와 재점검 과정을 설계합니다."
+        ],
+        [
+          "근거가 이어지는 과정",
+          "범위와 이용 흐름 정의 → DOM·화면·접근성 트리·조작 기록 수집 → 규칙 검사와 기준별 LLM 평가 → 근거·영향·개선 순서 정리 → 같은 조건으로 재점검."
+        ],
+        [
+          "서비스 개발 중",
+          "현재 서비스 설계를 소개하며 실제 진단 실행, 가격과 결제는 제공 조건과 검증이 완료된 후 공개합니다."
+        ]
+      ]
+    ],
+    "lab": "실습 페이지",
+    "read": "접근성 시리즈 읽기",
+    "archive": [
+      "아카이브",
+      "기존에 공개한 글을 원래 주소 그대로 보관합니다. 과거의 글에는 작성 당시의 기술과 관점이 담겨 있습니다.",
+      "아카이브 검색",
+      "제목과 주제로 찾기",
+      "찾고 싶은 글의 제목이나 주제",
+      "언어",
+      "전체 언어",
+      "검색",
+      "개 글",
+      "페이지",
+      "검색 결과가 없습니다. 다른 제목이나 주제로 찾아보세요.",
+      "아카이브 페이지",
+      "이전 페이지",
+      "다음 페이지"
+    ]
+  },
+  "en": {
+    "about": [
+      "About",
+      "Web standards, practical decisions.",
+      "Hello, I’m Kim Jangwook. I select important topics, explain them and share ways to apply them so people who build and operate websites can make better decisions.",
+      [
+        [
+          "Kim Jangwook",
+          "Web developer · Technical education and consulting"
+        ],
+        [
+          "Learn deeply. Apply directly.",
+          "This site covers web accessibility, how search and AI understand the web, and business website operations. Starting with principles, we examine examples and exceptions, then connect them to practice through prompts and tools. I explain what to check first, which evidence is needed and how to interpret results."
+        ],
+        [
+          "Responsibility for topics and editorial decisions.",
+          "AI helps expand research, writing and evaluation methods. I remain responsible for topic selection and editorial judgment. Standards, teaching examples and actual measurements are distinguished; unverified performance is never presented as a result."
+        ],
+        [
+          "Resources that keep developing.",
+          "Series are updated as technology and standards change. Reasons and versions are recorded, connecting articles, prompts and services through a shared methodology."
+        ]
+      ]
+    ],
+    "updates": [
+      "Updates",
+      "Knowledge keeps developing.",
+      "A record of why articles and prompts change, and what has been verified.",
+      [
+        [
+          "2026-10-05",
+          "Audio-only and silent-video article published",
+          "The third article and evaluation prompt are available in four languages, alongside real media practice pages, Hyperframes teaching videos and step-by-step text alternatives. The article states the input paths and limits of the repeated validation."
+        ],
+        [
+          "2026-10-05",
+          "Practice pages and site information in four languages",
+          "Original media test pages and files are now public. Practice guidance, About, Updates, Privacy and service plans are available in four languages. Translated practice guidance was not used in the earlier model runs. See the publication entry for the third article."
+        ],
+        [
+          "2026-10-03",
+          "Non-text content article published",
+          "The second article on non-text content and text alternatives was published in Korean, English, Japanese and Simplified Chinese."
+        ],
+        [
+          "2026-10-02",
+          "Accessibility overview and localized homepages",
+          "The overview, prompt and four diagrams were published in four languages. Homepages focus on recent articles, series and menu links. Series documents show first publication and last update dates. At that time, the other 87 chapters were in preparation. Material requests are planned for the final chapter."
+        ],
+        [
+          "2026-10-01",
+          "Local review of the series-based site",
+          "The site was reorganized around Web for AI · Business · Everyone. Criterion articles and prompts are editorial resources subject to validation and publication review."
+        ]
+      ]
+    ],
+    "privacy": [
+      "Privacy",
+      "Material requests and privacy",
+      "How information for material delivery and optional subscriptions is managed.",
+      [
+        [
+          "Current availability",
+          "Material request and subscription forms are not yet available. The following describes the delivery workflow planned for the final chapter."
+        ],
+        [
+          "Information and purpose",
+          "The planned workflow records email address, selected series, material version and delivery status. Role and update subscription are optional. Email is used to deliver requested materials and manage requests."
+        ],
+        [
+          "Updates",
+          "Updates are sent only after separate subscription consent and email confirmation. Requesting materials does not constitute consent to updates. Subscribers can use the unsubscribe link in the email."
+        ],
+        [
+          "Retention and deletion",
+          "Request records are scheduled for deletion after 12 months without activity. Withdrawal of consent and deletion requests are handled separately. Contact me@jangwook.net for deletion or questions."
+        ],
+        [
+          "Infrastructure and language preference",
+          "The design uses Cloudflare D1 for leads and requests and Cloudflare Email Service for email. Production email delivery is currently disabled. The site_language cookie stores your language choice for 180 days."
+        ],
+        [
+          "Contact",
+          "me@jangwook.net"
+        ]
+      ]
+    ],
+    "services": [
+      "Services",
+      "From standards to working systems.",
+      "The accessibility series is developing into services that connect evaluation, improvements and verification.",
+      [
+        [
+          "One-off evaluation",
+          "Examine pages and user journeys, then report evidence of barriers, improvement priorities and additional checks."
+        ],
+        [
+          "Ongoing checks",
+          "Repeat checks after website changes and compare results to identify new problems and resolved items."
+        ],
+        [
+          "Improvement consulting",
+          "Design an improvement plan, implementation review and verification process suited to the team and its development workflow."
+        ],
+        [
+          "A connected evidence trail",
+          "Define scope and user journeys → collect DOM, screenshots, accessibility trees and interaction records → run rule checks and criterion-specific LLM evaluations → organize evidence, impact and priorities → repeat under the same conditions."
+        ],
+        [
+          "In development",
+          "This page presents a service plan. Live evaluations, pricing and payments will be made available after delivery conditions and validation are complete."
+        ]
+      ]
+    ],
+    "lab": "Practice pages",
+    "read": "Read the accessibility series",
+    "archive": [
+      "Archive",
+      "Previously published articles remain at their original URLs and reflect the technology and views at the time of writing.",
+      "Search the archive",
+      "Find by title or topic",
+      "An article title or topic",
+      "Language",
+      "All languages",
+      "Search",
+      "articles",
+      "page",
+      "No results. Try another title or topic.",
+      "Archive pagination",
+      "Previous page",
+      "Next page"
+    ]
+  },
+  "ja": {
+    "about": [
+      "紹介",
+      "ウェブの基準を、実務の判断へ。",
+      "こんにちは。キム・ジャンウクです。ウェブを設計・運用する方がよりよい判断をできるよう、重要なテーマを選び、解説と実践方法を提供します。",
+      [
+        [
+          "キム・ジャンウク",
+          "ウェブ開発者 · 技術教育・コンサルティング"
+        ],
+        [
+          "深く学び、実際に使える資料。",
+          "ウェブアクセシビリティ、検索とAIによるウェブの理解、ビジネスサイトの運用を扱います。原理から事例と例外を検討し、プロンプトとツールで実務につなげます。最初に何を確認し、どの証拠が必要で、結果をどう解釈するかを説明します。"
+        ],
+        [
+          "テーマと編集判断に責任を持ちます。",
+          "AIは調査・執筆・評価方法を広げる道具として使います。テーマ選定と編集判断は私が担当します。基準の要求、教育用の例、実測結果を区別し、未検証の性能を主張しません。"
+        ],
+        [
+          "継続して発展する資料。",
+          "技術と基準の変化に合わせてシリーズを更新します。変更理由とバージョンを記録し、記事・プロンプト・サービスを共通の方法論でつなぎます。"
+        ]
+      ]
+    ],
+    "updates": [
+      "更新履歴",
+      "知識も、発展を続けます。",
+      "記事とプロンプトの変更理由、および確認できた範囲を記録します。",
+      [
+        [
+          "2026-10-05",
+          "音声のみ・音声なし動画の記事を公開",
+          "第3回の記事と評価プロンプトを4言語で公開しました。実際のメディアを使う実習ページ、Hyperframesの解説動画、手順ごとのテキスト代替を提供します。繰り返し検証の入力経路と未確認の範囲も記事に明記しました。"
+        ],
+        [
+          "2026-10-05",
+          "4言語の実習ページと共通案内",
+          "メディア検証で使用した元のページとファイルを公開しました。実習案内、紹介、更新履歴、個人情報の案内、サービス設計を4言語で提供します。翻訳した実習案内は以前のモデル実行には使用していません。第3回の記事については公開記録をご覧ください。"
+        ],
+        [
+          "2026-10-03",
+          "非テキストコンテンツの記事を公開",
+          "非テキストコンテンツと代替テキストを扱う第2回を韓国語・英語・日本語・簡体字中国語で公開しました。"
+        ],
+        [
+          "2026-10-02",
+          "アクセシビリティ概要と4言語ホーム",
+          "概要、プロンプト、4点の図を4言語で公開しました。ホームは最新記事とシリーズ・メニューのリンクを中心に構成し、シリーズ文書に初版公開日と最終更新日を表示しました。当時、残り87回は準備中でした。資料申請は最終回で提供する予定です。"
+        ],
+        [
+          "2026-10-01",
+          "シリーズ中心のサイトをローカルでレビュー",
+          "Web for AI · Business · Everyoneを中心に再構成しました。基準別の記事とプロンプトは、検証と公開レビューを経る編集資料です。"
+        ]
+      ]
+    ],
+    "privacy": [
+      "個人情報について",
+      "資料申請と個人情報",
+      "資料の配信と任意の購読に使う情報の管理方法です。",
+      [
+        [
+          "現在の提供状況",
+          "資料申請と購読フォームはまだ提供していません。以下は最終回で提供する予定の配信フローの設計です。"
+        ],
+        [
+          "情報と目的",
+          "申請時のメールアドレス、選択したシリーズ、資料バージョン、配信状態を記録する設計です。役割と更新購読は任意です。メールは依頼された資料の配信と申請管理に使用します。"
+        ],
+        [
+          "更新案内",
+          "別途購読に同意し、メール確認を完了した場合のみ送信します。資料申請を購読同意とは扱いません。メール内の購読解除リンクで停止できます。"
+        ],
+        [
+          "保管と削除",
+          "最終活動から12か月経過した申請情報を定期削除する方針です。同意撤回と情報削除の依頼は別に扱います。削除や問い合わせはme@jangwook.netへ連絡できます。"
+        ],
+        [
+          "運用環境と言語選択",
+          "リードと申請履歴にCloudflare D1、メールにCloudflare Email Serviceを使用する設計です。現在、運用環境のメール配信は無効です。site_language Cookieに言語選択を180日間保存します。"
+        ],
+        [
+          "連絡先",
+          "me@jangwook.net"
+        ]
+      ]
+    ],
+    "services": [
+      "サービス",
+      "学んだ基準を、動く仕組みへ。",
+      "アクセシビリティシリーズの評価方法を、診断・改善・再検証をつなぐサービスに発展させています。",
+      [
+        [
+          "単発の評価",
+          "ページと利用フローを確認し、障壁の証拠、改善の優先順位、追加確認項目を提供します。"
+        ],
+        [
+          "継続的な点検",
+          "変更後に点検を繰り返し、以前の結果と比較して新たな問題と解決済みの項目を確認します。"
+        ],
+        [
+          "改善コンサルティング",
+          "チームと開発工程に合った改善計画、実装レビュー、再点検の流れを設計します。"
+        ],
+        [
+          "証拠をつなぐ流れ",
+          "範囲と利用フローを定義 → DOM・画面・アクセシビリティツリー・操作記録を収集 → ルール検査と基準別LLM評価 → 証拠・影響・改善順序を整理 → 同じ条件で再点検。"
+        ],
+        [
+          "サービス開発中",
+          "現在は設計の紹介です。実際の診断実行、価格、決済は提供条件と検証が整ってから公開します。"
+        ]
+      ]
+    ],
+    "lab": "実習ページ",
+    "read": "アクセシビリティシリーズを読む",
+    "archive": [
+      "アーカイブ",
+      "公開済みの記事を元のURLで保管しています。過去の記事には執筆時の技術と見解が含まれます。",
+      "アーカイブ検索",
+      "タイトルやテーマで検索",
+      "記事のタイトルやテーマ",
+      "言語",
+      "すべての言語",
+      "検索",
+      "件の記事",
+      "ページ",
+      "見つかりませんでした。別のタイトルやテーマで検索してください。",
+      "アーカイブのページ移動",
+      "前のページ",
+      "次のページ"
+    ]
+  },
+  "zh": {
+    "about": [
+      "关于",
+      "把 Web 标准转化为实践中的判断。",
+      "你好，我是金长旭。我选择重要主题，提供解读与实践方法，帮助设计和运营网站的人做出更好的判断。",
+      [
+        [
+          "金长旭",
+          "Web 开发者 · 技术教育与咨询"
+        ],
+        [
+          "深入学习，直接应用。",
+          "这里介绍 Web 无障碍、搜索和 AI 对 Web 的理解，以及业务网站的运营。从原理出发，分析示例与例外，通过提示词和工具连接实践。说明应先检查什么、需要哪些证据，以及如何解读结果。"
+        ],
+        [
+          "对主题和编辑判断负责。",
+          "AI 用于拓展研究、写作和评估方法。主题选择与编辑判断由我负责。区分标准要求、教学示例和实际测量结果，不宣称未经验证的性能。"
+        ],
+        [
+          "持续发展的资料。",
+          "随着技术和标准变化更新系列。记录变更原因与版本，通过共同的方法连接文章、提示词和服务。"
+        ]
+      ]
+    ],
+    "updates": [
+      "更新记录",
+      "知识也持续发展。",
+      "记录文章和提示词的变更原因，以及目前已验证的范围。",
+      [
+        [
+          "2026-10-05",
+          "发布纯音频与无声视频文章",
+          "第三篇文章与评估提示词现已提供四语言版本，并附有真实媒体练习页面、Hyperframes教学视频和分步文本替代。文章明确说明重复验证的输入路径及未验证范围。"
+        ],
+        [
+          "2026-10-05",
+          "四语言练习页面与网站说明",
+          "公开媒体验证使用的原始页面和文件。练习指南、关于、更新、隐私说明与服务设计均提供四语言版本。翻译后的练习指南未用于此前的模型运行。第三篇文章请参阅发布记录。"
+        ],
+        [
+          "2026-10-03",
+          "非文本内容文章发布",
+          "关于非文本内容与替代文本的第二篇文章已提供韩语、英语、日语与简体中文版本。"
+        ],
+        [
+          "2026-10-02",
+          "无障碍概述与四语言首页",
+          "以四语言公开概述、提示词与四张图。首页围绕最新文章、系列和菜单链接组织，系列文档显示首次发布和最后更新日期。当时其余87篇仍在准备。资料申请计划在系列最后一篇提供。"
+        ],
+        [
+          "2026-10-01",
+          "系列网站的本地审核版",
+          "围绕 Web for AI · Business · Everyone 重建网站。标准解读与提示词属于需经过验证和发布审核的编辑资料。"
+        ]
+      ]
+    ],
+    "privacy": [
+      "隐私说明",
+      "资料申请与个人信息",
+      "用于资料交付与自愿订阅的信息管理方式。",
+      [
+        [
+          "当前提供状态",
+          "资料申请与订阅表单尚未开放。以下介绍计划在最后一篇提供的交付流程。"
+        ],
+        [
+          "信息与用途",
+          "计划记录邮箱、所选系列、资料版本和发送状态。角色与更新订阅为可选项。邮箱用于交付申请资料与管理申请。"
+        ],
+        [
+          "更新通知",
+          "仅在单独同意订阅并完成邮箱确认后发送。申请资料不视为同意订阅，可通过邮件中的退订链接取消。"
+        ],
+        [
+          "保留与删除",
+          "按最后活动超过12个月后定期删除申请信息的政策运营。撤回同意与删除信息请求分别处理。删除或咨询可联系me@jangwook.net。"
+        ],
+        [
+          "运行环境与语言选择",
+          "计划使用Cloudflare D1存储线索与申请记录，并通过Cloudflare Email Service发送邮件。当前生产邮件发送已禁用。site_language Cookie保存语言选择180天。"
+        ],
+        [
+          "联系",
+          "me@jangwook.net"
+        ]
+      ]
+    ],
+    "services": [
+      "服务",
+      "让所学标准成为可运行的系统。",
+      "将无障碍系列的评估方法发展为连接诊断、改进与复核的服务。",
+      [
+        [
+          "单次评估",
+          "检查页面与用户流程，提供障碍证据、改进优先级和额外检查项。"
+        ],
+        [
+          "持续检查",
+          "网站变更后重复检查，与之前结果比较，识别新增问题和已解决项。"
+        ],
+        [
+          "改进咨询",
+          "结合团队结构与开发流程设计改进计划、实现审核与复核过程。"
+        ],
+        [
+          "连续的证据链",
+          "定义范围和用户流程 → 收集DOM、截图、无障碍树与操作记录 → 执行规则检查和标准级LLM评估 → 整理证据、影响与改进顺序 → 在相同条件下复核。"
+        ],
+        [
+          "服务开发中",
+          "本页介绍服务设计。实际诊断、价格与支付将在提供条件与验证完成后公开。"
+        ]
+      ]
+    ],
+    "lab": "练习页面",
+    "read": "阅读无障碍系列",
+    "archive": [
+      "归档",
+      "已发布文章保留原始URL，内容反映写作时的技术与观点。",
+      "搜索归档",
+      "按标题或主题查找",
+      "文章标题或主题",
+      "语言",
+      "全部语言",
+      "搜索",
+      "篇文章",
+      "页",
+      "没有结果，请尝试其他标题或主题。",
+      "归档分页",
+      "上一页",
+      "下一页"
+    ]
+  }
+}

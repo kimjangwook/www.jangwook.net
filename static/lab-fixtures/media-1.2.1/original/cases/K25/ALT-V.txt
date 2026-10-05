@@ -1,0 +1,1 @@
+Step 1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security. Step 4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code. Step 5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings.

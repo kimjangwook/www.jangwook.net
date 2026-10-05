@@ -1,0 +1,294 @@
+{
+  "created_at": "2026-10-04T12:34:53.583630+00:00",
+  "prompt_hashes": {
+    "overview": "ee86f412ab54a8f6cdaa3afd54057e3cabc1f7ef603a47b17f1f9499ba91eb8c",
+    "criterion": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440"
+  },
+  "reference_sha256": "1e9e99ddc8c8bc7679026ac7206b8cceba57fa54a98b5410d23cb061ca5ffee0",
+  "inputs": [
+    {
+      "id": "K17",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K17.txt",
+      "input_sha256": "bd7557023ebeef159639abb63e5ee9c3bcfa946f83622fd64efdbec005b6347e",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": []
+    },
+    {
+      "id": "K42",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K42.txt",
+      "input_sha256": "fd537ab41006f121670da22e6a10109720d665d4db3bea01e23c613c7e3b9b77",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": []
+    },
+    {
+      "id": "K08",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K08.txt",
+      "input_sha256": "7703fa5f422ea71926b698bf1287993a85ab06486356e073dd1dc61e43096233",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": []
+    },
+    {
+      "id": "K63",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K63.txt",
+      "input_sha256": "dc3f1acea30bafb125fb2cdf2e4a28a9704636e10a75fc4c57a9fa41c741b87b",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": [
+        {
+          "id": "FRAME-1",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png",
+          "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b"
+        },
+        {
+          "id": "FRAME-2",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png",
+          "sha256": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de"
+        },
+        {
+          "id": "FRAME-3",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png",
+          "sha256": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297"
+        },
+        {
+          "id": "FRAME-4",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png",
+          "sha256": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1"
+        },
+        {
+          "id": "FRAME-5",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png",
+          "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+        }
+      ]
+    },
+    {
+      "id": "K25",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K25.txt",
+      "input_sha256": "80fe29b87314c6ff97505efa837ca9a8aa2dc4ab6a942681d73dc22c042d31eb",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": [
+        {
+          "id": "FRAME-1",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png",
+          "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b"
+        },
+        {
+          "id": "FRAME-2",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png",
+          "sha256": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de"
+        },
+        {
+          "id": "FRAME-3",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png",
+          "sha256": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297"
+        },
+        {
+          "id": "FRAME-4",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png",
+          "sha256": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1"
+        },
+        {
+          "id": "FRAME-5",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png",
+          "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+        }
+      ]
+    },
+    {
+      "id": "K91",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K91.txt",
+      "input_sha256": "ba60c9545844574c673e0e7bf6e3aee4da4f04443dead221b4b48c987cb66fe4",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": [
+        {
+          "id": "FRAME-1",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png",
+          "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b"
+        },
+        {
+          "id": "FRAME-2",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png",
+          "sha256": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de"
+        },
+        {
+          "id": "FRAME-3",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png",
+          "sha256": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297"
+        },
+        {
+          "id": "FRAME-4",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png",
+          "sha256": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1"
+        },
+        {
+          "id": "FRAME-5",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png",
+          "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+        }
+      ]
+    },
+    {
+      "id": "K34",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K34.txt",
+      "input_sha256": "0f3b90e232bc7d471ef926a7894e5f774b774196f5cd9e44e60f9aa93886af88",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": [
+        {
+          "id": "FRAME-1",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png",
+          "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b"
+        },
+        {
+          "id": "FRAME-2",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png",
+          "sha256": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de"
+        },
+        {
+          "id": "FRAME-3",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png",
+          "sha256": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297"
+        },
+        {
+          "id": "FRAME-4",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png",
+          "sha256": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1"
+        },
+        {
+          "id": "FRAME-5",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png",
+          "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+        }
+      ]
+    },
+    {
+      "id": "K56",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K56.txt",
+      "input_sha256": "62383d171d5646e2a8d4c1080b2dee454b4920630df65e103afa2afa9ebaf122",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": [
+        {
+          "id": "FRAME-1",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png",
+          "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b"
+        },
+        {
+          "id": "FRAME-2",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png",
+          "sha256": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de"
+        },
+        {
+          "id": "FRAME-3",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png",
+          "sha256": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297"
+        },
+        {
+          "id": "FRAME-4",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png",
+          "sha256": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1"
+        },
+        {
+          "id": "FRAME-5",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png",
+          "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+        }
+      ]
+    },
+    {
+      "id": "K79",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K79.txt",
+      "input_sha256": "beb545a838d6618e05d628c0ad304dc729a6286be09eb3e6ffdab3875cf2b236",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": []
+    },
+    {
+      "id": "K03",
+      "kind": "criterion",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/K03.txt",
+      "input_sha256": "6559699a8c6664fb9027e1ae3210c2926cd12b7a33698fa2832395047ea02c38",
+      "prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "images": [
+        {
+          "id": "FRAME-1",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png",
+          "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b"
+        },
+        {
+          "id": "FRAME-5",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png",
+          "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+        }
+      ]
+    },
+    {
+      "id": "P-LAB",
+      "kind": "overview",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/P-LAB.txt",
+      "input_sha256": "f5d99f40ed7547cc8d95a4eecd143609e1d2a7371700382ae9bbad8f2733aa5b",
+      "prompt_sha256": "ee86f412ab54a8f6cdaa3afd54057e3cabc1f7ef603a47b17f1f9499ba91eb8c",
+      "images": [
+        {
+          "id": "FRAME-1",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-1.png",
+          "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b"
+        },
+        {
+          "id": "FRAME-2",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-2.png",
+          "sha256": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de"
+        },
+        {
+          "id": "FRAME-3",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-3.png",
+          "sha256": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297"
+        },
+        {
+          "id": "FRAME-4",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-4.png",
+          "sha256": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1"
+        },
+        {
+          "id": "FRAME-5",
+          "path": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/assets/observed-5.png",
+          "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f"
+        }
+      ]
+    },
+    {
+      "id": "P-NONE",
+      "kind": "overview",
+      "input": "/Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/final-v02/inputs/P-NONE.txt",
+      "input_sha256": "12190adcc48ce6a3d119c4a5473e07c374f113ed0adb6f01bad5af635b79e427",
+      "prompt_sha256": "ee86f412ab54a8f6cdaa3afd54057e3cabc1f7ef603a47b17f1f9499ba91eb8c",
+      "images": []
+    }
+  ],
+  "source_evidence": {
+    "audio-alternative.txt": "f0e7754342183936105a8fd9f0269665052cf4855bf03acdf4e0bd3eaec6dfa4",
+    "audio-guide.wav": "dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5",
+    "observed-1.png": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b",
+    "observed-2.png": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de",
+    "observed-3.png": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297",
+    "observed-4.png": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1",
+    "observed-5.png": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f",
+    "production-script.txt": "10dca6cd1fe0df99e655b4b6f21b1eb4101ef8996679f86c302e2744bda6e456",
+    "sequence.txt": "c43fb0579268fc73bcd801ce0c66016eb38bce684ba1725002bf0ebe77fb2fbb",
+    "silent-guide.mp4": "72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+    "state-1.png": "6f1aea0e7366618343690a964d717cceaca7a62980f270168b1f006b68bc391b",
+    "state-2.png": "dd5e96335de17277f27b010c12e90a0f0c39ffbe3bed37be2d4f9ebda2dbbd7a",
+    "state-3.png": "4e8461247faf70c8818a0e1ffeaab4bfc878d909a576e6feb1f1e46dd4a99579",
+    "state-4.png": "8311c44d55ad388b913094a118cf88ecf832f4ba1983818d16e88326b55d33dc",
+    "state-5.png": "2edac705557d946c2ea6f34e069768fd92a58012471016c5789d45e0a579992c",
+    "video-alternative.txt": "d7beda73489d1a75103d626c69ba79b61c865c16ad046e00a35e629e262808b0",
+    "video-audio-alternative.wav": "07649b74ad5ef6b570269def6e87803362bcf350a0dcba4663ebf55a35eb5943",
+    "video-framemd5.txt": "bc2a9b97537ac3d632c4c1ea645d1297d1e88653868bdd278d38b2996a62fe4f"
+  },
+  "input_hash_identity": "Only fixed data placeholders filled; all prompt instructions unchanged. Same input text and PNG bytes for both models."
+}

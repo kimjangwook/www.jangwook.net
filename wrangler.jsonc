@@ -8,7 +8,13 @@
   ],
   "assets": {
     "binding": "ASSETS",
-    "directory": ".svelte-kit/cloudflare"
+    "directory": ".svelte-kit/cloudflare",
+    "run_worker_first": [
+      "/lab-fixtures/media-1.2.1/teaching/*.mp4",
+      "/lab-fixtures/media-1.2.1/playback/*.mp4",
+      "/lab-fixtures/media-1.2.1/original/assets/*.mp4",
+      "/lab-fixtures/media-1.2.1/original/assets/*.wav"
+    ]
   },
   "vars": {
     "MAIL_MODE": "capture",

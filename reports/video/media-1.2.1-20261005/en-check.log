@@ -1,0 +1,74 @@
+◆  Checking en
+[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor="Google Inc. (Apple)" renderer="ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)")
+
+Lint
+  ◇ 0 errors, 0 warnings
+
+Runtime
+  ◇ 0 errors, 0 warnings
+
+Layout
+  ℹ t=6.25s content_overlap #meta1 > span:nth-of-type(1) inside #meta2 > span:nth-of-type(1) "WCAG 2.2 · 1.2.1" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=6.25s content_overlap #meta1 > span:nth-of-type(2) inside #meta2 > span:nth-of-type(2) "1 / 5" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=6.25s content_overlap #title1 inside #title2 "Account settings" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=6.25s content_overlap #body1 inside #body2 "In Account settings, the page says you must be signed in before creating a re..." — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=6.25s content_overlap #button1 inside #button2 "Open Security" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #meta2 > span:nth-of-type(1) inside #meta3 > span:nth-of-type(1) "WCAG 2.2 · 1.2.1" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #meta2 > span:nth-of-type(2) inside #meta3 > span:nth-of-type(2) "2 / 5" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #title2 inside #title3 "Security" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #body2 inside #body3 "Security explains that recovery codes restore account access; choose Create r..." — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=12.25s content_overlap #button2 inside #button3 "Create recovery code" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #meta3 > span:nth-of-type(1) inside #meta4 > span:nth-of-type(1) "WCAG 2.2 · 1.2.1" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #meta3 > span:nth-of-type(2) inside #meta4 > span:nth-of-type(2) "3 / 5" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #title3 inside #title4 "Before you continue" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #body3 inside #body4 "Before you continue warns that a new code makes the previous code unusable. C..." — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.25s content_overlap #button3 inside #button4 "Confirm new code" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=18.33s text_occluded #meta3 > span:nth-of-type(1) inside #scene4 "WCAG 2.2 · 1.2.1" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #meta3 > span:nth-of-type(2) inside #scene4 "3 / 5" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #note3 inside #scene4 > div:nth-of-type(1) > div:nth-of-type(2) "Teaching example · No real account or code" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #title3 inside #scene4 > div:nth-of-type(1) > div:nth-of-type(2) "Before you continue" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #body3 inside #body4 "Before you continue warns that a new code makes the previous code unusable. C..." — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=18.33s text_occluded #button3 inside #button4 "Confirm new code" — Text is hidden beneath an opaque element.
+        Fix: Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.
+  ℹ t=24.25s content_overlap #meta4 > span:nth-of-type(1) inside #meta5 > span:nth-of-type(1) "WCAG 2.2 · 1.2.1" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=24.25s content_overlap #meta4 > span:nth-of-type(2) inside #meta5 > span:nth-of-type(2) "4 / 5" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=24.25s content_overlap #title4 inside #title5 "Recovery code created" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=24.25s content_overlap #body4 inside #body5 "Recovery code created instructs you to save it safely and says that this exam..." — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  ℹ t=24.25s content_overlap #button4 inside #button5 "I saved my code" — Two text blocks overlap and may render unreadable.
+        Fix: Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.
+  0 error(s), 0 warning(s), 26 info(s)
+
+Motion
+  ◇ 0 errors, 0 warnings
+
+Contrast
+  ◇ 30/30 text checks pass WCAG AA
+
+Snapshots
+  ◇ disabled
+
+◇  Check passed

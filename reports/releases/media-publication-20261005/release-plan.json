@@ -1,0 +1,15 @@
+{
+  "base_commit": "5bb1f094278e7b3c27aa68dac589cac700395c71",
+  "rollback_worker_version": "a5165eaf-2a89-4ec5-a3cf-95b96c882768",
+  "scope": [
+    "Four-language SC1.2.1 article and complete prompt",
+    "Localized figure03 redesign",
+    "Playable Hyperframes teaching videos",
+    "Public source lab and four-language support pages",
+    "Small-media HTTP byte ranges and WebKit native controls"
+  ],
+  "database_migrations_in_production": false,
+  "mail_mode": "disabled",
+  "tts": "Availability verified and memory recorded; defer narration/subtitles to chapter04",
+  "source_prompt_preserved": true
+}

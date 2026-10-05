@@ -1,0 +1,59 @@
+[
+  {
+    "lang": "en",
+    "translationSourceHash": "012ce0259aa15df5166e7dc7a28bbf8872e1b8045ecab04537ab1df04e7747ed",
+    "assets": [
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-01-f8046df540d2.svg",
+        "sha256": "f8046df540d23ba1b06e73358a785dfe576bacc1826f11e8b5d3aac3ea9aa716"
+      },
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-02-5d5c107e586b.svg",
+        "sha256": "5d5c107e586b40496e620df43c146d55997cf13a1175908b7462d21f16e4fd9a"
+      },
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-04-1fc7ea59f102.svg",
+        "sha256": "1fc7ea59f102c50d7179b8db0f4f3519101febda9ff177b871db4f78bbc4168e"
+      }
+    ],
+    "intentional_adaptation": "Output language localized; figure 03 replaced with five-screen educational comparison."
+  },
+  {
+    "lang": "ja",
+    "translationSourceHash": "012ce0259aa15df5166e7dc7a28bbf8872e1b8045ecab04537ab1df04e7747ed",
+    "assets": [
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-01-54edb5be68c6.svg",
+        "sha256": "54edb5be68c69d684f9ebf4a8897bebfc86216675551fdd59d81506becbfc545"
+      },
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-02-7403b182179c.svg",
+        "sha256": "7403b182179cd4577565c2e5c81799967a30e07aeff284a952e8f377a40ee13f"
+      },
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-04-a89de1de7115.svg",
+        "sha256": "a89de1de71153982bfd8478f78cb6b9afcd42923dc188ffaf4ea416fd2d74a66"
+      }
+    ],
+    "intentional_adaptation": "Output language localized; figure 03 replaced with five-screen educational comparison."
+  },
+  {
+    "lang": "zh",
+    "translationSourceHash": "012ce0259aa15df5166e7dc7a28bbf8872e1b8045ecab04537ab1df04e7747ed",
+    "assets": [
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-01-686953069ca3.svg",
+        "sha256": "686953069ca38c2063fa3166ed6e38afd9d7057bf48a03c0cc1c28fb86669694"
+      },
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-02-123df0d45ef8.svg",
+        "sha256": "123df0d45ef80eb287c78e2e720f4b37ef3ad44db09e40e3ec45fdd32c729003"
+      },
+      {
+        "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-04-d878f1de17cb.svg",
+        "sha256": "d878f1de17cb359b10c0dec6c2c90d27c7f845dda412f716b02c3a9c97eb4f82"
+      }
+    ],
+    "intentional_adaptation": "Output language localized; figure 03 replaced with five-screen educational comparison."
+  }
+]

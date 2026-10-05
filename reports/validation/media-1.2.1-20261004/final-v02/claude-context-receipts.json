@@ -1,0 +1,13 @@
+{
+  "requested_model": "Claude Opus 5.5",
+  "observed_ui_model": "Opus 5.5",
+  "observed_ui_effort": "높음",
+  "permission": "Inherited existing previously approved mode; no security setting changes",
+  "round_sessions": {
+    "r1": "local_8e9b8e15-ab4a-4190-b03b-f52e15f8c5dc",
+    "r2": "local_c1bb5ce8-85a7-47fd-a440-6970b73e2994",
+    "r3": "local_4b1e0580-6683-4a06-8cda-01df95dac8f9"
+  },
+  "round_start_context": "156.7k old SC1.1.1 context; each fork starts before all SC1.2.1 requests/results. Cases are sequential within each fork, not stateless per case.",
+  "fixed_data_identical_to_previous_version": true
+}

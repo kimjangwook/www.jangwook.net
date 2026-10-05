@@ -1,0 +1,1 @@
+You must be signed in. Open Account settings, then Security, and select Create recovery code. A new recovery code makes the previous one usable. Confirm, save the new code safely, and finish. The new code is ready; the previous code can still be used.

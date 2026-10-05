@@ -1,0 +1,193 @@
+{
+  "run_id": "final-v02-claude-r1",
+  "date": "2026-10-04",
+  "model": "Claude Opus 5.5 (claude-opus-5-5), effort high (session setting, not changed)",
+  "workdir": "/private/tmp/jangwook-a11y-claude-validation-20261003/media-20261004/final-v02",
+  "execution_order": ["K17", "K42", "K08", "K63", "K25", "K91", "K34", "K56", "K79", "K03", "P-LAB", "P-NONE"],
+  "hash_verification": {
+    "method": "shasum -a 256 run twice: before the first case and after all 12 outputs were written",
+    "manifest_read": "input-manifest.json read with Read (267 lines)",
+    "all_input_txt_match_manifest_before": true,
+    "all_input_txt_match_manifest_after": true,
+    "all_png_match_manifest_before": true,
+    "all_png_match_manifest_after": true,
+    "inputs_modified": false,
+    "prompt_sha256_verified": false,
+    "prompt_sha256_note": "manifest의 prompt_sha256은 파일 안 프롬프트 부분을 어떤 경계로 잘라 계산했는지 정의가 없어 재계산하지 않음. 입력 txt 전체 해시만 확인함."
+  },
+  "cases": [
+    {
+      "id": "K17",
+      "input": {"path": "K17-input.txt", "sha256_expected": "bd7557023ebeef159639abb63e5ee9c3bcfa946f83622fd64efdbec005b6347e", "sha256_observed": "bd7557023ebeef159639abb63e5ee9c3bcfa946f83622fd64efdbec005b6347e", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-131 (전체, 1회)", "complete": true},
+      "images_required": [],
+      "images_read": [],
+      "output": {"path": "K17-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "complete", "scope_decision": "not_applicable"},
+      "status": "success",
+      "notes": []
+    },
+    {
+      "id": "K42",
+      "input": {"path": "K42-input.txt", "sha256_expected": "fd537ab41006f121670da22e6a10109720d665d4db3bea01e23c613c7e3b9b77", "sha256_observed": "fd537ab41006f121670da22e6a10109720d665d4db3bea01e23c613c7e3b9b77", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-191 (전체, 1회)", "complete": true},
+      "images_required": [],
+      "images_read": [],
+      "output": {"path": "K42-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "complete", "scope_decision": "pass"},
+      "status": "success",
+      "notes": ["WAV 원본은 제공되지 않았고 직접 청취하지 않음. 독립 ASR 기록(OBS-A)만 사용"]
+    },
+    {
+      "id": "K08",
+      "input": {"path": "K08-input.txt", "sha256_expected": "7703fa5f422ea71926b698bf1287993a85ab06486356e073dd1dc61e43096233", "sha256_observed": "7703fa5f422ea71926b698bf1287993a85ab06486356e073dd1dc61e43096233", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-112, 113-191 (2회로 전체)", "complete": true},
+      "images_required": [],
+      "images_read": [],
+      "output": {"path": "K08-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "complete", "scope_decision": "fail"},
+      "status": "success",
+      "notes": ["WAV 원본은 제공되지 않았고 직접 청취하지 않음. 독립 ASR 기록(OBS-A)만 사용"]
+    },
+    {
+      "id": "K63",
+      "input": {"path": "K63-input.txt", "sha256_expected": "dc3f1acea30bafb125fb2cdf2e4a28a9704636e10a75fc4c57a9fa41c741b87b", "sha256_observed": "dc3f1acea30bafb125fb2cdf2e4a28a9704636e10a75fc4c57a9fa41c741b87b", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-152, 152-229 (2회로 전체)", "complete": true},
+      "images_required": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "images_read": [
+        {"id": "FRAME-1", "path": "FRAME-1.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-2", "path": "FRAME-2.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-3", "path": "FRAME-3.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-4", "path": "FRAME-4.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-5", "path": "FRAME-5.png", "tool": "Read", "viewed": true}
+      ],
+      "output": {"path": "K63-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "complete", "scope_decision": "pass"},
+      "status": "success",
+      "notes": ["MP4 원본은 제공되지 않았고 재생하지 않음. 프레임 그룹 기록과 PNG만 사용"]
+    },
+    {
+      "id": "K25",
+      "input": {"path": "K25-input.txt", "sha256_expected": "80fe29b87314c6ff97505efa837ca9a8aa2dc4ab6a942681d73dc22c042d31eb", "sha256_observed": "80fe29b87314c6ff97505efa837ca9a8aa2dc4ab6a942681d73dc22c042d31eb", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-145, 145-221 (2회로 전체)", "complete": true},
+      "images_required": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "images_read": [
+        {"id": "FRAME-1", "path": "FRAME-1.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-2", "path": "FRAME-2.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-3", "path": "FRAME-3.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-4", "path": "FRAME-4.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-5", "path": "FRAME-5.png", "tool": "Read", "viewed": true}
+      ],
+      "output": {"path": "K25-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "complete", "scope_decision": "fail"},
+      "status": "success",
+      "notes": ["사례별로 PNG를 다시 Read로 열었음"]
+    },
+    {
+      "id": "K91",
+      "input": {"path": "K91-input.txt", "sha256_expected": "ba60c9545844574c673e0e7bf6e3aee4da4f04443dead221b4b48c987cb66fe4", "sha256_observed": "ba60c9545844574c673e0e7bf6e3aee4da4f04443dead221b4b48c987cb66fe4", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-200, 201-273 (2회로 전체)", "complete": true},
+      "images_required": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "images_read": [
+        {"id": "FRAME-1", "path": "FRAME-1.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-2", "path": "FRAME-2.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-3", "path": "FRAME-3.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-4", "path": "FRAME-4.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-5", "path": "FRAME-5.png", "tool": "Read", "viewed": true}
+      ],
+      "output": {"path": "K91-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "complete", "scope_decision": "pass"},
+      "status": "success",
+      "notes": ["음성 대안 WAV는 제공되지 않았고 직접 청취하지 않음. 독립 ASR 기록(OBS-AD)만 사용"]
+    },
+    {
+      "id": "K34",
+      "input": {"path": "K34-input.txt", "sha256_expected": "0f3b90e232bc7d471ef926a7894e5f774b774196f5cd9e44e60f9aa93886af88", "sha256_observed": "0f3b90e232bc7d471ef926a7894e5f774b774196f5cd9e44e60f9aa93886af88", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-140, 141-211 (2회로 전체)", "complete": true},
+      "images_required": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "images_read": [
+        {"id": "FRAME-1", "path": "FRAME-1.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-2", "path": "FRAME-2.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-3", "path": "FRAME-3.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-4", "path": "FRAME-4.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-5", "path": "FRAME-5.png", "tool": "Read", "viewed": true}
+      ],
+      "output": {"path": "K34-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "complete", "scope_decision": "not_applicable"},
+      "status": "success",
+      "notes": []
+    },
+    {
+      "id": "K56",
+      "input": {"path": "K56-input.txt", "sha256_expected": "62383d171d5646e2a8d4c1080b2dee454b4920630df65e103afa2afa9ebaf122", "sha256_observed": "62383d171d5646e2a8d4c1080b2dee454b4920630df65e103afa2afa9ebaf122", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-140, 141-211 (2회로 전체)", "complete": true},
+      "images_required": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "images_read": [
+        {"id": "FRAME-1", "path": "FRAME-1.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-2", "path": "FRAME-2.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-3", "path": "FRAME-3.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-4", "path": "FRAME-4.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-5", "path": "FRAME-5.png", "tool": "Read", "viewed": true}
+      ],
+      "output": {"path": "K56-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "complete", "scope_decision": "fail"},
+      "status": "success",
+      "notes": []
+    },
+    {
+      "id": "K79",
+      "input": {"path": "K79-input.txt", "sha256_expected": "beb545a838d6618e05d628c0ad304dc729a6286be09eb3e6ffdab3875cf2b236", "sha256_observed": "beb545a838d6618e05d628c0ad304dc729a6286be09eb3e6ffdab3875cf2b236", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-164 (전체, 1회)", "complete": true},
+      "images_required": [],
+      "images_read": [],
+      "output": {"path": "K79-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "partial", "scope_decision": "inconclusive"},
+      "status": "success",
+      "notes": ["입력 자료 안의 ffmpeg 오류(ERR-A)를 결과 errors에 보존함. 이 실행 자체의 도구 오류는 없음"]
+    },
+    {
+      "id": "K03",
+      "input": {"path": "K03-input.txt", "sha256_expected": "6559699a8c6664fb9027e1ae3210c2926cd12b7a33698fa2832395047ea02c38", "sha256_observed": "6559699a8c6664fb9027e1ae3210c2926cd12b7a33698fa2832395047ea02c38", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-140, 141-216 (2회로 전체)", "complete": true},
+      "images_required": ["FRAME-1", "FRAME-5"],
+      "images_read": [
+        {"id": "FRAME-1", "path": "FRAME-1.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-5", "path": "FRAME-5.png", "tool": "Read", "viewed": true}
+      ],
+      "output": {"path": "K03-claude-r1.json", "format": "json", "parse_ok": true, "scope_execution": "partial", "scope_decision": "inconclusive"},
+      "status": "success",
+      "notes": ["이 사례에 지정되지 않은 FRAME-2~4는 근거로 쓰지 않았고 다시 열지도 않음. 3.9167~16초는 미검토로 기록"]
+    },
+    {
+      "id": "P-LAB",
+      "input": {"path": "P-LAB-input.txt", "sha256_expected": "f5d99f40ed7547cc8d95a4eecd143609e1d2a7371700382ae9bbad8f2733aa5b", "sha256_observed": "f5d99f40ed7547cc8d95a4eecd143609e1d2a7371700382ae9bbad8f2733aa5b", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-201 (전체, 1회)", "complete": true},
+      "images_required": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"],
+      "images_read": [
+        {"id": "FRAME-1", "path": "FRAME-1.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-2", "path": "FRAME-2.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-3", "path": "FRAME-3.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-4", "path": "FRAME-4.png", "tool": "Read", "viewed": true},
+        {"id": "FRAME-5", "path": "FRAME-5.png", "tool": "Read", "viewed": true}
+      ],
+      "output": {"path": "P-LAB-claude-r1.md", "format": "markdown", "parse_ok": null, "scope_execution": "plan_only", "scope_decision": "미평가(계획 작성, 판정 없음)"},
+      "status": "success",
+      "notes": ["원문 프롬프트가 계획 작성만 요구하므로 접근성 판정을 내리지 않음. K63 결과는 참조하지 않음"]
+    },
+    {
+      "id": "P-NONE",
+      "input": {"path": "P-NONE-input.txt", "sha256_expected": "12190adcc48ce6a3d119c4a5473e07c374f113ed0adb6f01bad5af635b79e427", "sha256_observed": "12190adcc48ce6a3d119c4a5473e07c374f113ed0adb6f01bad5af635b79e427", "match": true},
+      "txt_read": {"tool": "Read", "lines_read": "1-102 (전체, 1회)", "complete": true},
+      "images_required": [],
+      "images_read": [],
+      "output": {"path": "P-NONE-claude-r1.md", "format": "markdown", "parse_ok": null, "scope_execution": "plan_only", "scope_decision": "미평가(계획 작성, 판정 없음)"},
+      "status": "success",
+      "notes": ["원문 프롬프트가 계획 작성만 요구하므로 접근성 판정을 내리지 않음. K17 결과는 참조하지 않음"]
+    }
+  ],
+  "not_read": [
+    "정답·제작 대본·이전 버전 결과·다른 실행 결과·이전 P01/P02 결과 파일",
+    "입력 자료가 가리키는 원본 WAV/MP4와 observed-N.png 원래 경로(이 폴더 밖이며 제공되지 않음)",
+    "WCAG 정본·Understanding URL(외부 열람 금지)"
+  ],
+  "tools_used": ["Read(txt, png, manifest)", "Bash(ls, wc, awk 줄 통계, shasum, python3 json 파싱 확인)", "Write(결과 파일 13개)"],
+  "tools_not_used": ["브라우저", "검색", "추가 수집", "소스 변경", "다른 모델 호출", "서브에이전트"],
+  "limitations": [
+    "원본 WAV/MP4를 직접 청취·재생하지 않았다. 음성은 입력에 포함된 독립 ASR 전사, 영상은 동일 프레임 그룹 기록과 이 폴더의 PNG로만 판단했다.",
+    "FRAME-N.png가 입력 기록의 observed-N.png와 바이트 단위로 같은지는 대조하지 못했고, manifest의 증거 ID 연결에 의존했다.",
+    "DOM 원문·화면·접근성 트리 원본은 어느 사례에도 없어 페이지 연결 관계는 수집 기록값에 의존했다.",
+    "같은 PNG 5장을 여러 사례에서 반복해 열었기 때문에, 사례별 평가는 각 txt에 적힌 증거 범위로 제한했다. K03에서는 지정된 FRAME-1과 FRAME-5만 근거로 사용했다.",
+    "JSON 출력은 파싱만 프로그램으로 확인했고, 판정 내용은 프로그램으로 생성하지 않았다."
+  ]
+}

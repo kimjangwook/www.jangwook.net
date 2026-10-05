@@ -100,3 +100,12 @@ content/series/accessibility/translations/{en,ja,zh}/manifest.json, posts, promp
 ## 시리즈 상세 페이지 원칙 — 2026-10-02
 
 사용자가 전체 학습 목록 토글, 학습 성과를 설명하는 제목 아래 요약, 글과 시리즈의 JSON-LD 연결을 승인하고 향후 작성 원칙으로 저장하도록 요청했습니다. 상세 페이지 작업 전에 [article-detail-guidelines.md](article-detail-guidelines.md)를 읽고 적용합니다. 기본 접힘, 현재 글 순서와 강조, 공개/준비 상태, 네 언어 SSR 링크, PC 사이드바/모바일 요약 아래 배치, 키보드·no-JS 동작을 유지합니다. 준비 중 글에는 BlogPosting이나 발행 날짜를 만들어 넣지 않습니다.
+
+
+## 공개 실습과 다국어 안내 — 2026-10-05
+
+`/labs/accessibility/media-alternatives`와 `/en`, `/ja`, `/zh` 경로에서 SC 1.2.1의 10개 사례를 탐색한다. 각 사례는 native iframe과 직접 링크로 제공한다. 공개된 SC 1.1.1 검증 대상 개요도 같은 언어의 링크와 기본 접힘 iframe으로 연결한다. SC 1.2.1 준비 페이지에도 실습 iframe을 표시하되 미승인 본문·프롬프트는 공개하지 않는다.
+
+`static/lab-fixtures/media-1.2.1/original`의 검증 당시 HTML·텍스트·WAV·MP4·프레임은 바이트를 보존하며 `provenance.json`에 SHA-256을 제공한다. 네 언어 HTML은 교육용 번역 화면이고 기존 모델 실행 자료와 구분한다. 원본 미디어의 언어는 영어로 명시한다. 누락·왜곡·손상 파일과 K03의 미검토 구간을 정상 자료로 바꾸지 않는다. iframe은 동일 출처만 허용하고 스크립트를 실행하지 않는다. 실습 정적 파일과 개별 사례는 noindex, 실습 목록만 sitemap에 포함한다.
+
+소개·업데이트·개인정보·서비스·아카이브 안내는 네 언어 SSR로 제공한다. 한국어 정본은 기존 접두어 없는 주소를 유지하며 `/ko` 별칭은 308한다. 메뉴·언어 선택·canonical·hreflang은 실제 번역 경로로 이어진다. 보관 글 본문과 원래 URL은 변경하지 않는다.

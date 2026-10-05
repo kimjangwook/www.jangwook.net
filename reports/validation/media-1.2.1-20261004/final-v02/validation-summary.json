@@ -1,0 +1,111 @@
+{
+  "created_at": "2026-10-04T12:56:33.731654+00:00",
+  "standard": "WCAG 2.2 SC 1.2.1 A",
+  "criterion_prompt_version": "0.2.0",
+  "prompt_sha256": {
+    "overview": "ee86f412ab54a8f6cdaa3afd54057e3cabc1f7ef603a47b17f1f9499ba91eb8c",
+    "criterion": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440"
+  },
+  "reference_sha256": "1e9e99ddc8c8bc7679026ac7206b8cceba57fa54a98b5410d23cb061ca5ffee0",
+  "inputs_fixed_verified": true,
+  "images_fixed_verified": true,
+  "execution_results": {
+    "sol": {
+      "requested_model": "gpt-6.1-sol",
+      "actual_returned_model": "gpt-6.1-sol",
+      "effort": "high",
+      "criterion_runs": 10,
+      "reference_decisions_matched": 10,
+      "execution": "Fresh stateless requests per case"
+    },
+    "claude": {
+      "requested_model": "Claude Opus 5.5",
+      "ui_observed_model": "Opus 5.5",
+      "ui_observed_effort": "높음",
+      "criterion_runs": 30,
+      "reference_decisions_matched": 30,
+      "overview_plans": 6,
+      "rounds": 3,
+      "execution": "Three forks from old SC1.1.1 context before SC1.2.1 request; cases sequential within each fork, not stateless per case",
+      "read_logs": [
+        "claude-read-log-r1.json",
+        "claude-read-log-r2.json",
+        "claude-read-log-r3.json"
+      ],
+      "completion": "Desktop final r3 completion visible; all 36 outputs and three read logs present"
+    }
+  },
+  "contract_checks": {
+    "passed": 496,
+    "total": 496
+  },
+  "overview_review": [
+    {
+      "run": "claude-P-LAB-r1-raw",
+      "sha256": "fb224c15bc7d7b8da31ae0c25a2c06a88e15faadc433b34c526a931f10c78cf1",
+      "review": "passed",
+      "scope": "Plan only; facts/assumptions/unknowns, source locations, unobserved states and follow-up collection retained; no completed conformance decision."
+    },
+    {
+      "run": "claude-P-LAB-r2-raw",
+      "sha256": "bcadbbcf2c922ffeb6cc4da6f47b72bb42d0c72e618e67baae973e43cec7f2ac",
+      "review": "passed",
+      "scope": "Plan only; facts/assumptions/unknowns, source locations, unobserved states and follow-up collection retained; no completed conformance decision."
+    },
+    {
+      "run": "claude-P-LAB-r3-raw",
+      "sha256": "6882f7ed0e33fdf9c014c700c860095576dfeeebbf9e43d01f12cbee3a82e22a",
+      "review": "passed",
+      "scope": "Plan only; facts/assumptions/unknowns, source locations, unobserved states and follow-up collection retained; no completed conformance decision."
+    },
+    {
+      "run": "claude-P-NONE-r1-raw",
+      "sha256": "caec80b2a57c847eab5f644dc21107d6226162ae0df14ebc2733f49a50001d70",
+      "review": "passed",
+      "scope": "Plan only; facts/assumptions/unknowns, source locations, unobserved states and follow-up collection retained; no completed conformance decision."
+    },
+    {
+      "run": "claude-P-NONE-r2-raw",
+      "sha256": "b538b8817e279275c898ed78a39bd1ff4ebede685dc2113c022195de12334a99",
+      "review": "passed",
+      "scope": "Plan only; facts/assumptions/unknowns, source locations, unobserved states and follow-up collection retained; no completed conformance decision."
+    },
+    {
+      "run": "claude-P-NONE-r3-raw",
+      "sha256": "74fcac8b30ae8acadedb4473d196b6b27a84f5fc4b28b6b5506ed44eec930615",
+      "review": "passed",
+      "scope": "Plan only; facts/assumptions/unknowns, source locations, unobserved states and follow-up collection retained; no completed conformance decision."
+    }
+  ],
+  "semantic_review": {
+    "reviewer": "Codex agent",
+    "human_review": "pending",
+    "status": "passed within defined fixture rubric",
+    "details": [
+      "K08 two negation inversions localized to OBS-A 8-19 sec and ALT-A",
+      "K25 lost Security/Create stage and pre-action warning/Confirm stage; later old-code-invalid statement does not repair ordering",
+      "K91 audio alternative sufficient with no recursive text requirement; original coverage ends at 19.916667 not36.167125sec",
+      "K34 both exception conditions established; K56 label alone rejected",
+      "K79 decode failure distinct from absent media; no source comparison units invented",
+      "K03 processed intersection0-3.916667 and16-19.916667, unknown union3.916667-16; no full pass",
+      "Observed formats stated; no native media, keyboard or screen-reader processing claims"
+    ]
+  },
+  "article_selection": {
+    "route": "Claude Opus 5.5 High",
+    "reason": "Both final paths meet fixed decision and output contract. Claude has three full rounds and explicit readable evidence-boundary explanations; no general model ranking inferred.",
+    "only_selected_path_results_in_article": true
+  },
+  "limitations": [
+    "Prepared finite fixtures, not blind external audit or whole-site certification",
+    "LLM used independent ASR, PNG and processing records, not native WAV/MP4 playback",
+    "Controlled clear single synthetic speaker without informative non-speech sounds; noise/overlap/effects untested",
+    "239 decoded frames support exactly five static groups in this fixture, not arbitrary sparse-sampled videos",
+    "Claude inherited old unrelated SC1.1.1 context and sequential-case context",
+    "User approval, translation, publication and deployment pending"
+  ],
+  "publication": false,
+  "translation": false,
+  "deployment": false,
+  "internal_checker_note": "Gap check compares merged contiguous intervals to frozen boundaries; valid grouping allowed, expected bounds unchanged."
+}

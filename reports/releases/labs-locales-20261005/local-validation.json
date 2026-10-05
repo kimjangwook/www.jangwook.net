@@ -1,0 +1,793 @@
+{
+  "base": "http://127.0.0.1:8794",
+  "scope": "First-party support pages, media fixture translations/original byte parity, SSR links/metadata, iframe rendering and no-JS. Deliberate semantic failures are examples, not conformance claims.",
+  "http": [
+    {
+      "lang": "ko",
+      "path": "/about",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "path": "/updates",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "path": "/privacy",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "path": "/services",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "path": "/archive",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/media-alternatives",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/media-alternatives/K03",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ko",
+      "case": "K17",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K42",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K08",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K63",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K25",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K91",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K34",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K56",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K79",
+      "status": 200
+    },
+    {
+      "lang": "ko",
+      "case": "K03",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "path": "/about",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/updates",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/privacy",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/services",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/archive",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/media-alternatives",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/media-alternatives/K03",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "case": "K17",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K42",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K08",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K63",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K25",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K91",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K34",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K56",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K79",
+      "status": 200
+    },
+    {
+      "lang": "en",
+      "case": "K03",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "path": "/about",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/updates",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/privacy",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/services",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/archive",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/media-alternatives",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/media-alternatives/K03",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "case": "K17",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K42",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K08",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K63",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K25",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K91",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K34",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K56",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K79",
+      "status": 200
+    },
+    {
+      "lang": "ja",
+      "case": "K03",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "path": "/about",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/updates",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/privacy",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/services",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/archive",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/media-alternatives",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/media-alternatives/K03",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "status": 200,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "case": "K17",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K42",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K08",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K63",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K25",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K91",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K34",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K56",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K79",
+      "status": 200
+    },
+    {
+      "lang": "zh",
+      "case": "K03",
+      "status": 200
+    }
+  ],
+  "browser": [
+    {
+      "lang": "ko",
+      "width": 1440,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 390,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "frameRendered": true,
+      "keyboardLink": true,
+      "overflow": false,
+      "axeViolations": []
+    }
+  ],
+  "noJS": [
+    {
+      "lang": "ko",
+      "path": "/labs/accessibility/media-alternatives",
+      "readable": true
+    },
+    {
+      "lang": "ko",
+      "path": "/about",
+      "readable": true
+    },
+    {
+      "lang": "ko",
+      "path": "/updates",
+      "readable": true
+    },
+    {
+      "lang": "ko",
+      "path": "/privacy",
+      "readable": true
+    },
+    {
+      "lang": "ko",
+      "path": "/services",
+      "readable": true
+    },
+    {
+      "lang": "en",
+      "path": "/labs/accessibility/media-alternatives",
+      "readable": true
+    },
+    {
+      "lang": "en",
+      "path": "/about",
+      "readable": true
+    },
+    {
+      "lang": "en",
+      "path": "/updates",
+      "readable": true
+    },
+    {
+      "lang": "en",
+      "path": "/privacy",
+      "readable": true
+    },
+    {
+      "lang": "en",
+      "path": "/services",
+      "readable": true
+    },
+    {
+      "lang": "ja",
+      "path": "/labs/accessibility/media-alternatives",
+      "readable": true
+    },
+    {
+      "lang": "ja",
+      "path": "/about",
+      "readable": true
+    },
+    {
+      "lang": "ja",
+      "path": "/updates",
+      "readable": true
+    },
+    {
+      "lang": "ja",
+      "path": "/privacy",
+      "readable": true
+    },
+    {
+      "lang": "ja",
+      "path": "/services",
+      "readable": true
+    },
+    {
+      "lang": "zh",
+      "path": "/labs/accessibility/media-alternatives",
+      "readable": true
+    },
+    {
+      "lang": "zh",
+      "path": "/about",
+      "readable": true
+    },
+    {
+      "lang": "zh",
+      "path": "/updates",
+      "readable": true
+    },
+    {
+      "lang": "zh",
+      "path": "/privacy",
+      "readable": true
+    },
+    {
+      "lang": "zh",
+      "path": "/services",
+      "readable": true
+    }
+  ],
+  "media": [
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/observed-1.png",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/audio-guide.wav",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/observed-5.png",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/corrupt.wav",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/video-audio-alternative.wav",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/silent-guide.mp4",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K56/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K56/snapshot.json",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K34/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K34/snapshot.json",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K03/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K03/ALT-V.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K03/snapshot.json",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K42/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K42/ALT-A.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K42/snapshot.json",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K08/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K08/ALT-A.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K08/snapshot.json",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K63/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K63/ALT-V.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K63/snapshot.json",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K91/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K91/snapshot.json",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K25/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K25/ALT-V.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K25/snapshot.json",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K79/index.html",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K79/ALT-A.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K79/snapshot.json",
+      "hashMatch": true
+    }
+  ],
+  "playback": [
+    {
+      "lang": "ko",
+      "kind": "video",
+      "duration": 19.916667,
+      "currentTime": 0.263274,
+      "width": 960,
+      "height": 640
+    },
+    {
+      "lang": "en",
+      "kind": "video",
+      "duration": 19.916667,
+      "currentTime": 0.261042,
+      "width": 960,
+      "height": 640
+    },
+    {
+      "lang": "ja",
+      "kind": "video",
+      "duration": 19.916667,
+      "currentTime": 0.260226,
+      "width": 960,
+      "height": 640
+    },
+    {
+      "lang": "zh",
+      "kind": "video",
+      "duration": 19.916667,
+      "currentTime": 0.258154,
+      "width": 960,
+      "height": 640
+    },
+    {
+      "lang": "ko",
+      "kind": "audio",
+      "duration": 19.06775,
+      "currentTime": 0.109173
+    },
+    {
+      "lang": "en",
+      "kind": "audio",
+      "duration": 19.06775,
+      "currentTime": 0.11238
+    },
+    {
+      "lang": "ja",
+      "kind": "audio",
+      "duration": 19.06775,
+      "currentTime": 0.106079
+    },
+    {
+      "lang": "zh",
+      "kind": "audio",
+      "duration": 19.06775,
+      "currentTime": 0.108258
+    }
+  ],
+  "headers": [
+    {
+      "name": "silent-guide.mp4",
+      "rangeStatus": 200,
+      "noindex": true,
+      "sameOriginFrames": true
+    },
+    {
+      "name": "audio-guide.wav",
+      "rangeStatus": 200,
+      "noindex": true,
+      "sameOriginFrames": true
+    }
+  ],
+  "errors": []
+}

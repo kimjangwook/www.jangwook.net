@@ -1,0 +1,40 @@
+{
+  "decision": "needs_corrections",
+  "resolved": [
+    {
+      "location": "final_bodies.ja: correction-record introduction",
+      "resolution": "The displayed example is now correctly identified as Japanese."
+    },
+    {
+      "location": "final_bodies.zh: correction-record introduction",
+      "resolution": "The displayed statements are now identified as Chinese translations of semantic paraphrases in the Korean source, without claiming Chinese fixtures were tested."
+    },
+    {
+      "location": "figure03.ja and figure03.zh",
+      "resolution": "The replacement metadata describes the approved five-screen fictional teaching example without measured timing. The previous four-row, timecoded metadata issue is resolved; the stale figures array is not treated as published."
+    },
+    {
+      "location": "K03 and K91 fixture verification",
+      "resolution": "The frozen receipt supplies K03's unreviewed interval of 3.916667–16 seconds and K91's original-video coverage endpoint of 19.916667 seconds, rather than the alternative audio's 36.167125 seconds. Both bodies preserve the coverage limitations and distinguish prepared-input verification from expert certification or native model media playback."
+    },
+    {
+      "location": "final_bodies.ja and final_bodies.zh: verification results",
+      "resolution": "The reported Claude results and execution context match the receipt: 30 criterion runs across three rounds, six planning runs, and sequential cases within branches from earlier context. The finite-fixture and derived-input limitations remain explicit."
+    }
+  ],
+  "unresolved": [
+    {
+      "location": "final_bodies.ja: Figure 03 HTML",
+      "issue": "The image source and both links still use fig-03-ed6e8f8de704.svg, whereas the final Japanese Figure 03 metadata specifies fig-03-595ec6b6f31b.svg. Synchronize these three references with the final asset path."
+    }
+  ],
+  "replacements": [
+    {
+      "field": "final_bodies.ja",
+      "old": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-03-ed6e8f8de704.svg",
+      "new": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-03-595ec6b6f31b.svg",
+      "occurrences": 3,
+      "reason": "Align the Figure 03 image source and both links with the authoritative final metadata."
+    }
+  ]
+}

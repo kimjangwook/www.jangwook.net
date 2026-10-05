@@ -1,0 +1,27 @@
+✔ language preference respects explicit selection and weighted browser languages (0.927167ms)
+✔ four real localized homes provide SSR metadata, selector links and only approved reading (0.989333ms)
+✔ all 352 documents have modification dates; only published editions have a first-publication date (0.468792ms)
+✔ latest list is limited to five approved articles in first-publication order (0.17575ms)
+✔ validation rejects malformed email, unrecognized role and missing consent (0.788792ms)
+✔ drafts are available only in local preview; public bundles exclude all drafts (0.440375ms)
+✔ lead, optional consent and captured mail persist; duplicate request creates no second mail (130.880917ms)
+✔ concurrent submissions produce one request and one captured outbox (95.098875ms)
+✔ rate limit stops the sixth request (232.016042ms)
+✔ public draft submission and nonlocal capture cannot create leads (3.316083ms)
+✔ provider acceptance records a receipt and attaches approved prompts; failures stay distinct (134.731125ms)
+✔ expired material links can be requested again with a fresh token (90.545959ms)
+✔ changed content, invalid approval dates and future publication remain private (0.159541ms)
+✔ provider acceptance followed by database failure keeps the send claim and receipt (58.174167ms)
+✔ localized overview has a real translated body, prompt, four figures and reciprocal paths (25.139625ms)
+✔ all chapters have four-language preparation pages without a Korean fallback (19.683625ms)
+✔ exact translation approval and current Korean source are required outside preview (0.16675ms)
+✔ RSS and multilingual sitemap expose only approved chapters and exclude stale approvals (2.654375ms)
+✔ article learning navigation exposes only ordered metadata and honest publication state (0.691208ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5030.9955

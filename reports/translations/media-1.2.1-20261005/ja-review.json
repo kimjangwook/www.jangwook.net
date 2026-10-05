@@ -1,0 +1,31 @@
+{
+  "decision": "needs_corrections",
+  "findings": [
+    {
+      "field": "body",
+      "issue": "The introduction to the correction-record example says the displayed source and alternative meanings are translated into Korean, but the example in this edition is in Japanese."
+    },
+    {
+      "field": "figures[2]",
+      "issue": "The separate Figure 03 metadata still describes four timed rows and includes timecodes. This conflicts with the intentionally redesigned five-screen fictional comparison without measured timing, which the Japanese body correctly describes. The redesign and localized paths are not errors; the stale figure metadata is the issue."
+    }
+  ],
+  "replacements": [
+    {
+      "field": "body",
+      "old": "原本と代替の文は意味を韓国語に訳したものであり",
+      "new": "原本と代替の文は意味を日本語に訳したものであり",
+      "reason": "Correct the language reference to match the Japanese example displayed in this edition."
+    }
+  ],
+  "unresolved": [
+    {
+      "location": "translated_edition.figures[2]",
+      "issue": "The title, description, and labels need alignment with the approved five-screen, untimed Figure 03. The permitted replacement fields do not include figure metadata, and the approved replacement label set was not supplied, so no figure-field replacement is fabricated."
+    },
+    {
+      "location": "K03 and K91 fixture verification",
+      "issue": "The underlying K03 and K91 records and exact boundaries were not supplied. The translation preserves the source's unreviewed-gap account and the rule that a longer audio alternative must not extend original-video coverage, including the 20-second/36-second example. Exact fixture boundaries cannot be independently verified from these materials."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "criterion": "1.2.1",
+  "level": "A",
+  "prompt_version": "0.2.0",
+  "scope": {
+    "url": "file:///Users/jangwook/workspace/www.jangwook.net/reports/validation/media-1.2.1-20261004/cases/K34/index.html",
+    "states": [
+      "article initial state; media content and provided alternative only (PAGE-K34, 수집 시각 2026-10-04T12:04:54.613330+00:00, 로컬 HTML을 Chromium으로 파싱한 기록)"
+    ],
+    "media_ids": ["M-V"],
+    "inventory_complete_within_scope": true,
+    "exclusions": [
+      "Player keyboard, captions and other WCAG criteria",
+      "External or live user accounts"
+    ],
+    "execution": "complete",
+    "decision": "not_applicable",
+    "reason": "지정 범위의 대상은 M-V 하나이며 목록 수집이 범위 안에서 완전하다고 기록됐습니다. M-V는 사전 제작 영상 전용이고 별도 대안(media_links의 alternatives)은 없습니다. 대신 '텍스트를 위한 매체 대안' 예외가 주장됐고(EXC-V), 두 조건을 각각 확인했습니다. (1) 추가 정보 없음: 원본 0~19.916667초 전체의 다섯 화면을 대표 PNG로 직접 열어 기존 텍스트 Step 1~5와 대조한 결과, 화면 제목·안내 문구·버튼·순서가 모두 기존 텍스트에 있고 영상에만 있는 절차·조건·결과 정보는 없었습니다. (2) 명확한 표시: 'The following silent guide is a media alternative to the complete written steps above.'라는 문구가 관찰됐습니다. 예외가 검증되어 1.2.1의 대안 요구가 적용되지 않으므로 not_applicable입니다."
+  },
+  "input_used": [
+    {
+      "evidence_id": "PAGE-K34",
+      "kind": "원본(페이지 목록과 대안 연결 기록)",
+      "processed_ranges": [],
+      "limitations": [
+        "HTML 원문 자체가 아니라 수집기가 정리한 기록만 제공됨. M-V의 alternatives는 빈 배열",
+        "기존 텍스트와 표시 문구가 영상과 같은 페이지의 어느 위치에 있는지는 EXC-V의 'above' 표현과 수집 기록으로만 확인",
+        "페이지를 직접 열지 않음"
+      ]
+    },
+    {
+      "evidence_id": "MEDIA-V",
+      "kind": "원본 메타데이터(대상 목록 항목: sha256, 길이, 출처, ffprobe 기반 분류 관찰)",
+      "processed_ranges": [],
+      "limitations": ["ffprobe 원시 출력은 제공되지 않음", "MP4를 직접 재생하지 않음"]
+    },
+    {
+      "evidence_id": "OBS-V",
+      "kind": "파생(ffmpeg 전체 프레임 디코딩 + framemd5, 12fps, 239프레임, 5개 동일 프레임 그룹)",
+      "processed_ranges": [
+        {"start_seconds": 0, "end_seconds": 19.916667, "evidence_ids": ["OBS-V"], "reason": "239프레임 ÷ 12fps = 19.9167초로 원본 길이와 같고 다섯 그룹이 서로 이어짐"}
+      ],
+      "limitations": [
+        "전체 구간 판단은 모든 디코딩 프레임이 다섯 그룹 중 하나와 바이트 동일하다는 수집 기록에 근거함",
+        "그룹 해시는 디코딩 프레임 MD5로 PNG 파일 sha256과 직접 대조할 수 없음"
+      ]
+    },
+    {"evidence_id": "FRAME-1", "kind": "파생(PNG, 0~3.9167초 그룹 대표)", "processed_ranges": [], "limitations": ["이 사례에서 Read로 실제 열람"]},
+    {"evidence_id": "FRAME-2", "kind": "파생(PNG, 3.9167~7.9167초 그룹 대표)", "processed_ranges": [], "limitations": ["이 사례에서 Read로 실제 열람"]},
+    {"evidence_id": "FRAME-3", "kind": "파생(PNG, 7.9167~11.9167초 그룹 대표)", "processed_ranges": [], "limitations": ["이 사례에서 Read로 실제 열람"]},
+    {"evidence_id": "FRAME-4", "kind": "파생(PNG, 11.9167~15.9167초 그룹 대표)", "processed_ranges": [], "limitations": ["이 사례에서 Read로 실제 열람"]},
+    {"evidence_id": "FRAME-5", "kind": "파생(PNG, 15.9167~19.9167초 그룹 대표)", "processed_ranges": [], "limitations": ["이 사례에서 Read로 실제 열람"]},
+    {
+      "evidence_id": "EXC-V",
+      "kind": "원본(페이지의 기존 텍스트와 대안 관계 표시 문구)",
+      "processed_ranges": [],
+      "limitations": [
+        "기존 텍스트 Step 1~5 전문과 표시 문구, clearly_labeled_observed=true가 기록됨",
+        "표시 문구가 시각적으로나 프로그램적으로 영상과 어떻게 연결되는지(예: 캡션, aria-describedby)는 제공되지 않음"
+      ]
+    }
+  ],
+  "media": [
+    {
+      "media_id": "M-V",
+      "classification": "prerecorded_video_only",
+      "classification_evidence_ids": ["MEDIA-V", "OBS-V"],
+      "original_version": "local fixture assets/silent-guide.mp4, sha256 72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+      "duration": 19.916667,
+      "execution": "complete",
+      "decision": "not_applicable",
+      "exception": {"claimed": true, "verified": true, "no_extra_information": true, "clearly_labeled": true, "evidence_ids": ["EXC-V", "OBS-V", "FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"]},
+      "coverage": {
+        "processed_ranges": [
+          {"start_seconds": 0, "end_seconds": 3.9166666666666665, "evidence_ids": ["OBS-V", "FRAME-1"], "reason": "그룹 1 동일 프레임 기록과 대표 PNG 열람"},
+          {"start_seconds": 3.9166666666666665, "end_seconds": 7.916666666666667, "evidence_ids": ["OBS-V", "FRAME-2"], "reason": "그룹 2 동일 프레임 기록과 대표 PNG 열람"},
+          {"start_seconds": 7.916666666666667, "end_seconds": 11.916666666666666, "evidence_ids": ["OBS-V", "FRAME-3"], "reason": "그룹 3 동일 프레임 기록과 대표 PNG 열람"},
+          {"start_seconds": 11.916666666666666, "end_seconds": 15.916666666666666, "evidence_ids": ["OBS-V", "FRAME-4"], "reason": "그룹 4 동일 프레임 기록과 대표 PNG 열람"},
+          {"start_seconds": 15.916666666666666, "end_seconds": 19.916667, "evidence_ids": ["OBS-V", "FRAME-5"], "reason": "그룹 5 동일 프레임 기록과 대표 PNG 열람. 끝 경계 차이는 소수 표기 반올림"}
+        ],
+        "unreviewed_ranges": [],
+        "complete": true
+      },
+      "alternatives": [],
+      "comparisons": [
+        {"unit_id": "U01", "original_location": "0~3.9167초, FRAME-1", "original_information": "1/5 'Account settings', 'You must be signed in before creating a recovery code.', 버튼 'Open Security'", "alternative_id": "EXC-V", "alternative_location": "기존 텍스트 Step 1", "alternative_information": "Step 1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security.", "relation": "equivalent", "evidence_ids": ["FRAME-1", "OBS-V", "EXC-V"], "observation": "화면 제목, 전제 조건, 버튼 이름이 기존 텍스트에 있다.", "interpretation": "영상이 기존 텍스트보다 더한 정보가 없다.", "user_impact": "영상을 볼 수 없는 이용자도 기존 텍스트로 같은 정보를 얻는다."},
+        {"unit_id": "U02", "original_location": "3.9167~7.9167초, FRAME-2", "original_information": "2/5 'Security', 'Recovery codes help restore access to your account.', 버튼 'Create recovery code'", "alternative_id": "EXC-V", "alternative_location": "기존 텍스트 Step 2", "alternative_information": "Step 2: Security explains that recovery codes restore account access; choose Create recovery code.", "relation": "equivalent", "evidence_ids": ["FRAME-2", "OBS-V", "EXC-V"], "observation": "'help restore access'와 'restore account access'의 표현 차이만 있다.", "interpretation": "영상에만 있는 정보가 아니다.", "user_impact": "차이 없음."},
+        {"unit_id": "U03", "original_location": "7.9167~11.9167초, FRAME-3", "original_information": "3/5 'Before you continue', 'Creating a new recovery code makes the previous code unusable.', 버튼 'Confirm new code'", "alternative_id": "EXC-V", "alternative_location": "기존 텍스트 Step 3", "alternative_information": "Step 3: Before you continue warns that a new code makes the previous code unusable. Choose Confirm new code.", "relation": "equivalent", "evidence_ids": ["FRAME-3", "OBS-V", "EXC-V"], "observation": "경고의 부정 의미와 버튼 이름이 같다.", "interpretation": "영상에만 있는 정보가 아니다.", "user_impact": "차이 없음."},
+        {"unit_id": "U04", "original_location": "11.9167~15.9167초, FRAME-4", "original_information": "4/5 'Recovery code created', 'Save the code in a safe place. This example does not show a real code.', 버튼 'I saved my code'", "alternative_id": "EXC-V", "alternative_location": "기존 텍스트 Step 4", "alternative_information": "Step 4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code.", "relation": "equivalent", "evidence_ids": ["FRAME-4", "OBS-V", "EXC-V"], "observation": "저장 지시, 실제 코드 미표시 안내, 버튼 이름이 같다.", "interpretation": "영상에만 있는 정보가 아니다.", "user_impact": "차이 없음."},
+        {"unit_id": "U05", "original_location": "15.9167~19.9167초, FRAME-5", "original_information": "5/5 'Complete', 'Your new recovery code is ready. Your previous code can no longer be used.', 버튼 'Return to settings'", "alternative_id": "EXC-V", "alternative_location": "기존 텍스트 Step 5", "alternative_information": "Step 5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings.", "relation": "equivalent", "evidence_ids": ["FRAME-5", "OBS-V", "EXC-V"], "observation": "완료 상태와 부정 조건, 버튼 이름이 같다.", "interpretation": "영상에만 있는 정보가 아니다.", "user_impact": "차이 없음."},
+        {"unit_id": "U06", "original_location": "원본 전체, FRAME-1~5 머리글과 진행 표시", "original_information": "머리글 'ACCOUNT HELP · LOCAL FICTIONAL EXAMPLE', 소제목 'Recovery code guide', 진행 표시 1/5~5/5", "alternative_id": "EXC-V", "alternative_location": "기존 텍스트 Step 1~5와 표시 문구", "alternative_information": "Step 번호 1~5로 순서와 단계 수가 있고, 표시 문구가 영상이 이 단계들의 매체 대안임을 밝힘. 'LOCAL FICTIONAL EXAMPLE' 문구 자체는 기존 텍스트에 없음", "relation": "equivalent", "evidence_ids": ["FRAME-1", "FRAME-5", "EXC-V"], "observation": "진행 표시는 Step 번호와 대응한다. 머리글의 가상 예시 표시는 기존 텍스트 전문에 같은 문구가 없다.", "interpretation": "머리글은 화면 틀의 맥락 표시이며, 기존 텍스트 Step 4의 '이 예시는 실제 코드를 보여 주지 않는다'와 페이지 이용 목적(가상의 도움말)이 같은 맥락을 이미 전달한다. 절차·조건·결과에 대한 추가 정보로 보지 않았다.", "user_impact": "영상을 보지 못해도 판단에 필요한 정보 차이는 없다고 판단한다."}
+      ],
+      "reason": "M-V는 영상 트랙만 있는 사전 제작 영상 전용입니다. 페이지에는 M-V의 별도 대안이 없지만 '텍스트를 위한 매체 대안' 예외가 주장됐습니다. 원본 전체 다섯 화면을 직접 열어 기존 텍스트 Step 1~5와 대조한 결과 영상에만 있는 절차·조건·결과 정보가 없고(no_extra_information=true), 영상이 위의 완전한 텍스트 단계의 매체 대안이라는 문구가 관찰됐습니다(clearly_labeled=true). 두 조건이 모두 확인되어 예외가 검증됐으므로 not_applicable입니다. 이 판정은 실패나 미실행을 바꾼 것이 아니라 검증된 예외에 따른 것입니다.",
+      "missing_evidence": [
+        "표시 문구와 영상의 DOM상 위치·연결 방식(이 판정에는 수집 기록의 clearly_labeled_observed=true를 사용)",
+        "ffprobe 원시 트랙 출력"
+      ],
+      "recommendations": [
+        {"change": "필수 수정 없음. 선택 개선: 표시 문구를 영상의 figure 캡션 등 영상과 구조적으로 연결된 위치에 두고, 머리글의 '가상 예시'라는 맥락을 기존 텍스트 첫머리에도 적어 두면 예외 조건이 더 분명해집니다.", "owner_role": "콘텐츠 담당", "retest": "영상이나 기존 텍스트가 바뀌면 같은 sha256 판본의 다섯 화면 전체와 기존 텍스트 전문을 다시 대조하고, 표시 문구가 같은 페이지 초기 상태에 남아 있는지 확인합니다."}
+      ]
+    }
+  ],
+  "errors": [],
+  "unreviewed_media": [],
+  "other_checks": [
+    "플레이어 키보드 조작, 자막, 다른 기준은 제외 범위로 이 판정에 포함하지 않았습니다."
+  ],
+  "next_checks": [
+    "영상 판본이 바뀌어 기존 텍스트에 없는 장면이 추가되면 예외가 더 이상 성립하지 않을 수 있으므로 재평가합니다."
+  ]
+}

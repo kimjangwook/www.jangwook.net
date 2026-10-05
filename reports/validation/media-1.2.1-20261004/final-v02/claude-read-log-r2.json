@@ -1,0 +1,71 @@
+{
+  "run": "final-v02 r2",
+  "model": "Claude Opus 5.5 (claude-opus-5-5), effort high",
+  "executed_at_local_date": "2026-10-04",
+  "folder": "/private/tmp/jangwook-a11y-claude-validation-20261003/media-20261004/final-v02",
+  "manifest": {
+    "path": "input-manifest.json",
+    "read_with": "Read (전체 267행)",
+    "order_followed": ["K17", "K42", "K08", "K63", "K25", "K91", "K34", "K56", "K79", "K03", "P-LAB", "P-NONE"]
+  },
+  "hash_verification": {
+    "method": "shasum -a 256으로 실행 전과 12개 사례 완료 후 두 번 계산해 manifest의 input_sha256 / images[].sha256과 대조하고, 전후 결과를 diff로 비교",
+    "before_matches_manifest": true,
+    "after_identical_to_before": true,
+    "inputs_modified": false,
+    "prompt_sha256_verified": false,
+    "prompt_sha256_note": "manifest의 prompt_sha256은 계산 대상 범위(프롬프트 부분의 경계)가 정의되어 있지 않아 재계산하지 않음",
+    "files": [
+      {"file": "K17-input.txt", "sha256": "bd7557023ebeef159639abb63e5ee9c3bcfa946f83622fd64efdbec005b6347e", "matches_manifest": true},
+      {"file": "K42-input.txt", "sha256": "fd537ab41006f121670da22e6a10109720d665d4db3bea01e23c613c7e3b9b77", "matches_manifest": true},
+      {"file": "K08-input.txt", "sha256": "7703fa5f422ea71926b698bf1287993a85ab06486356e073dd1dc61e43096233", "matches_manifest": true},
+      {"file": "K63-input.txt", "sha256": "dc3f1acea30bafb125fb2cdf2e4a28a9704636e10a75fc4c57a9fa41c741b87b", "matches_manifest": true},
+      {"file": "K25-input.txt", "sha256": "80fe29b87314c6ff97505efa837ca9a8aa2dc4ab6a942681d73dc22c042d31eb", "matches_manifest": true},
+      {"file": "K91-input.txt", "sha256": "ba60c9545844574c673e0e7bf6e3aee4da4f04443dead221b4b48c987cb66fe4", "matches_manifest": true},
+      {"file": "K34-input.txt", "sha256": "0f3b90e232bc7d471ef926a7894e5f774b774196f5cd9e44e60f9aa93886af88", "matches_manifest": true},
+      {"file": "K56-input.txt", "sha256": "62383d171d5646e2a8d4c1080b2dee454b4920630df65e103afa2afa9ebaf122", "matches_manifest": true},
+      {"file": "K79-input.txt", "sha256": "beb545a838d6618e05d628c0ad304dc729a6286be09eb3e6ffdab3875cf2b236", "matches_manifest": true},
+      {"file": "K03-input.txt", "sha256": "6559699a8c6664fb9027e1ae3210c2926cd12b7a33698fa2832395047ea02c38", "matches_manifest": true},
+      {"file": "P-LAB-input.txt", "sha256": "f5d99f40ed7547cc8d95a4eecd143609e1d2a7371700382ae9bbad8f2733aa5b", "matches_manifest": true},
+      {"file": "P-NONE-input.txt", "sha256": "12190adcc48ce6a3d119c4a5473e07c374f113ed0adb6f01bad5af635b79e427", "matches_manifest": true},
+      {"file": "FRAME-1.png", "sha256": "0ecde9863092a170d9a6dd0dcab283d6e2c5dcf7726818c61563d0ea1ab4345b", "matches_manifest": true},
+      {"file": "FRAME-2.png", "sha256": "ec5b60f0da0a7d39707b19333f17da4ae1f90e5972adfcccb1adc37681dd62de", "matches_manifest": true},
+      {"file": "FRAME-3.png", "sha256": "9314c735c43808fa3584d3774ed9b0ac2e82a34f7387179bfb12a10e8a348297", "matches_manifest": true},
+      {"file": "FRAME-4.png", "sha256": "3bd43a890189a0371c32b16de0881902db25cfe5abb82a8ccba93803cfa70fd1", "matches_manifest": true},
+      {"file": "FRAME-5.png", "sha256": "812821b49b7ced2c63f0650e6491d9b3da136c2eaf99400e31a08fa410668b6f", "matches_manifest": true}
+    ]
+  },
+  "cases": [
+    {"id": "K17", "input": "K17-input.txt", "lines": 131, "read_complete": true, "read_calls": "Read 1회(1~131행)", "images_designated": [], "images_read": [], "output": "K17-claude-r2.json", "format": "json", "status": "success", "scope_execution": "complete", "scope_decision": "not_applicable"},
+    {"id": "K42", "input": "K42-input.txt", "lines": 191, "read_complete": true, "read_calls": "Read 1회(1~191행)", "images_designated": [], "images_read": [], "output": "K42-claude-r2.json", "format": "json", "status": "success", "scope_execution": "complete", "scope_decision": "pass"},
+    {"id": "K08", "input": "K08-input.txt", "lines": 191, "read_complete": true, "read_calls": "Read 2회(1~112행, 113~191행)", "images_designated": [], "images_read": [], "output": "K08-claude-r2.json", "format": "json", "status": "success", "scope_execution": "complete", "scope_decision": "fail"},
+    {"id": "K63", "input": "K63-input.txt", "lines": 229, "read_complete": true, "read_calls": "Read 1회(1~229행)", "images_designated": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read": ["FRAME-1.png", "FRAME-2.png", "FRAME-3.png", "FRAME-4.png", "FRAME-5.png"], "output": "K63-claude-r2.json", "format": "json", "status": "success", "scope_execution": "complete", "scope_decision": "pass"},
+    {"id": "K25", "input": "K25-input.txt", "lines": 221, "read_complete": true, "read_calls": "Read 2회(1~162행, 163~221행)", "images_designated": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read": ["FRAME-1.png", "FRAME-2.png", "FRAME-3.png", "FRAME-4.png", "FRAME-5.png"], "output": "K25-claude-r2.json", "format": "json", "status": "success", "scope_execution": "complete", "scope_decision": "fail"},
+    {"id": "K91", "input": "K91-input.txt", "lines": 273, "read_complete": true, "read_calls": "Read 2회(1~215행, 216~273행)", "images_designated": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read": ["FRAME-1.png", "FRAME-2.png", "FRAME-3.png", "FRAME-4.png", "FRAME-5.png"], "output": "K91-claude-r2.json", "format": "json", "status": "success", "scope_execution": "complete", "scope_decision": "pass"},
+    {"id": "K34", "input": "K34-input.txt", "lines": 211, "read_complete": true, "read_calls": "Read 2회(1~155행, 156~211행)", "images_designated": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read": ["FRAME-1.png", "FRAME-2.png", "FRAME-3.png", "FRAME-4.png", "FRAME-5.png"], "output": "K34-claude-r2.json", "format": "json", "status": "success", "scope_execution": "complete", "scope_decision": "not_applicable"},
+    {"id": "K56", "input": "K56-input.txt", "lines": 211, "read_complete": true, "read_calls": "Read 2회(1~155행, 156~211행)", "images_designated": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read": ["FRAME-1.png", "FRAME-2.png", "FRAME-3.png", "FRAME-4.png", "FRAME-5.png"], "output": "K56-claude-r2.json", "format": "json", "status": "success", "scope_execution": "complete", "scope_decision": "fail"},
+    {"id": "K79", "input": "K79-input.txt", "lines": 164, "read_complete": true, "read_calls": "Read 1회(1~164행)", "images_designated": [], "images_read": [], "output": "K79-claude-r2.json", "format": "json", "status": "success", "scope_execution": "partial", "scope_decision": "inconclusive", "note": "입력 자체에 기록된 ffmpeg 디코딩 오류(ERR-A)를 결과에 보존함. 이 평가 실행의 오류가 아님"},
+    {"id": "K03", "input": "K03-input.txt", "lines": 216, "read_complete": true, "read_calls": "Read 2회(1~160행, 161~216행)", "images_designated": ["FRAME-1", "FRAME-5"], "images_read": ["FRAME-1.png", "FRAME-5.png"], "output": "K03-claude-r2.json", "format": "json", "status": "success", "scope_execution": "partial", "scope_decision": "inconclusive", "note": "지정되지 않은 FRAME-2~4는 이 사례에서 열지 않았고 근거로 쓰지 않음"},
+    {"id": "P-LAB", "input": "P-LAB-input.txt", "lines": 200, "read_complete": true, "read_calls": "Read 1회(1~200행)", "images_designated": ["FRAME-1", "FRAME-2", "FRAME-3", "FRAME-4", "FRAME-5"], "images_read": ["FRAME-1.png", "FRAME-2.png", "FRAME-3.png", "FRAME-4.png", "FRAME-5.png"], "output": "P-LAB-claude-r2.md", "format": "markdown", "status": "success", "note": "계획 작성 프롬프트이므로 접근성 판정을 내리지 않음"},
+    {"id": "P-NONE", "input": "P-NONE-input.txt", "lines": 102, "read_complete": true, "read_calls": "Read 1회(파일 끝까지, Read 표시 기준 1~103행. wc는 마지막 줄바꿈이 없어 102로 셈)", "images_designated": [], "images_read": [], "output": "P-NONE-claude-r2.md", "format": "markdown", "status": "success", "note": "계획 작성 프롬프트이므로 접근성 판정을 내리지 않음"}
+  ],
+  "not_read": [
+    "K17-claude-r1.json, K42-claude-r1.json(폴더에 있는 이전 실행 결과. 지시에 따라 열지 않음)",
+    "정답, 제작 대본, 이전 버전 결과, 다른 실행 결과, 이전 P01/P02 결과",
+    "원본 WAV/MP4 파일(제공되지 않았고 직접 청취·재생하지 않음)",
+    "입력에 적힌 URL과 image_path 경로(방문·열람하지 않음)"
+  ],
+  "tools_used": [
+    "Read: manifest, 입력 txt 12개, 지정 PNG",
+    "Write: 결과 파일 12개와 이 로그",
+    "Bash: 폴더 목록, 입력 해시 계산(전·후), 행 수 확인, 출력 JSON 파싱 확인. 판정 내용은 프로그램으로 만들지 않음"
+  ],
+  "not_used": ["브라우저", "웹 검색", "추가 수집", "소스 변경", "다른 모델 호출", "서브에이전트"],
+  "limitations": [
+    "원본 음성·영상은 직접 듣거나 재생하지 않았고, 입력에 포함된 ASR·프레임 디코딩 기록과 PNG만 근거로 사용함",
+    "PNG 파일 sha256은 manifest와 일치했으나, OBS-V의 decoded_identical_frame_hash는 디코딩 프레임 MD5라서 PNG 파일과 직접 대조할 수 없음. FRAME ID와 PNG의 대응은 manifest를 따름(OBS-V의 image_path는 다른 경로의 observed-N.png)",
+    "manifest의 prompt_sha256은 재계산하지 않음",
+    "페이지 HTML·DOM 원문과 ffprobe 원시 출력은 어느 사례에도 제공되지 않아 수집기 기록 문구에 의존함",
+    "같은 FRAME PNG가 여러 사례에 지정되어 사례마다 다시 열었으나, 같은 세션에서 연속 실행했으므로 앞 사례의 맥락이 대화 기록에 남아 있었음. 각 결과는 해당 사례 입력의 자료만 근거로 작성함"
+  ]
+}
