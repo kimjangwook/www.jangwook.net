@@ -1,0 +1,58 @@
+{
+  "case_id": "K17",
+  "round": 2,
+  "model": "Claude Opus 5.5",
+  "effort": "High",
+  "original_output_sha256": "7432573bdb95dfb4db913f9adfe876d9f6a67217617966eb5f90d1f95a5d2718",
+  "execution_input_sha256": "bd7557023ebeef159639abb63e5ee9c3bcfa946f83622fd64efdbec005b6347e",
+  "executed_prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+  "public_practice_page": "/series/accessibility/non-text-content",
+  "redactions": [
+    "Private local fixture root replaced by {{fixture_root}}; result decisions, evidence IDs, time ranges and text unchanged."
+  ],
+  "result": {
+    "criterion": "1.2.1",
+    "level": "A",
+    "prompt_version": "0.2.0",
+    "scope": {
+      "url": "https://jangwook.net/series/accessibility/non-text-content",
+      "states": [
+        "article initial state; media content and provided alternative only (PAGE-K17, 수집 시각 2026-10-04T12:04:54.613330+00:00, 실제 운영 Chromium DOM 스냅숏, main prose 범위)"
+      ],
+      "media_ids": [],
+      "inventory_complete_within_scope": true,
+      "exclusions": [
+        "Player keyboard, captions and other WCAG criteria",
+        "External or live user accounts",
+        "광고 iframe(수집 방법에서 제외로 기록됨)",
+        "main prose 밖의 페이지 영역과 초기 상태 이외의 상태"
+      ],
+      "execution": "complete",
+      "decision": "not_applicable",
+      "reason": "PAGE-K17의 observed 기록에서 audio 0, video 0, time_based_embeds 0, animated_image_candidates 0이며 media_links와 대상 목록(items)이 비어 있고, 목록 수집이 지정 범위 안에서 완전하다고 기록됐습니다(complete_within_scope=true, inventory_complete_within_scope=true). 관찰된 것은 정적 SVG 도식뿐이며 이는 시간 기반 매체가 아니므로 1.2.1 적용 대상이 아닙니다. 따라서 지정 범위에 사전 제작 음성 전용·영상 전용 콘텐츠가 없어 not_applicable입니다. 이 판정은 main prose의 초기 상태에 한정되며 페이지 전체나 다른 상태로 넓히지 않습니다."
+    },
+    "input_used": [
+      {
+        "evidence_id": "PAGE-K17",
+        "kind": "원본(페이지 DOM 스냅숏에서 파생된 목록 기록)",
+        "processed_ranges": [],
+        "limitations": [
+          "DOM 스냅숏 자체가 아니라 수집기가 정리한 개수·목록 기록만 제공됨",
+          "main prose 범위와 초기 상태에 한정되며 광고 iframe은 제외됨",
+          "페이지 화면 이미지는 이 사례에 제공되지 않아 시각적으로 대조하지 않음",
+          "URL을 직접 열지 않음(허용 조작은 제공된 고정 자료 읽기뿐)"
+        ]
+      }
+    ],
+    "media": [],
+    "errors": [],
+    "unreviewed_media": [],
+    "other_checks": [
+      "정적 SVG 도식(static_svg_diagrams=true)은 1.1.1 비텍스트 콘텐츠 기준에서 별도로 검토할 대상입니다. 이 기준의 판정에는 반영하지 않았습니다."
+    ],
+    "next_checks": [
+      "페이지가 갱신되어 audio/video, 시간 기반 임베드, 애니메이션 이미지가 추가되면 같은 범위로 목록을 다시 수집해 1.2.1을 재평가합니다.",
+      "main prose 밖 영역이나 초기 상태 이외의 상태(예: 상호작용 후 나타나는 콘텐츠)를 범위에 넣으려면 해당 상태의 목록을 별도로 수집해야 합니다."
+    ]
+  }
+}

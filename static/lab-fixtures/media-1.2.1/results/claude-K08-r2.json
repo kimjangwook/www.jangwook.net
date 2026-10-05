@@ -1,0 +1,263 @@
+{
+  "case_id": "K08",
+  "round": 2,
+  "model": "Claude Opus 5.5",
+  "effort": "High",
+  "original_output_sha256": "3aefcc63ab52ac672b5bafb24e0da2f79c595cc812c85adc591e2521184c7f79",
+  "execution_input_sha256": "7703fa5f422ea71926b698bf1287993a85ab06486356e073dd1dc61e43096233",
+  "executed_prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+  "public_practice_page": "/lab-fixtures/media-1.2.1/original/cases/K08/index.html",
+  "redactions": [
+    "Private local fixture root replaced by {{fixture_root}}; result decisions, evidence IDs, time ranges and text unchanged."
+  ],
+  "result": {
+    "criterion": "1.2.1",
+    "level": "A",
+    "prompt_version": "0.2.0",
+    "scope": {
+      "url": "file://{{fixture_root}}/cases/K08/index.html",
+      "states": [
+        "article initial state; media content and provided alternative only (PAGE-K08, 수집 시각 2026-10-04T12:04:54.613330+00:00, 로컬 HTML을 Chromium으로 파싱하고 제공된 대안 목적지를 읽은 기록)"
+      ],
+      "media_ids": [
+        "M-A"
+      ],
+      "inventory_complete_within_scope": true,
+      "exclusions": [
+        "Player keyboard, captions and other WCAG criteria",
+        "External or live user accounts"
+      ],
+      "execution": "complete",
+      "decision": "fail",
+      "reason": "지정 범위의 대상은 M-A 하나이며 목록 수집이 범위 안에서 완전하다고 기록됐습니다. M-A는 사전 제작 음성 전용이고 연결된 텍스트 대안 ALT-A가 실제로 제공되지만, 원본의 두 부정 정보가 대안에서 반대로 바뀌었습니다. 원본은 새 코드를 만들면 이전 코드를 '쓸 수 없게 된다(unusable)', 완료 후 이전 코드는 '더 이상 쓸 수 없다(can no longer be used)'고 말하는데, 대안은 각각 'usable', 'can still be used'라고 적습니다. 확인된 대상 하나가 fail이므로 scope decision은 fail입니다. 미검토 대상은 없습니다."
+    },
+    "input_used": [
+      {
+        "evidence_id": "PAGE-K08",
+        "kind": "원본(페이지 목록과 대안 연결 기록)",
+        "processed_ranges": [],
+        "limitations": [
+          "HTML 원문 자체가 아니라 수집기가 정리한 media_links 기록만 제공됨",
+          "페이지를 직접 열지 않음"
+        ]
+      },
+      {
+        "evidence_id": "MEDIA-A",
+        "kind": "원본 메타데이터(대상 목록 항목: sha256, 길이, 출처, 분류 관찰)",
+        "processed_ranges": [],
+        "limitations": [
+          "ffprobe 원시 출력은 제공되지 않음",
+          "WAV 원본을 직접 듣거나 디코딩하지 않음"
+        ]
+      },
+      {
+        "evidence_id": "OBS-A",
+        "kind": "파생(원본 WAV의 독립 ASR, faster-whisper base.en, CPU int8)",
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 19.06775,
+            "evidence_ids": [
+              "OBS-A"
+            ],
+            "reason": "기록된 processed_range와 duration이 원본 전체 길이와 같고 coverage_complete=true"
+          }
+        ],
+        "limitations": [
+          "ASR은 소리를 빠뜨리거나 단어를 잘못 인식할 수 있으며 LLM의 직접 청취가 아님",
+          "음성 인식만 수행했고 소리 사건·화자 분리 검증은 하지 않음",
+          "세그먼트 끝 표기는 19.0초, 원본 길이는 19.06775초"
+        ]
+      },
+      {
+        "evidence_id": "ALT-A",
+        "kind": "대안(텍스트, fixture-v1, paragraph 1)",
+        "processed_ranges": [],
+        "limitations": [
+          "단일 문단 텍스트이며 시간 구간이 없는 대안"
+        ]
+      }
+    ],
+    "media": [
+      {
+        "media_id": "M-A",
+        "classification": "prerecorded_audio_only",
+        "classification_evidence_ids": [
+          "MEDIA-A",
+          "OBS-A"
+        ],
+        "original_version": "local fixture assets/audio-guide.wav, sha256 dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5 (MEDIA-A와 OBS-A의 source_sha256 일치)",
+        "duration": 19.06775,
+        "execution": "complete",
+        "decision": "fail",
+        "exception": {
+          "claimed": false,
+          "verified": false,
+          "no_extra_information": null,
+          "clearly_labeled": null,
+          "evidence_ids": []
+        },
+        "coverage": {
+          "processed_ranges": [
+            {
+              "start_seconds": 0,
+              "end_seconds": 19.06775,
+              "evidence_ids": [
+                "OBS-A"
+              ],
+              "reason": "독립 ASR이 원본 전체를 처리했고 세그먼트 0~8초, 8~19초가 이어져 발화 공백이 없음. 19.0~19.06775초는 세그먼트 시간 표기의 반올림 범위로 보며 발화 누락 근거 없음"
+            }
+          ],
+          "unreviewed_ranges": [],
+          "complete": true
+        },
+        "alternatives": [
+          {
+            "alternative_id": "ALT-A",
+            "kind": "text",
+            "relation_evidence_ids": [
+              "PAGE-K08"
+            ],
+            "actually_observed": true,
+            "location": "K08 fixture 페이지의 대안 paragraph 1",
+            "version": "fixture-v1"
+          }
+        ],
+        "comparisons": [
+          {
+            "unit_id": "U01",
+            "original_location": "0.0~8.0초 세그먼트 첫 부분",
+            "original_information": "복구 코드를 만들기 전에 로그인해 있어야 한다는 전제 조건",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 첫 문장",
+            "alternative_information": "You must be signed in.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "원본 'You must be signed in before creating a recovery code'와 대안 'You must be signed in.'",
+            "interpretation": "바로 이어지는 절차가 복구 코드 생성이므로 전제 조건의 의미가 같다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U02",
+            "original_location": "0.0~8.0초 세그먼트 나머지",
+            "original_information": "절차 순서: 계정 설정 → 보안 → 복구 코드 만들기 선택",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 둘째 문장",
+            "alternative_information": "Open Account settings, then Security, and select Create recovery code.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "세 단계의 대상과 순서가 같다.",
+            "interpretation": "표기 차이만 있다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U03",
+            "original_location": "8.0~19.0초 세그먼트 첫 문장",
+            "original_information": "경고: 새 복구 코드를 만들면 이전 코드를 쓸 수 없게 됨(unusable)",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 셋째 문장",
+            "alternative_information": "A new recovery code makes the previous one usable.",
+            "relation": "inaccurate",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "원본 ASR은 'makes the previous code unusable'이고 대안은 'makes the previous one usable'이다.",
+            "interpretation": "부정 접두가 빠져 경고의 의미가 반대로 바뀌었다. 표현 차이가 아니라 정보 왜곡이다.",
+            "user_impact": "텍스트 대안만 읽는 이용자는 새 코드를 만들어도 이전 코드가 계속 유효하다고 판단해, 이전 코드를 버리거나 새 코드 저장을 소홀히 하는 등 원본 청취자와 반대의 결정을 내릴 수 있다."
+          },
+          {
+            "unit_id": "U04",
+            "original_location": "8.0~19.0초 세그먼트 중간",
+            "original_information": "새 코드를 확인(confirm)",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 넷째 문장 앞부분",
+            "alternative_information": "Confirm,",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "원본 'confirm the new code', 대안 'Confirm'.",
+            "interpretation": "같은 문장에서 새 코드를 다루므로 확인 대상이 같다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U05",
+            "original_location": "8.0~19.0초 세그먼트 중간",
+            "original_information": "새 코드를 안전한 곳에 저장",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 넷째 문장",
+            "alternative_information": "save the new code safely, and finish.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "원본 'save it in a safe place'와 의미가 같다. 'and finish'는 원본 ASR에 없다.",
+            "interpretation": "'and finish'는 새로운 조건이나 단계를 추가하지 않는다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U06",
+            "original_location": "8.0~19.0초 세그먼트 끝부분",
+            "original_information": "완료: 새 복구 코드가 준비됨",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 마지막 문장 앞부분",
+            "alternative_information": "The new code is ready;",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "원본 'your new recovery code is ready'와 의미가 같다.",
+            "interpretation": "완료 상태가 보존된다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U07",
+            "original_location": "8.0~19.0초 세그먼트 마지막",
+            "original_information": "부정 조건: 이전 코드는 더 이상 사용할 수 없음(can no longer be used)",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 마지막 문장 뒷부분",
+            "alternative_information": "the previous code can still be used.",
+            "relation": "inaccurate",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "원본 'your previous code can no longer be used', 대안 'the previous code can still be used'.",
+            "interpretation": "완료 후 이전 코드의 상태가 반대로 적혀 있다. U03과 같은 방향의 왜곡이 완료 안내에서 반복된다.",
+            "user_impact": "이용자는 완료 후에도 이전 코드로 계정을 복구할 수 있다고 믿게 되어, 실제로는 무효인 코드에 의존할 위험이 생긴다."
+          }
+        ],
+        "reason": "M-A는 MEDIA-A의 분류 관찰과 OBS-A의 발화 전용 기록으로 사전 제작 음성 전용입니다. 텍스트 대안 ALT-A가 연결되어 실제로 제공되지만, 원본 전체 구간의 정보 단위 7개 중 경고(U03)와 완료 후 이전 코드 상태(U07)의 부정 의미가 대안에서 반대로 적혀 있습니다. 이 두 정보는 이용자의 판단(이전 코드를 계속 써도 되는가)을 직접 바꾸는 핵심 정보이므로, 대안이 동등한 정보를 전달하지 않습니다. 예외 주장은 없습니다. 따라서 fail입니다.",
+        "missing_evidence": [
+          "비발화 소리의 부재는 fixture의 분류 관찰에 근거하며 ASR은 소리 사건을 검증하지 않음(판정을 바꾸는 요인은 아님)"
+        ],
+        "recommendations": [
+          {
+            "change": "ALT-A paragraph 1의 셋째 문장을 'A new recovery code makes the previous one unusable.'로, 마지막 문장 뒷부분을 'the previous code can no longer be used.'로 고칩니다. 원본 8.0~19.0초 세그먼트의 경고와 완료 안내에 있는 부정 의미를 복원하기 위해서입니다. 선택 개선으로 첫 문장에 'before creating a recovery code'를 더해 전제 조건의 시점도 보존할 수 있습니다.",
+            "owner_role": "콘텐츠 담당",
+            "retest": "같은 sha256의 audio-guide.wav와 수정된 ALT-A를 같은 페이지 초기 상태에서 대조하고, 원본 0~19.06775초 전체의 정보 단위, 특히 두 부정 표현이 대안과 일치하는지 확인합니다."
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "unreviewed_media": [],
+    "other_checks": [
+      "플레이어의 키보드 조작과 자막, 다른 기준은 제외 범위이므로 이 판정에 포함하지 않았습니다."
+    ],
+    "next_checks": [
+      "대안 수정 후 같은 원본 판본으로 재평가합니다.",
+      "대안 작성·검수 과정에 부정어와 조건문을 원본과 대조하는 단계를 추가할지 콘텐츠 담당과 검토합니다."
+    ]
+  }
+}

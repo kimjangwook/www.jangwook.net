@@ -1,0 +1,155 @@
+{
+  "scope": "Faithful copies of completed selected Claude runs. Only private local roots redacted; no new model executions or changed decisions.",
+  "artifacts": [
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K17-r1.json",
+      "original_output_sha256": "59db84cd2a8713d07b09df34a55b47535441bb1ab7665d88ae2975aa9c4b706a",
+      "decision": "not_applicable"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K17-r2.json",
+      "original_output_sha256": "7432573bdb95dfb4db913f9adfe876d9f6a67217617966eb5f90d1f95a5d2718",
+      "decision": "not_applicable"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K17-r3.json",
+      "original_output_sha256": "e1e54913c2627d1f2525ebcdbbe3b036000bfa1feb76cd90b5c1c25c737a6ec1",
+      "decision": "not_applicable"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K42-r1.json",
+      "original_output_sha256": "38a1c3ed828d4d711290301c88f86ef9633f19373ecc08b11542adbdf9978a55",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K42-r2.json",
+      "original_output_sha256": "a790e9a48b90ab8975b7eaf09253dd1f4f53a5d80a4337e0e4ed8bdf1fa0715f",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K42-r3.json",
+      "original_output_sha256": "2d3417f86705c8472c6b21f127ecb3e8dc5cf44ac8565aee56ab4eb773c86d28",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K08-r1.json",
+      "original_output_sha256": "fcec641c87fbb6515b8d4e78b220ce7770b49263c6097eada88f0d20de2f46b5",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K08-r2.json",
+      "original_output_sha256": "3aefcc63ab52ac672b5bafb24e0da2f79c595cc812c85adc591e2521184c7f79",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K08-r3.json",
+      "original_output_sha256": "814978c9ab8068af7b2725673ac25ce3956822d5942dedffa3ef93b0b31e8019",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K63-r1.json",
+      "original_output_sha256": "3deb0bc27b67ce6e4194045d0171a43b1ccb5d2d31f5531a5b3826bb43eea7cb",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K63-r2.json",
+      "original_output_sha256": "32d28f228f92e514dddb436bea5dd29af1d9ab90735702ef9f8eb4de46e1645a",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K63-r3.json",
+      "original_output_sha256": "257b1af7f91bcec013d223db9ec6a3d4e1ced8637dbf1a36e1e005c319a00237",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K25-r1.json",
+      "original_output_sha256": "8d7a0c23fa9b0aafde1b8bd954e9a694d9f47f4070a9926a778f5f49538b0f42",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K25-r2.json",
+      "original_output_sha256": "6854e38205bd7ecfed146dbb35f92e096f3e7c59fd3359e118c0c74172ae291d",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K25-r3.json",
+      "original_output_sha256": "bee19e64a4adb135e073cc749b4c7cd00b1b87fe6462c94a16d7b51b16c9d426",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K91-r1.json",
+      "original_output_sha256": "8a781aff7da63596bcc9099c451292b995c9f953871811ceee6fffa2df38790a",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K91-r2.json",
+      "original_output_sha256": "e75596b57ab42d7dd1269a2c92f3766a9ff10a396359c386f4e93758dc67b506",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K91-r3.json",
+      "original_output_sha256": "2858cff2410ecdeb36a1e1273ecb31920b23360cdde1ccfce41e059328126238",
+      "decision": "pass"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K34-r1.json",
+      "original_output_sha256": "956a1f7c5f3814ea2be39b5f128489da476b5fb08efee829f94c2e40337dfa0d",
+      "decision": "not_applicable"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K34-r2.json",
+      "original_output_sha256": "5dc79a42794ebb92da124aec63c2495ae2dd0f04e486010da9f8f19d073ac702",
+      "decision": "not_applicable"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K34-r3.json",
+      "original_output_sha256": "ad75ebd49b219f63d874b5ae3f5a6f8baf5d64bc78216168197940d876485698",
+      "decision": "not_applicable"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K56-r1.json",
+      "original_output_sha256": "5558593203f916b65a498d6dae650523f6174880a5200172279d253bf17b8c69",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K56-r2.json",
+      "original_output_sha256": "b661acacd9a902c9b91e54ee95747e65a6e826b7ac28f6d2f34cd6c546210580",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K56-r3.json",
+      "original_output_sha256": "12b461e7731ad9ca8c289e1684e7af16008f02a8200e5805c8dfd0237d4e7b7d",
+      "decision": "fail"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K79-r1.json",
+      "original_output_sha256": "ab86e50dd86e4e11cd1acfc32d352f12630e77442b86596221abeb8f0d6c6099",
+      "decision": "inconclusive"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K79-r2.json",
+      "original_output_sha256": "4b4e8e0a00977757eec62a0517d4bb65c1bd95877cb40820c5f4f26c905c7535",
+      "decision": "inconclusive"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K79-r3.json",
+      "original_output_sha256": "e3bf260e6a244fe5c0d570fd7a74695c34b58c1a424febc83a02d1d7632f2e1b",
+      "decision": "inconclusive"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K03-r1.json",
+      "original_output_sha256": "737c4050e197c8db3637b225b5c6a070d2487f1cf8fdfce6cd76df0fca44ec31",
+      "decision": "inconclusive"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K03-r2.json",
+      "original_output_sha256": "a2c07243abadc23dbc5792acf5b235abe170575f40e85aa43542d8590f5b3099",
+      "decision": "inconclusive"
+    },
+    {
+      "path": "static/lab-fixtures/media-1.2.1/results/claude-K03-r3.json",
+      "original_output_sha256": "b43bf44e71f5adeb0a8362bfbe5f3e7606dd901ade0d084077d2e027377f96fd",
+      "decision": "inconclusive"
+    }
+  ]
+}

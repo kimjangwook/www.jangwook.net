@@ -192,26 +192,56 @@ When incorporating the prompt into a team's evaluation process, it is advisable 
 
 This article's prompt receives the material inventory, original observations, alternatives, exception claims, and processing errors as separate inputs. Verified ranges are recorded numerically, and if the collection record and the scope of actual content review differ, only their verified intersection is used. The duration of an audio alternative is not mixed into the review coverage of the original video, and gaps remain as grounds for an inconclusive decision.
 
-## Scope of the prompt validation using actual materials
+## Results of evaluating the practice pages with the prompt
 
-The initial body of the previously published article contained no media targeted by this criterion. That case could verify the “Not applicable” branch, but could not test a content comparison between an original and an alternative. Therefore, actual audio files and a silent video were linked to a local practice page containing fictional recovery code instructions, and cases were constructed by changing only the alternatives. No real accounts or recovery codes were used.
+The two practice pages below use the same silent video and different text alternatives. K63 describes all five steps; K25 omits the Security screen and the warning and confirmation before creating a new code. Compare the original with each alternative, then inspect the actual prompt results. This is a fictional recovery-code guide with no real accounts or codes.
 
 The original audio is approximately 19 seconds of clear instructions from a single synthetic speaker. Speech recognition was performed separately on the original WAV to check conditions, procedures, negatives, and completion information. Neither the transcript under evaluation nor the production script was entered into the speech recognition tool. The silent video is approximately 20 seconds long and presents five screens in sequence: account settings, security, a pre-generation warning, storage, and completion. All 239 frames were actually decoded and mapped to five groups of identical frames, and the screen content was reviewed using PNGs extracted from each group.
 
 The overview's evaluation planning prompt and this article's criterion-specific prompt were used without changing their instructions; only the actual input fields were filled in. After establishing the expected decisions and required evidence in advance, the following 10 cases were run using **Claude Opus 5.5, high effort**.
 
+The following public page provides a silent video and a sufficient step-by-step description. The text includes the sign-in condition, menu choices, warning, storage and completion information shown on the five screens.
+
+The embedded views are localized teaching views of the source fixtures; they were not evaluated separately. The source pages and alternatives actually evaluated are linked below each view. The recorded results use observations collected from those source pages.
+
+<!-- media-practice-K63 -->
+
+The evaluated K63 source page linked below the view supplied collection records, independent source observations and its text alternative to the overview planning prompt and the criterion prompt. The actual result was <strong>pass</strong>. The output connected the five original screens to steps 1–5 of the alternative, recording equivalent choices and order.
+
+The next public page uses the same video but omits two middle steps from its alternative. It has both a video and a description, yet the Security screen and the warning and confirmation before creating a code are missing.
+
+<!-- media-practice-K25 -->
+
+Using the same prompt with the evaluated K25 source page’s collection records, independent source observations and text alternative produced <strong>fail</strong>. The result identified the missing Security screen in FRAME-2 and the pre-action warning and confirmation in FRAME-3. A working page with an existing description does not establish equivalent information. The table below shows the screen-by-screen correspondence recorded in the actual run.
+
+### Why the same video received different decisions
+
+| Observed original range | Screen information | K63 alternative and actual result | K25 alternative and actual result |
+| --- | --- | --- | --- |
+| 0–3.9167 s · FRAME-1 | Sign-in condition, Account settings, Open Security | Step 1 corresponds · equivalent | Step 1 corresponds · equivalent |
+| 3.9167–7.9167 s · FRAME-2 | Choose Create recovery code in Security | Step 2 corresponds · equivalent | Step absent · missing |
+| 7.9167–11.9167 s · FRAME-3 | Warning that a new code invalidates the old one; confirmation | Step 3 corresponds · equivalent | Pre-action warning and confirmation absent · missing |
+| 11.9167–15.9167 s · FRAME-4 | Safe storage and storage confirmation | Step 4 corresponds · equivalent | Step 4 corresponds · equivalent |
+| 15.9167–19.9167 s · FRAME-5 | Completion, old code unusable, return to settings | Step 5 corresponds · equivalent | Step 5 corresponds · equivalent |
+
+<strong>K63 received pass; K25 received fail.</strong> K25's final sentence also says that the old code is invalid, but the warning and confirmation required before the action are missing. Repeating the same words at the end does not preserve the information and its order. Restore the two omitted steps in their proper places, then compare the whole original and alternative again. This is a recommendation, not a completed correction or retest.
+
+[K63 actual input](/lab-fixtures/media-1.2.1/results/inputs/K63.txt) · [K63 result JSON](/lab-fixtures/media-1.2.1/results/claude-K63-r3.json) · [K25 actual input](/lab-fixtures/media-1.2.1/results/inputs/K25.txt) · [K25 result JSON](/lab-fixtures/media-1.2.1/results/claude-K25-r3.json)
+
+### Results across sufficient, missing, exception and incomplete-evidence cases
+
 | Actual input condition | Verified decision | What was verified in the result |
 | --- | --- | --- |
-| No target media in the initial body of the previous article | Not applicable | Distinguished static diagrams from time-based media and limited the scope to the article body. |
-| Original audio and a sufficient transcript | Pass | The login condition, steps, invalidation of previous codes, storage, and completion corresponded. |
-| Negative meanings reversed in the transcript of the same audio | Fail | Found the two locations where the usability of previous codes was reversed. |
-| Silent video and a sufficient step-by-step description | Pass | The meaning of the five screens, the selection targets, and their sequence corresponded. |
-| Two middle steps removed from the description of the same video | Fail | Found the omissions of the Security screen and the pre-generation warning and confirmation step. |
-| Only a sufficient audio alternative provided for the silent video | Pass | Did not require additional, separate text. |
-| Video provided as an alternative to complete existing text, with the relationship clearly labeled | Not applicable | Verified both the no-additional-information condition and the labeling condition. |
-| Only summary text provided, with an alternative-relationship label added | Fail | Did not accept the exception based on the label alone. |
-| Original file decoding failed | Inconclusive | Recorded the execution error and did not infer the original from the alternative's content. |
-| Only the first and last screens provided, with the middle range missing | Inconclusive | Did not extend equivalence in some ranges into a pass for the whole. |
+| [K17 · Page body with no target media](/en/labs/accessibility/media-alternatives/K17) | Not applicable | Distinguished static diagrams from time-based media and limited the scope to the article body. [Result](/lab-fixtures/media-1.2.1/results/claude-K17-r3.json) |
+| [K42 · Original audio and a sufficient transcript](/en/labs/accessibility/media-alternatives/K42) | Pass | The login condition, steps, invalidation of previous codes, storage, and completion corresponded. [Result](/lab-fixtures/media-1.2.1/results/claude-K42-r3.json) |
+| [K08 · Negative meanings reversed in the transcript of the same audio](/en/labs/accessibility/media-alternatives/K08) | Fail | Found the two locations where the usability of previous codes was reversed. [Result](/lab-fixtures/media-1.2.1/results/claude-K08-r3.json) |
+| [K63 · Silent video and a sufficient step-by-step description](/en/labs/accessibility/media-alternatives/K63) | Pass | The meaning of the five screens, the selection targets, and their sequence corresponded. [Result](/lab-fixtures/media-1.2.1/results/claude-K63-r3.json) |
+| [K25 · Two middle steps removed from the description of the same video](/en/labs/accessibility/media-alternatives/K25) | Fail | Found the omissions of the Security screen and the pre-generation warning and confirmation step. [Result](/lab-fixtures/media-1.2.1/results/claude-K25-r3.json) |
+| [K91 · Only a sufficient audio alternative provided for the silent video](/en/labs/accessibility/media-alternatives/K91) | Pass | Did not require additional, separate text. [Result](/lab-fixtures/media-1.2.1/results/claude-K91-r3.json) |
+| [K34 · Video provided as an alternative to complete existing text, with the relationship clearly labeled](/en/labs/accessibility/media-alternatives/K34) | Not applicable | Verified both the no-additional-information condition and the labeling condition. [Result](/lab-fixtures/media-1.2.1/results/claude-K34-r3.json) |
+| [K56 · Only summary text provided, with an alternative-relationship label added](/en/labs/accessibility/media-alternatives/K56) | Fail | Did not accept the exception based on the label alone. [Result](/lab-fixtures/media-1.2.1/results/claude-K56-r3.json) |
+| [K79 · Original file decoding failed](/en/labs/accessibility/media-alternatives/K79) | Inconclusive | Recorded the execution error and did not infer the original from the alternative's content. [Result](/lab-fixtures/media-1.2.1/results/claude-K79-r3.json) |
+| [K03 · Only the first and last screens provided, with the middle range missing](/en/labs/accessibility/media-alternatives/K03) | Inconclusive | Did not extend equivalence in some ranges into a pass for the whole. [Result](/lab-fixtures/media-1.2.1/results/claude-K03-r3.json) |
 
 The decisions for all 10 cases matched the reference answers established in advance. **Each of the 10 cases was run a total of 3 times with the same inputs, and the decisions in all 30 runs matched the reference answers.** The overview plan was also run 3 times each for cases with and without media, checking whether it organized the scope, required materials, and unverified status without making an actual evaluation decision. Each repetition forked from prior context that contained no results for this criterion, and the cases were processed sequentially within each fork.
 
@@ -222,6 +252,12 @@ In the audio case with reversed negatives, the original's 8–19-second utteranc
 This test is a comparison against reference answers prepared during drafting, not a conformance certification by an independent accessibility expert. A model name alone cannot guarantee the same results.
 
 This prompt is structured to compare originals and alternatives with a fixed scope and material pathway. When connecting a new model, tool, or media type, retest normal, omission, exception, and processing-failure cases, and do not include materials that were not actually processed as evidence for a pass.
+
+### Final prompt for the exercise
+
+The following criterion prompt preserves the instructions actually used for these cases. Use the [overview planning prompt](/en/series/accessibility/overview#evaluation-prompt) to define the target and collection scope, then supply actual inputs and independently observed source evidence. The case input files illustrate the required material. A URL alone is insufficient; do not reuse the alternative as an observation of the original. The instructions include evidence recording and branches for pass, fail, exceptions, missing evidence and processing errors. They are the final instructions for the validated scope, not a guarantee of accuracy for every video or whole-site WCAG conformance.
+
+<!-- evaluation-prompt -->
 
 ## The next article covers video with sound
 

@@ -1,0 +1,336 @@
+{
+  "case_id": "K25",
+  "round": 2,
+  "model": "Claude Opus 5.5",
+  "effort": "High",
+  "original_output_sha256": "6854e38205bd7ecfed146dbb35f92e096f3e7c59fd3359e118c0c74172ae291d",
+  "execution_input_sha256": "80fe29b87314c6ff97505efa837ca9a8aa2dc4ab6a942681d73dc22c042d31eb",
+  "executed_prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+  "public_practice_page": "/lab-fixtures/media-1.2.1/original/cases/K25/index.html",
+  "redactions": [
+    "Private local fixture root replaced by {{fixture_root}}; result decisions, evidence IDs, time ranges and text unchanged."
+  ],
+  "result": {
+    "criterion": "1.2.1",
+    "level": "A",
+    "prompt_version": "0.2.0",
+    "scope": {
+      "url": "file://{{fixture_root}}/cases/K25/index.html",
+      "states": [
+        "article initial state; media content and provided alternative only (PAGE-K25, 수집 시각 2026-10-04T12:04:54.613330+00:00, 로컬 HTML을 Chromium으로 파싱하고 제공된 대안 목적지를 읽은 기록)"
+      ],
+      "media_ids": [
+        "M-V"
+      ],
+      "inventory_complete_within_scope": true,
+      "exclusions": [
+        "Player keyboard, captions and other WCAG criteria",
+        "External or live user accounts"
+      ],
+      "execution": "complete",
+      "decision": "fail",
+      "reason": "지정 범위의 대상은 M-V 하나이며 목록 수집이 범위 안에서 완전하다고 기록됐습니다. M-V는 사전 제작 영상 전용이고, 원본 0~19.916667초 전체를 다섯 동일 프레임 그룹과 대표 PNG로 확인했습니다. 연결된 텍스트 대안 ALT-V에는 1단계, 4단계, 5단계만 있고 2단계(Security 화면과 Create recovery code 선택)와 3단계(새 코드가 이전 코드를 쓸 수 없게 만든다는 경고와 Confirm new code)가 없습니다. 입력에 다른 대안 경로(음성 트랙 등)나 예외 주장은 없습니다. 확인된 대상 하나가 fail이므로 scope decision은 fail입니다."
+    },
+    "input_used": [
+      {
+        "evidence_id": "PAGE-K25",
+        "kind": "원본(페이지 목록과 대안 연결 기록)",
+        "processed_ranges": [],
+        "limitations": [
+          "HTML 원문 자체가 아니라 수집기가 정리한 media_links 기록만 제공됨. M-V에 연결된 대안은 ALT-V 하나",
+          "ALT-V paragraph 1의 내용은 제공되지 않음",
+          "페이지를 직접 열지 않음"
+        ]
+      },
+      {
+        "evidence_id": "MEDIA-V",
+        "kind": "원본 메타데이터(대상 목록 항목: sha256, 길이, 출처, ffprobe 기반 분류 관찰)",
+        "processed_ranges": [],
+        "limitations": [
+          "ffprobe 원시 출력은 제공되지 않음",
+          "MP4를 직접 재생하지 않음"
+        ]
+      },
+      {
+        "evidence_id": "OBS-V",
+        "kind": "파생(ffmpeg 전체 프레임 디코딩 + framemd5, 12fps, 239프레임, 5개 동일 프레임 그룹)",
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 19.916667,
+            "evidence_ids": [
+              "OBS-V"
+            ],
+            "reason": "239프레임 ÷ 12fps = 19.9167초로 원본 길이와 같고 다섯 그룹이 서로 이어짐"
+          }
+        ],
+        "limitations": [
+          "전체 구간 판단은 모든 디코딩 프레임이 다섯 그룹 중 하나와 바이트 동일하다는 수집 기록에 근거함",
+          "그룹 해시는 디코딩 프레임 MD5로 PNG 파일 sha256과 직접 대조할 수 없음"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-1",
+        "kind": "파생(PNG, 0~3.9167초 그룹 대표)",
+        "processed_ranges": [],
+        "limitations": [
+          "이 사례에서 Read로 실제 열람. manifest의 FRAME-1.png를 OBS-V의 FRAME-1로 대응"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-2",
+        "kind": "파생(PNG, 3.9167~7.9167초 그룹 대표)",
+        "processed_ranges": [],
+        "limitations": [
+          "이 사례에서 Read로 실제 열람"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-3",
+        "kind": "파생(PNG, 7.9167~11.9167초 그룹 대표)",
+        "processed_ranges": [],
+        "limitations": [
+          "이 사례에서 Read로 실제 열람"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-4",
+        "kind": "파생(PNG, 11.9167~15.9167초 그룹 대표)",
+        "processed_ranges": [],
+        "limitations": [
+          "이 사례에서 Read로 실제 열람"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-5",
+        "kind": "파생(PNG, 15.9167~19.9167초 그룹 대표)",
+        "processed_ranges": [],
+        "limitations": [
+          "이 사례에서 Read로 실제 열람"
+        ]
+      },
+      {
+        "evidence_id": "ALT-V",
+        "kind": "대안(텍스트, fixture-v1, paragraph 2~4)",
+        "processed_ranges": [],
+        "limitations": [
+          "문단 번호는 1:, 4:, 5:로 2와 3이 비어 있음"
+        ]
+      }
+    ],
+    "media": [
+      {
+        "media_id": "M-V",
+        "classification": "prerecorded_video_only",
+        "classification_evidence_ids": [
+          "MEDIA-V",
+          "OBS-V"
+        ],
+        "original_version": "local fixture assets/silent-guide.mp4, sha256 72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d",
+        "duration": 19.916667,
+        "execution": "complete",
+        "decision": "fail",
+        "exception": {
+          "claimed": false,
+          "verified": false,
+          "no_extra_information": null,
+          "clearly_labeled": null,
+          "evidence_ids": []
+        },
+        "coverage": {
+          "processed_ranges": [
+            {
+              "start_seconds": 0,
+              "end_seconds": 3.9166666666666665,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-1"
+              ],
+              "reason": "그룹 1 동일 프레임 기록과 대표 PNG 열람"
+            },
+            {
+              "start_seconds": 3.9166666666666665,
+              "end_seconds": 7.916666666666667,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-2"
+              ],
+              "reason": "그룹 2 동일 프레임 기록과 대표 PNG 열람"
+            },
+            {
+              "start_seconds": 7.916666666666667,
+              "end_seconds": 11.916666666666666,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-3"
+              ],
+              "reason": "그룹 3 동일 프레임 기록과 대표 PNG 열람"
+            },
+            {
+              "start_seconds": 11.916666666666666,
+              "end_seconds": 15.916666666666666,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-4"
+              ],
+              "reason": "그룹 4 동일 프레임 기록과 대표 PNG 열람"
+            },
+            {
+              "start_seconds": 15.916666666666666,
+              "end_seconds": 19.916667,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-5"
+              ],
+              "reason": "그룹 5 동일 프레임 기록과 대표 PNG 열람. 끝 경계 차이는 소수 표기 반올림"
+            }
+          ],
+          "unreviewed_ranges": [],
+          "complete": true
+        },
+        "alternatives": [
+          {
+            "alternative_id": "ALT-V",
+            "kind": "text",
+            "relation_evidence_ids": [
+              "PAGE-K25"
+            ],
+            "actually_observed": true,
+            "location": "K25 fixture 페이지의 대안 paragraph 2~4",
+            "version": "fixture-v1"
+          }
+        ],
+        "comparisons": [
+          {
+            "unit_id": "U01",
+            "original_location": "0~3.9167초, FRAME-1",
+            "original_information": "1/5 'Account settings', 'You must be signed in before creating a recovery code.', 버튼 'Open Security'",
+            "alternative_id": "ALT-V",
+            "alternative_location": "paragraph 2",
+            "alternative_information": "1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-1",
+              "OBS-V",
+              "ALT-V"
+            ],
+            "observation": "화면 제목, 전제 조건, 버튼 이름이 같다.",
+            "interpretation": "1단계 정보가 보존된다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U02",
+            "original_location": "3.9167~7.9167초, FRAME-2",
+            "original_information": "2/5 'Security', 'Recovery codes help restore access to your account.', 버튼 'Create recovery code'",
+            "alternative_id": "ALT-V",
+            "alternative_location": "해당 문단 없음(paragraph 2 다음이 '4:'로 시작하는 paragraph 3)",
+            "alternative_information": "없음",
+            "relation": "missing",
+            "evidence_ids": [
+              "FRAME-2",
+              "OBS-V",
+              "ALT-V"
+            ],
+            "observation": "원본 2단계 화면이 대안에 없다.",
+            "interpretation": "Security 화면에서 Create recovery code를 선택하는 단계와 복구 코드의 용도 설명이 누락됐다.",
+            "user_impact": "대안만 읽는 이용자는 1단계의 Open Security 다음에 무엇을 선택해야 복구 코드 생성으로 가는지 알 수 없다."
+          },
+          {
+            "unit_id": "U03",
+            "original_location": "7.9167~11.9167초, FRAME-3",
+            "original_information": "3/5 'Before you continue', 경고 'Creating a new recovery code makes the previous code unusable.', 버튼 'Confirm new code'",
+            "alternative_id": "ALT-V",
+            "alternative_location": "해당 문단 없음",
+            "alternative_information": "없음",
+            "relation": "missing",
+            "evidence_ids": [
+              "FRAME-3",
+              "OBS-V",
+              "ALT-V"
+            ],
+            "observation": "원본 3단계의 경고와 확인 단계가 대안에 없다.",
+            "interpretation": "새 코드를 만들기 전에 이전 코드가 무효화된다는 경고와 확인 조작이 누락됐다. 5단계 문단에 '이전 코드를 더 이상 쓸 수 없다'는 결과는 있지만, 진행 전에 위험을 알리고 확인을 요구하는 단계는 대체되지 않는다.",
+            "user_impact": "이용자는 생성을 확정하기 전에 이전 코드가 무효가 된다는 사실을 알지 못한 채 진행하게 되고, 결과를 완료 단계에서야 알게 된다."
+          },
+          {
+            "unit_id": "U04",
+            "original_location": "11.9167~15.9167초, FRAME-4",
+            "original_information": "4/5 'Recovery code created', 'Save the code in a safe place. This example does not show a real code.', 버튼 'I saved my code'",
+            "alternative_id": "ALT-V",
+            "alternative_location": "paragraph 3",
+            "alternative_information": "4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-4",
+              "OBS-V",
+              "ALT-V"
+            ],
+            "observation": "저장 지시, 실제 코드 미표시 안내, 버튼 이름이 같다.",
+            "interpretation": "4단계 정보가 보존된다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U05",
+            "original_location": "15.9167~19.9167초, FRAME-5",
+            "original_information": "5/5 'Complete', 'Your new recovery code is ready. Your previous code can no longer be used.', 버튼 'Return to settings'",
+            "alternative_id": "ALT-V",
+            "alternative_location": "paragraph 4",
+            "alternative_information": "5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-5",
+              "OBS-V",
+              "ALT-V"
+            ],
+            "observation": "완료 상태, 부정 조건, 버튼 이름이 같다.",
+            "interpretation": "5단계 정보가 보존된다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U06",
+            "original_location": "0~19.9167초 전체, 화면 상단 1/5~5/5",
+            "original_information": "다섯 단계의 순서와 전체 단계 수",
+            "alternative_id": "ALT-V",
+            "alternative_location": "paragraph 2~4의 번호 1, 4, 5",
+            "alternative_information": "번호 1, 4, 5만 있는 세 문단",
+            "relation": "missing",
+            "evidence_ids": [
+              "OBS-V",
+              "FRAME-1",
+              "FRAME-2",
+              "FRAME-3",
+              "FRAME-4",
+              "FRAME-5",
+              "ALT-V"
+            ],
+            "observation": "대안의 번호가 1에서 4로 건너뛴다.",
+            "interpretation": "순서 정보 중 2·3단계 구간이 끊겨 있어 전체 절차의 연속성이 보존되지 않는다.",
+            "user_impact": "이용자는 단계가 빠졌다는 것만 짐작할 수 있고 빠진 내용을 알 수 없다."
+          }
+        ],
+        "reason": "M-V는 영상 트랙만 있고 음성이 없는 사전 제작 영상 전용입니다. 원본 전체 구간을 확인했고, 연결된 텍스트 대안 ALT-V가 실제로 제공되지만 2단계와 3단계의 화면 정보(선택할 버튼, 복구 코드 용도, 이전 코드 무효화 경고, 확인 조작)가 누락됐습니다. 입력에는 음성 트랙이나 다른 시간 기반 매체 대안, 예외 주장이 없어 이 누락을 대신할 경로가 없습니다. 확실한 누락이므로 fail입니다.",
+        "missing_evidence": [
+          "ALT-V paragraph 1과 페이지 본문의 나머지(누락 단계가 다른 위치에 있는지 확인하려면 필요하지만, PAGE-K25의 media_links는 ALT-V만 대안으로 기록함)",
+          "ffprobe 원시 트랙 출력"
+        ],
+        "recommendations": [
+          {
+            "change": "ALT-V의 1단계 문단 뒤에 원본 3.9167~7.9167초(2단계: Security 화면, 'Recovery codes help restore access to your account.', Create recovery code 선택)와 7.9167~11.9167초(3단계: Before you continue, 'Creating a new recovery code makes the previous code unusable.', Confirm new code 선택)를 설명하는 문단 두 개를 추가하고 번호를 1~5로 이어지게 합니다. 생성 전 경고를 대안에서도 같은 순서로 전달하기 위해서입니다.",
+            "owner_role": "콘텐츠 담당",
+            "retest": "같은 sha256의 silent-guide.mp4 전체 다섯 그룹과 수정된 ALT-V 전체 문단을 같은 페이지 초기 상태에서 단계별로 대조합니다."
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "unreviewed_media": [],
+    "other_checks": [
+      "플레이어 키보드 조작, 자막, 다른 기준은 제외 범위로 이 판정에 포함하지 않았습니다.",
+      "영상 속 버튼은 녹화된 화면 이미지이며 실제 조작 요소가 아닙니다."
+    ],
+    "next_checks": [
+      "대안 수정 후 같은 원본 판본으로 재평가합니다.",
+      "페이지 본문 전체를 수집해 대안 외 위치에 단계 설명이 있는지 확인하려면 별도 수집이 필요합니다."
+    ]
+  }
+}

@@ -42,3 +42,5 @@
 /* Preserve learning-navigation labels when readers enlarge article text. */
 .article-pagination a{min-width:0;overflow-wrap:anywhere}
 .series-outline-list a{grid-template-columns:2ch minmax(0,1fr)}
+
+.prose .table-scroll{max-width:100%;overflow-x:auto;margin-block:24px}.prose .table-scroll table{display:table;overflow:visible;margin:0;min-width:100%}

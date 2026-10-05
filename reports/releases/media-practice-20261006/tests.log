@@ -1,0 +1,37 @@
+
+> jangwook-net@2.0.0 test
+> node --test tests/*.test.mjs
+
+WebSocket server error: Port 24678 is already in use
+✔ language preference respects explicit selection and weighted browser languages (1.99975ms)
+✔ four real localized homes provide SSR metadata, selector links and only approved reading (1.942042ms)
+✔ all 352 documents have modification dates; only published editions have a first-publication date (0.568417ms)
+✔ latest list is limited to five approved articles in first-publication order (0.211792ms)
+✔ validation rejects malformed email, unrecognized role and missing consent (2.222958ms)
+✔ drafts are available only in local preview; public bundles exclude all drafts (1.019958ms)
+✔ lead, optional consent and captured mail persist; duplicate request creates no second mail (214.016375ms)
+✔ concurrent submissions produce one request and one captured outbox (113.469875ms)
+✔ rate limit stops the sixth request (240.451166ms)
+✔ public draft submission and nonlocal capture cannot create leads (3.305042ms)
+✔ provider acceptance records a receipt and attaches approved prompts; failures stay distinct (120.879042ms)
+✔ expired material links can be requested again with a fresh token (85.637916ms)
+✔ changed content, invalid approval dates and future publication remain private (0.172ms)
+✔ provider acceptance followed by database failure keeps the send claim and receipt (50.555583ms)
+✔ native media headers expose length and preserve source bytes (18.417625ms)
+✔ prefix, suffix and open-ended ranges return the exact source interval (3.621625ms)
+✔ unsatisfiable ranges and validator mismatches retain HTTP semantics (1.298875ms)
+✔ media routing excludes HTML, unrelated paths and arbitrary language assets (0.343875ms)
+WebSocket server error: Port 24678 is already in use
+✔ localized overview has a real translated body, prompt, four figures and reciprocal paths (38.03575ms)
+✔ all chapters have four-language preparation pages without a Korean fallback (36.355875ms)
+✔ exact translation approval and current Korean source are required outside preview (0.248708ms)
+✔ RSS and multilingual sitemap expose only approved chapters and exclude stale approvals (4.379709ms)
+✔ article learning navigation exposes only ordered metadata and honest publication state (1.29425ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3545.443375

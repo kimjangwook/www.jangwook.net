@@ -1,0 +1,628 @@
+{
+  "base": "http://127.0.0.1:8801",
+  "articles": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "195d2469ac4b2425992b4a5a8840eb31ff6b6ffdd2e12277eda48a9277fb038f",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "inlineCaseOrder": [
+        "K63",
+        "K25"
+      ],
+      "promptAfterResults": true,
+      "SSR": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "547f363c7639c464b60982dde9228603a869fcabb8a5f108f72ee03a186bc90b",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "inlineCaseOrder": [
+        "K63",
+        "K25"
+      ],
+      "promptAfterResults": true,
+      "SSR": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "265a85c1d95f9b60baee3812a96a1eb7def7af15c0c98326519a3bdf8df9b440",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "inlineCaseOrder": [
+        "K63",
+        "K25"
+      ],
+      "promptAfterResults": true,
+      "SSR": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "6d7a90954c0e8067c2672f0b5ee85c82b7d9f898ca784ae453128584ad6d7263",
+      "firstPublishedAt": "2026-10-05T14:00:04.151669Z",
+      "inlineCaseOrder": [
+        "K63",
+        "K25"
+      ],
+      "promptAfterResults": true,
+      "SSR": true
+    }
+  ],
+  "responsive": [
+    {
+      "lang": "ko",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "overflow": false,
+      "axeViolations": []
+    }
+  ],
+  "noJS": [
+    {
+      "lang": "ko",
+      "inlinePractice": true,
+      "promptReadable": true
+    },
+    {
+      "lang": "en",
+      "inlinePractice": true,
+      "promptReadable": true
+    },
+    {
+      "lang": "ja",
+      "inlinePractice": true,
+      "promptReadable": true
+    },
+    {
+      "lang": "zh",
+      "inlinePractice": true,
+      "promptReadable": true
+    }
+  ],
+  "nativePlayback": [
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.204936,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.20085,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "en",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.209277,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "en",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.200512,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "ja",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.213298,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "ja",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.209356,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "zh",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.204379,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "chromium",
+      "lang": "zh",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.20277,
+      "error": null,
+      "duration": 19.916667,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "ko",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.2286662076066797,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "ko",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.3014662083351165,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "en",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.1910353333133608,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "en",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.195560000252281,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "ja",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.1843685000277906,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "ja",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.1878356669835044,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "zh",
+      "caseId": "K63",
+      "paused": false,
+      "time": 1.1865864587242199,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    },
+    {
+      "engine": "webkit",
+      "lang": "zh",
+      "caseId": "K25",
+      "paused": false,
+      "time": 1.1967384166550339,
+      "error": null,
+      "duration": 19.917,
+      "seek16": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K03-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K03-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K03-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K08-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K08-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K08-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K17-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K17-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K17-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K25-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K25-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K25-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K34-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K34-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K34-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "not_applicable",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K42-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K42-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K42-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K56-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K56-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K56-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "fail",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K63-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K63-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K63-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K79-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K79-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K79-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "inconclusive",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K91-r1.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K91-r2.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/claude-K91-r3.json",
+      "hashMatch": true,
+      "recordedDecision": "pass",
+      "allResultFieldsPreserved": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K17.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K42.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K08.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K63.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K25.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K91.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K34.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K56.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K79.txt",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/results/inputs/K03.txt",
+      "hashMatch": true
+    }
+  ],
+  "preservation": [
+    {
+      "lang": "ko",
+      "promptSHA": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+      "unchanged": true
+    },
+    {
+      "lang": "en",
+      "promptSHA": "41e6b5dc18900f5d921541c92da0fdb2139f753d1d6c99b1183b1da9b698d767",
+      "unchanged": true
+    },
+    {
+      "lang": "ja",
+      "promptSHA": "d3df13e1283cf354b7575615a5ab9c6ce788dffc65de317f8705c6f91c3f1181",
+      "unchanged": true
+    },
+    {
+      "lang": "zh",
+      "promptSHA": "930c64aa94bb676a68c1055912722c3525aa668ac63fbcad6ca959ccab70e6b7",
+      "unchanged": true
+    },
+    {
+      "lang": "ko",
+      "slug": "overview",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "unchanged"
+    },
+    {
+      "lang": "ko",
+      "slug": "non-text-content",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "unchanged"
+    },
+    {
+      "lang": "ko",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "updated"
+    },
+    {
+      "lang": "en",
+      "slug": "overview",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "unchanged"
+    },
+    {
+      "lang": "en",
+      "slug": "non-text-content",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "unchanged"
+    },
+    {
+      "lang": "en",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "updated"
+    },
+    {
+      "lang": "ja",
+      "slug": "overview",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "unchanged"
+    },
+    {
+      "lang": "ja",
+      "slug": "non-text-content",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "unchanged"
+    },
+    {
+      "lang": "ja",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "updated"
+    },
+    {
+      "lang": "zh",
+      "slug": "overview",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "unchanged"
+    },
+    {
+      "lang": "zh",
+      "slug": "non-text-content",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "unchanged"
+    },
+    {
+      "lang": "zh",
+      "slug": "audio-only-and-video-only-prerecorded",
+      "firstPublishedAtUnchanged": true,
+      "priorArticleIdentity": "updated"
+    }
+  ],
+  "errors": []
+}

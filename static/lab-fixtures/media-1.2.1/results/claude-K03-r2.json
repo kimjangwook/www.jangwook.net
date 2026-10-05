@@ -1,0 +1,272 @@
+{
+  "case_id": "K03",
+  "round": 2,
+  "model": "Claude Opus 5.5",
+  "effort": "High",
+  "original_output_sha256": "a2c07243abadc23dbc5792acf5b235abe170575f40e85aa43542d8590f5b3099",
+  "execution_input_sha256": "6559699a8c6664fb9027e1ae3210c2926cd12b7a33698fa2832395047ea02c38",
+  "executed_prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+  "public_practice_page": "/lab-fixtures/media-1.2.1/original/cases/K03/index.html",
+  "redactions": [
+    "Private local fixture root replaced by {{fixture_root}}; result decisions, evidence IDs, time ranges and text unchanged."
+  ],
+  "result": {
+    "criterion": "1.2.1",
+    "level": "A",
+    "prompt_version": "0.2.0",
+    "scope": {
+      "url": "file://{{fixture_root}}/cases/K03/index.html",
+      "states": [
+        "article initial state; media content and provided alternative only (PAGE-K03, 수집 시각 2026-10-04T12:04:54.613330+00:00, 로컬 HTML을 Chromium으로 파싱하고 제공된 대안 목적지를 읽은 기록)"
+      ],
+      "media_ids": [
+        "M-V"
+      ],
+      "inventory_complete_within_scope": true,
+      "exclusions": [
+        "Player keyboard, captions and other WCAG criteria",
+        "External or live user accounts"
+      ],
+      "execution": "partial",
+      "decision": "inconclusive",
+      "reason": "지정 범위의 대상은 M-V 하나이며 목록 수집이 범위 안에서 완전하다고 기록됐습니다. M-V는 영상 트랙만 있는 사전 제작 영상 전용이고 텍스트 대안 ALT-V가 연결되어 있습니다. 그러나 원본 관찰 OBS-V는 처음과 마지막 구간만 제공하며, 처리 기록과 프레임 그룹 범위의 교집합으로 확인되는 구간은 0~3.9167초와 16~19.916667초뿐입니다. 3.9167~16초(원본의 약 60%)는 내용이 관찰되지 않았습니다. 확인된 두 구간은 ALT-V의 1번·5번 문단과 동등하지만, 이 사실은 전체 pass의 근거가 되지 않습니다. ALT-V의 2~4번 문단이 원본 중간 구간과 일치하는지 확인할 수 없고, 누락·왜곡을 확정할 근거도 없으므로 fail이 아닌 inconclusive입니다."
+    },
+    "input_used": [
+      {
+        "evidence_id": "PAGE-K03",
+        "kind": "원본(페이지 목록과 대안 연결 기록)",
+        "processed_ranges": [],
+        "limitations": [
+          "HTML 원문 자체가 아니라 수집기가 정리한 media_links 기록만 제공됨",
+          "ALT-V paragraph 1의 내용은 제공되지 않음",
+          "페이지를 직접 열지 않음"
+        ]
+      },
+      {
+        "evidence_id": "MEDIA-V",
+        "kind": "원본 메타데이터(대상 목록 항목: sha256, 길이 19.916667초, 출처, ffprobe 기반 분류 관찰)",
+        "processed_ranges": [],
+        "limitations": [
+          "ffprobe 원시 출력은 제공되지 않음",
+          "MP4를 직접 재생하지 않음"
+        ]
+      },
+      {
+        "evidence_id": "OBS-V",
+        "kind": "파생(ffmpeg 프레임 디코딩 + framemd5, 12fps, 일부 구간만 제공)",
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 4,
+            "evidence_ids": [
+              "OBS-V"
+            ],
+            "reason": "처리 기록에 적힌 첫 구간(내용 확인 범위는 media.coverage에서 프레임 그룹과의 교집합으로 축소)"
+          },
+          {
+            "start_seconds": 16,
+            "end_seconds": 19.916667,
+            "evidence_ids": [
+              "OBS-V"
+            ],
+            "reason": "처리 기록에 적힌 마지막 구간"
+          }
+        ],
+        "limitations": [
+          "decoded_frames=null로 전체 디코딩 프레임 수가 기록되지 않음",
+          "기록의 unreviewed_ranges가 [4, 16]이고 coverage_complete=false",
+          "'Only the first and last screen ranges are supplied. No decode scan of the middle is available to this evaluation.'",
+          "처리 구간 경계(4초, 16초)와 프레임 그룹 경계(3.9167초, 15.9167초)가 서로 다름"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-1",
+        "kind": "파생(PNG, 0~3.9167초 동일 프레임 그룹 대표)",
+        "processed_ranges": [],
+        "limitations": [
+          "이 사례에서 Read로 실제 열람"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-5",
+        "kind": "파생(PNG, 15.9167~19.9167초 동일 프레임 그룹 대표)",
+        "processed_ranges": [],
+        "limitations": [
+          "이 사례에서 Read로 실제 열람"
+        ]
+      },
+      {
+        "evidence_id": "ALT-V",
+        "kind": "대안(텍스트, fixture-v1, paragraph 2~6)",
+        "processed_ranges": [],
+        "limitations": [
+          "대안 전문은 읽었으나 2~4번 문단에 대응하는 원본 구간이 관찰되지 않음"
+        ]
+      }
+    ],
+    "media": [
+      {
+        "media_id": "M-V",
+        "classification": "prerecorded_video_only",
+        "classification_evidence_ids": [
+          "MEDIA-V",
+          "OBS-V"
+        ],
+        "original_version": "local fixture assets/silent-guide.mp4, sha256 72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d (MEDIA-V와 OBS-V의 source_sha256 일치)",
+        "duration": 19.916667,
+        "execution": "partial",
+        "decision": "inconclusive",
+        "exception": {
+          "claimed": false,
+          "verified": false,
+          "no_extra_information": null,
+          "clearly_labeled": null,
+          "evidence_ids": []
+        },
+        "coverage": {
+          "processed_ranges": [
+            {
+              "start_seconds": 0,
+              "end_seconds": 3.9166666666666665,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-1"
+              ],
+              "reason": "처리 기록 0~4초와 FRAME-1 동일 프레임 그룹 0~3.9167초의 교집합. 대표 PNG를 직접 열어 내용 확인"
+            },
+            {
+              "start_seconds": 16,
+              "end_seconds": 19.916667,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-5"
+              ],
+              "reason": "처리 기록 16~19.916667초와 FRAME-5 동일 프레임 그룹 15.9167~19.9167초의 교집합. 대표 PNG를 직접 열어 내용 확인"
+            }
+          ],
+          "unreviewed_ranges": [
+            {
+              "start_seconds": 3.9166666666666665,
+              "end_seconds": 4,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-1"
+              ],
+              "reason": "처리 기록은 4초까지 처리했다고 적지만 FRAME-1 동일 프레임 그룹은 3.9167초에서 끝나 이 구간의 화면 내용을 보장하는 관찰 자료가 없음(구간 불일치)"
+            },
+            {
+              "start_seconds": 4,
+              "end_seconds": 15.916666666666666,
+              "evidence_ids": [
+                "OBS-V"
+              ],
+              "reason": "처리 기록상 미검토 구간이며 프레임 그룹·이미지가 제공되지 않음"
+            },
+            {
+              "start_seconds": 15.916666666666666,
+              "end_seconds": 16,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-5"
+              ],
+              "reason": "FRAME-5 그룹은 15.9167초에서 시작하지만 처리 기록은 16초부터라 양쪽으로 확인되지 않음(구간 불일치)"
+            }
+          ],
+          "complete": false
+        },
+        "alternatives": [
+          {
+            "alternative_id": "ALT-V",
+            "kind": "text",
+            "relation_evidence_ids": [
+              "PAGE-K03"
+            ],
+            "actually_observed": true,
+            "location": "K03 fixture 페이지의 대안 paragraph 2~6",
+            "version": "fixture-v1"
+          }
+        ],
+        "comparisons": [
+          {
+            "unit_id": "U01",
+            "original_location": "0~3.9167초, FRAME-1",
+            "original_information": "1/5 'Account settings', 'You must be signed in before creating a recovery code.', 버튼 'Open Security'",
+            "alternative_id": "ALT-V",
+            "alternative_location": "paragraph 2",
+            "alternative_information": "1: In Account settings, the page says you must be signed in before creating a recovery code. Choose Open Security.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-1",
+              "OBS-V",
+              "ALT-V"
+            ],
+            "observation": "화면 제목, 전제 조건, 버튼 이름이 대안과 같다.",
+            "interpretation": "확인된 첫 구간의 정보가 보존된다.",
+            "user_impact": "차이 없음."
+          },
+          {
+            "unit_id": "U02",
+            "original_location": "3.9167~16초(미관찰)",
+            "original_information": "관찰 자료 없음. 화면 진행 표시가 1/5와 5/5이므로 사이에 화면이 더 있을 것으로 추정되지만 내용은 확인하지 못함",
+            "alternative_id": "ALT-V",
+            "alternative_location": "paragraph 3~5",
+            "alternative_information": "2: Security ... choose Create recovery code. / 3: Before you continue warns that a new code makes the previous code unusable. Choose Confirm new code. / 4: Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code.",
+            "relation": "uncertain",
+            "evidence_ids": [
+              "OBS-V",
+              "ALT-V"
+            ],
+            "observation": "대안에는 세 단계 설명이 있으나 대응하는 원본 구간의 관찰 기록이 없다.",
+            "interpretation": "ALT를 원본 관찰로 사용할 수 없으므로 이 세 문단이 원본과 동등한지, 원본에 다른 정보가 있는지 판단할 수 없다.",
+            "user_impact": "원본 중간에 대안과 다른 경고나 단계가 있다면 대안 이용자가 그 정보를 놓칠 수 있으나, 현재 자료로는 차이 여부를 알 수 없다."
+          },
+          {
+            "unit_id": "U03",
+            "original_location": "16~19.916667초, FRAME-5",
+            "original_information": "5/5 'Complete', 'Your new recovery code is ready. Your previous code can no longer be used.', 버튼 'Return to settings'",
+            "alternative_id": "ALT-V",
+            "alternative_location": "paragraph 6",
+            "alternative_information": "5: Complete says that the new code is ready and the previous code can no longer be used. Choose Return to settings.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-5",
+              "OBS-V",
+              "ALT-V"
+            ],
+            "observation": "완료 상태와 부정 조건, 버튼 이름이 대안과 같다.",
+            "interpretation": "확인된 마지막 구간의 정보가 보존된다.",
+            "user_impact": "차이 없음."
+          }
+        ],
+        "reason": "M-V는 영상 트랙만 있는 사전 제작 영상 전용이고 텍스트 대안이 실제로 제공됩니다. 원본에서 내용이 확인된 구간은 0~3.9167초와 16~19.916667초이며 두 구간은 대안과 동등합니다. 3.9167~16초는 관찰 자료가 없거나 처리 기록과 프레임 그룹 범위가 맞지 않아 미검토로 남았습니다. 일부 구간에 문제가 없다는 사실은 전체 pass의 근거가 아니고, 미검토 구간에서 누락·왜곡을 확인한 것도 아니므로 inconclusive입니다.",
+        "missing_evidence": [
+          "원본 3.9167~16초의 전체 디코딩 기록과 각 동일 프레임 그룹의 대표 이미지",
+          "전체 디코딩 프레임 수(decoded_frames가 null)",
+          "처리 기록 경계(4초, 16초)와 프레임 그룹 경계(3.9167초, 15.9167초)의 불일치를 해소하는 기록",
+          "ffprobe 원시 트랙 출력"
+        ],
+        "recommendations": [
+          {
+            "change": "원본 전체를 다시 디코딩해 0~19.916667초의 모든 프레임이 어느 동일 프레임 그룹에 속하는지 기록하고, 중간 구간의 각 그룹 대표 이미지를 제공합니다. 그 뒤 ALT-V paragraph 3~5와 대조합니다.",
+            "owner_role": "평가 자료 수집 담당(개발)",
+            "retest": "같은 sha256의 silent-guide.mp4로 전체 프레임 그룹 기록을 만들고, 원본 0초부터 끝까지의 모든 화면을 ALT-V 전체 문단과 같은 페이지 초기 상태에서 대조합니다."
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "unreviewed_media": [
+      {
+        "media_id": "M-V",
+        "ranges": "3.9166666666666665~16초",
+        "reason": "중간 구간 관찰 자료 미제공 및 경계 불일치"
+      }
+    ],
+    "other_checks": [
+      "플레이어 키보드 조작, 자막, 다른 기준은 제외 범위로 이 판정에 포함하지 않았습니다."
+    ],
+    "next_checks": [
+      "중간 구간 자료가 확보되면 같은 기준으로 재평가해 pass 또는 fail을 확정합니다."
+    ]
+  }
+}

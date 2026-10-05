@@ -1,0 +1,7 @@
+{
+  "model": "gpt-6.1-sol",
+  "provider": "codex",
+  "effort": "high",
+  "elapsed_seconds": 43.22,
+  "scope": "Editorial evidence/translation review; no model evaluation reruns."
+}

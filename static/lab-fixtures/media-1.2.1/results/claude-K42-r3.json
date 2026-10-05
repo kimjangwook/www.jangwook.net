@@ -1,0 +1,264 @@
+{
+  "case_id": "K42",
+  "round": 3,
+  "model": "Claude Opus 5.5",
+  "effort": "High",
+  "original_output_sha256": "2d3417f86705c8472c6b21f127ecb3e8dc5cf44ac8565aee56ab4eb773c86d28",
+  "execution_input_sha256": "fd537ab41006f121670da22e6a10109720d665d4db3bea01e23c613c7e3b9b77",
+  "executed_prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+  "public_practice_page": "/lab-fixtures/media-1.2.1/original/cases/K42/index.html",
+  "redactions": [
+    "Private local fixture root replaced by {{fixture_root}}; result decisions, evidence IDs, time ranges and text unchanged."
+  ],
+  "result": {
+    "criterion": "1.2.1",
+    "level": "A",
+    "prompt_version": "0.2.0",
+    "scope": {
+      "url": "file://{{fixture_root}}/cases/K42/index.html",
+      "states": [
+        "article initial state; media content and provided alternative only (PAGE-K42: 로컬 HTML을 Chromium으로 파싱하고 제공된 대안 목적지를 모두 읽은 기록)"
+      ],
+      "media_ids": [
+        "M-A"
+      ],
+      "inventory_complete_within_scope": true,
+      "exclusions": [
+        "Player keyboard, captions and other WCAG criteria (자료 묶음의 제외 범위)",
+        "External or live user accounts (자료 묶음의 제외 범위)",
+        "초기 상태 외의 페이지 상태"
+      ],
+      "execution": "complete",
+      "decision": "pass",
+      "reason": "지정 범위의 대상은 M-A 하나이며 목록 수집이 완료됐다. M-A는 사전 제작 음성 전용으로 분류되고(MEDIA-A), 같은 페이지의 텍스트 대안 ALT-A가 연결돼 실제로 관찰됐다(PAGE-K42). 원본 해시와 일치하는 WAV 전체(0~19.06775초)를 독립 ASR로 처리한 기록 OBS-A의 정보 단위 7개가 ALT-A에서 모두 같은 의미로 확인됐다. 확인된 대상이 모두 pass이므로 범위 판정은 pass다. 이 판정은 파생 ASR 기록과 텍스트 대안을 읽고 내린 것이며 원본 음성을 직접 듣지 않았다."
+    },
+    "input_used": [
+      {
+        "evidence_id": "PAGE-K42",
+        "kind": "원본(페이지 수집 기록: 대상 목록과 미디어-대안 연결)",
+        "processed_ranges": [],
+        "limitations": [
+          "HTML 원문이 아니라 수집기가 정리한 media_links와 범위 기록을 읽었다",
+          "초기 상태만 수집됐다"
+        ]
+      },
+      {
+        "evidence_id": "MEDIA-A",
+        "kind": "원본 메타데이터(파일 경로, sha256, 길이, 분류 관찰)",
+        "processed_ranges": [],
+        "limitations": [
+          "WAV 파일 자체는 제공되지 않아 직접 재생·청취하지 않았다",
+          "트랙 구성은 classification_observation 기록에 의존한다"
+        ]
+      },
+      {
+        "evidence_id": "OBS-A",
+        "kind": "파생(원본 WAV의 독립 ASR, faster-whisper base.en, CPU int8)",
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 19.06775,
+            "evidence_ids": [
+              "OBS-A"
+            ],
+            "reason": "ASR 처리 범위 기록(processed_range 0~19.06775, coverage_complete=true). 인식된 발화 세그먼트는 0~8.0초, 8.0~19.0초"
+          }
+        ],
+        "limitations": [
+          "ASR은 소리를 빠뜨리거나 단어를 잘못 인식할 수 있는 파생 자료다",
+          "화자 구분과 비음성 소리 이벤트는 검증하지 않았다(기록상 단일 합성 화자, 의도된 정보성 비음성 소리 없음)",
+          "단어 단위 타임스탬프(words)는 비어 있다"
+        ]
+      },
+      {
+        "evidence_id": "ALT-A",
+        "kind": "대안(텍스트, fixture-v1, paragraph 1)",
+        "processed_ranges": [],
+        "limitations": [
+          "대안은 원본 관찰 기록으로 사용하지 않고 비교 대상으로만 사용했다"
+        ]
+      }
+    ],
+    "media": [
+      {
+        "media_id": "M-A",
+        "classification": "prerecorded_audio_only",
+        "classification_evidence_ids": [
+          "MEDIA-A",
+          "OBS-A"
+        ],
+        "original_version": "assets/audio-guide.wav, sha256 dedf1311f1d36b44b20d8e6f509a8f4531460412d65ee8ce56ba51a30de9f4b5 (MEDIA-A와 OBS-A의 source_sha256 일치)",
+        "duration": 19.06775,
+        "execution": "complete",
+        "decision": "pass",
+        "exception": {
+          "claimed": false,
+          "verified": false,
+          "no_extra_information": null,
+          "clearly_labeled": null,
+          "evidence_ids": []
+        },
+        "coverage": {
+          "processed_ranges": [
+            {
+              "start_seconds": 0,
+              "end_seconds": 19.06775,
+              "evidence_ids": [
+                "OBS-A"
+              ],
+              "reason": "원본 WAV 전체를 ASR로 처리한 기록. 발화 내용은 0~19.0초 세그먼트 2개로 확인됐고, 19.0~19.06775초(약 0.07초)는 인식된 발화가 없는 끝부분으로 처리 범위 안에 포함된다. 시간 표기 반올림 수준의 차이이며 처리 누락으로 보지 않았다"
+            }
+          ],
+          "unreviewed_ranges": [],
+          "complete": true
+        },
+        "alternatives": [
+          {
+            "alternative_id": "ALT-A",
+            "kind": "text",
+            "relation_evidence_ids": [
+              "PAGE-K42"
+            ],
+            "actually_observed": true,
+            "location": "같은 페이지 paragraph 1",
+            "version": "fixture-v1"
+          }
+        ],
+        "comparisons": [
+          {
+            "unit_id": "U01",
+            "original_location": "0.0~8.0초",
+            "original_information": "복구 코드를 만들기 전에 로그인해야 한다는 전제 조건",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 첫 문장",
+            "alternative_information": "You must be signed in.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "ASR 'You must be signed in before creating a recovery code'와 대안 'You must be signed in.'",
+            "interpretation": "'복구 코드를 만들기 전에'는 대안 문단 전체가 복구 코드 생성 절차라는 문맥으로 전달된다. 같은 의미의 표현 차이다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U02",
+            "original_location": "0.0~8.0초",
+            "original_information": "단계 순서: 계정 설정 열기 → 보안 열기 → 복구 코드 만들기 선택",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 둘째 문장",
+            "alternative_information": "Open Account settings, then Security, and select Create recovery code.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "세 단계와 순서(then)가 같다",
+            "interpretation": "단계와 순서가 보존됐다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U03",
+            "original_location": "8.0~19.0초",
+            "original_information": "경고: 새 복구 코드를 만들면 이전 코드를 쓸 수 없게 된다",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 셋째 문장",
+            "alternative_information": "A new recovery code makes the previous one unusable.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "'Creating a new recovery code makes the previous code unusable'과 의미가 같다",
+            "interpretation": "경고 조건과 결과가 보존됐다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U04",
+            "original_location": "8.0~19.0초",
+            "original_information": "새 코드를 확인한다",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 넷째 문장",
+            "alternative_information": "Confirm, ...",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "원본 'confirm the new code', 대안 'Confirm,'",
+            "interpretation": "확인 대상(새 코드)이 같은 문장의 'save the new code'로 이어져 문맥상 전달된다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U05",
+            "original_location": "8.0~19.0초",
+            "original_information": "새 코드를 안전한 곳에 저장한다",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 넷째 문장",
+            "alternative_information": "save the new code safely, and finish.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "'save it in a safe place'와 'save the new code safely'는 같은 의미다. 대안의 'and finish'는 ASR 기록에 없는 표현이다",
+            "interpretation": "'and finish'는 다음 완료 안내와 이어지는 절차 종료 표현으로, 새 조건이나 모순되는 정보를 더하지 않는다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U06",
+            "original_location": "8.0~19.0초",
+            "original_information": "완료: 새 복구 코드가 준비됐다",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 다섯째 문장 앞부분",
+            "alternative_information": "The new code is ready;",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "'your new recovery code is ready'와 같은 의미다",
+            "interpretation": "완료 상태가 보존됐다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U07",
+            "original_location": "8.0~19.0초",
+            "original_information": "부정 조건: 이전 코드는 더 이상 사용할 수 없다",
+            "alternative_id": "ALT-A",
+            "alternative_location": "paragraph 1 다섯째 문장 뒷부분",
+            "alternative_information": "the previous code can no longer be used.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-A",
+              "ALT-A"
+            ],
+            "observation": "부정어 'no longer'를 포함해 같은 문장이다",
+            "interpretation": "부정 조건이 보존됐다",
+            "user_impact": "차이 없음"
+          }
+        ],
+        "reason": "M-A는 사전 제작 음성 전용이며 같은 페이지에 텍스트 대안 ALT-A가 연결돼 있다. 원본 전체 구간의 독립 ASR 기록에서 확인한 전제 조건, 단계 순서, 경고, 확인·저장, 완료, 부정 조건 7개 정보 단위가 모두 대안에 같은 의미로 있다. 누락·왜곡은 확인되지 않았다. 비음성 소리와 화자 정보는 ASR이 검증하지 않았으나, 분류 기록상 단일 합성 화자의 음성 전용 녹음이고 의도된 정보성 소리가 없다.",
+        "missing_evidence": [
+          "원본 WAV의 직접 청취 기록(이번 평가는 텍스트·PNG만 처리 가능해 파생 ASR에 의존)",
+          "비음성 소리 이벤트를 검증한 독립 기록(분류 관찰만 있음)"
+        ],
+        "recommendations": [
+          {
+            "change": "필수 수정 없음. 오디오를 다시 녹음하거나 문구를 바꾸면 ALT-A도 같은 판본으로 갱신하고 판본 표기를 맞춘다",
+            "owner_role": "콘텐츠 담당",
+            "retest": "같은 sha256의 WAV를 0초부터 끝까지 다시 처리한 독립 관찰 기록과 같은 페이지의 ALT-A를 정보 단위별로 재대조한다"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "unreviewed_media": [],
+    "other_checks": [
+      "플레이어 키보드 조작과 컨트롤 이름은 2.1.1·4.1.2 등에서 별도로 확인한다(이번 범위에서 제외)"
+    ],
+    "next_checks": [
+      "가능하면 사람이 원본 WAV를 직접 들어 비음성 소리나 강조처럼 ASR이 놓칠 수 있는 정보가 없는지 확인한다"
+    ]
+  }
+}

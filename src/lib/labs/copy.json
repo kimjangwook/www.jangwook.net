@@ -2,10 +2,10 @@
   "ko": {
     "title": "음성·무음 영상 실습",
     "lead": "원본과 대안을 나란히 확인하고, 정상·누락·예외·자료 부족을 비교합니다. 가상의 복구 코드 안내이며 실제 계정이나 코드는 없습니다.",
-    "note": "검증에 사용한 원본 페이지와 음성·영상 파일은 영어이며 그대로 보존했습니다. 네 언어 실습 화면은 이해를 돕는 번역본으로, 이전 모델 실행에 사용하지 않았습니다. 원본 파일을 직접 재생한 모델 성능을 뜻하지 않습니다. 재생 화면에는 같은 영상의 브라우저 호환용 4:2:0 변환본을 사용합니다.",
+    "note": "실행 결과는 함께 연결된 시험 원본과 그 관찰 자료를 사용한 기록입니다. 아래 언어별 실습 화면은 내용을 이해하고 대안을 비교하는 화면입니다.",
     "frame": "실습 화면",
     "open": "실습 화면 직접 열기",
-    "original": "검증 당시 원본 페이지",
+    "original": "평가한 원본 페이지",
     "all": "모든 실습 사례",
     "article": "관련 시리즈 글",
     "notice": "교육용 예시입니다. 실패 사례는 의도적으로 정보를 빠뜨리거나 왜곡합니다.",
@@ -15,7 +15,7 @@
     "audioAlt": "영상의 음성 대안 · 영어",
     "label": "다음 무음 영상은 위의 완전한 글을 다른 형식으로 제공하는 대안입니다.",
     "short": "설정에서 복구 코드를 발급하고 새 코드를 저장합니다.",
-    "noMedia": "대상 매체가 없는 공개 글의 초기 본문을 확인한 사례입니다. 글 원문을 직접 열어 볼 수 있습니다.",
+    "noMedia": "대상 매체가 없는 페이지 본문을 확인한 사례입니다.",
     "gap": "평가 입력에는 첫 화면과 마지막 화면만 제공했습니다. 검토 구간은 0~3.9167초, 16~19.9167초이며 3.9167~16초는 미검토입니다. 페이지가 같은 모양인 것과 모델에 같은 자료가 제공된 것은 구별합니다.",
     "error": "이 파일은 디코딩 실패를 확인하기 위해 만든 손상 파일입니다. 재생되지 않는 것이 의도된 조건입니다. 오류를 ‘대안 없음’이나 충족으로 바꾸지 않습니다.",
     "first": "첫 화면 · 0~3.9167초",
@@ -42,7 +42,7 @@
       "일부 구간만 제공"
     ],
     "reasons": [
-      "초기 본문 범위에는 정적 도식만 있고 시간 기반 매체는 없습니다.",
+      "평가한 본문 범위에는 정적 도식만 있고 시간 기반 매체는 없습니다.",
       "음성의 조건·순서·경고·완료가 전사문에 대응합니다.",
       "이전 코드가 무효가 된다는 경고와 완료 문장의 부정 의미를 뒤집었습니다.",
       "다섯 화면의 순서와 의미가 대안에 들어 있습니다.",
@@ -58,17 +58,18 @@
     "overviewFrame": "개요 페이지 미리보기",
     "overviewOpen": "개요 페이지 직접 열기",
     "teachingTitle": "다섯 화면으로 보는 복구 코드 안내",
-    "teachingNote": "Hyperframes로 제작한 30초 무음 설명 영상입니다. 검증 원본을 바탕으로 재구성한 교육용 영상이며 기존 모델 실행에 사용한 파일은 아닙니다.",
+    "teachingNote": "다섯 화면의 순서를 보여 주는 30초 무음 영상입니다. 영상 아래에서 같은 순서의 텍스트 설명을 확인할 수 있습니다.",
     "teachingOpen": "설명 영상 직접 열기",
-    "teachingAlternative": "영상의 단계별 텍스트 설명"
+    "teachingAlternative": "영상의 단계별 텍스트 설명",
+    "practiceTitle": "실습용 자료 · 무음 영상이 있는 페이지"
   },
   "en": {
     "title": "Audio and silent-video practice",
     "lead": "Compare originals and alternatives across complete, missing, exception and unavailable-evidence cases. This is a fictional recovery-code guide with no real account or code.",
-    "note": "The original test pages and audio/video files are in English and are preserved unchanged. The four-language practice views are translated teaching versions; they were not used in the earlier model runs. These results do not measure native audio/video playback by the evaluating model. The player uses a browser-compatible 4:2:0 encoding of the same video.",
+    "note": "Recorded results use the linked source fixtures and their observation evidence. The localized practice views help you understand the content and compare alternatives.",
     "frame": "Practice view",
     "open": "Open the practice view directly",
-    "original": "Original page used for validation",
+    "original": "Evaluated source page",
     "all": "All practice cases",
     "article": "Related series chapter",
     "notice": "Teaching example. Failure cases intentionally omit or distort information.",
@@ -78,7 +79,7 @@
     "audioAlt": "Audio alternative for the video · English",
     "label": "The following silent guide is a media alternative to the complete written steps above.",
     "short": "Open settings and create a recovery code. Save the new code.",
-    "noMedia": "The initial main content of a published article had no target media. Open that article to inspect the original.",
+    "noMedia": "A page-body case with no target media.",
     "gap": "Only the first and final frames were provided to the evaluator. Reviewed ranges:0–3.9167s and16–19.9167s. Unreviewed:3.9167–16s. An identical page does not imply an identical model input.",
     "error": "This deliberately corrupt file tests decoding failure. It is expected not to play. Do not turn the error into missing alternatives or a pass.",
     "first": "First frame · 0–3.9167s",
@@ -105,7 +106,7 @@
       "Partial evidence only"
     ],
     "reasons": [
-      "The initial main content has static diagrams and no time-based media.",
+      "The evaluated body contains static diagrams and no time-based media.",
       "Conditions, sequence, warning and completion are preserved.",
       "The warning and final status incorrectly say the old code remains usable.",
       "The meaning and order of all five screens are preserved.",
@@ -121,17 +122,18 @@
     "overviewFrame": "Series overview preview",
     "overviewOpen": "Open the overview page",
     "teachingTitle": "Recovery code guide in five screens",
-    "teachingNote": "A 30-second silent teaching video made with Hyperframes. It reconstructs the original fixture for learning and is not a file used in the recorded model runs.",
+    "teachingNote": "A 30-second silent video showing five screens in sequence. The text below describes the same sequence.",
     "teachingOpen": "Open the teaching video",
-    "teachingAlternative": "Step-by-step text alternative"
+    "teachingAlternative": "Step-by-step text alternative",
+    "practiceTitle": "Practice materials · pages with a silent video"
   },
   "ja": {
     "title": "音声・無音動画の実習",
     "lead": "原本と代替情報を比べ、十分な例、欠落、例外、資料不足を確認します。架空の復旧コード案内で、実際のアカウントやコードはありません。",
-    "note": "検証に使用した元のページと音声・動画は英語で、そのまま保管しています。4言語の実習画面は理解を助ける翻訳版で、以前のモデル実行には使用していません。評価モデルによる音声・動画の直接再生性能を示すものではありません。 再生画面では同じ動画をブラウザー対応の4:2:0形式に変換した版を使用します。",
+    "note": "実行結果は、リンク先の試験用原本と観察資料を使った記録です。言語別の実習画面では内容と代替情報を比較できます。",
     "frame": "実習画面",
     "open": "実習画面を直接開く",
-    "original": "検証に使用した元のページ",
+    "original": "評価した原本ページ",
     "all": "すべての実習例",
     "article": "関連するシリーズ記事",
     "notice": "教育用の例です。失敗例には意図的な欠落や意味の反転があります。",
@@ -141,7 +143,7 @@
     "audioAlt": "動画の音声代替 · 英語",
     "label": "次の無音動画は、上の完全な手順を別の形式で提供するメディア代替です。",
     "short": "設定を開いて復旧コードを作成し、新しいコードを保存します。",
-    "noMedia": "公開記事の初期本文に対象メディアがない例です。元の記事を直接確認できます。",
+    "noMedia": "対象メディアがないページ本文の事例です。",
     "gap": "評価者には最初と最後の画面だけを提供しました。確認範囲は0〜3.9167秒と16〜19.9167秒、未確認範囲は3.9167〜16秒です。同じページでも同じ入力資料とは限りません。",
     "error": "デコード失敗を確認するための破損ファイルです。再生できないことが意図した条件です。エラーを代替の欠如や達成に置き換えません。",
     "first": "最初の画面 · 0〜3.9167秒",
@@ -168,7 +170,7 @@
       "一部の資料のみ"
     ],
     "reasons": [
-      "初期本文には静的な図があり、時間ベースのメディアはありません。",
+      "評価した本文には静的な図があり、時間ベースのメディアはありません。",
       "条件、順序、警告、完了が文字起こしに対応します。",
       "以前のコードが無効になる警告と完了の否定表現を反転しました。",
       "5画面の意味と順序を保っています。",
@@ -184,17 +186,18 @@
     "overviewFrame": "シリーズ概要のプレビュー",
     "overviewOpen": "概要ページを直接開く",
     "teachingTitle": "5つの画面で見る復旧コードの案内",
-    "teachingNote": "Hyperframesで制作した30秒の音声なし解説動画です。検証用の原本を学習向けに再構成したもので、記録済みのモデル実行に使用したファイルではありません。",
+    "teachingNote": "5つの画面の順序を示す30秒の無音動画です。下のテキストで同じ順序の説明を確認できます。",
     "teachingOpen": "解説動画を直接開く",
-    "teachingAlternative": "動画の手順を説明するテキスト"
+    "teachingAlternative": "動画の手順を説明するテキスト",
+    "practiceTitle": "実習資料 · 無音動画のあるページ"
   },
   "zh": {
     "title": "音频与无声视频练习",
     "lead": "并排比较原始内容和替代信息，检查完整、缺失、例外与证据不足的情况。示例为虚构的恢复代码指南，不含真实账户或代码。",
-    "note": "验证使用的原始页面和音视频文件为英语，保持不变。四语言练习视图是辅助理解的翻译版本，未用于此前的模型运行。结果不代表评估模型直接播放音视频的性能。 播放器使用同一视频的浏览器兼容4:2:0转码版本。",
+    "note": "运行结果来自链接中的测试原始资料及其观察证据。各语言练习视图用于理解内容、比较替代信息。",
     "frame": "练习视图",
     "open": "直接打开练习视图",
-    "original": "验证使用的原始页面",
+    "original": "评估的原始页面",
     "all": "全部练习案例",
     "article": "相关系列文章",
     "notice": "教学示例。失败案例故意省略或扭曲信息。",
@@ -204,7 +207,7 @@
     "audioAlt": "视频的音频替代 · 英语",
     "label": "下方无声视频是对上方完整书面步骤的媒体替代。",
     "short": "打开设置并创建恢复代码，保存新代码。",
-    "noMedia": "公开文章的初始正文没有目标媒体，可直接打开原文检查。",
+    "noMedia": "页面正文没有目标媒体的案例。",
     "gap": "评估输入仅提供首尾画面。已检查0至3.9167秒与16至19.9167秒，3.9167至16秒未检查。相同页面不等于模型收到相同资料。",
     "error": "这是为测试解码失败而制作的损坏文件。无法播放是预设条件，不应将错误改判为缺少替代内容或通过。",
     "first": "首个画面 · 0至3.9167秒",
@@ -231,7 +234,7 @@
       "仅部分证据"
     ],
     "reasons": [
-      "初始正文只有静态图，没有基于时间的媒体。",
+      "评估的正文只有静态图，没有基于时间的媒体。",
       "转写保留条件、顺序、警告与完成状态。",
       "警告和完成语句错误表示旧代码仍可使用。",
       "保留五个画面的含义与顺序。",
@@ -247,8 +250,9 @@
     "overviewFrame": "系列概述预览",
     "overviewOpen": "直接打开概述页面",
     "teachingTitle": "五个画面中的恢复代码指南",
-    "teachingNote": "使用Hyperframes制作的30秒无声教学视频。它依据原始测试素材重新制作，未用于已记录的模型评估。",
+    "teachingNote": "展示五个画面顺序的30秒无声视频。下方文字说明相同顺序。",
     "teachingOpen": "直接打开教学视频",
-    "teachingAlternative": "视频的分步文本替代"
+    "teachingAlternative": "视频的分步文本替代",
+    "practiceTitle": "练习资料 · 含无声视频的页面"
   }
 }

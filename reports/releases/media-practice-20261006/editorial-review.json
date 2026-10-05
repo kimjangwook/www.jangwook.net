@@ -1,0 +1,66 @@
+{
+  "decision": "needs_corrections",
+  "findings": [
+    {
+      "languages": [
+        "ko",
+        "en",
+        "ja",
+        "zh"
+      ],
+      "issue": "The text identifies the displayed public practice pages as the pages evaluated in the recorded runs, without distinguishing the original local test-page copies from localized teaching views.",
+      "evidence": "The recorded scopes identify file://{{fixture_root}}/cases/K63/index.html and file://{{fixture_root}}/cases/K25/index.html. The model used page-collection records, derived frame records, PNGs, and the original fixture-v1 text alternatives. These records do not establish separate evaluations of the localized public views.",
+      "required_change": "Attribute the recorded decisions to the original local test-page copies and explicitly identify the localized views as teaching views, not separately evaluated pages."
+    }
+  ],
+  "corrections": [
+    {
+      "language": "ko",
+      "old": "이 페이지(K63)를 개요의 평가 계획 프롬프트와 항목별 프롬프트로 평가했습니다.",
+      "new": "기록된 평가는 원본 로컬 시험 페이지(K63)의 수집 기록, 파생 원본 관찰 자료, fixture-v1 텍스트 대안을 개요의 평가 계획 프롬프트와 항목별 프롬프트에 사용한 것입니다. 여기에 제시한 현지화 교육용 보기를 별도로 평가한 결과는 아닙니다.",
+      "reason": "원본 로컬 시험 페이지의 실행 결과와 현지화 교육용 보기를 구별해야 합니다."
+    },
+    {
+      "language": "ko",
+      "old": "이 페이지(K25)에 같은 프롬프트를 사용한 결과는 **미충족(fail)**이었습니다.",
+      "new": "원본 로컬 시험 페이지(K25)의 수집 기록, 파생 원본 관찰 자료, fixture-v1 텍스트 대안에 같은 프롬프트를 사용한 기록된 결과는 **미충족(fail)**이었습니다.",
+      "reason": "미충족 판정을 현지화 공개 페이지가 아니라 기록에 명시된 원본 시험 페이지에 귀속합니다."
+    },
+    {
+      "language": "en",
+      "old": "This page (K63) was evaluated with the overview planning prompt and the criterion prompt.",
+      "new": "The recorded evaluation used the original local K63 test-page copy's collection records, derived source observations, and fixture-v1 text alternative with the overview planning prompt and the criterion prompt. It was not a separate evaluation of the localized teaching view shown here.",
+      "reason": "Distinguishes the evaluated original local test-page copy from the localized teaching view."
+    },
+    {
+      "language": "en",
+      "old": "Using the same prompt for this page (K25) produced **fail**.",
+      "new": "Using the same prompt with the original local K25 test-page copy's collection records, derived source observations, and fixture-v1 text alternative produced the recorded decision of **fail**.",
+      "reason": "Attributes the recorded fail to the original test-page copy rather than the localized public view."
+    },
+    {
+      "language": "ja",
+      "old": "このページ(K63)を概要の評価計画プロンプトと項目別プロンプトで評価しました。",
+      "new": "記録された評価では、元のローカル試験ページ(K63)の収集記録、派生した原本の観察資料、fixture-v1のテキスト代替を、概要の評価計画プロンプトと項目別プロンプトで使用しました。ここに示すローカライズされた学習用表示を別途評価した結果ではありません。",
+      "reason": "評価対象だった元のローカル試験ページと、ローカライズされた学習用表示を区別します。"
+    },
+    {
+      "language": "ja",
+      "old": "このページ(K25)に同じプロンプトを使った結果は**満たしていない(fail)**でした。",
+      "new": "元のローカル試験ページ(K25)の収集記録、派生した原本の観察資料、fixture-v1のテキスト代替に同じプロンプトを使った記録上の結果は、**満たしていない(fail)**でした。",
+      "reason": "記録された判定を、ローカライズされた公開表示ではなく元の試験ページに帰属させます。"
+    },
+    {
+      "language": "zh",
+      "old": "我们使用概览评估计划提示词与条目提示词评估了这个页面(K63)。",
+      "new": "记录中的评估使用了原始本地测试页面(K63)的采集记录、派生的原始内容观察资料和 fixture-v1 文本替代，并采用概览评估计划提示词与条目提示词。这并非对这里展示的本地化教学视图进行的单独评估。",
+      "reason": "区分记录中实际评估的原始本地测试页面与本地化教学视图。"
+    },
+    {
+      "language": "zh",
+      "old": "对这个页面(K25)使用相同提示词，结果为**不满足(fail)**。",
+      "new": "对原始本地测试页面(K25)的采集记录、派生的原始内容观察资料和 fixture-v1 文本替代使用相同提示词，记录中的结果为**不满足(fail)**。",
+      "reason": "将记录中的不满足判定归于原始测试页面，而不是本地化公开视图。"
+    }
+  ]
+}

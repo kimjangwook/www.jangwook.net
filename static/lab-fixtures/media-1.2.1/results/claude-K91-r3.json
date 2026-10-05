@@ -1,0 +1,402 @@
+{
+  "case_id": "K91",
+  "round": 3,
+  "model": "Claude Opus 5.5",
+  "effort": "High",
+  "original_output_sha256": "2858cff2410ecdeb36a1e1273ecb31920b23360cdde1ccfce41e059328126238",
+  "execution_input_sha256": "ba60c9545844574c673e0e7bf6e3aee4da4f04443dead221b4b48c987cb66fe4",
+  "executed_prompt_sha256": "5087925ddbbf24291720d1d968695dea9c6878fb5f60bd5ca1b2ad3e5e8cb440",
+  "public_practice_page": "/lab-fixtures/media-1.2.1/original/cases/K91/index.html",
+  "redactions": [
+    "Private local fixture root replaced by {{fixture_root}}; result decisions, evidence IDs, time ranges and text unchanged."
+  ],
+  "result": {
+    "criterion": "1.2.1",
+    "level": "A",
+    "prompt_version": "0.2.0",
+    "scope": {
+      "url": "file://{{fixture_root}}/cases/K91/index.html",
+      "states": [
+        "article initial state; media content and provided alternative only (PAGE-K91: 로컬 HTML을 Chromium으로 파싱하고 제공된 대안 목적지를 모두 읽은 기록)"
+      ],
+      "media_ids": [
+        "M-V"
+      ],
+      "inventory_complete_within_scope": true,
+      "exclusions": [
+        "Player keyboard, captions and other WCAG criteria (자료 묶음의 제외 범위)",
+        "External or live user accounts (자료 묶음의 제외 범위)",
+        "초기 상태 외의 페이지 상태"
+      ],
+      "execution": "complete",
+      "decision": "pass",
+      "reason": "지정 범위의 대상은 오디오 트랙이 없는 사전 제작 영상 전용 M-V 하나다. 원본 0~19.916667초 전체를 5개 동일 프레임 그룹으로 확인했다(OBS-V, FRAME-1~5 직접 열람). 연결된 대안은 별도 음성 파일 ALT-AD(36.167125초)이며, 그 독립 ASR 기록(OBS-AD)에서 다섯 단계의 화면 제목, 안내 문구, 선택할 버튼, 순서가 모두 같은 의미로 확인됐다. 영상 전용에는 동등한 시간 기반 매체 대안 하나로 충분하므로 별도 텍스트 전사문이 없다는 사실은 이 기준의 실패 사유가 아니다. 범위 판정은 pass다. 영상 재생과 음성 청취는 직접 하지 않았고 파생 프레임 기록, PNG, ASR 기록에 근거했다."
+    },
+    "input_used": [
+      {
+        "evidence_id": "PAGE-K91",
+        "kind": "원본(페이지 수집 기록: 대상 목록과 미디어-대안 연결)",
+        "processed_ranges": [],
+        "limitations": [
+          "HTML 원문이 아니라 수집기가 정리한 media_links와 범위 기록을 읽었다",
+          "초기 상태만 수집됐다"
+        ]
+      },
+      {
+        "evidence_id": "MEDIA-V",
+        "kind": "원본 메타데이터(파일 경로, sha256, 길이, ffprobe 트랙 관찰)",
+        "processed_ranges": [],
+        "limitations": [
+          "MP4 파일 자체는 제공되지 않아 직접 재생하지 않았다",
+          "오디오 트랙 부재는 ffprobe 관찰 기록에 의존한다"
+        ]
+      },
+      {
+        "evidence_id": "OBS-V",
+        "kind": "파생(원본 MP4의 ffmpeg 전체 프레임 디코딩 + framemd5, 12fps, 239프레임, 5개 동일 프레임 그룹)",
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 19.916667,
+            "evidence_ids": [
+              "OBS-V"
+            ],
+            "reason": "원본 영상 전체 디코딩 기록. 그룹 경계가 공백 없이 이어지고 47+48×4=239프레임이 12fps 기준 19.9167초와 맞는다"
+          }
+        ],
+        "limitations": [
+          "제어된 정적 5상태 fixture에만 전체 관찰이 적용된다는 기록상 한계가 있다",
+          "기록의 image_path(observed-1~5.png)와 제공된 FRAME-1~5.png는 evidence_id로만 대응된다"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-1",
+        "kind": "파생(원본 디코딩 프레임 PNG, 0~3.9167초 그룹 대표)",
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 3.9166666666666665,
+            "evidence_ids": [
+              "FRAME-1",
+              "OBS-V"
+            ],
+            "reason": "PNG를 Read로 직접 열람"
+          }
+        ],
+        "limitations": [
+          "정지 이미지"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-2",
+        "kind": "파생(원본 디코딩 프레임 PNG, 3.9167~7.9167초 그룹 대표)",
+        "processed_ranges": [
+          {
+            "start_seconds": 3.9166666666666665,
+            "end_seconds": 7.916666666666667,
+            "evidence_ids": [
+              "FRAME-2",
+              "OBS-V"
+            ],
+            "reason": "PNG를 Read로 직접 열람"
+          }
+        ],
+        "limitations": [
+          "정지 이미지"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-3",
+        "kind": "파생(원본 디코딩 프레임 PNG, 7.9167~11.9167초 그룹 대표)",
+        "processed_ranges": [
+          {
+            "start_seconds": 7.916666666666667,
+            "end_seconds": 11.916666666666666,
+            "evidence_ids": [
+              "FRAME-3",
+              "OBS-V"
+            ],
+            "reason": "PNG를 Read로 직접 열람"
+          }
+        ],
+        "limitations": [
+          "정지 이미지"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-4",
+        "kind": "파생(원본 디코딩 프레임 PNG, 11.9167~15.9167초 그룹 대표)",
+        "processed_ranges": [
+          {
+            "start_seconds": 11.916666666666666,
+            "end_seconds": 15.916666666666666,
+            "evidence_ids": [
+              "FRAME-4",
+              "OBS-V"
+            ],
+            "reason": "PNG를 Read로 직접 열람"
+          }
+        ],
+        "limitations": [
+          "정지 이미지"
+        ]
+      },
+      {
+        "evidence_id": "FRAME-5",
+        "kind": "파생(원본 디코딩 프레임 PNG, 15.9167~19.9167초 그룹 대표)",
+        "processed_ranges": [
+          {
+            "start_seconds": 15.916666666666666,
+            "end_seconds": 19.916666666666668,
+            "evidence_ids": [
+              "FRAME-5",
+              "OBS-V"
+            ],
+            "reason": "PNG를 Read로 직접 열람"
+          }
+        ],
+        "limitations": [
+          "정지 이미지"
+        ]
+      },
+      {
+        "evidence_id": "ALT-AD",
+        "kind": "대안(음성, video-audio-alternative.wav, fixture-v1, sha256 07649b74ad5ef6b570269def6e87803362bcf350a0dcba4663ebf55a35eb5943, 36.167125초)",
+        "processed_ranges": [],
+        "limitations": [
+          "대안 WAV 자체는 제공되지 않아 직접 청취하지 않았다",
+          "대안 음성 시간 구간은 원본 coverage와 합치지 않고 OBS-AD에 따로 기록했다"
+        ]
+      },
+      {
+        "evidence_id": "OBS-AD",
+        "kind": "파생(대안 WAV의 독립 ASR, faster-whisper base.en, CPU int8)",
+        "processed_ranges": [
+          {
+            "start_seconds": 0,
+            "end_seconds": 36.167125,
+            "evidence_ids": [
+              "OBS-AD"
+            ],
+            "reason": "대안 음성 전체 ASR 처리 기록(coverage_complete=true). 발화 세그먼트 7개가 0~36.04초를 공백 없이 잇고, 36.04~36.167125초는 인식된 발화가 없는 끝부분이다. 이 구간은 대안의 시간이며 원본 M-V coverage가 아니다"
+          }
+        ],
+        "limitations": [
+          "ASR은 단어를 잘못 인식할 수 있는 파생 자료다",
+          "세그먼트가 문장 중간에서 나뉘어 있어(예: 'recovery / code') 단계별 대안 위치는 세그먼트 경계로 표시했다",
+          "비음성 소리와 화자 구분은 검증하지 않았다"
+        ]
+      }
+    ],
+    "media": [
+      {
+        "media_id": "M-V",
+        "classification": "prerecorded_video_only",
+        "classification_evidence_ids": [
+          "MEDIA-V",
+          "OBS-V"
+        ],
+        "original_version": "assets/silent-guide.mp4, sha256 72f45aeff3c1c26090c4c2e68e0ae5a33f9706d4a8807d939e47a54132db0e1d (MEDIA-V와 OBS-V의 source_sha256 일치)",
+        "duration": 19.916667,
+        "execution": "complete",
+        "decision": "pass",
+        "exception": {
+          "claimed": false,
+          "verified": false,
+          "no_extra_information": null,
+          "clearly_labeled": null,
+          "evidence_ids": []
+        },
+        "coverage": {
+          "processed_ranges": [
+            {
+              "start_seconds": 0,
+              "end_seconds": 3.9166666666666665,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-1"
+              ],
+              "reason": "원본 동일 프레임 그룹 1 전체, 대표 PNG 직접 열람"
+            },
+            {
+              "start_seconds": 3.9166666666666665,
+              "end_seconds": 7.916666666666667,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-2"
+              ],
+              "reason": "원본 동일 프레임 그룹 2 전체, 대표 PNG 직접 열람"
+            },
+            {
+              "start_seconds": 7.916666666666667,
+              "end_seconds": 11.916666666666666,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-3"
+              ],
+              "reason": "원본 동일 프레임 그룹 3 전체, 대표 PNG 직접 열람"
+            },
+            {
+              "start_seconds": 11.916666666666666,
+              "end_seconds": 15.916666666666666,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-4"
+              ],
+              "reason": "원본 동일 프레임 그룹 4 전체, 대표 PNG 직접 열람"
+            },
+            {
+              "start_seconds": 15.916666666666666,
+              "end_seconds": 19.916666666666668,
+              "evidence_ids": [
+                "OBS-V",
+                "FRAME-5"
+              ],
+              "reason": "원본 동일 프레임 그룹 5 전체, 대표 PNG 직접 열람. 끝 경계와 원본 길이 19.916667의 차이는 소수 표기 반올림이다"
+            }
+          ],
+          "unreviewed_ranges": [],
+          "complete": true
+        },
+        "alternatives": [
+          {
+            "alternative_id": "ALT-AD",
+            "kind": "audio",
+            "relation_evidence_ids": [
+              "PAGE-K91"
+            ],
+            "actually_observed": true,
+            "location": "같은 페이지에 연결된 video-audio-alternative.wav (내용은 OBS-AD ASR 기록으로 확인)",
+            "version": "fixture-v1, sha256 07649b74ad5ef6b570269def6e87803362bcf350a0dcba4663ebf55a35eb5943"
+          }
+        ],
+        "comparisons": [
+          {
+            "unit_id": "U01",
+            "original_location": "0~3.9167초 (FRAME-1)",
+            "original_information": "1/5 화면, 제목 'Account settings', 안내 'You must be signed in before creating a recovery code.', 버튼 'Open Security'",
+            "alternative_id": "ALT-AD",
+            "alternative_location": "대안 음성 0.0~11.6초 세그먼트 중 Step 1 부분",
+            "alternative_information": "Step 1. In account settings, the page says you must be signed in before creating a recovery code. Choose open security.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-1",
+              "OBS-V",
+              "OBS-AD"
+            ],
+            "observation": "제목, 전제 조건, 버튼 이름이 같다. ASR의 소문자 표기는 음성 인식 결과의 표기 차이다",
+            "interpretation": "1단계 정보가 보존됐다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U02",
+            "original_location": "3.9167~7.9167초 (FRAME-2)",
+            "original_information": "2/5 화면, 제목 'Security', 안내 'Recovery codes help restore access to your account.', 버튼 'Create recovery code'",
+            "alternative_id": "ALT-AD",
+            "alternative_location": "대안 음성 5.36~17.24초 세그먼트 중 Step 2 부분",
+            "alternative_information": "Step 2. Security explains that recovery codes restore account access. Choose create recovery code.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-2",
+              "OBS-V",
+              "OBS-AD"
+            ],
+            "observation": "'help restore access'가 'restore account access'로 표현됐다",
+            "interpretation": "같은 의미의 표현 차이다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U03",
+            "original_location": "7.9167~11.9167초 (FRAME-3)",
+            "original_information": "3/5 화면, 제목 'Before you continue', 경고 'Creating a new recovery code makes the previous code unusable.', 버튼 'Confirm new code'",
+            "alternative_id": "ALT-AD",
+            "alternative_location": "대안 음성 11.6~23.64초 세그먼트 중 Step 3 부분",
+            "alternative_information": "Step 3. Before you continue warns that a new code makes the previous code unusable, choose confirm new code.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-3",
+              "OBS-V",
+              "OBS-AD"
+            ],
+            "observation": "경고의 부정 의미(unusable)와 버튼 이름이 같다",
+            "interpretation": "핵심 경고가 보존됐다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U04",
+            "original_location": "11.9167~15.9167초 (FRAME-4)",
+            "original_information": "4/5 화면, 제목 'Recovery code created', 안내 'Save the code in a safe place. This example does not show a real code.', 버튼 'I saved my code'",
+            "alternative_id": "ALT-AD",
+            "alternative_location": "대안 음성 17.24~33.4초 세그먼트 중 Step 4 부분",
+            "alternative_information": "Step 4. Recovery code created instructs you to save it safely and says that this example shows no real code. Choose I saved my code.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-4",
+              "OBS-V",
+              "OBS-AD"
+            ],
+            "observation": "저장 지시, 실제 코드 미표시 설명, 버튼 이름이 같다",
+            "interpretation": "4단계 정보가 보존됐다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U05",
+            "original_location": "15.9167~19.9167초 (FRAME-5)",
+            "original_information": "5/5 화면, 제목 'Complete', 안내 'Your new recovery code is ready. Your previous code can no longer be used.', 버튼 'Return to settings'",
+            "alternative_id": "ALT-AD",
+            "alternative_location": "대안 음성 28.32~36.04초 세그먼트 중 Step 5 부분",
+            "alternative_information": "Step 5. Complete says that the new code is ready and the previous code can no longer be used. Choose return to settings.",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "FRAME-5",
+              "OBS-V",
+              "OBS-AD"
+            ],
+            "observation": "완료 상태, 부정 조건(can no longer be used), 버튼 이름이 같다",
+            "interpretation": "결과와 부정 조건이 보존됐다",
+            "user_impact": "차이 없음"
+          },
+          {
+            "unit_id": "U06",
+            "original_location": "0~19.9167초 전체 (OBS-V 그룹 순서)",
+            "original_information": "다섯 화면이 1/5→5/5 순서로 이어지는 전환 순서",
+            "alternative_id": "ALT-AD",
+            "alternative_location": "대안 음성 0~36.04초 (Step 1~5 순서)",
+            "alternative_information": "Step 1부터 Step 5까지 순서대로 낭독",
+            "relation": "equivalent",
+            "evidence_ids": [
+              "OBS-V",
+              "OBS-AD"
+            ],
+            "observation": "단계 번호와 순서가 원본 그룹 순서와 일치한다",
+            "interpretation": "순서와 상태 변화가 보존됐다. 대안이 원본보다 길지만(36.17초 대 19.92초) 이는 정보 전달 방식의 차이이며 누락이 아니다",
+            "user_impact": "차이 없음"
+          }
+        ],
+        "reason": "M-V는 사전 제작 영상 전용이며, 연결된 음성 대안 ALT-AD가 원본 전체 구간의 다섯 단계 정보와 순서를 모두 같은 의미로 전달한다. 영상 전용에는 시간 기반 매체 대안이나 음성 트랙 중 하나면 충분하고, 대안으로 제공된 음성 설명에 별도 전사문을 재귀적으로 요구하지 않는다. 예외 주장은 없다.",
+        "missing_evidence": [
+          "MP4 원본의 직접 재생 기록과 대안 WAV의 직접 청취 기록(이번 평가는 텍스트·PNG만 처리 가능해 파생 기록에 의존)"
+        ],
+        "recommendations": [
+          {
+            "change": "필수 수정 없음. 권고(최소 요구 아님): 음성 대안의 내용을 텍스트로도 제공하면 청각장애·농맹 이용자나 소리를 켤 수 없는 이용자도 영상 정보를 얻을 수 있다",
+            "owner_role": "콘텐츠 담당",
+            "retest": "텍스트를 추가하면 같은 sha256의 MP4 프레임 그룹 5개와 텍스트를 단계별로 대조한다"
+          },
+          {
+            "change": "영상 화면 문구를 바꾸면 음성 대안을 같은 판본으로 다시 녹음한다",
+            "owner_role": "콘텐츠 담당",
+            "retest": "새 MP4 전체 프레임 그룹과 새 대안 음성의 독립 관찰 기록을 단계별로 대조한다"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "unreviewed_media": [],
+    "other_checks": [
+      "플레이어 키보드 조작과 컨트롤 이름은 2.1.1·4.1.2 등에서 별도로 확인한다(이번 범위에서 제외)",
+      "음성 대안 WAV 자체가 페이지에 별도 매체로 노출된다면, 그 재생 컨트롤의 이름과 조작은 다른 기준에서 확인한다(1.2.1을 재귀 적용하지 않음)"
+    ],
+    "next_checks": []
+  }
+}
