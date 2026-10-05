@@ -1,0 +1,71 @@
+
+> jangwook-net@2.0.0 deploy
+> node scripts/require-deploy-approval.mjs && wrangler deploy --env production
+
+
+ ⛅️ wrangler 4.145.0 (update available 4.147.0)
+───────────────────────────────────────────────
+🌀 Building list of assets...
+✨ Read 2364 files from the assets directory /private/tmp/jangwook-media-release-20261005/.svelte-kit/cloudflare
+🌀 Starting asset upload...
+🌀 Found 39 new or modified static assets to upload. Proceeding with upload...
++ /_app/version.json
++ /_app/immutable/nodes/21.Dej6X9fl.js
++ /_app/immutable/nodes/5.oc1uV_Yf.js
++ /_app/immutable/chunks/Dmu01f4X.js
++ /images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-02-7403b182179c.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-04-d878f1de17cb.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/en/fig-04-1fc7ea59f102.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-01-2a6d0d0cad45.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/en/fig-01-b1ec9a594adc.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-03-049a2550fe6b.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/en/fig-03-85d418c578ac.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-03-595ec6b6f31b.svg
++ /_app/immutable/chunks/ZZrTS5iz.js
++ /_app/immutable/entry/start.1y4qQO01.js
++ /_app/immutable/chunks/M8yAqI47.js
++ /_app/immutable/nodes/18.DKS4MsOS.js
++ /images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-02-123df0d45ef8.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/en/fig-02-5d5c107e586b.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-04-7964fd03f60b.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/en/fig-04-b1e9dbbe42d9.svg
++ /_app/immutable/nodes/0.DoMg14GC.js
++ /images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-01-54edb5be68c6.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-03-6220605a8f9a.svg
++ /_app/immutable/nodes/6.D9uykvQh.js
++ /images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-03-ed6e8f8de704.svg
++ /_app/immutable/chunks/CfRLbehC.js
++ /_app/immutable/nodes/13.BBVYQYGQ.js
++ /_app/immutable/nodes/15.ByraAVIm.js
++ /_app/immutable/nodes/1.DWtq0BVo.js
++ /images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-02-1bbffdebc7a3.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/en/fig-02-70e5dc52b19a.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-04-a89de1de7115.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-01-686953069ca3.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/en/fig-01-f8046df540d2.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-01-fa49bd3e5b7b.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/en/fig-03-ff0c6b8c4fae.svg
++ /images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-03-cb430a6d7aa9.svg
++ /_app/immutable/entry/app.C3UTllJM.js
++ /_app/immutable/chunks/c-Ep8NzG.js
+Uploaded 13 of 39 assets
+Uploaded 26 of 39 assets
+Uploaded 39 of 39 assets
+✨ Success! Uploaded 39 files (2269 already uploaded) (1.41 sec)
+
+Total Upload: 4669.09 KiB / gzip: 829.82 KiB
+Worker Startup Time: 31 ms
+Your Worker has access to the following bindings:
+Binding                                        Resource                  
+env.LEADS_DB (jangwook-leads)                  D1 Database               
+env.ASSETS                                     Assets                    
+env.MAIL_MODE ("disabled")                     Environment Variable      
+env.SITE_URL ("https://jangwook.net")          Environment Variable      
+env.FROM_EMAIL ("materials@jangwook.net")      Environment Variable      
+
+Uploaded www-jangwook-net (12.21 sec)
+Deployed www-jangwook-net triggers (4.70 sec)
+  jangwook.net (custom domain)
+  www.jangwook.net (custom domain)
+  schedule: 17 18 * * *
+Current Version ID: d8456636-cb66-4f37-a683-49d2a3fc7130

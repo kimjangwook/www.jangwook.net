@@ -1,0 +1,561 @@
+{
+  "base": "https://jangwook.net",
+  "scope": "SSR publication identity, source evidence preservation, localized figures, responsive/no-JS and native Chromium/WebKit playback. Not WCAG certification or native LLM video evaluation.",
+  "article": [
+    {
+      "lang": "ko",
+      "path": "/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "012ce0259aa15df5166e7dc7a28bbf8872e1b8045ecab04537ab1df04e7747ed",
+      "SSR": true,
+      "dates": [
+        "2026-10-05T14:00:04.151669Z",
+        "2026-10-05"
+      ],
+      "public": true
+    },
+    {
+      "lang": "en",
+      "path": "/en/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "26ab392de752d793c936d4d0d1d2176b393ef20c8957aba5618c7adde26f15ae",
+      "SSR": true,
+      "dates": [
+        "2026-10-05T14:00:04.151669Z",
+        "2026-10-05"
+      ],
+      "public": true
+    },
+    {
+      "lang": "ja",
+      "path": "/ja/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "f0052392f3e9ec5c9ba94af8b38f8f1c087477f7682a9dba96b56f7fed4e8fa4",
+      "SSR": true,
+      "dates": [
+        "2026-10-05T14:00:04.151669Z",
+        "2026-10-05"
+      ],
+      "public": true
+    },
+    {
+      "lang": "zh",
+      "path": "/zh/series/accessibility/audio-only-and-video-only-prerecorded",
+      "sourceHash": "f40a972f87e0d501580116027234b0cc87f117cae61e3244d1f65865921468c0",
+      "SSR": true,
+      "dates": [
+        "2026-10-05T14:00:04.151669Z",
+        "2026-10-05"
+      ],
+      "public": true
+    }
+  ],
+  "oldArticles": [
+    {
+      "lang": "ko",
+      "slug": "overview",
+      "hashMatch": true,
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "ko",
+      "slug": "non-text-content",
+      "hashMatch": true,
+      "firstPublishedAt": "2026-10-03T13:32:25Z"
+    },
+    {
+      "lang": "en",
+      "slug": "overview",
+      "hashMatch": true,
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "en",
+      "slug": "non-text-content",
+      "hashMatch": true,
+      "firstPublishedAt": "2026-10-03T13:32:25Z"
+    },
+    {
+      "lang": "ja",
+      "slug": "overview",
+      "hashMatch": true,
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "ja",
+      "slug": "non-text-content",
+      "hashMatch": true,
+      "firstPublishedAt": "2026-10-03T13:32:25Z"
+    },
+    {
+      "lang": "zh",
+      "slug": "overview",
+      "hashMatch": true,
+      "firstPublishedAt": "2026-10-01T20:42:37Z"
+    },
+    {
+      "lang": "zh",
+      "slug": "non-text-content",
+      "hashMatch": true,
+      "firstPublishedAt": "2026-10-03T13:32:25Z"
+    }
+  ],
+  "assets": [
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-01-2a6d0d0cad45.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-02-1bbffdebc7a3.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-03-cb430a6d7aa9.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ko/fig-04-7964fd03f60b.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/teaching/ko.mp4",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/teaching/ko.jpg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-01-b1ec9a594adc.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-02-70e5dc52b19a.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-03-85d418c578ac.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/en/fig-04-b1e9dbbe42d9.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/teaching/en.mp4",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/teaching/en.jpg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-01-fa49bd3e5b7b.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-02-7403b182179c.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-03-ed6e8f8de704.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/ja/fig-04-a89de1de7115.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/teaching/ja.mp4",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/teaching/ja.jpg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-01-686953069ca3.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-02-123df0d45ef8.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-03-6220605a8f9a.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/images/accessibility/audio-only-and-video-only-prerecorded/zh/fig-04-d878f1de17cb.svg",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/teaching/zh.mp4",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/teaching/zh.jpg",
+      "hashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/observed-1.png",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/audio-guide.wav",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/observed-5.png",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/corrupt.wav",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/video-audio-alternative.wav",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/assets/silent-guide.mp4",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K56/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K34/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K03/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K03/ALT-V.txt",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K42/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K42/ALT-A.txt",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K08/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K08/ALT-A.txt",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K63/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K63/ALT-V.txt",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K91/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K25/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K25/ALT-V.txt",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K79/index.html",
+      "originalHashMatch": true
+    },
+    {
+      "path": "/lab-fixtures/media-1.2.1/original/cases/K79/ALT-A.txt",
+      "originalHashMatch": true
+    }
+  ],
+  "browser": [
+    {
+      "lang": "ko",
+      "width": 1440,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 390,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 390,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    },
+    {
+      "lang": "zh",
+      "width": 320,
+      "figures": 4,
+      "overflow": false,
+      "axeViolations": []
+    }
+  ],
+  "playback": [
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "kind": "Hyperframes teaching video",
+      "nativeControl": "focused Space",
+      "seekToFinalScreen": true,
+      "paused": false,
+      "currentTime": 1.097551,
+      "duration": 30,
+      "error": null,
+      "width": 1280
+    },
+    {
+      "engine": "chromium",
+      "lang": "ko",
+      "kind": "original-video browser encoding",
+      "paused": false,
+      "currentTime": 0.107399,
+      "duration": 19.916667,
+      "error": null
+    },
+    {
+      "engine": "chromium",
+      "lang": "en",
+      "kind": "Hyperframes teaching video",
+      "nativeControl": "focused Space",
+      "seekToFinalScreen": true,
+      "paused": false,
+      "currentTime": 1.100315,
+      "duration": 30,
+      "error": null,
+      "width": 1280
+    },
+    {
+      "engine": "chromium",
+      "lang": "en",
+      "kind": "original-video browser encoding",
+      "paused": false,
+      "currentTime": 0.025795,
+      "duration": 19.916667,
+      "error": null
+    },
+    {
+      "engine": "chromium",
+      "lang": "ja",
+      "kind": "Hyperframes teaching video",
+      "nativeControl": "focused Space",
+      "seekToFinalScreen": true,
+      "paused": false,
+      "currentTime": 1.103387,
+      "duration": 30,
+      "error": null,
+      "width": 1280
+    },
+    {
+      "engine": "chromium",
+      "lang": "ja",
+      "kind": "original-video browser encoding",
+      "paused": false,
+      "currentTime": 0.120099,
+      "duration": 19.916667,
+      "error": null
+    },
+    {
+      "engine": "chromium",
+      "lang": "zh",
+      "kind": "Hyperframes teaching video",
+      "nativeControl": "focused Space",
+      "seekToFinalScreen": true,
+      "paused": false,
+      "currentTime": 1.103556,
+      "duration": 30,
+      "error": null,
+      "width": 1280
+    },
+    {
+      "engine": "chromium",
+      "lang": "zh",
+      "kind": "original-video browser encoding",
+      "paused": false,
+      "currentTime": 0.111002,
+      "duration": 19.916667,
+      "error": null
+    },
+    {
+      "engine": "webkit",
+      "lang": "ko",
+      "kind": "Hyperframes teaching video",
+      "nativeControl": "native play click",
+      "seekToFinalScreen": true,
+      "paused": false,
+      "currentTime": 1.0071087082159818,
+      "duration": 30,
+      "error": null,
+      "width": 1280
+    },
+    {
+      "engine": "webkit",
+      "lang": "ko",
+      "kind": "original-video browser encoding",
+      "paused": false,
+      "currentTime": 0.11268437562414373,
+      "duration": 19.917,
+      "error": null
+    },
+    {
+      "engine": "webkit",
+      "lang": "en",
+      "kind": "Hyperframes teaching video",
+      "nativeControl": "native play click",
+      "seekToFinalScreen": true,
+      "paused": false,
+      "currentTime": 1.0741505829486209,
+      "duration": 30,
+      "error": null,
+      "width": 1280
+    },
+    {
+      "engine": "webkit",
+      "lang": "en",
+      "kind": "original-video browser encoding",
+      "paused": false,
+      "currentTime": 0.1046612083504498,
+      "duration": 19.917,
+      "error": null
+    },
+    {
+      "engine": "webkit",
+      "lang": "ja",
+      "kind": "Hyperframes teaching video",
+      "nativeControl": "native play click",
+      "seekToFinalScreen": true,
+      "paused": false,
+      "currentTime": 1.0757967916127444,
+      "duration": 30,
+      "error": null,
+      "width": 1280
+    },
+    {
+      "engine": "webkit",
+      "lang": "ja",
+      "kind": "original-video browser encoding",
+      "paused": false,
+      "currentTime": 0.055154332455611584,
+      "duration": 19.917,
+      "error": null
+    },
+    {
+      "engine": "webkit",
+      "lang": "zh",
+      "kind": "Hyperframes teaching video",
+      "nativeControl": "native play click",
+      "seekToFinalScreen": true,
+      "paused": false,
+      "currentTime": 1.0831350836827054,
+      "duration": 30,
+      "error": null,
+      "width": 1280
+    },
+    {
+      "engine": "webkit",
+      "lang": "zh",
+      "kind": "original-video browser encoding",
+      "paused": false,
+      "currentTime": 0.1165486242543373,
+      "duration": 19.917,
+      "error": null
+    }
+  ],
+  "noJS": [
+    {
+      "lang": "ko",
+      "readable": true,
+      "videoControlsPresent": true
+    },
+    {
+      "lang": "en",
+      "readable": true,
+      "videoControlsPresent": true
+    },
+    {
+      "lang": "ja",
+      "readable": true,
+      "videoControlsPresent": true
+    },
+    {
+      "lang": "zh",
+      "readable": true,
+      "videoControlsPresent": true
+    }
+  ],
+  "errors": []
+}

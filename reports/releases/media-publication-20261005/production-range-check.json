@@ -1,0 +1,6 @@
+{
+  "status": 206,
+  "content_range": "bytes 0-63/1030668",
+  "returned_bytes": 64,
+  "exact_source_slice": true
+}

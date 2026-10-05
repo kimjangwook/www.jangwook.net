@@ -1,0 +1,13 @@
+{
+  "worker": "www-jangwook-net",
+  "version_id": "d8456636-cb66-4f37-a683-49d2a3fc7130",
+  "source_commit": "3eff2b69f9442b26c86a5b6b4da081fb92f11b52",
+  "verified_at": "2026-10-05T14:21:51.032567+00:00",
+  "english_article": "https://jangwook.net/en/series/accessibility/audio-only-and-video-only-prerecorded",
+  "english_sourceHash": "26ab392de752d793c936d4d0d1d2176b393ef20c8957aba5618c7adde26f15ae",
+  "article_HTTP": 200,
+  "article_body_public": true,
+  "prompt_public": true,
+  "rollback_version_id": "a5165eaf-2a89-4ec5-a3cf-95b96c882768",
+  "database_changes": false
+}
