@@ -1,29 +1,43 @@
 {
   "account": "effloow",
   "sourceHash": "547f363c7639c464b60982dde9228603a869fcabb8a5f108f72ee03a186bc90b",
-  "link": "https://jangwook.net/en/series/accessibility/audio-only-and-video-only-prerecorded",
+  "article": "https://jangwook.net/en/series/accessibility/audio-only-and-video-only-prerecorded",
   "posts": [
     {
       "text": "[1/4] A silent video can have a description and still omit essential information. In this accessibility exercise, two pages use the same five-screen recovery-code video and different text alternatives.",
       "ko": "무음 영상에 설명이 있어도 필요한 정보가 빠질 수 있습니다. 두 실습 페이지는 같은 다섯 화면 영상에 서로 다른 텍스트 대안을 제공합니다.",
-      "weightedLength": 201
+      "weightedLength": 201,
+      "url": "https://x.com/effloow/status/2107221552274260205"
     },
     {
       "text": "[2/4] The complete description received pass. The other omitted the Security screen and the warning and confirmation before creating a new code. It received fail, even though its final step still said the old code was invalid.",
       "ko": "충분한 설명은 충족으로 판정되었습니다. 다른 설명에는 보안 화면과 새 코드를 만들기 전의 경고·확인이 빠졌습니다. 마지막에 이전 코드 무효화를 적었어도 미충족이었습니다.",
-      "weightedLength": 226
+      "weightedLength": 226,
+      "url": "https://x.com/effloow/status/2107221553784275087"
     },
     {
       "text": "[3/4] The recorded evaluation compared independently extracted frames and source observations with each alternative. It did not claim native video understanding. Missing evidence remained unknown rather than becoming a pass.",
       "ko": "실제 평가에서는 독립적으로 추출한 프레임과 관찰 기록을 대안과 비교했습니다. 영상 직접 이해 성능으로 설명하지 않았고, 자료 부족을 충족으로 바꾸지 않았습니다.",
-      "weightedLength": 224
+      "weightedLength": 224,
+      "url": "https://x.com/effloow/status/2107221555235447056"
     },
     {
       "text": "[4/4] The article shows the practice pages in place, followed by actual findings, input records, result JSON and the reusable prompt. Read the screens, compare the alternatives, then inspect why the decisions differ. English link below.",
       "ko": "글 내부에서 실습 페이지, 실제 발견 사항, 입력 기록, 결과 JSON, 재사용할 프롬프트가 이어집니다. 화면과 대안을 읽고 판정이 달라진 이유를 확인할 수 있습니다. 영어 링크는 아래 답글에 있습니다.",
-      "weightedLength": 236
+      "weightedLength": 236,
+      "url": "https://x.com/effloow/status/2107221556959351021"
+    },
+    {
+      "text": "https://jangwook.net/en/series/accessibility/audio-only-and-video-only-prerecorded",
+      "url": "https://x.com/effloow/status/2107221850048921731",
+      "parent": "https://x.com/effloow/status/2107221556959351021",
+      "shortUrl": "https://t.co/rYsot8QYKl"
     }
   ],
-  "published": true,
-  "receipt": "x-publication-receipt.json"
+  "verifiedAt": "2026-10-05T21:31:16.011Z",
+  "verifiedThreadOrder": true,
+  "verifiedExpandedDestination": "https://jangwook.net/en/series/accessibility/audio-only-and-video-only-prerecorded",
+  "screenshot": "x-publication.png",
+  "verification": "Computer Use verified the visible account, exact post text, four-post thread, final reply parent and browser destination after clicking the short link.",
+  "skill": "/Users/jangwook/workspace/life-manager-v2/.agents/skills/effloow-x-growth/SKILL.md"
 }

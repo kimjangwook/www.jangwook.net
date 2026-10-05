@@ -1,0 +1,87 @@
+
+> jangwook-net@2.0.0 deploy
+> node scripts/require-deploy-approval.mjs && wrangler deploy --env production
+
+
+ ⛅️ wrangler 4.145.0 (update available 4.147.0)
+───────────────────────────────────────────────
+🌀 Building list of assets...
+✨ Read 2405 files from the assets directory /private/tmp/jangwook-media-release-20261005/.svelte-kit/cloudflare
+🌀 Starting asset upload...
+🌀 Found 55 new or modified static assets to upload. Proceeding with upload...
++ /_app/version.json
++ /_app/immutable/nodes/21.CulvObpW.js
++ /_app/immutable/nodes/1.CI1MDT64.js
++ /lab-fixtures/media-1.2.1/results/claude-K17-r3.json
++ /_app/immutable/nodes/0.DZCvzD2Y.js
++ /_app/immutable/entry/app.CDQ_Vqts.js
++ /lab-fixtures/media-1.2.1/results/claude-K42-r1.json
++ /lab-fixtures/media-1.2.1/results/claude-K42-r3.json
++ /lab-fixtures/media-1.2.1/results/claude-K08-r2.json
++ /lab-fixtures/media-1.2.1/results/inputs/K17.txt
++ /lab-fixtures/media-1.2.1/results/claude-K56-r1.json
++ /lab-fixtures/media-1.2.1/results/inputs/K79.txt
++ /lab-fixtures/media-1.2.1/results/claude-K25-r3.json
++ /lab-fixtures/media-1.2.1/results/claude-K91-r1.json
++ /lab-fixtures/media-1.2.1/results/inputs/K42.txt
++ /lab-fixtures/media-1.2.1/results/inputs/K34.txt
++ /lab-fixtures/media-1.2.1/results/claude-K91-r2.json
++ /lab-fixtures/media-1.2.1/results/inputs/K63.txt
++ /_app/immutable/assets/0.D7I4hCPl.css
++ /_app/immutable/entry/start.B1oQO-O4.js
++ /_app/immutable/assets/SeriesArticle.DfQOwEsN.css
++ /_app/immutable/assets/MediaLab.Bib55VAE.css
++ /lab-fixtures/media-1.2.1/results/claude-K17-r2.json
++ /lab-fixtures/media-1.2.1/results/claude-K79-r1.json
++ /lab-fixtures/media-1.2.1/results/claude-K79-r2.json
++ /lab-fixtures/media-1.2.1/results/claude-K08-r1.json
++ /lab-fixtures/media-1.2.1/results/claude-K03-r3.json
++ /lab-fixtures/media-1.2.1/results/claude-K08-r3.json
++ /lab-fixtures/media-1.2.1/results/claude-K25-r1.json
++ /lab-fixtures/media-1.2.1/results/claude-K63-r1.json
++ /lab-fixtures/media-1.2.1/results/claude-K25-r2.json
++ /lab-fixtures/media-1.2.1/results/claude-K56-r3.json
++ /lab-fixtures/media-1.2.1/results/inputs/K56.txt
++ /lab-fixtures/media-1.2.1/results/claude-K63-r2.json
++ /lab-fixtures/media-1.2.1/results/claude-K63-r3.json
++ /lab-fixtures/media-1.2.1/results/inputs/K25.txt
++ /lab-fixtures/media-1.2.1/results/inputs/K91.txt
++ /_app/immutable/nodes/13.ruHmSwwO.js
++ /_app/immutable/chunks/D5Qz65rO.js
++ /lab-fixtures/media-1.2.1/results/claude-K17-r1.json
++ /_app/immutable/chunks/fyl4aO-s.js
++ /lab-fixtures/media-1.2.1/results/claude-K79-r3.json
++ /_app/immutable/chunks/NTkzw0IL.js
++ /lab-fixtures/media-1.2.1/results/claude-K03-r1.json
++ /lab-fixtures/media-1.2.1/results/claude-K03-r2.json
++ /lab-fixtures/media-1.2.1/results/claude-K42-r2.json
++ /lab-fixtures/media-1.2.1/results/claude-K56-r2.json
++ /lab-fixtures/media-1.2.1/results/claude-K34-r1.json
++ /lab-fixtures/media-1.2.1/results/claude-K34-r2.json
++ /lab-fixtures/media-1.2.1/results/claude-K34-r3.json
++ /lab-fixtures/media-1.2.1/results/inputs/K08.txt
++ /lab-fixtures/media-1.2.1/results/inputs/K03.txt
++ /_app/immutable/chunks/CvDnkVZp.js
++ /lab-fixtures/media-1.2.1/results/claude-K91-r3.json
++ /_app/immutable/chunks/O6M-R3if.js
+Uploaded 18 of 55 assets
+Uploaded 37 of 55 assets
+Uploaded 55 of 55 assets
+✨ Success! Uploaded 55 files (2292 already uploaded) (1.35 sec)
+
+Total Upload: 4701.16 KiB / gzip: 835.06 KiB
+Worker Startup Time: 23 ms
+Your Worker has access to the following bindings:
+Binding                                        Resource                  
+env.LEADS_DB (jangwook-leads)                  D1 Database               
+env.ASSETS                                     Assets                    
+env.MAIL_MODE ("disabled")                     Environment Variable      
+env.SITE_URL ("https://jangwook.net")          Environment Variable      
+env.FROM_EMAIL ("materials@jangwook.net")      Environment Variable      
+
+Uploaded www-jangwook-net (7.70 sec)
+Deployed www-jangwook-net triggers (1.96 sec)
+  jangwook.net (custom domain)
+  www.jangwook.net (custom domain)
+  schedule: 17 18 * * *
+Current Version ID: 742bd13e-954b-441e-8da0-c5c9ad7b7869
